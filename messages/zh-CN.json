@@ -2895,5 +2895,12 @@
   "lab_assume_target_moon": "目标：月球",
   "lab_assume_target_mars": "目标：火星",
   "lab_assume_target_venus": "目标：金星",
-  "lab_ui_gravity": "重力"
+  "lab_ui_gravity": "重力",
+  "lab_f_newton_second_law_glossary": "牛顿第二定律：力(F)等于质量(m)乘以加速度(a)。相同的推力使较轻的质量加速更快——这是本处所有其他层级的基础定律。",
+  "lab_f_weight_glossary": "重量就是质量(m)被重力(g)拉动：W = m·g。相同质量、不同世界、不同重量——这就是为什么重力是你选择的场。",
+  "lab_f_momentum_glossary": "动量是运动中的质量：p = m·v。火箭通过向后喷射排气获得向前动量——牛顿第三定律，作用和反作用，用数字表示。",
+  "lab_f_thrust_flow_glossary": "推力是排气每秒的动量：F = ṁ·vₑ(质量流ṁ乘以排气速度vₑ)。它将前一张卡片的动量概念转化为这枚火箭实际推动的力。",
+  "lab_f_twr_glossary": "推重比：TWR = T / W = T / (m·g)。它将推力(前一张卡片)与重量(重量卡片)进行权衡。大于1时升空；小于1时留在发射台上。",
+  "lab_f_tsiolkovsky_glossary": "火箭方程。Δv是你的速度预算——你能改变多少速度。它随排气效率(Iₛₚ)和湿质量/干质量比m₀/m_f增长；ln表示每额外增加1 km/s的成本呈指数增长推进剂。",
+  "lab_f_launch_site_glossary": "地球自转是一次免费加速：助推 = v_eq·cosφ(赤道向东速度乘以纬度φ的余弦)。在赤道处最大，在两极处为零——这就是为什么发射场靠近热带。"
 }

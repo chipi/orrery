@@ -1926,7 +1926,14 @@
     "lab_assume_target_moon": "लक्ष्य: चंद्रमा",
     "lab_assume_target_mars": "लक्ष्य: मंगल",
     "lab_assume_target_venus": "लक्ष्य: शुक्र",
-    "lab_ui_gravity": "गुरुत्वाकर्षण"
+    "lab_ui_gravity": "गुरुत्वाकर्षण",
+    "lab_f_newton_second_law_glossary": "न्यूटन का दूसरा नियम: बल (F) = द्रव्यमान (m) × त्वरण (a)। एक ही धक्का हल्के द्रव्यमान को तेजी से गति देता है — यह वह नियम है जिस पर यहाँ हर अन्य स्तर निर्भर करता है।",
+    "lab_f_weight_glossary": "भार केवल द्रव्यमान (m) को गुरुत्वाकर्षण (g) से खींचा जाता है: W = m·g। समान द्रव्यमान, अलग ग्रह, अलग भार — इसीलिए आप गुरुत्वाकर्षण क्षेत्र को चुनते हैं।",
+    "lab_f_momentum_glossary": "संवेग गति में द्रव्यमान है: p = m·v। एक रॉकेट निकास को पीछे की ओर फेंककर आगे की ओर संवेग प्राप्त करता है — न्यूटन का तीसरा नियम, क्रिया और प्रतिक्रिया, संख्याओं में।",
+    "lab_f_thrust_flow_glossary": "थ्रस्ट निकास का प्रति सेकंड संवेग है: F = ṁ·vₑ (द्रव्यमान प्रवाह ṁ गुणा निकास गति vₑ)। यह पिछले कार्ड के संवेग विचार को इस बल में बदलता है जो रॉकेट वास्तव में लगाता है।",
+    "lab_f_twr_glossary": "थ्रस्ट-टू-वेट अनुपात: TWR = T / W = T / (m·g)। यह थ्रस्ट (पिछला कार्ड) को भार (भार कार्ड) के विरुद्ध तौलता है। 1 से अधिक होने पर यह उड़ता है; 1 से कम होने पर यह पैड पर बैठा रहता है।",
+    "lab_f_tsiolkovsky_glossary": "रॉकेट समीकरण। Δv आपका वेग बजट है — आप अपने वेग को कितना बदल सकते हैं। यह निकास दक्षता (Iₛₚ) और गीले/सूखे द्रव्यमान अनुपात m₀/m_f के साथ बढ़ता है; ln का मतलब है कि हर अतिरिक्त km/s के लिए तेजी से अधिक ईंधन की लागत आती है।",
+    "lab_f_launch_site_glossary": "पृथ्वी की घूर्णन एक मुफ्त शुरुआत है: boost = v_eq·cosφ (भूमध्य रेखा की पूर्वी गति अक्षांश φ की कोज्या से गुणा)। भूमध्य रेखा पर अधिकतम, ध्रुवों पर शून्य — इसीलिए प्रक्षेपण स्थल उष्ण कटिबंध के पास हैं।"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -3716,7 +3723,14 @@
     "lab_assume_target_moon": "ターゲット: 月",
     "lab_assume_target_mars": "ターゲット: 火星",
     "lab_assume_target_venus": "ターゲット: 金星",
-    "lab_ui_gravity": "重力"
+    "lab_ui_gravity": "重力",
+    "lab_f_newton_second_law_glossary": "ニュートンの第2法則：力（F）は質量（m）に加速度（a）を掛けたもの。同じ押力でも質量が軽いほど速く動く――ここでの他のすべての段階がこの法則の上に成り立っている。",
+    "lab_f_weight_glossary": "重さは質量（m）が重力（g）に引かれたもの：W = m·g。同じ質量でも別の惑星なら別の重さになる――だから重力が選ぶべき場なのだ。",
+    "lab_f_momentum_glossary": "運動量は動く質量：p = m·v。ロケットは排気を後ろに噴き出して前方の運動量を得る――ニュートンの第3法則、作用と反作用を数式にしたもの。",
+    "lab_f_thrust_flow_glossary": "推力は排気の毎秒の運動量：F = ṁ·vₑ（質量流量ṁと排気速度vₑの積）。前のカードの運動量の概念をこのロケットが実際に押し出す力に変える。",
+    "lab_f_twr_glossary": "推力重量比：TWR = T / W = T / (m·g)。推力（前のカード）を重さ（重さのカード）と比べる。1を超えれば離陸、1以下ならパッドに留まる。",
+    "lab_f_tsiolkovsky_glossary": "ロケット方程式。Δvは速度予算――速度をいくら変えられるか。排気効率（Iₛₚ）と湿潤・乾燥質量比m₀/m_fで増える；lnは追加のkm/sごとに推進剤の必要量が指数関数的に増えることを意味する。",
+    "lab_f_launch_site_glossary": "地球の自転は無料のヘッドスタート：ブースト = v_eq·cosφ（赤道の東向き速度に緯度φの余弦を掛けたもの）。赤道で最大、極で零――だからロケット発射場は熱帯に集中している。"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -5686,7 +5700,14 @@
     "lab_assume_target_moon": "الهدف: القمر",
     "lab_assume_target_mars": "الهدف: المريخ",
     "lab_assume_target_venus": "الهدف: الزهرة",
-    "lab_ui_gravity": "الجاذبية"
+    "lab_ui_gravity": "الجاذبية",
+    "lab_f_newton_second_law_glossary": "قانون نيوتن الثاني: القوة (F) تساوي الكتلة (m) مضروبة في التسارع (a). الدفع نفسه يحرك الكتلة الأخف بسرعة أكبر — هذا هو القانون الذي تُبنى عليه جميع المستويات الأخرى هنا.",
+    "lab_f_weight_glossary": "الوزن هو ببساطة الكتلة (m) مجذوبة بالجاذبية (g): W = m·g. الكتلة نفسها، عالم مختلف، وزن مختلف — لهذا السبب الجاذبية هي الحقل الذي تختاره.",
+    "lab_f_momentum_glossary": "الزخم هو الكتلة في الحركة: p = m·v. الصاروخ يكتسب زخماً للأمام برمي العادم للخلف — قانون نيوتن الثالث، الفعل والرد، بصيغة رياضية.",
+    "lab_f_thrust_flow_glossary": "الدفع هو زخم العادم في الثانية: F = ṁ·vₑ (معدل تدفق الكتلة ṁ مضروباً في سرعة العادم vₑ). يحول فكرة الزخم من البطاقة السابقة إلى القوة التي يدفع بها هذا الصاروخ فعلاً.",
+    "lab_f_twr_glossary": "نسبة الدفع إلى الوزن: TWR = T / W = T / (m·g). توازن الدفع (البطاقة السابقة) مقابل الوزن (بطاقة الوزن). فوق 1 يقلع؛ تحت 1 يبقى على منصة الإطلاق.",
+    "lab_f_tsiolkovsky_glossary": "معادلة الصاروخ. Δv هو ميزانيتك للسرعة — كم يمكنك تغيير سرعتك. تزداد مع كفاءة العادم (Iₛₚ) ونسبة الكتلة الرطبة إلى الجافة m₀/m_f؛ ln تعني أن كل كيلومتر/ثانية إضافي يكلف وقوداً أكثر بشكل أسي.",
+    "lab_f_launch_site_glossary": "دوران الأرض هو ميزة مجانية: الدفع = v_eq·cosφ (السرعة الشرقية للخط الاستوائي مضروبة في جيب تمام خطك العرضي φ). الأقصى عند الخط الاستوائي، صفر عند القطبين — لهذا السبب مواقع الإطلاق تقترب من المناطق الاستوائية."
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -7478,7 +7499,14 @@
     "lab_assume_target_moon": "목표: 달",
     "lab_assume_target_mars": "목표: 화성",
     "lab_assume_target_venus": "목표: 금성",
-    "lab_ui_gravity": "중력"
+    "lab_ui_gravity": "중력",
+    "lab_f_newton_second_law_glossary": "뉴턴의 제2법칙: 힘(F)은 질량(m)에 가속도(a)를 곱한 값입니다. 같은 밀기가 가벼운 질량을 더 빠르게 움직입니다 — 이것이 이곳의 다른 모든 단계가 기초하는 법칙입니다.",
+    "lab_f_weight_glossary": "무게는 질량(m)이 중력(g)으로 끌리는 것입니다: W = m·g. 같은 질량, 다른 세계, 다른 무게 — 이것이 중력을 선택하는 이유입니다.",
+    "lab_f_momentum_glossary": "운동량은 운동 중인 질량입니다: p = m·v. 로켓은 배기를 뒤로 분사하여 전진 운동량을 얻습니다 — 뉴턴의 제3법칙, 작용과 반작용을 숫자로 나타낸 것입니다.",
+    "lab_f_thrust_flow_glossary": "추력은 배기의 초당 운동량입니다: F = ṁ·vₑ (질량 유량 ṁ 곱하기 배기 속도 vₑ). 이전 카드의 운동량 개념을 이 로켓이 실제로 미는 힘으로 변환합니다.",
+    "lab_f_twr_glossary": "추력-무게 비: TWR = T / W = T / (m·g). 추력(이전 카드)을 무게(무게 카드)와 비교합니다. 1 이상이면 이륙하고, 1 미만이면 발사대에 앉아 있습니다.",
+    "lab_f_tsiolkovsky_glossary": "로켓 방정식입니다. Δv는 속도 예산 — 속도를 얼마나 변경할 수 있는지입니다. 배기 효율(Iₛₚ)과 습식/건식 질량 비 m₀/m_f에 따라 증가합니다. ln은 추가 km/s마다 지수적으로 더 많은 추진제가 필요함을 의미합니다.",
+    "lab_f_launch_site_glossary": "지구의 자전은 무료 선제입니다: 부스트 = v_eq·cosφ (적도의 동쪽 속도에 위도 φ의 코사인 곱하기). 적도에서 최대, 극지에서 0 — 이것이 발사장이 열대 지역을 따라가는 이유입니다."
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -9093,7 +9121,14 @@
     "lab_assume_target_moon": "Ziel: der Mond",
     "lab_assume_target_mars": "Ziel: Mars",
     "lab_assume_target_venus": "Ziel: Venus",
-    "lab_ui_gravity": "Schwerkraft"
+    "lab_ui_gravity": "Schwerkraft",
+    "lab_f_newton_second_law_glossary": "Newtons zweites Gesetz: Kraft (F) gleich Masse (m) mal Beschleunigung (a). Der gleiche Schub bewegt eine leichtere Masse schneller — das ist das Gesetz, auf dem alle anderen Stufen hier aufbauen.",
+    "lab_f_weight_glossary": "Gewicht ist einfach Masse (m) von der Schwerkraft (g) gezogen: W = m·g. Gleiche Masse, andere Welt, anderes Gewicht — deshalb ist Gravitation das Feld, das du wählst.",
+    "lab_f_momentum_glossary": "Impuls ist Masse in Bewegung: p = m·v. Eine Rakete gewinnt Vorwärtsimpuls, indem sie Abgase rückwärts ausstößt — Newtons drittes Gesetz, Aktion und Reaktion, in Zahlen.",
+    "lab_f_thrust_flow_glossary": "Schub ist der Impuls des Abgases pro Sekunde: F = ṁ·vₑ (Massenstrom ṁ mal Abgasgeschwindigkeit vₑ). Es wandelt die Impulsidee der letzten Karte in die Kraft um, mit der diese Rakete tatsächlich drückt.",
+    "lab_f_twr_glossary": "Schub-Gewichts-Verhältnis: TWR = T / W = T / (m·g). Es wiegt den Schub (vorherige Karte) gegen das Gewicht (Gewichtskarte) auf. Über 1 hebt es ab; unter 1 sitzt es auf dem Pad.",
+    "lab_f_tsiolkovsky_glossary": "Die Raketengleichung. Δv ist dein Geschwindigkeitsbudget — wie viel du deine Geschwindigkeit ändern kannst. Es wächst mit der Abgaseffizienz (Iₛₚ) und dem Verhältnis Vollmasse/Trockenmasse m₀/m_f; das ln bedeutet, dass jeder zusätzliche km/s exponentiell mehr Treibstoff kostet.",
+    "lab_f_launch_site_glossary": "Erdrotation ist ein kostenloser Startvorteil: Schub = v_eq·cosφ (die Ostgeschwindigkeit des Äquators mal der Kosinus deiner Breite φ). Maximum am Äquator, null an den Polen — deshalb liegen Startstellen in den Tropen."
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -10648,7 +10683,14 @@
     "lab_assume_target_moon": "Cible : la Lune",
     "lab_assume_target_mars": "Cible : Mars",
     "lab_assume_target_venus": "Cible : Vénus",
-    "lab_ui_gravity": "Gravité"
+    "lab_ui_gravity": "Gravité",
+    "lab_f_newton_second_law_glossary": "Deuxième loi de Newton : la force (F) égale la masse (m) fois l'accélération (a). La même poussée accélère une masse plus légère davantage — c'est la loi sur laquelle s'appuient tous les autres échelons ici.",
+    "lab_f_weight_glossary": "Le poids est simplement la masse (m) attirée par la gravité (g) : W = m·g. Même masse, monde différent, poids différent — c'est pourquoi la gravité est le champ que vous choisissez.",
+    "lab_f_momentum_glossary": "La quantité de mouvement est la masse en mouvement : p = m·v. Une fusée gagne une quantité de mouvement vers l'avant en éjectant l'échappement vers l'arrière — la troisième loi de Newton, action et réaction, en nombres.",
+    "lab_f_thrust_flow_glossary": "La poussée est la quantité de mouvement de l'échappement par seconde : F = ṁ·vₑ (débit massique ṁ fois vitesse d'échappement vₑ). Elle transforme l'idée de quantité de mouvement de la carte précédente en la force que cette fusée exerce réellement.",
+    "lab_f_twr_glossary": "Rapport poussée-poids : TWR = T / W = T / (m·g). Il compare la poussée (carte précédente) au poids (carte poids). Au-dessus de 1 elle décolle ; en dessous de 1 elle reste sur le pas de tir.",
+    "lab_f_tsiolkovsky_glossary": "L'équation de Tsiolkovski. Δv est votre budget de vitesse — le changement de vélocité que vous pouvez effectuer. Il augmente avec l'efficacité d'échappement (Iₛₚ) et le rapport de masse mouillée/sèche m₀/m_f ; le ln signifie que chaque km/s supplémentaire coûte exponentiellement plus de carburant.",
+    "lab_f_launch_site_glossary": "La rotation terrestre est un coup de pouce gratuit : boost = v_eq·cosφ (la vitesse vers l'est de l'équateur fois le cosinus de votre latitude φ). Maximum à l'équateur, zéro aux pôles — c'est pourquoi les pas de tir se concentrent aux tropiques."
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -12170,7 +12212,14 @@
     "lab_assume_target_moon": "Obiettivo: la Luna",
     "lab_assume_target_mars": "Obiettivo: Marte",
     "lab_assume_target_venus": "Obiettivo: Venere",
-    "lab_ui_gravity": "Gravità"
+    "lab_ui_gravity": "Gravità",
+    "lab_f_newton_second_law_glossary": "Seconda legge di Newton: la forza (F) è uguale alla massa (m) per l'accelerazione (a). La stessa spinta muove una massa più leggera più velocemente — è la legge su cui si costruisce tutto il resto.",
+    "lab_f_weight_glossary": "Il peso è semplicemente la massa (m) tirata dalla gravità (g): W = m·g. Stessa massa, mondo diverso, peso diverso — ecco perché la gravità è il campo che scegli.",
+    "lab_f_momentum_glossary": "La quantità di moto è la massa in movimento: p = m·v. Un razzo acquista quantità di moto in avanti buttando gas di scarico all'indietro — la terza legge di Newton, azione e reazione, in numeri.",
+    "lab_f_thrust_flow_glossary": "La spinta è la quantità di moto dello scarico al secondo: F = ṁ·vₑ (flusso di massa ṁ per velocità di scarico vₑ). Trasforma l'idea di quantità di moto della carta precedente nella forza con cui questo razzo spinge davvero.",
+    "lab_f_twr_glossary": "Rapporto spinta-peso: TWR = T / W = T / (m·g). Confronta la spinta (carta precedente) con il peso (carta sul peso). Sopra 1 decolla; sotto 1 resta sulla rampa.",
+    "lab_f_tsiolkovsky_glossary": "L'equazione del razzo. Δv è il tuo budget di velocità — quanto puoi cambiare la tua velocità. Cresce con l'efficienza dello scarico (Iₛₚ) e il rapporto massa bagnata/secca m₀/m_f; il ln significa che ogni km/s in più costa esponenzialmente più propellente.",
+    "lab_f_launch_site_glossary": "La rotazione terrestre è una spinta gratuita: boost = v_eq·cosφ (la velocità verso est dell'equatore per il coseno della tua latitudine φ). Massimo all'equatore, zero ai poli — ecco perché i siti di lancio stazionano ai tropici."
   },
   "es": {
     "mars_meta_description": "Todo artefacto que la humanidad ha colocado en Marte — aterrizadores, rovers y orbitadores activos — en un globo 3D navegable con la historia completa de la misión.",
@@ -13691,7 +13740,14 @@
     "lab_assume_target_moon": "Objetivo: la Luna",
     "lab_assume_target_mars": "Objetivo: Marte",
     "lab_assume_target_venus": "Objetivo: Venus",
-    "lab_ui_gravity": "Gravedad"
+    "lab_ui_gravity": "Gravedad",
+    "lab_f_newton_second_law_glossary": "Segunda ley de Newton: la fuerza (F) es igual a la masa (m) por la aceleración (a). El mismo empuje mueve una masa más ligera más rápido — esta es la ley en la que se construyen todos los demás escalones.",
+    "lab_f_weight_glossary": "El peso es solo la masa (m) atraída por la gravedad (g): W = m·g. La misma masa, mundo diferente, peso diferente — por eso la gravedad es el campo que eliges.",
+    "lab_f_momentum_glossary": "El momento es la masa en movimiento: p = m·v. Un cohete gana momento hacia adelante lanzando escape hacia atrás — la tercera ley de Newton, acción y reacción, en números.",
+    "lab_f_thrust_flow_glossary": "El empuje es el momento del escape por segundo: F = ṁ·vₑ (flujo de masa ṁ por velocidad de escape vₑ). Convierte la idea del momento de la tarjeta anterior en la fuerza con la que este cohete realmente empuja.",
+    "lab_f_twr_glossary": "Relación empuje-peso: TWR = T / W = T / (m·g). Pesa el empuje (tarjeta anterior) contra el peso (tarjeta de peso). Por encima de 1 despega; por debajo de 1 se queda en la plataforma.",
+    "lab_f_tsiolkovsky_glossary": "La ecuación del cohete. Δv es tu presupuesto de velocidad — cuánto puedes cambiar tu velocidad. Crece con la eficiencia del escape (Iₛₚ) y la relación de masa húmeda/seca m₀/m_f; el ln significa que cada km/s extra cuesta propelente exponencialmente más.",
+    "lab_f_launch_site_glossary": "La rotación terrestre es una ventaja gratuita: impulso = v_eq·cosφ (la velocidad hacia el este del ecuador por el coseno de tu latitud φ). Máximo en el ecuador, cero en los polos — por eso los sitios de lanzamiento están en los trópicos."
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -15221,7 +15277,14 @@
     "lab_assume_target_moon": "Doel: de Maan",
     "lab_assume_target_mars": "Doel: Mars",
     "lab_assume_target_venus": "Doel: Venus",
-    "lab_ui_gravity": "Zwaartekracht"
+    "lab_ui_gravity": "Zwaartekracht",
+    "lab_f_newton_second_law_glossary": "Tweede wet van Newton: kracht (F) is massa (m) maal versnelling (a). Dezelfde duw verplaatst een lichter gewicht sneller — dit is de wet waarop alle andere treden hier bouwen.",
+    "lab_f_weight_glossary": "Gewicht is slechts massa (m) aangetrokken door zwaartekracht (g): W = m·g. Dezelfde massa, ander wereld, ander gewicht — daarom is zwaartekracht het veld dat je kiest.",
+    "lab_f_momentum_glossary": "Impuls is massa in beweging: p = m·v. Een raket krijgt voorwaartse impuls door uitlaatgassen naar achteren af te stoten — de derde wet van Newton, actie en reactie, in getallen.",
+    "lab_f_thrust_flow_glossary": "Stuwkracht is de impuls van de uitlaatgassen per seconde: F = ṁ·vₑ (massastroom ṁ maal uitlaatsnelheid vₑ). Het zet het impulidee van de vorige kaart om in de kracht waarmee deze raket werkelijk duwt.",
+    "lab_f_twr_glossary": "Stuwkracht-gewichtverhouding: TWR = T / W = T / (m·g). Het weegt de stuwkracht (vorige kaart) tegen het gewicht (gewichtkaart). Boven 1 stijgt het op; onder 1 blijft het op de startplaats.",
+    "lab_f_tsiolkovsky_glossary": "De raketvergelyking. Δv is je snelheidsbudget — hoeveel je je snelheid kunt veranderen. Het groeit met uitlaatefficiëntie (Iₛₚ) en de nat/droge massaverhouding m₀/m_f; de ln betekent dat elke extra km/s exponentieel meer brandstof kost.",
+    "lab_f_launch_site_glossary": "Aardse rotatie is een gratis voorsprong: boost = v_eq·cosφ (de oostwaartse snelheid van de evenaar maal de cosinus van je breedtegraad φ). Maximum op de evenaar, nul op de polen — daarom liggen startplaatsen in de tropen."
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -17014,7 +17077,14 @@
     "lab_assume_target_moon": "Цель: Луна",
     "lab_assume_target_mars": "Цель: Марс",
     "lab_assume_target_venus": "Цель: Венера",
-    "lab_ui_gravity": "Гравитация"
+    "lab_ui_gravity": "Гравитация",
+    "lab_f_newton_second_law_glossary": "Второй закон Ньютона: сила (F) равна массе (m), умноженной на ускорение (a). Один и тот же толчок движет лёгкую массу быстрее — это закон, на котором строятся все остальные ступени.",
+    "lab_f_weight_glossary": "Вес — это просто масса (m), притягиваемая гравитацией (g): W = m·g. Одна и та же масса, разные миры, разные веса — поэтому гравитация — поле, которое вы выбираете.",
+    "lab_f_momentum_glossary": "Импульс — это масса в движении: p = m·v. Ракета набирает переднюю составляющую импульса, выбрасывая выхлоп назад — третий закон Ньютона, действие и противодействие, в цифрах.",
+    "lab_f_thrust_flow_glossary": "Тяга — это импульс выхлопа в секунду: F = ṁ·vₑ (массовый расход ṁ, умноженный на скорость выхлопа vₑ). Это превращает идею импульса из предыдущей карточки в силу, с которой ракета фактически толкается.",
+    "lab_f_twr_glossary": "Отношение тяги к весу: TWR = T / W = T / (m·g). Оно взвешивает тягу (предыдущая карточка) против веса (карточка веса). Выше 1 — взлёт; ниже 1 — сидит на площадке.",
+    "lab_f_tsiolkovsky_glossary": "Уравнение Циолковского. Δv — ваш бюджет скорости — насколько вы можете изменить свою скорость. Он растёт с эффективностью выхлопа (Iₛₚ) и отношением влажной/сухой массы m₀/m_f; ln означает, что каждый дополнительный км/с стоит экспоненциально больше топлива.",
+    "lab_f_launch_site_glossary": "Вращение Земли — это бесплатное ускорение: boost = v_eq·cosφ (восточная скорость на экваторе, умноженная на косинус широты φ). Максимум на экваторе, ноль на полюсах — поэтому космодромы расположены в тропиках."
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -18851,7 +18921,14 @@
     "lab_assume_target_moon": "目标：月球",
     "lab_assume_target_mars": "目标：火星",
     "lab_assume_target_venus": "目标：金星",
-    "lab_ui_gravity": "重力"
+    "lab_ui_gravity": "重力",
+    "lab_f_newton_second_law_glossary": "牛顿第二定律：力(F)等于质量(m)乘以加速度(a)。相同的推力使较轻的质量加速更快——这是本处所有其他层级的基础定律。",
+    "lab_f_weight_glossary": "重量就是质量(m)被重力(g)拉动：W = m·g。相同质量、不同世界、不同重量——这就是为什么重力是你选择的场。",
+    "lab_f_momentum_glossary": "动量是运动中的质量：p = m·v。火箭通过向后喷射排气获得向前动量——牛顿第三定律，作用和反作用，用数字表示。",
+    "lab_f_thrust_flow_glossary": "推力是排气每秒的动量：F = ṁ·vₑ(质量流ṁ乘以排气速度vₑ)。它将前一张卡片的动量概念转化为这枚火箭实际推动的力。",
+    "lab_f_twr_glossary": "推重比：TWR = T / W = T / (m·g)。它将推力(前一张卡片)与重量(重量卡片)进行权衡。大于1时升空；小于1时留在发射台上。",
+    "lab_f_tsiolkovsky_glossary": "火箭方程。Δv是你的速度预算——你能改变多少速度。它随排气效率(Iₛₚ)和湿质量/干质量比m₀/m_f增长；ln表示每额外增加1 km/s的成本呈指数增长推进剂。",
+    "lab_f_launch_site_glossary": "地球自转是一次免费加速：助推 = v_eq·cosφ(赤道向东速度乘以纬度φ的余弦)。在赤道处最大，在两极处为零——这就是为什么发射场靠近热带。"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -20559,7 +20636,14 @@
     "lab_assume_target_moon": "Циљ: Месец",
     "lab_assume_target_mars": "Циљ: Марс",
     "lab_assume_target_venus": "Циљ: Венера",
-    "lab_ui_gravity": "Гравитација"
+    "lab_ui_gravity": "Гравитација",
+    "lab_f_newton_second_law_glossary": "Њутнов други закон: сила (F) једнака је маси (m) пута убрзање (a). Исти потисак брже помера лакшу масу — ово је закон на коме се граде сви остали нивои овде.",
+    "lab_f_weight_glossary": "Тежина је само маса (m) повучена гравитацијом (g): W = m·g. Иста маса, различит свет, различита тежина — зато је гравитација поље које бирате.",
+    "lab_f_momentum_glossary": "Импулс је маса у кретању: p = m·v. Ракета добија напредни импулс избацивањем издувних гасова унатраг — Њутнов трећи закон, акција и реакција, у бројевима.",
+    "lab_f_thrust_flow_glossary": "Потисак је импулс издувних гасова по секунди: F = ṁ·vₑ (проток масе ṁ пута брзина издувних гасова vₑ). Концепт импулса са претходне картице претвара у силу којом ова ракета заиста потиска.",
+    "lab_f_twr_glossary": "Однос потиска према тежини: TWR = T / W = T / (m·g). Упоређује потисак (претходна картица) са тежином (картица тежине). Изнад 1 полетава; испод 1 остаје на платформи.",
+    "lab_f_tsiolkovsky_glossary": "Ракетна једначина. Δv је ваш буџет брзине — колико можете променити вашу брзину. Расте са ефикасношћу издувних гасова (Iₛₚ) и односом влажне/суве масе m₀/m_f; ln значи да сваки додатни км/с захтева експоненцијално више погонског средства.",
+    "lab_f_launch_site_glossary": "Земљина ротација је бесплатна предност: допринос = v_eq·cosφ (исток брзина на екватору пута косинус ваше географске ширине φ). Максимално на екватору, нула на половима — зато су космодроми смештени на тропима."
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -22087,6 +22171,13 @@
     "lab_assume_target_moon": "Alvo: a Lua",
     "lab_assume_target_mars": "Alvo: Marte",
     "lab_assume_target_venus": "Alvo: Vênus",
-    "lab_ui_gravity": "Gravidade"
+    "lab_ui_gravity": "Gravidade",
+    "lab_f_newton_second_law_glossary": "Segunda lei de Newton: força (F) é igual a massa (m) vezes aceleração (a). O mesmo empurrão move uma massa mais leve mais rápido — é a lei sobre a qual todos os outros degraus aqui se constroem.",
+    "lab_f_weight_glossary": "Peso é apenas massa (m) puxada pela gravidade (g): W = m·g. Mesma massa, mundo diferente, peso diferente — por isso a gravidade é o campo que você escolhe.",
+    "lab_f_momentum_glossary": "Momento é massa em movimento: p = m·v. Um foguete ganha momento para frente jogando escape para trás — terceira lei de Newton, ação e reação, em números.",
+    "lab_f_thrust_flow_glossary": "Impulso é o momento do escape por segundo: F = ṁ·vₑ (fluxo de massa ṁ vezes velocidade do escape vₑ). Transforma a ideia de momento do cartão anterior na força com que esse foguete realmente empurra.",
+    "lab_f_twr_glossary": "Razão impulso-peso: TWR = T / W = T / (m·g). Compara o impulso (cartão anterior) com o peso (cartão de peso). Acima de 1 decola; abaixo de 1 fica na plataforma.",
+    "lab_f_tsiolkovsky_glossary": "A equação do foguete. Δv é seu orçamento de velocidade — quanto você pode mudar sua velocidade. Cresce com a eficiência do escape (Iₛₚ) e a razão de massa molhada/seca m₀/m_f; o ln significa que cada km/s extra custa exponencialmente mais propelente.",
+    "lab_f_launch_site_glossary": "A rotação da Terra é um impulso gratuito: boost = v_eq·cosφ (a velocidade para leste do equador vezes o cosseno de sua latitude φ). Máximo no equador, zero nos polos — por isso os locais de lançamento ficam nos trópicos."
   }
 }

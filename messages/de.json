@@ -2895,5 +2895,12 @@
   "lab_assume_target_moon": "Ziel: der Mond",
   "lab_assume_target_mars": "Ziel: Mars",
   "lab_assume_target_venus": "Ziel: Venus",
-  "lab_ui_gravity": "Schwerkraft"
+  "lab_ui_gravity": "Schwerkraft",
+  "lab_f_newton_second_law_glossary": "Newtons zweites Gesetz: Kraft (F) gleich Masse (m) mal Beschleunigung (a). Der gleiche Schub bewegt eine leichtere Masse schneller — das ist das Gesetz, auf dem alle anderen Stufen hier aufbauen.",
+  "lab_f_weight_glossary": "Gewicht ist einfach Masse (m) von der Schwerkraft (g) gezogen: W = m·g. Gleiche Masse, andere Welt, anderes Gewicht — deshalb ist Gravitation das Feld, das du wählst.",
+  "lab_f_momentum_glossary": "Impuls ist Masse in Bewegung: p = m·v. Eine Rakete gewinnt Vorwärtsimpuls, indem sie Abgase rückwärts ausstößt — Newtons drittes Gesetz, Aktion und Reaktion, in Zahlen.",
+  "lab_f_thrust_flow_glossary": "Schub ist der Impuls des Abgases pro Sekunde: F = ṁ·vₑ (Massenstrom ṁ mal Abgasgeschwindigkeit vₑ). Es wandelt die Impulsidee der letzten Karte in die Kraft um, mit der diese Rakete tatsächlich drückt.",
+  "lab_f_twr_glossary": "Schub-Gewichts-Verhältnis: TWR = T / W = T / (m·g). Es wiegt den Schub (vorherige Karte) gegen das Gewicht (Gewichtskarte) auf. Über 1 hebt es ab; unter 1 sitzt es auf dem Pad.",
+  "lab_f_tsiolkovsky_glossary": "Die Raketengleichung. Δv ist dein Geschwindigkeitsbudget — wie viel du deine Geschwindigkeit ändern kannst. Es wächst mit der Abgaseffizienz (Iₛₚ) und dem Verhältnis Vollmasse/Trockenmasse m₀/m_f; das ln bedeutet, dass jeder zusätzliche km/s exponentiell mehr Treibstoff kostet.",
+  "lab_f_launch_site_glossary": "Erdrotation ist ein kostenloser Startvorteil: Schub = v_eq·cosφ (die Ostgeschwindigkeit des Äquators mal der Kosinus deiner Breite φ). Maximum am Äquator, null an den Polen — deshalb liegen Startstellen in den Tropen."
 }

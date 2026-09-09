@@ -74,6 +74,10 @@ export interface FormulaDef<I = Record<string, number | string>> {
   citationKey?: string; // internal /science deep-link — `section/slug` (e.g. 'orbits/escape-velocity')
   learnMore?: LearnMore; // external first-principles resource — the card's "Learn more" row
   latex?: string; // LaTeX source for the equation card (server-rendered at build, ADR-034)
+  // "How to read this equation": names each symbol, ties it to the physical law, and links
+  // back to earlier rungs (FB2). Rendered under the symbolic equation, BEFORE the inputs, so
+  // the learner meets the formula as meaning before substituting numbers. i18n-keyed, ×14.
+  glossaryKey?: string;
   compute(inputs: I): FormulaResult;
 }
 

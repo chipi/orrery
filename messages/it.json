@@ -2895,5 +2895,12 @@
   "lab_assume_target_moon": "Obiettivo: la Luna",
   "lab_assume_target_mars": "Obiettivo: Marte",
   "lab_assume_target_venus": "Obiettivo: Venere",
-  "lab_ui_gravity": "Gravità"
+  "lab_ui_gravity": "Gravità",
+  "lab_f_newton_second_law_glossary": "Seconda legge di Newton: la forza (F) è uguale alla massa (m) per l'accelerazione (a). La stessa spinta muove una massa più leggera più velocemente — è la legge su cui si costruisce tutto il resto.",
+  "lab_f_weight_glossary": "Il peso è semplicemente la massa (m) tirata dalla gravità (g): W = m·g. Stessa massa, mondo diverso, peso diverso — ecco perché la gravità è il campo che scegli.",
+  "lab_f_momentum_glossary": "La quantità di moto è la massa in movimento: p = m·v. Un razzo acquista quantità di moto in avanti buttando gas di scarico all'indietro — la terza legge di Newton, azione e reazione, in numeri.",
+  "lab_f_thrust_flow_glossary": "La spinta è la quantità di moto dello scarico al secondo: F = ṁ·vₑ (flusso di massa ṁ per velocità di scarico vₑ). Trasforma l'idea di quantità di moto della carta precedente nella forza con cui questo razzo spinge davvero.",
+  "lab_f_twr_glossary": "Rapporto spinta-peso: TWR = T / W = T / (m·g). Confronta la spinta (carta precedente) con il peso (carta sul peso). Sopra 1 decolla; sotto 1 resta sulla rampa.",
+  "lab_f_tsiolkovsky_glossary": "L'equazione del razzo. Δv è il tuo budget di velocità — quanto puoi cambiare la tua velocità. Cresce con l'efficienza dello scarico (Iₛₚ) e il rapporto massa bagnata/secca m₀/m_f; il ln significa che ogni km/s in più costa esponenzialmente più propellente.",
+  "lab_f_launch_site_glossary": "La rotazione terrestre è una spinta gratuita: boost = v_eq·cosφ (la velocità verso est dell'equatore per il coseno della tua latitudine φ). Massimo all'equatore, zero ai poli — ecco perché i siti di lancio stazionano ai tropici."
 }

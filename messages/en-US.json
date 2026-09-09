@@ -2895,5 +2895,12 @@
   "lab_assume_target_moon": "Target: the Moon",
   "lab_assume_target_mars": "Target: Mars",
   "lab_assume_target_venus": "Target: Venus",
-  "lab_ui_gravity": "Gravity"
+  "lab_ui_gravity": "Gravity",
+  "lab_f_newton_second_law_glossary": "Newton’s second law: force (F) equals mass (m) times acceleration (a). The same push moves a lighter mass faster — this is the law every other rung here builds on.",
+  "lab_f_weight_glossary": "Weight is just mass (m) pulled by gravity (g): W = m·g. Same mass, different world, different weight — which is why gravity is the field you pick.",
+  "lab_f_momentum_glossary": "Momentum is mass in motion: p = m·v. A rocket gains forward momentum by throwing exhaust backward — Newton’s third law, action and reaction, in numbers.",
+  "lab_f_thrust_flow_glossary": "Thrust is the exhaust’s momentum per second: F = ṁ·vₑ (mass flow ṁ times exhaust speed vₑ). It turns the momentum idea from the last card into the force this rocket actually pushes with.",
+  "lab_f_twr_glossary": "Thrust-to-weight ratio: TWR = T / W = T / (m·g). It weighs the thrust (previous card) against the weight (weight card). Above 1 it lifts off; below 1 it sits on the pad.",
+  "lab_f_tsiolkovsky_glossary": "The rocket equation. Δv is your speed budget — how much you can change your velocity. It grows with exhaust efficiency (Iₛₚ) and the wet/dry mass ratio m₀/m_f; the ln means every extra km/s costs exponentially more propellant.",
+  "lab_f_launch_site_glossary": "Earth’s spin is a free head start: boost = v_eq·cosφ (the equator’s eastward speed times the cosine of your latitude φ). Maximum at the equator, zero at the poles — which is why launch sites hug the tropics."
 }

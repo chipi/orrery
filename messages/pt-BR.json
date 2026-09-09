@@ -2895,5 +2895,12 @@
   "lab_assume_target_moon": "Alvo: a Lua",
   "lab_assume_target_mars": "Alvo: Marte",
   "lab_assume_target_venus": "Alvo: Vênus",
-  "lab_ui_gravity": "Gravidade"
+  "lab_ui_gravity": "Gravidade",
+  "lab_f_newton_second_law_glossary": "Segunda lei de Newton: força (F) é igual a massa (m) vezes aceleração (a). O mesmo empurrão move uma massa mais leve mais rápido — é a lei sobre a qual todos os outros degraus aqui se constroem.",
+  "lab_f_weight_glossary": "Peso é apenas massa (m) puxada pela gravidade (g): W = m·g. Mesma massa, mundo diferente, peso diferente — por isso a gravidade é o campo que você escolhe.",
+  "lab_f_momentum_glossary": "Momento é massa em movimento: p = m·v. Um foguete ganha momento para frente jogando escape para trás — terceira lei de Newton, ação e reação, em números.",
+  "lab_f_thrust_flow_glossary": "Impulso é o momento do escape por segundo: F = ṁ·vₑ (fluxo de massa ṁ vezes velocidade do escape vₑ). Transforma a ideia de momento do cartão anterior na força com que esse foguete realmente empurra.",
+  "lab_f_twr_glossary": "Razão impulso-peso: TWR = T / W = T / (m·g). Compara o impulso (cartão anterior) com o peso (cartão de peso). Acima de 1 decola; abaixo de 1 fica na plataforma.",
+  "lab_f_tsiolkovsky_glossary": "A equação do foguete. Δv é seu orçamento de velocidade — quanto você pode mudar sua velocidade. Cresce com a eficiência do escape (Iₛₚ) e a razão de massa molhada/seca m₀/m_f; o ln significa que cada km/s extra custa exponencialmente mais propelente.",
+  "lab_f_launch_site_glossary": "A rotação da Terra é um impulso gratuito: boost = v_eq·cosφ (a velocidade para leste do equador vezes o cosseno de sua latitude φ). Máximo no equador, zero nos polos — por isso os locais de lançamento ficam nos trópicos."
 }

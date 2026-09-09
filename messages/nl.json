@@ -2895,5 +2895,12 @@
   "lab_assume_target_moon": "Doel: de Maan",
   "lab_assume_target_mars": "Doel: Mars",
   "lab_assume_target_venus": "Doel: Venus",
-  "lab_ui_gravity": "Zwaartekracht"
+  "lab_ui_gravity": "Zwaartekracht",
+  "lab_f_newton_second_law_glossary": "Tweede wet van Newton: kracht (F) is massa (m) maal versnelling (a). Dezelfde duw verplaatst een lichter gewicht sneller — dit is de wet waarop alle andere treden hier bouwen.",
+  "lab_f_weight_glossary": "Gewicht is slechts massa (m) aangetrokken door zwaartekracht (g): W = m·g. Dezelfde massa, ander wereld, ander gewicht — daarom is zwaartekracht het veld dat je kiest.",
+  "lab_f_momentum_glossary": "Impuls is massa in beweging: p = m·v. Een raket krijgt voorwaartse impuls door uitlaatgassen naar achteren af te stoten — de derde wet van Newton, actie en reactie, in getallen.",
+  "lab_f_thrust_flow_glossary": "Stuwkracht is de impuls van de uitlaatgassen per seconde: F = ṁ·vₑ (massastroom ṁ maal uitlaatsnelheid vₑ). Het zet het impulidee van de vorige kaart om in de kracht waarmee deze raket werkelijk duwt.",
+  "lab_f_twr_glossary": "Stuwkracht-gewichtverhouding: TWR = T / W = T / (m·g). Het weegt de stuwkracht (vorige kaart) tegen het gewicht (gewichtkaart). Boven 1 stijgt het op; onder 1 blijft het op de startplaats.",
+  "lab_f_tsiolkovsky_glossary": "De raketvergelyking. Δv is je snelheidsbudget — hoeveel je je snelheid kunt veranderen. Het groeit met uitlaatefficiëntie (Iₛₚ) en de nat/droge massaverhouding m₀/m_f; de ln betekent dat elke extra km/s exponentieel meer brandstof kost.",
+  "lab_f_launch_site_glossary": "Aardse rotatie is een gratis voorsprong: boost = v_eq·cosφ (de oostwaartse snelheid van de evenaar maal de cosinus van je breedtegraad φ). Maximum op de evenaar, nul op de polen — daarom liggen startplaatsen in de tropen."
 }

@@ -146,6 +146,12 @@
     </div>
   {/if}
 
+  <!-- Glossary (FB2): read the equation as meaning — each symbol, the physical law, the
+       link to earlier rungs — before substituting numbers. -->
+  {#if formula.glossaryKey}
+    <p class="card__glossary">{t(formula.glossaryKey)}</p>
+  {/if}
+
   <!-- Parameter controls -->
   <section class="card__controls" aria-label={t('lab.ui.aria-parameters')}>
     {#each formula.inputs.filter((f) => !f.injected) as field (field.key)}
@@ -432,6 +438,16 @@
     color: rgba(255, 255, 255, 0.95);
     font-size: 1.35rem;
     text-align: center;
+  }
+
+  /* Glossary (FB2) — "read the equation" prose under the formula. */
+  .card__glossary {
+    margin: 0 0 0.9rem;
+    font-size: 0.82rem;
+    line-height: 1.55;
+    color: rgba(232, 232, 232, 0.72);
+    border-left: 2px solid rgba(78, 205, 196, 0.3);
+    padding-left: 0.7rem;
   }
 
   /* ─── Controls ───────────────────────────────────────────────────────── */

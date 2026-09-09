@@ -2895,5 +2895,12 @@
   "lab_assume_target_moon": "Cible : la Lune",
   "lab_assume_target_mars": "Cible : Mars",
   "lab_assume_target_venus": "Cible : Vénus",
-  "lab_ui_gravity": "Gravité"
+  "lab_ui_gravity": "Gravité",
+  "lab_f_newton_second_law_glossary": "Deuxième loi de Newton : la force (F) égale la masse (m) fois l'accélération (a). La même poussée accélère une masse plus légère davantage — c'est la loi sur laquelle s'appuient tous les autres échelons ici.",
+  "lab_f_weight_glossary": "Le poids est simplement la masse (m) attirée par la gravité (g) : W = m·g. Même masse, monde différent, poids différent — c'est pourquoi la gravité est le champ que vous choisissez.",
+  "lab_f_momentum_glossary": "La quantité de mouvement est la masse en mouvement : p = m·v. Une fusée gagne une quantité de mouvement vers l'avant en éjectant l'échappement vers l'arrière — la troisième loi de Newton, action et réaction, en nombres.",
+  "lab_f_thrust_flow_glossary": "La poussée est la quantité de mouvement de l'échappement par seconde : F = ṁ·vₑ (débit massique ṁ fois vitesse d'échappement vₑ). Elle transforme l'idée de quantité de mouvement de la carte précédente en la force que cette fusée exerce réellement.",
+  "lab_f_twr_glossary": "Rapport poussée-poids : TWR = T / W = T / (m·g). Il compare la poussée (carte précédente) au poids (carte poids). Au-dessus de 1 elle décolle ; en dessous de 1 elle reste sur le pas de tir.",
+  "lab_f_tsiolkovsky_glossary": "L'équation de Tsiolkovski. Δv est votre budget de vitesse — le changement de vélocité que vous pouvez effectuer. Il augmente avec l'efficacité d'échappement (Iₛₚ) et le rapport de masse mouillée/sèche m₀/m_f ; le ln signifie que chaque km/s supplémentaire coûte exponentiellement plus de carburant.",
+  "lab_f_launch_site_glossary": "La rotation terrestre est un coup de pouce gratuit : boost = v_eq·cosφ (la vitesse vers l'est de l'équateur fois le cosinus de votre latitude φ). Maximum à l'équateur, zéro aux pôles — c'est pourquoi les pas de tir se concentrent aux tropiques."
 }

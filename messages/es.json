@@ -2895,5 +2895,12 @@
   "lab_assume_target_moon": "Objetivo: la Luna",
   "lab_assume_target_mars": "Objetivo: Marte",
   "lab_assume_target_venus": "Objetivo: Venus",
-  "lab_ui_gravity": "Gravedad"
+  "lab_ui_gravity": "Gravedad",
+  "lab_f_newton_second_law_glossary": "Segunda ley de Newton: la fuerza (F) es igual a la masa (m) por la aceleración (a). El mismo empuje mueve una masa más ligera más rápido — esta es la ley en la que se construyen todos los demás escalones.",
+  "lab_f_weight_glossary": "El peso es solo la masa (m) atraída por la gravedad (g): W = m·g. La misma masa, mundo diferente, peso diferente — por eso la gravedad es el campo que eliges.",
+  "lab_f_momentum_glossary": "El momento es la masa en movimiento: p = m·v. Un cohete gana momento hacia adelante lanzando escape hacia atrás — la tercera ley de Newton, acción y reacción, en números.",
+  "lab_f_thrust_flow_glossary": "El empuje es el momento del escape por segundo: F = ṁ·vₑ (flujo de masa ṁ por velocidad de escape vₑ). Convierte la idea del momento de la tarjeta anterior en la fuerza con la que este cohete realmente empuja.",
+  "lab_f_twr_glossary": "Relación empuje-peso: TWR = T / W = T / (m·g). Pesa el empuje (tarjeta anterior) contra el peso (tarjeta de peso). Por encima de 1 despega; por debajo de 1 se queda en la plataforma.",
+  "lab_f_tsiolkovsky_glossary": "La ecuación del cohete. Δv es tu presupuesto de velocidad — cuánto puedes cambiar tu velocidad. Crece con la eficiencia del escape (Iₛₚ) y la relación de masa húmeda/seca m₀/m_f; el ln significa que cada km/s extra cuesta propelente exponencialmente más.",
+  "lab_f_launch_site_glossary": "La rotación terrestre es una ventaja gratuita: impulso = v_eq·cosφ (la velocidad hacia el este del ecuador por el coseno de tu latitud φ). Máximo en el ecuador, cero en los polos — por eso los sitios de lanzamiento están en los trópicos."
 }

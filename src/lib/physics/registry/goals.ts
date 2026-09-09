@@ -39,6 +39,7 @@ export const launchARocket: Goal = {
     { formulaId: 'newton-second-law', narrativeKey: 'lab.goal.lar.force' },
     { formulaId: 'weight', narrativeKey: 'lab.goal.lar.weight' },
     { formulaId: 'momentum', narrativeKey: 'lab.goal.lar.momentum' },
+    { formulaId: 'thrust-from-flow', narrativeKey: 'lab.goal.lar.thrust' },
     { formulaId: 'twr', narrativeKey: 'lab.goal.lar.twr' },
     { formulaId: 'tsiolkovsky', narrativeKey: 'lab.goal.lar.tsiolkovsky' },
     { formulaId: 'launch-site', narrativeKey: 'lab.goal.lar.launch-site' },
@@ -46,13 +47,14 @@ export const launchARocket: Goal = {
     {
       formulaId: 'reach-orbit-verdict',
       narrativeKey: 'lab.goal.lar.verdict',
+      challengeKey: 'lab.goal.lar.challenge',
       // The payoff wires the rocket's Δv (Tsiolkovsky), the launch-site head-start,
       // AND the DERIVED Δv-to-orbit (no magic 9.4) — a better site buys margin, and
       // switching worlds updates the target honestly.
       wiresFrom: [
-        { fromStep: 4, output: 'deltaV', toInput: 'capacityKms' },
-        { fromStep: 5, output: 'boost', toInput: 'boostKms' },
-        { fromStep: 6, output: 'required', toInput: 'requiredKms' },
+        { fromStep: 5, output: 'deltaV', toInput: 'capacityKms' },
+        { fromStep: 6, output: 'boost', toInput: 'boostKms' },
+        { fromStep: 7, output: 'required', toInput: 'requiredKms' },
       ],
     },
   ],
@@ -90,7 +92,11 @@ export const scaleARocket: Goal = {
   tier: 1,
   prereqs: ['launch-a-rocket'],
   path: [
-    { formulaId: 'rocket-sizing', narrativeKey: 'lab.goal.sar.size' },
+    {
+      formulaId: 'rocket-sizing',
+      narrativeKey: 'lab.goal.sar.size',
+      challengeKey: 'lab.goal.sar.challenge',
+    },
     {
       formulaId: 'liftoff-thrust',
       narrativeKey: 'lab.goal.sar.thrust',
@@ -276,7 +282,8 @@ export const reachTheMoon: Goal = {
     { formulaId: 'vis-viva', narrativeKey: 'lab.goal.rtm.visviva' },
     { formulaId: 'hohmann-transfer', narrativeKey: 'lab.goal.rtm.hohmann' },
     // The trans-lunar transfer in the Earth-centred frame — real TLI + LOI from the kernel's
-    // geocentric Lambert, and the lead you need because the Moon moves ~59° during the coast.
+    // geocentric Lambert, and the lead you need because the Moon moves ~62° during the coast
+    // (kernel: moonTravelDeg ≈ 62.5° for the default ~4.7-day TOF — matches the lesson prose).
     { formulaId: 'cislunar-transfer', narrativeKey: 'lab.goal.rtm.cislunar' },
     {
       formulaId: 'delta-v-margin',
@@ -429,6 +436,7 @@ export const landOnMars: Goal = {
     {
       formulaId: 'soft-landing-check',
       narrativeKey: 'lab.goal.lom.verdict',
+      challengeKey: 'lab.goal.lmars.challenge',
       wiresFrom: [{ fromStep: 1, output: 'vTerminal', toInput: 'terminalMs' }],
     },
     {
@@ -800,6 +808,7 @@ export const touchSmallWorld: Goal = {
     {
       formulaId: 'micro-g-surface',
       narrativeKey: 'lab.goal.tsw.microg',
+      challengeKey: 'lab.goal.tsw.challenge',
       presetInputs: { body: 'comet_67p' },
     },
     {
@@ -880,6 +889,7 @@ export const leaveTheSolarSystem: Goal = {
     {
       formulaId: 'escape-verdict',
       narrativeKey: 'lab.goal.lss.verdict',
+      challengeKey: 'lab.goal.lss.challenge',
       // Required is the Oberth-discounted from-LEO Δv (~8.7); a strong stage (~8.5) lands
       // on the line, and the flyby boost supplies margin + the speed to tour. Honest frame.
       wiresFrom: [

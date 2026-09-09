@@ -68,10 +68,23 @@
   // Dotted-key resolver — shared module since F (#535) so the OAuth callback
   // page resolves through the SAME map (see src/lib/lab/t.ts).
 
-  function goalLabel(id: string): string {
-    const g = GOALS.get(id);
-    return g ? t(g.titleKey) : id;
-  }
+  // Grouped, tier-ordered goal picker (W1 · Fable-5): surface the curriculum's
+  // shape instead of a flat insertion-order list. Foundations first so "Move a
+  // mass" (the from-zero start) leads; each family sorted by tier.
+  const FAMILY_ORDER = ['cross-cutting', 'spaceflight', 'systems', 'observe'] as const;
+  const FAMILY_LABEL: Record<string, string> = {
+    'cross-cutting': 'lab.ui.family.cross-cutting',
+    spaceflight: 'lab.ui.family.spaceflight',
+    systems: 'lab.ui.family.systems',
+    observe: 'lab.ui.family.observe',
+  };
+  const goalGroups = $derived(
+    FAMILY_ORDER.map((family) => ({
+      family,
+      labelKey: FAMILY_LABEL[family],
+      goals: [...GOALS.values()].filter((g) => g.family === family).sort((a, b) => a.tier - b.tier),
+    })).filter((grp) => grp.goals.length > 0),
+  );
 </script>
 
 <svelte:head>
@@ -97,8 +110,12 @@
         bind:value={selectedGoalId}
         aria-label={t('lab.ui.aria-select-goal')}
       >
-        {#each [...GOALS.keys()] as id (id)}
-          <option value={id}>{goalLabel(id)}</option>
+        {#each goalGroups as grp (grp.family)}
+          <optgroup label={t(grp.labelKey)}>
+            {#each grp.goals as g (g.id)}
+              <option value={g.id}>{t(g.titleKey)}</option>
+            {/each}
+          </optgroup>
         {/each}
       </select>
       <div class="lab__views" role="tablist" aria-label={t('lab.ui.view-switch-aria')}>

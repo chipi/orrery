@@ -385,6 +385,12 @@ export interface ConnectionLink {
 export interface GoalStep {
   formulaId: string;
   narrativeKey: string;
+  /**
+   * Optional challenge prompt (P2) — an invitation to manipulate this rung toward its
+   * edge ("find the payload where this rocket just fails"). Rendered as a highlighted
+   * callout; used on verdict / fail-honest rungs where a target state already exists.
+   */
+  challengeKey?: string;
   wiresFrom?: { fromStep: number; output: string; toInput: string }[];
   /**
    * Seed values for THIS rung's inputs, over the formula defaults (M3+). Lets a goal

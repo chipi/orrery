@@ -272,6 +272,15 @@
     </div>
   {/if}
 
+  <!-- Honesty (W2): what the model leaves out. Always shown when the result carries
+       assumptions — independent of the figure, which only surfaced a subset. -->
+  {#if !blocked && result?.status.ok && result.assumptions?.length}
+    <p class="card__assumptions">
+      <span class="card__assumptions-label">{t('lab.ui.assumptions-label')}</span>
+      {result.assumptions.map((k) => t(k)).join(' · ')}
+    </p>
+  {/if}
+
   <!-- Learn more — one row linking OUT: our own /science encyclopedia article
        (citationKey) and a curated external first-principles resource. -->
   {#if formula.citationKey || formula.learnMore}
@@ -344,6 +353,21 @@
     margin: 0;
     line-height: 1;
     flex: 1;
+  }
+
+  /* ─── Honesty: assumptions row (W2) ─────────────────────────────────── */
+  .card__assumptions {
+    margin: 0.2rem 0 0;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.42);
+  }
+
+  .card__assumptions-label {
+    color: rgba(255, 200, 80, 0.6); /* gold kicker — a stated limit, not a result */
+    letter-spacing: 0.5px;
+    margin-right: 0.35rem;
   }
 
   /* ─── Learn more (footer link row) ──────────────────────────────────── */

@@ -31,6 +31,7 @@ export interface LabCell {
   wires: CellWire[];
   selection?: Record<string, number | string>;
   narrativeKey?: string;
+  challengeKey?: string; // P2 — optional "manipulate toward the edge" prompt on verdict rungs
   removable: boolean;
   note?: string; // free text from a loaded .orrlab file — survives load→save
   position?: { x: number; y: number }; // canvas layout (S5); undefined until placed
@@ -76,6 +77,7 @@ function seed(goal: Goal): LabCell[] {
         toInput: w.toInput,
       })),
       narrativeKey: step.narrativeKey,
+      challengeKey: step.challengeKey,
       removable: false,
     };
   });

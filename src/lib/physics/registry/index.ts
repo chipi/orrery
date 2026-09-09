@@ -304,6 +304,52 @@ export const momentumFormula: FormulaDef<{ massKg: number; velMs: number }> = {
   },
 };
 
+/**
+ * Thrust from exhaust flow (W4 · Fable-5): F = ṁ·v_e — Newton's third law in numbers.
+ * Closes the momentum→thrust link so TWR's thrust and Tsiolkovsky's v_e stop being
+ * asserted in prose. Momentum thrust only (ignores the nozzle pressure term). Mechanics
+ * rung between momentum and TWR.
+ */
+export const thrustFromFlowFormula: FormulaDef<{ massFlowKgS: number; exhaustVelMs: number }> = {
+  id: 'thrust-from-flow',
+  titleKey: 'lab.f.thrust-flow.title',
+  citationKey: 'propulsion/thrust-and-twr',
+  learnMore: { url: 'https://www.grc.nasa.gov/www/k-12/rocket/rktthsum.html', source: 'nasa-glenn' },
+  domain: 'propulsion',
+  tier: 2,
+  prereqs: ['momentum'],
+  latex: 'F = \\dot{m}\\,v_e',
+  inputs: [
+    {
+      key: 'massFlowKgS',
+      labelKey: 'lab.f.thrust-flow.mdot',
+      units: 'kg/s',
+      kind: 'number',
+      default: 250,
+      min: 0.001,
+      max: 1e5,
+    },
+    {
+      key: 'exhaustVelMs',
+      labelKey: 'lab.f.thrust-flow.ve',
+      units: 'm/s',
+      kind: 'number',
+      default: 3000,
+      min: 1,
+      max: 1e6,
+    },
+  ],
+  outputs: [{ key: 'thrustN', labelKey: 'lab.f.thrust-flow.thrust', units: 'N' }],
+  compute: ({ massFlowKgS, exhaustVelMs }) => {
+    const F = massFlowKgS * exhaustVelMs;
+    return {
+      values: { thrustN: { value: F, units: 'N' } },
+      status: { ok: true },
+      assumptions: ['lab.assume.momentum-thrust-only', 'lab.assume.steady-flow'],
+    } satisfies FormulaResult;
+  },
+};
+
 /** Thrust-to-weight ratio. TWR < 1 → fail-honest (won't lift). Mechanics rung 3. */
 export const twrFormula: FormulaDef<{ thrustN: number; massKg: number; body: string }> = {
   id: 'twr',
@@ -5644,6 +5690,7 @@ export const REGISTRY: Registry = new Map<string, FormulaDef>([
   [newtonSecondLaw.id, newtonSecondLaw],
   [weight.id, weight],
   [momentumFormula.id, momentumFormula],
+  [thrustFromFlowFormula.id, thrustFromFlowFormula],
   [twrFormula.id, twrFormula],
   [freeFallFormula.id, freeFallFormula],
   [projectileFormula.id, projectileFormula],

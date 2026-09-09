@@ -19,6 +19,7 @@ export type Unit =
   | 'day'
   | 'yr' // time
   | 'kg'
+  | 'kg/s' // mass flow (thrust from exhaust flow, W4)
   | 'N'
   | 'kg*m/s'
   | 'N*s' // mass, force, momentum, impulse

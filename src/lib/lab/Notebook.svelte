@@ -20,6 +20,7 @@
   import { base } from '$app/paths';
   import type { Goal, FormulaResult } from '$lib/physics/spec';
   import { REGISTRY, defaultInputs } from '$lib/physics/registry';
+  import { GOALS } from '$lib/physics/registry/goals';
   import { stationTleBlock } from '$lib/physics/satellite/stations';
   import { resolveStationTleBlock } from '$lib/satellite';
   import { recomputeNotebook, type CellComputed } from './notebook';
@@ -424,6 +425,12 @@
         <h2 class="nb__goal-title">{restored ? t('lab.ui.your-notebook') : t(goal.titleKey)}</h2>
         {#if !restored}
           <p class="nb__goal-desc">{t(goal.descriptionKey)}</p>
+          {#if goal.prereqs.length}
+            <p class="nb__goal-prereq">
+              <span class="nb__goal-prereq-label">{t('lab.ui.builds-on')}</span>
+              {goal.prereqs.map((id) => t(GOALS.get(id)?.titleKey ?? id)).join(' · ')}
+            </p>
+          {/if}
         {/if}
       </div>
       <div class="nb__tools">
@@ -511,6 +518,12 @@
               <p class="nb__narrative">{t(cell.narrativeKey)}</p>
             {/if}
             {@render cardCell(cell, i)}
+            {#if cell.challengeKey}
+              <p class="nb__challenge">
+                <span class="nb__challenge-label">{t('lab.ui.challenge')}</span>
+                {t(cell.challengeKey)}
+              </p>
+            {/if}
           </div>
         </li>
       {/each}
@@ -792,6 +805,22 @@
     max-width: 60ch;
   }
 
+  /* Prerequisite trail (W1) — what this goal builds on. */
+  .nb__goal-prereq {
+    margin: 0.35rem 0 0;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.3px;
+    color: rgba(232, 232, 232, 0.5);
+  }
+
+  .nb__goal-prereq-label {
+    color: rgba(78, 205, 196, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-right: 0.35rem;
+  }
+
   /* ─── Step column ─────────────────────────────────────────────────────── */
   .nb__steps {
     list-style: none;
@@ -853,6 +882,27 @@
     line-height: 1.6;
     color: rgba(232, 232, 232, 0.7);
     margin: 0;
+  }
+
+  /* Challenge callout (P2) — a gold invitation to push the rung to its edge. */
+  .nb__challenge {
+    margin: 0.6rem 0 0;
+    padding: 0.6rem 0.8rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    line-height: 1.55;
+    color: rgba(255, 232, 190, 0.92);
+    background: rgba(255, 200, 80, 0.07);
+    border-left: 2px solid rgba(255, 200, 80, 0.55);
+    border-radius: 0 3px 3px 0;
+  }
+
+  .nb__challenge-label {
+    color: #ffc850;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.6rem;
+    margin-right: 0.4rem;
   }
 
   .nb__card {

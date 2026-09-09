@@ -1,0 +1,86 @@
+/**
+ * Conversational-scenario contract (slice #541). The kernel propagates wired values
+ * down the ladder — the model never relays a computed number — and the model-visible
+ * summary strips figures (token budget). These are the invariants the epic hangs on.
+ */
+import { describe, it, expect } from 'vitest';
+import { REGISTRY } from '$lib/physics/registry';
+import {
+  parseScenarioArgs,
+  summariseScenario,
+  MAX_SCENARIO_CELLS,
+  SCENARIO_VERSION,
+} from './scenario';
+
+describe('parseScenarioArgs · guards (REJECT posture)', () => {
+  it('rejects a non-array, empty, or over-long cells list', () => {
+    expect(() => parseScenarioArgs({})).toThrow();
+    expect(() => parseScenarioArgs({ cells: [] })).toThrow();
+    expect(() =>
+      parseScenarioArgs({ cells: Array.from({ length: MAX_SCENARIO_CELLS + 1 }, () => ({ formulaId: 'weight', inputs: {} })) }),
+    ).toThrow(/max/);
+  });
+
+  it('rejects a cell missing a string formulaId', () => {
+    expect(() => parseScenarioArgs({ cells: [{ inputs: {} }] })).toThrow(/formulaId/);
+  });
+
+  it('parses a valid ladder into a versioned scenario, defaulting inputs/wires', () => {
+    const s = parseScenarioArgs({ cells: [{ formulaId: 'weight', inputs: { massKg: 100 } }] });
+    expect(s.v).toBe(SCENARIO_VERSION);
+    expect(s.cells).toHaveLength(1);
+    expect(s.cells[0]).toEqual({ formulaId: 'weight', inputs: { massKg: 100 }, wires: undefined });
+  });
+});
+
+describe('summariseScenario · the kernel owns the numbers', () => {
+  it('propagates a wired output down the ladder (the LLM never relays it)', () => {
+    // thrust-from-flow.thrustN (250 kg/s · 3000 m/s = 750 kN) wired into twr.thrustN,
+    // whose OWN default is 1.5e7 — so a propagated 750000 proves the wire, not the default.
+    const scenario = parseScenarioArgs({
+      cells: [
+        { formulaId: 'thrust-from-flow', inputs: { massFlowKgS: 250, exhaustVelMs: 3000 } },
+        {
+          formulaId: 'twr',
+          inputs: { massKg: 50000, body: 'earth' },
+          wires: [{ fromIndex: 0, output: 'thrustN', toInput: 'thrustN' }],
+        },
+      ],
+    });
+    const steps = summariseScenario(scenario, REGISTRY);
+    expect(steps[0].status).toBe('ok');
+    expect(steps[0].values?.thrustN.value).toBeCloseTo(750000);
+    // The wire overrode twr's default thrustN with step 0's computed value.
+    expect(steps[1].status).toBe('ok');
+    expect(steps[1].resolvedInputs?.thrustN).toBeCloseTo(750000);
+  });
+
+  it('strips the figure from the model-visible summary (token budget)', () => {
+    // tsiolkovsky produces a figure; the summary must carry values but no figure.
+    const scenario = parseScenarioArgs({
+      cells: [{ formulaId: 'tsiolkovsky', inputs: { ispS: 350, m0Kg: 12, mfKg: 4 } }],
+    });
+    const steps = summariseScenario(scenario, REGISTRY);
+    expect(steps[0].values?.deltaV).toBeDefined();
+    expect(steps[0]).not.toHaveProperty('figure');
+    expect(JSON.stringify(steps[0])).not.toContain('figure');
+  });
+
+  it('reports a blocked step honestly instead of faking a number', () => {
+    // A wire naming an output the source does not declare → invalid-wire, no compute.
+    const scenario = parseScenarioArgs({
+      cells: [
+        { formulaId: 'weight', inputs: { massKg: 100 } },
+        {
+          formulaId: 'twr',
+          inputs: { massKg: 100, body: 'earth' },
+          wires: [{ fromIndex: 0, output: 'notAnOutput', toInput: 'thrustN' }],
+        },
+      ],
+    });
+    const steps = summariseScenario(scenario, REGISTRY);
+    expect(steps[1].status).toBe('invalid-wire');
+    expect(steps[1].reason).toMatch(/notAnOutput/);
+    expect(steps[1].values).toBeUndefined();
+  });
+});

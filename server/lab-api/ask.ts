@@ -19,6 +19,13 @@ import { randomBytes } from 'node:crypto';
 import { REGISTRY } from '$lib/physics/registry';
 import { deriveTools, callTool, type DerivedTool } from '../mcp/registry-tools';
 import { makeT, resolveLocale } from '../mcp/i18n';
+import {
+  composeScenarioTool,
+  parseScenarioArgs,
+  summariseScenario,
+  COMPOSE_SCENARIO_TOOL,
+  type AskScenario,
+} from './scenario';
 
 // Tool-calling rounds before the guaranteed final-synthesis pass (#464 follow-up).
 // A rich question ("how do I launch a rocket?") legitimately needs several
@@ -54,6 +61,9 @@ export interface AskToolCall {
 export interface AskResponse {
   answer: string;
   toolCalls: AskToolCall[];
+  /** The composed formula ladder (slice #541). The client recomputes + renders it;
+   *  the kernel owns every number. Present once the model calls compose_scenario. */
+  scenario?: AskScenario;
   model: string;
   requestId: string;
 }
@@ -96,10 +106,19 @@ async function chat(
         // (no more tool calls) — guarantees a narrated answer from the results.
         ...(withTools
           ? {
-              tools: allTools().map((t) => ({
-                type: 'function',
-                function: { name: t.name, description: t.description, parameters: t.inputSchema },
-              })),
+              tools: [
+                // compose_scenario (slice #541) — the ladder-builder, alongside the
+                // per-formula tools. Its schema is richer than a DerivedTool's scalars.
+                composeScenarioTool(),
+                ...allTools().map((t) => ({
+                  type: 'function' as const,
+                  function: {
+                    name: t.name,
+                    description: t.description,
+                    parameters: t.inputSchema,
+                  },
+                })),
+              ],
             }
           : {}),
       }),
@@ -130,6 +149,13 @@ function systemPrompt(locale: string): string {
     'possible (you may call multiple tools in one turn); reserve your final turn ' +
     'for writing the answer. Cite which tool produced each number. If no tool ' +
     'fits, say so plainly and answer conceptually without inventing numbers. ' +
+    // Slice #541: extraction + the scenario ladder.
+    'ALWAYS pull the quantities the user stated (e.g. "100 kg", "sub-orbit") and ' +
+    'place them into the tool inputs — never leave a kernel default when the user ' +
+    'gave a number. When the user wants to WORK A SCENARIO ("how do I launch a 100 kg ' +
+    'payload?"), call compose_scenario ONCE with an ordered formula ladder: seed inputs ' +
+    'only with the user\'s stated values, and WIRE an earlier step\'s output into a later ' +
+    "step's input rather than copying any computed number yourself. " +
     `Respond in locale "${locale}".`
   );
 }
@@ -146,6 +172,9 @@ export async function ask(
     { role: 'user', content: question },
   ];
   const toolCalls: AskToolCall[] = [];
+  // The latest composed ladder (slice #541). The client recomputes + renders it;
+  // here we only recompute a figure-stripped summary for the model to narrate from.
+  let scenario: AskScenario | undefined;
 
   for (let round = 0; round < MAX_TOOL_ROUNDS; round++) {
     const msg = await chat(deps, messages);
@@ -154,6 +183,7 @@ export async function ask(
       return {
         answer: msg.content ?? '',
         toolCalls,
+        scenario,
         model: deps.model,
         requestId: randomBytes(8).toString('hex'),
       };
@@ -164,8 +194,15 @@ export async function ask(
       let result: unknown;
       try {
         args = JSON.parse(call.function.arguments || '{}') as Record<string, unknown>;
-        const { result: r, localized } = callTool(REGISTRY, call.function.name, args, t);
-        result = { ...r, localized };
+        if (call.function.name === COMPOSE_SCENARIO_TOOL) {
+          // The kernel recomputes the whole ladder (wires propagate the user's numbers);
+          // the model gets a compact, figure-stripped summary to narrate from.
+          scenario = parseScenarioArgs(args);
+          result = { steps: summariseScenario(scenario, REGISTRY) };
+        } else {
+          const { result: r, localized } = callTool(REGISTRY, call.function.name, args, t);
+          result = { ...r, localized };
+        }
         resultText = JSON.stringify(result);
       } catch (e) {
         // Rejections (validate-REJECT, unknown tool, bad JSON) go BACK to the
@@ -192,7 +229,13 @@ export async function ask(
     const final = await chat(deps, messages, false);
     const answer = (final.content ?? '').trim();
     if (answer) {
-      return { answer, toolCalls, model: deps.model, requestId: randomBytes(8).toString('hex') };
+      return {
+        answer,
+        toolCalls,
+        scenario,
+        model: deps.model,
+        requestId: randomBytes(8).toString('hex'),
+      };
     }
   } catch {
     // fall through to the honest budget message
@@ -200,6 +243,7 @@ export async function ask(
   return {
     answer: t('lab.ask.budget-exhausted'),
     toolCalls,
+    scenario,
     model: deps.model,
     requestId: randomBytes(8).toString('hex'),
   };

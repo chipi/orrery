@@ -163,4 +163,44 @@ describe('ask', () => {
     expect(out.toolCalls.map((c) => c.tool)).toEqual(['interplanetary-transfer', 'launch-window']);
     expect(out.answer).toBe('Both formulas, one round.');
   });
+
+  it('compose_scenario flows through to response.scenario (slice #541)', async () => {
+    script = [
+      {
+        role: 'assistant',
+        content: null,
+        tool_calls: [
+          {
+            id: 'sc',
+            function: {
+              name: 'compose_scenario',
+              arguments: JSON.stringify({
+                cells: [
+                  { formulaId: 'thrust-from-flow', inputs: { massFlowKgS: 250, exhaustVelMs: 3000 } },
+                  {
+                    formulaId: 'twr',
+                    inputs: { massKg: 50000, body: 'earth' },
+                    wires: [{ fromIndex: 0, output: 'thrustN', toInput: 'thrustN' }],
+                  },
+                ],
+              }),
+            },
+          },
+        ],
+      },
+      { role: 'assistant', content: 'Here is your rocket scenario.' },
+    ];
+    received = [];
+    const out = await ask('launch a 100 kg payload', 'en-US', deps);
+    // The composed ladder rides back on the response for the client to render.
+    expect(out.scenario?.cells).toHaveLength(2);
+    expect(out.scenario?.cells[1].wires?.[0]).toEqual({
+      fromIndex: 0,
+      output: 'thrustN',
+      toInput: 'thrustN',
+    });
+    expect(out.answer).toBe('Here is your rocket scenario.');
+    // The compose_scenario tool was offered to the model alongside the per-formula tools.
+    expect(received[0].toolNames).toContain('compose_scenario');
+  });
 });

@@ -35,9 +35,11 @@ export interface ScenarioPreset {
   assumptionKey: string;
 }
 export const SCENARIO_PRESETS: Record<string, ScenarioPreset> = {
+  'sub-orbital': { inputs: { altitudeKm: 100 }, assumptionKey: 'lab.assume.target-suborbital' },
   'low-earth-orbit': { inputs: { altitudeKm: 200 }, assumptionKey: 'lab.assume.target-leo' },
   geostationary: { inputs: { altitudeKm: 35786 }, assumptionKey: 'lab.assume.target-geo' },
   moon: { inputs: { body: 'moon' }, assumptionKey: 'lab.assume.target-moon' },
+  tli: { inputs: { body: 'moon', altitudeKm: 200 }, assumptionKey: 'lab.assume.target-tli' },
   mars: { inputs: { body: 'mars' }, assumptionKey: 'lab.assume.target-mars' },
   venus: { inputs: { body: 'venus' }, assumptionKey: 'lab.assume.target-venus' },
 };

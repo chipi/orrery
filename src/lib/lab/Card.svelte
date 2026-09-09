@@ -86,11 +86,12 @@
     onInput(field.key, (e.currentTarget as HTMLInputElement).value);
   }
 
-  // Proper-name label for an external learn-more source — never translated.
-  // FB5: a "world" input is really a gravity choice — show the selected body's g in the
-  // label ("Gravity [9.81 m/s²]"); the world select below is the choice's explanation.
+  // FB5: a weight-style "world" input is really a gravity choice — show the selected
+  // body's g in the label ("Gravity [9.81 m/s²]"). Opt-in via FieldSpec.gravityInLabel;
+  // magnitude-aware so a micro-g body reads 2.250e-4, never a rounded-to-zero 0.00.
   function gravityFor(bodyId: number | string | undefined): string {
-    return bodyGravityMs2(String(bodyId ?? 'earth')).toFixed(2);
+    const g = bodyGravityMs2(String(bodyId ?? 'earth'));
+    return g >= 0.01 ? g.toFixed(2) : g.toExponential(2);
   }
 
   const SOURCE_LABEL: Record<string, string> = {
@@ -157,7 +158,7 @@
     {#each formula.inputs.filter((f) => !f.injected) as field (field.key)}
       <div class="card__field" class:card__field--wired={wired.has(field.key)}>
         <label class="card__label" for="field-{formula.id}-{field.key}">
-          {#if field.kind === 'body'}
+          {#if field.gravityInLabel}
             {t('lab.ui.gravity')} [{gravityFor(inputs[field.key])} m/s²]
           {:else}
             {t(field.labelKey)}{field.units ? ` [${field.units}]` : ''}
@@ -289,9 +290,9 @@
     </div>
   {/if}
 
-  <!-- Honesty (W2): what the model leaves out. Always shown when the result carries
-       assumptions — independent of the figure, which only surfaced a subset. -->
-  {#if !blocked && result?.status.ok && result.assumptions?.length}
+  <!-- Honesty (W2): what the model leaves out. Shown for ok AND fail results (a fail
+       computed under the same assumptions — AskScenarioView already shows both). -->
+  {#if !blocked && result && result.assumptions?.length}
     <p class="card__assumptions">
       <span class="card__assumptions-label">{t('lab.ui.assumptions-label')}</span>
       {result.assumptions.map((k) => t(k)).join(' · ')}

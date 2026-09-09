@@ -20,6 +20,7 @@ import { googleConfigFromEnv } from './google';
 import { TokenCore } from './tokens';
 import { isAllowed } from './allowlist';
 import { ask, askDepsFromEnv, LlmUnavailableError } from './ask';
+import { parseScenarioArgs } from './scenario';
 
 export const PORT = Number(process.env.LAB_PORT ?? 8093);
 const MAX_BODY_BYTES = 64 * 1024;
@@ -254,16 +255,29 @@ export async function buildLabApi(cfg: LabApiConfig): Promise<LabApi> {
         if (typeof body.question !== 'string' || !body.question.trim()) {
           return json(res, 400, { error: "'question' (non-empty string) is required" });
         }
-        // Multi-turn context (slices #540/#543) is CLIENT-held and echoed each turn; trust
-        // only a well-SHAPED scenario/history, else drop it (the model just composes fresh).
-        const scenarioOk =
-          body.scenario &&
-          typeof body.scenario === 'object' &&
-          Array.isArray((body.scenario as { cells?: unknown }).cells);
+        // Multi-turn context (slices #540/#543) is CLIENT-held and echoed each turn. Trust
+        // NOTHING about the echo — re-run compose's own guard (≤MAX_SCENARIO_CELLS +
+        // per-cell shape) so a tampered client can't buy an oversized recompute+summary
+        // into the LLM prompt. Malformed → drop (the model just composes fresh).
+        let scenario: import('./ask').AskContext['scenario'];
+        if (body.scenario && typeof body.scenario === 'object') {
+          try {
+            const parsed = parseScenarioArgs(body.scenario);
+            // The echo's cells carry no `target` (presets were applied at compose time),
+            // so re-parsing yields all-null notes; carry the echoed presetNotes through
+            // only when they hold the matching short (string|null)[] shape.
+            const rawNotes = (body.scenario as { presetNotes?: unknown }).presetNotes;
+            const notesOk =
+              Array.isArray(rawNotes) &&
+              rawNotes.length === parsed.cells.length &&
+              rawNotes.every((n) => n === null || (typeof n === 'string' && n.length <= 128));
+            scenario = notesOk ? { ...parsed, presetNotes: rawNotes as (string | null)[] } : parsed;
+          } catch {
+            scenario = undefined;
+          }
+        }
         const askCtx = {
-          scenario: scenarioOk
-            ? (body.scenario as import('./ask').AskContext['scenario'])
-            : undefined,
+          scenario,
           history: Array.isArray(body.history)
             ? (body.history as import('./ask').AskContext['history'])
             : undefined,

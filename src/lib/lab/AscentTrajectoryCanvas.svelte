@@ -78,13 +78,28 @@
       ctx.fillText(label, px1 - 2, y - 3);
     }
 
-    // Earth surface baseline.
-    ctx.strokeStyle = 'rgba(120,235,225,0.4)';
-    ctx.lineWidth = 1;
+    // Earth surface — a LABELLED solid ground line (+ a faint ground band below it) so
+    // the plot floor reads as the planet and liftoff clearly sits ON it (FB4: "what is
+    // Earth? liftoff seems not on Earth").
+    ctx.fillStyle = 'rgba(120,200,190,0.07)';
+    ctx.fillRect(px0, py1, px1 - px0, Math.min(6, H - py1));
+    ctx.strokeStyle = 'rgba(130,235,225,0.55)';
+    ctx.lineWidth = 2;
     ctx.beginPath();
     ctx.moveTo(px0, py1);
     ctx.lineTo(px1, py1);
     ctx.stroke();
+    ctx.fillStyle = 'rgba(130,235,225,0.75)';
+    ctx.font = "7px 'Space Mono', monospace";
+    ctx.textAlign = 'left';
+    ctx.fillText(t('lab.figure.earth-surface'), px0 + 3, py1 - 4);
+    // Liftoff marker at the surface origin (x=0, alt=0).
+    const loX = xToPx(0);
+    const loY = yToPx(0);
+    ctx.fillStyle = 'rgba(255,150,60,0.95)';
+    ctx.beginPath();
+    ctx.arc(loX, loY, 3, 0, Math.PI * 2);
+    ctx.fill();
 
     // Flight path — revealed to `progress`, coloured by active stage, with a glow.
     const upto = Math.max(1, Math.floor(pts.length * progress));

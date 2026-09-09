@@ -160,6 +160,7 @@ export function parseUpdateArgs(args: unknown): ScenarioChange[] {
  */
 export function applyScenarioUpdate(scenario: AskScenario, changes: ScenarioChange[]): AskScenario {
   const cells = scenario.cells.map((c) => ({ ...c, inputs: { ...c.inputs } }));
+  const presetNotes = scenario.presetNotes ? [...scenario.presetNotes] : undefined;
   for (const ch of changes) {
     if (ch.cell < 0 || ch.cell >= cells.length) {
       throw new Error(`update_scenario: no step ${ch.cell} in the scenario`);
@@ -171,8 +172,15 @@ export function applyScenarioUpdate(scenario: AskScenario, changes: ScenarioChan
       );
     }
     cell.inputs[ch.input] = ch.value;
+    // A user override of the exact input a preset seeded invalidates that preset's
+    // disclosure — the note would otherwise claim an assumption no longer in force.
+    const noteKey = presetNotes?.[ch.cell];
+    if (noteKey && presetNotes) {
+      const preset = Object.values(SCENARIO_PRESETS).find((p) => p.assumptionKey === noteKey);
+      if (preset && ch.input in preset.inputs) presetNotes[ch.cell] = null;
+    }
   }
-  return { ...scenario, cells };
+  return presetNotes ? { ...scenario, cells, presetNotes } : { ...scenario, cells };
 }
 
 /** Parse + guard raw tool args into a scenario. Throws (REJECT) on a malformed shape. */

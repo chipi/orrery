@@ -40,6 +40,8 @@ export interface FieldSpec {
   bodyIds?: BodyId[]; // 'body': per-formula domain (Lambert ≠ free-fall)
   serverCap?: number; // MCP abuse bound (e.g. steps ≤ N)
   injected?: true; // adapter-owned (e.g. fresh TLE) — NOT an MCP user param
+  gravityInLabel?: true; // 'body': label shows the selected body's surface g (FB5, opt-in
+  // per field — a heliocentric depart/arrive or micro-g body select must NOT claim it)
 }
 
 /** A declared output — makes wires + MCP result docs statically checkable. */

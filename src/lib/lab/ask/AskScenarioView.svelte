@@ -101,23 +101,25 @@
               <FigureRenderer figure={c.result.figure as FigureSpec} {t} />
             </div>
           {/if}
-          {#if c.result.assumptions.length}
+          <!-- ONE assumptions row: kernel assumptions + the preset disclosure together. -->
+          {@const noteKey = scenario.presetNotes?.[i] ?? null}
+          {@const assume = [...c.result.assumptions, ...(noteKey ? [noteKey] : [])]}
+          {#if assume.length}
             <p class="ask-scenario__assume">
               <span class="ask-scenario__assume-label">{t('lab.ui.assumptions-label')}</span>
-              {c.result.assumptions.map((k) => t(k)).join(' · ')}
+              {assume.map((k) => t(k)).join(' · ')}
             </p>
           {/if}
         {:else}
           <p class="ask-scenario__blocked">{blockedMessage(c)}</p>
-        {/if}
-
-        {#if scenario.presetNotes?.[i]}
-          {@const note = scenario.presetNotes[i]}
-          {#if note}
-            <p class="ask-scenario__assume">
-              <span class="ask-scenario__assume-label">{t('lab.ui.assumptions-label')}</span>
-              {t(note)}
-            </p>
+          {#if scenario.presetNotes?.[i]}
+            {@const note = scenario.presetNotes[i]}
+            {#if note}
+              <p class="ask-scenario__assume">
+                <span class="ask-scenario__assume-label">{t('lab.ui.assumptions-label')}</span>
+                {t(note)}
+              </p>
+            {/if}
           {/if}
         {/if}
       </div>

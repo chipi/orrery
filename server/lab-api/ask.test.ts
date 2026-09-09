@@ -14,7 +14,11 @@ let stub: Server;
 let deps: AskDeps;
 /** Scripted assistant turns, consumed in order. */
 let script: unknown[] = [];
-let received: { authorization?: string; toolNames?: string[] }[] = [];
+let received: {
+  authorization?: string;
+  toolNames?: string[];
+  messages?: { role: string; content: string | null }[];
+}[] = [];
 
 beforeAll(async () => {
   stub = createServer((req, res) => {
@@ -23,10 +27,12 @@ beforeAll(async () => {
       for await (const c of req) chunks.push(c as Buffer);
       const body = JSON.parse(Buffer.concat(chunks).toString()) as {
         tools?: { function: { name: string } }[];
+        messages?: { role: string; content: string | null }[];
       };
       received.push({
         authorization: req.headers.authorization,
         toolNames: body.tools?.map((t) => t.function.name),
+        messages: body.messages,
       });
       const turn = script.shift();
       if (turn === undefined) {
@@ -234,5 +240,18 @@ describe('ask', () => {
     expect(out.answer).toBe('Updated to 90 tonnes.');
     // The carried ladder was handed to the model + update_scenario offered.
     expect(received[0].toolNames).toContain('update_scenario');
+  });
+
+  it('caps each echoed history item — an oversized turn is truncated, never forwarded whole', async () => {
+    script = [{ role: 'assistant', content: 'ok' }];
+    received = [];
+    const long = 'x'.repeat(10_000);
+    await ask('and now?', 'en-US', deps, {
+      history: [{ role: 'user', content: long }],
+    });
+    const forwarded = received[0].messages?.find(
+      (m) => m.role === 'user' && m.content?.startsWith('x'),
+    );
+    expect(forwarded?.content).toHaveLength(4000);
   });
 });

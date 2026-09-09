@@ -123,9 +123,14 @@ export function createAskState(): AskState {
           entry.answer = body.answer;
           entry.model = body.model;
           entry.toolCalls = body.toolCalls;
-          // Carry the ladder forward (unchanged turns return the same scenario).
+          // Carry the ladder forward (unchanged turns return the same scenario), but
+          // render it on THIS entry only when a scenario tool actually ran — a
+          // prose-only follow-up must not repeat the full ladder + live canvases (M3).
           currentScenario = body.scenario ?? currentScenario;
-          entry.scenario = currentScenario;
+          const scenarioTouched = body.toolCalls?.some(
+            (c) => c.tool === 'compose_scenario' || c.tool === 'update_scenario',
+          );
+          if (scenarioTouched) entry.scenario = currentScenario;
           entry.state = 'done';
           return;
         }

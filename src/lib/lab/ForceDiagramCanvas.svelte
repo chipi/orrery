@@ -32,8 +32,22 @@
   const LANE = 26; // side-by-side separation for collinear forces (FB1a legibility)
   // Distinct hue per force so vectors read apart from each other AND from the body
   // (operator FB1a: "forces different colours than bodies, do not overlap"). Direction
-  // is still geometry; colour now distinguishes WHICH force, not fidelity.
+  // is still geometry; colour now distinguishes WHICH force, not fidelity. Colour is
+  // keyed by the force's IDENTITY (labelKey), never its array position — weight is the
+  // same hue on every figure; an unknown force hashes into the palette.
   const FORCE_PALETTE = ['#4ecdc4', '#ffc850', '#ff7a6b', '#8ab4ff', '#9be07a', '#c88bff'];
+  const FORCE_COLORS: Record<string, string> = {
+    'lab.vec.thrust': '#4ecdc4',
+    'lab.vec.weight': '#ffc850',
+    'lab.vec.applied-force': '#8ab4ff',
+  };
+  function forceColor(labelKey: string): string {
+    const fixed = FORCE_COLORS[labelKey];
+    if (fixed) return fixed;
+    let h = 0;
+    for (let i = 0; i < labelKey.length; i += 1) h = (h * 31 + labelKey.charCodeAt(i)) >>> 0;
+    return FORCE_PALETTE[h % FORCE_PALETTE.length];
+  }
   function hexRgb(hex: string): string {
     const n = parseInt(hex.slice(1), 16);
     return `${(n >> 16) & 255},${(n >> 8) & 255},${n & 255}`;
@@ -83,7 +97,7 @@
 
     ctx.lineCap = 'round';
     figure.vectors.forEach((v, i) => {
-      const color = FORCE_PALETTE[i % FORCE_PALETTE.length];
+      const color = forceColor(v.labelKey);
       const rgb = hexRgb(color);
       const len = (v.magN / maxMag) * ARROW * progress;
       // canvas dir (y flips): data y is up, canvas y is down.

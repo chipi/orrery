@@ -142,6 +142,19 @@ describe('applyScenarioUpdate · deterministic value refinement (#543)', () => {
   it('REJECTS an out-of-range cell', () => {
     expect(() => applyScenarioUpdate(base(), [{ cell: 9, input: 'massKg', value: 1 }])).toThrow();
   });
+
+  it('clears a preset note when the user overrides the preset-seeded input (stale-note fix)', () => {
+    const seeded = parseScenarioArgs({
+      cells: [{ formulaId: 'orbital-velocity', target: 'low-earth-orbit', inputs: {} }],
+    });
+    expect(seeded.presetNotes?.[0]).toBe('lab.assume.target-leo');
+    // Overriding the input the preset filled (altitudeKm) invalidates the disclosure…
+    const next = applyScenarioUpdate(seeded, [{ cell: 0, input: 'altitudeKm', value: 550 }]);
+    expect(next.presetNotes?.[0]).toBeNull();
+    // …but an unrelated edit leaves the still-true note in place.
+    const other = applyScenarioUpdate(seeded, [{ cell: 0, input: 'massKg', value: 1 }]);
+    expect(other.presetNotes?.[0]).toBe('lab.assume.target-leo');
+  });
 });
 
 describe('parseUpdateArgs · guards', () => {

@@ -67,9 +67,10 @@
           {#if entry.scenario}
             <AskScenarioView scenario={entry.scenario} {t} />
           {/if}
-          {#if entry.toolCalls?.some((c) => c.tool !== 'compose_scenario')}
+          <!-- Scenario tools render as the ladder above, never as raw tool chips. -->
+          {#if entry.toolCalls?.some((c) => c.tool !== 'compose_scenario' && c.tool !== 'update_scenario')}
             <div class="ask__tools">
-              {#each entry.toolCalls.filter((c) => c.tool !== 'compose_scenario') as call, j (j)}
+              {#each entry.toolCalls.filter((c) => c.tool !== 'compose_scenario' && c.tool !== 'update_scenario') as call, j (j)}
                 <AskToolResult {call} {t} />
               {/each}
             </div>

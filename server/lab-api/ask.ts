@@ -37,8 +37,10 @@ import {
 // always gets a narrated answer even if all rounds are spent tool-calling.
 const MAX_TOOL_ROUNDS = 6;
 // Conversational memory (slice #540): prior turns carried per request are PROSE ONLY
-// (never tool results / figures — Fable-5 R4 token budget). ~4 exchanges.
+// (never tool results / figures — Fable-5 R4 token budget). ~4 exchanges. Per-item
+// cap bounds the echoed transcript's LLM-prompt cost under the 64 KiB body cap.
 const MAX_HISTORY_TURNS = 8;
+const MAX_HISTORY_ITEM_CHARS = 4000;
 
 export interface AskDeps {
   llmBaseUrl: string;
@@ -188,10 +190,11 @@ export async function ask(
   const locale = resolveLocale(rawLocale);
   const t = makeT(locale);
   const messages: ChatMessage[] = [{ role: 'system', content: systemPrompt(locale) }];
-  // Prior turns (slice #540) — prose only; the client sends the transcript, we cap it.
+  // Prior turns (slice #540) — prose only; the client sends the transcript, we cap it
+  // (turn count AND per-item chars — the echo is untrusted).
   for (const turn of (ctx.history ?? []).slice(-MAX_HISTORY_TURNS)) {
     if ((turn.role === 'user' || turn.role === 'assistant') && typeof turn.content === 'string') {
-      messages.push({ role: turn.role, content: turn.content });
+      messages.push({ role: turn.role, content: turn.content.slice(0, MAX_HISTORY_ITEM_CHARS) });
     }
   }
   // The latest composed ladder (slices #541/#543). The client recomputes + renders it;

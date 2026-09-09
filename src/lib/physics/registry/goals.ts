@@ -403,6 +403,7 @@ export const getToMars: Goal = {
       { labelKey: 'lab.conn.gtm.odyssey', href: '/fleet?id=mars-odyssey', agency: 'NASA' },
       { labelKey: 'lab.conn.gtm.atlas', href: '/fleet?id=atlas-v', agency: 'ULA' },
       { labelKey: 'lab.conn.gtm.program', href: '/programs/mars-rovers', agency: 'NASA' },
+      { labelKey: 'lab.conn.gtm.planning', href: '/plan' },
     ],
   },
 };
@@ -436,7 +437,7 @@ export const landOnMars: Goal = {
     {
       formulaId: 'soft-landing-check',
       narrativeKey: 'lab.goal.lom.verdict',
-      challengeKey: 'lab.goal.lmars.challenge',
+      challengeKey: 'lab.goal.lom.challenge',
       wiresFrom: [{ fromStep: 1, output: 'vTerminal', toInput: 'terminalMs' }],
     },
     {

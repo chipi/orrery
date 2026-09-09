@@ -817,10 +817,20 @@ describe('G9 catch-the-iss · ground track + visibility', () => {
   });
 
   it('★ iss-pass: near the TLE epoch, a real pass over a mid-latitude site — figure-less, honest', () => {
+    // Dates DERIVE from the bundled TLE's own epoch (line-1 cols 19-32, YYDDD.frac) so the
+    // periodic `chore(tle): refresh` never breaks this test — a hardcoded date did on 2026-09-09.
+    const l1 = stationTleBlock('iss')
+      .split('\n')
+      .find((l) => l.startsWith('1 '))!;
+    const epochMs =
+      Date.UTC(2000 + Number(l1.slice(18, 20)), 0, 1) + (Number(l1.slice(20, 32)) - 1) * 86_400_000;
+    const isoAt = (offsetDays: number): string =>
+      new Date(epochMs + offsetDays * 86_400_000).toISOString().slice(0, 10);
+    const nearEpoch = isoAt(1);
     const r = compute('iss-pass', {
       latitudeDeg: 40,
       longitudeDeg: -74,
-      dateIso: '2026-07-21',
+      dateIso: nearEpoch,
       tle: stationTleBlock('iss'), // adapter-owned injected input (R1 · #464)
     });
     expect(r.status.ok).toBe(true);
@@ -831,14 +841,14 @@ describe('G9 catch-the-iss · ground track + visibility', () => {
     expect(r.values.minutesUntilPass.value).toBeLessThanOrEqual(48 * 60);
     // the snapshot-TLE staleness is disclosed on the result.
     expect(r.assumptions).toContain('lab.assume.snapshot-tle');
-    // epochAgeDays is emitted (H5 · #464): ~1 day from the 2026-07-20 bundle epoch.
+    // epochAgeDays is emitted (H5 · #464): ~1 day past the bundle epoch by construction.
     expect(r.epochAgeDays).toBeGreaterThanOrEqual(0);
     expect(r.epochAgeDays).toBeLessThan(5);
     // a date far past the epoch discloses staleness beyond the 14-day bound.
     const far = compute('iss-pass', {
       latitudeDeg: 40,
       longitudeDeg: -74,
-      dateIso: '2026-12-01',
+      dateIso: isoAt(60),
       tle: stationTleBlock('iss'),
     });
     expect(far.epochAgeDays).toBeGreaterThan(14);
@@ -847,7 +857,7 @@ describe('G9 catch-the-iss · ground track + visibility', () => {
       compute('iss-pass', {
         latitudeDeg: 85,
         longitudeDeg: 0,
-        dateIso: '2026-07-21',
+        dateIso: nearEpoch,
         tle: stationTleBlock('iss'),
       }).status.ok,
     ).toBe(false);

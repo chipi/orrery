@@ -203,4 +203,33 @@ describe('ask', () => {
     // The compose_scenario tool was offered to the model alongside the per-formula tools.
     expect(received[0].toolNames).toContain('compose_scenario');
   });
+
+  it('update_scenario refines the carried scenario deterministically (slice #543)', async () => {
+    const carried = {
+      v: 1 as const,
+      cells: [{ formulaId: 'twr', inputs: { thrustN: 750000, massKg: 50000, body: 'earth' } }],
+    };
+    script = [
+      {
+        role: 'assistant',
+        content: null,
+        tool_calls: [
+          {
+            id: 'u',
+            function: {
+              name: 'update_scenario',
+              arguments: JSON.stringify({ changes: [{ cell: 0, input: 'massKg', value: 90000 }] }),
+            },
+          },
+        ],
+      },
+      { role: 'assistant', content: 'Updated to 90 tonnes.' },
+    ];
+    received = [];
+    const out = await ask('make it 90 tonnes', 'en-US', deps, { scenario: carried });
+    expect(out.scenario?.cells[0].inputs.massKg).toBe(90000);
+    expect(out.answer).toBe('Updated to 90 tonnes.');
+    // The carried ladder was handed to the model + update_scenario offered.
+    expect(received[0].toolNames).toContain('update_scenario');
+  });
 });

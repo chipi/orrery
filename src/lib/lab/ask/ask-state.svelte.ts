@@ -52,6 +52,9 @@ export function createAskState(): AskState {
   const entries = $state<AskEntry[]>([]);
   let busy = $state(false);
   let auth: AskAuth | null = null;
+  // The running scenario (slice #540) — carried across turns so a follow-up
+  // ("make it 200 kg") refines the SAME ladder. Client-held; echoed each request.
+  let currentScenario: AskScenario | undefined;
 
   function ensureAuth(): AskAuth {
     auth ??= new AskAuth(browserDeps(), redirectUri(), (p) => {
@@ -93,10 +96,23 @@ export function createAskState(): AskState {
       const q = question.trim();
       if (!q || busy) return;
       busy = true;
+      // Prior exchanges as prose (slice #540) — last few done turns; the server caps too.
+      const history = entries
+        .filter((e) => e.state === 'done' && e.answer)
+        .slice(-4)
+        .flatMap((e) => [
+          { role: 'user' as const, content: e.question },
+          { role: 'assistant' as const, content: e.answer as string },
+        ]);
       const entry = $state<AskEntry>({ question: q, state: 'loading' });
       entries.push(entry);
       try {
-        const resp = await ensureAuth().askFetch({ question: q, locale });
+        const resp = await ensureAuth().askFetch({
+          question: q,
+          locale,
+          scenario: currentScenario,
+          history,
+        });
         if (resp.ok) {
           const body = (await resp.json()) as {
             answer: string;
@@ -107,7 +123,9 @@ export function createAskState(): AskState {
           entry.answer = body.answer;
           entry.model = body.model;
           entry.toolCalls = body.toolCalls;
-          entry.scenario = body.scenario;
+          // Carry the ladder forward (unchanged turns return the same scenario).
+          currentScenario = body.scenario ?? currentScenario;
+          entry.scenario = currentScenario;
           entry.state = 'done';
           return;
         }

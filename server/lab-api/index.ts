@@ -244,7 +244,7 @@ export async function buildLabApi(cfg: LabApiConfig): Promise<LabApi> {
         if (!isAllowed(cfg.allowlistPath, claims.email)) {
           return json(res, 403, { error: 'account not allowlisted' });
         }
-        let body: { question?: unknown; locale?: unknown };
+        let body: { question?: unknown; locale?: unknown; scenario?: unknown; history?: unknown };
         try {
           body = JSON.parse((await readBody(req)).toString('utf8')) as typeof body;
         } catch (e) {
@@ -254,6 +254,18 @@ export async function buildLabApi(cfg: LabApiConfig): Promise<LabApi> {
         if (typeof body.question !== 'string' || !body.question.trim()) {
           return json(res, 400, { error: "'question' (non-empty string) is required" });
         }
+        // Multi-turn context (slices #540/#543) is CLIENT-held and echoed each turn; trust
+        // only a well-SHAPED scenario/history, else drop it (the model just composes fresh).
+        const scenarioOk =
+          body.scenario &&
+          typeof body.scenario === 'object' &&
+          Array.isArray((body.scenario as { cells?: unknown }).cells);
+        const askCtx = {
+          scenario: scenarioOk ? (body.scenario as import('./ask').AskContext['scenario']) : undefined,
+          history: Array.isArray(body.history)
+            ? (body.history as import('./ask').AskContext['history'])
+            : undefined,
+        };
         // Each request can burn MAX_TOOL_ROUNDS LLM calls — cap concurrency so
         // an authed client can't run up the LiteLLM bill unboundedly (MINOR-3).
         if (activeAsks >= MAX_CONCURRENT_ASKS) {
@@ -263,7 +275,7 @@ export async function buildLabApi(cfg: LabApiConfig): Promise<LabApi> {
         }
         activeAsks += 1;
         try {
-          return json(res, 200, await ask(body.question, body.locale, askDepsFromEnv()));
+          return json(res, 200, await ask(body.question, body.locale, askDepsFromEnv(), askCtx));
         } catch (e) {
           if (e instanceof LlmUnavailableError) {
             console.error('[lab-api] /ask LLM unavailable:', e.message);

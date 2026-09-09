@@ -21,9 +21,13 @@ import { deriveTools, callTool, type DerivedTool } from '../mcp/registry-tools';
 import { makeT, resolveLocale } from '../mcp/i18n';
 import {
   composeScenarioTool,
+  updateScenarioTool,
   parseScenarioArgs,
+  parseUpdateArgs,
+  applyScenarioUpdate,
   summariseScenario,
   COMPOSE_SCENARIO_TOOL,
+  UPDATE_SCENARIO_TOOL,
   type AskScenario,
 } from './scenario';
 
@@ -32,6 +36,9 @@ import {
 // formulas; 6 rounds gives headroom, and the synthesis pass below means the user
 // always gets a narrated answer even if all rounds are spent tool-calling.
 const MAX_TOOL_ROUNDS = 6;
+// Conversational memory (slice #540): prior turns carried per request are PROSE ONLY
+// (never tool results / figures — Fable-5 R4 token budget). ~4 exchanges.
+const MAX_HISTORY_TURNS = 8;
 
 export interface AskDeps {
   llmBaseUrl: string;
@@ -66,6 +73,12 @@ export interface AskResponse {
   scenario?: AskScenario;
   model: string;
   requestId: string;
+}
+
+/** Prior-turn + carried-scenario context for a multi-turn ask (slice #540). Client-held. */
+export interface AskContext {
+  scenario?: AskScenario;
+  history?: { role: 'user' | 'assistant'; content: string }[];
 }
 
 export class LlmUnavailableError extends Error {}
@@ -107,9 +120,10 @@ async function chat(
         ...(withTools
           ? {
               tools: [
-                // compose_scenario (slice #541) — the ladder-builder, alongside the
-                // per-formula tools. Its schema is richer than a DerivedTool's scalars.
+                // The scenario tools (slices #541/#543) — build a ladder, then refine it —
+                // alongside the per-formula tools. Their schema is richer than a DerivedTool's.
                 composeScenarioTool(),
+                updateScenarioTool(),
                 ...allTools().map((t) => ({
                   type: 'function' as const,
                   function: {
@@ -157,7 +171,10 @@ function systemPrompt(locale: string): string {
     'only with the user\'s stated values, and WIRE an earlier step\'s output into a later ' +
     "step's input rather than copying any computed number yourself. For a VAGUE target the " +
     'user did not pin to a number ("to the Moon", "low orbit"), set the cell\'s `target` enum ' +
-    'instead of guessing — the kernel fills the concrete input. ' +
+    'instead of guessing — the kernel fills the concrete input. When the user REFINES an ' +
+    'existing scenario ("make it 200 kg", "try Mars instead"), call update_scenario with just ' +
+    'the changed cell/input/value — do NOT re-compose the whole ladder unless the formula set ' +
+    'itself changes. ' +
     `Respond in locale "${locale}".`
   );
 }
@@ -166,17 +183,31 @@ export async function ask(
   question: string,
   rawLocale: unknown,
   deps: AskDeps,
+  ctx: AskContext = {},
 ): Promise<AskResponse> {
   const locale = resolveLocale(rawLocale);
   const t = makeT(locale);
-  const messages: ChatMessage[] = [
-    { role: 'system', content: systemPrompt(locale) },
-    { role: 'user', content: question },
-  ];
-  const toolCalls: AskToolCall[] = [];
-  // The latest composed ladder (slice #541). The client recomputes + renders it;
+  const messages: ChatMessage[] = [{ role: 'system', content: systemPrompt(locale) }];
+  // Prior turns (slice #540) — prose only; the client sends the transcript, we cap it.
+  for (const turn of (ctx.history ?? []).slice(-MAX_HISTORY_TURNS)) {
+    if ((turn.role === 'user' || turn.role === 'assistant') && typeof turn.content === 'string') {
+      messages.push({ role: turn.role, content: turn.content });
+    }
+  }
+  // The latest composed ladder (slices #541/#543). The client recomputes + renders it;
   // here we only recompute a figure-stripped summary for the model to narrate from.
-  let scenario: AskScenario | undefined;
+  let scenario = ctx.scenario;
+  // Hand the model the current ladder (by index) so update_scenario can refine it.
+  if (scenario) {
+    messages.push({
+      role: 'system',
+      content:
+        'The scenario the user is currently refining (edit by cell index with update_scenario):\n' +
+        JSON.stringify(summariseScenario(scenario, REGISTRY)),
+    });
+  }
+  messages.push({ role: 'user', content: question });
+  const toolCalls: AskToolCall[] = [];
 
   for (let round = 0; round < MAX_TOOL_ROUNDS; round++) {
     const msg = await chat(deps, messages);
@@ -200,6 +231,14 @@ export async function ask(
           // The kernel recomputes the whole ladder (wires propagate the user's numbers);
           // the model gets a compact, figure-stripped summary to narrate from.
           scenario = parseScenarioArgs(args);
+          result = { steps: summariseScenario(scenario, REGISTRY) };
+        } else if (call.function.name === UPDATE_SCENARIO_TOOL) {
+          // Deterministic value refinement of the CURRENT ladder (slice #543): the server
+          // patches only the named inputs (rejecting a wired one) and recomputes.
+          if (!scenario) {
+            throw new Error('update_scenario: no current scenario — compose one first');
+          }
+          scenario = applyScenarioUpdate(scenario, parseUpdateArgs(args));
           result = { steps: summariseScenario(scenario, REGISTRY) };
         } else {
           const { result: r, localized } = callTool(REGISTRY, call.function.name, args, t);

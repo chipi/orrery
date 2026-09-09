@@ -8,6 +8,8 @@ import { REGISTRY } from '$lib/physics/registry';
 import {
   parseScenarioArgs,
   summariseScenario,
+  applyScenarioUpdate,
+  parseUpdateArgs,
   MAX_SCENARIO_CELLS,
   SCENARIO_VERSION,
 } from './scenario';
@@ -102,5 +104,45 @@ describe('summariseScenario · the kernel owns the numbers', () => {
     expect(steps[1].status).toBe('invalid-wire');
     expect(steps[1].reason).toMatch(/notAnOutput/);
     expect(steps[1].values).toBeUndefined();
+  });
+});
+
+describe('applyScenarioUpdate · deterministic value refinement (#543)', () => {
+  const base = () =>
+    parseScenarioArgs({
+      cells: [
+        { formulaId: 'thrust-from-flow', inputs: { massFlowKgS: 250, exhaustVelMs: 3000 } },
+        {
+          formulaId: 'twr',
+          inputs: { massKg: 50000, body: 'earth' },
+          wires: [{ fromIndex: 0, output: 'thrustN', toInput: 'thrustN' }],
+        },
+      ],
+    });
+
+  it('changes only the named input; everything else stays put (no mutation of input)', () => {
+    const before = base();
+    const next = applyScenarioUpdate(before, [{ cell: 1, input: 'massKg', value: 90000 }]);
+    expect(next.cells[1].inputs.massKg).toBe(90000);
+    expect(next.cells[0].inputs).toEqual(before.cells[0].inputs); // untouched
+    expect(before.cells[1].inputs.massKg).toBe(50000); // original not mutated
+  });
+
+  it('REJECTS setting a wired input (computed upstream)', () => {
+    expect(() => applyScenarioUpdate(base(), [{ cell: 1, input: 'thrustN', value: 1 }])).toThrow(
+      /computed/,
+    );
+  });
+
+  it('REJECTS an out-of-range cell', () => {
+    expect(() => applyScenarioUpdate(base(), [{ cell: 9, input: 'massKg', value: 1 }])).toThrow();
+  });
+});
+
+describe('parseUpdateArgs · guards', () => {
+  it('rejects empty or malformed change lists', () => {
+    expect(() => parseUpdateArgs({})).toThrow();
+    expect(() => parseUpdateArgs({ changes: [] })).toThrow();
+    expect(() => parseUpdateArgs({ changes: [{ cell: 0, input: 5, value: 1 }] })).toThrow(/input/);
   });
 });

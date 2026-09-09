@@ -21,6 +21,7 @@ import {
 } from '$lib/lab/ask-scenario';
 
 export const COMPOSE_SCENARIO_TOOL = 'compose_scenario';
+export const UPDATE_SCENARIO_TOOL = 'update_scenario';
 export type { AskScenario };
 export { MAX_SCENARIO_CELLS, SCENARIO_VERSION } from '$lib/lab/ask-scenario';
 
@@ -86,6 +87,90 @@ export function composeScenarioTool() {
       },
     },
   };
+}
+
+/** The `update_scenario` tool — deterministic value refinement of the CURRENT ladder. */
+export function updateScenarioTool() {
+  return {
+    type: 'function' as const,
+    function: {
+      name: UPDATE_SCENARIO_TOOL,
+      description:
+        'Change values in the CURRENT scenario (from a follow-up like "make it 200 kg"). The ' +
+        'server applies each change to the named cell/input and recomputes; everything else is ' +
+        'untouched. Use this for value tweaks — do NOT re-compose. You cannot set a WIRED input ' +
+        '(it is computed from an earlier step); change the source instead. For a different formula ' +
+        'set, use compose_scenario.',
+      parameters: {
+        type: 'object',
+        additionalProperties: false,
+        required: ['changes'],
+        properties: {
+          changes: {
+            type: 'array',
+            description: 'The value edits to apply to the current scenario.',
+            items: {
+              type: 'object',
+              additionalProperties: false,
+              required: ['cell', 'input', 'value'],
+              properties: {
+                cell: { type: 'number', description: 'Index of the step to edit.' },
+                input: { type: 'string', description: 'The input key on that step.' },
+                value: { description: 'The new value (number or string).' },
+              },
+            },
+          },
+        },
+      },
+    },
+  };
+}
+
+export interface ScenarioChange {
+  cell: number;
+  input: string;
+  value: number | string;
+}
+
+/** Parse + guard raw update args into a change list. Throws (REJECT) on a malformed shape. */
+export function parseUpdateArgs(args: unknown): ScenarioChange[] {
+  const raw = (args as { changes?: unknown })?.changes;
+  if (!Array.isArray(raw) || raw.length === 0) {
+    throw new Error('update_scenario: `changes` must be a non-empty array');
+  }
+  return raw.map((c, i) => {
+    const ch = c as { cell?: unknown; input?: unknown; value?: unknown };
+    if (!Number.isInteger(ch.cell)) throw new Error(`update_scenario: change ${i} needs an integer cell`);
+    if (typeof ch.input !== 'string') throw new Error(`update_scenario: change ${i} needs a string input`);
+    if (typeof ch.value !== 'number' && typeof ch.value !== 'string') {
+      throw new Error(`update_scenario: change ${i} value must be a number or string`);
+    }
+    return { cell: ch.cell as number, input: ch.input, value: ch.value };
+  });
+}
+
+/**
+ * Apply value changes to the CURRENT scenario deterministically (slice #543): only the
+ * named inputs move, everything else is byte-identical ("unrelated inputs untouched" is a
+ * mechanical property, not a prompt hope — Fable-5). A change targeting a WIRED input is
+ * REJECTED (that value is computed upstream; change the source instead), and an
+ * out-of-range cell throws. Returns a new scenario (never mutates the input).
+ */
+export function applyScenarioUpdate(scenario: AskScenario, changes: ScenarioChange[]): AskScenario {
+  const cells = scenario.cells.map((c) => ({ ...c, inputs: { ...c.inputs } }));
+  for (const ch of changes) {
+    if (ch.cell < 0 || ch.cell >= cells.length) {
+      throw new Error(`update_scenario: no step ${ch.cell} in the scenario`);
+    }
+    const cell = cells[ch.cell];
+    if ((cell.wires ?? []).some((w) => w.toInput === ch.input)) {
+      throw new Error(
+        `update_scenario: "${ch.input}" on step ${ch.cell} is computed from an earlier step — change the source instead`,
+      );
+    }
+    cell.inputs[ch.input] = ch.value;
+  }
+  return { ...scenario, cells };
 }
 
 /** Parse + guard raw tool args into a scenario. Throws (REJECT) on a malformed shape. */

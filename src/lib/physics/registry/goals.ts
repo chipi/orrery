@@ -673,8 +673,11 @@ export const enginesOfTheWorld: Goal = {
   id: 'engines-of-the-world',
   titleKey: 'lab.goal.engines.title',
   descriptionKey: 'lab.goal.engines.desc',
-  family: 'systems',
-  tier: 4,
+  // FB6 (operator): engines is a propulsion CATALOG, not a guidance controller — it belongs
+  // in the spaceflight ladder, and early (right after the basic rocket lessons) so the learner
+  // meets engines before launch-a-rocket's thrust rung leans on them. Was systems/tier-4.
+  family: 'spaceflight',
+  tier: 2,
   prereqs: ['launch-a-rocket'],
   path: [
     {

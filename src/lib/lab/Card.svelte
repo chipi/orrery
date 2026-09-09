@@ -24,6 +24,7 @@
 <script lang="ts">
   import { base } from '$app/paths';
   import type { FormulaDef, FieldSpec, FormulaResult } from '$lib/physics/spec';
+  import { bodyGravityMs2 } from '$lib/physics/mechanics/bodies';
   import FigureRenderer from './FigureRenderer.svelte';
 
   type Props = {
@@ -86,6 +87,12 @@
   }
 
   // Proper-name label for an external learn-more source — never translated.
+  // FB5: a "world" input is really a gravity choice — show the selected body's g in the
+  // label ("Gravity [9.81 m/s²]"); the world select below is the choice's explanation.
+  function gravityFor(bodyId: number | string | undefined): string {
+    return bodyGravityMs2(String(bodyId ?? 'earth')).toFixed(2);
+  }
+
   const SOURCE_LABEL: Record<string, string> = {
     hyperphysics: 'HyperPhysics',
     'nasa-glenn': 'NASA Glenn',
@@ -144,7 +151,11 @@
     {#each formula.inputs.filter((f) => !f.injected) as field (field.key)}
       <div class="card__field" class:card__field--wired={wired.has(field.key)}>
         <label class="card__label" for="field-{formula.id}-{field.key}">
-          {t(field.labelKey)}{field.units ? ` (${field.units})` : ''}
+          {#if field.kind === 'body'}
+            {t('lab.ui.gravity')} [{gravityFor(inputs[field.key])} m/s²]
+          {:else}
+            {t(field.labelKey)}{field.units ? ` [${field.units}]` : ''}
+          {/if}
           {#if wired.has(field.key)}
             <span class="card__wired-chip" title={t('lab.ui.wired-title')}
               >&#8592; {t('lab.ui.wired')}</span

@@ -1925,7 +1925,8 @@
     "lab_assume_target_geo": "लक्ष्य: 35,786 किमी भूस्थिर कक्षा",
     "lab_assume_target_moon": "लक्ष्य: चंद्रमा",
     "lab_assume_target_mars": "लक्ष्य: मंगल",
-    "lab_assume_target_venus": "लक्ष्य: शुक्र"
+    "lab_assume_target_venus": "लक्ष्य: शुक्र",
+    "lab_ui_gravity": "गुरुत्वाकर्षण"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -3714,7 +3715,8 @@
     "lab_assume_target_geo": "ターゲット: 高度35,786 km静止軌道",
     "lab_assume_target_moon": "ターゲット: 月",
     "lab_assume_target_mars": "ターゲット: 火星",
-    "lab_assume_target_venus": "ターゲット: 金星"
+    "lab_assume_target_venus": "ターゲット: 金星",
+    "lab_ui_gravity": "重力"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -5683,7 +5685,8 @@
     "lab_assume_target_geo": "الهدف: ارتفاع ثابت جغرافي على 35,786 كم",
     "lab_assume_target_moon": "الهدف: القمر",
     "lab_assume_target_mars": "الهدف: المريخ",
-    "lab_assume_target_venus": "الهدف: الزهرة"
+    "lab_assume_target_venus": "الهدف: الزهرة",
+    "lab_ui_gravity": "الجاذبية"
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -7474,7 +7477,8 @@
     "lab_assume_target_geo": "목표: 35,786km 정지궤도 고도",
     "lab_assume_target_moon": "목표: 달",
     "lab_assume_target_mars": "목표: 화성",
-    "lab_assume_target_venus": "목표: 금성"
+    "lab_assume_target_venus": "목표: 금성",
+    "lab_ui_gravity": "중력"
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -9088,7 +9092,8 @@
     "lab_assume_target_geo": "Ziel: die 35.786-km-Geostationärbahn",
     "lab_assume_target_moon": "Ziel: der Mond",
     "lab_assume_target_mars": "Ziel: Mars",
-    "lab_assume_target_venus": "Ziel: Venus"
+    "lab_assume_target_venus": "Ziel: Venus",
+    "lab_ui_gravity": "Schwerkraft"
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -10642,7 +10647,8 @@
     "lab_assume_target_geo": "Cible : l'altitude géostationnaire de 35 786 km",
     "lab_assume_target_moon": "Cible : la Lune",
     "lab_assume_target_mars": "Cible : Mars",
-    "lab_assume_target_venus": "Cible : Vénus"
+    "lab_assume_target_venus": "Cible : Vénus",
+    "lab_ui_gravity": "Gravité"
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -12163,7 +12169,8 @@
     "lab_assume_target_geo": "Obiettivo: l'altitudine geostazionaria di 35.786 km",
     "lab_assume_target_moon": "Obiettivo: la Luna",
     "lab_assume_target_mars": "Obiettivo: Marte",
-    "lab_assume_target_venus": "Obiettivo: Venere"
+    "lab_assume_target_venus": "Obiettivo: Venere",
+    "lab_ui_gravity": "Gravità"
   },
   "es": {
     "mars_meta_description": "Todo artefacto que la humanidad ha colocado en Marte — aterrizadores, rovers y orbitadores activos — en un globo 3D navegable con la historia completa de la misión.",
@@ -13683,7 +13690,8 @@
     "lab_assume_target_geo": "Objetivo: la altitud geoestacionaria de 35.786 km",
     "lab_assume_target_moon": "Objetivo: la Luna",
     "lab_assume_target_mars": "Objetivo: Marte",
-    "lab_assume_target_venus": "Objetivo: Venus"
+    "lab_assume_target_venus": "Objetivo: Venus",
+    "lab_ui_gravity": "Gravedad"
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -15212,7 +15220,8 @@
     "lab_assume_target_geo": "Doel: de geostationaire hoogte van 35.786 km",
     "lab_assume_target_moon": "Doel: de Maan",
     "lab_assume_target_mars": "Doel: Mars",
-    "lab_assume_target_venus": "Doel: Venus"
+    "lab_assume_target_venus": "Doel: Venus",
+    "lab_ui_gravity": "Zwaartekracht"
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -17004,7 +17013,8 @@
     "lab_assume_target_geo": "Цель: геостационарная высота 35 786 км",
     "lab_assume_target_moon": "Цель: Луна",
     "lab_assume_target_mars": "Цель: Марс",
-    "lab_assume_target_venus": "Цель: Венера"
+    "lab_assume_target_venus": "Цель: Венера",
+    "lab_ui_gravity": "Гравитация"
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -18840,7 +18850,8 @@
     "lab_assume_target_geo": "目标：35,786 km 地球同步轨道高度",
     "lab_assume_target_moon": "目标：月球",
     "lab_assume_target_mars": "目标：火星",
-    "lab_assume_target_venus": "目标：金星"
+    "lab_assume_target_venus": "目标：金星",
+    "lab_ui_gravity": "重力"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -20547,7 +20558,8 @@
     "lab_assume_target_geo": "Циљ: геостационарна висина од 35.786 км",
     "lab_assume_target_moon": "Циљ: Месец",
     "lab_assume_target_mars": "Циљ: Марс",
-    "lab_assume_target_venus": "Циљ: Венера"
+    "lab_assume_target_venus": "Циљ: Венера",
+    "lab_ui_gravity": "Гравитација"
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -22074,6 +22086,7 @@
     "lab_assume_target_geo": "Alvo: a altitude geoestacionária de 35.786 km",
     "lab_assume_target_moon": "Alvo: a Lua",
     "lab_assume_target_mars": "Alvo: Marte",
-    "lab_assume_target_venus": "Alvo: Vênus"
+    "lab_assume_target_venus": "Alvo: Vênus",
+    "lab_ui_gravity": "Gravidade"
   }
 }

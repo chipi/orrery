@@ -5,8 +5,9 @@
 // ship to production + be served by nginx/docker. Strip them after
 // `vite build`. Two concerns:
 //
-//   1. build/images/_staging — the gitignored review scratch area. Asserted
-//      gone afterwards; a non-empty _staging fails the build.
+//   1. every _staging dir under build/ — the gitignored review scratch areas
+//      (images/_staging plus per-surface ones like images/lab/goals/_staging).
+//      Asserted gone afterwards; a surviving _staging fails the build.
 //   2. build/textures/*.{4x3,16x9}.jpg — dead planet-texture aspect crops.
 //      No scene loads them (spheres use the full equirect texture); they exist
 //      only so build-image-provenance can attribute them. ~28 MB of dead
@@ -18,8 +19,6 @@
 //      so nothing on the live site ever fetches them — ~5 MB of dead weight in
 //      every deploy. Kept in static/ so the dev server can still read them.
 import { rm, readdir, access, stat } from 'node:fs/promises';
-
-const STAGING = 'build/images/_staging';
 
 // Dev-only pipeline JSON — never fetched by a served (non-/dev) route.
 const DEV_ONLY_DATA = [
@@ -35,7 +34,11 @@ try {
   process.exit(0);
 }
 
-await rm(STAGING, { recursive: true, force: true });
+// Prune EVERY _staging dir wherever it nests — the deep scan below then
+// asserts none survived (belt + suspenders share one definition of "staging").
+for (const p of await findStaging('build')) {
+  await rm(p, { recursive: true, force: true });
+}
 
 // Dead texture aspect crops — remove from the served tree (both builds).
 async function pruneTextureCrops() {

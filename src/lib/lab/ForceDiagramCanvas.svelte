@@ -5,7 +5,7 @@
 -->
 <script lang="ts">
   import type { FigureSpec } from '$lib/physics/spec';
-  import { fidelityLabel, fidelityStyle, TEAL } from './figure-style';
+  import { fidelityLabel } from './figure-style';
   import {
     HERO_W as W,
     HERO_H as H,
@@ -27,8 +27,17 @@
 
   const cx = W / 2;
   const cy = H / 2 - 8;
-  const BODY_R = 20;
-  const ARROW = 88; // px for the largest force
+  const BODY_R = 18;
+  const ARROW = 78; // px for the largest force
+  const LANE = 26; // side-by-side separation for collinear forces (FB1a legibility)
+  // Distinct hue per force so vectors read apart from each other AND from the body
+  // (operator FB1a: "forces different colours than bodies, do not overlap"). Direction
+  // is still geometry; colour now distinguishes WHICH force, not fidelity.
+  const FORCE_PALETTE = ['#4ecdc4', '#ffc850', '#ff7a6b', '#8ab4ff', '#9be07a', '#c88bff'];
+  function hexRgb(hex: string): string {
+    const n = parseInt(hex.slice(1), 16);
+    return `${(n >> 16) & 255},${(n >> 8) & 255},${n & 255}`;
+  }
 
   const provenanceText = $derived(
     `${t('lab.fidelity.' + fidelityLabel(figure.provenance.fidelity))} · ${figure.provenance.module}`,
@@ -45,49 +54,77 @@
     heroBackground(ctx, cx, cy);
 
     const maxMag = Math.max(...figure.vectors.map((v) => v.magN), 1);
-    // All vectors carry the figure's fidelity-register colour (faithful to the SVG original);
-    // direction is geometry, not colour — so a horizontal force isn't mis-coloured as "thrust".
-    const fs = fidelityStyle(figure.provenance.fidelity);
-    const rgb =
-      fs.stroke === TEAL ? '78,205,196' : fs.stroke === '#ffc850' ? '255,200,80' : '193,68,14';
 
-    ctx.lineCap = 'round';
+    // Body FIRST (behind the vectors), in a NEUTRAL colour so the coloured forces read
+    // against it (FB1a). It's the thing the forces act on, not another vector.
+    heroGlow(ctx, cx, cy, BODY_R * 1.8, '210,225,255', 0.22);
+    ctx.fillStyle = '#0b0f1c';
+    ctx.strokeStyle = '#c8d2e6';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.arc(cx, cy, BODY_R, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
     ctx.textAlign = 'center';
     ctx.font = "8px 'Space Mono', monospace";
-    for (const v of figure.vectors) {
-      const len = (v.magN / maxMag) * ARROW * progress;
-      const dx = v.dir.x * len;
-      const dy = -v.dir.y * len; // SVG/canvas y is down; data y is up
-      const x2 = cx + dx;
-      const y2 = cy + dy;
+    ctx.fillStyle = 'rgba(200,210,230,0.9)';
+    ctx.fillText(t(figure.bodyLabelKey), cx, cy + 3);
 
-      // glow underlay
+    // Fan ONLY forces that share a direction (two upward forces sit side-by-side); a
+    // unique-direction force stays centred on the body (FB1a — the common thrust/weight
+    // pair reads as a clean vertical axis, not shifted off-centre).
+    const dirKey = (vv: (typeof figure.vectors)[number]) =>
+      `${Math.round(vv.dir.x * 100)},${Math.round(vv.dir.y * 100)}`;
+    const groups = new Map<string, number[]>();
+    figure.vectors.forEach((vv, idx) => {
+      const k = dirKey(vv);
+      (groups.get(k) ?? groups.set(k, []).get(k)!).push(idx);
+    });
+
+    ctx.lineCap = 'round';
+    figure.vectors.forEach((v, i) => {
+      const color = FORCE_PALETTE[i % FORCE_PALETTE.length];
+      const rgb = hexRgb(color);
+      const len = (v.magN / maxMag) * ARROW * progress;
+      // canvas dir (y flips): data y is up, canvas y is down.
+      const dcx = v.dir.x;
+      const dcy = -v.dir.y;
+      // Start OUTSIDE the body along the force direction (never pierce it), and fan
+      // same-direction forces apart along the perpendicular so they sit next to each other.
+      const perpX = -dcy;
+      const perpY = dcx;
+      const grp = groups.get(dirKey(v))!;
+      const lane = (grp.indexOf(i) - (grp.length - 1) / 2) * LANE;
+      const ox = cx + dcx * (BODY_R + 4) + perpX * lane;
+      const oy = cy + dcy * (BODY_R + 4) + perpY * lane;
+      const x2 = ox + dcx * len;
+      const y2 = oy + dcy * len;
+
+      // glow underlay (this force's own hue)
       ctx.save();
       ctx.globalCompositeOperation = 'lighter';
-      ctx.strokeStyle = `rgba(${rgb},0.3)`;
+      ctx.strokeStyle = `rgba(${rgb},0.28)`;
       ctx.lineWidth = 6;
       ctx.beginPath();
-      ctx.moveTo(cx, cy);
+      ctx.moveTo(ox, oy);
       ctx.lineTo(x2, y2);
       ctx.stroke();
       ctx.restore();
 
       // shaft
-      ctx.strokeStyle = fs.stroke;
-      ctx.globalAlpha = fs.opacity;
-      ctx.lineWidth = 2;
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 2.5;
       ctx.beginPath();
-      ctx.moveTo(cx, cy);
+      ctx.moveTo(ox, oy);
       ctx.lineTo(x2, y2);
       ctx.stroke();
-      ctx.globalAlpha = 1;
 
       // arrowhead
       if (len > 6) {
-        const ang = Math.atan2(dy, dx);
-        const hl = 9;
+        const ang = Math.atan2(y2 - oy, x2 - ox);
+        const hl = 10;
         const ha = 0.42;
-        ctx.fillStyle = fs.stroke;
+        ctx.fillStyle = color;
         ctx.beginPath();
         ctx.moveTo(x2, y2);
         ctx.lineTo(x2 - hl * Math.cos(ang - ha), y2 - hl * Math.sin(ang - ha));
@@ -96,26 +133,19 @@
         ctx.fill();
       }
 
-      // label placed just beyond the tip, ALONG the vector direction (works for any angle).
-      const mag = Math.hypot(dx, dy) || 1;
-      const off = 16;
+      // label beyond the tip along the vector, with a dark halo so it never gets lost
+      // against a vector or the body (FB1a: labels not overlapped, bigger margin).
+      const off = 20;
+      const lx = x2 + dcx * off;
+      const ly = y2 + dcy * off + 3;
       ctx.globalAlpha = Math.max(0, Math.min(1, (progress - 0.5) / 0.5));
-      ctx.fillStyle = `rgba(${rgb},0.95)`;
-      ctx.fillText(t(v.labelKey), x2 + (dx / mag) * off, y2 + (dy / mag) * off + 3);
+      ctx.lineWidth = 3;
+      ctx.strokeStyle = 'rgba(4,4,12,0.9)';
+      ctx.strokeText(t(v.labelKey), lx, ly);
+      ctx.fillStyle = color;
+      ctx.fillText(t(v.labelKey), lx, ly);
       ctx.globalAlpha = 1;
-    }
-
-    // Body glyph — glowing core.
-    heroGlow(ctx, cx, cy, BODY_R * 1.8, '210,225,255', 0.28);
-    ctx.fillStyle = '#0b0f1c';
-    ctx.strokeStyle = TEAL;
-    ctx.lineWidth = 1.5;
-    ctx.beginPath();
-    ctx.arc(cx, cy, BODY_R, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.stroke();
-    ctx.fillStyle = 'rgba(78,205,196,0.9)';
-    ctx.fillText(t(figure.bodyLabelKey), cx, cy + 3);
+    });
 
     heroVignette(ctx, cx, cy);
     drawHonestyLine(ctx, provenanceText, assumptionsText);

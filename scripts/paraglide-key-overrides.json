@@ -1847,7 +1847,7 @@
     "lab_assume_registry_datasheet": "मान कर्नेल के क्यूरेटेड इंजन रजिस्ट्री से आते हैं — नाममात्र डेटाशीट आंकड़े, उड़ान दूरबीन नहीं। थ्रस्ट को बूस्टर इंजन के लिए समुद्र स्तर पर और ऊपरी-चरण इंजन के लिए निर्वात में उद्धृत किया गया है।",
     "lab_assume_vacuum_isp_preferred": "निर्वात विशिष्ट आवेग का उपयोग किया जाता है जहां प्रकाशित हो; अन्यथा समुद्र-स्तर।",
     "lab_goal_engines_title": "दुनिया के इंजन",
-    "lab_goal_eng_f1": "कच्चे बल से शुरू करें। F-1 ने प्रति सेकंड 2.6 टन प्रणोदक जलाकर 6.77 मेगान्यूटन बनाए — इनमें से पाँच ने Saturn V को लॉन्चपैड से उठाया। लेकिन थ्रस्ट के पार देखें, उसके बगल की संख्या को: निर्दिष्ट आवेग 304 सेकंड निर्वात में (पैड पर 263), निकास वेग लगभग 3 किमी/सेकंड। थ्रस्ट वह है जो पैड माँगता है। यह वह नहीं है जो यात्रा को पुरस्कृत करता है।",
+    "lab_goal_eng_f1": "तीन इंजन, एक मापदंड — उद्देश्य से तीन बार एक ही कार्ड, ताकि संख्याओं की आगे-पीछे तुलना की जा सके। कच्चे बल से शुरू करें। F-1 ने 6.77 मेगान्यूटन बनाने के लिए प्रति सेकंड 2.6 टन प्रणोदक को जलाया — उनमें से पाँच ने Saturn V को पैड से ऊपर उठाया। जोर के आगे संख्या को देखें: निर्दिष्ट आवेग निर्वात में 304 सेकंड (पैड पर 263), निकास वेग लगभग 3 km/s। जोर वह है जो पैड की माँग करता है। यह वह नहीं है जो यात्रा को पुरस्कृत करता है।",
     "lab_goal_eng_rl10": "अब सर्जन को लें। RL10 लगभग 100 किलोन्यूटन बनाता है — पहले चरण के इंजन का एक अंश; यह पैड के लिए कभी नहीं था। लेकिन इसका हाइड्रोजन विस्तारक चक्र आधुनिक रूपांतरों में 450 सेकंड का निर्दिष्ट आवेग तक पहुँचता है (पहले 1963 इंजन ने 427 हासिल किए), 4.4 किमी/सेकंड का निकास वेग — प्रत्येक किलोग्राम प्रणोदक आधा गुना अधिक गति खरीदता है। यही कारण है कि इस शांत इंजन के संस्करण 1963 से इस दशक तक ऊपरी चरणों पर उड़े हैं: ऊपर की ओर, दक्षता ही एकमात्र मुद्रा है।",
     "lab_goal_eng_raptor": "Raptor विकल्प को अस्वीकार करने का आधुनिक प्रयास है। पूर्ण-प्रवाह चरणबद्ध दहन — दोनों प्रणोदक जुड़वाँ प्रीबर्नर के माध्यम से पूरी तरह गैसीकृत — मीथेन को 350 सेकंड पर निर्वात में (327 जहाँ बूस्टर वास्तव में काम करता है) रखते हुए बूस्टर-श्रेणी की थ्रस्ट देता है, एक इंजन में जो बड़े पैमाने पर उत्पादित और पुनः उड़ाया जाने के लिए बनाया गया है। F-1 और RL10 के बीच व्यापार गायब नहीं हुआ; इसे पतला अभियांत्रित किया गया।",
     "lab_goal_eng_tsiolkovsky": "यहाँ है कि शांत संख्या क्यों जीतती है। RL10 के निर्दिष्ट आवेग को 10 के द्रव्यमान अनुपात पर रॉकेट समीकरण में डालें और परिणाम पढ़ें: एक चरण से 10 किमी/सेकंड से अधिक। एक F-1-श्रेणी के आवेग के साथ समान द्रव्यमान अनुपात चलाएँ और आप 7 से कम पाते हैं। एकमात्र चीज़ जो बदली वह है निकास वेग — Isp·g0 वह लीवर है जिस पर पूरी रॉकेट समीकरण झूलती है। एक ईमानदार नोट: वास्तविक वाहनों में हाइड्रोजन का कम घनत्व बड़े टैंकों और भारी संरचना में इसका कुछ भाग वापस खरीदता है — यही कारण है कि कच्चे इंजन पहले चरण के मालिक अभी भी हैं।",
@@ -2023,7 +2023,9 @@
     "lab_illustration_alt_flying_computer": "एक रॉकेट चढ़ाई के मध्य में इसके नेविगेशन चाप को आगे की ओर खींचा गया, स्टीयरिंग सुधार को आत्मविश्वास के साथ दर्शाया गया।",
     "lab_illustration_alt_landing_computer": "एक लैंडर सतह के ऊपर थ्रॉटल किए गए इंजन पर होवर करते हुए, इसकी वंश-दर वक्र को भूत की तरह दिखाया गया जो शून्य तक पहुंचता है।",
     "lab_illustration_alt_entry_computer": "एक लिफ्टिंग कैप्सूल प्रवेश प्लाज्मा के माध्यम से बैंकिंग करते हुए, इसके नियंत्रित गलियारे को एक लक्ष्य की ओर संकरी चैनल के रूप में दर्शाया गया।",
-    "lab_illustration_alt_apollo_round_trip": "संपूर्ण अपोलो आकृति-आठ — पृथ्वी और चंद्रमा मुक्त-वापसी प्रक्षेपवक्र के साथ दोनों के चारों ओर लूपिंग करता हुआ, कैप्सूल पथ पर छोटा है।"
+    "lab_illustration_alt_apollo_round_trip": "संपूर्ण अपोलो आकृति-आठ — पृथ्वी और चंद्रमा मुक्त-वापसी प्रक्षेपवक्र के साथ दोनों के चारों ओर लूपिंग करता हुआ, कैप्सूल पथ पर छोटा है।",
+    "lab_ui_no_inputs": "इस पर कोई डायल नहीं — ज्यामिति पूरी तरह उत्तर निर्धारित करती है, और kernel इसे परिकलित करता है।",
+    "lab_goal_land_earth_desc": "उतरना अपनी ही समस्या है — और यह सख्त क्रम में आता है: कक्षा छोड़ें, गर्मी सहें, प्रवेश गलियारे से गुजरें, और केवल तब पैराशूट महत्वपूर्ण है। गति को गर्मी के लिए बदलें, फिर गर्मी को नरम着陆के लिए बदलें, और देखें कि वापसी लौटना क्यों जाने से कठिन है।"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -3734,7 +3736,7 @@
     "lab_assume_registry_datasheet": "値はカーネルの厳選されたエンジンレジストリから取得—仕様書の公称値であり、飛行時のテレメトリではない。推力はブースタエンジンは海面でのデータ、上段エンジンは真空でのデータで表記されている。",
     "lab_assume_vacuum_isp_preferred": "公開されている場合は真空比推力を使用し、そうでなければ海面上での値を使用します。",
     "lab_goal_engines_title": "世界のエンジン",
-    "lab_goal_eng_f1": "まずは大出力エンジンから。F-1は毎秒2.6トンの推進剤を燃焼させて674万ニュートンを生み出し、5基でサターンVをパッドから離陸させた。推力の大きさに目がいくが、その横の数字に注目してほしい。比推力は真空中で304秒（パッドでは263秒）、排気速度はおよそ3 km/s。推力はパッドが求めるもの。旅には報いないのだ。",
+    "lab_goal_eng_f1": "3基のエンジン、1つのものさし — 同じカードを意図的に3回並べ、数字を横並びで比較できるようにした。まず圧倒的なパワーから始めよ。F-1は毎秒2.6トンの推進剤を燃焼させ677万ニュートンの推力を生み出した — そのうち5基がサターンVを発射台から持ち上げた。推力の先にある数字に目を向けよ：真空中での比推力304秒（発射台では263秒）、排気速度は秒速約3km。推力は発射台が要求するもの。それは旅が報いるものではない。",
     "lab_goal_eng_rl10": "次は精密エンジン。RL10は約100キロニュートンを生み出す。第1段エンジンの一部に過ぎず、パッド運用を想定していない。しかし水素膨張サイクルは現代型で450秒の比推力に達し（1963年型の初期型は427秒），排気速度は4.4 km/s。推進剤1キログラムで速度は1.5倍買える。だからこそ、この静かなエンジンの派生型は1963年から今十年まで上段に搭載されてきた。高空では効率が唯一の価値通貨なのだ。",
     "lab_goal_eng_raptor": "ラプターは現代的な折衷案だ。完全流量段燃焼—双子のプリバーナで両推進剤を完全気化させる—メタンを真空中で350秒の比推力に保ちながら（ブースタが実際に動作する場所では327秒），ブースタ級の推力を供給する。量産と再利用を想定して設計された。F-1とRL10の間のトレードオフは消えたのではなく、工学的により細く調整されたのだ。",
     "lab_goal_eng_tsiolkovsky": "静かな数字が勝つ理由はここにある。RL10の比推力をロケット方程式に質量比10で組み込めば、1段で時速10 km/sを超える。同じ質量比でF-1級の比推力を使えば7未満だ。変わったのは排気速度だけ—Isp·g0がロケット方程式全体の支点なのだ。正直な但し書き：実際の宇宙船ではトータルの低密度は大型タンクと重い構造でいくらか取り戻される。だから大出力エンジンが第1段を支配し続けるのだ。",
@@ -3910,7 +3912,9 @@
     "lab_illustration_alt_flying_computer": "上昇中のロケットと、その先に描かれた誘導円弧、確実な線で描かれた操舵修正。",
     "lab_illustration_alt_landing_computer": "スロットル制御されたエンジンで表面上空にホバリングするランダー、その降下率曲線がゼロに向かって薄く表示。",
     "lab_illustration_alt_entry_computer": "再突入プラズマを通じてバンクする揚力機体、操舵された進入経路が目標に向かう狭まるチャネルとして描かれた。",
-    "lab_illustration_alt_apollo_round_trip": "アポロの完全な8の字 — 地球と月が自由帰還軌道でループ、軌路上に点在するカプセル。"
+    "lab_illustration_alt_apollo_round_trip": "アポロの完全な8の字 — 地球と月が自由帰還軌道でループ、軌路上に点在するカプセル。",
+    "lab_ui_no_inputs": "このスケールにはダイアルがない — ジオメトリが完全に答えを決定し、カーネルがそれを計算する。",
+    "lab_goal_land_earth_desc": "降下それ自体が独立した課題である — そして厳密な順序がある：軌道離脱、熱耐性、進入廊下の通過、そしてその時になってようやくパラシュートが重要になる。速度を熱に換え、熱をソフトランディングに換えて、なぜ帰還が出発より困難かを理解せよ。"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -5801,7 +5805,7 @@
     "lab_assume_registry_datasheet": "تأتي القيم من سجل المحركات المنقح بواسطة النواة — أرقام ورقة البيانات الاسمية، وليس بيانات الرحلة الفعلية. يُستشهد بالدفع عند مستوى سطح البحر لمحركات المعزز وفي الفراغ لمحركات المراحل العليا.",
     "lab_assume_vacuum_isp_preferred": "يُستخدم الدفع النوعي في الفراغ حيث يكون منشوراً؛ وإلا يُستخدم الدفع عند سطح البحر.",
     "lab_goal_engines_title": "محركات العالم",
-    "lab_goal_eng_f1": "ابدأ بالمحرك الغاشم. احترق F-1 بـ 2.6 طن من الوقود في الثانية ليولّد 6.77 ميجانيوتن — خمسة منها رفعت Saturn V عن منصة الإطلاق. لكن تجاوز الدفع وانظر للرقم بجانبه: الدفع النوعي 304 ثانية في الفراغ (263 عند المنصة)، سرعة عادم قريبة من 3 كم/ث. الدفع هو ما تطلبه المنصة. لكنه ليس ما تكافئه الرحلة.",
+    "lab_goal_eng_f1": "ثلاث محركات، مقياس واحد — نفس البطاقة ثلاث مرات عن قصد، حتى يمكن مقارنة الأرقام جنباً إلى جنب. ابدأ بالقوة الغاشمة. احترقت F-1 بـ 2.6 طن من الدافع كل ثانية لتولد 6.77 ميجانيوتن — خمس منها رفعت ساتورن فايف من منصة الإطلاق. لكن انظر بعيداً عن الدفع إلى الرقم بجانبه: الدفع النوعي 304 ثانية في الفراغ (263 على المنصة)، سرعة العادم قريبة من 3 كم/ث. الدفع هو ما تطلبه المنصة. وليس ما تكافئه الرحلة.",
     "lab_goal_eng_rl10": "الآن محرك الدقة. ينتج RL10 حوالي 100 كيلونيوتن — جزء بسيط من محرك المرحلة الأولى؛ لم يُصمَّم أبداً للمنصة. لكن دورته الهيدروجينية ذات التمدد تصل إلى 450 ثانية من الدفع النوعي في النسخ الحديثة (محرك 1963 الأول حقق 427)، بسرعة عادم 4.4 كم/ث — كل كيلوجرام من الوقود يشتري سرعة أكثر بمقدار النصف. هذا هو السبب في أن نسخاً من هذا المحرك الهادئ حلّقت على المراحل العليا من 1963 إلى هذا العقد: في الأعلى، الكفاءة هي العملة الوحيدة.",
     "lab_goal_eng_raptor": "Raptor هي محاولة حديثة لرفض الاختيار. احتراق متدرج كامل التدفق — كلا الوقودين مُتحاصران بالكامل عبر محرقتي تمهيد توأمتين — يحافظ على الميثان عند 350 ثانية في الفراغ (327 حيث يعمل المعزز فعلياً) مع توفير دفع من فئة المعزز، في محرك بُني ليُصنّع بكميات كبيرة ويُستخدم مرة أخرى. التبادل بين F-1 و RL10 لم يختفِ؛ بل تم تهندسته بدقة أكبر.",
     "lab_goal_eng_tsiolkovsky": "هنا لماذا الرقم الهادئ يفوز. صِل الدفع النوعي لـ RL10 في معادلة الصاروخ بنسبة كتلة تبلغ عشرة واقرأ النتيجة: أكثر من 10 كم/ث من مرحلة واحدة. شغّل نفس نسبة الكتلة مع دفع من فئة F-1 وتحصل على أقل من 7. الشيء الوحيد الذي تغيّر هو سرعة العادم — Isp·g0 هي الرافعة التي تتأرجح عليها كل معادلة الصاروخ. ملحوظة صادقة واحدة: في المركبات الحقيقية، كثافة الهيدروجين المنخفضة تشتري بعض هذا من خلال خزانات أكبر وهيكل أثقل — وهذا هو السبب في أن المحركات الغاشمة لا تزال تهيمن على المرحلة الأولى.",
@@ -5977,7 +5981,9 @@
     "lab_illustration_alt_flying_computer": "صاروخ في منتصف الصعود مع قوس التوجيه المرسوم أمامه، وتصحيح التوجيه مرسوم كضربة واثقة.",
     "lab_illustration_alt_landing_computer": "هابط يحوم فوق السطح بمحرك مخفف الدفع، ومنحنى معدل الهبوط له مرسوم بشفافية يتلاشى إلى الصفر.",
     "lab_illustration_alt_entry_computer": "كبسولة رافعة تنحني عبر بلازما الدخول، وممره الموجه مرسوم كقناة ضيقة نحو الهدف.",
-    "lab_illustration_alt_apollo_round_trip": "الشكل الكامل للقمة الثماني للأبولو — الأرض والقمر مع المسار الحر يلتف حول كليهما، والكبسولة صغيرة على المسار."
+    "lab_illustration_alt_apollo_round_trip": "الشكل الكامل للقمة الثماني للأبولو — الأرض والقمر مع المسار الحر يلتف حول كليهما، والكبسولة صغيرة على المسار.",
+    "lab_ui_no_inputs": "لا توجد مؤشرات على هذا — الهندسة وحدها تحدد الإجابة، والنواة تحسبها.",
+    "lab_goal_land_earth_desc": "الهبوط مشكلة بحد ذاته — وتأتي بترتيب صارم: غادر المدار، تحمل الحرارة، اخترق ممر الدخول، وفقط عندها تأتي أهمية المظلة. قايس السرعة مقابل الحرارة، ثم الحرارة مقابل هبوط ناعم، واكتشف لماذا العودة إلى الوطن أصعب من المغادرة."
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -7690,7 +7696,7 @@
     "lab_assume_registry_datasheet": "값은 커널의 엄선된 엔진 레지스트리에서 나온다 — 비행 원격 측정이 아닌 명목 데이터시트 수치. 추력은 부스터 엔진의 경우 해수면에서, 상단 엔진의 경우 진공에서 인용된다.",
     "lab_assume_vacuum_isp_preferred": "공개된 경우 진공 비충동을 사용하고, 그렇지 않으면 해수면 값을 사용합니다.",
     "lab_goal_engines_title": "세계의 엔진들",
-    "lab_goal_eng_f1": "먼저 거대한 엔진부터. F-1은 초당 2.6톤의 추진제를 연소시켜 677만 뉴턴을 만들었고, 5개가 새턴 V를 발사대에서 들어올렸다. 하지만 추력을 넘어 그 옆의 숫자를 보라: 진공에서 비추력 304초(발사대에서 263초), 배기속도는 약 3km/s. 추력은 발사대가 요구하는 것이다. 하지만 우주 항해가 보상하는 것은 아니다.",
+    "lab_goal_eng_f1": "세 개의 엔진, 하나의 척도 — 같은 카드를 의도적으로 세 번 사용하여 숫자를 나란히 비교할 수 있습니다. 먼저 원시적인 힘부터 시작하세요. F-1은 초당 2.6톤의 추진제를 태워 6.77 메가뉴턴을 만들었습니다 — 다섯 개가 Saturn V를 발사대에서 들어올렸습니다. 추력을 지나 옆의 숫자를 보세요: 진공에서 비추력 304초(발사대에서 263초), 배기 속도는 약 3km/s입니다. 추력은 발사대가 요구하는 것입니다. 그것은 여행이 보상하는 것이 아닙니다.",
     "lab_goal_eng_rl10": "이제 정교한 엔진. RL10은 약 10만 뉴턴을 만드는데, 1단 엔진의 극히 일부에 불과하고 발사대용으로는 설계되지 않았다. 하지만 수소 팽창 사이클은 현대 형식에서 450초의 비추력에 도달하고(1963년 초기 엔진은 427초), 배기속도는 4.4km/s다. 모든 킬로그램의 추진제가 반 배 이상 더 많은 속도를 산다. 이것이 이 조용한 엔진의 여러 형식이 1963년부터 이 시대까지 상단부에서 비행한 이유다: 위쪽에서는 효율이 유일한 화폐다.",
     "lab_goal_eng_raptor": "랩터는 선택을 거부하는 현대의 시도다. 완전-흐름 단계-연소 — 두 추진제가 쌍둥이 전소기를 통해 완전히 기화됨 — 메탄을 진공에서 350초의 비추력으로 유지하면서(부스터가 실제로 분사하는 곳에서 327초) 부스터급 추력을 제공하고, 대량 생산과 재사용을 위해 설계된 엔진이다. F-1과 RL10 사이의 트레이드오프는 사라지지 않았다; 더 얇게 공학설계되었을 뿐이다.",
     "lab_goal_eng_tsiolkovsky": "여기 조용한 숫자가 왜 이기는지 있다. RL10의 비추력을 질량비 10으로 로켓 방정식에 연결하고 결과를 읽어라: 한 단계에서 10km/s 이상. F-1급 비추력으로 같은 질량비를 실행하면 7 미만을 얻는다. 변한 것은 배기속도뿐이다 — Isp·g0이 전체 로켓 방정식이 회전하는 지레다. 한 가지 솔직한 단서: 실제 발사체에서 수소의 낮은 밀도는 더 큰 탱크와 무거운 구조에서 일부를 돌려주고, 이것이 거대한 엔진이 여전히 1단을 소유하는 이유다.",
@@ -7866,7 +7872,9 @@
     "lab_illustration_alt_flying_computer": "상승 중인 로켓의 유도 호(arc)가 앞서 그려지고, 조향 수정이 확신 있는 선으로 스케치됨.",
     "lab_illustration_alt_landing_computer": "스로틀링된 엔진으로 표면 위에 호버링 중인 착륙선, 내려오는 속도 곡선이 유령처럼 옆에 표시되어 영으로 수렴함.",
     "lab_illustration_alt_entry_computer": "진입 플라즈마를 통해 뱅킹하는 리프팅 캡슐, 조종된 통로가 목표를 향해 좁혀지는 채널로 스케치됨.",
-    "lab_illustration_alt_apollo_round_trip": "완전한 아폴로 8자형 — 지구와 달을 자유 귀환 궤적이 둘 다 감싸고, 캡슐이 경로 위에 작게 표현됨."
+    "lab_illustration_alt_apollo_round_trip": "완전한 아폴로 8자형 — 지구와 달을 자유 귀환 궤적이 둘 다 감싸고, 캡슐이 경로 위에 작게 표현됨.",
+    "lab_ui_no_inputs": "이 장치는 다이얼이 없습니다 — 기하학이 답을 완전히 결정하며, 커널이 이를 계산합니다.",
+    "lab_goal_land_earth_desc": "착륙은 그 자체로 별개의 문제입니다 — 엄격한 순서대로: 궤도 이탈, 열 견디기, 진입 복도 통과, 그 다음에야 낙하산이 의미가 있습니다. 속도를 열로 바꾸고, 열을 부드러운 착지로 바꾸며, 돌아오기가 떠나기보다 왜 어려운지 알아봅시다."
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -9402,7 +9410,7 @@
     "lab_assume_registry_datasheet": "Die Werte stammen aus dem kuratierten Engine-Katalog des Kernels — nominale Datenblatt-Angaben, keine Flugtelemetrie. Schubkraft wird auf Meereshöhe für Booster-Motoren und im Vakuum für Oberstufen-Motoren angegeben.",
     "lab_assume_vacuum_isp_preferred": "Vakuum-Spezifischer Impuls wird verwendet, wenn veröffentlicht; andernfalls Meereshöhe.",
     "lab_goal_engines_title": "Triebwerke der Welt",
-    "lab_goal_eng_f1": "Beginnen wir mit dem Kraftprotz. Die F-1 verbrannte 2,6 Tonnen Treibstoff pro Sekunde, um 6,77 Meganewton zu erzeugen — fünf davon hoben eine Saturn V vom Startplatz. Aber schau über die Schubkraft hinaus auf die Zahl daneben: spezifischer Impuls 304 Sekunden im Vakuum (263 am Startplatz), eine Ausströmungsgeschwindigkeit nahe 3 km/s. Schubkraft ist das, was der Startplatz verlangt. Es ist nicht das, was die Reise belohnt.",
+    "lab_goal_eng_f1": "Drei Motoren, ein Maßstab — dieselbe Karte dreimal absichtlich, um die Zahlen nebeneinander zu vergleichen. Beginne mit der Rohkraft. Die F-1 verbrannte 2,6 Tonnen Treibstoff pro Sekunde, um 6,77 Meganewton zu erzeugen — fünf davon hoben eine Saturn V vom Pad. Aber schaue über den Schub hinaus auf die Zahl daneben: spezifischer Impuls 304 Sekunden im Vakuum (263 am Pad), eine Ausströmgeschwindigkeit knapp 3 km/s. Schub ist, was das Pad fordert. Es ist nicht, was die Reise belohnt.",
     "lab_goal_eng_rl10": "Jetzt der Chirurg. Die RL10 erzeugt etwa 100 Kilonewton — ein Bruchteil eines Erststufenmotors; sie war nie für den Startplatz gedacht. Aber ihr Wasserstoff-Expander-Zyklus erreicht 450 Sekunden spezifischen Impuls in modernen Varianten (der erste Motor von 1963 erreichte 427), eine Ausströmungsgeschwindigkeit von 4,4 km/s — jedes Kilogramm Treibstoff erkauft eineinhalb mal mehr Geschwindigkeit. Deshalb fliegen Versionen dieses stillen Motors seit 1963 bis heute Oberstufen: oben ist Effizienz die einzige Währung.",
     "lab_goal_eng_raptor": "Raptor ist der moderne Versuch, diese Wahl abzulehnen. Vollstrom-Stufenverbrennung — beide Treibstoffe vollständig vergast durch twin Preburner — hält Methan bei 350 Sekunden im Vakuum (327 dort, wo der Booster tatsächlich zündet), während es Erststufen-Schubkraft liefert, in einem Motor, der für Massenproduktion und Wiederverwertung gebaut ist. Der Kompromiss zwischen F-1 und RL10 verschwand nicht; er wurde dünn konstruiert.",
     "lab_goal_eng_tsiolkovsky": "Hier ist der Grund, warum die stille Zahl gewinnt. Speisen Sie den spezifischen Impuls der RL10 bei einem Masseverhältnis von zehn in die Raketengleichung ein und lesen Sie das Ergebnis: über 10 km/s aus einer Stufe. Führen Sie das gleiche Masseverhältnis mit einem F-1-artigen Impuls durch und Sie erhalten unter 7. Das einzige, das sich änderte, ist die Ausströmungsgeschwindigkeit — Isp·g0 ist der Hebel, auf dem die ganze Raketengleichung schwingt. Ein ehrlicher Zusatz: Im echten Fahrzeug kauft Wasserstoff mit seiner geringen Dichte einen Teil davon durch größere Tanks und schwerere Struktur zurück — weshalb die Kraftprotze immer noch die erste Stufe beherrschen.",
@@ -9578,7 +9586,9 @@
     "lab_illustration_alt_flying_computer": "Eine Rakete in Aufstiegsphase mit ihrer vorausberechneten Steuerkurve, die Kurskorrektur als selbstbewusster Strich skizziert.",
     "lab_illustration_alt_landing_computer": "Ein Lander, der über der Oberfläche auf gedrosseltem Triebwerk schwebend, seine Sinkgeschwindigkeitskurve transparent daneben bis auf null auslaufend.",
     "lab_illustration_alt_entry_computer": "Eine Landekapsel, die sich durch Eintrittsplasma neigend, ihr gesteuerter Korridor als sich verjüngender Kanal zu einem Ziel skizziert.",
-    "lab_illustration_alt_apollo_round_trip": "Die vollständige Apollo-Acht — Erde und Mond mit der Freiflug-Rückkehrbahn, die um beide schleift, die Kapsel winzig auf der Bahn."
+    "lab_illustration_alt_apollo_round_trip": "Die vollständige Apollo-Acht — Erde und Mond mit der Freiflug-Rückkehrbahn, die um beide schleift, die Kapsel winzig auf der Bahn.",
+    "lab_ui_no_inputs": "Keine Regler hier — die Geometrie bestimmt die Antwort vollständig, der Kernel berechnet sie.",
+    "lab_goal_land_earth_desc": "Herunterkommen ist ein eigenes Problem — und es kommt in strenger Reihenfolge: Umlaufbahn verlassen, Hitze überstehen, Eintrittskanal treffen, und NUR DANN zählt ein Fallschirm. Tausche Geschwindigkeit gegen Hitze, dann Hitze gegen sanfte Landung, und sieh, warum Heimkehr schwerer ist als Aufbruch."
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -11053,7 +11063,7 @@
     "lab_assume_registry_datasheet": "Les valeurs proviennent du registre des moteurs révisé du noyau — chiffres nominaux de la fiche technique, non données télémétrie de vol. La poussée est donnée au niveau de la mer pour les moteurs d'accélérateur et en vide pour les moteurs d'étage supérieur.",
     "lab_assume_vacuum_isp_preferred": "L'impulsion spécifique sous vide est utilisée quand elle est publiée; sinon, celle au niveau de la mer.",
     "lab_goal_engines_title": "Moteurs du monde",
-    "lab_goal_eng_f1": "Commencez par la brute. Le F-1 consumait 2,6 tonnes de propergol par seconde pour produire 6,77 méganewtons — cinq d'entre eux ont décollé une Saturn V du pas. Mais au-delà de la poussée, regardez le chiffre à côté : impulsion spécifique 304 secondes en vide (263 au pas de tir), une vitesse d'éjection proche de 3 km/s. La poussée, c'est ce que réclame le pas de tir. Ce n'est pas ce que récompense le voyage.",
+    "lab_goal_eng_f1": "Trois moteurs, une seule règle — la même fiche trois fois intentionnellement, pour que les chiffres puissent être comparés côte à côte. Commencez par la brute. Le F-1 brûlait 2,6 tonnes de propergol par seconde pour produire 6,77 méganewtons — cinq d'entre eux ont décollé d'une Saturn V du pas de tir. Mais regardez au-delà de la poussée jusqu'au chiffre à côté : impulsion spécifique 304 secondes dans le vide (263 au pas de tir), une vitesse d'échappement près de 3 km/s. La poussée est ce que le pas de tir exige. Ce n'est pas ce que le voyage récompense.",
     "lab_goal_eng_rl10": "Maintenant le chirurgien. Le RL10 produit environ 100 kilonewtons — une fraction d'un moteur du premier étage ; il n'a jamais été conçu pour le pas de tir. Mais son cycle à hydrogène expanseur atteint 450 secondes d'impulsion spécifique dans les variantes modernes (le premier moteur de 1963 en atteignait 427), une vitesse d'éjection de 4,4 km/s — chaque kilogramme de propergol achète 50 % de vitesse supplémentaire. C'est pourquoi les versions de ce moteur discret ont volé sur des étages supérieurs de 1963 à cette décennie : en altitude, l'efficacité est la seule monnaie.",
     "lab_goal_eng_raptor": "Raptor est la tentative moderne de refuser le choix. Combustion à plein débit — les deux propergols entièrement gazéifiés à travers deux chambres de prébrûlage — maintient le méthane à 350 secondes en vide (327 où l'accélérateur s'allume réellement) tout en fournissant une poussée de classe accélérateur, dans un moteur conçu pour être produit en série et réutilisé. Le compromis entre le F-1 et le RL10 n'a pas disparu ; il a été affiné par l'ingénierie.",
     "lab_goal_eng_tsiolkovsky": "Voici pourquoi le chiffre discret gagne. Injectez l'impulsion spécifique du RL10 dans l'équation de Tsiolkovski avec un ratio de masse de dix et lisez le résultat : plus de 10 km/s à partir d'un seul étage. Lancez le même ratio de masse avec une impulsion de classe F-1 et vous obtenez moins de 7. La seule chose qui a changé, c'est la vitesse d'éjection — Isp·g0 est le levier sur lequel l'équation de la fusée entière pivote. Une honnête note : dans les véhicules réels, la faible densité de l'hydrogène compense partiellement par des réservoirs plus grands et une structure plus lourde — c'est pourquoi les brutes possèdent toujours le premier étage.",
@@ -11230,7 +11240,9 @@
     "lab_illustration_alt_flying_computer": "Une fusée en ascension avec son arc de guidage tracé devant elle, la correction de direction esquissée d'un trait assuré.",
     "lab_illustration_alt_landing_computer": "Un atterrisseur en vol stationnaire sur un moteur régulé au-dessus de la surface, sa courbe de vitesse verticale atténuée progressivement à zéro.",
     "lab_illustration_alt_entry_computer": "Une capsule portante inclinée dans le plasma d'entrée, son couloir de trajectoire dirigée esquissé en canal qui se rétrécit vers une cible.",
-    "lab_illustration_alt_apollo_round_trip": "La figure-huit Apollo complète — Terre et Lune avec la trajectoire de retour libre qui boucle autour des deux, la capsule minuscule sur le trajet."
+    "lab_illustration_alt_apollo_round_trip": "La figure-huit Apollo complète — Terre et Lune avec la trajectoire de retour libre qui boucle autour des deux, la capsule minuscule sur le trajet.",
+    "lab_ui_no_inputs": "Pas de cadrans ici — la géométrie détermine entièrement la réponse, et le noyau la calcule.",
+    "lab_goal_land_earth_desc": "Descendre est un problème en soi — et il se déploie dans un ordre strict : quitter l'orbite, survivre à la chaleur, emprunter le corridor d'entrée, et seulement ALORS un parachute compte. Échangez la vitesse contre la chaleur, puis la chaleur contre un atterrissage en douceur, et découvrez pourquoi rentrer à la maison est plus difficile que de partir."
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -12672,7 +12684,7 @@
     "lab_assume_registry_datasheet": "I valori provengono dal registro dei motori curato del kernel — dati nominali del datasheet, non telemetria di volo. La spinta è riportata a livello del mare per i motori booster e nel vuoto per i motori di stadio superiore.",
     "lab_assume_vacuum_isp_preferred": "L'impulso specifico in vuoto è usato dove pubblicato; altrimenti a livello del mare.",
     "lab_goal_engines_title": "Motori del mondo",
-    "lab_goal_eng_f1": "Cominciamo con la forza bruta. L'F-1 bruciava 2,6 tonnellate di propellente al secondo per generare 6,77 meganewton — cinque di loro sollevavano un Saturn V dal pad. Ma guarda oltre la spinta al numero accanto: impulso specifico 304 secondi nel vuoto (263 al pad), una velocità di scarico vicina a 3 km/s. La spinta è quello che il pad richiede. Non è quello che il viaggio ricompensa.",
+    "lab_goal_eng_f1": "Tre motori, un solo metro di misura — la stessa scheda tre volte di proposito, così i numeri possono essere confrontati fianco a fianco. Inizia con la bruta forza. L'F-1 bruciava 2,6 tonnellate di propellente al secondo per generare 6,77 meganewton — cinque di essi sollevavano un Saturn V dal pad. Ma guarda oltre la spinta al numero accanto: impulso specifico 304 secondi in vuoto (263 al pad), una velocità di scarico vicina a 3 km/s. La spinta è quello che il pad esige. Non è quello che il viaggio premia.",
     "lab_goal_eng_rl10": "Ora il chirurgo. L'RL10 produce circa 100 kilonewton — una frazione di un motore di primo stadio; non è mai stato pensato per il pad. Ma il suo ciclo espander a idrogeno raggiunge 450 secondi di impulso specifico nelle varianti moderne (il primo motore del 1963 raggiungeva 427), una velocità di scarico di 4,4 km/s — ogni chilogrammo di propellente acquista mezzo chilo in più di velocità. Ecco perché versioni di questo motore silenzioso hanno volato su stadi superiori dal 1963 a questo decennio: in alto, l'efficienza è l'unica moneta.",
     "lab_goal_eng_raptor": "Raptor è il tentativo moderno di rifiutare la scelta. La combustione a stadio completo — entrambi i propellenti completamente gassificati attraverso due precamere di combustione — mantiene il metano a 350 secondi nel vuoto (327 dove il booster realmente accende) mentre fornisce spinta in classe booster, in un motore costruito per essere prodotto in serie e rilanciato. Il compromesso tra l'F-1 e l'RL10 non è scomparso; è stato ingegnerizzato più sottile.",
     "lab_goal_eng_tsiolkovsky": "Ecco perché il numero silenzioso vince. Inserisci l'impulso specifico dell'RL10 nell'equazione del razzo con un rapporto di massa di dieci e leggi il risultato: oltre 10 km/s da uno stadio. Usa lo stesso rapporto di massa con un impulso in classe F-1 e ottieni meno di 7. L'unica cosa che è cambiata è la velocità di scarico — Isp·g0 è la leva su cui l'intera equazione del razzo gira. Un asterisco onesto: nei veicoli reali la bassa densità dell'idrogeno recupera parte di questo in serbatoi più grandi e struttura più pesante — ecco perché la forza bruta ancora domina il primo stadio.",
@@ -12849,7 +12861,9 @@
     "lab_illustration_alt_flying_computer": "Un razzo in ascesa con l'arco di guida tracciato davanti, la correzione di assetto abbozzata come un tratto deciso.",
     "lab_illustration_alt_landing_computer": "Un lander in hovering su motore moderato sopra la superficie, la sua curva di velocità di discesa fantasma che si attenua a zero.",
     "lab_illustration_alt_entry_computer": "Una capsula di rientro in banca attraverso il plasma di ingresso, il suo corridoio steerzato abbozzato come un canale ristretto verso un bersaglio.",
-    "lab_illustration_alt_apollo_round_trip": "Il completo otto di Apollo — Terra e Luna con la traiettoria di ritorno libero che forma un anello attorno a entrambe, la capsula minuscola sul percorso."
+    "lab_illustration_alt_apollo_round_trip": "Il completo otto di Apollo — Terra e Luna con la traiettoria di ritorno libero che forma un anello attorno a entrambe, la capsula minuscola sul percorso.",
+    "lab_ui_no_inputs": "Nessuna manopola qui — la geometria determina completamente la risposta, e il kernel la calcola.",
+    "lab_goal_land_earth_desc": "Scendere è un problema a sé — e procede in ordine rigoroso: abbandonare l'orbita, sopravvivere al calore, attraversare il corridoio di rientro, e SOLO ALLORA il paracadute conta. Scambia velocità per calore, poi calore per un atterraggio dolce, e scopri perché tornare a casa è più difficile che partire."
   },
   "es": {
     "mars_meta_description": "Todo artefacto que la humanidad ha colocado en Marte — aterrizadores, rovers y orbitadores activos — en un globo 3D navegable con la historia completa de la misión.",
@@ -14290,7 +14304,7 @@
     "lab_assume_registry_datasheet": "Los valores proceden del registro de motores curado del kernel — cifras nominales de ficha técnica, no telemetría de vuelo. El empuje se cita al nivel del mar para motores de propulsor y en vacío para motores de etapa superior.",
     "lab_assume_vacuum_isp_preferred": "Se utiliza el impulso específico en vacío donde está publicado; en caso contrario, al nivel del mar.",
     "lab_goal_engines_title": "Motores del mundo",
-    "lab_goal_eng_f1": "Empieza con la bestia. El F-1 quemaba 2,6 toneladas de propelente por segundo para hacer 6,77 meganewtons — cinco de ellos levantaban un Saturno V de la plataforma. Pero mira más allá del empuje hacia el número que lo acompaña: impulso específico 304 segundos en vacío (263 en la plataforma), una velocidad de escape cerca de 3 km/s. El empuje es lo que la plataforma exige. No es lo que el viaje recompensa.",
+    "lab_goal_eng_f1": "Tres motores, una regla — la misma tarjeta tres veces a propósito, para que los números se comparen lado a lado. Empieza con la bestia. El F-1 quemaba 2,6 toneladas de propelente por segundo para producir 6,77 meganewtons — cinco de ellos lanzaban un Saturno V de la plataforma. Pero mira más allá del empuje al número que lo acompaña: impulso específico 304 segundos en vacío (263 en la plataforma), una velocidad de escape cerca de 3 km/s. El empuje es lo que exige la plataforma. No es lo que recompensa el viaje.",
     "lab_goal_eng_rl10": "Ahora el cirujano. El RL10 hace alrededor de 100 kilonewtons — una fracción de un motor de primera etapa; nunca fue pensado para la plataforma. Pero su ciclo de expansión de hidrógeno alcanza 450 segundos de impulso específico en variantes modernas (el primer motor de 1963 logró 427), una velocidad de escape de 4,4 km/s — cada kilogramo de propelente compra media vez más velocidad. Por eso versiones de este motor silencioso han volado etapas superiores desde 1963 hasta esta década: arriba, la eficiencia es la única moneda.",
     "lab_goal_eng_raptor": "Raptor es el intento moderno de rechazar la disyuntiva. La combustión en etapas de flujo completo — ambos propelentes totalmente gasificados a través de dos precámaras — mantiene el metano en 350 segundos en vacío (327 donde el propulsor realmente dispara) mientras entrega empuje de clase propulsor, en un motor construido para ser producido en masa y reutilizado. El compromiso entre el F-1 y el RL10 no desapareció; fue ingeniería más fina.",
     "lab_goal_eng_tsiolkovsky": "Aquí está por qué gana el número silencioso. Carga el impulso específico del RL10 en la ecuación de Tsiolkovski con una relación de masas de diez y lee el resultado: más de 10 km/s desde una etapa. Ejecuta la misma relación de masas con un impulso de clase F-1 y obtienes menos de 7. Lo único que cambió es la velocidad de escape — Isp·g0 es la palanca sobre la que gira toda la ecuación de cohetes. Un asterisco honesto: en vehículos reales la baja densidad del hidrógeno compra algo de esto en tanques más grandes y estructura más pesada — por eso las bestias todavía dominan la primera etapa.",
@@ -14467,7 +14481,9 @@
     "lab_illustration_alt_flying_computer": "Un cohete en plena ascensión con su arco de guía trazado adelante, la corrección de rumbo esbozada como un trazo seguro.",
     "lab_illustration_alt_landing_computer": "Un módulo de descenso suspendido sobre el motor regulado por encima de la superficie, su curva de velocidad de descenso fantasmada junto a él hasta cero.",
     "lab_illustration_alt_entry_computer": "Una cápsula de reentrada inclinada a través del plasma de entrada, su corredor controlado esbozado como un canal que se estrecha hacia un objetivo.",
-    "lab_illustration_alt_apollo_round_trip": "La figura ocho completa del Apolo — la Tierra y la Luna con la trayectoria de retorno libre formando un bucle alrededor de ambas, la cápsula diminuta en la trayectoria."
+    "lab_illustration_alt_apollo_round_trip": "La figura ocho completa del Apolo — la Tierra y la Luna con la trayectoria de retorno libre formando un bucle alrededor de ambas, la cápsula diminuta en la trayectoria.",
+    "lab_ui_no_inputs": "Sin diales en este — la geometría determina completamente la respuesta, y el kernel la calcula.",
+    "lab_goal_land_earth_desc": "Descender es un problema en sí mismo — y viene en orden estricto: abandonar órbita, resistir el calor, atravesar el corredor de entrada, y solo ENTONCES importa el paracaídas. Intercambia velocidad por calor, luego calor por un toque suave, y descubre por qué volver a casa es más difícil que partir."
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -15917,7 +15933,7 @@
     "lab_assume_registry_datasheet": "Waarden komen uit het kernel's verzorgde motorregister — nominale datasheetwaarden, geen vluchttelerumetrie. Stuwkracht wordt aangehaald op zeeniveau voor eerste-traps-motoren en in vacuüm voor boventraps-motoren.",
     "lab_assume_vacuum_isp_preferred": "Specifieke impuls in vacuüm wordt gebruikt waar gepubliceerd; anders op zeeniveau.",
     "lab_goal_engines_title": "Motoren van de wereld",
-    "lab_goal_eng_f1": "Begin met de brute kracht. De F-1 verbrandde 2,6 ton brandstof per seconde om 6,77 meganewton voort te brengen — vijf stuks tilden een Saturn V van de lanceerbasis. Maar kijk voorbij de stuwkracht naar het getal ernaast: specifieke impuls 304 seconden in vacuüm (263 op de lanceerbasis), een uitlaatsnelheid dicht bij 3 km/s. Stuwkracht is wat de lanceerbasis eist. Het is niet wat de reis beloont.",
+    "lab_goal_eng_f1": "Drie motoren, één maatstaf — dezelfde kaart drie keer opzet, zodat de getallen zij aan zij vergeleken kunnen worden. Begin met de brute kracht. De F-1 verbrandde 2,6 ton drijfstof per seconde om 6,77 meganewton voort te brengen — vijf ervan tilden een Saturn V van de startplaats. Maar kijk voorbij de stuwkracht naar het getal ernaast: specifieke impuls 304 seconden in vacuüm (263 op de startplaats), een uitlaatsnelheid bijna 3 km/s. Stuwkracht is wat de startplaats eist. Het is niet wat de reis beloont.",
     "lab_goal_eng_rl10": "Nu de chirurg. De RL10 levert ongeveer 100 kilonewton — een fractie van een eerste-traps-motor; hij was nooit voor de lanceerbasis bedoeld. Maar zijn waterstofexpander-cyclus bereikt 450 seconden specifieke impuls in moderne varianten (de eerste motor uit 1963 haalde 427), een uitlaatsnelheid van 4,4 km/s — elke kilogram brandstof koopt anderhalf keer meer snelheid. Daarom vliegen versies van deze stille motor sinds 1963 tot dit decennium op boventrappen: boven, efficiëntie is de enige valuta.",
     "lab_goal_eng_raptor": "Raptor is de moderne poging de keuze af te wijzen. Volledig gestuwde gefaseerde verbranding — beide brandstoffen volledig vergast via twee voorverbranders — houdt methaan op 350 seconden in vacuüm (327 waar de booster werkelijk vuurt) terwijl het eerste-traps-stuwkracht levert, in een motor gebouwd om massaal geproduceerd en opnieuw gebruikt te worden. De compromis tussen de F-1 en de RL10 verdween niet; hij werd dunner geëngineerd.",
     "lab_goal_eng_tsiolkovsky": "Hier is waarom het stille getal wint. Vul de RL10's specifieke impuls in de raketvergeking met een massaverhouding van tien en lees het resultaat: meer dan 10 km/s van één trap. Voer dezelfde massaverhouding uit met een F-1-klasse impuls en je krijgt onder de 7. Het enige dat veranderde is uitlaatsnelheid — Isp·g0 is de hefboom waarop de hele raketvergeking draait. Één eerlijke asterisk: in echte voertuigen koopt waterstofsdichte dichtheid wat hiervan terug in grotere tanks en zwaardere structuur — daarom bezetten de bruten nog steeds de eerste trap.",
@@ -16094,7 +16110,9 @@
     "lab_illustration_alt_flying_computer": "Een raket halverwege de stijging met zijn geleide boog vooruit getekend, de stuurcorrectie geschetst als een zelfverzekerde slag.",
     "lab_illustration_alt_landing_computer": "Een lander zwevend op een gereduceerde motor boven het oppervlak, zijn daalsnelheidscurve zwak naast zich uitstervend naar nul.",
     "lab_illustration_alt_entry_computer": "Een liftvehikel kanteling door entree-plasma, zijn gestuurde corridor geschetst als een vernauwend kanaal naar een doel.",
-    "lab_illustration_alt_apollo_round_trip": "De volledige Apollo-achtvorm — Aarde en Maan met de vrije-returntrajectorië om beide lus, de capsule minuscuul op het pad."
+    "lab_illustration_alt_apollo_round_trip": "De volledige Apollo-achtvorm — Aarde en Maan met de vrije-returntrajectorië om beide lus, de capsule minuscuul op het pad.",
+    "lab_ui_no_inputs": "Geen draaiknopjes hier — de geometrie bepaalt volledig het antwoord, en de kernel berekent het.",
+    "lab_goal_land_earth_desc": "Landen is een eigen probleem — en het komt in strikte volgorde: baan verlaten, hitte overleven, ingangsgang nauwkeurig treffen, en pas DAN telt een parachute mee. Ruil snelheid voor hitte, dan hitte voor een zachte landing, en zie waarom thuiskomen moeilijker is dan vertrekken."
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -17808,7 +17826,7 @@
     "lab_assume_registry_datasheet": "Значения взяты из проверенного реестра двигателей ядра — номинальные цифры из описаний, не данные полётной телеметрии. Тяга указана на уровне моря для ускорительных двигателей и в вакууме для верхнеступенных.",
     "lab_assume_vacuum_isp_preferred": "Используется удельный импульс в вакууме, где опубликован; иначе — на уровне моря.",
     "lab_goal_engines_title": "Двигатели мира",
-    "lab_goal_eng_f1": "Начнём с грубой силы. F-1 сжигал 2,6 тонны топлива в секунду, развивая тягу 6,77 меганьютонов — пять таких двигателей поднимали Saturn V со стартовой площадки. Но посмотрите не на саму тягу, а на цифру рядом: удельный импульс 304 секунды в вакууме (263 на стартовой площадке), скорость истечения близ 3 км/с. Тяга — вот что требует площадка. Но не это вознаграждает путь.",
+    "lab_goal_eng_f1": "Три двигателя, один мерило — одна и та же карточка три раза специально, чтобы числа можно было сравнивать рядом. Начните с грубой силы. F-1 сжигал 2,6 тонны топлива в секунду, создавая 6,77 меганьютонов — пять их подняли Saturn V с подушки. Но посмотрите за пределы тяги на число рядом с ней: удельный импульс 304 секунды в вакууме (263 на подушке), скорость истечения близко 3 км/с. Тяга — это то, что требует подушка. Это не то, что вознаграждает путешествие.",
     "lab_goal_eng_rl10": "Теперь искусство хирургии. RL10 развивает около 100 килоньютонов — малая доля мощи первой ступени; он никогда не предназначался для площадки. Но его водородный расширительный цикл достигает 450 секунд удельного импульса в современных вариантах (первый двигатель 1963 года показал 427), скорость истечения 4,4 км/с — каждый килограмм топлива даёт полтора раза больше скорости. Поэтому версии этого тихого двигателя летали на верхних ступенях с 1963 года по сей день: в космосе считается только эффективность.",
     "lab_goal_eng_raptor": "Raptor — современная попытка избежать выбора. Полнопоточное поэтапное сгорание — оба компонента полностью газифицируются через двойные предгорелки — держит метан на 350 секундах в вакууме (327 там, где работает ускоритель) при тяге ускорительного класса, в двигателе, спроектированном на массовое производство и повторное использование. Компромисс между F-1 и RL10 не исчез — его просто инженеры сделали тоньше.",
     "lab_goal_eng_tsiolkovsky": "Вот почему тихая цифра побеждает. Подставьте удельный импульс RL10 в уравнение Циолковского при отношении масс десять — и получите свыше 10 км/с с одной ступени. Возьмите то же отношение масс с импульсом F-1-класса — получите менее 7. Изменилась только скорость истечения — Isp·g0 — это рычаг, на котором вращается всё уравнение Циолковского. Одна честная оговорка: в реальных аппаратах низкая плотность водорода требует бо́льших баков и тяжелее конструкцию — вот почему грубая сила остаётся владычицей первой ступени.",
@@ -17984,7 +18002,9 @@
     "lab_illustration_alt_flying_computer": "Ракета в середине подъёма с начерченной впереди дугой траектории, коррекция курса обозначена уверенным штрихом.",
     "lab_illustration_alt_landing_computer": "Посадочный аппарат, зависший на дросселируемом двигателе над поверхностью, кривая скорости снижения рядом плавно снижается к нулю.",
     "lab_illustration_alt_entry_computer": "Спускаемая капсула с креном сквозь плазму входа, управляемый коридор обозначен сужающимся каналом к цели.",
-    "lab_illustration_alt_apollo_round_trip": "Полная восьмёрка Apollo — Земля и Луна с траекторией свободного возврата, петляющей вокруг обеих, капсула крошечна на пути."
+    "lab_illustration_alt_apollo_round_trip": "Полная восьмёрка Apollo — Земля и Луна с траекторией свободного возврата, петляющей вокруг обеих, капсула крошечна на пути.",
+    "lab_ui_no_inputs": "Здесь нет циферблатов — геометрия полностью определяет ответ, и ядро его вычисляет.",
+    "lab_goal_land_earth_desc": "Снижение — это отдельная задача, и она идёт в строгом порядке: покинуть орбиту, пережить нагрев, пройти коридор входа, и только ПОТОМ парашют имеет значение. Обменивайте скорость на нагрев, затем нагрев на мягкую посадку, и поймите, почему возвращение домой сложнее, чем отправление."
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -19742,7 +19762,7 @@
     "lab_assume_registry_datasheet": "数值来自内核精选的发动机注册表——名义数据表数据，非飞行遥测数据。推力在海平面处按推进器发动机报价，在真空中按上面级发动机报价。",
     "lab_assume_vacuum_isp_preferred": "优先使用真空比冲；如无则使用海平面值。",
     "lab_goal_engines_title": "世界各地的发动机",
-    "lab_goal_eng_f1": "从蛮力开始。F-1 每秒燃烧 2.6 吨推进剂，产生 677 万牛顿推力——五台 F-1 将土星五号从发射台推离。但越过推力数字，看看它旁边的指标：真空中比冲 304 秒（发射台处 263 秒），排气速度接近 3 公里/秒。推力是发射台的需求。但它不是航程所奖励的。",
+    "lab_goal_eng_f1": "三台发动机,一把标尺——故意用同一张卡片三次,这样数字可以并排比较。从蛮力开始。F-1 每秒燃烧 2.6 吨推进剂,产生 677.7 万牛顿——五台发动机把土星五号送离发射台。但超越推力看另一个数字:真空中的比冲 304 秒(发射台处 263 秒),排气速度接近 3 km/s。推力是发射台的要求。它不是旅程所奖励的。",
     "lab_goal_eng_rl10": "现在轮到精密医生。RL10 产生约 100 千牛顿推力——仅为一级发动机的一小部分；它从不为发射台而设计。但其氢膨胀循环在现代型号中达到 450 秒比冲（首台 1963 年发动机达 427 秒），排气速度 4.4 公里/秒——每千克推进剂换来速度增加一倍半。这就是为什么这台静谧发动机的各种版本自 1963 年以来一直在飞行上面级，直到今年代：在高空，效率是唯一的货币。",
     "lab_goal_eng_raptor": "Raptor 是现代的尝试，拒绝二选一。全流量分级燃烧——两种推进剂都经双预燃器完全汽化——在真空中保持甲烷 350 秒比冲（推进器实际工作处 327 秒），同时提供推进器级的推力，采用可大规模生产和重复使用的发动机。F-1 和 RL10 之间的权衡并未消失；只是被工程得更加精细。",
     "lab_goal_eng_tsiolkovsky": "这就是为什么静谧的指标赢了。在质量比为 10 的条件下将 RL10 的比冲代入火箭方程，读出结果：单级超过 10 公里/秒。用 F-1 级的比冲跑同样的质量比，你得到不足 7 公里/秒。唯一改变的是排气速度——Isp·g0 是整个火箭方程摆动的杠杆。有一个实诚的注脚：在真实飞行器中，氢的低密度会导致更大的油箱和更重的结构——这就是为什么蛮力仍然统治着第一级。",
@@ -19918,7 +19938,9 @@
     "lab_illustration_alt_flying_computer": "火箭在上升中段，其制导弧线在其前方勾勒出来，转向修正素描为有力的一笔。",
     "lab_illustration_alt_landing_computer": "着陆器悬停在节流引擎上方的表面，其下降速率曲线虚影般地在其旁逐渐趋于零。",
     "lab_illustration_alt_entry_computer": "升力舱在再入等离子体中倾斜，其受控走廊素描为指向目标的逐渐缩小的通道。",
-    "lab_illustration_alt_apollo_round_trip": "完整的阿波罗八字形——地球和月球与自由返回轨迹环绕两者，舱在路径上显得微小。"
+    "lab_illustration_alt_apollo_round_trip": "完整的阿波罗八字形——地球和月球与自由返回轨迹环绕两者，舱在路径上显得微小。",
+    "lab_ui_no_inputs": "这个没有旋钮——几何形状完全确定了答案,内核计算它。",
+    "lab_goal_land_earth_desc": "下降是自己的问题——必须严格按顺序进行:离开轨道、承受高温、穿过再入走廊,只有这样降落伞才有用。用速度换热量,再用热量换平稳着陆,看看为什么回家比离开更难。"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -21547,7 +21569,7 @@
     "lab_assume_registry_datasheet": "Вредности долазе из курираног регистра мотора кернела — номиналне цифре техничких листова, не телеметрија лета. Потисак је наведен на нивоу мора за моторе зачувача и у вакууму за моторе горњег степена.",
     "lab_assume_vacuum_isp_preferred": "Специфични импулс у вакууму се користи где је објављен; иначе на нивоу мора.",
     "lab_goal_engines_title": "Мотори света",
-    "lab_goal_eng_f1": "Почните са сиром. F-1 је спаљивао 2,6 тона горива секундно да би произвео 6,77 меганјутна — пет њих је подигло Сатурн V са платформе. Али погледајте изван потиска на број поред њега: специфични импулс 304 секунде у вакууму (263 на платформи), брзина издувавања близу 3 км/с. Потисак је оно што платформа захтева. То није оно што путовање награђује.",
+    "lab_goal_eng_f1": "Три мотора, један мерач — иста карта три пута намерно, да би се бројеви могли упоредити редом. Почни са грубом силом. F-1 је спаљивао 2,6 тона погонског горива у секунди да би произвео 6,77 меганјутна — пет их је подигло Saturn V са платформе. Али позвай позорност изван потиска на број поред њега: специфични импулс 304 секунде у вакууму (263 на платформи), брзина издувних гасова близу 3 km/s. Потисак је оно што платформа захтева. То није оно што пут награђује.",
     "lab_goal_eng_rl10": "Сада хирург. RL10 производи око 100 килонјутна — разломак мотора првог степена; никад није био намењен за платформу. Али његов водоничан експандерски циклус достиже 450 секунди специфичног импулса у модерним варијантама (прва 1963. година је постигла 427), брзину издувавања од 4,4 км/с — сваки килограм горива купи половину већу брзину. То је зашто су верзије овог тихог мотора летале на горњим степенима од 1963. до овог десетилећа: горе, ефикасност је једина валута.",
     "lab_goal_eng_raptor": "Рептор је модеран покушај одбијања избора. Пуно токовни степенисто сагоревање — оба горива потпуно угаљена кроз двоструке предпаљаче — держи метан на 350 секунди у вакууму (327 где се зачувач заиста пали) док испоручује потисак класе зачувача, у мотору изграђеном да буде масовно произведен и поново летен. Трговина између F-1 и RL10 није нестала; била је инжењерски сужена.",
     "lab_goal_eng_tsiolkovsky": "Ево зашто тиха цифра побеђује. Повежите специфични импулс RL10 у ракетну једначину са односом масе десет и прочитајте резултат: преко 10 км/с од једног степена. Покрените исти однос масе са импулсом класе F-1 и добићете мање од 7. Једина ствар која се променила је брзина издувавања — Isp·g0 је полуга на коју се читава ракетна једначина ослања. Једна честита напомена: у правим возилима позиција водоника купи део овога назад у већим резервоарима и тежој структури — због чега суровци и даље поседују први степен.",
@@ -21723,7 +21745,9 @@
     "lab_illustration_alt_flying_computer": "Ракета у успону са њеном водичком путањом исцртаном испред ње, корекција управљања скицирана као самоуверен потез.",
     "lab_illustration_alt_landing_computer": "Лендер зависан на пригушеном мотору изнад површине, његова крива брзине спуштања замагљена поред њега и смирена на нулу.",
     "lab_illustration_alt_entry_computer": "Капсула са узгоном банком кроз плазму при уласку, њена управљана коридор скицирана као сужавајући канал према циљу.",
-    "lab_illustration_alt_apollo_round_trip": "Комплетна Аполо фигура-осам — Земља и Месец са слободном трајекторијом враћања која се виха око обе, капсула мала на путањи."
+    "lab_illustration_alt_apollo_round_trip": "Комплетна Аполо фигура-осам — Земља и Месец са слободном трајекторијом враћања која се виха око обе, капсула мала на путањи.",
+    "lab_ui_no_inputs": "Нема мерних инструмената — геометрија у потпуности одређује одговор, а језгро га рачуна.",
+    "lab_goal_land_earth_desc": "Силажење је сопствени проблем — и долази у строгом редоследу: напусти орбиту, преживи топлоту, пређи кроз коридор уласка, и тек ОНДА парашут има значај. Замени брзину топлотом, затим топлоту меким дотиком, и види зашто је повратак кући тежи него напуштање."
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -23171,7 +23195,7 @@
     "lab_assume_registry_datasheet": "Os valores vêm do registro de motor curado do núcleo — figuras nominais de ficha técnica, não telemetria de voo. O impulso é cotado ao nível do mar para motores propulsores e no vácuo para motores de estágio superior.",
     "lab_assume_vacuum_isp_preferred": "Impulso específico em vácuo é usado quando publicado; nível do mar caso contrário.",
     "lab_goal_engines_title": "Motores do mundo",
-    "lab_goal_eng_f1": "Comece com o bruto. O F-1 queimava 2,6 toneladas de propelente por segundo para gerar 6,77 meganewtons — cinco deles erguiam um Saturno V da plataforma. Mas olhe além do impulso para o número ao lado: impulso específico de 304 segundos no vácuo (263 na plataforma), uma velocidade de escape perto de 3 km/s. Impulso é o que a plataforma exige. Não é o que a jornada recompensa.",
+    "lab_goal_eng_f1": "Três motores, uma régua — o mesmo cartão três vezes de propósito, para que os números possam ser comparados lado a lado. Comece com a força bruta. O F-1 queimava 2,6 toneladas de propelente por segundo para gerar 6,77 meganewtons — cinco deles tiraram um Saturno V da plataforma. Mas olhe além do empuxo para o número ao seu lado: impulso específico 304 segundos no vácuo (263 na plataforma), uma velocidade de escape perto de 3 km/s. Empuxo é o que a plataforma exige. Não é o que a jornada recompensa.",
     "lab_goal_eng_rl10": "Agora o cirurgião. O RL10 produz cerca de 100 quilonewtons — uma fração de um motor de primeiro estágio; nunca foi feito para a plataforma. Mas seu ciclo expansor de hidrogênio atinge 450 segundos de impulso específico em variantes modernas (o primeiro motor de 1963 conseguiu 427), uma velocidade de escape de 4,4 km/s — cada quilograma de propelente compra metade a mais de velocidade. É por isso que versões deste motor silencioso voaram em estágios superiores de 1963 até esta década: lá em cima, eficiência é a única moeda.",
     "lab_goal_eng_raptor": "Raptor é a tentativa moderna de recusar a escolha. Combustão em estágio completo — ambos os propelentes totalmente gasificados através de dois pré-queimadores — mantém o metano em 350 segundos no vácuo (327 onde o propulsor realmente funciona) enquanto entrega impulso de classe propulsor, em um motor construído para ser produzido em massa e refluído. O comércio entre o F-1 e o RL10 não desapareceu; foi engenheirado mais finamente.",
     "lab_goal_eng_tsiolkovsky": "Aqui está por que o número silencioso vence. Insira o impulso específico do RL10 na equação do foguete com uma razão de massa de dez e leia o resultado: mais de 10 km/s de um só estágio. Execute a mesma razão de massa com um impulso de classe F-1 e você obtém menos de 7. A única coisa que mudou é a velocidade de escape — Isp·g0 é a alavanca sobre a qual toda a equação do foguete oscila. Um asterisco honesto: em veículos reais, a baixa densidade do hidrogênio compensa parte disso em tanques maiores e estrutura mais pesada — é por isso que os brutos ainda dominam o primeiro estágio.",
@@ -23348,6 +23372,8 @@
     "lab_illustration_alt_flying_computer": "Um foguete em ascensão com seu arco de guia traçado à frente, a correção de rumo esboçada como um traço seguro.",
     "lab_illustration_alt_landing_computer": "Um módulo de pouso flutuando em motor estrangulado acima da superfície, sua curva de taxa de descida fantasmagórica amenizando até zero.",
     "lab_illustration_alt_entry_computer": "Uma cápsula de entrada inclinando-se através do plasma, seu corredor controlado esboçado como um canal estreitando em direção a um alvo.",
-    "lab_illustration_alt_apollo_round_trip": "A figura-oito Apollo completa — Terra e Lua com a trajetória de retorno livre fazendo loop em torno de ambas, a cápsula minúscula no trajeto."
+    "lab_illustration_alt_apollo_round_trip": "A figura-oito Apollo completa — Terra e Lua com a trajetória de retorno livre fazendo loop em torno de ambas, a cápsula minúscula no trajeto.",
+    "lab_ui_no_inputs": "Sem controles neste — a geometria determina completamente a resposta, e o kernel a calcula.",
+    "lab_goal_land_earth_desc": "Descer é um problema em si — e vem em ordem rigorosa: deixar a órbita, sobreviver ao calor, passar pelo corredor de entrada, e só ENTÃO o paraquedas importa. Troque velocidade por calor, depois calor por um pouso suave, e veja por que voltar é mais difícil que partir."
   }
 }

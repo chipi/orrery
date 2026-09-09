@@ -155,6 +155,11 @@
 
   <!-- Parameter controls -->
   <section class="card__controls" aria-label={t('lab.ui.aria-parameters')}>
+    <!-- A zero-input formula (e.g. cislunar-transfer) would render an empty section —
+         say WHY there are no dials instead (advisor newcomer-gap, 2026-09-09). -->
+    {#if formula.inputs.filter((f) => !f.injected).length === 0}
+      <p class="card__no-inputs">{t('lab.ui.no-inputs')}</p>
+    {/if}
     {#each formula.inputs.filter((f) => !f.injected) as field (field.key)}
       <div class="card__field" class:card__field--wired={wired.has(field.key)}>
         <label class="card__label" for="field-{formula.id}-{field.key}">
@@ -449,6 +454,14 @@
     color: rgba(232, 232, 232, 0.72);
     border-left: 2px solid rgba(78, 205, 196, 0.3);
     padding-left: 0.7rem;
+  }
+
+  .card__no-inputs {
+    margin: 0;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.68rem;
+    color: rgba(232, 232, 232, 0.55);
+    font-style: italic;
   }
 
   /* ─── Controls ───────────────────────────────────────────────────────── */

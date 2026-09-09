@@ -268,12 +268,13 @@ const getToMars: FlightMap = {
   ],
   events: [
     {
+      // No step ref — C3/departure energy precedes the ladder; step 2 is the
+      // synodic WINDOW, not the escape energy (advisor review 2026-09-09).
       n: 1,
       dot: [250, 350],
       at: [300, 392],
       name: 'Launch',
       met: 'L+0',
-      step: 2,
       physics: 'Earth escape (C3)',
     },
     {

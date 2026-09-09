@@ -70,7 +70,9 @@
                         title={t('lab.ui.wired')}>←</span
                       >{/if}
                   </dt>
-                  <dd>{typeof v === 'number' ? fmt(v) : v}{field.units ? ' ' + field.units : ''}</dd>
+                  <dd>
+                    {typeof v === 'number' ? fmt(v) : v}{field.units ? ' ' + field.units : ''}
+                  </dd>
                 </div>
               {/if}
             {/each}
@@ -83,7 +85,8 @@
                 <div class="ask-scenario__row">
                   <dt>{t(o.labelKey)}</dt>
                   <dd class="ask-scenario__val">
-                    {fmt(c.result.values[o.key].value)} {c.result.values[o.key].units}
+                    {fmt(c.result.values[o.key].value)}
+                    {c.result.values[o.key].units}
                   </dd>
                 </div>
               {/if}

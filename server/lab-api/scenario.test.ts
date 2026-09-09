@@ -19,7 +19,12 @@ describe('parseScenarioArgs · guards (REJECT posture)', () => {
     expect(() => parseScenarioArgs({})).toThrow();
     expect(() => parseScenarioArgs({ cells: [] })).toThrow();
     expect(() =>
-      parseScenarioArgs({ cells: Array.from({ length: MAX_SCENARIO_CELLS + 1 }, () => ({ formulaId: 'weight', inputs: {} })) }),
+      parseScenarioArgs({
+        cells: Array.from({ length: MAX_SCENARIO_CELLS + 1 }, () => ({
+          formulaId: 'weight',
+          inputs: {},
+        })),
+      }),
     ).toThrow(/max/);
   });
 

@@ -261,7 +261,9 @@ export async function buildLabApi(cfg: LabApiConfig): Promise<LabApi> {
           typeof body.scenario === 'object' &&
           Array.isArray((body.scenario as { cells?: unknown }).cells);
         const askCtx = {
-          scenario: scenarioOk ? (body.scenario as import('./ask').AskContext['scenario']) : undefined,
+          scenario: scenarioOk
+            ? (body.scenario as import('./ask').AskContext['scenario'])
+            : undefined,
           history: Array.isArray(body.history)
             ? (body.history as import('./ask').AskContext['history'])
             : undefined,

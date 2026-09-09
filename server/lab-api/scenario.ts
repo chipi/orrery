@@ -140,8 +140,10 @@ export function parseUpdateArgs(args: unknown): ScenarioChange[] {
   }
   return raw.map((c, i) => {
     const ch = c as { cell?: unknown; input?: unknown; value?: unknown };
-    if (!Number.isInteger(ch.cell)) throw new Error(`update_scenario: change ${i} needs an integer cell`);
-    if (typeof ch.input !== 'string') throw new Error(`update_scenario: change ${i} needs a string input`);
+    if (!Number.isInteger(ch.cell))
+      throw new Error(`update_scenario: change ${i} needs an integer cell`);
+    if (typeof ch.input !== 'string')
+      throw new Error(`update_scenario: change ${i} needs a string input`);
     if (typeof ch.value !== 'number' && typeof ch.value !== 'string') {
       throw new Error(`update_scenario: change ${i} value must be a number or string`);
     }
@@ -224,7 +226,10 @@ export interface ScenarioStepSummary {
  * narrate from. The client recomputes the same `cells` locally for full rendering — the
  * heavy figures never ride the model's context (Fable-5 R4). The kernel owns every number.
  */
-export function summariseScenario(scenario: AskScenario, registry: Registry): ScenarioStepSummary[] {
+export function summariseScenario(
+  scenario: AskScenario,
+  registry: Registry,
+): ScenarioStepSummary[] {
   const computed = recomputeNotebook(hydrateCells(scenario.cells, registry), registry);
   return computed.map((c, i) => {
     const formulaId = scenario.cells[i]?.formulaId ?? '?';

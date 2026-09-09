@@ -176,7 +176,10 @@ describe('ask', () => {
               name: 'compose_scenario',
               arguments: JSON.stringify({
                 cells: [
-                  { formulaId: 'thrust-from-flow', inputs: { massFlowKgS: 250, exhaustVelMs: 3000 } },
+                  {
+                    formulaId: 'thrust-from-flow',
+                    inputs: { massFlowKgS: 250, exhaustVelMs: 3000 },
+                  },
                   {
                     formulaId: 'twr',
                     inputs: { massKg: 50000, body: 'earth' },

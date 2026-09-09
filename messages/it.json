@@ -2889,5 +2889,10 @@
   "lab_goal_lmars_challenge": "Assottiglia il paracadute o l'atmosfera finché l'atterraggio non diventa più sopravvivibile. Marte lascia quasi nessun margine — per questo è difficile.",
   "lab_goal_tsw_challenge": "Aumenta la tua velocità di avvicinamento finché non rimbalzi invece di atterrare. Su un mondo così piccolo, la velocità di fuga è appena un ritmo di marcia.",
   "lab_goal_lss_challenge": "Versa più Δv in un singolo razzo — riesce a superare il Sole solo con il carburante, o hai ancora bisogno della catena di assistenza gravitazionale?",
-  "lab_ask_scenario_aria": "Scenario calcolato"
+  "lab_ask_scenario_aria": "Scenario calcolato",
+  "lab_assume_target_leo": "Obiettivo: un'orbita terrestre bassa a 200 km",
+  "lab_assume_target_geo": "Obiettivo: l'altitudine geostazionaria di 35.786 km",
+  "lab_assume_target_moon": "Obiettivo: la Luna",
+  "lab_assume_target_mars": "Obiettivo: Marte",
+  "lab_assume_target_venus": "Obiettivo: Venere"
 }

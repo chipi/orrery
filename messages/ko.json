@@ -2889,5 +2889,10 @@
   "lab_goal_lmars_challenge": "낙하산이나 대기를 얇게 할 때까지 — 착륙이 더 이상 생존 가능하지 않을 때까지. 화성은 거의 여유가 없습니다 — 그것이 어려운 이유입니다.",
   "lab_goal_tsw_challenge": "접근 속도를 올려서 착륙 대신 튕겨나갈 때까지. 이렇게 작은 세계에서는 탈출 속도가 겨우 걷는 속도입니다.",
   "lab_goal_lss_challenge": "단일 로켓에 더 많은 Δv를 쏟아 붓습니다 — 연료만으로 태양을 벗어날 수 있을까요, 아니면 여전히 중력 어시스트 체인이 필요할까요?",
-  "lab_ask_scenario_aria": "계산된 시나리오"
+  "lab_ask_scenario_aria": "계산된 시나리오",
+  "lab_assume_target_leo": "목표: 200km 저궤도(LEO)",
+  "lab_assume_target_geo": "목표: 35,786km 정지궤도 고도",
+  "lab_assume_target_moon": "목표: 달",
+  "lab_assume_target_mars": "목표: 화성",
+  "lab_assume_target_venus": "목표: 금성"
 }

@@ -2889,5 +2889,10 @@
   "lab_goal_lmars_challenge": "Thin the parachute or the atmosphere until the touchdown stops being survivable. Mars leaves almost no margin — that is why it is hard.",
   "lab_goal_tsw_challenge": "Raise your approach speed until you bounce off instead of landing. On a world this small, escape velocity is barely walking pace.",
   "lab_goal_lss_challenge": "Pour more Δv into a single rocket — can it clear the Sun on fuel alone, or do you still need the gravity-assist chain?",
-  "lab_ask_scenario_aria": "Computed scenario"
+  "lab_ask_scenario_aria": "Computed scenario",
+  "lab_assume_target_leo": "Target: a 200 km low Earth orbit",
+  "lab_assume_target_geo": "Target: the 35,786 km geostationary altitude",
+  "lab_assume_target_moon": "Target: the Moon",
+  "lab_assume_target_mars": "Target: Mars",
+  "lab_assume_target_venus": "Target: Venus"
 }

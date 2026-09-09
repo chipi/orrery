@@ -33,6 +33,26 @@ describe('parseScenarioArgs · guards (REJECT posture)', () => {
   });
 });
 
+describe('parseScenarioArgs · named-target presets (#542)', () => {
+  it('a target fills concrete inputs + records the assumption; a pinned input still wins', () => {
+    const s = parseScenarioArgs({
+      cells: [
+        { formulaId: 'weight', target: 'moon', inputs: {} },
+        { formulaId: 'weight', target: 'mars', inputs: { body: 'earth' } },
+      ],
+    });
+    expect(s.cells[0].inputs.body).toBe('moon'); // preset filled the concrete input
+    expect(s.presetNotes?.[0]).toBe('lab.assume.target-moon');
+    expect(s.cells[1].inputs.body).toBe('earth'); // the user's pinned body wins over the preset
+    expect(s.presetNotes?.[1]).toBe('lab.assume.target-mars');
+  });
+
+  it('records no note when no target is named', () => {
+    const s = parseScenarioArgs({ cells: [{ formulaId: 'weight', inputs: { massKg: 1 } }] });
+    expect(s.presetNotes?.[0]).toBeNull();
+  });
+});
+
 describe('summariseScenario · the kernel owns the numbers', () => {
   it('propagates a wired output down the ladder (the LLM never relays it)', () => {
     // thrust-from-flow.thrustN (250 kg/s · 3000 m/s = 750 kN) wired into twr.thrustN,

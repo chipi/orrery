@@ -18,7 +18,30 @@ export const MAX_SCENARIO_CELLS = 12;
 export interface AskScenario {
   v: typeof SCENARIO_VERSION;
   cells: Cell[];
+  /** Per-cell preset assumption key (slice #542) when the model named a `target`; the
+   *  disclosure that a vague intent ("to the Moon") became a concrete input. */
+  presetNotes?: (string | null)[];
 }
+
+/**
+ * Named-intent presets (slice #542 · Fable-5): a DETERMINISTIC server-side table so a
+ * vague intent ("to the Moon", "low orbit") becomes a concrete kernel input — the numbers
+ * live here, auditable, never invented per-request in the prompt. Each carries the i18n
+ * assumption key that then rides the card. Keys map to REAL shared inputs (`body`,
+ * `altitudeKm`); a preset key a given formula lacks is simply ignored on that cell.
+ */
+export interface ScenarioPreset {
+  inputs: Record<string, number | string>;
+  assumptionKey: string;
+}
+export const SCENARIO_PRESETS: Record<string, ScenarioPreset> = {
+  'low-earth-orbit': { inputs: { altitudeKm: 200 }, assumptionKey: 'lab.assume.target-leo' },
+  geostationary: { inputs: { altitudeKm: 35786 }, assumptionKey: 'lab.assume.target-geo' },
+  moon: { inputs: { body: 'moon' }, assumptionKey: 'lab.assume.target-moon' },
+  mars: { inputs: { body: 'mars' }, assumptionKey: 'lab.assume.target-mars' },
+  venus: { inputs: { body: 'venus' }, assumptionKey: 'lab.assume.target-venus' },
+};
+export const SCENARIO_PRESET_NAMES = Object.keys(SCENARIO_PRESETS);
 
 /**
  * Merge each cell's user-stated inputs OVER the formula defaults, so an unspecified

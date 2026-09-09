@@ -15,6 +15,8 @@ import {
   hydrateCells,
   MAX_SCENARIO_CELLS,
   SCENARIO_VERSION,
+  SCENARIO_PRESETS,
+  SCENARIO_PRESET_NAMES,
   type AskScenario,
 } from '$lib/lab/ask-scenario';
 
@@ -50,11 +52,18 @@ export function composeScenarioTool() {
               required: ['formulaId', 'inputs'],
               properties: {
                 formulaId: { type: 'string', description: 'A kernel formula id.' },
+                target: {
+                  type: 'string',
+                  enum: SCENARIO_PRESET_NAMES,
+                  description:
+                    'Optional named target for a VAGUE intent ("to the Moon", "low orbit"). The ' +
+                    'server fills the concrete inputs — use this instead of guessing a number.',
+                },
                 inputs: {
                   type: 'object',
                   description:
-                    'Input key → value. Only keys the user pinned or a preset sets; omit the rest ' +
-                    '(the kernel default stands). Wired inputs are set by the wire, not here.',
+                    'Input key → value. Only keys the user pinned; omit the rest (the kernel ' +
+                    'default or the target preset stands). Wired inputs are set by the wire, not here.',
                 },
                 wires: {
                   type: 'array',
@@ -87,21 +96,32 @@ export function parseScenarioArgs(args: unknown): AskScenario {
   if (rawCells.length > MAX_SCENARIO_CELLS) {
     throw new Error(`compose_scenario: too many cells (max ${MAX_SCENARIO_CELLS})`);
   }
+  const presetNotes: (string | null)[] = [];
   const cells: Cell[] = rawCells.map((c, i) => {
-    const cell = c as { formulaId?: unknown; inputs?: unknown; wires?: unknown };
+    const cell = c as {
+      formulaId?: unknown;
+      inputs?: unknown;
+      wires?: unknown;
+      target?: unknown;
+    };
     if (typeof cell.formulaId !== 'string') {
       throw new Error(`compose_scenario: cell ${i} missing a string formulaId`);
     }
-    const inputs =
+    const userInputs =
       cell.inputs && typeof cell.inputs === 'object' && !Array.isArray(cell.inputs)
         ? (cell.inputs as Record<string, number | string>)
         : {};
+    // A named target (slice #542) fills concrete inputs UNDER what the user pinned
+    // (the user's explicit number always wins); its assumption then rides the card.
+    const preset = typeof cell.target === 'string' ? SCENARIO_PRESETS[cell.target] : undefined;
+    presetNotes.push(preset ? preset.assumptionKey : null);
+    const inputs = preset ? { ...preset.inputs, ...userInputs } : userInputs;
     const wires = Array.isArray(cell.wires)
       ? (cell.wires as { fromIndex: number; output: string; toInput: string }[])
       : undefined;
     return { formulaId: cell.formulaId, inputs, wires };
   });
-  return { v: SCENARIO_VERSION, cells };
+  return { v: SCENARIO_VERSION, cells, presetNotes };
 }
 
 /** One step as the MODEL sees it — figure stripped, numbers the kernel actually produced. */

@@ -2889,5 +2889,10 @@
   "lab_goal_lmars_challenge": "パラシュートまたは大気を薄くしていき、着陸が生存不可能になるまで。火星はほぼ余裕がありません — だからこそ困難なのです。",
   "lab_goal_tsw_challenge": "接近速度を上げていき、着陸する代わりにバウンドするまで。このような小さな天体では、脱出速度はほぼ歩行速度です。",
   "lab_goal_lss_challenge": "より多くのΔvを単一ロケットに注ぎ込んでください — 燃料だけで太陽を抜けられるか、それともまだ重力アシスト連鎖が必要ですか？",
-  "lab_ask_scenario_aria": "計算されたシナリオ"
+  "lab_ask_scenario_aria": "計算されたシナリオ",
+  "lab_assume_target_leo": "ターゲット: 高度200 km低軌道",
+  "lab_assume_target_geo": "ターゲット: 高度35,786 km静止軌道",
+  "lab_assume_target_moon": "ターゲット: 月",
+  "lab_assume_target_mars": "ターゲット: 火星",
+  "lab_assume_target_venus": "ターゲット: 金星"
 }

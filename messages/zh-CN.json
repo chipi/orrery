@@ -2889,5 +2889,10 @@
   "lab_goal_lmars_challenge": "减薄降落伞或大气，直到着陆不再可生存。火星几乎没有冗余——这就是为什么它很难。",
   "lab_goal_tsw_challenge": "提高接近速度，直到弹起而不是着陆。在这么小的星体上，逃逸速度只是步行速度。",
   "lab_goal_lss_challenge": "向单个火箭注入更多Δv——它能仅靠燃料越过太阳，还是仍需重力助推链？",
-  "lab_ask_scenario_aria": "计算的情景"
+  "lab_ask_scenario_aria": "计算的情景",
+  "lab_assume_target_leo": "目标：200 km 近地轨道",
+  "lab_assume_target_geo": "目标：35,786 km 地球同步轨道高度",
+  "lab_assume_target_moon": "目标：月球",
+  "lab_assume_target_mars": "目标：火星",
+  "lab_assume_target_venus": "目标：金星"
 }

@@ -155,7 +155,9 @@ function systemPrompt(locale: string): string {
     'gave a number. When the user wants to WORK A SCENARIO ("how do I launch a 100 kg ' +
     'payload?"), call compose_scenario ONCE with an ordered formula ladder: seed inputs ' +
     'only with the user\'s stated values, and WIRE an earlier step\'s output into a later ' +
-    "step's input rather than copying any computed number yourself. " +
+    "step's input rather than copying any computed number yourself. For a VAGUE target the " +
+    'user did not pin to a number ("to the Moon", "low orbit"), set the cell\'s `target` enum ' +
+    'instead of guessing — the kernel fills the concrete input. ' +
     `Respond in locale "${locale}".`
   );
 }

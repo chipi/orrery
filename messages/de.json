@@ -2889,5 +2889,10 @@
   "lab_goal_lmars_challenge": "Verdünnen Sie den Fallschirm oder die Atmosphäre, bis die Landung nicht mehr überlebbar ist. Der Mars lässt fast keinen Spielraum — deshalb ist er so schwierig.",
   "lab_goal_tsw_challenge": "Erhöhen Sie Ihre Anfluggeschwindigkeit, bis Sie abprallen statt zu landen. Auf einer so kleinen Welt ist die Fluchtgeschwindigkeit kaum schneller als Schrittempo.",
   "lab_goal_lss_challenge": "Pumpen Sie mehr Δv in eine einzelne Rakete — kann sie die Sonne nur mit Treibstoff verlassen, oder brauchen Sie immer noch die Swing-by-Kette?",
-  "lab_ask_scenario_aria": "Berechnetes Szenario"
+  "lab_ask_scenario_aria": "Berechnetes Szenario",
+  "lab_assume_target_leo": "Ziel: eine 200-km-Umlaufbahn in niedrigem Erdorbit",
+  "lab_assume_target_geo": "Ziel: die 35.786-km-Geostationärbahn",
+  "lab_assume_target_moon": "Ziel: der Mond",
+  "lab_assume_target_mars": "Ziel: Mars",
+  "lab_assume_target_venus": "Ziel: Venus"
 }

@@ -107,6 +107,16 @@
         {:else}
           <p class="ask-scenario__blocked">{blockedMessage(c)}</p>
         {/if}
+
+        {#if scenario.presetNotes?.[i]}
+          {@const note = scenario.presetNotes[i]}
+          {#if note}
+            <p class="ask-scenario__assume">
+              <span class="ask-scenario__assume-label">{t('lab.ui.assumptions-label')}</span>
+              {t(note)}
+            </p>
+          {/if}
+        {/if}
       </div>
     </section>
   {/each}

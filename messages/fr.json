@@ -2889,5 +2889,10 @@
   "lab_goal_lmars_challenge": "Amincissez le parachute ou l'atmosphère jusqu'à ce que l'atterrissage ne soit plus survivable. Mars ne laisse presque aucune marge — c'est pourquoi c'est difficile.",
   "lab_goal_tsw_challenge": "Augmentez votre vitesse d'approche jusqu'à rebondir au lieu d'atterrir. Sur un monde si petit, la vitesse de libération est à peine un pas.",
   "lab_goal_lss_challenge": "Versez plus de Δv dans une seule fusée — peut-elle franchir le Soleil avec le carburant seul, ou avez-vous toujours besoin de la chaîne d'assistance gravitationnelle ?",
-  "lab_ask_scenario_aria": "Scénario calculé"
+  "lab_ask_scenario_aria": "Scénario calculé",
+  "lab_assume_target_leo": "Cible : une orbite basse terrestre à 200 km",
+  "lab_assume_target_geo": "Cible : l'altitude géostationnaire de 35 786 km",
+  "lab_assume_target_moon": "Cible : la Lune",
+  "lab_assume_target_mars": "Cible : Mars",
+  "lab_assume_target_venus": "Cible : Vénus"
 }

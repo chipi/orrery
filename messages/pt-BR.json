@@ -2889,5 +2889,10 @@
   "lab_goal_lmars_challenge": "Afiने o paraquedas ou a atmosfera até que o pouso deixe de ser sobrevivível. Marte oferece quase nenhuma margem — é por isso que é difícil.",
   "lab_goal_tsw_challenge": "Aumente sua velocidade de aproximação até que você quique em vez de pousar. Em um mundo tão pequeno, a velocidade de escape é quase apenas uma caminhada.",
   "lab_goal_lss_challenge": "Coloque mais Δv em um único foguete — consegue ultrapassar o Sol apenas com combustível, ou ainda precisa da cadeia de assistência gravitacional?",
-  "lab_ask_scenario_aria": "Cenário calculado"
+  "lab_ask_scenario_aria": "Cenário calculado",
+  "lab_assume_target_leo": "Alvo: uma órbita terrestre baixa de 200 km",
+  "lab_assume_target_geo": "Alvo: a altitude geoestacionária de 35.786 km",
+  "lab_assume_target_moon": "Alvo: a Lua",
+  "lab_assume_target_mars": "Alvo: Marte",
+  "lab_assume_target_venus": "Alvo: Vênus"
 }

@@ -87,6 +87,73 @@
     const rx0 = hitX - rayLen * Math.cos(g);
     const ry0 = atmY - rayLen * Math.sin(g);
     const rgb = verdict === 'ok' ? TEAL : verdict === 'skip' ? ORANGE : RED;
+
+    // The corridor IN the side view (clarity, FB4): both boundary angles as dashed
+    // ghost rays through the same entry point — too shallow skips back out, too
+    // steep digs in hard — so the picture itself shows the band the ray must fit.
+    const ghostRay = (
+      deg: number,
+      colour: string,
+      curveOut: boolean,
+      label: string,
+      labelDy: number,
+    ): void => {
+      const a = (deg * Math.PI) / 180;
+      ctx.save();
+      ctx.strokeStyle = `rgba(${colour},0.55)`;
+      ctx.lineWidth = 1;
+      ctx.setLineDash([4, 4]);
+      ctx.beginPath();
+      ctx.moveTo(hitX - 130 * Math.cos(a), atmY - 130 * Math.sin(a));
+      ctx.lineTo(hitX, atmY);
+      if (curveOut) {
+        // grazes and leaves again
+        ctx.quadraticCurveTo(
+          hitX + 40,
+          atmY + 12,
+          hitX + 120 * Math.cos(a * 0.6),
+          atmY - 110 * Math.sin(a * 0.6),
+        );
+      } else {
+        const depth = Math.min(surfY - atmY - 4, 120 * Math.sin(a) + 6);
+        ctx.lineTo(hitX + depth / Math.tan(Math.max(0.2, a)), atmY + depth);
+      }
+      ctx.stroke();
+      ctx.setLineDash([]);
+      // Label at the ray's OUTCOME end — where skipping/digging is visible — so the
+      // entry corner stays uncluttered for the chosen ray's γ readout.
+      ctx.fillStyle = `rgba(${colour},0.85)`;
+      ctx.font = "7px 'Space Mono', monospace";
+      ctx.textAlign = 'left';
+      if (curveOut) {
+        ctx.fillText(
+          label,
+          hitX + 120 * Math.cos(a * 0.6) + 5,
+          atmY - 110 * Math.sin(a * 0.6) + labelDy,
+        );
+      } else {
+        const depth = Math.min(surfY - atmY - 4, 120 * Math.sin(a) + 6);
+        ctx.fillText(label, hitX + depth / Math.tan(Math.max(0.2, a)) + 6, atmY + depth + labelDy);
+      }
+      ctx.restore();
+    };
+    // Drawn for closed corridors too — the two crossed boundaries ARE the story then.
+    if (progress > 0.7) {
+      ghostRay(
+        Math.max(0.8, figure.skipBoundaryDeg),
+        ORANGE,
+        true,
+        `< ${figure.skipBoundaryDeg.toFixed(1)}° skips out`,
+        -4,
+      );
+      ghostRay(
+        figure.gLimitBoundaryDeg,
+        RED,
+        false,
+        `> ${figure.gLimitBoundaryDeg.toFixed(1)}° over-g`,
+        10,
+      );
+    }
     ctx.save();
     ctx.globalCompositeOperation = 'lighter';
     ctx.strokeStyle = `rgba(${rgb},0.35)`;
@@ -103,6 +170,13 @@
     ctx.moveTo(rx0, ry0);
     ctx.lineTo(hitX, atmY);
     ctx.stroke();
+    // Name the chosen angle right on the ray — the number the band marks below.
+    if (progress > 0.5) {
+      ctx.fillStyle = `rgb(${rgb})`;
+      ctx.font = "700 8px 'Space Mono', monospace";
+      ctx.textAlign = 'left';
+      ctx.fillText(`γ = ${figure.entryDeg.toFixed(1)}°`, rx0 + 6, ry0 + 12);
+    }
 
     if (progress > 0.55) {
       const tail = (progress - 0.55) / 0.45;
@@ -154,6 +228,18 @@
     ctx.strokeStyle = 'rgba(120,235,225,0.35)';
     ctx.lineWidth = 1;
     ctx.strokeRect(bx0, bandY, bx1 - bx0, bandH);
+
+    // Name the zones inside the band — the abstract strip reads without a legend.
+    ctx.font = "700 7px 'Space Mono', monospace";
+    ctx.textAlign = 'center';
+    const zoneLabel = (x0: number, x1: number, colour: string, text: string): void => {
+      if (x1 - x0 < 46) return; // too narrow to label
+      ctx.fillStyle = `rgba(${colour},0.95)`;
+      ctx.fillText(text, (x0 + x1) / 2, bandY + bandH / 2 + 2.5);
+    };
+    zoneLabel(bx0, skipX, ORANGE, 'SKIPS OUT');
+    if (hasCorridor) zoneLabel(skipX, gX, TEAL, 'CORRIDOR');
+    zoneLabel(gX, bx1, RED, 'OVER-G');
 
     // chosen-angle marker
     const mxc = Math.min(bx1, Math.max(bx0, aToX(figure.entryDeg)));

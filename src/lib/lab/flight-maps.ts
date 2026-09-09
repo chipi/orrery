@@ -25,6 +25,9 @@ export type FlightEvent = {
   met: string; // mission elapsed time, "T+hh:mm"
   physics: string; // the why/how — the headline number + its mechanism
   burn?: boolean; // an engine event (gold)
+  /** 1-based lesson-rung index that computes this phase — the map-to-lesson
+   *  connective tissue (FB4: "the opening diagram isn't connected to the lesson"). */
+  step?: number;
 };
 
 /** A spacecraft-configuration icon kind, drawn in the filmstrip. */
@@ -117,6 +120,7 @@ const apolloRoundTrip: FlightMap = {
       at: [34, 360],
       name: 'Liftoff',
       met: 'T+00:00',
+      step: 1,
       physics: 'Saturn V · 0→' + f1(A.leoKms) + ' km/s',
     },
     {
@@ -125,6 +129,7 @@ const apolloRoundTrip: FlightMap = {
       at: [46, 246],
       name: 'Earth orbit',
       met: 'T+00:12',
+      step: 1,
       physics: 'LEO ' + f2(A.leoKms) + ' km/s (ascent)',
     },
     {
@@ -133,6 +138,7 @@ const apolloRoundTrip: FlightMap = {
       at: [232, 200],
       name: 'Trans-lunar injection',
       met: 'T+02:44',
+      step: 2,
       physics: '+' + f2(A.tliDvKms) + ' km/s · Lambert',
       burn: true,
     },
@@ -150,6 +156,7 @@ const apolloRoundTrip: FlightMap = {
       at: [566, 74],
       name: 'Lunar orbit insertion',
       met: 'T+75:50',
+      step: 2,
       physics: '−0.9 km/s → 1.6 km/s',
       burn: true,
     },
@@ -159,6 +166,7 @@ const apolloRoundTrip: FlightMap = {
       at: [812, 150],
       name: 'Powered descent',
       met: 'T+101:36',
+      step: 3,
       physics: 'throttle nulls v',
       burn: true,
     },
@@ -168,6 +176,7 @@ const apolloRoundTrip: FlightMap = {
       at: [812, 173],
       name: 'Touchdown',
       met: 'T+102:45',
+      step: 3,
       physics: '<3 m/s',
     },
     {
@@ -176,6 +185,7 @@ const apolloRoundTrip: FlightMap = {
       at: [812, 96],
       name: 'Lunar ascent',
       met: 'T+124:22',
+      step: 4,
       physics: '+1.8 km/s',
       burn: true,
     },
@@ -185,6 +195,7 @@ const apolloRoundTrip: FlightMap = {
       at: [724, 234],
       name: 'Trans-earth injection',
       met: 'T+135:24',
+      step: 5,
       physics: '+1.0 km/s home',
       burn: true,
     },
@@ -194,6 +205,7 @@ const apolloRoundTrip: FlightMap = {
       at: [286, 388],
       name: 'Entry interface',
       met: 'T+195:03',
+      step: 6,
       physics: f1(A.entryKms) + ' km/s · lift ½-g corridor',
       burn: true,
     },
@@ -261,6 +273,7 @@ const getToMars: FlightMap = {
       at: [300, 392],
       name: 'Launch',
       met: 'L+0',
+      step: 2,
       physics: 'Earth escape (C3)',
     },
     {
@@ -269,6 +282,7 @@ const getToMars: FlightMap = {
       at: [330, 330],
       name: 'Trans-Mars injection',
       met: 'L+0',
+      step: 1,
       physics: '+' + f2(M.tmiDvKms) + ' km/s helio',
       burn: true,
     },
@@ -278,6 +292,7 @@ const getToMars: FlightMap = {
       at: [540, 236],
       name: 'Heliocentric cruise',
       met: 'L+' + (M.tofDays / 2).toFixed(0) + ' d',
+      step: 1,
       physics: 'vis-viva coast',
     },
     {
@@ -294,6 +309,7 @@ const getToMars: FlightMap = {
       at: [372, 60],
       name: 'Mars arrival',
       met: 'L+' + M.tofDays.toFixed(0) + ' d',
+      step: 1,
       physics: 'v∞ ' + f2(M.arrivalVinfKms) + ' km/s',
     },
     {
@@ -353,6 +369,7 @@ const leaveSolarSystem: FlightMap = {
       at: [40, 360],
       name: 'Launch',
       met: 'L+0',
+      step: 1,
       physics: 'escape ' + solarEscape1Au.toFixed(1) + ' km/s @1 AU needed',
     },
     {
@@ -361,6 +378,7 @@ const leaveSolarSystem: FlightMap = {
       at: [244, 288],
       name: 'Jupiter flyby',
       met: 'L+2 yr',
+      step: 4,
       physics: 'assist ≤ 2·v∞ · bends path out',
       burn: true,
     },
@@ -370,6 +388,7 @@ const leaveSolarSystem: FlightMap = {
       at: [420, 246],
       name: 'Saturn flyby',
       met: 'L+4 yr',
+      step: 4,
       physics: 'free Δv, no fuel',
       burn: true,
     },
@@ -379,6 +398,7 @@ const leaveSolarSystem: FlightMap = {
       at: [566, 214],
       name: 'Uranus flyby',
       met: 'L+9 yr',
+      step: 4,
       physics: 'staircase up in speed',
       burn: true,
     },
@@ -388,6 +408,7 @@ const leaveSolarSystem: FlightMap = {
       at: [700, 196],
       name: 'Neptune flyby',
       met: 'L+12 yr',
+      step: 4,
       physics: 'final kick outward',
       burn: true,
     },
@@ -397,6 +418,7 @@ const leaveSolarSystem: FlightMap = {
       at: [788, 78],
       name: 'Interstellar',
       met: 'L+35 yr',
+      step: 5,
       physics: 'v > solar escape · past heliopause',
     },
   ],
@@ -530,6 +552,7 @@ const reachOrbit: FlightMap = {
       at: [612, 92],
       name: 'Upper-stage burn',
       met: 'T+03:00',
+      step: 2,
       physics: 'vacuum thrust · PEG',
       burn: true,
     },
@@ -539,6 +562,7 @@ const reachOrbit: FlightMap = {
       at: [740, 72],
       name: 'Orbit insertion',
       met: 'T+08:30',
+      step: 1,
       physics: f2(A.leoKms) + ' km/s · LEO',
     },
   ],
@@ -577,6 +601,7 @@ const reachTheMoon: FlightMap = {
       at: [70, 244],
       name: 'Earth orbit',
       met: 'T+00:12',
+      step: 1,
       physics: 'LEO ' + f2(A.leoKms) + ' km/s',
     },
     {
@@ -585,6 +610,7 @@ const reachTheMoon: FlightMap = {
       at: [258, 192],
       name: 'Trans-lunar injection',
       met: 'T+02:44',
+      step: 4,
       physics: '+' + f2(A.tliDvKms) + ' km/s · Lambert',
       burn: true,
     },
@@ -594,6 +620,7 @@ const reachTheMoon: FlightMap = {
       at: [452, 100],
       name: 'Cislunar coast',
       met: 'T+2.5 d',
+      step: 2,
       physics: 'vis-viva to lunar distance',
     },
     {
@@ -602,6 +629,7 @@ const reachTheMoon: FlightMap = {
       at: [618, 210],
       name: 'Lunar orbit insertion',
       met: 'T+3 d',
+      step: 4,
       physics: '−0.9 km/s → 1.6 km/s',
       burn: true,
     },
@@ -611,6 +639,7 @@ const reachTheMoon: FlightMap = {
       at: [800, 176],
       name: 'Lunar orbit',
       met: 'T+3 d',
+      step: 1,
       physics: 'circular @ 110 km',
     },
   ],

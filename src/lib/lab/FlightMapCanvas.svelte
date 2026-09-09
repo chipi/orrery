@@ -521,6 +521,13 @@
       ctx.fillStyle = 'rgba(200,222,235,0.72)';
       ctx.font = "9px 'Space Mono', monospace";
       ctx.fillText(`${e.met} · ${e.physics}`, lx, ly + 12);
+      if (e.step !== undefined) {
+        // Map→lesson connective tissue (FB4): each phase names the numbered
+        // lesson rung below that computes it.
+        ctx.fillStyle = `rgba(${GOLD_RGB},0.85)`;
+        ctx.font = "700 8.5px 'Space Mono', monospace";
+        ctx.fillText(`↓ lesson step ${e.step}`, lx, ly + 23);
+      }
     });
     ctx.globalAlpha = 1;
 

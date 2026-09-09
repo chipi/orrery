@@ -2965,5 +2965,8 @@
   "lab_f_retrograde_glossary": "Retrograde is an overtake, not a reversal: as Earth laps an outer planet, the planet's apparent drift λ̇ along the ecliptic turns negative for a while. This card computes today's rate — negative means the loop is under way.",
   "lab_f_skyalt_glossary": "Culmination height h_max = 90° − |φ − δ|: your latitude φ against the planet's declination δ (the moon-altitude card's rule, aimed at planets). It says how high tonight's target ever gets — low means mud and haze.",
   "lab_assume_target_suborbital": "Target: a 100 km sub-orbital hop (the Kármán line)",
-  "lab_assume_target_tli": "Target: trans-lunar injection from a 200 km parking orbit"
+  "lab_assume_target_tli": "Target: trans-lunar injection from a 200 km parking orbit",
+  "lab_conn_rockets_heading": "Real rockets, real numbers",
+  "lab_conn_rockets_aria": "Real launcher stat sheet",
+  "lab_conn_r_leo": "to LEO"
 }

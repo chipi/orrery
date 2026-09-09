@@ -2965,5 +2965,8 @@
   "lab_f_retrograde_glossary": "逆行は反転ではなく追い越し: 地球が外惑星を追い抜く間、惑星の黄道上の見かけの移動速度 λ̇ が一時的に負になる。このカードは今日の速度を計算 — 負なら逆行ループが進行中。",
   "lab_f_skyalt_glossary": "最大高度 h_max = 90° − |φ − δ|: あなたの緯度 φ と惑星の赤緯 δ (月の高度カードの規則を惑星に適用)。今夜の対象がいかに高く昇るか — 低いと泥と靄。",
   "lab_assume_target_suborbital": "目標：100 km の準軌道ホップ（カーマン線）",
-  "lab_assume_target_tli": "目標：200 km 駐機軌道からの月遷移注入"
+  "lab_assume_target_tli": "目標：200 km 駐機軌道からの月遷移注入",
+  "lab_conn_rockets_heading": "実際のロケット、実際の数字",
+  "lab_conn_rockets_aria": "実際のランチャー仕様シート",
+  "lab_conn_r_leo": "LEOまで"
 }

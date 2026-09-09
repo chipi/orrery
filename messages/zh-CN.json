@@ -2965,5 +2965,8 @@
   "lab_f_retrograde_glossary": "逆行是一次追赶，不是反转：当地球超越外行星时，行星沿黄道的视运动 λ̇ 短暂转为负值。此卡计算今日速率 — 负值意味着逆行环正在进行。",
   "lab_f_skyalt_glossary": "南中高度 h_max = 90° − |φ − δ|：你的纬度 φ 对行星赤纬 δ（月球高度卡的规则，应用于行星）。说明目标今晚的最大高度 — 低意味着泥泞和薄雾。",
   "lab_assume_target_suborbital": "目标：100 公里亚轨道跳跃（卡门线）",
-  "lab_assume_target_tli": "目标：从 200 公里停泊轨道进行月球转移注入"
+  "lab_assume_target_tli": "目标：从 200 公里停泊轨道进行月球转移注入",
+  "lab_conn_rockets_heading": "真实火箭，真实数据",
+  "lab_conn_rockets_aria": "真实运载火箭规格表",
+  "lab_conn_r_leo": "至近地轨道"
 }

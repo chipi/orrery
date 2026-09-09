@@ -2965,5 +2965,8 @@
   "lab_f_retrograde_glossary": "Retrógrado es un adelantamiento, no una inversión: cuando la Tierra adelanta a un planeta exterior, la deriva aparente λ̇ del planeta a lo largo de la eclíptica se vuelve negativa un tiempo. Esta tarjeta calcula la velocidad de hoy — negativo significa que el bucle está en marcha.",
   "lab_f_skyalt_glossary": "Altura de culminación h_max = 90° − |φ − δ|: tu latitud φ contra la declinación del planeta δ (la regla de la tarjeta de altitud lunar, apuntada a planetas). Dice cuán alto llega tu objetivo esta noche en algún momento — bajo significa barro y bruma.",
   "lab_assume_target_suborbital": "Objetivo: un salto suborbital de 100 km (la línea de Kármán)",
-  "lab_assume_target_tli": "Objetivo: inyección translunar desde una órbita de aparcamiento de 200 km"
+  "lab_assume_target_tli": "Objetivo: inyección translunar desde una órbita de aparcamiento de 200 km",
+  "lab_conn_rockets_heading": "Cohetes reales, números reales",
+  "lab_conn_rockets_aria": "Hoja de especificaciones de lanzadores reales",
+  "lab_conn_r_leo": "a LEO"
 }

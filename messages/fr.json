@@ -2965,5 +2965,8 @@
   "lab_f_retrograde_glossary": "Rétrograde est un dépassement, non une inversion : tandis que la Terre dépasse une planète externe, la dérive apparente λ̇ de la planète le long de l'écliptique vire au négatif un moment. Cette carte donne le taux aujourd'hui — négatif signifie que la boucle est en cours.",
   "lab_f_skyalt_glossary": "Hauteur de culmination h_max = 90° − |φ − δ| : votre latitude φ contre la déclinaison δ de la planète (la règle de la carte lunaire, appliquée aux planètes). Elle dit à quelle hauteur votre cible monte ce soir — bas signifie boue et brume.",
   "lab_assume_target_suborbital": "Cible : un saut suborbital de 100 km (la ligne de Kármán)",
-  "lab_assume_target_tli": "Cible : injection trans-lunaire depuis une orbite de stationnement de 200 km"
+  "lab_assume_target_tli": "Cible : injection trans-lunaire depuis une orbite de stationnement de 200 km",
+  "lab_conn_rockets_heading": "Vraies fusées, vrais chiffres",
+  "lab_conn_rockets_aria": "Fiche technique des lanceurs réels",
+  "lab_conn_r_leo": "vers LEO"
 }

@@ -378,6 +378,9 @@ export interface Connection {
   hookKey?: string;
   /** real missions/vehicles/sites that embody the conclusion — deep links OUT to Orrery routes */
   links: ConnectionLink[];
+  /** rockets.json ids (FB3) — real launchers whose PROVENANCED numbers (payload-to-LEO,
+   *  Isp, Δv) render as a stat strip with vetted agency logos; validated by goals.test.ts. */
+  rockets?: string[];
   /** optional forward pointer to a not-yet-built goal or the next rung (e.g. land-on-Mars → "leave the system") */
   nextKey?: string;
 }

@@ -269,6 +269,8 @@
   // destination or mission type changes (a different mission has
   // different ∆v requirements; the prior pick may not even be viable).
   let userPickedRocket = $state(false);
+  // ?rocket= deep-link target, stashed at applyUrl time (rocketList is async).
+  let pendingRocketDeepLink = $state<string | null>(null);
 
   // Educational primer collapse. Open by default so the porkchop is
   // interpretable on first load; auto-collapses the moment the user
@@ -367,6 +369,13 @@
       pendingSelectedDeepLink = { dep: depParam, tof: tofParam };
     } else {
       pendingSelectedDeepLink = null;
+    }
+    // Deep-link: ?rocket=<rockets.json id> pre-selects a launcher (the Lab's
+    // real-rocket stat rows land here, FB3). Sticky like a manual pick; an
+    // unknown id is ignored and auto-suggest proceeds as usual.
+    const rocketParam = (url.searchParams.get('rocket') ?? '').toLowerCase();
+    if (rocketParam) {
+      pendingRocketDeepLink = rocketParam;
     }
   }
 
@@ -948,6 +957,12 @@
 
     getRockets(localeFromPage(page)).then((list) => {
       rocketList = list;
+      if (pendingRocketDeepLink && list.some((r) => r.id === pendingRocketDeepLink)) {
+        selectedRocketId = pendingRocketDeepLink;
+        userPickedRocket = true;
+        pendingRocketDeepLink = null;
+        return;
+      }
       // Initial pick: no porkchop cell selected yet, so use a typical
       // Mars-class ∆v as the seed (~10 km/s). The $effect that watches
       // readout will refine this the moment the user clicks any cell.

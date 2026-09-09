@@ -2965,5 +2965,8 @@
   "lab_f_retrograde_glossary": "Il moto retrogrado è un sorpasso, non un'inversione: quando la Terra doppia un pianeta esterno, la deriva apparente λ̇ del pianeta lungo l'eclittica diventa negativa per un po'. Questa scheda calcola il tasso di oggi — negativo significa che l'anello è in corso.",
   "lab_f_skyalt_glossary": "Altezza di culminazione h_max = 90° − |φ − δ|: la tua latitudine φ contro la declinazione del pianeta δ (la regola della scheda di altezza della Luna, applicata ai pianeti). Dice quanto alto arriva il bersaglio di stasera — basso significa fango e foschia.",
   "lab_assume_target_suborbital": "Obiettivo: un salto suborbitale di 100 km (la linea di Kármán)",
-  "lab_assume_target_tli": "Obiettivo: iniezione translunar da un'orbita di parcheggio a 200 km"
+  "lab_assume_target_tli": "Obiettivo: iniezione translunar da un'orbita di parcheggio a 200 km",
+  "lab_conn_rockets_heading": "Razzi veri, numeri veri",
+  "lab_conn_rockets_aria": "Scheda tecnica dei lanciatori reali",
+  "lab_conn_r_leo": "verso LEO"
 }

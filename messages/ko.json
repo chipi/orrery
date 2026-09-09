@@ -2965,5 +2965,8 @@
   "lab_f_retrograde_glossary": "역행은 반전이 아니라 추월입니다: 지구가 외행성을 추월할 때, 행성의 겉보기 이동 λ̇은 황도를 따라 한동안 음수가 됩니다. 이 카드는 오늘의 비율을 계산합니다 — 음수는 루프가 진행 중임을 의미합니다.",
   "lab_f_skyalt_glossary": "최고 높이 h_max = 90° − |φ − δ|: 당신의 위도 φ와 행성의 적위 δ (달 고도 카드의 규칙, 행성에 적용). 오늘 밤 목표가 얼마나 높이 올라가는지 알려줍니다 — 낮으면 진흙과 연무를 의미합니다.",
   "lab_assume_target_suborbital": "목표: 100km 준궤도 비행 (카르만 선)",
-  "lab_assume_target_tli": "목표: 200km 주차 궤도에서 달 전이 궤도 주입(TLI)"
+  "lab_assume_target_tli": "목표: 200km 주차 궤도에서 달 전이 궤도 주입(TLI)",
+  "lab_conn_rockets_heading": "실제 로켓, 실제 수치",
+  "lab_conn_rockets_aria": "실제 발사체 사양 시트",
+  "lab_conn_r_leo": "LEO까지"
 }

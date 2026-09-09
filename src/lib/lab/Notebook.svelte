@@ -35,6 +35,7 @@
   import Card from './Card.svelte';
   import FlightMapCanvas from './FlightMapCanvas.svelte';
   import IllustrationFigure from './IllustrationFigure.svelte';
+  import ConnRocketStats from './ConnRocketStats.svelte';
   import { illustrationFor } from './illustration';
   import { composeReportCard, downloadBlob, type ReportCardLine } from './report-card';
   import { assetUrl } from '$lib/asset-url';
@@ -566,6 +567,10 @@
             </li>
           {/each}
         </ul>
+
+        {#if conn.rockets?.length}
+          <ConnRocketStats ids={conn.rockets} {t} />
+        {/if}
 
         {#if conn.nextKey}
           <p class="nb__conn-next">

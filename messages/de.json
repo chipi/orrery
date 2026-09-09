@@ -2965,5 +2965,8 @@
   "lab_f_retrograde_glossary": "Rückläufig ist ein Überholvorgang, keine Umkehrung: während die Erde einen äußeren Planeten überholt, dreht sich die Drift λ̇ des Planeten entlang der Ekliptik für eine Weile negativ. Diese Karte berechnet die heutige Rate — negativ bedeutet, die Schleife ist im Gange.",
   "lab_f_skyalt_glossary": "Kulminationshöhe h_max = 90° − |φ − δ|: deine Breite φ gegen die Planetendeklination δ (die Mondhöhen-Karte Regel, auf Planeten angewendet). Sie sagt, wie hoch dein heutiges Ziel je steigt — niedrig bedeutet Schlamm und Dunst.",
   "lab_assume_target_suborbital": "Ziel: ein 100-km-Suborbitalflug (die Kármán-Linie)",
-  "lab_assume_target_tli": "Ziel: Translunarinjection aus einer 200-km-Parkbahn"
+  "lab_assume_target_tli": "Ziel: Translunarinjection aus einer 200-km-Parkbahn",
+  "lab_conn_rockets_heading": "Echte Raketen, echte Zahlen",
+  "lab_conn_rockets_aria": "Echtes Datenblatt von Trägerraketen",
+  "lab_conn_r_leo": "zu LEO"
 }

@@ -2965,5 +2965,8 @@
   "lab_f_retrograde_glossary": "Retrógrado é uma ultrapassagem, não uma reversão: conforme a Terra alcança um planeta externo, a deriva aparente λ̇ do planeta ao longo da eclíptica fica negativa por um tempo. Este cartão computa a taxa de hoje — negativo significa que o loop está em andamento.",
   "lab_f_skyalt_glossary": "Altura de culminação h_máx = 90° − |φ − δ|: sua latitude φ contra a declinação do planeta δ (a regra do cartão de altitude lunar, aplicada a planetas). Diz o quão alto o alvo de hoje jamais fica — baixo significa lama e névoa.",
   "lab_assume_target_suborbital": "Alvo: um salto suborb­ital de 100 km (a linha de Kármán)",
-  "lab_assume_target_tli": "Alvo: injeção translunar a partir de uma órbita de estacionamento de 200 km"
+  "lab_assume_target_tli": "Alvo: injeção translunar a partir de uma órbita de estacionamento de 200 km",
+  "lab_conn_rockets_heading": "Foguetes reais, números reais",
+  "lab_conn_rockets_aria": "Planilha de especificações de lançadores reais",
+  "lab_conn_r_leo": "para LEO"
 }

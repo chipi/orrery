@@ -165,6 +165,15 @@ describe('goal registry · connection href integrity', () => {
     }
   });
 
+  it('every connection.rockets id resolves in rockets.json (FB3 stat strip)', () => {
+    const rockets = idSet('static/data/rockets.json');
+    for (const g of GOALS.values()) {
+      for (const id of g.connection?.rockets ?? []) {
+        expect(rockets.has(id), `${g.id}: unknown rocket '${id}'`).toBe(true);
+      }
+    }
+  });
+
   it('every connection href is an internal route with a resolvable target id', () => {
     const broken: string[] = [];
     for (const { goal, href } of allLinks) {

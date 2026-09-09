@@ -1995,7 +1995,10 @@
     "lab_f_retrograde_glossary": "वक्री गति एक ओवरटेक है, उलट नहीं: जब पृथ्वी बाहरी ग्रह को पार करती है, ग्रह की स्पष्ट बहाव λ̇ ग्रहण के साथ एक समय के लिए नकारात्मक हो जाती है। यह कार्ड आज की दर गणना करता है — नकारात्मक का मतलब लूप चल रहा है।",
     "lab_f_skyalt_glossary": "परिणति ऊंचाई h_अधिकतम = 90° − |φ − δ|: आपका अक्षांश φ ग्रह की विचलन δ के विरुद्ध (चंद्रमा-ऊंचाई कार्ड का नियम, ग्रहों को लक्षित)। यह कहता है आज रात का लक्ष्य कितना ऊंचा जाता है — कम का मतलब कीचड़ और कोहरा।",
     "lab_assume_target_suborbital": "लक्ष्य: 100 किमी की सबऑर्बिटल यात्रा (कर्मन रेखा)",
-    "lab_assume_target_tli": "लक्ष्य: 200 किमी की पार्किंग कक्षा से ट्रांस-लूनर इंजेक्शन (TLI)"
+    "lab_assume_target_tli": "लक्ष्य: 200 किमी की पार्किंग कक्षा से ट्रांस-लूनर इंजेक्शन (TLI)",
+    "lab_conn_rockets_heading": "वास्तविक रॉकेट, वास्तविक संख्याएं",
+    "lab_conn_rockets_aria": "वास्तविक लॉन्चर सांख्यिकी पत्रक",
+    "lab_conn_r_leo": "LEO तक"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -3854,7 +3857,10 @@
     "lab_f_retrograde_glossary": "逆行は反転ではなく追い越し: 地球が外惑星を追い抜く間、惑星の黄道上の見かけの移動速度 λ̇ が一時的に負になる。このカードは今日の速度を計算 — 負なら逆行ループが進行中。",
     "lab_f_skyalt_glossary": "最大高度 h_max = 90° − |φ − δ|: あなたの緯度 φ と惑星の赤緯 δ (月の高度カードの規則を惑星に適用)。今夜の対象がいかに高く昇るか — 低いと泥と靄。",
     "lab_assume_target_suborbital": "目標：100 km の準軌道ホップ（カーマン線）",
-    "lab_assume_target_tli": "目標：200 km 駐機軌道からの月遷移注入"
+    "lab_assume_target_tli": "目標：200 km 駐機軌道からの月遷移注入",
+    "lab_conn_rockets_heading": "実際のロケット、実際の数字",
+    "lab_conn_rockets_aria": "実際のランチャー仕様シート",
+    "lab_conn_r_leo": "LEOまで"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -5893,7 +5899,10 @@
     "lab_f_retrograde_glossary": "التراجع هو الالتحاق، لا انعكاس: عندما تلحق الأرض كوكباً خارجياً، الانجراف الظاهري λ̇ للكوكب على دائرة البروج يصير سالباً قليلاً. هذه البطاقة تحسب معدل اليوم — سالب يعني الحلقة جارية.",
     "lab_f_skyalt_glossary": "ارتفاع الاستقبال h_max = 90° − |φ − δ|: عرض بلدك φ مقابل انحراف الكوكب δ (قاعدة بطاقة ارتفاع القمر، موجهة للكواكب). يقول كيف يرتقي هدف الليلة — منخفض يعني طين وضبابية.",
     "lab_assume_target_suborbital": "الهدف: قفزة تحت مدارية بارتفاع 100 كم (خط كرمان)",
-    "lab_assume_target_tli": "الهدف: حقن عبر القمري من مدار انتظار بارتفاع 200 كم"
+    "lab_assume_target_tli": "الهدف: حقن عبر القمري من مدار انتظار بارتفاع 200 كم",
+    "lab_conn_rockets_heading": "صواريخ حقيقية، أرقام حقيقية",
+    "lab_conn_rockets_aria": "ورقة معلومات مُطلِق حقيقي",
+    "lab_conn_r_leo": "إلى LEO"
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -7754,7 +7763,10 @@
     "lab_f_retrograde_glossary": "역행은 반전이 아니라 추월입니다: 지구가 외행성을 추월할 때, 행성의 겉보기 이동 λ̇은 황도를 따라 한동안 음수가 됩니다. 이 카드는 오늘의 비율을 계산합니다 — 음수는 루프가 진행 중임을 의미합니다.",
     "lab_f_skyalt_glossary": "최고 높이 h_max = 90° − |φ − δ|: 당신의 위도 φ와 행성의 적위 δ (달 고도 카드의 규칙, 행성에 적용). 오늘 밤 목표가 얼마나 높이 올라가는지 알려줍니다 — 낮으면 진흙과 연무를 의미합니다.",
     "lab_assume_target_suborbital": "목표: 100km 준궤도 비행 (카르만 선)",
-    "lab_assume_target_tli": "목표: 200km 주차 궤도에서 달 전이 궤도 주입(TLI)"
+    "lab_assume_target_tli": "목표: 200km 주차 궤도에서 달 전이 궤도 주입(TLI)",
+    "lab_conn_rockets_heading": "실제 로켓, 실제 수치",
+    "lab_conn_rockets_aria": "실제 발사체 사양 시트",
+    "lab_conn_r_leo": "LEO까지"
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -9438,7 +9450,10 @@
     "lab_f_retrograde_glossary": "Rückläufig ist ein Überholvorgang, keine Umkehrung: während die Erde einen äußeren Planeten überholt, dreht sich die Drift λ̇ des Planeten entlang der Ekliptik für eine Weile negativ. Diese Karte berechnet die heutige Rate — negativ bedeutet, die Schleife ist im Gange.",
     "lab_f_skyalt_glossary": "Kulminationshöhe h_max = 90° − |φ − δ|: deine Breite φ gegen die Planetendeklination δ (die Mondhöhen-Karte Regel, auf Planeten angewendet). Sie sagt, wie hoch dein heutiges Ziel je steigt — niedrig bedeutet Schlamm und Dunst.",
     "lab_assume_target_suborbital": "Ziel: ein 100-km-Suborbitalflug (die Kármán-Linie)",
-    "lab_assume_target_tli": "Ziel: Translunarinjection aus einer 200-km-Parkbahn"
+    "lab_assume_target_tli": "Ziel: Translunarinjection aus einer 200-km-Parkbahn",
+    "lab_conn_rockets_heading": "Echte Raketen, echte Zahlen",
+    "lab_conn_rockets_aria": "Echtes Datenblatt von Trägerraketen",
+    "lab_conn_r_leo": "zu LEO"
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -11062,7 +11077,10 @@
     "lab_f_retrograde_glossary": "Rétrograde est un dépassement, non une inversion : tandis que la Terre dépasse une planète externe, la dérive apparente λ̇ de la planète le long de l'écliptique vire au négatif un moment. Cette carte donne le taux aujourd'hui — négatif signifie que la boucle est en cours.",
     "lab_f_skyalt_glossary": "Hauteur de culmination h_max = 90° − |φ − δ| : votre latitude φ contre la déclinaison δ de la planète (la règle de la carte lunaire, appliquée aux planètes). Elle dit à quelle hauteur votre cible monte ce soir — bas signifie boue et brume.",
     "lab_assume_target_suborbital": "Cible : un saut suborbital de 100 km (la ligne de Kármán)",
-    "lab_assume_target_tli": "Cible : injection trans-lunaire depuis une orbite de stationnement de 200 km"
+    "lab_assume_target_tli": "Cible : injection trans-lunaire depuis une orbite de stationnement de 200 km",
+    "lab_conn_rockets_heading": "Vraies fusées, vrais chiffres",
+    "lab_conn_rockets_aria": "Fiche technique des lanceurs réels",
+    "lab_conn_r_leo": "vers LEO"
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -12653,7 +12671,10 @@
     "lab_f_retrograde_glossary": "Il moto retrogrado è un sorpasso, non un'inversione: quando la Terra doppia un pianeta esterno, la deriva apparente λ̇ del pianeta lungo l'eclittica diventa negativa per un po'. Questa scheda calcola il tasso di oggi — negativo significa che l'anello è in corso.",
     "lab_f_skyalt_glossary": "Altezza di culminazione h_max = 90° − |φ − δ|: la tua latitudine φ contro la declinazione del pianeta δ (la regola della scheda di altezza della Luna, applicata ai pianeti). Dice quanto alto arriva il bersaglio di stasera — basso significa fango e foschia.",
     "lab_assume_target_suborbital": "Obiettivo: un salto suborbitale di 100 km (la linea di Kármán)",
-    "lab_assume_target_tli": "Obiettivo: iniezione translunar da un'orbita di parcheggio a 200 km"
+    "lab_assume_target_tli": "Obiettivo: iniezione translunar da un'orbita di parcheggio a 200 km",
+    "lab_conn_rockets_heading": "Razzi veri, numeri veri",
+    "lab_conn_rockets_aria": "Scheda tecnica dei lanciatori reali",
+    "lab_conn_r_leo": "verso LEO"
   },
   "es": {
     "mars_meta_description": "Todo artefacto que la humanidad ha colocado en Marte — aterrizadores, rovers y orbitadores activos — en un globo 3D navegable con la historia completa de la misión.",
@@ -14243,7 +14264,10 @@
     "lab_f_retrograde_glossary": "Retrógrado es un adelantamiento, no una inversión: cuando la Tierra adelanta a un planeta exterior, la deriva aparente λ̇ del planeta a lo largo de la eclíptica se vuelve negativa un tiempo. Esta tarjeta calcula la velocidad de hoy — negativo significa que el bucle está en marcha.",
     "lab_f_skyalt_glossary": "Altura de culminación h_max = 90° − |φ − δ|: tu latitud φ contra la declinación del planeta δ (la regla de la tarjeta de altitud lunar, apuntada a planetas). Dice cuán alto llega tu objetivo esta noche en algún momento — bajo significa barro y bruma.",
     "lab_assume_target_suborbital": "Objetivo: un salto suborbital de 100 km (la línea de Kármán)",
-    "lab_assume_target_tli": "Objetivo: inyección translunar desde una órbita de aparcamiento de 200 km"
+    "lab_assume_target_tli": "Objetivo: inyección translunar desde una órbita de aparcamiento de 200 km",
+    "lab_conn_rockets_heading": "Cohetes reales, números reales",
+    "lab_conn_rockets_aria": "Hoja de especificaciones de lanzadores reales",
+    "lab_conn_r_leo": "a LEO"
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -15842,7 +15866,10 @@
     "lab_f_retrograde_glossary": "Retrograde is een inhaalmanoeuvre, geen omkering: terwijl de Aarde een buitenplaneet inhaalt, draait de schijnbare drift λ̇ van de planeet langs de ecliptica voor een tijd negatief. Deze kaart berekent vandaag's snelheid — negatief betekent dat de lus aan de gang is.",
     "lab_f_skyalt_glossary": "Culminatiehoogte h_max = 90° − |φ − δ|: je breedtegraad φ tegen de declinatie δ van de planeet (de regel van de maan-hoogte-kaart, gericht op planeten). Het zegt hoe hoog je doel vanavond ooit komt — laag betekent modder en nevel.",
     "lab_assume_target_suborbital": "Doel: een suborbitale sprong van 100 km (de Kármán-lijn)",
-    "lab_assume_target_tli": "Doel: trans-lunaire injectie vanuit een 200 km parkeerorbiet"
+    "lab_assume_target_tli": "Doel: trans-lunaire injectie vanuit een 200 km parkeerorbiet",
+    "lab_conn_rockets_heading": "Echte raketten, echte getallen",
+    "lab_conn_rockets_aria": "Werkelijke lanceerdraaggegevens",
+    "lab_conn_r_leo": "naar LEO"
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -17704,7 +17731,10 @@
     "lab_f_retrograde_glossary": "Ретроградное движение — это обгон, а не разворот: когда Земля обгоняет внешнюю планету, видимый дрейф λ̇ планеты вдоль эклиптики становится отрицательным на время. Эта карточка вычисляет текущий темп — отрицательное значит петля начала.",
     "lab_f_skyalt_glossary": "Высота кульминации h_max = 90° − |φ − δ|: ваша широта φ против склонения планеты δ (правило карточки высоты Луны, применённое к планетам). Это говорит, насколько высоко цель когда-нибудь поднимется сегодня ночью — низко означает грязь и дымку.",
     "lab_assume_target_suborbital": "Цель: суборбитальный прыжок на 100 км (линия Кармана)",
-    "lab_assume_target_tli": "Цель: трансселенная инъекция с опарковочной орбиты 200 км"
+    "lab_assume_target_tli": "Цель: трансселенная инъекция с опарковочной орбиты 200 км",
+    "lab_conn_rockets_heading": "Реальные ракеты, реальные цифры",
+    "lab_conn_rockets_aria": "Таблица характеристик реальных ракет-носителей",
+    "lab_conn_r_leo": "на НОО"
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -19610,7 +19640,10 @@
     "lab_f_retrograde_glossary": "逆行是一次追赶，不是反转：当地球超越外行星时，行星沿黄道的视运动 λ̇ 短暂转为负值。此卡计算今日速率 — 负值意味着逆行环正在进行。",
     "lab_f_skyalt_glossary": "南中高度 h_max = 90° − |φ − δ|：你的纬度 φ 对行星赤纬 δ（月球高度卡的规则，应用于行星）。说明目标今晚的最大高度 — 低意味着泥泞和薄雾。",
     "lab_assume_target_suborbital": "目标：100 公里亚轨道跳跃（卡门线）",
-    "lab_assume_target_tli": "目标：从 200 公里停泊轨道进行月球转移注入"
+    "lab_assume_target_tli": "目标：从 200 公里停泊轨道进行月球转移注入",
+    "lab_conn_rockets_heading": "真实火箭，真实数据",
+    "lab_conn_rockets_aria": "真实运载火箭规格表",
+    "lab_conn_r_leo": "至近地轨道"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -21387,7 +21420,10 @@
     "lab_f_retrograde_glossary": "Ретрограда је претицање, не преокрет: док Земља претеча супљу планету, привидни помак планете λ̇ дуж еклиптике окреће се негативан на време. Ова картица рачуна данашњу брзину — негативна значи да је петља у току.",
     "lab_f_skyalt_glossary": "Висина кулминације h_max = 90° − |φ − δ|: ваша географска ширина φ наспрам деклинације планете δ (правило картице висине месеца, циљано на планете). Каже колико високо данашња мета икад стигне — низак значи блато и магла.",
     "lab_assume_target_suborbital": "Циљ: скок од 100 км испод орбите (Кармановва линија)",
-    "lab_assume_target_tli": "Циљ: трансселенска инјекција из паркинг орбите од 200 км"
+    "lab_assume_target_tli": "Циљ: трансселенска инјекција из паркинг орбите од 200 км",
+    "lab_conn_rockets_heading": "Прави ракети, прави бројеви",
+    "lab_conn_rockets_aria": "Лист са специфичностима правих лансера",
+    "lab_conn_r_leo": "до LEO"
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -22984,6 +23020,9 @@
     "lab_f_retrograde_glossary": "Retrógrado é uma ultrapassagem, não uma reversão: conforme a Terra alcança um planeta externo, a deriva aparente λ̇ do planeta ao longo da eclíptica fica negativa por um tempo. Este cartão computa a taxa de hoje — negativo significa que o loop está em andamento.",
     "lab_f_skyalt_glossary": "Altura de culminação h_máx = 90° − |φ − δ|: sua latitude φ contra a declinação do planeta δ (a regra do cartão de altitude lunar, aplicada a planetas). Diz o quão alto o alvo de hoje jamais fica — baixo significa lama e névoa.",
     "lab_assume_target_suborbital": "Alvo: um salto suborb­ital de 100 km (a linha de Kármán)",
-    "lab_assume_target_tli": "Alvo: injeção translunar a partir de uma órbita de estacionamento de 200 km"
+    "lab_assume_target_tli": "Alvo: injeção translunar a partir de uma órbita de estacionamento de 200 km",
+    "lab_conn_rockets_heading": "Foguetes reais, números reais",
+    "lab_conn_rockets_aria": "Planilha de especificações de lançadores reais",
+    "lab_conn_r_leo": "para LEO"
   }
 }

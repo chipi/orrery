@@ -60,6 +60,7 @@ export const launchARocket: Goal = {
   ],
   connection: {
     whyKey: 'lab.conn.lar.why',
+    rockets: ['soyuz-fregat', 'pslv-xl', 'falcon-heavy'],
     hookKey: 'lab.conn.lar.hook',
     links: [
       { labelKey: 'lab.conn.lar.kourou', href: '/earth?site=kourou-ela-3', agency: 'ESA' },
@@ -123,6 +124,7 @@ export const scaleARocket: Goal = {
   ],
   connection: {
     whyKey: 'lab.conn.sar.why',
+    rockets: ['pslv-xl', 'falcon-heavy', 'starship'],
     hookKey: 'lab.conn.sar.hook',
     links: [
       { labelKey: 'lab.conn.sar.starship', href: '/fleet?id=starship', agency: 'SpaceX' },
@@ -159,6 +161,7 @@ export const reachOrbit: Goal = {
   ],
   connection: {
     whyKey: 'lab.conn.ro.why',
+    rockets: ['soyuz-fregat', 'h3', 'falcon-heavy'],
     hookKey: 'lab.conn.ro.hook',
     links: [
       { labelKey: 'lab.conn.ro.sputnik', href: '/fly?mission=sputnik1', agency: 'Roscosmos' },
@@ -293,6 +296,7 @@ export const reachTheMoon: Goal = {
   ],
   connection: {
     whyKey: 'lab.conn.rtm.why',
+    rockets: ['sls-block-1', 'long-march-5', 'lvm3'],
     hookKey: 'lab.conn.rtm.hook',
     links: [
       { labelKey: 'lab.conn.rtm.apollo11', href: '/fly?mission=apollo11', agency: 'NASA' },
@@ -393,6 +397,7 @@ export const getToMars: Goal = {
   ],
   connection: {
     whyKey: 'lab.conn.gtm.why',
+    rockets: ['atlas-v-541', 'long-march-5', 'lvm3'],
     hookKey: 'lab.conn.gtm.hook',
     links: [
       { labelKey: 'lab.conn.gtm.perseverance', href: '/fly?mission=perseverance', agency: 'NASA' },
@@ -706,6 +711,7 @@ export const enginesOfTheWorld: Goal = {
   ],
   connection: {
     whyKey: 'lab.conn.eng.why',
+    rockets: ['proton-m', 'ariane-6', 'h-iia'],
     hookKey: 'lab.conn.eng.hook',
     links: [
       { labelKey: 'lab.conn.eng.f1', href: '/fleet?id=f-1', agency: 'NASA' },
@@ -904,6 +910,7 @@ export const leaveTheSolarSystem: Goal = {
   ],
   connection: {
     whyKey: 'lab.conn.lss.why',
+    rockets: ['falcon-heavy', 'sls-block-1', 'ariane-6'],
     hookKey: 'lab.conn.lss.hook',
     links: [
       { labelKey: 'lab.conn.lss.voyager1', href: '/fly?mission=voyager-1', agency: 'NASA' },

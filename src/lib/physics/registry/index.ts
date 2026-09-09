@@ -1589,10 +1589,12 @@ export const ascentToOrbit: FormulaDef<{ payloadKg: number; targetOrbitAltKm: nu
       labelKey: 'lab.f.ascent.payload',
       units: 'kg',
       kind: 'number',
-      default: 6000,
-      min: 1000,
+      // The canonical threaded case (FB3): the SAME 100 kg craft runs through
+      // every goal — smallsat-class, real (Electron flies lighter).
+      default: 100,
+      min: 100,
       max: 20000,
-      step: 500,
+      step: 100,
     },
     {
       key: 'targetOrbitAltKm',
@@ -3279,7 +3281,9 @@ export const rocketSizing: FormulaDef<{
       labelKey: 'lab.f.sizing.payload',
       units: 'kg',
       kind: 'number',
-      default: 5000,
+      // FB3 canonical case: size the rocket around the same 100 kg craft the
+      // weight/ascent cards carry.
+      default: 100,
       min: 100,
       max: 150000,
     },

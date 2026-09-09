@@ -2965,5 +2965,8 @@
   "lab_f_retrograde_glossary": "Retrograde is een inhaalmanoeuvre, geen omkering: terwijl de Aarde een buitenplaneet inhaalt, draait de schijnbare drift λ̇ van de planeet langs de ecliptica voor een tijd negatief. Deze kaart berekent vandaag's snelheid — negatief betekent dat de lus aan de gang is.",
   "lab_f_skyalt_glossary": "Culminatiehoogte h_max = 90° − |φ − δ|: je breedtegraad φ tegen de declinatie δ van de planeet (de regel van de maan-hoogte-kaart, gericht op planeten). Het zegt hoe hoog je doel vanavond ooit komt — laag betekent modder en nevel.",
   "lab_assume_target_suborbital": "Doel: een suborbitale sprong van 100 km (de Kármán-lijn)",
-  "lab_assume_target_tli": "Doel: trans-lunaire injectie vanuit een 200 km parkeerorbiet"
+  "lab_assume_target_tli": "Doel: trans-lunaire injectie vanuit een 200 km parkeerorbiet",
+  "lab_conn_rockets_heading": "Echte raketten, echte getallen",
+  "lab_conn_rockets_aria": "Werkelijke lanceerdraaggegevens",
+  "lab_conn_r_leo": "naar LEO"
 }

@@ -382,15 +382,14 @@ function summarizeErrors(errors) {
 }
 
 // Translate + validate against the real schema, retrying with concrete
-// correction instructions. Haiku is the bulk workhorse; the retries ESCALATE to
-// Sonnet for the hard cases Haiku can't satisfy (verbose-language length caps,
-// array shape) — per AGENTS.md §i18n (Haiku default, Sonnet for the hard bits).
+// correction instructions. Haiku ONLY — AGENTS.md §i18n cost policy (operator,
+// 2026-09-09): retries re-prompt with corrections, they never escalate the model.
 // Throws only if still invalid after the full ladder — caller skips the write.
 const MODEL_LADDER = [
   'claude-haiku-4-5',
   'claude-haiku-4-5',
-  'claude-sonnet-4-5',
-  'claude-sonnet-4-5',
+  'claude-haiku-4-5',
+  'claude-haiku-4-5',
 ];
 
 // Translate one string in isolation — the atomic unit the model never collapses.
@@ -453,10 +452,10 @@ async function repairArrays(client, out, locale, payload) {
 }
 
 // Rewrite an over-length string field to fit its cap — same language, keep the
-// key facts, drop a clause if needed. Sonnet, since concise-yet-faithful is hard.
+// key facts, drop a clause if needed.
 async function shortenString(client, text, locale, limit) {
   const r = await client.messages.create({
-    model: 'claude-sonnet-4-5',
+    model: 'claude-haiku-4-5',
     max_tokens: 1024,
     system: SYSTEM_BASE,
     tools: [

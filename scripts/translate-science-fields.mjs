@@ -132,7 +132,7 @@ async function translateField(locale, text, model = MODEL) {
   return typeof t === 'string' && t.trim().length > 0 ? t : null;
 }
 
-const FALLBACK_MODEL = 'claude-sonnet-4-6';
+const FALLBACK_MODEL = 'claude-haiku-4-5'; // haiku-only policy — retry, never escalate
 async function translate(locale, strings) {
   const out = [];
   for (const s of strings) {

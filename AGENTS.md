@@ -360,16 +360,16 @@ Cues + DOM actions in `src/lib/audio-tour.ts` are the interaction layer that run
 
 ## i18n rules — follow these exactly
 
-**Translation model tier (cost policy).** Default the `scripts/translate-*.mjs`
-LLM calls to **Haiku** (`claude-haiku-4-5`) — it is the workhorse for all bulk
-i18n: UI strings, mission/science/fleet/earth-object/planet overlays, dispatch
-lines, alt-text. Reserve **Sonnet** (`claude-sonnet-4-5`) only for the *big
-long-form editorial pieces* where prose register carries real weight — **essays
-and `/programs`**. That's it. Never default a translation script to Sonnet (let
-alone Opus) "for quality" on ordinary overlays — Haiku is the standing choice.
+**Translation model tier (cost policy).** ALL `scripts/translate-*.mjs` LLM
+calls run on **Haiku** (`claude-haiku-4-5`) — hardcoded, no `--model` flag, no
+override input, no exceptions (operator ruling 2026-09-09; this supersedes the
+earlier essays//programs-on-Sonnet carve-out). Never escalate a translation
+call to Sonnet or Opus "for quality" — if quality is insufficient, raise it
+with the operator; do not change the model. Retry ladders re-prompt with
+corrections on Haiku, they never escalate.
 Always run the translators with a **concurrency pool** (≈6-wide), never a bare
-sequential `for await` loop. Current wiring: gaps / v07-ui / dispatch / alt-text
-→ Haiku; programs → Sonnet.
+sequential `for await` loop. Current wiring: every live translate script →
+Haiku, hardcoded.
 
 **UI strings:** never hardcode user-facing text in `.svelte` files. All UI strings go through Paraglide-js.
 

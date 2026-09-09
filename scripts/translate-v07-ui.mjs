@@ -65,9 +65,9 @@ const args = Object.fromEntries(
 const locales = !args.locales || args.locales === 'all' ? ALL : String(args.locales).split(',');
 const explicitKeys = args.keys ? String(args.keys).split(',') : null;
 const fixPlaceholders = !!args['fix-placeholders']; // re-translate keys whose {placeholders} got dropped
-// Model tier: default bulk-i18n Haiku; override for hard scripts (ar/zh/ja/ko/ru/hi
-// + Cyrillic) where machine quality needs a stronger model — `--model=claude-opus-4-8`.
-const MODEL = args.model ? String(args.model) : 'claude-haiku-4-5';
+// Model tier: Haiku, ALWAYS — AGENTS.md §"i18n rules" cost policy (operator,
+// 2026-09-09). Hardcoded on purpose: no --model flag, no env override.
+const MODEL = 'claude-haiku-4-5';
 
 const phset = (s) => new Set(String(s).match(/\{[^}]+\}/g) || []);
 const sameSet = (a, b) => a.size === b.size && [...a].every((x) => b.has(x));

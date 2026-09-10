@@ -629,6 +629,96 @@
       "hotspot_tier2_regional_source": "/images/hotspots/mars/beagle2/tier2-ctx.jpg",
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_ground_m": 15360
+    },
+    "cape-canaveral-lc-36b": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/cape-canaveral-lc-36b/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/cape-canaveral-lc-36b/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "cape-canaveral-slc-40": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/cape-canaveral-slc-40/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/cape-canaveral-slc-40/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "cape-canaveral-slc-41": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/cape-canaveral-slc-41/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/cape-canaveral-slc-41/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "lc-14": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/lc-14/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/lc-14/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "lc-34": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/lc-34/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/lc-34/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "lc-39a": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/lc-39a/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/lc-39a/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "lc-39b": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/lc-39b/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/lc-39b/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "lc-5": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/lc-5/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/lc-5/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "starbase-orbital-a": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/starbase-orbital-a/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/starbase-orbital-a/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "vandenberg-slc-4e": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/vandenberg-slc-4e/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/vandenberg-slc-4e/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
     }
   }
 }

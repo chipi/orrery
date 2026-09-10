@@ -199,6 +199,93 @@ export function buildKaguyaTcProvenanceEntry(input: {
 }
 
 /**
+ * Build an image-provenance entry for a USGS NAIP aerial detail patch of an
+ * Earth launch pad (#546). NAIP is USDA/USGS federal aerial imagery — U.S.
+ * Government work, public domain (PD-USGov allowlist entry). Served through
+ * the USGS National Map ImageServer (exportImage), which composites the most
+ * recent state NAIP acquisition — the exact acquisition date is not exposed
+ * per-export, so the title carries the retrieval date honestly.
+ */
+export function buildNaipProvenanceEntry(input: {
+  outputPath: string;
+  sourceUrl: string;
+  siteId: string;
+  siteName: string;
+  centerLat: number;
+  centerLon: number;
+  windowM: number;
+  sizePx: number;
+}): ProvenanceEntry {
+  const provenancePath = input.outputPath.replace(/^static/, '');
+  const id = createHash('sha256').update(provenancePath).digest('hex').slice(0, 16);
+  return {
+    id,
+    path: provenancePath,
+    source_type: 'direct-agency',
+    title: `USGS NAIP aerial imagery — ${input.siteName}, ${input.windowM} m window centred at ${input.centerLat.toFixed(4)}°N ${input.centerLon.toFixed(4)}°E (service composite, retrieved ${new Date().toISOString().slice(0, 10)})`,
+    author: 'USDA / USGS National Agriculture Imagery Program (NAIP)',
+    agency: 'USGS',
+    source_url: 'https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer',
+    image_url: input.sourceUrl,
+    license_short: 'PD-USGov',
+    license_url: 'https://www.usa.gov/government-works',
+    license_rationale:
+      'NAIP aerial imagery is produced by the U.S. federal government (USDA FSA, served by USGS) — a U.S. Government work not subject to copyright (17 U.S.C. §105).',
+    modifications: [`exported-${input.sizePx}x${input.sizePx}-bbox-${input.windowM}m`, 'jpeg'],
+    revid: null,
+    pageid: null,
+    nasa_id: null,
+    fetched_at: new Date().toISOString(),
+    instrument: 'NAIP',
+  };
+}
+
+/**
+ * Build an image-provenance entry for a Copernicus Sentinel-2 regional patch
+ * of an Earth launch pad (#546). Free use with mandatory source attribution
+ * per the Copernicus data licence — the COPERNICUS-S2 allowlist entry.
+ */
+export function buildSentinel2ProvenanceEntry(input: {
+  outputPath: string;
+  sourceUrl: string;
+  productId: string;
+  siteId: string;
+  siteName: string;
+  centerLat: number;
+  centerLon: number;
+  cropSize: number;
+  sceneDate: string;
+}): ProvenanceEntry {
+  const provenancePath = input.outputPath.replace(/^static/, '');
+  const id = createHash('sha256').update(provenancePath).digest('hex').slice(0, 16);
+  return {
+    id,
+    path: provenancePath,
+    source_type: 'direct-agency',
+    title: `Copernicus Sentinel-2 ${input.productId} (${input.sceneDate.slice(0, 10)}) — regional patch over ${input.siteName}`,
+    author: `Contains modified Copernicus Sentinel data ${input.sceneDate.slice(0, 4)}`,
+    agency: 'ESA',
+    source_url: input.sourceUrl,
+    image_url: input.sourceUrl,
+    license_short: 'COPERNICUS-S2',
+    license_url:
+      'https://sentinels.copernicus.eu/documents/247904/690755/Sentinel_Data_Legal_Notice',
+    license_rationale:
+      'Copernicus Sentinel data are free for any use (reproduction, distribution, adaptation) under the Copernicus Sentinel Data Terms, provided the source is acknowledged: "Contains modified Copernicus Sentinel data". Retrieved as cloud-optimized GeoTIFF from the AWS Sentinel-2 COG public dataset.',
+    modifications: [
+      `cropped-${input.cropSize}x${input.cropSize}-around-site-coords`,
+      'reencoded-jpeg-q88',
+    ],
+    revid: null,
+    pageid: null,
+    nasa_id: input.productId,
+    fetched_at: new Date().toISOString(),
+    spacecraft_name: 'Sentinel-2',
+    instrument: 'Sentinel-2 MSI',
+  };
+}
+
+/**
  * Build an image-provenance entry for an LROC-derived Moon hotspot
  * patch. Same shape as HiRISE; different attribution + URLs.
  */

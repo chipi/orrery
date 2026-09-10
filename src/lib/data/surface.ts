@@ -40,7 +40,9 @@ interface SurfaceHotspotsSidecar {
   >;
 }
 
-async function surfaceHotspotsSidecar(): Promise<SurfaceHotspotsSidecar['entries']> {
+/** Exported for the /earth launch-pad adapter (#546) — pads join the same
+ *  sidecar the moon/mars loaders merge, keyed by site id. */
+export async function surfaceHotspotsSidecar(): Promise<SurfaceHotspotsSidecar['entries']> {
   const sidecar = await get<SurfaceHotspotsSidecar>('surface-hotspots.json').catch(() => null);
   return sidecar?.entries ?? {};
 }

@@ -274,6 +274,11 @@ export function provenanceSourceId(p: ImageProvenanceEntry): string {
   // Moon regional context layer (#361) — JAXA SELENE/Kaguya Terrain Camera,
   // the /moon CTX-equivalent. Its own section, surfaces JAXA.
   if (p.instrument === 'Kaguya TC') return 'jaxa-kaguya-tc';
+  // Earth launch-pad tiers (#546) — NAIP aerial detail (USGS, PD) and
+  // Sentinel-2 regional (Copernicus, attribution-required); each a distinct
+  // product family with its own section.
+  if (p.instrument === 'NAIP') return 'usgs-naip';
+  if (p.instrument === 'Sentinel-2 MSI') return 'copernicus-sentinel2';
   // Take the first agency token when the field is a partner credit
   // like "ROSCOSMOS / NASA" or "ESA / NASA" — the first listed is
   // the primary attribution per ADR-046.

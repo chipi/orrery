@@ -27,6 +27,15 @@ export interface LicenseAllowlistEntry {
 
 export const LICENSE_ALLOWLIST: readonly LicenseAllowlistEntry[] = [
   {
+    short: 'COPERNICUS-S2',
+    display: 'Copernicus Sentinel data (free use, attribution)',
+    url: 'https://sentinels.copernicus.eu/documents/247904/690755/Sentinel_Data_Legal_Notice',
+    rationale:
+      'Copernicus Sentinel data are free for any use — reproduction, distribution, adaptation — under the Copernicus Sentinel Data Terms, provided the source is acknowledged ("Contains modified Copernicus Sentinel data"). Used for the /earth launch-pad regional tier (#546).',
+    requires_attribution: true,
+    share_alike: false,
+  },
+  {
     short: 'PD-NASA',
     display: 'NASA media (public domain)',
     url: 'https://www.nasa.gov/nasa-brand-center/images-and-media/',

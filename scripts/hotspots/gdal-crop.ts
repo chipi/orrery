@@ -157,7 +157,16 @@ export async function cropRemoteRasterToLatLon(input: CropInput): Promise<CropRe
     // the WKT and applying both corrections.
     const llSrs = sourceGeographicSrs(srcSrs);
     const transform = new gdal.CoordinateTransformation(llSrs, srcSrs);
-    const projected = transform.transformPoint(input.targetLon, input.targetLat);
+    // GDAL 3 honours the EPSG authority axis order (lat,lon) on EPSG-backed
+    // geographic CRSes — an Earth raster's derived WGS84 takes the swapped
+    // argument order, while planetary GEOGCS (no EPSG lat-long flag) keep the
+    // traditional (lon,lat) call. Unguarded, every Earth crop landed
+    // off-raster (#546: pads west of 90°W threw "Invalid coordinate"; east of
+    // it the clamped window silently cropped the WRONG location — LC-39A
+    // resolved to pixel (99159, 1355284) on a 10980² tile).
+    const projected = llSrs.EPSGTreatsAsLatLong()
+      ? transform.transformPoint(input.targetLat, input.targetLon)
+      : transform.transformPoint(input.targetLon, input.targetLat);
     const wkt = srcSrs.toWKT();
     const { xCorr, yCorr } = correctHiriseProjection(wkt, projected.x, projected.y);
     const [px, py] = projectedToPixel(gt, xCorr, yCorr);

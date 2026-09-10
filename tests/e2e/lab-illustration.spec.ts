@@ -1,16 +1,18 @@
 import { expect, test } from '@playwright/test';
 
 /**
- * Illustration register + lab report (G · #536). Ships with ZERO generated
- * assets — the honest zero state IS the assertion set: no .illus anywhere,
- * both report affordances present and functional. When the first approved
- * batch lands, the manifest-driven badge assertions activate via the
- * fail-closed unit gates; this spec then gains a badge-visible case.
+ * Illustration register + lab report (G · #536). The zero-asset era ended
+ * 2026-09-09 (FB1b: 25 operator-approved goal illustrations) — the assertion
+ * set is now the POPULATED state: goal notebooks carry exactly one badged
+ * illustration, and a restored/custom notebook still never shows art.
  */
 test.describe('/lab — illustration register + report', () => {
-  test('zero-asset state: no illustration frame, report buttons present', async ({ page }) => {
+  test('goal art renders with its register badge; report buttons present', async ({ page }) => {
     await page.goto('/lab', { waitUntil: 'networkidle' });
-    await expect(page.locator('.illus')).toHaveCount(0);
+    // The default goal carries its approved illustration + the non-dismissable
+    // AI-art register badge (the honesty affordance).
+    await expect(page.locator('.illus')).toHaveCount(1);
+    await expect(page.locator('.illus__badge')).toBeVisible();
     // The report affordances are icon-only buttons (V3) — locate by their
     // accessible name (aria-label), not on-screen text.
     await expect(page.getByRole('button', { name: /lab report/i })).toBeVisible();

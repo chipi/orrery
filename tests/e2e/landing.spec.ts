@@ -53,14 +53,17 @@ test.describe('landing page (/)', () => {
     await expect(page.locator('.about-body')).toBeVisible();
     await expect(page.locator('.about-links')).toHaveCount(0);
 
-    // Persistent site-footer has 7 entries on desktop:
-    // Gallery, Credits, Colophon, Library, License (external),
-    // README (external), and the v{version} · {date} pill (which
-    // links to CHANGELOG). (Mobile drops the 3 'extra' external
-    // links: License, README, version.) Colophon link added 2026-06-22
-    // alongside the credits work.
+    // Persistent site-footer has 8 entries on desktop:
+    // Gallery, Credits, Colophon, Library, Privacy (in the ABOUT menu),
+    // License (external), README (external), and the v{version} · {date}
+    // pill (which links to CHANGELOG). (Mobile drops the 3 'extra'
+    // external links: License, README, version.) Colophon link added
+    // 2026-06-22 alongside the credits work; Privacy added 2026-09-10
+    // with the analytics opt-out (ADR-092) — it is the disclosure surface
+    // the opt-out toggle lives on, so it has to be reachable from every
+    // screen.
     const persistentLinks = page.locator('.site-footer .footer-link');
-    await expect(persistentLinks).toHaveCount(7);
+    await expect(persistentLinks).toHaveCount(8);
 
     // External README link opens in new tab.
     await expect(

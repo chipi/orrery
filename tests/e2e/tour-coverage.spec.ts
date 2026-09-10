@@ -102,7 +102,10 @@ test.describe('interactive tour — full-timeline coverage (every episode)', () 
       testInfo.project.name !== 'desktop-chromium',
       'exhaustive full-timeline drive runs on desktop-chromium only (panorama WebGL is unreliable in headless mobile docker)',
     );
-    test.setTimeout(300_000);
+    // 600s: the exhaustive drive measures 5.0-5.5 min on the loaded GPU-less CI
+    // runner (3.9 min local hardware-GL) — 300s was killing it MID-FLIGHT, not
+    // catching a hang. Assertions are unchanged; this is measured headroom.
+    test.setTimeout(600_000);
 
     const skips: string[] = [];
     page.on('console', (msg) => {

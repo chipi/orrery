@@ -20,6 +20,7 @@ import { promises as fs } from 'node:fs';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
+import sharp from 'sharp';
 import { padToEquirectangular, type MarsColourPalette } from './panorama-padder.ts';
 import { upsertProvenanceEntries, type ProvenanceEntry } from './provenance.ts';
 
@@ -200,14 +201,13 @@ async function ensureCachedSource(cfg: EarthPanoramaConfig): Promise<string> {
 
 /** Mean RGB of a horizontal edge strip (top or bottom ~4% of the image). */
 async function edgeColour(
-  sharpMod: typeof import('sharp').default,
   source: Buffer,
   edge: 'top' | 'bottom',
 ): Promise<[number, number, number]> {
-  const meta = await sharpMod(source).metadata();
+  const meta = await sharp(source).metadata();
   const h = Math.max(2, Math.round((meta.height ?? 100) * 0.04));
   const top = edge === 'top' ? 0 : (meta.height ?? h) - h;
-  const { data } = await sharpMod(source)
+  const { data } = await sharp(source)
     .extract({ left: 0, top, width: meta.width ?? 1, height: h })
     .resize(1, 1, { fit: 'fill' })
     .raw()
@@ -218,12 +218,9 @@ async function edgeColour(
 /** Palette derived from the photo's own edges so the synthetic fill blends:
  *  horizon sky = top-edge colour, zenith = the same deepened, ground =
  *  bottom-edge colour, gap = their midpoint. */
-async function derivePalette(
-  sharpMod: typeof import('sharp').default,
-  source: Buffer,
-): Promise<MarsColourPalette> {
-  const skyEdge = await edgeColour(sharpMod, source, 'top');
-  const groundEdge = await edgeColour(sharpMod, source, 'bottom');
+async function derivePalette(source: Buffer): Promise<MarsColourPalette> {
+  const skyEdge = await edgeColour(source, 'top');
+  const groundEdge = await edgeColour(source, 'bottom');
   const zenith = skyEdge.map((c) => Math.round(c * 0.62)) as [number, number, number];
   const gap = skyEdge.map((c, i) => Math.round((c + groundEdge[i]) / 2)) as [
     number,
@@ -237,13 +234,12 @@ async function processOne(cfg: EarthPanoramaConfig): Promise<boolean> {
   const outPath = path.join(OUTPUT_BASE, cfg.siteId, 'tier3-pan.jpg');
   try {
     const sourcePath = await ensureCachedSource(cfg);
-    let sourceBytes = await fs.readFile(sourcePath);
-    const sharp = (await import('sharp')).default;
+    let sourceBytes: Buffer = await fs.readFile(sourcePath);
     // The padder consumes JPEG/PNG; convert webp sources first.
     if (cfg.commonsFile.endsWith('.webp')) {
       sourceBytes = await sharp(sourceBytes).jpeg({ quality: 95 }).toBuffer();
     }
-    const derived = await derivePalette(sharp, sourceBytes);
+    const derived = await derivePalette(sourceBytes);
     const padded = await padToEquirectangular({
       source: sourceBytes,
       srcAzimuthDeg: cfg.srcAzimuthDeg,

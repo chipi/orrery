@@ -598,7 +598,15 @@
     <header class="head-row">
       <h3 id="storage-title">{m.credits_storage_heading()}</h3>
     </header>
-    <p class="storage-blurb">{m.credits_storage_intro()}</p>
+    <p class="storage-blurb">
+      <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+      {@html m
+        .credits_storage_intro({ privacy: m.credits_storage_privacy_link() })
+        .replace(
+          m.credits_storage_privacy_link(),
+          `<a href="${base}/privacy">${m.credits_storage_privacy_link()}</a>`,
+        )}
+    </p>
     <ul class="storage-list">
       <!-- Translations expand the {code} placeholder inline; wrap it
            visually as <code> via a post-render replace so future locales
@@ -614,6 +622,12 @@
         {@html m
           .credits_storage_tour_item({ code: 'orrery_tour' })
           .replace('orrery_tour', '<code>orrery_tour</code>')}
+      </li>
+      <li>
+        <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+        {@html m
+          .credits_storage_optout_item({ code: 'orrery_analytics_optout' })
+          .replace('orrery_analytics_optout', '<code>orrery_analytics_optout</code>')}
       </li>
     </ul>
     <p class="storage-blurb storage-fine">

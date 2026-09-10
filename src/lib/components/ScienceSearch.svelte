@@ -19,7 +19,7 @@
   import { goto } from '$app/navigation';
   import * as m from '$lib/paraglide/messages';
   import { base } from '$app/paths';
-  import { track } from '$lib/analytics';
+  import { trackSearchHit } from '$lib/analytics';
 
   type IndexEntry = {
     tab: string;
@@ -108,11 +108,9 @@
         // Umami custom event: what people type when looking for
         // content. Captures the query AND the picked hit so we can
         // tell when search lands a useful answer vs when users bail.
-        track('cmdk-search-hit', {
-          query: query.toLowerCase().trim(),
-          tab: pick.tab,
-          section: pick.section,
-        });
+        // The query is LENGTH-CAPPED inside the helper (ADR-092) — never
+        // pass raw user text to `track()` directly.
+        trackSearchHit(query, pick.tab, pick.section);
         close();
         void goto(`${base}/science/${pick.tab}/${pick.section}`);
       }

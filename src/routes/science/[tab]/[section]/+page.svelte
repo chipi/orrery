@@ -12,7 +12,7 @@
   import { assetUrl } from '$lib/asset-url';
   import * as m from '$lib/paraglide/messages';
   import ObservatoryShowcase from '$lib/components/ObservatoryShowcase.svelte';
-  import { track } from '$lib/analytics';
+  import { track, sourceRoute, trackScienceToApp } from '$lib/analytics';
   import type { PageData } from './$types';
 
   type Props = { data: PageData };
@@ -24,7 +24,15 @@
   // Standard pageview already fires per URL; this carries structured
   // tab + section props that are easier to aggregate in the dashboard.
   onMount(() => {
-    track('science-section-view', { tab: section.tab, section: section.id });
+    // `source` is the route the visitor came FROM — the provenance that makes
+    // "did exploring Mars lead to reading about it" answerable. Null on a cold
+    // entry (search / direct link), which is itself the signal that this
+    // section is an organic landing page rather than a journey destination.
+    track('science-section-view', {
+      tab: section.tab,
+      section: section.id,
+      source: sourceRoute(),
+    });
   });
   // The space-photography section embeds the ObservatoryShowcase strip
   // (one hero image per observatory in /fleet, deep-link into each
@@ -122,7 +130,13 @@
       <ul>
         {#each section.see_in_app as link (link.route + link.context_key)}
           <li>
-            <a href="{base}{link.route}{link.query ?? ''}">{link.route}</a>
+            <!-- Learning → experimentation: the visitor is leaving explanatory
+                 content for an interactive tool. The other half of the loop
+                 that `science-section-view.source` opens. -->
+            <a
+              href="{base}{link.route}{link.query ?? ''}"
+              onclick={() => trackScienceToApp(section.id, link.route)}>{link.route}</a
+            >
             <span class="ctx">{link.context_key}</span>
           </li>
         {/each}

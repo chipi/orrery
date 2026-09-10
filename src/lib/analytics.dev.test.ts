@@ -6,7 +6,9 @@ import { describe, expect, it, afterEach, vi } from 'vitest';
 // sibling analytics.test.ts pins `dev: false`; this file pins `dev: true` so the
 // fallback path is the one under test. A mutable env mock lets the override case flip on.
 vi.mock('$env/dynamic/public', () => ({ env: {} }));
-vi.mock('$app/environment', () => ({ dev: true }));
+// `browser: true` so the ADR-092 opt-out gate is live here too (no cookie and
+// no GPC/DNT in jsdom → suppressed = false, so the dev rung still fires).
+vi.mock('$app/environment', () => ({ dev: true, browser: true }));
 import { env as publicEnv } from '$env/dynamic/public';
 import * as A from './analytics';
 

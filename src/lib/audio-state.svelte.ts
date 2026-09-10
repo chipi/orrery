@@ -2,6 +2,7 @@
 // Shared Svelte 5 reactive state, consumed by AudioOverlay + Nav.
 
 import { audioBus } from './audio-bus';
+import { trackTourComplete } from './analytics';
 import {
   clearTourCookie,
   flushTourCookieWrite,
@@ -220,6 +221,10 @@ class AudioState {
     if (next >= this.tourSequence.length) {
       this.tourActive = false;
       clearTourCookie();
+      // Ran to the natural end — the guided-onboarding completion signal.
+      // Deliberately NOT fired from stopTour(), which is abandonment: mixing
+      // the two would make the completion rate meaningless.
+      trackTourComplete('curator-full');
       return null;
     }
     this.tourIndex = next;

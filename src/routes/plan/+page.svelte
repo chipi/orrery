@@ -3,11 +3,11 @@
   import { goto } from '$app/navigation';
   import { page } from '$app/state';
   import { base } from '$app/paths';
-  import { dvToRGB, dvToCss, dayToLongDate, dayToShortDate } from '$lib/porkchop';
+  import { dvToRGB, dvToCss, dayToDate, dayToLongDate, dayToShortDate } from '$lib/porkchop';
   import { geoTransferDv } from '$lib/physics/transfer/lambert-geocentric';
   import { interplanetaryMoonDv } from '$lib/moon-transfer';
   import { MOONS } from '$lib/moon-transfer.constants';
-  import { trackFilterChange } from '$lib/analytics';
+  import { trackFilterChange, trackPlanRun, trackPlanWindowSelect } from '$lib/analytics';
   import { getRockets, getPorkchopGrid } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import { localizeHref } from '$lib/paraglide/runtime';
@@ -524,7 +524,16 @@
     gridRD = success(result);
     progress = 1;
     coerceMissionType();
+    // The planner was actually RUN for this destination, not merely opened.
+    // `trigger` separates the landing default from a deliberate switch, so both
+    // "did they engage at all" and "did they compare destinations" are
+    // answerable. Deduped per destination+type+trigger for this page-load.
+    trackPlanRun(id, missionType, planRunTrigger);
+    planRunTrigger = 'destination-change';
   }
+
+  // First grid of a visit is the landing default; everything after is a choice.
+  let planRunTrigger: 'initial' | 'destination-change' | 'type-change' = 'initial';
 
   // ─── Heatmap rendering ───────────────────────────────────────────
   let heatBitmap: ImageBitmap | null = null;
@@ -693,8 +702,19 @@
     const cell = cellFromCanvas(e.clientX, e.clientY);
     if (cell) {
       selected = cell;
+      reportWindowSelect(cell.i);
       drawPlot();
     }
+  }
+
+  /** A DELIBERATE launch-window pick (pointer or touch). The auto-selected
+   *  "cheapest viable" default and the ?dep/?tof deep-link restore deliberately
+   *  do NOT call this — they aren't visitor engagement, and counting them would
+   *  make plan-window-select/plan-run meaningless. */
+  function reportWindowSelect(i: number): void {
+    const day = depDays[i];
+    const year = Number.isFinite(day) ? dayToDate(day).getFullYear() : null;
+    trackPlanWindowSelect(destinationId, year);
   }
 
   // ─── Touch events — RFC-006 Option C magnifier ────────────────────
@@ -731,6 +751,7 @@
     e.preventDefault();
     if (mag) {
       selected = { i: mag.i, j: mag.j };
+      reportWindowSelect(mag.i);
       mag = null;
       drawPlot();
     }

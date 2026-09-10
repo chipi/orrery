@@ -178,7 +178,7 @@
     type FlightPhaseEvent,
   } from '$lib/fly/flight-phase-controller';
   import { isScienceLensOn, onScienceLensChange } from '$lib/science-lens';
-  import { track, trackMissionComplete } from '$lib/analytics';
+  import { track, trackMissionComplete, trackFlyPhase } from '$lib/analytics';
 
   // ─── Default scenario (ORRERY-1 free-return per ADR-009) ─────────
   // Static-imported so the Three.js scene can initialise synchronously
@@ -376,6 +376,24 @@
     showLaunch ? 'ascent' : showCoast ? 'coast' : showDescent ? 'descent' : 'cruise',
   );
   let availableLayers = $derived<LayerKey[]>([...SEGMENT_LAYERS[flySegment]]);
+
+  // Flight-progression funnel. `flyAct` is the act state machine's single source
+  // of truth, so this effect fires exactly on a real act transition — not per
+  // frame and not on a scrub within an act. trackFlyPhase dedupes per
+  // mission+phase, so dragging the master scrubber backwards and forwards
+  // re-renders freely without inflating the funnel. Phase names are the app's
+  // own acts (ascent / coast / cruise / descent / recovery); no invented stages.
+  $effect(() => {
+    const act = flyAct;
+    const m = mission;
+    if (act === 'opening') return;
+    // `LoadedMission.id`/`dest` are optional — the default opening scenario
+    // carries neither. An unidentified flight can't be attributed to a mission
+    // in the funnel, so skip it rather than emit an 'unknown' bucket that would
+    // silently absorb the default-scenario traffic.
+    if (!m?.id || !m.dest) return;
+    trackFlyPhase(m.id, m.dest, act);
+  });
 
   // Segment-transition seam: the full-screen launch/coast/descent overlays swap
   // instantly on an {#if}. To turn that into a clean film cut we SNAP to full

@@ -507,6 +507,11 @@
         <span class="footer-about-label" aria-haspopup="menu">{m.layout_footer_about()}</span>
         <ul class="footer-about-menu" role="menu" aria-label={m.footer_about_aria()}>
           <li role="none">
+            <a class="footer-link footer-link-extra" href="{base}/privacy" role="menuitem"
+              >{m.layout_footer_privacy()}</a
+            >
+          </li>
+          <li role="none">
             <a
               class="footer-link footer-link-extra"
               href="https://github.com/chipi/orrery/blob/main/LICENSE"

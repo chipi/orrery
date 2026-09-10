@@ -9,7 +9,12 @@
   import * as THREE from 'three';
   import { createLayeredStarField } from '$lib/three/star-field';
   import { PLANETS } from '$lib/explore-scene';
-  import { trackItemClick, trackViewToggle, trackLayerToggle } from '$lib/analytics';
+  import {
+    trackItemClick,
+    trackViewToggle,
+    trackLayerToggle,
+    trackExploreDepth,
+  } from '$lib/analytics';
   import { createSceneRenderer, WebGLUnavailableError } from '$lib/three/scene-renderer';
   import {
     resolveQualitySync,
@@ -921,6 +926,10 @@
   // it can't drive the highlight). Reset on leave.
   $effect(() => {
     exploreContext.set(contextId);
+    // Scale-shell depth reached. This effect already runs exactly on a context
+    // change (not per frame), and trackExploreDepth dedupes per level, so a
+    // visitor who walks out to laniakea and back logs each shell once.
+    trackExploreDepth(contextId);
   });
   onDestroy(() => exploreContext.set(null));
 

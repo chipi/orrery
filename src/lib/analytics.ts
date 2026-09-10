@@ -26,7 +26,16 @@
  * Privacy: Umami is cookieless, PII-free, GDPR-friendly. Free-text the
  * user typed (search queries) is length-capped before it leaves the
  * browser — we record what they search for at a coarse grain, never a
- * verbatim transcript, and never anything tied to an identity.
+ * verbatim transcript, and never anything tied to an identity. EVERY
+ * free-text path goes through `trackSearch` / `trackSearchHit`; do not
+ * call `track()` with a raw query (2026-09-10: `cmdk-search-hit` was
+ * doing exactly that and shipped the untruncated string).
+ *
+ * Opt-out (ADR-092): `analyticsSuppressed()` — the `orrery_analytics_optout`
+ * cookie, GPC, or DNT — hard-gates BOTH the script injection and every
+ * `track()`. See `analytics-optout.ts`. No consent banner is required
+ * (cookieless, self-hosted, no third-party sharing); the opt-out is what
+ * makes that posture defensible rather than merely asserted.
  *
  * ── Event registry (single source of truth) ──────────────────────────
  * Every event name lives in `EVENT_NAMES`; `track()` only accepts those,
@@ -50,11 +59,11 @@
  *  ENTITY DETAIL VIEWS (popularity)
  *   mission-view       { id, source }
  *   fleet-entry-view   { id, category }
- *   science-section-view { tab, section }
+ *   science-section-view { tab, section, source }  (source = route came FROM)
  *  SCIENCE
  *   science-lens-toggle { on, source }
  *   science-chip-click  { chip, tab? }
- *   cmdk-search-hit     { query_len, … }
+ *   cmdk-search-hit     { query_len, query, tab, section }  (query length-capped)
  *  /fly  (funnel: load → complete; abandon = load w/o complete)
  *   mission-load       { id, dest, view }
  *   mission-play-toggle{ id, playing }
@@ -63,11 +72,21 @@
  *   locale-switch      { from, to }
  *  EXTERNAL
  *   external-link-click{ host, href, from }            (global click listener)
+ *  JOURNEY — milestone events, deduped per page-load (2026-09-10)
+ *   explore-depth      { level }                       scale shell reached
+ *   plan-run           { destination, mission_type, trigger }
+ *   plan-window-select { destination, dep_year }       deliberate picks only
+ *   fly-ascent | fly-coast | fly-cruise | fly-descent | fly-recovery
+ *                      { mission, dest }               first reach of an act
+ *                      (one name per act — Umami funnel steps match on NAME)
+ *   science-to-app     { topic, destination, from_tab }
+ *   tour-complete      { tour }                        natural end, not stop
  */
 
 import { env as publicEnv } from '$env/dynamic/public';
 import { dev } from '$app/environment';
 import { MOBILE_INTERNAL, targetConfig } from './target-env';
+import { analyticsSuppressed } from './analytics-optout';
 
 // Dev rung of the env ladder (mirrors sentry.ts). In `vite dev`, with no deploy-injected
 // PUBLIC_UMAMI_* override, analytics go to the dedicated dev Umami site via the Tailscale
@@ -120,22 +139,60 @@ export const EVENT_NAMES = [
   'app-load',
   'sw-activated',
   'sw-install-failed',
+  // ── Journey instrumentation (2026-09-10). The registry above answers
+  // "what is popular"; these answer "did the visitor get anywhere". Each one
+  // exists because a specific question was unanswerable without it:
+  //   explore-depth      — do visitors leave the opening view at all?
+  //   plan-run           — is the planner USED, or only opened? (/plan fired
+  //                        nothing but two filter-change events before this)
+  //   plan-window-select — after computing, do they engage a solution?
+  //   fly-<act>          — where do visitors stop? (/fly had a start and an
+  //                        end with nothing in between)
+  //   science-to-app     — does learning send them back into a tool?
+  //   tour-complete      — does guided onboarding finish?
+  // Every one is milestone-deduped: they fire on first reach, never per frame,
+  // per tick, or per re-render.
+  'explore-depth',
+  'plan-run',
+  'plan-window-select',
+  // One event name PER ACT, not one `fly-phase` event with a `phase` property.
+  // Umami's Funnel / Journey / Goal steps match on an event NAME or a URL —
+  // there is no property condition in the step form (docs.umami.is/docs/funnel).
+  // A single `fly-phase` event would therefore collapse to one indistinguishable
+  // funnel step. `mission` + `dest` stay as properties because nothing needs to
+  // funnel on them. This is the one place the "stable vocabulary + properties"
+  // rule is deliberately inverted, and the reason is Umami's step matcher.
+  'fly-ascent',
+  'fly-coast',
+  'fly-cruise',
+  'fly-descent',
+  'fly-recovery',
+  'science-to-app',
+  'tour-complete',
 ] as const;
 
 export type EventName = (typeof EVENT_NAMES)[number];
 
 /** Analytics fires when a host + website id resolve for the current rung — a deploy env
- *  override (staging/prod) or the `vite dev` default. Fork-silent by construction: a
+ *  override (staging/prod) or the `vite dev` default — AND the user has not opted out
+ *  (cookie) and their browser is not signalling GPC/DNT. Fork-silent by construction: a
  *  non-dev build with no env vars resolves neither, so no script is injected and every
  *  `track()` is a no-op. Mirrors `sentry.ts`. */
 function analyticsEnabled(): boolean {
+  if (analyticsSuppressed()) return false;
   return !!umamiHost() && !!umamiWebsiteId();
 }
 
 /** Inject the self-hosted Umami `<script>` exactly once, only when enabled.
- *  Idempotent. Call from the root +layout's onMount. */
+ *  Idempotent. Call from the root +layout's onMount.
+ *
+ *  An opted-out user (or a GPC/DNT browser) never gets the script at all — that
+ *  matters because Umami's autotrack binds its own history listeners at load
+ *  and cannot be unbound afterwards, so suppression has to happen BEFORE
+ *  injection to stop pageview collection, not just our custom events. */
 export function initAnalytics(): void {
   if (typeof document === 'undefined') return;
+  if (analyticsSuppressed()) return; // ADR-092 — opt-out cookie / GPC / DNT
   const host = umamiHost();
   const websiteId = umamiWebsiteId();
   if (!host || !websiteId) return; // fork-silent (non-dev build, no env) by construction
@@ -145,6 +202,10 @@ export function initAnalytics(): void {
   s.src = `${host}/script.js`;
   s.dataset.websiteId = websiteId;
   s.setAttribute('data-umami-installed', '1');
+  // Flush anything tracked between this call and the deferred script actually
+  // executing. See `pendingEvents` — without this, every event fired in the
+  // same tick as init is silently lost.
+  s.addEventListener('load', flushPendingEvents, { once: true });
   document.head.appendChild(s);
 }
 
@@ -152,14 +213,59 @@ type UmamiGlobal = {
   track?: (name: string, props?: Record<string, unknown>) => void;
 };
 
+/**
+ * Events fired before the deferred Umami script has executed.
+ *
+ * THE BUG THIS FIXES (found 2026-09-10 in the live prod data): `app-load` had
+ * fired **0 times** against 731 `route-enter`s. `+layout.svelte` calls
+ * `initAnalytics()` and then `track('app-load', …)` on the next line — but
+ * `initAnalytics` appends a `<script defer>`, which by definition has NOT run
+ * yet, so `window.umami` was `undefined` and the call evaporated. This module
+ * previously claimed "safe before the script loads (it queues)"; that was
+ * wrong — Umami's queue only exists once its own script defines the global.
+ * Anything fired in the same tick as init was lost, which is exactly where
+ * app-open and first-paint milestones live.
+ *
+ * Bounded: a visitor who never loads the script (offline, blocked, opted out
+ * mid-flight) accumulates at most CAP entries and then drops the oldest.
+ */
+const PENDING_CAP = 50;
+let pendingEvents: Array<{ name: EventName; props?: Record<string, unknown> }> = [];
+
+function umamiGlobal(): UmamiGlobal | undefined {
+  if (typeof window === 'undefined') return undefined;
+  return (window as unknown as { umami?: UmamiGlobal }).umami;
+}
+
+/** Drain the pre-load buffer into Umami, in the order the events happened. */
+function flushPendingEvents(): void {
+  const u = umamiGlobal();
+  if (!u?.track) return;
+  const queued = pendingEvents;
+  pendingEvents = [];
+  for (const e of queued) u.track(e.name, e.props);
+}
+
+/** Buffer size — test seam. */
+export function __pendingEventCountForTest(): number {
+  return pendingEvents.length;
+}
+
 /** Track a custom event. Name is constrained to the registry (typos are
- *  compile errors). Safe before the Umami script loads (it queues), and a
- *  no-op when analytics is disabled. */
+ *  compile errors). Genuinely safe before the Umami script loads — the event is
+ *  buffered and flushed on script load (see `pendingEvents`) — and a no-op when
+ *  analytics is disabled or the visitor has opted out. */
 export function track(name: EventName, props?: Record<string, unknown>): void {
   if (!analyticsEnabled()) return;
   if (typeof window === 'undefined') return;
-  const u = (window as unknown as { umami?: UmamiGlobal }).umami;
-  u?.track?.(name, props);
+  const u = umamiGlobal();
+  if (u?.track) {
+    u.track(name, props);
+    return;
+  }
+  // Script not executed yet — hold it rather than drop it.
+  if (pendingEvents.length >= PENDING_CAP) pendingEvents.shift();
+  pendingEvents.push({ name, props });
 }
 
 // ─── Typed helpers — prefer these over raw track() ───────────────────
@@ -176,13 +282,24 @@ export function trackStageFire(
 }
 
 let lastRouteEnter: { route: string; t: number } | null = null;
+/** The route the visitor came FROM, kept after `lastRouteEnter` advances. This is
+ *  the provenance every "did X lead to Y" question needs, and it costs nothing —
+ *  the value already flows through `route-enter`'s `from_route`. */
+let previousRoute: string | null = null;
 export function trackRouteEnter(route: string): void {
   const now = Date.now();
   if (lastRouteEnter) {
     track('route-exit', { route: lastRouteEnter.route, dwell_ms: now - lastRouteEnter.t });
+    previousRoute = lastRouteEnter.route;
   }
-  track('route-enter', { route, from_route: lastRouteEnter?.route ?? null });
+  track('route-enter', { route, from_route: previousRoute });
   lastRouteEnter = { route, t: now };
+}
+
+/** Where the visitor arrived from, for `source`-style properties. Null on a cold
+ *  entry (direct link / search), which is itself the useful signal. */
+export function sourceRoute(): string | null {
+  return previousRoute;
 }
 
 /** Generic "user clicked/selected an entity" — reused on every route. */
@@ -226,6 +343,20 @@ export function trackSearch(surface: string, query: string): void {
   track('search', { surface, query_len: q.length, query: q.slice(0, 40) });
 }
 
+/** Command-palette search that landed on a hit. Same length cap as
+ *  `trackSearch` — this event previously shipped the untruncated query
+ *  string, which contradicted both this module's contract and the promise
+ *  made to users on /credits (fixed 2026-09-10, ADR-092). */
+export function trackSearchHit(query: string, tab: string, section: string): void {
+  const q = query.trim();
+  track('cmdk-search-hit', {
+    query_len: q.length,
+    query: q.slice(0, 40).toLowerCase(),
+    tab,
+    section,
+  });
+}
+
 /** Visibility-layer toggle (explore layers, science layers, …). */
 export function trackLayerToggle(surface: string, layer: string, on: boolean): void {
   track('layer-toggle', { surface, layer, on });
@@ -243,6 +374,95 @@ export function trackGalleryImageOpen(entity_kind: string, entity: string, index
 
 export function trackScienceLensToggle(on: boolean, source: string): void {
   track('science-lens-toggle', { on, source });
+}
+
+// ─── Journey helpers ─────────────────────────────────────────────────
+//
+// All six are MILESTONE events: they fire the first time a visitor reaches
+// something, never on the repeat. The dedup keys live in module-level Sets —
+// deliberately not in a cookie or storage (ADR-057 bans client storage, and
+// ADR-092 already spent the third cookie). Module scope survives SPA
+// navigation and dies on reload, which is the right lifetime: a genuine
+// return visit should count again.
+
+const firedMilestones = new Set<string>();
+/** Fire `name` once per key for the life of this page-load. */
+function once(key: string, emit: () => void): void {
+  if (firedMilestones.has(key)) return;
+  firedMilestones.add(key);
+  emit();
+}
+
+/** Reset all module-level analytics state (milestone dedup + route provenance)
+ *  — test-only seam. Both are per-page-load state in production, so a test that
+ *  wants a cold-entry visitor has to clear them explicitly. */
+export function __resetAnalyticsStateForTest(): void {
+  firedMilestones.clear();
+  lastRouteEnter = null;
+  previousRoute = null;
+  pendingEvents = [];
+}
+
+/** A scale shell was reached on /explore. `level` is the product's own context
+ *  id (`solar-system` … `cosmic-web`), so the vocabulary can't drift from the
+ *  scene. Answers: do visitors leave the opening view at all, and how far out? */
+export function trackExploreDepth(level: string): void {
+  if (!level || level === 'body-scene') return; // off-ladder, not a depth
+  once(`explore-depth:${level}`, () => track('explore-depth', { level }));
+}
+
+/** A porkchop grid was actually computed/loaded for a destination — the
+ *  difference between opening /plan and using it. `trigger` separates the
+ *  initial default from a deliberate change, so both "% who engaged" and
+ *  "% who explored a second destination" are derivable. */
+export function trackPlanRun(
+  destination: string,
+  missionType: string,
+  trigger: 'initial' | 'destination-change' | 'type-change',
+): void {
+  once(`plan-run:${destination}:${missionType}:${trigger}`, () =>
+    track('plan-run', { destination, mission_type: missionType, trigger }),
+  );
+}
+
+/** The visitor selected a launch window from the porkchop — engagement with a
+ *  computed solution, not just its existence. Deliberate user picks only; the
+ *  auto-selected "cheapest viable" default and deep-link restores do NOT fire. */
+export function trackPlanWindowSelect(destination: string, depYear: number | null): void {
+  track('plan-window-select', { destination, dep_year: depYear });
+}
+
+/** The app's `flyAct` states → their Umami event names. Keyed by the act the
+ *  state machine actually reports, so an act that gains a name in the app can
+ *  only reach analytics by being added here deliberately. */
+const FLY_ACT_EVENT: Record<string, EventName | undefined> = {
+  ascent: 'fly-ascent',
+  coast: 'fly-coast',
+  cruise: 'fly-cruise',
+  descent: 'fly-descent',
+  recovery: 'fly-recovery',
+};
+
+/** A /fly act was first reached for this mission. Deduped per mission+act, so
+ *  scrubbing back and forth doesn't inflate the funnel. Emits ONE EVENT NAME PER
+ *  ACT (`fly-cruise`, …) rather than a `phase` property, because Umami funnel
+ *  steps match on event name — see the registry comment. Act names are the
+ *  app's real ones; no invented analytics stages. */
+export function trackFlyPhase(mission: string, dest: string, phase: string): void {
+  const name = FLY_ACT_EVENT[phase];
+  if (!name) return; // 'opening' and any future non-act state are not funnel steps
+  once(`${name}:${mission}`, () => track(name, { mission, dest }));
+}
+
+/** The visitor left science content for an interactive tool — the learning →
+ *  experimentation half of the loop. */
+export function trackScienceToApp(topic: string, destination: string): void {
+  track('science-to-app', { topic, destination, from_tab: sourceRoute() });
+}
+
+/** A guided tour ran to its natural end. */
+export function trackTourComplete(tour: string): void {
+  once(`tour-complete:${tour}`, () => track('tour-complete', { tour }));
 }
 
 /** /fly arrival reached — the completion end of the load→complete funnel. */

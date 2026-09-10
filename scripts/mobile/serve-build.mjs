@@ -21,13 +21,23 @@ import sirv from 'sirv';
 
 const PORT = Number(process.env.PORT ?? 4173);
 const HOST = process.env.HOST ?? '127.0.0.1';
-const BUILD = path.resolve(process.cwd(), 'build');
+// DIR: override the served tree — a local-simulator stream origin serves the
+// FULL asset tree (e.g. DIR=static) while the on-device bundle is the pruned
+// build/. CORS=1: send the header the Capacitor WebView needs for
+// cross-origin texture fetches (crossOrigin='anonymous'; GitHub Pages / the
+// VPS send it in production). Both off by default — Layer 1 serves build/
+// and stubs the CDN in-page.
+const DIR = path.resolve(process.cwd(), process.env.DIR ?? 'build');
+const CORS = process.env.CORS === '1';
 
-const serve = sirv(BUILD, { dev: false, etag: true, gzip: false, brotli: false });
-const server = createServer((req, res) => serve(req, res));
+const serve = sirv(DIR, { dev: false, etag: true, gzip: false, brotli: false });
+const server = createServer((req, res) => {
+  if (CORS) res.setHeader('Access-Control-Allow-Origin', '*');
+  serve(req, res);
+});
 server.listen(PORT, HOST, () => {
   console.log(
-    `[serve-build] serving ${path.relative(process.cwd(), BUILD)}/ on http://${HOST}:${PORT}`,
+    `[serve-build] serving ${path.relative(process.cwd(), DIR)}/ on http://${HOST}:${PORT}${CORS ? ' (CORS *)' : ''}`,
   );
 });
 

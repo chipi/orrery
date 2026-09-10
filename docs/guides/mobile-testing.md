@@ -59,10 +59,10 @@ static server.
 ### The size budget (regression gate)
 
 `build:mobile` ends with `scripts/mobile/check-mobile-size-budget.mjs`: if the
-pruned `build/` exceeds **65 MB** the build fails and prints the largest
+pruned `build/` exceeds **75 MB** the build fails and prints the largest
 buckets. This is what stops a leak — a re-added locale HTML tree, the
 images/audio buckets, or the 4K textures slipping past their gate — from
-silently re-bloating the OTA download. The pruned bundle is ~47 MB today; the
+silently re-bloating the OTA download. The pruned bundle is ~73 MB today; the
 budget sits well under the iOS 200 MB cellular-OTA cap the prune exists to clear.
 
 ### CI
@@ -90,6 +90,33 @@ Keep it a *smoke* suite — Appium is slow and flake-prone. CI: Android emulator
 runs on Linux runners; iOS needs macOS runners or a cloud device farm
 (BrowserStack / Sauce App Automate / AWS Device Farm). Not built yet — this
 section is the design intent.
+
+### Appium-free simulator spot-check (works today, fully local)
+
+For a one-off "does X actually work in the native app" check, no Appium is
+needed — `simctl openurl` + the `orrery://` deep-link scheme drive the app,
+and the whole stream path runs against local servers (no push, no deploy):
+
+```bash
+# 1. Stream origin: full asset tree with the CORS header the WebView needs
+CORS=1 DIR=static PORT=4174 node scripts/mobile/serve-build.mjs &
+# 2. Pruned bundle pointed at it (ATS exempts loopback, so http:// is fine)
+STREAM_ORIGIN=http://127.0.0.1:4174 npm run build:mobile && npx cap sync ios
+# 3. Build + install + launch on a simulator
+xcodebuild -workspace ios/App/App.xcworkspace -scheme App -configuration Debug \
+  -destination 'platform=iOS Simulator,name=iPhone 17 Pro' \
+  -derivedDataPath /tmp/orrery-sim-dd build
+xcrun simctl boot "iPhone 17 Pro"
+xcrun simctl install "iPhone 17 Pro" /tmp/orrery-sim-dd/Build/Products/Debug-iphonesimulator/App.app
+xcrun simctl launch "iPhone 17 Pro" io.github.chipi.orrery
+# 4. Drive via deep link, verify via screenshot
+xcrun simctl openurl "iPhone 17 Pro" "orrery://earth?site=baikonur-31-6&from=descent"
+xcrun simctl io "iPhone 17 Pro" screenshot /tmp/sim-check.png
+```
+
+Because the pruned bundle contains no `/images`, anything image-like in the
+screenshot *proves* the stream path worked. First used 2026-09-10 to verify
+the #546 launch-pad tier-3 panoramas on-device pre-push.
 
 ---
 

@@ -65,5 +65,10 @@ describe('MCP compute budget — the ungated call path is bounded (H · #464)', 
       }
     }
     expect(worstMs).toBeLessThan(2000);
-  });
+    // 8 corners × a full lifting-entry bisection solve. The per-call 2 s
+    // assertion above is the actual compute-budget guard and is unchanged —
+    // this wrapper budget only stops vitest's 5 s default from failing the
+    // suite on machine load (timed out at 5.7 s under v8 coverage on
+    // 2026-09-10 while every individual call stayed well inside 2 s).
+  }, 30_000);
 });

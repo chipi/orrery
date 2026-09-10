@@ -95,7 +95,16 @@ describe('every descent profile expands + flies to its honest outcome', () => {
       // Beats open on entry; landers close on touchdown, probes on signal loss.
       expect(s.events[0].type).toBe('entry');
       expect(s.events.at(-1)!.type).toBe(noSurface ? 'probe_signal_lost' : 'touchdown');
-    });
+      // A full multi-phase entry integration at the profile's dt. The long
+      // Earth-return capsules (apollo7/9, gemini3/4/8/12) sit within a few
+      // hundred ms of vitest's 5 s default on an unloaded machine and blow
+      // straight past it under v8 coverage instrumentation or a busy runner —
+      // observed as 5.3 s bare and 6.6-12.4 s under coverage (2026-09-10),
+      // with the identical code passing in isolation. Same cause and same
+      // remedy as the bank-solve test (0a2b51ac59): the work is legitimately
+      // this big, so give it a real budget rather than let machine load decide
+      // whether the suite is green.
+    }, 30_000);
   }
 });
 

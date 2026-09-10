@@ -129,6 +129,19 @@ test.describe('interactive tour — full-timeline coverage (every episode)', () 
       const before = skips.length;
       const stages = [...EPISODE_STAGES[id]].sort((a, b) => a.at_sec - b.at_sec);
       for (const stage of stages) {
+        // Real playback gives the app the full audio gap (7+ s) between cues;
+        // this drive compresses it to ~1 s, which under-runs async panel mounts
+        // on the GPU-less runner (station gallery tab missed in 2 of 3 CI runs
+        // on one sha, local + third run green). Bounded pre-wait for selector
+        // click targets keeps coverage semantics — a target that never mounts
+        // still reaches the player's skip-warning and fails the episode.
+        if (stage.action === 'click' && stage.target.startsWith('[')) {
+          await page
+            .locator(stage.target)
+            .first()
+            .waitFor({ state: 'attached', timeout: 10_000 })
+            .catch(() => {});
+        }
         await setPosition(page, stage.at_sec);
         // Let the fire-loop run + DOM settle: a `click` stage that opens a
         // panel / enters panorama must finish mounting before the next stage

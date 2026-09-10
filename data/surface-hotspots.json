@@ -629,6 +629,366 @@
       "hotspot_tier2_regional_source": "/images/hotspots/mars/beagle2/tier2-ctx.jpg",
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_ground_m": 15360
+    },
+    "cape-canaveral-lc-36b": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/cape-canaveral-lc-36b/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/cape-canaveral-lc-36b/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "cape-canaveral-slc-40": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/cape-canaveral-slc-40/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/cape-canaveral-slc-40/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "cape-canaveral-slc-41": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/cape-canaveral-slc-41/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/cape-canaveral-slc-41/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "lc-14": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/lc-14/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/lc-14/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "lc-34": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/lc-34/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/lc-34/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "lc-39a": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/lc-39a/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/lc-39a/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "lc-39b": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/lc-39b/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/lc-39b/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "lc-5": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/lc-5/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/lc-5/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "starbase-orbital-a": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/starbase-orbital-a/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/starbase-orbital-a/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "vandenberg-slc-4e": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 3,
+      "hotspot_tier2_source": "/images/hotspots/earth/vandenberg-slc-4e/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/vandenberg-slc-4e/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10,
+      "hotspot_tier3_panorama": "/images/hotspots/earth/vandenberg-slc-4e/tier3-pan.jpg",
+      "panorama_metadata": {
+        "date": "2015-01-01",
+        "instrument": "Aerial photo",
+        "caption": "Vandenberg SLC-4E (Falcon 9) and SLC-4W from the air — an aerial view, not a ground-level panorama.",
+        "credit_team": "SpacecoasterVBG · Wikimedia Commons (CC BY-SA 4.0)",
+        "real_extent_pct_vertical": 31,
+        "synthetic_regions": [
+          {
+            "pitch_min_deg": 16,
+            "pitch_max_deg": 90,
+            "kind": "synthetic_sky"
+          },
+          {
+            "pitch_min_deg": -90,
+            "pitch_max_deg": -40,
+            "kind": "synthetic_nadir"
+          }
+        ],
+        "compass_zero_direction": "photo centre (true compass orientation not calibrated)"
+      }
+    },
+    "kourou-ela-2": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/kourou-ela-2/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/kourou-ela-2/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "kourou-ela-3": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/kourou-ela-3/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/kourou-ela-3/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "kourou-ela-4": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/kourou-ela-4/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/kourou-ela-4/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "tanegashima-yoshinobu": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/tanegashima-yoshinobu/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/tanegashima-yoshinobu/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "baikonur-1-5": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 3,
+      "hotspot_tier2_source": "/images/hotspots/earth/baikonur-1-5/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 2560,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/baikonur-1-5/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10,
+      "hotspot_tier3_panorama": "/images/hotspots/earth/baikonur-1-5/tier3-pan.jpg",
+      "panorama_metadata": {
+        "date": "2008-10-10",
+        "instrument": "Ground photo (banner crop)",
+        "caption": "Gagarin's Start (Site 1/5) before the Soyuz TMA-13 rollout — a very low-resolution banner crop.",
+        "credit_team": "NASA / Bill Ingalls",
+        "real_extent_pct_vertical": 13,
+        "synthetic_regions": [
+          {
+            "pitch_min_deg": 12,
+            "pitch_max_deg": 90,
+            "kind": "synthetic_sky"
+          },
+          {
+            "pitch_min_deg": -90,
+            "pitch_max_deg": -11,
+            "kind": "synthetic_nadir"
+          }
+        ],
+        "compass_zero_direction": "photo centre (true compass orientation not calibrated)"
+      }
+    },
+    "baikonur-200": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/baikonur-200/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 2560,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/baikonur-200/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "baikonur-31-6": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 3,
+      "hotspot_tier2_source": "/images/hotspots/earth/baikonur-31-6/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 2560,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/baikonur-31-6/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10,
+      "hotspot_tier3_panorama": "/images/hotspots/earth/baikonur-31-6/tier3-pan.jpg",
+      "panorama_metadata": {
+        "date": "2014-06-01",
+        "instrument": "Ground photo panorama",
+        "caption": "Baikonur Site 31/6 from the top of the Soyuz service structure — the pad flame trench below, the steppe and the Zenit facility on the horizon.",
+        "credit_team": "Paulsday86 · Wikimedia Commons (CC0)",
+        "real_extent_pct_vertical": 37,
+        "synthetic_regions": [
+          {
+            "pitch_min_deg": 30,
+            "pitch_max_deg": 90,
+            "kind": "synthetic_sky"
+          },
+          {
+            "pitch_min_deg": -90,
+            "pitch_max_deg": -36,
+            "kind": "synthetic_nadir"
+          }
+        ],
+        "compass_zero_direction": "photo centre (true compass orientation not calibrated)"
+      }
+    },
+    "gagarins-start": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/gagarins-start/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 2560,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/gagarins-start/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "plesetsk-41-1": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/plesetsk-41-1/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 2560,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/plesetsk-41-1/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "plesetsk-43": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/plesetsk-43/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 2560,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/plesetsk-43/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "jiuquan-slc-43": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 3,
+      "hotspot_tier2_source": "/images/hotspots/earth/jiuquan-slc-43/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 2560,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/jiuquan-slc-43/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10,
+      "hotspot_tier3_panorama": "/images/hotspots/earth/jiuquan-slc-43/tier3-pan.jpg",
+      "panorama_metadata": {
+        "date": "2005-08-01",
+        "instrument": "Ground photo (distant)",
+        "caption": "Jiuquan Satellite Launch Center main launch tower from a distance — a low-resolution panoramic strip across the Gobi.",
+        "credit_team": "AAxanderr · Wikimedia Commons (public domain)",
+        "real_extent_pct_vertical": 27,
+        "synthetic_regions": [
+          {
+            "pitch_min_deg": 25,
+            "pitch_max_deg": 90,
+            "kind": "synthetic_sky"
+          },
+          {
+            "pitch_min_deg": -90,
+            "pitch_max_deg": -24,
+            "kind": "synthetic_nadir"
+          }
+        ],
+        "compass_zero_direction": "photo centre (true compass orientation not calibrated)"
+      }
+    },
+    "taiyuan-lc-9": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/taiyuan-lc-9/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 2560,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/taiyuan-lc-9/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "wenchang-lc-101": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 3,
+      "hotspot_tier2_source": "/images/hotspots/earth/wenchang-lc-101/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 2560,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/wenchang-lc-101/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10,
+      "hotspot_tier3_panorama": "/images/hotspots/earth/wenchang-lc-101/tier3-pan.jpg",
+      "panorama_metadata": {
+        "date": "2022-07-01",
+        "instrument": "Ground photo (distant)",
+        "caption": "Wenchang launch site across Qishui Bay — the LC-101 towers seen from the beach, a distant shoreline view.",
+        "credit_team": "Shujianyang · Wikimedia Commons (CC BY-SA 4.0)",
+        "real_extent_pct_vertical": 23,
+        "synthetic_regions": [
+          {
+            "pitch_min_deg": 21,
+            "pitch_max_deg": 90,
+            "kind": "synthetic_sky"
+          },
+          {
+            "pitch_min_deg": -90,
+            "pitch_max_deg": -20,
+            "kind": "synthetic_nadir"
+          }
+        ],
+        "compass_zero_direction": "photo centre (true compass orientation not calibrated)"
+      }
+    },
+    "xichang-lc-2": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/xichang-lc-2/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 2560,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/xichang-lc-2/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "xichang-lc-3": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/xichang-lc-3/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 2560,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/xichang-lc-3/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "sriharikota-slp": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 3,
+      "hotspot_tier2_source": "/images/hotspots/earth/sriharikota-slp/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 2560,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/sriharikota-slp/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10,
+      "hotspot_tier3_panorama": "/images/hotspots/earth/sriharikota-slp/tier3-pan.jpg",
+      "panorama_metadata": {
+        "date": "2025-05-18",
+        "instrument": "Ground photo panorama",
+        "caption": "Satish Dhawan Space Centre, Sriharikota — PSLV-C61 in transit from the Vehicle Integration Facility toward the launch pad.",
+        "credit_team": "ISRO · GODL-India",
+        "real_extent_pct_vertical": 41,
+        "synthetic_regions": [
+          {
+            "pitch_min_deg": 34,
+            "pitch_max_deg": 90,
+            "kind": "synthetic_sky"
+          },
+          {
+            "pitch_min_deg": -90,
+            "pitch_max_deg": -40,
+            "kind": "synthetic_nadir"
+          }
+        ],
+        "compass_zero_direction": "photo centre (true compass orientation not calibrated)"
+      }
     }
   }
 }

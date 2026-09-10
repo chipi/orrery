@@ -633,6 +633,36 @@
       "kind": "publisher",
       "url": "https://s2maps.eu",
       "license_summary": "EOX Sentinel-2 cloudless (s2maps.eu) by EOX IT Services GmbH, CC BY 4.0, based on modified Copernicus Sentinel data 2020. Used as launch-site ground imagery."
+    },
+    {
+      "id": "usgs-naip",
+      "name": "USGS · NAIP aerial imagery",
+      "kind": "research-institute",
+      "url": "https://naip-usdaonline.hub.arcgis.com/",
+      "logo_path": "/logos/usgs.svg",
+      "license_summary": "USDA/USGS National Agriculture Imagery Program aerial photography (~0.6 m/px) — the /earth launch-pad detail tier (#546). U.S. Government work, public domain; served via the USGS National Map ImageServer."
+    },
+    {
+      "id": "copernicus-sentinel2",
+      "name": "Copernicus · Sentinel-2 (ESA)",
+      "kind": "research-institute",
+      "url": "https://sentinels.copernicus.eu/",
+      "logo_path": "/logos/esa.svg",
+      "license_summary": "ESA/Copernicus Sentinel-2 true-colour imagery (10 m/px) — the /earth launch-pad regional tier (#546). Free use under the Copernicus Sentinel Data Terms with mandatory acknowledgement: Contains modified Copernicus Sentinel data."
+    },
+    {
+      "id": "ign-orthophotos",
+      "name": "IGN · BD ORTHO (France)",
+      "kind": "research-institute",
+      "url": "https://geoservices.ign.fr/bdortho",
+      "license_summary": "French national aerial orthophotography — the Kourou pad detail tier (#546). Open data under the Licence Ouverte (Etalab) 2.0 since 2021; attribute IGN. Served via the Géoplateforme WMS."
+    },
+    {
+      "id": "gsi-japan",
+      "name": "GSI · 地理院タイル (Japan)",
+      "kind": "research-institute",
+      "url": "https://maps.gsi.go.jp/development/ichiran.html",
+      "license_summary": "Geospatial Information Authority of Japan seamless aerial photo tiles — the Tanegashima pad detail tier (#546). Free reuse with GSI attribution per the GSI website terms (CC BY 4.0 compatible)."
     }
   ]
 }

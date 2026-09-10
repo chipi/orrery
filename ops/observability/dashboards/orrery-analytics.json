@@ -110,7 +110,7 @@
           "refId": "A",
           "format": "table",
           "rawQuery": true,
-          "rawSql": "with explorers as (\n  select distinct session_id from website_event\n  where website_id = '$site' and url_path like '/explore%' and $__timeFilter(created_at)\n),\ninteracted as (\n  select distinct session_id from website_event\n  where website_id = '$site' and event_name in ('item-click','explore-depth') and $__timeFilter(created_at)\n)\nselect\n  case when (select count(*) from explorers) = 0 then 0\n       else (select count(*)::numeric from explorers e join interacted i using (session_id))\n            / (select count(*) from explorers) end as \"exploration rate\";"
+          "rawSql": "with explorers as (\n  select distinct session_id from website_event\n  where website_id = '$site' and url_path ~ '(^|/)explore(/|$)' and $__timeFilter(created_at)\n),\ninteracted as (\n  select distinct session_id from website_event\n  where website_id = '$site' and $__timeFilter(created_at)\n    and (event_name = 'explore-depth'\n         or (event_name = 'item-click' and url_path ~ '(^|/)explore(/|$)'))\n)\nselect\n  case when (select count(*) from explorers) = 0 then 0\n       else (select count(*)::numeric from explorers e join interacted i using (session_id))\n            / (select count(*) from explorers) end as \"exploration rate\";"
         }
       ]
     },
@@ -130,7 +130,7 @@
       "id": 5,
       "type": "barchart",
       "title": "Exploration depth — sessions reaching each scale shell",
-      "description": "explore-depth is deduped per level per page-load, so this counts people, not zooms. The drop-off from solar-system outward is the 'do they leave the opening view' signal.",
+      "description": "explore-depth is deduped per level per page-load and never emits the entry shell (solar-system), so this counts visitors who actually left the opening view. Denominator for a rate is the /explore pageview, not this event.",
       "datasource": {
         "type": "grafana-postgresql-datasource",
         "uid": "${ds}"

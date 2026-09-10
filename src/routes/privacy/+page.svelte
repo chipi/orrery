@@ -70,8 +70,15 @@
         />
         <span class="toggle-label">{m.privacy_optout_label()}</span>
       </label>
+      <!-- Until hydration reads the cookie + GPC we do not KNOW the state, and
+           the page is prerendered — so say nothing rather than flash
+           "Off — nothing is being collected" at an opted-in visitor. -->
       <p class="toggle-state" aria-live="polite">
-        {analyticsOn ? m.privacy_optout_on() : m.privacy_optout_off()}
+        {#if !ready}
+          {m.privacy_optout_checking()}
+        {:else}
+          {analyticsOn ? m.privacy_optout_on() : m.privacy_optout_off()}
+        {/if}
       </p>
     </div>
 
@@ -93,6 +100,11 @@
   <article class="card" aria-labelledby="privacy-never-title">
     <h2 id="privacy-never-title">{m.privacy_never_heading()}</h2>
     <p>{m.privacy_never_body()}</p>
+  </article>
+
+  <article class="card" aria-labelledby="privacy-logs-title">
+    <h2 id="privacy-logs-title">{m.privacy_logs_heading()}</h2>
+    <p>{m.privacy_logs_body()}</p>
   </article>
 
   <article class="card" aria-labelledby="privacy-signals-title">

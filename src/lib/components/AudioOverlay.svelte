@@ -559,20 +559,20 @@
     }
   });
 
-  async function startTourFromSequence(sequence: string[]): Promise<void> {
+  async function startTourFromSequence(sequence: string[], tourId: string): Promise<void> {
     // Filter the canonical sequence down to episodes actually present in
     // the registry — defensive against partial generation.
     const available = sequence.filter((id) => audioRegistry.byId(id));
     if (available.length === 0) return;
-    audio.startTour(available);
+    audio.startTour(available, tourId);
     const first = audioRegistry.byId(available[0]);
     if (first) await loadAndPlay(first);
   }
   async function startTour(): Promise<void> {
-    await startTourFromSequence(CURATOR_FULL_TOUR);
+    await startTourFromSequence(CURATOR_FULL_TOUR, 'curator-full');
   }
   async function startExtendedTour(): Promise<void> {
-    await startTourFromSequence(CURATOR_EXTENDED_TOUR);
+    await startTourFromSequence(CURATOR_EXTENDED_TOUR, 'curator-extended');
   }
 
   // Exhibit Mode (#215 / RFC-021 §9): the kiosk plays the Full Tour episodes
@@ -588,7 +588,9 @@
   }
   async function startExhibitTour(): Promise<void> {
     const seq = exhibitSequence();
-    await startTourFromSequence(seq.length > 0 ? seq : CURATOR_FULL_TOUR);
+    // Exhibit Mode plays a FOUR-episode kiosk subset. It must not report as
+    // the 21-episode curator tour, or kiosk loops inflate that completion rate.
+    await startTourFromSequence(seq.length > 0 ? seq : CURATOR_FULL_TOUR, 'exhibit');
   }
 
   // Exhibit Mode (#215): flip the current route into the chrome-less looping

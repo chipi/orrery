@@ -13,6 +13,11 @@
 -->
 <script lang="ts">
   import { base } from '$app/paths';
+
+  // Substitute a sentinel, not the rendered word: `.replace(word, link)` would
+  // link the FIRST occurrence of that word in the sentence, which is correct in
+  // en-US by luck and wrong the moment a translation uses it earlier.
+  const PRIVACY_LINK_TOKEN = '\u0000privacy-link\u0000';
   import {
     getSourceLogos,
     getImageProvenanceManifest,
@@ -601,9 +606,9 @@
     <p class="storage-blurb">
       <!-- eslint-disable-next-line svelte/no-at-html-tags -->
       {@html m
-        .credits_storage_intro({ privacy: m.credits_storage_privacy_link() })
+        .credits_storage_intro({ privacy: PRIVACY_LINK_TOKEN })
         .replace(
-          m.credits_storage_privacy_link(),
+          PRIVACY_LINK_TOKEN,
           `<a href="${base}/privacy">${m.credits_storage_privacy_link()}</a>`,
         )}
     </p>

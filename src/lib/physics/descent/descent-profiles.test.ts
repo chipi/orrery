@@ -11,7 +11,7 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import {
   expandDescentProfile,
   DESCENT_MISSION_IDS,
@@ -19,6 +19,17 @@ import {
 } from './descent-profile-registry';
 import { integrateDescent } from './descent-physics';
 import { expectInRange } from '../../test-helpers/expect-close';
+
+// Every test in this file runs one or more full multi-phase entry integrations
+// at the profile's dt. The long Earth-return capsules sit within a few hundred
+// ms of vitest's 5 s default on an unloaded machine and blow past it under v8
+// coverage or a busy runner — observed at 5.3 s bare and 6.6-12.4 s under
+// coverage (2026-09-10). Set once for the FILE rather than per test: patching
+// individual `it`s missed the lifting-band group and the suite went red on a
+// second run. Same remedy as the bank-solve test (0a2b51ac59); the work is
+// legitimately this big, so give it a real budget instead of letting machine
+// load decide whether the suite is green.
+vi.setConfig({ testTimeout: 30_000 });
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../../../../');
 const profilePath = (id: string): string =>
@@ -95,16 +106,7 @@ describe('every descent profile expands + flies to its honest outcome', () => {
       // Beats open on entry; landers close on touchdown, probes on signal loss.
       expect(s.events[0].type).toBe('entry');
       expect(s.events.at(-1)!.type).toBe(noSurface ? 'probe_signal_lost' : 'touchdown');
-      // A full multi-phase entry integration at the profile's dt. The long
-      // Earth-return capsules (apollo7/9, gemini3/4/8/12) sit within a few
-      // hundred ms of vitest's 5 s default on an unloaded machine and blow
-      // straight past it under v8 coverage instrumentation or a busy runner —
-      // observed as 5.3 s bare and 6.6-12.4 s under coverage (2026-09-10),
-      // with the identical code passing in isolation. Same cause and same
-      // remedy as the bank-solve test (0a2b51ac59): the work is legitimately
-      // this big, so give it a real budget rather than let machine load decide
-      // whether the suite is green.
-    }, 30_000);
+    });
   }
 });
 

@@ -63,6 +63,9 @@ class AudioState {
   tourActive = $state(false);
   tourIndex = $state(0);
   tourSequence = $state<string[]>([]);
+  /** Which tour is running — the completion event must distinguish the full
+   *  tour from the extended one; both start through the same code path. */
+  tourId = $state<string>('curator-full');
 
   // Compact tour mode (PRD-016 §S8 / RFC-019 §11.2). Collapses the overlay
   // to a thin pill bar so the visual scene stays unobstructed during long
@@ -192,7 +195,8 @@ class AudioState {
 
   // Tour controls. Episode loading is done by AudioOverlay (it has the
   // registry); these methods just maintain the queue position.
-  startTour(sequence: string[]): void {
+  startTour(sequence: string[], tourId: string): void {
+    this.tourId = tourId;
     this.tourSequence = [...sequence];
     this.tourIndex = 0;
     this.tourActive = true;
@@ -202,7 +206,13 @@ class AudioState {
   // Restore a tour from a resume cookie. Sets sequence + index without
   // resetting index to 0 (which startTour would do). Caller still loads
   // the episode + seeks via the registry.
-  resumeTour(sequence: string[], index: number): void {
+  // NOTE: the resume cookie (ADR-075) carries no tour id, so a resumed tour is
+  // always attributed to the full tour — and in fact always REPLAYS the full
+  // tour's sequence (pre-existing: AudioOverlay resumes from CURATOR_FULL_TOUR
+  // regardless of which tour was running). Fixing that means a cookie schema
+  // change; tracked separately, not in ADR-093's scope.
+  resumeTour(sequence: string[], index: number, tourId: string = 'curator-full'): void {
+    this.tourId = tourId;
     this.tourSequence = [...sequence];
     this.tourIndex = Math.max(0, Math.min(index, sequence.length - 1));
     this.tourActive = true;
@@ -224,7 +234,7 @@ class AudioState {
       // Ran to the natural end — the guided-onboarding completion signal.
       // Deliberately NOT fired from stopTour(), which is abandonment: mixing
       // the two would make the completion rate meaningless.
-      trackTourComplete('curator-full');
+      trackTourComplete(this.tourId);
       return null;
     }
     this.tourIndex = next;

@@ -533,7 +533,7 @@
   }
 
   // First grid of a visit is the landing default; everything after is a choice.
-  let planRunTrigger: 'initial' | 'destination-change' | 'type-change' = 'initial';
+  let planRunTrigger: 'initial' | 'destination-change' = 'initial';
 
   // ─── Heatmap rendering ───────────────────────────────────────────
   let heatBitmap: ImageBitmap | null = null;

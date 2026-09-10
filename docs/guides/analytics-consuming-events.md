@@ -145,8 +145,12 @@ event in `EVENT_NAMES` with no rows is a bug report, not a usage statistic.
 - **Check the site** — prod / staging / dev are separate; staging gets CI and
   deploy-smoke traffic.
 - **Opted-out visitors are invisible** (ADR-092: opt-out cookie, GPC, or DNT
-  suppress everything, including the script). Totals under-count real traffic by
-  an unknown margin. That is the design.
+  suppress everything, including the script — and, since the 2026-09-10 review,
+  Sentry crash reports too). Totals under-count real traffic by an unknown
+  margin. That is the design.
+- **`explore-depth` never emits the entry shell** (`solar-system`). It means
+  "left the opening view", so it is not a count of `/explore` visitors — use the
+  `/explore` pageview as the denominator for any exploration rate.
 - **Milestone events dedupe per page-load**, not per session — a reload counts
   again. Count distinct sessions for rates.
 - **`route-enter`/`route-exit` duplicate stock pageviews.** Use them for
@@ -173,11 +177,15 @@ Exploration rate — of sessions that opened `/explore`, how many interacted:
 ```sql
 with explorers as (
   select distinct session_id from website_event
-  where website_id = :site and url_path like '/explore%'
+  -- regex, not '/explore%': localized routes are /de/explore and staging is
+  -- served under an /orrery base.
+  where website_id = :site and url_path ~ '(^|/)explore(/|$)'
 ),
 interacted as (
   select distinct session_id from website_event
-  where website_id = :site and event_name in ('item-click','explore-depth')
+  where website_id = :site
+    and (event_name = 'explore-depth'   -- never emitted for the entry shell
+         or (event_name = 'item-click' and url_path ~ '(^|/)explore(/|$)'))
 )
 select (select count(*) from explorers) as explore_sessions,
        (select count(*) from explorers e join interacted i using (session_id)) as interacted;
@@ -188,7 +196,8 @@ Engaged Learning Session — a session that both interacted *and* learned:
 ```sql
 with per_session as (
   select session_id,
-    bool_or(event_name in ('item-click','explore-depth','plan-run','fly-phase')) as interacted,
+    bool_or(event_name in ('item-click','explore-depth','plan-run',
+                           'fly-ascent','fly-coast','fly-cruise','fly-descent','fly-recovery')) as interacted,
     bool_or(event_name in ('science-section-view','science-to-app')) as learned
   from website_event
   where website_id = :site and event_type = 2

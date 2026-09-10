@@ -29,7 +29,7 @@
     const available = CURATOR_FULL_TOUR.filter((id) => audioRegistry.byId(id));
     if (available.length === 0) return;
     audio.openOverlay();
-    audio.startTour(available);
+    audio.startTour(available, 'curator-full');
     const first = audioRegistry.byId(available[0]);
     if (first) {
       audio.loadEpisode(first);

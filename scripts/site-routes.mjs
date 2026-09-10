@@ -43,6 +43,7 @@ const SEED_ROUTES = [
   '/lab',
   '/live',
   '/credits',
+  '/privacy',
   '/library',
   '/gallery',
   '/posters',

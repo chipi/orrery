@@ -255,7 +255,7 @@ Reach for these when (a) another session is using the same Chrome, (b) the openi
 
 **Build pipeline** — see Pipeline 12 below.
 
-**See:** PRD-016 (product), RFC-019 (architecture; §11 = v0.7 tour-v2), [docs/guides/audio-pipeline-setup.md](../guides/audio-pipeline-setup.md) (operator), ADR-057 (no-localStorage), ADR-075 (`orrery_tour` cookie — narrow exception #2 for tour resume), ADR-047 (provenance pattern parallel).
+**See:** PRD-016 (product), RFC-019 (architecture; §11 = v0.7 tour-v2), [docs/guides/audio-pipeline-setup.md](../guides/audio-pipeline-setup.md) (operator), ADR-057 (narrow client-storage exceptions), ADR-075 (`orrery_tour` cookie — narrow exception #2 for tour resume), ADR-047 (provenance pattern parallel).
 
 ---
 
@@ -833,7 +833,7 @@ Non-negotiables. Cannot be changed without a new ADR that explicitly supersedes 
 
 - **Browser-only.** No server-side logic. No backend. No API server. The host (GitHub Pages today; nginx, Cloudflare Pages, or any static host in future per ADR-014) serves static files only. The application must work as `http://localhost` and from any static host.
 
-- **No user data, with two narrow carve-outs.** No accounts. No login. No `localStorage`. No `sessionStorage`. No tracking. **Two permitted cookies, each ADR-gated:** `orrery_locale` (ADR-057, explicit locale-override only) and `orrery_tour` (ADR-075, Curator Tour resume `{ep, pos, idx, cmp}` only). Auto-detected locale, Science Lens, mission filters, install counter, per-episode heard-state, and every other piece of state stay runtime-only. Each future cookie request needs its own ADR.
+- **No user data, with three narrow carve-outs.** No accounts. No login. No `sessionStorage`. **Three permitted cookies, each ADR-gated:** `orrery_locale` (ADR-057, explicit locale-override only), `orrery_tour` (ADR-075, Curator Tour resume `{ep, pos, idx, cmp}` only), and `orrery_analytics_optout` (ADR-092, written only when the visitor switches analytics off on `/privacy`). A small number of `localStorage` keys also exist for device-local rendering preferences (quality tier, debug mode, offline downloads) — narrower than the cookie carve-outs but not zero, so do not repeat "no localStorage" as an absolute. Auto-detected locale, Science Lens, mission filters, install counter, per-episode heard-state, and every other piece of state stay runtime-only. Each future cookie request needs its own ADR.
 
 - **Three.js 0.185.1.** Pinned, local bundle (upgraded from r128 in #203 — ADR-001 amended). Lighting is physically-correct by default post-r155; the legacy r128 look is restored where it mattered via `× Math.PI` light-intensity scaling (`surface-lights.ts`, the /iss / /tiangong / `fly` cislunar scenes). Production bundles locally.
 
@@ -920,7 +920,7 @@ PRD-019 / RFC-021 (#150). Two "step into it" modes share the epic: **AR** (place
 Beyond the tabletop scene, AR gained **real-sky + real-time** modes powered by two new **pure, unit-tested** engines (these ARE counted toward the coverage gate, unlike the device-only `ar/` runtime):
 
 - **`src/lib/astronomy/`** — real-time Sun/Moon/planet positions. JPL approximate Keplerian elements (1800–2050, `planets.ts`), a compact lunar perturbation model (`moon.ts` — the Moon had no ephemeris before), obliquity/GMST/LST (`time.ts`), and the geocentric-ecliptic → RA/Dec → **altitude/azimuth** pipeline with topocentric parallax (`horizontal.ts`). `skyPosition(body,date,lat,lon)` + `skyDirectionENU`. Validated against Meeus (Venus alt/az <0.5°).
-- **`src/lib/satellite/`** — TLE parse (`tle.ts`) + Keplerian **J2-secular** propagation (`propagate.ts`, *not* full SGP4 — good for LEO over hours/days from a fresh element set) → geocentric ECI; full topocentric look-angles (`look-angles.ts`) + `nextPass()` visible-pass predictor. `tle-source.ts` fetches **current** ISS/Tiangong TLEs from Celestrak at runtime (localStorage-cached ≤1 day, bundled *sample* fallback).
+- **`src/lib/satellite/`** — TLE parse (`tle.ts`) + Keplerian **J2-secular** propagation (`propagate.ts`, *not* full SGP4 — good for LEO over hours/days from a fresh element set) → geocentric ECI; full topocentric look-angles (`look-angles.ts`) + `nextPass()` visible-pass predictor. `tle-source.ts` reads **current** ISS/Tiangong TLEs from the served `/data` overlay (`static/data/station-tles.json`, refreshed server-side per ADR-091), memoised for the session, with the build-baked `stations.ts` bundle as fallback. It does **not** fetch Celestrak at runtime and does not use `localStorage` — that was the pre-ADR-091 design.
 - **`src/lib/geolocation.ts`** — observer lat/lon via `navigator.geolocation` in the WKWebView (no extra Capacitor plugin; Info.plist `NSLocationWhenInUseUsageDescription`), timezone fallback, then `[0,0]`. On-device only; never transmitted.
 
 Modes (entered via `EnterArButton`/`EnterSkyButton` on the relevant routes — `EnterSkyButton` on /explore + /earth + /moon + /mars via SurfaceScene; hidden on /iss, /tiangong, desktop):

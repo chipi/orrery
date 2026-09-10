@@ -37,6 +37,7 @@
   import { loadLocaleAltText } from '$lib/image-alt';
   import * as m from '$lib/paraglide/messages';
   import { initAnalytics, track, trackRouteEnter } from '$lib/analytics';
+  import { migrateLegacyLocaleCookie } from '$lib/locale-cookie-migration';
   import { afterNavigate, beforeNavigate, replaceState } from '$app/navigation';
   import { exitArScene } from '$lib/ar/launch-ar';
 
@@ -354,6 +355,10 @@
     // S7 / #194: Android back gesture pops WebView history, exits when empty.
     // Android-only event; no-op off-device. See RFC-018 §10.3.
     const stopBackButton = initBackButton();
+    // ADR-057 amendment: carry a pre-rename PARAGLIDE_LOCALE pick over to
+    // `orrery_locale` and clear the stale cookie. First thing on mount, before
+    // anything reads a locale. One-shot and self-disabling; removable ~2027-10.
+    migrateLegacyLocaleCookie();
     // Privacy-respecting analytics (self-hosted Umami). Loads only when the
     // PUBLIC_UMAMI_* build vars are baked (production build); localhost / vite
     // preview / CI runs are silent. See src/lib/analytics.ts for the env gate

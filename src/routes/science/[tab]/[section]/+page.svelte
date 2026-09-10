@@ -12,7 +12,7 @@
   import { assetUrl } from '$lib/asset-url';
   import * as m from '$lib/paraglide/messages';
   import ObservatoryShowcase from '$lib/components/ObservatoryShowcase.svelte';
-  import { track, sourceRoute, trackScienceToApp } from '$lib/analytics';
+  import { track, arrivedFromRoute, trackScienceToApp } from '$lib/analytics';
   import type { PageData } from './$types';
 
   type Props = { data: PageData };
@@ -28,10 +28,15 @@
     // "did exploring Mars lead to reading about it" answerable. Null on a cold
     // entry (search / direct link), which is itself the signal that this
     // section is an organic landing page rather than a journey destination.
+    //
+    // arrivedFromRoute(), NOT sourceRoute(): SvelteKit runs a page's onMount
+    // BEFORE the layout's afterNavigate for that same navigation, so at this
+    // instant the route-enter for this page has not fired yet. sourceRoute()
+    // would be off by one and report the route before the one we just left.
     track('science-section-view', {
       tab: section.tab,
       section: section.id,
-      source: sourceRoute(),
+      source: arrivedFromRoute(),
     });
   });
   // The space-photography section embeds the ObservatoryShowcase strip

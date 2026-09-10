@@ -75,11 +75,12 @@
  *  JOURNEY — milestone events, deduped per page-load (2026-09-10)
  *   explore-depth      { level }                       scale shell reached
  *   plan-run           { destination, mission_type, trigger }
+ *                      trigger ∈ initial | destination-change
  *   plan-window-select { destination, dep_year }       deliberate picks only
  *   fly-ascent | fly-coast | fly-cruise | fly-descent | fly-recovery
  *                      { mission, dest }               first reach of an act
  *                      (one name per act — Umami funnel steps match on NAME)
- *   science-to-app     { topic, destination, from_tab }
+ *   science-to-app     { topic, destination, from_route }
  *   tour-complete      { tour }                        natural end, not stop
  */
 
@@ -263,8 +264,12 @@ export function track(name: EventName, props?: Record<string, unknown>): void {
     u.track(name, props);
     return;
   }
-  // Script not executed yet — hold it rather than drop it.
-  if (pendingEvents.length >= PENDING_CAP) pendingEvents.shift();
+  // Script not executed yet — hold it rather than drop it. At the cap we drop
+  // the NEWEST rather than shift() out the oldest: the events worth keeping are
+  // the earliest ones (app-load and the first route-enter are the whole reason
+  // this buffer exists), and a page that has queued 50 events without the
+  // tracker ever loading is one where the tail is noise.
+  if (pendingEvents.length >= PENDING_CAP) return;
   pendingEvents.push({ name, props });
 }
 
@@ -296,10 +301,28 @@ export function trackRouteEnter(route: string): void {
   lastRouteEnter = { route, t: now };
 }
 
-/** Where the visitor arrived from, for `source`-style properties. Null on a cold
- *  entry (direct link / search), which is itself the useful signal. */
+/** Where the visitor arrived from, for `source`-style properties, read from a
+ *  context that runs AFTER the destination's `afterNavigate` — e.g. a click
+ *  handler. Null on a cold entry (direct link / search), which is itself the
+ *  useful signal.
+ *
+ *  Do NOT call this from a page component's `onMount`: SvelteKit registers
+ *  `afterNavigate` via its own `onMount` and invokes it only after the root
+ *  `$set` and two `tick()`s, so a page's `onMount` runs BEFORE the
+ *  `trackRouteEnter` for that same page. At that moment `previousRoute` still
+ *  holds the route before the one being left — off by one. Use
+ *  `arrivedFromRoute()` instead, which is correct in that window. */
 export function sourceRoute(): string | null {
   return previousRoute;
+}
+
+/** The route the visitor came from, correct when read during a page's own
+ *  `onMount` — i.e. before that page's `trackRouteEnter` has advanced the
+ *  pointers. `lastRouteEnter` is still the PREVIOUS page at that instant,
+ *  which is exactly the provenance a mount-time view event wants. Null on a
+ *  cold entry. */
+export function arrivedFromRoute(): string | null {
+  return lastRouteEnter?.route ?? null;
 }
 
 /** Generic "user clicked/selected an entity" — reused on every route. */
@@ -408,8 +431,17 @@ export function __resetAnalyticsStateForTest(): void {
  *  scene. Answers: do visitors leave the opening view at all, and how far out? */
 export function trackExploreDepth(level: string): void {
   if (!level || level === 'body-scene') return; // off-ladder, not a depth
+  // `solar-system` is the OPENING view — `contextId` initialises to it and the
+  // effect runs on mount, so emitting it would fire for every single /explore
+  // visitor and make "did they explore beyond the initial view" tautologically
+  // 100%. Depth means leaving the entry shell; the denominator for any rate is
+  // the /explore pageview, not this event.
+  if (level === EXPLORE_ENTRY_LEVEL) return;
   once(`explore-depth:${level}`, () => track('explore-depth', { level }));
 }
+
+/** The shell /explore opens in. Not a depth signal — see `trackExploreDepth`. */
+const EXPLORE_ENTRY_LEVEL = 'solar-system';
 
 /** A porkchop grid was actually computed/loaded for a destination — the
  *  difference between opening /plan and using it. `trigger` separates the
@@ -418,7 +450,7 @@ export function trackExploreDepth(level: string): void {
 export function trackPlanRun(
   destination: string,
   missionType: string,
-  trigger: 'initial' | 'destination-change' | 'type-change',
+  trigger: 'initial' | 'destination-change',
 ): void {
   once(`plan-run:${destination}:${missionType}:${trigger}`, () =>
     track('plan-run', { destination, mission_type: missionType, trigger }),
@@ -457,7 +489,7 @@ export function trackFlyPhase(mission: string, dest: string, phase: string): voi
 /** The visitor left science content for an interactive tool — the learning →
  *  experimentation half of the loop. */
 export function trackScienceToApp(topic: string, destination: string): void {
-  track('science-to-app', { topic, destination, from_tab: sourceRoute() });
+  track('science-to-app', { topic, destination, from_route: sourceRoute() });
 }
 
 /** A guided tour ran to its natural end. */

@@ -244,13 +244,26 @@ describe('journey milestone events', () => {
   it('explore-depth fires once per level, not once per visit to it', () => {
     const umami = mockUmami();
 
-    A.trackExploreDepth('solar-system');
     A.trackExploreDepth('milky-way');
-    A.trackExploreDepth('solar-system'); // walked back in — must NOT re-fire
-    A.trackExploreDepth('milky-way');
+    A.trackExploreDepth('local-group');
+    A.trackExploreDepth('milky-way'); // walked back in — must NOT re-fire
+    A.trackExploreDepth('local-group');
 
     expect(umami.track).toHaveBeenCalledTimes(2);
-    expect(umami.track).toHaveBeenCalledWith('explore-depth', { level: 'solar-system' });
+    expect(umami.track).toHaveBeenCalledWith('explore-depth', { level: 'milky-way' });
+    expect(umami.track).toHaveBeenCalledWith('explore-depth', { level: 'local-group' });
+  });
+
+  // The opening shell must NOT count as depth: contextId initialises to it and
+  // the effect runs on mount, so emitting it would make "left the initial view"
+  // read 100% for every visitor and inflate Engaged Learning Sessions.
+  it('explore-depth never emits the entry shell', () => {
+    const umami = mockUmami();
+    A.trackExploreDepth('solar-system');
+    expect(umami.track).not.toHaveBeenCalled();
+
+    A.trackExploreDepth('milky-way');
+    expect(umami.track).toHaveBeenCalledTimes(1);
     expect(umami.track).toHaveBeenCalledWith('explore-depth', { level: 'milky-way' });
   });
 
@@ -357,7 +370,7 @@ describe('journey milestone events', () => {
     expect(umami.track).toHaveBeenCalledWith('tour-complete', { tour: 'curator-full' });
   });
 
-  it('science-to-app carries the originating route as from_tab', () => {
+  it('science-to-app carries the originating route as from_route', () => {
     const umami = mockUmami();
     A.trackRouteEnter('/explore');
     A.trackRouteEnter('/science/physics/orbits');
@@ -368,7 +381,7 @@ describe('journey milestone events', () => {
     expect(umami.track).toHaveBeenCalledWith('science-to-app', {
       topic: 'orbits',
       destination: '/plan',
-      from_tab: '/explore',
+      from_route: '/explore',
     });
   });
 

@@ -595,6 +595,14 @@
            grow (imprint, privacy, …) alongside the desktop menu. -->
       <div class="drawer-about" role="group" aria-label={m.footer_about_aria()}>
         <span class="drawer-about-label">{m.layout_footer_about()}</span>
+        <!-- Privacy carries the analytics opt-out toggle (ADR-092), so it has
+             to be reachable on touch too — the desktop .site-footer is hidden
+             on mobile, which would otherwise leave the opt-out URL-only. -->
+        <a
+          class="drawer-link drawer-link-sm drawer-about-item"
+          href="{base}/privacy"
+          onclick={closeMobileMenu}>{m.layout_footer_privacy()}</a
+        >
         <a
           class="drawer-link drawer-link-sm drawer-about-item"
           href="https://github.com/chipi/orrery/blob/main/LICENSE"

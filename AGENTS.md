@@ -115,7 +115,7 @@ Do not propose alternatives. If a locked decision needs revisiting, write an ADR
 | Fleet schema + cross-refs | Per-category folders + generated index manifest; bidirectional `fleet_refs` ↔ `linked_missions`/`linked_sites` enforced by symmetric-link validator (fail-closed) | ADR-052 |
 | Fleet imagery + i18n | Same agency-first pipeline as the rest of the corpus; every fleet entry × 14 locales of overlay files translated in-session by the LLM | ADR-053, ADR-054 |
 | E2e readiness signals | Every canvas route exposes `window.__pickAt(x, y)` + `data-route-ready` + `data-loading` attributes; no `sleep(N)` polling in Playwright tests | ADR-056 |
-| Locale persistence | Single `orrery_locale` cookie is the ONLY exception to "no client storage"; everything else stays runtime-only | ADR-057 |
+| Locale persistence | `orrery_locale` was the FIRST exception to "no client storage"; `orrery_tour` (ADR-075) and `orrery_analytics_optout` (ADR-092) are the other two. Every new one needs its own ADR — do not add a fourth casually | ADR-057 |
 
 For the complete locked-decision matrix (all 58 ADRs, every component, every contract, every constraint, every 3D scene, every pipeline), see [`docs/adr/TA.md`](docs/adr/TA.md). This table is the dev-facing day-to-day reference; TA.md is the authoritative architectural map.
 
@@ -971,7 +971,7 @@ When code and TA.md / ADRs disagree, one is wrong. Fix the wrong one. Do not tol
 - Do not design desktop-first
 - Do not use `any` in TypeScript without justification
 - Do not add npm dependencies without ADR
-- Do not use `localStorage` or `sessionStorage`. Cookies are also forbidden for user preferences EXCEPT the single narrowly-scoped `orrery_locale` cookie permitted by ADR-057 (explicit user-set locale override only — auto-detect, Science Lens, mission filters, and any other state stay runtime-only). Any new cookie requires its own ADR.
+- Do not add NEW `localStorage` / `sessionStorage` keys or cookies without an ADR. Existing client storage, all ADR-gated: cookies `orrery_locale` (ADR-057, explicit locale pick), `orrery_tour` (ADR-075, tour resume), `orrery_analytics_optout` (ADR-092, analytics opt-out); plus three `localStorage` keys for device-local settings (`orrery.qualityTier`, debug mode, offline downloads). Everything else stays runtime-only — do not treat "no client storage" as an absolute, it has not been true since ADR-075.
 - Do not use `THREE.CapsuleGeometry` (not in r128)
 - Do not tear down a Three.js renderer with `dispose()` alone — always pair it with `forceContextLoss()`, and dispose textures (not just materials). Do not build tier/panorama/route imagery eagerly at mount or allocate inside the rAF loop. See §"Performance — 3D scene discipline".
 - Do not use `console.log` in production code

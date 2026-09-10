@@ -11,6 +11,7 @@ import { execSync } from 'node:child_process';
 // `undefined` when VITE_BASE is empty, so the canonical no-base build
 // (VPS) is byte-identical to what it was before this file existed.
 import { ghPagesUrlPatterns } from './scripts/gh-pages-compat.mjs';
+import { paraglideOptions } from './scripts/paraglide-options.mjs';
 
 const pkg = JSON.parse(
   readFileSync(fileURLToPath(new URL('./package.json', import.meta.url)), 'utf8'),
@@ -139,9 +140,9 @@ export default defineConfig(({ mode }) => {
       // Compiles on cold start; subsequent changes to messages/*.json
       // trigger an incremental rebuild.
       paraglideVitePlugin({
-        project: './project.inlang',
-        outdir: './src/lib/paraglide',
-        strategy: ['url', 'cookie', 'preferredLanguage', 'baseLocale'],
+        // Shared with scripts/i18n-compile.mjs so the two compile paths cannot
+        // drift — includes `cookieName: 'orrery_locale'` (ADR-057).
+        ...paraglideOptions,
         // GH Pages compat: when VITE_BASE is set, Paraglide's default
         // URL pattern matcher can't extract the locale (`/orrery/de/`
         // looks like `orrery` is the locale candidate). The helper

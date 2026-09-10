@@ -65,6 +65,10 @@ export interface OutputSpec {
 export interface FormulaDef<I = Record<string, number | string>> {
   id: string;
   titleKey: string;
+  /** Enum-input key whose SELECTED value's label augments the card title
+   *  ("Engine Performance — F-1"). Differentiates a formula a goal repeats
+   *  back-to-back (UX review: three identical headings read as a stuck page). */
+  titleFromInput?: string;
   domain:
     'ephemeris' | 'transfer' | 'ascent' | 'descent' | 'propulsion' | 'satellite' | 'mechanics';
   tier: number; // difficulty rank (concept graph)

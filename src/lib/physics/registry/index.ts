@@ -2478,6 +2478,7 @@ export const airbagsCheck: FormulaDef<{ impactMs: number; airbagLimitMs: number 
 export const enginePerformance: FormulaDef<{ engine: string }> = {
   id: 'engine-performance',
   titleKey: 'lab.f.engine-perf.title',
+  titleFromInput: 'engine', // "Engine Performance — F-1" (×3 identical headings otherwise)
   glossaryKey: 'lab.f.engine-perf.glossary',
   citationKey: 'propulsion/specific-impulse',
   learnMore: { url: 'https://www.grc.nasa.gov/www/k-12/rocket/specimp.html', source: 'nasa-glenn' },
@@ -3182,7 +3183,7 @@ export const entryCorridor: FormulaDef<{
     {
       key: 'surfaceGravityMs2',
       labelKey: 'lab.f.corridor.gravity',
-      units: 'm/s²',
+      units: 'm/s2', // the closed Unit union's spelling (util/units.ts)
       kind: 'number',
       default: 9.81,
       min: 1,

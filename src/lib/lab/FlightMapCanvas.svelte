@@ -594,4 +594,13 @@
     background: #04040c;
     border-radius: 8px;
   }
+  /* Mobile (UX review): shrinking the 960px chart to ~355px makes its 9px
+     annotations unreadable. Below 640px the canvas keeps a legible minimum
+     width and the wrapper (Notebook .nb__flightmap) scrolls horizontally. */
+  @media (max-width: 640px) {
+    .flightmap {
+      width: 720px;
+      max-width: none;
+    }
+  }
 </style>

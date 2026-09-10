@@ -62,14 +62,20 @@
   const graph = $derived(recomputeGraph(nodes, REGISTRY));
 
   // ─── Layout ───────────────────────────────────────────────────────────────
-  // Default layout for never-placed cards: a left-to-right cascade in topo order.
+  // Default layout for never-placed cards: a topo-order cascade that WRAPS to the
+  // surface width (UX review: the unwrapped cascade clipped card 2 at 1280px).
   const CARD_W = 320;
   const GAP_X = 60;
   const GAP_Y = 40;
+  const ROW_H = 480; // tall enough for the tallest card shell
+  let surfaceW = $state(1280);
   function defaultPosition(id: string): { x: number; y: number } {
     const pos = graph.order.indexOf(id);
     const i = pos === -1 ? cells.findIndex((c) => c.id === id) : pos;
-    return { x: 40 + i * (CARD_W + GAP_X), y: 90 + (i % 2) * GAP_Y };
+    const perRow = Math.max(1, Math.floor((surfaceW - 40) / (CARD_W + GAP_X)));
+    const col = i % perRow;
+    const row = Math.floor(i / perRow);
+    return { x: 40 + col * (CARD_W + GAP_X), y: 90 + row * ROW_H + (col % 2) * GAP_Y };
   }
   function positionOf(c: LabCell): { x: number; y: number } {
     return c.position ?? defaultPosition(c.id);
@@ -415,6 +421,7 @@
   class="canvas"
   class:canvas--readonly={readonly}
   bind:this={surfaceEl}
+  bind:clientWidth={surfaceW}
   role="group"
   aria-label={t('lab.canvas.aria')}
   onpointerdown={onSurfacePointerDown}
@@ -423,6 +430,8 @@
   onpointercancel={onSurfacePointerCancel}
   onwheel={onWheel}
 >
+  <!-- Purpose line (UX review): the bare grid read as "something is broken". -->
+  <p class="canvas__purpose">{t('lab.canvas.purpose')}</p>
   <div class="canvas__world" style="transform: translate({panX}px, {panY}px) scale({zoom})">
     <svg class="canvas__edges" aria-hidden="true">
       {#each edges as e (e.toId + e.toInput)}
@@ -612,6 +621,20 @@
 </div>
 
 <style>
+  .canvas__purpose {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.75rem;
+    right: 0.75rem;
+    z-index: 2;
+    margin: 0;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.04em;
+    color: rgba(232, 232, 232, 0.55);
+    pointer-events: none;
+  }
+
   .canvas {
     position: relative;
     height: 72vh;

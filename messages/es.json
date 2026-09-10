@@ -2996,5 +2996,7 @@
   "lab_illustration_alt_apollo_round_trip": "La figura ocho completa del Apolo — la Tierra y la Luna con la trayectoria de retorno libre formando un bucle alrededor de ambas, la cápsula diminuta en la trayectoria.",
   "lab_ui_no_inputs": "Sin diales en este — la geometría determina completamente la respuesta, y el kernel la calcula.",
   "lab_f_corridor_body_radius": "Radio del cuerpo",
-  "lab_f_corridor_gravity": "Gravedad superficial"
+  "lab_f_corridor_gravity": "Gravedad superficial",
+  "lab_ui_rung_progress": "Escalón {n} de {total}",
+  "lab_canvas_purpose": "Lienzo libre — añade tarjetas de fórmulas, conecta salidas a entradas y luego promueve tu construcción al cuaderno."
 }

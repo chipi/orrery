@@ -2996,5 +2996,7 @@
   "lab_illustration_alt_apollo_round_trip": "De volledige Apollo-achtvorm — Aarde en Maan met de vrije-returntrajectorië om beide lus, de capsule minuscuul op het pad.",
   "lab_ui_no_inputs": "Geen draaiknopjes hier — de geometrie bepaalt volledig het antwoord, en de kernel berekent het.",
   "lab_f_corridor_body_radius": "Lichaamsstraal",
-  "lab_f_corridor_gravity": "Oppervlaktezwaartekracht"
+  "lab_f_corridor_gravity": "Oppervlaktezwaartekracht",
+  "lab_ui_rung_progress": "Rung {n} van {total}",
+  "lab_canvas_purpose": "Vrij canvas — voeg formaatkaarten toe, verbind outputs met inputs, en promoveer vervolgens je build naar het notitieblok."
 }

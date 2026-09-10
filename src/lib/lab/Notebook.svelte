@@ -67,6 +67,34 @@
   const restored = $derived(labState.restored);
   const restoredTitle = $derived(labState.restoredTitle);
 
+  // Sticky rung progress (UX review): 9-10k px of mobile scroll had no waypoint.
+  // Track which step's top most recently crossed the upper third of the viewport.
+  let stepsEl = $state<HTMLOListElement | null>(null);
+  let currentStep = $state(1);
+  let stepsInView = $state(false);
+  $effect(() => {
+    const root = stepsEl;
+    if (!root) return;
+    void cells.length; // re-observe when the ladder is re-seeded
+    const steps = [...root.querySelectorAll('.nb__step')];
+    const visible = new Set<number>();
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const en of entries) {
+          const idx = steps.indexOf(en.target);
+          if (en.isIntersecting) visible.add(idx);
+          else visible.delete(idx);
+        }
+        if (visible.size) currentStep = Math.max(...visible) + 1;
+        stepsInView = visible.size > 0;
+      },
+      // A band across the upper third: the rung whose card sits there is "current".
+      { rootMargin: '0px 0px -66% 0px' },
+    );
+    steps.forEach((s) => io.observe(s));
+    return () => io.disconnect();
+  });
+
   // Adapter-owned injected inputs (iss-pass needs the current TLE). Seed with the
   // build-baked block, then upgrade to the fresh served /data overlay on mount —
   // the single app-side resolver, no browser→Celestrak fetch (H4c · #464). Keyed
@@ -448,34 +476,41 @@
           aria-label={t('lab.ui.aria-share')}
         >
           {@render toolIcon(shareState === 'copied' ? 'check' : 'share')}
+          <span class="nb__tool-label">{t('lab.ui.share')}</span>
         </button>
         <button
           type="button"
           class="nb__tool"
           onclick={() => window.print()}
           title={t('lab.report.print')}
-          aria-label={t('lab.report.aria-print')}>{@render toolIcon('print')}</button
+          aria-label={t('lab.report.aria-print')}
+          >{@render toolIcon('print')}<span class="nb__tool-label">{t('lab.report.print')}</span
+          ></button
         >
         <button
           type="button"
           class="nb__tool"
           onclick={shareCard}
           title={t('lab.report.card')}
-          aria-label={t('lab.report.aria-card')}>{@render toolIcon('card')}</button
+          aria-label={t('lab.report.aria-card')}
+          >{@render toolIcon('card')}<span class="nb__tool-label">{t('lab.report.card')}</span
+          ></button
         >
         <button
           type="button"
           class="nb__tool"
           onclick={saveFile}
           title={t('lab.ui.save')}
-          aria-label={t('lab.ui.aria-save')}>{@render toolIcon('save')}</button
+          aria-label={t('lab.ui.aria-save')}
+          >{@render toolIcon('save')}<span class="nb__tool-label">{t('lab.ui.save')}</span></button
         >
         <button
           type="button"
           class="nb__tool"
           onclick={() => fileInput?.click()}
           title={t('lab.ui.load')}
-          aria-label={t('lab.ui.aria-load')}>{@render toolIcon('load')}</button
+          aria-label={t('lab.ui.aria-load')}
+          >{@render toolIcon('load')}<span class="nb__tool-label">{t('lab.ui.load')}</span></button
         >
         <input
           bind:this={fileInput}
@@ -506,7 +541,12 @@
       <p class="nb__load-error" role="alert">{loadError}</p>
     {/if}
 
-    <ol class="nb__steps">
+    {#if stepsInView}
+      <div class="nb__progress" aria-hidden="true">
+        {t('lab.ui.rung-progress', { n: currentStep, total: cells.length })}
+      </div>
+    {/if}
+    <ol class="nb__steps" bind:this={stepsEl}>
       {#each cells as cell, i (cell.id)}
         <li class="nb__step">
           <div class="nb__gutter" aria-hidden="true">
@@ -684,10 +724,15 @@
     font-size: 0.92rem;
     line-height: 1.5;
   }
+  /* Label on its own line (UX review: inline it read as one merged sentence). */
   .nb__conn-next-label {
+    display: block;
     color: #4ecdc4;
     font-weight: 700;
-    margin-right: 0.35rem;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.2rem;
   }
 
   /* ─── Header (goal + share) ───────────────────────────────────────────── */
@@ -721,14 +766,25 @@
     background: rgba(232, 232, 232, 0.04);
     border: 1px solid rgba(232, 232, 232, 0.2);
     border-radius: 3px;
-    width: 40px;
-    height: 40px;
-    padding: 0;
+    min-width: 44px;
+    height: 44px;
+    padding: 0 0.3rem;
     display: inline-flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 1px;
     cursor: pointer;
     transition: background 0.15s;
+  }
+  /* Visible function label (UX review: five icon-only buttons were opaque). */
+  .nb__tool-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.45rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: rgba(232, 232, 232, 0.6);
+    white-space: nowrap;
   }
 
   .nb__tool-icon {
@@ -783,6 +839,32 @@
     overflow: hidden;
     box-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
   }
+  /* Pan the legible-width chart on small screens instead of shrinking it. */
+  @media (max-width: 640px) {
+    .nb__flightmap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+
+  /* Rung waypoint — pinned under the 52px nav while the ladder is in view
+     (fixed, not sticky: an ancestor overflow container defeats sticky here). */
+  .nb__progress {
+    position: fixed;
+    top: 60px;
+    right: 12px;
+    z-index: 15;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(78, 205, 196, 0.9);
+    background: rgba(4, 4, 12, 0.85);
+    border: 1px solid rgba(78, 205, 196, 0.3);
+    border-radius: 999px;
+    padding: 0.25rem 0.7rem;
+    pointer-events: none;
+  }
 
   .nb__goal-kicker {
     font-family: 'Space Mono', monospace;
@@ -811,16 +893,23 @@
   }
 
   /* Prerequisite trail (W1) — what this goal builds on. */
+  /* UX review: the sequence marker was too muted to notice — a learner landing
+     mid-ladder should see this is a continuation. Chip treatment + more contrast. */
   .nb__goal-prereq {
-    margin: 0.35rem 0 0;
+    margin: 0.45rem 0 0;
     font-family: 'Space Mono', monospace;
-    font-size: 0.62rem;
+    font-size: 0.68rem;
     letter-spacing: 0.3px;
-    color: rgba(232, 232, 232, 0.5);
+    color: rgba(232, 232, 232, 0.78);
+    display: inline-block;
+    border: 1px solid rgba(255, 200, 80, 0.35);
+    border-radius: 999px;
+    padding: 0.2rem 0.65rem;
+    background: rgba(255, 200, 80, 0.06);
   }
 
   .nb__goal-prereq-label {
-    color: rgba(78, 205, 196, 0.7);
+    color: rgba(255, 200, 80, 0.9);
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-right: 0.35rem;

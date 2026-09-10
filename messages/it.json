@@ -2996,5 +2996,7 @@
   "lab_illustration_alt_apollo_round_trip": "Il completo otto di Apollo — Terra e Luna con la traiettoria di ritorno libero che forma un anello attorno a entrambe, la capsula minuscola sul percorso.",
   "lab_ui_no_inputs": "Nessuna manopola qui — la geometria determina completamente la risposta, e il kernel la calcola.",
   "lab_f_corridor_body_radius": "Raggio del corpo",
-  "lab_f_corridor_gravity": "Gravità superficiale"
+  "lab_f_corridor_gravity": "Gravità superficiale",
+  "lab_ui_rung_progress": "Gradino {n} di {total}",
+  "lab_canvas_purpose": "Canvas libero — aggiungi schede formula, collega gli output agli input, quindi promuovi il tuo progetto al notebook."
 }

@@ -2996,5 +2996,7 @@
   "lab_illustration_alt_apollo_round_trip": "La figure-huit Apollo complète — Terre et Lune avec la trajectoire de retour libre qui boucle autour des deux, la capsule minuscule sur le trajet.",
   "lab_ui_no_inputs": "Pas de cadrans ici — la géométrie détermine entièrement la réponse, et le noyau la calcule.",
   "lab_f_corridor_body_radius": "Rayon du corps",
-  "lab_f_corridor_gravity": "Gravité de surface"
+  "lab_f_corridor_gravity": "Gravité de surface",
+  "lab_ui_rung_progress": "Échelon {n} sur {total}",
+  "lab_canvas_purpose": "Canevas libre — ajoutez des cartes de formules, connectez les sorties aux entrées, puis promouvez votre construction au cahier."
 }

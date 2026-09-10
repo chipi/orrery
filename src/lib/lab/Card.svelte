@@ -100,6 +100,14 @@
     wikipedia: 'Wikipedia',
   };
 
+  // titleFromInput (UX): the selected enum's labelKey, appended to the card title
+  // so repeated formulas ("Engine Performance" ×3) read as distinct rungs.
+  const titleVariant = $derived.by(() => {
+    if (!formula.titleFromInput) return undefined;
+    const field = formula.inputs.find((f) => f.key === formula.titleFromInput);
+    return field?.enumValues?.find((e) => e.value === inputs[field.key])?.labelKey;
+  });
+
   // Format a numeric value compactly (readouts + derived wired cells).
   function fmt(v: number): string {
     if (Math.abs(v) >= 1e6 || (Math.abs(v) < 0.001 && v !== 0)) return v.toExponential(3);
@@ -134,9 +142,13 @@
 </script>
 
 <article class="card" class:card--fail={failed}>
-  <!-- Title -->
+  <!-- Title — a titleFromInput formula appends its selected enum's label so
+       repeated cards ("Engine Performance" ×3) read as distinct rungs. -->
   <header class="card__header">
-    <h2 class="card__title">{t(formula.titleKey)}</h2>
+    <h2 class="card__title">
+      {t(formula.titleKey)}{#if titleVariant}
+        <span class="card__title-variant">— {t(titleVariant)}</span>{/if}
+    </h2>
   </header>
 
   <!-- Equation — pre-rendered KaTeX HTML, never calls renderKatex at runtime -->
@@ -376,6 +388,10 @@
     margin: 0;
     line-height: 1;
     flex: 1;
+  }
+  .card__title-variant {
+    color: #4ecdc4;
+    margin-left: 0.45rem;
   }
 
   /* ─── Honesty: assumptions row (W2) ─────────────────────────────────── */

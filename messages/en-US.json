@@ -2996,5 +2996,7 @@
   "lab_illustration_alt_apollo_round_trip": "The full Apollo figure-eight — Earth and Moon with the free-return trajectory looping around both, the capsule tiny on the path.",
   "lab_ui_no_inputs": "No dials on this one — the geometry fully determines the answer, and the kernel computes it.",
   "lab_f_corridor_body_radius": "Body radius",
-  "lab_f_corridor_gravity": "Surface gravity"
+  "lab_f_corridor_gravity": "Surface gravity",
+  "lab_ui_rung_progress": "Rung {n} of {total}",
+  "lab_canvas_purpose": "Freeform canvas — add formula cards, wire outputs into inputs, then promote your build to the notebook."
 }

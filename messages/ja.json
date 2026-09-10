@@ -2996,5 +2996,7 @@
   "lab_illustration_alt_apollo_round_trip": "アポロの完全な8の字 — 地球と月が自由帰還軌道でループ、軌路上に点在するカプセル。",
   "lab_ui_no_inputs": "このスケールにはダイアルがない — ジオメトリが完全に答えを決定し、カーネルがそれを計算する。",
   "lab_f_corridor_body_radius": "天体半径",
-  "lab_f_corridor_gravity": "表面重力加速度"
+  "lab_f_corridor_gravity": "表面重力加速度",
+  "lab_ui_rung_progress": "ラング {n}/{total}",
+  "lab_canvas_purpose": "自由形式キャンバス — フォーミュラカードを追加し、出力を入力に接続してから、ビルドをノートブックに昇格させます。"
 }

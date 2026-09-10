@@ -2028,7 +2028,9 @@
     "lab_goal_land_earth_desc": "उतरना अपनी ही समस्या है — और यह सख्त क्रम में आता है: कक्षा छोड़ें, गर्मी सहें, प्रवेश गलियारे से गुजरें, और केवल तब पैराशूट महत्वपूर्ण है। गति को गर्मी के लिए बदलें, फिर गर्मी को नरम着陆के लिए बदलें, और देखें कि वापसी लौटना क्यों जाने से कठिन है।",
     "lab_f_corridor_body_radius": "पिंड की त्रिज्या",
     "lab_f_corridor_gravity": "सतह का गुरुत्वाकर्षण",
-    "lab_conn_gtm_hook": "यही कारण है कि 2020 में एक काफिला लॉन्च किया गया: नासा का पर्सिवेरेंस, चीन का तियानवेन-1 और यूएई की होप सभी एक दूसरे के ग्यारह दिनों के भीतर निकली। सभी के लिए एक साथ खिड़की खुल गई।"
+    "lab_conn_gtm_hook": "यही कारण है कि 2020 में एक काफिला लॉन्च किया गया: नासा का पर्सिवेरेंस, चीन का तियानवेन-1 और यूएई की होप सभी एक दूसरे के ग्यारह दिनों के भीतर निकली। सभी के लिए एक साथ खिड़की खुल गई।",
+    "lab_ui_rung_progress": "पायदान {n} का {total}",
+    "lab_canvas_purpose": "मुक्त-रूप कैनवास — सूत्र कार्ड जोड़ें, आउटपुट को इनपुट में जोड़ें, फिर अपने बिल्ड को नोटबुक में प्रचारित करें।"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -3920,7 +3922,9 @@
     "lab_goal_land_earth_desc": "降下それ自体が独立した課題である — そして厳密な順序がある：軌道離脱、熱耐性、進入廊下の通過、そしてその時になってようやくパラシュートが重要になる。速度を熱に換え、熱をソフトランディングに換えて、なぜ帰還が出発より困難かを理解せよ。",
     "lab_f_corridor_body_radius": "天体半径",
     "lab_f_corridor_gravity": "表面重力加速度",
-    "lab_conn_gtm_hook": "だから 2020 年は輸送団を打ち上げた：NASA の Perseverance、中国の Tianwen-1、UAE の Hope がすべて 11 日以内に相次いで打ち上げられた。ウィンドウがみんなのために同時に開いたのだ。"
+    "lab_conn_gtm_hook": "だから 2020 年は輸送団を打ち上げた：NASA の Perseverance、中国の Tianwen-1、UAE の Hope がすべて 11 日以内に相次いで打ち上げられた。ウィンドウがみんなのために同時に開いたのだ。",
+    "lab_ui_rung_progress": "ラング {n}/{total}",
+    "lab_canvas_purpose": "自由形式キャンバス — フォーミュラカードを追加し、出力を入力に接続してから、ビルドをノートブックに昇格させます。"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -5992,7 +5996,9 @@
     "lab_goal_land_earth_desc": "الهبوط مشكلة بحد ذاته — وتأتي بترتيب صارم: غادر المدار، تحمل الحرارة، اخترق ممر الدخول، وفقط عندها تأتي أهمية المظلة. قايس السرعة مقابل الحرارة، ثم الحرارة مقابل هبوط ناعم، واكتشف لماذا العودة إلى الوطن أصعب من المغادرة.",
     "lab_f_corridor_body_radius": "نصف قطر الجسم",
     "lab_f_corridor_gravity": "الجاذبية السطحية",
-    "lab_conn_gtm_hook": "لهذا السبب أطلقت قافلة في 2020: مثابرة ناسا وتيانوين-1 الصينية وأمل الإمارات غادرت جميعها ضمن احدى عشرة يوماً من بعضها. النافذة انفتحت للجميع في نفس الوقت."
+    "lab_conn_gtm_hook": "لهذا السبب أطلقت قافلة في 2020: مثابرة ناسا وتيانوين-1 الصينية وأمل الإمارات غادرت جميعها ضمن احدى عشرة يوماً من بعضها. النافذة انفتحت للجميع في نفس الوقت.",
+    "lab_ui_rung_progress": "الدرجة {n} من {total}",
+    "lab_canvas_purpose": "لوحة حرة الشكل — أضف بطاقات الصيغ، ووصّل المخرجات بالمدخلات، ثم رقِّ بناؤك إلى دفتر الملاحظات."
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -7886,7 +7892,9 @@
     "lab_goal_land_earth_desc": "착륙은 그 자체로 별개의 문제입니다 — 엄격한 순서대로: 궤도 이탈, 열 견디기, 진입 복도 통과, 그 다음에야 낙하산이 의미가 있습니다. 속도를 열로 바꾸고, 열을 부드러운 착지로 바꾸며, 돌아오기가 떠나기보다 왜 어려운지 알아봅시다.",
     "lab_f_corridor_body_radius": "천체 반지름",
     "lab_f_corridor_gravity": "표면 중력",
-    "lab_conn_gtm_hook": "그래서 2020년에 한 차량단이 발사되었습니다: NASA의 퍼서비어런스, 중국의 톈원-1, UAE의 호프가 모두 11일 간격 내에 발사되었습니다. 발사 윈도우가 모두에게 동시에 열렸습니다."
+    "lab_conn_gtm_hook": "그래서 2020년에 한 차량단이 발사되었습니다: NASA의 퍼서비어런스, 중국의 톈원-1, UAE의 호프가 모두 11일 간격 내에 발사되었습니다. 발사 윈도우가 모두에게 동시에 열렸습니다.",
+    "lab_ui_rung_progress": "단계 {n}/{total}",
+    "lab_canvas_purpose": "자유형 캔버스 — 수식 카드를 추가하고, 출력을 입력에 연결한 후 빌드를 노트북으로 승격하세요."
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -9602,7 +9610,9 @@
     "lab_ui_no_inputs": "Keine Regler hier — die Geometrie bestimmt die Antwort vollständig, der Kernel berechnet sie.",
     "lab_goal_land_earth_desc": "Herunterkommen ist ein eigenes Problem — und es kommt in strenger Reihenfolge: Umlaufbahn verlassen, Hitze überstehen, Eintrittskanal treffen, und NUR DANN zählt ein Fallschirm. Tausche Geschwindigkeit gegen Hitze, dann Hitze gegen sanfte Landung, und sieh, warum Heimkehr schwerer ist als Aufbruch.",
     "lab_f_corridor_body_radius": "Körperradius",
-    "lab_f_corridor_gravity": "Oberflächengravitation"
+    "lab_f_corridor_gravity": "Oberflächengravitation",
+    "lab_ui_rung_progress": "Stufe {n} von {total}",
+    "lab_canvas_purpose": "Freie Leinwand — Formelkarten hinzufügen, Ausgaben in Eingaben verdrahten, dann Ihren Aufbau ins Notizbuch befördern."
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -11258,7 +11268,9 @@
     "lab_ui_no_inputs": "Pas de cadrans ici — la géométrie détermine entièrement la réponse, et le noyau la calcule.",
     "lab_goal_land_earth_desc": "Descendre est un problème en soi — et il se déploie dans un ordre strict : quitter l'orbite, survivre à la chaleur, emprunter le corridor d'entrée, et seulement ALORS un parachute compte. Échangez la vitesse contre la chaleur, puis la chaleur contre un atterrissage en douceur, et découvrez pourquoi rentrer à la maison est plus difficile que de partir.",
     "lab_f_corridor_body_radius": "Rayon du corps",
-    "lab_f_corridor_gravity": "Gravité de surface"
+    "lab_f_corridor_gravity": "Gravité de surface",
+    "lab_ui_rung_progress": "Échelon {n} sur {total}",
+    "lab_canvas_purpose": "Canevas libre — ajoutez des cartes de formules, connectez les sorties aux entrées, puis promouvez votre construction au cahier."
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -12881,7 +12893,9 @@
     "lab_ui_no_inputs": "Nessuna manopola qui — la geometria determina completamente la risposta, e il kernel la calcola.",
     "lab_goal_land_earth_desc": "Scendere è un problema a sé — e procede in ordine rigoroso: abbandonare l'orbita, sopravvivere al calore, attraversare il corridoio di rientro, e SOLO ALLORA il paracadute conta. Scambia velocità per calore, poi calore per un atterraggio dolce, e scopri perché tornare a casa è più difficile che partire.",
     "lab_f_corridor_body_radius": "Raggio del corpo",
-    "lab_f_corridor_gravity": "Gravità superficiale"
+    "lab_f_corridor_gravity": "Gravità superficiale",
+    "lab_ui_rung_progress": "Gradino {n} di {total}",
+    "lab_canvas_purpose": "Canvas libero — aggiungi schede formula, collega gli output agli input, quindi promuovi il tuo progetto al notebook."
   },
   "es": {
     "mars_meta_description": "Todo artefacto que la humanidad ha colocado en Marte — aterrizadores, rovers y orbitadores activos — en un globo 3D navegable con la historia completa de la misión.",
@@ -14503,7 +14517,9 @@
     "lab_ui_no_inputs": "Sin diales en este — la geometría determina completamente la respuesta, y el kernel la calcula.",
     "lab_goal_land_earth_desc": "Descender es un problema en sí mismo — y viene en orden estricto: abandonar órbita, resistir el calor, atravesar el corredor de entrada, y solo ENTONCES importa el paracaídas. Intercambia velocidad por calor, luego calor por un toque suave, y descubre por qué volver a casa es más difícil que partir.",
     "lab_f_corridor_body_radius": "Radio del cuerpo",
-    "lab_f_corridor_gravity": "Gravedad superficial"
+    "lab_f_corridor_gravity": "Gravedad superficial",
+    "lab_ui_rung_progress": "Escalón {n} de {total}",
+    "lab_canvas_purpose": "Lienzo libre — añade tarjetas de fórmulas, conecta salidas a entradas y luego promueve tu construcción al cuaderno."
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -16134,7 +16150,9 @@
     "lab_ui_no_inputs": "Geen draaiknopjes hier — de geometrie bepaalt volledig het antwoord, en de kernel berekent het.",
     "lab_goal_land_earth_desc": "Landen is een eigen probleem — en het komt in strikte volgorde: baan verlaten, hitte overleven, ingangsgang nauwkeurig treffen, en pas DAN telt een parachute mee. Ruil snelheid voor hitte, dan hitte voor een zachte landing, en zie waarom thuiskomen moeilijker is dan vertrekken.",
     "lab_f_corridor_body_radius": "Lichaamsstraal",
-    "lab_f_corridor_gravity": "Oppervlaktezwaartekracht"
+    "lab_f_corridor_gravity": "Oppervlaktezwaartekracht",
+    "lab_ui_rung_progress": "Rung {n} van {total}",
+    "lab_canvas_purpose": "Vrij canvas — voeg formaatkaarten toe, verbind outputs met inputs, en promoveer vervolgens je build naar het notitieblok."
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -18029,7 +18047,9 @@
     "lab_goal_land_earth_desc": "Снижение — это отдельная задача, и она идёт в строгом порядке: покинуть орбиту, пережить нагрев, пройти коридор входа, и только ПОТОМ парашют имеет значение. Обменивайте скорость на нагрев, затем нагрев на мягкую посадку, и поймите, почему возвращение домой сложнее, чем отправление.",
     "lab_f_corridor_body_radius": "Радиус тела",
     "lab_f_corridor_gravity": "Поверхностная гравитация",
-    "lab_conn_gtm_hook": "Вот почему в 2020 году запустили конвой: Perseverance НАСА, Tianwen-1 Китая и Hope ОАЭ стартовали в течение одиннадцати дней друг от друга. Окно открылось для всех одновременно."
+    "lab_conn_gtm_hook": "Вот почему в 2020 году запустили конвой: Perseverance НАСА, Tianwen-1 Китая и Hope ОАЭ стартовали в течение одиннадцати дней друг от друга. Окно открылось для всех одновременно.",
+    "lab_ui_rung_progress": "Этап {n} из {total}",
+    "lab_canvas_purpose": "Свободный холст — добавляйте карточки формул, подключайте выходы к входам, затем перенесите вашу сборку в записную книжку."
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -19967,7 +19987,9 @@
     "lab_ui_no_inputs": "这个没有旋钮——几何形状完全确定了答案,内核计算它。",
     "lab_goal_land_earth_desc": "下降是自己的问题——必须严格按顺序进行:离开轨道、承受高温、穿过再入走廊,只有这样降落伞才有用。用速度换热量,再用热量换平稳着陆,看看为什么回家比离开更难。",
     "lab_f_corridor_body_radius": "天体半径",
-    "lab_f_corridor_gravity": "表面重力加速度"
+    "lab_f_corridor_gravity": "表面重力加速度",
+    "lab_ui_rung_progress": "第 {n} 阶，共 {total} 阶",
+    "lab_canvas_purpose": "自由画布 — 添加公式卡片、将输出连接到输入，然后将您的构建提升到笔记本。"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -21777,7 +21799,9 @@
     "lab_goal_land_earth_desc": "Силажење је сопствени проблем — и долази у строгом редоследу: напусти орбиту, преживи топлоту, пређи кроз коридор уласка, и тек ОНДА парашут има значај. Замени брзину топлотом, затим топлоту меким дотиком, и види зашто је повратак кући тежи него напуштање.",
     "lab_f_corridor_body_radius": "Полупречник тела",
     "lab_f_corridor_gravity": "Површинска гравитација",
-    "lab_conn_gtm_hook": "Зато је 2020 лансирао конвој: НАСА-ина Perseverance, кинеског Tianwen-1 и UAE-овог Hope, сви су полетели унутар једанаест дана међусобно. Прозор се отворио за све истовремено."
+    "lab_conn_gtm_hook": "Зато је 2020 лансирао конвој: НАСА-ина Perseverance, кинеског Tianwen-1 и UAE-овог Hope, сви су полетели унутар једанаест дана међусобно. Прозор се отворио за све истовремено.",
+    "lab_ui_rung_progress": "Степен {n} од {total}",
+    "lab_canvas_purpose": "Слободан простор — додајте картице формула, повежите излазе на улазе, а затим промовишите вашу конструкцију у белешку."
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -23406,6 +23430,8 @@
     "lab_ui_no_inputs": "Sem controles neste — a geometria determina completamente a resposta, e o kernel a calcula.",
     "lab_goal_land_earth_desc": "Descer é um problema em si — e vem em ordem rigorosa: deixar a órbita, sobreviver ao calor, passar pelo corredor de entrada, e só ENTÃO o paraquedas importa. Troque velocidade por calor, depois calor por um pouso suave, e veja por que voltar é mais difícil que partir.",
     "lab_f_corridor_body_radius": "Raio do corpo celeste",
-    "lab_f_corridor_gravity": "Gravidade superficial"
+    "lab_f_corridor_gravity": "Gravidade superficial",
+    "lab_ui_rung_progress": "Degrau {n} de {total}",
+    "lab_canvas_purpose": "Canvas livre — adicione cartões de fórmula, conecte saídas a entradas e promova seu projeto para o notebook."
   }
 }

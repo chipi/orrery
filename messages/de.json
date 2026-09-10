@@ -2996,5 +2996,7 @@
   "lab_illustration_alt_apollo_round_trip": "Die vollständige Apollo-Acht — Erde und Mond mit der Freiflug-Rückkehrbahn, die um beide schleift, die Kapsel winzig auf der Bahn.",
   "lab_ui_no_inputs": "Keine Regler hier — die Geometrie bestimmt die Antwort vollständig, der Kernel berechnet sie.",
   "lab_f_corridor_body_radius": "Körperradius",
-  "lab_f_corridor_gravity": "Oberflächengravitation"
+  "lab_f_corridor_gravity": "Oberflächengravitation",
+  "lab_ui_rung_progress": "Stufe {n} von {total}",
+  "lab_canvas_purpose": "Freie Leinwand — Formelkarten hinzufügen, Ausgaben in Eingaben verdrahten, dann Ihren Aufbau ins Notizbuch befördern."
 }

@@ -2996,5 +2996,7 @@
   "lab_illustration_alt_apollo_round_trip": "완전한 아폴로 8자형 — 지구와 달을 자유 귀환 궤적이 둘 다 감싸고, 캡슐이 경로 위에 작게 표현됨.",
   "lab_ui_no_inputs": "이 장치는 다이얼이 없습니다 — 기하학이 답을 완전히 결정하며, 커널이 이를 계산합니다.",
   "lab_f_corridor_body_radius": "천체 반지름",
-  "lab_f_corridor_gravity": "표면 중력"
+  "lab_f_corridor_gravity": "표면 중력",
+  "lab_ui_rung_progress": "단계 {n}/{total}",
+  "lab_canvas_purpose": "자유형 캔버스 — 수식 카드를 추가하고, 출력을 입력에 연결한 후 빌드를 노트북으로 승격하세요."
 }

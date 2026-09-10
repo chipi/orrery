@@ -2996,5 +2996,7 @@
   "lab_illustration_alt_apollo_round_trip": "完整的阿波罗八字形——地球和月球与自由返回轨迹环绕两者，舱在路径上显得微小。",
   "lab_ui_no_inputs": "这个没有旋钮——几何形状完全确定了答案,内核计算它。",
   "lab_f_corridor_body_radius": "天体半径",
-  "lab_f_corridor_gravity": "表面重力加速度"
+  "lab_f_corridor_gravity": "表面重力加速度",
+  "lab_ui_rung_progress": "第 {n} 阶，共 {total} 阶",
+  "lab_canvas_purpose": "自由画布 — 添加公式卡片、将输出连接到输入，然后将您的构建提升到笔记本。"
 }

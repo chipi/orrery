@@ -56,6 +56,19 @@
     font-size: 0.75rem;
     opacity: 0.75;
   }
+  /* Mobile density (UX review): the wrapped two-line disclaimer opened a dead-space
+     gap in the lesson rhythm — tighten, never remove (the badge is the honesty
+     affordance and stays). */
+  @media (max-width: 640px) {
+    .illus {
+      margin-bottom: 0.6rem;
+      gap: 0.25rem;
+    }
+    .illus__caption {
+      font-size: 0.6rem;
+      gap: 0.4rem;
+    }
+  }
   .illus__badge {
     text-transform: uppercase;
     letter-spacing: 0.05em;

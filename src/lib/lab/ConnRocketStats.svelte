@@ -57,6 +57,7 @@
               {t('lab.conn.r-leo')} · Iₛₚ {r.isp_s} s · Δv
               {r.delta_v_capability_km_s.toFixed(1)} km/s
             </span>
+            <span class="crs__go" aria-hidden="true">→</span>
           </a>
         </li>
       {/each}
@@ -97,6 +98,18 @@
   }
   .crs__link:hover {
     border-color: rgba(78, 205, 196, 0.45);
+  }
+  /* Link affordance (UX review: the rows read as an inert table — no one taps). */
+  .crs__name {
+    text-decoration: underline;
+    text-decoration-color: rgba(78, 205, 196, 0.5);
+    text-underline-offset: 3px;
+  }
+  .crs__go {
+    color: rgba(78, 205, 196, 0.85);
+    font-size: 0.8rem;
+    flex: 0 0 auto;
+    margin-left: 0.35rem;
   }
   .crs__logo {
     height: 16px;

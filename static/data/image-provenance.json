@@ -81727,6 +81727,138 @@
       "fetched_at": "2026-09-10T16:40:58.351Z",
       "spacecraft_name": "Sentinel-2",
       "instrument": "Sentinel-2 MSI"
+    },
+    {
+      "id": "27bf83e69882faa7",
+      "path": "/images/hotspots/earth/baikonur-31-6/tier3-pan.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "Baikonur Site 31/6 from the top of the Soyuz service structure (2014) — the Zenit facility on the horizon.",
+      "author": "Paulsday86 (Wikimedia Commons)",
+      "agency": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Baikonur_Cosmodrome_Site_31.JPG",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Baikonur_Cosmodrome_Site_31.JPG",
+      "license_short": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license_rationale": "Uploader released the panorama under CC0 1.0 (public-domain dedication) on Wikimedia Commons.",
+      "modifications": [
+        "padded-to-4096x2048-equirect-az200",
+        "sky-and-ground-fill-synthetic",
+        "jpeg"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-09-10T17:46:20.147Z"
+    },
+    {
+      "id": "3d6c3e0560bebc3d",
+      "path": "/images/hotspots/earth/vandenberg-slc-4e/tier3-pan.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "Vandenberg SLC-4E and SLC-4W from the air (2015) — an aerial view, not a ground-level panorama.",
+      "author": "SpacecoasterVBG (Wikimedia Commons)",
+      "agency": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:SLC-4E.jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SLC-4E.jpg",
+      "license_short": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "license_rationale": "Published on Wikimedia Commons under CC BY-SA 4.0 — reuse with attribution and share-alike.",
+      "modifications": [
+        "padded-to-4096x2048-equirect-az110",
+        "sky-and-ground-fill-synthetic",
+        "jpeg"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-09-10T17:46:20.656Z"
+    },
+    {
+      "id": "1e79dab55a1ddf1b",
+      "path": "/images/hotspots/earth/sriharikota-slp/tier3-pan.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "Satish Dhawan Space Centre, Sriharikota — PSLV-C61 in transit from the Vehicle Integration Facility to the First Launch Pad (2025).",
+      "author": "ISRO (Indian Space Research Organisation)",
+      "agency": "ISRO",
+      "source_url": "https://commons.wikimedia.org/wiki/File:SDSC_panoroma_before_PSLVC61.webp",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/SDSC_panoroma_before_PSLVC61.webp",
+      "license_short": "GODL-India",
+      "license_url": "https://data.gov.in/sites/default/files/Gazette_Notification_OGDL.pdf",
+      "license_rationale": "ISRO material published under the Government Open Data License – India: worldwide royalty-free reuse including commercial, with attribution.",
+      "modifications": [
+        "padded-to-4096x2048-equirect-az130",
+        "sky-and-ground-fill-synthetic",
+        "jpeg"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-09-10T17:46:21.160Z"
+    },
+    {
+      "id": "c5218243d194c9bd",
+      "path": "/images/hotspots/earth/wenchang-lc-101/tier3-pan.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "Wenchang launch site across Qishui Bay (2022) — the LC-101 towers seen from the beach, a distant shoreline view.",
+      "author": "Shujianyang (Wikimedia Commons)",
+      "agency": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Wenchang_Space_Launch_Site_01.jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Wenchang_Space_Launch_Site_01.jpg",
+      "license_short": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "license_rationale": "Published on Wikimedia Commons under CC BY-SA 4.0 — reuse with attribution and share-alike.",
+      "modifications": [
+        "padded-to-4096x2048-equirect-az190",
+        "sky-and-ground-fill-synthetic",
+        "jpeg"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-09-10T17:46:21.520Z"
+    },
+    {
+      "id": "d3f52bb0be9dc593",
+      "path": "/images/hotspots/earth/jiuquan-slc-43/tier3-pan.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "Jiuquan Satellite Launch Center main tower from a distance (2005) — a low-resolution panoramic strip.",
+      "author": "AAxanderr (Wikimedia Commons)",
+      "agency": "Wikimedia Commons",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Jiuquan_Satellite_Launch_Center_main_launch_tower.JPG",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Jiuquan_Satellite_Launch_Center_main_launch_tower.JPG",
+      "license_short": "PD-self",
+      "license_url": "https://commons.wikimedia.org/wiki/Template:PD-self",
+      "license_rationale": "Uploader released the work into the public domain on Wikimedia Commons (PD-self).",
+      "modifications": [
+        "padded-to-4096x2048-equirect-az150",
+        "sky-and-ground-fill-synthetic",
+        "jpeg"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-09-10T17:46:21.845Z"
+    },
+    {
+      "id": "e1e5d516fd37d205",
+      "path": "/images/hotspots/earth/baikonur-1-5/tier3-pan.jpg",
+      "source_type": "wikimedia-commons",
+      "title": "Gagarin's Start before the Soyuz TMA-13 rollout (2008) — a very low-resolution banner crop.",
+      "author": "NASA / Bill Ingalls",
+      "agency": "NASA",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Baikonur-banner.jpg",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Baikonur-banner.jpg",
+      "license_short": "PD-NASA",
+      "license_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "license_rationale": "NASA media (Bill Ingalls, 2008) — U.S. Government work, not subject to copyright (17 U.S.C. §105).",
+      "modifications": [
+        "padded-to-4096x2048-equirect-az160",
+        "sky-and-ground-fill-synthetic",
+        "jpeg"
+      ],
+      "revid": null,
+      "pageid": null,
+      "nasa_id": null,
+      "fetched_at": "2026-09-10T17:46:22.163Z"
     }
   ]
 }

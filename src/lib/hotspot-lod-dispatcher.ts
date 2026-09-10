@@ -78,7 +78,9 @@ export const HOTSPOT_TIER_THRESHOLDS_PX = {
  * frame: a classic thrash where `fadeProgress` resets each frame, the
  * tier-2 cross-fade never completes, and the patch opacity oscillates →
  * the rapid blink reported on selecting SLIM / Chang'e sites. 28 clears
- * every current body's hotspot count (moon 18, mars 13) with headroom.
+ * every current body's hotspot count (moon 18, mars 13, earth 26 launch
+ * pads since #546). Earth leaves only 2 headroom — enrolling a 27th+
+ * earth hotspot without bumping this re-opens the thrash above.
  */
 export const HOTSPOT_LRU_CEILING = 28;
 

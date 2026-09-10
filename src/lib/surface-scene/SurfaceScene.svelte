@@ -4313,8 +4313,11 @@
         // halo do the selection signalling.)
 
         // Live altitude (km above surface) — read at the top of the loop
-        // so the bottom-right HUD updates every frame on every route,
-        // including /earth (no hotspot dispatcher).
+        // so the bottom-right HUD updates every frame on every route —
+        // deliberately ABOVE the hotspots.length guard below, so the HUD
+        // stays live even when a route has no enrolled hotspots (all
+        // three bodies enrol some since #546 put the tier ladder on
+        // /earth's launch pads).
         //
         // Use the camera's WORLD distance from the planet centre, not
         // camR. After an orbiter focus-on-select (#351 follow-up,

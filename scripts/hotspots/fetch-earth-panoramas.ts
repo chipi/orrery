@@ -73,7 +73,7 @@ const CONFIGS: EarthPanoramaConfig[] = [
     licenseShort: 'CC-BY-SA-4.0',
     licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/',
     licenseRationale:
-      'Published on Wikimedia Commons under CC BY-SA 4.0 — reuse with attribution and share-alike.',
+      'Published on Wikimedia Commons under CC BY-SA 4.0 — reuse with attribution and share-alike. The padded equirectangular derivative served here is itself licensed CC BY-SA 4.0 (the ShareAlike adapter’s license); modifications are listed in this entry.',
     caption:
       'Vandenberg SLC-4E and SLC-4W from the air (2015) — an aerial view, not a ground-level panorama.',
   },
@@ -103,7 +103,7 @@ const CONFIGS: EarthPanoramaConfig[] = [
     licenseShort: 'CC-BY-SA-4.0',
     licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/',
     licenseRationale:
-      'Published on Wikimedia Commons under CC BY-SA 4.0 — reuse with attribution and share-alike.',
+      'Published on Wikimedia Commons under CC BY-SA 4.0 — reuse with attribution and share-alike. The padded equirectangular derivative served here is itself licensed CC BY-SA 4.0 (the ShareAlike adapter’s license); modifications are listed in this entry.',
     caption:
       'Wenchang launch site across Qishui Bay (2022) — the LC-101 towers seen from the beach, a distant shoreline view.',
   },

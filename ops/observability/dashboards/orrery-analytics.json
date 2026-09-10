@@ -1,0 +1,296 @@
+{
+  "uid": "orrery-analytics",
+  "title": "Orrery — Product analytics (Umami)",
+  "tags": ["orrery", "umami", "product"],
+  "timezone": "browser",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "",
+  "time": {
+    "from": "now-30d",
+    "to": "now"
+  },
+  "templating": {
+    "list": [
+      {
+        "name": "ds",
+        "label": "Umami Postgres",
+        "type": "datasource",
+        "query": "grafana-postgresql-datasource",
+        "current": {},
+        "hide": 0
+      },
+      {
+        "name": "site",
+        "label": "Site",
+        "type": "custom",
+        "query": "prod : 4a25d8da-63a1-4ef7-b9d3-1b6b8c8a6bce, staging : 6e7ddfce-1437-49b9-8b77-a36d3584ccad",
+        "current": {
+          "text": "prod",
+          "value": "4a25d8da-63a1-4ef7-b9d3-1b6b8c8a6bce"
+        },
+        "options": [],
+        "hide": 0
+      }
+    ]
+  },
+  "panels": [
+    {
+      "id": 1,
+      "type": "row",
+      "title": "Health — is instrumentation actually firing?",
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "collapsed": false
+    },
+    {
+      "id": 2,
+      "type": "table",
+      "title": "Custom events — count + last seen",
+      "description": "First stop after any deploy that touches instrumentation. An event in the registry with 0 rows here is not 'unused' — it is very likely broken. This panel is how the app-load bug (0 events against 731 route-enters) was found on 2026-09-10.",
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "${ds}"
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 12,
+        "x": 0,
+        "y": 1
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "select event_name, count(*) as events, count(distinct session_id) as sessions, max(created_at) as last_seen\nfrom website_event\nwhere website_id = '$site' and event_type = 2 and $__timeFilter(created_at)\ngroup by 1\norder by events desc;"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "type": "stat",
+      "title": "Exploration rate — /explore sessions that interacted",
+      "description": "Of the sessions that opened /explore, how many actually clicked a body/marker. The product question: does the explorer provoke interaction, or do people just look at it?",
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "${ds}"
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 12,
+        "x": 12,
+        "y": 1
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percentunit",
+          "decimals": 1,
+          "min": 0,
+          "max": 1
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": ["lastNotNull"],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "with explorers as (\n  select distinct session_id from website_event\n  where website_id = '$site' and url_path like '/explore%' and $__timeFilter(created_at)\n),\ninteracted as (\n  select distinct session_id from website_event\n  where website_id = '$site' and event_name in ('item-click','explore-depth') and $__timeFilter(created_at)\n)\nselect\n  case when (select count(*) from explorers) = 0 then 0\n       else (select count(*)::numeric from explorers e join interacted i using (session_id))\n            / (select count(*) from explorers) end as \"exploration rate\";"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "type": "row",
+      "title": "Journeys",
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 11
+      },
+      "collapsed": false
+    },
+    {
+      "id": 5,
+      "type": "barchart",
+      "title": "Exploration depth — sessions reaching each scale shell",
+      "description": "explore-depth is deduped per level per page-load, so this counts people, not zooms. The drop-off from solar-system outward is the 'do they leave the opening view' signal.",
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "${ds}"
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 12
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "select d.string_value as level, count(distinct e.session_id) as sessions\nfrom website_event e\njoin event_data d on d.website_event_id = e.event_id and d.data_key = 'level'\nwhere e.website_id = '$site' and e.event_name = 'explore-depth' and $__timeFilter(e.created_at)\ngroup by 1\norder by array_position(array['solar-system','neighborhood','milky-way','local-group','local-sheet','virgo','laniakea','cosmic-web'], d.string_value);"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "type": "barchart",
+      "title": "Flight progression — sessions reaching each /fly act",
+      "description": "One event name per act (fly-ascent … fly-recovery) so Umami's own Funnel report can step through them; this panel is the same data as a bar chart. Deduped per mission+act, so scrubbing does not inflate it.",
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "${ds}"
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 12
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "select replace(event_name, 'fly-', '') as act, count(distinct session_id) as sessions\nfrom website_event\nwhere website_id = '$site'\n  and event_name in ('fly-ascent','fly-coast','fly-cruise','fly-descent','fly-recovery')\n  and $__timeFilter(created_at)\ngroup by 1\norder by array_position(array['ascent','coast','cruise','descent','recovery'], replace(event_name, 'fly-', ''));"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "type": "barchart",
+      "title": "Exploration → learning: where science readers came from",
+      "description": "science-section-view.source is the route the visitor came FROM. '(cold entry)' means search or a direct link — an organic landing page rather than a journey destination.",
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "${ds}"
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 21
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "select coalesce(d.string_value, '(cold entry)') as came_from, count(*) as section_views\nfrom website_event e\nleft join event_data d on d.website_event_id = e.event_id and d.data_key = 'source'\nwhere e.website_id = '$site' and e.event_name = 'science-section-view' and $__timeFilter(e.created_at)\ngroup by 1\norder by section_views desc;"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "type": "barchart",
+      "title": "Learning → experimentation: science-to-app destinations",
+      "description": "Where visitors go when they leave explanatory content for an interactive tool. The other half of the loop.",
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "${ds}"
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 21
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "select d.string_value as destination, count(*) as n\nfrom website_event e\njoin event_data d on d.website_event_id = e.event_id and d.data_key = 'destination'\nwhere e.website_id = '$site' and e.event_name = 'science-to-app' and $__timeFilter(e.created_at)\ngroup by 1\norder by n desc;"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "type": "row",
+      "title": "Planner + north star",
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 30
+      },
+      "collapsed": false
+    },
+    {
+      "id": 10,
+      "type": "table",
+      "title": "Planner engagement — ran vs selected a window",
+      "description": "Before plan-run/plan-window-select existed, /plan emitted only two filter-change events and it was impossible to tell whether the planner was ever USED. trigger='initial' is everyone who landed; 'destination-change' is deliberate comparison.",
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "${ds}"
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 31
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "select\n  count(distinct case when event_name = 'plan-run' then session_id end) as ran,\n  count(distinct case when event_name = 'plan-window-select' then session_id end) as selected_window,\n  count(*) filter (where event_name = 'plan-window-select') as window_picks\nfrom website_event\nwhere website_id = '$site'\n  and event_name in ('plan-run','plan-window-select')\n  and $__timeFilter(created_at);"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "type": "stat",
+      "title": "Engaged Learning Sessions",
+      "description": "Sessions containing BOTH interaction (item-click / explore-depth / plan-run / fly-<act>) and learning (science-section-view / science-to-app). Deliberately a count of sessions, not events. Reach and single-article readership stay meaningful separately — not every visit has to become this.",
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "${ds}"
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 12,
+        "y": 31
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": ["lastNotNull"],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "table",
+          "rawQuery": true,
+          "rawSql": "with per_session as (\n  select session_id,\n    bool_or(event_name in ('item-click','explore-depth','plan-run','fly-ascent','fly-coast','fly-cruise','fly-descent','fly-recovery')) as interacted,\n    bool_or(event_name in ('science-section-view','science-to-app')) as learned\n  from website_event\n  where website_id = '$site' and event_type = 2 and $__timeFilter(created_at)\n  group by session_id\n)\nselect count(*) filter (where interacted and learned) as \"engaged learning sessions\"\nfrom per_session;"
+        }
+      ]
+    }
+  ]
+}

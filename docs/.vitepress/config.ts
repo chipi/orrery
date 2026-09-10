@@ -82,6 +82,7 @@ export default defineConfig({
         text: 'Guides',
         items: [
           { text: 'User guide', link: '/guides/user-guide' },
+          { text: 'Consuming the analytics', link: '/guides/analytics-consuming-events' },
           { text: 'Translator (i18n) guide', link: '/guides/i18n-style-guide' },
         ],
       },

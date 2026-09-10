@@ -59,7 +59,7 @@ The production app ships a set of user-facing routes (the core experience below;
 
 | Corpus | Count |
 | --- | --- |
-| User-facing routes (top-level) | **26** |
+| User-facing routes (top-level) | **27** |
 | Missions | **125** |
 | Fleet entries | **274** |
 | Science sections | **171** |
@@ -69,7 +69,7 @@ The production app ships a set of user-facing routes (the core experience below;
 | AJV schemas | **56** |
 | Essays | **13** |
 
-_Top-level routes: catalog · colophon · credits · earth · essays · explore · fleet · fly · gallery · iss · lab · learn · library · live · mars · missions · moon · patches · plan · posters · programs · science · sourcing · tiangong · venus · worlds_
+_Top-level routes: catalog · colophon · credits · earth · essays · explore · fleet · fly · gallery · iss · lab · learn · library · live · mars · missions · moon · patches · plan · posters · privacy · programs · science · sourcing · tiangong · venus · worlds_
 
 <!-- GENERATED:corpus-counts:end -->
 
@@ -91,7 +91,7 @@ _Top-level routes: catalog · colophon · credits · earth · essays · explore 
 
 **Sub-routes + dev tooling (not in the route grid):** `/science/reading-list` + `/science/watch-list` (curated book / documentary / podcast / channel lists), `/library/episodes` (audio episode index, RFC-019). `/dev/*` (model preview, staging-ground review per RFC-029, Slice-A approval, UI style-guide) are **developer-only** — `src/routes/dev/+layout.ts` 404s the subtree in any non-dev build.
 
-**Disclosure + gallery pages:** `/credits` (image + text-source provenance per ADR-047), `/colophon` (the *original*-work bill-of-materials — spacecraft anatomy art, science diagrams, 3D/2D graphics, tour scripts; manifest `static/data/original-work.json` built by `scripts/build-original-work.mjs`. Anatomy art is AI-generated watercolor/pencil cutaways under `static/images/anatomy/*.webp` — to add more without style drift follow [`docs/anatomy-art-runbook.md`](../anatomy-art-runbook.md), #367), `/library` (outbound LEARN-link bill of links per ADR-051), `/posters` (11 hand-authored SVG art-print posters across three style families — JPL travel-poster, era-matched mood-lit, indie-pop halftone — every poster 600×900 portrait SVG; right-click save gives a scalable wallpaper file).
+**Disclosure + gallery pages:** `/privacy` (ADR-092 — what usage analytics collect, the GPC/DNT posture, and the `orrery_analytics_optout` toggle; the Art. 13 surface, no consent banner), `/credits` (image + text-source provenance per ADR-047), `/colophon` (the *original*-work bill-of-materials — spacecraft anatomy art, science diagrams, 3D/2D graphics, tour scripts; manifest `static/data/original-work.json` built by `scripts/build-original-work.mjs`. Anatomy art is AI-generated watercolor/pencil cutaways under `static/images/anatomy/*.webp` — to add more without style drift follow [`docs/anatomy-art-runbook.md`](../anatomy-art-runbook.md), #367), `/library` (outbound LEARN-link bill of links per ADR-051), `/posters` (11 hand-authored SVG art-print posters across three style families — JPL travel-poster, era-matched mood-lit, indie-pop halftone — every poster 600×900 portrait SVG; right-click save gives a scalable wallpaper file).
 
 **Video & live feeds (PRD-031 / RFC-033).** Linked-not-hosted video: zero bytes stored — every clip is an embed. `static/data/video-provenance.json` (built by `scripts/build-video-provenance.ts` from `video-sources.json`, gated by the fail-closed channel allowlist in `scripts/video-channel-allowlist.ts`; validate-data enforces channel-∈-allowlist, unique ids, and that every entity `videos:[{id}]` resolves) is the single source of truth, consumed by `$lib/video-provenance.ts`. `MediaPlayer.svelte` is a **click-to-load facade** — no `<iframe>` mounts until a user click (perf non-negotiable, e2e-enforced) — with a `content_advisory` interstitial and capture-phase Escape. `VideoThumb.svelte` tiles interleave into the mission / fleet / launch-site (`FleetEntryPanel`) / landing-site (`SurfaceScene`) galleries; the credited set surfaces on `/credits`. `$lib/live-feeds.ts` powers `/live`: the ISS `live-pin` + launch broadcasts time-gated on scheduled `net` vs real `now` (`deriveLaunchFeedState`, pure/tested).
 

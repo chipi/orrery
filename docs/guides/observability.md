@@ -59,6 +59,8 @@ The event shows `request.url` as the route path only (no query), `request.header
 
 Umami mirrors the above (ADR-081): prod/staging bake `PUBLIC_UMAMI_HOST` + `PUBLIC_UMAMI_WEBSITE_ID` (their own site ids) from the matching GH environment; `vite dev` falls back to the dev site via `homelab:3001`. Only the website id changes per rung — the host is the shared `analytics.orrerylearn.com` edge for deploys, `homelab` for dev. Fork-silence + the "not `dev` → silent" rule are identical. Event registry + privacy scrubbing live in `src/lib/analytics.ts`.
 
+**Opt-out (ADR-092).** A fourth thing can switch analytics off, ahead of the ladder: `analyticsSuppressed()` in `src/lib/analytics-optout.ts` — the `orrery_analytics_optout` cookie (set from the toggle on `/privacy`), `navigator.globalPrivacyControl`, or `navigator.doNotTrack`. It gates the script injection itself, not just `track()`, because Umami's autotrack binds history listeners at load that cannot be unbound. If you are debugging "why are there no events from my browser", check GPC/DNT and that cookie **before** the env vars. There is no consent banner and none is required — see ADR-092 for the reasoning and `/privacy` for what users are told.
+
 ### Don't do this — PII leak vectors
 
 `sendDefaultPii: false` + the `beforeSend` scrubber covers the SDK's default surfaces, but it cannot catch user data passed explicitly to Sentry calls. Avoid:

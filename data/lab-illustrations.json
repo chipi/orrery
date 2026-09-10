@@ -1,1 +1,177 @@
-[]
+[
+  {
+    "goalId": "launch-a-rocket",
+    "file": "images/lab/goals/launch-a-rocket.webp",
+    "altKey": "lab.illustration.alt.launch-a-rocket",
+    "model": "nano_banana_2",
+    "generated": "2026-09-09"
+  },
+  {
+    "goalId": "scale-a-rocket",
+    "file": "images/lab/goals/scale-a-rocket.webp",
+    "altKey": "lab.illustration.alt.scale-a-rocket",
+    "model": "nano_banana_2",
+    "generated": "2026-09-09"
+  },
+  {
+    "goalId": "reach-orbit",
+    "file": "images/lab/goals/reach-orbit.webp",
+    "altKey": "lab.illustration.alt.reach-orbit",
+    "model": "nano_banana_2",
+    "generated": "2026-09-09"
+  },
+  {
+    "goalId": "land-on-earth",
+    "file": "images/lab/goals/land-on-earth.webp",
+    "altKey": "lab.illustration.alt.land-on-earth",
+    "model": "nano_banana_2",
+    "generated": "2026-09-09"
+  },
+  {
+    "goalId": "motion-first-principles",
+    "file": "images/lab/goals/motion-first-principles.webp",
+    "altKey": "lab.illustration.alt.motion-first-principles",
+    "model": "nano_banana_2",
+    "generated": "2026-09-09"
+  },
+  {
+    "goalId": "reach-the-moon",
+    "file": "images/lab/goals/reach-the-moon.webp",
+    "altKey": "lab.illustration.alt.reach-the-moon",
+    "model": "nano_banana_2",
+    "generated": "2026-09-09"
+  },
+  {
+    "goalId": "land-on-the-moon",
+    "file": "images/lab/goals/land-on-the-moon.webp",
+    "altKey": "lab.illustration.alt.land-on-the-moon",
+    "model": "nano_banana_2",
+    "generated": "2026-09-09"
+  },
+  {
+    "goalId": "get-to-mars",
+    "file": "images/lab/goals/get-to-mars.webp",
+    "altKey": "lab.illustration.alt.get-to-mars",
+    "model": "nano_banana_2",
+    "generated": "2026-09-09"
+  },
+  {
+    "goalId": "land-on-mars",
+    "file": "images/lab/goals/land-on-mars.webp",
+    "altKey": "lab.illustration.alt.land-on-mars",
+    "model": "nano_banana_2",
+    "generated": "2026-09-09"
+  },
+  {
+    "goalId": "land-on-venus",
+    "file": "images/lab/goals/land-on-venus.webp",
+    "altKey": "lab.illustration.alt.land-on-venus",
+    "model": "nano_banana_2",
+    "generated": "2026-09-09"
+  },
+  {
+    "goalId": "land-on-titan",
+    "file": "images/lab/goals/land-on-titan.webp",
+    "altKey": "lab.illustration.alt.land-on-titan",
+    "model": "nano_banana_2",
+    "generated": "2026-09-09"
+  },
+  {
+    "goalId": "probe-jupiter",
+    "file": "images/lab/goals/probe-jupiter.webp",
+    "altKey": "lab.illustration.alt.probe-jupiter",
+    "model": "nano_banana_2",
+    "generated": "2026-09-09"
+  },
+  {
+    "goalId": "engines-of-the-world",
+    "file": "images/lab/goals/engines-of-the-world.webp",
+    "altKey": "lab.illustration.alt.engines-of-the-world",
+    "model": "nano_banana_2",
+    "generated": "2026-09-09"
+  },
+  {
+    "goalId": "land-on-mercury",
+    "file": "images/lab/goals/land-on-mercury.webp",
+    "altKey": "lab.illustration.alt.land-on-mercury",
+    "model": "nano_banana_2",
+    "generated": "2026-09-09"
+  },
+  {
+    "goalId": "touch-small-world",
+    "file": "images/lab/goals/touch-small-world.webp",
+    "altKey": "lab.illustration.alt.touch-small-world",
+    "model": "nano_banana_2",
+    "generated": "2026-09-09"
+  },
+  {
+    "goalId": "leave-the-solar-system",
+    "file": "images/lab/goals/leave-the-solar-system.webp",
+    "altKey": "lab.illustration.alt.leave-the-solar-system",
+    "model": "nano_banana_2",
+    "generated": "2026-09-09"
+  },
+  {
+    "goalId": "moon-phases",
+    "file": "images/lab/goals/moon-phases.webp",
+    "altKey": "lab.illustration.alt.moon-phases",
+    "model": "nano_banana_2",
+    "generated": "2026-09-09"
+  },
+  {
+    "goalId": "choose-an-orbit",
+    "file": "images/lab/goals/choose-an-orbit.webp",
+    "altKey": "lab.illustration.alt.choose-an-orbit",
+    "model": "nano_banana_2",
+    "generated": "2026-09-09"
+  },
+  {
+    "goalId": "catch-the-iss",
+    "file": "images/lab/goals/catch-the-iss.webp",
+    "altKey": "lab.illustration.alt.catch-the-iss",
+    "model": "nano_banana_2",
+    "generated": "2026-09-09"
+  },
+  {
+    "goalId": "observe-the-sky",
+    "file": "images/lab/goals/observe-the-sky.webp",
+    "altKey": "lab.illustration.alt.observe-the-sky",
+    "model": "nano_banana_2",
+    "generated": "2026-09-09"
+  },
+  {
+    "goalId": "plan-a-mission",
+    "file": "images/lab/goals/plan-a-mission.webp",
+    "altKey": "lab.illustration.alt.plan-a-mission",
+    "model": "nano_banana_2",
+    "generated": "2026-09-09"
+  },
+  {
+    "goalId": "flying-computer",
+    "file": "images/lab/goals/flying-computer.webp",
+    "altKey": "lab.illustration.alt.flying-computer",
+    "model": "nano_banana_2",
+    "generated": "2026-09-09"
+  },
+  {
+    "goalId": "landing-computer",
+    "file": "images/lab/goals/landing-computer.webp",
+    "altKey": "lab.illustration.alt.landing-computer",
+    "model": "nano_banana_2",
+    "generated": "2026-09-09"
+  },
+  {
+    "goalId": "entry-computer",
+    "file": "images/lab/goals/entry-computer.webp",
+    "altKey": "lab.illustration.alt.entry-computer",
+    "model": "nano_banana_2",
+    "generated": "2026-09-09"
+  },
+  {
+    "goalId": "apollo-round-trip",
+    "file": "images/lab/goals/apollo-round-trip.webp",
+    "altKey": "lab.illustration.alt.apollo-round-trip",
+    "model": "nano_banana_2",
+    "generated": "2026-09-09"
+  }
+]

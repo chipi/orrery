@@ -1,0 +1,1 @@
+import{Z as e,_t as t,gt as n}from"./CQ2a_MU4.js";import"./xihTtKlq.js";import{n as r,r as i}from"./BhLuoBTz.js";function a(a,o){t(o,!0);let s=r();e(()=>(i(s,{label:o.label,content:o.content??null}),()=>i(s,{label:``,content:null}))),n()}export{a as t};

@@ -1,4 +1,180 @@
 {
   "_comment": "Provenance for generated Lab illustrations (G · #536). One record per shipped asset; the manifest↔provenance parity test fails CLOSED — art with no record is a red build. operator_approved is the per-image approval timestamp (image-approval rule).",
-  "records": []
+  "records": [
+    {
+      "goalId": "launch-a-rocket",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-09-09",
+      "operator_approved": "2026-09-09T21:53:24.809Z"
+    },
+    {
+      "goalId": "scale-a-rocket",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-09-09",
+      "operator_approved": "2026-09-09T21:53:24.818Z"
+    },
+    {
+      "goalId": "reach-orbit",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-09-09",
+      "operator_approved": "2026-09-09T21:53:24.824Z"
+    },
+    {
+      "goalId": "land-on-earth",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-09-09",
+      "operator_approved": "2026-09-09T21:53:24.831Z"
+    },
+    {
+      "goalId": "motion-first-principles",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-09-09",
+      "operator_approved": "2026-09-09T21:53:24.836Z"
+    },
+    {
+      "goalId": "reach-the-moon",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-09-09",
+      "operator_approved": "2026-09-09T21:53:24.842Z"
+    },
+    {
+      "goalId": "land-on-the-moon",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-09-09",
+      "operator_approved": "2026-09-09T21:53:24.848Z"
+    },
+    {
+      "goalId": "get-to-mars",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-09-09",
+      "operator_approved": "2026-09-09T21:53:24.855Z"
+    },
+    {
+      "goalId": "land-on-mars",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-09-09",
+      "operator_approved": "2026-09-09T21:53:24.861Z"
+    },
+    {
+      "goalId": "land-on-venus",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-09-09",
+      "operator_approved": "2026-09-09T21:53:24.868Z"
+    },
+    {
+      "goalId": "land-on-titan",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-09-09",
+      "operator_approved": "2026-09-09T21:53:24.874Z"
+    },
+    {
+      "goalId": "probe-jupiter",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-09-09",
+      "operator_approved": "2026-09-09T21:53:24.880Z"
+    },
+    {
+      "goalId": "engines-of-the-world",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-09-09",
+      "operator_approved": "2026-09-09T21:53:24.887Z"
+    },
+    {
+      "goalId": "land-on-mercury",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-09-09",
+      "operator_approved": "2026-09-09T21:53:24.893Z"
+    },
+    {
+      "goalId": "touch-small-world",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-09-09",
+      "operator_approved": "2026-09-09T21:53:24.899Z"
+    },
+    {
+      "goalId": "leave-the-solar-system",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-09-09",
+      "operator_approved": "2026-09-09T21:53:24.905Z"
+    },
+    {
+      "goalId": "moon-phases",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-09-09",
+      "operator_approved": "2026-09-09T21:53:24.911Z"
+    },
+    {
+      "goalId": "choose-an-orbit",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-09-09",
+      "operator_approved": "2026-09-09T21:53:24.917Z"
+    },
+    {
+      "goalId": "catch-the-iss",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-09-09",
+      "operator_approved": "2026-09-09T21:53:24.923Z"
+    },
+    {
+      "goalId": "observe-the-sky",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-09-09",
+      "operator_approved": "2026-09-09T21:53:24.930Z"
+    },
+    {
+      "goalId": "plan-a-mission",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-09-09",
+      "operator_approved": "2026-09-09T21:53:24.939Z"
+    },
+    {
+      "goalId": "flying-computer",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-09-09",
+      "operator_approved": "2026-09-09T21:53:24.945Z"
+    },
+    {
+      "goalId": "landing-computer",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-09-09",
+      "operator_approved": "2026-09-09T21:53:24.952Z"
+    },
+    {
+      "goalId": "entry-computer",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-09-09",
+      "operator_approved": "2026-09-09T21:53:24.959Z"
+    },
+    {
+      "goalId": "apollo-round-trip",
+      "model": "nano_banana_2",
+      "tool": "higgsfield",
+      "generated": "2026-09-09",
+      "operator_approved": "2026-09-09T21:53:24.965Z"
+    }
+  ]
 }

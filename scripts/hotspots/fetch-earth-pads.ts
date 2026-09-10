@@ -21,8 +21,11 @@
  *   env -u NODE_OPTIONS ~/.nvm/versions/node/v20.20.2/bin/node --import tsx \
  *     scripts/hotspots/fetch-earth-pads.ts [siteId ...]
  *
- * AFTER any run: regenerate the consumed 1x1 variants (half-baked-tile trap):
- *   node scripts/hotspots/regenerate-tier3-variants.mjs static/images/hotspots/earth/<site>/*.jpg
+ * AFTER any run: regenerate the consumed 1x1 variants (half-baked-tile trap).
+ * Pass ONLY the base masters — a bare *.jpg glob re-feeds existing .1x1.jpg
+ * variants and mints stray .1x1.1x1.jpg files (2026-09-10 cleanup):
+ *   node scripts/hotspots/regenerate-tier3-variants.mjs \
+ *     static/images/hotspots/earth/<site>/tier2-{detail,regional}.jpg
  */
 import { readFileSync, mkdirSync, writeFileSync } from 'node:fs';
 import path from 'node:path';

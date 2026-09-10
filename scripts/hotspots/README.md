@@ -31,6 +31,8 @@ npm run images:hotspots -- <args>
 | `panorama-padder.ts` | Cylindrical→equirectangular padding library | Called by fetch-*-panoramas; sky/regolith colour per-site override; `groundColourAtRow` = regolith fading-to-shadow nadir (honest fill, not flat slab). |
 | `fetch-moon-panoramas.ts` | Moon Tier-3 panorama orchestrator | Per-site: download source, pad, write `tier3-pan.jpg`, upsert provenance. Starter batch = Apollo 11/12/14/17. |
 | `fetch-mars-panoramas.ts` | Mars Tier-3 panorama orchestrator | Per-site: 10 Mars sites (mars3/beagle2/schiaparelli omitted — no surface imagery). Optional 8K upgrade via `outWidth/outHeight`. |
+| `fetch-earth-pads.ts` | Earth Tier-2 for the 26 launch pads (#546) | Per-pad strategy: NAIP exportImage (US, ~0.5 m/px), IGN WMS (Kourou), GSI tiles (Tanegashima), Sentinel-2 coarse fallback (no open sub-meter source). Regional = Sentinel-2 16 km for all, cloud ladder 8→20→40%. |
+| `fetch-earth-panoramas.ts` | Earth Tier-3 pads with an open-licensed ground photo (6 sites) | Commons/agency sources; per-image edge-derived palette; strip rolled to texture azimuth 270° (the skybox's yaw-0 facing — see in-file comment). `srcAzimuthDeg` = angular COVERAGE, not direction. |
 | `fetch-moon-featured-images.ts` | Moon Tier-2 DETAIL (robotic landers) | LROC Featured Images (pre-cropped PNGs) + orbital-surface guard (reject >40% near-black) + Kaguya failover. Clean (unannotated) frames from lroc.im-ldi.com. **MANDATORY:** regenerate variants after any base change. |
 | `fetch-moon-kaguya-regional.ts` | Moon Tier-2 REGIONAL context | STAC search USGS Astrogeology ARD; GDAL `/vsicurl/` window-crop 2560² (~16 km) Kaguya TC COG at 6–12 m/px. No full-file downloads. **Monoscopic-first:** `rankScore ×1e6` ensures nominal MTF mapping wins over stereoscopic/spsupport soft frames. |
 | `fetch-moon-traverse.ts` | Moon along-route detail patches | Apollo 16/17 only (map-projected LROC NAC). Samples polyline, crops 1024² tiles at native res. Other rovers = Kaguya regional-only (same res as context). |
@@ -44,6 +46,8 @@ Each fetcher upserts its own provenance entries — **no separate `build-image-p
 - `buildLrocProvenanceEntry` → LROC Featured Images
 - `buildKaguyaTcProvenanceEntry` → Kaguya regional
 - `buildHiriseProvenanceEntry` → Mars HiRISE (traverse + landing)
+- `buildNaipProvenanceEntry` / `buildSentinel2ProvenanceEntry` / `buildIgnProvenanceEntry` / `buildGsiProvenanceEntry` → Earth pad Tier-2 (#546)
+- Earth Tier-3 panoramas build their `ProvenanceEntry` inline in `fetch-earth-panoramas.ts` (`buildPanoramaProvenanceEntry`'s license union has no CC0 / CC-BY-SA-4.0 / GODL-India)
 
 The gate validates coverage: `npm run validate-data` checks every `surface-hotspots.json` Tier-2 source for on-disk files + manifest entries — no half-baked images reach origin.
 

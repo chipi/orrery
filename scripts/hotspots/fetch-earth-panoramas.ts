@@ -190,7 +190,11 @@ async function ensureCachedSource(cfg: EarthPanoramaConfig): Promise<string> {
   if (buf.length < 20_000)
     throw new Error(`Suspiciously small file (${buf.length} B) — not the image?`);
   await fs.mkdir(CACHE_DIR, { recursive: true });
-  await fs.writeFile(cached, buf);
+  // tmp + rename so a killed run can't leave a truncated cache file that
+  // existsSync() would trust on the next run (same pattern as
+  // gdal-crop.ts ensureLocalRaster).
+  await fs.writeFile(`${cached}.tmp`, buf);
+  await fs.rename(`${cached}.tmp`, cached);
   return cached;
 }
 
@@ -247,17 +251,16 @@ async function processOne(cfg: EarthPanoramaConfig): Promise<boolean> {
       srcElevationBottomDeg: cfg.srcElevationBottomDeg,
       palette: { ...derived, ...(cfg.palette ?? {}) },
     });
-    // The padder left-aligns the photo strip (texture x = 0..coverage), but
-    // the tier-3 skybox opens facing texture centre (yaw 0 ↔ x = 180°) — for
-    // these narrow strips that's the synthetic gap. Roll the equirect so the
-    // strip is centred at 180° and the default view opens on the photo.
-    // 270 (not the naive 180): the tier-3 skybox default view (yaw 0) faces
-    // texture azimuth 270° (measured in-app 2026-09-10; the inside-out sphere
-    // mirrors the map, x = 270 − yaw), so centring the strip there makes
-    // STAND AT SITE open on the photo centre.
+    // The padder left-aligns the photo strip (texture x = 0..coverage), and
+    // the tier-3 skybox default view (yaw 0) faces texture azimuth 270°
+    // (measured in-app 2026-09-10; the inside-out sphere mirrors the map,
+    // x = 270 − yaw). Roll the equirect so the strip is centred at 270° and
+    // STAND AT SITE opens on the photo centre.
     const rollPx = Math.round(((270 - cfg.srcAzimuthDeg / 2) / 360) * 4096);
     const rolled = await (async () => {
-      if (rollPx <= 0) return padded;
+      // Out-of-range coverage (≤ 0 or so wide the roll wraps) → skip the
+      // roll rather than hand sharp a non-positive extract width.
+      if (rollPx <= 0 || rollPx >= 4096) return padded;
       const img = sharp(padded);
       const { width = 4096, height = 2048 } = await img.metadata();
       const left = await sharp(padded)

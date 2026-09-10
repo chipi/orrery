@@ -275,9 +275,10 @@ with `Cannot find module …/node-v141…/gdal.node`. Each fetcher **self-credit
 | Script | Purpose | Notes |
 |---|---|---|
 | `panorama-padder.ts` | Pads a partial-FOV strip → 4096×2048 equirectangular. | Library. Sky gradient above horizon; regolith **fading to shadow** below (`groundColourAtRow`). `srcElevationTop/BottomDeg` = isotropic vFOV `(srcH/srcW)×az`, split at the horizon. |
-| `fetch-{moon,mars}-panoramas.ts` | Per-site Tier-3 `tier3-pan.jpg` from cached sources. | Sources cached in `.image-cache/hotspots/panoramas/` → re-pad is **offline**. |
+| `fetch-{moon,mars,earth}-panoramas.ts` | Per-site Tier-3 `tier3-pan.jpg` from cached sources. | Sources cached in `.image-cache/hotspots/panoramas/` → re-pad is **offline**. Earth (#546): 6 pads with open-licensed ground photos; strip rolled to texture azimuth 270° (the skybox's yaw-0 facing). |
 | `fetch-{moon,mars}-traverse.ts` | Along-route detail patches → `<rover>.route-patches.json`. | Moon = Kaguya TC (~7-10 m/px); Mars = HiRISE. Samples the polyline, caps patch count by spacing. |
 | `fetch-moon-{featured-images,kaguya-regional,ctx,regional}.ts` | Tier-2 detail/regional LROC + Kaguya crops. | See AGENTS.md §"Image pipeline — gotchas". |
+| `fetch-earth-pads.ts` | Tier-2 detail + regional for all 26 launch pads (#546). | NAIP (US) / IGN WMS (Kourou) / GSI tiles (Tanegashima) / Sentinel-2 coarse fallback; regional = Sentinel-2 16 km, cloud ladder 8→20→40%. |
 
 **To regenerate panoramas after a `panorama-padder.ts` change:** `node20 --import tsx scripts/hotspots/fetch-moon-panoramas.ts` (+ `fetch-mars-panoramas.ts`) — offline from cache. **To populate along-route patches:** `… fetch-moon-traverse.ts --rover <id>` (omit `--rover` for all five). The skybox opens centred on yaw 0 / horizon (`enterPanorama` in `SurfaceScene.svelte`).
 

@@ -44,7 +44,7 @@ test.describe('/earth', () => {
     // ?object=<id> deep-links straight into the EarthObjectPanel —
     // SurfaceScene's Slice 6b wiring reads the param, finds the
     // matching EarthObject, and sets selectedSat. No 2D-canvas dance.
-    // SurfaceScene awaits both getEarthLaunchSites (14 launchpads +
+    // SurfaceScene awaits both getEarthLaunchSites (26 launchpads +
     // i18n overlays) AND getEarthObjects (50+ satellites + per-object
     // i18n overlays) before the deep-link wiring fires — the chain
     // runs ~8 s cold on desktop-chromium, longer on mobile. 25 s budget

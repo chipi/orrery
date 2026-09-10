@@ -221,6 +221,28 @@ describe('provenanceSourceId', () => {
         makePhoto({ source_type: 'direct-agency', agency: 'JAXA', instrument: 'Kaguya TC' }),
       ),
     ).toBe('jaxa-kaguya-tc');
+    // Earth launch-pad tiers (#546) — each imagery product family routes to
+    // its own section rather than collapsing into an agency bucket.
+    expect(
+      provenanceSourceId(
+        makePhoto({ source_type: 'direct-agency', agency: 'USGS', instrument: 'NAIP' }),
+      ),
+    ).toBe('usgs-naip');
+    expect(
+      provenanceSourceId(
+        makePhoto({ source_type: 'direct-agency', agency: 'ESA', instrument: 'Sentinel-2 MSI' }),
+      ),
+    ).toBe('copernicus-sentinel2');
+    expect(
+      provenanceSourceId(
+        makePhoto({ source_type: 'direct-agency', agency: 'IGN', instrument: 'IGN ortho' }),
+      ),
+    ).toBe('ign-orthophotos');
+    expect(
+      provenanceSourceId(
+        makePhoto({ source_type: 'direct-agency', agency: 'GSI', instrument: 'GSI seamlessphoto' }),
+      ),
+    ).toBe('gsi-japan');
     // Without an instrument, the agency mapping still applies.
     expect(provenanceSourceId(makePhoto({ source_type: 'direct-agency', agency: 'NASA' }))).toBe(
       'nasa',

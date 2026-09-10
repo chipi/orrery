@@ -3113,6 +3113,8 @@ export const entryCorridor: FormulaDef<{
   flightPathAngleDeg: number;
   gLimit: number;
   scaleHeightKm: number;
+  bodyRadiusKm: number;
+  surfaceGravityMs2: number;
 }> = {
   id: 'entry-corridor',
   titleKey: 'lab.f.corridor.title',
@@ -3131,7 +3133,10 @@ export const entryCorridor: FormulaDef<{
       kind: 'number',
       default: 11, // a lunar return — where the corridor bites
       min: 6,
-      max: 16,
+      // Wide enough for every goal preset (Galileo hits Jupiter at 47.4) —
+      // the share-link codec clamps to [min,max], so a narrow range silently
+      // corrupted restored Jupiter notebooks (advisor R2).
+      max: 60,
       step: 0.1,
     },
     {
@@ -3141,7 +3146,7 @@ export const entryCorridor: FormulaDef<{
       kind: 'number',
       default: 6,
       min: 0.5,
-      max: 12,
+      max: 90, // Venera dives at 65°
       step: 0.1,
     },
     {
@@ -3151,7 +3156,7 @@ export const entryCorridor: FormulaDef<{
       kind: 'number',
       default: 12, // a survivable crewed deceleration
       min: 3,
-      max: 30,
+      max: 300, // robotic probes: Venera ~160 g, Galileo ~230 g
     },
     {
       key: 'scaleHeightKm',
@@ -3160,7 +3165,28 @@ export const entryCorridor: FormulaDef<{
       kind: 'number',
       default: 7,
       min: 3,
-      max: 20,
+      max: 30, // Jupiter ~27 km
+    },
+    // Body parameters (advisor R2 BLOCKER): the Keplerian side was Earth-only,
+    // so the Jupiter corridor rendered ~9° against a "±1.5°" narrative. The
+    // goal presets supply the real body; Earth stays the default.
+    {
+      key: 'bodyRadiusKm',
+      labelKey: 'lab.f.corridor.body-radius',
+      units: 'km',
+      kind: 'number',
+      default: 6371,
+      min: 1000,
+      max: 100000,
+    },
+    {
+      key: 'surfaceGravityMs2',
+      labelKey: 'lab.f.corridor.gravity',
+      units: 'm/s²',
+      kind: 'number',
+      default: 9.81,
+      min: 1,
+      max: 30,
     },
   ],
   outputs: [
@@ -3168,16 +3194,27 @@ export const entryCorridor: FormulaDef<{
     { key: 'peakDecelG', labelKey: 'lab.f.corridor.decel', units: '' },
     { key: 'corridorWidthDeg', labelKey: 'lab.f.corridor.width', units: 'deg' },
   ],
-  compute: ({ entryVelocityKms, flightPathAngleDeg, gLimit, scaleHeightKm }) => {
+  compute: ({
+    entryVelocityKms,
+    flightPathAngleDeg,
+    gLimit,
+    scaleHeightKm,
+    bodyRadiusKm,
+    surfaceGravityMs2,
+  }) => {
     if (
       !Number.isFinite(entryVelocityKms) ||
       !Number.isFinite(flightPathAngleDeg) ||
       !Number.isFinite(gLimit) ||
       !Number.isFinite(scaleHeightKm) ||
+      !Number.isFinite(bodyRadiusKm) ||
+      !Number.isFinite(surfaceGravityMs2) ||
       entryVelocityKms <= 0 ||
       flightPathAngleDeg <= 0 ||
       gLimit <= 0 ||
-      scaleHeightKm <= 0
+      scaleHeightKm <= 0 ||
+      bodyRadiusKm <= 0 ||
+      surfaceGravityMs2 <= 0
     ) {
       const values: Record<string, Quantity> = {};
       return {
@@ -3186,35 +3223,43 @@ export const entryCorridor: FormulaDef<{
         assumptions: ['lab.assume.ballistic-entry'],
       } satisfies FormulaResult;
     }
-    const ENTRY_ALT_KM = 122; // the conventional Earth entry interface
+    const ENTRY_ALT_KM = 122; // the conventional entry-interface altitude
     const CAPTURE_ALT_KM = 60; // below this the atmosphere is dense enough to capture
-    const rEI = R_EARTH_KM + ENTRY_ALT_KM;
+    // µ from the body's own surface gravity: µ = g·R² (g[m/s²]·R[km]² / 1000 → km³/s²).
+    const mu = (surfaceGravityMs2 * bodyRadiusKm * bodyRadiusKm) / 1000;
+    const rEI = bodyRadiusKm + ENTRY_ALT_KM;
     const v = entryVelocityKms;
     const H = scaleHeightKm * 1000;
     const vMs = entryVelocityKms * 1000;
 
-    // Keplerian perigee of the entry trajectory at the chosen angle.
-    const eps = (v * v) / 2 - MU_EARTH_KM3_S2 / rEI;
-    const a = -MU_EARTH_KM3_S2 / (2 * eps);
+    // Keplerian perigee of the entry trajectory at the chosen angle. rp = p/(1+e)
+    // holds for EVERY conic — the old a(1−e) form silently excluded hyperbolic
+    // arrivals (a Galileo-style Jupiter entry), which have a real skip-out too.
+    const eps = (v * v) / 2 - mu / rEI;
     const gamma = (flightPathAngleDeg * Math.PI) / 180;
-    const hMom = rEI * v * Math.cos(gamma);
-    const ecc = Math.sqrt(
-      Math.max(0, 1 + (2 * eps * hMom * hMom) / (MU_EARTH_KM3_S2 * MU_EARTH_KM3_S2)),
-    );
-    const perigeeAltKm = a * (1 - ecc) - R_EARTH_KM;
+    const perigeeKmAt = (g: number): number => {
+      const h = rEI * v * Math.cos(g);
+      const e = Math.sqrt(Math.max(0, 1 + (2 * eps * h * h) / (mu * mu)));
+      return (h * h) / mu / (1 + e);
+    };
+    const perigeeAltKm = perigeeKmAt(gamma) - bodyRadiusKm;
+    // Peak deceleration reported in Earth g's (the crew/structure convention).
     const peakG = (vMs * vMs * Math.sin(gamma)) / (2 * Math.E * H) / G0;
 
-    // SKIP boundary — γ where the perigee equals the capture floor (bound orbits only; if the
-    // perigee is below the surface at all angles, as from LEO, you can never skip → boundary 0).
-    const rc = R_EARTH_KM + CAPTURE_ALT_KM;
+    // SKIP boundary — the γ where the perigee equals the capture floor. Perigee
+    // falls monotonically with steeper γ, so bisect (works for bound AND
+    // hyperbolic entries alike; if even a grazing entry captures, boundary 0).
+    const rc = bodyRadiusKm + CAPTURE_ALT_KM;
     let skipBoundaryDeg = 0;
-    if (eps < 0) {
-      const eAtCapture = 1 - rc / a; // e that puts perigee at the capture floor
-      const hSq = ((eAtCapture * eAtCapture - 1) * MU_EARTH_KM3_S2 * MU_EARTH_KM3_S2) / (2 * eps);
-      if (hSq > 0) {
-        const cg = Math.sqrt(hSq) / (rEI * v);
-        if (cg <= 1) skipBoundaryDeg = (Math.acos(cg) * 180) / Math.PI;
+    if (perigeeKmAt(0) > rc) {
+      let lo = 0;
+      let hi = Math.PI / 2;
+      for (let i = 0; i < 60; i += 1) {
+        const mid = (lo + hi) / 2;
+        if (perigeeKmAt(mid) > rc) lo = mid;
+        else hi = mid;
       }
+      skipBoundaryDeg = ((lo + hi) / 2) * (180 / Math.PI);
     }
     // G-LIMIT boundary — γ where the ballistic peak-g equals the limit.
     const sinSteep = (gLimit * 2 * Math.E * H * G0) / (vMs * vMs);
@@ -5512,8 +5557,8 @@ export const planetElongation: FormulaDef<{ planet: string; dateIso: string }> =
 
 /**
  * Maximum elongation (G7 rung 2) — why Mercury and Venus never stray far from the Sun. A planet
- * inside Earth's orbit (a < 1 AU) can only reach ε_max = arcsin(a/a⊕): Venus tops out at ~46°,
- * Mercury at only ~23°, so they are always a morning or evening object, never overhead at
+ * inside Earth's orbit (a < 1 AU) can only reach ε_max = arcsin(a(1+e)/a⊕) at aphelion: Venus
+ * tops out at ~47°, Mercury at ~28°, so they are always a morning or evening object, never overhead at
  * midnight. A planet OUTSIDE Earth's orbit has no such limit — it can swing all the way to 180°,
  * opposition, and ride the sky all night. That one inequality sorts the naked-eye planets in two.
  */

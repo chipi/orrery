@@ -517,9 +517,15 @@ describe('M-return · deorbit + entry heating', () => {
       return def.compute(inputs as never);
     };
     // The corridor exists even at 47 km/s — for a machine built to take 250 g.
+    // Computed with JUPITER's radius + gravity (advisor R2 blocker): the ballistic
+    // band lands in single digits, the peak-g in the Galileo ~230 g class — no
+    // longer the Earth-parameter nonsense the narrative contradicted.
     const corridor = run(0);
     expect(corridor.status.ok).toBe(true);
     expect(corridor.values.corridorWidthDeg.value).toBeGreaterThan(0);
+    expect(corridor.values.corridorWidthDeg.value).toBeLessThan(10);
+    expect(corridor.values.peakDecelG.value).toBeGreaterThan(200);
+    expect(corridor.values.peakDecelG.value).toBeLessThan(300);
     // The entry: >200 g and an entry energy an order beyond any lunar return.
     const entry = run(1);
     expect(entry.status.ok).toBe(true);
@@ -556,6 +562,8 @@ describe('M-return · deorbit + entry heating', () => {
       flightPathAngleDeg: 3,
       gLimit: 12,
       scaleHeightKm: 7,
+      bodyRadiusKm: 6371,
+      surfaceGravityMs2: 9.81,
     });
     const leoFig = leo.figure as { skipBoundaryDeg: number; gLimitBoundaryDeg: number };
     expect(leoFig.skipBoundaryDeg).toBeCloseTo(0, 5);
@@ -566,6 +574,8 @@ describe('M-return · deorbit + entry heating', () => {
       flightPathAngleDeg: 6,
       gLimit: 12,
       scaleHeightKm: 7,
+      bodyRadiusKm: 6371,
+      surfaceGravityMs2: 9.81,
     });
     const lunarFig = lunar.figure as { skipBoundaryDeg: number; gLimitBoundaryDeg: number };
     expect(lunarFig.skipBoundaryDeg).toBeGreaterThan(lunarFig.gLimitBoundaryDeg); // no ballistic corridor

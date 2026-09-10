@@ -117,6 +117,8 @@ export const scaleARocket: Goal = {
     {
       // The finale: the whole chain on the biggest rocket ever built. Preset to Starship +
       // Super Heavy — 33 Raptors, ~76 MN, a ~5,000 t stainless-steel stack at TWR ~1.5.
+      // 2.3 MN is the marketing-round Raptor figure; engine-registry.ts records the
+      // measured 2258 kN variant — both are real, the round number reads better here.
       formulaId: 'cluster-thrust',
       narrativeKey: 'lab.goal.sar.starship',
       presetInputs: { engineCount: 33, engineThrustN: 2300000, grossMassKg: 5000000 },
@@ -510,6 +512,8 @@ export const landOnVenus: Goal = {
         flightPathAngleDeg: 65,
         gLimit: 160,
         scaleHeightKm: 15.9,
+        bodyRadiusKm: 6052,
+        surfaceGravityMs2: 8.87,
       },
     },
     {
@@ -628,6 +632,8 @@ export const probeJupiter: Goal = {
         flightPathAngleDeg: 8.6,
         gLimit: 250,
         scaleHeightKm: 27,
+        bodyRadiusKm: 71492,
+        surfaceGravityMs2: 24.79,
       },
     },
     {

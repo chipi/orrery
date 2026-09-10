@@ -719,6 +719,150 @@
       "hotspot_tier2_regional_source": "/images/hotspots/earth/vandenberg-slc-4e/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 16000,
       "location_uncertainty_m": 10
+    },
+    "kourou-ela-2": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/kourou-ela-2/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/kourou-ela-2/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "kourou-ela-3": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/kourou-ela-3/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/kourou-ela-3/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "kourou-ela-4": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/kourou-ela-4/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/kourou-ela-4/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "tanegashima-yoshinobu": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/tanegashima-yoshinobu/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 512,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/tanegashima-yoshinobu/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "baikonur-1-5": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/baikonur-1-5/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 2560,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/baikonur-1-5/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "baikonur-200": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/baikonur-200/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 2560,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/baikonur-200/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "baikonur-31-6": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/baikonur-31-6/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 2560,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/baikonur-31-6/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "gagarins-start": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/gagarins-start/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 2560,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/gagarins-start/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "plesetsk-41-1": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/plesetsk-41-1/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 2560,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/plesetsk-41-1/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "plesetsk-43": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/plesetsk-43/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 2560,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/plesetsk-43/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "jiuquan-slc-43": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/jiuquan-slc-43/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 2560,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/jiuquan-slc-43/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "taiyuan-lc-9": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/taiyuan-lc-9/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 2560,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/taiyuan-lc-9/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "wenchang-lc-101": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/wenchang-lc-101/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 2560,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/wenchang-lc-101/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "xichang-lc-2": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/xichang-lc-2/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 2560,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/xichang-lc-2/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "xichang-lc-3": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/xichang-lc-3/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 2560,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/xichang-lc-3/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
+    },
+    "sriharikota-slp": {
+      "hotspot_model": "launchpad-generic",
+      "hotspot_tier_max": 2,
+      "hotspot_tier2_source": "/images/hotspots/earth/sriharikota-slp/tier2-detail.jpg",
+      "hotspot_tier2_ground_m": 2560,
+      "hotspot_tier2_regional_source": "/images/hotspots/earth/sriharikota-slp/tier2-regional.jpg",
+      "hotspot_tier2_regional_ground_m": 16000,
+      "location_uncertainty_m": 10
     }
   }
 }

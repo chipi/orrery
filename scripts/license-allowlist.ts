@@ -27,6 +27,24 @@ export interface LicenseAllowlistEntry {
 
 export const LICENSE_ALLOWLIST: readonly LicenseAllowlistEntry[] = [
   {
+    short: 'LO-2.0',
+    display: 'Licence Ouverte / Open Licence 2.0 (Etalab)',
+    url: 'https://www.etalab.gouv.fr/licence-ouverte-open-licence/',
+    rationale:
+      'The French state open-data licence: free reuse including commercial, with attribution. Covers IGN BD ORTHO aerial imagery (open data since 2021) used for the Kourou pad detail tier (#546).',
+    requires_attribution: true,
+    share_alike: false,
+  },
+  {
+    short: 'GSI-JP',
+    display: 'GSI Japan tiles (free use, attribution)',
+    url: 'https://www.gsi.go.jp/ENGLISH/page_e30286.html',
+    rationale:
+      'Geospatial Information Authority of Japan tiles are freely reusable with source attribution under the GSI website terms (stated compatible with CC BY 4.0). Used for the Tanegashima pad detail tier (#546).',
+    requires_attribution: true,
+    share_alike: false,
+  },
+  {
     short: 'COPERNICUS-S2',
     display: 'Copernicus Sentinel data (free use, attribution)',
     url: 'https://sentinels.copernicus.eu/documents/247904/690755/Sentinel_Data_Legal_Notice',

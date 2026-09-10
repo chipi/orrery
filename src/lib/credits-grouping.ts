@@ -279,6 +279,8 @@ export function provenanceSourceId(p: ImageProvenanceEntry): string {
   // product family with its own section.
   if (p.instrument === 'NAIP') return 'usgs-naip';
   if (p.instrument === 'Sentinel-2 MSI') return 'copernicus-sentinel2';
+  if (p.instrument === 'IGN ortho') return 'ign-orthophotos';
+  if (p.instrument === 'GSI seamlessphoto') return 'gsi-japan';
   // Take the first agency token when the field is a partner credit
   // like "ROSCOSMOS / NASA" or "ESA / NASA" — the first listed is
   // the primary attribution per ADR-046.

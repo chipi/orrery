@@ -28,32 +28,71 @@ import { readFileSync, mkdirSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { cropRemoteRasterToLatLon, CropError } from './gdal-crop.ts';
 import {
+  buildGsiProvenanceEntry,
+  buildIgnProvenanceEntry,
   buildNaipProvenanceEntry,
   buildSentinel2ProvenanceEntry,
   upsertProvenanceEntries,
 } from './provenance.ts';
 
-/** The #546 scope: US pads only (open sub-meter imagery, zero licensing risk). */
-const US_PAD_IDS = [
-  'cape-canaveral-lc-36b',
-  'cape-canaveral-slc-40',
-  'cape-canaveral-slc-41',
-  'lc-14',
-  'lc-34',
-  'lc-39a',
-  'lc-39b',
-  'lc-5',
-  'starbase-orbital-a',
-  'vandenberg-slc-4e',
-];
+/**
+ * Per-pad DETAIL strategy (#546 phase 2 — all 26 pads):
+ *   naip        — USGS NAIP exportImage (~0.5 m/px, PD-USGov). US pads.
+ *   ign-wms     — IGN Géoplateforme WMS BD ORTHO (Licence Ouverte, attribution).
+ *                 Covers French Guiana → Kourou. Probed 2026-09-10, real imagery.
+ *   gsi-tiles   — GSI Japan seamlessphoto XYZ tiles (GSI terms, attribution).
+ *                 Covers Tanegashima. Probed 2026-09-10, real imagery.
+ *   s2-fallback — no open sub-meter source (KZ / RU / CN / IN): a TIGHTER
+ *                 Sentinel-2 crop stands in as the detail patch — the Moon
+ *                 Kaguya-failover doctrine (softer but real, never the wrong
+ *                 subject), disclosed in provenance.
+ */
+type DetailStrategy = 'naip' | 'ign-wms' | 'gsi-tiles' | 's2-fallback';
+const PAD_STRATEGY: Record<string, DetailStrategy> = {
+  // US — NAIP
+  'cape-canaveral-lc-36b': 'naip',
+  'cape-canaveral-slc-40': 'naip',
+  'cape-canaveral-slc-41': 'naip',
+  'lc-14': 'naip',
+  'lc-34': 'naip',
+  'lc-39a': 'naip',
+  'lc-39b': 'naip',
+  'lc-5': 'naip',
+  'starbase-orbital-a': 'naip',
+  'vandenberg-slc-4e': 'naip',
+  // French Guiana — IGN open ortho
+  'kourou-ela-2': 'ign-wms',
+  'kourou-ela-3': 'ign-wms',
+  'kourou-ela-4': 'ign-wms',
+  // Japan — GSI seamlessphoto
+  'tanegashima-yoshinobu': 'gsi-tiles',
+  // Kazakhstan / Russia / China / India — no open sub-meter source
+  'baikonur-1-5': 's2-fallback',
+  'baikonur-200': 's2-fallback',
+  'baikonur-31-6': 's2-fallback',
+  'gagarins-start': 's2-fallback',
+  'plesetsk-41-1': 's2-fallback',
+  'plesetsk-43': 's2-fallback',
+  'jiuquan-slc-43': 's2-fallback',
+  'taiyuan-lc-9': 's2-fallback',
+  'wenchang-lc-101': 's2-fallback',
+  'xichang-lc-2': 's2-fallback',
+  'xichang-lc-3': 's2-fallback',
+  'sriharikota-slp': 's2-fallback',
+};
+const ALL_PAD_IDS = Object.keys(PAD_STRATEGY);
 
 const STAC_URL = 'https://earth-search.aws.element84.com/v1/search';
 const NAIP_EXPORT =
   'https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage';
+const IGN_WMS = 'https://data.geopf.fr/wms-r/wms';
+const GSI_TILES = 'https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto';
 
 const REGIONAL_CROP_PX = 1600; // 1600 px @ 10 m/px = 16 km — Moon/Mars regional extent
 const DETAIL_WINDOW_M = 512; // half-km window around the pad
 const DETAIL_SIZE_PX = 1024; // → ~0.5 m/px, at NAIP's native resolution
+const S2_FALLBACK_WINDOW_M = 2560; // 256 px @ 10 m — the honest coarse detail window
+const GSI_ZOOM = 18; // ~0.5 m/px at Tanegashima's latitude
 
 interface StacFeature {
   id: string;
@@ -84,31 +123,37 @@ function loadPads(filterIds: string[]): PadSite[] {
   });
 }
 
-/** Latest low-cloud Sentinel-2 L2A scenes covering the pad. */
+/** Latest low-cloud Sentinel-2 L2A scenes covering the pad. Cloud-cover ladder
+ *  (8 → 20 → 40%) so persistently-cloudy sites (tropical Kourou/Sriharikota)
+ *  still resolve a usable scene instead of failing outright. */
 async function stacSearch(lat: number, lon: number): Promise<StacFeature[]> {
   const d = 0.05;
-  const res = await fetch(STAC_URL, {
-    method: 'POST',
-    headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({
-      collections: ['sentinel-2-l2a'],
-      bbox: [lon - d, lat - d, lon + d, lat + d],
-      query: { 'eo:cloud_cover': { lt: 8 } },
-      sortby: [{ field: 'properties.datetime', direction: 'desc' }],
-      limit: 8,
-    }),
-  });
-  if (!res.ok) throw new Error(`STAC search HTTP ${res.status}`);
-  const body = (await res.json()) as { features: StacFeature[] };
-  return body.features ?? [];
+  for (const maxCloud of [8, 20, 40]) {
+    const res = await fetch(STAC_URL, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({
+        collections: ['sentinel-2-l2a'],
+        bbox: [lon - d, lat - d, lon + d, lat + d],
+        query: { 'eo:cloud_cover': { lt: maxCloud } },
+        sortby: [{ field: 'properties.datetime', direction: 'desc' }],
+        limit: 8,
+      }),
+    });
+    if (!res.ok) throw new Error(`STAC search HTTP ${res.status}`);
+    const body = (await res.json()) as { features: StacFeature[] };
+    if (body.features?.length) return body.features;
+  }
+  return [];
 }
 
-async function fetchRegional(site: PadSite): Promise<boolean> {
+/** Returns the winning scene so the s2-fallback detail can reuse it. */
+async function fetchRegional(site: PadSite): Promise<StacFeature | null> {
   const outputPath = `static/images/hotspots/earth/${site.id}/tier2-regional.jpg`;
   const feats = await stacSearch(site.lat, site.lon);
   if (!feats.length) {
     console.log(`  ✗ ${site.id}: no low-cloud Sentinel-2 scene found`);
-    return false;
+    return null;
   }
   for (const f of feats.slice(0, 6)) {
     const href = f.assets?.visual?.href;
@@ -138,21 +183,40 @@ async function fetchRegional(site: PadSite): Promise<boolean> {
       console.log(
         `  ✓ ${site.id} regional: ${f.id} (cloud ${f.properties['eo:cloud_cover']?.toFixed(1)}%) @ ${result.resolutionMPerPx.toFixed(1)} m/px → ${outputPath}`,
       );
-      return true;
+      return f;
     } catch (err) {
       const tag = err instanceof CropError ? err.code : (err as Error).message;
       console.log(`    · ${f.id} → ${tag}, next candidate`);
     }
   }
   console.log(`  ✗ ${site.id}: every Sentinel-2 candidate failed`);
-  return false;
+  return null;
 }
 
-async function fetchDetail(site: PadSite): Promise<boolean> {
+/** Shared bbox math: half-window in degrees around the pad. */
+function bboxDeg(site: PadSite, windowM: number): { dLat: number; dLon: number } {
+  return {
+    dLat: windowM / 2 / 111_320,
+    dLon: windowM / 2 / (111_320 * Math.cos((site.lat * Math.PI) / 180)),
+  };
+}
+
+/** Validate + write a fetched JPEG buffer, failing honest on service-error bodies. */
+function writeJpeg(outputPath: string, buf: Buffer, label: string): boolean {
+  if (buf.length < 10_000 || buf[0] !== 0xff || buf[1] !== 0xd8) {
+    console.log(
+      `  ✗ ${label}: response is not a plausible JPEG (${buf.length} bytes) — ${buf.slice(0, 80).toString('utf8')}`,
+    );
+    return false;
+  }
+  mkdirSync(path.dirname(outputPath), { recursive: true });
+  writeFileSync(outputPath, buf);
+  return true;
+}
+
+async function fetchDetailNaip(site: PadSite): Promise<boolean> {
   const outputPath = `static/images/hotspots/earth/${site.id}/tier2-detail.jpg`;
-  // 512 m bbox in degrees around the pad (lon shrinks by cos(lat)).
-  const dLat = DETAIL_WINDOW_M / 2 / 111_320;
-  const dLon = DETAIL_WINDOW_M / 2 / (111_320 * Math.cos((site.lat * Math.PI) / 180));
+  const { dLat, dLon } = bboxDeg(site, DETAIL_WINDOW_M);
   const bbox = [site.lon - dLon, site.lat - dLat, site.lon + dLon, site.lat + dLat].join(',');
   const url = `${NAIP_EXPORT}?bbox=${bbox}&bboxSR=4326&size=${DETAIL_SIZE_PX},${DETAIL_SIZE_PX}&format=jpg&f=image`;
   const res = await fetch(url);
@@ -160,17 +224,8 @@ async function fetchDetail(site: PadSite): Promise<boolean> {
     console.log(`  ✗ ${site.id} detail: NAIP exportImage HTTP ${res.status}`);
     return false;
   }
-  const buf = Buffer.from(await res.arrayBuffer());
-  // exportImage returns a JSON error body with a 200 on some failures — a real
-  // JPEG starts FF D8; anything else is a service error, fail honest.
-  if (buf.length < 10_000 || buf[0] !== 0xff || buf[1] !== 0xd8) {
-    console.log(
-      `  ✗ ${site.id} detail: response is not a plausible JPEG (${buf.length} bytes) — ${buf.slice(0, 80).toString('utf8')}`,
-    );
+  if (!writeJpeg(outputPath, Buffer.from(await res.arrayBuffer()), `${site.id} detail`))
     return false;
-  }
-  mkdirSync(path.dirname(outputPath), { recursive: true });
-  writeFileSync(outputPath, buf);
   await upsertProvenanceEntries([
     buildNaipProvenanceEntry({
       outputPath,
@@ -187,16 +242,177 @@ async function fetchDetail(site: PadSite): Promise<boolean> {
   return true;
 }
 
+/** IGN Géoplateforme WMS GetMap — BD ORTHO under the Etalab open licence.
+ *  WMS 1.3.0 + EPSG:4326 means the BBOX axis order is LAT,LON. */
+async function fetchDetailIgn(site: PadSite): Promise<boolean> {
+  const outputPath = `static/images/hotspots/earth/${site.id}/tier2-detail.jpg`;
+  const { dLat, dLon } = bboxDeg(site, DETAIL_WINDOW_M);
+  const bbox = [site.lat - dLat, site.lon - dLon, site.lat + dLat, site.lon + dLon].join(',');
+  const url =
+    `${IGN_WMS}?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=ORTHOIMAGERY.ORTHOPHOTOS` +
+    `&STYLES=&CRS=EPSG:4326&BBOX=${bbox}&WIDTH=${DETAIL_SIZE_PX}&HEIGHT=${DETAIL_SIZE_PX}&FORMAT=image/jpeg`;
+  const res = await fetch(url);
+  if (!res.ok) {
+    console.log(`  ✗ ${site.id} detail: IGN WMS HTTP ${res.status}`);
+    return false;
+  }
+  if (!writeJpeg(outputPath, Buffer.from(await res.arrayBuffer()), `${site.id} detail`))
+    return false;
+  await upsertProvenanceEntries([
+    buildIgnProvenanceEntry({
+      outputPath,
+      sourceUrl: url,
+      siteId: site.id,
+      siteName: site.name,
+      centerLat: site.lat,
+      centerLon: site.lon,
+      windowM: DETAIL_WINDOW_M,
+      sizePx: DETAIL_SIZE_PX,
+    }),
+  ]);
+  console.log(`  ✓ ${site.id} detail: IGN ortho ${DETAIL_WINDOW_M} m → ${outputPath}`);
+  return true;
+}
+
+/** GSI Japan seamlessphoto XYZ tiles — stitch the z18 grid covering the
+ *  window, crop to the exact bbox, resize to DETAIL_SIZE_PX. */
+async function fetchDetailGsi(site: PadSite): Promise<boolean> {
+  const outputPath = `static/images/hotspots/earth/${site.id}/tier2-detail.jpg`;
+  const sharp = (await import('sharp')).default;
+  const z = GSI_ZOOM;
+  const n = 2 ** z;
+  // Web-mercator tile coords (fractional) of the window corners.
+  const xOf = (lon: number): number => ((lon + 180) / 360) * n;
+  const yOf = (lat: number): number =>
+    ((1 - Math.asinh(Math.tan((lat * Math.PI) / 180)) / Math.PI) / 2) * n;
+  const { dLat, dLon } = bboxDeg(site, DETAIL_WINDOW_M);
+  const x0 = xOf(site.lon - dLon);
+  const x1 = xOf(site.lon + dLon);
+  const y0 = yOf(site.lat + dLat); // north edge → smaller y
+  const y1 = yOf(site.lat - dLat);
+  const tx0 = Math.floor(x0);
+  const tx1 = Math.floor(x1);
+  const ty0 = Math.floor(y0);
+  const ty1 = Math.floor(y1);
+  const cols = tx1 - tx0 + 1;
+  const rows = ty1 - ty0 + 1;
+  const tiles: { input: Buffer; left: number; top: number }[] = [];
+  for (let ty = ty0; ty <= ty1; ty++) {
+    for (let tx = tx0; tx <= tx1; tx++) {
+      const res = await fetch(`${GSI_TILES}/${z}/${tx}/${ty}.jpg`);
+      if (!res.ok) {
+        console.log(`  ✗ ${site.id} detail: GSI tile ${z}/${tx}/${ty} HTTP ${res.status}`);
+        return false;
+      }
+      tiles.push({
+        input: Buffer.from(await res.arrayBuffer()),
+        left: (tx - tx0) * 256,
+        top: (ty - ty0) * 256,
+      });
+    }
+  }
+  const mosaic = sharp({
+    create: { width: cols * 256, height: rows * 256, channels: 3, background: '#000' },
+  }).composite(tiles);
+  // Crop the exact window out of the stitched grid.
+  const left = Math.round((x0 - tx0) * 256);
+  const top = Math.round((y0 - ty0) * 256);
+  const width = Math.round((x1 - x0) * 256);
+  const height = Math.round((y1 - y0) * 256);
+  const out = await mosaic
+    .jpeg()
+    .toBuffer()
+    .then((b) =>
+      sharp(b)
+        .extract({ left, top, width, height })
+        .resize(DETAIL_SIZE_PX, DETAIL_SIZE_PX)
+        .jpeg({ quality: 88 })
+        .toBuffer(),
+    );
+  mkdirSync(path.dirname(outputPath), { recursive: true });
+  writeFileSync(outputPath, out);
+  await upsertProvenanceEntries([
+    buildGsiProvenanceEntry({
+      outputPath,
+      sourceUrl: `${GSI_TILES}/${z}/${Math.floor(xOf(site.lon))}/${Math.floor(yOf(site.lat))}.jpg`,
+      siteId: site.id,
+      siteName: site.name,
+      centerLat: site.lat,
+      centerLon: site.lon,
+      windowM: DETAIL_WINDOW_M,
+      zoom: z,
+    }),
+  ]);
+  console.log(
+    `  ✓ ${site.id} detail: GSI seamlessphoto z${z} ${DETAIL_WINDOW_M} m → ${outputPath}`,
+  );
+  return true;
+}
+
+/** No open sub-meter source: a TIGHTER crop of the SAME Sentinel-2 scene the
+ *  regional used stands in as detail — the Moon Kaguya-failover doctrine
+ *  (softer but real, never the wrong subject). 2560 m window at 10 m/px,
+ *  upscaled ×2 for the patch renderer; disclosed in provenance. */
+async function fetchDetailS2Fallback(site: PadSite, scene: StacFeature): Promise<boolean> {
+  const outputPath = `static/images/hotspots/earth/${site.id}/tier2-detail.jpg`;
+  const sharp = (await import('sharp')).default;
+  const href = scene.assets?.visual?.href;
+  if (!href) return false;
+  try {
+    const tmpPath = `${outputPath}.tmp.jpg`;
+    await cropRemoteRasterToLatLon({
+      localRasterPath: `/vsicurl/${href}`,
+      targetLat: site.lat,
+      targetLon: site.lon,
+      outputPath: tmpPath,
+      cropSize: S2_FALLBACK_WINDOW_M / 10, // 10 m/px source pixels
+      jpegQuality: 92,
+    });
+    const up = await sharp(tmpPath).resize(512, 512).jpeg({ quality: 88 }).toBuffer();
+    writeFileSync(outputPath, up);
+    (await import('node:fs')).unlinkSync(tmpPath);
+  } catch (err) {
+    const tag = err instanceof CropError ? err.code : (err as Error).message;
+    console.log(`  ✗ ${site.id} detail (s2-fallback): ${tag}`);
+    return false;
+  }
+  const prov = buildSentinel2ProvenanceEntry({
+    outputPath,
+    sourceUrl: href,
+    productId: scene.id,
+    siteId: site.id,
+    siteName: site.name,
+    centerLat: site.lat,
+    centerLon: site.lon,
+    cropSize: S2_FALLBACK_WINDOW_M / 10,
+    sceneDate: scene.properties.datetime,
+  });
+  // Disclose the coarse stand-in honestly (no open sub-meter source here).
+  prov.modifications.push('upscaled-256-to-512', 'coarse-detail-fallback-no-open-submeter-source');
+  await upsertProvenanceEntries([prov]);
+  console.log(
+    `  ✓ ${site.id} detail: Sentinel-2 fallback ${S2_FALLBACK_WINDOW_M} m @ 10 m/px → ${outputPath}`,
+  );
+  return true;
+}
+
 async function main(): Promise<void> {
   const only = process.argv.slice(2);
-  const pads = loadPads(only.length ? only.filter((id) => US_PAD_IDS.includes(id)) : US_PAD_IDS);
+  const ids = only.length ? only.filter((id) => ALL_PAD_IDS.includes(id)) : ALL_PAD_IDS;
+  const pads = loadPads(ids);
   console.log(`fetch-earth-pads: ${pads.length} pad(s)`);
   let ok = 0;
   for (const site of pads) {
-    console.log(`\n${site.id} (${site.name}) @ ${site.lat}, ${site.lon}`);
-    const r = await fetchRegional(site);
-    const d = await fetchDetail(site);
-    if (r && d) ok += 1;
+    const strategy = PAD_STRATEGY[site.id];
+    console.log(`\n${site.id} (${site.name}) @ ${site.lat}, ${site.lon} [${strategy}]`);
+    const scene = await fetchRegional(site);
+    let d = false;
+    if (strategy === 'naip') d = await fetchDetailNaip(site);
+    else if (strategy === 'ign-wms') d = await fetchDetailIgn(site);
+    else if (strategy === 'gsi-tiles') d = await fetchDetailGsi(site);
+    else if (scene) d = await fetchDetailS2Fallback(site, scene);
+    else console.log(`  ✗ ${site.id} detail: no regional scene to fall back to`);
+    if (scene && d) ok += 1;
   }
   console.log(`\nDONE ${ok}/${pads.length} pads fully fetched`);
   if (ok < pads.length) process.exitCode = 1;

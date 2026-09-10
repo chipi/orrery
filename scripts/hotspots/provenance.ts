@@ -241,6 +241,90 @@ export function buildNaipProvenanceEntry(input: {
 }
 
 /**
+ * Build an image-provenance entry for an IGN BD ORTHO detail patch of a
+ * Kourou pad (#546 phase 2). IGN's orthophotography is open data under the
+ * French Licence Ouverte (Etalab) 2.0 — free reuse with attribution —
+ * served through the Géoplateforme WMS.
+ */
+export function buildIgnProvenanceEntry(input: {
+  outputPath: string;
+  sourceUrl: string;
+  siteId: string;
+  siteName: string;
+  centerLat: number;
+  centerLon: number;
+  windowM: number;
+  sizePx: number;
+}): ProvenanceEntry {
+  const provenancePath = input.outputPath.replace(/^static/, '');
+  const id = createHash('sha256').update(provenancePath).digest('hex').slice(0, 16);
+  return {
+    id,
+    path: provenancePath,
+    source_type: 'direct-agency',
+    title: `IGN BD ORTHO — ${input.siteName}, ${input.windowM} m window centred at ${input.centerLat.toFixed(4)}°N ${input.centerLon.toFixed(4)}°E (Géoplateforme WMS, retrieved ${new Date().toISOString().slice(0, 10)})`,
+    author: 'IGN — Institut national de l’information géographique et forestière',
+    agency: 'IGN',
+    source_url: 'https://geoservices.ign.fr/bdortho',
+    image_url: input.sourceUrl,
+    license_short: 'LO-2.0',
+    license_url: 'https://www.etalab.gouv.fr/licence-ouverte-open-licence/',
+    license_rationale:
+      'IGN BD ORTHO aerial orthophotography has been open data under the French Licence Ouverte (Etalab) 2.0 since 2021 — free reuse including commercial, with attribution "IGN". French Guiana (Kourou) is covered as an overseas département.',
+    modifications: [`wms-getmap-${input.sizePx}x${input.sizePx}-bbox-${input.windowM}m`, 'jpeg'],
+    revid: null,
+    pageid: null,
+    nasa_id: null,
+    fetched_at: new Date().toISOString(),
+    instrument: 'IGN ortho',
+  };
+}
+
+/**
+ * Build an image-provenance entry for a GSI Japan seamlessphoto detail patch
+ * of Tanegashima (#546 phase 2). GSI tiles are free to reuse with source
+ * attribution under the GSI website terms (compatible with CC BY 4.0).
+ */
+export function buildGsiProvenanceEntry(input: {
+  outputPath: string;
+  sourceUrl: string;
+  siteId: string;
+  siteName: string;
+  centerLat: number;
+  centerLon: number;
+  windowM: number;
+  zoom: number;
+}): ProvenanceEntry {
+  const provenancePath = input.outputPath.replace(/^static/, '');
+  const id = createHash('sha256').update(provenancePath).digest('hex').slice(0, 16);
+  return {
+    id,
+    path: provenancePath,
+    source_type: 'direct-agency',
+    title: `GSI seamlessphoto — ${input.siteName}, ${input.windowM} m window centred at ${input.centerLat.toFixed(4)}°N ${input.centerLon.toFixed(4)}°E (z${input.zoom} tiles, retrieved ${new Date().toISOString().slice(0, 10)})`,
+    author: 'Geospatial Information Authority of Japan (国土地理院)',
+    agency: 'GSI',
+    source_url: 'https://maps.gsi.go.jp/development/ichiran.html#seamlessphoto',
+    image_url: input.sourceUrl,
+    license_short: 'GSI-JP',
+    license_url: 'https://www.gsi.go.jp/ENGLISH/page_e30286.html',
+    license_rationale:
+      'GSI map/photo tiles may be freely reused with source attribution ("GSI Japan" / 地理院タイル) under the GSI website terms of use, which GSI states are compatible with CC BY 4.0.',
+    modifications: [
+      `stitched-z${input.zoom}-tiles-${input.windowM}m-window`,
+      'cropped-to-bbox',
+      'resized-1024',
+      'jpeg-q88',
+    ],
+    revid: null,
+    pageid: null,
+    nasa_id: null,
+    fetched_at: new Date().toISOString(),
+    instrument: 'GSI seamlessphoto',
+  };
+}
+
+/**
  * Build an image-provenance entry for a Copernicus Sentinel-2 regional patch
  * of an Earth launch pad (#546). Free use with mandatory source attribution
  * per the Copernicus data licence — the COPERNICUS-S2 allowlist entry.

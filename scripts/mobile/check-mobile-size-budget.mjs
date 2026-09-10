@@ -31,12 +31,18 @@
  * /science articles with hand-drawn diagram webps ×14 locales) took the pruned
  * build to 71.8 MB. All buckets individually sane (data 28.7 · textures 16.8 ·
  * _app 8.6 · science 6.3 · diagrams 4.8). ~1.2 MB headroom remains.
+ *
+ * 2026-09-10 re-baseline 73 → 75 MB (a data floor, not a leak): FB1b shipped
+ * the 25 operator-approved lab goal illustrations (~2.4 MB of 1600px webp),
+ * taking the pruned build to 72.9 MB — 0.1 MB under the old cap. Operator
+ * raised to 75; ~2.1 MB headroom. Still far under the iOS 200 MB
+ * cellular-OTA cap; a structural re-leak (a ~20 MB texture bucket) still trips.
  */
 import { statSync, readdirSync, existsSync } from 'node:fs';
 import path from 'node:path';
 
 const BUILD = path.resolve(process.cwd(), 'build');
-const BUDGET_MB = 73;
+const BUDGET_MB = 75;
 
 if (process.env.MOBILE !== '1') {
   console.log('[size-budget] MOBILE != 1 — skipping (browser build is not budgeted).');

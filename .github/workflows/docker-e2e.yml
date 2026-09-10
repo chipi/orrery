@@ -40,8 +40,14 @@ on:
 # status, which renders as a red/grey badge on the README even though
 # every commit eventually passes. Pre-empting cleanly keeps the badge
 # accurate.
+#
+# The daily SCHEDULE gets its own group: 2026-09-10 the cron entered the
+# shared ref group and cancel-in-progress killed a same-sha push run 45
+# minutes in — twice. A scheduled run never carries newer code, so it must
+# never pre-empt in-flight work; consecutive scheduled runs still supersede
+# each other within their own group.
 concurrency:
-  group: docker-e2e-${{ github.ref }}
+  group: docker-e2e-${{ github.ref }}${{ github.event_name == 'schedule' && '-scheduled' || '' }}
   cancel-in-progress: true
 
 jobs:

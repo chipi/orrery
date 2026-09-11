@@ -113,6 +113,9 @@ class AudioState {
       // silently snap them to defaults.
       spd: this.speed,
       cc: this.captionsOn ? 1 : 0,
+      // Which tour — without this, resume replayed the full tour's sequence
+      // whatever was actually running (ADR-075 schema gap, fixed 2026-09-11).
+      tid: this.tourId,
     };
   }
 
@@ -206,11 +209,6 @@ class AudioState {
   // Restore a tour from a resume cookie. Sets sequence + index without
   // resetting index to 0 (which startTour would do). Caller still loads
   // the episode + seeks via the registry.
-  // NOTE: the resume cookie (ADR-075) carries no tour id, so a resumed tour is
-  // always attributed to the full tour — and in fact always REPLAYS the full
-  // tour's sequence (pre-existing: AudioOverlay resumes from CURATOR_FULL_TOUR
-  // regardless of which tour was running). Fixing that means a cookie schema
-  // change; tracked separately, not in ADR-093's scope.
   resumeTour(sequence: string[], index: number, tourId: string = 'curator-full'): void {
     this.tourId = tourId;
     this.tourSequence = [...sequence];

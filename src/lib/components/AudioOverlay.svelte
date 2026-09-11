@@ -586,6 +586,17 @@
       return ep?.route && EXHIBIT_SCENE_ROUTES.includes(ep.route);
     });
   }
+  /** Tour id → its episode sequence. An unrecognised id falls back to the full
+   *  tour rather than dropping the user's saved position. */
+  function sequenceForTour(tourId: string): string[] {
+    if (tourId === 'curator-extended') return CURATOR_EXTENDED_TOUR;
+    if (tourId === 'exhibit') {
+      const seq = exhibitSequence();
+      return seq.length > 0 ? seq : CURATOR_FULL_TOUR;
+    }
+    return CURATOR_FULL_TOUR;
+  }
+
   async function startExhibitTour(): Promise<void> {
     const seq = exhibitSequence();
     // Exhibit Mode plays a FOUR-episode kiosk subset. It must not report as
@@ -678,17 +689,18 @@
       resumeOffer = null;
       return;
     }
-    // Filter the canonical sequence down to what's actually in the
-    // registry, then locate the saved episode by id — using ep id is
-    // more durable than trusting idx across registry changes.
-    const available = CURATOR_FULL_TOUR.filter((id) => audioRegistry.byId(id));
+    // Resume the tour that was ACTUALLY running. Before the cookie carried a
+    // tour id, this was hardcoded to CURATOR_FULL_TOUR, so resuming an extended
+    // or exhibit tour silently replayed the full tour's sequence.
+    const tourId = offer.tid ?? 'curator-full';
+    const available = sequenceForTour(tourId).filter((id) => audioRegistry.byId(id));
     const realIdx = available.indexOf(offer.ep);
     if (realIdx < 0) {
       clearTourCookie();
       resumeOffer = null;
       return;
     }
-    audio.resumeTour(available, realIdx);
+    audio.resumeTour(available, realIdx, tourId);
     audio.compact = offer.cmp === 1;
     // Phase 19 (#342) — restore speed + captions if persisted. Older
     // cookies without these fields fall back to the existing defaults.

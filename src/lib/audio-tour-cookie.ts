@@ -2,7 +2,7 @@
 // no-client-storage rule). Holds the active-tour position so the user
 // can close the tab and resume where they left off on the next visit.
 //
-// Schema:  { ep, pos, idx, cmp, spd?, cc? }    ~60–80 bytes URL-encoded
+// Schema:  { ep, pos, idx, cmp, spd?, cc?, tid? }  ~60–90 bytes URL-encoded
 //   ep   episode id (must exist in the audio registry on read)
 //   pos  positionSec, finite, 0 ≤ pos ≤ episode duration
 //   idx  tourIndex, integer, 0 ≤ idx < tourSequence.length
@@ -10,6 +10,11 @@
 //   spd  playback speed multiplier (one of 0.75 / 1 / 1.25 / 1.5).
 //        Optional for forward compatibility; older cookies without
 //        `spd` resume at 1×. Added Phase 19 (#342).
+//   tid  which tour was running ('curator-full' | 'curator-extended' |
+//        'exhibit'). Optional for backwards compatibility — a cookie written
+//        before this field resumes as the full tour, which is what the code
+//        did unconditionally before. WITHOUT this, resuming an extended tour
+//        replayed the FULL tour's sequence (fixed 2026-09-11).
 //   cc   captions-on flag (0 | 1). Optional for forward compatibility;
 //        older cookies without `cc` resume at default-off. Added Phase
 //        19 (#342).
@@ -42,6 +47,9 @@ export interface TourResumeState {
   /** Captions-on at the moment of write (0 | 1). Optional for
    *  backwards-compat. Resumes at default-off if absent. */
   cc?: 0 | 1;
+  /** Which tour was running. Optional for backwards-compat: a cookie without
+   *  it resumes as the full tour. */
+  tid?: string;
 }
 
 function validShape(value: unknown): value is TourResumeState {
@@ -58,6 +66,12 @@ function validShape(value: unknown): value is TourResumeState {
   // cc is optional; if present, must be 0 or 1.
   if (v.cc !== undefined) {
     if (v.cc !== 0 && v.cc !== 1) return false;
+  }
+  // tid is optional; if present, a short non-empty id. The consumer maps an
+  // unrecognised id back to the full tour rather than failing the whole cookie
+  // — a stale id should not cost the user their position.
+  if (v.tid !== undefined) {
+    if (typeof v.tid !== 'string' || v.tid.length === 0 || v.tid.length > 32) return false;
   }
   return true;
 }

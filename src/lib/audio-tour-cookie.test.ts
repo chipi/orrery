@@ -47,6 +47,34 @@ describe('audio-tour-cookie', () => {
       expect(readTourCookie()).toEqual(validState);
     });
 
+    // Before `tid`, resume hardcoded CURATOR_FULL_TOUR, so an extended-tour
+    // resume silently replayed the wrong sequence.
+    it('round-trips the tour id', () => {
+      writeTourCookie({ ...validState, tid: 'curator-extended' });
+      expect(readTourCookie()?.tid).toBe('curator-extended');
+    });
+
+    it('accepts a cookie written before `tid` existed (resumes as full tour)', () => {
+      writeTourCookie(validState);
+      const read = readTourCookie();
+      expect(read).not.toBeNull();
+      expect(read?.tid).toBeUndefined();
+    });
+
+    it('rejects a tid that is empty or absurdly long', () => {
+      document.cookie =
+        `${TOUR_COOKIE_NAME}=` +
+        encodeURIComponent(JSON.stringify({ ...validState, tid: '' })) +
+        '; Path=/';
+      expect(readTourCookie()).toBeNull();
+
+      document.cookie =
+        `${TOUR_COOKIE_NAME}=` +
+        encodeURIComponent(JSON.stringify({ ...validState, tid: 'x'.repeat(33) })) +
+        '; Path=/';
+      expect(readTourCookie()).toBeNull();
+    });
+
     it('returns null on malformed JSON', () => {
       document.cookie = `${TOUR_COOKIE_NAME}=${encodeURIComponent('not-json')}; Path=/`;
       expect(readTourCookie()).toBeNull();

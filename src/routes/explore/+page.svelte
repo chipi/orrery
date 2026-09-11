@@ -955,7 +955,9 @@
           body: m.explore_lens_story_nb_body(),
           tab: 'observation',
           section: 'hertzsprung-russell',
-          available: ['constellations', 'deep-sky', 'hr-diagram', 'light-cones'],
+          // One region, one lens (2026-09-11): the same five layers inside
+          // an exoplanet system — mass–period is item 5 here too.
+          available: ['constellations', 'deep-sky', 'hr-diagram', 'light-cones', 'mass-period'],
         };
       case 'milky-way':
         return {
@@ -1029,17 +1031,20 @@
           ],
         };
       case 'body-scene':
-        // Exoplanet systems surface the mass–period plot as a standard lens
-        // layer (was a bespoke .nb-hud chip — 2026-09-11 operator ask, same
-        // WS-3 unification as constellations/H-R/light-cones). Solar-system
-        // body scenes keep no lens surface.
+        // One region, one lens (2026-09-11 operator direction): inside an
+        // exoplanet system the lens is IDENTICAL to the stellar
+        // neighbourhood's — same story, same five layers, mass–period as
+        // item 5. The three charts open here too (screen-space overlays);
+        // constellations/deep-sky store the preference and apply the moment
+        // the user is back in the neighbourhood field. Solar-system body
+        // scenes keep no lens surface.
         if (!activeBlackHole && activeBodyHostId && exoplanetHostIds.has(activeBodyHostId)) {
           return {
-            title: m.explore_lens_mass_period(),
-            body: m.science_layer_mass_period_desc(),
-            tab: 'exoplanets',
-            section: 'super-earths-sub-neptunes',
-            available: ['mass-period'],
+            title: m.explore_lens_story_nb_title(),
+            body: m.explore_lens_story_nb_body(),
+            tab: 'observation',
+            section: 'hertzsprung-russell',
+            available: ['constellations', 'deep-sky', 'hr-diagram', 'light-cones', 'mass-period'],
           };
         }
         return { available: [] };
@@ -2907,26 +2912,35 @@
   <!-- Slice 7: the HR-diagram (property-space) lens overlay — the real star field
        re-projected onto temperature/luminosity axes. -->
   {#if view === '3d'}
+    <!-- The three property-space charts are screen-space overlays — since the
+         2026-09-11 region-wide lens unification they open from ANYWHERE in the
+         stellar-neighbourhood region (the neighbourhood field or inside an
+         exoplanet system), not just their birth context. Every close button
+         writes the layer off so the lens toggles never desync. -->
     <HrDiagram
       stars={hrStars}
-      open={hrLensOpen && contextId === 'neighborhood'}
-      onClose={() => (hrLensOpen = false)}
+      open={hrLensOpen && (contextId === 'neighborhood' || contextId === 'body-scene')}
+      onClose={() => {
+        hrLensOpen = false;
+        setLayer('hr-diagram', false);
+      }}
     />
     <CausalityMap
       field={causalityField}
       named={causalityNamed}
       shells={causalityShells}
-      open={causalityOpen && contextId === 'neighborhood'}
-      onClose={() => (causalityOpen = false)}
+      open={causalityOpen && (contextId === 'neighborhood' || contextId === 'body-scene')}
+      onClose={() => {
+        causalityOpen = false;
+        setLayer('light-cones', false);
+      }}
     />
     <MassPeriodChart
       planets={allExoplanetPlanets}
       activeHostId={activeBodyHostId}
-      open={massPeriodOpen && contextId === 'body-scene'}
+      open={massPeriodOpen && (contextId === 'neighborhood' || contextId === 'body-scene')}
       onClose={() => {
         massPeriodOpen = false;
-        // Keep the lens-layer toggle in sync (the layer drives this open
-        // state since 2026-09-11).
         setLayer('mass-period', false);
       }}
     />

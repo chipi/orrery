@@ -3,9 +3,12 @@
   generated art, and it is structurally incapable of rendering kernel output:
   it takes a LabIllustration, not a FigureSpec, imports nothing from
   figure-style.ts, and mounts only in the Notebook's goal header (narrative
-  chrome — never a card's figure slot). The badge is permanent and
-  non-dismissable: generated art announces itself, which is exactly what makes
-  the unbadged kernel figures trustworthy.
+  chrome — never a card's figure slot). The on-image AI badge + credit
+  caption were removed 2026-09-11 (operator: no other generated-art surface
+  carries an in-UI note — /posters and anatomy disclose via /colophon +
+  original-work.json, and the lab illustrations do the same). The share/print
+  report card keeps its badge line; kernel figures stay unbadged and are
+  distinguishable by register (computed frames), not by disclaimer.
 -->
 <script lang="ts">
   import { assetUrl } from '$lib/asset-url';
@@ -26,14 +29,6 @@
     loading="lazy"
     decoding="async"
   />
-  <figcaption class="illus__caption">
-    <span class="illus__badge">{t('lab.illustration.badge')}</span>
-    <span class="illus__credit">
-      {t('lab.illustration.credit', {
-        date: illustration.generated,
-      })}
-    </span>
-  </figcaption>
 </figure>
 
 <style>
@@ -48,36 +43,11 @@
     border-radius: 10px;
     display: block;
   }
-  .illus__caption {
-    display: flex;
-    align-items: baseline;
-    gap: 0.6rem;
-    flex-wrap: wrap;
-    font-size: 0.75rem;
-    opacity: 0.75;
-  }
-  /* Mobile density (UX review): the wrapped two-line disclaimer opened a dead-space
-     gap in the lesson rhythm — tighten, never remove (the badge is the honesty
-     affordance and stays). */
+  /* Mobile density (UX review): tighter lesson rhythm on small screens. */
   @media (max-width: 640px) {
     .illus {
       margin-bottom: 0.6rem;
       gap: 0.25rem;
     }
-    .illus__caption {
-      font-size: 0.6rem;
-      gap: 0.4rem;
-    }
-  }
-  .illus__badge {
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-weight: 600;
-    border: 1px solid currentColor;
-    border-radius: 999px;
-    padding: 0.05rem 0.55rem;
-    /* Dashed — visually rhymes with the fail-honest cards, never with the
-       solid computed-register frames. */
-    border-style: dashed;
   }
 </style>

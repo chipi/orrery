@@ -382,15 +382,28 @@
     // Stamp the session with the running build so the live version
     // distribution is visible in the dashboard — a cohort stuck on an old
     // build (e.g. the iOS-precache freeze) is then obvious, not a surprise.
-    track('app-load', { version: __APP_VERSION__ });
+    // `display_mode` splits engagement by installed-PWA vs browser tab (#521).
+    const displayMode =
+      window.matchMedia?.('(display-mode: standalone)').matches ||
+      (navigator as unknown as { standalone?: boolean }).standalone
+        ? 'standalone'
+        : 'browser';
+    track('app-load', { version: __APP_VERSION__, display_mode: displayMode });
     // Offline (PRD-035 Part 2): resolve the storage backend + arm the read-side
     // resolver if a tier is already downloaded, so cached assets serve offline
     // from launch. Self-guards to native (no backend on web → no-op).
     void initOffline();
     // Suppress both Chrome's native install banner and any in-app
-    // prompt. preventDefault stops the browser from auto-showing.
-    const onPromptable = (e: Event) => e.preventDefault();
+    // prompt. preventDefault stops the browser from auto-showing. Also record
+    // installability + installs (#521): `pwa-install-available` = the browser
+    // deems the app installable; `pwa-installed` = the user actually installed.
+    const onPromptable = (e: Event) => {
+      e.preventDefault();
+      track('pwa-install-available');
+    };
+    const onInstalled = () => track('pwa-installed');
     window.addEventListener('beforeinstallprompt', onPromptable);
+    window.addEventListener('appinstalled', onInstalled);
 
     // Global click delegation — two events from one listener:
     //  - `external-link-click` on any anchor whose href points off-host
@@ -467,6 +480,7 @@
       stopDeepLinks();
       stopBackButton();
       window.removeEventListener('beforeinstallprompt', onPromptable);
+      window.removeEventListener('appinstalled', onInstalled);
       document.removeEventListener('click', onAnyClick, true);
       document.removeEventListener('keydown', onCmdK);
     };

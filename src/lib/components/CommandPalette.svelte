@@ -10,6 +10,7 @@
   import { goto } from '$app/navigation';
   import { untrack } from 'svelte';
   import * as m from '$lib/paraglide/messages';
+  import { track } from '$lib/analytics';
 
   export type CommandItem = {
     id: string;
@@ -55,6 +56,9 @@
       previousActive = document.activeElement as HTMLElement | null;
       query = '';
       highlighted = 0;
+      // Reachability signal (#521): distinguishes "search never opened" from
+      // "opened but nothing typed" (0 search-hit events in the launch window).
+      track('search-open', { surface: 'cmdk' });
       queueMicrotask(() => inputEl?.focus());
       return () => previousActive?.focus?.({ preventScroll: true });
     }

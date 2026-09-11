@@ -38,6 +38,28 @@
       section: section.id,
       source: arrivedFromRoute(),
     });
+
+    // Read-depth (#521): do visitors READ the article (science is the #2
+    // acquisition vector) or bounce? Fire at 25/50/75/100% once per section per
+    // session. Keyed by section.id so a client-side nav to another section
+    // (which does NOT remount this component) gets fresh thresholds. A short
+    // article that fits the viewport counts as fully read (pct = 100).
+    const fired = new Set<string>();
+    const onScroll = () => {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      const pct =
+        scrollable <= 0 ? 100 : Math.min(100, Math.round((window.scrollY / scrollable) * 100));
+      for (const t of [25, 50, 75, 100]) {
+        const key = `${section.id}:${t}`;
+        if (pct >= t && !fired.has(key)) {
+          fired.add(key);
+          track('science-read-depth', { tab: section.tab, section: section.id, pct: t });
+        }
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll(); // fully-visible short articles fire 100 immediately
+    return () => window.removeEventListener('scroll', onScroll);
   });
   // The space-photography section embeds the ObservatoryShowcase strip
   // (one hero image per observatory in /fleet, deep-link into each

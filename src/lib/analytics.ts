@@ -170,6 +170,19 @@ export const EVENT_NAMES = [
   'fly-recovery',
   'science-to-app',
   'tour-complete',
+  // Measurement blind spots closed (#521):
+  //   science-read-depth — do visitors READ science articles (the #2 acquisition
+  //                        vector) or bounce? Fires at 25/50/75/100% scroll,
+  //                        once per threshold per article. `pct` property.
+  //   search-open        — distinguishes "nobody opens search" from "opens but
+  //                        doesn't type" (0 search events in the launch window).
+  //   pwa-install-available / pwa-installed — installability + installs, and
+  //                        `app-load` now carries `display_mode` so engagement
+  //                        can be split by installed-PWA vs browser.
+  'science-read-depth',
+  'search-open',
+  'pwa-install-available',
+  'pwa-installed',
   // Language-suggestion banner (#519). Shown when a visitor's browser-preferred
   // language differs from the page's locale and we support it; `accepted ÷ shown`
   // is the take rate. Suggest-only (never auto-redirect — Google penalizes it).

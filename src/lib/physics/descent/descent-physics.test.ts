@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import {
   bodyAirDensity,
   bodyGravity,
@@ -11,6 +11,16 @@ import {
 import { SURFACE_DENSITY_KGM3 } from './descent-physics-constants';
 import { expandDescentProfile, type RawDescentProfile } from './descent-profile-registry';
 import { expectCloseTo, expectInRange } from '../../test-helpers/expect-close';
+
+// This file runs full multi-phase entry integrations, several per test. They
+// are NOT slow on their own — measured 2026-09-11: the whole file is 9.0s with
+// coverage enabled, in isolation. What breaks them is CPU starvation inside the
+// full 280-file `test:coverage` run, where the bank-solve test blew even the
+// 30s budget 0a2b51ac59 gave it. So the budget is file-level and generous:
+// contention, not a slow test, and the alternative is a gate that goes red on
+// machine load rather than on a defect. The sibling descent-profiles.test.ts
+// carries the same treatment for the same reason.
+vi.setConfig({ testTimeout: 60_000 });
 
 // ─── Archetype test profiles (one per EDL class) ────────────────────
 
@@ -370,10 +380,8 @@ describe('range-control entry guidance', () => {
     expect(down).toBeGreaterThan(up); // range traded against deceleration
   });
 
-  // Three bank-solve bisections = ~30 full entry integrations; under CI coverage
-  // instrumentation on a loaded runner this legitimately exceeds vitest's 5 s
-  // default (timed out on main 2026-09-01 after passing the identical code) —
-  // hence the explicit 30 s budget.
+  // Three bank-solve bisections = ~30 full entry integrations — the heaviest
+  // test here. Budget is file-level (see vi.setConfig above).
   it('the computer solves the bank to hit a reachable target downrange', () => {
     for (const target of [2600, 3000, 3400]) {
       const s = integrateDescent({ ...capsule, targetDownrangeKm: target });
@@ -382,7 +390,7 @@ describe('range-control entry guidance', () => {
       expect(s.guidance!.entryBankCos).toBeGreaterThanOrEqual(-1);
       expect(s.guidance!.entryBankCos).toBeLessThanOrEqual(1);
     }
-  }, 30_000);
+  });
 
   // Out-of-footprint solve runs the full bank-solve bisection (searching the whole
   // bank range before declaring 8000 km unreachable) — same ~30-integration cost as
@@ -393,7 +401,7 @@ describe('range-control entry guidance', () => {
     expect(s.guidance?.targetReachable).toBe(false);
     expect(s.landingDownrangeKm).toBeLessThan(8000); // clamped to full-lift-up max
     expect(s.touchdownSuccess).toBe(true); // still a real, survivable entry
-  }, 30_000);
+  });
 
   it('M4 guard: a target with no lift (no steering authority) is flagged, not faked', () => {
     // A profile carrying a target but zero L/D has a zero-width footprint — bank does nothing.

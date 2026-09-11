@@ -637,7 +637,14 @@
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/cape-canaveral-lc-36b/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 16000,
-      "location_uncertainty_m": 10
+      "location_uncertainty_m": 10,
+      "region_bounds": {
+        "lat_min": 28.4671,
+        "lat_max": 28.4717,
+        "lon_min": -80.54732,
+        "lon_max": -80.54208
+      },
+      "region_kind": "roi_quad"
     },
     "cape-canaveral-slc-40": {
       "hotspot_model": "launchpad-generic",
@@ -646,7 +653,14 @@
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/cape-canaveral-slc-40/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 16000,
-      "location_uncertainty_m": 10
+      "location_uncertainty_m": 10,
+      "region_bounds": {
+        "lat_min": 28.5595,
+        "lat_max": 28.5641,
+        "lon_min": -80.57982,
+        "lon_max": -80.57458
+      },
+      "region_kind": "roi_quad"
     },
     "cape-canaveral-slc-41": {
       "hotspot_model": "launchpad-generic",
@@ -655,7 +669,14 @@
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/cape-canaveral-slc-41/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 16000,
-      "location_uncertainty_m": 10
+      "location_uncertainty_m": 10,
+      "region_bounds": {
+        "lat_min": 28.5807,
+        "lat_max": 28.5853,
+        "lon_min": -80.58562,
+        "lon_max": -80.58038
+      },
+      "region_kind": "roi_quad"
     },
     "lc-14": {
       "hotspot_model": "launchpad-generic",
@@ -664,7 +685,14 @@
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/lc-14/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 16000,
-      "location_uncertainty_m": 10
+      "location_uncertainty_m": 10,
+      "region_bounds": {
+        "lat_min": 28.4891,
+        "lat_max": 28.4937,
+        "lon_min": -80.54792,
+        "lon_max": -80.54268
+      },
+      "region_kind": "roi_quad"
     },
     "lc-34": {
       "hotspot_model": "launchpad-generic",
@@ -673,7 +701,14 @@
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/lc-34/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 16000,
-      "location_uncertainty_m": 10
+      "location_uncertainty_m": 10,
+      "region_bounds": {
+        "lat_min": 28.5194,
+        "lat_max": 28.524,
+        "lon_min": -80.56402,
+        "lon_max": -80.55878
+      },
+      "region_kind": "roi_quad"
     },
     "lc-39a": {
       "hotspot_model": "launchpad-generic",
@@ -682,7 +717,14 @@
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/lc-39a/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 16000,
-      "location_uncertainty_m": 10
+      "location_uncertainty_m": 10,
+      "region_bounds": {
+        "lat_min": 28.6059,
+        "lat_max": 28.6105,
+        "lon_min": -80.60672,
+        "lon_max": -80.60148
+      },
+      "region_kind": "roi_quad"
     },
     "lc-39b": {
       "hotspot_model": "launchpad-generic",
@@ -691,7 +733,14 @@
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/lc-39b/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 16000,
-      "location_uncertainty_m": 10
+      "location_uncertainty_m": 10,
+      "region_bounds": {
+        "lat_min": 28.625,
+        "lat_max": 28.6296,
+        "lon_min": -80.62342,
+        "lon_max": -80.61818
+      },
+      "region_kind": "roi_quad"
     },
     "lc-5": {
       "hotspot_model": "launchpad-generic",
@@ -700,7 +749,14 @@
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/lc-5/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 16000,
-      "location_uncertainty_m": 10
+      "location_uncertainty_m": 10,
+      "region_bounds": {
+        "lat_min": 28.4355,
+        "lat_max": 28.4401,
+        "lon_min": -80.57542,
+        "lon_max": -80.57018
+      },
+      "region_kind": "roi_quad"
     },
     "starbase-orbital-a": {
       "hotspot_model": "launchpad-generic",
@@ -709,7 +765,14 @@
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/starbase-orbital-a/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 16000,
-      "location_uncertainty_m": 10
+      "location_uncertainty_m": 10,
+      "region_bounds": {
+        "lat_min": 25.9947,
+        "lat_max": 25.9993,
+        "lon_min": -97.15856,
+        "lon_max": -97.15344
+      },
+      "region_kind": "roi_quad"
     },
     "vandenberg-slc-4e": {
       "hotspot_model": "launchpad-generic",
@@ -739,7 +802,14 @@
           }
         ],
         "compass_zero_direction": "photo centre (true compass orientation not calibrated)"
-      }
+      },
+      "region_bounds": {
+        "lat_min": 34.6297,
+        "lat_max": 34.6343,
+        "lon_min": -120.61349,
+        "lon_max": -120.60791
+      },
+      "region_kind": "roi_quad"
     },
     "kourou-ela-2": {
       "hotspot_model": "launchpad-generic",
@@ -748,7 +818,14 @@
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/kourou-ela-2/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 16000,
-      "location_uncertainty_m": 10
+      "location_uncertainty_m": 10,
+      "region_bounds": {
+        "lat_min": 5.2297,
+        "lat_max": 5.2343,
+        "lon_min": -52.77831,
+        "lon_max": -52.77369
+      },
+      "region_kind": "roi_quad"
     },
     "kourou-ela-3": {
       "hotspot_model": "launchpad-generic",
@@ -757,7 +834,14 @@
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/kourou-ela-3/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 16000,
-      "location_uncertainty_m": 10
+      "location_uncertainty_m": 10,
+      "region_bounds": {
+        "lat_min": 5.2367,
+        "lat_max": 5.2413,
+        "lon_min": -52.77131,
+        "lon_max": -52.76669
+      },
+      "region_kind": "roi_quad"
     },
     "kourou-ela-4": {
       "hotspot_model": "launchpad-generic",
@@ -766,7 +850,14 @@
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/kourou-ela-4/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 16000,
-      "location_uncertainty_m": 10
+      "location_uncertainty_m": 10,
+      "region_bounds": {
+        "lat_min": 5.2337,
+        "lat_max": 5.2383,
+        "lon_min": -52.77731,
+        "lon_max": -52.77269
+      },
+      "region_kind": "roi_quad"
     },
     "tanegashima-yoshinobu": {
       "hotspot_model": "launchpad-generic",
@@ -775,7 +866,14 @@
       "hotspot_tier2_ground_m": 512,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/tanegashima-yoshinobu/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 16000,
-      "location_uncertainty_m": 10
+      "location_uncertainty_m": 10,
+      "region_bounds": {
+        "lat_min": 30.3984,
+        "lat_max": 30.403,
+        "lon_min": 130.97283,
+        "lon_max": 130.97817
+      },
+      "region_kind": "roi_quad"
     },
     "baikonur-1-5": {
       "hotspot_model": "launchpad-generic",
@@ -805,7 +903,14 @@
           }
         ],
         "compass_zero_direction": "photo centre (true compass orientation not calibrated)"
-      }
+      },
+      "region_bounds": {
+        "lat_min": 45.9085,
+        "lat_max": 45.9315,
+        "lon_min": 63.32547,
+        "lon_max": 63.35853
+      },
+      "region_kind": "roi_quad"
     },
     "baikonur-200": {
       "hotspot_model": "launchpad-generic",
@@ -814,7 +919,14 @@
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/baikonur-200/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 16000,
-      "location_uncertainty_m": 10
+      "location_uncertainty_m": 10,
+      "region_bounds": {
+        "lat_min": 46.0285,
+        "lat_max": 46.0515,
+        "lon_min": 63.01344,
+        "lon_max": 63.04656
+      },
+      "region_kind": "roi_quad"
     },
     "baikonur-31-6": {
       "hotspot_model": "launchpad-generic",
@@ -844,7 +956,14 @@
           }
         ],
         "compass_zero_direction": "photo centre (true compass orientation not calibrated)"
-      }
+      },
+      "region_bounds": {
+        "lat_min": 46.0593,
+        "lat_max": 46.0823,
+        "lon_min": 63.54823,
+        "lon_max": 63.58137
+      },
+      "region_kind": "roi_quad"
     },
     "gagarins-start": {
       "hotspot_model": "launchpad-generic",
@@ -853,7 +972,14 @@
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/gagarins-start/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 16000,
-      "location_uncertainty_m": 10
+      "location_uncertainty_m": 10,
+      "region_bounds": {
+        "lat_min": 45.9088,
+        "lat_max": 45.9318,
+        "lon_min": 63.32547,
+        "lon_max": 63.35853
+      },
+      "region_kind": "roi_quad"
     },
     "plesetsk-41-1": {
       "hotspot_model": "launchpad-generic",
@@ -862,7 +988,14 @@
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/plesetsk-41-1/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 16000,
-      "location_uncertainty_m": 10
+      "location_uncertainty_m": 10,
+      "region_bounds": {
+        "lat_min": 62.9185,
+        "lat_max": 62.9415,
+        "lon_min": 40.42473,
+        "lon_max": 40.47527
+      },
+      "region_kind": "roi_quad"
     },
     "plesetsk-43": {
       "hotspot_model": "launchpad-generic",
@@ -871,7 +1004,14 @@
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/plesetsk-43/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 16000,
-      "location_uncertainty_m": 10
+      "location_uncertainty_m": 10,
+      "region_bounds": {
+        "lat_min": 62.9155,
+        "lat_max": 62.9385,
+        "lon_min": 40.54974,
+        "lon_max": 40.60026
+      },
+      "region_kind": "roi_quad"
     },
     "jiuquan-slc-43": {
       "hotspot_model": "launchpad-generic",
@@ -901,7 +1041,14 @@
           }
         ],
         "compass_zero_direction": "photo centre (true compass orientation not calibrated)"
-      }
+      },
+      "region_bounds": {
+        "lat_min": 40.9488,
+        "lat_max": 40.9718,
+        "lon_min": 100.28337,
+        "lon_max": 100.31383
+      },
+      "region_kind": "roi_quad"
     },
     "taiyuan-lc-9": {
       "hotspot_model": "launchpad-generic",
@@ -910,7 +1057,14 @@
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/taiyuan-lc-9/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 16000,
-      "location_uncertainty_m": 10
+      "location_uncertainty_m": 10,
+      "region_bounds": {
+        "lat_min": 38.8375,
+        "lat_max": 38.8605,
+        "lon_min": 111.59324,
+        "lon_max": 111.62276
+      },
+      "region_kind": "roi_quad"
     },
     "wenchang-lc-101": {
       "hotspot_model": "launchpad-generic",
@@ -940,7 +1094,14 @@
           }
         ],
         "compass_zero_direction": "photo centre (true compass orientation not calibrated)"
-      }
+      },
+      "region_bounds": {
+        "lat_min": 19.6032,
+        "lat_max": 19.6262,
+        "lon_min": 110.93919,
+        "lon_max": 110.96361
+      },
+      "region_kind": "roi_quad"
     },
     "xichang-lc-2": {
       "hotspot_model": "launchpad-generic",
@@ -949,7 +1110,14 @@
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/xichang-lc-2/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 16000,
-      "location_uncertainty_m": 10
+      "location_uncertainty_m": 10,
+      "region_bounds": {
+        "lat_min": 28.2345,
+        "lat_max": 28.2575,
+        "lon_min": 102.01395,
+        "lon_max": 102.04005
+      },
+      "region_kind": "roi_quad"
     },
     "xichang-lc-3": {
       "hotspot_model": "launchpad-generic",
@@ -958,7 +1126,14 @@
       "hotspot_tier2_ground_m": 2560,
       "hotspot_tier2_regional_source": "/images/hotspots/earth/xichang-lc-3/tier2-regional.jpg",
       "hotspot_tier2_regional_ground_m": 16000,
-      "location_uncertainty_m": 10
+      "location_uncertainty_m": 10,
+      "region_bounds": {
+        "lat_min": 28.2345,
+        "lat_max": 28.2575,
+        "lon_min": 102.01395,
+        "lon_max": 102.04005
+      },
+      "region_kind": "roi_quad"
     },
     "sriharikota-slp": {
       "hotspot_model": "launchpad-generic",
@@ -988,7 +1163,14 @@
           }
         ],
         "compass_zero_direction": "photo centre (true compass orientation not calibrated)"
-      }
+      },
+      "region_bounds": {
+        "lat_min": 13.7246,
+        "lat_max": 13.7476,
+        "lon_min": 80.22356,
+        "lon_max": 80.24724
+      },
+      "region_kind": "roi_quad"
     }
   }
 }

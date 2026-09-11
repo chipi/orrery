@@ -3031,5 +3031,10 @@
   "privacy_logs_body": "Aparte de los análisis, los registros de acceso ordinarios del servidor web registran cada solicitud — incluyendo tu dirección IP, la página solicitada y el user-agent de tu navegador. Lo mismo ocurre en el perímetro para el punto final de análisis. Estos son registros operativos estándar mantenidos en nuestra propia infraestructura para depuración y manejo de abusos: el almacén de registros los conserva hasta 30 días, y los registros del perímetro rotan por tamaño en lugar de por antigüedad. No están vinculados a los datos de análisis, no se utilizan para crear un perfil, y la exclusión voluntaria a continuación no los desactiva — servir una página no puede ocurrir sin ellos. Cloudflare, que está delante del sitio, también puede mantener sus propios registros de conexión según su política.",
   "privacy_optout_checking": "Comprobando tu configuración actual…",
   "colophon_toc_label": "Contenidos",
-  "science_layer_mass_period_desc": "Todos los exoplanetas conocidos con masa medida, representados por período orbital — Júpiteres calientes, supertierras y subneptunos forman familias visibles. Los planetas de este sistema están destacados."
+  "science_layer_mass_period_desc": "Todos los exoplanetas conocidos con masa medida, representados por período orbital — Júpiteres calientes, supertierras y subneptunos forman familias visibles. Los planetas de este sistema están destacados.",
+  "explore_lens_story_bh_title": "Espaciotiempo, curvado hasta el límite",
+  "explore_lens_story_bh_body": "Este render traza trayectorias de luz reales (geodésicas) alrededor del agujero negro — el anillo es la cara lejana del disco, lensada sobre la parte superior. Las capas añaden una malla de curvatura y una tabla de cuánto más lentamente transcurre el tiempo en el fondo del pozo.",
+  "science_layer_bh_curvature_desc": "Una malla de espaciotiempo deformada por las mismas geodésicas que curvan la luz — una analogía de la curvatura, no una superficie literal.",
+  "science_layer_bh_time_desc": "Cuánto más lentamente transcurre el tiempo en la esfera de fotones, la órbita estable más interna y más allá — dilatación gravitatoria del tiempo, cuantificada.",
+  "star_index_black_holes": "Agujeros negros"
 }

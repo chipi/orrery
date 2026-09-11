@@ -13,13 +13,18 @@
   import type { NamedStar } from '$lib/data';
 
   type Filter = 'all' | 'planets' | 'culture';
+  type BlackHoleRow = { id: string; name: string };
   type Props = {
     stars: NamedStar[];
     open: boolean;
     selectedId: string | null;
     hostIds?: Set<string>;
     cultureIds?: Set<string>;
+    /** Black holes reachable from the index (2026-09-11 — before this the
+     *  lensing takeovers had no in-app entry beyond the Sgr A* pin). */
+    blackHoles?: BlackHoleRow[];
     onSelect: (id: string) => void;
+    onSelectBlackHole?: (id: string) => void;
     onClose: () => void;
   };
   let {
@@ -28,7 +33,9 @@
     selectedId,
     hostIds = new Set(),
     cultureIds = new Set(),
+    blackHoles = [],
     onSelect,
+    onSelectBlackHole,
     onClose,
   }: Props = $props();
 
@@ -46,6 +53,14 @@
         s.proper.toLowerCase().includes(q) ||
         (s.con ? constellationName(s.con).toLowerCase().includes(q) : false),
     );
+  });
+  // Black holes honour the search box but not the star-specific filters
+  // (planets/culture) — the section simply hides on those.
+  let filteredBlackHoles = $derived.by(() => {
+    if (filter !== 'all') return [];
+    const q = query.trim().toLowerCase();
+    if (!q) return blackHoles;
+    return blackHoles.filter((b) => b.name.toLowerCase().includes(q));
   });
 </script>
 
@@ -106,8 +121,21 @@
           </button>
         </li>
       {/each}
-      {#if filtered.length === 0}
+      {#if filtered.length === 0 && filteredBlackHoles.length === 0}
         <li class="si-empty">{m.star_index_no_match({ query })}</li>
+      {/if}
+      {#if filteredBlackHoles.length > 0}
+        <li class="si-section" aria-hidden="true">{m.star_index_black_holes()}</li>
+        {#each filteredBlackHoles as b (b.id)}
+          <li>
+            <button type="button" class="si-row" onclick={() => onSelectBlackHole?.(b.id)}>
+              <span class="si-badges" aria-hidden="true"
+                ><span class="si-badge bh" title={m.star_index_black_holes()}>●</span></span
+              >
+              <span class="si-name">{b.name}</span>
+            </button>
+          </li>
+        {/each}
       {/if}
     </ul>
   </aside>
@@ -244,6 +272,19 @@
   }
   .si-badge.culture {
     color: #d3a4ff;
+  }
+  .si-badge.bh {
+    color: #f0a35e;
+  }
+  .si-section {
+    padding: 10px 10px 4px;
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-dim, #9a9aa7);
+    border-top: 1px solid var(--border-subtle, #23232e);
+    margin-top: 6px;
   }
   .si-name {
     flex: 1;

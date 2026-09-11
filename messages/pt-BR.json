@@ -3031,5 +3031,10 @@
   "privacy_logs_body": "Separadamente da análise, os logs de acesso ordinários do servidor web registram cada solicitação — incluindo seu endereço IP, a página solicitada e o user-agent do seu navegador. O mesmo vale para o edge do ponto de extremidade de análise. Esses são logs operacionais padrão mantidos em nossa própria infraestrutura para depuração e tratamento de abuso: o armazenamento de logs os mantém por até 30 dias, e os logs edge rotacionam por tamanho em vez de idade. Eles não são conectados aos dados de análise, não são usados para criar um perfil, e a opção de exclusão abaixo não os desativa — servir uma página não é possível sem eles. Cloudflare, que está na frente do site, também pode manter seus próprios logs de conexão conforme sua política.",
   "privacy_optout_checking": "Verificando sua configuração atual…",
   "colophon_toc_label": "Conteúdo",
-  "science_layer_mass_period_desc": "Todos os exoplanetas conhecidos com massa medida, plotados por período orbital — Júpiteres quentes, super-Terras e sub-Netunos caem em famílias visíveis. Os planetas deste sistema estão destacados."
+  "science_layer_mass_period_desc": "Todos os exoplanetas conhecidos com massa medida, plotados por período orbital — Júpiteres quentes, super-Terras e sub-Netunos caem em famílias visíveis. Os planetas deste sistema estão destacados.",
+  "explore_lens_story_bh_title": "Espaçotempo, curvado até o limite",
+  "explore_lens_story_bh_body": "Esta renderização traça caminhos de luz reais (geodésicas) ao redor do buraco negro — o anel é o lado distante do disco, lensado sobre o topo. As camadas adicionam uma grade de curvatura e uma tabela de quanto mais lentamente os relógios marcam o tempo neste poço profundo.",
+  "science_layer_bh_curvature_desc": "Uma grade de espaçotempo distorcida pelas mesmas geodésicas que curvam a luz — uma analogia para curvatura, não uma superfície literal.",
+  "science_layer_bh_time_desc": "Quanto mais lentamente os relógios marcam o tempo na esfera de fótons, na órbita estável mais interna e mais afastado — dilatação gravitacional do tempo, quantificada.",
+  "star_index_black_holes": "Buracos negros"
 }

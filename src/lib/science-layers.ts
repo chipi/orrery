@@ -60,7 +60,9 @@ export type LayerKey =
   | 'rotation-curve' // Q5 — Milky Way rotation curve overlay
   | 'dark-matter-halo' // Q6 — Milky Way dark-matter halo overlay
   | 'stellar-populations' // Q7 — Milky Way stellar-population (disc/halo/bulge) overlay
-  | 'mass-period'; // Q8 — exoplanet mass–period plot (body-scene; was a bespoke chip, 2026-09-11)
+  | 'mass-period' // Q8 — exoplanet mass–period plot (body-scene; was a bespoke chip, 2026-09-11)
+  | 'bh-curvature' // Q9 — black-hole spacetime-curvature grid (takeover; was a bespoke chip)
+  | 'bh-time-dilation'; // Q10 — black-hole time-dilation table (takeover; was a bespoke chip)
 
 /** All layers in canonical display order — used by the UI panel. */
 export const LAYER_ORDER: readonly LayerKey[] = [
@@ -105,6 +107,8 @@ export const LAYER_ORDER: readonly LayerKey[] = [
   'dark-matter-halo',
   'stellar-populations',
   'mass-period',
+  'bh-curvature',
+  'bh-time-dilation',
 ];
 
 /** Default visibility when the lens first activates. Sensible "starter
@@ -152,6 +156,8 @@ export const LAYER_DEFAULTS: Record<LayerKey, boolean> = {
   'dark-matter-halo': false,
   'stellar-populations': false,
   'mass-period': false,
+  'bh-curvature': false,
+  'bh-time-dilation': false,
 };
 
 const ATTR_PREFIX = 'data-science-layer-';

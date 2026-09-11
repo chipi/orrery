@@ -60,7 +60,10 @@ describe('science-layers — config', () => {
     // teaching layers unified into the science lens: constellations, deep-sky,
     // hr-diagram, light-cones (neighbourhood) + rotation-curve, dark-matter-halo,
     // stellar-populations (Milky Way).
-    expect(LAYER_ORDER.length).toBe(39);
+    // 40th–42nd added 2026-09-11 finishing that unification — the last
+    // bespoke chips became layers: mass-period (exoplanet body-scene) +
+    // bh-curvature / bh-time-dilation (black-hole takeover).
+    expect(LAYER_ORDER.length).toBe(42);
   });
 });
 

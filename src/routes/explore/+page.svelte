@@ -44,6 +44,7 @@
     getSun,
     getMissionIndex,
     getMission,
+    getBlackHoles,
     type MilkyWayObject,
     type LocalGroupMember,
     type LocalSheetMember,
@@ -304,6 +305,9 @@
 
   // /explore v2 Slice 1 — named-star selection + the anonymous-star tap readout.
   let namedStars = $state<NamedStar[]>([]);
+  // 2026-09-11 — black holes in the index rail: before this the lensing
+  // takeovers had no in-app entry beyond the Sgr A* pin (?bh= URLs only).
+  let blackHoleIndex = $state<Array<{ id: string; name: string }>>([]);
   // Slice 2 — the exoplanet selected inside a BodyScene (drives ExoplanetPanel).
   let selectedExoplanet = $state<{
     planet: ExoplanetPlanet;
@@ -948,6 +952,18 @@
     historicalFoundations?: Array<{ tab: ScienceTabId; section: string; label: string }>;
   };
   let lensPanel = $derived.by((): LensPanelProps => {
+    // Black-hole takeover overrides whatever shell it was entered from
+    // (2026-09-11 consistency audit): its two physics lenses (curvature
+    // grid + time dilation) are standard layers now, not bespoke chips.
+    if (activeBlackHole) {
+      return {
+        title: m.explore_lens_story_bh_title(),
+        body: m.explore_lens_story_bh_body(),
+        tab: 'observation',
+        section: 'black-holes',
+        available: ['bh-curvature', 'bh-time-dilation'],
+      };
+    }
     switch (contextId) {
       case 'neighborhood':
         return {
@@ -1766,6 +1782,19 @@
         massPeriodOpen = on;
       }),
     );
+    // Black-hole physics lenses — layer-driven since the same audit
+    // (were bespoke chips gated only on the takeover, not on the lens).
+    addLayerWatch(
+      onLayerChange('bh-curvature', (on) => {
+        bhCurvatureLens = on;
+        setBhCurvatureFn?.(on);
+      }),
+    );
+    addLayerWatch(
+      onLayerChange('bh-time-dilation', (on) => {
+        bhTimeLens = on;
+      }),
+    );
 
     // Async-load localised planet + sun data; safe to run alongside scene setup.
     const initialLocale = localeFromPage(page);
@@ -1779,6 +1808,12 @@
         localizedSun = s;
       })
       .catch((err) => console.error('Failed to load sun:', err));
+    // Black holes for the index rail (2026-09-11) — small manifest, no locale.
+    getBlackHoles()
+      .then((holes) => {
+        blackHoleIndex = holes.map((h) => ({ id: h.id, name: h.name }));
+      })
+      .catch((err) => console.error('Failed to load black holes:', err));
 
     // ──────────────────────────────────────────────────────────────
     // 3D — Three.js scene
@@ -2717,31 +2752,9 @@
   {#if view === '3d' && activeBlackHole}
     <div class="mw-badge" role="note">{m.explore_bh_lensing_badge()}</div>
 
-    <!-- Physics lenses (curvature grid + time dilation) — toggles bottom-left. -->
-    <div class="nb-controls">
-      <button
-        type="button"
-        class="nb-chip"
-        class:active={bhCurvatureLens}
-        aria-pressed={bhCurvatureLens}
-        onclick={() => {
-          bhCurvatureLens = !bhCurvatureLens;
-          setBhCurvatureFn?.(bhCurvatureLens);
-        }}
-      >
-        {m.explore_lens_curvature()}
-      </button>
-      <button
-        type="button"
-        class="nb-chip"
-        class:active={bhTimeLens}
-        aria-pressed={bhTimeLens}
-        onclick={() => (bhTimeLens = !bhTimeLens)}
-      >
-        {m.explore_lens_time()}
-      </button>
-    </div>
-
+    <!-- The curvature/time toggles moved into the science-lens panel
+         (2026-09-11 audit) — bh-curvature / bh-time-dilation layers; the
+         note + table below are the layers' rendered content. -->
     {#if bhCurvatureLens}
       <div class="lens-note" role="note">{m.explore_lens_curvature_note()}</div>
     {/if}
@@ -2792,7 +2805,12 @@
       selectedId={selectedStarId}
       hostIds={exoplanetHostIds}
       cultureIds={cultureObjectIds}
+      blackHoles={blackHoleIndex}
       onSelect={(id) => indexSelectStarFn?.(id)}
+      onSelectBlackHole={(id) => {
+        starIndexOpen = false;
+        bhDeepLinkFn?.(id);
+      }}
       onClose={() => (starIndexOpen = false)}
     />
   {/if}
@@ -3830,14 +3848,19 @@
      Local Group + Local Sheet carry the lens-story + → science link ahead of their
      per-tier overlays (WS-5). Service chips (planets/dwarfs/comets/…) stay in the
      HUD; only teaching layers live here. -->
-<ScienceLayersPanel
-  title={lensPanel.title}
-  body={lensPanel.body}
-  tab={lensPanel.tab}
-  section={lensPanel.section}
-  available={lensPanel.available}
-  historicalFoundations={lensPanel.historicalFoundations}
-/>
+<!-- 3D only (2026-09-11 consistency audit): every layer consumer + the three
+     property-space charts live in the 3D scenes — in the 2D schematic the
+     panel's toggles were dead switches. -->
+{#if view === '3d'}
+  <ScienceLayersPanel
+    title={lensPanel.title}
+    body={lensPanel.body}
+    tab={lensPanel.tab}
+    section={lensPanel.section}
+    available={lensPanel.available}
+    historicalFoundations={lensPanel.historicalFoundations}
+  />
+{/if}
 
 <style>
   .explore {
@@ -4058,54 +4081,8 @@
     color: #aab6cc;
     border-color: rgba(154, 166, 189, 0.6);
   }
-  .nb-controls {
-    position: absolute;
-    left: 12px;
-    bottom: 16px;
-    z-index: 6;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    /* Cap to the viewport so the 4-chip row wraps instead of overflowing the
-       right edge on narrow screens (bottom-anchored → wrapped rows stack up). */
-    max-width: calc(100vw - 24px);
-  }
-  .nb-chip {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    font-size: 11px;
-    letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.7);
-    background: rgba(6, 10, 22, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    border-radius: 5px;
-    padding: 7px 12px;
-    cursor: pointer;
-    backdrop-filter: blur(5px);
-    min-height: 34px;
-  }
-  .nb-chip.active {
-    color: #04121a;
-    background: #4ecdc4;
-    border-color: #4ecdc4;
-    font-weight: 700;
-  }
-  .nb-chip:hover:not(.active) {
-    border-color: rgba(78, 205, 196, 0.5);
-  }
-  /* Mobile: the bottom band is shared with the scale-HUD (bottom-right), so keep
-     the toggles compact + capped to the left column — they wrap into a tidy block
-     clear of the HUD instead of sliding underneath it. */
-  @media (max-width: 600px) {
-    .nb-controls {
-      max-width: 50vw;
-    }
-    .nb-chip {
-      font-size: 10px;
-      letter-spacing: 0.5px;
-      padding: 6px 9px;
-      min-height: 30px;
-    }
-  }
+  /* .nb-controls/.nb-chip removed 2026-09-11 — the black-hole curvature/time
+     chips (their last consumer) moved into the science-lens layer panel. */
 
   /* Slice 5 — Milky Way honesty badge (bottom-centre pill). */
   .mw-badge {

@@ -2063,7 +2063,12 @@
     "privacy_logs_body": "विश्लेषण से अलग, साधारण वेब-सर्वर एक्सेस लॉग हर अनुरोध को रिकॉर्ड करते हैं — आपके IP पते, अनुरोधी पृष्ठ, और आपके ब्राउज़र के user-agent सहित। विश्लेषण अंतिम बिंदु के लिए किनारे पर भी यही सच है। ये मानक परिचालनात्मक लॉग हैं जो डिबग करने और दुरुपयोग सामना करने के लिए हमारी अपनी अवसंरचना पर रखे जाते हैं: लॉग स्टोर उन्हें 30 दिनों तक रखता है, और किनारे के लॉग आयु के बजाय आकार से घूमते हैं। ये विश्लेषण डेटा से जुड़े नहीं हैं, प्रोफ़ाइल बनाने के लिए उपयोग नहीं किए जाते हैं, और नीचे दिया गया ऑप्ट-आउट उन्हें बंद नहीं करता है — एक पृष्ठ परोसना उन्हें बिना नहीं हो सकता। Cloudflare, जो साइट के सामने है, अपनी नीति के तहत अपने स्वयं के कनेक्शन लॉग भी रख सकता है।",
     "privacy_optout_checking": "आपकी वर्तमान सेटिंग जाँच जा रही है…",
     "colophon_toc_label": "विषयवस्तु",
-    "science_layer_mass_period_desc": "प्रत्येक ज्ञात एक्सोप्लैनेट जिसका मापा हुआ द्रव्यमान है, कक्षीय अवधि के अनुसार प्लॉट किया गया — हॉट जुपिटर, सुपर-अर्थ और सब-नेप्च्यून दृश्यमान परिवारों में आते हैं। इस प्रणाली के ग्रह हाइलाइट किए गए हैं।"
+    "science_layer_mass_period_desc": "प्रत्येक ज्ञात एक्सोप्लैनेट जिसका मापा हुआ द्रव्यमान है, कक्षीय अवधि के अनुसार प्लॉट किया गया — हॉट जुपिटर, सुपर-अर्थ और सब-नेप्च्यून दृश्यमान परिवारों में आते हैं। इस प्रणाली के ग्रह हाइलाइट किए गए हैं।",
+    "explore_lens_story_bh_title": "अंतरिक्ष-काल, टूटने तक मुड़ा हुआ",
+    "explore_lens_story_bh_body": "यह रेंडर ब्लैक होल के चारों ओर वास्तविक प्रकाश पथ (जियोडेसिक्स) को ट्रेस करता है — वलय डिस्क का दूर पक्ष है, शीर्ष पर लेंस किया गया। परतें एक वक्रता ग्रिड और एक तालिका जोड़ती हैं कि इस गहराई में घड़ियां कितनी धीरे चलती हैं।",
+    "science_layer_bh_curvature_desc": "एक अंतरिक्ष-काल ग्रिड जो उसी जियोडेसिक्स द्वारा विकृत है जो प्रकाश को मोड़ते हैं — वक्रता के लिए एक सादृश्य, शाब्दिक सतह नहीं।",
+    "science_layer_bh_time_desc": "फोटॉन क्षेत्र, सबसे आंतरिक स्थिर कक्षा, और उससे आगे घड़ियां कितनी धीरे चलती हैं — गुरुत्वाकर्षण समय-विस्तार, परिमाणित।",
+    "star_index_black_holes": "कृष्ण विवर"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -3991,7 +3996,12 @@
     "privacy_optout_checking": "現在の設定を確認中…",
     "credits_storage_fine": "{sessionStorage}、IndexedDB、またはサードパーティトラッカーはありません。3つの{localStorage}キー（`orrery.qualityTier`（グラフィックス品質）、デバッグモードフラグ、オフラインダウンロード記録）はデバイスローカル設定を保持していますが、どれもあなたのデバイスから外に出ません。その他全て — 聴いたエピソード、ミッションフィルター、Science Lens — はメモリ内にのみ保持され、リロード時にリセットされます。",
     "colophon_toc_label": "目次",
-    "science_layer_mass_period_desc": "測定された質量を持つ既知の系外惑星すべてを公転周期でプロット — ホットジュピター、スーパーアース、サブネプチューンが目に見える族を形成します。このシステムの惑星はハイライトされています。"
+    "science_layer_mass_period_desc": "測定された質量を持つ既知の系外惑星すべてを公転周期でプロット — ホットジュピター、スーパーアース、サブネプチューンが目に見える族を形成します。このシステムの惑星はハイライトされています。",
+    "explore_lens_story_bh_title": "時空、破裂寸前に湾曲",
+    "explore_lens_story_bh_body": "このレンダリングはブラックホール周辺の実光路（測地線）をたどります。リングはディスクの遠方側で、上方にレンズされています。レイヤーは曲率グリッドと、この深い重力井戸でのクロック進行速度の低下を示す表を追加します。",
+    "science_layer_bh_curvature_desc": "光を曲げるのと同じ測地線によって歪められた時空グリッド。曲率のアナロジーであり、文字通りの表面ではありません。",
+    "science_layer_bh_time_desc": "光子球、最内安定軌道、さらに外側でのクロック進行速度の低下度合い。重力時間膨張を定量化したものです。",
+    "star_index_black_holes": "ブラックホール"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -6098,7 +6108,12 @@
     "privacy_logs_body": "بمعزل عن قياس الاستخدام، تسجل سجلات الوصول العادية لخادم الويب كل طلب — بما فيه عنوان IP الخاص بك والصفحة المطلوبة وبرنامج تصفح المستخدم الخاص بك. الشيء نفسه ينطبق على الحافة للنقطة النهائية لقياس الاستخدام. هذه سجلات تشغيلية قياسية محفوظة على بنيتنا التحتية الخاصة لأغراض التصحيح والتعامل مع الإساءة: يحتفظ مخزن السجلات بها لمدة تصل إلى 30 يومًا، وسجلات الحافة تدور حسب الحجم وليس العمر. لا يتم دمجها مع بيانات قياس الاستخدام، ولا تُستخدم لبناء ملف شخصي، والإيقاف أدناه لا يوقفها — فخدمة الصفحة لا يمكن أن تحدث بدونها. قد تحتفظ Cloudflare، التي توجد أمام الموقع، بسجلات الاتصال الخاصة بها أيضًا بموجب سياستها.",
     "privacy_optout_checking": "جارٍ التحقق من الإعداد الحالي…",
     "colophon_toc_label": "المحتويات",
-    "science_layer_mass_period_desc": "كل كوكب خارج الشمس معروف له كتلة مقاسة، مرسوم حسب الدورة المدارية — المشتريات الحارة والأراضي العملاقة والنبتونات الفرعية تقع في عائلات مرئية. يتم تمييز كواكب هذا النظام."
+    "science_layer_mass_period_desc": "كل كوكب خارج الشمس معروف له كتلة مقاسة، مرسوم حسب الدورة المدارية — المشتريات الحارة والأراضي العملاقة والنبتونات الفرعية تقع في عائلات مرئية. يتم تمييز كواكب هذا النظام.",
+    "explore_lens_story_bh_title": "الزمكان، منحنٍ حتى الانكسار",
+    "explore_lens_story_bh_body": "يتتبع هذا الرسم مسارات الضوء الحقيقية (الجيوديسيات) حول الثقب الأسود — الحلقة هي الجانب البعيد من القرص، منحنٍ فوق القمة. تضيف الطبقات شبكة انحناء وجدولاً يوضح مدى بطء الساعات في هذا العمق من البئر.",
+    "science_layer_bh_curvature_desc": "شبكة زمكان مشوهة بنفس الجيوديسيات التي تنحني الضوء — تمثيل للانحناء، وليس سطحاً حرفياً.",
+    "science_layer_bh_time_desc": "مدى بطء الساعات عند كرة الفوتون والمدار الثابت الأقرب والأماكن البعيدة — تمدد الزمن الثقالي، معبراً عنه كمياً.",
+    "star_index_black_holes": "الثقوب السوداء"
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -8028,7 +8043,12 @@
     "privacy_optout_checking": "현재 설정을 확인 중입니다…",
     "credits_storage_fine": "{sessionStorage}, IndexedDB, 또는 제3자 추적기가 없습니다. 3개의 {localStorage} 키가 기기 로컬 설정을 보관합니다 — `orrery.qualityTier`(그래픽 품질), 디버그 모드 플래그, 오프라인 다운로드 레코드 — 모두 기기를 떠나지 않습니다. 그 외 모든 것 — 들은 에피소드, 미션 필터, Science Lens — 메모리에만 보관되고 새로고침 시 초기화됩니다.",
     "colophon_toc_label": "목차",
-    "science_layer_mass_period_desc": "측정된 질량을 가진 모든 알려진 외계행성을 공전 주기별로 표시한 것입니다. 목성형 행성, 슈퍼지구, 미니 해왕성 등이 명확한 그룹을 형성합니다. 이 시스템의 행성들이 강조되어 있습니다."
+    "science_layer_mass_period_desc": "측정된 질량을 가진 모든 알려진 외계행성을 공전 주기별로 표시한 것입니다. 목성형 행성, 슈퍼지구, 미니 해왕성 등이 명확한 그룹을 형성합니다. 이 시스템의 행성들이 강조되어 있습니다.",
+    "explore_lens_story_bh_title": "휘어진 시공간, 극한까지",
+    "explore_lens_story_bh_body": "이 렌더링은 블랙홀 주위의 실제 광선 경로(측지선)를 추적합니다 — 고리는 디스크의 반대편으로, 위쪽으로 렌즈됩니다. 레이어는 곡률 격자와 중력정의 깊은 곳에서 시계가 얼마나 느리게 움직이는지 보여주는 표를 더합니다.",
+    "science_layer_bh_curvature_desc": "빛을 구부리는 동일한 측지선에 의해 휘어진 시공간 격자 — 곡률의 유추이지, 문자 그대로의 표면이 아닙니다.",
+    "science_layer_bh_time_desc": "광자구, 가장 안쪽의 안정 궤도, 그리고 그 너머에서 시계가 얼마나 느리게 움직이는지 — 중력 시간 팽창, 정량화됨.",
+    "star_index_black_holes": "검은 구멍"
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -9780,7 +9800,12 @@
     "privacy_optout_checking": "Aktuelle Einstellung wird überprüft…",
     "credits_storage_fine": "Kein {sessionStorage}, IndexedDB oder Third-Party-Tracker. Drei {localStorage}-Schlüssel speichern gerätespezifische Einstellungen — `orrery.qualityTier` (Grafikqualität), das Debug-Modus-Flag und den Offline-Download-Datensatz — nichts davon verlässt Ihr Gerät. Alles andere — gehörte Episoden, Missionsfilter, Science Lens — wird nur im Speicher gespeichert und setzt sich beim Neuladen zurück.",
     "colophon_toc_label": "Inhaltsverzeichnis",
-    "science_layer_mass_period_desc": "Alle bekannten Exoplaneten mit gemessener Masse, aufgetragen nach Umlaufperiode — Hot Jupiter, Super-Erden und Sub-Neptune bilden sichtbare Familien. Die Planeten dieses Systems sind hervorgehoben."
+    "science_layer_mass_period_desc": "Alle bekannten Exoplaneten mit gemessener Masse, aufgetragen nach Umlaufperiode — Hot Jupiter, Super-Erden und Sub-Neptune bilden sichtbare Familien. Die Planeten dieses Systems sind hervorgehoben.",
+    "explore_lens_story_bh_title": "Raumzeit, bis zum Zerreißen gekrümmt",
+    "explore_lens_story_bh_body": "Diese Darstellung verfolgt echte Lichtwege (Geodäten) um das schwarze Loch — der Ring ist die Rückseite der Scheibe, über die Oberseite linsenförmig verzerrt. Die Ebenen zeigen ein Krümmungsgitter und eine Tabelle, wie viel langsamer die Uhren so tief im Gravitationspotenzial gehen.",
+    "science_layer_bh_curvature_desc": "Ein Raumzeitgitter, verzerrt durch dieselben Geodäten, die das Licht krümmen — eine Analogie für Krümmung, keine buchstäbliche Oberfläche.",
+    "science_layer_bh_time_desc": "Wie viel langsamer die Uhren an der Photonensphäre, der innersten stabilen Umlaufbahn und weiter außen gehen — Gravitationszeitdilatation, quantifiziert.",
+    "star_index_black_holes": "Schwarze Löcher"
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -11472,7 +11497,12 @@
     "privacy_optout_checking": "Vérification de votre paramètre actuel…",
     "credits_storage_fine": "Pas de {sessionStorage}, IndexedDB ou traceurs tiers. Trois clés {localStorage} conservent des paramètres locaux au dispositif — `orrery.qualityTier` (qualité graphique), l'indicateur de mode débogage et l'enregistrement de téléchargement hors ligne — aucune ne quitte votre dispositif. Tout le reste — épisodes écoutés, filtres de mission, Science Lens — est conservé en mémoire uniquement et réinitialise au rechargement.",
     "colophon_toc_label": "Sommaire",
-    "science_layer_mass_period_desc": "Chaque exoplanète connue avec une masse mesurée, tracée en fonction de sa période orbitale — les Jupiters chauds, super-Terres et sub-Neptunes forment des familles distinctes. Les planètes de ce système sont en évidence."
+    "science_layer_mass_period_desc": "Chaque exoplanète connue avec une masse mesurée, tracée en fonction de sa période orbitale — les Jupiters chauds, super-Terres et sub-Neptunes forment des familles distinctes. Les planètes de ce système sont en évidence.",
+    "explore_lens_story_bh_title": "L'espace-temps, courbé à se rompre",
+    "explore_lens_story_bh_body": "Ce rendu trace les chemins réels de la lumière (géodésiques) autour du trou noir — l'anneau est le côté lointain du disque, lensé par-dessus le sommet. Les couches ajoutent une grille de courbure et un tableau montrant de combien les horloges ralentissent au plus profond du puits.",
+    "science_layer_bh_curvature_desc": "Une grille d'espace-temps déformée par les mêmes géodésiques qui courbent la lumière — une analogie pour la courbure, pas une surface littérale.",
+    "science_layer_bh_time_desc": "De combien les horloges ralentissent à la sphère de photons, à l'orbite stable la plus interne, et plus loin — la dilatation gravitationnelle du temps, quantifiée.",
+    "star_index_black_holes": "Trous noirs"
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -13131,7 +13161,12 @@
     "privacy_optout_checking": "Verifica dell'impostazione attuale in corso…",
     "credits_storage_fine": "No {sessionStorage}, IndexedDB o tracker di terze parti. Tre chiavi {localStorage} contengono impostazioni locali del dispositivo — `orrery.qualityTier` (qualità grafica), il flag modalità debug e il record di download offline — nessuna delle quali esce dal tuo dispositivo. Tutto il resto — episodi ascoltati, filtri missioni, Science Lens — è mantenuto solo in memoria e si reimposta al ricaricamento.",
     "colophon_toc_label": "Contenuti",
-    "science_layer_mass_period_desc": "Ogni esopianeta noto con massa misurata, rappresentato in base al periodo orbitale — hot Jupiter, super-Terre e sub-Nettuni ricadono in famiglie distinte. I pianeti di questo sistema sono evidenziati."
+    "science_layer_mass_period_desc": "Ogni esopianeta noto con massa misurata, rappresentato in base al periodo orbitale — hot Jupiter, super-Terre e sub-Nettuni ricadono in famiglie distinte. I pianeti di questo sistema sono evidenziati.",
+    "explore_lens_story_bh_title": "Spacetime, piegato fino a rompersi",
+    "explore_lens_story_bh_body": "Questo render traccia i veri percorsi della luce (geodetiche) intorno al buco nero — l'anello è il lato opposto del disco, lensato sopra. Gli strati aggiungono una griglia di curvatura e una tabella di quanto più lentamente gli orologi scandiscono il tempo a questa profondità nel pozzo.",
+    "science_layer_bh_curvature_desc": "Una griglia dello spacetime deformata dalle stesse geodetiche che piegano la luce — un'analogia per la curvatura, non una superficie letterale.",
+    "science_layer_bh_time_desc": "Quanto più lentamente gli orologi scandiscono il tempo alla sfera dei fotoni, all'orbita stabile più interna, e oltre — dilatazione gravitazionale del tempo, quantificata.",
+    "star_index_black_holes": "Buchi neri"
   },
   "es": {
     "mars_meta_description": "Todo artefacto que la humanidad ha colocado en Marte — aterrizadores, rovers y orbitadores activos — en un globo 3D navegable con la historia completa de la misión.",
@@ -14789,7 +14824,12 @@
     "privacy_optout_checking": "Comprobando tu configuración actual…",
     "credits_storage_fine": "Sin {sessionStorage}, IndexedDB, ni rastreadores de terceros. Tres claves {localStorage} almacenan configuración local del dispositivo — `orrery.qualityTier` (calidad de gráficos), la bandera de modo depuración y el registro de descarga sin conexión — ninguna de las cuales sale de tu dispositivo. Todo lo demás — episodios escuchados, filtros de misiones, Science Lens — se mantiene solo en memoria y se reinicia al recargar.",
     "colophon_toc_label": "Contenidos",
-    "science_layer_mass_period_desc": "Todos los exoplanetas conocidos con masa medida, representados por período orbital — Júpiteres calientes, supertierras y subneptunos forman familias visibles. Los planetas de este sistema están destacados."
+    "science_layer_mass_period_desc": "Todos los exoplanetas conocidos con masa medida, representados por período orbital — Júpiteres calientes, supertierras y subneptunos forman familias visibles. Los planetas de este sistema están destacados.",
+    "explore_lens_story_bh_title": "Espaciotiempo, curvado hasta el límite",
+    "explore_lens_story_bh_body": "Este render traza trayectorias de luz reales (geodésicas) alrededor del agujero negro — el anillo es la cara lejana del disco, lensada sobre la parte superior. Las capas añaden una malla de curvatura y una tabla de cuánto más lentamente transcurre el tiempo en el fondo del pozo.",
+    "science_layer_bh_curvature_desc": "Una malla de espaciotiempo deformada por las mismas geodésicas que curvan la luz — una analogía de la curvatura, no una superficie literal.",
+    "science_layer_bh_time_desc": "Cuánto más lentamente transcurre el tiempo en la esfera de fotones, la órbita estable más interna y más allá — dilatación gravitatoria del tiempo, cuantificada.",
+    "star_index_black_holes": "Agujeros negros"
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -16456,7 +16496,12 @@
     "privacy_optout_checking": "Je huidige instelling wordt gecontroleerd…",
     "credits_storage_fine": "Geen {sessionStorage}, IndexedDB of third-party trackers. Drie {localStorage}-sleutels bevatten apparaatlocale instellingen — `orrery.qualityTier` (grafische kwaliteit), de debug-modovlag en het offline-downloadrecord — waarvan niets je apparaat verlaat. Al het overige — beluisterde afleveringen, missiefiltels, Science Lens — wordt alleen in het geheugen opgeslagen en wordt hersteld bij het herladen.",
     "colophon_toc_label": "Inhoud",
-    "science_layer_mass_period_desc": "Elke bekende exoplaneet met een gemeten massa, uitgezet naar omloopperiode — hete Jupiters, super-Aardes en sub-Neptunus-planeten vallen in zichtbare families. De planeten van dit systeem zijn gemarkeerd."
+    "science_layer_mass_period_desc": "Elke bekende exoplaneet met een gemeten massa, uitgezet naar omloopperiode — hete Jupiters, super-Aardes en sub-Neptunus-planeten vallen in zichtbare families. De planeten van dit systeem zijn gemarkeerd.",
+    "explore_lens_story_bh_title": "Ruimtetijd, tot het uiterste gebogen",
+    "explore_lens_story_bh_body": "Deze weergave volgt echte lichtpaden (geodeten) rond het zwarte gat — de ring is de verre zijde van de schijf, over de top geboogen. De lagen voegen een krommingsraster en een tabel toe die toont hoe veel langzamer klokken hier diep in de put tikken.",
+    "science_layer_bh_curvature_desc": "Een ruimtetijdraster vervormd door dezelfde geodeten die het licht buigen — een analogie voor kromming, geen letterlijk oppervlak.",
+    "science_layer_bh_time_desc": "Hoe veel langzamer klokken tikken bij de fotonensfer, de binnenste stabiele baan, en verder uit — zwaartekrachtsveroorzaakte tijddilatatie, gekwantificeerd.",
+    "star_index_black_holes": "Zwarte gaten"
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -18387,7 +18432,12 @@
     "privacy_optout_checking": "Проверка текущего параметра…",
     "credits_storage_fine": "Нет {sessionStorage}, IndexedDB или сторонних трекеров. Три ключа {localStorage} содержат устройство-локальные настройки — `orrery.qualityTier` (качество графики), флаг режима отладки и запись об автономной загрузке — ничто из этого не покидает ваше устройство. Всё остальное — прослушанные эпизоды, фильтры миссий, Science Lens — хранится только в памяти и сбрасывается при перезагрузке.",
     "colophon_toc_label": "Содержание",
-    "science_layer_mass_period_desc": "Все известные экзопланеты с измеренной массой, построенные по орбитальному периоду — горячие юпитеры, суперземли и субнептуны образуют видимые семейства. Планеты этой системы выделены."
+    "science_layer_mass_period_desc": "Все известные экзопланеты с измеренной массой, построенные по орбитальному периоду — горячие юпитеры, суперземли и субнептуны образуют видимые семейства. Планеты этой системы выделены.",
+    "explore_lens_story_bh_title": "Пространство-время, изогнутое до предела",
+    "explore_lens_story_bh_body": "Этот рендер отслеживает истинные пути света (геодезические) вокруг чёрной дыры — кольцо — это дальняя сторона диска, пролинзированная через верх. Слои добавляют сетку кривизны и таблицу замедления хода часов на такой глубине в гравитационной яме.",
+    "science_layer_bh_curvature_desc": "Сетка пространства-времени, деформированная теми же геодезическими линиями, что искривляют свет — аналогия кривизны, не буквальная поверхность.",
+    "science_layer_bh_time_desc": "Насколько медленнее идут часы на фотонной сфере, ближайшей устойчивой орбите и дальше — гравитационное замедление времени, количественно выраженное.",
+    "star_index_black_holes": "Чёрные дыры"
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -20361,7 +20411,12 @@
     "privacy_optout_checking": "正在检查您的当前设置…",
     "credits_storage_fine": "没有 {sessionStorage}、IndexedDB 或第三方跟踪器。三个 {localStorage} 键保存设备本地设置 — `orrery.qualityTier`（图形质量）、调试模式标志和离线下载记录 — 这些都不会离开您的设备。其他一切 — 已听剧集、任务筛选器、科学透镜 — 仅保存在内存中，刷新时重置。",
     "colophon_toc_label": "目录",
-    "science_layer_mass_period_desc": "所有已知、质量已测定的系外行星，按公转周期绘制 — 热木星、超级地球和亚海王星形成可见的行星族群。该系统的行星已突出显示。"
+    "science_layer_mass_period_desc": "所有已知、质量已测定的系外行星，按公转周期绘制 — 热木星、超级地球和亚海王星形成可见的行星族群。该系统的行星已突出显示。",
+    "explore_lens_story_bh_title": "时空，弯曲至极限",
+    "explore_lens_story_bh_body": "此渲染图追踪黑洞周围的真实光路径（测地线）——圆环是圆盘的背侧，经透镜效应投射到上方。各图层添加了曲率网格和一个表格，显示在这么深的引力井中时钟的走速减缓程度。",
+    "science_layer_bh_curvature_desc": "由弯曲光线的相同测地线所扭曲的时空网格——曲率的类比，而非字面意义的表面。",
+    "science_layer_bh_time_desc": "光子球、最内层稳定轨道及更远处的时钟走速减缓程度——引力时间膨胀，量化表示。",
+    "star_index_black_holes": "黑洞"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -22207,7 +22262,12 @@
     "privacy_optout_checking": "Проверавам вашу тренутну поставку…",
     "credits_storage_fine": "Без {sessionStorage}, IndexedDB или праћења трећих страна. Три {localStorage} кључа чувају поставке локалне за уређај — `orrery.qualityTier` (kvalitet графике), заставу режима отклањања грешака и запис о преузимању у режиму без интернета — ниједан се не напушта вашег уређаја. Све остало — чули су епизоде, филтри мисија, Science Lens — чувају се само у меморији и ресетују се при поновном учитавању.",
     "colophon_toc_label": "Садржај",
-    "science_layer_mass_period_desc": "Сваки позната егзопланета са измереном масом, приказана према орбиталном периоду — топли Јупитери, супер-Земље и суб-Нептуни падају у видљиве породице. Планете овог система су истакнуте."
+    "science_layer_mass_period_desc": "Сваки позната егзопланета са измереном масом, приказана према орбиталном периоду — топли Јупитери, супер-Земље и суб-Нептуни падају у видљиве породице. Планете овог система су истакнуте.",
+    "explore_lens_story_bh_title": "Простор-време, савијено до лома",
+    "explore_lens_story_bh_body": "Овај приказ прати праве путање светлости (геодезијске линије) око црне рупе — прстен је даља страна диска, преломљена преко врха. Слојеви додају мрежу кривине и табелу колико спорије светлосни сатови брзе на оволико дубоко у гравитационој јами.",
+    "science_layer_bh_curvature_desc": "Мрежа простор-времена деформисана истим геодезијским линијама које савијају светлост — аналогија за кривину, не дословна површина.",
+    "science_layer_bh_time_desc": "Колико спорије светлосни сатови брзе на фотонској сфери, најунутрашњој стабилној орбити и даље — гравитациона дилатација времена, квантификована.",
+    "star_index_black_holes": "Црне рупе"
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -23872,6 +23932,11 @@
     "privacy_optout_checking": "Verificando sua configuração atual…",
     "credits_storage_fine": "Sem {sessionStorage}, IndexedDB ou rastreadores de terceiros. Três chaves {localStorage} mantêm configurações locais do dispositivo — `orrery.qualityTier` (qualidade de gráficos), a flag de modo debug e o registro de download offline — nenhum deles sai do seu dispositivo. Tudo o mais — episódios ouvidos, filtros de missão, Science Lens — é mantido apenas na memória e é redefinido ao recarregar.",
     "colophon_toc_label": "Conteúdo",
-    "science_layer_mass_period_desc": "Todos os exoplanetas conhecidos com massa medida, plotados por período orbital — Júpiteres quentes, super-Terras e sub-Netunos caem em famílias visíveis. Os planetas deste sistema estão destacados."
+    "science_layer_mass_period_desc": "Todos os exoplanetas conhecidos com massa medida, plotados por período orbital — Júpiteres quentes, super-Terras e sub-Netunos caem em famílias visíveis. Os planetas deste sistema estão destacados.",
+    "explore_lens_story_bh_title": "Espaçotempo, curvado até o limite",
+    "explore_lens_story_bh_body": "Esta renderização traça caminhos de luz reais (geodésicas) ao redor do buraco negro — o anel é o lado distante do disco, lensado sobre o topo. As camadas adicionam uma grade de curvatura e uma tabela de quanto mais lentamente os relógios marcam o tempo neste poço profundo.",
+    "science_layer_bh_curvature_desc": "Uma grade de espaçotempo distorcida pelas mesmas geodésicas que curvam a luz — uma analogia para curvatura, não uma superfície literal.",
+    "science_layer_bh_time_desc": "Quanto mais lentamente os relógios marcam o tempo na esfera de fótons, na órbita estável mais interna e mais afastado — dilatação gravitacional do tempo, quantificada.",
+    "star_index_black_holes": "Buracos negros"
   }
 }

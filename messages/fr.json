@@ -3031,5 +3031,10 @@
   "privacy_logs_body": "Indépendamment de l'analytique, les journaux d'accès ordinaires du serveur web enregistrent chaque requête — y compris votre adresse IP, la page demandée et l'user-agent de votre navigateur. Il en va de même à la périphérie pour l'endpoint d'analytique. Ce sont des journaux opérationnels standard conservés sur notre propre infrastructure pour le débogage et la gestion des abus : le stockage des journaux les conserve jusqu'à 30 jours, et les journaux de périphérie tournent par taille plutôt que par date. Ils ne sont pas associés aux données d'analytique, ne sont pas utilisés pour construire un profil, et l'opt-out ci-dessous ne les désactive pas — servir une page ne peut pas se faire sans eux. Cloudflare, qui se trouve devant le site, peut également conserver ses propres journaux de connexion selon sa politique.",
   "privacy_optout_checking": "Vérification de votre paramètre actuel…",
   "colophon_toc_label": "Sommaire",
-  "science_layer_mass_period_desc": "Chaque exoplanète connue avec une masse mesurée, tracée en fonction de sa période orbitale — les Jupiters chauds, super-Terres et sub-Neptunes forment des familles distinctes. Les planètes de ce système sont en évidence."
+  "science_layer_mass_period_desc": "Chaque exoplanète connue avec une masse mesurée, tracée en fonction de sa période orbitale — les Jupiters chauds, super-Terres et sub-Neptunes forment des familles distinctes. Les planètes de ce système sont en évidence.",
+  "explore_lens_story_bh_title": "L'espace-temps, courbé à se rompre",
+  "explore_lens_story_bh_body": "Ce rendu trace les chemins réels de la lumière (géodésiques) autour du trou noir — l'anneau est le côté lointain du disque, lensé par-dessus le sommet. Les couches ajoutent une grille de courbure et un tableau montrant de combien les horloges ralentissent au plus profond du puits.",
+  "science_layer_bh_curvature_desc": "Une grille d'espace-temps déformée par les mêmes géodésiques qui courbent la lumière — une analogie pour la courbure, pas une surface littérale.",
+  "science_layer_bh_time_desc": "De combien les horloges ralentissent à la sphère de photons, à l'orbite stable la plus interne, et plus loin — la dilatation gravitationnelle du temps, quantifiée.",
+  "star_index_black_holes": "Trous noirs"
 }

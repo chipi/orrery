@@ -3031,5 +3031,10 @@
   "privacy_logs_body": "Unabhängig von Analytics werden in Standard-Webserver-Zugriffprotokollen alle Anfragen protokolliert — einschließlich Ihrer IP-Adresse, der angeforderten Seite und des User-Agent Ihres Browsers. Dasselbe gilt am Edge für den Analytics-Endpunkt. Dies sind Standard-Betriebsprotokolle, die auf unserer eigenen Infrastruktur für Debugging und Missbrauchserkennung gespeichert werden: der Log-Speicher behält sie bis zu 30 Tage, und die Edge-Protokolle rotieren nach Größe, nicht nach Alter. Sie werden nicht mit den Analytics-Daten verknüpft, nicht zur Profilbildung verwendet, und die nachstehende Opt-out-Option schaltet sie nicht aus — eine Seite kann nicht ohne sie bereitgestellt werden. Cloudflare, das die Website frontet, kann auch seine eigenen Verbindungsprotokolle gemäß seiner Richtlinie speichern.",
   "privacy_optout_checking": "Aktuelle Einstellung wird überprüft…",
   "colophon_toc_label": "Inhaltsverzeichnis",
-  "science_layer_mass_period_desc": "Alle bekannten Exoplaneten mit gemessener Masse, aufgetragen nach Umlaufperiode — Hot Jupiter, Super-Erden und Sub-Neptune bilden sichtbare Familien. Die Planeten dieses Systems sind hervorgehoben."
+  "science_layer_mass_period_desc": "Alle bekannten Exoplaneten mit gemessener Masse, aufgetragen nach Umlaufperiode — Hot Jupiter, Super-Erden und Sub-Neptune bilden sichtbare Familien. Die Planeten dieses Systems sind hervorgehoben.",
+  "explore_lens_story_bh_title": "Raumzeit, bis zum Zerreißen gekrümmt",
+  "explore_lens_story_bh_body": "Diese Darstellung verfolgt echte Lichtwege (Geodäten) um das schwarze Loch — der Ring ist die Rückseite der Scheibe, über die Oberseite linsenförmig verzerrt. Die Ebenen zeigen ein Krümmungsgitter und eine Tabelle, wie viel langsamer die Uhren so tief im Gravitationspotenzial gehen.",
+  "science_layer_bh_curvature_desc": "Ein Raumzeitgitter, verzerrt durch dieselben Geodäten, die das Licht krümmen — eine Analogie für Krümmung, keine buchstäbliche Oberfläche.",
+  "science_layer_bh_time_desc": "Wie viel langsamer die Uhren an der Photonensphäre, der innersten stabilen Umlaufbahn und weiter außen gehen — Gravitationszeitdilatation, quantifiziert.",
+  "star_index_black_holes": "Schwarze Löcher"
 }

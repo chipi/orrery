@@ -108,6 +108,8 @@
     'dark-matter-halo': false,
     'stellar-populations': false,
     'mass-period': false,
+    'bh-curvature': false,
+    'bh-time-dilation': false,
   });
 
   let stops: Array<() => void> = [];
@@ -409,6 +411,18 @@
           label: m.explore_lens_mass_period(),
           description: m.science_layer_mass_period_desc(),
           learn: { tab: 'exoplanets', section: 'super-earths-sub-neptunes' },
+        };
+      case 'bh-curvature':
+        return {
+          label: m.explore_lens_curvature(),
+          description: m.science_layer_bh_curvature_desc(),
+          learn: { tab: 'observation', section: 'black-holes' },
+        };
+      case 'bh-time-dilation':
+        return {
+          label: m.explore_lens_time(),
+          description: m.science_layer_bh_time_desc(),
+          learn: { tab: 'observation', section: 'black-holes' },
         };
     }
   }

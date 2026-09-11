@@ -762,7 +762,133 @@
       "cover": false
     }
   ],
-  "lab_illustrations": [],
+  "lab_illustrations": [
+    {
+      "title": "Apollo Round Trip",
+      "file": "/images/lab/goals/apollo-round-trip.webp",
+      "cover": false
+    },
+    {
+      "title": "Catch The ISS",
+      "file": "/images/lab/goals/catch-the-iss.webp",
+      "cover": false
+    },
+    {
+      "title": "Choose An Orbit",
+      "file": "/images/lab/goals/choose-an-orbit.webp",
+      "cover": false
+    },
+    {
+      "title": "Engines Of The World",
+      "file": "/images/lab/goals/engines-of-the-world.webp",
+      "cover": false
+    },
+    {
+      "title": "Entry Computer",
+      "file": "/images/lab/goals/entry-computer.webp",
+      "cover": false
+    },
+    {
+      "title": "Flying Computer",
+      "file": "/images/lab/goals/flying-computer.webp",
+      "cover": false
+    },
+    {
+      "title": "Get To Mars",
+      "file": "/images/lab/goals/get-to-mars.webp",
+      "cover": false
+    },
+    {
+      "title": "Land On Earth",
+      "file": "/images/lab/goals/land-on-earth.webp",
+      "cover": false
+    },
+    {
+      "title": "Land On Mars",
+      "file": "/images/lab/goals/land-on-mars.webp",
+      "cover": false
+    },
+    {
+      "title": "Land On Mercury",
+      "file": "/images/lab/goals/land-on-mercury.webp",
+      "cover": false
+    },
+    {
+      "title": "Land On The Moon",
+      "file": "/images/lab/goals/land-on-the-moon.webp",
+      "cover": false
+    },
+    {
+      "title": "Land On Titan",
+      "file": "/images/lab/goals/land-on-titan.webp",
+      "cover": false
+    },
+    {
+      "title": "Land On Venus",
+      "file": "/images/lab/goals/land-on-venus.webp",
+      "cover": false
+    },
+    {
+      "title": "Landing Computer",
+      "file": "/images/lab/goals/landing-computer.webp",
+      "cover": false
+    },
+    {
+      "title": "Launch A Rocket",
+      "file": "/images/lab/goals/launch-a-rocket.webp",
+      "cover": false
+    },
+    {
+      "title": "Leave The Solar System",
+      "file": "/images/lab/goals/leave-the-solar-system.webp",
+      "cover": false
+    },
+    {
+      "title": "Moon Phases",
+      "file": "/images/lab/goals/moon-phases.webp",
+      "cover": false
+    },
+    {
+      "title": "Motion First Principles",
+      "file": "/images/lab/goals/motion-first-principles.webp",
+      "cover": false
+    },
+    {
+      "title": "Observe The Sky",
+      "file": "/images/lab/goals/observe-the-sky.webp",
+      "cover": false
+    },
+    {
+      "title": "Plan A Mission",
+      "file": "/images/lab/goals/plan-a-mission.webp",
+      "cover": false
+    },
+    {
+      "title": "Probe Jupiter",
+      "file": "/images/lab/goals/probe-jupiter.webp",
+      "cover": false
+    },
+    {
+      "title": "Reach Orbit",
+      "file": "/images/lab/goals/reach-orbit.webp",
+      "cover": false
+    },
+    {
+      "title": "Reach The Moon",
+      "file": "/images/lab/goals/reach-the-moon.webp",
+      "cover": false
+    },
+    {
+      "title": "Scale A Rocket",
+      "file": "/images/lab/goals/scale-a-rocket.webp",
+      "cover": false
+    },
+    {
+      "title": "Touch Small World",
+      "file": "/images/lab/goals/touch-small-world.webp",
+      "cover": false
+    }
+  ],
   "diagrams_science": [
     {
       "title": "Cosmology",
@@ -2435,7 +2561,7 @@
   ],
   "totals": {
     "anatomy_art": 152,
-    "lab_illustrations": 0,
+    "lab_illustrations": 25,
     "diagrams_science": 114,
     "posters": 27,
     "models3d": 109,

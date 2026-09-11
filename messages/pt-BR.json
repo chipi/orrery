@@ -1085,10 +1085,10 @@
   "library_episodes_back": "← voltar à Biblioteca",
   "library_episodes_credits_link": "Proveniência do áudio em /credits",
   "credits_storage_heading": "Armazenamento e cookies",
-  "credits_storage_intro": "Orrery não tem contas e não armazena dados pessoais — apenas análise de uso anônima e sem cookies e relatórios de falha, auto-hospedados e nunca usados para identificá-lo. Você pode desativá-los na página de {privacy}. Três cookies de preferência funcional, cada um controlado por seu próprio ADR, são o único estado persistente:",
+  "credits_storage_intro": "Orrery não possui contas e não coleta dados pessoais — apenas análises de uso anônimas e sem cookies, além de relatórios de falhas, auto-hospedados e nunca usados para identificá-lo. Dois cookies funcionais de preferência, cada um protegido por seu próprio ADR, são o único estado persistente:",
   "credits_storage_locale_item": "{code} — sua escolha explícita de idioma, quando você a seleciona no seletor de idioma (ADR-057). 1 ano. Sem rastreamento, sem dados pessoais.",
   "credits_storage_tour_item": "{code} — sua posição atual no Tour do Curador, para que você possa fechar a aba e retomar de onde parou (ADR-075). 30 dias. Limpo quando você para o tour ou ele termina naturalmente. Sem rastreamento, sem dados pessoais.",
-  "credits_storage_fine": "Sem {sessionStorage}, IndexedDB ou rastreadores de terceiros. Três chaves {localStorage} mantêm configurações locais do dispositivo — `orrery.qualityTier` (qualidade de gráficos), a flag de modo debug e o registro de download offline — nenhum deles sai do seu dispositivo. Tudo o mais — episódios ouvidos, filtros de missão, Science Lens — é mantido apenas na memória e é redefinido ao recarregar.",
+  "credits_storage_fine": "Sem {localStorage}, {sessionStorage}, IndexedDB ou rastreadores de terceiros. Todo o resto — episódios ouvidos, filtros de missão, Lente Científica — fica apenas em memória e é redefinido ao recarregar.",
   "ui_layer_paths": "MISSÕES ICÔNICAS",
   "explore_layer_tip_paths": "Trajetórias icônicas de sondas — Voyager 1/2, Pioneer 10/11, New Horizons, Cassini",
   "explore_voyager2_today_aria": "Posição atual da Voyager 2 — clique para abrir o registro da missão",
@@ -3029,5 +3029,6 @@
   "privacy_where_heading": "Para onde vai",
   "privacy_logs_heading": "Logs do servidor",
   "privacy_logs_body": "Separadamente da análise, os logs de acesso ordinários do servidor web registram cada solicitação — incluindo seu endereço IP, a página solicitada e o user-agent do seu navegador. O mesmo vale para o edge do ponto de extremidade de análise. Esses são logs operacionais padrão mantidos em nossa própria infraestrutura para depuração e tratamento de abuso: o armazenamento de logs os mantém por até 30 dias, e os logs edge rotacionam por tamanho em vez de idade. Eles não são conectados aos dados de análise, não são usados para criar um perfil, e a opção de exclusão abaixo não os desativa — servir uma página não é possível sem eles. Cloudflare, que está na frente do site, também pode manter seus próprios logs de conexão conforme sua política.",
-  "privacy_optout_checking": "Verificando sua configuração atual…"
+  "privacy_optout_checking": "Verificando sua configuração atual…",
+  "colophon_toc_label": "Conteúdo"
 }

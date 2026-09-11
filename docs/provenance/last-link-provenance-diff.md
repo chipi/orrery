@@ -1,62 +1,115 @@
 # Last link-provenance build
 
-> Generated: 2026-07-18T13:03:38.122Z
+> Generated: 2026-09-11T10:09:18.969Z
 
-- Total entries: 1322 (was 1271)
-- Added: 51
-- Removed: 0
+- Total entries: 1426 (was 1322)
+- Added: 105
+- Removed: 1
 - Changed: 0
 
-## Added (51)
-- `achernar` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Achernar>
-- `acrux` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Acrux>
-- `adhara` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Adhara>
-- `algol` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Algol>
-- `alhena` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Alhena>
-- `alioth` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Alioth>
-- `alkaid` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Alkaid>
-- `almach` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Almach>
-- `alnair` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Alnair>
-- `alnilam` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Alnilam>
-- `alnitak` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Alnitak>
-- `alphard` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Alphard>
-- `alphecca` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Alphecca>
-- `alpheratz` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Alpheratz>
-- `altair` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Altair>
-- `atria` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Atria>
-- `avior` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Avior>
-- `bellatrix` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Bellatrix>
-- `canopus` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Canopus>
-- `capella` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Capella>
-- `castor` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Castor>
-- `deneb` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Deneb>
-- `denebola` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Denebola>
-- `diphda` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Diphda>
-- `dubhe` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Dubhe>
-- `elnath` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Elnath>
-- `gacrux` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Gacrux>
-- `hadar` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Hadar>
-- `hamal` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Hamal>
-- `kaus-australis` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Kaus_Australis>
-- `lalande-21185` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Lalande_21185>
-- `luytens-star` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Luyten's_Star>
-- `menkalinan` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Menkalinan>
-- `menkent` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Menkent>
-- `miaplacidus` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Miaplacidus>
-- `mimosa` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Mimosa>
-- `mintaka` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Mintaka>
-- `mirfak` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Mirfak>
-- `nunki` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Nunki>
-- `peacock` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Peacock>
-- `pollux` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Pollux>
-- `procyon` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Procyon>
-- `rasalhague` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Rasalhague>
-- `regulus` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Regulus>
-- `rigil-kentaurus` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Alpha_Centauri>
-- `sadr` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Sadr>
-- `saiph` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Saiph>
-- `sargas` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Sargas>
-- `spica` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Spica>
-- `van-maanens-star` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Van_Maanen's_Star>
-- `wezen` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Wezen>
+## Added (105)
+- `airbags-check` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Mars_Pathfinder>
+- `ascent-guidance` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Guidance,_navigation,_and_control>
+- `ascent-to-orbit` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Gravity_turn>
+- `assist-chain` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Gravity_assist>
+- `booster-count` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Booster_(rocketry)>
+- `ce-20` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/CE-20>
+- `cislunar-transfer` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Trans-lunar_injection>
+- `cluster-thrust` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Rocket_engine>
+- `constellation-coverage` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Satellite_constellation>
+- `delta-v-margin` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Delta-v_budget>
+- `deorbit-burn` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Atmospheric_entry>
+- `descent-burn` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Powered_descent>
+- `dv-to-orbit` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Delta-v_budget>
+- `eclipse-seasons` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Eclipse_season>
+- `engine-count` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Rocket_engine>
+- `engine-performance` · core · nasa · en · <https://www.grc.nasa.gov/www/k-12/rocket/specimp.html>
+- `entry-corridor` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Atmospheric_entry>
+- `entry-heating` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Atmospheric_entry>
+- `entry-range-control` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Atmospheric_entry>
+- `entry-steering` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Atmospheric_entry>
+- `escape-verdict` · core · hyperphysics · en · <http://hyperphysics.phy-astr.gsu.edu/hbase/vesc.html>
+- `f-1` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Rocketdyne_F-1>
+- `f-1` · deep · nasa · en · <https://ntrs.nasa.gov/citations/19750063889>
+- `free-fall` · core · hyperphysics · en · <http://hyperphysics.phy-astr.gsu.edu/hbase/traj.html>
+- `frozen-orbit` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Frozen_orbit>
+- `geostationary-altitude` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Geostationary_orbit>
+- `gravity-assist` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Gravity_assist>
+- `ground-track-shift` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Ground_track>
+- `h-1` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Rocketdyne_H-1>
+- `heliocentric-escape-dv` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Characteristic_energy>
+- `hm7b` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/HM7B>
+- `hohmann-transfer` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Hohmann_transfer_orbit>
+- `huygens` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Huygens_(spacecraft)>
+- `huygens` · intro · esa · en · <https://www.esa.int/Science_Exploration/Space_Science/Cassini-Huygens/Huygens_facts_and_figures>
+- `huygens` · core · nasa · en · <https://science.nasa.gov/mission/cassini/>
+- `huygens` · deep · nasa · en · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1997-061C>
+- `huygens` · deep · nature · en · <https://www.nature.com/articles/nature04126>
+- `huygens` · deep · nature · en · <https://www.nature.com/articles/nature04347>
+- `interplanetary-transfer` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Interplanetary_Transport_Network>
+- `iss-pass` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Satellite_pass>
+- `j-2` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Rocketdyne_J-2>
+- `launch-azimuth` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Launch_window>
+- `launch-site` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Spaceport>
+- `launch-window` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Launch_window>
+- `le-5b` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/LE-5>
+- `le-7a` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/LE-7>
+- `le-9` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/LE-9>
+- `liftoff-thrust` · core · nasa · en · <https://www.grc.nasa.gov/www/k-12/rocket/rktthsum.html>
+- `lr87` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/LR87>
+- `max-elongation` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Elongation_(astronomy)>
+- `merlin-1d` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/SpaceX_Merlin>
+- `merlin-1d` · core · spacex · en · <https://www.spacex.com/vehicles/falcon-9/>
+- `micro-g-surface` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Surface_gravity>
+- `momentum` · core · hyperphysics · en · <http://hyperphysics.phy-astr.gsu.edu/hbase/mom.html>
+- `moon-altitude` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Horizontal_coordinate_system>
+- `moon-distance` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Lunar_distance_(astronomy)>
+- `moon-phase` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Lunar_phase>
+- `near-shoemaker` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/NEAR_Shoemaker>
+- `near-shoemaker` · intro · nasa · en · <https://science.nasa.gov/mission/near-shoemaker/>
+- `near-shoemaker` · core · jhuapl · en · <https://near.jhuapl.edu/>
+- `near-shoemaker` · core · planetary-society · en · <https://www.planetary.org/space-missions/near-shoemaker>
+- `near-shoemaker` · deep · nasa · en · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1996-008A>
+- `near-shoemaker` · deep · science-aaas · en · <https://www.science.org/doi/10.1126/science.1059831>
+- `newton-second-law` · core · hyperphysics · en · <http://hyperphysics.phy-astr.gsu.edu/hbase/newt.html>
+- `oberth-departure-dv` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Oberth_effect>
+- `orbit-regime` · core · wikipedia · en · <https://en.wikipedia.org/wiki/List_of_orbits>
+- `orbital-velocity` · core · hyperphysics · en · <http://hyperphysics.phy-astr.gsu.edu/hbase/orbv.html>
+- `planet-altitude` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Horizontal_coordinate_system>
+- `planet-elongation` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Elongation_(astronomy)>
+- `porkchop` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Porkchop_plot>
+- `powered-descent` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Powered_descent>
+- `projectile` · core · hyperphysics · en · <http://hyperphysics.phy-astr.gsu.edu/hbase/traj.html>
+- `raptor` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/SpaceX_Raptor>
+- `raptor` · core · spacex · en · <https://www.spacex.com/vehicles/starship/>
+- `rd-107-108` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/RD-107>
+- `rd-180` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/RD-180>
+- `rd-253` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/RD-253>
+- `reach-orbit-verdict` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Orbital_spaceflight>
+- `retro-descent` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Retrorocket>
+- `retrograde-motion` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Apparent_retrograde_motion>
+- `rl10` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/RL10>
+- `rocket-sizing` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Multistage_rocket>
+- `rocketdyne-a7` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/PGM-11_Redstone>
+- `rs-25` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/RS-25>
+- `signal-latency` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Speed_of_light>
+- `soft-landing-check` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Soft_landing_(aeronautics)>
+- `solar-escape-velocity` · core · hyperphysics · en · <http://hyperphysics.phy-astr.gsu.edu/hbase/vesc.html>
+- `soyuz` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Soyuz_(rocket)>
+- `soyuz` · core · wikipedia · en · <https://en.wikipedia.org/wiki/R-7_(rocket_family)>
+- `sputnik1` · deep · nasa · en · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1957-001A>
+- `staging` · core · nasa · en · <https://www.grc.nasa.gov/www/k-12/rocket/rktstage.html>
+- `sun-synchronous` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Sun-synchronous_orbit>
+- `terminal-velocity` · core · nasa · en · <https://www.grc.nasa.gov/www/k-12/airplane/termv.html>
+- `thrust-from-flow` · core · nasa · en · <https://www.grc.nasa.gov/www/k-12/rocket/rktthsum.html>
+- `touchdown-bounce` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Coefficient_of_restitution>
+- `tsiolkovsky` · core · nasa · en · <https://www.grc.nasa.gov/www/k-12/rocket/rktpow.html>
+- `twr` · core · nasa · en · <https://www.grc.nasa.gov/www/k-12/airplane/fwrat.html>
+- `vikas` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Vikas_(rocket_engine)>
+- `viking` · intro · wikipedia · en · <https://en.wikipedia.org/wiki/Viking_(rocket_engine)>
+- `vis-viva` · core · wikipedia · en · <https://en.wikipedia.org/wiki/Vis-viva_equation>
+- … 5 more
+
+## Removed (1)
+- `sputnik1` · deep · nasa · <https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1957-001B>
 

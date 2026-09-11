@@ -94,6 +94,59 @@
   {#if !data}
     <p class="loading">…</p>
   {:else}
+    <!-- Jump-link TOC (2026-09-11 operator ask) — same affordance as the
+         sources index at the top of /credits. Entries mirror the section
+         order below, including the two conditional sections. -->
+    <nav class="toc" aria-label={m.colophon_toc_label()}>
+      <h3>{m.colophon_toc_label()}</h3>
+      <ul>
+        <li>
+          <a href="#sec-cutaways">{m.colophon_section_cutaways()}</a>
+          <span class="counts">· {data.anatomy_art.length}</span>
+        </li>
+        <li>
+          <a href="#sec-posters">{m.colophon_gallery_posters()}</a>
+          <span class="counts">· {data.posters.length}</span>
+        </li>
+        {#if data.lab_illustrations && data.lab_illustrations.length > 0}
+          <li>
+            <a href="#sec-lab-illustrations">{m.colophon_lab_illustrations()}</a>
+            <span class="counts">· {data.lab_illustrations.length}</span>
+          </li>
+        {/if}
+        <li>
+          <a href="#sec-diagrams">{m.colophon_section_diagrams()}</a>
+          <span class="counts">· {data.diagrams_science.length}</span>
+        </li>
+        <li>
+          <a href="#sec-capsules">{m.colophon_section_capsules()}</a>
+          <span class="counts">· {data.capsules.length}</span>
+        </li>
+        <li>
+          <a href="#sec-models">{m.colophon_section_models()}</a>
+          <span class="counts">· {data.models3d.length}</span>
+        </li>
+        <li>
+          <a href="#sec-canvas">{m.colophon_section_canvas()}</a>
+          <span class="counts">· {data.canvas2d.length}</span>
+        </li>
+        <li>
+          <a href="#sec-ui">{m.colophon_section_ui()}</a>
+          <span class="counts">· {data.ui.length}</span>
+        </li>
+        <li>
+          <a href="#sec-writing">{m.colophon_section_writing()}</a>
+          <span class="counts">· {data.writing.length}</span>
+        </li>
+        {#if episodes.length > 0}
+          <li>
+            <a href="#sec-tours">{m.colophon_section_tours()}</a>
+            <span class="counts">· {episodes.length}</span>
+          </li>
+        {/if}
+      </ul>
+    </nav>
+
     <!-- Showpiece: generated watercolor cutaways + pencil sketches (#367). -->
     <section class="block" aria-labelledby="sec-cutaways">
       <h2 id="sec-cutaways">
@@ -324,6 +377,47 @@
     margin: 0 auto;
     padding: 48px 20px 96px;
     color: rgba(255, 255, 255, 0.85);
+  }
+  /* Jump-link TOC — visual twin of /credits' sources index. */
+  .toc {
+    margin: 28px 0 16px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+  }
+  .toc h3 {
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.55);
+    margin: 0 0 12px;
+  }
+  .toc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 8px;
+  }
+  .toc li {
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .toc a {
+    color: #4ecdc4;
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(78, 205, 196, 0.4);
+  }
+  .toc a:hover,
+  .toc a:focus-visible {
+    color: #7ddfd8;
+    outline: none;
+  }
+  .toc .counts {
+    color: rgba(255, 255, 255, 0.65);
   }
   .head {
     margin-bottom: 40px;

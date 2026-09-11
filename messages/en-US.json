@@ -201,9 +201,9 @@
   "credits_section_data": "Data & catalogues",
   "credits_section_photos": "Photos",
   "credits_section_text": "Text",
-  "credits_storage_fine": "No {sessionStorage}, IndexedDB, or third-party trackers. Three {localStorage} keys hold device-local settings — `orrery.qualityTier` (graphics quality), the debug-mode flag, and the offline-download record — none of which leaves your device. Everything else — heard episodes, mission filters, Science Lens — is held in memory only and resets on reload.",
+  "credits_storage_fine": "No {localStorage}, {sessionStorage}, IndexedDB, or third-party trackers. Everything else — heard episodes, mission filters, Science Lens — is held in memory only and resets on reload.",
   "credits_storage_heading": "Storage & cookies",
-  "credits_storage_intro": "Orrery has no accounts and stores no personal data — only anonymous, cookieless usage analytics and crash reports, self-hosted and never used to identify you. You can switch those off on the {privacy} page. Three functional preference cookies, each gated by its own ADR, are the only persistent state:",
+  "credits_storage_intro": "Orrery has no accounts and collects no personal data — only anonymous, cookieless usage analytics and crash reports, self-hosted and never used to identify you. Two functional preference cookies, each gated by its own ADR, are the only persistent state:",
   "credits_storage_optout_item": "{code} — set only if you switch usage analytics off on the privacy page, so the choice survives a reload (ADR-092). 1 year. Absent unless you opt out. No tracking, no personal data.",
   "credits_storage_privacy_link": "privacy",
   "credits_storage_locale_item": "{code} — your explicit locale pick, when you choose one in the language switcher (ADR-057). 1 year. No tracking, no personal data.",
@@ -3029,5 +3029,6 @@
   "lab_canvas_purpose": "Freeform canvas — add formula cards, wire outputs into inputs, then promote your build to the notebook.",
   "privacy_logs_heading": "Server logs",
   "privacy_logs_body": "Separately from analytics, ordinary web-server access logs record every request — including your IP address, the page requested, and your browser's user-agent. The same is true at the edge for the analytics endpoint. These are standard operational logs kept on our own infrastructure for debugging and abuse handling: the log store keeps them for up to 30 days, and the edge logs rotate by size rather than age. They are not joined to the analytics data, are not used to build a profile, and the opt-out below does not switch them off — serving a page cannot happen without them. Cloudflare, which fronts the site, may also keep its own connection logs under its policy.",
-  "privacy_optout_checking": "Checking your current setting…"
+  "privacy_optout_checking": "Checking your current setting…",
+  "colophon_toc_label": "Contents"
 }

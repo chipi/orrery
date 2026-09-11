@@ -1085,10 +1085,10 @@
   "library_episodes_back": "← retour à la Bibliothèque",
   "library_episodes_credits_link": "Provenance audio sur /credits",
   "credits_storage_heading": "Stockage et cookies",
-  "credits_storage_intro": "Orrery n'a pas de comptes et ne stocke pas de données personnelles — seulement l'analytique d'utilisation anonyme et sans cookies, auto-hébergée et jamais utilisée pour vous identifier. Vous pouvez l'arrêter sur la page {privacy}. Trois cookies de préférence fonctionnels, chacun contrôlé par son propre ADR, sont le seul état persistant :",
+  "credits_storage_intro": "Orrery n'a pas de comptes et ne collecte aucune donnée personnelle — seulement des analyses d'utilisation anonymes sans cookies et des rapports de crash, auto-hébergés et jamais utilisés pour t'identifier. Deux cookies de préférence fonctionnels, chacun contrôlé par son propre ADR, constituent le seul état persistant :",
   "credits_storage_locale_item": "{code} — ton choix explicite de langue, lorsque tu en sélectionnes une dans le sélecteur de langue (ADR-057). 1 an. Aucun suivi, aucune donnée personnelle.",
   "credits_storage_tour_item": "{code} — ta position actuelle dans la Visite du commissaire, afin que tu puisses fermer l'onglet et reprendre là où tu t'étais arrêté(e) (ADR-075). 30 jours. Effacé lorsque tu arrêtes la visite ou qu'elle se termine naturellement. Aucun suivi, aucune donnée personnelle.",
-  "credits_storage_fine": "Pas de {sessionStorage}, IndexedDB ou traceurs tiers. Trois clés {localStorage} conservent des paramètres locaux au dispositif — `orrery.qualityTier` (qualité graphique), l'indicateur de mode débogage et l'enregistrement de téléchargement hors ligne — aucune ne quitte votre dispositif. Tout le reste — épisodes écoutés, filtres de mission, Science Lens — est conservé en mémoire uniquement et réinitialise au rechargement.",
+  "credits_storage_fine": "Aucun {localStorage}, {sessionStorage}, IndexedDB ni traqueur tiers. Tout le reste — épisodes écoutés, filtres de missions, Science Lens — n'est conservé qu'en mémoire et se réinitialise au rechargement.",
   "ui_layer_paths": "MISSIONS ICONIQUES",
   "explore_layer_tip_paths": "Trajectoires emblématiques de sondes — Voyager 1/2, Pioneer 10/11, New Horizons, Cassini",
   "explore_voyager2_today_aria": "Position actuelle de Voyager 2 — cliquez pour ouvrir la fiche de mission",
@@ -3029,5 +3029,6 @@
   "privacy_where_heading": "Où ça va",
   "privacy_logs_heading": "Journaux serveur",
   "privacy_logs_body": "Indépendamment de l'analytique, les journaux d'accès ordinaires du serveur web enregistrent chaque requête — y compris votre adresse IP, la page demandée et l'user-agent de votre navigateur. Il en va de même à la périphérie pour l'endpoint d'analytique. Ce sont des journaux opérationnels standard conservés sur notre propre infrastructure pour le débogage et la gestion des abus : le stockage des journaux les conserve jusqu'à 30 jours, et les journaux de périphérie tournent par taille plutôt que par date. Ils ne sont pas associés aux données d'analytique, ne sont pas utilisés pour construire un profil, et l'opt-out ci-dessous ne les désactive pas — servir une page ne peut pas se faire sans eux. Cloudflare, qui se trouve devant le site, peut également conserver ses propres journaux de connexion selon sa politique.",
-  "privacy_optout_checking": "Vérification de votre paramètre actuel…"
+  "privacy_optout_checking": "Vérification de votre paramètre actuel…",
+  "colophon_toc_label": "Sommaire"
 }

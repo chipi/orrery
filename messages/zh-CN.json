@@ -1085,10 +1085,10 @@
   "library_episodes_back": "← 返回图书馆",
   "library_episodes_credits_link": "音频出处见 /credits",
   "credits_storage_heading": "存储与 Cookie",
-  "credits_storage_intro": "Orrery 没有账户，不存储个人数据 — 仅存储匿名、无 Cookie 的使用数据和崩溃报告，自托管且永远不用于识别您。您可以在 {privacy} 页面关闭这些功能。三个功能性偏好设置，每个都由其自己的 ADR 控制，是唯一的持久状态：",
+  "credits_storage_intro": "Orrery 没有账户，不收集个人数据——仅收集匿名、无 Cookie 使用分析和崩溃报告，自托管且不用于身份识别。两个功能性偏好 Cookie，各自受其 ADR 把控，是仅有的持久状态：",
   "credits_storage_locale_item": "{code} — 您在语言切换器中明确选择的语言（ADR-057）。保留 1 年。无跟踪，无个人数据。",
   "credits_storage_tour_item": "{code} — 您当前的策展人导览位置，便于您关闭标签后从中断处恢复（ADR-075）。保留 30 天。停止导览或自然结束时清除。无跟踪，无个人数据。",
-  "credits_storage_fine": "没有 {sessionStorage}、IndexedDB 或第三方跟踪器。三个 {localStorage} 键保存设备本地设置 — `orrery.qualityTier`（图形质量）、调试模式标志和离线下载记录 — 这些都不会离开您的设备。其他一切 — 已听剧集、任务筛选器、科学透镜 — 仅保存在内存中，刷新时重置。",
+  "credits_storage_fine": "不使用 {localStorage}、{sessionStorage}、IndexedDB 或第三方跟踪器。其他所有内容 — 已听节目、任务筛选、Science Lens — 仅保存在内存中，刷新后即重置。",
   "ui_layer_paths": "标志性任务",
   "explore_layer_tip_paths": "标志性航天器轨迹 — 旅行者 1/2、先驱者 10/11、新视野号、卡西尼",
   "explore_voyager2_today_aria": "Voyager 2 当前位置 — 点击打开任务记录",
@@ -3029,5 +3029,6 @@
   "privacy_where_heading": "数据流向",
   "privacy_logs_heading": "服务器日志",
   "privacy_logs_body": "与数据分析分开，普通的网络服务器访问日志记录每个请求 — 包括您的 IP 地址、请求的页面和您的浏览器用户代理。分析端点的边缘日志也是如此。这些是标准的操作日志，保存在我们自己的基础设施上用于调试和滥用处理：日志存储保留它们最多 30 天，边缘日志按大小而非年龄轮换。它们不与数据分析数据关联，不用于构建用户档案，下面的选择退出也不会关闭它们 — 提供页面必须使用它们。Cloudflare 作为网站的前端，也可能根据其政策保留自己的连接日志。",
-  "privacy_optout_checking": "正在检查您的当前设置…"
+  "privacy_optout_checking": "正在检查您的当前设置…",
+  "colophon_toc_label": "目录"
 }

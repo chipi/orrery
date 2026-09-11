@@ -1085,10 +1085,10 @@
   "library_episodes_back": "← 라이브러리로 돌아가기",
   "library_episodes_credits_link": "/credits에서 오디오 출처 확인",
   "credits_storage_heading": "저장소 및 쿠키",
-  "credits_storage_intro": "Orrery는 계정이 없고 개인 데이터를 저장하지 않습니다 — 익명의 쿠키 없는 사용 현황 분석 및 충돌 리포트만, 자체 호스팅되고 식별에 사용되지 않습니다. 이들을 {privacy} 페이지에서 끌 수 있습니다. 3개의 기능 선호도 쿠키(각각 자체 ADR로 제어됨)가 유일한 지속성 상태입니다:",
+  "credits_storage_intro": "Orrery는 계정이 없으며 개인 데이터를 수집하지 않습니다. 익명의 쿠키 없는 사용 분석 및 충돌 보고서만 수집하며, 자체 호스팅되고 사용자 식별에 사용되지 않습니다. 각각 자체 ADR로 제어되는 두 개의 기능성 선호 쿠키만이 유일한 영속적 상태입니다:",
   "credits_storage_locale_item": "{code} — 언어 전환기에서 명시적으로 선택한 로케일 (ADR-057). 1년. 추적이나 개인정보 수집은 없습니다.",
   "credits_storage_tour_item": "{code} — 현재 큐레이터 투어 위치로, 탭을 닫아도 중단된 지점에서 이어볼 수 있습니다 (ADR-075). 30일. 투어를 중지하거나 자연스럽게 종료되면 삭제됩니다. 추적이나 개인정보 수집은 없습니다.",
-  "credits_storage_fine": "{sessionStorage}, IndexedDB, 또는 제3자 추적기가 없습니다. 3개의 {localStorage} 키가 기기 로컬 설정을 보관합니다 — `orrery.qualityTier`(그래픽 품질), 디버그 모드 플래그, 오프라인 다운로드 레코드 — 모두 기기를 떠나지 않습니다. 그 외 모든 것 — 들은 에피소드, 미션 필터, Science Lens — 메모리에만 보관되고 새로고침 시 초기화됩니다.",
+  "credits_storage_fine": "{localStorage}, {sessionStorage}, IndexedDB, 외부 추적기는 사용하지 않습니다. 청취한 에피소드, 미션 필터, Science Lens 등 그 외 모든 것은 메모리에만 보관되며 새로고침 시 초기화됩니다.",
   "ui_layer_paths": "상징적 미션",
   "explore_layer_tip_paths": "상징적 우주선 궤적 — 보이저 1/2, 파이오니어 10/11, 뉴 호라이즌스, 카시니",
   "explore_voyager2_today_aria": "Voyager 2 현재 위치 — 클릭하여 미션 기록 열기",
@@ -3029,5 +3029,6 @@
   "privacy_where_heading": "데이터가 가는 곳",
   "privacy_logs_heading": "서버 로그",
   "privacy_logs_body": "분석과 별개로, 일반 웹 서버 액세스 로그는 모든 요청을 기록합니다 — IP 주소, 요청된 페이지, 브라우저의 user-agent 포함. 분석 엔드포인트의 엣지에서도 마찬가지입니다. 이들은 디버깅 및 악용 처리를 위해 자체 인프라에 보관되는 표준 운영 로그입니다: 로그 저장소는 최대 30일 동안 보관하고, 엣지 로그는 나이가 아닌 크기로 순환합니다. 이들은 분석 데이터와 연결되지 않으며, 프로필을 구축하는 데 사용되지 않으며, 아래의 옵트아웃은 이들을 끄지 않습니다 — 페이지를 제공할 수 없기 때문입니다. 사이트 앞에 있는 Cloudflare도 정책에 따라 자체 연결 로그를 보관할 수 있습니다.",
-  "privacy_optout_checking": "현재 설정을 확인 중입니다…"
+  "privacy_optout_checking": "현재 설정을 확인 중입니다…",
+  "colophon_toc_label": "목차"
 }

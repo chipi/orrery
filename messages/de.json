@@ -1085,10 +1085,10 @@
   "library_episodes_back": "← zurück zur Bibliothek",
   "library_episodes_credits_link": "Audio-Herkunftsnachweise unter /credits",
   "credits_storage_heading": "Speicher & Cookies",
-  "credits_storage_intro": "Orrery hat keine Konten und speichert keine persönlichen Daten — nur anonyme, cookielose Nutzungsanalysen und Absturzberichte, selbst gehostet und nie zur Identifizierung verwendet. Sie können diese auf der Seite {privacy} ausschalten. Drei funktionale Einstellungs-Cookies, jeweils mit eigener ADR-Gating, sind der einzige persistente Zustand:",
+  "credits_storage_intro": "Orrery hat keine Konten und sammelt keine persönlichen Daten – nur anonyme, cookielose Nutzungsanalytiken und Fehlerberichte, selbst gehostet und niemals zur Identifizierung verwendet. Zwei funktionale Präferenz-Cookies, jeweils durch ihre eigene ADR geschützt, sind der einzige persistente Zustand:",
   "credits_storage_locale_item": "{code} — deine ausdrücklich gewählte Sprache, wenn du eine im Sprachumschalter wählst (ADR-057). 1 Jahr. Kein Tracking, keine personenbezogenen Daten.",
   "credits_storage_tour_item": "{code} — deine aktuelle Position in der kuratierten Tour, damit du den Tab schließen und dort weitermachen kannst, wo du aufgehört hast (ADR-075). 30 Tage. Wird gelöscht, sobald du die Tour stoppst oder sie natürlich endet. Kein Tracking, keine personenbezogenen Daten.",
-  "credits_storage_fine": "Kein {sessionStorage}, IndexedDB oder Third-Party-Tracker. Drei {localStorage}-Schlüssel speichern gerätespezifische Einstellungen — `orrery.qualityTier` (Grafikqualität), das Debug-Modus-Flag und den Offline-Download-Datensatz — nichts davon verlässt Ihr Gerät. Alles andere — gehörte Episoden, Missionsfilter, Science Lens — wird nur im Speicher gespeichert und setzt sich beim Neuladen zurück.",
+  "credits_storage_fine": "Kein {localStorage}, {sessionStorage}, IndexedDB und keine Drittanbieter-Tracker. Alles andere — gehörte Episoden, Missionsfilter, Science Lens — wird nur im Arbeitsspeicher gehalten und beim Neuladen zurückgesetzt.",
   "ui_layer_paths": "IKONISCHE MISSIONEN",
   "explore_layer_tip_paths": "Ikonische Raumsondenflugbahnen — Voyager 1/2, Pioneer 10/11, New Horizons, Cassini",
   "explore_voyager2_today_aria": "Aktuelle Position von Voyager 2 — anklicken, um den Missionseintrag zu öffnen",
@@ -3029,5 +3029,6 @@
   "privacy_where_heading": "Wohin die Daten gehen",
   "privacy_logs_heading": "Server-Protokolle",
   "privacy_logs_body": "Unabhängig von Analytics werden in Standard-Webserver-Zugriffprotokollen alle Anfragen protokolliert — einschließlich Ihrer IP-Adresse, der angeforderten Seite und des User-Agent Ihres Browsers. Dasselbe gilt am Edge für den Analytics-Endpunkt. Dies sind Standard-Betriebsprotokolle, die auf unserer eigenen Infrastruktur für Debugging und Missbrauchserkennung gespeichert werden: der Log-Speicher behält sie bis zu 30 Tage, und die Edge-Protokolle rotieren nach Größe, nicht nach Alter. Sie werden nicht mit den Analytics-Daten verknüpft, nicht zur Profilbildung verwendet, und die nachstehende Opt-out-Option schaltet sie nicht aus — eine Seite kann nicht ohne sie bereitgestellt werden. Cloudflare, das die Website frontet, kann auch seine eigenen Verbindungsprotokolle gemäß seiner Richtlinie speichern.",
-  "privacy_optout_checking": "Aktuelle Einstellung wird überprüft…"
+  "privacy_optout_checking": "Aktuelle Einstellung wird überprüft…",
+  "colophon_toc_label": "Inhaltsverzeichnis"
 }

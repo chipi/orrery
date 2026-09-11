@@ -1085,10 +1085,10 @@
   "library_episodes_back": "← terug naar Bibliotheek",
   "library_episodes_credits_link": "Audioherkomst op /credits",
   "credits_storage_heading": "Opslag & cookies",
-  "credits_storage_intro": "Orrery heeft geen accounts en slaat geen persoonlijke gegevens op — alleen anonieme, cookieverlose gebruiksanalytics en crashrapporten, zelfgehost en nooit gebruikt om je te identificeren. Je kunt die op de {privacy}-pagina uitschakelen. Drie functionele voorkeurcookies, elk beveiligd door zijn eigen ADR, zijn de enige persistente status:",
+  "credits_storage_intro": "Orrery heeft geen accounts en verzamelt geen persoonlijke gegevens — alleen anonieme, cookieloze gebruiksstatistieken en crashrapportages, zelf-gehost en nooit gebruikt om je te identificeren. Twee functionele voorkeurcookies, elk beschermd door zijn eigen ADR, zijn de enige persistente staat:",
   "credits_storage_locale_item": "{code} — je expliciete taalkeuze, wanneer je er een kiest in de taalwisselaar (ADR-057). 1 jaar. Geen tracking, geen persoonlijke gegevens.",
   "credits_storage_tour_item": "{code} — je huidige positie in de Curator-tour, zodat je het tabblad kunt sluiten en hervatten waar je gebleven was (ADR-075). 30 dagen. Wordt gewist wanneer je de tour stopt of wanneer deze natuurlijk eindigt. Geen tracking, geen persoonlijke gegevens.",
-  "credits_storage_fine": "Geen {sessionStorage}, IndexedDB of third-party trackers. Drie {localStorage}-sleutels bevatten apparaatlocale instellingen — `orrery.qualityTier` (grafische kwaliteit), de debug-modovlag en het offline-downloadrecord — waarvan niets je apparaat verlaat. Al het overige — beluisterde afleveringen, missiefiltels, Science Lens — wordt alleen in het geheugen opgeslagen en wordt hersteld bij het herladen.",
+  "credits_storage_fine": "Geen {localStorage}, {sessionStorage}, IndexedDB of trackers van derden. Al het overige — beluisterde afleveringen, missiefilters, Science Lens — wordt alleen in het geheugen bewaard en wordt bij het herladen gereset.",
   "ui_layer_paths": "ICONISCHE MISSIES",
   "explore_layer_tip_paths": "Iconische ruimtevaartuigbanen — Voyager 1/2, Pioneer 10/11, New Horizons, Cassini",
   "explore_voyager2_today_aria": "Huidige positie van Voyager 2 — klik om missiedossier te openen",
@@ -3029,5 +3029,6 @@
   "privacy_where_heading": "Waar het heen gaat",
   "privacy_logs_heading": "Serverlogboeken",
   "privacy_logs_body": "Los van analytics leggen gewone webservertoegangslogboeken elk verzoek vast — inclusief je IP-adres, de gevraagde pagina en de user-agent van je browser. Hetzelfde geldt aan de edge voor het analytics-eindpunt. Dit zijn standaard operationele logboeken die op onze eigen infrastructuur worden bewaard voor debugging en misbruikbestrijding: de logwinkel bewaart ze tot 30 dagen, en de edge-logboeken roteren op grootte in plaats van leeftijd. Ze worden niet gekoppeld aan de analyticsgegevens, worden niet gebruikt om een profiel op te bouwen, en de opt-out hieronder schakelt ze niet uit — een pagina serveren kan niet zonder ze. Cloudflare, dat voor de site staat, kan ook zijn eigen verbindingslogboeken volgens zijn beleid bewaren.",
-  "privacy_optout_checking": "Je huidige instelling wordt gecontroleerd…"
+  "privacy_optout_checking": "Je huidige instelling wordt gecontroleerd…",
+  "colophon_toc_label": "Inhoud"
 }

@@ -25,6 +25,11 @@ import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { createHash } from 'node:crypto';
 import { execSync } from 'node:child_process';
+// The Physics Lab registry is deliberately alias-free (the standalone MCP
+// process imports it too), so the script can consume it directly — its
+// per-formula `learnMore` links render on /lab and belong in the library
+// inventory like every other outbound link (2026-09-11 operator ask).
+import { REGISTRY } from '../src/lib/physics/registry/index.ts';
 
 // ──────────────────────────────────────────────────────────────────────
 // Constants
@@ -69,7 +74,8 @@ type Category =
   | 'small-body'
   | 'scenario'
   | 'fleet'
-  | 'star';
+  | 'star'
+  | 'lab-formula';
 
 interface LinkEntry {
   id: string;
@@ -120,6 +126,11 @@ const HOST_RULES: Array<{ match: RegExp; rule: HostRule }> = [
   {
     match: /(^|\.)nasa\.gov$/i,
     rule: { source_id: 'nasa', defaultKind: 'agency-official', defaultLanguage: 'en' },
+  },
+  // HyperPhysics (GSU) — /lab learnMore reading (physics registry).
+  {
+    match: /^hyperphysics\.phy-astr\.gsu\.edu$/i,
+    rule: { source_id: 'hyperphysics', defaultKind: 'educational', defaultLanguage: 'en' },
   },
   {
     match: /(^|\.)gsfc\.nasa\.gov$/i,
@@ -648,6 +659,32 @@ function asArray<T = unknown>(v: unknown): T[] {
   return Array.isArray(v) ? (v as T[]) : [];
 }
 
+function collectFromLabRegistry(): RawLink[] {
+  // Human-readable labels come from the compiled en-US messages — the
+  // registry stores i18n keys ('lab.f.<id>.title' → 'lab_f_<id>_title').
+  const messages = JSON.parse(readFileSync('messages/en-US.json', 'utf8')) as Record<
+    string,
+    string
+  >;
+  const out: RawLink[] = [];
+  for (const def of REGISTRY.values()) {
+    const lm = (def as { learnMore?: { url?: string } }).learnMore;
+    if (!lm?.url) continue;
+    const titleKey = (def as { titleKey?: string }).titleKey ?? '';
+    const label = messages[titleKey.replace(/[.-]/g, '_')] ?? def.id;
+    out.push({
+      url: lm.url,
+      label,
+      rawT: undefined,
+      entity_id: def.id,
+      category: 'lab-formula',
+      route: '/lab',
+      source_file: 'src/lib/physics/registry/index.ts',
+    });
+  }
+  return out;
+}
+
 function collectFromMissionDir(): RawLink[] {
   const out: RawLink[] = [];
   const root = join(DATA_ROOT, 'missions');
@@ -1040,6 +1077,7 @@ async function main(): Promise<void> {
   //     i18n overlays, not the base file)
   //   * sun.json → object with `links` directly
   const collectors: Array<{ label: string; run: () => RawLink[] }> = [
+    { label: 'physics registry learnMore (/lab)', run: () => collectFromLabRegistry() },
     { label: 'missions/<dest>/*.json', run: () => collectFromMissionDir() },
     { label: 'i18n/en-US/missions/<dest>/*.json', run: () => collectFromI18nMissions() },
     { label: 'fleet/<category>/*.json', run: () => collectFromFleetDir() },

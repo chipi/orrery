@@ -11,7 +11,7 @@
 // suppress Cloudflare's managed AI-bot Disallow block.
 import { collectCanonicalRoutes } from '../../../scripts/site-routes.mjs';
 import { SUPPORTED_LOCALES } from '$lib/locale';
-import { canonicalUrl } from '$lib/seo';
+import { canonicalUrl, hreflangAlternates } from '$lib/seo';
 
 export const prerender = true;
 
@@ -26,17 +26,33 @@ function xmlEscape(s: string): string {
 
 export function GET(): Response {
   const routes = collectCanonicalRoutes();
-  const locs: string[] = [];
+
+  // One <url> per locale × route, each carrying the FULL reciprocal hreflang set
+  // (all locales + x-default) as `xhtml:link` alternates (#519). This is the
+  // sitemap channel Google recommends for large multilingual sites — it doubles
+  // the on-page <link rel="alternate"> annotations and speeds localized indexing
+  // so a search in Russian/German/… surfaces the matching /ru//de/ page. The
+  // alternate set is identical to $lib/seo's on-page tags (same helper), so the
+  // two can't drift.
+  const blocks: string[] = [];
   for (const route of routes) {
+    const alternates = hreflangAlternates(route)
+      .map(
+        (a) =>
+          `    <xhtml:link rel="alternate" hreflang="${a.hreflang}" href="${xmlEscape(a.href)}"/>`,
+      )
+      .join('\n');
     for (const { code } of SUPPORTED_LOCALES) {
-      locs.push(canonicalUrl(route, code));
+      blocks.push(
+        `  <url>\n    <loc>${xmlEscape(canonicalUrl(route, code))}</loc>\n${alternates}\n  </url>`,
+      );
     }
   }
 
   const body =
     `<?xml version="1.0" encoding="UTF-8"?>\n` +
-    `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
-    locs.map((loc) => `  <url><loc>${xmlEscape(loc)}</loc></url>`).join('\n') +
+    `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n` +
+    blocks.join('\n') +
     `\n</urlset>\n`;
 
   return new Response(body, {

@@ -5,6 +5,8 @@ import {
   localizedPath,
   canonicalUrl,
   hreflangAlternates,
+  ogLocale,
+  ogLocaleAlternates,
 } from './seo';
 import { SUPPORTED_LOCALES } from './locale';
 
@@ -74,5 +76,39 @@ describe('hreflangAlternates', () => {
     const en = alts.find((a) => a.hreflang === 'en-US');
     expect(xd?.href).toBe(en?.href);
     expect(xd?.href).toBe(`${SITE_ORIGIN}/`);
+  });
+});
+
+describe('ogLocale (#519)', () => {
+  it('maps region-form codes with an underscore', () => {
+    expect(ogLocale('en-US')).toBe('en_US');
+    expect(ogLocale('pt-BR')).toBe('pt_BR');
+    expect(ogLocale('zh-CN')).toBe('zh_CN');
+  });
+
+  it('gives bare-language codes an explicit territory', () => {
+    expect(ogLocale('de')).toBe('de_DE');
+    expect(ogLocale('ja')).toBe('ja_JP');
+    expect(ogLocale('ru')).toBe('ru_RU');
+  });
+
+  it('maps sr-Cyrl to sr_RS deliberately', () => {
+    expect(ogLocale('sr-Cyrl')).toBe('sr_RS');
+  });
+
+  it('covers every supported locale (no accidental identity fallback)', () => {
+    for (const { code } of SUPPORTED_LOCALES) {
+      const og = ogLocale(code);
+      expect(og).toMatch(/^[a-z]{2}_[A-Z]{2}$/);
+    }
+  });
+});
+
+describe('ogLocaleAlternates (#519)', () => {
+  it('returns every OTHER locale, excluding the active one', () => {
+    const alts = ogLocaleAlternates('de');
+    expect(alts).not.toContain('de_DE');
+    expect(alts).toContain('en_US');
+    expect(alts.length).toBe(SUPPORTED_LOCALES.length - 1);
   });
 });

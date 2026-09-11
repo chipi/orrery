@@ -51,6 +51,38 @@ export function canonicalUrl(route: string, locale: LocaleCode): string {
   return SITE_ORIGIN + localizedPath(route, locale);
 }
 
+// OpenGraph `og:locale` wants `language_TERRITORY`, even for our bare-language
+// codes (es, fr, …), and sr-Cyrl needs the script→territory choice made
+// deliberately. Explicit map, no guessing (#519).
+const OG_LOCALE: Record<string, string> = {
+  'en-US': 'en_US',
+  es: 'es_ES',
+  fr: 'fr_FR',
+  de: 'de_DE',
+  'pt-BR': 'pt_BR',
+  it: 'it_IT',
+  nl: 'nl_NL',
+  'sr-Cyrl': 'sr_RS',
+  'zh-CN': 'zh_CN',
+  ja: 'ja_JP',
+  ko: 'ko_KR',
+  hi: 'hi_IN',
+  ar: 'ar_AR',
+  ru: 'ru_RU',
+};
+
+/** OpenGraph `og:locale` value for a supported locale (language_TERRITORY). */
+export function ogLocale(locale: string): string {
+  return OG_LOCALE[locale] ?? locale.replace('-', '_');
+}
+
+/** The other supported locales' `og:locale` values, for `og:locale:alternate`. */
+export function ogLocaleAlternates(active: string): string[] {
+  return SUPPORTED_LOCALES.map((l) => l.code)
+    .filter((code) => code !== active)
+    .map(ogLocale);
+}
+
 export interface HreflangAlternate {
   /** BCP-47 hreflang value (locale codes are already valid tags). */
   hreflang: string;

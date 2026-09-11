@@ -225,10 +225,16 @@ export default defineConfig(({ mode }) => {
           // data JSON, imagery and audio load at runtime via the rules below.
           globPatterns: [
             'client/**/*.{js,css,woff2,svg,ico}',
-            // MOBILE prunes the 13 non-default locale bundles off-device
-            // (streamed via S3), so the precache manifest must reference
-            // only en-US — otherwise SW install 404s on the pruned files.
-            MOBILE ? 'client/data/i18n/en-US.json' : 'client/data/i18n/*.json',
+            // Precache ONLY the default-locale bundle — on web AND mobile (#518).
+            // The precache is an all-or-nothing cache.addAll(): every extra entry
+            // is another chance for the atomic install to reject, and the 13
+            // non-default bundles (~22 MB) were the bulk of that surface. They
+            // don't need precaching: the StaleWhileRevalidate rule below caches
+            // `/data/i18n/*.json` on first runtime fetch, so a non-en-US visitor
+            // still gets their bundle cached — just on demand, not up front. On
+            // MOBILE the other bundles are additionally pruned off-device
+            // (streamed via S3), so referencing them here would 404 the install.
+            'client/data/i18n/en-US.json',
             // Keep a `prerendered/`-prefixed pattern here: @vite-pwa's
             // buildGlobPatterns force-adds prerendered/**/*.{html,json} (~60 MB
             // of data JSON → blows the precache budget) UNLESS some pattern

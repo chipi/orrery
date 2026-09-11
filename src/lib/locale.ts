@@ -151,3 +151,23 @@ export function assertLocalesInSync(): void {
     }
   }
 }
+
+/**
+ * The first browser-preferred language (from `navigator.languages`) that maps to
+ * a supported locale, or `null`. Exact match first, then base-language:
+ * `de-DE` → `de`, `pt` → `pt-BR`, `zh` → `zh-CN`, `en-GB` → `en-US`. Pure +
+ * testable — the language-suggestion banner (#519) passes `navigator.languages`
+ * and compares the result to the active locale itself.
+ */
+export function matchPreferredLocale(preferred: readonly string[]): LocaleCode | null {
+  for (const raw of preferred) {
+    if (!raw) continue;
+    const lower = raw.toLowerCase();
+    const exact = SUPPORTED_LOCALES.find((l) => l.code.toLowerCase() === lower);
+    if (exact) return exact.code;
+    const base = lower.split('-')[0];
+    const baseMatch = SUPPORTED_LOCALES.find((l) => l.code.toLowerCase().split('-')[0] === base);
+    if (baseMatch) return baseMatch.code;
+  }
+  return null;
+}

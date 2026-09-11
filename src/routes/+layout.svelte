@@ -18,6 +18,7 @@
   import { gyro } from '$lib/sensory/device-orientation';
   import '$lib/styles/app.css';
   import Nav from '$lib/components/Nav.svelte';
+  import LanguageSuggestion from '$lib/components/LanguageSuggestion.svelte';
   import CommandPalette from '$lib/components/CommandPalette.svelte';
   import { immersiveMode } from '$lib/immersive-mode.svelte';
   import AudioOverlay from '$lib/components/AudioOverlay.svelte';
@@ -33,7 +34,13 @@
   import { audio } from '$lib/audio-state.svelte';
   import { audioRegistry } from '$lib/audio-registry.svelte';
   import { localeFromPage, syncDocumentLocaleAttributes } from '$lib/locale';
-  import { canonicalRoute, canonicalUrl, hreflangAlternates } from '$lib/seo';
+  import {
+    canonicalRoute,
+    canonicalUrl,
+    hreflangAlternates,
+    ogLocale,
+    ogLocaleAlternates,
+  } from '$lib/seo';
   import { loadLocaleAltText } from '$lib/image-alt';
   import * as m from '$lib/paraglide/messages';
   import { initAnalytics, track, trackRouteEnter } from '$lib/analytics';
@@ -91,6 +98,10 @@
   let seoRoute = $derived(canonicalRoute(page.url.pathname, base));
   let canonicalHref = $derived(canonicalUrl(seoRoute, activeLocale));
   let hreflangs = $derived(hreflangAlternates(seoRoute));
+  // og:locale (+ alternates) so social unfurls and crawlers see the page's
+  // language (#519). Complements the hreflang set above.
+  let ogLocaleValue = $derived(ogLocale(activeLocale));
+  let ogLocaleAlts = $derived(ogLocaleAlternates(activeLocale));
 
   // DebugPanel context — created HERE (layout), not inside DebugPanel,
   // so descendant pages (which are children of `<main>`) can see it via
@@ -471,12 +482,17 @@
   {#each hreflangs as alt (alt.hreflang)}
     <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />
   {/each}
+  <meta property="og:locale" content={ogLocaleValue} />
+  {#each ogLocaleAlts as alt (alt)}
+    <meta property="og:locale:alternate" content={alt} />
+  {/each}
   <link rel="manifest" href="{base}/manifest.webmanifest" />
   <link rel="icon" href="{base}/favicon.svg" type="image/svg+xml" />
 </svelte:head>
 
 {#key activeLocale}
   <Nav />
+  <LanguageSuggestion />
   <CommandPalette items={commandItems} open={commandOpen} onClose={() => (commandOpen = false)} />
   <AudioOverlay />
   <ExhibitOverlay />

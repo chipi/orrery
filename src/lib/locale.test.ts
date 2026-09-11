@@ -16,7 +16,35 @@ import {
   assertLocalesInSync,
   activeLocale,
   localeFromPage,
+  matchPreferredLocale,
 } from './locale';
+
+describe('matchPreferredLocale (#519 language suggestion)', () => {
+  it('exact-matches a supported region code', () => {
+    expect(matchPreferredLocale(['en-US'])).toBe('en-US');
+    expect(matchPreferredLocale(['pt-BR'])).toBe('pt-BR');
+  });
+  it('base-language matches a bare code and prefers the first hit', () => {
+    expect(matchPreferredLocale(['de-DE', 'de', 'en'])).toBe('de');
+    expect(matchPreferredLocale(['de'])).toBe('de');
+    expect(matchPreferredLocale(['fr-CA'])).toBe('fr'); // base fr
+  });
+  it('maps a bare language to our region variant', () => {
+    expect(matchPreferredLocale(['pt'])).toBe('pt-BR');
+    expect(matchPreferredLocale(['zh'])).toBe('zh-CN');
+  });
+  it('any English variant resolves to en-US', () => {
+    expect(matchPreferredLocale(['en-GB', 'en'])).toBe('en-US');
+  });
+  it('returns null for an unsupported language or empty list', () => {
+    expect(matchPreferredLocale(['xx', 'yy'])).toBeNull();
+    expect(matchPreferredLocale([])).toBeNull();
+    expect(matchPreferredLocale([''])).toBeNull();
+  });
+  it('skips unsupported entries and returns the first supported one', () => {
+    expect(matchPreferredLocale(['xx', 'ja', 'de'])).toBe('ja');
+  });
+});
 
 describe('SUPPORTED_LOCALES', () => {
   it('includes all configured rollout locales', () => {

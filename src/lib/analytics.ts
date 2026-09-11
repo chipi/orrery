@@ -170,6 +170,17 @@ export const EVENT_NAMES = [
   'fly-recovery',
   'science-to-app',
   'tour-complete',
+  // Language-suggestion banner (#519). Shown when a visitor's browser-preferred
+  // language differs from the page's locale and we support it; `accepted ÷ shown`
+  // is the take rate. Suggest-only (never auto-redirect — Google penalizes it).
+  'locale-suggest-shown',
+  'locale-suggest-accepted',
+  // Data-layer observability (#517). The per-locale i18n overlay bundle
+  // (~1.75 MB) occasionally fails to load client-side; the loader retries
+  // transient failures and, when they survive, emits this ONCE per locale so
+  // the real failure rate is measurable instead of only inferable from nginx
+  // per-file 404 bursts. `status` = the HTTP status (or null for a network error).
+  'i18n-bundle-load-failed',
 ] as const;
 
 export type EventName = (typeof EVENT_NAMES)[number];

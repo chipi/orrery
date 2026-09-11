@@ -399,7 +399,14 @@
     padding: 0;
     margin: 0;
     display: grid;
-    gap: 8px;
+    /* Two columns (2026-09-11 ask) — collapses to one on narrow screens. */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 24px;
+  }
+  @media (max-width: 560px) {
+    .toc ul {
+      grid-template-columns: 1fr;
+    }
   }
   .toc li {
     font-family: var(--font-mono, 'Space Mono', monospace);

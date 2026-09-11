@@ -125,9 +125,9 @@
       label: m.nav_learn,
       hub: '/learn',
       children: [
-        { path: '/lab', label: m.nav_lab },
         { path: '/essays', label: m.nav_essays },
         { path: '/science', label: m.nav_science },
+        { path: '/lab', label: m.nav_lab },
       ],
     },
   ];

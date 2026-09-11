@@ -3030,5 +3030,6 @@
   "privacy_logs_heading": "Logs do servidor",
   "privacy_logs_body": "Separadamente da análise, os logs de acesso ordinários do servidor web registram cada solicitação — incluindo seu endereço IP, a página solicitada e o user-agent do seu navegador. O mesmo vale para o edge do ponto de extremidade de análise. Esses são logs operacionais padrão mantidos em nossa própria infraestrutura para depuração e tratamento de abuso: o armazenamento de logs os mantém por até 30 dias, e os logs edge rotacionam por tamanho em vez de idade. Eles não são conectados aos dados de análise, não são usados para criar um perfil, e a opção de exclusão abaixo não os desativa — servir uma página não é possível sem eles. Cloudflare, que está na frente do site, também pode manter seus próprios logs de conexão conforme sua política.",
   "privacy_optout_checking": "Verificando sua configuração atual…",
-  "colophon_toc_label": "Conteúdo"
+  "colophon_toc_label": "Conteúdo",
+  "science_layer_mass_period_desc": "Todos os exoplanetas conhecidos com massa medida, plotados por período orbital — Júpiteres quentes, super-Terras e sub-Netunos caem em famílias visíveis. Os planetas deste sistema estão destacados."
 }

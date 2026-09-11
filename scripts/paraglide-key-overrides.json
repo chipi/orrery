@@ -2062,7 +2062,8 @@
     "privacy_logs_heading": "सर्वर लॉग",
     "privacy_logs_body": "विश्लेषण से अलग, साधारण वेब-सर्वर एक्सेस लॉग हर अनुरोध को रिकॉर्ड करते हैं — आपके IP पते, अनुरोधी पृष्ठ, और आपके ब्राउज़र के user-agent सहित। विश्लेषण अंतिम बिंदु के लिए किनारे पर भी यही सच है। ये मानक परिचालनात्मक लॉग हैं जो डिबग करने और दुरुपयोग सामना करने के लिए हमारी अपनी अवसंरचना पर रखे जाते हैं: लॉग स्टोर उन्हें 30 दिनों तक रखता है, और किनारे के लॉग आयु के बजाय आकार से घूमते हैं। ये विश्लेषण डेटा से जुड़े नहीं हैं, प्रोफ़ाइल बनाने के लिए उपयोग नहीं किए जाते हैं, और नीचे दिया गया ऑप्ट-आउट उन्हें बंद नहीं करता है — एक पृष्ठ परोसना उन्हें बिना नहीं हो सकता। Cloudflare, जो साइट के सामने है, अपनी नीति के तहत अपने स्वयं के कनेक्शन लॉग भी रख सकता है।",
     "privacy_optout_checking": "आपकी वर्तमान सेटिंग जाँच जा रही है…",
-    "colophon_toc_label": "विषयवस्तु"
+    "colophon_toc_label": "विषयवस्तु",
+    "science_layer_mass_period_desc": "प्रत्येक ज्ञात एक्सोप्लैनेट जिसका मापा हुआ द्रव्यमान है, कक्षीय अवधि के अनुसार प्लॉट किया गया — हॉट जुपिटर, सुपर-अर्थ और सब-नेप्च्यून दृश्यमान परिवारों में आते हैं। इस प्रणाली के ग्रह हाइलाइट किए गए हैं।"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -3989,7 +3990,8 @@
     "privacy_logs_body": "分析とは別に、通常のWebサーバーアクセスログはIPアドレス、リクエストされたページ、ブラウザのユーザーエージェントを含む全てのリクエストを記録します。分析エンドポイントではエッジでも同じことが言えます。これらはデバッグと不正対処のために自社インフラストラクチャに保管される標準的な運用ログです。ログストアは最大30日間保管し、エッジログはサイズで回転します。分析データに結合されず、プロファイル作成に使用されず、以下のオプトアウトで無効にされません — ページを提供することはできないからです。サイトの前にあるCloudflareは、その方針に基づいて独自の接続ログを保管することもあります。",
     "privacy_optout_checking": "現在の設定を確認中…",
     "credits_storage_fine": "{sessionStorage}、IndexedDB、またはサードパーティトラッカーはありません。3つの{localStorage}キー（`orrery.qualityTier`（グラフィックス品質）、デバッグモードフラグ、オフラインダウンロード記録）はデバイスローカル設定を保持していますが、どれもあなたのデバイスから外に出ません。その他全て — 聴いたエピソード、ミッションフィルター、Science Lens — はメモリ内にのみ保持され、リロード時にリセットされます。",
-    "colophon_toc_label": "目次"
+    "colophon_toc_label": "目次",
+    "science_layer_mass_period_desc": "測定された質量を持つ既知の系外惑星すべてを公転周期でプロット — ホットジュピター、スーパーアース、サブネプチューンが目に見える族を形成します。このシステムの惑星はハイライトされています。"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -6095,7 +6097,8 @@
     "privacy_logs_heading": "سجلات الخادم",
     "privacy_logs_body": "بمعزل عن قياس الاستخدام، تسجل سجلات الوصول العادية لخادم الويب كل طلب — بما فيه عنوان IP الخاص بك والصفحة المطلوبة وبرنامج تصفح المستخدم الخاص بك. الشيء نفسه ينطبق على الحافة للنقطة النهائية لقياس الاستخدام. هذه سجلات تشغيلية قياسية محفوظة على بنيتنا التحتية الخاصة لأغراض التصحيح والتعامل مع الإساءة: يحتفظ مخزن السجلات بها لمدة تصل إلى 30 يومًا، وسجلات الحافة تدور حسب الحجم وليس العمر. لا يتم دمجها مع بيانات قياس الاستخدام، ولا تُستخدم لبناء ملف شخصي، والإيقاف أدناه لا يوقفها — فخدمة الصفحة لا يمكن أن تحدث بدونها. قد تحتفظ Cloudflare، التي توجد أمام الموقع، بسجلات الاتصال الخاصة بها أيضًا بموجب سياستها.",
     "privacy_optout_checking": "جارٍ التحقق من الإعداد الحالي…",
-    "colophon_toc_label": "المحتويات"
+    "colophon_toc_label": "المحتويات",
+    "science_layer_mass_period_desc": "كل كوكب خارج الشمس معروف له كتلة مقاسة، مرسوم حسب الدورة المدارية — المشتريات الحارة والأراضي العملاقة والنبتونات الفرعية تقع في عائلات مرئية. يتم تمييز كواكب هذا النظام."
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -8024,7 +8027,8 @@
     "privacy_logs_body": "분석과 별개로, 일반 웹 서버 액세스 로그는 모든 요청을 기록합니다 — IP 주소, 요청된 페이지, 브라우저의 user-agent 포함. 분석 엔드포인트의 엣지에서도 마찬가지입니다. 이들은 디버깅 및 악용 처리를 위해 자체 인프라에 보관되는 표준 운영 로그입니다: 로그 저장소는 최대 30일 동안 보관하고, 엣지 로그는 나이가 아닌 크기로 순환합니다. 이들은 분석 데이터와 연결되지 않으며, 프로필을 구축하는 데 사용되지 않으며, 아래의 옵트아웃은 이들을 끄지 않습니다 — 페이지를 제공할 수 없기 때문입니다. 사이트 앞에 있는 Cloudflare도 정책에 따라 자체 연결 로그를 보관할 수 있습니다.",
     "privacy_optout_checking": "현재 설정을 확인 중입니다…",
     "credits_storage_fine": "{sessionStorage}, IndexedDB, 또는 제3자 추적기가 없습니다. 3개의 {localStorage} 키가 기기 로컬 설정을 보관합니다 — `orrery.qualityTier`(그래픽 품질), 디버그 모드 플래그, 오프라인 다운로드 레코드 — 모두 기기를 떠나지 않습니다. 그 외 모든 것 — 들은 에피소드, 미션 필터, Science Lens — 메모리에만 보관되고 새로고침 시 초기화됩니다.",
-    "colophon_toc_label": "목차"
+    "colophon_toc_label": "목차",
+    "science_layer_mass_period_desc": "측정된 질량을 가진 모든 알려진 외계행성을 공전 주기별로 표시한 것입니다. 목성형 행성, 슈퍼지구, 미니 해왕성 등이 명확한 그룹을 형성합니다. 이 시스템의 행성들이 강조되어 있습니다."
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -9775,7 +9779,8 @@
     "privacy_logs_body": "Unabhängig von Analytics werden in Standard-Webserver-Zugriffprotokollen alle Anfragen protokolliert — einschließlich Ihrer IP-Adresse, der angeforderten Seite und des User-Agent Ihres Browsers. Dasselbe gilt am Edge für den Analytics-Endpunkt. Dies sind Standard-Betriebsprotokolle, die auf unserer eigenen Infrastruktur für Debugging und Missbrauchserkennung gespeichert werden: der Log-Speicher behält sie bis zu 30 Tage, und die Edge-Protokolle rotieren nach Größe, nicht nach Alter. Sie werden nicht mit den Analytics-Daten verknüpft, nicht zur Profilbildung verwendet, und die nachstehende Opt-out-Option schaltet sie nicht aus — eine Seite kann nicht ohne sie bereitgestellt werden. Cloudflare, das die Website frontet, kann auch seine eigenen Verbindungsprotokolle gemäß seiner Richtlinie speichern.",
     "privacy_optout_checking": "Aktuelle Einstellung wird überprüft…",
     "credits_storage_fine": "Kein {sessionStorage}, IndexedDB oder Third-Party-Tracker. Drei {localStorage}-Schlüssel speichern gerätespezifische Einstellungen — `orrery.qualityTier` (Grafikqualität), das Debug-Modus-Flag und den Offline-Download-Datensatz — nichts davon verlässt Ihr Gerät. Alles andere — gehörte Episoden, Missionsfilter, Science Lens — wird nur im Speicher gespeichert und setzt sich beim Neuladen zurück.",
-    "colophon_toc_label": "Inhaltsverzeichnis"
+    "colophon_toc_label": "Inhaltsverzeichnis",
+    "science_layer_mass_period_desc": "Alle bekannten Exoplaneten mit gemessener Masse, aufgetragen nach Umlaufperiode — Hot Jupiter, Super-Erden und Sub-Neptune bilden sichtbare Familien. Die Planeten dieses Systems sind hervorgehoben."
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -11466,7 +11471,8 @@
     "privacy_logs_body": "Indépendamment de l'analytique, les journaux d'accès ordinaires du serveur web enregistrent chaque requête — y compris votre adresse IP, la page demandée et l'user-agent de votre navigateur. Il en va de même à la périphérie pour l'endpoint d'analytique. Ce sont des journaux opérationnels standard conservés sur notre propre infrastructure pour le débogage et la gestion des abus : le stockage des journaux les conserve jusqu'à 30 jours, et les journaux de périphérie tournent par taille plutôt que par date. Ils ne sont pas associés aux données d'analytique, ne sont pas utilisés pour construire un profil, et l'opt-out ci-dessous ne les désactive pas — servir une page ne peut pas se faire sans eux. Cloudflare, qui se trouve devant le site, peut également conserver ses propres journaux de connexion selon sa politique.",
     "privacy_optout_checking": "Vérification de votre paramètre actuel…",
     "credits_storage_fine": "Pas de {sessionStorage}, IndexedDB ou traceurs tiers. Trois clés {localStorage} conservent des paramètres locaux au dispositif — `orrery.qualityTier` (qualité graphique), l'indicateur de mode débogage et l'enregistrement de téléchargement hors ligne — aucune ne quitte votre dispositif. Tout le reste — épisodes écoutés, filtres de mission, Science Lens — est conservé en mémoire uniquement et réinitialise au rechargement.",
-    "colophon_toc_label": "Sommaire"
+    "colophon_toc_label": "Sommaire",
+    "science_layer_mass_period_desc": "Chaque exoplanète connue avec une masse mesurée, tracée en fonction de sa période orbitale — les Jupiters chauds, super-Terres et sub-Neptunes forment des familles distinctes. Les planètes de ce système sont en évidence."
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -13124,7 +13130,8 @@
     "privacy_logs_body": "Separatamente dalle analisi, i normali log di accesso del server web registrano ogni richiesta — incluso il tuo indirizzo IP, la pagina richiesta e l'user-agent del tuo browser. Lo stesso vale al bordo per l'endpoint di analisi. Si tratta di log operativi standard mantenuti sulla nostra infrastruttura per debugging e gestione degli abusi: l'archivio di log li conserva fino a 30 giorni, e i log al bordo ruotano per dimensione piuttosto che per età. Non sono collegati ai dati di analisi, non vengono utilizzati per creare un profilo, e l'opt-out sottostante non li disattiva — servire una pagina non può avvenire senza di essi. Cloudflare, che sta davanti al sito, potrebbe anche conservare i suoi propri log di connessione secondo la sua politica.",
     "privacy_optout_checking": "Verifica dell'impostazione attuale in corso…",
     "credits_storage_fine": "No {sessionStorage}, IndexedDB o tracker di terze parti. Tre chiavi {localStorage} contengono impostazioni locali del dispositivo — `orrery.qualityTier` (qualità grafica), il flag modalità debug e il record di download offline — nessuna delle quali esce dal tuo dispositivo. Tutto il resto — episodi ascoltati, filtri missioni, Science Lens — è mantenuto solo in memoria e si reimposta al ricaricamento.",
-    "colophon_toc_label": "Contenuti"
+    "colophon_toc_label": "Contenuti",
+    "science_layer_mass_period_desc": "Ogni esopianeta noto con massa misurata, rappresentato in base al periodo orbitale — hot Jupiter, super-Terre e sub-Nettuni ricadono in famiglie distinte. I pianeti di questo sistema sono evidenziati."
   },
   "es": {
     "mars_meta_description": "Todo artefacto que la humanidad ha colocado en Marte — aterrizadores, rovers y orbitadores activos — en un globo 3D navegable con la historia completa de la misión.",
@@ -14781,7 +14788,8 @@
     "privacy_logs_body": "Aparte de los análisis, los registros de acceso ordinarios del servidor web registran cada solicitud — incluyendo tu dirección IP, la página solicitada y el user-agent de tu navegador. Lo mismo ocurre en el perímetro para el punto final de análisis. Estos son registros operativos estándar mantenidos en nuestra propia infraestructura para depuración y manejo de abusos: el almacén de registros los conserva hasta 30 días, y los registros del perímetro rotan por tamaño en lugar de por antigüedad. No están vinculados a los datos de análisis, no se utilizan para crear un perfil, y la exclusión voluntaria a continuación no los desactiva — servir una página no puede ocurrir sin ellos. Cloudflare, que está delante del sitio, también puede mantener sus propios registros de conexión según su política.",
     "privacy_optout_checking": "Comprobando tu configuración actual…",
     "credits_storage_fine": "Sin {sessionStorage}, IndexedDB, ni rastreadores de terceros. Tres claves {localStorage} almacenan configuración local del dispositivo — `orrery.qualityTier` (calidad de gráficos), la bandera de modo depuración y el registro de descarga sin conexión — ninguna de las cuales sale de tu dispositivo. Todo lo demás — episodios escuchados, filtros de misiones, Science Lens — se mantiene solo en memoria y se reinicia al recargar.",
-    "colophon_toc_label": "Contenidos"
+    "colophon_toc_label": "Contenidos",
+    "science_layer_mass_period_desc": "Todos los exoplanetas conocidos con masa medida, representados por período orbital — Júpiteres calientes, supertierras y subneptunos forman familias visibles. Los planetas de este sistema están destacados."
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -16447,7 +16455,8 @@
     "privacy_logs_body": "Los van analytics leggen gewone webservertoegangslogboeken elk verzoek vast — inclusief je IP-adres, de gevraagde pagina en de user-agent van je browser. Hetzelfde geldt aan de edge voor het analytics-eindpunt. Dit zijn standaard operationele logboeken die op onze eigen infrastructuur worden bewaard voor debugging en misbruikbestrijding: de logwinkel bewaart ze tot 30 dagen, en de edge-logboeken roteren op grootte in plaats van leeftijd. Ze worden niet gekoppeld aan de analyticsgegevens, worden niet gebruikt om een profiel op te bouwen, en de opt-out hieronder schakelt ze niet uit — een pagina serveren kan niet zonder ze. Cloudflare, dat voor de site staat, kan ook zijn eigen verbindingslogboeken volgens zijn beleid bewaren.",
     "privacy_optout_checking": "Je huidige instelling wordt gecontroleerd…",
     "credits_storage_fine": "Geen {sessionStorage}, IndexedDB of third-party trackers. Drie {localStorage}-sleutels bevatten apparaatlocale instellingen — `orrery.qualityTier` (grafische kwaliteit), de debug-modovlag en het offline-downloadrecord — waarvan niets je apparaat verlaat. Al het overige — beluisterde afleveringen, missiefiltels, Science Lens — wordt alleen in het geheugen opgeslagen en wordt hersteld bij het herladen.",
-    "colophon_toc_label": "Inhoud"
+    "colophon_toc_label": "Inhoud",
+    "science_layer_mass_period_desc": "Elke bekende exoplaneet met een gemeten massa, uitgezet naar omloopperiode — hete Jupiters, super-Aardes en sub-Neptunus-planeten vallen in zichtbare families. De planeten van dit systeem zijn gemarkeerd."
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -18377,7 +18386,8 @@
     "privacy_logs_body": "Отдельно от аналитики обычные логи доступа веб-сервера записывают каждый запрос — включая ваш IP-адрес, запрошенную страницу и user-agent браузера. То же верно на граничных узлах для эндпоинта аналитики. Это стандартные операционные логи, хранящиеся на нашей собственной инфраструктуре для отладки и обработки злоупотреблений: хранилище логов сохраняет их до 30 дней, а граничные логи ротируются по размеру, а не по времени. Они не связаны с данными аналитики, не используются для построения профиля, и приведённый ниже opt-out их не отключает — подача страницы невозможна без них. Cloudflare, которая находится перед сайтом, также может хранить свои собственные логи соединений в соответствии со своей политикой.",
     "privacy_optout_checking": "Проверка текущего параметра…",
     "credits_storage_fine": "Нет {sessionStorage}, IndexedDB или сторонних трекеров. Три ключа {localStorage} содержат устройство-локальные настройки — `orrery.qualityTier` (качество графики), флаг режима отладки и запись об автономной загрузке — ничто из этого не покидает ваше устройство. Всё остальное — прослушанные эпизоды, фильтры миссий, Science Lens — хранится только в памяти и сбрасывается при перезагрузке.",
-    "colophon_toc_label": "Содержание"
+    "colophon_toc_label": "Содержание",
+    "science_layer_mass_period_desc": "Все известные экзопланеты с измеренной массой, построенные по орбитальному периоду — горячие юпитеры, суперземли и субнептуны образуют видимые семейства. Планеты этой системы выделены."
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -20350,7 +20360,8 @@
     "privacy_logs_body": "与数据分析分开，普通的网络服务器访问日志记录每个请求 — 包括您的 IP 地址、请求的页面和您的浏览器用户代理。分析端点的边缘日志也是如此。这些是标准的操作日志，保存在我们自己的基础设施上用于调试和滥用处理：日志存储保留它们最多 30 天，边缘日志按大小而非年龄轮换。它们不与数据分析数据关联，不用于构建用户档案，下面的选择退出也不会关闭它们 — 提供页面必须使用它们。Cloudflare 作为网站的前端，也可能根据其政策保留自己的连接日志。",
     "privacy_optout_checking": "正在检查您的当前设置…",
     "credits_storage_fine": "没有 {sessionStorage}、IndexedDB 或第三方跟踪器。三个 {localStorage} 键保存设备本地设置 — `orrery.qualityTier`（图形质量）、调试模式标志和离线下载记录 — 这些都不会离开您的设备。其他一切 — 已听剧集、任务筛选器、科学透镜 — 仅保存在内存中，刷新时重置。",
-    "colophon_toc_label": "目录"
+    "colophon_toc_label": "目录",
+    "science_layer_mass_period_desc": "所有已知、质量已测定的系外行星，按公转周期绘制 — 热木星、超级地球和亚海王星形成可见的行星族群。该系统的行星已突出显示。"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -22195,7 +22206,8 @@
     "privacy_logs_body": "Одвојено од аналитике, обични дневници приступа веб-сервера бележе сваки захтев — укључујући вашу IP адресу, страницу која је затражена и user-agent вашег прегледача. Исто важи и за аналитички крајњу тачку. То су стандардни оперативни дневници чувани на својој инфраструктури за отклањање грешака и борбу против злоупотребе: складиште дневника их чува до 30 дана, а дневници на рубу се ротирају по величини а не по старости. Нису повезани са аналитичким подацима, не користе се за изградњу профила, и исклучивање испод их не искључује — служење странице без њих није могуће. Cloudflare, који је испред странице, може да чува и своје дневнике повезивања према својој политици.",
     "privacy_optout_checking": "Проверавам вашу тренутну поставку…",
     "credits_storage_fine": "Без {sessionStorage}, IndexedDB или праћења трећих страна. Три {localStorage} кључа чувају поставке локалне за уређај — `orrery.qualityTier` (kvalitet графике), заставу режима отклањања грешака и запис о преузимању у режиму без интернета — ниједан се не напушта вашег уређаја. Све остало — чули су епизоде, филтри мисија, Science Lens — чувају се само у меморији и ресетују се при поновном учитавању.",
-    "colophon_toc_label": "Садржај"
+    "colophon_toc_label": "Садржај",
+    "science_layer_mass_period_desc": "Сваки позната егзопланета са измереном масом, приказана према орбиталном периоду — топли Јупитери, супер-Земље и суб-Нептуни падају у видљиве породице. Планете овог система су истакнуте."
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -23859,6 +23871,7 @@
     "privacy_logs_body": "Separadamente da análise, os logs de acesso ordinários do servidor web registram cada solicitação — incluindo seu endereço IP, a página solicitada e o user-agent do seu navegador. O mesmo vale para o edge do ponto de extremidade de análise. Esses são logs operacionais padrão mantidos em nossa própria infraestrutura para depuração e tratamento de abuso: o armazenamento de logs os mantém por até 30 dias, e os logs edge rotacionam por tamanho em vez de idade. Eles não são conectados aos dados de análise, não são usados para criar um perfil, e a opção de exclusão abaixo não os desativa — servir uma página não é possível sem eles. Cloudflare, que está na frente do site, também pode manter seus próprios logs de conexão conforme sua política.",
     "privacy_optout_checking": "Verificando sua configuração atual…",
     "credits_storage_fine": "Sem {sessionStorage}, IndexedDB ou rastreadores de terceiros. Três chaves {localStorage} mantêm configurações locais do dispositivo — `orrery.qualityTier` (qualidade de gráficos), a flag de modo debug e o registro de download offline — nenhum deles sai do seu dispositivo. Tudo o mais — episódios ouvidos, filtros de missão, Science Lens — é mantido apenas na memória e é redefinido ao recarregar.",
-    "colophon_toc_label": "Conteúdo"
+    "colophon_toc_label": "Conteúdo",
+    "science_layer_mass_period_desc": "Todos os exoplanetas conhecidos com massa medida, plotados por período orbital — Júpiteres quentes, super-Terras e sub-Netunos caem em famílias visíveis. Os planetas deste sistema estão destacados."
   }
 }

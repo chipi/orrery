@@ -3030,5 +3030,6 @@
   "privacy_logs_heading": "Serverlogboeken",
   "privacy_logs_body": "Los van analytics leggen gewone webservertoegangslogboeken elk verzoek vast — inclusief je IP-adres, de gevraagde pagina en de user-agent van je browser. Hetzelfde geldt aan de edge voor het analytics-eindpunt. Dit zijn standaard operationele logboeken die op onze eigen infrastructuur worden bewaard voor debugging en misbruikbestrijding: de logwinkel bewaart ze tot 30 dagen, en de edge-logboeken roteren op grootte in plaats van leeftijd. Ze worden niet gekoppeld aan de analyticsgegevens, worden niet gebruikt om een profiel op te bouwen, en de opt-out hieronder schakelt ze niet uit — een pagina serveren kan niet zonder ze. Cloudflare, dat voor de site staat, kan ook zijn eigen verbindingslogboeken volgens zijn beleid bewaren.",
   "privacy_optout_checking": "Je huidige instelling wordt gecontroleerd…",
-  "colophon_toc_label": "Inhoud"
+  "colophon_toc_label": "Inhoud",
+  "science_layer_mass_period_desc": "Elke bekende exoplaneet met een gemeten massa, uitgezet naar omloopperiode — hete Jupiters, super-Aardes en sub-Neptunus-planeten vallen in zichtbare families. De planeten van dit systeem zijn gemarkeerd."
 }

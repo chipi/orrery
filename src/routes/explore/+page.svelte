@@ -114,7 +114,7 @@
   import { agencyToLogoPaths } from '$lib/agency-logo';
   import ScienceLayersPanel from '$lib/components/ScienceLayersPanel.svelte';
   import { audio } from '$lib/audio-state.svelte';
-  import { onLayerChange, type LayerKey } from '$lib/science-layers';
+  import { onLayerChange, setLayer, type LayerKey } from '$lib/science-layers';
   import { onScienceLensChange } from '$lib/science-lens';
   import type { ScienceTabId } from '$types/science';
   import * as m from '$lib/paraglide/messages';
@@ -1028,8 +1028,23 @@
             { tab: 'history', section: 'newton-principia-1687', label: 'Newton · Principia, 1687' },
           ],
         };
+      case 'body-scene':
+        // Exoplanet systems surface the mass–period plot as a standard lens
+        // layer (was a bespoke .nb-hud chip — 2026-09-11 operator ask, same
+        // WS-3 unification as constellations/H-R/light-cones). Solar-system
+        // body scenes keep no lens surface.
+        if (!activeBlackHole && activeBodyHostId && exoplanetHostIds.has(activeBodyHostId)) {
+          return {
+            title: m.explore_lens_mass_period(),
+            body: m.science_layer_mass_period_desc(),
+            tab: 'exoplanets',
+            section: 'super-earths-sub-neptunes',
+            available: ['mass-period'],
+          };
+        }
+        return { available: [] };
       default:
-        // body-scene + black-hole takeovers own the viewport; no lens surface.
+        // black-hole takeovers own the viewport; no lens surface.
         return { available: [] };
     }
   });
@@ -1738,6 +1753,14 @@
     for (const key of ['rotation-curve', 'dark-matter-halo', 'stellar-populations'] as const) {
       addLayerWatch(onLayerChange(key, (on) => setMwLensFn?.(key, on)));
     }
+    // Mass–period plot (body-scene) — lens-layer driven since 2026-09-11
+    // (was a bespoke chip). The chart's own close button writes the layer
+    // off via setLayer so panel toggle + chart stay in sync.
+    addLayerWatch(
+      onLayerChange('mass-period', (on) => {
+        massPeriodOpen = on;
+      }),
+    );
 
     // Async-load localised planet + sun data; safe to run alongside scene setup.
     const initialLocale = localeFromPage(page);
@@ -2200,6 +2223,10 @@
       },
       set massPeriodOpen(v) {
         massPeriodOpen = v;
+        // The lens layer drives this state (2026-09-11) — keep the stored
+        // layer preference in sync so a scene-exit reset doesn't leave the
+        // panel toggle on with the chart closed.
+        setLayer('mass-period', v);
       },
       get allExoplanetPlanets() {
         return allExoplanetPlanets;
@@ -2727,24 +2754,9 @@
     {/if}
   {/if}
 
-  <!-- Slice 7: the mass–period property-space plot — a lens inside an exoplanet
-       system (body-scene). Off by default. Same top-left pill cluster as the other
-       scales; the overlay itself has a close button. -->
-  {#if view === '3d' && contextId === 'body-scene' && !activeBlackHole && activeBodyHostId && exoplanetHostIds.has(activeBodyHostId)}
-    <div class="nb-hud deep-space" role="group" aria-label={m.ui_visibility_layers()}>
-      <div class="ctrl-row chips">
-        <button
-          type="button"
-          class="chip"
-          class:active={massPeriodOpen}
-          aria-pressed={massPeriodOpen}
-          onclick={() => (massPeriodOpen = !massPeriodOpen)}
-        >
-          {m.explore_lens_mass_period()}
-        </button>
-      </div>
-    </div>
-  {/if}
+  <!-- Slice 7's mass–period plot moved from a bespoke chip here into the
+       science-lens layer panel (2026-09-11) — see lensPanel's 'body-scene'
+       case + the 'mass-period' layer watch. -->
 
   <!-- Sun compass — a "find your way home" cue that appears ONLY when the Sun has
        been panned off-screen (when it's in frame, the gold marker + distance rings
@@ -2911,7 +2923,12 @@
       planets={allExoplanetPlanets}
       activeHostId={activeBodyHostId}
       open={massPeriodOpen && contextId === 'body-scene'}
-      onClose={() => (massPeriodOpen = false)}
+      onClose={() => {
+        massPeriodOpen = false;
+        // Keep the lens-layer toggle in sync (the layer drives this open
+        // state since 2026-09-11).
+        setLayer('mass-period', false);
+      }}
     />
   {/if}
 
@@ -3993,36 +4010,9 @@
     color: rgba(255, 224, 190, 0.82);
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
   }
-  /* Neighborhood top-left cluster — mirrors .hud-controls, offset well below the
-     breadcrumb+reset row so the two never collide. */
-  .nb-hud {
-    position: fixed;
-    top: calc(var(--nav-height) + 60px);
-    left: 16px;
-    z-index: 45;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    pointer-events: none;
-  }
-  .nb-hud .ctrl-row {
-    pointer-events: auto;
-  }
-  /* Deep-space scale cue — slate accent on the layer pills (vs the teal used at
-     solar-system scale) so the scale reads at a glance. */
-  .nb-hud.deep-space .chip {
-    border-color: rgba(154, 166, 189, 0.32);
-    color: rgba(220, 227, 240, 0.82);
-  }
-  .nb-hud.deep-space .chip:hover:not(.active) {
-    border-color: rgba(154, 166, 189, 0.6);
-  }
-  .nb-hud.deep-space .chip.active {
-    background: #8791a6;
-    border-color: #8791a6;
-    color: #0a0e16;
-  }
+  /* .nb-hud chip-row styles removed 2026-09-11 — the last bespoke chip
+     (mass–period) moved into the science-lens layer panel; WS-3 had
+     already retired the rest. */
   /* The neighborhood star-index handle mirrors the body-index tab but stays
      available on touch — the body index falls back to a mobile drawer; the star
      index has no drawer, so its handle must show at every viewport. */

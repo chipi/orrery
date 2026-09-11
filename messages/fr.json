@@ -3030,5 +3030,6 @@
   "privacy_logs_heading": "Journaux serveur",
   "privacy_logs_body": "Indépendamment de l'analytique, les journaux d'accès ordinaires du serveur web enregistrent chaque requête — y compris votre adresse IP, la page demandée et l'user-agent de votre navigateur. Il en va de même à la périphérie pour l'endpoint d'analytique. Ce sont des journaux opérationnels standard conservés sur notre propre infrastructure pour le débogage et la gestion des abus : le stockage des journaux les conserve jusqu'à 30 jours, et les journaux de périphérie tournent par taille plutôt que par date. Ils ne sont pas associés aux données d'analytique, ne sont pas utilisés pour construire un profil, et l'opt-out ci-dessous ne les désactive pas — servir une page ne peut pas se faire sans eux. Cloudflare, qui se trouve devant le site, peut également conserver ses propres journaux de connexion selon sa politique.",
   "privacy_optout_checking": "Vérification de votre paramètre actuel…",
-  "colophon_toc_label": "Sommaire"
+  "colophon_toc_label": "Sommaire",
+  "science_layer_mass_period_desc": "Chaque exoplanète connue avec une masse mesurée, tracée en fonction de sa période orbitale — les Jupiters chauds, super-Terres et sub-Neptunes forment des familles distinctes. Les planètes de ce système sont en évidence."
 }

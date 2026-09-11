@@ -3030,5 +3030,6 @@
   "privacy_logs_heading": "Server logs",
   "privacy_logs_body": "Separately from analytics, ordinary web-server access logs record every request — including your IP address, the page requested, and your browser's user-agent. The same is true at the edge for the analytics endpoint. These are standard operational logs kept on our own infrastructure for debugging and abuse handling: the log store keeps them for up to 30 days, and the edge logs rotate by size rather than age. They are not joined to the analytics data, are not used to build a profile, and the opt-out below does not switch them off — serving a page cannot happen without them. Cloudflare, which fronts the site, may also keep its own connection logs under its policy.",
   "privacy_optout_checking": "Checking your current setting…",
-  "colophon_toc_label": "Contents"
+  "colophon_toc_label": "Contents",
+  "science_layer_mass_period_desc": "Every known exoplanet with a measured mass, plotted by orbital period — hot Jupiters, super-Earths and sub-Neptunes fall into visible families. This system's planets are highlighted."
 }

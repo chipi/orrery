@@ -3030,5 +3030,6 @@
   "privacy_logs_heading": "Log del server",
   "privacy_logs_body": "Separatamente dalle analisi, i normali log di accesso del server web registrano ogni richiesta — incluso il tuo indirizzo IP, la pagina richiesta e l'user-agent del tuo browser. Lo stesso vale al bordo per l'endpoint di analisi. Si tratta di log operativi standard mantenuti sulla nostra infrastruttura per debugging e gestione degli abusi: l'archivio di log li conserva fino a 30 giorni, e i log al bordo ruotano per dimensione piuttosto che per età. Non sono collegati ai dati di analisi, non vengono utilizzati per creare un profilo, e l'opt-out sottostante non li disattiva — servire una pagina non può avvenire senza di essi. Cloudflare, che sta davanti al sito, potrebbe anche conservare i suoi propri log di connessione secondo la sua politica.",
   "privacy_optout_checking": "Verifica dell'impostazione attuale in corso…",
-  "colophon_toc_label": "Contenuti"
+  "colophon_toc_label": "Contenuti",
+  "science_layer_mass_period_desc": "Ogni esopianeta noto con massa misurata, rappresentato in base al periodo orbitale — hot Jupiter, super-Terre e sub-Nettuni ricadono in famiglie distinte. I pianeti di questo sistema sono evidenziati."
 }

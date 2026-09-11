@@ -107,6 +107,7 @@
     'rotation-curve': false,
     'dark-matter-halo': false,
     'stellar-populations': false,
+    'mass-period': false,
   });
 
   let stops: Array<() => void> = [];
@@ -402,6 +403,12 @@
           label: m.explore_mw_lens_populations(),
           description: m.science_layer_stellar_populations_desc(),
           learn: { tab: 'observation', section: 'our-galaxy' },
+        };
+      case 'mass-period':
+        return {
+          label: m.explore_lens_mass_period(),
+          description: m.science_layer_mass_period_desc(),
+          learn: { tab: 'exoplanets', section: 'super-earths-sub-neptunes' },
         };
     }
   }

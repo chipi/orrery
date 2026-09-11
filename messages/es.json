@@ -3030,5 +3030,6 @@
   "privacy_logs_heading": "Registros del servidor",
   "privacy_logs_body": "Aparte de los análisis, los registros de acceso ordinarios del servidor web registran cada solicitud — incluyendo tu dirección IP, la página solicitada y el user-agent de tu navegador. Lo mismo ocurre en el perímetro para el punto final de análisis. Estos son registros operativos estándar mantenidos en nuestra propia infraestructura para depuración y manejo de abusos: el almacén de registros los conserva hasta 30 días, y los registros del perímetro rotan por tamaño en lugar de por antigüedad. No están vinculados a los datos de análisis, no se utilizan para crear un perfil, y la exclusión voluntaria a continuación no los desactiva — servir una página no puede ocurrir sin ellos. Cloudflare, que está delante del sitio, también puede mantener sus propios registros de conexión según su política.",
   "privacy_optout_checking": "Comprobando tu configuración actual…",
-  "colophon_toc_label": "Contenidos"
+  "colophon_toc_label": "Contenidos",
+  "science_layer_mass_period_desc": "Todos los exoplanetas conocidos con masa medida, representados por período orbital — Júpiteres calientes, supertierras y subneptunos forman familias visibles. Los planetas de este sistema están destacados."
 }

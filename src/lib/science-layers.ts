@@ -59,7 +59,8 @@ export type LayerKey =
   | 'light-cones' // Q4 — causal light-cones / look-back shells around the Sun
   | 'rotation-curve' // Q5 — Milky Way rotation curve overlay
   | 'dark-matter-halo' // Q6 — Milky Way dark-matter halo overlay
-  | 'stellar-populations'; // Q7 — Milky Way stellar-population (disc/halo/bulge) overlay
+  | 'stellar-populations' // Q7 — Milky Way stellar-population (disc/halo/bulge) overlay
+  | 'mass-period'; // Q8 — exoplanet mass–period plot (body-scene; was a bespoke chip, 2026-09-11)
 
 /** All layers in canonical display order — used by the UI panel. */
 export const LAYER_ORDER: readonly LayerKey[] = [
@@ -103,6 +104,7 @@ export const LAYER_ORDER: readonly LayerKey[] = [
   'rotation-curve',
   'dark-matter-halo',
   'stellar-populations',
+  'mass-period',
 ];
 
 /** Default visibility when the lens first activates. Sensible "starter
@@ -149,6 +151,7 @@ export const LAYER_DEFAULTS: Record<LayerKey, boolean> = {
   'rotation-curve': false,
   'dark-matter-halo': false,
   'stellar-populations': false,
+  'mass-period': false,
 };
 
 const ATTR_PREFIX = 'data-science-layer-';

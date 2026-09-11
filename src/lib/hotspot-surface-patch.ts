@@ -132,6 +132,13 @@ export interface HotspotPatchBuilderInput {
   /** True ground width of the REGIONAL crop in metres (CTX 3072 px ×
    *  5 m/px ≈ 15360 m). Pairs with `groundMeters` for literal co-scale. */
   regionalGroundMeters?: number;
+  /**
+   * Multiplier on the stylized patch size (regional + co-scaled detail).
+   * From `SurfaceSceneConfig.tier2PatchScale` — /earth passes 0.5 because
+   * the 3.0u stylization reads ~4× more exaggerated on Earth's km/unit
+   * ratio than on the Moon's. Default 1.
+   */
+  patchScale?: number;
 }
 
 /**
@@ -192,9 +199,10 @@ export function buildHotspotSurfacePatch(input: HotspotPatchBuilderInput): THREE
   // weaker polygonOffset means it loses depth fights against the
   // detail patch / rim / pin while still beating the planet sphere.
   const orientationDeg = input.orientationDeg ?? 0;
+  const patchScale = input.patchScale ?? 1;
   if (input.regionalTextureUrl) {
     const regGeom = buildPatchGeometry(
-      REGIONAL_PATCH_DIAMETER_WORLD_UNITS,
+      REGIONAL_PATCH_DIAMETER_WORLD_UNITS * patchScale,
       aspect,
       96,
       orientationDeg,
@@ -215,9 +223,9 @@ export function buildHotspotSurfacePatch(input: HotspotPatchBuilderInput): THREE
   // the regional footprint, so a crater at the seam is the same size in
   // both layers. Falls back to the legacy editorial 1.0u otherwise.
   const detailDiameter =
-    input.groundMeters && input.regionalGroundMeters
+    (input.groundMeters && input.regionalGroundMeters
       ? REGIONAL_PATCH_DIAMETER_WORLD_UNITS * (input.groundMeters / input.regionalGroundMeters)
-      : PATCH_DIAMETER_WORLD_UNITS;
+      : PATCH_DIAMETER_WORLD_UNITS) * patchScale;
   const geom = buildPatchGeometry(detailDiameter, aspect, 64, orientationDeg);
 
   const material = createPatchMaterial(input.textureUrl);

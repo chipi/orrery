@@ -100,7 +100,13 @@ const GSI_TILES = 'https://cyberjapandata.gsi.go.jp/xyz/seamlessphoto';
 
 const REGIONAL_CROP_PX = 1600; // 1600 px @ 10 m/px = 16 km — Moon/Mars regional extent
 const DETAIL_WINDOW_M = 512; // half-km window around the pad
-const DETAIL_SIZE_PX = 1024; // → ~0.5 m/px, at NAIP's native resolution
+// 2048 → ~0.25 m/px requested; NAIP (down to ~0.3 m/px) and IGN BD ORTHO
+// (0.2 m/px) genuinely carry it. Was 1024 (~0.5 m/px) — at deep zoom the
+// magnified patch read soft (2026-09-11 operator feedback).
+const DETAIL_SIZE_PX = 2048;
+// GSI z18 tiles bottom out ~0.5-0.6 m/px — upscaling the stitch past 1024
+// adds bytes, not detail. Keep Tanegashima at its native-ish output.
+const GSI_OUT_PX = 1024;
 const S2_FALLBACK_WINDOW_M = 2560; // 256 px @ 10 m — the honest coarse detail window
 const GSI_ZOOM = 18; // ~0.5 m/px at Tanegashima's latitude
 
@@ -335,7 +341,7 @@ async function fetchDetailGsi(site: PadSite): Promise<boolean> {
     .then((b) =>
       sharp(b)
         .extract({ left, top, width, height })
-        .resize(DETAIL_SIZE_PX, DETAIL_SIZE_PX)
+        .resize(GSI_OUT_PX, GSI_OUT_PX)
         .jpeg({ quality: 88 })
         .toBuffer(),
     );
@@ -407,22 +413,32 @@ async function fetchDetailS2Fallback(site: PadSite, scene: StacFeature): Promise
 }
 
 async function main(): Promise<void> {
-  const only = process.argv.slice(2);
+  const argv = process.argv.slice(2);
+  // --detail-only: re-fetch the detail layer without touching the regional —
+  // a regional re-run re-picks the latest low-cloud Sentinel-2 scene, which
+  // would silently swap operator-APPROVED imagery. Not valid for s2-fallback
+  // pads (their detail reuses the regional's winning scene).
+  const detailOnly = argv.includes('--detail-only');
+  const only = argv.filter((a) => !a.startsWith('--'));
   const ids = only.length ? only.filter((id) => ALL_PAD_IDS.includes(id)) : ALL_PAD_IDS;
   const pads = loadPads(ids);
-  console.log(`fetch-earth-pads: ${pads.length} pad(s)`);
+  console.log(`fetch-earth-pads: ${pads.length} pad(s)${detailOnly ? ' [detail-only]' : ''}`);
   let ok = 0;
   for (const site of pads) {
     const strategy = PAD_STRATEGY[site.id];
     console.log(`\n${site.id} (${site.name}) @ ${site.lat}, ${site.lon} [${strategy}]`);
-    const scene = await fetchRegional(site);
+    if (detailOnly && strategy === 's2-fallback') {
+      console.log(`  ✗ ${site.id}: --detail-only cannot re-derive an s2-fallback detail`);
+      continue;
+    }
+    const scene = detailOnly ? null : await fetchRegional(site);
     let d = false;
     if (strategy === 'naip') d = await fetchDetailNaip(site);
     else if (strategy === 'ign-wms') d = await fetchDetailIgn(site);
     else if (strategy === 'gsi-tiles') d = await fetchDetailGsi(site);
     else if (scene) d = await fetchDetailS2Fallback(site, scene);
     else console.log(`  ✗ ${site.id} detail: no regional scene to fall back to`);
-    if (scene && d) ok += 1;
+    if ((detailOnly || scene) && d) ok += 1;
   }
   console.log(`\nDONE ${ok}/${pads.length} pads fully fetched`);
   if (ok < pads.length) process.exitCode = 1;

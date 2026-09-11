@@ -73,6 +73,14 @@ export function makeEarthLaunchSitesConfig(textureBaseUrl: string): SurfaceScene
     // orbital context. Suppresses both the toggle button and the 2D
     // canvas.
     disable2D: true,
+    // Halve the stylized Tier-2 patches: at Earth's km/unit ratio the
+    // shared 3.0u disc reads ~640 km for a 16 km image — ~4× more
+    // exaggerated than on /moon (2026-09-11 operator feedback).
+    tier2PatchScale: 0.5,
+    // Clustered pads: fade EVERY label through the reveal band, not just
+    // the selected site's — a Cape neighbour's label otherwise sprawls
+    // across the promoted pad's imagery (2026-09-11 feedback).
+    labelBandFade: 'all',
     // Science Lens panel for the unified /earth route (#303 fix). Pre-
     // #303 SurfaceScene mounted /moon's hardcoded panel for every route
     // — so /earth users saw "The Moon · 384 000 km out…" with only the

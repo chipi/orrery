@@ -350,6 +350,27 @@ export interface SurfaceSceneConfig {
    * /mars omit this; their 2D fallbacks stay.
    */
   disable2D?: boolean;
+
+  /**
+   * Multiplier on the stylized Tier-2 on-sphere patch size (the 3.0u
+   * regional disc + its co-scaled detail inset and selection brackets).
+   * The stylization exaggerates by planet: 3.0u is ~170 km on the Moon
+   * sphere but ~640 km on Earth for the same 16 km ground extent, so
+   * /earth sets 0.5 to halve the drawn patches (#546 follow-up,
+   * 2026-09-11 feedback). Default 1 — moon/mars unchanged.
+   */
+  tier2PatchScale?: number;
+
+  /**
+   * Which site labels the Tier-2 reveal band fades out. Default
+   * 'selected' — the 2026-06-08 moon direction ("only [hide] the one
+   * from the site that is selected"): unselected labels stay for scene
+   * context, which works when sites sit hundreds of km apart. 'all' is
+   * for clustered bodies — the Cape pads are km apart, so an unselected
+   * neighbour's label otherwise sprawls across the promoted pad's
+   * imagery square (2026-09-11 feedback). /earth sets 'all'.
+   */
+  labelBandFade?: 'selected' | 'all';
 }
 
 /**

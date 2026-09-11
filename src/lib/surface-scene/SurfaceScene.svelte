@@ -2737,13 +2737,16 @@
         // patch, so the 2.8u bracket floated ~2.8× too big and framed bare
         // regolith. Mirror the literal co-scale the patch builder uses.
         const haloHasRegional = site.hotspot_tier2_regional_source != null;
+        // Same per-body stylization multiplier the patch builder gets, so
+        // the brackets keep hugging the (possibly halved) patch edge.
+        const haloPatchScale = config.tier2PatchScale ?? 1;
         const haloDetailDiam =
-          site.hotspot_tier2_ground_m && site.hotspot_tier2_regional_ground_m
+          (site.hotspot_tier2_ground_m && site.hotspot_tier2_regional_ground_m
             ? REGIONAL_PATCH_DIAMETER_WORLD_UNITS *
               (site.hotspot_tier2_ground_m / site.hotspot_tier2_regional_ground_m)
-            : 1.0;
+            : 1.0) * haloPatchScale;
         const haloOuterDiam = haloHasRegional
-          ? REGIONAL_PATCH_DIAMETER_WORLD_UNITS
+          ? REGIONAL_PATCH_DIAMETER_WORLD_UNITS * haloPatchScale
           : haloDetailDiam;
         // 0.93 keeps the bracket a hair INSIDE the patch edge (same ratio
         // the 1.4-radius constant gave against the 3.0u regional).
@@ -2845,6 +2848,7 @@
                       // patch, so a crater is the same size across the seam.
                       groundMeters: site.hotspot_tier2_ground_m,
                       regionalGroundMeters: site.hotspot_tier2_regional_ground_m,
+                      patchScale: config.tier2PatchScale,
                     });
                   }
                 : undefined;
@@ -4513,7 +4517,8 @@
               mk.labelGroup.visible = false;
               continue;
             }
-            const fade = mk.siteId === selectedSiteId ? labelFade : 1;
+            const fade =
+              config.labelBandFade === 'all' || mk.siteId === selectedSiteId ? labelFade : 1;
             if (fade < 0.01) {
               mk.labelGroup.visible = false;
               continue;
@@ -4641,33 +4646,48 @@
               mat.opacity = layer === 'regional' ? regionalOpacity : detailOpacity;
               mat.transparent = mat.opacity < 0.99;
             });
-            // ADR-072 Slice 3 §"Hide 3D engineering model when rect region
-            // is active": once the rectangular Tier-2 patch is the active
-            // representation (ramp > ~0.5), the Tier-1 engineering mesh
-            // would compete visually with the region polygon + its photo
-            // content. Cross-fade the Tier-1 group opacity inversely to
-            // the patch's ramp so they swap cleanly. Engineering model
-            // resurfaces at Tier 3 panorama / "stand at site" entry.
-            // Tier 0 silhouette + Tier 1 engineering model both cross-
-            // fade against the REGIONAL CTX ramp (camR 50 → 33), not the
-            // detail HiRISE ramp (33 → 30.32). This means by the time
-            // the HiRISE detail patch starts revealing (camR < 33) the
-            // 3D lander glyphs are already fully gone — they don't
-            // linger on top of the HiRISE imagery. User feedback
-            // 2026-06-03: "Tier 1 — 3d model of lander needs to be gone
-            // by the time we noticed tier 3 (HiRISE). Now it is there
-            // way too long into the zoomed-in region." Engineering
-            // model resurfaces when the user pulls back past camR=33
-            // and re-mounts at panorama entry as before.
-            // Linear `1 - regionalOpacity` left the lander at ~50 %
-            // when the regional patch was already fully readable —
-            // user feedback 2026-06-08: "as soon as we render photo in
-            // square, I want 3D model to be gone." Steepen the fade by
-            // 4× so the lander hits 0 once the regional ramp passes
-            // 25 %, well before the photo is fully visible. The Tier-1
-            // engineering model + Tier-0 silhouette both share this
-            // fade so they leave the frame together.
-            const lander3dFade = Math.max(0, 1 - regionalOpacity * 4);
+          }
+
+          // ADR-072 Slice 3 §"Hide 3D engineering model when rect region
+          // is active": once the rectangular Tier-2 patch is the active
+          // representation (ramp > ~0.5), the Tier-1 engineering mesh
+          // would compete visually with the region polygon + its photo
+          // content. Cross-fade the Tier-1 group opacity inversely to
+          // the patch's ramp so they swap cleanly. Engineering model
+          // resurfaces at Tier 3 panorama / "stand at site" entry.
+          // Tier 0 silhouette + Tier 1 engineering model both cross-
+          // fade against the REGIONAL CTX ramp (camR 50 → 33), not the
+          // detail HiRISE ramp (33 → 30.32). This means by the time
+          // the HiRISE detail patch starts revealing (camR < 33) the
+          // 3D lander glyphs are already fully gone — they don't
+          // linger on top of the HiRISE imagery. User feedback
+          // 2026-06-03: "Tier 1 — 3d model of lander needs to be gone
+          // by the time we noticed tier 3 (HiRISE). Now it is there
+          // way too long into the zoomed-in region." Engineering
+          // model resurfaces when the user pulls back past camR=33
+          // and re-mounts at panorama entry as before.
+          // Linear `1 - regionalOpacity` left the lander at ~50 %
+          // when the regional patch was already fully readable —
+          // user feedback 2026-06-08: "as soon as we render photo in
+          // square, I want 3D model to be gone." Steepen the fade by
+          // 4× so the lander hits 0 once the regional ramp passes
+          // 25 %, well before the photo is fully visible. The Tier-1
+          // engineering model + Tier-0 silhouette both share this
+          // fade so they leave the frame together.
+          //
+          // Applied to EVERY hotspot, not just ones whose own tier2Group
+          // is built (2026-09-11 launch-pad feedback): the ramp is a
+          // global camR signal, and clustered sites — the Cape pads sit
+          // km apart — otherwise leave NEIGHBOURS' unpromoted glyphs
+          // sitting on top of the promoted pad's imagery square. Moon /
+          // mars sites are far enough apart that the old per-promoted
+          // gating never showed the difference.
+          // Only override while the reveal band is actually active
+          // (fade < 1) — outside it the LOD dispatcher owns tier-0/1
+          // visibility (its own 600 ms cross-fades), and a per-frame
+          // forced opacity=1 here would flatten them scene-wide.
+          const lander3dFade = Math.max(0, 1 - regionalOpacity * 4);
+          for (const h of lander3dFade < 0.999 ? hotspots : []) {
             if (h.tier1Group) {
               h.tier1Group.visible = lander3dFade > 0.01;
               h.tier1Group.traverse((obj) => {

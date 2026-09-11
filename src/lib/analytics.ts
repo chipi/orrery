@@ -433,8 +433,10 @@ export function trackScienceLensToggle(on: boolean, source: string): void {
 // return visit should count again.
 
 const firedMilestones = new Set<string>();
-/** Fire `name` once per key for the life of this page-load. */
-function once(key: string, emit: () => void): void {
+/** Fire `emit` once per key for the life of this page-load. Exported so other
+ *  milestone emitters (e.g. #521 science read-depth in the article route) share
+ *  the same page-load-scoped dedup instead of a private per-component Set. */
+export function once(key: string, emit: () => void): void {
   if (firedMilestones.has(key)) return;
   firedMilestones.add(key);
   emit();

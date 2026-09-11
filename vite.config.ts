@@ -320,7 +320,24 @@ export default defineConfig(({ mode }) => {
               },
             },
             {
-              // Mission base files + per-locale overlays.
+              // Per-locale i18n overlay bundles — their OWN cache (#518 review).
+              // Since the web precache now ships only en-US (not all 14), the
+              // other locales' ~1.75 MB bundles arrive here at runtime. Keep them
+              // in a dedicated cache (maxEntries 14 = one per locale) so churn of
+              // per-mission JSON below can't evict a user's active-locale bundle
+              // and silently drop them to the English fallback. NetworkFirst so a
+              // fresh deploy's bundle is picked up, with the cached copy as the
+              // offline/slow-network fallback.
+              urlPattern: ({ url }) => /\/data\/i18n\/[^/]+\.json$/.test(url.pathname),
+              handler: 'NetworkFirst',
+              options: {
+                cacheName: 'orrery-i18n-bundles',
+                networkTimeoutSeconds: 3,
+                expiration: { maxEntries: 14, maxAgeSeconds: 60 * 60 * 24 * 30 },
+              },
+            },
+            {
+              // Mission base files + per-entity overlays (per-file i18n paths).
               urlPattern: ({ url }) => /\/data\/(missions|i18n)\/.*\.json$/.test(url.pathname),
               handler: 'StaleWhileRevalidate',
               options: {

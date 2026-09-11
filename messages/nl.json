@@ -3002,12 +3002,12 @@
   "credits_storage_optout_item": "{code} — alleen ingesteld als je gebruiksanalyse uitschakelt op de privacypagina, zodat de keuze een pagina-vernieuwing overleeft (ADR-092). 1 jaar. Ontbreekt tenzij je opt-out kiest. Geen tracking, geen persoonlijke gegevens.",
   "credits_storage_privacy_link": "privacy",
   "layout_footer_privacy": "Privacy",
-  "privacy_collect_build": "Welke build je gebruikt en of de offline updater succesvol was — zodat een versie die vast zit op een oude build hier verschijnt in plaats van weken later in een klacht.",
+  "privacy_collect_build": "Welke build u gebruikt, of u de app op uw startscherm hebt geïnstalleerd, en of de offline updater en de resources van de app correct zijn geladen — zodat een versie die op een oude build vast zit, of een mislukte laadbewerking, hier verschijnt in plaats van weken later in een klacht.",
   "privacy_collect_heading": "Wat wordt verzameld",
   "privacy_collect_intro": "Gebruiksanalyse draait op een zelf-gehoste Umami-instantie op onze eigen server. Er wordt geen cookie ingesteld, er wordt geen profiel opgebouwd en niets wordt gedeeld met iemand anders. Wat het registreert:",
   "privacy_collect_interactions": "Wat je opent, klikt, filtert en schakelt — een missie, een vlootitem, een marker in de 3D-weergave, een wetenschapssectie, een paneeltab.",
   "privacy_collect_outbound": "Wanneer je een link van de site volgt en waar deze heen ging — zodat we weten welke bronnen mensen daadwerkelijk lezen.",
-  "privacy_collect_pages": "Welke pagina's je bezoekt, in welke volgorde en hoe lang je roughly op elk blijft — plus je browser, besturingssysteem, schermgrootte, taal, benaderde locatie (land, regio en stad, afgeleid van je IP) en de verwijzende site of campagnelink die je hier bracht.",
+  "privacy_collect_pages": "Welke pagina's u bezoekt, in welke volgorde, ongeveer hoe lang u op elke pagina blijft, en hoe ver u in de langere artikelen leest — plus uw browser, besturingssysteem, schermgrootte, taal, geschatte locatie (land, regio en stad, afgeleid van uw IP-adres), en de verwijzingssite of campagnelink die u hier heeft gebracht.",
   "privacy_collect_search": "Waarnaar je zoekt, afgekapt tot de eerste 40 tekens. Genoeg om te zien naar welke onderwerpen mensen zoeken; nooit een volledig transcript van wat je typte.",
   "privacy_controls_body": "Dit uitschakelen stopt de gebruiksanalyse en de crashrapporten hierboven. Het beïnvloedt niet de serverlogboeken — die maken deel uit van het serveren van de pagina. De keuze wordt onthouden in één cookie op dit apparaat en de pagina herlaadt zodat de verzameling onmiddellijk stopt in plaats van bij het volgende bezoek.",
   "privacy_controls_heading": "Jouw keuze",
@@ -3036,5 +3036,6 @@
   "explore_lens_story_bh_body": "Deze weergave volgt echte lichtpaden (geodeten) rond het zwarte gat — de ring is de verre zijde van de schijf, over de top geboogen. De lagen voegen een krommingsraster en een tabel toe die toont hoe veel langzamer klokken hier diep in de put tikken.",
   "science_layer_bh_curvature_desc": "Een ruimtetijdraster vervormd door dezelfde geodeten die het licht buigen — een analogie voor kromming, geen letterlijk oppervlak.",
   "science_layer_bh_time_desc": "Hoe veel langzamer klokken tikken bij de fotonensfer, de binnenste stabiele baan, en verder uit — zwaartekrachtsveroorzaakte tijddilatatie, gekwantificeerd.",
-  "star_index_black_holes": "Zwarte gaten"
+  "star_index_black_holes": "Zwarte gaten",
+  "nav_locale_suggest_label": "Bekijk deze pagina in uw taal"
 }

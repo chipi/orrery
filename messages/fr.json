@@ -3002,12 +3002,12 @@
   "credits_storage_optout_item": "{code} — défini uniquement si vous désactivez l'analyse d'utilisation sur la page de confidentialité, afin que ce choix persiste après un rechargement (ADR-092). 1 an. Absent sauf si vous refusez. Aucun suivi, aucune donnée personnelle.",
   "credits_storage_privacy_link": "confidentialité",
   "layout_footer_privacy": "Confidentialité",
-  "privacy_collect_build": "La version que vous exécutez et si la mise à jour hors ligne a réussi — pour qu'une version bloquée sur une ancienne build apparaisse ici plutôt que dans une plainte des semaines plus tard.",
+  "privacy_collect_build": "Quelle version vous exécutez, si vous avez installé l'application sur votre écran d'accueil, et si le programme de mise à jour hors ligne et les ressources de l'application se sont chargés avec succès — afin qu'une version figée sur une ancienne build, ou un chargement défaillant, apparaisse ici plutôt que dans une réclamation des semaines plus tard.",
   "privacy_collect_heading": "Ce qui est collecté",
   "privacy_collect_intro": "L'analyse d'utilisation s'exécute sur une instance Umami auto-hébergée sur notre propre serveur. Aucun cookie n'est défini, aucun profil n'est créé et rien n'est partagé avec quiconque. Ce qu'elle enregistre :",
   "privacy_collect_interactions": "Les éléments que vous ouvrez, cliquez, filtrez et activez/désactivez — une mission, une entrée de flotte, un marqueur dans la vue 3D, une section scientifique, un onglet de panneau.",
   "privacy_collect_outbound": "Quand vous suivez un lien en dehors du site et où il menait — pour que nous sachions quelles sources les gens lisent réellement.",
-  "privacy_collect_pages": "Les pages que vous visitez, dans quel ordre et environ combien de temps vous restez sur chacune — plus votre navigateur, système d'exploitation, taille d'écran, langue, localisation approximative (pays, région et ville, dérivée de votre IP) et le site référent ou lien de campagne qui vous a amené ici.",
+  "privacy_collect_pages": "Les pages que vous visitez, dans quel ordre, approximativement combien de temps vous restez sur chacune, et jusqu'où vous lisez dans les articles plus longs — ainsi que votre navigateur, système d'exploitation, taille d'écran, langue, localisation approximative (pays, région et ville, dérivée de votre adresse IP), et le site référent ou le lien de campagne qui vous a amené ici.",
   "privacy_collect_search": "Ce que vous recherchez, tronqué aux 40 premiers caractères. Suffisant pour voir quels sujets les gens recherchent ; jamais une transcription complète de ce que vous avez tapé.",
   "privacy_controls_body": "Désactiver ceci arrête l'analyse d'utilisation et les rapports de crash décrits ci-dessus. Cela n'affecte pas les journaux du serveur — ceux-ci font partie de la livraison de la page. Le choix est mémorisé dans un seul cookie sur cet appareil et la page se recharge afin que la collecte s'arrête immédiatement plutôt qu'à la prochaine visite.",
   "privacy_controls_heading": "Votre choix",
@@ -3036,5 +3036,6 @@
   "explore_lens_story_bh_body": "Ce rendu trace les chemins réels de la lumière (géodésiques) autour du trou noir — l'anneau est le côté lointain du disque, lensé par-dessus le sommet. Les couches ajoutent une grille de courbure et un tableau montrant de combien les horloges ralentissent au plus profond du puits.",
   "science_layer_bh_curvature_desc": "Une grille d'espace-temps déformée par les mêmes géodésiques qui courbent la lumière — une analogie pour la courbure, pas une surface littérale.",
   "science_layer_bh_time_desc": "De combien les horloges ralentissent à la sphère de photons, à l'orbite stable la plus interne, et plus loin — la dilatation gravitationnelle du temps, quantifiée.",
-  "star_index_black_holes": "Trous noirs"
+  "star_index_black_holes": "Trous noirs",
+  "nav_locale_suggest_label": "Voir cette page dans votre langue"
 }

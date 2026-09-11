@@ -165,6 +165,11 @@ export function matchPreferredLocale(preferred: readonly string[]): LocaleCode |
     const lower = raw.toLowerCase();
     const exact = SUPPORTED_LOCALES.find((l) => l.code.toLowerCase() === lower);
     if (exact) return exact.code;
+    // Don't base-match Traditional Chinese to our Simplified (zh-CN): suggesting
+    // Simplified to a Traditional reader is user-hostile — they often prefer
+    // English. Skip this entry (falls through to the next navigator language,
+    // typically English for a zh-TW/HK/Hant user).
+    if (/^zh-(tw|hk|mo)\b/.test(lower) || lower.includes('hant')) continue;
     const base = lower.split('-')[0];
     const baseMatch = SUPPORTED_LOCALES.find((l) => l.code.toLowerCase().split('-')[0] === base);
     if (baseMatch) return baseMatch.code;

@@ -383,9 +383,13 @@
     // distribution is visible in the dashboard — a cohort stuck on an old
     // build (e.g. the iOS-precache freeze) is then obvious, not a surprise.
     // `display_mode` splits engagement by installed-PWA vs browser tab (#521).
-    const displayMode =
-      window.matchMedia?.('(display-mode: standalone)').matches ||
-      (navigator as unknown as { standalone?: boolean }).standalone
+    // Native Capacitor shells run in a WKWebView/WebView where the standalone
+    // media query is false — label them 'native' rather than mislabel as
+    // 'browser' (they report to their own Umami site, but the tag should be true).
+    const displayMode = Capacitor.isNativePlatform()
+      ? 'native'
+      : window.matchMedia?.('(display-mode: standalone)').matches ||
+          (navigator as unknown as { standalone?: boolean }).standalone
         ? 'standalone'
         : 'browser';
     track('app-load', { version: __APP_VERSION__, display_mode: displayMode });

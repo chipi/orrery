@@ -33,6 +33,15 @@ describe('matchPreferredLocale (#519 language suggestion)', () => {
     expect(matchPreferredLocale(['pt'])).toBe('pt-BR');
     expect(matchPreferredLocale(['zh'])).toBe('zh-CN');
   });
+  it('does NOT suggest Simplified (zh-CN) to Traditional-Chinese browsers', () => {
+    expect(matchPreferredLocale(['zh-TW'])).toBeNull();
+    expect(matchPreferredLocale(['zh-HK'])).toBeNull();
+    expect(matchPreferredLocale(['zh-Hant'])).toBeNull();
+    // …but a zh-TW user who also lists English still gets English.
+    expect(matchPreferredLocale(['zh-TW', 'en'])).toBe('en-US');
+    // bare zh (ambiguous) still maps to Simplified — that's the only zh we ship.
+    expect(matchPreferredLocale(['zh'])).toBe('zh-CN');
+  });
   it('any English variant resolves to en-US', () => {
     expect(matchPreferredLocale(['en-GB', 'en'])).toBe('en-US');
   });

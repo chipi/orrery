@@ -3002,12 +3002,12 @@
   "credits_storage_optout_item": "{code} — impostato solo se disattivi l'analisi dell'utilizzo nella pagina sulla privacy, in modo che la scelta persista dopo il ricaricamento (ADR-092). 1 anno. Assente a meno che tu non rinunci. Nessun tracking, nessun dato personale.",
   "credits_storage_privacy_link": "privacy",
   "layout_footer_privacy": "Privacy",
-  "privacy_collect_build": "Quale versione stai utilizzando e se l'aggiornamento offline ha avuto successo — in modo che una versione bloccata su una build vecchia appaia qui anziché in un reclamo settimane dopo.",
+  "privacy_collect_build": "Quale build stai utilizzando, se hai installato l'app sulla tua schermata iniziale, e se l'aggiornamento offline e le risorse dell'app si sono caricate correttamente — così una versione bloccata su una build vecchia, o un caricamento non riuscito, compare qui invece che in un reclamo settimane dopo.",
   "privacy_collect_heading": "Cosa viene raccolto",
   "privacy_collect_intro": "L'analisi dell'utilizzo viene eseguita su un'istanza Umami auto-ospitata sul nostro server. Nessun cookie viene impostato, nessun profilo viene creato e nulla viene condiviso con nessuno. Ciò che registra:",
   "privacy_collect_interactions": "Quali elementi apri, su cui fai clic, filtri e attivi — una missione, una voce della flotta, un marcatore nella vista 3D, una sezione scientifica, una scheda di pannello.",
   "privacy_collect_outbound": "Quando segui un collegamento al di fuori del sito e dove è andato — in modo da sapere quali fonti le persone effettivamente leggono.",
-  "privacy_collect_pages": "Quali pagine visiti, in che ordine e circa quanto tempo trascorri su ciascuna — oltre al tuo browser, sistema operativo, dimensione dello schermo, lingua, posizione approssimativa (paese, regione e città, derivata dal tuo IP) e il sito di provenienza o il collegamento della campagna che ti ha portato qui.",
+  "privacy_collect_pages": "Quali pagine visiti, in quale ordine, quanto tempo all'incirca rimani su ciascuna, e quanto leggi degli articoli più lunghi — oltre al tuo browser, sistema operativo, dimensioni dello schermo, lingua, posizione approssimativa (paese, regione e città, ricavate dal tuo IP), e il sito di provenienza o il link di campagna che ti ha portato qui.",
   "privacy_collect_search": "Cosa cerchi, troncato ai primi 40 caratteri. Abbastanza per vedere quali argomenti le persone cercano; mai una trascrizione completa di quello che hai digitato.",
   "privacy_controls_body": "Disattivando questa opzione si arresta l'analisi dell'utilizzo e i rapporti di crash descritti sopra. Non influisce sui registri del server — quelli fanno parte della trasmissione della pagina stessa. La scelta viene memorizzata in un singolo cookie su questo dispositivo e la pagina si ricarica in modo che la raccolta si arresti immediatamente anziché alla prossima visita.",
   "privacy_controls_heading": "La tua scelta",
@@ -3036,5 +3036,6 @@
   "explore_lens_story_bh_body": "Questo render traccia i veri percorsi della luce (geodetiche) intorno al buco nero — l'anello è il lato opposto del disco, lensato sopra. Gli strati aggiungono una griglia di curvatura e una tabella di quanto più lentamente gli orologi scandiscono il tempo a questa profondità nel pozzo.",
   "science_layer_bh_curvature_desc": "Una griglia dello spacetime deformata dalle stesse geodetiche che piegano la luce — un'analogia per la curvatura, non una superficie letterale.",
   "science_layer_bh_time_desc": "Quanto più lentamente gli orologi scandiscono il tempo alla sfera dei fotoni, all'orbita stabile più interna, e oltre — dilatazione gravitazionale del tempo, quantificata.",
-  "star_index_black_holes": "Buchi neri"
+  "star_index_black_holes": "Buchi neri",
+  "nav_locale_suggest_label": "Visualizza questa pagina nella tua lingua"
 }

@@ -104,9 +104,13 @@ export async function get<T>(path: string, fetchFn: FetchLike = fetch): Promise<
     } catch (err) {
       const status = err instanceof BundleLoadError ? err.status : undefined;
       if (status !== undefined && status >= 400 && status < 500) {
-        // Bundle genuinely absent (unsupported locale, or `vite dev` before a
-        // build): fall through to the legacy per-file fetch so dev keeps working
-        // and an unsupported-locale request drives the caller's en-US fallback.
+        // Bundle genuinely absent (4xx) — an unsupported locale, or a bundle
+        // that was never built. Fall through to the legacy per-file fetch, which
+        // also 404s (per-file overlays haven't shipped since the bundle move,
+        // ADR-079 D2 / #377 — they live in i18n-src/, never served), so this is
+        // just one extra guaranteed 404 that drives the caller's en-US fallback.
+        // Harmless + rare (routing only emits supported locales); kept rather
+        // than special-cased so non-i18n paths still share the code below.
         bundle = undefined;
       } else {
         // Transient network / 5xx failure that survived retries: do NOT drop to

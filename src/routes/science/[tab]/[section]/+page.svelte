@@ -12,7 +12,7 @@
   import { assetUrl } from '$lib/asset-url';
   import * as m from '$lib/paraglide/messages';
   import ObservatoryShowcase from '$lib/components/ObservatoryShowcase.svelte';
-  import { track, arrivedFromRoute, trackScienceToApp } from '$lib/analytics';
+  import { track, arrivedFromRoute, trackScienceToApp, once } from '$lib/analytics';
   import type { PageData } from './$types';
 
   type Props = { data: PageData };
@@ -38,28 +38,32 @@
       section: section.id,
       source: arrivedFromRoute(),
     });
+  });
 
-    // Read-depth (#521): do visitors READ the article (science is the #2
-    // acquisition vector) or bounce? Fire at 25/50/75/100% once per section per
-    // session. Keyed by section.id so a client-side nav to another section
-    // (which does NOT remount this component) gets fresh thresholds. A short
-    // article that fits the viewport counts as fully read (pct = 100).
-    const fired = new Set<string>();
-    const onScroll = () => {
+  // Read-depth (#521): do visitors READ the article (science is the #2
+  // acquisition vector) or bounce? An $effect (not onMount) so a client-side
+  // [section]→[section] nav — which reuses this component instance — re-runs it:
+  // the old listener tears down, a fresh one attaches, and the initial measure()
+  // runs for the NEW section (short/fully-visible articles fire pct=100 that a
+  // mount-only handler would miss). Dedup via the module-level once() keyed by
+  // section.id → each threshold fires once per section per page-load.
+  $effect(() => {
+    const sec = section;
+    if (typeof window === 'undefined') return;
+    const measure = () => {
       const scrollable = document.documentElement.scrollHeight - window.innerHeight;
       const pct =
         scrollable <= 0 ? 100 : Math.min(100, Math.round((window.scrollY / scrollable) * 100));
       for (const t of [25, 50, 75, 100]) {
-        const key = `${section.id}:${t}`;
-        if (pct >= t && !fired.has(key)) {
-          fired.add(key);
-          track('science-read-depth', { tab: section.tab, section: section.id, pct: t });
-        }
+        if (pct >= t)
+          once(`read-depth:${sec.id}:${t}`, () =>
+            track('science-read-depth', { tab: sec.tab, section: sec.id, pct: t }),
+          );
       }
     };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll(); // fully-visible short articles fire 100 immediately
-    return () => window.removeEventListener('scroll', onScroll);
+    window.addEventListener('scroll', measure, { passive: true });
+    measure();
+    return () => window.removeEventListener('scroll', measure);
   });
   // The space-photography section embeds the ObservatoryShowcase strip
   // (one hero image per observatory in /fleet, deep-link into each

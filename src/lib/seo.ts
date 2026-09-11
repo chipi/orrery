@@ -67,7 +67,7 @@ const OG_LOCALE: Record<string, string> = {
   ja: 'ja_JP',
   ko: 'ko_KR',
   hi: 'hi_IN',
-  ar: 'ar_AR',
+  ar: 'ar_AR', // Facebook's generic-Arabic OG locale (not "Arabic (Argentina)") — do not "fix" to ar_SA
   ru: 'ru_RU',
 };
 

@@ -2034,12 +2034,12 @@
     "credits_storage_optout_item": "{code} — केवल तब सेट किया जाता है यदि आप गोपनीयता पृष्ठ पर उपयोग विश्लेषण बंद करते हैं, ताकि चुनाव पुनः लोड के बाद भी बना रहे (ADR-092)। 1 वर्ष। सेट नहीं होता जब तक आप सहमति न दें। कोई ट्रैकिंग नहीं, कोई व्यक्तिगत डेटा नहीं।",
     "credits_storage_privacy_link": "गोपनीयता",
     "layout_footer_privacy": "गोपनीयता",
-    "privacy_collect_build": "कौन सी बिल्ड चल रही है, और क्या ऑफ़लाइन अपडेटर सफल रहा — ताकि पुरानी बिल्ड पर फंसा संस्करण यहाँ दिखे, हफ्तों बाद शिकायत में नहीं।",
+    "privacy_collect_build": "आप कौन सा बिल्ड चला रहे हैं, क्या आपने ऐप को अपनी होम स्क्रीन पर इंस्टॉल किया है, और क्या ऑफलाइन अपडेटर और ऐप के स्वयं के संसाधन सफलतापूर्वक लोड हुए — ताकि पुराने बिल्ड पर फंसा एक संस्करण, या एक टूटा हुआ लोड, हफ्तों बाद की शिकायत के बजाय यहाँ दिखाई दे।",
     "privacy_collect_heading": "क्या एकत्र किया जाता है",
     "privacy_collect_intro": "उपयोग विश्लेषण हमारे अपने सर्वर पर स्व-होस्ट किए गए Umami उदाहरण पर चलता है। कोई कुकी सेट नहीं की जाती, कोई प्रोफ़ाइल नहीं बनाई जाती, और किसी के साथ कुछ साझा नहीं किया जाता। यह रिकॉर्ड करता है:",
     "privacy_collect_interactions": "आप कौन सी चीजें खोलते हैं, क्लिक करते हैं, फ़िल्टर करते हैं और टॉगल करते हैं — एक मिशन, एक फ्लीट प्रविष्टि, 3D दृश्य में एक चिन्हक, एक विज्ञान अनुभाग, एक पैनल टैब।",
     "privacy_collect_outbound": "जब आप साइट से किसी लिंक का अनुसरण करते हैं, और वह कहाँ गया — ताकि हम जान सकें कि लोग वास्तव में कौन से स्रोत पढ़ते हैं।",
-    "privacy_collect_pages": "आप कौन से पृष्ठ देखते हैं, किस क्रम में, और प्रत्येक पर कितना समय बिताते हैं — साथ ही आपका ब्राउज़र, ऑपरेटिंग सिस्टम, स्क्रीन आकार, भाषा, अनुमानित स्थान (देश, क्षेत्र और शहर, आपके IP से निकाले गए), और संदर्भ साइट या अभियान लिंक जो आपको यहाँ लाया।",
+    "privacy_collect_pages": "आप कौन से पृष्ठ देखते हैं, किस क्रम में, प्रत्येक पर कितना समय बिताते हैं, और लंबे लेखों को कितना नीचे पढ़ते हैं — साथ ही आपका ब्राउज़र, ऑपरेटिंग सिस्टम, स्क्रीन आकार, भाषा, अनुमानित स्थान (देश, क्षेत्र और शहर, आपके IP से प्राप्त), और रेफरिंग साइट या अभियान लिंक जो आपको यहाँ लाया।",
     "privacy_collect_search": "आप क्या खोजते हैं, पहले 40 वर्णों तक संक्षिप्त। किस विषयों को लोग खोजते हैं यह देखने के लिए पर्याप्त; कभी भी आपने जो टाइप किया उसका पूर्ण प्रतिलेख नहीं।",
     "privacy_controls_body": "इसे बंद करने से उपयोग विश्लेषण और ऊपर वर्णित क्रैश रिपोर्ट बंद हो जाती हैं। यह सर्वर लॉग को प्रभावित नहीं करता — वे पृष्ठ परोसने का हिस्सा हैं। चुनाव इस डिवाइस पर एक एकल कुकी में याद रहता है, और पृष्ठ पुनः लोड होता है ताकि संग्रह अगली बार की बजाय तुरंत बंद हो जाए।",
     "privacy_controls_heading": "आपकी पसंद",
@@ -2068,7 +2068,8 @@
     "explore_lens_story_bh_body": "यह रेंडर ब्लैक होल के चारों ओर वास्तविक प्रकाश पथ (जियोडेसिक्स) को ट्रेस करता है — वलय डिस्क का दूर पक्ष है, शीर्ष पर लेंस किया गया। परतें एक वक्रता ग्रिड और एक तालिका जोड़ती हैं कि इस गहराई में घड़ियां कितनी धीरे चलती हैं।",
     "science_layer_bh_curvature_desc": "एक अंतरिक्ष-काल ग्रिड जो उसी जियोडेसिक्स द्वारा विकृत है जो प्रकाश को मोड़ते हैं — वक्रता के लिए एक सादृश्य, शाब्दिक सतह नहीं।",
     "science_layer_bh_time_desc": "फोटॉन क्षेत्र, सबसे आंतरिक स्थिर कक्षा, और उससे आगे घड़ियां कितनी धीरे चलती हैं — गुरुत्वाकर्षण समय-विस्तार, परिमाणित।",
-    "star_index_black_holes": "कृष्ण विवर"
+    "star_index_black_holes": "कृष्ण विवर",
+    "nav_locale_suggest_label": "इस पृष्ठ को अपनी भाषा में देखें"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -3966,12 +3967,12 @@
     "credits_storage_optout_item": "{code} — プライバシーページで利用統計をオフにした場合のみ設定され、リロード後も設定が保持されます（ADR-092）。有効期限：1年。オプトアウト時のみ存在。トラッキングなし、個人情報なし。",
     "credits_storage_privacy_link": "プライバシー",
     "layout_footer_privacy": "プライバシー",
-    "privacy_collect_build": "実行中のビルドおよびオフライン更新プログラムが成功したかどうか — 古いビルドで止まったバージョンが数週間後の不満報告ではなくここに表示されるようにするため。",
+    "privacy_collect_build": "実行しているビルドバージョン、アプリをホーム画面にインストールしたかどうか、オフラインアップデーターとアプリ自体のリソースが正常に読み込まれたかどうか — これにより、古いビルドに留まっているバージョンや読み込み失敗が、数週間後の苦情ではなくここに表示されます。",
     "privacy_collect_heading": "収集される情報",
     "privacy_collect_intro": "利用統計は当社サーバー上の自己ホスト型Umamiインスタンスで実行されます。クッキーは設定されず、プロフィールは構築されず、誰とも共有されません。記録される内容：",
     "privacy_collect_interactions": "ミッション、フリート項目、3Dビュー内のマーカー、サイエンスセクション、パネルタブなど、開いたもの、クリックしたもの、フィルタリングしたもの、切り替えたもの。",
     "privacy_collect_outbound": "サイトから別のリンクをたどったとき、およびそのリンク先 — どのソースが実際に読まれているかを把握するため。",
-    "privacy_collect_pages": "訪問したページ、訪問順序、各ページでの滞在時間、ブラウザ、オペレーティングシステム、画面サイズ、言語、概算位置（IPアドレスから導出された国、地域、都市）、参照元サイトまたはキャンペーンリンク。",
+    "privacy_collect_pages": "訪問したページ、その順序、各ページの滞在時間、記事をどこまで読んだか — およびブラウザ、オペレーティングシステム、画面サイズ、言語、おおよその位置情報（IP アドレスから取得した国、地域、都市）、および このサイトに来たきっかけとなった参照サイトやキャンペーンリンク。",
     "privacy_collect_search": "検索キーワード（最初の40文字に切り詰め）。ユーザーが検索するトピックを把握できるレベル；入力内容の完全な記録ではありません。",
     "privacy_controls_body": "これをオフにすると、上記の利用統計とクラッシュレポートが停止します。サーバーログには影響を与えません — サーバーログはページ配信の一部です。この設定はこのデバイスの単一のクッキーに記憶され、ページがリロードされるため、次の訪問ではなく直ちに収集が停止します。",
     "privacy_controls_heading": "設定",
@@ -4001,7 +4002,8 @@
     "explore_lens_story_bh_body": "このレンダリングはブラックホール周辺の実光路（測地線）をたどります。リングはディスクの遠方側で、上方にレンズされています。レイヤーは曲率グリッドと、この深い重力井戸でのクロック進行速度の低下を示す表を追加します。",
     "science_layer_bh_curvature_desc": "光を曲げるのと同じ測地線によって歪められた時空グリッド。曲率のアナロジーであり、文字通りの表面ではありません。",
     "science_layer_bh_time_desc": "光子球、最内安定軌道、さらに外側でのクロック進行速度の低下度合い。重力時間膨張を定量化したものです。",
-    "star_index_black_holes": "ブラックホール"
+    "star_index_black_holes": "ブラックホール",
+    "nav_locale_suggest_label": "このページを あなたの言語で表示"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -6079,12 +6081,12 @@
     "credits_storage_optout_item": "{code} — تُعيّن فقط عند إيقاف تحليلات الاستخدام في صفحة الخصوصية، حتى يستمر الاختيار بعد إعادة التحميل (ADR-092). سنة واحدة. غير موجود إلا إذا اخترت عدم المشاركة. بدون تتبع أو بيانات شخصية.",
     "credits_storage_privacy_link": "الخصوصية",
     "layout_footer_privacy": "الخصوصية",
-    "privacy_collect_build": "إصدار البرنامج الذي تستخدمه، وما إذا نجح محدّث الوضع غير المتصل — حتى تظهر النسخة العالقة على إصدار قديم هنا بدلاً من الشكاوى بعد أسابيع.",
+    "privacy_collect_build": "إصدار البرنامج الذي تقوم بتشغيله وما إذا قمت بتثبيت التطبيق على شاشتك الرئيسية وما إذا تم تحميل محدث البرنامج دون اتصال وموارد التطبيق بنجاح — بحيث تظهر النسخة العالقة في إصدار قديم أو التحميل المكسور هنا بدلاً من الشكاوى بعد أسابيع.",
     "privacy_collect_heading": "ما يتم جمعه",
     "privacy_collect_intro": "تحليلات الاستخدام تعمل على خادمنا الخاص من Umami. لا يتم تعيين ملف تعريف، ولا يتم إنشاء ملف شخصي، ولا يتم مشاركة أي شيء مع أحد. ما يتم تسجيله:",
     "privacy_collect_interactions": "العناصر التي تفتحها وتنقر عليها وتصفيها وتبدل حالتها — مهمة، إدخال أسطول، علامة في العرض ثلاثي الأبعاد، قسم علمي، علامة تبويب في لوحة.",
     "privacy_collect_outbound": "عندما تتبع رابطاً خارج الموقع، والمكان الذي ذهبت إليه — حتى نعرف أي المصادر يقرأها الناس فعلاً.",
-    "privacy_collect_pages": "الصفحات التي تزورها، بأي ترتيب، والوقت الذي تقضيه على كل منها تقريباً — بالإضافة إلى متصفحك ونظام التشغيل وحجم الشاشة واللغة والموقع التقريبي (البلد والمنطقة والمدينة، مشتقة من عنوان IP الخاص بك)، والموقع المرجعي أو رابط الحملة الذي أحضرك هنا.",
+    "privacy_collect_pages": "الصفحات التي تزورها وترتيبها والوقت الذي تقضيه تقريباً على كل منها ومدى قراءتك للمقالات الطويلة — بالإضافة إلى متصفحك ونظام التشغيل وحجم الشاشة واللغة والموقع التقريبي (الدولة والمنطقة والمدينة، المشتقة من عنوان IP الخاص بك) والموقع أو رابط الحملة الإحالية التي أحضرتك هنا.",
     "privacy_collect_search": "ما تبحث عنه، مختصراً إلى أول 40 حرف. كافٍ لرؤية الموضوعات التي يبحث عنها الناس؛ لا يكون أبداً نسخة كاملة مما كتبته.",
     "privacy_controls_body": "إيقاف هذا يوقف تحليلات الاستخدام وتقارير الأعطال المذكورة أعلاه. لا يؤثر على سجلات الخادم — فهي جزء من خدمة الصفحة أساساً. يتم تذكر الاختيار في ملف تعريف واحد على هذا الجهاز، وتعاد تحميل الصفحة بحيث يتوقف الجمع فوراً بدلاً من الزيارة التالية.",
     "privacy_controls_heading": "اختيارك",
@@ -6113,7 +6115,8 @@
     "explore_lens_story_bh_body": "يتتبع هذا الرسم مسارات الضوء الحقيقية (الجيوديسيات) حول الثقب الأسود — الحلقة هي الجانب البعيد من القرص، منحنٍ فوق القمة. تضيف الطبقات شبكة انحناء وجدولاً يوضح مدى بطء الساعات في هذا العمق من البئر.",
     "science_layer_bh_curvature_desc": "شبكة زمكان مشوهة بنفس الجيوديسيات التي تنحني الضوء — تمثيل للانحناء، وليس سطحاً حرفياً.",
     "science_layer_bh_time_desc": "مدى بطء الساعات عند كرة الفوتون والمدار الثابت الأقرب والأماكن البعيدة — تمدد الزمن الثقالي، معبراً عنه كمياً.",
-    "star_index_black_holes": "الثقوب السوداء"
+    "star_index_black_holes": "الثقوب السوداء",
+    "nav_locale_suggest_label": "عرض هذه الصفحة بلغتك"
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -8013,12 +8016,12 @@
     "credits_storage_optout_item": "{code} — 개인정보 보호 페이지에서 사용 분석을 끄면 설정됨. 새로고침 후에도 선택이 유지됨 (ADR-092). 1년. 미설정 상태가 아니면 표시 안 됨. 추적 없음, 개인 데이터 없음.",
     "credits_storage_privacy_link": "개인정보 보호",
     "layout_footer_privacy": "개인정보 보호",
-    "privacy_collect_build": "실행 중인 빌드 버전과 오프라인 업데이터 성공 여부 — 오래된 빌드에 갇힌 버전이 몇 주 후 불만 사항으로 나타나는 대신 여기에 표시됨.",
+    "privacy_collect_build": "실행 중인 빌드, 앱을 홈 화면에 설치했는지 여부, 오프라인 업데이터와 앱의 자체 리소스가 성공적으로 로드되었는지 여부 — 이렇게 하면 오래된 빌드에 갇힌 버전이나 로드가 실패한 경우가 몇 주 후 불평 대신 여기에 나타납니다.",
     "privacy_collect_heading": "수집 데이터",
     "privacy_collect_intro": "사용 분석은 자체 서버의 자체 호스팅 Umami 인스턴스에서 실행됨. 쿠키가 설정되지 않고, 프로필이 작성되지 않으며, 누구와도 공유되지 않음. 기록 항목:",
     "privacy_collect_interactions": "열기, 클릭, 필터링, 토글한 항목 — 미션, 함대 항목, 3D 뷰의 마커, 과학 섹션, 패널 탭.",
     "privacy_collect_outbound": "사이트에서 링크를 따라갈 때와 그 목적지 — 사람들이 실제로 읽는 소스를 파악하기 위함.",
-    "privacy_collect_pages": "방문한 페이지, 방문 순서, 각 페이지 체류 시간 — 브라우저, 운영체제, 화면 크기, 언어, 대략적인 위치 (IP에서 유도한 국가, 지역, 도시), 참조 사이트 또는 캠페인 링크 포함.",
+    "privacy_collect_pages": "방문한 페이지, 방문 순서, 각 페이지에 머문 대략적인 시간, 긴 문서를 얼마나 아래로 읽었는지 — 그리고 당신의 브라우저, 운영체제, 화면 크기, 언어, 대략적인 위치(IP에서 파생된 국가, 지역 및 도시), 그리고 당신을 여기로 이끈 참조 사이트 또는 캠페인 링크.",
     "privacy_collect_search": "검색 내용, 처음 40자까지만 축약됨. 사람들이 찾는 주제를 파악할 수 있지만, 입력한 전체 내용은 기록되지 않음.",
     "privacy_controls_body": "이를 끄면 위의 사용 분석 및 충돌 보고서가 중단됨. 서버 로그에는 영향을 주지 않음 — 서버 로그는 페이지 제공의 일부임. 선택은 이 기기의 단일 쿠키에 기억되며, 다음 방문이 아닌 즉시 수집이 중단되도록 페이지가 새로고침됨.",
     "privacy_controls_heading": "사용자 선택",
@@ -8048,7 +8051,8 @@
     "explore_lens_story_bh_body": "이 렌더링은 블랙홀 주위의 실제 광선 경로(측지선)를 추적합니다 — 고리는 디스크의 반대편으로, 위쪽으로 렌즈됩니다. 레이어는 곡률 격자와 중력정의 깊은 곳에서 시계가 얼마나 느리게 움직이는지 보여주는 표를 더합니다.",
     "science_layer_bh_curvature_desc": "빛을 구부리는 동일한 측지선에 의해 휘어진 시공간 격자 — 곡률의 유추이지, 문자 그대로의 표면이 아닙니다.",
     "science_layer_bh_time_desc": "광자구, 가장 안쪽의 안정 궤도, 그리고 그 너머에서 시계가 얼마나 느리게 움직이는지 — 중력 시간 팽창, 정량화됨.",
-    "star_index_black_holes": "검은 구멍"
+    "star_index_black_holes": "검은 구멍",
+    "nav_locale_suggest_label": "이 페이지를 당신의 언어로 보기"
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -9770,12 +9774,12 @@
     "credits_storage_optout_item": "{code} — wird nur gespeichert, wenn Sie die Nutzungsanalyse auf der Datenschutzseite deaktivieren, damit die Einstellung nach einem Neuladen erhalten bleibt (ADR-092). 1 Jahr. Nicht vorhanden, solange Sie sich nicht abmelden. Kein Tracking, keine persönlichen Daten.",
     "credits_storage_privacy_link": "Datenschutz",
     "layout_footer_privacy": "Datenschutz",
-    "privacy_collect_build": "Welche Build-Version Sie verwenden und ob die Offline-Aktualisierung erfolgreich war – damit eine in einer alten Build-Version steckengebliebene Version hier angezeigt wird, statt Wochen später in einer Beschwerde.",
+    "privacy_collect_build": "Welcher Build du ausführst, ob du die App auf deinem Startbildschirm installiert hast und ob der Offline-Updater und die eigenen Ressourcen der App erfolgreich geladen wurden – damit ein auf einem alten Build steckengebliebener Build oder ein fehlgeschlagenes Laden hier anstatt in einer Beschwerde Wochen später angezeigt wird.",
     "privacy_collect_heading": "Was wird erfasst",
     "privacy_collect_intro": "Die Nutzungsanalyse läuft auf einer selbstgehosteten Umami-Instanz auf unserem eigenen Server. Es wird kein Cookie gespeichert, kein Profil erstellt und nichts mit Dritten geteilt. Was erfasst wird:",
     "privacy_collect_interactions": "Welche Dinge Sie öffnen, anklicken, filtern und umschalten – eine Mission, einen Flotteneintrag, einen Marker in der 3D-Ansicht, einen Wissenschaftsbereich, einen Panel-Tab.",
     "privacy_collect_outbound": "Wenn Sie einem Link von der Website folgen und wohin dieser führt – damit wir wissen, welche Quellen Menschen tatsächlich lesen.",
-    "privacy_collect_pages": "Welche Seiten Sie besuchen, in welcher Reihenfolge und wie lange Sie auf jeder Seite bleiben – sowie Ihren Browser, Betriebssystem, Bildschirmgröße, Sprache, ungefähren Ort (Land, Region und Stadt, abgeleitet von Ihrer IP) und die Website oder Kampagnenlink, die Sie hergebracht hat.",
+    "privacy_collect_pages": "Welche Seiten du besuchst, in welcher Reihenfolge, ungefähr wie lange du auf jeder Seite bleibst und wie weit du die längeren Artikel liest – sowie dein Browser, Betriebssystem, Bildschirmgröße, Sprache, ungefähre Position (Land, Region und Stadt, ermittelt aus deiner IP-Adresse) und die verweisende Website oder Kampagnen-Link, die dich hierher gebracht hat.",
     "privacy_collect_search": "Was Sie suchen, gekürzt auf die ersten 40 Zeichen. Genug um zu sehen, welche Themen Nutzer suchen; niemals ein vollständiges Transkript dessen, was Sie eingegeben haben.",
     "privacy_controls_body": "Das Ausschalten stoppt die Nutzungsanalyse und die oben beschriebenen Crashberichte. Es beeinflusst nicht die Server-Logs – diese sind Teil des Auslieferns der Seite überhaupt. Die Wahl wird in einem einzelnen Cookie auf diesem Gerät gespeichert und die Seite wird neu geladen, damit die Erfassung sofort stoppt, statt bei dem nächsten Besuch.",
     "privacy_controls_heading": "Ihre Wahl",
@@ -9805,7 +9809,8 @@
     "explore_lens_story_bh_body": "Diese Darstellung verfolgt echte Lichtwege (Geodäten) um das schwarze Loch — der Ring ist die Rückseite der Scheibe, über die Oberseite linsenförmig verzerrt. Die Ebenen zeigen ein Krümmungsgitter und eine Tabelle, wie viel langsamer die Uhren so tief im Gravitationspotenzial gehen.",
     "science_layer_bh_curvature_desc": "Ein Raumzeitgitter, verzerrt durch dieselben Geodäten, die das Licht krümmen — eine Analogie für Krümmung, keine buchstäbliche Oberfläche.",
     "science_layer_bh_time_desc": "Wie viel langsamer die Uhren an der Photonensphäre, der innersten stabilen Umlaufbahn und weiter außen gehen — Gravitationszeitdilatation, quantifiziert.",
-    "star_index_black_holes": "Schwarze Löcher"
+    "star_index_black_holes": "Schwarze Löcher",
+    "nav_locale_suggest_label": "Diese Seite in deiner Sprache ansehen"
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -11467,12 +11472,12 @@
     "credits_storage_optout_item": "{code} — défini uniquement si vous désactivez l'analyse d'utilisation sur la page de confidentialité, afin que ce choix persiste après un rechargement (ADR-092). 1 an. Absent sauf si vous refusez. Aucun suivi, aucune donnée personnelle.",
     "credits_storage_privacy_link": "confidentialité",
     "layout_footer_privacy": "Confidentialité",
-    "privacy_collect_build": "La version que vous exécutez et si la mise à jour hors ligne a réussi — pour qu'une version bloquée sur une ancienne build apparaisse ici plutôt que dans une plainte des semaines plus tard.",
+    "privacy_collect_build": "Quelle version vous exécutez, si vous avez installé l'application sur votre écran d'accueil, et si le programme de mise à jour hors ligne et les ressources de l'application se sont chargés avec succès — afin qu'une version figée sur une ancienne build, ou un chargement défaillant, apparaisse ici plutôt que dans une réclamation des semaines plus tard.",
     "privacy_collect_heading": "Ce qui est collecté",
     "privacy_collect_intro": "L'analyse d'utilisation s'exécute sur une instance Umami auto-hébergée sur notre propre serveur. Aucun cookie n'est défini, aucun profil n'est créé et rien n'est partagé avec quiconque. Ce qu'elle enregistre :",
     "privacy_collect_interactions": "Les éléments que vous ouvrez, cliquez, filtrez et activez/désactivez — une mission, une entrée de flotte, un marqueur dans la vue 3D, une section scientifique, un onglet de panneau.",
     "privacy_collect_outbound": "Quand vous suivez un lien en dehors du site et où il menait — pour que nous sachions quelles sources les gens lisent réellement.",
-    "privacy_collect_pages": "Les pages que vous visitez, dans quel ordre et environ combien de temps vous restez sur chacune — plus votre navigateur, système d'exploitation, taille d'écran, langue, localisation approximative (pays, région et ville, dérivée de votre IP) et le site référent ou lien de campagne qui vous a amené ici.",
+    "privacy_collect_pages": "Les pages que vous visitez, dans quel ordre, approximativement combien de temps vous restez sur chacune, et jusqu'où vous lisez dans les articles plus longs — ainsi que votre navigateur, système d'exploitation, taille d'écran, langue, localisation approximative (pays, région et ville, dérivée de votre adresse IP), et le site référent ou le lien de campagne qui vous a amené ici.",
     "privacy_collect_search": "Ce que vous recherchez, tronqué aux 40 premiers caractères. Suffisant pour voir quels sujets les gens recherchent ; jamais une transcription complète de ce que vous avez tapé.",
     "privacy_controls_body": "Désactiver ceci arrête l'analyse d'utilisation et les rapports de crash décrits ci-dessus. Cela n'affecte pas les journaux du serveur — ceux-ci font partie de la livraison de la page. Le choix est mémorisé dans un seul cookie sur cet appareil et la page se recharge afin que la collecte s'arrête immédiatement plutôt qu'à la prochaine visite.",
     "privacy_controls_heading": "Votre choix",
@@ -11502,7 +11507,8 @@
     "explore_lens_story_bh_body": "Ce rendu trace les chemins réels de la lumière (géodésiques) autour du trou noir — l'anneau est le côté lointain du disque, lensé par-dessus le sommet. Les couches ajoutent une grille de courbure et un tableau montrant de combien les horloges ralentissent au plus profond du puits.",
     "science_layer_bh_curvature_desc": "Une grille d'espace-temps déformée par les mêmes géodésiques qui courbent la lumière — une analogie pour la courbure, pas une surface littérale.",
     "science_layer_bh_time_desc": "De combien les horloges ralentissent à la sphère de photons, à l'orbite stable la plus interne, et plus loin — la dilatation gravitationnelle du temps, quantifiée.",
-    "star_index_black_holes": "Trous noirs"
+    "star_index_black_holes": "Trous noirs",
+    "nav_locale_suggest_label": "Voir cette page dans votre langue"
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -13131,12 +13137,12 @@
     "credits_storage_optout_item": "{code} — impostato solo se disattivi l'analisi dell'utilizzo nella pagina sulla privacy, in modo che la scelta persista dopo il ricaricamento (ADR-092). 1 anno. Assente a meno che tu non rinunci. Nessun tracking, nessun dato personale.",
     "credits_storage_privacy_link": "privacy",
     "layout_footer_privacy": "Privacy",
-    "privacy_collect_build": "Quale versione stai utilizzando e se l'aggiornamento offline ha avuto successo — in modo che una versione bloccata su una build vecchia appaia qui anziché in un reclamo settimane dopo.",
+    "privacy_collect_build": "Quale build stai utilizzando, se hai installato l'app sulla tua schermata iniziale, e se l'aggiornamento offline e le risorse dell'app si sono caricate correttamente — così una versione bloccata su una build vecchia, o un caricamento non riuscito, compare qui invece che in un reclamo settimane dopo.",
     "privacy_collect_heading": "Cosa viene raccolto",
     "privacy_collect_intro": "L'analisi dell'utilizzo viene eseguita su un'istanza Umami auto-ospitata sul nostro server. Nessun cookie viene impostato, nessun profilo viene creato e nulla viene condiviso con nessuno. Ciò che registra:",
     "privacy_collect_interactions": "Quali elementi apri, su cui fai clic, filtri e attivi — una missione, una voce della flotta, un marcatore nella vista 3D, una sezione scientifica, una scheda di pannello.",
     "privacy_collect_outbound": "Quando segui un collegamento al di fuori del sito e dove è andato — in modo da sapere quali fonti le persone effettivamente leggono.",
-    "privacy_collect_pages": "Quali pagine visiti, in che ordine e circa quanto tempo trascorri su ciascuna — oltre al tuo browser, sistema operativo, dimensione dello schermo, lingua, posizione approssimativa (paese, regione e città, derivata dal tuo IP) e il sito di provenienza o il collegamento della campagna che ti ha portato qui.",
+    "privacy_collect_pages": "Quali pagine visiti, in quale ordine, quanto tempo all'incirca rimani su ciascuna, e quanto leggi degli articoli più lunghi — oltre al tuo browser, sistema operativo, dimensioni dello schermo, lingua, posizione approssimativa (paese, regione e città, ricavate dal tuo IP), e il sito di provenienza o il link di campagna che ti ha portato qui.",
     "privacy_collect_search": "Cosa cerchi, troncato ai primi 40 caratteri. Abbastanza per vedere quali argomenti le persone cercano; mai una trascrizione completa di quello che hai digitato.",
     "privacy_controls_body": "Disattivando questa opzione si arresta l'analisi dell'utilizzo e i rapporti di crash descritti sopra. Non influisce sui registri del server — quelli fanno parte della trasmissione della pagina stessa. La scelta viene memorizzata in un singolo cookie su questo dispositivo e la pagina si ricarica in modo che la raccolta si arresti immediatamente anziché alla prossima visita.",
     "privacy_controls_heading": "La tua scelta",
@@ -13166,7 +13172,8 @@
     "explore_lens_story_bh_body": "Questo render traccia i veri percorsi della luce (geodetiche) intorno al buco nero — l'anello è il lato opposto del disco, lensato sopra. Gli strati aggiungono una griglia di curvatura e una tabella di quanto più lentamente gli orologi scandiscono il tempo a questa profondità nel pozzo.",
     "science_layer_bh_curvature_desc": "Una griglia dello spacetime deformata dalle stesse geodetiche che piegano la luce — un'analogia per la curvatura, non una superficie letterale.",
     "science_layer_bh_time_desc": "Quanto più lentamente gli orologi scandiscono il tempo alla sfera dei fotoni, all'orbita stabile più interna, e oltre — dilatazione gravitazionale del tempo, quantificata.",
-    "star_index_black_holes": "Buchi neri"
+    "star_index_black_holes": "Buchi neri",
+    "nav_locale_suggest_label": "Visualizza questa pagina nella tua lingua"
   },
   "es": {
     "mars_meta_description": "Todo artefacto que la humanidad ha colocado en Marte — aterrizadores, rovers y orbitadores activos — en un globo 3D navegable con la historia completa de la misión.",
@@ -14794,12 +14801,12 @@
     "credits_storage_optout_item": "{code} — se establece solo si desactivas los análisis de uso en la página de privacidad, para que la elección persista tras recargar (ADR-092). 1 año. Ausente a menos que optes por no participar. Sin seguimiento, sin datos personales.",
     "credits_storage_privacy_link": "privacidad",
     "layout_footer_privacy": "Privacidad",
-    "privacy_collect_build": "Qué versión ejecutas y si el actualizador sin conexión tuvo éxito — para que una versión atrapada en una compilación antigua aparezca aquí en lugar de en una queja semanas después.",
+    "privacy_collect_build": "Qué compilación ejecutas, si instalaste la app en tu pantalla de inicio y si el actualizador sin conexión y los recursos propios de la app se cargaron correctamente — para que una versión atrapada en una compilación antigua o una carga fallida aparezca aquí en lugar de en una queja semanas después.",
     "privacy_collect_heading": "Qué se recopila",
     "privacy_collect_intro": "Los análisis de uso se ejecutan en una instancia Umami autohospedada en nuestro propio servidor. No se establece ninguna cookie, no se construye ningún perfil y nada se comparte con nadie. Lo que registra:",
     "privacy_collect_interactions": "Qué cosas abres, haces clic, filtras y activas — una misión, una entrada de flota, un marcador en la vista 3D, una sección de ciencia, una pestaña de panel.",
     "privacy_collect_outbound": "Cuando sigues un enlace fuera del sitio y adónde fue — para saber qué fuentes lee la gente realmente.",
-    "privacy_collect_pages": "Qué páginas visitas, en qué orden y cuánto tiempo pasas aproximadamente en cada una — más tu navegador, sistema operativo, tamaño de pantalla, idioma, ubicación aproximada (país, región y ciudad, derivada de tu IP) y el sitio referente o enlace de campaña que te trajo aquí.",
+    "privacy_collect_pages": "Qué páginas visitas, en qué orden, aproximadamente cuánto tiempo permaneces en cada una y hasta dónde lees los artículos más largos — además de tu navegador, sistema operativo, tamaño de pantalla, idioma, ubicación aproximada (país, región y ciudad, derivada de tu IP) y el sitio o enlace de campaña que te ha traído aquí.",
     "privacy_collect_search": "Lo que buscas, truncado a los primeros 40 caracteres. Suficiente para ver qué temas busca la gente; nunca una transcripción completa de lo que escribiste.",
     "privacy_controls_body": "Desactivar esto detiene los análisis de uso y los informes de fallos descritos arriba. No afecta los registros del servidor — son parte de servir la página en general. La elección se recuerda en una única cookie en este dispositivo y la página se recarga para que la recopilación se detenga inmediatamente en lugar de en la siguiente visita.",
     "privacy_controls_heading": "Tu elección",
@@ -14829,7 +14836,8 @@
     "explore_lens_story_bh_body": "Este render traza trayectorias de luz reales (geodésicas) alrededor del agujero negro — el anillo es la cara lejana del disco, lensada sobre la parte superior. Las capas añaden una malla de curvatura y una tabla de cuánto más lentamente transcurre el tiempo en el fondo del pozo.",
     "science_layer_bh_curvature_desc": "Una malla de espaciotiempo deformada por las mismas geodésicas que curvan la luz — una analogía de la curvatura, no una superficie literal.",
     "science_layer_bh_time_desc": "Cuánto más lentamente transcurre el tiempo en la esfera de fotones, la órbita estable más interna y más allá — dilatación gravitatoria del tiempo, cuantificada.",
-    "star_index_black_holes": "Agujeros negros"
+    "star_index_black_holes": "Agujeros negros",
+    "nav_locale_suggest_label": "Ver esta página en tu idioma"
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -16466,12 +16474,12 @@
     "credits_storage_optout_item": "{code} — alleen ingesteld als je gebruiksanalyse uitschakelt op de privacypagina, zodat de keuze een pagina-vernieuwing overleeft (ADR-092). 1 jaar. Ontbreekt tenzij je opt-out kiest. Geen tracking, geen persoonlijke gegevens.",
     "credits_storage_privacy_link": "privacy",
     "layout_footer_privacy": "Privacy",
-    "privacy_collect_build": "Welke build je gebruikt en of de offline updater succesvol was — zodat een versie die vast zit op een oude build hier verschijnt in plaats van weken later in een klacht.",
+    "privacy_collect_build": "Welke build u gebruikt, of u de app op uw startscherm hebt geïnstalleerd, en of de offline updater en de resources van de app correct zijn geladen — zodat een versie die op een oude build vast zit, of een mislukte laadbewerking, hier verschijnt in plaats van weken later in een klacht.",
     "privacy_collect_heading": "Wat wordt verzameld",
     "privacy_collect_intro": "Gebruiksanalyse draait op een zelf-gehoste Umami-instantie op onze eigen server. Er wordt geen cookie ingesteld, er wordt geen profiel opgebouwd en niets wordt gedeeld met iemand anders. Wat het registreert:",
     "privacy_collect_interactions": "Wat je opent, klikt, filtert en schakelt — een missie, een vlootitem, een marker in de 3D-weergave, een wetenschapssectie, een paneeltab.",
     "privacy_collect_outbound": "Wanneer je een link van de site volgt en waar deze heen ging — zodat we weten welke bronnen mensen daadwerkelijk lezen.",
-    "privacy_collect_pages": "Welke pagina's je bezoekt, in welke volgorde en hoe lang je roughly op elk blijft — plus je browser, besturingssysteem, schermgrootte, taal, benaderde locatie (land, regio en stad, afgeleid van je IP) en de verwijzende site of campagnelink die je hier bracht.",
+    "privacy_collect_pages": "Welke pagina's u bezoekt, in welke volgorde, ongeveer hoe lang u op elke pagina blijft, en hoe ver u in de langere artikelen leest — plus uw browser, besturingssysteem, schermgrootte, taal, geschatte locatie (land, regio en stad, afgeleid van uw IP-adres), en de verwijzingssite of campagnelink die u hier heeft gebracht.",
     "privacy_collect_search": "Waarnaar je zoekt, afgekapt tot de eerste 40 tekens. Genoeg om te zien naar welke onderwerpen mensen zoeken; nooit een volledig transcript van wat je typte.",
     "privacy_controls_body": "Dit uitschakelen stopt de gebruiksanalyse en de crashrapporten hierboven. Het beïnvloedt niet de serverlogboeken — die maken deel uit van het serveren van de pagina. De keuze wordt onthouden in één cookie op dit apparaat en de pagina herlaadt zodat de verzameling onmiddellijk stopt in plaats van bij het volgende bezoek.",
     "privacy_controls_heading": "Jouw keuze",
@@ -16501,7 +16509,8 @@
     "explore_lens_story_bh_body": "Deze weergave volgt echte lichtpaden (geodeten) rond het zwarte gat — de ring is de verre zijde van de schijf, over de top geboogen. De lagen voegen een krommingsraster en een tabel toe die toont hoe veel langzamer klokken hier diep in de put tikken.",
     "science_layer_bh_curvature_desc": "Een ruimtetijdraster vervormd door dezelfde geodeten die het licht buigen — een analogie voor kromming, geen letterlijk oppervlak.",
     "science_layer_bh_time_desc": "Hoe veel langzamer klokken tikken bij de fotonensfer, de binnenste stabiele baan, en verder uit — zwaartekrachtsveroorzaakte tijddilatatie, gekwantificeerd.",
-    "star_index_black_holes": "Zwarte gaten"
+    "star_index_black_holes": "Zwarte gaten",
+    "nav_locale_suggest_label": "Bekijk deze pagina in uw taal"
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -18402,12 +18411,12 @@
     "credits_storage_optout_item": "{code} — устанавливается только при отключении аналитики использования на странице приватности, чтобы выбор сохранился после перезагрузки (ADR-092). 1 год. Отсутствует, если вы не отказались. Никакого отслеживания, никаких личных данных.",
     "credits_storage_privacy_link": "приватность",
     "layout_footer_privacy": "Приватность",
-    "privacy_collect_build": "Какую версию вы используете и был ли успешным автономный обновитель — так что версия, застрявшая на старой сборке, появится здесь вместо жалобы через недели.",
+    "privacy_collect_build": "Какую версию приложения вы используете, установили ли вы приложение на домашний экран, успешно ли загрузились автономный обновляющий модуль и собственные ресурсы приложения — так устаревшая версия или ошибка загрузки появляется здесь вместо жалобы через несколько недель.",
     "privacy_collect_heading": "Что собирается",
     "privacy_collect_intro": "Аналитика использования работает на самостоятельно размещённом экземпляре Umami на нашем сервере. Никаких куки не устанавливается, профиль не создаётся и ничто никому не передаётся. Что записывается:",
     "privacy_collect_interactions": "Какие элементы вы открываете, на что кликаете, что фильтруете и переключаете — миссию, запись флота, маркер в 3D-виде, раздел науки, вкладку панели.",
     "privacy_collect_outbound": "Когда вы переходите по ссылке на другой сайт и куда она ведёт — так мы знаем, какие источники люди действительно читают.",
-    "privacy_collect_pages": "Какие страницы вы посещаете, в каком порядке и примерно сколько времени на каждой проводите — плюс ваш браузер, операционная система, размер экрана, язык, приблизительное местоположение (страна, регион и город, выведённые из вашего IP) и сайт-источник или ссылка кампании, которая вас сюда привела.",
+    "privacy_collect_pages": "Какие страницы вы посещаете, в каком порядке, примерно как долго вы остаётесь на каждой, и насколько глубоко вы читаете более длинные статьи — а также ваш браузер, операционная система, размер экрана, язык, приблизительное местоположение (страна, регион и город, определённые по вашему IP-адресу) и ссылка на реферальный сайт или кампанию, по которой вы здесь оказались.",
     "privacy_collect_search": "Что вы ищете, обрезано до первых 40 символов. Достаточно, чтобы видеть, какие темы ищут люди; никогда полную стенограмму того, что вы вводили.",
     "privacy_controls_body": "Отключение прекращает аналитику использования и отчёты об ошибках, описанные выше. Это не влияет на логи сервера — они часть работы сайта. Выбор запоминается в одной куки на этом устройстве, и страница перезагружается, так что сбор останавливается сразу, а не при следующем посещении.",
     "privacy_controls_heading": "Ваш выбор",
@@ -18437,7 +18446,8 @@
     "explore_lens_story_bh_body": "Этот рендер отслеживает истинные пути света (геодезические) вокруг чёрной дыры — кольцо — это дальняя сторона диска, пролинзированная через верх. Слои добавляют сетку кривизны и таблицу замедления хода часов на такой глубине в гравитационной яме.",
     "science_layer_bh_curvature_desc": "Сетка пространства-времени, деформированная теми же геодезическими линиями, что искривляют свет — аналогия кривизны, не буквальная поверхность.",
     "science_layer_bh_time_desc": "Насколько медленнее идут часы на фотонной сфере, ближайшей устойчивой орбите и дальше — гравитационное замедление времени, количественно выраженное.",
-    "star_index_black_holes": "Чёрные дыры"
+    "star_index_black_holes": "Чёрные дыры",
+    "nav_locale_suggest_label": "Просмотреть эту страницу на вашем языке"
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -20381,12 +20391,12 @@
     "credits_storage_optout_item": "{code} — 仅在您在隐私页面关闭使用分析时设置，以便该选择在重新加载后保留（ADR-092）。1 年。除非您选择退出，否则不存在。无跟踪，无个人数据。",
     "credits_storage_privacy_link": "隐私",
     "layout_footer_privacy": "隐私",
-    "privacy_collect_build": "您运行的构建版本，以及离线更新程序是否成功 — 这样卡在旧构建上的版本会显示在这里，而不是几周后以投诉形式出现。",
+    "privacy_collect_build": "您正在运行的版本、是否将应用安装到主屏幕、离线更新程序和应用自身资源是否成功加载——这样卡在旧版本或加载失败的情况会立即显示在此处，而不是数周后才收到投诉。",
     "privacy_collect_heading": "收集的数据",
     "privacy_collect_intro": "使用分析在我们自己服务器上自托管的 Umami 实例上运行。不设置 Cookie，不构建用户档案，不与任何人共享。它记录的内容：",
     "privacy_collect_interactions": "您打开、点击、筛选和切换的内容 — 任务、舰队条目、3D 视图中的标记、科学部分、面板选项卡。",
     "privacy_collect_outbound": "当您点击链接离开网站时，以及链接指向何处 — 这样我们可以了解人们实际阅读了哪些来源。",
-    "privacy_collect_pages": "您访问的页面、访问顺序以及在每个页面上停留的大致时间 — 加上您的浏览器、操作系统、屏幕尺寸、语言、大致位置（从您的 IP 衍生的国家、地区和城市），以及将您带到此处的引荐网站或营销活动链接。",
+    "privacy_collect_pages": "您访问的页面、访问顺序、大致停留时间以及在较长文章中的阅读深度——加上您的浏览器、操作系统、屏幕尺寸、语言、大概位置（根据您的IP推断的国家、地区和城市）以及将您引导至此处的参考网站或营销活动链接。",
     "privacy_collect_search": "您搜索的内容，截断到前 40 个字符。足以看到人们查找的主题；绝不是您输入内容的完整记录。",
     "privacy_controls_body": "关闭此选项会停止上述使用分析和崩溃报告。它不影响服务器日志 — 那些是提供页面服务的一部分。该选择被记住在此设备上的单个 Cookie 中，页面重新加载以便收集立即停止，而不是在下次访问时停止。",
     "privacy_controls_heading": "您的选择",
@@ -20416,7 +20426,8 @@
     "explore_lens_story_bh_body": "此渲染图追踪黑洞周围的真实光路径（测地线）——圆环是圆盘的背侧，经透镜效应投射到上方。各图层添加了曲率网格和一个表格，显示在这么深的引力井中时钟的走速减缓程度。",
     "science_layer_bh_curvature_desc": "由弯曲光线的相同测地线所扭曲的时空网格——曲率的类比，而非字面意义的表面。",
     "science_layer_bh_time_desc": "光子球、最内层稳定轨道及更远处的时钟走速减缓程度——引力时间膨胀，量化表示。",
-    "star_index_black_holes": "黑洞"
+    "star_index_black_holes": "黑洞",
+    "nav_locale_suggest_label": "用您的语言查看此页面"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -22232,12 +22243,12 @@
     "credits_storage_optout_item": "{code} — постављен само ако искључите аналитику коришћења на страни приватности, тако да избор преживи поново учитавање (ADR-092). 1 година. Недостаје осим ако се не искључите. Без праћења, без личних података.",
     "credits_storage_privacy_link": "приватност",
     "layout_footer_privacy": "Приватност",
-    "privacy_collect_build": "Коју верзију покрећете и да ли је офлајн ажурер успео — тако да верзија заглављена на старој верзији буде приказана овде уместо у жалби недељама касније.",
+    "privacy_collect_build": "Коју верзију користите, да ли сте инсталирали апликацију на своју почетну екран, и да ли су офлајн ажурер и ресурси саме апликације успешно учитани — тако да верзија заглављена на старој верзији или неуспешно учитавање буде приказана овде уместо у жалби недеље касније.",
     "privacy_collect_heading": "Шта се прикупља",
     "privacy_collect_intro": "Аналитика коришћења се покреће на самостално хостованој Umami инстанци на нашем серверу. Ниједан колачић се не поставља, профил се не гради и ништа се не дели са никим. Оно што записује:",
     "privacy_collect_interactions": "Шта отворите, кликнете, филтрирате и укључите/искључите — мисију, унос флоте, маркер у 3D приказу, научну секцију, картицу панела.",
     "privacy_collect_outbound": "Када пратите везу ван сајта и где је отишла — тако да знамо које изворе људи заиста читају.",
-    "privacy_collect_pages": "Које странице посећујете, редоследом, и отприлике колико дуго останете на свакој — плус ваш прегледач, оперативни систем, величина екрана, језик, приближна локација (земља, регион и град, изведена од вашег IP-а) и референтни сајт или везу кампање која вас је довела овде.",
+    "privacy_collect_pages": "Које странице посећујете, редослед, отприлике колико дуго останете на свакој и колико далеко читате дуже чланке — плус ваш прегледач, оперативни систем, величина екрана, језик, приближна локација (земља, регион и град, изведена из ваше IP адресе) и реферирајући веб сајт или везу кампање која вас је довела овде.",
     "privacy_collect_search": "Шта претражујете, скраћено на првих 40 знакова. Довољно да видимо која тема људи претражују; никад потпуни препис онога што сте куцали.",
     "privacy_controls_body": "Искључивање овога заустављају аналитику коришћења и извештаје о паду описане горе. То не утиче на логе серверу — они су део услужавања странице уопште. Избор је запамћен у једном колачићу на овој уређају, а страна се поново учитава тако да сакупљање одмах стане уместо при следећој посети.",
     "privacy_controls_heading": "Ваш избор",
@@ -22267,7 +22278,8 @@
     "explore_lens_story_bh_body": "Овај приказ прати праве путање светлости (геодезијске линије) око црне рупе — прстен је даља страна диска, преломљена преко врха. Слојеви додају мрежу кривине и табелу колико спорије светлосни сатови брзе на оволико дубоко у гравитационој јами.",
     "science_layer_bh_curvature_desc": "Мрежа простор-времена деформисана истим геодезијским линијама које савијају светлост — аналогија за кривину, не дословна површина.",
     "science_layer_bh_time_desc": "Колико спорије светлосни сатови брзе на фотонској сфери, најунутрашњој стабилној орбити и даље — гравитациона дилатација времена, квантификована.",
-    "star_index_black_holes": "Црне рупе"
+    "star_index_black_holes": "Црне рупе",
+    "nav_locale_suggest_label": "Погледајте ову страницу на вашем језику"
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -23902,12 +23914,12 @@
     "credits_storage_optout_item": "{code} — definido apenas se você desativar a análise de uso na página de privacidade, para que a escolha persista após um recarregamento (ADR-092). 1 ano. Ausente a menos que você opte por não participar. Sem rastreamento, sem dados pessoais.",
     "credits_storage_privacy_link": "privacidade",
     "layout_footer_privacy": "Privacidade",
-    "privacy_collect_build": "Qual versão você está executando e se o atualizador offline teve sucesso — para que uma versão presa em uma compilação antiga apareça aqui em vez de em uma reclamação semanas depois.",
+    "privacy_collect_build": "Qual versão você está executando, se você instalou o aplicativo na sua tela inicial, e se o atualizador offline e os recursos do próprio aplicativo foram carregados com sucesso — para que uma versão presa em uma compilação antiga, ou um carregamento quebrado, apareça aqui em vez de em uma reclamação semanas depois.",
     "privacy_collect_heading": "O que é coletado",
     "privacy_collect_intro": "A análise de uso é executada em uma instância Umami auto-hospedada em nosso próprio servidor. Nenhum cookie é definido, nenhum perfil é criado e nada é compartilhado com ninguém. O que é registrado:",
     "privacy_collect_interactions": "Quais coisas você abre, clica, filtra e alterna — uma missão, uma entrada de frota, um marcador na visualização 3D, uma seção de ciência, uma aba de painel.",
     "privacy_collect_outbound": "Quando você segue um link para fora do site e para onde ele levou — para que possamos saber quais fontes as pessoas realmente leem.",
-    "privacy_collect_pages": "Quais páginas você visita, em qual ordem e aproximadamente quanto tempo você fica em cada uma — além do seu navegador, sistema operacional, tamanho da tela, idioma, localização aproximada (país, região e cidade, derivada do seu IP) e o site ou link de campanha de referência que o trouxe aqui.",
+    "privacy_collect_pages": "Quais páginas você visita, em que ordem, aproximadamente quanto tempo você fica em cada uma, e até onde você lê os artigos mais longos — além do seu navegador, sistema operacional, tamanho da tela, idioma, localização aproximada (país, região e cidade, derivada do seu IP), e o site ou link de campanha que o trouxe aqui.",
     "privacy_collect_search": "O que você procura, truncado para os primeiros 40 caracteres. O suficiente para ver quais tópicos as pessoas procuram; nunca uma transcrição completa do que você digitou.",
     "privacy_controls_body": "Desativar isso interrompe a análise de uso e os relatórios de falha descritos acima. Isso não afeta os logs do servidor — esses são parte de servir a página em geral. A escolha é lembrada em um único cookie neste dispositivo, e a página recarrega para que a coleta pare imediatamente em vez de na próxima visita.",
     "privacy_controls_heading": "Sua escolha",
@@ -23937,6 +23949,7 @@
     "explore_lens_story_bh_body": "Esta renderização traça caminhos de luz reais (geodésicas) ao redor do buraco negro — o anel é o lado distante do disco, lensado sobre o topo. As camadas adicionam uma grade de curvatura e uma tabela de quanto mais lentamente os relógios marcam o tempo neste poço profundo.",
     "science_layer_bh_curvature_desc": "Uma grade de espaçotempo distorcida pelas mesmas geodésicas que curvam a luz — uma analogia para curvatura, não uma superfície literal.",
     "science_layer_bh_time_desc": "Quanto mais lentamente os relógios marcam o tempo na esfera de fótons, na órbita estável mais interna e mais afastado — dilatação gravitacional do tempo, quantificada.",
-    "star_index_black_holes": "Buracos negros"
+    "star_index_black_holes": "Buracos negros",
+    "nav_locale_suggest_label": "Veja esta página no seu idioma"
   }
 }

@@ -3002,12 +3002,12 @@
   "credits_storage_optout_item": "{code} — se establece solo si desactivas los análisis de uso en la página de privacidad, para que la elección persista tras recargar (ADR-092). 1 año. Ausente a menos que optes por no participar. Sin seguimiento, sin datos personales.",
   "credits_storage_privacy_link": "privacidad",
   "layout_footer_privacy": "Privacidad",
-  "privacy_collect_build": "Qué versión ejecutas y si el actualizador sin conexión tuvo éxito — para que una versión atrapada en una compilación antigua aparezca aquí en lugar de en una queja semanas después.",
+  "privacy_collect_build": "Qué compilación ejecutas, si instalaste la app en tu pantalla de inicio y si el actualizador sin conexión y los recursos propios de la app se cargaron correctamente — para que una versión atrapada en una compilación antigua o una carga fallida aparezca aquí en lugar de en una queja semanas después.",
   "privacy_collect_heading": "Qué se recopila",
   "privacy_collect_intro": "Los análisis de uso se ejecutan en una instancia Umami autohospedada en nuestro propio servidor. No se establece ninguna cookie, no se construye ningún perfil y nada se comparte con nadie. Lo que registra:",
   "privacy_collect_interactions": "Qué cosas abres, haces clic, filtras y activas — una misión, una entrada de flota, un marcador en la vista 3D, una sección de ciencia, una pestaña de panel.",
   "privacy_collect_outbound": "Cuando sigues un enlace fuera del sitio y adónde fue — para saber qué fuentes lee la gente realmente.",
-  "privacy_collect_pages": "Qué páginas visitas, en qué orden y cuánto tiempo pasas aproximadamente en cada una — más tu navegador, sistema operativo, tamaño de pantalla, idioma, ubicación aproximada (país, región y ciudad, derivada de tu IP) y el sitio referente o enlace de campaña que te trajo aquí.",
+  "privacy_collect_pages": "Qué páginas visitas, en qué orden, aproximadamente cuánto tiempo permaneces en cada una y hasta dónde lees los artículos más largos — además de tu navegador, sistema operativo, tamaño de pantalla, idioma, ubicación aproximada (país, región y ciudad, derivada de tu IP) y el sitio o enlace de campaña que te ha traído aquí.",
   "privacy_collect_search": "Lo que buscas, truncado a los primeros 40 caracteres. Suficiente para ver qué temas busca la gente; nunca una transcripción completa de lo que escribiste.",
   "privacy_controls_body": "Desactivar esto detiene los análisis de uso y los informes de fallos descritos arriba. No afecta los registros del servidor — son parte de servir la página en general. La elección se recuerda en una única cookie en este dispositivo y la página se recarga para que la recopilación se detenga inmediatamente en lugar de en la siguiente visita.",
   "privacy_controls_heading": "Tu elección",
@@ -3036,5 +3036,6 @@
   "explore_lens_story_bh_body": "Este render traza trayectorias de luz reales (geodésicas) alrededor del agujero negro — el anillo es la cara lejana del disco, lensada sobre la parte superior. Las capas añaden una malla de curvatura y una tabla de cuánto más lentamente transcurre el tiempo en el fondo del pozo.",
   "science_layer_bh_curvature_desc": "Una malla de espaciotiempo deformada por las mismas geodésicas que curvan la luz — una analogía de la curvatura, no una superficie literal.",
   "science_layer_bh_time_desc": "Cuánto más lentamente transcurre el tiempo en la esfera de fotones, la órbita estable más interna y más allá — dilatación gravitatoria del tiempo, cuantificada.",
-  "star_index_black_holes": "Agujeros negros"
+  "star_index_black_holes": "Agujeros negros",
+  "nav_locale_suggest_label": "Ver esta página en tu idioma"
 }

@@ -19,6 +19,7 @@
     type LocaleEntry,
   } from '$lib/locale';
   import { track } from '$lib/analytics';
+  import * as m from '$lib/paraglide/messages';
 
   // NB: we intentionally do NOT gate on the paraglide locale cookie. Paraglide's
   // getLocale() auto-writes that cookie to the resolved locale on every load
@@ -54,8 +55,12 @@
   function accept(entry: LocaleEntry | null) {
     if (!entry) return;
     track('locale-suggest-accepted', { to: entry.code, from: active });
-    // setLocale sets the cookie + navigates to the localized twin of this route.
-    setLocale(entry.code);
+    // setLocale does a FULL-PAGE reload (paraglide navigateOrReload → location.href),
+    // which would cancel the just-queued beacon — and the banner shows from first
+    // paint, exactly when the deferred Umami script may not have run yet, so the
+    // event is in the pending buffer. Defer the reload briefly so the event gets
+    // out first. The delay is imperceptible against a reload the user just asked for.
+    setTimeout(() => setLocale(entry.code), 250);
   }
   function dismiss() {
     dismissedThisSession = true;
@@ -64,7 +69,7 @@
 </script>
 
 {#if suggested}
-  <div class="lang-suggest" role="region" aria-label="Language suggestion">
+  <div class="lang-suggest" role="region" aria-label={m.nav_locale_suggest_label()}>
     <!-- Language-neutral by construction: the native name is self-localizing, so
          the bar ships no untranslated prose (translate-all rule). -->
     <button
@@ -78,7 +83,9 @@
       <span class="native">{suggested.nativeName}</span>
       <span class="arrow" aria-hidden="true">→</span>
     </button>
-    <button type="button" class="dismiss" aria-label="Dismiss" onclick={dismiss}>✕</button>
+    <button type="button" class="dismiss" aria-label={m.explore_anon_dismiss()} onclick={dismiss}
+      >✕</button
+    >
   </div>
 {/if}
 

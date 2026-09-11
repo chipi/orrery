@@ -3002,12 +3002,12 @@
   "credits_storage_optout_item": "{code} — wird nur gespeichert, wenn Sie die Nutzungsanalyse auf der Datenschutzseite deaktivieren, damit die Einstellung nach einem Neuladen erhalten bleibt (ADR-092). 1 Jahr. Nicht vorhanden, solange Sie sich nicht abmelden. Kein Tracking, keine persönlichen Daten.",
   "credits_storage_privacy_link": "Datenschutz",
   "layout_footer_privacy": "Datenschutz",
-  "privacy_collect_build": "Welche Build-Version Sie verwenden und ob die Offline-Aktualisierung erfolgreich war – damit eine in einer alten Build-Version steckengebliebene Version hier angezeigt wird, statt Wochen später in einer Beschwerde.",
+  "privacy_collect_build": "Welcher Build du ausführst, ob du die App auf deinem Startbildschirm installiert hast und ob der Offline-Updater und die eigenen Ressourcen der App erfolgreich geladen wurden – damit ein auf einem alten Build steckengebliebener Build oder ein fehlgeschlagenes Laden hier anstatt in einer Beschwerde Wochen später angezeigt wird.",
   "privacy_collect_heading": "Was wird erfasst",
   "privacy_collect_intro": "Die Nutzungsanalyse läuft auf einer selbstgehosteten Umami-Instanz auf unserem eigenen Server. Es wird kein Cookie gespeichert, kein Profil erstellt und nichts mit Dritten geteilt. Was erfasst wird:",
   "privacy_collect_interactions": "Welche Dinge Sie öffnen, anklicken, filtern und umschalten – eine Mission, einen Flotteneintrag, einen Marker in der 3D-Ansicht, einen Wissenschaftsbereich, einen Panel-Tab.",
   "privacy_collect_outbound": "Wenn Sie einem Link von der Website folgen und wohin dieser führt – damit wir wissen, welche Quellen Menschen tatsächlich lesen.",
-  "privacy_collect_pages": "Welche Seiten Sie besuchen, in welcher Reihenfolge und wie lange Sie auf jeder Seite bleiben – sowie Ihren Browser, Betriebssystem, Bildschirmgröße, Sprache, ungefähren Ort (Land, Region und Stadt, abgeleitet von Ihrer IP) und die Website oder Kampagnenlink, die Sie hergebracht hat.",
+  "privacy_collect_pages": "Welche Seiten du besuchst, in welcher Reihenfolge, ungefähr wie lange du auf jeder Seite bleibst und wie weit du die längeren Artikel liest – sowie dein Browser, Betriebssystem, Bildschirmgröße, Sprache, ungefähre Position (Land, Region und Stadt, ermittelt aus deiner IP-Adresse) und die verweisende Website oder Kampagnen-Link, die dich hierher gebracht hat.",
   "privacy_collect_search": "Was Sie suchen, gekürzt auf die ersten 40 Zeichen. Genug um zu sehen, welche Themen Nutzer suchen; niemals ein vollständiges Transkript dessen, was Sie eingegeben haben.",
   "privacy_controls_body": "Das Ausschalten stoppt die Nutzungsanalyse und die oben beschriebenen Crashberichte. Es beeinflusst nicht die Server-Logs – diese sind Teil des Auslieferns der Seite überhaupt. Die Wahl wird in einem einzelnen Cookie auf diesem Gerät gespeichert und die Seite wird neu geladen, damit die Erfassung sofort stoppt, statt bei dem nächsten Besuch.",
   "privacy_controls_heading": "Ihre Wahl",
@@ -3036,5 +3036,6 @@
   "explore_lens_story_bh_body": "Diese Darstellung verfolgt echte Lichtwege (Geodäten) um das schwarze Loch — der Ring ist die Rückseite der Scheibe, über die Oberseite linsenförmig verzerrt. Die Ebenen zeigen ein Krümmungsgitter und eine Tabelle, wie viel langsamer die Uhren so tief im Gravitationspotenzial gehen.",
   "science_layer_bh_curvature_desc": "Ein Raumzeitgitter, verzerrt durch dieselben Geodäten, die das Licht krümmen — eine Analogie für Krümmung, keine buchstäbliche Oberfläche.",
   "science_layer_bh_time_desc": "Wie viel langsamer die Uhren an der Photonensphäre, der innersten stabilen Umlaufbahn und weiter außen gehen — Gravitationszeitdilatation, quantifiziert.",
-  "star_index_black_holes": "Schwarze Löcher"
+  "star_index_black_holes": "Schwarze Löcher",
+  "nav_locale_suggest_label": "Diese Seite in deiner Sprache ansehen"
 }

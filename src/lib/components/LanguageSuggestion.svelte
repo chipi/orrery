@@ -92,21 +92,23 @@
 
 {#if suggested}
   <div class="lang-suggest" role="region" aria-label={m.nav_locale_suggest_label()}>
-    <!-- Language-neutral by construction: the native name is self-localizing, so
+    <!-- globe (left) and ✕ (right) are identical, mirrored bookends; the language
+         name sits dead-center between them. Native name is self-localizing, so
          the bar ships no untranslated prose (translate-all rule). -->
+    <span class="corner globe" aria-hidden="true">🌐</span>
     <button
       type="button"
       class="switch"
       aria-label="{suggested.nativeName} ({suggested.code})"
       onclick={() => accept(suggested)}
     >
-      <span class="globe" aria-hidden="true">🌐</span>
-      <span class="flag" aria-hidden="true">{suggested.flag}</span>
       <span class="native">{suggested.nativeName}</span>
-      <span class="arrow" aria-hidden="true">→</span>
     </button>
-    <button type="button" class="dismiss" aria-label={m.explore_anon_dismiss()} onclick={dismiss}
-      >✕</button
+    <button
+      type="button"
+      class="corner dismiss"
+      aria-label={m.explore_anon_dismiss()}
+      onclick={dismiss}>✕</button
     >
   </div>
 {/if}
@@ -125,9 +127,12 @@
     z-index: 35;
     display: flex;
     align-items: center;
-    gap: 4px;
+    justify-content: center;
+    /* Symmetric horizontal padding: the ✕ is absolute-positioned in the right
+       zone and the equal left zone balances it, so the language cluster centers
+       on the pill's horizontal midline (operator: language centered). */
+    padding: 5px 38px;
     max-width: calc(100vw - 24px);
-    padding: 5px 6px 5px 10px;
     background: rgba(15, 18, 35, 0.96);
     border: 1px solid rgba(78, 205, 196, 0.4);
     border-radius: 999px;
@@ -135,43 +140,69 @@
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
   }
+  /* No inner border: the pill container is the single teal frame. The switch
+     used to carry its own teal border ~10px inside the pill's — two concentric
+     borders that visually crowded the pill's edge (operator report). It's now a
+     borderless clickable region with a hover-background tint instead. */
+  /* The centered language name — the only thing in normal flow, so it sits dead
+     center between the two absolute corner bookends. */
   .switch {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    min-height: 40px;
-    padding: 4px 14px;
-    background: transparent;
-    border: 1px solid rgba(78, 205, 196, 0.5);
-    border-radius: 4px;
-    color: var(--color-text);
-    font-family: var(--font-display);
-    font-size: 15px;
-    letter-spacing: 1.5px;
-    cursor: pointer;
-    transition: border-color 0.15s ease;
-  }
-  .switch:hover {
-    border-color: rgba(78, 205, 196, 0.9);
-  }
-  .globe {
-    opacity: 0.75;
-    font-size: 13px;
-  }
-  .flag {
-    font-size: 15px;
-  }
-  .arrow {
-    color: #4ecdc4;
-  }
-  .dismiss {
-    min-width: 40px;
-    min-height: 40px;
+    justify-content: center;
+    min-height: 34px;
+    padding: 0 6px;
     background: transparent;
     border: none;
-    color: rgba(255, 255, 255, 0.55);
-    font-size: 14px;
+    border-radius: 999px;
+    color: var(--color-text);
+    font-family: var(--font-display);
+    font-size: 17px;
+    line-height: 1;
+    letter-spacing: 1.5px;
     cursor: pointer;
+    transition: color 0.15s ease;
+  }
+  .switch:hover {
+    color: #4ecdc4;
+  }
+  .native {
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+    /* Optical centering: the display face (Bebas Neue) seats its caps ~1.5px above
+       the line-box center, so the box-centered text reads as high next to the
+       emoji/✕ bookends. Nudge the ink down onto the pill's true midline (value
+       measured: canvas ink-scan → 0.0px offset from the pill center at 1.5px). */
+    transform: translateY(1.5px);
+  }
+  /* globe (left) and ✕ (right): identical, mirrored corner bookends — same box,
+     same 34px size, same 4px inset, both vertically centered. */
+  .corner {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    line-height: 1;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  .globe {
+    left: 4px;
+    font-size: 15px;
+    opacity: 0.8;
+    pointer-events: none;
+  }
+  .dismiss {
+    right: 4px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.55);
+    transition: color 0.15s ease;
   }
   .dismiss:hover {
     color: var(--color-text);

@@ -9,7 +9,9 @@
 
 <script lang="ts">
   import { browser } from '$app/environment';
+  import { base } from '$app/paths';
   import { page } from '$app/state';
+  import { canonicalRoute } from '$lib/seo';
   import { setLocale } from '$lib/paraglide/runtime';
   import {
     SUPPORTED_LOCALES,
@@ -32,11 +34,31 @@
     return matchPreferredLocale(langs);
   }
 
+  // Full-viewport 3D/canvas routes carry their own fixed bottom controls
+  // (the /fly scrubber, per-scene HUD), which the bottom-center pill would
+  // overlap. Suppress there — those users still have the nav locale picker, and
+  // the banner's real value is on the content/landing pages people arrive on
+  // from search anyway. Kept as a small explicit set: these routes are stable
+  // and a stray banner on a new one is a review-visible nit, not a crash.
+  const IMMERSIVE_ROUTES = new Set([
+    '/explore',
+    '/fly',
+    '/earth',
+    '/moon',
+    '/mars',
+    '/venus',
+    '/iss',
+    '/tiangong',
+    '/plan',
+  ]);
+
   let active = $derived<LocaleCode>(localeFromPage(page));
+  let route = $derived(canonicalRoute(page.url.pathname, base));
   let dismissed = $state(dismissedThisSession);
 
   let suggested = $derived.by<LocaleEntry | null>(() => {
     if (!browser || dismissed) return null;
+    if (IMMERSIVE_ROUTES.has('/' + route.split('/')[1])) return null;
     const pref = preferredSupportedLocale();
     if (!pref || pref === active) return null;
     return SUPPORTED_LOCALES.find((l) => l.code === pref) ?? null;
@@ -90,14 +112,26 @@
 {/if}
 
 <style>
+  /* Bottom-center floating pill, NOT an in-flow top bar (#521 review L1): a
+     conditional bar that appears post-hydration would reflow the page (CLS — a
+     Core Web Vital this SEO feature shouldn't hurt) and permanently squeeze the
+     full-viewport 3D scenes on /explore, /fly, etc. Fixed positioning avoids
+     both. z-index below the nav (40) so nav menus stay on top. */
   .lang-suggest {
+    position: fixed;
+    left: 50%;
+    bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+    transform: translateX(-50%);
+    z-index: 35;
     display: flex;
     align-items: center;
     gap: 4px;
-    justify-content: center;
-    padding: 6px 10px;
-    background: rgba(15, 18, 35, 0.92);
-    border-bottom: 1px solid rgba(78, 205, 196, 0.35);
+    max-width: calc(100vw - 24px);
+    padding: 5px 6px 5px 10px;
+    background: rgba(15, 18, 35, 0.96);
+    border: 1px solid rgba(78, 205, 196, 0.4);
+    border-radius: 999px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
   }

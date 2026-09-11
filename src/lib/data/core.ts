@@ -36,6 +36,14 @@ const i18nBundles = new Map<string, Promise<Record<string, unknown>>>();
 const BUNDLE_ATTEMPTS = 3;
 const bundleDelay = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
+// Circuit breaker (#521 review L5): during a sustained outage, `.catch` drops the
+// cached promise so each subsequent get() would re-run a fresh 3-attempt × 1.75 MB
+// cycle — amplifying load on a server that's already failing. After this many
+// FULLY-failed cycles for a locale this page-load, stop retrying and reject
+// immediately (the caller's en-US fallback still fires). Reset on resetCoreCache.
+const BUNDLE_MAX_FAILED_CYCLES = 2;
+const bundleFailedCycles = new Map<string, number>();
+
 class BundleLoadError extends Error {
   status?: number;
   constructor(message: string, status?: number) {
@@ -48,6 +56,11 @@ class BundleLoadError extends Error {
 function loadI18nBundle(locale: string, fetchFn: FetchLike): Promise<Record<string, unknown>> {
   let p = i18nBundles.get(locale);
   if (!p) {
+    // Circuit open: too many failed cycles this page-load — don't hammer the
+    // origin again, reject immediately so the caller's fallback fires (L5).
+    if ((bundleFailedCycles.get(locale) ?? 0) >= BUNDLE_MAX_FAILED_CYCLES) {
+      return Promise.reject(new BundleLoadError(`i18n bundle circuit open: ${locale}`));
+    }
     const url = `${localeBundleOrigin(locale)}/data/i18n/${locale}.json`;
     p = (async () => {
       let lastErr: BundleLoadError | undefined;
@@ -68,8 +81,13 @@ function loadI18nBundle(locale: string, fetchFn: FetchLike): Promise<Record<stri
       }
       throw lastErr ?? new BundleLoadError(`Failed to fetch ${url}`);
     })();
-    // Drop the cached promise on failure so a later call retries from scratch.
-    p.catch(() => i18nBundles.delete(locale));
+    // Drop the cached promise on failure so a later call retries from scratch —
+    // but count the failed cycle so the circuit breaker above can trip. A 4xx
+    // (bundle genuinely absent) also counts: no point re-fetching a 404 either.
+    p.catch(() => {
+      i18nBundles.delete(locale);
+      bundleFailedCycles.set(locale, (bundleFailedCycles.get(locale) ?? 0) + 1);
+    });
     i18nBundles.set(locale, p);
   }
   return p;
@@ -142,4 +160,5 @@ export function resetCoreCache(): void {
   cache.clear();
   i18nBundles.clear();
   reportedBundleFailures.clear();
+  bundleFailedCycles.clear();
 }

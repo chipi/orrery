@@ -88,6 +88,20 @@ describe('core get() — i18n bundle load (#517)', () => {
     expect(trackSpy).not.toHaveBeenCalled();
   });
 
+  it('opens a circuit after repeated failed cycles — stops re-fetching (L5)', async () => {
+    vi.useFakeTimers();
+    // Every attempt 500s. Each get() = one full 3-attempt cycle.
+    const { fn, urls } = makeFetch([() => httpErr(500)]);
+    for (let i = 0; i < 4; i++) {
+      const p = get(`i18n/it/k${i}.json`, fn).catch(() => {});
+      await vi.runAllTimersAsync();
+      await p;
+    }
+    // 2 cycles × 3 attempts = 6 fetches, then the breaker opens and later calls
+    // reject immediately with no further network hits.
+    expect(urls.length).toBe(6);
+  });
+
   it('reports a surviving transient failure only once per locale', async () => {
     vi.useFakeTimers();
     const { fn } = makeFetch([() => httpErr(500)]);

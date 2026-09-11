@@ -64,14 +64,12 @@ test.describe('/privacy — disclosure page + analytics opt-out (ADR-092)', () =
     expect(await cookie(context, OPTOUT)).toBeUndefined();
   });
 
-  test('an opted-out visitor never gets the Umami script injected', async ({ page, context }) => {
-    await context.addCookies([
-      {
-        name: OPTOUT,
-        value: '1',
-        url: page.url() === 'about:blank' ? 'http://127.0.0.1:4173' : page.url(),
-      },
-    ]);
+  test('an opted-out visitor never gets the Umami script injected', async ({
+    page,
+    context,
+    baseURL,
+  }) => {
+    await context.addCookies([{ name: OPTOUT, value: '1', url: baseURL! }]);
     await page.goto('/', { waitUntil: 'networkidle' });
 
     // Suppression happens BEFORE injection — that is the whole point, since
@@ -89,8 +87,12 @@ test.describe('/privacy — disclosure page + analytics opt-out (ADR-092)', () =
 });
 
 test.describe('locale cookie rename — PARAGLIDE_LOCALE → orrery_locale (ADR-057)', () => {
-  test('a pre-rename language pick is carried across, not lost', async ({ page, context }) => {
-    await context.addCookies([{ name: LEGACY_LOCALE, value: 'de', url: 'http://127.0.0.1:4173' }]);
+  test('a pre-rename language pick is carried across, not lost', async ({
+    page,
+    context,
+    baseURL,
+  }) => {
+    await context.addCookies([{ name: LEGACY_LOCALE, value: 'de', url: baseURL! }]);
 
     await page.goto('/', { waitUntil: 'networkidle' });
     // Migration runs on mount; give hydration a beat.
@@ -103,10 +105,9 @@ test.describe('locale cookie rename — PARAGLIDE_LOCALE → orrery_locale (ADR-
   test('an unsupported legacy value is discarded, never fed to locale resolution', async ({
     page,
     context,
+    baseURL,
   }) => {
-    await context.addCookies([
-      { name: LEGACY_LOCALE, value: 'klingon', url: 'http://127.0.0.1:4173' },
-    ]);
+    await context.addCookies([{ name: LEGACY_LOCALE, value: 'klingon', url: baseURL! }]);
 
     await page.goto('/', { waitUntil: 'networkidle' });
     await expect

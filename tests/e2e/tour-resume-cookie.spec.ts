@@ -23,13 +23,17 @@ async function cookie(ctx: BrowserContext, name: string): Promise<string | undef
   return (await ctx.cookies()).find((c) => c.name === name)?.value;
 }
 
-async function seedResume(ctx: BrowserContext, state: Record<string, unknown>): Promise<void> {
+// `baseURL` comes from the Playwright fixture, NOT a hardcoded preview port:
+// docker-e2e (ADR-066) runs the whole suite against the nginx container via
+// PLAYWRIGHT_BASE_URL=http://localhost:8080, and a cookie seeded on
+// 127.0.0.1:4173 is simply invisible to the page under test there.
+async function seedResume(
+  ctx: BrowserContext,
+  baseURL: string,
+  state: Record<string, unknown>,
+): Promise<void> {
   await ctx.addCookies([
-    {
-      name: TOUR_COOKIE,
-      value: encodeURIComponent(JSON.stringify(state)),
-      url: 'http://127.0.0.1:4173',
-    },
+    { name: TOUR_COOKIE, value: encodeURIComponent(JSON.stringify(state)), url: baseURL },
   ]);
 }
 
@@ -41,8 +45,12 @@ async function openOverlay(page: Page): Promise<void> {
 }
 
 test.describe('tour resume carries its tour id (ADR-075)', () => {
-  test('an extended-tour episode resumes instead of being discarded', async ({ page, context }) => {
-    await seedResume(context, {
+  test('an extended-tour episode resumes instead of being discarded', async ({
+    page,
+    context,
+    baseURL,
+  }) => {
+    await seedResume(context, baseURL!, {
       ep: EXTENDED_ONLY_EPISODE,
       pos: 12,
       idx: 3,
@@ -72,10 +80,11 @@ test.describe('tour resume carries its tour id (ADR-075)', () => {
   test('a pre-tid cookie still resumes as the full tour (backwards compatible)', async ({
     page,
     context,
+    baseURL,
   }) => {
     // No `tid` — exactly what every cookie written before the amendment looks
     // like. Must behave as it always did rather than being rejected.
-    await seedResume(context, { ep: FULL_TOUR_EPISODE, pos: 5, idx: 0, cmp: 0 });
+    await seedResume(context, baseURL!, { ep: FULL_TOUR_EPISODE, pos: 5, idx: 0, cmp: 0 });
 
     await openOverlay(page);
 
@@ -91,8 +100,9 @@ test.describe('tour resume carries its tour id (ADR-075)', () => {
   test('an unrecognised tour id falls back instead of dropping the position', async ({
     page,
     context,
+    baseURL,
   }) => {
-    await seedResume(context, {
+    await seedResume(context, baseURL!, {
       ep: FULL_TOUR_EPISODE,
       pos: 5,
       idx: 0,

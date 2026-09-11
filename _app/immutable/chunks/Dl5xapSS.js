@@ -1,1 +1,0 @@
-import{t as e}from"./C74ToV6d.js";var t=e;function n(e,n){let r=t[e.replace(/[.-]/g,`_`)];return typeof r==`function`?r(n??{}):e}export{n as t};

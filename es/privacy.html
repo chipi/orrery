@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#04040c" />
+    <!-- Page title is set by +layout.svelte (default) and overridden per route
+         via svelte:head. Deliberately none here: a static one would render a
+         duplicate alongside the route's own. -->
+
+    <!-- Stamp viewport-capability attributes on <html> BEFORE first paint so the
+         responsive CSS (html[data-touch][data-orientation]…) is correct
+         immediately. These attributes are device-dependent and cannot be
+         prerendered (one HTML serves every device). Query strings are kept in
+         sync with src/lib/viewport.svelte.ts, which keeps them live post-hydration. -->
+    <script>
+      try {
+        if (window.matchMedia) {
+          var d = document.documentElement;
+          var touch =
+            matchMedia('(pointer: coarse)').matches || matchMedia('(hover: none)').matches;
+          if (touch) d.setAttribute('data-touch', '');
+          d.setAttribute(
+            'data-orientation',
+            matchMedia('(orientation: landscape)').matches ? 'landscape' : 'portrait',
+          );
+          if (matchMedia('(max-height: 560px)').matches) d.setAttribute('data-short', '');
+          d.setAttribute(
+            'data-form',
+            !touch
+              ? 'desktop'
+              : matchMedia('(min-width: 600px) and (min-height: 600px)').matches
+                ? 'tablet'
+                : 'phone',
+          );
+        }
+      } catch (e) {}
+    </script>
+
+    <link href="/orrery/_app/immutable/entry/start.CyqRcj-R.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Bn5HFUbb.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CQ2a_MU4.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BuFlayix.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/entry/app.BQzRajfP.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/HclGiUj8.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DU156ul2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Dmpet3K-.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D0qybYqs.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/D6TvHKri.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/xihTtKlq.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/0.D0aUomwJ.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DvXvD_Es.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BVhk0YoL.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/bac4XuEl.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/cMUoVBL-.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BP6Nti8Z.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/is9fxbmr.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BhLuoBTz.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BSrgPFrr.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/0Tjym7FO2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DIeRbWKT2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CN32oQaS2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BzXXNrv0.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/uIhJnDzi.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/uBBMfAyE.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/EDBSwJQu.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CQrnFuB5.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/j_K4Rdqm.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DsbjBI2T.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/BHj-EzKS.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CotXWPfj.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/vopFv4Bh.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/B1Njp5kB.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Cy733xn9.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/lhrWoVVv.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DYdzQ-Iq.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CKMRGM-U.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/stjtIze1.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/7ij9_A0z.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Cvnhcah2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/Pz0c-I2H.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/NI1GqABn.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/DeSyNcam2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CnXq07MT2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/CqhgC8P42.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C4dbU2XH2.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/nodes/44.Ct9SNMbE.js" rel="modulepreload">
+		<link href="/orrery/_app/immutable/chunks/C847qryB.js" rel="modulepreload">
+		<link href="/orrery/_app/env.js" rel="modulepreload">
+		<!--12qhfyh--><link rel="canonical" href="https://www.orrerylearn.com/es/privacy"/> <!--[--><link rel="alternate" hreflang="en-US" href="https://www.orrerylearn.com/privacy"/><link rel="alternate" hreflang="es" href="https://www.orrerylearn.com/es/privacy"/><link rel="alternate" hreflang="fr" href="https://www.orrerylearn.com/fr/privacy"/><link rel="alternate" hreflang="de" href="https://www.orrerylearn.com/de/privacy"/><link rel="alternate" hreflang="pt-BR" href="https://www.orrerylearn.com/pt-BR/privacy"/><link rel="alternate" hreflang="it" href="https://www.orrerylearn.com/it/privacy"/><link rel="alternate" hreflang="nl" href="https://www.orrerylearn.com/nl/privacy"/><link rel="alternate" hreflang="sr-Cyrl" href="https://www.orrerylearn.com/sr-Cyrl/privacy"/><link rel="alternate" hreflang="zh-CN" href="https://www.orrerylearn.com/zh-CN/privacy"/><link rel="alternate" hreflang="ja" href="https://www.orrerylearn.com/ja/privacy"/><link rel="alternate" hreflang="ko" href="https://www.orrerylearn.com/ko/privacy"/><link rel="alternate" hreflang="hi" href="https://www.orrerylearn.com/hi/privacy"/><link rel="alternate" hreflang="ar" href="https://www.orrerylearn.com/ar/privacy"/><link rel="alternate" hreflang="ru" href="https://www.orrerylearn.com/ru/privacy"/><link rel="alternate" hreflang="x-default" href="https://www.orrerylearn.com/privacy"/><!--]--> <link rel="manifest" href="/orrery/manifest.webmanifest"/> <link rel="icon" href="/orrery/favicon.svg" type="image/svg+xml"/><!----><!--7ke6fz--><!----><title>Privacidad — Orrery</title>
+		<link href="/orrery/_app/immutable/assets/0.Bh8qGPCz.css" rel="stylesheet">
+		<link href="/orrery/_app/immutable/assets/44.2kwx6gXT.css" rel="stylesheet">
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><!----><nav aria-label="Navegación principal" class="svelte-1h32yp1"><div class="left svelte-1h32yp1"><a href="/orrery/" class="brand svelte-1h32yp1" aria-label="Orrery — inicio"><span class="wordmark svelte-1h32yp1">ORRERY</span></a></div> <div class="center svelte-1h32yp1"><!--[--><!--[0--><a href="/orrery/" class="link svelte-1h32yp1">INICIO</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">EXPLORAR<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">MUNDOS<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[0--><a href="/orrery/fly" class="link svelte-1h32yp1">VOLAR</a><!--]--><!--[0--><a href="/orrery/plan" class="link svelte-1h32yp1">PLANEAR</a><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">CATÁLOGO<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--[-1--><div class="nav-group svelte-1h32yp1"><button type="button" class="link group-trigger svelte-1h32yp1" aria-haspopup="true" aria-expanded="false">APRENDER<span class="caret svelte-1h32yp1" aria-hidden="true">▾</span></button> <!--[-1--><!--]--></div><!--]--><!--]--></div> <div class="right svelte-1h32yp1"><button type="button" class="menu-toggle svelte-1h32yp1" aria-label="Abrir menú de navegación" aria-expanded="false"><svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><!--[-1--><line x1="3" y1="4.5" x2="13" y2="4.5" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="1.6"></line><line x1="3" y1="11.5" x2="13" y2="11.5" stroke="currentColor" stroke-width="1.6"></line><!--]--></svg><!----></button> <button type="button" class="audio-toggle svelte-1h32yp1" aria-label="Hacer la gira" aria-pressed="false" title="Hacer la gira"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M1 8 Q 3 4, 5 8 T 9 8 T 13 8 T 15 8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg><!----></button> <div class="locale-picker svelte-1nu59g4" data-locale-picker=""><button type="button" class="chip svelte-1nu59g4" aria-label="Idioma" aria-haspopup="listbox" aria-expanded="false" title="Elegir idioma">ES</button> <!--[-1--><!--]--></div><!----> <button type="button" class="lens-toggle svelte-1h32yp1" data-audio-stage="science-lens-toggle" disabled="" aria-disabled="true" aria-label="Alternar lente científica (unavailable on this page)" aria-pressed="false" title="Mostrar capa de física (superposiciones de mecánica orbital) (unavailable on this page)"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4"></circle><!--[-1--><circle cx="8" cy="8" r="1.4" fill="currentColor"></circle><!--]--></svg><!----></button> <button type="button" class="contrast-toggle svelte-1h32yp1" aria-label="Activar modo alto contraste" aria-pressed="false" title="Activar modo alto contraste">Aa</button> <button type="button" class="settings-toggle svelte-1h32yp1" aria-label="AJUSTES" aria-haspopup="dialog" aria-expanded="false" title="AJUSTES"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 5.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Zm6.5 2.8c0-.3 0-.6-.1-.9l1.6-1.2-1.5-2.6-1.9.7a6.4 6.4 0 0 0-1.6-.9l-.3-2H7.3l-.3 2c-.6.2-1.1.5-1.6.9l-1.9-.7-1.5 2.6L3.6 7.1a6.4 6.4 0 0 0 0 1.8L2 10.1l1.5 2.6 1.9-.7c.5.4 1 .7 1.6.9l.3 2h3.4l.3-2c.6-.2 1.1-.5 1.6-.9l1.9.7 1.5-2.6-1.6-1.2c.1-.3.1-.6.1-.9Z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"></path></svg><!----></button> <button type="button" class="share-toggle svelte-1h32yp1" aria-label="Compartir esta vista" title="Compartir esta vista"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5 V 9.5"></path><path d="M5.2 4 L8 1.3 L10.8 4"></path><path d="M4 7 H 3 A1.5 1.5 0 0 0 1.5 8.5 V 13 A1.5 1.5 0 0 0 3 14.5 H 13 A1.5 1.5 0 0 0 14.5 13 V 8.5 A1.5 1.5 0 0 0 13 7 H 12"></path></svg><!----></button> <button type="button" class="debug-toggle svelte-1h32yp1" aria-label="Alternar superposiciones de depuración" aria-pressed="false" title="Modo de depuración — superposiciones de desarrollador"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="svelte-1h32yp1"><rect x="8" y="6" width="8" height="12" rx="4" class="svelte-1h32yp1"></rect><path d="M12 3v3M5 9h3M5 14h3M16 9h3M16 14h3M6.5 5.5 8 7M17.5 5.5 16 7M7 18l-1.5 2M17 18l1.5 2" class="svelte-1h32yp1"></path></svg></button> <!----></div></nav> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <!--[-1--><!--]--><!----> <main class="svelte-12qhfyh"><!--[-1--><!--[--><section class="privacy svelte-7ke6fz" aria-labelledby="privacy-title" data-route-ready="true"><header class="head svelte-7ke6fz"><h1 id="privacy-title" class="svelte-7ke6fz">Privacidad</h1> <p class="intro svelte-7ke6fz">Orrery no tiene cuentas, no tiene publicidad y no tiene rastreadores de terceros. Sí mide cómo se utiliza el sitio, para que lo siguiente que se construya sea lo que la gente realmente busca. Esta página explica exactamente qué significa eso y te permite desactivarlo.</p></header> <article class="card control-card svelte-7ke6fz" aria-labelledby="privacy-controls-title"><h2 id="privacy-controls-title" class="svelte-7ke6fz">Tu elección</h2> <!--[-1--><!--]--> <div class="toggle-row svelte-7ke6fz"><label class="toggle svelte-7ke6fz"><input type="checkbox" disabled="" class="svelte-7ke6fz"/> <span class="toggle-label svelte-7ke6fz">Análisis de uso</span></label> <p class="toggle-state svelte-7ke6fz" aria-live="polite"><!--[0-->Comprobando tu configuración actual…<!--]--></p></div> <p class="fine svelte-7ke6fz">Desactivar esto detiene los análisis de uso y los informes de fallos descritos arriba. No afecta los registros del servidor — son parte de servir la página en general. La elección se recuerda en una única cookie en este dispositivo y la página se recarga para que la recopilación se detenga inmediatamente en lugar de en la siguiente visita.</p></article> <article class="card svelte-7ke6fz" aria-labelledby="privacy-collect-title"><h2 id="privacy-collect-title" class="svelte-7ke6fz">Qué se recopila</h2> <p class="svelte-7ke6fz">Los análisis de uso se ejecutan en una instancia Umami autohospedada en nuestro propio servidor. No se establece ninguna cookie, no se construye ningún perfil y nada se comparte con nadie. Lo que registra:</p> <ul class="svelte-7ke6fz"><li class="svelte-7ke6fz">Qué páginas visitas, en qué orden y cuánto tiempo pasas aproximadamente en cada una — más tu navegador, sistema operativo, tamaño de pantalla, idioma, ubicación aproximada (país, región y ciudad, derivada de tu IP) y el sitio referente o enlace de campaña que te trajo aquí.</li> <li class="svelte-7ke6fz">Qué cosas abres, haces clic, filtras y activas — una misión, una entrada de flota, un marcador en la vista 3D, una sección de ciencia, una pestaña de panel.</li> <li class="svelte-7ke6fz">Lo que buscas, truncado a los primeros 40 caracteres. Suficiente para ver qué temas busca la gente; nunca una transcripción completa de lo que escribiste.</li> <li class="svelte-7ke6fz">Cuando sigues un enlace fuera del sitio y adónde fue — para saber qué fuentes lee la gente realmente.</li> <li class="svelte-7ke6fz">Qué versión ejecutas y si el actualizador sin conexión tuvo éxito — para que una versión atrapada en una compilación antigua aparezca aquí en lugar de en una queja semanas después.</li></ul></article> <article class="card svelte-7ke6fz" aria-labelledby="privacy-never-title"><h2 id="privacy-never-title" class="svelte-7ke6fz">Qué nunca se recopila</h2> <p class="svelte-7ke6fz">No hay cuentas, así que no hay nada para iniciar sesión y ningún nombre, dirección de correo o contraseña en ningún lado. Los análisis en sí nunca almacenan tu dirección IP — se usa una vez, en memoria, para derivar una ubicación aproximada y luego se descarta. Nada se vende, comparte con una red publicitaria o usa para seguirte a otro sitio.</p></article> <article class="card svelte-7ke6fz" aria-labelledby="privacy-logs-title"><h2 id="privacy-logs-title" class="svelte-7ke6fz">Registros del servidor</h2> <p class="svelte-7ke6fz">Aparte de los análisis, los registros de acceso ordinarios del servidor web registran cada solicitud — incluyendo tu dirección IP, la página solicitada y el user-agent de tu navegador. Lo mismo ocurre en el perímetro para el punto final de análisis. Estos son registros operativos estándar mantenidos en nuestra propia infraestructura para depuración y manejo de abusos: el almacén de registros los conserva hasta 30 días, y los registros del perímetro rotan por tamaño en lugar de por antigüedad. No están vinculados a los datos de análisis, no se utilizan para crear un perfil, y la exclusión voluntaria a continuación no los desactiva — servir una página no puede ocurrir sin ellos. Cloudflare, que está delante del sitio, también puede mantener sus propios registros de conexión según su política.</p></article> <article class="card svelte-7ke6fz" aria-labelledby="privacy-signals-title"><h2 id="privacy-signals-title" class="svelte-7ke6fz">Señales del navegador</h2> <p class="svelte-7ke6fz">Si tu navegador envía Control de Privacidad Global o No Rastrear, Orrery lo respeta automáticamente — los análisis nunca se inician, y no necesitas tocar nada aquí.</p></article> <article class="card svelte-7ke6fz" aria-labelledby="privacy-cookies-title"><h2 id="privacy-cookies-title" class="svelte-7ke6fz">Cookies</h2> <p class="svelte-7ke6fz">Umami no establece ninguna cookie. Orrery usa tres cookies funcionales — tu selección de idioma, tu posición en el Curator Tour y la exclusión de análisis abajo — cada una listada en detalle en la página de créditos. Algunas configuraciones locales del navegador (calidad de gráficos, modo depuración, descargas sin conexión) también se almacenan en tu dispositivo; nunca salen de él y no forman parte de ningún análisis.</p> <p class="fine svelte-7ke6fz"><a href="/orrery/credits" class="svelte-7ke6fz">Créditos</a></p></article> <article class="card svelte-7ke6fz" aria-labelledby="privacy-errors-title"><h2 id="privacy-errors-title" class="svelte-7ke6fz">Informes de fallos</h2> <p class="svelte-7ke6fz">Cuando algo se rompe, el navegador envía un informe de fallo — el error, el seguimiento de la pila y la página en la que ocurrió — a una instancia GlitchTip autohospedada. Está ahí para corregir errores y se desactiva con la misma exclusión abajo.</p></article> <article class="card svelte-7ke6fz" aria-labelledby="privacy-where-title"><h2 id="privacy-where-title" class="svelte-7ke6fz">Dónde van</h2> <p class="svelte-7ke6fz">Los análisis e informes de fallos se alojan automáticamente en la infraestructura que el proyecto gestiona — sin proveedor de análisis, sin rastreador de terceros, sin red publicitaria. El tráfico hacia el sitio y hacia el punto final de análisis pasa por Cloudflare, que proporciona la CDN y termina TLS delante de él.</p></article></section><!--]--><!--]--><!----></main> <footer class="site-footer svelte-12qhfyh" aria-label="Pie de página del sitio"><nav class="footer-menu svelte-12qhfyh" aria-label="Enlaces del pie de página"><a class="footer-link svelte-12qhfyh" href="/orrery/gallery">Galería</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/credits">Créditos</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/colophon">Colofón</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link svelte-12qhfyh" href="/orrery/library">Biblioteca</a> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <span class="footer-about-group svelte-12qhfyh"><span class="footer-about-label svelte-12qhfyh" aria-haspopup="menu">Acerca de</span> <ul class="footer-about-menu svelte-12qhfyh" role="menu" aria-label="Acerca de"><li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="/orrery/privacy" role="menuitem">Privacidad</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/LICENSE" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">Licencia</a></li> <li role="none" class="svelte-12qhfyh"><a class="footer-link footer-link-extra svelte-12qhfyh" href="https://github.com/chipi/orrery#readme" target="_blank" rel="noopener noreferrer external" hreflang="en" role="menuitem">README</a></li></ul></span> <span class="footer-sep svelte-12qhfyh" aria-hidden="true">|</span> <a class="footer-link footer-version svelte-12qhfyh" href="https://github.com/chipi/orrery/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer external" title="Versión de compilación + fecha de despliegue (abre CHANGELOG en GitHub): v0.9-wip · 2026-09-11" hreflang="en">v0.9-wip</a></nav></footer><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_1ncdbx9 = {
+						base: "/orrery",
+						assets: "/orrery",
+						env: null
+					};
+
+					const element = document.currentScript.parentElement;
+
+					import("/orrery/_app/env.js").then(({ env }) => {
+						__sveltekit_1ncdbx9.env = env;
+
+						Promise.all([
+							import("/orrery/_app/immutable/entry/start.CyqRcj-R.js"),
+							import("/orrery/_app/immutable/entry/app.BQzRajfP.js")
+						]).then(([kit, app]) => {
+							kit.start(app, element, {
+									node_ids: [0, 44],
+									data: [null,null],
+									form: null,
+									error: null
+								});
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

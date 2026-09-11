@@ -4976,7 +4976,20 @@
               // ~5 m/px / ~15 km, same source URL as the detail layer
               // but wider window — see scripts/hotspots/fetch-moon-regional.ts.
               if (hasRegional) {
-                if (config.planet === 'mars') {
+                if (config.planet === 'earth') {
+                  // Earth pads (#546) — regional is Copernicus Sentinel-2
+                  // L2A for every pad; the detail branch below dispatches
+                  // per-pad source. Same false-provenance trap as the 2026-06
+                  // Mars fix: without this branch earth read LROC credit.
+                  layers.push({
+                    layerLabel: 'Regional view',
+                    sourceTitle: 'Copernicus Sentinel-2 L2A',
+                    sourceAuthor: 'Contains modified Copernicus Sentinel data',
+                    resolutionText: '~10 m/px (1600² crop · ~16 km)',
+                    sourceUrl: 'https://dataspace.copernicus.eu/',
+                    licenseShort: 'COPERNICUS-S2',
+                  });
+                } else if (config.planet === 'mars') {
                   layers.push({
                     layerLabel: 'Regional view',
                     sourceTitle: 'MRO CTX context mosaic',
@@ -5022,7 +5035,51 @@
                 // team" on Mars Tier-2 patches — false provenance, since
                 // the patches actually come from MRO HiRISE / CTX. Dispatch
                 // by config.planet so each route reads honest credit.
-                if (config.planet === 'mars') {
+                if (config.planet === 'earth') {
+                  // Per-pad detail strategy (#546): IGN ortho for Kourou,
+                  // GSI seamlessphoto for Tanegashima, Sentinel-2 coarse
+                  // fallback where ground_m says 2560 (no open sub-meter
+                  // source), USGS NAIP for the US pads (the 512 m rest).
+                  if (site.id.startsWith('kourou-')) {
+                    layers.push({
+                      layerLabel: 'Detail view',
+                      sourceTitle: 'IGN BD ORTHO aerial',
+                      sourceAuthor:
+                        'IGN (Institut national de l’information géographique et forestière)',
+                      resolutionText: '~0.5 m/px (512 m window)',
+                      sourceUrl: 'https://geoservices.ign.fr/bdortho',
+                      licenseShort: 'LO-2.0',
+                    });
+                  } else if (site.id.startsWith('tanegashima-')) {
+                    layers.push({
+                      layerLabel: 'Detail view',
+                      sourceTitle: 'GSI seamlessphoto aerial',
+                      sourceAuthor: 'Geospatial Information Authority of Japan',
+                      resolutionText: '~0.5 m/px (512 m window)',
+                      sourceUrl: 'https://maps.gsi.go.jp/development/ichiran.html#seamlessphoto',
+                      licenseShort: 'GSI-JP',
+                    });
+                  } else if ((site.hotspot_tier2_ground_m ?? 512) >= 2560) {
+                    layers.push({
+                      layerLabel: 'Detail view',
+                      sourceTitle: 'Copernicus Sentinel-2 L2A (coarse fallback)',
+                      sourceAuthor: 'Contains modified Copernicus Sentinel data',
+                      resolutionText: '~10 m/px (2.56 km window — no open sub-meter source)',
+                      sourceUrl: 'https://dataspace.copernicus.eu/',
+                      licenseShort: 'COPERNICUS-S2',
+                    });
+                  } else {
+                    layers.push({
+                      layerLabel: 'Detail view',
+                      sourceTitle: 'USGS NAIP aerial',
+                      sourceAuthor: 'USDA / USGS National Agriculture Imagery Program',
+                      resolutionText: '~0.5 m/px (512 m window)',
+                      sourceUrl:
+                        'https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer',
+                      licenseShort: 'PD-USGov',
+                    });
+                  }
+                } else if (config.planet === 'mars') {
                   layers.push({
                     layerLabel: 'Detail view',
                     sourceTitle: 'HiRISE detail patch',

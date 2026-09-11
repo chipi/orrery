@@ -26,6 +26,13 @@
  * variants and mints stray .1x1.1x1.jpg files (2026-09-10 cleanup):
  *   node scripts/hotspots/regenerate-tier3-variants.mjs \
  *     static/images/hotspots/earth/<site>/tier2-{detail,regional}.jpg
+ *
+ * ADDING A NEW PAD also needs a surface-hotspots.json sidecar entry with,
+ * besides the tier2 source/ground_m fields, **region_bounds** (a lat/lon box
+ * ~ hotspot_tier2_ground_m around the pad) + region_kind 'roi_quad' — the
+ * SurfaceScene flat-patch trigger is gated on region_bounds != null, so
+ * without it "Zoom to detail" flies the camera but the true-scale ground
+ * view never engages (the 2026-09-10 all-pads bug).
  */
 import { readFileSync, mkdirSync, writeFileSync } from 'node:fs';
 import path from 'node:path';

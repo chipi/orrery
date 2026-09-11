@@ -79,6 +79,45 @@ test.describe('/earth tier ladder — panel wiring', () => {
     // tier3 field (or a merge bug that leaks another site's) fails here.
     await expect(page.getByTestId('stand-at-site')).toHaveCount(0);
   });
+
+  test('Zoom to detail enters the flat patch with honest earth attribution', async ({
+    page,
+    isMobile,
+  }) => {
+    test.slow(isMobile, 'mobile /earth load chain > 30 s budget');
+    // Repro gate for the 2026-09-10 report "Zoom to detail does not work
+    // on any site": the flat-patch trigger requires region_bounds, which
+    // the pad sidecar entries initially lacked — the button flew the
+    // camera but the true-scale ground view never engaged, and the tier
+    // card read moon (LROC) attribution on earth pads.
+    await page.goto('/earth?site=lc-39a', { waitUntil: 'networkidle' });
+    const zoomBtn = page.getByTestId('zoom-to-detail');
+    await expect(zoomBtn).toBeVisible({ timeout: 30_000 });
+    // Let the deep-link select fly-in land first — clicking mid-flight
+    // races flyToDetail against the still-running select fly. On narrow
+    // portrait viewports the fit-based landing bottoms out AT the camR
+    // floor (30.08 < the 30.1 trigger), so the flat patch auto-engages
+    // without any click and the zoom button has already flipped to the
+    // exit affordance by the time the fly settles.
+    await page.waitForTimeout(4_000);
+    if (await zoomBtn.isVisible().catch(() => false)) {
+      // Dispatch directly — on small/landscape viewports the detail-panel
+      // chrome can overlap the button's hit area (mars spec precedent).
+      await clickViaEvaluate(zoomBtn);
+    }
+    // Fly crosses SPHERE_TO_FLAT_CAM_R and the flat patch fades in. The
+    // exit affordance differs by layout: panel slot (exit-zoom) on
+    // desktop/landscape, floating button (zoom-floating-exit) on the
+    // fullscreen portrait layout — same split as the panorama exit.
+    // .first(): landscape renders BOTH affordances (panel slot + floating).
+    await expect(
+      page.getByTestId('exit-zoom').or(page.getByTestId('zoom-floating-exit')).first(),
+    ).toBeVisible({ timeout: 15_000 });
+    // Honest per-planet attribution (the moon-labels-on-earth regression).
+    await expect(page.locator('body')).toContainText('USGS NAIP aerial');
+    await expect(page.locator('body')).toContainText('Copernicus Sentinel-2');
+    await expect(page.locator('body')).not.toContainText('LROC');
+  });
 });
 
 test.describe('/earth tier ladder — no hotspot imagery at rest', () => {

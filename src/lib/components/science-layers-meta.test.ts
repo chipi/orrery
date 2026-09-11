@@ -53,6 +53,10 @@ const REUSED_LABEL_KEY: Record<string, string> = {
   'rotation-curve': 'explore_mw_lens_rotation',
   'dark-matter-halo': 'explore_mw_lens_darkmatter',
   'stellar-populations': 'explore_mw_lens_populations',
+  // 2026-09-11 — the last bespoke chips became layers, same reuse pattern.
+  'mass-period': 'explore_lens_mass_period',
+  'bh-curvature': 'explore_lens_curvature',
+  'bh-time-dilation': 'explore_lens_time',
 };
 
 function paraglideKey(layer: string): string {

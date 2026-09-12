@@ -18,6 +18,10 @@
 
 <svelte:head>
   <title>{data.title} · Orrery</title>
+  <!-- noindex: 407 thin instant-redirect pages would read as soft-404s /
+       duplicate content. Social scrapers (FB/X/Slack/iMessage) ignore robots
+       meta, so link unfurls are unaffected. -->
+  <meta name="robots" content="noindex" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Orrery" />
   <meta property="og:title" content={data.title} />

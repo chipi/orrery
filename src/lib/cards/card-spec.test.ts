@@ -417,7 +417,11 @@ describe('sparse records degrade cleanly', () => {
 
   it('a fleet entry with an unknown category falls back to the upper-cased id', () => {
     const spec = cardForFleet(
-      { ...SATURN_V, category: 'ground-station', linked_missions: undefined } as FleetEntry,
+      {
+        ...SATURN_V,
+        category: 'ground-station',
+        linked_missions: undefined,
+      } as unknown as FleetEntry,
       FLEET_INDEX,
     );
     expect(spec.kicker).toContain('GROUND STATION');

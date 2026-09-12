@@ -123,6 +123,21 @@ test.describe('collectible cards (#547)', () => {
     await page.waitForURL(/\/missions\?id=apollo11/, { timeout: 10_000 });
   });
 
+  test('alias stubs stay live and unfurl the canonical mission card', async ({ request }) => {
+    // Perseverance the fleet entry IS Perseverance the mission — its own
+    // /c/fleet/ URL must keep working (link permanence) while unfurling
+    // the canonical MISSION card image.
+    const res = await request.get('/c/fleet/perseverance');
+    expect(res.status()).toBe(200);
+    const html = await res.text();
+    expect(html).toContain('/images/cards/mission/perseverance.jpg');
+    expect(html).toMatch(/og:title[^>]+Perseverance/);
+    // Site alias: Apollo 11 the moon site aliases the mission.
+    const site = await request.get('/c/moon-site/apollo11');
+    expect(site.status()).toBe(200);
+    expect(await site.text()).toContain('/images/cards/mission/apollo11.jpg');
+  });
+
   test('OG stubs cover every kind; unknown kinds and ids 404', async ({ request }) => {
     // One stub per non-mission kind — each exercises its own load() branch.
     for (const path of [

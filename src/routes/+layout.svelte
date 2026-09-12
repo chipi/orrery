@@ -97,11 +97,15 @@
   // in every locale's copy of the page → the hreflang set is reciprocal.
   let seoRoute = $derived(canonicalRoute(page.url.pathname, base));
   let canonicalHref = $derived(canonicalUrl(seoRoute, activeLocale));
-  let hreflangs = $derived(hreflangAlternates(seoRoute));
+  // Card share stubs (#547, /c/*) are en-US-only redirect pages prerendered
+  // at the bare path — advertising 14 localized twins that are never
+  // prerendered would invite crawlers onto ~6k phantom URLs (soft-404 spam).
+  let isCardStub = $derived(seoRoute.startsWith('/c/'));
+  let hreflangs = $derived(isCardStub ? [] : hreflangAlternates(seoRoute));
   // og:locale (+ alternates) so social unfurls and crawlers see the page's
   // language (#519). Complements the hreflang set above.
   let ogLocaleValue = $derived(ogLocale(activeLocale));
-  let ogLocaleAlts = $derived(ogLocaleAlternates(activeLocale));
+  let ogLocaleAlts = $derived(isCardStub ? [] : ogLocaleAlternates(activeLocale));
 
   // DebugPanel context — created HERE (layout), not inside DebugPanel,
   // so descendant pages (which are children of `<main>`) can see it via

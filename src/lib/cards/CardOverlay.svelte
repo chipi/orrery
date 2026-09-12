@@ -9,6 +9,7 @@
 -->
 <script lang="ts">
   import * as m from '$lib/paraglide/messages';
+  import { track } from '$lib/analytics';
   import { shareCurrent, sharePath } from '$lib/share';
   import { assetUrl } from '$lib/asset-url';
   import CollectibleCard from './CollectibleCard.svelte';
@@ -19,6 +20,13 @@
 
   let feedback = $state<'shared' | 'copied' | 'saved' | null>(null);
   let cardImageOk = $state(false);
+
+  // PRD-036 §4 — which cards earn opens + shares. `card` is the canonical
+  // kind/id path (the shareHref), falling back to the display slug.
+  const cardId = () => spec.shareHref ?? spec.slug;
+  $effect(() => {
+    if (open) track('card-open', { card: cardId() });
+  });
 
   // Probe the generated JPEG when the overlay opens (cheap HEAD). The
   // probed path is captured so a spec change mid-flight can't let the
@@ -49,7 +57,10 @@
     const result = spec.shareHref
       ? await sharePath(spec.shareHref, spec.title)
       : await shareCurrent();
-    if (result === 'shared' || result === 'copied') flash(result);
+    if (result === 'shared' || result === 'copied') {
+      track('card-share', { mode: 'link', card: cardId(), result });
+      flash(result);
+    }
   }
 
   async function shareCard(): Promise<void> {
@@ -66,6 +77,7 @@
       );
       if (typeof navigator !== 'undefined' && navigator.canShare?.({ files: [file] })) {
         await navigator.share({ files: [file], title: spec.title });
+        track('card-share', { mode: 'card', card: cardId(), result: 'shared' });
         flash('shared');
         return;
       }
@@ -75,6 +87,7 @@
       a.download = file.name;
       a.click();
       URL.revokeObjectURL(a.href);
+      track('card-share', { mode: 'card', card: cardId(), result: 'saved' });
       flash('saved');
     } catch {
       /* share sheet dismissed or fetch failed — no feedback */

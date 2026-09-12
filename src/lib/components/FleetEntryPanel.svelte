@@ -145,6 +145,8 @@
             aliasMission = mission;
             aliasHero = missionGallery[0];
           }
+        } catch {
+          /* flaky fetch — the card CTA simply stays absent */
         } finally {
           if (entry && entry.id === lastId && forId === lastId) aliasPending = false;
         }

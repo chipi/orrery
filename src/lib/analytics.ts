@@ -111,6 +111,8 @@ function umamiWebsiteId(): string {
 /** The canonical event vocabulary. `track()` accepts only these. */
 export const EVENT_NAMES = [
   'route-enter',
+  'card-open',
+  'card-share',
   'route-exit',
   'audio-stage-fire',
   'item-click',

@@ -936,6 +936,8 @@
             cardAliasMission = mission;
             cardAliasHero = missionGallery[0];
           }
+        } catch {
+          /* flaky fetch — the card CTA simply stays absent */
         } finally {
           if (selected != null && selected.id === lastSelectedId && sid === lastSelectedId)
             cardAliasPending = false;

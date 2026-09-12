@@ -24,6 +24,7 @@ import { createHash } from 'node:crypto';
 import { spawn } from 'node:child_process';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { chromium } from 'playwright';
+import { canonicalCardTargets } from '../card-targets.mjs';
 
 const OUT_ROOT = 'static/images/cards';
 const MANIFEST = `${OUT_ROOT}/cards-manifest.json`;
@@ -57,27 +58,23 @@ function templateHash(kind) {
   return sha(`${shared}\n${kind}@v${KIND_VERSION[kind]}`);
 }
 
-function inputHash(dataPaths, tpl, kind) {
-  const parts = [tpl];
-  for (const p of [...dataPaths, ...(KIND_HERO_DEPS[kind] ?? [])]) {
-    if (existsSync(p)) parts.push(readFileSync(p, 'utf8'));
-  }
-  return sha(parts.join('\n'));
-}
-
-/**
- * One render target per canonical card. Fleet entries that share their id
- * with a mission (Perseverance etc.) are the SAME real thing — their
- * canonical card is mission/<id>, so the fleet duplicate is skipped (the
- * panel aliases to the mission card too; see card-spec fleetAliasesMission).
- */
-// Hero-override + gallery-count manifests per kind — a hero change or a
-// gallery renumber must invalidate that kind's cards (the hero is part of
-// the rendered output). Whole-file granularity: one override edit re-renders
-// the kind; coarse but correct, and regen is cheap.
+// Per-kind SHARED hash inputs beyond each target's own dataPaths:
+// hero-override + gallery-count manifests (a hero change or gallery
+// renumber alters the rendered card) AND the collection index (the
+// №NNN/total numbering is positional — an insertion must re-render the
+// kind or committed JPEGs drift from the in-app numbers). Whole-file
+// granularity: one edit re-renders the kind; coarse but correct.
 const KIND_HERO_DEPS = {
-  mission: ['static/data/missions-hero-overrides.json', 'static/data/mission-galleries.json'],
-  fleet: ['static/data/fleet-hero-overrides.json', 'static/data/fleet-galleries.json'],
+  mission: [
+    'static/data/missions-hero-overrides.json',
+    'static/data/mission-galleries.json',
+    'static/data/missions/index.json',
+  ],
+  fleet: [
+    'static/data/fleet-hero-overrides.json',
+    'static/data/fleet-galleries.json',
+    'static/data/fleet/index.json',
+  ],
   'moon-site': [
     'static/data/moon-sites-hero-overrides.json',
     'static/data/moon-site-galleries.json',
@@ -94,65 +91,12 @@ const KIND_HERO_DEPS = {
   ],
 };
 
-function enumerateTargets() {
-  const missions = JSON.parse(readFileSync('static/data/missions/index.json', 'utf8'));
-  const fleet = JSON.parse(readFileSync('static/data/fleet/index.json', 'utf8'));
-  const missionIds = new Set(missions.map((mi) => mi.id));
-  // Sites that alias a mission (mission_id or id parity — 45 of 54) have
-  // their canonical card at mission/<id>; only the remainder render here.
-  const siteTargets = (body) =>
-    JSON.parse(readFileSync(`static/data/${body}-sites.json`, 'utf8'))
-      .filter((s) => !missionIds.has(s.mission_id ?? '') && !missionIds.has(s.id))
-      .map((s) => ({
-        kind: `${body}-site`,
-        id: s.id,
-        dataPaths: [`static/data/${body}-sites.json`, `i18n-src/en-US/${body}-sites/${s.id}.json`],
-      }));
-  return [
-    ...missions.map((mi) => {
-      const destLower = mi.dest.toLowerCase();
-      return {
-        kind: 'mission',
-        id: mi.id,
-        dataPaths: [
-          `static/data/missions/${destLower}/${mi.id}.json`,
-          `i18n-src/en-US/missions/${destLower}/${mi.id}.json`,
-        ],
-      };
-    }),
-    ...fleet
-      .filter((fi) => !missionIds.has(fi.id))
-      .map((fi) => ({
-        kind: 'fleet',
-        id: fi.id,
-        dataPaths: [
-          `static/data/fleet/${fi.category}/${fi.id}.json`,
-          `i18n-src/en-US/fleet/${fi.category}/${fi.id}.json`,
-        ],
-      })),
-    ...siteTargets('moon'),
-    ...siteTargets('mars'),
-    // Planets (Pluto's canonical card is the small-body kind — its /explore
-    // panel is the SmallBodyPanel) + natural satellites.
-    ...JSON.parse(readFileSync('static/data/planets.json', 'utf8'))
-      .planets.map((p) => p.name.toLowerCase())
-      .filter((id) => id !== 'pluto')
-      .map((id) => ({
-        kind: 'planet',
-        id,
-        dataPaths: ['static/data/planets.json', `i18n-src/en-US/planets/${id}.json`],
-      })),
-    ...JSON.parse(readFileSync('static/data/satellites.json', 'utf8')).satellites.map((s) => ({
-      kind: 'moon',
-      id: s.id,
-      dataPaths: ['static/data/satellites.json', `i18n-src/en-US/satellites/${s.id}.json`],
-    })),
-    ...JSON.parse(readFileSync('static/data/small-bodies.json', 'utf8')).bodies.map((b) => ({
-      kind: 'small-body',
-      id: b.id,
-      dataPaths: ['static/data/small-bodies.json', `i18n-src/en-US/small-bodies/${b.id}.json`],
-    })),
-  ];
+function inputHash(dataPaths, tpl, kind) {
+  const parts = [tpl];
+  for (const p of [...dataPaths, ...(KIND_HERO_DEPS[kind] ?? [])]) {
+    if (existsSync(p)) parts.push(readFileSync(p, 'utf8'));
+  }
+  return sha(parts.join('\n'));
 }
 
 function loadManifest() {
@@ -179,7 +123,7 @@ function maybeStartServer() {
 
 async function main() {
   const only = process.argv.slice(2).filter((a) => !a.startsWith('--'));
-  const all = enumerateTargets();
+  const all = canonicalCardTargets();
   const targets = only.length ? all.filter((t) => only.includes(t.id)) : all;
 
   const manifest = loadManifest();
@@ -197,6 +141,9 @@ async function main() {
       manifest.entries[key] = inputHash(t.dataPaths, templateHash(t.kind), t.kind);
       n += 1;
     }
+    manifest.entries = Object.fromEntries(
+      Object.entries(manifest.entries).sort(([a], [b]) => a.localeCompare(b)),
+    );
     writeFileSync(MANIFEST, JSON.stringify(manifest, null, 2) + '\n');
     console.log(`rehashed ${n} existing card(s), nothing rendered`);
     return;
@@ -255,6 +202,9 @@ async function main() {
   } finally {
     await browser?.close().catch(() => {});
     server?.kill();
+    manifest.entries = Object.fromEntries(
+      Object.entries(manifest.entries).sort(([a], [b]) => a.localeCompare(b)),
+    );
     writeFileSync(MANIFEST, JSON.stringify(manifest, null, 2) + '\n');
   }
   console.log(`DONE ${ok}/${todo.length} rendered → ${OUT_ROOT}/`);

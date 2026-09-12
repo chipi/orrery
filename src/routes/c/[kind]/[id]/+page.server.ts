@@ -15,6 +15,10 @@
  */
 import { readFileSync } from 'node:fs';
 import { error } from '@sveltejs/kit';
+import { SITE_ORIGIN } from '$lib/seo';
+// Shared enumerator (scripts/site-routes.mjs pattern) — the generator, this
+// route and the validate-data parity gate all read the same target sets.
+import { stubEntries, aliasStubTargets } from '../../../../../scripts/card-targets.mjs';
 import type { EntryGenerator, PageServerLoad } from './$types';
 
 export const prerender = true;
@@ -66,52 +70,52 @@ const smallBodyRows = (): Array<{ id: string; name: string; description?: string
     }
   ).bodies;
 
-/** Sites whose canonical card is NOT a mission card (see siteAliasMissionId). */
-const ownSites = (body: 'moon' | 'mars', missionIds: Set<string>): SiteRow[] =>
-  siteRows(body).filter((s) => !missionIds.has(s.mission_id ?? '') && !missionIds.has(s.id));
-
-export const entries: EntryGenerator = () => {
-  const missions = missionIndex();
-  const missionIds = new Set(missions.map((mi) => mi.id));
-  return [
-    ...missions.map((mi) => ({ kind: 'mission', id: mi.id })),
-    ...fleetIndex()
-      .filter((fi) => !missionIds.has(fi.id))
-      .map((fi) => ({ kind: 'fleet', id: fi.id })),
-    ...ownSites('moon', missionIds).map((s) => ({ kind: 'moon-site', id: s.id })),
-    ...ownSites('mars', missionIds).map((s) => ({ kind: 'mars-site', id: s.id })),
-    ...planetIds().map((id) => ({ kind: 'planet', id })),
-    ...satelliteRows().map((s) => ({ kind: 'moon', id: s.id })),
-    ...smallBodyRows().map((b) => ({ kind: 'small-body', id: b.id })),
-  ];
-};
-
-/** Public origin for absolute og:image / og:url — crawlers need absolute
- *  URLs, and previews should always point at prod regardless of which
- *  deploy served the stub. */
-const PUBLIC_ORIGIN = 'https://www.orrerylearn.com';
+export const entries: EntryGenerator = () => stubEntries() as Array<{ kind: string; id: string }>;
 
 export const load: PageServerLoad = ({ params }) => {
   const shared = (title: string, description: string, target: string) => ({
     title,
     description,
-    image: `${PUBLIC_ORIGIN}/images/cards/${params.kind}/${params.id}.jpg`,
-    pageUrl: `${PUBLIC_ORIGIN}/c/${params.kind}/${params.id}`,
+    image: `${SITE_ORIGIN}/images/cards/${params.kind}/${params.id}.jpg`,
+    pageUrl: `${SITE_ORIGIN}/c/${params.kind}/${params.id}`,
     target,
   });
 
-  if (params.kind === 'mission') {
-    const row = missionIndex().find((mi) => mi.id === params.id);
+  const missionOg = (missionId: string): { title: string; description: string } => {
+    const row = missionIndex().find((mi) => mi.id === missionId);
     if (!row) throw error(404, 'unknown mission');
     const destLower = row.dest.toLowerCase();
     const overlay = JSON.parse(
-      readFileSync(`i18n-src/en-US/missions/${destLower}/${params.id}.json`, 'utf8'),
+      readFileSync(`i18n-src/en-US/missions/${destLower}/${missionId}.json`, 'utf8'),
     ) as { name?: string; description?: string };
-    return shared(
-      overlay.name ?? params.id,
-      overlay.description?.split(/(?<=[.!?])\s+/)[0] ?? '',
-      `/missions?id=${params.id}`,
-    );
+    return {
+      title: overlay.name ?? missionId,
+      description: overlay.description?.split(/(?<=[.!?])\s+/)[0] ?? '',
+    };
+  };
+
+  // Alias stubs (link permanence): a fleet entry / site whose canonical card
+  // is a mission still serves ITS OWN /c/ URL, unfurling the canonical
+  // mission's card and landing on the surface the link names.
+  const alias = aliasStubTargets().find((a) => a.kind === params.kind && a.id === params.id);
+  if (alias) {
+    const og = missionOg(alias.canonicalMission);
+    const target =
+      params.kind === 'fleet'
+        ? `/fleet?id=${params.id}`
+        : `/${params.kind.replace('-site', '')}?site=${params.id}`;
+    return {
+      title: og.title,
+      description: og.description,
+      image: `${SITE_ORIGIN}/images/cards/mission/${alias.canonicalMission}.jpg`,
+      pageUrl: `${SITE_ORIGIN}/c/${params.kind}/${params.id}`,
+      target,
+    };
+  }
+
+  if (params.kind === 'mission') {
+    const og = missionOg(params.id);
+    return shared(og.title, og.description, `/missions?id=${params.id}`);
   }
 
   if (params.kind === 'moon-site' || params.kind === 'mars-site') {

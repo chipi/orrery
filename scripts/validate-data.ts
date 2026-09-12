@@ -19,6 +19,8 @@ import {
 } from 'node:fs';
 import { join } from 'node:path';
 import { isAllowedLicense } from './license-allowlist.js';
+// @ts-expect-error — plain .mjs shared enumerator (scripts/site-routes.mjs pattern)
+import { canonicalCardTargets, aliasStubTargets } from './card-targets.mjs';
 import { isAllowedChannel } from './video-channel-allowlist.js';
 import { isJpegBytes } from './lib/image-bytes.ts';
 import {
@@ -1057,6 +1059,55 @@ if (existsSync(i18nDir)) {
 console.log(`\n${passed} files passed, ${failed} failed.`);
 
 // ──────────────────────────────────────────────────────────────────────
+// ──────────────────────────────────────────────────────────────────────
+// Collectible-card corpus parity (#547 / Pipeline 13).
+//
+// The committed JPEG corpus + its manifest must track the canonical-card
+// target set: an orphaned manifest key means a published card whose entity
+// lost (or changed) its canonical owner — a silently rotting share URL —
+// and a canonical target without a JPEG means broken og:image unfurls for
+// a newly added entity. Both are fixed by `npm run build-cards` (+ pruning
+// a genuinely removed entity's JPEG by hand).
+// ──────────────────────────────────────────────────────────────────────
+let cardParityFailed = 0;
+try {
+  const cardManifestPath = join('static', 'images', 'cards', 'cards-manifest.json');
+  if (existsSync(cardManifestPath)) {
+    const targets = canonicalCardTargets() as Array<{ kind: string; id: string }>;
+    const targetKeys = new Set(targets.map((t) => `${t.kind}/${t.id}`));
+    const manifestKeys = Object.keys(
+      (JSON.parse(readFileSync(cardManifestPath, 'utf8')) as { entries: Record<string, string> })
+        .entries,
+    );
+    for (const key of manifestKeys) {
+      if (!targetKeys.has(key)) {
+        console.error(`  card corpus: orphaned entry '${key}' — no longer a canonical card target`);
+        cardParityFailed++;
+      }
+    }
+    for (const key of targetKeys) {
+      if (!existsSync(join('static', 'images', 'cards', `${key}.jpg`))) {
+        console.error(`  card corpus: missing JPEG for '${key}' — run npm run build-cards`);
+        cardParityFailed++;
+      }
+    }
+    // Alias stubs unfurl the canonical mission's JPEG — it must exist too.
+    for (const a of aliasStubTargets() as Array<{ canonicalMission: string }>) {
+      if (!existsSync(join('static', 'images', 'cards', 'mission', `${a.canonicalMission}.jpg`))) {
+        console.error(`  card corpus: alias stub needs missing mission/${a.canonicalMission}.jpg`);
+        cardParityFailed++;
+      }
+    }
+    if (cardParityFailed === 0) {
+      console.log(`  ✓ card corpus parity — ${manifestKeys.length} cards track the target set`);
+    }
+  }
+} catch (err) {
+  console.error(`  card corpus parity check error: ${(err as Error).message}`);
+  cardParityFailed++;
+}
+if (cardParityFailed > 0) failed += cardParityFailed;
+
 // Doc-system gating-sentence checks (Slice 6 / RFC-005 closure).
 //
 // PRDs must answer "Why this is a PRD"; RFCs must answer "Why this is

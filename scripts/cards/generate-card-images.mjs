@@ -37,7 +37,7 @@ const BASE_URL = process.env.BASE_URL ?? `http://127.0.0.1:${PORT}`;
 // JPEGs (74MB of binary churn) per slice. Instead each kind carries an
 // explicit version below — bump it when that kind's resolver or stage
 // logic changes its OUTPUT.
-const SHARED_SOURCES = ['src/lib/cards/CollectibleCard.svelte', 'src/lib/cards/pick-card-hero.ts'];
+const SHARED_SOURCES = ['src/lib/cards/CollectibleCard.svelte'];
 
 const KIND_VERSION = {
   mission: 1,

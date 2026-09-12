@@ -42,7 +42,6 @@
     type CardSpec,
     type SmallBodyLike,
   } from '$lib/cards/card-spec';
-  import { pickCardHero } from '$lib/cards/pick-card-hero';
 
   let spec = $state<CardSpec | null>(null);
   let ready = $state(false);
@@ -58,7 +57,7 @@
         getMissionGallery(id).catch(() => [] as string[]),
       ]);
       if (!mission) return null;
-      return cardForMission(mission, index, await pickCardHero(gallery));
+      return cardForMission(mission, index, gallery[0]);
     }
     if (kind === 'fleet') {
       const index = await getFleetIndex();
@@ -72,7 +71,7 @@
       return cardForFleet(
         entry,
         index,
-        await pickCardHero(gallery),
+        gallery[0],
         spacecraftDiagramPath(id) ?? launcherCutawayPath(id) ?? undefined,
       );
     }
@@ -86,14 +85,14 @@
           ? getMoonSiteGallery(id, site.mission_id)
           : getMarsSiteGallery(id, site.mission_id)
       ).catch(() => [] as string[]);
-      return cardForSite(site, sites, body, await pickCardHero(gallery));
+      return cardForSite(site, sites, body, gallery[0]);
     }
     if (kind === 'planet') {
       const planets = await getPlanets('en-US');
       const planet = planets.find((p) => p.id === id);
       if (!planet) return null;
       const gallery = await getPlanetGallery(id).catch(() => [] as string[]);
-      return cardForPlanet(planet, planets, await pickCardHero(gallery));
+      return cardForPlanet(planet, planets, gallery[0]);
     }
     if (kind === 'moon') {
       const satellites = await getSatellites();
@@ -104,7 +103,7 @@
         getSatelliteI18n('en-US', id).catch(() => null),
       ]);
       const entry = i18n ? { ...sat, description: i18n.description ?? sat.description } : sat;
-      return cardForSatellite(entry, satellites, await pickCardHero(gallery));
+      return cardForSatellite(entry, satellites, gallery[0]);
     }
     if (kind === 'small-body') {
       const bodies = smallBodiesData.bodies as SmallBodyLike[];
@@ -115,7 +114,7 @@
         getSmallBodyI18n('en-US', id).catch(() => null),
       ]);
       const entry = i18n ? { ...body, description: i18n.description ?? body.description } : body;
-      return cardForSmallBody(entry, bodies, await pickCardHero(gallery));
+      return cardForSmallBody(entry, bodies, gallery[0]);
     }
     return null;
   }

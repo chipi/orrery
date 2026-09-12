@@ -4,7 +4,6 @@
   import { getPlanetGallery, getPlanets } from '$lib/data';
   import { cardForPlanet, planetCardList, type CardSpec } from '$lib/cards/card-spec';
   import CardOverlay from '$lib/cards/CardOverlay.svelte';
-  import { pickCardHero } from '$lib/cards/pick-card-hero';
   import { linkifyMissionEntry, loadMissionIndex } from '$lib/missions-linkify';
   import type { LocalizedPlanet } from '$types/planet';
   import * as m from '$lib/paraglide/messages';
@@ -62,11 +61,10 @@
   // loader) for the collection numbering; Pluto is excluded by
   // planetCardList (its canonical card is the small-body kind).
   let cardOpen = $state(false);
-  let cardHero = $state<string | undefined>(undefined);
   let planetList = $state<LocalizedPlanet[]>([]);
   let cardSpec = $derived<CardSpec | null>(
     planet && planetCardList([planet]).length > 0
-      ? cardForPlanet(planet, planetList, cardHero)
+      ? cardForPlanet(planet, planetList, gallery[0])
       : null,
   );
 
@@ -80,12 +78,8 @@
       lightboxSrc = null;
       gallery = [];
       cardOpen = false;
-      cardHero = undefined;
       void getPlanetGallery(planet.id).then((urls) => {
         if (planet && planet.id === lastId) gallery = urls;
-        void pickCardHero(urls).then((h) => {
-          if (planet && planet.id === lastId) cardHero = h;
-        });
       });
       if (planetList.length === 0) {
         void getPlanets().then((all) => (planetList = all));

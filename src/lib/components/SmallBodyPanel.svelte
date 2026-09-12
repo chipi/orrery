@@ -5,7 +5,6 @@
   import smallBodiesData from '$data/small-bodies.json';
   import { cardForSmallBody, type CardSpec, type SmallBodyLike } from '$lib/cards/card-spec';
   import CardOverlay from '$lib/cards/CardOverlay.svelte';
-  import { pickCardHero } from '$lib/cards/pick-card-hero';
   import { linkifyMission, loadMissionIndex } from '$lib/missions-linkify';
   import { formatKm } from '$lib/format';
   import type { ScienceSectionRef } from '$types/planet';
@@ -97,13 +96,12 @@
   // collection list for numbering; the overlay description (translated)
   // feeds the story when loaded.
   let cardOpen = $state(false);
-  let cardHero = $state<string | undefined>(undefined);
   let cardSpec = $derived<CardSpec | null>(
     body
       ? cardForSmallBody(
           { ...body, description: overlay?.description ?? body.description },
           smallBodiesData.bodies as SmallBodyLike[],
-          cardHero,
+          gallery[0],
         )
       : null,
   );
@@ -117,12 +115,8 @@
       gallery = [];
       overlay = null;
       cardOpen = false;
-      cardHero = undefined;
       void getSmallBodyGallery(body.id).then((urls) => {
         if (body && body.id === lastId) gallery = urls;
-        void pickCardHero(urls).then((h) => {
-          if (body && body.id === lastId) cardHero = h;
-        });
       });
       const fetchId = body.id;
       void getSmallBodyI18n(loc, fetchId).then((o) => {

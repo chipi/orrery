@@ -43,7 +43,6 @@
     type CardSpec,
   } from '$lib/cards/card-spec';
   import CardOverlay from '$lib/cards/CardOverlay.svelte';
-  import { pickCardHero } from '$lib/cards/pick-card-hero';
   import { spacecraftDiagramPath, launcherCutawayPath } from '$lib/spacecraft-diagrams';
   import type { OrbitRegime } from '$types/orbit-regime';
   import RegimeChip from '$lib/components/RegimeChip.svelte';
@@ -81,19 +80,19 @@
   // stations/observatories → their fleet_refs fleet entry); objects
   // matching neither (the generic GEO belt marker) show no card CTA.
   let cardOpen = $state(false);
-  let cardHero = $state<string | undefined>(undefined);
   let cardMissionIndex = $state<MissionIndex[]>([]);
   let cardFleetIndex = $state<FleetIndexEntry[]>([]);
   let cardAliasMission = $state<Mission | null>(null);
   let cardAliasFleet = $state<FleetEntry | null>(null);
   let cardSpec = $derived.by<CardSpec | null>(() => {
     if (!selected) return null;
-    if (cardAliasMission) return cardForMission(cardAliasMission, cardMissionIndex, cardHero);
+    if (cardAliasMission)
+      return cardForMission(cardAliasMission, cardMissionIndex, panelGallery[0]);
     if (cardAliasFleet)
       return cardForFleet(
         cardAliasFleet,
         cardFleetIndex,
-        cardHero,
+        panelGallery[0],
         spacecraftDiagramPath(cardAliasFleet.id) ??
           launcherCutawayPath(cardAliasFleet.id) ??
           undefined,
@@ -107,7 +106,6 @@
       panelLightbox = null;
       panelGallery = [];
       cardOpen = false;
-      cardHero = undefined;
       cardAliasMission = null;
       cardAliasFleet = null;
       lastSelectedId = selected.id;
@@ -116,9 +114,6 @@
       // built-in mission-gallery fallback is enough.
       void getEarthObjectGallery(selected.id).then((urls: string[]) => {
         if (selected && selected.id === lastSelectedId) panelGallery = urls;
-        void pickCardHero(urls).then((h) => {
-          if (selected && selected.id === lastSelectedId) cardHero = h;
-        });
       });
       const sid = selected.id;
       const eo = selected;

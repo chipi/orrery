@@ -28,7 +28,6 @@
   import { assetUrl } from '$lib/asset-url';
   import { cardForSatellite, type CardSpec } from '$lib/cards/card-spec';
   import CardOverlay from '$lib/cards/CardOverlay.svelte';
-  import { pickCardHero } from '$lib/cards/pick-card-hero';
   import ScienceCard from './ScienceCard.svelte';
   import type { ScienceTabId } from '$types/science';
 
@@ -84,9 +83,8 @@
   // #547 S5b — the collectible card (the loaded satellite list doubles
   // as the collection for numbering).
   let cardOpen = $state(false);
-  let cardHero = $state<string | undefined>(undefined);
   let cardSpec = $derived<CardSpec | null>(
-    entry ? cardForSatellite(entry, satellites, cardHero) : null,
+    entry ? cardForSatellite(entry, satellites, gallery[0]) : null,
   );
 
   $effect(() => {
@@ -96,13 +94,9 @@
       gallery = [];
       overlay = null;
       cardOpen = false;
-      cardHero = undefined;
       const id = baseEntry.id;
       void getSatelliteGallery(id).then((urls) => {
         if (baseEntry && baseEntry.id === lastKey) gallery = urls;
-        void pickCardHero(urls).then((h) => {
-          if (baseEntry && baseEntry.id === lastKey) cardHero = h;
-        });
       });
       void getSatelliteI18n(loc, id).then((o) => {
         if (baseEntry && baseEntry.id === lastKey) overlay = o;

@@ -82,7 +82,6 @@
     type CardSpec,
   } from '$lib/cards/card-spec';
   import CardOverlay from '$lib/cards/CardOverlay.svelte';
-  import { pickCardHero } from '$lib/cards/pick-card-hero';
   import {
     createSceneRenderer,
     disposeSceneRenderer,
@@ -857,7 +856,6 @@
   // (mission_id or id parity — 45 of 54) resolve the canonical MISSION
   // card, and the rest get a site card numbered against their body's list.
   let cardOpen = $state(false);
-  let cardHero = $state<string | undefined>(undefined);
   let cardMissionIndex = $state<MissionIndex[]>([]);
   let cardAliasMission = $state<Mission | null>(null);
   let cardFleetEntry = $state<FleetEntry | null>(null);
@@ -867,10 +865,12 @@
     if (!site) return null;
     if (body === 'earth')
       return cardFleetEntry && cardFleetEntry.id === site.id
-        ? cardForFleet(cardFleetEntry, cardFleetIndex, cardHero)
+        ? cardForFleet(cardFleetEntry, cardFleetIndex, panelGallery[0])
         : null;
-    if (cardAliasMission) return cardForMission(cardAliasMission, cardMissionIndex, cardHero);
-    if (body === 'moon' || body === 'mars') return cardForSite(site, sites, body, cardHero);
+    if (cardAliasMission)
+      return cardForMission(cardAliasMission, cardMissionIndex, panelGallery[0]);
+    if (body === 'moon' || body === 'mars')
+      return cardForSite(site, sites, body, panelGallery[0]);
     return null; // venus non-aliased sites (none today) — no card
   });
   $effect(() => {
@@ -882,7 +882,6 @@
       playerVideo = null;
       panelStory = null;
       cardOpen = false;
-      cardHero = undefined;
       cardAliasMission = null;
       cardFleetEntry = null;
       lastSelectedId = selected.id;
@@ -892,12 +891,7 @@
         locale: localeFromPage(page),
         fetchGallery: loadGallery,
         isStillCurrent: () => selected != null && selected.id === lastSelectedId,
-        onGallery: (urls) => {
-          panelGallery = urls;
-          void pickCardHero(urls).then((h) => {
-            if (selected != null && selected.id === lastSelectedId) cardHero = h;
-          });
-        },
+        onGallery: (urls) => (panelGallery = urls),
         onStory: (story) => (panelStory = story),
       });
       const sid = selected.id;

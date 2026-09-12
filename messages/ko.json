@@ -818,7 +818,7 @@
   "missions_loading": "로드 중 …",
   "nav_brand_home_aria": "Orrery - 집",
   "landing_page_title": "Orrery · 브라우저의 태양계 탐험가",
-  "landing_meta_description": "브라우저 기반 태양계 탐색기, 미션 시뮬레이터, 백과사전. 실제 궤도 역학. 큐레이션된 미션 카탈로그. 14개 언어. 오픈 소스, 계정 불필요, 트래킹 없음.",
+  "landing_meta_description": "브라우저 기반 태양계 탐험기, 임무 시뮬레이터, 백과사전. 실제 궤도역학. 엄선된 임무 목록. 14개 언어. 오픈소스, 계정 없음, 광고 없음, 제3자 추적 없음.",
   "landing_hero_tagline": "브라우저의 태양계 탐험가.",
   "landing_hero_subhead": "실제 궤도 역학. 큐레이션된 미션 카탈로그. 14개 언어.",
   "landing_cta_primary": "태양계 탐험",
@@ -860,7 +860,7 @@
   "landing_card_fleet_title": "우주 비행 함",
   "landing_card_fleet_desc": "우주선 자체 — 역사와 현재 함대의 대부분, 승무원, 페이로드, 그리고 outcomes.",
   "landing_footer_heading": "이 프로젝트",
-  "landing_footer_about": "Orrery는 MIT 라이선스의 오픈 소스입니다. 계정 없음, 추적 없음. 몇 개의 기능적 쿠키가 언어와 투어 진행 위치를 기억합니다.",
+  "landing_footer_about": "Orrery는 MIT 라이선스 하에 오픈소스입니다. 계정 없음, 광고 없음, 제3자와 공유 없음. 사이트 사용 방식을 측정하며 — 익명, 쿠키 불사용, 자체 호스팅 — 이를 끌 수 있습니다. 3개의 기능형 쿠키는 언어, 투어 위치, 그 선택을 기억합니다. {privacy} 페이지에서 자세히 확인하세요.",
   "landing_footer_link_github": "GitHub",
   "landing_footer_link_readme": "읽기",
   "landing_footer_link_license": "라이선스",
@@ -3037,5 +3037,6 @@
   "science_layer_bh_curvature_desc": "빛을 구부리는 동일한 측지선에 의해 휘어진 시공간 격자 — 곡률의 유추이지, 문자 그대로의 표면이 아닙니다.",
   "science_layer_bh_time_desc": "광자구, 가장 안쪽의 안정 궤도, 그리고 그 너머에서 시계가 얼마나 느리게 움직이는지 — 중력 시간 팽창, 정량화됨.",
   "star_index_black_holes": "검은 구멍",
-  "nav_locale_suggest_label": "이 페이지를 당신의 언어로 보기"
+  "nav_locale_suggest_label": "이 페이지를 당신의 언어로 보기",
+  "landing_footer_privacy_link": "개인정보"
 }

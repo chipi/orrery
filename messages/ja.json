@@ -818,7 +818,7 @@
   "missions_loading": "ローディング…",
   "nav_brand_home_aria": "オリリー — ホーム",
   "landing_page_title": "オーリー・ブラウザ向けソーラーシステムエクスプローラー",
-  "landing_meta_description": "ブラウザベースの太陽系エクスプローラ、ミッションシミュレータ、百科事典。リアルな軌道力学。キュレートされたミッションカタログ。14 言語。オープンソース、アカウント不要、トラッキングなし。",
+  "landing_meta_description": "ブラウザベースの太陽系エクスプローラー、ミッションシミュレーター、および百科事典。実際の軌道力学。精選されたミッションカタログ。14言語。オープンソース、アカウント不要、広告なし、第三者トラッカーなし。",
   "landing_hero_tagline": "ブラウザ用のソーラーシステムエクスプローラ。",
   "landing_hero_subhead": "リアルな軌道力学。キュレートされたミッションカタログ。14 言語。",
   "landing_cta_primary": "太陽系を探索",
@@ -860,7 +860,7 @@
   "landing_card_fleet_title": "宇宙飛行隊",
   "landing_card_fleet_desc": "宇宙船自体 — 歴史と現在の艦隊の大部分、乗組員、ペイロード、および結果。",
   "landing_footer_heading": "このプロジェクトについて",
-  "landing_footer_about": "Orrery は MIT ライセンスのオープンソースです。アカウントなし、トラッキングなし。いくつかの機能的な Cookie が言語とツアーの進行状況を記憶します。",
+  "landing_footer_about": "Orrery はMITライセンスの下でオープンソースです。アカウント、広告、第三者との情報共有はありません。サイトの利用方法を測定していますが—匿名で、クッキーなし、自社ホスト—その機能は切り替えられます。3つの機能クッキーは、あなたの言語、ツアー内のあなたの位置、およびその選択を記憶します。詳細は{privacy}ページをご覧ください。",
   "landing_footer_link_github": "GitHubで",
   "landing_footer_link_readme": "フィードバック",
   "landing_footer_link_license": "ライセンス",
@@ -3037,5 +3037,6 @@
   "science_layer_bh_curvature_desc": "光を曲げるのと同じ測地線によって歪められた時空グリッド。曲率のアナロジーであり、文字通りの表面ではありません。",
   "science_layer_bh_time_desc": "光子球、最内安定軌道、さらに外側でのクロック進行速度の低下度合い。重力時間膨張を定量化したものです。",
   "star_index_black_holes": "ブラックホール",
-  "nav_locale_suggest_label": "このページを あなたの言語で表示"
+  "nav_locale_suggest_label": "このページを あなたの言語で表示",
+  "landing_footer_privacy_link": "プライバシー"
 }

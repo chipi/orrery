@@ -1,6 +1,9 @@
 <script lang="ts">
   import { page } from '$app/state';
   import { base } from '$app/paths';
+
+  // See the about-body markup below — sentinel, not the rendered word.
+  const PRIVACY_LINK_TOKEN = '\u0000privacy-link\u0000';
   import { assetOrigin } from '$lib/asset-url';
   import { DEFAULT_LOCALE, localeFromPage } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
@@ -1166,7 +1169,19 @@
 
   <section class="footer-block" aria-labelledby="about-heading">
     <h2 id="about-heading" class="about-heading">{m.landing_footer_heading()}</h2>
-    <p class="about-body">{m.landing_footer_about()}</p>
+    <!-- Substitute a sentinel, not the rendered word: `.replace(word, link)`
+         would link the first occurrence of that word in the sentence, which is
+         correct in en-US by luck and wrong once a translation uses it earlier.
+         Same approach as the /credits storage card. -->
+    <p class="about-body">
+      <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+      {@html m
+        .landing_footer_about({ privacy: PRIVACY_LINK_TOKEN })
+        .replace(
+          PRIVACY_LINK_TOKEN,
+          `<a href="${base}/privacy">${m.landing_footer_privacy_link()}</a>`,
+        )}
+    </p>
     <!-- Project links live in the persistent site-footer (rendered by
          src/routes/+layout.svelte) so they're available on every route,
          not just here. The About prose stays — the landing is the right

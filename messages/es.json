@@ -792,7 +792,7 @@
   "missions_loading": "Cargando…",
   "nav_brand_home_aria": "Orrery — inicio",
   "landing_page_title": "Orrery · Un explorador del sistema solar para el navegador",
-  "landing_meta_description": "Explorador del sistema solar basado en navegador, simulador de misiones y enciclopedia. Mecánica orbital real. Catálogo curado de misiones. 14 idiomas. Código abierto, sin cuentas, sin rastreo.",
+  "landing_meta_description": "Explorador del sistema solar basado en navegador, simulador de misiones, y enciclopedia. Mecánica orbital real. Catálogo de misiones curado. 14 idiomas. Código abierto, sin cuentas, sin anuncios, sin rastreadores de terceros.",
   "landing_hero_tagline": "Un explorador del sistema solar para el navegador.",
   "landing_hero_subhead": "Mecánica orbital real. Catálogo curado de misiones. 14 idiomas.",
   "landing_cta_primary": "Explora el sistema solar",
@@ -834,7 +834,7 @@
   "landing_card_fleet_title": "Flota de vuelos espaciales",
   "landing_card_fleet_desc": "Las naves en sí — la mayor parte de la flota histórica y actual, con tripulaciones, cargas y resultados.",
   "landing_footer_heading": "Sobre este proyecto",
-  "landing_footer_about": "Orrery es de código abierto bajo la licencia MIT. Sin cuentas, sin seguimiento. Un par de cookies funcionales recuerdan tu idioma y tu punto en el recorrido.",
+  "landing_footer_about": "Orrery es software de código abierto bajo la licencia MIT. Sin cuentas, sin publicidad, y nada compartido con terceros. Sí mide cómo se usa el sitio — anónimo, sin cookies, auto-hospedado — y puedes desactivarlo. Tres cookies funcionales recuerdan tu idioma, tu lugar en la visita guiada, y esa opción. Más detalles en la página de {privacy}.",
   "landing_footer_link_github": "GitHub",
   "landing_footer_link_readme": "README",
   "landing_footer_link_license": "Licencia",
@@ -3037,5 +3037,6 @@
   "science_layer_bh_curvature_desc": "Una malla de espaciotiempo deformada por las mismas geodésicas que curvan la luz — una analogía de la curvatura, no una superficie literal.",
   "science_layer_bh_time_desc": "Cuánto más lentamente transcurre el tiempo en la esfera de fotones, la órbita estable más interna y más allá — dilatación gravitatoria del tiempo, cuantificada.",
   "star_index_black_holes": "Agujeros negros",
-  "nav_locale_suggest_label": "Ver esta página en tu idioma"
+  "nav_locale_suggest_label": "Ver esta página en tu idioma",
+  "landing_footer_privacy_link": "privacidad"
 }

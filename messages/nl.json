@@ -792,7 +792,7 @@
   "missions_loading": "Laden…",
   "nav_brand_home_aria": "Orrery — start",
   "landing_page_title": "Orrery · Een zonnestelselverkenner voor de browser",
-  "landing_meta_description": "Browsergebaseerde zonnestelsel-verkenner, missiesimulator en encyclopedie. Echte baanmechanica. Gecureerde missiecatalogus. 14 talen. Open source, geen accounts, geen tracking.",
+  "landing_meta_description": "Browsergebaseerde verkenner van het zonnestelsel, missiesimulator en encyclopedie. Echte baanmechanica. Samengestelde missiecatalogus. 14 talen. Open source, geen accounts, geen advertenties, geen trackers van derden.",
   "landing_hero_tagline": "Een zonnestelselverkenner voor de browser.",
   "landing_hero_subhead": "Echte baanmechanica. Gecureerde missiecatalogus. 14 talen.",
   "landing_cta_primary": "Verken het zonnestelsel",
@@ -834,7 +834,7 @@
   "landing_card_fleet_title": "Ruimtevaartvloot",
   "landing_card_fleet_desc": "De ruimtevaartuigen zelf — het grootste deel van de historische en huidige vloot, met bemanningen, ladingen en resultaten.",
   "landing_footer_heading": "Over dit project",
-  "landing_footer_about": "Orrery is open source onder de MIT-licentie. Geen accounts, geen tracking. Een paar functionele cookies onthouden je taal en je plek in de tour.",
+  "landing_footer_about": "Orrery is open-source onder de MIT-licentie. Geen accounts, geen advertenties, en niets gedeeld met derden. Het meet wel hoe de site wordt gebruikt — anoniem, zonder cookies, zelf gehost — en je kunt dat uitschakelen. Drie functionele cookies onthouden je taal, je plaats in de tour en die keuze. Details op de {privacy}-pagina.",
   "landing_footer_link_github": "GitHub",
   "landing_footer_link_readme": "README",
   "landing_footer_link_license": "Licentie",
@@ -3037,5 +3037,6 @@
   "science_layer_bh_curvature_desc": "Een ruimtetijdraster vervormd door dezelfde geodeten die het licht buigen — een analogie voor kromming, geen letterlijk oppervlak.",
   "science_layer_bh_time_desc": "Hoe veel langzamer klokken tikken bij de fotonensfer, de binnenste stabiele baan, en verder uit — zwaartekrachtsveroorzaakte tijddilatatie, gekwantificeerd.",
   "star_index_black_holes": "Zwarte gaten",
-  "nav_locale_suggest_label": "Bekijk deze pagina in uw taal"
+  "nav_locale_suggest_label": "Bekijk deze pagina in uw taal",
+  "landing_footer_privacy_link": "privacyverklaring"
 }

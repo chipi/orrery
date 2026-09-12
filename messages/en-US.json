@@ -1130,7 +1130,7 @@
   "landing_cta_primary": "Explore the solar system",
   "landing_cta_secondary": "How does it work?",
   "landing_cta_tour": "Take the curator tour",
-  "landing_footer_about": "Orrery is open-source under the MIT license. No accounts, no tracking. A couple of functional cookies remember your language and your place in the tour.",
+  "landing_footer_about": "Orrery is open-source under the MIT license. No accounts, no advertising, and nothing shared with a third party. It does measure how the site is used — anonymous, cookieless, self-hosted — and you can switch that off. Three functional cookies remember your language, your place in the tour, and that choice. Details on the {privacy} page.",
   "landing_footer_heading": "About this project",
   "landing_footer_link_credits": "Credits",
   "landing_footer_link_github": "GitHub",
@@ -1141,7 +1141,7 @@
   "landing_hero_aria": "Orrery — a stylised solar system with a highlighted transfer trajectory",
   "landing_hero_subhead": "Real orbital mechanics. Curated mission catalogue. 14 languages.",
   "landing_hero_tagline": "A solar system explorer for the browser.",
-  "landing_meta_description": "Browser-based solar system explorer, mission simulator, and encyclopedia. Real orbital mechanics. Curated mission catalogue. 14 languages. Open source, no accounts, no tracking.",
+  "landing_meta_description": "Browser-based solar system explorer, mission simulator, and encyclopedia. Real orbital mechanics. Curated mission catalogue. 14 languages. Open source, no accounts, no ads, no third-party trackers.",
   "landing_page_title": "Orrery · A solar system explorer for the browser",
   "landing_section_cards_heading": "All 12 destinations",
   "landing_section_do_heading": "PLAN & FLY",
@@ -3037,5 +3037,6 @@
   "explore_lens_story_bh_body": "This render traces real light paths (geodesics) around the black hole — the ring is the far side of the disk, lensed over the top. The layers add a curvature grid and a table of how much slower clocks tick this deep in the well.",
   "science_layer_bh_curvature_desc": "A spacetime grid warped by the same geodesics that bend the light — an analogy for curvature, not a literal surface.",
   "science_layer_bh_time_desc": "How much slower clocks tick at the photon sphere, the innermost stable orbit, and farther out — gravitational time dilation, quantified.",
-  "star_index_black_holes": "Black holes"
+  "star_index_black_holes": "Black holes",
+  "landing_footer_privacy_link": "privacy"
 }

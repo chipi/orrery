@@ -792,7 +792,7 @@
   "missions_loading": "Carregando…",
   "nav_brand_home_aria": "Orrery — início",
   "landing_page_title": "Orrery · Um explorador do sistema solar para o navegador",
-  "landing_meta_description": "Explorador do sistema solar baseado em navegador, simulador de missões e enciclopédia. Mecânica orbital real. Catálogo curado de missões. 14 idiomas. Código aberto, sem contas, sem rastreamento.",
+  "landing_meta_description": "Explorador do sistema solar baseado em navegador, simulador de missões e enciclopédia. Mecânica orbital real. Catálogo de missões curado. 14 idiomas. Código aberto, sem contas, sem anúncios, sem rastreadores de terceiros.",
   "landing_hero_tagline": "Um explorador do sistema solar para o navegador.",
   "landing_hero_subhead": "Mecânica orbital real. Catálogo curado de missões. 14 idiomas.",
   "landing_cta_primary": "Explorar o sistema solar",
@@ -834,7 +834,7 @@
   "landing_card_fleet_title": "Frota espacial",
   "landing_card_fleet_desc": "As naves em si — a maior parte da frota histórica e atual, com tripulações, cargas e resultados.",
   "landing_footer_heading": "Sobre este projeto",
-  "landing_footer_about": "O Orrery é de código aberto sob a licença MIT. Sem contas, sem rastreamento. Alguns cookies funcionais lembram seu idioma e seu ponto no tour.",
+  "landing_footer_about": "Orrery é código aberto sob a licença MIT. Sem contas, sem publicidade e nada compartilhado com terceiros. Ele mede como o site é usado — anônimo, sem cookies — e você pode desativar isso. Três cookies funcionais lembram seu idioma, seu lugar no tour e essa escolha. Detalhes na página de {privacy}.",
   "landing_footer_link_github": "GitHub",
   "landing_footer_link_readme": "README",
   "landing_footer_link_license": "Licença",
@@ -3037,5 +3037,6 @@
   "science_layer_bh_curvature_desc": "Uma grade de espaçotempo distorcida pelas mesmas geodésicas que curvam a luz — uma analogia para curvatura, não uma superfície literal.",
   "science_layer_bh_time_desc": "Quanto mais lentamente os relógios marcam o tempo na esfera de fótons, na órbita estável mais interna e mais afastado — dilatação gravitacional do tempo, quantificada.",
   "star_index_black_holes": "Buracos negros",
-  "nav_locale_suggest_label": "Veja esta página no seu idioma"
+  "nav_locale_suggest_label": "Veja esta página no seu idioma",
+  "landing_footer_privacy_link": "privacidade"
 }

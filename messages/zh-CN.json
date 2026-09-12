@@ -818,7 +818,7 @@
   "missions_loading": "正在装入…",
   "nav_brand_home_aria": "奥雷里——家",
   "landing_page_title": "Orrerry – 浏览器的太阳系探索器",
-  "landing_meta_description": "浏览器版太阳系探索器、任务模拟器与百科全书。真实的轨道力学。精选任务目录。14 种语言。开源，无需账户，无跟踪。",
+  "landing_meta_description": "基于浏览器的太阳系探索器、任务模拟器和百科全书。真实的轨道力学。精心策划的任务目录。14 种语言。开源、无账户、无广告、无第三方追踪器。",
   "landing_hero_tagline": "浏览器的太阳系探索器.",
   "landing_hero_subhead": "真实的轨道力学。精选任务目录。14 种语言。",
   "landing_cta_primary": "探索太阳系",
@@ -860,7 +860,7 @@
   "landing_card_fleet_title": "空间飞行队",
   "landing_card_fleet_desc": "宇宙飞船本身——大部分的历史和目前的舰队,都有船员,有效载荷和结果.",
   "landing_footer_heading": "关于这个项目",
-  "landing_footer_about": "Orrery 是基于 MIT 许可的开源项目。无需账户，无跟踪。几个功能性 Cookie 会记住您的语言和导览进度。",
+  "landing_footer_about": "Orrery 是基于 MIT 许可证的开源项目。无账户、无广告、不与第三方共享数据。网站会测量使用情况——匿名、无 Cookie、自托管——你可以关闭此功能。三个功能性 Cookie 会记住你的语言、导览位置和该选择。详情见{privacy}页面。",
   "landing_footer_link_github": "GitHub 图像",
   "landing_footer_link_readme": "读取",
   "landing_footer_link_license": "许可证",
@@ -3037,5 +3037,6 @@
   "science_layer_bh_curvature_desc": "由弯曲光线的相同测地线所扭曲的时空网格——曲率的类比，而非字面意义的表面。",
   "science_layer_bh_time_desc": "光子球、最内层稳定轨道及更远处的时钟走速减缓程度——引力时间膨胀，量化表示。",
   "star_index_black_holes": "黑洞",
-  "nav_locale_suggest_label": "用您的语言查看此页面"
+  "nav_locale_suggest_label": "用您的语言查看此页面",
+  "landing_footer_privacy_link": "隐私"
 }

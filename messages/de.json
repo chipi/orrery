@@ -792,7 +792,7 @@
   "missions_loading": "Wird geladen…",
   "nav_brand_home_aria": "Orrery — Startseite",
   "landing_page_title": "Orrery · Ein Sonnensystem-Explorer für den Browser",
-  "landing_meta_description": "Browser-basierter Sonnensystem-Explorer, Missionssimulator und Enzyklopädie. Echte Orbitalmechanik. Kuratierter Missionskatalog. 14 Sprachen. Open Source, keine Konten, kein Tracking.",
+  "landing_meta_description": "Browser-basierter Sonnensystem-Explorer, Missionssimulatoren und Enzyklopädie. Echte Orbitmechanik. Kuratierter Missionskatalog. 14 Sprachen. Open Source, keine Konten, keine Werbung, keine Tracker von Dritten.",
   "landing_hero_tagline": "Ein Sonnensystem-Explorer für den Browser.",
   "landing_hero_subhead": "Echte Orbitalmechanik. Kuratierter Missionskatalog. 14 Sprachen.",
   "landing_cta_primary": "Sonnensystem erkunden",
@@ -834,7 +834,7 @@
   "landing_card_fleet_title": "Raumfahrt-Flotte",
   "landing_card_fleet_desc": "Die Raumfahrzeuge selbst — der größte Teil der historischen und aktuellen Flotte, mit Besatzungen, Nutzlasten und Ergebnissen.",
   "landing_footer_heading": "Über dieses Projekt",
-  "landing_footer_about": "Orrery ist quelloffen unter der MIT-Lizenz. Keine Konten, kein Tracking. Ein paar funktionale Cookies merken sich deine Sprache und deinen Fortschritt in der Tour.",
+  "landing_footer_about": "Orrery ist Open-Source unter der MIT-Lizenz. Keine Konten, keine Werbung und nichts wird mit Dritten geteilt. Es misst die Nutzung der Website — anonym, ohne Cookies, selbst gehostet — und Sie können das deaktivieren. Drei funktionale Cookies speichern Ihre Sprache, Ihren Ort in der Tour und diese Wahl. Details finden Sie auf der Seite {privacy}.",
   "landing_footer_link_github": "GitHub",
   "landing_footer_link_readme": "README",
   "landing_footer_link_license": "Lizenz",
@@ -3037,5 +3037,6 @@
   "science_layer_bh_curvature_desc": "Ein Raumzeitgitter, verzerrt durch dieselben Geodäten, die das Licht krümmen — eine Analogie für Krümmung, keine buchstäbliche Oberfläche.",
   "science_layer_bh_time_desc": "Wie viel langsamer die Uhren an der Photonensphäre, der innersten stabilen Umlaufbahn und weiter außen gehen — Gravitationszeitdilatation, quantifiziert.",
   "star_index_black_holes": "Schwarze Löcher",
-  "nav_locale_suggest_label": "Diese Seite in deiner Sprache ansehen"
+  "nav_locale_suggest_label": "Diese Seite in deiner Sprache ansehen",
+  "landing_footer_privacy_link": "Datenschutz"
 }

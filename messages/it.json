@@ -792,7 +792,7 @@
   "missions_loading": "Caricamento…",
   "nav_brand_home_aria": "Orrery — pagina iniziale",
   "landing_page_title": "Orrery · Un esploratore del sistema solare per il browser",
-  "landing_meta_description": "Esploratore del sistema solare basato su browser, simulatore di missioni ed enciclopedia. Meccanica orbitale reale. Catalogo curato di missioni. 14 lingue. Open source, senza account, senza tracking.",
+  "landing_meta_description": "Esploratore del sistema solare basato su browser, simulatore di missioni ed enciclopedia. Meccanica orbitale reale. Catalogo di missioni curato. 14 lingue. Open source, nessun account, nessuna pubblicità, nessun tracker di terze parti.",
   "landing_hero_tagline": "Un esploratore del sistema solare per il browser.",
   "landing_hero_subhead": "Meccanica orbitale reale. Catalogo curato di missioni. 14 lingue.",
   "landing_cta_primary": "Esplora il sistema solare",
@@ -834,7 +834,7 @@
   "landing_card_fleet_title": "Flotta dei voli spaziali",
   "landing_card_fleet_desc": "I veicoli stessi — la maggior parte della flotta storica e attuale, con equipaggi, carichi utili e risultati.",
   "landing_footer_heading": "Su questo progetto",
-  "landing_footer_about": "Orrery è open source con licenza MIT. Nessun account, nessun tracciamento. Un paio di cookie funzionali ricordano la tua lingua e il tuo punto nel tour.",
+  "landing_footer_about": "Orrery è open-source secondo la licenza MIT. Nessun account, nessuna pubblicità e niente condiviso con terze parti. Misura come il sito viene utilizzato — anonimamente, senza cookie, self-hosted — e puoi disattivarlo. Tre cookie funzionali ricordano la tua lingua, il tuo punto nel tour e quella scelta. Dettagli nella pagina {privacy}.",
   "landing_footer_link_github": "GitHub",
   "landing_footer_link_readme": "README",
   "landing_footer_link_license": "Licenza",
@@ -3037,5 +3037,6 @@
   "science_layer_bh_curvature_desc": "Una griglia dello spacetime deformata dalle stesse geodetiche che piegano la luce — un'analogia per la curvatura, non una superficie letterale.",
   "science_layer_bh_time_desc": "Quanto più lentamente gli orologi scandiscono il tempo alla sfera dei fotoni, all'orbita stabile più interna, e oltre — dilatazione gravitazionale del tempo, quantificata.",
   "star_index_black_holes": "Buchi neri",
-  "nav_locale_suggest_label": "Visualizza questa pagina nella tua lingua"
+  "nav_locale_suggest_label": "Visualizza questa pagina nella tua lingua",
+  "landing_footer_privacy_link": "privacy"
 }

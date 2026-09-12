@@ -16,6 +16,7 @@
 -->
 <script lang="ts">
   import { assetUrl } from '$lib/asset-url';
+  import { getImageProvenance } from '$lib/data';
   import type { CardSpec } from './card-spec';
 
   type Props = { spec: CardSpec };
@@ -29,9 +30,33 @@
     void spec.figureUrl;
     figFailed = false;
   });
+
+  // The hero's OWN photo credit (ADR-047 TASL) — 72 of the 407 heroes are
+  // CC-BY/-SA where attribution is a license condition, and the card JPEG
+  // leaves the site. Resolved from image-provenance; entity-level
+  // spec.creditLine is the fallback when no row exists (fallback-gallery
+  // heroes). `creditResolved` gates the generator's screenshot so a card
+  // is never captured before its credit rendered.
+  let heroCredit = $state<string | null>(null);
+  let creditResolved = $state(false);
+  $effect(() => {
+    const hero = spec.heroUrl;
+    heroCredit = null;
+    creditResolved = !hero;
+    if (!hero) return;
+    getImageProvenance(hero)
+      .then((e) => {
+        if (spec.heroUrl !== hero) return;
+        if (e) heroCredit = `${e.author ?? e.agency} · ${e.license_short}`;
+      })
+      .catch(() => {})
+      .finally(() => {
+        if (spec.heroUrl === hero) creditResolved = true;
+      });
+  });
 </script>
 
-<article class="card" aria-label={spec.title}>
+<article class="card" aria-label={spec.title} data-credit-resolved={creditResolved}>
   <header class="head">
     <span class="wordmark">ORRERY</span>
     <span class="collection">{spec.collection} · №{spec.number}</span>
@@ -83,9 +108,15 @@
   </div>
 
   <footer class="foot">
-    <span class="foot-num">№ {spec.number}</span>
-    {#if spec.creditLine}<span class="foot-credit">{spec.creditLine}</span>{/if}
-    <span class="foot-slug">{spec.slug}</span>
+    <div class="foot-row">
+      <span class="foot-num">№ {spec.number}</span>
+      <span class="foot-slug">{spec.slug}</span>
+    </div>
+    {#if heroCredit || spec.creditLine}
+      <div class="foot-credit">
+        {heroCredit ? `PHOTO: ${heroCredit}` : spec.creditLine}
+      </div>
+    {/if}
   </footer>
 </article>
 
@@ -260,30 +291,32 @@
 
   .foot {
     margin-top: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 10px;
     padding: 8px 16px 12px;
     border-top: 1px solid var(--card-hairline);
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8px;
     letter-spacing: 0.8px;
     color: var(--card-faint);
-    /* №/slug are LTR tokens — keep their internal order in RTL locales. */
+    /* №/slug/credit are LTR tokens — keep internal order in RTL locales. */
     direction: ltr;
     unicode-bidi: isolate;
+  }
+  .foot-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
   }
   .foot-num {
     font-weight: 700;
     color: var(--card-grey);
   }
   .foot-credit {
-    flex: 1;
-    min-width: 0;
+    margin-top: 3px;
+    font-size: 7px;
+    letter-spacing: 0.6px;
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
-    text-align: center;
   }
 </style>

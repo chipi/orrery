@@ -187,7 +187,12 @@ async function main() {
           console.log(`  ✗ ${key}: card stage reported failure`);
           continue;
         }
-        const card = await pg.waitForSelector('.card', { timeout: 5_000 });
+        // Also wait for the hero's photo credit to resolve (provenance
+        // fetch inside the template) — a screenshot without the credit
+        // would strip CC-BY attribution from the shipped JPEG.
+        const card = await pg.waitForSelector('.card[data-credit-resolved="true"]', {
+          timeout: 10_000,
+        });
         // JPEG q90: ~190-250K vs ~560K avg for PNG (~83MB vs ~190MB across
         // the 407-card corpus); text stays crisp at deviceScaleFactor 3.
         const out = `${OUT_ROOT}/${key}.jpg`;

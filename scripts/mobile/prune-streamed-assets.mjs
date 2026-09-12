@@ -118,6 +118,13 @@ async function targets() {
   const sitemap = path.join(BUILD, 'sitemap.xml');
   if (existsSync(sitemap)) list.push(sitemap);
 
+  // /c/* card share stubs (#547) are crawler/unfurl surfaces — 499
+  // prerendered pages (~7.5 MB) the Capacitor shell never serves: shares
+  // built on-device point at the PUBLIC origin (share.ts STREAM_ORIGIN),
+  // so the stub a recipient opens is always the web deploy's copy.
+  const cardStubs = path.join(BUILD, 'c');
+  if (existsSync(cardStubs)) list.push(cardStubs);
+
   const i18n = path.join(BUILD, 'data', 'i18n');
   if (existsSync(i18n)) {
     for (const entry of await readdir(i18n, { withFileTypes: true })) {

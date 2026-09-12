@@ -45,16 +45,52 @@ export interface CardSpec {
   slug: string;
 }
 
-/** First `n` sentences of a paragraph, tolerant of abbreviations-free prose. */
-function leadSentences(text: string, n: number): string {
-  const parts = text.split(/(?<=[.!?])\s+/).slice(0, n);
-  return parts.join(' ').trim();
+/** Lead of a paragraph: up to `n` sentences, but never past ~`maxChars` —
+ *  falls back to fewer sentences when the join runs long (card real estate
+ *  is fixed; a 5-line story crowds the grid). */
+function leadSentences(text: string, n: number, maxChars = 190): string {
+  const parts = text.split(/(?<=[.!?])\s+/);
+  let out = '';
+  for (const part of parts.slice(0, n)) {
+    const next = out ? `${out} ${part}` : part;
+    if (out && next.length > maxChars) break;
+    out = next;
+  }
+  return out.trim();
 }
 
-/** Shorten a data value for a stat chip — strip parentheticals, cap length. */
+/** Shorten a data value for a stat chip — strip parentheticals, cut on a
+ *  word boundary (never mid-word). */
 function chip(value: string, max = 26): string {
   const cleaned = value.replace(/\s*\([^)]*\)/g, '').trim();
-  return cleaned.length > max ? `${cleaned.slice(0, max - 1)}…` : cleaned;
+  if (cleaned.length <= max) return cleaned;
+  const cut = cleaned.slice(0, max);
+  const boundary = cut.lastIndexOf(' ');
+  return `${(boundary > 8 ? cut.slice(0, boundary) : cut).trimEnd()}…`;
+}
+
+/** Leading quantity of a spec string: '46782 kg launched (CSM…)' → '46,782 KG'. */
+function leadQuantity(value: string): string | null {
+  const m = /^~?([\d][\d,.]*)\s*(kg|t|lb|km\/s|m\/s)/i.exec(value.trim());
+  if (!m) return null;
+  const num = Number(m[1].replace(/,/g, ''));
+  const formatted = Number.isFinite(num) ? num.toLocaleString('en-US') : m[1];
+  return `${value.trim().startsWith('~') ? '~' : ''}${formatted} ${m[2].toUpperCase()}`;
+}
+
+/** ISO date → the card's mono register: '1969-07-16' → 'JUL 16 1969'. */
+function cardDate(iso: string): string {
+  const d = new Date(`${iso}T00:00:00Z`);
+  if (Number.isNaN(d.getTime())) return iso;
+  return d
+    .toLocaleDateString('en-US', {
+      month: 'short',
+      day: 'numeric',
+      year: 'numeric',
+      timeZone: 'UTC',
+    })
+    .replace(',', '')
+    .toUpperCase();
 }
 
 export function cardForMission(
@@ -67,14 +103,21 @@ export function cardForMission(
   const number = pos >= 0 ? `${String(pos + 1).padStart(3, '0')}/${total}` : `—/${total}`;
 
   const year = mission.year ? String(mission.year) : '';
-  const kicker = [mission.agency, mission.type ?? mission.dest, year].filter(Boolean).join(' · ');
+  // The overlay `type` often ends '· <STATUS>' ('CREWED LANDER · FLOWN');
+  // the stat grid already carries STATUS — strip the dupe from the kicker.
+  const typeLine = (mission.type ?? mission.dest)
+    .replace(new RegExp(`\\s*·\\s*${mission.status}\\s*$`, 'i'), '')
+    .trim();
+  const kicker = [mission.agency, typeLine, year].filter(Boolean).join(' · ');
 
   const stats: CardStat[] = [];
-  if (mission.departure_date) stats.push({ label: 'LAUNCH', value: mission.departure_date });
+  if (mission.departure_date)
+    stats.push({ label: 'LAUNCH', value: cardDate(mission.departure_date) });
   if (mission.vehicle) stats.push({ label: 'VEHICLE', value: chip(mission.vehicle) });
   if (mission.transit_days) stats.push({ label: 'TRANSIT', value: `${mission.transit_days} D` });
   if (mission.delta_v) stats.push({ label: 'ΔV', value: chip(mission.delta_v, 18) });
-  if (mission.payload) stats.push({ label: 'PAYLOAD', value: chip(mission.payload) });
+  if (mission.payload)
+    stats.push({ label: 'PAYLOAD', value: leadQuantity(mission.payload) ?? chip(mission.payload) });
   stats.push({ label: 'STATUS', value: mission.status });
 
   return {

@@ -205,8 +205,11 @@
     width: 96px;
     height: 72px;
     object-fit: contain;
-    /* Monochrome register — the figure is drafted, not decorative. */
-    filter: grayscale(1) brightness(1.35) contrast(1.05);
+    /* Monochrome register — the figure is drafted, not decorative.
+       screen-blend sinks the thumbnail's dark background into the card
+       and leaves the path reading as white linework. */
+    mix-blend-mode: screen;
+    filter: grayscale(1) brightness(1.9) contrast(1.15);
   }
   .fig figcaption {
     font-family: var(--font-mono, 'Space Mono', monospace);

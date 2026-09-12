@@ -146,8 +146,6 @@
     role="presentation"
     onclick={(e) => e.target === e.currentTarget && onClose()}
   >
-    <!-- svelte-ignore a11y_no_noninteractive_tabindex — the dialog container
-         takes initial focus per the modal focus contract. -->
     <div
       class="sheet"
       role="dialog"

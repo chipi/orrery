@@ -46,6 +46,7 @@ const KIND_VERSION = {
   'mars-site': 1,
   planet: 1,
   moon: 1,
+  'small-body': 1,
 };
 
 const sha = (buf) => createHash('sha256').update(buf).digest('hex').slice(0, 16);
@@ -121,6 +122,11 @@ function enumerateTargets() {
       kind: 'moon',
       id: s.id,
       dataPaths: ['static/data/satellites.json', `i18n-src/en-US/satellites/${s.id}.json`],
+    })),
+    ...JSON.parse(readFileSync('static/data/small-bodies.json', 'utf8')).bodies.map((b) => ({
+      kind: 'small-body',
+      id: b.id,
+      dataPaths: ['static/data/small-bodies.json', `i18n-src/en-US/small-bodies/${b.id}.json`],
     })),
   ];
 }

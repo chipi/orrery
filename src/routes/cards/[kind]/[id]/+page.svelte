@@ -26,7 +26,10 @@
     getSatellites,
     getSatelliteGallery,
     getSatelliteI18n,
+    getSmallBodyGallery,
+    getSmallBodyI18n,
   } from '$lib/data';
+  import smallBodiesData from '$data/small-bodies.json';
   import { spacecraftDiagramPath, launcherCutawayPath } from '$lib/spacecraft-diagrams';
   import CollectibleCard from '$lib/cards/CollectibleCard.svelte';
   import {
@@ -35,7 +38,9 @@
     cardForPlanet,
     cardForSatellite,
     cardForSite,
+    cardForSmallBody,
     type CardSpec,
+    type SmallBodyLike,
   } from '$lib/cards/card-spec';
   import { pickCardHero } from '$lib/cards/pick-card-hero';
 
@@ -100,6 +105,17 @@
       ]);
       const entry = i18n ? { ...sat, description: i18n.description ?? sat.description } : sat;
       return cardForSatellite(entry, satellites, await pickCardHero(gallery));
+    }
+    if (kind === 'small-body') {
+      const bodies = smallBodiesData.bodies as SmallBodyLike[];
+      const body = bodies.find((b) => b.id === id);
+      if (!body) return null;
+      const [gallery, i18n] = await Promise.all([
+        getSmallBodyGallery(id).catch(() => [] as string[]),
+        getSmallBodyI18n('en-US', id).catch(() => null),
+      ]);
+      const entry = i18n ? { ...body, description: i18n.description ?? body.description } : body;
+      return cardForSmallBody(entry, bodies, await pickCardHero(gallery));
     }
     return null;
   }

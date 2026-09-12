@@ -2,6 +2,10 @@
   import { page } from '$app/state';
   import Panel from './Panel.svelte';
   import { getSmallBodyGallery, getSmallBodyI18n, type SmallBodyI18n } from '$lib/data';
+  import smallBodiesData from '$data/small-bodies.json';
+  import { cardForSmallBody, type CardSpec, type SmallBodyLike } from '$lib/cards/card-spec';
+  import CardOverlay from '$lib/cards/CardOverlay.svelte';
+  import { pickCardHero } from '$lib/cards/pick-card-hero';
   import { linkifyMission, loadMissionIndex } from '$lib/missions-linkify';
   import { formatKm } from '$lib/format';
   import type { ScienceSectionRef } from '$types/planet';
@@ -89,6 +93,21 @@
   );
   const loc = $derived(localeFromPage(page));
 
+  // #547 S5c — the collectible card. The bundled data file provides the
+  // collection list for numbering; the overlay description (translated)
+  // feeds the story when loaded.
+  let cardOpen = $state(false);
+  let cardHero = $state<string | undefined>(undefined);
+  let cardSpec = $derived<CardSpec | null>(
+    body
+      ? cardForSmallBody(
+          { ...body, description: overlay?.description ?? body.description },
+          smallBodiesData.bodies as SmallBodyLike[],
+          cardHero,
+        )
+      : null,
+  );
+
   let lastId = $state<string | null>(null);
   $effect(() => {
     if (body && body.id !== lastId) {
@@ -97,8 +116,13 @@
       lightboxSrc = null;
       gallery = [];
       overlay = null;
+      cardOpen = false;
+      cardHero = undefined;
       void getSmallBodyGallery(body.id).then((urls) => {
         if (body && body.id === lastId) gallery = urls;
+        void pickCardHero(urls).then((h) => {
+          if (body && body.id === lastId) cardHero = h;
+        });
       });
       const fetchId = body.id;
       void getSmallBodyI18n(loc, fetchId).then((o) => {
@@ -397,10 +421,57 @@
         <ImageCredit src={lightboxSrc} />
       </div>
     {/if}
+
+    <!-- #547 S5c — every small body carries its collectible card. -->
+    {#if cardSpec}
+      <div class="card-cta-bar">
+        <button
+          type="button"
+          class="cta-card"
+          onclick={() => (cardOpen = true)}
+          data-testid="open-card-btn"
+        >
+          {m.card_open_button()}
+        </button>
+      </div>
+    {/if}
   {/if}
 </Panel>
 
+{#if cardSpec}
+  <CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
+{/if}
+
 <style>
+  /* #547 — card CTA in the quiet register (mirrors the missions panel). */
+  .card-cta-bar {
+    padding: 12px 0 4px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    margin-top: 12px;
+  }
+  .cta-card {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 4px;
+    color: #fff;
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: 10px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+      background 120ms,
+      border-color 120ms;
+  }
+  .cta-card:hover,
+  .cta-card:focus-visible {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.45);
+    outline: none;
+  }
   .head {
     padding: 0 0 12px;
     border-bottom: 1px solid var(--color-border);

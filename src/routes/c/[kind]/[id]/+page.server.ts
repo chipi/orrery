@@ -59,6 +59,12 @@ const satelliteRows = (): Array<{ id: string; parent_planet_id: string }> =>
       satellites: Array<{ id: string; parent_planet_id: string }>;
     }
   ).satellites;
+const smallBodyRows = (): Array<{ id: string; name: string; description?: string }> =>
+  (
+    JSON.parse(readFileSync('static/data/small-bodies.json', 'utf8')) as {
+      bodies: Array<{ id: string; name: string; description?: string }>;
+    }
+  ).bodies;
 
 /** Sites whose canonical card is NOT a mission card (see siteAliasMissionId). */
 const ownSites = (body: 'moon' | 'mars', missionIds: Set<string>): SiteRow[] =>
@@ -76,6 +82,7 @@ export const entries: EntryGenerator = () => {
     ...ownSites('mars', missionIds).map((s) => ({ kind: 'mars-site', id: s.id })),
     ...planetIds().map((id) => ({ kind: 'planet', id })),
     ...satelliteRows().map((s) => ({ kind: 'moon', id: s.id })),
+    ...smallBodyRows().map((b) => ({ kind: 'small-body', id: b.id })),
   ];
 };
 
@@ -160,6 +167,24 @@ export const load: PageServerLoad = ({ params }) => {
       sat.name,
       (overlay.description ?? sat.description)?.split(/(?<=[.!?])\s+/)[0] ?? '',
       `/explore?id=${row.parent_planet_id}:${params.id}`,
+    );
+  }
+
+  if (params.kind === 'small-body') {
+    const row = smallBodyRows().find((b) => b.id === params.id);
+    if (!row) throw error(404, 'unknown small body');
+    let overlay: { name?: string; description?: string } = {};
+    try {
+      overlay = JSON.parse(
+        readFileSync(`i18n-src/en-US/small-bodies/${params.id}.json`, 'utf8'),
+      ) as { name?: string; description?: string };
+    } catch {
+      /* base description fallback below */
+    }
+    return shared(
+      overlay.name ?? row.name,
+      (overlay.description ?? row.description)?.split(/(?<=[.!?])\s+/)[0] ?? '',
+      `/explore?id=${params.id}`,
     );
   }
 

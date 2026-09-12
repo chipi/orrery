@@ -5,9 +5,12 @@ import {
   cardForPlanet,
   cardForSatellite,
   cardForSite,
+  cardForSmallBody,
+  earthObjectCardAlias,
   fleetAliasesMission,
   planetCardList,
   siteAliasMissionId,
+  type SmallBodyLike,
 } from './card-spec';
 import type { Mission, MissionIndex } from '$types/mission';
 import type { FleetEntry, FleetIndexEntry } from '$types/fleet';
@@ -327,5 +330,73 @@ describe('cardForSatellite', () => {
     expect(spec.stats.find((s) => s.label === 'VISITS')?.value).toBe('3');
     expect(spec.factLabel).toBe('SURFACE');
     expect(spec.shareHref).toBe('/c/moon/europa');
+  });
+});
+
+describe('cardForSmallBody', () => {
+  const CERES = {
+    id: 'ceres',
+    name: 'Ceres',
+    type: 'dwarf',
+    a: 2.766,
+    e: 0.0758,
+    T: 1681.6,
+    incl: 10.59,
+    radius_km: 469.7,
+    discovered: '1801',
+    mission_visited: 'Dawn (NASA, 2015)',
+    description: 'Largest object in the asteroid belt. Surface ice suggests a buried ocean.',
+  } as SmallBodyLike;
+  const spec = cardForSmallBody(CERES, [CERES, { id: 'x' } as SmallBodyLike]);
+
+  it('builds the SMALL BODIES card with type kicker + orbit stats', () => {
+    expect(spec.collection).toBe('SMALL BODIES');
+    expect(spec.number).toBe('001/2');
+    expect(spec.kicker).toBe('DWARF PLANET · 2.77 AU');
+    expect(spec.stats.find((s) => s.label === 'PERIOD')?.value).toBe('4.6 Y');
+    expect(spec.stats.find((s) => s.label === 'DISCOVERED')?.value).toBe('1801');
+  });
+
+  it('uses the visiting spacecraft as the fact (parentheticals stripped)', () => {
+    expect(spec.factLabel).toBe('VISITED BY');
+    expect(spec.fact).toBe('Dawn');
+    expect(spec.shareHref).toBe('/c/small-body/ceres');
+  });
+
+  it('drops orbit stats for hyperbolic interlopers', () => {
+    const mua = cardForSmallBody(
+      { ...CERES, id: 'oumuamua', type: 'interstellar' } as SmallBodyLike,
+      [CERES],
+    );
+    expect(mua.kicker).toBe('INTERSTELLAR OBJECT');
+    expect(mua.stats.find((s) => s.label === 'ORBIT')).toBeUndefined();
+  });
+});
+
+describe('earthObjectCardAlias', () => {
+  const FLEET_IDX = [{ id: 'galileo-gnss' }, { id: 'iss' }] as FleetIndexEntry[];
+  const MISSIONS = [
+    { id: 'lro', dest: 'MOON' },
+    { id: 'galileo', dest: 'JUPITER' },
+  ] as MissionIndex[];
+
+  it('aliases lunar orbiters to their mission by id + body match', () => {
+    expect(earthObjectCardAlias({ id: 'lro', body: 'MOON' }, MISSIONS, FLEET_IDX)).toEqual({
+      kind: 'mission',
+      id: 'lro',
+    });
+  });
+
+  it('never aliases the Galileo GNSS constellation to the Jupiter mission', () => {
+    const alias = earthObjectCardAlias(
+      { id: 'galileo', body: 'EARTH', fleet_refs: [{ id: 'galileo-gnss' }] },
+      MISSIONS,
+      FLEET_IDX,
+    );
+    expect(alias).toEqual({ kind: 'fleet', id: 'galileo-gnss' });
+  });
+
+  it('returns null for objects with no canonical card (GEO belt marker)', () => {
+    expect(earthObjectCardAlias({ id: 'geo', body: 'EARTH' }, MISSIONS, FLEET_IDX)).toBeNull();
   });
 });

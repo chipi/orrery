@@ -22,12 +22,29 @@
   import ScienceChip from '$lib/components/ScienceChip.svelte';
   import LearnLink from '$lib/components/LearnLink.svelte';
   import ImageCredit from '$lib/components/ImageCredit.svelte';
-  import { getEarthObjectGallery } from '$lib/data';
+  import {
+    getEarthObjectGallery,
+    getFleet,
+    getFleetIndex,
+    getMission,
+    getMissionIndex,
+  } from '$lib/data';
   import { panelGalleryCredit } from '$lib/image-credits';
   import { formatNumber } from '$lib/format';
   import { localeFromPage } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
   import type { EarthObject } from '$types/earth-object';
+  import type { Mission, MissionIndex } from '$types/mission';
+  import type { FleetEntry, FleetIndexEntry } from '$types/fleet';
+  import {
+    cardForFleet,
+    cardForMission,
+    earthObjectCardAlias,
+    type CardSpec,
+  } from '$lib/cards/card-spec';
+  import CardOverlay from '$lib/cards/CardOverlay.svelte';
+  import { pickCardHero } from '$lib/cards/pick-card-hero';
+  import { spacecraftDiagramPath, launcherCutawayPath } from '$lib/spacecraft-diagrams';
   import type { OrbitRegime } from '$types/orbit-regime';
   import RegimeChip from '$lib/components/RegimeChip.svelte';
   import { regimeById } from '$lib/physics/util/orbit-regime-match';
@@ -59,18 +76,69 @@
   let panelLightbox = $state<string | null>(null);
   let lastSelectedId = $state<string | null>(null);
 
+  // #547 S5c — the collectible card. Every earth-object aliases an
+  // existing canonical card (lunar orbiters → mission, constellations/
+  // stations/observatories → their fleet_refs fleet entry); objects
+  // matching neither (the generic GEO belt marker) show no card CTA.
+  let cardOpen = $state(false);
+  let cardHero = $state<string | undefined>(undefined);
+  let cardMissionIndex = $state<MissionIndex[]>([]);
+  let cardFleetIndex = $state<FleetIndexEntry[]>([]);
+  let cardAliasMission = $state<Mission | null>(null);
+  let cardAliasFleet = $state<FleetEntry | null>(null);
+  let cardSpec = $derived.by<CardSpec | null>(() => {
+    if (!selected) return null;
+    if (cardAliasMission) return cardForMission(cardAliasMission, cardMissionIndex, cardHero);
+    if (cardAliasFleet)
+      return cardForFleet(
+        cardAliasFleet,
+        cardFleetIndex,
+        cardHero,
+        spacecraftDiagramPath(cardAliasFleet.id) ??
+          launcherCutawayPath(cardAliasFleet.id) ??
+          undefined,
+      );
+    return null;
+  });
+
   $effect(() => {
     if (selected && selected.id !== lastSelectedId) {
       panelTab = 'overview';
       panelLightbox = null;
       panelGallery = [];
+      cardOpen = false;
+      cardHero = undefined;
+      cardAliasMission = null;
+      cardAliasFleet = null;
       lastSelectedId = selected.id;
       // Earth-object ids often match a mission id (e.g. "lro",
       // "hubble", "jwst", "chandrayaan1") so getEarthObjectGallery's
       // built-in mission-gallery fallback is enough.
       void getEarthObjectGallery(selected.id).then((urls: string[]) => {
         if (selected && selected.id === lastSelectedId) panelGallery = urls;
+        void pickCardHero(urls).then((h) => {
+          if (selected && selected.id === lastSelectedId) cardHero = h;
+        });
       });
+      const sid = selected.id;
+      const eo = selected;
+      void (async () => {
+        if (cardMissionIndex.length === 0) cardMissionIndex = await getMissionIndex();
+        if (cardFleetIndex.length === 0) cardFleetIndex = await getFleetIndex();
+        const alias = earthObjectCardAlias(eo, cardMissionIndex, cardFleetIndex);
+        if (!alias) return;
+        if (alias.kind === 'mission') {
+          const row = cardMissionIndex.find((mi) => mi.id === alias.id)!;
+          const mission = await getMission(alias.id, row.dest, localeFromPage(page));
+          if (selected && selected.id === lastSelectedId && sid === lastSelectedId)
+            cardAliasMission = mission;
+        } else {
+          const row = cardFleetIndex.find((fi) => fi.id === alias.id)!;
+          const entry = await getFleet(alias.id, row.category, localeFromPage(page));
+          if (selected && selected.id === lastSelectedId && sid === lastSelectedId)
+            cardAliasFleet = entry;
+        }
+      })();
     }
   });
 
@@ -346,8 +414,26 @@
         {/if}
       {/if}
     {/if}
+
+    <!-- #547 S5c — canonical collectible card (mission or fleet alias). -->
+    {#if cardSpec}
+      <div class="card-cta-bar">
+        <button
+          type="button"
+          class="cta-card"
+          onclick={() => (cardOpen = true)}
+          data-testid="open-card-btn"
+        >
+          {m.card_open_button()}
+        </button>
+      </div>
+    {/if}
   {/if}
 </Panel>
+
+{#if cardSpec}
+  <CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
+{/if}
 
 {#if panelLightbox}
   <button
@@ -365,6 +451,35 @@
 {/if}
 
 <style>
+  /* #547 — card CTA in the quiet register (mirrors the missions panel). */
+  .card-cta-bar {
+    padding: 12px 0 4px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    margin-top: 12px;
+  }
+  .cta-card {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 4px;
+    color: #fff;
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: 10px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+      background 120ms,
+      border-color 120ms;
+  }
+  .cta-card:hover,
+  .cta-card:focus-visible {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.45);
+    outline: none;
+  }
   .head {
     padding: 0 0 12px;
     border-bottom: 1px solid var(--color-border);

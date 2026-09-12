@@ -415,3 +415,94 @@ export function cardForSatellite(
     shareHref: `/c/moon/${entry.id}`,
   };
 }
+
+/** Structural shape of /explore's small-body records (the full type lives
+ *  inline in SmallBodyPanel; resolvers only need these fields). */
+export interface SmallBodyLike {
+  id: string;
+  name: string;
+  type: 'dwarf' | 'comet' | 'interstellar' | 'asteroid' | 'kbo';
+  a: number;
+  e: number;
+  T: number;
+  incl: number;
+  radius_km?: number;
+  discovered?: string;
+  mission_visited?: string | null;
+  description?: string;
+}
+
+const SMALL_BODY_TYPE_LABEL: Record<SmallBodyLike['type'], string> = {
+  dwarf: 'DWARF PLANET',
+  comet: 'COMET',
+  interstellar: 'INTERSTELLAR OBJECT',
+  asteroid: 'ASTEROID',
+  kbo: 'KUIPER BELT OBJECT',
+};
+
+export function cardForSmallBody(
+  body: SmallBodyLike,
+  bodies: SmallBodyLike[],
+  heroUrl?: string,
+): CardSpec {
+  const pos = bodies.findIndex((b) => b.id === body.id);
+  const total = bodies.length;
+  const number = pos >= 0 ? `${String(pos + 1).padStart(3, '0')}/${total}` : `—/${total}`;
+
+  const typeLabel = SMALL_BODY_TYPE_LABEL[body.type];
+  // Hyperbolic interlopers ('Oumuamua) have no meaningful semi-major axis.
+  const boundOrbit = body.type !== 'interstellar' && body.a > 0;
+  const kicker = boundOrbit ? `${typeLabel} · ${body.a.toFixed(2)} AU` : typeLabel;
+
+  const stats: CardStat[] = [];
+  if (body.radius_km)
+    stats.push({ label: 'RADIUS', value: `${body.radius_km.toLocaleString('en-US')} KM` });
+  if (boundOrbit) {
+    stats.push({ label: 'ORBIT', value: `${body.a.toFixed(2)} AU` });
+    stats.push({
+      label: 'PERIOD',
+      value: body.T < 1000 ? `${Math.round(body.T)} D` : `${(body.T / 365.25).toFixed(1)} Y`,
+    });
+  }
+  if (body.incl != null) stats.push({ label: 'INCLINATION', value: `${body.incl.toFixed(1)}°` });
+  const year = discoveryYear(body.discovered ?? undefined);
+  if (year) stats.push({ label: 'DISCOVERED', value: year });
+  stats.push({ label: 'ECCENTRICITY', value: body.e.toFixed(2) });
+
+  return {
+    collection: 'SMALL BODIES',
+    number,
+    title: body.name,
+    kicker,
+    story: body.description ? leadSentences(body.description, 2) : '',
+    stats: stats.slice(0, 6),
+    fact: body.mission_visited ? chip(body.mission_visited, 60) : undefined,
+    factLabel: body.mission_visited ? 'VISITED BY' : undefined,
+    heroUrl,
+    creditLine: 'SOURCES: NASA / ESA',
+    slug: `orrery.day/c/small-body/${body.id}`,
+    imagePath: `/images/cards/small-body/${body.id}.jpg`,
+    shareHref: `/c/small-body/${body.id}`,
+  };
+}
+
+/**
+ * Canonical card for an /earth (or /moon-ring) orbital object. Nearly every
+ * earth-object IS something that already has a card: lunar orbiters are
+ * missions (id parity, guarded by dest↔body so the Galileo GNSS
+ * constellation never aliases the Galileo Jupiter mission), and
+ * constellations/stations/observatories carry fleet_refs to their fleet
+ * entry (ISS, Starlink, JWST…). Objects matching neither (the generic GEO
+ * belt marker) get no card.
+ */
+export function earthObjectCardAlias(
+  eo: { id: string; body?: string; fleet_refs?: Array<{ id: string }> },
+  missionIndex: MissionIndex[],
+  fleetIndex: FleetIndexEntry[],
+): { kind: 'mission' | 'fleet'; id: string } | null {
+  const mi = missionIndex.find((r) => r.id === eo.id);
+  if (mi && mi.dest === eo.body) return { kind: 'mission', id: eo.id };
+  const fref = eo.fleet_refs?.find((r) => fleetIndex.some((fi) => fi.id === r.id));
+  if (fref) return { kind: 'fleet', id: fref.id };
+  return null;
+}

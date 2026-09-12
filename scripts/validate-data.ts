@@ -463,6 +463,9 @@ validateFile(join(DATA_ROOT, 'rockets.json'), validateRockets);
 validateFile(join(DATA_ROOT, 'earth-objects.json'), validateEarthObjects);
 validateFile(join(DATA_ROOT, 'moon-sites.json'), validateSurfaceSites);
 validateFile(join(DATA_ROOT, 'mars-sites.json'), validateSurfaceSites);
+// venus-sites.json shares the SurfaceSite shape (loaded raw by getVenusSites —
+// no i18n overlay layer exists for Venus yet, so only the schema is gated).
+validateFile(join(DATA_ROOT, 'venus-sites.json'), validateSurfaceSites);
 validateFile(join(DATA_ROOT, 'sun.json'), validateSun);
 validateFile(join(DATA_ROOT, 'iss-modules.json'), validateIssModules);
 validateFile(join(DATA_ROOT, 'culture-doors.json'), validateCultureDoors);
@@ -1348,7 +1351,7 @@ if (!existsSync(VIDEO_PROVENANCE_PATH)) {
       }
     }
   }
-  for (const f of ['moon-sites.json', 'mars-sites.json']) {
+  for (const f of ['moon-sites.json', 'mars-sites.json', 'venus-sites.json']) {
     const p = join(DATA_ROOT, f);
     if (!existsSync(p)) continue;
     try {

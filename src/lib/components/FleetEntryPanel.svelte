@@ -85,8 +85,12 @@
   // the same picture as the mission card everywhere (the fleet gallery's
   // lead can be a different photo of the same craft).
   let aliasHero = $state<string | undefined>(undefined);
+  // True until the alias question is answered for the current entry — no
+  // card derives meanwhile, so an aliased entry never flashes a fleet-typed
+  // card while its mission record is in flight.
+  let aliasPending = $state(false);
   let cardSpec = $derived<CardSpec | null>(
-    !entry
+    !entry || aliasPending
       ? null
       : aliasMission && aliasMission.id === entry.id
         ? cardForMission(aliasMission, missionIndex, aliasHero)
@@ -125,19 +129,24 @@
       cardOpen = false;
       aliasMission = null;
       aliasHero = undefined;
+      aliasPending = true;
       const forId = entry.id;
       void (async () => {
-        if (fleetIndex.length === 0) fleetIndex = await getFleetIndex();
-        if (missionIndex.length === 0) missionIndex = await getMissionIndex();
-        if (!fleetAliasesMission(forId, missionIndex)) return;
-        const row = missionIndex.find((mi) => mi.id === forId)!;
-        const [mission, missionGallery] = await Promise.all([
-          getMission(forId, row.dest, localeFromPage(page)),
-          getMissionGallery(forId).catch(() => [] as string[]),
-        ]);
-        if (entry && entry.id === lastId && forId === lastId) {
-          aliasMission = mission;
-          aliasHero = missionGallery[0];
+        try {
+          if (fleetIndex.length === 0) fleetIndex = await getFleetIndex();
+          if (missionIndex.length === 0) missionIndex = await getMissionIndex();
+          if (!fleetAliasesMission(forId, missionIndex)) return;
+          const row = missionIndex.find((mi) => mi.id === forId)!;
+          const [mission, missionGallery] = await Promise.all([
+            getMission(forId, row.dest, localeFromPage(page)),
+            getMissionGallery(forId).catch(() => [] as string[]),
+          ]);
+          if (entry && entry.id === lastId && forId === lastId) {
+            aliasMission = mission;
+            aliasHero = missionGallery[0];
+          }
+        } finally {
+          if (entry && entry.id === lastId && forId === lastId) aliasPending = false;
         }
       })();
     }

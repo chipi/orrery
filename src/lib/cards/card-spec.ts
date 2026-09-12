@@ -116,11 +116,14 @@ export function cardForMission(
   const number = pos >= 0 ? `${String(pos + 1).padStart(3, '0')}/${total}` : `—/${total}`;
 
   const year = mission.year ? String(mission.year) : '';
-  // The overlay `type` often ends '· <STATUS>' ('CREWED LANDER · FLOWN');
-  // the stat grid already carries STATUS — strip the dupe from the kicker.
-  const typeLine = (mission.type ?? mission.dest)
-    .replace(new RegExp(`\\s*·\\s*${mission.status}\\s*$`, 'i'), '')
-    .trim();
+  // The overlay `type` is 'CLASS · STATUS' in every locale (all 125 en
+  // records; de spot-check confirms the last segment is the translated
+  // status). The stat grid carries STATUS, so drop the LAST segment —
+  // matching against the English enum missed translated suffixes
+  // ('LANDER MIT BESATZUNG · GEFLOGEN' kept GEFLOGEN).
+  const typeSegments = (mission.type ?? mission.dest).split('·').map((p) => p.trim());
+  const typeLine =
+    typeSegments.length > 1 ? typeSegments.slice(0, -1).join(' · ') : typeSegments[0];
   const kicker = [mission.agency, typeLine, year].filter(Boolean).join(' · ');
 
   const stats: CardStat[] = [];

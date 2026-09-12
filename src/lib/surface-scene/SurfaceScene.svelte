@@ -868,6 +868,9 @@
   // same picture as the mission card everywhere (site galleries lead with
   // different photos of the same landing).
   let cardAliasHero = $state<string | undefined>(undefined);
+  // True until the alias question is answered — an aliased site must not
+  // flash a site-typed card while its mission record is in flight.
+  let cardAliasPending = $state(false);
   let cardFleetEntry = $state<FleetEntry | null>(null);
   let cardFleetIndex = $state<FleetIndexEntry[]>([]);
   let cardSpec = $derived.by<CardSpec | null>(() => {
@@ -877,6 +880,7 @@
       return cardFleetEntry && cardFleetEntry.id === site.id
         ? cardForFleet(cardFleetEntry, cardFleetIndex, panelGallery[0])
         : null;
+    if (cardAliasPending) return null;
     if (cardAliasMission) return cardForMission(cardAliasMission, cardMissionIndex, cardAliasHero);
     if (body === 'moon' || body === 'mars') return cardForSite(site, sites, body, panelGallery[0]);
     return null; // venus non-aliased sites (none today) — no card
@@ -892,6 +896,7 @@
       cardOpen = false;
       cardAliasMission = null;
       cardAliasHero = undefined;
+      cardAliasPending = body !== 'earth';
       cardFleetEntry = null;
       lastSelectedId = selected.id;
       loadPanelData({
@@ -911,24 +916,29 @@
       });
       // Card canonical-entity resolution (fire-and-forget, still-current guarded).
       void (async () => {
-        if (body === 'earth') {
-          if (cardFleetIndex.length === 0) cardFleetIndex = await getFleetIndex();
-          const entry = await getFleet(sid, 'launch-site', localeFromPage(page));
+        try {
+          if (body === 'earth') {
+            if (cardFleetIndex.length === 0) cardFleetIndex = await getFleetIndex();
+            const entry = await getFleet(sid, 'launch-site', localeFromPage(page));
+            if (selected != null && selected.id === lastSelectedId && sid === lastSelectedId)
+              cardFleetEntry = entry;
+            return;
+          }
+          if (cardMissionIndex.length === 0) cardMissionIndex = await getMissionIndex();
+          const aliasId = siteAliasMissionId(site, cardMissionIndex);
+          if (!aliasId) return;
+          const row = cardMissionIndex.find((mi) => mi.id === aliasId)!;
+          const [mission, missionGallery] = await Promise.all([
+            getMission(aliasId, row.dest, localeFromPage(page)),
+            getMissionGallery(aliasId).catch(() => [] as string[]),
+          ]);
+          if (selected != null && selected.id === lastSelectedId && sid === lastSelectedId) {
+            cardAliasMission = mission;
+            cardAliasHero = missionGallery[0];
+          }
+        } finally {
           if (selected != null && selected.id === lastSelectedId && sid === lastSelectedId)
-            cardFleetEntry = entry;
-          return;
-        }
-        if (cardMissionIndex.length === 0) cardMissionIndex = await getMissionIndex();
-        const aliasId = siteAliasMissionId(site, cardMissionIndex);
-        if (!aliasId) return;
-        const row = cardMissionIndex.find((mi) => mi.id === aliasId)!;
-        const [mission, missionGallery] = await Promise.all([
-          getMission(aliasId, row.dest, localeFromPage(page)),
-          getMissionGallery(aliasId).catch(() => [] as string[]),
-        ]);
-        if (selected != null && selected.id === lastSelectedId && sid === lastSelectedId) {
-          cardAliasMission = mission;
-          cardAliasHero = missionGallery[0];
+            cardAliasPending = false;
         }
       })();
     }

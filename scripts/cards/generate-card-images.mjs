@@ -35,6 +35,7 @@ const TEMPLATE_SOURCES = [
   'src/lib/cards/CollectibleCard.svelte',
   'src/lib/cards/card-spec.ts',
   'src/routes/cards/mission/[id]/+page.svelte',
+  'src/routes/cards/fleet/[id]/+page.svelte',
 ];
 
 const sha = (buf) => createHash('sha256').update(buf).digest('hex').slice(0, 16);
@@ -43,16 +44,47 @@ function templateHash() {
   return sha(TEMPLATE_SOURCES.map((f) => readFileSync(f, 'utf8')).join('\n'));
 }
 
-function missionInputHash(id, dest, tpl) {
+function inputHash(dataPaths, tpl) {
   const parts = [tpl];
-  const destLower = dest.toLowerCase();
-  for (const p of [
-    `static/data/missions/${destLower}/${id}.json`,
-    `i18n-src/en-US/missions/${destLower}/${id}.json`,
-  ]) {
+  for (const p of dataPaths) {
     if (existsSync(p)) parts.push(readFileSync(p, 'utf8'));
   }
   return sha(parts.join('\n'));
+}
+
+/**
+ * One render target per canonical card. Fleet entries that share their id
+ * with a mission (Perseverance etc.) are the SAME real thing — their
+ * canonical card is mission/<id>, so the fleet duplicate is skipped (the
+ * panel aliases to the mission card too; see card-spec fleetAliasesMission).
+ */
+function enumerateTargets() {
+  const missions = JSON.parse(readFileSync('static/data/missions/index.json', 'utf8'));
+  const fleet = JSON.parse(readFileSync('static/data/fleet/index.json', 'utf8'));
+  const missionIds = new Set(missions.map((mi) => mi.id));
+  return [
+    ...missions.map((mi) => {
+      const destLower = mi.dest.toLowerCase();
+      return {
+        kind: 'mission',
+        id: mi.id,
+        dataPaths: [
+          `static/data/missions/${destLower}/${mi.id}.json`,
+          `i18n-src/en-US/missions/${destLower}/${mi.id}.json`,
+        ],
+      };
+    }),
+    ...fleet
+      .filter((fi) => !missionIds.has(fi.id))
+      .map((fi) => ({
+        kind: 'fleet',
+        id: fi.id,
+        dataPaths: [
+          `static/data/fleet/${fi.category}/${fi.id}.json`,
+          `i18n-src/en-US/fleet/${fi.category}/${fi.id}.json`,
+        ],
+      })),
+  ];
 }
 
 function loadManifest() {
@@ -79,20 +111,21 @@ function maybeStartServer() {
 
 async function main() {
   const only = process.argv.slice(2).filter((a) => !a.startsWith('--'));
-  const index = JSON.parse(readFileSync('static/data/missions/index.json', 'utf8'));
-  const missions = only.length ? index.filter((mi) => only.includes(mi.id)) : index;
+  const all = enumerateTargets();
+  const targets = only.length ? all.filter((t) => only.includes(t.id)) : all;
 
   const tpl = templateHash();
   const manifest = loadManifest();
   mkdirSync(`${OUT_ROOT}/mission`, { recursive: true });
+  mkdirSync(`${OUT_ROOT}/fleet`, { recursive: true });
 
-  const todo = missions.filter((mi) => {
-    const key = `mission/${mi.id}`;
-    const hash = missionInputHash(mi.id, mi.dest, tpl);
-    const out = `${OUT_ROOT}/mission/${mi.id}.png`;
+  const todo = targets.filter((t) => {
+    const key = `${t.kind}/${t.id}`;
+    const hash = inputHash(t.dataPaths, tpl);
+    const out = `${OUT_ROOT}/${key}.png`;
     return manifest.entries[key] !== hash || !existsSync(out);
   });
-  console.log(`cards: ${missions.length} mission(s), ${todo.length} to render (rest cached)`);
+  console.log(`cards: ${targets.length} target(s), ${todo.length} to render (rest cached)`);
   if (todo.length === 0) return;
 
   const server = maybeStartServer();
@@ -106,8 +139,9 @@ async function main() {
   const pg = await ctx.newPage();
 
   let ok = 0;
-  for (const mi of todo) {
-    const url = `${BASE_URL}/cards/mission/${mi.id}`;
+  for (const t of todo) {
+    const key = `${t.kind}/${t.id}`;
+    const url = `${BASE_URL}/cards/${key}`;
     try {
       await pg.goto(url, { waitUntil: 'domcontentloaded' });
       await pg.waitForSelector('[data-card-ready="true"], [data-card-failed="true"]', {
@@ -115,17 +149,17 @@ async function main() {
       });
       const failed = await pg.$('[data-card-failed="true"]');
       if (failed) {
-        console.log(`  ✗ ${mi.id}: card stage reported failure`);
+        console.log(`  ✗ ${key}: card stage reported failure`);
         continue;
       }
       const card = await pg.waitForSelector('.card', { timeout: 5_000 });
-      const out = `${OUT_ROOT}/mission/${mi.id}.png`;
+      const out = `${OUT_ROOT}/${key}.png`;
       await card.screenshot({ path: out });
-      manifest.entries[`mission/${mi.id}`] = missionInputHash(mi.id, mi.dest, tpl);
+      manifest.entries[key] = inputHash(t.dataPaths, tpl);
       ok += 1;
-      process.stdout.write(`  ${mi.id}`);
+      process.stdout.write(`  ${key}`);
     } catch (e) {
-      console.log(`\n  ✗ ${mi.id}: ${e.message.split('\n')[0]}`);
+      console.log(`\n  ✗ ${key}: ${e.message.split('\n')[0]}`);
     }
   }
   process.stdout.write('\n');
@@ -133,7 +167,7 @@ async function main() {
   await browser.close();
   server?.kill();
   writeFileSync(MANIFEST, JSON.stringify(manifest, null, 2) + '\n');
-  console.log(`DONE ${ok}/${todo.length} rendered → ${OUT_ROOT}/mission/`);
+  console.log(`DONE ${ok}/${todo.length} rendered → ${OUT_ROOT}/`);
   if (ok < todo.length) process.exitCode = 1;
 }
 

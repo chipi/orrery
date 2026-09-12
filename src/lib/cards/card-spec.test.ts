@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
-import { cardForMission } from './card-spec';
+import { cardForFleet, cardForMission, fleetAliasesMission } from './card-spec';
 import type { Mission, MissionIndex } from '$types/mission';
+import type { FleetEntry, FleetIndexEntry } from '$types/fleet';
 
 const INDEX: MissionIndex[] = [
   { id: 'sputnik1', agency: 'USSR', dest: 'EARTH', status: 'FLOWN', year: 1957 },
@@ -76,5 +77,79 @@ describe('cardForMission', () => {
     const orphan = cardForMission({ ...APOLLO, id: 'ghost' } as Mission, INDEX);
     expect(orphan.number).toBe('—/2');
     expect(orphan.heroUrl).toBeUndefined();
+  });
+});
+
+const FLEET_INDEX: FleetIndexEntry[] = [
+  { id: 'saturn-v', category: 'launcher' },
+  { id: 'f-1', category: 'engine' },
+  { id: 'perseverance', category: 'rover' },
+] as FleetIndexEntry[];
+
+const SATURN_V: FleetEntry = {
+  id: 'saturn-v',
+  name: 'Saturn V',
+  category: 'launcher',
+  agency: 'NASA',
+  country: 'USA',
+  manufacturer: 'Boeing / North American Aviation / Douglas',
+  first_flight: '1967-11-09',
+  status: 'RETIRED',
+  era: '1969-1981',
+  epoch: 'lunar-era',
+  best_known_for: 'Sent humans to the Moon',
+  linked_missions: ['apollo8', 'apollo11'],
+  credit: 'Skeleton entry for /fleet (PRD-012 v0.2 / Phase A scaffold).',
+  links: [],
+  description:
+    'The largest machine that had ever flown. Five F-1 engines at its base threw 45 tonnes toward the Moon.',
+} as unknown as FleetEntry;
+
+describe('cardForFleet', () => {
+  const spec = cardForFleet(SATURN_V, FLEET_INDEX, '/images/fleet/saturn-v/01.webp');
+
+  it('numbers against the fleet index and carries the FLEET collection', () => {
+    expect(spec.collection).toBe('FLEET');
+    expect(spec.number).toBe('001/3');
+  });
+
+  it('builds the kicker from agency · category · first-flight year', () => {
+    expect(spec.kicker).toBe('NASA · LAUNCHER · 1967');
+  });
+
+  it('maps the hardware stats (first flight, builder, missions count)', () => {
+    expect(spec.stats.find((s) => s.label === 'FIRST FLIGHT')?.value).toBe('NOV 9 1967');
+    expect(spec.stats.find((s) => s.label === 'BUILDER')?.value).toBe('Boeing');
+    expect(spec.stats.find((s) => s.label === 'MISSIONS')?.value).toBe('2');
+    expect(spec.stats.find((s) => s.label === 'STATUS')?.value).toBe('RETIRED');
+  });
+
+  it('uses best_known_for as the KNOWN FOR fact + fleet share artifacts', () => {
+    expect(spec.factLabel).toBe('KNOWN FOR');
+    expect(spec.fact).toBe('Sent humans to the Moon');
+    expect(spec.slug).toBe('orrery.day/c/fleet/saturn-v');
+    expect(spec.imagePath).toBe('/images/cards/fleet/saturn-v.png');
+    expect(spec.shareHref).toBe('/c/fleet/saturn-v');
+  });
+
+  it('captions the figure ANATOMY only when a figure is passed', () => {
+    expect(spec.figureCaption).toBeUndefined();
+    const withFig = cardForFleet(SATURN_V, FLEET_INDEX, undefined, '/images/anatomy/saturn-v.webp');
+    expect(withFig.figureCaption).toBe('ANATOMY');
+  });
+
+  it('falls back to the tagline when a skeleton entry has no description', () => {
+    const skeleton = cardForFleet(
+      { ...SATURN_V, description: undefined, tagline: 'Sent humans to the Moon' } as FleetEntry,
+      FLEET_INDEX,
+    );
+    expect(skeleton.story).toBe('Sent humans to the Moon');
+  });
+});
+
+describe('fleetAliasesMission', () => {
+  it('flags fleet ids that exist in the mission index', () => {
+    expect(fleetAliasesMission('apollo11', INDEX)).toBe(true);
+    expect(fleetAliasesMission('saturn-v', INDEX)).toBe(false);
   });
 });

@@ -13,6 +13,7 @@
  * type = adding a resolver; no new content authoring.
  */
 import type { Mission, MissionIndex } from '$types/mission';
+import type { FleetEntry, FleetIndexEntry } from '$types/fleet';
 
 export interface CardStat {
   label: string;
@@ -143,5 +144,67 @@ export function cardForMission(
     slug: `orrery.day/c/mission/${mission.id}`,
     imagePath: `/images/cards/mission/${mission.id}.png`,
     shareHref: `/c/mission/${mission.id}`,
+  };
+}
+
+/**
+ * True when a fleet entry shares its id with a mission — the same real thing
+ * on two surfaces (Perseverance the rover IS Perseverance the mission; 47
+ * craft overlap this way). The mission card is canonical for those: it has
+ * the richer spec set (launch, ΔV, transit, trajectory figure) and one
+ * collectible per real thing keeps the collection honest. Panels alias to
+ * the mission card; the generator + share stubs skip the fleet duplicate.
+ */
+export function fleetAliasesMission(fleetId: string, missionIndex: MissionIndex[]): boolean {
+  return missionIndex.some((mi) => mi.id === fleetId);
+}
+
+export function cardForFleet(
+  entry: FleetEntry,
+  index: FleetIndexEntry[],
+  heroUrl?: string,
+  /** Anatomy/cutaway illustration when one exists (caller resolves via
+   *  spacecraftDiagramPath — kept out of this module so it stays pure). */
+  figureUrl?: string,
+): CardSpec {
+  const pos = index.findIndex((fi) => fi.id === entry.id);
+  const total = index.length;
+  const number = pos >= 0 ? `${String(pos + 1).padStart(3, '0')}/${total}` : `—/${total}`;
+
+  const year = entry.first_flight ? entry.first_flight.slice(0, 4) : '';
+  const category = entry.category.replace(/-/g, ' ').toUpperCase();
+  const kicker = [entry.agency, category, year].filter(Boolean).join(' · ');
+
+  const stats: CardStat[] = [];
+  if (entry.first_flight)
+    stats.push({ label: 'FIRST FLIGHT', value: cardDate(entry.first_flight) });
+  // Multi-contractor strings ('Boeing / North American / Douglas') double-
+  // truncate in the half-width stat cell — lead with the prime contractor.
+  if (entry.manufacturer)
+    stats.push({ label: 'BUILDER', value: chip(entry.manufacturer.split(' / ')[0]) });
+  if (entry.country) stats.push({ label: 'COUNTRY', value: chip(entry.country) });
+  if (entry.era) stats.push({ label: 'ERA', value: entry.era });
+  if (entry.linked_missions?.length)
+    stats.push({ label: 'MISSIONS', value: String(entry.linked_missions.length) });
+  stats.push({ label: 'STATUS', value: entry.status });
+
+  return {
+    collection: 'FLEET',
+    number,
+    title: entry.name,
+    kicker,
+    story: entry.description
+      ? leadSentences(entry.description, 2)
+      : (entry.tagline ?? entry.best_known_for ?? ''),
+    stats: stats.slice(0, 6),
+    fact: entry.best_known_for,
+    factLabel: entry.best_known_for ? 'KNOWN FOR' : undefined,
+    heroUrl,
+    figureUrl,
+    figureCaption: figureUrl ? 'ANATOMY' : undefined,
+    creditLine: `SOURCES: ${chip(entry.agency, 60)}`,
+    slug: `orrery.day/c/fleet/${entry.id}`,
+    imagePath: `/images/cards/fleet/${entry.id}.png`,
+    shareHref: `/c/fleet/${entry.id}`,
   };
 }

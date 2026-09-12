@@ -2,8 +2,19 @@
   import Panel from './Panel.svelte';
   import AgencyRow from './AgencyRow.svelte';
   import { base } from '$app/paths';
+  import { page } from '$app/state';
   import { assetUrl } from '$lib/asset-url';
-  import { getBadges } from '$lib/data';
+  import { getBadges, getFleetIndex, getMission, getMissionIndex } from '$lib/data';
+  import { localeFromPage } from '$lib/locale';
+  import {
+    cardForFleet,
+    cardForMission,
+    fleetAliasesMission,
+    type CardSpec,
+  } from '$lib/cards/card-spec';
+  import CardOverlay from '$lib/cards/CardOverlay.svelte';
+  import type { Mission, MissionIndex } from '$types/mission';
+  import type { FleetIndexEntry } from '$types/fleet';
   import { spacecraftDiagramPath, launcherCutawayPath } from '$lib/spacecraft-diagrams';
   import { loadLadder, ladderSources } from '$lib/image-srcset';
   import { track, trackGalleryImageOpen } from '$lib/analytics';
@@ -57,6 +68,25 @@
   // PRD-031 / RFC-033 S2 — linked videos interleaved into the fleet gallery.
   let videos = $state<VideoProvenanceEntry[]>([]);
   let playerVideo = $state<VideoProvenanceEntry | null>(null);
+  // #547 S4 — the collectible card. Entries that ARE missions (shared id,
+  // e.g. Perseverance) alias to the canonical MISSION card; the rest get a
+  // FLEET card numbered against the fleet index.
+  let cardOpen = $state(false);
+  let fleetIndex = $state<FleetIndexEntry[]>([]);
+  let missionIndex = $state<MissionIndex[]>([]);
+  let aliasMission = $state<Mission | null>(null);
+  let cardSpec = $derived<CardSpec | null>(
+    !entry
+      ? null
+      : aliasMission && aliasMission.id === entry.id
+        ? cardForMission(aliasMission, missionIndex, gallery[0])
+        : cardForFleet(
+            entry,
+            fleetIndex,
+            gallery[0],
+            spacecraftDiagramPath(entry.id) ?? launcherCutawayPath(entry.id) ?? undefined,
+          ),
+  );
 
   $effect(() => {
     if (entry && entry.id !== lastId) {
@@ -77,6 +107,18 @@
       void getVideosForEntity(entry.id).then((v) => {
         if (entry && entry.id === lastId) videos = v;
       });
+      // #547 S4 — card numbering + mission-alias resolution.
+      cardOpen = false;
+      aliasMission = null;
+      const forId = entry.id;
+      void (async () => {
+        if (fleetIndex.length === 0) fleetIndex = await getFleetIndex();
+        if (missionIndex.length === 0) missionIndex = await getMissionIndex();
+        if (!fleetAliasesMission(forId, missionIndex)) return;
+        const row = missionIndex.find((mi) => mi.id === forId)!;
+        const mission = await getMission(forId, row.dest, localeFromPage(page));
+        if (entry && entry.id === lastId && forId === lastId) aliasMission = mission;
+      })();
     }
   });
 
@@ -731,8 +773,27 @@
         {/if}
       {/if}
     </div>
+
+    <!-- #547 S4 — every fleet entry carries its collectible card. Same
+         quiet register as the missions panel's card CTA. -->
+    {#if cardSpec}
+      <div class="card-cta-bar">
+        <button
+          type="button"
+          class="cta-card"
+          onclick={() => (cardOpen = true)}
+          data-testid="open-card-btn"
+        >
+          <span class="cta-text">{m.card_open_button()}</span>
+        </button>
+      </div>
+    {/if}
   {/if}
 </Panel>
+
+{#if cardSpec}
+  <CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
+{/if}
 
 {#if lightboxSrc}
   <button
@@ -750,6 +811,36 @@
 <style>
   .head {
     padding: 12px 16px 4px;
+  }
+  /* #547 S4 — card CTA, mirroring MissionPanel's quiet .cta-card register. */
+  .card-cta-bar {
+    padding: 12px 16px 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    margin-top: 12px;
+    flex-shrink: 0;
+  }
+  .cta-card {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 4px;
+    color: #fff;
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: 10px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+      background 120ms,
+      border-color 120ms;
+  }
+  .cta-card:hover,
+  .cta-card:focus-visible {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.45);
+    outline: none;
   }
   /* .agency-row / .agency-badge / .status base now from AgencyRow.svelte;
      status chips converted from filled to the shared bordered treatment. */

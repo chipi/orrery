@@ -110,6 +110,14 @@ async function targets() {
   list.push(path.join(BUILD, 'images'));
   list.push(path.join(BUILD, 'audio'));
 
+  // sitemap.xml is a search-engine artifact — ~6.6 MB now that it carries
+  // per-URL hreflang alternates (270 routes × 14 locales, #519). It is never
+  // used on-device (the Capacitor shell serves no crawlers), so prune it off
+  // the mobile bundle; the web build keeps it. Without this it pushed the
+  // mobile build over the 75 MB OTA budget.
+  const sitemap = path.join(BUILD, 'sitemap.xml');
+  if (existsSync(sitemap)) list.push(sitemap);
+
   const i18n = path.join(BUILD, 'data', 'i18n');
   if (existsSync(i18n)) {
     for (const entry of await readdir(i18n, { withFileTypes: true })) {

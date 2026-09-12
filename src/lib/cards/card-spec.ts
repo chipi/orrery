@@ -43,6 +43,10 @@ export interface CardSpec {
   creditLine: string;
   /** Human-readable share slug shown on the card. */
   slug: string;
+  /** Build-generated PNG of this card (S2 generator) — the Share-card
+   *  file + og:image. Root-relative; may not exist yet for new entities
+   *  (the overlay probes and degrades to link-only). */
+  imagePath?: string;
 }
 
 /** Lead of a paragraph: up to `n` sentences, but never past ~`maxChars` —
@@ -134,5 +138,6 @@ export function cardForMission(
     figureCaption: 'TRAJECTORY',
     creditLine: mission.credit ? `SOURCES: ${chip(mission.credit, 60)}` : '',
     slug: `orrery.day/missions/${mission.id}`,
+    imagePath: `/images/cards/mission/${mission.id}.png`,
   };
 }

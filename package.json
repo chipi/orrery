@@ -10,7 +10,7 @@
   "bugs": {
     "url": "https://github.com/chipi/orrery/issues"
   },
-  "author": "Marko Dragoljevi\u0107",
+  "author": "Marko Dragoljević",
   "keywords": [
     "orrery",
     "solar-system",
@@ -123,7 +123,8 @@
     "preflight:full:body": "npm run typecheck && npm run typecheck:scripts && npm run lint && npm run test && npm run validate-data && npm run audio:check-cost && npm run check-no-secrets:all && npm run build",
     "preflight:full": "node scripts/with-lock.mjs preflight -- npm run preflight:full:body",
     "build-i18n-bundles": "node scripts/build-i18n-bundles.mjs",
-    "validate-prod": "node scripts/validate-prod.mjs"
+    "validate-prod": "node scripts/validate-prod.mjs",
+    "build-cards": "node scripts/cards/generate-card-images.mjs"
   },
   "devDependencies": {
     "@anthropic-ai/sdk": "^0.96.0",

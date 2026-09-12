@@ -1,25 +1,71 @@
 <!--
-  CardOverlay (#547 S1) — modal presenting an entity's collectible card
-  with the share affordance. Shares the CURRENT url (panels already sync
-  their ?id= deep link), so the link IS the card's address. PNG export is
-  Slice 2; this overlay is the render + URL-share surface.
+  CardOverlay (#547 S1+S2) — modal presenting an entity's collectible card
+  with BOTH share affordances:
+    - Share link: the current URL (panels already sync their ?id= deep link)
+    - Share card: the build-generated PNG (S2 generator) handed to the
+      native share sheet where files are supported, downloaded otherwise.
+      Probes the PNG on open; a 404 (entity newer than the last card
+      build) hides the button rather than sharing a broken file.
 -->
 <script lang="ts">
   import * as m from '$lib/paraglide/messages';
   import { shareCurrent } from '$lib/share';
+  import { assetUrl } from '$lib/asset-url';
   import CollectibleCard from './CollectibleCard.svelte';
   import type { CardSpec } from './card-spec';
 
   type Props = { spec: CardSpec; open: boolean; onClose: () => void };
   let { spec, open, onClose }: Props = $props();
 
-  let feedback = $state<'shared' | 'copied' | null>(null);
+  let feedback = $state<'shared' | 'copied' | 'saved' | null>(null);
+  let cardImageOk = $state(false);
 
-  async function share(): Promise<void> {
+  // Probe the generated PNG when the overlay opens (cheap HEAD).
+  $effect(() => {
+    cardImageOk = false;
+    if (!open || !spec.imagePath) return;
+    const url = assetUrl(spec.imagePath);
+    void fetch(url, { method: 'HEAD' })
+      .then((r) => (cardImageOk = r.ok))
+      .catch(() => (cardImageOk = false));
+  });
+
+  function flash(kind: 'shared' | 'copied' | 'saved'): void {
+    feedback = kind;
+    setTimeout(() => (feedback = null), 2200);
+  }
+
+  async function shareLink(): Promise<void> {
     const result = await shareCurrent();
-    if (result === 'shared' || result === 'copied') {
-      feedback = result;
-      setTimeout(() => (feedback = null), 2200);
+    if (result === 'shared' || result === 'copied') flash(result);
+  }
+
+  async function shareCard(): Promise<void> {
+    if (!spec.imagePath) return;
+    const url = assetUrl(spec.imagePath);
+    try {
+      const blob = await (await fetch(url)).blob();
+      const file = new File(
+        [blob],
+        `orrery-card-${spec.title.replace(/\s+/g, '-').toLowerCase()}.png`,
+        {
+          type: 'image/png',
+        },
+      );
+      if (typeof navigator !== 'undefined' && navigator.canShare?.({ files: [file] })) {
+        await navigator.share({ files: [file], title: spec.title });
+        flash('shared');
+        return;
+      }
+      // Desktop fallback — download the PNG.
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = file.name;
+      a.click();
+      URL.revokeObjectURL(a.href);
+      flash('saved');
+    } catch {
+      /* share sheet dismissed or fetch failed — no feedback */
     }
   }
 
@@ -39,7 +85,18 @@
     <div class="sheet" role="dialog" aria-modal="true" aria-label={spec.title}>
       <CollectibleCard {spec} />
       <div class="actions">
-        <button type="button" class="act primary" onclick={share}>
+        {#if cardImageOk}
+          <button type="button" class="act primary" onclick={shareCard} data-testid="share-card">
+            {feedback === 'saved' ? m.card_saved() : m.card_share_card()}
+          </button>
+        {/if}
+        <button
+          type="button"
+          class="act"
+          class:primary={!cardImageOk}
+          onclick={shareLink}
+          data-testid="share-card-link"
+        >
           {feedback === 'copied' ? m.card_link_copied() : m.card_share_link()}
         </button>
         <button type="button" class="act" onclick={onClose}>{m.card_close()}</button>

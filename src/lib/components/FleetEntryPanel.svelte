@@ -13,6 +13,7 @@
     type CardSpec,
   } from '$lib/cards/card-spec';
   import CardOverlay from '$lib/cards/CardOverlay.svelte';
+  import { pickCardHero } from '$lib/cards/pick-card-hero';
   import type { Mission, MissionIndex } from '$types/mission';
   import type { FleetIndexEntry } from '$types/fleet';
   import { spacecraftDiagramPath, launcherCutawayPath } from '$lib/spacecraft-diagrams';
@@ -75,15 +76,17 @@
   let fleetIndex = $state<FleetIndexEntry[]>([]);
   let missionIndex = $state<MissionIndex[]>([]);
   let aliasMission = $state<Mission | null>(null);
+  // Card hero ≠ panel hero — see pickCardHero (panoramas crop to terrain).
+  let cardHero = $state<string | undefined>(undefined);
   let cardSpec = $derived<CardSpec | null>(
     !entry
       ? null
       : aliasMission && aliasMission.id === entry.id
-        ? cardForMission(aliasMission, missionIndex, gallery[0])
+        ? cardForMission(aliasMission, missionIndex, cardHero)
         : cardForFleet(
             entry,
             fleetIndex,
-            gallery[0],
+            cardHero,
             spacecraftDiagramPath(entry.id) ?? launcherCutawayPath(entry.id) ?? undefined,
           ),
   );
@@ -101,8 +104,12 @@
       // pull engagement.
       track('fleet-entry-view', { id: entry.id, category: entry.category });
       void getBadges().then((b) => (badges = b));
+      cardHero = undefined;
       void galleryFetcher(entry.id).then((urls) => {
         if (entry && entry.id === lastId) gallery = urls;
+        void pickCardHero(urls).then((h) => {
+          if (entry && entry.id === lastId) cardHero = h;
+        });
       });
       void getVideosForEntity(entry.id).then((v) => {
         if (entry && entry.id === lastId) videos = v;

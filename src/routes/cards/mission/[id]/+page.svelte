@@ -13,6 +13,7 @@
   import { getMissionGallery } from '$lib/data';
   import CollectibleCard from '$lib/cards/CollectibleCard.svelte';
   import { cardForMission, type CardSpec } from '$lib/cards/card-spec';
+  import { pickCardHero } from '$lib/cards/pick-card-hero';
 
   let spec = $state<CardSpec | null>(null);
   let ready = $state(false);
@@ -37,7 +38,7 @@
           failed = true;
           return;
         }
-        const s = cardForMission(mission, index, gallery[0]);
+        const s = cardForMission(mission, index, await pickCardHero(gallery));
         // Decode the hero before declaring ready (screenshot fidelity).
         if (s.heroUrl) {
           await new Promise<void>((resolve) => {

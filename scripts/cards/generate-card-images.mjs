@@ -34,6 +34,7 @@ const BASE_URL = process.env.BASE_URL ?? `http://127.0.0.1:${PORT}`;
 const TEMPLATE_SOURCES = [
   'src/lib/cards/CollectibleCard.svelte',
   'src/lib/cards/card-spec.ts',
+  'src/lib/cards/pick-card-hero.ts',
   'src/routes/cards/mission/[id]/+page.svelte',
   'src/routes/cards/fleet/[id]/+page.svelte',
 ];

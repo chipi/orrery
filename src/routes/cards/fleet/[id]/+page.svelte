@@ -10,6 +10,7 @@
   import { spacecraftDiagramPath, launcherCutawayPath } from '$lib/spacecraft-diagrams';
   import CollectibleCard from '$lib/cards/CollectibleCard.svelte';
   import { cardForFleet, type CardSpec } from '$lib/cards/card-spec';
+  import { pickCardHero } from '$lib/cards/pick-card-hero';
 
   let spec = $state<CardSpec | null>(null);
   let ready = $state(false);
@@ -37,7 +38,7 @@
         const s = cardForFleet(
           entry,
           index,
-          gallery[0],
+          await pickCardHero(gallery),
           spacecraftDiagramPath(id) ?? launcherCutawayPath(id) ?? undefined,
         );
         // Decode the hero before declaring ready (screenshot fidelity).

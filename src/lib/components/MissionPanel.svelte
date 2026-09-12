@@ -8,6 +8,7 @@
   import { getMissionGallery, getMarsSites, getMoonSites, getBadges } from '$lib/data';
   import { getMissionIndex } from '$lib/data/missions';
   import { cardForMission, type CardSpec } from '$lib/cards/card-spec';
+  import { pickCardHero } from '$lib/cards/pick-card-hero';
   import CardOverlay from '$lib/cards/CardOverlay.svelte';
   import type { MissionIndex } from '$types/mission';
   import type { SurfaceSite } from '$types/surface-site';
@@ -62,8 +63,11 @@
   // the collection numbering; the spec derives from data already on hand.
   let cardOpen = $state(false);
   let missionIndex = $state<MissionIndex[]>([]);
+  // Card hero ≠ panel hero: panoramas lead panel galleries but crop to
+  // terrain-only in the card band — pick the first subject-shaped image.
+  let cardHero = $state<string | undefined>(undefined);
   let cardSpec = $derived<CardSpec | null>(
-    mission ? cardForMission(mission, missionIndex, gallery[0]) : null,
+    mission ? cardForMission(mission, missionIndex, cardHero) : null,
   );
   let badges = $state<Record<string, string>>({});
   /** Thumbs under GALLERY tab: skip first image when a hero duplicates it. */
@@ -108,8 +112,12 @@
       // Popularity signal: a mission detail was opened. `open` gates it so
       // a prefetched/derived mission that never shows isn't counted.
       if (open) trackMissionView(mission.id, page.url.pathname);
+      cardHero = undefined;
       void getMissionGallery(mission.id).then((urls) => {
         if (mission && mission.id === lastId) gallery = urls;
+        void pickCardHero(urls).then((h) => {
+          if (mission && mission.id === lastId) cardHero = h;
+        });
       });
       void getVideosForEntity(mission.id).then((v) => {
         if (mission && mission.id === lastId) videos = v;

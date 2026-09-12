@@ -20,6 +20,15 @@
 
   type Props = { spec: CardSpec };
   let { spec }: Props = $props();
+
+  // The figure is speculative (cardForMission points at a trajectory
+  // thumbnail that ~50 missions don't have) — collapse it on load error
+  // instead of rendering the browser's broken-image glyph.
+  let figFailed = $state(false);
+  $effect(() => {
+    void spec.figureUrl;
+    figFailed = false;
+  });
 </script>
 
 <article class="card" aria-label={spec.title}>
@@ -51,9 +60,15 @@
           </div>
         {/each}
       </dl>
-      {#if spec.figureUrl}
+      {#if spec.figureUrl && !figFailed}
         <figure class="fig">
-          <img src={assetUrl(spec.figureUrl)} alt="" loading="lazy" decoding="async" />
+          <img
+            src={assetUrl(spec.figureUrl)}
+            alt=""
+            loading="lazy"
+            decoding="async"
+            onerror={() => (figFailed = true)}
+          />
           {#if spec.figureCaption}<figcaption>{spec.figureCaption}</figcaption>{/if}
         </figure>
       {/if}

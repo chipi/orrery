@@ -1,5 +1,11 @@
 {
-  "version": "1.0",
-  "source_audit": "(manual curation — populate via /dev/slice-a-review or hand-edit)",
-  "overrides": {}
+ "version": "1.0",
+ "source_audit": "(manual curation — populate via /dev/slice-a-review or hand-edit)",
+ "overrides": {
+  "mars": {
+   "slot": "03.jpg",
+   "reason": "manual hero override — Marko 2026-09-12 (no-panorama hero rule, card/hero pass)",
+   "approved_at": "2026-09-12"
+  }
+ }
 }

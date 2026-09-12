@@ -7,8 +7,10 @@
     aliased duplicates (fleet/site entries that ARE missions) are never
     requested here; the generator enumerates canonical cards only.
 
-    Ready gating: the spec must be resolved AND the hero image decoded —
-    a screenshot before decode would ship a card with a black hero.
+    Ready gating: the spec must be resolved AND the hero + figure images
+    decoded — a screenshot before decode ships a black hero or a half-
+    rendered trajectory/anatomy figure (sputnik1's trajectory raced on the
+    2026-09-12 hero pass).
   */
   import { page } from '$app/state';
   import { getMission, getMissionIndex } from '$lib/data/missions';
@@ -129,15 +131,15 @@
           failed = true;
           return;
         }
-        // Decode the hero before declaring ready (screenshot fidelity).
-        if (s.heroUrl) {
-          await new Promise<void>((resolveDecode) => {
+        // Decode hero + figure before declaring ready (screenshot fidelity).
+        const decode = (url: string) =>
+          new Promise<void>((resolveDecode) => {
             const img = new Image();
             img.onload = () => resolveDecode();
             img.onerror = () => resolveDecode();
-            img.src = s.heroUrl!;
+            img.src = url;
           });
-        }
+        await Promise.all([s.heroUrl, s.figureUrl].filter(Boolean).map((u) => decode(u!)));
         spec = s;
         ready = true;
       } catch {

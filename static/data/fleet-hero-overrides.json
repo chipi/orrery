@@ -1,437 +1,467 @@
 {
-  "version": "1.0",
-  "generated_at": "2026-06-20T15:33:22.355Z",
-  "source_audit": "fleet-hero-audit.md",
-  "overrides": {
-    "apollo-csm-block-ii": {
-      "slot": "02.jpg",
-      "reason": "subject names a different entity than apollo-csm-block-ii",
-      "approved_at": "2026-06-12"
-    },
-    "ariane-1": {
-      "slot": "04.jpg",
-      "reason": "score: 4 < threshold 6; vision-rejected: score-below-threshold; subject names a different entity than ariane-1",
-      "approved_at": "2026-06-12"
-    },
-    "atlantis": {
-      "slot": "03.jpg",
-      "reason": "subject names a different entity than atlantis",
-      "approved_at": "2026-06-12"
-    },
-    "atlas-slv-3d": {
-      "slot": "04.jpg",
-      "reason": "subject names a different entity than atlas-slv-3d",
-      "approved_at": "2026-06-12"
-    },
-    "beresheet": {
-      "slot": "04.jpg",
-      "reason": "category: diagram — not a hero candidate; score: 5 < threshold 6; vision-rejected: category-diagram; subject names a different entity than beresheet",
-      "approved_at": "2026-06-12"
-    },
-    "buran": {
-      "slot": "04.jpg",
-      "reason": "G4 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
-      "approved_at": "2026-06-23"
-    },
-    "cargo-dragon-v1": {
-      "slot": "02.jpg",
-      "reason": "subject names a different entity than cargo-dragon-v1",
-      "approved_at": "2026-06-12"
-    },
-    "cassini": {
-      "slot": "01.jpg",
-      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 01)",
-      "approved_at": "2026-06-20"
-    },
-    "chandra": {
-      "slot": "04.jpg",
-      "reason": "subject names a different entity than chandra",
-      "approved_at": "2026-06-12"
-    },
-    "clementine": {
-      "slot": "02.jpg",
-      "reason": "vision-rejected: score-below-threshold; subject names a different entity than clementine",
-      "approved_at": "2026-06-12"
-    },
-    "columbia": {
-      "slot": "04.jpg",
-      "reason": "G4 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
-      "approved_at": "2026-06-23"
-    },
-    "crew-dragon-iva": {
-      "slot": "02.jpg",
-      "reason": "category: people-only — no asset visible; score: 3 < threshold 6; vision-rejected: category-people",
-      "approved_at": "2026-06-12"
-    },
-    "dawn": {
-      "slot": "01.jpg",
-      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 01)",
-      "approved_at": "2026-06-20"
-    },
-    "discovery": {
-      "slot": "03.jpg",
-      "reason": "subject names a different entity than discovery",
-      "approved_at": "2026-06-12"
-    },
-    "endeavour": {
-      "slot": "04.jpg",
-      "reason": "subject names a different entity than endeavour",
-      "approved_at": "2026-06-12"
-    },
-    "falcon-9": {
-      "slot": "04.jpg",
-      "reason": "category: people-only — no asset visible; score: 2 < threshold 6; vision-rejected: category-people",
-      "approved_at": "2026-06-12"
-    },
-    "feitian": {
-      "slot": "02.jpg",
-      "reason": "category: people-only — no asset visible; vision-rejected: category-people; subject names a different entity than feitian",
-      "approved_at": "2026-06-12"
-    },
-    "galileo": {
-      "slot": "02.jpg",
-      "reason": "manual hero override — Marko 2026-06-29 (fleet review: reuse mission imagery; hero = Jupiter+Io artist render at slot 02)",
-      "approved_at": "2026-06-29"
-    },
-    "gemini": {
-      "slot": "03.jpg",
-      "reason": "category: people-only — no asset visible; vision-rejected: category-people",
-      "approved_at": "2026-06-12"
-    },
-    "juno": {
-      "slot": "01.jpg",
-      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 01)",
-      "approved_at": "2026-06-20"
-    },
-    "long-march-3b": {
-      "slot": "02.jpg",
-      "reason": "category: diagram — not a hero candidate; score: 4 < threshold 6; vision-rejected: category-diagram",
-      "approved_at": "2026-06-12"
-    },
-    "lvm3": {
-      "slot": "05.jpg",
-      "reason": "subject names a different entity than lvm3",
-      "approved_at": "2026-06-12"
-    },
-    "magellan": {
-      "slot": "05.jpg",
-      "reason": "subject names a different entity than magellan",
-      "approved_at": "2026-06-12"
-    },
-    "mars-express": {
-      "slot": "03.jpg",
-      "reason": "score: 2 < threshold 6; vision-rejected: score-below-threshold",
-      "approved_at": "2026-06-12"
-    },
-    "mars-polar-lander": {
-      "slot": "02.jpg",
-      "reason": "score: 4 < threshold 6; vision-rejected: score-below-threshold; subject names a different entity than mars-polar-lander",
-      "approved_at": "2026-06-12"
-    },
-    "mro": {
-      "slot": "01.jpg",
-      "reason": "manual hero override — Marko 2026-06-29 (fleet review: reuse mars-site MRO spacecraft render as hero; keep HiRISE science terrain in gallery)",
-      "approved_at": "2026-06-29"
-    },
-    "new-shepard": {
-      "slot": "02.jpg",
-      "reason": "G2 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
-      "approved_at": "2026-06-23"
-    },
-    "opportunity": {
-      "slot": "04.jpg",
-      "reason": "score: 3 < threshold 6; vision-rejected: score-below-threshold; subject names a different entity than opportunity",
-      "approved_at": "2026-06-12"
-    },
-    "phobos-2": {
-      "slot": "01.jpg",
-      "reason": "manual hero override — Marko 2026-06-29 (fleet review: G1)",
-      "approved_at": "2026-06-29"
-    },
-    "pioneer-10": {
-      "slot": "05.jpg",
-      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 05)",
-      "approved_at": "2026-06-20"
-    },
-    "pioneer-11": {
-      "slot": "05.jpg",
-      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 05)",
-      "approved_at": "2026-06-20"
-    },
-    "pragyan": {
-      "slot": "03.jpg",
-      "reason": "G3 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
-      "approved_at": "2026-06-23"
-    },
-    "progress-ms": {
-      "slot": "02.jpg",
-      "reason": "subject names a different entity than progress-ms",
-      "approved_at": "2026-06-12"
-    },
-    "rosetta": {
-      "slot": "04.jpg",
-      "reason": "manual hero override — Marko 2026-06-29 (fleet review: G3)",
-      "approved_at": "2026-06-29"
-    },
-    "saturn-ib": {
-      "slot": "02.jpg",
-      "reason": "category: diagram — not a hero candidate; score: 3 < threshold 6; vision-rejected: category-diagram",
-      "approved_at": "2026-06-12"
-    },
-    "saturn-v": {
-      "slot": "05.jpg",
-      "reason": "category: diagram — not a hero candidate; score: 2 < threshold 6; vision-rejected: category-diagram",
-      "approved_at": "2026-06-12"
-    },
-    "spirit": {
-      "slot": "04.jpg",
-      "reason": "category: diagram — not a hero candidate; score: 3 < threshold 6; vision-rejected: category-diagram; subject names a different entity than spirit",
-      "approved_at": "2026-06-12"
-    },
-    "taiyuan-lc-9": {
-      "slot": "01.jpg",
-      "reason": "manual hero override — Marko 2026-06-29 (fetch re-source via zh-Commons: real LM-4C launch; replaces text/logo set)",
-      "approved_at": "2026-06-29"
-    },
-    "vega-2": {
-      "slot": "03.jpg",
-      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 03)",
-      "approved_at": "2026-06-20"
-    },
-    "viking-1": {
-      "slot": "01.jpg",
-      "reason": "Viking lander model (distinct from orbiter card) — Marko 2026-06-29 (dedup/junk cleanup)",
-      "approved_at": "2026-06-29"
-    },
-    "voyager-2": {
-      "slot": "01.jpg",
-      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 01)",
-      "approved_at": "2026-06-20"
-    },
-    "x37b": {
-      "slot": "03.jpg",
-      "reason": "subject names a different entity than x37b",
-      "approved_at": "2026-06-12"
-    },
-    "yutu": {
-      "slot": "04.jpg",
-      "reason": "category: diagram — not a hero candidate; score: 2 < threshold 6; vision-rejected: category-diagram; subject names a different entity than yutu",
-      "approved_at": "2026-06-12"
-    },
-    "yutu-2": {
-      "slot": "03.jpg",
-      "reason": "subject names a different entity than yutu-2",
-      "approved_at": "2026-06-12"
-    },
-    "smart-1": {
-      "slot": "01.jpg",
-      "reason": "manual hero override — Marko 2026-06-20 SMART-1 full gallery re-source (B = slot 01 = SMART-1 at the Moon)",
-      "approved_at": "2026-06-20"
-    },
-    "chandrayaan1": {
-      "slot": "02.jpg",
-      "reason": "G2 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
-      "approved_at": "2026-06-23"
-    },
-    "lro": {
-      "slot": "03.jpg",
-      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 03)",
-      "approved_at": "2026-06-20"
-    },
-    "mars-odyssey": {
-      "slot": "02.jpg",
-      "reason": "category: render on FLOWN/ACTIVE asset; vision-rejected: score-below-threshold",
-      "approved_at": "2026-06-12"
-    },
-    "lunar-orbiter-5": {
-      "slot": "02.jpg",
-      "reason": "subject names a different entity than lunar-orbiter-5",
-      "approved_at": "2026-06-12"
-    },
-    "salyut-4": {
-      "slot": "05.jpg",
-      "reason": "category: diagram — not a hero candidate; score: 2 < threshold 6; vision-rejected: category-diagram",
-      "approved_at": "2026-06-12"
-    },
-    "salyut-5": {
-      "slot": "05.jpg",
-      "reason": "score: 3 < threshold 6; vision-rejected: score-below-threshold; subject names a different entity than salyut-5",
-      "approved_at": "2026-06-12"
-    },
-    "lc-5": {
-      "slot": "01.jpg",
-      "reason": "manual hero override — Marko 2026-06-29 (Commons re-source: Freedom 7 launch from LC-5 (hero) + Mercury-Redstone launches + preserved pad)",
-      "approved_at": "2026-06-29"
-    },
-    "apollo-csm-block-i": {
-      "slot": "02.jpg",
-      "reason": "category: people-only — no asset visible; score: 4 < threshold 6; vision-rejected: category-people; subject names a different entity than apollo-csm-block-i",
-      "approved_at": "2026-06-12"
-    },
-    "bepicolombo": {
-      "slot": "01.jpg",
-      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 01)",
-      "approved_at": "2026-06-20"
-    },
-    "voyager-1": {
-      "slot": "01.jpg",
-      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 01)",
-      "approved_at": "2026-06-20"
-    },
-    "akatsuki": {
-      "slot": "02.jpg",
-      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 02)",
-      "approved_at": "2026-06-20"
-    },
-    "phoenix": {
-      "slot": "03.jpg",
-      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 03)",
-      "approved_at": "2026-06-20"
-    },
-    "vostok-5": {
-      "slot": "02.jpg",
-      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 02)",
-      "approved_at": "2026-06-20"
-    },
-    "vostok-6": {
-      "slot": "02.jpg",
-      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 02)",
-      "approved_at": "2026-06-20"
-    },
-    "venera-13": {
-      "slot": "05.jpg",
-      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 05)",
-      "approved_at": "2026-06-20"
-    },
-    "vega-1": {
-      "slot": "02.jpg",
-      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 02)",
-      "approved_at": "2026-06-20"
-    },
-    "ulysses": {
-      "slot": "02.jpg",
-      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 02)",
-      "approved_at": "2026-06-20"
-    },
-    "hayabusa-2": {
-      "slot": "04.jpg",
-      "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 04)",
-      "approved_at": "2026-06-20"
-    },
-    "change1": {
-      "slot": "01.jpg",
-      "reason": "manual hero override — Marko 2026-06-20 Chang'e-1 (mockup accepted, no flight imagery on Commons)",
-      "approved_at": "2026-06-20"
-    },
-    "exomars-rosalind-franklin": {
-      "slot": "03.jpg",
-      "reason": "G3 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
-      "approved_at": "2026-06-23"
-    },
-    "h3": {
-      "slot": "02.jpg",
-      "reason": "G2 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
-      "approved_at": "2026-06-23"
-    },
-    "solar-orbiter": {
-      "slot": "04.jpg",
-      "reason": "G4 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
-      "approved_at": "2026-06-23"
-    },
-    "oneweb": {
-      "slot": "02.jpg",
-      "reason": "G2 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
-      "approved_at": "2026-06-23"
-    },
-    "schiaparelli": {
-      "slot": "02.jpg",
-      "reason": "G2 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
-      "approved_at": "2026-06-23"
-    },
-    "xichang-lc-2": {
-      "slot": "01.jpg",
-      "reason": "manual hero override — Marko 2026-06-29 (junk cleanup: Yaogan-36 launch from Xichang; distinct from LM-3B card)",
-      "approved_at": "2026-06-29"
-    },
-    "space-shuttle-orbiter": {
-      "slot": "05.jpg",
-      "reason": "G5 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
-      "approved_at": "2026-06-23"
-    },
-    "lunokhod-1": {
-      "slot": "05.jpg",
-      "reason": "G5 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
-      "approved_at": "2026-06-23"
-    },
-    "starship": {
-      "slot": "03.jpg",
-      "reason": "G3 hero — Marko 2026-06-23 (corrected numbering convention: G N = 0N.jpg counting hero)",
-      "approved_at": "2026-06-23"
-    },
-    "beagle2": {
-      "slot": "05.jpg",
-      "reason": "G5 hero — Marko 2026-06-23 (G N = 0N.jpg convention)",
-      "approved_at": "2026-06-23"
-    },
-    "kourou-ela-3": {
-      "slot": "02.jpg",
-      "reason": "manual hero override — Marko 2026-06-29 (fleet review: G1)",
-      "approved_at": "2026-06-29"
-    },
-    "lunar-orbiter-3": {
-      "slot": "05.jpg",
-      "reason": "manual hero override — Marko 2026-06-29 (fleet review: G4)",
-      "approved_at": "2026-06-29"
-    },
-    "gagarins-start": {
-      "slot": "04.jpg",
-      "reason": "manual hero override — Marko 2026-06-29 (fleet review: G3)",
-      "approved_at": "2026-06-29"
-    },
-    "luna-16": {
-      "slot": "03.jpg",
-      "reason": "manual hero override — Marko 2026-06-29 (fleet review: G2; old hero 01 was a broken half-grey LROC tile)",
-      "approved_at": "2026-06-29"
-    },
-    "new-glenn": {
-      "slot": "02.jpg",
-      "reason": "manual hero override — Marko 2026-06-29 (fetch re-source: New Glenn maiden launch from pad, USSF PD)",
-      "approved_at": "2026-06-29"
-    },
-    "starliner": {
-      "slot": "01.jpg",
-      "reason": "manual hero override — Marko 2026-06-29 (fetch re-source: curated ISS-docking photos; hero = Starliner docked to Harmony over Earth)",
-      "approved_at": "2026-06-29"
-    },
-    "luna-9": {
-      "slot": "01.jpg",
-      "reason": "manual hero override — Marko 2026-06-29 (ru-Commons re-source: Luna 9 spacecraft + first-Moon-surface photo)",
-      "approved_at": "2026-06-29"
-    },
-    "venera-7": {
-      "slot": "01.jpg",
-      "reason": "manual hero override — Marko 2026-06-29 (ru-Commons re-source: Venera descent capsule + stamp)",
-      "approved_at": "2026-06-29"
-    },
-    "cape-canaveral-slc-41": {
-      "slot": "04.jpg",
-      "reason": "manual hero override — Marko 2026-06-29 (fetch re-source: full SLC-41 complex aerial w/ Atlas V on pad; dropped banner shot)",
-      "approved_at": "2026-06-29"
-    },
-    "lc-14": {
-      "slot": "01.jpg",
-      "reason": "manual hero override — Marko 2026-06-29 (Commons re-source: historical LC-14 aerial (hero) + Mercury-Atlas launches (MA-6/8/9))",
-      "approved_at": "2026-06-29"
-    },
-    "xichang-lc-3": {
-      "slot": "01.jpg",
-      "reason": "manual hero override — Marko 2026-06-29 (junk cleanup: Xichang pad aerial; distinct hero)",
-      "approved_at": "2026-06-29"
-    },
-    "viking1-orbiter": {
-      "slot": "01.jpg",
-      "reason": "Viking orbiter+lander spacecraft — Marko 2026-06-29 (dedup/junk cleanup)",
-      "approved_at": "2026-06-29"
-    }
+ "version": "1.0",
+ "generated_at": "2026-06-20T15:33:22.355Z",
+ "source_audit": "fleet-hero-audit.md",
+ "overrides": {
+  "apollo-csm-block-ii": {
+   "slot": "02.jpg",
+   "reason": "subject names a different entity than apollo-csm-block-ii",
+   "approved_at": "2026-06-12"
+  },
+  "ariane-1": {
+   "slot": "04.jpg",
+   "reason": "score: 4 < threshold 6; vision-rejected: score-below-threshold; subject names a different entity than ariane-1",
+   "approved_at": "2026-06-12"
+  },
+  "atlantis": {
+   "slot": "03.jpg",
+   "reason": "subject names a different entity than atlantis",
+   "approved_at": "2026-06-12"
+  },
+  "atlas-slv-3d": {
+   "slot": "04.jpg",
+   "reason": "subject names a different entity than atlas-slv-3d",
+   "approved_at": "2026-06-12"
+  },
+  "beresheet": {
+   "slot": "04.jpg",
+   "reason": "category: diagram — not a hero candidate; score: 5 < threshold 6; vision-rejected: category-diagram; subject names a different entity than beresheet",
+   "approved_at": "2026-06-12"
+  },
+  "buran": {
+   "slot": "04.jpg",
+   "reason": "G4 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
+   "approved_at": "2026-06-23"
+  },
+  "cargo-dragon-v1": {
+   "slot": "02.jpg",
+   "reason": "subject names a different entity than cargo-dragon-v1",
+   "approved_at": "2026-06-12"
+  },
+  "cassini": {
+   "slot": "01.jpg",
+   "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 01)",
+   "approved_at": "2026-06-20"
+  },
+  "chandra": {
+   "slot": "04.jpg",
+   "reason": "subject names a different entity than chandra",
+   "approved_at": "2026-06-12"
+  },
+  "clementine": {
+   "slot": "02.jpg",
+   "reason": "vision-rejected: score-below-threshold; subject names a different entity than clementine",
+   "approved_at": "2026-06-12"
+  },
+  "columbia": {
+   "slot": "04.jpg",
+   "reason": "G4 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
+   "approved_at": "2026-06-23"
+  },
+  "crew-dragon-iva": {
+   "slot": "02.jpg",
+   "reason": "category: people-only — no asset visible; score: 3 < threshold 6; vision-rejected: category-people",
+   "approved_at": "2026-06-12"
+  },
+  "dawn": {
+   "slot": "01.jpg",
+   "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 01)",
+   "approved_at": "2026-06-20"
+  },
+  "discovery": {
+   "slot": "03.jpg",
+   "reason": "subject names a different entity than discovery",
+   "approved_at": "2026-06-12"
+  },
+  "endeavour": {
+   "slot": "04.jpg",
+   "reason": "subject names a different entity than endeavour",
+   "approved_at": "2026-06-12"
+  },
+  "falcon-9": {
+   "slot": "04.jpg",
+   "reason": "category: people-only — no asset visible; score: 2 < threshold 6; vision-rejected: category-people",
+   "approved_at": "2026-06-12"
+  },
+  "feitian": {
+   "slot": "02.jpg",
+   "reason": "category: people-only — no asset visible; vision-rejected: category-people; subject names a different entity than feitian",
+   "approved_at": "2026-06-12"
+  },
+  "galileo": {
+   "slot": "02.jpg",
+   "reason": "manual hero override — Marko 2026-06-29 (fleet review: reuse mission imagery; hero = Jupiter+Io artist render at slot 02)",
+   "approved_at": "2026-06-29"
+  },
+  "gemini": {
+   "slot": "03.jpg",
+   "reason": "category: people-only — no asset visible; vision-rejected: category-people",
+   "approved_at": "2026-06-12"
+  },
+  "juno": {
+   "slot": "01.jpg",
+   "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 01)",
+   "approved_at": "2026-06-20"
+  },
+  "long-march-3b": {
+   "slot": "02.jpg",
+   "reason": "category: diagram — not a hero candidate; score: 4 < threshold 6; vision-rejected: category-diagram",
+   "approved_at": "2026-06-12"
+  },
+  "lvm3": {
+   "slot": "05.jpg",
+   "reason": "subject names a different entity than lvm3",
+   "approved_at": "2026-06-12"
+  },
+  "magellan": {
+   "slot": "05.jpg",
+   "reason": "subject names a different entity than magellan",
+   "approved_at": "2026-06-12"
+  },
+  "mars-express": {
+   "slot": "03.jpg",
+   "reason": "score: 2 < threshold 6; vision-rejected: score-below-threshold",
+   "approved_at": "2026-06-12"
+  },
+  "mars-polar-lander": {
+   "slot": "02.jpg",
+   "reason": "score: 4 < threshold 6; vision-rejected: score-below-threshold; subject names a different entity than mars-polar-lander",
+   "approved_at": "2026-06-12"
+  },
+  "mro": {
+   "slot": "01.jpg",
+   "reason": "manual hero override — Marko 2026-06-29 (fleet review: reuse mars-site MRO spacecraft render as hero; keep HiRISE science terrain in gallery)",
+   "approved_at": "2026-06-29"
+  },
+  "new-shepard": {
+   "slot": "02.jpg",
+   "reason": "G2 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
+   "approved_at": "2026-06-23"
+  },
+  "opportunity": {
+   "slot": "04.jpg",
+   "reason": "score: 3 < threshold 6; vision-rejected: score-below-threshold; subject names a different entity than opportunity",
+   "approved_at": "2026-06-12"
+  },
+  "phobos-2": {
+   "slot": "01.jpg",
+   "reason": "manual hero override — Marko 2026-06-29 (fleet review: G1)",
+   "approved_at": "2026-06-29"
+  },
+  "pioneer-10": {
+   "slot": "05.jpg",
+   "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 05)",
+   "approved_at": "2026-06-20"
+  },
+  "pioneer-11": {
+   "slot": "05.jpg",
+   "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 05)",
+   "approved_at": "2026-06-20"
+  },
+  "pragyan": {
+   "slot": "03.jpg",
+   "reason": "G3 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
+   "approved_at": "2026-06-23"
+  },
+  "progress-ms": {
+   "slot": "02.jpg",
+   "reason": "subject names a different entity than progress-ms",
+   "approved_at": "2026-06-12"
+  },
+  "rosetta": {
+   "slot": "04.jpg",
+   "reason": "manual hero override — Marko 2026-06-29 (fleet review: G3)",
+   "approved_at": "2026-06-29"
+  },
+  "saturn-ib": {
+   "slot": "02.jpg",
+   "reason": "category: diagram — not a hero candidate; score: 3 < threshold 6; vision-rejected: category-diagram",
+   "approved_at": "2026-06-12"
+  },
+  "saturn-v": {
+   "slot": "05.jpg",
+   "reason": "category: diagram — not a hero candidate; score: 2 < threshold 6; vision-rejected: category-diagram",
+   "approved_at": "2026-06-12"
+  },
+  "spirit": {
+   "slot": "04.jpg",
+   "reason": "category: diagram — not a hero candidate; score: 3 < threshold 6; vision-rejected: category-diagram; subject names a different entity than spirit",
+   "approved_at": "2026-06-12"
+  },
+  "taiyuan-lc-9": {
+   "slot": "01.jpg",
+   "reason": "manual hero override — Marko 2026-06-29 (fetch re-source via zh-Commons: real LM-4C launch; replaces text/logo set)",
+   "approved_at": "2026-06-29"
+  },
+  "vega-2": {
+   "slot": "03.jpg",
+   "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 03)",
+   "approved_at": "2026-06-20"
+  },
+  "viking-1": {
+   "slot": "01.jpg",
+   "reason": "Viking lander model (distinct from orbiter card) — Marko 2026-06-29 (dedup/junk cleanup)",
+   "approved_at": "2026-06-29"
+  },
+  "voyager-2": {
+   "slot": "01.jpg",
+   "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 01)",
+   "approved_at": "2026-06-20"
+  },
+  "x37b": {
+   "slot": "03.jpg",
+   "reason": "subject names a different entity than x37b",
+   "approved_at": "2026-06-12"
+  },
+  "yutu": {
+   "slot": "04.jpg",
+   "reason": "category: diagram — not a hero candidate; score: 2 < threshold 6; vision-rejected: category-diagram; subject names a different entity than yutu",
+   "approved_at": "2026-06-12"
+  },
+  "yutu-2": {
+   "slot": "03.jpg",
+   "reason": "subject names a different entity than yutu-2",
+   "approved_at": "2026-06-12"
+  },
+  "smart-1": {
+   "slot": "01.jpg",
+   "reason": "manual hero override — Marko 2026-06-20 SMART-1 full gallery re-source (B = slot 01 = SMART-1 at the Moon)",
+   "approved_at": "2026-06-20"
+  },
+  "chandrayaan1": {
+   "slot": "02.jpg",
+   "reason": "G2 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
+   "approved_at": "2026-06-23"
+  },
+  "lro": {
+   "slot": "03.jpg",
+   "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 03)",
+   "approved_at": "2026-06-20"
+  },
+  "mars-odyssey": {
+   "slot": "02.jpg",
+   "reason": "category: render on FLOWN/ACTIVE asset; vision-rejected: score-below-threshold",
+   "approved_at": "2026-06-12"
+  },
+  "lunar-orbiter-5": {
+   "slot": "02.jpg",
+   "reason": "subject names a different entity than lunar-orbiter-5",
+   "approved_at": "2026-06-12"
+  },
+  "salyut-4": {
+   "slot": "05.jpg",
+   "reason": "category: diagram — not a hero candidate; score: 2 < threshold 6; vision-rejected: category-diagram",
+   "approved_at": "2026-06-12"
+  },
+  "salyut-5": {
+   "slot": "05.jpg",
+   "reason": "score: 3 < threshold 6; vision-rejected: score-below-threshold; subject names a different entity than salyut-5",
+   "approved_at": "2026-06-12"
+  },
+  "lc-5": {
+   "slot": "01.jpg",
+   "reason": "manual hero override — Marko 2026-06-29 (Commons re-source: Freedom 7 launch from LC-5 (hero) + Mercury-Redstone launches + preserved pad)",
+   "approved_at": "2026-06-29"
+  },
+  "apollo-csm-block-i": {
+   "slot": "02.jpg",
+   "reason": "category: people-only — no asset visible; score: 4 < threshold 6; vision-rejected: category-people; subject names a different entity than apollo-csm-block-i",
+   "approved_at": "2026-06-12"
+  },
+  "bepicolombo": {
+   "slot": "01.jpg",
+   "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 01)",
+   "approved_at": "2026-06-20"
+  },
+  "voyager-1": {
+   "slot": "01.jpg",
+   "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 01)",
+   "approved_at": "2026-06-20"
+  },
+  "akatsuki": {
+   "slot": "02.jpg",
+   "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 02)",
+   "approved_at": "2026-06-20"
+  },
+  "phoenix": {
+   "slot": "03.jpg",
+   "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 03)",
+   "approved_at": "2026-06-20"
+  },
+  "vostok-5": {
+   "slot": "02.jpg",
+   "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 02)",
+   "approved_at": "2026-06-20"
+  },
+  "vostok-6": {
+   "slot": "02.jpg",
+   "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 02)",
+   "approved_at": "2026-06-20"
+  },
+  "venera-13": {
+   "slot": "05.jpg",
+   "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 05)",
+   "approved_at": "2026-06-20"
+  },
+  "vega-1": {
+   "slot": "02.jpg",
+   "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 02)",
+   "approved_at": "2026-06-20"
+  },
+  "ulysses": {
+   "slot": "02.jpg",
+   "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 02)",
+   "approved_at": "2026-06-20"
+  },
+  "hayabusa-2": {
+   "slot": "04.jpg",
+   "reason": "manual hero override — Marko 2026-06-20 (per slice-a-v3 hero pass; slot 04)",
+   "approved_at": "2026-06-20"
+  },
+  "change1": {
+   "slot": "01.jpg",
+   "reason": "manual hero override — Marko 2026-06-20 Chang'e-1 (mockup accepted, no flight imagery on Commons)",
+   "approved_at": "2026-06-20"
+  },
+  "exomars-rosalind-franklin": {
+   "slot": "03.jpg",
+   "reason": "G3 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
+   "approved_at": "2026-06-23"
+  },
+  "h3": {
+   "slot": "02.jpg",
+   "reason": "G2 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
+   "approved_at": "2026-06-23"
+  },
+  "solar-orbiter": {
+   "slot": "04.jpg",
+   "reason": "G4 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
+   "approved_at": "2026-06-23"
+  },
+  "oneweb": {
+   "slot": "02.jpg",
+   "reason": "G2 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
+   "approved_at": "2026-06-23"
+  },
+  "schiaparelli": {
+   "slot": "02.jpg",
+   "reason": "G2 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
+   "approved_at": "2026-06-23"
+  },
+  "xichang-lc-2": {
+   "slot": "01.jpg",
+   "reason": "manual hero override — Marko 2026-06-29 (junk cleanup: Yaogan-36 launch from Xichang; distinct from LM-3B card)",
+   "approved_at": "2026-06-29"
+  },
+  "space-shuttle-orbiter": {
+   "slot": "05.jpg",
+   "reason": "G5 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
+   "approved_at": "2026-06-23"
+  },
+  "lunokhod-1": {
+   "slot": "05.jpg",
+   "reason": "G5 hero — Marko 2026-06-23 (off-by-one correction: G N = 0N.jpg)",
+   "approved_at": "2026-06-23"
+  },
+  "starship": {
+   "slot": "03.jpg",
+   "reason": "G3 hero — Marko 2026-06-23 (corrected numbering convention: G N = 0N.jpg counting hero)",
+   "approved_at": "2026-06-23"
+  },
+  "beagle2": {
+   "slot": "05.jpg",
+   "reason": "G5 hero — Marko 2026-06-23 (G N = 0N.jpg convention)",
+   "approved_at": "2026-06-23"
+  },
+  "kourou-ela-3": {
+   "slot": "02.jpg",
+   "reason": "manual hero override — Marko 2026-06-29 (fleet review: G1)",
+   "approved_at": "2026-06-29"
+  },
+  "lunar-orbiter-3": {
+   "slot": "05.jpg",
+   "reason": "manual hero override — Marko 2026-06-29 (fleet review: G4)",
+   "approved_at": "2026-06-29"
+  },
+  "gagarins-start": {
+   "slot": "04.jpg",
+   "reason": "manual hero override — Marko 2026-06-29 (fleet review: G3)",
+   "approved_at": "2026-06-29"
+  },
+  "luna-16": {
+   "slot": "03.jpg",
+   "reason": "manual hero override — Marko 2026-06-29 (fleet review: G2; old hero 01 was a broken half-grey LROC tile)",
+   "approved_at": "2026-06-29"
+  },
+  "new-glenn": {
+   "slot": "02.jpg",
+   "reason": "manual hero override — Marko 2026-06-29 (fetch re-source: New Glenn maiden launch from pad, USSF PD)",
+   "approved_at": "2026-06-29"
+  },
+  "starliner": {
+   "slot": "01.jpg",
+   "reason": "manual hero override — Marko 2026-06-29 (fetch re-source: curated ISS-docking photos; hero = Starliner docked to Harmony over Earth)",
+   "approved_at": "2026-06-29"
+  },
+  "luna-9": {
+   "slot": "01.jpg",
+   "reason": "manual hero override — Marko 2026-06-29 (ru-Commons re-source: Luna 9 spacecraft + first-Moon-surface photo)",
+   "approved_at": "2026-06-29"
+  },
+  "venera-7": {
+   "slot": "01.jpg",
+   "reason": "manual hero override — Marko 2026-06-29 (ru-Commons re-source: Venera descent capsule + stamp)",
+   "approved_at": "2026-06-29"
+  },
+  "cape-canaveral-slc-41": {
+   "slot": "04.jpg",
+   "reason": "manual hero override — Marko 2026-06-29 (fetch re-source: full SLC-41 complex aerial w/ Atlas V on pad; dropped banner shot)",
+   "approved_at": "2026-06-29"
+  },
+  "lc-14": {
+   "slot": "01.jpg",
+   "reason": "manual hero override — Marko 2026-06-29 (Commons re-source: historical LC-14 aerial (hero) + Mercury-Atlas launches (MA-6/8/9))",
+   "approved_at": "2026-06-29"
+  },
+  "xichang-lc-3": {
+   "slot": "01.jpg",
+   "reason": "manual hero override — Marko 2026-06-29 (junk cleanup: Xichang pad aerial; distinct hero)",
+   "approved_at": "2026-06-29"
+  },
+  "viking1-orbiter": {
+   "slot": "01.jpg",
+   "reason": "Viking orbiter+lander spacecraft — Marko 2026-06-29 (dedup/junk cleanup)",
+   "approved_at": "2026-06-29"
+  },
+  "exomars-tgo": {
+   "slot": "02.jpg",
+   "reason": "manual hero override — Marko 2026-09-12 (no-panorama hero rule, card/hero pass)",
+   "approved_at": "2026-09-12"
+  },
+  "lc-39b": {
+   "slot": "02.jpg",
+   "reason": "manual hero override — Marko 2026-09-12 (no-panorama hero rule, card/hero pass)",
+   "approved_at": "2026-09-12"
+  },
+  "baikonur-1-5": {
+   "slot": "03.jpg",
+   "reason": "manual hero override — Marko 2026-09-12 (no-panorama hero rule, card/hero pass)",
+   "approved_at": "2026-09-12"
+  },
+  "change6": {
+   "slot": "05.jpg",
+   "reason": "manual hero override — Marko 2026-09-12 (no-panorama hero rule, card/hero pass)",
+   "approved_at": "2026-09-12"
+  },
+  "hope": {
+   "slot": "04.jpg",
+   "reason": "manual hero override — Marko 2026-09-12 (no-panorama hero rule, card/hero pass)",
+   "approved_at": "2026-09-12"
+  },
+  "sokol-kv-2": {
+   "slot": "04.jpg",
+   "reason": "manual hero override — Marko 2026-09-12 (no-panorama hero rule, card/hero pass)",
+   "approved_at": "2026-09-12"
   }
+ }
 }

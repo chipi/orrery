@@ -40,8 +40,9 @@ const BASE_URL = process.env.BASE_URL ?? `http://127.0.0.1:${PORT}`;
 const SHARED_SOURCES = ['src/lib/cards/CollectibleCard.svelte'];
 
 const KIND_VERSION = {
-  mission: 1,
-  fleet: 1,
+  // v2: figure-decode ready-gate (stage raced on trajectory/anatomy figures)
+  mission: 2,
+  fleet: 2,
   'moon-site': 1,
   'mars-site': 1,
   planet: 1,
@@ -56,9 +57,9 @@ function templateHash(kind) {
   return sha(`${shared}\n${kind}@v${KIND_VERSION[kind]}`);
 }
 
-function inputHash(dataPaths, tpl) {
+function inputHash(dataPaths, tpl, kind) {
   const parts = [tpl];
-  for (const p of dataPaths) {
+  for (const p of [...dataPaths, ...(KIND_HERO_DEPS[kind] ?? [])]) {
     if (existsSync(p)) parts.push(readFileSync(p, 'utf8'));
   }
   return sha(parts.join('\n'));
@@ -70,6 +71,20 @@ function inputHash(dataPaths, tpl) {
  * canonical card is mission/<id>, so the fleet duplicate is skipped (the
  * panel aliases to the mission card too; see card-spec fleetAliasesMission).
  */
+// Hero-override + gallery-count manifests per kind — a hero change or a
+// gallery renumber must invalidate that kind's cards (the hero is part of
+// the rendered output). Whole-file granularity: one override edit re-renders
+// the kind; coarse but correct, and regen is cheap.
+const KIND_HERO_DEPS = {
+  mission: ['static/data/missions-hero-overrides.json', 'static/data/mission-galleries.json'],
+  fleet: ['static/data/fleet-hero-overrides.json', 'static/data/fleet-galleries.json'],
+  'moon-site': ['static/data/moon-sites-hero-overrides.json'],
+  'mars-site': ['static/data/mars-sites-hero-overrides.json'],
+  planet: ['static/data/planets-hero-overrides.json', 'static/data/planet-galleries.json'],
+  moon: ['static/data/satellites-hero-overrides.json'],
+  'small-body': ['static/data/small-bodies-hero-overrides.json'],
+};
+
 function enumerateTargets() {
   const missions = JSON.parse(readFileSync('static/data/missions/index.json', 'utf8'));
   const fleet = JSON.parse(readFileSync('static/data/fleet/index.json', 'utf8'));
@@ -170,7 +185,7 @@ async function main() {
     for (const t of all) {
       const key = `${t.kind}/${t.id}`;
       if (!existsSync(`${OUT_ROOT}/${key}.jpg`)) continue;
-      manifest.entries[key] = inputHash(t.dataPaths, templateHash(t.kind));
+      manifest.entries[key] = inputHash(t.dataPaths, templateHash(t.kind), t.kind);
       n += 1;
     }
     writeFileSync(MANIFEST, JSON.stringify(manifest, null, 2) + '\n');
@@ -180,7 +195,7 @@ async function main() {
 
   const todo = targets.filter((t) => {
     const key = `${t.kind}/${t.id}`;
-    const hash = inputHash(t.dataPaths, templateHash(t.kind));
+    const hash = inputHash(t.dataPaths, templateHash(t.kind), t.kind);
     const out = `${OUT_ROOT}/${key}.jpg`;
     return manifest.entries[key] !== hash || !existsSync(out);
   });
@@ -216,7 +231,7 @@ async function main() {
       // → ~65MB in-repo); text stays crisp at deviceScaleFactor 3.
       const out = `${OUT_ROOT}/${key}.jpg`;
       await card.screenshot({ path: out, type: 'jpeg', quality: 90 });
-      manifest.entries[key] = inputHash(t.dataPaths, templateHash(t.kind));
+      manifest.entries[key] = inputHash(t.dataPaths, templateHash(t.kind), t.kind);
       ok += 1;
       process.stdout.write(`  ${key}`);
     } catch (e) {

@@ -6,6 +6,10 @@
   import { assetOrigin, assetUrl } from '$lib/asset-url';
   import { trackMissionView, trackGalleryImageOpen } from '$lib/analytics';
   import { getMissionGallery, getMarsSites, getMoonSites, getBadges } from '$lib/data';
+  import { getMissionIndex } from '$lib/data/missions';
+  import { cardForMission, type CardSpec } from '$lib/cards/card-spec';
+  import CardOverlay from '$lib/cards/CardOverlay.svelte';
+  import type { MissionIndex } from '$types/mission';
   import type { SurfaceSite } from '$types/surface-site';
   import { formatNumber } from '$lib/format';
   import { localeFromPage } from '$lib/locale';
@@ -54,6 +58,13 @@
 
   let tab: Tab = $state('overview');
   let gallery: string[] = $state([]);
+  // #547 S1 — the collectible card. Index loads once (cached loader) for
+  // the collection numbering; the spec derives from data already on hand.
+  let cardOpen = $state(false);
+  let missionIndex = $state<MissionIndex[]>([]);
+  let cardSpec = $derived<CardSpec | null>(
+    mission ? cardForMission(mission, missionIndex, gallery[0]) : null,
+  );
   let badges = $state<Record<string, string>>({});
   /** Thumbs under GALLERY tab: skip first image when a hero duplicates it. */
   let galleryGrid = $derived(gallery.length <= 1 ? gallery : gallery.slice(1));
@@ -106,6 +117,11 @@
       // Insignia map (PRD-029) — gate the badge so patch-less missions
       // (Mercury/Gemini flights predate mission patches) fire no 404.
       void getBadges().then((b) => (badges = b));
+      // #547 — collection numbering for the collectible card.
+      cardOpen = false;
+      if (missionIndex.length === 0) {
+        void getMissionIndex().then((idx) => (missionIndex = idx));
+      }
       // Resolve cross-link to /mars or /moon surface-site catalogue.
       const findSite = (sites: SurfaceSite[]) =>
         sites.find((s) => s.mission_id === mission!.id) ??
@@ -861,8 +877,19 @@
          hasFlightData so iconic missions without flight-params data
          silently skip the CTA instead of linking into a broken /fly
          sim.) -->
-    {#if (mission.status !== 'PLANNED' && hasFlightData && onFly) || crossSite}
-      <div class="cta-bar">
+    <div class="cta-bar">
+      <!-- #547 S1 — every mission carries its collectible card. -->
+      {#if cardSpec}
+        <button
+          type="button"
+          class="cta cta-card"
+          onclick={() => (cardOpen = true)}
+          data-testid="open-card-btn"
+        >
+          <span class="cta-text">{m.card_open_button()}</span>
+        </button>
+      {/if}
+      {#if (mission.status !== 'PLANNED' && hasFlightData && onFly) || crossSite}
         {#if mission.status !== 'PLANNED' && hasFlightData && onFly}
           <button type="button" class="cta" onclick={flyMission} data-testid="fly-mission-btn">
             <!-- Trajectory-arc glyph — curved path with arrowhead.
@@ -895,10 +922,14 @@
             {surfaceLabel}
           </a>
         {/if}
-      </div>
-    {/if}
+      {/if}
+    </div>
   {/if}
 </Panel>
+
+{#if cardSpec}
+  <CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
+{/if}
 
 {#if lightboxSrc}
   <!-- Lightbox overlay: clickable backdrop dismisses; outer is a
@@ -1146,6 +1177,17 @@
     background: #2244dd;
     border-color: #4466ff;
     outline: none;
+  }
+  /* #547 — the card CTA sits in the quieter register (the fly CTA keeps
+     the loud blue; two loud buttons stacked read as noise). */
+  .cta.cta-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.22);
+  }
+  .cta.cta-card:hover,
+  .cta.cta-card:focus-visible {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.45);
   }
   .cta .cta-icon {
     flex: 0 0 20px;

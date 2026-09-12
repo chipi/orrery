@@ -2072,7 +2072,11 @@
     "nav_locale_suggest_label": "इस पृष्ठ को अपनी भाषा में देखें",
     "landing_footer_about": "Orrery MIT लाइसेंस के तहत ओपन-सोर्स है। कोई खाता नहीं, कोई विज्ञापन नहीं, और कोई तीसरे पक्ष के साथ कुछ साझा नहीं। यह मापता है कि साइट का उपयोग कैसे किया जाता है — गुमनाम, कुकी-रहित, स्व-होस्ट किया गया — और आप इसे बंद कर सकते हैं। तीन कार्यात्मक कुकीज़ आपकी भाषा, दौरे में आपकी जगह, और उस पसंद को याद रखती हैं। {privacy} पृष्ठ पर विवरण।",
     "landing_footer_privacy_link": "गोपनीयता",
-    "landing_meta_description": "ब्राउज़र-आधारित सौर प्रणाली अन्वेषक, मिशन सिम्युलेटर, और विश्वकोश। वास्तविक कक्षीय यांत्रिकी। क्यूरेटेड मिशन सूची। 14 भाषाएं। ओपन सोर्स, कोई खाता नहीं, कोई विज्ञापन नहीं, कोई तीसरे पक्ष ट्रैकर नहीं।"
+    "landing_meta_description": "ब्राउज़र-आधारित सौर प्रणाली अन्वेषक, मिशन सिम्युलेटर, और विश्वकोश। वास्तविक कक्षीय यांत्रिकी। क्यूरेटेड मिशन सूची। 14 भाषाएं। ओपन सोर्स, कोई खाता नहीं, कोई विज्ञापन नहीं, कोई तीसरे पक्ष ट्रैकर नहीं।",
+    "card_open_button": "कलेक्टर कार्ड",
+    "card_share_link": "लिंक साझा करें",
+    "card_link_copied": "लिंक कॉपी हो गया",
+    "card_close": "बंद करें"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -4009,7 +4013,11 @@
     "nav_locale_suggest_label": "このページを あなたの言語で表示",
     "landing_footer_about": "Orrery はMITライセンスの下でオープンソースです。アカウント、広告、第三者との情報共有はありません。サイトの利用方法を測定していますが—匿名で、クッキーなし、自社ホスト—その機能は切り替えられます。3つの機能クッキーは、あなたの言語、ツアー内のあなたの位置、およびその選択を記憶します。詳細は{privacy}ページをご覧ください。",
     "landing_footer_privacy_link": "プライバシー",
-    "landing_meta_description": "ブラウザベースの太陽系エクスプローラー、ミッションシミュレーター、および百科事典。実際の軌道力学。精選されたミッションカタログ。14言語。オープンソース、アカウント不要、広告なし、第三者トラッカーなし。"
+    "landing_meta_description": "ブラウザベースの太陽系エクスプローラー、ミッションシミュレーター、および百科事典。実際の軌道力学。精選されたミッションカタログ。14言語。オープンソース、アカウント不要、広告なし、第三者トラッカーなし。",
+    "card_open_button": "コレクターカード",
+    "card_share_link": "リンクを共有",
+    "card_link_copied": "リンクをコピーしました",
+    "card_close": "閉じる"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -6125,7 +6133,11 @@
     "nav_locale_suggest_label": "عرض هذه الصفحة بلغتك",
     "landing_footer_about": "Orrery مشروع مفتوح المصدر برخصة MIT. لا حسابات، لا إعلانات، ولا مشاركة مع جهات خارجية. يقيس كيفية استخدام الموقع فقط — بشكل مجهول، بدون ملفات تتبع، وذاتي الاستضافة — ويمكنك إيقاف ذلك. تحفظ ثلاث ملفات تعريف وظيفية لغتك وموقعك في الجولة والخيار الذي اخترته. تفاصيل إضافية على صفحة {privacy}.",
     "landing_footer_privacy_link": "الخصوصية",
-    "landing_meta_description": "مستكشف النظام الشمسي القائم على المتصفح، ومحاكي المهام، وموسوعة. ميكانيكا مدارية حقيقية. فهرس مهام منسق. 14 لغة. مفتوح المصدر، بدون حسابات، بدون إعلانات، بدون متتبعات جهات خارجية."
+    "landing_meta_description": "مستكشف النظام الشمسي القائم على المتصفح، ومحاكي المهام، وموسوعة. ميكانيكا مدارية حقيقية. فهرس مهام منسق. 14 لغة. مفتوح المصدر، بدون حسابات، بدون إعلانات، بدون متتبعات جهات خارجية.",
+    "card_open_button": "بطاقة المجموعة",
+    "card_share_link": "مشاركة الرابط",
+    "card_link_copied": "تم نسخ الرابط",
+    "card_close": "إغلاق"
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -8064,7 +8076,11 @@
     "nav_locale_suggest_label": "이 페이지를 당신의 언어로 보기",
     "landing_footer_about": "Orrery는 MIT 라이선스 하에 오픈소스입니다. 계정 없음, 광고 없음, 제3자와 공유 없음. 사이트 사용 방식을 측정하며 — 익명, 쿠키 불사용, 자체 호스팅 — 이를 끌 수 있습니다. 3개의 기능형 쿠키는 언어, 투어 위치, 그 선택을 기억합니다. {privacy} 페이지에서 자세히 확인하세요.",
     "landing_footer_privacy_link": "개인정보",
-    "landing_meta_description": "브라우저 기반 태양계 탐험기, 임무 시뮬레이터, 백과사전. 실제 궤도역학. 엄선된 임무 목록. 14개 언어. 오픈소스, 계정 없음, 광고 없음, 제3자 추적 없음."
+    "landing_meta_description": "브라우저 기반 태양계 탐험기, 임무 시뮬레이터, 백과사전. 실제 궤도역학. 엄선된 임무 목록. 14개 언어. 오픈소스, 계정 없음, 광고 없음, 제3자 추적 없음.",
+    "card_open_button": "수집 카드",
+    "card_share_link": "링크 공유",
+    "card_link_copied": "링크 복사됨",
+    "card_close": "닫기"
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -9825,7 +9841,11 @@
     "nav_locale_suggest_label": "Diese Seite in deiner Sprache ansehen",
     "landing_footer_about": "Orrery ist Open-Source unter der MIT-Lizenz. Keine Konten, keine Werbung und nichts wird mit Dritten geteilt. Es misst die Nutzung der Website — anonym, ohne Cookies, selbst gehostet — und Sie können das deaktivieren. Drei funktionale Cookies speichern Ihre Sprache, Ihren Ort in der Tour und diese Wahl. Details finden Sie auf der Seite {privacy}.",
     "landing_footer_privacy_link": "Datenschutz",
-    "landing_meta_description": "Browser-basierter Sonnensystem-Explorer, Missionssimulatoren und Enzyklopädie. Echte Orbitmechanik. Kuratierter Missionskatalog. 14 Sprachen. Open Source, keine Konten, keine Werbung, keine Tracker von Dritten."
+    "landing_meta_description": "Browser-basierter Sonnensystem-Explorer, Missionssimulatoren und Enzyklopädie. Echte Orbitmechanik. Kuratierter Missionskatalog. 14 Sprachen. Open Source, keine Konten, keine Werbung, keine Tracker von Dritten.",
+    "card_open_button": "Sammelkarte",
+    "card_share_link": "Link teilen",
+    "card_link_copied": "Link kopiert",
+    "card_close": "Schließen"
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -11526,7 +11546,11 @@
     "nav_locale_suggest_label": "Voir cette page dans votre langue",
     "landing_footer_about": "Orrery est un logiciel libre sous licence MIT. Pas de comptes, pas de publicités, et rien n'est partagé avec des tiers. Il mesure l'utilisation du site — anonyme, sans cookies, auto-hébergé — et vous pouvez désactiver cela. Trois cookies fonctionnels mémorisent votre langue, votre position dans la visite guidée, et ce choix. Plus de détails sur la page {privacy}.",
     "landing_footer_privacy_link": "confidentialité",
-    "landing_meta_description": "Explorateur du système solaire basé sur navigateur, simulateur de missions et encyclopédie. Mécanique orbitale réelle. Catalogue de missions curé. 14 langues. Logiciel libre, pas de comptes, pas de publicités, pas de suivi tiers."
+    "landing_meta_description": "Explorateur du système solaire basé sur navigateur, simulateur de missions et encyclopédie. Mécanique orbitale réelle. Catalogue de missions curé. 14 langues. Logiciel libre, pas de comptes, pas de publicités, pas de suivi tiers.",
+    "card_open_button": "Carte de collection",
+    "card_share_link": "Partager le lien",
+    "card_link_copied": "Lien copié",
+    "card_close": "Fermer"
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -13194,7 +13218,11 @@
     "nav_locale_suggest_label": "Visualizza questa pagina nella tua lingua",
     "landing_footer_about": "Orrery è open-source secondo la licenza MIT. Nessun account, nessuna pubblicità e niente condiviso con terze parti. Misura come il sito viene utilizzato — anonimamente, senza cookie, self-hosted — e puoi disattivarlo. Tre cookie funzionali ricordano la tua lingua, il tuo punto nel tour e quella scelta. Dettagli nella pagina {privacy}.",
     "landing_footer_privacy_link": "privacy",
-    "landing_meta_description": "Esploratore del sistema solare basato su browser, simulatore di missioni ed enciclopedia. Meccanica orbitale reale. Catalogo di missioni curato. 14 lingue. Open source, nessun account, nessuna pubblicità, nessun tracker di terze parti."
+    "landing_meta_description": "Esploratore del sistema solare basato su browser, simulatore di missioni ed enciclopedia. Meccanica orbitale reale. Catalogo di missioni curato. 14 lingue. Open source, nessun account, nessuna pubblicità, nessun tracker di terze parti.",
+    "card_open_button": "Carta collezionabile",
+    "card_share_link": "Condividi link",
+    "card_link_copied": "Link copiato",
+    "card_close": "Chiudi"
   },
   "es": {
     "mars_meta_description": "Todo artefacto que la humanidad ha colocado en Marte — aterrizadores, rovers y orbitadores activos — en un globo 3D navegable con la historia completa de la misión.",
@@ -14861,7 +14889,11 @@
     "nav_locale_suggest_label": "Ver esta página en tu idioma",
     "landing_footer_about": "Orrery es software de código abierto bajo la licencia MIT. Sin cuentas, sin publicidad, y nada compartido con terceros. Sí mide cómo se usa el sitio — anónimo, sin cookies, auto-hospedado — y puedes desactivarlo. Tres cookies funcionales recuerdan tu idioma, tu lugar en la visita guiada, y esa opción. Más detalles en la página de {privacy}.",
     "landing_footer_privacy_link": "privacidad",
-    "landing_meta_description": "Explorador del sistema solar basado en navegador, simulador de misiones, y enciclopedia. Mecánica orbital real. Catálogo de misiones curado. 14 idiomas. Código abierto, sin cuentas, sin anuncios, sin rastreadores de terceros."
+    "landing_meta_description": "Explorador del sistema solar basado en navegador, simulador de misiones, y enciclopedia. Mecánica orbital real. Catálogo de misiones curado. 14 idiomas. Código abierto, sin cuentas, sin anuncios, sin rastreadores de terceros.",
+    "card_open_button": "Tarjeta de colección",
+    "card_share_link": "Compartir enlace",
+    "card_link_copied": "Enlace copiado",
+    "card_close": "Cerrar"
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -16537,7 +16569,11 @@
     "nav_locale_suggest_label": "Bekijk deze pagina in uw taal",
     "landing_footer_about": "Orrery is open-source onder de MIT-licentie. Geen accounts, geen advertenties, en niets gedeeld met derden. Het meet wel hoe de site wordt gebruikt — anoniem, zonder cookies, zelf gehost — en je kunt dat uitschakelen. Drie functionele cookies onthouden je taal, je plaats in de tour en die keuze. Details op de {privacy}-pagina.",
     "landing_footer_privacy_link": "privacyverklaring",
-    "landing_meta_description": "Browsergebaseerde verkenner van het zonnestelsel, missiesimulator en encyclopedie. Echte baanmechanica. Samengestelde missiecatalogus. 14 talen. Open source, geen accounts, geen advertenties, geen trackers van derden."
+    "landing_meta_description": "Browsergebaseerde verkenner van het zonnestelsel, missiesimulator en encyclopedie. Echte baanmechanica. Samengestelde missiecatalogus. 14 talen. Open source, geen accounts, geen advertenties, geen trackers van derden.",
+    "card_open_button": "Verzamelkaart",
+    "card_share_link": "Link delen",
+    "card_link_copied": "Link gekopieerd",
+    "card_close": "Sluiten"
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -18477,7 +18513,11 @@
     "nav_locale_suggest_label": "Просмотреть эту страницу на вашем языке",
     "landing_footer_about": "Orrery — программа с открытым исходным кодом под лицензией MIT. Без учётных записей, без рекламы и ничего не передаётся третьим лицам. Система измеряет использование сайта — анонимно, без cookies, на собственном сервере — и вы можете это отключить. Три функциональных cookie запоминают ваш язык, место в туре и этот выбор. Подробности на странице {privacy}.",
     "landing_footer_privacy_link": "конфиденциальности",
-    "landing_meta_description": "Браузерный исследователь Солнечной системы, симулятор миссий и энциклопедия. Реальная небесная механика. Тщательно подобранный каталог миссий. 14 языков. Открытый исходный код, без учётных записей, без рекламы, без трекеров третьих лиц."
+    "landing_meta_description": "Браузерный исследователь Солнечной системы, симулятор миссий и энциклопедия. Реальная небесная механика. Тщательно подобранный каталог миссий. 14 языков. Открытый исходный код, без учётных записей, без рекламы, без трекеров третьих лиц.",
+    "card_open_button": "Коллекционная карточка",
+    "card_share_link": "Поделиться ссылкой",
+    "card_link_copied": "Ссылка скопирована",
+    "card_close": "Закрыть"
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -20460,7 +20500,11 @@
     "nav_locale_suggest_label": "用您的语言查看此页面",
     "landing_footer_about": "Orrery 是基于 MIT 许可证的开源项目。无账户、无广告、不与第三方共享数据。网站会测量使用情况——匿名、无 Cookie、自托管——你可以关闭此功能。三个功能性 Cookie 会记住你的语言、导览位置和该选择。详情见{privacy}页面。",
     "landing_footer_privacy_link": "隐私",
-    "landing_meta_description": "基于浏览器的太阳系探索器、任务模拟器和百科全书。真实的轨道力学。精心策划的任务目录。14 种语言。开源、无账户、无广告、无第三方追踪器。"
+    "landing_meta_description": "基于浏览器的太阳系探索器、任务模拟器和百科全书。真实的轨道力学。精心策划的任务目录。14 种语言。开源、无账户、无广告、无第三方追踪器。",
+    "card_open_button": "收集卡",
+    "card_share_link": "分享链接",
+    "card_link_copied": "链接已复制",
+    "card_close": "关闭"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -22315,7 +22359,11 @@
     "nav_locale_suggest_label": "Погледајте ову страницу на вашем језику",
     "landing_footer_about": "Orrery је отворени код под MIT лиценцом. Без налога, без реклама и ничега што се дели са трећом страном. Мери како се сајт користи — анонимно, без колачића, самопослужујуће — и можете то искључити. Три функционална колачића памте ваш језик, вашу позицију у туру и тај избор. Детаљи на {privacy} страници.",
     "landing_footer_privacy_link": "приватност",
-    "landing_meta_description": "Претраживач сонцевог система у прегледачу, симулатор мисија и енциклопедија. Реална орбитална механика. Куриран каталог мисија. 14 језика. Отворени код, без налога, без реклама, без пратиоца трећих страна."
+    "landing_meta_description": "Претраживач сонцевог система у прегледачу, симулатор мисија и енциклопедија. Реална орбитална механика. Куриран каталог мисија. 14 језика. Отворени код, без налога, без реклама, без пратиоца трећих страна.",
+    "card_open_button": "Картица колекције",
+    "card_share_link": "Дели везу",
+    "card_link_copied": "Веза копирана",
+    "card_close": "Затвори"
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -23989,6 +24037,10 @@
     "nav_locale_suggest_label": "Veja esta página no seu idioma",
     "landing_footer_about": "Orrery é código aberto sob a licença MIT. Sem contas, sem publicidade e nada compartilhado com terceiros. Ele mede como o site é usado — anônimo, sem cookies — e você pode desativar isso. Três cookies funcionais lembram seu idioma, seu lugar no tour e essa escolha. Detalhes na página de {privacy}.",
     "landing_footer_privacy_link": "privacidade",
-    "landing_meta_description": "Explorador do sistema solar baseado em navegador, simulador de missões e enciclopédia. Mecânica orbital real. Catálogo de missões curado. 14 idiomas. Código aberto, sem contas, sem anúncios, sem rastreadores de terceiros."
+    "landing_meta_description": "Explorador do sistema solar baseado em navegador, simulador de missões e enciclopédia. Mecânica orbital real. Catálogo de missões curado. 14 idiomas. Código aberto, sem contas, sem anúncios, sem rastreadores de terceiros.",
+    "card_open_button": "Cartão colecionável",
+    "card_share_link": "Compartilhar link",
+    "card_link_copied": "Link copiado",
+    "card_close": "Fechar"
   }
 }

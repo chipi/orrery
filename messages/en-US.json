@@ -3038,5 +3038,9 @@
   "science_layer_bh_curvature_desc": "A spacetime grid warped by the same geodesics that bend the light — an analogy for curvature, not a literal surface.",
   "science_layer_bh_time_desc": "How much slower clocks tick at the photon sphere, the innermost stable orbit, and farther out — gravitational time dilation, quantified.",
   "star_index_black_holes": "Black holes",
-  "landing_footer_privacy_link": "privacy"
+  "landing_footer_privacy_link": "privacy",
+  "card_open_button": "Collector card",
+  "card_share_link": "Share link",
+  "card_link_copied": "Link copied",
+  "card_close": "Close"
 }

@@ -62,7 +62,7 @@ describe('cardForMission', () => {
     expect(spec.factLabel).toBe('FIRST');
     expect(spec.fact).toMatch(/^First humans/);
     expect(spec.slug).toBe('orrery.day/c/mission/apollo11');
-    expect(spec.imagePath).toBe('/images/cards/mission/apollo11.png');
+    expect(spec.imagePath).toBe('/images/cards/mission/apollo11.jpg');
     expect(spec.shareHref).toBe('/c/mission/apollo11');
     expect(spec.figureUrl).toBe('/images/missions/thumbnails/apollo11.webp');
   });
@@ -128,7 +128,7 @@ describe('cardForFleet', () => {
     expect(spec.factLabel).toBe('KNOWN FOR');
     expect(spec.fact).toBe('Sent humans to the Moon');
     expect(spec.slug).toBe('orrery.day/c/fleet/saturn-v');
-    expect(spec.imagePath).toBe('/images/cards/fleet/saturn-v.png');
+    expect(spec.imagePath).toBe('/images/cards/fleet/saturn-v.jpg');
     expect(spec.shareHref).toBe('/c/fleet/saturn-v');
   });
 

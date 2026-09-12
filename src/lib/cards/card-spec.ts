@@ -142,7 +142,7 @@ export function cardForMission(
     figureCaption: 'TRAJECTORY',
     creditLine: mission.credit ? `SOURCES: ${chip(mission.credit, 60)}` : '',
     slug: `orrery.day/c/mission/${mission.id}`,
-    imagePath: `/images/cards/mission/${mission.id}.png`,
+    imagePath: `/images/cards/mission/${mission.id}.jpg`,
     shareHref: `/c/mission/${mission.id}`,
   };
 }
@@ -204,7 +204,7 @@ export function cardForFleet(
     figureCaption: figureUrl ? 'ANATOMY' : undefined,
     creditLine: `SOURCES: ${chip(entry.agency, 60)}`,
     slug: `orrery.day/c/fleet/${entry.id}`,
-    imagePath: `/images/cards/fleet/${entry.id}.png`,
+    imagePath: `/images/cards/fleet/${entry.id}.jpg`,
     shareHref: `/c/fleet/${entry.id}`,
   };
 }

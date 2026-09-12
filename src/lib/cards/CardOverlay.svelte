@@ -51,9 +51,9 @@
       const blob = await (await fetch(url)).blob();
       const file = new File(
         [blob],
-        `orrery-card-${spec.title.replace(/\s+/g, '-').toLowerCase()}.png`,
+        `orrery-card-${spec.title.replace(/\s+/g, '-').toLowerCase()}.jpg`,
         {
-          type: 'image/png',
+          type: 'image/jpeg',
         },
       );
       if (typeof navigator !== 'undefined' && navigator.canShare?.({ files: [file] })) {

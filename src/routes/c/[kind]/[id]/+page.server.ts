@@ -56,7 +56,7 @@ export const load: PageServerLoad = ({ params }) => {
   const shared = (title: string, description: string, target: string) => ({
     title,
     description,
-    image: `${PUBLIC_ORIGIN}/images/cards/${params.kind}/${params.id}.png`,
+    image: `${PUBLIC_ORIGIN}/images/cards/${params.kind}/${params.id}.jpg`,
     pageUrl: `${PUBLIC_ORIGIN}/c/${params.kind}/${params.id}`,
     target,
   });

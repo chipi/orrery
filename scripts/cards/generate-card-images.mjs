@@ -123,7 +123,7 @@ async function main() {
   const todo = targets.filter((t) => {
     const key = `${t.kind}/${t.id}`;
     const hash = inputHash(t.dataPaths, tpl);
-    const out = `${OUT_ROOT}/${key}.png`;
+    const out = `${OUT_ROOT}/${key}.jpg`;
     return manifest.entries[key] !== hash || !existsSync(out);
   });
   console.log(`cards: ${targets.length} target(s), ${todo.length} to render (rest cached)`);
@@ -154,8 +154,10 @@ async function main() {
         continue;
       }
       const card = await pg.waitForSelector('.card', { timeout: 5_000 });
-      const out = `${OUT_ROOT}/${key}.png`;
-      await card.screenshot({ path: out });
+      // JPEG q90: ~190K vs ~560K for PNG across the 352-card corpus (190MB
+      // → ~65MB in-repo); text stays crisp at deviceScaleFactor 3.
+      const out = `${OUT_ROOT}/${key}.jpg`;
+      await card.screenshot({ path: out, type: 'jpeg', quality: 90 });
       manifest.entries[key] = inputHash(t.dataPaths, tpl);
       ok += 1;
       process.stdout.write(`  ${key}`);

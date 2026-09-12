@@ -73,12 +73,21 @@
     }
   }
 
+  // Capture phase + stopPropagation: the overlay is the topmost layer, so
+  // Escape must close IT and not also the Panel underneath (whose own
+  // window listener would otherwise fire in the same dispatch — and the
+  // panel's state flush can detach a conditionally-bound bubble listener
+  // mid-dispatch, which is exactly the race that left the overlay open).
   function onKeydown(e: KeyboardEvent): void {
-    if (e.key === 'Escape') onClose();
+    if (!open) return;
+    if (e.key === 'Escape') {
+      e.stopPropagation();
+      onClose();
+    }
   }
 </script>
 
-<svelte:window onkeydown={open ? onKeydown : undefined} />
+<svelte:window onkeydowncapture={onKeydown} />
 
 {#if open}
   <div

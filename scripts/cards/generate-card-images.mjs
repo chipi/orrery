@@ -65,6 +65,8 @@ function templateHash(kind) {
 // №NNN/total numbering is positional — an insertion must re-render the
 // kind or committed JPEGs drift from the in-app numbers). Whole-file
 // granularity: one edit re-renders the kind; coarse but correct.
+// image-provenance feeds the rendered PHOTO credit on every kind's card.
+const PROVENANCE = 'static/data/image-provenance.json';
 const KIND_HERO_DEPS = {
   mission: [
     'static/data/missions-hero-overrides.json',
@@ -94,7 +96,7 @@ const KIND_HERO_DEPS = {
 
 function inputHash(dataPaths, tpl, kind) {
   const parts = [tpl];
-  for (const p of [...dataPaths, ...(KIND_HERO_DEPS[kind] ?? [])]) {
+  for (const p of [...dataPaths, ...(KIND_HERO_DEPS[kind] ?? []), PROVENANCE]) {
     if (existsSync(p)) parts.push(readFileSync(p, 'utf8'));
   }
   return sha(parts.join('\n'));
@@ -161,6 +163,7 @@ async function main() {
 
   const server = maybeStartServer();
   let ok = 0;
+  let photoCredits = 0;
   let browser;
   // try/finally: a chromium.launch()/newContext() throw must still kill the
   // spawned static server (else it leaks holding the port) and persist the
@@ -197,6 +200,10 @@ async function main() {
         // the 407-card corpus); text stays crisp at deviceScaleFactor 3.
         const out = `${OUT_ROOT}/${key}.jpg`;
         await card.screenshot({ path: out, type: 'jpeg', quality: 90 });
+        const credit = await card
+          .$eval('.foot-credit', (el) => el.textContent ?? '')
+          .catch(() => '');
+        if (/PHOTO:/.test(credit)) photoCredits += 1;
         manifest.entries[key] = inputHash(t.dataPaths, templateHash(t.kind), t.kind);
         ok += 1;
         process.stdout.write(`  ${key}`);
@@ -213,8 +220,19 @@ async function main() {
     );
     writeFileSync(MANIFEST, JSON.stringify(manifest, null, 2) + '\n');
   }
-  console.log(`DONE ${ok}/${todo.length} rendered → ${OUT_ROOT}/`);
+  console.log(
+    `DONE ${ok}/${todo.length} rendered → ${OUT_ROOT}/ (${photoCredits} with PHOTO credit)`,
+  );
   if (ok < todo.length) process.exitCode = 1;
+  // Fail-open guard on the credit chain: the template resolves credits from
+  // data/image-provenance.json and flips credit-resolved even when the fetch
+  // 404s — if a big batch rendered ZERO photo credits, the manifest wasn't
+  // reachable and the corpus silently shipped uncredited (72 heroes are
+  // CC-BY/-SA where attribution is a license condition).
+  if (ok >= 20 && photoCredits === 0) {
+    console.error('✗ no card rendered a PHOTO credit — provenance manifest unreachable?');
+    process.exitCode = 1;
+  }
 }
 
 void main();

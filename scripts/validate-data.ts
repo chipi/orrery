@@ -1091,6 +1091,22 @@ try {
         cardParityFailed++;
       }
     }
+    // Disk orphans: a JPEG with no manifest entry is a removed entity's
+    // card still being published — prune it alongside the data removal.
+    for (const kindDir of readdirSync(join('static', 'images', 'cards'))) {
+      const dirPath = join('static', 'images', 'cards', kindDir);
+      if (!statSync(dirPath).isDirectory()) continue;
+      for (const f of readdirSync(dirPath)) {
+        if (!f.endsWith('.jpg')) continue;
+        const key = `${kindDir}/${f.replace(/\.jpg$/, '')}`;
+        if (!targetKeys.has(key)) {
+          console.error(
+            `  card corpus: disk-orphan JPEG '${key}' — prune it (entity removed or re-aliased)`,
+          );
+          cardParityFailed++;
+        }
+      }
+    }
     // Alias stubs unfurl the canonical mission's JPEG — it must exist too.
     for (const a of aliasStubTargets() as Array<{ canonicalMission: string }>) {
       if (!existsSync(join('static', 'images', 'cards', 'mission', `${a.canonicalMission}.jpg`))) {

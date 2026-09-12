@@ -81,7 +81,7 @@
         flash('shared');
         return;
       }
-      // Desktop fallback — download the PNG.
+      // Desktop fallback — download the JPEG.
       const a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
       a.download = file.name;
@@ -106,6 +106,36 @@
       onClose();
     }
   }
+
+  // Modal focus contract (aria-modal without containment is a WCAG miss):
+  // focus moves into the sheet on open, Tab cycles within it, and focus
+  // returns to the opener on close.
+  let sheetEl = $state<HTMLDivElement | null>(null);
+  let restoreTo: HTMLElement | null = null;
+  $effect(() => {
+    if (open && sheetEl) {
+      restoreTo = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+      sheetEl.focus();
+    } else if (!open && restoreTo) {
+      restoreTo.focus();
+      restoreTo = null;
+    }
+  });
+
+  function trapTab(e: KeyboardEvent): void {
+    if (e.key !== 'Tab' || !sheetEl) return;
+    const focusables = Array.from(sheetEl.querySelectorAll<HTMLElement>('button'));
+    if (focusables.length === 0) return;
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+    if (e.shiftKey && (document.activeElement === first || document.activeElement === sheetEl)) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  }
 </script>
 
 <svelte:window onkeydowncapture={onKeydown} />
@@ -116,7 +146,17 @@
     role="presentation"
     onclick={(e) => e.target === e.currentTarget && onClose()}
   >
-    <div class="sheet" role="dialog" aria-modal="true" aria-label={spec.title}>
+    <!-- svelte-ignore a11y_no_noninteractive_tabindex — the dialog container
+         takes initial focus per the modal focus contract. -->
+    <div
+      class="sheet"
+      role="dialog"
+      aria-modal="true"
+      aria-label={spec.title}
+      tabindex="-1"
+      bind:this={sheetEl}
+      onkeydown={trapTab}
+    >
       <CollectibleCard {spec} />
       <div class="actions">
         {#if cardImageOk}

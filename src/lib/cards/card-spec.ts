@@ -157,7 +157,7 @@ export function cardForMission(
     heroUrl,
     figureUrl: `/images/missions/thumbnails/${mission.id}.webp`,
     figureCaption: m.card_caption_trajectory(),
-    creditLine: mission.credit ? `SOURCES: ${chip(mission.credit, 60)}` : '',
+    creditLine: mission.credit ? `${m.card_label_sources()}: ${chip(mission.credit, 60)}` : '',
     slug: `${SLUG_HOST}/c/mission/${mission.id}`,
     imagePath: `/images/cards/mission/${mission.id}.jpg`,
     shareHref: `/c/mission/${mission.id}`,
@@ -173,7 +173,16 @@ export function cardForMission(
  * the mission card; the generator + share stubs skip the fleet duplicate.
  */
 export function fleetAliasesMission(fleetId: string, missionIndex: MissionIndex[]): boolean {
-  return missionIndex.some((mi) => mi.id === fleetId);
+  return fleetAliasMissionId(fleetId, missionIndex) !== null;
+}
+
+/** Fleet↔mission ids drift on dashes ('change-4' vs 'change4' — 11 real
+ *  duplicates shipped before this normalisation). Compare dash-stripped;
+ *  returns the MISSION's real id (the canonical card owner) or null. */
+const normalizeCardId = (id: string) => id.replace(/-/g, '');
+export function fleetAliasMissionId(fleetId: string, missionIndex: MissionIndex[]): string | null {
+  const n = normalizeCardId(fleetId);
+  return missionIndex.find((mi) => normalizeCardId(mi.id) === n)?.id ?? null;
 }
 
 const FLEET_CATEGORY_LABEL: Record<string, () => string> = {
@@ -235,7 +244,7 @@ export function cardForFleet(
     heroUrl,
     figureUrl,
     figureCaption: figureUrl ? m.card_caption_anatomy() : undefined,
-    creditLine: `SOURCES: ${chip(entry.agency, 60)}`,
+    creditLine: `${m.card_label_sources()}: ${chip(entry.agency, 60)}`,
     slug: `${SLUG_HOST}/c/fleet/${entry.id}`,
     imagePath: `/images/cards/fleet/${entry.id}.jpg`,
     shareHref: `/c/fleet/${entry.id}`,
@@ -323,7 +332,7 @@ export function cardForSite(
         ? m.card_fact_role()
         : undefined,
     heroUrl,
-    creditLine: `SOURCES: ${chip(site.credit.replace(/^©\s*/, ''), 60)}`,
+    creditLine: `${m.card_label_sources()}: ${chip(site.credit.replace(/^©\s*/, ''), 60)}`,
     slug: `${SLUG_HOST}/c/${body}-site/${site.id}`,
     imagePath: `/images/cards/${body}-site/${site.id}.jpg`,
     shareHref: `/c/${body}-site/${site.id}`,

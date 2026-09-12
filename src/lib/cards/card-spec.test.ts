@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import {
   cardForFleet,
   cardForMission,
+  fleetAliasMissionId,
   cardForPlanet,
   cardForSatellite,
   cardForSite,
@@ -166,6 +167,12 @@ describe('fleetAliasesMission', () => {
   it('flags fleet ids that exist in the mission index', () => {
     expect(fleetAliasesMission('apollo11', INDEX)).toBe(true);
     expect(fleetAliasesMission('saturn-v', INDEX)).toBe(false);
+  });
+
+  it('matches dash variants and returns the MISSION id (change-4 ↔ change4)', () => {
+    const idx = [{ id: 'change4', dest: 'MOON' }] as MissionIndex[];
+    expect(fleetAliasMissionId('change-4', idx)).toBe('change4');
+    expect(fleetAliasMissionId('change-6', idx)).toBeNull();
   });
 });
 

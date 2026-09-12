@@ -15,7 +15,7 @@
   import {
     cardForFleet,
     cardForMission,
-    fleetAliasesMission,
+    fleetAliasMissionId,
     type CardSpec,
   } from '$lib/cards/card-spec';
   import CardOverlay from '$lib/cards/CardOverlay.svelte';
@@ -92,7 +92,7 @@
   let cardSpec = $derived<CardSpec | null>(
     !entry || aliasPending
       ? null
-      : aliasMission && aliasMission.id === entry.id
+      : aliasMission
         ? cardForMission(aliasMission, missionIndex, aliasHero)
         : // Wait for the index before deriving a fleet card — an empty index
           // would flash a '—/0' collection number on first open.
@@ -132,23 +132,29 @@
       aliasPending = true;
       const forId = entry.id;
       void (async () => {
+        // On a thrown fetch aliasPending stays true → CTA absent; clearing
+        // it in a finally would mislabel an aliased entry as a fleet card.
         try {
           if (fleetIndex.length === 0) fleetIndex = await getFleetIndex();
           if (missionIndex.length === 0) missionIndex = await getMissionIndex();
-          if (!fleetAliasesMission(forId, missionIndex)) return;
-          const row = missionIndex.find((mi) => mi.id === forId)!;
+          const stillCurrent = () => entry != null && entry.id === lastId && forId === lastId;
+          const aliasId = fleetAliasMissionId(forId, missionIndex);
+          if (!aliasId) {
+            if (stillCurrent()) aliasPending = false;
+            return;
+          }
+          const row = missionIndex.find((mi) => mi.id === aliasId)!;
           const [mission, missionGallery] = await Promise.all([
-            getMission(forId, row.dest, localeFromPage(page)),
-            getMissionGallery(forId).catch(() => [] as string[]),
+            getMission(aliasId, row.dest, localeFromPage(page)),
+            getMissionGallery(aliasId).catch(() => [] as string[]),
           ]);
-          if (entry && entry.id === lastId && forId === lastId) {
+          if (stillCurrent()) {
             aliasMission = mission;
             aliasHero = missionGallery[0];
+            aliasPending = false;
           }
         } catch {
-          /* flaky fetch — the card CTA simply stays absent */
-        } finally {
-          if (entry && entry.id === lastId && forId === lastId) aliasPending = false;
+          /* flaky fetch — aliasPending stays true, the card CTA stays absent */
         }
       })();
     }

@@ -35,6 +35,10 @@ export function canonicalCardTargets() {
   /** @type {Array<{id: string, category: string}>} */
   const fleet = readJson('static/data/fleet/index.json');
   const missionIds = new Set(missions.map((mi) => mi.id));
+  // Fleet↔mission ids drift on dashes ('change-4' vs 'change4') — the
+  // canonical-owner test is dash-normalized (twin of card-spec
+  // fleetAliasMissionId; change together).
+  const normalizedMissionIds = new Set(missions.map((mi) => mi.id.replace(/-/g, '')));
   /** @param {string} body @returns {CardTarget[]} */
   const siteTargets = (body) =>
     /** @type {Array<{id: string, mission_id?: string}>} */ (
@@ -59,7 +63,7 @@ export function canonicalCardTargets() {
       };
     }),
     ...fleet
-      .filter((fi) => !missionIds.has(fi.id))
+      .filter((fi) => !normalizedMissionIds.has(fi.id.replace(/-/g, '')))
       .map((fi) => ({
         kind: 'fleet',
         id: fi.id,
@@ -109,14 +113,17 @@ export function canonicalCardTargets() {
  * @returns {AliasStub[]}
  */
 export function aliasStubTargets() {
-  const missionIds = new Set(
-    /** @type {Array<{id: string}>} */ (readJson('static/data/missions/index.json')).map(
-      (mi) => mi.id,
-    ),
-  );
+  /** @type {Array<{id: string}>} */
+  const missions = readJson('static/data/missions/index.json');
+  const missionIds = new Set(missions.map((mi) => mi.id));
+  const byNormalized = new Map(missions.map((mi) => [mi.id.replace(/-/g, ''), mi.id]));
   const fleetAliases = /** @type {Array<{id: string}>} */ (readJson('static/data/fleet/index.json'))
-    .filter((fi) => missionIds.has(fi.id))
-    .map((fi) => ({ kind: 'fleet', id: fi.id, canonicalMission: fi.id }));
+    .filter((fi) => byNormalized.has(fi.id.replace(/-/g, '')))
+    .map((fi) => ({
+      kind: 'fleet',
+      id: fi.id,
+      canonicalMission: /** @type {string} */ (byNormalized.get(fi.id.replace(/-/g, ''))),
+    }));
   const siteAliases = ['moon', 'mars'].flatMap((body) =>
     /** @type {Array<{id: string, mission_id?: string}>} */ (
       readJson(`static/data/${body}-sites.json`)

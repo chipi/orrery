@@ -81,6 +81,9 @@ export const load: PageServerLoad = ({ params }) => {
     target,
   });
 
+  // Deliberately NO try/catch on the overlay read: a mission missing its
+  // en-US overlay is an editorial-contract violation (ADR-069) and must
+  // fail the prerender loudly, not ship a blank unfurl.
   const missionOg = (missionId: string): { title: string; description: string } => {
     const row = missionIndex().find((mi) => mi.id === missionId);
     if (!row) throw error(404, 'unknown mission');

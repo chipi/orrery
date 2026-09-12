@@ -916,31 +916,35 @@
       });
       // Card canonical-entity resolution (fire-and-forget, still-current guarded).
       void (async () => {
+        // On a thrown fetch cardAliasPending stays true → CTA absent;
+        // clearing it in a finally would mislabel an aliased site.
+        const stillCurrent = () =>
+          selected != null && selected.id === lastSelectedId && sid === lastSelectedId;
         try {
           if (body === 'earth') {
             if (cardFleetIndex.length === 0) cardFleetIndex = await getFleetIndex();
             const entry = await getFleet(sid, 'launch-site', localeFromPage(page));
-            if (selected != null && selected.id === lastSelectedId && sid === lastSelectedId)
-              cardFleetEntry = entry;
+            if (stillCurrent()) cardFleetEntry = entry;
             return;
           }
           if (cardMissionIndex.length === 0) cardMissionIndex = await getMissionIndex();
           const aliasId = siteAliasMissionId(site, cardMissionIndex);
-          if (!aliasId) return;
+          if (!aliasId) {
+            if (stillCurrent()) cardAliasPending = false;
+            return;
+          }
           const row = cardMissionIndex.find((mi) => mi.id === aliasId)!;
           const [mission, missionGallery] = await Promise.all([
             getMission(aliasId, row.dest, localeFromPage(page)),
             getMissionGallery(aliasId).catch(() => [] as string[]),
           ]);
-          if (selected != null && selected.id === lastSelectedId && sid === lastSelectedId) {
+          if (stillCurrent()) {
             cardAliasMission = mission;
             cardAliasHero = missionGallery[0];
+            cardAliasPending = false;
           }
         } catch {
-          /* flaky fetch — the card CTA simply stays absent */
-        } finally {
-          if (selected != null && selected.id === lastSelectedId && sid === lastSelectedId)
-            cardAliasPending = false;
+          /* flaky fetch — cardAliasPending stays true, the card CTA stays absent */
         }
       })();
     }

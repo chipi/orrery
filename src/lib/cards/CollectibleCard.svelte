@@ -17,6 +17,7 @@
 <script lang="ts">
   import { assetUrl } from '$lib/asset-url';
   import { getImageProvenance } from '$lib/data';
+  import * as m from '$lib/paraglide/messages';
   import type { CardSpec } from './card-spec';
 
   type Props = { spec: CardSpec };
@@ -37,6 +38,17 @@
   // spec.creditLine is the fallback when no row exists (fallback-gallery
   // heroes). `creditResolved` gates the generator's screenshot so a card
   // is never captured before its credit rendered.
+  // Defense-in-depth: the fetch pipeline has historically left URLs /
+  // Commons boilerplate in `author` — never let a non-name reach a shipped
+  // JPEG's attribution line; fall back to the agency (the 2026-09-12 sweep
+  // corrected the known rows, this guards recurrence).
+  const junkAuthor = (a: string) =>
+    /^https?:\/\//.test(a) ||
+    /^(flickr|wikimedia commons|commons|youtube)$/i.test(a.trim()) ||
+    /extracted from another file|released by the United States|\(image link\)/i.test(a);
+  const decodeEntities = (s: string) =>
+    s.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&#39;/g, "'");
+
   let heroCredit = $state<string | null>(null);
   let creditResolved = $state(false);
   $effect(() => {
@@ -47,7 +59,10 @@
     getImageProvenance(hero)
       .then((e) => {
         if (spec.heroUrl !== hero) return;
-        if (e) heroCredit = `${e.author ?? e.agency} · ${e.license_short}`;
+        if (e) {
+          const author = e.author && !junkAuthor(e.author) ? e.author : e.agency;
+          heroCredit = `${decodeEntities(author)} · ${e.license_short}`;
+        }
       })
       .catch(() => {})
       .finally(() => {
@@ -114,7 +129,7 @@
     </div>
     {#if heroCredit || spec.creditLine}
       <div class="foot-credit">
-        {heroCredit ? `PHOTO: ${heroCredit}` : spec.creditLine}
+        {heroCredit ? `${m.card_label_photo()}: ${heroCredit}` : spec.creditLine}
       </div>
     {/if}
   </footer>

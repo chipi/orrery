@@ -1,7 +1,14 @@
 import { describe, expect, it } from 'vitest';
-import { cardForFleet, cardForMission, fleetAliasesMission } from './card-spec';
+import {
+  cardForFleet,
+  cardForMission,
+  cardForSite,
+  fleetAliasesMission,
+  siteAliasMissionId,
+} from './card-spec';
 import type { Mission, MissionIndex } from '$types/mission';
 import type { FleetEntry, FleetIndexEntry } from '$types/fleet';
+import type { SurfaceSite } from '$types/surface-site';
 
 const INDEX: MissionIndex[] = [
   { id: 'sputnik1', agency: 'USSR', dest: 'EARTH', status: 'FLOWN', year: 1957 },
@@ -151,5 +158,90 @@ describe('fleetAliasesMission', () => {
   it('flags fleet ids that exist in the mission index', () => {
     expect(fleetAliasesMission('apollo11', INDEX)).toBe(true);
     expect(fleetAliasesMission('saturn-v', INDEX)).toBe(false);
+  });
+});
+
+const VIKING2: SurfaceSite = {
+  id: 'viking2-lander',
+  kind: 'surface',
+  agency: 'NASA',
+  nation: 'USA',
+  year: 1976,
+  landing_date: '1976-09-03',
+  lat: 47.673,
+  lon: 134.3,
+  crewed: false,
+  status: 'ENDED',
+  surface_status: 'completed',
+  surface_duration_days: 1281,
+  samples_kg: 0,
+  data_quality: 'good',
+  credit: '© NASA / Viking Project — Utopia Planitia landing site.',
+  links: [],
+  name: 'Viking 2 lander',
+  mission_type: 'Uncrewed Lander · Mission Complete',
+  site_name: 'Utopia Planitia',
+  fact: 'Operated 1,281 days at 48°N. Detected the first frost on Mars.',
+} as SurfaceSite;
+
+const SITES: SurfaceSite[] = [{ id: 'other' } as SurfaceSite, VIKING2];
+
+describe('cardForSite', () => {
+  const spec = cardForSite(VIKING2, SITES, 'mars', '/images/mars-sites/viking2-lander/01.webp');
+
+  it('numbers against the body site list + carries the body collection', () => {
+    expect(spec.collection).toBe('MARS SITES');
+    expect(spec.number).toBe('002/2');
+  });
+
+  it('takes the vehicle class into the kicker, status stays in the grid', () => {
+    expect(spec.kicker).toBe('NASA · UNCREWED LANDER · 1976');
+    expect(spec.stats.find((s) => s.label === 'STATUS')?.value).toBe('ENDED');
+  });
+
+  it('formats surface stats — landed date, coords, surface days', () => {
+    expect(spec.stats.find((s) => s.label === 'LANDED')?.value).toBe('SEP 3 1976');
+    expect(spec.stats.find((s) => s.label === 'COORDS')?.value).toBe('47.7°N 134.3°E');
+    expect(spec.stats.find((s) => s.label === 'SURFACE')?.value).toBe('1,281 D');
+    expect(spec.stats.find((s) => s.label === 'SAMPLES')).toBeUndefined();
+  });
+
+  it('uses the site name as the SITE fact + site share artifacts', () => {
+    expect(spec.factLabel).toBe('SITE');
+    expect(spec.fact).toBe('Utopia Planitia');
+    expect(spec.slug).toBe('orrery.day/c/mars-site/viking2-lander');
+    expect(spec.imagePath).toBe('/images/cards/mars-site/viking2-lander.jpg');
+    expect(spec.shareHref).toBe('/c/mars-site/viking2-lander');
+  });
+
+  it('strips the © prefix from the credit line', () => {
+    expect(spec.creditLine.startsWith('SOURCES: NASA / Viking Project')).toBe(true);
+  });
+
+  it('maps orbiter sites to orbit stats', () => {
+    const orbiter = cardForSite(
+      {
+        ...VIKING2,
+        id: 'mro',
+        kind: 'orbiter',
+        altitude_km: 300,
+        inclination_deg: 92.6,
+        mission_type: 'Uncrewed Orbiter · Active',
+      } as SurfaceSite,
+      SITES,
+      'mars',
+    );
+    expect(orbiter.stats.find((s) => s.label === 'ORBIT')?.value).toBe('300 KM');
+    expect(orbiter.stats.find((s) => s.label === 'INCLINATION')?.value).toBe('92.6°');
+    expect(orbiter.stats.find((s) => s.label === 'LANDED')).toBeUndefined();
+  });
+});
+
+describe('siteAliasMissionId', () => {
+  it('prefers mission_id, falls back to id parity, else null', () => {
+    expect(siteAliasMissionId({ id: 'site-x', mission_id: 'apollo11' }, INDEX)).toBe('apollo11');
+    expect(siteAliasMissionId({ id: 'sputnik1' }, INDEX)).toBe('sputnik1');
+    expect(siteAliasMissionId({ id: 'viking2-lander' }, INDEX)).toBeNull();
+    expect(siteAliasMissionId({ id: 'site-x', mission_id: 'not-a-mission' }, INDEX)).toBeNull();
   });
 });

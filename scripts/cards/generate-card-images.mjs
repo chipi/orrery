@@ -30,19 +30,27 @@ const MANIFEST = `${OUT_ROOT}/cards-manifest.json`;
 const PORT = 4179;
 const BASE_URL = process.env.BASE_URL ?? `http://127.0.0.1:${PORT}`;
 
-// Files whose change invalidates EVERY card (the template layer).
-const TEMPLATE_SOURCES = [
-  'src/lib/cards/CollectibleCard.svelte',
-  'src/lib/cards/card-spec.ts',
-  'src/lib/cards/pick-card-hero.ts',
-  'src/routes/cards/mission/[id]/+page.svelte',
-  'src/routes/cards/fleet/[id]/+page.svelte',
-];
+// Files whose change invalidates EVERY card — the VISUAL layer only
+// (template markup/CSS + the hero-pick behaviour). card-spec.ts and the
+// render stage are deliberately NOT hashed by content: they grow a new
+// resolver per card kind, and content-hashing them re-rendered all 352
+// JPEGs (74MB of binary churn) per slice. Instead each kind carries an
+// explicit version below — bump it when that kind's resolver or stage
+// logic changes its OUTPUT.
+const SHARED_SOURCES = ['src/lib/cards/CollectibleCard.svelte', 'src/lib/cards/pick-card-hero.ts'];
+
+const KIND_VERSION = {
+  mission: 1,
+  fleet: 1,
+  'moon-site': 1,
+  'mars-site': 1,
+};
 
 const sha = (buf) => createHash('sha256').update(buf).digest('hex').slice(0, 16);
 
-function templateHash() {
-  return sha(TEMPLATE_SOURCES.map((f) => readFileSync(f, 'utf8')).join('\n'));
+function templateHash(kind) {
+  const shared = SHARED_SOURCES.map((f) => readFileSync(f, 'utf8')).join('\n');
+  return sha(`${shared}\n${kind}@v${KIND_VERSION[kind]}`);
 }
 
 function inputHash(dataPaths, tpl) {
@@ -63,6 +71,16 @@ function enumerateTargets() {
   const missions = JSON.parse(readFileSync('static/data/missions/index.json', 'utf8'));
   const fleet = JSON.parse(readFileSync('static/data/fleet/index.json', 'utf8'));
   const missionIds = new Set(missions.map((mi) => mi.id));
+  // Sites that alias a mission (mission_id or id parity — 45 of 54) have
+  // their canonical card at mission/<id>; only the remainder render here.
+  const siteTargets = (body) =>
+    JSON.parse(readFileSync(`static/data/${body}-sites.json`, 'utf8'))
+      .filter((s) => !missionIds.has(s.mission_id ?? '') && !missionIds.has(s.id))
+      .map((s) => ({
+        kind: `${body}-site`,
+        id: s.id,
+        dataPaths: [`static/data/${body}-sites.json`, `i18n-src/en-US/${body}-sites/${s.id}.json`],
+      }));
   return [
     ...missions.map((mi) => {
       const destLower = mi.dest.toLowerCase();
@@ -85,6 +103,8 @@ function enumerateTargets() {
           `i18n-src/en-US/fleet/${fi.category}/${fi.id}.json`,
         ],
       })),
+    ...siteTargets('moon'),
+    ...siteTargets('mars'),
   ];
 }
 
@@ -115,14 +135,29 @@ async function main() {
   const all = enumerateTargets();
   const targets = only.length ? all.filter((t) => only.includes(t.id)) : all;
 
-  const tpl = templateHash();
   const manifest = loadManifest();
-  mkdirSync(`${OUT_ROOT}/mission`, { recursive: true });
-  mkdirSync(`${OUT_ROOT}/fleet`, { recursive: true });
+  for (const kind of Object.keys(KIND_VERSION))
+    mkdirSync(`${OUT_ROOT}/${kind}`, { recursive: true });
+
+  // --rehash: rewrite manifest hashes for already-rendered outputs without
+  // re-rendering — the migration path when the hashing SCHEME changes but
+  // the cards themselves haven't.
+  if (process.argv.includes('--rehash')) {
+    let n = 0;
+    for (const t of all) {
+      const key = `${t.kind}/${t.id}`;
+      if (!existsSync(`${OUT_ROOT}/${key}.jpg`)) continue;
+      manifest.entries[key] = inputHash(t.dataPaths, templateHash(t.kind));
+      n += 1;
+    }
+    writeFileSync(MANIFEST, JSON.stringify(manifest, null, 2) + '\n');
+    console.log(`rehashed ${n} existing card(s), nothing rendered`);
+    return;
+  }
 
   const todo = targets.filter((t) => {
     const key = `${t.kind}/${t.id}`;
-    const hash = inputHash(t.dataPaths, tpl);
+    const hash = inputHash(t.dataPaths, templateHash(t.kind));
     const out = `${OUT_ROOT}/${key}.jpg`;
     return manifest.entries[key] !== hash || !existsSync(out);
   });
@@ -158,7 +193,7 @@ async function main() {
       // → ~65MB in-repo); text stays crisp at deviceScaleFactor 3.
       const out = `${OUT_ROOT}/${key}.jpg`;
       await card.screenshot({ path: out, type: 'jpeg', quality: 90 });
-      manifest.entries[key] = inputHash(t.dataPaths, tpl);
+      manifest.entries[key] = inputHash(t.dataPaths, templateHash(t.kind));
       ok += 1;
       process.stdout.write(`  ${key}`);
     } catch (e) {

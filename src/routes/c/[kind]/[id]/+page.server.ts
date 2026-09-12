@@ -31,10 +31,22 @@ interface FleetIndexRow {
   tagline?: string;
 }
 
+interface SiteRow {
+  id: string;
+  kind: 'surface' | 'orbiter';
+  mission_id?: string;
+}
+
 const missionIndex = (): IndexRow[] =>
   JSON.parse(readFileSync('static/data/missions/index.json', 'utf8')) as IndexRow[];
 const fleetIndex = (): FleetIndexRow[] =>
   JSON.parse(readFileSync('static/data/fleet/index.json', 'utf8')) as FleetIndexRow[];
+const siteRows = (body: 'moon' | 'mars'): SiteRow[] =>
+  JSON.parse(readFileSync(`static/data/${body}-sites.json`, 'utf8')) as SiteRow[];
+
+/** Sites whose canonical card is NOT a mission card (see siteAliasMissionId). */
+const ownSites = (body: 'moon' | 'mars', missionIds: Set<string>): SiteRow[] =>
+  siteRows(body).filter((s) => !missionIds.has(s.mission_id ?? '') && !missionIds.has(s.id));
 
 export const entries: EntryGenerator = () => {
   const missions = missionIndex();
@@ -44,6 +56,8 @@ export const entries: EntryGenerator = () => {
     ...fleetIndex()
       .filter((fi) => !missionIds.has(fi.id))
       .map((fi) => ({ kind: 'fleet', id: fi.id })),
+    ...ownSites('moon', missionIds).map((s) => ({ kind: 'moon-site', id: s.id })),
+    ...ownSites('mars', missionIds).map((s) => ({ kind: 'mars-site', id: s.id })),
   ];
 };
 
@@ -72,6 +86,27 @@ export const load: PageServerLoad = ({ params }) => {
       overlay.name ?? params.id,
       overlay.description?.split(/(?<=[.!?])\s+/)[0] ?? '',
       `/missions?id=${params.id}`,
+    );
+  }
+
+  if (params.kind === 'moon-site' || params.kind === 'mars-site') {
+    const body = params.kind === 'moon-site' ? 'moon' : 'mars';
+    const row = siteRows(body).find((s) => s.id === params.id);
+    if (!row) throw error(404, 'unknown site');
+    let overlay: { name?: string; fact?: string } = {};
+    try {
+      overlay = JSON.parse(
+        readFileSync(`i18n-src/en-US/${body}-sites/${params.id}.json`, 'utf8'),
+      ) as { name?: string; fact?: string };
+    } catch {
+      /* no overlay — id fallback below */
+    }
+    // Orbiter sites deep-link via ?site= too — ?object= is the /earth
+    // satellite layer's param, not the moon/mars orbiter ring's.
+    return shared(
+      overlay.name ?? params.id,
+      overlay.fact?.split(/(?<=[.!?])\s+/)[0] ?? '',
+      `/${body}?site=${params.id}`,
     );
   }
 

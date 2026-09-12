@@ -14,6 +14,7 @@
  */
 import type { Mission, MissionIndex } from '$types/mission';
 import type { FleetEntry, FleetIndexEntry } from '$types/fleet';
+import type { SurfaceSite } from '$types/surface-site';
 
 export interface CardStat {
   label: string;
@@ -206,5 +207,83 @@ export function cardForFleet(
     slug: `orrery.day/c/fleet/${entry.id}`,
     imagePath: `/images/cards/fleet/${entry.id}.jpg`,
     shareHref: `/c/fleet/${entry.id}`,
+  };
+}
+
+/**
+ * Mission id a surface site aliases to, or null. Most moon/mars/venus sites
+ * ARE missions (Apollo 11 the site is Apollo 11 the mission) — matched by
+ * `mission_id` first, id parity second (same rule the panels' crossSite
+ * lookup uses). Aliased sites show the canonical mission card; only the
+ * handful without a mission record (45 of 54 alias) get a site card.
+ */
+export function siteAliasMissionId(
+  site: { id: string; mission_id?: string },
+  missionIndex: MissionIndex[],
+): string | null {
+  if (site.mission_id && missionIndex.some((mi) => mi.id === site.mission_id))
+    return site.mission_id;
+  if (missionIndex.some((mi) => mi.id === site.id)) return site.id;
+  return null;
+}
+
+/** '47.7°N 134.3°E' — the card register for site coordinates. */
+function cardCoords(lat: number, lon: number): string {
+  const la = `${Math.abs(lat).toFixed(1)}°${lat >= 0 ? 'N' : 'S'}`;
+  const lo = `${Math.abs(lon).toFixed(1)}°${lon >= 0 ? 'E' : 'W'}`;
+  return `${la} ${lo}`;
+}
+
+export function cardForSite(
+  site: SurfaceSite,
+  sites: SurfaceSite[],
+  body: 'moon' | 'mars',
+  heroUrl?: string,
+): CardSpec {
+  const pos = sites.findIndex((s) => s.id === site.id);
+  const total = sites.length;
+  const number = pos >= 0 ? `${String(pos + 1).padStart(3, '0')}/${total}` : `—/${total}`;
+
+  // Overlay mission_type reads 'Uncrewed Lander · Mission Complete' — the
+  // stat grid carries status, so the kicker takes the vehicle class only.
+  const typeLine = (site.mission_type?.split('·')[0].trim() ?? site.kind).toUpperCase();
+  const kicker = [site.agency, typeLine, site.year ? String(site.year) : '']
+    .filter(Boolean)
+    .join(' · ');
+
+  const stats: CardStat[] = [];
+  if (site.kind === 'surface') {
+    if (site.landing_date) stats.push({ label: 'LANDED', value: cardDate(site.landing_date) });
+    if (site.lat != null && site.lon != null)
+      stats.push({ label: 'COORDS', value: cardCoords(site.lat, site.lon) });
+    if (site.surface_duration_days)
+      stats.push({
+        label: 'SURFACE',
+        value: `${site.surface_duration_days.toLocaleString('en-US')} D`,
+      });
+    if (site.samples_kg) stats.push({ label: 'SAMPLES', value: `${site.samples_kg} KG` });
+  } else {
+    if (site.altitude_km)
+      stats.push({ label: 'ORBIT', value: `${site.altitude_km.toLocaleString('en-US')} KM` });
+    if (site.inclination_deg != null)
+      stats.push({ label: 'INCLINATION', value: `${site.inclination_deg}°` });
+  }
+  if (site.nation) stats.push({ label: 'NATION', value: site.nation });
+  stats.push({ label: 'STATUS', value: site.status });
+
+  return {
+    collection: body === 'moon' ? 'MOON SITES' : 'MARS SITES',
+    number,
+    title: site.name ?? site.id,
+    kicker,
+    story: site.fact ? leadSentences(site.fact, 2) : (site.left ?? ''),
+    stats: stats.slice(0, 6),
+    fact: site.site_name ?? site.capability,
+    factLabel: site.site_name ? 'SITE' : site.capability ? 'ROLE' : undefined,
+    heroUrl,
+    creditLine: `SOURCES: ${chip(site.credit.replace(/^©\s*/, ''), 60)}`,
+    slug: `orrery.day/c/${body}-site/${site.id}`,
+    imagePath: `/images/cards/${body}-site/${site.id}.jpg`,
+    shareHref: `/c/${body}-site/${site.id}`,
   };
 }

@@ -70,8 +70,19 @@
   import RegimeChip from '$lib/components/RegimeChip.svelte';
   import AgencyRow from '$lib/components/AgencyRow.svelte';
   import { regimeForAltitude } from '$lib/physics/util/orbit-regime-match';
-  import { getMissionIndex } from '$lib/data';
+  import { getMissionIndex, getMission, getFleet, getFleetIndex } from '$lib/data';
   import type { EarthObject } from '$types/earth-object';
+  import type { Mission, MissionIndex } from '$types/mission';
+  import type { FleetEntry, FleetIndexEntry } from '$types/fleet';
+  import {
+    cardForFleet,
+    cardForMission,
+    cardForSite,
+    siteAliasMissionId,
+    type CardSpec,
+  } from '$lib/cards/card-spec';
+  import CardOverlay from '$lib/cards/CardOverlay.svelte';
+  import { pickCardHero } from '$lib/cards/pick-card-hero';
   import {
     createSceneRenderer,
     disposeSceneRenderer,
@@ -840,6 +851,28 @@
   // Loaded from static/data/site-stories/<id>.json. Null when no
   // story file exists for this site → tab is hidden.
   let panelStory: SiteStory | null = $state(null);
+  // #547 S5 — the collectible card. One wiring serves every body this
+  // scene hosts: earth pads resolve their FLEET card (the site IS the
+  // fleet launch-site entry), moon/mars/venus sites that alias a mission
+  // (mission_id or id parity — 45 of 54) resolve the canonical MISSION
+  // card, and the rest get a site card numbered against their body's list.
+  let cardOpen = $state(false);
+  let cardHero = $state<string | undefined>(undefined);
+  let cardMissionIndex = $state<MissionIndex[]>([]);
+  let cardAliasMission = $state<Mission | null>(null);
+  let cardFleetEntry = $state<FleetEntry | null>(null);
+  let cardFleetIndex = $state<FleetIndexEntry[]>([]);
+  let cardSpec = $derived.by<CardSpec | null>(() => {
+    const site = selected as SurfaceSite | null;
+    if (!site) return null;
+    if (body === 'earth')
+      return cardFleetEntry && cardFleetEntry.id === site.id
+        ? cardForFleet(cardFleetEntry, cardFleetIndex, cardHero)
+        : null;
+    if (cardAliasMission) return cardForMission(cardAliasMission, cardMissionIndex, cardHero);
+    if (body === 'moon' || body === 'mars') return cardForSite(site, sites, body, cardHero);
+    return null; // venus non-aliased sites (none today) — no card
+  });
   $effect(() => {
     if (selected && selected.id !== lastSelectedId) {
       panelTab = 'overview';
@@ -848,6 +881,10 @@
       panelVideos = [];
       playerVideo = null;
       panelStory = null;
+      cardOpen = false;
+      cardHero = undefined;
+      cardAliasMission = null;
+      cardFleetEntry = null;
       lastSelectedId = selected.id;
       loadPanelData({
         siteId: selected.id,
@@ -855,14 +892,37 @@
         locale: localeFromPage(page),
         fetchGallery: loadGallery,
         isStillCurrent: () => selected != null && selected.id === lastSelectedId,
-        onGallery: (urls) => (panelGallery = urls),
+        onGallery: (urls) => {
+          panelGallery = urls;
+          void pickCardHero(urls).then((h) => {
+            if (selected != null && selected.id === lastSelectedId) cardHero = h;
+          });
+        },
         onStory: (story) => (panelStory = story),
       });
       const sid = selected.id;
+      const site = selected as SurfaceSite;
       void getVideosForEntity(sid).then((v) => {
         if (selected != null && selected.id === lastSelectedId && sid === lastSelectedId)
           panelVideos = v;
       });
+      // Card canonical-entity resolution (fire-and-forget, still-current guarded).
+      void (async () => {
+        if (body === 'earth') {
+          if (cardFleetIndex.length === 0) cardFleetIndex = await getFleetIndex();
+          const entry = await getFleet(sid, 'launch-site', localeFromPage(page));
+          if (selected != null && selected.id === lastSelectedId && sid === lastSelectedId)
+            cardFleetEntry = entry;
+          return;
+        }
+        if (cardMissionIndex.length === 0) cardMissionIndex = await getMissionIndex();
+        const aliasId = siteAliasMissionId(site, cardMissionIndex);
+        if (!aliasId) return;
+        const row = cardMissionIndex.find((mi) => mi.id === aliasId)!;
+        const mission = await getMission(aliasId, row.dest, localeFromPage(page));
+        if (selected != null && selected.id === lastSelectedId && sid === lastSelectedId)
+          cardAliasMission = mission;
+      })();
     }
   });
   let panelLinksByTier = $derived(
@@ -6404,8 +6464,27 @@ sample      ${debugInfo.projectedPxSample}`}
           {/if}
         {/if}
       {/if}
+
+      <!-- #547 S5 — every site carries its collectible card (mission card
+           when the site aliases one, fleet card for earth pads). -->
+      {#if cardSpec}
+        <div class="card-cta-bar">
+          <button
+            type="button"
+            class="cta-card"
+            onclick={() => (cardOpen = true)}
+            data-testid="open-card-btn"
+          >
+            {m.card_open_button()}
+          </button>
+        </div>
+      {/if}
     {/if}
   </Panel>
+
+  {#if cardSpec}
+    <CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
+  {/if}
 
   <PanelLightbox src={panelLightbox} onClose={() => (panelLightbox = null)} />
   <MediaPlayer video={playerVideo} onClose={() => (playerVideo = null)} />
@@ -7111,6 +7190,35 @@ sample      ${debugInfo.projectedPxSample}`}
     box-shadow: 0 0 3px currentColor;
   }
 
+  /* #547 S5 — card CTA, mirroring the missions/fleet panels' quiet register. */
+  .card-cta-bar {
+    padding: 12px 0 4px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    margin-top: 12px;
+  }
+  .cta-card {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 4px;
+    color: #fff;
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: 10px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+      background 120ms,
+      border-color 120ms;
+  }
+  .cta-card:hover,
+  .cta-card:focus-visible {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.45);
+    outline: none;
+  }
   .head {
     padding: 0 0 12px;
     border-bottom: 1px solid var(--color-border);

@@ -1,0 +1,1 @@
+var e={mars:{core:`#fff1e6`,bright:`#ff9a4d`,mid:`#ff6a2e`,deep:`#c8371a`,glowRGB:`255,122,60`},earth:{core:`#ecffff`,bright:`#7fe0ff`,mid:`#3aa0ff`,deep:`#2b6cff`,glowRGB:`90,190,255`},moon:{core:`#ffffff`,bright:`#e6ebf5`,mid:`#c1c6d4`,deep:`#9298aa`,glowRGB:`205,213,233`}};export{e as t};

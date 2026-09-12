@@ -50,7 +50,10 @@ for (const [name, bucket] of Object.entries(OVERRIDE_BUCKET)) {
 }
 
 const FULL_ONLY_BUCKETS = new Set(['hotspots', 'posters']); // tiles / downloadable art
-const SKIP_BUCKETS = new Set(['_staging']);
+// cards: generated share/og composites (#547) — the in-app card renders live
+// from the template + the already-cached hero, so the ~83 MB JPEG corpus buys
+// nothing offline except 'Share card', which needs connectivity to send anyway.
+const SKIP_BUCKETS = new Set(['_staging', 'cards']);
 const bytesOf = (f) => Number(execSync(`stat -f%z "${f}"`).toString().trim());
 const mb = (b) => (b / 1048576).toFixed(1);
 

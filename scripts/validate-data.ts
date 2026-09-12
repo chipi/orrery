@@ -19,7 +19,7 @@ import {
 } from 'node:fs';
 import { join } from 'node:path';
 import { isAllowedLicense } from './license-allowlist.js';
-// @ts-expect-error — plain .mjs shared enumerator (scripts/site-routes.mjs pattern)
+// Plain .mjs shared enumerator (scripts/site-routes.mjs pattern; JSDoc-typed).
 import { canonicalCardTargets, aliasStubTargets } from './card-targets.mjs';
 import { isAllowedChannel } from './video-channel-allowlist.js';
 import { isJpegBytes } from './lib/image-bytes.ts';

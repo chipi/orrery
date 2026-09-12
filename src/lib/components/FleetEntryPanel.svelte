@@ -90,12 +90,16 @@
       ? null
       : aliasMission && aliasMission.id === entry.id
         ? cardForMission(aliasMission, missionIndex, aliasHero)
-        : cardForFleet(
-            entry,
-            fleetIndex,
-            gallery[0],
-            spacecraftDiagramPath(entry.id) ?? launcherCutawayPath(entry.id) ?? undefined,
-          ),
+        : // Wait for the index before deriving a fleet card — an empty index
+          // would flash a '—/0' collection number on first open.
+          fleetIndex.length === 0
+          ? null
+          : cardForFleet(
+              entry,
+              fleetIndex,
+              gallery[0],
+              spacecraftDiagramPath(entry.id) ?? launcherCutawayPath(entry.id) ?? undefined,
+            ),
   );
 
   $effect(() => {

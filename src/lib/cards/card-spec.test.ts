@@ -373,6 +373,119 @@ describe('cardForSmallBody', () => {
   });
 });
 
+describe('value formatters (via resolver edges)', () => {
+  it('chip falls back to a hard cut when no word boundary exists', () => {
+    const spec = cardForMission(
+      { ...APOLLO, vehicle: 'SUPERHEAVYLIFTLAUNCHVEHICLECONFIG' } as Mission,
+      INDEX,
+    );
+    const vehicle = spec.stats.find((s) => s.label === 'VEHICLE')!.value;
+    expect(vehicle.endsWith('…')).toBe(true);
+    expect(vehicle.length).toBeLessThanOrEqual(27);
+  });
+
+  it('leadQuantity keeps the ~ prefix and falls back to chip on unit-less payloads', () => {
+    const approx = cardForMission({ ...APOLLO, payload: '~12500 kg propellant' } as Mission, INDEX);
+    expect(approx.stats.find((s) => s.label === 'PAYLOAD')?.value).toBe('~12,500 KG');
+    const noUnit = cardForMission({ ...APOLLO, payload: 'science instruments' } as Mission, INDEX);
+    expect(noUnit.stats.find((s) => s.label === 'PAYLOAD')?.value).toBe('science instruments');
+  });
+
+  it('cardDate passes invalid ISO strings through untouched', () => {
+    const spec = cardForMission({ ...APOLLO, departure_date: 'N/A' } as Mission, INDEX);
+    expect(spec.stats.find((s) => s.label === 'LAUNCH')?.value).toBe('N/A');
+  });
+});
+
+describe('sparse records degrade cleanly', () => {
+  it('a mission with no optional fields renders only the STATUS stat and no fact', () => {
+    const sparse = cardForMission(
+      {
+        id: 'sparse',
+        agency: 'ESA',
+        dest: 'MARS',
+        status: 'PLANNED',
+        name: 'Sparse',
+      } as unknown as Mission,
+      INDEX,
+    );
+    expect(sparse.stats.map((s) => s.label)).toEqual(['STATUS']);
+    expect(sparse.fact).toBeUndefined();
+    expect(sparse.factLabel).toBeUndefined();
+    expect(sparse.story).toBe('');
+  });
+
+  it('a fleet entry with an unknown category falls back to the upper-cased id', () => {
+    const spec = cardForFleet(
+      { ...SATURN_V, category: 'ground-station', linked_missions: undefined } as FleetEntry,
+      FLEET_INDEX,
+    );
+    expect(spec.kicker).toContain('GROUND STATION');
+    expect(spec.stats.find((s) => s.label === 'MISSIONS')).toBeUndefined();
+  });
+
+  it('a planet outside PLANET_STATS gets the generic kicker and no physical stats', () => {
+    const spec = cardForPlanet(
+      { id: 'nibiru', name: 'Nibiru', a: 5, T: 4000, rotPeriod: 10 } as LocalizedPlanet,
+      PLANETS,
+    );
+    expect(spec.kicker).toBe('PLANET · 5.00 AU');
+    expect(spec.stats.find((s) => s.label === 'DIAMETER')).toBeUndefined();
+    // Slow rotator + outer-planet year formats.
+    expect(spec.stats.find((s) => s.label === 'DAY')?.value).toBe('10 D');
+    expect(spec.stats.find((s) => s.label === 'YEAR')?.value).toBe('11.0 Y');
+  });
+
+  it('a satellite without discovery/visits omits those stats', () => {
+    const spec = cardForSatellite(
+      {
+        id: 'x',
+        name: 'X',
+        parent_planet_id: 'mars',
+        parent_planet_name: 'Mars',
+        radius_km: 11,
+        semi_major_axis_km: 9376,
+        orbital_period_days: 0.3,
+      } as unknown as SatelliteEntry,
+      [],
+    );
+    expect(spec.kicker).toBe('MARS · MOON');
+    expect(spec.stats.find((s) => s.label === 'DISCOVERED')).toBeUndefined();
+    expect(spec.stats.find((s) => s.label === 'VISITS')).toBeUndefined();
+    expect(spec.number).toBe('—/0');
+  });
+
+  it('a small body without radius/discovery/visit keeps orbit stats and no fact', () => {
+    const spec = cardForSmallBody(
+      { id: 'y', name: 'Y', type: 'asteroid', a: 2.2, e: 0.1, T: 1200, incl: 5 } as SmallBodyLike,
+      [],
+    );
+    expect(spec.stats.find((s) => s.label === 'RADIUS')).toBeUndefined();
+    expect(spec.factLabel).toBeUndefined();
+    expect(spec.stats.find((s) => s.label === 'PERIOD')?.value).toBe('3.3 Y');
+  });
+});
+
+describe('cardForSite — moon body + surface extras', () => {
+  it('renders the MOON SITES collection and the SAMPLES stat when samples were returned', () => {
+    const spec = cardForSite(
+      {
+        ...VIKING2,
+        id: 'moonx',
+        samples_kg: 21.55,
+        site_name: undefined,
+        capability: 'Sample return',
+      } as SurfaceSite,
+      [VIKING2],
+      'moon',
+    );
+    expect(spec.collection).toBe('MOON SITES');
+    expect(spec.stats.find((s) => s.label === 'SAMPLES')?.value).toBe('21.55 KG');
+    expect(spec.factLabel).toBe('ROLE');
+    expect(spec.shareHref).toBe('/c/moon-site/moonx');
+  });
+});
+
 describe('earthObjectCardAlias', () => {
   const FLEET_IDX = [{ id: 'galileo-gnss' }, { id: 'iss' }] as FleetIndexEntry[];
   const MISSIONS = [
@@ -398,5 +511,9 @@ describe('earthObjectCardAlias', () => {
 
   it('returns null for objects with no canonical card (GEO belt marker)', () => {
     expect(earthObjectCardAlias({ id: 'geo', body: 'EARTH' }, MISSIONS, FLEET_IDX)).toBeNull();
+  });
+
+  it('mission id match with wrong body and no fleet_ref yields null', () => {
+    expect(earthObjectCardAlias({ id: 'lro', body: 'EARTH' }, MISSIONS, FLEET_IDX)).toBeNull();
   });
 });

@@ -10,7 +10,7 @@ This is an **index**: each category page lists tools with *what / when / gotchas
 state*, and links to the deep references rather than duplicating them. The deep
 references remain authoritative for end-to-end flow:
 
-- **[`docs/adr/TA.md` §pipelines](../../adr/TA.md)** — the 10 numbered build-time pipelines.
+- **[`docs/adr/TA.md` §pipelines](../../adr/TA.md)** — the 13 numbered build-time pipelines.
 - **[`scripts/IMAGE-PIPELINE.md`](../../../scripts/IMAGE-PIPELINE.md)** — full image pipeline (source order, worked example).
 - **[`docs/guides/image-pipeline-v2.md`](../../guides/image-pipeline-v2.md)**, **[`docs/guides/audio-pipeline-setup.md`](../../guides/audio-pipeline-setup.md)**, **[`docs/anatomy-art-runbook.md`](../../anatomy-art-runbook.md)** — operator runbooks.
 
@@ -41,6 +41,7 @@ references remain authoritative for end-to-end flow:
 | Generate narration audio | `npm run audio:generate -- --episode <id>` | [content-pipelines](content-pipelines.md) |
 | Validate outbound LEARN links | `npm run check-learn-links` | [content-pipelines](content-pipelines.md) |
 | Refresh the launches manifest | `npm run fetch:launches` | [content-pipelines](content-pipelines.md) |
+| Regenerate collectible-card images | `npm run build-cards` | TA.md §Pipeline 13 |
 | Deploy to prod | trigger **Deploy to prod VPS** workflow | [build-ci-deploy](build-ci-deploy.md) |
 
 ## State & opportunities (assessed 2026-06-28)

@@ -4,7 +4,7 @@
  * Social crawlers don't execute JS and the app's query-param deep links all
  * serve the same prerendered shell — so per-entity link previews need real
  * static pages. Each stub prerenders with the entity's Open Graph tags
- * (og:image = the S2 card PNG) and instantly forwards humans into the app
+ * (og:image = the S2 card JPEG) and instantly forwards humans into the app
  * view. The card overlay shares THESE urls: recipients get the unfurled
  * card in the chat/social preview, then land on the live panel.
  *

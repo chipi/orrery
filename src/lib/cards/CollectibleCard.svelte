@@ -211,6 +211,10 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    /* Data values are LTR technical tokens ('46,782 KG', '~6 km/s') —
+       isolate them so RTL locales don't bidi-scramble sign/unit order. */
+    direction: ltr;
+    unicode-bidi: isolate;
   }
   .fig {
     margin: 0;
@@ -266,6 +270,9 @@
     font-size: 8px;
     letter-spacing: 0.8px;
     color: var(--card-faint);
+    /* №/slug are LTR tokens — keep their internal order in RTL locales. */
+    direction: ltr;
+    unicode-bidi: isolate;
   }
   .foot-num {
     font-weight: 700;

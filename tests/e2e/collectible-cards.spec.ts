@@ -58,6 +58,7 @@ test.describe('collectible cards (#547)', () => {
   test('fleet entry that IS a mission opens the canonical MISSION card with the mission hero', async ({
     page,
   }) => {
+    const errors = attachConsoleAndError(page);
     await page.goto('/fleet?id=perseverance');
     await openCard(page);
 
@@ -70,26 +71,39 @@ test.describe('collectible cards (#547)', () => {
       /\/images\/missions\/perseverance\//,
       { timeout: 10_000 },
     );
+    expect(errors).toEqual([]);
   });
 
-  test('fleet hardware gets a FLEET card', async ({ page }) => {
+  test('fleet hardware gets a FLEET card with hardware stats + anatomy figure', async ({
+    page,
+  }) => {
+    const errors = attachConsoleAndError(page);
     await page.goto('/fleet?id=saturn-v');
     await openCard(page);
-    await expect(page.locator('.backdrop .card')).toContainText('FLEET');
+    const card = page.locator('.backdrop .card');
+    await expect(card).toContainText('FLEET');
+    await expect(card).toContainText('Saturn V');
+    await expect(card).toContainText('FIRST FLIGHT');
+    await expect(card).toContainText('ANATOMY');
+    expect(errors).toEqual([]);
   });
 
   test('mars surface site without a mission gets a MARS SITES card', async ({ page }) => {
+    const errors = attachConsoleAndError(page);
     await page.goto('/mars?site=viking2-lander');
     await openCard(page);
     const card = page.locator('.backdrop .card');
     await expect(card).toContainText('MARS SITES');
     await expect(card).toContainText('Viking 2');
+    expect(errors).toEqual([]);
   });
 
   test('explore planet panel gets a PLANETS card', async ({ page }) => {
+    const errors = attachConsoleAndError(page);
     await page.goto('/explore?id=mars');
     await openCard(page);
     await expect(page.locator('.backdrop .card')).toContainText('PLANETS');
+    expect(errors).toEqual([]);
   });
 
   test('OG share stub serves crawler tags and forwards humans into the app', async ({
@@ -107,6 +121,29 @@ test.describe('collectible cards (#547)', () => {
     // Human view: instant redirect into the mission panel deep-link.
     await page.goto('/c/mission/apollo11');
     await page.waitForURL(/\/missions\?id=apollo11/, { timeout: 10_000 });
+  });
+
+  test('OG stubs cover every kind; unknown kinds and ids 404', async ({ request }) => {
+    // One stub per non-mission kind — each exercises its own load() branch.
+    for (const path of [
+      '/c/fleet/saturn-v',
+      '/c/mars-site/viking2-lander',
+      '/c/moon-site/change2',
+      '/c/planet/mars',
+      '/c/moon/europa',
+      '/c/small-body/ceres',
+    ]) {
+      const res = await request.get(path);
+      expect(res.status(), path).toBe(200);
+      expect(await res.text(), path).toContain('og:image');
+    }
+    // Unknown kind/id: adapter-static serves the SPA fallback for
+    // never-prerendered paths — assert they carry NO og card tags rather
+    // than pinning the host's status code.
+    for (const path of ['/c/unknown-kind/foo', '/c/mission/not-a-mission']) {
+      const res = await request.get(path);
+      expect((await res.text()).includes('og:image'), path).toBe(false);
+    }
   });
 
   test('generated card JPEG corpus is served', async ({ request }) => {

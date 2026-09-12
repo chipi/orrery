@@ -2,9 +2,9 @@
   CardOverlay (#547 S1+S2) — modal presenting an entity's collectible card
   with BOTH share affordances:
     - Share link: the current URL (panels already sync their ?id= deep link)
-    - Share card: the build-generated PNG (S2 generator) handed to the
+    - Share card: the build-generated JPEG (S2 generator) handed to the
       native share sheet where files are supported, downloaded otherwise.
-      Probes the PNG on open; a 404 (entity newer than the last card
+      Probes the JPEG on open; a 404 (entity newer than the last card
       build) hides the button rather than sharing a broken file.
 -->
 <script lang="ts">
@@ -20,14 +20,22 @@
   let feedback = $state<'shared' | 'copied' | 'saved' | null>(null);
   let cardImageOk = $state(false);
 
-  // Probe the generated PNG when the overlay opens (cheap HEAD).
+  // Probe the generated JPEG when the overlay opens (cheap HEAD). The
+  // probed path is captured so a spec change mid-flight can't let the
+  // previous entity's result flash the Share-card button for this one.
+  let probedPath: string | null = null;
   $effect(() => {
     cardImageOk = false;
     if (!open || !spec.imagePath) return;
-    const url = assetUrl(spec.imagePath);
-    void fetch(url, { method: 'HEAD' })
-      .then((r) => (cardImageOk = r.ok))
-      .catch(() => (cardImageOk = false));
+    const path = spec.imagePath;
+    probedPath = path;
+    void fetch(assetUrl(path), { method: 'HEAD' })
+      .then((r) => {
+        if (probedPath === path) cardImageOk = r.ok;
+      })
+      .catch(() => {
+        if (probedPath === path) cardImageOk = false;
+      });
   });
 
   function flash(kind: 'shared' | 'copied' | 'saved'): void {

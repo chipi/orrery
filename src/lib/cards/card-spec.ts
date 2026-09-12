@@ -238,8 +238,9 @@ export function cardForFleet(
  * Mission id a surface site aliases to, or null. Most moon/mars/venus sites
  * ARE missions (Apollo 11 the site is Apollo 11 the mission) — matched by
  * `mission_id` first, id parity second (same rule the panels' crossSite
- * lookup uses). Aliased sites show the canonical mission card; only the
- * handful without a mission record (45 of 54 alias) get a site card.
+ * lookup uses). 45 of 54 moon/mars sites alias a mission and show the
+ * canonical mission card; only the remaining 9 without a mission record
+ * get their own site card.
  */
 export function siteAliasMissionId(
   site: { id: string; mission_id?: string },

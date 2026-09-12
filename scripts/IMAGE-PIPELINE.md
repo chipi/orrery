@@ -9,6 +9,8 @@ SOURCE SIDECAR  →  DISK FILES  →  pHASH CACHE  →  PROVENANCE  →  COUNT M
  (the intent)     (the bytes)    (the dedup)    (the credit)    (the loader)     (the render)
 ```
 
+> **Downstream consumer (#547):** the collectible-card corpus (`static/images/cards/**/*.jpg` + `cards-manifest.json`, TA.md §Pipeline 13) renders each entity's hero. Its hash inputs include the `*-hero-overrides.json` + gallery-count manifests, so hero swaps / gallery renumbers are picked up by the next `npm run build-cards` — run it after any bulk image operation and commit the changed JPEGs in the same pass.
+
 ---
 
 ## Source-resolution order — agency archives first, Commons last

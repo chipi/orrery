@@ -4,7 +4,7 @@
  *
  * Drives the /cards/<kind>/<id> render stage with Playwright (already a dev
  * dependency) and screenshots each entity's card at 3× (1080×1440-ish) into
- * static/images/cards/<kind>/<id>.png. The PNGs serve two consumers:
+ * static/images/cards/<kind>/<id>.jpg. The JPEGs serve two consumers:
  *   - the overlay's "Share card" action (native share sheet gets the file)
  *   - the og:image for the S3 link-preview stub pages
  *
@@ -78,11 +78,20 @@ function inputHash(dataPaths, tpl, kind) {
 const KIND_HERO_DEPS = {
   mission: ['static/data/missions-hero-overrides.json', 'static/data/mission-galleries.json'],
   fleet: ['static/data/fleet-hero-overrides.json', 'static/data/fleet-galleries.json'],
-  'moon-site': ['static/data/moon-sites-hero-overrides.json'],
-  'mars-site': ['static/data/mars-sites-hero-overrides.json'],
+  'moon-site': [
+    'static/data/moon-sites-hero-overrides.json',
+    'static/data/moon-site-galleries.json',
+  ],
+  'mars-site': [
+    'static/data/mars-sites-hero-overrides.json',
+    'static/data/mars-site-galleries.json',
+  ],
   planet: ['static/data/planets-hero-overrides.json', 'static/data/planet-galleries.json'],
-  moon: ['static/data/satellites-hero-overrides.json'],
-  'small-body': ['static/data/small-bodies-hero-overrides.json'],
+  moon: ['static/data/satellites-hero-overrides.json', 'static/data/satellite-galleries.json'],
+  'small-body': [
+    'static/data/small-bodies-hero-overrides.json',
+    'static/data/small-body-galleries.json',
+  ],
 };
 
 function enumerateTargets() {
@@ -203,46 +212,51 @@ async function main() {
   if (todo.length === 0) return;
 
   const server = maybeStartServer();
-  await new Promise((r) => setTimeout(r, 1200));
-
-  const browser = await chromium.launch();
-  const ctx = await browser.newContext({
-    viewport: { width: 480, height: 720 },
-    deviceScaleFactor: 3,
-  });
-  const pg = await ctx.newPage();
-
   let ok = 0;
-  for (const t of todo) {
-    const key = `${t.kind}/${t.id}`;
-    const url = `${BASE_URL}/cards/${key}`;
-    try {
-      await pg.goto(url, { waitUntil: 'domcontentloaded' });
-      await pg.waitForSelector('[data-card-ready="true"], [data-card-failed="true"]', {
-        timeout: 30_000,
-      });
-      const failed = await pg.$('[data-card-failed="true"]');
-      if (failed) {
-        console.log(`  ✗ ${key}: card stage reported failure`);
-        continue;
-      }
-      const card = await pg.waitForSelector('.card', { timeout: 5_000 });
-      // JPEG q90: ~190K vs ~560K for PNG across the 352-card corpus (190MB
-      // → ~65MB in-repo); text stays crisp at deviceScaleFactor 3.
-      const out = `${OUT_ROOT}/${key}.jpg`;
-      await card.screenshot({ path: out, type: 'jpeg', quality: 90 });
-      manifest.entries[key] = inputHash(t.dataPaths, templateHash(t.kind), t.kind);
-      ok += 1;
-      process.stdout.write(`  ${key}`);
-    } catch (e) {
-      console.log(`\n  ✗ ${key}: ${e.message.split('\n')[0]}`);
-    }
-  }
-  process.stdout.write('\n');
+  let browser;
+  // try/finally: a chromium.launch()/newContext() throw must still kill the
+  // spawned static server (else it leaks holding the port) and persist the
+  // manifest for whatever DID render.
+  try {
+    await new Promise((r) => setTimeout(r, 1200));
+    browser = await chromium.launch();
+    const ctx = await browser.newContext({
+      viewport: { width: 480, height: 720 },
+      deviceScaleFactor: 3,
+    });
+    const pg = await ctx.newPage();
 
-  await browser.close();
-  server?.kill();
-  writeFileSync(MANIFEST, JSON.stringify(manifest, null, 2) + '\n');
+    for (const t of todo) {
+      const key = `${t.kind}/${t.id}`;
+      const url = `${BASE_URL}/cards/${key}`;
+      try {
+        await pg.goto(url, { waitUntil: 'domcontentloaded' });
+        await pg.waitForSelector('[data-card-ready="true"], [data-card-failed="true"]', {
+          timeout: 30_000,
+        });
+        const failed = await pg.$('[data-card-failed="true"]');
+        if (failed) {
+          console.log(`  ✗ ${key}: card stage reported failure`);
+          continue;
+        }
+        const card = await pg.waitForSelector('.card', { timeout: 5_000 });
+        // JPEG q90: ~190-250K vs ~560K avg for PNG (~83MB vs ~190MB across
+        // the 407-card corpus); text stays crisp at deviceScaleFactor 3.
+        const out = `${OUT_ROOT}/${key}.jpg`;
+        await card.screenshot({ path: out, type: 'jpeg', quality: 90 });
+        manifest.entries[key] = inputHash(t.dataPaths, templateHash(t.kind), t.kind);
+        ok += 1;
+        process.stdout.write(`  ${key}`);
+      } catch (e) {
+        console.log(`\n  ✗ ${key}: ${e.message.split('\n')[0]}`);
+      }
+    }
+    process.stdout.write('\n');
+  } finally {
+    await browser?.close().catch(() => {});
+    server?.kill();
+    writeFileSync(MANIFEST, JSON.stringify(manifest, null, 2) + '\n');
+  }
   console.log(`DONE ${ok}/${todo.length} rendered → ${OUT_ROOT}/`);
   if (ok < todo.length) process.exitCode = 1;
 }

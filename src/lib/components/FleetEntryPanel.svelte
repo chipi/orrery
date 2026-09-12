@@ -4,7 +4,13 @@
   import { base } from '$app/paths';
   import { page } from '$app/state';
   import { assetUrl } from '$lib/asset-url';
-  import { getBadges, getFleetIndex, getMission, getMissionIndex } from '$lib/data';
+  import {
+    getBadges,
+    getFleetIndex,
+    getMission,
+    getMissionGallery,
+    getMissionIndex,
+  } from '$lib/data';
   import { localeFromPage } from '$lib/locale';
   import {
     cardForFleet,
@@ -75,11 +81,15 @@
   let fleetIndex = $state<FleetIndexEntry[]>([]);
   let missionIndex = $state<MissionIndex[]>([]);
   let aliasMission = $state<Mission | null>(null);
+  // The canonical mission's OWN blessed hero — an aliased card must show
+  // the same picture as the mission card everywhere (the fleet gallery's
+  // lead can be a different photo of the same craft).
+  let aliasHero = $state<string | undefined>(undefined);
   let cardSpec = $derived<CardSpec | null>(
     !entry
       ? null
       : aliasMission && aliasMission.id === entry.id
-        ? cardForMission(aliasMission, missionIndex, gallery[0])
+        ? cardForMission(aliasMission, missionIndex, aliasHero)
         : cardForFleet(
             entry,
             fleetIndex,
@@ -110,14 +120,21 @@
       // #547 S4 — card numbering + mission-alias resolution.
       cardOpen = false;
       aliasMission = null;
+      aliasHero = undefined;
       const forId = entry.id;
       void (async () => {
         if (fleetIndex.length === 0) fleetIndex = await getFleetIndex();
         if (missionIndex.length === 0) missionIndex = await getMissionIndex();
         if (!fleetAliasesMission(forId, missionIndex)) return;
         const row = missionIndex.find((mi) => mi.id === forId)!;
-        const mission = await getMission(forId, row.dest, localeFromPage(page));
-        if (entry && entry.id === lastId && forId === lastId) aliasMission = mission;
+        const [mission, missionGallery] = await Promise.all([
+          getMission(forId, row.dest, localeFromPage(page)),
+          getMissionGallery(forId).catch(() => [] as string[]),
+        ]);
+        if (entry && entry.id === lastId && forId === lastId) {
+          aliasMission = mission;
+          aliasHero = missionGallery[0];
+        }
       })();
     }
   });

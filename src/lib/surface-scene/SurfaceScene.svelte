@@ -70,7 +70,13 @@
   import RegimeChip from '$lib/components/RegimeChip.svelte';
   import AgencyRow from '$lib/components/AgencyRow.svelte';
   import { regimeForAltitude } from '$lib/physics/util/orbit-regime-match';
-  import { getMissionIndex, getMission, getFleet, getFleetIndex } from '$lib/data';
+  import {
+    getMissionIndex,
+    getMission,
+    getMissionGallery,
+    getFleet,
+    getFleetIndex,
+  } from '$lib/data';
   import type { EarthObject } from '$types/earth-object';
   import type { Mission, MissionIndex } from '$types/mission';
   import type { FleetEntry, FleetIndexEntry } from '$types/fleet';
@@ -858,6 +864,10 @@
   let cardOpen = $state(false);
   let cardMissionIndex = $state<MissionIndex[]>([]);
   let cardAliasMission = $state<Mission | null>(null);
+  // The canonical mission's OWN blessed hero — aliased cards must show the
+  // same picture as the mission card everywhere (site galleries lead with
+  // different photos of the same landing).
+  let cardAliasHero = $state<string | undefined>(undefined);
   let cardFleetEntry = $state<FleetEntry | null>(null);
   let cardFleetIndex = $state<FleetIndexEntry[]>([]);
   let cardSpec = $derived.by<CardSpec | null>(() => {
@@ -867,10 +877,8 @@
       return cardFleetEntry && cardFleetEntry.id === site.id
         ? cardForFleet(cardFleetEntry, cardFleetIndex, panelGallery[0])
         : null;
-    if (cardAliasMission)
-      return cardForMission(cardAliasMission, cardMissionIndex, panelGallery[0]);
-    if (body === 'moon' || body === 'mars')
-      return cardForSite(site, sites, body, panelGallery[0]);
+    if (cardAliasMission) return cardForMission(cardAliasMission, cardMissionIndex, cardAliasHero);
+    if (body === 'moon' || body === 'mars') return cardForSite(site, sites, body, panelGallery[0]);
     return null; // venus non-aliased sites (none today) — no card
   });
   $effect(() => {
@@ -883,6 +891,7 @@
       panelStory = null;
       cardOpen = false;
       cardAliasMission = null;
+      cardAliasHero = undefined;
       cardFleetEntry = null;
       lastSelectedId = selected.id;
       loadPanelData({
@@ -913,9 +922,14 @@
         const aliasId = siteAliasMissionId(site, cardMissionIndex);
         if (!aliasId) return;
         const row = cardMissionIndex.find((mi) => mi.id === aliasId)!;
-        const mission = await getMission(aliasId, row.dest, localeFromPage(page));
-        if (selected != null && selected.id === lastSelectedId && sid === lastSelectedId)
+        const [mission, missionGallery] = await Promise.all([
+          getMission(aliasId, row.dest, localeFromPage(page)),
+          getMissionGallery(aliasId).catch(() => [] as string[]),
+        ]);
+        if (selected != null && selected.id === lastSelectedId && sid === lastSelectedId) {
           cardAliasMission = mission;
+          cardAliasHero = missionGallery[0];
+        }
       })();
     }
   });

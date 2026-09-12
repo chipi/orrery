@@ -25,8 +25,10 @@
   import {
     getEarthObjectGallery,
     getFleet,
+    getFleetGallery,
     getFleetIndex,
     getMission,
+    getMissionGallery,
     getMissionIndex,
   } from '$lib/data';
   import { panelGalleryCredit } from '$lib/image-credits';
@@ -84,15 +86,17 @@
   let cardFleetIndex = $state<FleetIndexEntry[]>([]);
   let cardAliasMission = $state<Mission | null>(null);
   let cardAliasFleet = $state<FleetEntry | null>(null);
+  // The canonical entity's OWN blessed hero — aliased cards must show the
+  // same picture as the canonical card everywhere.
+  let cardAliasHero = $state<string | undefined>(undefined);
   let cardSpec = $derived.by<CardSpec | null>(() => {
     if (!selected) return null;
-    if (cardAliasMission)
-      return cardForMission(cardAliasMission, cardMissionIndex, panelGallery[0]);
+    if (cardAliasMission) return cardForMission(cardAliasMission, cardMissionIndex, cardAliasHero);
     if (cardAliasFleet)
       return cardForFleet(
         cardAliasFleet,
         cardFleetIndex,
-        panelGallery[0],
+        cardAliasHero,
         spacecraftDiagramPath(cardAliasFleet.id) ??
           launcherCutawayPath(cardAliasFleet.id) ??
           undefined,
@@ -108,6 +112,7 @@
       cardOpen = false;
       cardAliasMission = null;
       cardAliasFleet = null;
+      cardAliasHero = undefined;
       lastSelectedId = selected.id;
       // Earth-object ids often match a mission id (e.g. "lro",
       // "hubble", "jwst", "chandrayaan1") so getEarthObjectGallery's
@@ -124,14 +129,24 @@
         if (!alias) return;
         if (alias.kind === 'mission') {
           const row = cardMissionIndex.find((mi) => mi.id === alias.id)!;
-          const mission = await getMission(alias.id, row.dest, localeFromPage(page));
-          if (selected && selected.id === lastSelectedId && sid === lastSelectedId)
+          const [mission, missionGallery] = await Promise.all([
+            getMission(alias.id, row.dest, localeFromPage(page)),
+            getMissionGallery(alias.id).catch(() => [] as string[]),
+          ]);
+          if (selected && selected.id === lastSelectedId && sid === lastSelectedId) {
             cardAliasMission = mission;
+            cardAliasHero = missionGallery[0];
+          }
         } else {
           const row = cardFleetIndex.find((fi) => fi.id === alias.id)!;
-          const entry = await getFleet(alias.id, row.category, localeFromPage(page));
-          if (selected && selected.id === lastSelectedId && sid === lastSelectedId)
+          const [entry, fleetGallery] = await Promise.all([
+            getFleet(alias.id, row.category, localeFromPage(page)),
+            getFleetGallery(alias.id).catch(() => [] as string[]),
+          ]);
+          if (selected && selected.id === lastSelectedId && sid === lastSelectedId) {
             cardAliasFleet = entry;
+            cardAliasHero = fleetGallery[0];
+          }
         }
       })();
     }

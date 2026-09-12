@@ -1,7 +1,10 @@
 <script lang="ts">
   import Panel from './Panel.svelte';
   import { base } from '$app/paths';
-  import { getPlanetGallery } from '$lib/data';
+  import { getPlanetGallery, getPlanets } from '$lib/data';
+  import { cardForPlanet, planetCardList, type CardSpec } from '$lib/cards/card-spec';
+  import CardOverlay from '$lib/cards/CardOverlay.svelte';
+  import { pickCardHero } from '$lib/cards/pick-card-hero';
   import { linkifyMissionEntry, loadMissionIndex } from '$lib/missions-linkify';
   import type { LocalizedPlanet } from '$types/planet';
   import * as m from '$lib/paraglide/messages';
@@ -55,6 +58,18 @@
   // that opened/changed the panel (FB8).
   let panelOpenedAt = $state(0);
 
+  // #547 S5b — the collectible card. Planet list loads once (cached
+  // loader) for the collection numbering; Pluto is excluded by
+  // planetCardList (its canonical card is the small-body kind).
+  let cardOpen = $state(false);
+  let cardHero = $state<string | undefined>(undefined);
+  let planetList = $state<LocalizedPlanet[]>([]);
+  let cardSpec = $derived<CardSpec | null>(
+    planet && planetCardList([planet]).length > 0
+      ? cardForPlanet(planet, planetList, cardHero)
+      : null,
+  );
+
   // Reset to overview + reload gallery each time a different planet is selected.
   let lastId = $state<string | null>(null);
   $effect(() => {
@@ -64,9 +79,17 @@
       panelOpenedAt = Date.now();
       lightboxSrc = null;
       gallery = [];
+      cardOpen = false;
+      cardHero = undefined;
       void getPlanetGallery(planet.id).then((urls) => {
         if (planet && planet.id === lastId) gallery = urls;
+        void pickCardHero(urls).then((h) => {
+          if (planet && planet.id === lastId) cardHero = h;
+        });
       });
+      if (planetList.length === 0) {
+        void getPlanets().then((all) => (planetList = all));
+      }
       // Warm the /missions + /fleet id index so linkifyMission()
       // resolves synchronously on first MISSIONS tab render.
       void loadMissionIndex();
@@ -424,8 +447,26 @@
         </a>
       </div>
     {/if}
+
+    <!-- #547 S5b — every planet carries its collectible card. -->
+    {#if cardSpec}
+      <div class="cta-bar">
+        <button
+          type="button"
+          class="cta cta-card"
+          onclick={() => (cardOpen = true)}
+          data-testid="open-card-btn"
+        >
+          {m.card_open_button()}
+        </button>
+      </div>
+    {/if}
   {/if}
 </Panel>
+
+{#if cardSpec}
+  <CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
+{/if}
 
 <style>
   .head {
@@ -595,6 +636,16 @@
     background: rgba(68, 102, 255, 0.15);
     border-color: #4466ff;
     color: #fff;
+  }
+  /* #547 — card CTA in the quiet register (mirrors the missions panel). */
+  .cta.cta-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.22);
+  }
+  .cta.cta-card:hover,
+  .cta.cta-card:focus-visible {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.45);
   }
 
   /* GALLERY + LEARN tab CSS moved to src/lib/styles/panel-tabs.css (v0.1.10) */

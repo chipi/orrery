@@ -43,6 +43,22 @@ const fleetIndex = (): FleetIndexRow[] =>
   JSON.parse(readFileSync('static/data/fleet/index.json', 'utf8')) as FleetIndexRow[];
 const siteRows = (body: 'moon' | 'mars'): SiteRow[] =>
   JSON.parse(readFileSync(`static/data/${body}-sites.json`, 'utf8')) as SiteRow[];
+const planetIds = (): string[] =>
+  (
+    JSON.parse(readFileSync('static/data/planets.json', 'utf8')) as {
+      planets: Array<{ name: string }>;
+    }
+  ).planets
+    .map((p) => p.name.toLowerCase())
+    // Pluto's canonical card is the small-body kind (its /explore panel
+    // is the SmallBodyPanel).
+    .filter((id) => id !== 'pluto');
+const satelliteRows = (): Array<{ id: string; parent_planet_id: string }> =>
+  (
+    JSON.parse(readFileSync('static/data/satellites.json', 'utf8')) as {
+      satellites: Array<{ id: string; parent_planet_id: string }>;
+    }
+  ).satellites;
 
 /** Sites whose canonical card is NOT a mission card (see siteAliasMissionId). */
 const ownSites = (body: 'moon' | 'mars', missionIds: Set<string>): SiteRow[] =>
@@ -58,6 +74,8 @@ export const entries: EntryGenerator = () => {
       .map((fi) => ({ kind: 'fleet', id: fi.id })),
     ...ownSites('moon', missionIds).map((s) => ({ kind: 'moon-site', id: s.id })),
     ...ownSites('mars', missionIds).map((s) => ({ kind: 'mars-site', id: s.id })),
+    ...planetIds().map((id) => ({ kind: 'planet', id })),
+    ...satelliteRows().map((s) => ({ kind: 'moon', id: s.id })),
   ];
 };
 
@@ -107,6 +125,41 @@ export const load: PageServerLoad = ({ params }) => {
       overlay.name ?? params.id,
       overlay.fact?.split(/(?<=[.!?])\s+/)[0] ?? '',
       `/${body}?site=${params.id}`,
+    );
+  }
+
+  if (params.kind === 'planet') {
+    if (!planetIds().includes(params.id)) throw error(404, 'unknown planet');
+    const overlay = JSON.parse(
+      readFileSync(`i18n-src/en-US/planets/${params.id}.json`, 'utf8'),
+    ) as { name?: string; fact?: string };
+    return shared(
+      overlay.name ?? params.id,
+      overlay.fact?.split(/(?<=[.!?])\s+/)[0] ?? '',
+      `/explore?id=${params.id}`,
+    );
+  }
+
+  if (params.kind === 'moon') {
+    const row = satelliteRows().find((s) => s.id === params.id);
+    if (!row) throw error(404, 'unknown satellite');
+    let overlay: { description?: string } = {};
+    try {
+      overlay = JSON.parse(readFileSync(`i18n-src/en-US/satellites/${params.id}.json`, 'utf8')) as {
+        description?: string;
+      };
+    } catch {
+      /* base description fallback handled by empty overlay */
+    }
+    const sat = (
+      JSON.parse(readFileSync('static/data/satellites.json', 'utf8')) as {
+        satellites: Array<{ id: string; name: string; description?: string }>;
+      }
+    ).satellites.find((s) => s.id === params.id)!;
+    return shared(
+      sat.name,
+      (overlay.description ?? sat.description)?.split(/(?<=[.!?])\s+/)[0] ?? '',
+      `/explore?id=${row.parent_planet_id}:${params.id}`,
     );
   }
 

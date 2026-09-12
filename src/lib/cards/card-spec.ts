@@ -15,6 +15,9 @@
 import type { Mission, MissionIndex } from '$types/mission';
 import type { FleetEntry, FleetIndexEntry } from '$types/fleet';
 import type { SurfaceSite } from '$types/surface-site';
+import type { LocalizedPlanet } from '$types/planet';
+import type { SatelliteEntry } from '$lib/data/small-bodies';
+import { PLANET_STATS } from '$lib/physics/util/planet-stats';
 
 export interface CardStat {
   label: string;
@@ -285,5 +288,130 @@ export function cardForSite(
     slug: `orrery.day/c/${body}-site/${site.id}`,
     imagePath: `/images/cards/${body}-site/${site.id}.jpg`,
     shareHref: `/c/${body}-site/${site.id}`,
+  };
+}
+
+const SURFACE_KIND_LABEL: Record<string, string> = {
+  rocky: 'ROCKY PLANET',
+  'rocky-liquid': 'ROCKY PLANET',
+  'rocky-ice': 'ROCKY PLANET',
+  'gas-giant': 'GAS GIANT',
+  'ice-giant': 'ICE GIANT',
+};
+
+/**
+ * Planet cards cover the 8 classical planets (+Earth). Pluto is excluded:
+ * its /explore detail panel is the SmallBodyPanel (small-body wins the ?id=
+ * resolution), so its canonical card belongs to the small-body kind.
+ */
+export function planetCardList(planets: LocalizedPlanet[]): LocalizedPlanet[] {
+  return planets.filter((p) => p.id !== 'pluto');
+}
+
+export function cardForPlanet(
+  planet: LocalizedPlanet,
+  planets: LocalizedPlanet[],
+  heroUrl?: string,
+): CardSpec {
+  const list = planetCardList(planets);
+  const pos = list.findIndex((p) => p.id === planet.id);
+  const total = list.length;
+  const number = pos >= 0 ? `${String(pos + 1).padStart(3, '0')}/${total}` : `—/${total}`;
+
+  const phys = PLANET_STATS[planet.id];
+  const kindLabel = phys ? (SURFACE_KIND_LABEL[phys.surfaceKind] ?? 'PLANET') : 'PLANET';
+  const kicker = `${kindLabel} · ${planet.a.toFixed(2)} AU`;
+
+  const stats: CardStat[] = [];
+  if (phys) {
+    stats.push({ label: 'DIAMETER', value: `${phys.diameterKm.toLocaleString('en-US')} KM` });
+    stats.push({ label: 'GRAVITY', value: `${phys.surfaceGravityG} G` });
+  }
+  // rotPeriod is in Earth days — hours reads better for fast rotators
+  // (Mars 24.6 H), days for the slow ones (Venus 243 D).
+  if (planet.rotPeriod)
+    stats.push({
+      label: 'DAY',
+      value:
+        planet.rotPeriod < 3
+          ? `${(planet.rotPeriod * 24).toFixed(1)} H`
+          : `${Math.round(planet.rotPeriod)} D`,
+    });
+  if (planet.T)
+    stats.push({
+      label: 'YEAR',
+      value: planet.T < 1000 ? `${Math.round(planet.T)} D` : `${(planet.T / 365.25).toFixed(1)} Y`,
+    });
+  if (phys) {
+    stats.push({ label: 'TEMP', value: `${Math.round(phys.surfaceTempK - 273.15)}°C` });
+    stats.push({ label: 'ESCAPE', value: `${phys.escapeKms} KM/S` });
+  }
+
+  return {
+    collection: 'PLANETS',
+    number,
+    title: planet.name,
+    kicker,
+    story: planet.bio ? leadSentences(planet.bio, 2) : '',
+    stats: stats.slice(0, 6),
+    fact: planet.fact ? leadSentences(planet.fact, 1) : undefined,
+    factLabel: planet.fact ? 'FACT' : undefined,
+    heroUrl,
+    creditLine: 'SOURCES: NASA / ESA',
+    slug: `orrery.day/c/planet/${planet.id}`,
+    imagePath: `/images/cards/planet/${planet.id}.jpg`,
+    shareHref: `/c/planet/${planet.id}`,
+  };
+}
+
+/** Leading 4-digit year of a discovery string ('1610 by Galileo Galilei'). */
+function discoveryYear(discovered?: string): string | null {
+  const m = /\b(\d{4})\b/.exec(discovered ?? '');
+  return m ? m[1] : null;
+}
+
+export function cardForSatellite(
+  entry: SatelliteEntry,
+  satellites: SatelliteEntry[],
+  heroUrl?: string,
+): CardSpec {
+  const pos = satellites.findIndex((s) => s.id === entry.id);
+  const total = satellites.length;
+  const number = pos >= 0 ? `${String(pos + 1).padStart(3, '0')}/${total}` : `—/${total}`;
+
+  const year = discoveryYear(entry.discovered);
+  const kicker = [entry.parent_planet_name.toUpperCase(), 'MOON', year ?? '']
+    .filter(Boolean)
+    .join(' · ');
+
+  const stats: CardStat[] = [];
+  if (entry.radius_km)
+    stats.push({ label: 'RADIUS', value: `${entry.radius_km.toLocaleString('en-US')} KM` });
+  if (entry.semi_major_axis_km)
+    stats.push({
+      label: 'ORBIT',
+      value: `${Math.round(entry.semi_major_axis_km).toLocaleString('en-US')} KM`,
+    });
+  if (entry.orbital_period_days)
+    stats.push({ label: 'PERIOD', value: `${entry.orbital_period_days} D` });
+  stats.push({ label: 'PARENT', value: entry.parent_planet_name });
+  if (year) stats.push({ label: 'DISCOVERED', value: year });
+  if (entry.mission_visits?.length)
+    stats.push({ label: 'VISITS', value: String(entry.mission_visits.length) });
+
+  return {
+    collection: 'MOONS',
+    number,
+    title: entry.name,
+    kicker,
+    story: entry.description ? leadSentences(entry.description, 2) : '',
+    stats: stats.slice(0, 6),
+    fact: entry.surface_composition,
+    factLabel: entry.surface_composition ? 'SURFACE' : undefined,
+    heroUrl,
+    creditLine: 'SOURCES: NASA / ESA',
+    slug: `orrery.day/c/moon/${entry.id}`,
+    imagePath: `/images/cards/moon/${entry.id}.jpg`,
+    shareHref: `/c/moon/${entry.id}`,
   };
 }

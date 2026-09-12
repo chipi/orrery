@@ -2,13 +2,18 @@ import { describe, expect, it } from 'vitest';
 import {
   cardForFleet,
   cardForMission,
+  cardForPlanet,
+  cardForSatellite,
   cardForSite,
   fleetAliasesMission,
+  planetCardList,
   siteAliasMissionId,
 } from './card-spec';
 import type { Mission, MissionIndex } from '$types/mission';
 import type { FleetEntry, FleetIndexEntry } from '$types/fleet';
 import type { SurfaceSite } from '$types/surface-site';
+import type { LocalizedPlanet } from '$types/planet';
+import type { SatelliteEntry } from '$lib/data/small-bodies';
 
 const INDEX: MissionIndex[] = [
   { id: 'sputnik1', agency: 'USSR', dest: 'EARTH', status: 'FLOWN', year: 1957 },
@@ -243,5 +248,84 @@ describe('siteAliasMissionId', () => {
     expect(siteAliasMissionId({ id: 'sputnik1' }, INDEX)).toBe('sputnik1');
     expect(siteAliasMissionId({ id: 'viking2-lander' }, INDEX)).toBeNull();
     expect(siteAliasMissionId({ id: 'site-x', mission_id: 'not-a-mission' }, INDEX)).toBeNull();
+  });
+});
+
+const MARS_PLANET = {
+  id: 'mars',
+  name: 'Mars',
+  a: 1.52366,
+  T: 686.971,
+  rotPeriod: 1.02595,
+  type: 'Mission target',
+  fact: 'Earth–Mars launch windows open every 26 months — driven by orbital resonance. More detail follows.',
+  bio: 'The most-visited planet beyond Earth. Cold desert world with the tallest volcano in the solar system.',
+} as unknown as LocalizedPlanet;
+
+const PLANETS = [
+  { id: 'mercury', name: 'Mercury', a: 0.387 },
+  MARS_PLANET,
+  { id: 'pluto', name: 'Pluto', a: 39.48 },
+] as unknown as LocalizedPlanet[];
+
+describe('cardForPlanet', () => {
+  const spec = cardForPlanet(MARS_PLANET, PLANETS, '/images/planets/mars/01.webp');
+
+  it('numbers against the Pluto-less list', () => {
+    expect(spec.collection).toBe('PLANETS');
+    expect(spec.number).toBe('002/2');
+    expect(planetCardList(PLANETS).map((p) => p.id)).toEqual(['mercury', 'mars']);
+  });
+
+  it('builds the kicker from surface kind + distance', () => {
+    expect(spec.kicker).toBe('ROCKY PLANET · 1.52 AU');
+  });
+
+  it('formats physical stats from PLANET_STATS + orbital elements', () => {
+    expect(spec.stats.find((s) => s.label === 'DIAMETER')?.value).toBe('6,779 KM');
+    expect(spec.stats.find((s) => s.label === 'GRAVITY')?.value).toBe('0.38 G');
+    expect(spec.stats.find((s) => s.label === 'DAY')?.value).toBe('24.6 H');
+    expect(spec.stats.find((s) => s.label === 'YEAR')?.value).toBe('687 D');
+  });
+
+  it('takes the first fact sentence + planet share artifacts', () => {
+    expect(spec.fact).toBe(
+      'Earth–Mars launch windows open every 26 months — driven by orbital resonance.',
+    );
+    expect(spec.shareHref).toBe('/c/planet/mars');
+    expect(spec.imagePath).toBe('/images/cards/planet/mars.jpg');
+  });
+});
+
+describe('cardForSatellite', () => {
+  const EUROPA = {
+    id: 'europa',
+    name: 'Europa',
+    parent_planet_id: 'jupiter',
+    parent_planet_name: 'Jupiter',
+    radius_km: 1560.8,
+    semi_major_axis_km: 671034,
+    orbital_period_days: 3.551,
+    discovered: '1610 by Galileo Galilei',
+    mission_visits: ['Voyager', 'Galileo', 'Juno'],
+    surface_composition: 'Water ice over a global subsurface ocean',
+    description:
+      'An ice-crusted ocean world. Beneath kilometres of ice lies more liquid water than all of Earth’s oceans combined.',
+  } as unknown as SatelliteEntry;
+  const spec = cardForSatellite(EUROPA, [{ id: 'moon' } as SatelliteEntry, EUROPA]);
+
+  it('builds the MOONS collection card', () => {
+    expect(spec.collection).toBe('MOONS');
+    expect(spec.number).toBe('002/2');
+    expect(spec.kicker).toBe('JUPITER · MOON · 1610');
+  });
+
+  it('formats orbital stats + the SURFACE fact', () => {
+    expect(spec.stats.find((s) => s.label === 'RADIUS')?.value).toBe('1,560.8 KM');
+    expect(spec.stats.find((s) => s.label === 'ORBIT')?.value).toBe('671,034 KM');
+    expect(spec.stats.find((s) => s.label === 'PERIOD')?.value).toBe('3.551 D');
+    expect(spec.stats.find((s) => s.label === 'VISITS')?.value).toBe('3');
+    expect(spec.factLabel).toBe('SURFACE');
+    expect(spec.shareHref).toBe('/c/moon/europa');
   });
 });

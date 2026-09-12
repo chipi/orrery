@@ -44,6 +44,8 @@ const KIND_VERSION = {
   fleet: 1,
   'moon-site': 1,
   'mars-site': 1,
+  planet: 1,
+  moon: 1,
 };
 
 const sha = (buf) => createHash('sha256').update(buf).digest('hex').slice(0, 16);
@@ -105,6 +107,21 @@ function enumerateTargets() {
       })),
     ...siteTargets('moon'),
     ...siteTargets('mars'),
+    // Planets (Pluto's canonical card is the small-body kind — its /explore
+    // panel is the SmallBodyPanel) + natural satellites.
+    ...JSON.parse(readFileSync('static/data/planets.json', 'utf8'))
+      .planets.map((p) => p.name.toLowerCase())
+      .filter((id) => id !== 'pluto')
+      .map((id) => ({
+        kind: 'planet',
+        id,
+        dataPaths: ['static/data/planets.json', `i18n-src/en-US/planets/${id}.json`],
+      })),
+    ...JSON.parse(readFileSync('static/data/satellites.json', 'utf8')).satellites.map((s) => ({
+      kind: 'moon',
+      id: s.id,
+      dataPaths: ['static/data/satellites.json', `i18n-src/en-US/satellites/${s.id}.json`],
+    })),
   ];
 }
 

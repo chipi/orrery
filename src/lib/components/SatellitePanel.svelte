@@ -26,6 +26,9 @@
   import { linkifyMission, loadMissionIndex } from '$lib/missions-linkify';
   import { base } from '$app/paths';
   import { assetUrl } from '$lib/asset-url';
+  import { cardForSatellite, type CardSpec } from '$lib/cards/card-spec';
+  import CardOverlay from '$lib/cards/CardOverlay.svelte';
+  import { pickCardHero } from '$lib/cards/pick-card-hero';
   import ScienceCard from './ScienceCard.svelte';
   import type { ScienceTabId } from '$types/science';
 
@@ -78,15 +81,28 @@
   }
   let entry = $derived<SatelliteEntry | null>(baseEntry ? mergeOverlay(baseEntry, overlay) : null);
 
+  // #547 S5b — the collectible card (the loaded satellite list doubles
+  // as the collection for numbering).
+  let cardOpen = $state(false);
+  let cardHero = $state<string | undefined>(undefined);
+  let cardSpec = $derived<CardSpec | null>(
+    entry ? cardForSatellite(entry, satellites, cardHero) : null,
+  );
+
   $effect(() => {
     if (baseEntry && baseEntry.id !== lastKey) {
       tab = 'overview';
       lastKey = baseEntry.id;
       gallery = [];
       overlay = null;
+      cardOpen = false;
+      cardHero = undefined;
       const id = baseEntry.id;
       void getSatelliteGallery(id).then((urls) => {
         if (baseEntry && baseEntry.id === lastKey) gallery = urls;
+        void pickCardHero(urls).then((h) => {
+          if (baseEntry && baseEntry.id === lastKey) cardHero = h;
+        });
       });
       void getSatelliteI18n(loc, id).then((o) => {
         if (baseEntry && baseEntry.id === lastKey) overlay = o;
@@ -254,8 +270,26 @@
         </a>
       </div>
     {/if}
+
+    <!-- #547 S5b — every natural satellite carries its collectible card. -->
+    {#if cardSpec}
+      <div class="cta-bar">
+        <button
+          type="button"
+          class="cta cta-card"
+          onclick={() => (cardOpen = true)}
+          data-testid="open-card-btn"
+        >
+          {m.card_open_button()}
+        </button>
+      </div>
+    {/if}
   {/if}
 </Panel>
+
+{#if cardSpec}
+  <CardOverlay spec={cardSpec} open={cardOpen} onClose={() => (cardOpen = false)} />
+{/if}
 
 <style>
   /* Identical font + colour tokens to SmallBodyPanel + SunPanel so
@@ -453,5 +487,16 @@
     border-color: #4466ff;
     color: #fff;
     outline: none;
+  }
+  /* #547 — card CTA in the quiet register (mirrors the missions panel). */
+  .cta.cta-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.22);
+    cursor: pointer;
+  }
+  .cta.cta-card:hover,
+  .cta.cta-card:focus-visible {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.45);
   }
 </style>

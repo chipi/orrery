@@ -21,10 +21,22 @@
     getMarsSites,
     getMoonSiteGallery,
     getMarsSiteGallery,
+    getPlanets,
+    getPlanetGallery,
+    getSatellites,
+    getSatelliteGallery,
+    getSatelliteI18n,
   } from '$lib/data';
   import { spacecraftDiagramPath, launcherCutawayPath } from '$lib/spacecraft-diagrams';
   import CollectibleCard from '$lib/cards/CollectibleCard.svelte';
-  import { cardForFleet, cardForMission, cardForSite, type CardSpec } from '$lib/cards/card-spec';
+  import {
+    cardForFleet,
+    cardForMission,
+    cardForPlanet,
+    cardForSatellite,
+    cardForSite,
+    type CardSpec,
+  } from '$lib/cards/card-spec';
   import { pickCardHero } from '$lib/cards/pick-card-hero';
 
   let spec = $state<CardSpec | null>(null);
@@ -70,6 +82,24 @@
           : getMarsSiteGallery(id, site.mission_id)
       ).catch(() => [] as string[]);
       return cardForSite(site, sites, body, await pickCardHero(gallery));
+    }
+    if (kind === 'planet') {
+      const planets = await getPlanets('en-US');
+      const planet = planets.find((p) => p.id === id);
+      if (!planet) return null;
+      const gallery = await getPlanetGallery(id).catch(() => [] as string[]);
+      return cardForPlanet(planet, planets, await pickCardHero(gallery));
+    }
+    if (kind === 'moon') {
+      const satellites = await getSatellites();
+      const sat = satellites.find((s) => s.id === id);
+      if (!sat) return null;
+      const [gallery, i18n] = await Promise.all([
+        getSatelliteGallery(id).catch(() => [] as string[]),
+        getSatelliteI18n('en-US', id).catch(() => null),
+      ]);
+      const entry = i18n ? { ...sat, description: i18n.description ?? sat.description } : sat;
+      return cardForSatellite(entry, satellites, await pickCardHero(gallery));
     }
     return null;
   }

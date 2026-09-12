@@ -1,5 +1,5 @@
 # TA — Technical Authority
-*Orrery · Reference document · v3.2 · July 2026*
+*Orrery · Reference document · v3.3 · September 2026*
 
 This is the reference document for the technical plane. RFCs anchor to it by section. ADRs update `§stack` and `§map` when decisions are locked. Authoritative listings: [`index.md`](index.md) (ADRs), [`../rfc/index.md`](../rfc/index.md) (RFCs), [`../prd/index.md`](../prd/index.md) (PRDs).
 
@@ -89,7 +89,7 @@ _Top-level routes: catalog · colophon · credits · earth · essays · explore 
 | `/fleet` | Spaceflight Fleet · entries × categories with bidirectional cross-refs (counts: generated block above) | PRD-012 / RFC-016 / ADR-052 / ADR-053 / ADR-054 |
 | `/live` | Live feeds · pinned NASA ISS stream (click-to-load facade) + launch broadcasts time-gated off `$lib/launches` (link-out). Under the Catalog nav group. | PRD-031 / RFC-033 |
 
-**Sub-routes + dev tooling (not in the route grid):** `/science/reading-list` + `/science/watch-list` (curated book / documentary / podcast / channel lists), `/library/episodes` (audio episode index, RFC-019). `/dev/*` (model preview, staging-ground review per RFC-029, Slice-A approval, UI style-guide) are **developer-only** — `src/routes/dev/+layout.ts` 404s the subtree in any non-dev build.
+**Sub-routes + dev tooling (not in the route grid):** `/science/reading-list` + `/science/watch-list` (curated book / documentary / podcast / channel lists), `/library/episodes` (audio episode index, RFC-019). `/dev/*` (model preview, staging-ground review per RFC-029, Slice-A approval, UI style-guide) are **developer-only** — `src/routes/dev/+layout.ts` 404s the subtree in any non-dev build. **Collectible cards (#547):** `/c/[kind]/[id]` — 407 prerendered Open Graph share stubs (crawler-visible card unfurl + instant redirect into the app view); `/cards/[kind]/[id]` — the unlisted Playwright render stage for Pipeline 13 (not prerendered, SPA-fallback only). See §components "Collectible cards".
 
 **Disclosure + gallery pages:** `/privacy` (ADR-092 — what usage analytics collect, the GPC/DNT posture, and the `orrery_analytics_optout` toggle; the Art. 13 surface, no consent banner), `/credits` (image + text-source provenance per ADR-047), `/colophon` (the *original*-work bill-of-materials — spacecraft anatomy art, science diagrams, 3D/2D graphics, tour scripts; manifest `static/data/original-work.json` built by `scripts/build-original-work.mjs`. Anatomy art is AI-generated watercolor/pencil cutaways under `static/images/anatomy/*.webp` — to add more without style drift follow [`docs/anatomy-art-runbook.md`](../anatomy-art-runbook.md), #367), `/library` (outbound LEARN-link bill of links per ADR-051), `/posters` (11 hand-authored SVG art-print posters across three style families — JPL travel-poster, era-matched mood-lit, indie-pop halftone — every poster 600×900 portrait SVG; right-click save gives a scalable wallpaper file).
 
@@ -193,6 +193,20 @@ The fail-closed asset + outbound-link discipline that distinguishes Orrery from 
 **Multi-layer toggles** (`src/lib/science-layers.ts`) — 12 layers, each its own `data-science-layer-<key>` attribute on `<html>`. Keys: `gravity · velocity · soi · hover · centripetal · apsides · coast · conics · microgravity · atmosphere · tidal-lock · ozone`. `isLayerOn(key)` gates on master lens AND layer attribute. CSS reacts via `:global([data-science-layer-foo='on'])` selectors with zero imports.
 
 **UI surfaces** — `ScienceLensBanner.svelte` (master toggle), `ScienceLayersPanel.svelte` (per-layer checkboxes; shown only when lens is on). Per-route filter: /fly shows all 8 mission-relevant layers; /explore + /earth + /iss + /tiangong + /moon + /mars hide /fly-only layers (coast, conics).
+
+### Collectible cards (#547 · September 2026)
+
+**One card per real thing, shareable everywhere.** Every entity with a detail panel carries a "Collector card" CTA that opens a baseball-card-style collectible (`CardOverlay.svelte`) with two share actions: *Share link* (the prerendered OG stub, so chats/social unfurl the card image) and *Share card* (the generated JPEG handed to the native share sheet, download fallback).
+
+**CardSpec contract + resolvers** (`src/lib/cards/card-spec.ts`) — ONE data shape (`CardSpec`: collection · №number · title · kicker · story · ≤6 stats · fact register · hero · optional monochrome figure · credit · slug · share artifacts) feeds every card. Per-kind resolvers are pure mappings over data the app already loads: `cardForMission` (trajectory-thumbnail figure), `cardForFleet` (anatomy/cutaway figure), `cardForSite` (moon/mars, surface vs orbiter stat sets), `cardForPlanet` (`PLANET_STATS` physicals; Pluto excluded — its canonical card is the small-body kind), `cardForSatellite`, `cardForSmallBody`. Nothing is ever hand-made or AI-generated per entity: restyling is a template edit that applies to all 407 cards.
+
+**Template** (`src/lib/cards/CollectibleCard.svelte`, template 01 "cinematic") — pure HTML/CSS: hero dissolving into black, display title at the seam, mono kicker, editorial-serif story, weight-forward 2-col stat grid, screen-blend monochrome figure, FIRST/KNOWN FOR/SITE/FACT footer line. Strictly monochrome chrome (the photograph is the only colour). The figure collapses on load error (≈50 missions have no trajectory thumbnail). Chrome strings are paraglide keys (`card_stat_* / card_fact_* / card_collection_* / card_kind_* / card_cat_*`, 14 locales) with CSS `text-transform: uppercase` normalising every script.
+
+**Canonical-card aliases** — entities that exist on multiple surfaces share ONE card: fleet entries whose id is a mission (`fleetAliasesMission`, 47), surface sites matching a mission by `mission_id` or id parity (`siteAliasMissionId`, 45 of 54 incl. all Venus sites), and earth-objects (`earthObjectCardAlias`: lunar orbiters → mission, guarded by dest↔body so the Galileo GNSS constellation never aliases the Galileo Jupiter mission; constellations/stations/observatories → their `fleet_refs` fleet entry; only the GEO belt marker has no card). Aliasing panels fetch the **canonical entity's own gallery** for the hero so the in-app card is pixel-identical to the generated one.
+
+**Hero rule (operator-locked, 2026-09-12)** — the card hero IS the app hero: `gallery[0]` after the per-surface `*-hero-overrides.json` reorder. No card-specific hero derivation exists; a bad card hero means a bad hero, fixed at the override. Corollary: heroes are never panorama-like (the no-panorama sweep is enforced via overrides; galleries that can't satisfy it are sourcing work — #550).
+
+**Wired panels** — `MissionPanel`, `FleetEntryPanel`, `SurfaceScene` inline site panel (earth pads → fleet card), `EarthObjectPanel`, `PlanetPanel`, `SatellitePanel`, `SmallBodyPanel`. Stars/exoplanets are deliberately out of scope (no card-grade imagery). Routes: `/cards/[kind]/[id]` (bare render stage for the generator, SPA-fallback only) and `/c/[kind]/[id]` (prerendered OG share stubs — crawler-visible `og:image` pointing at the JPEG + instant `goto` redirect into the app view; 407 stubs emitted at build). See Pipeline 13 for generation.
 
 ### i18n machinery
 
@@ -625,6 +639,12 @@ Stages:
 
 Schema: `static/data/schemas/audio-provenance.schema.json`. Voice ID map: `static/data/audio/voices.json`. Runbook: [docs/guides/audio-pipeline-setup.md](../guides/audio-pipeline-setup.md). See PRD-016 + RFC-019.
 
+### Pipeline 13 — Card image generator (`scripts/cards/generate-card-images.mjs`)
+
+Operator-triggered (`npm run build-cards`). Drives the `/cards/[kind]/[id]` render stage with Playwright (existing dev dep) and screenshots each canonical card's `.card` element at deviceScaleFactor 3 into `static/images/cards/<kind>/<id>.jpg` (1080×1440, JPEG q90 — the full 407-card corpus is ~74 MB in-repo vs ~190 MB as PNG). The JPEGs serve the overlay's *Share card* file and the `/c/` stubs' `og:image`; the corpus renders from **en-US** data (one generated set, the in-app card follows the viewer's locale).
+
+Caching (`static/images/cards/cards-manifest.json`): per-card hash over (entity json + en-US overlay + per-kind hero deps + per-kind template version). Two deliberate design points: **`KIND_VERSION`** replaces content-hashing of `card-spec.ts`/the stage (growing a resolver would otherwise re-render all 407 JPEGs — 74 MB binary churn per slice; bump a kind's version when its rendered output changes), and **`KIND_HERO_DEPS`** folds the per-surface `*-hero-overrides.json` + gallery-count manifests into each kind's hash so a hero override automatically re-renders that kind. `--rehash` migrates the manifest after a hashing-scheme change without rendering. Serves `build/` itself via `scripts/mobile/serve-build.mjs`, or `BASE_URL=<dev server>` renders against `vite dev`. The stage gates `data-card-ready` on spec resolution + hero **and figure** decode (a screenshot before decode ships a black hero / broken figure).
+
 ### Pipeline orchestration (`npm run fetch` + `npm run preflight`)
 
 ```
@@ -780,6 +800,18 @@ Schemas: `science-section.schema.json`, `science-section-overlay.schema.json`, `
 ### Provenance manifests
 
 Locked by `image-provenance.schema.json`, `link-provenance.schema.json`, `text-sources.schema.json`, `source-logos.schema.json`, `license-waivers.schema.json`. Each row: source, license, attribution, last-verified, optional waiver-reason. See ADR-047, ADR-051.
+
+### CardSpec (collectible cards, #547)
+
+`src/lib/cards/card-spec.ts` — the single shape every card template renders and every resolver produces:
+
+```ts
+{ collection, number, title, kicker, story, stats: [{label, value}] /* ≤6 */,
+  fact?, factLabel?, heroUrl?, figureUrl?, figureCaption?, creditLine, slug,
+  imagePath? /* generated JPEG */, shareHref? /* /c/<kind>/<id> stub */ }
+```
+
+Invariants: one canonical card per real thing (alias helpers `fleetAliasesMission` / `siteAliasMissionId` / `earthObjectCardAlias` decide ownership identically for panels, generator and stubs); hero = the entity's override-blessed `gallery[0]`, never derived; chrome strings are paraglide keys; values keep the mono en-US register (dates, units, status enums). Kinds: `mission · fleet · moon-site · mars-site · planet · moon · small-body`.
 
 ### Lambert worker message protocol
 
@@ -1078,3 +1110,4 @@ Listed here in numeric order; full title and date in [`index.md`](index.md).
 | **v3.0** | **July 2026** | **/explore v2 S5–S8 subsystems (deep review).** Updated §rendering "/explore v2" header from "Slice 0" to "Slices 0–8" to reflect shipped scope. S5: Milky Way schematic scene (`milky-way-scene.ts` + `milky-way-visual.ts`, `MILKY_WAY_CONTEXT`, `MilkyWayPanel`). S6: black-hole geodesic lensing scene (`black-hole-scene.ts` + `black-hole-visual.ts`, four objects: M87*, Sag A*, Cygnus X-1, Gargantua). S7: property-space / causality overlays (`property-space.ts` — HR diagram + exoplanet mass-vs-period axes, `causality.ts` — light-cone spheres, `LensLayer` integration). S8: Local Group schematic scene (`local-group-scene.ts`, `LOCAL_GROUP_CONTEXT`, `LocalGroupPanel`, 33 real members). All four WebGL builders coverage-excluded per the `explore-scene.ts` policy; their pure math has dedicated `*.test.ts` files. |
 | **v3.1** | **July 2026** | **/fly launch/ascent + descent epic (PRD-032 / RFC-034 / #412).** `/fly` becomes one continuous pad→arrival scrubber. **Scene 0 (launch/ascent):** integrated ascent EOM (`ascent-physics.ts`), per-vehicle launch profiles (`launch-profile-registry.ts`), procedural launchers (`launcher-models.ts`), `LaunchScene` + `LaunchTelemetry` HUD, cinematic shot schedule (`ascent-cameras.ts`). **EDL descent:** `descent-physics.ts` (moon/mars/venus/earth bodies), `descent-profile-registry.ts` archetypes incl. `EARTH_CAPSULE_REENTRY`, `DescentScene` + terminal-EDL time-warp (`descent-timewarp.ts`). **Cinematic primitives:** `BoldArrow` force vectors (`bold-arrow.ts`), glowing trajectory/orbit tubes (`glow-line.ts`), separation bursts (`separation-burst.ts`), per-event slow-mo beat + master unified clock (`ascent-clock.ts`). Force-vector Science Lens across ascent/coast/descent/cruise; 2 new /science articles (deorbit-corridor, comms-blackout). Master routes-table `/fly` row updated. |
 | **v3.2** | **July 2026** | **Telemetry environment ladder (ADR-082).** Registered the observability cluster (ADR-067/068/081/082) in §map — previously absent from TA.md entirely — and added three §stack rows (client error tracking, usage analytics, telemetry environments). The prod estate is self-hosted (Sentry SDK → **GlitchTip**, **Umami**); telemetry now runs on a **dev → staging → prod** ladder with an isolated GlitchTip project + Umami site per rung (prod=4, staging=6, dev=7), the gh-pages deploy relabelled **staging** (`preview.yml`→`staging.yml`), and `vite dev` reporting to a tailnet-only dev rung tagged by git worktree — fork-silent by construction. Companion: `docs/guides/observability.md` rewritten; README §Privacy + `analytics.ts`/`sentry.ts` aligned. |
+| **v3.3** | **September 2026** | **Collectible cards subsystem (#547).** Added §components "Collectible cards" — CardSpec contract + 6 pure resolvers over 7 card kinds, template 01 "cinematic" (`CollectibleCard.svelte`, sole restyle surface; nothing per-entity is ever generated), canonical-card alias rules (fleet↔mission id parity, site `mission_id`/id parity, earth-object dest↔body-guarded mission + `fleet_refs` fleet aliases), the operator-locked hero rule (card hero == app hero via `*-hero-overrides.json`; no panorama heroes), 14-locale chrome keys, and the 7 wired panels (stars/exoplanets deliberately out of scope). Added §pipelines Pipeline 13 (Playwright JPEG generator: per-kind `KIND_VERSION` + `KIND_HERO_DEPS` hashing, `--rehash`, en-US corpus, hero+figure decode gate). Added §contracts CardSpec. Routes note for `/c/[kind]/[id]` (407 prerendered OG share stubs) + `/cards/[kind]/[id]` (render stage). Companion: GH #550 tracks the three galleries that fail the no-panorama bar pending sourcing. |

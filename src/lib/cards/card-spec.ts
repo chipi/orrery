@@ -18,6 +18,7 @@ import type { SurfaceSite } from '$types/surface-site';
 import type { LocalizedPlanet } from '$types/planet';
 import type { SatelliteEntry } from '$lib/data/small-bodies';
 import { PLANET_STATS } from '$lib/physics/util/planet-stats';
+import * as m from '$lib/paraglide/messages';
 
 export interface CardStat {
   label: string;
@@ -124,26 +125,30 @@ export function cardForMission(
 
   const stats: CardStat[] = [];
   if (mission.departure_date)
-    stats.push({ label: 'LAUNCH', value: cardDate(mission.departure_date) });
-  if (mission.vehicle) stats.push({ label: 'VEHICLE', value: chip(mission.vehicle) });
-  if (mission.transit_days) stats.push({ label: 'TRANSIT', value: `${mission.transit_days} D` });
+    stats.push({ label: m.card_stat_launch(), value: cardDate(mission.departure_date) });
+  if (mission.vehicle) stats.push({ label: m.card_stat_vehicle(), value: chip(mission.vehicle) });
+  if (mission.transit_days)
+    stats.push({ label: m.card_stat_transit(), value: `${mission.transit_days} D` });
   if (mission.delta_v) stats.push({ label: 'ΔV', value: chip(mission.delta_v, 18) });
   if (mission.payload)
-    stats.push({ label: 'PAYLOAD', value: leadQuantity(mission.payload) ?? chip(mission.payload) });
-  stats.push({ label: 'STATUS', value: mission.status });
+    stats.push({
+      label: m.card_stat_payload(),
+      value: leadQuantity(mission.payload) ?? chip(mission.payload),
+    });
+  stats.push({ label: m.card_stat_status(), value: mission.status });
 
   return {
-    collection: 'MISSIONS',
+    collection: m.card_collection_missions(),
     number,
     title: mission.name ?? mission.id,
     kicker,
     story: mission.description ? leadSentences(mission.description, 2) : '',
     stats: stats.slice(0, 6),
     fact: mission.first,
-    factLabel: mission.first ? 'FIRST' : undefined,
+    factLabel: mission.first ? m.card_fact_first() : undefined,
     heroUrl,
     figureUrl: `/images/missions/thumbnails/${mission.id}.webp`,
-    figureCaption: 'TRAJECTORY',
+    figureCaption: m.card_caption_trajectory(),
     creditLine: mission.credit ? `SOURCES: ${chip(mission.credit, 60)}` : '',
     slug: `orrery.day/c/mission/${mission.id}`,
     imagePath: `/images/cards/mission/${mission.id}.jpg`,
@@ -163,6 +168,21 @@ export function fleetAliasesMission(fleetId: string, missionIndex: MissionIndex[
   return missionIndex.some((mi) => mi.id === fleetId);
 }
 
+const FLEET_CATEGORY_LABEL: Record<string, () => string> = {
+  launcher: m.card_cat_launcher,
+  'crewed-spacecraft': m.card_cat_crewed_spacecraft,
+  'cargo-spacecraft': m.card_cat_cargo_spacecraft,
+  engine: m.card_cat_engine,
+  lander: m.card_cat_lander,
+  'launch-site': m.card_cat_launch_site,
+  observatory: m.card_cat_observatory,
+  orbiter: m.card_cat_orbiter,
+  rover: m.card_cat_rover,
+  'space-suit': m.card_cat_space_suit,
+  station: m.card_cat_station,
+  constellation: m.card_cat_constellation,
+};
+
 export function cardForFleet(
   entry: FleetEntry,
   index: FleetIndexEntry[],
@@ -176,24 +196,25 @@ export function cardForFleet(
   const number = pos >= 0 ? `${String(pos + 1).padStart(3, '0')}/${total}` : `—/${total}`;
 
   const year = entry.first_flight ? entry.first_flight.slice(0, 4) : '';
-  const category = entry.category.replace(/-/g, ' ').toUpperCase();
+  const category =
+    FLEET_CATEGORY_LABEL[entry.category]?.() ?? entry.category.replace(/-/g, ' ').toUpperCase();
   const kicker = [entry.agency, category, year].filter(Boolean).join(' · ');
 
   const stats: CardStat[] = [];
   if (entry.first_flight)
-    stats.push({ label: 'FIRST FLIGHT', value: cardDate(entry.first_flight) });
+    stats.push({ label: m.card_stat_first_flight(), value: cardDate(entry.first_flight) });
   // Multi-contractor strings ('Boeing / North American / Douglas') double-
   // truncate in the half-width stat cell — lead with the prime contractor.
   if (entry.manufacturer)
-    stats.push({ label: 'BUILDER', value: chip(entry.manufacturer.split(' / ')[0]) });
-  if (entry.country) stats.push({ label: 'COUNTRY', value: chip(entry.country) });
-  if (entry.era) stats.push({ label: 'ERA', value: entry.era });
+    stats.push({ label: m.card_stat_builder(), value: chip(entry.manufacturer.split(' / ')[0]) });
+  if (entry.country) stats.push({ label: m.card_stat_country(), value: chip(entry.country) });
+  if (entry.era) stats.push({ label: m.card_stat_era(), value: entry.era });
   if (entry.linked_missions?.length)
-    stats.push({ label: 'MISSIONS', value: String(entry.linked_missions.length) });
-  stats.push({ label: 'STATUS', value: entry.status });
+    stats.push({ label: m.card_stat_missions(), value: String(entry.linked_missions.length) });
+  stats.push({ label: m.card_stat_status(), value: entry.status });
 
   return {
-    collection: 'FLEET',
+    collection: m.card_collection_fleet(),
     number,
     title: entry.name,
     kicker,
@@ -202,10 +223,10 @@ export function cardForFleet(
       : (entry.tagline ?? entry.best_known_for ?? ''),
     stats: stats.slice(0, 6),
     fact: entry.best_known_for,
-    factLabel: entry.best_known_for ? 'KNOWN FOR' : undefined,
+    factLabel: entry.best_known_for ? m.card_fact_known_for() : undefined,
     heroUrl,
     figureUrl,
-    figureCaption: figureUrl ? 'ANATOMY' : undefined,
+    figureCaption: figureUrl ? m.card_caption_anatomy() : undefined,
     creditLine: `SOURCES: ${chip(entry.agency, 60)}`,
     slug: `orrery.day/c/fleet/${entry.id}`,
     imagePath: `/images/cards/fleet/${entry.id}.jpg`,
@@ -256,33 +277,42 @@ export function cardForSite(
 
   const stats: CardStat[] = [];
   if (site.kind === 'surface') {
-    if (site.landing_date) stats.push({ label: 'LANDED', value: cardDate(site.landing_date) });
+    if (site.landing_date)
+      stats.push({ label: m.card_stat_landed(), value: cardDate(site.landing_date) });
     if (site.lat != null && site.lon != null)
-      stats.push({ label: 'COORDS', value: cardCoords(site.lat, site.lon) });
+      stats.push({ label: m.card_stat_coords(), value: cardCoords(site.lat, site.lon) });
     if (site.surface_duration_days)
       stats.push({
-        label: 'SURFACE',
+        label: m.card_stat_surface(),
         value: `${site.surface_duration_days.toLocaleString('en-US')} D`,
       });
-    if (site.samples_kg) stats.push({ label: 'SAMPLES', value: `${site.samples_kg} KG` });
+    if (site.samples_kg)
+      stats.push({ label: m.card_stat_samples(), value: `${site.samples_kg} KG` });
   } else {
     if (site.altitude_km)
-      stats.push({ label: 'ORBIT', value: `${site.altitude_km.toLocaleString('en-US')} KM` });
+      stats.push({
+        label: m.card_stat_orbit(),
+        value: `${site.altitude_km.toLocaleString('en-US')} KM`,
+      });
     if (site.inclination_deg != null)
-      stats.push({ label: 'INCLINATION', value: `${site.inclination_deg}°` });
+      stats.push({ label: m.card_stat_inclination(), value: `${site.inclination_deg}°` });
   }
-  if (site.nation) stats.push({ label: 'NATION', value: site.nation });
-  stats.push({ label: 'STATUS', value: site.status });
+  if (site.nation) stats.push({ label: m.card_stat_nation(), value: site.nation });
+  stats.push({ label: m.card_stat_status(), value: site.status });
 
   return {
-    collection: body === 'moon' ? 'MOON SITES' : 'MARS SITES',
+    collection: body === 'moon' ? m.card_collection_moon_sites() : m.card_collection_mars_sites(),
     number,
     title: site.name ?? site.id,
     kicker,
     story: site.fact ? leadSentences(site.fact, 2) : (site.left ?? ''),
     stats: stats.slice(0, 6),
     fact: site.site_name ?? site.capability,
-    factLabel: site.site_name ? 'SITE' : site.capability ? 'ROLE' : undefined,
+    factLabel: site.site_name
+      ? m.card_fact_site()
+      : site.capability
+        ? m.card_fact_role()
+        : undefined,
     heroUrl,
     creditLine: `SOURCES: ${chip(site.credit.replace(/^©\s*/, ''), 60)}`,
     slug: `orrery.day/c/${body}-site/${site.id}`,
@@ -291,12 +321,12 @@ export function cardForSite(
   };
 }
 
-const SURFACE_KIND_LABEL: Record<string, string> = {
-  rocky: 'ROCKY PLANET',
-  'rocky-liquid': 'ROCKY PLANET',
-  'rocky-ice': 'ROCKY PLANET',
-  'gas-giant': 'GAS GIANT',
-  'ice-giant': 'ICE GIANT',
+const SURFACE_KIND_LABEL: Record<string, () => string> = {
+  rocky: m.card_kind_rocky_planet,
+  'rocky-liquid': m.card_kind_rocky_planet,
+  'rocky-ice': m.card_kind_rocky_planet,
+  'gas-giant': m.card_kind_gas_giant,
+  'ice-giant': m.card_kind_ice_giant,
 };
 
 /**
@@ -319,19 +349,24 @@ export function cardForPlanet(
   const number = pos >= 0 ? `${String(pos + 1).padStart(3, '0')}/${total}` : `—/${total}`;
 
   const phys = PLANET_STATS[planet.id];
-  const kindLabel = phys ? (SURFACE_KIND_LABEL[phys.surfaceKind] ?? 'PLANET') : 'PLANET';
+  const kindLabel = phys
+    ? (SURFACE_KIND_LABEL[phys.surfaceKind]?.() ?? m.card_kind_planet())
+    : m.card_kind_planet();
   const kicker = `${kindLabel} · ${planet.a.toFixed(2)} AU`;
 
   const stats: CardStat[] = [];
   if (phys) {
-    stats.push({ label: 'DIAMETER', value: `${phys.diameterKm.toLocaleString('en-US')} KM` });
-    stats.push({ label: 'GRAVITY', value: `${phys.surfaceGravityG} G` });
+    stats.push({
+      label: m.card_stat_diameter(),
+      value: `${phys.diameterKm.toLocaleString('en-US')} KM`,
+    });
+    stats.push({ label: m.card_stat_gravity(), value: `${phys.surfaceGravityG} G` });
   }
   // rotPeriod is in Earth days — hours reads better for fast rotators
   // (Mars 24.6 H), days for the slow ones (Venus 243 D).
   if (planet.rotPeriod)
     stats.push({
-      label: 'DAY',
+      label: m.card_stat_day(),
       value:
         planet.rotPeriod < 3
           ? `${(planet.rotPeriod * 24).toFixed(1)} H`
@@ -339,23 +374,23 @@ export function cardForPlanet(
     });
   if (planet.T)
     stats.push({
-      label: 'YEAR',
+      label: m.card_stat_year(),
       value: planet.T < 1000 ? `${Math.round(planet.T)} D` : `${(planet.T / 365.25).toFixed(1)} Y`,
     });
   if (phys) {
-    stats.push({ label: 'TEMP', value: `${Math.round(phys.surfaceTempK - 273.15)}°C` });
-    stats.push({ label: 'ESCAPE', value: `${phys.escapeKms} KM/S` });
+    stats.push({ label: m.card_stat_temp(), value: `${Math.round(phys.surfaceTempK - 273.15)}°C` });
+    stats.push({ label: m.card_stat_escape(), value: `${phys.escapeKms} KM/S` });
   }
 
   return {
-    collection: 'PLANETS',
+    collection: m.card_collection_planets(),
     number,
     title: planet.name,
     kicker,
     story: planet.bio ? leadSentences(planet.bio, 2) : '',
     stats: stats.slice(0, 6),
     fact: planet.fact ? leadSentences(planet.fact, 1) : undefined,
-    factLabel: planet.fact ? 'FACT' : undefined,
+    factLabel: planet.fact ? m.card_fact_fact() : undefined,
     heroUrl,
     creditLine: 'SOURCES: NASA / ESA',
     slug: `orrery.day/c/planet/${planet.id}`,
@@ -380,34 +415,37 @@ export function cardForSatellite(
   const number = pos >= 0 ? `${String(pos + 1).padStart(3, '0')}/${total}` : `—/${total}`;
 
   const year = discoveryYear(entry.discovered);
-  const kicker = [entry.parent_planet_name.toUpperCase(), 'MOON', year ?? '']
+  const kicker = [entry.parent_planet_name.toUpperCase(), m.card_kicker_moon(), year ?? '']
     .filter(Boolean)
     .join(' · ');
 
   const stats: CardStat[] = [];
   if (entry.radius_km)
-    stats.push({ label: 'RADIUS', value: `${entry.radius_km.toLocaleString('en-US')} KM` });
+    stats.push({
+      label: m.card_stat_radius(),
+      value: `${entry.radius_km.toLocaleString('en-US')} KM`,
+    });
   if (entry.semi_major_axis_km)
     stats.push({
-      label: 'ORBIT',
+      label: m.card_stat_orbit(),
       value: `${Math.round(entry.semi_major_axis_km).toLocaleString('en-US')} KM`,
     });
   if (entry.orbital_period_days)
-    stats.push({ label: 'PERIOD', value: `${entry.orbital_period_days} D` });
-  stats.push({ label: 'PARENT', value: entry.parent_planet_name });
-  if (year) stats.push({ label: 'DISCOVERED', value: year });
+    stats.push({ label: m.card_stat_period(), value: `${entry.orbital_period_days} D` });
+  stats.push({ label: m.card_stat_parent(), value: entry.parent_planet_name });
+  if (year) stats.push({ label: m.card_stat_discovered(), value: year });
   if (entry.mission_visits?.length)
-    stats.push({ label: 'VISITS', value: String(entry.mission_visits.length) });
+    stats.push({ label: m.card_stat_visits(), value: String(entry.mission_visits.length) });
 
   return {
-    collection: 'MOONS',
+    collection: m.card_collection_moons(),
     number,
     title: entry.name,
     kicker,
     story: entry.description ? leadSentences(entry.description, 2) : '',
     stats: stats.slice(0, 6),
     fact: entry.surface_composition,
-    factLabel: entry.surface_composition ? 'SURFACE' : undefined,
+    factLabel: entry.surface_composition ? m.card_stat_surface() : undefined,
     heroUrl,
     creditLine: 'SOURCES: NASA / ESA',
     slug: `orrery.day/c/moon/${entry.id}`,
@@ -432,12 +470,12 @@ export interface SmallBodyLike {
   description?: string;
 }
 
-const SMALL_BODY_TYPE_LABEL: Record<SmallBodyLike['type'], string> = {
-  dwarf: 'DWARF PLANET',
-  comet: 'COMET',
-  interstellar: 'INTERSTELLAR OBJECT',
-  asteroid: 'ASTEROID',
-  kbo: 'KUIPER BELT OBJECT',
+const SMALL_BODY_TYPE_LABEL: Record<SmallBodyLike['type'], () => string> = {
+  dwarf: m.card_kind_dwarf,
+  comet: m.card_kind_comet,
+  interstellar: m.card_kind_interstellar,
+  asteroid: m.card_kind_asteroid,
+  kbo: m.card_kind_kbo,
 };
 
 export function cardForSmallBody(
@@ -449,35 +487,39 @@ export function cardForSmallBody(
   const total = bodies.length;
   const number = pos >= 0 ? `${String(pos + 1).padStart(3, '0')}/${total}` : `—/${total}`;
 
-  const typeLabel = SMALL_BODY_TYPE_LABEL[body.type];
+  const typeLabel = SMALL_BODY_TYPE_LABEL[body.type]();
   // Hyperbolic interlopers ('Oumuamua) have no meaningful semi-major axis.
   const boundOrbit = body.type !== 'interstellar' && body.a > 0;
   const kicker = boundOrbit ? `${typeLabel} · ${body.a.toFixed(2)} AU` : typeLabel;
 
   const stats: CardStat[] = [];
   if (body.radius_km)
-    stats.push({ label: 'RADIUS', value: `${body.radius_km.toLocaleString('en-US')} KM` });
-  if (boundOrbit) {
-    stats.push({ label: 'ORBIT', value: `${body.a.toFixed(2)} AU` });
     stats.push({
-      label: 'PERIOD',
+      label: m.card_stat_radius(),
+      value: `${body.radius_km.toLocaleString('en-US')} KM`,
+    });
+  if (boundOrbit) {
+    stats.push({ label: m.card_stat_orbit(), value: `${body.a.toFixed(2)} AU` });
+    stats.push({
+      label: m.card_stat_period(),
       value: body.T < 1000 ? `${Math.round(body.T)} D` : `${(body.T / 365.25).toFixed(1)} Y`,
     });
   }
-  if (body.incl != null) stats.push({ label: 'INCLINATION', value: `${body.incl.toFixed(1)}°` });
+  if (body.incl != null)
+    stats.push({ label: m.card_stat_inclination(), value: `${body.incl.toFixed(1)}°` });
   const year = discoveryYear(body.discovered ?? undefined);
-  if (year) stats.push({ label: 'DISCOVERED', value: year });
-  stats.push({ label: 'ECCENTRICITY', value: body.e.toFixed(2) });
+  if (year) stats.push({ label: m.card_stat_discovered(), value: year });
+  stats.push({ label: m.card_stat_eccentricity(), value: body.e.toFixed(2) });
 
   return {
-    collection: 'SMALL BODIES',
+    collection: m.card_collection_small_bodies(),
     number,
     title: body.name,
     kicker,
     story: body.description ? leadSentences(body.description, 2) : '',
     stats: stats.slice(0, 6),
     fact: body.mission_visited ? chip(body.mission_visited, 60) : undefined,
-    factLabel: body.mission_visited ? 'VISITED BY' : undefined,
+    factLabel: body.mission_visited ? m.card_fact_visited_by() : undefined,
     heroUrl,
     creditLine: 'SOURCES: NASA / ESA',
     slug: `orrery.day/c/small-body/${body.id}`,

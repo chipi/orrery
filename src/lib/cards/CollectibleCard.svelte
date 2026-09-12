@@ -121,6 +121,7 @@
     letter-spacing: 4px;
   }
   .collection {
+    text-transform: uppercase;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 9px;
     letter-spacing: 1px;
@@ -196,6 +197,7 @@
     gap: 7px 12px;
   }
   .stat dt {
+    text-transform: uppercase;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 8px;
     letter-spacing: 1.2px;
@@ -227,6 +229,7 @@
     filter: grayscale(1) brightness(1.9) contrast(1.15);
   }
   .fig figcaption {
+    text-transform: uppercase;
     font-family: var(--font-mono, 'Space Mono', monospace);
     font-size: 7px;
     letter-spacing: 1.5px;
@@ -245,6 +248,7 @@
     color: rgba(255, 255, 255, 0.82);
   }
   .fact-label {
+    text-transform: uppercase;
     font-weight: 700;
     color: var(--card-ink);
     margin-right: 6px;

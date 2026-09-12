@@ -47,6 +47,9 @@ export interface CardSpec {
    *  file + og:image. Root-relative; may not exist yet for new entities
    *  (the overlay probes and degrades to link-only). */
   imagePath?: string;
+  /** Share-stub path (S3) — '/c/<kind>/<id>', the prerendered page that
+   *  carries the Open Graph card and forwards into the app view. */
+  shareHref?: string;
 }
 
 /** Lead of a paragraph: up to `n` sentences, but never past ~`maxChars` —
@@ -137,7 +140,8 @@ export function cardForMission(
     figureUrl: `/images/missions/thumbnails/${mission.id}.webp`,
     figureCaption: 'TRAJECTORY',
     creditLine: mission.credit ? `SOURCES: ${chip(mission.credit, 60)}` : '',
-    slug: `orrery.day/missions/${mission.id}`,
+    slug: `orrery.day/c/mission/${mission.id}`,
     imagePath: `/images/cards/mission/${mission.id}.png`,
+    shareHref: `/c/mission/${mission.id}`,
   };
 }

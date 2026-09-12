@@ -9,7 +9,7 @@
 -->
 <script lang="ts">
   import * as m from '$lib/paraglide/messages';
-  import { shareCurrent } from '$lib/share';
+  import { shareCurrent, sharePath } from '$lib/share';
   import { assetUrl } from '$lib/asset-url';
   import CollectibleCard from './CollectibleCard.svelte';
   import type { CardSpec } from './card-spec';
@@ -36,7 +36,11 @@
   }
 
   async function shareLink(): Promise<void> {
-    const result = await shareCurrent();
+    // Prefer the OG stub (recipients get the card unfurl); fall back to
+    // the current URL for specs without one.
+    const result = spec.shareHref
+      ? await sharePath(spec.shareHref, spec.title)
+      : await shareCurrent();
     if (result === 'shared' || result === 'copied') flash(result);
   }
 

@@ -26,8 +26,23 @@ export function publicShareUrl(
  */
 export async function shareCurrent(): Promise<'shared' | 'copied' | 'cancelled'> {
   const url = publicShareUrl(window.location, Capacitor.isNativePlatform());
-  const title = document.title || 'Orrery';
+  return shareUrl(url, document.title || 'Orrery');
+}
 
+/**
+ * Share a specific app path (#547 S3) — the card overlay shares the
+ * `/c/<kind>/<id>` stub so recipients get the Open Graph card unfurl,
+ * not the bare app shell. Same public-origin rebuild as shareCurrent.
+ */
+export async function sharePath(
+  path: string,
+  title: string,
+): Promise<'shared' | 'copied' | 'cancelled'> {
+  const origin = Capacitor.isNativePlatform() ? STREAM_ORIGIN : window.location.origin;
+  return shareUrl(`${origin}${path}`, title);
+}
+
+async function shareUrl(url: string, title: string): Promise<'shared' | 'copied' | 'cancelled'> {
   if (Capacitor.isNativePlatform()) {
     try {
       const { Haptics, ImpactStyle } = await import('@capacitor/haptics');

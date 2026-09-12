@@ -60,8 +60,9 @@ describe('cardForMission', () => {
   it('carries the FIRST register + share artifacts', () => {
     expect(spec.factLabel).toBe('FIRST');
     expect(spec.fact).toMatch(/^First humans/);
-    expect(spec.slug).toBe('orrery.day/missions/apollo11');
+    expect(spec.slug).toBe('orrery.day/c/mission/apollo11');
     expect(spec.imagePath).toBe('/images/cards/mission/apollo11.png');
+    expect(spec.shareHref).toBe('/c/mission/apollo11');
     expect(spec.figureUrl).toBe('/images/missions/thumbnails/apollo11.webp');
   });
 

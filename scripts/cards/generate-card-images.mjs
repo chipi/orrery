@@ -41,14 +41,15 @@ const BASE_URL = process.env.BASE_URL ?? `http://127.0.0.1:${PORT}`;
 const SHARED_SOURCES = ['src/lib/cards/CollectibleCard.svelte'];
 
 const KIND_VERSION = {
-  // v2: figure-decode ready-gate (stage raced on trajectory/anatomy figures)
-  mission: 2,
-  fleet: 2,
-  'moon-site': 1,
-  'mars-site': 1,
-  planet: 1,
-  moon: 1,
-  'small-body': 1,
+  // v3/v2: footer slug orrery.day -> www.orrerylearn.com (2026-09-12 —
+  // orrery.day was never ours); v2: figure-decode ready-gate
+  mission: 3,
+  fleet: 3,
+  'moon-site': 2,
+  'mars-site': 2,
+  planet: 2,
+  moon: 2,
+  'small-body': 2,
 };
 
 const sha = (buf) => createHash('sha256').update(buf).digest('hex').slice(0, 16);

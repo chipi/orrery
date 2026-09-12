@@ -19,6 +19,11 @@ import type { LocalizedPlanet } from '$types/planet';
 import type { SatelliteEntry } from '$lib/data/small-bodies';
 import { PLANET_STATS } from '$lib/physics/util/planet-stats';
 import * as m from '$lib/paraglide/messages';
+import { SITE_ORIGIN } from '$lib/seo';
+
+// Human-readable host printed on the card footer — rides the SITE_ORIGIN
+// spine so a domain move re-slugs every card on the next corpus regen.
+const SLUG_HOST = SITE_ORIGIN.replace(/^https?:\/\//, '');
 
 export interface CardStat {
   label: string;
@@ -153,7 +158,7 @@ export function cardForMission(
     figureUrl: `/images/missions/thumbnails/${mission.id}.webp`,
     figureCaption: m.card_caption_trajectory(),
     creditLine: mission.credit ? `SOURCES: ${chip(mission.credit, 60)}` : '',
-    slug: `orrery.day/c/mission/${mission.id}`,
+    slug: `${SLUG_HOST}/c/mission/${mission.id}`,
     imagePath: `/images/cards/mission/${mission.id}.jpg`,
     shareHref: `/c/mission/${mission.id}`,
   };
@@ -231,7 +236,7 @@ export function cardForFleet(
     figureUrl,
     figureCaption: figureUrl ? m.card_caption_anatomy() : undefined,
     creditLine: `SOURCES: ${chip(entry.agency, 60)}`,
-    slug: `orrery.day/c/fleet/${entry.id}`,
+    slug: `${SLUG_HOST}/c/fleet/${entry.id}`,
     imagePath: `/images/cards/fleet/${entry.id}.jpg`,
     shareHref: `/c/fleet/${entry.id}`,
   };
@@ -319,7 +324,7 @@ export function cardForSite(
         : undefined,
     heroUrl,
     creditLine: `SOURCES: ${chip(site.credit.replace(/^©\s*/, ''), 60)}`,
-    slug: `orrery.day/c/${body}-site/${site.id}`,
+    slug: `${SLUG_HOST}/c/${body}-site/${site.id}`,
     imagePath: `/images/cards/${body}-site/${site.id}.jpg`,
     shareHref: `/c/${body}-site/${site.id}`,
   };
@@ -397,7 +402,7 @@ export function cardForPlanet(
     factLabel: planet.fact ? m.card_fact_fact() : undefined,
     heroUrl,
     creditLine: 'SOURCES: NASA / ESA',
-    slug: `orrery.day/c/planet/${planet.id}`,
+    slug: `${SLUG_HOST}/c/planet/${planet.id}`,
     imagePath: `/images/cards/planet/${planet.id}.jpg`,
     shareHref: `/c/planet/${planet.id}`,
   };
@@ -452,7 +457,7 @@ export function cardForSatellite(
     factLabel: entry.surface_composition ? m.card_stat_surface() : undefined,
     heroUrl,
     creditLine: 'SOURCES: NASA / ESA',
-    slug: `orrery.day/c/moon/${entry.id}`,
+    slug: `${SLUG_HOST}/c/moon/${entry.id}`,
     imagePath: `/images/cards/moon/${entry.id}.jpg`,
     shareHref: `/c/moon/${entry.id}`,
   };
@@ -526,7 +531,7 @@ export function cardForSmallBody(
     factLabel: body.mission_visited ? m.card_fact_visited_by() : undefined,
     heroUrl,
     creditLine: 'SOURCES: NASA / ESA',
-    slug: `orrery.day/c/small-body/${body.id}`,
+    slug: `${SLUG_HOST}/c/small-body/${body.id}`,
     imagePath: `/images/cards/small-body/${body.id}.jpg`,
     shareHref: `/c/small-body/${body.id}`,
   };

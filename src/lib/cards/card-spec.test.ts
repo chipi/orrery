@@ -76,7 +76,7 @@ describe('cardForMission', () => {
   it('carries the FIRST register + share artifacts', () => {
     expect(spec.factLabel).toBe('FIRST');
     expect(spec.fact).toMatch(/^First humans/);
-    expect(spec.slug).toBe('orrery.day/c/mission/apollo11');
+    expect(spec.slug).toBe('www.orrerylearn.com/c/mission/apollo11');
     expect(spec.imagePath).toBe('/images/cards/mission/apollo11.jpg');
     expect(spec.shareHref).toBe('/c/mission/apollo11');
     expect(spec.figureUrl).toBe('/images/missions/thumbnails/apollo11.webp');
@@ -142,7 +142,7 @@ describe('cardForFleet', () => {
   it('uses best_known_for as the KNOWN FOR fact + fleet share artifacts', () => {
     expect(spec.factLabel).toBe('KNOWN FOR');
     expect(spec.fact).toBe('Sent humans to the Moon');
-    expect(spec.slug).toBe('orrery.day/c/fleet/saturn-v');
+    expect(spec.slug).toBe('www.orrerylearn.com/c/fleet/saturn-v');
     expect(spec.imagePath).toBe('/images/cards/fleet/saturn-v.jpg');
     expect(spec.shareHref).toBe('/c/fleet/saturn-v');
   });
@@ -217,7 +217,7 @@ describe('cardForSite', () => {
   it('uses the site name as the SITE fact + site share artifacts', () => {
     expect(spec.factLabel).toBe('SITE');
     expect(spec.fact).toBe('Utopia Planitia');
-    expect(spec.slug).toBe('orrery.day/c/mars-site/viking2-lander');
+    expect(spec.slug).toBe('www.orrerylearn.com/c/mars-site/viking2-lander');
     expect(spec.imagePath).toBe('/images/cards/mars-site/viking2-lander.jpg');
     expect(spec.shareHref).toBe('/c/mars-site/viking2-lander');
   });

@@ -159,6 +159,11 @@ event in `EVENT_NAMES` with no rows is a bug report, not a usage statistic.
   final-route dwell is structurally missing.
 - **Event names are capped at 50 chars** and event data cannot be sent without
   an event name.
+- **A null property is stored as the literal string `'null'`**, not SQL NULL
+  (Umami `data_type` 5). `track()` now strips nullish props so "absent" really
+  is absent, but rows written before 2026-09-13 still carry `'null'` — any
+  breakdown query must fold `'null'`, SQL NULL and a missing row together, as
+  the ones here do.
 
 ## Appendix — SQL and the optional Grafana dashboard
 

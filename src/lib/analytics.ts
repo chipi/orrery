@@ -236,6 +236,25 @@ export function initAnalytics(): void {
   document.head.appendChild(s);
 }
 
+/**
+ * Drop null/undefined properties before sending.
+ *
+ * Umami stores a `null` value as the LITERAL STRING "null" (data_type 5), not
+ * as SQL NULL — so `{ source: null }` produces a `null` bucket in every
+ * breakdown instead of an absent property, and any `coalesce(string_value, …)`
+ * in a query silently fails to treat it as missing. Found 2026-09-13 in the
+ * live `science-section-view.source` data. An absent property is the honest
+ * encoding of "there was no source".
+ */
+function omitNullish(props?: Record<string, unknown>): Record<string, unknown> | undefined {
+  if (!props) return props;
+  const out: Record<string, unknown> = {};
+  for (const [k, v] of Object.entries(props)) {
+    if (v !== null && v !== undefined) out[k] = v;
+  }
+  return Object.keys(out).length > 0 ? out : undefined;
+}
+
 type UmamiGlobal = {
   track?: (name: string, props?: Record<string, unknown>) => void;
 };
@@ -285,6 +304,7 @@ export function __pendingEventCountForTest(): number {
 export function track(name: EventName, props?: Record<string, unknown>): void {
   if (!analyticsEnabled()) return;
   if (typeof window === 'undefined') return;
+  props = omitNullish(props);
   const u = umamiGlobal();
   if (u?.track) {
     u.track(name, props);

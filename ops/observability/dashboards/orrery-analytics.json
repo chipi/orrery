@@ -178,7 +178,7 @@
       "id": 7,
       "type": "barchart",
       "title": "Exploration → learning: where science readers came from",
-      "description": "science-section-view.source is the route the visitor came FROM. '(cold entry)' means search or a direct link — an organic landing page rather than a journey destination.",
+      "description": "science-section-view.source is the route the visitor came FROM. '(cold entry)' means search or a direct link — an organic landing page rather than a journey destination. Rows written before 2026-09-13 encode a missing source as the literal string 'null' (Umami stores null properties that way); the query folds those into (cold entry).",
       "datasource": {
         "type": "grafana-postgresql-datasource",
         "uid": "${ds}"
@@ -194,7 +194,7 @@
           "refId": "A",
           "format": "table",
           "rawQuery": true,
-          "rawSql": "select coalesce(d.string_value, '(cold entry)') as came_from, count(*) as section_views\nfrom website_event e\nleft join event_data d on d.website_event_id = e.event_id and d.data_key = 'source'\nwhere e.website_id = '$site' and e.event_name = 'science-section-view' and $__timeFilter(e.created_at)\ngroup by 1\norder by section_views desc;"
+          "rawSql": "select case when d.string_value is null or d.string_value = 'null'\n         then '(cold entry)' else d.string_value end as came_from, count(*) as section_views\nfrom website_event e\nleft join event_data d on d.website_event_id = e.event_id and d.data_key = 'source'\nwhere e.website_id = '$site' and e.event_name = 'science-section-view' and $__timeFilter(e.created_at)\ngroup by 1\norder by section_views desc;"
         }
       ]
     },

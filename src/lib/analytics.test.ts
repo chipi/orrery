@@ -191,10 +191,8 @@ describe('events fired before the umami script executes', () => {
 
     expect(A.__pendingEventCountForTest()).toBe(0);
     expect(umami.track).toHaveBeenNthCalledWith(1, 'app-load', { version: '1.2.3' });
-    expect(umami.track).toHaveBeenNthCalledWith(2, 'route-enter', {
-      route: '/explore',
-      from_route: null,
-    });
+    // from_route is omitted, not null — a cold entry is an ABSENT property.
+    expect(umami.track).toHaveBeenNthCalledWith(2, 'route-enter', { route: '/explore' });
   });
 
   it('goes straight through once umami is present', () => {
@@ -353,13 +351,10 @@ describe('journey milestone events', () => {
     });
   });
 
-  it('plan-window-select tolerates a missing departure year', () => {
+  it('plan-window-select omits a missing departure year rather than sending null', () => {
     const umami = mockUmami();
     A.trackPlanWindowSelect('mars', null);
-    expect(umami.track).toHaveBeenCalledWith('plan-window-select', {
-      destination: 'mars',
-      dep_year: null,
-    });
+    expect(umami.track).toHaveBeenCalledWith('plan-window-select', { destination: 'mars' });
   });
 
   it('tour-complete fires once', () => {
@@ -368,6 +363,38 @@ describe('journey milestone events', () => {
     A.trackTourComplete('curator-full');
     expect(umami.track).toHaveBeenCalledTimes(1);
     expect(umami.track).toHaveBeenCalledWith('tour-complete', { tour: 'curator-full' });
+  });
+
+  // Umami stores a null value as the literal string "null" (data_type 5), which
+  // makes an absent value indistinguishable from a real one in every breakdown.
+  // Found in live data: science-section-view.source had 10 rows reading 'null'.
+  it('omits nullish properties rather than sending the string "null"', () => {
+    const umami = mockUmami();
+
+    A.track('science-section-view', { tab: 'physics', section: 'orbits', source: null });
+
+    expect(umami.track).toHaveBeenCalledWith('science-section-view', {
+      tab: 'physics',
+      section: 'orbits',
+    });
+    const sent = umami.track.mock.calls[0][1] as Record<string, unknown>;
+    expect('source' in sent, 'null source must be ABSENT, not "null"').toBe(false);
+  });
+
+  it('drops the props object entirely when every value is nullish', () => {
+    const umami = mockUmami();
+    A.track('app-load', { version: undefined });
+    expect(umami.track).toHaveBeenCalledWith('app-load', undefined);
+  });
+
+  it('keeps falsy-but-real values (0, false, empty string)', () => {
+    const umami = mockUmami();
+    A.track('layer-toggle', { surface: 'explore', layer: 'orbits', on: false });
+    expect(umami.track).toHaveBeenCalledWith('layer-toggle', {
+      surface: 'explore',
+      layer: 'orbits',
+      on: false,
+    });
   });
 
   it('science-to-app carries the originating route as from_route', () => {

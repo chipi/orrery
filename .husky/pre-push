@@ -54,3 +54,19 @@ if [ "${PREFLIGHT_INCLUDE_SMOKE:-0}" = "1" ]; then
   echo
   npm run test:e2e:smoke
 fi
+
+# git-LFS upload step. core.hooksPath=.husky means git never runs the
+# hook `git lfs install` would have written, so without this line LFS
+# objects (masters/**) were never uploaded — every push to 2026-10-02
+# shipped pointers whose blobs existed only in the pusher's .git/lfs.
+# .lfsconfig fetchexclude hid it (clones never fetched masters → no 404s).
+# Fail closed: a missing git-lfs must block the push, not skip the upload.
+# Note: `git push --no-verify` skips this too — run `git lfs push origin
+# <branch>` by hand if you ever bypass the hook.
+if ! command -v git-lfs >/dev/null 2>&1; then
+  echo "✗ pre-push: git-lfs not found on PATH — install it (masters/** are LFS) before pushing" >&2
+  exit 2
+fi
+echo
+echo "▶ git lfs pre-push (upload LFS objects for the pushed refs)"
+printf '%s\n' "$push_refs" | git lfs pre-push "$@"

@@ -340,7 +340,7 @@ const INLINE_ALLOWLIST: ReadonlySet<string> = new Set<string>([
   '0180fe7f01807e7f|81807e7f81803e7f', // slim / luna24
   '01c0fe3f01c07e3f|01c0fe3f01c0fe1f', // luna9 / chandrayaan3
 
-  // ----- launcher/pad sister-entity reuse (12 pairs) -----
+  // ----- launcher/pad sister-entity reuse (16 pairs) -----
   // One canonical archival photo of a launch legitimately serves both
   // the pad entity AND the rocket flown from it AND each crewed flight
   // that used the stack. Soviet Soyuz family is the largest cluster.
@@ -360,6 +360,14 @@ const INLINE_ALLOWLIST: ReadonlySet<string> = new Set<string>([
   // delete still need allowlisting because the same launch photo serves
   // pad + 3 different crewed-vehicle galleries.
   'cc4f31468d3265cd|cc4f31468d3265cd', // baikonur-31-6 / soyuz-2 / soyuz-tma / soyuz-u
+  // ALLOWLIST_AUTHORIZED (2026-10-03) — first masters-smudged preflight on
+  //   a fresh clone (masters were never on the LFS remote before) surfaced 4
+  //   cross-card fleet pairs; Marko approved allowlisting all 4 as sister-
+  //   entity editorial reuse.
+  '2f40fd02d80f76c9|2f40fd02d80f76c9', // long-march-3b/02 / xichang-lc-2/01 (LM-3B from Xichang LC-2)
+  '692397653c5a6299|692397653c5a6299', // shenzhou/04 / tianzhou/01 (Shenzhou-derived Tianzhou)
+  'f8617c830cc3933d|f8617c830cc3933d', // soyuz-2/04 / soyuz/01 (Soyuz-2 succeeds Soyuz 11A511)
+  'a8b3435ac310bceb|a9b3415ac310bceb', // ariane-1/04 / viking/01 (Ariane 1 flew Viking engines)
 
   // ----- ariane-5/02 ↔ juice/01 -----
   // JUICE launched on Ariane-5 — the launcher's gallery slot 02 and the

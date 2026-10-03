@@ -29,7 +29,7 @@ set -euo pipefail
 
 if [ $# -ne 1 ]; then
     echo "Usage: $0 <image-tag>" >&2
-    echo "Example: $0 orrery-pipeline:local" >&2
+    echo "Example: $0 orrery-main-pipeline-runner   (dev images are <compose-project>-<service>)" >&2
     exit 1
 fi
 

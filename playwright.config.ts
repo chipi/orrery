@@ -1,4 +1,12 @@
 import { defineConfig, devices } from '@playwright/test';
+import { pick, readWorkspaceEnv } from './scripts/workspace/env.mjs';
+
+// E2E server port: E2E_PORT from the shell, else this checkout's
+// .env.workspace (a parallel worktree's own port — .config/workspace/README.md),
+// else 4173. A per-checkout port keeps `reuseExistingServer` from silently
+// testing ANOTHER checkout's build that happens to be serving 4173.
+const E2E_PORT = pick(process.env.E2E_PORT, readWorkspaceEnv().E2E_PORT, '4173');
+const E2E_ORIGIN = `http://127.0.0.1:${E2E_PORT}`;
 
 /**
  * Playwright e2e config (per ADR-015).
@@ -35,7 +43,7 @@ export default defineConfig({
     // PLAYWRIGHT_BASE_URL overrides the default. The docker-e2e workflow
     // (ADR-066) sets it to http://localhost:8080 so the Playwright run
     // targets the live docker nginx stack instead of vite preview.
-    baseURL: process.env.PLAYWRIGHT_BASE_URL ?? 'http://127.0.0.1:4173',
+    baseURL: process.env.PLAYWRIGHT_BASE_URL ?? E2E_ORIGIN,
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     // Block the SvelteKit service worker. Without this the SW caches
@@ -80,14 +88,14 @@ export default defineConfig({
   // Skip starting our own preview server when an external base URL is
   // provided. The docker-e2e workflow (ADR-066) brings up the nginx
   // container itself and just points Playwright at it via
-  // PLAYWRIGHT_BASE_URL; we'd collide with port 4173 otherwise.
+  // PLAYWRIGHT_BASE_URL; we'd collide with the E2E port otherwise.
   webServer: process.env.PLAYWRIGHT_BASE_URL
     ? undefined
     : {
         // Build is run beforehand by `test:e2e` to keep this command fast
         // and the timeout small. Preview-only typically starts in < 2 s.
-        command: 'npx vite preview --port 4173 --host 127.0.0.1',
-        url: 'http://127.0.0.1:4173',
+        command: `npx vite preview --port ${E2E_PORT} --host 127.0.0.1`,
+        url: E2E_ORIGIN,
         reuseExistingServer: !process.env.CI,
         timeout: 30_000,
         stdout: 'pipe',

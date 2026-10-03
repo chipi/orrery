@@ -1,4 +1,12 @@
 import { defineConfig, devices } from '@playwright/test';
+import { pick, readWorkspaceEnv } from './scripts/workspace/env.mjs';
+
+// E2E server port: E2E_PORT from the shell, else this checkout's
+// .env.workspace (a parallel worktree's own port — .config/workspace/README.md),
+// else 4173. A per-checkout port keeps `reuseExistingServer` from silently
+// testing ANOTHER checkout's build that happens to be serving 4173.
+const E2E_PORT = pick(process.env.E2E_PORT, readWorkspaceEnv().E2E_PORT, '4173');
+const E2E_ORIGIN = `http://127.0.0.1:${E2E_PORT}`;
 
 /**
  * Mobile (Capacitor stream-heavy) e2e config — Layer 1 of the mobile test
@@ -35,7 +43,7 @@ export default defineConfig({
   use: {
     // Same override seam as the browser config: point at an external base
     // URL (e.g. a device-served bundle) and the local preview is skipped.
-    baseURL: process.env.PLAYWRIGHT_BASE_URL ?? 'http://127.0.0.1:4173',
+    baseURL: process.env.PLAYWRIGHT_BASE_URL ?? E2E_ORIGIN,
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     // Block the SW so a precached response from an earlier spec can't mask
@@ -59,7 +67,8 @@ export default defineConfig({
         // `.svelte-kit/output/`. This is the exact tree Capacitor ships. See
         // scripts/mobile/serve-build.mjs.
         command: 'node scripts/mobile/serve-build.mjs',
-        url: 'http://127.0.0.1:4173',
+        env: { PORT: E2E_PORT },
+        url: E2E_ORIGIN,
         reuseExistingServer: !process.env.CI,
         timeout: 30_000,
         stdout: 'pipe',

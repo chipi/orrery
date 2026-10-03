@@ -12,6 +12,9 @@ import { execSync } from 'node:child_process';
 // (VPS) is byte-identical to what it was before this file existed.
 import { ghPagesUrlPatterns } from './scripts/gh-pages-compat.mjs';
 import { paraglideOptions } from './scripts/paraglide-options.mjs';
+// Per-checkout runtime defaults written by .config/workspace/setup (parallel
+// worktrees). `{}` when absent, so CI and fresh clones are unaffected.
+import { pick, readWorkspaceEnv } from './scripts/workspace/env.mjs';
 
 const pkg = JSON.parse(
   readFileSync(fileURLToPath(new URL('./package.json', import.meta.url)), 'utf8'),
@@ -33,7 +36,15 @@ export default defineConfig(({ mode }) => {
   // available here at config-eval time (process.env alone wouldn't
   // catch .env.local).
   const env = loadEnv(mode, process.cwd(), '');
-  const devPort = parseInt(env.VITE_DEV_PORT || '5273', 10);
+  // Precedence: shell / .env* files (env) > .env.workspace > built-in default.
+  const workspace = readWorkspaceEnv();
+  const devPort = parseInt(pick(env.VITE_DEV_PORT, workspace.VITE_DEV_PORT, '5273'), 10);
+  // Client-visible workspace values (VITE_LAB_API_URL for a stream's own lab
+  // API) reach import.meta.env through process.env, which Vite reads after
+  // this config — but only when neither the shell nor an .env* file set them.
+  for (const [key, value] of Object.entries(workspace)) {
+    if (key.startsWith('VITE_') && key !== 'VITE_DEV_PORT' && !env[key]) process.env[key] = value;
+  }
   // MOBILE=1 selects the Capacitor stream-heavy profile (RFC-018 §4 /
   // ADR-078): heavy asset buckets (images, audio, non-default-locale
   // overlays) are pruned from build/ after the build and streamed from
@@ -104,11 +115,9 @@ export default defineConfig(({ mode }) => {
       // all-tier config tree-shake out (web + App Store release).
       __MOBILE_INTERNAL__: JSON.stringify(MOBILE_INTERNAL),
     },
-    // Dev / preview port reads VITE_DEV_PORT via loadEnv (covers .env.local,
-    // which is gitignored). Falls back to 5273 if unset. Useful when
-    // running multiple worktrees of the repo in parallel — drop a line
-    // like `VITE_DEV_PORT=5274` into .env.local for the extra worktree
-    // and its dev server won't collide with the default 5273.
+    // Dev / preview port: VITE_DEV_PORT from the shell or .env* (loadEnv,
+    // covers the gitignored .env.local), else the checkout's .env.workspace
+    // (a side worktree's own port — .config/workspace/README.md), else 5273.
     server: {
       port: devPort,
       strictPort: true,
@@ -285,9 +294,14 @@ export default defineConfig(({ mode }) => {
               // bug, and offline asks are dishonest by design (the UI says
               // offline instead). FIRST rule on purpose. NOTE: generateSW
               // STRINGIFIES this function into sw.js — literals only, no
-              // closure over config variables.
+              // closure over config variables. The localhost clause covers a
+              // parallel worktree's lab-api on its own port
+              // (.config/workspace/README.md): any other localhost port is
+              // never cached, which is always the safe side.
               urlPattern: ({ url }) =>
-                url.hostname === 'lab-api.orrerylearn.com' || url.port === '8093',
+                url.hostname === 'lab-api.orrerylearn.com' ||
+                url.port === '8093' ||
+                (url.hostname === 'localhost' && url.port !== self.location.port),
               handler: 'NetworkOnly',
             },
             {
@@ -296,7 +310,9 @@ export default defineConfig(({ mode }) => {
               // through uncached anyway, but the guard should SAY what it
               // guards. Same literals-only constraint.
               urlPattern: ({ url }) =>
-                url.hostname === 'lab-api.orrerylearn.com' || url.port === '8093',
+                url.hostname === 'lab-api.orrerylearn.com' ||
+                url.port === '8093' ||
+                (url.hostname === 'localhost' && url.port !== self.location.port),
               handler: 'NetworkOnly',
               method: 'POST',
             },

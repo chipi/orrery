@@ -17,8 +17,11 @@ import { spawn, type ChildProcess } from 'node:child_process';
 import { mkdir } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { chromium, type Page, devices } from '@playwright/test';
+import { pick, readWorkspaceEnv } from './workspace/env.mjs';
 
-const PORT = 4173;
+// Same port as the e2e suite (E2E_PORT, else this checkout's .env.workspace,
+// else 4173), so a parallel worktree's capture never reuses another's preview.
+const PORT = Number(pick(process.env.E2E_PORT, readWorkspaceEnv().E2E_PORT, '4173'));
 const ORIGIN = `http://127.0.0.1:${PORT}`;
 const OUT_DIR = resolve(import.meta.dirname, '..', 'docs', 'screenshots');
 const VIEWPORT = { width: 1280, height: 800 };

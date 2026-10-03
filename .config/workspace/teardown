@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+# Orrery workspace teardown. Run through `wb-workspace teardown`, by the
+# Worktrunk pre-remove hook while the worktree still exists. A non-zero exit
+# STOPS `wt remove`, so this fails only when removing would be unsafe (this
+# checkout's containers could not be stopped). Contract: .config/workspace/README.md.
+#
+# Scope: only Docker objects labelled with this checkout's Compose project
+# (COMPOSE_PROJECT_NAME). Never a global prune, never another project.
+#   - containers + network: `docker compose -p <name> down --remove-orphans`
+#   - volumes: KEPT, except ones the compose file explicitly labels
+#     org.orrery.workspace.disposable=true (today: the re-downloadable
+#     orrery-cache), and only for a side stream — never for the primary.
+# Idempotent: nothing to stop or remove is success.
+set -euo pipefail
+
+die()  { echo "orrery teardown: $*" >&2; exit 1; }
+note() { echo "orrery teardown: $*" >&2; }
+
+for v in WORKSPACE_STREAM WORKSPACE_PATH COMPOSE_PROJECT_NAME; do
+  [ -n "${!v:-}" ] || die "$v is not set; run this through 'wb-workspace teardown'"
+done
+cd "$WORKSPACE_PATH"
+NAME=$COMPOSE_PROJECT_NAME
+PROJECT_LABEL="com.docker.compose.project=$NAME"
+
+if ! command -v docker >/dev/null 2>&1; then
+  note "docker not installed; nothing to stop"; exit 0
+fi
+if ! docker info >/dev/null 2>&1; then
+  # No daemon: nothing of this project can be running.
+  note "docker daemon unreachable; nothing to stop"; exit 0
+fi
+
+if [ -n "$(docker ps -aq --filter "label=$PROJECT_LABEL")" ] ||
+   [ -n "$(docker network ls -q --filter "label=$PROJECT_LABEL")" ]; then
+  docker compose -p "$NAME" down --remove-orphans || die "could not stop Compose project $NAME; not removing the worktree"
+  echo "  stopped   Compose project $NAME"
+else
+  echo "  nothing running for Compose project $NAME"
+fi
+
+if [ "$WORKSPACE_STREAM" = main ]; then
+  echo "  volumes   kept (primary checkout)"
+  exit 0
+fi
+vols=$(docker volume ls -q --filter "label=$PROJECT_LABEL" --filter "label=org.orrery.workspace.disposable=true")
+for v in $vols; do
+  if docker volume rm "$v" >/dev/null; then
+    echo "  removed   disposable volume $v"
+  else
+    note "could not remove disposable volume $v; leaving it (remove later with: docker volume rm $v)"
+  fi
+done
+kept=$(docker volume ls -q --filter "label=$PROJECT_LABEL")
+[ -z "$kept" ] || echo "  volumes   kept: $(echo $kept)"
+exit 0

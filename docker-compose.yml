@@ -22,14 +22,20 @@
 # Live-data property: pipelines write to ./static/data on the host;
 # web's bind-mount overlays that path over build/data, so nginx
 # serves fresh JSON on next request without rebuild.
+#
+# Parallel checkouts (.config/workspace/README.md): nothing here is
+# globally named — no container_name, no fixed image tag, no volume
+# `name:` — so Compose scopes containers, images, the network and the
+# volume to the project name. `wb-workspace setup` writes an ignored
+# docker-compose.override.yml (merged automatically) giving this checkout
+# its project name (orrery-main / orrery-<stream>); a side stream also
+# gets its own host port there. Without it: today's defaults (:8080).
 
 services:
   web:
     build:
       context: .
       dockerfile: ops/docker/Dockerfile.web
-    image: orrery-web:local
-    container_name: orrery-web
     ports:
       - '8080:80'
     volumes:
@@ -55,7 +61,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: orrery-pipeline:local
     # `manual` profile means this service is NOT built or started by
     # `docker compose up`. Pipelines run via
     #   docker compose run --rm pipeline-runner scripts/<name>.ts
@@ -65,9 +70,9 @@ services:
       # mount reads from, so refreshes are live.
       - ./static/data:/repo/static/data
       # Cache reused across pipeline invocations (HiRISE JP2s, GCAT
-      # TSV, LL2 responses). Local-only docker volume — survives
-      # `docker compose down`, cleared by `down -v` or
-      # `npm run docker:reset-data`.
+      # TSV, LL2 responses). Local-only docker volume, one per Compose
+      # project — survives `docker compose down`, cleared by `down -v`
+      # or `npm run docker:reset-data` (this checkout's project only).
       - orrery-cache:/repo/.image-cache
       # Source code bind-mount, read-only. Local-dev only — the future
       # VPS image will bake source in (RFC-024 §10).
@@ -85,4 +90,8 @@ services:
 
 volumes:
   orrery-cache:
-    name: orrery-cache
+    # Re-downloadable cache, so explicitly disposable: a side stream's
+    # teardown (.config/workspace/teardown) removes it with the worktree.
+    # Volumes without this label are always kept.
+    labels:
+      org.orrery.workspace.disposable: 'true'

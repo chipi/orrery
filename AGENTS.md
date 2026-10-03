@@ -694,6 +694,8 @@ it('Earth at 1 AU ≈ 29.78 km/s', () =>
 
 **Docker (`docker compose up web` + `PLAYWRIGHT_BASE_URL=http://localhost:8080`) is the FINAL validation gate, not an iteration tool.** It exists to catch the amd64/nginx-specific things a browser can't — and note **`npm run build` must run with Docker DOWN** (the `web` service bind-mounts `build/` read-only → adapter-static's `rmSync` fails `ENOTEMPTY`). You do NOT need it to answer "does this button look right".
 
+**Parallel worktrees** (`/work/orrery/worktrees/<stream>` next to `main`): each checkout gets its own ports and Compose project from `.config/workspace/setup` (run by `wb-workspace setup`; once by hand in the primary). In a stream, `8080` / `4173` / `5273` are replaced by the values in its `.env.workspace` (e.g. `PLAYWRIGHT_BASE_URL=http://localhost:$ORRERY_WEB_PORT`). Contract, precedence, secrets and teardown: [`.config/workspace/README.md`](.config/workspace/README.md).
+
 **The pitfall — if you catch yourself doing ANY of these, STOP and go back to step 1:**
 - running `docker down → npm run build → docker up` to check a *visual* tweak;
 - each turn taking 5–10 minutes for a one-line CSS change;

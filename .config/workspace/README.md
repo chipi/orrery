@@ -52,7 +52,14 @@ generated `docker-compose.override.yml`, merged automatically by any
 `docker compose` run in the checkout, sets `name: orrery-<stream>`
 (`orrery-main` in the primary) and, for a side stream, replaces the web host
 port (`ports: !override`). Services still reach each other by service name on
-the project's own network. `npm run docker:reset-data` is now
+the project's own network.
+
+`web` serves **this checkout's own** `build/` (read-only bind mount), so a new
+stream needs `npm ci && npm run build` before `docker compose up -d web`, as
+the primary does. Without a build, Compose stops with "bind source path does
+not exist: …/build". The mount sets `create_host_path: false`, so Docker never
+creates an empty root-owned `build/` that would break the nested `static/data`
+mount. `npm run docker:reset-data` is now
 `docker compose down -v`: this checkout's project only.
 
 ## Secrets: never copied

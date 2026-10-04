@@ -418,6 +418,17 @@ describe('repo invariants for parallel checkouts', () => {
     expect(code).toMatch(/- '8080:80'/); // primary default unchanged
   });
 
+  it('web: build/ is never auto-created — the nested ./static/data mount needs a real build', () => {
+    // A checkout without `npm run build` (e.g. a fresh side worktree) must fail
+    // with "bind source path does not exist", not get a root-owned empty build/
+    // whose read-only mount can't hold the /usr/share/nginx/html/data mountpoint.
+    expect(compose).toMatch(
+      /- type: bind\n {8}source: \.\/build\n {8}target: \/usr\/share\/nginx\/html\n {8}read_only: true\n {8}bind:\n {10}create_host_path: false\n/,
+    );
+    expect(code).not.toMatch(/- \.\/build:/);
+    expect(code).toMatch(/- \.\/static\/data:\/usr\/share\/nginx\/html\/data:ro/);
+  });
+
   it('package scripts: project-scoped reset, workspace-aware servers', () => {
     const scripts = JSON.parse(readFileSync(join(REPO, 'package.json'), 'utf8')).scripts as Record<
       string,

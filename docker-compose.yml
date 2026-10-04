@@ -40,8 +40,21 @@ services:
       - '8080:80'
     volumes:
       # The built SPA. Operator must run `npm run build` on host
-      # before `docker compose up`. Read-only mount.
-      - ./build:/usr/share/nginx/html:ro
+      # before `docker compose up` — in EVERY checkout, a parallel
+      # worktree included (each serves its own build/). Read-only mount.
+      # create_host_path: false — without a build/, fail with "bind
+      # source path does not exist". The short form instead lets the
+      # daemon create an empty root-owned build/, and the ./static/data
+      # mount below then can't create its mountpoint inside that
+      # read-only mount ("create mountpoint …/data: Read-only file
+      # system"). The image has no /usr/share/nginx/html; the mounts
+      # provide it.
+      - type: bind
+        source: ./build
+        target: /usr/share/nginx/html
+        read_only: true
+        bind:
+          create_host_path: false
       # Overlay live data on top of the build's seed copy. Pipelines
       # write here; web serves on next request. PWA SW's NetworkFirst
       # strategy (vite.config.ts:90) handles client-side freshness.

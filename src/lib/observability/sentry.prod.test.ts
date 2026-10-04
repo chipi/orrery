@@ -1,4 +1,5 @@
 // @vitest-environment jsdom
+// @vitest-environment-options { "url": "https://www.orrerylearn.com/orrery/" }
 import { describe, expect, it, vi, beforeEach } from 'vitest';
 
 // The non-dev side of the ladder — pin `dev: false`. Covers the two behaviours the dev

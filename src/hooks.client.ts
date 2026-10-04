@@ -11,6 +11,7 @@
  */
 import { handleErrorWithSentry } from '@sentry/sveltekit';
 import { initSentry } from '$lib/observability/sentry';
+import { installPreloadReloadGuard } from '$lib/observability/preload-guard';
 import { analyticsSuppressed } from '$lib/analytics-optout';
 
 // ADR-092. /privacy tells the user "turning this off stops everything on this
@@ -21,5 +22,11 @@ import { analyticsSuppressed } from '$lib/analytics-optout';
 // available; when suppressed we never init, and `handleErrorWithSentry()`
 // degrades to the same silent no-op it already uses for an empty DSN.
 if (!analyticsSuppressed()) initSentry();
+
+// Reload-once guard for deploy chunk/CSS preload failures. Must be installed here, at
+// module-eval, not in +layout's onMount: the root layout's own CSS (`1.<hash>.css`) and the
+// first page's chunks preload during kit.start(), BEFORE any component mounts — a late
+// listener never sees those failures (they reach Sentry as "Unable to preload CSS", #544).
+installPreloadReloadGuard();
 
 export const handleError = handleErrorWithSentry();

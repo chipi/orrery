@@ -41,6 +41,16 @@ declare const __DEV_WORKTREE__: string;
 // The DSN key is a public browser id (ships in the bundle) — safe to commit.
 const DEV_SENTRY_DSN = 'http://310ad519a9da49b7b9aebc50d7c1399e@homelab:8090/7';
 
+const LOOPBACK_HOSTS = new Set(['localhost', '127.0.0.1', '[::1]', '::1']);
+
+function isLoopbackHost(): boolean {
+  try {
+    return LOOPBACK_HOSTS.has(globalThis.location?.hostname ?? '');
+  } catch {
+    return false;
+  }
+}
+
 /**
  * Initialise Sentry. No-op when the resolved DSN is empty (fork / non-dev build
  * with no baked env). `vite dev` reports to the dev rung; internal mobile builds
@@ -60,6 +70,15 @@ export function initSentry(): void {
     ? target.sentryDsn
     : publicEnv.PUBLIC_SENTRY_DSN || (dev ? DEV_SENTRY_DSN : '');
   if (!dsn) return;
+
+  // A deploy-baked DSN (staging/prod) running on a loopback origin is a mirrored copy
+  // of a deployed bundle, not a real visitor (#556-#559: the staging Pages build served
+  // on http://127.0.0.1:<random>/orrery/ by an external harness — NOT identified; none of
+  // this repo's workflows does it). Keep reporting (local debugging of a deployed bundle
+  // stays visible) but re-tag the environment `<tier>-loopback`, so these events never
+  // count as staging/prod. `vite dev` (dev DSN), Capacitor shells (http://localhost in
+  // the WebView) and internal mobile builds (own target) are unaffected.
+  const loopbackMirror = !target && !dev && Capacitor.getPlatform() === 'web' && isLoopbackHost();
 
   // The same web bundle runs on the web AND inside the Capacitor iOS/Android/TV
   // shells (WKWebView/WebView). Every event carries a `platform` tag
@@ -81,7 +100,7 @@ export function initSentry(): void {
     // Internal builds (ADR-083) take the tier from the runtime target instead.
     environment: target
       ? target.sentryEnvironment
-      : publicEnv.PUBLIC_SENTRY_ENVIRONMENT || (dev ? 'dev' : 'prod'),
+      : `${publicEnv.PUBLIC_SENTRY_ENVIRONMENT || (dev ? 'dev' : 'prod')}${loopbackMirror ? '-loopback' : ''}`,
     release: publicEnv.PUBLIC_SENTRY_RELEASE || undefined,
 
     // Tag every event `component: orrery` (+ `platform`) so streams stay separable in the

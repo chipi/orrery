@@ -75,4 +75,50 @@ describe('sentry dev rung (vite dev, no deploy env)', () => {
     });
     expect(nav.data.to).toBe('/missions');
   });
+
+  describe('beforeSend noise filter', () => {
+    const run = (exception: unknown) => {
+      initSentry();
+      const { beforeSend } = initMock.mock.calls[0][0];
+      return beforeSend({ exception: { values: [exception] } });
+    };
+    const frame = (fn: string, filename?: string) => ({ function: fn, filename });
+
+    // #553 (addEL_hook, an extension's addEventListener wrapper): no filter ships without
+    // the raw GlitchTip event confirming the throw-site frame — the issue text is
+    // ambiguous (it may be thrown inside app.<hash>.js). Pin that it still reports
+    // under either reading, so a future rule has to come with that evidence.
+    it('still reports the #553 addEL_hook TypeError (no injected-script filter)', () => {
+      const value = "Cannot read properties of null (reading 'tagName')";
+      const app = '/orrery/_app/immutable/entry/app.BDE7eXFQ.js';
+      expect(
+        run({
+          type: 'TypeError',
+          value,
+          stacktrace: { frames: [frame('init', app), frame('addEL_hook', '<anonymous>')] },
+        }),
+      ).not.toBeNull();
+      initMock.mockClear();
+      expect(
+        run({
+          type: 'TypeError',
+          value,
+          stacktrace: { frames: [frame('addEL_hook', '<anonymous>'), frame('h', app)] },
+        }),
+      ).not.toBeNull();
+    });
+
+    it('keeps CSS preload failures (not skew: guard reloads, stable hash) and still drops chunk skew', () => {
+      expect(
+        run({
+          type: 'Error',
+          value: 'Unable to preload CSS for /orrery/_app/immutable/assets/1.x.css',
+        }),
+      ).not.toBeNull();
+      initMock.mockClear();
+      expect(
+        run({ type: 'TypeError', value: 'Failed to fetch dynamically imported module: x' }),
+      ).toBeNull();
+    });
+  });
 });

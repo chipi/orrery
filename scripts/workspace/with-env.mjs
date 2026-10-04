@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 // with-env.mjs — run a command with the checkout's `.env.workspace` values as
 // defaults (the shell environment wins), plus optional `--default KEY=VALUE`
-// fallbacks applied last; `${KEY}` in a fallback expands from the result.
+// fallbacks applied last; `${KEY}` in a fallback expands from the result, and
+// `${CHECKOUT}` is the directory the command runs in (the checkout root under
+// `npm run`) — for per-checkout paths that must work with no .env.workspace.
 //
 //   node scripts/workspace/with-env.mjs \
 //     --default 'LAB_PORT=8093' --default 'LAB_ISSUER=http://localhost:${LAB_PORT}' \
@@ -17,9 +19,10 @@ import { readWorkspaceEnv } from './env.mjs';
  * @param {Record<string, string | undefined>} baseEnv
  * @param {Record<string, string>} workspaceEnv
  * @param {string[]} defaults
+ * @param {string} [cwd] value of `${CHECKOUT}` in a default
  * @returns {Record<string, string | undefined>}
  */
-export function buildEnv(baseEnv, workspaceEnv, defaults) {
+export function buildEnv(baseEnv, workspaceEnv, defaults, cwd = process.cwd()) {
   const env = { ...baseEnv };
   for (const [k, v] of Object.entries(workspaceEnv)) {
     if (env[k] === undefined || env[k] === '') env[k] = v;
@@ -31,7 +34,9 @@ export function buildEnv(baseEnv, workspaceEnv, defaults) {
     if (env[key] !== undefined && env[key] !== '') continue;
     env[key] = spec
       .slice(eq + 1)
-      .replace(/\$\{([A-Z_][A-Z0-9_]*)\}/g, (_, name) => env[name] ?? '');
+      .replace(/\$\{([A-Z_][A-Z0-9_]*)\}/g, (_, name) =>
+        name === 'CHECKOUT' ? cwd : (env[name] ?? ''),
+      );
   }
   return env;
 }

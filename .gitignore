@@ -5,6 +5,8 @@ dist-lab-api/
 # lab-api runtime state on the VPS (ES256 signing key, refresh-token hashes,
 # allowlist.json) — lives in the /srv/orrery checkout; never commit it (#464).
 lab-api-state/
+# lab-api dev state (per checkout: signing key + refresh tokens; optional allowlist.json).
+.lab-api-state/
 build/
 docs/.vitepress/dist/
 docs/.vitepress/cache/

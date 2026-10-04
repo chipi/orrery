@@ -97,6 +97,17 @@ describe('with-env.mjs', () => {
     expect(() => buildEnv({}, {}, ['=x'])).toThrow(/KEY=VALUE/);
   });
 
+  it('buildEnv: ${CHECKOUT} expands to the cwd; workspace and shell values still win', () => {
+    const d = ['LAB_STATE_PATH=${CHECKOUT}/.lab-api-state/state.json'];
+    expect(buildEnv({}, {}, d, '/co').LAB_STATE_PATH).toBe('/co/.lab-api-state/state.json');
+    expect(buildEnv({}, { LAB_STATE_PATH: '/ws/s.json' }, d, '/co').LAB_STATE_PATH).toBe(
+      '/ws/s.json',
+    );
+    expect(buildEnv({ LAB_STATE_PATH: '/sh/s.json' }, {}, d, '/co').LAB_STATE_PATH).toBe(
+      '/sh/s.json',
+    );
+  });
+
   it('parseArgs: --default specs, then the command after --', () => {
     expect(parseArgs(['--default', 'A=1', '--', 'tsx', 'x.ts'])).toEqual({
       defaults: ['A=1'],
@@ -176,13 +187,16 @@ describe('.config/workspace/setup', () => {
     const override = readFileSync(join(path, 'docker-compose.override.yml'), 'utf8');
     expect(override).toMatch(/^name: orrery-main$/m);
     expect(override).not.toMatch(/ports/);
+    // lab-api dev state: its own checkout (never /srv), allowlist beside it.
+    expect(ws.LAB_STATE_PATH).toBe(`${path}/.lab-api-state/state.json`);
+    expect(ws.LAB_ALLOWLIST_PATH).toBe(`${path}/.lab-api-state/allowlist.json`);
     expect(readFileSync(join(path, '.env.local'), 'utf8')).toBe('VITE_DEV_PORT=5373\n');
     expect(readFileSync(join(path, '.env'), 'utf8')).toBe('ANTHROPIC_API_KEY=sk-secret\n');
     expect(existsSync(join(T, 'wb.calls'))).toBe(false); // the primary asks for no ports
   });
 
   it('side stream: one port call for all slots, values + derived URLs, override with !override port', () => {
-    const { path, run } = setupFixture('feat-x');
+    const { primary, path, run } = setupFixture('feat-x');
     const r = run();
     expect(r.status).toBe(0);
     expect(readFileSync(join(T, 'wb.calls'), 'utf8').trim()).toBe(
@@ -201,6 +215,11 @@ describe('.config/workspace/setup', () => {
       MCP_PORT: '15005',
       COMPOSE_PROJECT_NAME: 'orrery-feat-x',
     });
+    // State is this stream's own; the read-only allowlist is the primary's one file.
+    expect(ws.LAB_STATE_PATH).toBe(`${path}/.lab-api-state/state.json`);
+    expect(ws.LAB_ALLOWLIST_PATH).toBe(`${primary}/.lab-api-state/allowlist.json`);
+    expect(ws.LAB_STATE_PATH).not.toContain(primary);
+    expect(Object.values(ws).join('\n')).not.toMatch(/\/srv\//);
     const override = readFileSync(join(path, 'docker-compose.override.yml'), 'utf8');
     expect(override).toMatch(/^name: orrery-feat-x$/m);
     expect(override).toMatch(/ports: !override\n\s+- '15003:80'/);
@@ -441,6 +460,9 @@ describe('repo invariants for parallel checkouts', () => {
     expect(scripts['lab-api:dev']).toMatch(
       /with-env\.mjs .*LAB_ISSUER=http:\/\/localhost:\$\{LAB_PORT\}/,
     );
+    expect(scripts['lab-api:dev']).toContain(
+      "'LAB_STATE_PATH=${CHECKOUT}/.lab-api-state/state.json'",
+    );
     expect(scripts['mcp:dev']).toMatch(/with-env\.mjs/);
   });
 
@@ -450,6 +472,11 @@ describe('repo invariants for parallel checkouts', () => {
       encoding: 'utf8',
     });
     expect(r.stdout.trim().split('\n')).toEqual(['.env.workspace', 'docker-compose.override.yml']);
+    const state = spawnSync('git', ['check-ignore', '.lab-api-state/state.json'], {
+      cwd: REPO,
+      encoding: 'utf8',
+    });
+    expect(state.stdout.trim()).toBe('.lab-api-state/state.json');
     for (const f of [SETUP, TEARDOWN]) expect(statSync(f).mode & 0o111).not.toBe(0);
   });
 });

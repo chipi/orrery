@@ -100,7 +100,7 @@
     "docs:preview": "vitepress preview docs",
     "mcp:dev": "node scripts/workspace/with-env.mjs -- tsx server/mcp/main.ts",
     "mcp:build": "node scripts/build-mcp-server.mjs",
-    "lab-api:dev": "node scripts/workspace/with-env.mjs --default LAB_PORT=8093 --default 'LAB_ISSUER=http://localhost:${LAB_PORT}' -- tsx server/lab-api/main.ts",
+    "lab-api:dev": "node scripts/workspace/with-env.mjs --default LAB_PORT=8093 --default 'LAB_ISSUER=http://localhost:${LAB_PORT}' --default 'LAB_STATE_PATH=${CHECKOUT}/.lab-api-state/state.json' --default 'LAB_ALLOWLIST_PATH=${CHECKOUT}/.lab-api-state/allowlist.json' -- tsx server/lab-api/main.ts",
     "lab-api:build": "node scripts/build-lab-api-server.mjs",
     "preflight": "node scripts/with-lock.mjs preflight -- node scripts/preflight-smart.mjs",
     "preflight:coverage": "npm run preflight && npm run test:coverage",

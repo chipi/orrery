@@ -7,7 +7,7 @@
 #   wb-workspace setup --link-env   side stream only: also symlink the primary's .env
 #
 # Writes exactly two ignored, generated files and nothing else:
-#   .env.workspace                runtime defaults (ports, URLs, identity) — never secrets
+#   .env.workspace                runtime defaults (ports, URLs, identity, lab-api dev state paths) — never secrets
 #   docker-compose.override.yml   this checkout's Compose project name (+ stream host port)
 # The primary keeps today's ports (5273 / 4173 / 8080 / 8093 / 8091); a side
 # stream gets its own from `wb-workspace port`. User files (.env, .env.local)
@@ -62,6 +62,13 @@ env_body() {
   echo "WORKSPACE_PRIMARY=$WORKSPACE_PRIMARY"
   echo "WORKSPACE_PATH=$WORKSPACE_PATH"
   echo "COMPOSE_PROJECT_NAME=$COMPOSE_PROJECT_NAME"
+  # lab-api dev state, every checkout (the primary too: the server's /srv default
+  # is the VPS path and not writable by a normal user). STATE is mutable (signing
+  # key, refresh tokens): strictly this checkout's own. The ALLOWLIST is read-only
+  # config input: one file, kept in the primary's state dir, read by every checkout.
+  # Paths only, never secrets; the files themselves are created by the server / you.
+  echo "LAB_STATE_PATH=$WORKSPACE_PATH/.lab-api-state/state.json"
+  echo "LAB_ALLOWLIST_PATH=$WORKSPACE_PRIMARY/.lab-api-state/allowlist.json"
   if [ "$side" = 1 ]; then
     echo "VITE_DEV_PORT=$WEB"
     echo "E2E_PORT=$E2E"
@@ -126,7 +133,7 @@ fi
 if [ "$side" = 1 ]; then
   for f in .env .env.local; do
     [ -f "$f" ] || continue
-    for k in VITE_DEV_PORT E2E_PORT ORRERY_WEB_PORT LAB_PORT MCP_PORT VITE_LAB_API_URL; do
+    for k in VITE_DEV_PORT E2E_PORT ORRERY_WEB_PORT LAB_PORT MCP_PORT VITE_LAB_API_URL LAB_STATE_PATH; do
       grep -qE "^[[:space:]]*$k=" "$f" && note "warning: $f sets $k, which overrides this stream's value from $ENV_FILE"
     done
   done

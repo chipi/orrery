@@ -44,6 +44,31 @@ values for the client), both Playwright configs, `scripts/capture-screenshots.ts
 and `scripts/workspace/with-env.mjs` (the `lab-api:dev` / `mcp:dev` servers,
 which don't read env files themselves).
 
+## Lab-api state
+
+`server/lab-api` keeps a mutable `state.json` (ES256 signing key, refresh-token
+hashes, DCR clients) and reads an `allowlist.json` (permitted emails). Its
+built-in defaults are the production paths `/srv/lab-api-state/{state,allowlist}.json`
+(compose mounts `./lab-api-state` there); a normal user cannot create `/srv/...`,
+so `npm run lab-api:dev` used to die with `EACCES: mkdir '/srv/lab-api-state'`.
+
+| | State (`LAB_STATE_PATH`, mutable) | Allowlist (`LAB_ALLOWLIST_PATH`, read-only input) |
+|---|---|---|
+| Production / compose | `/srv/lab-api-state/state.json` (unchanged) | `/srv/lab-api-state/allowlist.json` (unchanged) |
+| Any checkout with `.env.workspace` (primary **and** side streams) | `<this checkout>/.lab-api-state/state.json` | `<primary>/.lab-api-state/allowlist.json` |
+| No `.env.workspace` (CI, fresh clone) | `./.lab-api-state/state.json` (`lab-api:dev` fallback) | `./.lab-api-state/allowlist.json` |
+
+Decisions: the primary deviates from "keeps today's defaults" here, because
+today's default is unusable without root; its state lives in its own ignored
+`.lab-api-state/`. Two checkouts therefore never share a mutable token file.
+The allowlist is config, not state, so side streams read the primary's single
+file instead of each needing a copy; an absent file denies everyone (logged),
+so create `/work/orrery/main/.lab-api-state/allowlist.json` (`{"emails":["you@example.com"]}`)
+once. Setup writes only the two paths, never the files, and the server creates
+`state.json` on first start. Override either variable in the shell or `.env.local`
+(precedence as above). Only `lab-api:dev` applies these; the production image and
+`configFromEnv()` defaults are untouched.
+
 ## Docker Compose
 
 `docker-compose.yml` names nothing globally (no `container_name`, image tag
@@ -96,5 +121,4 @@ nothing to stop. Bypass, once understood: `wt remove --no-hooks <branch>`.
 Dependencies (`npm ci`) aren't installed by setup: run it in a new stream
 before starting servers. Capacitor `dev:ios` / `dev:android` still read
 `VITE_DEV_PORT` from the shell only. The lab-api `LAB_STATE_PATH` default is
-the shared `/srv/lab-api-state/state.json`; set it per checkout if two
-lab-apis run at once.
+`/srv/lab-api-state/` (the VPS path, unchanged): see "Lab-api state" above.

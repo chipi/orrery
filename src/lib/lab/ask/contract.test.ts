@@ -15,8 +15,15 @@ import { webcrypto } from 'node:crypto';
 import { SignJWT, generateKeyPair, exportJWK, type JWK } from 'jose';
 import { buildLabApi, configFromEnv } from '../../../../server/lab-api/index';
 import { AskAuth, type AuthDeps, type AuthPhase } from './auth';
+import { LAB_API_BASE } from './config';
 
-const BASE = 'http://localhost:8093'; // = the client config's DEV base
+// Serve the contract test on the SAME base the client module is configured with
+// (LAB_API_BASE): http://localhost:8093 normally, this checkout's own lab-api port
+// when .env.workspace sets VITE_LAB_API_URL (parallel streams). This only keeps the
+// test aligned with the configured base; whether Vitest should inherit generated
+// .env.workspace VITE_* values at all is a separate, deferred question.
+const BASE = LAB_API_BASE;
+const BASE_PORT = Number(new URL(BASE).port);
 const EMAIL = 'marko.dragoljevic@gmail.com';
 const REDIRECT = 'http://localhost:5373/lab/callback';
 
@@ -131,7 +138,7 @@ beforeAll(async () => {
 
   const built = await buildLabApi({ ...configFromEnv(), issuer: BASE });
   labApi = built.server;
-  await new Promise<void>((r) => labApi.listen(8093, '127.0.0.1', r));
+  await new Promise<void>((r) => labApi.listen(BASE_PORT, '127.0.0.1', r));
 });
 
 const savedEnv = { ...process.env };

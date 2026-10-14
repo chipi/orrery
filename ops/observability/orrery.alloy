@@ -102,5 +102,21 @@ loki.process "orrery_std" {
 	stage.structured_metadata {
 		values = {trace_id = ""}
 	}
+	forward_to = [loki.relabel.orrery_naming.receiver]
+}
+
+// service = <app>-<surface> (orrery-web, orrery-pipeline, orrery-lab-api — the OTel
+// service.name convention), the key logs share with traces and metrics (homelab
+// LOG-STANDARD). Inlined, like orrery_std, so this drop-in deploys independently of base;
+// environment comes from base's sink. After the sources, never on their targets: the
+// docker/file sources key read positions by target labels, and a new target label
+// re-reads every log from the start.
+loki.relabel "orrery_naming" {
+	rule {
+		source_labels = ["app", "surface"]
+		separator     = "-"
+		regex         = "(.+-.+)"
+		target_label  = "service"
+	}
 	forward_to = [loki.write.logs_sink.receiver]
 }

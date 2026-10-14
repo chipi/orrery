@@ -88,16 +88,39 @@ generated `docker-compose.override.yml`, merged automatically by any
 port (`ports: !override`). Services still reach each other by service name on
 the project's own network.
 
-`web` serves **this checkout's own** `build/` (read-only bind mount), so a new
-stream needs `npm ci && npm run build` before `docker compose up -d web`, as
-the primary does. Without a build, Compose stops with "bind source path does
-not exist: …/build". The mount sets `create_host_path: false`, so Docker never
-creates an empty root-owned `build/` that would break the nested `static/data`
-mount. `npm run docker:reset-data` is now
-`docker compose down -v`: this checkout's project only. `npm run docker:e2e`
-(build → recreate `web` → smoke → Playwright) targets this checkout's project
-and `ORRERY_WEB_PORT`, and refuses to start if `docker compose config` resolves
-a different project or port than `.env.workspace`.
+`web` serves **this checkout's own** `build/` (read-only bind mount). Without a
+build, Compose stops with "bind source path does not exist: …/build"
+(`create_host_path: false`, so Docker never creates an empty root-owned
+`build/` that would break the nested `static/data` mount).
+`npm run docker:reset-data` is `docker compose down -v`: this checkout's
+project only.
+
+**Use `npm run docker:e2e`** (after `npm ci`) to run the Docker stack:
+1. it resolves this checkout's Compose project and `ORRERY_WEB_PORT` and
+   refuses if `docker compose config` disagrees with `.env.workspace` (another
+   stream's or the primary's service);
+2. builds;
+3. force-recreates **only this checkout's** `web` and waits for healthy;
+4. runs the smoke checks, including that the served `/_app/version.json`
+   equals the host build's;
+5. runs Playwright against this checkout's port.
+
+Options: `-- --skip-build`, `-- --smoke-only`, then `-- <playwright args>`.
+
+**Why recreate: the stale-mount lifecycle.** Every build replaces `build/` with
+a new directory. A `web` container started before the build keeps the old,
+deleted directory mounted: nginx answers 500 (`/data/*` can 404) while the host
+build is fine, and Docker's health status lags, so the container can still
+report healthy. Recreating the container remounts the current `build/`. This
+was reproduced by a plain build, by `npm run preflight`, and by the pre-push
+hook. Recover without building:
+
+```bash
+npm run docker:e2e -- --skip-build --smoke-only
+```
+
+The version check, not the health status, is the proof the served bundle is
+current.
 
 ## Secrets: never copied
 
@@ -128,9 +151,29 @@ A failing teardown stops `wt remove` (Worktrunk 0.68). It fails only when this
 checkout's containers couldn't be stopped. No Docker or no daemon counts as
 nothing to stop. Bypass, once understood: `wt remove --no-hooks <branch>`.
 
-## Not handled here
+## Known limitations (Orrery)
 
-Dependencies (`npm ci`) aren't installed by setup: run it in a new stream
-before starting servers. Capacitor `dev:ios` / `dev:android` still read
-`VITE_DEV_PORT` from the shell only. The lab-api `LAB_STATE_PATH` default is
-`/srv/lab-api-state/` (the VPS path, unchanged): see "Lab-api state" above.
+Generic workstation limitations are listed once, in the workstation repo
+(`agentic-ai-homelab/workstation/DEVELOPER-SETUP.md` → "Known limitations and
+deferred work"). Orrery's own:
+
+- **A build with `web` running stales it.** `docker:e2e` handles this for the
+  Docker gate, but any other build (`npm run build`, preflight, the pre-push
+  hook) leaves a running `web` serving the deleted `build/` until it's
+  recreated (see above). The bind-mount design is unchanged on purpose.
+- **Dependencies per stream.** Setup doesn't install anything: run `npm ci` in
+  each new stream (about 1.2 GB `node_modules` each).
+- **Images accumulate.** Teardown removes a stream's containers, network and
+  disposable volumes, but not its built image (`orrery-<stream>-web`).
+  Remove it by name if needed; never with a global prune.
+- **Lab API allowlist is manual.** Absent or malformed, the lab API denies
+  everyone. Setup never creates it.
+- **Capacitor** `dev:ios` / `dev:android` still read `VITE_DEV_PORT` from the
+  shell only.
+- **Playwright flakes.** The full Docker E2E in Slice 4B ended with 730
+  passed, 4 flaky, 38 skipped (exit 0). Those flakes are Orrery test issues,
+  not workstation or isolation failures, and aren't fixed.
+
+Validated in practice: workstation Slices 4A and 4B ran two Orrery streams
+concurrently next to the primary, through to integration and push (evidence
+in the workstation doc above).

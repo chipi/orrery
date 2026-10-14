@@ -167,11 +167,11 @@ npm run docs:build       # VitePress docs site at docs/.vitepress/dist
 
 ### Docker (local stack)
 
-A `docker-compose.yml` stack runs the production-shape artefact locally — stock `nginx:alpine` serving the built bundle, plus an on-demand pipeline-runner container with the full Node + gdal toolchain. See **[docs/guides/docker-stack.md](docs/guides/docker-stack.md)** for setup, troubleshooting, and the architecture (RFC-024).
+A `docker-compose.yml` stack runs the production-shape artefact locally — an nginx image (`ops/docker/Dockerfile.web`) serving the built bundle, plus an on-demand pipeline-runner container with the full Node + gdal toolchain. See **[docs/guides/docker-stack.md](docs/guides/docker-stack.md)** for setup, troubleshooting, and the architecture (RFC-024).
 
 ```bash
-npm run build            # produce ./build first (host-side, ~1-2 min)
-npm run docker:up        # web container at http://localhost:8080 (~1 s)
+npm run docker:e2e       # build, (re)create web, smoke-check, run Playwright (http://localhost:8080 in the primary)
+npm run docker:e2e -- --skip-build --smoke-only   # just recreate + check web on the current build/
 npm run docker:down      # stop the stack
 ```
 

@@ -240,14 +240,15 @@ fails on data URLs >256 KB) and cleans up `_bg_*.jpg` after.
 ## Docker targets (`npm run docker:*`)
 
 **Command** — `docker:build` | `up` (web -d) | `down` | `logs` (web -f) | `reset-data`
-(rm `orrery-data`/`orrery-cache` volumes). Pipeline-runner one-shots: `docker:fetch-launches`,
+(`docker compose down -v`: this checkout's Compose project only). Pipeline-runner one-shots: `docker:fetch-launches`,
 `docker:images:hotspots`, `docker:fetch-assets`, `docker:validate-data`,
 `docker:build-image-provenance`, `docker:build-link-provenance`, `docker:audit-launches`.
 **What** — Wrap `docker compose` for the local stack; the `pipeline-runner` targets run a data
 script once in the runner container (`docker compose run --rm pipeline-runner …`).
 **When** — Local reproduction of the prod serving shape (cache headers, CSP, brotli/gzip, SPA
 fallback) and offline-safe pipeline runs.
-**Gotchas** — `docker:reset-data` is destructive (drops named volumes).
+**Gotchas** — `docker:reset-data` drops this checkout's project volumes (the pipeline cache). A build
+with `web` running leaves it serving the deleted `build/` until recreated: use `docker:e2e`.
 **State** — healthy.
 
 ## `npm run docker:e2e` → `scripts/docker-e2e.mjs`

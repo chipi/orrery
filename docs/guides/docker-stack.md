@@ -17,7 +17,7 @@ open http://localhost:8080     # the site, served by nginx, on port 8080
 
 `docker compose up` starts only the `web` service. The `pipeline-runner` service is gated behind `profiles: ['manual']` and only spawns when you explicitly invoke `docker compose run --rm pipeline-runner …` (or one of the `npm run docker:*` wrappers below).
 
-If you skip `npm run build`, the web container will start but every request returns 404 because there's nothing to serve — the bind-mount points at an empty directory. The compose file does not auto-build because (a) `npm run build` is a host concern (it runs vite which expects host-side `node_modules`) and (b) it's the same step you already run for GH Pages, so wiring it inside the docker bring-up would duplicate the contract.
+If you skip `npm run build`, Compose refuses to start `web` ("bind source path does not exist: …/build"; the mount sets `create_host_path: false`). Prefer `npm run docker:e2e`, which builds, recreates `web` and checks it (see below). The compose file does not auto-build because (a) `npm run build` is a host concern (it runs vite which expects host-side `node_modules`) and (b) it's the same step you already run for GH Pages, so wiring it inside the docker bring-up would duplicate the contract.
 
 ---
 
@@ -26,7 +26,7 @@ If you skip `npm run build`, the web container will start but every request retu
 ```bash
 npm run docker:down            # stop + remove containers, keep volumes
 docker compose down -v         # also wipe orrery-cache (image-cache for pipelines)
-npm run docker:reset-data      # alias: removes the named volumes — next up re-creates them
+npm run docker:reset-data      # alias for `docker compose down -v`: this checkout's project only
 ```
 
 `docker compose down` keeps the orrery-cache volume so the next pipeline invocation doesn't have to re-download HiRISE JP2s, the GCAT TSV, etc. Use `-v` (or `npm run docker:reset-data`) when you specifically want a cold first-run state.
@@ -78,7 +78,7 @@ Volumes:
 - Anonymous volume on `/repo/node_modules` (pipeline-runner only) — masks the host repo bind-mount so the image's linux-arm64 `node_modules` wins over your darwin-arm64 one. Without it, `esbuild` / `sharp` / `gdal-async` would try to load the wrong-platform binaries inside the linux container.
 - `./build`, `./static/data`, `./ops/docker/nginx.conf` (bind-mounts) — host paths the web container reads.
 
-The web container itself has no Dockerfile and no persistent volume — it's stock `nginx:alpine` (25 MB image) with three read-only bind-mounts. Easy to reason about, fast to start.
+The web container has no persistent volume: a small image built from `ops/docker/Dockerfile.web` (Alpine + nginx + the brotli module) with three read-only bind-mounts. Easy to reason about, fast to start. Because `./build` is bind-mounted, any rebuild needs `web` recreated (see Troubleshooting).
 
 ---
 
@@ -125,7 +125,7 @@ It uses this checkout's Compose project and host port (`ORRERY_WEB_PORT` in a pa
 
 ### `Bind for 0.0.0.0:8080 failed: port is already allocated`
 
-Something else is on `:8080`. Find it (`lsof -i :8080`) and stop it, or temporarily edit the port mapping in `docker-compose.yml` (`'8080:80'` → `'8081:80'`) and use `http://localhost:8081` for that session.
+Something else is on `:8080`, the primary checkout's port. Find it (`lsof -i :8080`) and stop it if it's yours. Don't edit the tracked port mapping: a parallel worktree already gets its own `web` port (`ORRERY_WEB_PORT` in its `.env.workspace`, applied by the generated `docker-compose.override.yml`; see `.config/workspace/README.md`).
 
 ### Every page returns 500 (and `/data/*` 404) after a rebuild
 
@@ -133,7 +133,7 @@ Something else is on `:8080`. Find it (`lsof -i :8080`) and stop it, or temporar
 
 ### `bind source path does not exist: …/build`
 
-`./build` doesn't exist. Run `npm run build` on the host first, then `docker compose up -d web`.
+`./build` doesn't exist. Run `npm run docker:e2e` (it builds first), or `npm run build` and then recreate `web`.
 
 ### `404 Not Found` for `/missions/` but `/missions` works
 

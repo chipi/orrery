@@ -14,7 +14,7 @@ import { ghPagesUrlPatterns } from './scripts/gh-pages-compat.mjs';
 import { paraglideOptions } from './scripts/paraglide-options.mjs';
 // Per-checkout runtime defaults written by .config/workspace/setup (parallel
 // worktrees). `{}` when absent, so CI and fresh clones are unaffected.
-import { pick, readWorkspaceEnv } from './scripts/workspace/env.mjs';
+import { pick, readWorkspaceEnv, workspaceClientEnv } from './scripts/workspace/env.mjs';
 
 const pkg = JSON.parse(
   readFileSync(fileURLToPath(new URL('./package.json', import.meta.url)), 'utf8'),
@@ -30,7 +30,7 @@ const pkg = JSON.parse(
  * The static manifest (static/manifest.webmanifest) is shipped as-is
  * by adapter-static; we tell the plugin not to generate one.
  */
-export default defineConfig(({ mode }) => {
+export default defineConfig(({ mode, command }) => {
   // loadEnv() reads .env / .env.local / .env.<mode> in CWD merged into
   // a plain map — same precedence vite uses for app-time env, but
   // available here at config-eval time (process.env alone wouldn't
@@ -41,10 +41,14 @@ export default defineConfig(({ mode }) => {
   const devPort = parseInt(pick(env.VITE_DEV_PORT, workspace.VITE_DEV_PORT, '5273'), 10);
   // Client-visible workspace values (VITE_LAB_API_URL for a stream's own lab
   // API) reach import.meta.env through process.env, which Vite reads after
-  // this config — but only when neither the shell nor an .env* file set them.
-  for (const [key, value] of Object.entries(workspace)) {
-    if (key.startsWith('VITE_') && key !== 'VITE_DEV_PORT' && !env[key]) process.env[key] = value;
-  }
+  // this config — but only for the dev server, when neither the shell nor an
+  // .env* file set them. Never for a build (artifacts keep their production/
+  // default values) or under Vitest (VITEST is set before it loads this config),
+  // which keeps unit tests hermetic to the checkout they run in.
+  Object.assign(
+    process.env,
+    workspaceClientEnv(workspace, env, { command, vitest: Boolean(process.env.VITEST) }),
+  );
   // MOBILE=1 selects the Capacitor stream-heavy profile (RFC-018 §4 /
   // ADR-078): heavy asset buckets (images, audio, non-default-locale
   // overlays) are pruned from build/ after the build and streamed from

@@ -58,3 +58,25 @@ export function pick(explicit, workspace, fallback) {
   if (workspace !== undefined && workspace !== '') return workspace;
   return fallback;
 }
+
+/**
+ * The workspace `VITE_*` values Vite should expose to client code
+ * (`import.meta.env`): those neither the shell nor an `.env*` file set.
+ * `VITE_DEV_PORT` is server config, not a client value. They configure the
+ * checkout's local dev server only: `{}` for a build (artifacts keep the
+ * production/default values) and under Vitest, which also loads the config with
+ * command `serve` — unit tests must not depend on which checkout runs them.
+ * @param {Record<string, string>} workspace
+ * @param {Record<string, string>} explicit
+ * @param {{ command: 'serve' | 'build', vitest: boolean }} opts
+ * @returns {Record<string, string>}
+ */
+export function workspaceClientEnv(workspace, explicit, { command, vitest }) {
+  /** @type {Record<string, string>} */
+  const out = {};
+  if (command !== 'serve' || vitest) return out;
+  for (const [key, value] of Object.entries(workspace)) {
+    if (key.startsWith('VITE_') && key !== 'VITE_DEV_PORT' && !explicit[key]) out[key] = value;
+  }
+  return out;
+}

@@ -40,9 +40,18 @@ everything behaves exactly as before. Setup warns when your `.env` /
 `.env.local` pins one of a stream's port values.
 
 Who reads `.env.workspace`: `vite.config.ts` (dev/preview port; `VITE_*`
-values for the client), both Playwright configs, `scripts/capture-screenshots.ts`,
+client values for the dev server), both Playwright configs, `scripts/capture-screenshots.ts`,
 and `scripts/workspace/with-env.mjs` (the `lab-api:dev` / `mcp:dev` servers,
 which don't read env files themselves).
+
+The generated `VITE_*` client values (today `VITE_LAB_API_URL`) configure the
+local Vite **dev server** only (`vite dev`). They are deliberately excluded from
+every build (`npm run build`, `build:mobile`, the Docker/E2E and staging/prod
+images keep the production/default lab-api URL unless you set one explicitly in
+the shell or `.env*`) and from Vitest, which loads the same config
+(`workspaceClientEnv` in `scripts/workspace/env.mjs`). So `npm run test` behaves
+the same in every checkout; a test that needs a server listens on an
+OS-assigned port (`listen(0)`), never a stream's ports.
 
 ## Lab-api state
 

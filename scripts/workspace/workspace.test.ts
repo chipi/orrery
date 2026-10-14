@@ -19,7 +19,13 @@ import {
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
-import { WORKSPACE_ENV_FILE, parseWorkspaceEnv, pick, readWorkspaceEnv } from './env.mjs';
+import {
+  WORKSPACE_ENV_FILE,
+  parseWorkspaceEnv,
+  pick,
+  readWorkspaceEnv,
+  workspaceClientEnv,
+} from './env.mjs';
 import { buildEnv, parseArgs } from './with-env.mjs';
 
 const REPO = resolve(import.meta.dirname, '..', '..');
@@ -77,6 +83,37 @@ describe('env.mjs', () => {
     expect(pick(undefined, '2', '3')).toBe('2');
     expect(pick('', '', '3')).toBe('3');
     expect(pick(undefined, undefined, '3')).toBe('3');
+  });
+
+  describe('workspaceClientEnv', () => {
+    const ws = {
+      VITE_LAB_API_URL: 'http://localhost:15004',
+      VITE_OTHER: 'ws',
+      VITE_DEV_PORT: '15001',
+      LAB_PORT: '15004',
+    };
+    const dev = { command: 'serve', vitest: false } as const;
+
+    it('vite dev injects the workspace VITE_* client values (not VITE_DEV_PORT / non-VITE_)', () => {
+      expect(workspaceClientEnv(ws, {}, dev)).toEqual({
+        VITE_LAB_API_URL: 'http://localhost:15004',
+        VITE_OTHER: 'ws',
+      });
+    });
+
+    it('vite build injects nothing', () => {
+      expect(workspaceClientEnv(ws, {}, { command: 'build', vitest: false })).toEqual({});
+    });
+
+    it('Vitest injects nothing, although it loads Vite with command serve', () => {
+      expect(workspaceClientEnv(ws, {}, { command: 'serve', vitest: true })).toEqual({});
+    });
+
+    it('explicit shell / .env* values win; an empty explicit value does not', () => {
+      expect(
+        workspaceClientEnv(ws, { VITE_LAB_API_URL: 'http://mine:1', VITE_OTHER: '' }, dev),
+      ).toEqual({ VITE_OTHER: 'ws' });
+    });
   });
 });
 

@@ -1,12 +1,11 @@
 /**
  * F's cross-slice CONTRACT test (#535 · pre-review item 7): the REAL AskAuth
- * client driven through the REAL lab-api server (buildLabApi on 127.0.0.1:8093
- * — the client's baked dev base), with the stub Google IdP from D's suite and
- * a stubbed LiteLLM. Catches every client↔AS contract drift a mocked-fetch
- * test would hide: PKCE shape, resource param, iss echo, rotation, /ask
- * bearer semantics.
+ * client driven through the REAL lab-api server (buildLabApi on an OS-assigned
+ * 127.0.0.1 port), with the stub Google IdP from D's suite and a stubbed
+ * LiteLLM. Catches every client↔AS contract drift a mocked-fetch test would
+ * hide: PKCE shape, resource param, iss echo, rotation, /ask bearer semantics.
  */
-import { describe, it, expect, beforeAll, afterAll } from 'vitest';
+import { describe, it, expect, beforeAll, afterAll, vi } from 'vitest';
 import { createServer, type Server } from 'node:http';
 import { mkdtempSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
@@ -14,16 +13,15 @@ import { join } from 'node:path';
 import { webcrypto } from 'node:crypto';
 import { SignJWT, generateKeyPair, exportJWK, type JWK } from 'jose';
 import { buildLabApi, configFromEnv } from '../../../../server/lab-api/index';
-import { AskAuth, type AuthDeps, type AuthPhase } from './auth';
-import { LAB_API_BASE } from './config';
+import type { AskAuth, AuthDeps, AuthPhase } from './auth';
 
-// Serve the contract test on the SAME base the client module is configured with
-// (LAB_API_BASE): http://localhost:8093 normally, this checkout's own lab-api port
-// when .env.workspace sets VITE_LAB_API_URL (parallel streams). This only keeps the
-// test aligned with the configured base; whether Vitest should inherit generated
-// .env.workspace VITE_* values at all is a separate, deferred question.
-const BASE = LAB_API_BASE;
-const BASE_PORT = Number(new URL(BASE).port);
+// The issuer must be known before buildLabApi, so a front server takes an
+// ephemeral port first and forwards to the lab-api handler once built. The
+// client module bakes its base at import, so it is imported only after
+// VITE_LAB_API_URL points at that port — never 8093 or a checkout's LAB_PORT.
+let BASE: string;
+let AskAuthCtor: typeof AskAuth;
+let labApiFront: Server;
 const EMAIL = 'marko.dragoljevic@gmail.com';
 const REDIRECT = 'http://localhost:5373/lab/callback';
 
@@ -59,7 +57,7 @@ function makeClient(): AskAuth {
     lock: null,
     crypto: webcrypto as Crypto,
   };
-  return new AskAuth(deps, REDIRECT, (p) => phases.push(p));
+  return new AskAuthCtor(deps, REDIRECT, (p) => phases.push(p));
 }
 
 beforeAll(async () => {
@@ -122,6 +120,15 @@ beforeAll(async () => {
   });
   await new Promise<void>((r) => stubLlm.listen(0, '127.0.0.1', r));
 
+  labApiFront = createServer((req, res) => labApi.emit('request', req, res));
+  await new Promise<void>((r) => labApiFront.listen(0, '127.0.0.1', r));
+  BASE = `http://127.0.0.1:${(labApiFront.address() as { port: number }).port}`;
+  vi.stubEnv('VITE_LAB_API_URL', BASE);
+  vi.resetModules();
+  ({ AskAuth: AskAuthCtor } = await import('./auth'));
+  const { LAB_API_BASE } = await import('./config');
+  expect(LAB_API_BASE).toBe(BASE);
+
   process.env.LAB_ISSUER = BASE;
   process.env.LAB_STATE_PATH = join(dir, 'state.json');
   process.env.LAB_ALLOWLIST_PATH = allowlistPath;
@@ -138,7 +145,6 @@ beforeAll(async () => {
 
   const built = await buildLabApi({ ...configFromEnv(), issuer: BASE });
   labApi = built.server;
-  await new Promise<void>((r) => labApi.listen(BASE_PORT, '127.0.0.1', r));
 });
 
 const savedEnv = { ...process.env };
@@ -147,7 +153,8 @@ afterAll(() => {
   // m-3: this suite mutates a dozen LAB_* vars — restore for suite isolation.
   for (const k of Object.keys(process.env)) if (!(k in savedEnv)) delete process.env[k];
   Object.assign(process.env, savedEnv);
-  labApi?.close();
+  vi.unstubAllEnvs();
+  labApiFront?.close();
   stubGoogle?.close();
   stubLlm?.close();
   rmSync(dir, { recursive: true, force: true });

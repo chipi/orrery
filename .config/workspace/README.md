@@ -94,7 +94,10 @@ the primary does. Without a build, Compose stops with "bind source path does
 not exist: …/build". The mount sets `create_host_path: false`, so Docker never
 creates an empty root-owned `build/` that would break the nested `static/data`
 mount. `npm run docker:reset-data` is now
-`docker compose down -v`: this checkout's project only.
+`docker compose down -v`: this checkout's project only. `npm run docker:e2e`
+(build → recreate `web` → smoke → Playwright) targets this checkout's project
+and `ORRERY_WEB_PORT`, and refuses to start if `docker compose config` resolves
+a different project or port than `.env.workspace`.
 
 ## Secrets: never copied
 

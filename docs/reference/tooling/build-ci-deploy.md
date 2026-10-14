@@ -250,6 +250,20 @@ fallback) and offline-safe pipeline runs.
 **Gotchas** — `docker:reset-data` is destructive (drops named volumes).
 **State** — healthy.
 
+## `npm run docker:e2e` → `scripts/docker-e2e.mjs`
+
+**Command** — `npm run docker:e2e [-- [--skip-build] [--smoke-only] [-- <playwright args>]]`
+**What** — Local mirror of `docker-e2e.yml` for this checkout: `npm run build` →
+`docker compose up -d --build --force-recreate --wait web` → the workflow's smoke checks plus
+served `/_app/version.json` == host `build/_app/version.json` → `npx playwright test`
+(default `--workers=1 --project=desktop-chromium`) with `PLAYWRIGHT_BASE_URL` on this checkout's
+port. Leaves `web` running; dumps `docker compose logs web` on failure.
+**When** — The final Docker gate before shipping serving/nginx-sensitive changes.
+**Gotchas** — Recreation is the point: a build replaces `build/`, and a container started earlier
+keeps serving the deleted (empty) directory → nginx 500. Refuses before touching Docker if the
+Compose project/port differs from `.env.workspace` (another stream's or the primary's).
+**State** — healthy.
+
 ---
 
 ## Deploy — GitHub Actions workflows

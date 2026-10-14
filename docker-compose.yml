@@ -16,6 +16,9 @@
 # Usage:
 #   npm run build                              — produce host build/
 #   docker compose up -d web                   — start nginx at :8080
+#   npm run docker:e2e                         — build, recreate web, smoke + Playwright
+#                                                (a rebuild needs web RECREATED: the old
+#                                                container keeps the deleted build/ mounted)
 #   docker compose run --rm pipeline-runner scripts/<name>.ts [args]
 #   docker compose down                        — stop everything
 #

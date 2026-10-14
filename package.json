@@ -111,6 +111,7 @@
     "docker:up": "docker compose up -d web",
     "docker:down": "docker compose down",
     "docker:logs": "docker compose logs -f web",
+    "docker:e2e": "node scripts/docker-e2e.mjs",
     "docker:reset-data": "docker compose down -v",
     "docker:fetch-launches": "docker compose run --rm pipeline-runner scripts/fetch-launches.ts",
     "docker:images:hotspots": "docker compose run --rm pipeline-runner scripts/fetch-hotspot-imagery.ts",

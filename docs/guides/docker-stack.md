@@ -109,6 +109,16 @@ CI sets these directly via `${‌{ secrets.LL2_PATREON_KEY }}` in `docker-e2e.ym
 
 Mobile-chromium is **not** covered here — that suite runs in `e2e.yml` against `vite preview`. The two workflows partition the test surface: `e2e.yml` exercises the SvelteKit + Vite artefact; `docker-e2e.yml` exercises the production-shape nginx-served bundle. A red `docker-e2e.yml` means *the docker stack regressed* (cache headers, SPA fallback, mime types, volume mount) — a specific signal, easy to attribute.
 
+### Running the same gate locally
+
+```bash
+npm run docker:e2e                                       # build → recreate web → smoke → desktop suite
+npm run docker:e2e -- --skip-build --smoke-only          # just recreate + smoke the current build/
+npm run docker:e2e -- -- --project=mobile-chromium tests/e2e/smoke.spec.ts
+```
+
+It uses this checkout's Compose project and host port (`ORRERY_WEB_PORT` in a parallel worktree, `:8080` in the primary) and refuses to run if `docker compose config` resolves anything else. On top of the workflow's smoke checks it asserts the served `/_app/version.json` equals the host's `build/_app/version.json`, so a stale bind mount fails the run instead of the suite. `web` is left running; `npm run docker:down` stops it.
+
 ---
 
 ## Troubleshooting
@@ -117,9 +127,13 @@ Mobile-chromium is **not** covered here — that suite runs in `e2e.yml` against
 
 Something else is on `:8080`. Find it (`lsof -i :8080`) and stop it, or temporarily edit the port mapping in `docker-compose.yml` (`'8080:80'` → `'8081:80'`) and use `http://localhost:8081` for that session.
 
-### Web container starts but every request 404s
+### Every page returns 500 (and `/data/*` 404) after a rebuild
 
-`./build` doesn't exist. Run `npm run build` on the host first, then `docker compose restart web`.
+`npm run build` deletes `build/` and creates a new directory. A `web` container started before the build keeps the deleted, empty directory mounted, so `try_files` falls through to a missing `/index.html` and nginx logs `rewrite or internal redirection cycle`; the nested `/data` mount goes with it. `docker compose up -d web` does not help — the container is "Running". Any fresh container start re-resolves the mount: `npm run docker:e2e` (recreates), or `docker compose up -d --force-recreate web`.
+
+### `bind source path does not exist: …/build`
+
+`./build` doesn't exist. Run `npm run build` on the host first, then `docker compose up -d web`.
 
 ### `404 Not Found` for `/missions/` but `/missions` works
 

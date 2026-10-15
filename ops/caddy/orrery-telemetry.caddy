@@ -2,7 +2,7 @@
 #
 # The shared Caddy edge engine is owned by podcast_scraper (ADR-114); this file is a
 # tenant vhost dropped into /etc/caddy/sites/orrery-telemetry.caddy by
-# ops/deploy_caddy_vhosts.sh (`caddy adapt`-gated, then `sudo -n systemctl restart caddy`).
+# ops/deploy_caddy_vhosts.sh (`caddy adapt`-gated, then `sudo -n systemctl reload caddy`).
 #
 # WHY: browser-side error SDKs (orrery's client JS, and the podcast viewer bundle) POST
 # from the *end user's* browser, which can only reach public endpoints — never the
@@ -21,7 +21,7 @@
 #     GLITCHTIP_UPSTREAM="$(tailscale ip -4 homelab | head -1):8090"
 # A box migration is a one-line change there, never here.
 #
-# Rollback: `rm /etc/caddy/sites/orrery-telemetry.caddy && sudo systemctl restart caddy`
+# Rollback: `rm /etc/caddy/sites/orrery-telemetry.caddy && sudo systemctl reload caddy`
 # — frees the vhost, nothing shared changes, the box stays up.
 telemetry.orrerylearn.com {
 	import hardened

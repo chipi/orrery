@@ -2,7 +2,7 @@
 #
 # The shared Caddy edge engine is owned by podcast_scraper (ADR-114); this file
 # is a tenant vhost dropped into /etc/caddy/sites/orrery-lab-api.caddy by
-# ops/deploy_caddy_vhosts.sh (`caddy adapt`-gated, then restart).
+# ops/deploy_caddy_vhosts.sh (`caddy adapt`-gated, then reload).
 #
 # Upstream: the orrery-lab-api container on loopback 8094 (compose service
 # `lab-api`). ADR-114 allocated 8093 to lab-api, but the live box has a
@@ -15,7 +15,7 @@
 # DNS: lab-api.orrerylearn.com must resolve to the box BEFORE this file lands,
 # or ACME retries burn Let's Encrypt rate limits (same caveat as orrery.caddy).
 #
-# Rollback: rm /etc/caddy/sites/orrery-lab-api.caddy && sudo systemctl restart caddy.
+# Rollback: rm /etc/caddy/sites/orrery-lab-api.caddy && sudo systemctl reload caddy.
 lab-api.orrerylearn.com {
 	import hardened
 	reverse_proxy 127.0.0.1:8094

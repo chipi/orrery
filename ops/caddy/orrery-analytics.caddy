@@ -2,7 +2,7 @@
 #
 # The shared Caddy edge engine is owned by podcast_scraper (ADR-114); this file is a
 # tenant vhost dropped into /etc/caddy/sites/orrery-analytics.caddy by
-# ops/deploy_caddy_vhosts.sh (`caddy adapt`-gated, then `sudo -n systemctl restart caddy`).
+# ops/deploy_caddy_vhosts.sh (`caddy adapt`-gated, then `sudo -n systemctl reload caddy`).
 #
 # WHY: the browser loads Umami's tracking script + POSTs events from the end user's
 # browser, which can only reach public endpoints — never the tailnet-only Umami on
@@ -21,7 +21,7 @@
 # must be live — that grant lives in podcast_scraper's tailscale/policy.hujson (GitOps
 # ACL, ADR-128). Umami sets its own CORS headers on /api/send.
 #
-# Rollback: `rm /etc/caddy/sites/orrery-analytics.caddy && sudo systemctl restart caddy`.
+# Rollback: `rm /etc/caddy/sites/orrery-analytics.caddy && sudo systemctl reload caddy`.
 analytics.orrerylearn.com {
 	import hardened
 

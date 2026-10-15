@@ -48,7 +48,9 @@ done
 if [ "$side" = 1 ]; then
   # One call: wb-workspace fails (and prints nothing) on any collision.
   ports=$("$WB" port web e2e docker-web lab-api mcp) || die "could not derive ports for $WORKSPACE_ID"
-  mapfile -t P <<<"$ports"
+  # Not mapfile: macOS ships bash 3.2, where it is "command not found" (exit 127).
+  P=()
+  while IFS= read -r line; do P+=("$line"); done <<<"$ports"
   [ "${#P[@]}" = 5 ] || die "expected 5 ports from '$WB port', got: $ports"
   WEB=${P[0]} E2E=${P[1]} DOCKER_WEB=${P[2]} LAB=${P[3]} MCP=${P[4]}
 fi

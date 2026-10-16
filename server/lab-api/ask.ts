@@ -212,6 +212,8 @@ export async function ask(
   // Prior turns (slice #540) — prose only; the client sends the transcript, we cap it
   // (turn count AND per-item chars — the echo is untrusted).
   for (const turn of (ctx.history ?? []).slice(-MAX_HISTORY_TURNS)) {
+    // The history is client-sent: a null / non-object entry is skipped, not a 500 (#597).
+    if (!turn || typeof turn !== 'object') continue;
     if ((turn.role === 'user' || turn.role === 'assistant') && typeof turn.content === 'string') {
       messages.push({ role: turn.role, content: turn.content.slice(0, MAX_HISTORY_ITEM_CHARS) });
     }

@@ -165,6 +165,19 @@ async function postToken(
   return { status: resp.status, body: (await resp.json()) as Record<string, unknown> };
 }
 
+describe('token responses are not cacheable (#597, RFC 6749 §5.1)', () => {
+  it('a /token error carries Cache-Control: no-store + Pragma: no-cache', async () => {
+    const resp = await fetch(`${base}/token`, {
+      method: 'POST',
+      headers: { 'content-type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({ grant_type: 'authorization_code', code: 'nope' }),
+    });
+    expect(resp.status).toBeGreaterThanOrEqual(400);
+    expect(resp.headers.get('cache-control')).toBe('no-store');
+    expect(resp.headers.get('pragma')).toBe('no-cache');
+  });
+});
+
 describe('metadata + jwks', () => {
   it('serves RFC 8414 metadata on both well-known paths, PKCE advertised, no CIMD lie', async () => {
     for (const path of [
@@ -571,5 +584,12 @@ describe('DCR — dynamic client registration (#464, shareable connector)', () =
   it('register requires at least one https redirect_uri', async () => {
     expect((await register([])).status).toBe(400);
     expect((await register(['http://insecure.example/cb'])).status).toBe(400);
+  });
+
+  it('register caps redirect_uris: at most 5, each at most 512 chars (#597)', async () => {
+    const many = Array.from({ length: 6 }, (_, i) => `https://evil.example/cb${i}`);
+    expect((await register(many)).status).toBe(400);
+    expect((await register(['https://evil.example/' + 'x'.repeat(520)])).status).toBe(400);
+    expect((await register([CB, 'https://claude.ai/api/mcp/auth_callback2'])).status).toBe(201);
   });
 });

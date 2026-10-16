@@ -302,4 +302,16 @@ describe('ask', () => {
     );
     expect(forwarded?.content).toHaveLength(4000);
   });
+
+  it('skips null / non-object history entries instead of throwing (#597)', async () => {
+    script = [{ role: 'assistant', content: 'ok' }];
+    received = [];
+    const history = [null, 'nope', 7, { role: 'user', content: 'earlier question' }] as unknown as {
+      role: 'user';
+      content: string;
+    }[];
+    const out = await ask('and now?', 'en-US', deps, { history });
+    expect(out.answer).toBe('ok');
+    expect(received[0].messages?.some((m) => m.content === 'earlier question')).toBe(true);
+  });
 });

@@ -3,8 +3,9 @@
  * launch list at `https://planet4589.org/space/gcat/tsv/launch/launch.tsv`).
  *
  * The TSV is tab-separated with a comment-prefixed header row (`#Launch_Tag\t...`)
- * and a free-text "# Updated YYYY MMM DD HHmm:ss" line. Subsequent data
- * rows are 28 fields wide, frequently padded with spaces.
+ * and a free-text "# Updated YYYY MMM DD HHmm:ss" line. Data rows are as wide
+ * as the header (33 fields since Release 1.8.8), frequently padded with spaces.
+ * Fields are read by header name, so GCAT adding columns doesn't shift them.
  *
  * GCAT is released CC-BY by J.C. McDowell. PRD-020 / RFC-023 §12.1.
  */
@@ -17,10 +18,11 @@ import type {
 import { buildStableId, slugify } from '../../src/lib/launches/id.js';
 
 /**
- * Authoritative column order (28 fields) — matches Release 1.8.0 of the
- * GCAT Orbital Launch Log. Asserted against the parser fixture
- * `__fixtures__/launch-log-header.tsv`; a column-name drift bumps a build
- * failure so the operator catches the schema bump explicitly.
+ * The 28 columns of the Release 1.8.0 Orbital Launch Log, in 1.8.0 order.
+ * Every one must be present in the header by name; other columns are
+ * tolerated (1.8.8 inserted Fairing, Perigee, Inc, Azimuth, OrbMass). A
+ * renamed or removed column still fails the assertion, so the operator
+ * reviews any change that could alter what a field means (RFC-023 §12.1).
  */
 export const GCAT_LAUNCH_COLUMNS = [
   '#Launch_Tag',
@@ -68,13 +70,26 @@ const MONTH_MAP: Record<string, number> = {
   Dec: 11,
 };
 
+export type GcatColumn = (typeof GCAT_LAUNCH_COLUMNS)[number];
+
+/** Header position of each required column, plus the row width the header implies. */
+export type GcatColumnIndex = { width: number; at: Record<GcatColumn, number> };
+
+/** Release 1.8.0's positional layout — the default for callers that pass bare 28-field rows. */
+export const GCAT_1_8_0_INDEX: GcatColumnIndex = {
+  width: GCAT_LAUNCH_COLUMNS.length,
+  at: Object.fromEntries(GCAT_LAUNCH_COLUMNS.map((c, i) => [c, i])) as Record<GcatColumn, number>,
+};
+
 export type GcatHeaderAssertionResult =
-  { ok: true } | { ok: false; reason: 'no-header' | 'column-mismatch'; details: string };
+  | { ok: true; index: GcatColumnIndex }
+  | { ok: false; reason: 'no-header' | 'column-mismatch'; details: string };
 
 /**
- * Asserts the GCAT TSV starts with the expected 28-column header. Call
- * this before parsing; a mismatch indicates a GCAT major-version bump
- * that needs operator review per RFC-023 §12.1.
+ * Asserts the GCAT TSV header carries every required column, each exactly
+ * once, and returns where each one sits. Call this before parsing; a
+ * missing, renamed or duplicated column needs operator review per
+ * RFC-023 §12.1.
  */
 export function assertGcatHeader(tsv: string): GcatHeaderAssertionResult {
   const firstLine = tsv.split('\n', 1)[0];
@@ -82,23 +97,27 @@ export function assertGcatHeader(tsv: string): GcatHeaderAssertionResult {
     return { ok: false, reason: 'no-header', details: firstLine ?? '(empty)' };
   }
   const cols = firstLine.split('\t');
-  if (cols.length !== GCAT_LAUNCH_COLUMNS.length) {
+  const missing = GCAT_LAUNCH_COLUMNS.filter((c) => !cols.includes(c));
+  if (missing.length > 0) {
     return {
       ok: false,
       reason: 'column-mismatch',
-      details: `expected ${GCAT_LAUNCH_COLUMNS.length} columns, got ${cols.length}`,
+      details: `missing column(s) ${missing.map((c) => `'${c}'`).join(', ')} in a ${cols.length}-column header`,
     };
   }
-  for (let i = 0; i < cols.length; i++) {
-    if (cols[i] !== GCAT_LAUNCH_COLUMNS[i]) {
-      return {
-        ok: false,
-        reason: 'column-mismatch',
-        details: `column ${i}: expected '${GCAT_LAUNCH_COLUMNS[i]}', got '${cols[i]}'`,
-      };
-    }
+  const duplicated = GCAT_LAUNCH_COLUMNS.filter((c) => cols.indexOf(c) !== cols.lastIndexOf(c));
+  if (duplicated.length > 0) {
+    return {
+      ok: false,
+      reason: 'column-mismatch',
+      details: `duplicated column(s) ${duplicated.map((c) => `'${c}'`).join(', ')}`,
+    };
   }
-  return { ok: true };
+  const at = Object.fromEntries(GCAT_LAUNCH_COLUMNS.map((c) => [c, cols.indexOf(c)])) as Record<
+    GcatColumn,
+    number
+  >;
+  return { ok: true, index: { width: cols.length, at } };
 }
 
 /**
@@ -206,19 +225,22 @@ export function gcatRowToRawEntry(opts: {
   row: string[];
   source_name: string;
   source_observed_at: string;
+  /** Where each column sits; defaults to Release 1.8.0's 28-field layout. */
+  index?: GcatColumnIndex;
 }): RawLaunchEntry | null {
   const cols = opts.row.map((c) => c.trim());
-  const launchTag = cols[0];
-  const launchDate = cols[2];
-  const lvType = cols[3];
-  const mission = cols[7];
-  const launchSite = cols[10];
-  const launchPad = cols[11];
-  const dest = cols[18];
-  const agency = cols[20];
-  const launchCode = cols[21];
-  const category = cols[24];
-  const notes = cols[27];
+  const at = (opts.index ?? GCAT_1_8_0_INDEX).at;
+  const launchTag = cols[at['#Launch_Tag']];
+  const launchDate = cols[at.Launch_Date];
+  const lvType = cols[at.LV_Type];
+  const mission = cols[at.Mission];
+  const launchSite = cols[at.Launch_Site];
+  const launchPad = cols[at.Launch_Pad];
+  const dest = cols[at.Dest];
+  const agency = cols[at.Agency];
+  const launchCode = cols[at.LaunchCode];
+  const category = cols[at.Category] ?? '';
+  const notes = cols[at.Notes];
 
   if (!launchTag || !launchDate || !lvType) return null;
 
@@ -259,21 +281,25 @@ export function gcatRowToRawEntry(opts: {
 
 /**
  * Parse a complete GCAT launch.tsv string. Skips the header + any
- * comment lines starting with `#`. Returns the entries that parsed
- * cleanly + a list of unparsed rows (for the audit report).
+ * comment lines starting with `#`. Columns are located from the header
+ * when it carries every required column; otherwise the 1.8.0 layout is
+ * assumed. Returns the entries that parsed cleanly + a count of unparsed
+ * rows (for the audit report).
  */
 export function parseGcatLaunchTsv(opts: {
   tsv: string;
   source_name: string;
   source_observed_at: string;
 }): { entries: RawLaunchEntry[]; unparsed: number } {
+  const header = assertGcatHeader(opts.tsv);
+  const index = header.ok ? header.index : GCAT_1_8_0_INDEX;
   const lines = opts.tsv.split('\n');
   const entries: RawLaunchEntry[] = [];
   let unparsed = 0;
   for (const line of lines) {
     if (!line || line.startsWith('#')) continue;
     const cols = line.split('\t');
-    if (cols.length !== GCAT_LAUNCH_COLUMNS.length) {
+    if (cols.length !== index.width) {
       unparsed++;
       continue;
     }
@@ -281,6 +307,7 @@ export function parseGcatLaunchTsv(opts: {
       row: cols,
       source_name: opts.source_name,
       source_observed_at: opts.source_observed_at,
+      index,
     });
     if (entry) {
       entries.push(entry);

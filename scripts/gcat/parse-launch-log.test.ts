@@ -23,15 +23,34 @@ import {
   parseGcatLaunchTsv,
   rocketFamilyFromLvType,
   slugify,
+  GCAT_1_8_0_INDEX,
   GCAT_LAUNCH_COLUMNS,
 } from './parse-launch-log.js';
 
 const fixturesDir = join(dirname(fileURLToPath(import.meta.url)), '__fixtures__');
+// Release 1.8.8 (live since 2026-09-03): 33 columns.
 const HEADER_FIXTURE = readFileSync(join(fixturesDir, 'launch-log-header.tsv'), 'utf8');
+const HEADER_1_8_0 = readFileSync(join(fixturesDir, 'launch-log-header-1.8.0.tsv'), 'utf8');
+// Real 1.8.8 rows: Sputnik 1 and Apollo 11.
+const ROWS_1_8_8 = readFileSync(join(fixturesDir, 'launch-log-rows-1.8.8.tsv'), 'utf8');
 
 describe('assertGcatHeader', () => {
-  it('accepts the pinned 28-column header from the checked-in fixture', () => {
-    expect(assertGcatHeader(HEADER_FIXTURE)).toEqual({ ok: true });
+  it('accepts the 33-column Release 1.8.8 header and locates columns by name', () => {
+    const res = assertGcatHeader(HEADER_FIXTURE);
+    expect(res.ok).toBe(true);
+    if (!res.ok) return;
+    expect(res.index.width).toBe(33);
+    expect(res.index.at.Launch_Date).toBe(2);
+    expect(res.index.at.Mission).toBe(8);
+    expect(res.index.at.Dest).toBe(22);
+    expect(res.index.at.Category).toBe(29);
+    expect(res.index.at.Notes).toBe(32);
+  });
+
+  it('still accepts the 28-column Release 1.8.0 header', () => {
+    const res = assertGcatHeader(HEADER_1_8_0);
+    expect(res.ok).toBe(true);
+    if (res.ok) expect(res.index).toEqual(GCAT_1_8_0_INDEX);
   });
 
   it('flags missing header', () => {
@@ -40,11 +59,17 @@ describe('assertGcatHeader', () => {
     if (!res.ok) expect(res.reason).toBe('no-header');
   });
 
-  it('flags column-count drift', () => {
-    const truncated = HEADER_FIXTURE.split('\t').slice(0, 27).join('\t');
-    const res = assertGcatHeader(truncated);
+  it('flags a removed required column, naming it', () => {
+    const removed = HEADER_FIXTURE.trimEnd()
+      .split('\t')
+      .filter((c) => c !== 'Mission')
+      .join('\t');
+    const res = assertGcatHeader(removed);
     expect(res.ok).toBe(false);
-    if (!res.ok) expect(res.reason).toBe('column-mismatch');
+    if (!res.ok) {
+      expect(res.reason).toBe('column-mismatch');
+      expect(res.details).toContain("'Mission'");
+    }
   });
 
   it('flags column-name drift', () => {
@@ -52,6 +77,15 @@ describe('assertGcatHeader', () => {
     const res = assertGcatHeader(renamed);
     expect(res.ok).toBe(false);
     if (!res.ok) expect(res.reason).toBe('column-mismatch');
+  });
+
+  it('flags a duplicated required column', () => {
+    const res = assertGcatHeader(HEADER_FIXTURE.trimEnd() + '\tCategory');
+    expect(res.ok).toBe(false);
+    if (!res.ok) {
+      expect(res.reason).toBe('column-mismatch');
+      expect(res.details).toContain("'Category'");
+    }
   });
 
   it('exports the canonical column order', () => {
@@ -198,9 +232,32 @@ describe('gcatRowToRawEntry', () => {
 });
 
 describe('parseGcatLaunchTsv', () => {
-  it('parses a multi-row TSV correctly + skips comment lines', () => {
+  it('reads real Release 1.8.8 rows by header name, not position', () => {
+    const tsv = [HEADER_FIXTURE.trimEnd(), '# Updated 2026 Oct 15 2354:30', ROWS_1_8_8].join('\n');
+    const { entries, unparsed } = parseGcatLaunchTsv({
+      tsv,
+      source_name: 'gcat',
+      source_observed_at: '2026-10-16T00:00:00.000Z',
+    });
+    expect(unparsed).toBe(0);
+    expect(entries).toHaveLength(2);
+    const [sputnik, apollo] = entries;
+    expect(sputnik.net).toBe('1957-10-04T19:28:34.000Z');
+    expect(sputnik.mission_name).toBe('PS-1');
+    expect(sputnik.agency_name).toBe('MVS');
+    expect(sputnik.status.code).toBe('SUCCESS');
+    expect(sputnik.pad_location).toBe('NIIP-5');
+    expect(sputnik.pad_name).toBe('LC1');
+    expect(apollo.mission_name).toBe('Apollo CM-107');
+    expect(apollo.rocket_family).toBe('Saturn V');
+    expect(apollo.agency_name).toBe('MSFC');
+    expect(apollo.status.label).toBe('DS');
+    expect(apollo.pad_location).toBe('KSC');
+  });
+
+  it('parses a 1.8.0 multi-row TSV correctly + skips comment lines', () => {
     const tsv = [
-      HEADER_FIXTURE.trimEnd(),
+      HEADER_1_8_0.trimEnd(),
       '# Updated 2026 May 20 0822:50',
       [
         '1957 ALP  ',

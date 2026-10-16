@@ -69,6 +69,86 @@ describe('ll2RawToRawEntry', () => {
     expect(ll2RawToRawEntry({ ...fakeRaw, net: 'tbd' }, '2026-05-19T00:00:00Z')).toBeNull();
   });
 
+  it('carries the configuration launch count (detailed mode) as rocket_config_prior_launches', () => {
+    const detailed = {
+      ...fakeRaw,
+      rocket: { configuration: { ...fakeRaw.rocket.configuration, total_launch_count: 637 } },
+    };
+    expect(ll2RawToRawEntry(detailed, '2026-05-19T00:00:00Z')?.rocket_config_prior_launches).toBe(
+      637,
+    );
+    const maiden = {
+      ...fakeRaw,
+      rocket: { configuration: { ...fakeRaw.rocket.configuration, total_launch_count: 0 } },
+    };
+    expect(ll2RawToRawEntry(maiden, '2026-05-19T00:00:00Z')?.rocket_config_prior_launches).toBe(0);
+  });
+
+  it('leaves rocket_config_prior_launches undefined when LL2 gives no count', () => {
+    expect(
+      ll2RawToRawEntry(fakeRaw, '2026-05-19T00:00:00Z')?.rocket_config_prior_launches,
+    ).toBeUndefined();
+    const nullCount = {
+      ...fakeRaw,
+      rocket: { configuration: { ...fakeRaw.rocket.configuration, total_launch_count: null } },
+    };
+    expect(
+      ll2RawToRawEntry(nullCount, '2026-05-19T00:00:00Z')?.rocket_config_prior_launches,
+    ).toBeUndefined();
+  });
+
+  it('gives no launch count for a placeholder configuration', () => {
+    const placeholder = {
+      ...fakeRaw,
+      rocket: {
+        configuration: {
+          id: 511,
+          name: 'Unknown Launch Vehicle',
+          total_launch_count: 0,
+          is_placeholder: true,
+          families: [],
+        },
+      },
+    };
+    expect(
+      ll2RawToRawEntry(placeholder, '2026-05-19T00:00:00Z')?.rocket_config_prior_launches,
+    ).toBeUndefined();
+  });
+
+  it("uses the family's count for a generic configuration named after its family", () => {
+    const generic = {
+      ...fakeRaw,
+      rocket: {
+        configuration: {
+          id: 200,
+          name: 'Vulcan',
+          full_name: 'Vulcan',
+          total_launch_count: 0,
+          is_placeholder: false,
+          families: [{ name: 'Vulcan', total_launch_count: 4 }],
+        },
+      },
+    };
+    expect(ll2RawToRawEntry(generic, '2026-05-19T00:00:00Z')?.rocket_config_prior_launches).toBe(4);
+  });
+
+  it('keeps 0 for a new variant of a family that has flown (its own maiden flight)', () => {
+    const variant = {
+      ...fakeRaw,
+      rocket: {
+        configuration: {
+          id: 479,
+          name: 'Vulcan VC6L',
+          full_name: 'Vulcan VC6L',
+          total_launch_count: 0,
+          is_placeholder: false,
+          families: [{ name: 'Vulcan', total_launch_count: 4 }],
+        },
+      },
+    };
+    expect(ll2RawToRawEntry(variant, '2026-05-19T00:00:00Z')?.rocket_config_prior_launches).toBe(0);
+  });
+
   it('maps status codes', () => {
     const e = ll2RawToRawEntry(
       { ...fakeRaw, status: { id: 4, name: 'Launch Failure' } },

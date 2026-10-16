@@ -23,7 +23,7 @@ import { SpaceXSource } from '../src/lib/launches/sources/spacex.js';
 import { EsaSource } from '../src/lib/launches/sources/esa.js';
 import { mergeAllContributions, type SourceContribution } from '../src/lib/launches/merge.js';
 import {
-  buildFirstFlightMap,
+  buildFirstFlightIds,
   computeTier,
   type CurationFile as TierCurationFile,
 } from '../src/lib/launches/tier.js';
@@ -220,15 +220,12 @@ async function main(): Promise<void> {
   const { merged: mergedUpcoming } = mergeAllContributions(upcomingContribs);
   const { merged: mergedHistoric } = mergeAllContributions(historicContribs);
 
-  // First-flight detection runs across both upcoming + historic so an
-  // upcoming first-flight of a brand-new vehicle is tagged even when its
-  // historic neighbours come from GCAT.
-  const allEntries = [
-    ...Object.values(mergedUpcoming).map((m) => m.entry),
-    ...Object.values(mergedHistoric).map((m) => m.entry),
-  ];
-  const firstFlightByConfig = buildFirstFlightMap(allEntries);
-  const tierContext = { firstFlightByConfig };
+  // First-flight detection reads each source's own entries, before the merge
+  // can mix one source's fields into another's (see buildFirstFlightIds).
+  const firstFlightIds = buildFirstFlightIds(
+    [...upcomingContribs, ...historicContribs].flatMap((c) => c.entries),
+  );
+  const tierContext = { firstFlightIds };
   const catalogue = loadCatalogue();
 
   // ── Phase 4+5: tier + curation + provenance_chain ───────────────
@@ -244,16 +241,19 @@ async function main(): Promise<void> {
         rocketMapping,
       );
       // Strip the merge book-keeping fields (source_name / source_url /
-      // source_observed_at) — they're not part of the manifest schema.
-      // Provenance is fully expressed via provenance_chain.
+      // source_observed_at) and the first-flight input — they're not part
+      // of the manifest schema. Provenance is fully expressed via
+      // provenance_chain.
       const {
         source_name: _src,
         source_observed_at: observed,
         source_url: _url,
+        rocket_config_prior_launches: _prior,
         ...flat
       } = m.entry;
       void _src;
       void _url;
+      void _prior;
       const missionRef = findCatalogMatch(
         { net: m.entry.net, name: m.entry.name, mission_name: m.entry.mission_name },
         catalogue,

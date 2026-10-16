@@ -23,6 +23,11 @@ concurrency:
   group: "lock-check-${{ github.ref }}"
   cancel-in-progress: true
 
+# Least privilege by default (#600): jobs that need more (GHCR push, SARIF upload)
+# declare their own `permissions:` block, which replaces this one.
+permissions:
+  contents: read
+
 jobs:
   lock-check:
     runs-on: ubuntu-latest

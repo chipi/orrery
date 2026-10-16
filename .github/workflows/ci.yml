@@ -24,6 +24,11 @@ concurrency:
   group: "${{ github.event_name == 'push' && (startsWith(github.event.head_commit.message, 'chore(launches): refresh') || startsWith(github.event.head_commit.message, 'chore(tle): refresh')) && format('ci-databot-{0}', github.ref) || format('ci-{0}', github.ref) }}"
   cancel-in-progress: true
 
+# Least privilege by default (#600): jobs that need more (GHCR push, SARIF upload)
+# declare their own `permissions:` block, which replaces this one.
+permissions:
+  contents: read
+
 jobs:
   ci:
     runs-on: ubuntu-latest

@@ -64,6 +64,7 @@ interface State {
   tracing: boolean;
   provider?: TracerProvider;
   metricsServer?: Server;
+  umamiDropReported?: boolean;
 }
 
 let state: State | null = null;
@@ -297,28 +298,55 @@ export function recordToolCall(tool: string, outcome: ToolOutcome, seconds?: num
  * values — never user ids, arguments or prompt text.
  */
 export function trackEvent(name: string, data: Record<string, string>): void {
-  const umami = state?.cfg.umami;
-  if (!umami) return;
+  const s = state;
+  const umami = s?.cfg.umami;
+  if (!s || !umami) return;
   void fetch(`${umami.host}/api/send`, {
     method: 'POST',
     signal: AbortSignal.timeout(5000),
     headers: {
       'content-type': 'application/json',
-      // Umami drops events without a user agent; this is the form podcast-mcp's
-      // server events already land with on the same instance.
-      'user-agent': `${state!.cfg.service}/1.0 (+server-side)`,
+      'user-agent': umamiUserAgent(s.cfg.service),
     },
     body: JSON.stringify({
       type: 'event',
       payload: {
         website: umami.websiteId,
         hostname: umami.hostname,
-        url: `/${state!.cfg.service}`,
+        url: `/${s.cfg.service}`,
         name,
         data,
       },
     }),
-  }).catch(() => {});
+  })
+    .then(async (res) => {
+      // Umami's bot filter answers a dropped event with 200 {"beep":"boop"}.
+      const body = await res.text();
+      if (!res.ok || body.includes('beep'))
+        reportUmamiDrop(s, `HTTP ${res.status} ${body.slice(0, 80)}`);
+    })
+    .catch((e) => reportUmamiDrop(s, String(e)));
+}
+
+/**
+ * Umami's bot filter discards non-browser user agents (it answers 200
+ * {"beep":"boop"} and stores nothing), so the server sends a browser UA with
+ * its own name appended. This exact form was probed against the homelab Umami
+ * on 2026-10-16 and stored; `<name>/1.0 (+server-side)` and
+ * `Mozilla/5.0 (compatible; …)` were both dropped.
+ */
+export function umamiUserAgent(service: string): string {
+  return (
+    'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) ' +
+    `Chrome/141.0.0.0 Safari/537.36 ${service}/1.0`
+  );
+}
+
+/** Log the first dropped Umami event per process, so a silent drop can't go unnoticed again. */
+function reportUmamiDrop(s: State, reason: string): void {
+  if (s.umamiDropReported) return;
+  s.umamiDropReported = true;
+  s.log(`[${s.cfg.service}] umami event not stored (${reason}); later drops not logged`);
 }
 
 /**

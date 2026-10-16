@@ -48,8 +48,9 @@
   // Voice picker (Google ↔ ElevenLabs A/B switcher) intentionally
   // unwired from the UI (Marko 2026-06-06). ElevenLabs is the preferred
   // provider per PROVIDER_PRIORITY in audio-registry. PROVIDER_LABEL +
-  // switchToProvider are retained for re-wiring without re-authoring;
-  // marked as deliberately-unused via the void references at script end.
+  // switchToProvider are retained for re-wiring (the picker's markup and
+  // CSS were removed in #606); marked as deliberately-unused via the void
+  // references at script end.
   const PROVIDER_LABEL: Record<string, string> = {
     google: 'Google',
     elevenlabs: 'ElevenLabs',
@@ -1104,8 +1105,9 @@
              PROVIDER_PRIORITY in audio-registry; Google variants still
              load when ElevenLabs is missing. `switchToProvider`,
              `PROVIDER_LABEL`, and audio store's `switchVariant` retained
-             so the picker can be re-added by uncommenting prior markup
-             once we decide to expose per-episode voice choice again. -->
+             for re-wiring; the picker's markup, CSS and e2e tests are gone
+             (#606), so exposing per-episode voice choice again means new
+             markup, not uncommenting. -->
 
         <div class="transport">
           <button

@@ -168,7 +168,7 @@ features that warrant top-level prominence.
 /lab?doc=<compact>                             Shared worksheet (URL-encoded card graph; grammar frozen in RFC-037 D-serialize)
 ```
 
-Routes resolve client-side via SvelteKit's router. Servers must serve `index.html` for unmatched paths (`try_files $uri /index.html` in nginx, `404.html` SPA-redirect on GitHub Pages — see ADR-014).
+Routes resolve client-side via SvelteKit's router. Every route is prerendered, so servers serve the matching `.html` file; an unmatched path is a real 404 that serves the `404.html` SPA shell (nginx: `try_files $uri $uri.html $uri/index.html =404` + `error_page 404 /404.html`, since #604; GitHub Pages serves `404.html` the same way — see ADR-014).
 
 ---
 
@@ -267,7 +267,7 @@ The one cross-surface exception is URL-encoded state: mission ID and filter para
 
 ## §entry-points
 
-SvelteKit's standard entry: `src/app.html` is the document shell; `src/routes/+layout.svelte` is the root layout that wraps all routes. Deep-linking to any route is supported by the server-side catch-all (`try_files $uri /index.html` for nginx, `404.html` SPA-redirect for GitHub Pages per ADR-014).
+SvelteKit's standard entry: `src/app.html` is the document shell; `src/routes/+layout.svelte` is the root layout that wraps all routes. Deep-linking works because every route is prerendered to its own `.html`; unknown paths get a 404 status with the `404.html` SPA shell, which renders the app's not-found page (nginx since #604; GitHub Pages per ADR-014).
 
 ---
 

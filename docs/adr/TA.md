@@ -258,11 +258,11 @@ The fail-closed asset + outbound-link discipline that distinguishes Orrery from 
 
 | Hostname | Caddy vhost | Upstream (host loopback) | Compose service / container | Image |
 |---|---|---|---|---|
-| `orrerylearn.com` | `orrery.caddy` | `:8090` (all interfaces today, see #599) | `web` (nginx static) | — |
+| `orrerylearn.com` | `orrery.caddy` | `127.0.0.1:8090` | `web` (nginx static) | — |
 | `mcp.orrerylearn.com` | `orrery-mcp.caddy` | `127.0.0.1:8091` | `mcp` / `orrery-mcp` | `ghcr.io/chipi/orrery-mcp` |
 | `lab-api.orrerylearn.com` | `orrery-lab-api.caddy` | `127.0.0.1:8094` → container `8093` | `lab-api` / `orrery-lab-api` | `ghcr.io/chipi/orrery-lab-api` |
 
-- **Network.** `mcp` depends on `lab-api` and fetches `MCP_JWKS_URL=http://lab-api:8093/jwks` over the compose bridge (decoupled from the public `iss`). `mcp` and `lab-api` bind loopback only; `web` publishes `:8090` on all interfaces (security review #599, to move to loopback). Caddy is the intended sole public entry. Host port 8094 (not ADR-114's 8093) because a co-tenant already holds 8093 on the live box; container-internal port stays 8093.
+- **Network.** `mcp` depends on `lab-api` and fetches `MCP_JWKS_URL=http://lab-api:8093/jwks` over the compose bridge (decoupled from the public `iss`). `web`, `mcp` and `lab-api` all bind loopback only (`web` since #599); `mcp` and `lab-api` also run with `cap_drop: [ALL]` and `no-new-privileges`. Caddy is the sole public entry (`tailscale serve --https=8443` proxies the same loopback port for the tailnet). `lab-api` keys its pre-auth rate limit on `X-Orrery-Client-Ip`, which the vhost sets from Caddy's resolved `{client_ip}` (#597). Host port 8094 (not ADR-114's 8093) because a co-tenant already holds 8093 on the live box; container-internal port stays 8093.
 - **State and secrets.** `lab-api` bind-mounts `./lab-api-state` (keypair, refresh tokens, `allowlist.json`); the dir must be writable by the container uid before first boot. Production refuses to start without `LAB_GOOGLE_CLIENT_ID/SECRET` + `LAB_CLAUDE_CLIENT_SECRET`; an unstaged `LITELLM_API_KEY` boots green but `/ask` returns 502. All env arrives via the staged `/srv/orrery/.env`.
 - **Build and rollout.** `ci.yml` jobs `mcp-image` and `lab-api-image` build each container cold (`Dockerfile.lab-api`, `Dockerfile.mcp`) and smoke-test it before the GHCR tag advances; deploy tags are `ORRERY_MCP_IMAGE_TAG` / `ORRERY_LAB_API_IMAGE_TAG`. Rollback per vhost: remove the `/etc/caddy/sites/*.caddy` file and reload Caddy. Deploy `mcp`/`lab-api` images before adding the Alloy scrape (ADR-094).
 - **Static side.** `/lab` is part of the static bundle served by `web`; the SPA reaches `lab-api` cross-origin (`VITE_LAB_API_URL` or the prod default).
@@ -1085,7 +1085,7 @@ Locked technical choices. Each entry points to its ADR.
 | Fleet imagery | Agency-first; hand-authored ANATOMY SVG; mission patches + crew portraits | ADR-053 |
 | Fleet i18n | entries × 14 locales × overlay merge | ADR-054 |
 | `/fly` cislunar view | Earth-centered second camera; per-mission `flight.cislunar_profile` | ADR-058 |
-| Client error tracking | Sentry SDK (`@sentry/sveltekit`) → **self-hosted GlitchTip** (`telemetry.orrerylearn.com`); errors only, PII-scrubbed; env-ladder dev/staging/prod, fork-silent by construction | ADR-067, ADR-082 |
+| Client error tracking | Sentry SDK (`@sentry/sveltekit`) → **self-hosted GlitchTip** (`telemetry.orrerylearn.com`); errors only, PII-scrubbed; env-ladder dev/staging/prod, fork-silent by construction; prod source maps are hidden, shipped as a run artifact and uploaded by the homelab mini, never served (#595) | ADR-067, ADR-082 |
 | Usage analytics | **Self-hosted Umami** (`analytics.orrerylearn.com`), cookieless, PII-free, env-var-gated; same dev/staging/prod ladder | ADR-081, ADR-082 |
 | Physics kernel | `src/lib/physics/` subtree, pure; ESLint deny-by-default import gate (only `$types/*`, `$data/*`, `$lib/physics/*`), no DOM / dynamic import; `systems/` controller layer | RFC-037 §3, ADR-030, ADR-087 |
 | Formula registry + figures | `FormulaDef` registry → Lab, MCP tools and `/ask` schema; `FigureSpec` with `computed \| geometric \| replayed-published` fidelity (kernel emits `computed` only); `Goal` model + coverage CI | RFC-037 §4–§5, A01.2–A01.3 |

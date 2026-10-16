@@ -270,7 +270,7 @@ Image-related scripts split by role. The WebP-ladder + vision scripts live in `s
 
 A self-contained sub-pipeline for `/earth` `/moon` `/mars` Tier-2 (zoom) + Tier-3
 (panorama) + along-route detail. **Runs under Node 22** (the mise-pinned node: `node --import tsx …`)
-— `gdal-async` ships a `node-v115` ABI binding; the shell's Node 25 (ABI 141) fails
+— `npm ci` installs `gdal-async`'s binding for the installing Node (`node-v127` on Node 22); the shell's Node 25 (ABI 141) fails
 with `Cannot find module …/node-v141…/gdal.node`. Each fetcher **self-credits**
 (`upsertProvenanceEntries`) — no separate provenance pass needed for these.
 

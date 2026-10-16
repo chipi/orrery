@@ -50,6 +50,11 @@ concurrency:
   group: docker-e2e-${{ github.ref }}${{ github.event_name == 'schedule' && '-scheduled' || '' }}
   cancel-in-progress: true
 
+# Least privilege by default (#600): jobs that need more (GHCR push, SARIF upload)
+# declare their own `permissions:` block, which replaces this one.
+permissions:
+  contents: read
+
 jobs:
   docker-e2e:
     # Matrix: desktop is sharded across 2 parallel legs, mobile across 4,

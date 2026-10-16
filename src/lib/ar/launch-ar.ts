@@ -8,13 +8,24 @@ import type { ArSceneType } from './ar-scene';
 import type { StationId, Pass } from '../satellite';
 import { audio } from '../audio-state.svelte';
 import { audioRegistry } from '../audio-registry.svelte';
+import * as m from '$lib/paraglide/messages';
 
 // Station-pass summary for the sky-mode hint (#405). Exported for unit testing —
 // pure helpers, no DOM/session state.
-const COMPASS8 = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
-export function compass8(deg: number): string {
+const COMPASS8 = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'] as const;
+export function compass8(deg: number): (typeof COMPASS8)[number] {
   return COMPASS8[Math.round((((deg % 360) + 360) % 360) / 45) % 8];
 }
+const COMPASS_LABEL: Record<(typeof COMPASS8)[number], () => string> = {
+  N: m.ar_compass_n,
+  NE: m.ar_compass_ne,
+  E: m.ar_compass_e,
+  SE: m.ar_compass_se,
+  S: m.ar_compass_s,
+  SW: m.ar_compass_sw,
+  W: m.ar_compass_w,
+  NW: m.ar_compass_nw,
+};
 // Matches iss-pass `staleAfterDays` (H5): past this the propagated position
 // drifts enough to disclose rather than show a confidently-wrong marker.
 const STALE_TLE_DAYS = 14;
@@ -24,13 +35,18 @@ export function formatPass(id: StationId, pass: Pass | null, epochAgeDays = 0): 
   // The marker is propagated from an element set; if that set is old (offline /
   // un-redeployed), say so instead of implying pinpoint accuracy (H-b · #464).
   const stale =
-    epochAgeDays > STALE_TLE_DAYS ? ` — approx (${Math.round(epochAgeDays)}d old TLE)` : '';
-  if (!pass) return `${name}: no pass in 24 h${stale}`;
+    epochAgeDays > STALE_TLE_DAYS
+      ? ` — ${m.ar_pass_stale({ days: Math.round(epochAgeDays) })}`
+      : '';
+  if (!pass) return `${m.ar_pass_none({ name })}${stale}`;
   const mins = Math.max(0, Math.round((pass.start.getTime() - Date.now()) / 60_000));
-  const when = mins === 0 ? 'now' : `in ${mins} min`;
-  return `${name}: ${pass.visible ? 'visible' : 'daytime'} pass ${when}, ${compass8(
-    pass.startAzimuthDeg,
-  )}, max ${Math.round(pass.maxAltitudeDeg)}°${stale}`;
+  const args = {
+    name,
+    when: mins === 0 ? m.ar_pass_now() : m.ar_pass_in_minutes({ minutes: mins }),
+    direction: COMPASS_LABEL[compass8(pass.startAzimuthDeg)](),
+    altitude: Math.round(pass.maxAltitudeDeg),
+  };
+  return `${pass.visible ? m.ar_pass_visible(args) : m.ar_pass_daytime(args)}${stale}`;
 }
 
 let active: {
@@ -48,14 +64,15 @@ let active: {
 // start a second canvas / renderer / session. Guarded in both launchers.
 let launching = false;
 
-// What the user is placing, for the on-screen instruction.
-const SCENE_LABEL: Record<ArSceneType, string> = {
-  explore: 'the Solar System',
-  earth: 'Earth',
-  moon: 'the Moon',
-  mars: 'Mars',
-  iss: 'the ISS',
-  tiangong: 'Tiangong',
+// The on-screen placement instruction — one whole sentence per scene, because
+// the object's grammatical case changes the noun in many of the 14 locales.
+const PLACE_HINT: Record<ArSceneType, () => string> = {
+  explore: m.ar_hint_place_explore,
+  earth: m.ar_hint_place_earth,
+  moon: m.ar_hint_place_moon,
+  mars: m.ar_hint_place_mars,
+  iss: m.ar_hint_place_iss,
+  tiangong: m.ar_hint_place_tiangong,
 };
 
 /** Remove the AR overlay DOM + restore the page (idempotent). */
@@ -107,14 +124,14 @@ export async function launchArScene(type: ArSceneType): Promise<boolean> {
   const exitBtn = document.createElement('button');
   exitBtn.type = 'button';
   exitBtn.className = 'ar-exit-btn';
-  exitBtn.textContent = 'Exit AR';
+  exitBtn.textContent = m.ar_exit();
   exitBtn.onclick = () => exitArScene();
   document.body.appendChild(exitBtn);
 
   // Placement instruction — dismissed once the user taps a surface (onPlaced).
   const hint = document.createElement('div');
   hint.className = 'ar-hint';
-  hint.textContent = `Point at a surface and tap to place ${SCENE_LABEL[type]}`;
+  hint.textContent = PLACE_HINT[type]();
   document.body.appendChild(hint);
 
   // Make the page transparent + hide the flat app content so the native ARKit
@@ -173,13 +190,13 @@ export async function launchSkyScene(): Promise<boolean> {
   const exitBtn = document.createElement('button');
   exitBtn.type = 'button';
   exitBtn.className = 'ar-exit-btn';
-  exitBtn.textContent = 'Exit AR';
+  exitBtn.textContent = m.ar_exit();
   exitBtn.onclick = () => exitArScene();
   document.body.appendChild(exitBtn);
 
   const hint = document.createElement('div');
   hint.className = 'ar-hint';
-  hint.textContent = 'Point your phone at the sky.';
+  hint.textContent = m.ar_hint_sky();
   document.body.appendChild(hint);
 
   document.documentElement.classList.add('ar-active');
@@ -286,15 +303,15 @@ function buildSkyLayerToggles(handle: {
     return b;
   };
   wrap.append(
-    mk('Planets', (v) => handle.setPlanetsVisible(v)),
-    mk('Stars', (v) => handle.setStarsVisible(v)),
-    mk('Figures', (v) => handle.setConstellationsVisible(v)),
-    mk('Nebulae', (v) => handle.setDeepSkyVisible(v)),
-    mk('Rise/set', (v) => handle.setSunEventsVisible(v)),
-    mk('Stations', (v) => handle.setStationsVisible(v)),
+    mk(m.ar_layer_planets(), (v) => handle.setPlanetsVisible(v)),
+    mk(m.ar_layer_stars(), (v) => handle.setStarsVisible(v)),
+    mk(m.ar_layer_figures(), (v) => handle.setConstellationsVisible(v)),
+    mk(m.ar_layer_nebulae(), (v) => handle.setDeepSkyVisible(v)),
+    mk(m.ar_layer_rise_set(), (v) => handle.setSunEventsVisible(v)),
+    mk(m.ar_layer_stations(), (v) => handle.setStationsVisible(v)),
     // Off by default: reveal every label; show the sub-horizon sky.
-    mk('All names', (v) => handle.setAllLabelsVisible(v), false),
-    mk('Below horizon', (v) => handle.setBelowHorizonVisible(v), false),
+    mk(m.ar_layer_all_names(), (v) => handle.setAllLabelsVisible(v), false),
+    mk(m.ar_layer_below_horizon(), (v) => handle.setBelowHorizonVisible(v), false),
   );
   return wrap;
 }

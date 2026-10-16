@@ -19,6 +19,7 @@
  */
 import { createHash, randomBytes, timingSafeEqual } from 'node:crypto';
 import { isAllowed } from './allowlist';
+import { redactEmail } from './redact';
 import { exchangeGoogleCode, googleAuthUrl, type GoogleConfig } from './google';
 import { TokenCore, type AccessClaims } from './tokens';
 
@@ -275,7 +276,7 @@ export class AuthServer {
     // THE gate (spike §4): non-allowlisted → error to the client, no token, and
     // the reason stays server-side (403 semantics carried as access_denied).
     if (!isAllowed(this.cfg.allowlistPath, identity.email)) {
-      console.error(`[lab-api] allowlist DENIED ${identity.email}`);
+      console.error(`[lab-api] allowlist DENIED ${redactEmail(identity.email)}`);
       return redirect({ error: 'access_denied', error_description: 'account not allowlisted' });
     }
 
@@ -346,7 +347,7 @@ export class AuthServer {
     // refresh — removing an email kills access within the access-token TTL.
     if (!isAllowed(this.cfg.allowlistPath, record.email)) {
       this.tokens.revokeRefreshToken(token);
-      console.error(`[lab-api] refresh DENIED for de-allowlisted ${record.email}`);
+      console.error(`[lab-api] refresh DENIED for de-allowlisted ${redactEmail(record.email)}`);
       return err(400, 'invalid_grant', 'account no longer allowlisted');
     }
     // Rotation: old token dies, response carries a successor.

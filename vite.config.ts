@@ -2,7 +2,6 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { paraglideVitePlugin } from '@inlang/paraglide-js';
 import { SvelteKitPWA } from '@vite-pwa/sveltekit';
 import { compression } from 'vite-plugin-compression2';
-import { sentrySvelteKit } from '@sentry/sveltekit';
 import { defineConfig } from 'vitest/config';
 import { loadEnv } from 'vite';
 import { readFileSync } from 'node:fs';
@@ -183,36 +182,6 @@ export default defineConfig(({ mode, command }) => {
         // Paraglide release that makes middleware-splitting SPA-aware,
         // or a custom dynamic-import shim. Documented as a follow-up.
       }),
-      // Prod deploy only (#595): hidden source maps, Sentry debug IDs injected at render
-      // time (so the .br/.gz copies carry the same bytes), uploaded to GlitchTip
-      // (artifact bundles) after the adapter has written build/. A failed upload fails
-      // the build. Maps and their compressed copies are deleted after upload; deploy-prod.yml
-      // also refuses to ship a build/ that still contains any *.map*.
-      ...(process.env.SENTRY_SOURCEMAPS === '1'
-        ? [
-            sentrySvelteKit({
-              adapter: 'other',
-              autoInstrument: false,
-              sentryUrl: process.env.SENTRY_URL,
-              org: process.env.SENTRY_ORG,
-              project: process.env.SENTRY_PROJECT,
-              authToken: process.env.SENTRY_AUTH_TOKEN,
-              release: { name: process.env.PUBLIC_SENTRY_RELEASE },
-              sourcemaps: {
-                filesToDeleteAfterUpload: [
-                  './build/**/*.map',
-                  './build/**/*.map.br',
-                  './build/**/*.map.gz',
-                  './.svelte-kit/output/**/*.map',
-                ],
-              },
-              errorHandler: (err: Error) => {
-                throw err;
-              },
-              telemetry: false,
-            }),
-          ]
-        : []),
       sveltekit(),
       // Emit .br and .gz alongside every text-ish asset at build time
       // (GH #273 / W3). nginx serves them with brotli_static / gzip_static
@@ -503,6 +472,12 @@ export default defineConfig(({ mode, command }) => {
     // optimisation; see the paraglideVitePlugin block above.
     build: {
       chunkSizeWarningLimit: 700,
+      // Prod deploy only (#595): hidden source maps (no sourceMappingURL comment, so
+      // browsers never fetch them). deploy-prod.yml then runs
+      // scripts/sourcemaps/package.mjs: sentry-cli injects debug ids, the touched JS
+      // is recompressed, the maps go into a run artifact for the homelab uploader,
+      // and every *.map* is removed from build/ before the rsync.
+      sourcemap: process.env.SENTRY_SOURCEMAPS === '1' ? 'hidden' : false,
     },
     test: {
       include: ['src/**/*.{test,spec}.{js,ts}', 'scripts/**/*.test.ts', 'server/**/*.test.ts'],

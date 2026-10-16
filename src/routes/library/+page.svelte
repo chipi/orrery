@@ -33,17 +33,20 @@
     type LibrarySummary,
   } from '$lib/library-grouping';
   import * as m from '$lib/paraglide/messages';
+  import { dataLoadFailed } from '$lib/data/core';
 
   let logos = $state<SourceLogosManifest | null>(null);
   let provenance = $state<LinkProvenanceManifest | null>(null);
   let loaded = $state(false);
 
   $effect(() => {
-    void Promise.all([getSourceLogos(), getLinkProvenanceManifest()]).then(([s, p]) => {
-      logos = s;
-      provenance = p;
-      loaded = true;
-    });
+    void Promise.all([getSourceLogos(), getLinkProvenanceManifest()])
+      .then(([s, p]) => {
+        logos = s;
+        provenance = p;
+        loaded = true;
+      })
+      .catch(dataLoadFailed);
   });
 
   let groups = $derived<LibraryGroup[]>(

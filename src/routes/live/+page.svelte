@@ -4,6 +4,7 @@
   import MediaPlayer from '$lib/components/MediaPlayer.svelte';
   import { posterUrlFor, type VideoProvenanceEntry } from '$lib/video-provenance';
   import { getLiveFeeds, getNextLaunch, type LiveFeed } from '$lib/live-feeds';
+  import { dataLoadFailed } from '$lib/data/core';
 
   let feeds = $state<LiveFeed[]>([]);
   let nextLaunch = $state<{ name: string; net: string; source_url: string } | null>(null);
@@ -17,11 +18,13 @@
 
   $effect(() => {
     const now = new Date();
-    void Promise.all([getLiveFeeds(now), getNextLaunch(now)]).then(([f, n]) => {
-      feeds = f;
-      nextLaunch = n;
-      loaded = true;
-    });
+    void Promise.all([getLiveFeeds(now), getNextLaunch(now)])
+      .then(([f, n]) => {
+        feeds = f;
+        nextLaunch = n;
+        loaded = true;
+      })
+      .catch(dataLoadFailed);
   });
 
   const issPins = $derived(feeds.filter((f) => f.kind === 'iss-permanent'));

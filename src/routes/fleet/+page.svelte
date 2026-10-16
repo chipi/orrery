@@ -31,6 +31,7 @@
     isError,
     isSuccess,
   } from '$lib/types/remote-data';
+  import { dataLoadFailed } from '$lib/data/core';
 
   // ─── State ───────────────────────────────────────────────────────
   // RemoteData<E,T> per #330 C.2. `entries` is the success-branch
@@ -361,7 +362,9 @@
     // Pre-warm hero override cache so card covers pick up override
     // slots on first paint; safe to fire-and-forget.
     void loadHeroOverrides('fleet');
-    void getBadges().then((b) => (badges = b));
+    void getBadges()
+      .then((b) => (badges = b))
+      .catch(dataLoadFailed);
     try {
       entriesRequest = rdSuccess(await getFleetIndex());
     } catch (err) {

@@ -12,6 +12,7 @@
   import type { Rocket } from '$types/rocket';
   import { agencyToLogoEntries } from '$lib/agency-logo';
   import { localeFromPage } from '$lib/locale';
+  import { dataLoadFailed } from '$lib/data/core';
 
   interface Props {
     ids: string[];
@@ -24,12 +25,14 @@
     const wanted = ids;
     const locale = localeFromPage(page);
     let alive = true;
-    void getRockets(locale).then((all) => {
-      if (!alive) return;
-      rows = wanted
-        .map((id) => all.find((r) => r.id === id))
-        .filter((r): r is Rocket => r !== undefined);
-    });
+    void getRockets(locale)
+      .then((all) => {
+        if (!alive) return;
+        rows = wanted
+          .map((id) => all.find((r) => r.id === id))
+          .filter((r): r is Rocket => r !== undefined);
+      })
+      .catch(dataLoadFailed);
     return () => {
       alive = false;
     };

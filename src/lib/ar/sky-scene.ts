@@ -47,6 +47,7 @@ import {
 } from '../satellite';
 import { arrowScreenAngle, arrowEdgePlacement, spreadByAngle } from './find-arrow-layout';
 import { constellationName } from '../universe/iau-constellations';
+import { dataLoadFailed } from '$lib/data/core';
 
 // How far (metres) to place the markers. Far enough to read as sky; re-anchored
 // to the camera each frame so walking doesn't shift the angular direction.
@@ -1736,151 +1737,159 @@ export function createSkyScene(
 
     // Load the constellation figures (RFC-041 S1) + size the shared buffer. Async,
     // non-blocking: the sky is usable immediately and the figures pop in when ready.
-    void loadConstellationFigures(base).then((figs) => {
-      if (disposed) return;
-      constellationFigures = figs;
-      const totalVerts = figs.reduce((s, f) => s + Math.floor(f.vertices.length / 3), 0);
-      if (totalVerts === 0) return;
-      constellationPositions = new Float32Array(totalVerts * 3);
-      constellationLines.geometry.setAttribute(
-        'position',
-        new THREE.BufferAttribute(constellationPositions, 3),
-      );
-      // Dedup the figure vertices into unique stars for the dots (#488). Vertices
-      // at the same star share XYZ exactly (shared segment endpoints), so a rounded
-      // key collapses them.
-      const seen = new Set<string>();
-      const uniq: number[] = [];
-      for (const f of figs) {
-        const v = f.vertices;
-        for (let k = 0; k + 2 < v.length; k += 3) {
-          const key = `${v[k].toFixed(1)},${v[k + 1].toFixed(1)},${v[k + 2].toFixed(1)}`;
-          if (seen.has(key)) continue;
-          seen.add(key);
-          uniq.push(v[k], v[k + 1], v[k + 2]);
+    void loadConstellationFigures(base)
+      .then((figs) => {
+        if (disposed) return;
+        constellationFigures = figs;
+        const totalVerts = figs.reduce((s, f) => s + Math.floor(f.vertices.length / 3), 0);
+        if (totalVerts === 0) return;
+        constellationPositions = new Float32Array(totalVerts * 3);
+        constellationLines.geometry.setAttribute(
+          'position',
+          new THREE.BufferAttribute(constellationPositions, 3),
+        );
+        // Dedup the figure vertices into unique stars for the dots (#488). Vertices
+        // at the same star share XYZ exactly (shared segment endpoints), so a rounded
+        // key collapses them.
+        const seen = new Set<string>();
+        const uniq: number[] = [];
+        for (const f of figs) {
+          const v = f.vertices;
+          for (let k = 0; k + 2 < v.length; k += 3) {
+            const key = `${v[k].toFixed(1)},${v[k + 1].toFixed(1)},${v[k + 2].toFixed(1)}`;
+            if (seen.has(key)) continue;
+            seen.add(key);
+            uniq.push(v[k], v[k + 1], v[k + 2]);
+          }
         }
-      }
-      constellationStarXyz = uniq;
-      constellationDotPositions = new Float32Array(uniq.length);
-      constellationDots.geometry.setAttribute(
-        'position',
-        new THREE.BufferAttribute(constellationDotPositions, 3),
-      );
-      // One name label per CONSTELLATION (aggregate all figures that share a code,
-      // e.g. the two Serpens halves), at the combined vertex centroid.
-      const byCon = new Map<string, { cx: number; cy: number; cz: number; n: number }>();
-      for (const f of figs) {
-        const v = f.vertices;
-        let acc = byCon.get(f.con);
-        if (!acc) byCon.set(f.con, (acc = { cx: 0, cy: 0, cz: 0, n: 0 }));
-        for (let k = 0; k + 2 < v.length; k += 3) {
-          acc.cx += v[k];
-          acc.cy += v[k + 1];
-          acc.cz += v[k + 2];
-          acc.n++;
+        constellationStarXyz = uniq;
+        constellationDotPositions = new Float32Array(uniq.length);
+        constellationDots.geometry.setAttribute(
+          'position',
+          new THREE.BufferAttribute(constellationDotPositions, 3),
+        );
+        // One name label per CONSTELLATION (aggregate all figures that share a code,
+        // e.g. the two Serpens halves), at the combined vertex centroid.
+        const byCon = new Map<string, { cx: number; cy: number; cz: number; n: number }>();
+        for (const f of figs) {
+          const v = f.vertices;
+          let acc = byCon.get(f.con);
+          if (!acc) byCon.set(f.con, (acc = { cx: 0, cy: 0, cz: 0, n: 0 }));
+          for (let k = 0; k + 2 < v.length; k += 3) {
+            acc.cx += v[k];
+            acc.cy += v[k + 1];
+            acc.cz += v[k + 2];
+            acc.n++;
+          }
         }
-      }
-      for (const [con, a] of byCon) {
-        if (a.n === 0) continue;
-        const label = makeTextSprite(constellationName(con), 'constellation');
-        constellationLabelGroup.add(label);
-        constellationLabels.push({ sprite: label, x: a.cx / a.n, y: a.cy / a.n, z: a.cz / a.n });
-      }
-      recomputeConstellations();
-      constellationLines.visible = showConstellations;
-      constellationDots.visible = showConstellations;
-      constellationLabelGroup.visible = showConstellations;
-    });
+        for (const [con, a] of byCon) {
+          if (a.n === 0) continue;
+          const label = makeTextSprite(constellationName(con), 'constellation');
+          constellationLabelGroup.add(label);
+          constellationLabels.push({ sprite: label, x: a.cx / a.n, y: a.cy / a.n, z: a.cz / a.n });
+        }
+        recomputeConstellations();
+        constellationLines.visible = showConstellations;
+        constellationDots.visible = showConstellations;
+        constellationLabelGroup.visible = showConstellations;
+      })
+      .catch(dataLoadFailed);
 
     // Load the bright named stars (RFC-041 S2) + build one sprite each (+ a label
     // on the brightest). Async, non-blocking, same as the figures.
-    void loadBrightStars(base).then((stars: BrightStar[]) => {
-      if (disposed || !stars.length) return;
-      for (const st of stars) {
-        // Brightest few get spikes; the rest are hard-core dots.
-        const sprite = new THREE.Sprite(st.mag < 0.5 ? starSpikeMaterial : starDotMaterial);
-        const sc = starScale(st.mag) * (st.mag < 0.5 ? 1.6 : 1);
-        sprite.scale.set(sc, sc, 1);
-        starGroup.add(sprite);
-        // Label EVERY named star (operator: "each star clearly labeled") — the 62
-        // catalog stars all have proper names; the anonymous figure-vertex dots
-        // can't be named, so the constellation NAME labels below cover those areas.
-        let label: THREE.Sprite | null = null;
-        if (st.proper) {
-          label = makeTextSprite(st.proper, 'star');
-          starGroup.add(label); // sibling, not child — so it doesn't inherit `sc`
+    void loadBrightStars(base)
+      .then((stars: BrightStar[]) => {
+        if (disposed || !stars.length) return;
+        for (const st of stars) {
+          // Brightest few get spikes; the rest are hard-core dots.
+          const sprite = new THREE.Sprite(st.mag < 0.5 ? starSpikeMaterial : starDotMaterial);
+          const sc = starScale(st.mag) * (st.mag < 0.5 ? 1.6 : 1);
+          sprite.scale.set(sc, sc, 1);
+          starGroup.add(sprite);
+          // Label EVERY named star (operator: "each star clearly labeled") — the 62
+          // catalog stars all have proper names; the anonymous figure-vertex dots
+          // can't be named, so the constellation NAME labels below cover those areas.
+          let label: THREE.Sprite | null = null;
+          if (st.proper) {
+            label = makeTextSprite(st.proper, 'star');
+            starGroup.add(label); // sibling, not child — so it doesn't inherit `sc`
+          }
+          // The ~15 brightest stars are named by default; the rest wait for "All names".
+          starSprites.push({ sprite, label, x: st.x, y: st.y, z: st.z, primary: st.mag < 1.5 });
         }
-        // The ~15 brightest stars are named by default; the rest wait for "All names".
-        starSprites.push({ sprite, label, x: st.x, y: st.y, z: st.z, primary: st.mag < 1.5 });
-      }
-      recomputeStars();
-      starGroup.visible = showStars;
-    });
+        recomputeStars();
+        starGroup.visible = showStars;
+      })
+      .catch(dataLoadFailed);
 
     // Load the deep-sky objects (#488) — a soft colour glow + name label each.
-    void loadDeepSky(base).then((objs: DeepSkyObject[]) => {
-      if (disposed || !objs.length) return;
-      for (const o of objs) {
-        const sprite = new THREE.Sprite(
-          new THREE.SpriteMaterial({
-            map: deepSkyTexture(o.category), // shaped per category (ellipse/speckle/ring/cloud)
-            color: deepSkyColor(o.category),
-            transparent: true,
-            // Faint additive so they read as delicate clouds, not lens dirt.
-            opacity: 0.32,
-            depthTest: false,
-            depthWrite: false,
-            blending: THREE.AdditiveBlending,
-          }),
-        );
-        // Small, believable glows (brighter/lower-mag ones a touch larger) — no
-        // more multi-degree smudges bigger than the constellations themselves.
-        const sc = Math.max(1.5, Math.min(3, 3 - o.mag * 0.14));
-        sprite.scale.set(sc, sc, 1);
-        sprite.renderOrder = -6; // behind stars, above constellation lines
-        deepSkyGroup.add(sprite);
-        let label: THREE.Sprite | null = null;
-        if (o.name) {
-          label = makeTextSprite(o.name, 'deepsky');
-          deepSkyGroup.add(label);
+    void loadDeepSky(base)
+      .then((objs: DeepSkyObject[]) => {
+        if (disposed || !objs.length) return;
+        for (const o of objs) {
+          const sprite = new THREE.Sprite(
+            new THREE.SpriteMaterial({
+              map: deepSkyTexture(o.category), // shaped per category (ellipse/speckle/ring/cloud)
+              color: deepSkyColor(o.category),
+              transparent: true,
+              // Faint additive so they read as delicate clouds, not lens dirt.
+              opacity: 0.32,
+              depthTest: false,
+              depthWrite: false,
+              blending: THREE.AdditiveBlending,
+            }),
+          );
+          // Small, believable glows (brighter/lower-mag ones a touch larger) — no
+          // more multi-degree smudges bigger than the constellations themselves.
+          const sc = Math.max(1.5, Math.min(3, 3 - o.mag * 0.14));
+          sprite.scale.set(sc, sc, 1);
+          sprite.renderOrder = -6; // behind stars, above constellation lines
+          deepSkyGroup.add(sprite);
+          let label: THREE.Sprite | null = null;
+          if (o.name) {
+            label = makeTextSprite(o.name, 'deepsky');
+            deepSkyGroup.add(label);
+          }
+          // Real-named objects (Orion Nebula, Andromeda) label by default; bare
+          // catalog IDs (NGC 3351) wait for "All names" so they don't read as debug.
+          deepSkyObjects.push({
+            sprite,
+            label,
+            x: o.x,
+            y: o.y,
+            z: o.z,
+            primary: !!o.name && !isCatalogName(o.name),
+          });
         }
-        // Real-named objects (Orion Nebula, Andromeda) label by default; bare
-        // catalog IDs (NGC 3351) wait for "All names" so they don't read as debug.
-        deepSkyObjects.push({
-          sprite,
-          label,
-          x: o.x,
-          y: o.y,
-          z: o.z,
-          primary: !!o.name && !isCatalogName(o.name),
-        });
-      }
-      recomputeDeepSky();
-      deepSkyGroup.visible = showDeepSky;
-    });
+        recomputeDeepSky();
+        deepSkyGroup.visible = showDeepSky;
+      })
+      .catch(dataLoadFailed);
 
     // Resolve fresh TLEs, then surface each station's next visible pass (#405).
     for (const id of STATION_IDS) {
-      void resolveStationTle(id).then((tle) => {
-        // Exited before the fetch resolved → don't touch the torn-down scene or
-        // re-surface the (removed) pass hint.
-        if (disposed) return;
-        const sm = stationMarkers.get(id);
-        if (!sm) return;
-        sm.tle = tle;
-        if (observer) {
-          // How old the element set is now — the DOM hint flags stale positions.
-          const epochAgeDays = Math.abs(julianDay(new Date()) - tle.epochJd);
-          opts.onPass?.(
-            id,
-            nextPassForTle(tle, new Date(), observer.latDeg, observer.lonDeg, {
-              hoursAhead: 24,
-              minMaxAltDeg: 10,
-            }),
-            epochAgeDays,
-          );
-        }
-      });
+      void resolveStationTle(id)
+        .then((tle) => {
+          // Exited before the fetch resolved → don't touch the torn-down scene or
+          // re-surface the (removed) pass hint.
+          if (disposed) return;
+          const sm = stationMarkers.get(id);
+          if (!sm) return;
+          sm.tle = tle;
+          if (observer) {
+            // How old the element set is now — the DOM hint flags stale positions.
+            const epochAgeDays = Math.abs(julianDay(new Date()) - tle.epochJd);
+            opts.onPass?.(
+              id,
+              nextPassForTle(tle, new Date(), observer.latDeg, observer.lonDeg, {
+                hoursAhead: 24,
+                minMaxAltDeg: 10,
+              }),
+              epochAgeDays,
+            );
+          }
+        })
+        .catch(dataLoadFailed);
     }
 
     renderer.setAnimationLoop(() => {

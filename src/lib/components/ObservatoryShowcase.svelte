@@ -12,6 +12,7 @@
   image-provenance.json from Phase D — no new attribution required.
 -->
 <script lang="ts">
+  import { dataLoadFailed } from '$lib/data/core';
   import { base } from '$app/paths';
   import { onMount } from 'svelte';
   import * as m from '$lib/paraglide/messages';
@@ -28,6 +29,16 @@
   let loading = $state(true);
 
   onMount(async () => {
+    try {
+      await loadShowcase();
+    } catch (err) {
+      dataLoadFailed(err);
+    } finally {
+      loading = false;
+    }
+  });
+
+  async function loadShowcase(): Promise<void> {
     const observatories = await getFleetByCategory('observatory');
     const resolved = await Promise.all(
       observatories.map(async (entry) => {
@@ -41,8 +52,7 @@
       // observatories first so the strip reads as a timeline of how
       // our cosmic vision has expanded.
       .sort((a, b) => a.entry.first_flight.localeCompare(b.entry.first_flight));
-    loading = false;
-  });
+  }
 </script>
 
 <section class="observatory-showcase" aria-label={m.observatory_showcase_aria()}>

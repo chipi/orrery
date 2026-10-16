@@ -15,6 +15,7 @@
   fallback per ADR-017 already handles missing locale overlays).
 -->
 <script lang="ts">
+  import { dataLoadFailed } from '$lib/data/core';
   import { onMount } from 'svelte';
   import { base } from '$app/paths';
   import { page } from '$app/state';
@@ -46,7 +47,11 @@
   const locale = $derived(localeFromPage(page));
 
   onMount(async () => {
-    sectionData = await getScienceSection(tab, section, locale);
+    try {
+      sectionData = await getScienceSection(tab, section, locale);
+    } catch (err) {
+      dataLoadFailed(err);
+    }
   });
 
   const previewParagraph = $derived(sectionData?.narrative_101?.[0] ?? null);

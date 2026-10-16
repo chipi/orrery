@@ -9,6 +9,7 @@
   import ScienceCard from './ScienceCard.svelte';
   import WhyPopover from './WhyPopover.svelte';
   import type { ScienceTabId } from '$types/science';
+  import { dataLoadFailed } from '$lib/data/core';
 
   // LEARN folds into SCIENCE — Phase 4 cleanup, less crowded tab strip.
   // 2026-06-21 — SCIENCE tab removed. Chips → overview bottom;
@@ -47,9 +48,11 @@
   $effect(() => {
     if (sun && !galleryLoaded) {
       galleryLoaded = true;
-      void getSunGallery().then((urls) => {
-        gallery = urls;
-      });
+      void getSunGallery()
+        .then((urls) => {
+          gallery = urls;
+        })
+        .catch(dataLoadFailed);
       // Warm the /missions + /fleet index for the MISSIONS tab linkifier.
       void loadMissionIndex();
     }

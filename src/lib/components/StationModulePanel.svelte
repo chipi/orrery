@@ -13,6 +13,7 @@
   import WhyPopover from './WhyPopover.svelte';
   import { spacecraftDiagramPath } from '$lib/spacecraft-diagrams';
   import { loadLadder, ladderSources } from '$lib/image-srcset';
+  import { dataLoadFailed } from '$lib/data/core';
 
   type StationLinks = NonNullable<StationModule['links']>;
   type Tab = 'overview' | 'gallery' | 'anatomy' | 'learn';
@@ -42,9 +43,11 @@
     gallery = [];
     if (!id) return;
     let active = true;
-    void galleryFetcher(id).then((urls) => {
-      if (active) gallery = urls;
-    });
+    void galleryFetcher(id)
+      .then((urls) => {
+        if (active) gallery = urls;
+      })
+      .catch(dataLoadFailed);
     return () => {
       active = false;
     };
@@ -56,7 +59,9 @@
   // Responsive WebP ladder for the anatomy diagram once the manifest loads;
   // plain webp until then / when no ladder exists (RFC-030 Slice 3).
   let ladderReady = $state(false);
-  loadLadder().then(() => (ladderReady = true));
+  loadLadder()
+    .then(() => (ladderReady = true))
+    .catch(dataLoadFailed);
   let diagramLadder = $derived(ladderReady && diagramPath ? ladderSources(diagramPath) : null);
 
   let linksByTier = $derived.by(() => {

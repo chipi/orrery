@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { dataLoadFailed } from '$lib/data/core';
   /*
    * /earth — unified surface + orbital route (#290).
    *
@@ -112,12 +113,16 @@
   }
 
   onMount(async () => {
-    const [r, objs] = await Promise.all([
-      getOrbitRegimes(getLocale()),
-      import('$lib/data').then((d) => d.earthObjects()),
-    ]);
-    regimes = r;
-    earthObjects = objs;
+    try {
+      const [r, objs] = await Promise.all([
+        getOrbitRegimes(getLocale()),
+        import('$lib/data').then((d) => d.earthObjects()),
+      ]);
+      regimes = r;
+      earthObjects = objs;
+    } catch (err) {
+      dataLoadFailed(err);
+    }
   });
 
   // Resolve `?regime=GEO` once regimes load. void's the dep so the

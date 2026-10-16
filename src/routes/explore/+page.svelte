@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { dataLoadFailed } from '$lib/data/core';
   import { onMount, onDestroy, untrack } from 'svelte';
   import { exploreContext } from '$lib/explore-context';
   import { page } from '$app/state';
@@ -389,7 +390,11 @@
   // use). The deep-link `?regime=` resolver fires once the regimes
   // land.
   onMount(async () => {
-    exploreRegimes = await getOrbitRegimesExplore(getLocale());
+    try {
+      exploreRegimes = await getOrbitRegimesExplore(getLocale());
+    } catch (err) {
+      dataLoadFailed(err);
+    }
   });
   $effect(() => {
     void exploreRegimes;

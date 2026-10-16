@@ -188,6 +188,7 @@
   // change without restructuring the scene.
   import defaultScenarioBase from '$data/scenarios/orrery-1.json';
   import defaultScenarioOverlay from '$i18nSrc/en-US/scenarios/orrery-1.json';
+  import { dataLoadFailed } from '$lib/data/core';
 
   const DEFAULT_SCENARIO_ID = 'orrery-1';
   // Whitelist of synthesised teaching scenarios (live in
@@ -303,11 +304,13 @@
     if (!launcher) return;
     // Load the profile first, THEN swap the opening for the launch overlay — no
     // flash of the cruise scene during the fetch.
-    void loadLaunchProfile(launcher.id, fetch, base, launcher.name).then((p) => {
-      if (!p) return;
-      launchProfile = p;
-      dispatchPhase({ type: 'startLaunch' });
-    });
+    void loadLaunchProfile(launcher.id, fetch, base, launcher.name)
+      .then((p) => {
+        if (!p) return;
+        launchProfile = p;
+        dispatchPhase({ type: 'startLaunch' });
+      })
+      .catch(dataLoadFailed);
   }
   // ?launch=1 deep-link → auto-start once the URL-requested mission is loaded.
   const launchDeepParams =
@@ -440,9 +443,11 @@
       descentProfile = null;
       return;
     }
-    void loadDescentProfile(id, fetch, base).then((p) => {
-      if (mission.id === id) descentProfile = p;
-    });
+    void loadDescentProfile(id, fetch, base)
+      .then((p) => {
+        if (mission.id === id) descentProfile = p;
+      })
+      .catch(dataLoadFailed);
   });
   function edlSystemLabel(p: DescentProfile): string {
     const kinds = new Set<EDLPhaseKind>(p.phases.map((x) => x.kind));

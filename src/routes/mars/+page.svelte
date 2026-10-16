@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { dataLoadFailed } from '$lib/data/core';
   // /mars is now a thin shell over the shared SurfaceScene component
   // (ADR-072 / #283 Slice 2). Planet-specific config (texture URL,
   // ambient tint, atmosphere shell, axial tilt, lander model builder,
@@ -205,12 +206,16 @@
   }
 
   onMount(async () => {
-    const [r, sites] = await Promise.all([
-      getOrbitRegimesMars(getLocale()),
-      getMarsSites(getLocale()),
-    ]);
-    regimes = r;
-    marsOrbiterSites = sites.filter((s) => s.kind === 'orbiter');
+    try {
+      const [r, sites] = await Promise.all([
+        getOrbitRegimesMars(getLocale()),
+        getMarsSites(getLocale()),
+      ]);
+      regimes = r;
+      marsOrbiterSites = sites.filter((s) => s.kind === 'orbiter');
+    } catch (err) {
+      dataLoadFailed(err);
+    }
   });
 
   // ?regime=AREOSTATIONARY deep-link resolver.

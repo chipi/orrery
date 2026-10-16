@@ -4,6 +4,7 @@
   import * as m from '$lib/paraglide/messages';
   import { getImageAlt } from '$lib/image-alt';
   import { getLocale } from '$lib/paraglide/runtime';
+  import { dataLoadFailed } from '$lib/data/core';
 
   // Localized titles for the canonical chapter ids — the story JSON
   // files use a fixed vocabulary of chapter.id values (hardware /
@@ -51,10 +52,12 @@
   // in that case badges fall back to a neutral "CREDIT" pill.
   let provenanceIndex: Map<string, ImageProvenanceEntry> = $state(new Map());
   $effect(() => {
-    void getImageProvenanceManifest().then((m) => {
-      if (!m) return;
-      provenanceIndex = new Map(m.entries.map((e) => [e.path, e]));
-    });
+    void getImageProvenanceManifest()
+      .then((m) => {
+        if (!m) return;
+        provenanceIndex = new Map(m.entries.map((e) => [e.path, e]));
+      })
+      .catch(dataLoadFailed);
   });
 
   // Agency → display name + accent colour for the badge. Anything not

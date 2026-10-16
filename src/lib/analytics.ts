@@ -196,6 +196,9 @@ export const EVENT_NAMES = [
   // the real failure rate is measurable instead of only inferable from nginx
   // per-file 404 bursts. `status` = the HTTP status (or null for a network error).
   'i18n-bundle-load-failed',
+  // Any other /data/ JSON that failed after get()'s retries (#554): once per URL per
+  // session, `url` = the site-relative path. The section it fed stays empty.
+  'data-load-failed',
 ] as const;
 
 export type EventName = (typeof EVENT_NAMES)[number];

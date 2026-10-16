@@ -22,6 +22,7 @@
   import { colorNameForKelvin } from '$lib/universe/anonymous-star';
   import { getConstellationLines, type LocalizedNamedStar, type ExoplanetSystem } from '$lib/data';
   import * as m from '$lib/paraglide/messages';
+  import { dataLoadFailed } from '$lib/data/core';
 
   type Tab = 'overview' | 'technical' | 'system';
   type Props = {
@@ -93,10 +94,12 @@
       const con = star.con;
       const forId = star.id;
       if (con) {
-        void getConstellationLines().then((all) => {
-          if (star && star.id === forId)
-            conVertices = all.find((c) => c.con === con)?.vertices ?? null;
-        });
+        void getConstellationLines()
+          .then((all) => {
+            if (star && star.id === forId)
+              conVertices = all.find((c) => c.con === con)?.vertices ?? null;
+          })
+          .catch(dataLoadFailed);
       }
     }
   });

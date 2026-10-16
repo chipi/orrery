@@ -15,6 +15,7 @@
   import ScienceCard from './ScienceCard.svelte';
   import WhyPopover from './WhyPopover.svelte';
   import type { ScienceTabId } from '$types/science';
+  import { dataLoadFailed } from '$lib/data/core';
 
   /** /science cross-sections relevant to small bodies — eccentric, often
    * inclined orbits with extreme apsides. */
@@ -115,13 +116,17 @@
       gallery = [];
       overlay = null;
       cardOpen = false;
-      void getSmallBodyGallery(body.id).then((urls) => {
-        if (body && body.id === lastId) gallery = urls;
-      });
+      void getSmallBodyGallery(body.id)
+        .then((urls) => {
+          if (body && body.id === lastId) gallery = urls;
+        })
+        .catch(dataLoadFailed);
       const fetchId = body.id;
-      void getSmallBodyI18n(loc, fetchId).then((o) => {
-        if (body && body.id === lastId) overlay = o;
-      });
+      void getSmallBodyI18n(loc, fetchId)
+        .then((o) => {
+          if (body && body.id === lastId) overlay = o;
+        })
+        .catch(dataLoadFailed);
       // Warm /missions + /fleet index for the MISSIONS tab linkifier.
       void loadMissionIndex();
     }

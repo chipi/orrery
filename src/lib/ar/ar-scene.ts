@@ -24,6 +24,7 @@ import { arHaptic } from './ar-haptics';
 import { scheduleArNarration, type ArNarratorHandle } from './ar-narrator';
 import { audioEngine } from '../sensory/audio-engine';
 import { audioBus } from '../audio-bus';
+import { dataLoadFailed } from '$lib/data/core';
 
 export type ArSceneType = 'explore' | 'earth' | 'moon' | 'mars' | 'iss' | 'tiangong';
 
@@ -324,11 +325,13 @@ export function createArScene(
     // Station proxies rebuild themselves module-by-module in launch order (#408).
     if (stationRoot && (type === 'iss' || type === 'tiangong')) {
       const sr = stationRoot;
-      void loadStationEpochs(type).then((epochs) => {
-        if (disposed || !placed) return;
-        assembly = startArStationAssembly(sr, epochs);
-        lastAssemblyMs = 0;
-      });
+      void loadStationEpochs(type)
+        .then((epochs) => {
+          if (disposed || !placed) return;
+          assembly = startArStationAssembly(sr, epochs);
+          lastAssemblyMs = 0;
+        })
+        .catch(dataLoadFailed);
     }
     opts.onPlaced?.();
   }
@@ -354,7 +357,9 @@ export function createArScene(
     if (realEarth) {
       void getObserverLocation().then((loc) => realEarth?.setUserPin(loc.latDeg, loc.lonDeg));
       for (const id of STATION_IDS) {
-        void resolveStationTle(id).then((tle) => stationTles.set(id, tle));
+        void resolveStationTle(id)
+          .then((tle) => stationTles.set(id, tle))
+          .catch(dataLoadFailed);
       }
     }
     canvas.addEventListener('pointerdown', tapHandler);

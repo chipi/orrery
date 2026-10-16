@@ -84,19 +84,23 @@ export function staticClients(cfg: LabApiConfig): StaticClient[] {
 /**
  * Sliding-window rate limit (pre-auth endpoints). Behind the Caddy vhost every
  * request arrives from 127.0.0.1, so keying on remoteAddress alone would be one
- * GLOBAL bucket for the whole internet (holistic MAJOR-2) — the true client is
- * the first X-Forwarded-For hop, trustable here because only loopback Caddy can
- * reach the port. Keys are attacker-influenced, so the map is pruned: emptied
- * windows are dropped, and a full sweep runs whenever the map grows past the
- * cap. Limit read lazily so tests can vary it per server instance.
+ * GLOBAL bucket for the whole internet (holistic MAJOR-2). The client is the
+ * `X-Orrery-Client-Ip` header, which the vhost (ops/caddy/orrery-lab-api.caddy)
+ * sets from Caddy's resolved `{client_ip}` and so overwrites whatever the client
+ * sent; only loopback Caddy can reach the port. NOT the first X-Forwarded-For
+ * hop: the edge trusts Cloudflare and appends to an incoming XFF, so the first
+ * hop is whatever the client wrote, and rotating it bypassed the limit (#597).
+ * Keys are attacker-influenced, so the map is pruned: emptied windows are
+ * dropped, and a full sweep runs whenever the map grows past the cap. Limit read
+ * lazily so tests can vary it per server instance.
  */
 const windows = new Map<string, number[]>();
 const MAX_RATE_KEYS = 10_000;
 
 function clientKey(req: IncomingMessage): string {
-  const xff = req.headers['x-forwarded-for'];
-  const first = (Array.isArray(xff) ? xff[0] : xff)?.split(',')[0].trim();
-  return first || req.socket.remoteAddress || 'unknown';
+  const h = req.headers['x-orrery-client-ip'];
+  const ip = (Array.isArray(h) ? h[0] : h)?.trim();
+  return ip || req.socket.remoteAddress || 'unknown';
 }
 
 function rateLimited(key: string): boolean {

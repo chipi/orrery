@@ -18,5 +18,10 @@
 # Rollback: rm /etc/caddy/sites/orrery-lab-api.caddy && sudo systemctl reload caddy.
 lab-api.orrerylearn.com {
 	import hardened
-	reverse_proxy 127.0.0.1:8094
+	reverse_proxy 127.0.0.1:8094 {
+		# lab-api's pre-auth rate limit keys on this. {client_ip} already applies
+		# the edge's Cloudflare trusted_proxies; header_up REPLACES any value the
+		# client sent, unlike X-Forwarded-For, which the edge appends to (#597).
+		header_up X-Orrery-Client-Ip {client_ip}
+	}
 }

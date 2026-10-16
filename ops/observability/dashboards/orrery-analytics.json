@@ -16,8 +16,9 @@
         "name": "ds",
         "label": "Umami Postgres",
         "type": "datasource",
+        "regex": "/^Umami/",
         "query": "grafana-postgresql-datasource",
-        "current": {},
+        "current": {"selected": true, "text": "Umami (Postgres)", "value": "umami-pg"},
         "hide": 0
       },
       {

@@ -67,6 +67,9 @@ So: **deploy the batch, then re-walk these notes** — the residual is the real 
    input key (17 formulas + wiring depend on it).
 4. **Ordering:** **move `engines-of-the-world` up the ladder** (earlier tier) — impact unclear
    but the current order feels wrong; re-tier so engines appear before they're first referenced.
+5. **Threaded example (T2)** (operator 2026-10-16): **one worked example shared by every goal's
+   formula cards**, not per-goal. FB1–FB6 ship in the content-focused PR after #611
+   (`2026-10-16-next-pr-content-scope.md`).
 
 ## Clarifications needed (before building)
 1. **Diagrams (T1):** are these tweaks to the existing `FigureRenderer` per-figure specs, or a

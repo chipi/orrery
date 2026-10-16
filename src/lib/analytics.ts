@@ -142,6 +142,10 @@ export const EVENT_NAMES = [
   'app-load',
   'sw-activated',
   'sw-install-failed',
+  // The reason behind a failed install (#588), posted by static/sw-install-report.js
+  // from inside the SW: { version, name, message } — e.g. a workbox
+  // bad-precaching-response with the URL and status, or a QuotaExceededError.
+  'sw-install-error',
   // ── Journey instrumentation (2026-09-10). The registry above answers
   // "what is popular"; these answer "did the visitor get anywhere". Each one
   // exists because a specific question was unanswerable without it:

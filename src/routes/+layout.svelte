@@ -280,6 +280,12 @@
       // failed install (iOS CacheStorage quota, fetch error) is VISIBLE in
       // analytics — that's the silent signal a device is about to freeze on
       // the old build. `redundant` before ever reaching `activated` = failure.
+      // …and WHY it failed: static/sw-install-report.js posts the install error (#588).
+      navigator.serviceWorker.addEventListener('message', (event) => {
+        const d = event.data as { type?: string; name?: string; message?: string } | null;
+        if (d?.type !== 'orrery-sw-install-error') return;
+        track('sw-install-error', { version: __APP_VERSION__, name: d.name, message: d.message });
+      });
       registration.addEventListener('updatefound', () => {
         const next = registration.installing;
         if (!next) return;

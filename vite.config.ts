@@ -320,7 +320,9 @@ export default defineConfig(({ mode, command }) => {
           // `orrery-offline` cache, and only for pathnames actually downloaded — so
           // workbox's own routing + non-downloaded users are untouched. See
           // static/offline-sw.js.
-          importScripts: ['offline-sw.js'],
+          // sw-install-report.js (#588) first: it must see the install event before
+          // workbox's precache listener, to report why an install failed.
+          importScripts: ['sw-install-report.js', 'offline-sw.js'],
           runtimeCaching: [
             {
               // lab-api is NEVER cached (F · #535, slice-plan MAJOR-1.3):

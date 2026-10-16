@@ -48,6 +48,7 @@
   import { migrateLegacyLocaleCookie } from '$lib/locale-cookie-migration';
   import { afterNavigate, beforeNavigate, replaceState } from '$app/navigation';
   import { exitArScene } from '$lib/ar/launch-ar';
+  import { loadLadder } from '$lib/image-srcset';
 
   let { children } = $props();
 
@@ -195,6 +196,9 @@
   onMount(() => {
     if (typeof window === 'undefined') return;
     initDebugMode(); // #54 — seed debug mode from localStorage + ?debug=1
+    // Fetch the image-ladder manifest at boot (#482) so <ResponsiveImage> finds it ready
+    // by the time data-driven lists render; it falls back to the plain src until then.
+    void loadLadder();
 
     // Deploy chunk-skew reload guard: installed from hooks.client.ts (module-eval) so
     // it is live BEFORE the first route's chunks/CSS preload — see preload-guard.ts.

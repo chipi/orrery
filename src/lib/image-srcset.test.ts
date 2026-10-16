@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { srcsetFor, loadLadder, ladderSources } from './image-srcset';
 
 describe('srcsetFor', () => {
@@ -75,5 +75,35 @@ describe('image-ladder manifest — mobile-rung invariant (PRD-035 Part 1 / #482
       ([, widths]) => !widths.some((w) => w <= 1280),
     );
     expect(overserve).toEqual([]);
+  });
+
+  it('every rung the manifest lists exists on disk (a missing one is a 404 inside srcset)', () => {
+    const missing: string[] = [];
+    for (const [stem, widths] of Object.entries(manifest)) {
+      const max = widths[widths.length - 1];
+      for (const w of widths) {
+        const file = `static${stem}${w === max ? '' : `-${w}`}.webp`;
+        if (!existsSync(file)) missing.push(file);
+      }
+    }
+    expect(missing).toEqual([]);
+  });
+
+  it('every browse-card hero has a rung ≤ 640px (scripts/vision/add-card-rungs.mjs)', () => {
+    const tooBig: string[] = [];
+    for (const [surface, dir] of [
+      ['fleet', 'fleet-galleries'],
+      ['missions', 'missions'],
+    ]) {
+      const overrides: Record<string, { slot: string }> = JSON.parse(
+        readFileSync(`static/data/${surface}-hero-overrides.json`, 'utf8'),
+      ).overrides;
+      for (const id of readdirSync(`static/images/${dir}`)) {
+        const slot = (overrides[id]?.slot ?? '01.jpg').replace(/\.[^.]+$/, '');
+        const widths = manifest[`/images/${dir}/${id}/${slot}`];
+        if (widths && !widths.some((w) => w <= 640)) tooBig.push(`${dir}/${id}/${slot}`);
+      }
+    }
+    expect(tooBig).toEqual([]);
   });
 });

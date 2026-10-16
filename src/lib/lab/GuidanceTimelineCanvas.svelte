@@ -182,14 +182,9 @@
   });
 </script>
 
-<canvas
-  bind:this={canvas}
-  width={W * DPR}
-  height={H * DPR}
-  role="img"
-  aria-label={ariaLabel}
-  class="gd-canvas"
-></canvas>
+<div role="img" aria-label={ariaLabel}>
+  <canvas bind:this={canvas} width={W * DPR} height={H * DPR} class="gd-canvas"></canvas>
+</div>
 
 <style>
   .gd-canvas {

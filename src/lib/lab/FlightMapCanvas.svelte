@@ -577,14 +577,9 @@
   });
 </script>
 
-<canvas
-  bind:this={canvas}
-  width={W * DPR}
-  height={H * DPR}
-  role="img"
-  aria-label={flight.title}
-  class="flightmap"
-></canvas>
+<div role="img" aria-label={flight.title}>
+  <canvas bind:this={canvas} width={W * DPR} height={H * DPR} class="flightmap"></canvas>
+</div>
 
 <style>
   .flightmap {

@@ -14,12 +14,7 @@ cd /srv/orrery
 
 COMPOSE=(docker compose -f compose/docker-compose.prod.yml --project-directory . --env-file .env)
 
-# ── Observability: drop orrery's log rules into the shared node Alloy + HUP
-#    (ADR-121); remove the retired per-app agent so logs don't double-collect.
 touch data-refresh.log
-cp ops/observability/orrery.alloy /opt/vps-observability/config.d/orrery.alloy
-docker rm -f orrery-grafana-agent 2>/dev/null || true
-docker kill -s HUP alloy 2>/dev/null || true
 
 # ── Warm caches + (re)build the web image.
 "${COMPOSE[@]}" --profile manual pull pipeline-runner
@@ -119,4 +114,15 @@ if [ "$STACK" = full ]; then
     "fetch('${LLM_URL}/health/liveliness').then(function(r){console.log('  HTTP',r.status)}).catch(function(e){console.log('  FAIL',e.message)})" \
     || echo "  (probe could not run)"
 fi
+
+# ── Observability: drop orrery's Alloy rules into the shared node Alloy + HUP
+#    (ADR-121); remove the retired per-app agent so logs don't double-collect.
+#    LAST, after the healthchecks: orrery.alloy scrapes the backends' /metrics
+#    (ADR-094), so loading it before the new images serve it reads `up==0` during
+#    the gap (the ordering podcast's base.alloy records). The previous config keeps
+#    shipping logs until the HUP.
+cp ops/observability/orrery.alloy /opt/vps-observability/config.d/orrery.alloy
+docker rm -f orrery-grafana-agent 2>/dev/null || true
+docker kill -s HUP alloy 2>/dev/null || true
+
 echo "deploy_stack: $STACK stack up"

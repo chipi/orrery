@@ -291,6 +291,12 @@ jobs:
           LAB_GOOGLE_CLIENT_SECRET: ${{ secrets.ORRERY_LAB_GOOGLE_CLIENT_SECRET }}
           LAB_CLAUDE_CLIENT_SECRET: ${{ secrets.ORRERY_LAB_CLAUDE_CLIENT_SECRET }}
           LITELLM_API_KEY: ${{ secrets.ORRERY_LITELLM_API_KEY }}
+          # Server error tracking (ADR-094): GlitchTip projects 31 orrery-lab-api and
+          # 32 orrery-mcp. Client keys, public by design; secrets only keep them out of
+          # the repo (same as PUBLIC_SENTRY_DSN). Empty → that service sends no errors.
+          LAB_API_SENTRY_DSN: ${{ secrets.ORRERY_LAB_API_SENTRY_DSN }}
+          MCP_SENTRY_DSN: ${{ secrets.ORRERY_MCP_SENTRY_DSN }}
+          UMAMI_WEBSITE_ID: ${{ secrets.PUBLIC_UMAMI_WEBSITE_ID }}
         run: |
           set -euo pipefail
           # Logs now ship via the shared node Alloy (ADR-121; ops/observability/
@@ -321,6 +327,16 @@ jobs:
             printf '%s=%s\n' ORRERY_LITELLM_BASE_URL 'http://100.124.111.115:4001'
             printf '%s=%s\n' ORRERY_LAB_CORS_ORIGINS 'https://orrerylearn.com,https://www.orrerylearn.com,https://chipi.github.io'
             printf '%s=%s\n' ORRERY_LAB_WEB_REDIRECT_URIS 'https://orrerylearn.com/lab/callback,https://www.orrerylearn.com/lab/callback,https://chipi.github.io/orrery/lab/callback'
+            # Server observability (ADR-094). Release follows homelab ADR-0010
+            # (`sha-<7>`, the same value as traces' service.version).
+            printf '%s=%s\n' ORRERY_RELEASE            "sha-${GITHUB_SHA::7}"
+            printf '%s=%s\n' ORRERY_LAB_API_SENTRY_DSN "$LAB_API_SENTRY_DSN"
+            printf '%s=%s\n' ORRERY_MCP_SENTRY_DSN     "$MCP_SENTRY_DSN"
+            # VictoriaTraces on the homelab, over the tailnet (the endpoint podcast's
+            # player-api uses; reachable from the orrery containers, checked 2026-10-16).
+            printf '%s=%s\n' ORRERY_OTLP_TRACES_ENDPOINT 'https://vtraces.tail6d0ed4.ts.net/insert/opentelemetry/v1/traces'
+            printf '%s=%s\n' ORRERY_UMAMI_HOST         'https://analytics.orrerylearn.com'
+            printf '%s=%s\n' ORRERY_UMAMI_WEBSITE_ID   "$UMAMI_WEBSITE_ID"
           } > "$ENVTMP"
           scp -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes \
             -o StrictHostKeyChecking=accept-new -o BatchMode=yes \

@@ -9,6 +9,7 @@ import { REGISTRY } from '$lib/physics/registry';
 import { ask, LlmUnavailableError, type AskDeps } from './ask';
 import { callTool } from '../mcp/registry-tools';
 import { makeT } from '../mcp/i18n';
+import { initObservability, shutdownObservability } from '../observability';
 
 let stub: Server;
 let deps: AskDeps;
@@ -18,6 +19,7 @@ let received: {
   authorization?: string;
   toolNames?: string[];
   messages?: { role: string; content: string | null }[];
+  metadata?: Record<string, string>;
 }[] = [];
 
 beforeAll(async () => {
@@ -28,11 +30,13 @@ beforeAll(async () => {
       const body = JSON.parse(Buffer.concat(chunks).toString()) as {
         tools?: { function: { name: string } }[];
         messages?: { role: string; content: string | null }[];
+        metadata?: Record<string, string>;
       };
       received.push({
         authorization: req.headers.authorization,
         toolNames: body.tools?.map((t) => t.function.name),
         messages: body.messages,
+        metadata: body.metadata,
       });
       const turn = script.shift();
       if (turn === undefined) {
@@ -104,6 +108,50 @@ describe('ask', () => {
     expect(out.toolCalls[0].result).toHaveProperty('error');
     expect(String((out.toolCalls[0].result as { error: string }).error)).toMatch(/notAField/);
     expect(out.answer).toBe('Retried conceptually.');
+  });
+
+  it('sends no LiteLLM metadata while observability is off', async () => {
+    script = [{ role: 'assistant', content: 'ok' }];
+    received = [];
+    await ask('q', 'en-US', deps);
+    expect(received[0].metadata).toBeUndefined();
+  });
+
+  it('with observability on, every LLM call carries Langfuse metadata for this request', async () => {
+    initObservability(
+      { service: 'orrery-lab-api', environment: 'test', release: 'sha-abc1234' },
+      () => {},
+    );
+    try {
+      script = [
+        {
+          role: 'assistant',
+          content: null,
+          tool_calls: [
+            { id: 'c1', function: { name: 'interplanetary-transfer', arguments: '{}' } },
+          ],
+        },
+        { role: 'assistant', content: 'done' },
+      ];
+      received = [];
+      const out = await ask('How long to Mars?', 'en-US', deps);
+      expect(received.map((r) => r.metadata)).toEqual([
+        {
+          trace_name: 'orrery ask',
+          session_id: out.requestId,
+          generation_name: 'round-1',
+          trace_release: 'sha-abc1234',
+        },
+        {
+          trace_name: 'orrery ask',
+          session_id: out.requestId,
+          generation_name: 'round-2',
+          trace_release: 'sha-abc1234',
+        },
+      ]);
+    } finally {
+      await shutdownObservability();
+    }
   });
 
   it('no tool picked → plain answer, empty toolCalls', async () => {

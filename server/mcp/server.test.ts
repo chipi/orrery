@@ -142,6 +142,30 @@ describe('S4 · live MCP round-trip', () => {
     await c.close();
   }, 20_000);
 
+  it('with observability on: tool calls are counted by outcome, unknown names never become labels', async () => {
+    const obs = await import('../observability');
+    const lines: string[] = [];
+    obs.initObservability({ service: 'orrery-mcp', environment: 'test' }, (l) => lines.push(l));
+    try {
+      const { c, connect } = client();
+      await connect();
+      await c.callTool({ name: 'launch-window', arguments: {} });
+      await c.callTool({ name: 'launch-window', arguments: { depart: 'krypton' } });
+      await c.callTool({ name: 'launch-window', arguments: { locale: 'xx' } });
+      await c.callTool({ name: 'no-such-tool-<script>', arguments: {} });
+      await c.close();
+      const metrics = await obs.registry.getSingleMetricAsString('mcp_tool_calls_total');
+      expect(metrics).toContain('tool="launch-window",outcome="ok"} 1');
+      expect(metrics).toContain('tool="launch-window",outcome="invalid"} 2');
+      expect(metrics).toContain('tool="unknown-tool",outcome="unknown"} 1');
+      expect(metrics).not.toContain('no-such-tool');
+      expect(lines.some((l) => /^\[orrery-mcp\] POST \/mcp -> 200 in /.test(l))).toBe(true);
+    } finally {
+      await obs.shutdownObservability();
+      obs.registry.resetMetrics();
+    }
+  }, 20_000);
+
   it('/health answers without auth (container liveness)', async () => {
     const res = await fetch(`${baseUrl}/health`);
     expect(res.status).toBe(200);

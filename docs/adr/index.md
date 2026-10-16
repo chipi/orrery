@@ -86,3 +86,4 @@
 | ADR-091 | Station TLEs in the served /data overlay, one server-side fetcher (no browser→Celestrak) | Accepted | Sep 2026 |
 | ADR-092 | Analytics opt-out + GPC/DNT signals + `/privacy` disclosure page; no consent banner | Accepted | Sep 2026 |
 | ADR-093 | Journey instrumentation, event naming for Umami reports, no session replay | Accepted | Sep 2026 |
+| ADR-094 | Server-side observability for lab-api and mcp (GlitchTip errors, OTLP traces, internal `/metrics`, access logs, Umami tool events, LiteLLM→Langfuse metadata) | Accepted | Oct 2026 |

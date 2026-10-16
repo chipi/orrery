@@ -156,6 +156,10 @@ export async function runReplay(
     ? {
         firstFlightIds: tierMod.buildFirstFlightIds(
           [...upcomingContribs, ...historicContribs].flatMap((c) => c.entries),
+          // Trees before the curated list take one argument and ignore this.
+          (curation.first_flight_configs ?? []).map(
+            (c: { rocket_config_id: string }) => c.rocket_config_id,
+          ),
         ),
       }
     : {

@@ -15,6 +15,21 @@
     "demoted": {
       "type": "array",
       "items": { "$ref": "#/definitions/Override" }
+    },
+    "first_flight_configs": {
+      "description": "Rocket configurations (stable LL2 config ids) whose earliest launch is a first flight even when the source counts say otherwise. Keyed on the config id, not a date-prefixed launch id, so a slipped date never orphans it.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["rocket_config_id", "reason"],
+        "properties": {
+          "rocket_config_id": { "type": "string", "pattern": "^[0-9]+$" },
+          "reason": { "type": "string", "minLength": 1 },
+          "added_by": { "type": "string" },
+          "added_at": { "type": "string", "format": "date-time" }
+        }
+      }
     }
   },
   "definitions": {

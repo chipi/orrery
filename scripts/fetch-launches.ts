@@ -41,6 +41,7 @@ type CurationFile = {
   version: 1;
   featured: Array<{ launch_id: string; reason: string; editorial_note?: string }>;
   demoted: Array<{ launch_id: string; reason: string }>;
+  first_flight_configs?: Array<{ rocket_config_id: string; reason: string }>;
 };
 
 type RocketMappingFile = {
@@ -222,6 +223,7 @@ async function main(): Promise<void> {
   // can mix one source's fields into another's (see buildFirstFlightIds).
   const firstFlightIds = buildFirstFlightIds(
     [...upcomingContribs, ...historicContribs].flatMap((c) => c.entries),
+    (curation.first_flight_configs ?? []).map((c) => c.rocket_config_id),
   );
   const tierContext = { firstFlightIds };
   const catalogue = loadCatalogue();

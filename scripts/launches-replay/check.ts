@@ -19,6 +19,7 @@ import {
 } from './replay.js';
 
 const FF = 'first-flight-vehicle';
+const REPO_ROOT = resolve(fileURLToPath(new URL('../..', import.meta.url)));
 
 const firstFlights = (side: Record<string, { tier_reason: string }>) =>
   Object.entries(side)
@@ -28,13 +29,26 @@ const firstFlights = (side: Record<string, { tier_reason: string }>) =>
 /**
  * Upcoming first flights must each be a vehicle LL2 says has never flown:
  * not a placeholder, 0 launches, not a generic config whose family has
- * flown — and only the earliest launch of its config.
+ * flown — and only the earliest launch of its config. A config the operator
+ * listed in launches-curation.json `first_flight_configs` is exempt from the
+ * generic-family test only: that list exists for exactly the vehicles whose
+ * family count hides a maiden flight (#603).
  */
-export function checkNew(neu: ReplayResult): string[] {
+export function checkNew(
+  neu: ReplayResult,
+  curationPath = join(REPO_ROOT, 'static/data/launches-curation.json'),
+): string[] {
   const fail: string[] = [];
   const configs = new Map<string, LL2Config>();
   for (const r of readLL2Corpus())
     configs.set(String(r.rocket.configuration.id), r.rocket.configuration);
+  const curated = new Set<string>(
+    (
+      JSON.parse(readFileSync(curationPath, 'utf8')) as {
+        first_flight_configs?: Array<{ rocket_config_id: string }>;
+      }
+    ).first_flight_configs?.map((c) => c.rocket_config_id) ?? [],
+  );
 
   if (neu.errors.length > 0) fail.push(`new code: source errors ${JSON.stringify(neu.errors)}`);
   const historic = Object.keys(neu.historic).length;
@@ -58,7 +72,7 @@ export function checkNew(neu: ReplayResult): string[] {
     const flownFamily = c.families?.find(
       (f) => (f.total_launch_count ?? 0) > 0 && (f.name === c.name || f.name === c.full_name),
     );
-    if (flownFamily)
+    if (flownFamily && !curated.has(String(c.id)))
       fail.push(
         `${id}: first flight but generic config ${c.full_name}'s family has flown ${flownFamily.total_launch_count}×`,
       );

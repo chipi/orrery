@@ -1761,9 +1761,20 @@ if (existsSync(LAUNCHES_CURATION_PATH) && existsSync(LAUNCHES_PATH)) {
   const curation = readJson(LAUNCHES_CURATION_PATH) as {
     featured: Array<{ launch_id: string }>;
     demoted: Array<{ launch_id: string }>;
+    first_flight_configs?: Array<{ rocket_config_id: string }>;
   };
-  const launches = readJson(LAUNCHES_PATH) as { entries: Record<string, unknown> };
+  const launches = readJson(LAUNCHES_PATH) as {
+    entries: Record<string, { rocket_config_id?: string }>;
+  };
   const knownLaunchIds = new Set(Object.keys(launches.entries));
+  const knownConfigIds = new Set(Object.values(launches.entries).map((e) => e.rocket_config_id));
+  for (const c of curation.first_flight_configs ?? []) {
+    if (!knownConfigIds.has(c.rocket_config_id)) {
+      console.warn(
+        `  ⚠ launches-curation.json[first_flight_configs]: rocket_config_id '${c.rocket_config_id}' has no launch in the current manifest`,
+      );
+    }
+  }
   for (const [list, name] of [
     [curation.featured, 'featured'],
     [curation.demoted, 'demoted'],

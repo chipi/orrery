@@ -32,7 +32,9 @@ describe('launches replay — 2026-10-16 corpus', () => {
   it('meets the first-flight and GCAT criteria', async () => {
     const { summary, failures } = await runCheck();
     expect(failures).toEqual([]);
-    expect(summary).toBe('new: 465 upcoming (24 first flights), 7367 historic');
+    // 24 from the count rules (#566) + Long March 10 and Mir, curated as
+    // first_flight_configs (#603).
+    expect(summary).toBe('new: 465 upcoming (26 first flights), 7367 historic');
   }, 60_000);
 
   it('reads the same history from GCAT projected onto the 1.8.0 columns', async () => {

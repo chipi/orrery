@@ -3,8 +3,9 @@
 # Import the Orrery dashboards into the self-hosted Grafana.
 #
 # RFC-025 / ADR-068. Imports the orrery-*.json dashboards (Overview, Web,
-# Pipelines) into the `orrery` folder via the Grafana HTTP API. Idempotent —
-# re-imports update by `uid`. All panels query VictoriaLogs (LogsQL).
+# Pipelines, Analytics) into the `orrery` folder via the Grafana HTTP API.
+# Idempotent — re-imports update by `uid`. Overview/Web/Pipelines query
+# VictoriaLogs (LogsQL); Analytics queries Umami's Postgres.
 #
 # Auth: GRAFANA_HTTP_URL + GRAFANA_API_TOKEN env vars. Point at the homelab
 # Grafana (tailnet), e.g. http://homelab:3000. Create a service-account

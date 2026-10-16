@@ -30,10 +30,10 @@ See **[`src/lib/observability/sentry.ts`](../../src/lib/observability/sentry.ts)
 
 ### One-time setup (GlitchTip projects — one per rung)
 
-Done once on the self-hosted GlitchTip (over the tailnet). Already provisioned: **project 4** (prod), **project 6** (staging), **project 7** (dev). Each project's **Settings → Client Keys (DSN)** gives a public DSN of the form `http(s)://<32-hex-key>@<host>/<project-id>` — the project id at the end is what routes events to the right rung.
+Done once on the self-hosted GlitchTip (over the tailnet). Already provisioned: **project 18** `orrery-prod` (prod), **project 6** `orrery` (staging), **project 30** `orrery-dev` (dev). Each project's **Settings → Client Keys (DSN)** gives a public DSN of the form `http(s)://<32-hex-key>@<host>/<project-id>` — the project id at the end is what routes events to the right rung.
 
 - **prod / staging** DSNs are set as the `PUBLIC_SENTRY_DSN` secret inside the **`prod`** and **`staging`** GH environments respectively (Repo → Settings → Environments → pick env → Secrets). Never at the repo level — the environment gate is the point.
-- **dev** DSN is the `DEV_SENTRY_DSN` constant in `src/lib/observability/sentry.ts` (project 7, `homelab:8090`). It's committed on purpose: a DSN is a public browser id, and the `homelab` host is tailnet-only, so it's inert off the tailnet.
+- **dev** DSN is the `DEV_SENTRY_DSN` constant in `src/lib/observability/sentry.ts` (project 30, `homelab:8090`). It's committed on purpose: a DSN is a public browser id, and the `homelab` host is tailnet-only, so it's inert off the tailnet.
 
 ### CI wiring (already in the workflows)
 
@@ -42,12 +42,12 @@ Done once on the self-hosted GlitchTip (over the tailnet). Already provisioned: 
 
 ### Local-dev posture (the dev rung)
 
-- `vite dev` **now reports** — with no `PUBLIC_SENTRY_*` override it falls back to the dev DSN (GlitchTip project 7) via `homelab:8090`. On the maintainer's tailnet this is live; off the tailnet the host doesn't resolve, the transport fails, and nothing leaves the browser (fork-silent by construction). Dev events carry a `worktree` tag (git branch) so parallel local sessions are separable.
+- `vite dev` **now reports** — with no `PUBLIC_SENTRY_*` override it falls back to the dev DSN (GlitchTip project 30) via `homelab:8090`. On the maintainer's tailnet this is live; off the tailnet the host doesn't resolve, the transport fails, and nothing leaves the browser (fork-silent by construction). Dev events carry a `worktree` tag (git branch) so parallel local sessions are separable.
 - `vite preview`, the screenshot pipeline, and CI are **not** `dev` and carry no baked vars → silent. To point local dev at a *different* project, set `PUBLIC_SENTRY_DSN=…` in your gitignored `.env` (the `scripts/check-no-secrets.ts` gate still scans the staged diff).
 
 ### Verifying it works
 
-Pick the rung. For **dev**: run `vite dev` on the tailnet, force-throw from the console, and confirm the event lands in GlitchTip **project 7** tagged `environment=dev` + your `worktree`. For a **deploy rung**: visit the route (`orrerylearn.com` for prod, `chipi.github.io/orrery` for staging) and do the same — it lands in project **4** / **6** tagged `production` / `staging`:
+Pick the rung. For **dev**: run `vite dev` on the tailnet, force-throw from the console, and confirm the event lands in GlitchTip **project 30** (`orrery-dev`) tagged `environment=dev` + your `worktree`. For a **deploy rung**: visit the route (`orrerylearn.com` for prod, `chipi.github.io/orrery` for staging) and do the same — it lands in project **18** (`orrery-prod`) / **6** (`orrery`) tagged `production` / `staging`:
 
 ```js
 setTimeout(() => { throw new Error('GlitchTip smoke test'); }, 0);
@@ -124,11 +124,13 @@ If nothing appears: confirm `orrery.alloy` is in `/etc/alloy/config.d/` and was 
 
 ### Importing the dashboards
 
-Three dashboards live in `ops/observability/dashboards/` (all panels query VictoriaLogs via LogsQL):
+Four dashboards live in `ops/observability/dashboards/`. Three query VictoriaLogs via LogsQL:
 
 - `orrery-overview.json` — cross-surface health at a glance.
 - `orrery-web.json` — web container log volume + stderr incidence + recent lines.
 - `orrery-pipelines.json` — pipeline invocations + error-line detection + recent logs.
+
+The fourth, `orrery-analytics.json`, queries Umami's Postgres (`website_event` + `event_data`) through a `${ds}` datasource picker, so it needs a read-only Umami Postgres datasource in Grafana.
 
 Import them into the self-hosted Grafana (tailnet) — idempotent, matched by `uid`:
 

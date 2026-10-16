@@ -157,6 +157,20 @@ jobs:
       - run: npm ci
         if: steps.preflight.outputs.skip != 'true'
 
+      - name: Join the tailnet
+        if: steps.preflight.outputs.skip != 'true'
+        uses: tailscale/github-action@306e68a486fd2350f2bfc3b19fcd143891a4a2d8 # v4
+        with:
+          # OAuth client (shared chipi deployer identity, same as podcast_scraper) — does not
+          # expire like an auth key did (2026-08-02: the old TS_AUTHKEY lapsed and blocked prod
+          # deploys). Reuses the same tailnet + tag:gha-deployer + target box.
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          tags: tag:gha-deployer
+          # Pin to a known-good version. `latest` has broken sha256
+          # verification in GHA before (podcast_scraper RFC-082).
+          version: 1.96.4
+
       - name: Build static bundle (the deploy unit)
         # Per ADR-063 the web container is stock nginx:alpine + bind-mount.
         # The static bundle is the deploy artefact. CI builds it; VPS
@@ -189,21 +203,28 @@ jobs:
           # id of the Orrery website registered in the self-hosted Umami admin.
           PUBLIC_UMAMI_HOST: https://analytics.orrerylearn.com
           PUBLIC_UMAMI_WEBSITE_ID: ${{ secrets.PUBLIC_UMAMI_WEBSITE_ID }}
-        run: npm run build
-
-      - name: Join the tailnet
-        if: steps.preflight.outputs.skip != 'true'
-        uses: tailscale/github-action@306e68a486fd2350f2bfc3b19fcd143891a4a2d8 # v4
-        with:
-          # OAuth client (shared chipi deployer identity, same as podcast_scraper) — does not
-          # expire like an auth key did (2026-08-02: the old TS_AUTHKEY lapsed and blocked prod
-          # deploys). Reuses the same tailnet + tag:gha-deployer + target box.
-          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
-          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
-          tags: tag:gha-deployer
-          # Pin to a known-good version. `latest` has broken sha256
-          # verification in GHA before (podcast_scraper RFC-082).
-          version: 1.96.4
+          # Source maps → GlitchTip (#595). On only when the upload token is set: hidden
+          # maps + debug IDs, uploaded as artifact bundles to orrery-prod over the tailnet
+          # (hence the tailnet join above). The SvelteKit wrapper swallows upload errors
+          # and still deletes the maps, so success is required as a positive log line.
+          SENTRY_SOURCEMAPS: ${{ secrets.GLITCHTIP_SOURCEMAP_TOKEN != '' && '1' || '' }}
+          SENTRY_AUTH_TOKEN: ${{ secrets.GLITCHTIP_SOURCEMAP_TOKEN }}
+          SENTRY_URL: https://glitchtip.tail6d0ed4.ts.net/
+          SENTRY_ORG: homelab
+          SENTRY_PROJECT: orrery-prod
+        run: |
+          set -euo pipefail
+          npm run build 2>&1 | tee /tmp/build.log
+          if [ "${SENTRY_SOURCEMAPS:-}" = "1" ] && ! grep -q 'Successfully uploaded source maps to Sentry' /tmp/build.log; then
+            echo "::error::source maps were not uploaded to GlitchTip (see the [Source Maps Plugin] / [sentry-vite-plugin] lines above)"
+            exit 1
+          fi
+          # Never publish source maps: the bundle is served as-is from build/.
+          LEFT=$(find build -name '*.map' -o -name '*.map.br' -o -name '*.map.gz' | wc -l)
+          if [ "$LEFT" -ne 0 ]; then
+            echo "::error::$LEFT source-map files left in build/ — refusing to deploy them"
+            exit 1
+          fi
 
       - name: Install SSH identity for deploy@
         # PEM private keys need a trailing newline or libcrypto rejects

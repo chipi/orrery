@@ -249,11 +249,13 @@ async function main(): Promise<void> {
         source_observed_at: observed,
         source_url: _url,
         rocket_config_prior_launches: _prior,
+        rocket_config_own_launches: _own,
         ...flat
       } = m.entry;
       void _src;
       void _url;
       void _prior;
+      void _own;
       const missionRef = findCatalogMatch(
         { net: m.entry.net, name: m.entry.name, mission_name: m.entry.mission_name },
         catalogue,

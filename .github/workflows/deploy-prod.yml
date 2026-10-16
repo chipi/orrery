@@ -75,6 +75,11 @@ jobs:
     # rules (required reviewers, deployment-branch policies) if you
     # want them later — settings → environments → prod → protection.
     environment: prod
+    # Main only (#593 H2): a dispatch from another ref would rsync a branch-built bundle
+    # on top of main's server code (the VPS resets to origin/main). This line stops the
+    # accidental case; the `prod` environment's deployment-branch policy is what stops
+    # a branch that edits this file.
+    if: github.ref == 'refs/heads/main'
     outputs:
       # Surfaced so the post-deploy `validate` job can skip when the deploy
       # itself no-op'd (missing prereqs → nothing new was published).

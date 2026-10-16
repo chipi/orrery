@@ -11,6 +11,8 @@
   distinguishable by register (computed frames), not by disclaimer.
 -->
 <script lang="ts">
+  import { responsive } from '$lib/responsive-image.svelte';
+  import { IMAGE_SIZES } from '$lib/image-sizes';
   import { assetUrl } from '$lib/asset-url';
   import type { LabIllustration } from './illustration';
 
@@ -24,7 +26,7 @@
 <figure class="illus">
   <img
     class="illus__img"
-    src={assetUrl(`/${illustration.file}`)}
+    {...responsive(assetUrl(`/${illustration.file}`), IMAGE_SIZES.column)}
     alt={t(illustration.altKey)}
     loading="lazy"
     decoding="async"

@@ -5,6 +5,8 @@
   inline [text](/route) deep-links — the essay's cross-link spine — resolve.
 -->
 <script lang="ts">
+  import { responsive } from '$lib/responsive-image.svelte';
+  import { IMAGE_SIZES } from '$lib/image-sizes';
   import { base } from '$app/paths';
   import { assetUrl } from '$lib/asset-url';
   import { localizeHref } from '$lib/paraglide/runtime';
@@ -49,7 +51,7 @@
 
   {#if essay.hero}
     <figure class="hero">
-      <img src={imgSrc(essay.hero)} alt={essay.dek} decoding="async" />
+      <img {...responsive(imgSrc(essay.hero), IMAGE_SIZES.full)} alt={essay.dek} decoding="async" />
     </figure>
   {/if}
 
@@ -62,7 +64,12 @@
         <p>{@html essayInlineHtml(block.md)}</p>
       {:else if block.type === 'figure'}
         <figure class="fig fig-{block.align ?? 'inline'} fig-{block.kind}">
-          <img src={imgSrc(block.image)} alt={block.caption} decoding="async" loading="lazy" />
+          <img
+            {...responsive(imgSrc(block.image), IMAGE_SIZES.column)}
+            alt={block.caption}
+            decoding="async"
+            loading="lazy"
+          />
           <figcaption>
             {block.caption}{#if block.credit}<span class="credit">{block.credit}</span>{/if}
           </figcaption>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ResponsiveImage from '$lib/components/ResponsiveImage.svelte';
+  import { responsive } from '$lib/responsive-image.svelte';
   import { IMAGE_SIZES } from '$lib/image-sizes';
   import { onMount, untrack } from 'svelte';
   import { page } from '$app/state';
@@ -610,10 +610,9 @@
             >
               <div class="card-accent" aria-hidden="true"></div>
               <figure class="card-photo">
-                <ResponsiveImage
+                <img
                   class="card-cover"
-                  sizes={IMAGE_SIZES.card}
-                  src={pickHero('fleet', entry.id)}
+                  {...responsive(pickHero('fleet', entry.id), IMAGE_SIZES.card)}
                   alt=""
                   loading="lazy"
                   onerror={(e) => {

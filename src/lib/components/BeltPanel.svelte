@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { responsive } from '$lib/responsive-image.svelte';
+  import { IMAGE_SIZES } from '$lib/image-sizes';
   /**
    * BeltPanel — detail panel for the asteroid + Kuiper belts on
    * /explore (v0.7.x — user feedback 2026-06-06: "we have comet belt
@@ -182,7 +184,12 @@
 
     {#if gallery.length > 0}
       <div class="panel-hero">
-        <img src={gallery[0]} alt="" fetchpriority="high" decoding="async" />
+        <img
+          {...responsive(gallery[0], IMAGE_SIZES.panel)}
+          alt=""
+          fetchpriority="high"
+          decoding="async"
+        />
       </div>
     {/if}
 
@@ -277,7 +284,12 @@
                 onclick={() => (lightboxSrc = src)}
                 aria-label={entry.name}
               >
-                <img {src} alt="" loading="lazy" decoding="async" />
+                <img
+                  {...responsive(src, IMAGE_SIZES.panelThumb)}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
               </button>
             {/each}
           </div>
@@ -326,7 +338,12 @@
         aria-label={m.ui_close()}
         onclick={() => (lightboxSrc = null)}
       >
-        <img src={lightboxSrc} alt="" loading="lazy" decoding="async" />
+        <img
+          {...responsive(lightboxSrc, IMAGE_SIZES.full)}
+          alt=""
+          loading="lazy"
+          decoding="async"
+        />
         <span class="lightbox-close" aria-hidden="true">×</span>
       </button>
       <div class="lightbox-meta">

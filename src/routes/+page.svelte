@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { responsive } from '$lib/responsive-image.svelte';
+  import { IMAGE_SIZES } from '$lib/image-sizes';
   import { page } from '$app/state';
   import { base } from '$app/paths';
 
@@ -236,7 +238,7 @@
     <img
       class="hero-illustration"
       data-audio-stage="hero-illustration"
-      src="{assetOrigin}/images/app-landing-hero.webp"
+      {...responsive(`${assetOrigin}/images/app-landing-hero.webp`, IMAGE_SIZES.column)}
       alt=""
       aria-label={m.landing_hero_aria()}
     />

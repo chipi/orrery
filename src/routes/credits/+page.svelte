@@ -12,8 +12,10 @@
   HTML — long lists, native scrolling, lazy-loaded thumbnails.
 -->
 <script lang="ts">
+  import { responsive } from '$lib/responsive-image.svelte';
+  import { IMAGE_SIZES } from '$lib/image-sizes';
   import { base } from '$app/paths';
-  import { dataLoadFailed } from '$lib/data/core';
+  import { dataLoadFailed, get } from '$lib/data/core';
 
   // Substitute a sentinel, not the rendered word: `.replace(word, link)` would
   // link the FIRST occurrence of that word in the sentence, which is correct in
@@ -50,6 +52,21 @@
   let dataSources = $state<DataSourcesManifest | null>(null);
   let videoProv = $state<VideoProvenanceManifest | null>(null);
   let loaded = $state(false);
+
+  // Credited images with no WebP ladder (hotspot tiles, textures, deep-sky JPEGs,
+  // .1x1 crops) have a 192 px thumb in /credit-thumbs (scripts/vision/
+  // build-credit-thumbs.mjs, #482) — without it a full scroll fetched ~300 MB.
+  let creditThumbs = $state<Set<string>>(new Set());
+  $effect(() => {
+    void get<string[]>('credit-thumbs.json')
+      .then((list) => (creditThumbs = new Set(list)))
+      .catch(dataLoadFailed);
+  });
+  function thumbAttrs(path: string): { src?: string; srcset?: string; sizes?: string } {
+    if (creditThumbs.has(path))
+      return { src: `${base}/credit-thumbs${path.replace(/\.[^.]+$/, '.webp')}` };
+    return responsive(assetUrl(path), IMAGE_SIZES.creditThumb);
+  }
 
   // Audio narration / tour-script attribution moved to /colophon (it's our
   // ORIGINAL content). /credits keeps only reused third-party material.
@@ -293,7 +310,7 @@
                   aria-label={photo.title}
                 >
                   <img
-                    src={assetUrl(photo.path)}
+                    {...thumbAttrs(photo.path)}
                     alt=""
                     width="64"
                     height="64"

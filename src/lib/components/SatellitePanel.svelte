@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { responsive } from '$lib/responsive-image.svelte';
+  import { IMAGE_SIZES } from '$lib/image-sizes';
   /**
    * SatellitePanel — detail panel for natural satellites on /explore
    * (#304). Mirrors SmallBodyPanel + SunPanel typography + layout so
@@ -136,7 +138,12 @@
 
     {#if gallery.length > 0}
       <div class="panel-hero">
-        <img src={assetUrl(gallery[0])} alt="" fetchpriority="high" decoding="async" />
+        <img
+          {...responsive(assetUrl(gallery[0]), IMAGE_SIZES.panel)}
+          alt=""
+          fetchpriority="high"
+          decoding="async"
+        />
       </div>
     {/if}
 
@@ -203,7 +210,12 @@
           <ul class="gallery-grid">
             {#each gallery as src (src)}
               <li>
-                <img src={assetUrl(src)} alt="" loading="lazy" decoding="async" />
+                <img
+                  {...responsive(assetUrl(src), IMAGE_SIZES.panelThumb)}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
               </li>
             {/each}
           </ul>

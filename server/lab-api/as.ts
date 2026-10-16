@@ -22,6 +22,9 @@ import { isAllowed } from './allowlist';
 import { exchangeGoogleCode, googleAuthUrl, type GoogleConfig } from './google';
 import { TokenCore, type AccessClaims } from './tokens';
 
+/** /register limits (#597): real clients send one or two short callback URLs. */
+const MAX_REDIRECT_URIS = 5;
+const MAX_REDIRECT_URI_LEN = 512;
 const PENDING_TTL_MS = 10 * 60_000;
 const CODE_TTL_MS = 60_000;
 
@@ -130,6 +133,21 @@ export class AuthServer {
         return false;
       }
     };
+    // Unauthenticated endpoint: cap what one registration can store (#597 — 64 KiB of
+    // redirect_uris × 500 clients bloated state.json, rewritten synchronously on every
+    // token event).
+    if (
+      redirectUris.length > MAX_REDIRECT_URIS ||
+      redirectUris.some((u) => u.length > MAX_REDIRECT_URI_LEN)
+    ) {
+      return {
+        status: 400,
+        body: {
+          error: 'invalid_redirect_uri',
+          error_description: `at most ${MAX_REDIRECT_URIS} redirect_uris, each at most ${MAX_REDIRECT_URI_LEN} characters`,
+        },
+      };
+    }
     if (redirectUris.length === 0 || !redirectUris.every(httpsOk)) {
       return {
         status: 400,

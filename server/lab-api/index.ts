@@ -134,7 +134,13 @@ function routeOf(req: IncomingMessage): string {
 }
 
 function json(res: ServerResponse, status: number, body: unknown): void {
-  res.writeHead(status, { 'content-type': 'application/json' });
+  // Tokens, auth errors and asks are never cacheable — RFC 6749 §5.1 requires
+  // no-store on /token responses; the rest are per-user and just as private (#597).
+  res.writeHead(status, {
+    'content-type': 'application/json',
+    'cache-control': 'no-store',
+    pragma: 'no-cache',
+  });
   res.end(JSON.stringify(body));
 }
 

@@ -26,7 +26,7 @@ export function srcsetFor(
   url: string,
   manifest: LadderManifest,
 ): { src: string; srcset: string } | null {
-  const m = url.match(/^(.*)(\/images\/.+)\.(?:jpe?g|png|webp)$/i);
+  const m = url.match(/^(.*)(\/(?:images|diagrams)\/.+)\.(?:jpe?g|png|webp)$/i);
   if (!m) return null;
   const [, origin, imagePath] = m;
   const widths = manifest[imagePath];

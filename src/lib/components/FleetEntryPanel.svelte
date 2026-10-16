@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { responsive } from '$lib/responsive-image.svelte';
+  import { IMAGE_SIZES } from '$lib/image-sizes';
   import Panel from './Panel.svelte';
   import AgencyRow from './AgencyRow.svelte';
   import { base } from '$app/paths';
@@ -382,7 +384,12 @@
           }}
           aria-label={m.fleet_view_hero_aria({ name: entry.name })}
         >
-          <img src={gallery[0]} alt="" fetchpriority="high" decoding="async" />
+          <img
+            {...responsive(gallery[0], IMAGE_SIZES.panel)}
+            alt=""
+            fetchpriority="high"
+            decoding="async"
+          />
         </button>
       </div>
     {/if}
@@ -631,7 +638,12 @@
                 }}
                 aria-label={m.fleet_view_photo_aria()}
               >
-                <img {src} alt="" loading="lazy" decoding="async" />
+                <img
+                  {...responsive(src, IMAGE_SIZES.panelThumb)}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
               </button>
             {/each}
             {#key entry.id}
@@ -849,7 +861,7 @@
     onclick={() => (lightboxSrc = null)}
     aria-label={m.fleet_close_photo_aria()}
   >
-    <img src={lightboxSrc} alt="" loading="lazy" decoding="async" />
+    <img {...responsive(lightboxSrc, IMAGE_SIZES.full)} alt="" loading="lazy" decoding="async" />
   </button>
 {/if}
 

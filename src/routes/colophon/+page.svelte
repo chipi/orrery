@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { responsive } from '$lib/responsive-image.svelte';
+  import { IMAGE_SIZES } from '$lib/image-sizes';
   /*
     /colophon — bill-of-materials for Orrery's ORIGINAL content: every
     diagram, 3D model, chart, icon, and piece of writing the project draws
@@ -160,7 +162,12 @@
               class="thumb-open"
               onclick={() => (lightbox = { src: srcOf(d.file), title: d.title, route: '/fleet' })}
             >
-              <img src={srcOf(d.file)} alt={d.title} loading="lazy" decoding="async" />
+              <img
+                {...responsive(srcOf(d.file), IMAGE_SIZES.colophonWide)}
+                alt={d.title}
+                loading="lazy"
+                decoding="async"
+              />
             </button>
             <span class="thumb-title">{d.title}</span>
           </li>
@@ -215,7 +222,12 @@
                 class="thumb-open"
                 onclick={() => (lightbox = { src: srcOf(d.file), title: d.title, route: '/lab' })}
               >
-                <img src={srcOf(d.file)} alt={d.title} loading="lazy" decoding="async" />
+                <img
+                  {...responsive(srcOf(d.file), IMAGE_SIZES.colophonThumb)}
+                  alt={d.title}
+                  loading="lazy"
+                  decoding="async"
+                />
               </button>
               <span class="thumb-title">{d.title}</span>
             </li>
@@ -237,7 +249,12 @@
               class="thumb-open"
               onclick={() => (lightbox = { src: srcOf(d.file), title: d.title, route: '/science' })}
             >
-              <img src={srcOf(d.file)} alt={d.title} loading="lazy" decoding="async" />
+              <img
+                {...responsive(srcOf(d.file), IMAGE_SIZES.colophonThumb)}
+                alt={d.title}
+                loading="lazy"
+                decoding="async"
+              />
             </button>
             <span class="thumb-title">{d.title}</span>
           </li>

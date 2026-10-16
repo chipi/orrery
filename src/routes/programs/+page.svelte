@@ -4,6 +4,8 @@
   spaceflight. Cards deep-link into the full editorial page.
 -->
 <script lang="ts">
+  import { responsive } from '$lib/responsive-image.svelte';
+  import { IMAGE_SIZES } from '$lib/image-sizes';
   import { base } from '$app/paths';
   import { assetUrl } from '$lib/asset-url';
   import AgencyBadge from '$lib/components/AgencyBadge.svelte';
@@ -145,7 +147,12 @@
         {#each g.items as p (p.id)}
           <a class="card" href="{base}/programs/{p.id}">
             {#if heroSrc(p.hero)}
-              <img src={heroSrc(p.hero)} alt="" loading="lazy" decoding="async" />
+              <img
+                {...responsive(heroSrc(p.hero), IMAGE_SIZES.wideCard)}
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
             {/if}
             <div class="card-body">
               <p class="c-meta">

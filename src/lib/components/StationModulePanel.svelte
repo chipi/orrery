@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { responsive } from '$lib/responsive-image.svelte';
+  import { IMAGE_SIZES } from '$lib/image-sizes';
   import Panel from './Panel.svelte';
   import AgencyRow from './AgencyRow.svelte';
   import { base } from '$app/paths';
@@ -105,7 +107,12 @@
           onclick={() => (lightboxSrc = gallery[0]!)}
           aria-label={m.panel_hero_aria({ name: mod.name })}
         >
-          <img src={gallery[0]} alt="" fetchpriority="high" decoding="async" />
+          <img
+            {...responsive(gallery[0], IMAGE_SIZES.panel)}
+            alt=""
+            fetchpriority="high"
+            decoding="async"
+          />
         </button>
       </div>
     {/if}
@@ -232,7 +239,12 @@
                 onclick={() => (lightboxSrc = src)}
                 aria-label={mod.name}
               >
-                <img {src} alt="" loading="lazy" decoding="async" />
+                <img
+                  {...responsive(src, IMAGE_SIZES.panelThumb)}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
               </button>
             {/each}
           </div>
@@ -372,7 +384,7 @@
     aria-label={m.panel_lightbox_close()}
     onclick={() => (lightboxSrc = null)}
   >
-    <img src={lightboxSrc} alt="" loading="lazy" decoding="async" />
+    <img {...responsive(lightboxSrc, IMAGE_SIZES.full)} alt="" loading="lazy" decoding="async" />
     <span class="lightbox-close" aria-hidden="true">×</span>
   </button>
   <div class="lightbox-meta">

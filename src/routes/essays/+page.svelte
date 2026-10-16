@@ -4,6 +4,8 @@
   each essay; the essays deep-link back into missions / fleet / science.
 -->
 <script lang="ts">
+  import { responsive } from '$lib/responsive-image.svelte';
+  import { IMAGE_SIZES } from '$lib/image-sizes';
   import { base } from '$app/paths';
   import { localizeHref } from '$lib/paraglide/runtime';
   import { assetUrl } from '$lib/asset-url';
@@ -88,7 +90,13 @@
         {#each g.essays as e (e.slug)}
           <a class="card" href="{base}{localizeHref(`/essays/${e.slug}`)}">
             {#if e.hero}
-              <img class="card-hero" src={imgSrc(e.hero)} alt="" loading="lazy" decoding="async" />
+              <img
+                class="card-hero"
+                {...responsive(imgSrc(e.hero), IMAGE_SIZES.wideCard)}
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
             {/if}
             <h3>{e.title}</h3>
             <p class="card-dek">{e.dek}</p>

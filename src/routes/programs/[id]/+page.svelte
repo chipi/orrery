@@ -6,6 +6,8 @@
   static/images/programs/{id}/).
 -->
 <script lang="ts">
+  import { responsive } from '$lib/responsive-image.svelte';
+  import { IMAGE_SIZES } from '$lib/image-sizes';
   import { base } from '$app/paths';
   import { assetUrl } from '$lib/asset-url';
   import AgencyBadge from '$lib/components/AgencyBadge.svelte';
@@ -136,7 +138,13 @@
       </p>
     </div>
     {#if heroSrc}
-      <img class="hero-img" src={heroSrc} alt="" fetchpriority="high" decoding="async" />
+      <img
+        class="hero-img"
+        {...responsive(heroSrc, IMAGE_SIZES.full)}
+        alt=""
+        fetchpriority="high"
+        decoding="async"
+      />
     {/if}
   </header>
 
@@ -148,7 +156,16 @@
           <p>{block.md}</p>
         {:else if block.type === 'figure'}
           <figure class="fig fig-{block.align ?? 'full'}">
-            <img src={imgSrc(block.image)} alt={block.caption} decoding="async" />
+            <img
+              {...responsive(
+                imgSrc(block.image),
+                block.align === 'left' || block.align === 'right'
+                  ? IMAGE_SIZES.floatFig
+                  : IMAGE_SIZES.column,
+              )}
+              alt={block.caption}
+              decoding="async"
+            />
             <figcaption>{block.caption}</figcaption>
           </figure>
         {/if}
@@ -212,7 +229,7 @@
           {#if selectedDetail}
             <img
               class="d-hero"
-              src={imgSrc({ reuse: selectedDetail.hero })}
+              {...responsive(imgSrc({ reuse: selectedDetail.hero }), IMAGE_SIZES.panel)}
               alt=""
               decoding="async"
             />

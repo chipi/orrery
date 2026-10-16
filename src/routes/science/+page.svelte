@@ -9,6 +9,8 @@
   content and translate only the bracket text.
 -->
 <script lang="ts">
+  import { responsive } from '$lib/responsive-image.svelte';
+  import { IMAGE_SIZES } from '$lib/image-sizes';
   import { base } from '$app/paths';
   import { assetOrigin } from '$lib/asset-url';
   import * as m from '$lib/paraglide/messages';
@@ -53,7 +55,10 @@
   <p class="lede">{m.science_intro()}</p>
   <img
     class="hero-banner"
-    src="{assetOrigin}/images/science-covers-v2/_science-landing-hero.webp"
+    {...responsive(
+      `${assetOrigin}/images/science-covers-v2/_science-landing-hero.webp`,
+      IMAGE_SIZES.banner,
+    )}
     alt=""
     loading="eager"
     decoding="async"
@@ -79,7 +84,7 @@
         {#if chapter.diagram}
           <figure class="story-fig">
             <img
-              src="{base}/diagrams/science/{chapter.diagram}"
+              {...responsive(`${base}/diagrams/science/${chapter.diagram}`, IMAGE_SIZES.column)}
               alt={chapter.diagram_alt ?? ''}
               loading="lazy"
               decoding="async"

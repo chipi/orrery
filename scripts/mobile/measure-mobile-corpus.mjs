@@ -19,7 +19,8 @@
  * Read-only. Prints a report; writes nothing. Run: node scripts/mobile/measure-mobile-corpus.mjs
  */
 import { execSync } from 'node:child_process';
-import { readFileSync } from 'node:fs';
+import { readFileSync, statSync } from 'node:fs';
+import sharp from 'sharp';
 
 const MOBILE_MAX = 1280; // RFC-040 Contract A — a 3× phone's widest full-bleed rung
 const SERVED = 'static/images';
@@ -27,13 +28,9 @@ const MANIFEST = 'static/data/image-ladder.json';
 const EXCLUDE_TOP = new Set(['hotspots', 'posters']); // tier-dispatched / downloadable art
 
 const manifest = JSON.parse(readFileSync(MANIFEST, 'utf8'));
-const bytesOf = (f) => Number(execSync(`stat -f%z "${f}"`).toString().trim());
-const widthOf = (f) => {
-  const m = execSync(`sips -g pixelWidth "${f}"`)
-    .toString()
-    .match(/pixelWidth: (\d+)/);
-  return m ? Number(m[1]) : 0;
-};
+// Portable (was BSD `stat -f%z` + macOS `sips`, which fail on Linux — #482).
+const bytesOf = (f) => statSync(f).size;
+const widthOf = async (f) => (await sharp(f).metadata()).width ?? 0;
 const bucketOf = (f) => f.split('/')[2] || '(root)';
 const mb = (b) => (b / 1048576).toFixed(1);
 
@@ -80,7 +77,7 @@ for (const f of bases) {
     continue;
   }
   // No ladder + base > MOBILE_MAX → genuine mobile over-serve.
-  const w = widthOf(f);
+  const w = await widthOf(f);
   if (w > MOBILE_MAX) {
     const b = bytesOf(f);
     const bk = bucketOf(f);

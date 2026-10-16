@@ -49,6 +49,7 @@
   import { afterNavigate, beforeNavigate, replaceState } from '$app/navigation';
   import { exitArScene } from '$lib/ar/launch-ar';
   import { loadLadder } from '$lib/image-srcset';
+  import { markAppMounted } from '$lib/responsive-image.svelte';
 
   let { children } = $props();
 
@@ -199,6 +200,7 @@
     // Fetch the image-ladder manifest at boot (#482) so <ResponsiveImage> finds it ready
     // by the time data-driven lists render; it falls back to the plain src until then.
     void loadLadder();
+    markAppMounted();
 
     // Deploy chunk-skew reload guard: installed from hooks.client.ts (module-eval) so
     // it is live BEFORE the first route's chunks/CSS preload — see preload-guard.ts.

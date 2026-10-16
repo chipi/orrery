@@ -97,9 +97,10 @@ async function main(): Promise<void> {
   );
 }
 
-if (process.argv[1] && import.meta.url.endsWith(path.basename(process.argv[1]))) {
-  main().catch((err) => {
-    console.error(err);
-    process.exit(1);
-  });
-}
+// CLI only: the tested logic lives in ./lib/alt-text.ts, so nothing imports
+// this file and it needs no is-main guard (a basename match skipped main()
+// silently when run through a symlink or wrapper).
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

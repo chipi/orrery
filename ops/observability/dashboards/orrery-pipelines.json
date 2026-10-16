@@ -12,30 +12,30 @@
   "templating": {
     "list": [
       {
-        "name": "env",
+        "name": "environment",
         "label": "Environment",
         "type": "custom",
-        "query": "dev,staging,prod",
+        "query": "prod,dev,ci",
         "current": {
           "selected": true,
-          "text": "dev",
-          "value": "dev"
+          "text": "prod",
+          "value": "prod"
         },
         "options": [
           {
             "selected": true,
+            "text": "prod",
+            "value": "prod"
+          },
+          {
+            "selected": false,
             "text": "dev",
             "value": "dev"
           },
           {
             "selected": false,
-            "text": "staging",
-            "value": "staging"
-          },
-          {
-            "selected": false,
-            "text": "prod",
-            "value": "prod"
+            "text": "ci",
+            "value": "ci"
           }
         ]
       }
@@ -59,7 +59,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "app:orrery AND env:$env AND container:~\"orrery-pipeline-runner-.*\" | stats by (container) count() c | stats count() runs",
+          "expr": "app:orrery AND environment:$environment AND surface:pipeline | stats count_uniq(container) if (container:~\"orrery-pipeline-runner-.*\") runner_runs, count() if (job:orrery-data-refresh AND _msg:\"[refresh-prod-data]\" AND _msg:\"launches.json\") refresh_runs | math runner_runs + refresh_runs as runs",
           "queryType": "stats"
         }
       ],
@@ -91,7 +91,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "app:orrery AND env:$env AND container:~\"orrery-pipeline-runner-.*\" AND _msg:~\"(?i)error|panic|traceback|failed\" | stats count() errs",
+          "expr": "app:orrery AND environment:$environment AND surface:pipeline AND _msg:~\"(?i)error|panic|traceback|failed\" | stats count() errs",
           "queryType": "stats"
         }
       ],
@@ -141,7 +141,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "app:orrery AND env:$env AND container:~\"orrery-pipeline-runner-.*\" | stats count() lines",
+          "expr": "app:orrery AND environment:$environment AND surface:pipeline | stats count() lines",
           "queryType": "stats"
         }
       ],
@@ -173,9 +173,9 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "app:orrery AND env:$env AND container:~\"orrery-pipeline-runner-.*\" | stats by (container) count() lines",
+          "expr": "app:orrery AND environment:$environment AND surface:pipeline | stats by (container, job) count() lines",
           "queryType": "statsRange",
-          "legendFormat": "{{container}}"
+          "legendFormat": "{{container}}{{job}}"
         }
       ],
       "fieldConfig": {
@@ -206,7 +206,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "app:orrery AND env:$env AND container:~\"orrery-pipeline-runner-.*\"",
+          "expr": "app:orrery AND environment:$environment AND surface:pipeline",
           "queryType": "instant"
         }
       ],
@@ -233,7 +233,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "app:orrery AND env:$env AND container:~\"orrery-pipeline-runner-.*\" AND _msg:~\"(?i)error|panic|traceback|failed\"",
+          "expr": "app:orrery AND environment:$environment AND surface:pipeline AND _msg:~\"(?i)error|panic|traceback|failed\"",
           "queryType": "instant"
         }
       ],

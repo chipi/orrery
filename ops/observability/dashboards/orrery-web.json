@@ -12,30 +12,30 @@
   "templating": {
     "list": [
       {
-        "name": "env",
+        "name": "environment",
         "label": "Environment",
         "type": "custom",
-        "query": "dev,staging,prod",
+        "query": "prod,dev,ci",
         "current": {
           "selected": true,
-          "text": "dev",
-          "value": "dev"
+          "text": "prod",
+          "value": "prod"
         },
         "options": [
           {
             "selected": true,
+            "text": "prod",
+            "value": "prod"
+          },
+          {
+            "selected": false,
             "text": "dev",
             "value": "dev"
           },
           {
             "selected": false,
-            "text": "staging",
-            "value": "staging"
-          },
-          {
-            "selected": false,
-            "text": "prod",
-            "value": "prod"
+            "text": "ci",
+            "value": "ci"
           }
         ]
       }
@@ -59,7 +59,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "app:orrery AND env:$env AND surface:web AND _msg:~\"HTTP/1\" | stats count() reqs",
+          "expr": "app:orrery AND environment:$environment AND surface:web AND _msg:~\"HTTP/1\" | stats count() reqs",
           "queryType": "stats"
         }
       ],
@@ -91,7 +91,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "app:orrery AND env:$env AND surface:web AND _msg:~\"HTTP/1\" | extract \"\\\"<method> <path> HTTP/<_>\\\" <status> <bytes> \\\"\" | filter status:~\"4..\" | stats count() reqs",
+          "expr": "app:orrery AND environment:$environment AND surface:web AND _msg:~\"HTTP/1\" | extract \"\\\"<method> <path> HTTP/<_>\\\" <status> <bytes> \\\"\" | filter status:~\"4..\" | stats count() reqs",
           "queryType": "stats"
         }
       ],
@@ -141,7 +141,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "app:orrery AND env:$env AND surface:web AND _msg:~\"HTTP/1\" | extract \"\\\"<method> <path> HTTP/<_>\\\" <status> <bytes> \\\"\" | filter status:~\"5..\" | stats count() reqs",
+          "expr": "app:orrery AND environment:$environment AND surface:web AND _msg:~\"HTTP/1\" | extract \"\\\"<method> <path> HTTP/<_>\\\" <status> <bytes> \\\"\" | filter status:~\"5..\" | stats count() reqs",
           "queryType": "stats"
         }
       ],
@@ -187,7 +187,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "app:orrery AND env:$env AND surface:web AND _msg:~\"HTTP/1\" | extract \"\\\"<method> <path> HTTP/<_>\\\" <status> <bytes> \\\"\" | stats sum(bytes) bytes",
+          "expr": "app:orrery AND environment:$environment AND surface:web AND _msg:~\"HTTP/1\" | extract \"\\\"<method> <path> HTTP/<_>\\\" <status> <bytes> \\\"\" | stats sum(bytes) bytes",
           "queryType": "stats"
         }
       ],
@@ -221,7 +221,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "app:orrery AND env:$env AND container:orrery-web AND stream:stderr | stats count() lines",
+          "expr": "app:orrery AND environment:$environment AND container:orrery-web AND stream:stderr | stats count() lines",
           "queryType": "stats"
         }
       ],
@@ -271,7 +271,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "app:orrery AND env:$env AND surface:web AND _msg:~\"HTTP/1\" | extract \"\\\"<method> <path> HTTP/<_>\\\" <status> <bytes> \\\"\" | stats by (status) count() reqs",
+          "expr": "app:orrery AND environment:$environment AND surface:web AND _msg:~\"HTTP/1\" | extract \"\\\"<method> <path> HTTP/<_>\\\" <status> <bytes> \\\"\" | stats by (status) count() reqs",
           "queryType": "statsRange",
           "legendFormat": "{{status}}"
         }
@@ -304,7 +304,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "app:orrery AND env:$env AND surface:web AND _msg:~\"HTTP/1\" | extract \"\\\"<method> <path> HTTP/<_>\\\" <status> <bytes> \\\"\" | stats sum(bytes) bytes",
+          "expr": "app:orrery AND environment:$environment AND surface:web AND _msg:~\"HTTP/1\" | extract \"\\\"<method> <path> HTTP/<_>\\\" <status> <bytes> \\\"\" | stats sum(bytes) bytes",
           "queryType": "statsRange",
           "legendFormat": "{{__auto}}"
         }
@@ -337,7 +337,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "app:orrery AND env:$env AND surface:web AND _msg:~\"HTTP/1\" | extract \"\\\"<method> <path> HTTP/<_>\\\" <status> <bytes> \\\"\" | stats by (path) count() reqs | sort by (reqs desc) | limit 20",
+          "expr": "app:orrery AND environment:$environment AND surface:web AND _msg:~\"HTTP/1\" | extract \"\\\"<method> <path> HTTP/<_>\\\" <status> <bytes> \\\"\" | stats by (path) count() reqs | sort by (reqs desc) | limit 20",
           "queryType": "stats"
         }
       ],
@@ -362,7 +362,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "app:orrery AND env:$env AND surface:web AND _msg:~\"HTTP/1\" | extract \"\\\"<method> <path> HTTP/<_>\\\" <status> <bytes> \\\"\" | filter status:~\"[45]..\"",
+          "expr": "app:orrery AND environment:$environment AND surface:web AND _msg:~\"HTTP/1\" | extract \"\\\"<method> <path> HTTP/<_>\\\" <status> <bytes> \\\"\" | filter status:~\"[45]..\"",
           "queryType": "instant"
         }
       ],
@@ -389,7 +389,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "app:orrery AND env:$env AND surface:web AND _msg:~\"HTTP/1\"",
+          "expr": "app:orrery AND environment:$environment AND surface:web AND _msg:~\"HTTP/1\"",
           "queryType": "instant"
         }
       ],

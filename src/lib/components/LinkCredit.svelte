@@ -11,6 +11,7 @@
   import { getSourceLogos, type SourceLogo } from '$lib/data';
   import { type LinkProvenanceEntry } from '$lib/link-provenance';
   import * as m from '$lib/paraglide/messages';
+  import { dataLoadFailed } from '$lib/data/core';
 
   type Props = { link: LinkProvenanceEntry };
   let { link }: Props = $props();
@@ -19,10 +20,12 @@
 
   $effect(() => {
     let cancelled = false;
-    void getSourceLogos().then((mf) => {
-      if (cancelled) return;
-      source = mf.sources.find((s) => s.id === link.source_id) ?? null;
-    });
+    void getSourceLogos()
+      .then((mf) => {
+        if (cancelled) return;
+        source = mf.sources.find((s) => s.id === link.source_id) ?? null;
+      })
+      .catch(dataLoadFailed);
     return () => {
       cancelled = true;
     };

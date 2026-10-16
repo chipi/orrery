@@ -26,6 +26,7 @@
   import WhyPopover from './WhyPopover.svelte';
   import { VehicleIcon, SpacecraftIcon, TrajectoryArrowIcon } from '$lib/components/icons';
   import type { ScienceTabId } from '$types/science';
+  import { dataLoadFailed } from '$lib/data/core';
 
   // The former LEARN tab folds into SCIENCE (Phase 4 cleanup): ScienceCards
   // on top, the tiered learn-link list below — one tab destination, less
@@ -111,19 +112,27 @@
       // Popularity signal: a mission detail was opened. `open` gates it so
       // a prefetched/derived mission that never shows isn't counted.
       if (open) trackMissionView(mission.id, page.url.pathname);
-      void getMissionGallery(mission.id).then((urls) => {
-        if (mission && mission.id === lastId) gallery = urls;
-      });
-      void getVideosForEntity(mission.id).then((v) => {
-        if (mission && mission.id === lastId) videos = v;
-      });
+      void getMissionGallery(mission.id)
+        .then((urls) => {
+          if (mission && mission.id === lastId) gallery = urls;
+        })
+        .catch(dataLoadFailed);
+      void getVideosForEntity(mission.id)
+        .then((v) => {
+          if (mission && mission.id === lastId) videos = v;
+        })
+        .catch(dataLoadFailed);
       // Insignia map (PRD-029) — gate the badge so patch-less missions
       // (Mercury/Gemini flights predate mission patches) fire no 404.
-      void getBadges().then((b) => (badges = b));
+      void getBadges()
+        .then((b) => (badges = b))
+        .catch(dataLoadFailed);
       // #547 — collection numbering for the collectible card.
       cardOpen = false;
       if (missionIndex.length === 0) {
-        void getMissionIndex().then((idx) => (missionIndex = idx));
+        void getMissionIndex()
+          .then((idx) => (missionIndex = idx))
+          .catch(dataLoadFailed);
       }
       // Resolve cross-link to /mars or /moon surface-site catalogue.
       const findSite = (sites: SurfaceSite[]) =>
@@ -132,13 +141,17 @@
         null;
       const loc = localeFromPage(page);
       if (mission.dest === 'MARS') {
-        void getMarsSites(loc).then((list) => {
-          if (mission && mission.id === lastId) crossSite = findSite(list);
-        });
+        void getMarsSites(loc)
+          .then((list) => {
+            if (mission && mission.id === lastId) crossSite = findSite(list);
+          })
+          .catch(dataLoadFailed);
       } else if (mission.dest === 'MOON') {
-        void getMoonSites(loc).then((list) => {
-          if (mission && mission.id === lastId) crossSite = findSite(list);
-        });
+        void getMoonSites(loc)
+          .then((list) => {
+            if (mission && mission.id === lastId) crossSite = findSite(list);
+          })
+          .catch(dataLoadFailed);
       }
     }
   });

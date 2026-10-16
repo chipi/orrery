@@ -198,6 +198,7 @@
   import EnterSkyButton from '$lib/components/EnterSkyButton.svelte';
   import { launchArScene, launchSkyScene } from '$lib/ar/launch-ar';
   import type { ArSceneType } from '$lib/ar/ar-scene';
+  import { dataLoadFailed } from '$lib/data/core';
 
   // ─── Props (planet-specific config + data loaders) ────────────────
   // The component is generic over body; per-planet behaviour comes in
@@ -910,10 +911,12 @@
       });
       const sid = selected.id;
       const site = selected as SurfaceSite;
-      void getVideosForEntity(sid).then((v) => {
-        if (selected != null && selected.id === lastSelectedId && sid === lastSelectedId)
-          panelVideos = v;
-      });
+      void getVideosForEntity(sid)
+        .then((v) => {
+          if (selected != null && selected.id === lastSelectedId && sid === lastSelectedId)
+            panelVideos = v;
+        })
+        .catch(dataLoadFailed);
       // Card canonical-entity resolution (fire-and-forget, still-current guarded).
       void (async () => {
         // On a thrown fetch cardAliasPending stays true → CTA absent;
@@ -1497,9 +1500,11 @@
       // Mission-index — populates the "FULL MISSION CARD →" cross-link
       // inside EarthObjectPanel. Fire-and-forget; the panel renders
       // with the empty Set until this resolves.
-      void getMissionIndex().then((idx) => {
-        earthMissionIds = new Set(idx.map((mi) => mi.id));
-      });
+      void getMissionIndex()
+        .then((idx) => {
+          earthMissionIds = new Set(idx.map((mi) => mi.id));
+        })
+        .catch(dataLoadFailed);
 
       // Satellites + orbit rings — both depend on the EarthObject set
       // returned by the route's loadObjects callback. Loaded async then
@@ -2554,40 +2559,42 @@
     // "LANDING SITE" + "DAY 0" instead of the real values (image 20
     // feedback, 2026-06-02). RAF-poll until sites are in.
     if (loadTraverses != null && loadTraverses) {
-      loadTraverses().then((data) => {
-        traverses = data;
-        const tryBuild = () => {
-          if (sites.length === 0) {
-            requestAnimationFrame(tryBuild);
-            return;
-          }
-          rebuildTraverses();
-          // Deep-link consumption: ?site=<rover>&traverse_stop=<sol-id>
-          // — find the named stop in the rover's traverse and fly the
-          // camera to its lat/lon. Falls back to a regular site-face
-          // fly-in if the stop id doesn't resolve (typo'd link, stale
-          // bookmark, etc.) so the deep-link still does something
-          // useful instead of silently no-op-ing.
-          if (pendingTraverseStopFocus) {
-            const { siteId, stopId } = pendingTraverseStopFocus;
-            pendingTraverseStopFocus = null;
-            const traverse = data[siteId];
-            const stop = traverse?.stops?.find((s) => s.id === stopId);
-            const site = sites.find((s) => s.id === siteId);
-            if (stop && site && faceCameraAtSite) {
-              // Face the stop's coords using the real site record (traverses
-              // are keyed by site id, so `site` is always present here). No
-              // fabricated/cast placeholder — if the site is somehow missing
-              // we fall through rather than face a fake SurfaceSite.
-              faceCameraAtSite({ ...site, lat: stop.lat, lon: stop.lon });
-            } else if (site && faceCameraAtSite) {
-              // Stop not found — graceful fallback to facing the site.
-              faceCameraAtSite(site);
+      loadTraverses()
+        .then((data) => {
+          traverses = data;
+          const tryBuild = () => {
+            if (sites.length === 0) {
+              requestAnimationFrame(tryBuild);
+              return;
             }
-          }
-        };
-        tryBuild();
-      });
+            rebuildTraverses();
+            // Deep-link consumption: ?site=<rover>&traverse_stop=<sol-id>
+            // — find the named stop in the rover's traverse and fly the
+            // camera to its lat/lon. Falls back to a regular site-face
+            // fly-in if the stop id doesn't resolve (typo'd link, stale
+            // bookmark, etc.) so the deep-link still does something
+            // useful instead of silently no-op-ing.
+            if (pendingTraverseStopFocus) {
+              const { siteId, stopId } = pendingTraverseStopFocus;
+              pendingTraverseStopFocus = null;
+              const traverse = data[siteId];
+              const stop = traverse?.stops?.find((s) => s.id === stopId);
+              const site = sites.find((s) => s.id === siteId);
+              if (stop && site && faceCameraAtSite) {
+                // Face the stop's coords using the real site record (traverses
+                // are keyed by site id, so `site` is always present here). No
+                // fabricated/cast placeholder — if the site is somehow missing
+                // we fall through rather than face a fake SurfaceSite.
+                faceCameraAtSite({ ...site, lat: stop.lat, lon: stop.lon });
+              } else if (site && faceCameraAtSite) {
+                // Stop not found — graceful fallback to facing the site.
+                faceCameraAtSite(site);
+              }
+            }
+          };
+          tryBuild();
+        })
+        .catch(dataLoadFailed);
     }
 
     // Surface Hotspots LOD dispatcher entries (PRD-014 / RFC-017 S1

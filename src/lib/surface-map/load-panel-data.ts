@@ -9,6 +9,7 @@
  */
 import type { SiteStory } from '$lib/data';
 import { getSiteStory } from '$lib/data';
+import { dataLoadFailed } from '$lib/data/core';
 
 export function loadPanelData({
   siteId,
@@ -27,10 +28,14 @@ export function loadPanelData({
   onGallery: (urls: string[]) => void;
   onStory: (story: SiteStory | null) => void;
 }): void {
-  void fetchGallery(siteId, missionId).then((urls) => {
-    if (isStillCurrent()) onGallery(urls);
-  });
-  void getSiteStory(siteId, locale).then((story) => {
-    if (isStillCurrent()) onStory(story);
-  });
+  void fetchGallery(siteId, missionId)
+    .then((urls) => {
+      if (isStillCurrent()) onGallery(urls);
+    })
+    .catch(dataLoadFailed);
+  void getSiteStory(siteId, locale)
+    .then((story) => {
+      if (isStillCurrent()) onStory(story);
+    })
+    .catch(dataLoadFailed);
 }

@@ -12,6 +12,7 @@
 <script lang="ts">
   import { getImageProvenance, type ImageProvenanceEntry } from '$lib/data';
   import * as m from '$lib/paraglide/messages';
+  import { dataLoadFailed } from '$lib/data/core';
 
   type Props = {
     src: string | null;
@@ -27,9 +28,11 @@
     lastSrc = target;
     entry = null;
     if (!target) return;
-    void getImageProvenance(target).then((e) => {
-      if (lastSrc === target) entry = e;
-    });
+    void getImageProvenance(target)
+      .then((e) => {
+        if (lastSrc === target) entry = e;
+      })
+      .catch(dataLoadFailed);
   });
 </script>
 

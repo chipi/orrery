@@ -17,6 +17,7 @@
   import * as m from '$lib/paraglide/messages';
   import ImageCredit from '$lib/components/ImageCredit.svelte';
   import { loadLadder, ladderSources } from '$lib/image-srcset';
+  import { dataLoadFailed } from '$lib/data/core';
 
   interface Props {
     src: string | null;
@@ -27,7 +28,9 @@
   // Responsive WebP ladder for the full-screen view; plain jpg until the
   // manifest loads / for images with no ladder. RFC-030 Slice 3.
   let ladderReady = $state(false);
-  loadLadder().then(() => (ladderReady = true));
+  loadLadder()
+    .then(() => (ladderReady = true))
+    .catch(dataLoadFailed);
   const ladder = $derived(ladderReady && src ? ladderSources(src) : null);
 </script>
 

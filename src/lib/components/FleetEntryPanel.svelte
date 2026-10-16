@@ -37,6 +37,7 @@
     scienceSlugForCycle,
     type EngineCycle,
   } from '$lib/physics/propulsion/engine-registry';
+  import { dataLoadFailed } from '$lib/data/core';
 
   /**
    * Fleet detail panel. Six tabs (OVERVIEW / GALLERY / ANATOMY / CREW /
@@ -118,13 +119,19 @@
       // is a v0.6 launch route; this tells us which of the ~137 entries
       // pull engagement.
       track('fleet-entry-view', { id: entry.id, category: entry.category });
-      void getBadges().then((b) => (badges = b));
-      void galleryFetcher(entry.id).then((urls) => {
-        if (entry && entry.id === lastId) gallery = urls;
-      });
-      void getVideosForEntity(entry.id).then((v) => {
-        if (entry && entry.id === lastId) videos = v;
-      });
+      void getBadges()
+        .then((b) => (badges = b))
+        .catch(dataLoadFailed);
+      void galleryFetcher(entry.id)
+        .then((urls) => {
+          if (entry && entry.id === lastId) gallery = urls;
+        })
+        .catch(dataLoadFailed);
+      void getVideosForEntity(entry.id)
+        .then((v) => {
+          if (entry && entry.id === lastId) videos = v;
+        })
+        .catch(dataLoadFailed);
       // #547 S4 — card numbering + mission-alias resolution.
       cardOpen = false;
       aliasMission = null;
@@ -174,7 +181,9 @@
   // ladders once the manifest loads; plain webp until then / when no ladder
   // exists (RFC-030 Slice 3, mirrors PanelHeroImage).
   let ladderReady = $state(false);
-  loadLadder().then(() => (ladderReady = true));
+  loadLadder()
+    .then(() => (ladderReady = true))
+    .catch(dataLoadFailed);
   let diagramLadder = $derived(ladderReady && diagramPath ? ladderSources(diagramPath) : null);
   let cutawayLadder = $derived(ladderReady && cutawayPath ? ladderSources(cutawayPath) : null);
 

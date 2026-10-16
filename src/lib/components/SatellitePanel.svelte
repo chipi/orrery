@@ -30,6 +30,7 @@
   import CardOverlay from '$lib/cards/CardOverlay.svelte';
   import ScienceCard from './ScienceCard.svelte';
   import type { ScienceTabId } from '$types/science';
+  import { dataLoadFailed } from '$lib/data/core';
 
   const loc = $derived(localeFromPage(page));
 
@@ -49,10 +50,12 @@
   let loaded = $state(false);
   $effect(() => {
     if (!loaded) {
-      void getSatellites().then((sats) => {
-        satellites = sats;
-        loaded = true;
-      });
+      void getSatellites()
+        .then((sats) => {
+          satellites = sats;
+          loaded = true;
+        })
+        .catch(dataLoadFailed);
     }
   });
 
@@ -95,12 +98,16 @@
       overlay = null;
       cardOpen = false;
       const id = baseEntry.id;
-      void getSatelliteGallery(id).then((urls) => {
-        if (baseEntry && baseEntry.id === lastKey) gallery = urls;
-      });
-      void getSatelliteI18n(loc, id).then((o) => {
-        if (baseEntry && baseEntry.id === lastKey) overlay = o;
-      });
+      void getSatelliteGallery(id)
+        .then((urls) => {
+          if (baseEntry && baseEntry.id === lastKey) gallery = urls;
+        })
+        .catch(dataLoadFailed);
+      void getSatelliteI18n(loc, id)
+        .then((o) => {
+          if (baseEntry && baseEntry.id === lastKey) overlay = o;
+        })
+        .catch(dataLoadFailed);
       void loadMissionIndex();
     }
   });

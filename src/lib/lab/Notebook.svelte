@@ -40,6 +40,7 @@
   import { composeReportCard, downloadBlob, type ReportCardLine } from './report-card';
   import { assetUrl } from '$lib/asset-url';
   import { getFlightMap } from './flight-maps';
+  import { dataLoadFailed } from '$lib/data/core';
 
   type Props = {
     goal: Goal;
@@ -101,9 +102,11 @@
   // by FieldSpec key; never enters cell.inputs.
   let injectedInputs = $state<Record<string, number | string>>({ tle: stationTleBlock('iss') });
   onMount(() => {
-    resolveStationTleBlock('iss').then((tle) => {
-      injectedInputs = { tle };
-    });
+    resolveStationTleBlock('iss')
+      .then((tle) => {
+        injectedInputs = { tle };
+      })
+      .catch(dataLoadFailed);
   });
 
   // The whole notebook recomputes on any input edit — trivially cheap for M1.

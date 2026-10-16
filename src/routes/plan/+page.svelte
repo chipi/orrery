@@ -34,6 +34,7 @@
     isError,
     isLoading,
   } from '$lib/types/remote-data';
+  import { dataLoadFailed } from '$lib/data/core';
 
   // v0.8 (#312 / ADR-076 / RFC-026): /plan ships the full twelve-destination
   // set. Every destination now has a committed porkchop grid at
@@ -976,19 +977,21 @@
     // Pre-warm fleet hero overrides for the rocket-photo reference shot.
     void loadHeroOverrides('fleet');
 
-    getRockets(localeFromPage(page)).then((list) => {
-      rocketList = list;
-      if (pendingRocketDeepLink && list.some((r) => r.id === pendingRocketDeepLink)) {
-        selectedRocketId = pendingRocketDeepLink;
-        userPickedRocket = true;
-        pendingRocketDeepLink = null;
-        return;
-      }
-      // Initial pick: no porkchop cell selected yet, so use a typical
-      // Mars-class ∆v as the seed (~10 km/s). The $effect that watches
-      // readout will refine this the moment the user clicks any cell.
-      selectedRocketId = suggestRocket(list, 10) ?? list[0]?.id ?? null;
-    });
+    getRockets(localeFromPage(page))
+      .then((list) => {
+        rocketList = list;
+        if (pendingRocketDeepLink && list.some((r) => r.id === pendingRocketDeepLink)) {
+          selectedRocketId = pendingRocketDeepLink;
+          userPickedRocket = true;
+          pendingRocketDeepLink = null;
+          return;
+        }
+        // Initial pick: no porkchop cell selected yet, so use a typical
+        // Mars-class ∆v as the seed (~10 km/s). The $effect that watches
+        // readout will refine this the moment the user clicks any cell.
+        selectedRocketId = suggestRocket(list, 10) ?? list[0]?.id ?? null;
+      })
+      .catch(dataLoadFailed);
 
     const onResize = () => drawPlot();
     window.addEventListener('resize', onResize);

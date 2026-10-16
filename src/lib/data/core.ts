@@ -147,11 +147,57 @@ export async function get<T>(path: string, fetchFn: FetchLike = fetch): Promise<
 
   const url = `${base}/data/${path}`;
   if (cache.has(url)) return cache.get(url) as T;
-  const res = await fetchFn(url);
-  if (!res.ok) throw new Error(`Failed to fetch ${url}: HTTP ${res.status}`);
-  const data = (await res.json()) as T;
+  const data = await fetchJsonWithRetry<T>(url, fetchFn);
   cache.set(url, data);
   return data;
+}
+
+// Same transient policy as the i18n bundle: a network error (`TypeError: Failed to
+// fetch` — flaky mobile link, aborted nav) or a 5xx is retried with short backoff; a
+// 4xx is final. Prod GlitchTip #554 was single transient failures on rockets.json,
+// orbit-regimes.json and fleet/launch-site/*.json escaping as unhandled rejections.
+async function fetchJsonWithRetry<T>(url: string, fetchFn: FetchLike): Promise<T> {
+  let lastErr: Error | undefined;
+  for (let attempt = 0; attempt < BUNDLE_ATTEMPTS; attempt++) {
+    if (attempt > 0) await bundleDelay(200 * 2 ** (attempt - 1)); // 200ms, 400ms
+    let res: Response;
+    try {
+      res = await fetchFn(url);
+    } catch (err) {
+      lastErr = new Error(`Failed to fetch ${url}: ${(err as Error).message}`);
+      continue;
+    }
+    if (res.ok) return (await res.json()) as T;
+    lastErr = new Error(`Failed to fetch ${url}: HTTP ${res.status}`);
+    if (res.status < 500) break;
+  }
+  throw lastErr;
+}
+
+/**
+ * `.catch` handler for fire-and-forget data loads (`void getX().then(...)`). A load
+ * that failed even after `get()`'s retries leaves its panel/section empty — the page
+ * keeps working — so it is not an exception to report per event (#554). It is counted
+ * once per URL per session as an analytics event so the real failure rate stays
+ * measurable, the same way i18n bundle failures are (#517).
+ *
+ * Anything that is NOT a load failure (a bug thrown inside the `.then` callback) is
+ * rethrown, so it still surfaces as an error instead of being counted away.
+ */
+const reportedLoadFailures = new Set<string>();
+// get()'s own errors, plus the raw network TypeError per engine: Chromium
+// "Failed to fetch", WebKit "Load failed", Gecko "NetworkError when attempting…".
+const LOAD_FAILURE = /^(Failed to fetch\b|Load failed$|NetworkError when attempting to fetch)/;
+export function dataLoadFailed(err: unknown): void {
+  const message = err instanceof Error ? err.message : String(err);
+  if (!LOAD_FAILURE.test(message)) throw err;
+  if (typeof window === 'undefined') return;
+  const what = /^Failed to fetch (\S+?):?(?:\s|$)/.exec(message)?.[1] ?? 'unknown';
+  if (reportedLoadFailures.has(what)) return;
+  reportedLoadFailures.add(what);
+  void import('$lib/analytics')
+    .then((m) => m.track('data-load-failed', { url: what.replace(/^https?:\/\/[^/]+/, '') }))
+    .catch(() => {});
 }
 
 /** Clear the fetch cache + i18n bundles (test isolation). Callers that hold
@@ -160,5 +206,6 @@ export function resetCoreCache(): void {
   cache.clear();
   i18nBundles.clear();
   reportedBundleFailures.clear();
+  reportedLoadFailures.clear();
   bundleFailedCycles.clear();
 }

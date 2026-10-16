@@ -30,6 +30,7 @@
     isError,
     isSuccess,
   } from '$lib/types/remote-data';
+  import { dataLoadFailed } from '$lib/data/core';
 
   // EpochTimelineStrip URL allowlist — same shape as /fleet's epochValid.
   // The strip writes `?epoch=<id>`; this validates round-trips so a junk
@@ -350,7 +351,9 @@
     // `<id>/01.jpg` silently when no override file exists; safe to
     // fire-and-forget.
     void loadHeroOverrides('missions');
-    void getBadges().then((b) => (badges = b));
+    void getBadges()
+      .then((b) => (badges = b))
+      .catch(dataLoadFailed);
   });
   // Re-fetch when the URL `?lang=` changes so locale switches replace
   // the merged mission overlay set without a full page reload.

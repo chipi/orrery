@@ -49,6 +49,7 @@
   import type { OrbitRegime } from '$types/orbit-regime';
   import RegimeChip from '$lib/components/RegimeChip.svelte';
   import { regimeById } from '$lib/physics/util/orbit-regime-match';
+  import { dataLoadFailed } from '$lib/data/core';
 
   interface Props {
     selected: EarthObject | null;
@@ -117,9 +118,11 @@
       // Earth-object ids often match a mission id (e.g. "lro",
       // "hubble", "jwst", "chandrayaan1") so getEarthObjectGallery's
       // built-in mission-gallery fallback is enough.
-      void getEarthObjectGallery(selected.id).then((urls: string[]) => {
-        if (selected && selected.id === lastSelectedId) panelGallery = urls;
-      });
+      void getEarthObjectGallery(selected.id)
+        .then((urls: string[]) => {
+          if (selected && selected.id === lastSelectedId) panelGallery = urls;
+        })
+        .catch(dataLoadFailed);
       const sid = selected.id;
       const eo = selected;
       void (async () => {

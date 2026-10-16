@@ -16,6 +16,7 @@
     type LinkProvenanceEntry,
   } from '$lib/link-provenance';
   import LinkCredit from './LinkCredit.svelte';
+  import { dataLoadFailed } from '$lib/data/core';
 
   type Props = {
     entityId: string;
@@ -34,9 +35,11 @@
       return;
     }
     let cancelled = false;
-    void getLinkProvenance(entityId, url).then((entry) => {
-      if (!cancelled) resolved = entry;
-    });
+    void getLinkProvenance(entityId, url)
+      .then((entry) => {
+        if (!cancelled) resolved = entry;
+      })
+      .catch(dataLoadFailed);
     return () => {
       cancelled = true;
     };

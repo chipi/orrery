@@ -14,6 +14,7 @@
   import WhyPopover from './WhyPopover.svelte';
   import { MU_SUN_AU3_YR2, AU_PER_YR_TO_KMS, AU_TO_KM } from '$lib/fly-physics-constants';
   import type { ScienceTabId } from '$types/science';
+  import { dataLoadFailed } from '$lib/data/core';
 
   // LEARN folds into SCIENCE (Phase 4 cleanup) — one tab destination, less
   // strip crowding. Tiered link list renders below the curated ScienceCards.
@@ -78,11 +79,15 @@
       lightboxSrc = null;
       gallery = [];
       cardOpen = false;
-      void getPlanetGallery(planet.id).then((urls) => {
-        if (planet && planet.id === lastId) gallery = urls;
-      });
+      void getPlanetGallery(planet.id)
+        .then((urls) => {
+          if (planet && planet.id === lastId) gallery = urls;
+        })
+        .catch(dataLoadFailed);
       if (planetList.length === 0) {
-        void getPlanets().then((all) => (planetList = all));
+        void getPlanets()
+          .then((all) => (planetList = all))
+          .catch(dataLoadFailed);
       }
       // Warm the /missions + /fleet id index so linkifyMission()
       // resolves synchronously on first MISSIONS tab render.

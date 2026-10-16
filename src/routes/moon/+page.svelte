@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { dataLoadFailed } from '$lib/data/core';
   // /moon is now a thin shell over the shared SurfaceScene component
   // (ADR-072 / #283 Slice 2). Planet-specific config (texture URL,
   // ambient tint, tidal-lock overlay, lander model builder, hotspot
@@ -196,12 +197,16 @@
   }
 
   onMount(async () => {
-    const [r, sites] = await Promise.all([
-      getOrbitRegimesMoon(getLocale()),
-      getMoonSites(getLocale()),
-    ]);
-    regimes = r;
-    moonOrbiterSites = sites.filter((s) => s.kind === 'orbiter');
+    try {
+      const [r, sites] = await Promise.all([
+        getOrbitRegimesMoon(getLocale()),
+        getMoonSites(getLocale()),
+      ]);
+      regimes = r;
+      moonOrbiterSites = sites.filter((s) => s.kind === 'orbiter');
+    } catch (err) {
+      dataLoadFailed(err);
+    }
   });
 
   // Resolve `?regime=NRHO` deep-link once regimes load.

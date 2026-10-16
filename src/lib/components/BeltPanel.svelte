@@ -25,6 +25,7 @@
   import { linkifyMission, loadMissionIndex } from '$lib/missions-linkify';
   import type { ScienceTabId } from '$types/science';
   import { getBelts, getBeltGallery, getBeltI18n, type BeltEntry, type BeltI18n } from '$lib/data';
+  import { dataLoadFailed } from '$lib/data/core';
 
   const loc = $derived(localeFromPage(page));
 
@@ -45,10 +46,12 @@
   let loaded = $state(false);
   $effect(() => {
     if (!loaded) {
-      void getBelts().then((b) => {
-        belts = b;
-        loaded = true;
-      });
+      void getBelts()
+        .then((b) => {
+          belts = b;
+          loaded = true;
+        })
+        .catch(dataLoadFailed);
     }
   });
 
@@ -96,12 +99,16 @@
       lightboxSrc = null;
       overlay = null;
       const id = baseEntry.id;
-      void getBeltGallery(id).then((g) => {
-        if (baseEntry && baseEntry.id === id) gallery = g;
-      });
-      void getBeltI18n(loc, id).then((o) => {
-        if (baseEntry && baseEntry.id === id) overlay = o;
-      });
+      void getBeltGallery(id)
+        .then((g) => {
+          if (baseEntry && baseEntry.id === id) gallery = g;
+        })
+        .catch(dataLoadFailed);
+      void getBeltI18n(loc, id)
+        .then((o) => {
+          if (baseEntry && baseEntry.id === id) overlay = o;
+        })
+        .catch(dataLoadFailed);
       void loadMissionIndex();
     }
   });

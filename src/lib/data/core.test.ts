@@ -2,7 +2,7 @@
 // jsdom so `window` is defined — the loader only reports a bundle failure in a
 // browser context (reportI18nBundleFailure early-returns when window is absent).
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
-import { get, resetCoreCache } from './core';
+import { get, resetCoreCache, dataLoadFailed } from './core';
 
 // Drain the fire-and-forget `import('$lib/analytics').then(...)` microtask chain.
 const flush = async () => {
@@ -113,5 +113,84 @@ describe('core get() — i18n bundle load (#517)', () => {
     await p2;
     await flush();
     expect(trackSpy).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('core get() — plain data load (#554)', () => {
+  beforeEach(() => {
+    resetCoreCache();
+    trackSpy.mockClear();
+  });
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+
+  it('retries a transient network failure and resolves', async () => {
+    vi.useFakeTimers();
+    const { fn, urls } = makeFetch([
+      () => Promise.reject(new TypeError('Failed to fetch')),
+      () => json([{ id: 'falcon-9' }]),
+    ]);
+    const p = get<Array<{ id: string }>>('rockets.json', fn);
+    await vi.runAllTimersAsync();
+    expect(await p).toEqual([{ id: 'falcon-9' }]);
+    expect(urls.length).toBe(2);
+  });
+
+  it('retries a 5xx up to the cap, then rejects', async () => {
+    vi.useFakeTimers();
+    const { fn, urls } = makeFetch([() => httpErr(502)]);
+    const p = get('rockets.json', fn).catch((e) => e);
+    await vi.runAllTimersAsync();
+    const err = await p;
+    expect(err).toBeInstanceOf(Error);
+    expect((err as Error).message).toMatch(/rockets\.json: HTTP 502/);
+    expect(urls.length).toBe(3);
+  });
+
+  it('does not retry a 4xx', async () => {
+    const { fn, urls } = makeFetch([() => httpErr(404)]);
+    await expect(get('rockets.json', fn)).rejects.toThrow(/HTTP 404/);
+    expect(urls.length).toBe(1);
+  });
+
+  it('caches a success — a second get() makes no request', async () => {
+    const { fn, urls } = makeFetch([() => json({ ok: 1 })]);
+    await get('orbit-regimes.json', fn);
+    await get('orbit-regimes.json', fn);
+    expect(urls.length).toBe(1);
+  });
+});
+
+describe('dataLoadFailed (#554)', () => {
+  beforeEach(() => {
+    resetCoreCache();
+    trackSpy.mockClear();
+  });
+
+  it('counts a failed load once per URL, site-relative', async () => {
+    dataLoadFailed(new Error('Failed to fetch /data/rockets.json: Failed to fetch'));
+    await vi.waitFor(() => expect(trackSpy).toHaveBeenCalledTimes(1));
+    dataLoadFailed(new Error('Failed to fetch /data/rockets.json: HTTP 503'));
+    dataLoadFailed(new Error('Failed to fetch https://cdn.example/data/orbit-regimes.json: x'));
+    await vi.waitFor(() => expect(trackSpy).toHaveBeenCalledTimes(2));
+    await flush();
+    expect(trackSpy).toHaveBeenCalledTimes(2);
+    expect(trackSpy).toHaveBeenCalledWith('data-load-failed', { url: '/data/rockets.json' });
+    expect(trackSpy).toHaveBeenCalledWith('data-load-failed', { url: '/data/orbit-regimes.json' });
+  });
+
+  it('counts a raw engine network error (WebKit "Load failed") as unknown', async () => {
+    dataLoadFailed(new TypeError('Load failed'));
+    await vi.waitFor(() => expect(trackSpy).toHaveBeenCalledTimes(1));
+    expect(trackSpy).toHaveBeenCalledWith('data-load-failed', { url: 'unknown' });
+  });
+
+  it('rethrows anything that is not a load failure, so a bug still surfaces', async () => {
+    const bug = new TypeError("Cannot read properties of undefined (reading 'id')");
+    expect(() => dataLoadFailed(bug)).toThrow(bug);
+    expect(() => dataLoadFailed('boom')).toThrow();
+    await flush();
+    expect(trackSpy).not.toHaveBeenCalled();
   });
 });

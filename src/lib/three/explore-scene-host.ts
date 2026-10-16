@@ -58,6 +58,7 @@ import {
   type LocalGroupMember,
   type NamedStar,
 } from '$lib/data';
+import { dataLoadFailed } from '$lib/data/core';
 
 /**
  * `/explore` 3D scene host (RFC-036 WS-C/C2b — the whole onMount teardown).
@@ -135,9 +136,11 @@ export function createExploreSceneHost(bridge: any, deps: any) {
   // that IS a message target (M13 ← the Arecibo message) still opens a flat panel
   // to surface it, rather than the highlight-only path.
   const cultureObjectIds = new Set<string>();
-  void getCultureObjectIds(fetch).then((s) => {
-    for (const id of s) cultureObjectIds.add(id);
-  });
+  void getCultureObjectIds(fetch)
+    .then((s) => {
+      for (const id of s) cultureObjectIds.add(id);
+    })
+    .catch(dataLoadFailed);
   let closeExoplanetFn: any = null;
   let resetSimToToday: any = null;
   let enterSystemFn: any = null;
@@ -300,9 +303,11 @@ export function createExploreSceneHost(bridge: any, deps: any) {
       bridge.bhPanelOpen = true;
       bridge.bhCultureDoors = [];
       if (hole.culture_door) {
-        void getCultureDoors(hole.id, getLocale(), fetch).then((d) => {
-          if (bridge.activeBlackHole?.id === hole.id) bridge.bhCultureDoors = d;
-        });
+        void getCultureDoors(hole.id, getLocale(), fetch)
+          .then((d) => {
+            if (bridge.activeBlackHole?.id === hole.id) bridge.bhCultureDoors = d;
+          })
+          .catch(dataLoadFailed);
       }
       closeStarPanel();
       bridge.anonStar = null;
@@ -1203,15 +1208,19 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     bridge.panelState.belt = false;
     bodyScene?.highlightPlanet(planetId);
     const forId = planetId;
-    void getExoplanetI18n(getLocale(), planetId, fetch).then((overlay) => {
-      if (bridge.selectedExoplanet?.planet.id === forId) {
-        bridge.selectedExoplanet = { ...bridge.selectedExoplanet, overlay };
-      }
-    });
+    void getExoplanetI18n(getLocale(), planetId, fetch)
+      .then((overlay) => {
+        if (bridge.selectedExoplanet?.planet.id === forId) {
+          bridge.selectedExoplanet = { ...bridge.selectedExoplanet, overlay };
+        }
+      })
+      .catch(dataLoadFailed);
     bridge.exoCultureDoors = [];
-    void getCultureDoors(planetId, getLocale(), fetch).then((d) => {
-      if (bridge.selectedExoplanet?.planet.id === forId) bridge.exoCultureDoors = d;
-    });
+    void getCultureDoors(planetId, getLocale(), fetch)
+      .then((d) => {
+        if (bridge.selectedExoplanet?.planet.id === forId) bridge.exoCultureDoors = d;
+      })
+      .catch(dataLoadFailed);
   }
   closeExoplanetFn = () => {
     bridge.panelState.exoplanet = false;
@@ -1237,9 +1246,11 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     cue('select');
     bridge.selectedStarId = id;
     bridge.starCultureDoors = [];
-    void getCultureDoors(id, getLocale(), fetch).then((d) => {
-      if (bridge.selectedStarId === id) bridge.starCultureDoors = d;
-    });
+    void getCultureDoors(id, getLocale(), fetch)
+      .then((d) => {
+        if (bridge.selectedStarId === id) bridge.starCultureDoors = d;
+      })
+      .catch(dataLoadFailed);
     bridge.panelState.star = true;
     bridge.panelState.planet = false;
     bridge.panelState.sun = false;
@@ -1290,9 +1301,11 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     // Load any culture door(s) attached to this object (#410: the Arecibo message
     // was beamed at M13) so the panel can surface them.
     bridge.deepSkyCultureDoors = [];
-    void getCultureDoors(id, getLocale(), fetch).then((d) => {
-      if (bridge.selectedDeepSkyId === id) bridge.deepSkyCultureDoors = d;
-    });
+    void getCultureDoors(id, getLocale(), fetch)
+      .then((d) => {
+        if (bridge.selectedDeepSkyId === id) bridge.deepSkyCultureDoors = d;
+      })
+      .catch(dataLoadFailed);
     // Catalogue-only dots (no photo) don't immerse. But a photo-less object that
     // carries a message door (M13) still opens a flat, non-immersive panel so the
     // door is reachable; the rest just highlight.

@@ -13,6 +13,7 @@
 -->
 <script lang="ts">
   import { base } from '$app/paths';
+  import { dataLoadFailed } from '$lib/data/core';
 
   // Substitute a sentinel, not the rendered word: `.replace(word, link)` would
   // link the FIRST occurrence of that word in the sentence, which is correct in
@@ -61,16 +62,18 @@
       getBadgeProvenance(),
       getDataSources(),
       getVideoManifest(),
-    ]).then(([s, p, t, a, b, d, v]) => {
-      logos = s;
-      provenance = p;
-      textSources = t;
-      audioProv = a;
-      badgeProv = b;
-      dataSources = d;
-      videoProv = v;
-      loaded = true;
-    });
+    ])
+      .then(([s, p, t, a, b, d, v]) => {
+        logos = s;
+        provenance = p;
+        textSources = t;
+        audioProv = a;
+        badgeProv = b;
+        dataSources = d;
+        videoProv = v;
+        loaded = true;
+      })
+      .catch(dataLoadFailed);
   });
 
   // Our OWN assets are not third-party imagery and must not appear in the

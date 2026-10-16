@@ -1,7 +1,7 @@
 /**
  * Security behavior of the http layer itself (holistic MINOR-6/7): CORS
  * allow/deny branches, the fail-closed production config gate, and the
- * X-Forwarded-For-keyed rate limiter — none of which the OAuth-flow suite
+ * client-ip-keyed rate limiter — none of which the OAuth-flow suite
  * exercises.
  */
 import { describe, it, expect, beforeAll, afterAll } from 'vitest';
@@ -45,7 +45,7 @@ afterAll(() => {
 describe('CORS', () => {
   it('allowed origin is echoed exactly, without allow-credentials', async () => {
     const resp = await fetch(`${base}/health`, {
-      headers: { origin: 'https://orrerylearn.com', 'x-forwarded-for': '10.0.0.1' },
+      headers: { origin: 'https://orrerylearn.com', 'x-orrery-client-ip': '10.0.0.1' },
     });
     expect(resp.headers.get('access-control-allow-origin')).toBe('https://orrerylearn.com');
     expect(resp.headers.get('access-control-allow-credentials')).toBeNull();
@@ -54,7 +54,7 @@ describe('CORS', () => {
 
   it('disallowed origin gets NO ACAO header', async () => {
     const resp = await fetch(`${base}/health`, {
-      headers: { origin: 'https://evil.example', 'x-forwarded-for': '10.0.0.2' },
+      headers: { origin: 'https://evil.example', 'x-orrery-client-ip': '10.0.0.2' },
     });
     expect(resp.headers.get('access-control-allow-origin')).toBeNull();
   });
@@ -62,7 +62,7 @@ describe('CORS', () => {
   it('preflight OPTIONS answers 204 with methods/headers for an allowed origin', async () => {
     const resp = await fetch(`${base}/token`, {
       method: 'OPTIONS',
-      headers: { origin: 'https://chipi.github.io', 'x-forwarded-for': '10.0.0.3' },
+      headers: { origin: 'https://chipi.github.io', 'x-orrery-client-ip': '10.0.0.3' },
     });
     expect(resp.status).toBe(204);
     expect(resp.headers.get('access-control-allow-headers')).toBe('authorization, content-type');
@@ -71,9 +71,9 @@ describe('CORS', () => {
 });
 
 describe('rate limiter', () => {
-  it('keys on X-Forwarded-For; exceeding the limit → 429; other clients unaffected', async () => {
-    const hit = (xff: string) =>
-      fetch(`${base}/jwks`, { headers: { 'x-forwarded-for': xff } }).then((r) => r.status);
+  it('keys on X-Orrery-Client-Ip; exceeding the limit → 429; other clients unaffected', async () => {
+    const hit = (ip: string) =>
+      fetch(`${base}/jwks`, { headers: { 'x-orrery-client-ip': ip } }).then((r) => r.status);
     expect(await hit('10.9.9.9')).toBe(200);
     expect(await hit('10.9.9.9')).toBe(200);
     expect(await hit('10.9.9.9')).toBe(200);
@@ -81,9 +81,22 @@ describe('rate limiter', () => {
     expect(await hit('10.8.8.8')).toBe(200); // separate bucket
   });
 
+  it('ignores X-Forwarded-For: rotating it does not open new buckets (#597)', async () => {
+    // Behind the Cloudflare-trusting edge the first XFF hop is client-written;
+    // keying on it let a client reset its bucket per request.
+    const hit = (xff: string) =>
+      fetch(`${base}/jwks`, {
+        headers: { 'x-orrery-client-ip': '10.6.6.6', 'x-forwarded-for': xff },
+      }).then((r) => r.status);
+    expect(await hit('1.1.1.1')).toBe(200);
+    expect(await hit('2.2.2.2')).toBe(200);
+    expect(await hit('3.3.3.3')).toBe(200);
+    expect(await hit('4.4.4.4')).toBe(429);
+  });
+
   it('/health is exempt from the limiter (container healthcheck safety)', async () => {
     for (let i = 0; i < 6; i++) {
-      const resp = await fetch(`${base}/health`, { headers: { 'x-forwarded-for': '10.7.7.7' } });
+      const resp = await fetch(`${base}/health`, { headers: { 'x-orrery-client-ip': '10.7.7.7' } });
       expect(resp.status).toBe(200);
     }
   });

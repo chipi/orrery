@@ -14,6 +14,7 @@
  * costs five lines and closes the token-substitution class.
  */
 import { createRemoteJWKSet, jwtVerify } from 'jose';
+import { redactEmail } from './redact';
 
 export interface GoogleConfig {
   clientId: string;
@@ -95,7 +96,7 @@ export async function exchangeGoogleCode(
     // email_verified:false — trusting the email claim alone lets anyone
     // impersonate an allowlisted non-Gmail address. Fail-closed: absent = deny.
     if (payload.email_verified !== true) {
-      console.error(`[lab-api] rejected unverified email ${payload.email}`);
+      console.error(`[lab-api] rejected unverified email ${redactEmail(payload.email)}`);
       return null;
     }
     return { sub: payload.sub, email: payload.email };

@@ -184,15 +184,33 @@ export function initSentry(): void {
     },
   };
 
-  if (isNative) {
-    // Capacitor shells: @sentry/capacitor initialises the NATIVE crash handlers
-    // (sentry-cocoa / sentry-android) — Swift/Kotlin/plugin/startup/webview-
-    // process crashes — AND the JS layer via the @sentry/svelte sibling init,
-    // so native + JS land in the same GlitchTip project (correlation) with the
-    // `platform` tag. Native stack frames are unsymbolicated in GlitchTip 6.2.2
-    // (#428); App Store Connect / Play Console hold the symbolicated detail.
-    SentryCapacitor.init(options, sentrySvelteInit);
-  } else {
-    Sentry.init(options); // web — @sentry/sveltekit
+  // Init must never throw: this runs at module-eval of hooks.client.ts, so a throw
+  // aborts that module and with it the app's client boot. Prod #553 (release a7addcc4,
+  // frames mapped from a hidden-sourcemap rebuild): browserTracingIntegration's setup
+  // calls `addEventListener('click', …)`, a page-injected wrapper (`addEL_hook`, a
+  // translator/extension) replaced it and threw `null.tagName`. Integrations set up
+  // after the throw are lost; the app keeps working, and the failure is reported once
+  // as a warning through the client that was already registered.
+  try {
+    if (isNative) {
+      // Capacitor shells: @sentry/capacitor initialises the NATIVE crash handlers
+      // (sentry-cocoa / sentry-android) — Swift/Kotlin/plugin/startup/webview-
+      // process crashes — AND the JS layer via the @sentry/svelte sibling init,
+      // so native + JS land in the same GlitchTip project (correlation) with the
+      // `platform` tag. Native stack frames are unsymbolicated in GlitchTip 6.2.2
+      // (#428); App Store Connect / Play Console hold the symbolicated detail.
+      SentryCapacitor.init(options, sentrySvelteInit);
+    } else {
+      Sentry.init(options); // web — @sentry/sveltekit
+    }
+  } catch (err) {
+    try {
+      Sentry.captureException?.(err, {
+        level: 'warning',
+        tags: { sentry_init_failed: 'true' },
+      });
+    } catch {
+      // No usable client — nothing more to do; the app must still boot.
+    }
   }
 }

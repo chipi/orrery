@@ -4,8 +4,8 @@ import { describe, expect, it, vi, beforeEach } from 'vitest';
 // Dev rung of the ladder — pin `dev: true`. The sibling sentry.prod.test.ts covers the
 // non-dev (fork-silent + prod-default) side. Sentry's init is mocked so we assert on the
 // exact config the app hands it, without attaching real global handlers or transport.
-const { initMock } = vi.hoisted(() => ({ initMock: vi.fn() }));
-vi.mock('@sentry/sveltekit', () => ({ init: initMock }));
+const { initMock, captureMock } = vi.hoisted(() => ({ initMock: vi.fn(), captureMock: vi.fn() }));
+vi.mock('@sentry/sveltekit', () => ({ init: initMock, captureException: captureMock }));
 vi.mock('$env/dynamic/public', () => ({ env: {} }));
 vi.mock('$app/environment', () => ({ dev: true }));
 import { env as publicEnv } from '$env/dynamic/public';
@@ -14,11 +14,38 @@ import { initSentry } from './sentry';
 const DEV_DSN = 'http://183d550946d24740a87983a1b75d86ee@homelab:8090/30';
 
 beforeEach(() => {
-  initMock.mockClear();
+  initMock.mockReset();
+  captureMock.mockReset();
   for (const k of Object.keys(publicEnv)) delete (publicEnv as Record<string, unknown>)[k];
 });
 
 describe('sentry dev rung (vite dev, no deploy env)', () => {
+  // #553: a page-injected addEventListener wrapper threw inside Sentry.init (from
+  // browserTracingIntegration's setup). initSentry runs at hooks.client module-eval,
+  // so the throw must not escape — it would abort the app's client boot.
+  it('a throw inside Sentry.init does not escape, and is reported once as a warning', () => {
+    const hostile = new TypeError("Cannot read properties of null (reading 'tagName')");
+    initMock.mockImplementation(() => {
+      throw hostile;
+    });
+    expect(() => initSentry()).not.toThrow();
+    expect(captureMock).toHaveBeenCalledTimes(1);
+    expect(captureMock).toHaveBeenCalledWith(hostile, {
+      level: 'warning',
+      tags: { sentry_init_failed: 'true' },
+    });
+  });
+
+  it('a failing report after a failed init still does not escape', () => {
+    initMock.mockImplementation(() => {
+      throw new Error('init');
+    });
+    captureMock.mockImplementation(() => {
+      throw new Error('no client');
+    });
+    expect(() => initSentry()).not.toThrow();
+  });
+
   it('inits with the dev DSN, environment=dev, and a worktree tag', () => {
     initSentry();
 

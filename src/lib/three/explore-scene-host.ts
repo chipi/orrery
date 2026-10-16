@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any, no-useless-assignment */
+/* eslint-disable no-useless-assignment */
 import * as THREE from 'three';
 import { goto } from '$app/navigation';
 import { safeReplaceState } from '$lib/safe-replace-state';
@@ -53,12 +53,36 @@ import {
   getMilkyWaySchematic,
   getNamedStarI18n,
   getNamedStars,
+  type BlackHole,
+  type CosmicWebMember,
   type DeepSkyObject,
+  type ExoplanetOverlay,
+  type ExoplanetPlanet,
   type ExoplanetSystem,
+  type LaniakeaMember,
   type LocalGroupMember,
+  type LocalizedCultureDoor,
+  type LocalizedNamedStar,
+  type LocalSheetMember,
+  type MilkyWayObject,
   type NamedStar,
+  type VirgoMember,
 } from '$lib/data';
 import { dataLoadFailed } from '$lib/data/core';
+import type { Page } from '@sveltejs/kit';
+import type { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
+import type { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
+import type { DeepSkyImage } from '$lib/deep-sky';
+import type { AnonymousStar } from '$lib/universe/anonymous-star';
+import type { LightShell } from '$lib/universe/causality';
+import type { ScaleReadout } from '$lib/universe/scale-readout';
+import type { LocalizedPlanet } from '$types/planet';
+import type { Mission } from '$types/mission';
+import type { IconicTrajectoryHandle } from '$lib/three/iconic-trajectory';
+import type { attachFrameMonitor } from '$lib/quality/frame-monitor';
+import type { resolveQualitySync } from '$lib/quality/quality-tier';
+import type { createRouteLifecycle } from '$lib/three/route-lifecycle';
+import type { ExploreSmallBody, createExploreSolarScene } from '$lib/three/explore-solar-scene';
 
 /**
  * `/explore` 3D scene host (RFC-036 WS-C/C2b — the whole onMount teardown).
@@ -73,7 +97,210 @@ import { dataLoadFailed } from '$lib/data/core';
  * sync). Every scene ref / handle / helper passes by reference via `deps`. The fn-pointers
  * the page's template + $effects call return on the handle. Byte-identical to inline.
  */
-export function createExploreSceneHost(bridge: any, deps: any) {
+export type ExploreContextId =
+  | 'solar-system'
+  | 'neighborhood'
+  | 'milky-way'
+  | 'local-group'
+  | 'local-sheet'
+  | 'virgo'
+  | 'laniakea'
+  | 'cosmic-web'
+  | 'body-scene';
+
+export interface ExploreHoverData {
+  name: string;
+  velocity: string;
+  distance: string;
+  extras: string;
+  velocityKms: number;
+  distanceAU: number;
+  eccentricity: number;
+  inclinationDeg: number;
+  kind?: 'planet' | 'small-body' | 'lagrange';
+  lagrangeTitle?: string;
+  lagrangeBlurb?: string;
+  lagrangeNotable?: string;
+  x: number;
+  y: number;
+}
+
+/** The page `$state` / `$derived` the host reads and writes, as get/set accessors
+ *  built in /explore (get-only members are `readonly`). */
+export interface ExploreSceneHostBridge {
+  activeBlackHole: BlackHole | null;
+  activeBodyHostId: string | null;
+  activeDeepSky: DeepSkyObject | null;
+  allExoplanetPlanets: Array<{
+    name: string;
+    periodDays: number;
+    massEarth: number;
+    hostId: string;
+  }>;
+  anonStar: (AnonymousStar & { shownAt: number }) | null;
+  bhCultureDoors: LocalizedCultureDoor[];
+  bhCurvatureLens: boolean;
+  bhPanelOpen: boolean;
+  bhTimeLens: boolean;
+  bodyHostName: string;
+  readonly cameraState: { focusedOnPlanet: boolean };
+  readonly canvas2d: HTMLCanvasElement | undefined;
+  causalityField: Array<{ x: number; z: number; bv: number }>;
+  causalityNamed: Array<{ name: string; distPc: number; x: number; z: number; bv: number }>;
+  causalityShells: LightShell[];
+  readonly container: HTMLDivElement | undefined;
+  contextId: ExploreContextId;
+  cosmicWebMembers: CosmicWebMember[];
+  cosmicWebPanelOpen: boolean;
+  crossingFlashId: number;
+  cultureObjectIds: Set<string>;
+  deepSkyCultureDoors: LocalizedCultureDoor[];
+  deepSkyGallery: DeepSkyImage[];
+  deepSkyImmersed: boolean;
+  deepSkyObjects: DeepSkyObject[];
+  deepSkyPanelOpen: boolean;
+  deepSkyPhotoUrl: string;
+  exoCultureDoors: LocalizedCultureDoor[];
+  exoplanetHostIds: Set<string>;
+  exoplanetSystemsById: Map<string, ExoplanetSystem>;
+  hoverData: ExploreHoverData | null;
+  hrLensOpen: boolean;
+  hrStars: Array<{ bv: number; absMag: number }>;
+  laniakeaMembers: LaniakeaMember[];
+  laniakeaPanelOpen: boolean;
+  lastBh: string | null;
+  lastContextJump: string | null;
+  lastDeepSky: string | null;
+  lastGalaxy: string | null;
+  lastGoto: string | null;
+  lastSystem: string | null;
+  readonly layers: {
+    planets: boolean;
+    dwarfs: boolean;
+    comets: boolean;
+    interstellar: boolean;
+    paths: boolean;
+  };
+  lgPanelOpen: boolean;
+  localizedStar: LocalizedNamedStar | null;
+  lsMembers: LocalSheetMember[];
+  lsPanelOpen: boolean;
+  massPeriodOpen: boolean;
+  mwObjects: MilkyWayObject[];
+  mwPanelOpen: boolean;
+  readonly namedStarById: Map<string, NamedStar>;
+  namedStars: NamedStar[];
+  readonly overlayArcPx: { x: number; z: number }[];
+  readonly overlayArrivalPx: { x: number; z: number } | null;
+  readonly overlayMission: Mission | null;
+  readonly panelState: {
+    planet: boolean;
+    sun: boolean;
+    sizes: boolean;
+    smallBody: boolean;
+    satellite: boolean;
+    belt: boolean;
+    star: boolean;
+    exoplanet: boolean;
+  };
+  readonly planetById: Map<string, LocalizedPlanet>;
+  scaleBarLabel: string;
+  scaleBarPx: number;
+  scaleReadout: ScaleReadout | null;
+  selectedCosmicWebMember: CosmicWebMember | null;
+  selectedDeepSkyId: string | null;
+  selectedExoplanet: {
+    planet: ExoplanetPlanet;
+    hostName: string;
+    overlay: ExoplanetOverlay | null;
+  } | null;
+  readonly selectedId: string | null;
+  selectedLaniakeaMember: LaniakeaMember | null;
+  selectedLgMember: LocalGroupMember | null;
+  selectedLsMember: LocalSheetMember | null;
+  selectedMwId: string | null;
+  readonly selectedSatelliteKey: string | null;
+  selectedStarId: string | null;
+  selectedVirgoMember: VirgoMember | null;
+  readonly showConstellations: boolean;
+  readonly showDeepSky: boolean;
+  simDateLabel: string;
+  readonly simPaused: boolean;
+  readonly simSpeed: number;
+  starCultureDoors: LocalizedCultureDoor[];
+  sunCompass: { ang: number; on: boolean; ly: number } | null;
+  view: '3d' | '2d';
+  virgoMembers: VirgoMember[];
+  virgoPanelOpen: boolean;
+  warpCaption: string;
+}
+
+type ExploreSolarHandle = ReturnType<typeof createExploreSolarScene>;
+
+/** Scene refs, helpers and live getters /explore passes by reference. */
+export interface ExploreSceneHostDeps extends Pick<
+  ExploreSolarHandle,
+  | 'asteroidBeltPick'
+  | 'kuiperBeltPick'
+  | 'localGroup'
+  | 'overlayPerPlanet'
+  | 'planetObjs'
+  | 'planetOrbitLines'
+  | 'selHalo'
+  | 'selRingMat'
+  | 'smallBodyObjs'
+  | 'tmpWorldPos'
+  | 'updatePlanetLods'
+  | 'updateSatellites'
+  | 'stopExploreCentripetalLayer'
+  | 'stopExploreGalaxiesLayer'
+  | 'stopExploreGravityLayer'
+  | 'stopExploreHillSphereLayer'
+  | 'stopExploreLagrangeLayer'
+  | 'stopExploreMagnetosphereLayer'
+  | 'stopExploreSubSolarLayer'
+  | 'stopExploreVelocityLayer'
+> {
+  scene: THREE.Scene;
+  camera: THREE.PerspectiveCamera;
+  renderer: THREE.WebGLRenderer;
+  composer: EffectComposer;
+  lifecycle: ReturnType<typeof createRouteLifecycle>;
+  quality: ReturnType<typeof resolveQualitySync>;
+  base: string;
+  _orbitUp: THREE.Vector3;
+  _velTangent: THREE.Vector3;
+  bloomPass: UnrealBloomPass | null;
+  sunMap4k: THREE.Texture | null;
+  sunMesh: THREE.Mesh;
+  updateSunLod: (distanceToSun: number) => void;
+  PLANET_LOD_IN_RATIO: number;
+  PLANET_LOD_OUT_RATIO: number;
+  frameMonitor: ReturnType<typeof attachFrameMonitor>;
+  SMALL_BODIES: ExploreSmallBody[];
+  sampleOrbitPoints: (b: ExploreSmallBody, steps: number) => { x: number; y: number; z: number }[];
+  smallBodyById: Map<string, ExploreSmallBody>;
+  smallBodyPosition: (b: ExploreSmallBody, simT: number) => { x: number; y: number; z: number };
+  DAYS_PER_YEAR: number;
+  fmtScale: (value: number) => string;
+  iconic: {
+    readonly state: { hoveredId: string | null; panelOpen: boolean };
+    openMission: (missionId: string, locale: string) => Promise<void>;
+  };
+  openMessageCraft?: (craftId: string, locale: string) => Promise<void>;
+  sizePathsLegend: () => void;
+  selectSun: () => void;
+  selectPlanet: (id: string) => void;
+  selectSmallBody: (id: string) => void;
+  selectSatellite: (parentPlanetId: string, satelliteId: string) => void;
+  selectBelt: (id: string) => void;
+  stopLensWatch: (() => void) | undefined;
+  stopHoverLayerWatch: (() => void) | undefined;
+  getReducedMotion: () => boolean;
+  getPage: () => Page;
+}
+
+export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: ExploreSceneHostDeps) {
   const {
     scene,
     camera,
@@ -127,7 +354,7 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     stopLensWatch,
     stopHoverLayerWatch,
   } = deps;
-  const iconicTrajectoryHandles: any = [];
+  const iconicTrajectoryHandles: IconicTrajectoryHandle[] = [];
   // #410 — mission_ids of the interstellar-bound craft (Voyagers, Pioneers,
   // New Horizons), populated as their trajectories build. Drives the click
   // routing to the MessagePanel.
@@ -141,45 +368,45 @@ export function createExploreSceneHost(bridge: any, deps: any) {
       for (const id of s) cultureObjectIds.add(id);
     })
     .catch(dataLoadFailed);
-  let closeExoplanetFn: any = null;
-  let resetSimToToday: any = null;
-  let enterSystemFn: any = null;
-  let setConstellationsFn: any = null;
-  let setDeepSkyFn: any = null;
-  let toggleHrFn: any = null;
-  let openCausalityFn: any = null;
-  let exitDeepSkyFn: any = null;
-  let deepSkyGatewayFn: any = null;
-  let deepSkyDeepLinkFn: any = null;
-  let flyToBodyFn: any = null;
-  let exitNeighborhoodFn: any = null;
-  let resetNeighborhoodFn: any = null;
-  let resetMilkyWayFn: any = null;
-  let resetLocalGroupFn: any = null;
-  let exitBodySceneFn: any = null;
-  let exitMilkyWayFn: any = null;
-  let closeMwFn: any = null;
-  let mwDeepLinkFn: any = null;
-  let contextDeepLinkFn: any = null;
-  let exitLocalGroupFn: any = null;
-  let exitLocalSheetFn: any = null;
-  let exitVirgoFn: any = null;
-  let exitLaniakeaFn: any = null;
-  let exitCosmicWebFn: any = null;
-  let closeLgFn: any = null;
-  let closeLsFn: any = null;
-  let closeVirgoFn: any = null;
-  let closeLaniakeaFn: any = null;
-  let closeCosmicWebFn: any = null;
-  let exitBlackHoleFn: any = null;
-  let bhDeepLinkFn: any = null;
-  let setBhCurvatureFn: any = null;
-  let selectStarFn: any = null;
-  let closeStarFn: any = null;
-  let selectDeepSkyFn: any = null;
-  let gotoStarFn: any = null;
-  let indexSelectStarFn: any = null;
-  let tourCameraTeardown: any = null;
+  let closeExoplanetFn: (() => void) | null = null;
+  let resetSimToToday: (() => void) | null = null;
+  let enterSystemFn: ((hostId: string, planetId?: string) => void) | null = null;
+  let setConstellationsFn: ((on: boolean) => void) | null = null;
+  let setDeepSkyFn: ((on: boolean) => void) | null = null;
+  let toggleHrFn: (() => void) | null = null;
+  let openCausalityFn: (() => void) | null = null;
+  let exitDeepSkyFn: (() => void) | null = null;
+  let deepSkyGatewayFn: ((hostId: string) => void) | null = null;
+  let deepSkyDeepLinkFn: ((designation: string) => void) | null = null;
+  let flyToBodyFn: ((bodyId: string | null) => void) | null = null;
+  let exitNeighborhoodFn: (() => void) | null = null;
+  let resetNeighborhoodFn: (() => void) | null = null;
+  let resetMilkyWayFn: (() => void) | null = null;
+  let resetLocalGroupFn: (() => void) | null = null;
+  let exitBodySceneFn: (() => void) | null = null;
+  let exitMilkyWayFn: (() => void) | null = null;
+  let closeMwFn: (() => void) | null = null;
+  let mwDeepLinkFn: ((id: string) => void) | null = null;
+  let contextDeepLinkFn: ((ctx: string) => Promise<void>) | null = null;
+  let exitLocalGroupFn: (() => void) | null = null;
+  let exitLocalSheetFn: (() => void) | null = null;
+  let exitVirgoFn: (() => void) | null = null;
+  let exitLaniakeaFn: (() => void) | null = null;
+  let exitCosmicWebFn: (() => void) | null = null;
+  let closeLgFn: (() => void) | null = null;
+  let closeLsFn: (() => void) | null = null;
+  let closeVirgoFn: (() => void) | null = null;
+  let closeLaniakeaFn: (() => void) | null = null;
+  let closeCosmicWebFn: (() => void) | null = null;
+  let exitBlackHoleFn: (() => void) | null = null;
+  let bhDeepLinkFn: ((id: string) => void) | null = null;
+  let setBhCurvatureFn: ((on: boolean) => void) | null = null;
+  let selectStarFn: ((id: string) => Promise<void>) | null = null;
+  let closeStarFn: (() => void) | null = null;
+  let selectDeepSkyFn: ((id: string) => void) | null = null;
+  let gotoStarFn: ((id: string) => void) | null = null;
+  let indexSelectStarFn: ((id: string) => void) | null = null;
+  let tourCameraTeardown: (() => void) | null = null;
   let camR = 680;
   let camP = 1.05;
   let camT = 0.6;
@@ -346,29 +573,29 @@ export function createExploreSceneHost(bridge: any, deps: any) {
       // flow surfaces them all, not just the Sun + Sag A*.
       bridge.mwObjects = [
         ...data.objects,
-        ...(data.globulars ?? []).map((g: any) => ({
+        ...(data.globulars ?? []).map((g) => ({
           id: g.id,
           name: g.name,
-          kind: 'globular-cluster',
+          kind: 'globular-cluster' as const,
           x: g.x,
           z: g.z,
           dist_from_sun_ly: g.dist_from_sun_ly,
           science_section: 'our-galaxy',
         })),
-        ...(data.magellanic ?? []).map((m: any) => ({
+        ...(data.magellanic ?? []).map((m) => ({
           id: m.id,
           name: m.name,
-          kind: 'satellite-galaxy',
+          kind: 'satellite-galaxy' as const,
           x: m.x,
           z: m.z,
           dist_from_sun_ly: m.dist_from_sun_ly,
           diam_kly: m.diam_kly,
           science_section: 'galaxy-types',
         })),
-        ...data.arms.map((a: any) => ({
+        ...data.arms.map((a) => ({
           id: a.id,
           name: a.name,
-          kind: 'spiral-arm',
+          kind: 'spiral-arm' as const,
           x: a.label_x,
           z: a.label_z,
           science_section: a.science_section ?? 'our-galaxy',
@@ -1294,7 +1521,7 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     updateCam();
   }
   function enterDeepSky(id: string): void {
-    const obj = bridge.deepSkyObjects.find((o: any) => o.id === id);
+    const obj = bridge.deepSkyObjects.find((o) => o.id === id);
     if (!obj) return;
     bridge.selectedDeepSkyId = id;
     nbScene?.highlightDeepSky(id);
@@ -1383,7 +1610,7 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     if (!inNeighborhood()) await crossOutToNeighborhood();
     await ensureNeighborhood();
     const obj = bridge.deepSkyObjects.find(
-      (o: any) => o.designation === designation || o.id === designation,
+      (o) => o.designation === designation || o.id === designation,
     );
     if (obj) enterDeepSky(obj.id);
   }
@@ -1568,7 +1795,7 @@ export function createExploreSceneHost(bridge: any, deps: any) {
   let focusedPlanetObj: (typeof planetObjs)[number] | null = null;
 
   function focusOnBody(bodyId: string | null): void {
-    const next = bodyId ? (planetObjs.find((o: any) => o.planet.id === bodyId) ?? null) : null;
+    const next = bodyId ? (planetObjs.find((o) => o.planet.id === bodyId) ?? null) : null;
     flyFromOrigin.copy(focusOrigin);
     flyFromR = camR;
     flyFromP = camP;
@@ -1680,10 +1907,10 @@ export function createExploreSceneHost(bridge: any, deps: any) {
   const camForward = new THREE.Vector3();
 
   const ray3d = new THREE.Raycaster();
-  const planetMeshes = planetObjs.map((o: any) => o.mesh);
-  const planetPickAids = planetObjs.map((o: any) => o.pickAid);
-  const smallBodyMeshes = smallBodyObjs.map((o: any) => o.mesh);
-  const smallBodyPickAids = smallBodyObjs.map((o: any) => o.pickAid);
+  const planetMeshes = planetObjs.map((o) => o.mesh);
+  const planetPickAids = planetObjs.map((o) => o.pickAid);
+  const smallBodyMeshes = smallBodyObjs.map((o) => o.mesh);
+  const smallBodyPickAids = smallBodyObjs.map((o) => o.pickAid);
   // Flatten satellite meshes across all planets — each moon mesh
   // already carries its own (invisible, larger-radius) pickAid as
   // a child, so adding the mesh alone is sufficient: ray.intersectObjects
@@ -2238,7 +2465,7 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     }
   }
   function selectMilkyWay(id: string): void {
-    if (!bridge.mwObjects.some((o: any) => o.id === id)) return;
+    if (!bridge.mwObjects.some((o) => o.id === id)) return;
     // Slice 6 — Sagittarius A* upgrades from a flat pin to the lensed black-hole
     // render when you select it (the S5 pin becomes an S6 destination).
     if (id === 'sagittarius-a-star') {
@@ -2300,7 +2527,7 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     }
   }
   function selectLocalSheet(id: string): void {
-    const member = (bridge.lsMembers ?? []).find((mm: any) => mm.id === id);
+    const member = (bridge.lsMembers ?? []).find((mm) => mm.id === id);
     if (!member) return;
     cue('select');
     bridge.selectedLsMember = member;
@@ -2329,7 +2556,7 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     }
   }
   function selectVirgo(id: string): void {
-    const member = (bridge.virgoMembers ?? []).find((mm: any) => mm.id === id);
+    const member = (bridge.virgoMembers ?? []).find((mm) => mm.id === id);
     if (!member) return;
     cue('select');
     bridge.selectedVirgoMember = member;
@@ -2358,7 +2585,7 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     }
   }
   function selectLaniakea(id: string): void {
-    const member = (bridge.laniakeaMembers ?? []).find((mm: any) => mm.id === id);
+    const member = (bridge.laniakeaMembers ?? []).find((mm) => mm.id === id);
     if (!member) return;
     cue('select');
     bridge.selectedLaniakeaMember = member;
@@ -2387,7 +2614,7 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     }
   }
   function selectCosmicWeb(id: string): void {
-    const member = (bridge.cosmicWebMembers ?? []).find((mm: any) => mm.id === id);
+    const member = (bridge.cosmicWebMembers ?? []).find((mm) => mm.id === id);
     if (!member) return;
     cue('select');
     bridge.selectedCosmicWebMember = member;
@@ -2877,7 +3104,7 @@ export function createExploreSceneHost(bridge: any, deps: any) {
   // 2D — Canvas top-down view (pan + zoom)
   // ──────────────────────────────────────────────────────────────
 
-  const c2 = bridge.canvas2d;
+  const c2 = bridge.canvas2d as HTMLCanvasElement;
   const ctx2 = c2.getContext('2d');
   if (!ctx2) throw new Error('2D canvas context unavailable');
 
@@ -3173,7 +3400,7 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     // comets, open hyperbola for interstellar (Oumuamua). Uses
     // sampleOrbitPoints so the math stays consistent with 3D mode.
     // Each type gated by its layer flag (issue #32).
-    SMALL_BODIES.forEach((b: any) => {
+    SMALL_BODIES.forEach((b) => {
       if (b.type === 'dwarf' && !bridge.layers.dwarfs) return;
       if (b.type === 'comet' && !bridge.layers.comets) return;
       if (b.type === 'interstellar' && !bridge.layers.interstellar) return;
@@ -3389,7 +3616,7 @@ export function createExploreSceneHost(bridge: any, deps: any) {
     // they passed through once and are gone). Gated per-type by
     // the dwarfs/comets/interstellar layer flags (issue #32).
     smallBody2dPos.clear();
-    SMALL_BODIES.forEach((b: any) => {
+    SMALL_BODIES.forEach((b) => {
       if (b.type === 'dwarf' && !bridge.layers.dwarfs) return;
       if (b.type === 'comet' && !bridge.layers.comets) return;
       if (b.type === 'interstellar' && !bridge.layers.interstellar) return;
@@ -3677,7 +3904,7 @@ export function createExploreSceneHost(bridge: any, deps: any) {
           if (o.tail) o.tail.visible = on;
         }
 
-        planetObjs.forEach(({ group, mesh, planet }: any, idx: number) => {
+        planetObjs.forEach(({ group, mesh, planet }, idx: number) => {
           const angle = planet.a0 + (2 * Math.PI * simT) / planet.period;
           const inc = (planet.inc * Math.PI) / 180;
           const x = Math.cos(angle) * planet.orbitR;
@@ -3870,7 +4097,7 @@ export function createExploreSceneHost(bridge: any, deps: any) {
         // Small bodies — closed ellipse advance for dwarfs/comets,
         // pinned-to-perihelion for interstellar visitors (Oumuamua).
         // Comet tails recompute per-frame pointing anti-solar.
-        smallBodyObjs.forEach(({ mesh, pickAid, tail, body }: any) => {
+        smallBodyObjs.forEach(({ mesh, pickAid, tail, body }) => {
           const { x: px, y: py, z: pz } = smallBodyPosition(body, simT);
           mesh.position.set(px, py, pz);
           pickAid.position.set(px, py, pz);
@@ -3919,8 +4146,8 @@ export function createExploreSceneHost(bridge: any, deps: any) {
         // circle outline regardless of view angle.
         if (bridge.selectedSatelliteKey) {
           const [parentId, satId] = bridge.selectedSatelliteKey.split(':');
-          const parentObj = planetObjs.find((o: any) => o.planet.id === parentId);
-          const satObj = parentObj?.satellites.find((s: any) => s.def.id === satId);
+          const parentObj = planetObjs.find((o) => o.planet.id === parentId);
+          const satObj = parentObj?.satellites.find((s) => s.def.id === satId);
           if (satObj) {
             satObj.mesh.getWorldPosition(tmpWorldPos);
             const r = satObj.def.sizeUnits * 1.25;
@@ -3937,7 +4164,7 @@ export function createExploreSceneHost(bridge: any, deps: any) {
             selHalo.visible = false;
           }
         } else if (bridge.selectedId) {
-          const selObj = planetObjs.find((o: any) => o.planet.id === bridge.selectedId);
+          const selObj = planetObjs.find((o) => o.planet.id === bridge.selectedId);
           if (selObj) {
             const r = selObj.planet.size3 * 1.25;
             selHalo.scale.set(r, r, r);

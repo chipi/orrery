@@ -28,8 +28,57 @@ type LodState = {
  * / sampleOrbitPoints / the LOD ratios) pass by reference. Every ref the frame + input
  * still touch returns on the handle. Byte-identical to the inline code.
  */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-export function createExploreSolarScene(deps: any) {
+/** One `small-bodies.json` entry as the scene reads it (the page's own `SmallBody`
+ *  plus the optional ʻOumuamua inbound-radiant label). */
+export interface ExploreSmallBody {
+  id: string;
+  name: string;
+  type: 'dwarf' | 'comet' | 'interstellar' | 'asteroid' | 'kbo';
+  a: number;
+  e: number;
+  T: number;
+  L0: number;
+  incl: number;
+  color: string;
+  radius_km?: number;
+  discovered?: string;
+  mission_visited?: string | null;
+  next_perihelion?: string;
+  description?: string;
+  wiki?: string;
+  note?: string;
+  inbound_radiant?: string;
+}
+
+/** What /explore hands the solar-scene layer: the scene objects, the page-shared
+ *  texture helpers + LOD ratios, and live getters over the page's reactive state. */
+export interface ExploreSolarSceneDeps {
+  scene: THREE.Scene;
+  camera: THREE.PerspectiveCamera;
+  base: string;
+  loadTexture: (file: string) => THREE.Texture;
+  textureLoader: THREE.TextureLoader;
+  tex4kAllowed: boolean;
+  PLANET_LOD_IN_RATIO: number;
+  PLANET_LOD_OUT_RATIO: number;
+  sampleOrbitPoints: (b: ExploreSmallBody, steps: number) => { x: number; y: number; z: number }[];
+  SMALL_BODIES: ExploreSmallBody[];
+  DAYS_PER_YEAR: number;
+  getView: () => '3d' | '2d';
+  getLayers: () => {
+    planets: boolean;
+    dwarfs: boolean;
+    comets: boolean;
+    interstellar: boolean;
+    paths: boolean;
+  };
+  getSimSpeed: () => number;
+  getSimPaused: () => boolean;
+  getReducedMotion: () => boolean;
+  getSelectedSatelliteKey: () => string | null;
+}
+
+export function createExploreSolarScene(deps: ExploreSolarSceneDeps) {
   const {
     scene,
     camera,
@@ -860,7 +909,7 @@ export function createExploreSolarScene(deps: any) {
       const shouldShow = ratio <= PLANET_LOD_IN_RATIO;
       const satOfThisPlanetSelected =
         deps.getSelectedSatelliteKey() !== null &&
-        deps.getSelectedSatelliteKey().startsWith(obj.planet.id + ':');
+        deps.getSelectedSatelliteKey()!.startsWith(obj.planet.id + ':');
       const haloVisible = shouldShow && !satOfThisPlanetSelected;
       if (obj.haloMesh && obj.haloMesh.visible !== haloVisible) {
         obj.haloMesh.visible = haloVisible;
@@ -1119,7 +1168,7 @@ export function createExploreSolarScene(deps: any) {
     pickAid: THREE.Mesh;
     tail?: THREE.Line;
     orbit: THREE.Object3D;
-    body: any;
+    body: ExploreSmallBody;
   };
   // #287 Slice E — Pluto promoted to PLANETS so the planet-relative
   // camera + Charon satellite pick it up. Filter from the small-body
@@ -1127,8 +1176,8 @@ export function createExploreSolarScene(deps: any) {
   // the original entry so any code that lookups via smallBodyById
   // still resolves (no current call-site does though — selection
   // routes via planet path now).
-  const SMALL_BODIES_RENDERED = SMALL_BODIES.filter((b: any) => b.id !== 'pluto');
-  const smallBodyObjs: SmallBodyObj[] = SMALL_BODIES_RENDERED.map((b: any) => {
+  const SMALL_BODIES_RENDERED = SMALL_BODIES.filter((b) => b.id !== 'pluto');
+  const smallBodyObjs: SmallBodyObj[] = SMALL_BODIES_RENDERED.map((b) => {
     // Orbit path — closed ellipse for dwarf/comet, open hyperbola
     // for interstellar bodies. Use Line (open) for interstellar so
     // the trajectory doesn't visually close back on itself. Ref

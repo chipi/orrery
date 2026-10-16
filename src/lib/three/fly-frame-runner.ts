@@ -51,6 +51,22 @@ import { runCinematicFrame } from '$lib/fly-cinematic-frame';
 import { SCALE_3D } from '$lib/fly-scene-constants';
 import { sensory } from '$lib/sensory/state.svelte';
 import { sepSlowmoFactor } from '$lib/orbital/ascent-cameras';
+import type { MissionTimeline } from '$lib/physics/transfer/mission-arc';
+import type { DestinationId } from '$lib/physics/transfer/lambert-grid.constants';
+import type { CislunarTrajectory } from '$lib/orbital/cislunar/cislunar-geometry';
+import type { PhaseMarker } from '$lib/orbital/cislunar/cislunar-events';
+import type { InterplanetaryPhaseMarker } from '$lib/interplanetary-events';
+import type { FdStage, FdPhaseMarkerRender, MilestoneRender } from '$lib/fly/fly-frame-projections';
+import type { DescentProfile } from '$lib/physics/descent/descent-physics';
+import type { ShotKind } from '$lib/orbital/flyby-shots';
+import type { FlightPhaseEvent } from '$lib/fly/flight-phase-controller';
+import type { LoadedMission } from '$lib/fly-mission-apply';
+import type { createCinematicBeatState } from '$lib/fly-cinematic-beats';
+import type { resolveQualitySync } from '$lib/quality/quality-tier';
+import type { attachFrameMonitor } from '$lib/quality/frame-monitor';
+import type { getEarthOrbitCoast } from '$lib/orbital/earth-orbit-registry';
+import type { FlyUpdaters } from '$lib/three/fly-updaters';
+import type { createFlySceneHost } from '$lib/three/fly-scene-host';
 
 /**
  * `/fly` per-frame runner (RFC-036 WS-B/1b — scene-host teardown).
@@ -63,8 +79,144 @@ import { sepSlowmoFactor } from '$lib/orbital/ascent-cameras';
  * cameras, meshes, flyCam, the reactive-overlay handles, the updaters, canvas) pass by
  * reference via `refs`. Byte-identical to the inline code.
  */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-export function createFlyFrameRunner(bridge: any, refs: any) {
+/** The page `$state` / `$derived` the frame reads and writes, as get/set accessors
+ *  built in /fly (`$derived` members are read-only getters). */
+export interface FlyFrameBridge {
+  activeDestination: DestinationId;
+  arcTimeline: MissionTimeline;
+  cislunarTrajectory: CislunarTrajectory | null;
+  coastMetDays: number;
+  conicStateCislunar: {
+    shape: 'circle' | 'ellipse' | 'parabola' | 'hyperbola';
+    a: number;
+    e: number;
+    epsilon: number;
+  } | null;
+  container: HTMLDivElement | undefined;
+  cutBlackOpacity: number;
+  debugCamTargetWorld: { x: number; y: number; z: number } | null;
+  debugCamWorld: { x: number; y: number; z: number } | null;
+  debugMontageShot: ShotKind | null;
+  descentProfile: DescentProfile | null;
+  descentSpeed: number;
+  descentT: number;
+  epilogueActive: boolean;
+  epilogueCaptionOpacity: number;
+  fdPhaseMarkerScreens: FdPhaseMarkerRender[];
+  finaleBlackOpacity: number;
+  finaleCaptionOpacity: number;
+  inCinematicHeldBeat: boolean;
+  inMissionFinale: boolean;
+  isMoonMission: boolean;
+  isPlaying: boolean;
+  launchSpeed: number;
+  launchT: number;
+  milestoneScreens: MilestoneRender[];
+  mission: LoadedMission;
+  openingContextOpacity: number;
+  openingFleetOpacity: number;
+  openingTitleOpacity: number;
+  outPts: Vec2[];
+  phaseMarkerScreens: PhaseMarkerRenderState[];
+  reducedMotion: boolean;
+  retPts: Vec2[];
+  simDay: number;
+  simSpeed: number;
+  view: '3d' | '2d';
+  canvas2d: HTMLCanvasElement | undefined;
+  camSnapUntil: number;
+  epilogueStartedAt: number;
+  openingStartedAt: number;
+  openingDurationMs: number;
+  launchDwellUntil: number;
+  currentDestMeshId: DestinationId;
+  lastMontageShotKind: ShotKind | null;
+  readonly isDrag: boolean;
+  readonly touchActive: boolean;
+  readonly coastDurationDays: number;
+  readonly descentDurationS: number;
+  readonly descentSepTimes: number[];
+  readonly earthCoast: ReturnType<typeof getEarthOrbitCoast>;
+  readonly heliocentricKms: number;
+  readonly interplanetaryPhaseMarkers: InterplanetaryPhaseMarker[];
+  readonly launchDurationS: number;
+  readonly launchSepTimes: number[];
+  readonly phaseMarkers: PhaseMarker[];
+  readonly viewMode: 'heliocentric' | 'cislunar';
+  readonly showLaunch: boolean;
+  readonly showCoast: boolean;
+  readonly showDescent: boolean;
+  readonly openingActive: boolean;
+  readonly hasPhaseMarkers: boolean;
+  readonly cruiseHoldTriggerSimDay: number | null;
+}
+
+type FlySceneHostHandle = ReturnType<typeof createFlySceneHost>;
+
+/** Scene refs / handles / updaters, passed by reference: most come straight off the
+ *  scene-host handle; the rest are the page's own mission-swap `let`s and closures. */
+export interface FlyFrameRefs extends Pick<
+  FlySceneHostHandle,
+  | 'scene'
+  | 'camera'
+  | 'renderer'
+  | 'cislunarScene'
+  | 'cislunarCamera'
+  | 'flyCam'
+  | 'helioHandles'
+  | 'helioReactive'
+  | 'scSprite'
+  | 'plumeMesh'
+  | 'plumeMat'
+  | 'earthMesh'
+  | 'marsMesh'
+  | 'moonMesh'
+  | 'earthSoI'
+  | 'marsSoI'
+  | 'moonSoI'
+  | 'gravArrowEarth'
+  | 'gravArrowSun'
+  | 'velocityArrow'
+  | 'centripetalArrow'
+  | 'coastLine'
+  | 'sunCore'
+  | 'sunGlow'
+  | 'earthOrbitLine'
+  | 'cislunarPhaseLines'
+  | 'cisCoastLine'
+  | 'cisGravEarthArrow'
+  | 'cisGravMoonArrow'
+  | 'cisVelocityArrow'
+  | 'cisCentripetalArrow'
+  | 'cisPeriMarker'
+  | 'cisApoMarker'
+  | 'helioMission'
+  | 'baseFov'
+  | 'SCALE_CISLUNAR'
+> {
+  cine: ReturnType<typeof createCinematicBeatState>;
+  outLine: THREE.Mesh | undefined;
+  retLine: THREE.Mesh | undefined;
+  moonOrbitRing: THREE.Mesh | undefined;
+  depMarker: THREE.Mesh | undefined;
+  arrMarker: THREE.Mesh | undefined;
+  retMarker: THREE.Mesh | undefined;
+  depLabelSprite: THREE.Sprite | undefined;
+  arrLabelSprite: THREE.Sprite | undefined;
+  retLabelSprite: THREE.Sprite | undefined;
+  cislunarMoonMeshRef: THREE.Mesh | undefined;
+  cislunarMoonFrameGroupRef: THREE.Group | undefined;
+  frameMonitor: ReturnType<typeof attachFrameMonitor>;
+  quality: ReturnType<typeof resolveQualitySync>;
+  FD_STAGES: FdStage[];
+  flyUpdaters: FlyUpdaters | undefined;
+  dispatchPhase: (event: FlightPhaseEvent) => void;
+  startDescent: () => void;
+  FLYBY_OVERRIDES: Record<string, { spriteScale: number; modelScale: number; toCameraR: number }>;
+  FLYBY_PEAK_DAYS: number;
+}
+
+export function createFlyFrameRunner(bridge: FlyFrameBridge, refs: FlyFrameRefs) {
   const {
     scene,
     camera,
@@ -137,7 +289,8 @@ export function createFlyFrameRunner(bridge: any, refs: any) {
   // Null while the helio frame branch hasn't computed it yet (e.g.
   // during the cislunar phase).
   let scLastWorld: THREE.Vector3 | null = null;
-  const c2 = bridge.canvas2d;
+  // bind:this'd before onMount runs, so it is set by the time the runner is built.
+  const c2 = bridge.canvas2d as HTMLCanvasElement;
   const _maybeCtx = c2.getContext('2d');
   if (!_maybeCtx) throw new Error('2D context unavailable');
   const ctx2: CanvasRenderingContext2D = _maybeCtx;

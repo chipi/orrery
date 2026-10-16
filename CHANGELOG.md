@@ -77,7 +77,9 @@ accessibility pass for 1.0.
 ### Launches and Earth sites
 
 - **GCAT 1.8.8** is read by header name; first-flight flags come from source
-  launch counts (#569). Two orphan curation ids pruned (#603).
+  launch counts (#569). Two orphan curation ids pruned; the dead SpaceX source
+  removed; NASA press-release dates claim day precision only, not a launch
+  time (#603).
 - **Earth launch pads** — Tier-2 terrain for all 26 pads, with a disclosed
   Sentinel-2 fallback where no open sub-metre source exists, and Tier-3 ground
   panoramas for six (#546).
@@ -111,7 +113,12 @@ accessibility pass for 1.0.
   jobs and the prod deploy job runs only for `main`; Permissions-Policy denies unused
   features (#601); `lab-api` JSON is `no-store`, null history turns are skipped,
   `/register` is capped (#597); unknown URLs return a real 404 (#604); dispatch
-  inputs reach scripts via env and are validated (#600).
+  inputs reach scripts via env and are validated (#600); the prod web container
+  listens on loopback only, and `mcp` and `lab-api` drop all Linux capabilities
+  (#599).
+- **Translations** — the AR overlay (Exit AR, placement and sky hints, the sky
+  layer toggles, the station-pass line with its compass points) is translated
+  in all 14 locales; it was English everywhere (#608).
 - **Accessibility** — Lab canvases carry `role="img"` on a wrapper (#594); alt
   text describes the picture, not the file, enforced by `validate-data` (#389).
 - **Analytics** — `/science` read depth measures the scroll container, not the
@@ -129,8 +136,11 @@ accessibility pass for 1.0.
 
 ### Internal
 
-- Workspace isolation for parallel checkouts, `npm run docker:e2e`, Node 20 via
-  mise, schedule-isolated e2e concurrency; mobile size budget 70 → 75 MB.
+- **Node 22** everywhere: mise, every CI workflow, the pipeline-runner, `lab-api`
+  and `mcp` images, and `engines` (#598). Node 20 reached end of life on
+  2026-04-30.
+- Workspace isolation for parallel checkouts, `npm run docker:e2e`,
+  schedule-isolated e2e concurrency; mobile size budget 70 → 75 MB.
 - Version label 0.9.0-wip, TA.md v3.4, ADR index and RFC status cleanup, finished
   working notes archived (#605); `/plan` porkchop spec re-enabled (#606).
 - Dependabot bumps: Playwright, Svelte, Prettier, Capacitor, Docker and GitHub

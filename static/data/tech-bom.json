@@ -3,7 +3,7 @@
   "specVersion": "1.5",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-09-07T18:13:36.033Z",
+    "timestamp": "2026-10-16T16:11:02.955Z",
     "tools": [
       {
         "vendor": "Orrery",
@@ -57,7 +57,7 @@
     {
       "type": "library",
       "name": "@capacitor/android",
-      "version": "8.4.1",
+      "version": "8.5.3",
       "description": "Capacitor: Cross-platform apps with JavaScript and the web",
       "licenses": [
         {
@@ -119,7 +119,7 @@
     {
       "type": "library",
       "name": "@capacitor/browser",
-      "version": "8.0.3",
+      "version": "8.0.5",
       "description": "The Browser API provides the ability to open an in-app browser and subscribe to browser events.",
       "licenses": [
         {
@@ -148,7 +148,7 @@
     {
       "type": "library",
       "name": "@capacitor/core",
-      "version": "8.4.1",
+      "version": "8.5.3",
       "description": "Capacitor: Cross-platform apps with JavaScript and the web",
       "licenses": [
         {
@@ -239,7 +239,7 @@
     {
       "type": "library",
       "name": "@capacitor/ios",
-      "version": "8.4.2",
+      "version": "8.5.3",
       "description": "Capacitor: Cross-platform apps with JavaScript and the web",
       "licenses": [
         {
@@ -301,7 +301,7 @@
     {
       "type": "library",
       "name": "@capacitor/share",
-      "version": "8.0.1",
+      "version": "8.0.3",
       "description": "The Share API provides methods for sharing content in any sharing-enabled apps the user may have installed.",
       "licenses": [
         {
@@ -359,7 +359,7 @@
     {
       "type": "library",
       "name": "@modelcontextprotocol/sdk",
-      "version": "1.30.0",
+      "version": "1.32.1",
       "description": "Model Context Protocol implementation for TypeScript",
       "licenses": [
         {
@@ -391,8 +391,206 @@
     },
     {
       "type": "library",
+      "name": "@opentelemetry/api",
+      "version": "1.9.1",
+      "description": "Public API for OpenTelemetry",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/open-telemetry/opentelemetry-js/tree/main/api"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/open-telemetry/opentelemetry-js"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@opentelemetry/context-async-hooks",
+      "version": "2.12.0",
+      "description": "OpenTelemetry AsyncLocalStorage-based Context Manager",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/open-telemetry/opentelemetry-js/tree/main/packages/opentelemetry-context-async-hooks"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/open-telemetry/opentelemetry-js"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@opentelemetry/core",
+      "version": "2.12.0",
+      "description": "OpenTelemetry Core provides constants and utilities shared by all OpenTelemetry SDK packages.",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/open-telemetry/opentelemetry-js/tree/main/packages/opentelemetry-core"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/open-telemetry/opentelemetry-js"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@opentelemetry/exporter-trace-otlp-proto",
+      "version": "0.223.0",
+      "description": "OpenTelemetry Collector Exporter allows user to send collected traces to the OpenTelemetry Collector using protobuf over HTTP",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/open-telemetry/opentelemetry-js/tree/main/experimental/packages/exporter-trace-otlp-proto"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/open-telemetry/opentelemetry-js"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@opentelemetry/resources",
+      "version": "2.12.0",
+      "description": "OpenTelemetry SDK resources",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/open-telemetry/opentelemetry-js/tree/main/packages/opentelemetry-resources"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/open-telemetry/opentelemetry-js"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@opentelemetry/sdk-trace",
+      "version": "2.12.0",
+      "description": "OpenTelemetry Tracing",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/open-telemetry/opentelemetry-js/tree/main/packages/sdk-trace"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/open-telemetry/opentelemetry-js"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "@sentry/capacitor",
-      "version": "4.2.0",
+      "version": "4.4.0",
       "description": "Official Sentry SDK for Capacitor",
       "licenses": [
         {
@@ -424,8 +622,41 @@
     },
     {
       "type": "library",
+      "name": "@sentry/node",
+      "version": "10.69.0",
+      "description": "Sentry Node SDK using OpenTelemetry for performance instrumentation",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/getsentry/sentry-javascript/tree/master/packages/node"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/getsentry/sentry-javascript"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "@sentry/sveltekit",
-      "version": "10.60.0",
+      "version": "10.69.0",
       "description": "Official Sentry SDK for SvelteKit",
       "licenses": [
         {
@@ -524,7 +755,7 @@
     {
       "type": "library",
       "name": "katex",
-      "version": "0.17.0",
+      "version": "0.19.0",
       "description": "Fast math typesetting for the web.",
       "licenses": [
         {
@@ -541,6 +772,39 @@
         {
           "type": "vcs",
           "url": "https://github.com/KaTeX/KaTeX"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "prom-client",
+      "version": "15.1.3",
+      "description": "Client for prometheus",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/siimon/prom-client"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/siimon/prom-client"
         }
       ],
       "properties": [
@@ -623,7 +887,7 @@
     {
       "type": "library",
       "name": "@apm-js-collab/code-transformer",
-      "version": "0.15.0",
+      "version": "0.18.1",
       "licenses": [
         {
           "license": {
@@ -651,7 +915,7 @@
     {
       "type": "library",
       "name": "@apm-js-collab/code-transformer-bundler-plugins",
-      "version": "0.5.0",
+      "version": "0.7.4",
       "description": "A universal plugin that uses '@apm-js-collab/code-transformer' to instrument JavaScript code at build time",
       "licenses": [
         {
@@ -680,7 +944,7 @@
     {
       "type": "library",
       "name": "@apm-js-collab/tracing-hooks",
-      "version": "0.10.1",
+      "version": "0.13.3",
       "description": "CJS and ESM hooks for orchestrion",
       "licenses": [
         {
@@ -1023,7 +1287,7 @@
     {
       "type": "library",
       "name": "@babel/parser",
-      "version": "7.29.7",
+      "version": "7.29.9",
       "description": "A JavaScript parser",
       "licenses": [
         {
@@ -1122,7 +1386,7 @@
     {
       "type": "library",
       "name": "@babel/types",
-      "version": "7.29.7",
+      "version": "7.29.8",
       "description": "Babel Types is a Lodash-esque utility library for AST nodes",
       "licenses": [
         {
@@ -1165,6 +1429,39 @@
         }
       ],
       "externalReferences": [],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@emnapi/runtime",
+      "version": "1.11.3",
+      "description": "emnapi runtime",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/toyobayashi/emnapi#readme"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/toyobayashi/emnapi"
+        }
+      ],
       "properties": [
         {
           "name": "orrery:scope",
@@ -1278,7 +1575,7 @@
     {
       "type": "library",
       "name": "@jridgewell/sourcemap-codec",
-      "version": "1.5.5",
+      "version": "1.6.0",
       "description": "Encode/decode sourcemap mappings",
       "licenses": [
         {
@@ -1343,41 +1640,8 @@
     },
     {
       "type": "library",
-      "name": "@opentelemetry/api",
-      "version": "1.9.1",
-      "description": "Public API for OpenTelemetry",
-      "licenses": [
-        {
-          "license": {
-            "id": "Apache-2.0"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/open-telemetry/opentelemetry-js/tree/main/api"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/open-telemetry/opentelemetry-js"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "runtime"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "@opentelemetry/api-logs",
-      "version": "0.214.0",
+      "version": "0.220.0",
       "description": "Public logs API for OpenTelemetry",
       "licenses": [
         {
@@ -1409,41 +1673,8 @@
     },
     {
       "type": "library",
-      "name": "@opentelemetry/core",
-      "version": "2.10.0",
-      "description": "OpenTelemetry Core provides constants and utilities shared by all OpenTelemetry SDK packages.",
-      "licenses": [
-        {
-          "license": {
-            "id": "Apache-2.0"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/open-telemetry/opentelemetry-js/tree/main/packages/opentelemetry-core"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/open-telemetry/opentelemetry-js"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "runtime"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "@opentelemetry/instrumentation",
-      "version": "0.214.0",
+      "version": "0.220.0",
       "description": "Base class for node which OpenTelemetry instrumentation modules extend",
       "licenses": [
         {
@@ -1475,9 +1706,9 @@
     },
     {
       "type": "library",
-      "name": "@opentelemetry/resources",
-      "version": "2.10.0",
-      "description": "OpenTelemetry SDK resources",
+      "name": "@opentelemetry/otlp-exporter-base",
+      "version": "0.223.0",
+      "description": "OpenTelemetry OTLP Exporter base (for internal use only)",
       "licenses": [
         {
           "license": {
@@ -1488,7 +1719,7 @@
       "externalReferences": [
         {
           "type": "website",
-          "url": "https://github.com/open-telemetry/opentelemetry-js/tree/main/packages/opentelemetry-resources"
+          "url": "https://github.com/open-telemetry/opentelemetry-js/tree/main/experimental/packages/otlp-exporter-base"
         },
         {
           "type": "vcs",
@@ -1508,9 +1739,9 @@
     },
     {
       "type": "library",
-      "name": "@opentelemetry/sdk-trace",
-      "version": "2.10.0",
-      "description": "OpenTelemetry Tracing",
+      "name": "@opentelemetry/otlp-transformer",
+      "version": "0.223.0",
+      "description": "Transform OpenTelemetry SDK data into OTLP",
       "licenses": [
         {
           "license": {
@@ -1521,7 +1752,7 @@
       "externalReferences": [
         {
           "type": "website",
-          "url": "https://github.com/open-telemetry/opentelemetry-js/tree/main/packages/sdk-trace"
+          "url": "https://github.com/open-telemetry/opentelemetry-js/tree/main/experimental/packages/otlp-transformer"
         },
         {
           "type": "vcs",
@@ -1542,7 +1773,7 @@
     {
       "type": "library",
       "name": "@opentelemetry/sdk-trace-base",
-      "version": "2.10.0",
+      "version": "2.12.0",
       "description": "OpenTelemetry Tracing",
       "licenses": [
         {
@@ -1636,41 +1867,8 @@
     },
     {
       "type": "library",
-      "name": "@rollup/rollup-darwin-arm64",
-      "version": "4.62.2",
-      "description": "Native bindings for Rollup",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://rollupjs.org/"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/rollup/rollup"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "runtime"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "@sentry/browser",
-      "version": "10.60.0",
+      "version": "10.69.0",
       "description": "Official Sentry SDK for browsers",
       "licenses": [
         {
@@ -1703,7 +1901,7 @@
     {
       "type": "library",
       "name": "@sentry/browser-utils",
-      "version": "10.60.0",
+      "version": "10.69.0",
       "description": "Browser Utilities for all Sentry JavaScript SDKs",
       "licenses": [
         {
@@ -1801,9 +1999,9 @@
     },
     {
       "type": "library",
-      "name": "@sentry/cli-darwin",
+      "name": "@sentry/cli-linux-x64",
       "version": "2.58.6",
-      "description": "The darwin distribution of the Sentry CLI binary.",
+      "description": "The linux x64 distribution of the Sentry CLI binary.",
       "licenses": [
         {
           "license": {
@@ -1831,7 +2029,7 @@
     {
       "type": "library",
       "name": "@sentry/cloudflare",
-      "version": "10.60.0",
+      "version": "10.69.0",
       "description": "Official Sentry SDK for Cloudflare Workers and Pages",
       "licenses": [
         {
@@ -1929,7 +2127,7 @@
     {
       "type": "library",
       "name": "@sentry/feedback",
-      "version": "10.60.0",
+      "version": "10.69.0",
       "description": "Sentry SDK integration for user feedback",
       "licenses": [
         {
@@ -1961,41 +2159,8 @@
     },
     {
       "type": "library",
-      "name": "@sentry/node",
-      "version": "10.60.0",
-      "description": "Sentry Node SDK using OpenTelemetry for performance instrumentation",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/getsentry/sentry-javascript/tree/master/packages/node"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/getsentry/sentry-javascript"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "runtime"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "@sentry/node-core",
-      "version": "10.60.0",
+      "version": "10.69.0",
       "description": "Sentry Node-Core SDK",
       "licenses": [
         {
@@ -2028,7 +2193,7 @@
     {
       "type": "library",
       "name": "@sentry/opentelemetry",
-      "version": "10.60.0",
+      "version": "10.69.0",
       "description": "Official Sentry utilities for OpenTelemetry",
       "licenses": [
         {
@@ -2061,7 +2226,7 @@
     {
       "type": "library",
       "name": "@sentry/replay",
-      "version": "10.60.0",
+      "version": "10.69.0",
       "description": "User replays for Sentry",
       "licenses": [
         {
@@ -2094,7 +2259,7 @@
     {
       "type": "library",
       "name": "@sentry/replay-canvas",
-      "version": "10.60.0",
+      "version": "10.69.0",
       "description": "Replay canvas integration",
       "licenses": [
         {
@@ -2127,7 +2292,7 @@
     {
       "type": "library",
       "name": "@sentry/server-utils",
-      "version": "10.60.0",
+      "version": "10.69.0",
       "description": "Server Utilities for all Sentry JavaScript SDKs",
       "licenses": [
         {
@@ -2160,7 +2325,7 @@
     {
       "type": "library",
       "name": "@sentry/svelte",
-      "version": "10.60.0",
+      "version": "10.69.0",
       "description": "Official Sentry SDK for Svelte",
       "licenses": [
         {
@@ -2193,7 +2358,7 @@
     {
       "type": "library",
       "name": "@sentry/types",
-      "version": "10.60.0",
+      "version": "10.69.0",
       "description": "Types for all Sentry JavaScript SDKs",
       "licenses": [
         {
@@ -2292,7 +2457,7 @@
     {
       "type": "library",
       "name": "@sveltejs/acorn-typescript",
-      "version": "1.0.11",
+      "version": "1.0.13",
       "description": "Acorn plugin that parses TypeScript",
       "licenses": [
         {
@@ -2325,7 +2490,7 @@
     {
       "type": "library",
       "name": "@sveltejs/kit",
-      "version": "2.69.2",
+      "version": "2.70.3",
       "description": "SvelteKit is the fastest way to build Svelte apps",
       "licenses": [
         {
@@ -2455,39 +2620,6 @@
     },
     {
       "type": "library",
-      "name": "@types/trusted-types",
-      "version": "2.0.7",
-      "description": "TypeScript definitions for trusted-types",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/trusted-types"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "runtime"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "@typescript-eslint/types",
       "version": "8.63.0",
       "description": "Types for the TypeScript-ESTree AST spec",
@@ -2522,7 +2654,7 @@
     {
       "type": "library",
       "name": "acorn",
-      "version": "8.17.0",
+      "version": "8.19.0",
       "description": "ECMAScript parser",
       "licenses": [
         {
@@ -2740,6 +2872,35 @@
     },
     {
       "type": "library",
+      "name": "astring",
+      "version": "1.9.0",
+      "description": "JavaScript code generator from an ESTree-compliant AST.",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/davidbonnet/astring"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "axobject-query",
       "version": "4.1.0",
       "description": "Programmatic access to information about the AXObject Model",
@@ -2816,6 +2977,64 @@
         {
           "type": "vcs",
           "url": "https://github.com/web-platform-dx/baseline-browser-mapping"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "bintrees",
+      "version": "1.0.2",
+      "description": "Binary Search Trees",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/vadimg/js_bintrees"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "brace-expansion",
+      "version": "5.0.12",
+      "description": "Brace expansion as known from sh/bash",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/juliangruber/brace-expansion"
         }
       ],
       "properties": [
@@ -3341,7 +3560,7 @@
     {
       "type": "library",
       "name": "devalue",
-      "version": "5.8.1",
+      "version": "5.9.4",
       "description": "Gets the job done when JSON.stringify can't",
       "licenses": [
         {
@@ -3558,8 +3777,41 @@
     },
     {
       "type": "library",
+      "name": "esquery",
+      "version": "1.7.0",
+      "description": "A query library for ECMAScript AST using a CSS selector like query language.",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/estools/esquery/"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/estools/esquery"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "esrap",
-      "version": "2.2.13",
+      "version": "2.4.0",
       "description": "Parse in reverse",
       "licenses": [
         {
@@ -3572,6 +3824,39 @@
         {
           "type": "vcs",
           "url": "https://github.com/sveltejs/esrap"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "estraverse",
+      "version": "5.3.0",
+      "description": "ECMAScript JS AST traversal functions",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-2-Clause"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/estools/estraverse"
+        },
+        {
+          "type": "vcs",
+          "url": "http://github.com/estools/estraverse"
         }
       ],
       "properties": [
@@ -3748,39 +4033,6 @@
     },
     {
       "type": "library",
-      "name": "fsevents",
-      "version": "2.3.2",
-      "description": "Native Access to MacOS FSEvents",
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/fsevents/fsevents"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/fsevents/fsevents"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "runtime"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "gensync",
       "version": "1.0.0-beta.2",
       "description": "Allows users to use generators in order to write common functions that can be both sync or async.",
@@ -3935,7 +4187,7 @@
     {
       "type": "library",
       "name": "hono",
-      "version": "4.13.5",
+      "version": "4.13.13",
       "description": "Web framework built on Web Standards",
       "licenses": [
         {
@@ -4059,7 +4311,7 @@
     {
       "type": "library",
       "name": "import-in-the-middle",
-      "version": "3.3.2",
+      "version": "3.5.2",
       "description": "Intercept imports in Node.js",
       "licenses": [
         {
@@ -4092,7 +4344,7 @@
     {
       "type": "library",
       "name": "ip-address",
-      "version": "10.7.0",
+      "version": "10.7.4",
       "description": "A library for parsing IPv4 and IPv6 IP addresses in node and the browser.",
       "licenses": [
         {
@@ -4463,8 +4715,41 @@
     },
     {
       "type": "library",
+      "name": "meriyah",
+      "version": "6.1.4",
+      "description": "A 100% compliant, self-hosted javascript parser with high focus on both performance and stability",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/meriyah/meriyah"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/meriyah/meriyah"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "minimatch",
-      "version": "10.2.5",
+      "version": "10.2.6",
       "description": "a glob matcher in javascript",
       "licenses": [
         {
@@ -5290,6 +5575,39 @@
     },
     {
       "type": "library",
+      "name": "semifies",
+      "version": "1.0.0",
+      "description": "Slimmed down satisfies from semver",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/holepunchto/semifies"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/holepunchto/semifies"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "semver",
       "version": "7.8.5",
       "description": "The semantic version parser used by npm.",
@@ -5501,6 +5819,39 @@
     },
     {
       "type": "library",
+      "name": "source-map",
+      "version": "0.6.1",
+      "description": "Generates and consumes source maps",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/mozilla/source-map"
+        },
+        {
+          "type": "vcs",
+          "url": "http://github.com/mozilla/source-map"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
       "name": "string-width",
       "version": "4.2.3",
       "description": "Get the visual width of a string - the number of columns required to display it",
@@ -5560,7 +5911,7 @@
     {
       "type": "library",
       "name": "svelte",
-      "version": "5.56.4",
+      "version": "5.57.2",
       "description": "Cybernetically enhanced web apps",
       "licenses": [
         {
@@ -5577,6 +5928,39 @@
         {
           "type": "vcs",
           "url": "https://github.com/sveltejs/svelte"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "tdigest",
+      "version": "0.1.3",
+      "description": "javascript implementation of Dunning's T-Digest for streaming quantile approximation",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/welch/tdigest"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/welch/tdigest"
         }
       ],
       "properties": [
@@ -5664,6 +6048,39 @@
         {
           "type": "vcs",
           "url": "https://github.com/jsdom/tr46"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "runtime"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "tslib",
+      "version": "2.8.1",
+      "description": "Runtime library for TypeScript helper functions",
+      "licenses": [
+        {
+          "license": {
+            "id": "0BSD"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.typescriptlang.org/"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/Microsoft/tslib"
         }
       ],
       "properties": [
@@ -6501,7 +6918,7 @@
     {
       "type": "library",
       "name": "@playwright/test",
-      "version": "1.61.1",
+      "version": "1.64.0",
       "description": "A high-level API to automate web browsers",
       "licenses": [
         {
@@ -6732,7 +7149,7 @@
     {
       "type": "library",
       "name": "@vitest/coverage-v8",
-      "version": "4.1.10",
+      "version": "4.1.12",
       "description": "V8 coverage provider for Vitest",
       "licenses": [
         {
@@ -6984,7 +7401,7 @@
     {
       "type": "library",
       "name": "prettier",
-      "version": "3.9.5",
+      "version": "3.9.10",
       "description": "Prettier is an opinionated code formatter",
       "licenses": [
         {
@@ -7050,7 +7467,7 @@
     {
       "type": "library",
       "name": "sharp",
-      "version": "0.34.5",
+      "version": "0.35.5",
       "description": "High performance Node.js image processing, the fastest module to resize JPEG, PNG, WebP, GIF, AVIF and TIFF images",
       "licenses": [
         {
@@ -7100,39 +7517,6 @@
         {
           "type": "vcs",
           "url": "https://github.com/sveltejs/language-tools"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "true"
-        }
-      ]
-    },
-    {
-      "type": "library",
-      "name": "tslib",
-      "version": "2.8.1",
-      "description": "Runtime library for TypeScript helper functions",
-      "licenses": [
-        {
-          "license": {
-            "id": "0BSD"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://www.typescriptlang.org/"
-        },
-        {
-          "type": "vcs",
-          "url": "https://github.com/Microsoft/tslib"
         }
       ],
       "properties": [
@@ -7314,7 +7698,7 @@
     {
       "type": "library",
       "name": "vitest",
-      "version": "4.1.10",
+      "version": "4.1.12",
       "description": "Next generation testing framework powered by Vite",
       "licenses": [
         {
@@ -10697,9 +11081,9 @@
     },
     {
       "type": "library",
-      "name": "@esbuild/darwin-arm64",
+      "name": "@esbuild/linux-x64",
       "version": "0.28.1",
-      "description": "The macOS ARM 64-bit binary for esbuild, a JavaScript bundler.",
+      "description": "The Linux 64-bit binary for esbuild, a JavaScript bundler.",
       "licenses": [
         {
           "license": {
@@ -10826,7 +11210,7 @@
     {
       "type": "library",
       "name": "@grpc/grpc-js",
-      "version": "1.14.4",
+      "version": "1.14.6",
       "description": "gRPC Library for Node - pure JS implementation",
       "licenses": [
         {
@@ -11015,9 +11399,42 @@
     },
     {
       "type": "library",
-      "name": "@img/sharp-darwin-arm64",
-      "version": "0.34.5",
-      "description": "Prebuilt sharp for use with macOS 64-bit ARM",
+      "name": "@img/sharp-libvips-linux-x64",
+      "version": "1.3.4",
+      "description": "Prebuilt libvips and dependencies for use with sharp on Linux (glibc) x64",
+      "licenses": [
+        {
+          "license": {
+            "id": "LGPL-3.0-or-later"
+          }
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://sharp.pixelplumbing.com"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/lovell/sharp-libvips"
+        }
+      ],
+      "properties": [
+        {
+          "name": "orrery:scope",
+          "value": "development"
+        },
+        {
+          "name": "orrery:topLevel",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "@img/sharp-linux-x64",
+      "version": "0.35.5",
+      "description": "Prebuilt sharp for use with Linux (glibc) x64",
       "licenses": [
         {
           "license": {
@@ -11048,13 +11465,13 @@
     },
     {
       "type": "library",
-      "name": "@img/sharp-libvips-darwin-arm64",
-      "version": "1.2.4",
-      "description": "Prebuilt libvips and dependencies for use with sharp on macOS 64-bit ARM",
+      "name": "@img/sharp-wasm32",
+      "version": "0.35.5",
+      "description": "Prebuilt sharp for use with WebAssembly",
       "licenses": [
         {
           "license": {
-            "id": "LGPL-3.0-or-later"
+            "id": "Apache-2.0 AND LGPL-3.0-or-later AND MIT"
           }
         }
       ],
@@ -11065,7 +11482,7 @@
         },
         {
           "type": "vcs",
-          "url": "https://github.com/lovell/sharp-libvips"
+          "url": "https://github.com/lovell/sharp"
         }
       ],
       "properties": [
@@ -13173,7 +13590,7 @@
     {
       "type": "library",
       "name": "@vitest/pretty-format",
-      "version": "4.1.10",
+      "version": "4.1.12",
       "description": "Fork of pretty-format with support for ESM",
       "licenses": [
         {
@@ -13206,7 +13623,7 @@
     {
       "type": "library",
       "name": "@vitest/utils",
-      "version": "4.1.10",
+      "version": "4.1.12",
       "description": "Shared Vitest utility functions",
       "licenses": [
         {
@@ -13323,7 +13740,7 @@
     {
       "type": "library",
       "name": "@vue/shared",
-      "version": "3.5.39",
+      "version": "3.5.44",
       "description": "internal utils shared across @vue packages",
       "licenses": [
         {
@@ -13516,7 +13933,7 @@
     {
       "type": "library",
       "name": "@xmldom/xmldom",
-      "version": "0.9.10",
+      "version": "0.9.12",
       "description": "A pure JavaScript W3C standard-based (XML DOM Level 2 Core) DOMParser and XMLSerializer module.",
       "licenses": [
         {
@@ -17399,39 +17816,6 @@
     },
     {
       "type": "library",
-      "name": "estraverse",
-      "version": "5.3.0",
-      "description": "ECMAScript JS AST traversal functions",
-      "licenses": [
-        {
-          "license": {
-            "id": "BSD-2-Clause"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/estools/estraverse"
-        },
-        {
-          "type": "vcs",
-          "url": "http://github.com/estools/estraverse"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "estree-walker",
       "version": "3.0.3",
       "description": "Traverse an ESTree-compliant AST",
@@ -18837,7 +19221,7 @@
     {
       "type": "library",
       "name": "handlebars",
-      "version": "4.7.9",
+      "version": "4.7.10",
       "description": "Handlebars provides the power necessary to let you build semantic templates effectively with no frustration",
       "licenses": [
         {
@@ -20767,7 +21151,7 @@
     {
       "type": "library",
       "name": "js-yaml",
-      "version": "3.15.0",
+      "version": "3.15.2",
       "description": "YAML 1.2 parser and serializer",
       "licenses": [
         {
@@ -22913,7 +23297,7 @@
     {
       "type": "library",
       "name": "playwright",
-      "version": "1.61.1",
+      "version": "1.64.0",
       "description": "A high-level API to automate web browsers",
       "licenses": [
         {
@@ -22946,7 +23330,7 @@
     {
       "type": "library",
       "name": "playwright-core",
-      "version": "1.61.1",
+      "version": "1.64.0",
       "description": "A high-level API to automate web browsers",
       "licenses": [
         {
@@ -23041,7 +23425,7 @@
     {
       "type": "library",
       "name": "postcss",
-      "version": "8.5.19",
+      "version": "8.5.30",
       "description": "Tool for transforming styles with JS plugins",
       "licenses": [
         {
@@ -23161,7 +23545,7 @@
     {
       "type": "library",
       "name": "postcss-selector-parser",
-      "version": "7.1.4",
+      "version": "7.1.6",
       "description": "Selector parser with built in methods for working with selector strings.",
       "licenses": [
         {
@@ -24973,41 +25357,8 @@
     },
     {
       "type": "library",
-      "name": "source-map",
-      "version": "0.6.1",
-      "description": "Generates and consumes source maps",
-      "licenses": [
-        {
-          "license": {
-            "id": "BSD-3-Clause"
-          }
-        }
-      ],
-      "externalReferences": [
-        {
-          "type": "website",
-          "url": "https://github.com/mozilla/source-map"
-        },
-        {
-          "type": "vcs",
-          "url": "http://github.com/mozilla/source-map"
-        }
-      ],
-      "properties": [
-        {
-          "name": "orrery:scope",
-          "value": "development"
-        },
-        {
-          "name": "orrery:topLevel",
-          "value": "false"
-        }
-      ]
-    },
-    {
-      "type": "library",
       "name": "source-map-js",
-      "version": "1.2.1",
+      "version": "1.2.2",
       "description": "Generates and consumes source maps",
       "licenses": [
         {
@@ -25249,7 +25600,7 @@
     {
       "type": "library",
       "name": "std-env",
-      "version": "4.2.0",
+      "version": "4.3.0",
       "description": "Runtime agnostic JS utils",
       "licenses": [
         {
@@ -25901,7 +26252,7 @@
     {
       "type": "library",
       "name": "tar",
-      "version": "7.5.20",
+      "version": "7.5.22",
       "description": "tar for node",
       "licenses": [
         {
@@ -26310,7 +26661,7 @@
     {
       "type": "library",
       "name": "tinyrainbow",
-      "version": "3.1.0",
+      "version": "3.2.0",
       "description": "A small library to print colourful messages.",
       "licenses": [
         {
@@ -26913,7 +27264,7 @@
     {
       "type": "library",
       "name": "undici",
-      "version": "7.28.0",
+      "version": "7.30.1",
       "description": "An HTTP/1.1 client, written from scratch for Node.js",
       "licenses": [
         {
@@ -27413,7 +27764,7 @@
     {
       "type": "library",
       "name": "uuid",
-      "version": "14.0.1",
+      "version": "14.0.3",
       "description": "RFC9562 UUIDs",
       "licenses": [
         {
@@ -27591,7 +27942,7 @@
     {
       "type": "library",
       "name": "vue",
-      "version": "3.5.39",
+      "version": "3.5.44",
       "description": "The progressive JavaScript framework for building modern web UI.",
       "licenses": [
         {

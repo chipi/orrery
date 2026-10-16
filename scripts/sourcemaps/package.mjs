@@ -50,7 +50,11 @@ if (paired.length === 0) {
 }
 const before = new Map(paired.map((f) => [f, sha(f)]));
 
-execFileSync('npx', ['sentry-cli', 'sourcemaps', 'inject', BUILD], { stdio: 'inherit' });
+// --no-install: never fetch a package called "sentry-cli" from the registry if the
+// local @sentry/cli (a transitive dependency) is missing; fail instead.
+execFileSync('npx', ['--no-install', 'sentry-cli', 'sourcemaps', 'inject', BUILD], {
+  stdio: 'inherit',
+});
 
 let recompressed = 0;
 const problems = [];

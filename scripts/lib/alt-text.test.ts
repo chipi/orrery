@@ -1,11 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import {
-  cleanFilename,
-  imageStem,
-  isNonDescriptiveAlt,
-  pickAlt,
-  subjectToAlt,
-} from './build-image-alt-baseline';
+import { cleanFilename, imageStem, isNonDescriptiveAlt, pickAlt, subjectToAlt } from './alt-text';
 
 describe('alt-text baseline (#389)', () => {
   it('flags captions that name the file, not the picture', () => {

@@ -10,6 +10,132 @@ For deep-dive engineering rationale, see [`IMPLEMENTATION.md`](IMPLEMENTATION.md
 
 ## [Unreleased]
 
+The 1.0 release. It adds the **Physics Lab** (`/lab`) — a notebook, canvas and
+ask box over one tested physics kernel, also exposed as an **MCP server** with
+OAuth sign-in — plus **collectible cards**, guided **entry and descent**
+flights, a rebuilt launches feed, and a stability, image-weight, security and
+accessibility pass for 1.0.
+
+### Physics Lab (`/lab`)
+
+- **Sealed physics kernel** — orbital, transfer, ascent, descent, propulsion and
+  satellite code carved into `physics/` behind a public barrel and an ESLint
+  purity gate (#459, #504–#508). A frozen `FormulaDef` / `FigureSpec` / `Goal`
+  contract, a formula registry (64 formulas), and a bidirectional goal-coverage
+  CI gate (#509–#511, #525).
+- **Notebook, Focus and Canvas** — the `/lab` route with a recompute engine,
+  `?nb=` share links, localStorage, `.orrlab.json` save/load with codec volume
+  caps (#512–#514, #461); a spatial Canvas view with promote-to-Notebook and a
+  shared card-state owner (#463).
+- **Goals** — guided ladders from Tsiolkovsky and the Moon landing through
+  Mars (transfer window, atmospheric EDL), Venus, Titan, Jupiter, Mercury, micro-g
+  small worlds, escape and gravity assist, moon phases, eclipses, ISS passes,
+  orbit choice, planet elongation, a deep-space mission planner, and an
+  "Apollo: there and back" capstone (#526–#531).
+- **Figures** — SVG and canvas heroes (orbit shell, ground track, sky chart,
+  porkchop, entry corridor, force diagrams), whole-mission flight maps (ADR-090),
+  a formula glossary, per-formula learn-more links, and 25 operator-approved
+  goal illustrations carrying a fixed register badge (#536).
+- **Strings and encyclopedia** — all `lab.*` keys in 14 locales behind a parity
+  gate; six Lab-derived `/science` articles (#32).
+- **Ask** — a conversational scenario assistant: `compose_scenario`, named
+  targets, multi-turn memory and `update_scenario` refinement, with the server
+  recomputing every number (#535, #539–#543).
+
+### MCP server and Lab sign-in
+
+- **Kernel as MCP tools** over Streamable HTTP; all 64 formulas are exposed
+  (#462, #464).
+- **OAuth 2.1** — a `lab-api` authorization server (PKCE-S256, Google OIDC,
+  fail-closed allowlist re-checked on refresh, ES256 JWTs) and an MCP resource
+  server that verifies them (RFC 9728 metadata). Dynamic Client Registration lets
+  the connector URL be pasted into Claude.ai (#533, #534, #464). Sign-in is an
+  allowlist beta.
+- **Station TLEs** — one served `/data/station-tles.json` overlay, one resolver,
+  no browser egress to Celestrak (ADR-091); a daily refresh workflow; staleness
+  disclosed on the `/explore` sky pass-hint and in `iss-pass`.
+
+### `/cards` — collectible cards
+
+- **352 cards** across missions, fleet, planets, natural satellites, small bodies
+  and surface sites: a monochrome `CollectibleCard` template, build-time card
+  PNGs, a Share action, and Open Graph share stubs under `/c/` (#547, PRD-036).
+- Hero photo credit and attribution parties on every card; card chrome in all 14
+  locales; stubs and the corpus are kept off the on-device bundle.
+
+### `/fly` and Lab — descent and entry guidance
+
+- **Range-control entry guidance** — a downrange DOF and a bank controller; the
+  entry computer flies the flight (ADR-088).
+- **Super-circular loft/skip model** for Mars lifting entries (Curiosity/MSL,
+  Perseverance, Tianwen-1) and the Apollo 8 lunar return (ADR-089).
+- **Kernel "systems" layer** — PEG ascent guidance, powered-descent guidance
+  (shared by the app and the Lab) and re-entry lift-vector steering (ADR-087).
+- Re-calibrated entry angle, sourced L/D and drag areas, and provenance markers
+  (lifting capsules ~7 g → ~4.5 g).
+
+### Launches and Earth sites
+
+- **GCAT 1.8.8** is read by header name; first-flight flags come from source
+  launch counts (#569). Two orphan curation ids pruned (#603).
+- **Earth launch pads** — Tier-2 terrain for all 26 pads, with a disclosed
+  Sentinel-2 fallback where no open sub-metre source exists, and Tier-3 ground
+  panoramas for six (#546).
+
+### Observability and privacy
+
+- **Analytics opt-out** — cookie, GPC and DNT honoured, plus a `/privacy`
+  disclosure page; the command-palette query is no longer sent raw (ADR-092).
+- **Journey events** (`plan-run`, `explore-depth`, `fly-<act>`, `tour-complete`,
+  …), and a fix for `app-load` being lost before the Umami script loaded
+  (ADR-093). Read-depth, search-open and PWA-install events (#521).
+- **Server-side observability** for `lab-api` and `mcp` (ADR-094); Umami server
+  events use a browser UA (#579); logs carry `service`.
+- **GlitchTip source maps**: prod builds emit hidden maps with debug ids and publish
+  them as a deploy-run artifact for the homelab uploader; maps are never served (#595).
+- **Resilience and SEO** — i18n bundle retry, smaller precache, `hreflang`
+  sitemap and a language-suggestion banner (#517–#519).
+
+### v1.0 readiness
+
+- **Stability** — a throw inside `Sentry.init` no longer aborts client boot
+  (#553); transient `/data/` fetch failures are retried and handled (#554); a
+  failed service-worker update is no longer an unhandled rejection, and an
+  install failure reports its cause (#588); the MCP transport logs why it returns
+  400 (#590); four `state_referenced_locally` warnings resolved (#602).
+- **Images** — per-slot `srcset` and 320/640 px card rungs: `/fleet` on a phone
+  52.8 → 14.0 MB, measured on a dev server (#482); `/credits` thumbnails
+  572 → 30 MB; Phobos texture 2.85 MB → 252 kB, with texture crops credited like
+  their source (#596).
+- **Security** — review recorded (#593): fork code cannot reach `workflow_run`
+  jobs and the prod deploy job runs only for `main`; Permissions-Policy denies unused
+  features (#601); `lab-api` JSON is `no-store`, null history turns are skipped,
+  `/register` is capped (#597); unknown URLs return a real 404 (#604); dispatch
+  inputs reach scripts via env and are validated (#600).
+- **Accessibility** — Lab canvases carry `role="img"` on a wrapper (#594); alt
+  text describes the picture, not the file, enforced by `validate-data` (#389).
+- **Analytics** — `/science` read depth measures the scroll container, not the
+  window; earlier numbers are invalid (#607).
+- **Dependencies** — `@sveltejs/kit` 2.70.3, `sharp` 0.35.5 with an SPDX-aware
+  licence gate (#591, #592), katex 0.19, in-range audit fixes (34 → 21 findings;
+  the rest is dev tooling).
+
+### Also
+
+- Station TLE data refreshed by the daily bot (33 `chore(tle)` commits).
+- `/explore`: black-hole lens layers and one lens for the stellar neighbourhood.
+- Colophon table of contents; Lab placed last in the LEARN group; Hindi strings
+  translated (#608).
+
+### Internal
+
+- Workspace isolation for parallel checkouts, `npm run docker:e2e`, Node 20 via
+  mise, schedule-isolated e2e concurrency; mobile size budget 70 → 75 MB.
+- Version label 0.9.0-wip, TA.md v3.4, ADR index and RFC status cleanup, finished
+  working notes archived (#605); `/plan` porkchop spec re-enabled (#606).
+- Dependabot bumps: Playwright, Svelte, Prettier, Capacitor, Docker and GitHub
+  Actions.
+
 ## [0.8.1] — 2026-08-28
 
 A correctness-and-polish point release on top of 0.8.0 — mobile/PWA fixes, a new

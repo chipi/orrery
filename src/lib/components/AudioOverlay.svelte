@@ -1694,47 +1694,6 @@
     font-weight: 600;
   }
 
-  .provider-switcher {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 6px 10px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-  }
-  .provider-eyebrow {
-    font-family: var(--font-display, inherit);
-    font-size: 10px;
-    letter-spacing: 1.5px;
-    color: rgba(255, 255, 255, 0.45);
-    margin-right: 4px;
-  }
-  .provider-btn {
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 3px;
-    color: rgba(255, 255, 255, 0.7);
-    padding: 4px 10px;
-    font-size: 11px;
-    letter-spacing: 0.4px;
-    cursor: pointer;
-    transition:
-      background 120ms,
-      border-color 120ms,
-      color 120ms;
-  }
-  .provider-btn:hover,
-  .provider-btn:focus-visible {
-    border-color: rgba(255, 255, 255, 0.4);
-    color: rgba(255, 255, 255, 0.95);
-    outline: none;
-  }
-  .provider-btn.active {
-    background: rgba(68, 102, 255, 0.22);
-    border-color: rgba(68, 102, 255, 0.6);
-    color: #96afff;
-  }
   .inventory-empty {
     margin: 0;
     padding: 12px 18px 16px;

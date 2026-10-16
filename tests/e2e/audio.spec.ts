@@ -110,45 +110,6 @@ test.describe('AudioOverlay smoke', () => {
     expect(src).toMatch(/curator\/pale-blue-dot\..+\.mp3$/);
   });
 
-  // A/B variant switcher tests skipped — the voice-picker UI was unwired
-  // in commit 36c00f4d7 ("tour-first copy, two-up launchers, voice picker
-  // unwired"). The .provider-switcher / .provider-btn DOM no longer exists
-  // (only the CSS lingers in AudioOverlay.svelte). Re-enable when the
-  // picker is rewired.
-  test.skip('A/B variant switcher appears for episodes with two providers', async ({ page }) => {
-    await page.goto('/?audio=pale-blue-dot', { waitUntil: 'networkidle' });
-    await expect(page.locator(OVERLAY_SELECTOR)).toBeVisible({ timeout: 10000 });
-
-    const switcher = page.locator(`${OVERLAY_SELECTOR} .provider-switcher`);
-    await expect(switcher).toBeVisible({ timeout: 10000 });
-
-    const buttons = switcher.locator('.provider-btn');
-    const count = await buttons.count();
-    expect(count).toBeGreaterThanOrEqual(2); // Google + ElevenLabs at least
-  });
-
-  test.skip('clicking the inactive A/B variant swaps the audio src', async ({ page }) => {
-    await page.goto('/?audio=pale-blue-dot', { waitUntil: 'networkidle' });
-    await expect(page.locator(OVERLAY_SELECTOR)).toBeVisible({ timeout: 10000 });
-
-    const switcher = page.locator(`${OVERLAY_SELECTOR} .provider-switcher`);
-    await expect(switcher).toBeVisible({ timeout: 10000 });
-
-    const srcBefore = await page.locator(`${OVERLAY_SELECTOR} audio`).getAttribute('src');
-    expect(srcBefore).toBeTruthy();
-
-    // Click the variant button that is NOT currently active.
-    const inactive = switcher.locator('.provider-btn:not(.active)').first();
-    await expect(inactive).toBeVisible();
-    await inactive.click();
-
-    await expect
-      .poll(async () => page.locator(`${OVERLAY_SELECTOR} audio`).getAttribute('src'), {
-        timeout: 5000,
-      })
-      .not.toBe(srcBefore);
-  });
-
   test('captions toggle (CC) flips aria-pressed', async ({ page }) => {
     await page.goto('/?audio=pale-blue-dot', { waitUntil: 'networkidle' });
     await expect(page.locator(OVERLAY_SELECTOR)).toBeVisible({ timeout: 10000 });

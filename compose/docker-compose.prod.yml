@@ -70,7 +70,11 @@ services:
       # Host-side port is parametric so the operator can shift it
       # without editing this file. 8090 default avoids podcast_scraper's
       # 8080. Container-internal is plain :80 (nginx default).
-      - '${ORRERY_PORT:-8090}:80'
+      # Loopback-only like mcp/lab-api: Docker-published ports bypass the
+      # host firewall, and every consumer is local — Caddy (orrery.caddy),
+      # `tailscale serve --https=8443 <port>` (proxies to 127.0.0.1) and the
+      # deploy health check (#599).
+      - '127.0.0.1:${ORRERY_PORT:-8090}:80'
     volumes:
       # Static bundle (deployed as a release artefact by the deploy
       # workflow; VPS does not run `npm run build` per ADR-063).
@@ -105,6 +109,9 @@ services:
     image: ghcr.io/chipi/orrery-mcp:${ORRERY_MCP_IMAGE_TAG:-main}
     container_name: orrery-mcp
     restart: unless-stopped
+    # Non-root Node on an unprivileged port: needs no Linux capabilities (#599).
+    cap_drop: [ALL]
+    security_opt: ['no-new-privileges:true']
     depends_on:
       - lab-api
     ports:
@@ -160,6 +167,9 @@ services:
     image: ghcr.io/chipi/orrery-lab-api:${ORRERY_LAB_API_IMAGE_TAG:-main}
     container_name: orrery-lab-api
     restart: unless-stopped
+    # Non-root Node on an unprivileged port: needs no Linux capabilities (#599).
+    cap_drop: [ALL]
+    security_opt: ['no-new-privileges:true']
     ports:
       # Host loopback 8094 (was 8093): ADR-114 allocated 8093 to lab-api, but the
       # live box has `operator-viewer-1` healthy on 127.0.0.1:8093 (co-tenant,

@@ -14,15 +14,7 @@
  * covered paths in static/data/credit-thumbs.json. Add-only: an existing thumb is
  * kept. `--dry-run` reports without writing.
  */
-import {
-  closeSync,
-  existsSync,
-  mkdirSync,
-  openSync,
-  readFileSync,
-  rmSync,
-  writeFileSync,
-} from 'node:fs';
+import { existsSync, linkSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import sharp from 'sharp';
 
@@ -53,36 +45,29 @@ for (const { path: p } of entries) {
   const out = path.join(OUT_DIR, p.replace(/\.[^.]+$/, '.webp'));
   covered.push(p);
   sourceBytes += readFileSync(src).length;
-  // Add-only: claim the thumb with an exclusive create ('wx') before rendering,
-  // so an existing (or concurrently written) thumb is never overwritten.
-  let fd = null;
-  if (DRY) {
-    if (existsSync(out)) continue;
-  } else {
+  // Skip work for thumbs that exist. This check only saves a render; it does
+  // not guard the write (that is the link below).
+  if (existsSync(out)) continue;
+  const data = await sharp(src)
+    .resize(SIZE, SIZE, { fit: 'cover' })
+    .webp({ quality: QUALITY })
+    .toBuffer();
+  if (!DRY) {
+    // Add-only and never partial: write a private temp file, then hard-link it
+    // into place. link() fails with EEXIST rather than overwrite, and `out` only
+    // ever appears complete, so a crash can't leave a 0-byte thumb that later
+    // runs would keep.
     mkdirSync(path.dirname(out), { recursive: true });
+    const tmp = `${out}.${process.pid}.tmp`;
+    writeFileSync(tmp, data);
     try {
-      fd = openSync(out, 'wx');
+      linkSync(tmp, out);
     } catch (err) {
-      if (err.code === 'EEXIST') continue;
-      throw err;
+      if (err.code !== 'EEXIST') throw err;
+      continue; // written concurrently by someone else: keep theirs
+    } finally {
+      rmSync(tmp, { force: true });
     }
-  }
-  let data;
-  try {
-    data = await sharp(src)
-      .resize(SIZE, SIZE, { fit: 'cover' })
-      .webp({ quality: QUALITY })
-      .toBuffer();
-    if (fd !== null) writeFileSync(fd, data);
-  } catch (err) {
-    if (fd !== null) {
-      closeSync(fd);
-      fd = null;
-      rmSync(out, { force: true });
-    }
-    throw err;
-  } finally {
-    if (fd !== null) closeSync(fd);
   }
   written += 1;
   bytes += data.length;

@@ -31,7 +31,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v6
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v6
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
       - run: npm ci
       # Fail merges on HIGH/CRITICAL prod-dep advisories. Scoped to
@@ -150,7 +150,7 @@ jobs:
         run: docker build -f Dockerfile.mcp -t orrery-mcp:ci .
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v6
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
       - name: Install deps (jose for the JWT minter)
         run: npm ci --ignore-scripts

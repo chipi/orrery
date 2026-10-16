@@ -1,7 +1,7 @@
 # Orrery MCP server image (S4 · #462 · RFC-037 §6).
 #
 # Two-stage: the builder runs the esbuild bundle (self-contained ESM, kernel
-# JSON inlined); the runtime carries node:20-alpine + ONE bundle file + the
+# JSON inlined); the runtime carries node:22-alpine + ONE bundle file + the
 # messages/ bundles (read at runtime for ×14 tool descriptions). No node_modules
 # in the runtime image — smaller surface, faster cold start (2026-09-01 plan
 # review MAJOR-4).
@@ -10,7 +10,7 @@
 # Run:                   docker run -e MCP_JWKS_URL=... -p 8091:8091 orrery-mcp
 #   (NODE_ENV=production is baked in — a set MCP_DEV_BEARER REFUSES startup; E #534)
 
-FROM node:20-alpine AS builder
+FROM node:22-alpine AS builder
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci --ignore-scripts
@@ -20,7 +20,7 @@ COPY src/ src/
 COPY static/data/ static/data/
 RUN node scripts/build-mcp-server.mjs
 
-FROM node:20-alpine
+FROM node:22-alpine
 ENV NODE_ENV=production
 WORKDIR /srv/mcp
 COPY --from=builder /app/dist-mcp/server.mjs ./server.mjs

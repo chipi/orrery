@@ -8,7 +8,7 @@
  *
  * Idempotent — re-runnable. Run after the route + CTX fetches complete.
  *
- * Run (Node 20):
+ * Run (repo Node 22 via mise):
  *   node --import tsx scripts/hotspots/backfill-imagery-provenance.ts
  */
 import { promises as fs } from 'node:fs';

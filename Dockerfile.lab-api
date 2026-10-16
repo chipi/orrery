@@ -1,14 +1,14 @@
 # Orrery lab-api image (D · #533 · RFC-037 A01.7/A01.8).
 #
 # Same two-stage shape as Dockerfile.mcp: builder runs the esbuild bundle,
-# runtime is node:20-alpine + ONE bundle file + messages/. State (signing
+# runtime is node:22-alpine + ONE bundle file + messages/. State (signing
 # keypair, refresh tokens, allowlist) lives on a bind-mounted volume — the
 # image itself is stateless and disposable.
 #
 # Build (CI + locally):  docker build -f Dockerfile.lab-api -t orrery-lab-api .
 # Run:                   docker run -p 8093:8093 -v ./lab-api-state:/srv/lab-api-state orrery-lab-api
 
-FROM node:20-alpine AS builder
+FROM node:22-alpine AS builder
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci --ignore-scripts
@@ -18,7 +18,7 @@ COPY src/ src/
 COPY static/data/ static/data/
 RUN node scripts/build-lab-api-server.mjs
 
-FROM node:20-alpine
+FROM node:22-alpine
 ENV NODE_ENV=production
 WORKDIR /srv/lab-api
 COPY --from=builder /app/dist-lab-api/server.mjs ./server.mjs

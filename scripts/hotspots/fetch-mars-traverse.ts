@@ -17,7 +17,7 @@
  *   static/images/hotspots/mars/<rover>/traverse/<id>.jpg
  *   static/data/mars-traverses/<rover>.route-patches.json  (render manifest)
  *
- * Run (Node 20 for gdal-async):
+ * Run (repo Node 22 via mise, for gdal-async):
  *   node --import tsx scripts/hotspots/fetch-mars-traverse.ts --rover curiosity [--interval-km 2]
  */
 import { promises as fs } from 'node:fs';

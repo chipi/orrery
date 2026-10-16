@@ -13,8 +13,8 @@
  * co-registered pair peaks at near-zero offset with NCC well above the
  * non-co-registered floor (~0.05).
  *
- * Run (Node 20 for gdal-async):
- *   ~/.nvm/versions/node/v20.20.2/bin/node scripts/hotspots/validate-coreg.mjs <site>
+ * Run (repo Node 22 via mise, for gdal-async):
+ *   mise exec -- node scripts/hotspots/validate-coreg.mjs <site>
  */
 import sharp from 'sharp';
 import gdal from 'gdal-async';

@@ -263,8 +263,8 @@ Served display images are WebP, derived from the git-LFS `masters/` store — sm
 
 Orbital-surface imagery for `/moon` + `/mars` deep zoom is its OWN sub-pipeline
 (27 files, #309/#360/#361) — HiRISE/CTX/LROC/Kaguya crops for landing zones and
-along rover traverses. **Runs under Node 20** (`~/.nvm/.../v20.20.2/bin/node`) with
-the gdal-async binding (`node-v115`); the TS tier-2 fetchers run via `tsx`.
+along rover traverses. **Runs under the repo Node 22** (`mise exec --`) with
+the gdal-async binding `npm ci` installed for it (`node-v127`); the TS tier-2 fetchers run via `tsx`.
 
 Canonical prose is in [AGENTS.md §"Image pipeline — gotchas"](../../../AGENTS.md#image-pipeline--gotchas)
 (the "Orbital surface imagery", "Moon REGIONAL/DETAIL/TRAVERSES", and

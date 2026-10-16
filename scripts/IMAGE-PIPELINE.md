@@ -269,7 +269,7 @@ Image-related scripts split by role. The WebP-ladder + vision scripts live in `s
 ### 6. Surface hotspot + panorama imagery (`scripts/hotspots/`)
 
 A self-contained sub-pipeline for `/earth` `/moon` `/mars` Tier-2 (zoom) + Tier-3
-(panorama) + along-route detail. **Runs under Node 20** (`~/.nvm/versions/node/v20.20.2/bin/node --import tsx …`)
+(panorama) + along-route detail. **Runs under Node 22** (the mise-pinned node: `node --import tsx …`)
 — `gdal-async` ships a `node-v115` ABI binding; the shell's Node 25 (ABI 141) fails
 with `Cannot find module …/node-v141…/gdal.node`. Each fetcher **self-credits**
 (`upsertProvenanceEntries`) — no separate provenance pass needed for these.
@@ -282,7 +282,7 @@ with `Cannot find module …/node-v141…/gdal.node`. Each fetcher **self-credit
 | `fetch-moon-{featured-images,kaguya-regional,ctx,regional}.ts` | Tier-2 detail/regional LROC + Kaguya crops. | See AGENTS.md §"Image pipeline — gotchas". |
 | `fetch-earth-pads.ts` | Tier-2 detail + regional for all 26 launch pads (#546). | NAIP (US) / IGN WMS (Kourou) / GSI tiles (Tanegashima) / Sentinel-2 coarse fallback; regional = Sentinel-2 16 km, cloud ladder 8→20→40%. |
 
-**To regenerate panoramas after a `panorama-padder.ts` change:** `node20 --import tsx scripts/hotspots/fetch-moon-panoramas.ts` (+ `fetch-mars-panoramas.ts`) — offline from cache. **To populate along-route patches:** `… fetch-moon-traverse.ts --rover <id>` (omit `--rover` for all five). The skybox opens centred on yaw 0 / horizon (`enterPanorama` in `SurfaceScene.svelte`).
+**To regenerate panoramas after a `panorama-padder.ts` change:** `node --import tsx scripts/hotspots/fetch-moon-panoramas.ts` (+ `fetch-mars-panoramas.ts`) — offline from cache. **To populate along-route patches:** `… fetch-moon-traverse.ts --rover <id>` (omit `--rover` for all five). The skybox opens centred on yaw 0 / horizon (`enterPanorama` in `SurfaceScene.svelte`).
 
 **Verifying provenance/attribution for a change set — do NOT full-rebuild.** `build-image-provenance.ts` re-hashes all ~9,600 images and rewrites the whole manifest; only run it after a broad sourcing pass. For a handful of changes the fetchers already upserted their entries — confirm coverage with the **read-only** `npm run validate-data` (licenses, attribution, on-disk, dupes, gallery counts; 0-write). Generated/AI art (mission trajectory thumbnails, `/posters`, anatomy webp) lives in `static/data/original-work.json`, not `image-provenance.json`.
 

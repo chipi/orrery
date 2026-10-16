@@ -2,13 +2,13 @@
 
 Self-contained sub-pipeline for `/earth` `/moon` `/mars` Tier-2 (zoom) + Tier-3 (panorama) + along-route detail imagery. Separate from the main mission-gallery pipeline — images live under `static/images/hotspots/<body>/<site>/` and are **excluded from WebP ladder** (stay full-res JPG — zoom-critical).
 
-## Node 20 requirement (CRITICAL)
+## Node version requirement (CRITICAL)
 
-These scripts use `gdal-async` which ships a `node-v115` ABI binding. The shell's Node 25 (ABI 141) fails with `Cannot find module …/node-v141…/gdal.node`.
+These scripts use `gdal-async`, whose `npm ci` downloads a binding for the ABI of the Node that ran the install — the repo's pinned Node 22 gives `node-v127`. Any other Node (e.g. a shell's Node 25, ABI 141) fails with `Cannot find module …/node-v141…/gdal.node`.
 
-**Always run with Node 20:**
+**Always run with the repo's Node 22 (mise):**
 ```bash
-~/.nvm/versions/node/v20.20.2/bin/node --import tsx scripts/hotspots/<script>.ts
+mise exec -- node --import tsx scripts/hotspots/<script>.ts
 ```
 
 Or via npm alias:

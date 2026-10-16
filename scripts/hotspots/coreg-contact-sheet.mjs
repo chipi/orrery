@@ -11,8 +11,8 @@
  * and (b) a human eyeballing that the detail terrain sits where the red
  * box marks on the wider CTX context.
  *
- * Run (Node 20 for sharp):
- *   ~/.nvm/versions/node/v20.20.2/bin/node scripts/hotspots/coreg-contact-sheet.mjs [site ...]
+ * Run (repo Node 22 via mise, for sharp):
+ *   mise exec -- node scripts/hotspots/coreg-contact-sheet.mjs [site ...]
  * With no args, processes every Mars site that has both crops on disk.
  * Output: /tmp/coreg-contact-sheet.jpg
  */

@@ -47,7 +47,7 @@ Read these before opening a PR:
 
 ### Local setup
 
-Requirements: Node 20+, npm 10+.
+Requirements: Node 22+ (pinned in `mise.toml`), npm 10+.
 
 ```bash
 git clone https://github.com/<your-fork>/orrery

@@ -58,7 +58,13 @@ import {
 } from './registry-tools';
 import { LOCALES, makeT, resolveLocale, type Locale } from './i18n';
 import { mcpAuthIssuer, mcpResource, verifyRequestToken, REQUIRED_SCOPE } from './auth';
-import { captureError, instrumentRequest, recordToolCall, withSpan } from '../observability';
+import {
+  captureError,
+  currentTraceId,
+  instrumentRequest,
+  recordToolCall,
+  withSpan,
+} from '../observability';
 
 // ─── Config ─────────────────────────────────────────────────────────────────
 
@@ -316,6 +322,16 @@ async function handle(req: IncomingMessage, res: ServerResponse): Promise<void> 
   // restart semantics trivial for the beta.
   const locale = resolveLocale(url.searchParams.get('locale'));
   const transport = new StreamableHTTPServerTransport({ sessionIdGenerator: undefined });
+  // The SDK answers a malformed or unsupported request with a 400 and reports why ONLY
+  // through onerror; unwired, the reason was lost (#590). Set before connect(), which
+  // chains its own handler onto this one.
+  transport.onerror = (error) => {
+    const traceId = currentTraceId();
+    console.warn(
+      `[mcp] request rejected by transport: ${error.message}` +
+        (traceId ? ` trace_id=${traceId}` : ''),
+    );
+  };
   const server = buildMcpServer(locale);
   res.on('close', () => {
     void transport.close();

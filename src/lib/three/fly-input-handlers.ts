@@ -1,5 +1,6 @@
 import { gyro } from '$lib/sensory/device-orientation';
 import { A_MOON_KM, R_MOON_KM } from '$lib/orbital/cislunar/cislunar-geometry';
+import type { createFlyCameraController } from './fly-camera-controller';
 import type { RouteLifecycle } from '$lib/three/route-lifecycle';
 
 /**
@@ -12,10 +13,25 @@ import type { RouteLifecycle } from '$lib/three/route-lifecycle';
  * them each tick to suppress cinematic moves during a drag). Byte-identical to the
  * inline handlers; listeners register through the same `lifecycle` registry.
  */
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/** The camera-controller members the input handlers read and drive. */
+export type FlyInputCamera = Pick<
+  ReturnType<typeof createFlyCameraController>,
+  | 'camT'
+  | 'camP'
+  | 'camR'
+  | 'cislunarCamT'
+  | 'cislunarCamP'
+  | 'cislunarCamR'
+  | 'autoZoomActive'
+  | 'helioAutoZoomActive'
+  | 'panActiveCamera'
+  | 'updateCam'
+  | 'updateCislunarCam'
+>;
+
 export interface FlyInputDeps {
   el3d: HTMLElement;
-  flyCam: any;
+  flyCam: FlyInputCamera;
   getViewMode: () => 'heliocentric' | 'cislunar';
   scaleCislunar: number;
   lifecycle: RouteLifecycle;

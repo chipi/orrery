@@ -30,6 +30,8 @@ describe('rssItemToRawEntry', () => {
     expect(e?.rocket_family).toMatch(/Falcon/);
     expect(e?.agency_name).toBe('NASA');
     expect(e?.source_name).toBe('nasa-direct');
+    // pubDate is a publish time, not a launch time (#603) — day precision only.
+    expect(e?.net_precision).toBe('day');
   });
 
   it('returns null when the title does not match a launch pattern', () => {

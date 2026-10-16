@@ -257,8 +257,10 @@ describe('Umami server events', () => {
     await settle();
     expect(umami.hits).toHaveLength(1);
     expect(umami.hits[0].url).toBe('/api/send');
-    // The server-event form podcast-mcp already lands with on the same Umami.
-    expect(umami.hits[0].headers['user-agent']).toBe('orrery-mcp/1.0 (+server-side)');
+    // The exact form probed against the homelab Umami (browser UA + sender); others get bot-dropped.
+    expect(umami.hits[0].headers['user-agent']).toBe(
+      'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 orrery-mcp/1.0',
+    );
     expect(JSON.parse(umami.hits[0].body.toString('utf8'))).toEqual({
       type: 'event',
       payload: {
@@ -269,6 +271,49 @@ describe('Umami server events', () => {
         data: { tool: 'hohmann', outcome: 'invalid' },
       },
     });
+    await umami.close();
+  });
+
+  it("logs a dropped event once (Umami's bot-filter answer is 200 beep-boop)", async () => {
+    const umami = createServer((req, res) => {
+      req.resume();
+      req.on('end', () => {
+        res.writeHead(200, { 'content-type': 'application/json' });
+        res.end('{"beep":"boop"}');
+      });
+    });
+    await new Promise<void>((r) => umami.listen(0, '127.0.0.1', r));
+    const port = (umami.address() as AddressInfo).port;
+    const lines: string[] = [];
+    initObservability(
+      base({
+        service: 'orrery-mcp',
+        umami: { host: `http://127.0.0.1:${port}`, websiteId: 's', hostname: 'h' },
+      }),
+      (l) => lines.push(l),
+    );
+    recordToolCall('hohmann', 'ok');
+    recordToolCall('hohmann', 'ok');
+    await settle();
+    expect(lines).toEqual([
+      '[orrery-mcp] umami event not stored (HTTP 200 {"beep":"boop"}); later drops not logged',
+    ]);
+    await new Promise<void>((r) => umami.close(() => r()));
+  });
+
+  it('logs nothing when Umami stores the event', async () => {
+    const umami = await sink();
+    const lines: string[] = [];
+    initObservability(
+      base({
+        service: 'orrery-mcp',
+        umami: { host: umami.url, websiteId: 's', hostname: 'h' },
+      }),
+      (l) => lines.push(l),
+    );
+    recordToolCall('hohmann', 'ok');
+    await settle();
+    expect(lines).toEqual([]);
     await umami.close();
   });
 });

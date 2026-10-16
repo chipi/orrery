@@ -29,6 +29,15 @@ updates:
       # SvelteKit's typescript peer range stops at ^6.
       - dependency-name: typescript
         versions: ['>=7']
+      # @sentry/capacitor (latest 4.4.0) pins the SDK to exactly 10.69.0 and its
+      # postinstall rejects 11.x (#571). Lift once a capacitor release supports 11.
+      - dependency-name: '@sentry/*'
+        versions: ['>=11']
+      # sharp 0.35 adds @img/sharp-wasm32 (`Apache-2.0 AND LGPL-3.0-or-later AND MIT`),
+      # which the Tech BOM gate rejects: it doesn't parse SPDX AND expressions and
+      # classes it runtime (#573). Lift once scripts/build-tech-bom.ts handles both.
+      - dependency-name: sharp
+        versions: ['>=0.35']
 
   - package-ecosystem: github-actions
     directory: /

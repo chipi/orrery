@@ -136,9 +136,16 @@ jobs:
         # never been load-bearing.
         id: sha
         if: steps.preflight.outputs.skip != 'true'
+        # Dispatch input via env, never interpolated into the script (#600); it also
+        # lands in .env as the image tag, so only a hex sha is accepted.
+        env:
+          OVERRIDE: ${{ github.event.inputs.override_image_sha }}
         run: |
           set -euo pipefail
-          OVERRIDE="${{ github.event.inputs.override_image_sha }}"
+          if [ -n "$OVERRIDE" ] && ! [[ "$OVERRIDE" =~ ^[0-9a-f]{7,40}$ ]]; then
+            echo "::error::override_image_sha must be 7-40 lowercase hex chars"
+            exit 1
+          fi
           if [ -n "$OVERRIDE" ]; then
             TAG="sha-$OVERRIDE"
           else

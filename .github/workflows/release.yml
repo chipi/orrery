@@ -54,12 +54,19 @@ jobs:
       - name: Extract version + CHANGELOG section
         id: extract
         shell: bash
+        # Dispatch input via env, never interpolated into the script (#600).
+        env:
+          INPUT_TAG: ${{ github.event.inputs.tag }}
         run: |
           set -euo pipefail
-          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
-            TAG="${{ github.event.inputs.tag }}"   # reads CHANGELOG from the default branch
+          if [[ "$GITHUB_EVENT_NAME" == "workflow_dispatch" ]]; then
+            TAG="$INPUT_TAG"   # reads CHANGELOG from the default branch
           else
             TAG="${GITHUB_REF#refs/tags/}"         # e.g. v0.6.2
+          fi
+          if ! [[ "$TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$ ]]; then
+            echo "::error::tag '$TAG' is not vMAJOR.MINOR.PATCH[-pre]"
+            exit 1
           fi
           VERSION="${TAG#v}"                       # e.g. 0.6.2
           echo "tag=$TAG"        >> "$GITHUB_OUTPUT"
@@ -93,6 +100,7 @@ jobs:
       - name: Create or update GH Release (idempotent)
         env:
           GH_TOKEN: ${{ github.token }}
+          TARGET: ${{ github.event.inputs.target }}
         run: |
           set -euo pipefail
           TAG="${{ steps.extract.outputs.tag }}"
@@ -116,14 +124,20 @@ jobs:
             PRERELEASE_FLAG="--prerelease"
           fi
 
-          TARGET="${{ github.event.inputs.target }}"
-          TARGET_FLAG=""
-          if [[ -n "$TARGET" ]]; then TARGET_FLAG="--target $TARGET"; fi
+          # TARGET comes from env (#600): a branch name or a commit sha only.
+          TARGET_ARGS=()
+          if [[ -n "$TARGET" ]]; then
+            if ! [[ "$TARGET" =~ ^[0-9A-Za-z._/-]+$ ]]; then
+              echo "::error::target '$TARGET' has unexpected characters"
+              exit 1
+            fi
+            TARGET_ARGS=(--target "$TARGET")
+          fi
 
           echo "▶ Creating Release $TAG (prerelease=$PRERELEASE, target=${TARGET:-existing tag})."
           gh release create "$TAG" \
             --title "$TAG" \
             --notes-file "$BODY_FILE" \
-            $TARGET_FLAG \
+            "${TARGET_ARGS[@]}" \
             $LATEST_FLAG \
             $PRERELEASE_FLAG

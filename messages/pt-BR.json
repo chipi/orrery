@@ -3142,5 +3142,10 @@
   "ar_compass_s": "S",
   "ar_compass_sw": "SO",
   "ar_compass_w": "O",
-  "ar_compass_nw": "NO"
+  "ar_compass_nw": "NO",
+  "error_page_title": "Página não encontrada",
+  "error_typo_hint": "Parece um erro de digitação: cadeias de consulta começam com ? (não &).",
+  "error_go_to": "Ir para",
+  "error_back_home": "Voltar ao início",
+  "error_debug_tip": "Adicione {flag} a qualquer URL de rota para abrir o painel de depuração (ex: {example})."
 }

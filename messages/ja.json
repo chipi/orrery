@@ -3142,5 +3142,10 @@
   "ar_compass_s": "S",
   "ar_compass_sw": "SW",
   "ar_compass_w": "W",
-  "ar_compass_nw": "NW"
+  "ar_compass_nw": "NW",
+  "error_page_title": "ページが見つかりません",
+  "error_typo_hint": "タイプミスのようです：クエリ文字列は & ではなく ? で始まります。",
+  "error_go_to": "移動",
+  "error_back_home": "ホームに戻る",
+  "error_debug_tip": "任意のルート URL に {flag} を追加するとデバッグパネルが開きます（例: {example}）。"
 }

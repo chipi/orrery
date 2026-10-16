@@ -286,6 +286,28 @@ for (const r of TOP_ROUTES) {
   await p.close();
 }
 
+// SUITE 3b — unknown URLs are a real 404 with the app's not-found page (#604).
+// Before, nginx fell back to /index.html: every unknown URL answered 200 with the
+// HOME page (a soft 404). Both tiers serve 404.html with a 404 status.
+suite('not-found');
+for (const r of ['/zzz-not-a-page', '/missions/zzz-nope']) {
+  const p = await desktop.newPage();
+  try {
+    const resp = await p.goto(BASE + r, { waitUntil: 'networkidle', timeout: 30000 });
+    await p.waitForTimeout(1000);
+    const status = resp ? resp.status() : -1;
+    const title = await p.title();
+    record(
+      `unknown ${r} → 404 + not-found page`,
+      status === 404 && /not found/i.test(title),
+      `HTTP ${status} · title "${title}"`,
+    );
+  } catch (e) {
+    record(`unknown ${r} → 404 + not-found page`, false, e.message.slice(0, 60));
+  }
+  await p.close();
+}
+
 // SUITE 4 — deep / dynamic routes
 suite('deep-routes');
 for (const r of DEEP_ROUTES) {

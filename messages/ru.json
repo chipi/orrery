@@ -3142,5 +3142,10 @@
   "ar_compass_s": "Ю",
   "ar_compass_sw": "ЮЗ",
   "ar_compass_w": "З",
-  "ar_compass_nw": "СЗ"
+  "ar_compass_nw": "СЗ",
+  "error_page_title": "Страница не найдена",
+  "error_typo_hint": "Похоже на опечатку: строки запроса начинаются с ? (а не &).",
+  "error_go_to": "Перейти на",
+  "error_back_home": "На главную",
+  "error_debug_tip": "Добавьте {flag} в конец любого URL маршрута, чтобы открыть панель отладки (например, {example})."
 }

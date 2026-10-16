@@ -3142,5 +3142,10 @@
   "ar_compass_s": "दक्षिण",
   "ar_compass_sw": "दक्षिण-पश्चिम",
   "ar_compass_w": "पश्चिम",
-  "ar_compass_nw": "उत्तर-पश्चिम"
+  "ar_compass_nw": "उत्तर-पश्चिम",
+  "error_page_title": "पृष्ठ नहीं मिला",
+  "error_typo_hint": "टाइपो लगता है: क्वेरी स्ट्रिंग्स ? से शुरू होती हैं (& से नहीं)।",
+  "error_go_to": "जाएँ",
+  "error_back_home": "होम पर वापस जाएँ",
+  "error_debug_tip": "डीबग पैनल खोलने के लिए किसी भी रूट URL में {flag} जोड़ें (उदा. {example})।"
 }

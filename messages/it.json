@@ -3142,5 +3142,10 @@
   "ar_compass_s": "S",
   "ar_compass_sw": "SO",
   "ar_compass_w": "O",
-  "ar_compass_nw": "NO"
+  "ar_compass_nw": "NO",
+  "error_page_title": "Pagina non trovata",
+  "error_typo_hint": "Sembra un errore di digitazione: le stringhe di query iniziano con ? (non &).",
+  "error_go_to": "Vai a",
+  "error_back_home": "Torna alla home",
+  "error_debug_tip": "Aggiungi {flag} a qualsiasi URL di route per aprire il pannello di debug (es. {example})."
 }

@@ -19,6 +19,16 @@ updates:
     # PRs that get explicit review (Three.js r128 lock per ADR-001
     # is not safe to bump unattended).
     versioning-strategy: increase-if-necessary
+    # @sentry/capacitor pins the Sentry SDK to an exact version, so a lone
+    # @sentry/sveltekit bump fails its postinstall sibling check.
+    groups:
+      sentry:
+        patterns:
+          - '@sentry/*'
+    ignore:
+      # SvelteKit's typescript peer range stops at ^6.
+      - dependency-name: typescript
+        versions: ['>=7']
 
   - package-ecosystem: github-actions
     directory: /
@@ -32,3 +42,8 @@ updates:
     commit-message:
       prefix: ci
       include: scope
+    # init and analyze must run the same version.
+    groups:
+      codeql:
+        patterns:
+          - 'github/codeql-action*'

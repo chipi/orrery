@@ -135,14 +135,9 @@
   });
 </script>
 
-<canvas
-  bind:this={canvas}
-  width={W * DPR}
-  height={H * DPR}
-  role="img"
-  aria-label={ariaLabel}
-  class="as-canvas"
-></canvas>
+<div role="img" aria-label={ariaLabel}>
+  <canvas bind:this={canvas} width={W * DPR} height={H * DPR} class="as-canvas"></canvas>
+</div>
 
 <style>
   .as-canvas {

@@ -144,14 +144,9 @@
   });
 </script>
 
-<canvas
-  bind:this={canvas}
-  width={W * DPR}
-  height={H * DPR}
-  role="img"
-  aria-label={ariaLabel}
-  class="te-canvas"
-></canvas>
+<div role="img" aria-label={ariaLabel}>
+  <canvas bind:this={canvas} width={W * DPR} height={H * DPR} class="te-canvas"></canvas>
+</div>
 
 <style>
   .te-canvas {

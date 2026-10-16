@@ -39,7 +39,7 @@ declare const __DEV_WORKTREE__: string;
 // machine) resolves `homelab`, so a stranger who checks out + runs the repo reports nothing
 // (the transport silently fails). Staging/prod builds set PUBLIC_SENTRY_* and override this.
 // The DSN key is a public browser id (ships in the bundle) — safe to commit.
-const DEV_SENTRY_DSN = 'http://310ad519a9da49b7b9aebc50d7c1399e@homelab:8090/7';
+const DEV_SENTRY_DSN = 'http://183d550946d24740a87983a1b75d86ee@homelab:8090/30';
 
 const LOOPBACK_HOSTS = new Set(['localhost', '127.0.0.1', '[::1]', '::1']);
 

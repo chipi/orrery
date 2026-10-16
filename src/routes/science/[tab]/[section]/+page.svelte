@@ -7,12 +7,15 @@
   plain HTML, no client-side math library.
 -->
 <script lang="ts">
+  import { responsive } from '$lib/responsive-image.svelte';
+  import { IMAGE_SIZES } from '$lib/image-sizes';
   import { onMount } from 'svelte';
   import { base } from '$app/paths';
   import { assetUrl } from '$lib/asset-url';
   import * as m from '$lib/paraglide/messages';
   import ObservatoryShowcase from '$lib/components/ObservatoryShowcase.svelte';
   import { track, arrivedFromRoute, trackScienceToApp, once } from '$lib/analytics';
+  import { readDepthPct } from '$lib/read-depth';
   import type { PageData } from './$types';
 
   type Props = { data: PageData };
@@ -50,10 +53,14 @@
   $effect(() => {
     const sec = section;
     if (typeof window === 'undefined') return;
+    // /science scrolls inside .science-root (science/+layout.svelte), not the window:
+    // measuring the window reported 100% on every visit (prod 2026-10-16).
+    const scroller =
+      document.querySelector<HTMLElement>('.science-root') ??
+      (document.scrollingElement as HTMLElement | null);
+    if (!scroller) return;
     const measure = () => {
-      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-      const pct =
-        scrollable <= 0 ? 100 : Math.min(100, Math.round((window.scrollY / scrollable) * 100));
+      const pct = readDepthPct(scroller);
       for (const t of [25, 50, 75, 100]) {
         if (pct >= t)
           once(`read-depth:${sec.id}:${t}`, () =>
@@ -61,9 +68,9 @@
           );
       }
     };
-    window.addEventListener('scroll', measure, { passive: true });
+    scroller.addEventListener('scroll', measure, { passive: true });
     measure();
-    return () => window.removeEventListener('scroll', measure);
+    return () => scroller.removeEventListener('scroll', measure);
   });
   // The space-photography section embeds the ObservatoryShowcase strip
   // (one hero image per observatory in /fleet, deep-link into each
@@ -103,7 +110,7 @@
   {#if section.diagram}
     <figure class="hero-diagram">
       <img
-        src="{base}/diagrams/science/{section.diagram}"
+        {...responsive(`${base}/diagrams/science/${section.diagram}`, IMAGE_SIZES.column)}
         alt={section.diagram_caption ?? ''}
         loading="lazy"
         decoding="async"

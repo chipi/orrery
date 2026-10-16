@@ -248,19 +248,6 @@
       "license_rationale": "NASA-produced media is generally not copyrighted (17 U.S.C. §105)."
     },
     {
-      "id": "launches.source.spacex-direct",
-      "location": {
-        "file": "static/data/launches.json"
-      },
-      "category": "launches",
-      "relationship": "paraphrased-from",
-      "snippet": "SpaceX upcoming-launches page used as agency-direct source for their flight schedule.",
-      "source_url": "https://www.spacex.com/launches/",
-      "source_publisher": "SpaceX",
-      "license_short": "PD-trivial",
-      "license_rationale": "Factual schedule data (date / vehicle / mission) is below the threshold of originality."
-    },
-    {
       "id": "launches.source.esa-direct",
       "location": {
         "file": "static/data/launches.json"

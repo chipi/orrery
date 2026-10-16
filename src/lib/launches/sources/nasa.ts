@@ -69,7 +69,9 @@ export function rssItemToRawEntry(
   return {
     id: buildStableId({ iso, rocketFamily, missionName }),
     net: iso,
-    net_precision: 'minute',
+    // A press release's pubDate is when NASA published, not a launch time: a matched
+    // release is usually same-day, so claim no more than day precision (#603).
+    net_precision: 'day',
     status: { code: 'SUCCESS', label: 'Launched' },
     name: `${rocketFamily} | ${missionName}`,
     mission_name: missionName,

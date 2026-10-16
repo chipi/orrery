@@ -29,6 +29,7 @@ import { execSync } from 'node:child_process';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { licenceAllowed, lockfileDevKeys } from './lib/licence';
 
 const SCRIPT_DIR = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(SCRIPT_DIR, '..');
@@ -262,6 +263,11 @@ function buildBom(): { pkgs: Pkg[]; ourPkg: Record<string, unknown> } {
   // without (full closure). The diff = development-only deps.
   const runtimeKeys = flattenTree(npmLs(true));
   const fullKeys = flattenTree(npmLs(false));
+  // The lockfile's dev flag wins over the npm ls diff (extraneous platform packages, #592).
+  const lockDev = lockfileDevKeys(
+    JSON.parse(readFileSync(join(ROOT, 'package-lock.json'), 'utf8')),
+  );
+  for (const k of lockDev) runtimeKeys.delete(k);
   const devOnlyKeys = new Map<string, string>();
   for (const [k, name] of fullKeys) {
     if (!runtimeKeys.has(k)) devOnlyKeys.set(k, name);
@@ -307,7 +313,7 @@ function buildBom(): { pkgs: Pkg[]; ourPkg: Record<string, unknown> } {
 }
 
 function validateLicenses(pkgs: Pkg[]): void {
-  const violators = pkgs.filter((p) => !LICENSE_ALLOWLIST.has(p.license));
+  const violators = pkgs.filter((p) => !licenceAllowed(p.license, LICENSE_ALLOWLIST));
   if (violators.length === 0) return;
   console.error('\n❌ Tech BOM: licenses not on allowlist:\n');
   for (const v of violators) {
@@ -373,7 +379,7 @@ function writeMarkdown(pkgs: Pkg[], ourPkg: Record<string, unknown>): string {
   lines.push('| License | Count | Notes |');
   lines.push('|---|---|---|');
   for (const [lic, count] of licensesSorted) {
-    const note = LICENSE_ALLOWLIST.has(lic) ? '' : '⚠️ NOT on allowlist';
+    const note = licenceAllowed(lic, LICENSE_ALLOWLIST) ? '' : '⚠️ NOT on allowlist';
     lines.push(`| \`${lic}\` | ${count} | ${note} |`);
   }
   lines.push('');

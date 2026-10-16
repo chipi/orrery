@@ -47,7 +47,7 @@ Done once on the self-hosted GlitchTip (over the tailnet). Already provisioned: 
 
 ### Verifying it works
 
-Pick the rung. For **dev**: run `vite dev` on the tailnet, force-throw from the console, and confirm the event lands in GlitchTip **project 7** tagged `environment=dev` + your `worktree`. For a **deploy rung**: visit the route (`orrerylearn.com` for prod, `chipi.github.io/orrery` for staging) and do the same — it lands in project **4** / **6** tagged `production` / `staging`:
+Pick the rung. For **dev**: run `vite dev` on the tailnet, force-throw from the console, and confirm the event lands in GlitchTip **project 7** tagged `environment=dev` + your `worktree`. For a **deploy rung**: visit the route (`orrerylearn.com` for prod, `chipi.github.io/orrery` for staging) and do the same — it lands in project **18** (`orrery-prod`) / **6** (`orrery`) tagged `production` / `staging`:
 
 ```js
 setTimeout(() => { throw new Error('GlitchTip smoke test'); }, 0);
@@ -124,11 +124,13 @@ If nothing appears: confirm `orrery.alloy` is in `/etc/alloy/config.d/` and was 
 
 ### Importing the dashboards
 
-Three dashboards live in `ops/observability/dashboards/` (all panels query VictoriaLogs via LogsQL):
+Four dashboards live in `ops/observability/dashboards/`. Three query VictoriaLogs via LogsQL:
 
 - `orrery-overview.json` — cross-surface health at a glance.
 - `orrery-web.json` — web container log volume + stderr incidence + recent lines.
 - `orrery-pipelines.json` — pipeline invocations + error-line detection + recent logs.
+
+The fourth, `orrery-analytics.json`, queries Umami's Postgres (`website_event` + `event_data`) through a `${ds}` datasource picker, so it needs a read-only Umami Postgres datasource in Grafana.
 
 Import them into the self-hosted Grafana (tailnet) — idempotent, matched by `uid`:
 

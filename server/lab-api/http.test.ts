@@ -4,7 +4,7 @@
  * client-ip-keyed rate limiter — none of which the OAuth-flow suite
  * exercises.
  */
-import { describe, it, expect, beforeAll, afterAll } from 'vitest';
+import { describe, it, expect, beforeAll, afterAll, vi } from 'vitest';
 import { createServer, type Server } from 'node:http';
 import { mkdtempSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
@@ -92,6 +92,18 @@ describe('rate limiter', () => {
     expect(await hit('2.2.2.2')).toBe(200);
     expect(await hit('3.3.3.3')).toBe(200);
     expect(await hit('4.4.4.4')).toBe(429);
+  });
+
+  it('warns once when a proxied request lacks the client-ip header', async () => {
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    try {
+      await fetch(`${base}/jwks`, { headers: { 'x-forwarded-for': '9.9.9.9' } });
+      await fetch(`${base}/jwks`, { headers: { 'x-forwarded-for': '9.9.9.8' } });
+      const hits = warn.mock.calls.filter((c) => String(c[0]).includes('X-Orrery-Client-Ip'));
+      expect(hits).toHaveLength(1);
+    } finally {
+      warn.mockRestore();
+    }
   });
 
   it('/health is exempt from the limiter (container healthcheck safety)', async () => {

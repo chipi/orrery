@@ -97,10 +97,23 @@ export function staticClients(cfg: LabApiConfig): StaticClient[] {
 const windows = new Map<string, number[]>();
 const MAX_RATE_KEYS = 10_000;
 
+let warnedMissingClientIp = false;
+
 function clientKey(req: IncomingMessage): string {
   const h = req.headers['x-orrery-client-ip'];
   const ip = (Array.isArray(h) ? h[0] : h)?.trim();
-  return ip || req.socket.remoteAddress || 'unknown';
+  if (ip) return ip;
+  // Proxied (XFF present) but no client-IP header: the vhost isn't setting it,
+  // so every request shares the proxy's socket address — one global bucket.
+  // Say so once instead of degrading silently (e.g. a deploy that restarts the
+  // container before the new vhost lands).
+  if (!warnedMissingClientIp && req.headers['x-forwarded-for']) {
+    warnedMissingClientIp = true;
+    console.warn(
+      '[lab-api] proxied request without X-Orrery-Client-Ip: rate limit falls back to the socket address (one shared bucket); check ops/caddy/orrery-lab-api.caddy',
+    );
+  }
+  return req.socket.remoteAddress || 'unknown';
 }
 
 function rateLimited(key: string): boolean {

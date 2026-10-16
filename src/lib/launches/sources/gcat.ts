@@ -23,7 +23,7 @@ import type { RawLaunchEntry } from '../types.js';
  * still validates against the new TSV. A column-name change requires a
  * fixture update + operator review.
  */
-export const GCAT_RELEASE_PIN = '1.8.0';
+export const GCAT_RELEASE_PIN = '1.8.8';
 export const GCAT_TSV_URL = 'https://planet4589.org/space/gcat/tsv/launch/launch.tsv';
 export const GCAT_HOMEPAGE = 'https://planet4589.org/space/gcat/';
 const CACHE_ROOT = '.launches-cache/gcat';

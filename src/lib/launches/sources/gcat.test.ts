@@ -20,7 +20,10 @@ const fixturesDir = join(
   'gcat',
   '__fixtures__',
 );
-const HEADER = readFileSync(join(fixturesDir, 'launch-log-header.tsv'), 'utf8');
+// The hand-built rows below are 28-field Release 1.8.0 rows.
+const HEADER = readFileSync(join(fixturesDir, 'launch-log-header-1.8.0.tsv'), 'utf8');
+const HEADER_1_8_8 = readFileSync(join(fixturesDir, 'launch-log-header.tsv'), 'utf8');
+const ROWS_1_8_8 = readFileSync(join(fixturesDir, 'launch-log-rows-1.8.8.tsv'), 'utf8');
 
 const SPUTNIK_ROW = [
   '1957 ALP  ',
@@ -136,6 +139,17 @@ describe('GcatSource', () => {
         toIso: '2030-01-01T00:00:00Z',
       }),
     ).rejects.toThrow(/header assertion failed/i);
+  });
+
+  it('reads the 33-column Release 1.8.8 TSV (the format live since 2026-09-03)', async () => {
+    const tsv = [HEADER_1_8_8.trimEnd(), '# Updated 2026 Oct 15 2354:30', ROWS_1_8_8].join('\n');
+    const src = new GcatSource(async () => tsv);
+    const entries = await src.fetchWindow({
+      mode: 'historic',
+      fromIso: '1900-01-01T00:00:00Z',
+      toIso: '2030-01-01T00:00:00Z',
+    });
+    expect(entries.map((e) => e.mission_name)).toEqual(['PS-1', 'Apollo CM-107']);
   });
 
   it('records source_name + source_observed_at on every entry', async () => {

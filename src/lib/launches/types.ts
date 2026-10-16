@@ -56,6 +56,13 @@ export type RawLaunchEntry = {
   agency_type?: 'Government' | 'Commercial' | 'Educational' | 'Multinational' | 'Unknown';
   country?: string;
   rocket_config_id?: string;
+  /**
+   * Launches this exact rocket configuration had already made when the
+   * source was read (LL2 `total_launch_count`). 0 means the next one is
+   * its maiden flight. Undefined when the source doesn't say. Used only
+   * for first-flight detection; not part of the published manifest.
+   */
+  rocket_config_prior_launches?: number;
   rocket_config_name: string;
   rocket_family: string;
   pad_name?: string;

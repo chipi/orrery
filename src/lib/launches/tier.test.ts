@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { buildFirstFlightMap, computeTier, defaultIsCrewed } from './tier.js';
+import { buildFirstFlightIds, computeTier, defaultIsCrewed } from './tier.js';
 import type { CurationFile } from './tier.js';
 import type { RawLaunchEntry } from './types.js';
 
@@ -19,9 +19,7 @@ const base = (over: Partial<RawLaunchEntry> = {}): RawLaunchEntry => ({
 });
 
 const emptyCuration: CurationFile = { version: 1, featured: [], demoted: [] };
-const noFirstFlight = {
-  firstFlightByConfig: new Map<string, { earliestNet: string; count: number }>(),
-};
+const noFirstFlight = { firstFlightIds: new Set<string>() };
 
 describe('defaultIsCrewed', () => {
   it('detects mission_type=Human Spaceflight', () => {
@@ -116,47 +114,108 @@ describe('computeTier — heuristic', () => {
     expect(r.tier_reason).toBe('standard');
   });
 
-  it('first-flight-vehicle when entry net matches the earliest for its family AND count >= 2', () => {
-    const e = base({ rocket_family: 'Starship', orbit_abbrev: 'LEO' });
-    const ctx = {
-      firstFlightByConfig: new Map([['Starship', { earliestNet: e.net, count: 2 }]]),
-    };
-    const r = computeTier(e, emptyCuration, ctx);
+  it('first-flight-vehicle when the entry is in firstFlightIds', () => {
+    const e = base({ id: 'starship-1', rocket_family: 'Starship', orbit_abbrev: 'LEO' });
+    const r = computeTier(e, emptyCuration, { firstFlightIds: new Set(['starship-1']) });
     expect(r.tier).toBe('T1');
     expect(r.tier_reason).toBe('first-flight-vehicle');
   });
 
-  it('does NOT tag first-flight when only one entry exists for the family (false-positive guard)', () => {
-    const e = base({ rocket_family: 'Rare Rocket', orbit_abbrev: 'LEO' });
-    const ctx = {
-      firstFlightByConfig: new Map([['Rare Rocket', { earliestNet: e.net, count: 1 }]]),
-    };
-    const r = computeTier(e, emptyCuration, ctx);
-    expect(r.tier).toBe('T3');
-    expect(r.tier_reason).toBe('standard');
+  it('beyond-LEO outranks first-flight', () => {
+    const e = base({ id: 'm', orbit_abbrev: 'MARS' });
+    const r = computeTier(e, emptyCuration, { firstFlightIds: new Set(['m']) });
+    expect(r.tier_reason).toBe('mars');
   });
 });
 
-describe('buildFirstFlightMap', () => {
-  it('picks the earliest net per rocket_family', () => {
-    const a = base({
-      rocket_family: 'Falcon 9',
-      net: '2010-06-04T18:45:00.000Z',
-    });
-    const b = base({
-      rocket_family: 'Falcon 9',
-      net: '2026-05-26T18:42:00.000Z',
-    });
-    const map = buildFirstFlightMap([a, b]);
-    expect(map.get('Falcon 9')).toEqual({
-      earliestNet: '2010-06-04T18:45:00.000Z',
-      count: 2,
-    });
+describe('buildFirstFlightIds — upcoming (source launch counts)', () => {
+  const upcoming = (over: Partial<RawLaunchEntry>) =>
+    base({ source_name: 'll2', orbit_abbrev: 'LEO', ...over });
+
+  it('flags the earliest pending launch of a configuration with 0 prior launches', () => {
+    const ids = buildFirstFlightIds([
+      upcoming({
+        id: 'neutron-2',
+        rocket_config_id: '9',
+        rocket_config_prior_launches: 0,
+        net: '2027-03-01T00:00:00.000Z',
+      }),
+      upcoming({
+        id: 'neutron-1',
+        rocket_config_id: '9',
+        rocket_config_prior_launches: 0,
+        net: '2026-12-31T00:00:00.000Z',
+      }),
+    ]);
+    expect([...ids]).toEqual(['neutron-1']);
+  });
+
+  it('never flags a configuration that has already flown, whatever the family names say', () => {
+    const ids = buildFirstFlightIds([
+      upcoming({
+        id: 'bandwagon-5',
+        rocket_family: 'Falcon 9',
+        rocket_config_id: '164',
+        rocket_config_prior_launches: 637,
+      }),
+    ]);
+    expect(ids.size).toBe(0);
+  });
+
+  it('does not flag without a launch count (source did not say)', () => {
+    const ids = buildFirstFlightIds([upcoming({ id: 'a', rocket_config_id: '1' })]);
+    expect(ids.size).toBe(0);
+  });
+
+  it('flags only one of several maiden-flight candidates sharing the earliest date', () => {
+    const net = '2026-12-31T00:00:00.000Z';
+    const ids = buildFirstFlightIds([
+      upcoming({ id: 'alpha-a', rocket_config_id: '7', rocket_config_prior_launches: 0, net }),
+      upcoming({ id: 'alpha-b', rocket_config_id: '7', rocket_config_prior_launches: 0, net }),
+    ]);
+    expect([...ids]).toEqual(['alpha-a']);
+  });
+
+  it('does not let a historic GCAT family make an upcoming launch a first flight', () => {
+    const ids = buildFirstFlightIds([
+      base({
+        id: 'g1',
+        source_name: 'gcat',
+        rocket_family: 'Soyuz 2.1b',
+        net: '2006-12-27T00:00:00.000Z',
+      }),
+      upcoming({
+        id: 'u1',
+        rocket_family: 'Soyuz 2.1b',
+        rocket_config_id: '30',
+        rocket_config_prior_launches: 80,
+      }),
+    ]);
+    expect(ids.has('u1')).toBe(false);
+  });
+});
+
+describe('buildFirstFlightIds — historic (GCAT)', () => {
+  const gcat = (over: Partial<RawLaunchEntry>) => base({ source_name: 'gcat', ...over });
+
+  it('flags the earliest GCAT launch of a family with at least two GCAT launches', () => {
+    const ids = buildFirstFlightIds([
+      gcat({ id: 'f9-2', rocket_family: 'Falcon 9', net: '2010-12-08T15:43:00.000Z' }),
+      gcat({ id: 'f9-1', rocket_family: 'Falcon 9', net: '2010-06-04T18:45:00.000Z' }),
+    ]);
+    expect([...ids]).toEqual(['f9-1']);
+  });
+
+  it('does NOT flag a family with a single GCAT launch (ambiguous)', () => {
+    const ids = buildFirstFlightIds([gcat({ id: 'rare', rocket_family: 'Rare Rocket' })]);
+    expect(ids.size).toBe(0);
   });
 
   it('skips entries with no rocket_family', () => {
-    const a = base({ rocket_family: '' });
-    const map = buildFirstFlightMap([a]);
-    expect(map.size).toBe(0);
+    const ids = buildFirstFlightIds([
+      gcat({ id: 'a', rocket_family: '' }),
+      gcat({ id: 'b', rocket_family: '' }),
+    ]);
+    expect(ids.size).toBe(0);
   });
 });

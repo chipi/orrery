@@ -47,18 +47,9 @@ export type TierResult = {
   editorial_note: string | null;
 };
 
-export type FirstFlightInfo = { earliestNet: string; count: number };
-
 export type TierContext = {
-  /**
-   * Map of `rocket_family` → { earliest ISO date, total count of entries }.
-   * Keyed by family (not config_id) because GCAT historic doesn't expose
-   * config_id — without the family key, every upcoming launch of an
-   * established vehicle gets falsely tagged as a first flight.
-   * First-flight detection still requires count ≥ 2 (single-observation
-   * configs are ambiguous).
-   */
-  firstFlightByConfig: Map<string, FirstFlightInfo>;
+  /** Ids of first-flight entries, from `buildFirstFlightIds`. */
+  firstFlightIds: Set<string>;
   /**
    * Mission-type marker for crewed launches. Heuristic: mission_type
    * contains "Human" or "Crewed", or mission_name contains "crew" /
@@ -86,17 +77,8 @@ export function defaultIsCrewed(entry: RawLaunchEntry): boolean {
   return CREW_PROGRAM_PATTERNS.some((rx) => rx.test(m));
 }
 
-/**
- * Detect "first orbital flight" of a rocket config by checking whether
- * the current entry is the earliest one for its config_id in the
- * combined manifest.
- */
 function isFirstFlightVehicle(entry: RawLaunchEntry, ctx: TierContext): boolean {
-  if (!entry.rocket_family) return false;
-  const info = ctx.firstFlightByConfig.get(entry.rocket_family);
-  if (!info) return false;
-  if (info.count < 2) return false;
-  return info.earliestNet === entry.net;
+  return ctx.firstFlightIds.has(entry.id);
 }
 
 /**
@@ -162,23 +144,59 @@ export function computeTier(
   return { tier: 'T3', tier_reason: 'standard', editorial_note: null };
 }
 
-/**
- * Build the first-flight-by-config map from a list of entries. Lowest
- * `net` ISO timestamp wins per `rocket_config_id`.
- */
-export function buildFirstFlightMap(entries: RawLaunchEntry[]): Map<string, FirstFlightInfo> {
-  const map = new Map<string, FirstFlightInfo>();
+/** The earliest entry of a group; on a tie the first in input order (one maiden flight per group). */
+function earliest(group: RawLaunchEntry[]): RawLaunchEntry {
+  return group.reduce((best, e) => (e.net < best.net ? e : best));
+}
+
+function groupBy(
+  entries: RawLaunchEntry[],
+  key: (e: RawLaunchEntry) => string | undefined,
+): Map<string, RawLaunchEntry[]> {
+  const groups = new Map<string, RawLaunchEntry[]>();
   for (const e of entries) {
-    if (!e.rocket_family) continue;
-    const prev = map.get(e.rocket_family);
-    if (!prev) {
-      map.set(e.rocket_family, { earliestNet: e.net, count: 1 });
-    } else {
-      map.set(e.rocket_family, {
-        earliestNet: e.net < prev.earliestNet ? e.net : prev.earliestNet,
-        count: prev.count + 1,
-      });
-    }
+    const k = key(e);
+    if (!k) continue;
+    const group = groups.get(k);
+    if (group) group.push(e);
+    else groups.set(k, [e]);
   }
-  return map;
+  return groups;
+}
+
+/**
+ * Ids of the entries that are a vehicle's first flight. Pass every source's
+ * entries BEFORE merging (stable ids carry through the merge). Two rules,
+ * each reading one source's own data, never names matched across sources:
+ *
+ * - Upcoming: the source says how many launches the exact rocket
+ *   configuration has already made (`rocket_config_prior_launches`, LL2's
+ *   `total_launch_count`). Only a configuration with 0 qualifies, and only
+ *   its earliest pending launch.
+ * - Historic: GCAT's own record. The earliest GCAT launch of each
+ *   `rocket_family`, when GCAT has at least two launches of it (a lone
+ *   observation is ambiguous).
+ *
+ * Without either signal an entry is never a first flight. Mixing LL2 and
+ * GCAT family names (the old rule) flagged long-flown vehicles whenever
+ * the names didn't line up or GCAT was missing (issue #566).
+ */
+export function buildFirstFlightIds(entries: RawLaunchEntry[]): Set<string> {
+  const ids = new Set<string>();
+
+  const maidenConfigs = groupBy(
+    entries.filter((e) => e.rocket_config_prior_launches === 0),
+    (e) => e.rocket_config_id,
+  );
+  for (const group of maidenConfigs.values()) ids.add(earliest(group).id);
+
+  const gcatFamilies = groupBy(
+    entries.filter((e) => e.source_name === 'gcat'),
+    (e) => e.rocket_family,
+  );
+  for (const group of gcatFamilies.values()) {
+    if (group.length >= 2) ids.add(earliest(group).id);
+  }
+
+  return ids;
 }

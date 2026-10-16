@@ -111,6 +111,10 @@ type LL2LaunchRaw = {
       full_name?: string;
       name?: string;
       family?: string | null;
+      /** Detailed mode only (this and the fields below). */
+      total_launch_count?: number | null;
+      is_placeholder?: boolean;
+      families?: Array<{ name?: string; total_launch_count?: number | null }>;
     };
   };
   pad?: {
@@ -120,6 +124,27 @@ type LL2LaunchRaw = {
   image?: { image_url?: string; credit?: string } | string | null;
   webcast_live?: boolean;
 };
+
+type LL2Configuration = NonNullable<NonNullable<LL2LaunchRaw['rocket']>['configuration']>;
+
+/**
+ * How many launches the vehicle behind this configuration has made, from
+ * LL2's own counts. A placeholder configuration ("Unknown Launch Vehicle",
+ * the generic "Ariane 6") gives no answer. A generic configuration named
+ * after its family ("Vulcan", "H3") stands for the whole family, so the
+ * family's count applies: it reports 0 launches while the family has flown.
+ */
+function priorLaunches(cfg: LL2Configuration | undefined): number | undefined {
+  if (!cfg || cfg.is_placeholder) return undefined;
+  const generic = cfg.families?.find(
+    (f) =>
+      typeof f.total_launch_count === 'number' &&
+      f.total_launch_count > 0 &&
+      (f.name === cfg.name || f.name === cfg.full_name),
+  );
+  if (generic) return generic.total_launch_count as number;
+  return typeof cfg.total_launch_count === 'number' ? cfg.total_launch_count : undefined;
+}
 
 /**
  * Maps one LL2 launch payload to RawLaunchEntry. Pure function (no fs/network).
@@ -160,6 +185,7 @@ export function ll2RawToRawEntry(
     orbit_name: raw.mission?.orbit?.name,
     ...agency,
     rocket_config_id: raw.rocket?.configuration?.id?.toString(),
+    rocket_config_prior_launches: priorLaunches(raw.rocket?.configuration),
     rocket_config_name: lvFull,
     rocket_family: lvFamily,
     pad_name: raw.pad?.name,
@@ -187,9 +213,10 @@ async function fetchLL2Page(
 }
 
 function cacheKey(input: LaunchSourceWindow): string {
+  // `detailed-` keeps responses cached before mode=detailed (no launch counts) from being reused.
   return join(
     CACHE_ROOT,
-    `${input.mode}-${input.fromIso.slice(0, 10)}_${input.toIso.slice(0, 10)}.json`,
+    `detailed-${input.mode}-${input.fromIso.slice(0, 10)}_${input.toIso.slice(0, 10)}.json`,
   );
 }
 
@@ -209,9 +236,11 @@ async function fetchLL2WithCache(input: LaunchSourceWindow): Promise<LL2LaunchRa
   // in UI views) so the only user-visible effect is that fleet
   // entries which match a suborbital launcher (today: new-shepard,
   // virgin-galactic when its fleet entry lands) start showing flights.
+  // `mode=detailed` adds the rocket configuration's `total_launch_count`,
+  // which first-flight detection needs (same page count, larger pages).
   const endpoint =
     input.mode === 'upcoming'
-      ? `${LL2_BASE}/launches/upcoming/?format=json&limit=${PAGE_LIMIT}&include_suborbital=true`
+      ? `${LL2_BASE}/launches/upcoming/?format=json&limit=${PAGE_LIMIT}&include_suborbital=true&mode=detailed`
       : `${LL2_BASE}/launches/previous/?format=json&limit=${PAGE_LIMIT}&include_suborbital=true&net__gte=${input.fromIso}&net__lt=${input.toIso}`;
   const all: LL2LaunchRaw[] = [];
   let url: string | null = endpoint;

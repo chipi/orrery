@@ -153,7 +153,7 @@ describe('access log + request metrics', () => {
     expect(lines[0]).toMatch(/^\[orrery-lab-api\] GET \/ask -> 502 in \d+\.\dms$/);
     const metrics = await registry.metrics();
     expect(metrics).toContain(
-      'http_server_requests_total{service="orrery-lab-api",route="/ask",method="GET",status="502"} 1',
+      'http_server_requests_total{route="/ask",method="GET",status="502"} 1',
     );
     expect(metrics).toContain('route="/health"');
     expect(metrics).not.toContain('secret');
@@ -172,9 +172,7 @@ describe('access log + request metrics', () => {
     };
     const m = await fetchStatus('/metrics');
     expect(m.status).toBe(200);
-    expect(m.body).toContain(
-      'mcp_tool_calls_total{service="orrery-lab-api",tool="hohmann",outcome="ok"} 1',
-    );
+    expect(m.body).toContain('mcp_tool_calls_total{tool="hohmann",outcome="ok"} 1');
     expect(m.body).toContain('mcp_tool_duration_seconds_count');
     expect((await fetchStatus('/other')).status).toBe(404);
   });
@@ -259,6 +257,8 @@ describe('Umami server events', () => {
     await settle();
     expect(umami.hits).toHaveLength(1);
     expect(umami.hits[0].url).toBe('/api/send');
+    // The server-event form podcast-mcp already lands with on the same Umami.
+    expect(umami.hits[0].headers['user-agent']).toBe('orrery-mcp/1.0 (+server-side)');
     expect(JSON.parse(umami.hits[0].body.toString('utf8'))).toEqual({
       type: 'event',
       payload: {

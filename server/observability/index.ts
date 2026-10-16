@@ -73,26 +73,26 @@ export const registry = new Registry();
 const requests = new Counter({
   name: 'http_server_requests_total',
   help: 'HTTP requests by route, method and status.',
-  labelNames: ['service', 'route', 'method', 'status'] as const,
+  labelNames: ['route', 'method', 'status'] as const,
   registers: [registry],
 });
 const requestDuration = new Histogram({
   name: 'http_server_request_duration_seconds',
   help: 'HTTP request latency by route, method and status.',
-  labelNames: ['service', 'route', 'method', 'status'] as const,
+  labelNames: ['route', 'method', 'status'] as const,
   buckets: [0.005, 0.01, 0.025, 0.05, 0.1, 0.25, 0.5, 1, 2.5, 5, 10, 30, 60],
   registers: [registry],
 });
 const toolCalls = new Counter({
   name: 'mcp_tool_calls_total',
   help: 'Physics tool calls by tool and outcome (ok | invalid | unknown | busy | error).',
-  labelNames: ['service', 'tool', 'outcome'] as const,
+  labelNames: ['tool', 'outcome'] as const,
   registers: [registry],
 });
 const toolDuration = new Histogram({
   name: 'mcp_tool_duration_seconds',
   help: 'Physics tool compute time by tool.',
-  labelNames: ['service', 'tool'] as const,
+  labelNames: ['tool'] as const,
   buckets: [0.0005, 0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1, 5],
   registers: [registry],
 });
@@ -260,7 +260,7 @@ export async function instrumentRequest(
   res.once('close', () => {
     const status = res.statusCode;
     const seconds = Number(process.hrtime.bigint() - started) / 1e9;
-    const labels = { service: s.cfg.service, route, method, status: String(status) };
+    const labels = { route, method, status: String(status) };
     requests.inc(labels);
     requestDuration.observe(labels, seconds);
     if (span) {
@@ -287,8 +287,8 @@ export type ToolOutcome = 'ok' | 'invalid' | 'unknown' | 'busy' | 'error';
 export function recordToolCall(tool: string, outcome: ToolOutcome, seconds?: number): void {
   const s = state;
   if (!s) return;
-  toolCalls.inc({ service: s.cfg.service, tool, outcome });
-  if (seconds !== undefined) toolDuration.observe({ service: s.cfg.service, tool }, seconds);
+  toolCalls.inc({ tool, outcome });
+  if (seconds !== undefined) toolDuration.observe({ tool }, seconds);
   trackEvent('tool-call', { tool, outcome });
 }
 
@@ -304,8 +304,9 @@ export function trackEvent(name: string, data: Record<string, string>): void {
     signal: AbortSignal.timeout(5000),
     headers: {
       'content-type': 'application/json',
-      // Umami drops requests without a browser-like user agent.
-      'user-agent': `Mozilla/5.0 (compatible; ${state!.cfg.service})`,
+      // Umami drops events without a user agent; this is the form podcast-mcp's
+      // server events already land with on the same instance.
+      'user-agent': `${state!.cfg.service}/1.0 (+server-side)`,
     },
     body: JSON.stringify({
       type: 'event',

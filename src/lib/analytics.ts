@@ -235,6 +235,10 @@ export function initAnalytics(): void {
   s.defer = true;
   s.src = `${host}/script.js`;
   s.dataset.websiteId = websiteId;
+  // Pageviews record the path only. Query strings carry content selections
+  // (/explore?id=…, the Lab's ?nb= notebook state) that /privacy's
+  // coarse-grained description doesn't cover; no dashboard reads them (#601).
+  s.dataset.excludeSearch = 'true';
   s.setAttribute('data-umami-installed', '1');
   // Flush anything tracked between this call and the deferred script actually
   // executing. See `pendingEvents` — without this, every event fired in the

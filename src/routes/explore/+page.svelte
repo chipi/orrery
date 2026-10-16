@@ -2567,7 +2567,7 @@
       _orbitUp,
       _velTangent,
       bloomPass,
-      sunMap4k,
+      getSunMap4k: () => sunMap4k,
       sunMesh,
       updateSunLod,
       PLANET_LOD_IN_RATIO,

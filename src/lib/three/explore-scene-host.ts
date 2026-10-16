@@ -271,7 +271,8 @@ export interface ExploreSceneHostDeps extends Pick<
   _orbitUp: THREE.Vector3;
   _velTangent: THREE.Vector3;
   bloomPass: UnrealBloomPass | null;
-  sunMap4k: THREE.Texture | null;
+  /** Read at teardown: the 4K map loads after the host is built (null at construction). */
+  getSunMap4k: () => THREE.Texture | null;
   sunMesh: THREE.Mesh;
   updateSunLod: (distanceToSun: number) => void;
   PLANET_LOD_IN_RATIO: number;
@@ -312,7 +313,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
     _orbitUp,
     _velTangent,
     bloomPass,
-    sunMap4k,
+    getSunMap4k,
     sunMesh,
     updateSunLod,
     PLANET_LOD_IN_RATIO,
@@ -4328,7 +4329,7 @@ export function createExploreSceneHost(bridge: ExploreSceneHostBridge, deps: Exp
   // pulled back), and the Sun's 4K texture lives outside the
   // PLANETS loop. Without these explicit disposes those
   // textures stay resident in GPU memory after route teardown.
-  lifecycle.add(() => sunMap4k?.dispose());
+  lifecycle.add(() => getSunMap4k()?.dispose());
   lifecycle.add(() => {
     for (const obj of planetObjs) {
       obj.lod?.tex4k?.dispose();

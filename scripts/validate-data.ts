@@ -23,6 +23,7 @@ import { isAllowedLicense } from './license-allowlist.js';
 import { canonicalCardTargets, aliasStubTargets } from './card-targets.mjs';
 import { isAllowedChannel } from './video-channel-allowlist.js';
 import { isJpegBytes } from './lib/image-bytes.ts';
+import { isNonDescriptiveAlt } from './build-image-alt-baseline.ts';
 import {
   findBidirectionalFleetMissionDrift,
   findBidirectionalFleetSiteDrift,
@@ -2310,6 +2311,32 @@ if (existsSync(EPISODE_SOURCES_PATH) && existsSync(AUDIO_PROVENANCE_PATH)) {
   }
 }
 
+// ──────────────────────────────────────────────────────────────────────
+// Alt-text quality (#389): en-US alt text must describe the picture, not name
+// the file — no `File:… .jpg` and no provenance bookkeeping titles
+// (`NASA Images search result — …`). Regenerate with
+// `npx tsx scripts/build-image-alt-baseline.ts`, which substitutes the
+// image-vision subject for those.
+// ──────────────────────────────────────────────────────────────────────
+let altTextFailed = 0;
+{
+  const altPath = join(DATA_ROOT, 'image-alt-text', 'en-US.json');
+  if (existsSync(altPath)) {
+    const alt = readJson(altPath) as Record<string, string>;
+    const bad = Object.entries(alt).filter(([, v]) => isNonDescriptiveAlt(v));
+    if (bad.length === 0) {
+      console.log(
+        `  ✓ image alt text: ${Object.keys(alt).length} entries, none name the file instead of the picture`,
+      );
+    } else {
+      for (const [k, v] of bad.slice(0, 10))
+        console.log(`  ✗ alt text names the file: ${k} → "${v}"`);
+      if (bad.length > 10) console.log(`  ✗ … and ${bad.length - 10} more`);
+      altTextFailed = bad.length;
+    }
+  }
+}
+
 if (
   failed +
     docFailed +
@@ -2326,7 +2353,8 @@ if (
     surfaceHotspotVariantFailed +
     overlayFailed +
     audioFailed +
-    episodeSourcesFailed >
+    episodeSourcesFailed +
+    altTextFailed >
   0
 )
   process.exit(1);

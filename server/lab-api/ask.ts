@@ -15,8 +15,8 @@
  * LiteLLM is OpenAI-compatible; base URL + key are env (server-side only,
  * never surfaced to the SPA). Non-streaming JSON in D; SSE is an F option.
  */
-import { randomBytes } from 'node:crypto';
 import { REGISTRY } from '$lib/physics/registry';
+import { llmMetadata, newRequestId, withSpan } from '../observability';
 import { deriveTools, callTool, type DerivedTool } from '../mcp/registry-tools';
 import { makeT, resolveLocale } from '../mcp/i18n';
 import {
@@ -102,7 +102,22 @@ interface ChatMessage {
 async function chat(
   deps: AskDeps,
   messages: ChatMessage[],
-  withTools = true,
+  withTools: boolean,
+  requestId: string,
+  generationName: string,
+): Promise<ChatMessage> {
+  return withSpan(
+    'llm chat',
+    { 'gen_ai.request.model': deps.model, 'gen_ai.operation.name': generationName },
+    () => chatOnce(deps, messages, withTools, llmMetadata(requestId, generationName)),
+  );
+}
+
+async function chatOnce(
+  deps: AskDeps,
+  messages: ChatMessage[],
+  withTools: boolean,
+  metadata: Record<string, string>,
 ): Promise<ChatMessage> {
   let resp: Response;
   try {
@@ -117,6 +132,8 @@ async function chat(
       body: JSON.stringify({
         model: deps.model,
         messages,
+        // LiteLLM forwards these to Langfuse, joining the generation to this trace.
+        ...(Object.keys(metadata).length ? { metadata } : {}),
         // The final-synthesis pass omits tools so the model MUST answer in prose
         // (no more tool calls) — guarantees a narrated answer from the results.
         ...(withTools
@@ -189,6 +206,8 @@ export async function ask(
 ): Promise<AskResponse> {
   const locale = resolveLocale(rawLocale);
   const t = makeT(locale);
+  // One id for the whole ask: the response's requestId and Langfuse's session.
+  const requestId = newRequestId();
   const messages: ChatMessage[] = [{ role: 'system', content: systemPrompt(locale) }];
   // Prior turns (slice #540) — prose only; the client sends the transcript, we cap it
   // (turn count AND per-item chars — the echo is untrusted).
@@ -213,7 +232,7 @@ export async function ask(
   const toolCalls: AskToolCall[] = [];
 
   for (let round = 0; round < MAX_TOOL_ROUNDS; round++) {
-    const msg = await chat(deps, messages);
+    const msg = await chat(deps, messages, true, requestId, `round-${round + 1}`);
     messages.push(msg);
     if (!msg.tool_calls?.length) {
       return {
@@ -221,7 +240,7 @@ export async function ask(
         toolCalls,
         scenario,
         model: deps.model,
-        requestId: randomBytes(8).toString('hex'),
+        requestId,
       };
     }
     for (const call of msg.tool_calls) {
@@ -244,7 +263,11 @@ export async function ask(
           scenario = applyScenarioUpdate(scenario, parseUpdateArgs(args));
           result = { steps: summariseScenario(scenario, REGISTRY) };
         } else {
-          const { result: r, localized } = callTool(REGISTRY, call.function.name, args, t);
+          const { result: r, localized } = await withSpan(
+            `tool ${call.function.name}`,
+            { 'orrery.tool': call.function.name },
+            () => callTool(REGISTRY, call.function.name, args, t),
+          );
           result = { ...r, localized };
         }
         resultText = JSON.stringify(result);
@@ -270,16 +293,10 @@ export async function ask(
         'You have used all available tool calls. Do NOT request more tools. Write ' +
         'the final answer for the user now, using ONLY the tool results above.',
     });
-    const final = await chat(deps, messages, false);
+    const final = await chat(deps, messages, false, requestId, 'final-synthesis');
     const answer = (final.content ?? '').trim();
     if (answer) {
-      return {
-        answer,
-        toolCalls,
-        scenario,
-        model: deps.model,
-        requestId: randomBytes(8).toString('hex'),
-      };
+      return { answer, toolCalls, scenario, model: deps.model, requestId };
     }
   } catch {
     // fall through to the honest budget message
@@ -289,6 +306,6 @@ export async function ask(
     toolCalls,
     scenario,
     model: deps.model,
-    requestId: randomBytes(8).toString('hex'),
+    requestId,
   };
 }

@@ -21,6 +21,7 @@ import { TokenCore } from './tokens';
 import { isAllowed } from './allowlist';
 import { ask, askDepsFromEnv, LlmUnavailableError } from './ask';
 import { parseScenarioArgs } from './scenario';
+import { captureError, instrumentRequest } from '../observability';
 
 export const PORT = Number(process.env.LAB_PORT ?? 8093);
 const MAX_BODY_BYTES = 64 * 1024;
@@ -112,6 +113,24 @@ function rateLimited(key: string): boolean {
   stamps.push(now);
   windows.set(key, stamps);
   return false;
+}
+
+/** The paths lab-api serves, as the bounded `route` metric label; anything else is `other`. */
+const ROUTES = new Set([
+  '/health',
+  '/.well-known/oauth-authorization-server',
+  '/.well-known/openid-configuration',
+  '/jwks',
+  '/authorize',
+  '/auth/google/callback',
+  '/token',
+  '/register',
+  '/ask',
+]);
+
+function routeOf(req: IncomingMessage): string {
+  const path = (req.url ?? '/').split('?', 1)[0];
+  return ROUTES.has(path) ? path : 'other';
 }
 
 function json(res: ServerResponse, status: number, body: unknown): void {
@@ -295,6 +314,7 @@ export async function buildLabApi(cfg: LabApiConfig): Promise<LabApi> {
         } catch (e) {
           if (e instanceof LlmUnavailableError) {
             console.error('[lab-api] /ask LLM unavailable:', e.message);
+            captureError(e, { kind: 'llm_unavailable' });
             return json(res, 502, { error: 'llm_unavailable' });
           }
           throw e;
@@ -313,20 +333,24 @@ export async function buildLabApi(cfg: LabApiConfig): Promise<LabApi> {
   }
 
   const server = createServer((req, res) => {
-    handle(req, res).catch((e) => {
-      if (e instanceof BodyTooLargeError) {
-        if (!res.headersSent) {
-          res.writeHead(413, { 'content-type': 'application/json' });
-          res.end(JSON.stringify({ error: 'body too large' }));
-        } else {
-          res.end();
+    // The error handling runs inside the request's span, so a captured error carries its trace id.
+    void instrumentRequest(req, res, routeOf(req), () =>
+      handle(req, res).catch((e) => {
+        if (e instanceof BodyTooLargeError) {
+          if (!res.headersSent) {
+            res.writeHead(413, { 'content-type': 'application/json' });
+            res.end(JSON.stringify({ error: 'body too large' }));
+          } else {
+            res.end();
+          }
+          return;
         }
-        return;
-      }
-      console.error('[lab-api] request failed:', e);
-      if (!res.headersSent) res.writeHead(500, { 'content-type': 'application/json' });
-      res.end(JSON.stringify({ error: 'internal' }));
-    });
+        console.error('[lab-api] request failed:', e);
+        captureError(e, { route: routeOf(req) });
+        if (!res.headersSent) res.writeHead(500, { 'content-type': 'application/json' });
+        res.end(JSON.stringify({ error: 'internal' }));
+      }),
+    );
   });
   return { server, tokens };
 }

@@ -58,6 +58,7 @@ import {
 } from './registry-tools';
 import { LOCALES, makeT, resolveLocale, type Locale } from './i18n';
 import { mcpAuthIssuer, mcpResource, verifyRequestToken, REQUIRED_SCOPE } from './auth';
+import { captureError, instrumentRequest, recordToolCall, withSpan } from '../observability';
 
 // ─── Config ─────────────────────────────────────────────────────────────────
 
@@ -119,6 +120,26 @@ function toolsFor(locale: Locale): DerivedTool[] {
   return derived;
 }
 
+let toolNames: Set<string> | null = null;
+
+function knownToolNames(): Set<string> {
+  toolNames ??= new Set(toolsFor('en-US').map((t) => t.name));
+  return toolNames;
+}
+
+/** The paths mcp serves, as the bounded `route` metric label; anything else is `other`. */
+const ROUTES = new Set([
+  '/health',
+  '/mcp',
+  '/.well-known/oauth-protected-resource',
+  '/.well-known/oauth-protected-resource/mcp',
+]);
+
+function routeOf(req: IncomingMessage): string {
+  const path = (req.url ?? '/').split('?', 1)[0];
+  return ROUTES.has(path) ? path : 'other';
+}
+
 // ─── MCP server wiring ──────────────────────────────────────────────────────
 
 export function buildMcpServer(listLocale: Locale): Server {
@@ -132,19 +153,25 @@ export function buildMcpServer(listLocale: Locale): Server {
   }));
 
   server.setRequestHandler(CallToolRequestSchema, async (req) => {
+    // The name is client input: label metrics with it only when it is a real tool.
+    const tool = knownToolNames().has(req.params.name) ? req.params.name : 'unknown-tool';
     if (activeComputes >= MAX_CONCURRENT_COMPUTES) {
+      recordToolCall(tool, 'busy');
       return {
         content: [{ type: 'text', text: 'busy: concurrent compute cap reached — retry shortly' }],
         isError: true,
       };
     }
     activeComputes += 1;
+    const started = process.hrtime.bigint();
+    const elapsed = () => Number(process.hrtime.bigint() - started) / 1e9;
     try {
       const rawArgs = { ...(req.params.arguments ?? {}) } as Record<string, unknown>;
       // `locale` is agent input under the validate-REJECT posture (holistic
       // MINOR-5): an unsupported tag is an error naming the domain, not a
       // silent en-US coercion (that coercion is only for the ?locale= query).
       if (rawArgs.locale !== undefined && !LOCALES.includes(rawArgs.locale as Locale)) {
+        recordToolCall(tool, 'invalid');
         return {
           content: [{ type: 'text', text: `'locale' must be one of: ${LOCALES.join(', ')}` }],
           isError: true,
@@ -152,13 +179,10 @@ export function buildMcpServer(listLocale: Locale): Server {
       }
       const locale = resolveLocale(rawArgs.locale);
       delete rawArgs.locale;
-      const { result, localized } = callTool(
-        REGISTRY,
-        req.params.name,
-        rawArgs,
-        makeT(locale),
-        resolveInjected,
+      const { result, localized } = await withSpan(`tool ${tool}`, { 'orrery.tool': tool }, () =>
+        callTool(REGISTRY, req.params.name, rawArgs, makeT(locale), resolveInjected),
       );
+      recordToolCall(tool, 'ok', elapsed());
       // `localized` rides beside the verbatim FormulaResult spread — if the
       // frozen contract ever gains a field of that name, nest this instead.
       return {
@@ -171,8 +195,11 @@ export function buildMcpServer(listLocale: Locale): Server {
         e instanceof InvalidArgumentsError ||
         e instanceof InjectedInputUnavailableError
       ) {
+        recordToolCall(tool, e instanceof UnknownToolError ? 'unknown' : 'invalid', elapsed());
         return { content: [{ type: 'text', text: e.message }], isError: true };
       }
+      recordToolCall(tool, 'error', elapsed());
+      captureError(e, { tool });
       throw e;
     } finally {
       activeComputes -= 1;
@@ -306,11 +333,15 @@ export function startServer(): ReturnType<typeof createServer> {
     throw new Error('MCP_DEV_BEARER must NOT be set in production (E · #534 — JWT auth only)');
   }
   const httpServer = createServer((req, res) => {
-    handle(req, res).catch((e) => {
-      console.error('[mcp] request failed:', e);
-      if (!res.headersSent) res.writeHead(500);
-      res.end();
-    });
+    // The error handling runs inside the request's span, so a captured error carries its trace id.
+    void instrumentRequest(req, res, routeOf(req), () =>
+      handle(req, res).catch((e) => {
+        console.error('[mcp] request failed:', e);
+        captureError(e, { route: routeOf(req) });
+        if (!res.headersSent) res.writeHead(500);
+        res.end();
+      }),
+    );
   });
   httpServer.listen(PORT, () => {
     console.log(`[mcp] orrery-physics listening on :${PORT} (${toolsFor('en-US').length} tools)`);

@@ -91,13 +91,15 @@ loki.source.file "orrery_data_refresh" {
 
 // ---------- homelab log standard: trace_id -> structured_metadata ----------
 // See agentic-ai-homelab/infra/observability/LOG-STANDARD.md. Extracts the 32-hex
-// trace id from a W3C traceparent / Sentry sentry-trace pattern into
-// structured_metadata (a queryable field, NOT a high-cardinality stream label).
-// Inlined here (rather than referencing base's homelab_std) so this drop-in
-// deploys independently of a base.alloy rollout. Both orrery sources route through it.
+// trace id into structured_metadata (a queryable field, NOT a high-cardinality stream
+// label). The expression is the standard's, verbatim: `trace_id=` (the lab-api / mcp
+// access log, ADR-094), `trace=`, W3C `00-<id>-…` and `sentry-trace`; a labelled
+// prefix is required, so bare hashes never match. Inlined here (rather than
+// referencing base's homelab_std) so this drop-in deploys independently of a
+// base.alloy rollout. Both orrery sources route through it.
 loki.process "orrery_std" {
 	stage.regex {
-		expression = "(?:00-)?(?P<trace_id>[a-f0-9]{32})-[a-f0-9]{16}"
+		expression = "(?:trace_id[=\":\\s]+|trace=|00-|sentry-trace[=\":\\s]+)(?P<trace_id>[a-f0-9]{32})"
 	}
 	stage.structured_metadata {
 		values = {trace_id = ""}
@@ -119,4 +121,59 @@ loki.relabel "orrery_naming" {
 		target_label  = "service"
 	}
 	forward_to = [loki.write.logs_sink.receiver]
+}
+
+// ---------- METRICS: lab-api + mcp /metrics (ADR-094) -> VictoriaMetrics ----------
+// Each serves /metrics on METRICS_PORT 9464, NOT published to the host (Caddy can
+// never reach it). Alloy is host-network, so it scrapes the container's bridge IP,
+// found through the Docker socket — the pattern base.alloy uses for the podcast
+// apis (survives the IP change on recreate). `service` matches the OTel
+// service.name and the logs' service label, so a trace, its logs and its request
+// metrics join on one value. Deploy the images before this file, or `up` reads 0
+// until the new images serve /metrics.
+discovery.relabel "orrery_metrics" {
+	targets = discovery.docker.app.targets
+
+	rule {
+		source_labels = ["__meta_docker_container_name"]
+		regex         = "/(orrery-lab-api|orrery-mcp)"
+		action        = "keep"
+	}
+
+	rule {
+		source_labels = ["__meta_docker_network_ip_address"]
+		regex         = "(.+)"
+		target_label  = "__address__"
+		replacement   = "${1}:9464"
+	}
+
+	rule {
+		source_labels = ["__meta_docker_container_name"]
+		regex         = "/(.*)"
+		target_label  = "service"
+		replacement   = "${1}"
+	}
+
+	rule {
+		target_label = "app"
+		replacement  = "orrery"
+	}
+
+	rule {
+		target_label = "instance"
+		replacement  = "prod-podcast"
+	}
+
+	rule {
+		target_label = "environment"
+		replacement  = "prod"
+	}
+}
+
+prometheus.scrape "orrery" {
+	targets         = discovery.relabel.orrery_metrics.output
+	forward_to      = [prometheus.remote_write.sink.receiver]
+	job_name        = "orrery"
+	metrics_path    = "/metrics"
+	scrape_interval = "60s"
 }

@@ -152,6 +152,25 @@ For most existing scripts this is fine — they print mission IDs, agency names,
 
 ---
 
+## Server-side observability — lab-api + mcp ([ADR-094](../adr/ADR-094.md))
+
+`server/observability/` instruments both servers. It's started only by each `main.ts`, so tests and the CI image smoke runs stay silent. Each signal is on only while its env is set:
+
+| Signal | Env (container) | Lands in | Query / check |
+|---|---|---|---|
+| Errors | `SENTRY_DSN` | GlitchTip 31 `orrery-lab-api`, 32 `orrery-mcp` | issues tagged `service`, `environment=prod`, `release=sha-<7>`, plus `trace_id` |
+| Traces | `OTEL_EXPORTER_OTLP_TRACES_ENDPOINT` | VictoriaTraces, `service.name` = `orrery-lab-api` / `orrery-mcp` | one server span per request, `llm chat` and `tool <name>` children; `/health` and `/metrics` never traced |
+| Metrics | `METRICS_PORT` (9464, unpublished) | VictoriaMetrics via the `prometheus.scrape "orrery"` block in `orrery.alloy` | `http_server_requests_total`, `http_server_request_duration_seconds`, `mcp_tool_calls_total{tool,outcome}`, `mcp_tool_duration_seconds` |
+| Access log | always (after init) | VictoriaLogs (`app:orrery service:orrery-mcp`) | `[orrery-mcp] POST /mcp -> 200 in 7.7ms trace_id=<32hex>`; the trace id becomes structured metadata, so the log opens its trace |
+| Tool events | `UMAMI_HOST` + `UMAMI_WEBSITE_ID` (mcp) | Umami, Orrery site, hostname `mcp.orrerylearn.com` | event `tool-call` with `{tool, outcome}` only |
+| LLM | (follows tracing) | Langfuse via the LiteLLM gateway | `/ask` sends `metadata` `{trace_id, trace_name: "orrery ask", session_id: <requestId>, generation_name: round-N, trace_release}` |
+
+**Deploy wiring.** `deploy-prod.yml` writes `ORRERY_RELEASE=sha-<7>`, the two DSNs (GH `prod` secrets `ORRERY_LAB_API_SENTRY_DSN` / `ORRERY_MCP_SENTRY_DSN`), the OTLP endpoint and Umami into `/srv/orrery/.env`; `compose/docker-compose.prod.yml` passes them through. A new variable needs all three places.
+
+**Privacy.** No user email or id, no request bodies, no prompt text and no tool arguments leave the process: the Sentry `beforeSend` strips request data and `user`, and Umami and metric labels carry only the tool name (an unknown tool is labelled `unknown-tool`) and the outcome.
+
+---
+
 ## Architecture summary
 
 ```

@@ -118,6 +118,17 @@ services:
       MCP_JWKS_URL: 'http://lab-api:8093/jwks'
       MCP_RATE_LIMIT_PER_MIN: '${ORRERY_MCP_RATE_LIMIT_PER_MIN:-60}'
       MCP_MAX_CONCURRENT: '${ORRERY_MCP_MAX_CONCURRENT:-4}'
+      # Observability (ADR-094) — each signal off while its value is empty.
+      # METRICS_PORT is deliberately NOT published: the host-network Alloy
+      # scrapes it on the bridge IP, and Caddy can never reach it.
+      ORRERY_ENVIRONMENT: 'prod'
+      ORRERY_RELEASE: '${ORRERY_RELEASE:-}'
+      SENTRY_DSN: '${ORRERY_MCP_SENTRY_DSN:-}'
+      OTEL_EXPORTER_OTLP_TRACES_ENDPOINT: '${ORRERY_OTLP_TRACES_ENDPOINT:-}'
+      METRICS_PORT: '9464'
+      UMAMI_HOST: '${ORRERY_UMAMI_HOST:-}'
+      UMAMI_WEBSITE_ID: '${ORRERY_UMAMI_WEBSITE_ID:-}'
+      UMAMI_HOSTNAME: 'mcp.orrerylearn.com'
 
   # Orrery lab-api (D · #533 · RFC-037 A01.7/A01.8) — the identity container:
   # OAuth 2.1 AS federating to Google over the file allowlist, plus the /ask
@@ -176,6 +187,12 @@ services:
       LAB_ASK_MAX_CONCURRENT: '${ORRERY_LAB_ASK_MAX_CONCURRENT:-4}'
       LAB_WEB_REDIRECT_URIS: '${ORRERY_LAB_WEB_REDIRECT_URIS:-}'
       LAB_CORS_ORIGINS: '${ORRERY_LAB_CORS_ORIGINS:-}'
+      # Observability (ADR-094) — same contract as mcp above.
+      ORRERY_ENVIRONMENT: 'prod'
+      ORRERY_RELEASE: '${ORRERY_RELEASE:-}'
+      SENTRY_DSN: '${ORRERY_LAB_API_SENTRY_DSN:-}'
+      OTEL_EXPORTER_OTLP_TRACES_ENDPOINT: '${ORRERY_OTLP_TRACES_ENDPOINT:-}'
+      METRICS_PORT: '9464'
     volumes:
       # Keypair + refresh tokens + allowlist — survives redeploys; the
       # operator edits allowlist.json here directly (no redeploy needed).

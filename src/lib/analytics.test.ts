@@ -144,6 +144,8 @@ describe('analytics tracking helpers', () => {
     expect(scripts.length).toBe(1);
     expect(scripts[0].getAttribute('src')).toBe(`${UMAMI_HOST}/script.js`);
     expect(scripts[0].getAttribute('data-website-id')).toBe(UMAMI_ID);
+    // Pageviews record the path only: no ?id= / ?nb= selections (#601).
+    expect(scripts[0].getAttribute('data-exclude-search')).toBe('true');
   });
 });
 

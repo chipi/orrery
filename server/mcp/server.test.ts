@@ -4,7 +4,7 @@
  * gates; caps + rejects enforced. E (#534) adds the http-level auth contract:
  * PRM documents, WWW-Authenticate pointers, JWT accept/reject, scope 403.
  */
-import { describe, it, expect, beforeAll, afterAll } from 'vitest';
+import { describe, it, expect, beforeAll, afterAll, vi } from 'vitest';
 import { createServer, type Server as HttpServer } from 'node:http';
 import { AddressInfo } from 'node:net';
 import { mkdtempSync, rmSync } from 'node:fs';
@@ -165,6 +165,28 @@ describe('S4 · live MCP round-trip', () => {
       obs.registry.resetMetrics();
     }
   }, 20_000);
+
+  it('logs WHY the transport rejects a request with 400 (#590)', async () => {
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    try {
+      const res = await fetch(`${baseUrl}/mcp`, {
+        method: 'POST',
+        headers: {
+          authorization: `Bearer ${BEARER}`,
+          'content-type': 'application/json',
+          accept: 'application/json, text/event-stream',
+          'mcp-protocol-version': '2099-01-01',
+        },
+        body: JSON.stringify({ jsonrpc: '2.0', id: 1, method: 'tools/list', params: {} }),
+      });
+      expect(res.status).toBe(400);
+      const logged = warn.mock.calls.map((c) => c.join(' ')).join('\n');
+      expect(logged).toContain('[mcp] request rejected by transport');
+      expect(logged).toContain('Unsupported protocol version: 2099-01-01');
+    } finally {
+      warn.mockRestore();
+    }
+  });
 
   it('/health answers without auth (container liveness)', async () => {
     const res = await fetch(`${baseUrl}/health`);

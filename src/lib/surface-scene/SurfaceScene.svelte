@@ -441,7 +441,9 @@
   // warn against accidentally capturing a value that should be tracked
   // reactively, which doesn't apply to a write-once $state initializer.
 
-  const ALTITUDE_KM_SEED = Math.max(0, ((config.initialCamR ?? 85) - 30) * (config.radiusKm / 30));
+  const ALTITUDE_KM_SEED = untrack(() =>
+    Math.max(0, ((config.initialCamR ?? 85) - 30) * (config.radiusKm / 30)),
+  );
   let altitudeKm = $state(ALTITUDE_KM_SEED);
 
   // Vendored rover-traverse data, populated from the loadTraverses()

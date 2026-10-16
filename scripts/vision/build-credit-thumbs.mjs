@@ -14,7 +14,15 @@
  * covered paths in static/data/credit-thumbs.json. Add-only: an existing thumb is
  * kept. `--dry-run` reports without writing.
  */
-import { readFileSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
+import {
+  closeSync,
+  existsSync,
+  mkdirSync,
+  openSync,
+  readFileSync,
+  rmSync,
+  writeFileSync,
+} from 'node:fs';
 import path from 'node:path';
 import sharp from 'sharp';
 
@@ -45,14 +53,36 @@ for (const { path: p } of entries) {
   const out = path.join(OUT_DIR, p.replace(/\.[^.]+$/, '.webp'));
   covered.push(p);
   sourceBytes += readFileSync(src).length;
-  if (existsSync(out)) continue;
-  const data = await sharp(src)
-    .resize(SIZE, SIZE, { fit: 'cover' })
-    .webp({ quality: QUALITY })
-    .toBuffer();
-  if (!DRY) {
+  // Add-only: claim the thumb with an exclusive create ('wx') before rendering,
+  // so an existing (or concurrently written) thumb is never overwritten.
+  let fd = null;
+  if (DRY) {
+    if (existsSync(out)) continue;
+  } else {
     mkdirSync(path.dirname(out), { recursive: true });
-    writeFileSync(out, data);
+    try {
+      fd = openSync(out, 'wx');
+    } catch (err) {
+      if (err.code === 'EEXIST') continue;
+      throw err;
+    }
+  }
+  let data;
+  try {
+    data = await sharp(src)
+      .resize(SIZE, SIZE, { fit: 'cover' })
+      .webp({ quality: QUALITY })
+      .toBuffer();
+    if (fd !== null) writeFileSync(fd, data);
+  } catch (err) {
+    if (fd !== null) {
+      closeSync(fd);
+      fd = null;
+      rmSync(out, { force: true });
+    }
+    throw err;
+  } finally {
+    if (fd !== null) closeSync(fd);
   }
   written += 1;
   bytes += data.length;

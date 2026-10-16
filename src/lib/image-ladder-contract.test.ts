@@ -51,11 +51,13 @@ const IS_RUNG = /-\d+\.webp$/;
 const IS_VARIANT = /\.(1x1|4x3|16x9)\.webp$/;
 
 describe('image-ladder manifest ↔ disk (producer output integrity)', () => {
-  it('is non-empty and every entry maps /images/<stem> → ascending unique widths ≤ 3072', () => {
+  it('is non-empty and every entry maps /images/<stem> or /diagrams/<stem> → ascending unique widths ≤ 3072', () => {
     expect(entries.length).toBeGreaterThan(0);
     const bad: string[] = [];
     for (const [key, widths] of entries) {
-      if (!key.startsWith('/images/')) bad.push(`${key}: key not under /images/`);
+      // /diagrams/ joined the ladder in #482 (science diagrams, add-card-rungs --extend).
+      if (!/^\/(images|diagrams)\//.test(key))
+        bad.push(`${key}: key not under /images/ or /diagrams/`);
       if (!Array.isArray(widths) || widths.length === 0) {
         bad.push(`${key}: empty width list`);
         continue;

@@ -48,7 +48,20 @@ describe('illustration manifest ↔ provenance (fail-closed)', () => {
       }
     })();
     const manifestGoals = new Set(allIllustrations().map((i) => i.goalId));
+    // Responsive rungs of a goal image (`<goal>-<w>.webp`, #482) are not separate
+    // assets — but only the widths image-ladder.json actually lists are exempt.
+    const ladder = JSON.parse(readFileSync('static/data/image-ladder.json', 'utf8')) as Record<
+      string,
+      number[]
+    >;
+    const isListedRung = (f: string): boolean => {
+      const m = /^(.+)-(\d+)\.webp$/.exec(f);
+      if (!m || !manifestGoals.has(m[1])) return false;
+      const widths = ladder[`/images/lab/goals/${m[1]}`] ?? [];
+      return widths.slice(0, -1).includes(Number(m[2]));
+    };
     for (const f of files) {
+      if (isListedRung(f)) continue;
       expect(manifestGoals.has(f.replace(/\.webp$/, '')), `orphan asset ${f}`).toBe(true);
     }
   });

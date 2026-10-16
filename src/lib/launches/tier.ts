@@ -35,10 +35,22 @@ export type CurationOverride = {
   editorial_note?: string;
 };
 
+/**
+ * A rocket configuration whose earliest launch is its first flight even when
+ * the source's counts say otherwise (LL2 can count a whole family's launches,
+ * which hides a new variant). Keyed on the stable LL2 config id, not a
+ * date-prefixed launch id, so a slipped date never orphans it (#603).
+ */
+export type FirstFlightConfig = {
+  rocket_config_id: string;
+  reason: string;
+};
+
 export type CurationFile = {
   version: 1;
   featured: CurationOverride[];
   demoted: CurationOverride[];
+  first_flight_configs?: FirstFlightConfig[];
 };
 
 export type TierResult = {
@@ -177,12 +189,26 @@ function groupBy(
  *   `rocket_family`, when GCAT has at least two launches of it (a lone
  *   observation is ambiguous).
  *
- * Without either signal an entry is never a first flight. Mixing LL2 and
- * GCAT family names (the old rule) flagged long-flown vehicles whenever
+ * - Curated: for each `curatedConfigIds` entry (launches-curation.json
+ *   `first_flight_configs`), the earliest launch of that configuration.
+ *   For vehicles the counts can't tell apart from long-flown ones (#603).
+ *
+ * Without one of these signals an entry is never a first flight. Mixing LL2
+ * and GCAT family names (the old rule) flagged long-flown vehicles whenever
  * the names didn't line up or GCAT was missing (issue #566).
  */
-export function buildFirstFlightIds(entries: RawLaunchEntry[]): Set<string> {
+export function buildFirstFlightIds(
+  entries: RawLaunchEntry[],
+  curatedConfigIds: Iterable<string> = [],
+): Set<string> {
   const ids = new Set<string>();
+
+  const curated = new Set(curatedConfigIds);
+  const curatedGroups = groupBy(
+    entries.filter((e) => e.rocket_config_id !== undefined && curated.has(e.rocket_config_id)),
+    (e) => e.rocket_config_id,
+  );
+  for (const group of curatedGroups.values()) ids.add(earliest(group).id);
 
   const maidenConfigs = groupBy(
     entries.filter((e) => e.rocket_config_prior_launches === 0),

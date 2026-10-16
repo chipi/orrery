@@ -1,5 +1,19 @@
 {
   "version": 1,
   "featured": [],
-  "demoted": []
+  "demoted": [],
+  "first_flight_configs": [
+    {
+      "rocket_config_id": "536",
+      "reason": "Long March 10: LL2 config has 0 launches but its family count is non-zero, so the count rule misses the maiden flight (#603)",
+      "added_by": "operator decision 2026-10-16 (Q-A)",
+      "added_at": "2026-10-16T00:00:00Z"
+    },
+    {
+      "rocket_config_id": "502",
+      "reason": "Mir (Agency for Defense Development): LL2 config has 0 launches but its family count is 1 (#603)",
+      "added_by": "operator decision 2026-10-16 (Q-A)",
+      "added_at": "2026-10-16T00:00:00Z"
+    }
+  ]
 }

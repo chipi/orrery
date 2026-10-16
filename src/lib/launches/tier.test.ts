@@ -219,3 +219,36 @@ describe('buildFirstFlightIds — historic (GCAT)', () => {
     expect(ids.size).toBe(0);
   });
 });
+
+describe('buildFirstFlightIds — curated first_flight_configs (#603)', () => {
+  const ll2 = (over: Partial<RawLaunchEntry>) => base({ source_name: 'll2', ...over });
+
+  it("flags the earliest launch of a curated config the counts can't see", () => {
+    // Long March 10: LL2 counts the family, so the config-count rule stays silent.
+    const entries = [
+      ll2({ id: 'lm10-2', rocket_config_id: '536', net: '2028-06-01T00:00:00.000Z' }),
+      ll2({ id: 'lm10-1', rocket_config_id: '536', net: '2027-12-31T00:00:00.000Z' }),
+    ];
+    expect(buildFirstFlightIds(entries).size).toBe(0);
+    expect([...buildFirstFlightIds(entries, ['536'])]).toEqual(['lm10-1']);
+  });
+
+  it('flags nothing for a config that is not curated (Vulcan/H3 look the same in the data)', () => {
+    const ids = buildFirstFlightIds(
+      [ll2({ id: 'vulcan-5', rocket_config_id: '200', net: '2026-11-01T00:00:00.000Z' })],
+      ['536'],
+    );
+    expect(ids.size).toBe(0);
+  });
+
+  it('keeps the maiden flight after the vehicle has flown (earliest launch, any status)', () => {
+    const ids = buildFirstFlightIds(
+      [
+        ll2({ id: 'lm10-flown', rocket_config_id: '536', net: '2027-12-31T00:00:00.000Z' }),
+        ll2({ id: 'lm10-next', rocket_config_id: '536', net: '2028-03-01T00:00:00.000Z' }),
+      ],
+      ['536'],
+    );
+    expect([...ids]).toEqual(['lm10-flown']);
+  });
+});

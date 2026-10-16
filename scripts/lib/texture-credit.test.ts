@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { textureLicense } from './build-image-provenance';
+import { textureLicense } from './texture-credit';
 
 describe('textureLicense (#596)', () => {
   it('credits a crop variant like its base texture', () => {

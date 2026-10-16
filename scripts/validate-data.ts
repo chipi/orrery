@@ -23,7 +23,7 @@ import { isAllowedLicense } from './license-allowlist.js';
 import { canonicalCardTargets, aliasStubTargets } from './card-targets.mjs';
 import { isAllowedChannel } from './video-channel-allowlist.js';
 import { isJpegBytes } from './lib/image-bytes.ts';
-import { isNonDescriptiveAlt } from './build-image-alt-baseline.ts';
+import { isNonDescriptiveAlt } from './lib/alt-text.ts';
 import {
   findBidirectionalFleetMissionDrift,
   findBidirectionalFleetSiteDrift,

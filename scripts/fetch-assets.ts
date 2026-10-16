@@ -63,6 +63,7 @@ import { earthPos, outboundArc } from '../src/lib/physics/transfer/mission-arc.t
 import { DESTINATIONS, R_EARTH_AU } from '../src/lib/physics/transfer/lambert-grid.constants.ts';
 import { missionDestToHeliocentricDestinationId } from '../src/lib/mission-dest.ts';
 import { dateToSimDay } from '../src/lib/sim-day.ts';
+import { TEXTURES } from './lib/texture-credit.ts';
 import {
   A_MOON_KM,
   R_EARTH_KM,
@@ -154,18 +155,9 @@ async function fetchFonts(): Promise<number> {
 
 const TEXTURE_BASE_URL = 'https://www.solarsystemscope.com/textures/download';
 
-export const TEXTURES = [
-  '2k_sun.jpg',
-  '2k_mercury.jpg',
-  '2k_venus_atmosphere.jpg',
-  '2k_earth_daymap.jpg',
-  '2k_mars.jpg',
-  '2k_jupiter.jpg',
-  '2k_saturn.jpg',
-  '2k_uranus.jpg',
-  '2k_neptune.jpg',
-  '2k_moon.jpg',
-];
+// TEXTURES (the Solar System Scope set) lives in lib/texture-credit.ts, shared with
+// the provenance builder; re-exported for existing importers.
+export { TEXTURES };
 
 /**
  * Native 4K daymaps published by Solar System Scope (#287).

@@ -35,7 +35,7 @@ references remain authoritative for end-to-end flow:
 | Score fetched images | `npm run images:score` | [image-pipeline](image-pipeline.md) |
 | Review + promote staged images | `/dev/staging` (dev route) | [image-pipeline](image-pipeline.md) |
 | Re-credit after promoting | `npm run build-image-provenance -- --offline` | [image-pipeline](image-pipeline.md) |
-| Add surface (Mars/Moon) detail imagery | `npm run images:hotspots` (Node 20 + gdal) | [image-pipeline](image-pipeline.md) |
+| Add surface (Mars/Moon) detail imagery | `npm run images:hotspots` (Node 22 + gdal) | [image-pipeline](image-pipeline.md) |
 | Compile messages for dev/build | `npm run i18n:compile` | [content-pipelines](content-pipelines.md) |
 | Translate to all 14 locales | `scripts/wave23/` toolchain | [content-pipelines](content-pipelines.md) |
 | Generate narration audio | `npm run audio:generate -- --episode <id>` | [content-pipelines](content-pipelines.md) |

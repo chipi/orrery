@@ -24,7 +24,7 @@ re-discover them.
 |---|---|---|
 | **iOS** | Xcode 26+, CocoaPods (`brew install cocoapods`) | Accept the Xcode licence: `sudo xcodebuild -license accept`. `pod` uses system Ruby — install via brew, not gem. |
 | **Android** | JDK **21** (`brew install --cask temurin@21`), Android Studio + SDK 35, an **arm64** emulator image | Capacitor 8 requires JDK 21. `export JAVA_HOME="$(/usr/libexec/java_home -v 21)"`. Android Studio bundles its own JDK for the emulator. |
-| **Both** | Node 20+, `npm install` | Capacitor 8.4.1. |
+| **Both** | Node 22+, `npm install` | Capacitor 8.4.1. |
 
 Verify: `xcodebuild -version && pod --version` (iOS) · `java -version && adb --version` (Android).
 

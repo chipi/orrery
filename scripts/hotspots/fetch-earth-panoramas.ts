@@ -13,7 +13,7 @@
  * non-ideal viewpoints (aerial, distant) — single-frame-with-honest-caption
  * beats graceful-absent.
  *
- * Run: env -u NODE_OPTIONS ~/.nvm/versions/node/v20.20.2/bin/node --import tsx \
+ * Run: env -u NODE_OPTIONS mise exec -- node --import tsx \
  *        scripts/hotspots/fetch-earth-panoramas.ts [siteId ...]
  */
 import { promises as fs } from 'node:fs';

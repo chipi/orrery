@@ -21,7 +21,7 @@ await build({
   outfile: path.join(root, 'dist-mcp/server.mjs'),
   bundle: true,
   platform: 'node',
-  target: 'node20',
+  target: 'node22',
   format: 'esm',
   sourcemap: true,
   alias: {

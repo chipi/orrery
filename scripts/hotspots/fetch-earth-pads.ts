@@ -17,8 +17,8 @@
  * buildNaipProvenanceEntry → upsertProvenanceEntries) — surgical upserts, never
  * a whole-file regenerate (AGENTS.md LFS-stub trap).
  *
- * Run (Node 20 + gdal-async, like every hotspots script):
- *   env -u NODE_OPTIONS ~/.nvm/versions/node/v20.20.2/bin/node --import tsx \
+ * Run (repo Node 22 via mise + gdal-async, like every hotspots script):
+ *   env -u NODE_OPTIONS mise exec -- node --import tsx \
  *     scripts/hotspots/fetch-earth-pads.ts [siteId ...]
  *
  * AFTER any run: regenerate the consumed 1x1 variants (half-baked-tile trap).

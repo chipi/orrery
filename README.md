@@ -137,7 +137,7 @@ Umami is **cookieless**, does **no fingerprinting**, captures **no PII**, has **
 
 ## Getting started
 
-Requirements: Node 20+, npm 10+.
+Requirements: Node 22+, npm 10+.
 
 ```bash
 git clone https://github.com/chipi/orrery

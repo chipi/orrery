@@ -47,7 +47,7 @@ npm run docker:build-link-provenance   # scripts/build-link-provenance.ts
 npm run docker:audit-launches          # scripts/audit-report-launches.ts — emits HTML report
 ```
 
-The first invocation in a fresh checkout triggers a **one-time pipeline-runner image build** (~10-15 min on Apple Silicon — Node 20 base + apt install gdal-dev + build-essential + `npm ci` with `gdal-async` source-compile against system gdal). Final image is ~3.4 GB. Subsequent invocations re-use the cached layers and start in ~2-3 seconds. Source code is bind-mounted at runtime (read-only), so script edits don't require a rebuild.
+The first invocation in a fresh checkout triggers a **one-time pipeline-runner image build** (~10-15 min on Apple Silicon — Node 22 base + apt install gdal-dev + build-essential + `npm ci` with `gdal-async` source-compile against system gdal). Final image is ~3.4 GB. Subsequent invocations re-use the cached layers and start in ~2-3 seconds. Source code is bind-mounted at runtime (read-only), so script edits don't require a rebuild.
 
 You can pass arguments through:
 

@@ -14,8 +14,8 @@
  * Reads each site's HiRISE source URL from image-provenance.json and the
  * cached source raster from .image-cache/hotspots/raw.
  *
- * Run (Node 20 for gdal-async):
- *   ~/.nvm/versions/node/v20.20.2/bin/node scripts/hotspots/verify-coreg-geometry.mjs
+ * Run (repo Node 22 via mise, for gdal-async):
+ *   mise exec -- node scripts/hotspots/verify-coreg-geometry.mjs
  */
 import gdal from 'gdal-async';
 import { createHash } from 'node:crypto';

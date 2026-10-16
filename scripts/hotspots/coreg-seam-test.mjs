@@ -11,7 +11,7 @@
  * Layout per site, three panels:
  *   [ CTX context (window) ] [ HiRISE@CTX-res dropped in (seam test) ] [ HiRISE full-res ]
  *
- * Run (Node 20 for sharp):
+ * Run (repo Node 22 via mise, for sharp):
  *   node scripts/hotspots/coreg-seam-test.mjs <site> [site ...]
  * Output: /tmp/coreg-seam-<first-site>.jpg
  */

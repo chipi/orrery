@@ -11,7 +11,7 @@
 # Built lazily — `docker compose build pipeline-runner` only on first use,
 # or when the user explicitly runs `npm run docker:build`.
 
-FROM node:20-bookworm-slim
+FROM node:22-bookworm-slim
 
 # gdal-async + sharp + canvas need glibc + system libs at install time.
 # We install ALL system deps up front so npm ci can compile native

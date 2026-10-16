@@ -28,8 +28,8 @@ import { buildKaguyaTcProvenanceEntry, upsertProvenanceEntries } from './provena
  *
  * Output: static/images/hotspots/moon/<site>/tier2-regional.jpg
  *
- * Run (Node 20 + gdal-async):
- *   ~/.nvm/versions/node/v20.20.2/bin/node --import tsx \
+ * Run (repo Node 22 via mise + gdal-async):
+ *   mise exec -- node --import tsx \
  *     scripts/hotspots/fetch-moon-kaguya-regional.ts [siteId]
  */
 

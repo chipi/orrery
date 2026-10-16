@@ -232,13 +232,6 @@ test.describe('visual regression baselines (#388 full-coverage — element-scope
         Boolean(desktopOnly) && isMobileProject,
         `${label} anchor is desktop-only (surface HUD is hidden on touch viewports)`,
       );
-      // mobile-landscape-chromium Linux visual baselines don't exist yet
-      // (local runs only produce gitignored *-darwin.png). FOLLOW-UP: run the
-      // regen workflow to commit the landscape baselines, then drop this skip.
-      test.skip(
-        testInfo.project.name === 'mobile-landscape-chromium',
-        'landscape visual baselines pending CI regeneration',
-      );
       await page.goto(path, { waitUntil: 'networkidle' });
       // /missions and /fleet collapse the filter strip behind .filters-toggle
       // on mobile. Expand it before the selector resolves so the screenshot

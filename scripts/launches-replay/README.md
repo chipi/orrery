@@ -49,7 +49,7 @@ git worktree remove /tmp/launches-baseline
 
 ## Not covered
 
-- **Not in the corpus:** NASA, SpaceX and ESA. They returned nothing in prod's 09:28 run (a separate problem), so the corpus has no agency-direct entries. An upcoming launch that only those sources know about never gets a first-flight flag.
+- **Not in the corpus:** NASA and ESA (the SpaceX source was removed later the same day, #603). They returned nothing in prod's 09:28 run, so the corpus has no agency-direct entries. An upcoming launch that only those sources know about never gets a first-flight flag.
 - **The orchestration is mirrored, not imported.** `replay.ts` copies `fetch-launches.ts`'s phases rather than calling them; a wiring change in `fetch-launches.ts` is caught only by the end-to-end run, not by this gate.
 - **Where LL2's two counts disagree:** "Long March 10" (config 536) and "Mir" (config 502) report 0 launches for the configuration but 1 for the same-named family, so the generic-family rule drops them. The operator confirmed both as maiden flights (2026-10-16, #603); they are listed in `launches-curation.json` `first_flight_configs`, and `checkNew` exempts listed configs from the generic-family test only. Replay of HEAD vs that change on this corpus: exactly those 2 upcoming entries move (T3/standard → T1/first-flight-vehicle); all other upcoming and historic tiers are identical. Any other vehicle in this situation stays unflagged until it is listed.
 - **LL2 data quality:** a wrong `total_launch_count` upstream gives a wrong flag. Operators can still feature or demote via `launches-curation.json`.

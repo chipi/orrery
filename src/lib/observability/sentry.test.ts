@@ -11,7 +11,7 @@ vi.mock('$app/environment', () => ({ dev: true }));
 import { env as publicEnv } from '$env/dynamic/public';
 import { initSentry } from './sentry';
 
-const DEV_DSN = 'http://310ad519a9da49b7b9aebc50d7c1399e@homelab:8090/7';
+const DEV_DSN = 'http://183d550946d24740a87983a1b75d86ee@homelab:8090/30';
 
 beforeEach(() => {
   initMock.mockClear();

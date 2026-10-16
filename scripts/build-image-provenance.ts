@@ -934,8 +934,9 @@ const WIKIMEDIA_TEXTURES: Record<string, { mission: string; commons_title: strin
     mission: 'NASA / JPL-Caltech / SSI / Cassini ISS',
     commons_title: 'Map of Enceladus December 2008 PIA11145.jpg',
   },
+  // HiRISE PSP_007769_9010 (2008-03-23), per the Commons file page — not Mars Express.
   '2k_phobos.jpg': {
-    mission: 'ESA / DLR / FU Berlin / Mars Express HRSC',
+    mission: 'NASA / JPL-Caltech / University of Arizona / MRO HiRISE',
     commons_title: 'Phobos colour 2008.jpg',
   },
   '2k_deimos.jpg': {
@@ -952,16 +953,24 @@ const WIKIMEDIA_TEXTURES: Record<string, { mission: string; commons_title: strin
   },
 };
 
-function textureLicense(filename: string): {
+/**
+ * Credit for a static/textures/ file. Crop variants (`2k_mars.1x1.jpg`, `.4x3`,
+ * `.16x9`) take the credit of their base texture — they used to fall through to the
+ * Solar System Scope default, mis-crediting the BJJ and Wikimedia ones (#596).
+ */
+export function textureLicense(file: string): {
   license: string;
   agency: string;
+  author: string;
   source_url: string;
   modifications: string[];
 } {
+  const filename = file.replace(/\.(1x1|4x3|16x9)(\.[a-z]+)$/i, '$2');
   if (SSS_TEXTURES.has(filename)) {
     return {
       license: 'CC-BY-4.0',
       agency: 'Solar System Scope',
+      author: 'Solar System Scope',
       source_url: SOLAR_SYSTEM_SCOPE_URL,
       modifications: ['downloaded-from-publisher'],
     };
@@ -970,6 +979,7 @@ function textureLicense(filename: string): {
     return {
       license: 'BJJ-attribution',
       agency: 'Björn Jónsson (bjj.mmedia.is, NASA PDS source data)',
+      author: 'Björn Jónsson',
       source_url: BJJ_URL,
       modifications: ['downloaded-from-publisher'],
     };
@@ -979,6 +989,7 @@ function textureLicense(filename: string): {
     return {
       license: 'PD-NASA',
       agency: meta.mission,
+      author: meta.mission,
       source_url: `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(meta.commons_title).replace(/%20/g, '_')}`,
       modifications: ['downloaded-from-wikimedia-commons'],
     };
@@ -988,6 +999,7 @@ function textureLicense(filename: string): {
   return {
     license: 'CC-BY-4.0',
     agency: 'Solar System Scope',
+    author: 'Solar System Scope',
     source_url: SOLAR_SYSTEM_SCOPE_URL,
     modifications: ['downloaded-from-publisher', 'NEEDS-VERIFICATION'],
   };
@@ -2565,7 +2577,7 @@ async function buildAllEntries(): Promise<ProvenanceEntry[]> {
         license: lic.license,
         source_url: lic.source_url,
         source_type: 'direct-other',
-        author: 'Solar System Scope',
+        author: lic.author,
         fallbackTitle: f,
         modifications: lic.modifications,
       }),

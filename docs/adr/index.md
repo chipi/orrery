@@ -61,6 +61,8 @@
 | ADR-056 | Deterministic e2e readiness signals: `data-*` attributes + `window.__pickAt` test hooks | Accepted | May 2026 |
 | ADR-057 | Narrow exception to "no client storage": one functional cookie for explicit locale override | Accepted (closes #73 Gap 2) | May 2026 |
 | ADR-058 | Cislunar view: Earth-centered second camera + per-mission Moon trajectory profiles | Accepted | May 2026 |
+| ADR-061 | Surface hotspots are regions, not points (axis-aligned `region_bounds` on `SurfaceSite`) | Accepted | May 2026 |
+| ADR-062 | Sphere → flat ground patch transition at deep zoom | Accepted | May 2026 |
 | ADR-063 | Web container: nginx:alpine with host bind-mounts (no custom Dockerfile after Amendment) | Accepted | May 2026 |
 | ADR-064 | Pipeline runner: single `tsx`-entrypoint image, `docker compose run --rm` on-demand, no scheduler service | Accepted | May 2026 |
 | ADR-065 | Live `/data` surface: host bind-mount of `./static/data`, pipelines write, web reads, no rebuild between refreshes | Accepted | May 2026 |
@@ -81,7 +83,13 @@
 | ADR-080 | Responsive image size ladder + srcset delivery (mobile · web · Google TV) | Accepted | Jul 2026 |
 | ADR-081 | Self-hosted Umami analytics (env-var-gated, no committed IDs) | Accepted | Jul 2026 |
 | ADR-082 | Telemetry environment ladder (dev → staging → prod, isolated GlitchTip + Umami projects) | Accepted | Jul 2026 |
+| ADR-084 | Decompose the `data.ts` mega-client into `$lib/data/` submodules | Accepted | Aug 2026 |
 | ADR-085 | Geocentric Earth→Moon porkchop on `/plan` (μ-parameterized Lambert + `kind: helio\|geo` tag + TLI/LOI ∆v, reuses `geocentricMoon`) | Accepted | Aug 2026 |
+| ADR-086 | Earth→(planetary moon) multi-leg porkchops on `/plan` | Accepted | Aug 2026 |
+| ADR-087 | Kernel "systems" layer: guidance/control controllers separated from physics engines | Accepted | Aug 2026 |
+| ADR-088 | Downrange DOF + range-control entry guidance (the entry computer flies the flight) | Accepted | Aug 2026 |
+| ADR-089 | Super-circular loft/skip model for lifting atmospheric entry | Accepted | Aug 2026 |
+| ADR-090 | Flight-map grand hero: a whole-mission scientific diagram per capstone/milestone | Accepted | Aug 2026 |
 | ADR-083 | Mobile runtime environment switcher (internal builds only; release prod-locked) | Accepted (impl. deferred to iOS thread) | Jul 2026 |
 | ADR-091 | Station TLEs in the served /data overlay, one server-side fetcher (no browser→Celestrak) | Accepted | Sep 2026 |
 | ADR-092 | Analytics opt-out + GPC/DNT signals + `/privacy` disclosure page; no consent banner | Accepted | Sep 2026 |

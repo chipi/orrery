@@ -140,11 +140,17 @@ jobs:
     # 2026-06-06: 4 cancelled docker-e2e runs in 12 hours). Cron +
     # workflow_dispatch still cover these commits on the daily 5 am
     # schedule.
+    # Fork PRs: `branches: [main]` matches the triggering run's head_branch, which is
+    # the FORK's branch name — a fork branch called `main` would pass, and the job
+    # would then check out and run that fork's head_sha with this workflow's token and
+    # secrets. Only accept CI runs that were a push to this repository (#593 H1).
     if: >-
       ${{
         github.event_name != 'workflow_run' ||
         (
           github.event.workflow_run.conclusion == 'success' &&
+          github.event.workflow_run.event == 'push' &&
+          github.event.workflow_run.head_repository.full_name == github.repository &&
           !startsWith(github.event.workflow_run.head_commit.message, 'chore(launches): refresh') &&
           !startsWith(github.event.workflow_run.head_commit.message, 'chore(visual): regenerate snapshot')
         )

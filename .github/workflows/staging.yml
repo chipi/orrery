@@ -55,8 +55,23 @@ jobs:
     environment: staging
     # workflow_run fires on every completion; only deploy on success.
     # Manual + cron triggers always proceed.
-    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    # Chained off docker-e2e, so the triggering run's event is workflow_run, not push.
+    # Fork code must never reach this job (#593 H1): same-repository only, and the
+    # first step proves the SHA is on main before anything is checked out or run.
+    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_repository.full_name == github.repository) }}
     steps:
+      - name: Refuse a SHA that is not on main
+        if: github.event_name == 'workflow_run'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          set -euo pipefail
+          STATUS=$(gh api "repos/${GITHUB_REPOSITORY}/compare/main...${SHA}" --jq .status)
+          case "$STATUS" in
+            identical|behind) echo "${SHA} is on main ($STATUS)" ;;
+            *) echo "::error::${SHA} is not on main (compare status: $STATUS) — refusing to build it"; exit 1 ;;
+          esac
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v6
         with:
           # Deploy the exact SHA that passed docker-e2e (not the latest

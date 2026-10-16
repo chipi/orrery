@@ -20,6 +20,15 @@ name: Regenerate visual snapshots
 # "chore(visual): regenerate snapshot baselines" carrying the new
 # PNGs. Inspect the commit + merge / continue iteration on the
 # branch.
+#
+# Don't let that bot commit be the LAST commit a PR lands on main.
+# docker-e2e and mobile-e2e skip any main push whose head commit is
+# "chore(visual): regenerate snapshot…" (so a bot regen doesn't re-run
+# the suite), which also skips publish-platforms. That leaves no
+# `sha-<short>` pipeline-runner image for Deploy to prod to use. It
+# happened to #611 on 2026-10-16: the regen was the branch's final
+# commit, so a follow-up commit was needed before the deploy. Add a
+# real commit after the regen, or squash it into one.
 
 on:
   workflow_dispatch:

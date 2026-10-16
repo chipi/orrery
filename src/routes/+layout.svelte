@@ -12,6 +12,7 @@
   import { openExternal } from '$lib/external-link';
   import { formatDisplayVersion } from '$lib/version';
   import { initWebglRecovery } from '$lib/native/webgl-recovery';
+  import { checkForUpdate } from '$lib/pwa/sw-update';
   import { initDeepLinks } from '$lib/native/deep-links';
   import { initBackButton } from '$lib/native/back-gesture';
   import { sensory } from '$lib/sensory/state.svelte';
@@ -270,9 +271,10 @@
       // Check for new builds hourly AND whenever the tab regains focus —
       // mobile users return to a backgrounded PWA far more often than they
       // hard-reload, so this is what actually applies a deploy for them.
-      setInterval(() => void registration.update(), 60 * 60 * 1000);
+      // checkForUpdate absorbs a check that can't complete (offline etc.); the next one retries.
+      setInterval(() => void checkForUpdate(registration), 60 * 60 * 1000);
       document.addEventListener('visibilitychange', () => {
-        if (document.visibilityState === 'visible') void registration.update();
+        if (document.visibilityState === 'visible') void checkForUpdate(registration);
       });
       // Freshness telemetry: follow each newly-found SW through install so a
       // failed install (iOS CacheStorage quota, fetch error) is VISIBLE in

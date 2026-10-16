@@ -190,8 +190,12 @@ function groupBy(
  *   observation is ambiguous).
  *
  * - Curated: for each `curatedConfigIds` entry (launches-curation.json
- *   `first_flight_configs`), the earliest launch of that configuration.
- *   For vehicles the counts can't tell apart from long-flown ones (#603).
+ *   `first_flight_configs`), the earliest launch of that configuration,
+ *   while the configuration's OWN count (`rocket_config_own_launches`) is
+ *   still 0. For vehicles whose family count hides a maiden flight (#603).
+ *   Once the vehicle flies its own count is ≥ 1 and it is never flagged
+ *   again; the flown maiden leaves the upcoming feed, so "earliest" alone
+ *   would mislabel its second launch.
  *
  * Without one of these signals an entry is never a first flight. Mixing LL2
  * and GCAT family names (the old rule) flagged long-flown vehicles whenever
@@ -205,7 +209,12 @@ export function buildFirstFlightIds(
 
   const curated = new Set(curatedConfigIds);
   const curatedGroups = groupBy(
-    entries.filter((e) => e.rocket_config_id !== undefined && curated.has(e.rocket_config_id)),
+    entries.filter(
+      (e) =>
+        e.rocket_config_id !== undefined &&
+        curated.has(e.rocket_config_id) &&
+        e.rocket_config_own_launches === 0,
+    ),
     (e) => e.rocket_config_id,
   );
   for (const group of curatedGroups.values()) ids.add(earliest(group).id);

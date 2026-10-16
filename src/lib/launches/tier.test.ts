@@ -226,8 +226,20 @@ describe('buildFirstFlightIds — curated first_flight_configs (#603)', () => {
   it("flags the earliest launch of a curated config the counts can't see", () => {
     // Long March 10: LL2 counts the family, so the config-count rule stays silent.
     const entries = [
-      ll2({ id: 'lm10-2', rocket_config_id: '536', net: '2028-06-01T00:00:00.000Z' }),
-      ll2({ id: 'lm10-1', rocket_config_id: '536', net: '2027-12-31T00:00:00.000Z' }),
+      ll2({
+        id: 'lm10-2',
+        rocket_config_id: '536',
+        rocket_config_prior_launches: 1, // family count stands in for the generic config
+        rocket_config_own_launches: 0,
+        net: '2028-06-01T00:00:00.000Z',
+      }),
+      ll2({
+        id: 'lm10-1',
+        rocket_config_id: '536',
+        rocket_config_prior_launches: 1,
+        rocket_config_own_launches: 0,
+        net: '2027-12-31T00:00:00.000Z',
+      }),
     ];
     expect(buildFirstFlightIds(entries).size).toBe(0);
     expect([...buildFirstFlightIds(entries, ['536'])]).toEqual(['lm10-1']);
@@ -235,20 +247,41 @@ describe('buildFirstFlightIds — curated first_flight_configs (#603)', () => {
 
   it('flags nothing for a config that is not curated (Vulcan/H3 look the same in the data)', () => {
     const ids = buildFirstFlightIds(
-      [ll2({ id: 'vulcan-5', rocket_config_id: '200', net: '2026-11-01T00:00:00.000Z' })],
+      [
+        ll2({
+          id: 'vulcan-5',
+          rocket_config_id: '200',
+          rocket_config_own_launches: 0,
+          net: '2026-11-01T00:00:00.000Z',
+        }),
+      ],
       ['536'],
     );
     expect(ids.size).toBe(0);
   });
 
-  it('keeps the maiden flight after the vehicle has flown (earliest launch, any status)', () => {
+  it('stops flagging once the config has flown: its second launch is not a first flight', () => {
+    // The maiden flight has left LL2's upcoming feed (GCAT's copy carries no
+    // config id); what remains is the next launch, and LL2 now counts 1.
     const ids = buildFirstFlightIds(
       [
-        ll2({ id: 'lm10-flown', rocket_config_id: '536', net: '2027-12-31T00:00:00.000Z' }),
-        ll2({ id: 'lm10-next', rocket_config_id: '536', net: '2028-03-01T00:00:00.000Z' }),
+        ll2({
+          id: 'lm10-second',
+          rocket_config_id: '536',
+          rocket_config_own_launches: 1,
+          net: '2028-03-01T00:00:00.000Z',
+        }),
       ],
       ['536'],
     );
-    expect([...ids]).toEqual(['lm10-flown']);
+    expect(ids.size).toBe(0);
+  });
+
+  it('does not flag a curated config when the source gives no own count', () => {
+    const ids = buildFirstFlightIds(
+      [ll2({ id: 'x', rocket_config_id: '536', net: '2027-12-31T00:00:00.000Z' })],
+      ['536'],
+    );
+    expect(ids.size).toBe(0);
   });
 });

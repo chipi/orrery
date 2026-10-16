@@ -63,6 +63,13 @@ export type RawLaunchEntry = {
    * for first-flight detection; not part of the published manifest.
    */
   rocket_config_prior_launches?: number;
+  /**
+   * The configuration's OWN launch count (LL2 `total_launch_count`), without
+   * the generic-family substitution `rocket_config_prior_launches` applies.
+   * Gates the curated first-flight list: a listed config stops being flagged
+   * once it has flown. Not part of the published manifest.
+   */
+  rocket_config_own_launches?: number;
   rocket_config_name: string;
   rocket_family: string;
   pad_name?: string;

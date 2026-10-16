@@ -186,6 +186,10 @@ export function ll2RawToRawEntry(
     ...agency,
     rocket_config_id: raw.rocket?.configuration?.id?.toString(),
     rocket_config_prior_launches: priorLaunches(raw.rocket?.configuration),
+    rocket_config_own_launches:
+      raw.rocket?.configuration && !raw.rocket.configuration.is_placeholder
+        ? (raw.rocket.configuration.total_launch_count ?? undefined)
+        : undefined,
     rocket_config_name: lvFull,
     rocket_family: lvFamily,
     pad_name: raw.pad?.name,

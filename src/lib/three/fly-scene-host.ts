@@ -6,6 +6,13 @@ import { buildHelioMissionOverlays } from '$lib/three/fly-helio-mission';
 import { buildHelioReactiveOverlays } from '$lib/three/fly-helio-reactive';
 import { buildSpacecraftSprite, buildEnginePlume } from '$lib/three/fly-helio-overlays';
 import { createFlyCameraController } from '$lib/three/fly-camera-controller';
+import type { MissionTimeline, Vec2 } from '$lib/physics/transfer/mission-arc';
+import type { resolveQualitySync } from '$lib/quality/quality-tier';
+import type { LoadedMission } from '$lib/fly-mission-apply';
+import type { createCinematicBeatState } from '$lib/fly-cinematic-beats';
+import type { DestinationId } from '$lib/physics/transfer/lambert-grid.constants';
+import type { CislunarTrajectory } from '$lib/orbital/cislunar/cislunar-geometry';
+import type { FlyUpdaters } from '$lib/three/fly-updaters';
 
 /**
  * `/fly` 3D scene host (RFC-036 WS-B/1c — the B1 `fly-scene-host` contract).
@@ -19,8 +26,33 @@ import { createFlyCameraController } from '$lib/three/fly-camera-controller';
  * passes, the mission-swap `let`s the page's $effects bind, the moon-mesh refs)
  * stays in the page, assigned from this handle. Byte-identical to the inline code.
  */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-export function createFlySceneHost(deps: any) {
+/** What /fly hands the scene host: the container, render settings, and live getters
+ *  over the page's reactive state (read every frame, never captured). */
+export interface FlySceneHostDeps {
+  container: HTMLDivElement;
+  quality: ReturnType<typeof resolveQualitySync>;
+  cine: ReturnType<typeof createCinematicBeatState>;
+  getArcTimeline: () => MissionTimeline;
+  getMission: () => LoadedMission;
+  getIsMoonMission: () => boolean;
+  getActiveDestination: () => DestinationId;
+  getSimDay: () => number;
+  getSimSpeed: () => number;
+  getViewMode: () => 'heliocentric' | 'cislunar';
+  getOutPts: () => Vec2[];
+  getRetPts: () => Vec2[];
+  getCislunarTrajectory: () => CislunarTrajectory | null;
+  getEpilogueActive: () => boolean;
+  getOpeningActive: () => boolean;
+  getOpeningStartedAt: () => number;
+  getOpeningDurationMs: () => number;
+  getCamSnapUntil: () => number;
+  getCurrentDestMeshId: () => DestinationId;
+  setCurrentDestMeshId: (id: DestinationId) => void;
+  getFlyUpdaters: () => FlyUpdaters | undefined;
+}
+
+export function createFlySceneHost(deps: FlySceneHostDeps) {
   const helioHandles = buildHelioScene({
     container: deps.container,
     aspect: deps.container.clientWidth / deps.container.clientHeight,

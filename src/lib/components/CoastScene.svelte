@@ -80,7 +80,7 @@
     if (externalClock) coastFraction = Math.min(1, Math.max(0, t));
   });
 
-  const altKm = coastAltitudeKm(coast);
+  const altKm = $derived(coastAltitudeKm(coast));
   // Real elapsed seconds + revolution the counters read (the honest scale).
   let metS = $derived(coastFraction * coast.coastDurationS);
   let rev = $derived(

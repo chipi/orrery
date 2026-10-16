@@ -20,7 +20,7 @@
   z-37 tier). See docs/wip mobile de-clutter plan.
 -->
 <script lang="ts">
-  import type { Snippet } from 'svelte';
+  import { untrack, type Snippet } from 'svelte';
   import * as m from '$lib/paraglide/messages';
 
   type Props = {
@@ -49,7 +49,7 @@
   // Seed the local open/closed state from the prop's initial value once; the
   // drawer owns `expanded` after mount (capturing the initial prop is intended).
 
-  let expanded = $state(startExpanded);
+  let expanded = $state(untrack(() => startExpanded));
 
   // Swipe-down on the drawer collapses it.
   let startY = $state(0);

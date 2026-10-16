@@ -1,4 +1,6 @@
 <script lang="ts">
+  import ResponsiveImage from '$lib/components/ResponsiveImage.svelte';
+  import { IMAGE_SIZES } from '$lib/image-sizes';
   import { onMount } from 'svelte';
   import { page } from '$app/state';
   import { audio } from '$lib/audio-state.svelte';
@@ -680,8 +682,9 @@
           >
             <div class="card-accent" aria-hidden="true"></div>
             <figure class="card-photo">
-              <img
+              <ResponsiveImage
                 class="card-cover"
+                sizes={IMAGE_SIZES.card}
                 src={pickHero('missions', mission.id)}
                 alt=""
                 loading="lazy"

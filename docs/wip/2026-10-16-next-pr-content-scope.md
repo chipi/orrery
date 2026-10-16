@@ -12,6 +12,7 @@ tested the #611 deploy for a few days, not with either PR.
 | Textures: same-size re-encode of all (31.2 → 14.2 MB measured) | do all, with side-by-side crops for approval | #596 |
 | Same-card duplicate photos (33 cards) | replace with distinct photos, per-image approval | #384 |
 | Essays English-only | open: keep English-first, or translate (check Umami per-locale /essays traffic first) | #608 |
+| `/privacy` and `/credits` don't describe Lab Ask (what the question goes to: the LiteLLM gateway, the model, retention). Sign-in is an allowlist beta today (the operator only) | write the section; ×14 | #601 |
 | Lab feedback FB1–FB6 (`2026-09-09-lab-feedback-triage.md`): figure legibility, formula pedagogy, consistent example, per-goal fixes, gravity label, goal ordering | do all; clarifications 1–4 answered 2026-09-09; clarification 5 answered 2026-10-16: **one worked example threaded through every goal's formula cards** (not per-goal) | #539 |
 
 **Apple-side checks (operator 2026-10-16: an agent running on macOS, during the next PR):**

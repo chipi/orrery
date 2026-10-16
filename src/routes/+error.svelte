@@ -6,14 +6,14 @@
   like a `?` typo'd as `&` (e.g. `/fly&debug=1`), a one-click jump
   to the corrected query URL.
 
-  Copy is English-only for now; the page is hit by malformed URLs
-  during dev iteration, not by user navigation. Add paraglide keys
-  if it ever shows on production traffic.
+  Production traffic sees it on every unknown URL since nginx answers
+  404 with this shell (#604), so the copy is translated (error_* keys).
 -->
 <script lang="ts">
   import { page } from '$app/state';
   import { base } from '$app/paths';
   import { browser } from '$app/environment';
+  import * as m from '$lib/paraglide/messages';
 
   // Detect the `/route&param=value` typo pattern (literal `&` where
   // `?` was meant). If found, build the corrected URL — preserves the
@@ -43,37 +43,34 @@
 </script>
 
 <svelte:head>
-  <title>Page not found · Orrery</title>
+  <title>{m.error_page_title()} · Orrery</title>
 </svelte:head>
 
 <main class="error-shell">
   <div class="error-card">
     <p class="error-status">{page.status}</p>
-    <h1 class="error-title">Page not found</h1>
+    <h1 class="error-title">{m.error_page_title()}</h1>
     <p class="error-path">
       <code>{pathSuffix}</code>
     </p>
 
     {#if suggestion}
       <div class="error-suggestion">
-        <p class="error-hint">
-          Looks like a typo — query strings start with <code>?</code>, not <code>&amp;</code>.
-        </p>
+        <p class="error-hint">{m.error_typo_hint()}</p>
         <a class="error-cta error-cta-primary" href={suggestion}>
-          Go to <code>{suggestion.replace(base, '')}</code>
+          {m.error_go_to()} <code>{suggestion.replace(base, '')}</code>
         </a>
       </div>
     {/if}
 
     <div class="error-actions">
-      <a class="error-cta" href="{base}/">Back to home</a>
-      <a class="error-cta error-cta-ghost" href="{base}/missions">Missions</a>
-      <a class="error-cta error-cta-ghost" href="{base}/explore">Explore</a>
+      <a class="error-cta" href="{base}/">{m.error_back_home()}</a>
+      <a class="error-cta error-cta-ghost" href="{base}/missions">{m.nav_missions()}</a>
+      <a class="error-cta error-cta-ghost" href="{base}/explore">{m.nav_explore()}</a>
     </div>
 
     <p class="error-tip">
-      Append <code>?debug=1</code> to any route URL to open the debug panel (e.g.
-      <code>{base}/fly?debug=1</code>).
+      {m.error_debug_tip({ flag: '?debug=1', example: `${base}/fly?debug=1` })}
     </p>
   </div>
 </main>
@@ -134,12 +131,6 @@
     font-size: 13px;
     color: rgba(220, 230, 245, 0.85);
   }
-  .error-hint code {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    background: rgba(0, 0, 0, 0.25);
-    padding: 1px 5px;
-    border-radius: 3px;
-  }
   .error-actions {
     display: flex;
     flex-wrap: wrap;
@@ -189,11 +180,5 @@
     border-top: 1px solid rgba(94, 234, 212, 0.15);
     font-size: 11px;
     color: rgba(220, 230, 245, 0.6);
-  }
-  .error-tip code {
-    font-family: var(--font-mono, 'Space Mono', monospace);
-    background: rgba(94, 234, 212, 0.1);
-    padding: 1px 4px;
-    border-radius: 2px;
   }
 </style>

@@ -3142,5 +3142,10 @@
   "ar_compass_s": "ج",
   "ar_compass_sw": "ج غ",
   "ar_compass_w": "غ",
-  "ar_compass_nw": "ش غ"
+  "ar_compass_nw": "ش غ",
+  "error_page_title": "الصفحة غير موجودة",
+  "error_typo_hint": "يبدو أن هناك خطأ في الكتابة: تبدأ سلاسل الاستعلام بـ ? (وليس &).",
+  "error_go_to": "انتقل إلى",
+  "error_back_home": "العودة إلى الصفحة الرئيسية",
+  "error_debug_tip": "أضف {flag} إلى أي عنوان URL للمسار لفتح لوحة التصحيح (مثال: {example})."
 }

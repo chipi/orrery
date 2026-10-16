@@ -3142,5 +3142,10 @@
   "ar_compass_s": "S",
   "ar_compass_sw": "SW",
   "ar_compass_w": "W",
-  "ar_compass_nw": "NW"
+  "ar_compass_nw": "NW",
+  "error_typo_hint": "Das sieht nach einem Tippfehler aus: Abfragezeichenfolgen beginnen mit ? (nicht &).",
+  "error_page_title": "Seite nicht gefunden",
+  "error_go_to": "Gehe zu",
+  "error_back_home": "Zurück zur Startseite",
+  "error_debug_tip": "Fügen Sie {flag} an jede Route-URL an, um das Debug-Panel zu öffnen (z. B. {example})."
 }

@@ -2176,7 +2176,12 @@
     "ar_compass_s": "दक्षिण",
     "ar_compass_sw": "दक्षिण-पश्चिम",
     "ar_compass_w": "पश्चिम",
-    "ar_compass_nw": "उत्तर-पश्चिम"
+    "ar_compass_nw": "उत्तर-पश्चिम",
+    "error_page_title": "पृष्ठ नहीं मिला",
+    "error_typo_hint": "टाइपो लगता है: क्वेरी स्ट्रिंग्स ? से शुरू होती हैं (& से नहीं)।",
+    "error_go_to": "जाएँ",
+    "error_back_home": "होम पर वापस जाएँ",
+    "error_debug_tip": "डीबग पैनल खोलने के लिए किसी भी रूट URL में {flag} जोड़ें (उदा. {example})।"
   },
   "ja": {
     "mars_meta_description": "人類が火星に残したすべての人工物——着陸機、ローバー、稼働中の軌道機——を、ミッション沿革つきの操作可能な 3D 火星モデルで表示します。",
@@ -4217,7 +4222,12 @@
     "ar_compass_s": "S",
     "ar_compass_sw": "SW",
     "ar_compass_w": "W",
-    "ar_compass_nw": "NW"
+    "ar_compass_nw": "NW",
+    "error_page_title": "ページが見つかりません",
+    "error_typo_hint": "タイプミスのようです：クエリ文字列は & ではなく ? で始まります。",
+    "error_go_to": "移動",
+    "error_back_home": "ホームに戻る",
+    "error_debug_tip": "任意のルート URL に {flag} を追加するとデバッグパネルが開きます（例: {example}）。"
   },
   "ar": {
     "mars_meta_description": "كل ما وضعته البشرية على المريخ — هابطات، مركبات جوالة، ومداريات نشطة — على كرة ثلاثية الأبعاد قابلة للتصفح مع تاريخ المهمة كاملًا.",
@@ -6437,7 +6447,12 @@
     "ar_compass_s": "ج",
     "ar_compass_sw": "ج غ",
     "ar_compass_w": "غ",
-    "ar_compass_nw": "ش غ"
+    "ar_compass_nw": "ش غ",
+    "error_page_title": "الصفحة غير موجودة",
+    "error_typo_hint": "يبدو أن هناك خطأ في الكتابة: تبدأ سلاسل الاستعلام بـ ? (وليس &).",
+    "error_go_to": "انتقل إلى",
+    "error_back_home": "العودة إلى الصفحة الرئيسية",
+    "error_debug_tip": "أضف {flag} إلى أي عنوان URL للمسار لفتح لوحة التصحيح (مثال: {example})."
   },
   "ko": {
     "mars_meta_description": "인류가 화성에 남긴 모든 인공물——착륙선, 로버, 활동 궤도선——을 완전한 임무 이력과 함께 탐색 가능한 3D 지구본으로 표시합니다.",
@@ -8480,7 +8495,12 @@
     "ar_compass_s": "S",
     "ar_compass_sw": "SW",
     "ar_compass_w": "W",
-    "ar_compass_nw": "NW"
+    "ar_compass_nw": "NW",
+    "error_page_title": "페이지를 찾을 수 없습니다",
+    "error_typo_hint": "오타인 것 같습니다: 쿼리 문자열은 &가 아닌 ?로 시작합니다.",
+    "error_go_to": "이동",
+    "error_back_home": "홈으로 돌아가기",
+    "error_debug_tip": "모든 경로 URL에 {flag}를 추가하여 디버그 패널을 열 수 있습니다 (예: {example})."
   },
   "de": {
     "mars_meta_description": "Alle Artefakte der Menschheit auf dem Mars — Lander, Rover und aktive Orbiter — auf einem navigierbaren 3D-Globus mit vollständiger Missionsgeschichte.",
@@ -10345,7 +10365,12 @@
     "ar_compass_s": "S",
     "ar_compass_sw": "SW",
     "ar_compass_w": "W",
-    "ar_compass_nw": "NW"
+    "ar_compass_nw": "NW",
+    "error_typo_hint": "Das sieht nach einem Tippfehler aus: Abfragezeichenfolgen beginnen mit ? (nicht &).",
+    "error_page_title": "Seite nicht gefunden",
+    "error_go_to": "Gehe zu",
+    "error_back_home": "Zurück zur Startseite",
+    "error_debug_tip": "Fügen Sie {flag} an jede Route-URL an, um das Debug-Panel zu öffnen (z. B. {example})."
   },
   "fr": {
     "mars_meta_description": "Tous les engins que l’humanité a placés sur Mars — atterrisseurs, rovers et orbiteurs actifs — sur un globe 3D navigable avec l’historique complet des missions.",
@@ -12150,7 +12175,12 @@
     "ar_compass_s": "S",
     "ar_compass_sw": "SO",
     "ar_compass_w": "O",
-    "ar_compass_nw": "NO"
+    "ar_compass_nw": "NO",
+    "error_page_title": "Page non trouvée",
+    "error_typo_hint": "Semble être une faute de frappe : les chaînes de requête commencent par ? (pas &).",
+    "error_go_to": "Aller à",
+    "error_back_home": "Retour à l'accueil",
+    "error_debug_tip": "Ajoutez {flag} à n'importe quelle URL de route pour ouvrir le panneau de débogage (ex. {example})."
   },
   "it": {
     "mars_meta_description": "Ogni artefatto che l’umanità ha messo su Marte — lander, rover e orbiter attivi — su un globo 3D navigabile con la storia completa della missione.",
@@ -13922,7 +13952,12 @@
     "ar_compass_s": "S",
     "ar_compass_sw": "SO",
     "ar_compass_w": "O",
-    "ar_compass_nw": "NO"
+    "ar_compass_nw": "NO",
+    "error_page_title": "Pagina non trovata",
+    "error_typo_hint": "Sembra un errore di digitazione: le stringhe di query iniziano con ? (non &).",
+    "error_go_to": "Vai a",
+    "error_back_home": "Torna alla home",
+    "error_debug_tip": "Aggiungi {flag} a qualsiasi URL di route per aprire il pannello di debug (es. {example})."
   },
   "es": {
     "mars_meta_description": "Todo artefacto que la humanidad ha colocado en Marte — aterrizadores, rovers y orbitadores activos — en un globo 3D navegable con la historia completa de la misión.",
@@ -15693,7 +15728,12 @@
     "ar_compass_s": "S",
     "ar_compass_sw": "SO",
     "ar_compass_w": "O",
-    "ar_compass_nw": "NO"
+    "ar_compass_nw": "NO",
+    "error_page_title": "Página no encontrada",
+    "error_typo_hint": "Parece que hay un error: las cadenas de consulta comienzan con ? (no con &).",
+    "error_go_to": "Ir a",
+    "error_back_home": "Volver al inicio",
+    "error_debug_tip": "Añade {flag} a cualquier URL de ruta para abrir el panel de depuración (p. ej. {example})."
   },
   "nl": {
     "surface_flat_back_to_planet": "← TERUG NAAR PLANEET",
@@ -17473,7 +17513,12 @@
     "ar_compass_s": "Z",
     "ar_compass_sw": "ZW",
     "ar_compass_w": "W",
-    "ar_compass_nw": "NW"
+    "ar_compass_nw": "NW",
+    "error_page_title": "Pagina niet gevonden",
+    "error_typo_hint": "Dit lijkt een typefout: querystrings beginnen met ? (niet &).",
+    "error_go_to": "Ga naar",
+    "error_back_home": "Terug naar startpagina",
+    "error_debug_tip": "Voeg {flag} toe aan een route-URL om het debug-paneel te openen (bijv. {example})."
   },
   "ru": {
     "mars_meta_description": "Все объекты, которые человечество оставило на Марсе — посадочные модули, роверы и активные орбитеры — на интерактивном 3D-глобусе с полной историей миссий.",
@@ -19517,7 +19562,12 @@
     "ar_compass_s": "Ю",
     "ar_compass_sw": "ЮЗ",
     "ar_compass_w": "З",
-    "ar_compass_nw": "СЗ"
+    "ar_compass_nw": "СЗ",
+    "error_page_title": "Страница не найдена",
+    "error_typo_hint": "Похоже на опечатку: строки запроса начинаются с ? (а не &).",
+    "error_go_to": "Перейти на",
+    "error_back_home": "На главную",
+    "error_debug_tip": "Добавьте {flag} в конец любого URL маршрута, чтобы открыть панель отладки (например, {example})."
   },
   "zh-CN": {
     "mars_meta_description": "人类放置在火星上的每一处人造物——着陆器、巡视车和在轨探测器——呈现在可导航的 3D 火星仪上，附完整任务沿革。",
@@ -21604,7 +21654,12 @@
     "ar_compass_s": "南",
     "ar_compass_sw": "西南",
     "ar_compass_w": "西",
-    "ar_compass_nw": "西北"
+    "ar_compass_nw": "西北",
+    "error_typo_hint": "看起来有打字错误：查询字符串以 ? 开头（不是 &）。",
+    "error_page_title": "页面未找到",
+    "error_go_to": "前往",
+    "error_back_home": "返回主页",
+    "error_debug_tip": "在任何路由 URL 后附加 {flag} 以打开调试面板（例如 {example}）。"
   },
   "sr-Cyrl": {
     "mars_meta_description": "Сви артефакти које је човечанство оставило на Марсу — ландери, ровери и активни орбитери — на навигабилном 3D глобусу са пуном историјом мисија.",
@@ -23177,7 +23232,7 @@
     "lab_goal_touch_small_world_title": "Дотакни мали свет",
     "lab_goal_tsw_microg": "Комета 67P/Чурјумов-Герасименко је свет величине планине где је гравитација легенда: језгро њену површинску привлачност postavља близу једне петине хиљаду метра по секунди на квадрат, а брзину бежања испод једног метра по секунди. Прочитајте то поново — могли бисте трчати са ове комете. Сва интуиција коју сте градили слетањем на Месец, Марс, Венеру и Титан сада вам ради против: тешко није доћи. Тешко је остати.",
     "lab_goal_tsw_philae": "У новембру 2014, Филе је стигао на 67P брзином пешачења — и његови сидрени харпуни нису закуцали. Шта се дешава неансаторском кутији која удари свет као овај? Одскоче. Постави одскок на око 38% брзине слетања и једначина енергије точкасташе масе шаље Филе стотине метара назад у свемир — одскок који је трајао скоро два сата. Остао је само зато што је одскок био испод брзине бежања 67P. За један степен одскочивији, и прво човеково слетање на комету би било спoro-мотионско пропуштање у мрак.",
-    "lab_goal_tsw_bennu": "Сада покушај исту врсту одскока на Бену — и формула одбија да ти даје врх, јер га нема: одскок прелази Бенуову брзину бежања од ~0,2 m/s и једноставно одлази. Ово није грешка за исправљање; то је разлог зашто OSIRIS-REx никада није покушао да слети. Његов TAG маневар — Touch-And-Go — притиснуо је узорковни крак у грување отприлике шест секунди, палио је пропелере и повукао се назад са благајем. На свету на kojem не можеш остати, честито слетање је оно које никада не прави вид да стане.",
+    "lab_goal_tsw_bennu": "Сада покушај исту врсту одскока на Бену — и формула одбија да ти даје врх, јер га нема: одскок прелази Бенуову брзину бежања од ~0,2 m/s и једноставно одлази. Ово није грешка за исправљање; то је разлог зашто OSIRIS-REx никада није покушао да слети. Његов TAG маневар — Touch-And-Go — притиснуо је узорковни крак у грување отприлике шест секунди, палио је пропелере и повукао се назад са благајем. На свету на којем не можеш остати, честито слетање је оно које никада не прави вид да стане.",
     "lab_goal_tsw_ryugu": "Hayabusa2 је превидо одскок из опасности у возило. Његови мали MINERVA-II ровери нису имали точкове — на Рјугу би точкови фрлили тебе са земље коју покушаваш хватити. Уместо тога су носили унутрашње торзионе точкове и СКАКАЛИ: окрет, гурнуће од једне десетине метра по секунди, полак лук око петнаест метара даље, и до петнаест минута времена висине пре следећег корака. Први ровери икада да возе свет намерно, поново напуштајући га.",
     "lab_goal_tsw_itokawa": "Итокава је најмањи свет на овој лествици — земљишни оклопач од грувања од неколико стотина метара дужине, са брзином бежања коју би могао преклопити чвршћим потиском. Године 2005, прва Hayabusa је то дотакла, боривши се, импровизујући, и ипак доставила прву прашину астероида икада враћену на Землју, 2010. Њени узорци потврдили су нешто тихо дубоко: ова 'планина' није камен већ грудва гравитације, држана заједно силом једне десетотисућине твоје.",
     "lab_goal_tsw_eros": "Ерос је противпример који доказује размеру. Са неких тридесет километара, он је џин међу овим световима, а његова просечна брзина изласка од ~10 m/s (која варира од отприлике 3 до 17 m/s преко његове издужене површине) коначно се понаша као место на које можете слетети. Године 2001, NEAR Shoemaker — орбитер без икаквих спусне ноге — је опрезно спушћен брзином мањом од 2 m/s на крају мисије и, на задовољство свих, наставио је да преноси сигнал са површине две недеље. На свету довољно малом, чак и свемирски брод који никада није био грађен да слети може једноставно... стигне.",
@@ -23563,7 +23618,12 @@
     "ar_compass_s": "Ј",
     "ar_compass_sw": "ЈЗ",
     "ar_compass_w": "З",
-    "ar_compass_nw": "СЗ"
+    "ar_compass_nw": "СЗ",
+    "error_typo_hint": "Изгледа као грешка при куцању: низови упита почињу са ? (не са &).",
+    "error_page_title": "Страна није пронађена",
+    "error_go_to": "Иди на",
+    "error_back_home": "Назад на почетну страну",
+    "error_debug_tip": "Додајте {flag} било којем URL-у маршруте да отворите панел за отклањање грешака (нпр. {example})."
   },
   "pt-BR": {
     "mars_meta_description": "Todos os artefatos que a humanidade colocou em Marte — pousadores, rovers e orbitadores ativos — em um globo 3D navegável com histórico completo da missão.",
@@ -25341,6 +25401,11 @@
     "ar_compass_s": "S",
     "ar_compass_sw": "SO",
     "ar_compass_w": "O",
-    "ar_compass_nw": "NO"
+    "ar_compass_nw": "NO",
+    "error_page_title": "Página não encontrada",
+    "error_typo_hint": "Parece um erro de digitação: cadeias de consulta começam com ? (não &).",
+    "error_go_to": "Ir para",
+    "error_back_home": "Voltar ao início",
+    "error_debug_tip": "Adicione {flag} a qualquer URL de rota para abrir o painel de depuração (ex: {example})."
   }
 }

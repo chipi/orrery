@@ -3142,5 +3142,10 @@
   "ar_compass_s": "南",
   "ar_compass_sw": "西南",
   "ar_compass_w": "西",
-  "ar_compass_nw": "西北"
+  "ar_compass_nw": "西北",
+  "error_typo_hint": "看起来有打字错误：查询字符串以 ? 开头（不是 &）。",
+  "error_page_title": "页面未找到",
+  "error_go_to": "前往",
+  "error_back_home": "返回主页",
+  "error_debug_tip": "在任何路由 URL 后附加 {flag} 以打开调试面板（例如 {example}）。"
 }

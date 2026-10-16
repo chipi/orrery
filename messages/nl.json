@@ -3142,5 +3142,10 @@
   "ar_compass_s": "Z",
   "ar_compass_sw": "ZW",
   "ar_compass_w": "W",
-  "ar_compass_nw": "NW"
+  "ar_compass_nw": "NW",
+  "error_page_title": "Pagina niet gevonden",
+  "error_typo_hint": "Dit lijkt een typefout: querystrings beginnen met ? (niet &).",
+  "error_go_to": "Ga naar",
+  "error_back_home": "Terug naar startpagina",
+  "error_debug_tip": "Voeg {flag} toe aan een route-URL om het debug-paneel te openen (bijv. {example})."
 }

@@ -3142,5 +3142,10 @@
   "ar_compass_s": "S",
   "ar_compass_sw": "SO",
   "ar_compass_w": "O",
-  "ar_compass_nw": "NO"
+  "ar_compass_nw": "NO",
+  "error_page_title": "Page non trouvée",
+  "error_typo_hint": "Semble être une faute de frappe : les chaînes de requête commencent par ? (pas &).",
+  "error_go_to": "Aller à",
+  "error_back_home": "Retour à l'accueil",
+  "error_debug_tip": "Ajoutez {flag} à n'importe quelle URL de route pour ouvrir le panneau de débogage (ex. {example})."
 }

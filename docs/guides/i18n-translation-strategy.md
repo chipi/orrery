@@ -164,6 +164,12 @@ already in the text.
 | The scan's "untranslated" rule missed identical Title-Case English ("Vis-Viva Equation" in 13 locales). | Title fields are checked for any remaining 4+ letter word. |
 | Planet names were left in English in running text in all non-Latin locales ("к Mars", "достиг Jupiter"). | The bodies glossary + `bodies.mjs` count; zero English bodies outside vehicle names. |
 | Hand-written maps lived in a temp folder. | Version them under `scripts/i18n-tools/maps/`. |
+| Bare "Saturn" / "Titan" / "Jupiter" were converted to the planet where they named the rocket or missile (ja 土星ロケット, "Titan's engines" → タイタン). | Rocket families are guarded by path and nearby rocket words (`glossary-apply.mjs`); audit with `rocket-body-audit.mjs`. |
+| A glossary form that already carries the generic word landed before the text's own generic word (フラ・マウロ高地高地, "cráter cráter"). | Collapse doubles (`dedupe-descriptors.mjs`); skip a form that holds the English key. |
+| Latin-script swaps dropped articles and agreement ("en cráter Gale", "du base", "dello Centro"). | Per-language article rules after the swap, then read every edit. |
+| A "contains the English" test matched inside words ("Plutone" ⊃ "Pluto"). | Whole-word tests only. |
+| Pass 1 copied wrong page names into the glossary (zh-CN Orus = 俄罗斯 "Russia"; "Donald Johnson"). | Read every page name before it becomes canonical. |
+| A longer native place name pushed a tagline past the 140-char schema limit. | validate-data after every write; shorten by hand. |
 | Tests that imported untested CLI scripts dropped the coverage gate. | Helpers go in small modules under `scripts/lib/` with their own tests. |
 
 ## 8. Status (2026-10-17)

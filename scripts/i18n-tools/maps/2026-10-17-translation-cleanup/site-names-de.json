@@ -1,0 +1,68 @@
+[
+  {
+    "rel": "moon-sites/apollo14.json",
+    "at": "site_name",
+    "old": "Fra Mauro",
+    "new": "Fra-Mauro-Formation"
+  },
+  {
+    "rel": "moon-sites/apollo15.json",
+    "at": "site_name",
+    "old": "Hadley-Apenninen",
+    "new": "Hadley–Apennin"
+  },
+  {
+    "rel": "moon-sites/apollo16.json",
+    "at": "site_name",
+    "old": "Descartes Highlands",
+    "new": "Descartes-Hochland"
+  },
+  {
+    "rel": "moon-sites/apollo17.json",
+    "at": "site_name",
+    "old": "Taurus-Littrow Valley",
+    "new": "Taurus-Littrow-Tal"
+  },
+  {
+    "rel": "moon-sites/change4.json",
+    "at": "site_name",
+    "old": "Von Kármán Crater",
+    "new": "Von-Kármán-Krater"
+  },
+  {
+    "rel": "mars-sites/spirit.json",
+    "at": "site_name",
+    "old": "Gusev Crater",
+    "new": "Gusev-Krater"
+  },
+  {
+    "rel": "moon-sites/luna21.json",
+    "at": "site_name",
+    "old": "Le Monnier Crater (Mare Serenitatis)",
+    "new": "Le-Monnier-Krater (Mare Serenitatis)"
+  },
+  {
+    "rel": "moon-sites/change6.json",
+    "at": "site_name",
+    "old": "Apollo Crater (gegenüberliegende Seite)",
+    "new": "Apollo-Krater (Rückseite)"
+  },
+  {
+    "rel": "moon-sites/slim.json",
+    "at": "site_name",
+    "old": "Near Shioli Crater",
+    "new": "Nahe dem Shioli-Krater"
+  },
+  {
+    "rel": "mars-sites/curiosity.json",
+    "at": "site_name",
+    "old": "Gale Crater (Aeolis Mons / Mt. Sharp)",
+    "new": "Gale-Krater (Aeolis Mons / Mount Sharp)"
+  },
+  {
+    "rel": "mars-sites/mars3.json",
+    "at": "site_name",
+    "old": "Approx. 45°S, 158°W (Ptolemaeus Crater)",
+    "new": "Ca. 45°S, 158°W (Ptolemaeus-Krater)"
+  }
+]

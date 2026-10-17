@@ -1,0 +1,194 @@
+[
+  {
+    "rel": "moon-sites/apollo11.json",
+    "at": "site_name",
+    "old": "Mare Tranquillitatis",
+    "new": "고요의 바다"
+  },
+  {
+    "rel": "moon-sites/apollo12.json",
+    "at": "site_name",
+    "old": "Oceanus Procellarum",
+    "new": "폭풍의 대양"
+  },
+  {
+    "rel": "moon-sites/apollo14.json",
+    "at": "site_name",
+    "old": "Fra Mauro",
+    "new": "프라 마우로 고지"
+  },
+  {
+    "rel": "moon-sites/apollo15.json",
+    "at": "site_name",
+    "old": "할디–아페니네",
+    "new": "해들리-아펜니노"
+  },
+  {
+    "rel": "moon-sites/apollo16.json",
+    "at": "site_name",
+    "old": "Descartes Highlands",
+    "new": "데카르트 고지"
+  },
+  {
+    "rel": "moon-sites/apollo17.json",
+    "at": "site_name",
+    "old": "Taurus-Littrow Valley",
+    "new": "타우루스-리트로 계곡"
+  },
+  {
+    "rel": "moon-sites/beresheet.json",
+    "at": "site_name",
+    "old": "Mare Serenitatis",
+    "new": "평온의 바다"
+  },
+  {
+    "rel": "moon-sites/change3.json",
+    "at": "site_name",
+    "old": "Mare Imbrium",
+    "new": "비의 바다"
+  },
+  {
+    "rel": "moon-sites/luna9.json",
+    "at": "site_name",
+    "old": "Oceanus Procellarum",
+    "new": "폭풍의 대양"
+  },
+  {
+    "rel": "moon-sites/luna16.json",
+    "at": "site_name",
+    "old": "Mare Fecunditatis",
+    "new": "풍요의 바다"
+  },
+  {
+    "rel": "moon-sites/luna17.json",
+    "at": "site_name",
+    "old": "Mare Imbrium",
+    "new": "비의 바다"
+  },
+  {
+    "rel": "moon-sites/luna24.json",
+    "at": "site_name",
+    "old": "Mare Crisium",
+    "new": "위난의 바다"
+  },
+  {
+    "rel": "mars-sites/beagle2.json",
+    "at": "site_name",
+    "old": "Isidis Planitia",
+    "new": "이시디스 평원"
+  },
+  {
+    "rel": "mars-sites/insight.json",
+    "at": "site_name",
+    "old": "Elysium Planitia",
+    "new": "엘리시움 평원"
+  },
+  {
+    "rel": "mars-sites/mars-pathfinder.json",
+    "at": "site_name",
+    "old": "Ares Vallis",
+    "new": "아레스 계곡"
+  },
+  {
+    "rel": "mars-sites/opportunity.json",
+    "at": "site_name",
+    "old": "Meridiani Planum",
+    "new": "메리디아니 평원"
+  },
+  {
+    "rel": "mars-sites/schiaparelli.json",
+    "at": "site_name",
+    "old": "Meridiani Planum",
+    "new": "메리디아니 평원"
+  },
+  {
+    "rel": "mars-sites/spirit.json",
+    "at": "site_name",
+    "old": "Gusev Crater",
+    "new": "구세프 분화구"
+  },
+  {
+    "rel": "mars-sites/viking1-lander.json",
+    "at": "site_name",
+    "old": "Chryse Planitia",
+    "new": "크리세 평원"
+  },
+  {
+    "rel": "mars-sites/viking2-lander.json",
+    "at": "site_name",
+    "old": "Utopia Planitia",
+    "new": "유토피아 평원"
+  },
+  {
+    "rel": "mars-sites/zhurong.json",
+    "at": "site_name",
+    "old": "Utopia Planitia",
+    "new": "유토피아 평원"
+  },
+  {
+    "rel": "moon-sites/change5.json",
+    "at": "site_name",
+    "old": "Mons Rümker (Oceanus Procellarum)",
+    "new": "륌케르산 (폭풍의 대양)"
+  },
+  {
+    "rel": "moon-sites/luna21.json",
+    "at": "site_name",
+    "old": "Le Monnier Crater (Mare Serenitatis)",
+    "new": "르 모니에 분화구 (평온의 바다)"
+  },
+  {
+    "rel": "moon-sites/change6.json",
+    "at": "site_name",
+    "old": "Apollo 분화구(후면)",
+    "new": "아폴로 분화구 (뒷면)"
+  },
+  {
+    "rel": "moon-sites/slim.json",
+    "at": "site_name",
+    "old": "Near Shioli Crater",
+    "new": "시오리 분화구 근처"
+  },
+  {
+    "rel": "mars-sites/curiosity.json",
+    "at": "site_name",
+    "old": "Gale Crater (Aeolis Mons / Mt Sharp)",
+    "new": "게일 분화구 (아이올리스 산 / 샤프 산)"
+  },
+  {
+    "rel": "mars-sites/exomars-rosalind-franklin.json",
+    "at": "site_name",
+    "old": "Oxia Planum (목표)",
+    "new": "옥시아 평원 (목표)"
+  },
+  {
+    "rel": "mars-sites/perseverance.json",
+    "at": "site_name",
+    "old": "Jezero Crater 바닥",
+    "new": "예제로 분화구 바닥"
+  },
+  {
+    "rel": "mars-sites/mars2.json",
+    "at": "site_name",
+    "old": "약 45°S, 313°E (Hellas Planitia)",
+    "new": "약 45°S, 313°E (헬라스 분지)"
+  },
+  {
+    "rel": "mars-sites/mars3.json",
+    "at": "site_name",
+    "old": "약 45°S, 158°W (Ptolemaeus Crater)",
+    "new": "약 45°S, 158°W (프톨레마이오스 분화구)"
+  },
+  {
+    "rel": "mars-sites/mars6.json",
+    "at": "site_name",
+    "old": "약 23.9°S, 19.4°W (Margaritifer Sinus)",
+    "new": "약 23.9°S, 19.4°W (마르가리티페르 시누스)"
+  },
+  {
+    "rel": "mars-sites/phoenix.json",
+    "at": "site_name",
+    "old": "Vastitas Borealis (북극 평원)",
+    "new": "바스티타스 보레알리스 (북극 평원)"
+  }
+]

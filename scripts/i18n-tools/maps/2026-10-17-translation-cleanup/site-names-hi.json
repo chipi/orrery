@@ -1,0 +1,194 @@
+[
+  {
+    "rel": "moon-sites/apollo11.json",
+    "at": "site_name",
+    "old": "Mare Tranquillitatis",
+    "new": "शांति सागर"
+  },
+  {
+    "rel": "moon-sites/apollo12.json",
+    "at": "site_name",
+    "old": "Oceanus Procellarum",
+    "new": "तूफ़ानों का महासागर"
+  },
+  {
+    "rel": "moon-sites/apollo14.json",
+    "at": "site_name",
+    "old": "Fra Mauro",
+    "new": "फ्रा माउरो"
+  },
+  {
+    "rel": "moon-sites/apollo15.json",
+    "at": "site_name",
+    "old": "हैडली–अपेनिन",
+    "new": "हैडली-एपेनाइन"
+  },
+  {
+    "rel": "moon-sites/apollo16.json",
+    "at": "site_name",
+    "old": "Descartes Highlands",
+    "new": "देकार्त उच्चभूमि"
+  },
+  {
+    "rel": "moon-sites/apollo17.json",
+    "at": "site_name",
+    "old": "Taurus-Littrow Valley",
+    "new": "टॉरस-लिट्रो घाटी"
+  },
+  {
+    "rel": "moon-sites/beresheet.json",
+    "at": "site_name",
+    "old": "Mare Serenitatis",
+    "new": "निर्मलता सागर"
+  },
+  {
+    "rel": "moon-sites/change3.json",
+    "at": "site_name",
+    "old": "Mare Imbrium",
+    "new": "वर्षा सागर"
+  },
+  {
+    "rel": "moon-sites/change4.json",
+    "at": "site_name",
+    "old": "Von Kármán क्रेटर",
+    "new": "फ़ॉन कार्मान क्रेटर"
+  },
+  {
+    "rel": "moon-sites/luna9.json",
+    "at": "site_name",
+    "old": "Oceanus Procellarum",
+    "new": "तूफ़ानों का महासागर"
+  },
+  {
+    "rel": "moon-sites/luna16.json",
+    "at": "site_name",
+    "old": "Mare Fecunditatis",
+    "new": "उर्वरता सागर"
+  },
+  {
+    "rel": "moon-sites/luna17.json",
+    "at": "site_name",
+    "old": "Mare Imbrium",
+    "new": "वर्षा सागर"
+  },
+  {
+    "rel": "moon-sites/luna24.json",
+    "at": "site_name",
+    "old": "Mare Crisium",
+    "new": "संकट सागर"
+  },
+  {
+    "rel": "mars-sites/beagle2.json",
+    "at": "site_name",
+    "old": "Isidis Planitia",
+    "new": "इसिडिस मैदान"
+  },
+  {
+    "rel": "mars-sites/insight.json",
+    "at": "site_name",
+    "old": "Elysium Planitia",
+    "new": "एलिसियम मैदान"
+  },
+  {
+    "rel": "mars-sites/mars-pathfinder.json",
+    "at": "site_name",
+    "old": "Ares Vallis",
+    "new": "एरेस घाटी"
+  },
+  {
+    "rel": "mars-sites/opportunity.json",
+    "at": "site_name",
+    "old": "Meridiani Planum",
+    "new": "मेरिडियानी पठार"
+  },
+  {
+    "rel": "mars-sites/schiaparelli.json",
+    "at": "site_name",
+    "old": "Meridiani Planum",
+    "new": "मेरिडियानी पठार"
+  },
+  {
+    "rel": "mars-sites/spirit.json",
+    "at": "site_name",
+    "old": "Gusev Crater",
+    "new": "गुसेव क्रेटर"
+  },
+  {
+    "rel": "mars-sites/viking1-lander.json",
+    "at": "site_name",
+    "old": "Chryse Planitia",
+    "new": "क्राइसी मैदान"
+  },
+  {
+    "rel": "mars-sites/viking2-lander.json",
+    "at": "site_name",
+    "old": "Utopia Planitia",
+    "new": "यूटोपिया मैदान"
+  },
+  {
+    "rel": "mars-sites/zhurong.json",
+    "at": "site_name",
+    "old": "Utopia Planitia",
+    "new": "यूटोपिया मैदान"
+  },
+  {
+    "rel": "moon-sites/change5.json",
+    "at": "site_name",
+    "old": "Mons Rümker (Oceanus Procellarum)",
+    "new": "रुम्कर पर्वत (तूफ़ानों का महासागर)"
+  },
+  {
+    "rel": "moon-sites/luna21.json",
+    "at": "site_name",
+    "old": "Le Monnier Crater (Mare Serenitatis)",
+    "new": "ले मोनिए क्रेटर (निर्मलता सागर)"
+  },
+  {
+    "rel": "moon-sites/change6.json",
+    "at": "site_name",
+    "old": "Apollo Crater (दूर पार्श्व)",
+    "new": "अपोलो क्रेटर (सुदूर पक्ष)"
+  },
+  {
+    "rel": "mars-sites/curiosity.json",
+    "at": "site_name",
+    "old": "Gale Crater (Aeolis Mons / Mt. Sharp)",
+    "new": "गेल क्रेटर (एओलिस पर्वत / माउंट शार्प)"
+  },
+  {
+    "rel": "mars-sites/exomars-rosalind-franklin.json",
+    "at": "site_name",
+    "old": "Oxia Planum (लक्ष्य)",
+    "new": "ऑक्सिया पठार (लक्ष्य)"
+  },
+  {
+    "rel": "mars-sites/perseverance.json",
+    "at": "site_name",
+    "old": "Jezero Crater तल",
+    "new": "जेज़ेरो क्रेटर का तल"
+  },
+  {
+    "rel": "mars-sites/mars2.json",
+    "at": "site_name",
+    "old": "लगभग 45°S, 313°E (Hellas Planitia)",
+    "new": "लगभग 45°S, 313°E (हेलास मैदान)"
+  },
+  {
+    "rel": "mars-sites/mars3.json",
+    "at": "site_name",
+    "old": "लगभग 45°S, 158°W (Ptolemaeus Crater)",
+    "new": "लगभग 45°S, 158°W (टॉलेमी क्रेटर)"
+  },
+  {
+    "rel": "mars-sites/mars6.json",
+    "at": "site_name",
+    "old": "लगभग 23.9°दक्षिण, 19.4°पश्चिम (Margaritifer Sinus)",
+    "new": "लगभग 23.9°दक्षिण, 19.4°पश्चिम (मार्गरिटिफर साइनस)"
+  },
+  {
+    "rel": "mars-sites/phoenix.json",
+    "at": "site_name",
+    "old": "Vastitas Borealis (उत्तरी ध्रुवीय मैदान)",
+    "new": "उत्तरी विस्तार मैदान (उत्तरी ध्रुवीय मैदान)"
+  }
+]

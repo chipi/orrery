@@ -1,0 +1,200 @@
+[
+  {
+    "rel": "moon-sites/apollo11.json",
+    "at": "site_name",
+    "old": "Mare Tranquillitatis",
+    "new": "静海"
+  },
+  {
+    "rel": "moon-sites/apollo12.json",
+    "at": "site_name",
+    "old": "Oceanus Procellarum",
+    "new": "风暴洋"
+  },
+  {
+    "rel": "moon-sites/apollo14.json",
+    "at": "site_name",
+    "old": "Fra Mauro",
+    "new": "毛罗修士高地"
+  },
+  {
+    "rel": "moon-sites/apollo15.json",
+    "at": "site_name",
+    "old": "哈德利-亚平宁山脉",
+    "new": "哈德利-亚平宁区"
+  },
+  {
+    "rel": "moon-sites/apollo16.json",
+    "at": "site_name",
+    "old": "Descartes Highlands",
+    "new": "笛卡尔高地"
+  },
+  {
+    "rel": "moon-sites/apollo17.json",
+    "at": "site_name",
+    "old": "Taurus-Littrow Valley",
+    "new": "陶拉斯-利特罗谷"
+  },
+  {
+    "rel": "moon-sites/beresheet.json",
+    "at": "site_name",
+    "old": "Mare Serenitatis",
+    "new": "澄海"
+  },
+  {
+    "rel": "moon-sites/change3.json",
+    "at": "site_name",
+    "old": "Mare Imbrium",
+    "new": "雨海"
+  },
+  {
+    "rel": "moon-sites/change4.json",
+    "at": "site_name",
+    "old": "Von Kármán Crater",
+    "new": "冯·卡门环形山"
+  },
+  {
+    "rel": "moon-sites/luna9.json",
+    "at": "site_name",
+    "old": "Oceanus Procellarum",
+    "new": "风暴洋"
+  },
+  {
+    "rel": "moon-sites/luna16.json",
+    "at": "site_name",
+    "old": "Mare Fecunditatis",
+    "new": "丰富海"
+  },
+  {
+    "rel": "moon-sites/luna17.json",
+    "at": "site_name",
+    "old": "Mare Imbrium",
+    "new": "雨海"
+  },
+  {
+    "rel": "moon-sites/luna24.json",
+    "at": "site_name",
+    "old": "Mare Crisium",
+    "new": "危海"
+  },
+  {
+    "rel": "mars-sites/beagle2.json",
+    "at": "site_name",
+    "old": "Isidis Planitia",
+    "new": "伊希斯平原"
+  },
+  {
+    "rel": "mars-sites/insight.json",
+    "at": "site_name",
+    "old": "Elysium Planitia",
+    "new": "埃律西昂平原"
+  },
+  {
+    "rel": "mars-sites/mars-pathfinder.json",
+    "at": "site_name",
+    "old": "Ares Vallis",
+    "new": "阿瑞斯谷"
+  },
+  {
+    "rel": "mars-sites/opportunity.json",
+    "at": "site_name",
+    "old": "Meridiani Planum",
+    "new": "子午线高原"
+  },
+  {
+    "rel": "mars-sites/schiaparelli.json",
+    "at": "site_name",
+    "old": "子午线平原",
+    "new": "子午线高原"
+  },
+  {
+    "rel": "mars-sites/spirit.json",
+    "at": "site_name",
+    "old": "Gusev Crater",
+    "new": "古瑟夫撞击坑"
+  },
+  {
+    "rel": "mars-sites/viking1-lander.json",
+    "at": "site_name",
+    "old": "Chryse Planitia",
+    "new": "克律塞平原"
+  },
+  {
+    "rel": "mars-sites/viking2-lander.json",
+    "at": "site_name",
+    "old": "Utopia Planitia",
+    "new": "乌托邦平原"
+  },
+  {
+    "rel": "mars-sites/zhurong.json",
+    "at": "site_name",
+    "old": "Utopia Planitia",
+    "new": "乌托邦平原"
+  },
+  {
+    "rel": "moon-sites/change5.json",
+    "at": "site_name",
+    "old": "Mons Rümker (Oceanus Procellarum)",
+    "new": "吕姆克山（风暴洋）"
+  },
+  {
+    "rel": "moon-sites/luna21.json",
+    "at": "site_name",
+    "old": "Le Monnier Crater (Mare Serenitatis)",
+    "new": "勒莫尼耶环形山（澄海）"
+  },
+  {
+    "rel": "moon-sites/change6.json",
+    "at": "site_name",
+    "old": "Apollo Crater（月背）",
+    "new": "阿波罗环形山（月球背面）"
+  },
+  {
+    "rel": "moon-sites/slim.json",
+    "at": "site_name",
+    "old": "Near Shioli Crater",
+    "new": "希奥利撞击坑附近"
+  },
+  {
+    "rel": "mars-sites/curiosity.json",
+    "at": "site_name",
+    "old": "Gale Crater (Aeolis Mons / Mt. Sharp)",
+    "new": "盖尔撞击坑（伊奥利亚山／夏普山）"
+  },
+  {
+    "rel": "mars-sites/exomars-rosalind-franklin.json",
+    "at": "site_name",
+    "old": "Oxia Planum（目标）",
+    "new": "欧克西亚高原（目标）"
+  },
+  {
+    "rel": "mars-sites/perseverance.json",
+    "at": "site_name",
+    "old": "杰泽罗陨石坑底部",
+    "new": "耶泽罗撞击坑底部"
+  },
+  {
+    "rel": "mars-sites/mars2.json",
+    "at": "site_name",
+    "old": "约 45°S、313°E（Hellas Planitia）",
+    "new": "约 45°S、313°E（希腊平原）"
+  },
+  {
+    "rel": "mars-sites/mars3.json",
+    "at": "site_name",
+    "old": "约45°S, 158°W（Ptolemaeus Crater）",
+    "new": "约45°S, 158°W（托勒密环形山）"
+  },
+  {
+    "rel": "mars-sites/phoenix.json",
+    "at": "site_name",
+    "old": "Vastitas Borealis（北极平原）",
+    "new": "北方荒原（北极平原）"
+  },
+  {
+    "rel": "mars-sites/mars6.json",
+    "at": "site_name",
+    "old": "Approx. 23.9°S, 19.4°W (Margaritifer Sinus)",
+    "new": "约 23.9°S、19.4°W（珍珠湾）"
+  }
+]

@@ -1,0 +1,104 @@
+[
+  {
+    "rel": "moon-sites/apollo11.json",
+    "at": "site_name",
+    "old": "Mare Tranquillitatis",
+    "new": "Mer de la Tranquillité"
+  },
+  {
+    "rel": "moon-sites/apollo12.json",
+    "at": "site_name",
+    "old": "Océanus Procellarum",
+    "new": "Océan des Tempêtes"
+  },
+  {
+    "rel": "moon-sites/apollo14.json",
+    "at": "site_name",
+    "old": "Fra Mauro",
+    "new": "Formation Fra Mauro"
+  },
+  {
+    "rel": "moon-sites/apollo16.json",
+    "at": "site_name",
+    "old": "Hauts plateaux de Descartes",
+    "new": "Hauts plateaux Descartes"
+  },
+  {
+    "rel": "moon-sites/beresheet.json",
+    "at": "site_name",
+    "old": "Mare Serenitatis",
+    "new": "Mer de la Sérénité"
+  },
+  {
+    "rel": "moon-sites/change3.json",
+    "at": "site_name",
+    "old": "Jument Imbrium",
+    "new": "Mer des Pluies"
+  },
+  {
+    "rel": "moon-sites/luna9.json",
+    "at": "site_name",
+    "old": "Océanus Procellarum",
+    "new": "Océan des Tempêtes"
+  },
+  {
+    "rel": "moon-sites/luna17.json",
+    "at": "site_name",
+    "old": "Mare Imbrium",
+    "new": "Mer des Pluies"
+  },
+  {
+    "rel": "moon-sites/luna24.json",
+    "at": "site_name",
+    "old": "Jument Crisium",
+    "new": "Mare Crisium"
+  },
+  {
+    "rel": "mars-sites/spirit.json",
+    "at": "site_name",
+    "old": "Gusev Crater",
+    "new": "Cratère Goussev"
+  },
+  {
+    "rel": "moon-sites/change5.json",
+    "at": "site_name",
+    "old": "Mons Rümker (Oceanus Procellarum)",
+    "new": "Mons Rümker (Océan des Tempêtes)"
+  },
+  {
+    "rel": "moon-sites/luna21.json",
+    "at": "site_name",
+    "old": "Cratère Le Monnier (Mare Serenitatis)",
+    "new": "Cratère Le Monnier (Mer de la Sérénité)"
+  },
+  {
+    "rel": "moon-sites/change6.json",
+    "at": "site_name",
+    "old": "Apollo Crater (face cachée)",
+    "new": "Cratère Apollo (face cachée)"
+  },
+  {
+    "rel": "moon-sites/slim.json",
+    "at": "site_name",
+    "old": "Near Shioli Crater",
+    "new": "Près du cratère Shioli"
+  },
+  {
+    "rel": "mars-sites/curiosity.json",
+    "at": "site_name",
+    "old": "Gale Crater (Aeolis Mons / Mt. Sharp)",
+    "new": "Cratère Gale (Aeolis Mons / mont Sharp)"
+  },
+  {
+    "rel": "mars-sites/perseverance.json",
+    "at": "site_name",
+    "old": "Plancher du cratère Jezero",
+    "new": "Fond du cratère Jezero"
+  },
+  {
+    "rel": "mars-sites/mars3.json",
+    "at": "site_name",
+    "old": "Environ 45°S, 158°W (Ptolemaeus Crater)",
+    "new": "Environ 45°S, 158°W (cratère Ptolemaeus)"
+  }
+]

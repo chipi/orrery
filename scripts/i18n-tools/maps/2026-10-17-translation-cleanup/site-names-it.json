@@ -1,0 +1,62 @@
+[
+  {
+    "rel": "moon-sites/apollo14.json",
+    "at": "site_name",
+    "old": "Fra Mauro",
+    "new": "Formazione Fra Mauro"
+  },
+  {
+    "rel": "moon-sites/apollo15.json",
+    "at": "site_name",
+    "old": "Hadley–Apennini",
+    "new": "Hadley–Appennini"
+  },
+  {
+    "rel": "moon-sites/apollo16.json",
+    "at": "site_name",
+    "old": "Descartes Highlands",
+    "new": "Altopiano Descartes"
+  },
+  {
+    "rel": "moon-sites/luna9.json",
+    "at": "site_name",
+    "old": "Oceano Procellarum",
+    "new": "Oceanus Procellarum"
+  },
+  {
+    "rel": "moon-sites/change6.json",
+    "at": "site_name",
+    "old": "Cratere Apollo (lato opposto)",
+    "new": "Cratere Apollo (lato nascosto)"
+  },
+  {
+    "rel": "moon-sites/slim.json",
+    "at": "site_name",
+    "old": "Near Shioli Crater",
+    "new": "Vicino al cratere Shioli"
+  },
+  {
+    "rel": "mars-sites/curiosity.json",
+    "at": "site_name",
+    "old": "Cratere Gale (Aeolis Mons / Monte Sharp)",
+    "new": "Cratere Gale (Aeolis Mons / monte Sharp)"
+  },
+  {
+    "rel": "mars-sites/exomars-rosalind-franklin.json",
+    "at": "site_name",
+    "old": "Oxia Planum (bersaglio)",
+    "new": "Oxia Planum (obiettivo)"
+  },
+  {
+    "rel": "mars-sites/perseverance.json",
+    "at": "site_name",
+    "old": "Fondo del Cratere Jezero",
+    "new": "Fondo del cratere Jezero"
+  },
+  {
+    "rel": "mars-sites/mars3.json",
+    "at": "site_name",
+    "old": "Approx. 45°S, 158°W (Cratere Ptolemaeus)",
+    "new": "Circa 45°S, 158°O (cratere Ptolemaeus)"
+  }
+]

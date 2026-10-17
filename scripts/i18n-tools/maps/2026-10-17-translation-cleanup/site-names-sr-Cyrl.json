@@ -1,0 +1,200 @@
+[
+  {
+    "rel": "moon-sites/apollo11.json",
+    "at": "site_name",
+    "old": "Mare Tranquillitatis",
+    "new": "Море спокојства"
+  },
+  {
+    "rel": "moon-sites/apollo12.json",
+    "at": "site_name",
+    "old": "Oceanus Procellarum",
+    "new": "Океан олуја"
+  },
+  {
+    "rel": "moon-sites/apollo14.json",
+    "at": "site_name",
+    "old": "Fra Mauro",
+    "new": "Формација Фра Мауро"
+  },
+  {
+    "rel": "moon-sites/apollo15.json",
+    "at": "site_name",
+    "old": "Hadley–Apennine",
+    "new": "Хедли — Апенини"
+  },
+  {
+    "rel": "moon-sites/apollo16.json",
+    "at": "site_name",
+    "old": "Descartes Highlands",
+    "new": "Декартова висораван"
+  },
+  {
+    "rel": "moon-sites/apollo17.json",
+    "at": "site_name",
+    "old": "Долина Taurus-Littrow",
+    "new": "Долина Таурус-Литроу"
+  },
+  {
+    "rel": "moon-sites/beresheet.json",
+    "at": "site_name",
+    "old": "Mare Serenitatis",
+    "new": "Море ведрине"
+  },
+  {
+    "rel": "moon-sites/change3.json",
+    "at": "site_name",
+    "old": "Mare Imbrium",
+    "new": "Море кише"
+  },
+  {
+    "rel": "moon-sites/change4.json",
+    "at": "site_name",
+    "old": "Кратер Von Kármán",
+    "new": "Кратер Фон Карман"
+  },
+  {
+    "rel": "moon-sites/luna9.json",
+    "at": "site_name",
+    "old": "Oceanus Procellarum",
+    "new": "Океан олуја"
+  },
+  {
+    "rel": "moon-sites/luna16.json",
+    "at": "site_name",
+    "old": "Mare Fecunditatis",
+    "new": "Море плодности"
+  },
+  {
+    "rel": "moon-sites/luna17.json",
+    "at": "site_name",
+    "old": "Mare Imbrium",
+    "new": "Море кише"
+  },
+  {
+    "rel": "moon-sites/luna24.json",
+    "at": "site_name",
+    "old": "Mare Crisium",
+    "new": "Море кризе"
+  },
+  {
+    "rel": "mars-sites/beagle2.json",
+    "at": "site_name",
+    "old": "Isidis Planitia",
+    "new": "Равница Изиде"
+  },
+  {
+    "rel": "mars-sites/insight.json",
+    "at": "site_name",
+    "old": "Elysium Planitia",
+    "new": "Равница Елизијум"
+  },
+  {
+    "rel": "mars-sites/mars-pathfinder.json",
+    "at": "site_name",
+    "old": "Ares Vallis",
+    "new": "Долина Арес"
+  },
+  {
+    "rel": "mars-sites/opportunity.json",
+    "at": "site_name",
+    "old": "Meridiani Planum",
+    "new": "Плато Меридијани"
+  },
+  {
+    "rel": "mars-sites/schiaparelli.json",
+    "at": "site_name",
+    "old": "Meridiani Planum",
+    "new": "Плато Меридијани"
+  },
+  {
+    "rel": "mars-sites/spirit.json",
+    "at": "site_name",
+    "old": "Кратер Gusev",
+    "new": "Кратер Гусев"
+  },
+  {
+    "rel": "mars-sites/viking1-lander.json",
+    "at": "site_name",
+    "old": "Chryse Planitia",
+    "new": "Равница Хрисе"
+  },
+  {
+    "rel": "mars-sites/viking2-lander.json",
+    "at": "site_name",
+    "old": "Utopia Planitia",
+    "new": "Равница Утопија"
+  },
+  {
+    "rel": "mars-sites/zhurong.json",
+    "at": "site_name",
+    "old": "Utopia Planitia",
+    "new": "Равница Утопија"
+  },
+  {
+    "rel": "moon-sites/change5.json",
+    "at": "site_name",
+    "old": "Mons Rümker (Oceanus Procellarum)",
+    "new": "Планина Римкер (Океан олуја)"
+  },
+  {
+    "rel": "moon-sites/luna21.json",
+    "at": "site_name",
+    "old": "Кратер Le Monnier (Mare Serenitatis)",
+    "new": "Кратер Ле Моније (Море ведрине)"
+  },
+  {
+    "rel": "moon-sites/change6.json",
+    "at": "site_name",
+    "old": "Кратер Apollo (удаљена страна Месеца)",
+    "new": "Кратер Аполон (далека страна)"
+  },
+  {
+    "rel": "moon-sites/slim.json",
+    "at": "site_name",
+    "old": "Крај кратера Shioli",
+    "new": "Близу кратера Шиоли"
+  },
+  {
+    "rel": "mars-sites/curiosity.json",
+    "at": "site_name",
+    "old": "Gale Crater (Aeolis Mons / Mt. Sharp)",
+    "new": "Кратер Гејл (планина Еолида / планина Шарп)"
+  },
+  {
+    "rel": "mars-sites/exomars-rosalind-franklin.json",
+    "at": "site_name",
+    "old": "Oxia Planum (циљ)",
+    "new": "Плато Оксија (циљ)"
+  },
+  {
+    "rel": "mars-sites/perseverance.json",
+    "at": "site_name",
+    "old": "Дно кратера Jezero",
+    "new": "Дно кратера Језеро"
+  },
+  {
+    "rel": "mars-sites/mars2.json",
+    "at": "site_name",
+    "old": "Приближно 45° јгш, 313° игд (Hellas Planitia)",
+    "new": "Приближно 45° јгш, 313° игд (Равница Хелада)"
+  },
+  {
+    "rel": "mars-sites/mars6.json",
+    "at": "site_name",
+    "old": "Приближно 23,9° Ј, 19,4° З (Margaritifer Sinus)",
+    "new": "Приближно 23,9° Ј, 19,4° З (Маргаритифер Синус)"
+  },
+  {
+    "rel": "mars-sites/mars3.json",
+    "at": "site_name",
+    "old": "Прибл. 45° Ј, 158° З (кратер Ptolemaeus)",
+    "new": "Прибл. 45° Ј, 158° З (кратер Птолемеј)"
+  },
+  {
+    "rel": "mars-sites/phoenix.json",
+    "at": "site_name",
+    "old": "Vastitas Borealis (северна поларна равница)",
+    "new": "Велика северна равница"
+  }
+]

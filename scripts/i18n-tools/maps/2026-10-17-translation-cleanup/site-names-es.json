@@ -1,0 +1,68 @@
+[
+  {
+    "rel": "moon-sites/apollo14.json",
+    "at": "site_name",
+    "old": "Fra Mauro",
+    "new": "Formación Fra Mauro"
+  },
+  {
+    "rel": "moon-sites/apollo15.json",
+    "at": "site_name",
+    "old": "Hadley–Apenino",
+    "new": "Hadley-Apeninos"
+  },
+  {
+    "rel": "moon-sites/apollo16.json",
+    "at": "site_name",
+    "old": "Descartes Highlands",
+    "new": "Tierras Altas de Descartes"
+  },
+  {
+    "rel": "moon-sites/apollo17.json",
+    "at": "site_name",
+    "old": "Taurus-Littrow Valley",
+    "new": "Valle Taurus-Littrow"
+  },
+  {
+    "rel": "moon-sites/change4.json",
+    "at": "site_name",
+    "old": "Von Kármán Crater",
+    "new": "Cráter Von Kármán"
+  },
+  {
+    "rel": "mars-sites/spirit.json",
+    "at": "site_name",
+    "old": "Gusev Crater",
+    "new": "Cráter Gusev"
+  },
+  {
+    "rel": "moon-sites/change6.json",
+    "at": "site_name",
+    "old": "Apollo Crater (cara oculta)",
+    "new": "Cráter Apolo (cara oculta)"
+  },
+  {
+    "rel": "moon-sites/slim.json",
+    "at": "site_name",
+    "old": "Near Shioli Crater",
+    "new": "Cerca del cráter Shioli"
+  },
+  {
+    "rel": "mars-sites/curiosity.json",
+    "at": "site_name",
+    "old": "Gale Crater (Aeolis Mons / Mt. Sharp)",
+    "new": "Cráter Gale (Aeolis Mons / monte Sharp)"
+  },
+  {
+    "rel": "mars-sites/perseverance.json",
+    "at": "site_name",
+    "old": "Suelo del Jezero Crater",
+    "new": "Fondo del cráter Jezero"
+  },
+  {
+    "rel": "mars-sites/mars3.json",
+    "at": "site_name",
+    "old": "Aprox. 45°S, 158°O (Ptolemaeus Crater)",
+    "new": "Aprox. 45°S, 158°O (cráter Ptolemaeus)"
+  }
+]

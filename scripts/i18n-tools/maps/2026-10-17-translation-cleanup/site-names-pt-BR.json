@@ -1,0 +1,50 @@
+[
+  {
+    "rel": "moon-sites/apollo16.json",
+    "at": "site_name",
+    "old": "Descartes Highlands",
+    "new": "Terras Altas de Descartes"
+  },
+  {
+    "rel": "moon-sites/apollo17.json",
+    "at": "site_name",
+    "old": "Taurus-Littrow Valley",
+    "new": "Vale Taurus-Littrow"
+  },
+  {
+    "rel": "moon-sites/change4.json",
+    "at": "site_name",
+    "old": "Cratera de Von Kármán",
+    "new": "Cratera Von Kármán"
+  },
+  {
+    "rel": "moon-sites/luna24.json",
+    "at": "site_name",
+    "old": "Maré Crisium",
+    "new": "Mare Crisium"
+  },
+  {
+    "rel": "moon-sites/change6.json",
+    "at": "site_name",
+    "old": "Cratera Apollo (lado oposto)",
+    "new": "Cratera Apollo (lado oculto)"
+  },
+  {
+    "rel": "moon-sites/slim.json",
+    "at": "site_name",
+    "old": "Perto da Cratera Shioli",
+    "new": "Perto da cratera Shioli"
+  },
+  {
+    "rel": "mars-sites/curiosity.json",
+    "at": "site_name",
+    "old": "Cratera Gale (Aeolis Mons / Monte Sharp)",
+    "new": "Cratera Gale (Aeolis Mons / monte Sharp)"
+  },
+  {
+    "rel": "mars-sites/perseverance.json",
+    "at": "site_name",
+    "old": "Piso da Cratera Jezero",
+    "new": "Fundo da cratera Jezero"
+  }
+]

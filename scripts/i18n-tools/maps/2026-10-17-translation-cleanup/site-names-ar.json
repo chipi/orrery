@@ -1,0 +1,194 @@
+[
+  {
+    "rel": "moon-sites/apollo11.json",
+    "at": "site_name",
+    "old": "Mare Tranquillitatis",
+    "new": "بحر السكون"
+  },
+  {
+    "rel": "moon-sites/apollo12.json",
+    "at": "site_name",
+    "old": "Oceanus Procellarum",
+    "new": "محيط العواصف"
+  },
+  {
+    "rel": "moon-sites/apollo14.json",
+    "at": "site_name",
+    "old": "Fra Mauro",
+    "new": "فرا ماورو"
+  },
+  {
+    "rel": "moon-sites/apollo15.json",
+    "at": "site_name",
+    "old": "هادلي–أبينيني",
+    "new": "هادلي-أبينين"
+  },
+  {
+    "rel": "moon-sites/apollo16.json",
+    "at": "site_name",
+    "old": "مرتفعات Descartes",
+    "new": "مرتفعات ديكارت"
+  },
+  {
+    "rel": "moon-sites/apollo17.json",
+    "at": "site_name",
+    "old": "وادي Taurus-Littrow",
+    "new": "وادي توروس-ليترو"
+  },
+  {
+    "rel": "moon-sites/beresheet.json",
+    "at": "site_name",
+    "old": "Mare Serenitatis",
+    "new": "بحر الصفاء"
+  },
+  {
+    "rel": "moon-sites/change4.json",
+    "at": "site_name",
+    "old": "فوهة Von Kármán",
+    "new": "فوهة فون كارمان"
+  },
+  {
+    "rel": "moon-sites/luna9.json",
+    "at": "site_name",
+    "old": "Oceanus Procellarum",
+    "new": "محيط العواصف"
+  },
+  {
+    "rel": "moon-sites/luna16.json",
+    "at": "site_name",
+    "old": "Mare Fecunditatis",
+    "new": "بحر الخصوبة"
+  },
+  {
+    "rel": "moon-sites/luna17.json",
+    "at": "site_name",
+    "old": "Mare Imbrium",
+    "new": "بحر الأمطار"
+  },
+  {
+    "rel": "moon-sites/luna24.json",
+    "at": "site_name",
+    "old": "Mare Crisium",
+    "new": "بحر الشدائد"
+  },
+  {
+    "rel": "mars-sites/beagle2.json",
+    "at": "site_name",
+    "old": "Isidis Planitia",
+    "new": "سهل إيزيديس"
+  },
+  {
+    "rel": "mars-sites/insight.json",
+    "at": "site_name",
+    "old": "Elysium Planitia",
+    "new": "سهل إليزيوم"
+  },
+  {
+    "rel": "mars-sites/mars-pathfinder.json",
+    "at": "site_name",
+    "old": "Ares Vallis",
+    "new": "أريس فاليس"
+  },
+  {
+    "rel": "mars-sites/opportunity.json",
+    "at": "site_name",
+    "old": "Meridiani Planum",
+    "new": "هضبة ميريدياني"
+  },
+  {
+    "rel": "mars-sites/schiaparelli.json",
+    "at": "site_name",
+    "old": "Meridiani Planum",
+    "new": "هضبة ميريدياني"
+  },
+  {
+    "rel": "mars-sites/spirit.json",
+    "at": "site_name",
+    "old": "Gusev Crater",
+    "new": "فوهة غوسيف"
+  },
+  {
+    "rel": "mars-sites/viking1-lander.json",
+    "at": "site_name",
+    "old": "Chryse Planitia",
+    "new": "سهل كريس"
+  },
+  {
+    "rel": "mars-sites/viking2-lander.json",
+    "at": "site_name",
+    "old": "Utopia Planitia",
+    "new": "سهل يوتوبيا"
+  },
+  {
+    "rel": "mars-sites/zhurong.json",
+    "at": "site_name",
+    "old": "Utopia Planitia",
+    "new": "سهل يوتوبيا"
+  },
+  {
+    "rel": "moon-sites/change5.json",
+    "at": "site_name",
+    "old": "Mons Rümker (Oceanus Procellarum)",
+    "new": "جبل رومكر (محيط العواصف)"
+  },
+  {
+    "rel": "moon-sites/luna21.json",
+    "at": "site_name",
+    "old": "Le Monnier Crater (Mare Serenitatis)",
+    "new": "فوهة لو مونييه (بحر الصفاء)"
+  },
+  {
+    "rel": "moon-sites/change6.json",
+    "at": "site_name",
+    "old": "فوهة Apollo (الوجه البعيد)",
+    "new": "فوهة أبولو (الجانب البعيد)"
+  },
+  {
+    "rel": "moon-sites/slim.json",
+    "at": "site_name",
+    "old": "بالقرب من حفرة Shioli",
+    "new": "قرب فوهة شيولي"
+  },
+  {
+    "rel": "mars-sites/curiosity.json",
+    "at": "site_name",
+    "old": "Gale Crater (Aeolis Mons / Sharp)",
+    "new": "فوهة غيل (جبل أيوليس / جبل شارب)"
+  },
+  {
+    "rel": "mars-sites/exomars-rosalind-franklin.json",
+    "at": "site_name",
+    "old": "Oxia Planum (هدف)",
+    "new": "هضبة أوكسيا (الهدف)"
+  },
+  {
+    "rel": "mars-sites/perseverance.json",
+    "at": "site_name",
+    "old": "أرضية فوهة Jezero",
+    "new": "قاع فوهة جيزيرو"
+  },
+  {
+    "rel": "mars-sites/mars2.json",
+    "at": "site_name",
+    "old": "تقريباً 45°S، 313°E (Hellas Planitia)",
+    "new": "تقريباً 45°S، 313°E (سهل هيلاس)"
+  },
+  {
+    "rel": "mars-sites/mars3.json",
+    "at": "site_name",
+    "old": "حوالي 45°S، 158°W (Ptolemaeus Crater)",
+    "new": "حوالي 45°S، 158°W (فوهة بطليموس)"
+  },
+  {
+    "rel": "mars-sites/mars6.json",
+    "at": "site_name",
+    "old": "~23.9° جنوبًا، 19.4° غربًا (Margaritifer Sinus)",
+    "new": "~23.9° جنوبًا، 19.4° غربًا (مارغاريتيفر سينوس)"
+  },
+  {
+    "rel": "mars-sites/phoenix.json",
+    "at": "site_name",
+    "old": "Vastitas Borealis (سهل قطبي شمالي)",
+    "new": "فاستيتاس بورياليس (سهل قطبي شمالي)"
+  }
+]

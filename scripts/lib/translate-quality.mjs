@@ -296,6 +296,38 @@ export function knownNamesIn(src) {
   return hits;
 }
 
+let GLOSSARY;
+/** [english, {locale: native}] for every term in the native-terms glossary. */
+function glossary() {
+  if (GLOSSARY) return GLOSSARY;
+  const p = path.resolve(import.meta.dirname, '../i18n-tools/native-terms.json');
+  const g = fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf8')) : {};
+  GLOSSARY = Object.entries(g)
+    .filter(([k, v]) => !k.startsWith('_') && k !== 'sources' && v && typeof v === 'object')
+    .flatMap(([, cls]) => Object.entries(cls));
+  return GLOSSARY;
+}
+
+/**
+ * English glossary terms in `src` whose native form for `locale` appears in `out`.
+ * Each word of the native form must appear; words over 4 letters may lose their last
+ * two letters to inflection (кратер Аполлон / кратера Аполлона).
+ */
+export function glossaryRendered(locale, src, out) {
+  if (!src || !out) return [];
+  const o = out.toLowerCase();
+  return glossary()
+    .filter(([en, forms]) => {
+      const nat = forms[locale];
+      if (!nat || !src.includes(en)) return false;
+      return nat
+        .toLowerCase()
+        .split(/\s+/)
+        .every((w) => o.includes(w.length > 4 ? w.slice(0, -2) : w));
+    })
+    .map(([en]) => en);
+}
+
 /**
  * Problems with a translation `out` of English `src` into `locale` (empty list
  * = acceptable). `src` may be '' when the caller doesn't have it (the client
@@ -313,7 +345,14 @@ export function problems(locale, src, out) {
   // locale only — its native form (Союз МС-24 in ru, 嫦娥五号 in zh-CN).
   // A part of a longer name that was kept counts as kept ("LC-41" inside
   // "Plesetsk LC-41/1" → "Плесецк, площадка 41/1").
-  const kept = names.filter((n) => nameRendered(locale, n, out, apos));
+  // A name inside a glossary term rendered natively counts as kept too ("Apollo" in
+  // "Apollo Crater" → "Кратер Аполлон"): science terms, places and people are native
+  // in every locale (scripts/i18n-tools/native-terms.json).
+  const terms = glossaryRendered(locale, src, out);
+  const kept = [
+    ...names.filter((n) => nameRendered(locale, n, out, apos)),
+    ...terms.flatMap((t) => names.filter((n) => t.includes(n))),
+  ];
   const lost = names.filter((n) => !kept.some((k) => k.includes(n)));
   if (lost.length) p.push(`names changed or missing: ${lost.slice(0, 5).join(', ')}`);
   // Names from the data's own name list must survive verbatim (NAME_POLICY), in
@@ -325,7 +364,10 @@ export function problems(locale, src, out) {
   // Hyphen and space are the same here: German writes "Atlas-V-Start" for an Atlas V launch.
   const norm = (x) => apos(x).replace(/[-\s]+/g, ' ');
   const translated = knownNamesIn(src).filter(
-    (n) => !names.includes(n) && !nameRendered(locale, n, out, norm),
+    (n) =>
+      !names.includes(n) &&
+      !nameRendered(locale, n, out, norm) &&
+      !terms.some((t) => t.includes(n) || n.includes(t)),
   );
 
   if (translated.length)

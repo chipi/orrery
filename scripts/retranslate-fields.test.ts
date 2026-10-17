@@ -77,6 +77,15 @@ describe('name guard (NAME_POLICY)', () => {
       expect.arrayContaining([expect.stringMatching(/vis, viva/)]),
     );
   });
+  it('accepts a glossary term rendered natively, inflected, but not a dropped one', () => {
+    expect(problems('ru', 'Apollo Crater (far side)', 'Кратер Аполлон (обратная сторона)')).toEqual(
+      [],
+    );
+    expect(problems('ru', 'near Apollo Crater', 'возле кратера Аполлона')).toEqual([]);
+    expect(problems('ru', 'Apollo Crater (far side)', 'Кратер (обратная сторона)')).toEqual(
+      expect.arrayContaining([expect.stringMatching(/Apollo/)]),
+    );
+  });
   it('counts a designation as kept when the longer name holding it is rendered natively', () => {
     expect(problems('ru', 'Plesetsk LC-41/1', 'Плесецк, площадка 41/1')).toEqual([]);
     expect(problems('ru', 'Plesetsk LC-41/1', 'Плесецк')).toEqual(

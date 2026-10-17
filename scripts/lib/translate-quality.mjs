@@ -199,6 +199,21 @@ const GENERIC_WORDS = new Set(
 );
 const GENERIC_TAIL =
   /(\s+(Space|Station|Telescope|Observatory|Constellation|Belt|Orbiter|Lander|Rover|Program|Programme|Project|Mission|Probe|Satellites?|Spacecraft|Module|Laboratory|Lab|Lunar|X-ray|Excursion|Command|Service))+$/;
+// Entries in the data's name list that are descriptions or ordinary words in use, not
+// names a translation must keep: they are legitimately translated (2026-10-17 review).
+const GAZETTEER_SKIP = new Set([
+  'Lunar Roving Vehicle',
+  'Quest',
+  'Tranquility',
+  'Starship Mars Crew',
+  'Shenzhou IVA Suit',
+  'SpaceX IVA Suit',
+  'Boeing Blue',
+  'Apollo-Soyuz Test',
+  'Cygnus Standard',
+  'Cygnus Enhanced',
+  'Hope',
+]);
 let GAZETTEER = null;
 /** Every entity name the data knows: en-US `name` fields of missions, spacecraft,
  *  rockets, sites, satellites, stars and modules (the part before " (" / " — "),
@@ -273,7 +288,7 @@ export function knownNamesIn(src) {
   if (!src) return [];
   const hits = [];
   for (const n of [...gazetteer()].sort((a, b) => b.length - a.length)) {
-    if (!src.includes(n) || hits.some((h) => h.includes(n))) continue;
+    if (GAZETTEER_SKIP.has(n) || !src.includes(n) || hits.some((h) => h.includes(n))) continue;
     const esc = n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     if (new RegExp(`(^|[^A-Za-z0-9])${esc}(?![A-Za-z0-9])`).test(src)) hits.push(n);
   }
@@ -301,9 +316,12 @@ export function problems(locale, src, out) {
   // check can't see. A guessed candidate list flagged 8–20% of each locale (Observatory,
   // Cold War, Orbit, DNA), so only known names count. Substring match, so inflections
   // that keep the name intact (German "Shepards", Serbian "NASA-ин") pass.
+  // Hyphen and space are the same here: German writes "Atlas-V-Start" for an Atlas V launch.
+  const norm = (x) => apos(x).replace(/[-\s]+/g, ' ');
   const translated = knownNamesIn(src).filter(
-    (n) => !names.includes(n) && !apos(out).includes(apos(n)),
+    (n) => !names.includes(n) && !norm(out).includes(norm(n)),
   );
+
   if (translated.length)
     p.push(
       `names translated or missing (keep exactly as in English): ${translated.slice(0, 6).join(', ')}`,

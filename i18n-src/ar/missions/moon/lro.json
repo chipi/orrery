@@ -7,6 +7,6 @@
     { "met": 0, "label": "الإطلاق", "note": "Atlas V 401 من Cape Canaveral SLC-41 (حمل LCROSS كحمولة ثانوية).", "type": "nominal" },
     { "met": 5, "label": "MOI", "note": "إدخال مدار قمري 2009-06-23.", "type": "nominal" },
     { "met": 90, "label": "المهمة الأساسية", "note": "تبدأ سنة استكشاف (برنامج NASA).", "type": "info" },
-    { "met": 455, "label": "علم موسّع", "note": "المهمة مُمددة لمرحلة علم متعددة السنوات تحت SMD لناسا.", "type": "info" }
+    { "met": 455, "label": "علم موسّع", "note": "المهمة مُمددة لمرحلة علم متعددة السنوات تحت SMD لNASA.", "type": "info" }
   ]
 }

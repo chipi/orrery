@@ -10,7 +10,7 @@
     { "met": 30, "label": "TCM-1", "note": "第一次軌道途中修正。", "type": "nominal" },
     { "met": 213, "label": "MARS LANDING", "note": "火星表面への動力下降 — パラシュートもエアバッグもスカイクレーンもなし。", "type": "info" },
     { "met": 700, "label": "RETURN PROP COMPLETE", "note": "ISRU プラントが帰還に十分なメタンと LOX を製造完了。", "type": "info" },
-    { "met": 750, "label": "TEI BURN", "note": "地球注入 — スターシーズが火星表面から再上昇し地球帰還軌道へ。", "type": "nominal" },
+    { "met": 750, "label": "TEI BURN", "note": "地球注入 — Starshipが火星表面から再上昇し地球帰還軌道へ。", "type": "nominal" },
     { "met": 950, "label": "EARTH ARRIVAL", "note": "大気圏再突入。ミッション完了。", "type": "info" }
   ]
 }

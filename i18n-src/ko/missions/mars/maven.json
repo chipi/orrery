@@ -4,7 +4,7 @@
   "first": "화성이 대기를 어떻게 잃었는지 연구하기 위해 태어난 최초 임무",
   "description": "MAVEN — Mars Atmosphere and Volatile Evolution — '화성의 대기는 어디로 갔을까?'라는 질문에 답합니다. 타원형 궤도가 상층 대기 깊숙이 들어가 태양풍이 이온과 중성 원자를 벗겨내갈 때를 포착합니다. 발견: 화성은 매초 약 100g의 대기를 우주로 잃고 있으며, 수십억 년에 걸쳐 이는 사라진 기후를 설명하기에 충분합니다. 우주선은 또한 Curiosity와 Perseverance를 포함한 표면 자산들을 위한 중요한 중계 역할을 합니다.",
   "events": [
-    { "met": 0, "label": "발사", "note": "Cape Canaveral SLC-41에서 Atlas V 401.", "type": "nominal" },
+    { "met": 0, "label": "발사", "note": "케이프 커내버럴 SLC-41에서 Atlas V 401.", "type": "nominal" },
     { "met": 7, "label": "TCM-1", "note": "첫 궤도 수정.", "type": "nominal" },
     { "met": 308, "label": "화성 궤도 삽입", "note": "33분간 주 엔진 연소로 MAVEN을 35시간 타원 과학 궤도에 포획.", "type": "nominal" },
     { "met": 350, "label": "첫 과학 관측", "note": "대기 샘플링 ‘딥 딥’ 캠페인 시작 — 근점 고도 ~125 km.", "type": "info" }

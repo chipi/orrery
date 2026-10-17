@@ -8,7 +8,7 @@
     {
       "met": 0,
       "label": "发射",
-      "note": "Saturn V (AS-507)从Kennedy Space Center LC-39A于1969-11-14 16:22 UTC发射。闪电两次击中火箭堆栈（T+36秒、T+52秒）导致燃料电池离线；通过\"SCE to AUX\"指令恢复。",
+      "note": "Saturn V (AS-507)从肯尼迪航天中心 LC-39A于1969-11-14 16:22 UTC发射。闪电两次击中火箭堆栈（T+36秒、T+52秒）导致燃料电池离线；通过\"SCE to AUX\"指令恢复。",
       "type": "warning"
     },
     {
@@ -26,7 +26,7 @@
     {
       "met": 5.43,
       "label": "着陆",
-      "note": "Intrepid 降落在 Oceanus Procellarum（Statio Cognitum）1969-11-19 06:54 UTC — 距离 Surveyor 3 163 米以内（迄今最精准的月球着陆）。",
+      "note": "Intrepid 降落在风暴洋（Statio Cognitum）1969-11-19 06:54 UTC — 距离 Surveyor 3 163 米以内（迄今最精准的月球着陆）。",
       "type": "nominal"
     },
     {

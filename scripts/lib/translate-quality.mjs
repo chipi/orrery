@@ -363,7 +363,7 @@ export function problems(locale, src, out) {
   // generic word or part of a glossary term rendered natively ("Байконур, площадка 200").
   const GENERIC = /^(Site|Launch|Complex|Pad|Orbital|Space|Center|Centre|Station)$/;
   const builtKept = (n) => {
-    const words = n.split(/\s+/);
+    const words = n.split(/[\s–]+/);
     const codes = words.filter((w) => /\d/.test(w));
     return (
       codes.length > 0 &&

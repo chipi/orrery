@@ -4,7 +4,7 @@
   "first": "유럽의 첫 행성간 임무; NASA가 아닌 화성 궤도선 중 최장 운용",
   "description": "ESA의 지구 이외의 행성에 보낸 첫 번째 임무입니다. 이 궤도선은 화성의 대기에 대한 가장 오랜 연속 기록을 생산했으며, 얼음 물 매장량, 메탄 기둥, 그리고 행성의 3차원 날씨를 지도화했습니다. 그것이 운반한 영국 제작 착륙선 Beagle 2는 표면에 도달했지만 태양 전지판을 완전히 배포하지 못했습니다. 2004년에 손실된 것으로 선언되었으나, 2015년에 NASA의 Mars Reconnaissance Orbiter에 의해 완전한 상태로 발견되었습니다. 이 궤도선은 현재 3번째 십년에 걸친 운영 중입니다.",
   "events": [
-    { "met": 0, "label": "발사", "note": "Baikonur에서 발사된 Soyuz-FG / Fregat", "type": "nominal" },
+    { "met": 0, "label": "발사", "note": "바이코누르에서 발사된 Soyuz-FG / Fregat", "type": "nominal" },
     { "met": 7, "label": "TCM-1", "note": "첫 경로 중간 수정.", "type": "nominal" },
     { "met": 200, "label": "비글 2 분리", "note": "착륙선이 궤도선에서 분리해 독립 하강.", "type": "nominal" },
     { "met": 206, "label": "화성 궤도 삽입", "note": "37분간 주 엔진 연소로 2003년 성탄절 화성 궤도 포획.", "type": "nominal" },

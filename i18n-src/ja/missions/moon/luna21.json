@@ -4,7 +4,7 @@
   "first": "2番目のソビエト月面ローバー;40年以上にわたり最長の地外走行距離(~39 km)を記録",
   "description": "Luna 21はLunokhod 2(ソビエト連邦の2番目の有人操縦月面ローバー)をSerenitatis海の南端にあるLe Monnier孔径に1973年1月に配達した。このローバーはクリミアの管制室から5人のチームにより操縦され、4つの月昼にわたり約39 km走行した。これは2014年にNASAのOpportunityローバーが火星でこの記録を上回るまで、40年以上にわたり最長の地外走行距離となっていた。Lunokhod 2は太陽電池パネルへの塵の付着により運用が終了する前に、80,000フレームのテレビ映像と86枚のパノラマ画像を返送した。",
   "events": [
-    { "met": 0, "label": "打ち上げ", "note": "Baikonur から Proton-K で打ち上げ、1973-01-08。", "type": "nominal" },
+    { "met": 0, "label": "打ち上げ", "note": "バイコヌールから Proton-K で打ち上げ、1973-01-08。", "type": "nominal" },
     { "met": 0.005, "label": "TLI", "note": "Blok-D上段機による月遷移軌道投入。", "type": "nominal" },
     { "met": 4, "label": "TCM", "note": "航行中の中途軌道修正。", "type": "info" },
     { "met": 4.5, "label": "着陸", "note": "Le Monnier孔径への軟着陸(1973年1月15日)。Lunokhod 2は数時間後にランプを降りて展開した。", "type": "nominal" },

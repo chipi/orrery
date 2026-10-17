@@ -6,7 +6,7 @@
   "events": [
     { "met": 0, "label": "发射", "note": "来自拜科努尔的质子-K运载火箭与Blok-D上面级。", "type": "nominal" },
     { "met": 5, "label": "MOI", "note": "月球轨道插入；下降倾角的轨道修正。", "type": "nominal" },
-    { "met": 7, "label": "触地", "note": "1970-11-17 在 Mare Imbrium 软着陆。", "type": "nominal" },
+    { "met": 7, "label": "触地", "note": "1970-11-17 在雨海软着陆。", "type": "nominal" },
     { "met": 7.005, "label": "巡视器驶下", "note": "Lunokhod 1 沿坡道滚下进入月球表面。", "type": "info" },
     { "met": 329, "label": "最后一次通信", "note": "最后一次指令通话于 1971-09-14；月球车在寒冷的月夜中保存完好。", "type": "info" }
   ]

@@ -89,6 +89,8 @@ describe('name guard (NAME_POLICY)', () => {
   it('accepts a launch site written with its native place name and the pad code kept', () => {
     expect(problems('ru', 'Cape Canaveral SLC-40', 'Мыс Канаверал, SLC-40')).toEqual([]);
     expect(problems('ru', 'Baikonur Site 200', 'Байконур, площадка 200')).toEqual([]);
+    expect(problems('ja', 'the Sun–Earth L2 point', '太陽–地球 L2 点')).toEqual([]);
+    expect(problems('ru', 'Tanegashima Yoshinobu LP-1', 'Танегасима, Ёсинобу LP-1')).toEqual([]);
     expect(problems('ru', 'Baikonur Site 200', 'Байконур, площадка 20')).toEqual(
       expect.arrayContaining([expect.stringMatching(/Baikonur Site 200/)]),
     );

@@ -4,7 +4,7 @@
   "first": "首个尝试火星登陆的完全可重复使用运载系统",
   "description": "Starship火星架构的无人示范任务：在Super Heavy上发射，从油箱变体在近地轨道补充燃料，然后进行火星转移注入和完全加满燃料的Starship动力下降到火星表面。SpaceX宣称的目标是2026-2027年发射窗口；但工程现实（Starship仍在进行轨道飞行可靠性测试，轨道补燃还未得到演证）使得2028年或更晚时间更为可能。如果成功，它将颠覆火星载荷经济学——从数千公斤增加到每次登陆一百吨。",
   "events": [
-    { "met": 0, "label": "发射", "note": "来自Boca Chica或Cape Canaveral的Starship——首次超重型行星际发射。", "type": "nominal" },
+    { "met": 0, "label": "发射", "note": "来自Boca Chica或卡纳维拉尔角的Starship——首次超重型行星际发射。", "type": "nominal" },
     { "met": 1, "label": "在轨加注", "note": "多次飞行中在近地轨道进行油箱交会和推进剂转移。", "type": "nominal" },
     { "met": 2, "label": "TMI 点火", "note": "从完全加满燃料的近地轨道状态进行火星转移注入。", "type": "nominal" },
     { "met": 274, "label": "火星着陆", "note": "动力下降到火星表面——无降落伞、无气囊、无空中吊车。", "type": "info" }

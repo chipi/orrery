@@ -4,7 +4,7 @@
   "first": "NASA·국방부 공동 달 임무; 달 극 수얼음 첫 실마리",
   "description": "전략방위구상(Strategic Defense Initiative) 기술 시연용으로 설계된 Clementine은 10주간 달 궤도를 돌면서 달의 첫 번째 체계적인 전 지구 지형도 및 다중분광지도를 반환했습니다. 달의 남극에서의 쌍방향 레이더 측정은 물 얼음의 첫 번째 흥미로운 증거를 제시했으며, 수년 후 Lunar Prospector와 Chandrayaan-1에 의해 확인되었습니다. 소행성 Geographos의 근접 비행을 목표로 한 후속 임무는 추진기의 오작동으로 우주선의 추진제가 소진되면서 실패했습니다.",
   "events": [
-    { "met": 0, "label": "발사", "note": "Vandenberg AFB에서 Titan II G.", "type": "nominal" },
+    { "met": 0, "label": "발사", "note": "반덴버그 공군기지에서 Titan II G.", "type": "nominal" },
     { "met": 25, "label": "MOI", "note": "달 궤도 삽입 1994-02-19.", "type": "nominal" },
     { "met": 30, "label": "매핑 시작", "note": "체계적 다중 스펙트럼·지형 매핑 시작.", "type": "info" },
     { "met": 95, "label": "출발", "note": "Geographos 소행성 근접 비행을 위해 달 궤도 이탈.", "type": "nominal" },

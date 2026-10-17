@@ -2,14 +2,14 @@
   "name": "Beresheet",
   "type": "PRIVATE LANDER · CRASHED",
   "first": "민간 자금으로 달에 도달한 첫 번째 미션; 이스라엘의 첫 번째 달 미션",
-  "description": "SpaceIL의 Beresheet(히브리어: '태초에')는 2019년 2월 Falcon 9의 공동 이용 승객으로 발사되었습니다. 직접적인 달 방향 투입 대신, 소형 착륙선은 주차 궤도에서 달까지 오르기 위해 수주간의 근지점 상승 페이징 번턴을 수행했습니다. 저예산 미션을 위해 개척된 연료 절감 궤적입니다. 2019년 4월 4일 달 궤도 진입에 성공한 후, 강하 중 관성 측정 장치 리셋으로 인해 주 엔진이 차단되었습니다. Beresheet는 Mare Serenitatis에 충돌했습니다. SpaceIL은 며칠 내에 후속 미션(Beresheet 2)을 약속했습니다.",
+  "description": "SpaceIL의 Beresheet(히브리어: '태초에')는 2019년 2월 Falcon 9의 공동 이용 승객으로 발사되었습니다. 직접적인 달 방향 투입 대신, 소형 착륙선은 주차 궤도에서 달까지 오르기 위해 수주간의 근지점 상승 페이징 번턴을 수행했습니다. 저예산 미션을 위해 개척된 연료 절감 궤적입니다. 2019년 4월 4일 달 궤도 진입에 성공한 후, 강하 중 관성 측정 장치 리셋으로 인해 주 엔진이 차단되었습니다. Beresheet는 평온의 바다에 충돌했습니다. SpaceIL은 며칠 내에 후속 미션(Beresheet 2)을 약속했습니다.",
   "events": [
-    { "met": 0, "label": "발사", "note": "Cape Canaveral에서의 Falcon 9 공동 이용 2019-02-22.", "type": "nominal" },
+    { "met": 0, "label": "발사", "note": "케이프 커내버럴에서의 Falcon 9 공동 이용 2019-02-22.", "type": "nominal" },
     { "met": 0.01, "label": "위상 조정 분사", "note": "지구 저궤도에서 달 접근까지 올라가기 위한 7번의 근지점 상승 중 첫 번째입니다.", "type": "info" },
     { "met": 10, "label": "TCM 1", "note": "다중 궤도 상승 중 궤적 수정.", "type": "info" },
     { "met": 20, "label": "TCM 2", "note": "두 번째 궤적 수정. 원지점이 달 포획 거리에 접근 중입니다.", "type": "info" },
     { "met": 41, "label": "달 접근", "note": "최종 달 방향 번턴 — Beresheet이 달 직진 궤적 위에 있습니다.", "type": "nominal" },
     { "met": 48, "label": "달 궤도 진입", "note": "달의 타원형 궤도로 포획 2019-04-04.", "type": "nominal" },
-    { "met": 48.01, "label": "하강 중 이상", "note": "동력 강하 중 관성 측정 장치 리셋 → 엔진 차단 → Mare Serenitatis 충돌 2019-04-11.", "type": "warning" }
+    { "met": 48.01, "label": "하강 중 이상", "note": "동력 강하 중 관성 측정 장치 리셋 → 엔진 차단 → 평온의 바다 충돌 2019-04-11.", "type": "warning" }
   ]
 }

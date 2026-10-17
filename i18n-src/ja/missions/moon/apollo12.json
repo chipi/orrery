@@ -8,7 +8,7 @@
     {
       "met": 0,
       "label": "打ち上げ",
-      "note": "Saturn V（AS-507）Kennedy Space Center LC-39Aから1969年11月14日16:22 UTC。スタック上の2つの落雷（T+36秒、T+52秒）が燃料電池をオフラインにした。「SCE to AUX」呼び出しで復旧。",
+      "note": "Saturn V（AS-507）ケネディ宇宙センター LC-39Aから1969年11月14日16:22 UTC。スタック上の2つの落雷（T+36秒、T+52秒）が燃料電池をオフラインにした。「SCE to AUX」呼び出しで復旧。",
       "type": "warning"
     },
     {
@@ -26,7 +26,7 @@
     {
       "met": 5.43,
       "label": "着陸",
-      "note": "Intrepid が Oceanus Procellarum（Statio Cognitum）に着陸 1969-11-19 06:54 UTC — Surveyor 3 の 163 メートル以内（これまでで最も正確な月面着陸）。",
+      "note": "Intrepid が嵐の大洋（Statio Cognitum）に着陸 1969-11-19 06:54 UTC — Surveyor 3 の 163 メートル以内（これまでで最も正確な月面着陸）。",
       "type": "nominal"
     },
     {

@@ -4,7 +4,7 @@
   "first": "화성 착륙을 시도하는 최초 완전 재사용 발사 시스템",
   "description": "Starship 화성 아키텍처의 무인 시연: Super Heavy에서 발사하고, 탱커 변형체로부터 저지구궤도(LEO)에서 재급유하며, 완전히 연료를 채운 Starship의 화성 방향 주입과 화성 표면으로의 동력 강하. SpaceX의 공표된 목표는 2026-2027 발사 기간이지만, 공학적 현실(Starship이 여전히 궤도 비행 신뢰성을 개선 중이고 궤도상 재급유는 아직 입증되지 않았음)은 2028년 이후가 더 가능성 높다. 만약 성공한다면, 이는 화성 탑재물 경제를 역전시킬 것이다 — 수천 킬로그램에서 착륙당 100톤으로.",
   "events": [
-    { "met": 0, "label": "발사", "note": "보카치카 또는 Cape Canaveral에서 Starship — 최초 초대형 행성간 발사.", "type": "nominal" },
+    { "met": 0, "label": "발사", "note": "보카치카 또는 케이프 커내버럴에서 Starship — 최초 초대형 행성간 발사.", "type": "nominal" },
     { "met": 1, "label": "궤도 급유", "note": "LEO에서 탱커 접근 및 여러 번 비행에 걸친 추진제 이송.", "type": "nominal" },
     { "met": 2, "label": "TMI 연소", "note": "완전 급유된 LEO 상태에서 화성 이행 주입.", "type": "nominal" },
     { "met": 274, "label": "화성 착륙", "note": "화성 표면 동력 하강 — 낙하산·에어백·스카이크레인 없음.", "type": "info" }

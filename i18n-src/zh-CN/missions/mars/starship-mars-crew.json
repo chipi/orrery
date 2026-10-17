@@ -4,7 +4,7 @@
   "first": "首个提议的载人火星往返任务（SpaceX 方案）",
   "description": "SpaceX 的长期载人火星建筑方案，如 Elon Musk 在 2016 年、2017 年和 2024 年 IAC 演讲中所述。Starship 从地球起飞时在近地轨道上完全加注燃料，需要通过一支加油油轮飞队进行多次补给，执行火星转移注入，并将约 10 名乘员及货物和 ISRU 设备送达火星表面。返回阶段推进剂（甲烷+液态氧）通过 Sabatier 工艺利用火星大气中的二氧化碳和地下冰储备在火星上制造，使同一 Starship 能够再次起飞、执行地球转移注入并将乘员送回。往返时间取决于发射窗口和地表停留时间；此处所示的示意时间表约为 2.5 年（门到门），包括 213 天的往程、约 500 天的地表停留以及在下一个有利窗口返回。该建筑方案具有概念性——具体日期和参数在 Starship 成熟度提高和 ISRU 验证完成后可能会进行重大修订。",
   "events": [
-    { "met": 0, "label": "STARSHIP 发射", "note": "载人 Starship 从 Boca Chica 或 Cape Canaveral 起飞。", "type": "nominal" },
+    { "met": 0, "label": "STARSHIP 发射", "note": "载人 Starship 从 Boca Chica 或卡纳维拉尔角起飞。", "type": "nominal" },
     { "met": 1, "label": "在轨加注", "note": "油轮舰队在近地轨道进行多次汇合和推进剂转移。", "type": "nominal" },
     { "met": 2, "label": "TMI 点火", "note": "从完全加注燃料的近地轨道状态执行火星转移注入。", "type": "nominal" },
     { "met": 30, "label": "TCM-1", "note": "第一次中途修正。", "type": "nominal" },

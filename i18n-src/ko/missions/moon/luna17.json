@@ -6,7 +6,7 @@
   "events": [
     { "met": 0, "label": "발사", "note": "바이코누르에서 Proton-K와 Blok-D 상단단.", "type": "nominal" },
     { "met": 5, "label": "MOI", "note": "달 궤도 삽입; 하강 경사 수정.", "type": "nominal" },
-    { "met": 7, "label": "착지", "note": "Mare Imbrium 연착륙 1970-11-17.", "type": "nominal" },
+    { "met": 7, "label": "착지", "note": "비의 바다 연착륙 1970-11-17.", "type": "nominal" },
     { "met": 7.005, "label": "로버 전개", "note": "Lunokhod 1이 램프를 내려 달 표면으로.", "type": "info" },
     { "met": 329, "label": "최종 교신", "note": "마지막 명령 세션 1971-09-14; 로버는 한랭 달밤에 보존.", "type": "info" }
   ]

@@ -4,7 +4,7 @@
   "first": "欧州初の惑星間ミッション；NASA 以外で最長寿命の火星軌道機",
   "description": "ESA初の地球以外の惑星へのミッション。軌道機は火星の大気の最長連続記録をつくり、水氷堆積、メタン噴流、三次元の気象をマッピングしてきた。搭載した英国製着陸機Beagle 2は表面に着いたが太陽電池が完全展開せず — 2004年に行方不明宣言、2015年にNASAの火星偵察軌道機が無傷で発見。軌道機は運用三十年代目に入っている。",
   "events": [
-    { "met": 0, "label": "打ち上げ", "note": "Soyuz-FG / Fregat from Baikonur より", "type": "nominal" },
+    { "met": 0, "label": "打ち上げ", "note": "Soyuz-FG / Fregat from バイコヌールより", "type": "nominal" },
     { "met": 7, "label": "TCM-1", "note": "第一次軌道途中修正。", "type": "nominal" },
     { "met": 200, "label": "BEAGLE 2 分離", "note": "着陸機が軌道機から分離し独立下降。", "type": "nominal" },
     { "met": 206, "label": "火星周回軌道投入", "note": "二〇〇三年クリスマス、三十七分間の主エンジン燃焼で軌道機が火星軌道へ捕捉。", "type": "nominal" },

@@ -37,7 +37,8 @@
  * never fail the run — they're surfaced, not gated.
  */
 import { chromium } from '@playwright/test';
-import { writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 
 const BASE = (process.env.VALIDATE_URL ?? 'https://www.orrerylearn.com').replace(/\/$/, '');
 const TIER = process.env.VALIDATE_TIER ?? 'prod';
@@ -286,6 +287,27 @@ suite('pwa');
     record('adapter-static env module served (/_app/env.js)', false);
   }
   await p.close();
+}
+
+// The tracker is SRI-pinned (#601). The validator opts out of analytics, so it
+// never loads the tracker itself: compare the live script's hash with the pin
+// instead. A Umami upgrade changes the hash, the browser then refuses the
+// script, and analytics goes silent with no error anywhere else.
+{
+  const src = readFileSync(new URL('../src/lib/analytics.ts', import.meta.url), 'utf8');
+  const pinned = src.match(/UMAMI_SCRIPT_INTEGRITY =\s*'(sha384-[^']+)'/)?.[1];
+  const host = process.env.VALIDATE_UMAMI_HOST || 'https://analytics.orrerylearn.com';
+  try {
+    const body = Buffer.from(await (await fetch(`${host}/script.js`)).arrayBuffer());
+    const live = `sha384-${createHash('sha384').update(body).digest('base64')}`;
+    record(
+      'analytics: tracker matches the pinned SRI hash',
+      Boolean(pinned) && live === pinned,
+      live === pinned ? '' : `live ${live} ≠ pinned ${pinned} — update UMAMI_SCRIPT_INTEGRITY`,
+    );
+  } catch (e) {
+    record('analytics: tracker matches the pinned SRI hash', false, e.message.slice(0, 60));
+  }
 }
 
 // SUITE 3 — route health (top-level)

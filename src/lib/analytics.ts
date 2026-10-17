@@ -219,6 +219,15 @@ function analyticsEnabled(): boolean {
   return !!umamiHost() && !!umamiWebsiteId();
 }
 
+/** sha384 of Umami's `/script.js` as served on 2026-10-17 by analytics.orrerylearn.com
+ *  and umami.tail6d0ed4.ts.net (one Umami instance; Last-Modified 2026-08-20).
+ *  A Umami upgrade changes it and the tracker stops loading: validate-prod's
+ *  "analytics: tracker matches the pinned SRI hash" check fails, and this value
+ *  must be updated to the new script's hash
+ *  (`curl -s <host>/script.js | openssl dgst -sha384 -binary | openssl base64 -A`). */
+export const UMAMI_SCRIPT_INTEGRITY =
+  'sha384-FeSgFWhRpNmUWqmtRLZpDSRTuxgovbVqlyM0OaJpq2IanhF2u3xjYziXsyXR9Kg/';
+
 /** Inject the self-hosted Umami `<script>` exactly once, only when enabled.
  *  Idempotent. Call from the root +layout's onMount.
  *
@@ -241,6 +250,10 @@ export function initAnalytics(): void {
   // (/explore?id=…, the Lab's ?nb= notebook state) that /privacy's
   // coarse-grained description doesn't cover; no dashboard reads them (#601).
   s.dataset.excludeSearch = 'true';
+  // SRI (#601): the browser refuses a tracker that isn't byte-for-byte the one we
+  // pinned. Umami serves `access-control-allow-origin: *`, so CORS mode works.
+  s.setAttribute('integrity', UMAMI_SCRIPT_INTEGRITY);
+  s.setAttribute('crossorigin', 'anonymous');
   s.setAttribute('data-umami-installed', '1');
   // Flush anything tracked between this call and the deferred script actually
   // executing. See `pendingEvents` — without this, every event fired in the

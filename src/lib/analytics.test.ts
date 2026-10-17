@@ -146,6 +146,10 @@ describe('analytics tracking helpers', () => {
     expect(scripts[0].getAttribute('data-website-id')).toBe(UMAMI_ID);
     // Pageviews record the path only: no ?id= / ?nb= selections (#601).
     expect(scripts[0].getAttribute('data-exclude-search')).toBe('true');
+    // SRI-pinned, CORS mode (#601).
+    expect(scripts[0].getAttribute('integrity')).toBe(A.UMAMI_SCRIPT_INTEGRITY);
+    expect(A.UMAMI_SCRIPT_INTEGRITY).toMatch(/^sha384-[A-Za-z0-9+/]{64}$/);
+    expect(scripts[0].getAttribute('crossorigin')).toBe('anonymous');
   });
 });
 

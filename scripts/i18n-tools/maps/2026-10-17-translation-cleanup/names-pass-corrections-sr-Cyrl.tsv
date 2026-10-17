@@ -1,0 +1,130 @@
+# sr-Cyrl hand corrections for the names pass: case of inserted people, bodies and features,
+# possessive adjectives (Леоновљев, Корољовљев, Хаумеин), English possessives left in the
+# source ("Alan Shepard's"), Latin-script names in the touched strings, doubled glosses
+belts/kuiper	од стране Џерард Кајпер као	од стране Џерарда Кајпера као
+culture-doors/vega-contact	*Contact* Carl-а Сејгана	*Contact* Карла Сејгана
+culture-doors/voyager-golden-record	до Chuck-а Berry-ја	до Чака Берија
+essays/delta-v	1903. године Константина Циолковског, самоуки	1903. године Константин Циолковски, самоуки
+essays/new-propulsion	оју је Hermann Oberth описао 1923.	оју је Херман Оберт описао 1923.
+fleet/cargo-spacecraft/atv	до Georges-а Lemaître-а	до Жоржа Леметра
+programs/esa-human	до Georges-а Lemaître-а	до Жоржа Леметра
+fleet/crewed-spacecraft/challenger	укључујући Сали Рајд из њене пионирске мисије STS-7.	укључујући учитељицу Кристу Маколиф.
+fleet/crewed-spacecraft/challenger	Дана 28. јануар 1986.	Дана 28. јануара 1986.
+fleet/crewed-spacecraft/enterprise	Фред Хејз и Gordon Fullerton	Фред Хејз и Гордон Фулертон
+fleet/crewed-spacecraft/soyuz-7k-ok	живот Vladimir-а Комарова	живот Владимира Комарова
+fleet/crewed-spacecraft/starliner	Вилмор и Williams вратили	Вилмор и Вилијамс вратили
+fleet/launch-site/lc-14	(Glenn, Carpenter, Шира, Cooper; 1962-1963)	(Глен, Карпентер, Шира, Купер; 1962-1963)
+fleet/launch-site/lc-14	— Glenn, Carpenter, Шира, Cooper —	— Глен, Карпентер, Шира, Купер —
+fleet/launch-site/lc-14	(15. 5. 1963, Cooper)	(15. 5. 1963, Купер)
+fleet/launch-site/lc-14	(Glenn / Carpenter / Шира / Cooper, 1962–1963)	(Глен / Карпентер / Шира / Купер, 1962–1963)
+fleet/launch-site/lc-34	усмртио Gus-а Грисома, Ed-а White-а и Roger-а Chaffee-ја током	усмртио Гаса Грисома, Еда Вајта и Роџера Чафија током
+fleet/launch-site/lc-34	усмртио је Gus-а Грисома, Ed-а White-а и Roger-а Chaffee-ја за	усмртио је Гаса Грисома, Еда Вајта и Роџера Чафија за
+fleet/launcher/atlas-lv-3b	су Glenn, Carpenter, Шира и Cooper орбитирали око Земље, док су Shepard и Грисом	су Глен, Карпентер, Шира и Купер орбитирали око Земље, док су Шепард и Грисом
+fleet/launcher/voskhod-11a57	са Леонова првим изласком	са Леоновљевим првим изласком
+fleet/launcher/vostok-k	верзија Корољов ракете R-7	верзија Корољовљеве ракете R-7
+fleet/orbiter/dawn	на телу Веста	на Вести
+fleet/orbiter/dawn	на телу Церера	на Церери
+fleet/orbiter/mars-odyssey	Артура Ч. Кларка (Артур Кларк).	Артура Ч. Кларка.
+fleet/orbiter/pioneer-10	Карл Сејган и Frank Drake осмислили	Карл Сејган и Френк Дрејк осмислили
+fleet/orbiter/pioneer-11	ка сазвежђу Орао.	ка сазвежђу Орла.
+fleet/station/salyut-4	биро Корољов,	биро Корољова,
+hotspot-metadata/apollo17	Schmitt + Сернан	Шмит + Сернан
+hotspot-metadata/curiosity	у падине планина Шарп	у падине планине Шарп
+hotspot-metadata/curiosity	Доња падина планина Шарп	Доња падина планине Шарп
+hotspot-metadata/spirit	са врха брдо Хазбанд	са врха брда Хазбанд
+mars-sites/mariner9	Открила је планина Олимп, долина Маринера	Открила је планину Олимп, долину Маринера
+mars-traverses/opportunity	до обода кратер Индевор	до обода кратера Индевор
+mars-traverses/spirit	Обод кратер Боневил	Обод кратера Боневил
+mars-traverses/spirit	Подножје брдо Хазбанд	Подножје брда Хазбанд
+mars-traverses/spirit	Врх брдо Хазбанд	Врх брда Хазбанд
+missions/earth/apollo-1	Грисома, White-а и Chaffee-ја	Грисома, Вајта и Чафија
+missions/earth/apollo-1	Грисом, White и Chaffee гину	Грисом, Вајт и Чафи гину
+missions/earth/apollo-soyuz	(Леонов + Kubasov)	(Леонов + Кубасов)
+missions/earth/apollo-soyuz	руковање Stafford–Леонов	руковање Стафорд–Леонов
+missions/earth/apollo7	погинули Грисом, White и Chaffee.	погинули Грисом, Вајт и Чафи.
+missions/earth/apollo9	Мекдивит и Schweickart	Мекдивит и Швајкарт
+missions/earth/apollo9	Мекдивит + Schweickart	Мекдивит + Швајкарт
+missions/earth/aurora-7	дужих летова Шира и Cooper. Carpenter је	дужих летова Шире и Купера. Карпентер је
+missions/earth/faith-7	Лет Гордон Купер 22 орбите	Лет Гордона Купера од 22 орбите
+missions/earth/freedom-7	Алан Шепард 15-минутни суборбитални лет —	Петнаестоминутни суборбитални лет Алана Шепарда —
+missions/earth/gemini4	Џејмс Мекдивит и Edward White летели	Џејмс Мекдивит и Едвард Вајт летели
+missions/earth/liberty-bell-7	извео Shepard —	извео Шепард —
+missions/earth/liberty-bell-7	Гас Грисом 15-минутни суборбитални лет —	Петнаестоминутни суборбитални лет Гаса Грисома —
+missions/earth/shenzhou-1	(2003) са Јанга Ливеја.	(2003) са Јангом Ливејем.
+missions/earth/sigma-7	Воли Шира 6-орбитни лет — удвостручио је трајање мисија Glenn-а и Carpenter-а.	Лет Волија Шире од 6 орбита удвостручио је трајање мисија Глена и Карпентера.
+missions/earth/voskhod-1	Комаров, Feoktistov и Yegorov летели су један	Комаров, Феоктистов и Јегоров летели су један
+missions/earth/voskhod-1	Комаров, Feoktistov и Yegorov летели су од	Комаров, Феоктистов и Јегоров летели су од
+missions/earth/voskhod-2	Лет Pavel-а Belyayev-а и Alexei-ја Леонова	Лет Павла Бељајева и Алексеја Леонова
+missions/earth/voskhod-2	Леонов одело се	Леоновљево одело се
+missions/earth/vostok-1	Јуриј Гагарин 108-минутни једноорбитални лет —	Једноорбитални лет Јурија Гагарина од 108 минута —
+missions/earth/vostok-3	Лет Andriyan-а Николајева	Лет Андријана Николајева
+missions/earth/vostok-3	Vostok 4 (Popovich)	Vostok 4 (Попович)
+missions/earth/vostok-4	Popovich полетео	Попович полетео
+missions/earth/vostok-6	носио Валентина Терешкова и	носио Валентину Терешкову и
+missions/jupiter/pioneer-10	Карл Сејган, Frank Drake и Linda Salzman Sagan	Карл Сејган, Френк Дрејк и Линда Залцман Сејган
+missions/mars/schiaparelli	астроному Ђовани Скјапарели и	астроному Ђованију Скјапарелију и
+missions/mars/spirit	попео се на брди Колумбија	попео се на брда Колумбија
+missions/moon/apollo10	окренуо. Stafford и Сернан	окренуо. Стафорд и Сернан
+missions/moon/apollo10	Месец. Stafford и Сернан	Месец. Стафорд и Сернан
+missions/moon/apollo10	(Stafford + Сернан)	(Стафорд + Сернан)
+missions/moon/apollo15	Scott и Ирвин вратили	Скот и Ирвин вратили
+missions/moon/apollo15	посади Scott + Ирвин	посади Скот + Ирвин
+missions/moon/apollo15	ивице кањона бразда Хедли.	ивице бразде Хедли.
+missions/moon/apollo15	Scott + Ирвин узимају	Скот + Ирвин узимају
+missions/moon/apollo17	Сернан и Schmitt остали	Сернан и Шмит остали
+missions/moon/apollo17	Сернан и Schmitt провели	Сернан и Шмит провели
+missions/moon/apollo17	Сернан и Schmitt започињу	Сернан и Шмит започињу
+missions/moon/artemis2	Victor Glover (PLT), Christina Koch (MS) и Jeremy Hansen (MS)	Виктор Гловер (PLT), Кристина Кох (MS) и Џереми Хансен (MS)
+missions/pluto/new-horizons	на срцоликом подручју област Томбо	на срцоликој области Томбо
+missions/venus/akatsuki	изнад Афродитине земља.	изнад Афродитине земље.
+missions/venus/vega-2	на северном боку Афродитина земља,	на северном боку Афродитине земље,
+missions/venus/vega-2	на Афродитину земља	на Афродитину земљу
+missions/venus/venera-13	у висорављима области област Феба.	у висорављима области Феба.
+missions/venus/venera-13	у области област Феба	у области Феба
+programs/apollo	Еда Вајта и Роџер Чафи,	Еда Вајта и Роџера Чафија,
+programs/pioneer	Карл Сејган и Frank Drake —	Карл Сејган и Френк Дрејк —
+programs/soviet-lunar	бироа Vladimir-а Chelomei-а	бироа Владимира Чаломеја
+programs/soviet-lunar	мотора Valentin-а Глушка	мотора Валентина Глушка
+programs/sputnik	Корољов интуиција	Корољовљева интуиција
+programs/voskhod	Зато је Корољов тим учинио	Зато је Корољовљев тим учинио
+programs/voskhod	Комаров, Feoktistov, Yegorov	Комаров, Феоктистов, Јегоров
+science/cosmology/laniakea-and-the-great-attractor	ка Велики атрактор у близини	ка Великом атрактору у близини
+science/cosmology/large-scale-structure	близу Велики атрактор.	близу Великог атрактора.
+science/exoplanets/fifty-one-pegasi	године Мајора и Кело поделили	године Мајор и Кело поделили
+science/history/apollo-11-1969	Edwin „Buzz“ Олдрин	Едвин „Баз“ Олдрин
+science/history/sputnik-1957	Tikhonravov (конструктор ракета), Keldysh (математичар	Тихонравов (конструктор ракета), Келдиш (математичар
+science/history/tsiolkovsky-equation-1903	Корољов R-7 1957.	Корољовљеву R-7 1957.
+science/life-in-space/crew-dynamics-psychology	(Shepherd-Крикаљов-Gidzenko,	(Шеперд–Крикаљов–Гидзенко,
+science/life-in-space/isru-resource-utilization	ударио у кратер Кабеуса	ударио у кратер Кабеус
+science/life-in-space/lunar-habitat-design	ударивши у кратер Кабеуса	ударивши у кратер Кабеус
+science/orbits/disposal-end-of-life	ударио у Кабеусу	ударио у Кабеус
+science/life-in-space/mars-habitat-design	Марс Design Reference Architecture	Mars Design Reference Architecture
+science/life-in-space/mars-habitat-design	MOXIE (Марс OXygen	MOXIE (Mars OXygen
+science/mission-phases/orbit-insertion	Марс Orbit Insertion	Mars Orbit Insertion
+science/life-in-space/mars-human-architecture	(Mark + Скот Кели	(Марк + Скот Кели
+science/life-in-space/suit-lineage	Грисом, White и Chaffee)	Грисом, Вајт и Чафи)
+science/planets/asteroid-belt	Веста / Палада / Хигија	Веста / Палас / Хигија
+science/planets/kuiper-belt	открио равница Спутњик	открио равницу Спутњик
+science/scales-time/long-duration	Rubio 371 д	Рубио 371 д
+science/space-stations/expedition-cadence	Rubio 371 дан	Рубио 371 дан
+science/space-stations/expedition-cadence	Ванде Хај, Rubio)	Ванде Хај, Рубио)
+small-bodies/haumea	Хаумеа издужени облик	Хаумеин издужени облик
+universe/exoplanets/51-peg-b	од стране Michel-а Мајора и Didier-а Кела	од стране Мишела Мајора и Дидјеа Кела
+universe/exoplanets/barnard-b	код звезде Барнардова звезда	код Барнардове звезде
+universe/exoplanets/barnard-c	око чувене Барнардова звезда.	око чувене Барнардове звезде.
+universe/exoplanets/barnard-e	светова звезде Барнардова звезда	светова Барнардове звезде
+universe/exoplanets/barnard-e	око звезде Барнардова звезда,	око Барнардове звезде,
+universe/exoplanets/gj-273-b	зони звезде Лајтенова звезда,	зони Лајтенове звезде,
+universe/exoplanets/gj-273-c	близу звезде Лајтенова звезда,	близу Лајтенове звезде,
+universe/exoplanets/gj-273-c	систем звезде Лајтенова звезда	систем Лајтенове звезде
+universe/exoplanets/proxima-cen-d	обиђе Проксима Кентаури на	обиђе Проксиму Кентаури на
+universe/named-stars/alnair	у савременом сазвежђу Ждрал, Ждралу.	у савременом сазвежђу Ждрал.
+universe/named-stars/alphecca	позната и као Gemma,	позната и као Гема,
+universe/named-stars/alphecca	у сазвежђу Северна круна, Северној круни.	у сазвежђу Северна круна.
+universe/named-stars/alphecca	алтернативно име „Gemma“	алтернативно име „Гема“
+universe/named-stars/atria	сазвежђа Јужни троугао, Јужног троугла.	сазвежђа Јужни троугао.
+universe/named-stars/diphda	позната и као Deneb Kaitos,	позната и као Денеб Кајтос,
+universe/named-stars/hadar	познат и као Agena,	познат и као Агена,
+universe/named-stars/mimosa	позната и као Becrux,	позната и као Бекрукс,
+universe/named-stars/procyon	ширина Проциона излази	ширина Процион излази
+universe/named-stars/wezen	у сазвежђу Велики пас, Великом псу, који	у сазвежђу Велики пас, који

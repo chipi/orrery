@@ -10,7 +10,7 @@
 You are translating Orrery into a new language. Before you start:
 
 1. Read **§1 Universal symbols** — these are never translated. Use the symbol literally in every language.
-2. Read **§2 Proper nouns** — transliterate per local convention only; do not translate.
+2. Read **§2 Names** — never translate or transliterate a name; keep it exactly as the English writes it, in Latin script, in every language.
 3. Use **§3 + §4** as a binding glossary. The accepted-convention column for your language is the source of truth; pick from the column rather than translating the English literally.
 4. If your language column is empty (you're the first translator for it), populate it as you go and submit those decisions for review with the translation pass.
 5. **Citation column** points at the source authority for the term (ESA glossary, NASA Spanish-language style guide, JAXA glossary, etc.). Cite where possible; defer to authoritative sources over LLM judgement.
@@ -40,9 +40,24 @@ Numeric units (km, s, kg, N, K, etc.) are **never translated** — they are SI. 
 
 ---
 
-## §2 Proper nouns (TRANSLITERATE only — never translate)
+## §2 Names (KEEP EXACTLY AS IN ENGLISH — never translate, never transliterate)
 
-### Scientist surnames (transliterate per language convention)
+**Operator ruling 2026-10-17, binding in every language.** Every name stays exactly as the
+English source writes it, in Latin script: missions, spacecraft, rockets, stations and
+modules; companies, agencies and instruments; people; places and sky features. A name that
+is not Latin in its own country (Chinese, Russian, Japanese) uses its English spelling as
+the de-facto name everywhere (Chang'e 5, Soyuz, Hayabusa2). Grammar may inflect around a
+name (a case ending after a hyphen where the language needs one: `NASA-ин`,
+`Canberra-и`), but the name's letters never change. Ordinary nouns are translated: the
+Moon, the Sun, Mars, Earth, the Solar System, comet, orbit.
+
+This supersedes the earlier "transliterate surnames per local convention" rule. Existing
+translations are being converted (docs/wip/2026-10-17-post-v1-arc-plan.md, item 9b). The
+rule ships in code as `NAME_POLICY` (`scripts/lib/translate-quality.mjs`), which every
+translation script appends to its prompt; `problems()` there rejects a changed
+designation or a Latin word that isn't a name from the source.
+
+### Scientist surnames (keep in Latin, also inside eponymous terms: Hohmann transfer, Kepler's laws)
 | English | Notes |
 |---------|-------|
 | Hohmann (transfer) | Walter Hohmann |
@@ -53,7 +68,7 @@ Numeric units (km, s, kg, N, K, etc.) are **never translated** — they are SI. 
 | Oberth (effect) | Hermann Oberth |
 | Newton (laws, units) | Isaac Newton |
 
-### Mission proper nouns (KEEP IN ORIGINAL — do not translate or transliterate)
+### Mission names (KEEP IN ORIGINAL — do not translate or transliterate)
 Rationale: missions are real-world objects with single canonical names. A user searching for "Curiosity" in Spanish documentation should still find "Curiosity", not "Curiosidad".
 
 | Mission | Original |
@@ -65,7 +80,7 @@ Rationale: missions are real-world objects with single canonical names. A user s
 | JAXA | Hayabusa, SLIM (keep romanisation) |
 | Roscosmos | Luna 9 / 17 / 24, Mars 3 (keep) |
 | ESA | Mars Express (keep) |
-| MBRSC (UAE) | Hope Probe (keep English; "مسبار الأمل" is acceptable in Arabic editorial prose only) |
+| MBRSC (UAE) | Hope Probe (keep English) |
 | SpaceX | Starship (keep) |
 | Blue Origin | Blue Moon MK1 (keep) |
 | Tito concept | Inspiration Mars (keep) |

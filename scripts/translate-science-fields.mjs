@@ -21,7 +21,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import Anthropic from '@anthropic-ai/sdk';
-import { translationModel } from './lib/translate-model.mjs';
+import { translationClient, translationModel } from './lib/translate-model.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 // Subdir under i18n-src/<loc>/ holding the overlay. Defaults to 'science' (the
@@ -96,7 +96,7 @@ const enStrings = paths.map((p) => {
 });
 console.log(`Source: ${args.file} · ${paths.length} field(s) · title="${en.title}"`);
 
-const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+const client = translationClient(new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY }));
 
 // ONE field per call → the tool returns a single `translation` string. No array
 // parsing, so prose with quotes/newlines can't corrupt the result (haiku was
@@ -104,6 +104,7 @@ const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 async function translateField(locale, text, model = translationModel(locale)) {
   const r = await client.messages.create({
     model,
+    _locale: locale,
     max_tokens: 4000,
     system: SYSTEM.replace('{LANG}', NAMES[locale]),
     tools: [

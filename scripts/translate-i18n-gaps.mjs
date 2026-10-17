@@ -25,7 +25,7 @@ import path from 'node:path';
 import Anthropic from '@anthropic-ai/sdk';
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
-import { translationModel } from './lib/translate-model.mjs';
+import { translationClient, translationModel } from './lib/translate-model.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 // i18n overlay source moved out of static/ (ADR-079 D2 / #377).
@@ -302,6 +302,7 @@ TOOLS['mars-sites'] = SITE_TOOL;
 async function callModel(client, model, cfg, surface, locale, payload, corrections) {
   const r = await client.messages.create({
     model,
+    _locale: locale,
     max_tokens: 8192,
     system: cfg.system,
     tools: [withArrayCounts(cfg.schema.name, payload)],
@@ -393,6 +394,7 @@ const LADDER_STEPS = 4;
 async function translateString(client, text, locale) {
   const r = await client.messages.create({
     model: translationModel(locale),
+    _locale: locale,
     max_tokens: 4096,
     system: SYSTEM_BASE,
     tools: [
@@ -453,6 +455,7 @@ async function repairArrays(client, out, locale, payload) {
 async function shortenString(client, text, locale, limit) {
   const r = await client.messages.create({
     model: translationModel(locale),
+    _locale: locale,
     max_tokens: 1024,
     system: SYSTEM_BASE,
     tools: [
@@ -565,7 +568,7 @@ async function main() {
     console.error('Missing ANTHROPIC_API_KEY');
     process.exit(1);
   }
-  const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+  const client = translationClient(new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY }));
   // Optional `--only=<substring>` filter: scope the run to overlay paths that
   // include the substring (e.g. --only=science/mission-phases), so a targeted
   // fix doesn't sweep every unrelated gap in the tree. No arg = all gaps.

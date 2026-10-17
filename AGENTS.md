@@ -107,7 +107,7 @@ Do not propose alternatives. If a locked decision needs revisiting, write an ADR
 | `/science` diagrams | Hand-coded SVG sources committed under `static/diagrams/science/`; fail-closed `validate-diagrams.ts` integrity check chained into `validate-data` | ADR-035 |
 | `/science` cross-screen `?` chips | Click navigates to `/science/[tab]/[section]`; desktop hover shows section intro_sentence as `title` tooltip; min 24×24px hit area | ADR-036 |
 | Service worker / PWA | `@vite-pwa/sveltekit`; offline shell after first paint; `data-high-contrast` attribute on `<html>` is the pattern Science Lens copies | ADR-029 |
-| Translation workflow | LLM-direct (in the Claude Code session — no offline-NMT pipeline, no model downloads); sr-Cyrl hand-authored | ADR-033 |
+| Translation workflow | LLM via `scripts/translate-*.mjs` + `scripts/retranslate-fields.mjs`, model per locale from `translationModel()` (Haiku; Sonnet for problem locales, today sr-Cyrl), shared rules + output checks in `scripts/lib/translate-quality.mjs`; names never translated (i18n style guide §2) | ADR-033 |
 | Fonts + script strategy | Wave 1 (Latin+Cyrillic) bundled Inter + Crimson Pro; Wave 2 CJK Noto Sans/Serif CJK; RTL Arabic via `dir="rtl"`; sr-Cyrl Cyrillic gate | ADR-032, ADR-043, ADR-044, ADR-045 |
 | `/fly` trajectory math | Pure-function isolation + per-mission validation harness; committed expected values catch regressions | ADR-030 |
 | `/fly` cislunar view | Earth-centered second camera + per-mission `flight.cislunar_profile` block on Moon missions; auto-switches when destination is MOON | ADR-058 |

@@ -19,7 +19,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import Anthropic from '@anthropic-ai/sdk';
-import { translationModel } from './lib/translate-model.mjs';
+import { translationClient, translationModel } from './lib/translate-model.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const EN = path.join(ROOT, 'i18n-src', 'en-US');
@@ -70,6 +70,7 @@ CRITICAL CONSTRAINTS:
 async function translateOne(client, locale, str) {
   const r = await client.messages.create({
     model: translationModel(locale),
+    _locale: locale,
     max_tokens: 4096,
     system: SYSTEM,
     tools: [
@@ -146,6 +147,7 @@ function apply(target, slots, translated) {
 async function translateStrings(client, locale, strings) {
   const r = await client.messages.create({
     model: translationModel(locale),
+    _locale: locale,
     max_tokens: 4096,
     system: SYSTEM,
     tools: [
@@ -211,7 +213,7 @@ async function runPool(items, worker) {
 }
 
 async function main() {
-  const client = new Anthropic();
+  const client = translationClient(new Anthropic());
   // build gap list (mode: 'full' | 'merge'), skipping done + non-dispatch files
   const gaps = [];
   let skip = 0;

@@ -19,7 +19,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import Anthropic from '@anthropic-ai/sdk';
-import { translationModel } from './lib/translate-model.mjs';
+import { translationClient, translationModel } from './lib/translate-model.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const EN = path.join(ROOT, 'i18n-src', 'en-US', 'essays');
@@ -95,6 +95,7 @@ Return EXACTLY as many translations as inputs, in the SAME ORDER. Never merge, s
 async function translateChunk(client, sys, locale, strings) {
   const r = await client.messages.create({
     model: translationModel(locale),
+    _locale: locale,
     max_tokens: 8192,
     system: sys,
     tools: [
@@ -158,7 +159,7 @@ async function main() {
     console.error('Missing ANTHROPIC_API_KEY (source .env first)');
     process.exit(1);
   }
-  const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+  const client = translationClient(new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY }));
   let slugs = fs
     .readdirSync(EN)
     .filter((f) => f.endsWith('.json') && !f.startsWith('_'))

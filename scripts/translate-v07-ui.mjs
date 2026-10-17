@@ -19,7 +19,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import Anthropic from '@anthropic-ai/sdk';
-import { translationModel } from './lib/translate-model.mjs';
+import { translationClient, translationModel } from './lib/translate-model.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const MESSAGES_DIR = path.join(ROOT, 'messages');
@@ -95,6 +95,7 @@ CRITICAL:
 async function tx(client, locale, payload) {
   const r = await client.messages.create({
     model: translationModel(locale),
+    _locale: locale,
     max_tokens: 4000,
     system: SYSTEM,
     messages: [
@@ -122,7 +123,7 @@ const chunk = (arr, n) => {
   return o;
 };
 
-const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+const client = translationClient(new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY }));
 const overrides = JSON.parse(fs.readFileSync(OVERRIDES_PATH, 'utf8'));
 
 for (const loc of locales) {

@@ -14,21 +14,9 @@
   import { base } from '$app/paths';
   import { browser } from '$app/environment';
   import * as m from '$lib/paraglide/messages';
+  import { suggestedCorrection } from '$lib/url-typo';
 
-  // Detect the `/route&param=value` typo pattern (literal `&` where
-  // `?` was meant). If found, build the corrected URL — preserves the
-  // route and turns the rest into a real query string.
-  function suggestedCorrection(pathname: string, search: string): string | null {
-    const ampIdx = pathname.indexOf('&');
-    if (ampIdx <= 0) return null;
-    const route = pathname.slice(0, ampIdx);
-    const params = pathname.slice(ampIdx + 1);
-    const sep = search ? '&' : '?';
-    return `${base}${route}${sep === '?' ? '?' : search || '?'}${params}${search ? '' : ''}`.replace(
-      /\?{2,}/,
-      '?',
-    );
-  }
+  // The `/route&param=value` typo (literal `&` where `?` was meant).
 
   // SvelteKit blocks `page.url.search` access during prerender: the
   // 404.html fallback is prerendered once at build time without a

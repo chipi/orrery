@@ -3,7 +3,7 @@
  * audit (docs/wip/2026-10-17-post-v1-arc-plan.md, item 9b).
  *
  *   set -a; . ./.env; set +a
- *   node scripts/retranslate-fields.mjs --manifest=<file.json> [--concurrency=6] [--limits=tagline:140,…] [--dry-run]
+ *   node scripts/retranslate-fields.mjs --manifest=<file.json> [--concurrency=6] [--limits=tagline:140,…] [--chunk=15] [--dry-run]
  *
  * Manifest: [{ "loc": "sr-Cyrl", "file": "missions/moon/apollo12", "paths": ["description", "events.3.note"] },
  *            { "loc": "de", "file": "messages", "paths": ["landing_card_mars_desc"] }]
@@ -199,8 +199,9 @@ async function main() {
       }
     }
     perLoc[u.loc] ||= { ok: 0, failed: 0 };
+    const c = u.chunk;
     if (result) {
-      (d.edits ||= []).push({ at: u.at, old: getKey(d.obj, u.file, u.at), nu: result });
+      c.edits.push({ at: u.at, old: getKey(d.obj, u.file, u.at), nu: result });
       setKey(d.obj, u.file, u.at, result);
       d.changed++;
       perLoc[u.loc].ok++;
@@ -209,10 +210,11 @@ async function main() {
       failed.push(`${u.loc} ${u.file} :: ${u.at} — ${lastProblems.join('; ')}`);
       perLoc[u.loc].failed++;
     }
-    if (--d.pending === 0 && d.changed) {
-      // Re-reads the file and edits only these strings: keeps the layout and never
-      // overwrites a change another run made meanwhile (those are reported).
-      const w = writeJsonEdits(u.tgtPath, d.edits, { flat: u.file === 'messages' });
+    if (--c.pending === 0 && c.edits.length) {
+      // Each chunk writes its own edits: re-reads the file and edits only these
+      // strings, so chunks of one file can run in parallel, the layout is kept, and
+      // a change another run made meanwhile is never overwritten (it is reported).
+      const w = writeJsonEdits(u.tgtPath, c.edits, { flat: u.file === 'messages' });
       for (const at of w.skipped) {
         failed.push(
           `${u.loc} ${u.file} :: ${at} — changed by someone else meanwhile; not overwritten`,
@@ -223,13 +225,23 @@ async function main() {
     }
     if (++done % 50 === 0) console.log(`  … ${done}/${units.length}`);
   }
-  // Files run in parallel; a file's fields run in order, each seeing that file's
-  // earlier translations, so names stay consistent within an entry.
-  const byFile = [...Map.groupBy(units, (u) => u.tgtPath).values()];
+  // Work items are chunks of one file's fields (--chunk, default 15). Chunks run in
+  // parallel; a chunk's fields run in order, each seeing that file's earlier
+  // translations, so names stay consistent within an entry. A UI bundle with 420
+  // long strings as one sequential item made a 38k-field run crawl (2026-10-17).
+  const chunkSize = Number(args.chunk || 15);
+  const items = [];
+  for (const group of Map.groupBy(units, (u) => u.tgtPath).values())
+    for (let k = 0; k < group.length; k += chunkSize) {
+      const part = group.slice(k, k + chunkSize);
+      const chunk = { edits: [], pending: part.length };
+      for (const u of part) u.chunk = chunk;
+      items.push(part);
+    }
   let i = 0;
   await Promise.all(
     Array.from({ length: conc }, async () => {
-      while (i < byFile.length) for (const u of byFile[i++]) await one(u);
+      while (i < items.length) for (const u of items[i++]) await one(u);
     }),
   );
   for (const [loc, c] of Object.entries(perLoc))

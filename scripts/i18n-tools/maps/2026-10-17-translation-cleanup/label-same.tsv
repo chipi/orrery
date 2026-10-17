@@ -1,0 +1,1106 @@
+ar	missions/earth/apollo7.json	events.0.label	LAUNCH
+ar	missions/earth/apollo7.json	events.1.label	ORBIT INSERT
+ar	missions/earth/apollo7.json	events.2.label	FIRST LIVE TV
+ar	missions/earth/apollo7.json	events.3.label	SPLASHDOWN
+ar	missions/earth/inspiration4.json	events.0.label	LAUNCH
+ar	missions/earth/inspiration4.json	events.1.label	ORBIT
+ar	missions/earth/inspiration4.json	events.3.label	SPLASHDOWN
+ar	missions/earth/otv-2.json	events.0.label	LAUNCH
+ar	missions/earth/otv-2.json	events.1.label	ON-ORBIT OPS
+ar	missions/earth/otv-2.json	events.2.label	LANDING
+ar	missions/earth/otv-4.json	events.0.label	LAUNCH
+ar	missions/earth/otv-4.json	events.1.label	ON-ORBIT OPS
+ar	missions/earth/otv-4.json	events.2.label	LANDING
+ar	missions/earth/otv-5.json	events.0.label	LAUNCH
+ar	missions/earth/otv-5.json	events.1.label	ON-ORBIT OPS
+ar	missions/earth/otv-5.json	events.2.label	LANDING
+ar	missions/earth/polaris-dawn.json	events.0.label	LAUNCH
+ar	missions/earth/polaris-dawn.json	events.1.label	APOGEE BOOST
+ar	missions/earth/polaris-dawn.json	events.2.label	COMMERCIAL EVA
+ar	missions/earth/polaris-dawn.json	events.3.label	SPLASHDOWN
+ar	missions/earth/skylab-2.json	events.0.label	LAUNCH
+ar	missions/earth/skylab-2.json	events.1.label	DOCK
+ar	missions/earth/skylab-2.json	events.2.label	EVA #2 — POWER RESTORED
+ar	missions/earth/skylab-2.json	events.3.label	SPLASHDOWN
+ar	missions/earth/skylab-3.json	events.0.label	LAUNCH
+ar	missions/earth/skylab-3.json	events.2.label	TWIN-POLE SHIELD EVA
+ar	missions/earth/skylab-3.json	events.3.label	SPLASHDOWN
+ar	missions/earth/voskhod-1.json	events.0.label	LAUNCH
+ar	missions/earth/vostok-1.json	events.0.label	LAUNCH
+ar	missions/earth/vostok-1.json	events.1.label	ORBIT INSERT
+ar	missions/earth/vostok-2.json	events.0.label	LAUNCH
+ar	missions/earth/vostok-5.json	events.0.label	LAUNCH
+ar	missions/mars/schiaparelli.json	events.0.label	LAUNCH
+ar	missions/mars/schiaparelli.json	events.5.label	SEPARATION
+ar	missions/mars/schiaparelli.json	events.6.label	ENTRY
+ar	missions/mars/schiaparelli.json	events.7.label	DESCENT ANOMALY
+ar	missions/mercury/mariner10.json	events.0.label	LAUNCH
+ar	missions/mercury/mariner10.json	events.1.label	VENUS FLYBY
+ar	missions/mercury/mariner10.json	events.5.label	PROPELLANT END
+ar	missions/moon/apollo10.json	events.0.label	LAUNCH
+ar	missions/moon/apollo10.json	events.3.label	LM SEPARATION
+ar	missions/moon/apollo10.json	events.5.label	ASCENT + RENDEZVOUS
+ar	missions/moon/apollo10.json	events.7.label	SPLASHDOWN
+ar	missions/moon/apollo14.json	events.0.label	LAUNCH
+ar	missions/moon/apollo14.json	events.4.label	TOUCHDOWN
+ar	missions/moon/apollo14.json	events.7.label	ASCENT
+ar	missions/moon/apollo14.json	events.9.label	SPLASHDOWN
+ar	missions/moon/apollo16.json	events.0.label	LAUNCH
+ar	missions/moon/apollo16.json	events.4.label	TOUCHDOWN
+ar	missions/moon/apollo16.json	events.5.label	FIRST HIGHLANDS EVA
+ar	missions/moon/apollo16.json	events.8.label	ASCENT
+ar	missions/moon/apollo16.json	events.10.label	SPLASHDOWN
+ar	missions/moon/apollo8.json	events.0.label	LAUNCH
+ar	missions/moon/apollo8.json	events.6.label	SPLASHDOWN
+ar	missions/moon/beresheet.json	events.0.label	LAUNCH
+ar	missions/moon/beresheet.json	events.1.label	PHASING BURN
+ar	missions/moon/beresheet.json	events.5.label	LUNAR ORBIT INSERTION
+ar	missions/moon/beresheet.json	events.6.label	DESCENT ANOMALY
+ar	missions/moon/change3.json	events.0.label	LAUNCH
+ar	missions/moon/change3.json	events.2.label	LUNAR ORBIT INSERTION
+ar	missions/moon/change3.json	events.3.label	LANDING
+ar	missions/moon/luna16.json	events.0.label	LAUNCH
+ar	missions/moon/luna16.json	events.3.label	LANDING
+ar	missions/moon/luna16.json	events.4.label	SAMPLE RETURN
+ar	missions/moon/luna21.json	events.0.label	LAUNCH
+ar	missions/moon/luna21.json	events.3.label	LANDING
+de	missions/asteroid/hayabusa2.json	events.5.label	1998 KY26 RENDEZVOUS
+de	missions/bennu/osiris-rex.json	events.2.label	BENNU RENDEZVOUS
+de	missions/earth/apollo7.json	events.0.label	LAUNCH
+de	missions/earth/apollo7.json	events.1.label	ORBIT INSERT
+de	missions/earth/apollo7.json	events.2.label	FIRST LIVE TV
+de	missions/earth/apollo7.json	events.3.label	SPLASHDOWN
+de	missions/earth/gemini6a.json	events.2.label	RENDEZVOUS
+de	missions/earth/inspiration4.json	events.0.label	LAUNCH
+de	missions/earth/inspiration4.json	events.1.label	ORBIT
+de	missions/earth/inspiration4.json	events.3.label	SPLASHDOWN
+de	missions/earth/otv-2.json	events.0.label	LAUNCH
+de	missions/earth/otv-2.json	events.1.label	ON-ORBIT OPS
+de	missions/earth/otv-2.json	events.2.label	LANDING
+de	missions/earth/otv-4.json	events.0.label	LAUNCH
+de	missions/earth/otv-4.json	events.1.label	ON-ORBIT OPS
+de	missions/earth/otv-4.json	events.2.label	LANDING
+de	missions/earth/otv-5.json	events.0.label	LAUNCH
+de	missions/earth/otv-5.json	events.1.label	ON-ORBIT OPS
+de	missions/earth/otv-5.json	events.2.label	LANDING
+de	missions/earth/polaris-dawn.json	events.0.label	LAUNCH
+de	missions/earth/polaris-dawn.json	events.1.label	APOGEE BOOST
+de	missions/earth/polaris-dawn.json	events.2.label	COMMERCIAL EVA
+de	missions/earth/polaris-dawn.json	events.3.label	SPLASHDOWN
+de	missions/earth/shenzhou-1.json	events.1.label	ORBIT
+de	missions/earth/sigma-7.json	events.2.label	SPLASHDOWN
+de	missions/earth/skylab-2.json	events.0.label	LAUNCH
+de	missions/earth/skylab-2.json	events.1.label	DOCK
+de	missions/earth/skylab-2.json	events.2.label	EVA #2 — POWER RESTORED
+de	missions/earth/skylab-2.json	events.3.label	SPLASHDOWN
+de	missions/earth/skylab-3.json	events.0.label	LAUNCH
+de	missions/earth/skylab-3.json	events.2.label	TWIN-POLE SHIELD EVA
+de	missions/earth/skylab-3.json	events.3.label	SPLASHDOWN
+de	missions/earth/voskhod-1.json	events.0.label	LAUNCH
+de	missions/earth/vostok-1.json	events.0.label	LAUNCH
+de	missions/earth/vostok-1.json	events.1.label	ORBIT INSERT
+de	missions/earth/vostok-2.json	events.0.label	LAUNCH
+de	missions/earth/vostok-5.json	events.0.label	LAUNCH
+de	missions/mars/schiaparelli.json	events.0.label	LAUNCH
+de	missions/mars/schiaparelli.json	events.5.label	SEPARATION
+de	missions/mars/schiaparelli.json	events.6.label	ENTRY
+de	missions/mars/schiaparelli.json	events.7.label	DESCENT ANOMALY
+de	missions/mars/starship-mars-crew.json	events.6.label	TEI BURN
+de	missions/mercury/mariner10.json	events.0.label	LAUNCH
+de	missions/mercury/mariner10.json	events.1.label	VENUS FLYBY
+de	missions/mercury/mariner10.json	events.5.label	PROPELLANT END
+de	missions/moon/apollo10.json	events.0.label	LAUNCH
+de	missions/moon/apollo10.json	events.3.label	LM SEPARATION
+de	missions/moon/apollo10.json	events.5.label	ASCENT + RENDEZVOUS
+de	missions/moon/apollo10.json	events.7.label	SPLASHDOWN
+de	missions/moon/apollo12.json	events.5.label	ASCENT
+de	missions/moon/apollo12.json	events.6.label	LM IMPACT
+de	missions/moon/apollo12.json	events.8.label	SPLASHDOWN
+de	missions/moon/apollo14.json	events.0.label	LAUNCH
+de	missions/moon/apollo14.json	events.4.label	TOUCHDOWN
+de	missions/moon/apollo14.json	events.7.label	ASCENT
+de	missions/moon/apollo14.json	events.9.label	SPLASHDOWN
+de	missions/moon/apollo16.json	events.0.label	LAUNCH
+de	missions/moon/apollo16.json	events.4.label	TOUCHDOWN
+de	missions/moon/apollo16.json	events.5.label	FIRST HIGHLANDS EVA
+de	missions/moon/apollo16.json	events.8.label	ASCENT
+de	missions/moon/apollo16.json	events.10.label	SPLASHDOWN
+de	missions/moon/apollo8.json	events.0.label	LAUNCH
+de	missions/moon/apollo8.json	events.6.label	SPLASHDOWN
+de	missions/moon/beresheet.json	events.0.label	LAUNCH
+de	missions/moon/beresheet.json	events.1.label	PHASING BURN
+de	missions/moon/beresheet.json	events.5.label	LUNAR ORBIT INSERTION
+de	missions/moon/beresheet.json	events.6.label	DESCENT ANOMALY
+de	missions/moon/change3.json	events.0.label	LAUNCH
+de	missions/moon/change3.json	events.2.label	LUNAR ORBIT INSERTION
+de	missions/moon/change3.json	events.3.label	LANDING
+de	missions/moon/change5.json	events.5.label	RENDEZVOUS
+de	missions/moon/lro.json	events.2.label	PRIME MISSION
+de	missions/moon/luna16.json	events.0.label	LAUNCH
+de	missions/moon/luna16.json	events.3.label	LANDING
+de	missions/moon/luna16.json	events.4.label	SAMPLE RETURN
+de	missions/moon/luna21.json	events.0.label	LAUNCH
+de	missions/moon/luna21.json	events.3.label	LANDING
+es	missions/earth/apollo7.json	events.0.label	LAUNCH
+es	missions/earth/apollo7.json	events.1.label	ORBIT INSERT
+es	missions/earth/apollo7.json	events.2.label	FIRST LIVE TV
+es	missions/earth/apollo7.json	events.3.label	SPLASHDOWN
+es	missions/earth/inspiration4.json	events.0.label	LAUNCH
+es	missions/earth/inspiration4.json	events.1.label	ORBIT
+es	missions/earth/inspiration4.json	events.3.label	SPLASHDOWN
+es	missions/earth/otv-2.json	events.0.label	LAUNCH
+es	missions/earth/otv-2.json	events.1.label	ON-ORBIT OPS
+es	missions/earth/otv-2.json	events.2.label	LANDING
+es	missions/earth/otv-4.json	events.0.label	LAUNCH
+es	missions/earth/otv-4.json	events.1.label	ON-ORBIT OPS
+es	missions/earth/otv-4.json	events.2.label	LANDING
+es	missions/earth/otv-5.json	events.0.label	LAUNCH
+es	missions/earth/otv-5.json	events.1.label	ON-ORBIT OPS
+es	missions/earth/otv-5.json	events.2.label	LANDING
+es	missions/earth/polaris-dawn.json	events.0.label	LAUNCH
+es	missions/earth/polaris-dawn.json	events.1.label	APOGEE BOOST
+es	missions/earth/polaris-dawn.json	events.2.label	COMMERCIAL EVA
+es	missions/earth/polaris-dawn.json	events.3.label	SPLASHDOWN
+es	missions/earth/skylab-2.json	events.0.label	LAUNCH
+es	missions/earth/skylab-2.json	events.1.label	DOCK
+es	missions/earth/skylab-2.json	events.2.label	EVA #2 — POWER RESTORED
+es	missions/earth/skylab-2.json	events.3.label	SPLASHDOWN
+es	missions/earth/skylab-3.json	events.0.label	LAUNCH
+es	missions/earth/skylab-3.json	events.2.label	TWIN-POLE SHIELD EVA
+es	missions/earth/skylab-3.json	events.3.label	SPLASHDOWN
+es	missions/earth/voskhod-1.json	events.0.label	LAUNCH
+es	missions/earth/vostok-1.json	events.0.label	LAUNCH
+es	missions/earth/vostok-1.json	events.1.label	ORBIT INSERT
+es	missions/earth/vostok-2.json	events.0.label	LAUNCH
+es	missions/earth/vostok-5.json	events.0.label	LAUNCH
+es	missions/mars/schiaparelli.json	events.0.label	LAUNCH
+es	missions/mars/schiaparelli.json	events.5.label	SEPARATION
+es	missions/mars/schiaparelli.json	events.6.label	ENTRY
+es	missions/mars/schiaparelli.json	events.7.label	DESCENT ANOMALY
+es	missions/mercury/mariner10.json	events.0.label	LAUNCH
+es	missions/mercury/mariner10.json	events.1.label	VENUS FLYBY
+es	missions/mercury/mariner10.json	events.5.label	PROPELLANT END
+es	missions/moon/apollo10.json	events.0.label	LAUNCH
+es	missions/moon/apollo10.json	events.3.label	LM SEPARATION
+es	missions/moon/apollo10.json	events.5.label	ASCENT + RENDEZVOUS
+es	missions/moon/apollo10.json	events.7.label	SPLASHDOWN
+es	missions/moon/apollo14.json	events.0.label	LAUNCH
+es	missions/moon/apollo14.json	events.4.label	TOUCHDOWN
+es	missions/moon/apollo14.json	events.7.label	ASCENT
+es	missions/moon/apollo14.json	events.9.label	SPLASHDOWN
+es	missions/moon/apollo16.json	events.0.label	LAUNCH
+es	missions/moon/apollo16.json	events.4.label	TOUCHDOWN
+es	missions/moon/apollo16.json	events.5.label	FIRST HIGHLANDS EVA
+es	missions/moon/apollo16.json	events.8.label	ASCENT
+es	missions/moon/apollo16.json	events.10.label	SPLASHDOWN
+es	missions/moon/apollo8.json	events.0.label	LAUNCH
+es	missions/moon/apollo8.json	events.6.label	SPLASHDOWN
+es	missions/moon/beresheet.json	events.0.label	LAUNCH
+es	missions/moon/beresheet.json	events.1.label	PHASING BURN
+es	missions/moon/beresheet.json	events.5.label	LUNAR ORBIT INSERTION
+es	missions/moon/beresheet.json	events.6.label	DESCENT ANOMALY
+es	missions/moon/change3.json	events.0.label	LAUNCH
+es	missions/moon/change3.json	events.2.label	LUNAR ORBIT INSERTION
+es	missions/moon/change3.json	events.3.label	LANDING
+es	missions/moon/luna16.json	events.0.label	LAUNCH
+es	missions/moon/luna16.json	events.3.label	LANDING
+es	missions/moon/luna16.json	events.4.label	SAMPLE RETURN
+es	missions/moon/luna21.json	events.0.label	LAUNCH
+es	missions/moon/luna21.json	events.3.label	LANDING
+fr	missions/dimorphos/dart.json	events.1.label	MID-CRUISE
+fr	missions/dimorphos/dart.json	events.3.label	IMPACT
+fr	missions/earth/apollo7.json	events.0.label	LAUNCH
+fr	missions/earth/apollo7.json	events.1.label	ORBIT INSERT
+fr	missions/earth/apollo7.json	events.2.label	FIRST LIVE TV
+fr	missions/earth/apollo7.json	events.3.label	SPLASHDOWN
+fr	missions/earth/inspiration4.json	events.0.label	LAUNCH
+fr	missions/earth/inspiration4.json	events.1.label	ORBIT
+fr	missions/earth/inspiration4.json	events.3.label	SPLASHDOWN
+fr	missions/earth/otv-2.json	events.0.label	LAUNCH
+fr	missions/earth/otv-2.json	events.1.label	ON-ORBIT OPS
+fr	missions/earth/otv-2.json	events.2.label	LANDING
+fr	missions/earth/otv-4.json	events.0.label	LAUNCH
+fr	missions/earth/otv-4.json	events.1.label	ON-ORBIT OPS
+fr	missions/earth/otv-4.json	events.2.label	LANDING
+fr	missions/earth/otv-5.json	events.0.label	LAUNCH
+fr	missions/earth/otv-5.json	events.1.label	ON-ORBIT OPS
+fr	missions/earth/otv-5.json	events.2.label	LANDING
+fr	missions/earth/polaris-dawn.json	events.0.label	LAUNCH
+fr	missions/earth/polaris-dawn.json	events.1.label	APOGEE BOOST
+fr	missions/earth/polaris-dawn.json	events.2.label	COMMERCIAL EVA
+fr	missions/earth/polaris-dawn.json	events.3.label	SPLASHDOWN
+fr	missions/earth/skylab-2.json	events.0.label	LAUNCH
+fr	missions/earth/skylab-2.json	events.1.label	DOCK
+fr	missions/earth/skylab-2.json	events.2.label	EVA #2 — POWER RESTORED
+fr	missions/earth/skylab-2.json	events.3.label	SPLASHDOWN
+fr	missions/earth/skylab-3.json	events.0.label	LAUNCH
+fr	missions/earth/skylab-3.json	events.2.label	TWIN-POLE SHIELD EVA
+fr	missions/earth/skylab-3.json	events.3.label	SPLASHDOWN
+fr	missions/earth/voskhod-1.json	events.0.label	LAUNCH
+fr	missions/earth/vostok-1.json	events.0.label	LAUNCH
+fr	missions/earth/vostok-1.json	events.1.label	ORBIT INSERT
+fr	missions/earth/vostok-2.json	events.0.label	LAUNCH
+fr	missions/earth/vostok-5.json	events.0.label	LAUNCH
+fr	missions/mars/mars-pathfinder.json	events.3.label	TOUCHDOWN
+fr	missions/mars/schiaparelli.json	events.0.label	LAUNCH
+fr	missions/mars/schiaparelli.json	events.5.label	SEPARATION
+fr	missions/mars/schiaparelli.json	events.6.label	ENTRY
+fr	missions/mars/schiaparelli.json	events.7.label	DESCENT ANOMALY
+fr	missions/mercury/mariner10.json	events.0.label	LAUNCH
+fr	missions/mercury/mariner10.json	events.1.label	VENUS FLYBY
+fr	missions/mercury/mariner10.json	events.5.label	PROPELLANT END
+fr	missions/moon/apollo10.json	events.0.label	LAUNCH
+fr	missions/moon/apollo10.json	events.3.label	LM SEPARATION
+fr	missions/moon/apollo10.json	events.5.label	ASCENT + RENDEZVOUS
+fr	missions/moon/apollo10.json	events.7.label	SPLASHDOWN
+fr	missions/moon/apollo14.json	events.0.label	LAUNCH
+fr	missions/moon/apollo14.json	events.4.label	TOUCHDOWN
+fr	missions/moon/apollo14.json	events.7.label	ASCENT
+fr	missions/moon/apollo14.json	events.9.label	SPLASHDOWN
+fr	missions/moon/apollo16.json	events.0.label	LAUNCH
+fr	missions/moon/apollo16.json	events.4.label	TOUCHDOWN
+fr	missions/moon/apollo16.json	events.5.label	FIRST HIGHLANDS EVA
+fr	missions/moon/apollo16.json	events.8.label	ASCENT
+fr	missions/moon/apollo16.json	events.10.label	SPLASHDOWN
+fr	missions/moon/apollo8.json	events.0.label	LAUNCH
+fr	missions/moon/apollo8.json	events.6.label	SPLASHDOWN
+fr	missions/moon/beresheet.json	events.0.label	LAUNCH
+fr	missions/moon/beresheet.json	events.1.label	PHASING BURN
+fr	missions/moon/beresheet.json	events.5.label	LUNAR ORBIT INSERTION
+fr	missions/moon/beresheet.json	events.6.label	DESCENT ANOMALY
+fr	missions/moon/change3.json	events.0.label	LAUNCH
+fr	missions/moon/change3.json	events.2.label	LUNAR ORBIT INSERTION
+fr	missions/moon/change3.json	events.3.label	LANDING
+fr	missions/moon/luna16.json	events.0.label	LAUNCH
+fr	missions/moon/luna16.json	events.3.label	LANDING
+fr	missions/moon/luna16.json	events.4.label	SAMPLE RETURN
+fr	missions/moon/luna21.json	events.0.label	LAUNCH
+fr	missions/moon/luna21.json	events.3.label	LANDING
+hi	missions/earth/apollo-soyuz.json	events.0.label	LAUNCH (Apollo)
+hi	missions/earth/apollo-soyuz.json	events.4.label	SPLASHDOWN (Apollo)
+hi	missions/earth/apollo7.json	events.0.label	LAUNCH
+hi	missions/earth/apollo7.json	events.1.label	ORBIT INSERT
+hi	missions/earth/apollo7.json	events.2.label	FIRST LIVE TV
+hi	missions/earth/apollo7.json	events.3.label	SPLASHDOWN
+hi	missions/earth/inspiration4.json	events.0.label	LAUNCH
+hi	missions/earth/inspiration4.json	events.1.label	ORBIT
+hi	missions/earth/inspiration4.json	events.3.label	SPLASHDOWN
+hi	missions/earth/otv-2.json	events.0.label	LAUNCH
+hi	missions/earth/otv-2.json	events.1.label	ON-ORBIT OPS
+hi	missions/earth/otv-2.json	events.2.label	LANDING
+hi	missions/earth/otv-4.json	events.0.label	LAUNCH
+hi	missions/earth/otv-4.json	events.1.label	ON-ORBIT OPS
+hi	missions/earth/otv-4.json	events.2.label	LANDING
+hi	missions/earth/otv-5.json	events.0.label	LAUNCH
+hi	missions/earth/otv-5.json	events.1.label	ON-ORBIT OPS
+hi	missions/earth/otv-5.json	events.2.label	LANDING
+hi	missions/earth/polaris-dawn.json	events.0.label	LAUNCH
+hi	missions/earth/polaris-dawn.json	events.1.label	APOGEE BOOST
+hi	missions/earth/polaris-dawn.json	events.2.label	COMMERCIAL EVA
+hi	missions/earth/polaris-dawn.json	events.3.label	SPLASHDOWN
+hi	missions/earth/skylab-2.json	events.0.label	LAUNCH
+hi	missions/earth/skylab-2.json	events.1.label	DOCK
+hi	missions/earth/skylab-2.json	events.2.label	EVA #2 — POWER RESTORED
+hi	missions/earth/skylab-2.json	events.3.label	SPLASHDOWN
+hi	missions/earth/skylab-3.json	events.0.label	LAUNCH
+hi	missions/earth/skylab-3.json	events.2.label	TWIN-POLE SHIELD EVA
+hi	missions/earth/skylab-3.json	events.3.label	SPLASHDOWN
+hi	missions/earth/skylab-4.json	events.3.label	SPLASHDOWN
+hi	missions/earth/voskhod-1.json	events.0.label	LAUNCH
+hi	missions/earth/vostok-1.json	events.0.label	LAUNCH
+hi	missions/earth/vostok-1.json	events.1.label	ORBIT INSERT
+hi	missions/earth/vostok-2.json	events.0.label	LAUNCH
+hi	missions/earth/vostok-5.json	events.0.label	LAUNCH
+hi	missions/mars/schiaparelli.json	events.0.label	LAUNCH
+hi	missions/mars/schiaparelli.json	events.5.label	SEPARATION
+hi	missions/mars/schiaparelli.json	events.6.label	ENTRY
+hi	missions/mars/schiaparelli.json	events.7.label	DESCENT ANOMALY
+hi	missions/mercury/mariner10.json	events.0.label	LAUNCH
+hi	missions/mercury/mariner10.json	events.1.label	VENUS FLYBY
+hi	missions/mercury/mariner10.json	events.5.label	PROPELLANT END
+hi	missions/moon/apollo10.json	events.0.label	LAUNCH
+hi	missions/moon/apollo10.json	events.3.label	LM SEPARATION
+hi	missions/moon/apollo10.json	events.5.label	ASCENT + RENDEZVOUS
+hi	missions/moon/apollo10.json	events.7.label	SPLASHDOWN
+hi	missions/moon/apollo14.json	events.0.label	LAUNCH
+hi	missions/moon/apollo14.json	events.4.label	TOUCHDOWN
+hi	missions/moon/apollo14.json	events.7.label	ASCENT
+hi	missions/moon/apollo14.json	events.9.label	SPLASHDOWN
+hi	missions/moon/apollo16.json	events.0.label	LAUNCH
+hi	missions/moon/apollo16.json	events.4.label	TOUCHDOWN
+hi	missions/moon/apollo16.json	events.5.label	FIRST HIGHLANDS EVA
+hi	missions/moon/apollo16.json	events.8.label	ASCENT
+hi	missions/moon/apollo16.json	events.10.label	SPLASHDOWN
+hi	missions/moon/apollo8.json	events.0.label	LAUNCH
+hi	missions/moon/apollo8.json	events.6.label	SPLASHDOWN
+hi	missions/moon/beresheet.json	events.0.label	LAUNCH
+hi	missions/moon/beresheet.json	events.1.label	PHASING BURN
+hi	missions/moon/beresheet.json	events.5.label	LUNAR ORBIT INSERTION
+hi	missions/moon/beresheet.json	events.6.label	DESCENT ANOMALY
+hi	missions/moon/change3.json	events.0.label	LAUNCH
+hi	missions/moon/change3.json	events.2.label	LUNAR ORBIT INSERTION
+hi	missions/moon/change3.json	events.3.label	LANDING
+hi	missions/moon/luna16.json	events.0.label	LAUNCH
+hi	missions/moon/luna16.json	events.3.label	LANDING
+hi	missions/moon/luna16.json	events.4.label	SAMPLE RETURN
+hi	missions/moon/luna21.json	events.0.label	LAUNCH
+hi	missions/moon/luna21.json	events.3.label	LANDING
+it	missions/dimorphos/dart.json	events.1.label	MID-CRUISE
+it	missions/earth/apollo7.json	events.0.label	LAUNCH
+it	missions/earth/apollo7.json	events.1.label	ORBIT INSERT
+it	missions/earth/apollo7.json	events.2.label	FIRST LIVE TV
+it	missions/earth/apollo7.json	events.3.label	SPLASHDOWN
+it	missions/earth/gemini6a.json	events.2.label	RENDEZVOUS
+it	missions/earth/inspiration4.json	events.0.label	LAUNCH
+it	missions/earth/inspiration4.json	events.1.label	ORBIT
+it	missions/earth/inspiration4.json	events.3.label	SPLASHDOWN
+it	missions/earth/otv-2.json	events.0.label	LAUNCH
+it	missions/earth/otv-2.json	events.1.label	ON-ORBIT OPS
+it	missions/earth/otv-2.json	events.2.label	LANDING
+it	missions/earth/otv-4.json	events.0.label	LAUNCH
+it	missions/earth/otv-4.json	events.1.label	ON-ORBIT OPS
+it	missions/earth/otv-4.json	events.2.label	LANDING
+it	missions/earth/otv-5.json	events.0.label	LAUNCH
+it	missions/earth/otv-5.json	events.1.label	ON-ORBIT OPS
+it	missions/earth/otv-5.json	events.2.label	LANDING
+it	missions/earth/polaris-dawn.json	events.0.label	LAUNCH
+it	missions/earth/polaris-dawn.json	events.1.label	APOGEE BOOST
+it	missions/earth/polaris-dawn.json	events.2.label	COMMERCIAL EVA
+it	missions/earth/polaris-dawn.json	events.3.label	SPLASHDOWN
+it	missions/earth/skylab-2.json	events.0.label	LAUNCH
+it	missions/earth/skylab-2.json	events.1.label	DOCK
+it	missions/earth/skylab-2.json	events.2.label	EVA #2 — POWER RESTORED
+it	missions/earth/skylab-2.json	events.3.label	SPLASHDOWN
+it	missions/earth/skylab-3.json	events.0.label	LAUNCH
+it	missions/earth/skylab-3.json	events.2.label	TWIN-POLE SHIELD EVA
+it	missions/earth/skylab-3.json	events.3.label	SPLASHDOWN
+it	missions/earth/voskhod-1.json	events.0.label	LAUNCH
+it	missions/earth/vostok-1.json	events.0.label	LAUNCH
+it	missions/earth/vostok-1.json	events.1.label	ORBIT INSERT
+it	missions/earth/vostok-2.json	events.0.label	LAUNCH
+it	missions/earth/vostok-5.json	events.0.label	LAUNCH
+it	missions/mars/curiosity.json	events.5.label	TOUCHDOWN
+it	missions/mars/mars-pathfinder.json	events.3.label	TOUCHDOWN
+it	missions/mars/schiaparelli.json	events.0.label	LAUNCH
+it	missions/mars/schiaparelli.json	events.5.label	SEPARATION
+it	missions/mars/schiaparelli.json	events.6.label	ENTRY
+it	missions/mars/schiaparelli.json	events.7.label	DESCENT ANOMALY
+it	missions/mercury/mariner10.json	events.0.label	LAUNCH
+it	missions/mercury/mariner10.json	events.1.label	VENUS FLYBY
+it	missions/mercury/mariner10.json	events.5.label	PROPELLANT END
+it	missions/moon/apollo10.json	events.0.label	LAUNCH
+it	missions/moon/apollo10.json	events.3.label	LM SEPARATION
+it	missions/moon/apollo10.json	events.5.label	ASCENT + RENDEZVOUS
+it	missions/moon/apollo10.json	events.7.label	SPLASHDOWN
+it	missions/moon/apollo11.json	events.6.label	SPLASHDOWN
+it	missions/moon/apollo14.json	events.0.label	LAUNCH
+it	missions/moon/apollo14.json	events.4.label	TOUCHDOWN
+it	missions/moon/apollo14.json	events.7.label	ASCENT
+it	missions/moon/apollo14.json	events.9.label	SPLASHDOWN
+it	missions/moon/apollo16.json	events.0.label	LAUNCH
+it	missions/moon/apollo16.json	events.4.label	TOUCHDOWN
+it	missions/moon/apollo16.json	events.5.label	FIRST HIGHLANDS EVA
+it	missions/moon/apollo16.json	events.8.label	ASCENT
+it	missions/moon/apollo16.json	events.10.label	SPLASHDOWN
+it	missions/moon/apollo17.json	events.6.label	SPLASHDOWN
+it	missions/moon/apollo8.json	events.0.label	LAUNCH
+it	missions/moon/apollo8.json	events.6.label	SPLASHDOWN
+it	missions/moon/artemis2.json	events.5.label	SPLASHDOWN
+it	missions/moon/artemis3.json	events.6.label	SPLASHDOWN
+it	missions/moon/beresheet.json	events.0.label	LAUNCH
+it	missions/moon/beresheet.json	events.1.label	PHASING BURN
+it	missions/moon/beresheet.json	events.5.label	LUNAR ORBIT INSERTION
+it	missions/moon/beresheet.json	events.6.label	DESCENT ANOMALY
+it	missions/moon/change3.json	events.0.label	LAUNCH
+it	missions/moon/change3.json	events.2.label	LUNAR ORBIT INSERTION
+it	missions/moon/change3.json	events.3.label	LANDING
+it	missions/moon/luna16.json	events.0.label	LAUNCH
+it	missions/moon/luna16.json	events.3.label	LANDING
+it	missions/moon/luna16.json	events.4.label	SAMPLE RETURN
+it	missions/moon/luna21.json	events.0.label	LAUNCH
+it	missions/moon/luna21.json	events.3.label	LANDING
+ja	missions/ceres/dawn.json	events.0.label	LAUNCH
+ja	missions/ceres/dawn.json	events.1.label	CERES CAPTURE
+ja	missions/earth/apollo7.json	events.0.label	LAUNCH
+ja	missions/earth/apollo7.json	events.1.label	ORBIT INSERT
+ja	missions/earth/apollo7.json	events.2.label	FIRST LIVE TV
+ja	missions/earth/apollo7.json	events.3.label	SPLASHDOWN
+ja	missions/earth/inspiration4.json	events.0.label	LAUNCH
+ja	missions/earth/inspiration4.json	events.1.label	ORBIT
+ja	missions/earth/inspiration4.json	events.3.label	SPLASHDOWN
+ja	missions/earth/otv-2.json	events.0.label	LAUNCH
+ja	missions/earth/otv-2.json	events.1.label	ON-ORBIT OPS
+ja	missions/earth/otv-2.json	events.2.label	LANDING
+ja	missions/earth/otv-4.json	events.0.label	LAUNCH
+ja	missions/earth/otv-4.json	events.1.label	ON-ORBIT OPS
+ja	missions/earth/otv-4.json	events.2.label	LANDING
+ja	missions/earth/otv-5.json	events.0.label	LAUNCH
+ja	missions/earth/otv-5.json	events.1.label	ON-ORBIT OPS
+ja	missions/earth/otv-5.json	events.2.label	LANDING
+ja	missions/earth/polaris-dawn.json	events.0.label	LAUNCH
+ja	missions/earth/polaris-dawn.json	events.1.label	APOGEE BOOST
+ja	missions/earth/polaris-dawn.json	events.2.label	COMMERCIAL EVA
+ja	missions/earth/polaris-dawn.json	events.3.label	SPLASHDOWN
+ja	missions/earth/skylab-2.json	events.0.label	LAUNCH
+ja	missions/earth/skylab-2.json	events.1.label	DOCK
+ja	missions/earth/skylab-2.json	events.2.label	EVA #2 — POWER RESTORED
+ja	missions/earth/skylab-2.json	events.3.label	SPLASHDOWN
+ja	missions/earth/skylab-3.json	events.0.label	LAUNCH
+ja	missions/earth/skylab-3.json	events.2.label	TWIN-POLE SHIELD EVA
+ja	missions/earth/skylab-3.json	events.3.label	SPLASHDOWN
+ja	missions/earth/voskhod-1.json	events.0.label	LAUNCH
+ja	missions/earth/vostok-1.json	events.0.label	LAUNCH
+ja	missions/earth/vostok-1.json	events.1.label	ORBIT INSERT
+ja	missions/earth/vostok-2.json	events.0.label	LAUNCH
+ja	missions/earth/vostok-5.json	events.0.label	LAUNCH
+ja	missions/jupiter/juno.json	events.0.label	LAUNCH
+ja	missions/jupiter/juno.json	events.2.label	JUPITER ORBIT INSERTION
+ja	missions/jupiter/pioneer-10.json	events.0.label	LAUNCH
+ja	missions/mars/insight.json	events.0.label	LAUNCH
+ja	missions/mars/insight.json	events.3.label	TOUCHDOWN
+ja	missions/mars/insight.json	events.5.label	MISSION END
+ja	missions/mars/mariner4.json	events.0.label	LAUNCH
+ja	missions/mars/mariner4.json	events.2.label	MARS FLYBY
+ja	missions/mars/mariner4.json	events.3.label	FIRST IMAGES
+ja	missions/mars/mars-express.json	events.0.label	LAUNCH
+ja	missions/mars/mars-express.json	events.3.label	MARS ORBIT INSERTION
+ja	missions/mars/maven.json	events.0.label	LAUNCH
+ja	missions/mars/maven.json	events.2.label	MARS ORBIT INSERTION
+ja	missions/mars/maven.json	events.3.label	FIRST SCIENCE
+ja	missions/mars/mmx.json	events.0.label	LAUNCH
+ja	missions/mars/mmx.json	events.1.label	MARS ORBIT INSERTION
+ja	missions/mars/mmx.json	events.2.label	ROVER DEPLOY
+ja	missions/mars/mmx.json	events.3.label	PHOBOS SAMPLE
+ja	missions/mars/mmx.json	events.4.label	EARTH RETURN
+ja	missions/mars/schiaparelli.json	events.0.label	LAUNCH
+ja	missions/mars/schiaparelli.json	events.5.label	SEPARATION
+ja	missions/mars/schiaparelli.json	events.6.label	ENTRY
+ja	missions/mars/schiaparelli.json	events.7.label	DESCENT ANOMALY
+ja	missions/mars/starship-demo.json	events.0.label	LAUNCH
+ja	missions/mars/starship-demo.json	events.2.label	TMI BURN
+ja	missions/mars/starship-demo.json	events.3.label	MARS LANDING
+ja	missions/mars/starship-mars-crew.json	events.0.label	STARSHIP LAUNCH
+ja	missions/mars/starship-mars-crew.json	events.2.label	TMI BURN
+ja	missions/mars/starship-mars-crew.json	events.4.label	MARS LANDING
+ja	missions/mars/starship-mars-crew.json	events.5.label	RETURN PROP COMPLETE
+ja	missions/mars/starship-mars-crew.json	events.6.label	TEI BURN
+ja	missions/mars/starship-mars-crew.json	events.7.label	EARTH ARRIVAL
+ja	missions/mars/tianwen1.json	events.0.label	LAUNCH
+ja	missions/mars/tianwen1.json	events.1.label	MARS ORBIT INSERTION
+ja	missions/mars/tianwen1.json	events.2.label	ZHURONG LANDING
+ja	missions/mercury/mariner10.json	events.0.label	LAUNCH
+ja	missions/mercury/mariner10.json	events.1.label	VENUS FLYBY
+ja	missions/mercury/mariner10.json	events.5.label	PROPELLANT END
+ja	missions/moon/apollo10.json	events.0.label	LAUNCH
+ja	missions/moon/apollo10.json	events.3.label	LM SEPARATION
+ja	missions/moon/apollo10.json	events.5.label	ASCENT + RENDEZVOUS
+ja	missions/moon/apollo10.json	events.7.label	SPLASHDOWN
+ja	missions/moon/apollo11.json	events.0.label	LAUNCH
+ja	missions/moon/apollo11.json	events.3.label	TOUCHDOWN
+ja	missions/moon/apollo11.json	events.4.label	FIRST STEP
+ja	missions/moon/apollo11.json	events.5.label	ASCENT
+ja	missions/moon/apollo11.json	events.6.label	SPLASHDOWN
+ja	missions/moon/apollo14.json	events.0.label	LAUNCH
+ja	missions/moon/apollo14.json	events.4.label	TOUCHDOWN
+ja	missions/moon/apollo14.json	events.7.label	ASCENT
+ja	missions/moon/apollo14.json	events.9.label	SPLASHDOWN
+ja	missions/moon/apollo16.json	events.0.label	LAUNCH
+ja	missions/moon/apollo16.json	events.4.label	TOUCHDOWN
+ja	missions/moon/apollo16.json	events.5.label	FIRST HIGHLANDS EVA
+ja	missions/moon/apollo16.json	events.8.label	ASCENT
+ja	missions/moon/apollo16.json	events.10.label	SPLASHDOWN
+ja	missions/moon/apollo17.json	events.0.label	LAUNCH
+ja	missions/moon/apollo17.json	events.3.label	TOUCHDOWN
+ja	missions/moon/apollo17.json	events.4.label	FIRST EVA
+ja	missions/moon/apollo17.json	events.5.label	ASCENT
+ja	missions/moon/apollo17.json	events.6.label	SPLASHDOWN
+ja	missions/moon/apollo8.json	events.0.label	LAUNCH
+ja	missions/moon/apollo8.json	events.6.label	SPLASHDOWN
+ja	missions/moon/artemis2.json	events.0.label	SLS LAUNCH
+ja	missions/moon/artemis2.json	events.3.label	LUNAR FLYBY
+ja	missions/moon/artemis2.json	events.5.label	SPLASHDOWN
+ja	missions/moon/artemis3.json	events.0.label	SLS LAUNCH
+ja	missions/moon/artemis3.json	events.2.label	NRHO ARRIVAL
+ja	missions/moon/artemis3.json	events.3.label	DESCENT
+ja	missions/moon/artemis3.json	events.4.label	ASCENT
+ja	missions/moon/artemis3.json	events.6.label	SPLASHDOWN
+ja	missions/moon/beresheet.json	events.0.label	LAUNCH
+ja	missions/moon/beresheet.json	events.1.label	PHASING BURN
+ja	missions/moon/beresheet.json	events.5.label	LUNAR ORBIT INSERTION
+ja	missions/moon/beresheet.json	events.6.label	DESCENT ANOMALY
+ja	missions/moon/blue-moon-mk1.json	events.0.label	NEW GLENN LAUNCH
+ja	missions/moon/blue-moon-mk1.json	events.4.label	POWERED DESCENT
+ja	missions/moon/chandrayaan1.json	events.0.label	LAUNCH
+ja	missions/moon/chandrayaan1.json	events.2.label	MIP IMPACT
+ja	missions/moon/chandrayaan1.json	events.3.label	CONTACT LOST
+ja	missions/moon/change3.json	events.0.label	LAUNCH
+ja	missions/moon/change3.json	events.2.label	LUNAR ORBIT INSERTION
+ja	missions/moon/change3.json	events.3.label	LANDING
+ja	missions/moon/change5.json	events.0.label	LAUNCH
+ja	missions/moon/change5.json	events.2.label	TOUCHDOWN
+ja	missions/moon/change5.json	events.4.label	ASCENT
+ja	missions/moon/change5.json	events.5.label	RENDEZVOUS
+ja	missions/moon/change5.json	events.6.label	EARTH RETURN
+ja	missions/moon/change6.json	events.0.label	LAUNCH
+ja	missions/moon/change6.json	events.2.label	TOUCHDOWN
+ja	missions/moon/change6.json	events.4.label	ASCENT
+ja	missions/moon/change6.json	events.5.label	EARTH RETURN
+ja	missions/moon/clementine.json	events.0.label	LAUNCH
+ja	missions/moon/clementine.json	events.3.label	DEPARTURE
+ja	missions/moon/lro.json	events.0.label	LAUNCH
+ja	missions/moon/lro.json	events.2.label	PRIME MISSION
+ja	missions/moon/luna16.json	events.0.label	LAUNCH
+ja	missions/moon/luna16.json	events.3.label	LANDING
+ja	missions/moon/luna16.json	events.4.label	SAMPLE RETURN
+ja	missions/moon/luna17.json	events.0.label	LAUNCH
+ja	missions/moon/luna17.json	events.2.label	TOUCHDOWN
+ja	missions/moon/luna17.json	events.4.label	FINAL CONTACT
+ja	missions/moon/luna21.json	events.0.label	LAUNCH
+ja	missions/moon/luna21.json	events.3.label	LANDING
+ja	missions/moon/slim.json	events.0.label	LAUNCH
+ja	missions/moon/slim.json	events.3.label	TOUCHDOWN
+ja	missions/moon/slim.json	events.4.label	TILTED LANDING
+ja	missions/neptune/voyager-2.json	events.0.label	LAUNCH
+ja	missions/pluto/new-horizons.json	events.0.label	LAUNCH
+ja	missions/pluto/new-horizons.json	events.1.label	PLUTO FLYBY
+ja	missions/saturn/cassini.json	events.0.label	LAUNCH
+ja	missions/saturn/cassini.json	events.2.label	SATURN ORBIT INSERTION
+ja	scenarios/orrery-1.json	events.0.label	LAUNCH
+ja	scenarios/orrery-1.json	events.1.label	TMI BURN
+ja	scenarios/orrery-1.json	events.4.label	CRUISE
+ja	scenarios/orrery-1.json	events.6.label	MARS FLYBY
+ja	scenarios/orrery-1.json	events.7.label	RETURN TRAJECTORY
+ja	scenarios/orrery-1.json	events.10.label	RE-ENTRY PREP
+ja	scenarios/orrery-1.json	events.11.label	EARTH ARRIVAL
+ko	missions/earth/apollo7.json	events.0.label	LAUNCH
+ko	missions/earth/apollo7.json	events.1.label	ORBIT INSERT
+ko	missions/earth/apollo7.json	events.2.label	FIRST LIVE TV
+ko	missions/earth/apollo7.json	events.3.label	SPLASHDOWN
+ko	missions/earth/inspiration4.json	events.0.label	LAUNCH
+ko	missions/earth/inspiration4.json	events.1.label	ORBIT
+ko	missions/earth/inspiration4.json	events.3.label	SPLASHDOWN
+ko	missions/earth/otv-2.json	events.0.label	LAUNCH
+ko	missions/earth/otv-2.json	events.1.label	ON-ORBIT OPS
+ko	missions/earth/otv-2.json	events.2.label	LANDING
+ko	missions/earth/otv-4.json	events.0.label	LAUNCH
+ko	missions/earth/otv-4.json	events.1.label	ON-ORBIT OPS
+ko	missions/earth/otv-4.json	events.2.label	LANDING
+ko	missions/earth/otv-5.json	events.0.label	LAUNCH
+ko	missions/earth/otv-5.json	events.1.label	ON-ORBIT OPS
+ko	missions/earth/otv-5.json	events.2.label	LANDING
+ko	missions/earth/polaris-dawn.json	events.0.label	LAUNCH
+ko	missions/earth/polaris-dawn.json	events.1.label	APOGEE BOOST
+ko	missions/earth/polaris-dawn.json	events.2.label	COMMERCIAL EVA
+ko	missions/earth/polaris-dawn.json	events.3.label	SPLASHDOWN
+ko	missions/earth/skylab-2.json	events.0.label	LAUNCH
+ko	missions/earth/skylab-2.json	events.1.label	DOCK
+ko	missions/earth/skylab-2.json	events.2.label	EVA #2 — POWER RESTORED
+ko	missions/earth/skylab-2.json	events.3.label	SPLASHDOWN
+ko	missions/earth/skylab-3.json	events.0.label	LAUNCH
+ko	missions/earth/skylab-3.json	events.2.label	TWIN-POLE SHIELD EVA
+ko	missions/earth/skylab-3.json	events.3.label	SPLASHDOWN
+ko	missions/earth/voskhod-1.json	events.0.label	LAUNCH
+ko	missions/earth/vostok-1.json	events.0.label	LAUNCH
+ko	missions/earth/vostok-1.json	events.1.label	ORBIT INSERT
+ko	missions/earth/vostok-2.json	events.0.label	LAUNCH
+ko	missions/earth/vostok-5.json	events.0.label	LAUNCH
+ko	missions/mars/schiaparelli.json	events.0.label	LAUNCH
+ko	missions/mars/schiaparelli.json	events.5.label	SEPARATION
+ko	missions/mars/schiaparelli.json	events.6.label	ENTRY
+ko	missions/mars/schiaparelli.json	events.7.label	DESCENT ANOMALY
+ko	missions/mercury/mariner10.json	events.0.label	LAUNCH
+ko	missions/mercury/mariner10.json	events.1.label	VENUS FLYBY
+ko	missions/mercury/mariner10.json	events.5.label	PROPELLANT END
+ko	missions/moon/apollo10.json	events.0.label	LAUNCH
+ko	missions/moon/apollo10.json	events.3.label	LM SEPARATION
+ko	missions/moon/apollo10.json	events.5.label	ASCENT + RENDEZVOUS
+ko	missions/moon/apollo10.json	events.7.label	SPLASHDOWN
+ko	missions/moon/apollo14.json	events.0.label	LAUNCH
+ko	missions/moon/apollo14.json	events.4.label	TOUCHDOWN
+ko	missions/moon/apollo14.json	events.7.label	ASCENT
+ko	missions/moon/apollo14.json	events.9.label	SPLASHDOWN
+ko	missions/moon/apollo16.json	events.0.label	LAUNCH
+ko	missions/moon/apollo16.json	events.4.label	TOUCHDOWN
+ko	missions/moon/apollo16.json	events.5.label	FIRST HIGHLANDS EVA
+ko	missions/moon/apollo16.json	events.8.label	ASCENT
+ko	missions/moon/apollo16.json	events.10.label	SPLASHDOWN
+ko	missions/moon/apollo8.json	events.0.label	LAUNCH
+ko	missions/moon/apollo8.json	events.6.label	SPLASHDOWN
+ko	missions/moon/beresheet.json	events.0.label	LAUNCH
+ko	missions/moon/beresheet.json	events.1.label	PHASING BURN
+ko	missions/moon/beresheet.json	events.5.label	LUNAR ORBIT INSERTION
+ko	missions/moon/beresheet.json	events.6.label	DESCENT ANOMALY
+ko	missions/moon/change3.json	events.0.label	LAUNCH
+ko	missions/moon/change3.json	events.2.label	LUNAR ORBIT INSERTION
+ko	missions/moon/change3.json	events.3.label	LANDING
+ko	missions/moon/luna16.json	events.0.label	LAUNCH
+ko	missions/moon/luna16.json	events.3.label	LANDING
+ko	missions/moon/luna16.json	events.4.label	SAMPLE RETURN
+ko	missions/moon/luna21.json	events.0.label	LAUNCH
+ko	missions/moon/luna21.json	events.3.label	LANDING
+nl	missions/asteroid/hayabusa2.json	events.5.label	1998 KY26 RENDEZVOUS
+nl	missions/asteroid/near-shoemaker.json	events.4.label	EROS LANDING — EDL
+nl	missions/earth/apollo7.json	events.0.label	LAUNCH
+nl	missions/earth/apollo7.json	events.1.label	ORBIT INSERT
+nl	missions/earth/apollo7.json	events.2.label	FIRST LIVE TV
+nl	missions/earth/apollo7.json	events.3.label	SPLASHDOWN
+nl	missions/earth/gemini6a.json	events.2.label	RENDEZVOUS
+nl	missions/earth/gemini6a.json	events.3.label	SPLASHDOWN
+nl	missions/earth/gemini7.json	events.2.label	SPLASHDOWN
+nl	missions/earth/inspiration4.json	events.0.label	LAUNCH
+nl	missions/earth/inspiration4.json	events.1.label	ORBIT
+nl	missions/earth/inspiration4.json	events.3.label	SPLASHDOWN
+nl	missions/earth/otv-1.json	events.2.label	LANDING
+nl	missions/earth/otv-2.json	events.0.label	LAUNCH
+nl	missions/earth/otv-2.json	events.1.label	ON-ORBIT OPS
+nl	missions/earth/otv-2.json	events.2.label	LANDING
+nl	missions/earth/otv-3.json	events.2.label	LANDING
+nl	missions/earth/otv-4.json	events.0.label	LAUNCH
+nl	missions/earth/otv-4.json	events.1.label	ON-ORBIT OPS
+nl	missions/earth/otv-4.json	events.2.label	LANDING
+nl	missions/earth/otv-5.json	events.0.label	LAUNCH
+nl	missions/earth/otv-5.json	events.1.label	ON-ORBIT OPS
+nl	missions/earth/otv-5.json	events.2.label	LANDING
+nl	missions/earth/otv-6.json	events.2.label	LANDING
+nl	missions/earth/otv-7.json	events.2.label	LANDING
+nl	missions/earth/polaris-dawn.json	events.0.label	LAUNCH
+nl	missions/earth/polaris-dawn.json	events.1.label	APOGEE BOOST
+nl	missions/earth/polaris-dawn.json	events.2.label	COMMERCIAL EVA
+nl	missions/earth/polaris-dawn.json	events.3.label	SPLASHDOWN
+nl	missions/earth/sigma-7.json	events.2.label	SPLASHDOWN
+nl	missions/earth/skylab-2.json	events.0.label	LAUNCH
+nl	missions/earth/skylab-2.json	events.1.label	DOCK
+nl	missions/earth/skylab-2.json	events.2.label	EVA #2 — POWER RESTORED
+nl	missions/earth/skylab-2.json	events.3.label	SPLASHDOWN
+nl	missions/earth/skylab-3.json	events.0.label	LAUNCH
+nl	missions/earth/skylab-3.json	events.2.label	TWIN-POLE SHIELD EVA
+nl	missions/earth/skylab-3.json	events.3.label	SPLASHDOWN
+nl	missions/earth/voskhod-1.json	events.0.label	LAUNCH
+nl	missions/earth/vostok-1.json	events.0.label	LAUNCH
+nl	missions/earth/vostok-1.json	events.1.label	ORBIT INSERT
+nl	missions/earth/vostok-2.json	events.0.label	LAUNCH
+nl	missions/earth/vostok-5.json	events.0.label	LAUNCH
+nl	missions/mars/curiosity.json	events.1.label	TMI BURN
+nl	missions/mars/insight.json	events.3.label	TOUCHDOWN
+nl	missions/mars/mariner4.json	events.2.label	MARS FLYBY
+nl	missions/mars/perseverance.json	events.1.label	TMI BURN
+nl	missions/mars/perseverance.json	events.4.label	TOUCHDOWN
+nl	missions/mars/schiaparelli.json	events.0.label	LAUNCH
+nl	missions/mars/schiaparelli.json	events.5.label	SEPARATION
+nl	missions/mars/schiaparelli.json	events.6.label	ENTRY
+nl	missions/mars/schiaparelli.json	events.7.label	DESCENT ANOMALY
+nl	missions/mercury/mariner10.json	events.0.label	LAUNCH
+nl	missions/mercury/mariner10.json	events.1.label	VENUS FLYBY
+nl	missions/mercury/mariner10.json	events.5.label	PROPELLANT END
+nl	missions/moon/apollo10.json	events.0.label	LAUNCH
+nl	missions/moon/apollo10.json	events.3.label	LM SEPARATION
+nl	missions/moon/apollo10.json	events.5.label	ASCENT + RENDEZVOUS
+nl	missions/moon/apollo10.json	events.7.label	SPLASHDOWN
+nl	missions/moon/apollo11.json	events.3.label	TOUCHDOWN
+nl	missions/moon/apollo11.json	events.6.label	SPLASHDOWN
+nl	missions/moon/apollo14.json	events.0.label	LAUNCH
+nl	missions/moon/apollo14.json	events.4.label	TOUCHDOWN
+nl	missions/moon/apollo14.json	events.7.label	ASCENT
+nl	missions/moon/apollo14.json	events.9.label	SPLASHDOWN
+nl	missions/moon/apollo16.json	events.0.label	LAUNCH
+nl	missions/moon/apollo16.json	events.4.label	TOUCHDOWN
+nl	missions/moon/apollo16.json	events.5.label	FIRST HIGHLANDS EVA
+nl	missions/moon/apollo16.json	events.8.label	ASCENT
+nl	missions/moon/apollo16.json	events.10.label	SPLASHDOWN
+nl	missions/moon/apollo17.json	events.3.label	TOUCHDOWN
+nl	missions/moon/apollo17.json	events.6.label	SPLASHDOWN
+nl	missions/moon/apollo8.json	events.0.label	LAUNCH
+nl	missions/moon/apollo8.json	events.6.label	SPLASHDOWN
+nl	missions/moon/artemis2.json	events.5.label	SPLASHDOWN
+nl	missions/moon/artemis3.json	events.6.label	SPLASHDOWN
+nl	missions/moon/beresheet.json	events.0.label	LAUNCH
+nl	missions/moon/beresheet.json	events.1.label	PHASING BURN
+nl	missions/moon/beresheet.json	events.5.label	LUNAR ORBIT INSERTION
+nl	missions/moon/beresheet.json	events.6.label	DESCENT ANOMALY
+nl	missions/moon/change3.json	events.0.label	LAUNCH
+nl	missions/moon/change3.json	events.2.label	LUNAR ORBIT INSERTION
+nl	missions/moon/change3.json	events.3.label	LANDING
+nl	missions/moon/change4.json	events.2.label	TOUCHDOWN
+nl	missions/moon/change5.json	events.2.label	TOUCHDOWN
+nl	missions/moon/change5.json	events.5.label	RENDEZVOUS
+nl	missions/moon/change6.json	events.2.label	TOUCHDOWN
+nl	missions/moon/luna16.json	events.0.label	LAUNCH
+nl	missions/moon/luna16.json	events.3.label	LANDING
+nl	missions/moon/luna16.json	events.4.label	SAMPLE RETURN
+nl	missions/moon/luna17.json	events.2.label	TOUCHDOWN
+nl	missions/moon/luna21.json	events.0.label	LAUNCH
+nl	missions/moon/luna21.json	events.3.label	LANDING
+nl	missions/moon/luna9.json	events.1.label	TOUCHDOWN
+nl	missions/moon/slim.json	events.3.label	TOUCHDOWN
+nl	scenarios/orrery-1.json	events.6.label	MARS FLYBY
+pt-BR	missions/earth/apollo-soyuz.json	events.0.label	LAUNCH (Apollo)
+pt-BR	missions/earth/apollo-soyuz.json	events.4.label	SPLASHDOWN (Apollo)
+pt-BR	missions/earth/apollo7.json	events.0.label	LAUNCH
+pt-BR	missions/earth/apollo7.json	events.1.label	ORBIT INSERT
+pt-BR	missions/earth/apollo7.json	events.2.label	FIRST LIVE TV
+pt-BR	missions/earth/apollo7.json	events.3.label	SPLASHDOWN
+pt-BR	missions/earth/gemini6a.json	events.2.label	RENDEZVOUS
+pt-BR	missions/earth/inspiration4.json	events.0.label	LAUNCH
+pt-BR	missions/earth/inspiration4.json	events.1.label	ORBIT
+pt-BR	missions/earth/inspiration4.json	events.3.label	SPLASHDOWN
+pt-BR	missions/earth/otv-2.json	events.0.label	LAUNCH
+pt-BR	missions/earth/otv-2.json	events.1.label	ON-ORBIT OPS
+pt-BR	missions/earth/otv-2.json	events.2.label	LANDING
+pt-BR	missions/earth/otv-4.json	events.0.label	LAUNCH
+pt-BR	missions/earth/otv-4.json	events.1.label	ON-ORBIT OPS
+pt-BR	missions/earth/otv-4.json	events.2.label	LANDING
+pt-BR	missions/earth/otv-5.json	events.0.label	LAUNCH
+pt-BR	missions/earth/otv-5.json	events.1.label	ON-ORBIT OPS
+pt-BR	missions/earth/otv-5.json	events.2.label	LANDING
+pt-BR	missions/earth/polaris-dawn.json	events.0.label	LAUNCH
+pt-BR	missions/earth/polaris-dawn.json	events.1.label	APOGEE BOOST
+pt-BR	missions/earth/polaris-dawn.json	events.2.label	COMMERCIAL EVA
+pt-BR	missions/earth/polaris-dawn.json	events.3.label	SPLASHDOWN
+pt-BR	missions/earth/skylab-2.json	events.0.label	LAUNCH
+pt-BR	missions/earth/skylab-2.json	events.1.label	DOCK
+pt-BR	missions/earth/skylab-2.json	events.2.label	EVA #2 — POWER RESTORED
+pt-BR	missions/earth/skylab-2.json	events.3.label	SPLASHDOWN
+pt-BR	missions/earth/skylab-3.json	events.0.label	LAUNCH
+pt-BR	missions/earth/skylab-3.json	events.2.label	TWIN-POLE SHIELD EVA
+pt-BR	missions/earth/skylab-3.json	events.3.label	SPLASHDOWN
+pt-BR	missions/earth/voskhod-1.json	events.0.label	LAUNCH
+pt-BR	missions/earth/vostok-1.json	events.0.label	LAUNCH
+pt-BR	missions/earth/vostok-1.json	events.1.label	ORBIT INSERT
+pt-BR	missions/earth/vostok-2.json	events.0.label	LAUNCH
+pt-BR	missions/earth/vostok-5.json	events.0.label	LAUNCH
+pt-BR	missions/mars/phoenix.json	events.4.label	TOUCHDOWN
+pt-BR	missions/mars/schiaparelli.json	events.0.label	LAUNCH
+pt-BR	missions/mars/schiaparelli.json	events.5.label	SEPARATION
+pt-BR	missions/mars/schiaparelli.json	events.6.label	ENTRY
+pt-BR	missions/mars/schiaparelli.json	events.7.label	DESCENT ANOMALY
+pt-BR	missions/mercury/mariner10.json	events.0.label	LAUNCH
+pt-BR	missions/mercury/mariner10.json	events.1.label	VENUS FLYBY
+pt-BR	missions/mercury/mariner10.json	events.5.label	PROPELLANT END
+pt-BR	missions/moon/apollo10.json	events.0.label	LAUNCH
+pt-BR	missions/moon/apollo10.json	events.3.label	LM SEPARATION
+pt-BR	missions/moon/apollo10.json	events.5.label	ASCENT + RENDEZVOUS
+pt-BR	missions/moon/apollo10.json	events.7.label	SPLASHDOWN
+pt-BR	missions/moon/apollo11.json	events.6.label	SPLASHDOWN
+pt-BR	missions/moon/apollo14.json	events.0.label	LAUNCH
+pt-BR	missions/moon/apollo14.json	events.4.label	TOUCHDOWN
+pt-BR	missions/moon/apollo14.json	events.7.label	ASCENT
+pt-BR	missions/moon/apollo14.json	events.9.label	SPLASHDOWN
+pt-BR	missions/moon/apollo16.json	events.0.label	LAUNCH
+pt-BR	missions/moon/apollo16.json	events.4.label	TOUCHDOWN
+pt-BR	missions/moon/apollo16.json	events.5.label	FIRST HIGHLANDS EVA
+pt-BR	missions/moon/apollo16.json	events.8.label	ASCENT
+pt-BR	missions/moon/apollo16.json	events.10.label	SPLASHDOWN
+pt-BR	missions/moon/apollo17.json	events.6.label	SPLASHDOWN
+pt-BR	missions/moon/apollo8.json	events.0.label	LAUNCH
+pt-BR	missions/moon/apollo8.json	events.6.label	SPLASHDOWN
+pt-BR	missions/moon/artemis2.json	events.5.label	SPLASHDOWN
+pt-BR	missions/moon/artemis3.json	events.6.label	SPLASHDOWN
+pt-BR	missions/moon/beresheet.json	events.0.label	LAUNCH
+pt-BR	missions/moon/beresheet.json	events.1.label	PHASING BURN
+pt-BR	missions/moon/beresheet.json	events.5.label	LUNAR ORBIT INSERTION
+pt-BR	missions/moon/beresheet.json	events.6.label	DESCENT ANOMALY
+pt-BR	missions/moon/change3.json	events.0.label	LAUNCH
+pt-BR	missions/moon/change3.json	events.2.label	LUNAR ORBIT INSERTION
+pt-BR	missions/moon/change3.json	events.3.label	LANDING
+pt-BR	missions/moon/luna16.json	events.0.label	LAUNCH
+pt-BR	missions/moon/luna16.json	events.3.label	LANDING
+pt-BR	missions/moon/luna16.json	events.4.label	SAMPLE RETURN
+pt-BR	missions/moon/luna21.json	events.0.label	LAUNCH
+pt-BR	missions/moon/luna21.json	events.3.label	LANDING
+ru	missions/ceres/dawn.json	events.0.label	LAUNCH
+ru	missions/ceres/dawn.json	events.1.label	CERES CAPTURE
+ru	missions/earth/apollo7.json	events.0.label	LAUNCH
+ru	missions/earth/apollo7.json	events.1.label	ORBIT INSERT
+ru	missions/earth/apollo7.json	events.2.label	FIRST LIVE TV
+ru	missions/earth/apollo7.json	events.3.label	SPLASHDOWN
+ru	missions/earth/inspiration4.json	events.0.label	LAUNCH
+ru	missions/earth/inspiration4.json	events.1.label	ORBIT
+ru	missions/earth/inspiration4.json	events.3.label	SPLASHDOWN
+ru	missions/earth/otv-2.json	events.0.label	LAUNCH
+ru	missions/earth/otv-2.json	events.1.label	ON-ORBIT OPS
+ru	missions/earth/otv-2.json	events.2.label	LANDING
+ru	missions/earth/otv-4.json	events.0.label	LAUNCH
+ru	missions/earth/otv-4.json	events.1.label	ON-ORBIT OPS
+ru	missions/earth/otv-4.json	events.2.label	LANDING
+ru	missions/earth/otv-5.json	events.0.label	LAUNCH
+ru	missions/earth/otv-5.json	events.1.label	ON-ORBIT OPS
+ru	missions/earth/otv-5.json	events.2.label	LANDING
+ru	missions/earth/polaris-dawn.json	events.0.label	LAUNCH
+ru	missions/earth/polaris-dawn.json	events.1.label	APOGEE BOOST
+ru	missions/earth/polaris-dawn.json	events.2.label	COMMERCIAL EVA
+ru	missions/earth/polaris-dawn.json	events.3.label	SPLASHDOWN
+ru	missions/earth/skylab-2.json	events.0.label	LAUNCH
+ru	missions/earth/skylab-2.json	events.1.label	DOCK
+ru	missions/earth/skylab-2.json	events.2.label	EVA #2 — POWER RESTORED
+ru	missions/earth/skylab-2.json	events.3.label	SPLASHDOWN
+ru	missions/earth/skylab-3.json	events.0.label	LAUNCH
+ru	missions/earth/skylab-3.json	events.2.label	TWIN-POLE SHIELD EVA
+ru	missions/earth/skylab-3.json	events.3.label	SPLASHDOWN
+ru	missions/earth/voskhod-1.json	events.0.label	LAUNCH
+ru	missions/earth/vostok-1.json	events.0.label	LAUNCH
+ru	missions/earth/vostok-1.json	events.1.label	ORBIT INSERT
+ru	missions/earth/vostok-2.json	events.0.label	LAUNCH
+ru	missions/earth/vostok-5.json	events.0.label	LAUNCH
+ru	missions/mars/insight.json	events.0.label	LAUNCH
+ru	missions/mars/insight.json	events.3.label	TOUCHDOWN
+ru	missions/mars/insight.json	events.5.label	MISSION END
+ru	missions/mars/mariner4.json	events.0.label	LAUNCH
+ru	missions/mars/mariner4.json	events.2.label	MARS FLYBY
+ru	missions/mars/mariner4.json	events.3.label	FIRST IMAGES
+ru	missions/mars/mars-express.json	events.0.label	LAUNCH
+ru	missions/mars/mars-express.json	events.3.label	MARS ORBIT INSERTION
+ru	missions/mars/maven.json	events.0.label	LAUNCH
+ru	missions/mars/maven.json	events.2.label	MARS ORBIT INSERTION
+ru	missions/mars/maven.json	events.3.label	FIRST SCIENCE
+ru	missions/mars/mmx.json	events.0.label	LAUNCH
+ru	missions/mars/mmx.json	events.1.label	MARS ORBIT INSERTION
+ru	missions/mars/mmx.json	events.2.label	ROVER DEPLOY
+ru	missions/mars/mmx.json	events.3.label	PHOBOS SAMPLE
+ru	missions/mars/mmx.json	events.4.label	EARTH RETURN
+ru	missions/mars/schiaparelli.json	events.0.label	LAUNCH
+ru	missions/mars/schiaparelli.json	events.5.label	SEPARATION
+ru	missions/mars/schiaparelli.json	events.6.label	ENTRY
+ru	missions/mars/schiaparelli.json	events.7.label	DESCENT ANOMALY
+ru	missions/mars/starship-demo.json	events.0.label	LAUNCH
+ru	missions/mars/starship-demo.json	events.2.label	TMI BURN
+ru	missions/mars/starship-demo.json	events.3.label	MARS LANDING
+ru	missions/mars/starship-mars-crew.json	events.0.label	STARSHIP LAUNCH
+ru	missions/mars/starship-mars-crew.json	events.2.label	TMI BURN
+ru	missions/mars/starship-mars-crew.json	events.4.label	MARS LANDING
+ru	missions/mars/starship-mars-crew.json	events.5.label	RETURN PROP COMPLETE
+ru	missions/mars/starship-mars-crew.json	events.6.label	TEI BURN
+ru	missions/mars/starship-mars-crew.json	events.7.label	EARTH ARRIVAL
+ru	missions/mars/tianwen1.json	events.0.label	LAUNCH
+ru	missions/mars/tianwen1.json	events.1.label	MARS ORBIT INSERTION
+ru	missions/mars/tianwen1.json	events.2.label	ZHURONG LANDING
+ru	missions/mercury/mariner10.json	events.0.label	LAUNCH
+ru	missions/mercury/mariner10.json	events.1.label	VENUS FLYBY
+ru	missions/mercury/mariner10.json	events.5.label	PROPELLANT END
+ru	missions/moon/apollo10.json	events.0.label	LAUNCH
+ru	missions/moon/apollo10.json	events.3.label	LM SEPARATION
+ru	missions/moon/apollo10.json	events.5.label	ASCENT + RENDEZVOUS
+ru	missions/moon/apollo10.json	events.7.label	SPLASHDOWN
+ru	missions/moon/apollo11.json	events.0.label	LAUNCH
+ru	missions/moon/apollo11.json	events.3.label	TOUCHDOWN
+ru	missions/moon/apollo11.json	events.4.label	FIRST STEP
+ru	missions/moon/apollo11.json	events.5.label	ASCENT
+ru	missions/moon/apollo11.json	events.6.label	SPLASHDOWN
+ru	missions/moon/apollo14.json	events.0.label	LAUNCH
+ru	missions/moon/apollo14.json	events.4.label	TOUCHDOWN
+ru	missions/moon/apollo14.json	events.7.label	ASCENT
+ru	missions/moon/apollo14.json	events.9.label	SPLASHDOWN
+ru	missions/moon/apollo16.json	events.0.label	LAUNCH
+ru	missions/moon/apollo16.json	events.4.label	TOUCHDOWN
+ru	missions/moon/apollo16.json	events.5.label	FIRST HIGHLANDS EVA
+ru	missions/moon/apollo16.json	events.8.label	ASCENT
+ru	missions/moon/apollo16.json	events.10.label	SPLASHDOWN
+ru	missions/moon/apollo17.json	events.0.label	LAUNCH
+ru	missions/moon/apollo17.json	events.3.label	TOUCHDOWN
+ru	missions/moon/apollo17.json	events.4.label	FIRST EVA
+ru	missions/moon/apollo17.json	events.5.label	ASCENT
+ru	missions/moon/apollo17.json	events.6.label	SPLASHDOWN
+ru	missions/moon/apollo8.json	events.0.label	LAUNCH
+ru	missions/moon/apollo8.json	events.6.label	SPLASHDOWN
+ru	missions/moon/artemis2.json	events.0.label	SLS LAUNCH
+ru	missions/moon/artemis2.json	events.3.label	LUNAR FLYBY
+ru	missions/moon/artemis2.json	events.5.label	SPLASHDOWN
+ru	missions/moon/artemis3.json	events.0.label	SLS LAUNCH
+ru	missions/moon/artemis3.json	events.2.label	NRHO ARRIVAL
+ru	missions/moon/artemis3.json	events.3.label	DESCENT
+ru	missions/moon/artemis3.json	events.4.label	ASCENT
+ru	missions/moon/artemis3.json	events.6.label	SPLASHDOWN
+ru	missions/moon/beresheet.json	events.0.label	LAUNCH
+ru	missions/moon/beresheet.json	events.1.label	PHASING BURN
+ru	missions/moon/beresheet.json	events.5.label	LUNAR ORBIT INSERTION
+ru	missions/moon/beresheet.json	events.6.label	DESCENT ANOMALY
+ru	missions/moon/blue-moon-mk1.json	events.0.label	NEW GLENN LAUNCH
+ru	missions/moon/blue-moon-mk1.json	events.4.label	POWERED DESCENT
+ru	missions/moon/chandrayaan1.json	events.0.label	LAUNCH
+ru	missions/moon/chandrayaan1.json	events.2.label	MIP IMPACT
+ru	missions/moon/chandrayaan1.json	events.3.label	CONTACT LOST
+ru	missions/moon/change3.json	events.0.label	LAUNCH
+ru	missions/moon/change3.json	events.2.label	LUNAR ORBIT INSERTION
+ru	missions/moon/change3.json	events.3.label	LANDING
+ru	missions/moon/change5.json	events.0.label	LAUNCH
+ru	missions/moon/change5.json	events.2.label	TOUCHDOWN
+ru	missions/moon/change5.json	events.4.label	ASCENT
+ru	missions/moon/change5.json	events.5.label	RENDEZVOUS
+ru	missions/moon/change5.json	events.6.label	EARTH RETURN
+ru	missions/moon/change6.json	events.0.label	LAUNCH
+ru	missions/moon/change6.json	events.2.label	TOUCHDOWN
+ru	missions/moon/change6.json	events.4.label	ASCENT
+ru	missions/moon/change6.json	events.5.label	EARTH RETURN
+ru	missions/moon/clementine.json	events.0.label	LAUNCH
+ru	missions/moon/clementine.json	events.3.label	DEPARTURE
+ru	missions/moon/lro.json	events.0.label	LAUNCH
+ru	missions/moon/lro.json	events.2.label	PRIME MISSION
+ru	missions/moon/luna16.json	events.0.label	LAUNCH
+ru	missions/moon/luna16.json	events.3.label	LANDING
+ru	missions/moon/luna16.json	events.4.label	SAMPLE RETURN
+ru	missions/moon/luna17.json	events.0.label	LAUNCH
+ru	missions/moon/luna17.json	events.2.label	TOUCHDOWN
+ru	missions/moon/luna17.json	events.4.label	FINAL CONTACT
+ru	missions/moon/luna21.json	events.0.label	LAUNCH
+ru	missions/moon/luna21.json	events.3.label	LANDING
+ru	missions/moon/slim.json	events.0.label	LAUNCH
+ru	missions/moon/slim.json	events.3.label	TOUCHDOWN
+ru	missions/moon/slim.json	events.4.label	TILTED LANDING
+ru	missions/neptune/voyager-2.json	events.0.label	LAUNCH
+ru	missions/pluto/new-horizons.json	events.0.label	LAUNCH
+ru	missions/pluto/new-horizons.json	events.1.label	PLUTO FLYBY
+ru	scenarios/orrery-1.json	events.0.label	LAUNCH
+ru	scenarios/orrery-1.json	events.1.label	TMI BURN
+ru	scenarios/orrery-1.json	events.4.label	CRUISE
+ru	scenarios/orrery-1.json	events.6.label	MARS FLYBY
+ru	scenarios/orrery-1.json	events.7.label	RETURN TRAJECTORY
+ru	scenarios/orrery-1.json	events.10.label	RE-ENTRY PREP
+ru	scenarios/orrery-1.json	events.11.label	EARTH ARRIVAL
+zh-CN	missions/ceres/dawn.json	events.0.label	LAUNCH
+zh-CN	missions/ceres/dawn.json	events.1.label	CERES CAPTURE
+zh-CN	missions/earth/apollo-soyuz.json	events.0.label	LAUNCH (Apollo)
+zh-CN	missions/earth/apollo-soyuz.json	events.4.label	SPLASHDOWN (Apollo)
+zh-CN	missions/earth/apollo7.json	events.0.label	LAUNCH
+zh-CN	missions/earth/apollo7.json	events.1.label	ORBIT INSERT
+zh-CN	missions/earth/apollo7.json	events.2.label	FIRST LIVE TV
+zh-CN	missions/earth/apollo7.json	events.3.label	SPLASHDOWN
+zh-CN	missions/earth/inspiration4.json	events.0.label	LAUNCH
+zh-CN	missions/earth/inspiration4.json	events.1.label	ORBIT
+zh-CN	missions/earth/inspiration4.json	events.3.label	SPLASHDOWN
+zh-CN	missions/earth/otv-2.json	events.0.label	LAUNCH
+zh-CN	missions/earth/otv-2.json	events.1.label	ON-ORBIT OPS
+zh-CN	missions/earth/otv-2.json	events.2.label	LANDING
+zh-CN	missions/earth/otv-4.json	events.0.label	LAUNCH
+zh-CN	missions/earth/otv-4.json	events.1.label	ON-ORBIT OPS
+zh-CN	missions/earth/otv-4.json	events.2.label	LANDING
+zh-CN	missions/earth/otv-5.json	events.0.label	LAUNCH
+zh-CN	missions/earth/otv-5.json	events.1.label	ON-ORBIT OPS
+zh-CN	missions/earth/otv-5.json	events.2.label	LANDING
+zh-CN	missions/earth/polaris-dawn.json	events.0.label	LAUNCH
+zh-CN	missions/earth/polaris-dawn.json	events.1.label	APOGEE BOOST
+zh-CN	missions/earth/polaris-dawn.json	events.2.label	COMMERCIAL EVA
+zh-CN	missions/earth/polaris-dawn.json	events.3.label	SPLASHDOWN
+zh-CN	missions/earth/skylab-2.json	events.0.label	LAUNCH
+zh-CN	missions/earth/skylab-2.json	events.1.label	DOCK
+zh-CN	missions/earth/skylab-2.json	events.2.label	EVA #2 — POWER RESTORED
+zh-CN	missions/earth/skylab-2.json	events.3.label	SPLASHDOWN
+zh-CN	missions/earth/skylab-3.json	events.0.label	LAUNCH
+zh-CN	missions/earth/skylab-3.json	events.2.label	TWIN-POLE SHIELD EVA
+zh-CN	missions/earth/skylab-3.json	events.3.label	SPLASHDOWN
+zh-CN	missions/earth/voskhod-1.json	events.0.label	LAUNCH
+zh-CN	missions/earth/vostok-1.json	events.0.label	LAUNCH
+zh-CN	missions/earth/vostok-1.json	events.1.label	ORBIT INSERT
+zh-CN	missions/earth/vostok-2.json	events.0.label	LAUNCH
+zh-CN	missions/earth/vostok-5.json	events.0.label	LAUNCH
+zh-CN	missions/mars/insight.json	events.0.label	LAUNCH
+zh-CN	missions/mars/insight.json	events.3.label	TOUCHDOWN
+zh-CN	missions/mars/insight.json	events.5.label	MISSION END
+zh-CN	missions/mars/mariner4.json	events.0.label	LAUNCH
+zh-CN	missions/mars/mariner4.json	events.2.label	MARS FLYBY
+zh-CN	missions/mars/mariner4.json	events.3.label	FIRST IMAGES
+zh-CN	missions/mars/mars-express.json	events.0.label	LAUNCH
+zh-CN	missions/mars/mars-express.json	events.3.label	MARS ORBIT INSERTION
+zh-CN	missions/mars/maven.json	events.0.label	LAUNCH
+zh-CN	missions/mars/maven.json	events.2.label	MARS ORBIT INSERTION
+zh-CN	missions/mars/maven.json	events.3.label	FIRST SCIENCE
+zh-CN	missions/mars/mmx.json	events.0.label	LAUNCH
+zh-CN	missions/mars/mmx.json	events.1.label	MARS ORBIT INSERTION
+zh-CN	missions/mars/mmx.json	events.2.label	ROVER DEPLOY
+zh-CN	missions/mars/mmx.json	events.3.label	PHOBOS SAMPLE
+zh-CN	missions/mars/mmx.json	events.4.label	EARTH RETURN
+zh-CN	missions/mars/schiaparelli.json	events.0.label	LAUNCH
+zh-CN	missions/mars/schiaparelli.json	events.5.label	SEPARATION
+zh-CN	missions/mars/schiaparelli.json	events.6.label	ENTRY
+zh-CN	missions/mars/schiaparelli.json	events.7.label	DESCENT ANOMALY
+zh-CN	missions/mars/starship-demo.json	events.0.label	LAUNCH
+zh-CN	missions/mars/starship-demo.json	events.2.label	TMI BURN
+zh-CN	missions/mars/starship-demo.json	events.3.label	MARS LANDING
+zh-CN	missions/mars/starship-mars-crew.json	events.0.label	STARSHIP LAUNCH
+zh-CN	missions/mars/starship-mars-crew.json	events.2.label	TMI BURN
+zh-CN	missions/mars/starship-mars-crew.json	events.4.label	MARS LANDING
+zh-CN	missions/mars/starship-mars-crew.json	events.5.label	RETURN PROP COMPLETE
+zh-CN	missions/mars/starship-mars-crew.json	events.6.label	TEI BURN
+zh-CN	missions/mars/starship-mars-crew.json	events.7.label	EARTH ARRIVAL
+zh-CN	missions/mars/tianwen1.json	events.0.label	LAUNCH
+zh-CN	missions/mars/tianwen1.json	events.2.label	ZHURONG LANDING
+zh-CN	missions/mercury/mariner10.json	events.0.label	LAUNCH
+zh-CN	missions/mercury/mariner10.json	events.1.label	VENUS FLYBY
+zh-CN	missions/mercury/mariner10.json	events.5.label	PROPELLANT END
+zh-CN	missions/moon/apollo10.json	events.0.label	LAUNCH
+zh-CN	missions/moon/apollo10.json	events.3.label	LM SEPARATION
+zh-CN	missions/moon/apollo10.json	events.5.label	ASCENT + RENDEZVOUS
+zh-CN	missions/moon/apollo10.json	events.7.label	SPLASHDOWN
+zh-CN	missions/moon/apollo11.json	events.0.label	LAUNCH
+zh-CN	missions/moon/apollo11.json	events.3.label	TOUCHDOWN
+zh-CN	missions/moon/apollo11.json	events.4.label	FIRST STEP
+zh-CN	missions/moon/apollo11.json	events.5.label	ASCENT
+zh-CN	missions/moon/apollo11.json	events.6.label	SPLASHDOWN
+zh-CN	missions/moon/apollo14.json	events.0.label	LAUNCH
+zh-CN	missions/moon/apollo14.json	events.4.label	TOUCHDOWN
+zh-CN	missions/moon/apollo14.json	events.7.label	ASCENT
+zh-CN	missions/moon/apollo14.json	events.9.label	SPLASHDOWN
+zh-CN	missions/moon/apollo16.json	events.0.label	LAUNCH
+zh-CN	missions/moon/apollo16.json	events.4.label	TOUCHDOWN
+zh-CN	missions/moon/apollo16.json	events.5.label	FIRST HIGHLANDS EVA
+zh-CN	missions/moon/apollo16.json	events.8.label	ASCENT
+zh-CN	missions/moon/apollo16.json	events.10.label	SPLASHDOWN
+zh-CN	missions/moon/apollo17.json	events.0.label	LAUNCH
+zh-CN	missions/moon/apollo17.json	events.3.label	TOUCHDOWN
+zh-CN	missions/moon/apollo17.json	events.4.label	FIRST EVA
+zh-CN	missions/moon/apollo17.json	events.5.label	ASCENT
+zh-CN	missions/moon/apollo17.json	events.6.label	SPLASHDOWN
+zh-CN	missions/moon/apollo8.json	events.0.label	LAUNCH
+zh-CN	missions/moon/apollo8.json	events.6.label	SPLASHDOWN
+zh-CN	missions/moon/artemis2.json	events.0.label	SLS LAUNCH
+zh-CN	missions/moon/artemis2.json	events.3.label	LUNAR FLYBY
+zh-CN	missions/moon/artemis2.json	events.5.label	SPLASHDOWN
+zh-CN	missions/moon/artemis3.json	events.0.label	SLS LAUNCH
+zh-CN	missions/moon/artemis3.json	events.2.label	NRHO ARRIVAL
+zh-CN	missions/moon/artemis3.json	events.3.label	DESCENT
+zh-CN	missions/moon/artemis3.json	events.4.label	ASCENT
+zh-CN	missions/moon/artemis3.json	events.6.label	SPLASHDOWN
+zh-CN	missions/moon/beresheet.json	events.0.label	LAUNCH
+zh-CN	missions/moon/beresheet.json	events.1.label	PHASING BURN
+zh-CN	missions/moon/beresheet.json	events.5.label	LUNAR ORBIT INSERTION
+zh-CN	missions/moon/beresheet.json	events.6.label	DESCENT ANOMALY
+zh-CN	missions/moon/blue-moon-mk1.json	events.0.label	NEW GLENN LAUNCH
+zh-CN	missions/moon/blue-moon-mk1.json	events.4.label	POWERED DESCENT
+zh-CN	missions/moon/chandrayaan1.json	events.0.label	LAUNCH
+zh-CN	missions/moon/chandrayaan1.json	events.2.label	MIP IMPACT
+zh-CN	missions/moon/chandrayaan1.json	events.3.label	CONTACT LOST
+zh-CN	missions/moon/change3.json	events.0.label	LAUNCH
+zh-CN	missions/moon/change3.json	events.2.label	LUNAR ORBIT INSERTION
+zh-CN	missions/moon/change3.json	events.3.label	LANDING
+zh-CN	missions/moon/change5.json	events.0.label	LAUNCH
+zh-CN	missions/moon/change5.json	events.2.label	TOUCHDOWN
+zh-CN	missions/moon/change5.json	events.4.label	ASCENT
+zh-CN	missions/moon/change5.json	events.5.label	RENDEZVOUS
+zh-CN	missions/moon/change5.json	events.6.label	EARTH RETURN
+zh-CN	missions/moon/change6.json	events.0.label	LAUNCH
+zh-CN	missions/moon/change6.json	events.2.label	TOUCHDOWN
+zh-CN	missions/moon/change6.json	events.4.label	ASCENT
+zh-CN	missions/moon/change6.json	events.5.label	EARTH RETURN
+zh-CN	missions/moon/clementine.json	events.0.label	LAUNCH
+zh-CN	missions/moon/clementine.json	events.3.label	DEPARTURE
+zh-CN	missions/moon/lro.json	events.0.label	LAUNCH
+zh-CN	missions/moon/lro.json	events.2.label	PRIME MISSION
+zh-CN	missions/moon/luna16.json	events.0.label	LAUNCH
+zh-CN	missions/moon/luna16.json	events.3.label	LANDING
+zh-CN	missions/moon/luna16.json	events.4.label	SAMPLE RETURN
+zh-CN	missions/moon/luna17.json	events.0.label	LAUNCH
+zh-CN	missions/moon/luna17.json	events.2.label	TOUCHDOWN
+zh-CN	missions/moon/luna17.json	events.4.label	FINAL CONTACT
+zh-CN	missions/moon/luna21.json	events.0.label	LAUNCH
+zh-CN	missions/moon/luna21.json	events.3.label	LANDING
+zh-CN	missions/moon/slim.json	events.0.label	LAUNCH
+zh-CN	missions/moon/slim.json	events.3.label	TOUCHDOWN
+zh-CN	missions/moon/slim.json	events.4.label	TILTED LANDING
+zh-CN	missions/neptune/voyager-2.json	events.0.label	LAUNCH
+zh-CN	missions/pluto/new-horizons.json	events.0.label	LAUNCH
+zh-CN	missions/pluto/new-horizons.json	events.1.label	PLUTO FLYBY
+zh-CN	scenarios/orrery-1.json	events.0.label	LAUNCH
+zh-CN	scenarios/orrery-1.json	events.1.label	TMI BURN
+zh-CN	scenarios/orrery-1.json	events.4.label	CRUISE
+zh-CN	scenarios/orrery-1.json	events.6.label	MARS FLYBY
+zh-CN	scenarios/orrery-1.json	events.7.label	RETURN TRAJECTORY
+zh-CN	scenarios/orrery-1.json	events.10.label	RE-ENTRY PREP
+zh-CN	scenarios/orrery-1.json	events.11.label	EARTH ARRIVAL

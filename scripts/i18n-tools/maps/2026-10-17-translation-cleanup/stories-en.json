@@ -1,0 +1,831 @@
+{
+  "apollo11": {
+    "intro": "Apollo 11 landed in Mare Tranquillitatis at 20:17 UTC on July 20, 1969 — the first crewed landing on another world. Armstrong and Aldrin spent 2h 31m outside the Lunar Module Eagle; Collins orbited in Columbia overhead. The crew returned 21.5 kg of lunar samples and left behind footprints, a retroreflector array (still used by Earth-based lasers), and a plaque: \"We came in peace for all mankind\".",
+    "ch": {
+      "hardware": {
+        "s": "Saturn V + Command Module Columbia + Lunar Module Eagle",
+        "c": [
+          "Saturn V SA-506 with Apollo 11 on Pad 39A — 110.6 m tall, the most powerful launch vehicle ever flown to operational mission."
+        ]
+      },
+      "launch": {
+        "s": "July 16, 1969 — Saturn V from Kennedy Space Center",
+        "c": [
+          "Liftoff at 13:32 UTC, July 16 1969 — TLI burn 2h 44m later sent Apollo 11 toward the Moon at 11 km/s."
+        ]
+      },
+      "surface": {
+        "s": "Mare Tranquillitatis — landed July 20, 1969",
+        "c": [
+          "Buzz Aldrin descending the LM ladder, photographed by Armstrong. \"Magnificent desolation\" — Aldrin's first words on the surface.",
+          "Aldrin's bootprint at Tranquility Base — preserved unchanged in the vacuum for over half a century.",
+          "Tranquility Base panorama — LM Eagle descent stage, EASEP science package, US flag, and the Moon's most-famous footprints."
+        ]
+      },
+      "science": {
+        "s": "21.5 kg of basalt samples, retroreflector array, seismometer",
+        "c": [
+          "Lunar samples 10072 — vesicular mare basalt, 3.7 billion years old. The first rock from another world studied on Earth."
+        ]
+      }
+    }
+  },
+  "apollo12": {
+    "intro": "Apollo 12 landed in Oceanus Procellarum on November 19, 1969 — a pinpoint landing within walking distance of the Surveyor 3 robotic lander that had touched down 2½ years earlier. Conrad and Bean spent 31h on the surface across two EVAs, carried back 34 kg of samples plus pieces of Surveyor 3 for analysis. Demonstrated that crewed Apollo could reach a specific target on the lunar surface.",
+    "ch": {
+      "hardware": {
+        "s": "Yankee Clipper + Intrepid",
+        "c": ["Apollo 12 crew portrait — Pete Conrad (CDR), Dick Gordon (CMP), Al Bean (LMP)."]
+      },
+      "launch": {
+        "s": "November 14, 1969 — struck by lightning twice in the first minute",
+        "c": [
+          "Saturn V SA-507 lifts off through a rain shower. Lightning hit the vehicle at T+36s and T+52s, knocking out fuel-cell power; SCE-to-AUX command saved the mission."
+        ]
+      },
+      "surface": {
+        "s": "Oceanus Procellarum — landed November 19, 1969",
+        "c": [
+          "Conrad with the Surveyor 3 lander — Apollo 12 landed 163 m away, the first precision lunar landing.",
+          "ALSEP science station deployed — first long-duration lunar geophysical observatory.",
+          "Apollo 12 landing site panorama — Intrepid descent stage + ALSEP + Surveyor 3 within frame."
+        ]
+      }
+    }
+  },
+  "apollo14": {
+    "intro": "Apollo 14 landed in the Fra Mauro highlands on February 5, 1971 — the original Apollo 13 target, completed after the 13 explosion. Shepard and Mitchell hauled the Modular Equipment Transporter (a rickshaw) up Cone Crater's flanks and brought back 43 kg of breccia — fragments of the giant impact that formed Mare Imbrium 3.9 billion years ago. Shepard famously hit two golf balls before liftoff.",
+    "ch": {
+      "hardware": {
+        "s": "Kitty Hawk + Antares + the rickshaw",
+        "c": [
+          "Apollo 14 crew: Alan Shepard (CDR — first American in space, 10 years earlier), Stuart Roosa (CMP), Ed Mitchell (LMP)."
+        ]
+      },
+      "surface": {
+        "s": "Fra Mauro highlands — landed February 5, 1971",
+        "c": [
+          "Mitchell with the Modular Equipment Transporter (MET) — the \"rickshaw\" hauled tools + samples up the slope toward Cone Crater.",
+          "Cone Crater rim — the crew climbed to within ~30 m of the rim but were forced back by exhaustion + comms limits.",
+          "Apollo 14 landing site panorama — Antares descent stage + ALSEP visible."
+        ]
+      },
+      "science": {
+        "s": "Imbrium-impact breccia samples",
+        "c": [
+          "\"Big Bertha\" — sample 14321, a 8.99 kg breccia containing the oldest Earth rock ever found (4.1 Ga zircon), blasted to the Moon by an early Earth impact."
+        ]
+      }
+    }
+  },
+  "apollo15": {
+    "intro": "Apollo 15 landed in Hadley Rille / Apennine Mountains on July 30, 1971 — the first \"J-class\" mission with extended surface stay, Lunar Roving Vehicle (LRV), and a scientist-trained pilot (David Scott). Scott and Irwin drove 28 km total across three EVAs, found the Genesis Rock (~4.1 Ga anorthosite, primary crust), and on live TV dropped a feather + hammer to demonstrate Galileo's gravity test.",
+    "ch": {
+      "hardware": {
+        "s": "Endeavour + Falcon + LRV-1 (first lunar car)",
+        "c": [
+          "Apollo 15 crew + the Lunar Roving Vehicle in pre-mission training — Scott + Irwin would drive the first wheels on the Moon."
+        ]
+      },
+      "surface": {
+        "s": "Hadley-Apennine — landed July 30, 1971",
+        "c": [
+          "Jim Irwin saluting beside the LRV with Mt Hadley Delta behind — the first images of the Apennine Mountains from the surface.",
+          "David Scott at the rim of Hadley Rille — first time astronauts stood at the edge of an ancient lava channel on another world.",
+          "Hadley Plain panorama — Falcon descent stage + LRV + Mt Hadley Delta on the horizon."
+        ]
+      },
+      "science": {
+        "s": "Genesis Rock + Galileo experiment",
+        "c": [
+          "Sample 15415 \"Genesis Rock\" — pure ferroan anorthosite, ~4.1 billion years old. A fragment of the Moon's primary magma-ocean crust."
+        ]
+      }
+    }
+  },
+  "apollo16": {
+    "intro": "Apollo 16 landed in the Descartes Highlands on April 21, 1972 — the only Apollo mission to a highland (not mare) site, chosen to sample what was believed to be volcanic terrain. Young and Duke found NO volcanic rocks — only impact breccias and anorthosite — overturning the geological model and demonstrating the Moon's highlands are an ancient impact-shattered crust, not later volcanism. Three EVAs, 27 km of LRV traverse, 95 kg of samples returned.",
+    "ch": {
+      "hardware": {
+        "s": "Casper + Orion + LRV-2",
+        "c": [
+          "Apollo 16 crew portrait — John Young (CDR), Ken Mattingly (CMP — bumped from Apollo 13), Charlie Duke (LMP)."
+        ]
+      },
+      "surface": {
+        "s": "Descartes Highlands — landed April 21, 1972",
+        "c": [
+          "John Young leaping during the \"Lunar Olympics\" — first crewed lunar high-jump, demonstrating the 1/6 g.",
+          "Duke at \"Big Muley\" — sample 61016, the largest single rock returned from the Moon (11.7 kg).",
+          "Descartes Highlands panorama — Orion descent stage + LRV + Stone Mountain backdrop."
+        ]
+      },
+      "science": {
+        "s": "Highland breccias overturn the volcanism hypothesis",
+        "c": [
+          "Charlie Duke's family photo, left on the lunar surface — the only known portrait of an Earth family left on another world."
+        ]
+      }
+    }
+  },
+  "apollo17": {
+    "intro": "Apollo 17 landed in the Taurus-Littrow Valley on December 11, 1972 — the last crewed lunar mission, and the only one with a professional geologist (Harrison Schmitt) on the surface. Cernan and Schmitt spent 22h outside across three EVAs, drove 35 km, and returned 110 kg of samples including the famous Orange Soil (volcanic glass beads from a 3.5 Ga fire fountain). Cernan's footprint is the most recent human mark on another world.",
+    "ch": {
+      "hardware": {
+        "s": "America + Challenger + LRV-3",
+        "c": [
+          "Apollo 17 crew portrait — Gene Cernan (CDR), Ron Evans (CMP), Harrison \"Jack\" Schmitt (LMP, scientist-astronaut)."
+        ]
+      },
+      "launch": {
+        "s": "December 7, 1972 — last Saturn V flight",
+        "c": [
+          "First night launch of Saturn V, 05:33 UTC December 7 1972 — visible from 700 km away. The last Apollo + last Saturn V."
+        ]
+      },
+      "surface": {
+        "s": "Taurus-Littrow Valley — landed December 11, 1972",
+        "c": [
+          "Cernan + the flag with Earth above — \"The Last Man on the Moon\".",
+          "Schmitt at Shorty Crater discovers the Orange Soil — volcanic glass spherules from a 3.5 Ga fire-fountain eruption.",
+          "Taurus-Littrow panorama — Challenger descent stage + LRV + Tortilla Flat in the distance."
+        ]
+      },
+      "science": {
+        "s": "First trained geologist on the Moon",
+        "c": [
+          "Sample 70017 — last lunar sample collected by humans, Cernan's final task before lifting off December 14, 1972."
+        ]
+      }
+    }
+  },
+  "beagle2": {
+    "intro": "Beagle 2 was a small UK-led ESA lander released from Mars Express on December 19, 2003 — and went silent six days later, presumed crashed. For 12 years its fate was unknown. On January 16, 2015, NASA's HiRISE camera spotted the lander on the surface, intact but with solar panels only partially deployed, blocking the antenna. A successful landing, just no way to phone home. The find rehabilitated the mission as a partial success.",
+    "ch": {
+      "hardware": {
+        "s": "33 kg, the smallest interplanetary lander ever attempted",
+        "c": [
+          "Beagle 2 lander render — petal-deploy solar arrays + Pillinger Lab + atmospheric instruments inside the clam-shell.",
+          "Beagle 2 Earth replica on display — gives a sense of the lander's compact, frisbee-like form.",
+          "Beagle 2 engineering model at Spaceport, Seacombe — solar petals fully open as designed."
+        ]
+      },
+      "launch": {
+        "s": "June 2, 2003 — Soyuz/Fregat from Baikonur, piggyback on Mars Express",
+        "c": [
+          "Beagle 2 separation from Mars Express, December 19 2003 — six days before scheduled landing, on a ballistic entry trajectory."
+        ]
+      },
+      "surface": {
+        "s": "Isidis Planitia — landed (without comms) December 25, 2003",
+        "c": [
+          "Beagle 2 found! MRO HiRISE image (January 2015) — partial solar-panel deployment visible, antenna blocked, hardware intact. 12-year mystery solved.",
+          "HiRISE detail of the Beagle 2 landing site in Isidis Planitia — the lander itself is a sub-pixel speck at this scale; the find requires multi-scene + multi-illumination matching."
+        ]
+      }
+    }
+  },
+  "beresheet": {
+    "intro": "Beresheet — Hebrew for \"In the beginning\" — was Israel's first lunar landing attempt, built privately by SpaceIL on a $100M shoestring budget. It launched February 22, 2019, captured into lunar orbit April 4, then crashed in Mare Serenitatis on April 11, 2019 after the IMU and onboard computer reset during descent. The wreckage carried a tardigrade-laden time capsule. Israel became the seventh nation to reach the Moon, even if only kinetically.",
+    "ch": {
+      "hardware": {
+        "s": "Smallest interplanetary lander attempted to that date — 585 kg",
+        "c": [
+          "Beresheet spacecraft during pre-launch integration — built by SpaceIL with Israel Aerospace Industries, the first privately-funded lunar landing attempt.",
+          "Time capsule payload — Israeli memorabilia + 30 million pages of human knowledge etched onto nickel plates + (controversially) tardigrades, the world's most resilient micro-animals."
+        ]
+      },
+      "launch": {
+        "s": "February 22, 2019 — Falcon 9 from Cape Canaveral (rideshare)",
+        "c": [
+          "Falcon 9 launches Beresheet as a rideshare with PSN-6 communications satellite — a 6-week multi-loop transit to lunar orbit."
+        ]
+      },
+      "surface": {
+        "s": "Mare Serenitatis — impacted April 11, 2019",
+        "c": [
+          "Final selfie sent from Beresheet during powered descent — \"Small country, big dreams\" plaque visible. Communication lost at ~150 m altitude.",
+          "Impact site imaged by NASA's LRO — bright halo from regolith disturbance. Some tardigrades may have survived the impact intact."
+        ]
+      }
+    }
+  },
+  "chandrayaan3": {
+    "intro": "Chandrayaan-3 landed near the lunar south pole on August 23, 2023 — India's first soft landing on the Moon and the closest landing to the south pole by any nation. The Vikram lander deployed the Pragyan rover, which drove ~100 m across 14 days searching for water ice in permanently shadowed terrain. India became the fourth nation to soft-land on the Moon, after USSR, USA, and China.",
+    "ch": {
+      "hardware": {
+        "s": "Vikram lander + Pragyan rover",
+        "c": [
+          "Chandrayaan-3 spacecraft stack during pre-launch integration at ISRO Sriharikota.",
+          "Pragyan rover — 26 kg, solar-powered, 6-wheeled. Designed to drive across the lunar south-pole regolith looking for volatiles."
+        ]
+      },
+      "launch": {
+        "s": "July 14, 2023 — LVM3 from Satish Dhawan Space Centre",
+        "c": [
+          "LVM3 (\"Bahubali\") launches Chandrayaan-3 — 40-day transit including multi-loop lunar capture, intentional slow trajectory to maximize fuel margin."
+        ]
+      },
+      "surface": {
+        "s": "Shiv Shakti Point, near lunar south pole — landed August 23, 2023",
+        "c": [
+          "Vikram lander on the south-polar surface — touchdown 69.37°S, the highest-latitude lunar landing ever performed.",
+          "Pragyan rover descending the ramp — first wheels at the lunar south pole, photographed by Vikram's onboard cameras."
+        ]
+      }
+    }
+  },
+  "change3": {
+    "intro": "Chang'e 3 landed in Mare Imbrium on December 14, 2013 — China's first soft landing on the Moon and the first lunar landing of any kind in 37 years (since Luna 24). Deployed the Yutu rover, which drove ~114 m before a control failure froze it in place for the remaining ~30 lunar days of survival. Confirmed China as the third nation with surface assets on the Moon.",
+    "ch": {
+      "hardware": {
+        "s": "First Chinese lunar lander + Yutu rover",
+        "c": [
+          "Chang'e 3 lander on display — RTG-style heat unit, four legs, ramps for Yutu deployment.",
+          "Yutu rover — 140 kg, 6 wheels, ground-penetrating radar mounted under the chassis."
+        ]
+      },
+      "launch": {
+        "s": "December 1, 2013 — Long March 3B from Xichang",
+        "c": [
+          "Long March 3B lifts off with Chang'e 3 — 5-day transit to the Moon, soft landing on December 14."
+        ]
+      },
+      "surface": {
+        "s": "Mare Imbrium — landed December 14, 2013",
+        "c": [
+          "Chang'e 3 lander + Yutu rover photograph each other on the lunar surface — first such mutual portrait of Chinese hardware on the Moon.",
+          "Yutu's ground-penetrating radar profile of the Mare Imbrium subsurface — multi-layer basalt flows down to ~330 m."
+        ]
+      }
+    }
+  },
+  "change4": {
+    "intro": "Chang'e 4 landed in Von Kármán Crater on January 3, 2019 — the first soft landing on the far side of the Moon, where Earth is never visible. Communication was relayed via the Queqiao satellite parked at L2. Deployed Yutu-2 rover, which has driven 1.5+ km and is still operating in 2026, the longest-active lunar surface mission of all time. Found pristine mantle material in South Pole-Aitken basin.",
+    "ch": {
+      "hardware": {
+        "s": "First far-side lunar lander + L2 relay satellite (Queqiao)",
+        "c": [
+          "Chang'e 4 lander + Yutu-2 rover during pre-launch integration in Beijing.",
+          "Queqiao L2 relay satellite — without it, Chang'e 4 would have no contact with Earth. China built lunar comms infrastructure before going far-side."
+        ]
+      },
+      "surface": {
+        "s": "Von Kármán Crater, far side — landed January 3, 2019",
+        "c": [
+          "Yutu-2 rover photographed by Chang'e 4 lander — first wheels on the far side of the Moon.",
+          "Yutu-2 inspects a glassy bead on the surface — likely an impact melt fragment from a distant cratering event."
+        ]
+      },
+      "science": {
+        "s": "Mantle material in South Pole-Aitken basin",
+        "c": [
+          "VNIS spectra showed olivine + low-Ca pyroxene — minerals from the lunar mantle, exposed by the SPA basin impact ~4.2 billion years ago."
+        ]
+      }
+    }
+  },
+  "change5": {
+    "intro": "Chang'e 5 landed in Mons Rümker on December 1, 2020 — China's first lunar sample-return mission and the first lunar sample return by any nation since Luna 24 (1976), 44 years earlier. Returned 1,731 g of samples from young volcanic terrain (~2 billion years old, compared to ~3.5 Ga Apollo samples), proving that lunar volcanism continued far later than previously known.",
+    "ch": {
+      "hardware": {
+        "s": "Lander + ascender + orbiter + reentry capsule",
+        "c": [
+          "Chang'e 5 stack — four-element vehicle: lander/ascender (surface), orbiter (lunar rendezvous), reentry capsule (Earth return).",
+          "Drill + scoop subsystem — collected samples from both the surface and 1+ m depth."
+        ]
+      },
+      "launch": {
+        "s": "November 23, 2020 — Long March 5 from Wenchang",
+        "c": [
+          "Long March 5 launches Chang'e 5 — China's most ambitious lunar mission to that point, fully automated 23-day round trip."
+        ]
+      },
+      "surface": {
+        "s": "Mons Rümker — landed December 1, 2020",
+        "c": [
+          "Chang'e 5 on the surface near Mons Rümker — 19 hours of operations before ascent stage liftoff."
+        ]
+      },
+      "science": {
+        "s": "2-billion-year-old lunar volcanism rewrites Moon thermal history",
+        "c": [
+          "Sample return capsule on the snow in Inner Mongolia, December 17 2020 — 1,731 g of young basalt back on Earth."
+        ]
+      }
+    }
+  },
+  "change6": {
+    "intro": "Chang'e 6 landed in the South Pole-Aitken basin on June 1, 2024 — the first sample-return mission from the far side of the Moon, the deepest, oldest, largest impact structure in the inner Solar System. Returned 1,935 g of far-side material to Earth on June 25, 2024 — samples that may contain mantle fragments from the 4.2-billion-year-old basin-forming impact.",
+    "ch": {
+      "hardware": {
+        "s": "Chang'e 5 redesign for far-side sample return",
+        "c": [
+          "Chang'e 6 stack — added Queqiao-2 relay for far-side comms, otherwise inheriting Chang'e 5 architecture.",
+          "International payloads — ESA NILS detector, French DORN radon detector, Italian INRRI retroreflector, Pakistan ICUBE-Q nanosatellite."
+        ]
+      },
+      "launch": {
+        "s": "May 3, 2024 — Long March 5 from Wenchang",
+        "c": [
+          "Long March 5 launches Chang'e 6 — 28-day round trip to the lunar far side, including 14 days waiting for the right relay-comms window."
+        ]
+      },
+      "surface": {
+        "s": "Apollo Crater (within South Pole-Aitken) — landed June 1, 2024",
+        "c": [
+          "Chang'e 6 lander on the far side — the rover-less stationary sample return, captured by a deployed minirover."
+        ]
+      },
+      "science": {
+        "s": "1,935 g of South Pole-Aitken basin material",
+        "c": [
+          "Sample return capsule on the Inner Mongolian grassland, June 25 2024 — first far-side lunar samples on Earth, ever."
+        ]
+      }
+    }
+  },
+  "curiosity": {
+    "intro": "NASA's Curiosity rover launched November 26, 2011 atop an Atlas V from Cape Canaveral. After 254 days of cruise, Mars Science Laboratory delivered the 899-kg nuclear-powered rover to Gale Crater on August 6, 2012 via the now-famous sky-crane landing. More than a decade later Curiosity is still climbing Mount Sharp, drilling rocks that hold a record of Mars's once-habitable past.",
+    "ch": {
+      "hardware": {
+        "s": "Building a rover for Gale Crater",
+        "c": [
+          "Mars Science Laboratory assembled at JPL — Curiosity, descent stage, backshell + heat shield stacked for shipment to Florida.",
+          "The MMRTG nuclear power source (orange disk, lower right) provides ~110 W continuously for ≥14 years — no solar panels, no winter shutdowns."
+        ]
+      },
+      "launch": {
+        "s": "November 26, 2011 — Atlas V from Cape Canaveral",
+        "c": [
+          "Atlas V 541 lifts off from SLC-41 carrying Mars Science Laboratory + Curiosity. 10:02 EST, November 26 2011."
+        ]
+      },
+      "surface": {
+        "s": "Gale Crater — landed August 6, 2012",
+        "c": [
+          "Mont Mercou panorama, sol 3070 (March 2021). Mastcam-Z 360° sweep showing the rover, the layered cliffs of Mt Mercou, and Mount Sharp on the horizon.",
+          "HiRISE overhead view of Curiosity's traverse, captured by Mars Reconnaissance Orbiter at 25 cm/pixel.",
+          "Self-portrait at \"Big Sky\" drill site, sol 1126 — composite of dozens of MAHLI close-ups stitched into a single image."
+        ]
+      },
+      "science": {
+        "s": "Evidence of an ancient habitable Mars",
+        "c": [
+          "Drill hole at Yellowknife Bay — the first sample from Mars's past lake-bed environment, January 2013.",
+          "Sedimentary rocks at Vera Rubin Ridge — banded iron formations + clay minerals indicate ancient liquid water and a habitable chemical environment."
+        ]
+      },
+      "people": {
+        "s": "Engineers + scientists behind Curiosity",
+        "c": [
+          "JPL mission control celebrates the seven-minutes-of-terror sky-crane landing, August 5/6 2012 — Adam Steltzner and team after the first signals from Gale Crater."
+        ]
+      }
+    }
+  },
+  "insight": {
+    "intro": "InSight landed in Elysium Planitia on November 26, 2018 — the first geophysical observatory on Mars. The mission listened for marsquakes with the SEIS seismometer for four years, recording over 1,300 quakes that revealed the planet's core, mantle, and crust in unprecedented detail. The mole drill (HP³) failed to bury itself, but SEIS more than made up for the disappointment. Mission ended December 2022 when dust accumulation killed the solar panels.",
+    "ch": {
+      "hardware": {
+        "s": "First Mars mission focused on the interior",
+        "c": [
+          "InSight during integration at Lockheed Martin — same lander platform as Phoenix, repurposed for geophysics.",
+          "SEIS seismometer + WTS wind/thermal shield, deployed to the surface by the robotic arm — first seismometer on another planet."
+        ]
+      },
+      "launch": {
+        "s": "May 5, 2018 — Atlas V from Vandenberg AFB",
+        "c": [
+          "Atlas V 401 lifts off from SLC-3E Vandenberg — first interplanetary launch from the US West Coast. MarCO CubeSats flew alongside as comms relays."
+        ]
+      },
+      "surface": {
+        "s": "Elysium Planitia — landed November 26, 2018",
+        "c": [
+          "Homestead Hollow workspace, sol 14 — Instrument Deployment Camera 290° panorama. SEIS already placed on the ground at lower left.",
+          "First Mars selfie composite — InSight's deck after SEIS + HP³ deployment, sol 110."
+        ]
+      },
+      "science": {
+        "s": "1,319 marsquakes — the planet's interior, revealed",
+        "c": [
+          "Seismogram of the May 4 2022 magnitude-4.7 marsquake — the largest event recorded, originating from the Cerberus Fossae fault system.",
+          "InSight's last selfie, sol 1211 — solar panels coated in dust. Final transmission December 15, 2022."
+        ]
+      }
+    }
+  },
+  "luna16": {
+    "intro": "Luna 16 touched down in Mare Fecunditatis on September 20, 1970 — the first robotic sample return from another world, drilled 35 cm into the lunar regolith, sealed 101 g into the return capsule, and lifted off 26 hours after landing. The capsule landed in Kazakhstan three days later. Demonstrated that Soviet engineering could return lunar material without crewed flight, a year and two months after Apollo 11.",
+    "ch": {
+      "hardware": {
+        "s": "Soviet E-8-5 lander — first robotic sample-return rig",
+        "c": [
+          "Luna 16 spacecraft mockup — descent stage (foreground) + ascent stage carrying the return capsule (top).",
+          "Diagram of the sample-collection mechanism — drill core with sealed transfer to the return capsule."
+        ]
+      },
+      "launch": {
+        "s": "September 12, 1970 — Proton-K from Baikonur",
+        "c": ["Proton-K with Blok-D upper stage on the pad at Baikonur Cosmodrome."]
+      },
+      "surface": {
+        "s": "Mare Fecunditatis — landed September 20, 1970",
+        "c": [
+          "Luna 16 drilling into the regolith — sealed 101 g of material into the spherical return capsule for the lift-off.",
+          "Return capsule on the Kazakh steppe, September 24 1970 — first robotic interplanetary sample-return in history."
+        ]
+      }
+    }
+  },
+  "luna17": {
+    "intro": "Luna 17 landed in Mare Imbrium on November 17, 1970 — and deployed Lunokhod 1, the first wheeled vehicle to operate on another world, beating NASA's LRV by seven months. Lunokhod 1 drove 10.5 km over 11 lunar days, controlled by a five-person team in Crimea. Returned 25,000 photographs and 211 panoramas before going silent in September 1971.",
+    "ch": {
+      "hardware": {
+        "s": "First wheels on the Moon — Lunokhod 1",
+        "c": [
+          "Lunokhod 1 — 8-wheeled, 756 kg, solar-powered chassis with a polonium-210 RTG for nighttime warmth. Designed for 3 months, lasted 10.",
+          "Luna 17 lander + ramps for Lunokhod 1 deployment. The Soviet remote-control team operated from a converted submarine on the Crimean coast."
+        ]
+      },
+      "surface": {
+        "s": "Mare Imbrium — landed November 17, 1970",
+        "c": [
+          "Lunokhod 1 driving on Mare Imbrium — controlled by a five-person team in real time despite the 2.5 second light-speed delay each way.",
+          "Lunokhod 1 traverse map — 10.5 km zigzag across Mare Imbrium, with science stops at rocks and craters.",
+          "Lunokhod 1 retroreflector — still used by Earth-based lunar-laser-ranging stations today, 50+ years later."
+        ]
+      }
+    }
+  },
+  "luna21": {
+    "intro": "Luna 21 landed in Le Monnier Crater on January 15, 1973 — and deployed Lunokhod 2, the successor to the world's first lunar rover. Lunokhod 2 drove 42.1 km over 4 months — a record that stood until NASA's Opportunity surpassed it on Mars in July 2014, 41 years later. Returned 80,000 TV images and 86 panoramic sweeps before a regolith pile fell onto the radiator and overheated the rover.",
+    "ch": {
+      "hardware": {
+        "s": "Lunokhod 2 — driving the lunar terra record (42 km)",
+        "c": [
+          "Lunokhod 2 — improved over Lunokhod 1: more cameras, finer steering control, third-axis manipulator, larger solar panels.",
+          "Lunokhod 2 chassis being prepared for shipment — eight independent wheel motors, each with its own torque-feedback control loop."
+        ]
+      },
+      "surface": {
+        "s": "Le Monnier Crater — landed January 15, 1973",
+        "c": [
+          "Lunokhod 2 photographed by its panoramic camera — long shadow stretching across the lunar surface.",
+          "42.1 km traverse map — the rover crossed mare basalt, climbed crater walls, and inspected dozens of rocks across four lunar days.",
+          "Final position imaged by LRO in 2010 — Lunokhod 2 came to rest after regolith from a steep crater wall buried its radiator panel."
+        ]
+      }
+    }
+  },
+  "luna24": {
+    "intro": "Luna 24 landed in Mare Crisium on August 18, 1976 — the last Soviet (and last robotic) lunar sample-return mission of the 20th century, and the last lunar lander of any kind until China's Chang'e 3 in 2013. Drilled 2 m into the regolith, returned 170.1 g of samples to Earth, including evidence of lunar water ice (re-confirmed decades later by SOFIA + LCROSS). The Soviet lunar program ended here.",
+    "ch": {
+      "hardware": {
+        "s": "Soviet E-8-5M lander — improved sample-return rig",
+        "c": [
+          "Luna 24 spacecraft on display at a Soviet space museum — descent stage + ascent vehicle + return capsule.",
+          "The drill mechanism — went 2 m deep, three times farther than Luna 16's 35 cm. Returned the deepest samples ever brought from another world."
+        ]
+      },
+      "surface": {
+        "s": "Mare Crisium — landed August 18, 1976",
+        "c": [
+          "Mare Crisium landing site — Luna 24 touched down ~2 km from Luna 23's failed 1974 landing in the same region.",
+          "Return capsule in Siberia, August 22 1976 — last Soviet sample-return from beyond Earth orbit until VKS programs of the 2020s."
+        ]
+      },
+      "science": {
+        "s": "Water in the regolith — pre-confirmed",
+        "c": [
+          "Re-analysis of Luna 24 samples in 1978 reported 0.1% water content — initially dismissed, confirmed by LCROSS impact + SOFIA in 2020."
+        ]
+      }
+    }
+  },
+  "luna9": {
+    "intro": "Luna 9 touched down in Oceanus Procellarum on February 3, 1966 — the first soft landing on another world. The 99 kg spherical capsule survived a 22 km/h impact by deploying inflatable cushions, then unfolded petals to right itself and transmitted the first photographs from the lunar surface. Operated for 3 days before battery exhaustion.",
+    "ch": {
+      "hardware": {
+        "s": "Soviet E-6 capsule, soft-lander pioneer",
+        "c": [
+          "Luna 9 capsule mockup — 99 kg, spherical, with airbag-protected camera and four petal antennas.",
+          "Cutaway diagram of the Luna 9 hardware — Soviet engineers solved the soft-landing problem before NASA did."
+        ]
+      },
+      "launch": {
+        "s": "January 31, 1966 — Molniya-M from Baikonur",
+        "c": [
+          "Molniya-M rocket prepared at Baikonur — Luna 9 launched in a coast-coast Soviet/American race to the first soft landing."
+        ]
+      },
+      "surface": {
+        "s": "Oceanus Procellarum — landed February 3, 1966",
+        "c": [
+          "First images of the lunar surface — coarse, low-bit-rate panoramas showing rocky regolith. The Manchester Jodrell Bank radio telescope intercepted the broadcast and published before the Soviets did.",
+          "Luna 9 panorama mosaic — first proof the lunar surface was solid enough to support a lander, ending years of speculation about deep dust drifts."
+        ]
+      }
+    }
+  },
+  "mars-pathfinder": {
+    "intro": "Mars Pathfinder landed in Ares Vallis on July 4, 1997 — the first US mission to Mars since the Vikings 21 years earlier. The lander deployed Sojourner, the first wheels on Mars, demonstrating airbag-landing + roving in a $265M low-cost \"faster-better-cheaper\" mission that returned ~16,500 images. Sojourner's 100-meter traverse mapped twelve rocks named after cartoon characters (Yogi, Barnacle Bill, Scooby Doo) before the lander died.",
+    "ch": {
+      "hardware": {
+        "s": "First Mars rover — and the first US-Mars lander since Viking",
+        "c": [
+          "Pathfinder during pre-launch testing — base station + petal-deploy ramps for Sojourner.",
+          "Sojourner microrover — 11.5 kg, 6 wheels, solar-powered, designed to operate for 7 sols (lasted 83)."
+        ]
+      },
+      "launch": {
+        "s": "December 4, 1996 — Delta II from Cape Canaveral",
+        "c": ["Delta II 7925 launches Pathfinder on its 7-month transit to Mars."]
+      },
+      "surface": {
+        "s": "Ares Vallis — landed July 4, 1997",
+        "c": [
+          "Improved Presidential Panorama — 360° colour view of Ares Vallis. Twin Peaks visible on the horizon (named for the TV show).",
+          "Pathfinder lander imaged from orbit decades later by MRO HiRISE — petals + Sojourner's last known position visible.",
+          "Sojourner inspecting Yogi rock — first close-up chemistry on Martian terrain."
+        ]
+      }
+    }
+  },
+  "mars3": {
+    "intro": "Mars 3 touched down in Terra Sirenum on December 2, 1971 — the first lander to survive Martian atmospheric entry and reach the surface, five days after sister Mars 2 crashed. Communications stopped after 14.5 seconds, returning a single partial degraded greyscale image fragment. The lander likely arrived in the middle of a planet-encircling dust storm. Mars 3's exact resting location is still debated; HiRISE imaged candidate hardware in 2013.",
+    "ch": {
+      "hardware": {
+        "s": "Soviet 4MS-class lander, first Mars touchdown of any kind",
+        "c": [
+          "Mars 3 lander mockup at the NPO Lavochkin space-history museum — 1,210 kg total mass, included a 4.5 kg Prop-M rover (never deployed).",
+          "Cutaway diagram of the Mars 3 lander hardware — the basic design heritage informed later Soviet-era Venera and Mars hardware."
+        ]
+      },
+      "launch": {
+        "s": "May 28, 1971 — Proton-K from Baikonur",
+        "c": [
+          "Proton-K with Blok-D upper stage prepared at Baikonur Cosmodrome — 6-month transit to Mars."
+        ]
+      },
+      "surface": {
+        "s": "Terra Sirenum — landed December 2, 1971",
+        "c": [
+          "HiRISE detail of the candidate Mars 3 hardware site in Terra Sirenum — released 2013 by NASA/UA HiRISE team, identified by Russian amateur space historians.",
+          "The single fragmentary image returned by Mars 3 — 79 lines, no horizon, no detail. The first picture from another planet's surface, however faint."
+        ]
+      }
+    }
+  },
+  "opportunity": {
+    "intro": "Opportunity landed in Meridiani Planum on January 25, 2004 — a hole-in-one that rolled the airbag-bouncing rover directly into a small crater (Eagle Crater) whose walls held the first hematite-rich blueberries ever seen up close on Mars. Designed for 90 sols, Opportunity drove 45.16 km over 14 years until a planet-wide dust storm in June 2018 cut off solar power. Final transmission: \"My battery is low and it's getting dark.\"",
+    "ch": {
+      "hardware": {
+        "s": "Twin of Spirit, lander on the opposite side of Mars",
+        "c": [
+          "MER-B during integration — identical hardware to Spirit, optimized for Mars's plains terrain."
+        ]
+      },
+      "surface": {
+        "s": "Meridiani Planum — landed January 25, 2004",
+        "c": [
+          "Legacy Pan, sols 5084-5111 (May-June 2018) — Opportunity's final 360° panorama before the dust storm. Perseverance Valley descends into Endeavour Crater.",
+          "Endeavour Crater rim, where Opportunity spent its final years. The rover's resting spot is in Perseverance Valley to the right.",
+          "Hematite \"blueberries\" — millimeter-scale spherules embedded in Meridiani's bedrock. The first direct evidence of long-duration liquid water on Mars."
+        ]
+      },
+      "science": {
+        "s": "From Eagle Crater to Endeavour — 14 years of evidence",
+        "c": [
+          "Heat-shield impact site at Endurance Crater — Opportunity drove back to inspect its own discarded entry hardware.",
+          "Burns Cliff layered exposures inside Endurance Crater — sedimentary record of an ancient acidic salty body of water."
+        ]
+      }
+    }
+  },
+  "perseverance": {
+    "intro": "Perseverance landed in Jezero Crater on February 18, 2021 — a 3.8-billion-year-old river delta selected because it held the best chance of preserving evidence of ancient Martian life. The rover carries the first Mars helicopter (Ingenuity), the first Mars audio recorder, and the first sample-caching system. Sample tubes left on the surface will be returned to Earth by the Mars Sample Return mission in the 2030s.",
+    "ch": {
+      "hardware": {
+        "s": "Curiosity's heavier, smarter sibling",
+        "c": [
+          "Perseverance during assembly at JPL — 1025 kg, MMRTG-powered, carrying 23 cameras, 2 microphones, and a sample-caching turret.",
+          "The Ingenuity helicopter mounted to Perseverance's belly — the first heavier-than-air vehicle to fly on another planet."
+        ]
+      },
+      "launch": {
+        "s": "July 30, 2020 — Atlas V from Cape Canaveral",
+        "c": [
+          "Atlas V 541 launches Mars 2020 from SLC-41, July 30 2020 07:50 EDT — 203-day transit to Jezero."
+        ]
+      },
+      "surface": {
+        "s": "Jezero Crater — landed February 18, 2021",
+        "c": [
+          "Van Zyl Overlook — Mastcam-Z first 360° panorama, sol 3 (Feb 21, 2021). The Jezero delta is visible to the west.",
+          "Perseverance + its traverse, photographed from orbit by Mars Reconnaissance Orbiter's HiRISE camera at 25 cm/pixel.",
+          "First Ingenuity flight, April 19 2021 — a 3-second hover at 3 m altitude. The Wright Brothers' Flyer carried a swatch of fabric on the helicopter for this exact moment."
+        ]
+      },
+      "science": {
+        "s": "Sampling a 3.8-billion-year-old river delta",
+        "c": [
+          "First sample tube sealed and cached on the Martian surface — \"Roubion\" core, drilled from Rochette boulder, September 2021.",
+          "Organic molecules detected in the Wildcat Ridge mudstone by the SHERLOC instrument — a chemical fingerprint of ancient Martian biology candidates."
+        ]
+      }
+    }
+  },
+  "phoenix": {
+    "intro": "Phoenix landed at 68.22°N on May 25, 2008 — the first NASA lander to touch down in the Martian high arctic. Within days it had scooped up the first sample of Martian water ice and watched it sublimate in the camera frame. The lander operated for 157 sols until the polar winter killed it; CO₂ frost formation buried the solar panels, ending the mission.",
+    "ch": {
+      "hardware": {
+        "s": "Reconstituted from the cancelled Mars Surveyor 2001 lander",
+        "c": [
+          "Phoenix lander pre-shipment — 350 kg, robotic arm, ice scoop, TEGA wet-chemistry lab."
+        ]
+      },
+      "surface": {
+        "s": "Vastitas Borealis — landed May 25, 2008",
+        "c": [
+          "Phoenix landing site 360° panorama, sol 14 — workspace + footpad + thrust-cleared ice exposure visible at lower right.",
+          "Phoenix lander, parachute and backshell — all imaged by MRO HiRISE after the landing.",
+          "Robotic arm digging the \"Snow White\" trench — bright water ice exposed centimeters below the surface, then watched as it sublimated over four sols."
+        ]
+      },
+      "science": {
+        "s": "Water, perchlorates, and the first Martian weather",
+        "c": [
+          "Detection of perchlorate salts in Martian soil — chemistry that would shape every subsequent Mars-habitability discussion.",
+          "Lidar profiles of falling snow over the Phoenix site, late mission — the first Martian precipitation directly observed."
+        ]
+      }
+    }
+  },
+  "schiaparelli": {
+    "intro": "Schiaparelli — Europe's second Mars landing attempt — separated from ExoMars Trace Gas Orbiter on October 16, 2016, then crashed into Meridiani Planum at ~540 km/h three days later. A software glitch caused the parachute and braking thrusters to disengage 50 seconds early, while the lander was still 3.7 km above the surface. The wreckage was spotted by MRO HiRISE within a week. Lessons learned shaped the ExoMars Rosalind Franklin rover, now slated for 2028 launch.",
+    "ch": {
+      "hardware": {
+        "s": "EDM — Entry, Descent, and Landing Demonstrator Module",
+        "c": [
+          "Schiaparelli lander pre-launch — 577 kg, designed as a one-time technology demonstrator for the ExoMars rover EDL system."
+        ]
+      },
+      "launch": {
+        "s": "March 14, 2016 — Proton-M from Baikonur",
+        "c": [
+          "Proton-M lifts off with the ExoMars 2016 stack — TGO + Schiaparelli, joint ESA-Roscosmos mission."
+        ]
+      },
+      "surface": {
+        "s": "Meridiani Planum — impacted October 19, 2016",
+        "c": [
+          "MRO HiRISE images the Schiaparelli impact site — main crater visible at top; parachute + backshell at lower right.",
+          "HiRISE detail of the Schiaparelli crash site — black streak left by hardware impact, surrounding ejecta blanket.",
+          "Computer-graphics reconstruction of the failure sequence — IMU saturation during parachute deployment caused premature lander release at 3.7 km altitude."
+        ]
+      }
+    }
+  },
+  "slim": {
+    "intro": "SLIM (Smart Lander for Investigating Moon) landed in Shioli Crater on January 20, 2024 — Japan's first soft landing on the Moon and a precision-landing technology demonstrator. SLIM touched down within 100 m of its target (the previous best was 1+ km), but flipped onto its side and operated upside-down on its remaining solar cells until power ran out. Two surface micro-rovers, LEV-1 and LEV-2 (Sora-Q), deployed before the awkward final orientation.",
+    "ch": {
+      "hardware": {
+        "s": "Tipped-over precision lander + 2 micro-rovers",
+        "c": [
+          "SLIM lander pre-launch — 200 kg, pencil-shaped, designed for low-mass precision landing demos.",
+          "LEV-2 \"Sora-Q\" — a baseball-sized transformer ball-rover developed by TOMY (the toy company) + JAXA + Sony."
+        ]
+      },
+      "launch": {
+        "s": "September 6, 2023 — H-IIA from Tanegashima",
+        "c": [
+          "H-IIA-47 lifts off carrying SLIM + XRISM observatory — a co-launch with a major X-ray science mission."
+        ]
+      },
+      "surface": {
+        "s": "Shioli Crater — landed January 20, 2024",
+        "c": [
+          "SLIM photographed by Sora-Q on the lunar surface — landed nose-down, solar panels facing the wrong way.",
+          "Despite the unintended orientation, SLIM operated three times — at lunar sunrise it caught angled sun on its inverted-facing panels and woke up briefly."
+        ]
+      }
+    }
+  },
+  "spirit": {
+    "intro": "Spirit landed in Gusev Crater on January 4, 2004 — three weeks before its twin Opportunity touched down on the opposite side of Mars. Designed for 90 sols, Spirit operated for 6 years and traversed 7.7 km until its wheels became permanently mired in soft soil at \"Troy\". From a stranded rover, it continued as a stationary science platform until contact was lost in March 2010.",
+    "ch": {
+      "hardware": {
+        "s": "Solar-powered rover, twin of Opportunity",
+        "c": [
+          "Mars Exploration Rover during integration — 185 kg, 6 wheels, Pancam mast camera, RAT rock-abrasion tool."
+        ]
+      },
+      "surface": {
+        "s": "Gusev Crater — landed January 4, 2004",
+        "c": [
+          "Winter Haven at McMurdo, sols 814-980 (2006) — Pancam 360° panorama. The Columbia Hills, named for the lost STS-107 crew, dominate the horizon.",
+          "Spirit's Troy stuck-rover site, captured by MRO HiRISE after wheel embedment in May 2009.",
+          "Drilling at the Adirondack rock, sol 34 — first use of the rock-abrasion tool on Mars."
+        ]
+      },
+      "science": {
+        "s": "Climbing Husband Hill, finding silica at Home Plate",
+        "c": [
+          "Silica-rich soil exposed by Spirit's broken right-front wheel at Home Plate — evidence of past hydrothermal activity in Gusev Crater.",
+          "Sunset over Gusev Crater photographed by Pancam, sol 489 (May 19 2005). One of the iconic blue-tinged Martian dusk images."
+        ]
+      }
+    }
+  },
+  "viking1-lander": {
+    "intro": "Viking 1 touched down in Chryse Planitia on July 20, 1976 — the first successful US lander on Mars, exactly seven years after Apollo 11. Its 2,245-sol surface mission (6.3 years) included the first colour images from Mars, the first in-situ biology experiments (with ambiguous results), and a daily weather record. Final transmission November 1982 after a command upload accidentally overwrote the antenna-pointing parameters.",
+    "ch": {
+      "hardware": {
+        "s": "Lander + orbiter pair, RTG-powered, ~600 kg",
+        "c": [
+          "Viking 1 lander undergoing pre-flight testing — RTG visible at rear, surface sampler arm extended.",
+          "Mockup deployment of the surface-sampler arm in the JPL test environment."
+        ]
+      },
+      "launch": {
+        "s": "August 20, 1975 — Titan IIIE from Cape Canaveral",
+        "c": [
+          "Titan IIIE / Centaur launches Viking 1 — 10-month transit, Mars orbit insertion June 1976, lander touchdown July 20."
+        ]
+      },
+      "surface": {
+        "s": "Chryse Planitia — landed July 20, 1976",
+        "c": [
+          "Chryse Planitia 360° panorama — first colour landscape from another planet's surface.",
+          "Viking 1 lander, photographed from orbit 30+ years later by MRO HiRISE — first hardware-archaeology view of a 1970s Mars mission.",
+          "First view of the Martian surface, captured minutes after touchdown by Camera 2."
+        ]
+      },
+      "science": {
+        "s": "Biology experiments, weather, and the search for life",
+        "c": [
+          "Trench dug by the surface sampler — Viking biology experiments tested for organic compounds (none detected; result still debated)."
+        ]
+      }
+    }
+  },
+  "viking2-lander": {
+    "intro": "Viking 2 touched down in Utopia Planitia on September 3, 1976 — the second of the twin Viking landers, on the opposite side of Mars from Viking 1. Its 1,316-sol mission included the first observation of water-ice frost on Mars (during the polar winter), repeating Viking 1's biology experiments at a much colder, higher-latitude site. Killed in April 1980 by a battery failure.",
+    "ch": {
+      "hardware": {
+        "s": "Twin of Viking 1, identical instruments",
+        "c": ["Viking 2 lander on the surface of Mars at Utopia Planitia."]
+      },
+      "surface": {
+        "s": "Utopia Planitia — landed September 3, 1976",
+        "c": [
+          "Utopia Planitia 360° camera mosaic — flatter, rockier terrain than Viking 1's Chryse site.",
+          "Viking 2 lander photographed from orbit by MRO HiRISE decades after the mission's end.",
+          "Utopia Planitia colour view — Andrea Luck reprocessed Viking 2 imagery from NASA archive plates."
+        ]
+      },
+      "science": {
+        "s": "Frost, dust storms, and the first Martian winter",
+        "c": [
+          "Water-ice frost coating the rocks around the Viking 2 lander — first such observation in the Martian arctic winter (sol 1230).",
+          "Sunrise at Utopia Planitia (PIA00576) — Viking 2's camera caught the pre-dawn glow at high northern latitudes.",
+          "Frost in Utopia Planitia (NASA Viking Lander 2) — reprocessed by Andrea Luck."
+        ]
+      }
+    }
+  },
+  "zhurong": {
+    "intro": "Zhurong landed in Utopia Planitia on May 14, 2021 — China's first successful Mars landing and the first Mars mission by any nation to combine orbiter, lander, and rover in a single launch (Tianwen-1). Named after the Chinese god of fire, Zhurong drove 1.92 km across the southern Utopia plains before being put into hibernation in May 2022 during dust season. CNSA has not confirmed wake-up.",
+    "ch": {
+      "hardware": {
+        "s": "China's first Mars lander + rover",
+        "c": [
+          "Zhurong rover during pre-launch integration in Beijing — 240 kg, solar-powered, instrumented for ground-penetrating radar of the subsurface.",
+          "Tianwen-1 launch stack — orbiter + lander + rover combined, the most ambitious first-attempt Mars mission ever flown."
+        ]
+      },
+      "launch": {
+        "s": "July 23, 2020 — Long March 5 from Wenchang",
+        "c": [
+          "Long March 5 launches Tianwen-1 from Wenchang Space Launch Site, Hainan — 7-month transit to Mars."
+        ]
+      },
+      "surface": {
+        "s": "Utopia Planitia — landed May 14, 2021",
+        "c": [
+          "Zhurong navigation-camera panorama showing lander deck + Mars surface beyond — first ground-view from a non-NASA non-Soviet Mars mission.",
+          "Zhurong rover + lander, imaged from orbit by NASA's MRO HiRISE — international collaboration in archival imagery.",
+          "Zhurong + lander on Mars — taken by a remote camera the rover deployed itself, then drove away to photograph."
+        ]
+      },
+      "science": {
+        "s": "Ground-penetrating radar of Utopia subsurface",
+        "c": [
+          "Ground-penetrating radar profile showing subsurface layering down to ~80 m — evidence of ancient flood events in southern Utopia."
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "science/orbits/orbit-regimes :: narrative_101": [
+    "Kies een satelliet. Het belangrijkste eraan is niet wat hij doet — het is op welke hoogte hij leeft. De hoogte bepaalt hoe vaak hij hetzelfde stuk grond kan zien, hoe lang een radiosignaal erover doet om hem te bereiken, hoeveel brandstof hij nodig heeft om zijn baan te houden en hoe lang hij bruikbaar blijft. Ruimtevaartingenieurs delen banen in vier banden in — LEO, MEO, GEO, HEO — omdat de afwegingen sprongsgewijs veranderen naarmate je hoger komt.",
+    "LEO loopt tot ~2.000 km. Het ISS zit op 408 km. Hubble op 540 km. Starlink van SpaceX op ~550 km. Goedkoop om te bereiken (de meeste raketten kunnen hier een lading kwijt), maar je raast elke 90 minuten rond de planeet, de atmosfeer trekt je omlaag (levensduur: jaren zonder reboost), en je ziet een bepaalde plek op de grond maar ~10 minuten per overkomst.",
+    "MEO is 2.000–35.786 km — de band van GPS / Galileo / Beidou, plus wat communicatie. Omlooptijden zijn 2-12 uur; je dekt de aarde met minder satellieten dan in LEO, en je zit boven de ergste zones van de stralingsgordels (zorgvuldig gekozen). GEO ligt precies op 35.786 km — omlooptijd precies 24 uur — dus een satelliet daar hangt voor altijd boven hetzelfde punt op aarde, en daarom zitten alle weer- en omroepsatellieten daar.",
+    "HEO (sterk elliptische baan) is de joker — hoog apogeum, laag perigeum, lange verblijftijd boven een gekozen breedtegraad. De Molniya-banen van Rusland zijn HEO, geoptimaliseerd voor dekking op hoge breedtegraden die GEO niet kan bereiken. Elk regime is een andere missiefilosofie, vastgelegd als een getal op de y-as."
+  ]
+}

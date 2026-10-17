@@ -1,0 +1,49 @@
+exoplanets/exoplanet-atmospheres	외계행성의 대기 읽기
+exoplanets/hot-jupiters	뜨거운 목성
+exoplanets/microlensing	중력 미세렌즈
+exoplanets/super-earths-sub-neptunes	슈퍼지구와 서브해왕성
+exoplanets/transit-timing	통과 시각 변동
+history/keplers-laws-1609	Kepler의 법칙 · 1609–1619
+history/newton-principia-1687	Newton의 Principia · 1687
+history/tsiolkovsky-equation-1903	Tsiolkovsky 방정식 · 1903
+mission-phases/edl	EDL — 진입, 하강, 착륙
+mission-phases/entry-heating	진입 가열
+mission-phases/gravity-turn	중력 선회
+mission-phases/met	MET — 임무 경과 시간
+mission-phases/orbit-insertion	궤도 진입 — LOI / MOI
+mission-phases/skycrane	스카이 크레인
+mission-phases/terminal-velocity	종단 속도
+orbits/apsides	궤도 극점 — 근일점, 원일점, 근지점, 원지점
+orbits/true-anomaly	진근점 이각
+planets/active-spacecraft-survey	현역 탐사선 현황
+planets/planetary-stats	행성 통계
+porkchop/viability	실현 가능성 읽기
+propulsion/oberth-effect	Oberth 효과
+propulsion/specific-impulse	비추력 (Isp)
+propulsion/tsiolkovsky	Tsiolkovsky 로켓 방정식
+scales-time/frames	태양 중심 · 지구 중심 · 천체 중심 좌표계
+scales-time/sidereal-synodic	항성 주기와 회합 주기
+space-stations/expedition-cadence	원정대 교대 주기
+transfers/gravity-assist	중력 도움
+transfers/hohmann-transfer	Hohmann 전이
+transfers/patched-conics	이어 붙인 원뿔곡선
+transfers/transfer-ellipse	전이 타원
+cosmology/laniakea-and-the-great-attractor	Laniakea와 거대 인력체
+life-in-space/bone-density-loss	골밀도 손실
+mission-phases/dead-reckoning	추측 항법
+mission-phases/mission-types	임무 유형 — 플라이바이, 궤도선, 착륙선, 로버, 시료 귀환
+mission-phases/nrho	NRHO — 근직선 헤일로 궤도
+observation/local-group	국부 은하군 — 중력으로 결합된 우리의 이웃
+orbits/cislunar-orbits	지구-달 공간 궤도 — DRO, NRHO, 헤일로 궤도, 달 동결 궤도
+orbits/hill-sphere	Hill 구
+orbits/semi-major-axis	긴반지름
+orbits/special-orbits	특수 궤도 — Molniya, Tundra, GTO, 동결 궤도
+orbits/synodic-period	회합 주기 — 발사 윈도우가 열리고 닫히는 이유
+orbits/vis-viva	활력 방정식
+planets/kuiper-belt	Kuiper 벨트
+propulsion/fusion-propulsion	핵융합 추진 — 아직 점화할 수 없는 별
+propulsion/ion-drive	이온 엔진 — 멈추지 않는 완만한 추력
+propulsion/laser-sail	레이저 돛 — 지구에서의 빔으로 탐사선을 추진하기
+propulsion/nuclear-thermal	핵열 로켓 — 열, 불꽃이 아닌
+scales-time/light-minute	광분과 광년
+transfers/free-return	자유 귀환 궤도

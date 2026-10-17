@@ -1,0 +1,236 @@
+[
+  {
+    "file": "missions/earth/apollo7.json",
+    "at": "events.0.note",
+    "en": "Saturn IB (AS-205) from Cape Kennedy LC-34 1968-10-11 15:02 UTC.",
+    "locs": ["ar", "de", "es", "fr", "hi", "it", "ja", "ko", "nl", "pt-BR", "ru", "zh-CN"]
+  },
+  {
+    "file": "missions/earth/inspiration4.json",
+    "at": "events.0.note",
+    "en": "Falcon 9 B1062 from LC-39A 2021-09-15 00:02 UTC.",
+    "locs": ["ar", "de", "es", "fr", "hi", "it", "ja", "ko", "nl", "pt-BR", "ru", "zh-CN"]
+  },
+  {
+    "file": "missions/earth/otv-2.json",
+    "at": "events.0.note",
+    "en": "Atlas V 501 (AV-026) from CCAFS SLC-41 2011-03-05.",
+    "locs": ["ar", "de", "es", "fr", "hi", "it", "ja", "ko", "nl", "pt-BR", "ru", "zh-CN"]
+  },
+  {
+    "file": "missions/earth/otv-4.json",
+    "at": "events.0.note",
+    "en": "Atlas V 501 (AV-054) from CCAFS SLC-41 2015-05-20.",
+    "locs": ["ar", "de", "es", "fr", "hi", "it", "ja", "ko", "nl", "pt-BR", "ru", "zh-CN"]
+  },
+  {
+    "file": "missions/earth/otv-5.json",
+    "at": "events.0.note",
+    "en": "Falcon 9 Block 4 from KSC LC-39A 2017-09-07.",
+    "locs": ["ar", "de", "es", "fr", "hi", "it", "ja", "ko", "nl", "pt-BR", "ru", "zh-CN"]
+  },
+  {
+    "file": "missions/earth/polaris-dawn.json",
+    "at": "events.0.note",
+    "en": "Falcon 9 B1083 from LC-39A 2024-09-10 09:23 UTC.",
+    "locs": ["ar", "de", "es", "fr", "hi", "it", "ja", "ko", "nl", "pt-BR", "ru", "zh-CN"]
+  },
+  {
+    "file": "missions/earth/skylab-2.json",
+    "at": "events.0.note",
+    "en": "Saturn IB SA-206 from LC-39B 1973-05-25 13:00 UTC.",
+    "locs": ["ar", "de", "es", "fr", "hi", "it", "ja", "ko", "nl", "pt-BR", "ru", "zh-CN"]
+  },
+  {
+    "file": "missions/earth/skylab-3.json",
+    "at": "events.0.note",
+    "en": "Saturn IB SA-207 from LC-39B 1973-07-28 11:11 UTC.",
+    "locs": ["ar", "de", "es", "fr", "hi", "it", "ja", "ko", "nl", "pt-BR", "ru", "zh-CN"]
+  },
+  {
+    "file": "missions/earth/voskhod-1.json",
+    "at": "events.0.note",
+    "en": "Voskhod 11A57 from Baikonur Site 1 1964-10-12 07:30 UTC.",
+    "locs": ["ar", "de", "es", "fr", "hi", "it", "ja", "ko", "nl", "pt-BR", "ru", "zh-CN"]
+  },
+  {
+    "file": "missions/earth/vostok-1.json",
+    "at": "events.0.note",
+    "en": "Vostok-K from Baikonur Site 1 (Gagarin's Start) 1961-04-12 06:07 UTC.",
+    "locs": ["ar", "de", "es", "fr", "hi", "it", "ja", "ko", "nl", "pt-BR", "ru", "zh-CN"]
+  },
+  {
+    "file": "missions/earth/vostok-2.json",
+    "at": "events.0.note",
+    "en": "Vostok-K from Baikonur Site 1 1961-08-06 06:00 UTC.",
+    "locs": ["ar", "de", "es", "fr", "hi", "it", "ja", "ko", "nl", "pt-BR", "ru", "zh-CN"]
+  },
+  {
+    "file": "missions/earth/vostok-5.json",
+    "at": "events.0.note",
+    "en": "Vostok-K from Baikonur Site 1 1963-06-14 11:59 UTC.",
+    "locs": ["ar", "de", "es", "fr", "hi", "it", "ja", "ko", "nl", "pt-BR", "ru"]
+  },
+  {
+    "file": "missions/earth/vostok-5.json",
+    "at": "events.1.note",
+    "en": "Vostok 6 (Tereshkova) launched 1963-06-16 09:30 UTC.",
+    "locs": ["ar", "de", "es", "fr", "hi", "it", "ja", "ko", "nl", "pt-BR", "ru", "zh-CN"]
+  },
+  {
+    "file": "missions/mars/schiaparelli.json",
+    "at": "events.3.note",
+    "en": "Mid-cruise correction.",
+    "locs": ["ar", "de", "es", "fr", "hi", "it", "ja", "ko", "nl", "pt-BR", "ru", "zh-CN"]
+  },
+  {
+    "file": "missions/mercury/mariner10.json",
+    "at": "events.0.note",
+    "en": "Atlas SLV-3D Centaur AC-34 from CCAFS LC-36B 1973-11-03 05:45 UTC.",
+    "locs": ["ar", "de", "es", "fr", "hi", "it", "ja", "ko", "nl", "pt-BR", "ru", "zh-CN"]
+  },
+  {
+    "file": "missions/moon/apollo14.json",
+    "at": "events.0.note",
+    "en": "Saturn V (AS-509) from Kennedy Space Center LC-39A 1971-01-31 21:03 UTC.",
+    "locs": ["ar", "de", "es", "fr", "hi", "it", "ja", "ko", "nl", "pt-BR", "ru", "zh-CN"]
+  },
+  {
+    "file": "missions/moon/apollo16.json",
+    "at": "events.0.note",
+    "en": "Saturn V (AS-511) from Kennedy Space Center LC-39A 1972-04-16 17:54 UTC.",
+    "locs": ["ar", "de", "es", "fr", "hi", "it", "ja", "ko", "nl", "pt-BR", "ru", "zh-CN"]
+  },
+  {
+    "file": "missions/moon/apollo16.json",
+    "at": "events.1.note",
+    "en": "Trans-lunar injection.",
+    "locs": ["ar", "de", "es", "fr", "hi", "it", "ja", "ko", "nl", "pt-BR", "ru", "zh-CN"]
+  },
+  {
+    "file": "missions/moon/change3.json",
+    "at": "events.0.note",
+    "en": "Long March 3B from Xichang 2013-12-01.",
+    "locs": ["ar", "de", "es", "fr", "hi", "it", "ja", "ko", "nl", "pt-BR", "ru", "zh-CN"]
+  },
+  {
+    "file": "missions/moon/luna16.json",
+    "at": "events.0.note",
+    "en": "Proton-K from Baikonur 1970-09-12.",
+    "locs": ["ar", "de", "es", "fr", "hi", "it", "ja", "ko", "nl", "pt-BR", "ru", "zh-CN"]
+  },
+  {
+    "file": "missions/moon/luna21.json",
+    "at": "events.0.note",
+    "en": "Proton-K from Baikonur 1973-01-08.",
+    "locs": ["ar", "de", "es", "fr", "hi", "it", "ja", "ko", "nl", "pt-BR", "ru", "zh-CN"]
+  },
+  {
+    "file": "missions/mars/perseverance.json",
+    "at": "events.1.note",
+    "en": "Trans-Mars injection.",
+    "locs": ["fr"]
+  },
+  {
+    "file": "missions/mars/maven.json",
+    "at": "events.0.note",
+    "en": "Atlas V 401 from Cape Canaveral SLC-41.",
+    "locs": ["zh-CN"]
+  },
+  {
+    "file": "missions/moon/apollo11.json",
+    "at": "events.0.note",
+    "en": "Saturn V (AS-506) from Kennedy Space Center LC-39A 1969-07-16 13:32 UTC.",
+    "locs": ["zh-CN"]
+  },
+  {
+    "file": "missions/moon/apollo11.json",
+    "at": "events.2.note",
+    "en": "Lunar orbit insertion.",
+    "locs": ["zh-CN"]
+  },
+  {
+    "file": "missions/moon/apollo17.json",
+    "at": "events.1.note",
+    "en": "Trans-lunar injection.",
+    "locs": ["zh-CN"]
+  },
+  {
+    "file": "missions/moon/apollo17.json",
+    "at": "events.2.note",
+    "en": "Lunar orbit insertion.",
+    "locs": ["zh-CN"]
+  },
+  {
+    "file": "missions/moon/artemis3.json",
+    "at": "events.1.note",
+    "en": "Trans-lunar injection.",
+    "locs": ["zh-CN"]
+  },
+  {
+    "file": "missions/moon/chandrayaan1.json",
+    "at": "events.0.note",
+    "en": "PSLV-XL (C11) from Sriharikota.",
+    "locs": ["zh-CN"]
+  },
+  {
+    "file": "missions/moon/change5.json",
+    "at": "events.0.note",
+    "en": "Long March 5 from Wenchang.",
+    "locs": ["zh-CN"]
+  },
+  {
+    "file": "missions/moon/change5.json",
+    "at": "events.1.note",
+    "en": "Lunar orbit insertion.",
+    "locs": ["zh-CN"]
+  },
+  {
+    "file": "missions/moon/change6.json",
+    "at": "events.0.note",
+    "en": "Long March 5 from Wenchang.",
+    "locs": ["zh-CN"]
+  },
+  {
+    "file": "missions/moon/change6.json",
+    "at": "events.1.note",
+    "en": "Lunar orbit insertion.",
+    "locs": ["zh-CN"]
+  },
+  {
+    "file": "missions/moon/clementine.json",
+    "at": "events.0.note",
+    "en": "Titan II G from Vandenberg AFB.",
+    "locs": ["zh-CN"]
+  },
+  {
+    "file": "missions/moon/lro.json",
+    "at": "events.0.note",
+    "en": "Atlas V 401 from Cape Canaveral SLC-41 (carried LCROSS impactor as secondary).",
+    "locs": ["zh-CN"]
+  },
+  {
+    "file": "missions/moon/luna17.json",
+    "at": "events.2.note",
+    "en": "Soft-landing at Mare Imbrium 1970-11-17.",
+    "locs": ["zh-CN"]
+  },
+  {
+    "file": "missions/moon/slim.json",
+    "at": "events.0.note",
+    "en": "H-IIA 202 from Tanegashima 2023-09-06.",
+    "locs": ["zh-CN"]
+  },
+  {
+    "file": "missions/moon/slim.json",
+    "at": "events.2.note",
+    "en": "Lunar orbit insertion.",
+    "locs": ["zh-CN"]
+  },
+  {
+    "file": "missions/neptune/voyager-2.json",
+    "at": "events.0.note",
+    "en": "Titan IIIE lifts Voyager 2 from Cape Canaveral on a Grand-Tour trajectory.",
+    "locs": ["zh-CN"]
+  }
+]

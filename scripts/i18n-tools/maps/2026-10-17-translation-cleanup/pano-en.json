@@ -1,0 +1,156 @@
+{
+  "apollo11": {
+    "panorama_caption": "Tranquility Base, EVA-1. Buzz Aldrin photographed the LM Eagle and the U.S. flag soon after landing. Visible Hasselblad seams + chromatic stitching at the LM are part of the published mosaic.",
+    "compass_zero_direction": "LM forward (per ALSJ panorama orientation)",
+    "panorama_annotations": [
+      {
+        "id": "lm-eagle",
+        "label": "LM Eagle",
+        "body": "Descent stage of the Lunar Module, where Armstrong + Aldrin stood for the EVA."
+      },
+      {
+        "id": "us-flag-pan",
+        "label": "U.S. flag",
+        "body": "Planted ~8 m west of the LM. Knocked over by the ascent stage exhaust on lift-off."
+      },
+      {
+        "id": "buzz-shadow",
+        "label": "Buzz Aldrin shadow",
+        "body": "Photographer's own shadow in the foreground — Buzz holding the Hasselblad."
+      }
+    ]
+  },
+  "apollo17": {
+    "panorama_caption": "Taurus-Littrow valley, Station 5. Schmitt + Cernan worked Camelot Crater and the South Massif here. Final lunar EVA panorama in the Apollo programme.",
+    "compass_zero_direction": "LRV forward (per ALSJ panorama orientation)",
+    "panorama_annotations": [
+      {
+        "id": "south-massif",
+        "label": "South Massif",
+        "body": "2.3 km uplifted highland, sampled at Station 2 (the orange-soil discovery site)."
+      },
+      {
+        "id": "camelot-crater",
+        "label": "Camelot Crater rim",
+        "body": "Large pre-existing impact crater near the Lunar Module; Station 5 boulder field is on the rim."
+      },
+      {
+        "id": "lrv",
+        "label": "Lunar Roving Vehicle",
+        "body": "The third LRV used on the Moon. Total traverse this mission: 35.7 km — still the record."
+      }
+    ]
+  },
+  "spirit": {
+    "panorama_caption": "Spirit's view from the summit of Husband Hill — first Martian summit reached by a rover. Looking south across the Inner Basin of Gusev Crater toward the Columbia Hills."
+  },
+  "opportunity": {
+    "panorama_caption": "Opportunity's view from inside Eagle Crater, the airbag-bounce landing site — the layered Burns Cliff outcrop visible across the crater wall would become the rover's first major science target."
+  },
+  "curiosity": {
+    "panorama_caption": "Curiosity at Gediz Vallis Channel — the rover's 360° view from sol 4220 after drilling the Mammoth Lakes sample, its 41st on Mars. Robotic arm visible at left, just finished drilling; rover deck on the right; real Martian sky in the upper band; Gediz Vallis channel descending through the centre — first place pure sulfur crystals were ever found on Mars.",
+    "compass_zero_direction": "rover forward",
+    "panorama_annotations": [
+      {
+        "id": "gediz-vallis-channel",
+        "label": "Gediz Vallis channel",
+        "body": "Ancient water-carved channel descending Mt. Sharp's slopes. Curiosity drilled the Mammoth Lakes sample here — first pure sulfur crystals ever found on Mars."
+      },
+      {
+        "id": "robotic-arm",
+        "label": "Robotic arm",
+        "body": "2 m articulated arm with the drill, brush, and APXS spectrometer — visible at left after completing the Mammoth Lakes drill on this sol."
+      },
+      {
+        "id": "mt-sharp-flank",
+        "label": "Mt. Sharp lower flank",
+        "body": "Layered slopes of Aeolis Mons, the 5 km mountain at the centre of Gale Crater that Curiosity has been climbing since 2014."
+      }
+    ]
+  },
+  "perseverance": {
+    "panorama_caption": "First 360° panorama from Perseverance — three days after landing. The rover deck dominates the foreground; Jezero crater floor + the distant rim are visible above the horizon; real Martian sky in the upper bands.",
+    "compass_zero_direction": "rover +X axis",
+    "panorama_annotations": [
+      {
+        "id": "mastcam-z-tower",
+        "label": "Mastcam-Z mast",
+        "body": "The 2 m camera mast — the rover's own \"eyes\" — visible in the centre because the panorama wraps around it."
+      },
+      {
+        "id": "jezero-crater-rim",
+        "label": "Jezero crater rim",
+        "body": "The crater wall ~2 km away; ancient delta deposits are visible at this rim's western edge — the science target Perseverance drove toward over its first year."
+      },
+      {
+        "id": "rover-deck",
+        "label": "Rover deck",
+        "body": "Foreground of every Mastcam-Z 360° — solar-panel-style deck, sample-tube cache visible at right."
+      }
+    ]
+  },
+  "mars3": {
+    "panorama_caption": "First Mars soft landing — 14.5 seconds of transmitted scan data before signal lost. There is no Tier-3 panorama to render at this site (yet); the experience here is the honest-historical-artifact framing of the original fragment via the Tier-2 CTX context."
+  },
+  "change4": {
+    "panorama_caption": "First panorama ever transmitted from the lunar farside. Von Kármán crater within South Pole–Aitken Basin. Yutu-2 rover visible mid-distance; lander shadow lower-left.",
+    "compass_zero_direction": "lander camera +X axis",
+    "panorama_annotations": [
+      {
+        "id": "yutu2",
+        "label": "Yutu-2 rover",
+        "body": "First rover on the lunar farside; still operational at 5+ years (the record for any lunar rover)."
+      },
+      {
+        "id": "von-karman-rim",
+        "label": "Von Kármán crater rim",
+        "body": "Inner rim of the 180 km crater inside the South Pole–Aitken Basin — the Moon's largest, oldest impact structure."
+      },
+      {
+        "id": "change4-shadow",
+        "label": "Chang'e 4 lander shadow",
+        "body": "The lander's own shadow on the regolith — captured by its onboard terrain camera."
+      }
+    ]
+  },
+  "chandrayaan3": {
+    "panorama_caption": "Shiv Shakti Point — first panorama from the lunar south pole. Vikram lander shadow visible foreground; Pragyan rover deployed onto the regolith shortly after this image.",
+    "compass_zero_direction": "lander imager +X",
+    "panorama_annotations": [
+      {
+        "id": "pragyan",
+        "label": "Pragyan rover (deployed sol +1)",
+        "body": "26 kg six-wheeled rover. Deployed via Vikram's ramp the day after landing; operated until lunar nightfall (~14 Earth days)."
+      },
+      {
+        "id": "south-pole-rim",
+        "label": "South pole crater rim",
+        "body": "First successful soft-landing this close to the lunar south pole — water-ice prospect zone."
+      }
+    ]
+  },
+  "vandenberg-slc-4e": {
+    "panorama_caption": "Vandenberg SLC-4E (Falcon 9) and SLC-4W from the air — an aerial view, not a ground-level panorama.",
+    "compass_zero_direction": "photo centre (true compass orientation not calibrated)"
+  },
+  "baikonur-1-5": {
+    "panorama_caption": "Gagarin's Start (Site 1/5) before the Soyuz TMA-13 rollout — a very low-resolution banner crop.",
+    "compass_zero_direction": "photo centre (true compass orientation not calibrated)"
+  },
+  "baikonur-31-6": {
+    "panorama_caption": "Baikonur Site 31/6 from the top of the Soyuz service structure — the pad flame trench below, the steppe and the Zenit facility on the horizon.",
+    "compass_zero_direction": "photo centre (true compass orientation not calibrated)"
+  },
+  "jiuquan-slc-43": {
+    "panorama_caption": "Jiuquan Satellite Launch Center main launch tower from a distance — a low-resolution panoramic strip across the Gobi.",
+    "compass_zero_direction": "photo centre (true compass orientation not calibrated)"
+  },
+  "wenchang-lc-101": {
+    "panorama_caption": "Wenchang launch site across Qishui Bay — the LC-101 towers seen from the beach, a distant shoreline view.",
+    "compass_zero_direction": "photo centre (true compass orientation not calibrated)"
+  },
+  "sriharikota-slp": {
+    "panorama_caption": "Satish Dhawan Space Centre, Sriharikota — PSLV-C61 in transit from the Vehicle Integration Facility toward the launch pad.",
+    "compass_zero_direction": "photo centre (true compass orientation not calibrated)"
+  }
+}

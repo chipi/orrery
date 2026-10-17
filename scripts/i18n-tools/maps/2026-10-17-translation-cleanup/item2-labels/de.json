@@ -1,0 +1,80 @@
+{
+  "missions/earth/aurora-7": {
+    "events": [
+      { "label": "START", "note": "Atlas LV-3B von Cape Canaveral LC-14, 1962-05-24 12:45 UTC." },
+      { "label": "BAHNEINSCHUSS", "note": "Einschuss in eine Erdumlaufbahn von 161 × 268 km." },
+      {
+        "label": "WASSERUNG",
+        "note": "Atlantik, ~400 km hinter dem Zielpunkt; 1 h 7 min Verzögerung bei der Bergung. USS Pierce, USS Intrepid."
+      }
+    ]
+  },
+  "missions/earth/faith-7": {
+    "events": [
+      { "label": "START", "note": "Atlas LV-3B von Cape Canaveral LC-14, 1963-05-15 13:04 UTC." },
+      { "label": "BAHNEINSCHUSS", "note": "Einschuss in eine Erdumlaufbahn von 161 × 267 km." },
+      {
+        "label": "STROMAUSFALL",
+        "note": "Ausfall der Stromversorgung; Cooper wechselt auf manuelle Lageregelung + Bremszündung — damit erwarb er seinen Ruf als „bester Steuerknüppel“."
+      },
+      {
+        "label": "WASSERUNG",
+        "note": "Pazifik, ~7 km vom Zielpunkt nach 22 Umläufen / 34 h 19 min. Bergung durch die USS Kearsarge."
+      }
+    ]
+  },
+  "missions/earth/freedom-7": {
+    "events": [
+      {
+        "label": "START",
+        "note": "Mercury-Redstone 3 (MR-3) von Cape Canaveral LC-5, 1961-05-05 14:34 UTC."
+      },
+      {
+        "label": "APOGÄUM",
+        "note": "Apogäum 187 km nach 2,5 Minuten; Schwerelosigkeit für ~5 min."
+      },
+      {
+        "label": "WASSERUNG",
+        "note": "Die Kapsel wasserte 487 km entfernt im Atlantik. Bergung durch die USS Lake Champlain."
+      }
+    ]
+  },
+  "missions/earth/friendship-7": {
+    "events": [
+      { "label": "START", "note": "Atlas LV-3B von Cape Canaveral LC-14, 1962-02-20 14:47 UTC." },
+      {
+        "label": "BAHNEINSCHUSS",
+        "note": "Einschuss in eine Erdumlaufbahn von 159 × 265 km, Inklination 32,5°."
+      },
+      {
+        "label": "„GLÜHWÜRMCHEN“",
+        "note": "Glenn meldet leuchtende „Glühwürmchen“ vor dem Fenster — Teilchen vom Retropaket, die beim Wiedereintritt abbrennen."
+      },
+      {
+        "label": "WASSERUNG",
+        "note": "Die Kapsel wasserte 1287 km südöstlich von Cape Canaveral nach 3 Umläufen / 4 h 55 min. Bergung durch die USS Noa."
+      }
+    ]
+  },
+  "planets/arrokoth": { "links": "COPY" },
+  "satellites/moon": {
+    "library_labels": {
+      "moon-wiki": "Wikipedia — Mond",
+      "moon-nasa-overview": "NASA Science — der Erdmond im Überblick",
+      "moon-apollo": "NASA-Apollo-Programm — Archiv der Landemissionen",
+      "moon-artemis": "NASA Artemis — bemanntes Programm zur Rückkehr zum Mond",
+      "moon-lroc": "LROC — Bildarchiv der Lunar Reconnaissance Orbiter Camera"
+    },
+    "mission_visits": [
+      "Luna 2 — UdSSR, 1959 (erstes künstliches Objekt auf dem Mond)",
+      "Apollo 11 — USA, 1969 (erste bemannte Landung)",
+      "Luna 16 — UdSSR, 1970 (erste robotische Probenrückführung)",
+      "Chang'e 4 — China, 2019 (erste Landung auf der Rückseite)",
+      "Chandrayaan-3 — Indien, 2023 (erste Landung am Südpol)"
+    ],
+    "surface_composition": "Hochländer aus Anorthosit (Calcium-Aluminium-Silikate) + basaltische Maria, die von uralter Lava geflutet wurden; Regolith 4–15 m tief; Spuren von Wassereis in dauerhaft beschatteten Polarkratern."
+  },
+  "science/transfers/coplanar-trajectories": {
+    "diagram_caption": "Das Sonnensystem liegt nahezu in einer Ebene, weil die Planeten aus einer einzigen rotierenden Scheibe entstanden sind. Abflüge bleiben in dieser Ebene, weil Bahnebenenwechsel unbezahlbar viel Treibstoff kosten."
+  }
+}

@@ -1,0 +1,45 @@
+exoplanets/exoplanet-atmospheres	系外惑星の大気を読む
+exoplanets/hot-jupiters	ホット・ジュピター
+exoplanets/microlensing	重力マイクロレンズ
+exoplanets/super-earths-sub-neptunes	スーパーアースとサブネプチューン
+exoplanets/tidal-locking	潮汐固定
+exoplanets/transit-timing	トランジット時刻変動
+history/newton-principia-1687	NewtonのPrincipia · 1687
+history/tsiolkovsky-equation-1903	Tsiolkovskyの式 · 1903
+mission-phases/comms-blackout	通信途絶（ブラックアウト）
+mission-phases/edl	EDL — 突入・降下・着陸
+mission-phases/entry-heating	突入時の加熱
+mission-phases/met	MET — ミッション経過時間
+mission-phases/nrho	NRHO — ほぼ直線ハロー軌道
+mission-phases/orbit-insertion	軌道投入 — LOI / MOI
+mission-phases/skycrane	スカイクレーン
+mission-phases/tcm	TCM — 軌道修正マヌーバ
+orbits/apsides	近点と遠点 — 近日点、遠日点、近地点、遠地点
+orbits/hill-sphere	Hill圏
+orbits/keplerian-orbit	Kepler軌道
+orbits/true-anomaly	真近点角
+orbits/vis-viva	活力方程式
+planets/active-spacecraft-survey	稼働中の探査機一覧
+planets/planetary-stats	惑星データ
+porkchop/departure-axis	出発ウィンドウの軸
+porkchop/dv-heatmap	∆vヒートマップ
+propulsion/c3	C3 — 特性エネルギー
+propulsion/oberth-effect	Oberth効果
+propulsion/specific-impulse	比推力（Isp）
+propulsion/tsiolkovsky	Tsiolkovskyのロケット方程式
+scales-time/frames	日心 · 地心 · 天体中心の座標系
+scales-time/long-duration	長期宇宙飛行
+space-stations/expedition-cadence	長期滞在クルーの交代周期
+space-stations/node-module	結合モジュール（ノード）
+space-stations/pressurized-volume	居住可能容積
+transfers/conic-sections	円錐曲線
+transfers/free-return	自由帰還軌道
+transfers/hohmann-transfer	Hohmann遷移
+transfers/patched-conics	接続円錐曲線法
+transfers/transfer-ellipse	遷移楕円
+mission-phases/eva	EVA — 船外活動
+mission-phases/gravity-turn	重力ターン
+mission-phases/mission-types	ミッションの種類 — フライバイ、オービター、ランダー、ローバー、サンプルリターン
+observation/local-group	局部銀河群 — 重力で結びついた我々の近隣宇宙
+propulsion/ion-drive	イオンエンジン — 止まらぬ微かな推力
+propulsion/nuclear-thermal	原子力熱推進ロケット — 熱であって、炎ではない

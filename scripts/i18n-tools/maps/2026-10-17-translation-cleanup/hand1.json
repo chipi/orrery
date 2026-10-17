@@ -1,0 +1,202 @@
+[
+  ["ar", "earth-objects/lro", "scale_fact", [["أبعد من المحطة", "أبعد من ISS"]]],
+  [
+    "ar",
+    "earth-objects/luna10",
+    "description",
+    [["قبل Lunar Orbiter 1 بثلاثة أشهر", "قبل Lunar Orbiter 1 التابع لـ NASA بثلاثة أشهر"]]
+  ],
+  [
+    "ar",
+    "fleet/cargo-spacecraft/cygnus-standard",
+    "tagline",
+    [["ناقل الشحنات المضبوطة فقط", "ناقل شحنات مضغوطة فقط إلى ISS"]]
+  ],
+  [
+    "ar",
+    "fleet/cargo-spacecraft/cygnus-standard",
+    "best_known_for",
+    [["ناقل الشحنات المضبوطة فقط", "ناقل شحنات مضغوطة فقط إلى ISS"]]
+  ],
+  [
+    "ar",
+    "fleet/constellation/galileo-gnss",
+    "description",
+    [["من وكالة EUSPA والمفوضية الأوروبية", "من ESA/EUSPA"]]
+  ],
+  [
+    "ar",
+    "fleet/crewed-spacecraft/buran-ok-gli",
+    "tagline",
+    [["مكافئ Enterprise", "مكافئ Enterprise التابع لـ NASA"]]
+  ],
+  [
+    "ar",
+    "fleet/lander/beagle2",
+    "tagline",
+    [
+      ["هابط المريخ البريطاني-الأوروبي", "هابط المريخ البريطاني/ESA"],
+      ["سليماً في 2015", "سليماً في 2015 — لم تنفتح إحدى ألواحه الشمسية"]
+    ]
+  ],
+  [
+    "ar",
+    "fleet/lander/beagle2",
+    "best_known_for",
+    [["هابط المريخ البريطاني-الأوروبي", "هابط المريخ البريطاني/ESA"]]
+  ],
+  [
+    "ar",
+    "missions/moon/artemis3",
+    "description",
+    [
+      ["البنية: SLS Block 1 تطلق", "البنية: SLS Block 1 التابعة لـ NASA تطلق"],
+      [
+        "يُسبق إلى NRHO Starship HLS",
+        "يُوضع مسبقًا في NRHO نظام الهبوط البشري Starship HLS من SpaceX،"
+      ]
+    ]
+  ],
+  [
+    "ar",
+    "rockets/proton-m",
+    "first",
+    [["+ Luna وLuna ووحدات محطة الفضاء الروسية", "+ Luna ووحدات ISS الروسية"]]
+  ],
+  [
+    "ar",
+    "messages",
+    "lab_conn_gtm_hook",
+    [
+      [
+        "Perseverance و Tianwen-1 و Hope",
+        "Perseverance التابعة لـ NASA و Tianwen-1 الصينية و Hope الإماراتية"
+      ]
+    ]
+  ],
+  [
+    "de",
+    "fleet/orbiter/change1",
+    "description",
+    [
+      [
+        "und Chinas erste Mission über die Erde hinaus",
+        "und die erste Mission der CNSA über die Erde hinaus"
+      ]
+    ]
+  ],
+  [
+    "de",
+    "missions/mars/mars-pathfinder",
+    "dispatch",
+    [["Mars Pathfinder bewies, dass", "Mars Pathfinder war der Beweis der NASA, dass"]]
+  ],
+  [
+    "de",
+    "science/life-in-space/lunar-surface-ops",
+    "body_paragraphs.3",
+    [
+      [
+        "Ein druckbeaufschlagter Mondrovergeplant für spätere Artemis-Flüge",
+        "Ein druckbeaufschlagter Mondrover (‚lunar Winnebago‘ war die frühe NASA-Bezeichnung) ist für spätere Artemis-Flüge geplant"
+      ]
+    ]
+  ],
+  [
+    "de",
+    "science/scales-time/sidereal-synodic",
+    "body_paragraphs.0",
+    [
+      [
+        "Siderische Periode: Zeit für eine volle Umdrehung gegen Fixsterne. Mars siderisches Jahr: 687 Erdtage.",
+        "Siderische Periode: Zeit für einen vollen Umlauf relativ zu den Fixsternen. Das ist die geometrische Periode nach dem dritten Kepler-Gesetz — das siderische Marsjahr dauert 687 Erdtage."
+      ]
+    ]
+  ],
+  [
+    "es",
+    "fleet/lander/beagle2",
+    "best_known_for",
+    [
+      [
+        "Módulo de aterrizaje británico-europeo en Marte",
+        "Módulo de aterrizaje británico/ESA en Marte"
+      ]
+    ]
+  ],
+  [
+    "es",
+    "fleet/orbiter/juice",
+    "tagline",
+    [["Buque insignia europeo a Júpiter", "Misión insignia de ESA a Júpiter"]]
+  ],
+  [
+    "es",
+    "fleet/orbiter/juice",
+    "best_known_for",
+    [["Buque insignia europeo a Júpiter", "Misión insignia de ESA a Júpiter"]]
+  ],
+  [
+    "es",
+    "fleet/orbiter/solar-orbiter",
+    "description",
+    [["en un Atlas V 411.", "en un Atlas V 411 de NASA."]]
+  ],
+  [
+    "fr",
+    "missions/mars/mars-pathfinder",
+    "dispatch",
+    [["Mars Pathfinder a démontré que", "Mars Pathfinder a été la preuve, pour la NASA, que"]]
+  ],
+  [
+    "fr",
+    "missions/mars/schiaparelli",
+    "description",
+    [["sur l'orbiteur Trace Gas Orbiter ExoMars (TGO)", "sur l'ExoMars Trace Gas Orbiter (TGO)"]]
+  ],
+  [
+    "fr",
+    "science/life-in-space/crew-selection",
+    "body_paragraphs.1",
+    [
+      [
+        "Fenêtre de taille : 1,49–1,93 m. Pas de limite d'âge supérieure.",
+        "Fenêtre de taille : 1,49–1,93 m (Crew Dragon et Soyuz acceptent tous deux cette plage). Aucune restriction de vision au-delà d'une vue corrigeable. Pas de limite d'âge supérieure. Au moins deux ans d'expérience professionnelle, mais les sélectionnés en ont en moyenne 13. Le critère physique est passé de « la tolérance aux G d'un pilote de chasse » à « ne pas développer de maladie grave pendant une expédition de 6 mois sur l'ISS »."
+      ]
+    ]
+  ],
+  [
+    "fr",
+    "science/mission-phases/interplanetary-internet",
+    "body_paragraphs.2",
+    [
+      [
+        "Mars Reconnaissance Orbiter, MAVEN et Trace Gas Orbiter de l'ESA",
+        "Mars Reconnaissance Orbiter et MAVEN de la NASA, ainsi que le Trace Gas Orbiter de l'ESA,"
+      ]
+    ]
+  ],
+  [
+    "fr",
+    "science/propulsion/fuels-and-oxidizers",
+    "body_paragraphs.3",
+    [["chaque burn OMS du Shuttle", "chaque allumage OMS du Space Shuttle"]]
+  ],
+  [
+    "fr",
+    "science/space-stations/node-module",
+    "body_paragraphs.2",
+    [["Harmony (Node 2) lancé en 2007.", "Harmony (Node 2) de l'ISS, lancé en 2007."]]
+  ],
+  [
+    "it",
+    "science/life-in-space/crewed-station-design",
+    "body_paragraphs.0",
+    [
+      [
+        "non era ancora risolto.",
+        "non era ancora risolto. Skylab (USA, 1973) era un terzo stadio di Saturn V convertito — enorme volume interno (~360 m³) e una sola possibilità; lo scudo antimicrometeoriti si strappò al lancio e il primo equipaggio dovette dispiegare un parasole dall'esterno per evitare che il laboratorio si surriscaldasse."
+      ]
+    ]
+  ]
+]

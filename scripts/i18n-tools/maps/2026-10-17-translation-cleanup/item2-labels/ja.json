@@ -1,0 +1,80 @@
+{
+  "missions/earth/aurora-7": {
+    "events": [
+      {
+        "label": "打ち上げ",
+        "note": "Cape Canaveral LC-14 から Atlas LV-3B、1962-05-24 12:45 UTC。"
+      },
+      { "label": "軌道投入", "note": "161 × 268 km の地球周回軌道へ投入。" },
+      {
+        "label": "着水",
+        "note": "大西洋、目標地点の約 400 km 先。回収は 1 時間 7 分遅れた。USS Pierce、USS Intrepid。"
+      }
+    ]
+  },
+  "missions/earth/faith-7": {
+    "events": [
+      {
+        "label": "打ち上げ",
+        "note": "Cape Canaveral LC-14 から Atlas LV-3B、1963-05-15 13:04 UTC。"
+      },
+      { "label": "軌道投入", "note": "161 × 267 km の地球周回軌道へ投入。" },
+      {
+        "label": "電源故障",
+        "note": "電源系統が故障。Cooper は手動の姿勢制御 + 逆噴射に切り替え、「最高の操縦士」の評判を得た。"
+      },
+      {
+        "label": "着水",
+        "note": "太平洋、22 周 / 34 時間 19 分の飛行後、目標地点から約 7 km。USS Kearsarge が回収。"
+      }
+    ]
+  },
+  "missions/earth/freedom-7": {
+    "events": [
+      {
+        "label": "打ち上げ",
+        "note": "Cape Canaveral LC-5 から Mercury-Redstone 3 (MR-3)、1961-05-05 14:34 UTC。"
+      },
+      { "label": "遠地点", "note": "2.5 分後に遠地点 187 km。約 5 分間の無重量状態。" },
+      { "label": "着水", "note": "カプセルは 487 km 先の大西洋に着水。USS Lake Champlain が回収。" }
+    ]
+  },
+  "missions/earth/friendship-7": {
+    "events": [
+      {
+        "label": "打ち上げ",
+        "note": "Cape Canaveral LC-14 から Atlas LV-3B、1962-02-20 14:47 UTC。"
+      },
+      { "label": "軌道投入", "note": "159 × 265 km、軌道傾斜角 32.5° の地球周回軌道へ投入。" },
+      {
+        "label": "「ホタル」",
+        "note": "Glenn が窓の外に光る「ホタル」を報告 — 再突入時に燃えていく逆噴射パックの破片だった。"
+      },
+      {
+        "label": "着水",
+        "note": "3 周 / 4 時間 55 分の飛行後、カプセルは Cape Canaveral の南東 1287 km に着水。USS Noa が回収。"
+      }
+    ]
+  },
+  "planets/arrokoth": { "links": "COPY" },
+  "satellites/moon": {
+    "library_labels": {
+      "moon-wiki": "ウィキペディア — 月",
+      "moon-nasa-overview": "NASA Science — 月の概要",
+      "moon-apollo": "NASA の Apollo 計画 — 着陸ミッションのアーカイブ",
+      "moon-artemis": "NASA Artemis — 有人月面回帰計画",
+      "moon-lroc": "LROC — Lunar Reconnaissance Orbiter Camera の画像アーカイブ"
+    },
+    "mission_visits": [
+      "Luna 2 — ソ連、1959 年（月面に到達した最初の人工物）",
+      "Apollo 11 — 米国、1969 年（最初の有人着陸）",
+      "Luna 16 — ソ連、1970 年（最初の無人サンプルリターン）",
+      "Chang'e 4 — 中国、2019 年（月の裏側への最初の着陸）",
+      "Chandrayaan-3 — インド、2023 年（南極付近への最初の着陸）"
+    ],
+    "surface_composition": "斜長岩の高地（カルシウム・アルミニウムケイ酸塩）+ 古代の溶岩に満たされた玄武岩の海。レゴリスの深さは 4〜15 m。永久影の極域クレーターに微量の水の氷。"
+  },
+  "science/transfers/coplanar-trajectories": {
+    "diagram_caption": "太陽系がほぼ平らなのは、惑星が一枚の回転する円盤から生まれたため。出発がその面にとどまるのは、軌道面の変更に法外な推進剤が必要だからだ。"
+  }
+}

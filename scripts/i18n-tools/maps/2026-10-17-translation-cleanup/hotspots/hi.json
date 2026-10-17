@@ -1,0 +1,163 @@
+{
+  "apollo11": {
+    "hotspot_annotations": [
+      { "id": "lm-descent-stage", "label": "LM का अवतरण चरण (Eagle)" },
+      { "id": "us-flag", "label": "अमेरिकी झंडा (LM से ~8 मी पश्चिम में गाड़ा गया)" },
+      { "id": "lrrr", "label": "लेज़र रेंजिंग रेट्रोरिफ़्लेक्टर (LRRR)" },
+      { "id": "easep", "label": "EASEP (सरलीकृत ALSEP पैकेज)" },
+      { "id": "plaque", "label": "\"हम पूरी मानवता के लिए शांति से आए\" पट्टिका" }
+    ],
+    "panorama_caption": "Tranquility Base, EVA-1. Buzz Aldrin ने उतरने के कुछ ही देर बाद LM Eagle और अमेरिकी झंडे की तस्वीर ली। LM के पास दिखने वाले Hasselblad के जोड़ और रंगीन सिलाई प्रकाशित मोज़ेक का हिस्सा हैं।",
+    "compass_zero_direction": "LM का अगला भाग (ALSJ पैनोरमा अभिविन्यास के अनुसार)",
+    "panorama_annotations": [
+      {
+        "id": "lm-eagle",
+        "label": "LM Eagle",
+        "body": "चंद्र मॉड्यूल का अवतरण चरण, जहाँ EVA के दौरान Armstrong + Aldrin खड़े थे।"
+      },
+      {
+        "id": "us-flag-pan",
+        "label": "अमेरिकी झंडा",
+        "body": "LM से ~8 मी पश्चिम में गाड़ा गया। उड़ान के समय आरोहण चरण की धार से गिर गया।"
+      },
+      {
+        "id": "buzz-shadow",
+        "label": "Buzz Aldrin की परछाईं",
+        "body": "अग्रभूमि में फ़ोटोग्राफ़र की अपनी परछाईं — Buzz हाथ में Hasselblad लिए हुए।"
+      }
+    ]
+  },
+  "apollo17": {
+    "panorama_caption": "Taurus-Littrow घाटी, स्टेशन 5। Schmitt + Cernan ने यहाँ Camelot Crater और South Massif पर काम किया। Apollo कार्यक्रम का अंतिम चंद्र EVA पैनोरमा।",
+    "compass_zero_direction": "चंद्र वाहन का अगला भाग (ALSJ पैनोरमा अभिविन्यास के अनुसार)",
+    "panorama_annotations": [
+      {
+        "id": "south-massif",
+        "label": "South Massif",
+        "body": "2.3 किमी ऊँचा उठा हुआ उच्चभूमि क्षेत्र, जिसके नमूने स्टेशन 2 पर लिए गए (नारंगी मिट्टी की खोज का स्थल)।"
+      },
+      {
+        "id": "camelot-crater",
+        "label": "Camelot Crater का किनारा",
+        "body": "चंद्र मॉड्यूल के पास पहले से मौजूद बड़ा प्रभाव-गड्ढा; स्टेशन 5 का शिलाखंड क्षेत्र इसके किनारे पर है।"
+      },
+      {
+        "id": "lrv",
+        "label": "चंद्र रोविंग वाहन",
+        "body": "चंद्रमा पर इस्तेमाल हुआ तीसरा चंद्र वाहन। इस मिशन में कुल यात्रा: 35.7 किमी — अब भी रिकॉर्ड।"
+      }
+    ]
+  },
+  "spirit": {
+    "panorama_caption": "Husband Hill के शिखर से Spirit का दृश्य — किसी रोवर द्वारा पहुँचा गया पहला मंगल शिखर। दक्षिण की ओर, Gusev Crater के Inner Basin के पार Columbia Hills की तरफ़।"
+  },
+  "opportunity": {
+    "panorama_caption": "Eagle Crater के भीतर से Opportunity का दृश्य, जहाँ एयरबैग से उछलकर लैंडिंग हुई थी — गड्ढे की सामने वाली दीवार पर दिखने वाली परतदार चट्टान Burns Cliff रोवर का पहला बड़ा वैज्ञानिक लक्ष्य बनी।"
+  },
+  "curiosity": {
+    "panorama_caption": "Gediz Vallis चैनल में Curiosity — sol 4220 का रोवर का 360° दृश्य, Mammoth Lakes नमूने की ड्रिलिंग के बाद, जो मंगल पर उसका 41वाँ नमूना था। बाईं ओर रोबोटिक भुजा, जिसने अभी ड्रिलिंग पूरी की है; दाईं ओर रोवर का डेक; ऊपरी पट्टी में असली मंगल आकाश; बीच से उतरता Gediz Vallis चैनल — वह पहली जगह जहाँ मंगल पर शुद्ध गंधक के क्रिस्टल मिले।",
+    "compass_zero_direction": "रोवर का अगला भाग",
+    "panorama_annotations": [
+      {
+        "id": "gediz-vallis-channel",
+        "label": "Gediz Vallis चैनल",
+        "body": "Mt. Sharp की ढलानों से उतरता, पानी द्वारा काटा गया प्राचीन चैनल। Curiosity ने यहाँ Mammoth Lakes नमूना ड्रिल किया — मंगल पर मिले अब तक के पहले शुद्ध गंधक क्रिस्टल।"
+      },
+      {
+        "id": "robotic-arm",
+        "label": "रोबोटिक भुजा",
+        "body": "ड्रिल, ब्रश और APXS स्पेक्ट्रोमीटर वाली 2 मी लंबी जोड़दार भुजा — इस sol पर Mammoth Lakes ड्रिल पूरी करने के बाद बाईं ओर दिखती है।"
+      },
+      {
+        "id": "mt-sharp-flank",
+        "label": "Mt. Sharp की निचली ढलान",
+        "body": "Aeolis Mons की परतदार ढलानें — Gale Crater के बीच 5 किमी ऊँचा पर्वत, जिस पर Curiosity 2014 से चढ़ रहा है।"
+      }
+    ]
+  },
+  "perseverance": {
+    "panorama_caption": "Perseverance का पहला 360° पैनोरमा — उतरने के तीन दिन बाद। अग्रभूमि में रोवर का डेक छाया है; क्षितिज के ऊपर Jezero गड्ढे का तल और दूर का किनारा दिखता है; ऊपरी पट्टियों में असली मंगल आकाश।",
+    "compass_zero_direction": "रोवर का +X अक्ष",
+    "panorama_annotations": [
+      {
+        "id": "mastcam-z-tower",
+        "label": "Mastcam-Z मस्तूल",
+        "body": "2 मी ऊँचा कैमरा मस्तूल — रोवर की अपनी \"आँखें\" — बीच में दिखता है क्योंकि पैनोरमा उसके चारों ओर लिपटता है।"
+      },
+      {
+        "id": "jezero-crater-rim",
+        "label": "Jezero गड्ढे का किनारा",
+        "body": "~2 किमी दूर गड्ढे की दीवार; इस किनारे के पश्चिमी छोर पर प्राचीन डेल्टा जमाव दिखते हैं — वह वैज्ञानिक लक्ष्य जिसकी ओर Perseverance अपने पहले वर्ष में चला।"
+      },
+      {
+        "id": "rover-deck",
+        "label": "रोवर का डेक",
+        "body": "हर Mastcam-Z 360° की अग्रभूमि — सौर पैनल जैसा डेक, दाईं ओर नमूना-नलिकाओं का भंडार दिखता है।"
+      }
+    ]
+  },
+  "mars3": {
+    "panorama_caption": "मंगल पर पहली सॉफ़्ट लैंडिंग — सिग्नल टूटने से पहले 14.5 सेकंड का प्रेषित स्कैन डेटा। इस स्थल के लिए (अभी) कोई Tier-3 पैनोरमा नहीं है; यहाँ मूल ऐतिहासिक अंश को Tier-2 CTX संदर्भ में ईमानदारी से दिखाया गया है।"
+  },
+  "change4": {
+    "panorama_caption": "चंद्रमा के दूरस्थ भाग से भेजा गया पहला पैनोरमा। South Pole–Aitken Basin के भीतर Von Kármán गड्ढा। बीच की दूरी पर Yutu-2 रोवर; नीचे बाईं ओर लैंडर की परछाईं।",
+    "compass_zero_direction": "लैंडर कैमरे का +X अक्ष",
+    "panorama_annotations": [
+      {
+        "id": "yutu2",
+        "label": "Yutu-2 रोवर",
+        "body": "चंद्रमा के दूरस्थ भाग पर पहला रोवर; 5+ वर्ष बाद भी चालू (किसी भी चंद्र रोवर का रिकॉर्ड)।"
+      },
+      {
+        "id": "von-karman-rim",
+        "label": "Von Kármán गड्ढे का किनारा",
+        "body": "South Pole–Aitken Basin के भीतर 180 किमी के गड्ढे का भीतरी किनारा — चंद्रमा की सबसे बड़ी और सबसे पुरानी प्रभाव संरचना।"
+      },
+      {
+        "id": "change4-shadow",
+        "label": "Chang'e 4 लैंडर की परछाईं",
+        "body": "रेगोलिथ पर लैंडर की अपनी परछाईं — उसके सवार भूभाग कैमरे से ली गई।"
+      }
+    ]
+  },
+  "chandrayaan3": {
+    "panorama_caption": "Shiv Shakti Point — चंद्र दक्षिणी ध्रुव से पहला पैनोरमा। अग्रभूमि में Vikram लैंडर की परछाईं; इस तस्वीर के कुछ ही देर बाद Pragyan रोवर रेगोलिथ पर उतारा गया।",
+    "compass_zero_direction": "लैंडर इमेजर का +X अक्ष",
+    "panorama_annotations": [
+      {
+        "id": "pragyan",
+        "label": "Pragyan रोवर (sol +1 को उतारा गया)",
+        "body": "26 किग्रा का छह पहियों वाला रोवर। उतरने के अगले दिन Vikram के रैंप से उतारा गया; चंद्र रात होने तक (~14 पृथ्वी दिवस) चला।"
+      },
+      {
+        "id": "south-pole-rim",
+        "label": "दक्षिणी ध्रुव के गड्ढे का किनारा",
+        "body": "चंद्र दक्षिणी ध्रुव के इतने पास पहली सफल सॉफ़्ट लैंडिंग — जल-हिम खोज का क्षेत्र।"
+      }
+    ]
+  },
+  "vandenberg-slc-4e": {
+    "panorama_caption": "हवा से Vandenberg SLC-4E (Falcon 9) और SLC-4W — एक हवाई दृश्य, ज़मीनी स्तर का पैनोरमा नहीं।",
+    "compass_zero_direction": "फ़ोटो का केंद्र (असली कम्पास दिशा कैलिब्रेट नहीं की गई)"
+  },
+  "baikonur-1-5": {
+    "panorama_caption": "Soyuz TMA-13 को लॉन्च पैड पर लाए जाने से पहले Gagarin's Start (Site 1/5) — बहुत कम रिज़ॉल्यूशन वाली बैनर कटिंग।",
+    "compass_zero_direction": "फ़ोटो का केंद्र (असली कम्पास दिशा कैलिब्रेट नहीं की गई)"
+  },
+  "baikonur-31-6": {
+    "panorama_caption": "Soyuz सेवा ढाँचे के शीर्ष से Baikonur Site 31/6 — नीचे पैड की लौ-खाई, क्षितिज पर स्तेपी और Zenit सुविधा।",
+    "compass_zero_direction": "फ़ोटो का केंद्र (असली कम्पास दिशा कैलिब्रेट नहीं की गई)"
+  },
+  "jiuquan-slc-43": {
+    "panorama_caption": "दूर से Jiuquan Satellite Launch Center का मुख्य प्रक्षेपण टावर — गोबी के पार कम रिज़ॉल्यूशन की पैनोरमिक पट्टी।",
+    "compass_zero_direction": "फ़ोटो का केंद्र (असली कम्पास दिशा कैलिब्रेट नहीं की गई)"
+  },
+  "wenchang-lc-101": {
+    "panorama_caption": "छीशुई खाड़ी के पार Wenchang प्रक्षेपण स्थल — समुद्र तट से दिखते LC-101 के टावर, तट का दूर का दृश्य।",
+    "compass_zero_direction": "फ़ोटो का केंद्र (असली कम्पास दिशा कैलिब्रेट नहीं की गई)"
+  },
+  "sriharikota-slp": {
+    "panorama_caption": "Satish Dhawan Space Centre, श्रीहरिकोटा — PSLV-C61, Vehicle Integration Facility से लॉन्च पैड की ओर ले जाया जाता हुआ।",
+    "compass_zero_direction": "फ़ोटो का केंद्र (असली कम्पास दिशा कैलिब्रेट नहीं की गई)"
+  }
+}

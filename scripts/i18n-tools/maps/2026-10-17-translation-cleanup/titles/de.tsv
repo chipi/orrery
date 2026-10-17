@@ -1,0 +1,39 @@
+planets/active-spacecraft-survey	Übersicht aktiver Raumsonden
+mission-phases/aerobraking	Aerobremsung
+propulsion/c3	C3 — Charakteristische Energie
+porkchop/departure-axis	Achse des Startfensters
+mission-phases/edl	EDL — Eintritt, Abstieg, Landung
+mission-phases/entry-heating	Aufheizung beim Eintritt
+space-stations/expedition-cadence	Rhythmus der Expeditionen
+mission-phases/eva	EVA — Außenbordeinsatz
+mission-phases/mission-types	Missionstypen — Vorbeiflug, Orbiter, Lander, Rover, Probenrückführung
+transfers/free-return	Freie Rückkehrbahn
+exoplanets/microlensing	Gravitativer Mikrolinseneffekt
+transfers/gravity-assist	Swing-by-Manöver
+mission-phases/gravity-turn	Schwerkraftwende
+orbits/hill-sphere	Hill-Sphäre
+propulsion/v-infinity	V∞ — Hyperbolische Exzessgeschwindigkeit
+orbits/keplerian-orbit	Kepler-Bahn
+mission-phases/orbit-insertion	Einschwenken in die Umlaufbahn — LOI / MOI
+scales-time/long-duration	Langzeit-Raumflug
+mission-phases/met	MET — Verstrichene Missionszeit
+mission-phases/nrho	NRHO — Nahezu geradliniger Halo-Orbit
+space-stations/node-module	Verbindungsknoten-Modul
+propulsion/oberth-effect	Oberth-Effekt
+transfers/patched-conics	Aneinandergesetzte Kegelschnitte
+orbits/apsides	Apsiden — Perihel, Aphel, Perigäum, Apogäum
+mission-phases/propulsive-landing	Landung mit Triebwerksschub
+exoplanets/exoplanet-atmospheres	Atmosphären von Exoplaneten lesen
+porkchop/viability	Machbarkeit ablesen
+scales-time/sidereal-synodic	Siderische vs. synodische Umlaufzeit
+mission-phases/skycrane	Himmelskran
+propulsion/specific-impulse	Spezifischer Impuls (Isp)
+exoplanets/super-earths-sub-neptunes	Supererden & Sub-Neptune
+mission-phases/terminal-velocity	Endgeschwindigkeit
+mission-phases/trans-x-injection	Trans-X-Einschuss — TLI / TMI / TVI / TJI
+mission-phases/tcm	TCM — Bahnkorrekturmanöver
+exoplanets/transit-timing	Transitzeitvariationen
+history/tsiolkovsky-equation-1903	Tsiolkovsky-Gleichung · 1903
+propulsion/tsiolkovsky	Tsiolkovsky-Raketengleichung
+porkchop/dv-heatmap	∆v-Wärmekarte
+orbits/vis-viva	Vis-viva-Gleichung

@@ -1,0 +1,163 @@
+{
+  "apollo11": {
+    "hotspot_annotations": [
+      { "id": "lm-descent-stage", "label": "LM 하강단 (Eagle)" },
+      { "id": "us-flag", "label": "미국 국기 (LM에서 서쪽으로 ~8 m에 꽂음)" },
+      { "id": "lrrr", "label": "레이저 거리 측정 반사경 (LRRR)" },
+      { "id": "easep", "label": "EASEP (간소화된 ALSEP 장비)" },
+      { "id": "plaque", "label": "\"우리는 모든 인류를 위해 평화롭게 왔다\" 명판" }
+    ],
+    "panorama_caption": "Tranquility Base, EVA-1. Buzz Aldrin이 착륙 직후 LM Eagle과 미국 국기를 촬영했다. LM 주변에 보이는 Hasselblad 이음매와 색 번짐은 공개된 모자이크의 일부다.",
+    "compass_zero_direction": "LM 정면 (ALSJ 파노라마 방향 기준)",
+    "panorama_annotations": [
+      {
+        "id": "lm-eagle",
+        "label": "LM Eagle",
+        "body": "달 착륙선의 하강단으로, Armstrong + Aldrin이 선외활동 중 이곳에 서 있었다."
+      },
+      {
+        "id": "us-flag-pan",
+        "label": "미국 국기",
+        "body": "LM에서 서쪽으로 ~8 m 떨어진 곳에 꽂았다. 이륙 때 상승단의 분사에 넘어졌다."
+      },
+      {
+        "id": "buzz-shadow",
+        "label": "Buzz Aldrin의 그림자",
+        "body": "전경에 보이는 촬영자 자신의 그림자 — Hasselblad를 든 Buzz."
+      }
+    ]
+  },
+  "apollo17": {
+    "panorama_caption": "Taurus-Littrow 계곡, 스테이션 5. Schmitt + Cernan이 이곳에서 Camelot Crater와 South Massif를 조사했다. Apollo 프로그램 마지막 달 선외활동 파노라마다.",
+    "compass_zero_direction": "월면차 정면 (ALSJ 파노라마 방향 기준)",
+    "panorama_annotations": [
+      {
+        "id": "south-massif",
+        "label": "South Massif",
+        "body": "높이 2.3 km로 솟은 고지대로, 스테이션 2(주황색 흙이 발견된 곳)에서 시료를 채취했다."
+      },
+      {
+        "id": "camelot-crater",
+        "label": "Camelot Crater 가장자리",
+        "body": "달 착륙선 근처의 오래된 대형 충돌 크레이터로, 스테이션 5의 바위 지대가 가장자리에 있다."
+      },
+      {
+        "id": "lrv",
+        "label": "월면차",
+        "body": "달에서 사용된 세 번째 월면차. 이 임무의 총 주행 거리는 35.7 km로 지금도 기록이다."
+      }
+    ]
+  },
+  "spirit": {
+    "panorama_caption": "Husband Hill 정상에서 본 Spirit의 풍경 — 로버가 오른 최초의 화성 정상. 남쪽으로 Gusev Crater의 Inner Basin 너머 Columbia Hills를 바라본다."
+  },
+  "opportunity": {
+    "panorama_caption": "에어백으로 튕기며 착륙한 Eagle Crater 안에서 본 Opportunity의 풍경 — 맞은편 크레이터 벽에 보이는 층상 노두 Burns Cliff가 로버의 첫 주요 과학 목표가 되었다."
+  },
+  "curiosity": {
+    "panorama_caption": "Gediz Vallis 수로에 있는 Curiosity — 화성에서 41번째 시료인 Mammoth Lakes를 시추한 뒤 솔 4220에 찍은 360° 풍경. 왼쪽에는 막 시추를 마친 로봇 팔, 오른쪽에는 로버 갑판, 위쪽 띠에는 진짜 화성 하늘, 가운데로 내려가는 Gediz Vallis 수로 — 화성에서 순수한 황 결정이 처음 발견된 곳이다.",
+    "compass_zero_direction": "로버 정면",
+    "panorama_annotations": [
+      {
+        "id": "gediz-vallis-channel",
+        "label": "Gediz Vallis 수로",
+        "body": "Mt. Sharp 비탈을 따라 내려가는, 물이 깎아 만든 오래된 수로. Curiosity가 이곳에서 Mammoth Lakes 시료를 시추했다 — 화성에서 처음 발견된 순수한 황 결정이다."
+      },
+      {
+        "id": "robotic-arm",
+        "label": "로봇 팔",
+        "body": "드릴, 브러시, APXS 분광계를 단 2 m 길이의 관절 팔 — 이 솔에 Mammoth Lakes 시추를 마친 뒤 왼쪽에 보인다."
+      },
+      {
+        "id": "mt-sharp-flank",
+        "label": "Mt. Sharp 아래쪽 비탈",
+        "body": "Gale Crater 중앙에 솟은 5 km 높이의 산 Aeolis Mons의 층진 비탈. Curiosity는 2014년부터 이 산을 오르고 있다."
+      }
+    ]
+  },
+  "perseverance": {
+    "panorama_caption": "Perseverance의 첫 360° 파노라마 — 착륙 사흘 뒤. 전경은 로버 갑판이 차지하고, 지평선 위로 Jezero 크레이터 바닥과 먼 가장자리가 보이며, 위쪽 띠에는 진짜 화성 하늘이 담겼다.",
+    "compass_zero_direction": "로버 +X 축",
+    "panorama_annotations": [
+      {
+        "id": "mastcam-z-tower",
+        "label": "Mastcam-Z 마스트",
+        "body": "높이 2 m의 카메라 마스트 — 로버의 \"눈\" — 파노라마가 그 둘레를 감싸기 때문에 가운데에 보인다."
+      },
+      {
+        "id": "jezero-crater-rim",
+        "label": "Jezero 크레이터 가장자리",
+        "body": "~2 km 떨어진 크레이터 벽. 이 가장자리 서쪽 끝에 오래된 삼각주 퇴적층이 보인다 — Perseverance가 첫해 동안 향해 간 과학 목표다."
+      },
+      {
+        "id": "rover-deck",
+        "label": "로버 갑판",
+        "body": "모든 Mastcam-Z 360° 사진의 전경 — 태양광 패널 같은 갑판이며, 오른쪽에 시료관 보관함이 보인다."
+      }
+    ]
+  },
+  "mars3": {
+    "panorama_caption": "화성 최초의 연착륙 — 신호가 끊기기 전까지 14.5초 분량의 스캔 데이터가 전송되었다. 이 장소에는 (아직) Tier-3 파노라마가 없으며, Tier-2 CTX 맥락 속에서 원래의 역사적 조각을 있는 그대로 보여 준다."
+  },
+  "change4": {
+    "panorama_caption": "달 뒷면에서 처음으로 전송된 파노라마. South Pole–Aitken Basin 안의 Von Kármán 크레이터. 중간 거리에 Yutu-2 로버, 왼쪽 아래에 착륙선 그림자.",
+    "compass_zero_direction": "착륙선 카메라 +X 축",
+    "panorama_annotations": [
+      {
+        "id": "yutu2",
+        "label": "Yutu-2 로버",
+        "body": "달 뒷면 최초의 로버로, 5년이 넘도록 여전히 작동 중이다(모든 달 로버 중 최장 기록)."
+      },
+      {
+        "id": "von-karman-rim",
+        "label": "Von Kármán 크레이터 가장자리",
+        "body": "South Pole–Aitken Basin 안에 있는 지름 180 km 크레이터의 안쪽 가장자리 — 달에서 가장 크고 오래된 충돌 구조."
+      },
+      {
+        "id": "change4-shadow",
+        "label": "Chang'e 4 착륙선 그림자",
+        "body": "레골리스 위에 드리운 착륙선 자신의 그림자 — 탑재된 지형 카메라로 촬영했다."
+      }
+    ]
+  },
+  "chandrayaan3": {
+    "panorama_caption": "Shiv Shakti Point — 달 남극에서 찍은 첫 파노라마. 전경에 Vikram 착륙선의 그림자가 보이며, 이 사진 직후 Pragyan 로버가 레골리스 위로 내려갔다.",
+    "compass_zero_direction": "착륙선 이미저 +X 축",
+    "panorama_annotations": [
+      {
+        "id": "pragyan",
+        "label": "Pragyan 로버 (솔 +1에 전개)",
+        "body": "무게 26 kg의 6륜 로버. 착륙 다음 날 Vikram의 경사로로 내려갔고, 달의 밤이 올 때까지(지구 시간 ~14일) 작동했다."
+      },
+      {
+        "id": "south-pole-rim",
+        "label": "남극 크레이터 가장자리",
+        "body": "달 남극에 이렇게 가까이 연착륙한 첫 성공 사례 — 물 얼음 탐사 유망 지역."
+      }
+    ]
+  },
+  "vandenberg-slc-4e": {
+    "panorama_caption": "하늘에서 본 Vandenberg SLC-4E (Falcon 9)와 SLC-4W — 지상 파노라마가 아니라 항공 사진이다.",
+    "compass_zero_direction": "사진 중앙 (실제 나침반 방향은 보정되지 않음)"
+  },
+  "baikonur-1-5": {
+    "panorama_caption": "Soyuz TMA-13 이송 전의 Gagarin's Start (Site 1/5) — 해상도가 매우 낮은 배너형 잘라 낸 이미지.",
+    "compass_zero_direction": "사진 중앙 (실제 나침반 방향은 보정되지 않음)"
+  },
+  "baikonur-31-6": {
+    "panorama_caption": "Soyuz 정비탑 꼭대기에서 본 Baikonur Site 31/6 — 아래로 발사대의 화염 배출구, 지평선에 초원과 Zenit 시설이 보인다.",
+    "compass_zero_direction": "사진 중앙 (실제 나침반 방향은 보정되지 않음)"
+  },
+  "jiuquan-slc-43": {
+    "panorama_caption": "멀리서 본 Jiuquan Satellite Launch Center의 주 발사탑 — 고비 사막을 가로지르는 저해상도 파노라마 띠.",
+    "compass_zero_direction": "사진 중앙 (실제 나침반 방향은 보정되지 않음)"
+  },
+  "wenchang-lc-101": {
+    "panorama_caption": "치수이만 건너편의 Wenchang 발사장 — 해변에서 바라본 LC-101 탑들, 먼 해안선 풍경.",
+    "compass_zero_direction": "사진 중앙 (실제 나침반 방향은 보정되지 않음)"
+  },
+  "sriharikota-slp": {
+    "panorama_caption": "Satish Dhawan Space Centre, 스리하리코타 — Vehicle Integration Facility에서 발사대로 옮겨지는 PSLV-C61.",
+    "compass_zero_direction": "사진 중앙 (실제 나침반 방향은 보정되지 않음)"
+  }
+}

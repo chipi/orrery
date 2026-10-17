@@ -1,0 +1,156 @@
+{
+  "apollo11": {
+    "panorama_caption": "Tranquility Base, EVA-1. Buzz Aldrin fotografierte die LM Eagle und die US-Flagge kurz nach der Landung. Sichtbare Hasselblad-Nähte und farbige Stitching-Ränder an der LM gehören zum veröffentlichten Mosaik.",
+    "compass_zero_direction": "LM-Vorderseite (laut Panorama-Ausrichtung des ALSJ)",
+    "panorama_annotations": [
+      {
+        "id": "lm-eagle",
+        "label": "LM Eagle",
+        "body": "Abstiegsstufe der Mondlandefähre, an der Armstrong + Aldrin während des Außeneinsatzes standen."
+      },
+      {
+        "id": "us-flag-pan",
+        "label": "US-Flagge",
+        "body": "Etwa 8 m westlich der LM aufgestellt. Beim Start vom Abgasstrahl der Aufstiegsstufe umgeworfen."
+      },
+      {
+        "id": "buzz-shadow",
+        "label": "Schatten von Buzz Aldrin",
+        "body": "Der eigene Schatten des Fotografen im Vordergrund — Buzz mit der Hasselblad in der Hand."
+      }
+    ]
+  },
+  "apollo17": {
+    "panorama_caption": "Taurus-Littrow-Tal, Station 5. Schmitt + Cernan arbeiteten hier am Camelot Crater und am South Massif. Das letzte Panorama eines Mondausstiegs im Apollo-Programm.",
+    "compass_zero_direction": "LRV-Vorderseite (laut Panorama-Ausrichtung des ALSJ)",
+    "panorama_annotations": [
+      {
+        "id": "south-massif",
+        "label": "South Massif",
+        "body": "2,3 km hohes gehobenes Hochland, beprobt an Station 2 (dem Fundort der orangefarbenen Erde)."
+      },
+      {
+        "id": "camelot-crater",
+        "label": "Rand des Camelot Crater",
+        "body": "Großer, älterer Einschlagkrater nahe der Mondlandefähre; das Blockfeld von Station 5 liegt auf seinem Rand."
+      },
+      {
+        "id": "lrv",
+        "label": "Mondauto (LRV)",
+        "body": "Das dritte auf dem Mond eingesetzte LRV. Gesamtstrecke dieser Mission: 35,7 km — bis heute der Rekord."
+      }
+    ]
+  },
+  "spirit": {
+    "panorama_caption": "Der Blick von Spirit vom Gipfel des Husband Hill — der erste Marsgipfel, den ein Rover erreicht hat. Nach Süden über das Inner Basin des Gusev Crater zu den Columbia Hills."
+  },
+  "opportunity": {
+    "panorama_caption": "Der Blick von Opportunity aus dem Eagle Crater, dem Landeplatz nach dem Airbag-Aufprall — der geschichtete Aufschluss Burns Cliff an der gegenüberliegenden Kraterwand wurde das erste große Forschungsziel des Rovers."
+  },
+  "curiosity": {
+    "panorama_caption": "Curiosity im Gediz-Vallis-Kanal — die 360°-Aufnahme des Rovers von Sol 4220 nach dem Bohren der Probe Mammoth Lakes, seiner 41. auf dem Mars. Links der Roboterarm direkt nach dem Bohren; rechts das Rover-Deck; oben echter Marshimmel; in der Mitte der abfallende Gediz-Vallis-Kanal — der erste Ort, an dem je reine Schwefelkristalle auf dem Mars gefunden wurden.",
+    "compass_zero_direction": "Rover-Vorderseite",
+    "panorama_annotations": [
+      {
+        "id": "gediz-vallis-channel",
+        "label": "Gediz-Vallis-Kanal",
+        "body": "Alter, von Wasser gegrabener Kanal an den Hängen des Mt. Sharp. Curiosity bohrte hier die Probe Mammoth Lakes — die ersten reinen Schwefelkristalle, die je auf dem Mars gefunden wurden."
+      },
+      {
+        "id": "robotic-arm",
+        "label": "Roboterarm",
+        "body": "2 m langer Gelenkarm mit Bohrer, Bürste und APXS-Spektrometer — links zu sehen, nachdem an diesem Sol die Bohrung Mammoth Lakes abgeschlossen war."
+      },
+      {
+        "id": "mt-sharp-flank",
+        "label": "Untere Flanke des Mt. Sharp",
+        "body": "Geschichtete Hänge des Aeolis Mons, des 5 km hohen Bergs in der Mitte des Gale Crater, den Curiosity seit 2014 erklimmt."
+      }
+    ]
+  },
+  "perseverance": {
+    "panorama_caption": "Das erste 360°-Panorama von Perseverance — drei Tage nach der Landung. Das Rover-Deck beherrscht den Vordergrund; Boden und ferner Rand des Jezero-Kraters sind über dem Horizont zu sehen; oben echter Marshimmel.",
+    "compass_zero_direction": "+X-Achse des Rovers",
+    "panorama_annotations": [
+      {
+        "id": "mastcam-z-tower",
+        "label": "Mastcam-Z-Mast",
+        "body": "Der 2 m hohe Kameramast — die „Augen“ des Rovers — in der Mitte zu sehen, weil sich das Panorama um ihn herum schließt."
+      },
+      {
+        "id": "jezero-crater-rim",
+        "label": "Rand des Jezero-Kraters",
+        "body": "Die Kraterwand in ~2 km Entfernung; am Westrand sind alte Deltaablagerungen zu sehen — das Forschungsziel, zu dem Perseverance in seinem ersten Jahr fuhr."
+      },
+      {
+        "id": "rover-deck",
+        "label": "Rover-Deck",
+        "body": "Vordergrund jedes Mastcam-Z-360° — Deck im Stil eines Solarpanels, rechts das Depot der Probenröhrchen."
+      }
+    ]
+  },
+  "mars3": {
+    "panorama_caption": "Die erste weiche Landung auf dem Mars — 14,5 Sekunden übertragene Scandaten, dann brach das Signal ab. An diesem Ort gibt es (noch) kein Tier-3-Panorama; gezeigt wird ehrlich das historische Originalfragment im Kontext der Tier-2-CTX-Aufnahme."
+  },
+  "change4": {
+    "panorama_caption": "Das erste Panorama, das je von der Mondrückseite gesendet wurde. Der Von-Kármán-Krater im South Pole–Aitken Basin. Der Rover Yutu-2 in mittlerer Entfernung; der Schatten der Landeeinheit unten links.",
+    "compass_zero_direction": "+X-Achse der Lander-Kamera",
+    "panorama_annotations": [
+      {
+        "id": "yutu2",
+        "label": "Rover Yutu-2",
+        "body": "Der erste Rover auf der Mondrückseite; nach mehr als 5 Jahren noch in Betrieb (Rekord für jeden Mondrover)."
+      },
+      {
+        "id": "von-karman-rim",
+        "label": "Rand des Von-Kármán-Kraters",
+        "body": "Innerer Rand des 180 km großen Kraters im South Pole–Aitken Basin — der größten und ältesten Einschlagstruktur des Mondes."
+      },
+      {
+        "id": "change4-shadow",
+        "label": "Schatten des Landers Chang'e 4",
+        "body": "Der eigene Schatten des Landers auf dem Regolith — aufgenommen mit seiner Geländekamera an Bord."
+      }
+    ]
+  },
+  "chandrayaan3": {
+    "panorama_caption": "Shiv Shakti Point — das erste Panorama vom Mondsüdpol. Im Vordergrund der Schatten des Landers Vikram; der Rover Pragyan wurde kurz nach dieser Aufnahme auf dem Regolith abgesetzt.",
+    "compass_zero_direction": "+X-Achse der Lander-Kamera",
+    "panorama_annotations": [
+      {
+        "id": "pragyan",
+        "label": "Rover Pragyan (abgesetzt an Sol +1)",
+        "body": "26 kg schwerer sechsrädriger Rover. Am Tag nach der Landung über die Rampe von Vikram abgesetzt; in Betrieb bis zum Einbruch der Mondnacht (~14 Erdtage)."
+      },
+      {
+        "id": "south-pole-rim",
+        "label": "Kraterrand am Südpol",
+        "body": "Die erste erfolgreiche weiche Landung so nah am Mondsüdpol — einem Gebiet, in dem Wassereis vermutet wird."
+      }
+    ]
+  },
+  "vandenberg-slc-4e": {
+    "panorama_caption": "Vandenberg SLC-4E (Falcon 9) und SLC-4W aus der Luft — eine Luftaufnahme, kein Panorama vom Boden aus.",
+    "compass_zero_direction": "Bildmitte (echte Kompassrichtung nicht kalibriert)"
+  },
+  "baikonur-1-5": {
+    "panorama_caption": "Gagarin's Start (Site 1/5) vor dem Rollout der Soyuz TMA-13 — ein sehr niedrig aufgelöster Bannerausschnitt.",
+    "compass_zero_direction": "Bildmitte (echte Kompassrichtung nicht kalibriert)"
+  },
+  "baikonur-31-6": {
+    "panorama_caption": "Baikonur Site 31/6 von der Spitze des Soyuz-Versorgungsturms — unten der Flammenschacht der Startrampe, am Horizont die Steppe und die Zenit-Anlage.",
+    "compass_zero_direction": "Bildmitte (echte Kompassrichtung nicht kalibriert)"
+  },
+  "jiuquan-slc-43": {
+    "panorama_caption": "Der Hauptstartturm des Jiuquan Satellite Launch Center aus der Ferne — ein niedrig aufgelöster Panoramastreifen über die Gobi.",
+    "compass_zero_direction": "Bildmitte (echte Kompassrichtung nicht kalibriert)"
+  },
+  "wenchang-lc-101": {
+    "panorama_caption": "Der Startplatz Wenchang jenseits der Qishui-Bucht — die Türme von LC-101 vom Strand aus gesehen, ein Blick auf die ferne Küste.",
+    "compass_zero_direction": "Bildmitte (echte Kompassrichtung nicht kalibriert)"
+  },
+  "sriharikota-slp": {
+    "panorama_caption": "Satish Dhawan Space Centre, Sriharikota — PSLV-C61 auf dem Weg von der Vehicle Integration Facility zur Startrampe.",
+    "compass_zero_direction": "Bildmitte (echte Kompassrichtung nicht kalibriert)"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "missions/earth/aurora-7": {
+    "events": [
+      {
+        "label": "LANCERING",
+        "note": "Atlas LV-3B vanaf Cape Canaveral LC-14, 1962-05-24 12:45 UTC."
+      },
+      { "label": "BAANINBRENGING", "note": "Inbrenging in een aardbaan van 161 × 268 km." },
+      {
+        "label": "WATERLANDING",
+        "note": "Atlantische Oceaan, ~400 km voorbij het doel; 1 u 7 min vertraging bij de berging. USS Pierce, USS Intrepid."
+      }
+    ]
+  },
+  "missions/earth/faith-7": {
+    "events": [
+      {
+        "label": "LANCERING",
+        "note": "Atlas LV-3B vanaf Cape Canaveral LC-14, 1963-05-15 13:04 UTC."
+      },
+      { "label": "BAANINBRENGING", "note": "Inbrenging in een aardbaan van 161 × 267 km." },
+      {
+        "label": "STROOMSTORING",
+        "note": "Uitval van de stroomvoorziening; Cooper schakelt over op handmatige standregeling + het ontsteken van de remraketten — wat hem de reputatie van 'beste stuurman' opleverde."
+      },
+      {
+        "label": "WATERLANDING",
+        "note": "Grote Oceaan, ~7 km van het doel na 22 omlopen / 34 u 19 min. Berging door de USS Kearsarge."
+      }
+    ]
+  },
+  "missions/earth/freedom-7": {
+    "events": [
+      {
+        "label": "LANCERING",
+        "note": "Mercury-Redstone 3 (MR-3) vanaf Cape Canaveral LC-5, 1961-05-05 14:34 UTC."
+      },
+      {
+        "label": "APOGEUM",
+        "note": "Apogeum van 187 km na 2,5 minuut; gewichtloosheid gedurende ~5 min."
+      },
+      {
+        "label": "WATERLANDING",
+        "note": "De capsule landde 487 km verderop in de Atlantische Oceaan. Berging door de USS Lake Champlain."
+      }
+    ]
+  },
+  "missions/earth/friendship-7": {
+    "events": [
+      {
+        "label": "LANCERING",
+        "note": "Atlas LV-3B vanaf Cape Canaveral LC-14, 1962-02-20 14:47 UTC."
+      },
+      {
+        "label": "BAANINBRENGING",
+        "note": "Inbrenging in een aardbaan van 159 × 265 km, inclinatie 32,5°."
+      },
+      {
+        "label": "'VUURVLIEGJES'",
+        "note": "Glenn meldt lichtgevende 'vuurvliegjes' buiten het raam — stukjes van het retropakket die tijdens de terugkeer verbranden."
+      },
+      {
+        "label": "WATERLANDING",
+        "note": "De capsule landde 1287 km ten zuidoosten van Cape Canaveral na 3 omlopen / 4 u 55 min. Berging door de USS Noa."
+      }
+    ]
+  },
+  "planets/arrokoth": { "links": "COPY" },
+  "satellites/moon": {
+    "library_labels": {
+      "moon-wiki": "Wikipedia — Maan",
+      "moon-nasa-overview": "NASA Science — overzicht van de Maan",
+      "moon-apollo": "NASA's Apollo-programma — archief van de landingsmissies",
+      "moon-artemis": "NASA Artemis — bemand programma voor de terugkeer naar de Maan",
+      "moon-lroc": "LROC — beeldarchief van de Lunar Reconnaissance Orbiter Camera"
+    },
+    "mission_visits": [
+      "Luna 2 — USSR, 1959 (eerste kunstmatige object op de Maan)",
+      "Apollo 11 — VS, 1969 (eerste bemande landing)",
+      "Luna 16 — USSR, 1970 (eerste robotische monsterterugkeer)",
+      "Chang'e 4 — China, 2019 (eerste landing op de achterkant)",
+      "Chandrayaan-3 — India, 2023 (eerste landing bij de zuidpool)"
+    ],
+    "surface_composition": "Hooglanden van anorthosiet (calcium-aluminiumsilicaten) + basaltische maria, overstroomd door oeroude lava; regoliet 4–15 m diep; sporen van waterijs in permanent beschaduwde poolkraters."
+  },
+  "science/transfers/coplanar-trajectories": {
+    "diagram_caption": "Het zonnestelsel is vrijwel plat omdat de planeten uit één draaiende schijf zijn ontstaan. Vertrekken blijven in dat vlak omdat vlakwisselingen onbetaalbaar veel brandstof kosten."
+  }
+}

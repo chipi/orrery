@@ -1,0 +1,156 @@
+{
+  "apollo11": {
+    "panorama_caption": "Tranquility Base, EVA-1. Buzz Aldrin a photographié le LM Eagle et le drapeau américain peu après l'alunissage. Les coutures Hasselblad visibles et les raccords colorés autour du LM font partie de la mosaïque publiée.",
+    "compass_zero_direction": "avant du LM (selon l'orientation du panorama de l'ALSJ)",
+    "panorama_annotations": [
+      {
+        "id": "lm-eagle",
+        "label": "LM Eagle",
+        "body": "Étage de descente du module lunaire, où Armstrong + Aldrin se tenaient pendant la sortie."
+      },
+      {
+        "id": "us-flag-pan",
+        "label": "Drapeau américain",
+        "body": "Planté à ~8 m à l'ouest du LM. Renversé par le jet de l'étage de remontée au décollage."
+      },
+      {
+        "id": "buzz-shadow",
+        "label": "Ombre de Buzz Aldrin",
+        "body": "L'ombre du photographe lui-même au premier plan — Buzz tenant le Hasselblad."
+      }
+    ]
+  },
+  "apollo17": {
+    "panorama_caption": "Vallée de Taurus-Littrow, station 5. Schmitt + Cernan ont travaillé ici sur Camelot Crater et le South Massif. Le dernier panorama de sortie lunaire du programme Apollo.",
+    "compass_zero_direction": "avant du LRV (selon l'orientation du panorama de l'ALSJ)",
+    "panorama_annotations": [
+      {
+        "id": "south-massif",
+        "label": "South Massif",
+        "body": "Haut relief soulevé de 2,3 km, échantillonné à la station 2 (le site de la découverte du sol orange)."
+      },
+      {
+        "id": "camelot-crater",
+        "label": "Bord de Camelot Crater",
+        "body": "Grand cratère d'impact plus ancien près du module lunaire ; le champ de blocs de la station 5 se trouve sur son bord."
+      },
+      {
+        "id": "lrv",
+        "label": "Rover lunaire (LRV)",
+        "body": "Le troisième LRV utilisé sur la Lune. Distance totale parcourue lors de cette mission : 35,7 km — toujours le record."
+      }
+    ]
+  },
+  "spirit": {
+    "panorama_caption": "La vue de Spirit depuis le sommet de Husband Hill — le premier sommet martien atteint par un rover. Regard vers le sud, au-dessus de l'Inner Basin de Gusev Crater, vers les Columbia Hills."
+  },
+  "opportunity": {
+    "panorama_caption": "La vue d'Opportunity depuis l'intérieur d'Eagle Crater, le site d'atterrissage après les rebonds sur airbags — l'affleurement stratifié de Burns Cliff, visible sur la paroi opposée, allait devenir la première grande cible scientifique du rover."
+  },
+  "curiosity": {
+    "panorama_caption": "Curiosity dans le chenal de Gediz Vallis — la vue à 360° du rover au sol 4220, après le forage de l'échantillon Mammoth Lakes, son 41e sur Mars. Le bras robotique, visible à gauche, vient de terminer le forage ; le pont du rover à droite ; le vrai ciel martien dans la bande supérieure ; le chenal de Gediz Vallis descend au centre — le premier endroit où l'on a trouvé des cristaux de soufre pur sur Mars.",
+    "compass_zero_direction": "avant du rover",
+    "panorama_annotations": [
+      {
+        "id": "gediz-vallis-channel",
+        "label": "Chenal de Gediz Vallis",
+        "body": "Ancien chenal creusé par l'eau, qui descend les pentes de Mt. Sharp. Curiosity y a foré l'échantillon Mammoth Lakes — les premiers cristaux de soufre pur jamais trouvés sur Mars."
+      },
+      {
+        "id": "robotic-arm",
+        "label": "Bras robotique",
+        "body": "Bras articulé de 2 m portant la foreuse, la brosse et le spectromètre APXS — visible à gauche après le forage de Mammoth Lakes ce sol-là."
+      },
+      {
+        "id": "mt-sharp-flank",
+        "label": "Bas des pentes de Mt. Sharp",
+        "body": "Pentes stratifiées d'Aeolis Mons, la montagne de 5 km au centre de Gale Crater, que Curiosity gravit depuis 2014."
+      }
+    ]
+  },
+  "perseverance": {
+    "panorama_caption": "Le premier panorama à 360° de Perseverance — trois jours après l'atterrissage. Le pont du rover occupe le premier plan ; le fond du cratère Jezero et son bord lointain apparaissent au-dessus de l'horizon ; le vrai ciel martien dans les bandes supérieures.",
+    "compass_zero_direction": "axe +X du rover",
+    "panorama_annotations": [
+      {
+        "id": "mastcam-z-tower",
+        "label": "Mât de Mastcam-Z",
+        "body": "Le mât de caméras de 2 m — les « yeux » du rover — visible au centre parce que le panorama s'enroule autour de lui."
+      },
+      {
+        "id": "jezero-crater-rim",
+        "label": "Bord du cratère Jezero",
+        "body": "La paroi du cratère à ~2 km ; d'anciens dépôts de delta sont visibles sur le bord ouest — la cible scientifique vers laquelle Perseverance a roulé pendant sa première année."
+      },
+      {
+        "id": "rover-deck",
+        "label": "Pont du rover",
+        "body": "Premier plan de chaque 360° de Mastcam-Z — un pont façon panneau solaire, avec le dépôt des tubes d'échantillons visible à droite."
+      }
+    ]
+  },
+  "mars3": {
+    "panorama_caption": "Le premier atterrissage en douceur sur Mars — 14,5 secondes de données de balayage transmises avant la perte du signal. Il n'y a pas (encore) de panorama Tier-3 à afficher sur ce site ; l'expérience présente honnêtement le fragment historique original dans le contexte CTX de Tier-2."
+  },
+  "change4": {
+    "panorama_caption": "Le premier panorama jamais transmis depuis la face cachée de la Lune. Le cratère Von Kármán, dans le South Pole–Aitken Basin. Le rover Yutu-2 à mi-distance ; l'ombre de l'atterrisseur en bas à gauche.",
+    "compass_zero_direction": "axe +X de la caméra de l'atterrisseur",
+    "panorama_annotations": [
+      {
+        "id": "yutu2",
+        "label": "Rover Yutu-2",
+        "body": "Le premier rover sur la face cachée de la Lune ; toujours en service après plus de 5 ans (le record pour un rover lunaire)."
+      },
+      {
+        "id": "von-karman-rim",
+        "label": "Bord du cratère Von Kármán",
+        "body": "Bord intérieur du cratère de 180 km situé dans le South Pole–Aitken Basin — la plus grande et la plus ancienne structure d'impact de la Lune."
+      },
+      {
+        "id": "change4-shadow",
+        "label": "Ombre de l'atterrisseur Chang'e 4",
+        "body": "L'ombre de l'atterrisseur lui-même sur le régolithe — prise par sa caméra de terrain embarquée."
+      }
+    ]
+  },
+  "chandrayaan3": {
+    "panorama_caption": "Shiv Shakti Point — le premier panorama depuis le pôle Sud lunaire. L'ombre de l'atterrisseur Vikram au premier plan ; le rover Pragyan a été déposé sur le régolithe peu après cette image.",
+    "compass_zero_direction": "axe +X de l'imageur de l'atterrisseur",
+    "panorama_annotations": [
+      {
+        "id": "pragyan",
+        "label": "Rover Pragyan (déployé au sol +1)",
+        "body": "Rover à six roues de 26 kg. Déployé par la rampe de Vikram le lendemain de l'atterrissage ; en service jusqu'à la tombée de la nuit lunaire (~14 jours terrestres)."
+      },
+      {
+        "id": "south-pole-rim",
+        "label": "Bord de cratère du pôle Sud",
+        "body": "Le premier atterrissage en douceur réussi aussi près du pôle Sud lunaire — une zone de prospection de glace d'eau."
+      }
+    ]
+  },
+  "vandenberg-slc-4e": {
+    "panorama_caption": "Vandenberg SLC-4E (Falcon 9) et SLC-4W vus du ciel — une vue aérienne, pas un panorama pris au sol.",
+    "compass_zero_direction": "centre de la photo (orientation réelle de la boussole non calibrée)"
+  },
+  "baikonur-1-5": {
+    "panorama_caption": "Gagarin's Start (Site 1/5) avant le transfert du Soyuz TMA-13 — un recadrage en bandeau de très basse résolution.",
+    "compass_zero_direction": "centre de la photo (orientation réelle de la boussole non calibrée)"
+  },
+  "baikonur-31-6": {
+    "panorama_caption": "Baikonur Site 31/6 vu du sommet de la tour de service du Soyuz — en contrebas le carneau du pas de tir, à l'horizon la steppe et l'installation Zenit.",
+    "compass_zero_direction": "centre de la photo (orientation réelle de la boussole non calibrée)"
+  },
+  "jiuquan-slc-43": {
+    "panorama_caption": "La tour de lancement principale du Jiuquan Satellite Launch Center vue de loin — une bande panoramique de basse résolution à travers le Gobi.",
+    "compass_zero_direction": "centre de la photo (orientation réelle de la boussole non calibrée)"
+  },
+  "wenchang-lc-101": {
+    "panorama_caption": "Le site de lancement de Wenchang de l'autre côté de la baie de Qishui — les tours de LC-101 vues depuis la plage, une vue lointaine du rivage.",
+    "compass_zero_direction": "centre de la photo (orientation réelle de la boussole non calibrée)"
+  },
+  "sriharikota-slp": {
+    "panorama_caption": "Satish Dhawan Space Centre, Sriharikota — le PSLV-C61 en transfert de la Vehicle Integration Facility vers le pas de tir.",
+    "compass_zero_direction": "centre de la photo (orientation réelle de la boussole non calibrée)"
+  }
+}

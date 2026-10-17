@@ -1,0 +1,95 @@
+{
+  "missions/earth/aurora-7": {
+    "events": [
+      {
+        "label": "LANCEMENT",
+        "note": "Atlas LV-3B depuis Cape Canaveral LC-14, 1962-05-24 12:45 UTC."
+      },
+      {
+        "label": "INSERTION ORBITALE",
+        "note": "Insertion sur une orbite terrestre de 161 × 268 km."
+      },
+      {
+        "label": "AMERRISSAGE",
+        "note": "Océan Atlantique, ~400 km au-delà de la cible ; 1 h 7 min de retard pour la récupération. USS Pierce, USS Intrepid."
+      }
+    ]
+  },
+  "missions/earth/faith-7": {
+    "events": [
+      {
+        "label": "LANCEMENT",
+        "note": "Atlas LV-3B depuis Cape Canaveral LC-14, 1963-05-15 13:04 UTC."
+      },
+      {
+        "label": "INSERTION ORBITALE",
+        "note": "Insertion sur une orbite terrestre de 161 × 267 km."
+      },
+      {
+        "label": "PANNE DE COURANT",
+        "note": "Panne de l'alimentation électrique ; Cooper passe en contrôle d'attitude manuel + mise à feu des rétrofusées — d'où sa réputation de « meilleur manche »."
+      },
+      {
+        "label": "AMERRISSAGE",
+        "note": "Océan Pacifique, à ~7 km de la cible après 22 orbites / 34 h 19 min. Récupération par l'USS Kearsarge."
+      }
+    ]
+  },
+  "missions/earth/freedom-7": {
+    "events": [
+      {
+        "label": "LANCEMENT",
+        "note": "Mercury-Redstone 3 (MR-3) depuis Cape Canaveral LC-5, 1961-05-05 14:34 UTC."
+      },
+      {
+        "label": "APOGÉE",
+        "note": "Apogée de 187 km après 2,5 minutes ; apesanteur pendant ~5 min."
+      },
+      {
+        "label": "AMERRISSAGE",
+        "note": "La capsule a amerri à 487 km en aval, dans l'océan Atlantique. Récupération par l'USS Lake Champlain."
+      }
+    ]
+  },
+  "missions/earth/friendship-7": {
+    "events": [
+      {
+        "label": "LANCEMENT",
+        "note": "Atlas LV-3B depuis Cape Canaveral LC-14, 1962-02-20 14:47 UTC."
+      },
+      {
+        "label": "INSERTION ORBITALE",
+        "note": "Insertion sur une orbite terrestre de 159 × 265 km, inclinaison 32,5°."
+      },
+      {
+        "label": "« LUCIOLES »",
+        "note": "Glenn signale des « lucioles » lumineuses devant le hublot — des fragments du rétro-pack qui se consument pendant la rentrée."
+      },
+      {
+        "label": "AMERRISSAGE",
+        "note": "La capsule a amerri à 1287 km au sud-est de Cape Canaveral après 3 orbites / 4 h 55 min. Récupération par l'USS Noa."
+      }
+    ]
+  },
+  "planets/arrokoth": { "links": "COPY" },
+  "satellites/moon": {
+    "library_labels": {
+      "moon-wiki": "Wikipédia — Lune",
+      "moon-nasa-overview": "NASA Science — présentation de la Lune",
+      "moon-apollo": "Programme Apollo de la NASA — archives des missions d'alunissage",
+      "moon-artemis": "NASA Artemis — programme habité de retour sur la Lune",
+      "moon-lroc": "LROC — archive d'images de la Lunar Reconnaissance Orbiter Camera"
+    },
+    "mission_visits": [
+      "Luna 2 — URSS, 1959 (premier objet artificiel sur la Lune)",
+      "Apollo 11 — États-Unis, 1969 (premier alunissage habité)",
+      "Luna 16 — URSS, 1970 (premier retour d'échantillons robotisé)",
+      "Chang'e 4 — Chine, 2019 (premier atterrissage sur la face cachée)",
+      "Chandrayaan-3 — Inde, 2023 (premier atterrissage au pôle Sud)"
+    ],
+    "surface_composition": "Hauts plateaux d'anorthosite (silicates de calcium et d'aluminium) + mers basaltiques inondées par des laves anciennes ; régolithe de 4 à 15 m d'épaisseur ; traces de glace d'eau dans les cratères polaires en ombre permanente."
+  },
+  "science/transfers/coplanar-trajectories": {
+    "diagram_caption": "Le Système solaire est quasiment plat parce que les planètes se sont formées à partir d'un seul disque en rotation. Les départs restent dans ce plan parce que changer de plan coûte un carburant prohibitif."
+  }
+}

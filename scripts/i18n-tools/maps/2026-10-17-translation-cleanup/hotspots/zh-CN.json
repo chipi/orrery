@@ -1,0 +1,163 @@
+{
+  "apollo11": {
+    "hotspot_annotations": [
+      { "id": "lm-descent-stage", "label": "LM 下降级（Eagle）" },
+      { "id": "us-flag", "label": "美国国旗（插在 LM 以西约 8 米处）" },
+      { "id": "lrrr", "label": "激光测距反射器（LRRR）" },
+      { "id": "easep", "label": "EASEP（简化版 ALSEP 仪器包）" },
+      { "id": "plaque", "label": "「我们为全人类和平而来」纪念牌" }
+    ],
+    "panorama_caption": "Tranquility Base，EVA-1。Buzz Aldrin 在着陆后不久拍下了 LM Eagle 和美国国旗。LM 附近可见的 Hasselblad 拼接缝和色差是已发布拼接图的一部分。",
+    "compass_zero_direction": "LM 正前方（依据 ALSJ 全景方位）",
+    "panorama_annotations": [
+      {
+        "id": "lm-eagle",
+        "label": "LM Eagle",
+        "body": "登月舱的下降级，Armstrong + Aldrin 出舱活动时就站在这里。"
+      },
+      {
+        "id": "us-flag-pan",
+        "label": "美国国旗",
+        "body": "插在 LM 以西约 8 米处。起飞时被上升级的喷流吹倒。"
+      },
+      {
+        "id": "buzz-shadow",
+        "label": "Buzz Aldrin 的影子",
+        "body": "前景中摄影者自己的影子——手持 Hasselblad 的 Buzz。"
+      }
+    ]
+  },
+  "apollo17": {
+    "panorama_caption": "Taurus-Littrow 山谷，第 5 站。Schmitt + Cernan 在这里考察了 Camelot Crater 和 South Massif。这是 Apollo 计划最后一次月面出舱活动的全景图。",
+    "compass_zero_direction": "月球车正前方（依据 ALSJ 全景方位）",
+    "panorama_annotations": [
+      {
+        "id": "south-massif",
+        "label": "South Massif",
+        "body": "高 2.3 千米的隆起高地，在第 2 站（发现橙色土壤的地点）采集了样品。"
+      },
+      {
+        "id": "camelot-crater",
+        "label": "Camelot Crater 边缘",
+        "body": "登月舱附近一个较古老的大型撞击坑；第 5 站的巨石区就在其边缘。"
+      },
+      {
+        "id": "lrv",
+        "label": "月球车",
+        "body": "在月球上使用的第三辆月球车。本次任务总行驶距离 35.7 千米——至今仍是纪录。"
+      }
+    ]
+  },
+  "spirit": {
+    "panorama_caption": "Spirit 在 Husband Hill 山顶看到的景色——这是巡视器登上的第一座火星山峰。向南越过 Gusev Crater 的 Inner Basin，望向 Columbia Hills。"
+  },
+  "opportunity": {
+    "panorama_caption": "Opportunity 在 Eagle Crater 内部看到的景色，这里是它靠气囊弹跳着陆的地点——对面坑壁上可见的层状露头 Burns Cliff 后来成为巡视器的第一个重要科学目标。"
+  },
+  "curiosity": {
+    "panorama_caption": "位于 Gediz Vallis 沟道中的 Curiosity——巡视器在第 4220 个火星日钻取 Mammoth Lakes 样品（它在火星上的第 41 个样品）后拍摄的 360° 景观。左侧是刚完成钻探的机械臂；右侧是巡视器甲板；上方条带是真实的火星天空；中央向下延伸的是 Gediz Vallis 沟道——火星上首次发现纯硫晶体的地方。",
+    "compass_zero_direction": "巡视器正前方",
+    "panorama_annotations": [
+      {
+        "id": "gediz-vallis-channel",
+        "label": "Gediz Vallis 沟道",
+        "body": "沿 Mt. Sharp 山坡而下、由水流冲刻而成的古老沟道。Curiosity 在这里钻取了 Mammoth Lakes 样品——火星上首次发现的纯硫晶体。"
+      },
+      {
+        "id": "robotic-arm",
+        "label": "机械臂",
+        "body": "长 2 米的关节式机械臂，装有钻头、刷子和 APXS 光谱仪——在这个火星日完成 Mammoth Lakes 钻探后出现在左侧。"
+      },
+      {
+        "id": "mt-sharp-flank",
+        "label": "Mt. Sharp 下坡",
+        "body": "Aeolis Mons 的层状山坡——这座 5 千米高的山位于 Gale Crater 中央，Curiosity 自 2014 年起一直在攀登。"
+      }
+    ]
+  },
+  "perseverance": {
+    "panorama_caption": "Perseverance 的第一幅 360° 全景——着陆三天后拍摄。巡视器甲板占据前景；地平线上方可见 Jezero 陨石坑底部和远处的坑缘；上方条带是真实的火星天空。",
+    "compass_zero_direction": "巡视器 +X 轴",
+    "panorama_annotations": [
+      {
+        "id": "mastcam-z-tower",
+        "label": "Mastcam-Z 桅杆",
+        "body": "2 米高的相机桅杆——巡视器自己的「眼睛」——由于全景环绕它拍摄，它出现在画面中央。"
+      },
+      {
+        "id": "jezero-crater-rim",
+        "label": "Jezero 陨石坑边缘",
+        "body": "约 2 千米外的坑壁；坑缘西端可见古老的三角洲沉积——这是 Perseverance 第一年驶向的科学目标。"
+      },
+      {
+        "id": "rover-deck",
+        "label": "巡视器甲板",
+        "body": "每幅 Mastcam-Z 360° 图像的前景——类似太阳能板的甲板，右侧可见样品管存放处。"
+      }
+    ]
+  },
+  "mars3": {
+    "panorama_caption": "首次在火星软着陆——信号中断前传回了 14.5 秒的扫描数据。这个地点（目前）没有 Tier-3 全景可供显示；这里在 Tier-2 CTX 图像的背景下如实呈现原始的历史残片。"
+  },
+  "change4": {
+    "panorama_caption": "首幅从月球背面传回的全景图。位于 South Pole–Aitken Basin 内的 Von Kármán 撞击坑。中距离处是 Yutu-2 月球车；左下方是着陆器的影子。",
+    "compass_zero_direction": "着陆器相机 +X 轴",
+    "panorama_annotations": [
+      {
+        "id": "yutu2",
+        "label": "Yutu-2 月球车",
+        "body": "月球背面的第一辆月球车；5 年多后仍在工作（所有月球车中的纪录）。"
+      },
+      {
+        "id": "von-karman-rim",
+        "label": "Von Kármán 撞击坑边缘",
+        "body": "South Pole–Aitken Basin 内直径 180 千米撞击坑的内缘——月球上最大、最古老的撞击构造。"
+      },
+      {
+        "id": "change4-shadow",
+        "label": "Chang'e 4 着陆器的影子",
+        "body": "着陆器自己投在月壤上的影子——由其搭载的地形相机拍摄。"
+      }
+    ]
+  },
+  "chandrayaan3": {
+    "panorama_caption": "Shiv Shakti Point——首幅来自月球南极的全景图。前景是 Vikram 着陆器的影子；拍摄后不久，Pragyan 月球车就被释放到月壤上。",
+    "compass_zero_direction": "着陆器成像仪 +X 轴",
+    "panorama_annotations": [
+      {
+        "id": "pragyan",
+        "label": "Pragyan 月球车（第 +1 个月球日释放）",
+        "body": "重 26 公斤的六轮月球车。着陆次日经 Vikram 的坡道驶下；一直工作到月夜降临（约 14 个地球日）。"
+      },
+      {
+        "id": "south-pole-rim",
+        "label": "南极撞击坑边缘",
+        "body": "首次在如此靠近月球南极的地方成功软着陆——这里是寻找水冰的重点区域。"
+      }
+    ]
+  },
+  "vandenberg-slc-4e": {
+    "panorama_caption": "从空中俯瞰 Vandenberg SLC-4E（Falcon 9）和 SLC-4W——这是航拍图，而不是地面全景。",
+    "compass_zero_direction": "照片中心（真实罗盘方位未校准）"
+  },
+  "baikonur-1-5": {
+    "panorama_caption": "Soyuz TMA-13 转运前的 Gagarin's Start（Site 1/5）——分辨率极低的横幅裁切图。",
+    "compass_zero_direction": "照片中心（真实罗盘方位未校准）"
+  },
+  "baikonur-31-6": {
+    "panorama_caption": "从 Soyuz 服务塔顶部看 Baikonur Site 31/6——下方是发射台的导流槽，地平线上是草原和 Zenit 设施。",
+    "compass_zero_direction": "照片中心（真实罗盘方位未校准）"
+  },
+  "jiuquan-slc-43": {
+    "panorama_caption": "远眺 Jiuquan Satellite Launch Center 的主发射塔——一条横跨戈壁的低分辨率全景带。",
+    "compass_zero_direction": "照片中心（真实罗盘方位未校准）"
+  },
+  "wenchang-lc-101": {
+    "panorama_caption": "隔着淇水湾看 Wenchang 发射场——从海滩望见的 LC-101 塔架，一幅远眺海岸线的景色。",
+    "compass_zero_direction": "照片中心（真实罗盘方位未校准）"
+  },
+  "sriharikota-slp": {
+    "panorama_caption": "Satish Dhawan Space Centre，斯里赫里戈达——PSLV-C61 正从 Vehicle Integration Facility 转运至发射台。",
+    "compass_zero_direction": "照片中心（真实罗盘方位未校准）"
+  }
+}

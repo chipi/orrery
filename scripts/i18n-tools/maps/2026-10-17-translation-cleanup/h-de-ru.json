@@ -1,0 +1,31 @@
+{
+  "de": {
+    "untranslated": ["tiangong-modules/wentian :: name :: Wentian (Quest for the Heavens)"],
+    "englishProse": [
+      "rockets/long-march-5 :: description :: China's largest operational launcher: cryogenic core stage with two YF-77 hydrogen engines, four kerolox boosters, and a hydrogen upper stage. Launched the Tian",
+      "science/observation/andromeda-galaxy :: body_paragraphs.3 :: Beobachtung von Andromeda. Ein Bortle-Klasse-3- oder dunklerer Himmel macht Andromeda mit freiem Auge sichtbar als Fleck, der leicht nord-nordöstlich verlängert"
+    ],
+    "foreignScript": [],
+    "mixedWord": [],
+    "russianInSr": [],
+    "placeholder": [],
+    "phoneticEnglish": [],
+    "latinSerbian": [],
+    "truncated": []
+  },
+  "ru": {
+    "untranslated": [],
+    "englishProse": [
+      "science/observation/andromeda-galaxy :: body_paragraphs.3 :: Наблюдение Андромеды. Небо класса Bortle 3 или темнее делает Андромеду видимой невооружённым глазом как слегка удлинённое северо-северо-восточное пятно. Стандар"
+    ],
+    "foreignScript": [],
+    "mixedWord": ["missions/comet/giotto :: events.3.label :: ПРОЛЁТ ГРИГГA-СКЬЕЛЛЕРУПА"],
+    "russianInSr": [],
+    "placeholder": [],
+    "phoneticEnglish": [
+      "universe/named-stars/mimosa :: cultural :: Как главная звезда Crux, Mimosa разделяет значимость Креста на южных флагах и в навигации и мифологии Южного полушария — от небесных преданий аборигенов Австрал"
+    ],
+    "latinSerbian": [],
+    "truncated": []
+  }
+}

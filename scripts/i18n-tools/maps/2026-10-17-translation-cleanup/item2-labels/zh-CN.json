@@ -1,0 +1,80 @@
+{
+  "missions/earth/aurora-7": {
+    "events": [
+      {
+        "label": "发射",
+        "note": "Atlas LV-3B 从 Cape Canaveral LC-14 发射，1962-05-24 12:45 UTC。"
+      },
+      { "label": "入轨", "note": "进入 161 × 268 千米的地球轨道。" },
+      {
+        "label": "溅落",
+        "note": "大西洋，越过目标点约 400 千米；回收延误 1 小时 7 分钟。USS Pierce、USS Intrepid。"
+      }
+    ]
+  },
+  "missions/earth/faith-7": {
+    "events": [
+      {
+        "label": "发射",
+        "note": "Atlas LV-3B 从 Cape Canaveral LC-14 发射，1963-05-15 13:04 UTC。"
+      },
+      { "label": "入轨", "note": "进入 161 × 267 千米的地球轨道。" },
+      {
+        "label": "电源故障",
+        "note": "供电系统故障；Cooper 改为手动姿态控制 + 点燃制动火箭，由此赢得「最佳驾驶员」的名声。"
+      },
+      {
+        "label": "溅落",
+        "note": "太平洋，绕地 22 圈 / 34 小时 19 分钟后落在距目标约 7 千米处。由 USS Kearsarge 回收。"
+      }
+    ]
+  },
+  "missions/earth/freedom-7": {
+    "events": [
+      {
+        "label": "发射",
+        "note": "Mercury-Redstone 3 (MR-3) 从 Cape Canaveral LC-5 发射，1961-05-05 14:34 UTC。"
+      },
+      { "label": "远地点", "note": "2.5 分钟后到达 187 千米远地点；失重约 5 分钟。" },
+      { "label": "溅落", "note": "返回舱在 487 千米外的大西洋溅落。由 USS Lake Champlain 回收。" }
+    ]
+  },
+  "missions/earth/friendship-7": {
+    "events": [
+      {
+        "label": "发射",
+        "note": "Atlas LV-3B 从 Cape Canaveral LC-14 发射，1962-02-20 14:47 UTC。"
+      },
+      { "label": "入轨", "note": "进入 159 × 265 千米、倾角 32.5° 的地球轨道。" },
+      {
+        "label": "「萤火虫」",
+        "note": "Glenn 报告舷窗外有发光的「萤火虫」——那是再入时燃烧的制动火箭包碎片。"
+      },
+      {
+        "label": "溅落",
+        "note": "绕地 3 圈 / 4 小时 55 分钟后，返回舱在 Cape Canaveral 东南 1287 千米处溅落。由 USS Noa 回收。"
+      }
+    ]
+  },
+  "planets/arrokoth": { "links": "COPY" },
+  "satellites/moon": {
+    "library_labels": {
+      "moon-wiki": "维基百科 — 月球",
+      "moon-nasa-overview": "NASA Science — 月球概览",
+      "moon-apollo": "NASA Apollo 计划 — 着陆任务档案",
+      "moon-artemis": "NASA Artemis — 载人重返月球计划",
+      "moon-lroc": "LROC — Lunar Reconnaissance Orbiter Camera 图像档案"
+    },
+    "mission_visits": [
+      "Luna 2 — 苏联，1959 年（首个抵达月球的人造物体）",
+      "Apollo 11 — 美国，1969 年（首次载人登月）",
+      "Luna 16 — 苏联，1970 年（首次无人采样返回）",
+      "Chang'e 4 — 中国，2019 年（首次月背着陆）",
+      "Chandrayaan-3 — 印度，2023 年（首次南极着陆）"
+    ],
+    "surface_composition": "斜长岩高地（钙铝硅酸盐）+ 被古老熔岩淹没的玄武岩月海；月壤深 4–15 米；永久阴影的极区撞击坑中有少量水冰。"
+  },
+  "science/transfers/coplanar-trajectories": {
+    "diagram_caption": "太阳系几乎是平的，因为行星都由同一个旋转盘形成。出发轨道停留在这个平面内，因为改变轨道面需要的推进剂多得惊人。"
+  }
+}

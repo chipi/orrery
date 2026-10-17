@@ -1,0 +1,95 @@
+{
+  "missions/earth/aurora-7": {
+    "events": [
+      {
+        "label": "LANÇAMENTO",
+        "note": "Atlas LV-3B a partir de Cape Canaveral LC-14, 1962-05-24 12:45 UTC."
+      },
+      {
+        "label": "INSERÇÃO EM ÓRBITA",
+        "note": "Inserção em uma órbita terrestre de 161 × 268 km."
+      },
+      {
+        "label": "AMERISSAGEM",
+        "note": "Oceano Atlântico, ~400 km além do alvo; 1 h 7 min de atraso no resgate. USS Pierce, USS Intrepid."
+      }
+    ]
+  },
+  "missions/earth/faith-7": {
+    "events": [
+      {
+        "label": "LANÇAMENTO",
+        "note": "Atlas LV-3B a partir de Cape Canaveral LC-14, 1963-05-15 13:04 UTC."
+      },
+      {
+        "label": "INSERÇÃO EM ÓRBITA",
+        "note": "Inserção em uma órbita terrestre de 161 × 267 km."
+      },
+      {
+        "label": "FALHA DE ENERGIA",
+        "note": "Falha no fornecimento de energia; Cooper passa para o controle manual de atitude + acionamento dos retrofoguetes — o que lhe rendeu a fama de \"melhor piloto\"."
+      },
+      {
+        "label": "AMERISSAGEM",
+        "note": "Oceano Pacífico, a ~7 km do alvo após 22 órbitas / 34 h 19 min. Resgate pelo USS Kearsarge."
+      }
+    ]
+  },
+  "missions/earth/freedom-7": {
+    "events": [
+      {
+        "label": "LANÇAMENTO",
+        "note": "Mercury-Redstone 3 (MR-3) a partir de Cape Canaveral LC-5, 1961-05-05 14:34 UTC."
+      },
+      {
+        "label": "APOGEU",
+        "note": "Apogeu de 187 km após 2,5 minutos; imponderabilidade por ~5 min."
+      },
+      {
+        "label": "AMERISSAGEM",
+        "note": "A cápsula pousou no Oceano Atlântico a 487 km de distância. Resgate pelo USS Lake Champlain."
+      }
+    ]
+  },
+  "missions/earth/friendship-7": {
+    "events": [
+      {
+        "label": "LANÇAMENTO",
+        "note": "Atlas LV-3B a partir de Cape Canaveral LC-14, 1962-02-20 14:47 UTC."
+      },
+      {
+        "label": "INSERÇÃO EM ÓRBITA",
+        "note": "Inserção em uma órbita terrestre de 159 × 265 km, inclinação de 32,5°."
+      },
+      {
+        "label": "\"VAGA-LUMES\"",
+        "note": "Glenn relata \"vaga-lumes\" luminosos do lado de fora da janela — pedaços do retropacote queimando durante a reentrada."
+      },
+      {
+        "label": "AMERISSAGEM",
+        "note": "A cápsula pousou no mar a 1287 km a sudeste de Cape Canaveral após 3 órbitas / 4 h 55 min. Resgate pelo USS Noa."
+      }
+    ]
+  },
+  "planets/arrokoth": { "links": "COPY" },
+  "satellites/moon": {
+    "library_labels": {
+      "moon-wiki": "Wikipédia — Lua",
+      "moon-nasa-overview": "NASA Science — visão geral da Lua",
+      "moon-apollo": "Programa Apollo da NASA — arquivo das missões de pouso",
+      "moon-artemis": "NASA Artemis — programa tripulado de retorno à Lua",
+      "moon-lroc": "LROC — arquivo de imagens da Lunar Reconnaissance Orbiter Camera"
+    },
+    "mission_visits": [
+      "Luna 2 — URSS, 1959 (primeiro objeto artificial na Lua)",
+      "Apollo 11 — EUA, 1969 (primeiro pouso tripulado)",
+      "Luna 16 — URSS, 1970 (primeiro retorno robótico de amostras)",
+      "Chang'e 4 — China, 2019 (primeiro pouso no lado oculto)",
+      "Chandrayaan-3 — Índia, 2023 (primeiro pouso no polo sul)"
+    ],
+    "surface_composition": "Planaltos de anortosito (silicatos de cálcio e alumínio) + mares basálticos inundados por lava antiga; regolito com 4–15 m de profundidade; traços de gelo de água em crateras polares em sombra permanente."
+  },
+  "science/transfers/coplanar-trajectories": {
+    "diagram_caption": "O Sistema Solar é quase plano porque os planetas se formaram a partir de um único disco em rotação. As partidas ficam nesse plano porque mudanças de plano custam propelente proibitivo."
+  }
+}

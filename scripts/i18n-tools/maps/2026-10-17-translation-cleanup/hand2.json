@@ -1,0 +1,383 @@
+[
+  [
+    "it",
+    "science/life-in-space/pre-flight-training",
+    "intro_sentence",
+    [
+      [
+        "prima del volo. Il rapporto terrestre-volo",
+        "prima del volo. Gli equipaggi Apollo si addestravano 5 anni per una missione di 10 giorni. Il rapporto tra tempo a terra e tempo in volo"
+      ]
+    ]
+  ],
+  [
+    "it",
+    "science/orbits/keplers-laws",
+    "formula_caption",
+    "Terza legge di Kepler in forma moderna: T² dipende solo da a (e dal μ del corpo centrale)."
+  ],
+  [
+    "it",
+    "science/transfers/patched-conics",
+    "intro_sentence",
+    [
+      [
+        "l'approssimazione che rende il problema a tre corpi tractabile.",
+        "l'approssimazione che trasforma l'irrisolvibile problema dei tre corpi in una catena di problemi di Kepler a due corpi che si possono davvero risolvere."
+      ]
+    ]
+  ],
+  [
+    "ja",
+    "fleet/crewed-spacecraft/buran-ok-gli",
+    "description",
+    [["Buran の Enterprise に相当する機体。", "NASA の Enterprise に相当する Buran の機体。"]]
+  ],
+  [
+    "ja",
+    "fleet/station/tiangong",
+    "description",
+    [
+      [
+        "中国の居住型宇宙ステーション — Tiangong コアモジュール",
+        "中国のモジュール式宇宙ステーション Tiangong — Tianhe コアモジュール"
+      ]
+    ]
+  ],
+  [
+    "ja",
+    "mars-sites/phoenix",
+    "fact",
+    [["ロボットアームがすくった", "Phoenix のロボットアームがすくった"]]
+  ],
+  [
+    "ja",
+    "mars-sites/viking1-orbiter",
+    "fact",
+    [["両着陸機の事前候補地をマッピング。", "両 Viking 着陸機の着陸候補地を事前にマッピング。"]]
+  ],
+  [
+    "ja",
+    "science/life-in-space/iva-suits",
+    "body_paragraphs.2",
+    "各 IVA スーツは同じ基本仕様に従う：減圧時は約 0.4 atm の純酸素 O₂、通常飛行中はアンビリカルで給気、約 30 分の生存用予備、熱制御なし。プログラムごとの違いは外観と人間工学の差にとどまる — Sokol は背面から着る構造、ACES と SpaceX は前面から着る構造で、Crew Dragon と Starliner はタッチスクリーン対応の手袋を備える。系統一覧は /fleet を参照：Sokol KV-2（ロシア）、ACES（米国 Shuttle）、SpaceX IVA Suit（Crew Dragon）、Boeing Blue（Starliner）、Shenzhou IVA Suit（中国）、そして次世代の Sokol-M。"
+  ],
+  [
+    "ko",
+    "earth-objects/glonass",
+    "scale_fact",
+    "높은 궤도 경사(64.8°) 덕분에 GLONASS는 러시아와 북극 지역을 더 잘 커버한다 — 지리가 궤도 설계를 결정했다."
+  ],
+  [
+    "ko",
+    "fleet/lander/beagle2",
+    "description",
+    [
+      [
+        "Mars Express에서 분리되어 예정된 2003-12-25 Isidis Planitia 착륙 6일 전인 2003-12-19에 발사된 33kg의 영국 주도 화성 착륙선.",
+        "예정된 2003-12-25 Isidis Planitia 착륙 6일 전인 2003-12-19에 ESA의 Mars Express에서 분리된 33kg의 영국 주도 화성 착륙선."
+      ]
+    ]
+  ],
+  [
+    "ko",
+    "fleet/station/tiangong",
+    "description",
+    [["질량 약 66 t, 기밀 용적 약 110 m³로", "Tiangong은 질량 약 66 t, 기밀 용적 약 110 m³로"]]
+  ],
+  [
+    "ko",
+    "missions/moon/lunar-prospector",
+    "description",
+    [
+      [
+        "Athena II 로켓으로 발사되어, 1998년 1월 11일",
+        "Athena II 로켓으로 발사된 Lunar Prospector는 1998년 1월 11일"
+      ]
+    ]
+  ],
+  [
+    "nl",
+    "rockets/atlas-v-541",
+    "description",
+    "ULA Atlas V in de configuratie met een neuskegel van 5 meter, vier vaste boosters en een Centaur-bovenste trap met één motor. Lanceerde Curiosity in november 2011 naar Mars. In 2024 uit dienst genomen ten gunste van de Vulcan Centaur."
+  ],
+  [
+    "nl",
+    "rockets/h-iia",
+    "first",
+    "Japans langst dienende operationele draagraket — lanceerde Hayabusa, Akatsuki en de Hope Probe"
+  ],
+  [
+    "nl",
+    "rockets/h3",
+    "first",
+    "JAXA's vlaggenschipdraagraket van de volgende generatie — ontworpen voor MMX en de bevoorrading van de Lunar Gateway"
+  ],
+  [
+    "nl",
+    "rockets/pslv-xl",
+    "description",
+    "ISRO's vierfasige Polar Satellite Launch Vehicle in de XL-configuratie, met zes aangebouwde vaste boosters. Oorspronkelijk ontworpen voor zonsynchrone banen om de aarde; later ingezet voor interplanetaire missies, waaronder India's eerste maanorbiter en eerste Marssonde. De opvallend lage lanceerkosten (~$30M per lancering) maakten het totale budget van $74M voor de Mangalyaan-missie mogelijk."
+  ],
+  [
+    "nl",
+    "rockets/sls-block-1",
+    "description",
+    "NASA's vlaggenschipraket voor de diepe ruimte. Twee vaste boosters met vijf segmenten en een kerntrap met vier RS-25-motoren (dezelfde motoren die op de Space Shuttle vlogen), met daarboven een Interim Cryogenic Propulsion Stage. Debuteerde met Artemis I (nov 2022), dat een onbemande Orion-capsule rond de Maan stuurde."
+  ],
+  [
+    "nl",
+    "rockets/soyuz-fregat",
+    "first",
+    "De draagraket die elke Mars Express-, Cluster- en gezamenlijke ESA-Roscosmos-missie op weg hielp"
+  ],
+  [
+    "pt-BR",
+    "fleet/launcher/sls-block-1",
+    "description",
+    "O sucessor superpesado da NASA para o conjunto do Space Shuttle, compartilhando seus motores RS-25 e a herança dos SRB. Levou a Orion na Artemis I em 2022; previsto para lançar missões lunares tripuladas até a Artemis IV."
+  ],
+  [
+    "pt-BR",
+    "missions/mars/schiaparelli",
+    "description",
+    [["junto ao Trace Gas Orbiter (TGO) do ExoMars", "junto ao ExoMars Trace Gas Orbiter (TGO)"]]
+  ],
+  [
+    "pt-BR",
+    "missions/moon/artemis4",
+    "description",
+    [
+      [
+        "a bordo de um Starship Human Landing System",
+        "a bordo de um Starship Human Landing System da SpaceX"
+      ]
+    ]
+  ],
+  [
+    "pt-BR",
+    "science/propulsion/fuels-and-oxidizers",
+    "body_paragraphs.3",
+    [["cada burn OMS do Shuttle", "cada queima OMS do Space Shuttle"]]
+  ],
+  [
+    "ru",
+    "fleet/crewed-spacecraft/buran",
+    "description",
+    [["но без основных двигателей.", "но без маршевых двигателей (его выводила Energia)."]]
+  ],
+  [
+    "ru",
+    "fleet/launcher/long-march-7",
+    "description",
+    [
+      [
+        "Доставляет грузы к станции Tiangong.",
+        "Выводит грузовые корабли Tianzhou к станции Tiangong."
+      ]
+    ]
+  ],
+  [
+    "ru",
+    "fleet/orbiter/juice",
+    "description",
+    [
+      ["В системе Юпитера выполнит", "В системе Юпитера JUICE выполнит"],
+      [
+        "На борту 10 приборов, включая ледовой радар RIME.",
+        "На борту 10 приборов — подлёдный радар RIME, спектрометры, магнитометр и лазерный высотомер, — оптимизированных для изучения трёх ледяных спутников как потенциально обитаемых миров с подповерхностными океанами."
+      ]
+    ]
+  ],
+  [
+    "ru",
+    "fleet/space-suit/a7lb",
+    "dispatch",
+    [["Последние три посадки на Луну", "Последние три посадки Apollo"]]
+  ],
+  [
+    "ru",
+    "fleet/space-suit/aces",
+    "best_known_for",
+    [["каждый запуск Shuttle и повторный вход", "каждый запуск и возвращение Space Shuttle"]]
+  ],
+  [
+    "ru",
+    "mars-sites/beagle2",
+    "fact",
+    [
+      ["на борту аппарата Mars Express.", "на борту аппарата Mars Express (ESA)."],
+      ["камерой HiRISE аппарата MRO", "камерой HiRISE аппарата MRO (NASA)"]
+    ]
+  ],
+  [
+    "ru",
+    "mars-sites/phoenix",
+    "fact",
+    [["Манипулятор зачерпнул", "Манипулятор Phoenix зачерпнул"]]
+  ],
+  [
+    "ru",
+    "missions/mars/mars-pathfinder",
+    "dispatch",
+    [["Mars Pathfinder доказал, что", "Mars Pathfinder стал для NASA доказательством того, что"]]
+  ],
+  [
+    "ru",
+    "missions/moon/blue-moon-mk1",
+    "description",
+    [
+      [
+        "Первый грузовой Blue Moon по контракту",
+        "Первый грузовой посадочный модуль Blue Moon компании Blue Origin по контракту"
+      ]
+    ]
+  ],
+  [
+    "ru",
+    "moon-sites/change2",
+    "capability",
+    [
+      [
+        "первая миссия неамериканского и неевропейского происхождения на L2",
+        "первая миссия к L2, не принадлежащая NASA или ESA"
+      ]
+    ]
+  ],
+  [
+    "ru",
+    "satellites/titan",
+    "description",
+    [["Dragonfly прибудет", "Аппарат NASA Dragonfly прибудет"]]
+  ],
+  [
+    "ru",
+    "satellites/titan",
+    "library_labels.titan-dragonfly",
+    [["Dragonfly — миссия", "NASA Dragonfly — миссия"]]
+  ],
+  [
+    "ru",
+    "science/life-in-space/eva-suits",
+    "body_paragraphs.0",
+    [["Аналогичная система на станции —", "Аналогичная система на борту ISS —"]]
+  ],
+  [
+    "ru",
+    "science/life-in-space/suit-lineage",
+    "intro_sentence",
+    [["американский (аполлоновский)", "американский (восходящий к Apollo)"]]
+  ],
+  [
+    "ru",
+    "science/mission-phases/antenna-arrays",
+    "body_paragraphs.3",
+    [
+      [
+        "Программа DSN Aperture Enhancement Program",
+        "Программа NASA DSN Aperture Enhancement Program"
+      ]
+    ]
+  ],
+  [
+    "sr-Cyrl",
+    "mars-sites/phoenix",
+    "fact",
+    [
+      ["Пхоеник-ова", "Phoenix-ова"],
+      [
+        "Управљао је са 157 сола пре него што је северна зима замрзнула соларне панеле.",
+        "Радио је 157 сола пре него што је северна зима замрзнула његове соларне панеле."
+      ]
+    ]
+  ],
+  [
+    "sr-Cyrl",
+    "science/exoplanets/transit",
+    "narrative_101.2",
+    [
+      [
+        "учиниле мисије Kepler и TESS, које су истовремено уписивале у видно поље стотине хиљада звезда.",
+        "учиниле NASA-ине мисије Kepler и TESS, посматрајући истовремено стотине хиљада звезда."
+      ]
+    ]
+  ],
+  [
+    "sr-Cyrl",
+    "science/mission-phases/propulsive-landing",
+    "body_paragraphs.2",
+    "На `/fly`, свако слетање на Месец у `?descent=1` је погонско од почетка до краја (у вакууму нема падобрана), а профили Starship-а за Марс коче топлотним штитом, па слећу на моторе. Ретро-индикатор на HUD-у спуштања и приказ горива прате паљење — исти проблем који су посаде Apollo-а решавале одока, сада приказан као телеметрија уживо."
+  ],
+  [
+    "zh-CN",
+    "fleet/cargo-spacecraft/atv",
+    "dispatch",
+    [
+      ["自动转运飞行器是欧洲的", "Automated Transfer Vehicle（ATV）是欧洲的"],
+      ["自动转运飞行器不仅仅是", "ATV 不仅仅是"]
+    ]
+  ],
+  [
+    "zh-CN",
+    "fleet/crewed-spacecraft/soyuz-tma",
+    "description",
+    "ISS 时代的 Soyuz（2002–2012 年），配备数字飞行计算机，并放宽了乘员身高范围，以适应国际合作伙伴的航天员队伍。曾与职业乘员一同搭载首批太空游客。"
+  ],
+  [
+    "zh-CN",
+    "fleet/launch-site/tanegashima-yoshinobu",
+    "description",
+    [["2009年至2020年间的七次HTV货运飞行", "2009年至2020年间七次前往 ISS 的 HTV 货运飞行"]]
+  ],
+  [
+    "zh-CN",
+    "missions/earth/voskhod-1",
+    "description",
+    [
+      ["经过大幅改装的联盟号太空舱", "经过大幅改装的 Vostok 太空舱"],
+      ["科马罗夫", "Komarov"],
+      ["费奥克蒂斯托夫", "Feoktistov"],
+      ["叶戈罗夫", "Yegorov"],
+      ["赫鲁晓夫", "Khrushchev"]
+    ]
+  ],
+  [
+    "zh-CN",
+    "missions/jupiter/galileo",
+    "description",
+    [["从航天飞机Atlantis上", "从 Space Shuttle Atlantis 上"]]
+  ],
+  [
+    "zh-CN",
+    "missions/venus/vega-1",
+    "description",
+    [
+      ["法国国家太空研究中心", "CNES"],
+      ["欧空局", "ESA"],
+      ["55公里", "54公里"],
+      ["哈雷探测舰队", "Halley 探测舰队"],
+      ["1P/哈雷彗星", "1P/Halley 彗星"],
+      ["哈雷掠飞", "Halley 掠飞"]
+    ]
+  ],
+  [
+    "zh-CN",
+    "science/space-stations/node-module",
+    "body_paragraphs.2",
+    [
+      ["国际空间站Harmony节点舱（节点舱2号）", "ISS Harmony（Node 2）"],
+      ["Columbus（舷侧对接口）", "Columbus（左舷）"],
+      ["Kibo（船舶对接口）", "Kibo（右舷）"]
+    ]
+  ],
+  [
+    "zh-CN",
+    "science/space-stations/node-module",
+    "body_paragraphs.4",
+    [
+      ["天宫Tianhe核心舱", "Tiangong 的 Tianhe 核心舱"],
+      ["天宫使用中国对接机制", "对接口使用中国对接机构"]
+    ]
+  ]
+]

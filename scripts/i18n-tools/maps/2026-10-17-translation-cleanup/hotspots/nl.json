@@ -1,0 +1,163 @@
+{
+  "apollo11": {
+    "hotspot_annotations": [
+      { "id": "lm-descent-stage", "label": "Daaltrap van de LM (Eagle)" },
+      { "id": "us-flag", "label": "Amerikaanse vlag (~8 m ten westen van de LM geplant)" },
+      { "id": "lrrr", "label": "Laser-retroreflector (LRRR)" },
+      { "id": "easep", "label": "EASEP (vereenvoudigd ALSEP-pakket)" },
+      { "id": "plaque", "label": "Plaquette 'We kwamen in vrede voor de hele mensheid'" }
+    ],
+    "panorama_caption": "Tranquility Base, EVA-1. Buzz Aldrin fotografeerde de LM Eagle en de Amerikaanse vlag kort na de landing. De zichtbare Hasselblad-naden en gekleurde overgangen bij de LM horen bij het gepubliceerde mozaïek.",
+    "compass_zero_direction": "voorkant van de LM (volgens de panorama-oriëntatie van het ALSJ)",
+    "panorama_annotations": [
+      {
+        "id": "lm-eagle",
+        "label": "LM Eagle",
+        "body": "Daaltrap van de maanlander, waar Armstrong + Aldrin tijdens de maanwandeling stonden."
+      },
+      {
+        "id": "us-flag-pan",
+        "label": "Amerikaanse vlag",
+        "body": "~8 m ten westen van de LM geplant. Bij de lancering omvergeblazen door de uitlaat van de opstijgtrap."
+      },
+      {
+        "id": "buzz-shadow",
+        "label": "Schaduw van Buzz Aldrin",
+        "body": "De eigen schaduw van de fotograaf op de voorgrond — Buzz met de Hasselblad in zijn handen."
+      }
+    ]
+  },
+  "apollo17": {
+    "panorama_caption": "Dal van Taurus-Littrow, station 5. Schmitt + Cernan werkten hier bij Camelot Crater en het South Massif. Het laatste panorama van een maanwandeling in het Apollo-programma.",
+    "compass_zero_direction": "voorkant van de LRV (volgens de panorama-oriëntatie van het ALSJ)",
+    "panorama_annotations": [
+      {
+        "id": "south-massif",
+        "label": "South Massif",
+        "body": "2,3 km hoog opgeheven hoogland, bemonsterd bij station 2 (de vindplaats van de oranje bodem)."
+      },
+      {
+        "id": "camelot-crater",
+        "label": "Rand van Camelot Crater",
+        "body": "Grote, oudere inslagkrater bij de maanlander; het rotsblokkenveld van station 5 ligt op de rand."
+      },
+      {
+        "id": "lrv",
+        "label": "Maanwagen (LRV)",
+        "body": "De derde LRV die op de Maan werd gebruikt. Totale afstand tijdens deze missie: 35,7 km — nog altijd het record."
+      }
+    ]
+  },
+  "spirit": {
+    "panorama_caption": "Het uitzicht van Spirit vanaf de top van Husband Hill — de eerste Marstop die een rover bereikte. Naar het zuiden, over het Inner Basin van Gusev Crater, richting de Columbia Hills."
+  },
+  "opportunity": {
+    "panorama_caption": "Het uitzicht van Opportunity vanuit Eagle Crater, de landingsplek na het stuiteren op airbags — de gelaagde ontsluiting Burns Cliff aan de overkant van de kraterwand werd het eerste grote wetenschappelijke doel van de rover."
+  },
+  "curiosity": {
+    "panorama_caption": "Curiosity in de geul van Gediz Vallis — het 360°-beeld van de rover op sol 4220, na het boren van het monster Mammoth Lakes, zijn 41e op Mars. Links de robotarm, net klaar met boren; rechts het roverdek; bovenin echte Marshemel; in het midden de afdalende geul van Gediz Vallis — de eerste plek waar ooit zuivere zwavelkristallen op Mars zijn gevonden.",
+    "compass_zero_direction": "voorkant van de rover",
+    "panorama_annotations": [
+      {
+        "id": "gediz-vallis-channel",
+        "label": "Geul van Gediz Vallis",
+        "body": "Oude, door water uitgesleten geul op de hellingen van Mt. Sharp. Curiosity boorde hier het monster Mammoth Lakes — de eerste zuivere zwavelkristallen die ooit op Mars zijn gevonden."
+      },
+      {
+        "id": "robotic-arm",
+        "label": "Robotarm",
+        "body": "Scharnierende arm van 2 m met boor, borstel en APXS-spectrometer — links te zien na het voltooien van de boring Mammoth Lakes op deze sol."
+      },
+      {
+        "id": "mt-sharp-flank",
+        "label": "Lage flank van Mt. Sharp",
+        "body": "Gelaagde hellingen van Aeolis Mons, de 5 km hoge berg midden in Gale Crater die Curiosity sinds 2014 beklimt."
+      }
+    ]
+  },
+  "perseverance": {
+    "panorama_caption": "Het eerste 360°-panorama van Perseverance — drie dagen na de landing. Het roverdek domineert de voorgrond; de bodem en de verre rand van de krater Jezero zijn boven de horizon te zien; bovenin echte Marshemel.",
+    "compass_zero_direction": "+X-as van de rover",
+    "panorama_annotations": [
+      {
+        "id": "mastcam-z-tower",
+        "label": "Mast van Mastcam-Z",
+        "body": "De 2 m hoge cameramast — de 'ogen' van de rover — in het midden te zien omdat het panorama eromheen sluit."
+      },
+      {
+        "id": "jezero-crater-rim",
+        "label": "Rand van de krater Jezero",
+        "body": "De kraterwand op ~2 km; aan de westrand zijn oude deltaafzettingen te zien — het wetenschappelijke doel waar Perseverance in zijn eerste jaar naartoe reed."
+      },
+      {
+        "id": "rover-deck",
+        "label": "Roverdek",
+        "body": "Voorgrond van elke 360° van Mastcam-Z — een dek als een zonnepaneel, met rechts de opslag voor monsterbuisjes."
+      }
+    ]
+  },
+  "mars3": {
+    "panorama_caption": "De eerste zachte landing op Mars — 14,5 seconden aan verzonden scangegevens voordat het signaal wegviel. Op deze plek is er (nog) geen Tier-3-panorama; hier wordt het originele historische fragment eerlijk getoond in de Tier-2-context van CTX."
+  },
+  "change4": {
+    "panorama_caption": "Het eerste panorama dat ooit vanaf de achterkant van de Maan is verzonden. De krater Von Kármán in het South Pole–Aitken Basin. De rover Yutu-2 op middelafstand; de schaduw van de lander linksonder.",
+    "compass_zero_direction": "+X-as van de landercamera",
+    "panorama_annotations": [
+      {
+        "id": "yutu2",
+        "label": "Rover Yutu-2",
+        "body": "De eerste rover op de achterkant van de Maan; na meer dan 5 jaar nog in bedrijf (het record voor een maanrover)."
+      },
+      {
+        "id": "von-karman-rim",
+        "label": "Rand van de krater Von Kármán",
+        "body": "Binnenrand van de krater van 180 km in het South Pole–Aitken Basin — de grootste en oudste inslagstructuur van de Maan."
+      },
+      {
+        "id": "change4-shadow",
+        "label": "Schaduw van lander Chang'e 4",
+        "body": "De eigen schaduw van de lander op het regoliet — vastgelegd met zijn terreincamera aan boord."
+      }
+    ]
+  },
+  "chandrayaan3": {
+    "panorama_caption": "Shiv Shakti Point — het eerste panorama vanaf de zuidpool van de Maan. De schaduw van lander Vikram op de voorgrond; rover Pragyan werd kort na deze opname op het regoliet gezet.",
+    "compass_zero_direction": "+X-as van de landercamera",
+    "panorama_annotations": [
+      {
+        "id": "pragyan",
+        "label": "Rover Pragyan (uitgezet op sol +1)",
+        "body": "Rover van 26 kg met zes wielen. De dag na de landing via de oprijplaat van Vikram uitgezet; actief tot het invallen van de maannacht (~14 aardse dagen)."
+      },
+      {
+        "id": "south-pole-rim",
+        "label": "Kraterrand bij de zuidpool",
+        "body": "De eerste geslaagde zachte landing zo dicht bij de zuidpool van de Maan — een gebied waar naar waterijs wordt gezocht."
+      }
+    ]
+  },
+  "vandenberg-slc-4e": {
+    "panorama_caption": "Vandenberg SLC-4E (Falcon 9) en SLC-4W vanuit de lucht — een luchtfoto, geen panorama vanaf de grond.",
+    "compass_zero_direction": "midden van de foto (echte kompasrichting niet gekalibreerd)"
+  },
+  "baikonur-1-5": {
+    "panorama_caption": "Gagarin's Start (Site 1/5) voor de uitrol van de Soyuz TMA-13 — een bannersnede met zeer lage resolutie.",
+    "compass_zero_direction": "midden van de foto (echte kompasrichting niet gekalibreerd)"
+  },
+  "baikonur-31-6": {
+    "panorama_caption": "Baikonur Site 31/6 vanaf de top van de servicetoren van de Soyuz — beneden de vlammenput van het lanceerplatform, aan de horizon de steppe en de Zenit-installatie.",
+    "compass_zero_direction": "midden van de foto (echte kompasrichting niet gekalibreerd)"
+  },
+  "jiuquan-slc-43": {
+    "panorama_caption": "De hoofdlanceertoren van het Jiuquan Satellite Launch Center van een afstand — een panoramastrook met lage resolutie over de Gobi.",
+    "compass_zero_direction": "midden van de foto (echte kompasrichting niet gekalibreerd)"
+  },
+  "wenchang-lc-101": {
+    "panorama_caption": "De lanceerbasis Wenchang aan de overkant van de baai van Qishui — de torens van LC-101 gezien vanaf het strand, een verre blik op de kust.",
+    "compass_zero_direction": "midden van de foto (echte kompasrichting niet gekalibreerd)"
+  },
+  "sriharikota-slp": {
+    "panorama_caption": "Satish Dhawan Space Centre, Sriharikota — de PSLV-C61 onderweg van de Vehicle Integration Facility naar het lanceerplatform.",
+    "compass_zero_direction": "midden van de foto (echte kompasrichting niet gekalibreerd)"
+  }
+}

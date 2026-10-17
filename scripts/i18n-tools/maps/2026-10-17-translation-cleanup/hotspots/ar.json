@@ -1,0 +1,163 @@
+{
+  "apollo11": {
+    "hotspot_annotations": [
+      { "id": "lm-descent-stage", "label": "مرحلة الهبوط في LM (Eagle)" },
+      { "id": "us-flag", "label": "العلم الأمريكي (مغروس على بُعد ~8 م غرب LM)" },
+      { "id": "lrrr", "label": "عاكس ليزري للقياس (LRRR)" },
+      { "id": "easep", "label": "EASEP (حزمة ALSEP مبسّطة)" },
+      { "id": "plaque", "label": "لوحة «جئنا بسلام من أجل البشرية جمعاء»" }
+    ],
+    "panorama_caption": "Tranquility Base، ‏EVA-1. صوّر Buzz Aldrin المركبة LM Eagle والعلم الأمريكي بعد الهبوط بقليل. اللحامات الظاهرة بين لقطات Hasselblad والوصلات الملوّنة عند LM جزء من الفسيفساء المنشورة.",
+    "compass_zero_direction": "مقدّمة LM (وفق اتجاه بانوراما ALSJ)",
+    "panorama_annotations": [
+      {
+        "id": "lm-eagle",
+        "label": "LM Eagle",
+        "body": "مرحلة الهبوط في الوحدة القمرية، حيث وقف Armstrong + Aldrin خلال النشاط خارج المركبة."
+      },
+      {
+        "id": "us-flag-pan",
+        "label": "العلم الأمريكي",
+        "body": "غُرس على بُعد ~8 م غرب LM. أسقطه نفث مرحلة الصعود عند الإقلاع."
+      },
+      {
+        "id": "buzz-shadow",
+        "label": "ظل Buzz Aldrin",
+        "body": "ظل المصوّر نفسه في المقدمة — Buzz يحمل كاميرا Hasselblad."
+      }
+    ]
+  },
+  "apollo17": {
+    "panorama_caption": "وادي Taurus-Littrow، المحطة 5. عمل Schmitt + Cernan هنا عند Camelot Crater وSouth Massif. آخر بانوراما لنشاط على سطح القمر في برنامج Apollo.",
+    "compass_zero_direction": "مقدّمة المركبة الجوّالة القمرية (وفق اتجاه بانوراما ALSJ)",
+    "panorama_annotations": [
+      {
+        "id": "south-massif",
+        "label": "South Massif",
+        "body": "مرتفع مرفوع بارتفاع 2.3 كم، أُخذت منه عينات في المحطة 2 (موقع اكتشاف التربة البرتقالية)."
+      },
+      {
+        "id": "camelot-crater",
+        "label": "حافة Camelot Crater",
+        "body": "فوهة صدمية كبيرة أقدم قرب الوحدة القمرية؛ يقع حقل الصخور في المحطة 5 على حافتها."
+      },
+      {
+        "id": "lrv",
+        "label": "المركبة الجوّالة القمرية",
+        "body": "ثالث مركبة جوّالة قمرية استُخدمت على القمر. إجمالي المسافة في هذه المهمة: 35.7 كم — وما زال ذلك رقمًا قياسيًا."
+      }
+    ]
+  },
+  "spirit": {
+    "panorama_caption": "منظر Spirit من قمة Husband Hill — أول قمة مريخية تبلغها مركبة جوّالة. النظر جنوبًا عبر Inner Basin في Gusev Crater نحو Columbia Hills."
+  },
+  "opportunity": {
+    "panorama_caption": "منظر Opportunity من داخل Eagle Crater، موقع الهبوط بعد الارتداد على الوسائد الهوائية — صار النتوء الصخري الطبقي Burns Cliff الظاهر على جدار الفوهة المقابل أول هدف علمي كبير للمركبة."
+  },
+  "curiosity": {
+    "panorama_caption": "Curiosity في قناة Gediz Vallis — منظر المركبة بزاوية 360° في اليوم المريخي 4220 بعد حفر عينة Mammoth Lakes، العينة الحادية والأربعين على المريخ. الذراع الآلية ظاهرة يسارًا وقد أنهت الحفر للتو؛ وسطح المركبة يمينًا؛ والسماء المريخية الحقيقية في الشريط العلوي؛ وقناة Gediz Vallis تنحدر في الوسط — أول مكان وُجدت فيه بلورات كبريت نقي على المريخ.",
+    "compass_zero_direction": "مقدّمة المركبة",
+    "panorama_annotations": [
+      {
+        "id": "gediz-vallis-channel",
+        "label": "قناة Gediz Vallis",
+        "body": "قناة قديمة حفرها الماء تنحدر على سفوح Mt. Sharp. حفر Curiosity هنا عينة Mammoth Lakes — أول بلورات كبريت نقي يُعثر عليها على المريخ."
+      },
+      {
+        "id": "robotic-arm",
+        "label": "الذراع الآلية",
+        "body": "ذراع مفصلية بطول 2 م تحمل المثقاب والفرشاة ومطياف APXS — ظاهرة يسارًا بعد إتمام حفر Mammoth Lakes في هذا اليوم المريخي."
+      },
+      {
+        "id": "mt-sharp-flank",
+        "label": "السفح السفلي لـ Mt. Sharp",
+        "body": "سفوح Aeolis Mons الطبقية، الجبل الذي يبلغ ارتفاعه 5 كم في وسط Gale Crater ويتسلقه Curiosity منذ 2014."
+      }
+    ]
+  },
+  "perseverance": {
+    "panorama_caption": "أول بانوراما بزاوية 360° من Perseverance — بعد ثلاثة أيام من الهبوط. يهيمن سطح المركبة على المقدمة؛ ويظهر قاع فوهة Jezero وحافتها البعيدة فوق الأفق؛ والسماء المريخية الحقيقية في الأشرطة العلوية.",
+    "compass_zero_direction": "المحور +X للمركبة",
+    "panorama_annotations": [
+      {
+        "id": "mastcam-z-tower",
+        "label": "سارية Mastcam-Z",
+        "body": "سارية الكاميرات بطول 2 م — «عينا» المركبة — ظاهرة في الوسط لأن البانوراما تلتف حولها."
+      },
+      {
+        "id": "jezero-crater-rim",
+        "label": "حافة فوهة Jezero",
+        "body": "جدار الفوهة على بُعد ~2 كم؛ تظهر عند الطرف الغربي للحافة رواسب دلتا قديمة — الهدف العلمي الذي اتجه نحوه Perseverance خلال عامه الأول."
+      },
+      {
+        "id": "rover-deck",
+        "label": "سطح المركبة",
+        "body": "مقدمة كل بانوراما 360° من Mastcam-Z — سطح يشبه لوح الطاقة الشمسية، ويظهر مخزن أنابيب العينات يمينًا."
+      }
+    ]
+  },
+  "mars3": {
+    "panorama_caption": "أول هبوط سلس على المريخ — 14.5 ثانية من بيانات المسح المُرسلة قبل انقطاع الإشارة. لا توجد بانوراما Tier-3 لهذا الموقع (حتى الآن)؛ وتُعرض هنا القطعة التاريخية الأصلية بأمانة في سياق صورة CTX من Tier-2."
+  },
+  "change4": {
+    "panorama_caption": "أول بانوراما تُرسل على الإطلاق من الجانب البعيد للقمر. فوهة Von Kármán داخل South Pole–Aitken Basin. المركبة الجوّالة Yutu-2 على مسافة متوسطة؛ وظل مركبة الهبوط في أسفل اليسار.",
+    "compass_zero_direction": "المحور +X لكاميرا مركبة الهبوط",
+    "panorama_annotations": [
+      {
+        "id": "yutu2",
+        "label": "المركبة الجوّالة Yutu-2",
+        "body": "أول مركبة جوّالة على الجانب البعيد للقمر؛ ما زالت تعمل بعد أكثر من 5 سنوات (رقم قياسي لأي مركبة جوّالة قمرية)."
+      },
+      {
+        "id": "von-karman-rim",
+        "label": "حافة فوهة Von Kármán",
+        "body": "الحافة الداخلية للفوهة البالغ قطرها 180 كم داخل South Pole–Aitken Basin — أكبر وأقدم بنية صدمية على القمر."
+      },
+      {
+        "id": "change4-shadow",
+        "label": "ظل مركبة الهبوط Chang'e 4",
+        "body": "ظل مركبة الهبوط نفسها على الثرى القمري — التقطته كاميرا التضاريس على متنها."
+      }
+    ]
+  },
+  "chandrayaan3": {
+    "panorama_caption": "Shiv Shakti Point — أول بانوراما من القطب الجنوبي للقمر. ظل مركبة الهبوط Vikram في المقدمة؛ ونزلت المركبة الجوّالة Pragyan إلى الثرى بعد هذه الصورة بقليل.",
+    "compass_zero_direction": "المحور +X لمصوّر مركبة الهبوط",
+    "panorama_annotations": [
+      {
+        "id": "pragyan",
+        "label": "المركبة الجوّالة Pragyan (نُشرت في اليوم +1)",
+        "body": "مركبة جوّالة بست عجلات تزن 26 كغ. نزلت عبر منحدر Vikram في اليوم التالي للهبوط؛ وعملت حتى حلول الليل القمري (~14 يومًا أرضيًا)."
+      },
+      {
+        "id": "south-pole-rim",
+        "label": "حافة فوهة عند القطب الجنوبي",
+        "body": "أول هبوط سلس ناجح بهذا القرب من القطب الجنوبي للقمر — منطقة يُبحث فيها عن جليد الماء."
+      }
+    ]
+  },
+  "vandenberg-slc-4e": {
+    "panorama_caption": "Vandenberg SLC-4E (Falcon 9) وSLC-4W من الجو — صورة جوية، لا بانوراما من مستوى الأرض.",
+    "compass_zero_direction": "مركز الصورة (اتجاه البوصلة الحقيقي غير معايَر)"
+  },
+  "baikonur-1-5": {
+    "panorama_caption": "Gagarin's Start (Site 1/5) قبل نقل Soyuz TMA-13 إلى المنصة — مقتطع على شكل شريط بدقة منخفضة جدًا.",
+    "compass_zero_direction": "مركز الصورة (اتجاه البوصلة الحقيقي غير معايَر)"
+  },
+  "baikonur-31-6": {
+    "panorama_caption": "Baikonur Site 31/6 من أعلى برج خدمة Soyuz — في الأسفل خندق اللهب في المنصة، وفي الأفق السهوب ومنشأة Zenit.",
+    "compass_zero_direction": "مركز الصورة (اتجاه البوصلة الحقيقي غير معايَر)"
+  },
+  "jiuquan-slc-43": {
+    "panorama_caption": "برج الإطلاق الرئيسي في Jiuquan Satellite Launch Center من بعيد — شريط بانورامي منخفض الدقة عبر صحراء غوبي.",
+    "compass_zero_direction": "مركز الصورة (اتجاه البوصلة الحقيقي غير معايَر)"
+  },
+  "wenchang-lc-101": {
+    "panorama_caption": "موقع الإطلاق Wenchang عبر خليج تشيشوي — أبراج LC-101 كما تُرى من الشاطئ، منظر بعيد للساحل.",
+    "compass_zero_direction": "مركز الصورة (اتجاه البوصلة الحقيقي غير معايَر)"
+  },
+  "sriharikota-slp": {
+    "panorama_caption": "Satish Dhawan Space Centre، سريهاريكوتا — الصاروخ PSLV-C61 في طريقه من Vehicle Integration Facility إلى منصة الإطلاق.",
+    "compass_zero_direction": "مركز الصورة (اتجاه البوصلة الحقيقي غير معايَر)"
+  }
+}

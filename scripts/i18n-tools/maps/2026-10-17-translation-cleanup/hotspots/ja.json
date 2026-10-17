@@ -1,0 +1,163 @@
+{
+  "apollo11": {
+    "hotspot_annotations": [
+      { "id": "lm-descent-stage", "label": "LM 降下段（Eagle）" },
+      { "id": "us-flag", "label": "米国旗（LM の約 8 m 西に設置）" },
+      { "id": "lrrr", "label": "レーザー測距用反射鏡（LRRR）" },
+      { "id": "easep", "label": "EASEP（簡易版 ALSEP パッケージ）" },
+      { "id": "plaque", "label": "「全人類のために平和のうちに来た」の銘板" }
+    ],
+    "panorama_caption": "Tranquility Base、EVA-1。Buzz Aldrin が着陸直後に LM Eagle と米国旗を撮影した。LM 付近に見える Hasselblad 画像のつなぎ目と色のずれは、公開されたモザイクの一部である。",
+    "compass_zero_direction": "LM の前方（ALSJ のパノラマ方位による）",
+    "panorama_annotations": [
+      {
+        "id": "lm-eagle",
+        "label": "LM Eagle",
+        "body": "月着陸船の降下段。Armstrong + Aldrin は船外活動中ここに立っていた。"
+      },
+      {
+        "id": "us-flag-pan",
+        "label": "米国旗",
+        "body": "LM の約 8 m 西に設置。離陸時に上昇段の噴射で倒れた。"
+      },
+      {
+        "id": "buzz-shadow",
+        "label": "Buzz Aldrin の影",
+        "body": "手前に写る撮影者自身の影 — Hasselblad を構える Buzz。"
+      }
+    ]
+  },
+  "apollo17": {
+    "panorama_caption": "Taurus-Littrow の谷、ステーション 5。Schmitt + Cernan はここで Camelot Crater と South Massif を調査した。Apollo 計画最後の月面船外活動のパノラマ。",
+    "compass_zero_direction": "月面車の前方（ALSJ のパノラマ方位による）",
+    "panorama_annotations": [
+      {
+        "id": "south-massif",
+        "label": "South Massif",
+        "body": "高さ 2.3 km の隆起した高地。ステーション 2（オレンジ色の土が見つかった場所）で試料が採取された。"
+      },
+      {
+        "id": "camelot-crater",
+        "label": "Camelot Crater の縁",
+        "body": "月着陸船の近くにある古い大きな衝突クレーター。ステーション 5 の岩塊地帯はその縁にある。"
+      },
+      {
+        "id": "lrv",
+        "label": "月面車",
+        "body": "月で使われた 3 台目の月面車。このミッションの総走行距離は 35.7 km で、今も記録である。"
+      }
+    ]
+  },
+  "spirit": {
+    "panorama_caption": "Husband Hill の山頂から見た Spirit の眺め — ローバーが到達した最初の火星の山頂。南を向き、Gusev Crater の Inner Basin 越しに Columbia Hills を望む。"
+  },
+  "opportunity": {
+    "panorama_caption": "エアバッグで弾みながら着陸した Eagle Crater の内側から見た Opportunity の眺め — 向かいのクレーター壁に見える層状の露頭 Burns Cliff は、ローバー最初の主要な科学目標となった。"
+  },
+  "curiosity": {
+    "panorama_caption": "Gediz Vallis の溝にいる Curiosity — 火星で 41 本目となる試料 Mammoth Lakes を掘削した後、ソル 4220 に撮影した 360° 画像。左には掘削を終えたばかりのロボットアーム、右にはローバーの甲板、上部の帯には本物の火星の空、中央を下っていくのが Gediz Vallis の溝 — 火星で初めて純粋な硫黄の結晶が見つかった場所だ。",
+    "compass_zero_direction": "ローバーの前方",
+    "panorama_annotations": [
+      {
+        "id": "gediz-vallis-channel",
+        "label": "Gediz Vallis の溝",
+        "body": "Mt. Sharp の斜面を下る、水が刻んだ古い溝。Curiosity はここで Mammoth Lakes の試料を掘削した — 火星で初めて見つかった純粋な硫黄の結晶だ。"
+      },
+      {
+        "id": "robotic-arm",
+        "label": "ロボットアーム",
+        "body": "ドリル、ブラシ、APXS 分光計を備えた長さ 2 m の多関節アーム — このソルに Mammoth Lakes の掘削を終えた後、左に見えている。"
+      },
+      {
+        "id": "mt-sharp-flank",
+        "label": "Mt. Sharp のふもとの斜面",
+        "body": "Gale Crater の中央にそびえる高さ 5 km の山 Aeolis Mons の層状の斜面。Curiosity は 2014 年からこの山を登っている。"
+      }
+    ]
+  },
+  "perseverance": {
+    "panorama_caption": "Perseverance 初の 360° パノラマ — 着陸の 3 日後。手前はローバーの甲板が大きく占め、地平線の上に Jezero クレーターの底と遠くの縁が見え、上部の帯には本物の火星の空が写っている。",
+    "compass_zero_direction": "ローバーの +X 軸",
+    "panorama_annotations": [
+      {
+        "id": "mastcam-z-tower",
+        "label": "Mastcam-Z のマスト",
+        "body": "高さ 2 m のカメラマスト — ローバーの「目」— は、パノラマがその周りを一周するため中央に写っている。"
+      },
+      {
+        "id": "jezero-crater-rim",
+        "label": "Jezero クレーターの縁",
+        "body": "約 2 km 先のクレーター壁。その西端には古いデルタ堆積物が見える — Perseverance が最初の 1 年をかけて向かった科学目標だ。"
+      },
+      {
+        "id": "rover-deck",
+        "label": "ローバーの甲板",
+        "body": "Mastcam-Z の 360° 画像すべての手前に写る、太陽電池パネルのような甲板。右には試料チューブの保管庫が見える。"
+      }
+    ]
+  },
+  "mars3": {
+    "panorama_caption": "火星への最初の軟着陸 — 信号が途絶えるまでに 14.5 秒分の走査データが送信された。この場所には（まだ）Tier-3 のパノラマはなく、Tier-2 の CTX 画像の文脈の中で、当時の断片をありのままに見せている。"
+  },
+  "change4": {
+    "panorama_caption": "月の裏側から初めて送られてきたパノラマ。South Pole–Aitken Basin の中にある Von Kármán クレーター。中ほどに Yutu-2 ローバー、左下に着陸機の影。",
+    "compass_zero_direction": "着陸機カメラの +X 軸",
+    "panorama_annotations": [
+      {
+        "id": "yutu2",
+        "label": "Yutu-2 ローバー",
+        "body": "月の裏側で初めてのローバー。5 年以上たった今も稼働中（月面ローバーの最長記録）。"
+      },
+      {
+        "id": "von-karman-rim",
+        "label": "Von Kármán クレーターの縁",
+        "body": "South Pole–Aitken Basin の中にある直径 180 km のクレーターの内縁 — 月で最大かつ最古の衝突構造。"
+      },
+      {
+        "id": "change4-shadow",
+        "label": "Chang'e 4 着陸機の影",
+        "body": "レゴリスに落ちた着陸機自身の影 — 搭載の地形カメラで撮影。"
+      }
+    ]
+  },
+  "chandrayaan3": {
+    "panorama_caption": "Shiv Shakti Point — 月の南極から初めてのパノラマ。手前に Vikram 着陸機の影。この画像の直後に Pragyan ローバーがレゴリスへ降ろされた。",
+    "compass_zero_direction": "着陸機イメージャーの +X 軸",
+    "panorama_annotations": [
+      {
+        "id": "pragyan",
+        "label": "Pragyan ローバー（ソル +1 に展開）",
+        "body": "質量 26 kg の 6 輪ローバー。着陸の翌日に Vikram のスロープから降ろされ、月の夜が来るまで（地球の約 14 日間）稼働した。"
+      },
+      {
+        "id": "south-pole-rim",
+        "label": "南極のクレーターの縁",
+        "body": "月の南極にこれほど近い場所への初めての軟着陸成功 — 水の氷を探す有望地域。"
+      }
+    ]
+  },
+  "vandenberg-slc-4e": {
+    "panorama_caption": "上空から見た Vandenberg SLC-4E（Falcon 9）と SLC-4W — 航空写真であり、地上からのパノラマではない。",
+    "compass_zero_direction": "写真の中心（実際の方位は未校正）"
+  },
+  "baikonur-1-5": {
+    "panorama_caption": "Soyuz TMA-13 の搬出前の Gagarin's Start（Site 1/5）— 非常に低解像度のバナー状の切り抜き。",
+    "compass_zero_direction": "写真の中心（実際の方位は未校正）"
+  },
+  "baikonur-31-6": {
+    "panorama_caption": "Soyuz の整備塔の最上部から見た Baikonur Site 31/6 — 眼下に発射台の火炎溝、地平線には草原と Zenit の施設。",
+    "compass_zero_direction": "写真の中心（実際の方位は未校正）"
+  },
+  "jiuquan-slc-43": {
+    "panorama_caption": "遠くから見た Jiuquan Satellite Launch Center の主発射塔 — ゴビ砂漠を横切る低解像度のパノラマ帯。",
+    "compass_zero_direction": "写真の中心（実際の方位は未校正）"
+  },
+  "wenchang-lc-101": {
+    "panorama_caption": "淇水湾の向こうの Wenchang 発射場 — 浜辺から見た LC-101 の塔、遠くの海岸線の眺め。",
+    "compass_zero_direction": "写真の中心（実際の方位は未校正）"
+  },
+  "sriharikota-slp": {
+    "panorama_caption": "Satish Dhawan Space Centre、シュリーハリコータ — Vehicle Integration Facility から発射台へ移動中の PSLV-C61。",
+    "compass_zero_direction": "写真の中心（実際の方位は未校正）"
+  }
+}

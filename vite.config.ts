@@ -555,6 +555,8 @@ export default defineConfig(({ mode, command }) => {
           'scripts/_*.ts',
           'scripts/hotspots/',
           'scripts/gcat/',
+          // Hand-run translation editing tools; they never run in the app.
+          'scripts/i18n-tools/',
           'src/lib/launches/sources/',
           'scripts/fetch-launches.ts',
           'scripts/audit-report-launches.ts',

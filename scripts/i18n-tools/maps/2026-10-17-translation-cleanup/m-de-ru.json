@@ -1,0 +1,32 @@
+[
+  {
+    "loc": "de",
+    "file": "tiangong-modules/wentian",
+    "paths": ["name"]
+  },
+  {
+    "loc": "de",
+    "file": "rockets/long-march-5",
+    "paths": ["description"]
+  },
+  {
+    "loc": "de",
+    "file": "science/observation/andromeda-galaxy",
+    "paths": ["body_paragraphs.3"]
+  },
+  {
+    "loc": "ru",
+    "file": "science/observation/andromeda-galaxy",
+    "paths": ["body_paragraphs.3"]
+  },
+  {
+    "loc": "ru",
+    "file": "missions/comet/giotto",
+    "paths": ["events.3.label"]
+  },
+  {
+    "loc": "ru",
+    "file": "universe/named-stars/mimosa",
+    "paths": ["cultural"]
+  }
+]

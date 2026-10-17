@@ -1,0 +1,86 @@
+{
+  "missions/earth/aurora-7": {
+    "events": [
+      { "label": "LANCIO", "note": "Atlas LV-3B da Cape Canaveral LC-14, 1962-05-24 12:45 UTC." },
+      {
+        "label": "INSERIMENTO IN ORBITA",
+        "note": "Inserimento in un'orbita terrestre di 161 × 268 km."
+      },
+      {
+        "label": "AMMARAGGIO",
+        "note": "Oceano Atlantico, ~400 km oltre il bersaglio; 1 h 7 min di ritardo nel recupero. USS Pierce, USS Intrepid."
+      }
+    ]
+  },
+  "missions/earth/faith-7": {
+    "events": [
+      { "label": "LANCIO", "note": "Atlas LV-3B da Cape Canaveral LC-14, 1963-05-15 13:04 UTC." },
+      {
+        "label": "INSERIMENTO IN ORBITA",
+        "note": "Inserimento in un'orbita terrestre di 161 × 267 km."
+      },
+      {
+        "label": "GUASTO ELETTRICO",
+        "note": "Guasto all'alimentazione elettrica; Cooper passa al controllo d'assetto manuale + accensione dei retrorazzi — da qui la sua fama di «miglior pilota»."
+      },
+      {
+        "label": "AMMARAGGIO",
+        "note": "Oceano Pacifico, a ~7 km dal bersaglio dopo 22 orbite / 34 h 19 min. Recupero da parte della USS Kearsarge."
+      }
+    ]
+  },
+  "missions/earth/freedom-7": {
+    "events": [
+      {
+        "label": "LANCIO",
+        "note": "Mercury-Redstone 3 (MR-3) da Cape Canaveral LC-5, 1961-05-05 14:34 UTC."
+      },
+      {
+        "label": "APOGEO",
+        "note": "Apogeo di 187 km dopo 2,5 minuti; assenza di peso per ~5 min."
+      },
+      {
+        "label": "AMMARAGGIO",
+        "note": "La capsula è ammarata a 487 km di distanza nell'Oceano Atlantico. Recupero da parte della USS Lake Champlain."
+      }
+    ]
+  },
+  "missions/earth/friendship-7": {
+    "events": [
+      { "label": "LANCIO", "note": "Atlas LV-3B da Cape Canaveral LC-14, 1962-02-20 14:47 UTC." },
+      {
+        "label": "INSERIMENTO IN ORBITA",
+        "note": "Inserimento in un'orbita terrestre di 159 × 265 km, inclinazione 32,5°."
+      },
+      {
+        "label": "«LUCCIOLE»",
+        "note": "Glenn riferisce di «lucciole» luminose fuori dal finestrino — frammenti del retro-pacco che bruciano durante il rientro."
+      },
+      {
+        "label": "AMMARAGGIO",
+        "note": "La capsula è ammarata a 1287 km a sud-est di Cape Canaveral dopo 3 orbite / 4 h 55 min. Recupero da parte della USS Noa."
+      }
+    ]
+  },
+  "planets/arrokoth": { "links": "COPY" },
+  "satellites/moon": {
+    "library_labels": {
+      "moon-wiki": "Wikipedia — Luna",
+      "moon-nasa-overview": "NASA Science — panoramica sulla Luna",
+      "moon-apollo": "Programma Apollo della NASA — archivio delle missioni di allunaggio",
+      "moon-artemis": "NASA Artemis — programma con equipaggio per il ritorno sulla Luna",
+      "moon-lroc": "LROC — archivio immagini della Lunar Reconnaissance Orbiter Camera"
+    },
+    "mission_visits": [
+      "Luna 2 — URSS, 1959 (primo oggetto artificiale sulla Luna)",
+      "Apollo 11 — USA, 1969 (primo allunaggio con equipaggio)",
+      "Luna 16 — URSS, 1970 (primo ritorno robotico di campioni)",
+      "Chang'e 4 — Cina, 2019 (primo atterraggio sulla faccia nascosta)",
+      "Chandrayaan-3 — India, 2023 (primo atterraggio al polo sud)"
+    ],
+    "surface_composition": "Altopiani di anortosite (silicati di calcio e alluminio) + mari basaltici invasi da antiche colate laviche; regolite profonda 4–15 m; tracce di ghiaccio d'acqua nei crateri polari in ombra perenne."
+  },
+  "science/transfers/coplanar-trajectories": {
+    "diagram_caption": "Il Sistema solare è quasi piatto perché i pianeti si sono formati da un unico disco in rotazione. Le partenze restano su quel piano perché i cambi di piano costano un propellente proibitivo."
+  }
+}

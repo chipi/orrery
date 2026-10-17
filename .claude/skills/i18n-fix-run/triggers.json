@@ -1,0 +1,4 @@
+{
+  "prompt": ["\\b(re-?translat|names pass|fix the (translation )?hits|translate the missing)"],
+  "bash": ["scripts/translate-[a-z-]+\\.mjs", "retranslate-fields\\.mjs", "i18n-names-pass\\.mjs"]
+}

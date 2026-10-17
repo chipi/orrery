@@ -128,7 +128,8 @@ export function designations(src) {
   if (!src) return [];
   const out = new Set();
   for (const m of src.matchAll(/\b[A-Z][A-Za-z]{0,6}-?\d+[A-Za-z]?\b/g))
-    if (/-|[A-Z]\d|[a-z]\d/.test(m[0]) && !/^[A-Z][a-z]+\d{4}$/.test(m[0])) out.add(m[0]);
+    if (/-|[A-Z]\d|[a-z]\d/.test(m[0]) && !/^[A-Z][a-z]+\d{4}$/.test(m[0]))
+      out.add(m[0].replace(/(\d)s$/, '$1')); // plural "F-1s" → the name is "F-1"
   for (const m of src.matchAll(/\b[A-Z][a-z]+[A-Z][A-Za-z]+\b/g)) out.add(m[0]);
   for (const n of knownDigitNames()) {
     if (!src.includes(n)) continue;

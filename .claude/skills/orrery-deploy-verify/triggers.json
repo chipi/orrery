@@ -1,0 +1,4 @@
+{
+  "prompt": ["\\b(check staging|did the deploy work|verify (prod|staging|the deploy)|validate the deploy|is staging isolated)\\b"],
+  "bash": ["validate-prod\\.mjs", "gh\\s+workflow\\s+run\\s+\"?Deploy"]
+}

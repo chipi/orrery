@@ -1,0 +1,4 @@
+{
+  "prompt": ["\\b(translation quality|audit (the )?(locale|translations?|language)|garbled|broken (translation|serbian|text)|are the translations)\\b"],
+  "bash": ["i18n-detect\\.mjs", "i18n-segment-sample\\.mjs"]
+}

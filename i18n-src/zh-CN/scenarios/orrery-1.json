@@ -1,7 +1,7 @@
 {
   "name": "ORRERY DEMO",
-  "dep_label": "Earth dep",
-  "arr_label": "Earth return",
+  "dep_label": "地球出发",
+  "arr_label": "返回地球",
   "events": [
     { "met": 0, "label": "发射", "note": "Falcon Heavy 升空。自由返回轨道——无着陆。", "type": "nominal" },
     { "met": 0.4, "label": "TMI 点火", "note": "火星转移注入：3.61 km/s。达到逃逸速度。", "type": "nominal" },

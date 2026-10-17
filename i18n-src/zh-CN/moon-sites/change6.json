@@ -1,9 +1,9 @@
 {
   "name": "Chang'e 6",
   "mission_type": "Uncrewed Sample Return (Far Side)",
-  "site_name": "Apollo Crater (far side)",
+  "site_name": "Apollo Crater（月背）",
   "crew": [],
-  "left": "Descent stage",
+  "left": "下降级",
   "fact": "首次从月球背面采样返回——可能是自Apollo以来最具科学意义的月球任务。月球背面物质（厚壳层、较古老的表面、不同的组成）此前完全未被研究过。这些样本可能最终能够解释为什么月球的两个半球如此根本上不同。",
   "capability": "从中继站点采样返回——结合了Chang'e 4（背面通信）和Chang'e 5（采样返回）的架构。具备火星样本返回在任何纬度所需的全套能力。"
 }

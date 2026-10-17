@@ -1,0 +1,24 @@
+{
+  "stops": [
+    {
+      "id": "sol-56",
+      "label": "Endurance Crater"
+    },
+    {
+      "id": "sol-1232",
+      "label": "Erebus Crater"
+    },
+    {
+      "id": "sol-1820",
+      "label": "Victoria Crater"
+    },
+    {
+      "id": "sol-3010",
+      "label": "抵达 Endeavour Crater 边缘"
+    },
+    {
+      "id": "sol-4500",
+      "label": "Marathon Valley"
+    }
+  ]
+}

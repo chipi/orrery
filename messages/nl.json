@@ -3147,5 +3147,9 @@
   "error_typo_hint": "Dit lijkt een typefout: querystrings beginnen met ? (niet &).",
   "error_go_to": "Ga naar",
   "error_back_home": "Terug naar startpagina",
-  "error_debug_tip": "Voeg {flag} toe aan een route-URL om het debug-paneel te openen (bijv. {example})."
+  "error_debug_tip": "Voeg {flag} toe aan een route-URL om het debug-paneel te openen (bijv. {example}).",
+  "traverse_current_rover_position": "Huidige positie van de rover",
+  "traverse_final_rover_position": "Laatste positie van de rover",
+  "traverse_current_position": "Huidige positie",
+  "traverse_sol": "Sol {sol}"
 }

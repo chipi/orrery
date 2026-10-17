@@ -1,0 +1,24 @@
+{
+  "stops": [
+    {
+      "id": "sol-90",
+      "label": "Bonneville Crater rim"
+    },
+    {
+      "id": "sol-590",
+      "label": "Husband Hill base"
+    },
+    {
+      "id": "sol-1000",
+      "label": "Husband Hill summit"
+    },
+    {
+      "id": "sol-1500",
+      "label": "Home Plate volcanic feature"
+    },
+    {
+      "id": "sol-2210",
+      "label": "Last contact — Troy"
+    }
+  ]
+}

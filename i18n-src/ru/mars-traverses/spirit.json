@@ -1,0 +1,24 @@
+{
+  "stops": [
+    {
+      "id": "sol-90",
+      "label": "Край Bonneville Crater"
+    },
+    {
+      "id": "sol-590",
+      "label": "Подножие Husband Hill"
+    },
+    {
+      "id": "sol-1000",
+      "label": "Вершина Husband Hill"
+    },
+    {
+      "id": "sol-1500",
+      "label": "Вулканическое образование Home Plate"
+    },
+    {
+      "id": "sol-2210",
+      "label": "Последний сеанс связи — Troy"
+    }
+  ]
+}

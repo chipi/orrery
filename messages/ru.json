@@ -3147,5 +3147,9 @@
   "error_typo_hint": "Похоже на опечатку: строки запроса начинаются с ? (а не &).",
   "error_go_to": "Перейти на",
   "error_back_home": "На главную",
-  "error_debug_tip": "Добавьте {flag} в конец любого URL маршрута, чтобы открыть панель отладки (например, {example})."
+  "error_debug_tip": "Добавьте {flag} в конец любого URL маршрута, чтобы открыть панель отладки (например, {example}).",
+  "traverse_current_rover_position": "Текущее положение ровера",
+  "traverse_final_rover_position": "Последнее положение ровера",
+  "traverse_current_position": "Текущее положение",
+  "traverse_sol": "Сол {sol}"
 }

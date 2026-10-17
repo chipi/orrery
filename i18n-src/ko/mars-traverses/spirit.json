@@ -1,0 +1,24 @@
+{
+  "stops": [
+    {
+      "id": "sol-90",
+      "label": "Bonneville Crater 가장자리"
+    },
+    {
+      "id": "sol-590",
+      "label": "Husband Hill 기슭"
+    },
+    {
+      "id": "sol-1000",
+      "label": "Husband Hill 정상"
+    },
+    {
+      "id": "sol-1500",
+      "label": "화산 지형 Home Plate"
+    },
+    {
+      "id": "sol-2210",
+      "label": "마지막 교신 — Troy"
+    }
+  ]
+}

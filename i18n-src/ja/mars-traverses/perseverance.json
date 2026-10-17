@@ -1,0 +1,24 @@
+{
+  "stops": [
+    {
+      "id": "sol-38",
+      "label": "Ingenuity 初飛行"
+    },
+    {
+      "id": "sol-200",
+      "label": "試料 1 — Rochette"
+    },
+    {
+      "id": "sol-421",
+      "label": "Three Forks 試料保管所"
+    },
+    {
+      "id": "sol-750",
+      "label": "Hawksbill Gap"
+    },
+    {
+      "id": "sol-1000",
+      "label": "Margin ユニットの走行"
+    }
+  ]
+}

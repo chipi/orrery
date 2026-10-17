@@ -3147,5 +3147,9 @@
   "error_typo_hint": "Sembra un errore di digitazione: le stringhe di query iniziano con ? (non &).",
   "error_go_to": "Vai a",
   "error_back_home": "Torna alla home",
-  "error_debug_tip": "Aggiungi {flag} a qualsiasi URL di route per aprire il pannello di debug (es. {example})."
+  "error_debug_tip": "Aggiungi {flag} a qualsiasi URL di route per aprire il pannello di debug (es. {example}).",
+  "traverse_current_rover_position": "Posizione attuale del rover",
+  "traverse_final_rover_position": "Posizione finale del rover",
+  "traverse_current_position": "Posizione attuale",
+  "traverse_sol": "Sol {sol}"
 }

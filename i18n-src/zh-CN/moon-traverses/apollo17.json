@@ -1,0 +1,40 @@
+{
+  "stops": [
+    {
+      "id": "station-1",
+      "label": "第 1 站"
+    },
+    {
+      "id": "station-2",
+      "label": "第 2 站"
+    },
+    {
+      "id": "station-3",
+      "label": "第 3 站"
+    },
+    {
+      "id": "station-4",
+      "label": "第 4 站"
+    },
+    {
+      "id": "station-5",
+      "label": "第 5 站"
+    },
+    {
+      "id": "station-6",
+      "label": "第 6 站"
+    },
+    {
+      "id": "station-7",
+      "label": "第 7 站"
+    },
+    {
+      "id": "station-8",
+      "label": "第 8 站"
+    },
+    {
+      "id": "station-9",
+      "label": "第 9 站"
+    }
+  ]
+}

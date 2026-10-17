@@ -3147,5 +3147,9 @@
   "error_typo_hint": "Semble être une faute de frappe : les chaînes de requête commencent par ? (pas &).",
   "error_go_to": "Aller à",
   "error_back_home": "Retour à l'accueil",
-  "error_debug_tip": "Ajoutez {flag} à n'importe quelle URL de route pour ouvrir le panneau de débogage (ex. {example})."
+  "error_debug_tip": "Ajoutez {flag} à n'importe quelle URL de route pour ouvrir le panneau de débogage (ex. {example}).",
+  "traverse_current_rover_position": "Position actuelle du rover",
+  "traverse_final_rover_position": "Position finale du rover",
+  "traverse_current_position": "Position actuelle",
+  "traverse_sol": "Sol {sol}"
 }

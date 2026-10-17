@@ -1,0 +1,40 @@
+{
+  "stops": [
+    {
+      "id": "station-1",
+      "label": "ステーション 1"
+    },
+    {
+      "id": "station-2",
+      "label": "ステーション 2"
+    },
+    {
+      "id": "station-3",
+      "label": "ステーション 3"
+    },
+    {
+      "id": "station-4",
+      "label": "ステーション 4"
+    },
+    {
+      "id": "station-5",
+      "label": "ステーション 5"
+    },
+    {
+      "id": "station-6",
+      "label": "ステーション 6"
+    },
+    {
+      "id": "station-7",
+      "label": "ステーション 7"
+    },
+    {
+      "id": "station-8",
+      "label": "ステーション 8"
+    },
+    {
+      "id": "station-9",
+      "label": "ステーション 9"
+    }
+  ]
+}

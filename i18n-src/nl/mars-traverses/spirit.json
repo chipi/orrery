@@ -1,0 +1,24 @@
+{
+  "stops": [
+    {
+      "id": "sol-90",
+      "label": "Rand van Bonneville Crater"
+    },
+    {
+      "id": "sol-590",
+      "label": "Voet van Husband Hill"
+    },
+    {
+      "id": "sol-1000",
+      "label": "Top van Husband Hill"
+    },
+    {
+      "id": "sol-1500",
+      "label": "Vulkanische structuur Home Plate"
+    },
+    {
+      "id": "sol-2210",
+      "label": "Laatste contact — Troy"
+    }
+  ]
+}

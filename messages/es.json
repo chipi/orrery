@@ -3147,5 +3147,9 @@
   "error_typo_hint": "Parece que hay un error: las cadenas de consulta comienzan con ? (no con &).",
   "error_go_to": "Ir a",
   "error_back_home": "Volver al inicio",
-  "error_debug_tip": "Añade {flag} a cualquier URL de ruta para abrir el panel de depuración (p. ej. {example})."
+  "error_debug_tip": "Añade {flag} a cualquier URL de ruta para abrir el panel de depuración (p. ej. {example}).",
+  "traverse_current_rover_position": "Posición actual del rover",
+  "traverse_final_rover_position": "Posición final del rover",
+  "traverse_current_position": "Posición actual",
+  "traverse_sol": "Sol {sol}"
 }

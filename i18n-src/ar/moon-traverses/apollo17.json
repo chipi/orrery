@@ -1,0 +1,40 @@
+{
+  "stops": [
+    {
+      "id": "station-1",
+      "label": "المحطة 1"
+    },
+    {
+      "id": "station-2",
+      "label": "المحطة 2"
+    },
+    {
+      "id": "station-3",
+      "label": "المحطة 3"
+    },
+    {
+      "id": "station-4",
+      "label": "المحطة 4"
+    },
+    {
+      "id": "station-5",
+      "label": "المحطة 5"
+    },
+    {
+      "id": "station-6",
+      "label": "المحطة 6"
+    },
+    {
+      "id": "station-7",
+      "label": "المحطة 7"
+    },
+    {
+      "id": "station-8",
+      "label": "المحطة 8"
+    },
+    {
+      "id": "station-9",
+      "label": "المحطة 9"
+    }
+  ]
+}

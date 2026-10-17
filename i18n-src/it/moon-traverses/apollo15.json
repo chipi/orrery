@@ -1,0 +1,20 @@
+{
+  "stops": [
+    {
+      "id": "station-2",
+      "label": "Stazione 2 · St. George"
+    },
+    {
+      "id": "station-1",
+      "label": "Stazione 1 · Elbow"
+    },
+    {
+      "id": "station-4",
+      "label": "Stazione 4 · Dune"
+    },
+    {
+      "id": "station-7",
+      "label": "Stazione 7 · Spur"
+    }
+  ]
+}

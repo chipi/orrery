@@ -1,0 +1,40 @@
+{
+  "stops": [
+    {
+      "id": "station-1",
+      "label": "Станица 1"
+    },
+    {
+      "id": "station-2",
+      "label": "Станица 2"
+    },
+    {
+      "id": "station-3",
+      "label": "Станица 3"
+    },
+    {
+      "id": "station-4",
+      "label": "Станица 4"
+    },
+    {
+      "id": "station-5",
+      "label": "Станица 5"
+    },
+    {
+      "id": "station-6",
+      "label": "Станица 6"
+    },
+    {
+      "id": "station-7",
+      "label": "Станица 7"
+    },
+    {
+      "id": "station-8",
+      "label": "Станица 8"
+    },
+    {
+      "id": "station-9",
+      "label": "Станица 9"
+    }
+  ]
+}

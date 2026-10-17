@@ -1,0 +1,24 @@
+{
+  "stops": [
+    {
+      "id": "sol-90",
+      "label": "Borda da Bonneville Crater"
+    },
+    {
+      "id": "sol-590",
+      "label": "Base de Husband Hill"
+    },
+    {
+      "id": "sol-1000",
+      "label": "Cume de Husband Hill"
+    },
+    {
+      "id": "sol-1500",
+      "label": "Formação vulcânica Home Plate"
+    },
+    {
+      "id": "sol-2210",
+      "label": "Último contato — Troy"
+    }
+  ]
+}

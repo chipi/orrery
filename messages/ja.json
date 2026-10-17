@@ -3147,5 +3147,9 @@
   "error_typo_hint": "タイプミスのようです：クエリ文字列は & ではなく ? で始まります。",
   "error_go_to": "移動",
   "error_back_home": "ホームに戻る",
-  "error_debug_tip": "任意のルート URL に {flag} を追加するとデバッグパネルが開きます（例: {example}）。"
+  "error_debug_tip": "任意のルート URL に {flag} を追加するとデバッグパネルが開きます（例: {example}）。",
+  "traverse_current_rover_position": "ローバーの現在位置",
+  "traverse_final_rover_position": "ローバーの最終位置",
+  "traverse_current_position": "現在位置",
+  "traverse_sol": "ソル {sol}"
 }

@@ -251,9 +251,31 @@ export async function getMarsSites(locale = 'en-US'): Promise<MarsSite[]> {
 }
 
 /** Mars rover traverse polylines (PRD-009 §what-comes-after). */
-export async function getMarsTraverse(roverId: string): Promise<Traverse | null> {
-  const t = await get<Traverse>(`mars-traverses/${roverId}.json`).catch(() => null);
-  if (!t) return null;
+/** Merge a traverse's per-locale stop labels (`i18n/<locale>/<dir>/<rover>.json`,
+ *  `{ stops: [{ id, label }] }`) into the base stops by id; positions stay base. */
+async function withStopLabels(t: Traverse, dir: string, roverId: string, locale: string) {
+  if (locale === 'en-US' || !t.stops?.length) return t;
+  const o = await get<{ stops?: Array<{ id: string; label?: string }> }>(
+    `i18n/${locale}/${dir}/${roverId}.json`,
+  ).catch(() => null);
+  const byId = new Map((o?.stops ?? []).map((s) => [s.id, s.label]));
+  if (!byId.size) return t;
+  return {
+    ...t,
+    stops: t.stops.map((s) => {
+      const label = s.id ? byId.get(s.id) : undefined;
+      return label ? { ...s, label } : s;
+    }),
+  };
+}
+
+export async function getMarsTraverse(
+  roverId: string,
+  locale = 'en-US',
+): Promise<Traverse | null> {
+  const base = await get<Traverse>(`mars-traverses/${roverId}.json`).catch(() => null);
+  if (!base) return null;
+  const t = await withStopLabels(base, 'mars-traverses', roverId, locale);
   // Along-route HiRISE patches (#360) — optional sidecar manifest. Only fetched
   // when the traverse declares `has_route_patches`, so rovers without a sidecar
   // don't 404 on a file that was never generated.
@@ -268,9 +290,13 @@ export async function getMarsTraverse(roverId: string): Promise<Traverse | null>
 
 /** Moon rover traverse polylines (#361 follow-on) — Lunokhod 1/2, Yutu,
  *  Yutu-2, Pragyan. Same shape + along-route patch sidecar as Mars. */
-export async function getMoonTraverse(roverId: string): Promise<Traverse | null> {
-  const t = await get<Traverse>(`moon-traverses/${roverId}.json`).catch(() => null);
-  if (!t) return null;
+export async function getMoonTraverse(
+  roverId: string,
+  locale = 'en-US',
+): Promise<Traverse | null> {
+  const base = await get<Traverse>(`moon-traverses/${roverId}.json`).catch(() => null);
+  if (!base) return null;
+  const t = await withStopLabels(base, 'moon-traverses', roverId, locale);
   // Only apollo16/apollo17 have a route-patches sidecar; gate on the flag so the
   // other Moon traverses don't 404 (see getMarsTraverse).
   if (t.has_route_patches) {

@@ -237,7 +237,7 @@
     ];
     const entries = await Promise.all(
       ids.map(async (id) => {
-        const t = await getMoonTraverse(id);
+        const t = await getMoonTraverse(id, getLocale());
         return t ? ([id, t] as const) : null;
       }),
     );

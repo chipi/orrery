@@ -967,6 +967,22 @@ describe('getMarsTraverse', () => {
     const t = await getMarsTraverse('ghost-rover');
     expect(t).toBeNull();
   });
+
+  it('merges per-locale stop labels by id, positions unchanged', async () => {
+    const [en, de, zh] = await Promise.all([
+      getMarsTraverse('zhurong'),
+      getMarsTraverse('zhurong', 'de'),
+      getMarsTraverse('zhurong', 'zh-CN'),
+    ]);
+    const label = (t: typeof en, id: string) => t!.stops!.find((s) => s.id === id)?.label;
+    const id = en!.stops![0].id;
+    expect(label(en, id)).toBe('450 m due south');
+    expect(label(de, id)).toBe('450 m genau nach Süden');
+    expect(label(zh, id)).toBe('正南 450 米');
+    expect(de!.stops!.map((s) => s.lat)).toEqual(en!.stops!.map((s) => s.lat));
+    const moon = await getMoonTraverse('apollo15', 'ru');
+    expect(moon!.stops!.find((s) => s.id === 'station-2')?.label).toBe('Станция 2 · St. George');
+  });
 });
 
 describe('Tiangong modules + visitors (PRD-011)', () => {

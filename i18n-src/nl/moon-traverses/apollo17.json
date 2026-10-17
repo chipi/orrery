@@ -1,0 +1,40 @@
+{
+  "stops": [
+    {
+      "id": "station-1",
+      "label": "Station 1"
+    },
+    {
+      "id": "station-2",
+      "label": "Station 2"
+    },
+    {
+      "id": "station-3",
+      "label": "Station 3"
+    },
+    {
+      "id": "station-4",
+      "label": "Station 4"
+    },
+    {
+      "id": "station-5",
+      "label": "Station 5"
+    },
+    {
+      "id": "station-6",
+      "label": "Station 6"
+    },
+    {
+      "id": "station-7",
+      "label": "Station 7"
+    },
+    {
+      "id": "station-8",
+      "label": "Station 8"
+    },
+    {
+      "id": "station-9",
+      "label": "Station 9"
+    }
+  ]
+}

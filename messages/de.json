@@ -3147,5 +3147,9 @@
   "error_page_title": "Seite nicht gefunden",
   "error_go_to": "Gehe zu",
   "error_back_home": "Zurück zur Startseite",
-  "error_debug_tip": "Fügen Sie {flag} an jede Route-URL an, um das Debug-Panel zu öffnen (z. B. {example})."
+  "error_debug_tip": "Fügen Sie {flag} an jede Route-URL an, um das Debug-Panel zu öffnen (z. B. {example}).",
+  "traverse_current_rover_position": "Aktuelle Rover-Position",
+  "traverse_final_rover_position": "Letzte Rover-Position",
+  "traverse_current_position": "Aktuelle Position",
+  "traverse_sol": "Sol {sol}"
 }

@@ -3147,5 +3147,9 @@
   "error_typo_hint": "टाइपो लगता है: क्वेरी स्ट्रिंग्स ? से शुरू होती हैं (& से नहीं)।",
   "error_go_to": "जाएँ",
   "error_back_home": "होम पर वापस जाएँ",
-  "error_debug_tip": "डीबग पैनल खोलने के लिए किसी भी रूट URL में {flag} जोड़ें (उदा. {example})।"
+  "error_debug_tip": "डीबग पैनल खोलने के लिए किसी भी रूट URL में {flag} जोड़ें (उदा. {example})।",
+  "traverse_current_rover_position": "रोवर की वर्तमान स्थिति",
+  "traverse_final_rover_position": "रोवर की अंतिम स्थिति",
+  "traverse_current_position": "वर्तमान स्थिति",
+  "traverse_sol": "सोल {sol}"
 }

@@ -3147,5 +3147,9 @@
   "error_typo_hint": "يبدو أن هناك خطأ في الكتابة: تبدأ سلاسل الاستعلام بـ ? (وليس &).",
   "error_go_to": "انتقل إلى",
   "error_back_home": "العودة إلى الصفحة الرئيسية",
-  "error_debug_tip": "أضف {flag} إلى أي عنوان URL للمسار لفتح لوحة التصحيح (مثال: {example})."
+  "error_debug_tip": "أضف {flag} إلى أي عنوان URL للمسار لفتح لوحة التصحيح (مثال: {example}).",
+  "traverse_current_rover_position": "الموقع الحالي للمركبة الجوّالة",
+  "traverse_final_rover_position": "الموقع الأخير للمركبة الجوّالة",
+  "traverse_current_position": "الموقع الحالي",
+  "traverse_sol": "اليوم المريخي {sol}"
 }

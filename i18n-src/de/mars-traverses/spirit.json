@@ -1,0 +1,24 @@
+{
+  "stops": [
+    {
+      "id": "sol-90",
+      "label": "Rand des Bonneville Crater"
+    },
+    {
+      "id": "sol-590",
+      "label": "Fuß des Husband Hill"
+    },
+    {
+      "id": "sol-1000",
+      "label": "Gipfel des Husband Hill"
+    },
+    {
+      "id": "sol-1500",
+      "label": "Vulkanische Struktur Home Plate"
+    },
+    {
+      "id": "sol-2210",
+      "label": "Letzter Kontakt — Troy"
+    }
+  ]
+}

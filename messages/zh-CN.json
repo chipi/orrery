@@ -3147,5 +3147,9 @@
   "error_page_title": "页面未找到",
   "error_go_to": "前往",
   "error_back_home": "返回主页",
-  "error_debug_tip": "在任何路由 URL 后附加 {flag} 以打开调试面板（例如 {example}）。"
+  "error_debug_tip": "在任何路由 URL 后附加 {flag} 以打开调试面板（例如 {example}）。",
+  "traverse_current_rover_position": "巡视器当前位置",
+  "traverse_final_rover_position": "巡视器最终位置",
+  "traverse_current_position": "当前位置",
+  "traverse_sol": "火星日 {sol}"
 }

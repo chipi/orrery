@@ -3147,5 +3147,9 @@
   "error_page_title": "Страна није пронађена",
   "error_go_to": "Иди на",
   "error_back_home": "Назад на почетну страну",
-  "error_debug_tip": "Додајте {flag} било којем URL-у маршруте да отворите панел за отклањање грешака (нпр. {example})."
+  "error_debug_tip": "Додајте {flag} било којем URL-у маршруте да отворите панел за отклањање грешака (нпр. {example}).",
+  "traverse_current_rover_position": "Тренутни положај ровера",
+  "traverse_final_rover_position": "Последњи положај ровера",
+  "traverse_current_position": "Тренутни положај",
+  "traverse_sol": "Сол {sol}"
 }

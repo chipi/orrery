@@ -52,7 +52,7 @@
     const ids = ['curiosity', 'perseverance', 'opportunity', 'spirit', 'zhurong'];
     const entries = await Promise.all(
       ids.map(async (id) => {
-        const t = await getMarsTraverse(id);
+        const t = await getMarsTraverse(id, getLocale());
         return t ? ([id, t] as const) : null;
       }),
     );

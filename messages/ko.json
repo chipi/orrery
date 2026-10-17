@@ -3147,5 +3147,9 @@
   "error_typo_hint": "오타인 것 같습니다: 쿼리 문자열은 &가 아닌 ?로 시작합니다.",
   "error_go_to": "이동",
   "error_back_home": "홈으로 돌아가기",
-  "error_debug_tip": "모든 경로 URL에 {flag}를 추가하여 디버그 패널을 열 수 있습니다 (예: {example})."
+  "error_debug_tip": "모든 경로 URL에 {flag}를 추가하여 디버그 패널을 열 수 있습니다 (예: {example}).",
+  "traverse_current_rover_position": "로버 현재 위치",
+  "traverse_final_rover_position": "로버 최종 위치",
+  "traverse_current_position": "현재 위치",
+  "traverse_sol": "솔 {sol}"
 }

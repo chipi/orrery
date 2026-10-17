@@ -2303,7 +2303,9 @@
           stopLat: last[0],
           stopLon: last[1],
           stopSol: endSol,
-          stopLabel: isActive ? 'Current rover position' : 'Final rover position',
+          stopLabel: isActive
+            ? m.traverse_current_rover_position()
+            : m.traverse_final_rover_position(),
         };
         planetMesh.add(endDot);
         tier2DelayedReveal.push(endDot);
@@ -3508,14 +3510,14 @@
       const ud = hit.object.userData;
       if (ud.kind === 'traverse-stop') {
         return {
-          title: `Sol ${ud.stopSol}`,
+          title: m.traverse_sol({ sol: ud.stopSol }),
           sol: ud.stopSol,
           label: ud.stopLabel,
         };
       }
       if (ud.kind === 'traverse-end') {
         return {
-          title: ud.stopLabel ?? 'Current position',
+          title: ud.stopLabel ?? m.traverse_current_position(),
           sol: ud.stopSol,
           lat: ud.stopLat,
           lon: ud.stopLon,
@@ -5909,7 +5911,9 @@ sample      ${debugInfo.projectedPxSample}`}
         <span class="label">{hoveredStopInfo.label}</span>
       {/if}
       {#if typeof hoveredStopInfo.sol === 'number'}
-        <span class="label mono">Sol {hoveredStopInfo.sol.toLocaleString()}</span>
+        <span class="label mono"
+          >{m.traverse_sol({ sol: hoveredStopInfo.sol.toLocaleString() })}</span
+        >
       {/if}
       {#if typeof hoveredStopInfo.lat === 'number' && typeof hoveredStopInfo.lon === 'number'}
         <span class="label mono">

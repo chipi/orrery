@@ -1,0 +1,24 @@
+{
+  "stops": [
+    {
+      "id": "sol-38",
+      "label": "Voo 1 do Ingenuity"
+    },
+    {
+      "id": "sol-200",
+      "label": "Amostra 1 — Rochette"
+    },
+    {
+      "id": "sol-421",
+      "label": "Depósito de amostras Three Forks"
+    },
+    {
+      "id": "sol-750",
+      "label": "Hawksbill Gap"
+    },
+    {
+      "id": "sol-1000",
+      "label": "Travessia da unidade Margin"
+    }
+  ]
+}

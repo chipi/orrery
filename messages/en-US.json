@@ -3147,5 +3147,9 @@
   "card_cat_station": "STATION",
   "card_cat_constellation": "CONSTELLATION",
   "card_label_photo": "PHOTO",
-  "card_label_sources": "SOURCES"
+  "card_label_sources": "SOURCES",
+  "traverse_current_rover_position": "Current rover position",
+  "traverse_final_rover_position": "Final rover position",
+  "traverse_current_position": "Current position",
+  "traverse_sol": "Sol {sol}"
 }

@@ -49,7 +49,7 @@ jobs:
           fi
 
       - name: Join the tailnet
-        uses: tailscale/github-action@306e68a486fd2350f2bfc3b19fcd143891a4a2d8 # v4
+        uses: tailscale/github-action@d1b6cd204f8dceda5b3eaad7f1f767be390056cd # v4
         with:
           authkey: ${{ secrets.TS_AUTHKEY }}
           tags: tag:gha-deployer

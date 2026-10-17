@@ -99,10 +99,15 @@ export function knownDigitNames() {
       else if (n.endsWith('.json')) {
         try {
           const j = JSON.parse(fs.readFileSync(p, 'utf8'));
-          for (const k of ['name', 'title', 'short_name'])
+          for (const k of ['name', 'short_name'])
+            // not 'title': article titles are translated
             if (typeof j[k] === 'string' && /\d/.test(j[k]) && j[k].length <= 40) {
-              KNOWN.add(j[k].trim());
-              const base = j[k].split(/\s+[—(]/)[0].trim(); // "Apollo 12 (Yankee Clipper)"
+              // The designation only: "Apollo 12 (Yankee Clipper)" → "Apollo 12",
+              // "Tianwen-1 orbiter" → "Tianwen-1" (descriptive words get translated).
+              const base = j[k]
+                .split(/\s+[—(/+]/)[0]
+                .replace(/(\s+[a-z][^\s]*)+$/, '')
+                .trim();
               if (/\d/.test(base)) KNOWN.add(base);
             }
         } catch {
@@ -181,7 +186,14 @@ export function problems(locale, src, out) {
   if (src.length > 40 && out.trim() === src.trim() && /[a-z]{4} [a-z]{3}/.test(src))
     p.push('returned the English unchanged');
   // English stop-words outside names/links/quotes from the source.
-  const stripped = out.replace(/\[[^\]]*\]\([^)]*\)/g, '').replace(/[“"«‘'][^”"»’']*[”"»’']/g, '');
+  let stripped = out.replace(/\[[^\]]*\]\([^)]*\)/g, '').replace(/[“"«‘'][^”"»’']*[”"»’']/g, '');
+  // Name spans copied from the source ("the Great Square of Pegasus") are allowed
+  // English under NAME_POLICY; only the rest is checked for stray English.
+  const spans =
+    src.match(
+      /(?:\bthe\s+)?[A-Z][\w'’-]*(?:\s+(?:of|the|and|de)\s+[A-Z][\w'’-]*|\s+[A-Z0-9][\w'’-]*)+/g,
+    ) || [];
+  for (const span of spans) stripped = stripped.split(span).join('');
   const enWords = (stripped.match(/\b(the|and|with|which|that|this|from|into|between)\b/gi) || [])
     .length;
   if (enWords >= 3) p.push('English words left in the translation');

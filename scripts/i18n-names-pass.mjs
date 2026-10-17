@@ -401,11 +401,23 @@ async function main() {
         }
         if (item.flat) tgt[x.at] = nu;
         else set(tgt, x.at, nu);
-        edits.push([x.cur, nu]);
+        edits.push({ at: x.at, old: x.cur, nu });
         s.edited++;
       });
     }
-    if (edits.length) writeJsonEdits(item.tgtPath, tgt, edits);
+    if (edits.length) {
+      const w = writeJsonEdits(item.tgtPath, edits, { flat: !!item.flat });
+      if (w.skipped.length) {
+        s.edited -= w.skipped.length;
+        s.rejected += w.skipped.length;
+        for (const at of w.skipped) {
+          keep(item, at);
+          kept.push(
+            `${item.loc} ${item.rel} :: ${at} — changed by someone else meanwhile; not overwritten`,
+          );
+        }
+      }
+    }
   }
   let i = 0;
   let done = 0;

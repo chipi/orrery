@@ -26,6 +26,7 @@ import path from 'node:path';
 import Anthropic from '@anthropic-ai/sdk';
 import { translationClient, translationModel } from './lib/translate-model.mjs';
 import { fixHomoglyphs, LANGUAGE_NAMES, problems } from './lib/translate-quality.mjs';
+import { writeJsonEdits } from './lib/json-surgical.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 // Rules and checks live in lib/translate-quality.mjs (shared with every
@@ -180,6 +181,7 @@ async function main() {
     }
     perLoc[u.loc] ||= { ok: 0, failed: 0 };
     if (result) {
+      (d.edits ||= []).push({ at: u.at, old: getKey(d.obj, u.file, u.at), nu: result });
       setKey(d.obj, u.file, u.at, result);
       d.changed++;
       perLoc[u.loc].ok++;
@@ -188,8 +190,18 @@ async function main() {
       failed.push(`${u.loc} ${u.file} :: ${u.at} — ${lastProblems.join('; ')}`);
       perLoc[u.loc].failed++;
     }
-    if (--d.pending === 0 && d.changed)
-      fs.writeFileSync(u.tgtPath, JSON.stringify(d.obj, null, 2) + '\n', 'utf8');
+    if (--d.pending === 0 && d.changed) {
+      // Re-reads the file and edits only these strings: keeps the layout and never
+      // overwrites a change another run made meanwhile (those are reported).
+      const w = writeJsonEdits(u.tgtPath, d.edits, { flat: u.file === 'messages' });
+      for (const at of w.skipped) {
+        failed.push(
+          `${u.loc} ${u.file} :: ${at} — changed by someone else meanwhile; not overwritten`,
+        );
+        perLoc[u.loc].ok--;
+        perLoc[u.loc].failed++;
+      }
+    }
     if (++done % 50 === 0) console.log(`  … ${done}/${units.length}`);
   }
   // Files run in parallel; a file's fields run in order, each seeing that file's

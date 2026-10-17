@@ -1,1 +1,17 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [],
+  "panorama_caption": "Shiv Shakti Point — 달 남극에서 찍은 첫 파노라마. 전경에 Vikram 착륙선의 그림자가 보이며, 이 사진 직후 Pragyan 로버가 레골리스 위로 내려갔다.",
+  "compass_zero_direction": "착륙선 이미저 +X 축",
+  "panorama_annotations": [
+    {
+      "id": "pragyan",
+      "label": "Pragyan 로버 (솔 +1에 전개)",
+      "body": "무게 26 kg의 6륜 로버. 착륙 다음 날 Vikram의 경사로로 내려갔고, 달의 밤이 올 때까지(지구 시간 ~14일) 작동했다."
+    },
+    {
+      "id": "south-pole-rim",
+      "label": "남극 크레이터 가장자리",
+      "body": "달 남극에 이렇게 가까이 연착륙한 첫 성공 사례 — 물 얼음 탐사 유망 지역."
+    }
+  ]
+}

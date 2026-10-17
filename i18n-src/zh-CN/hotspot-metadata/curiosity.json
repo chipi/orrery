@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [],
+  "panorama_caption": "位于 Gediz Vallis 沟道中的 Curiosity——巡视器在第 4220 个火星日钻取 Mammoth Lakes 样品（它在火星上的第 41 个样品）后拍摄的 360° 景观。左侧是刚完成钻探的机械臂；右侧是巡视器甲板；上方条带是真实的火星天空；中央向下延伸的是 Gediz Vallis 沟道——火星上首次发现纯硫晶体的地方。",
+  "compass_zero_direction": "巡视器正前方",
+  "panorama_annotations": [
+    {
+      "id": "gediz-vallis-channel",
+      "label": "Gediz Vallis 沟道",
+      "body": "沿 Mt. Sharp 山坡而下、由水流冲刻而成的古老沟道。Curiosity 在这里钻取了 Mammoth Lakes 样品——火星上首次发现的纯硫晶体。"
+    },
+    {
+      "id": "robotic-arm",
+      "label": "机械臂",
+      "body": "长 2 米的关节式机械臂，装有钻头、刷子和 APXS 光谱仪——在这个火星日完成 Mammoth Lakes 钻探后出现在左侧。"
+    },
+    {
+      "id": "mt-sharp-flank",
+      "label": "Mt. Sharp 下坡",
+      "body": "Aeolis Mons 的层状山坡——这座 5 千米高的山位于 Gale Crater 中央，Curiosity 自 2014 年起一直在攀登。"
+    }
+  ]
+}

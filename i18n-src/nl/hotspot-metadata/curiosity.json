@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [],
+  "panorama_caption": "Curiosity in de geul van Gediz Vallis — het 360°-beeld van de rover op sol 4220, na het boren van het monster Mammoth Lakes, zijn 41e op Mars. Links de robotarm, net klaar met boren; rechts het roverdek; bovenin echte Marshemel; in het midden de afdalende geul van Gediz Vallis — de eerste plek waar ooit zuivere zwavelkristallen op Mars zijn gevonden.",
+  "compass_zero_direction": "voorkant van de rover",
+  "panorama_annotations": [
+    {
+      "id": "gediz-vallis-channel",
+      "label": "Geul van Gediz Vallis",
+      "body": "Oude, door water uitgesleten geul op de hellingen van Mt. Sharp. Curiosity boorde hier het monster Mammoth Lakes — de eerste zuivere zwavelkristallen die ooit op Mars zijn gevonden."
+    },
+    {
+      "id": "robotic-arm",
+      "label": "Robotarm",
+      "body": "Scharnierende arm van 2 m met boor, borstel en APXS-spectrometer — links te zien na het voltooien van de boring Mammoth Lakes op deze sol."
+    },
+    {
+      "id": "mt-sharp-flank",
+      "label": "Lage flank van Mt. Sharp",
+      "body": "Gelaagde hellingen van Aeolis Mons, de 5 km hoge berg midden in Gale Crater die Curiosity sinds 2014 beklimt."
+    }
+  ]
+}

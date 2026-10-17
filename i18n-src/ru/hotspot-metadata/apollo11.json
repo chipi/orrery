@@ -1,1 +1,43 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "Посадочная ступень LM (Eagle)"
+    },
+    {
+      "id": "us-flag",
+      "label": "Флаг США (установлен ~в 8 м к западу от LM)"
+    },
+    {
+      "id": "lrrr",
+      "label": "Лазерный уголковый отражатель (LRRR)"
+    },
+    {
+      "id": "easep",
+      "label": "EASEP (упрощённый комплект ALSEP)"
+    },
+    {
+      "id": "plaque",
+      "label": "Табличка «Мы пришли с миром от имени всего человечества»"
+    }
+  ],
+  "panorama_caption": "Tranquility Base, EVA-1. Buzz Aldrin сфотографировал LM Eagle и флаг США вскоре после посадки. Видимые швы снимков Hasselblad и цветные стыки у LM — часть опубликованной мозаики.",
+  "compass_zero_direction": "перед LM (по ориентации панорамы ALSJ)",
+  "panorama_annotations": [
+    {
+      "id": "lm-eagle",
+      "label": "LM Eagle",
+      "body": "Посадочная ступень лунного модуля, у которой Armstrong + Aldrin находились во время выхода."
+    },
+    {
+      "id": "us-flag-pan",
+      "label": "Флаг США",
+      "body": "Установлен ~в 8 м к западу от LM. Опрокинут струёй взлётной ступени при старте."
+    },
+    {
+      "id": "buzz-shadow",
+      "label": "Тень Buzz Aldrin",
+      "body": "Собственная тень фотографа на переднем плане — Buzz с Hasselblad в руках."
+    }
+  ]
+}

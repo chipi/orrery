@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [],
+  "panorama_caption": "Curiosity en el canal de Gediz Vallis: la vista de 360° del rover en el sol 4220, tras perforar la muestra Mammoth Lakes, la 41.ª en Marte. El brazo robótico, a la izquierda, acaba de perforar; la cubierta del rover a la derecha; el cielo marciano real en la franja superior; el canal de Gediz Vallis desciende por el centro: el primer lugar donde se encontraron cristales de azufre puro en Marte.",
+  "compass_zero_direction": "frente del rover",
+  "panorama_annotations": [
+    {
+      "id": "gediz-vallis-channel",
+      "label": "Canal de Gediz Vallis",
+      "body": "Antiguo canal excavado por el agua que baja por las laderas de Mt. Sharp. Aquí Curiosity perforó la muestra Mammoth Lakes: los primeros cristales de azufre puro encontrados en Marte."
+    },
+    {
+      "id": "robotic-arm",
+      "label": "Brazo robótico",
+      "body": "Brazo articulado de 2 m con taladro, cepillo y espectrómetro APXS, visible a la izquierda tras completar la perforación de Mammoth Lakes en este sol."
+    },
+    {
+      "id": "mt-sharp-flank",
+      "label": "Ladera baja de Mt. Sharp",
+      "body": "Laderas estratificadas de Aeolis Mons, la montaña de 5 km en el centro de Gale Crater que Curiosity escala desde 2014."
+    }
+  ]
+}

@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [],
+  "panorama_caption": "Perseverance 的第一幅 360° 全景——着陆三天后拍摄。巡视器甲板占据前景；地平线上方可见 Jezero 陨石坑底部和远处的坑缘；上方条带是真实的火星天空。",
+  "compass_zero_direction": "巡视器 +X 轴",
+  "panorama_annotations": [
+    {
+      "id": "mastcam-z-tower",
+      "label": "Mastcam-Z 桅杆",
+      "body": "2 米高的相机桅杆——巡视器自己的「眼睛」——由于全景环绕它拍摄，它出现在画面中央。"
+    },
+    {
+      "id": "jezero-crater-rim",
+      "label": "Jezero 陨石坑边缘",
+      "body": "约 2 千米外的坑壁；坑缘西端可见古老的三角洲沉积——这是 Perseverance 第一年驶向的科学目标。"
+    },
+    {
+      "id": "rover-deck",
+      "label": "巡视器甲板",
+      "body": "每幅 Mastcam-Z 360° 图像的前景——类似太阳能板的甲板，右侧可见样品管存放处。"
+    }
+  ]
+}

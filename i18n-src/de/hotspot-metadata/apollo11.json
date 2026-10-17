@@ -30,5 +30,24 @@
       "lat_offset_m": 0,
       "lon_offset_m": 0
     }
+  ],
+  "panorama_caption": "Tranquility Base, EVA-1. Buzz Aldrin fotografierte die LM Eagle und die US-Flagge kurz nach der Landung. Sichtbare Hasselblad-Nähte und farbige Stitching-Ränder an der LM gehören zum veröffentlichten Mosaik.",
+  "compass_zero_direction": "LM-Vorderseite (laut Panorama-Ausrichtung des ALSJ)",
+  "panorama_annotations": [
+    {
+      "id": "lm-eagle",
+      "label": "LM Eagle",
+      "body": "Abstiegsstufe der Mondlandefähre, an der Armstrong + Aldrin während des Außeneinsatzes standen."
+    },
+    {
+      "id": "us-flag-pan",
+      "label": "US-Flagge",
+      "body": "Etwa 8 m westlich der LM aufgestellt. Beim Start vom Abgasstrahl der Aufstiegsstufe umgeworfen."
+    },
+    {
+      "id": "buzz-shadow",
+      "label": "Schatten von Buzz Aldrin",
+      "body": "Der eigene Schatten des Fotografen im Vordergrund — Buzz mit der Hasselblad in der Hand."
+    }
   ]
 }

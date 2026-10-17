@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [],
+  "panorama_caption": "月の裏側から初めて送られてきたパノラマ。South Pole–Aitken Basin の中にある Von Kármán クレーター。中ほどに Yutu-2 ローバー、左下に着陸機の影。",
+  "compass_zero_direction": "着陸機カメラの +X 軸",
+  "panorama_annotations": [
+    {
+      "id": "yutu2",
+      "label": "Yutu-2 ローバー",
+      "body": "月の裏側で初めてのローバー。5 年以上たった今も稼働中（月面ローバーの最長記録）。"
+    },
+    {
+      "id": "von-karman-rim",
+      "label": "Von Kármán クレーターの縁",
+      "body": "South Pole–Aitken Basin の中にある直径 180 km のクレーターの内縁 — 月で最大かつ最古の衝突構造。"
+    },
+    {
+      "id": "change4-shadow",
+      "label": "Chang'e 4 着陸機の影",
+      "body": "レゴリスに落ちた着陸機自身の影 — 搭載の地形カメラで撮影。"
+    }
+  ]
+}

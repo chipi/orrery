@@ -27,7 +27,7 @@
  *   - name         → from locale overlay (already merged by getFleet)
  */
 import { getFleetByCategory, getFleetGallery } from '$lib/data';
-import { surfaceHotspotsSidecar } from '$lib/data/surface';
+import { surfaceHotspotsSidecar, withHotspotOverlay } from '$lib/data/surface';
 import type {
   SurfaceSite,
   SurfaceAgency,
@@ -142,19 +142,23 @@ function adaptFleetToSurfaceSite(f: FleetEntry): SurfaceSite | null {
  * #546: pads then merge the surface-hotspots sidecar (same join the
  * moon/mars loaders do) so US pads with Tier-2 entries get the
  * regional/detail zoom ladder; pads without an entry are unchanged.
+ * Panorama caption/compass strings get the per-locale hotspot-metadata
+ * overlay, same as moon/mars.
  */
 export async function getEarthLaunchSites(locale = 'en-US'): Promise<SurfaceSite[]> {
   const [fleetEntries, hotspots] = await Promise.all([
     getFleetByCategory('launch-site', locale),
     surfaceHotspotsSidecar(),
   ]);
-  return fleetEntries
-    .map(adaptFleetToSurfaceSite)
-    .filter((s): s is SurfaceSite => s !== null)
-    .map((s) => {
-      const hotspot = hotspots[s.id];
-      return hotspot ? { ...s, ...hotspot } : s;
-    });
+  return Promise.all(
+    fleetEntries
+      .map(adaptFleetToSurfaceSite)
+      .filter((s): s is SurfaceSite => s !== null)
+      .map((s) => {
+        const hotspot = hotspots[s.id];
+        return withHotspotOverlay(hotspot ? { ...s, ...hotspot } : s, locale);
+      }),
+  );
 }
 
 /**

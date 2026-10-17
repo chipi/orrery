@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [],
+  "panorama_caption": "Gediz Vallis चैनल में Curiosity — sol 4220 का रोवर का 360° दृश्य, Mammoth Lakes नमूने की ड्रिलिंग के बाद, जो मंगल पर उसका 41वाँ नमूना था। बाईं ओर रोबोटिक भुजा, जिसने अभी ड्रिलिंग पूरी की है; दाईं ओर रोवर का डेक; ऊपरी पट्टी में असली मंगल आकाश; बीच से उतरता Gediz Vallis चैनल — वह पहली जगह जहाँ मंगल पर शुद्ध गंधक के क्रिस्टल मिले।",
+  "compass_zero_direction": "रोवर का अगला भाग",
+  "panorama_annotations": [
+    {
+      "id": "gediz-vallis-channel",
+      "label": "Gediz Vallis चैनल",
+      "body": "Mt. Sharp की ढलानों से उतरता, पानी द्वारा काटा गया प्राचीन चैनल। Curiosity ने यहाँ Mammoth Lakes नमूना ड्रिल किया — मंगल पर मिले अब तक के पहले शुद्ध गंधक क्रिस्टल।"
+    },
+    {
+      "id": "robotic-arm",
+      "label": "रोबोटिक भुजा",
+      "body": "ड्रिल, ब्रश और APXS स्पेक्ट्रोमीटर वाली 2 मी लंबी जोड़दार भुजा — इस sol पर Mammoth Lakes ड्रिल पूरी करने के बाद बाईं ओर दिखती है।"
+    },
+    {
+      "id": "mt-sharp-flank",
+      "label": "Mt. Sharp की निचली ढलान",
+      "body": "Aeolis Mons की परतदार ढलानें — Gale Crater के बीच 5 किमी ऊँचा पर्वत, जिस पर Curiosity 2014 से चढ़ रहा है।"
+    }
+  ]
+}

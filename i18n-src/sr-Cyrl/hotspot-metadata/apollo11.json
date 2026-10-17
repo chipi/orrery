@@ -1,1 +1,43 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "Степен за спуштање LM-а (Eagle)"
+    },
+    {
+      "id": "us-flag",
+      "label": "Застава САД (пободена ~8 m западно од LM-а)"
+    },
+    {
+      "id": "lrrr",
+      "label": "Ласерски ретрорефлектор (LRRR)"
+    },
+    {
+      "id": "easep",
+      "label": "EASEP (поједностављени пакет ALSEP)"
+    },
+    {
+      "id": "plaque",
+      "label": "Плоча „Дошли смо у миру за читаво човечанство“"
+    }
+  ],
+  "panorama_caption": "Tranquility Base, EVA-1. Buzz Aldrin је фотографисао LM Eagle и заставу САД убрзо после слетања. Видљиви спојеви Hasselblad снимака и обојени прелази код LM-а део су објављеног мозаика.",
+  "compass_zero_direction": "предњи део LM-а (према оријентацији панораме ALSJ)",
+  "panorama_annotations": [
+    {
+      "id": "lm-eagle",
+      "label": "LM Eagle",
+      "body": "Степен за спуштање лунарног модула, поред којег су Armstrong + Aldrin стајали током изласка."
+    },
+    {
+      "id": "us-flag-pan",
+      "label": "Застава САД",
+      "body": "Пободена ~8 m западно од LM-а. Оборио ју је млаз степена за повратак при полетању."
+    },
+    {
+      "id": "buzz-shadow",
+      "label": "Сенка Buzz Aldrin-а",
+      "body": "Сопствена сенка фотографа у првом плану — Buzz држи Hasselblad."
+    }
+  ]
+}

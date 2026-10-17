@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [],
+  "panorama_caption": "Gediz Vallis 수로에 있는 Curiosity — 화성에서 41번째 시료인 Mammoth Lakes를 시추한 뒤 솔 4220에 찍은 360° 풍경. 왼쪽에는 막 시추를 마친 로봇 팔, 오른쪽에는 로버 갑판, 위쪽 띠에는 진짜 화성 하늘, 가운데로 내려가는 Gediz Vallis 수로 — 화성에서 순수한 황 결정이 처음 발견된 곳이다.",
+  "compass_zero_direction": "로버 정면",
+  "panorama_annotations": [
+    {
+      "id": "gediz-vallis-channel",
+      "label": "Gediz Vallis 수로",
+      "body": "Mt. Sharp 비탈을 따라 내려가는, 물이 깎아 만든 오래된 수로. Curiosity가 이곳에서 Mammoth Lakes 시료를 시추했다 — 화성에서 처음 발견된 순수한 황 결정이다."
+    },
+    {
+      "id": "robotic-arm",
+      "label": "로봇 팔",
+      "body": "드릴, 브러시, APXS 분광계를 단 2 m 길이의 관절 팔 — 이 솔에 Mammoth Lakes 시추를 마친 뒤 왼쪽에 보인다."
+    },
+    {
+      "id": "mt-sharp-flank",
+      "label": "Mt. Sharp 아래쪽 비탈",
+      "body": "Gale Crater 중앙에 솟은 5 km 높이의 산 Aeolis Mons의 층진 비탈. Curiosity는 2014년부터 이 산을 오르고 있다."
+    }
+  ]
+}

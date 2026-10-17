@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [],
+  "panorama_caption": "Curiosity dans le chenal de Gediz Vallis — la vue à 360° du rover au sol 4220, après le forage de l'échantillon Mammoth Lakes, son 41e sur Mars. Le bras robotique, visible à gauche, vient de terminer le forage ; le pont du rover à droite ; le vrai ciel martien dans la bande supérieure ; le chenal de Gediz Vallis descend au centre — le premier endroit où l'on a trouvé des cristaux de soufre pur sur Mars.",
+  "compass_zero_direction": "avant du rover",
+  "panorama_annotations": [
+    {
+      "id": "gediz-vallis-channel",
+      "label": "Chenal de Gediz Vallis",
+      "body": "Ancien chenal creusé par l'eau, qui descend les pentes de Mt. Sharp. Curiosity y a foré l'échantillon Mammoth Lakes — les premiers cristaux de soufre pur jamais trouvés sur Mars."
+    },
+    {
+      "id": "robotic-arm",
+      "label": "Bras robotique",
+      "body": "Bras articulé de 2 m portant la foreuse, la brosse et le spectromètre APXS — visible à gauche après le forage de Mammoth Lakes ce sol-là."
+    },
+    {
+      "id": "mt-sharp-flank",
+      "label": "Bas des pentes de Mt. Sharp",
+      "body": "Pentes stratifiées d'Aeolis Mons, la montagne de 5 km au centre de Gale Crater, que Curiosity gravit depuis 2014."
+    }
+  ]
+}

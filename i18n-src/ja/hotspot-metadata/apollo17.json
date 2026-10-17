@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [],
+  "panorama_caption": "Taurus-Littrow の谷、ステーション 5。Schmitt + Cernan はここで Camelot Crater と South Massif を調査した。Apollo 計画最後の月面船外活動のパノラマ。",
+  "compass_zero_direction": "月面車の前方（ALSJ のパノラマ方位による）",
+  "panorama_annotations": [
+    {
+      "id": "south-massif",
+      "label": "South Massif",
+      "body": "高さ 2.3 km の隆起した高地。ステーション 2（オレンジ色の土が見つかった場所）で試料が採取された。"
+    },
+    {
+      "id": "camelot-crater",
+      "label": "Camelot Crater の縁",
+      "body": "月着陸船の近くにある古い大きな衝突クレーター。ステーション 5 の岩塊地帯はその縁にある。"
+    },
+    {
+      "id": "lrv",
+      "label": "月面車",
+      "body": "月で使われた 3 台目の月面車。このミッションの総走行距離は 35.7 km で、今も記録である。"
+    }
+  ]
+}

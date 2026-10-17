@@ -1,1 +1,17 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [],
+  "panorama_caption": "Shiv Shakti Point——首幅来自月球南极的全景图。前景是 Vikram 着陆器的影子；拍摄后不久，Pragyan 月球车就被释放到月壤上。",
+  "compass_zero_direction": "着陆器成像仪 +X 轴",
+  "panorama_annotations": [
+    {
+      "id": "pragyan",
+      "label": "Pragyan 月球车（第 +1 个月球日释放）",
+      "body": "重 26 公斤的六轮月球车。着陆次日经 Vikram 的坡道驶下；一直工作到月夜降临（约 14 个地球日）。"
+    },
+    {
+      "id": "south-pole-rim",
+      "label": "南极撞击坑边缘",
+      "body": "首次在如此靠近月球南极的地方成功软着陆——这里是寻找水冰的重点区域。"
+    }
+  ]
+}

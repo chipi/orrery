@@ -49,20 +49,91 @@ export async function surfaceHotspotsSidecar(): Promise<SurfaceHotspotsSidecar['
 
 /**
  * Per-site, per-locale hotspot-metadata overlay (PRD-014 / RFC-017
- * §S6). Currently only carries `hotspot_annotations` translations
- * (annotation labels are user-visible; lat/lon offsets are technical
- * and don't translate). Sites without an overlay file fall back to
- * the default labels from surface-hotspots.json (typically English).
+ * §S6, ADR-074 §i18n). Carries the translated user-visible strings of
+ * the surface-hotspots sidecar: Tier-2 annotation labels, panorama
+ * annotation labels + bodies (matched by id), the panorama caption and
+ * the compass zero-direction text. Positions, ids and every other
+ * sidecar field stay in surface-hotspots.json. Sites without an
+ * overlay file keep the sidecar's English strings.
  */
+export interface HotspotMetadataOverlay {
+  hotspot_annotations?: Array<{ id: string; label: string }>;
+  panorama_annotations?: Array<{ id: string; label?: string; body?: string }>;
+  panorama_caption?: string;
+  compass_zero_direction?: string;
+}
+
 async function hotspotMetadataOverlay(
   locale: string,
   siteId: string,
-): Promise<Partial<{
-  hotspot_annotations: import('$types/surface-site').HotspotAnnotation[];
-}> | null> {
-  return get<Partial<{ hotspot_annotations: import('$types/surface-site').HotspotAnnotation[] }>>(
-    `i18n/${locale}/hotspot-metadata/${siteId}.json`,
-  ).catch(() => null);
+): Promise<HotspotMetadataOverlay | null> {
+  return get<HotspotMetadataOverlay>(`i18n/${locale}/hotspot-metadata/${siteId}.json`).catch(
+    () => null,
+  );
+}
+
+type HotspotFields = Pick<
+  import('$types/surface-site').SurfaceSite,
+  'hotspot_annotations' | 'panorama_annotations' | 'panorama_metadata'
+>;
+
+/**
+ * Apply a hotspot-metadata overlay to a site already merged with its
+ * sidecar entry. Only strings change; an overlay entry whose id is not
+ * in the sidecar is ignored (the sidecar owns ids and positions).
+ */
+export function applyHotspotOverlay<T extends HotspotFields>(
+  site: T,
+  overlay: HotspotMetadataOverlay | null,
+): T {
+  if (!overlay) return site;
+  let out = site;
+  if (site.hotspot_annotations && overlay.hotspot_annotations?.length) {
+    out = {
+      ...out,
+      hotspot_annotations: mergeAnnotations(site.hotspot_annotations, overlay.hotspot_annotations),
+    };
+  }
+  if (site.panorama_annotations && overlay.panorama_annotations?.length) {
+    const byId = new Map(overlay.panorama_annotations.map((o) => [o.id, o]));
+    out = {
+      ...out,
+      panorama_annotations: site.panorama_annotations.map((a) => {
+        const o = byId.get(a.id);
+        return o ? { ...a, label: o.label ?? a.label, body: o.body ?? a.body } : a;
+      }),
+    };
+  }
+  if (site.panorama_metadata && (overlay.panorama_caption || overlay.compass_zero_direction)) {
+    out = {
+      ...out,
+      panorama_metadata: {
+        ...site.panorama_metadata,
+        ...(overlay.panorama_caption && site.panorama_metadata.caption
+          ? { caption: overlay.panorama_caption }
+          : {}),
+        ...(overlay.compass_zero_direction && site.panorama_metadata.compass_zero_direction
+          ? { compass_zero_direction: overlay.compass_zero_direction }
+          : {}),
+      },
+    };
+  }
+  return out;
+}
+
+/** Fetch the site's overlay (locale, then en-US) and apply it — only for
+ *  sites whose sidecar entry has strings to translate. */
+export async function withHotspotOverlay<T extends HotspotFields & { id: string }>(
+  site: T,
+  locale: string,
+): Promise<T> {
+  if (!site.hotspot_annotations && !site.panorama_annotations && !site.panorama_metadata) {
+    return site;
+  }
+  const overlay =
+    (await hotspotMetadataOverlay(locale, site.id)) ??
+    (locale === 'en-US' ? null : await hotspotMetadataOverlay('en-US', site.id));
+  return applyHotspotOverlay(site, overlay);
 }
 
 /**
@@ -74,7 +145,7 @@ async function hotspotMetadataOverlay(
  *
  * Merge order: base → editorial overlay → hotspot sidecar → hotspot
  * locale overlay. Later wins. The hotspot locale overlay only
- * carries translated annotation labels; if a site has no overlay
+ * carries translated strings (see HotspotMetadataOverlay); if a site has no overlay
  * file for the current locale, falls back to en-US, then to the
  * sidecar default (which is English).
  */
@@ -103,22 +174,7 @@ export async function getMoonSites(locale = 'en-US'): Promise<MoonSite[]> {
           : await get<Partial<MoonSite>>(`i18n/en-US/moon-sites/${s.id}.json`).catch(() => null));
       const localised = fallback ? { ...s, ...fallback } : s;
       const hotspot = hotspots[s.id];
-      let withHotspot = hotspot ? { ...localised, ...hotspot } : localised;
-      if (withHotspot.hotspot_annotations) {
-        const hsOverlay =
-          (await hotspotMetadataOverlay(locale, s.id)) ??
-          (locale === 'en-US' ? null : await hotspotMetadataOverlay('en-US', s.id));
-        if (hsOverlay?.hotspot_annotations) {
-          withHotspot = {
-            ...withHotspot,
-            hotspot_annotations: mergeAnnotations(
-              withHotspot.hotspot_annotations,
-              hsOverlay.hotspot_annotations,
-            ),
-          };
-        }
-      }
-      return withHotspot;
+      return withHotspotOverlay(hotspot ? { ...localised, ...hotspot } : localised, locale);
     }),
   );
 }
@@ -132,7 +188,7 @@ export async function getMoonSites(locale = 'en-US'): Promise<MoonSite[]> {
  */
 function mergeAnnotations(
   defaults: import('$types/surface-site').HotspotAnnotation[],
-  overlay: import('$types/surface-site').HotspotAnnotation[],
+  overlay: Array<{ id: string; label: string }>,
 ): import('$types/surface-site').HotspotAnnotation[] {
   const overlayById = new Map(overlay.map((o) => [o.id, o]));
   return defaults.map((d) => {
@@ -177,22 +233,7 @@ export async function getMarsSites(locale = 'en-US'): Promise<MarsSite[]> {
           : await get<Partial<MarsSite>>(`i18n/en-US/mars-sites/${s.id}.json`).catch(() => null));
       const localised = fallback ? { ...s, ...fallback } : s;
       const hotspot = hotspots[s.id];
-      let withHotspot = hotspot ? { ...localised, ...hotspot } : localised;
-      if (withHotspot.hotspot_annotations) {
-        const hsOverlay =
-          (await hotspotMetadataOverlay(locale, s.id)) ??
-          (locale === 'en-US' ? null : await hotspotMetadataOverlay('en-US', s.id));
-        if (hsOverlay?.hotspot_annotations) {
-          withHotspot = {
-            ...withHotspot,
-            hotspot_annotations: mergeAnnotations(
-              withHotspot.hotspot_annotations,
-              hsOverlay.hotspot_annotations,
-            ),
-          };
-        }
-      }
-      return withHotspot;
+      return withHotspotOverlay(hotspot ? { ...localised, ...hotspot } : localised, locale);
     }),
   );
 }

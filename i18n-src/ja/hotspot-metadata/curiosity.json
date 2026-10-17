@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [],
+  "panorama_caption": "Gediz Vallis の溝にいる Curiosity — 火星で 41 本目となる試料 Mammoth Lakes を掘削した後、ソル 4220 に撮影した 360° 画像。左には掘削を終えたばかりのロボットアーム、右にはローバーの甲板、上部の帯には本物の火星の空、中央を下っていくのが Gediz Vallis の溝 — 火星で初めて純粋な硫黄の結晶が見つかった場所だ。",
+  "compass_zero_direction": "ローバーの前方",
+  "panorama_annotations": [
+    {
+      "id": "gediz-vallis-channel",
+      "label": "Gediz Vallis の溝",
+      "body": "Mt. Sharp の斜面を下る、水が刻んだ古い溝。Curiosity はここで Mammoth Lakes の試料を掘削した — 火星で初めて見つかった純粋な硫黄の結晶だ。"
+    },
+    {
+      "id": "robotic-arm",
+      "label": "ロボットアーム",
+      "body": "ドリル、ブラシ、APXS 分光計を備えた長さ 2 m の多関節アーム — このソルに Mammoth Lakes の掘削を終えた後、左に見えている。"
+    },
+    {
+      "id": "mt-sharp-flank",
+      "label": "Mt. Sharp のふもとの斜面",
+      "body": "Gale Crater の中央にそびえる高さ 5 km の山 Aeolis Mons の層状の斜面。Curiosity は 2014 年からこの山を登っている。"
+    }
+  ]
+}

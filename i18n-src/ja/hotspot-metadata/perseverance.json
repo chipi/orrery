@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [],
+  "panorama_caption": "Perseverance 初の 360° パノラマ — 着陸の 3 日後。手前はローバーの甲板が大きく占め、地平線の上に Jezero クレーターの底と遠くの縁が見え、上部の帯には本物の火星の空が写っている。",
+  "compass_zero_direction": "ローバーの +X 軸",
+  "panorama_annotations": [
+    {
+      "id": "mastcam-z-tower",
+      "label": "Mastcam-Z のマスト",
+      "body": "高さ 2 m のカメラマスト — ローバーの「目」— は、パノラマがその周りを一周するため中央に写っている。"
+    },
+    {
+      "id": "jezero-crater-rim",
+      "label": "Jezero クレーターの縁",
+      "body": "約 2 km 先のクレーター壁。その西端には古いデルタ堆積物が見える — Perseverance が最初の 1 年をかけて向かった科学目標だ。"
+    },
+    {
+      "id": "rover-deck",
+      "label": "ローバーの甲板",
+      "body": "Mastcam-Z の 360° 画像すべての手前に写る、太陽電池パネルのような甲板。右には試料チューブの保管庫が見える。"
+    }
+  ]
+}

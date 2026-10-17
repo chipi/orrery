@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [],
+  "panorama_caption": "Taurus-Littrow घाटी, स्टेशन 5। Schmitt + Cernan ने यहाँ Camelot Crater और South Massif पर काम किया। Apollo कार्यक्रम का अंतिम चंद्र EVA पैनोरमा।",
+  "compass_zero_direction": "चंद्र वाहन का अगला भाग (ALSJ पैनोरमा अभिविन्यास के अनुसार)",
+  "panorama_annotations": [
+    {
+      "id": "south-massif",
+      "label": "South Massif",
+      "body": "2.3 किमी ऊँचा उठा हुआ उच्चभूमि क्षेत्र, जिसके नमूने स्टेशन 2 पर लिए गए (नारंगी मिट्टी की खोज का स्थल)।"
+    },
+    {
+      "id": "camelot-crater",
+      "label": "Camelot Crater का किनारा",
+      "body": "चंद्र मॉड्यूल के पास पहले से मौजूद बड़ा प्रभाव-गड्ढा; स्टेशन 5 का शिलाखंड क्षेत्र इसके किनारे पर है।"
+    },
+    {
+      "id": "lrv",
+      "label": "चंद्र रोविंग वाहन",
+      "body": "चंद्रमा पर इस्तेमाल हुआ तीसरा चंद्र वाहन। इस मिशन में कुल यात्रा: 35.7 किमी — अब भी रिकॉर्ड।"
+    }
+  ]
+}

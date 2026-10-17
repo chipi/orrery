@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [],
+  "panorama_caption": "Долина Taurus-Littrow, станция 5. Schmitt + Cernan работали здесь у Camelot Crater и South Massif. Последняя панорама лунного выхода в программе Apollo.",
+  "compass_zero_direction": "перед LRV (по ориентации панорамы ALSJ)",
+  "panorama_annotations": [
+    {
+      "id": "south-massif",
+      "label": "South Massif",
+      "body": "Поднятый материковый массив высотой 2,3 км; образцы взяты на станции 2 (месте находки оранжевого грунта)."
+    },
+    {
+      "id": "camelot-crater",
+      "label": "Край Camelot Crater",
+      "body": "Крупный более древний ударный кратер рядом с лунным модулем; поле валунов станции 5 лежит на его краю."
+    },
+    {
+      "id": "lrv",
+      "label": "Лунный автомобиль",
+      "body": "Третий LRV, использованный на Луне. Общий пробег в этой миссии — 35,7 км, до сих пор рекорд."
+    }
+  ]
+}

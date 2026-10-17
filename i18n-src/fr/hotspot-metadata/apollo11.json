@@ -30,5 +30,24 @@
       "lat_offset_m": 0,
       "lon_offset_m": 0
     }
+  ],
+  "panorama_caption": "Tranquility Base, EVA-1. Buzz Aldrin a photographié le LM Eagle et le drapeau américain peu après l'alunissage. Les coutures Hasselblad visibles et les raccords colorés autour du LM font partie de la mosaïque publiée.",
+  "compass_zero_direction": "avant du LM (selon l'orientation du panorama de l'ALSJ)",
+  "panorama_annotations": [
+    {
+      "id": "lm-eagle",
+      "label": "LM Eagle",
+      "body": "Étage de descente du module lunaire, où Armstrong + Aldrin se tenaient pendant la sortie."
+    },
+    {
+      "id": "us-flag-pan",
+      "label": "Drapeau américain",
+      "body": "Planté à ~8 m à l'ouest du LM. Renversé par le jet de l'étage de remontée au décollage."
+    },
+    {
+      "id": "buzz-shadow",
+      "label": "Ombre de Buzz Aldrin",
+      "body": "L'ombre du photographe lui-même au premier plan — Buzz tenant le Hasselblad."
+    }
   ]
 }

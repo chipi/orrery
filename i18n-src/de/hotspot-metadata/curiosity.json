@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [],
+  "panorama_caption": "Curiosity im Gediz-Vallis-Kanal — die 360°-Aufnahme des Rovers von Sol 4220 nach dem Bohren der Probe Mammoth Lakes, seiner 41. auf dem Mars. Links der Roboterarm direkt nach dem Bohren; rechts das Rover-Deck; oben echter Marshimmel; in der Mitte der abfallende Gediz-Vallis-Kanal — der erste Ort, an dem je reine Schwefelkristalle auf dem Mars gefunden wurden.",
+  "compass_zero_direction": "Rover-Vorderseite",
+  "panorama_annotations": [
+    {
+      "id": "gediz-vallis-channel",
+      "label": "Gediz-Vallis-Kanal",
+      "body": "Alter, von Wasser gegrabener Kanal an den Hängen des Mt. Sharp. Curiosity bohrte hier die Probe Mammoth Lakes — die ersten reinen Schwefelkristalle, die je auf dem Mars gefunden wurden."
+    },
+    {
+      "id": "robotic-arm",
+      "label": "Roboterarm",
+      "body": "2 m langer Gelenkarm mit Bohrer, Bürste und APXS-Spektrometer — links zu sehen, nachdem an diesem Sol die Bohrung Mammoth Lakes abgeschlossen war."
+    },
+    {
+      "id": "mt-sharp-flank",
+      "label": "Untere Flanke des Mt. Sharp",
+      "body": "Geschichtete Hänge des Aeolis Mons, des 5 km hohen Bergs in der Mitte des Gale Crater, den Curiosity seit 2014 erklimmt."
+    }
+  ]
+}

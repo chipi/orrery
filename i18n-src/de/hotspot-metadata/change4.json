@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [],
+  "panorama_caption": "Das erste Panorama, das je von der Mondrückseite gesendet wurde. Der Von-Kármán-Krater im South Pole–Aitken Basin. Der Rover Yutu-2 in mittlerer Entfernung; der Schatten der Landeeinheit unten links.",
+  "compass_zero_direction": "+X-Achse der Lander-Kamera",
+  "panorama_annotations": [
+    {
+      "id": "yutu2",
+      "label": "Rover Yutu-2",
+      "body": "Der erste Rover auf der Mondrückseite; nach mehr als 5 Jahren noch in Betrieb (Rekord für jeden Mondrover)."
+    },
+    {
+      "id": "von-karman-rim",
+      "label": "Rand des Von-Kármán-Kraters",
+      "body": "Innerer Rand des 180 km großen Kraters im South Pole–Aitken Basin — der größten und ältesten Einschlagstruktur des Mondes."
+    },
+    {
+      "id": "change4-shadow",
+      "label": "Schatten des Landers Chang'e 4",
+      "body": "Der eigene Schatten des Landers auf dem Regolith — aufgenommen mit seiner Geländekamera an Bord."
+    }
+  ]
+}

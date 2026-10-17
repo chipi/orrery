@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [],
+  "panorama_caption": "El primer panorama de 360° de Perseverance, tres días después del aterrizaje. La cubierta del rover domina el primer plano; el suelo del cráter Jezero y su borde lejano se ven sobre el horizonte; el cielo marciano real en las franjas superiores.",
+  "compass_zero_direction": "eje +X del rover",
+  "panorama_annotations": [
+    {
+      "id": "mastcam-z-tower",
+      "label": "Mástil de Mastcam-Z",
+      "body": "El mástil de cámaras de 2 m —los «ojos» del rover—, visible en el centro porque el panorama se envuelve a su alrededor."
+    },
+    {
+      "id": "jezero-crater-rim",
+      "label": "Borde del cráter Jezero",
+      "body": "La pared del cráter a ~2 km; en el borde occidental se ven antiguos depósitos de delta, el objetivo científico hacia el que Perseverance condujo durante su primer año."
+    },
+    {
+      "id": "rover-deck",
+      "label": "Cubierta del rover",
+      "body": "Primer plano de cada 360° de Mastcam-Z: cubierta tipo panel solar, con el depósito de tubos de muestras visible a la derecha."
+    }
+  ]
+}

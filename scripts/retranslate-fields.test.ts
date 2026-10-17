@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { problems } from './retranslate-fields.mjs';
+import { problems } from './lib/translate-quality.mjs';
 
 const SRC =
   'The capsule dips into the upper atmosphere, then coasts back out above the sensible air.';

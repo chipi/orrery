@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [],
+  "panorama_caption": "Het eerste panorama dat ooit vanaf de achterkant van de Maan is verzonden. De krater Von Kármán in het South Pole–Aitken Basin. De rover Yutu-2 op middelafstand; de schaduw van de lander linksonder.",
+  "compass_zero_direction": "+X-as van de landercamera",
+  "panorama_annotations": [
+    {
+      "id": "yutu2",
+      "label": "Rover Yutu-2",
+      "body": "De eerste rover op de achterkant van de Maan; na meer dan 5 jaar nog in bedrijf (het record voor een maanrover)."
+    },
+    {
+      "id": "von-karman-rim",
+      "label": "Rand van de krater Von Kármán",
+      "body": "Binnenrand van de krater van 180 km in het South Pole–Aitken Basin — de grootste en oudste inslagstructuur van de Maan."
+    },
+    {
+      "id": "change4-shadow",
+      "label": "Schaduw van lander Chang'e 4",
+      "body": "De eigen schaduw van de lander op het regoliet — vastgelegd met zijn terreincamera aan boord."
+    }
+  ]
+}

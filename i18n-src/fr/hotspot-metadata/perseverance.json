@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [],
+  "panorama_caption": "Le premier panorama à 360° de Perseverance — trois jours après l'atterrissage. Le pont du rover occupe le premier plan ; le fond du cratère Jezero et son bord lointain apparaissent au-dessus de l'horizon ; le vrai ciel martien dans les bandes supérieures.",
+  "compass_zero_direction": "axe +X du rover",
+  "panorama_annotations": [
+    {
+      "id": "mastcam-z-tower",
+      "label": "Mât de Mastcam-Z",
+      "body": "Le mât de caméras de 2 m — les « yeux » du rover — visible au centre parce que le panorama s'enroule autour de lui."
+    },
+    {
+      "id": "jezero-crater-rim",
+      "label": "Bord du cratère Jezero",
+      "body": "La paroi du cratère à ~2 km ; d'anciens dépôts de delta sont visibles sur le bord ouest — la cible scientifique vers laquelle Perseverance a roulé pendant sa première année."
+    },
+    {
+      "id": "rover-deck",
+      "label": "Pont du rover",
+      "body": "Premier plan de chaque 360° de Mastcam-Z — un pont façon panneau solaire, avec le dépôt des tubes d'échantillons visible à droite."
+    }
+  ]
+}

@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [],
+  "panorama_caption": "Het eerste 360°-panorama van Perseverance — drie dagen na de landing. Het roverdek domineert de voorgrond; de bodem en de verre rand van de krater Jezero zijn boven de horizon te zien; bovenin echte Marshemel.",
+  "compass_zero_direction": "+X-as van de rover",
+  "panorama_annotations": [
+    {
+      "id": "mastcam-z-tower",
+      "label": "Mast van Mastcam-Z",
+      "body": "De 2 m hoge cameramast — de 'ogen' van de rover — in het midden te zien omdat het panorama eromheen sluit."
+    },
+    {
+      "id": "jezero-crater-rim",
+      "label": "Rand van de krater Jezero",
+      "body": "De kraterwand op ~2 km; aan de westrand zijn oude deltaafzettingen te zien — het wetenschappelijke doel waar Perseverance in zijn eerste jaar naartoe reed."
+    },
+    {
+      "id": "rover-deck",
+      "label": "Roverdek",
+      "body": "Voorgrond van elke 360° van Mastcam-Z — een dek als een zonnepaneel, met rechts de opslag voor monsterbuisjes."
+    }
+  ]
+}

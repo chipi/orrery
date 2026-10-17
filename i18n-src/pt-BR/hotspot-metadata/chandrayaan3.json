@@ -1,1 +1,17 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [],
+  "panorama_caption": "Shiv Shakti Point — o primeiro panorama do polo sul lunar. A sombra do módulo Vikram em primeiro plano; o rover Pragyan foi colocado sobre o regolito pouco depois desta imagem.",
+  "compass_zero_direction": "eixo +X do imageador do módulo",
+  "panorama_annotations": [
+    {
+      "id": "pragyan",
+      "label": "Rover Pragyan (implantado no sol +1)",
+      "body": "Rover de seis rodas com 26 kg. Desceu pela rampa do Vikram no dia seguinte ao pouso; operou até o anoitecer lunar (~14 dias terrestres)."
+    },
+    {
+      "id": "south-pole-rim",
+      "label": "Borda de cratera do polo sul",
+      "body": "O primeiro pouso suave bem-sucedido tão perto do polo sul lunar — uma zona de prospecção de gelo de água."
+    }
+  ]
+}

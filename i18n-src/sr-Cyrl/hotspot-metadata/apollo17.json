@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [],
+  "panorama_caption": "Долина Taurus-Littrow, станица 5. Schmitt + Cernan су овде радили на Camelot Crater и South Massif. Последња панорама месечевог изласка у програму Apollo.",
+  "compass_zero_direction": "предњи део LRV-а (према оријентацији панораме ALSJ)",
+  "panorama_annotations": [
+    {
+      "id": "south-massif",
+      "label": "South Massif",
+      "body": "Издигнута висораван од 2,3 km, узорковање на станици 2 (месту открића наранџастог тла)."
+    },
+    {
+      "id": "camelot-crater",
+      "label": "Обод Camelot Crater",
+      "body": "Велики старији ударни кратер близу лунарног модула; поље стена станице 5 налази се на његовом ободу."
+    },
+    {
+      "id": "lrv",
+      "label": "Лунарно возило",
+      "body": "Треће LRV употребљено на Месецу. Укупна пређена дужина у овој мисији: 35,7 km — још увек рекорд."
+    }
+  ]
+}

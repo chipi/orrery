@@ -95,8 +95,10 @@ import {
   earthObjects,
   moonSites,
   SCIENCE_TABS,
+  applyHotspotOverlay,
   __resetCache,
 } from './data';
+import { getEarthLaunchSites } from './earth-launch-site-adapter';
 
 /**
  * Mock global fetch to read from static/data/ on disk. Strips the optional
@@ -640,9 +642,12 @@ describe('ISS modules (PRD-010)', () => {
   });
 
   it('getIssModules(es) merges Spanish overlays', async () => {
-    const list = await getIssModules('es');
-    const zarya = list.find((m) => m.id === 'zarya');
-    expect(zarya?.description).toContain('El primer módulo');
+    const [en, es] = await Promise.all([getIssModules(), getIssModules('es')]);
+    const zaryaEn = en.find((m) => m.id === 'zarya');
+    const zarya = es.find((m) => m.id === 'zarya');
+    expect(zarya?.description).not.toBe(zaryaEn?.description);
+    expect(zarya?.description).toContain('se lanzó');
+    expect(zarya?.description).toContain('Unity');
   });
 
   it('getIssModule returns one merged row', async () => {
@@ -868,6 +873,84 @@ describe('getMarsSites (PRD-009)', () => {
     expect(curiosity).toBeTruthy();
     expect(curiosity!.name).toBeTruthy();
     expect(curiosity!.mission_type).toBeTruthy();
+  });
+});
+
+describe('hotspot-metadata overlay (ADR-074 §i18n)', () => {
+  const site = {
+    hotspot_annotations: [{ id: 'a', label: 'A', lat_offset_m: 1, lon_offset_m: 2 }],
+    panorama_annotations: [
+      { id: 'p', yaw_deg: 10, pitch_deg: -2, label: 'P', body: 'Body' },
+      { id: 'q', yaw_deg: 20, pitch_deg: 0, label: 'Q' },
+    ],
+    panorama_metadata: {
+      caption: 'Caption',
+      compass_zero_direction: 'rover forward',
+      credit_team: 'NASA',
+    },
+  };
+
+  it('replaces strings by id and keeps positions and other fields', () => {
+    const out = applyHotspotOverlay(site, {
+      hotspot_annotations: [{ id: 'a', label: 'Ä' }],
+      panorama_annotations: [{ id: 'p', label: 'Ṗ', body: 'Körper' }],
+      panorama_caption: 'Bildunterschrift',
+      compass_zero_direction: 'Rover-Vorderseite',
+    });
+    expect(out.hotspot_annotations).toEqual([
+      { id: 'a', label: 'Ä', lat_offset_m: 1, lon_offset_m: 2 },
+    ]);
+    expect(out.panorama_annotations).toEqual([
+      { id: 'p', yaw_deg: 10, pitch_deg: -2, label: 'Ṗ', body: 'Körper' },
+      { id: 'q', yaw_deg: 20, pitch_deg: 0, label: 'Q' },
+    ]);
+    expect(out.panorama_metadata).toEqual({
+      caption: 'Bildunterschrift',
+      compass_zero_direction: 'Rover-Vorderseite',
+      credit_team: 'NASA',
+    });
+  });
+
+  it('ignores unknown ids, null overlays, and strings the sidecar does not have', () => {
+    expect(applyHotspotOverlay(site, null)).toBe(site);
+    const bare = { panorama_metadata: { credit_team: 'NASA' } };
+    expect(
+      applyHotspotOverlay(bare, { panorama_caption: 'x', compass_zero_direction: 'y' }),
+    ).toEqual(bare);
+    const out = applyHotspotOverlay(site, {
+      hotspot_annotations: [{ id: 'zz', label: 'new' }],
+      panorama_annotations: [{ id: 'zz', label: 'new' }],
+    });
+    expect(out.hotspot_annotations).toEqual(site.hotspot_annotations);
+    expect(out.panorama_annotations).toEqual(site.panorama_annotations);
+  });
+
+  it('translates moon, mars and launch-pad panorama strings from the real de bundle', async () => {
+    const [moonEn, moonDe, marsDe, padsDe] = await Promise.all([
+      getMoonSites(),
+      getMoonSites('de'),
+      getMarsSites('de'),
+      getEarthLaunchSites('de'),
+    ]);
+    const a11en = moonEn.find((s) => s.id === 'apollo11')!;
+    const a11de = moonDe.find((s) => s.id === 'apollo11')!;
+    expect(a11en.panorama_metadata?.caption).toMatch(
+      /^Tranquility Base, EVA-1\. Buzz Aldrin photographed/,
+    );
+    expect(a11de.panorama_metadata?.caption).toMatch(
+      /^Tranquility Base, EVA-1\. Buzz Aldrin fotografierte/,
+    );
+    expect(a11de.panorama_annotations?.find((a) => a.id === 'us-flag-pan')?.label).toBe(
+      'US-Flagge',
+    );
+    expect(a11de.panorama_annotations?.map((a) => a.yaw_deg)).toEqual(
+      a11en.panorama_annotations?.map((a) => a.yaw_deg),
+    );
+    expect(a11de.hotspot_annotations?.find((a) => a.id === 'us-flag')?.label).toMatch(/^US-Flagge/);
+    const curiosity = marsDe.find((s) => s.id === 'curiosity')!;
+    expect(curiosity.panorama_metadata?.compass_zero_direction).toBe('Rover-Vorderseite');
+    const pad = padsDe.find((s) => s.id === 'vandenberg-slc-4e')!;
+    expect(pad.panorama_metadata?.caption).toMatch(/Luftaufnahme/);
   });
 });
 

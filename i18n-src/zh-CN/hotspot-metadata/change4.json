@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [],
+  "panorama_caption": "首幅从月球背面传回的全景图。位于 South Pole–Aitken Basin 内的 Von Kármán 撞击坑。中距离处是 Yutu-2 月球车；左下方是着陆器的影子。",
+  "compass_zero_direction": "着陆器相机 +X 轴",
+  "panorama_annotations": [
+    {
+      "id": "yutu2",
+      "label": "Yutu-2 月球车",
+      "body": "月球背面的第一辆月球车；5 年多后仍在工作（所有月球车中的纪录）。"
+    },
+    {
+      "id": "von-karman-rim",
+      "label": "Von Kármán 撞击坑边缘",
+      "body": "South Pole–Aitken Basin 内直径 180 千米撞击坑的内缘——月球上最大、最古老的撞击构造。"
+    },
+    {
+      "id": "change4-shadow",
+      "label": "Chang'e 4 着陆器的影子",
+      "body": "着陆器自己投在月壤上的影子——由其搭载的地形相机拍摄。"
+    }
+  ]
+}

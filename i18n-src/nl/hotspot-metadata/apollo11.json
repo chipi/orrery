@@ -1,1 +1,43 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "Daaltrap van de LM (Eagle)"
+    },
+    {
+      "id": "us-flag",
+      "label": "Amerikaanse vlag (~8 m ten westen van de LM geplant)"
+    },
+    {
+      "id": "lrrr",
+      "label": "Laser-retroreflector (LRRR)"
+    },
+    {
+      "id": "easep",
+      "label": "EASEP (vereenvoudigd ALSEP-pakket)"
+    },
+    {
+      "id": "plaque",
+      "label": "Plaquette 'We kwamen in vrede voor de hele mensheid'"
+    }
+  ],
+  "panorama_caption": "Tranquility Base, EVA-1. Buzz Aldrin fotografeerde de LM Eagle en de Amerikaanse vlag kort na de landing. De zichtbare Hasselblad-naden en gekleurde overgangen bij de LM horen bij het gepubliceerde mozaïek.",
+  "compass_zero_direction": "voorkant van de LM (volgens de panorama-oriëntatie van het ALSJ)",
+  "panorama_annotations": [
+    {
+      "id": "lm-eagle",
+      "label": "LM Eagle",
+      "body": "Daaltrap van de maanlander, waar Armstrong + Aldrin tijdens de maanwandeling stonden."
+    },
+    {
+      "id": "us-flag-pan",
+      "label": "Amerikaanse vlag",
+      "body": "~8 m ten westen van de LM geplant. Bij de lancering omvergeblazen door de uitlaat van de opstijgtrap."
+    },
+    {
+      "id": "buzz-shadow",
+      "label": "Schaduw van Buzz Aldrin",
+      "body": "De eigen schaduw van de fotograaf op de voorgrond — Buzz met de Hasselblad in zijn handen."
+    }
+  ]
+}

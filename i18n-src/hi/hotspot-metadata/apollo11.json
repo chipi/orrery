@@ -1,1 +1,43 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "LM का अवतरण चरण (Eagle)"
+    },
+    {
+      "id": "us-flag",
+      "label": "अमेरिकी झंडा (LM से ~8 मी पश्चिम में गाड़ा गया)"
+    },
+    {
+      "id": "lrrr",
+      "label": "लेज़र रेंजिंग रेट्रोरिफ़्लेक्टर (LRRR)"
+    },
+    {
+      "id": "easep",
+      "label": "EASEP (सरलीकृत ALSEP पैकेज)"
+    },
+    {
+      "id": "plaque",
+      "label": "\"हम पूरी मानवता के लिए शांति से आए\" पट्टिका"
+    }
+  ],
+  "panorama_caption": "Tranquility Base, EVA-1. Buzz Aldrin ने उतरने के कुछ ही देर बाद LM Eagle और अमेरिकी झंडे की तस्वीर ली। LM के पास दिखने वाले Hasselblad के जोड़ और रंगीन सिलाई प्रकाशित मोज़ेक का हिस्सा हैं।",
+  "compass_zero_direction": "LM का अगला भाग (ALSJ पैनोरमा अभिविन्यास के अनुसार)",
+  "panorama_annotations": [
+    {
+      "id": "lm-eagle",
+      "label": "LM Eagle",
+      "body": "चंद्र मॉड्यूल का अवतरण चरण, जहाँ EVA के दौरान Armstrong + Aldrin खड़े थे।"
+    },
+    {
+      "id": "us-flag-pan",
+      "label": "अमेरिकी झंडा",
+      "body": "LM से ~8 मी पश्चिम में गाड़ा गया। उड़ान के समय आरोहण चरण की धार से गिर गया।"
+    },
+    {
+      "id": "buzz-shadow",
+      "label": "Buzz Aldrin की परछाईं",
+      "body": "अग्रभूमि में फ़ोटोग्राफ़र की अपनी परछाईं — Buzz हाथ में Hasselblad लिए हुए।"
+    }
+  ]
+}

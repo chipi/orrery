@@ -1,1 +1,43 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "Stadio di discesa del LM (Eagle)"
+    },
+    {
+      "id": "us-flag",
+      "label": "Bandiera USA (piantata ~8 m a ovest del LM)"
+    },
+    {
+      "id": "lrrr",
+      "label": "Retroriflettore laser (LRRR)"
+    },
+    {
+      "id": "easep",
+      "label": "EASEP (pacchetto ALSEP semplificato)"
+    },
+    {
+      "id": "plaque",
+      "label": "Targa «Siamo venuti in pace per tutta l'umanità»"
+    }
+  ],
+  "panorama_caption": "Tranquility Base, EVA-1. Buzz Aldrin fotografò il LM Eagle e la bandiera USA poco dopo l'allunaggio. Le cuciture Hasselblad visibili e le giunture cromatiche intorno al LM fanno parte del mosaico pubblicato.",
+  "compass_zero_direction": "fronte del LM (secondo l'orientamento del panorama dell'ALSJ)",
+  "panorama_annotations": [
+    {
+      "id": "lm-eagle",
+      "label": "LM Eagle",
+      "body": "Stadio di discesa del modulo lunare, dove Armstrong + Aldrin si trovavano durante l'EVA."
+    },
+    {
+      "id": "us-flag-pan",
+      "label": "Bandiera USA",
+      "body": "Piantata ~8 m a ovest del LM. Abbattuta dal getto dello stadio di risalita al decollo."
+    },
+    {
+      "id": "buzz-shadow",
+      "label": "Ombra di Buzz Aldrin",
+      "body": "L'ombra del fotografo stesso in primo piano — Buzz che tiene la Hasselblad."
+    }
+  ]
+}

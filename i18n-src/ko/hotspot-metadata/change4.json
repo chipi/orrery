@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [],
+  "panorama_caption": "달 뒷면에서 처음으로 전송된 파노라마. South Pole–Aitken Basin 안의 Von Kármán 크레이터. 중간 거리에 Yutu-2 로버, 왼쪽 아래에 착륙선 그림자.",
+  "compass_zero_direction": "착륙선 카메라 +X 축",
+  "panorama_annotations": [
+    {
+      "id": "yutu2",
+      "label": "Yutu-2 로버",
+      "body": "달 뒷면 최초의 로버로, 5년이 넘도록 여전히 작동 중이다(모든 달 로버 중 최장 기록)."
+    },
+    {
+      "id": "von-karman-rim",
+      "label": "Von Kármán 크레이터 가장자리",
+      "body": "South Pole–Aitken Basin 안에 있는 지름 180 km 크레이터의 안쪽 가장자리 — 달에서 가장 크고 오래된 충돌 구조."
+    },
+    {
+      "id": "change4-shadow",
+      "label": "Chang'e 4 착륙선 그림자",
+      "body": "레골리스 위에 드리운 착륙선 자신의 그림자 — 탑재된 지형 카메라로 촬영했다."
+    }
+  ]
+}

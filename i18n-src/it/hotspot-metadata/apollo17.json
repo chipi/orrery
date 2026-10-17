@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [],
+  "panorama_caption": "Valle di Taurus-Littrow, stazione 5. Schmitt + Cernan lavorarono qui su Camelot Crater e sul South Massif. L'ultimo panorama di un'EVA lunare del programma Apollo.",
+  "compass_zero_direction": "fronte del LRV (secondo l'orientamento del panorama dell'ALSJ)",
+  "panorama_annotations": [
+    {
+      "id": "south-massif",
+      "label": "South Massif",
+      "body": "Altopiano sollevato di 2,3 km, campionato alla stazione 2 (il luogo della scoperta del suolo arancione)."
+    },
+    {
+      "id": "camelot-crater",
+      "label": "Bordo di Camelot Crater",
+      "body": "Grande cratere da impatto preesistente vicino al modulo lunare; il campo di massi della stazione 5 è sul suo bordo."
+    },
+    {
+      "id": "lrv",
+      "label": "Rover lunare (LRV)",
+      "body": "Il terzo LRV usato sulla Luna. Percorso totale di questa missione: 35,7 km — ancora il record."
+    }
+  ]
+}

@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [],
+  "panorama_caption": "Curiosity في قناة Gediz Vallis — منظر المركبة بزاوية 360° في اليوم المريخي 4220 بعد حفر عينة Mammoth Lakes، العينة الحادية والأربعين على المريخ. الذراع الآلية ظاهرة يسارًا وقد أنهت الحفر للتو؛ وسطح المركبة يمينًا؛ والسماء المريخية الحقيقية في الشريط العلوي؛ وقناة Gediz Vallis تنحدر في الوسط — أول مكان وُجدت فيه بلورات كبريت نقي على المريخ.",
+  "compass_zero_direction": "مقدّمة المركبة",
+  "panorama_annotations": [
+    {
+      "id": "gediz-vallis-channel",
+      "label": "قناة Gediz Vallis",
+      "body": "قناة قديمة حفرها الماء تنحدر على سفوح Mt. Sharp. حفر Curiosity هنا عينة Mammoth Lakes — أول بلورات كبريت نقي يُعثر عليها على المريخ."
+    },
+    {
+      "id": "robotic-arm",
+      "label": "الذراع الآلية",
+      "body": "ذراع مفصلية بطول 2 م تحمل المثقاب والفرشاة ومطياف APXS — ظاهرة يسارًا بعد إتمام حفر Mammoth Lakes في هذا اليوم المريخي."
+    },
+    {
+      "id": "mt-sharp-flank",
+      "label": "السفح السفلي لـ Mt. Sharp",
+      "body": "سفوح Aeolis Mons الطبقية، الجبل الذي يبلغ ارتفاعه 5 كم في وسط Gale Crater ويتسلقه Curiosity منذ 2014."
+    }
+  ]
+}

@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [],
+  "panorama_caption": "Taurus-Littrow 계곡, 스테이션 5. Schmitt + Cernan이 이곳에서 Camelot Crater와 South Massif를 조사했다. Apollo 프로그램 마지막 달 선외활동 파노라마다.",
+  "compass_zero_direction": "월면차 정면 (ALSJ 파노라마 방향 기준)",
+  "panorama_annotations": [
+    {
+      "id": "south-massif",
+      "label": "South Massif",
+      "body": "높이 2.3 km로 솟은 고지대로, 스테이션 2(주황색 흙이 발견된 곳)에서 시료를 채취했다."
+    },
+    {
+      "id": "camelot-crater",
+      "label": "Camelot Crater 가장자리",
+      "body": "달 착륙선 근처의 오래된 대형 충돌 크레이터로, 스테이션 5의 바위 지대가 가장자리에 있다."
+    },
+    {
+      "id": "lrv",
+      "label": "월면차",
+      "body": "달에서 사용된 세 번째 월면차. 이 임무의 총 주행 거리는 35.7 km로 지금도 기록이다."
+    }
+  ]
+}

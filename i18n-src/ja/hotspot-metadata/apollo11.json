@@ -1,1 +1,43 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "LM 降下段（Eagle）"
+    },
+    {
+      "id": "us-flag",
+      "label": "米国旗（LM の約 8 m 西に設置）"
+    },
+    {
+      "id": "lrrr",
+      "label": "レーザー測距用反射鏡（LRRR）"
+    },
+    {
+      "id": "easep",
+      "label": "EASEP（簡易版 ALSEP パッケージ）"
+    },
+    {
+      "id": "plaque",
+      "label": "「全人類のために平和のうちに来た」の銘板"
+    }
+  ],
+  "panorama_caption": "Tranquility Base、EVA-1。Buzz Aldrin が着陸直後に LM Eagle と米国旗を撮影した。LM 付近に見える Hasselblad 画像のつなぎ目と色のずれは、公開されたモザイクの一部である。",
+  "compass_zero_direction": "LM の前方（ALSJ のパノラマ方位による）",
+  "panorama_annotations": [
+    {
+      "id": "lm-eagle",
+      "label": "LM Eagle",
+      "body": "月着陸船の降下段。Armstrong + Aldrin は船外活動中ここに立っていた。"
+    },
+    {
+      "id": "us-flag-pan",
+      "label": "米国旗",
+      "body": "LM の約 8 m 西に設置。離陸時に上昇段の噴射で倒れた。"
+    },
+    {
+      "id": "buzz-shadow",
+      "label": "Buzz Aldrin の影",
+      "body": "手前に写る撮影者自身の影 — Hasselblad を構える Buzz。"
+    }
+  ]
+}

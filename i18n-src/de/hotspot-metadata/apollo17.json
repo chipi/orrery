@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [],
+  "panorama_caption": "Taurus-Littrow-Tal, Station 5. Schmitt + Cernan arbeiteten hier am Camelot Crater und am South Massif. Das letzte Panorama eines Mondausstiegs im Apollo-Programm.",
+  "compass_zero_direction": "LRV-Vorderseite (laut Panorama-Ausrichtung des ALSJ)",
+  "panorama_annotations": [
+    {
+      "id": "south-massif",
+      "label": "South Massif",
+      "body": "2,3 km hohes gehobenes Hochland, beprobt an Station 2 (dem Fundort der orangefarbenen Erde)."
+    },
+    {
+      "id": "camelot-crater",
+      "label": "Rand des Camelot Crater",
+      "body": "Großer, älterer Einschlagkrater nahe der Mondlandefähre; das Blockfeld von Station 5 liegt auf seinem Rand."
+    },
+    {
+      "id": "lrv",
+      "label": "Mondauto (LRV)",
+      "body": "Das dritte auf dem Mond eingesetzte LRV. Gesamtstrecke dieser Mission: 35,7 km — bis heute der Rekord."
+    }
+  ]
+}

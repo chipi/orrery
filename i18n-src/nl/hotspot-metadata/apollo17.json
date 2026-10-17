@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [],
+  "panorama_caption": "Dal van Taurus-Littrow, station 5. Schmitt + Cernan werkten hier bij Camelot Crater en het South Massif. Het laatste panorama van een maanwandeling in het Apollo-programma.",
+  "compass_zero_direction": "voorkant van de LRV (volgens de panorama-oriëntatie van het ALSJ)",
+  "panorama_annotations": [
+    {
+      "id": "south-massif",
+      "label": "South Massif",
+      "body": "2,3 km hoog opgeheven hoogland, bemonsterd bij station 2 (de vindplaats van de oranje bodem)."
+    },
+    {
+      "id": "camelot-crater",
+      "label": "Rand van Camelot Crater",
+      "body": "Grote, oudere inslagkrater bij de maanlander; het rotsblokkenveld van station 5 ligt op de rand."
+    },
+    {
+      "id": "lrv",
+      "label": "Maanwagen (LRV)",
+      "body": "De derde LRV die op de Maan werd gebruikt. Totale afstand tijdens deze missie: 35,7 km — nog altijd het record."
+    }
+  ]
+}

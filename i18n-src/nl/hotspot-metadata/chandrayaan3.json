@@ -1,1 +1,17 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [],
+  "panorama_caption": "Shiv Shakti Point — het eerste panorama vanaf de zuidpool van de Maan. De schaduw van lander Vikram op de voorgrond; rover Pragyan werd kort na deze opname op het regoliet gezet.",
+  "compass_zero_direction": "+X-as van de landercamera",
+  "panorama_annotations": [
+    {
+      "id": "pragyan",
+      "label": "Rover Pragyan (uitgezet op sol +1)",
+      "body": "Rover van 26 kg met zes wielen. De dag na de landing via de oprijplaat van Vikram uitgezet; actief tot het invallen van de maannacht (~14 aardse dagen)."
+    },
+    {
+      "id": "south-pole-rim",
+      "label": "Kraterrand bij de zuidpool",
+      "body": "De eerste geslaagde zachte landing zo dicht bij de zuidpool van de Maan — een gebied waar naar waterijs wordt gezocht."
+    }
+  ]
+}

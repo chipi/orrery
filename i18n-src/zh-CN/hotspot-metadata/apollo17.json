@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [],
+  "panorama_caption": "Taurus-Littrow 山谷，第 5 站。Schmitt + Cernan 在这里考察了 Camelot Crater 和 South Massif。这是 Apollo 计划最后一次月面出舱活动的全景图。",
+  "compass_zero_direction": "月球车正前方（依据 ALSJ 全景方位）",
+  "panorama_annotations": [
+    {
+      "id": "south-massif",
+      "label": "South Massif",
+      "body": "高 2.3 千米的隆起高地，在第 2 站（发现橙色土壤的地点）采集了样品。"
+    },
+    {
+      "id": "camelot-crater",
+      "label": "Camelot Crater 边缘",
+      "body": "登月舱附近一个较古老的大型撞击坑；第 5 站的巨石区就在其边缘。"
+    },
+    {
+      "id": "lrv",
+      "label": "月球车",
+      "body": "在月球上使用的第三辆月球车。本次任务总行驶距离 35.7 千米——至今仍是纪录。"
+    }
+  ]
+}

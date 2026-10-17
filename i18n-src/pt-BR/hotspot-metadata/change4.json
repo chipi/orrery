@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [],
+  "panorama_caption": "O primeiro panorama já transmitido do lado oculto da Lua. A cratera Von Kármán, dentro do South Pole–Aitken Basin. O rover Yutu-2 a meia distância; a sombra do módulo de pouso no canto inferior esquerdo.",
+  "compass_zero_direction": "eixo +X da câmera do módulo de pouso",
+  "panorama_annotations": [
+    {
+      "id": "yutu2",
+      "label": "Rover Yutu-2",
+      "body": "O primeiro rover no lado oculto da Lua; ainda em operação após mais de 5 anos (o recorde para qualquer rover lunar)."
+    },
+    {
+      "id": "von-karman-rim",
+      "label": "Borda da cratera Von Kármán",
+      "body": "Borda interna da cratera de 180 km dentro do South Pole–Aitken Basin — a maior e mais antiga estrutura de impacto da Lua."
+    },
+    {
+      "id": "change4-shadow",
+      "label": "Sombra do módulo Chang'e 4",
+      "body": "A sombra do próprio módulo de pouso sobre o regolito — captada por sua câmera de terreno de bordo."
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { nameCandidates, nonNameChanges } from './i18n-names-pass.mjs';
+import { nameCandidates } from './lib/translate-quality.mjs';
+import { nonNameChanges } from './lib/name-diff.mjs';
 
 // Cases are the edits the 2026-10-17 ja/de pilot actually produced.
 describe('nonNameChanges', () => {

@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [],
+  "panorama_caption": "وادي Taurus-Littrow، المحطة 5. عمل Schmitt + Cernan هنا عند Camelot Crater وSouth Massif. آخر بانوراما لنشاط على سطح القمر في برنامج Apollo.",
+  "compass_zero_direction": "مقدّمة المركبة الجوّالة القمرية (وفق اتجاه بانوراما ALSJ)",
+  "panorama_annotations": [
+    {
+      "id": "south-massif",
+      "label": "South Massif",
+      "body": "مرتفع مرفوع بارتفاع 2.3 كم، أُخذت منه عينات في المحطة 2 (موقع اكتشاف التربة البرتقالية)."
+    },
+    {
+      "id": "camelot-crater",
+      "label": "حافة Camelot Crater",
+      "body": "فوهة صدمية كبيرة أقدم قرب الوحدة القمرية؛ يقع حقل الصخور في المحطة 5 على حافتها."
+    },
+    {
+      "id": "lrv",
+      "label": "المركبة الجوّالة القمرية",
+      "body": "ثالث مركبة جوّالة قمرية استُخدمت على القمر. إجمالي المسافة في هذه المهمة: 35.7 كم — وما زال ذلك رقمًا قياسيًا."
+    }
+  ]
+}

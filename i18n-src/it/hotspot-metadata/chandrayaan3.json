@@ -1,1 +1,17 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [],
+  "panorama_caption": "Shiv Shakti Point — il primo panorama dal polo sud lunare. L'ombra del lander Vikram in primo piano; il rover Pragyan è stato deposto sulla regolite poco dopo questa immagine.",
+  "compass_zero_direction": "asse +X della fotocamera del lander",
+  "panorama_annotations": [
+    {
+      "id": "pragyan",
+      "label": "Rover Pragyan (deposto al sol +1)",
+      "body": "Rover a sei ruote da 26 kg. Deposto tramite la rampa di Vikram il giorno dopo l'atterraggio; ha funzionato fino al calare della notte lunare (~14 giorni terrestri)."
+    },
+    {
+      "id": "south-pole-rim",
+      "label": "Bordo di cratere al polo sud",
+      "body": "Il primo atterraggio morbido riuscito così vicino al polo sud lunare — una zona di ricerca di ghiaccio d'acqua."
+    }
+  ]
+}

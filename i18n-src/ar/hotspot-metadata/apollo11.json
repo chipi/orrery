@@ -1,1 +1,43 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [
+    {
+      "id": "lm-descent-stage",
+      "label": "مرحلة الهبوط في LM (Eagle)"
+    },
+    {
+      "id": "us-flag",
+      "label": "العلم الأمريكي (مغروس على بُعد ~8 م غرب LM)"
+    },
+    {
+      "id": "lrrr",
+      "label": "عاكس ليزري للقياس (LRRR)"
+    },
+    {
+      "id": "easep",
+      "label": "EASEP (حزمة ALSEP مبسّطة)"
+    },
+    {
+      "id": "plaque",
+      "label": "لوحة «جئنا بسلام من أجل البشرية جمعاء»"
+    }
+  ],
+  "panorama_caption": "Tranquility Base، ‏EVA-1. صوّر Buzz Aldrin المركبة LM Eagle والعلم الأمريكي بعد الهبوط بقليل. اللحامات الظاهرة بين لقطات Hasselblad والوصلات الملوّنة عند LM جزء من الفسيفساء المنشورة.",
+  "compass_zero_direction": "مقدّمة LM (وفق اتجاه بانوراما ALSJ)",
+  "panorama_annotations": [
+    {
+      "id": "lm-eagle",
+      "label": "LM Eagle",
+      "body": "مرحلة الهبوط في الوحدة القمرية، حيث وقف Armstrong + Aldrin خلال النشاط خارج المركبة."
+    },
+    {
+      "id": "us-flag-pan",
+      "label": "العلم الأمريكي",
+      "body": "غُرس على بُعد ~8 م غرب LM. أسقطه نفث مرحلة الصعود عند الإقلاع."
+    },
+    {
+      "id": "buzz-shadow",
+      "label": "ظل Buzz Aldrin",
+      "body": "ظل المصوّر نفسه في المقدمة — Buzz يحمل كاميرا Hasselblad."
+    }
+  ]
+}

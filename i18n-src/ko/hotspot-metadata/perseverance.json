@@ -1,1 +1,22 @@
-{"hotspot_annotations": []}
+{
+  "hotspot_annotations": [],
+  "panorama_caption": "Perseverance의 첫 360° 파노라마 — 착륙 사흘 뒤. 전경은 로버 갑판이 차지하고, 지평선 위로 Jezero 크레이터 바닥과 먼 가장자리가 보이며, 위쪽 띠에는 진짜 화성 하늘이 담겼다.",
+  "compass_zero_direction": "로버 +X 축",
+  "panorama_annotations": [
+    {
+      "id": "mastcam-z-tower",
+      "label": "Mastcam-Z 마스트",
+      "body": "높이 2 m의 카메라 마스트 — 로버의 \"눈\" — 파노라마가 그 둘레를 감싸기 때문에 가운데에 보인다."
+    },
+    {
+      "id": "jezero-crater-rim",
+      "label": "Jezero 크레이터 가장자리",
+      "body": "~2 km 떨어진 크레이터 벽. 이 가장자리 서쪽 끝에 오래된 삼각주 퇴적층이 보인다 — Perseverance가 첫해 동안 향해 간 과학 목표다."
+    },
+    {
+      "id": "rover-deck",
+      "label": "로버 갑판",
+      "body": "모든 Mastcam-Z 360° 사진의 전경 — 태양광 패널 같은 갑판이며, 오른쪽에 시료관 보관함이 보인다."
+    }
+  ]
+}

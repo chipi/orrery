@@ -37,7 +37,7 @@
         "Robert Heinlein이 썼습니다: \"일단 궤도에 오르면, 태양계의 어디든 절반은 간 것입니다.\" 그는 농담이 아니었습니다. 저궤도 지구 궤도에 도달하는 데는 ~9.4 km/s의 ∆v가 듭니다. 거기서 화성까지 가는 데는 추가로 ~3.6 km/s가 듭니다. 가장 어려운 부분은 이미 지났습니다.",
         "가장 저렴한 행성 간 경로는 [Hohmann 전이](transfers/hohmann-transfer)입니다: 한쪽 끝에서는 지구 궤도에, 다른 쪽 끝에서는 목적지 궤도에 간신히 닿는 타원. 두 번의 분사, 낭비되는 연료 없음. 화성까지는 ~8.5개월이 걸립니다. 느리지만, 최적입니다.",
         "더 빨리 가고 싶으세요? [Lambert 문제](transfers/lambert-problem)를 푸세요 — 출발 날짜와 이동 시간을 선택하면, Lambert가 그것들을 연결하는 고유한 [전이 타원](transfers/transfer-ellipse)을 알려줍니다. 그것이 정확히 Orrery의 [/plan](app:/plan) 화면이 하는 일입니다. 포크찹 플롯을 그리기 위해 동시에 만 번.",
-        "더 멀리 가야 하나요? 행성에서 속도를 훔치세요. [중력 도움](transfers/gravity-assist)은 근접 비행을 사용하여 연료 비용 없이 궤적을 변경합니다 — Voyager 2는 Neptune에 도달하기 위해 네 번을 사용했습니다. 전체 태양계는 [패치된 원뿔 곡선](transfers/patched-conics)으로 이어집니다: 릴레이 경주에서 바통처럼 중력 이웃 사이를 건네받는 일련의 [원뿔 곡선](transfers/conic-sections) 호."
+        "더 멀리 가야 하나요? 행성에서 속도를 훔치세요. [중력 도움](transfers/gravity-assist)은 근접 비행을 사용하여 연료 비용 없이 궤적을 변경합니다 — Voyager 2는 해왕성에 도달하기 위해 네 번을 사용했습니다. 전체 태양계는 [패치된 원뿔 곡선](transfers/patched-conics)으로 이어집니다: 릴레이 경주에서 바통처럼 중력 이웃 사이를 건네받는 일련의 [원뿔 곡선](transfers/conic-sections) 호."
       ]
     },
     {
@@ -58,7 +58,7 @@
       "diagram_caption": "진입, 하강, 착륙. 순수한 공포의 6분.",
       "paragraphs": [
         "Voyager에서 Perseverance까지 거의 모든 행성 간 임무는 동일한 스크립트를 실행합니다:",
-        "[발사](mission-phases/launch) — 대기를 벗어나 저궤도 지구 궤도로. [Trans-X 주입](mission-phases/trans-x-injection) — 근지점에서의 단 한 번의 강력한 분사로 달(TLI), 화성(TMI), Venus(TVI), 또는 Jupiter(TJI)로 가는 전이 타원으로 던져집니다. [궤적 수정 기동](mission-phases/tcm) — 분산 오류를 수정하기 위한 순항 중 작은 분사. 보통 1–3번. [궤도 삽입](mission-phases/orbit-insertion) — 목적지에서 포획 궤도로 구부리기 위한 제동 분사. [EDL](mission-phases/edl) — 진입, 하강, 착륙 — 착륙선용. 초음속 대기 혼돈의 6분.",
+        "[발사](mission-phases/launch) — 대기를 벗어나 저궤도 지구 궤도로. [Trans-X 주입](mission-phases/trans-x-injection) — 근지점에서의 단 한 번의 강력한 분사로 달(TLI), 화성(TMI), 금성(TVI), 또는 목성(TJI)로 가는 전이 타원으로 던져집니다. [궤적 수정 기동](mission-phases/tcm) — 분산 오류를 수정하기 위한 순항 중 작은 분사. 보통 1–3번. [궤도 삽입](mission-phases/orbit-insertion) — 목적지에서 포획 궤도로 구부리기 위한 제동 분사. [EDL](mission-phases/edl) — 진입, 하강, 착륙 — 착륙선용. 초음속 대기 혼돈의 6분.",
         "달 임무는 때때로 [근직선 후광 궤도](mission-phases/nrho)를 우회하고 (Gateway가 그 안에 있을 것입니다), 유인 Apollo 비행은 [자유 귀환 궤적](transfers/free-return)을 날렸습니다 — 우주선의 모든 엔진이 죽으면 자동으로 지구로 다시 떨어뜨리는 8자형 경로. Apollo 13은 이 기하학에 생명을 빚지고 있습니다."
       ]
     },
@@ -66,7 +66,7 @@
       "heading": "6 — 거리와 시간, 이 모든 것이 지구 크기가 아니므로.",
       "diagram": "au.svg",
       "diagram_alt": "지구의 궤도 반지름을 따라 표시된 천문 단위.",
-      "diagram_caption": "1 AU = 하나의 지구-태양 거리. 화성은 ~1.5 AU. Jupiter는 ~5.2.",
+      "diagram_caption": "1 AU = 하나의 지구-태양 거리. 화성은 ~1.5 AU. 목성은 ~5.2.",
       "paragraphs": [
         "세 가지 단위가 어디에나 나타납니다. [천문 단위](scales-time/au) (AU)는 평균 지구-태양 거리입니다 — 1억 5천만 km. 킬로미터는 빠르게 다루기 힘들어지기 때문에 우리는 태양계를 AU로 측정합니다. [광분](scales-time/light-minute)은 무선 신호가 우주선에 도달하는 데 걸리는 시간을 알려줍니다. 화성: 편도 4~24분. 지구에서 로버를 조이스틱으로 조작할 수 없습니다. 모든 중요한 것은 자율적입니다.",
         "[J2000 에포크](scales-time/j2000)는 모든 천체 역학자가 사용하는 달력 영점입니다. [항성 주기 대 회합 주기](scales-time/sidereal-synodic)는 화성 창이 23개월마다가 아니라 26개월마다 반복되는 이유를 설명합니다. [황도면](scales-time/ecliptic-plane)은 행성들이 모두 (대부분) 놓여 있는 평평한 원반입니다. [참조 프레임](scales-time/frames)은 임무 관제소가 지구 중심, 태양 중심, 그리고 천체 중심 관점 사이에서 저글링하는 좌표계입니다."

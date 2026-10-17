@@ -6,16 +6,16 @@
     "Cassini — NASA/ESA/ASI，2005–2015 年（羽流发现+穿越飞行）"
   ],
   "library_labels": {
-    "enceladus-wiki": "Wikipedia — Enceladus",
-    "enceladus-nasa": "NASA Science — Enceladus 概述",
+    "enceladus-wiki": "Wikipedia — 土卫二",
+    "enceladus-nasa": "NASA Science — 土卫二概述",
     "enceladus-cassini": "NASA Cassini — 羽流飞越任务档案",
-    "enceladus-habitability": "Astrobiology — Enceladus 生命探索目标"
+    "enceladus-habitability": "Astrobiology — 土卫二生命探索目标"
   },
   "science_sections": [
     {
       "tab": "orbits",
       "section": "eccentricity",
-      "why": "Enceladus与Dione处于2:1平均运动共振——受迫偏心率(0.0047)驱动潮汐弯曲,为南极冰火山羽流提供动力。"
+      "why": "土卫二与Dione处于2:1平均运动共振——受迫偏心率(0.0047)驱动潮汐弯曲,为南极冰火山羽流提供动力。"
     }
   ]
 }

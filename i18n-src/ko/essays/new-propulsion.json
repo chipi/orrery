@@ -28,7 +28,7 @@
     },
     {
       "type": "prose",
-      "md": "Dawn는 2007년에 Deep Space 1의 엔진의 직접적인 후계자인 3개의 NSTAR 이온 추진기를 탑재하고 발사되었으며, 우주선이 한 번도 해본 적 없는 작업을 수행하는 데 사용했습니다: 소행성대의 한 천체를 공전하고 [Vesta](/explore)에서 정지할 때까지 감속한 후 1년 동안 그것을 공전하고, 다시 점화한 후 두 번째 천체 [Ceres](/explore)로 나선형으로 나아가 그것도 공전하는 것입니다. 같은 목표를 가진 화학 로켓 미션이었다면 현존하는 모든 로켓으로 발사할 수 없을 정도로 많은 추진제가 필요했을 것입니다. 총 5년 6개월 이상의 누적 추진 시간 동안 작동한 이온 엔진은 425킬로그램의 제논으로 같은 여행을 가능하게 했습니다. Dawn의 비충동은 3,100초였습니다. 제논 1킬로그램은 액체 수소 7킬로그램의 일을 해냈습니다."
+      "md": "Dawn는 2007년에 Deep Space 1의 엔진의 직접적인 후계자인 3개의 NSTAR 이온 추진기를 탑재하고 발사되었으며, 우주선이 한 번도 해본 적 없는 작업을 수행하는 데 사용했습니다: 소행성대의 한 천체를 공전하고 [베스타](/explore)에서 정지할 때까지 감속한 후 1년 동안 그것을 공전하고, 다시 점화한 후 두 번째 천체 [세레스](/explore)로 나선형으로 나아가 그것도 공전하는 것입니다. 같은 목표를 가진 화학 로켓 미션이었다면 현존하는 모든 로켓으로 발사할 수 없을 정도로 많은 추진제가 필요했을 것입니다. 총 5년 6개월 이상의 누적 추진 시간 동안 작동한 이온 엔진은 425킬로그램의 제논으로 같은 여행을 가능하게 했습니다. Dawn의 비충동은 3,100초였습니다. 제논 1킬로그램은 액체 수소 7킬로그램의 일을 해냈습니다."
     },
     {
       "type": "prose",
@@ -45,7 +45,7 @@
       "type": "figure",
       "image": "missions/dawn/01",
       "kind": "photo",
-      "caption": "Dawn은 당신의 손바닥 위에 균형을 잡을 수 있는 추력을 가진 xenon-ion engine에서 실행했다—그리고 몇 년간 그 whisper를 탔으며, 지구를 넘어 두 개의 별도 세계를 orbit한 유일한 기체가 되었다: 첫 번째 Vesta, 그 다음 Ceres.",
+      "caption": "Dawn은 당신의 손바닥 위에 균형을 잡을 수 있는 추력을 가진 xenon-ion engine에서 실행했다—그리고 몇 년간 그 whisper를 탔으며, 지구를 넘어 두 개의 별도 세계를 orbit한 유일한 기체가 되었다: 첫 번째 베스타, 그 다음 세레스.",
       "align": "wide",
       "credit": "NASA/JPL-Caltech"
     },
@@ -67,7 +67,7 @@
     },
     {
       "type": "prose",
-      "md": "JAXA가 첫 번째 것을 비행했다. 2010년 5월 21일에, 일본 우주선 IKAROS—*Interplanetary Kite-craft Accelerating Radiation Of the Sun*—200제곱미터 polyimide sail을 금성으로 가는 길에 배포했고 deep space에서 sunlight alone으로부터 의미 있는 propulsion을 달성한 첫 번째 우주선이 되었다. 그것은 가속도를 측정했다. 그것은 작동했다. Planetary Society의 LightSail 2는 2019년에 발사되었고, 더 멀리 나갔다: shoebox-stacked CubeSat을 배포한 32제곱미터 sail을 배포했고 light의 압력만을 사용하여 measurably하게 그것의 orbit을 raise한 첫 번째 우주선이 되었다. 두 미션 모두 작고, 저예산이었으며, 더 넓은 언론에 의해 대체로 무시되었다. 그들 사이에 그들은 solar sailing이 thought experiment가 아니라는 것을 확립했다."
+      "md": "JAXA가 첫 번째 것을 비행했다. 2010년 5월 21일에, 일본 우주선 IKAROS—*Interplanetary Kite-craft Accelerating Radiation Of the 태양*—200제곱미터 polyimide sail을 금성으로 가는 길에 배포했고 deep space에서 sunlight alone으로부터 의미 있는 propulsion을 달성한 첫 번째 우주선이 되었다. 그것은 가속도를 측정했다. 그것은 작동했다. Planetary Society의 LightSail 2는 2019년에 발사되었고, 더 멀리 나갔다: shoebox-stacked CubeSat을 배포한 32제곱미터 sail을 배포했고 light의 압력만을 사용하여 measurably하게 그것의 orbit을 raise한 첫 번째 우주선이 되었다. 두 미션 모두 작고, 저예산이었으며, 더 넓은 언론에 의해 대체로 무시되었다. 그들 사이에 그들은 solar sailing이 thought experiment가 아니라는 것을 확립했다."
     },
     {
       "type": "prose",

@@ -6,16 +6,16 @@
     "Cassini — NASA/ESA/ASI、2005～2015年（プリューム発見＋通過飛行）"
   ],
   "library_labels": {
-    "enceladus-wiki": "Wikipedia — Enceladus",
-    "enceladus-nasa": "NASA Science — Enceladus 概要",
+    "enceladus-wiki": "Wikipedia — エンケラドゥス",
+    "enceladus-nasa": "NASA Science — エンケラドゥス概要",
     "enceladus-cassini": "NASA Cassini — プルーム通過飛行レガシーアーカイブ",
-    "enceladus-habitability": "Astrobiology — 生命探査ターゲットとしてのEnceladus"
+    "enceladus-habitability": "Astrobiology — 生命探査ターゲットとしてのエンケラドゥス"
   },
   "science_sections": [
     {
       "tab": "orbits",
       "section": "eccentricity",
-      "why": "Enceladusはディオーネとの2:1平均運動共鳴にあり、強制離心率(0.0047)が南極域の低温火山プルームを駆動する潮汐変形を引き起こしている。"
+      "why": "エンケラドゥスはディオーネとの2:1平均運動共鳴にあり、強制離心率(0.0047)が南極域の低温火山プルームを駆動する潮汐変形を引き起こしている。"
     }
   ]
 }

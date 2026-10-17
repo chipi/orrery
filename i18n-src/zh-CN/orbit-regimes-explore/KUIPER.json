@@ -1,17 +1,17 @@
 {
   "name": "Kuiper Belt",
   "short": "KUIPER",
-  "story": "海王星以外的冰冻天体环带——距太阳30至50 AU。小行星带的冰冻类似物：数十万个天体中只有最大的几个被解析。由甲烷、氨、水冰和岩石组成。Pluto是1930年首个被确认的成员，但直到1990年代Jewitt和Luu发现第二个成员(1992 QB1)时，这个带才被认定为一个群体。New Horizons让人类首次近距离观察了两个Kuiper天体——2015年的Pluto和2019年的Arrokoth。",
+  "story": "海王星以外的冰冻天体环带——距太阳30至50 AU。小行星带的冰冻类似物：数十万个天体中只有最大的几个被解析。由甲烷、氨、水冰和岩石组成。冥王星是1930年首个被确认的成员，但直到1990年代Jewitt和Luu发现第二个成员(1992 QB1)时，这个带才被认定为一个群体。New Horizons让人类首次近距离观察了两个Kuiper天体——2015年的冥王星和2019年的阿罗科斯。",
   "comparison": "如果小行星带是围绕太阳系内部的细环,那么Kuiper带则宽达1,000倍,所含质量是其数十倍(~50倍及以上)。在冥王星上的阳光强度仅为地球上的1/1,600。",
   "residents": [
     {
       "id": "pluto",
-      "label": "Pluto——39.5 AU，已知最大",
+      "label": "冥王星——39.5 AU，已知最大",
       "agency": "NATURAL"
     },
     {
       "id": "eris",
-      "label": "Eris——96.4 AU（离散盘）",
+      "label": "阋神星——96.4 AU（离散盘）",
       "agency": "NATURAL"
     },
     {
@@ -31,22 +31,22 @@
     },
     {
       "id": "arrokoth",
-      "label": "Arrokoth——44.6 AU，接触双星",
+      "label": "阿罗科斯——44.6 AU，接触双星",
       "agency": "NATURAL"
     }
   ],
   "firsts": [
     {
       "year": 1930,
-      "label": "发现Pluto——首个确认的柯伊伯带天体 (Tombaugh, 美国)"
+      "label": "发现冥王星——首个确认的柯伊伯带天体 (Tombaugh, 美国)"
     },
     {
       "year": 2015,
-      "label": "New Horizons——首次飞掠Pluto (USA)"
+      "label": "New Horizons——首次飞掠冥王星 (USA)"
     },
     {
       "year": 2019,
-      "label": "New Horizons抵达Arrokoth——人类探访过的最遥远天体 (USA)"
+      "label": "New Horizons抵达阿罗科斯——人类探访过的最遥远天体 (USA)"
     }
   ],
   "science_link": {

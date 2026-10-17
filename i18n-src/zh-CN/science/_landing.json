@@ -1,8 +1,8 @@
 {
-  "intro_heading": "所以你想把火箭飞向 Mars。",
+  "intro_heading": "所以你想把火箭飞向火星。",
   "intro_paragraphs": [
     "欢迎来到 Orrery 中按钮不再神秘的部分。HUD 中的每一个标签、porkchop 图中的每一条彩色等高线、轨迹上的每一个燃烧标记——本节将解释它们从何而来。像读漫画书一样阅读:图表承担大部分工作,每个斜体术语都是一个链接,你可以随心所欲地深入探索。",
-    "我们将一起建造一枚火箭。不是真实的火箭——Orrery 是一个模拟器——而是真实飞行团队做出的同一系列决策,按照他们做出决策的顺序。读完之后,你将知道为什么 Mars 的发射窗口每 26 个月出现一次,而月球每个月都有,为什么存在自由返回轨道,以及为什么推力是任务中最便宜的部分,而燃料是整场战斗。"
+    "我们将一起建造一枚火箭。不是真实的火箭——Orrery 是一个模拟器——而是真实飞行团队做出的同一系列决策,按照他们做出决策的顺序。读完之后,你将知道为什么火星的发射窗口每 26 个月出现一次,而月球每个月都有,为什么存在自由返回轨道,以及为什么推力是任务中最便宜的部分,而燃料是整场战斗。"
   ],
   "chapters": [
     {
@@ -31,22 +31,22 @@
     {
       "heading": "3 — 一旦进入轨道,你就到达任何地方的一半路程了。",
       "diagram": "hohmann-transfer.svg",
-      "diagram_alt": "一个与地球轨道和 Mars 轨道相切的椭圆。",
+      "diagram_alt": "一个与地球轨道和火星轨道相切的椭圆。",
       "diagram_caption": "两次燃烧,一个椭圆。改变轨道的最便宜方式。",
       "paragraphs": [
-        "Robert Heinlein 写道:\"一旦进入轨道,你就到达太阳系中任何地方的一半路程了。\" 他不是在开玩笑。到达近地轨道需要约 9.4 km/s 的 ∆v。从那里到 Mars 再需要约 3.6 km/s。最困难的部分已经过去了。",
-        "最便宜的行星际路线是 [Hohmann 转移](transfers/hohmann-transfer):一个椭圆,刚好在一端接触地球轨道,在另一端接触目的地轨道。两次燃烧,不浪费燃料。到 Mars 需要约 8.5 个月。慢,但最优。",
+        "Robert Heinlein 写道:\"一旦进入轨道,你就到达太阳系中任何地方的一半路程了。\" 他不是在开玩笑。到达近地轨道需要约 9.4 km/s 的 ∆v。从那里到火星再需要约 3.6 km/s。最困难的部分已经过去了。",
+        "最便宜的行星际路线是 [Hohmann 转移](transfers/hohmann-transfer):一个椭圆,刚好在一端接触地球轨道,在另一端接触目的地轨道。两次燃烧,不浪费燃料。到火星需要约 8.5 个月。慢,但最优。",
         "想更快?解决 [Lambert 问题](transfers/lambert-problem)——选择你的出发日期和飞行时间,Lambert 会告诉你连接它们的唯一[转移椭圆](transfers/transfer-ellipse)。这正是 Orrery 的 [/plan](app:/plan) 屏幕所做的,并行进行一万次,绘制 porkchop 图。",
-        "需要走得更远?从行星那里窃取速度。[引力助推](transfers/gravity-assist)利用飞越改变你的轨迹,零燃料成本—— Voyager 2 使用了四次引力助推到达 Neptune。整个太阳系通过[拼接圆锥曲线](transfers/patched-conics)连接在一起:一系列[圆锥曲线](transfers/conic-sections)弧线在引力邻域之间传递,就像接力赛中的接力棒。"
+        "需要走得更远?从行星那里窃取速度。[引力助推](transfers/gravity-assist)利用飞越改变你的轨迹,零燃料成本—— Voyager 2 使用了四次引力助推到达海王星。整个太阳系通过[拼接圆锥曲线](transfers/patched-conics)连接在一起:一系列[圆锥曲线](transfers/conic-sections)弧线在引力邻域之间传递,就像接力赛中的接力棒。"
       ]
     },
     {
       "heading": "4 — 选择发射窗口,否则等两年。",
       "diagram": "porkchop.svg",
       "diagram_alt": "经典的 porkchop 等高线图——x 轴为出发日期,y 轴为飞行时间。",
-      "diagram_caption": "一个 porkchop 图。每条等高线代表恒定的 ∆v;凸瓣是大自然让 Mars 变得便宜的时候。",
+      "diagram_caption": "一个 porkchop 图。每条等高线代表恒定的 ∆v;凸瓣是大自然让火星变得便宜的时候。",
       "paragraphs": [
-        "地球和 Mars 不会静止不动。地球每 365 天绕太阳一圈,Mars 每 687 天一圈。它们的相对几何关系只在每约 26 个月重复一次——而在大多数月份里,行星距离太远,在太阳的错误一侧,无法以低成本到达。任务设计始于日历,而不是火箭。",
+        "地球和火星不会静止不动。地球每 365 天绕太阳一圈,火星每 687 天一圈。它们的相对几何关系只在每约 26 个月重复一次——而在大多数月份里,行星距离太远,在太阳的错误一侧,无法以低成本到达。任务设计始于日历,而不是火箭。",
         "[porkchop 图](porkchop/what-is-a-porkchop)是工程师看待这一问题的方式。[一个轴](porkchop/departure-axis)是出发日期,[另一个轴](porkchop/tof-axis)是[飞行时间](porkchop/tof-axis),∆v 显示为[彩色热图](porkchop/dv-heatmap)。便宜的区域显示为椭圆凸瓣——发射窗口。凸瓣之外:红色,昂贵,用现有火箭不可能。[读取等高线](porkchop/contour-reading)是飞行动力学家一半的工作。",
         "你会到处看到的两个技术术语:[C3](propulsion/c3) 是你的火箭离开地球引力井所需的发射能量。[V∞](propulsion/v-infinity)(\"v-infinity\")是你到达目的地时相对于目的地的速度。两者都直接来自 porkchop 数学。"
       ]
@@ -69,7 +69,7 @@
       "diagram_caption": "一个 AU = 一个地球-太阳距离。火星约为 1.5 AU。木星约为 5.2。",
       "paragraphs": [
         "三个单位无处不在。[天文单位](scales-time/au)(AU)是地球-太阳的平均距离——1.5 亿 km。我们用 AU 来测量太阳系,因为 km 很快就变得难以处理。[光分](scales-time/light-minute)告诉你无线电信号到达航天器需要多长时间。火星:单程 4 到 24 分钟。你无法从地球上用操纵杆控制漫游车。所有重要的事情都是自主的。",
-        "[J2000 历元](scales-time/j2000)是每个天体动力学家使用的日历零点。[恒星周期 vs. 会合周期](scales-time/sidereal-synodic)解释了为什么 Mars 窗口每 26 个月重复一次而不是每 23 个月。[黄道面](scales-time/ecliptic-plane)是行星大多所在的平面圆盘。[参考系](scales-time/frames)是任务控制在以地球为中心、以太阳为中心和以天体为中心的视图之间切换的坐标系统。"
+        "[J2000 历元](scales-time/j2000)是每个天体动力学家使用的日历零点。[恒星周期 vs. 会合周期](scales-time/sidereal-synodic)解释了为什么火星窗口每 26 个月重复一次而不是每 23 个月。[黄道面](scales-time/ecliptic-plane)是行星大多所在的平面圆盘。[参考系](scales-time/frames)是任务控制在以地球为中心、以太阳为中心和以天体为中心的视图之间切换的坐标系统。"
       ]
     },
     {
@@ -79,7 +79,7 @@
       "diagram_caption": "骨骼、肌肉、视力、前庭、免疫——一切都在微重力中重新连接,而不是朝向地球。",
       "paragraphs": [
         "在轨道上待六个月,你回来时会比离开时更矮小、更轻、更短。[微重力](life-in-space/microgravity-physiology)是根本原因:体液向头部重新分布,姿势肌肉卸载,[骨骼](life-in-space/bone-density-loss)每月流失 1-2% 的矿物质,[前庭系统](life-in-space/vestibular-adaptation)放弃寻找\"下方\"。[对策](life-in-space/muscle-atrophy)——每天在 ARED + 跑步机上进行两小时的阻力和有氧运动——减缓但不能解决它。",
-        "[辐射](life-in-space/radiation-exposure)是更难的问题。ISS 每年约 200 mSv(相比地球上 3 mSv 的背景辐射);磁层外的深空每年超过 600 mSv,目前还没有好的屏蔽策略。一次 Mars 级别的旅行会使机组成员在一次往返中接近职业生涯极限的癌症风险。",
+        "[辐射](life-in-space/radiation-exposure)是更难的问题。ISS 每年约 200 mSv(相比地球上 3 mSv 的背景辐射);磁层外的深空每年超过 600 mSv,目前还没有好的屏蔽策略。一次火星级别的旅行会使机组成员在一次往返中接近职业生涯极限的癌症风险。",
         "然后是 [EVA](life-in-space/eva-physiology)(在 4.3 psi 纯氧宇航服中进行 6 小时的耐力活动)和[长期影响](life-in-space/long-duration-effects),如 SANS——太空相关神经眼综合征——60% 的长期飞行机组人员出现可测量的眼部变化,并且不能完全逆转。这些是阻碍人类前往火星的未解决问题。"
       ]
     },

@@ -1,4 +1,4 @@
-# Dependabot — npm + GitHub Actions
+# Dependabot — npm, GitHub Actions and Docker base images
 # Enabled per Slice 6 / Issue #6 deliverable. Weekly cadence keeps
 # noise low; CI must pass before merging.
 
@@ -51,3 +51,25 @@ updates:
       codeql:
         patterns:
           - 'github/codeql-action*'
+
+  # Base images are digest-pinned (#599): Dockerfile, Dockerfile.lab-api and
+  # Dockerfile.mcp at the root, the web tier in ops/docker. Dependabot bumps the
+  # digest when the tag moves, so security rebuilds of node:22 / alpine:3.22
+  # arrive as reviewable PRs instead of silently on the next build.
+  - package-ecosystem: docker
+    directories:
+      - /
+      - /ops/docker
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 3
+    labels:
+      - dependencies
+    commit-message:
+      prefix: deps
+      include: scope
+    # The Node major is chosen deliberately (ADR-063/064 amendments, #598).
+    ignore:
+      - dependency-name: node
+        update-types: ['version-update:semver-major']

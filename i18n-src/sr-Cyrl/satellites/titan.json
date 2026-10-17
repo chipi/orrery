@@ -8,9 +8,9 @@
     "Dragonfly — САД, лансирање 2028. (лендер са роторима)"
   ],
   "library_labels": {
-    "titan-wiki": "Wikipedia — Titan",
-    "titan-nasa": "NASA Science — Titan, преглед",
-    "titan-dragonfly": "NASA Dragonfly — мисија нуклеарног ротокоптера на Titan",
+    "titan-wiki": "Wikipedia — Титан",
+    "titan-nasa": "NASA Science — Титан, преглед",
+    "titan-dragonfly": "NASA Dragonfly — мисија нуклеарног ротокоптера на Титану",
     "titan-huygens": "ESA Huygens — прво слетање на неки други месец осим нашег"
   },
   "science_sections": [
@@ -22,7 +22,7 @@
     {
       "tab": "планете",
       "section": "sub-solar-and-terminator",
-      "why": "Titan има густу атмосферу од N₂ и CH₄ — једини је месец са таквом атмосфером. Температуре на површини износе 94 K, при којима метан и етан постоје као течна језера."
+      "why": "Титан има густу атмосферу од N₂ и CH₄ — једини је месец са таквом атмосфером. Температуре на површини износе 94 K, при којима метан и етан постоје као течна језера."
     }
   ]
 }

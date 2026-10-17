@@ -1,0 +1,98 @@
+# sr-Cyrl pass-2 hand corrections, applied by patch-edits.mjs to glossary-edits-sr-Cyrl.json
+# rel	from	to — each "from" must occur exactly once in that file's edited text
+belts/asteroid	открива Церера из Palermo, првобитно класификован	открива Цереру из Палерма, првобитно класификовану
+belts/asteroid	уследили Pallas, Juno и Веста	уследили Палада, Јунона и Веста
+belts/asteroid	(узорковање Рјугу — астероид близу	(узорковање Рјугуа — астероида близу
+belts/kuiper	Ерида — незнатно масивнији од Плутона, откривен 2005 (његово откриће изазвало преквалификацију Плутон)	Ерида — незнатно масивнија од Плутона, откривена 2005 (њено откриће изазвало је преквалификацију Плутона)
+belts/kuiper	Ерида, Haumea и Makemake	Ерида, Хаумеа и Макемаке
+essays/new-propulsion	ка другом телу, [Церера](/explore), и	ка другом телу, [Церери](/explore), и
+essays/seven-minutes	на дну [кратер Језеро](/mars)	на дну [кратера Језеро](/mars)
+fleet/crewed-spacecraft/atlantis	у Свемирском центру Кенеди Visitor Complex.	у центру за посетиоце Свемирског центра Кенеди.
+fleet/launch-site/baikonur-200	На локацији Бајконур, лансирно место 200 налазе се	На лансирном месту 200 на Бајконуру налазе се
+fleet/launch-site/baikonur-200	Site 200 остаје активан заједно са локацијом Site 81	Лансирно место 200 остаје активно заједно са лансирним местом 81
+fleet/launch-site/baikonur-31-6	Када је Site 1/5 2019. године искључен из употребе због обнове, Site 31 је преузео	Када је лансирно место 1/5 2019. године искључено из употребе због обнове, лансирно место 31 је преузело
+fleet/launch-site/cape-canaveral-lc-36b	Кејп Канаверал Launch Complex 36B била је друга	Лансирни комплекс 36B на Кејп Канавералу био је други
+fleet/launch-site/gagarins-start	Launch Complex 1 на Бајконуру	Лансирни комплекс 1 на Бајконуру
+fleet/launch-site/gagarins-start	Космодром Бајконур, Site 1 (у совјетским	Лансирно место 1 космодрома Бајконур (у совјетским
+fleet/launch-site/gagarins-start	лансиран је са Site 1. После	лансиран је са лансирног места 1. После
+fleet/launch-site/gagarins-start	са Бајконура Site 31. Site 1 чува се	са лансирног места 31 на Бајконуру. Лансирно место 1 чува се
+fleet/launch-site/jiuquan-slc-43	у пустињи Gobi	у пустињи Гоби
+fleet/launch-site/lc-14	Launch Complex 14 на Кејп Канавералу	Лансирни комплекс 14 на Кејп Канавералу
+fleet/launch-site/lc-34	Кејп Канаверал Launch Complex 34 служио	Лансирни комплекс 34 на Кејп Канавералу служио
+fleet/launch-site/lc-5	Кејп Канаверал Launch Complex 5 био је	Лансирни комплекс 5 на Кејп Канавералу био је
+fleet/launch-site/lc-5	део је ваздухопловна станица Кејп Канаверал Museum	део је Музеја ваздухопловне станице Кејп Канаверал
+fleet/launch-site/plesetsk-43	Плесецкова радна лафета —	Радна лафета Плесецка —
+fleet/launch-site/plesetsk-43	Site 43 је једна	Лансирно место 43 је једна
+fleet/launch-site/wenchang-lc-101	у поређењу са Ђиуцјуен или Сичанг,	у поређењу са Ђиуцјуеном или Сичангом,
+fleet/launch-site/wenchang-lc-101	Венчанг, LC-101 намењена	Рампа LC-101 у Венчангу намењена
+fleet/launch-site/xichang-lc-3	Сичанг, LC-3 био је домаћин	Рампа LC-3 у Сичангу била је домаћин
+fleet/launcher/ariane-1	ка Халејеву комету	ка Халејевој комети
+fleet/launcher/ariane-1	отказаног програма Европе	отказаног програма Europa
+fleet/launcher/long-march-3b	са Сичанга Satellite Launch Centre.	са космодрома Сичанг.
+fleet/rover/lunokhod-1	на Месечевом Море кише	на Месечевом Мору кише
+fleet/orbiter/vega-1	Прва летелица међународне Халејева комета армаде.	Прва летелица међународне армаде за Халејеву комету.
+hotspot-metadata/curiosity	Слојевите падине планина Еолида, планине од 5 km у средини кратер Гејл, на коју	Слојевите падине планине Еолида, планине од 5 km у средини кратера Гејл, на коју
+hotspot-metadata/jiuquan-slc-43	торањ космодром Ђиуцјуен	торањ космодрома Ђиуцјуен
+hotspot-metadata/spirit	преко Inner Basin кратера Гусев, ка Columbia Hills.	преко унутрашњег басена кратера Гусев, ка брдима Колумбија.
+missions/comet/giotto	Халејева комета, 596 km	Халејеве комете, 596 km
+missions/didymos/hera	се срушила на Диморфосу	се срушила на Диморфос
+missions/earth/gemini4	полеће са стазе Кејп Канаверал LC-19	полеће са рампе LC-19 на Кејп Канавералу
+missions/earth/sigma-7	са стартне рампе Кејп Канаверал LC-14	са стартне рампе LC-14 на Кејп Канавералу
+missions/earth/sputnik1	Site 1 (касније Бајконур, Gagarin's Start)	лансирног места 1 (касније Бајконур, „Гагаринов старт“)
+missions/earth/voskhod-1	са локације Бајконур, лансирно место 1,	са лансирног места 1 на Бајконуру,
+missions/earth/vostok-1	са лансирне позиције Site 1 на космодрому Бајконур (Gagarin's Start)	са лансирне позиције 1 на космодрому Бајконур („Гагаринов старт“)
+missions/earth/vostok-2	са Site 1 на Бајконуру	са лансирног места 1 на Бајконуру
+missions/earth/vostok-3	са Бајконура, Site 1,	са Бајконура, лансирно место 1,
+missions/earth/vostok-4	са Site 1 на Бајконуру	са лансирног места 1 на Бајконуру
+missions/earth/vostok-5	са Site 1 на Бајконуру	са лансирног места 1 на Бајконуру
+missions/earth/vostok-6	са Site 1 на Бајконуру	са лансирног места 1 на Бајконуру
+missions/jupiter/europa-clipper	да би проучио Европа —	да би проучио Европу —
+missions/mars/starship-demo	из Boca Chica или Кејп Канаверал —	из Бока Чике или са Кејп Канаверала —
+missions/moon/apollo13	ка висоравни формација Фра Мауро	ка висоравни Фра Мауро
+missions/moon/apollo13	у висоравни формација Фра Мауро	на висоравни Фра Мауро
+missions/moon/apollo14	висије формација Фра Мауро	висије Фра Мауро
+missions/moon/apollo15	у свемирском центру Свемирског центра Кенеди	у Свемирском центру Кенеди
+missions/moon/apollo16	слеће у Декартову висораван	слеће на Декартову висораван
+missions/moon/apollo8	са комплекса Свемирски центар Кенеди LC-39A	са комплекса LC-39A у Свемирском центру Кенеди
+missions/moon/change1	са Ксичанског центра за лансирање сателита на Дугом маршу 3A	са космодрома Сичанг ракетом Long March 3A
+missions/moon/change1	први кински	први кинески
+missions/moon/change1	ССД стереокамеру	CCD стереокамеру
+missions/moon/change1	орбиту од 200 км	орбиту од 200 km
+missions/moon/change1	резолуцијом од 120-200 м	резолуцијом од 120–200 m
+missions/moon/change1	Прва фаза Кинеског програма	Прва фаза кинеског програма
+missions/moon/change1	са Сичанг, LC-3	са Сичанга, LC-3
+missions/moon/change5	подручју планина Римкер	подручју планине Римкер
+missions/moon/luna21	ободу Море ведрине	ободу Мора ведрине
+missions/pluto/new-horizons	гравитациони assist	гравитациони потисак
+missions/venus/vega-2	Rusalka Planitia	равница Русалка
+missions/earth/apollo-soyuz	истог дана из Бајконура	истог дана са Бајконура
+planets/dimorphos	ударио је у Диморфосу	ударио је у Диморфос
+planets/menoetius	(отац Патрокло у	(отац Патрокла у
+planets/patroclus	у пару са Менетије пречника	у пару са Менетијем пречника
+planets/pluto	Плутон 248-годишња орбита	Плутонова 248-годишња орбита
+programs/new-horizons	близак поглед на Плутону и његов велики месец Харона:	близак поглед на Плутон и његов велики месец Харон:
+programs/new-horizons	наставиће лет у Kuiper Belt —	наставиће лет у Кајперов појас —
+programs/new-horizons	Арокот и Kuiper Belt:	Арокот и Кајперов појас:
+programs/new-horizons	залеđено	залеђено
+programs/voyager	месец Тритона са	месец Тритон са
+satellites/deimos	(30 сати наспрам Фобос 8)	(30 сати наспрам 8 код Фобоса)
+satellites/io	резонанцијом са Европе и Ганимеда	резонанцијом са Европом и Ганимедом
+satellites/oberon	Површина месеца Oberon	Површина месеца Оберон
+satellites/oberon	површине месеца Titania	површине месеца Титанија
+science/history/apollo-11-1969	закорачио на Мору спокојства	закорачио на Море спокојства
+science/life-in-space/mars-habitat-design	Марс Design Reference Architecture	Mars Design Reference Architecture
+science/life-in-space/mars-habitat-design	(Марс OXygen In-situ	(Mars OXygen In-situ
+science/life-in-space/pre-flight-training	у Star City-ју и Бајконуру	у Звезданом градићу и на Бајконуру
+science/mission-phases/dead-reckoning	при Марсу-EDL	при EDL-у на Марсу
+science/mission-phases/orbit-insertion	Марс Orbit Insertion	Mars Orbit Insertion
+science/mission-phases/orbit-insertion	Марс MRO је стигла	Летелица MRO је на Марс стигла
+science/planets/asteroid-belt	Церера / Веста / Pallas /	Церера / Веста / Палада /
+science/planets/kuiper-belt	(афел Ерида је на	(афел Ериде је на
+science/planets/moons-of-the-system	Харона има половину	Харон има половину
+science/scales-time/frames	у апликацији Земља ради	у апликацији Earth ради
+small-bodies/vesta	да прво посети Веста (2011), а затим отпутује ка Цереру (2015)	да прво посети Весту (2011), а затим отпутује ка Церери (2015)
+tiangong-visitors/shenzhou	из Ђиуцјуен и	из Ђиуцјуена и
+missions/earth/otv-1	писту у бази Ванденберг	писту у ваздухопловној бази Ванденберг
+essays/comms	[Марсу](/missions?id=perseverance)-у	[Марсу](/missions?id=perseverance)
+satellites/charon	прелет поред система Плутона–Харон	прелет поред система Плутон–Харон
+satellites/charon	барицентра система Плутона–Харон	барицентра система Плутон–Харон

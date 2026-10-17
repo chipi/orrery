@@ -171,12 +171,20 @@ already in the text.
 | Pass 1 copied wrong page names into the glossary (zh-CN Orus = 俄罗斯 "Russia"; "Donald Johnson"). | Read every page name before it becomes canonical. |
 | A longer native place name pushed a tagline past the 140-char schema limit. | validate-data after every write; shorten by hand. |
 | Tests that imported untested CLI scripts dropped the coverage gate. | Helpers go in small modules under `scripts/lib/` with their own tests. |
+| Serbian glues endings to Latin names after a hyphen; the swap read a possessive ending as a case ending and dropped it ("Phobos-ова разлика" → "Фобос разлика"). | Possessive endings make a possessive adjective (Фобосова, Бенуов); names that do not fit are left for a hand fix. |
+| `\b` in a JavaScript regex without the `u` flag never matches next to Cyrillic, so a clean-up rule silently did nothing. | Use `(?![а-я])` / `(?<![а-я])` around Cyrillic words; check that every rule fired. |
+| A markdown link put "[" between the preposition and the name ("до [Плутон](…)"), so no case was guessed. | Strip the bracket before guessing the case. |
+| "комете Халејева комета": a glossary form that holds its own generic word landed after the text's generic word, with the head word last. | A per-language post-step merges them into the declined form (Халејеве комете). |
 
 ## 8. Status (2026-10-17)
 
 Done: titles; origin names in ru/zh-CN/ja/hi/ar; Russian people, bureaus, systems
-declined; bodies in ja/zh-CN/ko. In progress: bodies in ru, sr-Cyrl, hi, ar; then
-people, features, stars, abbreviations per §3.2; the one-name consistency passes
-(§3.3: gallery/entity pages, then article text); then the remaining content items
+declined; pass 1 (gallery/entity pages set one name per language); pass 2 (bodies,
+features, places, facilities and the ISS in article text) for ja, zh-CN, ko, de, fr,
+es, it, nl, pt-BR, ru and sr-Cyrl. Not done: pass 2 for hi and ar; glossary classes
+for people, stars, term abbreviations and eponyms (§3.2); small bodies not yet in the
+glossary (Haumea, Makemake, Pallas, Juno, the Uranian moons); Venus and some Mars and
+Moon features without a native form (Aphrodite Terra, Aeolis Palus, Le Monnier); then
+the remaining content items
 (videos, colophon, trajectories, deep-sky, site stories, alt text) in
 `docs/wip/2026-10-17-post-v1-arc-plan.md`.

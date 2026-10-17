@@ -36,6 +36,21 @@ Not part of the app or CI; excluded from the coverage gate (`vite.config.ts`).
 | `add-msgs.mjs`, `galaxy-msgs.mjs` | Add UI message keys to every `messages/<loc>.json`. |
 | `label-*.mjs`, `same-by-key.mjs`, `stories-extract.mjs`, `origin-inventory.mjs` | Analysis: identical-to-English labels, existing translations to reuse, story extraction, names by origin country. |
 
+
+Pass 1 (gallery/entity pages set each name) and pass 2 (article text follows them):
+
+| Tool | What it does |
+|---|---|
+| `wikidata-labels.mjs "<enwiki title>"…` | Prints the title each locale's own Wikipedia uses — the evidence for a native name. |
+| `canonical-names.mjs`, `canonical-check.mjs`, `canonical-english-words.mjs`, `name-variants.mjs` | One name per thing per language: list the page names, find the text that spells them differently. |
+| `site-names.mjs`, `planet-pages.mjs`, `launch-site-pages.mjs`, `unify-names.mjs`, `descriptor-names.mjs` | Pass-1 writers for the entity pages; `planet-pages.mjs` also syncs page names into the `body` glossary. |
+| `glossary-apply.mjs <loc> <classes>` | Pass-2 generator: glossary forms (`native-terms.json`) into running text, with rocket-family guards, Latin-script article rules, Korean particles, and Russian/Serbian declension. Writes `maps/…/glossary-edits-<loc>.json` for review. |
+| `ru-case.mjs`, `sr-case.mjs` | Declension and a case guess from the preceding words, for `glossary-apply.mjs`. `sr-case.mjs` also reads the case from a hyphenated ending ("Mars-а"); a possessive ending ("Phobos-ова") becomes a possessive adjective (Фобосова). |
+| `patch-edits.mjs <edits.json> <corrections.tsv>` | Hand corrections on the generated edits before applying; reports rows that no longer match. |
+| `pass2-size.mjs` | Counts pass-2 candidates per locale before starting. |
+| `dedupe-descriptors.mjs` | Collapses a doubled descriptor (フラ・マウロ高地高地). |
+| `rocket-body-audit.mjs`, `rocket-body-restore.mjs` | Finds and restores rocket names turned into a planet (土星ロケット). |
+
 ## maps/
 
 The hand-written inputs and analysis results, one folder per arc

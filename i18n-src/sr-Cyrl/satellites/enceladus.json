@@ -6,16 +6,16 @@
     "Cassini — NASA/ESA/ASI, 2005–2015. (откриће перјаница + прелет кроз њих)"
   ],
   "library_labels": {
-    "enceladus-wiki": "Wikipedia — Enceladus",
-    "enceladus-nasa": "NASA Science — преглед Enceladus-а",
+    "enceladus-wiki": "Wikipedia — Енцелад",
+    "enceladus-nasa": "NASA Science — преглед Енцелада",
     "enceladus-cassini": "NASA Cassini — архива наслеђа прелета кроз перјанице",
-    "enceladus-habitability": "Астробиологија — Enceladus као циљ у потрази за животом"
+    "enceladus-habitability": "Астробиологија — Енцелад као циљ у потрази за животом"
   },
   "science_sections": [
     {
       "tab": "Орбите",
       "section": "eccentricity",
-      "why": "Enceladus је у резонанци средњег кретања 2:1 са Dione — принудни ексцентрицитет (0,0047) покреће плимско савијање које напаја криовулканске перјанице на јужном полу."
+      "why": "Енцелад је у резонанци средњег кретања 2:1 са Dione — принудни ексцентрицитет (0,0047) покреће плимско савијање које напаја криовулканске перјанице на јужном полу."
     }
   ]
 }

@@ -7,6 +7,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { declineRu, dropHeadIfRepeated, guessCaseRu } from './ru-case.mjs';
+import { caseFromSuffix, declineSr, guessCaseSr } from './sr-case.mjs';
 const [loc, classes = 'body'] = process.argv.slice(2);
 const GL = JSON.parse(fs.readFileSync('scripts/i18n-tools/native-terms.json', 'utf8'));
 // Longest first, so "Cape Canaveral" is replaced before a shorter key could match inside it.
@@ -110,6 +111,37 @@ function coordinateRu(s) {
         },
       );
     }
+  } while (s !== prev);
+  return s;
+}
+const SR_FORMS = (() => {
+  const m = new Map();
+  for (const cls of ['body', 'feature', 'place', 'facility'])
+    for (const f of Object.values(GL[cls] ?? {}))
+      if (f['sr-Cyrl'])
+        for (const c of ['gen', 'dat', 'ins', 'loc'])
+          if (declineSr(f['sr-Cyrl'], c) !== f['sr-Cyrl'])
+            m.set(declineSr(f['sr-Cyrl'], c), [c, f['sr-Cyrl']]);
+  return m;
+})();
+const SR_NOM = new Set([...SR_FORMS.values()].map(([, n]) => n));
+function coordinateSr(s) {
+  let prev;
+  do {
+    prev = s;
+    for (const [form, [c]] of SR_FORMS)
+      s = s.replace(
+        new RegExp(
+          `(${form})(\\s*(?:,|и|или|\\+|затим|а затим)\\s+)([А-ЯЂЈЉЊЋЏ][а-яђјљњћџ]+(?: [А-ЯЂЈЉЊЋЏа-яђјљњћџ]+)?)`,
+          'g',
+        ),
+        (m, a, sep, b) => {
+          const nom = [...SR_NOM].find(
+            (n) => b.startsWith(n) && (b.length === n.length || /\s/.test(b[n.length])),
+          );
+          return nom ? a + sep + declineSr(nom, c) + b.slice(nom.length) : m;
+        },
+      );
   } while (s !== prev);
   return s;
 }
@@ -257,8 +289,9 @@ for (const f of walk(`i18n-src/${loc}`)) {
         // ISS-RapidScat, ISS-CREAM… are instrument names
         const tail = en === 'ISS' ? '(?!-[A-Za-z])' : '';
         s = s.replace(
-          new RegExp(`( ?)\\b${esc}(?:'s|’s)?\\b${tail}( ?)`, 'g'),
-          (m, a, b, off, str) => {
+          // sr-Cyrl glues case endings to Latin names after a hyphen ("Mars-а", "ISS-у")
+          new RegExp(`( ?)\\b${esc}(?:'s|’s)?\\b${tail}(-[а-яђјљњћџ]+)?( ?)`, 'g'),
+          (m, a, suf, b, off, str) => {
             // Saturn / Titan / Jupiter are also rocket and missile families: leave them in
             // launcher, engine, pad and crewed-program text, and wherever a rocket word is near.
             if (
@@ -283,13 +316,72 @@ for (const f of walk(`i18n-src/${loc}`)) {
               if (!before.trim() || /[.!?:]\s*$/.test(before))
                 here = here.charAt(0).toUpperCase() + here.slice(1);
             }
-            return lead + here + trail;
+            if (loc === 'sr-Cyrl') {
+              const before = str.slice(Math.max(0, off - 40), off) + a;
+              // an abbreviation keeps its hyphenated ending (МСС-а); a word takes the case
+              if (/^[А-ЯЁЂЈЉЊЋЏ]{2,}$/.test(nat)) return lead + nat + (suf ?? '') + trail;
+              // a possessive ending ("Phobos-ова") makes a possessive adjective: Фобосова,
+              // Церерин; names it does not fit stay untouched for a hand fix
+              const poss = suf && suf.match(/^-ј?(ов|ев)(.*)$/);
+              if (poss) {
+                if (nat.includes(' ')) return m;
+                if (/[бвгдзклмнпрстфхцуо]$/.test(nat)) return lead + nat + 'ов' + poss[2] + trail;
+                if (/[јљњћђчџшж]$/.test(nat)) return lead + nat + 'ев' + poss[2] + trail;
+                if (/а$/.test(nat)) return lead + nat.slice(0, -1) + 'ин' + poss[2] + trail;
+                return m;
+              }
+              const head = nat.split(' ')[0];
+              const prev =
+                (before.trimEnd().match(/([А-Яа-яЂЈЉЊЋЏђјљњћџ]+)$/) || [])[1]?.toLowerCase() ?? '';
+              if (
+                nat.includes(' ') &&
+                /^(кратер|равница|плато|долина|планина|комета|космодром|море|океан)$/i.test(head) &&
+                prev.startsWith(head.toLowerCase().slice(0, 4))
+              )
+                here = nat.split(' ').slice(1).join(' ');
+              else {
+                const fem = /а$/.test(
+                  nat
+                    .split(' ')
+                    .find((w) =>
+                      /^(кратер|равница|плато|долина|планина|комета|космодром|центар|база|море|океан)$/i.test(
+                        w,
+                      ),
+                    ) ?? nat.split(' ')[0],
+                );
+                here = declineSr(nat, caseFromSuffix(suf, fem) ?? guessCaseSr(before));
+              }
+              if (
+                /^(Равниц|Плато|Долин|Кратер|Планин|Формациј|Космодром|База)/.test(here) &&
+                before.trim() &&
+                !/[.!?:]\s*$/.test(before)
+              )
+                here = here.charAt(0).toLowerCase() + here.slice(1);
+              return lead + here + trail;
+            }
+            return lead + here + (suf ?? '') + trail;
           },
         );
         if (loc === 'ko') s = koParticles(s, nat);
       }
       if (LATIN.has(loc) && s !== v) s = articles(s);
       if (loc === 'ru' && s !== v) s = coordinateRu(s);
+      if (loc === 'sr-Cyrl' && s !== v) {
+        s = coordinateSr(s);
+        // "комете Халејева комета" → "Халејеве комете": the generic word takes the case,
+        // the name keeps it; a leftover English "Comet" after it goes
+        s = s
+          .replace(
+            /(?<![а-я])[Кк]омет(а|е|и|у|ом) Халејев(?:а|е|ој|у|ом) комет(?:а|е|и|у|ом)/g,
+            (m, e) => `Халејев${{ а: 'а', е: 'е', и: 'ој', у: 'у', ом: 'ом' }[e]} комет${e}`,
+          )
+          .replace(/(комет[а-я]*) Comet\b/g, '$1')
+          // Serbian says "на" for capes, Baikonur and plateaus; the cape's last word declines
+          .replace(/Кејпа Канаверал(?![а-я])/g, 'Кејп Канаверала')
+          .replace(/(^|\s)(баз[а-я]*) (?:ваздухопловна )?база Ванденберг/g, '$1$2 Ванденберг')
+          .replace(/(^|\s)у (Кејп Канавералу|Бајконуру|платоу)/g, '$1на $2')
+          .replace(/(^|\s)на Кејп Канаверал(?=[\s(,.;—]|$)(?! [A-Z]{2})/g, '$1на Кејп Канавералу');
+      }
       // Russian says "на" for plains, plateaus, peaks, mountains and capes (на плато Оксия)
       if (loc === 'ru' && s !== v)
         s = s.replace(

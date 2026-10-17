@@ -1,5 +1,5 @@
 {
-  "title": "Node Module",
+  "title": "Módulo nodo",
   "intro_sentence": "Centro presurizado con múltiples puertos de acoplamiento — el conector estructural que permite que una estación se ramifique.",
   "narrative_101": [
     "Un nodo es un tipo especial de módulo presurizado: no alberga experimentos ni camarotes, simplemente conecta otros módulos entre sí. Imagina una caja hexagonal donde cada cara tiene un puerto de acoplamiento. Acopla un nodo al cohete lanzador, envíalo al espacio y luego acopla cinco módulos más a los cinco puertos restantes y habrás expandido tu estación de un módulo a seis.",

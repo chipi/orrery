@@ -51,9 +51,9 @@
   {
     "tab": "exoplanets",
     "section": "exoplanet-atmospheres",
-    "title": "Reading Exoplanet Atmospheres",
+    "title": "Lire l'atmosphère des exoplanètes",
     "intro": "Lors d'un transit, un mince filet de lumière stellaire traverse l'atmosphère d'une planète et nous rapporte les signatures spectrales de ses gaz.",
-    "haystack": "reading exoplanet atmospheres lors d'un transit, un mince filet de lumière stellaire traverse l'atmosphère d'une planète et nous rapporte les signatures spectrales de ses gaz. la spectroscopie de transmission mesure comment l'atmosphère d'une planète absorbe la lumière stellaire pendant le transit, longueur d'onde par longueur d'onde, révélant ainsi sa composition. la spectroscopie d'émission — captant la propre lueur thermique de la planète juste avant qu'elle ne glisse derrière l'étoile — ajoute la structure de température. ensemble, elles transforment une planète en transit en un monde doté d'un ciel mesurable. reading exoplanet atmospheres"
+    "haystack": "lire l'atmosphère des exoplanètes lors d'un transit, un mince filet de lumière stellaire traverse l'atmosphère d'une planète et nous rapporte les signatures spectrales de ses gaz. la spectroscopie de transmission mesure comment l'atmosphère d'une planète absorbe la lumière stellaire pendant le transit, longueur d'onde par longueur d'onde, révélant ainsi sa composition. la spectroscopie d'émission — captant la propre lueur thermique de la planète juste avant qu'elle ne glisse derrière l'étoile — ajoute la structure de température. ensemble, elles transforment une planète en transit en un monde doté d'un ciel mesurable. reading exoplanet atmospheres"
   },
   {
     "tab": "exoplanets",
@@ -79,9 +79,9 @@
   {
     "tab": "exoplanets",
     "section": "microlensing",
-    "title": "Gravitational Microlensing",
+    "title": "Microlentille gravitationnelle",
     "intro": "Lorsqu'une étoile dérive précisément devant une autre, sa gravité amplifie l'étoile d'arrière-plan — et une planète ajoute un bref éclat supplémentaire.",
-    "haystack": "gravitational microlensing lorsqu'une étoile dérive précisément devant une autre, sa gravité amplifie l'étoile d'arrière-plan — et une planète ajoute un bref éclat supplémentaire. la microlentille détecte les planètes par l'amplification gravitationnelle transitoire qu'elles ajoutent à un alignement fortuit de deux étoiles. elle est particulièrement sensible aux planètes de faible masse sur des orbites larges et froides — la région au-delà de la ligne de glace que les transits et la vélocité radiale peinent à atteindre — et aux planètes vagabondes dérivant seules à travers la galaxie. gravitational microlensing"
+    "haystack": "microlentille gravitationnelle lorsqu'une étoile dérive précisément devant une autre, sa gravité amplifie l'étoile d'arrière-plan — et une planète ajoute un bref éclat supplémentaire. la microlentille détecte les planètes par l'amplification gravitationnelle transitoire qu'elles ajoutent à un alignement fortuit de deux étoiles. elle est particulièrement sensible aux planètes de faible masse sur des orbites larges et froides — la région au-delà de la ligne de glace que les transits et la vélocité radiale peinent à atteindre — et aux planètes vagabondes dérivant seules à travers la galaxie. gravitational microlensing"
   },
   {
     "tab": "exoplanets",
@@ -114,16 +114,16 @@
   {
     "tab": "exoplanets",
     "section": "super-earths-sub-neptunes",
-    "title": "Super-Earths & Sub-Neptunes",
+    "title": "Super-Terres et sous-Neptunes",
     "intro": "Les planètes les plus courantes de la galaxie ont des tailles que le Système solaire a complètement évitées — plus grandes que la Terre, plus petites que Neptune.",
-    "haystack": "super-earths & sub-neptunes les planètes les plus courantes de la galaxie ont des tailles que le système solaire a complètement évitées — plus grandes que la terre, plus petites que neptune. statistiquement, les super-earths et les sub-neptunes sont les planètes les plus abondantes de la galaxie, pourtant le système solaire n'en contient aucune. la « vallée de rayon » — une diminution du nombre de planètes autour de 1,5–2 rayons terrestres — semble diviser les noyaux rocheux nus des mondes qui ont conservé une épaisse enveloppe d'hydrogène-hélium ou de vapeur. super-earths & sub-neptunes"
+    "haystack": "super-terres et sous-neptunes les planètes les plus courantes de la galaxie ont des tailles que le système solaire a complètement évitées — plus grandes que la terre, plus petites que neptune. statistiquement, les super-earths et les sub-neptunes sont les planètes les plus abondantes de la galaxie, pourtant le système solaire n'en contient aucune. la « vallée de rayon » — une diminution du nombre de planètes autour de 1,5–2 rayons terrestres — semble diviser les noyaux rocheux nus des mondes qui ont conservé une épaisse enveloppe d'hydrogène-hélium ou de vapeur. super-earths & sub-neptunes"
   },
   {
     "tab": "exoplanets",
     "section": "tidal-locking",
-    "title": "Tidal Locking",
+    "title": "Verrouillage gravitationnel",
     "intro": "Les planètes en orbite proche d'étoiles petites gardent souvent une face tournée vers l'étoile en permanence — jour perpétuel d'un côté, nuit perpétuelle de l'autre.",
-    "haystack": "tidal locking les planètes en orbite proche d'étoiles petites gardent souvent une face tournée vers l'étoile en permanence — jour perpétuel d'un côté, nuit perpétuelle de l'autre. le verrouillage gravitationnel (synchronisation spin-orbite) se produit lorsque l'attraction de marée d'une étoile freine la rotation d'une planète proche jusqu'à ce que son jour égale son année. parce que l'effet se renforce fortement avec la proximité, essentiellement toute planète rocheuse dans la zone habitable d'une naine rouge devrait être verrouillée ou dans un état de rotation résonnant apparenté. tidal locking"
+    "haystack": "verrouillage gravitationnel les planètes en orbite proche d'étoiles petites gardent souvent une face tournée vers l'étoile en permanence — jour perpétuel d'un côté, nuit perpétuelle de l'autre. le verrouillage gravitationnel (synchronisation spin-orbite) se produit lorsque l'attraction de marée d'une étoile freine la rotation d'une planète proche jusqu'à ce que son jour égale son année. parce que l'effet se renforce fortement avec la proximité, essentiellement toute planète rocheuse dans la zone habitable d'une naine rouge devrait être verrouillée ou dans un état de rotation résonnant apparenté. tidal locking"
   },
   {
     "tab": "exoplanets",
@@ -184,9 +184,9 @@
   {
     "tab": "history",
     "section": "tsiolkovsky-equation-1903",
-    "title": "Tsiolkovsky Equation · 1903",
+    "title": "L'équation de Tsiolkovsky · 1903",
     "intro": "Un instituteur russe sourd élabore l'équation des fusées 50 ans avant qu'on puisse en construire une.",
-    "haystack": "tsiolkovsky equation · 1903 un instituteur russe sourd élabore l'équation des fusées 50 ans avant qu'on puisse en construire une. tsiolkovsky publia l'équation, le concept de fusée multi-étages et le concept de station orbitale des années avant que l'ingénierie des fusées devienne sérieuse. goddard construisit la première fusée à ergols liquides en 1926 (états-unis) ; le v-2 de von braun en 1942 (allemagne) ; le r-7 de korolev en 1957 (urss). tsiolkovsky equation · 1903"
+    "haystack": "l'équation de tsiolkovsky · 1903 un instituteur russe sourd élabore l'équation des fusées 50 ans avant qu'on puisse en construire une. tsiolkovsky publia l'équation, le concept de fusée multi-étages et le concept de station orbitale des années avant que l'ingénierie des fusées devienne sérieuse. goddard construisit la première fusée à ergols liquides en 1926 (états-unis) ; le v-2 de von braun en 1942 (allemagne) ; le r-7 de korolev en 1957 (urss). tsiolkovsky equation · 1903"
   },
   {
     "tab": "life-in-space",
@@ -429,9 +429,9 @@
   {
     "tab": "mission-phases",
     "section": "edl",
-    "title": "EDL — Entry, Descent, Landing",
+    "title": "EDL — Entrée, descente, atterrissage",
     "intro": "Sept minutes du sommet de l'atmosphère à roues-au-sol — la phase la plus automatisée et à plus faible marge.",
-    "haystack": "edl — entry, descent, landing sept minutes du sommet de l'atmosphère à roues-au-sol — la phase la plus automatisée et à plus faible marge. l'entrée commence quand l'engin spatial pénètre l'atmosphère sensible — environ 125 km d'altitude à mars, 100 km à la terre. à partir de ce moment, la traînée atmosphérique assure le freinage ; les moteurs restent inactifs. le bouclier thermique supporte des milliers de degrés, l'aéroshell maintient sa forme, et la trajectoire est essentiellement balistique. edl — entry, descent, landing"
+    "haystack": "edl — entrée, descente, atterrissage sept minutes du sommet de l'atmosphère à roues-au-sol — la phase la plus automatisée et à plus faible marge. l'entrée commence quand l'engin spatial pénètre l'atmosphère sensible — environ 125 km d'altitude à mars, 100 km à la terre. à partir de ce moment, la traînée atmosphérique assure le freinage ; les moteurs restent inactifs. le bouclier thermique supporte des milliers de degrés, l'aéroshell maintient sa forme, et la trajectoire est essentiellement balistique. edl — entry, descent, landing"
   },
   {
     "tab": "mission-phases",
@@ -492,9 +492,9 @@
   {
     "tab": "mission-phases",
     "section": "met",
-    "title": "MET — Mission Elapsed Time",
+    "title": "MET — Temps écoulé de mission",
     "intro": "Un chronomètre simple qui démarre au lancement et ne s'arrête jamais — l'étiquette temporelle universelle.",
-    "haystack": "met — mission elapsed time un chronomètre simple qui démarre au lancement et ne s'arrête jamais — l'étiquette temporelle universelle. met est le temps écoulé depuis le lancement. le jour zéro est le décollage. chaque événement — largage d'étages, injection translunar, correction de trajectoire, insertion en orbite, opérations de surface — reçoit un timestamp met. alunissage d'apollo 11 : met 4 jours, 6 heures, 45 minutes. voyager 1 quittant l'héliosphère : met 35 ans. met — mission elapsed time"
+    "haystack": "met — temps écoulé de mission un chronomètre simple qui démarre au lancement et ne s'arrête jamais — l'étiquette temporelle universelle. met est le temps écoulé depuis le lancement. le jour zéro est le décollage. chaque événement — largage d'étages, injection translunar, correction de trajectoire, insertion en orbite, opérations de surface — reçoit un timestamp met. alunissage d'apollo 11 : met 4 jours, 6 heures, 45 minutes. voyager 1 quittant l'héliosphère : met 35 ans. met — mission elapsed time"
   },
   {
     "tab": "mission-phases",
@@ -506,9 +506,9 @@
   {
     "tab": "mission-phases",
     "section": "nrho",
-    "title": "NRHO — Near-Rectilinear Halo Orbit",
+    "title": "NRHO — Orbite de halo quasi rectiligne",
     "intro": "Une orbite en forme d'œuf d'environ 6,5 jours autour du point Earth-Moon L2 — la demeure choisie de la Lunar Gateway de la NASA.",
-    "haystack": "nrho — near-rectilinear halo orbit une orbite en forme d'œuf d'environ 6,5 jours autour du point earth-moon l2 — la demeure choisie de la lunar gateway de la nasa. un nrho est une orbite de halo — une trajectoire périodique à trois corps qui tourne autour d'un point de lagrange — mais allongée jusqu'à ce qu'une extrémité touche presque le pôle sud de la lune. elle ressemble davantage à une orbite polaire qu'à un halo, d'où « quasi-rectiligne ». une révolution complète prend environ 6,5 jours ; le « 9 » dans la résonance gateway 9:2 fait référence à neuf révolutions nrho par deux mois synodiques lunaires, et non à une période de 9 jours. nrho — near-rectilinear halo orbit"
+    "haystack": "nrho — orbite de halo quasi rectiligne une orbite en forme d'œuf d'environ 6,5 jours autour du point earth-moon l2 — la demeure choisie de la lunar gateway de la nasa. un nrho est une orbite de halo — une trajectoire périodique à trois corps qui tourne autour d'un point de lagrange — mais allongée jusqu'à ce qu'une extrémité touche presque le pôle sud de la lune. elle ressemble davantage à une orbite polaire qu'à un halo, d'où « quasi-rectiligne ». une révolution complète prend environ 6,5 jours ; le « 9 » dans la résonance gateway 9:2 fait référence à neuf révolutions nrho par deux mois synodiques lunaires, et non à une période de 9 jours. nrho — near-rectilinear halo orbit"
   },
   {
     "tab": "mission-phases",
@@ -527,9 +527,9 @@
   {
     "tab": "mission-phases",
     "section": "propulsive-landing",
-    "title": "Propulsive Landing",
+    "title": "Atterrissage propulsé",
     "intro": "Atterrir uniquement à la fusée — le seul moyen de descendre sur un monde sans air comme la Lune, et comment un géant comme Starship se posera sur Mars.",
-    "haystack": "propulsive landing atterrir uniquement à la fusée — le seul moyen de descendre sur un monde sans air comme la lune, et comment un géant comme starship se posera sur mars. le coût en propergol est fixé par l'équation de tsiolkovski et la vitesse à annuler. sur la lune, un atterrisseur doit annuler sa vitesse orbitale ou d'approche complète sur le moteur, c'est pourquoi tant de la masse d'un atterrisseur lunaire est du carburant. sur mars, l'atmosphère fait la première moitié coûteuse gratuitement (le bouclier thermique), laissant le moteur ne gérer que les derniers kilomètres lents — mais même pour un véhicule lourd, c'est une poussée importante. propulsive landing"
+    "haystack": "atterrissage propulsé atterrir uniquement à la fusée — le seul moyen de descendre sur un monde sans air comme la lune, et comment un géant comme starship se posera sur mars. le coût en propergol est fixé par l'équation de tsiolkovski et la vitesse à annuler. sur la lune, un atterrisseur doit annuler sa vitesse orbitale ou d'approche complète sur le moteur, c'est pourquoi tant de la masse d'un atterrisseur lunaire est du carburant. sur mars, l'atmosphère fait la première moitié coûteuse gratuitement (le bouclier thermique), laissant le moteur ne gérer que les derniers kilomètres lents — mais même pour un véhicule lourd, c'est une poussée importante. propulsive landing"
   },
   {
     "tab": "mission-phases",
@@ -541,9 +541,9 @@
   {
     "tab": "mission-phases",
     "section": "skycrane",
-    "title": "Sky-Crane",
+    "title": "Grue céleste",
     "intro": "La plateforme propulsée par fusée qui abaisse le rover à la surface par des câbles, puis s'envole — le système d'atterrissage qui a déposé Curiosity et Perseverance sur Mars.",
-    "haystack": "sky-crane la plateforme propulsée par fusée qui abaisse le rover à la surface par des câbles, puis s'envole — le système d'atterrissage qui a déposé curiosity et perseverance sur mars. la sky-crane résout deux problèmes à la fois. elle maintient les moteurs fusée en hauteur, afin que leurs panaches ne creusent pas un cratère ou ne projettent de débris sur le rover, et elle livre le rover directement sur ses roues, prêt à circuler — pas de rampes, pas de plate-forme de débarquement à descendre. le prix à payer est une chorégraphie sans marge d'erreur, exécutée en autonomie, des minutes après une entrée brûlante, avec la terre trop loin pour aider en temps réel. sky-crane"
+    "haystack": "grue céleste la plateforme propulsée par fusée qui abaisse le rover à la surface par des câbles, puis s'envole — le système d'atterrissage qui a déposé curiosity et perseverance sur mars. la sky-crane résout deux problèmes à la fois. elle maintient les moteurs fusée en hauteur, afin que leurs panaches ne creusent pas un cratère ou ne projettent de débris sur le rover, et elle livre le rover directement sur ses roues, prêt à circuler — pas de rampes, pas de plate-forme de débarquement à descendre. le prix à payer est une chorégraphie sans marge d'erreur, exécutée en autonomie, des minutes après une entrée brûlante, avec la terre trop loin pour aider en temps réel. sky-crane"
   },
   {
     "tab": "mission-phases",
@@ -555,16 +555,16 @@
   {
     "tab": "mission-phases",
     "section": "tcm",
-    "title": "TCM — Trajectory Correction Maneuver",
+    "title": "TCM — Manœuvre de correction de trajectoire",
     "intro": "Petite combustion mi-croisière pour corriger les petites erreurs qui se glissent toujours dans la trajectoire de lancement.",
-    "haystack": "tcm — trajectory correction maneuver petite combustion mi-croisière pour corriger les petites erreurs qui se glissent toujours dans la trajectoire de lancement. aucun lancement n'est parfait. la trajectoire réelle du lanceur diffère de la trajectoire prévue de quelques dizaines de mètres par seconde — petit en valeurs absolues, catastrophique pour la précision d'arrivée si on le laisse faire. une erreur de 5 cm/s au tli se traduit par 100 km d'écart à la lune. les tcm corrigent ces erreurs avant qu'elles n'augmentent. tcm — trajectory correction maneuver"
+    "haystack": "tcm — manœuvre de correction de trajectoire petite combustion mi-croisière pour corriger les petites erreurs qui se glissent toujours dans la trajectoire de lancement. aucun lancement n'est parfait. la trajectoire réelle du lanceur diffère de la trajectoire prévue de quelques dizaines de mètres par seconde — petit en valeurs absolues, catastrophique pour la précision d'arrivée si on le laisse faire. une erreur de 5 cm/s au tli se traduit par 100 km d'écart à la lune. les tcm corrigent ces erreurs avant qu'elles n'augmentent. tcm — trajectory correction maneuver"
   },
   {
     "tab": "mission-phases",
     "section": "terminal-velocity",
-    "title": "Terminal Velocity",
+    "title": "Vitesse limite",
     "intro": "Pourquoi un atterrisseur en chute cesse d'accélérer — l'équilibre entre la traînée et le poids qui détermine la vitesse de descente d'un parachute ou de l'atmosphère d'une planète.",
-    "haystack": "terminal velocity pourquoi un atterrisseur en chute cesse d'accélérer — l'équilibre entre la traînée et le poids qui détermine la vitesse de descente d'un parachute ou de l'atmosphère d'une planète. le nombre directeur est le coefficient balistique — la masse divisée par la surface de traînée. un véhicule léger avec un grand parachute (coefficient balistique faible) descend à une vitesse limite lente ; un véhicule lourd et compact (coefficient balistique élevé) tombe plus vite. les concepteurs font un compromis entre les deux : un parachute plus grand procure une descente plus lente mais pèse davantage et est plus difficile à déployer supersoniquement dans un air fin. terminal velocity"
+    "haystack": "vitesse limite pourquoi un atterrisseur en chute cesse d'accélérer — l'équilibre entre la traînée et le poids qui détermine la vitesse de descente d'un parachute ou de l'atmosphère d'une planète. le nombre directeur est le coefficient balistique — la masse divisée par la surface de traînée. un véhicule léger avec un grand parachute (coefficient balistique faible) descend à une vitesse limite lente ; un véhicule lourd et compact (coefficient balistique élevé) tombe plus vite. les concepteurs font un compromis entre les deux : un parachute plus grand procure une descente plus lente mais pèse davantage et est plus difficile à déployer supersoniquement dans un air fin. terminal velocity"
   },
   {
     "tab": "mission-phases",
@@ -674,9 +674,9 @@
   {
     "tab": "orbits",
     "section": "apsides",
-    "title": "Apsides — Perihelion, Aphelion, Perigee, Apogee",
+    "title": "Apsides — Périhélie, aphélie, périgée, apogée",
     "intro": "Les deux points extrêmes de toute orbite elliptique : le plus proche et le plus loin.",
-    "haystack": "apsides — perihelion, aphelion, perigee, apogee les deux points extrêmes de toute orbite elliptique : le plus proche et le plus loin. une apside est l'un des deux points d'une orbite elliptique où le corps est à distance minimale ou maximale de son foyer. la ligne les reliant — passant par les deux foyers — est la ligne des apsides. chaque orbite keplerian en possède exactement deux : la plus proche et la plus lointaine. apsides — perihelion, aphelion, perigee, apogee"
+    "haystack": "apsides — périhélie, aphélie, périgée, apogée les deux points extrêmes de toute orbite elliptique : le plus proche et le plus loin. une apside est l'un des deux points d'une orbite elliptique où le corps est à distance minimale ou maximale de son foyer. la ligne les reliant — passant par les deux foyers — est la ligne des apsides. chaque orbite keplerian en possède exactement deux : la plus proche et la plus lointaine. apsides — perihelion, aphelion, perigee, apogee"
   },
   {
     "tab": "orbits",
@@ -709,9 +709,9 @@
   {
     "tab": "orbits",
     "section": "hill-sphere",
-    "title": "Hill Sphere",
+    "title": "Sphère de Hill",
     "intro": "Le volume de l'espace où la gravité d'une planète l'emporte sur celle du Soleil.",
-    "haystack": "hill sphere le volume de l'espace où la gravité d'une planète l'emporte sur celle du soleil. la formule du rayon de hill approxime la frontière par r_h ≈ a × (1−e) × (m / 3m)^(1/3), où `a` est le demi-grand axe de la planète, `e` son excentricité, `m` sa masse, et `m` la masse du soleil. le facteur (1−e) tient compte de la contraction au périhélie — une orbite plus excentrique signifie que la planète se rapproche du soleil et son autorité gravitationnelle diminue en conséquence. la racine cubique signifie que doubler la masse d'une planète n'agrandit sa sphère de hill que d'environ 26 % ; doubler sa distance orbitale l'agrandit de 100 %. hill sphere"
+    "haystack": "sphère de hill le volume de l'espace où la gravité d'une planète l'emporte sur celle du soleil. la formule du rayon de hill approxime la frontière par r_h ≈ a × (1−e) × (m / 3m)^(1/3), où `a` est le demi-grand axe de la planète, `e` son excentricité, `m` sa masse, et `m` la masse du soleil. le facteur (1−e) tient compte de la contraction au périhélie — une orbite plus excentrique signifie que la planète se rapproche du soleil et son autorité gravitationnelle diminue en conséquence. la racine cubique signifie que doubler la masse d'une planète n'agrandit sa sphère de hill que d'environ 26 % ; doubler sa distance orbitale l'agrandit de 100 %. hill sphere"
   },
   {
     "tab": "orbits",
@@ -793,16 +793,16 @@
   {
     "tab": "orbits",
     "section": "vis-viva",
-    "title": "Vis-Viva Equation",
+    "title": "Équation de vis-viva",
     "intro": "À quelle vitesse un corps va à tout point de son orbite — depuis seulement le rayon actuel et le demi-grand axe.",
-    "haystack": "vis-viva equation à quelle vitesse un corps va à tout point de son orbite — depuis seulement le rayon actuel et le demi-grand axe. vis-viva est l'équation fondamentale de la mécanique orbitale. elle relie trois nombres — le paramètre gravitationnel `μ` du corps autour duquel vous orbitez, votre distance actuelle `r` au foyer, et le demi-grand axe `a` de l'orbite — et vous donne la vitesse `v`. c'est tout. aucune intégration temporelle, aucune chaîne d'anomalies, juste une racine carrée et vous savez à quelle vitesse vous vous déplacez. vis-viva equation"
+    "haystack": "équation de vis-viva à quelle vitesse un corps va à tout point de son orbite — depuis seulement le rayon actuel et le demi-grand axe. vis-viva est l'équation fondamentale de la mécanique orbitale. elle relie trois nombres — le paramètre gravitationnel `μ` du corps autour duquel vous orbitez, votre distance actuelle `r` au foyer, et le demi-grand axe `a` de l'orbite — et vous donne la vitesse `v`. c'est tout. aucune intégration temporelle, aucune chaîne d'anomalies, juste une racine carrée et vous savez à quelle vitesse vous vous déplacez. vis-viva equation"
   },
   {
     "tab": "planets",
     "section": "active-spacecraft-survey",
-    "title": "Active Spacecraft Survey",
+    "title": "Panorama des sondes actives",
     "intro": "L'état de chaque planète en ce moment : de MRO à Mars jusqu'à Juno à Jupiter et Akatsuki à Vénus.",
-    "haystack": "active spacecraft survey l'état de chaque planète en ce moment : de mro à mars jusqu'à juno à jupiter et akatsuki à vénus. mars — flotte orbitale en 2026 : mro (nasa, depuis 2006, orbite polaire à 300 km, caméra hirise + observations atmosphériques + relais de données). maven (nasa, depuis 2014, orbite à 6200 km, taux d'échappement atmosphérique). mars express (esa, depuis 2003, 4200 km, minéralogie + atmosphère). exomars tgo (esa, depuis 2016, 400 km, gaz en traces + relais russe). mangalyaan / mom (isro, 2014–2022, méthane + atmosphère — première mission asiatique à orbiter avec succès mars). tianwen-1 (cnsa, depuis 2021, 4250 km, a livré le rover zhurong + cartographie globale). hope / emm (agence spatiale des émirats arabes unis, depuis 2021, 30 000 km équatorial, science atmosphérique). en surface : les rovers perseverance et curiosity (tous deux nasa) et l'hélicoptère ingenuity maintenant immobilisé. active spacecraft survey"
+    "haystack": "panorama des sondes actives l'état de chaque planète en ce moment : de mro à mars jusqu'à juno à jupiter et akatsuki à vénus. mars — flotte orbitale en 2026 : mro (nasa, depuis 2006, orbite polaire à 300 km, caméra hirise + observations atmosphériques + relais de données). maven (nasa, depuis 2014, orbite à 6200 km, taux d'échappement atmosphérique). mars express (esa, depuis 2003, 4200 km, minéralogie + atmosphère). exomars tgo (esa, depuis 2016, 400 km, gaz en traces + relais russe). mangalyaan / mom (isro, 2014–2022, méthane + atmosphère — première mission asiatique à orbiter avec succès mars). tianwen-1 (cnsa, depuis 2021, 4250 km, a livré le rover zhurong + cartographie globale). hope / emm (agence spatiale des émirats arabes unis, depuis 2021, 30 000 km équatorial, science atmosphérique). en surface : les rovers perseverance et curiosity (tous deux nasa) et l'hélicoptère ingenuity maintenant immobilisé. active spacecraft survey"
   },
   {
     "tab": "planets",
@@ -884,16 +884,16 @@
   {
     "tab": "porkchop",
     "section": "departure-axis",
-    "title": "Departure-Window Axis",
+    "title": "Axe de la fenêtre de départ",
     "intro": "Au moment du lancement — parcourant l'axe X, typiquement une durée de quatre ans échantillonnée quotidiennement.",
-    "haystack": "departure-window axis au moment du lancement — parcourant l'axe x, typiquement une durée de quatre ans échantillonnée quotidiennement. l'axe x vous indique quand vous quittez la terre. chaque colonne de pixels correspond à une date de lancement différente — pour les tracés d'orrery, échantillonnée à une résolution d'un jour sur environ quatre ans. pourquoi une durée de quatre ans ? parce que la période synodique terre-mars est d'environ 26 mois ; quatre ans captureront à peu près deux fenêtres complètes pour mars. pour vénus (environ 19 mois) ou jupiter (environ 13 mois), le même intervalle s'ajuste à plus de fenêtres — la largeur de quatre ans est calibrée pour la planification de classe mars. departure-window axis"
+    "haystack": "axe de la fenêtre de départ au moment du lancement — parcourant l'axe x, typiquement une durée de quatre ans échantillonnée quotidiennement. l'axe x vous indique quand vous quittez la terre. chaque colonne de pixels correspond à une date de lancement différente — pour les tracés d'orrery, échantillonnée à une résolution d'un jour sur environ quatre ans. pourquoi une durée de quatre ans ? parce que la période synodique terre-mars est d'environ 26 mois ; quatre ans captureront à peu près deux fenêtres complètes pour mars. pour vénus (environ 19 mois) ou jupiter (environ 13 mois), le même intervalle s'ajuste à plus de fenêtres — la largeur de quatre ans est calibrée pour la planification de classe mars. departure-window axis"
   },
   {
     "tab": "porkchop",
     "section": "dv-heatmap",
-    "title": "∆v Heatmap",
+    "title": "Carte thermique du ∆v",
     "intro": "L'échelle de couleur qui transforme les nombres Δv en une image lisible au coup d'œil.",
-    "haystack": "∆v heatmap l'échelle de couleur qui transforme les nombres δv en une image lisible au coup d'œil. le bleu-vert glacé se situe à un δv faible (≈3 km/s) — le coup de départ minimum pour une hohmann-like vers mars (c'est le δv d'injection trans-martienne depuis leo, pas le δv total de la mission). bleu à ≈5 km/s. jaune autour de 7 km/s — le seuil du coûteux. orange et rouge au-delà de 9 km/s — cellules de coûts incontrôlables, où vous auriez besoin d'un lanceur de classe sls juste pour que le calcul soit viable. ∆v heatmap"
+    "haystack": "carte thermique du ∆v l'échelle de couleur qui transforme les nombres δv en une image lisible au coup d'œil. le bleu-vert glacé se situe à un δv faible (≈3 km/s) — le coup de départ minimum pour une hohmann-like vers mars (c'est le δv d'injection trans-martienne depuis leo, pas le δv total de la mission). bleu à ≈5 km/s. jaune autour de 7 km/s — le seuil du coûteux. orange et rouge au-delà de 9 km/s — cellules de coûts incontrôlables, où vous auriez besoin d'un lanceur de classe sls juste pour que le calcul soit viable. ∆v heatmap"
   },
   {
     "tab": "porkchop",
@@ -905,9 +905,9 @@
   {
     "tab": "porkchop",
     "section": "viability",
-    "title": "Reading Viability",
+    "title": "Lire la faisabilité",
     "intro": "Une cellule est viable lorsque la capacité ∆v de votre fusée ≥ le coût ∆v de la cellule — et la porkchop transforme cette comparaison en une carte oui/non.",
-    "haystack": "reading viability une cellule est viable lorsque la capacité ∆v de votre fusée ≥ le coût ∆v de la cellule — et la porkchop transforme cette comparaison en une carte oui/non. choisissez un véhicule. falcon heavy, sls block 1, atlas v n22, peu importe. ce véhicule possède une courbe de performance c3-vs-masse-charge-utile publiée — les charges utiles plus lourdes rétrécissent le lobe accessible ; les plus légères l'élargissent. pour une masse de charge utile donnée, vous pouvez lire le c3 maximal (ou le ∆v de départ équivalent) que le véhicule peut fournir, puis comparer par rapport à la porkchop : chaque cellule où ∆v_coût ≤ capacité est une opportunité de lancement réalisable. chaque cellule où c'est plus grand est impossible sans un véhicule différent ou un engin spatial plus léger. reading viability"
+    "haystack": "lire la faisabilité une cellule est viable lorsque la capacité ∆v de votre fusée ≥ le coût ∆v de la cellule — et la porkchop transforme cette comparaison en une carte oui/non. choisissez un véhicule. falcon heavy, sls block 1, atlas v n22, peu importe. ce véhicule possède une courbe de performance c3-vs-masse-charge-utile publiée — les charges utiles plus lourdes rétrécissent le lobe accessible ; les plus légères l'élargissent. pour une masse de charge utile donnée, vous pouvez lire le c3 maximal (ou le ∆v de départ équivalent) que le véhicule peut fournir, puis comparer par rapport à la porkchop : chaque cellule où ∆v_coût ≤ capacité est une opportunité de lancement réalisable. chaque cellule où c'est plus grand est impossible sans un véhicule différent ou un engin spatial plus léger. reading viability"
   },
   {
     "tab": "porkchop",
@@ -926,9 +926,9 @@
   {
     "tab": "propulsion",
     "section": "c3",
-    "title": "C3 — Characteristic Energy",
+    "title": "C3 — Énergie caractéristique",
     "intro": "Combien d'énergie par masse une fusée doit livrer pour quitter le puits gravitationnel terrestre avec vitesse résiduelle.",
-    "haystack": "c3 — characteristic energy combien d'énergie par masse une fusée doit livrer pour quitter le puits gravitationnel terrestre avec vitesse résiduelle. c3 est le carré de la vitesse hyperbolique excédentaire. unités : km²/s². il vous indique quelle énergie au-delà de l'échappement votre lanceur doit livrer. c3 = 0 signifie que vous échappez à peine à la gravité terrestre, arrivant à l'infini avec une vitesse nulle. c3 = 25 km²/s² signifie que vous arrivez avec v∞ = 5 km/s de vitesse héliocentriqueexcédentaire. c3 — characteristic energy"
+    "haystack": "c3 — énergie caractéristique combien d'énergie par masse une fusée doit livrer pour quitter le puits gravitationnel terrestre avec vitesse résiduelle. c3 est le carré de la vitesse hyperbolique excédentaire. unités : km²/s². il vous indique quelle énergie au-delà de l'échappement votre lanceur doit livrer. c3 = 0 signifie que vous échappez à peine à la gravité terrestre, arrivant à l'infini avec une vitesse nulle. c3 = 25 km²/s² signifie que vous arrivez avec v∞ = 5 km/s de vitesse héliocentriqueexcédentaire. c3 — characteristic energy"
   },
   {
     "tab": "propulsion",
@@ -1066,9 +1066,9 @@
   {
     "tab": "scales-time",
     "section": "au",
-    "title": "AU — Astronomical Unit",
+    "title": "UA — Unité astronomique",
     "intro": "Distance moyenne de la Terre au Soleil, fixée exactement à 149 597 870 700 mètres — l'échelle naturelle pour les distances du système solaire.",
-    "haystack": "au — astronomical unit distance moyenne de la terre au soleil, fixée exactement à 149 597 870 700 mètres — l'échelle naturelle pour les distances du système solaire. jusqu'en 2012, l'ua était définie par l'orbite terrestre. comme l'orbite terrestre évolue lentement sous les perturbations planétaires, l'ua changeait techniquement aussi. l'uai l'a fixée en 2012 à un nombre entier de mètres précis — 149 597 870 700 — et la définition est restée stable depuis. l'ua n'est plus « l'orbite terrestre » ; c'est une règle métrique qui se trouve simplement la correspondre approximativement. au — astronomical unit"
+    "haystack": "ua — unité astronomique distance moyenne de la terre au soleil, fixée exactement à 149 597 870 700 mètres — l'échelle naturelle pour les distances du système solaire. jusqu'en 2012, l'ua était définie par l'orbite terrestre. comme l'orbite terrestre évolue lentement sous les perturbations planétaires, l'ua changeait techniquement aussi. l'uai l'a fixée en 2012 à un nombre entier de mètres précis — 149 597 870 700 — et la définition est restée stable depuis. l'ua n'est plus « l'orbite terrestre » ; c'est une règle métrique qui se trouve simplement la correspondre approximativement. au — astronomical unit"
   },
   {
     "tab": "scales-time",
@@ -1080,16 +1080,16 @@
   {
     "tab": "scales-time",
     "section": "frames",
-    "title": "Heliocentric · Geocentric · Body-Centric Frames",
+    "title": "Référentiels héliocentrique · géocentrique · centré sur le corps",
     "intro": "Trois repères pour trois questions : où relativement Soleil, Terre, ou planète ?",
-    "haystack": "heliocentric · geocentric · body-centric frames trois repères pour trois questions : où relativement soleil, terre, ou planète ? héliocentrique : origine au soleil, axes alignés avec l'écliptique. le référentiel naturel pour le mouvement du système solaire. les positions des planètes, les orbites de transfert, les croisières de mission — tout cela se décrit le plus naturellement ici. le `/explore` d'orrery est fondamentalement héliocentrique. heliocentric · geocentric · body-centric frames"
+    "haystack": "référentiels héliocentrique · géocentrique · centré sur le corps trois repères pour trois questions : où relativement soleil, terre, ou planète ? héliocentrique : origine au soleil, axes alignés avec l'écliptique. le référentiel naturel pour le mouvement du système solaire. les positions des planètes, les orbites de transfert, les croisières de mission — tout cela se décrit le plus naturellement ici. le `/explore` d'orrery est fondamentalement héliocentrique. heliocentric · geocentric · body-centric frames"
   },
   {
     "tab": "scales-time",
     "section": "j2000",
-    "title": "J2000 Epoch",
+    "title": "Époque J2000",
     "intro": "12:00 TT (Terrestrial Time) le 1er janvier 2000 — le moment de référence universel que les astronomes utilisent pour dater les éléments orbitaux.",
-    "haystack": "j2000 epoch 12:00 tt (terrestrial time) le 1er janvier 2000 — le moment de référence universel que les astronomes utilisent pour dater les éléments orbitaux. les éléments orbitaux dérivent au fil du temps — les perturbations d'autres planètes modifient l'excentricité, les longitudes précessent, les inclinaisons oscillent. pour donner un sens aux éléments d'une planète, vous devez dire « à quel moment ». la réponse standard est j2000 : midi tt (terrestrial time) le 1er janvier 2000. les orbites sont cotées à ce moment ; la propagation vers l'avant ou vers l'arrière utilise des modèles analytiques ou numériques. j2000 epoch"
+    "haystack": "époque j2000 12:00 tt (terrestrial time) le 1er janvier 2000 — le moment de référence universel que les astronomes utilisent pour dater les éléments orbitaux. les éléments orbitaux dérivent au fil du temps — les perturbations d'autres planètes modifient l'excentricité, les longitudes précessent, les inclinaisons oscillent. pour donner un sens aux éléments d'une planète, vous devez dire « à quel moment ». la réponse standard est j2000 : midi tt (terrestrial time) le 1er janvier 2000. les orbites sont cotées à ce moment ; la propagation vers l'avant ou vers l'arrière utilise des modèles analytiques ou numériques. j2000 epoch"
   },
   {
     "tab": "scales-time",
@@ -1101,16 +1101,16 @@
   {
     "tab": "scales-time",
     "section": "long-duration",
-    "title": "Long-Duration Spaceflight",
+    "title": "Vols spatiaux de longue durée",
     "intro": "Au-delà d'environ trois mois, l'absence de gravité cesse d'être neutre et commence à infliger des dommages mesurables au corps humain.",
-    "haystack": "long-duration spaceflight au-delà d'environ trois mois, l'absence de gravité cesse d'être neutre et commence à infliger des dommages mesurables au corps humain. os + muscles — les astronautes perdent 1-2 % de densité minérale osseuse par mois dans les os porteurs de charge sans contre-mesures (~0,5 % avec l'advanced resistive exercise device et les bisphosphonates). les fibres musculaires de type i s'atrophient le plus rapidement ; l'exercice quotidien de 2 heures sur tapis roulant + vélo ergométrique + ared préserve environ 90 % de la masse musculaire avant le vol. long-duration spaceflight"
+    "haystack": "vols spatiaux de longue durée au-delà d'environ trois mois, l'absence de gravité cesse d'être neutre et commence à infliger des dommages mesurables au corps humain. os + muscles — les astronautes perdent 1-2 % de densité minérale osseuse par mois dans les os porteurs de charge sans contre-mesures (~0,5 % avec l'advanced resistive exercise device et les bisphosphonates). les fibres musculaires de type i s'atrophient le plus rapidement ; l'exercice quotidien de 2 heures sur tapis roulant + vélo ergométrique + ared préserve environ 90 % de la masse musculaire avant le vol. long-duration spaceflight"
   },
   {
     "tab": "scales-time",
     "section": "sidereal-synodic",
-    "title": "Sidereal vs Synodic Period",
+    "title": "Période sidérale ou synodique",
     "intro": "Deux façons de demander \"à quelle fréquence ?\" — même corps, repères différents.",
-    "haystack": "sidereal vs synodic period deux façons de demander \"à quelle fréquence ?\" — même corps, repères différents. période sidérale : temps pour une orbite complète par rapport aux étoiles fixes. c'est la période géométrique, celle de la troisième loi de kepler — l'année sidérale de mars est 687 jours terrestres. période synodique : temps pour qu'un corps revienne à la même position par rapport à un autre corps, généralement tel qu'on l'observe depuis un troisième. période synodique de mars — temps entre les alignements terre-mars — est 780 jours, ou environ 26 mois. sidereal vs synodic period"
+    "haystack": "période sidérale ou synodique deux façons de demander \"à quelle fréquence ?\" — même corps, repères différents. période sidérale : temps pour une orbite complète par rapport aux étoiles fixes. c'est la période géométrique, celle de la troisième loi de kepler — l'année sidérale de mars est 687 jours terrestres. période synodique : temps pour qu'un corps revienne à la même position par rapport à un autre corps, généralement tel qu'on l'observe depuis un troisième. période synodique de mars — temps entre les alignements terre-mars — est 780 jours, ou environ 26 mois. sidereal vs synodic period"
   },
   {
     "tab": "space-stations",
@@ -1157,9 +1157,9 @@
   {
     "tab": "transfers",
     "section": "free-return",
-    "title": "Free-Return Trajectory",
+    "title": "Trajectoire de retour libre",
     "intro": "Une trajectoire qui contourne la destination et utilise la gravité elle-même comme billet de retour — sans allumage de moteur.",
-    "haystack": "free-return trajectory une trajectoire qui contourne la destination et utilise la gravité elle-même comme billet de retour — sans allumage de moteur. l'astuce principale : quitter la terre, voler au-delà de la lune (ou de mars), et laisser la gravité de ce corps courber votre trajectoire vers la terre. si vous avez bien calculé la géométrie, vous rentrez dans l'atmosphère terrestre au rebond. l'équipage n'a jamais besoin d'allumer un moteur pour rentrer à la maison. free-return trajectory"
+    "haystack": "trajectoire de retour libre une trajectoire qui contourne la destination et utilise la gravité elle-même comme billet de retour — sans allumage de moteur. l'astuce principale : quitter la terre, voler au-delà de la lune (ou de mars), et laisser la gravité de ce corps courber votre trajectoire vers la terre. si vous avez bien calculé la géométrie, vous rentrez dans l'atmosphère terrestre au rebond. l'équipage n'a jamais besoin d'allumer un moteur pour rentrer à la maison. free-return trajectory"
   },
   {
     "tab": "transfers",
@@ -1185,9 +1185,9 @@
   {
     "tab": "transfers",
     "section": "patched-conics",
-    "title": "Patched Conics",
+    "title": "Coniques raccordées",
     "intro": "Prétends que la gravité est un corps à la fois — l'approximation qui transforme le problème à trois corps insoluble en chaîne de problèmes Kepler à deux corps solubles.",
-    "haystack": "patched conics prétends que la gravité est un corps à la fois — l'approximation qui transforme le problème à trois corps insoluble en chaîne de problèmes kepler à deux corps solubles. la gravité réelle est compliquée. un engin spatial voyageant entre la terre et mars subit la gravité de la terre, celle du soleil, celle de mars, plus celle de tout le reste, tous à la fois. les mathématiques complètes (le problème des n corps) n'ont pas de solution de forme fermée — seulement l'intégration numérique. c'est lent, fragile, difficile à planifier. patched conics"
+    "haystack": "coniques raccordées prétends que la gravité est un corps à la fois — l'approximation qui transforme le problème à trois corps insoluble en chaîne de problèmes kepler à deux corps solubles. la gravité réelle est compliquée. un engin spatial voyageant entre la terre et mars subit la gravité de la terre, celle du soleil, celle de mars, plus celle de tout le reste, tous à la fois. les mathématiques complètes (le problème des n corps) n'ont pas de solution de forme fermée — seulement l'intégration numérique. c'est lent, fragile, difficile à planifier. patched conics"
   },
   {
     "tab": "transfers",

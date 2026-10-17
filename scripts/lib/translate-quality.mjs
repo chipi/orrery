@@ -311,7 +311,10 @@ export function problems(locale, src, out) {
   const apos = (x) => x.replace(/[’‘]/g, "'"); // Chang’e == Chang'e
   // A name is kept when its English form survives, or — in the name's origin
   // locale only — its native form (Союз МС-24 in ru, 嫦娥五号 in zh-CN).
-  const lost = names.filter((n) => !nameRendered(locale, n, out, apos));
+  // A part of a longer name that was kept counts as kept ("LC-41" inside
+  // "Plesetsk LC-41/1" → "Плесецк, площадка 41/1").
+  const kept = names.filter((n) => nameRendered(locale, n, out, apos));
+  const lost = names.filter((n) => !kept.some((k) => k.includes(n)));
   if (lost.length) p.push(`names changed or missing: ${lost.slice(0, 5).join(', ')}`);
   // Names from the data's own name list must survive verbatim (NAME_POLICY), in
   // every language: the 2026-10-17 graded samples found Huygens → 惠更斯号/ホイヘンス/
@@ -333,13 +336,15 @@ export function problems(locale, src, out) {
   // taken verbatim from the source ("Canberri", "Madridu" glue a case ending onto
   // a name; NAME_POLICY wants "Canberra" or "Canberra-и").
   if (src && NATIVE[locale]) {
-    // "Grumman's" in the source allows "Grumman"; "CubeSats" allows "CubeSat".
+    // "Grumman's" in the source allows "Grumman"; "CubeSats" allows "CubeSat";
+    // an adjective from a name ("Keplerian", "Magellanic") allows the name.
     const srcWords = new Set(
       (src.match(/[A-Za-z][A-Za-z'’]*/g) || []).flatMap((w) => [
         w,
         w.replace(/['’]s?$/, ''),
         w.replace(/s$/, ''),
         `${w}s`,
+        ...(/^[A-Z]/.test(w) ? [w.replace(/(ian|ic)$/, '')] : []),
       ]),
     );
     const altered = [...new Set(out.match(/[A-Za-z][A-Za-z'’]*/g) || [])].filter(

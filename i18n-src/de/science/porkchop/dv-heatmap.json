@@ -1,5 +1,5 @@
 {
-  "title": "∆v Heatmap",
+  "title": "∆v-Wärmekarte",
   "intro_sentence": "Die Farbskala, die ∆v-Zahlen in ein Bild verwandelt, das man auf einen Blick erfassen kann.",
   "narrative_101": [
     "Der Sinn eines Porkchop-Diagramms liegt in den Farben. Zahlen in einem riesigen Gitter würden dir dasselbe sagen, aber du könntest die Muster nicht erkennen. Daher färben wir jede Zelle ein — kühles Türkis für günstige Trajektorien, Gelb für Grenzfälle, Orange und Rot für hoffnungslos teure. Mustererkennung ersetzt die Arithmetik.",

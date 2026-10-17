@@ -71,6 +71,18 @@ describe('name guard (NAME_POLICY)', () => {
       problems('sr-Cyrl', src, 'Surveyor 3 у априлу 1967; DSS-43 у Canberri прати Voyager 2.'),
     ).toEqual(expect.arrayContaining([expect.stringMatching(/Canberri/)]));
   });
+  it('allows the name behind an adjective (Keplerian → Kepler), not other words', () => {
+    expect(problems('ja', 'Keplerian Orbit', 'Kepler軌道')).toEqual([]);
+    expect(problems('ja', 'Vis-Viva Equation', 'vis-viva方程式')).toEqual(
+      expect.arrayContaining([expect.stringMatching(/vis, viva/)]),
+    );
+  });
+  it('counts a designation as kept when the longer name holding it is rendered natively', () => {
+    expect(problems('ru', 'Plesetsk LC-41/1', 'Плесецк, площадка 41/1')).toEqual([]);
+    expect(problems('ru', 'Plesetsk LC-41/1', 'Плесецк')).toEqual(
+      expect.arrayContaining([expect.stringMatching(/names changed or missing/)]),
+    );
+  });
 });
 
 describe('fixHomoglyphs', () => {

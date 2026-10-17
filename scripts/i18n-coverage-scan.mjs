@@ -23,7 +23,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { SKIP_KEY } from './i18n-manifest.mjs';
 import { designations, knownNamesIn } from './lib/translate-quality.mjs';
-import { nativeName } from '../src/lib/name-origins.js';
+import { ORIGIN_NAMES, nativeName } from '../src/lib/name-origins.js';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const SRC = path.join(ROOT, 'i18n-src');
@@ -57,8 +57,23 @@ const ID_FIELDS =
 // An identical string is untranslated when it holds an ordinary word: any lowercase
 // word ("Saturn IB from Cape Kennedy", "Mercury capsule"), or — for event labels,
 // which are written in capitals — any all-caps word ("LAUNCH", "SPLASHDOWN").
+// Title-Case headings ("Vis-Viva Equation") hide from both rules: for title-like
+// fields, any word of 4+ letters left after removing known names and designations
+// counts as ordinary English.
+const TITLE_FIELDS = /^(title|short_title|heading|subtitle|section_title)$/;
+const titleWords = (s) => {
+  let rest = s;
+  for (const n of [...knownNamesIn(s), ...designations(s)]) rest = rest.split(n).join(' ');
+  return /\b[A-Za-z]{4,}\b/.test(rest);
+};
+// Identical on purpose: a proper name kept in English (NAME_POLICY), or a word
+// spelled the same in that language.
+const SAME_OK = { '*': ['DSN — Deep Space Network'], fr: ['Biosignatures'] };
 const untranslated = (field, s) =>
-  !ID_FIELDS.test(field) && (/\b[a-z]{3,}\b/.test(s) || (field === 'label' && /[A-Z]{4,}/.test(s)));
+  !ID_FIELDS.test(field) &&
+  (/\b[a-z]{3,}\b/.test(s) ||
+    (field === 'label' && /[A-Z]{4,}/.test(s)) ||
+    (TITLE_FIELDS.test(field) && titleWords(s)));
 const sameByField = {};
 
 const report = {};
@@ -89,7 +104,15 @@ function compare(loc, rel, en, tr, at = '') {
     // Origin-language rule: in a name's own locale the native form is used, so the
     // English form left in the text is a miss (link labels are English source titles).
     if (!/(^|\.)(l|u)$/.test(at))
-      for (const n of [...new Set([...designations(en), ...knownNamesIn(en)])]) {
+      for (const n of [
+        ...new Set([
+          ...designations(en),
+          ...knownNamesIn(en),
+          // people and places in the origin table that the data gazetteer lacks;
+          // "Persei" is the Angara upper stage but also a Bayer genitive (Beta Persei)
+          ...Object.keys(ORIGIN_NAMES[loc] ?? {}).filter((k) => k !== 'Persei' && en.includes(k)),
+        ]),
+      ]) {
         const esc = n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
         if (nativeName(loc, n) && new RegExp(`(^|[^A-Za-z0-9])${esc}(?![A-Za-z0-9])`).test(tr))
           add(loc, 'nativeNameMissing', `${rel} :: ${at} — ${n} → ${nativeName(loc, n)}`);
@@ -101,7 +124,7 @@ function compare(loc, rel, en, tr, at = '') {
           .split('.')
           .filter((s) => !/^\d+$/.test(s))
           .pop() ?? '';
-      if (untranslated(field, en)) {
+      if (untranslated(field, en) && !SAME_OK[loc]?.includes(en) && !SAME_OK['*'].includes(en)) {
         add(loc, 'sameAsEnglish', `${rel} :: ${at} — ${en.slice(0, 70)}`);
         sameByField[field] = (sameByField[field] || 0) + 1;
       }

@@ -44,16 +44,16 @@
   {
     "tab": "exoplanets",
     "section": "direct-imaging",
-    "title": "Direct Imaging",
+    "title": "Imagen directa",
     "intro": "Bloquea el resplandor abrumador de la estrella y, con suerte para unos pocos planetas, podrás fotografiar el débil punto de luz junto a ella.",
-    "haystack": "direct imaging bloquea el resplandor abrumador de la estrella y, con suerte para unos pocos planetas, podrás fotografiar el débil punto de luz junto a ella. la imagen directa bloquea o anula la luz estelar (con un coronógrafo o interferómetro) para revelar planetas y discos que de otro modo se perderían en el resplandor. como detecta la propia luz del planeta, permite de manera única la espectroscopía del mundo en aislamiento — una lectura directa de su temperatura y atmósfera. direct imaging"
+    "haystack": "imagen directa bloquea el resplandor abrumador de la estrella y, con suerte para unos pocos planetas, podrás fotografiar el débil punto de luz junto a ella. la imagen directa bloquea o anula la luz estelar (con un coronógrafo o interferómetro) para revelar planetas y discos que de otro modo se perderían en el resplandor. como detecta la propia luz del planeta, permite de manera única la espectroscopía del mundo en aislamiento — una lectura directa de su temperatura y atmósfera. direct imaging"
   },
   {
     "tab": "exoplanets",
     "section": "exoplanet-atmospheres",
-    "title": "Reading Exoplanet Atmospheres",
+    "title": "Leer las atmósferas de los exoplanetas",
     "intro": "Durante un tránsito, una franja de luz estelar se filtra a través del aire de un planeta y transporta las huellas de sus gases de vuelta a nosotros.",
-    "haystack": "reading exoplanet atmospheres durante un tránsito, una franja de luz estelar se filtra a través del aire de un planeta y transporta las huellas de sus gases de vuelta a nosotros. la espectroscopía de transmisión mide cómo la atmósfera de un planeta absorbe la luz estelar durante el tránsito, longitud de onda por longitud de onda, revelando su composición. la espectroscopía de emisión —capturando el resplandor térmico propio del planeta justo antes de que se deslice detrás de la estrella— añade estructura de temperatura. juntas convierten un planeta en tránsito en un mundo con un cielo mensurable. reading exoplanet atmospheres"
+    "haystack": "leer las atmósferas de los exoplanetas durante un tránsito, una franja de luz estelar se filtra a través del aire de un planeta y transporta las huellas de sus gases de vuelta a nosotros. la espectroscopía de transmisión mide cómo la atmósfera de un planeta absorbe la luz estelar durante el tránsito, longitud de onda por longitud de onda, revelando su composición. la espectroscopía de emisión —capturando el resplandor térmico propio del planeta justo antes de que se deslice detrás de la estrella— añade estructura de temperatura. juntas convierten un planeta en tránsito en un mundo con un cielo mensurable. reading exoplanet atmospheres"
   },
   {
     "tab": "exoplanets",
@@ -72,23 +72,23 @@
   {
     "tab": "exoplanets",
     "section": "hot-jupiters",
-    "title": "Hot Jupiters",
+    "title": "Júpiteres calientes",
     "intro": "Planetas gigantes orbitando abrasadoramente cerca de sus estrellas: la sorpresa que recibieron los primerísimos descubrimientos de exoplanetas y que reescribió cómo pensamos que se forman los planetas.",
-    "haystack": "hot jupiters planetas gigantes orbitando abrasadoramente cerca de sus estrellas: la sorpresa que recibieron los primerísimos descubrimientos de exoplanetas y que reescribió cómo pensamos que se forman los planetas. los júpiteres calientes son gigantes gaseosos en órbitas de solo unos pocos días, con temperaturas en el lado diurno que a menudo superan los 1.000 grados. su existencia implica migración orbital a gran escala: probablemente se formaron más allá de la línea de nieve y descendieron en espiral hacia el interior mediante interacciones con el disco protoplanetario o con otros cuerpos, terminando donde ningún gigante podría haberse ensamblado in situ. hot jupiters"
+    "haystack": "júpiteres calientes planetas gigantes orbitando abrasadoramente cerca de sus estrellas: la sorpresa que recibieron los primerísimos descubrimientos de exoplanetas y que reescribió cómo pensamos que se forman los planetas. los júpiteres calientes son gigantes gaseosos en órbitas de solo unos pocos días, con temperaturas en el lado diurno que a menudo superan los 1.000 grados. su existencia implica migración orbital a gran escala: probablemente se formaron más allá de la línea de nieve y descendieron en espiral hacia el interior mediante interacciones con el disco protoplanetario o con otros cuerpos, terminando donde ningún gigante podría haberse ensamblado in situ. hot jupiters"
   },
   {
     "tab": "exoplanets",
     "section": "microlensing",
-    "title": "Gravitational Microlensing",
+    "title": "Microlente gravitacional",
     "intro": "Cuando una estrella pasa exactamente por delante de otra, su gravedad amplifica la estrella de fondo — y un planeta añade un destello adicional breve.",
-    "haystack": "gravitational microlensing cuando una estrella pasa exactamente por delante de otra, su gravedad amplifica la estrella de fondo — y un planeta añade un destello adicional breve. las microlentes detectan planetas mediante la magnificación gravitacional transitoria que añaden a una alineación fortuita de dos estrellas. es especialmente sensible a planetas de baja masa en órbitas amplias y frías — la región más allá de la línea de nieve que los tránsitos y la velocidad radial tienen dificultades para alcanzar — y a planetas errantes que van a la deriva solos por la galaxia. gravitational microlensing"
+    "haystack": "microlente gravitacional cuando una estrella pasa exactamente por delante de otra, su gravedad amplifica la estrella de fondo — y un planeta añade un destello adicional breve. las microlentes detectan planetas mediante la magnificación gravitacional transitoria que añaden a una alineación fortuita de dos estrellas. es especialmente sensible a planetas de baja masa en órbitas amplias y frías — la región más allá de la línea de nieve que los tránsitos y la velocidad radial tienen dificultades para alcanzar — y a planetas errantes que van a la deriva solos por la galaxia. gravitational microlensing"
   },
   {
     "tab": "exoplanets",
     "section": "orbital-resonance",
-    "title": "Orbital Resonance",
+    "title": "Resonancia orbital",
     "intro": "Cuando los períodos orbitales de los planetas forman razones simples de números enteros, sus alineamientos repetidos sincronizan el sistema en un ritmo autorreforzante.",
-    "haystack": "orbital resonance cuando los períodos orbitales de los planetas forman razones simples de números enteros, sus alineamientos repetidos sincronizan el sistema en un ritmo autorreforzante. una resonancia orbital ocurre cuando cuerpos en órbita ejercen influencia gravitacional regular y periódica entre sí, generalmente porque sus períodos están en una razón de enteros pequeños. las resonancias pueden estabilizar un sistema densamente empaquetado al mantener los planetas en un patrón sincronizado, o desestabilizarlo al aumentar las excentricidades. orbital resonance"
+    "haystack": "resonancia orbital cuando los períodos orbitales de los planetas forman razones simples de números enteros, sus alineamientos repetidos sincronizan el sistema en un ritmo autorreforzante. una resonancia orbital ocurre cuando cuerpos en órbita ejercen influencia gravitacional regular y periódica entre sí, generalmente porque sus períodos están en una razón de enteros pequeños. las resonancias pueden estabilizar un sistema densamente empaquetado al mantener los planetas en un patrón sincronizado, o desestabilizarlo al aumentar las excentricidades. orbital resonance"
   },
   {
     "tab": "exoplanets",
@@ -114,16 +114,16 @@
   {
     "tab": "exoplanets",
     "section": "super-earths-sub-neptunes",
-    "title": "Super-Earths & Sub-Neptunes",
+    "title": "Supertierras y subneptunos",
     "intro": "Los planetas más comunes de la galaxia tienen tamaños que el Sistema Solar omitió por completo: más grandes que la Tierra, más pequeños que Neptuno.",
-    "haystack": "super-earths & sub-neptunes los planetas más comunes de la galaxia tienen tamaños que el sistema solar omitió por completo: más grandes que la tierra, más pequeños que neptuno. estadísticamente, los «supertierra» y los «subneptunos» son los planetas más abundantes de la galaxia, pero el sistema solar no contiene ninguno. el «valle de radios» —una depresión en el número de planetas alrededor de 1,5–2 radios terrestres— parece separar los núcleos rocosos desnudos de mundos que han conservado una envoltura gruesa de hidrógeno-helio o de vapor de agua. super-earths & sub-neptunes"
+    "haystack": "supertierras y subneptunos los planetas más comunes de la galaxia tienen tamaños que el sistema solar omitió por completo: más grandes que la tierra, más pequeños que neptuno. estadísticamente, los «supertierra» y los «subneptunos» son los planetas más abundantes de la galaxia, pero el sistema solar no contiene ninguno. el «valle de radios» —una depresión en el número de planetas alrededor de 1,5–2 radios terrestres— parece separar los núcleos rocosos desnudos de mundos que han conservado una envoltura gruesa de hidrógeno-helio o de vapor de agua. super-earths & sub-neptunes"
   },
   {
     "tab": "exoplanets",
     "section": "tidal-locking",
-    "title": "Tidal Locking",
+    "title": "Acoplamiento de marea",
     "intro": "Los planetas que orbitan cerca de estrellas pequeñas a menudo mantienen una cara orientada hacia la estrella para siempre — día permanente en un lado, noche permanente en el otro.",
-    "haystack": "tidal locking los planetas que orbitan cerca de estrellas pequeñas a menudo mantienen una cara orientada hacia la estrella para siempre — día permanente en un lado, noche permanente en el otro. el acoplamiento de marea (sincronización espín-órbita) surge cuando la atracción de marea de una estrella frena la rotación de un planeta cercano hasta que su día iguala su año. debido a que el efecto se fortalece marcadamente con la proximidad, se espera que esencialmente todos los planetas rocosos en la zona habitable de una enana roja estén acoplados o en un estado de resonancia de espín relacionado. tidal locking"
+    "haystack": "acoplamiento de marea los planetas que orbitan cerca de estrellas pequeñas a menudo mantienen una cara orientada hacia la estrella para siempre — día permanente en un lado, noche permanente en el otro. el acoplamiento de marea (sincronización espín-órbita) surge cuando la atracción de marea de una estrella frena la rotación de un planeta cercano hasta que su día iguala su año. debido a que el efecto se fortalece marcadamente con la proximidad, se espera que esencialmente todos los planetas rocosos en la zona habitable de una enana roja estén acoplados o en un estado de resonancia de espín relacionado. tidal locking"
   },
   {
     "tab": "exoplanets",
@@ -135,9 +135,9 @@
   {
     "tab": "exoplanets",
     "section": "transit-timing",
-    "title": "Transit-Timing Variations",
+    "title": "Variaciones en el tiempo de tránsito",
     "intro": "En un sistema abarrotado, los planetas se atraen mutuamente y llegan temprano o tarde; la deriva en los tiempos de tránsito revela mundos invisibles y pesa aquellos que vemos.",
-    "haystack": "transit-timing variations en un sistema abarrotado, los planetas se atraen mutuamente y llegan temprano o tarde; la deriva en los tiempos de tránsito revela mundos invisibles y pesa aquellos que vemos. las variaciones en el tiempo de tránsito (ttvs) explotan las interacciones gravitacionales entre planetas del mismo sistema. un planeta perfectamente aislado transita con un periodo constante; los planetas en interacción muestran desviaciones periódicas cuya amplitud y patrón codifican las masas y órbitas de los planetas. transit-timing variations"
+    "haystack": "variaciones en el tiempo de tránsito en un sistema abarrotado, los planetas se atraen mutuamente y llegan temprano o tarde; la deriva en los tiempos de tránsito revela mundos invisibles y pesa aquellos que vemos. las variaciones en el tiempo de tránsito (ttvs) explotan las interacciones gravitacionales entre planetas del mismo sistema. un planeta perfectamente aislado transita con un periodo constante; los planetas en interacción muestran desviaciones periódicas cuya amplitud y patrón codifican las masas y órbitas de los planetas. transit-timing variations"
   },
   {
     "tab": "exoplanets",
@@ -184,9 +184,9 @@
   {
     "tab": "history",
     "section": "tsiolkovsky-equation-1903",
-    "title": "Tsiolkovsky Equation · 1903",
+    "title": "La ecuación de Tsiolkovsky · 1903",
     "intro": "Un maestro ruso sordo elabora la ecuación del cohete 50 años antes de que alguien pudiera construir uno.",
-    "haystack": "tsiolkovsky equation · 1903 un maestro ruso sordo elabora la ecuación del cohete 50 años antes de que alguien pudiera construir uno. tsiolkovsky publicó la ecuación, el concepto de cohete multietapa y el concepto de estación orbital años antes de que existiera la ingeniería de cohetes seria. goddard construiría el primer cohete de combustible líquido en 1926 (ee.uu.); el v-2 de von braun en 1942 (alemania); el r-7 de korolev en 1957 (urss). tsiolkovsky equation · 1903"
+    "haystack": "la ecuación de tsiolkovsky · 1903 un maestro ruso sordo elabora la ecuación del cohete 50 años antes de que alguien pudiera construir uno. tsiolkovsky publicó la ecuación, el concepto de cohete multietapa y el concepto de estación orbital años antes de que existiera la ingeniería de cohetes seria. goddard construiría el primer cohete de combustible líquido en 1926 (ee.uu.); el v-2 de von braun en 1942 (alemania); el r-7 de korolev en 1957 (urss). tsiolkovsky equation · 1903"
   },
   {
     "tab": "life-in-space",
@@ -401,9 +401,9 @@
   {
     "tab": "mission-phases",
     "section": "comms-blackout",
-    "title": "Communications Blackout",
+    "title": "Apagón de comunicaciones",
     "intro": "Durante unos minutos en la parte más caliente de la reentrada, el propio aire se convierte en plasma y engulle cada señal de radio — la cápsula enmudece, y todos en tierra solo pueden esperar.",
-    "haystack": "communications blackout durante unos minutos en la parte más caliente de la reentrada, el propio aire se convierte en plasma y engulle cada señal de radio — la cápsula enmudece, y todos en tierra solo pueden esperar. el apagón está causado por la vaina de plasma: la onda de choque de proa frente a un cuerpo de entrada romo comprime y calienta el gas lo suficiente como para ionizarlo, produciendo una capa de electrones libres alrededor del vehículo. una onda de radio solo puede propagarse por el plasma por encima de la frecuencia de plasma local, que escala con la densidad electrónica; durante el pico de calentamiento la densidad electrónica es suficientemente alta como para que esta frecuencia de corte supere las frecuencias de comunicación de la nave, y la señal es reflejada y atenuada en lugar de transmitida. la conexión se pierde en ambas direcciones. communications blackout"
+    "haystack": "apagón de comunicaciones durante unos minutos en la parte más caliente de la reentrada, el propio aire se convierte en plasma y engulle cada señal de radio — la cápsula enmudece, y todos en tierra solo pueden esperar. el apagón está causado por la vaina de plasma: la onda de choque de proa frente a un cuerpo de entrada romo comprime y calienta el gas lo suficiente como para ionizarlo, produciendo una capa de electrones libres alrededor del vehículo. una onda de radio solo puede propagarse por el plasma por encima de la frecuencia de plasma local, que escala con la densidad electrónica; durante el pico de calentamiento la densidad electrónica es suficientemente alta como para que esta frecuencia de corte supere las frecuencias de comunicación de la nave, y la señal es reflejada y atenuada en lugar de transmitida. la conexión se pierde en ambas direcciones. communications blackout"
   },
   {
     "tab": "mission-phases",
@@ -429,9 +429,9 @@
   {
     "tab": "mission-phases",
     "section": "edl",
-    "title": "EDL — Entry, Descent, Landing",
+    "title": "EDL — Entrada, descenso y aterrizaje",
     "intro": "Siete minutos desde el techo de la atmósfera hasta tocar suelo — la fase más automatizada y de menor margen de cualquier misión planetaria.",
-    "haystack": "edl — entry, descent, landing siete minutos desde el techo de la atmósfera hasta tocar suelo — la fase más automatizada y de menor margen de cualquier misión planetaria. la entrada empieza cuando la nave golpea atmósfera sensible — unos 125 km arriba en marte, 100 km en la tierra. desde ese momento, la fricción atmosférica hace tu frenado; los motores se mantienen quietos. el escudo térmico maneja miles de grados, el aerocaparazón mantiene la forma, y la trayectoria es esencialmente balística. edl — entry, descent, landing"
+    "haystack": "edl — entrada, descenso y aterrizaje siete minutos desde el techo de la atmósfera hasta tocar suelo — la fase más automatizada y de menor margen de cualquier misión planetaria. la entrada empieza cuando la nave golpea atmósfera sensible — unos 125 km arriba en marte, 100 km en la tierra. desde ese momento, la fricción atmosférica hace tu frenado; los motores se mantienen quietos. el escudo térmico maneja miles de grados, el aerocaparazón mantiene la forma, y la trayectoria es esencialmente balística. edl — entry, descent, landing"
   },
   {
     "tab": "mission-phases",
@@ -443,9 +443,9 @@
   {
     "tab": "mission-phases",
     "section": "entry-heating",
-    "title": "Entry Heating",
+    "title": "Calentamiento en la entrada",
     "intro": "Por qué impactar una atmósfera a kilómetros por segundo calienta una nave a miles de grados — y cómo un escudo térmico aguanta el castigo.",
-    "haystack": "entry heating por qué impactar una atmósfera a kilómetros por segundo calienta una nave a miles de grados — y cómo un escudo térmico aguanta el castigo. dos picos importan durante la entrada y no coinciden. el pico de calentamiento ocurre arriba, donde la nave aún es rápida y la velocidad de calentamiento (que escala aproximadamente con la velocidad al cubo) es enorme incluso en aire fino. el pico de desaceleración ocurre más abajo, en aire más denso, donde la fuerza en la nave es mayor — las entradas en marte alcanzan picos de 8–15 g, las entradas en venus de 100–350 g. la estructura de una sonda se dimensiona para el pico de g; su escudo térmico se dimensiona para el pico de calor. entry heating"
+    "haystack": "calentamiento en la entrada por qué impactar una atmósfera a kilómetros por segundo calienta una nave a miles de grados — y cómo un escudo térmico aguanta el castigo. dos picos importan durante la entrada y no coinciden. el pico de calentamiento ocurre arriba, donde la nave aún es rápida y la velocidad de calentamiento (que escala aproximadamente con la velocidad al cubo) es enorme incluso en aire fino. el pico de desaceleración ocurre más abajo, en aire más denso, donde la fuerza en la nave es mayor — las entradas en marte alcanzan picos de 8–15 g, las entradas en venus de 100–350 g. la estructura de una sonda se dimensiona para el pico de g; su escudo térmico se dimensiona para el pico de calor. entry heating"
   },
   {
     "tab": "mission-phases",
@@ -457,9 +457,9 @@
   {
     "tab": "mission-phases",
     "section": "gravity-turn",
-    "title": "Gravity Turn",
+    "title": "Giro gravitatorio",
     "intro": "El programa de cabeceo que deja que la gravedad misma dirija el cohete en su trayectoria — cambiando un ascenso vertical por velocidad orbital con pérdidas de dirección casi nulas.",
-    "haystack": "gravity turn el programa de cabeceo que deja que la gravedad misma dirija el cohete en su trayectoria — cambiando un ascenso vertical por velocidad orbital con pérdidas de dirección casi nulas. dos de las tres grandes pérdidas de ascenso están moldeadas por el giro. la pérdida de dirección es el ∆v desperdiciado siempre que el empuje apunta lejos de la dirección de viaje; un verdadero giro gravitatorio mantiene el empuje alineado con la velocidad, así que la pérdida de dirección se mantiene cerca de cero. la pérdida gravitatoria es el ∆v gastado sosteniéndose contra su propio peso mientras asciende — cuanto más rápido se inclina el cohete hacia la horizontal, antes ese peso deja de comerse su aceleración. los dos tiran en direcciones opuestas, y el programa de cabeceo es el compromiso. gravity turn"
+    "haystack": "giro gravitatorio el programa de cabeceo que deja que la gravedad misma dirija el cohete en su trayectoria — cambiando un ascenso vertical por velocidad orbital con pérdidas de dirección casi nulas. dos de las tres grandes pérdidas de ascenso están moldeadas por el giro. la pérdida de dirección es el ∆v desperdiciado siempre que el empuje apunta lejos de la dirección de viaje; un verdadero giro gravitatorio mantiene el empuje alineado con la velocidad, así que la pérdida de dirección se mantiene cerca de cero. la pérdida gravitatoria es el ∆v gastado sosteniéndose contra su propio peso mientras asciende — cuanto más rápido se inclina el cohete hacia la horizontal, antes ese peso deja de comerse su aceleración. los dos tiran en direcciones opuestas, y el programa de cabeceo es el compromiso. gravity turn"
   },
   {
     "tab": "mission-phases",
@@ -492,23 +492,23 @@
   {
     "tab": "mission-phases",
     "section": "met",
-    "title": "MET — Mission Elapsed Time",
+    "title": "MET — Tiempo transcurrido de misión",
     "intro": "Un cronómetro simple que empieza al lanzamiento y nunca se detiene — la etiqueta de tiempo universal para cada evento del cronograma de misión.",
-    "haystack": "met — mission elapsed time un cronómetro simple que empieza al lanzamiento y nunca se detiene — la etiqueta de tiempo universal para cada evento del cronograma de misión. met es el tiempo desde el lanzamiento. día cero es el despegue. cada evento — separación de etapa, inyección trans-x, corrección de medio curso, inserción orbital, operaciones de superficie — recibe una marca temporal met. aterrizaje lunar de apollo 11: met 4 días, 6 horas, 45 minutos. voyager 1 saliendo de la heliopausa: met 35 años. met — mission elapsed time"
+    "haystack": "met — tiempo transcurrido de misión un cronómetro simple que empieza al lanzamiento y nunca se detiene — la etiqueta de tiempo universal para cada evento del cronograma de misión. met es el tiempo desde el lanzamiento. día cero es el despegue. cada evento — separación de etapa, inyección trans-x, corrección de medio curso, inserción orbital, operaciones de superficie — recibe una marca temporal met. aterrizaje lunar de apollo 11: met 4 días, 6 horas, 45 minutos. voyager 1 saliendo de la heliopausa: met 35 años. met — mission elapsed time"
   },
   {
     "tab": "mission-phases",
     "section": "mission-types",
-    "title": "Mission Types — Flyby, Orbiter, Lander, Rover, Sample Return",
+    "title": "Tipos de misión — Sobrevuelo, orbitador, módulo de aterrizaje, rover, retorno de muestras",
     "intro": "Cinco arquetipos de cómo una sonda espacial se relaciona con su destino — cada uno con un coste ∆v, perfil de riesgo y retorno científico diferentes.",
-    "haystack": "mission types — flyby, orbiter, lander, rover, sample return cinco arquetipos de cómo una sonda espacial se relaciona con su destino — cada uno con un coste ∆v, perfil de riesgo y retorno científico diferentes. las misiones de sobrevuelo omiten por completo el queimado de inserción orbital. pasan a la v∞ con la que llegan — ~10 km/s para voyager en júpiter, ~14 km/s para new horizons en plutón. el tiempo de encuentro es de minutos a días. intercambian ciencia rápida por cobertura superficial y sin posibilidad de seguimiento. mission types — flyby, orbiter, lander, rover, sample return"
+    "haystack": "tipos de misión — sobrevuelo, orbitador, módulo de aterrizaje, rover, retorno de muestras cinco arquetipos de cómo una sonda espacial se relaciona con su destino — cada uno con un coste ∆v, perfil de riesgo y retorno científico diferentes. las misiones de sobrevuelo omiten por completo el queimado de inserción orbital. pasan a la v∞ con la que llegan — ~10 km/s para voyager en júpiter, ~14 km/s para new horizons en plutón. el tiempo de encuentro es de minutos a días. intercambian ciencia rápida por cobertura superficial y sin posibilidad de seguimiento. mission types — flyby, orbiter, lander, rover, sample return"
   },
   {
     "tab": "mission-phases",
     "section": "nrho",
-    "title": "NRHO — Near-Rectilinear Halo Orbit",
+    "title": "NRHO — Órbita de halo casi rectilínea",
     "intro": "Una órbita de aproximadamente 6,5 días con forma de huevo alrededor del punto Earth-Moon L2 — el hogar elegido de la Lunar Gateway de NASA.",
-    "haystack": "nrho — near-rectilinear halo orbit una órbita de aproximadamente 6,5 días con forma de huevo alrededor del punto earth-moon l2 — el hogar elegido de la lunar gateway de nasa. una nrho es una órbita halo — una trayectoria periódica de tres cuerpos que forma bucles alrededor de un punto de lagrange — pero estirada hasta que un extremo casi toca el polo sur lunar. parece más una órbita polar que un halo, de ahí «casi rectilínea». una revolución completa toma aproximadamente 6,5 días; el «9» en la resonancia gateway 9:2 se refiere a nueve revoluciones nrho por cada dos meses sinódicos lunares, no a un período de 9 días. nrho — near-rectilinear halo orbit"
+    "haystack": "nrho — órbita de halo casi rectilínea una órbita de aproximadamente 6,5 días con forma de huevo alrededor del punto earth-moon l2 — el hogar elegido de la lunar gateway de nasa. una nrho es una órbita halo — una trayectoria periódica de tres cuerpos que forma bucles alrededor de un punto de lagrange — pero estirada hasta que un extremo casi toca el polo sur lunar. parece más una órbita polar que un halo, de ahí «casi rectilínea». una revolución completa toma aproximadamente 6,5 días; el «9» en la resonancia gateway 9:2 se refiere a nueve revoluciones nrho por cada dos meses sinódicos lunares, no a un período de 9 días. nrho — near-rectilinear halo orbit"
   },
   {
     "tab": "mission-phases",
@@ -520,16 +520,16 @@
   {
     "tab": "mission-phases",
     "section": "orbit-insertion",
-    "title": "Orbit Insertion — LOI / MOI",
+    "title": "Inserción orbital — LOI / MOI",
     "intro": "La quemadura de frenado que captura tu nave en órbita en lugar de dejarla volar eternamente.",
-    "haystack": "orbit insertion — loi / moi la quemadura de frenado que captura tu nave en órbita en lugar de dejarla volar eternamente. cuando tu nave llega al destino, se mueve rápido —lo suficientemente rápido como para escapar si no haces nada. para capturarte en órbita, tienes que disipar suficiente velocidad para descender por debajo de la velocidad de escape local. esa quemadura de frenado es la inyección orbital. loi para lunar (apollo, lro), moi para marte (maven, mro, tianwen-1), y así sucesivamente. orbit insertion — loi / moi"
+    "haystack": "inserción orbital — loi / moi la quemadura de frenado que captura tu nave en órbita en lugar de dejarla volar eternamente. cuando tu nave llega al destino, se mueve rápido —lo suficientemente rápido como para escapar si no haces nada. para capturarte en órbita, tienes que disipar suficiente velocidad para descender por debajo de la velocidad de escape local. esa quemadura de frenado es la inyección orbital. loi para lunar (apollo, lro), moi para marte (maven, mro, tianwen-1), y así sucesivamente. orbit insertion — loi / moi"
   },
   {
     "tab": "mission-phases",
     "section": "propulsive-landing",
-    "title": "Propulsive Landing",
+    "title": "Aterrizaje propulsado",
     "intro": "Aterrizar solo con cohetes — la única forma de descender en un mundo sin aire como la Luna, y cómo un gigante como Starship se posará en Marte.",
-    "haystack": "propulsive landing aterrizar solo con cohetes — la única forma de descender en un mundo sin aire como la luna, y cómo un gigante como starship se posará en marte. el costo del propelente lo establece la ecuación del cohete y la velocidad a cancelar. en la luna un módulo debe eliminar su velocidad orbital o de aproximación completa en el motor, por eso tanta masa de un módulo lunar es combustible. en marte la atmósfera hace la mitad cara del trabajo gratis (el escudo térmico), dejando al motor solo los últimos kilómetros lentos — pero para un vehículo pesado incluso eso es una quemadura importante. propulsive landing"
+    "haystack": "aterrizaje propulsado aterrizar solo con cohetes — la única forma de descender en un mundo sin aire como la luna, y cómo un gigante como starship se posará en marte. el costo del propelente lo establece la ecuación del cohete y la velocidad a cancelar. en la luna un módulo debe eliminar su velocidad orbital o de aproximación completa en el motor, por eso tanta masa de un módulo lunar es combustible. en marte la atmósfera hace la mitad cara del trabajo gratis (el escudo térmico), dejando al motor solo los últimos kilómetros lentos — pero para un vehículo pesado incluso eso es una quemadura importante. propulsive landing"
   },
   {
     "tab": "mission-phases",
@@ -541,9 +541,9 @@
   {
     "tab": "mission-phases",
     "section": "skycrane",
-    "title": "Sky-Crane",
+    "title": "Grúa celeste",
     "intro": "La plataforma impulsada por cohetes que baja un róver a la superficie mediante cables, luego se aleja volando — el sistema de aterrizaje que llevó Curiosity y Perseverance a Marte.",
-    "haystack": "sky-crane la plataforma impulsada por cohetes que baja un róver a la superficie mediante cables, luego se aleja volando — el sistema de aterrizaje que llevó curiosity y perseverance a marte. la sky-crane resuelve dos problemas simultáneamente. mantiene los motores del cohete elevados, de modo que sus columnas de escape no caven un cráter ni lancen escombros hacia el róver, y entrega el róver directamente sobre sus ruedas, listo para conducir — sin rampas, sin plataforma de lander de la que descender. el costo es una coreografía sin margen de error, ejecutada de forma autónoma, minutos después de una entrada ígnea, cuando la tierra está demasiado lejos para ayudar en tiempo real. sky-crane"
+    "haystack": "grúa celeste la plataforma impulsada por cohetes que baja un róver a la superficie mediante cables, luego se aleja volando — el sistema de aterrizaje que llevó curiosity y perseverance a marte. la sky-crane resuelve dos problemas simultáneamente. mantiene los motores del cohete elevados, de modo que sus columnas de escape no caven un cráter ni lancen escombros hacia el róver, y entrega el róver directamente sobre sus ruedas, listo para conducir — sin rampas, sin plataforma de lander de la que descender. el costo es una coreografía sin margen de error, ejecutada de forma autónoma, minutos después de una entrada ígnea, cuando la tierra está demasiado lejos para ayudar en tiempo real. sky-crane"
   },
   {
     "tab": "mission-phases",
@@ -597,9 +597,9 @@
   {
     "tab": "observation",
     "section": "coronagraphs",
-    "title": "Coronagraphs",
+    "title": "Coronógrafos",
     "intro": "Un disco ocultor dentro del telescopio bloquea la estrella anfitriona para que el planeta junto a ella —un billón de veces más débil— sea visible.",
-    "haystack": "coronagraphs un disco ocultor dentro del telescopio bloquea la estrella anfitriona para que el planeta junto a ella —un billón de veces más débil— sea visible. una estrella similar al sol supera sus planetas por un factor de alrededor de 109 en longitudes de onda visibles y 106 en el infrarrojo. los fotones del planeta no se pierden, se ahogan en las alas de difusión de la función de punta de la estrella. la imagen directa de un exoplanet sólo es posible si usted puede suprimir ese psf por muchas órdenes de magnitud. un coronaógrafo hace exactamente eso. coronagraphs"
+    "haystack": "coronógrafos un disco ocultor dentro del telescopio bloquea la estrella anfitriona para que el planeta junto a ella —un billón de veces más débil— sea visible. una estrella similar al sol supera sus planetas por un factor de alrededor de 109 en longitudes de onda visibles y 106 en el infrarrojo. los fotones del planeta no se pierden, se ahogan en las alas de difusión de la función de punta de la estrella. la imagen directa de un exoplanet sólo es posible si usted puede suprimir ese psf por muchas órdenes de magnitud. un coronaógrafo hace exactamente eso. coronagraphs"
   },
   {
     "tab": "observation",
@@ -709,9 +709,9 @@
   {
     "tab": "orbits",
     "section": "hill-sphere",
-    "title": "Hill Sphere",
+    "title": "Esfera de Hill",
     "intro": "El volumen del espacio donde la gravedad de un planeta supera la del Sol.",
-    "haystack": "hill sphere el volumen del espacio donde la gravedad de un planeta supera la del sol. la fórmula del radio de hill aproxima el límite como r_h ≈ a × (1−e) × (m / 3m)^(1/3), donde `a` es el semieje mayor del planeta, `e` su excentricidad, `m` su masa y `m` la masa del sol. el factor (1−e) tiene en cuenta el acercamiento en el perihelio —una órbita más excéntrica significa que el planeta se acerca más al sol y su autoridad gravitatoria disminuye en consecuencia. la raíz cúbica significa que duplicar la masa de un planeta solo agranda su esfera de hill ~26%; duplicar su distancia orbital la agranda 100%. hill sphere"
+    "haystack": "esfera de hill el volumen del espacio donde la gravedad de un planeta supera la del sol. la fórmula del radio de hill aproxima el límite como r_h ≈ a × (1−e) × (m / 3m)^(1/3), donde `a` es el semieje mayor del planeta, `e` su excentricidad, `m` su masa y `m` la masa del sol. el factor (1−e) tiene en cuenta el acercamiento en el perihelio —una órbita más excéntrica significa que el planeta se acerca más al sol y su autoridad gravitatoria disminuye en consecuencia. la raíz cúbica significa que duplicar la masa de un planeta solo agranda su esfera de hill ~26%; duplicar su distancia orbital la agranda 100%. hill sphere"
   },
   {
     "tab": "orbits",
@@ -723,9 +723,9 @@
   {
     "tab": "orbits",
     "section": "keplerian-orbit",
-    "title": "Keplerian Orbit",
+    "title": "Órbita kepleriana",
     "intro": "Una elipse con el Sol en uno de los focos — la órbita más simple que un cuerpo puede tener alrededor de otro.",
-    "haystack": "keplerian orbit una elipse con el sol en uno de los focos — la órbita más simple que un cuerpo puede tener alrededor de otro. cuando caes hacia algo masivo pero lo esquivas, obtienes una órbita de kepler. la trayectoria es una elipse —un círculo estirado— y el cuerpo hacia el que caes se sitúa en uno de los dos puntos focales, nunca en el centro. la tierra alrededor del sol, la luna alrededor de la tierra, todas las naves espaciales que verás en orrery: todas son keplerianas en una primera aproximación. keplerian orbit"
+    "haystack": "órbita kepleriana una elipse con el sol en uno de los focos — la órbita más simple que un cuerpo puede tener alrededor de otro. cuando caes hacia algo masivo pero lo esquivas, obtienes una órbita de kepler. la trayectoria es una elipse —un círculo estirado— y el cuerpo hacia el que caes se sitúa en uno de los dos puntos focales, nunca en el centro. la tierra alrededor del sol, la luna alrededor de la tierra, todas las naves espaciales que verás en orrery: todas son keplerianas en una primera aproximación. keplerian orbit"
   },
   {
     "tab": "orbits",
@@ -744,9 +744,9 @@
   {
     "tab": "orbits",
     "section": "orbit-regimes",
-    "title": "Orbit Regimes — LEO, MEO, GEO, HEO",
+    "title": "Regímenes orbitales — LEO, MEO, GEO, HEO",
     "intro": "Las órbitas terrestres se agrupan en cuatro bandas de altitud; cada una representa un compromiso diferente entre latencia, duración y costo.",
-    "haystack": "orbit regimes — leo, meo, geo, heo las órbitas terrestres se agrupan en cuatro bandas de altitud; cada una representa un compromiso diferente entre latencia, duración y costo. leo (órbita terrestre baja, < 2.000 km de altitud): la más barata de alcanzar, período más rápido (~90 minutos para la iss a 408 km), retraso de enlace terrestre más corto (unos pocos ms), vida útil más corta por arrastre atmosférico residual. alberga la iss, hubble, starlink, la mayoría de satélites de observación terrestre, toda actividad tripulada más allá de apollo. orbit regimes — leo, meo, geo, heo"
+    "haystack": "regímenes orbitales — leo, meo, geo, heo las órbitas terrestres se agrupan en cuatro bandas de altitud; cada una representa un compromiso diferente entre latencia, duración y costo. leo (órbita terrestre baja, < 2.000 km de altitud): la más barata de alcanzar, período más rápido (~90 minutos para la iss a 408 km), retraso de enlace terrestre más corto (unos pocos ms), vida útil más corta por arrastre atmosférico residual. alberga la iss, hubble, starlink, la mayoría de satélites de observación terrestre, toda actividad tripulada más allá de apollo. orbit regimes — leo, meo, geo, heo"
   },
   {
     "tab": "orbits",
@@ -800,9 +800,9 @@
   {
     "tab": "planets",
     "section": "active-spacecraft-survey",
-    "title": "Active Spacecraft Survey",
+    "title": "Panorama de las naves activas",
     "intro": "Qué hay en cada planeta ahora: desde MRO en Marte hasta Juno en Júpiter, pasando por Akatsuki en Venus.",
-    "haystack": "active spacecraft survey qué hay en cada planeta ahora: desde mro en marte hasta juno en júpiter, pasando por akatsuki en venus. marte — flota orbital a partir de 2026: mro (nasa, desde 2006, órbita polar de 300 km, cámara hirise + observaciones de atmósfera + relé de datos). maven (nasa, desde 2014, órbita de 6200 km, tasas de escape atmosférico). mars express (esa, desde 2003, 4200 km, mineralogía + atmósfera). exomars tgo (esa, desde 2016, 400 km, gases traza + relé ruso). mangalyaan / mom (isro, 2014–2022, metano + atmósfera — primera misión asiática en orbitar exitosamente marte). tianwen-1 (cnsa, desde 2021, 4250 km, entregó el vehículo explorador zhurong + mapeo global). hope / emm (agencia espacial de los eau, desde 2021, 30 000 km ecuatorial, ciencia atmosférica). en la superficie: los vehículos exploradores perseverance y curiosity (ambos de nasa) y el helicóptero ingenuity ya inmovilizado. active spacecraft survey"
+    "haystack": "panorama de las naves activas qué hay en cada planeta ahora: desde mro en marte hasta juno en júpiter, pasando por akatsuki en venus. marte — flota orbital a partir de 2026: mro (nasa, desde 2006, órbita polar de 300 km, cámara hirise + observaciones de atmósfera + relé de datos). maven (nasa, desde 2014, órbita de 6200 km, tasas de escape atmosférico). mars express (esa, desde 2003, 4200 km, mineralogía + atmósfera). exomars tgo (esa, desde 2016, 400 km, gases traza + relé ruso). mangalyaan / mom (isro, 2014–2022, metano + atmósfera — primera misión asiática en orbitar exitosamente marte). tianwen-1 (cnsa, desde 2021, 4250 km, entregó el vehículo explorador zhurong + mapeo global). hope / emm (agencia espacial de los eau, desde 2021, 30 000 km ecuatorial, ciencia atmosférica). en la superficie: los vehículos exploradores perseverance y curiosity (ambos de nasa) y el helicóptero ingenuity ya inmovilizado. active spacecraft survey"
   },
   {
     "tab": "planets",
@@ -835,9 +835,9 @@
   {
     "tab": "planets",
     "section": "magnetic-fields",
-    "title": "Magnetic Fields",
+    "title": "Campos magnéticos",
     "intro": "La magnetosfera de cada planeta es diferente. La de Saturn es excepcionalmente alineada, la de Uranus es caótica, y Venus y Mars no tienen ninguna.",
-    "haystack": "magnetic fields la magnetosfera de cada planeta es diferente. la de saturn es excepcionalmente alineada, la de uranus es caótica, y venus y mars no tienen ninguna. inclinación del eje magnético (ángulo entre el dipolo y el eje de rotación) para cada planeta con un dínamo conocido: mercury 0.7°, earth 10.5°, jupiter 9.6°, saturn ~0°, uranus 58.6°, neptune 46.9°. venus, mars y pluto no presentan hoy un dipolo globalmente significativo. los dipolos de uranus y neptune, enormemente desviados del eje, también están desplazados del centro del planeta — el de uranus aproximadamente 1/3 del radio planetario. el dínamo convencional (núcleo de hierro) no puede producir fácilmente esa geometría; la explicación más aceptada es que uranus y neptune albergan sus dínamos en una capa exterior del manto formada por agua iónica + amoníaco + metano, y no en un núcleo profundo. magnetic fields"
+    "haystack": "campos magnéticos la magnetosfera de cada planeta es diferente. la de saturn es excepcionalmente alineada, la de uranus es caótica, y venus y mars no tienen ninguna. inclinación del eje magnético (ángulo entre el dipolo y el eje de rotación) para cada planeta con un dínamo conocido: mercury 0.7°, earth 10.5°, jupiter 9.6°, saturn ~0°, uranus 58.6°, neptune 46.9°. venus, mars y pluto no presentan hoy un dipolo globalmente significativo. los dipolos de uranus y neptune, enormemente desviados del eje, también están desplazados del centro del planeta — el de uranus aproximadamente 1/3 del radio planetario. el dínamo convencional (núcleo de hierro) no puede producir fácilmente esa geometría; la explicación más aceptada es que uranus y neptune albergan sus dínamos en una capa exterior del manto formada por agua iónica + amoníaco + metano, y no en un núcleo profundo. magnetic fields"
   },
   {
     "tab": "planets",
@@ -884,16 +884,16 @@
   {
     "tab": "porkchop",
     "section": "departure-axis",
-    "title": "Departure-Window Axis",
+    "title": "Eje de la ventana de salida",
     "intro": "Cuando lanzas — recorriendo el eje X, típicamente un intervalo de cuatro años muestreado diariamente.",
-    "haystack": "departure-window axis cuando lanzas — recorriendo el eje x, típicamente un intervalo de cuatro años muestreado diariamente. el eje x te dice cuándo abandonas la tierra. cada columna de píxeles es una fecha de lanzamiento diferente — para las gráficas de orrery, muestreadas a resolución de un día durante aproximadamente cuatro años. ¿por qué un intervalo de cuatro años? porque el período sinódico tierra-marte es ~26 meses; cuatro años capturan aproximadamente dos ventanas de marte completas. para venus (~19 meses) o júpiter (~13 meses) el mismo intervalo contiene más ventanas — el ancho de cuatro años está calibrado para la planificación de clase marte. departure-window axis"
+    "haystack": "eje de la ventana de salida cuando lanzas — recorriendo el eje x, típicamente un intervalo de cuatro años muestreado diariamente. el eje x te dice cuándo abandonas la tierra. cada columna de píxeles es una fecha de lanzamiento diferente — para las gráficas de orrery, muestreadas a resolución de un día durante aproximadamente cuatro años. ¿por qué un intervalo de cuatro años? porque el período sinódico tierra-marte es ~26 meses; cuatro años capturan aproximadamente dos ventanas de marte completas. para venus (~19 meses) o júpiter (~13 meses) el mismo intervalo contiene más ventanas — el ancho de cuatro años está calibrado para la planificación de clase marte. departure-window axis"
   },
   {
     "tab": "porkchop",
     "section": "dv-heatmap",
-    "title": "∆v Heatmap",
+    "title": "Mapa de calor de ∆v",
     "intro": "La escala de colores que convierte los números ∆v en una imagen que puedes leer de un vistazo.",
-    "haystack": "∆v heatmap la escala de colores que convierte los números ∆v en una imagen que puedes leer de un vistazo. el azul teal frío se sitúa en ∆v bajo (~3 km/s) — el mínimo de quemadura de salida para un hohmann tipo marte (este es el ∆v de inyección trans-marte desde leo, no el ∆v total de la misión). azul en ~5 km/s. amarillo alrededor de 7 km/s — el umbral de lo caro. naranja y rojo por encima de 9 km/s — celdas de coste desmesurado, donde necesitarías un vehículo de lanzamiento clase sls solo para hacer que las matemáticas se acerquen. ∆v heatmap"
+    "haystack": "mapa de calor de ∆v la escala de colores que convierte los números ∆v en una imagen que puedes leer de un vistazo. el azul teal frío se sitúa en ∆v bajo (~3 km/s) — el mínimo de quemadura de salida para un hohmann tipo marte (este es el ∆v de inyección trans-marte desde leo, no el ∆v total de la misión). azul en ~5 km/s. amarillo alrededor de 7 km/s — el umbral de lo caro. naranja y rojo por encima de 9 km/s — celdas de coste desmesurado, donde necesitarías un vehículo de lanzamiento clase sls solo para hacer que las matemáticas se acerquen. ∆v heatmap"
   },
   {
     "tab": "porkchop",
@@ -905,9 +905,9 @@
   {
     "tab": "porkchop",
     "section": "viability",
-    "title": "Reading Viability",
+    "title": "Leer la viabilidad",
     "intro": "Una celda es viable cuando la capacidad ∆v de tu cohete ≥ el coste ∆v de la celda — y la gráfica porkchop convierte esa comparación en un mapa sí/no.",
-    "haystack": "reading viability una celda es viable cuando la capacidad ∆v de tu cohete ≥ el coste ∆v de la celda — y la gráfica porkchop convierte esa comparación en un mapa sí/no. elige un vehículo. falcon heavy, sls block 1, atlas v n22, el que sea. ese vehículo tiene una curva de rendimiento c3 frente a masa de carga útil publicada — las cargas útiles más pesadas encogen el lóbulo alcanzable; las más ligeras lo expanden. para una masa de carga útil dada puedes leer el máximo c3 (o ∆v de salida equivalente) que el vehículo puede entregar, luego comparar contra la porkchop: cada celda donde ∆v_coste ≤ capacidad es una oportunidad de lanzamiento viable. cada celda donde es mayor es imposible sin un vehículo diferente o una nave más ligera. reading viability"
+    "haystack": "leer la viabilidad una celda es viable cuando la capacidad ∆v de tu cohete ≥ el coste ∆v de la celda — y la gráfica porkchop convierte esa comparación en un mapa sí/no. elige un vehículo. falcon heavy, sls block 1, atlas v n22, el que sea. ese vehículo tiene una curva de rendimiento c3 frente a masa de carga útil publicada — las cargas útiles más pesadas encogen el lóbulo alcanzable; las más ligeras lo expanden. para una masa de carga útil dada puedes leer el máximo c3 (o ∆v de salida equivalente) que el vehículo puede entregar, luego comparar contra la porkchop: cada celda donde ∆v_coste ≤ capacidad es una oportunidad de lanzamiento viable. cada celda donde es mayor es imposible sin un vehículo diferente o una nave más ligera. reading viability"
   },
   {
     "tab": "porkchop",
@@ -1003,9 +1003,9 @@
   {
     "tab": "propulsion",
     "section": "oberth-effect",
-    "title": "Oberth Effect",
+    "title": "Efecto Oberth",
     "intro": "Quema profundo en un pozo gravitatorio y tu combustible hace más trabajo — físicamente el mismo motor produce más energía orbital cuando se mueve rápido.",
-    "haystack": "oberth effect quema profundo en un pozo gravitatorio y tu combustible hace más trabajo — físicamente el mismo motor produce más energía orbital cuando se mueve rápido. la energía cinética de un cuerpo en movimiento va como `½ m v²`. un pequeño δv a alta velocidad produce un cambio mucho mayor en energía cinética que el mismo δv a baja velocidad. aplica esto a una quemada de cohete: haz la quemada en periapsis (donde te mueves más rápido) y el mismo propelente produce más ganancia de energía orbital de la que produciría en apoapsis. oberth effect"
+    "haystack": "efecto oberth quema profundo en un pozo gravitatorio y tu combustible hace más trabajo — físicamente el mismo motor produce más energía orbital cuando se mueve rápido. la energía cinética de un cuerpo en movimiento va como `½ m v²`. un pequeño δv a alta velocidad produce un cambio mucho mayor en energía cinética que el mismo δv a baja velocidad. aplica esto a una quemada de cohete: haz la quemada en periapsis (donde te mueves más rápido) y el mismo propelente produce más ganancia de energía orbital de la que produciría en apoapsis. oberth effect"
   },
   {
     "tab": "propulsion",
@@ -1052,9 +1052,9 @@
   {
     "tab": "propulsion",
     "section": "tsiolkovsky",
-    "title": "Tsiolkovsky Rocket Equation",
+    "title": "Ecuación del cohete de Tsiolkovsky",
     "intro": "Cuánto cambio de velocidad puedes obtener con un motor y una carga de propelente dados — la ecuación que convierte el vuelo espacial en un problema logarítmico.",
-    "haystack": "tsiolkovsky rocket equation cuánto cambio de velocidad puedes obtener con un motor y una carga de propelente dados — la ecuación que convierte el vuelo espacial en un problema logarítmico. konstantin tsiolkovsky derivó la ecuación del cohete en 1903, décadas antes de que alguien construyera un cohete digno de volar. el resultado tiene la inevitabilidad de la física: ∆v depende del `isp` del motor y de la relación entre la masa inicial y la masa final — y es logarítmica en esa relación. tsiolkovsky rocket equation"
+    "haystack": "ecuación del cohete de tsiolkovsky cuánto cambio de velocidad puedes obtener con un motor y una carga de propelente dados — la ecuación que convierte el vuelo espacial en un problema logarítmico. konstantin tsiolkovsky derivó la ecuación del cohete en 1903, décadas antes de que alguien construyera un cohete digno de volar. el resultado tiene la inevitabilidad de la física: ∆v depende del `isp` del motor y de la relación entre la masa inicial y la masa final — y es logarítmica en esa relación. tsiolkovsky rocket equation"
   },
   {
     "tab": "propulsion",
@@ -1080,16 +1080,16 @@
   {
     "tab": "scales-time",
     "section": "frames",
-    "title": "Heliocentric · Geocentric · Body-Centric Frames",
+    "title": "Marcos heliocéntrico · geocéntrico · centrado en el cuerpo",
     "intro": "Tres sistemas de referencia para tres preguntas distintas: ¿dónde está relativo al Sol, a la Tierra, o al planeta que estudias?",
-    "haystack": "heliocentric · geocentric · body-centric frames tres sistemas de referencia para tres preguntas distintas: ¿dónde está relativo al sol, a la tierra, o al planeta que estudias? heliocéntrico: origen en el sol, ejes alineados con la eclíptica. el sistema natural para movimiento del sistema solar. posiciones planetarias, órbitas de transferencia, cruceros de misión — todo se describe más naturalmente aquí. el `/explore` de orrery es fundamentalmente heliocéntrico. heliocentric · geocentric · body-centric frames"
+    "haystack": "marcos heliocéntrico · geocéntrico · centrado en el cuerpo tres sistemas de referencia para tres preguntas distintas: ¿dónde está relativo al sol, a la tierra, o al planeta que estudias? heliocéntrico: origen en el sol, ejes alineados con la eclíptica. el sistema natural para movimiento del sistema solar. posiciones planetarias, órbitas de transferencia, cruceros de misión — todo se describe más naturalmente aquí. el `/explore` de orrery es fundamentalmente heliocéntrico. heliocentric · geocentric · body-centric frames"
   },
   {
     "tab": "scales-time",
     "section": "j2000",
-    "title": "J2000 Epoch",
+    "title": "Época J2000",
     "intro": "12:00 TT (Terrestrial Time) del 1 de enero de 2000 — el momento de referencia universal que los astrónomos utilizan para datar los elementos orbitales.",
-    "haystack": "j2000 epoch 12:00 tt (terrestrial time) del 1 de enero de 2000 — el momento de referencia universal que los astrónomos utilizan para datar los elementos orbitales. los elementos orbitales se desplazan con el tiempo — las perturbaciones de otros planetas modifican la excentricidad, las longitudes precesionan, las inclinaciones oscilan. para que los elementos de un planeta sean significativos, debes indicar \"a partir de cuándo\". la respuesta estándar es j2000: mediodía tt (terrestrial time) del 1 de enero de 2000. las órbitas se citan en ese momento; la propagación hacia adelante o hacia atrás utiliza modelos analíticos o numéricos. j2000 epoch"
+    "haystack": "época j2000 12:00 tt (terrestrial time) del 1 de enero de 2000 — el momento de referencia universal que los astrónomos utilizan para datar los elementos orbitales. los elementos orbitales se desplazan con el tiempo — las perturbaciones de otros planetas modifican la excentricidad, las longitudes precesionan, las inclinaciones oscilan. para que los elementos de un planeta sean significativos, debes indicar \"a partir de cuándo\". la respuesta estándar es j2000: mediodía tt (terrestrial time) del 1 de enero de 2000. las órbitas se citan en ese momento; la propagación hacia adelante o hacia atrás utiliza modelos analíticos o numéricos. j2000 epoch"
   },
   {
     "tab": "scales-time",
@@ -1115,16 +1115,16 @@
   {
     "tab": "space-stations",
     "section": "expedition-cadence",
-    "title": "Expedition Cadence",
+    "title": "Ritmo de las expediciones",
     "intro": "Las estaciones funcionan con rotaciones de tripulación de 6 meses — un equilibrio entre consumibles de traje, vida útil del vehículo, tuberías de entrenamiento y fisiología humana.",
-    "haystack": "expedition cadence las estaciones funcionan con rotaciones de tripulación de 6 meses — un equilibrio entre consumibles de traje, vida útil del vehículo, tuberías de entrenamiento y fisiología humana. limitaciones que impulsan la cadencia de ~6 meses: vida útil certificada de nave acoplada (~6–7 meses; soyuz ~200 d; crew dragon originalmente ~210 d, posteriormente extendido; shenzhou ~180–210 d), reposición de consumibles de traje eva en órbita y límites de certificación, capacidad de despensa de alimentos por reabastecimiento, y la preferencia del programa de investigación humana de la nasa por ciclos de datos de pérdida ósea de 6 meses. expedition cadence"
+    "haystack": "ritmo de las expediciones las estaciones funcionan con rotaciones de tripulación de 6 meses — un equilibrio entre consumibles de traje, vida útil del vehículo, tuberías de entrenamiento y fisiología humana. limitaciones que impulsan la cadencia de ~6 meses: vida útil certificada de nave acoplada (~6–7 meses; soyuz ~200 d; crew dragon originalmente ~210 d, posteriormente extendido; shenzhou ~180–210 d), reposición de consumibles de traje eva en órbita y límites de certificación, capacidad de despensa de alimentos por reabastecimiento, y la preferencia del programa de investigación humana de la nasa por ciclos de datos de pérdida ósea de 6 meses. expedition cadence"
   },
   {
     "tab": "space-stations",
     "section": "node-module",
-    "title": "Node Module",
+    "title": "Módulo nodo",
     "intro": "Centro presurizado con múltiples puertos de acoplamiento — el conector estructural que permite que una estación se ramifique.",
-    "haystack": "node module centro presurizado con múltiples puertos de acoplamiento — el conector estructural que permite que una estación se ramifique. los nodos son módulos conectores — centros presurizados con múltiples puertos de common berthing mechanism (cbm) o de acoplamiento — que permiten que una estación se ramifique en una topología de árbol en lugar de una cadena lineal. node module"
+    "haystack": "módulo nodo centro presurizado con múltiples puertos de acoplamiento — el conector estructural que permite que una estación se ramifique. los nodos son módulos conectores — centros presurizados con múltiples puertos de common berthing mechanism (cbm) o de acoplamiento — que permiten que una estación se ramifique en una topología de árbol en lugar de una cadena lineal. node module"
   },
   {
     "tab": "space-stations",
@@ -1136,16 +1136,16 @@
   {
     "tab": "space-stations",
     "section": "solar-power-budget",
-    "title": "Solar Power Budget",
+    "title": "Presupuesto de energía solar",
     "intro": "Cuánta electricidad generan los paneles solares — la limitación fundamental de todos los sistemas que puede ejecutar la tripulación.",
-    "haystack": "solar power budget cuánta electricidad generan los paneles solares — la limitación fundamental de todos los sistemas que puede ejecutar la tripulación. presupuesto de energía solar = potencia máxima generada × ciclo de trabajo (fracción de órbita bajo luz solar) × eficiencia descendente (pérdidas de batería + regulador). para estaciones en leo el ciclo de trabajo es aproximadamente 0,6 — aproximadamente 35 minutos bajo luz solar de cada órbita de 92 minutos. solar power budget"
+    "haystack": "presupuesto de energía solar cuánta electricidad generan los paneles solares — la limitación fundamental de todos los sistemas que puede ejecutar la tripulación. presupuesto de energía solar = potencia máxima generada × ciclo de trabajo (fracción de órbita bajo luz solar) × eficiencia descendente (pérdidas de batería + regulador). para estaciones en leo el ciclo de trabajo es aproximadamente 0,6 — aproximadamente 35 minutos bajo luz solar de cada órbita de 92 minutos. solar power budget"
   },
   {
     "tab": "transfers",
     "section": "conic-sections",
-    "title": "Conic Sections",
+    "title": "Secciones cónicas",
     "intro": "Corta un cono de cuatro formas y obtienes todas las trayectorias Keplerianas posibles: círculo, elipse, parábola, hipérbola.",
-    "haystack": "conic sections corta un cono de cuatro formas y obtienes todas las trayectorias keplerianas posibles: círculo, elipse, parábola, hipérbola. toma un cono infinito y córtalo con un plano. corta horizontalmente: un círculo (`e = 0`). inclina el corte: una elipse (`0 < e < 1`). inclina paralelo al borde del cono: una parábola (`e = 1`, el caso exacto de escape). inclina más allá: una hipérbola (`e > 1`, escape con energía de sobra). dos mil años antes de kepler, apollonius de perga catalogó estas curvas. dos siglos antes de newton, kepler descubrió que los planetas vuelan a lo largo de ellas. conic sections"
+    "haystack": "secciones cónicas corta un cono de cuatro formas y obtienes todas las trayectorias keplerianas posibles: círculo, elipse, parábola, hipérbola. toma un cono infinito y córtalo con un plano. corta horizontalmente: un círculo (`e = 0`). inclina el corte: una elipse (`0 < e < 1`). inclina paralelo al borde del cono: una parábola (`e = 1`, el caso exacto de escape). inclina más allá: una hipérbola (`e > 1`, escape con energía de sobra). dos mil años antes de kepler, apollonius de perga catalogó estas curvas. dos siglos antes de newton, kepler descubrió que los planetas vuelan a lo largo de ellas. conic sections"
   },
   {
     "tab": "transfers",
@@ -1164,9 +1164,9 @@
   {
     "tab": "transfers",
     "section": "gravity-assist",
-    "title": "Gravity Assist",
+    "title": "Asistencia gravitatoria",
     "intro": "Roba el momento orbital de un planeta en un sobrevuelo — lo más cerca que hay de un almuerzo gratis en el espacio.",
-    "haystack": "gravity assist roba el momento orbital de un planeta en un sobrevuelo — lo más cerca que hay de un almuerzo gratis en el espacio. acércate a un planeta en movimiento por detrás en una trayectoria hiperbólica. la gravedad del planeta dobla tu camino, pasas, y sales con la misma velocidad relativa al planeta — pero el planeta se movía todo el tiempo, y llevas ese movimiento contigo. resultado neto: sales con más velocidad relativa al sol de la que llegaste. el planeta, a cambio, frena en una cantidad inmensamente pequeña. gravity assist"
+    "haystack": "asistencia gravitatoria roba el momento orbital de un planeta en un sobrevuelo — lo más cerca que hay de un almuerzo gratis en el espacio. acércate a un planeta en movimiento por detrás en una trayectoria hiperbólica. la gravedad del planeta dobla tu camino, pasas, y sales con la misma velocidad relativa al planeta — pero el planeta se movía todo el tiempo, y llevas ese movimiento contigo. resultado neto: sales con más velocidad relativa al sol de la que llegaste. el planeta, a cambio, frena en una cantidad inmensamente pequeña. gravity assist"
   },
   {
     "tab": "transfers",
@@ -1192,8 +1192,8 @@
   {
     "tab": "transfers",
     "section": "transfer-ellipse",
-    "title": "Transfer Ellipse",
+    "title": "Elipse de transferencia",
     "intro": "El arco Keplerian que lleva a una nave de una órbita a otra — Sol en uno de los focos, igual que cualquier otra órbita.",
-    "haystack": "transfer ellipse el arco keplerian que lleva a una nave de una órbita a otra — sol en uno de los focos, igual que cualquier otra órbita. una vez que has quemado para salir de la órbita terrestre, estás en una elipse alrededor del sol. esa elipse es la órbita de transferencia, y tiene todas las mismas propiedades que cualquier otra: semieje mayor, excentricidad, perihelio, afelio. el hecho de que vayas a algún sitio no cambia la geometría — a la gravedad no le importa tu destino. transfer ellipse"
+    "haystack": "elipse de transferencia el arco keplerian que lleva a una nave de una órbita a otra — sol en uno de los focos, igual que cualquier otra órbita. una vez que has quemado para salir de la órbita terrestre, estás en una elipse alrededor del sol. esa elipse es la órbita de transferencia, y tiene todas las mismas propiedades que cualquier otra: semieje mayor, excentricidad, perihelio, afelio. el hecho de que vayas a algún sitio no cambia la geometría — a la gravedad no le importa tu destino. transfer ellipse"
   }
 ]

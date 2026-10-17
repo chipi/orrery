@@ -97,6 +97,8 @@ export const ORIGIN_NAMES = {
     Dzhanibekov: 'Джанибеков',
     Krikalev: 'Крикалёв',
     Polyakov: 'Поляков',
+    Tsiolkovsky: 'Циолковский',
+    'Konstantin Tsiolkovsky': 'Константин Циолковский',
   },
   'zh-CN': {
     Shenzhou: '神舟',

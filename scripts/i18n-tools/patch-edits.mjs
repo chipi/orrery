@@ -1,6 +1,7 @@
 // Hand corrections on top of generated edits: rows "<rel>\t<from>\t<to>" (rel without
 // .json, as showdiff prints it) are applied to the matching edit's NEW text; each `from`
-// must occur exactly once in it. Unmatched rows are reported, so a correction never
+// must occur exactly once in it. An optional 4th column names the field, for a file where
+// two fields carry the same text. Unmatched rows are reported, so a correction never
 // silently stops applying when the generator changes.
 //   node scripts/i18n-tools/patch-edits.mjs <edits.json> <corrections.tsv>
 import fs from 'node:fs';
@@ -14,9 +15,12 @@ const rows = fs
   .map((l) => l.split('\t'));
 let applied = 0;
 const missed = [];
-for (const [rel, from, to] of rows) {
+for (const [rel, from, to, at] of rows) {
   const hits = edits.filter(
-    (e) => e.rel.replace(/\.json$/, '') === rel && e.new.split(from).length === 2,
+    (e) =>
+      e.rel.replace(/\.json$/, '') === rel &&
+      (at === undefined || e.at === at) &&
+      e.new.split(from).length === 2,
   );
   if (hits.length !== 1) {
     missed.push(`${rel}: "${from}" (${hits.length} matches)`);

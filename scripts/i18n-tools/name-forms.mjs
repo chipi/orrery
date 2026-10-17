@@ -133,11 +133,12 @@ for (const [qid, it] of items) {
         .filter(ok);
       const cands = [label && noParen(label), ...aliases, title && noParen(title)].filter(ok);
       const name = cands.find((v) => !isBayer(loc, v) && !isCatalogue(v));
-      // the spelled-out designation before an abbreviation ("Альфа Девы", not "α Vir")
+      // only a spelled-out designation ("Альфа Девы"): an abbreviation ("α UMi", "β Ориона",
+      // "Α Leo / 獅子座α") is not how the prose writes it, so the designation stays as it is
       const bys = [title && noParen(title), ...aliases, label && noParen(label)]
         .filter(ok)
         .filter((v) => isBayer(loc, v));
-      const bayer = bys.find((v) => !/^[α-ω]/.test(v)) ?? bys[0];
+      const bayer = bys.find((v) => !/^[α-ωΑ-Ω] /.test(v));
       // a language that names the star only by its designation uses that for the name too
       return `${loc}=${name ?? bayer ?? '-'}¦${bayer ?? '-'}`;
     }

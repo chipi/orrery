@@ -1,0 +1,42 @@
+# Bare surnames the English text uses on their own, tied to the full-name glossary entry
+# whose forms supply them (last word of each locale's full form). Left out on purpose:
+# surnames that also name a facility, vehicle or eponymous term (Glenn → Glenn Research
+# Center, Shepard → New Shepard, Goddard → Goddard Space Flight Center, Oberth → Oberth
+# effect, Drake → Drake equation, Kuiper → Kuiper Belt, Rubin → Rubin Observatory) and
+# common words (Cooper, Carpenter, Scott, Duke, Bean, Young, White).
+# surname \t full-name key [\t only in paths matching this regex]
+Komarov	Vladimir Komarov
+Leonov	Alexei Leonov
+Titov	Gherman Titov
+Nikolayev	Andriyan Nikolayev
+Popovich	Pavel Popovich
+Bykovsky	Valery Bykovsky
+Korolev	Sergei Korolev
+Glushko	Valentin Glushko
+Polyakov	Valeri Polyakov
+Belyayev	Pavel Belyayev
+Dobrovolsky	Georgy Dobrovolsky
+Volkov	Vladislav Volkov
+Savinykh	Viktor Savinykh
+Solovyev	Anatoly Solovyev
+Grissom	Gus Grissom
+Armstrong	Neil Armstrong
+Aldrin	Buzz Aldrin
+Lovell	Jim Lovell
+Borman	Frank Borman
+Haise	Fred Haise
+Schmitt	Harrison Schmitt
+Irwin	James Irwin
+Sagan	Carl Sagan
+Piazzi	Giuseppe Piazzi
+Whitson	Peggy Whitson
+Wilmore	Butch Wilmore
+Isaacman	Jared Isaacman
+Kranz	Gene Kranz
+Lunney	Glynn Lunney
+Hawking	Stephen Hawking
+Musk	Elon Musk
+Rubio	Frank Rubio
+Jewitt	David Jewitt
+Flandro	Gary Flandro
+Mayor	Michel Mayor	exoplanets

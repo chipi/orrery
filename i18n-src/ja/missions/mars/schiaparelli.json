@@ -2,7 +2,7 @@
   "name": "Schiaparelli EDM",
   "type": "ENTRY/DESCENT/LANDING DEMONSTRATOR · CRASHED",
   "first": "ESAの火星表面への初の着陸試行。ExoMars Rosalind Franklinに先立ち、着陸・下降・着地(EDL)技術の実証を目的とした。",
-  "description": "Schiaparelliは、ExoMars Trace Gas Orbiter(TGO)に相乗りで運ばれた着陸・下降・着地の実証機でした。イタリアの天文学者Giovanni Schiaparelliにちなんで命名されたこの機体は、ESAがRosalind Franklinローバー向けにスケールアップする予定だった着陸・下降・着地スタックの実証を目的として製造されました。Schiaparelliは2016年10月16日にTGOから分離し、3日後に火星の大気圏に突入しました。下降プロファイルは失敗しました。飽和した慣性測定装置により、ナビゲーション・ソフトウェアは機体が既に高度で着陸したと判断してしまい、その結果パラシュートが早期に放出され、ブレーキ・スラスターはわずか3秒間の噴射後に遮断されました。Schiaparelliは時速約150 m/sで表面に衝突しました。TGO自身は軌道投入に成功し、今も運用を継続しています。",
+  "description": "Schiaparelliは、ExoMars Trace Gas Orbiter(TGO)に相乗りで運ばれた着陸・下降・着地の実証機でした。イタリアの天文学者ジョヴァンニ・スキアパレッリにちなんで命名されたこの機体は、ESAがRosalind Franklinローバー向けにスケールアップする予定だった着陸・下降・着地スタックの実証を目的として製造されました。Schiaparelliは2016年10月16日にTGOから分離し、3日後に火星の大気圏に突入しました。下降プロファイルは失敗しました。飽和した慣性測定装置により、ナビゲーション・ソフトウェアは機体が既に高度で着陸したと判断してしまい、その結果パラシュートが早期に放出され、ブレーキ・スラスターはわずか3秒間の噴射後に遮断されました。Schiaparelliは時速約150 m/sで表面に衝突しました。TGO自身は軌道投入に成功し、今も運用を継続しています。",
   "events": [
     { "met": 0, "label": "打ち上げ", "note": "2016年3月14日、バイコヌールから打ち上げたProton-M。TGO + Schiaparelliのスタック。", "type": "nominal" },
     { "met": 0.01, "label": "TMI", "note": "Briz-M上段によるTrans-Mars injection(火星遷移軌道投入)。", "type": "nominal" },

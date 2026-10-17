@@ -5,7 +5,7 @@
 // its last word. Every edit is read before it is applied.
 
 const GENERIC =
-  /^(море|океан|кратер|равница|плато|долина|планина|формација|висораван|комета|космодром|центар|база|станица|залив)$/i;
+  /^(море|океан|кратер|равница|плато|долина|планина|формација|висораван|комета|космодром|центар|база|станица|залив|систем|појас|облак|маглина|галаксија|звезда|пут|група|јато|старт)$/i;
 const INDECL = /^(Ио|Калисто|Бену|Рјугу|Куру|МСС|ГЛОНАСС|Цзјоуцјуен|Ђиуцјуен|Тајјуен)$/;
 
 function noun(w, c) {
@@ -35,6 +35,11 @@ function adj(w, c, fem) {
     return w.slice(0, -1) + { gen: 'е', dat: 'ој', acc: 'у', ins: 'ом', loc: 'ој' }[c];
   if (!fem && /и$/.test(w))
     return w.slice(0, -1) + { gen: 'ог', dat: 'ом', acc: 'и', ins: 'им', loc: 'ом' }[c];
+  // short possessive adjectives: Сунчев (систем), Кајперов (појас), Плутоново (срце)
+  if (!fem && /(ов|ев|ин)$/.test(w))
+    return w + { gen: 'ог', dat: 'ом', acc: '', ins: 'им', loc: 'ом' }[c];
+  if (!fem && /(ово|ево|ино)$/.test(w))
+    return w.slice(0, -1) + { gen: 'ог', dat: 'ом', acc: 'о', ins: 'им', loc: 'ом' }[c];
   return w;
 }
 
@@ -47,6 +52,7 @@ export function declineSr(form, c) {
   let head = words.findIndex((w) => GENERIC.test(w));
   if (head < 0) head = /^(Велика)$/.test(words[0]) ? words.length - 1 : 0;
   const fem = /а$|^висораван$/i.test(words[head]);
+  // a neuter head (Плутоново срце, јато) keeps the -о adjective; облак, систем… are masculine
   for (let i = 0; i < head; i++) words[i] = adj(words[i], c, fem);
   words[head] = noun(words[head], c);
   return words.join(' ');

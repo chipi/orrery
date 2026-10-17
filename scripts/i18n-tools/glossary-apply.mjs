@@ -64,6 +64,33 @@ const ALIAS = {
 };
 // people decline by their own rules (animate accusative, -ов/-ин surnames, a woman's
 // foreign surname indeclinable); _female/_slavic come from Wikidata (name-forms.mjs)
+// Homonyms found by glossary-keys.mjs: the same English word names a vehicle, an engine or
+// a facility in these paths or before these words
+const CJK_LOCALE = new Set(['ja', 'zh-CN']);
+const GUARD = {
+  Vega: {
+    path: /missions\/venus|fleet\/(orbiter|lander|launcher)|rockets\/|venus-sites|programs\/(vega|venera)/,
+    after:
+      /^\s?(\d|rocket|C\b|-C|program|probe|balloon|lander|mission|spacecraft|flyby|Secondary|VESPA|AVUM)/i,
+  },
+  Sirius: { path: /fleet\/constellation|earth-objects/, after: /^\s?(XM|FM|Satellite|-)/ },
+  Antares: { path: /fleet\/|missions\/|moon-sites|programs\/|hotspot-metadata|rockets\// },
+  Castor: { path: /fleet\/|rockets\// },
+  Polaris: {
+    after: /^\s?(Dawn|Program)/,
+    path: /programs\/spacex|science\/life-in-space|essays\/the-body-in-the-dark|missions\//,
+  },
+  Deneb: { after: /^\s?(Kaitos|Algedi)/ },
+  // these two star names are explained as shortenings of the Latin designation
+  'Alpha Trianguli Australis': { path: /named-stars\/atria/ },
+  'Gamma Crucis': { path: /named-stars\/gacrux/ },
+  Miranda: { path: /fleet\/(launcher|engine)|rockets\// },
+  Hydra: { path: /universe\/named-stars/ },
+  'Ursa Minor': { path: /science\/observation/ },
+  Sextans: { path: /science\/observation/ },
+  Phoebe: { after: /^\s?Regio/ },
+  Peacock: { path: /universe\/named-stars\/peacock/ },
+};
 const PERSON = classes.split(',').includes('person') ? (GL.person ?? {}) : {};
 const G = Object.fromEntries(
   [...classes.split(',').map((c) => GL[c] ?? {}), sitePages, ALIAS]
@@ -303,6 +330,30 @@ for (const f of walk(`i18n-src/${loc}`)) {
                 ROCKET_WORDS.test(str.slice(Math.max(0, off - 30), off + m.length + 30)))
             )
               return m;
+            // homonyms: a star, moon or person that is also a vehicle, engine or facility
+            // a bare surname inside a fuller name ('Edwin "Buzz" Aldrin', "Linda Salzman Sagan")
+            if (
+              PERSON[en]?._bare &&
+              /([A-Z][\p{L}.]*|["'”’])\s$/u.test(str.slice(Math.max(0, off - 30), off) + a)
+            )
+              return m;
+            // a surname limited to some pages ("Mayor" only where it is Michel Mayor)
+            if (PERSON[en]?._only && !new RegExp(PERSON[en]._only).test(rel)) return m;
+            const g = GUARD[en];
+            if (
+              g &&
+              ((g.path && g.path.test(rel)) ||
+                (g.after &&
+                  g.after.test(str.slice(off + m.length - (b ? 1 : 0), off + m.length + 25))))
+            )
+              return m;
+            if (
+              PERSON[en] &&
+              /^\s?(Space Cent(?:er|re)|Crater|Regio|Telescope|Observatory|Base|Point|Ridge|Station|Rille|Hills?)\b/.test(
+                str.slice(off + m.length - (b ? 1 : 0)),
+              )
+            )
+              return m;
             const before = str[off - 1] ?? '',
               after = str[off + m.length] ?? '';
             const lead =
@@ -381,6 +432,35 @@ for (const f of walk(`i18n-src/${loc}`)) {
         if (loc === 'ko') s = koParticles(s, nat);
       }
       if (LATIN.has(loc) && s !== v) s = articles(s);
+      // a CJK descriptor the text already had after the name (グリッグ・シェレルップ彗星 彗星,
+      // わし座座): once is enough
+      if (CJK_LOCALE.has(loc) && s !== v)
+        s = s.replace(
+          /(彗星|星雲|星团|星団|銀河|星系|座|クレーター|撞击坑|盆地|平原|峡谷|大陸|地域)\s?\1/g,
+          '$1',
+        );
+      // a constellation said twice ("小犬座小犬座α") and a space left between CJK characters
+      // where a name and its designation collapsed ("参宿三 是")
+      if (CJK_LOCALE.has(loc) && s !== v)
+        s = s
+          .replace(/([\u4e00-\u9fff\u3040-\u30ff]{1,5}座)\s?\1/g, '$1')
+          .replace(
+            /([\u3040-\u30ff\u4e00-\u9fff])[ \u00a0]+(?=[\u3040-\u30ff\u4e00-\u9fff])/g,
+            '$1',
+          );
+      if (loc === 'ko' && s !== v)
+        s = s.replace(/(혜성|성운|성단|은하|자리|분화구|평원)\s\1/g, '$1');
+      // the ʻokina of ʻOumuamua stays only with the Latin spelling
+      if (s !== v) s = s.replace(/ʻ(?=[^A-Za-z])/g, '');
+      // a name and its designation that came out the same: "Альфа Павлина (Альфа Павлина)"
+      if (s !== v) s = s.replace(/([^\s(（][^()（）]{1,40}?)\s?[（(]\1[)）]/g, '$1');
+      if (CJK_LOCALE.has(loc) && s !== v)
+        s = s.replace(
+          /([\u3040-\u30ff\u4e00-\u9fff])[ \u00a0]+(?=[\u3040-\u30ff\u4e00-\u9fff])/g,
+          '$1',
+        );
+      // Arabic: the preposition لـ before the article ال is written لل
+      if (loc === 'ar' && s !== v) s = s.replace(/لـال/g, 'لل');
       if (loc === 'ru' && s !== v) s = coordinateRu(s);
       if (loc === 'sr-Cyrl' && s !== v) {
         s = coordinateSr(s);
@@ -418,7 +498,7 @@ for (const f of walk(`i18n-src/${loc}`)) {
   visit(doc, '');
 }
 fs.writeFileSync(
-  `scripts/i18n-tools/maps/2026-10-17-translation-cleanup/glossary-edits-${loc}.json`,
+  `scripts/i18n-tools/maps/2026-10-17-translation-cleanup/glossary-edits-${loc}${process.env.PASS_TAG ? `-${process.env.PASS_TAG}` : ''}.json`,
   JSON.stringify(edits, null, 1),
 );
 console.log(loc, 'strings changed', n);

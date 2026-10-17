@@ -16,6 +16,10 @@ const SOFT_SIBILANT = /[кгхжшщч]$/;
 function declineWord(w, c) {
   if (c === 'nom') return w;
   const lower = w.toLowerCase();
+  if (/ость$/.test(lower))
+    return w.slice(0, -1) + { gen: 'и', dat: 'и', acc: 'ь', ins: 'ью', pre: 'и' }[c];
+  if (/^облако$/i.test(w))
+    return w.slice(0, -1) + { gen: 'а', dat: 'у', acc: 'о', ins: 'ом', pre: 'е' }[c];
   if (INDECL.test(w) || /^[A-Z0-9]/.test(w)) return w;
   if (lower === 'море')
     return w.slice(0, -1) + { gen: 'я', dat: 'ю', acc: 'е', ins: 'ем', pre: 'е' }[c];
@@ -45,7 +49,33 @@ function declineWord(w, c) {
   return w;
 }
 
-/** Decline a glossary form: its head word (first generic noun, else the first word). */
+const ADJ = /(ая|яя|ое|ее|ый|ий|ой)$/;
+// short possessive adjectives before a noun: Магелланово (Облако), Галлеева
+const SHORT = /^[А-ЯЁ].*(ово|ова|ево|ева|ино|ина)$/;
+function agreeAdj(w, c) {
+  if (/(ово|ево|ино)$/.test(w))
+    return w.slice(0, -1) + { gen: 'а', dat: 'у', acc: 'о', ins: 'ым', pre: 'ом' }[c];
+  if (/(ова|ева|ина)$/.test(w))
+    return w.slice(0, -1) + { gen: 'ой', dat: 'ой', acc: 'у', ins: 'ой', pre: 'ой' }[c];
+  if (/ая$/.test(w))
+    return w.slice(0, -2) + { gen: 'ой', dat: 'ой', acc: 'ую', ins: 'ой', pre: 'ой' }[c];
+  if (/яя$/.test(w))
+    return w.slice(0, -2) + { gen: 'ей', dat: 'ей', acc: 'юю', ins: 'ей', pre: 'ей' }[c];
+  if (/ое$/.test(w))
+    return (
+      w.slice(0, -2) +
+      { gen: 'ого', dat: 'ому', acc: 'ое', ins: /[кгхжшщч]ое$/.test(w) ? 'им' : 'ым', pre: 'ом' }[c]
+    );
+  if (/(ий|ый|ой)$/.test(w)) {
+    const soft = /[кгхжшщч](ий|ой)$/.test(w) || /ний$/.test(w);
+    return (
+      w.slice(0, -2) +
+      { gen: 'ого', dat: 'ому', acc: w.slice(-2), ins: soft ? 'им' : 'ым', pre: 'ом' }[c]
+    );
+  }
+  return w;
+}
+/** Decline a glossary form: its head word (first generic noun, else the first noun). */
 export function declineRu(form, c) {
   if (c === 'nom') return form;
   if (form === 'Великая Северная равнина')
@@ -58,15 +88,19 @@ export function declineRu(form, c) {
     }[c];
   const words = form.split(' ');
   const head = words.findIndex((w) => GENERIC.test(w));
-  const i = head >= 0 ? head : 0;
+  // without a generic word the head is the first word that is not an adjective
+  // ("Солнечная система", "Крабовидная туманность", "Местная группа галактик")
+  const i =
+    head >= 0
+      ? head
+      : Math.max(
+          0,
+          words.findIndex((w, k) => !ADJ.test(w) && !(SHORT.test(w) && k < words.length - 1)),
+        );
   // a lone body/place declines; with a generic head only the head does
   words[i] = declineWord(words[i], c);
-  // a masculine adjective before the head agrees with it ("Космического центра Кеннеди")
-  if (i > 0 && /(ий|ый)$/.test(words[i - 1]))
-    words[i - 1] = words[i - 1].replace(
-      /(ий|ый)$/,
-      (m) => ({ gen: 'ого', dat: 'ому', acc: m, ins: m === 'ий' ? 'им' : 'ым', pre: 'ом' })[c],
-    );
+  // adjectives before the head agree with it ("Космического центра", "Солнечной системы")
+  for (let k = 0; k < i; k++) words[k] = agreeAdj(words[k], c);
   return words.join(' ');
 }
 

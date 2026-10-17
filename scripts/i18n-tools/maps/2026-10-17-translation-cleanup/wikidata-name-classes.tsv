@@ -100,6 +100,7 @@
 10	Tereshkova	person	Q44371	human	Valentina Tereshkova	1
 10	Vulcan	body	Q105713	moon of Pluto	Styx (moon)	0
 10	Gus Grissom	person	Q110879	human	Gus Grissom	0
+10	Ed White	person	Q216726	human	Ed White (astronaut)	0
 10	Didymos	body	Q2265762	binary asteroid	65803 Didymos	0
 10	Callisto	body	Q3134	moon of Jupiter	Callisto (moon)	0
 9	Eris	body	Q611	asteroid	Eris (dwarf planet)	0
@@ -240,6 +241,7 @@
 3	Jim Lovell	person	Q111240	human	Jim Lovell	0
 3	Robert Goddard	person	Q182546	human	Robert H. Goddard	0
 3	Ares Vallis	feature	Q784395	vallis	Ares Vallis	0
+3	Scott Kelly	person	Q362190	human	Scott Kelly (astronaut)	0
 3	Odysseus	body	Q136430	asteroid	1143 Odysseus	0
 3	Phoebe	body	Q17975	moon of Saturn	Phoebe (moon)	0
 3	Phoebe Regio	feature	Q21038917	regio	Phoebe Regio	0
@@ -254,6 +256,7 @@
 3	Valley	feature	Q39816	feature type	Valley	0
 3	McDivitt	person	Q364476	human	James McDivitt	0
 3	Scott Carpenter	person	Q335503	human	Scott Carpenter	0
+3	John Young	person	Q107667	human	John Young (astronaut)	0
 3	St Jude	person	Q43945	human	Jude the Apostle	0
 3	Khrushchev	person	Q35314	human	Nikita Khrushchev	0
 3	Feoktistov	person	Q320068	human	Konstantin Feoktistov	0
@@ -345,6 +348,7 @@
 2	Mathilde	body	Q149417	asteroid	253 Mathilde	0
 2	Antarctica	feature	Q51	terra nullius	Antarctica	0
 2	26P/Grigg-Skjellerup	body	Q1537693	Jupiter-family comet	26P/Grigg–Skjellerup	0
+2	Tom Stafford	person	Q982595	human	Tom Stafford (astronomer)	0
 2	JFK	person	Q9696	human	John F. Kennedy	0
 2	James Lovell	person	Q111240	human	Jim Lovell	0
 2	Molly Brown	person	Q229631	human	Margaret Brown	1
@@ -376,6 +380,7 @@
 2	Charles Duke	person	Q112284	human	Charles Duke	0
 2	Homeric	person	Q6691	human	Homer	0
 2	John F Kennedy	person	Q9696	human	John F. Kennedy	0
+2	Michael Collins	person	Q104859	human	Michael Collins (astronaut)	0
 2	International Lunar Research Station	body	Q106237681	Moonbase	International Lunar Research Station	0
 2	Hydra	body	Q102701	moon of Pluto	Hydra (moon)	0
 2	Pluto-Charon	body	Q339	dwarf planet	Pluto	0
@@ -525,6 +530,7 @@
 1	Kidd Poteet	person	Q110916469	human	Scott Poteet	0
 1	Sarah Gillis	person	Q110916738	human	Sarah Gillis	1
 1	Anna Menon	person	Q110916349	human	Anna Menon	1
+1	Gerald Carr	person	Q644837	human	Gerald Carr (astronaut)	0
 1	Pavel Belyayev	person	Q157931	human	Pavel Belyayev	0
 1	Oliver Daemen	person	Q107541364	human	Oliver Daemen	0
 1	E-THEMIS	body	Q15637513	planetary probe	Europa Clipper	0

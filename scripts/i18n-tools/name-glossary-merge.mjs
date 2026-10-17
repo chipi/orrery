@@ -6,10 +6,12 @@
 // from an overrides TSV: qid \t locale \t form ("-" removes the form).
 // Surface features come hand-built from a features TSV (key + 13 locale columns, "-" =
 // none), because a bare Wikipedia title ("Шеклтон") would drop the crater word.
-//   node scripts/i18n-tools/name-glossary-merge.mjs <forms.tsv> <overrides.tsv> <features.tsv> [--dry]
+// Bare surnames come from a surnames TSV (surname \t full-name key [\t path regex]): the
+// last word of each locale's full form; a path regex limits the key (_only).
+//   node scripts/i18n-tools/name-glossary-merge.mjs <forms.tsv> <overrides.tsv> <features.tsv> <surnames.tsv> [--dry]
 import fs from 'node:fs';
 
-const [formsTsv, overTsv, featTsv, dry] = process.argv.slice(2);
+const [formsTsv, overTsv, featTsv, surTsv, dry] = process.argv.slice(2);
 const P = 'scripts/i18n-tools/native-terms.json';
 const g = JSON.parse(fs.readFileSync(P, 'utf8'));
 const over = new Map();
@@ -49,17 +51,21 @@ const BAYER_ANY =
   /^(Alpha|Alfa|Beta|Gamma|Delta|Epsilon|Zeta|Eta|Theta|Iota|Kappa|Lambda|Mu|Nu|Xi|Omicron|Pi|Rho|Sigma|Tau|Upsilon|Phi|Chi|Psi|Omega) [A-Z]/;
 const LATIN = /^(de|fr|es|it|nl|pt-BR)$/;
 const CATALOGUE =
-  /^(NGC|IC|GJ|Gliese|Abell|Messier|M|ESO|HCG|Barnard|PGC|Sh|WR|HD|HIP|Gum|RCW|Westerlund|Segue|Dragonfly|SN|Cas) ?\d/;
+  /^(NGC|IC|GJ|Gliese|Abell|Messier|M|ESO|HCG|Barnard|PGC|Sh|WR|HD|HIP|HR|Gum|RCW|Westerlund|Segue|Dragonfly|SN|Cas) ?\d/;
 for (const l of fs.readFileSync(formsTsv, 'utf8').trim().split('\n')) {
   const [kind, qid, enwiki, runs, female, slavic, ...cells] = l.split('\t');
   if (kind === 'feature') continue;
   const cls = CLASS[kind];
   const forms = {};
+  const bayerForms = {};
   for (const c of cells) {
     const i = c.indexOf('=');
     const loc = c.slice(0, i);
     const f = c.slice(i + 1).replace(/^(label|title):/, '');
-    forms[loc] = f;
+    // a star cell is "name¦designation"
+    const [nm, by] = f.split('¦');
+    forms[loc] = nm;
+    if (by !== undefined) bayerForms[loc] = by;
   }
   const enFull = enwiki.replace(/\s*\(.*\)$/, '');
   const fullWords = enFull.split(' ');
@@ -68,7 +74,9 @@ for (const l of fs.readFileSync(formsTsv, 'utf8').trim().split('\n')) {
     if (existing.has(run)) continue;
     // a Bayer or catalogue designation that is only an alias ("Alpha Virginis" for Spica,
     // "NGC 224" for the Andromeda Galaxy) must not turn into the common name
-    if (run !== enFull && (BAYER.test(run) || CATALOGUE.test(run))) continue;
+    // (a star's Bayer designation takes the designation as each language writes it)
+    const bayerRun = kind === 'star' && BAYER.test(run);
+    if (run !== enFull && !bayerRun && (BAYER.test(run) || CATALOGUE.test(run))) continue;
     const entry = {};
     const bareSurname = kind === 'person' && !run.includes(' ') && fullWords.length > 1;
     if (bareSurname && fullWords[0] === run) continue; // surname-first name
@@ -78,7 +86,7 @@ for (const l of fs.readFileSync(formsTsv, 'utf8').trim().split('\n')) {
     const chinese = kind === 'person' && /^[\u3400-\u9fff]{2,4}$/.test(forms['zh-CN'] ?? '');
     for (const loc of LOCS) {
       const o = over.get(`${qid}\t${loc}\t${run}`) ?? over.get(`${qid}\t${loc}\t`);
-      let f = o ?? forms[loc];
+      let f = o ?? (bayerRun ? bayerForms[loc] : forms[loc]);
       if (!f || f === '-') continue;
       // sr-Cyrl takes Cyrillic only ("Jan Ort" is a Latin label)
       if (loc === 'sr-Cyrl' && !/[Ѐ-ӿ]/.test(f)) continue;
@@ -124,6 +132,7 @@ for (const l of fs.readFileSync(formsTsv, 'utf8').trim().split('\n')) {
     }
     if (!Object.keys(entry).length) continue;
     if (kind === 'person') {
+      if (bareSurname) entry._bare = true;
       if (female === '1') entry._female = true;
       if (slavic === '1') entry._slavic = true;
     }
@@ -146,6 +155,24 @@ for (const l of fs.readFileSync(featTsv, 'utf8').split('\n')) {
   g.feature[key] = entry;
   existing.add(key);
   added.feature++;
+}
+for (const l of fs.readFileSync(surTsv, 'utf8').split('\n')) {
+  if (!l.trim() || l.startsWith('#')) continue;
+  const [sur, full, only] = l.split('\t');
+  const p = g.person?.[full];
+  if (!p) throw new Error(`surnames: no person entry "${full}"`);
+  if (existing.has(sur)) continue;
+  const entry = {};
+  for (const loc of LOCS) {
+    const v = p[loc] && surnameOf(p[loc]);
+    if (v && v !== sur) entry[loc] = v;
+  }
+  for (const k of ['_female', '_slavic', '_qid']) if (p[k]) entry[k] = p[k];
+  if (only) entry._only = only;
+  entry._bare = true;
+  g.person[sur] = entry;
+  existing.add(sur);
+  added.person++;
 }
 console.log('added', added);
 if (dry !== '--dry') fs.writeFileSync(P, JSON.stringify(g, null, 2) + '\n');

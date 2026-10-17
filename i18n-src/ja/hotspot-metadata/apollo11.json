@@ -21,13 +21,13 @@
       "label": "「全人類のために平和のうちに来た」の銘板"
     }
   ],
-  "panorama_caption": "Tranquility Base、EVA-1。Buzz Aldrin が着陸直後に LM Eagle と米国旗を撮影した。LM 付近に見える Hasselblad 画像のつなぎ目と色のずれは、公開されたモザイクの一部である。",
+  "panorama_caption": "Tranquility Base、EVA-1。バズ・オルドリンが着陸直後に LM Eagle と米国旗を撮影した。LM 付近に見える Hasselblad 画像のつなぎ目と色のずれは、公開されたモザイクの一部である。",
   "compass_zero_direction": "LM の前方（ALSJ のパノラマ方位による）",
   "panorama_annotations": [
     {
       "id": "lm-eagle",
       "label": "LM Eagle",
-      "body": "月着陸船の降下段。Armstrong + Aldrin は船外活動中ここに立っていた。"
+      "body": "月着陸船の降下段。アームストロング + オルドリンは船外活動中ここに立っていた。"
     },
     {
       "id": "us-flag-pan",
@@ -36,7 +36,7 @@
     },
     {
       "id": "buzz-shadow",
-      "label": "Buzz Aldrin の影",
+      "label": "バズ・オルドリンの影",
       "body": "手前に写る撮影者自身の影 — Hasselblad を構える Buzz。"
     }
   ]

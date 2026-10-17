@@ -1,6 +1,6 @@
 {
   "hotspot_annotations": [],
-  "panorama_caption": "달 뒷면에서 처음으로 전송된 파노라마. South Pole–Aitken Basin 안의 Von Kármán 크레이터. 중간 거리에 Yutu-2 로버, 왼쪽 아래에 착륙선 그림자.",
+  "panorama_caption": "달 뒷면에서 처음으로 전송된 파노라마. 남극-에이트켄 분지 안의 Von Kármán 크레이터. 중간 거리에 Yutu-2 로버, 왼쪽 아래에 착륙선 그림자.",
   "compass_zero_direction": "착륙선 카메라 +X 축",
   "panorama_annotations": [
     {
@@ -11,7 +11,7 @@
     {
       "id": "von-karman-rim",
       "label": "Von Kármán 크레이터 가장자리",
-      "body": "South Pole–Aitken Basin 안에 있는 지름 180 km 크레이터의 안쪽 가장자리 — 달에서 가장 크고 오래된 충돌 구조."
+      "body": "남극-에이트켄 분지 안에 있는 지름 180 km 크레이터의 안쪽 가장자리 — 달에서 가장 크고 오래된 충돌 구조."
     },
     {
       "id": "change4-shadow",

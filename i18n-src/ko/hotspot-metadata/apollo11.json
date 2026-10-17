@@ -21,13 +21,13 @@
       "label": "\"우리는 모든 인류를 위해 평화롭게 왔다\" 명판"
     }
   ],
-  "panorama_caption": "Tranquility Base, EVA-1. Buzz Aldrin이 착륙 직후 LM Eagle과 미국 국기를 촬영했다. LM 주변에 보이는 Hasselblad 이음매와 색 번짐은 공개된 모자이크의 일부다.",
+  "panorama_caption": "Tranquility Base, EVA-1. 버즈 올드린이 착륙 직후 LM Eagle과 미국 국기를 촬영했다. LM 주변에 보이는 Hasselblad 이음매와 색 번짐은 공개된 모자이크의 일부다.",
   "compass_zero_direction": "LM 정면 (ALSJ 파노라마 방향 기준)",
   "panorama_annotations": [
     {
       "id": "lm-eagle",
       "label": "LM Eagle",
-      "body": "달 착륙선의 하강단으로, Armstrong + Aldrin이 선외활동 중 이곳에 서 있었다."
+      "body": "달 착륙선의 하강단으로, 암스트롱 + 올드린이 선외활동 중 이곳에 서 있었다."
     },
     {
       "id": "us-flag-pan",
@@ -36,7 +36,7 @@
     },
     {
       "id": "buzz-shadow",
-      "label": "Buzz Aldrin의 그림자",
+      "label": "버즈 올드린의 그림자",
       "body": "전경에 보이는 촬영자 자신의 그림자 — Hasselblad를 든 Buzz."
     }
   ]

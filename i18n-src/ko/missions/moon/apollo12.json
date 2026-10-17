@@ -2,8 +2,8 @@
   "name": "Apollo 12",
   "type": "유인 달 착륙선 · 비행 완료",
   "first": "두 번째 유인 달 착륙 — Surveyor 3에서 163 m 떨어진 정밀 착륙",
-  "description": "두 번째 유인 달 착륙 미션. Saturn V는 상승 단계에서 두 번 번개가 맞았고(T+36 s, T+52 s) — Bean은 EECOM John Aaron의 유명한 \"SCE to AUX\" 지령으로 우주선을 복구했고, 이후 승무원은 달 궤도에서 관성 측정 장치를 재정렬했다. Conrad와 Bean은 Ocean of Storms에서 Surveyor 3 지점으로부터 163 m 이내의 정밀 착륙을 수행했다(Surveyor 3은 1967년 4월에 연착륙했음). 그들은 Surveyor 3으로 걸어가 카메라와 표본을 제거했고 이를 지구로 가져왔으며 장기간 달 표면 노출에 대한 분석을 진행했다. 그들은 ALSEP(전체 Apollo Lunar Surface Experiments Package — 첫 번째 ALSEP, Apollo 11의 더 단순한 EASEP와 달리)을 배치했고 이는 8년 동안 데이터를 전송했다. 이 미션은 검은색 마레 현무암을 포함하여 34 kg의 샘플을 반환했다.",
-  "dispatch": "Apollo 11이 달에 도달할 수 있음을 증명했다면, Apollo 12는 달의 특정 지점에 도달할 수 있음을 증명했다. 발사 36초 후 번개가 로켓을 맞혔고 우주선의 기기들이 오프라인 상태가 되었는데, 스물네 살의 관제관 John Aaron이 기억에서 불러낸 obscure fix — \"SCE to AUX\" —로 비행이 계속되었다. 그 다음 Conrad와 Bean은 그들의 Lunar Module을 Ocean of Storms에, 2년 동안 그곳에 앉아있던 탐사선으로부터 수백 피트 떨어진 곳에 착륙시켰고, 그곳으로 걸어가 그 탐사선의 부품들을 집어서 집으로 가져왔다. 그 정밀도가 진정한 성과였다 — 달은 더 이상 목적지가 아니라 주소가 되었다.",
+  "description": "두 번째 유인 달 착륙 미션. Saturn V는 상승 단계에서 두 번 번개가 맞았고(T+36 s, T+52 s) — Bean은 EECOM 존 에런의 유명한 \"SCE to AUX\" 지령으로 우주선을 복구했고, 이후 승무원은 달 궤도에서 관성 측정 장치를 재정렬했다. Conrad와 Bean은 폭풍의 대양에서 Surveyor 3 지점으로부터 163 m 이내의 정밀 착륙을 수행했다(Surveyor 3은 1967년 4월에 연착륙했음). 그들은 Surveyor 3으로 걸어가 카메라와 표본을 제거했고 이를 지구로 가져왔으며 장기간 달 표면 노출에 대한 분석을 진행했다. 그들은 ALSEP(전체 Apollo Lunar Surface Experiments Package — 첫 번째 ALSEP, Apollo 11의 더 단순한 EASEP와 달리)을 배치했고 이는 8년 동안 데이터를 전송했다. 이 미션은 검은색 마레 현무암을 포함하여 34 kg의 샘플을 반환했다.",
+  "dispatch": "Apollo 11이 달에 도달할 수 있음을 증명했다면, Apollo 12는 달의 특정 지점에 도달할 수 있음을 증명했다. 발사 36초 후 번개가 로켓을 맞혔고 우주선의 기기들이 오프라인 상태가 되었는데, 스물네 살의 관제관 존 에런이 기억에서 불러낸 obscure fix — \"SCE to AUX\" —로 비행이 계속되었다. 그 다음 Conrad와 Bean은 그들의 Lunar Module을 폭풍의 대양에, 2년 동안 그곳에 앉아있던 탐사선으로부터 수백 피트 떨어진 곳에 착륙시켰고, 그곳으로 걸어가 그 탐사선의 부품들을 집어서 집으로 가져왔다. 그 정밀도가 진정한 성과였다 — 달은 더 이상 목적지가 아니라 주소가 되었다.",
   "events": [
     {
       "met": 0,
@@ -26,7 +26,7 @@
     {
       "met": 5.43,
       "label": "착륙",
-      "note": "Intrepid는 폭풍의 대양 (Statio Cognitum)에 착륙, 1969-11-19 06:54 UTC — Surveyor 3으로부터 163 m 이내 (지금까지 가장 정밀한 달 착륙).",
+      "note": "Intrepid는 폭풍의 대양 (스타티오 코그니툼)에 착륙, 1969-11-19 06:54 UTC — Surveyor 3으로부터 163 m 이내 (지금까지 가장 정밀한 달 착륙).",
       "type": "nominal"
     },
     {

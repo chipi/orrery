@@ -687,6 +687,9 @@
     "Torifune": {
       "ru": "Торифунэ",
       "ja": "トリフネ",
+      "de": "(98943) 2001 CC21",
+      "nl": "(98943) 2001 CC21",
+      "pt-BR": "(98943) 2001 CC21",
       "_qid": "Q15194896"
     },
     "Toutatis": {
@@ -710,11 +713,10 @@
       "ru": "Квавар",
       "ja": "クワオアー",
       "zh-CN": "创神星",
-      "ko": "50000 콰오아",
-      "hi": "५०००० क्वावार",
+      "ko": "콰오아",
+      "hi": "क्वावार",
       "ar": "كواور",
       "sr-Cyrl": "Кваоар",
-      "it": "50000 Quaoar",
       "_qid": "Q15586"
     },
     "Gaspra": {
@@ -2049,6 +2051,79 @@
       "de": "Statio Shiv Shakti",
       "fr": "Statio Shiv Shakti",
       "nl": "Statio Shiv Shakti"
+    },
+    "Kuiper Belt": {
+      "ru": "Пояс Койпера",
+      "ja": "カイパーベルト",
+      "zh-CN": "柯伊伯带",
+      "ko": "카이퍼 벨트",
+      "hi": "काइपर घेरा",
+      "ar": "حزام كايبر",
+      "sr-Cyrl": "Кајперов појас",
+      "de": "Kuipergürtel",
+      "fr": "ceinture de Kuiper",
+      "es": "cinturón de Kuiper",
+      "it": "fascia di Kuiper",
+      "nl": "Kuipergordel",
+      "pt-BR": "cinturão de Kuiper"
+    },
+    "Kuiper belt": {
+      "ru": "Пояс Койпера",
+      "ja": "カイパーベルト",
+      "zh-CN": "柯伊伯带",
+      "ko": "카이퍼 벨트",
+      "hi": "काइपर घेरा",
+      "ar": "حزام كايبر",
+      "sr-Cyrl": "Кајперов појас",
+      "de": "Kuipergürtel",
+      "fr": "ceinture de Kuiper",
+      "es": "cinturón de Kuiper",
+      "it": "fascia di Kuiper",
+      "nl": "Kuipergordel",
+      "pt-BR": "cinturão de Kuiper"
+    },
+    "Gagarin's Start": {
+      "ru": "Гагаринский старт",
+      "ja": "ガガーリン発射台",
+      "zh-CN": "加加林启航处",
+      "ko": "가가린의 발사대",
+      "hi": "गगारिन का आरंभ",
+      "ar": "منصة جاجارين",
+      "sr-Cyrl": "Гагаринов старт",
+      "de": "Gagarins Start",
+      "fr": "aire de lancement Gagarine",
+      "es": "Plataforma Gagarin",
+      "it": "rampa Gagarin",
+      "pt-BR": "Plataforma Gagarin"
+    },
+    "Gagarin’s Start": {
+      "ru": "Гагаринский старт",
+      "ja": "ガガーリン発射台",
+      "zh-CN": "加加林启航处",
+      "ko": "가가린의 발사대",
+      "hi": "गगारिन का आरंभ",
+      "ar": "منصة جاجارين",
+      "sr-Cyrl": "Гагаринов старт",
+      "de": "Gagarins Start",
+      "fr": "aire de lancement Gagarine",
+      "es": "Plataforma Gagarin",
+      "it": "rampa Gagarin",
+      "pt-BR": "Plataforma Gagarin"
+    },
+    "South Pole–Aitken Basin": {
+      "ru": "бассейн Южный полюс — Эйткен",
+      "ja": "南極エイトケン盆地",
+      "zh-CN": "南极-艾特肯盆地",
+      "ko": "남극-에이트켄 분지",
+      "hi": "दक्षिणी ध्रुव-ऐटकेन बेसिन",
+      "ar": "حوض القطب الجنوبي-أيتكين",
+      "sr-Cyrl": "басен Јужни пол — Ејткен",
+      "de": "Südpol-Aitken-Becken",
+      "fr": "bassin Pôle Sud-Aitken",
+      "es": "cuenca Polo Sur-Aitken",
+      "it": "bacino Polo Sud-Aitken",
+      "nl": "Zuidpool-Aitken-bekken",
+      "pt-BR": "bacia do Polo Sul-Aitken"
     }
   },
   "place": {
@@ -2478,6 +2553,16 @@
     }
   },
   "person": {
+    "Michael Collins": {
+      "ru": "Майкл Коллинз",
+      "ja": "マイケル・コリンズ",
+      "zh-CN": "迈克尔·柯林斯",
+      "ko": "마이클 콜린스",
+      "hi": "michael collins",
+      "ar": "مايكل كولينز",
+      "sr-Cyrl": "Мајкл Колинс",
+      "_qid": "Q104859"
+    },
     "Vladimir Komarov": {
       "ru": "Владимир Комаров",
       "ja": "ウラジーミル・コマロフ",
@@ -2520,6 +2605,15 @@
       "hi": "ओलिवर डैमेन",
       "_qid": "Q107541364"
     },
+    "John Young": {
+      "ru": "Джон Янг",
+      "ja": "ジョン・ヤング",
+      "zh-CN": "约翰·扬",
+      "ko": "존 영",
+      "ar": "جون يونغ",
+      "sr-Cyrl": "Џон Јанг",
+      "_qid": "Q107667"
+    },
     "Harrison Schmitt": {
       "ru": "Харрисон Шмитт",
       "ja": "ハリソン・シュミット",
@@ -2540,6 +2634,7 @@
       "ko": "시라",
       "ar": "شيرا",
       "sr-Cyrl": "Шира",
+      "_bare": true,
       "_qid": "Q110450"
     },
     "Wally Schirra": {
@@ -2655,6 +2750,7 @@
       "hi": "क्वेलोज",
       "ar": "كيلوز",
       "sr-Cyrl": "Кело",
+      "_bare": true,
       "_qid": "Q124013"
     },
     "Didier Queloz": {
@@ -2685,6 +2781,7 @@
       "hi": "बाख़",
       "ar": "باخ",
       "sr-Cyrl": "Бах",
+      "_bare": true,
       "_qid": "Q1339"
     },
     "Victor Glover": {
@@ -2711,6 +2808,7 @@
       "ja": "リネンジャー",
       "zh-CN": "林恩格",
       "ar": "لينينجر",
+      "_bare": true,
       "_qid": "Q1376469"
     },
     "Yuri Milner": {
@@ -2734,7 +2832,7 @@
     "Giovanni Schiaparelli": {
       "ru": "Джованни Скиапарелли",
       "ja": "ジョヴァンニ・スキアパレッリ",
-      "zh-CN": "喬凡尼·斯基亞帕雷利",
+      "zh-CN": "乔凡尼·斯基亚帕雷利",
       "ko": "조반니 스키아파렐리",
       "hi": "जिओवानी शिआपरेली",
       "ar": "جيوفاني سكيابارلي",
@@ -2823,6 +2921,7 @@
       "ko": "서넌",
       "ar": "سيرنان",
       "sr-Cyrl": "Сернан",
+      "_bare": true,
       "_qid": "Q158486"
     },
     "Gene Cernan": {
@@ -3062,6 +3161,16 @@
       "ar": "توم وولف",
       "_qid": "Q216195"
     },
+    "Ed White": {
+      "ru": "Эд Уайт",
+      "ja": "エド・ホワイト",
+      "zh-CN": "埃德·怀特",
+      "ko": "에드 화이트",
+      "ar": "إد وايت",
+      "sr-Cyrl": "Ед Вајт",
+      "es": "Edward II",
+      "_qid": "Q216726"
+    },
     "Buzz Aldrin": {
       "ru": "Базз Олдрин",
       "ja": "バズ・オルドリン",
@@ -3239,6 +3348,7 @@
       "hi": "बेज़ोस",
       "ar": "بيزوس",
       "sr-Cyrl": "Безос",
+      "_bare": true,
       "_qid": "Q312556"
     },
     "Gordon Cooper": {
@@ -3261,8 +3371,18 @@
       "fr": "Krikaliov",
       "it": "Krikalëv",
       "nl": "Krikaljov",
+      "_bare": true,
       "_slavic": true,
       "_qid": "Q313815"
+    },
+    "Tom Stafford": {
+      "ru": "Том Стаффорд",
+      "ja": "トム・スタッフォード",
+      "zh-CN": "汤姆·斯塔福德",
+      "ko": "톰 스태퍼드",
+      "ar": "توم ستافورد",
+      "sr-Cyrl": "Том Стафорд",
+      "_qid": "Q316417"
     },
     "Elon Musk": {
       "ru": "Илон Маск",
@@ -3305,6 +3425,7 @@
       "ar": "فيوكتيستوف",
       "de": "Feoktistow",
       "es": "Feoktístov",
+      "_bare": true,
       "_slavic": true,
       "_qid": "Q320068"
     },
@@ -3358,6 +3479,7 @@
       "es": "Cheloméi",
       "it": "Čelomej",
       "nl": "Chelomey",
+      "_bare": true,
       "_slavic": true,
       "_qid": "Q333260"
     },
@@ -3419,6 +3541,7 @@
       "ja": "ゴルバトコ",
       "zh-CN": "戈尔巴特科",
       "ko": "고르밧코",
+      "_bare": true,
       "_slavic": true,
       "_qid": "Q348205"
     },
@@ -3436,6 +3559,7 @@
       "zh-CN": "斯威格特",
       "ar": "سويغيرت",
       "sr-Cyrl": "Свајгерт",
+      "_bare": true,
       "_qid": "Q348358"
     },
     "Khrushchev": {
@@ -3452,6 +3576,7 @@
       "it": "Chruščёv",
       "nl": "Chroesjtsjov",
       "pt-BR": "Khrushchov",
+      "_bare": true,
       "_slavic": true,
       "_qid": "Q35314"
     },
@@ -3498,6 +3623,7 @@
       "es": "Patsáyev",
       "it": "Pacaev",
       "nl": "Patsajev",
+      "_bare": true,
       "_slavic": true,
       "_qid": "Q358525"
     },
@@ -3515,6 +3641,16 @@
       "_slavic": true,
       "_qid": "Q358525"
     },
+    "Scott Kelly": {
+      "ru": "Скотт Келли",
+      "ja": "スコット・ケリー",
+      "zh-CN": "斯科特·凯利",
+      "ko": "스콧 켈리",
+      "hi": "स्कॉट केली",
+      "ar": "سكوت كيلي",
+      "sr-Cyrl": "Скот Кели",
+      "_qid": "Q362190"
+    },
     "Don Pettit": {
       "ru": "Дон Петтит",
       "ja": "ドン・ペティ",
@@ -3530,6 +3666,7 @@
       "ko": "맥디빗",
       "ar": "ماكديفيت",
       "sr-Cyrl": "Мекдивит",
+      "_bare": true,
       "_qid": "Q364476"
     },
     "James McDivitt": {
@@ -3641,6 +3778,7 @@
       "fr": "Terechkova",
       "it": "Tereškova",
       "nl": "Teresjkova",
+      "_bare": true,
       "_female": true,
       "_slavic": true,
       "_qid": "Q44371"
@@ -3683,6 +3821,7 @@
       "de": "Gidsenko",
       "fr": "Guidzenko",
       "es": "Guidzenko",
+      "_bare": true,
       "_slavic": true,
       "_qid": "Q448491"
     },
@@ -3693,6 +3832,7 @@
       "ko": "볼리노프",
       "de": "Wolynow",
       "es": "Volinov",
+      "_bare": true,
       "_slavic": true,
       "_qid": "Q448538"
     },
@@ -3746,6 +3886,7 @@
       "de": "Dschanibekow",
       "fr": "Djanibekov",
       "it": "Džanibekov",
+      "_bare": true,
       "_slavic": true,
       "_qid": "Q466513"
     },
@@ -3870,6 +4011,14 @@
       "ar": "والتر هوهمان",
       "_qid": "Q63941"
     },
+    "Gerald Carr": {
+      "ru": "Джеральд Карр",
+      "ja": "ジェラルド・カー",
+      "zh-CN": "杰拉德·卡尔",
+      "ar": "جيرالد كار",
+      "sr-Cyrl": "Џералд Кар",
+      "_qid": "Q644837"
+    },
     "Shakespeare": {
       "ru": "Шекспир",
       "ja": "シェイクスピア",
@@ -3878,6 +4027,7 @@
       "hi": "शेक्सपीयर",
       "ar": "شكسبير",
       "sr-Cyrl": "Шекспир",
+      "_bare": true,
       "_qid": "Q692"
     },
     "Gene Kranz": {
@@ -3896,6 +4046,7 @@
       "ar": "جاجارين",
       "sr-Cyrl": "Гагарин",
       "fr": "Gagarine",
+      "_bare": true,
       "_slavic": true,
       "_qid": "Q7327"
     },
@@ -3970,6 +4121,7 @@
       "hi": "लाइबनित्स",
       "ar": "لايبنتس",
       "sr-Cyrl": "Лајбниц",
+      "_bare": true,
       "_qid": "Q9047"
     },
     "Voltaire": {
@@ -4010,7 +4162,411 @@
       "hi": "रीगन",
       "ar": "ريغان",
       "sr-Cyrl": "Реган",
+      "_bare": true,
       "_qid": "Q9960"
+    },
+    "Komarov": {
+      "ru": "Комаров",
+      "ja": "コマロフ",
+      "zh-CN": "科马罗夫",
+      "ko": "코마로프",
+      "ar": "كوماروف",
+      "sr-Cyrl": "Комаров",
+      "de": "Komarow",
+      "_slavic": true,
+      "_qid": "Q104865",
+      "_bare": true
+    },
+    "Leonov": {
+      "ru": "Леонов",
+      "ja": "レオーノフ",
+      "zh-CN": "列昂诺夫",
+      "ko": "레오노프",
+      "ar": "ليونوف",
+      "sr-Cyrl": "Леонов",
+      "de": "Leonow",
+      "es": "Leónov",
+      "_slavic": true,
+      "_qid": "Q154269",
+      "_bare": true
+    },
+    "Titov": {
+      "ru": "Титов",
+      "ja": "チトフ",
+      "zh-CN": "季托夫",
+      "ko": "티토프",
+      "ar": "تيتوف",
+      "sr-Cyrl": "Титов",
+      "de": "Titow",
+      "_slavic": true,
+      "_qid": "Q152298",
+      "_bare": true
+    },
+    "Nikolayev": {
+      "ru": "Николаев",
+      "ja": "ニコラエフ",
+      "zh-CN": "尼古拉耶夫",
+      "ko": "니콜라예프",
+      "ar": "نيكولايف",
+      "sr-Cyrl": "Николајев",
+      "de": "Nikolajew",
+      "fr": "Nikolaïev",
+      "es": "Nikoláyev",
+      "it": "Nikolaev",
+      "nl": "Nikolajev",
+      "_slavic": true,
+      "_qid": "Q312474",
+      "_bare": true
+    },
+    "Popovich": {
+      "ru": "Попович",
+      "ja": "ポポーヴィチ",
+      "zh-CN": "波波维奇",
+      "ko": "포포비치",
+      "ar": "بوبوفيتش",
+      "de": "Popowitsch",
+      "fr": "Popovitch",
+      "it": "Popovič",
+      "nl": "Popovytsj",
+      "_slavic": true,
+      "_qid": "Q118490",
+      "_bare": true
+    },
+    "Bykovsky": {
+      "ru": "Быковский",
+      "ja": "ブィコフスキー",
+      "zh-CN": "贝科夫斯基",
+      "ko": "비콥스키",
+      "ar": "بيكوفسكي",
+      "de": "Bykowski",
+      "fr": "Bykovski",
+      "es": "Bykovski",
+      "it": "Bykovskij",
+      "nl": "Bykovski",
+      "_slavic": true,
+      "_qid": "Q159681",
+      "_bare": true
+    },
+    "Korolev": {
+      "ru": "Королёв",
+      "ja": "コロリョフ",
+      "zh-CN": "科罗廖夫",
+      "ko": "코롤료프",
+      "ar": "كوروليوف",
+      "sr-Cyrl": "Корољов",
+      "de": "Koroljow",
+      "es": "Koroliov",
+      "it": "Korolëv",
+      "nl": "Koroljov",
+      "_slavic": true,
+      "_qid": "Q170842",
+      "_bare": true
+    },
+    "Glushko": {
+      "ru": "Глушко",
+      "ja": "グルシュコ",
+      "zh-CN": "格卢什科",
+      "ko": "글루시코",
+      "ar": "غلوشكو",
+      "sr-Cyrl": "Глушко",
+      "de": "Gluschko",
+      "fr": "Glouchko",
+      "es": "Glushkó",
+      "it": "Gluško",
+      "_slavic": true,
+      "_qid": "Q342397",
+      "_bare": true
+    },
+    "Polyakov": {
+      "ru": "Поляков",
+      "ja": "ポリャコフ",
+      "zh-CN": "波利亚科夫",
+      "ko": "폴랴코프",
+      "ar": "بولياكوف",
+      "sr-Cyrl": "Пољаков",
+      "de": "Poljakow",
+      "fr": "Poliakov",
+      "es": "Poliakov",
+      "it": "Poljakov",
+      "nl": "Poljakov",
+      "_slavic": true,
+      "_qid": "Q317792",
+      "_bare": true
+    },
+    "Belyayev": {
+      "ru": "Беляев",
+      "ja": "ベリャーエフ",
+      "zh-CN": "别利亚耶夫",
+      "ko": "벨랴예프",
+      "ar": "بلياييف",
+      "de": "Beljajew",
+      "fr": "Beliaïev",
+      "es": "Beliáyev",
+      "it": "Beljaev",
+      "nl": "Beljajev",
+      "_slavic": true,
+      "_qid": "Q157931",
+      "_bare": true
+    },
+    "Dobrovolsky": {
+      "ru": "Добровольский",
+      "ja": "ドブロボルスキー",
+      "zh-CN": "多布罗沃尔斯基",
+      "ko": "도브로볼스키",
+      "ar": "دوبروفولسكي",
+      "de": "Dobrowolski",
+      "fr": "Dobrovolski",
+      "es": "Dobrovolski",
+      "it": "Dobrovol'skij",
+      "nl": "Dobrovolski",
+      "pt-BR": "Dobrovolski",
+      "_slavic": true,
+      "_qid": "Q355433",
+      "_bare": true
+    },
+    "Volkov": {
+      "ru": "Волков",
+      "ja": "ボルコフ",
+      "zh-CN": "沃尔科夫",
+      "ko": "볼코프",
+      "ar": "فولكوف",
+      "de": "Wolkow",
+      "es": "Vólkov",
+      "_slavic": true,
+      "_qid": "Q345658",
+      "_bare": true
+    },
+    "Savinykh": {
+      "ru": "Савиных",
+      "ja": "サヴィヌイフ",
+      "zh-CN": "萨维内赫",
+      "ko": "사비니흐",
+      "ar": "سافينيخ",
+      "de": "Sawinych",
+      "it": "Savinych",
+      "_slavic": true,
+      "_qid": "Q431006",
+      "_bare": true
+    },
+    "Solovyev": {
+      "ru": "Соловьёв",
+      "ja": "ソロフィエフ",
+      "zh-CN": "索洛维约夫",
+      "ko": "솔로비요프",
+      "ar": "سولوفيوف",
+      "sr-Cyrl": "Соловјов",
+      "de": "Solowjow",
+      "fr": "Soloviov",
+      "es": "Soloviov",
+      "it": "Solov'ëv",
+      "_slavic": true,
+      "_qid": "Q447311",
+      "_bare": true
+    },
+    "Grissom": {
+      "ru": "Гриссом",
+      "ja": "グリソム",
+      "zh-CN": "格里森",
+      "ko": "그리섬",
+      "ar": "غريسوم",
+      "sr-Cyrl": "Грисом",
+      "_qid": "Q110879",
+      "_bare": true
+    },
+    "Armstrong": {
+      "ru": "Армстронг",
+      "ja": "アームストロング",
+      "zh-CN": "阿姆斯特朗",
+      "ko": "암스트롱",
+      "hi": "आर्मस्ट्रांग",
+      "ar": "آرمسترونغ",
+      "sr-Cyrl": "Армстронг",
+      "_qid": "Q1615",
+      "_bare": true
+    },
+    "Aldrin": {
+      "ru": "Олдрин",
+      "ja": "オルドリン",
+      "zh-CN": "奥尔德林",
+      "ko": "올드린",
+      "hi": "एल्ड्रिन",
+      "ar": "ألدرن",
+      "sr-Cyrl": "Олдрин",
+      "_qid": "Q2252",
+      "_bare": true
+    },
+    "Lovell": {
+      "ru": "Ловелл",
+      "ja": "ラヴェル",
+      "zh-CN": "洛弗尔",
+      "ko": "러벨",
+      "ar": "لوفل",
+      "sr-Cyrl": "Лавел",
+      "_qid": "Q111240",
+      "_bare": true
+    },
+    "Borman": {
+      "ru": "Борман",
+      "ja": "ボーマン",
+      "zh-CN": "博尔曼",
+      "ko": "보먼",
+      "ar": "بورمان",
+      "sr-Cyrl": "Борман",
+      "_qid": "Q18762",
+      "_bare": true
+    },
+    "Haise": {
+      "ru": "Хейз",
+      "ja": "ヘイズ",
+      "zh-CN": "海斯",
+      "ar": "هايس",
+      "sr-Cyrl": "Хејз",
+      "_qid": "Q318965",
+      "_bare": true
+    },
+    "Schmitt": {
+      "ru": "Шмитт",
+      "ja": "シュミット",
+      "zh-CN": "施密特",
+      "ko": "슈미트",
+      "ar": "شميت",
+      "_qid": "Q108886",
+      "_bare": true
+    },
+    "Irwin": {
+      "ru": "Ирвин",
+      "ja": "アーウィン",
+      "zh-CN": "艾尔文",
+      "ko": "어윈",
+      "ar": "إروين",
+      "sr-Cyrl": "Ирвин",
+      "_qid": "Q297801",
+      "_bare": true
+    },
+    "Sagan": {
+      "ru": "Саган",
+      "ja": "セーガン",
+      "zh-CN": "萨根",
+      "ko": "세이건",
+      "hi": "सेगन",
+      "ar": "ساغان",
+      "sr-Cyrl": "Сејган",
+      "_qid": "Q410",
+      "_bare": true
+    },
+    "Piazzi": {
+      "ru": "Пьяцци",
+      "ja": "ピアッツィ",
+      "zh-CN": "皮亚齐",
+      "ko": "피아치",
+      "ar": "بيازي",
+      "sr-Cyrl": "Пјаци",
+      "_qid": "Q14280",
+      "_bare": true
+    },
+    "Whitson": {
+      "ru": "Уитсон",
+      "ja": "ウィットソン",
+      "zh-CN": "惠特森",
+      "ko": "휫슨",
+      "hi": "व्हिट्सन",
+      "ar": "ويتسون",
+      "sr-Cyrl": "Витсон",
+      "_female": true,
+      "_qid": "Q235523",
+      "_bare": true
+    },
+    "Wilmore": {
+      "ru": "Уилмор",
+      "ja": "ウィルモア",
+      "zh-CN": "威尔莫尔",
+      "ko": "윌모어",
+      "ar": "ويلمور",
+      "sr-Cyrl": "Вилмор",
+      "_qid": "Q554409",
+      "_bare": true
+    },
+    "Isaacman": {
+      "ru": "Айзекман",
+      "ja": "アイザックマン",
+      "zh-CN": "伊萨克曼",
+      "ko": "아이작먼",
+      "ar": "إيزاكمان",
+      "_qid": "Q6160001",
+      "_bare": true
+    },
+    "Kranz": {
+      "ru": "Кранц",
+      "ja": "クランツ",
+      "zh-CN": "克兰茨",
+      "ko": "크랜츠",
+      "_qid": "Q711493",
+      "_bare": true
+    },
+    "Lunney": {
+      "ru": "Ланни",
+      "ja": "ランネイ",
+      "ar": "لاني",
+      "_qid": "Q3032002",
+      "_bare": true
+    },
+    "Hawking": {
+      "ru": "Хокинг",
+      "ja": "ホーキング",
+      "zh-CN": "霍金",
+      "ko": "호킹",
+      "hi": "हॉकिंग",
+      "ar": "هوكينج",
+      "sr-Cyrl": "Хокинг",
+      "_qid": "Q17714",
+      "_bare": true
+    },
+    "Musk": {
+      "ru": "Маск",
+      "ja": "マスク",
+      "zh-CN": "马斯克",
+      "ko": "머스크",
+      "hi": "मस्क",
+      "ar": "ماسك",
+      "sr-Cyrl": "Маск",
+      "_qid": "Q317521",
+      "_bare": true
+    },
+    "Rubio": {
+      "ru": "Рубио",
+      "ja": "ルビオ",
+      "zh-CN": "鲁比奥",
+      "ar": "روبيو",
+      "_qid": "Q30315159",
+      "_bare": true
+    },
+    "Jewitt": {
+      "ru": "Джуитт",
+      "ja": "ジューイット",
+      "zh-CN": "朱维特",
+      "ko": "주잇",
+      "ar": "جويت",
+      "_qid": "Q382992",
+      "_bare": true
+    },
+    "Flandro": {
+      "ja": "フランドロ",
+      "zh-CN": "弗兰德罗",
+      "ar": "فلاندرو",
+      "_qid": "Q5525074",
+      "_bare": true
+    },
+    "Mayor": {
+      "ru": "Майор",
+      "ja": "マイヨール",
+      "zh-CN": "麦耶",
+      "ko": "마요르",
+      "hi": "मेयर",
+      "ar": "مايور",
+      "sr-Cyrl": "Мајор",
+      "_qid": "Q123975",
+      "_only": "exoplanets",
+      "_bare": true
     }
   },
   "star": {
@@ -4339,7 +4895,7 @@
       "ru": "Туманность Южный Краб",
       "ja": "Hen2-104",
       "zh-CN": "南蟹状星云",
-      "hi": "दक्षिणी कर्क नीहारिका",
+      "hi": "दक्षिणी कर्क निहारिका",
       "de": "Südlicher Krebsnebel",
       "fr": "Nébuleuse australe du Crabe",
       "es": "Nebulosa del Cangrejo del Sur",
@@ -4352,7 +4908,7 @@
       "ru": "Туманность Южный Краб",
       "ja": "Hen2-104",
       "zh-CN": "南蟹状星云",
-      "hi": "दक्षिणी कर्क नीहारिका",
+      "hi": "दक्षिणी कर्क निहारिका",
       "de": "Südlicher Krebsnebel",
       "fr": "Nébuleuse australe du Crabe",
       "es": "Nebulosa del Cangrejo del Sur",
@@ -4390,13 +4946,11 @@
       "_qid": "Q1068075"
     },
     "Alpha Persei Cluster": {
-      "ru": "Скопление Альфы Персея",
+      "ru": "Скопление Альфа Персея",
       "ja": "ペルセウス座アルファ星団",
       "zh-CN": "英仙座α星团",
       "ko": "페르세우스자리 알파 성단",
       "ar": "عنقود ألفا حامل رأس الغول",
-      "fr": "Amas d'Alpha Persei",
-      "it": "Ammasso di Alfa Persei",
       "_qid": "Q1072618"
     },
     "Cygnus Loop": {
@@ -4426,7 +4980,7 @@
       "_qid": "Q10934"
     },
     "Lagoon Nebula": {
-      "ru": "Туманность Лагуна",
+      "ru": "туманность Лагуна",
       "ja": "干潟星雲",
       "zh-CN": "礁湖星云",
       "ko": "석호 성운",
@@ -4441,10 +4995,10 @@
       "_qid": "Q11243"
     },
     "Eagle Nebula": {
-      "ru": "Туманность Орёл",
+      "ru": "туманность Орёл",
       "ja": "わし星雲",
       "zh-CN": "鹰星云",
-      "ko": "수리 성운",
+      "ko": "독수리 성운",
       "hi": "चील नीहारिका",
       "ar": "سديم العقاب",
       "sr-Cyrl": "Маглина Орао",
@@ -4457,9 +5011,8 @@
       "_qid": "Q11349"
     },
     "Wolf-Lundmark-Melotte": {
-      "ru": "Вольф-Ландмарк-Мелотт",
       "zh-CN": "沃尔夫-隆达马克-梅洛帝星系",
-      "ko": "울프-룬드마크-멜로테 은하",
+      "ko": "WLM 은하",
       "ar": "وولف-لوندمارك-ميلوت",
       "de": "Wolf-Lundmark-Melotte-Galaxie",
       "fr": "galaxie de Wolf-Lundmark-Melotte",
@@ -4492,7 +5045,7 @@
       "_qid": "Q1200684"
     },
     "Cartwheel Galaxy": {
-      "ru": "Колесо Телеги",
+      "ru": "Колесо телеги",
       "ja": "車輪銀河",
       "zh-CN": "车轮星系",
       "ko": "수레바퀴 은하",
@@ -4517,6 +5070,15 @@
       "nl": "Betelgeuze",
       "_qid": "Q12124"
     },
+    "Alpha Orionis": {
+      "ru": "Альфа Ориона",
+      "ja": "オリオン座α星",
+      "zh-CN": "猎户座α",
+      "ko": "오리온자리 알파",
+      "es": "Alfa Orionis",
+      "it": "Alfa Orionis",
+      "_qid": "Q12124"
+    },
     "Rigel": {
       "ru": "Ригель",
       "ja": "リゲル",
@@ -4527,6 +5089,19 @@
       "sr-Cyrl": "Ригел",
       "pt-BR": "Rígel",
       "_qid": "Q12126"
+    },
+    "Beta Orionis": {
+      "ru": "β Ориона",
+      "ja": "オリオン座ベータ星",
+      "zh-CN": "猎户座β",
+      "ko": "오리온자리 베타",
+      "_qid": "Q12126"
+    },
+    "Alpha Scorpii": {
+      "zh-CN": "天蝎座α",
+      "ko": "전갈자리 알파",
+      "it": "Alfa Scorpii",
+      "_qid": "Q12166"
     },
     "Antares": {
       "ru": "Антарес",
@@ -4542,23 +5117,28 @@
     "Alpha Centauri": {
       "ru": "Альфа Центавра",
       "ja": "ケンタウルス座アルファ星",
-      "zh-CN": "南门二",
+      "zh-CN": "半人马座α",
       "ko": "센타우루스자리 알파",
-      "hi": "मित्र तारा",
-      "ar": "رجل قنطورس",
+      "ar": "قنطوري ألفا",
       "sr-Cyrl": "Алфа Кентаури",
       "es": "Alfa Centauri",
       "it": "Alfa Centauri",
+      "nl": "Alpha Centauri-stelsel",
       "_qid": "Q12176"
     },
     "Rigil Kentaurus": {
       "ru": "Альфа Центавра",
-      "ja": "ケンタウルス座アルファ星",
+      "ja": "アルファ・ケンタウリ",
       "zh-CN": "南门二",
-      "ko": "센타우루스자리 알파",
+      "ko": "알파 센타우리",
       "hi": "मित्र तारा",
       "ar": "رجل قنطورس",
       "sr-Cyrl": "Алфа Кентаури",
+      "fr": "Rigel Kent",
+      "es": "2XMM J143933.0-605008",
+      "it": "Rigel Kentaurus",
+      "nl": "2XMM J143933.0-605008",
+      "pt-BR": "2XMM J143933.0-605008",
       "_qid": "Q12176"
     },
     "Deneb": {
@@ -4571,6 +5151,14 @@
       "sr-Cyrl": "Денеб",
       "_qid": "Q12179"
     },
+    "Alpha Cygni": {
+      "ja": "はくちょう座アルファ星",
+      "zh-CN": "天鹅座α",
+      "ko": "고니자리 알파",
+      "es": "Alfa Cygni",
+      "it": "Alfa Cygni",
+      "_qid": "Q12179"
+    },
     "Achernar": {
       "ru": "Ахернар",
       "ja": "アケルナル",
@@ -4579,6 +5167,12 @@
       "hi": "आकरनार तारा",
       "ar": "السلبار",
       "sr-Cyrl": "Ахернар",
+      "_qid": "Q12183"
+    },
+    "Alpha Eridani": {
+      "ja": "エリダヌス座α星",
+      "ko": "에리다누스자리 알파",
+      "it": "Alfa Eridani",
       "_qid": "Q12183"
     },
     "Canopus": {
@@ -4592,6 +5186,13 @@
       "it": "Canopo",
       "_qid": "Q12189"
     },
+    "Alpha Carinae": {
+      "ja": "りゅうこつ座α星",
+      "zh-CN": "船底座α",
+      "ko": "용골자리 알파",
+      "it": "Alfa Carinae",
+      "_qid": "Q12189"
+    },
     "Capella": {
       "ru": "Капелла",
       "ja": "カペラ",
@@ -4600,6 +5201,15 @@
       "hi": "ब्रह्महृदय तारा",
       "ar": "العيوق",
       "sr-Cyrl": "Капела",
+      "_qid": "Q12970"
+    },
+    "Alpha Aurigae": {
+      "ru": "Альфа Возничего",
+      "ja": "ぎょしゃ座α星",
+      "zh-CN": "御夫座α",
+      "ko": "마차부자리 알파",
+      "es": "Alfa Aurigae",
+      "it": "Alfa Aurigae",
       "_qid": "Q12970"
     },
     "Altair": {
@@ -4611,6 +5221,15 @@
       "ar": "النسر الطائر",
       "sr-Cyrl": "Алтаир",
       "fr": "Altaïr",
+      "_qid": "Q12975"
+    },
+    "Alpha Aquilae": {
+      "ru": "альфа Орла",
+      "ja": "わし座α星",
+      "zh-CN": "天鹰座α",
+      "ko": "독수리자리 알파",
+      "sr-Cyrl": "α Орао",
+      "it": "Alfa Aquilae",
       "_qid": "Q12975"
     },
     "Polaris": {
@@ -4626,16 +5245,32 @@
       "es": "Estrella Polar",
       "_qid": "Q12980"
     },
+    "Alpha Ursae Minoris": {
+      "ru": "α UMi",
+      "ja": "こぐま座α星",
+      "zh-CN": "小熊座α星",
+      "ar": "ألفا الدب الأصغر",
+      "fr": "Étoile polaire",
+      "it": "Alfa Ursae Minoris",
+      "_qid": "Q12980"
+    },
     "Arcturus": {
       "ru": "Арктур",
       "ja": "アークトゥルス",
       "zh-CN": "大角星",
-      "ko": "아르크투루스",
+      "ko": "아크투루스",
       "hi": "स्वाति तारा",
       "ar": "السماك الرامح",
       "sr-Cyrl": "Арктурус",
       "es": "Arturo",
       "it": "Arturo",
+      "_qid": "Q12985"
+    },
+    "Alpha Boötis": {
+      "ru": "Альфа Волопаса",
+      "ja": "うしかい座α",
+      "zh-CN": "牧夫座α",
+      "it": "Alfa Bootis",
       "_qid": "Q12985"
     },
     "Spica": {
@@ -4650,6 +5285,14 @@
       "pt-BR": "Espiga",
       "_qid": "Q13008"
     },
+    "Alpha Virginis": {
+      "ru": "альфа Девы",
+      "ja": "おとめ座アルファ星",
+      "zh-CN": "室女座α",
+      "ko": "처녀자리 알파",
+      "it": "Alfa Virginis",
+      "_qid": "Q13008"
+    },
     "Denebola": {
       "ru": "Денебола",
       "ja": "デネボラ",
@@ -4661,13 +5304,16 @@
       "es": "Denébola",
       "_qid": "Q13015"
     },
+    "Beta Leonis": {
+      "ja": "しし座β星",
+      "zh-CN": "獅子座β",
+      "ko": "사자자리 베타",
+      "_qid": "Q13015"
+    },
     "Alpha Trianguli": {
       "ru": "Альфа Треугольника",
       "ja": "さんかく座アルファ星",
-      "zh-CN": "娄宿增六",
-      "es": "Metallah",
       "it": "Alfa Trianguli",
-      "nl": "Metallah",
       "_qid": "Q1302050"
     },
     "Pollux": {
@@ -4681,6 +5327,20 @@
       "es": "Pólux",
       "it": "Polluce",
       "_qid": "Q13028"
+    },
+    "Beta Geminorum": {
+      "ru": "Бета Близнецов",
+      "ja": "ふたご座β星",
+      "zh-CN": "双子座β",
+      "ko": "쌍둥이자리 베타",
+      "_qid": "Q13028"
+    },
+    "Alpha Geminorum": {
+      "ru": "Альфа Близнецов",
+      "ja": "ふたご座α星",
+      "ko": "쌍둥이자리 알파",
+      "it": "Alfa Geminorum",
+      "_qid": "Q13029"
     },
     "Castor": {
       "ru": "Кастор",
@@ -4707,20 +5367,37 @@
       "pt-BR": "Prócion",
       "_qid": "Q13034"
     },
+    "Alpha Canis Minoris": {
+      "ja": "こいぬ座α星",
+      "zh-CN": "小犬座α",
+      "ko": "작은개자리 알파",
+      "it": "Alfa Canis Minoris",
+      "_qid": "Q13034"
+    },
     "Alpheratz": {
       "ru": "Альферац",
-      "ja": "アンドロメダ座アルファ星",
+      "ja": "アルフェラッツ",
       "zh-CN": "壁宿二",
       "ko": "알페라츠",
       "hi": "अल्फ़ा ऐन्ड्रौमिडे तारा",
       "ar": "سرة الفرس",
       "sr-Cyrl": "Алферац",
       "de": "Sirrah",
+      "fr": "Alphératz",
+      "_qid": "Q13039"
+    },
+    "Alpha Andromedae": {
+      "ru": "Альфа Андромеды",
+      "ja": "アンドロメダ座アルファ星",
+      "zh-CN": "仙女座α",
+      "ko": "안드로메다자리 알파",
+      "hi": "अल्फ़ा ऐन्ड्रौमिडे तारा",
+      "it": "Alfa Andromedae",
       "_qid": "Q13039"
     },
     "Bellatrix": {
       "ru": "Беллатрикс",
-      "ja": "オリオン座ガンマ星",
+      "ja": "ベラトリックス",
       "zh-CN": "参宿五",
       "ko": "벨라트릭스",
       "hi": "बॅलाट्रिक्स तारा",
@@ -4728,9 +5405,14 @@
       "sr-Cyrl": "Белатрикс",
       "_qid": "Q13066"
     },
+    "Gamma Orionis": {
+      "ja": "オリオン座ガンマ星",
+      "zh-CN": "猎户座γ",
+      "_qid": "Q13066"
+    },
     "Alnilam": {
       "ru": "Альнилам",
-      "ja": "オリオン座イプシロン星",
+      "ja": "アルニラム",
       "zh-CN": "参宿二",
       "ko": "알닐람",
       "hi": "ऍप्सिलन ओरायोनिस तारा",
@@ -4738,14 +5420,27 @@
       "sr-Cyrl": "Алнилам",
       "_qid": "Q13070"
     },
+    "Epsilon Orionis": {
+      "ja": "オリオン座イプシロン星",
+      "zh-CN": "猎户座ε",
+      "hi": "ऍप्सिलन ओरायोनिस तारा",
+      "_qid": "Q13070"
+    },
     "Alnitak": {
       "ru": "Альнитак",
-      "ja": "オリオン座ゼータ星",
+      "ja": "アルニタク",
       "zh-CN": "参宿一",
       "ko": "알니타크",
       "hi": "ज़ेटा ओरायोनिस तारा",
       "ar": "النطاق",
       "sr-Cyrl": "Алнитак",
+      "_qid": "Q13076"
+    },
+    "Zeta Orionis": {
+      "ja": "オリオン座ゼータ星",
+      "zh-CN": "猎户座ζ",
+      "ko": "오리온자리 제타",
+      "hi": "ज़ेटा ओरायोनिस तारा",
       "_qid": "Q13076"
     },
     "Algol": {
@@ -4758,51 +5453,80 @@
       "sr-Cyrl": "Алгол",
       "_qid": "Q13080"
     },
+    "Beta Persei": {
+      "ru": "Бета Персея",
+      "ja": "ペルセウス座β星",
+      "zh-CN": "英仙座β",
+      "ko": "페르세우스자리 베타",
+      "_qid": "Q13080"
+    },
     "Dubhe": {
       "ru": "Дубхе",
-      "ja": "おおぐま座アルファ星",
+      "ja": "ドゥベー",
       "zh-CN": "天枢",
       "ko": "두베",
       "hi": "क्रतु तारा",
       "ar": "الدبة",
       "sr-Cyrl": "Дубхе",
+      "fr": "50 Ursae Majoris",
+      "_qid": "Q13084"
+    },
+    "Alpha Ursae Majoris": {
+      "ru": "Альфа Большой Медведицы",
+      "ja": "おおぐま座アルファ星",
+      "zh-CN": "大熊座α",
+      "it": "Alfa Ursae Majoris, Dubhe, Dubb, Ak, α UMa, 50 UMa, HR 4301, HD 95689, BD+62 1161, FK5 417, HIP 54061, SAO 15384, GC 15185",
       "_qid": "Q13084"
     },
     "Alioth": {
       "ru": "Алиот",
-      "ja": "おおぐま座イプシロン星",
+      "ja": "アリオト",
       "zh-CN": "玉衡",
       "ko": "알리오스",
       "hi": "अंगिरस तारा",
-      "ar": "إلية",
+      "ar": "الإلية",
       "sr-Cyrl": "Алиот",
+      "fr": "77 Ursae Majoris",
+      "_qid": "Q13091"
+    },
+    "Epsilon Ursae Majoris": {
+      "ru": "Эпсилон Большой Медведицы",
+      "ja": "おおぐま座イプシロン星",
+      "de": "Epsilon Ursae Maioris",
       "_qid": "Q13091"
     },
     "Alkaid": {
       "ru": "Бенетнаш",
-      "ja": "おおぐま座イータ星",
+      "ja": "アルカイド",
       "zh-CN": "瑶光",
       "ko": "알카이드",
       "hi": "मारीचि तारा",
       "ar": "القائد",
       "sr-Cyrl": "Алкаид",
+      "fr": "85 Ursae Majoris",
       "es": "Benetnasch",
+      "_qid": "Q13093"
+    },
+    "Eta Ursae Majoris": {
+      "ru": "Эта Большой Медведицы",
+      "ja": "おおぐま座イータ星",
       "_qid": "Q13093"
     },
     "Merak": {
       "ru": "Мерак",
-      "ja": "おおぐま座ベータ星",
+      "ja": "メラク",
       "zh-CN": "天璇",
       "ko": "메라크",
       "hi": "पुलह तारा",
       "ar": "المراق",
+      "fr": "48 Ursae Majoris",
       "_qid": "Q13096"
     },
     "Mimosa": {
       "ru": "Бекрукс",
-      "ja": "みなみじゅうじ座ベータ星",
+      "ja": "ミモザ",
       "zh-CN": "十字架三",
-      "ko": "남십자자리 베타",
+      "ko": "미모사",
       "hi": "त्रिशंकु शिर तारा",
       "ar": "ميموزا",
       "sr-Cyrl": "Мимоза",
@@ -4812,14 +5536,12 @@
       "pt-BR": "Becrux",
       "_qid": "Q13105"
     },
-    "Becrux": {
-      "ru": "Бекрукс",
+    "Beta Crucis": {
+      "ru": "бета Южного Креста",
       "ja": "みなみじゅうじ座ベータ星",
-      "zh-CN": "十字架三",
       "ko": "남십자자리 베타",
-      "hi": "त्रिशंकु शिर तारा",
-      "ar": "ميموزا",
-      "it": "Mimosa",
+      "ar": "بيتا نعيم",
+      "nl": "Beta Crusis",
       "_qid": "Q13105"
     },
     "Fomalhaut": {
@@ -4832,11 +5554,17 @@
       "sr-Cyrl": "Фомалхаут",
       "_qid": "Q13169"
     },
+    "Alpha Piscis Austrini": {
+      "zh-CN": "南鱼座α",
+      "de": "Alpha Piscis Australis",
+      "it": "Alfa Piscis Austrini",
+      "_qid": "Q13169"
+    },
     "Diphda": {
       "ru": "Бета Кита",
-      "ja": "くじら座ベータ星",
+      "ja": "ディフダ",
       "zh-CN": "土司空",
-      "ko": "데네브 카이토스",
+      "ko": "디프다",
       "hi": "बेटा सॅटाए तारा",
       "ar": "الضفدع الثاني",
       "sr-Cyrl": "Дифда",
@@ -4844,36 +5572,31 @@
       "es": "Deneb Kaitos",
       "it": "Deneb Kaitos",
       "nl": "Deneb Kaitos",
+      "pt-BR": "16 Ceti",
       "_qid": "Q13170"
     },
     "Beta Ceti": {
       "ru": "Бета Кита",
       "ja": "くじら座ベータ星",
-      "zh-CN": "土司空",
-      "ko": "데네브 카이토스",
       "hi": "बेटा सॅटाए तारा",
-      "ar": "الضفدع الثاني",
-      "de": "Deneb Kaitos",
-      "es": "Deneb Kaitos",
-      "it": "Deneb Kaitos",
-      "nl": "Deneb Kaitos",
       "_qid": "Q13170"
     },
     "Menkar": {
       "ru": "Менкар",
-      "ja": "くじら座アルファ星",
+      "ja": "メンカル",
       "zh-CN": "天囷一",
       "ko": "멘카르",
       "hi": "अल्फ़ा सॅटाए तारा",
       "ar": "منخر قيطس",
       "it": "Menkab",
+      "pt-BR": "92 Ceti",
       "_qid": "Q13173"
     },
     "Miaplacidus": {
       "ru": "Бета Киля",
-      "ja": "りゅうこつ座ベータ星",
+      "ja": "ミアプラキドゥス",
       "zh-CN": "南船五",
-      "ko": "용골자리 베타",
+      "ko": "미아플라키두스",
       "hi": "बीटा कराइनी तारा",
       "ar": "المياه الساكنة",
       "sr-Cyrl": "Мијаплацидус",
@@ -4882,42 +5605,31 @@
     "Beta Carinae": {
       "ru": "Бета Киля",
       "ja": "りゅうこつ座ベータ星",
-      "zh-CN": "南船五",
       "ko": "용골자리 베타",
       "hi": "बीटा कराइनी तारा",
-      "ar": "المياه الساكنة",
-      "de": "Miaplacidus",
-      "es": "Miaplacidus",
-      "it": "Miaplacidus",
-      "nl": "Miaplacidus",
+      "ar": "بيتا الجؤجؤ",
       "_qid": "Q13174"
     },
     "Beta Centauri": {
-      "ru": "Хадар",
+      "ru": "Бета Центавра",
       "ja": "ケンタウルス座ベータ星",
-      "zh-CN": "马腹一",
-      "ko": "하다르",
-      "hi": "मित्रक तारा",
-      "ar": "الوزن",
-      "es": "Hadar",
-      "it": "Hadar",
-      "nl": "Agena",
       "_qid": "Q13175"
     },
     "Hadar": {
       "ru": "Хадар",
-      "ja": "ケンタウルス座ベータ星",
+      "ja": "ハダル",
       "zh-CN": "马腹一",
       "ko": "하다르",
       "hi": "मित्रक तारा",
       "ar": "الوزن",
       "sr-Cyrl": "Хадар",
+      "de": "Agena, Hadar",
       "nl": "Agena",
       "_qid": "Q13175"
     },
     "Hamal": {
       "ru": "Хамаль",
-      "ja": "おひつじ座アルファ星",
+      "ja": "ハマル",
       "zh-CN": "娄宿三",
       "ko": "하말",
       "hi": "अल्फ़ा अरायटिस तारा",
@@ -4925,25 +5637,27 @@
       "sr-Cyrl": "Хамал",
       "_qid": "Q13213"
     },
+    "Alpha Arietis": {
+      "ja": "おひつじ座アルファ星",
+      "ko": "양자리 알파",
+      "hi": "अल्फ़ा अरायटिस तारा",
+      "it": "Alfa Arietis",
+      "_qid": "Q13213"
+    },
     "Menkalinan": {
-      "ru": "Бета Возничего",
-      "ja": "ぎょしゃ座ベータ星",
+      "ru": "34 Возничего",
+      "ja": "メンカリナン",
       "zh-CN": "五车三",
       "ko": "멘칼리난",
       "ar": "منكب ذي العنان",
       "sr-Cyrl": "Менкалинан",
+      "fr": "34 Aurigae",
       "_qid": "Q13219"
     },
     "Beta Aurigae": {
       "ru": "Бета Возничего",
       "ja": "ぎょしゃ座ベータ星",
-      "zh-CN": "五车三",
-      "ko": "멘칼리난",
-      "ar": "منكب ذي العنان",
-      "de": "Menkalinan",
-      "es": "Menkalinan",
-      "it": "Menkalinan",
-      "nl": "Menkalinan",
+      "zh-CN": "御夫座β",
       "_qid": "Q13219"
     },
     "Westerlund 2": {
@@ -4954,7 +5668,7 @@
     },
     "Sadr": {
       "ru": "Гамма Лебедя",
-      "ja": "はくちょう座ガンマ星",
+      "ja": "サドル",
       "zh-CN": "天津一",
       "ko": "사드르",
       "hi": "गामा सिगनाए तारा",
@@ -4965,68 +5679,51 @@
     "Gamma Cygni": {
       "ru": "Гамма Лебедя",
       "ja": "はくちょう座ガンマ星",
-      "zh-CN": "天津一",
-      "ko": "사드르",
+      "zh-CN": "天鹅座γ",
+      "ko": "백조자리 감마",
       "hi": "गामा सिगनाए तारा",
-      "ar": "صدر الدجاجة",
-      "de": "Sadr",
-      "fr": "Sadr",
-      "es": "Sadr",
-      "it": "Sadr",
-      "nl": "Sadr",
       "_qid": "Q13327"
     },
     "Wezen": {
       "ru": "Везен",
-      "ja": "おおいぬ座デルタ星",
+      "ja": "ウェズン",
       "zh-CN": "弧矢一",
       "ko": "웨젠",
       "hi": "डॅल्टा महाश्वान तारा",
       "ar": "الوزن",
       "sr-Cyrl": "Везен",
+      "fr": "25 Canis Majoris",
       "_qid": "Q13411"
     },
     "Delta Canis Majoris": {
-      "ru": "Везен",
+      "ru": "Дельта Большого Пса",
       "ja": "おおいぬ座デルタ星",
-      "zh-CN": "弧矢一",
-      "ko": "웨젠",
+      "zh-CN": "大犬座δ",
       "hi": "डॅल्टा महाश्वान तारा",
-      "ar": "الوزن",
-      "es": "Wezen",
-      "it": "Wezen",
-      "nl": "Wezen",
+      "nl": "Delta Canis Maioris",
       "_qid": "Q13411"
     },
     "Adhara": {
       "ru": "Адара",
-      "ja": "おおいぬ座イプシロン星",
+      "ja": "アダラ",
       "zh-CN": "弧矢七",
       "ko": "아다라",
-      "hi": "ऍप्सिलन महाश्वान तारा",
+      "hi": "अधारा",
       "ar": "العذارى",
       "sr-Cyrl": "Адара",
       "nl": "Adharaz",
       "_qid": "Q13414"
     },
     "Epsilon Canis Majoris": {
-      "ru": "Адара",
+      "ru": "Эпсилон Большого Пса",
       "ja": "おおいぬ座イプシロン星",
-      "zh-CN": "弧矢七",
-      "ko": "아다라",
+      "zh-CN": "大犬座ε",
       "hi": "ऍप्सिलन महाश्वान तारा",
-      "ar": "العذارى",
-      "de": "Adhara",
-      "es": "Adhara",
-      "it": "Adhara",
-      "nl": "Adharaz",
       "_qid": "Q13414"
     },
     "Gliese 445": {
-      "ru": "Глизе 445",
       "ja": "グリーゼ445",
       "zh-CN": "格利泽445",
-      "ko": "글리제 445",
       "ar": "غليس 445",
       "_qid": "Q1341818"
     },
@@ -5048,32 +5745,27 @@
     },
     "Rasalhague": {
       "ru": "Рас Альхаге",
-      "ja": "へびつかい座アルファ星",
-      "zh-CN": "蛇夫座α",
+      "ja": "ラスアルハゲ",
+      "zh-CN": "候",
       "ko": "라스 알하게",
       "hi": "अल्फ़ा ऑफ़ीयूकी तारा",
       "ar": "رأس الحواء",
       "sr-Cyrl": "Расалхаге",
       "de": "Ras Alhague",
       "es": "Ras Alhague",
+      "it": "Ras Alhague",
       "_qid": "Q13504"
     },
     "Alpha Ophiuchi": {
-      "ru": "Рас Альхаге",
       "ja": "へびつかい座アルファ星",
       "zh-CN": "蛇夫座α",
-      "ko": "라스 알하게",
       "hi": "अल्फ़ा ऑफ़ीयूकी तारा",
-      "ar": "رأس الحواء",
-      "de": "Ras Alhague",
-      "es": "Ras Alhague",
       "it": "Alfa Ophiuchi",
-      "nl": "Rasalhague",
       "_qid": "Q13504"
     },
     "Elnath": {
-      "ru": "Бета Тельца",
-      "ja": "おうし座ベータ星",
+      "ru": "Нат",
+      "ja": "エルナト",
       "zh-CN": "五车五",
       "ko": "엘 나스",
       "hi": "बीटा टाओरी तारा",
@@ -5085,14 +5777,9 @@
     "Beta Tauri": {
       "ru": "Бета Тельца",
       "ja": "おうし座ベータ星",
-      "zh-CN": "五车五",
-      "ko": "엘 나스",
+      "zh-CN": "金牛座β",
       "hi": "बीटा टाओरी तारा",
-      "ar": "النطح",
-      "de": "Elnath",
-      "es": "Elnath",
-      "it": "Elnath",
-      "nl": "Al Nath",
+      "es": "Gamma Aurigae",
       "_qid": "Q13508"
     },
     "Alphard": {
@@ -5106,8 +5793,15 @@
       "es": "Alfard",
       "_qid": "Q13577"
     },
+    "Alpha Hydrae": {
+      "ru": "Альфа Гидры",
+      "ja": "うみへび座α星",
+      "zh-CN": "长蛇座α",
+      "it": "Alfa Hydrae",
+      "_qid": "Q13577"
+    },
     "Triangulum Galaxy": {
-      "ru": "Галактика Треугольника",
+      "ru": "галактика Треугольника",
       "ja": "さんかく座銀河",
       "zh-CN": "三角座星系",
       "ko": "삼각형자리 은하",
@@ -5124,7 +5818,7 @@
     },
     "Mirfak": {
       "ru": "Мирфак",
-      "ja": "ペルセウス座アルファ星",
+      "ja": "ミルファク",
       "zh-CN": "天船三",
       "ko": "미르파크",
       "hi": "अल्फ़ा परसई तारा",
@@ -5134,17 +5828,10 @@
       "_qid": "Q13790"
     },
     "Alpha Persei": {
-      "ru": "Мирфак",
       "ja": "ペルセウス座アルファ星",
-      "zh-CN": "天船三",
-      "ko": "미르파크",
+      "zh-CN": "英仙座α",
       "hi": "अल्फ़ा परसई तारा",
-      "ar": "المرفق",
-      "de": "Mirfak",
-      "fr": "Mirfak",
-      "es": "Mirfak",
-      "it": "Mirfak",
-      "nl": "Mirphak",
+      "it": "Alfa Persei",
       "_qid": "Q13790"
     },
     "Orion Nebula": {
@@ -5152,7 +5839,7 @@
       "ja": "オリオン大星雲",
       "zh-CN": "猎户座大星云",
       "ko": "오리온 성운",
-      "hi": "ओरायन नीहारिका",
+      "hi": "ओरियन नेबुला",
       "ar": "سديم الجبار",
       "sr-Cyrl": "Орионова маглина",
       "de": "Orionnebel",
@@ -5164,7 +5851,7 @@
       "_qid": "Q13903"
     },
     "Whirlpool Galaxy": {
-      "ru": "Водоворот",
+      "ru": "Галактика Водоворот",
       "ja": "子持ち銀河",
       "zh-CN": "涡状星系",
       "ko": "소용돌이 은하",
@@ -5196,39 +5883,41 @@
     },
     "Saiph": {
       "ru": "Саиф",
-      "ja": "オリオン座カッパ星",
+      "ja": "サイフ",
       "zh-CN": "参宿六",
-      "ko": "오리온자리 카파",
+      "ko": "사이프",
       "hi": "कापा ओरायोनिस तारा",
       "ar": "الركبة اليمنى",
       "sr-Cyrl": "Саиф",
       "fr": "Saïph",
       "_qid": "Q14028"
     },
+    "Kappa Orionis": {
+      "ja": "オリオン座カッパ星",
+      "zh-CN": "猎户座κ",
+      "ko": "오리온자리 카파",
+      "hi": "कापा ओरायोनिस तारा",
+      "_qid": "Q14028"
+    },
     "Kaus Australis": {
       "ru": "Каус Аустралис",
-      "ja": "いて座イプシロン星",
+      "ja": "カウス・アウストラリス",
       "zh-CN": "箕宿三",
       "ko": "카우스 오스트랄리스",
       "hi": "ऍप्सिलन सैजिटेरियाइ तारा",
       "ar": "القوس الجنوبي",
       "sr-Cyrl": "Каус Аустралис",
+      "de": "20 Sagittarii",
       "_qid": "Q14034"
     },
     "Epsilon Sagittarii": {
-      "ru": "Каус Аустралис",
       "ja": "いて座イプシロン星",
-      "zh-CN": "箕宿三",
-      "ko": "카우스 오스트랄리스",
       "hi": "ऍप्सिलन सैजिटेरियाइ तारा",
-      "ar": "القوس الجنوبي",
-      "es": "Kaus Australis",
-      "nl": "Kaus Australis",
       "_qid": "Q14034"
     },
     "Nunki": {
-      "ru": "Сигма Стрельца",
-      "ja": "いて座シグマ星",
+      "ru": "Нунки",
+      "ja": "ヌンキ",
       "zh-CN": "斗宿四",
       "ko": "눈키",
       "hi": "सिग्मा सैजिटेरियाइ तारा",
@@ -5238,23 +5927,20 @@
     "Sigma Sagittarii": {
       "ru": "Сигма Стрельца",
       "ja": "いて座シグマ星",
-      "zh-CN": "斗宿四",
-      "ko": "눈키",
       "hi": "सिग्मा सैजिटेरियाइ तारा",
-      "de": "Nunki",
-      "es": "Nunki",
-      "nl": "Nunki",
+      "es": "σ Sagittarii",
       "_qid": "Q14036"
     },
     "Alphecca": {
-      "ru": "Альфа Северной Короны",
-      "ja": "かんむり座アルファ星",
-      "zh-CN": "北冕座α",
+      "ru": "Гемма",
+      "ja": "アルフェッカ",
+      "zh-CN": "贯索四",
       "ko": "알페카",
       "hi": "अल्फ़ा उत्तरकिरीट तारा",
       "ar": "نير الفكة",
       "sr-Cyrl": "Алфека",
       "de": "Gemma",
+      "it": "Gemma",
       "nl": "Alphekka",
       "_qid": "Q14046"
     },
@@ -5262,41 +5948,36 @@
       "ru": "Альфа Северной Короны",
       "ja": "かんむり座アルファ星",
       "zh-CN": "北冕座α",
-      "ko": "알페카",
       "hi": "अल्फ़ा उत्तरकिरीट तारा",
-      "ar": "نير الفكة",
-      "de": "Gemma",
-      "fr": "Alphecca",
-      "es": "Alphecca",
       "it": "Alfa Coronae Borealis",
-      "nl": "Alphekka",
       "_qid": "Q14046"
     },
     "Menkent": {
       "ru": "Менкент",
-      "ja": "ケンタウルス座シータ星",
+      "ja": "メンケント",
       "zh-CN": "库楼三",
       "ko": "멘켄트",
       "hi": "थेटा सॅन्टौरी तारा",
       "ar": "منكب قنطورس",
       "sr-Cyrl": "Менкент",
+      "fr": "5 Centauri",
       "_qid": "Q14225"
     },
     "Theta Centauri": {
-      "ru": "Менкент",
       "ja": "ケンタウルス座シータ星",
-      "zh-CN": "库楼三",
-      "ko": "멘켄트",
       "hi": "थेटा सॅन्टौरी तारा",
-      "ar": "منكب قنطورس",
-      "de": "Menkent",
-      "es": "Menkent",
-      "nl": "Menkent",
+      "ar": "ثيتا قنطورس",
       "_qid": "Q14225"
+    },
+    "Gamma Crucis": {
+      "ru": "гамма Южного Креста",
+      "ja": "みなみじゅうじ座ガンマ星",
+      "ar": "غاما نعيم",
+      "_qid": "Q14233"
     },
     "Gacrux": {
       "ru": "Гакрукс",
-      "ja": "みなみじゅうじ座ガンマ星",
+      "ja": "ガクルックス",
       "zh-CN": "十字架一",
       "ko": "가크룩스",
       "hi": "गेक्रक्स तारा",
@@ -5306,7 +5987,7 @@
     },
     "Sargas": {
       "ru": "Саргас",
-      "ja": "さそり座シータ星",
+      "ja": "サルガス",
       "zh-CN": "尾宿五",
       "ko": "사르가스",
       "hi": "थेटा स्कोर्पाए तारा",
@@ -5315,21 +5996,13 @@
       "_qid": "Q14236"
     },
     "Theta Scorpii": {
-      "ru": "Саргас",
       "ja": "さそり座シータ星",
-      "zh-CN": "尾宿五",
-      "ko": "사르가스",
       "hi": "थेटा स्कोर्पाए तारा",
-      "ar": "سارجاس",
-      "de": "Sargas",
-      "es": "Sargas",
-      "it": "Sargas",
-      "nl": "Sargas",
       "_qid": "Q14236"
     },
     "Alhena": {
       "ru": "Альхена",
-      "ja": "ふたご座ガンマ星",
+      "ja": "アルヘナ",
       "zh-CN": "井宿三",
       "ko": "알레나",
       "hi": "गामा जॅमिनोरम तारा",
@@ -5338,35 +6011,22 @@
       "_qid": "Q14238"
     },
     "Gamma Geminorum": {
-      "ru": "Альхена",
+      "ru": "Гамма Близнецов",
       "ja": "ふたご座ガンマ星",
-      "zh-CN": "井宿三",
-      "ko": "알레나",
+      "zh-CN": "双子座γ",
       "hi": "गामा जॅमिनोरम तारा",
-      "ar": "الهنعة",
-      "de": "Alhena",
-      "es": "Alhena",
-      "it": "Alhena",
-      "nl": "Alhena",
-      "pt-BR": "Alhena",
       "_qid": "Q14238"
     },
     "Alpha Pavonis": {
       "ru": "Альфа Павлина",
       "ja": "くじゃく座アルファ星",
-      "zh-CN": "孔雀十一",
-      "ko": "피콕",
       "hi": "अल्फ़ा पैवोनिस तारा",
-      "de": "Peacock",
-      "fr": "Peacock",
-      "es": "Peacock",
       "it": "Alfa Pavonis",
-      "nl": "Peacock",
       "_qid": "Q14240"
     },
     "Peacock": {
       "ru": "Альфа Павлина",
-      "ja": "くじゃく座アルファ星",
+      "ja": "ピーコック",
       "zh-CN": "孔雀十一",
       "ko": "피콕",
       "hi": "अल्फ़ा पैवोनिस तारा",
@@ -5376,27 +6036,23 @@
     "Alpha Trianguli Australis": {
       "ru": "Альфа Южного Треугольника",
       "ja": "みなみのさんかく座アルファ星",
-      "zh-CN": "三角形三",
-      "ko": "아트리아",
       "hi": "अल्फ़ा ट्राऐंगुलाइ ऑस्ट्रालिस तारा",
-      "de": "Atria",
-      "es": "Atria",
       "it": "Alfa Trianguli Australis",
-      "nl": "Atria",
       "_qid": "Q14242"
     },
     "Atria": {
       "ru": "Альфа Южного Треугольника",
-      "ja": "みなみのさんかく座アルファ星",
+      "ja": "アトリア",
       "zh-CN": "三角形三",
       "ko": "아트리아",
       "hi": "अल्फ़ा ट्राऐंगुलाइ ऑस्ट्रालिस तारा",
       "sr-Cyrl": "Атрија",
+      "pt-BR": "Átria",
       "_qid": "Q14242"
     },
     "Avior": {
       "ru": "Авиор",
-      "ja": "りゅうこつ座イプシロン星",
+      "ja": "アヴィオール",
       "zh-CN": "海石一",
       "ko": "아비오르",
       "hi": "ऍप्सिलन कराइनी तारा",
@@ -5405,17 +6061,9 @@
       "_qid": "Q14256"
     },
     "Epsilon Carinae": {
-      "ru": "Авиор",
       "ja": "りゅうこつ座イプシロン星",
-      "zh-CN": "海石一",
-      "ko": "아비오르",
       "hi": "ऍप्सिलन कराइनी तारा",
-      "ar": "تدوير السفينة",
-      "de": "Avior",
-      "fr": "Avior",
-      "es": "Avior",
-      "it": "Avior",
-      "nl": "Avior",
+      "ar": "إبسيلون الجؤجؤ",
       "_qid": "Q14256"
     },
     "Proxima Centauri": {
@@ -5434,7 +6082,7 @@
       "ja": "バーナード星",
       "zh-CN": "巴纳德星",
       "ko": "바너드별",
-      "hi": "बर्नार्ड तारा",
+      "hi": "बारनर्ड का तारा",
       "ar": "نجم السهم",
       "sr-Cyrl": "Барнардова звезда",
       "de": "Barnards Pfeilstern",
@@ -5450,7 +6098,7 @@
       "ja": "バーナード星",
       "zh-CN": "巴纳德星",
       "ko": "바너드별",
-      "hi": "बर्नार्ड तारा",
+      "hi": "बारनर्ड का तारा",
       "ar": "نجم السهم",
       "sr-Cyrl": "Барнардова звезда",
       "de": "Barnards Pfeilstern",
@@ -5465,7 +6113,7 @@
       "ru": "Конская Голова",
       "ja": "馬頭星雲",
       "zh-CN": "马头星云",
-      "ko": "말머리 성운",
+      "ko": "말 머리 성운",
       "hi": "अश्वशीर्ष निहारिका",
       "ar": "سديم رأس الحصان",
       "sr-Cyrl": "Маглина Коњска глава",
@@ -5479,14 +6127,13 @@
     },
     "Omega Centauri": {
       "ru": "Омега Центавра",
-      "ja": "Ω星団",
+      "ja": "ケンタウルス座オメガ星",
       "zh-CN": "半人马座ω",
       "ko": "센타우루스자리 오메가",
-      "ar": "أوميجا قنطورس",
       "_qid": "Q14275"
     },
     "Pinwheel Galaxy": {
-      "ru": "Вертушка",
+      "ru": "Галактика Вертушка",
       "zh-CN": "风车星系",
       "ko": "바람개비 은하",
       "hi": "पिनव्हील मंदाकिनी",
@@ -5576,12 +6223,14 @@
       "_qid": "Q1881065"
     },
     "Eskimo Nebula": {
+      "ru": "Туманность Эскимос",
       "ja": "エスキモー星雲",
       "zh-CN": "爱斯基摩星云",
       "ko": "에스키모 성운",
       "ar": "سديم الإسكيمو",
       "de": "Eskimonebel",
       "fr": "Nébuleuse de l'Esquimau",
+      "es": "Nebulosa Cara de Payaso",
       "it": "Nebulosa Eschimese",
       "nl": "Eskimo-nevel",
       "pt-BR": "Nebulosa do Esquimó",
@@ -5746,7 +6395,7 @@
       "_qid": "Q32885"
     },
     "Sextans Dwarf": {
-      "ru": "Секстант I",
+      "ru": "Карликовая сфероидальная галактика в созвездии Секстант",
       "ja": "ろくぶんぎ座矮小楕円体銀河",
       "zh-CN": "六分仪座矮星系",
       "ko": "육분의자리 왜소은하",
@@ -5760,7 +6409,7 @@
       "_qid": "Q32886"
     },
     "Sculptor Dwarf": {
-      "ru": "Карликовая галактика в Скульпторе",
+      "ru": "карликовая галактика в созвездии Скульптор",
       "ja": "ちょうこくしつ座矮小銀河",
       "zh-CN": "玉夫座矮星系",
       "ko": "조각가자리 왜소은하",
@@ -5786,13 +6435,27 @@
       "it": "Sirio",
       "_qid": "Q3409"
     },
+    "Alpha Canis Majoris": {
+      "ru": "Альфа Большой Пса",
+      "ja": "おおいぬ座α星",
+      "zh-CN": "大犬座α",
+      "ko": "큰개자리 알파",
+      "it": "Alfa Canis Majoris",
+      "_qid": "Q3409"
+    },
+    "Alpha Lyrae": {
+      "ru": "альфа Лиры",
+      "ja": "こと座α星",
+      "zh-CN": "天琴座α",
+      "ko": "거문고자리 알파",
+      "_qid": "Q3427"
+    },
     "Vega": {
       "ru": "Вега",
       "ja": "ベガ",
       "zh-CN": "织女一",
       "ko": "베가",
-      "hi": "अभिजित तारा",
-      "ar": "النسر الواقع",
+      "hi": "अभिजित् तारा",
       "sr-Cyrl": "Вега",
       "de": "Wega",
       "fr": "Véga",
@@ -5800,7 +6463,7 @@
       "_qid": "Q3427"
     },
     "Leo I Dwarf": {
-      "ru": "Лев I",
+      "ru": "Карликовая галактика I в созвездии Лев",
       "ja": "しし座I",
       "zh-CN": "狮子座I",
       "ko": "사자자리 I 왜소은하",
@@ -5814,7 +6477,7 @@
       "_qid": "Q35810"
     },
     "Fornax Dwarf": {
-      "ru": "Карликовая галактика в созвездии Печь",
+      "ru": "карликовая галактика в созвездии Печь",
       "ja": "ろ座矮小銀河",
       "zh-CN": "天炉座矮星系",
       "ko": "화로자리 왜소은하",
@@ -5827,7 +6490,7 @@
       "_qid": "Q35818"
     },
     "Local Group": {
-      "ru": "Местная группа галактик",
+      "ru": "Местная группа",
       "ja": "局所銀河群",
       "zh-CN": "本星系群",
       "ko": "국부 은하군",
@@ -5864,7 +6527,7 @@
       "ru": "Центавр A",
       "ja": "ケンタウルス座A",
       "zh-CN": "半人马座A",
-      "ko": "센타우루스자리 A",
+      "ko": "센타우루스 A 은하",
       "hi": "सैन्टॉरस ए",
       "ar": "قنطورس A",
       "_qid": "Q487255"
@@ -5977,7 +6640,7 @@
       "ru": "Квинтет Стефана",
       "ja": "ステファンの五つ子銀河",
       "zh-CN": "斯蒂芬五重星系",
-      "ko": "슈테팡 5중주",
+      "ko": "스테판의 다섯 은하",
       "ar": "خماسية ستيفان",
       "de": "Stephans Quintett",
       "fr": "Quintette de Stephan",
@@ -5993,6 +6656,7 @@
     },
     "SN 1885A": {
       "ar": "مستعر أعظم 1885A",
+      "fr": "SN 1885",
       "_qid": "Q546708"
     },
     "SN 1572": {
@@ -6000,19 +6664,38 @@
       "_qid": "Q554280"
     },
     "Tycho Supernova": {
+      "ru": "SN Кассиопеи",
+      "ja": "チコの星",
+      "zh-CN": "第谷新星",
       "ar": "مستعر أعظم 1572",
+      "de": "Tychos Supernova",
+      "fr": "Supernova de Tycho",
+      "es": "Nova Tycho",
+      "it": "Supernova di Tycho",
+      "nl": "Ster van Brahe",
       "_qid": "Q554280"
     },
     "Tycho's Supernova": {
+      "ru": "SN Кассиопеи",
+      "ja": "チコの星",
+      "zh-CN": "第谷新星",
       "ar": "مستعر أعظم 1572",
+      "de": "Tychos Supernova",
+      "fr": "Supernova de Tycho",
+      "es": "Nova Tycho",
+      "it": "Supernova di Tycho",
+      "nl": "Ster van Brahe",
       "_qid": "Q554280"
     },
-    "HR 8799": {
-      "zh-CN": "飞马座V342",
-      "_qid": "Q584300"
+    "Rho Ophiuchi Cloud": {
+      "ru": "Молекулярное облако Ро Змееносца",
+      "ja": "へびつかい座ロー分子雲領域",
+      "zh-CN": "蛇夫座ρ星云复合体",
+      "_qid": "Q56510806"
     },
     "SN 1987A": {
-      "ar": "مستعر أعظم 1987 إيه",
+      "ko": "초신성 1987A",
+      "ar": "مستعر أعظم 1987A",
       "it": "SN 1987a",
       "_qid": "Q584905"
     },
@@ -6025,11 +6708,16 @@
       "_qid": "Q618273"
     },
     "Barnard's Galaxy": {
+      "ru": "Галактика Барнарда",
+      "ja": "バーナードの銀河",
       "zh-CN": "巴纳德星系",
       "hi": "ऍनजीसी ६८२२",
       "ar": "مجرة برنارد",
       "de": "Barnards Galaxie",
+      "fr": "galaxie de Barnard",
       "es": "Galaxia de Barnard",
+      "nl": "Barnardstelsel",
+      "pt-BR": "Galáxia de Barnard",
       "_qid": "Q622789"
     },
     "Great Attractor": {
@@ -6050,16 +6738,22 @@
     },
     "Acrux": {
       "ru": "Акрукс",
-      "ja": "みなみじゅうじ座アルファ1星",
+      "ja": "アクルックス",
+      "zh-CN": "十字架二",
       "ko": "아크룩스",
       "ar": "نير نعيم",
       "sr-Cyrl": "Акрукс",
       "de": "Akrux",
       "_qid": "Q66476660"
     },
+    "Alpha Crucis": {
+      "ja": "みなみじゅうじ座α1星",
+      "ar": "ألفا كروكس",
+      "_qid": "Q66476660"
+    },
     "Almach": {
       "ru": "Аламак",
-      "ja": "アンドロメダ座ガンマ星",
+      "ja": "アルマク",
       "zh-CN": "天大将军一",
       "ko": "알마크",
       "hi": "गामा ऐन्ड्रौमिडे तारा",
@@ -6071,28 +6765,28 @@
       "_qid": "Q66477099"
     },
     "Gamma Andromedae": {
-      "ru": "Аламак",
+      "ru": "Гамма Андромеды",
       "ja": "アンドロメダ座ガンマ星",
-      "zh-CN": "天大将军一",
-      "ko": "알마크",
+      "zh-CN": "仙女座γ",
       "hi": "गामा ऐन्ड्रौमिडे तारा",
-      "ar": "عناق الأرض",
-      "de": "Alamak",
-      "es": "Alamak",
-      "nl": "Alamak",
       "_qid": "Q66477099"
     },
     "Mintaka": {
       "ru": "Минтака",
-      "ja": "オリオン座デルタ星",
+      "ja": "ミンタカ",
       "zh-CN": "参宿三",
       "ko": "민타카",
       "ar": "المنطقة",
       "sr-Cyrl": "Минтака",
       "_qid": "Q680341"
     },
+    "Delta Orionis": {
+      "ja": "オリオン座デルタ星",
+      "zh-CN": "参宿三",
+      "_qid": "Q680341"
+    },
     "Lalande 21185": {
-      "ru": "Лаланд 21185",
+      "ru": "Глизе 411",
       "ja": "ラランド21185",
       "zh-CN": "拉兰德21185",
       "ko": "랄랑드 21185",
@@ -6102,22 +6796,32 @@
       "_qid": "Q683605"
     },
     "Southern Ring Nebula": {
+      "ja": "Caldwell 74",
+      "zh-CN": "八裂星云",
       "ko": "팔렬 성운",
       "ar": "سديم الحلقة الجنوبي",
+      "de": "Südlicher Ringnebel",
+      "fr": "Caldwell 74",
+      "es": "Nebulosa Anillo del Sur",
+      "it": "Nebulosa Anello del sud C 74, ESO 316-PN027, PK272+12.1, h 3228, GC 2017, AM 1004-401",
       "_qid": "Q725489"
     },
     "Antennae Galaxies": {
-      "ru": "Галактики Антенны",
+      "ru": "галактики Antennae",
       "ja": "触角銀河",
       "zh-CN": "触须星系",
       "ko": "더듬이 은하",
-      "ar": "مجرتا قرني الاستشعار",
+      "ar": "مجرتا قرنَي الاستشعار",
       "de": "Antennen-Galaxien",
       "fr": "galaxies des Antennes",
       "es": "Galaxias Antennae",
       "it": "Galassie Antenne",
       "nl": "Antennestelsel",
       "_qid": "Q725595"
+    },
+    "Hidden Galaxy": {
+      "ar": "IC ٣٤٢",
+      "_qid": "Q757396"
     },
     "Regulus": {
       "ru": "Регул",
@@ -6132,11 +6836,18 @@
       "pt-BR": "Régulo",
       "_qid": "Q76493786"
     },
+    "Alpha Leonis": {
+      "ru": "альфа Льва",
+      "ja": "しし座α星",
+      "zh-CN": "Α Leo / 獅子座α",
+      "ko": "사자자리 알파",
+      "es": "Alfa Leonis",
+      "it": "Alfa Leonis",
+      "_qid": "Q76493786"
+    },
     "Rho Ophiuchi": {
       "ru": "Ро Змееносца",
       "ja": "へびつかい座ロー星",
-      "zh-CN": "心宿增四",
-      "ar": "رو أوفيوتشي",
       "_qid": "Q782342"
     },
     "Veil Nebula": {
@@ -6163,27 +6874,25 @@
       "_qid": "Q843331"
     },
     "Alpha Gruis": {
-      "ru": "Альнаир",
+      "ru": "Альфа Журавля",
       "ja": "つる座アルファ星",
-      "zh-CN": "鹤一",
+      "zh-CN": "天鶴座α星",
       "ko": "두루미자리 알파",
       "hi": "अल्फ़ा ग्रुईस तारा",
-      "ar": "النير",
-      "de": "Al Nair",
-      "es": "Al Nair",
-      "it": "Al Na'ir",
-      "nl": "Al Nair",
+      "ar": "ألفا الكركي",
+      "it": "Alfa Gruis",
       "_qid": "Q854042"
     },
     "Alnair": {
       "ru": "Альнаир",
-      "ja": "つる座アルファ星",
+      "ja": "アルナイル",
       "zh-CN": "鹤一",
-      "ko": "두루미자리 알파",
+      "ko": "알나이르",
       "hi": "अल्फ़ा ग्रुईस तारा",
       "ar": "النير",
       "sr-Cyrl": "Алнаир",
       "de": "Al Nair",
+      "fr": "Al Nair",
       "es": "Al Nair",
       "it": "Al Na'ir",
       "nl": "Al Nair",
@@ -6229,6 +6938,7 @@
       "de": "Van Maanens Stern",
       "fr": "étoile de van Maanen",
       "es": "Estrella de Van Maanen",
+      "it": "Stella di Van Maanen",
       "nl": "Ster van Van Maanen",
       "pt-BR": "Estrela de van Maanen",
       "_qid": "Q868692"
@@ -6237,7 +6947,7 @@
       "ru": "Объект Хога",
       "ja": "ホーグの天体",
       "zh-CN": "霍格的天体",
-      "ko": "호그 천체",
+      "ko": "호그의 물체",
       "hi": "होआग्स ऑब्जेक्ट",
       "ar": "مجرة هوغ",
       "de": "Hoags Objekt",
@@ -6293,12 +7003,19 @@
       "ja": "アルデバラン",
       "zh-CN": "毕宿五",
       "ko": "알데바란",
-      "hi": "रोहिणी तारा",
+      "hi": "एल्डेबारन तारा तंत्र",
       "ar": "الدبران",
       "sr-Cyrl": "Алдебаран",
       "fr": "Aldébaran",
       "es": "Aldebarán",
       "pt-BR": "Aldebarã",
+      "_qid": "Q88540091"
+    },
+    "Alpha Tauri": {
+      "zh-CN": "金牛座α",
+      "fr": "α Tauri",
+      "es": "Aldebarán",
+      "it": "α Tauri, 87 Tauri, HD 29139, HIP 21421, SAO 94027, HR 1457, BD +16°629, WDS 04359+1631",
       "_qid": "Q88540091"
     },
     "Scorpius": {
@@ -6348,7 +7065,7 @@
       "_qid": "Q8918"
     },
     "Sombrero Galaxy": {
-      "ru": "Сомбреро",
+      "ru": "Галактика Сомбреро",
       "ja": "ソンブレロ銀河",
       "zh-CN": "阔边帽星系",
       "ko": "솜브레로 은하",
@@ -6380,8 +7097,8 @@
       "ru": "Туманность Улитка",
       "ja": "らせん星雲",
       "zh-CN": "螺旋星云",
-      "ko": "쌍가락지 성운",
-      "hi": "हेलिक्स नीहारिका",
+      "ko": "나선 성운",
+      "hi": "हेलिक्स नेब्यूला",
       "ar": "سديم الحلزون",
       "de": "Helixnebel",
       "es": "Nebulosa de la Hélice",

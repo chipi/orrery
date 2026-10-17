@@ -34,7 +34,7 @@
       "diagram_alt": "一个与地球轨道和火星轨道相切的椭圆。",
       "diagram_caption": "两次燃烧,一个椭圆。改变轨道的最便宜方式。",
       "paragraphs": [
-        "Robert Heinlein 写道:\"一旦进入轨道,你就到达太阳系中任何地方的一半路程了。\" 他不是在开玩笑。到达近地轨道需要约 9.4 km/s 的 ∆v。从那里到火星再需要约 3.6 km/s。最困难的部分已经过去了。",
+        "罗伯特·海莱因写道:\"一旦进入轨道,你就到达太阳系中任何地方的一半路程了。\" 他不是在开玩笑。到达近地轨道需要约 9.4 km/s 的 ∆v。从那里到火星再需要约 3.6 km/s。最困难的部分已经过去了。",
         "最便宜的行星际路线是 [Hohmann 转移](transfers/hohmann-transfer):一个椭圆,刚好在一端接触地球轨道,在另一端接触目的地轨道。两次燃烧,不浪费燃料。到火星需要约 8.5 个月。慢,但最优。",
         "想更快?解决 [Lambert 问题](transfers/lambert-problem)——选择你的出发日期和飞行时间,Lambert 会告诉你连接它们的唯一[转移椭圆](transfers/transfer-ellipse)。这正是 Orrery 的 [/plan](app:/plan) 屏幕所做的,并行进行一万次,绘制 porkchop 图。",
         "需要走得更远?从行星那里窃取速度。[引力助推](transfers/gravity-assist)利用飞越改变你的轨迹,零燃料成本—— Voyager 2 使用了四次引力助推到达海王星。整个太阳系通过[拼接圆锥曲线](transfers/patched-conics)连接在一起:一系列[圆锥曲线](transfers/conic-sections)弧线在引力邻域之间传递,就像接力赛中的接力棒。"

@@ -21,13 +21,13 @@
       "label": "「我们为全人类和平而来」纪念牌"
     }
   ],
-  "panorama_caption": "Tranquility Base，EVA-1。Buzz Aldrin 在着陆后不久拍下了 LM Eagle 和美国国旗。LM 附近可见的 Hasselblad 拼接缝和色差是已发布拼接图的一部分。",
+  "panorama_caption": "Tranquility Base，EVA-1。巴兹·奥尔德林在着陆后不久拍下了 LM Eagle 和美国国旗。LM 附近可见的 Hasselblad 拼接缝和色差是已发布拼接图的一部分。",
   "compass_zero_direction": "LM 正前方（依据 ALSJ 全景方位）",
   "panorama_annotations": [
     {
       "id": "lm-eagle",
       "label": "LM Eagle",
-      "body": "登月舱的下降级，Armstrong + Aldrin 出舱活动时就站在这里。"
+      "body": "登月舱的下降级，阿姆斯特朗 + 奥尔德林出舱活动时就站在这里。"
     },
     {
       "id": "us-flag-pan",
@@ -36,7 +36,7 @@
     },
     {
       "id": "buzz-shadow",
-      "label": "Buzz Aldrin 的影子",
+      "label": "巴兹·奥尔德林的影子",
       "body": "前景中摄影者自己的影子——手持 Hasselblad 的 Buzz。"
     }
   ]

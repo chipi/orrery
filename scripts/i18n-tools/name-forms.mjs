@@ -72,6 +72,36 @@ for (let i = 0; i < ids.length; i += 50) {
   fs.writeFileSync(CACHE, JSON.stringify(cache));
   process.stderr.write(`\r${Math.min(i + 50, ids.length)}/${ids.length}`);
 }
+// stars: aliases hold the other half of a star's names (ja label アダラ, alias
+// おおいぬ座イプシロン星) — fetched once for star items
+const starIds = [...items]
+  .filter(([q, it]) => it.kind === 'star' && !cache[q]?.aliases)
+  .map(([q]) => q);
+for (let i = 0; i < starIds.length; i += 50) {
+  const j = await wbget({
+    ids: starIds.slice(i, i + 50).join('|'),
+    props: 'aliases',
+    languages: langs,
+  });
+  for (const e of Object.values(j.entities ?? {}))
+    if (cache[e.id]) cache[e.id].aliases = e.aliases ?? {};
+  fs.writeFileSync(CACHE, JSON.stringify(cache));
+}
+// a Bayer designation as each language writes it (Альфа Павлина, くじゃく座アルファ星, 孔雀座α)
+const BAYER_LOC = {
+  ru: /(^|\s)(альфа|бета|гамма|дельта|эпсилон|дзета|эта|тета|йота|каппа|лямбда|сигма|тау|омега|ро|пи)\s/i,
+  ja: /座(アルファ|ベータ|ガンマ|デルタ|イプシロン|エプシロン|ゼータ|イータ|シータ|カッパ|シグマ|オメガ|ロー|[α-ω])/,
+  'zh-CN': /座[α-ω]/,
+  ko: /자리 (알파|베타|감마|델타|엡실론|제타|에타|세타|카파|시그마|오메가)/,
+  hi: /(अल्फ़ा|अल्फा|बीटा|बेटा|गामा|डॅल्टा|ऍप्सिलन|ज़ेटा|थेटा|कापा|सिग्मा)/,
+  ar: /(ألفا|بيتا|غاما|دلتا|إبسيلون|زيتا|ثيتا|كابا|سيغما)/,
+  'sr-Cyrl': /(^|\s)(Алфа|Бета|Гама|Делта|Епсилон|Зета|Тета|Капа|Сигма|Омега)\s/,
+};
+const LATIN_BAYER =
+  /^(Alpha|Alfa|Beta|Gamma|Delta|Epsilon|Zeta|Eta|Theta|Iota|Kappa|Lambda|Mu|Nu|Xi|Omicron|Pi|Rho|Sigma|Tau|Upsilon|Phi|Chi|Psi|Omega) [A-Z]/;
+const isBayer = (loc, v) => (BAYER_LOC[loc] ?? LATIN_BAYER).test(v) || /^[α-ω] /.test(v);
+const isCatalogue = (v) =>
+  /^(HD|HIP|HR|GJ|Gliese|BD|SAO|\d+ )\s?\S*\d/.test(v) || /\d+番星/.test(v);
 const noParen = (s) => s.replace(/\s*[（(][^)）]*[)）]\s*$/, '').trim();
 const CYR = /[Ѐ-ӿ]/;
 const rows = [];
@@ -91,8 +121,27 @@ for (const [qid, it] of items) {
     if (loc === 'zh-CN' && e.conv?.['zh-cn']) label = e.conv['zh-cn'];
     if (loc === 'sr-Cyrl' && label && !CYR.test(label)) label = undefined;
     let form;
+    if (it.kind === 'star') {
+      // a star's name (label first, then aliases, then the title) and its Bayer
+      // designation (title first, then aliases), written "name¦designation"
+      const ok = (v) => v && !(loc === 'sr-Cyrl' && !CYR.test(v));
+      const aliases = lls
+        .split('|')
+        .flatMap((l) => (e.aliases?.[l] ?? []).map((a) => a.value))
+        .filter(ok);
+      const cands = [label && noParen(label), ...aliases, title && noParen(title)].filter(ok);
+      const name = cands.find((v) => !isBayer(loc, v) && !isCatalogue(v));
+      // the spelled-out designation before an abbreviation ("Альфа Девы", not "α Vir")
+      const bys = [title && noParen(title), ...aliases, label && noParen(label)]
+        .filter(ok)
+        .filter((v) => isBayer(loc, v));
+      const bayer = bys.find((v) => !/^[α-ω]/.test(v)) ?? bys[0];
+      // a language that names the star only by its designation uses that for the name too
+      return `${loc}=${name ?? bayer ?? '-'}¦${bayer ?? '-'}`;
+    }
     if (it.kind === 'person') {
-      form = label ?? (title ? `label:${noParen(title)}` : null);
+      // a label can carry its own disambiguator ("斯科特·凯利 (宇航员)")
+      form = label ? noParen(label) : title ? `label:${noParen(title)}` : null;
       if (form && loc === 'ru') {
         // "Юрий Алексеевич Гагарин" → "Юрий Гагарин"
         const w = form.split(' ');
@@ -125,7 +174,7 @@ for (const [qid, it] of items) {
       if (form && it.kind === 'body') {
         const numbered = /^\d+ /.test(it.enwiki);
         const bare = form
-          .replace(numbered ? /^(label:)?\(?\p{Nd}+\)?\s+/u : /^(label:)?\(\p{Nd}+\)\s+/u, '$1')
+          .replace(/^(label:)?\(?\p{Nd}+\)?\s+(?=\p{L})/u, '$1')
           .replace(numbered ? /\s+\p{Nd}+$/u : /$^/, '')
           .replace(/^(label:)?(小行星|الكويكب )\p{Nd}+$/u, '');
         form = /\p{L}/u.test(bare.replace(/^label:/, '')) ? bare : null;

@@ -40,6 +40,7 @@
 10	Yuri Gagarin	person	Q7327	human	Yuri Gagarin	0
 10	Tereshkova	person	Q44371	human	Valentina Tereshkova	1
 10	Gus Grissom	person	Q110879	human	Gus Grissom	0
+10	Ed White	person	Q216726	human	Ed White (astronaut)	0
 10	Didymos	body	Q2265762	binary asteroid	65803 Didymos	0
 10	Callisto	body	Q3134	moon of Jupiter	Callisto (moon)	0
 9	Eris	body	Q611	asteroid	Eris (dwarf planet)	0
@@ -126,6 +127,7 @@
 3	Jim Lovell	person	Q111240	human	Jim Lovell	0
 3	Robert Goddard	person	Q182546	human	Robert H. Goddard	0
 3	Ares Vallis	feature	Q784395	vallis	Ares Vallis	0
+3	Scott Kelly	person	Q362190	human	Scott Kelly (astronaut)	0
 3	Phoebe	body	Q17975	moon of Saturn	Phoebe (moon)	0
 3	Phoebe Regio	feature	Q21038917	regio	Phoebe Regio	0
 3	Geographos	body	Q141554	potentially hazardous asteroid	1620 Geographos	0
@@ -134,6 +136,7 @@
 3	Pavel Popovich	person	Q118490	human	Pavel Popovich	0
 3	McDivitt	person	Q364476	human	James McDivitt	0
 3	Scott Carpenter	person	Q335503	human	Scott Carpenter	0
+3	John Young	person	Q107667	human	John Young (astronaut)	0
 3	Khrushchev	person	Q35314	human	Nikita Khrushchev	0
 3	Feoktistov	person	Q320068	human	Konstantin Feoktistov	0
 3	Gherman Titov	person	Q152298	human	Gherman Titov	0
@@ -209,6 +212,7 @@
 2	Epimetheus	body	Q17751	moon of Saturn	Epimetheus (moon)	0
 2	Charles Duke	person	Q112284	human	Charles Duke	0
 2	John F. Kennedy	person	Q9696	human	John F. Kennedy	0
+2	Michael Collins	person	Q104859	human	Michael Collins (astronaut)	0
 2	Hydra	body	Q102701	moon of Pluto	Hydra (moon)	0
 2	Verona Rupes	feature	Q2517547	rupes	Verona Rupes	0
 2	Messina Chasma	feature	Q2734318	chasma	Messina Chasmata	0
@@ -310,6 +314,7 @@
 1	Kidd Poteet	person	Q110916469	human	Scott Poteet	0
 1	Sarah Gillis	person	Q110916738	human	Sarah Gillis	1
 1	Anna Menon	person	Q110916349	human	Anna Menon	1
+1	Gerald Carr	person	Q644837	human	Gerald Carr (astronaut)	0
 1	Pavel Belyayev	person	Q157931	human	Pavel Belyayev	0
 1	Oliver Daemen	person	Q107541364	human	Oliver Daemen	0
 1	Shoemaker-Levy 9	body	Q3076	comet	Comet Shoemaker–Levy 9	0
@@ -470,7 +475,6 @@
 1	Miaplacidus	star	Q13174	high proper-motion star	Beta Carinae	0
 1	Beta Carinae	star	Q13174	high proper-motion star	Beta Carinae	0
 1	Beta Crucis	star	Q13105	double star	Mimosa (star)	0
-1	Becrux	star	Q13105	double star	Mimosa (star)	0
 1	Mintaka	star	Q680341	multiple star	Mintaka	0
 1	Delta Orionis	star	Q680341	multiple star	Mintaka	0
 1	Alpha Persei Cluster	star	Q1072618	open cluster	Alpha Persei Cluster	0
@@ -565,3 +569,4 @@
 1	Ahuna Mons	feature	Q20652342	mons	Ahuna Mons	0
 1	Mount Sharp	feature	Q2422217	mons	Mount Sharp	0
 1	Le Monnier	feature	Q834286	crater	Le Monnier (crater)	0
+2	Tom Stafford	person	Q316417	human	Thomas P. Stafford	0

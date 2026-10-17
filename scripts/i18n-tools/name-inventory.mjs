@@ -1,7 +1,8 @@
 // Inventory of the proper names in the English source, classified by Wikidata instead of
 // guessed: every capitalised run (1–4 words) is looked up as an English Wikipedia title
-// (single words that do not resolve also as "<w> (moon)", "(asteroid)", "(dwarf planet)", "(star)",
-// "(constellation)", "(comet)"), and the item's "instance of" class decides what it is —
+// (single words that do not resolve also as "<w> (moon)", "(asteroid)", "(dwarf planet)",
+// "(star)", "(constellation)", "(comet)"; two-word names also as "(astronaut)",
+// "(cosmonaut)", "(astronomer)"), and the item's "instance of" class decides what it is —
 // a celestial body, a surface feature, a star / constellation / deep-sky object, or a
 // person. Read-only; network (wikidata.org API, free).
 //   node scripts/i18n-tools/name-inventory.mjs <out.tsv>
@@ -214,6 +215,13 @@ for (const k of runs.keys())
   if (!/^\d+$/.test(k) && !k.includes(' ') && !best.has(k))
     for (const v of VARIANTS) variantOf.set(`${k} (${v})`, k);
 await resolve(variantOf, 'variants');
+// a person's plain name is often a disambiguation page ("Ed White", "Michael Collins"):
+// unresolved "First Last" runs are tried with the professions the text is about
+const personOf = new Map();
+for (const k of runs.keys())
+  if (/^[A-Z][a-z]+ (?:[A-Z]\. )?[A-Z][\p{L}'-]+$/u.test(k) && !best.has(k))
+    for (const v of ['astronaut', 'cosmonaut', 'astronomer']) personOf.set(`${k} (${v})`, k);
+await resolve(personOf, 'people');
 const rows = [...runs]
   .filter(([k]) => best.has(k))
   .sort((a, b) => b[1] - a[1])

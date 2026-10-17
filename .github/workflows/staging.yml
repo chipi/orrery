@@ -83,6 +83,12 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      # Same release-name format as deploy-prod.yml: `gha-` + the first 8 hex of the
+      # SHA, so one commit is one release name in every tier's GlitchTip project. It
+      # was the full SHA here (homelab, 2026-10-17). A fixed length, not
+      # `git rev-parse --short`, whose length depends on the clone (this one is shallow).
+      - id: sha
+        run: echo "short=${GITHUB_SHA::8}" >> "$GITHUB_OUTPUT"
       - run: npm run build
         env:
           VITE_BASE: /orrery/
@@ -90,10 +96,10 @@ jobs:
           # secrets (see `environment: staging` above) — same NAMES as prod,
           # different VALUES, so staging events are separated from prod's. The
           # DSN/Umami keys are public (ship in the bundle) + ingest-only. Forks
-          # lack the env → empty → the SDKs no-op. RELEASE = GH SHA for grouping.
+          # lack the env → empty → the SDKs no-op. RELEASE = short GH SHA for grouping.
           PUBLIC_SENTRY_DSN: ${{ secrets.PUBLIC_SENTRY_DSN }}
           PUBLIC_SENTRY_ENVIRONMENT: staging
-          PUBLIC_SENTRY_RELEASE: gha-${{ github.sha }}
+          PUBLIC_SENTRY_RELEASE: gha-${{ steps.sha.outputs.short }}
           # Umami — staging has its OWN website id, so staging pageviews land in a
           # separate Umami site and never pollute prod's numbers.
           PUBLIC_UMAMI_HOST: https://analytics.orrerylearn.com

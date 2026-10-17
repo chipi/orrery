@@ -2,6 +2,7 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { paraglideVitePlugin } from '@inlang/paraglide-js';
 import { SvelteKitPWA } from '@vite-pwa/sveltekit';
 import { compression } from 'vite-plugin-compression2';
+import { sentryVitePlugin } from '@sentry/vite-plugin';
 import { defineConfig } from 'vitest/config';
 import { loadEnv } from 'vite';
 import { readFileSync } from 'node:fs';
@@ -183,6 +184,26 @@ export default defineConfig(({ mode, command }) => {
         // or a custom dynamic-import shim. Documented as a follow-up.
       }),
       sveltekit(),
+      // Prod deploy only (#595): inject Sentry debug ids DURING the build. The
+      // plugin prepends the id snippet in renderChunk, before Vite names the chunk,
+      // so a chunk's content-hashed name covers the injected bytes, and .br/.gz
+      // below are compressed from them. Injecting after the build (the first #595
+      // version) kept old names over new bytes, and Cloudflare's immutable cache
+      // served stale copies (2026-10-17). The id is derived from the chunk, so an
+      // unchanged chunk keeps its name and cache across deploys.
+      // Upload stays with the homelab mini: `disable-upload` skips the plugin's
+      // upload step, and authToken '' blocks the SENTRY_AUTH_TOKEN env fallback.
+      // scripts/sourcemaps/package.mjs pairs ids into the artifact's maps.
+      ...(process.env.SENTRY_SOURCEMAPS === '1'
+        ? [
+            sentryVitePlugin({
+              telemetry: false,
+              authToken: '',
+              release: { create: false, inject: false },
+              sourcemaps: { disable: 'disable-upload' },
+            }),
+          ]
+        : []),
       // Emit .br and .gz alongside every text-ish asset at build time
       // (GH #273 / W3). nginx serves them with brotli_static / gzip_static
       // when the client's Accept-Encoding allows. Images and fonts are
@@ -473,10 +494,10 @@ export default defineConfig(({ mode, command }) => {
     build: {
       chunkSizeWarningLimit: 700,
       // Prod deploy only (#595): hidden source maps (no sourceMappingURL comment, so
-      // browsers never fetch them). deploy-prod.yml then runs
-      // scripts/sourcemaps/package.mjs: sentry-cli injects debug ids, the touched JS
-      // is recompressed, the maps go into a run artifact for the homelab uploader,
-      // and every *.map* is removed from build/ before the rsync.
+      // browsers never fetch them). Debug ids are injected by sentryVitePlugin above;
+      // deploy-prod.yml then runs scripts/sourcemaps/package.mjs, which pairs each
+      // id into the artifact's js/map copies for the homelab uploader and removes
+      // every *.map* from build/ before the rsync. Served files are not modified.
       sourcemap: process.env.SENTRY_SOURCEMAPS === '1' ? 'hidden' : false,
     },
     test: {

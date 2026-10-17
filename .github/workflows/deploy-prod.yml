@@ -155,8 +155,10 @@ jobs:
           # `short` output preserved for the Sentry release labelling
           # downstream — Sentry wants HEAD's actual commit SHA on the
           # release, not the image tag (the deployed code is HEAD; the
-          # pipeline-runner image is independent).
-          echo "short=$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
+          # pipeline-runner image is independent). A fixed 8 hex, the same as
+          # staging.yml, so one commit has one release name in every tier;
+          # `git rev-parse --short` varies its length with the clone.
+          echo "short=$(git rev-parse HEAD | cut -c1-8)" >> "$GITHUB_OUTPUT"
           echo "::notice::Deploying with ORRERY_PIPELINE_IMAGE_TAG=$TAG"
 
       - name: Setup Node 22 (build static bundle for deploy)
@@ -206,7 +208,9 @@ jobs:
         run: |
           set -euo pipefail
           npm run build
-          # Inject debug ids, recompress the touched JS, move the maps out of build/.
+          # Debug ids were injected during the build (sentryVitePlugin). Pair them into
+          # the artifact's js/map copies, move the maps out of build/; served files
+          # are left exactly as built.
           node scripts/sourcemaps/package.mjs build sourcemaps-out
           # Never publish source maps: the bundle is served as-is from build/.
           LEFT=$(find build -name '*.map' -o -name '*.map.br' -o -name '*.map.gz' | wc -l)

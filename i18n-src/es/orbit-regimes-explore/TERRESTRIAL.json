@@ -6,7 +6,7 @@
   "residents": [
     {
       "id": "mercury",
-      "label": "Mercury — 0,39 AU",
+      "label": "Mercurio — 0,39 AU",
       "agency": "NATURAL"
     },
     {
@@ -16,12 +16,12 @@
     },
     {
       "id": "earth",
-      "label": "Earth — 1,00 AU",
+      "label": "Tierra — 1,00 AU",
       "agency": "NATURAL"
     },
     {
       "id": "mars",
-      "label": "Mars — 1,52 AU",
+      "label": "Marte — 1,52 AU",
       "agency": "NATURAL"
     }
   ],

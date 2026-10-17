@@ -2,13 +2,13 @@
   "name": "Perseverance",
   "type": "ROVER · ACTIVO",
   "first": "Primer helicóptero en otro planeta (Ingenuity); primer almacenamiento de muestras para Mars Sample Return",
-  "dispatch": "Perseverance fue a Marte en busca de los muertos. Descendió en 2021 en el suelo del Jezero Crater —una cuenca que alberga el delta de un río que alimentó un lago hace miles de millones de años, exactamente el tipo de lugar donde la vida habría dejado huellas— es el primer rover construido específicamente para buscar signos de vida antigua, y para hacer algo que ninguna misión había hecho: sellar rocas marcianas en tubos y apartarlas para que una nave espacial futura las llevara a casa. También entregó Ingenuity, el pequeño helicóptero que realizó el primer vuelo propulsado en otro planeta. Si las muestras que está almacenando alguna vez regresan, serán los primeros fragmentos de la superficie de otro planeta traídos de vuelta a la Tierra.",
+  "dispatch": "Perseverance fue a Marte en busca de los muertos. Descendió en 2021 en el suelo del cráter Jezero —una cuenca que alberga el delta de un río que alimentó un lago hace miles de millones de años, exactamente el tipo de lugar donde la vida habría dejado huellas— es el primer rover construido específicamente para buscar signos de vida antigua, y para hacer algo que ninguna misión había hecho: sellar rocas marcianas en tubos y apartarlas para que una nave espacial futura las llevara a casa. También entregó Ingenuity, el pequeño helicóptero que realizó el primer vuelo propulsado en otro planeta. Si las muestras que está almacenando alguna vez regresan, serán los primeros fragmentos de la superficie de otro planeta traídos de vuelta a la Tierra.",
   "description": "Perseverance es la misión de superficie marciana más ambiciosa jamás enviada. Mars Sample Return depende de ella: el rover está recopilando y almacenando muestras en tubos que una futura misión recuperará y traerá a la Tierra. Ingenuity, el primer helicóptero en otro planeta, realizó 72 misiones antes de retirarse con rotores dañados en enero de 2024, lo que demostró que el vuelo controlado es posible en la tenue atmósfera de Marte. MOXIE, un demostrador de oxígeno a partir de CO2, produjo el primer oxígeno fabricado localmente en otro planeta, un ensayo general para futuras misiones tripuladas a Marte.",
   "events": [
     {
       "met": 0,
       "label": "LANZAMIENTO",
-      "note": "Atlas V 541 desde Cape Canaveral SLC-41 —mismo tipo de vehículo que Curiosity.",
+      "note": "Atlas V 541 desde Cabo Cañaveral SLC-41 —mismo tipo de vehículo que Curiosity.",
       "type": "nominal"
     },
     {
@@ -26,7 +26,7 @@
     {
       "met": 203,
       "label": "EDL",
-      "note": "La grúa del cielo entrega el rover al Jezero Crater el 2021-02-18 —sitio de un antiguo delta fluvial.",
+      "note": "La grúa del cielo entrega el rover al cráter Jezero el 2021-02-18 —sitio de un antiguo delta fluvial.",
       "type": "nominal"
     },
     {

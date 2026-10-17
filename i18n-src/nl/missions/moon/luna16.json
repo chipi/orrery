@@ -4,7 +4,7 @@
   "first": "Eerste automatische terugkeer van maanmonsters; eerste niet-Amerikaanse maanmonsters",
   "description": "Luna 16 was de eerste succesvolle automatische terugkeer van maanmonsters van de Sovjet-Unie en de eerste niet-bemande terugkeer van de maan van welke aard ook. Nadat Apollo 11 in 1969 22 kg bemande monsters naar huis bracht, keerde Luna 16 een jaar later 101 gram regoliet van Mare Fecunditatis terug — een fractie van Apollo's lading, maar een diepgaand bewijs van concept voor de alternatieve architectuur. De missie gebruikte een Proton-K-booster en een directe terugkeerroute: afdaling naar het oppervlak, boorkern, opstart van de opstijgende fase, ballistisch terugkeerkapsel naar Kazakhstan. De techniek werd hergebruikt voor Luna 20 en Luna 24, en decennia later door Chang'e 5 en Chang'e 6.",
   "events": [
-    { "met": 0, "label": "LANCERING", "note": "Proton-K vanaf Baikonur, 1970-09-12.", "type": "nominal" },
+    { "met": 0, "label": "LANCERING", "note": "Proton-K vanaf Bajkonoer, 1970-09-12.", "type": "nominal" },
     { "met": 0.005, "label": "TLI", "note": "Translunarinjectie door het Blok-D bovenste trap.", "type": "nominal" },
     { "met": 5, "label": "TCM", "note": "Correctie halverwege de cruise van 4,5 dagen.", "type": "info" },
     { "met": 5.1, "label": "LANDING", "note": "Zachte landing in Mare Fecunditatis 1970-09-20. Oppervlaktebewerkingen + boorkern (101 g).", "type": "nominal" },

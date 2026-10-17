@@ -6,37 +6,37 @@
   "residents": [
     {
       "id": "mercury",
-      "label": "Mercury — 0,39 AU",
+      "label": "Mercúrio — 0,39 AU",
       "agency": "NATURAL"
     },
     {
       "id": "venus",
-      "label": "Venus — 0,72 AU",
+      "label": "Vênus — 0,72 AU",
       "agency": "NATURAL"
     },
     {
       "id": "earth",
-      "label": "Earth — 1,00 AU",
+      "label": "Terra — 1,00 AU",
       "agency": "NATURAL"
     },
     {
       "id": "mars",
-      "label": "Mars — 1,52 AU",
+      "label": "Marte — 1,52 AU",
       "agency": "NATURAL"
     }
   ],
   "firsts": [
     {
       "year": 1962,
-      "label": "Mariner 2 — primeira passagem por Venus (USA)"
+      "label": "Mariner 2 — primeira passagem por Vênus (USA)"
     },
     {
       "year": 1965,
-      "label": "Mariner 4 — primeira passagem por Mars (USA)"
+      "label": "Mariner 4 — primeira passagem por Marte (USA)"
     },
     {
       "year": 1974,
-      "label": "Mariner 10 — primeira passagem por Mercury (USA)"
+      "label": "Mariner 10 — primeira passagem por Mercúrio (USA)"
     }
   ],
   "science_link": {

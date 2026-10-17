@@ -8,7 +8,7 @@
   ],
   "body_paragraphs": [
     "C3 è il quadrato della velocità iperbolica in eccesso. Unità: km²/s². Ti dice quanta energia oltre la velocità di fuga il tuo vettore di lancio deve fornire. C3 = 0 significa che sfuggi appena alla gravità della Terra, arrivando all'infinito con velocità residua zero. C3 = 25 km²/s² significa che arrivi con V∞ = 5 km/s di velocità eliocentrica residua.",
-    "I vettori di lancio sono caratterizzati dalla loro curva C3-vs-carico. Falcon Heavy può lanciare ~16 tonnellate a C3=10, ma solo ~5 tonnellate a C3=80. Marte tipicamente richiede C3 intorno a 8-12. Giove diretto: C3 intorno a 80. New Horizons è stato lanciato con C3 = 158 km²/s² — il più alto di qualunque missione mai realizzata — per fare il viaggio a Pluto in soli 9,5 anni.",
+    "I vettori di lancio sono caratterizzati dalla loro curva C3-vs-carico. Falcon Heavy può lanciare ~16 tonnellate a C3=10, ma solo ~5 tonnellate a C3=80. Marte tipicamente richiede C3 intorno a 8-12. Giove diretto: C3 intorno a 80. New Horizons è stato lanciato con C3 = 158 km²/s² — il più alto di qualunque missione mai realizzata — per fare il viaggio a Plutone in soli 9,5 anni.",
     "Nel tab FLIGHT di `/missions` di Orrery, il C3 di ogni missione interplanetaria è il punto dati canonico della prima riga. È il singolo numero che cattura \"quanto è stato difficile lanciarla\"."
   ],
   "formula_caption": "C3 è semplicemente V∞ al quadrato. Stessa fisica, unità diverse."

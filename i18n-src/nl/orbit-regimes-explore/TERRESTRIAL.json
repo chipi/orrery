@@ -6,7 +6,7 @@
   "residents": [
     {
       "id": "mercury",
-      "label": "Mercury — 0,39 AU",
+      "label": "Mercurius — 0,39 AU",
       "agency": "NATURAL"
     },
     {
@@ -16,7 +16,7 @@
     },
     {
       "id": "earth",
-      "label": "Earth — 1,00 AU",
+      "label": "Aarde — 1,00 AU",
       "agency": "NATURAL"
     },
     {
@@ -36,7 +36,7 @@
     },
     {
       "year": 1974,
-      "label": "Mariner 10 — eerste Mercury-voorbijvlucht (USA)"
+      "label": "Mariner 10 — eerste Mercurius-voorbijvlucht (USA)"
     }
   ],
   "science_link": {

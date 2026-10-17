@@ -6,22 +6,22 @@
   "residents": [
     {
       "id": "jupiter",
-      "label": "Jupiter — 5,20 AU",
+      "label": "Giove — 5,20 AU",
       "agency": "NATURAL"
     },
     {
       "id": "saturn",
-      "label": "Saturn — 9,58 AU, sistema di anelli",
+      "label": "Saturno — 9,58 AU, sistema di anelli",
       "agency": "NATURAL"
     },
     {
       "id": "uranus",
-      "label": "Uranus — 19,18 AU, inclinato 97°",
+      "label": "Urano — 19,18 AU, inclinato 97°",
       "agency": "NATURAL"
     },
     {
       "id": "neptune",
-      "label": "Neptune — 30,07 AU, i venti più veloci del sistema",
+      "label": "Nettuno — 30,07 AU, i venti più veloci del sistema",
       "agency": "NATURAL"
     }
   ],

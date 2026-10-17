@@ -1,0 +1,242 @@
+[
+  {
+    "rel": "belts/asteroid.json",
+    "at": "total_mass_relative",
+    "old": "≈ 4 % della Luna (≈ 3 % di Pluto)",
+    "new": "≈ 4 % della Luna (≈ 3 % di Plutone)"
+  },
+  {
+    "rel": "belts/kuiper.json",
+    "at": "largest_members.0",
+    "old": "Pluto — pianeta nano, ≈ 2.377 km di diametro, accoppiato con Caronte come sistema binario",
+    "new": "Plutone — pianeta nano, ≈ 2.377 km di diametro, accoppiato con Caronte come sistema binario"
+  },
+  {
+    "rel": "belts/kuiper.json",
+    "at": "largest_members.1",
+    "old": "Eris — leggermente più massiccio di Pluto, scoperto nel 2005 (la sua scoperta ha innescato la riclassificazione di Pluto)",
+    "new": "Eris — leggermente più massiccio di Plutone, scoperto nel 2005 (la sua scoperta ha innescato la riclassificazione di Plutone)"
+  },
+  {
+    "rel": "belts/kuiper.json",
+    "at": "discovered",
+    "old": "1992 — David Jewitt e Jane Luu rilevano 1992 QB1 (ora 15760 Albion), il primo oggetto confermato della Fascia di Kuiper dopo Pluto + Caronte. La fascia stessa fu prevista nel 1951 da Gerard Kuiper come materiale residuo del disco del sistema solare primordiale.",
+    "new": "1992 — David Jewitt e Jane Luu rilevano 1992 QB1 (ora 15760 Albion), il primo oggetto confermato della Fascia di Kuiper dopo Plutone + Caronte. La fascia stessa fu prevista nel 1951 da Gerard Kuiper come materiale residuo del disco del sistema solare primordiale."
+  },
+  {
+    "rel": "belts/kuiper.json",
+    "at": "mission_visits.0",
+    "old": "New Horizons — NASA, 2015 (sorvolo di Pluto + Caronte) + 2019 (Arrokoth, primo piano ravvicinato di un oggetto classico della Fascia di Kuiper)",
+    "new": "New Horizons — NASA, 2015 (sorvolo di Plutone + Caronte) + 2019 (Arrokoth, primo piano ravvicinato di un oggetto classico della Fascia di Kuiper)"
+  },
+  {
+    "rel": "belts/kuiper.json",
+    "at": "library_labels.kuiper-belt-newhorizons",
+    "old": "NASA New Horizons — sorvoli di Pluto + Arrokoth",
+    "new": "NASA New Horizons — sorvoli di Plutone + Arrokoth"
+  },
+  {
+    "rel": "fleet/orbiter/cassini.json",
+    "at": "tagline",
+    "old": "Saturno orbiter; Huygens atterrato su Titan",
+    "new": "Saturno orbiter; Huygens atterrato su Titano"
+  },
+  {
+    "rel": "fleet/orbiter/cassini.json",
+    "at": "description",
+    "old": "L'orbitante di Saturno (2004-2017) che portava lander Huygens dell'ESA in Titan — ancora l'unico sbarco su una luna di un pianeta esterno. Scoperto le prugne geyser attivi di Encelado e l'oceano globale sotto la sua crosta ghiacciata. Finito in un tuffo pianificato nell'atmosfera di Saturno.",
+    "new": "L'orbitante di Saturno (2004-2017) che portava lander Huygens dell'ESA in Titano — ancora l'unico sbarco su una luna di un pianeta esterno. Scoperto le prugne geyser attivi di Encelado e l'oceano globale sotto la sua crosta ghiacciata. Finito in un tuffo pianificato nell'atmosfera di Saturno."
+  },
+  {
+    "rel": "fleet/orbiter/cassini.json",
+    "at": "best_known_for",
+    "old": "Saturno orbiter; Huygens atterrato su Titan",
+    "new": "Saturno orbiter; Huygens atterrato su Titano"
+  },
+  {
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "comparison",
+    "old": "Se ti trovassi su Cerere (il corpo più grande) faresti fatica a vedere un altro asteroide senza telescopio. La massa totale della fascia è all'incirca quella di Pluto.",
+    "new": "Se ti trovassi su Cerere (il corpo più grande) faresti fatica a vedere un altro asteroide senza telescopio. La massa totale della fascia è all'incirca quella di Plutone."
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "residents.1.label",
+    "old": "Saturn — 9,58 AU, sistema di anelli",
+    "new": "Saturno — 9,58 AU, sistema di anelli"
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "story",
+    "old": "Un anello di corpi ghiacciati oltre Nettuno — da 30 a 50 AU. L'analogo congelato della fascia degli asteroidi: centinaia di migliaia di corpi di cui solo i più grandi sono stati risolti. Composti di metano, ammoniaca, ghiaccio d'acqua + roccia. Pluto fu il primo membro identificato, nel 1930, sebbene la fascia non fosse riconosciuta come popolazione fino agli anni '90, quando Jewitt + Luu trovarono il secondo membro (1992 QB1). New Horizons ha regalato all'umanità i suoi primi sguardi ravvicinati a DUE oggetti Kuiper — Pluto nel 2015 e Arrokoth nel 2019.",
+    "new": "Un anello di corpi ghiacciati oltre Nettuno — da 30 a 50 AU. L'analogo congelato della fascia degli asteroidi: centinaia di migliaia di corpi di cui solo i più grandi sono stati risolti. Composti di metano, ammoniaca, ghiaccio d'acqua + roccia. Plutone fu il primo membro identificato, nel 1930, sebbene la fascia non fosse riconosciuta come popolazione fino agli anni '90, quando Jewitt + Luu trovarono il secondo membro (1992 QB1). New Horizons ha regalato all'umanità i suoi primi sguardi ravvicinati a DUE oggetti Kuiper — Plutone nel 2015 e Arrokoth nel 2019."
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "residents.0.label",
+    "old": "Pluto — 39,5 AU, il più grande conosciuto",
+    "new": "Plutone — 39,5 AU, il più grande conosciuto"
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "firsts.0.label",
+    "old": "Scoperta di Pluto — primo KBO identificato (Tombaugh, USA)",
+    "new": "Scoperta di Plutone — primo KBO identificato (Tombaugh, USA)"
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "firsts.1.label",
+    "old": "New Horizons — primo sorvolo di Pluto (USA)",
+    "new": "New Horizons — primo sorvolo di Plutone (USA)"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "science_sections.1.why",
+    "old": "Triton è l'unico grande satellite del sistema solare con orbita retrograda — forte evidenza che sia stato catturato dalla Kuiper Belt, non formato insieme a Nettuno.",
+    "new": "Tritone è l'unico grande satellite del sistema solare con orbita retrograda — forte evidenza che sia stato catturato dalla Kuiper Belt, non formato insieme a Nettuno."
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "science_sections.1.why",
+    "old": "Saturno ha ~274 lune confermate — più di qualsiasi altro pianeta — con Titan abbastanza grande da possedere una densa atmosfera propria ed Encelado che espelle attivamente acqua da un oceano subsuperficiale.",
+    "new": "Saturno ha ~274 lune confermate — più di qualsiasi altro pianeta — con Titano abbastanza grande da possedere una densa atmosfera propria ed Encelado che espelle attivamente acqua da un oceano subsuperficiale."
+  },
+  {
+    "rel": "programs/cassini.json",
+    "at": "the_land.0.md",
+    "old": "Negli anni '90 Saturno era stato osservato tre volte, e solo di passaggio: Pioneer 11 e le due Voyager avevano attraversato il sistema in poche ore ciascuna, restituendo scorci allettanti di un mondo ad anelli con dozzine di lune e una luna gigante avvolta nella foschia, Titan, la cui superficie nessuna fotocamera riusciva a penetrare. Un sorvolo può fotografare un luogo; non può viverci. Per comprendere Saturno — i suoi anelli, il suo clima, la sua improbabile famiglia di lune — una sonda avrebbe dovuto fermarsi e restare.",
+    "new": "Negli anni '90 Saturno era stato osservato tre volte, e solo di passaggio: Pioneer 11 e le due Voyager avevano attraversato il sistema in poche ore ciascuna, restituendo scorci allettanti di un mondo ad anelli con dozzine di lune e una luna gigante avvolta nella foschia, Titano, la cui superficie nessuna fotocamera riusciva a penetrare. Un sorvolo può fotografare un luogo; non può viverci. Per comprendere Saturno — i suoi anelli, il suo clima, la sua improbabile famiglia di lune — una sonda avrebbe dovuto fermarsi e restare."
+  },
+  {
+    "rel": "programs/cassini.json",
+    "at": "the_land.1.md",
+    "old": "Cassini fu costruita esattamente per questo, e fu costruita da una coalizione: la NASA fornì l'orbiter, l'Agenzia Spaziale Europea fornì un lander chiamato Huygens per scendere attraverso la foschia di Titan, e l'Italia costruì la sua antenna ad alto guadagno. Venne lanciata nel 1997 come una delle sonde interplanetarie più grandi e capaci mai inviate — con davanti un viaggio di sette anni e tre miliardi e mezzo di chilometri solo per raggiungere il pianeta che era stata progettata per studiare.",
+    "new": "Cassini fu costruita esattamente per questo, e fu costruita da una coalizione: la NASA fornì l'orbiter, l'Agenzia Spaziale Europea fornì un lander chiamato Huygens per scendere attraverso la foschia di Titano, e l'Italia costruì la sua antenna ad alto guadagno. Venne lanciata nel 1997 come una delle sonde interplanetarie più grandi e capaci mai inviate — con davanti un viaggio di sette anni e tre miliardi e mezzo di chilometri solo per raggiungere il pianeta che era stata progettata per studiare."
+  },
+  {
+    "rel": "programs/cassini.json",
+    "at": "goals.0.md",
+    "old": "L'obiettivo principale era diventare il primo residente di Saturno: entrare in orbita e restarci per anni, studiando l'atmosfera del pianeta, i suoi anelli, il suo campo magnetico e le sue lune attraverso il lento susseguirsi delle stagioni saturniane — la scienza paziente e continuativa che nessun sorvolo può fare. Tra gli obiettivi principali c'era Titan, l'unica luna abbastanza grande da mantenere un'atmosfera densa, e il grande mistero del sistema solare esterno.",
+    "new": "L'obiettivo principale era diventare il primo residente di Saturno: entrare in orbita e restarci per anni, studiando l'atmosfera del pianeta, i suoi anelli, il suo campo magnetico e le sue lune attraverso il lento susseguirsi delle stagioni saturniane — la scienza paziente e continuativa che nessun sorvolo può fare. Tra gli obiettivi principali c'era Titano, l'unica luna abbastanza grande da mantenere un'atmosfera densa, e il grande mistero del sistema solare esterno."
+  },
+  {
+    "rel": "programs/cassini.json",
+    "at": "goals.1.caption",
+    "old": "Cassini trasportò la sonda europea Huygens sulla schiena per sette anni, poi la rilasciò perché scendesse col paracadute su Titan. L'orbiter stesso avrebbe trascorso tredici anni girando attorno a Saturno, infilandosi tra le lune e, alla fine, tra il pianeta e i suoi anelli.",
+    "new": "Cassini trasportò la sonda europea Huygens sulla schiena per sette anni, poi la rilasciò perché scendesse col paracadute su Titano. L'orbiter stesso avrebbe trascorso tredici anni girando attorno a Saturno, infilandosi tra le lune e, alla fine, tra il pianeta e i suoi anelli."
+  },
+  {
+    "rel": "programs/cassini.json",
+    "at": "goals.2.md",
+    "old": "Il secondo obiettivo apparteneva a Huygens: scendere attraverso la foschia arancione di Titan e atterrare — o ammarare — su una superficie che nessuno aveva mai visto, e scoprire se la luna avesse davvero i laghi e i fiumi di metano liquido che la teoria prevedeva. Fu un tentativo singolo, senza ritorno, dell'atterraggio più distante mai tentato.",
+    "new": "Il secondo obiettivo apparteneva a Huygens: scendere attraverso la foschia arancione di Titano e atterrare — o ammarare — su una superficie che nessuno aveva mai visto, e scoprire se la luna avesse davvero i laghi e i fiumi di metano liquido che la teoria prevedeva. Fu un tentativo singolo, senza ritorno, dell'atterraggio più distante mai tentato."
+  },
+  {
+    "rel": "programs/cassini.json",
+    "at": "outcome.0.md",
+    "old": "Cassini raggiunse Saturno nel 2004 e si sistemò in orbita. Mesi dopo rilasciò Huygens, che scese col paracadute attraverso la foschia di Titan nel gennaio 2005 e restituì le prime immagini dalla superficie di una luna del sistema solare esterno: una pianura arancione e fioca cosparsa di ciottoli arrotondati di ghiaccio d'acqua, modellata da fiumi di metano liquido. Resta l'unico atterraggio che l'umanità abbia mai compiuto oltre la fascia degli asteroidi.",
+    "new": "Cassini raggiunse Saturno nel 2004 e si sistemò in orbita. Mesi dopo rilasciò Huygens, che scese col paracadute attraverso la foschia di Titano nel gennaio 2005 e restituì le prime immagini dalla superficie di una luna del sistema solare esterno: una pianura arancione e fioca cosparsa di ciottoli arrotondati di ghiaccio d'acqua, modellata da fiumi di metano liquido. Resta l'unico atterraggio che l'umanità abbia mai compiuto oltre la fascia degli asteroidi."
+  },
+  {
+    "rel": "programs/cassini.json",
+    "at": "outcome.2.md",
+    "old": "Cassini lavorò per tredici anni, ben oltre la missione prevista, finché il carburante si esaurì. Piuttosto che rischiare che alla fine si schiantasse su Encelado o Titan contaminandole con microbi terrestri, i pianificatori della missione scelsero una fine deliberata: ventidue immersioni attraverso la fessura inesplorata tra Saturno e i suoi anelli, restituendo dati fino all'ultimo, e poi un tuffo finale nell'atmosfera del pianeta nel settembre 2017, trasmettendo fino a quando non bruciò.",
+    "new": "Cassini lavorò per tredici anni, ben oltre la missione prevista, finché il carburante si esaurì. Piuttosto che rischiare che alla fine si schiantasse su Encelado o Titano contaminandole con microbi terrestri, i pianificatori della missione scelsero una fine deliberata: ventidue immersioni attraverso la fessura inesplorata tra Saturno e i suoi anelli, restituendo dati fino all'ultimo, e poi un tuffo finale nell'atmosfera del pianeta nel settembre 2017, trasmettendo fino a quando non bruciò."
+  },
+  {
+    "rel": "programs/cassini.json",
+    "at": "legacy.1.md",
+    "old": "La seconda sono Encelado e Titan: due mondi oceanici e un mondo di metano spostati, dai dati di Cassini, in prima fila tra i luoghi a cui vale la pena tornare nella ricerca di vita. Ogni proposta per cercare biologia nel sistema solare esterno ora inizia con ciò che Cassini ha trovato.",
+    "new": "La seconda sono Encelado e Titano: due mondi oceanici e un mondo di metano spostati, dai dati di Cassini, in prima fila tra i luoghi a cui vale la pena tornare nella ricerca di vita. Ogni proposta per cercare biologia nel sistema solare esterno ora inizia con ciò che Cassini ha trovato."
+  },
+  {
+    "rel": "programs/cassini.json",
+    "at": "lessons.0.md",
+    "old": "La lezione di Cassini è che restare batte attraversare. Lo stesso pianeta che le Voyager caratterizzarono in ore rivelò i suoi segreti più profondi — l'oceano di Encelado, il ciclo del metano di Titan — solo a una sonda disposta a trascorrere tredici anni in orbita. Per le domande più difficili, la presenza nel tempo vale più di qualsiasi singolo sguardo brillante.",
+    "new": "La lezione di Cassini è che restare batte attraversare. Lo stesso pianeta che le Voyager caratterizzarono in ore rivelò i suoi segreti più profondi — l'oceano di Encelado, il ciclo del metano di Titano — solo a una sonda disposta a trascorrere tredici anni in orbita. Per le domande più difficili, la presenza nel tempo vale più di qualsiasi singolo sguardo brillante."
+  },
+  {
+    "rel": "programs/voyager.json",
+    "at": "outcome.0.md",
+    "old": "Il tour mantenne più di quanto promesso. A Giove nel 1979 le Voyager trovarono vulcani attivi sulla luna Io — i primi mai visti oltre la Terra — e il ghiaccio liscio di Europa che nascondeva quello che sembrava un oceano. A Saturno risolsero gli anelli in migliaia di filamenti intricati e passarono vicino alla luna Titan avvolta nella foschia. Quel sorvolo di Titan piegò la traiettoria di Voyager 1 verso l'alto e fuori dal piano dei pianeti, inviandola in salita verso il confine del sistema solare.",
+    "new": "Il tour mantenne più di quanto promesso. A Giove nel 1979 le Voyager trovarono vulcani attivi sulla luna Io — i primi mai visti oltre la Terra — e il ghiaccio liscio di Europa che nascondeva quello che sembrava un oceano. A Saturno risolsero gli anelli in migliaia di filamenti intricati e passarono vicino alla luna Titano avvolta nella foschia. Quel sorvolo di Titano piegò la traiettoria di Voyager 1 verso l'alto e fuori dal piano dei pianeti, inviandola in salita verso il confine del sistema solare."
+  },
+  {
+    "rel": "programs/voyager.json",
+    "at": "outcome.1.md",
+    "old": "Voyager 2 completò l'intero Grand Tour. Raggiunse Urano nel 1986 e Nettuno nel 1989 — l'unica sonda spaziale mai arrivata a entrambi i mondi — trovando un pianeta inclinato su un lato, un gigante blu profondo con i venti più veloci del sistema solare, e una luna, Triton, con geyser di azoto che eruttavano nello spazio. Ancora oggi, tutto ciò che l'umanità conosce da distanza ravvicinata sui giganti di ghiaccio fu raccolto in quei due brevi sorvoli.",
+    "new": "Voyager 2 completò l'intero Grand Tour. Raggiunse Urano nel 1986 e Nettuno nel 1989 — l'unica sonda spaziale mai arrivata a entrambi i mondi — trovando un pianeta inclinato su un lato, un gigante blu profondo con i venti più veloci del sistema solare, e una luna, Tritone, con geyser di azoto che eruttavano nello spazio. Ancora oggi, tutto ciò che l'umanità conosce da distanza ravvicinata sui giganti di ghiaccio fu raccolto in quei due brevi sorvoli."
+  },
+  {
+    "rel": "satellites/charon.json",
+    "at": "library_labels.charon-new-horizons",
+    "old": "NASA New Horizons — sorvolo di Pluto-Caronte (2015)",
+    "new": "NASA New Horizons — sorvolo di Plutone-Caronte (2015)"
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "library_labels.titan-wiki",
+    "old": "Wikipedia — Titan",
+    "new": "Wikipedia — Titano"
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "library_labels.titan-nasa",
+    "old": "NASA Science — panoramica di Titan",
+    "new": "NASA Science — panoramica di Titano"
+  },
+  {
+    "rel": "satellites/titan.json",
+    "at": "library_labels.titan-dragonfly",
+    "old": "NASA Dragonfly — missione rotore nucleare verso Titan",
+    "new": "NASA Dragonfly — missione rotore nucleare verso Titano"
+  },
+  {
+    "rel": "satellites/triton.json",
+    "at": "description",
+    "old": "La più grande luna di Nettuno e uno dei mondi geologicamente più attivi del sistema solare. Triton orbita attorno a Nettuno all'indietro (retrogrado) e con un'inclinazione estrema — diagnostico di un oggetto catturato dalla Fascia di Kuiper, il che lo rende probabilmente un fratello di Plutone piuttosto che una luna nettuniana nativa. Voyager 2 ha rilevato geyser attivi di azoto che espellono polvere organica scura per 8 km in una tenue atmosfera di azoto; l'emisfero meridionale presenta il 'terreno a melone' — una rete di fossette e creste mai vista altrove nel sistema solare. L'orbita retrograda di Triton sta decadendo per effetto delle maree; in circa 3,6 Gyr verrà o frantumato in un anello simile a quello di Saturno o si schianterà su Nettuno.",
+    "new": "La più grande luna di Nettuno e uno dei mondi geologicamente più attivi del sistema solare. Tritone orbita attorno a Nettuno all'indietro (retrogrado) e con un'inclinazione estrema — diagnostico di un oggetto catturato dalla Fascia di Kuiper, il che lo rende probabilmente un fratello di Plutone piuttosto che una luna nettuniana nativa. Voyager 2 ha rilevato geyser attivi di azoto che espellono polvere organica scura per 8 km in una tenue atmosfera di azoto; l'emisfero meridionale presenta il 'terreno a melone' — una rete di fossette e creste mai vista altrove nel sistema solare. L'orbita retrograda di Tritone sta decadendo per effetto delle maree; in circa 3,6 Gyr verrà o frantumato in un anello simile a quello di Saturno o si schianterà su Nettuno."
+  },
+  {
+    "rel": "satellites/triton.json",
+    "at": "library_labels.triton-wiki",
+    "old": "Wikipedia — Triton",
+    "new": "Wikipedia — Tritone"
+  },
+  {
+    "rel": "satellites/triton.json",
+    "at": "science_sections.0.why",
+    "old": "L'inclinazione orbitale di Triton di 156,8° — retrograda, fortemente inclinata rispetto all'equatore di Nettuno — è la prova decisiva di una cattura dalla Kuiper Belt piuttosto che di una formazione insieme a Nettuno.",
+    "new": "L'inclinazione orbitale di Tritone di 156,8° — retrograda, fortemente inclinata rispetto all'equatore di Nettuno — è la prova decisiva di una cattura dalla Kuiper Belt piuttosto che di una formazione insieme a Nettuno."
+  },
+  {
+    "rel": "science/planets/_intro.json",
+    "at": "paragraphs.1",
+    "old": "Sei sezioni. Le prime tre riguardano i pianeti stessi — inclinazione assiale, campi magnetici e la geometria del giorno e della notte. Le due successive riguardano il sistema: i satelliti che orbitano ogni pianeta (Galileans, Titan, Triton, Caronte), e le statistiche di confronto che ti permettono di vedere a colpo d'occhio come Giove differisce dalla Terra. L'ultima sezione è un'indagine dei veicoli spaziali che studiano attivamente ogni pianeta in questo momento, nel 2026 — cosa c'è su Marte (sei orbiter attivi, più agenzie), su Giove (Juno), su Venere (Akatsuki), e le lunghe assenze altrove.",
+    "new": "Sei sezioni. Le prime tre riguardano i pianeti stessi — inclinazione assiale, campi magnetici e la geometria del giorno e della notte. Le due successive riguardano il sistema: i satelliti che orbitano ogni pianeta (Galileans, Titano, Tritone, Caronte), e le statistiche di confronto che ti permettono di vedere a colpo d'occhio come Giove differisce dalla Terra. L'ultima sezione è un'indagine dei veicoli spaziali che studiano attivamente ogni pianeta in questo momento, nel 2026 — cosa c'è su Marte (sei orbiter attivi, più agenzie), su Giove (Juno), su Venere (Akatsuki), e le lunghe assenze altrove."
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "body_paragraphs.1",
+    "old": "Saturno ha il maggior numero di lune di qualsiasi pianeta — ~290 con orbite confermate a partire dal 2026. Due si distinguono: Titan, il secondo satellite più grande del sistema solare (dopo Ganimede), dotato di un'atmosfera di azoto più densa di quella terrestre al livello della superficie; la sonda Huygens vi atterrò nel 2005 e restituì le prime immagini della superficie. Encelado, molto più piccolo, presenta una superficie ghiacciata giovane, creste a «strisce di tigre» al polo sud, e sfiati crivolcanici attivi che spruzzano vapor d'acqua e composti organici nello spazio — campionati direttamente da Cassini nel suo passaggio attraverso il pennacchio. I pennacchi di Encelado sono la sorgente dell'anello E di Saturno — il ghiaccio crivolcanico fornisce direttamente l'anello.",
+    "new": "Saturno ha il maggior numero di lune di qualsiasi pianeta — ~290 con orbite confermate a partire dal 2026. Due si distinguono: Titano, il secondo satellite più grande del sistema solare (dopo Ganimede), dotato di un'atmosfera di azoto più densa di quella terrestre al livello della superficie; la sonda Huygens vi atterrò nel 2005 e restituì le prime immagini della superficie. Encelado, molto più piccolo, presenta una superficie ghiacciata giovane, creste a «strisce di tigre» al polo sud, e sfiati crivolcanici attivi che spruzzano vapor d'acqua e composti organici nello spazio — campionati direttamente da Cassini nel suo passaggio attraverso il pennacchio. I pennacchi di Encelado sono la sorgente dell'anello E di Saturno — il ghiaccio crivolcanico fornisce direttamente l'anello."
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "body_paragraphs.2",
+    "old": "Plutone e Caronte sono unici: con un raggio di 606 km rispetto ai 1188 km di Plutone, Caronte è metà del diametro di Plutone — il maggior rapporto luna-pianeta del sistema. I due corpi orbitano attorno a un centro di massa comune che si trova al di fuori della superficie di Plutone, quindi nessuno dei due oggetti orbita veramente attorno all'altro; si orbitano reciprocamente attorno a un baricentro condiviso. Il sorvolo di New Horizons nel 2015 ha fotografato entrambi per la prima volta, rivelando depositi equatoriali rossi su Caronte (tolini dall'atmosfera di Plutone soffiati sopra) e una pianura di azoto ghiacciata a forma di cuore su Plutone. Triton di Nettuno è similmente catturato (orbita retrograda, geologicamente giovane — possibilmente catturato dalla fascia di Kuiper) — e come Caronte, quasi certamente ospita un oceano subsuperficiale.",
+    "new": "Plutone e Caronte sono unici: con un raggio di 606 km rispetto ai 1188 km di Plutone, Caronte è metà del diametro di Plutone — il maggior rapporto luna-pianeta del sistema. I due corpi orbitano attorno a un centro di massa comune che si trova al di fuori della superficie di Plutone, quindi nessuno dei due oggetti orbita veramente attorno all'altro; si orbitano reciprocamente attorno a un baricentro condiviso. Il sorvolo di New Horizons nel 2015 ha fotografato entrambi per la prima volta, rivelando depositi equatoriali rossi su Caronte (tolini dall'atmosfera di Plutone soffiati sopra) e una pianura di azoto ghiacciata a forma di cuore su Plutone. Tritone di Nettuno è similmente catturato (orbita retrograda, geologicamente giovane — possibilmente catturato dalla fascia di Kuiper) — e come Caronte, quasi certamente ospita un oceano subsuperficiale."
+  },
+  {
+    "rel": "science/planets/sub-solar-and-terminator.json",
+    "at": "body_paragraphs.1",
+    "old": "Il terminatore ha una lunga storia come zona scientificamente più ricca per osservare i dettagli della superficie. Le ombre sono più lunghe lì, esagerando la topografia. Le immagini lunari dell'era Apollo per la geologia dei crateri venivano quasi sempre scattate con il terminatore nelle vicinanze. Le immagini più suggestive dei pianeti esterni scattate da Voyager 1 + 2 (la struttura degli anelli di Saturn, la Grande Macchia Scura di Nettuno) furono riprese vicino al terminatore di ciascun corpo per la stessa ragione: il basso angolo solare mette in risalto le caratteristiche della superficie.",
+    "new": "Il terminatore ha una lunga storia come zona scientificamente più ricca per osservare i dettagli della superficie. Le ombre sono più lunghe lì, esagerando la topografia. Le immagini lunari dell'era Apollo per la geologia dei crateri venivano quasi sempre scattate con il terminatore nelle vicinanze. Le immagini più suggestive dei pianeti esterni scattate da Voyager 1 + 2 (la struttura degli anelli di Saturno, la Grande Macchia Scura di Nettuno) furono riprese vicino al terminatore di ciascun corpo per la stessa ragione: il basso angolo solare mette in risalto le caratteristiche della superficie."
+  },
+  {
+    "rel": "science/propulsion/c3.json",
+    "at": "body_paragraphs.1",
+    "old": "I vettori di lancio sono caratterizzati dalla loro curva C3-vs-carico. Falcon Heavy può lanciare ~16 tonnellate a C3=10, ma solo ~5 tonnellate a C3=80. Marte tipicamente richiede C3 intorno a 8-12. Giove diretto: C3 intorno a 80. New Horizons è stato lanciato con C3 = 158 km²/s² — il più alto di qualunque missione mai realizzata — per fare il viaggio a Pluto in soli 9,5 anni.",
+    "new": "I vettori di lancio sono caratterizzati dalla loro curva C3-vs-carico. Falcon Heavy può lanciare ~16 tonnellate a C3=10, ma solo ~5 tonnellate a C3=80. Marte tipicamente richiede C3 intorno a 8-12. Giove diretto: C3 intorno a 80. New Horizons è stato lanciato con C3 = 158 km²/s² — il più alto di qualunque missione mai realizzata — per fare il viaggio a Plutone in soli 9,5 anni."
+  }
+]

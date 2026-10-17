@@ -8,7 +8,7 @@
     },
     {
       "type": "prose",
-      "md": "Esto comenzó con Spacelab en 1983 — un laboratorio de construcción europea que viajaba en la bodega de carga del Space Shuttle y convertía al Shuttle en una plataforma científica, llevando al primer astronauta de ESA en su primer vuelo. Continuó con Columbus, el laboratorio permanente de Europa acoplado a la International Space Station, y con el Automated Transfer Vehicle, la nave de carga más grande y sofisticada de su época. En el camino, los astronautas europeos volaron en Shuttles y Soyuz, vivieron a bordo de Mir y la ISS, y comandaron la Estación. Europa nunca lanzó su propia tripulación — y se volvió esencial para casi todos los que sí lo hicieron."
+      "md": "Esto comenzó con Spacelab en 1983 — un laboratorio de construcción europea que viajaba en la bodega de carga del Space Shuttle y convertía al Shuttle en una plataforma científica, llevando al primer astronauta de ESA en su primer vuelo. Continuó con Columbus, el laboratorio permanente de Europa acoplado a la International Space Station, y con el Automated Transfer Vehicle, la nave de carga más grande y sofisticada de su época. En el camino, los astronautas europeos volaron en Shuttles y Soyuz, vivieron a bordo de Mir y la EEI, y comandaron la Estación. Europa nunca lanzó su propia tripulación — y se volvió esencial para casi todos los que sí lo hicieron."
     }
   ],
   "goals": [
@@ -35,16 +35,16 @@
       "image": {
         "reuse": "fleet/atv/02"
       },
-      "caption": "El Automated Transfer Vehicle — el carguero de Europa para la ISS. Veinte toneladas completamente cargado, volaba solo hacia un acoplamiento automático con la Estación, entregaba carga, agua, aire y propelente, y usaba sus motores para elevar la órbita de la ISS.",
+      "caption": "El Automated Transfer Vehicle — el carguero de Europa para la EEI. Veinte toneladas completamente cargado, volaba solo hacia un acoplamiento automático con la Estación, entregaba carga, agua, aire y propelente, y usaba sus motores para elevar la órbita de la EEI.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Los resultados fueron sustanciales y distintivamente europeos. Spacelab voló en 22 misiones Shuttle entre 1983 y 1998, dando a Europa dos décadas de ciencia tripulada práctica y una generación de astronautas experimentados. Columbus, instalado en 2008, dio a Europa un laboratorio permanente en órbita y la convirtió en socio de primer rango en la estructura más grande que los humanos han construido jamás. Y el Automated Transfer Vehicle — cinco enormes cargueros volados entre 2008 y 2015, cada uno nombrado en honor a un pensador europeo desde Jules Verne hasta Georges Lemaître — hizo algo genuinamente avanzado: una nave espacial de veinte toneladas que navegaba por sí misma hacia un acoplamiento totalmente automático con la ISS, entregaba suministros y combustible, y reimpulsaba toda la Estación con sus motores."
+      "md": "Los resultados fueron sustanciales y distintivamente europeos. Spacelab voló en 22 misiones Shuttle entre 1983 y 1998, dando a Europa dos décadas de ciencia tripulada práctica y una generación de astronautas experimentados. Columbus, instalado en 2008, dio a Europa un laboratorio permanente en órbita y la convirtió en socio de primer rango en la estructura más grande que los humanos han construido jamás. Y el Automated Transfer Vehicle — cinco enormes cargueros volados entre 2008 y 2015, cada uno nombrado en honor a un pensador europeo desde Jules Verne hasta Georges Lemaître — hizo algo genuinamente avanzado: una nave espacial de veinte toneladas que navegaba por sí misma hacia un acoplamiento totalmente automático con la EEI, entregaba suministros y combustible, y reimpulsaba toda la Estación con sus motores."
     },
     {
       "type": "prose",
-      "md": "Esa experiencia del ATV luego pagó un dividendo inesperado. La tecnología que Europa desarrolló para construir una nave espacial que volaba sola y se acoplaba a la ISS se convirtió en la base del European Service Module — la parte que Europa ahora construye para Orion de la NASA, la nave espacial que lleva astronautas de vuelta hacia la Luna bajo Artemis. El módulo de servicio suministra la energía, propulsión, aire y agua de Orion: la sección que mantiene viva a la tripulación camino a la órbita lunar y de regreso. Un continente que nunca construyó su propia nave espacial tripulada ahora construye la mitad de una estadounidense sin la cual sus astronautas no pueden sobrevivir."
+      "md": "Esa experiencia del ATV luego pagó un dividendo inesperado. La tecnología que Europa desarrolló para construir una nave espacial que volaba sola y se acoplaba a la EEI se convirtió en la base del European Service Module — la parte que Europa ahora construye para Orion de la NASA, la nave espacial que lleva astronautas de vuelta hacia la Luna bajo Artemis. El módulo de servicio suministra la energía, propulsión, aire y agua de Orion: la sección que mantiene viva a la tripulación camino a la órbita lunar y de regreso. Un continente que nunca construyó su propia nave espacial tripulada ahora construye la mitad de una estadounidense sin la cual sus astronautas no pueden sobrevivir."
     }
   ],
   "narrative": [
@@ -54,7 +54,7 @@
     },
     {
       "type": "prose",
-      "md": "El ATV es la expresión más clara de esto. No fue un proyecto de prestigio ni una entrada en una carrera; fue una pieza de infraestructura supremamente capaz — un carguero automatizado más avanzado en su acoplamiento y su capacidad de carga que cualquier otra cosa volando — que hizo a Europa central para mantener viva a la ISS. Y porque Europa había construido esa capacidad, estaba posicionada para construir lo siguiente: el módulo de servicio Orion, y con él un lugar en el regreso de la humanidad a la Luna. Dominar un nicho poco glamuroso condujo, paso a paso, a una participación en el programa tripulado más ambicioso del nuevo siglo."
+      "md": "El ATV es la expresión más clara de esto. No fue un proyecto de prestigio ni una entrada en una carrera; fue una pieza de infraestructura supremamente capaz — un carguero automatizado más avanzado en su acoplamiento y su capacidad de carga que cualquier otra cosa volando — que hizo a Europa central para mantener viva a la EEI. Y porque Europa había construido esa capacidad, estaba posicionada para construir lo siguiente: el módulo de servicio Orion, y con él un lugar en el regreso de la humanidad a la Luna. Dominar un nicho poco glamuroso condujo, paso a paso, a una participación en el programa tripulado más ambicioso del nuevo siglo."
     }
   ],
   "legacy": [

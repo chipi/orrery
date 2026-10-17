@@ -1,8 +1,8 @@
 {
   "name": "X-37B OTV-3 (USA-240)",
   "type": "SPACEPLANE NÃO-TRIPULADO · MISSÃO CUMPRIDA",
-  "first": "USA-240 — 675 dias em órbita, Vandenberg AFB",
-  "description": "Terceiro voo do X-37B, reutilizando o veículo de voo OTV-1. Lançado em 2012-12-11 18:03 UTC a partir de CCAFS SLC-41 no Atlas V 501 AV-034; pousou em Vandenberg AFB em 2014-10-17 16:24 UTC. 675 dias em órbita.",
+  "first": "USA-240 — 675 dias em órbita, Base da Força Aérea de Vandenberg",
+  "description": "Terceiro voo do X-37B, reutilizando o veículo de voo OTV-1. Lançado em 2012-12-11 18:03 UTC a partir de CCAFS SLC-41 no Atlas V 501 AV-034; pousou na Base da Força Aérea de Vandenberg em 2014-10-17 16:24 UTC. 675 dias em órbita.",
   "events": [
     {
       "met": 0,
@@ -19,7 +19,7 @@
     {
       "met": 675,
       "label": "POUSO",
-      "note": "Pouso autônomo em pista em Vandenberg AFB em 2014-10-17.",
+      "note": "Pouso autônomo em pista na Base da Força Aérea de Vandenberg em 2014-10-17.",
       "type": "nominal"
     }
   ]

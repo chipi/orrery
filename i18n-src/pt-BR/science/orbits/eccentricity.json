@@ -8,8 +8,8 @@
   ],
   "body_paragraphs": [
     "Excentricidade (`e`) é o número da forma. Defina como 0 e você tem um círculo — os focos colapsam em um único centro, e o corpo em órbita permanece à mesma distância para sempre. Aumente em direção a 1 e a elipse se estica em um charuto — o corpo chicoteia pelo foco no periélio, depois fica vagaroso no afélio durante a maior parte da órbita.",
-    "Acima de `e = 1` você não está mais preso. `e = 1` exatamente é uma trajetória parabólica (fuga, por pouco). Qualquer coisa maior é hiperbólica — um sobrevoo que nunca retorna. A maioria das trajetórias de espaçonaves que o Orrery mostra são elipses heliocêntricos com `e < 1`. A exceção: braços de assistência gravitacional desenhados ao redor de Jupiter ou Saturn mergulham em território hiperbólico.",
-    "Planetas reais se agrupam em baixa excentricidade. Earth: 0.0167 — quase circular. Mars: 0.093 — visivelmente alongado. Mercury: 0.205 — mais excêntrico dos oito planetas. Pluto e os cometas ficam bem mais altos, e é por isso que suas visitas ao periélio são os eventos de destaque do sistema solar externo."
+    "Acima de `e = 1` você não está mais preso. `e = 1` exatamente é uma trajetória parabólica (fuga, por pouco). Qualquer coisa maior é hiperbólica — um sobrevoo que nunca retorna. A maioria das trajetórias de espaçonaves que o Orrery mostra são elipses heliocêntricos com `e < 1`. A exceção: braços de assistência gravitacional desenhados ao redor de Júpiter ou Saturno mergulham em território hiperbólico.",
+    "Planetas reais se agrupam em baixa excentricidade. Terra: 0.0167 — quase circular. Marte: 0.093 — visivelmente alongado. Mercúrio: 0.205 — mais excêntrico dos oito planetas. Plutão e os cometas ficam bem mais altos, e é por isso que suas visitas ao periélio são os eventos de destaque do sistema solar externo."
   ],
   "formula_caption": "Excentricidade a partir dos raios de periélio e afélio.",
   "diagram_caption": "Três órbitas com o mesmo semieixo maior mas excentricidade e = 0, 0.4, 0.8. A forma muda; o período não."

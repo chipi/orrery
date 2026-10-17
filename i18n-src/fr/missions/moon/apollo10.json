@@ -3,12 +3,12 @@
   "dispatch": "Apollo 10 a effectué l'intégralité de l'atterrissage — jusqu'aux quinze derniers kilomètres — puis, comme prévu, a fait demi-tour. Stafford et Cernan ont descendu le Module Lunaire jusqu'à une portée de pierre de la surface à Tranquility, ont exécuté chaque étape de la descente, et sont remontés en orbite sans se poser. NASA a même laissé les réservoirs de remontée à moitié vides, de sorte que même si la tentation était grande, tenter le coup n'a jamais été une option. C'est le vol le moins célébré du programme et l'un des plus disciplinés : une répétition à pleine vitesse par deux hommes qui ont parcouru un quart de million de miles en sachant que l'atterrissage appartenait à quelqu'un d'autre.",
   "type": "HABITÉ ORBITE LUNAIRE · VOLÉ",
   "first": "Répétition générale complète de l'alunissage — le LM descendit à ~15,6 km d'altitude",
-  "description": "La répétition générale du premier alunissage. Stafford et Cernan ont piloté le LM Snoopy jusqu'à une altitude d'environ 15,6 km au-dessus du site d'alunissage prévu d'Apollo 11 à Mare Tranquillitatis — chaque étape d'une approche d'alunissage sauf l'alunissage lui-même. Ils ont confirmé le profil de descente, le radar d'alunissage, la trajectoire d'ascension et la procédure de rendez-vous qu'Apollo 11 utiliserait deux mois plus tard. Les réservoirs de carburant du stage d'ascension du LM ont été volontairement sous-alimentés (~50 % de la valeur nominale) pour empêcher toute tentation de tenter un alunissage. Le stage d'ascension de Snoopy était le seul à quitter l'orbite lunaire avec un ∆v positif — éjecté dans une orbite héliocentriste où il se trouve toujours aujourd'hui, redécelé par intermittence par des astronomes amateurs (confirmation la plus récente par Nick Howes / Faulkes Telescope, 2019).",
+  "description": "La répétition générale du premier alunissage. Stafford et Cernan ont piloté le LM Snoopy jusqu'à une altitude d'environ 15,6 km au-dessus du site d'alunissage prévu d'Apollo 11 à Mer de la Tranquillité — chaque étape d'une approche d'alunissage sauf l'alunissage lui-même. Ils ont confirmé le profil de descente, le radar d'alunissage, la trajectoire d'ascension et la procédure de rendez-vous qu'Apollo 11 utiliserait deux mois plus tard. Les réservoirs de carburant du stage d'ascension du LM ont été volontairement sous-alimentés (~50 % de la valeur nominale) pour empêcher toute tentation de tenter un alunissage. Le stage d'ascension de Snoopy était le seul à quitter l'orbite lunaire avec un ∆v positif — éjecté dans une orbite héliocentriste où il se trouve toujours aujourd'hui, redécelé par intermittence par des astronomes amateurs (confirmation la plus récente par Nick Howes / Faulkes Telescope, 2019).",
   "events": [
     {
       "met": 0,
       "label": "LANCEMENT",
-      "note": "Saturn V (AS-505) depuis le Kennedy Space Center LC-39B le 18/05/1969 à 16:49 UTC — premier vol habité depuis LC-39B.",
+      "note": "Saturn V (AS-505) depuis le Centre spatial Kennedy LC-39B le 18/05/1969 à 16:49 UTC — premier vol habité depuis LC-39B.",
       "type": "nominal"
     },
     {
@@ -26,7 +26,7 @@
     {
       "met": 4.6,
       "label": "SÉPARATION DU LM",
-      "note": "Snoopy se détache de Charlie Brown. L'équipage de deux (Stafford + Cernan) descend vers Mare Tranquillitatis.",
+      "note": "Snoopy se détache de Charlie Brown. L'équipage de deux (Stafford + Cernan) descend vers Mer de la Tranquillité.",
       "type": "nominal"
     },
     {

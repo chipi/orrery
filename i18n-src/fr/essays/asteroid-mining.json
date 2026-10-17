@@ -90,13 +90,13 @@
     },
     {
       "type": "prose",
-      "md": "[OSIRIS-REx](/missions?id=osiris-rex) de la NASA a atteint l'astéroïde carbonacé Bennu en décembre 2018 et a passé presque deux ans le cartographiant avant d'effectuer sa collecte d'échantillons Touch-And-Go en octobre 2020. La capsule est revenue sur Terre en septembre 2023 avec environ 120 grammes de matériel — le plus grand échantillon jamais retourné d'un astéroïde. L'analyse a confirmé des minéraux argileux hydratés et des composés riches en carbone : les mêmes ingrédients que l'équipe Hayabusa2 a trouvés à Ryugu, sur un corps différent, atteint par une nation différente, via une trajectoire différente. Le résultat était le même. Ce n'est pas une coïncidence. C'est une confirmation que la composition carbonacée de type C — riche en eau, riche en composés organiques — est la règle pour ces corps, pas l'exception."
+      "md": "[OSIRIS-REx](/missions?id=osiris-rex) de la NASA a atteint l'astéroïde carbonacé Bénou en décembre 2018 et a passé presque deux ans le cartographiant avant d'effectuer sa collecte d'échantillons Touch-And-Go en octobre 2020. La capsule est revenue sur la Terre en septembre 2023 avec environ 120 grammes de matériel — le plus grand échantillon jamais retourné d'un astéroïde. L'analyse a confirmé des minéraux argileux hydratés et des composés riches en carbone : les mêmes ingrédients que l'équipe Hayabusa2 a trouvés à Ryugu, sur un corps différent, atteint par une nation différente, via une trajectoire différente. Le résultat était le même. Ce n'est pas une coïncidence. C'est une confirmation que la composition carbonacée de type C — riche en eau, riche en composés organiques — est la règle pour ces corps, pas l'exception."
     },
     {
       "type": "figure",
       "image": "essays/asteroid-mining/the-recon",
       "kind": "diagram",
-      "caption": "Trois missions robotiques ont déjà touché et prélevé des échantillons d'astéroïdes : Hayabusa du Japon (Itokawa, 2010, le premier jamais), Hayabusa2 (Ryugu, 2020), et OSIRIS-REx de la NASA (Bennu, 2023). Ce qui est revenu était de l'argile porteuse d'eau et des composés organiques — de gravats lâches, pas du métal solide.",
+      "caption": "Trois missions robotiques ont déjà touché et prélevé des échantillons d'astéroïdes : Hayabusa du Japon (Itokawa, 2010, le premier jamais), Hayabusa2 (Ryugu, 2020), et OSIRIS-REx de la NASA (Bénou, 2023). Ce qui est revenu était de l'argile porteuse d'eau et des composés organiques — de gravats lâches, pas du métal solide.",
       "align": "wide"
     },
     {
@@ -113,11 +113,11 @@
     },
     {
       "type": "prose",
-      "md": "Voici ce que les missions ont aussi découvert, et ce que les manchettes sur l'exploitation minière astéroïdale minimisent systématiquement : Bennu et Ryugu ne sont pas des corps solides. Ce sont des amas de gravats."
+      "md": "Voici ce que les missions ont aussi découvert, et ce que les manchettes sur l'exploitation minière astéroïdale minimisent systématiquement : Bénou et Ryugu ne sont pas des corps solides. Ce sont des amas de gravats."
     },
     {
       "type": "prose",
-      "md": "Un amas de gravats est un agrégat de matériel mal consolidé — rochers, cailloux, poussière — tenus ensemble par une gravité si faible que marcher à sa surface nécessiterait de considérer attentivement si vous pourriez ne pas rebondir entièrement. La gravité de surface de Bennu est d'environ 6 micronewtons par kilogramme. Un astronaute se tenant à son équateur pèserait moins d'un milligramme en termes terrestres. Essayer d'ancrer un système d'exploitation — pour forer, excaver, pousser contre la surface avec n'importe quelle force — génère une réaction qui pourrait repousser l'équipement d'exploitation de l'astéroïde. L'événement TAG (Touch-and-Go) qu'OSIRIS-REx a utilisé pour collecter son échantillon a duré environ six secondes de contact avec la surface ; pendant ces six secondes, la tête de prélèvement du vaisseau spatial s'est enfoncée plus profondément dans la surface que prévu, parce que le matériel de Bennu est moins consolidé qu'un château de sable. L'équipe de mission a dit plus tard que le vaisseau spatial se serait enfoncé entièrement si les propulseurs n'avaient pas tiré pour le repousser. Ce n'est pas un environnement hostile de la même façon que Mars est hostile. C'est un environnement hostile de la façon qu'un sac de sable lâche flottant en microgravité l'est : fondamentalement différent de chaque hypothèse que l'ingénierie d'exploitation minière terrestre fait."
+      "md": "Un amas de gravats est un agrégat de matériel mal consolidé — rochers, cailloux, poussière — tenus ensemble par une gravité si faible que marcher à sa surface nécessiterait de considérer attentivement si vous pourriez ne pas rebondir entièrement. La gravité de surface de Bénou est d'environ 6 micronewtons par kilogramme. Un astronaute se tenant à son équateur pèserait moins d'un milligramme en termes terrestres. Essayer d'ancrer un système d'exploitation — pour forer, excaver, pousser contre la surface avec n'importe quelle force — génère une réaction qui pourrait repousser l'équipement d'exploitation de l'astéroïde. L'événement TAG (Touch-and-Go) qu'OSIRIS-REx a utilisé pour collecter son échantillon a duré environ six secondes de contact avec la surface ; pendant ces six secondes, la tête de prélèvement du vaisseau spatial s'est enfoncée plus profondément dans la surface que prévu, parce que le matériel de Bénou est moins consolidé qu'un château de sable. L'équipe de mission a dit plus tard que le vaisseau spatial se serait enfoncé entièrement si les propulseurs n'avaient pas tiré pour le repousser. Ce n'est pas un environnement hostile de la même façon que Mars est hostile. C'est un environnement hostile de la façon qu'un sac de sable lâche flottant en microgravité l'est : fondamentalement différent de chaque hypothèse que l'ingénierie d'exploitation minière terrestre fait."
     },
     {
       "type": "prose",
@@ -127,7 +127,7 @@
       "type": "figure",
       "image": "missions/osiris-rex/01",
       "kind": "photo",
-      "caption": "OSIRIS-REx tendant la main pour toucher Bennu — et trouvant non pas un sol solide mais un amas de gravats si faiblement lié que la tête d'échantillonnage s'est enfoncée directement dedans, avalant presque le bras. « Exploiter » un corps comme celui-ci est contrairement à n'importe quoi jamais fait sur Terre.",
+      "caption": "OSIRIS-REx tendant la main pour toucher Bénou — et trouvant non pas un sol solide mais un amas de gravats si faiblement lié que la tête d'échantillonnage s'est enfoncée directement dedans, avalant presque le bras. « Exploiter » un corps comme celui-ci est contrairement à n'importe quoi jamais fait sur la Terre.",
       "align": "wide",
       "credit": "NASA/Goddard/University of Arizona"
     },
@@ -153,7 +153,7 @@
     },
     {
       "type": "prose",
-      "md": "La contrainte de Tsiolkovsky a une échappatoire. Ce n'est pas de la chimie intelligente ou une nouvelle propulsion radicale — bien que la [nouvelle propulsion](/essays/new-propulsion) aide aux marges. L'échappatoire n'est pas de lancer les consommables en premier lieu. C'est les trouver déjà au-dessus du puits et les utiliser là. [Hayabusa2](/missions?id=hayabusa2) a ramené 5,4 grammes de Ryugu sur Terre. [OSIRIS-REx](/missions?id=osiris-rex) a ramené 120 grammes de Bennu. Les prochaines missions dans cette séquence ne ramèneront pas du matériel à la maison. Elles apprendront comment le laisser où il est — et l'utiliser là. C'est le point que la manchette n'atteint jamais. [Explorez les petits corps dans l'atlas](/explore) et ce que vous regardez n'est pas un magasin de trésor livrable à la Terre. C'est la quincaillerie pour une civilisation qui n'est pas encore arrivée."
+      "md": "La contrainte de Tsiolkovsky a une échappatoire. Ce n'est pas de la chimie intelligente ou une nouvelle propulsion radicale — bien que la [nouvelle propulsion](/essays/new-propulsion) aide aux marges. L'échappatoire n'est pas de lancer les consommables en premier lieu. C'est les trouver déjà au-dessus du puits et les utiliser là. [Hayabusa2](/missions?id=hayabusa2) a ramené 5,4 grammes de Ryugu sur la Terre. [OSIRIS-REx](/missions?id=osiris-rex) a ramené 120 grammes de Bénou. Les prochaines missions dans cette séquence ne ramèneront pas du matériel à la maison. Elles apprendront comment le laisser où il est — et l'utiliser là. C'est le point que la manchette n'atteint jamais. [Explorez les petits corps dans l'atlas](/explore) et ce que vous regardez n'est pas un magasin de trésor livrable à la Terre. C'est la quincaillerie pour une civilisation qui n'est pas encore arrivée."
     }
   ]
 }

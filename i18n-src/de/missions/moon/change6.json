@@ -2,7 +2,7 @@
   "name": "Chang'e 6",
   "type": "PROBENRÜCKFÜHRUNG AUF DER FERNERSEITE · GEFLOGEN",
   "first": "Erste Probenrückführung von der Mondrückseite",
-  "description": "Vereint die Architektur von Chang'e 4 (Kommunikation auf der Mondrückseite) und Chang'e 5 (Probenrückführung). Der Relaissatellit Queqiao-2 wurde zuerst gestartet (März 2024), um die Mission zu unterstützen. Chang'e 6 sammelte dann 1,935 kg aus dem Apollo Crater auf der Mondrückseite – Material mit völlig anderer Zusammensetzung als jede Mondprobe, die zuvor zurückgebracht wurde. Die beiden Hemisphären des Mondes sind radikal verschieden (die Rückseite hat dickere Kruste, weniger Maria); diese Proben könnten endlich erklären, warum.",
+  "description": "Vereint die Architektur von Chang'e 4 (Kommunikation auf der Mondrückseite) und Chang'e 5 (Probenrückführung). Der Relaissatellit Queqiao-2 wurde zuerst gestartet (März 2024), um die Mission zu unterstützen. Chang'e 6 sammelte dann 1,935 kg aus dem Apollo-Krater auf der Mondrückseite – Material mit völlig anderer Zusammensetzung als jede Mondprobe, die zuvor zurückgebracht wurde. Die beiden Hemisphären des Mondes sind radikal verschieden (die Rückseite hat dickere Kruste, weniger Maria); diese Proben könnten endlich erklären, warum.",
   "events": [
     {
       "met": 0,
@@ -19,7 +19,7 @@
     {
       "met": 30,
       "label": "LANDUNG",
-      "note": "Lander sinkt zum Apollo Crater (gegenüberliegende Seite) 02.06.2024. Die gesamte Kommunikation erfolgt über das Queqiao-2-Relais.",
+      "note": "Lander sinkt zum Apollo-Krater (gegenüberliegende Seite) 02.06.2024. Die gesamte Kommunikation erfolgt über das Queqiao-2-Relais.",
       "type": "nominal"
     },
     {

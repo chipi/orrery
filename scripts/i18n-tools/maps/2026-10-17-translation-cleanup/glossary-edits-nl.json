@@ -1,0 +1,128 @@
+[
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "story",
+    "old": "Het buitenste planetaire domein — 5 tot 30 AU. Twee gasreuzen (Jupiter, Saturn) met waterstof-helium enveloppen van duizenden kilometers dik boven kleine rotsachtige kernen; twee ijsreuzen (Uranus, Neptunus) met water/ammoniak/methaan mantels onder dunnere gaslagen. Samen bevatten ze 99% van alle planetaire massa in het zonnestelsel. Elk heeft zijn eigen maansysteem dat fungeert als een miniatuur-zonnestelsel op zich — Jupiter alleen al heeft 95 bekende manen, waaronder vier die groter zijn dan Pluto.",
+    "new": "Het buitenste planetaire domein — 5 tot 30 AU. Twee gasreuzen (Jupiter, Saturnus) met waterstof-helium enveloppen van duizenden kilometers dik boven kleine rotsachtige kernen; twee ijsreuzen (Uranus, Neptunus) met water/ammoniak/methaan mantels onder dunnere gaslagen. Samen bevatten ze 99% van alle planetaire massa in het zonnestelsel. Elk heeft zijn eigen maansysteem dat fungeert als een miniatuur-zonnestelsel op zich — Jupiter alleen al heeft 95 bekende manen, waaronder vier die groter zijn dan Pluto."
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "residents.1.label",
+    "old": "Saturn — 9,58 AU, ringensysteem",
+    "new": "Saturnus — 9,58 AU, ringensysteem"
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "science_sections.0.why",
+    "old": "Jupiter heeft 101 bevestigde manen — de vier Galileïsche manen (Io, Europa, Ganymede, Callisto) zijn elk werelden op zich en volgen een 1:2:4 orbitale resonantie.",
+    "new": "Jupiter heeft 101 bevestigde manen — de vier Galileïsche manen (Io, Europa, Ganymedes, Callisto) zijn elk werelden op zich en volgen een 1:2:4 orbitale resonantie."
+  },
+  {
+    "rel": "satellites/europa.json",
+    "at": "science_sections.0.why",
+    "old": "Europa is het middelste lid van de Io–Europa–Ganymede 4:2:1 Laplace-resonantie — zijn gedwongen excentriciteit veroorzaakt getijdenbuiging die een ondergrondse oceaan vloeibaar houdt.",
+    "new": "Europa is het middelste lid van de Io–Europa–Ganymedes 4:2:1 Laplace-resonantie — zijn gedwongen excentriciteit veroorzaakt getijdenbuiging die een ondergrondse oceaan vloeibaar houdt."
+  },
+  {
+    "rel": "satellites/ganymede.json",
+    "at": "mission_visits.3",
+    "old": "JUICE — ESA, aankomst 2031 (inbrenging in Ganymede-baan 2034)",
+    "new": "JUICE — ESA, aankomst 2031 (inbrenging in Ganymedes-baan 2034)"
+  },
+  {
+    "rel": "satellites/ganymede.json",
+    "at": "science_sections.0.why",
+    "old": "Ganymede is de enige maan in het zonnestelsel met een eigen, intern gegenereerd magnetisch veld — geproduceerd door een ijzerrijke kern ingebed in Jupiters magnetosfeer.",
+    "new": "Ganymedes is de enige maan in het zonnestelsel met een eigen, intern gegenereerd magnetisch veld — geproduceerd door een ijzerrijke kern ingebed in Jupiters magnetosfeer."
+  },
+  {
+    "rel": "satellites/ganymede.json",
+    "at": "science_sections.1.why",
+    "old": "Buitenlid van de 4:2:1 Laplace-resonantie met Io en Europa — de stabiliteit van Ganymede verankert het gehele binnenste Galileïsche systeem.",
+    "new": "Buitenlid van de 4:2:1 Laplace-resonantie met Io en Europa — de stabiliteit van Ganymedes verankert het gehele binnenste Galileïsche systeem."
+  },
+  {
+    "rel": "satellites/io.json",
+    "at": "science_sections.0.why",
+    "old": "Io / Europa / Ganymede zijn opgesloten in een 4:2:1 Laplace-resonantie — voor elke 4 banen van Io, maakt Europa er 2 en Ganymede 1. De resonantie houdt de baan van Io niet-circulair.",
+    "new": "Io / Europa / Ganymedes zijn opgesloten in een 4:2:1 Laplace-resonantie — voor elke 4 banen van Io, maakt Europa er 2 en Ganymedes 1. De resonantie houdt de baan van Io niet-circulair."
+  },
+  {
+    "rel": "satellites/io.json",
+    "at": "science_sections.1.why",
+    "old": "Io's getijdenverwarming (waardoor het de meest vulkanisch actieve wereld in het zonnestelsel is) komt voort uit geforceerde excentriciteit — opgepompt door Europa en Ganymede via de Laplace-resonantie.",
+    "new": "Io's getijdenverwarming (waardoor het de meest vulkanisch actieve wereld in het zonnestelsel is) komt voort uit geforceerde excentriciteit — opgepompt door Europa en Ganymedes via de Laplace-resonantie."
+  },
+  {
+    "rel": "science/planets/magnetic-fields.json",
+    "at": "intro_sentence",
+    "old": "De magnetosfeer van elke planeet is anders. Die van Saturn is uniek uitgelijnd, die van Uranus is chaotisch, Venus en Mars hebben er helemaal geen.",
+    "new": "De magnetosfeer van elke planeet is anders. Die van Saturnus is uniek uitgelijnd, die van Uranus is chaotisch, Venus en Mars hebben er helemaal geen."
+  },
+  {
+    "rel": "science/planets/magnetic-fields.json",
+    "at": "narrative_101.2",
+    "old": "Dan is er Saturn — een gasreus met een dynamo die zo netjes uitgelijnd is met zijn rotatie-as dat de magnetische kanteling vrijwel nul is. Elke andere dynamo die we kennen heeft op zijn minst enige afwijking (Aarde 10,5°, Jupiter 9,6°), maar die van Saturn is < 1°. Niemand weet precies waarom. De meest gesteunde theorie is dat Saturn een ongewone gelaagde structuur heeft die de symmetrie van het veld mechanisch gladstrijkt, maar het mechanisme staat ter discussie. De vrijwel perfecte uitlijning van Saturn is een van de onopgeloste raadsels van de planetaire fysica.",
+    "new": "Dan is er Saturnus — een gasreus met een dynamo die zo netjes uitgelijnd is met zijn rotatie-as dat de magnetische kanteling vrijwel nul is. Elke andere dynamo die we kennen heeft op zijn minst enige afwijking (Aarde 10,5°, Jupiter 9,6°), maar die van Saturnus is < 1°. Niemand weet precies waarom. De meest gesteunde theorie is dat Saturnus een ongewone gelaagde structuur heeft die de symmetrie van het veld mechanisch gladstrijkt, maar het mechanisme staat ter discussie. De vrijwel perfecte uitlijning van Saturnus is een van de onopgeloste raadsels van de planetaire fysica."
+  },
+  {
+    "rel": "science/planets/magnetic-fields.json",
+    "at": "body_paragraphs.0",
+    "old": "De kanteling van de magnetische as (hoek tussen de dipool en de rotatie-as) voor elke planeet met een bekende dynamo: Mercurius 0,7°, Aarde 10,5°, Jupiter 9,6°, Saturn ~0°, Uranus 58,6°, Neptunus 46,9°. Venus, Mars en Pluto hebben vandaag de dag geen wereldwijd significante dipool. De sterk van de as afwijkende dipolen van Uranus en Neptunus zijn ook verschoven ten opzichte van het middelpunt van de planeet — die van Uranus met ongeveer 1/3 van de straal van de planeet. De conventionele dynamo (ijzeren kern) kan die geometrie niet gemakkelijk produceren; de meest gesteunde verklaring is dat Uranus en Neptunus hun dynamo's herbergen in een buitenste mantellaag van ionisch water + ammoniak + methaan, en niet in een diepe kern.",
+    "new": "De kanteling van de magnetische as (hoek tussen de dipool en de rotatie-as) voor elke planeet met een bekende dynamo: Mercurius 0,7°, Aarde 10,5°, Jupiter 9,6°, Saturnus ~0°, Uranus 58,6°, Neptunus 46,9°. Venus, Mars en Pluto hebben vandaag de dag geen wereldwijd significante dipool. De sterk van de as afwijkende dipolen van Uranus en Neptunus zijn ook verschoven ten opzichte van het middelpunt van de planeet — die van Uranus met ongeveer 1/3 van de straal van de planeet. De conventionele dynamo (ijzeren kern) kan die geometrie niet gemakkelijk produceren; de meest gesteunde verklaring is dat Uranus en Neptunus hun dynamo's herbergen in een buitenste mantellaag van ionisch water + ammoniak + methaan, en niet in een diepe kern."
+  },
+  {
+    "rel": "science/planets/magnetic-fields.json",
+    "at": "body_paragraphs.1",
+    "old": "Magnetosferen strekken zich ver buiten de planeet zelf uit. Die van de Aarde reikt ongeveer 65.000 km in de richting van de zon (waar die botst tegen de zonnewind) en strekt zich uit in een lange staart aan de nachtzijde. De magnetosfeer van Jupiter is de grootste fysieke structuur binnen het zonnestelsel die niet de heliosfeer van de Zon is: zijn magnetostaart reikt tot de baan van Saturn, ongeveer 1,4 miljard km lang. De staart wordt gevormd door de zonnewind die het veld stroomafwaarts duwt; de stroomopwaartse neus wordt samengedrukt.",
+    "new": "Magnetosferen strekken zich ver buiten de planeet zelf uit. Die van de Aarde reikt ongeveer 65.000 km in de richting van de zon (waar die botst tegen de zonnewind) en strekt zich uit in een lange staart aan de nachtzijde. De magnetosfeer van Jupiter is de grootste fysieke structuur binnen het zonnestelsel die niet de heliosfeer van de Zon is: zijn magnetostaart reikt tot de baan van Saturnus, ongeveer 1,4 miljard km lang. De staart wordt gevormd door de zonnewind die het veld stroomafwaarts duwt; de stroomopwaartse neus wordt samengedrukt."
+  },
+  {
+    "rel": "science/planets/magnetic-fields.json",
+    "at": "body_paragraphs.2",
+    "old": "Deeltjes die gevangen zitten in het magnetische veld vormen stralingsgordelsbanden — de Van Allen-gordels bij de Aarde, de veel intensere bij Jupiter (een van de redenen waarom missies als Juno polaire banen vliegen, om de equatoriale gordel te vermijden). Waar veldlijnen samenkomen nabij de magnetische polen, spiralen geladen deeltjes omlaag en brengen de atmosfeer in een aangeslagen toestand — dat is het poollicht. Elke gemagnetiseerde planeet heeft poollicht; we hebben het afgebeeld bij de Aarde, Jupiter, Saturn, Uranus en Neptunus.",
+    "new": "Deeltjes die gevangen zitten in het magnetische veld vormen stralingsgordelsbanden — de Van Allen-gordels bij de Aarde, de veel intensere bij Jupiter (een van de redenen waarom missies als Juno polaire banen vliegen, om de equatoriale gordel te vermijden). Waar veldlijnen samenkomen nabij de magnetische polen, spiralen geladen deeltjes omlaag en brengen de atmosfeer in een aangeslagen toestand — dat is het poollicht. Elke gemagnetiseerde planeet heeft poollicht; we hebben het afgebeeld bij de Aarde, Jupiter, Saturnus, Uranus en Neptunus."
+  },
+  {
+    "rel": "science/planets/magnetic-fields.json",
+    "at": "diagram_caption",
+    "old": "Kantelingen van de dipoolassen versus rotatie-assen voor de planeten. Saturn is uniek uitgelijnd (<1°); Uranus en Neptunus wijken chaotisch van de as af, wat wijst op dynamo's in een ionisch-water-mantel in plaats van diepe ijzeren kernen.",
+    "new": "Kantelingen van de dipoolassen versus rotatie-assen voor de planeten. Saturnus is uniek uitgelijnd (<1°); Uranus en Neptunus wijken chaotisch van de as af, wat wijst op dynamo's in een ionisch-water-mantel in plaats van diepe ijzeren kernen."
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "body_paragraphs.0",
+    "old": "De vier Galilean manen van Jupiter zijn totaal verschillende werelden. Io: het vulkanisch meest actieve lichaam in het zonnestelsel, met actieve uitbarstingen zichtbaar van telescopen — aangedreven door getijdenverwarming van de anderen. Europa: ijsmantel over een wereldwijde wateroceaan, een topprioriteit voor astrobiologie. Ganymede: grootste maan van het zonnestelsel, groter dan Mercurius, en de enige maan met zijn eigen magnetisch veld. Callisto: buitenste Galilean maan, oud gekratered oppervlak, mogelijk ook een ondergrondse oceaan. Alle vier ontdekt in 1610 door Galileo vanaf een dak in Padua.",
+    "new": "De vier Galilean manen van Jupiter zijn totaal verschillende werelden. Io: het vulkanisch meest actieve lichaam in het zonnestelsel, met actieve uitbarstingen zichtbaar van telescopen — aangedreven door getijdenverwarming van de anderen. Europa: ijsmantel over een wereldwijde wateroceaan, een topprioriteit voor astrobiologie. Ganymedes: grootste maan van het zonnestelsel, groter dan Mercurius, en de enige maan met zijn eigen magnetisch veld. Callisto: buitenste Galilean maan, oud gekratered oppervlak, mogelijk ook een ondergrondse oceaan. Alle vier ontdekt in 1610 door Galileo vanaf een dak in Padua."
+  },
+  {
+    "rel": "science/planets/planetary-stats.json",
+    "at": "narrative_101.1",
+    "old": "Mars is de omgekeerde afweging. Mars heeft slechts 11% van de massa van de Aarde, maar wel 53% van de diameter van de Aarde. Daardoor bedraagt de oppervlaktezwaartekracht 38% van die van de Aarde — veel hoger dan de massaverhouding alleen zou voorspellen, omdat je dichter bij een kleiner middelpunt zit. De relatie die beide gevallen begrijpelijk maakt: oppervlaktezwaartekracht schaalt als massa / straal². Voor een planeet met gemiddelde dichtheid schaalt de zwaartekracht lineair met de straal. Saturn (9,14× de diameter van de Aarde) heeft een oppervlaktezwaartekracht die bijna gelijk is aan die van de Aarde (1,07 g), omdat Saturn veel minder dicht is dan de Aarde — Saturn bestaat voornamelijk uit waterstof-helium, met minder dan 0,7× de dichtheid van water.",
+    "new": "Mars is de omgekeerde afweging. Mars heeft slechts 11% van de massa van de Aarde, maar wel 53% van de diameter van de Aarde. Daardoor bedraagt de oppervlaktezwaartekracht 38% van die van de Aarde — veel hoger dan de massaverhouding alleen zou voorspellen, omdat je dichter bij een kleiner middelpunt zit. De relatie die beide gevallen begrijpelijk maakt: oppervlaktezwaartekracht schaalt als massa / straal². Voor een planeet met gemiddelde dichtheid schaalt de zwaartekracht lineair met de straal. Saturnus (9,14× de diameter van de Aarde) heeft een oppervlaktezwaartekracht die bijna gelijk is aan die van de Aarde (1,07 g), omdat Saturnus veel minder dicht is dan de Aarde — Saturnus bestaat voornamelijk uit waterstof-helium, met minder dan 0,7× de dichtheid van water."
+  },
+  {
+    "rel": "science/planets/planetary-stats.json",
+    "at": "body_paragraphs.0",
+    "old": "Diameters ten opzichte van de Aarde: Mercurius 0,38, Venus 0,95 (bijna even groot als de Aarde), Aarde 1,0, Mars 0,53, Jupiter 10,97, Saturn 9,14, Uranus 3,98, Neptunus 3,86, Pluto 0,19. Oppervlaktezwaartekrachten in Aarde-g: Mercurius 0,38, Venus 0,91, Aarde 1,00, Mars 0,38, Jupiter 2,53, Saturn 1,07, Uranus 0,89, Neptunus 1,14, Pluto 0,06. Opvallende verrassingen: Mars en Mercurius hebben dezelfde oppervlaktezwaartekracht (0,38 g) ondanks hun sterk verschillende afmetingen, omdat hun dichtheid × straalproducten dicht bij elkaar uitkomen. Uranus en Saturn hebben allebei een lagere zwaartekracht dan de Aarde ondanks hun enorme afmetingen — beide worden gedomineerd door H/He, veel minder dicht dan de rotsachtige Aarde.",
+    "new": "Diameters ten opzichte van de Aarde: Mercurius 0,38, Venus 0,95 (bijna even groot als de Aarde), Aarde 1,0, Mars 0,53, Jupiter 10,97, Saturnus 9,14, Uranus 3,98, Neptunus 3,86, Pluto 0,19. Oppervlaktezwaartekrachten in Aarde-g: Mercurius 0,38, Venus 0,91, Aarde 1,00, Mars 0,38, Jupiter 2,53, Saturnus 1,07, Uranus 0,89, Neptunus 1,14, Pluto 0,06. Opvallende verrassingen: Mars en Mercurius hebben dezelfde oppervlaktezwaartekracht (0,38 g) ondanks hun sterk verschillende afmetingen, omdat hun dichtheid × straalproducten dicht bij elkaar uitkomen. Uranus en Saturnus hebben allebei een lagere zwaartekracht dan de Aarde ondanks hun enorme afmetingen — beide worden gedomineerd door H/He, veel minder dicht dan de rotsachtige Aarde."
+  },
+  {
+    "rel": "science/planets/planetary-stats.json",
+    "at": "body_paragraphs.1",
+    "old": "Rotatieperioden (sideriaal, in uren): Mercury 1407,5 (in wezen 58 Aardse dagen voor één volledige rotatie), Venus −5832,5 (retrograad, 243 dagen), Aarde 23,93, Mars 24,62, Jupiter 9,93 (de snelste rotator — zijn dag duurt minder dan 10 uur ondanks zijn omvang, waardoor Jupiter zichtbaar afgeplat is; centrifugaalkrachten drukken hem plat), Saturn 10,66, Uranus −17,24 (retrograad), Neptunus 16,11, Pluto −153,3 (retrograad). Zonsdagen (zonsopgang tot zonsopgang) verschillen van sideriaalperioden omdat de planeet ook langs zijn baan beweegt — de zonsdag van Venus duurt 117 Aardse dagen, ook al bedraagt zijn sideriaalrotatie 243 dagen, omdat de retrograde rotatie de baanbeweging gedeeltelijk opheft.",
+    "new": "Rotatieperioden (sideriaal, in uren): Mercury 1407,5 (in wezen 58 Aardse dagen voor één volledige rotatie), Venus −5832,5 (retrograad, 243 dagen), Aarde 23,93, Mars 24,62, Jupiter 9,93 (de snelste rotator — zijn dag duurt minder dan 10 uur ondanks zijn omvang, waardoor Jupiter zichtbaar afgeplat is; centrifugaalkrachten drukken hem plat), Saturnus 10,66, Uranus −17,24 (retrograad), Neptunus 16,11, Pluto −153,3 (retrograad). Zonsdagen (zonsopgang tot zonsopgang) verschillen van sideriaalperioden omdat de planeet ook langs zijn baan beweegt — de zonsdag van Venus duurt 117 Aardse dagen, ook al bedraagt zijn sideriaalrotatie 243 dagen, omdat de retrograde rotatie de baanbeweging gedeeltelijk opheft."
+  },
+  {
+    "rel": "science/planets/planetary-stats.json",
+    "at": "diagram_caption",
+    "old": "Op schaal weergegeven diameters ten opzichte van de Aarde. Jupiter en Saturn zijn de reuzen; Mercurius, Mars en Pluto zijn kleiner dan de Aarde. Oppervlaktezwaartekracht volgt de grootte niet lineair — Saturn (9,1× de diameter van de Aarde) heeft een zwaartekracht die vrijwel gelijk is aan die van de Aarde, omdat het zoveel minder dicht is.",
+    "new": "Op schaal weergegeven diameters ten opzichte van de Aarde. Jupiter en Saturnus zijn de reuzen; Mercurius, Mars en Pluto zijn kleiner dan de Aarde. Oppervlaktezwaartekracht volgt de grootte niet lineair — Saturnus (9,1× de diameter van de Aarde) heeft een zwaartekracht die vrijwel gelijk is aan die van de Aarde, omdat het zoveel minder dicht is."
+  },
+  {
+    "rel": "science/planets/sub-solar-and-terminator.json",
+    "at": "body_paragraphs.1",
+    "old": "De terminator heeft een lange geschiedenis als de wetenschappelijk rijkste plek om oppervlaktedetails te observeren. De schaduwen zijn er het langst, waardoor de topografie wordt uitvergroot. Maanopnamen uit het Apollo-tijdperk voor kratergeologie werden bijna altijd gemaakt met de terminator in de buurt. De meest opvallende opnamen van de buitenste planeten van Voyager 1 + 2 (de ringstructuur van Saturn, de Grote Donkere Vlek van Neptunus) werden ook genomen nabij de terminator van elk hemellichaam, om dezelfde reden: een lage zonnehoek benadrukt oppervlaktekenmerken.",
+    "new": "De terminator heeft een lange geschiedenis als de wetenschappelijk rijkste plek om oppervlaktedetails te observeren. De schaduwen zijn er het langst, waardoor de topografie wordt uitvergroot. Maanopnamen uit het Apollo-tijdperk voor kratergeologie werden bijna altijd gemaakt met de terminator in de buurt. De meest opvallende opnamen van de buitenste planeten van Voyager 1 + 2 (de ringstructuur van Saturnus, de Grote Donkere Vlek van Neptunus) werden ook genomen nabij de terminator van elk hemellichaam, om dezelfde reden: een lage zonnehoek benadrukt oppervlaktekenmerken."
+  }
+]

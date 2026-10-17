@@ -36,11 +36,11 @@
     },
     {
       "type": "prose",
-      "md": "Airbags werken voor kleine, lichte vaartuigen. Sojourner woog ongeveer 10 kilogram. In 2012 woog [Curiosity](/missions?id=curiosity) bijna 900. Airbags die die landing konden absorbeert zouden meer wegen dan de raket kon lanceren, dus het team bij JPL moest iets nieuws uitvinden: de sky crane. De afdalingsfase — een raketaangedreven vliegend platform — droeg de rover op kabels omlaag, passend bij de snelheid van de grond, en toen de wielen het Martiaanse oppervlak raakten, werden de kabels doorgesneden en vloog de afdalingsfase weg om op veilige afstand te crashlanden. Het is de meest gedurfde landingsreeks ooit gevlogen, en het werkte perfect bij de eerste poging, en zette Curiosity in Gale Crater neer om 2:32 in de ochtend, Californische tijd, op 6 augustus 2012."
+      "md": "Airbags werken voor kleine, lichte vaartuigen. Sojourner woog ongeveer 10 kilogram. In 2012 woog [Curiosity](/missions?id=curiosity) bijna 900. Airbags die die landing konden absorbeert zouden meer wegen dan de raket kon lanceren, dus het team bij JPL moest iets nieuws uitvinden: de sky crane. De afdalingsfase — een raketaangedreven vliegend platform — droeg de rover op kabels omlaag, passend bij de snelheid van de grond, en toen de wielen het Martiaanse oppervlak raakten, werden de kabels doorgesneden en vloog de afdalingsfase weg om op veilige afstand te crashlanden. Het is de meest gedurfde landingsreeks ooit gevlogen, en het werkte perfect bij de eerste poging, en zette Curiosity in de Gale-krater neer om 2:32 in de ochtend, Californische tijd, op 6 augustus 2012."
     },
     {
       "type": "prose",
-      "md": "De sky crane was niet zomaar een technische noviteit. Het was een filosofische verschuiving: in plaats van de lander zo te ontwerpen dat hij contact met de grond overleeft, scheidden de engineers het probleem volledig — afdaling, dan uitvoering, dan grondcontact — zodat elk stuk onafhankelijk kon worden geoptimaliseerd. [Perseverance](/missions?id=perseverance) gebruikte dezelfde architectuur op 18 februari 2021, landend op de bodem van [Jezero Crater](/mars) en vervolgens rijdend, in de volgende maanden, naar de oude rivieredelta op de noordelijke rand. Maar Perseverance voegde één stuk toe dat de sky crane niet had meegedragen: een systeem dat naar de grond keek en dacht."
+      "md": "De sky crane was niet zomaar een technische noviteit. Het was een filosofische verschuiving: in plaats van de lander zo te ontwerpen dat hij contact met de grond overleeft, scheidden de engineers het probleem volledig — afdaling, dan uitvoering, dan grondcontact — zodat elk stuk onafhankelijk kon worden geoptimaliseerd. [Perseverance](/missions?id=perseverance) gebruikte dezelfde architectuur op 18 februari 2021, landend op de bodem van [Jezero-krater](/mars) en vervolgens rijdend, in de volgende maanden, naar de oude rivieredelta op de noordelijke rand. Maar Perseverance voegde één stuk toe dat de sky crane niet had meegedragen: een systeem dat naar de grond keek en dacht."
     },
     {
       "type": "prose",
@@ -80,7 +80,7 @@
       "type": "figure",
       "image": "missions/perseverance/01",
       "kind": "photo",
-      "caption": "Perseverance hangt onder zijn afdalingsfase in de laatste seconden boven Jezero Crater, momenten voordat de sky crane zijn kabels uitpakt — een manoeuvre volledig door het ruimtevaartuig zelf gevlogen, met Aarde een toeschouwer elf minuten achterliggend.",
+      "caption": "Perseverance hangt onder zijn afdalingsfase in de laatste seconden boven Jezero-krater, momenten voordat de sky crane zijn kabels uitpakt — een manoeuvre volledig door het ruimtevaartuig zelf gevlogen, met Aarde een toeschouwer elf minuten achterliggend.",
       "align": "wide",
       "credit": "NASA/JPL-Caltech"
     },
@@ -141,7 +141,7 @@
     },
     {
       "type": "prose",
-      "md": "Perseverance ligt nu op de bodem van [Jezero Crater](/mars), zijn weg baanend naar oude geologie die al dan niet kan bevatten wat we het daar hebben gestuurd om te vinden. Viking 1's beenderen liggen nog op Chryse Planitia. Huygens zit op een vlakte van ijssteentjes meer dan een miljard kilometer weg. [Venera 13](/missions?id=venera-13) hield 127 minuten vol en werd stil. Elk van hen kwam naar beneden door een ander probleem op te lossen, met een ander antwoord, in een ander stel minuten dat niet opnieuw kon worden gedaan. De cruise is gemakkelijk. De fysica draag je. Aankomen is waar het werk is — en elke wereld dwingt je het werk van nul af uit te vinden."
+      "md": "Perseverance ligt nu op de bodem van [Jezero-krater](/mars), zijn weg baanend naar oude geologie die al dan niet kan bevatten wat we het daar hebben gestuurd om te vinden. Viking 1's beenderen liggen nog op Chryse Planitia. Huygens zit op een vlakte van ijssteentjes meer dan een miljard kilometer weg. [Venera 13](/missions?id=venera-13) hield 127 minuten vol en werd stil. Elk van hen kwam naar beneden door een ander probleem op te lossen, met een ander antwoord, in een ander stel minuten dat niet opnieuw kon worden gedaan. De cruise is gemakkelijk. De fysica draag je. Aankomen is waar het werk is — en elke wereld dwingt je het werk van nul af uit te vinden."
     }
   ]
 }

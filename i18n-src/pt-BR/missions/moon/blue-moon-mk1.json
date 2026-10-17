@@ -2,12 +2,12 @@
   "name": "Blue Moon MK1",
   "type": "LANDER DE CARGA · PLANEJADO",
   "first": "Primeiro vôo da arquitetura do módulo lunar Blue Moon da Blue Origin",
-  "description": "O primeiro módulo de pouso Blue Moon de carga da Blue Origin, contratado sob o programa Commercial Lunar Payload Services (CLPS) da NASA. Um veículo de descida de estágio único movido pelo motor criogênico BE-7, projetado para entregar até aproximadamente 3 toneladas de carga útil à superfície lunar. É lançado no New Glenn da Blue Origin a partir de Cape Canaveral, realiza injeção translunar no segundo estágio do New Glenn e, em seguida, executa a inserção na órbita lunar e a descida motorizada. O voo de carga Mark 1 precede o Mark 2 com classificação humana, que é contratado para apoiar o pouso lunar tripulado da Artemis V da NASA.",
+  "description": "O primeiro módulo de pouso Blue Moon de carga da Blue Origin, contratado sob o programa Commercial Lunar Payload Services (CLPS) da NASA. Um veículo de descida de estágio único movido pelo motor criogênico BE-7, projetado para entregar até aproximadamente 3 toneladas de carga útil à superfície lunar. É lançado no New Glenn da Blue Origin a partir de Cabo Canaveral, realiza injeção translunar no segundo estágio do New Glenn e, em seguida, executa a inserção na órbita lunar e a descida motorizada. O voo de carga Mark 1 precede o Mark 2 com classificação humana, que é contratado para apoiar o pouso lunar tripulado da Artemis V da NASA.",
   "events": [
     {
       "met": 0,
       "label": "LANÇAMENTO DO NOVO GLENN",
-      "note": "Decola do Cape Canaveral LC-36; retornos do primeiro estágio para recuperação downrange.",
+      "note": "Decola do Cabo Canaveral LC-36; retornos do primeiro estágio para recuperação downrange.",
       "type": "nominal"
     },
     {

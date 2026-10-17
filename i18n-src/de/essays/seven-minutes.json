@@ -36,11 +36,11 @@
     },
     {
       "type": "prose",
-      "md": "Airbags funktionieren bei kleinen, leichten Fahrzeugen. Sojourner wog etwa 10 Kilogramm. 2012 brachte [Curiosity](/missions?id=curiosity) fast 900 auf die Waage. Airbags, die eine solche Landung abfedern könnten, wären schwerer, als es sich die Rakete beim Start leisten könnte – also musste das Team am JPL etwas völlig Neues erfinden: den Sky Crane. Die Abstiegsstufe, eine raketengetriebene Flugplattform, ließ den Rover an Seilen hinab und glich dabei ihre Geschwindigkeit der des Bodens an; als die Räder die Marsoberfläche berührten, wurden die Seile gekappt, und die Abstiegsstufe flog davon, um in sicherer Entfernung eine Bruchlandung hinzulegen. Es ist die kühnste Landesequenz, die je geflogen wurde, und sie gelang beim ersten Versuch makellos: Curiosity setzte am 6. August 2012 um 2:32 Uhr morgens kalifornischer Zeit im Gale Crater auf."
+      "md": "Airbags funktionieren bei kleinen, leichten Fahrzeugen. Sojourner wog etwa 10 Kilogramm. 2012 brachte [Curiosity](/missions?id=curiosity) fast 900 auf die Waage. Airbags, die eine solche Landung abfedern könnten, wären schwerer, als es sich die Rakete beim Start leisten könnte – also musste das Team am JPL etwas völlig Neues erfinden: den Sky Crane. Die Abstiegsstufe, eine raketengetriebene Flugplattform, ließ den Rover an Seilen hinab und glich dabei ihre Geschwindigkeit der des Bodens an; als die Räder die Marsoberfläche berührten, wurden die Seile gekappt, und die Abstiegsstufe flog davon, um in sicherer Entfernung eine Bruchlandung hinzulegen. Es ist die kühnste Landesequenz, die je geflogen wurde, und sie gelang beim ersten Versuch makellos: Curiosity setzte am 6. August 2012 um 2:32 Uhr morgens kalifornischer Zeit im Gale-Krater auf."
     },
     {
       "type": "prose",
-      "md": "Der Sky Crane war nicht bloß eine technische Neuheit. Er bedeutete einen philosophischen Wandel: Statt den Lander so zu konstruieren, dass er den Kontakt mit dem Boden übersteht, trennten die Ingenieure das Problem vollständig – Abstieg, dann Freigabe, dann Bodenkontakt –, sodass sich jeder Teil unabhängig optimieren ließ. [Perseverance](/missions?id=perseverance) nutzte am 18. Februar 2021 dieselbe Architektur, landete auf dem Boden des [Jezero Crater](/mars) und fuhr in den folgenden Monaten weiter zum uralten Flussdelta am nördlichen Kraterrand. Doch Perseverance brachte etwas mit, das der Sky Crane nicht getragen hatte: ein System, das auf den Boden blickte und dachte."
+      "md": "Der Sky Crane war nicht bloß eine technische Neuheit. Er bedeutete einen philosophischen Wandel: Statt den Lander so zu konstruieren, dass er den Kontakt mit dem Boden übersteht, trennten die Ingenieure das Problem vollständig – Abstieg, dann Freigabe, dann Bodenkontakt –, sodass sich jeder Teil unabhängig optimieren ließ. [Perseverance](/missions?id=perseverance) nutzte am 18. Februar 2021 dieselbe Architektur, landete auf dem Boden des [Jezero-Krater](/mars) und fuhr in den folgenden Monaten weiter zum uralten Flussdelta am nördlichen Kraterrand. Doch Perseverance brachte etwas mit, das der Sky Crane nicht getragen hatte: ein System, das auf den Boden blickte und dachte."
     },
     {
       "type": "prose",
@@ -80,7 +80,7 @@
       "type": "figure",
       "image": "missions/perseverance/01",
       "kind": "photo",
-      "caption": "Perseverance hängt in den letzten Sekunden über dem Jezero Crater unter seiner Abstiegsstufe, kurz bevor der Skycrane seine Seile ausfährt – ein Manöver, das vollständig vom Raumfahrzeug selbst geflogen wird, während die Erde elf Minuten hinterher als Zuschauerin dabeisteht.",
+      "caption": "Perseverance hängt in den letzten Sekunden über dem Jezero-Krater unter seiner Abstiegsstufe, kurz bevor der Skycrane seine Seile ausfährt – ein Manöver, das vollständig vom Raumfahrzeug selbst geflogen wird, während die Erde elf Minuten hinterher als Zuschauerin dabeisteht.",
       "align": "wide",
       "credit": "NASA/JPL-Caltech"
     },
@@ -141,7 +141,7 @@
     },
     {
       "type": "prose",
-      "md": "Perseverance steht in diesem Augenblick auf dem Boden des [Jezero Crater](/mars) und tastet sich voran, hin zu uralter Geologie, die das, wofür wir den Rover dorthin geschickt haben, vielleicht birgt und vielleicht nicht. Die Überreste von Viking 1 liegen noch immer auf der Chryse Planitia. Huygens ruht auf einer Ebene aus Eiskieseln, mehr als eine Milliarde Kilometer entfernt. [Venera 13](/missions?id=venera-13) hielt 127 Minuten durch und verstummte dann. Jede dieser Sonden gelangte hinunter, indem sie ein anderes Problem löste, mit einer anderen Antwort, in einer anderen Folge von Minuten, die sich nicht wiederholen ließ. Der Reiseflug ist einfach. Die Physik trägt einen. Bei der Ankunft liegt die eigentliche Arbeit – und jede Welt zwingt einen dazu, diese Arbeit von Grund auf neu zu erfinden."
+      "md": "Perseverance steht in diesem Augenblick auf dem Boden des [Jezero-Krater](/mars) und tastet sich voran, hin zu uralter Geologie, die das, wofür wir den Rover dorthin geschickt haben, vielleicht birgt und vielleicht nicht. Die Überreste von Viking 1 liegen noch immer auf der Chryse Planitia. Huygens ruht auf einer Ebene aus Eiskieseln, mehr als eine Milliarde Kilometer entfernt. [Venera 13](/missions?id=venera-13) hielt 127 Minuten durch und verstummte dann. Jede dieser Sonden gelangte hinunter, indem sie ein anderes Problem löste, mit einer anderen Antwort, in einer anderen Folge von Minuten, die sich nicht wiederholen ließ. Der Reiseflug ist einfach. Die Physik trägt einen. Bei der Ankunft liegt die eigentliche Arbeit – und jede Welt zwingt einen dazu, diese Arbeit von Grund auf neu zu erfinden."
     }
   ]
 }

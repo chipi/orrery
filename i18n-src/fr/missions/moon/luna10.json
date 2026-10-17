@@ -2,12 +2,12 @@
   "name": "Luna 10",
   "type": "ORBITEUR ROBOTIQUE · FLOWN",
   "first": "Premier engin spatial à orbiter la Lune (et tout corps autre que la Terre)",
-  "description": "Lancée le 1966-03-31 depuis Baikonur, Luna 10 devint le premier engin spatial à orbiter la Lune — et le premier satellite artificiel de tout corps autre que la Terre — lorsqu'elle s'inséra dans une orbite lunaire de 350 × 1017 km à une inclinaison de 71,9° le 1966-04-03. Deux ans et demi avant qu'Apollo 8 n'atteigne la Lune avec des humains à bord. Transportait un magnétomètre, un spectromètre gamma, un radiomètre infrarouge, des détecteurs de micrométéorites, des capteurs de plasma et une sonde radio du champ gravitationnel lunaire. Les données gamma constituaient le premier télédétection compositionnelle de la Lune, suggérant une composition de mare de type basalte. Célèbre pour avoir diffusé l'hymne l'Internationale lors du 23e Congrès du Parti communiste soviétique le 1966-04-04 — un geste de propagande plutôt que de science. Opérationnelle pendant 56 jours / 460 orbites avant l'épuisement de ses batteries NiCd le 1966-05-30 ; demeure en orbite lunaire.",
+  "description": "Lancée le 1966-03-31 depuis Baïkonour, Luna 10 devint le premier engin spatial à orbiter la Lune — et le premier satellite artificiel de tout corps autre que la Terre — lorsqu'elle s'inséra dans une orbite lunaire de 350 × 1017 km à une inclinaison de 71,9° le 1966-04-03. Deux ans et demi avant qu'Apollo 8 n'atteigne la Lune avec des humains à bord. Transportait un magnétomètre, un spectromètre gamma, un radiomètre infrarouge, des détecteurs de micrométéorites, des capteurs de plasma et une sonde radio du champ gravitationnel lunaire. Les données gamma constituaient le premier télédétection compositionnelle de la Lune, suggérant une composition de mare de type basalte. Célèbre pour avoir diffusé l'hymne l'Internationale lors du 23e Congrès du Parti communiste soviétique le 1966-04-04 — un geste de propagande plutôt que de science. Opérationnelle pendant 56 jours / 460 orbites avant l'épuisement de ses batteries NiCd le 1966-05-30 ; demeure en orbite lunaire.",
   "events": [
     {
       "met": 0,
       "label": "LANCEMENT",
-      "note": "Molniya-M depuis Baikonur 1966-03-31 10:46 UTC.",
+      "note": "Molniya-M depuis Baïkonour 1966-03-31 10:46 UTC.",
       "type": "nominal"
     },
     {

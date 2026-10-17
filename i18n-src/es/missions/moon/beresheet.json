@@ -4,7 +4,7 @@
   "first": "Primera misión financiada por capital privado en alcanzar la Luna; primer alunizaje lunar israelí",
   "description": "El Beresheet de SpaceIL (hebreo: «In the beginning») se lanzó como pasajero de viaje compartido en un Falcon 9 en febrero de 2019. En lugar de una inyección translunar directa, el pequeño módulo lunar realizó semanas de quemados de cambio de fase para elevar el perigeo y ascender desde una órbita de estacionamiento hasta la Luna — una trayectoria de ahorro de combustible pionera en misiones de bajo presupuesto. Tras una inserción exitosa en órbita lunar el 4 de abril de 2019, un reinicio de la unidad de medición inercial durante el descenso causó el apagón del motor principal. El Beresheet se estrelló en Mare Serenitatis. SpaceIL se comprometió a un sucesor (Beresheet 2) en cuestión de días.",
   "events": [
-    { "met": 0, "label": "LANZAMIENTO", "note": "Vuelo compartido en Falcon 9 desde Cape Canaveral el 22-02-2019.", "type": "nominal" },
+    { "met": 0, "label": "LANZAMIENTO", "note": "Vuelo compartido en Falcon 9 desde Cabo Cañaveral el 22-02-2019.", "type": "nominal" },
     { "met": 0.01, "label": "MANIOBRA DE FASE", "note": "Primero de siete ascensos del perigeo para elevarse desde la órbita terrestre baja hacia la aproximación lunar.", "type": "info" },
     { "met": 10, "label": "TCM 1", "note": "Corrección de trayectoria durante el ascenso de múltiples órbitas.", "type": "info" },
     { "met": 20, "label": "TCM 2", "note": "Segundo TCM. El apogeo se aproxima a la distancia de captura lunar.", "type": "info" },

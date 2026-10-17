@@ -2,12 +2,12 @@
   "name": "Lucy",
   "type": "SOBREVOO MÚLTIPLO · ATIVA",
   "first": "Primeira missão aos Troianos de Júpiter; visita 11 corpos em 8 asteroides e seus satélites em uma única trajetória de 12 anos — um número recorde de objetos em órbitas solares separadas",
-  "description": "Lucy alcança as nuvens de Lagrange L4 e L5 — populações de asteroides primordiais que precedem e seguem Júpiter por 60°, acreditadas preservarem material do disco protoplanetário externo. Três assistências gravitacionais terrestres (2022, 2024, 2030) moldam uma única trajetória que visita sete asteroides Troianos mais alvos adicionais do cinturão principal. Primeiro encontro com asteroide: 152830 Dinkinesh (2023-11-01, ~790 m), no qual as imagens revelaram o satélite binário de contato Selam. Bônus do cinturão principal: Donaldjohanson 2025-04. Enxame L4: Eurybates + lua Queta (2027-08), Polymele (2027-09), Leucus (2028-04), Orus (2028-11). Após EGA-3 (2030-12), o enxame do L5 em atraso: Patroclus-Menoetius binário (2033-03) — o maior binário Troiano conhecido, um desfecho apropriado para o homônimo da missão (Lucy o fóssil de homínida; Patroclus-Menoetius os dois personagens que caíram juntos na Ilíada).",
+  "description": "Lucy alcança as nuvens de Lagrange L4 e L5 — populações de asteroides primordiais que precedem e seguem Júpiter por 60°, acreditadas preservarem material do disco protoplanetário externo. Três assistências gravitacionais terrestres (2022, 2024, 2030) moldam uma única trajetória que visita sete asteroides Troianos mais alvos adicionais do cinturão principal. Primeiro encontro com asteroide: 152830 Dinkinesh (2023-11-01, ~790 m), no qual as imagens revelaram o satélite binário de contato Selam. Bônus do cinturão principal: Donaldjohanson 2025-04. Enxame L4: Euríbates + lua Queta (2027-08), Polimele (2027-09), Leuco (2028-04), Oro (2028-11). Após EGA-3 (2030-12), o enxame do L5 em atraso: Pátroclo-Menécio binário (2033-03) — o maior binário Troiano conhecido, um desfecho apropriado para o homônimo da missão (Lucy o fóssil de homínida; Pátroclo-Menécio os dois personagens que caíram juntos na Ilíada).",
   "events": [
     {
       "met": 0,
       "label": "LANÇAMENTO",
-      "note": "Atlas V 401 de Cape Canaveral SLC-41.",
+      "note": "Atlas V 401 de Cabo Canaveral SLC-41.",
       "type": "nominal"
     },
     {

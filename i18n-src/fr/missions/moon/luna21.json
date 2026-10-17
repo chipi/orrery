@@ -2,9 +2,9 @@
   "name": "Luna 21 / Lunokhod 2",
   "type": "UNCREWED LANDER + ROVER · FLOWN",
   "first": "Deuxième rover lunaire soviétique ; parcours le plus long hors du monde (~39 km) pendant plus de 40 ans",
-  "description": "Luna 21 a livré Lunokhod 2, le deuxième rover lunaire contrôlé par équipage de l'Union soviétique, au cratère Le Monnier sur le bord méridional de Mare Serenitatis en janvier 1973. Le rover a été piloté depuis une salle de contrôle en Crimée par une équipe de cinq personnes et a parcouru environ 39 km au cours de quatre jours lunaires — un record de distance hors du monde qui s'est maintenu jusqu'à ce que le rover Opportunity de la NASA le dépasse sur Mars en 2014. Lunokhod 2 a renvoyé 80 000 images télévisées et 86 panoramas avant que la contamination de poussière de ses panneaux solaires n'interrompe les opérations.",
+  "description": "Luna 21 a livré Lunokhod 2, le deuxième rover lunaire contrôlé par équipage de l'Union soviétique, au cratère Le Monnier sur le bord méridional de Mer de la Sérénité en janvier 1973. Le rover a été piloté depuis une salle de contrôle en Crimée par une équipe de cinq personnes et a parcouru environ 39 km au cours de quatre jours lunaires — un record de distance hors du monde qui s'est maintenu jusqu'à ce que le rover Opportunity de la NASA le dépasse sur Mars en 2014. Lunokhod 2 a renvoyé 80 000 images télévisées et 86 panoramas avant que la contamination de poussière de ses panneaux solaires n'interrompe les opérations.",
   "events": [
-    { "met": 0, "label": "LANCEMENT", "note": "Proton-K depuis Baikonur, 1973-01-08.", "type": "nominal" },
+    { "met": 0, "label": "LANCEMENT", "note": "Proton-K depuis Baïkonour, 1973-01-08.", "type": "nominal" },
     { "met": 0.005, "label": "TLI", "note": "Injection translunairepar l'étage supérieur Blok-D.", "type": "nominal" },
     { "met": 4, "label": "TCM", "note": "Correction de trajectoire en cours de croisière.", "type": "info" },
     { "met": 4.5, "label": "ATTERRISSAGE", "note": "Atterrissage en douceur dans le cratère Le Monnier le 15-01-1973. Lunokhod 2 a débarqué des rampes quelques heures plus tard.", "type": "nominal" },

@@ -6,12 +6,12 @@
   "residents": [
     {
       "id": "pluto",
-      "label": "Pluto — 39,5 AU, le plus grand connu",
+      "label": "Pluton — 39,5 AU, le plus grand connu",
       "agency": "NATURAL"
     },
     {
       "id": "eris",
-      "label": "Eris — 96,4 AU (disque dispersé)",
+      "label": "Éris — 96,4 AU (disque dispersé)",
       "agency": "NATURAL"
     },
     {
@@ -38,11 +38,11 @@
   "firsts": [
     {
       "year": 1930,
-      "label": "Découverte de Pluto — premier KBO identifié (Tombaugh, USA)"
+      "label": "Découverte de Pluton — premier KBO identifié (Tombaugh, USA)"
     },
     {
       "year": 2015,
-      "label": "New Horizons — premier survol de Pluto (USA)"
+      "label": "New Horizons — premier survol de Pluton (USA)"
     },
     {
       "year": 2019,

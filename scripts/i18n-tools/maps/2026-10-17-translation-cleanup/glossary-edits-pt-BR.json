@@ -1,0 +1,44 @@
+[
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "story",
+    "old": "O reino planetário exterior — 5 a 30 AU. Dois gigantes gasosos (Júpiter, Saturn) com envoltórios de hidrogênio-hélio de milhares de quilômetros de profundidade sobre pequenos núcleos rochosos; dois gigantes de gelo (Urano, Netuno) com mantos de água/amônia/metano sob camadas gasosas mais finas. Juntos, eles concentram 99% de toda a massa planetária do sistema solar. Cada um possui seu próprio sistema de luas que funciona como um sistema solar em miniatura — somente Júpiter tem 95 luas conhecidas, incluindo quatro maiores que Plutão.",
+    "new": "O reino planetário exterior — 5 a 30 AU. Dois gigantes gasosos (Júpiter, Saturno) com envoltórios de hidrogênio-hélio de milhares de quilômetros de profundidade sobre pequenos núcleos rochosos; dois gigantes de gelo (Urano, Netuno) com mantos de água/amônia/metano sob camadas gasosas mais finas. Juntos, eles concentram 99% de toda a massa planetária do sistema solar. Cada um possui seu próprio sistema de luas que funciona como um sistema solar em miniatura — somente Júpiter tem 95 luas conhecidas, incluindo quatro maiores que Plutão."
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "residents.1.label",
+    "old": "Saturn — 9,58 AU, sistema de anéis",
+    "new": "Saturno — 9,58 AU, sistema de anéis"
+  },
+  {
+    "rel": "science/orbits/eccentricity.json",
+    "at": "body_paragraphs.1",
+    "old": "Acima de `e = 1` você não está mais preso. `e = 1` exatamente é uma trajetória parabólica (fuga, por pouco). Qualquer coisa maior é hiperbólica — um sobrevoo que nunca retorna. A maioria das trajetórias de espaçonaves que o Orrery mostra são elipses heliocêntricos com `e < 1`. A exceção: braços de assistência gravitacional desenhados ao redor de Júpiter ou Saturn mergulham em território hiperbólico.",
+    "new": "Acima de `e = 1` você não está mais preso. `e = 1` exatamente é uma trajetória parabólica (fuga, por pouco). Qualquer coisa maior é hiperbólica — um sobrevoo que nunca retorna. A maioria das trajetórias de espaçonaves que o Orrery mostra são elipses heliocêntricos com `e < 1`. A exceção: braços de assistência gravitacional desenhados ao redor de Júpiter ou Saturno mergulham em território hiperbólico."
+  },
+  {
+    "rel": "science/planets/magnetic-fields.json",
+    "at": "body_paragraphs.0",
+    "old": "Inclinação do eixo magnético (ângulo entre o dipolo e o eixo de rotação) para cada planeta com um dínamo conhecido: Mercúrio 0,7°, Terra 10,5°, Júpiter 9,6°, Saturn ~0°, Urano 58,6°, Netuno 46,9°. Vênus, Marte e Plutão não possuem dipolo globalmente significativo hoje. Os dipolos fortemente desalinhados de Urano e Netuno também estão deslocados do centro do planeta — o de Urano em cerca de 1/3 do raio do planeta. O dínamo convencional (núcleo de ferro) não consegue produzir facilmente essa geometria; a explicação mais aceita é que Urano e Netuno abrigam seus dínamos em uma camada externa do manto composta de água iônica + amônia + metano, e não em um núcleo profundo.",
+    "new": "Inclinação do eixo magnético (ângulo entre o dipolo e o eixo de rotação) para cada planeta com um dínamo conhecido: Mercúrio 0,7°, Terra 10,5°, Júpiter 9,6°, Saturno ~0°, Urano 58,6°, Netuno 46,9°. Vênus, Marte e Plutão não possuem dipolo globalmente significativo hoje. Os dipolos fortemente desalinhados de Urano e Netuno também estão deslocados do centro do planeta — o de Urano em cerca de 1/3 do raio do planeta. O dínamo convencional (núcleo de ferro) não consegue produzir facilmente essa geometria; a explicação mais aceita é que Urano e Netuno abrigam seus dínamos em uma camada externa do manto composta de água iônica + amônia + metano, e não em um núcleo profundo."
+  },
+  {
+    "rel": "science/planets/magnetic-fields.json",
+    "at": "body_paragraphs.1",
+    "old": "As magnetosferas se estendem muito além do próprio planeta. A da Terra alcança cerca de 65.000 km em direção ao Sol (onde se curva contra o vento solar) e se prolonga em uma longa cauda no lado noturno. A magnetosfera de Júpiter é a maior estrutura física dentro do sistema solar que não é a heliosfera do Sol: sua cauda magnética alcança a órbita de Saturn, com cerca de 1,4 bilhão de km de comprimento. A cauda é moldada pelo vento solar empurrando o campo para baixo; a extremidade frontal é comprimida.",
+    "new": "As magnetosferas se estendem muito além do próprio planeta. A da Terra alcança cerca de 65.000 km em direção ao Sol (onde se curva contra o vento solar) e se prolonga em uma longa cauda no lado noturno. A magnetosfera de Júpiter é a maior estrutura física dentro do sistema solar que não é a heliosfera do Sol: sua cauda magnética alcança a órbita de Saturno, com cerca de 1,4 bilhão de km de comprimento. A cauda é moldada pelo vento solar empurrando o campo para baixo; a extremidade frontal é comprimida."
+  },
+  {
+    "rel": "science/planets/magnetic-fields.json",
+    "at": "body_paragraphs.2",
+    "old": "Partículas aprisionadas no campo magnético criam cinturões de radiação — os cinturões de Van Allen na Terra, e os muito mais intensos em Júpiter (uma das razões pelas quais missões como Juno voam em órbitas polares, evitando o cinturão equatorial). Onde as linhas de campo convergem próximo aos polos magnéticos, partículas carregadas espiralizam para baixo e excitam a atmosfera — é a aurora. Todo planeta magnetizado tem auroras; nós as imageamos na Terra, em Júpiter, Saturn, Urano e Netuno.",
+    "new": "Partículas aprisionadas no campo magnético criam cinturões de radiação — os cinturões de Van Allen na Terra, e os muito mais intensos em Júpiter (uma das razões pelas quais missões como Juno voam em órbitas polares, evitando o cinturão equatorial). Onde as linhas de campo convergem próximo aos polos magnéticos, partículas carregadas espiralizam para baixo e excitam a atmosfera — é a aurora. Todo planeta magnetizado tem auroras; nós as imageamos na Terra, em Júpiter, Saturno, Urano e Netuno."
+  },
+  {
+    "rel": "science/planets/magnetic-fields.json",
+    "at": "diagram_caption",
+    "old": "Inclinações do eixo de dipolo em relação aos eixos de rotação dos planetas. Saturn está alinhado de forma única (<1°); Urano e Netuno estão caoticamente desalinhados, sugerindo dínamos no manto de água iônica em vez de núcleos profundos de ferro.",
+    "new": "Inclinações do eixo de dipolo em relação aos eixos de rotação dos planetas. Saturno está alinhado de forma única (<1°); Urano e Netuno estão caoticamente desalinhados, sugerindo dínamos no manto de água iônica em vez de núcleos profundos de ferro."
+  }
+]

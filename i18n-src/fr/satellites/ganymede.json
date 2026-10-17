@@ -1,5 +1,5 @@
 {
-  "description": "La plus grande lune du système solaire — plus grande que Mercure, 8 % plus grande que la Lune. Ganymede est la seule lune dotée d'un champ magnétique auto-généré, signe d'un noyau de fer partiellement fondu. Sous environ 150 km de glace s'étend un océan d'eau salée plus vaste que l'ensemble des océans terrestres réunis ; certains modèles suggèrent une structure en couches comportant plusieurs océans séparés par des phases de glace de densités différentes. La mission JUICE de l'ESA deviendra le premier orbiteur d'une lune autre que celle de la Terre lorsqu'elle entrera en orbite autour de Ganymede en décembre 2034.",
+  "description": "La plus grande lune du système solaire — plus grande que Mercure, 8 % plus grande que la Lune. Ganymède est la seule lune dotée d'un champ magnétique auto-généré, signe d'un noyau de fer partiellement fondu. Sous environ 150 km de glace s'étend un océan d'eau salée plus vaste que l'ensemble des océans terrestres réunis ; certains modèles suggèrent une structure en couches comportant plusieurs océans séparés par des phases de glace de densités différentes. La mission JUICE de l'ESA deviendra le premier orbiteur d'une lune autre que celle de la Terre lorsqu'elle entrera en orbite autour de Ganymède en décembre 2034.",
   "surface_composition": "Environ moitié glace d'eau + moitié roches silicatées ; surface composée d'un mélange de terrains sombres et cratérisés (~4 milliards d'années) et de terrains plus clairs sillonnés (renouvellement tectonique il y a ~2 milliards d'années) ; fine exosphère d'oxygène.",
   "mission_visits": [
     "Voyager 1 + 2 — États-Unis, 1979 (cartographie)",
@@ -22,7 +22,7 @@
     {
       "tab": "orbits",
       "section": "keplers-laws",
-      "why": "Membre externe de la résonance de Laplace 4:2:1 avec Io et Europa — la stabilité de Ganymède ancre l'ensemble du système galiléen intérieur."
+      "why": "Membre externe de la résonance de Laplace 4:2:1 avec Io et Europe — la stabilité de Ganymède ancre l'ensemble du système galiléen intérieur."
     }
   ]
 }

@@ -3,12 +3,12 @@
   "type": "ROVER · EXECUTADO",
   "first": "Primeiro dos gêmeos Mars Exploration Rover; rover de maior longevidade até ser superado pelo Curiosity",
   "dispatch": "Spirit foi construído para noventa dias e funcionou por seis anos. Um de um par de veículos do tamanho de um carrinho de golfe pousado em 2004, foi enviado para ler as rochas em busca de evidências de um Marte mais úmido no passado — e encontrou, descobrindo minerais que só se formam em água e, em um lugar, depósitos de sílica semelhantes aos deixados por fontes termais na Terra. Escalou colinas que ninguém havia planejado que alcançasse e sobreviveu a invernos para os quais nunca foi projetado, até que uma roda falhou e ficou atolado em areia mole. Continuou transmitindo de onde estava preso até o frio marciano finalmente levá-lo.",
-  "description": "Spirit (MER-A) saltou 28 vezes pelo piso da Gusev Crater em 2004-01-04 e rolou até parar a 250 m de seu primeiro impacto. Projetado para uma missão primária de 90 sols, sobreviveria a 2.208 sols. Dirigiu 7,7 km pelas planícies de Gusev, escalou as Columbia Hills e descobriu rochas ricas em hematita que sinalizavam água antiga e persistente. Em 2009-04 uma roda rompeu uma crosta de sulfato em \"Troy\" e Spirit parou em solo mole; a equipe o converteu em uma plataforma estacionária. Transmissão final em 2010-03-22; missão declarada encerrada em 2011-05-25. Gêmeo de Opportunity, que pousou três semanas depois no lado oposto de Marte.",
+  "description": "Spirit (MER-A) saltou 28 vezes pelo piso da cratera Gusev em 2004-01-04 e rolou até parar a 250 m de seu primeiro impacto. Projetado para uma missão primária de 90 sols, sobreviveria a 2.208 sols. Dirigiu 7,7 km pelas planícies de Gusev, escalou as Columbia Hills e descobriu rochas ricas em hematita que sinalizavam água antiga e persistente. Em 2009-04 uma roda rompeu uma crosta de sulfato em \"Troy\" e Spirit parou em solo mole; a equipe o converteu em uma plataforma estacionária. Transmissão final em 2010-03-22; missão declarada encerrada em 2011-05-25. Gêmeo de Opportunity, que pousou três semanas depois no lado oposto de Marte.",
   "events": [
     {
       "met": 0,
       "label": "LANÇAMENTO",
-      "note": "Delta II 7925 de Cape Canaveral LC-17A.",
+      "note": "Delta II 7925 de Cabo Canaveral LC-17A.",
       "type": "nominal"
     },
     {

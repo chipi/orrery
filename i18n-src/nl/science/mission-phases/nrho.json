@@ -1,8 +1,8 @@
 {
   "title": "NRHO — Bijna-rechtlijnige halobaan",
-  "intro_sentence": "Een ~6,5-dagse, eivormige baan rond het Earth-Moon L2-punt — de gekozen plaats voor NASA's Lunar Gateway.",
+  "intro_sentence": "Een ~6,5-dagse, eivormige baan rond het Aarde-Maan L2-punt — de gekozen plaats voor NASA's Lunar Gateway.",
   "narrative_101": [
-    "NRHO is de baan die NASA koos voor Gateway, het kleine ruimtestation dat vanaf eind jaren 2020 in de buurt van de Maan zal werken. Het acroniem staat voor Near-Rectilinear Halo Orbit — een term die bijna niets betekent tot je de vorm ziet. Stelt je een ei voor, uitgerekt, bijna-maar-niet-helemaal in evenwicht op het Earth-Moon L2 Lagrangepunt, met de dichtste passage boven de zuidpool van de Maan. Het ruimtevaartuig draait er om heen, eenmaal per ~6,5 dagen.",
+    "NRHO is de baan die NASA koos voor Gateway, het kleine ruimtestation dat vanaf eind jaren 2020 in de buurt van de Maan zal werken. Het acroniem staat voor Near-Rectilinear Halo Orbit — een term die bijna niets betekent tot je de vorm ziet. Stelt je een ei voor, uitgerekt, bijna-maar-niet-helemaal in evenwicht op het Aarde-Maan L2 Lagrangepunt, met de dichtste passage boven de zuidpool van de Maan. Het ruimtevaartuig draait er om heen, eenmaal per ~6,5 dagen.",
     "Waarom juist deze baan, uit alle mogelijke banen? Het is een perfect compromis. Het kost bijna geen brandstof om in stand te houden — ongeveer 5 meter per seconde per jaar voor stationkeeping, wat in feite gratis is. Het heeft altijd een duidelijk zichtlijn terug naar de Aarde, dus radiocontact wordt nooit door de Maan geblokkeerd. En één kant van het ei duikt dicht genoeg naar de Maan zodat landers naar de zuidpool kunnen gaan en terugkomen zonder enorme ∆v-kosten.",
     "Artemis II zal de eerste bemande vlucht naar NRHO zijn. Artemis III zal daar aanmeren om over te gaan naar een op Starship gebaseerde lander. Voorbij Gateway wordt NRHO bestudeerd als uitvalbasis voor toekomstige bemande Marsmissies — een plaats om grote ruimtevaartuigen ver van de zwaartekracht van de Aarde in elkaar te zetten."
   ],
@@ -11,5 +11,5 @@
     "Waarom deze baan? Stabiliteit met lage ∆v-onderhoudsvereisten — ongeveer 5 m/s per jaar stationkeeping. Continue zichtlijn naar de Aarde (Gateway gaat nooit lang achter de Maan). Goedkope ∆v-toegang vanaf de Aarde (ongeveer 4 km/s voor overdracht en inbrengen, vergelijkbaar met LLO maar met veel betere thermische stabiliteit). Toegang tot het maanoppervlak via kleine landers vanuit perilunium.",
     "Gateway zal het eerste bemande diepruimtestation zijn, vanaf eind jaren 2020 in NRHO operationeel. Artemis II zal de eerste bemande vlucht naar NRHO zijn; Artemis III zal daar aanmeren om over te gaan naar de lander. Voorbij Gateway is NRHO de uitvalbasis voor bemande Marsarchitecturen."
   ],
-  "diagram_caption": "Uitgerekte halorbaan op het Earth-Moon L2-punt: ~6,5-dagse periode, perilunium boven de zuidpool, continue zichtlijn naar de Aarde."
+  "diagram_caption": "Uitgerekte halorbaan op het Aarde-Maan L2-punt: ~6,5-dagse periode, perilunium boven de zuidpool, continue zichtlijn naar de Aarde."
 }

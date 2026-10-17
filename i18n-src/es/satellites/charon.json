@@ -1,19 +1,19 @@
 {
-  "description": "La mitad del diámetro de Plutón — la mayor proporción tamaño satélite-planeta del sistema solar. Charon y Plutón están mutuamente bloqueados por fuerzas de marea, orbitando un centro de masas común a unos 980 km por encima de la superficie de Plutón — efectivamente un sistema de planeta binario. New Horizons reveló un terreno sorprendentemente variado: la llanura suave de Vulcan Planitia al sur, un hemisferio antiguo y craterizado al norte, y una capa polar rojo oscuro (Mordor Macula) de tholinas formadas cuando las moléculas de metano que escapaban de la atmósfera de Plutón se acumulaban en Charon y eran procesadas por la luz ultravioleta. Las cuatro lunas menores de Plutón (Styx, Nix, Kerberos, Hydra) orbitan el baricentro Plutón-Charon con rotaciones caóticas impulsadas por la gravedad variable del sistema binario.",
+  "description": "La mitad del diámetro de Plutón — la mayor proporción tamaño satélite-planeta del sistema solar. Caronte y Plutón están mutuamente bloqueados por fuerzas de marea, orbitando un centro de masas común a unos 980 km por encima de la superficie de Plutón — efectivamente un sistema de planeta binario. New Horizons reveló un terreno sorprendentemente variado: la llanura suave de Vulcan Planitia al sur, un hemisferio antiguo y craterizado al norte, y una capa polar rojo oscuro (Mordor Macula) de tholinas formadas cuando las moléculas de metano que escapaban de la atmósfera de Plutón se acumulaban en Caronte y eran procesadas por la luz ultravioleta. Las cuatro lunas menores de Plutón (Styx, Nix, Kerberos, Hydra) orbitan el baricentro Plutón-Caronte con rotaciones caóticas impulsadas por la gravedad variable del sistema binario.",
   "surface_composition": "Corteza de hielo de agua con hidratos de amoníaco y tolinas; el casquete polar rojizo oscuro (Mordor Macula) es gas metano escapado de Plutón y procesado en tolinas sobre la superficie gélida de Caronte.",
   "mission_visits": [
     "New Horizons — EE.UU., 2015 (primer y único sobrevuelo)"
   ],
   "library_labels": {
-    "charon-wiki": "Wikipedia — Charon",
-    "charon-nasa": "NASA Science — descripción general de Charon",
-    "charon-new-horizons": "NASA New Horizons — sobrevuelo de Plutón-Charon (2015)"
+    "charon-wiki": "Wikipedia — Caronte",
+    "charon-nasa": "NASA Science — descripción general de Caronte",
+    "charon-new-horizons": "NASA New Horizons — sobrevuelo de Plutón-Caronte (2015)"
   },
   "science_sections": [
     {
       "tab": "orbits",
       "section": "keplerian-orbit",
-      "why": "Charon y Plutón orbitan un baricentro situado FUERA de Plutón — lo que lo convierte en el único sistema binario verdadero conocido del sistema solar en lugar de un planeta con satélite."
+      "why": "Caronte y Plutón orbitan un baricentro situado FUERA de Plutón — lo que lo convierte en el único sistema binario verdadero conocido del sistema solar en lugar de un planeta con satélite."
     },
     {
       "tab": "orbits",

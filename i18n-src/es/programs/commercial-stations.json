@@ -1,10 +1,10 @@
 {
   "name": "Estaciones comerciales",
-  "tagline": "Los puestos de avanzada privados destinados a reemplazar la ISS: una apuesta a que la órbita terrestre baja puede convertirse en un negocio, no solo en un programa gubernamental.",
+  "tagline": "Los puestos de avanzada privados destinados a reemplazar la EEI: una apuesta a que la órbita terrestre baja puede convertirse en un negocio, no solo en un programa gubernamental.",
   "the_land": [
     {
       "type": "prose",
-      "md": "La International Space Station es lo más grande que la humanidad ha construido jamás en órbita, y va a ser destruida deliberadamente. Hacia 2030, después de más de tres décadas de operación tripulada continua, la ISS será guiada hacia abajo para desintegrarse sobre el Pacífico, porque está envejeciendo, es costosa de mantener, y sus socios han decidido que el futuro de la órbita terrestre baja pertenece a empresas privadas en lugar de a agencias gubernamentales. Las estaciones comerciales son lo que se supone debe ocupar su lugar."
+      "md": "La International Space Station es lo más grande que la humanidad ha construido jamás en órbita, y va a ser destruida deliberadamente. Hacia 2030, después de más de tres décadas de operación tripulada continua, la EEI será guiada hacia abajo para desintegrarse sobre el Pacífico, porque está envejeciendo, es costosa de mantener, y sus socios han decidido que el futuro de la órbita terrestre baja pertenece a empresas privadas en lugar de a agencias gubernamentales. Las estaciones comerciales son lo que se supone debe ocupar su lugar."
     },
     {
       "type": "prose",
@@ -14,7 +14,7 @@
   "goals": [
     {
       "type": "prose",
-      "md": "El objetivo inmediato es la continuidad: tener al menos una estación comercial operativa antes de que la ISS sea desorbitada, para que la presencia humana en la órbita terrestre baja —ininterrumpida desde 2000— nunca se interrumpa. Perder esa continuidad significaría renunciar a una capacidad duramente conquistada y, simbólicamente, ceder la posición dominante en órbita baja precisamente en el momento en que la estación de China es la única otra en funcionamiento."
+      "md": "El objetivo inmediato es la continuidad: tener al menos una estación comercial operativa antes de que la EEI sea desorbitada, para que la presencia humana en la órbita terrestre baja —ininterrumpida desde 2000— nunca se interrumpa. Perder esa continuidad significaría renunciar a una capacidad duramente conquistada y, simbólicamente, ceder la posición dominante en órbita baja precisamente en el momento en que la estación de China es la única otra en funcionamiento."
     },
     {
       "type": "prose",
@@ -22,13 +22,13 @@
     },
     {
       "type": "prose",
-      "md": "También hay un objetivo estratégico envuelto dentro del comercial: mantener una presencia humana liderada por Estados Unidos en órbita baja cuando la ISS termine y la Tiangong de China continúe. Las estaciones comerciales están destinadas a garantizar que la retirada de la ISS sea una transferencia, no una retirada: que Occidente no simplemente abandone la órbita terrestre baja a China por defecto."
+      "md": "También hay un objetivo estratégico envuelto dentro del comercial: mantener una presencia humana liderada por Estados Unidos en órbita baja cuando la EEI termine y la Tiangong de China continúe. Las estaciones comerciales están destinadas a garantizar que la retirada de la EEI sea una transferencia, no una retirada: que Occidente no simplemente abandone la órbita terrestre baja a China por defecto."
     }
   ],
   "outcome": [
     {
       "type": "prose",
-      "md": "El resultado aún no está escrito: por ahora son contratos, diseños y artículos de prueba en lugar de estaciones en vuelo. Los planes son reales y están financiados: Axiom está construyendo un vehículo independiente de vuelo libre, con solo su primer módulo acoplándose brevemente a la ISS antes de separarse para unirse al resto de la estación en vuelo libre, un plan reestructurado a finales de 2024 que abandonó la visión anterior de ensamblar módulos permanentemente en la ISS y luego partir. Orbital Reef y Starlab están diseñando puestos de avanzada independientes, y Haven-1 de Vast —un vehículo de vuelo libre de un solo módulo— está entre los más probables de volar primero. Pero ninguna estación comercial está todavía en órbita, y los plazos son ajustados frente al final previsto de la ISS, con el riesgo habitual de que una estación sobre el papel se retrase mientras la fecha límite no lo hace."
+      "md": "El resultado aún no está escrito: por ahora son contratos, diseños y artículos de prueba en lugar de estaciones en vuelo. Los planes son reales y están financiados: Axiom está construyendo un vehículo independiente de vuelo libre, con solo su primer módulo acoplándose brevemente a la EEI antes de separarse para unirse al resto de la estación en vuelo libre, un plan reestructurado a finales de 2024 que abandonó la visión anterior de ensamblar módulos permanentemente en la EEI y luego partir. Orbital Reef y Starlab están diseñando puestos de avanzada independientes, y Haven-1 de Vast —un vehículo de vuelo libre de un solo módulo— está entre los más probables de volar primero. Pero ninguna estación comercial está todavía en órbita, y los plazos son ajustados frente al final previsto de la EEI, con el riesgo habitual de que una estación sobre el papel se retrase mientras la fecha límite no lo hace."
     },
     {
       "type": "prose",
@@ -36,7 +36,7 @@
     },
     {
       "type": "prose",
-      "md": "Lo que ya está claro es que el modelo tiene impulso y respaldo oficial. La NASA se ha comprometido a convertirse en cliente en lugar de operador, varias empresas bien financiadas compiten, y la fecha fija de retirada de la ISS da a todo el esfuerzo una fecha límite firme. Las estaciones comerciales pueden retrasarse, consolidarse o fracasar parcialmente, pero la intención de entregar la órbita terrestre baja al sector privado es firme."
+      "md": "Lo que ya está claro es que el modelo tiene impulso y respaldo oficial. La NASA se ha comprometido a convertirse en cliente en lugar de operador, varias empresas bien financiadas compiten, y la fecha fija de retirada de la EEI da a todo el esfuerzo una fecha límite firme. Las estaciones comerciales pueden retrasarse, consolidarse o fracasar parcialmente, pero la intención de entregar la órbita terrestre baja al sector privado es firme."
     }
   ],
   "narrative": [
@@ -46,11 +46,11 @@
     },
     {
       "type": "prose",
-      "md": "También es una apuesta sobre mercados que ha fracasado antes. Intentos anteriores de construir una economía comercial en órbita baja encontraron que, fuera de contratos gubernamentales, la demanda de pago era escasa. El esfuerzo actual está mejor financiado y mejor cronometrado —aprovechando lanzamientos más baratos y una fecha límite real— pero está intentando lo mismo de difícil: demostrar que la órbita puede ser un negocio. Nunca se esperó que la ISS generara beneficios; se supone que sus sucesoras sí, y esa es una exigencia genuinamente nueva y no probada."
+      "md": "También es una apuesta sobre mercados que ha fracasado antes. Intentos anteriores de construir una economía comercial en órbita baja encontraron que, fuera de contratos gubernamentales, la demanda de pago era escasa. El esfuerzo actual está mejor financiado y mejor cronometrado —aprovechando lanzamientos más baratos y una fecha límite real— pero está intentando lo mismo de difícil: demostrar que la órbita puede ser un negocio. Nunca se esperó que la EEI generara beneficios; se supone que sus sucesoras sí, y esa es una exigencia genuinamente nueva y no probada."
     },
     {
       "type": "prose",
-      "md": "Y se desarrolla contra un reloj y un rival. La retirada de la ISS está programada; la Tiangong de China está en vuelo y no se retirará con ella. Las estaciones comerciales se están construyendo para garantizar que Occidente no abandone la órbita terrestre baja justo cuando un competidor se instala, lo que carga una propuesta de negocio con peso estratégico, y plantea la pregunta de qué sucede si el mercado resulta demasiado escaso pero la necesidad estratégica permanece."
+      "md": "Y se desarrolla contra un reloj y un rival. La retirada de la EEI está programada; la Tiangong de China está en vuelo y no se retirará con ella. Las estaciones comerciales se están construyendo para garantizar que Occidente no abandone la órbita terrestre baja justo cuando un competidor se instala, lo que carga una propuesta de negocio con peso estratégico, y plantea la pregunta de qué sucede si el mercado resulta demasiado escaso pero la necesidad estratégica permanece."
     }
   ],
   "legacy": [
@@ -60,11 +60,11 @@
     },
     {
       "type": "prose",
-      "md": "Si tienen dificultades, su legado será una dura lección sobre los límites de la comercialización: que algunas capacidades, por deseables que sean, pueden no tener todavía un mercado que pueda sostenerlas sin un ancla gubernamental, y que la transferencia de la órbita baja puede necesitar ser más lenta, o subsidiada durante más tiempo, de lo que la fecha límite de la ISS permite."
+      "md": "Si tienen dificultades, su legado será una dura lección sobre los límites de la comercialización: que algunas capacidades, por deseables que sean, pueden no tener todavía un mercado que pueda sostenerlas sin un ancla gubernamental, y que la transferencia de la órbita baja puede necesitar ser más lenta, o subsidiada durante más tiempo, de lo que la fecha límite de la EEI permite."
     },
     {
       "type": "prose",
-      "md": "En cualquier caso, marcan el final de la era de la ISS y la prueba de un nuevo modelo. Las estaciones comerciales son donde el largo experimento de privatizar el acceso al espacio se encuentra con su pregunta más difícil: no si una empresa puede alcanzar la órbita, sino si puede vivir allí de forma rentable."
+      "md": "En cualquier caso, marcan el final de la era de la EEI y la prueba de un nuevo modelo. Las estaciones comerciales son donde el largo experimento de privatizar el acceso al espacio se encuentra con su pregunta más difícil: no si una empresa puede alcanzar la órbita, sino si puede vivir allí de forma rentable."
     }
   ],
   "lessons": [
@@ -74,7 +74,7 @@
     },
     {
       "type": "prose",
-      "md": "La lección más profunda, aún en formación, trata sobre el peligro de retirar una capacidad antes de que su reemplazo esté asegurado. La ISS tiene una fecha de finalización fija; sus sucesoras comerciales todavía no vuelan. Apostar a que un mercado se materializará según lo programado, con una fecha límite firme y un rival ya en órbita, es una apuesta cuyas apuestas no son menos que la presencia humana continua en la órbita terrestre baja misma."
+      "md": "La lección más profunda, aún en formación, trata sobre el peligro de retirar una capacidad antes de que su reemplazo esté asegurado. La EEI tiene una fecha de finalización fija; sus sucesoras comerciales todavía no vuelan. Apostar a que un mercado se materializará según lo programado, con una fecha límite firme y un rival ya en órbita, es una apuesta cuyas apuestas no son menos que la presencia humana continua en la órbita terrestre baja misma."
     }
   ]
 }

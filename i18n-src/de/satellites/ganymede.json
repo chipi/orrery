@@ -1,5 +1,5 @@
 {
-  "description": "Der größte Mond des Sonnensystems – größer als Merkur, 8 % größer als der Mond. Ganymede ist der einzige Mond mit einem selbst erzeugten Magnetfeld, ein Beweis für einen teilweise geschmolzenen Eisenkern. Unter etwa 150 km Eis liegt ein Salzwasserozean, größer als alle Ozeane der Erde zusammen; einige Modelle deuten auf eine geschichtete Struktur mit mehreren Ozeanen hin, die durch Eisphasen unterschiedlicher Dichten voneinander getrennt sind. Die JUICE-Mission der ESA wird die erste Orbiter eines anderen Mondes als der Erde sein, wenn sie im Dezember 2034 in die Ganymede-Umlaufbahn eintritt.",
+  "description": "Der größte Mond des Sonnensystems – größer als Merkur, 8 % größer als der Mond. Ganymed ist der einzige Mond mit einem selbst erzeugten Magnetfeld, ein Beweis für einen teilweise geschmolzenen Eisenkern. Unter etwa 150 km Eis liegt ein Salzwasserozean, größer als alle Ozeane der Erde zusammen; einige Modelle deuten auf eine geschichtete Struktur mit mehreren Ozeanen hin, die durch Eisphasen unterschiedlicher Dichten voneinander getrennt sind. Die JUICE-Mission der ESA wird die erste Orbiter eines anderen Mondes als der Erde sein, wenn sie im Dezember 2034 in die Ganymed-Umlaufbahn eintritt.",
   "surface_composition": "Etwa zur Hälfte aus Wassereis und zur Hälfte aus Silikatgestein; die Oberfläche ist eine Mischung aus dunklem, kraterübersätem Terrain (~4 Mrd. Jahre alt) und hellerem, gefurchtem Terrain (tektonische Oberflächenerneuerung vor ~2 Mrd. Jahren); dünne Sauerstoff-Exosphäre.",
   "mission_visits": [
     "Voyager 1 + 2 — USA, 1979 (Kartierung)",
@@ -22,7 +22,7 @@
     {
       "tab": "orbits",
       "section": "keplers-laws",
-      "why": "Äußeres Mitglied der 4:2:1-Laplace-Resonanz mit Io und Europa – die Stabilität von Ganymede verankert das gesamte innere Galilei-System."
+      "why": "Äußeres Mitglied der 4:2:1-Laplace-Resonanz mit Io und Europa – die Stabilität von Ganymed verankert das gesamte innere Galilei-System."
     }
   ]
 }

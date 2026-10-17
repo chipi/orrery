@@ -2,12 +2,12 @@
   "name": "Lucy",
   "type": "SOBREVUELO MÚLTIPLE · ACTIVA",
   "first": "Primera misión a los Troyanos de Júpiter; visita 11 cuerpos en 8 asteroides y sus satélites en una única trayectoria de 12 años — un récord de objetos en órbitas solares separadas",
-  "description": "Lucy se dirige hacia las nubes de Lagrange L4 y L5 — poblaciones de asteroides primordiales que preceden y cierran a Júpiter por 60°, que se cree preservan material del disco protoplanetario exterior. Tres asistencias gravitatorias de la Tierra (2022, 2024, 2030) moldean una única trayectoria que visita siete asteroides troyanos además de objetivos de bonificación en el cinturón principal. Primer encuentro con asteroide: 152830 Dinkinesh (2023-11-01, ~790 m), en el cual el imageado reveló el satélite binario de contacto Selam. Bonificación del cinturón principal: Donaldjohanson 2025-04. Enjambre L4: Eurybates + satélite Queta (2027-08), Polymele (2027-09), Leucus (2028-04), Orus (2028-11). Tras EGA-3 (2030-12), el enjambre caudal L5: Patroclus-Menoetius binario (2033-03) — el binario troyano más grande conocido, un clímax apropiado para el homónimo de la misión (Lucy el fósil homínido; Patroclus-Menoetius los dos personajes que cayeron juntos en la Ilíada).",
+  "description": "Lucy se dirige hacia las nubes de Lagrange L4 y L5 — poblaciones de asteroides primordiales que preceden y cierran a Júpiter por 60°, que se cree preservan material del disco protoplanetario exterior. Tres asistencias gravitatorias de la Tierra (2022, 2024, 2030) moldean una única trayectoria que visita siete asteroides troyanos además de objetivos de bonificación en el cinturón principal. Primer encuentro con asteroide: 152830 Dinkinesh (2023-11-01, ~790 m), en el cual el imageado reveló el satélite binario de contacto Selam. Bonificación del cinturón principal: Donaldjohanson 2025-04. Enjambre L4: Euríbates + satélite Queta (2027-08), Polimele (2027-09), Leuco (2028-04), Oro (2028-11). Tras EGA-3 (2030-12), el enjambre caudal L5: Patroclo-Menecio binario (2033-03) — el binario troyano más grande conocido, un clímax apropiado para el homónimo de la misión (Lucy el fósil homínido; Patroclo-Menecio los dos personajes que cayeron juntos en la Ilíada).",
   "events": [
     {
       "met": 0,
       "label": "LANZAMIENTO",
-      "note": "Atlas V 401 desde Cape Canaveral SLC-41.",
+      "note": "Atlas V 401 desde Cabo Cañaveral SLC-41.",
       "type": "nominal"
     },
     {

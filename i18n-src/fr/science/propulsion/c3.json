@@ -8,7 +8,7 @@
   ],
   "body_paragraphs": [
     "C3 est le carré de la vitesse hyperbolique excédentaire. Unités : km²/s². Il vous indique quelle énergie au-delà de l'échappement votre lanceur doit livrer. C3 = 0 signifie que vous échappez à peine à la gravité terrestre, arrivant à l'infini avec une vitesse nulle. C3 = 25 km²/s² signifie que vous arrivez avec V∞ = 5 km/s de vitesse héliocentriqueexcédentaire.",
-    "Les lanceurs se caractérisent par leur courbe C3-en-fonction-de-la-charge-utile. Falcon Heavy peut projeter ~16 tonnes à C3=10, mais seulement ~5 tonnes à C3=80. Mars demande généralement C3 autour de 8-12. Jupiter en vol direct : C3 autour de 80. New Horizons s'est lancée avec C3 = 158 km²/s² — la plus élevée jamais atteinte pour une mission — pour accomplir le trajet vers Pluto en seulement 9,5 ans.",
+    "Les lanceurs se caractérisent par leur courbe C3-en-fonction-de-la-charge-utile. Falcon Heavy peut projeter ~16 tonnes à C3=10, mais seulement ~5 tonnes à C3=80. Mars demande généralement C3 autour de 8-12. Jupiter en vol direct : C3 autour de 80. New Horizons s'est lancée avec C3 = 158 km²/s² — la plus élevée jamais atteinte pour une mission — pour accomplir le trajet vers Pluton en seulement 9,5 ans.",
     "Dans l'onglet FLIGHT du `/missions` d'Orrery, le C3 de chaque mission interplanétaire est le point de données de la première ligne canonique. C'est l'unique nombre qui capture « à quel point c'était difficile de lancer »."
   ],
   "formula_caption": "C3 est simplement V∞ au carré. Même physique, unités différentes."

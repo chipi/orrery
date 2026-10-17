@@ -2,11 +2,11 @@
   "name": "Órbita Terrestre Baja",
   "short": "LEO",
   "story": "La franja más cercana del espacio — de 160 a 2000 km de altura. Baja latencia de comunicaciones (~7 ms en un sentido), el arrastre atmosférico todavía tira del borde inferior, y los cinturones de radiación aún no han entrado en juego. Los vuelos espaciales tripulados viven aquí por las mismas razones: rescatable, alcanzable, y el cuerpo humano tolera un viaje de unos pocos cientos de kilómetros. Todas las estaciones espaciales que han volado se han estacionado en LEO.",
-  "comparison": "Aproximadamente 1/600 del camino hasta la Luna. La ISS a 408 km orbita a la misma altitud que la distancia entre Londres y Ginebra — puesta de lado.",
+  "comparison": "Aproximadamente 1/600 del camino hasta la Luna. La EEI a 408 km orbita a la misma altitud que la distancia entre Londres y Ginebra — puesta de lado.",
   "residents": [
     {
       "id": "iss",
-      "label": "ISS — International Space Station",
+      "label": "EEI — International Space Station",
       "agency": "NASA"
     },
     {

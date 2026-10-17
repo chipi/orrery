@@ -78,7 +78,7 @@ const GUARD = {
   Castor: { path: /fleet\/|rockets\// },
   // the rockets and the NASA centre, not the astronauts; White Sands, the White House
   Shepard: { before: /New[\s-]?$/ },
-  Glenn: { before: /New[\s-]?$/, after: /^\s?Research/ },
+  Glenn: { before: /(New[\s-]?|NASA\s?)$/, after: /^\s?Research/ },
   White: { after: /^\s?(Sands|House|[Dd]warf)/ },
   Polaris: {
     after: /^\s?(Dawn|Program)/,
@@ -177,6 +177,58 @@ function obliqueHi(s, old) {
       /(^|\s)(तारामंडल|घाटी|धूमकेतु|मैदान|क्रेटर|पर्वत|सागर) \2(?=[\s,।.;)—]|$)/g,
       fresh((m, p, w) => `${p}${w}`),
     );
+}
+// Arabic, only where the swap made the phrase: a prefix the text kept apart before a Latin
+// name joins the Arabic one (لـ كارل → لكارل, لـ المشتري → للمشتري, بـ زحل → بزحل,
+// و كوبر → وكوبر); a name or descriptor said twice goes (محطة محطة الفضاء الدولية,
+// حزام حزام كايبر, "لإطلاق الأقمار الصناعية" twice); the ISS's own long name before the
+// inserted one goes (والمحطة الفضائية الدولية محطة الفضاء الدولية → ومحطة الفضاء الدولية).
+const AR = '[\\u0621-\\u064A]';
+function prefixesAr(s, old) {
+  const fresh =
+    (f) =>
+    (m, ...a) =>
+      old.includes(m) ? m : f(m, ...a);
+  let prev;
+  do {
+    prev = s;
+    s = s.replace(
+      new RegExp(`(^|\\s)(${AR}+(?: ${AR}+){0,3}) \\2(?=[\\s،.؛:)—]|$)`, 'g'),
+      fresh((m, p, w) => `${p}${w}`),
+    );
+  } while (s !== prev);
+  return (
+    s
+      .replace(
+        /(\S*)محطة محطة الفضاء الدولية/g,
+        fresh((m, p) => `${p}محطة الفضاء الدولية`),
+      )
+      // the article goes on a construct the name made ("فالمحطة ISS" → فمحطة الفضاء الدولية)
+      .replace(
+        /(^|\s)(و|ف|ب)?(ال|لل)محطة الفضاء الدولية/g,
+        fresh((m, p, w, a) => `${p}${w ?? ''}${a === 'لل' ? 'ل' : ''}محطة الفضاء الدولية`),
+      )
+      .replace(
+        /(\S*)نجم نجم /g,
+        fresh((m, p) => `${p}نجم `),
+      )
+      .replace(
+        /(^|\s)(و|ب)?(لل|ال)محطة الفضائية الدولية محطة الفضاء الدولية/g,
+        fresh((m, p, w, a) => `${p}${w ?? ''}${a === 'لل' ? 'ل' : ''}محطة الفضاء الدولية`),
+      )
+      .replace(
+        new RegExp(`(^|\\s)لـ\\s?ال(${AR}+)`, 'g'),
+        fresh((m, p, x) => `${p}لل${x}`),
+      )
+      .replace(
+        new RegExp(`(^|\\s)(لـ|بـ) (${AR}+)`, 'g'),
+        fresh((m, p, w, x) => `${p}${w[0]}${x}`),
+      )
+      .replace(
+        new RegExp(`(^|\\s)و (${AR}+)`, 'g'),
+        fresh((m, p, x) => `${p}و${x}`),
+      )
+  );
 }
 function coordinateRu(s) {
   let prev;
@@ -546,7 +598,7 @@ for (const f of walk(`i18n-src/${loc}`)) {
           '$1',
         );
       // Arabic: the preposition لـ before the article ال is written لل
-      if (loc === 'ar' && s !== v) s = s.replace(/لـال/g, 'لل');
+      if (loc === 'ar' && s !== v) s = prefixesAr(s.replace(/لـال/g, 'لل'), v);
       if (loc === 'hi' && s !== v) s = obliqueHi(s, v);
       if (loc === 'ru' && s !== v) s = coordinateRu(s);
       if (loc === 'sr-Cyrl' && s !== v) {

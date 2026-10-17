@@ -111,8 +111,9 @@ for (const [qid, it] of items) {
   if (!e) continue;
   let slavic = false;
   const cells = Object.entries(LOCS).map(([loc, [wiki, lls]]) => {
-    // a zero-width space is never part of a name (the hi label "ख़्रुश्चेव" + U+200B); ZWJ/ZWNJ are kept
-    const zw = (x) => x?.replace(/[\u200b\ufeff]/g, '');
+    // a zero-width space or a direction mark is never part of a name (the hi label
+    // "ख़्रुश्चेव" + U+200B, the ar label "كبلر" + U+200E); ZWJ/ZWNJ are kept
+    const zw = (x) => x?.replace(/[\u200b\u200e\u200f\ufeff]/g, '');
     const title = zw(e.sitelinks?.[`${wiki}wiki`]?.title);
     let label = zw(
       lls

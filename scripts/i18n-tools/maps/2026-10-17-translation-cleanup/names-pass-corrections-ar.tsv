@@ -1,0 +1,56 @@
+# ar hand corrections for the names pass: Latin names left in the touched strings, doubled
+# glosses, alternate-name sentences, English leftovers the swap exposed, and one false fact
+fleet/crewed-spacecraft/challenger	بما فيهم سالي رايد من مهمتها الرائدة STS-7.	بما فيهم المعلّمة كريستا ماك أوليف.
+fleet/station/iss	The محطة الفضاء الدولية — humanity’s longest continuously crewed habitat, occupied since November 2000. Assembled across more than 40 launches by NASA, Roscosmos, ESA, JAXA, and CSA. ومن المقرر حالياً أن يُلغى الحكم حوالي عام 2031.	محطة الفضاء الدولية — أطول مسكن بشري مأهول باستمرار، مأهولة منذ نوفمبر 2000. جُمِّعت عبر أكثر من 40 عملية إطلاق نفّذتها NASA وRoscosmos وESA وJAXA وCSA. ومن المقرر حالياً إخراجها من المدار نحو عام 2031.
+fleet/lander/insight	NASA’s 2018-2022 المريخ seismometer mission.	مهمة NASA لرصد الزلازل على المريخ (2018-2022).
+fleet/orbiter/giotto	مذنب هالي Comet بسرعة	مذنب هالي بسرعة
+fleet/orbiter/osiris-rex	بينو (2023); now en route to أبوفيس	بينو (2023)؛ وهي الآن في طريقها إلى أبوفيس	tagline
+fleet/orbiter/osiris-rex	بينو (2023); now en route to أبوفيس	بينو (2023)؛ وهي الآن في طريقها إلى أبوفيس	best_known_for
+missions/earth/otv-4	بمركز مركز كينيدي للفضاء	بمركز كينيدي للفضاء
+missions/moon/apollo12	يُدعى جون هارون بسحب	يُدعى جون آرون بسحب
+missions/moon/apollo12	فريق المراقبة جون هارون،	فريق المراقبة جون آرون،
+orbit-regimes/LEO	محطة الفضاء الدولية — محطة الفضاء الدولية	ISS — محطة الفضاء الدولية
+science/observation/our-galaxy	(Perseus وSagittarius والترس-Centaurus وNorma،	(برشاوس والرامي والترس-قنطورس والمربع،
+universe/exoplanets/barnard-b	نجم بارنارد (نجم السهم)، أقرب	نجم السهم (نجم برنارد)، أقرب
+universe/named-stars/barnards-star	لقب 'نجم السهم الهارب'	لقب 'نجم برنارد الهارب'
+universe/named-stars/achernar	الطرف الجنوبي لنهر النهر السماوي	الطرف الجنوبي للنهر السماوي
+universe/named-stars/mimosa	المعروف أيضاً باسم Becrux،	المعروف أيضاً باسم بيكروكس،
+belts/asteroid	سيريس من Palermo،	سيريس من باليرمو،
+fleet/crewed-spacecraft/starliner	عاد ويلمور و Williams	عاد ويلمور وويليامز
+fleet/station/salyut-1	(Dobrovolski وفولكوف وباتساييف)	(دوبروفولسكي وفولكوف وباتساييف)
+fleet/station/salyut-3	بوبوفيتش + Artyukhin	بوبوفيتش + أرتيوخين
+fleet/station/salyut-7	Vladimir Dzhanibekov وفكتور سافينيخ	فلاديمير جانيبيكوف وفكتور سافينيخ
+missions/earth/apollo-soyuz	(ستافورد + Brand + Slayton)	(ستافورد + براند + سلايتون)
+missions/earth/apollo-soyuz	(ليونوف + Kubasov)	(ليونوف + كوباسوف)
+missions/earth/apollo9	ماكديفيت و Schweickart وحدة	ماكديفيت وشفايكارت وحدة
+missions/earth/apollo9	ماكديفيت و Schweickart بوحدة	ماكديفيت وشفايكارت بوحدة
+missions/earth/gemini4	جيمس ماكديفيت و Edward وايت	جيمس ماكديفيت وإدوارد وايت
+missions/earth/inspiration4	وChris Sembroski	وكريس سيمبروسكي
+missions/earth/polaris-dawn	إيزاكمان و Gillis	إيزاكمان وجيليس
+missions/earth/skylab-3	بين وGarriott وLousma	بين وغاريوت ولوسما
+missions/earth/voskhod-1	وفيوكتيستوف وYegorov	وفيوكتيستوف ويغوروف
+programs/voskhod	وفيوكتيستوف وYegorov	وفيوكتيستوف ويغوروف
+missions/jupiter/pioneer-10	وفرانك دريك و Linda Salzman Sagan	وفرانك دريك وليندا سالزمان ساغان
+programs/mercury	لغوردون كوبر (جوردن كوبر)	لغوردون كوبر
+programs/skylab	كونراد وKerwin وWeitz	كونراد وكيروين وويتز
+programs/space-shuttle	المحطة الفضائية الدولية (محطة الفضاء الدولية)	محطة الفضاء الدولية
+science/history/sputnik-1957	Tikhonravov (مصمّم صواريخ)، وKeldysh	تيخونرافوف (مصمّم صواريخ)، وكيلديش
+science/life-in-space/crew-dynamics-psychology	(Shepherd وكريكاليف وGidzenko،	(شيبرد وكريكاليف وغيدزينكو،
+science/life-in-space/long-duration-effects	بتوأمه Mark	بتوأمه مارك
+science/life-in-space/lunar-surface-ops	(Shackleton وكابيوس)	(شاكلتون وكابيوس)
+science/life-in-space/mars-habitat-design	تعتمد المريخ Design Reference	تعتمد Mars Design Reference
+science/life-in-space/mars-habitat-design	MOXIE (المريخ OXygen	MOXIE (Mars OXygen
+science/mission-phases/dead-reckoning	(المريخ-EDL)	(Mars-EDL)
+science/mission-phases/orbit-insertion	(المريخ Orbit Insertion)	(Mars Orbit Insertion)
+science/orbits/space-debris	لصاروخ النسر الواقع	لصاروخ Vega
+science/history/apollo-11-1969	وMargaret Hamilton	ومارغريت هاميلتون
+programs/commercial-stations	فلـ محطة الفضاء الدولية	فلمحطة الفضاء الدولية
+universe/named-stars/alnair	في كوكبة الكركي الحديثة، الكركي.	في كوكبة الكركي الحديثة.
+universe/named-stars/alphecca	المعروف أيضاً باسم Gemma،	المعروف أيضاً باسم جيما،
+universe/named-stars/alphecca	الاسم البديل Gemma	الاسم البديل جيما
+universe/named-stars/atria	في المثلث الجنوبي، المثلث الجنوبي.	في كوكبة المثلث الجنوبي.
+universe/named-stars/diphda	ويُسمى أيضاً Deneb Kaitos،	ويُسمى أيضاً ذنب قيطس،
+universe/named-stars/hadar	ويُدعى أيضاً Agena،	ويُدعى أيضاً أجينا،
+universe/named-stars/peacock	ألمع نجم في الطاووس، الطاووس،	ألمع نجم في كوكبة الطاووس،
+universe/named-stars/wezen	في كوكبة الكلب الأكبر، الكلب الأكبر الذي	في كوكبة الكلب الأكبر التي
+universe/named-stars/denebola	قلب الأسد في قلب الأسد.	قلب الأسد في كوكبة الأسد.

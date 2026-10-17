@@ -1,0 +1,7 @@
+# ar: one name per body in running text, as the glossary sets it (Io آيو, Europa أوروبا,
+# Kuiper Belt حزام كايبر). Project Kuiper, Amazon's constellation, keeps its name.
+# regex (flags gu) \t replacement
+حزام Kuiper	حزام كايبر
+أجسام Kuiper	أجسام حزام كايبر
+(?<![ء-ي])([وبلف]?)أيو(?![ء-ي])	$1آيو
+(?<![ء-ي])([وبلف]?)يوروبا(?![ء-ي])	$1أوروبا

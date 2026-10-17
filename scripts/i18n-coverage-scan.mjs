@@ -68,7 +68,29 @@ const titleWords = (s) => {
 };
 // Identical on purpose: a proper name kept in English (NAME_POLICY), or a word
 // spelled the same in that language.
-const SAME_OK = { '*': ['DSN — Deep Space Network'], fr: ['Biosignatures'] };
+const NAMES_KEPT = [
+  'DSN — Deep Space Network',
+  'JWST — James Webb Space Telescope',
+  'Chandra X-ray Observatory',
+  'Mons Rümker (Oceanus Procellarum)',
+  'Venera 7-class',
+  // Lucy's asteroid targets, upper-case event labels
+  'EURYBATES + QUETA',
+  'POLYMELE',
+  'PATROCLUS-MENOETIUS',
+  'ORUS',
+  'LEUCUS',
+  'DONALDJOHANSON',
+  'DINKINESH',
+];
+const SAME_OK = {
+  '*': NAMES_KEPT,
+  de: ['RENDEZVOUS', 'CONE CRATER + GOLF', 'ASTEROID 2867 ŠTEINS', 'ASTEROID 21 LUTETIA'],
+  es: ['CONE CRATER + GOLF'],
+  fr: ['Biosignatures', 'IMPACT', 'CONE CRATER + GOLF'],
+  it: ['RENDEZVOUS', 'CONE CRATER + GOLF'],
+  nl: ['LANDING', 'RENDEZVOUS', 'CONE CRATER + GOLF'],
+};
 const untranslated = (field, s) =>
   !ID_FIELDS.test(field) &&
   (/\b[a-z]{3,}\b/.test(s) ||

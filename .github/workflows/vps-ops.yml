@@ -58,6 +58,8 @@ jobs:
       - name: Install SSH identity for deploy@
         env:
           PROD_SSH_PRIVATE_KEY: ${{ secrets.PROD_SSH_PRIVATE_KEY }}
+          PROD_SSH_HOST_KEY: ${{ vars.PROD_SSH_HOST_KEY }}
+          PROD_TAILNET_FQDN_PIN: ${{ vars.PROD_TAILNET_FQDN }}
         run: |
           set -euo pipefail
           mkdir -p ~/.ssh
@@ -68,8 +70,17 @@ jobs:
             echo "::error::PROD_SSH_PRIVATE_KEY is not a loadable OpenSSH/PEM key."
             exit 1
           fi
-          ssh-keyscan -t ed25519 -H "${{ vars.PROD_TAILNET_FQDN }}" \
-            >> ~/.ssh/known_hosts 2>/dev/null || true
+          # Pinned host key (#600): a TOFU keyscan would trust whatever answers.
+          # PROD_SSH_HOST_KEY is the box's ed25519 public key ("ssh-ed25519 AAAA…"),
+          # SHA256:jcRHkLFcNnL122wb3nM7F5nNjEqCtyjfys6+sRJ1EA0 as of the 2026-05-29
+          # build. A VPS rebuild generates new host keys: re-pin per
+          # docs/ops/deploy-prod-vps.md §"Re-pin the SSH host key".
+          if [ -z "${PROD_SSH_HOST_KEY:-}" ]; then
+            echo "::error::vars.PROD_SSH_HOST_KEY (prod environment) is not set."
+            exit 1
+          fi
+          printf '%s %s\n' "${PROD_TAILNET_FQDN_PIN}" "${PROD_SSH_HOST_KEY}" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
 
       - name: Run on VPS
         env:
@@ -92,5 +103,5 @@ jobs:
             '
           fi
           ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes \
-            -o StrictHostKeyChecking=accept-new -o BatchMode=yes "$SSH_TARGET" \
+            -o StrictHostKeyChecking=yes -o BatchMode=yes "$SSH_TARGET" \
             "bash -c '$REMOTE'"

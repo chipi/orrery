@@ -140,6 +140,7 @@ In the orrery repo settings → **Environments → prod → Environment secrets/
 | Secret | `TS_AUTHKEY` | Tailscale auth key with `tag:gha-deployer`. Reusable, 90-day expiry recommended. |
 | Secret | `PROD_SSH_PRIVATE_KEY` | Ed25519 PEM (private key matching `~/.ssh/authorized_keys` of `deploy@` on the VPS). |
 | Variable | `PROD_TAILNET_FQDN` | The MagicDNS host of the VPS, e.g. `prod-podcast.<tailnet>.ts.net`. Same host that serves podcast_scraper; orrery uses a different tailscale-serve port (:8443). |
+| Variable | `PROD_SSH_HOST_KEY` | The VPS's ed25519 SSH host public key, `ssh-ed25519 AAAA…` (no hostname). Deploy and vps-ops pin it and connect with `StrictHostKeyChecking=yes`; the job fails if it is unset. See §"Re-pin the SSH host key". |
 
 ### Optional — observability (#263)
 
@@ -252,7 +253,22 @@ Until then, every push needs a manual `gh workflow run`.
 
 ### Workflow fails on "Missing prereqs"
 
-The three secrets/vars in §"GitHub Actions setup" aren't all set. Set them, re-run.
+The secrets/vars in §"GitHub Actions setup" aren't all set. Set them, re-run. (`PROD_SSH_HOST_KEY` is checked in the SSH step, not here: it fails that step instead of skipping the deploy.)
+
+### Re-pin the SSH host key
+
+The SSH steps fail with `Host key verification failed` after the VPS gets new
+host keys, which every rebuild from Terraform/cloud-init does. Re-pin from two
+independent sources, and only if they agree:
+
+1. On the box (prod session): `ssh-keygen -lf /etc/ssh/ssh_host_ed25519_key.pub`.
+2. Over the tailnet (WireGuard-authenticated):
+   `ssh-keyscan -t ed25519 <PROD_TAILNET_FQDN> | ssh-keygen -lf -`.
+3. If the SHA256 fingerprints match, set the key (the part after the hostname):
+   `gh variable set PROD_SSH_HOST_KEY --env prod --body "ssh-ed25519 AAAA…"`.
+
+Pinned 2026-10-17: `SHA256:jcRHkLFcNnL122wb3nM7F5nNjEqCtyjfys6+sRJ1EA0`
+(the 2026-05-29 build).
 
 ### Tailnet probe times out
 

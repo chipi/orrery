@@ -86,6 +86,13 @@ describe('name guard (NAME_POLICY)', () => {
       expect.arrayContaining([expect.stringMatching(/Apollo/)]),
     );
   });
+  it('accepts a launch site written with its native place name and the pad code kept', () => {
+    expect(problems('ru', 'Cape Canaveral SLC-40', 'Мыс Канаверал, SLC-40')).toEqual([]);
+    expect(problems('ru', 'Baikonur Site 200', 'Байконур, площадка 200')).toEqual([]);
+    expect(problems('ru', 'Baikonur Site 200', 'Байконур, площадка 20')).toEqual(
+      expect.arrayContaining([expect.stringMatching(/Baikonur Site 200/)]),
+    );
+  });
   it('counts a designation as kept when the longer name holding it is rendered natively', () => {
     expect(problems('ru', 'Plesetsk LC-41/1', 'Плесецк, площадка 41/1')).toEqual([]);
     expect(problems('ru', 'Plesetsk LC-41/1', 'Плесецк')).toEqual(

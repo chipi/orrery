@@ -352,8 +352,26 @@ export function problems(locale, src, out) {
   const kept = [
     ...names.filter((n) => nameRendered(locale, n, out, apos)),
     ...terms.flatMap((t) => names.filter((n) => t.includes(n))),
+    // …and a designation made of a native place plus a code that survives
+    // ("Cape Canaveral SLC-40" → "мыс Канаверал, SLC-40").
+    ...terms.flatMap((t) =>
+      names.filter((n) => n.includes(t) && out.includes(n.replace(t, '').trim())),
+    ),
   ];
-  const lost = names.filter((n) => !kept.some((k) => k.includes(n)));
+  // A designation built from a place, generic words and a code ("Baikonur Site 200",
+  // "Launch Complex 39A") is kept when its code survives and every other word is a
+  // generic word or part of a glossary term rendered natively ("Байконур, площадка 200").
+  const GENERIC = /^(Site|Launch|Complex|Pad|Orbital|Space|Center|Centre|Station)$/;
+  const builtKept = (n) => {
+    const words = n.split(/\s+/);
+    const codes = words.filter((w) => /\d/.test(w));
+    return (
+      codes.length > 0 &&
+      codes.every((c) => out.includes(c)) &&
+      words.every((w) => /\d/.test(w) || GENERIC.test(w) || terms.some((t) => t.split(/\s+/).includes(w)))
+    );
+  };
+  const lost = names.filter((n) => !kept.some((k) => k.includes(n)) && !builtKept(n));
   if (lost.length) p.push(`names changed or missing: ${lost.slice(0, 5).join(', ')}`);
   // Names from the data's own name list must survive verbatim (NAME_POLICY), in
   // every language: the 2026-10-17 graded samples found Huygens → 惠更斯号/ホイヘンス/

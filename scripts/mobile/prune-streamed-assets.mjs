@@ -14,6 +14,10 @@
  * Pruned buckets:
  *   - build/images/                  gallery + hero + surface imagery (~1.6 GB)
  *   - build/audio/                   narration + Curator Tour (~97 MB)
+ *   - build/credit-thumbs/           /credits thumbnails (~6.9 MB), streamed via
+ *                                    assetUrl() like /images
+ *   - build/diagrams/**\/*-<w>.webp   diagram width rungs; on-device srcsetFor
+ *                                    skips /diagrams and uses the base file
  *   - build/data/i18n/<non-en>.json  13 non-default collapsed locale bundles
  *   - build/data/i18n/<locale>/      raw per-topic overlay trees — build-time
  *                                    source only; runtime loads the collapsed
@@ -104,6 +108,18 @@ async function compressedSiblings(dir) {
   return out;
 }
 
+/** Width-rung files (`*-<digits>.webp`) under the diagrams tree. */
+async function diagramRungs(dir) {
+  if (!existsSync(dir)) return [];
+  const out = [];
+  for (const entry of await readdir(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) out.push(...(await diagramRungs(full)));
+    else if (/-\d+\.webp$/.test(entry.name)) out.push(full);
+  }
+  return out;
+}
+
 /** Collect the prune targets (absolute paths). */
 async function targets() {
   const list = [];
@@ -124,6 +140,17 @@ async function targets() {
   // so the stub a recipient opens is always the web deploy's copy.
   const cardStubs = path.join(BUILD, 'c');
   if (existsSync(cardStubs)) list.push(cardStubs);
+
+  // /credits thumbnails (#482, ~6.9 MB): the page builds their URLs with
+  // assetUrl(), so on-device they stream from STREAM_ORIGIN like /images.
+  const creditThumbs = path.join(BUILD, 'credit-thumbs');
+  if (existsSync(creditThumbs)) list.push(creditThumbs);
+
+  // Width rungs of /diagrams (`<stem>-320.webp`, `-640.webp`, #482). On-device
+  // every diagram is local, so a smaller rung saves no transfer; srcsetFor
+  // skips /diagrams under __MOBILE__ and the single base (downscaled to 1000 px
+  // by downscale-diagrams.mjs) is used.
+  list.push(...(await diagramRungs(path.join(BUILD, 'diagrams'))));
 
   const i18n = path.join(BUILD, 'data', 'i18n');
   if (existsSync(i18n)) {
@@ -160,6 +187,8 @@ let freed = 0;
 let pruned = 0;
 let compressedBytes = 0;
 let compressedCount = 0;
+let rungBytes = 0;
+let rungCount = 0;
 const before = await sizeOf(BUILD);
 
 for (const t of await targets()) {
@@ -174,7 +203,17 @@ for (const t of await targets()) {
     compressedCount += 1;
     continue;
   }
+  if (/-\d+\.webp$/.test(t) && t.includes(`${path.sep}diagrams${path.sep}`)) {
+    rungBytes += bytes;
+    rungCount += 1;
+    continue;
+  }
   console.log(`[prune-mobile] − ${path.relative(BUILD, t).padEnd(28)} ${mb(bytes).padStart(8)} MB`);
+}
+if (rungCount) {
+  console.log(
+    `[prune-mobile] − ${`diagrams/**/*-<w>.webp (${rungCount} rungs)`.padEnd(28)} ${mb(rungBytes).padStart(8)} MB`,
+  );
 }
 if (compressedCount) {
   console.log(

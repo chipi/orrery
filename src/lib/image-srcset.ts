@@ -77,5 +77,8 @@ export function ladderSources(url: string): { src: string; srcset: string } | nu
   // as a single src with no multi-width srcset (a wider srcset entry isn't cached).
   const local = offlineResolver?.(url);
   if (local) return { src: local, srcset: '' };
+  // The mobile bundle prunes /diagrams width rungs (prune-streamed-assets.mjs):
+  // diagrams are local there, so a smaller rung saves nothing. Use the base.
+  if (__MOBILE__ && url.includes('/diagrams/')) return null;
   return cache ? srcsetFor(url, cache) : null;
 }

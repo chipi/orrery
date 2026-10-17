@@ -73,6 +73,59 @@ test.describe('mobile stream-heavy contract', () => {
     expect((await request.get('/textures/4k_io.jpg')).status()).toBe(200); // base-4K, downscaled
   });
 
+  // #482 added /credit-thumbs and /diagrams width rungs; the mobile bundle
+  // prunes both (prune-streamed-assets.mjs) so it stays under the 75 MB budget.
+  test('credit thumbs and diagram rungs are pruned; the base diagram stays', async ({
+    request,
+  }) => {
+    expect((await request.get('/credit-thumbs/images/deep-sky/chandra-crab.webp')).status()).toBe(
+      404,
+    );
+    expect((await request.get('/diagrams/science/aerobraking-640.webp')).status()).toBe(404);
+    expect((await request.get('/diagrams/science/aerobraking.webp')).status()).toBe(200);
+  });
+
+  test('/credits streams its thumbnails from the CDN, never the local bundle', async ({ page }) => {
+    const local: string[] = [];
+    const cdn: string[] = [];
+    await page.route(`${CDN}/**`, (route) => {
+      if (route.request().url().includes('/credit-thumbs/')) cdn.push(route.request().url());
+      return route.fulfill({ status: 200, contentType: 'image/webp', body: Buffer.from([]) });
+    });
+    page.on('request', (req) => {
+      const u = new URL(req.url());
+      if (u.pathname.startsWith('/credit-thumbs/') && u.hostname !== new URL(CDN).hostname)
+        local.push(req.url());
+    });
+    await page.goto('/credits');
+    await page.waitForLoadState('networkidle');
+    await page.mouse.wheel(0, 20000);
+    await page.waitForTimeout(1500);
+    expect(local, `local credit-thumb requests:\n${local.join('\n')}`).toEqual([]);
+    expect(cdn.length, 'some credit thumbnails should load from the CDN').toBeGreaterThan(0);
+  });
+
+  test('a /science diagram carries no srcset, so no pruned rung can be chosen', async ({
+    page,
+  }) => {
+    // Asserted on the DOM, not the network: at this viewport the browser would
+    // pick the base file from a srcset anyway, so a network check can't see a
+    // srcset that points at pruned rungs (it passed with the mobile skip removed).
+    const rungs: string[] = [];
+    await page.route(`${CDN}/**`, (route) => route.fulfill({ status: 200, body: Buffer.from([]) }));
+    page.on('request', (req) => {
+      const p = new URL(req.url()).pathname;
+      if (p.startsWith('/diagrams/') && /-\d+\.webp$/.test(p)) rungs.push(p);
+    });
+    // A section page: the /science landing's chapter diagrams are SVGs (no ladder).
+    await page.goto('/science/mission-phases/aerobraking');
+    await page.waitForLoadState('networkidle');
+    const diagramImgs = page.locator('img[src*="/diagrams/science/aerobraking"]');
+    await expect(diagramImgs.first()).toBeAttached();
+    await expect(page.locator('img[srcset*="/diagrams/"]')).toHaveCount(0);
+    expect(rungs, `pruned diagram rungs requested:\n${rungs.join('\n')}`).toEqual([]);
+  });
+
   test('service-worker precache manifest is en-US only', async ({ request }) => {
     const sw = await (await request.get('/sw.js')).text();
     expect(sw).toContain('data/i18n/en-US.json');

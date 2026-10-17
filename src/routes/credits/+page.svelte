@@ -56,6 +56,8 @@
   // Credited images with no WebP ladder (hotspot tiles, textures, deep-sky JPEGs,
   // .1x1 crops) have a 192 px thumb in /credit-thumbs (scripts/vision/
   // build-credit-thumbs.mjs, #482) — without it a full scroll fetched ~300 MB.
+  // Built through assetUrl: the mobile bundle prunes /credit-thumbs (6.9 MB) and
+  // streams it like /images; on the web it resolves to the local path.
   let creditThumbs = $state<Set<string>>(new Set());
   $effect(() => {
     void get<string[]>('credit-thumbs.json')
@@ -64,7 +66,7 @@
   });
   function thumbAttrs(path: string): { src?: string; srcset?: string; sizes?: string } {
     if (creditThumbs.has(path))
-      return { src: `${base}/credit-thumbs${path.replace(/\.[^.]+$/, '.webp')}` };
+      return { src: assetUrl(`/credit-thumbs${path.replace(/\.[^.]+$/, '.webp')}`) };
     return responsive(assetUrl(path), IMAGE_SIZES.creditThumb);
   }
 

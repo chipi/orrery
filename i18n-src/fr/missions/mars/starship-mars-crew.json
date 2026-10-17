@@ -7,7 +7,7 @@
     {
       "met": 0,
       "label": "LANCEMENT DU VAISSEAU",
-      "note": "Un vaisseau spatial avec équipage décolle de Boca Chica ou de Cape Canaveral.",
+      "note": "Un Starship avec équipage décolle de Boca Chica ou de Cape Canaveral.",
       "type": "nominal"
     },
     {
@@ -43,7 +43,7 @@
     {
       "met": 750,
       "label": "BRÛLURE DE TEI",
-      "note": "Injection trans-Terre – Le vaisseau spatial décolle de la surface de Mars et brûle pour la trajectoire de retour vers la Terre.",
+      "note": "Injection trans-Terre – Le Starship décolle de la surface de Mars et brûle pour la trajectoire de retour vers la Terre.",
       "type": "nominal"
     },
     {

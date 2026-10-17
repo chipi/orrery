@@ -1,84 +1,84 @@
 {
   "name": "Gaganyaan",
-  "tagline": "Indiens Vorhaben, seine eigenen Leute ins All zu bringen — das bemannte Programm, das es zur vierten Nation mit unabhängiger bemannter Raumfahrt machen würde.",
+  "tagline": "Indiens Vorstoß, eigene Menschen ins All zu bringen – das Programm, das es zur vierten Nation mit eigener bemannter Raumfahrt machte.",
   "the_land": [
     {
       "type": "prose",
-      "md": "Indien hat mit Robotern den Mond und den Mars erreicht, mit bekanntermaßen kleinen Budgets, und sich einen Platz unter den ernsthaften Weltraummächten der Welt erarbeitet. Doch eine Fähigkeit blieb außer Reichweite: den Start eigener Menschen. Bemannte Raumfahrt ist eine andere Größenordnung an Schwierigkeit als robotische Erkundung — ein einziger Fehlschlag kostet Leben, nicht nur eine Mission — und nur drei Nationen haben es je eigenständig geschafft. Gaganyaan — Sanskrit für „Himmelsfahrzeug\" — ist Indiens Programm, die vierte zu werden."
+      "md": "Indien hat den Mond und den Mars mit Robotern erreicht, mit bekanntermaßen kleinen Budgets, und sich damit einen Platz unter den ernstzunehmenden Raumfahrtmächten der Welt verdient. Doch eine Fähigkeit blieb bislang außer Reichweite: eigene Menschen ins All zu bringen. Die bemannte Raumfahrt ist von einer anderen Schwierigkeitsordnung als die robotische Erkundung – ein einziges Versagen kostet Leben, nicht nur eine Mission –, und nur drei Nationen haben sie jemals eigenständig bewältigt. Gaganyaan – Sanskrit für „Himmelsfahrzeug“ – ist Indiens Programm, die vierte zu werden."
     },
     {
       "type": "prose",
-      "md": "Es ist ein bewusster Schritt auf der Leiter, die ISRO seit Jahrzehnten erklimmt. Die Agentur, die Mars beim ersten Versuch erreichte und am lunaren Südpol landete, baut nun die weitaus schwierigere Fähigkeit auf, Menschen im Orbit am Leben zu erhalten und sie sicher zur Erde zurückzubringen — eine Crewkapsel, eine für Menschen zertifizierte Trägerrakete, ein Lebenserhaltungssystem, ein Rettungssystem und ein Astronautenkorps. Gaganyaan ist das Programm, in dem Indiens robotische Kompetenz auf den unerbittlichen Maßstab menschlicher Sicherheit trifft."
+      "md": "Es ist ein bewusster Schritt auf der Leiter, die ISRO seit Jahrzehnten erklimmt. Die Agentur, die den Mars gleich beim ersten Versuch erreichte und am lunaren Südpol landete, baut nun die weitaus schwierigere Fähigkeit auf, Menschen im Orbit am Leben zu halten und sicher zurück nach Hause zu bringen – eine Raumkapsel für die Besatzung, eine für Menschen zertifizierte Trägerrakete, ein Lebenserhaltungssystem, ein Rettungssystem und ein Astronautenkorps. Gaganyaan ist das Programm, in dem Indiens robotisches Selbstvertrauen auf den unerbittlichen Maßstab menschlicher Sicherheit trifft."
     }
   ],
   "goals": [
     {
       "type": "prose",
-      "md": "Das Kernziel ist einfach formuliert und enorm: eine kleine Crew indischer Astronauten mit einer indischen Rakete in den niedrigen Erdorbit zu fliegen, sie dort einige Tage am Leben zu halten und sicher zurückzubringen. Dazu müssen die spezifischen, lebenskritischen Technologien der bemannten Raumfahrt beherrscht werden — eine druckbeaufschlagte Crew-Kapsel, ein zuverlässiges Lebenserhaltungssystem, eine für Menschen qualifizierte Version von Indiens schwerem Träger und vor allem ein Crew-Rettungssystem, das die Kapsel von einer auf der Rampe oder im Flug versagenden Rakete wegziehen kann."
+      "md": "Das Kernziel ist unkompliziert und gewaltig zugleich: eine kleine Crew indischer Astronauten auf einer indischen Rakete in einen niedrigen Erdorbit zu bringen, sie dort einige Tage am Leben zu halten und sicher zurückzuholen. Dafür müssen die spezifischen, lebenswichtigen Technologien der bemannten Raumfahrt beherrscht werden – eine druckbeaufschlagte Raumkapsel für die Crew, ein zuverlässiges Lebenserhaltungssystem, eine für Menschen zertifizierte Version von Indiens Schwerlastrakete und vor allem ein Rettungssystem für die Besatzung, das die Kapsel von einer Rakete wegreißen kann, die auf der Startrampe oder im Flug versagt."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/gaganyaan/01"
       },
-      "caption": "Das Gaganyaan-Crewmodul — Indiens erstes für Menschen zugelassenes Raumfahrzeug. Alles daran wird nach einem höheren Standard gebaut als bei den robotischen Missionen zuvor, denn zum ersten Mal besteht die Nutzlast aus Menschen.",
+      "caption": "Das Gaganyaan-Besatzungsmodul – Indiens erstes für den Menschen zertifiziertes Raumfahrzeug. Alles daran wird an einem höheren Maßstab gemessen als bei den robotischen Missionen zuvor, denn zum ersten Mal besteht die Nutzlast aus Menschen.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Das langfristige Ziel ist ein Fundament, nicht ein einzelner Flug. Indien hat erklärte Ambitionen für eine eigene Raumstation und letztlich bemannte Mondmissionen, und nichts davon ist möglich, ohne zunächst die grundlegende bemannte Raumfahrt zu beherrschen. Gaganyaan ist die Voraussetzung – das Programm, das Indien von einer Nation, die mit Robotern erforscht, in eine verwandelt, die ihre eigenen Menschen entsenden kann, das Tor zu allem Bemannten, das folgt."
+      "md": "Das langfristige Ziel ist ein Fundament, nicht ein einzelner Flug. Indien hat Ambitionen für eine eigene Raumstation und schließlich für bemannte Mondmissionen erklärt, und nichts davon ist möglich, ohne zuvor die grundlegende bemannte Raumfahrt zu beherrschen. Gaganyaan ist die Voraussetzung – das Programm, das Indien von einer Nation, die mit Robotern erkundet, zu einer macht, die eigene Menschen ins All schicken kann, das Tor zu allem Bemannten, was danach folgt."
     }
   ],
   "outcome": [
     {
       "type": "prose",
-      "md": "Gaganyaan steht noch vor seinem ersten bemannten Flug und arbeitet methodisch dieselbe Beweise-zuerst-Disziplin ab, die Chandrayaan und Mangalyaan geprägt hat. Es hat unbemannte Tests durchgeführt, darunter einen Flug im Jahr 2023, der das Crew-Rettungssystem demonstrierte, wie es die Kapsel von ihrer Rakete wegzog — die wichtigste Sicherheitsfähigkeit jedes bemannten Programms. Unbemannte Orbitaltestflüge und ein robotischer humanoider Passagier werden jedem bemannten Start vorausgehen; die erste Besatzung ist für 2027 anvisiert."
+      "md": "Gaganyaan steht noch vor seinem ersten bemannten Flug und arbeitet sich methodisch durch dieselbe Disziplin des „Erst-beweisen-dann-fliegen“, die schon Chandrayaan und Mangalyaan geprägt hat. Das Programm hat unbemannte Tests absolviert, darunter einen Flug im Jahr 2023, bei dem das Rettungssystem der Crew gezeigt hat, wie es die Kapsel von ihrer Rakete wegzieht – die wichtigste Sicherheitsfähigkeit jedes bemannten Programms. Unbemannte Testflüge in den Orbit und ein robotischer humanoider Passagier werden jedem Start mit Menschen vorausgehen; die erste Crew ist für 2027 vorgesehen."
     },
     {
       "type": "prose",
-      "md": "Der Erfolg wird sich nicht nur daran messen, ob der Orbit erreicht wird, sondern ob dies sicher geschieht, mit dem Budget von ISRO und ohne die jahrelangen tödlichen Unfälle, die die frühen Programme der USA und der Sowjetunion gezeichnet haben. Indien versucht, dem Club der bemannten Raumfahrt beizutreten, nachdem es allen anderen zugeschaut hat – und setzt, wie bei seinen robotischen Premieren, darauf, dass Geduld und Sparsamkeit eine Fähigkeit liefern können, die die Pioniere mit Leben bezahlt haben."
+      "md": "Der Erfolg wird sich nicht allein daran bemessen, ob der Orbit erreicht wird, sondern daran, ob das sicher gelingt – mit einem ISRO-Budget und ohne jene Jahre tödlicher Unfälle, die die frühen Programme der USA und der Sowjetunion gezeichnet haben. Indien versucht, dem Club der bemannten Raumfahrt beizutreten, nachdem es allen anderen beim Vortritt zugesehen hat – und setzt, wie schon bei seinen robotischen Premieren, darauf, dass Geduld und Sparsamkeit eine Fähigkeit hervorbringen können, für die die Pioniere mit Menschenleben bezahlt haben."
     },
     {
       "type": "prose",
-      "md": "Da das Programm noch nicht abgeschlossen ist, wird seine Geschichte noch geschrieben. Doch sein Verlauf ist eindeutig: Indien hat methodisch jede andere Fähigkeit für Missionen in den tiefen Weltraum erworben, die es sich vorgenommen hatte, und Gaganyaan ist die aktuelle Sprosse auf dieser Leiter — die schwierigste, und diejenige, die Indien in die sehr kleine Gruppe von Nationen einreihen würde, die einen Menschen aus eigener Kraft ins All bringen können."
+      "md": "Weil das Programm noch nicht abgeschlossen ist, wird seine Geschichte noch geschrieben. Doch seine Richtung ist klar: Indien hat sich methodisch jede andere Fähigkeit für den Weltraum jenseits des Erdorbits erarbeitet, die es sich vorgenommen hatte, und Gaganyaan ist die aktuelle Sprosse dieser Leiter – die schwierigste, und diejenige, die Indien in den sehr kleinen Kreis jener Nationen aufnehmen würde, die aus eigener Kraft einen Menschen ins All bringen können."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "Die Erzählung von Gaganyaan ist die einer Nation, die bewusst von Robotern zu Menschen übergeht. Jede Fähigkeit, die Indien zuvor aufbaute — das Erreichen einer Umlaufbahn, die Navigation zu anderen Welten, das sanfte Landen, die Rückkehr mit Erfahrungsproben — war Vorbereitung auf die eine, die sich nicht abkürzen ließ: Menschen im All am Leben zu halten. Gaganyaan ist ISRO, die ihre charakteristische Methode anwendet, inkrementell und sparsam und ohne Eile, auf das Problem mit den höchsten Einsätzen in der Raumfahrt, wo die übliche Toleranz für Fehler nicht gilt."
+      "md": "Die Geschichte von Gaganyaan ist die einer Nation, die bewusst den Schritt von Robotern zu Menschen wagt. Jede Fähigkeit, die Indien zuvor aufgebaut hat – den Orbit zu erreichen, zu anderen Welten zu navigieren, sanft zu landen, Proben von Erfahrung zurückzubringen –, war Vorbereitung auf jene eine, die sich nicht abkürzen ließ: Menschen im Weltraum am Leben zu halten. Gaganyaan ist ISRO, wie sie ihre unverwechselbare Methode – schrittweise, sparsam und unhastig – auf das folgenschwerste Problem der Raumfahrt anwendet, bei dem die übliche Toleranz gegenüber dem Scheitern nicht gilt."
     },
     {
       "type": "prose",
-      "md": "Es ist auch ein Programm, das durch die Beobachtung anderer geprägt wurde. Indien kommt sechs Jahrzehnte nach Gagarin zur bemannten Raumfahrt, mit der gesamten Geschichte der US-amerikanischen, sowjetischen und chinesischen Programme, von denen es lernen kann — von ihren Triumphen und, wertvoller noch, von ihren Katastrophen. Wie China vor ihm optimiert Indien nicht darauf, früh zu sein, sondern darauf, sicher anzukommen, und konstruiert im Voraus die Ausfallmodi heraus, die frühere Besatzungen töteten. Als Letzter zu dieser Fähigkeit zu gelangen, ist im spezifischen Bereich der menschlichen Sicherheit ein Vorteil."
+      "md": "Es ist zudem ein Programm, das vom Blick auf andere geprägt ist. Indien kommt sechs Jahrzehnte nach Gagarin zur bemannten Raumfahrt und kann aus der gesamten Geschichte der US-amerikanischen, sowjetischen und chinesischen Programme lernen – aus deren Triumphen und, wertvoller noch, aus deren Katastrophen. Wie China vor ihm optimiert Indien nicht darauf, früh dran zu sein, sondern darauf, sicher anzukommen, und konstruiert jene Fehlerarten, die frühere Besatzungen das Leben kosteten, im Voraus aus dem System heraus. Als Letzter zu dieser Fähigkeit zu gelangen, ist im besonderen Bereich der menschlichen Sicherheit ein Vorteil."
     },
     {
       "type": "prose",
-      "md": "Und es trägt nationale Bedeutung weit über die Ingenieursleistung hinaus. Ein indischer Astronaut in einem indischen Raumschiff, gestartet von indischem Boden, ist ein Meilenstein von einer Art, die weit über die Raumfahrtgemeinschaft hinaus Resonanz findet — ein Markstein technologischer Ankunft für die bevölkerungsreichste Nation der Welt. Gaganyaan ist ein Wissenschafts- und Ingenieursprogramm, das unmissverständlich auch eine Aussage über Indiens Platz unter den Mächten ist, die den Weltraum aus eigener Kraft erreichen können."
+      "md": "Und es trägt über die Ingenieurskunst hinaus nationales Gewicht. Ein indischer Astronaut in einem indischen Raumfahrzeug, gestartet von indischem Boden, ist ein Meilenstein von einer Art, die weit über die Raumfahrtgemeinschaft hinaus Resonanz findet – ein Zeichen technologischer Ankunft für das bevölkerungsreichste Land der Welt. Gaganyaan ist ein wissenschaftlich-technisches Programm, das zugleich unverkennbar ein Statement über Indiens Platz unter jenen Mächten ist, die den Weltraum aus eigener Kraft erreichen können."
     }
   ],
   "legacy": [
     {
       "type": "prose",
-      "md": "Das Vermächtnis von Gaganyaan wird, sobald es fliegt, Indiens Eintritt in den kleinen Kreis der Nationen mit unabhängiger bemannter Raumfahrt sein — eine Fähigkeit, die weder gekauft noch geliehen werden kann, sondern nur aufgebaut, und die die Stellung eines Landes im Weltraum über Nacht verändert."
+      "md": "Das Vermächtnis von Gaganyaan wird, sobald es fliegt, Indiens Eintritt in den kleinen Kreis der Nationen mit eigenständiger bemannter Raumfahrt sein – eine Fähigkeit, die sich weder kaufen noch leihen lässt, sondern nur aufbauen, und die die Stellung eines Landes im Weltraum über Nacht verändert."
     },
     {
       "type": "prose",
-      "md": "Sein tieferes Vermächtnis liegt darin, ein Fundament zu sein. Jede Ambition, die Indien darüber hinaus geäußert hat — eine nationale Raumstation, bemannte Mondmissionen, eine langfristige menschliche Präsenz im Orbit — hängt von der grundlegenden bemannten Raumfahrtfähigkeit ab, die Gaganyaan aufbauen soll. Es ist die Tür, durch die jede bemannte Zukunft Indiens führen muss."
+      "md": "Sein tieferes Vermächtnis liegt darin, ein Fundament zu sein. Jede Ambition, die Indien darüber hinaus geäußert hat – eine nationale Raumstation, bemannte Mondmissionen, eine dauerhafte menschliche Präsenz im Orbit –, hängt von der grundlegenden Fähigkeit zur bemannten Raumfahrt ab, die Gaganyaan begründen soll. Es ist die Tür, durch die Indiens gesamte bemannte Zukunft hindurchgehen muss."
     },
     {
       "type": "prose",
-      "md": "Und es setzt die multipolare Verschiebung fort, die Chandrayaan und Mangalyaan eingeleitet haben. Da Indien sich Russland, den USA und China bei der unabhängigen bemannten Raumfahrt anschließt, wird die Fähigkeit, Menschen ins All zu schicken, wahrhaft verteilt — nicht länger das Privileg der Mächte des Kalten Krieges, sondern geteilt unter einem wachsenden Kreis von Nationen."
+      "md": "Und es führt den multipolaren Wandel fort, den Chandrayaan und Mangalyaan begonnen haben. Mit dem Beitritt Indiens zu Russland, den USA und China in der eigenständigen bemannten Raumfahrt verteilt sich die Fähigkeit, Menschen ins All zu bringen, tatsächlich auf mehrere Schultern – sie ist nicht länger das Vorrecht der Mächte des Kalten Krieges, sondern wird von einem wachsenden Kreis von Nationen geteilt."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "Die Lektion, die Gaganyaan testet, ist, ob die sparsame, schrittweise Methode, die Indien zum Mond und zum Mars gebracht hat, auf den einen Bereich ausgeweitet werden kann, der Abkürzungen am härtesten bestraft: die Sicherheit von Menschen. Robotermissionen können scheitern und lehren; eine bemannte Mission, die scheitert, tötet. Gaganyaan ist die Fallstudie dafür, ob ISROs Disziplin auf ein Problem skaliert, bei dem die Fehlertoleranz null ist."
+      "md": "Die Lektion, die Gaganyaan erprobt, lautet: Lässt sich die genügsame, schrittweise Methode, die Indien zum Mond und zum Mars geführt hat, auf den einen Bereich übertragen, in dem Abkürzungen am härtesten bestraft werden – die Sicherheit von Menschen? Robotische Missionen können scheitern und dabei lehren; eine bemannte Mission, die scheitert, tötet. Gaganyaan ist die Fallstudie dafür, ob sich die Disziplin der ISRO auf ein Problem übertragen lässt, bei dem der Spielraum für Fehler null beträgt."
     },
     {
       "type": "prose",
-      "md": "Die tiefere Lehre ist, dass es in der bemannten Raumfahrt eine Form von Weisheit sein kann, als Letzter anzukommen. Indien kommt zur bemannten Raumfahrt mit den Unfällen aller Vorgänger, die es studieren kann, und mit der Chance, im Voraus jene Fehler zu vermeiden, die andere auf fatale Weise entdeckten. Jahrzehnte zu spät zu kommen kostet es ein Prestige, das es ohnehin nicht anzustreben scheint; was es damit erkauft, wenn die Methode trägt, sind Astronauten, die nach Hause kommen."
+      "md": "Die tiefere Lektion lautet: In der bemannten Raumfahrt kann es eine Form von Weisheit sein, als Letzter anzukommen. Indien betritt die bemannte Raumfahrt mit den Unfällen aller Vorgänger als Studienmaterial – und mit der Chance, jene Fehler von vornherein herauszukonstruieren, die andere erst tödlich entdecken mussten. Dass es Jahrzehnte zu spät kommt, kostet es Prestige, das es offenbar gar nicht will; was es sich damit erkauft, sofern die Methode trägt, sind Astronauten, die wieder nach Hause kommen."
     }
   ]
 }

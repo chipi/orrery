@@ -1,14 +1,14 @@
 {
   "name": "Apollo",
-  "tagline": "Der Kalte-Krieg-Sprint, der zwölf Menschen auf den Mond brachte — und dann stoppte.",
+  "tagline": "Der Sprint des Kalten Krieges, der zwölf Menschen auf den Mond brachte – und dann endete.",
   "the_land": [
     {
       "type": "prose",
-      "md": "Neunzig Minuten lang am Stück kreuzte im Herbst 1957 eine polierte Metallkugel von der Größe eines Wasserballs den Himmel über den Vereinigten Staaten — und sie piepte. Sputnik 1 gehörte der Sowjetunion, und das mächtigste Land der Erde konnte nichts tun außer zuhören. Weniger als vier Jahre später, am 12. April 1961, schickten die Sowjets auch einen Menschen hinauf: Yuri Gagarin, der erste Mensch, der den Planeten verließ. Washington hörte nichts davon als Wissenschaft. Es hörte einen Syllogismus, den es nicht mehr unhören konnte — eine Rakete, die einen Satelliten in die Umlaufbahn heben kann, kann einen Sprengkopf auf jede beliebige Stadt abwerfen. Fast über Nacht hörte die Raumfahrt auf, Erkundung zu sein, und wurde zur Speerspitze des Kalten Krieges."
+      "md": "Neunzig Minuten am Stück zog im Herbst 1957 eine polierte Metallkugel von der Größe eines Strandballs über den Himmel der Vereinigten Staaten – und sie piepte. Sputnik 1 gehörte der Sowjetunion, und das mächtigste Land der Erde konnte nichts tun, als zuzuhören. Keine vier Jahre später, am 12. April 1961, brachten die Sowjets auch einen Menschen ins All: Yuri Gagarin, den ersten Menschen, der den Planeten verließ. Washington hörte darin keinerlei Wissenschaft. Es hörte einen Syllogismus, den es nicht mehr aus dem Kopf bekam – eine Rakete, die einen Satelliten in eine Umlaufbahn heben kann, kann einen Sprengkopf auf jede beliebige Stadt abwerfen. Nahezu über Nacht hörte die Raumfahrt auf, Erkundung zu sein, und wurde zur Speerspitze des Kalten Krieges."
     },
     {
       "type": "prose",
-      "md": "Am 25. Mai 1961 — sechs Wochen nach Gagarin und zwanzig Tage nachdem Alan Shepards fünfzehnminütiger suborbitaler Hüpfer Amerika auf dem Papier zu einer raumfahrenden Nation gemacht hatte — trat John F. Kennedy vor den Kongress und setzte das Land auf den Mond. Einen Mann dort landen und sicher zurückbringen, sagte er, \"bevor dieses Jahrzehnt zu Ende ist.\" Nimmt man die Rhetorik weg, war es ein Wettstreit um Prestige: ein Versuch, die Sowjets in der einen Arena zu schlagen, wo sie klar vorne lagen. Die Wissenschaft würde real sein und sie würde die Politik überdauern — aber sie ritt hinter ihr. Apollo wurde aus dieser Entscheidung geboren, und es lohnt sich, das ohne Zögern zu sagen."
+      "md": "Am 25. Mai 1961 – sechs Wochen nach Gagarin und zwanzig Tage nach Alan Shepards fünfzehnminütigem suborbitalem Hüpfer, der Amerika formal zur Raumfahrtnation machte – trat John F. Kennedy vor den Kongress und setzte das ganze Land auf den Mond. Einen Mann dort landen und ihn sicher zurückbringen, sagte er, und zwar „noch vor Ablauf dieses Jahrzehnts“. Streift man die Rhetorik ab, war es ein Wettstreit ums Prestige: der Versuch, die Sowjets ausgerechnet in der einen Arena zu schlagen, in der sie klar vorn lagen. Die Wissenschaft sollte echt sein, und sie würde die Politik überdauern – doch sie fuhr hinter ihr her. Apollo ist aus dieser Entscheidung geboren, und man sollte das ohne Scheu aussprechen."
     }
   ],
   "goals": [
@@ -17,16 +17,16 @@
       "image": {
         "reuse": "fleet/saturn-v/02"
       },
-      "caption": "Die Saturn V — 111 Meter hoch, etwa 3.000 Tonnen auf der Rampe und die leistungsstärkste Rakete, die je Menschen getragen hat — und über fünfzig Jahre lang die leistungsstärkste, die je geflogen ist, bis zu SpaceX' Super Heavy 2023. Sie existierte aus genau einem Grund: eine Frist einzuhalten.",
+      "caption": "Die Saturn V – 111 Meter hoch, auf der Startrampe rund 3.000 Tonnen schwer und die leistungsstärkste Rakete, die je Menschen befördert hat – und über fünfzig Jahre lang die leistungsstärkste, die je geflogen ist, bis zur Super Heavy von SpaceX im Jahr 2023. Sie existierte aus genau einem Grund: um eine Frist zu schlagen.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Das Ziel war eng und absolut: amerikanische Astronauten auf der Mondoberfläche absetzen und lebend nach Hause bringen, vor der UdSSR, vor 1970. Alles andere wurde rückwärts von diesem einen Satz her konstruiert — die Saturn-Raketen, ein dreiteiliges Raumfahrzeug, das in Einzelteilen eine Viertelmillion Meilen von jeder Hilfe entfernt fliegen musste, Druckanzüge für hartes Vakuum ausgelegt, ein weltweites Funkverfolgungsnetz und eine Belegschaft, die auf etwa 400.000 anschwoll, verteilt über NASA, ihre Auftragnehmer und die Universitäten."
+      "md": "Das Ziel war eng gefasst und absolut: amerikanische Astronauten auf die Mondoberfläche bringen und lebend wieder nach Hause holen – vor der UdSSR und vor 1970. Alles andere wurde von diesem einen Satz aus rückwärts entwickelt: die Saturn-Raketen, ein dreiteiliges Raumfahrzeug, das in Einzelteilen eine Viertelmillion Meilen von jeder Hilfe entfernt fliegen musste, Druckanzüge, ausgelegt für hartes Vakuum, ein weltweites Bahnverfolgungsnetz und eine Belegschaft, die auf rund 400.000 Menschen bei NASA, ihren Auftragnehmern und den Universitäten anwuchs."
     },
     {
       "type": "prose",
-      "md": "Es gab auch echte wissenschaftliche Ziele — Proben der Mondgeologie zu nehmen, Instrumente aufzustellen, die lange nach dem Weggang der Besatzungen weiterarbeiten würden, herauszufinden, ob Menschen auf einer anderen Welt tatsächlich nützliche Arbeit leisten können. Aber in der eigenen Prioritätenordnung des Programms standen sie hinter der Landung, und alle Beteiligten wussten es. Das Rennen setzte den Zeitplan. Die Wissenschaft passte in die Lücken, die es hinterließ."
+      "md": "Es gab durchaus echte wissenschaftliche Ziele – die Geologie des Mondes zu beproben, Instrumente aufzustellen, die noch lange nach dem Abflug der Besatzungen weiterarbeiten würden, und herauszufinden, ob Menschen auf einer anderen Welt tatsächlich nützliche Arbeit leisten können. Doch in der programmeigenen Prioritätenfolge standen sie hinter der Landung, und alle Beteiligten wussten das. Der Wettlauf bestimmte den Zeitplan. Die Wissenschaft passte sich in die Lücken ein, die er ließ."
     }
   ],
   "outcome": [
@@ -35,30 +35,30 @@
       "image": {
         "reuse": "missions/apollo11/03"
       },
-      "caption": "Apollo 11 im Mare Tranquillitatis, 20. Juli 1969 – der Moment, in dem das Rennen entschieden war.",
+      "caption": "Apollo 11 im Sea of Tranquility, 20. Juli 1969 – der Moment, in dem das Rennen entschieden wurde.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Es funktionierte. Am 20. Juli 1969 liefen Neil Armstrong und Buzz Aldrin auf dem Mare Tranquillitatis, während Michael Collins das Command Module allein darüber flog und jedes Mal den Funkkontakt verlor, wenn ihn seine Umlaufbahn hinter den Mond trug. Fünf weitere Landungen folgten bis Dezember 1972. Insgesamt zwölf Menschen liefen auf dem Mond und kamen nach Hause, mit 382 Kilogramm Gestein und Boden, die mehr als ein halbes Jahrhundert später immer noch die Mondwissenschaft verankern."
+      "md": "Es hat funktioniert. Am 20. Juli 1969 gingen Neil Armstrong und Buzz Aldrin auf dem Sea of Tranquility über die Oberfläche, während Michael Collins allein im Kommandomodul über ihnen flog und jedes Mal den Funkkontakt verlor, wenn seine Umlaufbahn ihn hinter den Mond trug. Bis Dezember 1972 folgten fünf weitere Landungen. Insgesamt zwölf Menschen liefen auf dem Mond und kehrten heim – mit 382 Kilogramm Gestein und Mondboden im Gepäck, die auch mehr als ein halbes Jahrhundert später noch das Fundament der Mondforschung bilden."
     },
     {
       "type": "prose",
-      "md": "Die Rechnung kam in Geld und in Menschenleben. Im Januar 1967 tötete ein Kabinenbrand während eines routinemäßigen Bodentests Gus Grissom, Ed White und Roger Chaffee in Sekunden und legte das Programm für zwanzig Monate still. Im April 1970 zerbarst auf dem Weg zum Mond ein Sauerstofftank und hätte beinahe die Besatzung von Apollo 13 getötet, die kalt und Wasser rationierend in ihrem eigenen Lunar Module nach Hause kam. Und Apollo endete auf seinem technischen Höhepunkt: die letzten drei geplanten Landungen, Apollo 18 bis 20, wurden gestrichen, als die Budgets schrumpften und die Aufmerksamkeit der Öffentlichkeit anderswohin abwanderte. War es erfolgreich? Es gewann das Rennen, für das es gebaut wurde — und es wurde abgeschaltet, während es noch besser auf dem Mond wurde. Wählen Sie Ihren Maßstab."
+      "md": "Die Rechnung wurde in Geld und in Menschenleben beglichen. Im Januar 1967 tötete ein Kabinenbrand bei einem routinemäßigen Bodentest Gus Grissom, Ed White und Roger Chaffee binnen Sekunden und legte das Programm für zwanzig Monate lahm. Im April 1970 platzte auf dem Weg zum Mond ein Sauerstofftank und brachte die Besatzung von Apollo 13 beinahe ums Leben; sie kehrte frierend und mit rationiertem Wasser in der eigenen Mondlandefähre heim. Und Apollo endete auf dem Höhepunkt seiner technischen Möglichkeiten: Die letzten drei geplanten Landungen, Apollo 18 bis 20, wurden gestrichen, als die Budgets schrumpften und die Aufmerksamkeit der Öffentlichkeit sich anderem zuwandte. War es ein Erfolg? Es gewann das Rennen, für das es gebaut worden war – und wurde abgeschaltet, als es auf dem Mond noch immer besser wurde. Das hängt davon ab, welchen Maßstab man anlegt."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "Der Bogen ist ungewöhnlich sauber für etwas dieser Größe. Er beginnt mit einer Katastrophe: das Feuer von 1967 erzwang eine Neugestaltung des Raumfahrzeugs von Grund auf und von NASAs gesamter Sicherheitskultur — die Abrechnung, die alles danach möglich machte. Dann ging die reparierte Hardware an die Arbeit. 1968 testete Apollo 7 das neu gestaltete Command Module im Erdorbit; im Dezember wurde Apollo 8 der erste bemannte Flug, der die Schwerkraft der Erde überhaupt verließ und den Mond umkreiste, seine Besatzung las live im Fernsehen aus der Genesis vor dem größten Publikum, das je existiert hatte."
+      "md": "Der Bogen ist für etwas so Gewaltiges ungewöhnlich klar. Er beginnt mit einer Katastrophe: Das Feuer von 1967 erzwang eine Neukonstruktion des Raumfahrzeugs von Grund auf und eine Neuausrichtung der gesamten Sicherheitskultur der NASA – die Abrechnung, die alles Spätere erst möglich machte. Dann ging die überarbeitete Hardware an die Arbeit. 1968 erprobte Apollo 7 das neu gestaltete Kommandomodul in der Erdumlaufbahn; im Dezember desselben Jahres wurde Apollo 8 zum ersten bemannten Flug, der die Schwerkraft der Erde ganz verließ und den Mond umrundete – seine Besatzung las im Live-Fernsehen aus der Genesis, vor dem größten Publikum, das es je gegeben hatte."
     },
     {
       "type": "prose",
-      "md": "Apollo 11 beantwortete Kennedy. Und dann tat das Programm etwas, wozu ein Instrument des Kalten Krieges nicht verpflichtet war: Es wandte sich der Wissenschaft zu. Die Apollo-Missionen 12 bis 17 wurden zunehmend ehrgeiziger – längere Aufenthalte, das batteriebetriebene Lunar Roving Vehicle, und schließlich auf Apollo 17 ein ausgebildeter Feldgeologe namens Harrison Schmitt, der die Oberfläche erkundete, die er jahrelang studiert hatte. Apollo 13, die Beinahekatastrophe in der Mitte dieser Serie, bewirkte etwas Seltsames für NASAs Ruf: Dadurch, dass die Agentur sie überstand, wirkte sie fähiger, als sie es getan hätte, wenn sie überhaupt nie gescheitert wäre."
+      "md": "Apollo 11 beantwortete Kennedys Herausforderung. Und dann tat das Programm etwas, wozu ein Instrument des Kalten Krieges nicht im Geringsten verpflichtet war: Es wandte sich der Wissenschaft zu. Apollo 12 bis 17 wurden stetig ehrgeiziger – längere Aufenthalte, das batteriebetriebene Lunar Roving Vehicle und schließlich, bei Apollo 17, ein ausgebildeter Feldgeologe namens Harrison Schmitt, der über eine Oberfläche ging, die er jahrelang studiert hatte. Apollo 13, der Beinahe-Untergang mitten in dieser Reihe, bewirkte etwas Merkwürdiges für den Ruf der NASA: Dadurch, dass sie ihn überstand, ging die Behörde fähiger daraus hervor, als sie es durch ein Programm ganz ohne Rückschläge je gewesen wäre."
     },
     {
       "type": "prose",
-      "md": "Apollo 17 hob am 14. Dezember 1972 vom Mond ab. Kein Mensch war seitdem zurück. Aber die Hardware des Programms, seine Leute und sein Schwung liefen direkt in fast alles, was die amerikanische bemannte Raumfahrt als Nächstes tat — Skylab, das Space Shuttle und fünfzig Jahre später Artemis, das nun nach dem lunaren Südpol greift, den Apollo nie berührt hat."
+      "md": "Apollo 17 hob am 14. Dezember 1972 vom Mond ab. Seither ist kein Mensch mehr dort gewesen. Doch die Hardware des Programms, seine Menschen und sein Schwung mündeten geradewegs in nahezu alles, was die amerikanische bemannte Raumfahrt danach unternahm – Skylab, das Space Shuttle und, fünfzig Jahre später, Artemis, das nun nach dem lunaren Südpol greift, den Apollo nie berührt hat."
     }
   ],
   "legacy": [
@@ -67,34 +67,34 @@
       "image": {
         "reuse": "missions/apollo8/01"
       },
-      "caption": "Earthrise — Apollo 8, Heiligabend 1968. Eine ungeplante Fotografie, die zu einem der am meisten reproduzierten Bilder der Geschichte wurde und ein Gründungsbild der Umweltbewegung.",
+      "caption": "Earthrise – Apollo 8, Heiligabend 1968. Eine ungeplante Aufnahme, die zu einem der meistreproduzierten Bilder der Geschichte wurde – und zu einem Gründungsbild der Umweltbewegung.",
       "align": "left"
     },
     {
       "type": "prose",
-      "md": "Über Apollos Return on Investment wird noch gestritten, aber seine Form ist klar. Das Programm kostete etwa 25,8 Milliarden Dollar in damaligen Dollars — gut über 250 Milliarden heute — und auf seinem Höhepunkt beschäftigte es etwa 400.000 Menschen über NASA, ihre Auftragnehmer und die Universitäten hinweg. Das war ein bewusster industrieller und bildungspolitischer Aufbau, nicht nur eine Rakete, und das meiste davon überlebte die Mondflüge."
+      "md": "Über die Rendite von Apollo wird bis heute gestritten, doch ihre Gestalt ist klar. Das Programm kostete rund 25,8 Milliarden Dollar in damaligen Preisen – heute bequem über 250 Milliarden – und beschäftigte auf seinem Höhepunkt etwa 400.000 Menschen bei der NASA, ihren Auftragnehmern und an den Universitäten. Das war ein bewusster industrieller und bildungspolitischer Aufbau, nicht bloß eine Rakete, und das meiste davon überdauerte die Mondflüge."
     },
     {
       "type": "prose",
-      "md": "Der technologische Sog war real, und er potenzierte sich. Apollo zog frühe integrierte Schaltkreise in die Serienproduktion, trieb die junge Disziplin des Software-Engineering voran und erfand praktisch das moderne Systemmanagement — die Kunst, eine Million voneinander abhängiger Teile gleichzeitig im Zeitplan zu halten. Diese Techniken säten ganze spätere Industrien. Und die 382 Kilogramm zurückgebrachtes Gestein schrieben das Alter und die Entstehungsgeschichte des Sonnensystems neu; Forscher ziehen noch heute neue Ergebnisse aus versiegelten Proben."
+      "md": "Der technologische Sog war real, und er wirkte kumulativ. Apollo brachte frühe integrierte Schaltkreise in die Serienfertigung, trieb die junge Disziplin des Software Engineering voran und erfand das moderne Systemmanagement so gut wie allein – die Kunst, eine Million voneinander abhängiger Teile gleichzeitig im Zeitplan zu halten. Diese Methoden legten den Grundstein für ganze spätere Industrien. Und die 382 Kilogramm zurückgebrachten Gesteins schrieben die Geschichte vom Alter und Ursprung des Sonnensystems neu; noch heute gewinnen Forschende aus versiegelten Proben neue Erkenntnisse."
     },
     {
       "type": "prose",
-      "md": "Für die Vereinigten Staaten war es Soft Power im planetaren Maßstab — eine Demonstration, live auf der ganzen Welt verfolgt, was eine offene Gesellschaft organisieren und durchziehen kann. Für alle anderen ist das Dauerhafteste, das Apollo hinterlassen hat, vielleicht überhaupt keine Technologie, sondern eine Fotografie: die ganze Erde, klein und allein vor dem Schwarz, von einer anderen Welt zum ersten Mal gesehen. Was immer man von den Kalte-Krieg-Motiven hält, die dafür bezahlten, dieses Bild veränderte, wie Menschen den Boden unter ihren eigenen Füßen sahen — es lohnt sich, daran festzuhalten, während ein lauteres, überfüllteres Raumfahrtzeitalter beginnt."
+      "md": "Für die Vereinigten Staaten war es Soft Power im planetaren Maßstab – eine weltweit live verfolgte Demonstration dessen, was eine offene Gesellschaft zu organisieren und zu stemmen vermag. Für alle anderen ist das Beständigste, was Apollo hinterlassen hat, vielleicht gar keine Technologie, sondern ein Foto: die ganze Erde, klein und allein vor der Schwärze, zum ersten Mal von einer anderen Welt aus gesehen. Wie man auch zu den Motiven des Kalten Krieges stehen mag, die dafür bezahlten – dieses Bild veränderte, wie die Menschen den Boden unter ihren eigenen Füßen sahen. Das lohnt sich festzuhalten, jetzt, da ein lauteres, dichter bevölkertes Raumfahrtzeitalter beginnt."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "Apollos übertragbarste Lektion hat nichts mit Raketentechnik zu tun. Es geht darum, wie man eine sehr große Anzahl von Menschen auf dieselbe schwierige Sache ausrichtet. Kennedy gab dem Programm ein Ziel, das spezifisch, kühn und zeitlich begrenzt war — eine Besatzung auf dem Mond landen und sie sicher zurückbringen, bevor das Jahrzehnt zu Ende ist — und dieser einzelne Satz tat, was kein Organigramm konnte. Er richtete 400.000 Menschen aus, die sich nie treffen würden, und er machte jede Entscheidung lesbar: bringt uns das bis 1970 zum Mond oder nicht? Ein klares, datiertes, nicht verhandelbares Ziel, an dem jeder seine eigene Arbeit überprüfen kann, wird jede Hierarchie überkoordinieren."
+      "md": "Die übertragbarste Lektion von Apollo hat mit Raketentechnik nichts zu tun. Es geht darum, wie man sehr viele Menschen auf dieselbe schwierige Aufgabe ausrichtet. Kennedy gab dem Programm ein Ziel, das konkret, kühn und mit einer Frist versehen war – eine Besatzung auf dem Mond landen und sicher zurückbringen, noch vor Ende des Jahrzehnts –, und dieser eine Satz leistete, was kein Organigramm vermag. Er richtete 400.000 Menschen aus, die einander nie begegnen würden, und machte jede Entscheidung nachvollziehbar: Bringt uns das bis 1970 zum Mond, oder nicht? Ein klares, terminiertes, unverhandelbares Ziel, an dem jeder die eigene Arbeit selbst überprüfen kann, koordiniert besser als jede Hierarchie."
     },
     {
       "type": "prose",
-      "md": "Die zweite Lektion lebt in Mission Control. Apollo institutionalisierte eine bestimmte Art von Teamwork unter Druck: Controller, trainiert, dem Fahrzeug voraus zu sein, sich unabhängig vom Rang zu Wort zu melden, und Probleme als Raumteam statt als Befehlskette zu lösen. Als Apollo 13 sich selbst etwa 320.000 Kilometer von zuhause entfernt beschädigte, rettete kein einsamer Held die Besatzung — ein Raum voller Menschen arbeitete das Problem zusammen, gegen die Uhr, und improvisierten einen Weg zurück. „Work the Problem\" besiegte die Panik. Jedes Team, das je in eine Krise gerät, kann sich diese Gewohnheit zu eigen machen."
+      "md": "Die zweite Lektion liegt in der Mission Control. Apollo institutionalisierte eine besondere Art der Teamarbeit unter Druck: Flugkontrolleure, die darauf trainiert waren, dem Raumfahrzeug stets einen Schritt voraus zu sein, unabhängig vom Rang das Wort zu ergreifen und Probleme als ganzer Raum statt als Befehlskette zu lösen. Als sich Apollo 13 rund 320.000 Kilometer von zu Hause entfernt selbst lahmlegte, rettete kein einsamer Held die Besatzung – ein Raum voller Menschen arbeitete das Problem gemeinsam ab, gegen die Uhr, und improvisierte einen Weg zurück. „Work the problem“ schlug die Panik. Jedes Team, das je in eine Krise gerät, kann sich diese Gewohnheit zu eigen machen."
     },
     {
       "type": "prose",
-      "md": "Und die menschliche Note, die es zu bewahren gilt: Sie taten es in acht Jahren, ohne es je zuvor getan zu haben, mit Bordcomputern, die schwächer waren als eine moderne Türklingel. Apollo ist ein stehendes Argument dafür, dass eine klare Mission, die richtigen Leute und eine ehrliche Frist den Widrigkeiten immer noch davonlaufen können — eine nützliche Sache, die man sich merken sollte, wenn ein Ziel das nächste Mal unmöglich aussieht."
+      "md": "Und die menschliche Note, die es zu bewahren gilt: Sie schafften es in acht Jahren, ohne es je zuvor getan zu haben, mit Bordcomputern, die schwächer waren als eine heutige Türklingel. Apollo ist ein bleibendes Argument dafür, dass eine klare Mission, die richtigen Leute und eine ehrliche Frist noch immer gegen alle Wahrscheinlichkeit bestehen können – eine nützliche Erinnerung für den Moment, in dem ein Ziel das nächste Mal unmöglich erscheint."
     }
   ]
 }

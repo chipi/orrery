@@ -15,7 +15,14 @@ import fs from 'node:fs';
 import path from 'node:path';
 import Anthropic from '@anthropic-ai/sdk';
 import { translationClient, translationModel } from './lib/translate-model.mjs';
-import { LANGUAGE_NAMES, ORDINARY, nameCandidates, problems } from './lib/translate-quality.mjs';
+import {
+  LANGUAGE_NAMES,
+  ORDINARY,
+  designations,
+  knownNamesIn,
+  nameCandidates,
+  problems,
+} from './lib/translate-quality.mjs';
 
 export { nameCandidates };
 import { SKIP_KEY } from './i18n-manifest.mjs';
@@ -216,7 +223,38 @@ async function main() {
 
   // Work items: one per (locale, file) with the strings to send.
   const items = [];
-  for (const loc of locales) {
+  if (args.manifest) {
+    // Exact list (i18n-manifest / guard-replay format): only these fields, and the
+    // known names each must keep are named in the request (2026-10-17: 1,773 strings).
+    for (const { loc, file, paths } of JSON.parse(fs.readFileSync(String(args.manifest), 'utf8'))) {
+      const flat = file === 'messages';
+      const t = flat
+        ? {
+            rel: 'messages',
+            enPath: path.join(ROOT, 'messages', 'en-US.json'),
+            tgtPath: path.join(ROOT, 'messages', `${loc}.json`),
+            flat: true,
+          }
+        : {
+            rel: file,
+            enPath: path.join(enRoot, `${file}.json`),
+            tgtPath: path.join(ROOT, 'i18n-src', loc, `${file}.json`),
+          };
+      if (!fs.existsSync(t.tgtPath)) continue;
+      const en = JSON.parse(fs.readFileSync(t.enPath, 'utf8'));
+      const tgt = JSON.parse(fs.readFileSync(t.tgtPath, 'utf8'));
+      const send = [];
+      for (const at of paths) {
+        const e = flat ? en[at] : get(en, at);
+        const cur = flat ? tgt[at] : get(tgt, at);
+        if (typeof e !== 'string' || typeof cur !== 'string') continue;
+        const must = [...new Set([...knownNamesIn(e), ...designations(e)])];
+        send.push({ at, en: e, cur, names: [...new Set([...nameCandidates(e), ...must])], must });
+      }
+      if (send.length) items.push({ loc, ...t, send });
+    }
+  }
+  for (const loc of args.manifest ? [] : locales) {
     const files = walk(enRoot)
       .map((p) => path.relative(enRoot, p).replace(/\.json$/, ''))
       .filter((rel) => !trees || trees.includes(rel.split('/')[0]));
@@ -310,6 +348,7 @@ async function main() {
                   batch.map((x) => ({
                     english: x.en,
                     translation: x.cur,
+                    ...(x.must?.length ? { keep_these_names_exactly: x.must } : {}),
                     ...(x.feedback
                       ? { rejected_edit: x.feedback.prev, rejected_because: x.feedback.why }
                       : {}),

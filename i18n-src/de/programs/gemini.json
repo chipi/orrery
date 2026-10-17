@@ -1,14 +1,14 @@
 {
   "name": "Gemini",
-  "tagline": "Das Brückenprogramm — die unspektakuläre Mitte, in der die NASA alles lernte, was Apollo brauchen würde, außer wie man zum Mond fliegt.",
+  "tagline": "Das Brückenprogramm: der unglamouröse Mittelteil, in dem die NASA alles lernte, was Apollo brauchte – außer dem Flug zum Mond.",
   "the_land": [
     {
       "type": "prose",
-      "md": "Mercury hatte eine Frage beantwortet — ein Mensch kann einen Raumflug überleben und nach Hause kommen — und eine weitaus schwierigere Liste unbeantwortet gelassen. Eine Mondlandung bedeutete, zwei Wochen am Stück zu fliegen, ein anderes Raumfahrzeug in der Umlaufbahn zu finden und sich mit ihm zu vereinigen, die beiden anzudocken, draußen in einem Druckanzug zu arbeiten und an einem präzisen Punkt auf der Erde zurückzukehren. 1961, als Kennedy die Mondfrist setzte, konnte die NASA nichts davon. Zwischen dem ersten Amerikaner im Weltraum und dem ersten Amerikaner auf dem Mond lag ein Canyon von Fähigkeiten, die noch niemand auf der Erde erarbeitet hatte."
+      "md": "Mercury hatte eine Frage beantwortet – ein Mensch kann einen Raumflug überleben und heimkehren – und eine weit schwierigere Liste offengelassen. Eine Landung auf dem Mond bedeutete: zwei Wochen am Stück fliegen, im Orbit ein anderes Raumfahrzeug aufspüren und sich mit ihm vereinen, beide aneinander ankoppeln, im Druckanzug draußen arbeiten und an einem exakt bestimmten Punkt der Erde zurückkehren. Als Kennedy 1961 die Frist für die Mondlandung setzte, beherrschte die NASA nichts davon. Zwischen dem ersten Amerikaner im All und dem ersten Amerikaner auf dem Mond klaffte ein Canyon aus Fähigkeiten, die noch niemand auf der Erde erarbeitet hatte."
     },
     {
       "type": "prose",
-      "md": "Gemini wurde gebaut, um diese Kluft zu überbrücken. Es war nie dazu gedacht, irgendwo als Erstes anzukommen oder neue Gebiete zu erreichen; es war ein Trainingsprogramm mit einer Frist, konzipiert, um in der Erdumlaufbahn — wo ein Fehler vielleicht noch überlebbar wäre — jede Technik zu erfinden und zu erproben, auf die Apollo später Leben verwetten würde. Ein größeres Raumfahrzeug mit zwei Sitzen, das die Besatzung tatsächlich fliegen und steuern konnte, sollte der NASA zwanzig Monate lang beibringen, wie man die Dinge tut, die der Mond erforderte."
+      "md": "Gemini wurde gebaut, um diese Schlucht zu überqueren. Es sollte nie bei irgendetwas das Erste sein oder irgendwohin Neues fliegen; es war ein Trainingsprogramm mit einer Frist, dazu gedacht, jede Technik, auf die Apollo später Menschenleben setzen würde, zu erfinden und einzuüben – im Erdorbit, wo ein Fehler vielleicht noch zu überleben war. Ein größeres, zweisitziges Raumschiff, das die Besatzung tatsächlich selbst fliegen und steuern konnte, sollte in zwanzig Monaten der NASA beibringen, was der Mond verlangte."
     }
   ],
   "goals": [
@@ -17,16 +17,16 @@
       "image": {
         "reuse": "fleet/gemini/02"
       },
-      "caption": "Das Gemini-Raumschiff — größer als Mercury und zum ersten Mal ein Raumfahrzeug, das die Besatzung wirklich fliegen konnte: Es konnte seine eigene Umlaufbahn ändern, ein anderes Raumfahrzeug verfolgen und andocken.",
+      "caption": "Das Raumschiff Gemini: größer als Mercury und zum ersten Mal ein Schiff, das die Besatzung wirklich selbst steuern konnte – es konnte seine Bahn eigenständig ändern, ein anderes Raumfahrzeug einholen und ankoppeln.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Die Ziele von Gemini lesen sich wie eine Checkliste, herausgerissen aus dem Apollo-Flugplan. Ausdauer: beweisen, dass eine Besatzung so lange durchhalten konnte wie eine Reise zum Mond und zurück — bis zu zwei Wochen. Rendezvous: zwei Raumfahrzeuge, die einander im Orbit finden, was weit weniger intuitiv ist, als es klingt, denn wenn man beschleunigt, um etwas vor einem einzuholen, fällt man tatsächlich in einen niedrigeren, schnelleren Orbit und bleibt zurück. Docking: zwei Raumfahrzeuge physisch miteinander verbinden, das Manöver, auf das Apollo bei jedem Flug zweimal angewiesen sein würde. Und EVA: die Luke im Vakuum öffnen und draußen arbeiten. Diese vier beherrschen, und der Mond wurde zu einem technischen Problem statt zu einem Unbekannten."
+      "md": "Geminis Ziele lesen sich wie eine Checkliste, herausgerissen aus dem Flugplan von Apollo. Ausdauer: beweisen, dass eine Besatzung so lange durchhalten konnte wie eine Reise zum Mond und zurück – bis zu zwei Wochen. Rendezvous: zwei Raumfahrzeuge, die sich im Orbit finden, was weit weniger intuitiv ist, als es klingt, denn wer beschleunigt, um etwas einzuholen, das vor ihm fliegt, sinkt in Wahrheit auf eine tiefere, schnellere Bahn und bleibt zurück. Kopplung: zwei Raumfahrzeuge körperlich miteinander verbinden, das Manöver, auf das sich Apollo bei jedem Flug gleich zweimal verlassen würde. Und Außenbordeinsatz: im Vakuum die Luke öffnen und draußen arbeiten. Wer diese vier Dinge beherrschte, für den war der Mond kein Unbekanntes mehr, sondern ein technisches Problem."
     },
     {
       "type": "prose",
-      "md": "Um irgendetwas davon zu bewerkstelligen, musste das Raumschiff erwachsen werden. Gemini beförderte zwei Personen, gab ihnen ein echtes Flugsteuerungssystem und Steuerdüsen zum Manövrieren und teilte sich in ein Besatzungsmodul und einen Gerätebereich auf, ganz ähnlich wie später Apollo. Während Mercurys Astronaut größtenteils mitfuhr, flogen Geminis Besatzungen tatsächlich selbst — und genau das war der springende Punkt, denn die neuen Fähigkeiten zählten nur, wenn ein Mensch sie auf Abruf ausführen konnte."
+      "md": "Um all das zu leisten, musste das Raumfahrzeug erwachsen werden. Gemini trug zwei Astronauten, erhielt ein echtes Flugkontrollsystem und Triebwerke zum Steuern und gliederte sich, ganz ähnlich wie später Apollo, in eine Besatzungskabine und eine Geräte- und Versorgungssektion. Wo der Astronaut von Mercury meist nur mitflog, flogen die Besatzungen von Gemini wirklich selbst – und genau das war der Kern der Sache, denn die neuen Fähigkeiten zählten nur, wenn ein Mensch sie auf Abruf beherrschte."
     }
   ],
   "outcome": [
@@ -35,30 +35,30 @@
       "image": {
         "reuse": "fleet/titan-ii-glv/01"
       },
-      "caption": "Die Titan II — eine umfunktionierte Interkontinentalrakete, für bemannte Flüge zugelassen, die alle zehn bemannten Gemini-Flüge in nur zwanzig Monaten startete.",
+      "caption": "Die Titan II – eine umfunktionierte Interkontinentalrakete, für den Transport von Menschen zertifiziert, um alle zehn bemannten Gemini-Flüge in nur zwanzig Monaten zu starten.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "In zwanzig Monaten über 1965 und 1966 arbeiteten zehn bemannte Gemini-Flüge die gesamte Liste ab. Ed White schwebte bei Gemini 4 im freien Raum beim ersten amerikanischen Weltraumausstieg. Gemini 7 blieb vierzehn Tage oben, während Gemini 6A hinauf flog, um sich zu treffen, die beiden Raumschiffe hielten Position nur einen Fuß voneinander entfernt — das erste Rendezvous. Gemini 8 führte das erste Andockmanöver durch, überstand dann den schlimmsten Schreckmoment des Programms, als ein klemmender Schubdüse es ins Trudeln versetzte und Neil Armstrong es wieder unter Kontrolle bringen und vorzeitig nach Hause kommen musste. Und nach mehreren erschöpfenden, beinahe gescheiterten Versuchen bei Weltraumausstiegen knackte Buzz Aldrin von Gemini 12 es schließlich — mit Unterwassertraining und genug Haltegriffen, gegen die man arbeiten konnte — und bewies, dass EVA zur Routine gemacht werden konnte."
+      "md": "In zwanzig Monaten der Jahre 1965 und 1966 hakten zehn bemannte Gemini-Flüge die gesamte Liste ab. Ed White schwebte als Erster Amerikas außerhalb von Gemini 4 – der erste amerikanische Weltraumspaziergang. Gemini 7 blieb vierzehn Tage oben, während Gemini 6A zu ihr aufstieg, und die beiden Schiffe hielten nur einen Fuß voneinander entfernt ihre Position – das erste Rendezvous. Gemini 8 gelang das erste Ankoppeln, überstand dann aber den größten Schreck des Programms, als ein festsitzendes Triebwerk es ins Taumeln brachte und Neil Armstrong es mühsam wieder unter Kontrolle zwingen und vorzeitig heimkehren musste. Und nach mehreren zermürbenden, beinahe gescheiterten Versuchen mit Weltraumspaziergängen knackte Buzz Aldrin auf Gemini 12 das Problem endlich – mit Proben unter Wasser und genügend Haltegriffen, an denen er sich abstützen konnte – und bewies damit, dass sich Außenbordeinsätze zur Routine machen ließen."
     },
     {
       "type": "prose",
-      "md": "Beim letzten Flug konnte die NASA alles, was der Mond erforderte, außer die Erdumlaufbahn zu verlassen. Sie war auch, fast unmerklich, in Führung gegangen: Zum ersten Mal hatten die Vereinigten Staaten mehr Zeit und mehr Fähigkeiten im Weltraum aufgezeichnet als die Sowjetunion, die verstummt war, während sie mit ihrer eigenen Hardware der nächsten Generation rang. Das Rennen war nicht gewonnen, aber die Führung hatte den Besitzer gewechselt."
+      "md": "Beim letzten Flug beherrschte die NASA alles, was der Mond verlangte – außer dem Verlassen des Erdorbits. Fast unbemerkt hatte sie zudem die Führung übernommen: Zum ersten Mal hatten die Vereinigten Staaten mehr Zeit und mehr Fähigkeiten im All vorzuweisen als die Sowjetunion, die still geworden war, während sie mit ihrer eigenen nächsten Raumfahrzeuggeneration rang. Das Rennen war noch nicht entschieden, aber die Führung hatte den Besitzer gewechselt."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "Das eigentliche Wesen von Gemini war das Tempo. Zehn bemannte Starts in weniger als zwei Jahren — manchmal nur Wochen auseinander — jeder einzelne eine Probe für ein bestimmtes Apollo-Manöver, jeder speiste das Gelernte direkt in den nächsten ein. Es war weniger eine Reihe separater Missionen als eine einzige durchgehende Lehrzeit, durchgeführt in einem Tempo, das die NASA später nie ganz wieder erreichen sollte."
+      "md": "Geminis ganzer Charakter war Tempo. Zehn bemannte Starts in weniger als zwei Jahren – manchmal nur wenige Wochen auseinander –, jeder eine Generalprobe für ein bestimmtes Apollo-Manöver, und jeder gab das Gelernte unmittelbar an den nächsten weiter. Es war weniger eine Reihe einzelner Missionen als eine einzige, anhaltende Lehrzeit, in einem Takt, den die NASA nie wieder ganz erreichen sollte."
     },
     {
       "type": "prose",
-      "md": "Und sie lernte es auf die harte Tour. Die frühen Weltraumausstiege verliefen schlecht: Astronauten stellten fest, dass sie ohne etwas zum Festhalten oder Abstützen bei jeder Bewegung ins Taumeln gerieten und jede kleine Aufgabe zu einem Ringkampf wurde, und sie kamen durchnässt und erschöpft zurück. Anstatt EVA für gelöst zu erklären und weiterzugehen, behandelte die NASA die Fehlschläge als Daten — sie baute Haltegriffe und Fußstützen und probte das Ganze unter Wasser, bis es funktionierte. Gemini 12 war die Belohnung. Diese Bereitschaft zuzugeben, dass die Technik nicht funktionierte, und sie neu aufzubauen, ist ein wesentlicher Grund dafür, dass die Weltraumausstiege von Apollo reibungslos verliefen."
+      "md": "Und es lernte auf die harte Tour. Die frühen Weltraumspaziergänge verliefen schlecht: Die Astronauten stellten fest, dass sie ohne etwas zum Festhalten oder Abstützen bei jeder Bewegung ins Trudeln gerieten und jede kleine Aufgabe zum Ringkampf wurde – durchnässt und erschöpft kehrten sie ins Innere zurück. Statt den Außenbordeinsatz für gelöst zu erklären und weiterzuziehen, behandelte die NASA die Rückschläge als Daten: Sie baute Haltegriffe und Fußhalterungen und probte das Ganze unter Wasser, bis es funktionierte. Gemini 12 war der Lohn dafür. Diese Bereitschaft, einzugestehen, dass die Technik nicht funktionierte, und sie neu aufzubauen, ist ein wesentlicher Grund dafür, dass die Weltraumspaziergänge von Apollo reibungslos verliefen."
     },
     {
       "type": "prose",
-      "md": "Bis Dezember 1966 war die Brücke fertiggestellt. Alles, was Gemini bewiesen hatte — die Ausdauer, das Rendezvous, das Docking, die EVA — floss direkt in Apollo ein, dessen Besatzungen all dies eine Viertelmillion Meilen von zu Hause entfernt nutzen würden. Gemini hatte den Mond erreichbar gemacht, und dann, seine Aufgabe erfüllt, endete es."
+      "md": "Im Dezember 1966 war die Brücke fertig. Alles, was Gemini bewiesen hatte – die Ausdauer, das Rendezvous, das Ankoppeln, der Weltraumspaziergang –, floss direkt in Apollo ein, dessen Besatzungen all das eine Viertelmillion Meilen von zu Hause entfernt nutzen würden. Gemini hatte den Mond erreichbar gemacht, und dann, seine Aufgabe erfüllt, hörte es auf."
     }
   ],
   "legacy": [
@@ -67,26 +67,26 @@
       "image": {
         "reuse": "fleet/gemini/03"
       },
-      "caption": "Gemini im Orbit — das Programm, das den Mond von einer offenen Frage in eine gelöste Reihe von Techniken verwandelte, und dasjenige, an das sich fast niemand erinnert.",
+      "caption": "Gemini im Orbit – das Programm, das den Mond von einer offenen Frage in einen Katalog gelöster Techniken verwandelte, und dasjenige, an das sich fast niemand erinnert.",
       "align": "left"
     },
     {
       "type": "prose",
-      "md": "Gemini ist der Grund, warum Apollo funktionierte, und es ist das Programm, an das sich fast niemand erinnert. Eingeklemmt zwischen Mercurys Ruhm als erstes und Apollos Ruhm als Mondprogramm leistete es die unverzichtbare Arbeit dazwischen: jede Fähigkeit, auf die Apollo angewiesen war — zwei Wochen lang zu fliegen, ein anderes Raumfahrzeug zu finden und anzudocken, außerhalb des Raumfahrzeugs zu arbeiten — wurde zuerst bei Gemini erfunden und zuverlässig gemacht. Streicht man Gemini aus der Geschichte, sind die Apollo-Landungen in Kennedys Zeitplan schlicht nicht möglich."
+      "md": "Gemini ist der Grund, warum Apollo funktionierte – und das Programm, an das sich fast niemand erinnert. Eingeklemmt zwischen dem Ruhm Mercurys als Erstem und dem Ruhm Apollos als dem Programm des Mondes, leistete es die entscheidende Arbeit dazwischen: Jede Fähigkeit, auf die Apollo angewiesen war – zwei Wochen lang zu fliegen, ein anderes Raumfahrzeug zu finden und anzukoppeln, außerhalb des Raumfahrzeugs zu arbeiten –, wurde zuerst mit Gemini erfunden und zuverlässig gemacht. Streicht man Gemini aus der Geschichte, sind die Apollo-Landungen im Zeitplan Kennedys schlicht nicht möglich."
     },
     {
       "type": "prose",
-      "md": "Sein materielles Vermächtnis ist die Fähigkeit selbst. Rendezvous und Docking wurden zu Routinewerkzeugen, auf die sich jedes bemannte Programm seither verlassen hat — Apollo, Skylab, das Shuttle, die Space Station — und das Unterwasser-EVA-Training, das Gemini entwickelte, ist auch heute noch genau die Art und Weise, wie Astronauten sich auf Weltraumspaziergänge vorbereiten. Es war auch der Moment, in dem die Vereinigten Staaten mit der Sowjetunion in der bemannten Raumfahrt gleichzogen und sie dann überholten — nicht durch eine dramatische Premiere, sondern indem sie methodisch die Fähigkeiten aufbauten, auf die es tatsächlich ankam."
+      "md": "Ihr materielles Vermächtnis ist die Fähigkeit selbst. Rendezvous und Kopplung wurden zu Routinewerkzeugen, auf die sich jedes bemannte Programm seither verlassen hat – Apollo, Skylab, das Shuttle, die Raumstation –, und das Unterwassertraining für Außenbordeinsätze, das Gemini erstmals einführte, ist noch heute genau die Art, wie sich Astronauten auf Weltraumspaziergänge vorbereiten. Es war außerdem der Moment, in dem die Vereinigten Staaten in der bemannten Raumfahrt mit der Sowjetunion gleichzogen und sie dann überholten – nicht mit einer einzigen spektakulären Premiere, sondern indem sie methodisch die Fähigkeiten aufbauten, auf die es wirklich ankam."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "Die übertragbare Lehre aus Gemini ist der Wert der bewussten Brücke. Angesichts eines enormen Ziels und einer harten Frist stürzte sich die NASA nicht direkt auf den Mond; sie identifizierte die spezifischen ungelösten Fähigkeiten dazwischen und baute ein ganzes Programm auf, um sie eine nach der anderen zu meistern, an einem Ort, wo ein Scheitern noch überlebbar war. Die unscheinbare Mitte — die Probe, an die sich niemand erinnert — ist sehr oft das, was das Finale möglich macht. Wenn ein Ziel weit jenseits der aktuellen Fähigkeit liegt, lautet die nützliche Frage nicht „wie kommen wir dorthin\", sondern „was sind die Zwischenschritte, die wir noch nicht beherrschen.\""
+      "md": "Die übertragbare Lehre aus Gemini ist der Wert der bewusst gebauten Brücke. Angesichts eines gewaltigen Ziels und einer harten Frist stürzte sich die NASA nicht direkt auf den Mond. Sie bestimmte die konkreten, noch ungelösten Fähigkeiten dazwischen und baute ein ganzes Programm auf, um sie nacheinander zu meistern – an einem Ort, an dem ein Scheitern noch zu überleben war. Das unscheinbare Mittelstück – die Generalprobe, an die sich niemand erinnert – ist sehr oft das, was das Finale erst möglich macht. Liegt ein Ziel weit jenseits des gegenwärtigen Könnens, lautet die nützliche Frage nicht „Wie kommen wir dorthin?“, sondern „Was sind die Zwischenschritte, die wir noch nicht beherrschen?“"
     },
     {
       "type": "prose",
-      "md": "Die zweite Lektion liegt darin, wie Gemini mit seinen frühen Weltraumspaziergang-Katastrophen umging — nicht als Peinlichkeiten, die man begraben sollte, sondern als Information. Die Technik versagte, also sagten sie es, arbeiteten heraus, warum, und bauten sie neu auf: Haltegriffe, Fixierungen, Unterwassertraining, bis es funktionierte. Ein Team, das zugeben kann, dass etwas nicht funktioniert, rechtzeitig genug, um es zu reparieren, bevor es darauf ankommt, ist weit mehr wert als eines, das scheinbar nie scheitert."
+      "md": "Die zweite Lehre liegt darin, wie Gemini mit den frühen Pannen bei den Weltraumspaziergängen umging – nicht als Peinlichkeiten, die man vergräbt, sondern als Information. Die Technik funktionierte nicht, also sprach man es aus, fand heraus, warum, und baute sie neu auf: Haltegriffe, Rückhaltevorrichtungen, Training unter Wasser, bis sie funktionierte. Ein Team, das rechtzeitig zugeben kann, dass etwas nicht funktioniert, um es zu beheben, bevor es darauf ankommt, ist weit mehr wert als eines, das nie zu scheitern scheint."
     }
   ]
 }

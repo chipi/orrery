@@ -1,88 +1,88 @@
 {
   "name": "Die Great Observatories",
-  "tagline": "NASAs Plan, das gesamte Universum zu sehen — vier Flaggschiff-Teleskope, eines für jede Lichtart, und die Abstammungslinie großer Weltraumaugen, die folgten.",
+  "tagline": "NASAs Plan, das ganze Universum zu sehen: vier Flaggschiff-Teleskope, je eines pro Lichtart – und die Ahnenreihe der Weltraumaugen danach.",
   "the_land": [
     {
       "type": "prose",
-      "md": "Das Licht, das das Universum abgibt, besteht nicht nur aus den sichtbaren Farben, die unsere Augen zu erfassen gelernt haben. Die heißesten, gewalttätigsten Objekte leuchten in Röntgen- und Gammastrahlen; die kältesten, staubigsten, entferntesten glühen nur im Infrarot. Um den Kosmos als Ganzes zu sehen, braucht man Augen für jedes Band des Spektrums — und, entscheidend, man braucht sie oberhalb der Atmosphäre, die die meisten dieser Wellenlängen absorbiert, bevor sie den Boden erreichen. In den 1980er Jahren machte sich die NASA daran, genau das zu bauen: einen koordinierten Satz von Flaggschiff-Weltraumteleskopen, jedes optimiert für einen anderen Ausschnitt des Lichts."
+      "md": "Das Licht, das das Universum aussendet, besteht nicht nur aus den sichtbaren Farben, für die sich unsere Augen entwickelt haben. Die heißesten, gewaltsamsten Objekte leuchten in Röntgen- und Gammastrahlen; die kältesten, staubigsten und fernsten glühen allein im Infrarot. Um den Kosmos als Ganzes zu sehen, braucht es Augen für jedes Band des Spektrums – und, entscheidend, man braucht sie oberhalb der Atmosphäre, die die meisten dieser Wellenlängen verschluckt, bevor sie den Erdboden erreichen. In den 1980er-Jahren machte sich die NASA daran, genau das zu bauen: eine aufeinander abgestimmte Reihe von Flaggschiff-Weltraumteleskopen, jedes für einen anderen Ausschnitt des Lichts optimiert."
     },
     {
       "type": "prose",
-      "md": "Das Ergebnis war das Great Observatories-Programm — vier Raumfahrzeuge, bewusst als Familie konzipiert: Hubble für sichtbares und ultraviolettes Licht, Compton für Gammastrahlen, Chandra für Röntgenstrahlen und Spitzer für das Infrarot. Zwischen etwa 1990 und 2003 erreichten alle vier die Umlaufbahn, und zum ersten Mal konnte die Menschheit dasselbe Objekt gleichzeitig über das gesamte elektromagnetische Spektrum betrachten. Offiziell sind diese vier ‚die Great Observatories'. Doch aus unserer Perspektive Jahrzehnte später lesen sie sich wie das Eröffnungskapitel eines einzigen, fortlaufenden NASA-Projekts: der Bau immer größerer Augen im Weltraum."
+      "md": "Das Ergebnis war das Programm der Great Observatories – vier Raumfahrzeuge, bewusst als Familie konzipiert: Hubble für sichtbares und ultraviolettes Licht, Compton für Gammastrahlen, Chandra für Röntgenstrahlen und Spitzer für das Infrarot. Zwischen etwa 1990 und 2003 erreichten alle vier die Umlaufbahn, und zum ersten Mal konnte die Menschheit dasselbe Objekt zugleich über das gesamte elektromagnetische Spektrum hinweg betrachten. Offiziell sind diese vier „die Great Observatories“. Doch aus unserer Sicht, Jahrzehnte später, lesen sie sich wie das Eröffnungskapitel eines einzigen, fortdauernden NASA-Projekts: des Baus immer größerer Augen im All."
     }
   ],
   "goals": [
     {
       "type": "prose",
-      "md": "Das Gründungsziel war spektrale Vollständigkeit. Eine Galaxie, ein Schwarzes Loch, ein sterbender Stern sieht in jedem Lichtband radikal anders aus, und jedes einzelne Teleskop erzählt nur einen Teil der Geschichte. Durch den Einsatz von vier komplementären Observatorien konnte die NASA ein vollständiges Bild zusammensetzen — das sichtbare Sternenlicht, die Röntgenwut von Materie, die in Schwarze Löcher fällt, die Gammastrahlenblitze der extremsten Ereignisse und das Infrarotglühen von kaltem Staub und den frühesten, am stärksten rotverschobenen Galaxien — derselben Objekte, desselben Universums, gesehen auf jede Weise, auf die es gesehen werden kann."
+      "md": "Das Gründungsziel war spektrale Vollständigkeit. Eine Galaxie, ein Schwarzes Loch, ein sterbender Stern sieht in jedem Lichtband radikal anders aus, und jedes einzelne Teleskop erzählt nur einen Teil der Geschichte. Indem NASA vier einander ergänzende Observatorien ins All schickte, konnte sie ein vollständiges Bild zusammensetzen – das sichtbare Sternlicht, die Röntgenwut der in Schwarze Löcher stürzenden Materie, die Gammablitze der extremsten Ereignisse und das infrarote Glühen kalten Staubs sowie der frühesten, am stärksten rotverschobenen Galaxien – von denselben Objekten, demselben Universum, gesehen auf jede Weise, auf die es sich sehen lässt."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/hubble/01"
       },
-      "caption": "Hubble — das Mitglied der vier für sichtbares Licht und das berühmteste jemals gebaute Teleskop. Oberhalb der Unschärfe der Atmosphäre verwandelte es verschwommene Flecken in aufgelöste Galaxien und machte Tiefraum-Bildgebung zu einem Teil der menschlichen Vorstellungskraft.",
+      "caption": "Hubble – das Mitglied der vier für sichtbares Licht und das berühmteste Teleskop, das je gebaut wurde. Oberhalb des Flimmerns der Atmosphäre verwandelte es verschwommene Flecken in aufgelöste Galaxien und machte Bilder des tiefen Weltraums zu einem Teil der menschlichen Vorstellungswelt.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Das Ziel der Abstammungslinie, während sie sich über die ursprünglichen vier hinaus erstreckte, war es, diese Vision immer tiefer und weiter voranzutreiben. Das Nancy Grace Roman Space Telescope, der nächste geplante Eintrag in der NASA-Linie, tauscht Hubbles schmalen, tiefen Blick gegen ein enormes Sichtfeld — dieselbe Schärfe über einen Himmelsausschnitt, der mehr als hundertmal größer ist — gebaut, um das Universum im großen Maßstab zu kartieren, Dunkle Energie zu erfassen und Exoplaneten über weite Gebiete zu jagen, anstatt ein Ziel nach dem anderen zu untersuchen."
+      "md": "Das Ziel der Ahnenreihe besteht, seit sie über die ursprünglichen vier hinausgewachsen ist, darin, diese Vision immer tiefer und weiter voranzutreiben. Das Nancy Grace Roman Space Telescope, der nächste geplante Eintrag in der NASA-Linie, tauscht Hubbles schmalen, tiefen Blick gegen ein gewaltiges Gesichtsfeld – dieselbe Schärfe über einen mehr als hundertmal größeren Himmelsausschnitt. Es ist dafür gebaut, das Universum im großen Maßstab zu durchmustern: Es kartiert die Dunkle Energie und fahndet auf riesigen Flächen nach Exoplaneten, statt jeweils ein einzelnes Ziel zu untersuchen."
     }
   ],
   "outcome": [
     {
       "type": "prose",
-      "md": "Alle vier Originale flogen und lieferten Ergebnisse, und drei der vier überlebten ihre geplanten Lebensdauern bei weitem. Hubble, 1990 vom Space Shuttle gestartet und bekanntlich von Astronauten vor einem fehlerhaften Spiegel gerettet, ist seit mehr als drei Jahrzehnten in Betrieb und hat die Astronomie neu geschrieben. Chandra enthüllte das Röntgenuniversum der Schwarzen Löcher und Galaxienhaufen. Spitzer öffnete den Infrarot-Himmel. Nur Compton ging früh verloren, absichtlich 2000 aus der Umlaufbahn gebracht, nachdem ein Gyroskop ausgefallen war. Das Programm tat, was es sich vorgenommen hatte: Es gab der Menschheit zum ersten Mal Augen über das gesamte Spektrum."
+      "md": "Alle vier Originale flogen und lieferten, und drei der vier überdauerten ihre geplante Lebensdauer bei Weitem. Hubble, 1990 vom Space Shuttle gestartet und von Astronauten bekanntermaßen vor einem fehlerhaften Spiegel gerettet, ist seit mehr als drei Jahrzehnten in Betrieb und hat die Astronomie neu geschrieben. Chandra enthüllte das Röntgenuniversum der Schwarzen Löcher und Galaxienhaufen. Spitzer erschloss den Infrarothimmel. Nur Compton ging früh verloren: Es wurde im Jahr 2000, nachdem ein Kreiselinstrument ausgefallen war, gezielt zum Absturz gebracht. Das Programm leistete, was es sich vorgenommen hatte: Es gab der Menschheit zum ersten Mal Augen für das gesamte Spektrum."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/chandra/01"
       },
-      "caption": "Chandra — das Röntgenobservatorium, abgestimmt auf das gewalttätigste Licht im Universum: Materie, die in Schwarze Löcher spiralt, das millionengrad heiße Gas zwischen Galaxien, die Schockwellen explodierter Sterne. Licht, das der Boden niemals sehen kann.",
+      "caption": "Chandra – das Röntgenobservatorium, abgestimmt auf das gewaltsamste Licht des Universums: Materie, die spiralförmig in Schwarze Löcher stürzt, das millionengradheiße Gas zwischen den Galaxien, die Stoßwellen explodierter Sterne. Licht, das vom Erdboden aus niemals zu sehen ist.",
       "align": "full"
     },
     {
       "type": "prose",
-      "md": "Die wissenschaftliche Ernte ist fast zu umfangreich, um sie zusammenzufassen: die beschleunigte Expansion des Universums, die Bestätigung supermassiver Schwarzer Löcher in galaktischen Zentren, das Alter und die Zusammensetzung des Kosmos festgelegt, die Atmosphären von Exoplaneten erstmals untersucht, die tiefsten jemals aufgenommenen Bilder des frühen Universums. Vieles von dem, was ein moderner Mensch darüber weiß, wie das Universum aussieht, stammt direkt oder indirekt von diesen vier Teleskopen und denen, die ihnen folgten."
+      "md": "Die wissenschaftliche Ernte ist kaum zusammenzufassen: die beschleunigte Expansion des Universums, die Bestätigung supermassereicher Schwarzer Löcher in den Zentren von Galaxien, die präzise bestimmten Werte für Alter und Zusammensetzung des Kosmos, die ersten Sondierungen der Atmosphären von Exoplaneten, die tiefsten Aufnahmen des frühen Universums, die je gemacht wurden. Vieles von dem, was ein moderner Mensch darüber weiß, wie das Universum aussieht, stammt direkt oder indirekt von diesen vier Teleskopen und denen, die ihnen folgten."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "Die Geschichte der Great Observatories ist die Geschichte einer einzigen guten Idee — jede Art von Licht sehen, von oberhalb der Luft — geduldig über Jahrzehnte verfolgt. Die ursprünglichen vier waren ein bewusster, koordinierter Satz; aber die Idee hörte nicht mit ihnen auf. Jede Generation großer Weltraumteleskope erbt denselben Ehrgeiz und treibt ihn weiter: schärfer, kälter, weiter, tiefer. Aus unserer Perspektive ist das Programm weniger eine geschlossene Liste von vier als vielmehr eine fortlaufende NASA-Tradition, das größte Auge zu bauen, das die Technologie des Moments erlaubt."
+      "md": "Die Geschichte der Great Observatories ist die Geschichte einer einzigen guten Idee – jede Art von Licht zu sehen, und zwar von oberhalb der Luft –, die über Jahrzehnte hinweg geduldig verfolgt wurde. Die ursprünglichen vier bildeten ein bewusst abgestimmtes, koordiniertes Ensemble; doch die Idee endete nicht mit ihnen. Jede Generation großer Weltraumteleskope erbt denselben Anspruch und treibt ihn weiter: schärfer, kälter, weiter, tiefer. Aus unserer Sicht ist das Programm weniger eine abgeschlossene Liste von vier Observatorien als vielmehr eine fortdauernde NASA-Tradition, das größte Auge zu bauen, das die Technik der jeweiligen Zeit zulässt."
     },
     {
       "type": "prose",
-      "md": "Hubble ist das emotionale Zentrum dieser Tradition. Sein Beinahe-Versagen und die dramatische Reparatur, seine Bilder, die zu kulturellen Bezugspunkten wurden, seine schiere Langlebigkeit machten es zum Teleskop, das die Öffentlichkeit mit Namen kennt — und bewiesen, dass ein Weltraumobservatorium nicht nur ein wissenschaftliches Instrument sein kann, sondern ein geteiltes menschliches Fenster zum Kosmos. Jedes Teleskop in der Abstammungslinie wird, fair oder nicht, daran gemessen, was Hubble mit unserem Gefühl dafür getan hat, wo wir sind."
+      "md": "Hubble ist das emotionale Zentrum dieser Tradition. Das beinahe besiegelte Scheitern und die dramatische Reparatur, die Bilder, die zu kulturellen Fixpunkten wurden, die schiere Langlebigkeit – all das machte es zu dem Teleskop, das die Öffentlichkeit beim Namen kennt, und bewies, dass ein Weltraumobservatorium nicht nur ein wissenschaftliches Instrument sein kann, sondern ein gemeinsames menschliches Fenster zum Kosmos. Jedes Teleskop der Ahnenreihe wird, ob zu Recht oder zu Unrecht, an dem gemessen, was Hubble für unser Gefühl dafür bewirkt hat, wo wir uns befinden."
     },
     {
       "type": "prose",
-      "md": "Die Abstammungslinie verzweigt sich auch. Das James Webb Space Telescope — Hubbles Infrarot-Nachfolger und ein wirklich internationales Flaggschiff, gebaut mit Europa und Kanada — ist ein Kapitel groß und eigenständig genug, um für sich allein zu stehen, und wird in diesem Atlas separat behandelt. Roman setzt die NASA-Linie hier fort. Der Punkt ist nicht die genauen Grenzen des Stammbaums, sondern die Kontinuität des Ehrgeizes: die Menschheit, Jahrzehnt für Jahrzehnt, baut bessere Augen und richtet sie auf alles."
+      "md": "Die Ahnenreihe verzweigt sich auch. Das James Webb Space Telescope – Hubbles Nachfolger im Infraroten und ein wahrhaft internationales Flaggschiff, gebaut mit Europa und Kanada – ist ein Kapitel, das groß und eigenständig genug ist, um für sich zu stehen, und wird in diesem Atlas gesondert behandelt. Roman setzt hier die NASA-Linie fort. Entscheidend sind nicht die genauen Grenzen des Stammbaums, sondern die Kontinuität des Anspruchs: Die Menschheit baut, Jahrzehnt um Jahrzehnt, bessere Augen und richtet sie auf alles."
     }
   ],
   "legacy": [
     {
       "type": "prose",
-      "md": "Das erste Vermächtnis ist das moderne Bild des Universums selbst. Der sich beschleunigende Kosmos, die Schwarzen Löcher, die Zeitalter und Entfernungen, die ersten Exoplanetenatmosphären, die tiefsten Felder — die Great Observatories und ihre Nachfolger sind der Ort, an dem ein enormer Teil dessen, was wir über das Universum wissen, tatsächlich gesehen wurde. Sie sind die Instrumente hinter dem Lehrbuch."
+      "md": "Das erste Vermächtnis ist das moderne Bild des Universums selbst. Der beschleunigt expandierende Kosmos, die Schwarzen Löcher, die Alter und Entfernungen, die ersten Exoplanetenatmosphären, die tiefsten Himmelsfelder – bei den Great Observatories und ihren Nachfolgern wurde ein enormer Teil dessen, was wir über das Universum wissen, tatsächlich gesehen. Sie sind die Instrumente hinter dem Lehrbuch."
     },
     {
       "type": "prose",
-      "md": "Das zweite ist ein bewährtes Modell dafür, wie man umfassend sieht: komplementäre Teleskope über das Spektrum, oberhalb der Atmosphäre, die dasselbe Universum auf jede Weise studieren, wie es strahlt. Dieser Mehrwellenlängen-Ansatz ist jetzt einfach die Art, wie Astronomie betrieben wird, und die Koordination, die die ursprünglichen vier vorantrieben, ist der Standard, dem jede Observatoriumskampagne folgt."
+      "md": "Das zweite ist ein bewährtes Modell dafür, wie man umfassend sieht: einander ergänzende Teleskope über das gesamte Spektrum hinweg, oberhalb der Atmosphäre, die dasselbe Universum auf jede Weise untersuchen, in der es strahlt. Dieser Multiwellenlängen-Ansatz ist heute schlicht die Art, wie Astronomie betrieben wird, und die Abstimmung, die die ursprünglichen vier Observatorien vorlebten, ist der Maßstab, dem jede Beobachtungskampagne folgt."
     },
     {
       "type": "prose",
-      "md": "Und das dritte ist Hubbles kulturelles Vermächtnis — die Verwandlung des Tiefraums von einer Abstraktion in Bildmaterial, das jeder erkennen kann. Die Great Observatories machten das Universum sichtbar, im vollsten Sinne: nicht nur gemessen, sondern gesehen und zu einem Teil davon gemacht, wie die Menschheit ihre eigene Heimat sich vorstellt."
+      "md": "Und das dritte ist Hubbles kulturelles Vermächtnis – die Verwandlung des tiefen Weltraums von einer Abstraktion in Bilder, die jeder wiedererkennen kann. Die Great Observatories haben das Universum sichtbar gemacht, im vollsten Sinne des Wortes: nicht nur vermessen, sondern gesehen – und zu einem Teil dessen, wie die Menschheit sich ihr eigenes Zuhause vorstellt."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "Die Lehre der Great Observatories ist, dass das Ganze zu sehen erfordert, in jeder Art von Licht zu sehen. Kein einzelnes Teleskop, wie leistungsfähig auch immer, erfasst mehr als einen Ausschnitt dessen, was ein Objekt ist; der Sprung im Verständnis kam davon, dasselbe Universum gleichzeitig über das gesamte Spektrum zu betrachten. Vollständigkeit, nicht irgendein einzelnes Instrument, war der Durchbruch."
+      "md": "Die Lehre der Great Observatories lautet: Wer ein Ganzes sehen will, muss in jeder Art von Licht sehen. Kein einzelnes Teleskop, so leistungsfähig es auch sein mag, erfasst mehr als einen Ausschnitt dessen, was ein Objekt ist; der Sprung im Verständnis gelang, indem man dasselbe Universum zugleich über das gesamte Spektrum hinweg betrachtete. Nicht ein einzelnes Instrument war der Durchbruch, sondern die Vollständigkeit."
     },
     {
       "type": "prose",
-      "md": "Die tiefere Lehre ist der Wert einer anhaltenden Tradition gegenüber einem einzelnen Triumph. Die wahre Kraft des Programms liegt nicht in den vier ursprünglichen Teleskopen, sondern in der Kontinuität des Ehrgeizes, den sie begannen — ein jahrzehntelanges Engagement, weiterhin größere Augen zu bauen. Einzelne Missionen altern und sterben; die Tradition, immer das nächste, bessere Observatorium zu bauen, ist das, was die Sicht weiter ausdehnt."
+      "md": "Die tiefere Lehre ist der Wert einer beständigen Tradition gegenüber einem einzelnen Triumph. Die eigentliche Stärke des Programms liegt nicht in den vier ursprünglichen Teleskopen, sondern in der Kontinuität des Ehrgeizes, den sie begründeten – einer jahrzehntelangen Verpflichtung, immer größere Augen zu bauen. Einzelne Missionen altern und enden; die Tradition, stets das nächste, bessere Observatorium zu bauen, hält den Blick im Wachsen."
     }
   ]
 }

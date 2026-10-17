@@ -1,5 +1,5 @@
 {
-  "name": "MAGRO",
+  "name": "SLIM",
   "type": "LANDER DE PRECISÃO · ATIVO",
   "first": "Primeiro pouso de precisão a 100 m do alvo em outro mundo",
   "description": "Até o SLIM, os pousos lunares tinham uma precisão de mira em escala de quilômetros. O Smart Lander do JAXA demonstrou precisão de 100 m - a precisão necessária para missões tripuladas para atracar com carga pré-posicionada, para veículos de subida de retorno de amostra encontrarem seus parceiros orbitais e para qualquer arquitetura futura que dependa do pouso em locais específicos cientificamente valiosos. O SLIM também foi pioneiro na transferência balística de baixa energia para a Lua, demorando 135 dias para chegar, mas usando menos propulsor do que as trajetórias diretas. Uma demonstração da paciência que as missões interplanetárias podem oferecer quando o cronograma não é a restrição vinculativa.",
@@ -25,7 +25,7 @@
     {
       "met": 135,
       "label": "ATERRAGEM",
-      "note": "Pouso suave na Cratera Shioli em 2024-01-19 15:20 UTC. Dentro da precisão alvo: ~55 m do centro.",
+      "note": "Pouso suave na cratera Shioli 2024-01-19 15:20 UTC. Dentro da precisão alvo: ~55 m do centro.",
       "type": "nominal"
     },
     {

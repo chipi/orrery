@@ -4,7 +4,7 @@
   "first": "Apollo 17（一九七二）以来初の有人月面着陸",
   "description": "50年以上ぶりの有人月面着陸。アーキテクチャ：NASAの SLS Block 1 が Orion を 4 人の乗員とともに月周辺の近直線ハロー軌道（NRHO）に打ち上げる。NRHO に事前配置された SpaceX Starship Human Landing System（HLS）は、月への遷移軌道投入前に、低軌道の補給機によって補給される。Orion の乗員は HLS に移乗し、2 人の宇宙飛行士が月の南極領域に着陸して約 6.5 日間の表面活動を行う一方、2 人は NRHO に留まる。表面活動後、HLS は NRHO に戻り、Orion への移乗と地球への帰還を行う。月面に初めての女性と初めての有色人種を着陸させる。",
   "events": [
-    { "met": 0, "label": "SLS LAUNCH", "note": "オリオンが KSC LC-39B から四人で離昇。", "type": "nominal" },
+    { "met": 0, "label": "SLS LAUNCH", "note": "Orion が KSC LC-39B から四人で離昇。", "type": "nominal" },
     { "met": 1, "label": "TLI", "note": "月移行軌道投入。", "type": "nominal" },
     { "met": 4, "label": "NRHO ARRIVAL", "note": "Orion が近直線ハロー軌道に到着。事前配置された Starship HLS とのランデブー。", "type": "nominal" },
     { "met": 5, "label": "DESCENT", "note": "2 人の乗員が HLS に移乗し、月の南極への動力着陸を行う。", "type": "info" },

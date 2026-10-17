@@ -1,14 +1,14 @@
 {
   "name": "ESA — Europa in der bemannten Raumfahrt",
-  "tagline": "Europa baute nie ein eigenes bemanntes Raumschiff — und wurde trotzdem unverzichtbar für die bemannte Raumfahrt, indem es Partnerschaft statt Unabhängigkeit wählte und die Teile meisterte, die sonst niemand bauen wollte.",
+  "tagline": "Europa baute nie ein bemanntes Raumschiff – und wurde dennoch unverzichtbar: durch Partnerschaft und Bausteine, die sonst keiner wollte.",
   "the_land": [
     {
       "type": "prose",
-      "md": "Europa traf eine bewusste, ungewöhnliche Entscheidung zur bemannten Raumfahrt: Es beschloss, kein eigenes bemanntes Raumschiff zu bauen. Während die Vereinigten Staaten, die Sowjetunion und später China jeweils den kompletten Stack entwickelten — Raketen, Kapseln, die Fähigkeit, ihre eigenen Bürger zu starten — wählte Europa, kollektiv handelnd durch die European Space Agency, stattdessen, der bestmögliche Partner zu sein. Es würde seine Astronauten in Fahrzeugen anderer Nationen fliegen lassen und die Fähigkeiten beisteuern, die das gemeinsame Unternehmen zum Funktionieren brachten. Es ist ein stillerer Weg als ein nationales Wettrennen im All, und es erwies sich als ein bemerkenswert effektiver."
+      "md": "Europa traf in der bemannten Raumfahrt eine bewusste, ungewöhnliche Entscheidung: Es beschloss, kein eigenes bemanntes Raumfahrzeug zu bauen. Während die Vereinigten Staaten, die Sowjetunion und später China jeweils das gesamte Paket entwickelten – Raketen, Kapseln, die Fähigkeit, die eigenen Staatsbürger ins All zu bringen –, entschied sich Europa, das gemeinsam über die European Space Agency handelt, stattdessen dafür, der bestmögliche Partner zu sein. Es würde seine Astronauten auf den Fahrzeugen anderer Nationen fliegen lassen und jene Fähigkeiten beisteuern, die das gemeinsame Unternehmen erst funktionieren ließen. Das ist ein leiserer Weg als ein nationales Wettrennen ins All – und er erwies sich als bemerkenswert wirkungsvoll."
     },
     {
       "type": "prose",
-      "md": "Dies begann mit Spacelab 1983 — einem europäisch gebauten Labor, das im Frachtraum des Space Shuttle mitflog und das Shuttle in eine Wissenschaftsplattform verwandelte, wobei es bei seinem ersten Flug den ersten ESA-Astronauten mitführte. Es setzte sich fort mit Columbus, Europas permanentem Labor, das an die International Space Station angedockt wurde, und mit dem Automated Transfer Vehicle, dem größten und fortschrittlichsten Frachter seiner Ära. Nebenbei flogen europäische Astronauten auf Shuttles und Soyuz, lebten an Bord von Mir und der ISS und kommandierten die Station. Europa startete nie eine eigene Crew — und wurde dennoch unverzichtbar für nahezu jeden, der es tat."
+      "md": "Den Anfang machte 1983 Spacelab – ein in Europa gebautes Labor, das in der Nutzlastbucht des Space Shuttle mitflog, das Shuttle in eine Wissenschaftsplattform verwandelte und beim ersten Flug den ersten ESA-Astronauten an Bord hatte. Es folgte Columbus, Europas dauerhaftes Labor, das an die Internationale Raumstation geschraubt wurde, sowie das Automated Transfer Vehicle, das größte und anspruchsvollste Frachtraumschiff seiner Zeit. Auf dem Weg dorthin flogen europäische Astronauten mit Shuttles und Sojus, lebten an Bord von Mir und der ISS und kommandierten die Station. Europa startete nie eine eigene Besatzung – und wurde dennoch für fast alle, die es taten, unentbehrlich."
     }
   ],
   "goals": [
@@ -17,16 +17,16 @@
       "image": {
         "reuse": "fleet/iss/01"
       },
-      "caption": "Die International Space Station, an der Europa vollwertiger Partner ist. ESAs Columbus-Labor ist ein permanenter Teil davon, und europäische Astronauten haben an Bord gelebt und sie kommandiert — die Frucht der Entscheidung, sich anzuschließen, statt es allein zu versuchen.",
+      "caption": "Die Internationale Raumstation, an der Europa als vollwertiger Partner beteiligt ist. Das Columbus-Labor der ESA ist ein fester Bestandteil der Station, und europäische Astronauten haben an Bord gelebt und sie kommandiert – die Frucht der Entscheidung, sich anzuschließen, statt allein voranzugehen.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Europas Ziel war es, in der bemannten Raumfahrt bedeutsam zu sein, ohne die vollen Kosten und Risiken eines unabhängigen bemannten Programms zu tragen. Das bedeutete Spezialisierung — die Labore zu bauen, in denen die Wissenschaft betrieben wird, die Frachter, die Stationen versorgen, und die Module, die sie erweitern, und Astronauten auszubilden, die in jedem Fahrzeug fliegen konnten, das eine Partnerschaft bereitstellte. Anstatt zu duplizieren, was andere bereits hatten, machte sich Europa daran, das bereitzustellen, was das gemeinsame Vorhaben brauchte und nicht leicht entbehren konnte."
+      "md": "Europas Ziel war es, in der bemannten Raumfahrt eine Rolle zu spielen, ohne die vollen Kosten und Risiken eines eigenständigen bemannten Programms zu tragen. Das bedeutete Spezialisierung: Man baute die Labore, in denen die Wissenschaft stattfindet, die Frachtraumschiffe, die Stationen versorgt halten, und die Module, die sie erweitern – und bildete Astronauten aus, die mit jedem Fahrzeug fliegen konnten, das eine Partnerschaft bereitstellte. Statt zu duplizieren, was andere bereits besaßen, wollte Europa liefern, was das gemeinsame Unterfangen brauchte und nicht so leicht entbehren konnte."
     },
     {
       "type": "prose",
-      "md": "Die Strategie hatte eine verborgene Stärke: Ein unverzichtbares Teil beizusteuern erkauft einen permanenten Platz am Tisch. Durch den Bau von Spacelab erwarb sich Europa einen Platz an Bord des Shuttle; durch den Bau von Columbus und dem ATV wurde es ein vollwertiger und gleichberechtigter Partner in der International Space Station, mit einem eigenen Labor und einem eigenen unverzichtbaren Versorgungsraumschiff. Eine Nation, die nur Sitze kaufte, wäre ein Kunde; Europa wurde durch den Bau von Fähigkeiten, auf die andere angewiesen waren, ein Partner — mit echtem Mitspracherecht im Unternehmen."
+      "md": "Die Strategie hatte eine verborgene Stärke: Wer ein unverzichtbares Teil beisteuert, sichert sich dauerhaft einen Platz am Verhandlungstisch. Mit dem Bau von Spacelab erwarb sich Europa einen Platz an Bord des Shuttle; mit dem Bau von Columbus und dem ATV wurde es zu einem vollwertigen, gleichberechtigten Partner der Internationalen Raumstation – mit eigenem Labor und eigenem, unverzichtbarem Versorgungsraumschiff. Eine Nation, die nur Plätze kaufte, bliebe ein Kunde; Europa dagegen, das Fähigkeiten aufbaute, auf die sich andere verließen, wurde zum Partner – mit echtem Mitspracherecht im gemeinsamen Vorhaben."
     }
   ],
   "outcome": [
@@ -35,26 +35,26 @@
       "image": {
         "reuse": "fleet/atv/02"
       },
-      "caption": "Das Automated Transfer Vehicle — Europas ISS-Frachter. Voll beladen zwanzig Tonnen, flog es selbstständig zu einem automatischen Andockmanöver mit der Station, lieferte Fracht, Wasser, Luft und Treibstoff und nutzte seine Triebwerke, um die Umlaufbahn der ISS anzuheben.",
+      "caption": "Das Automated Transfer Vehicle – Europas Frachter für die ISS. Voll beladen wog es zwanzig Tonnen, flog selbstständig zu einem automatischen Andocken an die Station, lieferte Fracht, Wasser, Luft und Treibstoff und hob mit seinen Triebwerken die Bahn der ISS an.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Die Ergebnisse waren substanziell und unverkennbar europäisch. Spacelab flog zwischen 1983 und 1998 auf 22 Shuttle-Missionen und verschaffte Europa zwei Jahrzehnte praktischer bemannter Wissenschaft und eine Generation erfahrener Astronauten. Columbus, installiert 2008, gab Europa ein permanentes Labor im Orbit und machte es zu einem Partner ersten Ranges in der größten Struktur, die Menschen je gebaut haben. Und das Automated Transfer Vehicle — fünf enorme Frachter, die zwischen 2008 und 2015 flogen, jeder benannt nach einem europäischen Denker von Jules Verne bis Georges Lemaître — leistete etwas wirklich Fortschrittliches: ein zwanzig Tonnen schweres Raumschiff, das sich selbst zu einem vollautomatischen Andockmanöver mit der ISS navigierte, Vorräte und Treibstoff lieferte und die gesamte Station mit seinen Triebwerken anhob."
+      "md": "Die Ergebnisse waren beachtlich und unverwechselbar europäisch. Spacelab flog zwischen 1983 und 1998 auf 22 Shuttle-Missionen und verschaffte Europa zwei Jahrzehnte praktischer bemannter Forschung sowie eine Generation erfahrener Astronauten. Columbus, 2008 installiert, gab Europa ein dauerhaftes Labor im Orbit und machte es zu einem erstklassigen Partner am größten Bauwerk, das Menschen je errichtet haben. Und das Automated Transfer Vehicle – fünf gewaltige Frachter, die zwischen 2008 und 2015 flogen und jeweils nach einem europäischen Denker benannt waren, von Jules Verne bis Georges Lemaître – leistete etwas wirklich Fortschrittliches: Ein zwanzig Tonnen schweres Raumfahrzeug navigierte sich selbst zu einem vollautomatischen Andocken an die ISS, lieferte Nachschub und Treibstoff und hob mit seinen Triebwerken die gesamte Station auf eine höhere Bahn."
     },
     {
       "type": "prose",
-      "md": "Diese ATV-Expertise zahlte dann eine unerwartete Dividende. Die Technologie, die Europa entwickelte, um ein selbstfliegendes, an der ISS andockendes Raumschiff zu bauen, wurde zur Grundlage des European Service Module — dem Teil, den Europa nun für NASAs Orion baut, das Raumschiff, das Astronauten unter Artemis zurück zum Mond trägt. Das Servicemodul liefert Orions Energie, Antrieb, Luft und Wasser: der Abschnitt, der die Besatzung auf dem Weg zum Mondorbit und zurück am Leben erhält. Ein Kontinent, der nie ein eigenes bemanntes Raumschiff baute, baut nun die Hälfte eines amerikanischen, ohne die seine Astronauten nicht überleben können."
+      "md": "Diese ATV-Expertise zahlte sich dann auf unerwartete Weise aus. Die Technologie, die Europa für den Bau eines selbstfliegenden, an die ISS andockenden Raumfahrzeugs entwickelt hatte, wurde zur Grundlage des Europäischen Servicemoduls – des Teils, das Europa heute für NASAs Orion baut, das Raumfahrzeug, das im Rahmen von Artemis wieder Astronauten zum Mond bringen soll. Das Servicemodul liefert Orions Energie, Antrieb, Atemluft und Wasser: jene Sektion, die die Besatzung auf dem Weg in die Mondumlaufbahn und zurück am Leben erhält. Ein Kontinent, der nie ein eigenes bemanntes Raumschiff gebaut hat, baut nun die Hälfte eines amerikanischen, ohne die dessen Astronauten nicht überleben könnten."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "Der rote Faden der europäischen bemannten Raumfahrt ist, dass Partnerschaft, gut gemacht, kein geringerer Weg als Unabhängigkeit ist — sie ist ein anderer und manchmal stärkerer. Durch die Bündelung der Ressourcen vieler Nationen über die ESA und die Spezialisierung auf Fähigkeiten, die andere brauchten, erlangte Europa eine Rolle in der bemannten Raumfahrt, die weit größer ist, als es sich irgendein einzelnes europäisches Land allein hätte leisten können, und größer, als es die Höhe seines Budgets vermuten ließe. Es hatte nie die Autonomie einer Nation, die ihre eigenen Crews startet; es hatte stattdessen die Hebelwirkung, unverzichtbar für jene zu sein, die es tun."
+      "md": "Der rote Faden in Europas bemannter Raumfahrt ist die Erkenntnis, dass Partnerschaft, wenn sie gut gelingt, kein geringerer Weg ist als Unabhängigkeit – sondern ein anderer und mitunter stärkerer. Indem Europa über die ESA die Ressourcen vieler Nationen bündelte und sich auf jene Fähigkeiten spezialisierte, die andere brauchten, erreichte es in der bemannten Raumfahrt eine Rolle, die weit größer ist, als es sich irgendein einzelnes europäisches Land allein hätte leisten können – und größer, als es der Umfang seines Budgets vermuten ließe. Die Autonomie einer Nation, die ihre eigenen Besatzungen startet, besaß Europa nie; es besaß stattdessen den Einfluss dessen, auf den jene, die es tun, nicht verzichten können."
     },
     {
       "type": "prose",
-      "md": "Das ATV ist der klarste Ausdruck davon. Es war kein Prestigeprojekt oder ein Rennbeitrag; es war ein überaus leistungsfähiges Stück Infrastruktur — ein automatisierter Frachter, fortschrittlicher in seinem Andockmanöver und seiner Frachtkapazität als alles andere, was flog — der Europa zentral dafür machte, die ISS am Leben zu erhalten. Und weil Europa diese Fähigkeit aufgebaut hatte, war es in der Lage, das nächste Ding zu bauen: das Orion-Servicemodul und damit einen Platz in der Rückkehr der Menschheit zum Mond. Die Meisterschaft in einer unspektakulären Nische führte Schritt für Schritt zu einem Anteil am ehrgeizigsten bemannten Programm des neuen Jahrhunderts."
+      "md": "Das ATV ist der deutlichste Ausdruck dessen. Es war weder ein Prestigeprojekt noch ein Wettlaufbeitrag, sondern ein außerordentlich leistungsfähiges Stück Infrastruktur – ein automatischer Frachter, der in Andocktechnik und Ladekapazität fortschrittlicher war als alles andere, was flog –, das Europa zu einem zentralen Akteur beim Fortbestand der ISS machte. Und weil Europa diese Fähigkeit aufgebaut hatte, war es in der Lage, das Nächste zu bauen: das Servicemodul für Orion und damit einen Platz bei der Rückkehr der Menschheit zum Mond. Die Beherrschung einer unscheinbaren Nische führte Schritt für Schritt zu einem Anteil am ehrgeizigsten bemannten Programm des neuen Jahrhunderts."
     }
   ],
   "legacy": [
@@ -63,26 +63,26 @@
       "image": {
         "reuse": "fleet/iss/04"
       },
-      "caption": "Die International Space Station — das Unternehmen, das Europa mitbauen und erhalten half, und der Beweis, dass eine Nation die bemannte Raumfahrt tiefgreifend prägen kann, ohne je eine eigene Crew zu starten.",
+      "caption": "Die Internationale Raumstation – das Unternehmen, das Europa mitaufgebaut und am Laufen gehalten hat, und der Beweis dafür, dass ein Land die bemannte Raumfahrt tiefgreifend prägen kann, ohne jemals eine eigene Besatzung ins All zu schicken.",
       "align": "left"
     },
     {
       "type": "prose",
-      "md": "Europas Vermächtnis in der bemannten Raumfahrt ist ebenso ein Modell wie eine Ansammlung von Hardware: der Beweis, dass eine mittelgroße Raumfahrtmacht enorm bedeutsam sein kann, indem sie partnerschaftlich agiert statt zu konkurrieren, indem sie die Ressourcen vieler Nationen bündelt und indem sie die unverzichtbaren Teile baut, auf die andere angewiesen sind, statt zu duplizieren, was bereits existiert. Columbus ist noch im Orbit; europäische Astronauten fliegen noch und kommandieren; und die Nachkommen des ATV tragen nun Menschen zum Mond. Nichts davon erforderte ein unabhängiges europäisches bemanntes Raumschiff, und genau das ist der springende Punkt."
+      "md": "Europas Vermächtnis in der bemannten Raumfahrt ist ebenso sehr ein Modell wie eine Sammlung von Hardware: der Beweis, dass eine mittelgroße Raumfahrtmacht enorm viel bewirken kann – indem sie kooperiert, statt zu konkurrieren, indem sie die Ressourcen vieler Nationen bündelt und indem sie die unverzichtbaren Teile baut, auf die andere angewiesen sind, anstatt nachzubauen, was es bereits gibt. Columbus ist noch immer im Orbit; europäische Astronauten fliegen und kommandieren weiterhin; und die Nachfahren des ATV tragen heute Menschen in Richtung Mond. Nichts davon erforderte ein eigenes europäisches Raumschiff für Besatzungen – und genau darin liegt der Punkt."
     },
     {
       "type": "prose",
-      "md": "Es ist auch das Pendant in der bemannten Raumfahrt zu Ariane. Wo Ariane Europas unabhängigen *Zugang* zum Weltraum sicherte, sicherte sein bemanntes Programm Europas *Platz* im Weltraum — einen permanenten, respektierten Sitz im internationalen Unternehmen, erworben durch Beitrag statt beansprucht durch Flagge. Zusammen definieren sie eine unverkennbar europäische Art, eine große Raumfahrtmacht zu sein: autonom, wo es sein muss, kollaborativ, wo das stärker ist, und in jedem Fall unverzichtbar."
+      "md": "Es ist zugleich das Gegenstück der bemannten Raumfahrt zu Ariane. Während Ariane Europas eigenständigen *Zugang* zum Weltraum sicherte, sicherte sein bemanntes Programm Europas *Platz* im All – einen dauerhaften, anerkannten Sitz im internationalen Unterfangen, verdient durch Beiträge statt mit der Flagge beansprucht. Gemeinsam definieren sie eine unverwechselbar europäische Art, eine große Raumfahrtmacht zu sein: autonom, wo es sein muss, kooperativ, wo das stärker ist, und in beiden Fällen unverzichtbar."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "Die erste Lektion ist, dass man nicht alles selbst bauen muss, um unverzichtbar zu sein. Europa entwickelte nie ein unabhängiges bemanntes Raumschiff, wurde aber durch die Meisterschaft in Laboren, Fracht und Modulen ein Partner, auf den kein großes bemanntes Raumfahrtprogramm leicht verzichten konnte. Eine unverwechselbare, wirklich benötigte Fähigkeit beizusteuern erkauft dauerhafteren Einfluss, als zu versuchen, in geringerer Qualität zu replizieren, was andere bereits gut machen. Spezialisierung, nicht Duplizierung, war Europas Weg zur Relevanz."
+      "md": "Die erste Lektion lautet: Man muss nicht alles selbst bauen, um unverzichtbar zu sein. Europa hat nie ein eigenständiges bemanntes Raumfahrzeug entwickelt – und dennoch wurde es, indem es Labore, Fracht und Module meisterte, zu einem Partner, auf den kein großes Programm der bemannten Raumfahrt so leicht hätte verzichten können. Wer eine unverwechselbare, wirklich benötigte Fähigkeit beisteuert, gewinnt dauerhafteren Einfluss, als wenn er versuchte, in schlechterer Qualität nachzubauen, was andere bereits gut beherrschen. Spezialisierung statt Duplizierung war Europas Weg zur Relevanz."
     },
     {
       "type": "prose",
-      "md": "Die zweite Lektion ist, dass Partnerschaft ein begrenztes Budget vervielfacht. Durch die Kombination der Ressourcen vieler Nationen über eine einzige Agentur und deren Investition in Fähigkeiten, die eine permanente Rolle einbrachten, erreichte Europa in der bemannten Raumfahrt weit mehr, als seine Ausgaben allein vermuten ließen — und verwandelte die Meisterschaft einer Nische, automatisierte Fracht, in einen Anteil an der Rückkehr zum Mond. Für eine Macht, die die Giganten nicht überbieten kann, ist es eine bessere Strategie, unverzichtbar zu sein als unabhängig, und Europa hat das vierzig Jahre lang zum Funktionieren gebracht."
+      "md": "Die zweite Lektion lautet: Partnerschaft vervielfacht ein begrenztes Budget. Indem Europa die Mittel vieler Nationen über eine einzige Agentur bündelte und sie in Fähigkeiten investierte, die ihm eine dauerhafte Rolle sicherten, erreichte es in der bemannten Raumfahrt weit mehr, als seine Ausgaben allein erwarten ließen – und machte die Beherrschung einer einzigen Nische, des automatisierten Frachttransports, zu einem Anteil an der Rückkehr zum Mond. Für eine Macht, die die Giganten nicht überbieten kann, ist es die bessere Strategie, unverzichtbar zu sein, als unabhängig zu sein – und Europa lässt diese Strategie seit vierzig Jahren aufgehen."
     }
   ]
 }

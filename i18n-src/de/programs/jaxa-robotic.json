@@ -1,88 +1,88 @@
 {
   "name": "JAXA — Mond und Planeten",
-  "tagline": "Japans einfallsreiche, ressourcenarme Erkundung von Mond und Planeten — berühmt für Missionen, die auf halbem Weg scheitern und durch Cleverness gerettet werden.",
+  "tagline": "Japans geniale, sparsame Mond- und Planetenerkundung – berühmt für Missionen, die unterwegs scheitern und durch Raffinesse gerettet werden.",
   "the_land": [
     {
       "type": "prose",
-      "md": "Japan betreibt robotische Erkundung anders als die Supermächte. Es fliegt weniger Missionen, mit kleineren Budgets, ausgerichtet auf enge und oft kühne Ziele — und es hat eine ausgeprägte Neigung, Beinahe-Katastrophen durch Einfallsreichtum in Triumphe zu verwandeln. Wo NASA Flaggschiffe mit tiefer Redundanz baut und ESA große internationale Observatorien fliegt, neigt JAXAs ISAS-Institut dazu, ein cleveres, leicht gebautes Raumfahrzeug zu schicken, um eine schwierige Sache zu tun, und dann brillant zu improvisieren, wenn etwas kaputt geht. Meistens geht etwas kaputt; die Missionen sind dafür berühmt, gerettet zu werden."
+      "md": "Japan betreibt robotische Erkundung anders als die Supermächte. Es fliegt weniger Missionen, mit kleineren Budgets, ausgerichtet auf enge und oft kühne Ziele – und es hat eine ausgeprägte Gewohnheit, aus Beinahe-Katastrophen durch Einfallsreichtum einen Triumph zu machen. Wo die NASA Flaggschiffe mit tiefgreifender Redundanz baut und die ESA große internationale Observatorien fliegt, schickt das ISAS, das Institut der JAXA, in der Regel ein einziges kluges, leicht gebautes Raumfahrzeug los, das eine schwierige Sache erledigen soll – und improvisiert dann brillant, wenn etwas ausfällt. Meist geht tatsächlich etwas kaputt; die Missionen sind berühmt dafür, gerettet worden zu sein."
     },
     {
       "type": "prose",
-      "md": "Dies ist das Gegenstück zu Hayabusas Asteroidenarbeit: JAXAs Erkundung von Mond und Planeten. Sie umfasst Kaguya, die größte Mondmission seit Apollo; Akatsuki, einen Venus-Orbiter, der bei der Ankunft scheiterte und fünf Jahre später wiederhergestellt wurde; und SLIM, einen kleinen Lander, der den Mond mit einer Präzision berührte, die niemand zuvor erreicht hatte, und dann auf dem Kopf stehend weiterarbeitete. Zusammen definieren sie einen nationalen Stil — schlank, fokussiert und unermüdlich einfallsreich."
+      "md": "Dies ist das Gegenstück zu Hayabusas Asteroidenarbeit: die Erkundung des Mondes und der Planeten durch die JAXA. Dazu gehören Kaguya, die größte Mondmission seit Apollo; Akatsuki, ein Venus-Orbiter, der bei der Ankunft scheiterte und fünf Jahre später gerettet wurde; und SLIM, ein kleiner Lander, der mit einer Präzision auf dem Mond aufsetzte, die zuvor noch niemand erreicht hatte, und dann kopfüber weiterarbeitete. Zusammen prägen sie einen nationalen Stil – schlank, fokussiert und unermüdlich einfallsreich."
     }
   ],
   "goals": [
     {
       "type": "prose",
-      "md": "Die wissenschaftlichen Ziele umspannen das innere Sonnensystem: den Mond im Detail kartieren und seinen Ursprung und seine Ressourcen verstehen (Kaguya); den Treibhauseffekt außer Kontrolle und die bizarre superrotierende Atmosphäre der Venus studieren (Akatsuki); und demonstrieren, dass ein Raumfahrzeug genau dort landen kann, wo es beabsichtigt, anstatt lediglich irgendwo sicher (SLIM). Jede Mission zielt auf eine spezifische, gut gewählte Frage ab, anstatt breite Abdeckung zu versuchen."
+      "md": "Die wissenschaftlichen Ziele umspannen das innere Sonnensystem: den Mond in feinem Detail kartieren und seinen Ursprung sowie seine Ressourcen verstehen (Kaguya); den galoppierenden Treibhauseffekt und die bizarre, superrotierende Atmosphäre der Venus untersuchen (Akatsuki); und zeigen, dass ein Raumfahrzeug genau dort landen kann, wo es landen will, statt nur irgendwo sicher (SLIM). Jede Mission widmet sich einer bestimmten, klug gewählten Frage, statt eine breite Abdeckung anzustreben."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/slim/01"
       },
-      "caption": "SLIM — der ‚Moon Sniper'. Sein Ziel war nicht zu erkunden, sondern eine Technik zu beweisen: punktgenaue Landung innerhalb von 100 Metern eines gewählten Punktes, die Fähigkeit, die jeder zukünftige Lander und jede bemannte Mission brauchen wird, um einen bestimmten, wertvollen Ort zu erreichen.",
+      "caption": "SLIM – der „Moon Sniper“. Sein Ziel war nicht die Erkundung, sondern der Nachweis einer Technik: eine Punktlandung binnen 100 Metern um einen gewählten Ort – die Fähigkeit, die jeder künftige Lander und jede bemannte Mission brauchen wird, um einen bestimmten, wertvollen Landeplatz zu erreichen.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Das ingenieurtechnische Ziel, das alle durchzieht, ist Präzision und Autonomie bei begrenztem Budget — bildbasierte Navigation, sorgfältiges Treibstoffmanagement und Raumfahrzeuge, die clever genug sind, gerettet zu werden, wenn ein kritisches System ausfällt. JAXAs Programme sind im Grunde ein langes Argument dafür, dass man kein Flaggschiff-Budget braucht, um Spitzenforschung zu betreiben, wenn man bereit ist, schlank zu fliegen und schnell zu denken."
+      "md": "Das technische Ziel, das sich durch alle diese Missionen zieht, lautet Präzision und Autonomie mit knappem Budget – bildgestützte Navigation, sorgfältiger Umgang mit dem Treibstoff und Raumfahrzeuge, die klug genug sind, gerettet werden zu können, wenn ein kritisches System ausfällt. Die Programme der JAXA sind im Grunde ein langes Plädoyer dafür, dass man kein Flaggschiff-Budget braucht, um Spitzenforschung zu betreiben – wenn man bereit ist, schlank zu fliegen und schnell zu denken."
     }
   ],
   "outcome": [
     {
       "type": "prose",
-      "md": "Die Bilanz ist eine Reihe hart erkämpfter Erfolge. Kaguya (2007) lieferte die größte Menge an Kartierungsdaten einer Mondmission seit Apollo und die erste HD-Aufnahme eines Erdaufgangs. Akatsuki scheiterte 2010 beim Einschuss in die Venus-Umlaufbahn, als sein Haupttriebwerk versagte — nach jeder normalen Einschätzung ein Totalverlust — und doch nutzte JAXA nach fünf Jahren im Orbit um die Sonne die kleinen Lageregelungstriebwerke der Sonde, um sie bei einem zweiten Versuch in die Venus-Umlaufbahn zu bringen und die Mission vollständig zu retten. SLIM (2024) landete innerhalb von etwa 55 Metern seines Ziels, kippte auf die Seite und lieferte dennoch seine Wissenschaft."
+      "md": "Die Bilanz ist eine Kette hart erkämpfter Erfolge. Kaguya (2007) lieferte die größte Menge an Kartierungsdaten, die seit Apollo von einer Mondmission stammte, und die ersten HD-Aufnahmen eines Erdaufgangs. Akatsuki scheiterte 2010 beim Einschwenken in die Venus-Umlaufbahn, weil das Haupttriebwerk ausfiel – nach allen gewöhnlichen Maßstäben ein Totalverlust –, und doch nutzte die JAXA nach fünf Jahren in einer Umlaufbahn um die Sonne die kleinen Lageregelungsdüsen der Sonde, um sie bei einem zweiten Versuch in die Venus-Umlaufbahn zu bringen, und rettete die Mission damit vollständig. SLIM (2024) landete auf etwa 55 Meter genau an seinem Ziel, kippte auf die Seite und lieferte trotzdem seine wissenschaftlichen Ergebnisse."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/akatsuki/01"
       },
-      "caption": "Akatsuki bei Venus — die Sonde, die fünf Jahre zu spät ankam. Als ihr Einschusstriebwerk versagte, schien die Mission tot; eine geduldige Rettung mit den winzigen Triebwerken des Raumfahrzeugs erweckte sie wieder zum Leben.",
+      "caption": "Akatsuki bei der Venus – die Sonde, die fünf Jahre zu spät ankam. Als das Triebwerk für das Einschwenken in die Umlaufbahn ausfiel, schien die Mission verloren; eine geduldige Rettungsaktion mit den winzigen Steuertriebwerken des Raumfahrzeugs erweckte sie wieder zum Leben.",
       "align": "full"
     },
     {
       "type": "prose",
-      "md": "Was diese Ergebnisse gemeinsam haben, ist eine Weigerung, eine gescheiterte Mission als verlorene zu akzeptieren. Akatsuki hätte aufgegeben werden sollen; SLIMs gekippte Landung hätte ihre Wissenschaft beenden sollen; jede wurde von Teams gerettet, die ein kaputtes Raumfahrzeug als Rätsel und nicht als Abschreibung behandelten. Die Ergebnisse sind echte Planetenforschung — Dynamik der Venus-Atmosphäre, detaillierte Mondgeologie, nachgewiesene punktgenaue Landung — geliefert von Missionen, die wiederholt hätten nichts liefern sollen."
+      "md": "Was diese Ergebnisse verbindet, ist die Weigerung, eine gescheiterte Mission als verlorene hinzunehmen. Akatsuki hätte aufgegeben werden müssen; SLIMs gekippte Landung hätte das Ende seiner Wissenschaft bedeuten müssen; beide wurden von Teams gerettet, die ein beschädigtes Raumfahrzeug als Rätsel betrachteten und nicht als Totalverlust. Die Resultate sind echte Planetenforschung – die Dynamik der Venusatmosphäre, detaillierte Geologie des Mondes, eine nachgewiesene Punktlandung –, geliefert von Missionen, die immer wieder eigentlich gar nichts hätten liefern dürfen."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "Die Erzählung von JAXAs robotischem Programm ist Rettung als Kernkompetenz. Es ist nicht so, dass diese Missionen mehr scheitern als andere; es ist, dass JAXAs Kultur ungewöhnlich gut darin ist, nicht aufzugeben, wenn sie scheitern — Monate damit zu verbringen, einen Weg zu finden, ein verkrüppeltes Raumfahrzeug trotzdem zu seinem Ziel zu fliegen. Akatsukis fünfjähriger Umweg und zweiter Einschussversuch ist das reinste Beispiel: eine Mission, die jedes konventionelle Programm für tot erklärt hätte, geduldig zurück zu voller Wissenschaft gebracht."
+      "md": "Die Erzählung des Robotikprogramms der JAXA handelt von Rettung als Kernkompetenz. Es ist nicht so, dass diese Missionen häufiger scheitern als andere; vielmehr ist die Kultur der JAXA außergewöhnlich gut darin, nicht aufzugeben, wenn es doch geschieht – und Monate darauf zu verwenden, einen Weg zu finden, ein schwer beschädigtes Raumfahrzeug trotzdem zu seinem Ziel zu fliegen. Akatsukis fünfjähriger Umweg und der zweite Versuch, in die Umlaufbahn einzuschwenken, ist das reinste Beispiel: eine Mission, die jedes herkömmliche Programm für tot erklärt hätte, geduldig zurückgeholt zu vollem wissenschaftlichem Betrieb."
     },
     {
       "type": "prose",
-      "md": "Es ist auch eine Philosophie, mehr mit weniger zu erreichen. Japans Raumfahrtforschungsbudget ist ein Bruchteil von NASAs, und seine Antwort ist nicht, weniger ehrgeizige Dinge zu versuchen, sondern sie günstiger und cleverer zu versuchen — schlanke Raumfahrzeuge, scharfe Ziele und eine Toleranz für das Risiko, das mit dem Fliegen ohne tiefe Redundanz einhergeht. SLIM ist winzig; Akatsuki war bescheiden; Kaguya war effizient. Der Ehrgeiz liegt in den Zielen, nicht in den Budgets."
+      "md": "Sie ist zugleich eine Philosophie, mit weniger mehr zu erreichen. Japans Budget für die Weltraumwissenschaft beträgt nur einen Bruchteil von dem der NASA, und seine Antwort lautet nicht, weniger Ehrgeiziges zu versuchen, sondern Ehrgeiziges günstiger und klüger anzugehen – schlanke Raumfahrzeuge, scharf umrissene Ziele und die Bereitschaft, das Risiko zu tragen, das mit einem Flug ohne tiefgreifende Redundanz einhergeht. SLIM ist winzig; Akatsuki war bescheiden; Kaguya war effizient. Der Ehrgeiz liegt in den Zielen, nicht in den Budgets."
     },
     {
       "type": "prose",
-      "md": "Und es ergänzt, anstatt zu konkurrieren. JAXA versucht nicht, NASA oder ESA über das gesamte Spektrum zu erreichen; es wählt spezifische Grenzbereiche — Asteroidenprobenrückführung, Venus-Dynamik, punktgenaue Landung — und führt dort oder trägt einzigartig bei, oft in Partnerschaft. Es ist das Modell einer mittelgroßen Raumfahrtnation, die übergroßen Einfluss erlangt, indem sie in ausgewählten, schwierigen Dingen hervorragend ist, anstatt in allem angemessen."
+      "md": "Und es ergänzt, statt zu konkurrieren. Die JAXA versucht nicht, auf ganzer Linie mit NASA oder ESA gleichzuziehen; sie wählt gezielt bestimmte Grenzbereiche – die Rückführung von Asteroidenproben, die Dynamik der Venus, die Punktlandung – und führt dort oder trägt auf einzigartige Weise bei, oft in Partnerschaft. Sie ist das Vorbild einer mittelgroßen Raumfahrtmacht, die übergroßen Einfluss gewinnt, indem sie bei ausgewählten, schwierigen Aufgaben herausragend ist, statt in allem bloß ausreichend."
     }
   ],
   "legacy": [
     {
       "type": "prose",
-      "md": "Das erste Vermächtnis ist ein Korpus fokussierter Planetenforschung: die größte Mondmission seit Apollo, die detaillierte Oberflächenkartierung und die erste HD-Erdaufgangsaufnahme lieferte; jahrelange Daten über die Venus-Atmosphäre von einer Sonde, die nicht existieren sollte; und eine nachgewiesene punktgenaue Landefähigkeit, auf der jeder zukünftige Lander — robotisch oder bemannt, am Mond oder darüber hinaus — aufbauen wird."
+      "md": "Das erste Vermächtnis ist ein Korpus fokussierter Planetenwissenschaft: die größte Mondmission seit Apollo, die detaillierte Kartierungen der Oberfläche und die ersten HD-Aufnahmen eines Erdaufgangs lieferte; jahrelange Daten zur Venusatmosphäre von einer Sonde, die eigentlich gar nicht mehr existieren dürfte; und eine nachgewiesene Fähigkeit zur Punktlandung, auf der jeder künftige Lander – robotisch oder bemannt, am Mond oder darüber hinaus – aufbauen wird."
     },
     {
       "type": "prose",
-      "md": "Das zweite ist ein bewährter Stil der Erkundung: schlank, präzise und resilient, der zeigt, dass robotische Spitzenforschung kein Flaggschiff-Budget erfordert, sondern nur scharfe Ziele und den Einfallsreichtum, Missionen zu retten, wenn sie ins Stocken geraten. Es ist eine Vorlage, an der sich viele kleinere und aufstrebende Raumfahrtagenturen nun orientieren."
+      "md": "Das zweite ist ein bewährter Stil der Erkundung: schlank, präzise und widerstandsfähig – er zeigt, dass robotische Spitzenforschung kein Flaggschiff-Budget braucht, nur klare Ziele und den Einfallsreichtum, Missionen zu retten, wenn sie ins Straucheln geraten. Es ist eine Vorlage, an der sich heute viele kleinere und aufstrebende Raumfahrtagenturen orientieren."
     },
     {
       "type": "prose",
-      "md": "Und das dritte ist Einfluss durch Spezialisierung. Indem JAXA in spezifischen schwierigen Bereichen führt, anstatt sich zu verzetteln, hat es sich zu einem Partner gemacht, den die größeren Agenturen brauchen — seine Techniken und seine geretteten Raumfahrzeuge fließen direkt in die weiterreichende Erkundung von Mond und inneren Planeten ein."
+      "md": "Und der dritte ist Einfluss durch Spezialisierung. Indem JAXA in bestimmten schwierigen Disziplinen führend ist, statt sich zu verzetteln, hat sich die Agentur zu einem Partner gemacht, den die größeren Raumfahrtagenturen brauchen – ihre Verfahren und ihre geretteten Raumfahrzeuge fließen unmittelbar in die breitere Erforschung des Mondes und der inneren Planeten ein."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "Die Lektion von JAXAs robotischen Missionen ist, dass eine gescheiterte Ankunft nicht immer eine gescheiterte Mission ist. Akatsuki und SLIM erlitten beide Ausfälle, die normalerweise ein Programm beenden würden, und beide lieferten trotzdem ihre Wissenschaft, weil ihre Teams das kaputte Raumfahrzeug als zu lösendes Problem und nicht als hinzunehmenden Verlust behandelten. Einfallsreichtum, angewandt auf eine verkrüppelte Mission, kann den größten Teil ihres Werts wiederherstellen."
+      "md": "Die Lehre aus den robotischen Missionen der JAXA lautet: Eine gescheiterte Ankunft ist nicht immer eine gescheiterte Mission. Akatsuki und SLIM erlitten beide Rückschläge, die ein Programm normalerweise beenden würden, und beide lieferten dennoch ihre wissenschaftlichen Ergebnisse, weil ihre Teams das beschädigte Raumfahrzeug als ein Problem betrachteten, das es zu lösen galt, und nicht als einen Verlust, den man hinnehmen muss. Mit Einfallsreichtum lässt sich bei einer angeschlagenen Mission der größte Teil ihres Werts retten."
     },
     {
       "type": "prose",
-      "md": "Die tiefere Lektion ist, dass Ehrgeiz und Budget trennbar sind. JAXA betreibt Spitzenforschung mit einem Bruchteil der Finanzierung einer Supermacht, indem sie enge, schwierige Ziele wählt und schlank fliegt — ein Beweis dafür, dass Führung in der Erkundung jedem zur Verfügung steht, der bereit ist, sich tief zu spezialisieren und gut zu improvisieren, und nicht nur denen, die sich Flaggschiffe leisten können."
+      "md": "Die tiefere Lehre lautet: Ehrgeiz und Budget lassen sich voneinander trennen. Die JAXA betreibt Spitzenforschung mit einem Bruchteil der Mittel einer Supermacht, indem sie enge, schwierige Ziele wählt und schlank fliegt – der Beweis dafür, dass Führungsstärke in der Erkundung jedem offensteht, der bereit ist, sich tief zu spezialisieren und gut zu improvisieren, und nicht nur denen, die sich Flaggschiffmissionen leisten können."
     }
   ]
 }

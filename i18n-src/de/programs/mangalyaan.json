@@ -1,84 +1,84 @@
 {
   "name": "Mangalyaan",
-  "tagline": "Indien erreichte den Mars beim ersten Versuch — als erstes Land überhaupt — für weniger als die Kosten eines Hollywood-Films über das Weltall.",
+  "tagline": "Indien erreichte den Mars im ersten Anlauf – als erstes Land überhaupt – für weniger Geld als ein Hollywoodfilm über das All.",
   "the_land": [
     {
       "type": "prose",
-      "md": "Mars ist der Ort, an dem Raumfahrtprogramme scheitern. Mehr Missionen gingen auf dem Weg zum Mars verloren, als dort Erfolg hatten; die Vereinigten Staaten, die Sowjetunion und Japan zerstörten, verfehlten oder verloren das Signal bei ihren frühen Versuchen. Eine Mars-Umlaufbahn beim ersten Versuch zu erreichen, war etwas, das noch kein Land geschafft hatte — ESA's Mars Express Orbiter gelang dies 2003, aber als multinationale Agentur und nicht als einzelnes Land. Im September 2014 schaffte Indien genau das, mit einem Raumfahrzeug namens Mangalyaan — Sanskrit für „Mars craft\" — entwickelt von einer Agentur, die noch nie etwas jenseits des Mondes entsandt hatte, was es zum ersten Land machte, das eine Mars-Umlaufbahn bei seiner Jungfernmission erreichte, und zum ersten, das dies mit eigenständig entwickeltem Antrieb tat."
+      "md": "Der Mars ist der Ort, an dem Raumfahrtprogramme scheitern. Auf dem Weg zum Mars gingen mehr Missionen verloren, als dort erfolgreich waren; die Vereinigten Staaten, die Sowjetunion und Japan stürzten bei ihren frühen Versuchen ab, verfehlten das Ziel oder verstummten. Beim ersten Versuch in eine Marsumlaufbahn zu gelangen, hatte noch kein Land geschafft – der Orbiter Mars Express der ESA gelangte 2003 zwar erfolgreich ans Ziel, doch das war eine multinationale Organisation, kein einzelnes Land. Im September 2014 gelang Indien genau das, mit einem Raumfahrzeug namens Mangalyaan – Sanskrit für „Marsfahrzeug“ –, gebaut von einer Behörde, die nie etwas über den Mond hinaus geschickt hatte. Damit wurde Indien das erste Land, das mit seiner Debütmission eine Marsumlaufbahn erreichte, und das erste, das dies mit einem selbst entwickelten Antrieb schaffte."
     },
     {
       "type": "prose",
-      "md": "Die Mars Orbiter Mission war auf dem Papier ein bescheidener Technologiedemonstrator: ein kleiner Orbiter mit leichter Instrumentennutzlast, hauptsächlich dazu gedacht zu beweisen, dass ISRO überhaupt zum Mars navigieren und in einen Orbit eintreten konnte. Aber sie war so vollständig erfolgreich, so kostengünstig und so unwahrscheinlich, dass sie zu etwas viel Größerem wurde — einem Symbol dafür, was ein sparsames, diszipliniertes Raumfahrtprogramm leisten konnte, und einem Moment nationalen Stolzes, den Hunderte Millionen Inder live verfolgten."
+      "md": "Die Mars Orbiter Mission war auf dem Papier ein bescheidener Technologiedemonstrator: ein kleiner Orbiter mit leichter Instrumentenlast, der vor allem beweisen sollte, dass ISRO überhaupt zum Mars navigieren und in eine Umlaufbahn einschwenken konnte. Doch sie gelang so vollständig, so günstig und so unwahrscheinlich, dass sie zu etwas weit Größerem wurde – zum Sinnbild dessen, was ein sparsames, diszipliniertes Raumfahrtprogramm vermag, und zu einem Moment des Nationalstolzes, den Hunderte Millionen Inderinnen und Inder live verfolgten."
     }
   ],
   "goals": [
     {
       "type": "prose",
-      "md": "Das primäre Ziel war Fähigkeit, nicht Wissenschaft: zu demonstrieren, dass Indien ein Raumfahrzeug entwerfen, starten und durch die interplanetare Kluft navigieren konnte und es präzise in die Marsumlaufbahn einbringen – die spezifischen Technologien der Tiefraum-Kommunikation, des autonomen Betriebs weit entfernt von der Erde und eines einzigen alles-oder-nichts-Orbit-Einschwenkmanövers, das die meisten Erstversuche falsch hinbekommen. Wenn diese funktionierten, war alles andere ein Bonus."
+      "md": "Das vorrangige Ziel war Leistungsfähigkeit, nicht Wissenschaft: zu zeigen, dass Indien ein Raumfahrzeug entwerfen, starten und über die interplanetare Kluft navigieren und es präzise in eine Mars-Umlaufbahn einbringen konnte – mit den speziellen Technologien der Kommunikation im tiefen Raum, des autonomen Betriebs weit von der Erde entfernt und eines einzigen Brennmanövers zum Einschwenken in die Umlaufbahn, bei dem alles auf dem Spiel steht und das die meisten Erstversuche falsch machen. Wenn das funktionierte, war alles Weitere ein Bonus."
     },
     {
       "type": "figure",
       "image": {
         "reuse": "fleet/mangalyaan/01"
       },
-      "caption": "Die Mars Orbiter Mission – klein, leicht und schnell auf erprobter Hardware gebaut. Ihre Instrumente waren bescheiden; ihre eigentliche Nutzlast war der Beweis, dass Indien einen anderen Planeten erreichen und beim ersten Versuch in dessen Umlaufbahn eintreten konnte.",
+      "caption": "Die Mars Orbiter Mission – klein, leicht und in kurzer Zeit auf bewährter Hardware gebaut. Ihre Instrumente waren bescheiden; ihre eigentliche Nutzlast war der Beweis, dass Indien einen anderen Planeten erreichen und im ersten Anlauf in dessen Umlaufbahn einschwenken konnte.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Das unausgesprochene Ziel war, es billig genug zu machen, um wiederholbar zu sein. ISRO baute und flog Mangalyaan für ungefähr 74 Millionen Dollar — eine Summe, die weltberühmt wurde, weil sie geringer war als das Budget des Films Gravity und ein kleiner Bruchteil von NASAs zeitgleicher MAVEN-Mars-Mission. Es ging nicht nur darum, den Mars zu erreichen, sondern zu beweisen, dass das Erreichen des Mars kein Vermögen kosten muss, wodurch interplanetare Wissenschaft für Nationen zugänglich wird, die sich den traditionellen Preis niemals leisten könnten."
+      "md": "Das unausgesprochene Ziel war, es so günstig zu schaffen, dass es wiederholbar blieb. ISRO baute und betrieb Mangalyaan für rund 74 Millionen Dollar – eine Summe, die weltberühmt wurde, weil sie unter dem Budget des Films Gravity lag und nur einen kleinen Bruchteil der damaligen NASA-Marsmission MAVEN ausmachte. Es ging nicht allein darum, den Mars zu erreichen, sondern zu beweisen, dass dies kein Vermögen kosten muss – und damit die interplanetare Forschung für Nationen zu öffnen, die sich den herkömmlichen Preis nie hätten leisten können."
     }
   ],
   "outcome": [
     {
       "type": "prose",
-      "md": "Es funktionierte beim ersten Versuch — das Ergebnis, das es historisch machte. Mangalyaan startete im November 2013, flog zehn Monate lang, und am 24. September 2014 zündete es sein Triebwerk und glitt genau wie geplant in den Marsorbit. Indien wurde das erste Land, das den Marsorbit bei seiner Debütmission erreichte, die erste asiatische Nation, die den Marsorbit erreichte, und tat dies zu Kosten, die die globalen Erwartungen darüber, was interplanetare Erkundung kosten muss, neu definierten."
+      "md": "Es klappte im ersten Anlauf – das Ergebnis, das die Mission historisch machte. Mangalyaan startete im November 2013, flog zehn Monate lang im Reiseflug und zündete am 24. September 2014 sein Triebwerk, um exakt wie geplant in die Mars-Umlaufbahn einzuschwenken. Indien wurde damit das erste Land, das mit seiner Debütmission eine Mars-Umlaufbahn erreichte, und die erste asiatische Nation im Marsorbit – und das zu Kosten, die die weltweiten Erwartungen daran, was interplanetare Erkundung kosten muss, neu justierten."
     },
     {
       "type": "prose",
-      "md": "Und dann machte es einfach weiter. Für eine Lebensdauer von sechs Monaten ausgelegt, arbeitete der Orbiter etwa acht Jahre lang und lieferte Bilder sowie atmosphärische Daten über den Mars — eine vollfarbige Ansicht der gesamten Scheibe, Staubstürme, die dünne obere Atmosphäre —, lange nachdem seine Demonstrationsziele erreicht waren. Eine Mission, die gebaut wurde, um einen Punkt zu beweisen, wurde stillschweigend zu einer robusten Wissenschaftsplattform und verstummte schließlich erst um 2022, als Treibstoff und Energie zur Neige gingen."
+      "md": "Und dann machte sie einfach weiter. Ausgelegt auf sechs Monate, arbeitete der Orbiter rund acht Jahre lang und lieferte Bilder und Atmosphärendaten vom Mars – eine Ansicht der gesamten Scheibe in Farbe, Staubstürme, die dünne obere Atmosphäre –, lange nachdem seine Demonstrationsziele erreicht waren. Eine Mission, die eine Sache beweisen sollte, wurde unauffällig zu einer langlebigen Wissenschaftsplattform und verstummte erst um 2022, als Treibstoff und Energie zur Neige gingen."
     },
     {
       "type": "prose",
-      "md": "Die größte Wirkung des Erfolgs war die auf die Wahrnehmung. Mangalyaan zeigte einem globalen Publikum, dass der Kreis der Mars-fähigen Nationen nicht länger den wohlhabenden wenigen vorbehalten war, und dass ISRO — lange unterschätzt als regionale Raumfahrtagentur — eine interplanetare Premiere liefern konnte. Es machte Indien mit einem einzigen Brennmanöver zu einer anerkannten Macht in der Tiefraumerkundung."
+      "md": "Die größte Wirkung des Ergebnisses lag in der Wahrnehmung. Mangalyaan zeigte einem weltweiten Publikum, dass der Klub der marsfähigen Nationen nicht länger den wohlhabenden Wenigen vorbehalten war und dass ISRO – lange als regionale Behörde unterschätzt – eine interplanetare Premiere liefern konnte. Mit einem einzigen Triebwerkszünden machte es Indien zu einer anerkannten Raumfahrtmacht im tiefen Raum."
     }
   ],
   "narrative": [
     {
       "type": "prose",
-      "md": "Die Erzählung von Mangalyaan ist Sparsamkeit als Superkraft. Die berühmten niedrigen Kosten waren weder Glück noch das Ergebnis von Abstrichen, sondern eine bewusste Ingenieurkultur: die Wiederverwendung bewährter Komponenten, ein kleines und fokussiertes Raumfahrzeug, eine bescheidene Instrumentenausstattung, effiziente Flugbahnen, die Zeit gegen Treibstoff eintauschten, und schlanke Teams, die mit knappen Budgets arbeiteten. Indien erreichte den Mars nicht billig, indem es schlechter arbeitete; es erreichte den Mars billig durch eine Disziplin der Einfachheit, die sich größere Programme mit mehr Geld selten selbst auferlegen."
+      "md": "Die Erzählung von Mangalyaan handelt von Sparsamkeit als Superkraft. Die berühmten niedrigen Kosten waren weder Glück noch Pfusch an der falschen Stelle, sondern Ausdruck einer bewussten Ingenieurskultur: Wiederverwendung bewährter Komponenten, ein kleines, fokussiertes Raumfahrzeug, eine bescheidene Instrumentenausstattung, effiziente Flugbahnen, die Zeit gegen Treibstoff tauschten, und schlanke Teams, die mit knappen Budgets arbeiteten. Indien erreichte den Mars nicht deshalb günstig, weil es schlechter arbeitete; es erreichte ihn günstig durch eine Disziplin der Einfachheit, die größere Programme mit mehr Geld sich selbst nur selten auferlegen."
     },
     {
       "type": "prose",
-      "md": "Es ist auch eine Geschichte über die Bedeutung eines Ersten. Mangalyaan-Wissenschaft war real, aber begrenzt; ihr historisches Gewicht kam daher, dass sie die Erste war — Erfolg beim ersten Versuch, erste asiatische Nation, erste zu einem berühmt niedrigen Preis. Erste dieser Art sind teilweise symbolisch, und ihr Wert liegt teilweise in nationalem Stolz, aber sie sind nicht leer: Sie demonstrieren eine Fähigkeit, etablieren einen Platz am Tisch und inspirieren eine Generation. Indiens Ankunft am Mars tat alle drei auf einmal."
+      "md": "Sie handelt auch davon, was ein „Erstes“ bedeutet. Die Wissenschaft von Mangalyaan war real, aber begrenzt; ihr historisches Gewicht verdankte die Mission dem Umstand, die Erste zu sein – Erfolg im ersten Anlauf, erste asiatische Nation, erste zu einem berühmt niedrigen Preis. Solche Premieren sind zum Teil symbolisch, und ihr Wert besteht zum Teil in nationalem Stolz, doch leer sind sie nicht: Sie belegen eine Fähigkeit, sichern einen Platz am Verhandlungstisch und inspirieren eine Generation. Indiens Ankunft am Mars leistete alle drei Dinge zugleich."
     },
     {
       "type": "prose",
-      "md": "Und es gehört zum selben Wandel wie Chandrayaan — der Ankunft einer multipolaren Tiefraumfahrt. Jahrzehntelang war die interplanetare Erkundung das Vorrecht zweier Supermächte und dann einer Handvoll wohlhabender Agenturen. Mangalyaan, das Mars mit minimalen Mitteln erreichte, war der Beweis, dass sich die Grenze für entschlossene Neuankömmlinge geöffnet hatte — dass die Karte dessen, wer das Sonnensystem erforscht, neu gezeichnet wurde, und Indien sich fest darauf platziert hatte."
+      "md": "Und sie gehört zu demselben Wandel wie Chandrayaan – dem Aufkommen eines multipolaren Weltraums jenseits der Erdumlaufbahn. Jahrzehntelang war die interplanetare Erkundung das Vorrecht zweier Supermächte und dann einiger weniger wohlhabender Raumfahrtagenturen. Mangalyaan, das den Mars mit knappstem Budget erreichte, war der Beweis, dass die Grenze sich für entschlossene Neueinsteiger geöffnet hatte – dass die Landkarte derer, die das Sonnensystem erforschen, neu gezeichnet wurde und Indien sich fest darauf eingetragen hatte."
     }
   ],
   "legacy": [
     {
       "type": "prose",
-      "md": "Das erste Vermächtnis von Mangalyaan ist der Rekord selbst: das erste Land, das bei seiner Debütmission eine Marsumlaufbahn erreichte, und die erste asiatische Nation am Mars. Das ist ein dauerhafter Eintrag in die Geschichte der Erforschung und eine Grundlage für nationales Selbstvertrauen, das ISROs nachfolgende Ambitionen angetrieben hat, von Chandrayaan-3 bis zum bemannten Gaganyaan-Programm."
+      "md": "Das erste Vermächtnis von Mangalyaan ist der Rekord selbst: das erste Land, das bei seiner Debütmission die Mars-Umlaufbahn erreichte, und die erste asiatische Nation am Mars. Das ist ein bleibender Eintrag in der Geschichte der Erkundung und zugleich das Fundament eines nationalen Selbstvertrauens, das den weiteren Ehrgeiz von ISRO beflügelt hat – von Chandrayaan-3 bis zum bemannten Programm Gaganyaan."
     },
     {
       "type": "prose",
-      "md": "Das zweite Vermächtnis ist der Kostenpräzedenzfall. Indem ISRO den Mars für einige zehn Millionen statt Hunderte erreichte, veränderte die Organisation die globale Diskussion darüber, was interplanetare Missionen kosten müssen — ein Beispiel, das die wahrgenommene Eintrittsbarriere für jede aufstrebende Raumfahrtnation senkt und die etablierten unter Druck setzt, ihre Preise zu rechtfertigen."
+      "md": "Das zweite Vermächtnis ist der Präzedenzfall bei den Kosten. Indem ISRO den Mars für einige Dutzend Millionen statt für Hunderte von Millionen erreichte, veränderte die Behörde die weltweite Debatte darüber, was interplanetare Missionen kosten müssen – ein Beispiel, das für jede aufstrebende Raumfahrtnation die empfundene Einstiegshürde senkt und die etablierten Akteure unter Druck setzt, ihre Preise zu rechtfertigen."
     },
     {
       "type": "prose",
-      "md": "Und ihr dritter ist Inspiration. Mangalyaans Erfolg, der in ganz Indien live verfolgt wurde, zog eine Generation in Richtung Naturwissenschaft und Ingenieurwesen und etablierte Raumfahrt als Quelle nationalen Stolzes — eine Soft-Power-Dividende, die das Raumfahrzeug selbst überdauert."
+      "md": "Und das dritte ist Inspiration. Der Erfolg von Mangalyaan, der in ganz Indien live verfolgt wurde, zog eine ganze Generation zu Wissenschaft und Technik hin und machte die Raumfahrt zu einer Quelle des Nationalstolzes – eine Soft-Power-Dividende, die das Raumfahrzeug selbst überdauert."
     }
   ],
   "lessons": [
     {
       "type": "prose",
-      "md": "Die Lehre von Mangalyaan ist, dass Beschränkung, als Disziplin angenommen, Ergebnisse hervorbringen kann, die Geld allein nicht erzielt. Indien erreichte den Mars beim ersten Versuch nicht trotz seines geringen Budgets, sondern teilweise wegen der Einfachheit, die dieses Budget erzwang — eine fokussierte Raumsonde, bewährte Technik und die Weigerung, zu verkomplizieren. Sparsamkeit machte die Mission zugleich bezahlbar und, in ihrer Schlankheit selbst, robust."
+      "md": "Die Lehre von Mangalyaan lautet: Beschränkung, als Disziplin angenommen, kann Ergebnisse hervorbringen, die Geld allein nicht erzielt. Indien erreichte den Mars beim ersten Versuch nicht trotz seines kleinen Budgets, sondern zum Teil gerade wegen der Einfachheit, die dieses Budget erzwang – ein fokussiertes Raumfahrzeug, erprobte Hardware und die Weigerung, Dinge unnötig zu verkomplizieren. Die Sparsamkeit machte die Mission erschwinglich und, gerade in ihrer Schlankheit, auch robust."
     },
     {
       "type": "prose",
-      "md": "Die tiefere Lektion ist, dass ein Erfolg beim ersten Versuch am Mars ebenso viel mit Bescheidenheit wie mit Ehrgeiz zu tun hat. Der Friedhof gescheiterter Mars-Missionen ist voll von gut finanzierten Programmen, die zu weit griffen; ISRO griff genau so weit, wie es zuverlässig bewältigen konnte, bewies das und ließ die Mission ihre eigenen bescheidenen Ziele übertreffen. Präzise zu zielen, statt hoch zu zielen, ist manchmal der Weg, wie die schwierigsten Premieren gewonnen werden."
+      "md": "Die tiefere Lehre lautet, dass ein Erfolg beim ersten Anlauf am Mars ebenso sehr eine Frage der Demut wie des Ehrgeizes ist. Der Friedhof gescheiterter Mars-Missionen ist voll von gut finanzierten Programmen, die zu weit gegriffen haben; ISRO griff genau so weit, wie es verlässlich bewältigen konnte, bewies das und ließ die Mission ihre eigenen bescheidenen Ziele übertreffen. Präzise zu zielen, statt hoch zu zielen, ist manchmal der Weg, auf dem die schwierigsten Premieren gelingen."
     }
   ]
 }

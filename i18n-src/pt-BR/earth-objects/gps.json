@@ -1,5 +1,5 @@
 {
-  "name": "GPS Constelação",
+  "name": "Constelação GPS",
   "short": "GPS",
   "description": "31 satélites ativos a 20.200 km. Cada app de navegação, cada drone, cada navio no mar depende desta constelação. Originalmente militar, aberta a civis em 1983. Precisão do sinal: ~3 m para uso civil, ~1 m para militar — precisão centimétrica requer aumento RTK.",
   "scale_fact": "GPS é 50× maior que ISS. Você nunca olhou para cima e viu – mas ele sabe exatamente onde você está."

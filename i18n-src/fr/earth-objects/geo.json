@@ -1,5 +1,5 @@
 {
-  "name": "GEO Ceinture",
+  "name": "Ceinture GEO",
   "short": "GEO",
   "description": "L'anneau géostationnaire. À exactement 35 786 km, la période orbitale égale la rotation terrestre — les satellites semblent immobiles dans le ciel. Les satellites météorologiques GOES, Meteosat, des milliers de satellites de communications. L'altitude spécifique où la physique et l'utilité s'alignent parfaitement.",
   "scale_fact": "35 786 km n'est pas un nombre rond de par sa conception - c'est l'altitude exacte à laquelle la gravité et la vitesse orbitale s'équilibrent pour donner une période de 24 heures. La physique l'a choisi."

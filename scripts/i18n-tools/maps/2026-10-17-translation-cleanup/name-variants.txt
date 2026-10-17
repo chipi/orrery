@@ -1,0 +1,1344 @@
+## GOES (NOAA Weather)  (fleet/constellation/goes-noaa, earth-objects/goes)
+  ru: GOES (метеоспутники NOAA)
+  ja: GOES（NOAA気象衛星）
+  zh-CN: GOES（NOAA气象卫星）
+  ko: GOES (NOAA 기상위성)
+  hi: GOES (NOAA मौसम उपग्रह)
+  ar: GOES (أقمار NOAA للأرصاد الجوية)
+  sr-Cyrl: GOES (NOAA метеоролошки сателити)
+  de: GOES (NOAA-Wetter)
+  fr: GOES (satellites météo de la NOAA)
+  es: GOES (satélites meteorológicos de la NOAA)
+  it: GOES (satelliti meteorologici NOAA)
+  nl: GOES (NOAA-weersatellieten)
+  pt-BR: GOES (satélites meteorológicos da NOAA)
+## Inmarsat  (fleet/constellation/inmarsat, earth-objects/inmarsat)
+  ru: Inmarsat
+  ja: Inmarsat
+  zh-CN: Inmarsat
+  ko: Inmarsat
+  hi: Inmarsat
+  ar: Inmarsat
+  sr-Cyrl: Inmarsat
+  de: Inmarsat
+  fr: Inmarsat
+  es: Inmarsat
+  it: Inmarsat
+  nl: Inmarsat
+  pt-BR: Inmarsat
+## Iridium NEXT  (fleet/constellation/iridium-next, earth-objects/iridium-next)
+  ru: Iridium NEXT
+  ja: Iridium NEXT
+  zh-CN: Iridium NEXT
+  ko: Iridium NEXT
+  hi: Iridium NEXT
+  ar: Iridium NEXT
+  sr-Cyrl: Iridium NEXT
+  de: Iridium NEXT
+  fr: Iridium NEXT
+  es: Iridium NEXT
+  it: Iridium NEXT
+  nl: Iridium NEXT
+  pt-BR: Iridium NEXT
+## Landsat  (fleet/constellation/landsat, earth-objects/landsat)
+  ru: Landsat
+  ja: Landsat
+  zh-CN: Landsat
+  ko: Landsat
+  hi: Landsat
+  ar: Landsat
+  sr-Cyrl: Landsat
+  de: Landsat
+  fr: Landsat
+  es: Landsat
+  it: Landsat
+  nl: Landsat
+  pt-BR: Landsat
+## O3b / O3b mPOWER (MEO comms)  (fleet/constellation/o3b-mpower, earth-objects/o3b)
+  ru: O3b / O3b mPOWER (спутниковая связь на средней орбите)
+  ja: O3b / O3b mPOWER（MEO通信）
+  zh-CN: O3b / O3b mPOWER（中地球轨道通信）
+  ko: O3b / O3b mPOWER (MEO 통신)
+  hi: O3b / O3b mPOWER (MEO संचार)
+  ar: O3b / O3b mPOWER (اتصالات MEO)
+  sr-Cyrl: O3b / O3b mPOWER (комуникације у средњој орбити)
+  de: O3b / O3b mPOWER (MEO-Kommunikation)
+  fr: O3b / O3b mPOWER (communications en MEO)
+  es: O3b / O3b mPOWER (comunicaciones en MEO)
+  it: O3b / O3b mPOWER (comunicazioni in MEO)
+  nl: O3b / O3b mPOWER (MEO-communicatie)
+  pt-BR: O3b / O3b mPOWER (comunicações em MEO)
+## OneWeb  (fleet/constellation/oneweb, earth-objects/oneweb)
+  ru: OneWeb
+  ja: OneWeb
+  zh-CN: OneWeb
+  ko: OneWeb
+  hi: OneWeb
+  ar: OneWeb
+  sr-Cyrl: OneWeb
+  de: OneWeb
+  fr: OneWeb
+  es: OneWeb
+  it: OneWeb
+  nl: OneWeb
+  pt-BR: OneWeb
+## Planet Labs (PlanetScope + SkySat)  (fleet/constellation/planet-labs, earth-objects/planet-labs)
+  ru: Planet Labs (PlanetScope + SkySat)
+  ja: Planet Labs (PlanetScope + SkySat)
+  zh-CN: Planet Labs (PlanetScope + SkySat)
+  ko: Planet Labs (PlanetScope + SkySat)
+  hi: Planet Labs (PlanetScope + SkySat)
+  ar: Planet Labs (PlanetScope + SkySat)
+  sr-Cyrl: Planet Labs (PlanetScope + SkySat)
+  de: Planet Labs (PlanetScope + SkySat)
+  fr: Planet Labs (PlanetScope + SkySat)
+  es: Planet Labs (PlanetScope + SkySat)
+  it: Planet Labs (PlanetScope + SkySat)
+  nl: Planet Labs (PlanetScope + SkySat)
+  pt-BR: Planet Labs (PlanetScope + SkySat)
+## Sentinel (Copernicus)  (fleet/constellation/sentinel-copernicus, earth-objects/sentinel-copernicus)
+  ru: Sentinel (Copernicus)
+  ja: Sentinel (Copernicus)
+  zh-CN: Sentinel (Copernicus)
+  ko: Sentinel (Copernicus)
+  hi: Sentinel (Copernicus)
+  ar: Sentinel (Copernicus)
+  sr-Cyrl: Sentinel (Copernicus)
+  de: Sentinel (Copernicus)
+  fr: Sentinel (Copernicus)
+  es: Sentinel (Copernicus)
+  it: Sentinel (Copernicus)
+  nl: Sentinel (Copernicus)
+  pt-BR: Sentinel (Copernicus)
+## Starlink  (fleet/constellation/starlink, programs/starlink, earth-objects/starlink)
+  ru: Starlink
+  ja: Starlink
+  zh-CN: Starlink
+  ko: Starlink
+  hi: Starlink
+  ar: Starlink
+  sr-Cyrl: Starlink
+  de: Starlink
+  fr: Starlink
+  es: Starlink
+  it: Starlink
+  nl: Starlink
+  pt-BR: Starlink
+## Buran  (fleet/crewed-spacecraft/buran, programs/buran)
+  ru: Буран
+  ja: Buran
+  zh-CN: Buran
+  ko: Buran
+  hi: Buran
+  ar: Buran
+  sr-Cyrl: Buran
+  de: Buran
+  fr: Buran
+  es: Buran
+  it: Buran
+  nl: Buran
+  pt-BR: Buran
+## Gaganyaan  (fleet/crewed-spacecraft/gaganyaan, programs/gaganyaan)
+  ru: Gaganyaan
+  ja: Gaganyaan
+  zh-CN: Gaganyaan
+  ko: Gaganyaan
+  hi: गगनयान
+  ar: Gaganyaan
+  sr-Cyrl: Gaganyaan
+  de: Gaganyaan
+  fr: Gaganyaan
+  es: Gaganyaan
+  it: Gaganyaan
+  nl: Gaganyaan
+  pt-BR: Gaganyaan
+## Gemini  (fleet/crewed-spacecraft/gemini, programs/gemini)
+  ru: Gemini
+  ja: Gemini
+  zh-CN: Gemini
+  ko: Gemini
+  hi: Gemini
+  ar: Gemini
+  sr-Cyrl: Gemini
+  de: Gemini
+  fr: Gemini
+  es: Gemini
+  it: Gemini
+  nl: Gemini
+  pt-BR: Gemini
+## Shenzhou  (fleet/crewed-spacecraft/shenzhou, programs/shenzhou)
+  ru: Shenzhou
+  ja: Shenzhou
+  zh-CN: 神舟
+  ko: Shenzhou
+  hi: Shenzhou
+  ar: Shenzhou
+  sr-Cyrl: Shenzhou
+  de: Shenzhou
+  fr: Shenzhou
+  es: Shenzhou
+  it: Shenzhou
+  nl: Shenzhou
+  pt-BR: Shenzhou
+## Voskhod  (fleet/crewed-spacecraft/voskhod, programs/voskhod)
+  ru: Восход
+  ja: Voskhod
+  zh-CN: Voskhod
+  ko: Voskhod
+  hi: Voskhod
+  ar: Voskhod
+  sr-Cyrl: Voskhod
+  de: Voskhod
+  fr: Voskhod
+  es: Voskhod
+  it: Voskhod
+  nl: Voskhod
+  pt-BR: Voskhod
+## Vostok  (fleet/crewed-spacecraft/vostok, programs/vostok)
+  ru: Восток
+  ja: Vostok
+  zh-CN: Vostok
+  ko: Vostok
+  hi: Vostok
+  ar: Vostok
+  sr-Cyrl: Vostok
+  de: Vostok
+  fr: Vostok
+  es: Vostok
+  it: Vostok
+  nl: Vostok
+  pt-BR: Vostok
+## Viking  (fleet/engine/viking, programs/viking)
+  ru: Viking
+  ja: Viking
+  zh-CN: Viking
+  ko: Viking
+  hi: Viking
+  ar: Viking
+  sr-Cyrl: Viking
+  de: Viking
+  fr: Viking
+  es: Viking
+  it: Viking
+  nl: Viking
+  pt-BR: Viking
+## Beresheet  (fleet/lander/beresheet, missions/moon/beresheet, moon-sites/beresheet)
+  ru: Beresheet
+  ja: Beresheet
+  zh-CN: Beresheet
+  ko: Beresheet
+  hi: Beresheet
+  ar: Beresheet
+  sr-Cyrl: Beresheet
+  de: Beresheet
+  fr: Beresheet
+  es: Beresheet
+  it: Beresheet
+  nl: Beresheet
+  pt-BR: Beresheet
+## Chang'e 3  (fleet/lander/change-3, missions/moon/change3)
+  ru: Chang'e 3
+  ja: Chang'e 3
+  zh-CN: 嫦娥三号
+  ko: Chang'e 3
+  hi: Chang'e 3
+  ar: Chang'e 3
+  sr-Cyrl: Chang'e 3
+  de: Chang'e 3
+  fr: Chang'e 3
+  es: Chang'e 3
+  it: Chang'e 3
+  nl: Chang'e 3
+  pt-BR: Chang'e 3
+## Chang'e 5  (fleet/lander/change-5, missions/moon/change5, moon-sites/change5)
+  ru: Chang'e 5
+  ja: Chang'e 5
+  zh-CN: 嫦娥五号
+  ko: Chang'e 5
+  hi: Chang'e 5
+  ar: Chang'e 5
+  sr-Cyrl: Chang'e 5
+  de: Chang'e 5
+  fr: Chang'e 5
+  es: Chang'e 5
+  it: Chang'e 5
+  nl: Chang'e 5
+  pt-BR: Chang'e 5
+## InSight  (fleet/lander/insight, missions/mars/insight, mars-sites/insight)
+  ru: InSight
+  ja: InSight
+  zh-CN: InSight
+  ko: InSight
+  hi: InSight
+  ar: InSight
+  sr-Cyrl: InSight
+  de: InSight
+  fr: InSight
+  es: InSight
+  it: InSight
+  nl: InSight
+  pt-BR: InSight
+## Luna 16  (fleet/lander/luna-16, missions/moon/luna16, moon-sites/luna16)
+  ru: Луна-16
+  ja: Luna 16
+  zh-CN: Luna 16
+  ko: Luna 16
+  hi: Luna 16
+  ar: Luna 16
+  sr-Cyrl: Luna 16
+  de: Luna 16
+  fr: Luna 16
+  es: Luna 16
+  it: Luna 16
+  nl: Luna 16
+  pt-BR: Luna 16
+## Luna 9  (fleet/lander/luna-9, missions/moon/luna9, moon-sites/luna9)
+  ru: Луна-9
+  ja: Luna 9
+  zh-CN: Luna 9
+  ko: Luna 9
+  hi: Luna 9
+  ar: Luna 9
+  sr-Cyrl: Luna 9
+  de: Luna 9
+  fr: Luna 9
+  es: Luna 9
+  it: Luna 9
+  nl: Luna 9
+  pt-BR: Luna 9
+## Mars 3  (fleet/lander/mars-3, missions/mars/mars3)
+  ru: Марс-3
+  ja: Mars 3
+  zh-CN: Mars 3
+  ko: Mars 3
+  hi: Mars 3
+  ar: Mars 3
+  sr-Cyrl: Mars 3
+  de: Mars 3
+  fr: Mars 3
+  es: Mars 3
+  it: Mars 3
+  nl: Mars 3
+  pt-BR: Mars 3
+## Phoenix  (fleet/lander/phoenix, missions/mars/phoenix)
+  ru: Phoenix
+  ja: Phoenix
+  zh-CN: Phoenix
+  ko: Phoenix
+  hi: Phoenix
+  ar: Phoenix
+  sr-Cyrl: Phoenix
+  de: Phoenix
+  fr: Phoenix
+  es: Phoenix
+  it: Phoenix
+  nl: Phoenix
+  pt-BR: Phoenix
+## SLIM  (fleet/lander/slim, missions/moon/slim, moon-sites/slim)
+  ru: SLIM
+  ja: SLIM
+  zh-CN: SLIM
+  ko: SLIM
+  hi: SLIM
+  ar: SLIM
+  sr-Cyrl: SLIM
+  de: SLIM
+  fr: SLIM
+  es: SLIM
+  it: SLIM
+  nl: SLIM
+  pt-BR: SLIM
+## Viking 1  (fleet/lander/viking-1, missions/mars/viking1)
+  ru: Viking 1
+  ja: Viking 1
+  zh-CN: Viking 1
+  ko: Viking 1
+  hi: Viking 1
+  ar: Viking 1
+  sr-Cyrl: Viking 1
+  de: Viking 1
+  fr: Viking 1
+  es: Viking 1
+  it: Viking 1
+  nl: Viking 1
+  pt-BR: Viking 1
+## Ariane 6  (fleet/launcher/ariane-6, rockets/ariane-6)
+  ru: Ariane 6
+  ja: Ariane 6
+  zh-CN: Ariane 6
+  ko: Ariane 6
+  hi: Ariane 6
+  ar: Ariane 6
+  sr-Cyrl: Ariane 6
+  de: Ariane 6
+  fr: Ariane 6
+  es: Ariane 6
+  it: Ariane 6
+  nl: Ariane 6
+  pt-BR: Ariane 6
+## Falcon Heavy  (fleet/launcher/falcon-heavy, rockets/falcon-heavy)
+  ru: Falcon Heavy
+  ja: Falcon Heavy
+  zh-CN: Falcon Heavy
+  ko: Falcon Heavy
+  hi: Falcon Heavy
+  ar: Falcon Heavy
+  sr-Cyrl: Falcon Heavy
+  de: Falcon Heavy
+  fr: Falcon Heavy
+  es: Falcon Heavy
+  it: Falcon Heavy
+  nl: Falcon Heavy
+  pt-BR: Falcon Heavy
+## H-IIA  (fleet/launcher/h-iia, rockets/h-iia)
+  ru: H-IIA
+  ja: H-IIA
+  zh-CN: H-IIA
+  ko: H-IIA
+  hi: H-IIA
+  ar: H-IIA
+  sr-Cyrl: H-IIA
+  de: H-IIA
+  fr: H-IIA
+  es: H-IIA
+  it: H-IIA
+  nl: H-IIA
+  pt-BR: H-IIA
+## H3  (fleet/launcher/h3, rockets/h3)
+  ru: H3
+  ja: H3
+  zh-CN: H3
+  ko: H3
+  hi: H3
+  ar: H3
+  sr-Cyrl: H3
+  de: H3
+  fr: H3
+  es: H3
+  it: H3
+  nl: H3
+  pt-BR: H3
+## Long March 3B  (fleet/launcher/long-march-3b, rockets/long-march-3b)
+  ru: Long March 3B
+  ja: Long March 3B
+  zh-CN: 长征三号B
+  ko: Long March 3B
+  hi: Long March 3B
+  ar: Long March 3B
+  sr-Cyrl: Long March 3B
+  de: Long March 3B
+  fr: Long March 3B
+  es: Long March 3B
+  it: Long March 3B
+  nl: Long March 3B
+  pt-BR: Long March 3B
+## Proton-M  (fleet/launcher/proton-m, rockets/proton-m)
+  ru: Протон-М
+  ja: Proton-M
+  zh-CN: Proton-M
+  ko: Proton-M
+  hi: Proton-M
+  ar: Proton-M
+  sr-Cyrl: Proton-M
+  de: Proton-M
+  fr: Proton-M
+  es: Proton-M
+  it: Proton-M
+  nl: Proton-M
+  pt-BR: Proton-M
+## PSLV-XL  (fleet/launcher/pslv-xl, rockets/pslv-xl)
+  ru: PSLV-XL
+  ja: PSLV-XL
+  zh-CN: PSLV-XL
+  ko: PSLV-XL
+  hi: PSLV-XL
+  ar: PSLV-XL
+  sr-Cyrl: PSLV-XL
+  de: PSLV-XL
+  fr: PSLV-XL
+  es: PSLV-XL
+  it: PSLV-XL
+  nl: PSLV-XL
+  pt-BR: PSLV-XL
+## SLS Block 1  (fleet/launcher/sls-block-1, rockets/sls-block-1)
+  ru: SLS Block 1
+  ja: SLS Block 1
+  zh-CN: SLS Block 1
+  ko: SLS Block 1
+  hi: SLS Block 1
+  ar: SLS Block 1
+  sr-Cyrl: SLS Block 1
+  de: SLS Block 1
+  fr: SLS Block 1
+  es: SLS Block 1
+  it: SLS Block 1
+  nl: SLS Block 1
+  pt-BR: SLS Block 1
+## Starship  (fleet/launcher/starship, programs/starship, rockets/starship)
+  ru: Starship
+  ja: Starship
+  zh-CN: Starship
+  ko: Starship
+  hi: Starship
+  ar: Starship
+  sr-Cyrl: Starship
+  de: Starship
+  fr: Starship
+  es: Starship
+  it: Starship
+  nl: Starship
+  pt-BR: Starship
+## Chandra X-ray Observatory  (fleet/observatory/chandra, earth-objects/chandra)
+  ru: Рентгеновская обсерватория Chandra
+  ja: Chandra X線天文台
+  zh-CN: Chandra X射线天文台
+  ko: Chandra X선 천문대
+  hi: Chandra एक्स-रे वेधशाला
+  ar: مرصد Chandra للأشعة السينية
+  sr-Cyrl: Рендгенска опсерваторија Chandra
+  de: Chandra-Röntgenobservatorium
+  fr: Observatoire de rayons X Chandra
+  es: Observatorio de rayos X Chandra
+  it: Osservatorio a raggi X Chandra
+  nl: Chandra-röntgenobservatorium
+  pt-BR: Observatório de Raios X Chandra
+## Gaia  (fleet/observatory/gaia, earth-objects/gaia)
+  ru: Gaia
+  ja: Gaia
+  zh-CN: Gaia
+  ko: Gaia
+  hi: Gaia
+  ar: Gaia
+  sr-Cyrl: Gaia
+  de: Gaia
+  fr: Gaia
+  es: Gaia
+  it: Gaia
+  nl: Gaia
+  pt-BR: Gaia
+## Hubble Space Telescope  (fleet/observatory/hubble, earth-objects/hubble)
+  ru: Космический телескоп Hubble
+  ja: Hubble宇宙望遠鏡
+  zh-CN: Hubble空间望远镜
+  ko: Hubble 우주망원경
+  hi: Hubble अंतरिक्ष दूरदर्शी
+  ar: مقراب Hubble الفضائي
+  sr-Cyrl: Свемирски телескоп Hubble
+  de: Hubble-Weltraumteleskop
+  fr: Télescope spatial Hubble
+  es: Telescopio espacial Hubble
+  it: Telescopio spaziale Hubble
+  nl: Hubble-ruimtetelescoop
+  pt-BR: Telescópio Espacial Hubble
+## James Webb Space Telescope  (fleet/observatory/jwst, programs/jwst, earth-objects/jwst)
+  ru: Космический телескоп James Webb
+  ja: James Webb宇宙望遠鏡
+  zh-CN: James Webb空间望远镜
+  ko: James Webb 우주망원경
+  hi: James Webb अंतरिक्ष दूरदर्शी
+  ar: مقراب James Webb الفضائي
+  sr-Cyrl: Свемирски телескоп James Webb
+  de: James-Webb-Weltraumteleskop
+  fr: Télescope spatial James Webb
+  es: Telescopio espacial James Webb
+  it: Telescopio spaziale James Webb
+  nl: James Webb-ruimtetelescoop
+  pt-BR: Telescópio Espacial James Webb
+## XMM-Newton  (fleet/observatory/xmm-newton, earth-objects/xmm)
+  ru: XMM-Newton
+  ja: XMM-Newton
+  zh-CN: XMM-Newton
+  ko: XMM-Newton
+  hi: XMM-Newton
+  ar: XMM-Newton
+  sr-Cyrl: XMM-Newton
+  de: XMM-Newton
+  fr: XMM-Newton
+  es: XMM-Newton
+  it: XMM-Newton
+  nl: XMM-Newton
+  pt-BR: XMM-Newton
+## Akatsuki  (fleet/orbiter/akatsuki, missions/venus/akatsuki)
+  ru: Akatsuki
+  ja: あかつき
+  zh-CN: Akatsuki
+  ko: Akatsuki
+  hi: Akatsuki
+  ar: Akatsuki
+  sr-Cyrl: Akatsuki
+  de: Akatsuki
+  fr: Akatsuki
+  es: Akatsuki
+  it: Akatsuki
+  nl: Akatsuki
+  pt-BR: Akatsuki
+## Cassini-Huygens  (fleet/orbiter/cassini, missions/saturn/cassini)
+  ru: Cassini-Huygens
+  ja: Cassini-Huygens
+  zh-CN: Cassini-Huygens
+  ko: Cassini-Huygens
+  hi: Cassini-Huygens
+  ar: Cassini-Huygens
+  sr-Cyrl: Cassini-Huygens
+  de: Cassini-Huygens
+  fr: Cassini-Huygens
+  es: Cassini-Huygens
+  it: Cassini-Huygens
+  nl: Cassini-Huygens
+  pt-BR: Cassini-Huygens
+## Chang'e 2  (fleet/orbiter/change-2, earth-objects/change2, moon-sites/change2)
+  ru: Chang'e 2
+  ja: Chang'e 2
+  zh-CN: 嫦娥二号
+  ko: Chang'e 2
+  hi: Chang'e 2
+  ar: Chang'e 2
+  sr-Cyrl: Chang'e 2
+  de: Chang'e 2
+  fr: Chang'e 2
+  es: Chang'e 2
+  it: Chang'e 2
+  nl: Chang'e 2
+  pt-BR: Chang'e 2
+## DART  (fleet/orbiter/dart, missions/dimorphos/dart)
+  ru: DART
+  ja: DART
+  zh-CN: DART
+  ko: DART
+  hi: DART
+  ar: DART
+  sr-Cyrl: DART
+  de: DART
+  fr: DART
+  es: DART
+  it: DART
+  nl: DART
+  pt-BR: DART
+## Europa Clipper  (fleet/orbiter/europa-clipper, missions/jupiter/europa-clipper)
+  ru: Europa Clipper
+  ja: Europa Clipper
+  zh-CN: Europa Clipper
+  ko: Europa Clipper
+  hi: Europa Clipper
+  ar: Europa Clipper
+  sr-Cyrl: Europa Clipper
+  de: Europa Clipper
+  fr: Europa Clipper
+  es: Europa Clipper
+  it: Europa Clipper
+  nl: Europa Clipper
+  pt-BR: Europa Clipper
+## Galileo  (fleet/orbiter/galileo, programs/galileo, missions/jupiter/galileo)
+  ru: Galileo
+  ja: Galileo
+  zh-CN: Galileo
+  ko: Galileo
+  hi: Galileo
+  ar: Galileo
+  sr-Cyrl: Galileo
+  de: Galileo
+  fr: Galileo
+  es: Galileo
+  it: Galileo
+  nl: Galileo
+  pt-BR: Galileo
+## Hayabusa2  (fleet/orbiter/hayabusa-2, missions/asteroid/hayabusa2)
+  ru: Hayabusa2
+  ja: はやぶさ2
+  zh-CN: Hayabusa2
+  ko: Hayabusa2
+  hi: Hayabusa2
+  ar: Hayabusa2
+  sr-Cyrl: Hayabusa2
+  de: Hayabusa2
+  fr: Hayabusa2
+  es: Hayabusa2
+  it: Hayabusa2
+  nl: Hayabusa2
+  pt-BR: Hayabusa2
+## Hayabusa  (fleet/orbiter/hayabusa, programs/hayabusa, missions/itokawa/hayabusa1)
+  ru: Hayabusa
+  ja: はやぶさ
+  zh-CN: Hayabusa
+  ko: Hayabusa
+  hi: Hayabusa
+  ar: Hayabusa
+  sr-Cyrl: Hayabusa
+  de: Hayabusa
+  fr: Hayabusa
+  es: Hayabusa
+  it: Hayabusa
+  nl: Hayabusa
+  pt-BR: Hayabusa
+## Juno  (fleet/orbiter/juno, missions/jupiter/juno)
+  ru: Juno
+  ja: Juno
+  zh-CN: 朱诺
+  ko: Juno
+  hi: Juno
+  ar: Juno
+  sr-Cyrl: Juno
+  de: Juno
+  fr: Juno
+  es: Juno
+  it: Juno
+  nl: Juno
+  pt-BR: Juno
+## Lucy  (fleet/orbiter/lucy, missions/eurybates/lucy)
+  ru: Lucy
+  ja: Lucy
+  zh-CN: Lucy
+  ko: Lucy
+  hi: Lucy
+  ar: Lucy
+  sr-Cyrl: Lucy
+  de: Lucy
+  fr: Lucy
+  es: Lucy
+  it: Lucy
+  nl: Lucy
+  pt-BR: Lucy
+## Magellan  (fleet/orbiter/magellan, missions/venus/magellan)
+  ru: Magellan
+  ja: Magellan
+  zh-CN: Magellan
+  ko: Magellan
+  hi: Magellan
+  ar: Magellan
+  sr-Cyrl: Magellan
+  de: Magellan
+  fr: Magellan
+  es: Magellan
+  it: Magellan
+  nl: Magellan
+  pt-BR: Magellan
+## Mariner 4  (fleet/orbiter/mariner-4, missions/mars/mariner4)
+  ru: Mariner 4
+  ja: Mariner 4
+  zh-CN: Mariner 4
+  ko: Mariner 4
+  hi: Mariner 4
+  ar: Mariner 4
+  sr-Cyrl: Mariner 4
+  de: Mariner 4
+  fr: Mariner 4
+  es: Mariner 4
+  it: Mariner 4
+  nl: Mariner 4
+  pt-BR: Mariner 4
+## Mariner 9  (fleet/orbiter/mariner-9, missions/mars/mariner9, mars-sites/mariner9)
+  ru: Mariner 9
+  ja: Mariner 9
+  zh-CN: Mariner 9
+  ko: Mariner 9
+  hi: Mariner 9
+  ar: Mariner 9
+  sr-Cyrl: Mariner 9
+  de: Mariner 9
+  fr: Mariner 9
+  es: Mariner 9
+  it: Mariner 9
+  nl: Mariner 9
+  pt-BR: Mariner 9
+## Mars Express  (fleet/orbiter/mars-express, missions/mars/mars-express, mars-sites/mars-express)
+  ru: Mars Express
+  ja: Mars Express
+  zh-CN: Mars Express
+  ko: Mars Express
+  hi: Mars Express
+  ar: Mars Express
+  sr-Cyrl: Mars Express
+  de: Mars Express
+  fr: Mars Express
+  es: Mars Express
+  it: Mars Express
+  nl: Mars Express
+  pt-BR: Mars Express
+## MAVEN  (fleet/orbiter/maven, missions/mars/maven, mars-sites/maven)
+  ru: MAVEN
+  ja: MAVEN
+  zh-CN: MAVEN
+  ko: MAVEN
+  hi: MAVEN
+  ar: MAVEN
+  sr-Cyrl: MAVEN
+  de: MAVEN
+  fr: MAVEN
+  es: MAVEN
+  it: MAVEN
+  nl: MAVEN
+  pt-BR: MAVEN
+## Mars Reconnaissance Orbiter  (fleet/orbiter/mro, mars-sites/mro)
+  ru: Mars Reconnaissance Orbiter
+  ja: Mars Reconnaissance Orbiter
+  zh-CN: Mars Reconnaissance Orbiter
+  ko: Mars Reconnaissance Orbiter
+  hi: Mars Reconnaissance Orbiter
+  ar: Mars Reconnaissance Orbiter
+  sr-Cyrl: Mars Reconnaissance Orbiter
+  de: Mars Reconnaissance Orbiter
+  fr: Mars Reconnaissance Orbiter
+  es: Mars Reconnaissance Orbiter
+  it: Mars Reconnaissance Orbiter
+  nl: Mars Reconnaissance Orbiter
+  pt-BR: Mars Reconnaissance Orbiter
+## OSIRIS-REx  (fleet/orbiter/osiris-rex, missions/bennu/osiris-rex)
+  ru: OSIRIS-REx
+  ja: OSIRIS-REx
+  zh-CN: OSIRIS-REx
+  ko: OSIRIS-REx
+  hi: OSIRIS-REx
+  ar: OSIRIS-REx
+  sr-Cyrl: OSIRIS-REx
+  de: OSIRIS-REx
+  fr: OSIRIS-REx
+  es: OSIRIS-REx
+  it: OSIRIS-REx
+  nl: OSIRIS-REx
+  pt-BR: OSIRIS-REx
+## Parker Solar Probe  (fleet/orbiter/parker-solar-probe, missions/sun/parker-solar-probe)
+  ru: Parker Solar Probe
+  ja: Parker Solar Probe
+  zh-CN: Parker Solar Probe
+  ko: Parker Solar Probe
+  hi: Parker Solar Probe
+  ar: Parker Solar Probe
+  sr-Cyrl: Parker Solar Probe
+  de: Parker Solar Probe
+  fr: Parker Solar Probe
+  es: Parker Solar Probe
+  it: Parker Solar Probe
+  nl: Parker Solar Probe
+  pt-BR: Parker Solar Probe
+## Pioneer 10  (fleet/orbiter/pioneer-10, missions/jupiter/pioneer-10)
+  ru: Pioneer 10
+  ja: Pioneer 10
+  zh-CN: Pioneer 10
+  ko: Pioneer 10
+  hi: Pioneer 10
+  ar: Pioneer 10
+  sr-Cyrl: Pioneer 10
+  de: Pioneer 10
+  fr: Pioneer 10
+  es: Pioneer 10
+  it: Pioneer 10
+  nl: Pioneer 10
+  pt-BR: Pioneer 10
+## Psyche  (fleet/orbiter/psyche-spacecraft, missions/psyche/psyche-mission)
+  ru: Psyche
+  ja: Psyche
+  zh-CN: Psyche
+  ko: Psyche
+  hi: Psyche
+  ar: Psyche
+  sr-Cyrl: Psyche
+  de: Psyche
+  fr: Psyche
+  es: Psyche
+  it: Psyche
+  nl: Psyche
+  pt-BR: Psyche
+## Rosetta  (fleet/orbiter/rosetta, missions/comet/rosetta)
+  ru: Rosetta
+  ja: Rosetta
+  zh-CN: Rosetta
+  ko: Rosetta
+  hi: Rosetta
+  ar: Rosetta
+  sr-Cyrl: Rosetta
+  de: Rosetta
+  fr: Rosetta
+  es: Rosetta
+  it: Rosetta
+  nl: Rosetta
+  pt-BR: Rosetta
+## Solar Orbiter  (fleet/orbiter/solar-orbiter, missions/sun/solar-orbiter)
+  ru: Solar Orbiter
+  ja: Solar Orbiter
+  zh-CN: Solar Orbiter
+  ko: Solar Orbiter
+  hi: Solar Orbiter
+  ar: Solar Orbiter
+  sr-Cyrl: Solar Orbiter
+  de: Solar Orbiter
+  fr: Solar Orbiter
+  es: Solar Orbiter
+  it: Solar Orbiter
+  nl: Solar Orbiter
+  pt-BR: Solar Orbiter
+## Tianwen-1  (fleet/orbiter/tianwen-1, missions/mars/tianwen1)
+  ru: Tianwen-1
+  ja: Tianwen-1
+  zh-CN: 天问一号
+  ko: Tianwen-1
+  hi: Tianwen-1
+  ar: Tianwen-1
+  sr-Cyrl: Tianwen-1
+  de: Tianwen-1
+  fr: Tianwen-1
+  es: Tianwen-1
+  it: Tianwen-1
+  nl: Tianwen-1
+  pt-BR: Tianwen-1
+## Voyager 1  (fleet/orbiter/voyager-1, missions/saturn/voyager-1)
+  ru: Voyager 1
+  ja: Voyager 1
+  zh-CN: Voyager 1
+  ko: Voyager 1
+  hi: Voyager 1
+  ar: Voyager 1
+  sr-Cyrl: Voyager 1
+  de: Voyager 1
+  fr: Voyager 1
+  es: Voyager 1
+  it: Voyager 1
+  nl: Voyager 1
+  pt-BR: Voyager 1
+## Voyager 2  (fleet/orbiter/voyager-2, missions/neptune/voyager-2)
+  ru: Voyager 2
+  ja: Voyager 2
+  zh-CN: Voyager 2
+  ko: Voyager 2
+  hi: Voyager 2
+  ar: Voyager 2
+  sr-Cyrl: Voyager 2
+  de: Voyager 2
+  fr: Voyager 2
+  es: Voyager 2
+  it: Voyager 2
+  nl: Voyager 2
+  pt-BR: Voyager 2
+## International Space Station  (fleet/station/iss, programs/iss, earth-objects/iss)
+  ru: Международная космическая станция
+  ja: 国際宇宙ステーション
+  zh-CN: 国际空间站
+  ko: 국제우주정거장
+  hi: अंतर्राष्ट्रीय अंतरिक्ष स्टेशन
+  ar: محطة الفضاء الدولية
+  sr-Cyrl: Међународна свемирска станица
+  de: Internationale Raumstation
+  fr: Station spatiale internationale
+  es: Estación Espacial Internacional
+  it: Stazione spaziale internazionale
+  nl: Internationaal ruimtestation
+  pt-BR: Estação Espacial Internacional
+## Mir  (fleet/station/mir, programs/mir)
+  ru: Мир
+  ja: Mir
+  zh-CN: Mir
+  ko: Mir
+  hi: Mir
+  ar: Mir
+  sr-Cyrl: Mir
+  de: Mir
+  fr: Mir
+  es: Mir
+  it: Mir
+  nl: Mir
+  pt-BR: Mir
+## Skylab  (fleet/station/skylab, programs/skylab)
+  ru: Skylab
+  ja: Skylab
+  zh-CN: Skylab
+  ko: Skylab
+  hi: Skylab
+  ar: Skylab
+  sr-Cyrl: Skylab
+  de: Skylab
+  fr: Skylab
+  es: Skylab
+  it: Skylab
+  nl: Skylab
+  pt-BR: Skylab
+## Tiangong  (fleet/station/tiangong, programs/tiangong)
+  ru: Tiangong
+  ja: Tiangong
+  zh-CN: 天宫
+  ko: Tiangong
+  hi: Tiangong
+  ar: Tiangong
+  sr-Cyrl: Tiangong
+  de: Tiangong
+  fr: Tiangong
+  es: Tiangong
+  it: Tiangong
+  nl: Tiangong
+  pt-BR: Tiangong
+## Mangalyaan  (programs/mangalyaan, missions/mars/mangalyaan)
+  ru: Mangalyaan
+  ja: Mangalyaan
+  zh-CN: Mangalyaan
+  ko: Mangalyaan
+  hi: मंगलयान
+  ar: Mangalyaan
+  sr-Cyrl: Mangalyaan
+  de: Mangalyaan
+  fr: Mangalyaan
+  es: Mangalyaan
+  it: Mangalyaan
+  nl: Mangalyaan
+  pt-BR: Mangalyaan
+## Mercury  (programs/mercury, planets/mercury)
+  ru: Mercury  |  Меркурий
+  ja: Mercury  |  水星
+  zh-CN: Mercury  |  水星
+  ko: Mercury  |  수성
+  hi: Mercury  |  बुध
+  ar: Mercury  |  عطارد
+  sr-Cyrl: Mercury  |  Меркур
+  de: Mercury  |  Merkur
+  fr: Mercury  |  Mercure
+  es: Mercury  |  Mercurio
+  it: Mercury  |  Mercurio
+  nl: Mercury  |  Mercurius
+  pt-BR: Mercury  |  Mercúrio
+## New Horizons  (programs/new-horizons, missions/pluto/new-horizons)
+  ru: New Horizons
+  ja: New Horizons
+  zh-CN: New Horizons
+  ko: New Horizons
+  hi: New Horizons
+  ar: New Horizons
+  sr-Cyrl: New Horizons
+  de: New Horizons
+  fr: New Horizons
+  es: New Horizons
+  it: New Horizons
+  nl: New Horizons
+  pt-BR: New Horizons
+## Curiosity  (missions/mars/curiosity, mars-sites/curiosity)
+  ru: Curiosity
+  ja: Curiosity
+  zh-CN: Curiosity
+  ko: Curiosity
+  hi: Curiosity
+  ar: Curiosity
+  sr-Cyrl: Curiosity
+  de: Curiosity
+  fr: Curiosity
+  es: Curiosity
+  it: Curiosity
+  nl: Curiosity
+  pt-BR: Curiosity
+## Opportunity  (missions/mars/opportunity, mars-sites/opportunity)
+  ru: Opportunity
+  ja: Opportunity
+  zh-CN: Opportunity
+  ko: Opportunity
+  hi: Opportunity
+  ar: Opportunity
+  sr-Cyrl: Opportunity
+  de: Opportunity
+  fr: Opportunity
+  es: Opportunity
+  it: Opportunity
+  nl: Opportunity
+  pt-BR: Opportunity
+## Schiaparelli EDM  (missions/mars/schiaparelli, mars-sites/schiaparelli)
+  ru: Schiaparelli EDM
+  ja: Schiaparelli EDM
+  zh-CN: Schiaparelli EDM
+  ko: Schiaparelli EDM
+  hi: Schiaparelli EDM
+  ar: Schiaparelli EDM
+  sr-Cyrl: Schiaparelli EDM
+  de: Schiaparelli EDM
+  fr: Schiaparelli EDM
+  es: Schiaparelli EDM
+  it: Schiaparelli EDM
+  nl: Schiaparelli EDM
+  pt-BR: Schiaparelli EDM
+## Spirit  (missions/mars/spirit, mars-sites/spirit)
+  ru: Spirit
+  ja: Spirit
+  zh-CN: Spirit
+  ko: Spirit
+  hi: Spirit
+  ar: Spirit
+  sr-Cyrl: Spirit
+  de: Spirit
+  fr: Spirit
+  es: Spirit
+  it: Spirit
+  nl: Spirit
+  pt-BR: Spirit
+## Apollo 11  (missions/moon/apollo11, moon-sites/apollo11)
+  ru: Apollo 11
+  ja: Apollo 11
+  zh-CN: Apollo 11
+  ko: Apollo 11
+  hi: Apollo 11
+  ar: Apollo 11
+  sr-Cyrl: Apollo 11
+  de: Apollo 11
+  fr: Apollo 11
+  es: Apollo 11
+  it: Apollo 11
+  nl: Apollo 11
+  pt-BR: Apollo 11
+## Apollo 12  (missions/moon/apollo12, moon-sites/apollo12)
+  ru: Apollo 12
+  ja: Apollo 12
+  zh-CN: Apollo 12
+  ko: Apollo 12
+  hi: Apollo 12
+  ar: Apollo 12
+  sr-Cyrl: Apollo 12
+  de: Apollo 12
+  fr: Apollo 12
+  es: Apollo 12
+  it: Apollo 12
+  nl: Apollo 12
+  pt-BR: Apollo 12
+## Apollo 14  (missions/moon/apollo14, moon-sites/apollo14)
+  ru: Apollo 14
+  ja: Apollo 14
+  zh-CN: Apollo 14
+  ko: Apollo 14
+  hi: Apollo 14
+  ar: Apollo 14
+  sr-Cyrl: Apollo 14
+  de: Apollo 14
+  fr: Apollo 14
+  es: Apollo 14
+  it: Apollo 14
+  nl: Apollo 14
+  pt-BR: Apollo 14
+## Apollo 15  (missions/moon/apollo15, moon-sites/apollo15)
+  ru: Apollo 15
+  ja: Apollo 15
+  zh-CN: Apollo 15
+  ko: Apollo 15
+  hi: Apollo 15
+  ar: Apollo 15
+  sr-Cyrl: Apollo 15
+  de: Apollo 15
+  fr: Apollo 15
+  es: Apollo 15
+  it: Apollo 15
+  nl: Apollo 15
+  pt-BR: Apollo 15
+## Apollo 16  (missions/moon/apollo16, moon-sites/apollo16)
+  ru: Apollo 16
+  ja: Apollo 16
+  zh-CN: Apollo 16
+  ko: Apollo 16
+  hi: Apollo 16
+  ar: Apollo 16
+  sr-Cyrl: Apollo 16
+  de: Apollo 16
+  fr: Apollo 16
+  es: Apollo 16
+  it: Apollo 16
+  nl: Apollo 16
+  pt-BR: Apollo 16
+## Apollo 17  (missions/moon/apollo17, moon-sites/apollo17)
+  ru: Apollo 17
+  ja: Apollo 17
+  zh-CN: Apollo 17
+  ko: Apollo 17
+  hi: Apollo 17
+  ar: Apollo 17
+  sr-Cyrl: Apollo 17
+  de: Apollo 17
+  fr: Apollo 17
+  es: Apollo 17
+  it: Apollo 17
+  nl: Apollo 17
+  pt-BR: Apollo 17
+## Artemis III  (missions/moon/artemis3, moon-sites/artemis3)
+  ru: Artemis III
+  ja: Artemis III
+  zh-CN: Artemis III
+  ko: Artemis III
+  hi: Artemis III
+  ar: Artemis III
+  sr-Cyrl: Artemis III
+  de: Artemis III
+  fr: Artemis III
+  es: Artemis III
+  it: Artemis III
+  nl: Artemis III
+  pt-BR: Artemis III
+## Chandrayaan-1  (missions/moon/chandrayaan1, earth-objects/chandrayaan1, moon-sites/chandrayaan1)
+  ru: Chandrayaan-1
+  ja: Chandrayaan-1
+  zh-CN: Chandrayaan-1
+  ko: Chandrayaan-1
+  hi: चंद्रयान-1
+  ar: Chandrayaan-1
+  sr-Cyrl: Chandrayaan-1
+  de: Chandrayaan-1
+  fr: Chandrayaan-1
+  es: Chandrayaan-1
+  it: Chandrayaan-1
+  nl: Chandrayaan-1
+  pt-BR: Chandrayaan-1
+## Chandrayaan-3  (missions/moon/chandrayaan3, moon-sites/chandrayaan3)
+  ru: Chandrayaan-3
+  ja: Chandrayaan-3
+  zh-CN: Chandrayaan-3
+  ko: Chandrayaan-3
+  hi: चंद्रयान-3
+  ar: Chandrayaan-3
+  sr-Cyrl: Chandrayaan-3
+  de: Chandrayaan-3
+  fr: Chandrayaan-3
+  es: Chandrayaan-3
+  it: Chandrayaan-3
+  nl: Chandrayaan-3
+  pt-BR: Chandrayaan-3
+## Chang'e 1  (missions/moon/change1, earth-objects/change1, moon-sites/change1)
+  ru: Chang'e 1
+  ja: Chang'e 1
+  zh-CN: 嫦娥一号
+  ko: Chang'e 1
+  hi: Chang'e 1
+  ar: Chang'e 1
+  sr-Cyrl: Chang'e 1
+  de: Chang'e 1
+  fr: Chang'e 1
+  es: Chang'e 1
+  it: Chang'e 1
+  nl: Chang'e 1
+  pt-BR: Chang'e 1
+## Chang'e 4 / Yutu-2  (missions/moon/change4, moon-sites/change4)
+  ru: Chang'e 4 / Yutu-2
+  ja: Chang'e 4 / Yutu-2
+  zh-CN: 嫦娥四号 / 玉兔二号
+  ko: Chang'e 4 / Yutu-2
+  hi: Chang'e 4 / Yutu-2
+  ar: Chang'e 4 / Yutu-2
+  sr-Cyrl: Chang'e 4 / Yutu-2
+  de: Chang'e 4 / Yutu-2
+  fr: Chang'e 4 / Yutu-2
+  es: Chang'e 4 / Yutu-2
+  it: Chang'e 4 / Yutu-2
+  nl: Chang'e 4 / Yutu-2
+  pt-BR: Chang'e 4 / Yutu-2
+## Chang'e 6  (missions/moon/change6, moon-sites/change6)
+  ru: Chang'e 6
+  ja: Chang'e 6
+  zh-CN: 嫦娥六号
+  ko: Chang'e 6
+  hi: Chang'e 6
+  ar: Chang'e 6
+  sr-Cyrl: Chang'e 6
+  de: Chang'e 6
+  fr: Chang'e 6
+  es: Chang'e 6
+  it: Chang'e 6
+  nl: Chang'e 6
+  pt-BR: Chang'e 6
+## Clementine  (missions/moon/clementine, earth-objects/clementine, moon-sites/clementine)
+  ru: Clementine
+  ja: Clementine
+  zh-CN: Clementine
+  ko: Clementine
+  hi: Clementine
+  ar: Clementine
+  sr-Cyrl: Clementine
+  de: Clementine
+  fr: Clementine
+  es: Clementine
+  it: Clementine
+  nl: Clementine
+  pt-BR: Clementine
+## Lunar Reconnaissance Orbiter  (missions/moon/lro, earth-objects/lro, moon-sites/lro)
+  ru: Lunar Reconnaissance Orbiter
+  ja: Lunar Reconnaissance Orbiter
+  zh-CN: Lunar Reconnaissance Orbiter
+  ko: Lunar Reconnaissance Orbiter
+  hi: Lunar Reconnaissance Orbiter
+  ar: Lunar Reconnaissance Orbiter
+  sr-Cyrl: Lunar Reconnaissance Orbiter
+  de: Lunar Reconnaissance Orbiter
+  fr: Lunar Reconnaissance Orbiter
+  es: Lunar Reconnaissance Orbiter
+  it: Lunar Reconnaissance Orbiter
+  nl: Lunar Reconnaissance Orbiter
+  pt-BR: Lunar Reconnaissance Orbiter
+## Luna 10  (missions/moon/luna10, earth-objects/luna10, moon-sites/luna10)
+  ru: Луна-10
+  ja: Luna 10
+  zh-CN: Luna 10
+  ko: Luna 10
+  hi: Luna 10
+  ar: Luna 10
+  sr-Cyrl: Luna 10
+  de: Luna 10
+  fr: Luna 10
+  es: Luna 10
+  it: Luna 10
+  nl: Luna 10
+  pt-BR: Luna 10
+## Luna 17 / Lunokhod 1  (missions/moon/luna17, moon-sites/luna17)
+  ru: Луна-17 / Луноход-1
+  ja: Luna 17 / Lunokhod 1
+  zh-CN: Luna 17 / Lunokhod 1
+  ko: Luna 17 / Lunokhod 1
+  hi: Luna 17 / Lunokhod 1
+  ar: Luna 17 / Lunokhod 1
+  sr-Cyrl: Luna 17 / Lunokhod 1
+  de: Luna 17 / Lunokhod 1
+  fr: Luna 17 / Lunokhod 1
+  es: Luna 17 / Lunokhod 1
+  it: Luna 17 / Lunokhod 1
+  nl: Luna 17 / Lunokhod 1
+  pt-BR: Luna 17 / Lunokhod 1
+## Luna 21 / Lunokhod 2  (missions/moon/luna21, moon-sites/luna21)
+  ru: Луна-21 / Луноход-2
+  ja: Luna 21 / Lunokhod 2
+  zh-CN: Luna 21 / Lunokhod 2
+  ko: Luna 21 / Lunokhod 2
+  hi: Luna 21 / Lunokhod 2
+  ar: Luna 21 / Lunokhod 2
+  sr-Cyrl: Luna 21 / Lunokhod 2
+  de: Luna 21 / Lunokhod 2
+  fr: Luna 21 / Lunokhod 2
+  es: Luna 21 / Lunokhod 2
+  it: Luna 21 / Lunokhod 2
+  nl: Luna 21 / Lunokhod 2
+  pt-BR: Luna 21 / Lunokhod 2
+## Luna 24  (missions/moon/luna24, moon-sites/luna24)
+  ru: Луна-24
+  ja: Luna 24
+  zh-CN: Luna 24
+  ko: Luna 24
+  hi: Luna 24
+  ar: Luna 24
+  sr-Cyrl: Luna 24
+  de: Luna 24
+  fr: Luna 24
+  es: Luna 24
+  it: Luna 24
+  nl: Luna 24
+  pt-BR: Luna 24
+## Lunar Prospector  (missions/moon/lunar-prospector, earth-objects/lunar-prospector, moon-sites/lunar-prospector)
+  ru: Lunar Prospector
+  ja: Lunar Prospector
+  zh-CN: Lunar Prospector
+  ko: Lunar Prospector
+  hi: Lunar Prospector
+  ar: Lunar Prospector
+  sr-Cyrl: Lunar Prospector
+  de: Lunar Prospector
+  fr: Lunar Prospector
+  es: Lunar Prospector
+  it: Lunar Prospector
+  nl: Lunar Prospector
+  pt-BR: Lunar Prospector
+## SMART-1  (missions/moon/smart-1, earth-objects/smart-1, moon-sites/smart-1)
+  ru: SMART-1
+  ja: SMART-1
+  zh-CN: SMART-1
+  ko: SMART-1
+  hi: SMART-1
+  ar: SMART-1
+  sr-Cyrl: SMART-1
+  de: SMART-1
+  fr: SMART-1
+  es: SMART-1
+  it: SMART-1
+  nl: SMART-1
+  pt-BR: SMART-1

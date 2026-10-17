@@ -1,0 +1,231 @@
+fleet/cargo-spacecraft/atv	ATV (Automated Transfer Vehicle)	Automated,Transfer,Vehicle	ru ja ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/cargo-spacecraft/cargo-dragon-2	Cargo Dragon 2	Cargo,Dragon	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/cargo-spacecraft/cargo-dragon-v1	Cargo Dragon v1	Cargo,Dragon	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/cargo-spacecraft/cygnus-enhanced	Cygnus Enhanced	Cygnus,Enhanced	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/cargo-spacecraft/cygnus-standard	Cygnus Standard	Cygnus,Standard	ru ja zh-CN ko hi ar sr-Cyrl de fr es nl pt-BR
+fleet/cargo-spacecraft/progress-7k-tg	Progress 7K-TG	Progress	ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/cargo-spacecraft/progress-m	Progress M	Progress	ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/cargo-spacecraft/progress-ms	Progress MS	Progress	ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/constellation/galileo-gnss	Galileo (GNSS)	Galileo	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/constellation/goes-noaa	GOES (NOAA Weather)	Weather	ru ja zh-CN hi ar fr es it nl pt-BR
+fleet/constellation/gps-gnss	GPS (Global Positioning System)	Global,Positioning,System	ru ja ko hi de fr es it nl pt-BR
+fleet/constellation/iridium-next	Iridium NEXT	Iridium	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/constellation/planet-labs	Planet Labs (PlanetScope + SkySat)	Planet,Labs	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/constellation/sentinel-copernicus	Sentinel (Copernicus)	Sentinel,Copernicus	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/constellation/tundra-sirius	Sirius Satellite Radio (Tundra) — Historical (2000-2016)	Sirius,Satellite,Radio,Tundra,Historical	ru ja ko hi ar de es it nl pt-BR
+fleet/crewed-spacecraft/apollo-csm-block-ii	Apollo CSM Block II	Apollo,Block	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/crewed-spacecraft/apollo-lm	Apollo Lunar Module	Apollo,Lunar,Module	ja ko hi ar de es pt-BR
+fleet/crewed-spacecraft/crew-dragon	Crew Dragon	Crew,Dragon	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/crewed-spacecraft/gemini	Gemini	Gemini	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/crewed-spacecraft/new-shepard	New Shepard	New,Shepard	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/crewed-spacecraft/orion	Orion	Orion	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/crewed-spacecraft/space-shuttle-orbiter	Space Shuttle Orbiter	Space,Shuttle,Orbiter	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/engine/merlin-1d	Merlin 1D	Merlin	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/engine/viking	Viking	Viking	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/lander/change-3	Chang'e 3	Chang	ru ja ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/lander/change-4	Chang'e 4	Chang	ru ja ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/lander/change-5	Chang'e 5	Chang	ru ja ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/lander/im-1-odysseus	IM-1 Odysseus	Odysseus	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/lander/insight	InSight	InSight	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl
+fleet/lander/mars-2	Mars 2	Mars	ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/lander/mars-3	Mars 3	Mars	ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/lander/mars-polar-lander	Mars Polar Lander	Mars,Polar,Lander	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/lander/phoenix	Phoenix	Phoenix	ru ja ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/lander/surveyor-3	Surveyor 3	Surveyor	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/lander/venera-7	Venera 7-class	class	ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/lander/viking-1	Viking 1	Viking	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/launcher/antares	Antares	Antares	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/launcher/ariane-5	Ariane 5	Ariane	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/launcher/ariane-6	Ariane 6	Ariane	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/launcher/atlas-lv-3b	Atlas LV-3B	Atlas	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/launcher/atlas-v	Atlas V	Atlas	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/launcher/falcon-9	Falcon 9 Block 5	Falcon,Block	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/launcher/falcon-heavy	Falcon Heavy	Falcon,Heavy	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/launcher/long-march-2f	Long March 2F	Long,March	ru ja ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/launcher/long-march-3b	Long March 3B	Long,March	ru ja ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/launcher/long-march-5	Long March 5 / 5B	Long,March	ru ja ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/launcher/long-march-7	Long March 7	Long,March	ru ja ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/launcher/new-glenn	New Glenn	New,Glenn	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/launcher/proton-m	Proton-M	Proton	ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/launcher/saturn-ib	Saturn IB	Saturn	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/launcher/saturn-v	Saturn V	Saturn	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/launcher/sls-block-1	SLS Block 1	Block	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/launcher/titan-ii-glv	Titan II GLV	Titan	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/launcher/vulcan	Vulcan Centaur	Vulcan,Centaur	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/observatory/chandra	Chandra X-ray Observatory	Chandra,ray,Observatory	ko hi ar sr-Cyrl de fr es it nl
+fleet/observatory/compton-gro	Compton Gamma Ray Observatory	Compton,Gamma,Ray,Observatory	ru ja zh-CN ko hi ar sr-Cyrl de it nl
+fleet/observatory/euclid	Euclid	Euclid	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/observatory/hubble	Hubble Space Telescope	Space,Telescope	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/observatory/jwst	James Webb Space Telescope	James,Webb,Space,Telescope	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/observatory/kepler	Kepler	Kepler	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/observatory/spitzer	Spitzer Space Telescope	Space,Telescope	ja ko hi ar sr-Cyrl de nl
+fleet/observatory/xmm-newton	XMM-Newton	Newton	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/orbiter/change-2	Chang'e 2	Chang	ru ja ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/orbiter/europa-clipper	Europa Clipper	Europa,Clipper	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/orbiter/galileo	Galileo	Galileo	ru ja ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/orbiter/hayabusa-2	Hayabusa2	Hayabusa	ru zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/orbiter/hayabusa	Hayabusa	Hayabusa	ru zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/orbiter/hope	Hope (EMM)	Hope	ru ja zh-CN ko hi sr-Cyrl de fr es it nl pt-BR
+fleet/orbiter/juno	Juno	Juno	ru ja ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/orbiter/lucy	Lucy	Lucy	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/orbiter/magellan	Magellan	Magellan	ru ja ko hi ar sr-Cyrl de fr es nl pt-BR
+fleet/orbiter/mariner-4	Mariner 4	Mariner	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/orbiter/mariner-9	Mariner 9	Mariner	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/orbiter/mars-express	Mars Express	Mars,Express	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/orbiter/mro	Mars Reconnaissance Orbiter	Mars,Reconnaissance,Orbiter	ru ja ko hi ar sr-Cyrl de fr es it nl
+fleet/orbiter/osiris-rex	OSIRIS-REx	REx	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/orbiter/parker-solar-probe	Parker Solar Probe	Parker,Solar,Probe	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/orbiter/pioneer-10	Pioneer 10	Pioneer	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/orbiter/psyche-spacecraft	Psyche	Psyche	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/orbiter/rosetta	Rosetta	Rosetta	ru ja ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/orbiter/solar-orbiter	Solar Orbiter	Solar,Orbiter	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/orbiter/voyager-1	Voyager 1	Voyager	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/orbiter/voyager-2	Voyager 2	Voyager	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/rover/curiosity	Curiosity (MSL)	Curiosity	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/rover/lrv-apollo	Lunar Roving Vehicle	Lunar,Roving,Vehicle	ru ja zh-CN ko hi ar de fr es it nl pt-BR
+fleet/rover/opportunity	Opportunity (MER-B)	Opportunity	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/rover/perseverance	Perseverance (Mars 2020)	Perseverance,Mars	ru hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/rover/sojourner	Sojourner	Sojourner	ru ja ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/rover/spirit	Spirit (MER-A)	Spirit	ru ja zh-CN ko hi ar sr-Cyrl de fr es nl pt-BR
+fleet/space-suit/a7l	Apollo A7L	Apollo	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/space-suit/a7lb	Apollo A7LB	Apollo	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/space-suit/crew-dragon-iva	SpaceX IVA Suit	Suit	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/space-suit/shenzhou-iva	Shenzhou IVA Suit	Suit	ru ja hi ar de es it nl
+fleet/space-suit/starliner-suit	Boeing Blue (Starliner IVA)	Boeing,Blue	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+fleet/station/iss	International Space Station	International,Space,Station	ru ja zh-CN ko hi ar de fr es it nl pt-BR
+programs/apollo	Apollo	Apollo	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+programs/ariane	Ariane	Ariane	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+programs/artemis	Artemis	Artemis	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+programs/commercial-stations	Commercial Stations	Commercial,Stations	ru ja zh-CN ko pt-BR
+programs/galileo	Galileo	Galileo	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+programs/gemini	Gemini	Gemini	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+programs/great-observatories	The Great Observatories	The,Great	nl
+programs/hayabusa	Hayabusa	Hayabusa	ru zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+programs/iss	International Space Station	International,Space,Station	ja zh-CN hi es it nl
+programs/jwst	James Webb Space Telescope	James,Webb,Space,Telescope	ru ja zh-CN ko hi sr-Cyrl de fr es it nl pt-BR
+programs/kuiper	Amazon Leo (Project Kuiper)	Amazon,Leo,Project	ru ja ko hi ar sr-Cyrl de fr es it nl pt-BR
+programs/mariner	Mariner	Mariner	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+programs/mars-rovers	Mars Rovers	Mars	hi de fr it nl
+programs/mercury	Mercury	Mercury	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+programs/new-horizons	New Horizons	New,Horizons	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+programs/pioneer	Pioneer	Pioneer	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+programs/ros	Russian Orbital Station	Russian,Orbital,Station	ja hi de fr it nl pt-BR
+programs/space-shuttle	Space Shuttle	Space,Shuttle	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+programs/spacex	SpaceX — Falcon & Dragon	Falcon,Dragon	ja ko ar sr-Cyrl de fr it nl pt-BR
+programs/sputnik	Sputnik	Sputnik	ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+programs/viking	Viking	Viking	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+programs/voyager	Voyager	Voyager	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/asteroid/hayabusa2	Hayabusa2	Hayabusa	ru zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/asteroid/near-shoemaker	NEAR Shoemaker	Shoemaker	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/bennu/osiris-rex	OSIRIS-REx	REx	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/ceres/dawn	Dawn	Dawn	ru zh-CN ar sr-Cyrl de fr es it nl pt-BR
+missions/comet/rosetta	Rosetta	Rosetta	ru ja zh-CN hi ar sr-Cyrl de fr es it nl pt-BR
+missions/didymos/hera	Hera	Hera	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/earth/apollo-1	Apollo 1 (AS-204)	Apollo	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/earth/apollo-soyuz	Apollo-Soyuz Test Project (ASTP)	Apollo,Test,Project	ja zh-CN ko hi sr-Cyrl de fr es it nl pt-BR
+missions/earth/apollo7	Apollo 7	Apollo	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/earth/apollo9	Apollo 9	Apollo	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/earth/aurora-7	Aurora 7 / MA-7	Aurora	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/earth/faith-7	Faith 7 / MA-9	Faith	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/earth/freedom-7	Freedom 7 / MR-3	Freedom	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/earth/friendship-7	Friendship 7 / MA-6	Friendship	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/earth/gemini12	Gemini 12 / GT-12	Gemini	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/earth/gemini3	Gemini 3 / GT-3	Gemini	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/earth/gemini4	Gemini 4 / GT-4	Gemini	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/earth/gemini6a	Gemini 6A / GT-6A	Gemini	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/earth/gemini7	Gemini 7 / GT-7	Gemini	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/earth/gemini8	Gemini 8 / GT-8	Gemini	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/earth/inspiration4	Inspiration4	Inspiration	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/earth/liberty-bell-7	Liberty Bell 7 / MR-4	Liberty,Bell	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/earth/polaris-dawn	Polaris Dawn	Polaris,Dawn	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/earth/sigma-7	Sigma 7 / MA-8	Sigma	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/earth/sputnik1	Sputnik 1	Sputnik	ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/eurybates/lucy	Lucy	Lucy	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/itokawa/hayabusa1	Hayabusa	Hayabusa	ru ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/jupiter/europa-clipper	Europa Clipper	Europa,Clipper	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/jupiter/galileo	Galileo	Galileo	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/jupiter/juno	Juno	Juno	ru ja hi ar sr-Cyrl de fr es it nl pt-BR
+missions/jupiter/pioneer-10	Pioneer 10	Pioneer	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/mars/curiosity	Curiosity	Curiosity	ru ja ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/mars/hope-probe	Hope Probe	Hope,Probe	ru ja zh-CN ko hi sr-Cyrl de fr es it nl pt-BR
+missions/mars/insight	InSight	InSight	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/mars/mariner4	Mariner 4	Mariner	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/mars/mariner9	Mariner 9	Mariner	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/mars/mars-express	Mars Express	Mars,Express	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/mars/mars-pathfinder	Mars Pathfinder	Mars	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/mars/mars3	Mars 3	Mars	ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/mars/opportunity	Opportunity	Opportunity	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/mars/perseverance	Perseverance	Perseverance	ru ja ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/mars/phoenix	Phoenix	Phoenix	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/mars/spirit	Spirit	Spirit	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/mars/starship-demo	Starship Demo	Demo	ru ja zh-CN ko hi sr-Cyrl de fr es it nl
+missions/mars/starship-mars-crew	Starship Mars Crew	Mars,Crew	ar de fr es it nl pt-BR
+missions/mars/viking1	Viking 1	Viking	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/mercury/mariner10	Mariner 10	Mariner	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/moon/apollo10	Apollo 10	Apollo	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/moon/apollo11	Apollo 11	Apollo	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/moon/apollo12	Apollo 12	Apollo	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/moon/apollo13	Apollo 13	Apollo	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/moon/apollo14	Apollo 14	Apollo	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/moon/apollo15	Apollo 15	Apollo	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/moon/apollo16	Apollo 16	Apollo	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/moon/apollo17	Apollo 17	Apollo	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/moon/apollo8	Apollo 8	Apollo	ru ja zh-CN hi ar sr-Cyrl de fr es it nl pt-BR
+missions/moon/artemis2	Artemis II	Artemis	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/moon/artemis3	Artemis III	Artemis	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/moon/artemis4	Artemis IV	Artemis	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/moon/blue-moon-mk1	Blue Moon MK1	Blue,Moon	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/moon/change1	Chang'e 1	Chang	ru ja ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/moon/change3	Chang'e 3	Chang	ru ja ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/moon/change4	Chang'e 4 / Yutu-2	Chang	ru ja ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/moon/change5	Chang'e 5	Chang	ru ja ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/moon/change6	Chang'e 6	Chang	ru ja ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/moon/lro	Lunar Reconnaissance Orbiter	Lunar,Reconnaissance,Orbiter	ru ja zh-CN ko ar sr-Cyrl de fr es it nl pt-BR
+missions/moon/lunar-prospector	Lunar Prospector	Lunar,Prospector	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/neptune/voyager-2	Voyager 2	Voyager	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/pluto/new-horizons	New Horizons	New,Horizons	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/psyche/psyche-mission	Psyche	Psyche	ru ja ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/saturn/pioneer-11	Pioneer 11	Pioneer	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/saturn/voyager-1	Voyager 1	Voyager	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/sun/parker-solar-probe	Parker Solar Probe	Parker,Solar,Probe	ru ja zh-CN hi ar sr-Cyrl de fr es it nl pt-BR
+missions/sun/solar-orbiter	Solar Orbiter	Solar,Orbiter	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/sun/ulysses	Ulysses	Ulysses	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/venus/magellan	Magellan	Magellan	ru ja zh-CN hi ar sr-Cyrl de fr es it nl pt-BR
+missions/venus/vega-1	Vega 1	Vega	ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+missions/venus/vega-2	Vega 2	Vega	ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+rockets/ariane-6	Ariane 6	Ariane	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+rockets/atlas-v-541	Atlas V 541	Atlas	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+rockets/falcon-heavy	Falcon Heavy	Falcon,Heavy	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+rockets/long-march-3b	Long March 3B	Long,March	ru ja ko hi ar sr-Cyrl de fr es it nl pt-BR
+rockets/long-march-5	Long March 5	Long,March	ru ja ko hi ar sr-Cyrl de fr es it nl pt-BR
+rockets/proton-m	Proton-M	Proton	ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+rockets/sls-block-1	SLS Block 1	Block	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+earth-objects/beidou	BeiDou Constellation	Constellation	ja ko hi ar de es it nl pt-BR
+earth-objects/chandra	Chandra X-ray Observatory	Chandra,ray,Observatory	ru ja zh-CN ko hi sr-Cyrl it nl
+earth-objects/change1	Chang'e 1	Chang	ru ja ko hi ar sr-Cyrl de fr es it nl pt-BR
+earth-objects/change2	Chang'e 2	Chang	ru ja ko hi ar sr-Cyrl de fr es it nl pt-BR
+earth-objects/galileo	Galileo Constellation	Galileo,Constellation	ja zh-CN ko hi ar de es it nl pt-BR
+earth-objects/geo	GEO Belt	Belt	ru ja zh-CN ko ar
+earth-objects/glonass	GLONASS Constellation	Constellation	zh-CN
+earth-objects/gps	GPS Constellation	Constellation	zh-CN
+earth-objects/hubble	Hubble Space Telescope	Space,Telescope	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl
+earth-objects/iridium-next	Iridium NEXT	Iridium	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+earth-objects/iss	International Space Station	International,Space,Station	ru ja zh-CN ko hi ar de fr es it nl pt-BR
+earth-objects/jwst	James Webb Space Telescope	James,Webb,Space,Telescope	ru ja zh-CN ko hi sr-Cyrl de fr es nl pt-BR
+earth-objects/kuiper	Project Kuiper	Project	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+earth-objects/lro	Lunar Reconnaissance Orbiter	Lunar,Reconnaissance,Orbiter	ru ja zh-CN sr-Cyrl de fr es it nl pt-BR
+earth-objects/lunar-prospector	Lunar Prospector	Lunar,Prospector	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+earth-objects/planet-labs	Planet Labs (PlanetScope + SkySat)	Planet,Labs	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+earth-objects/sentinel-copernicus	Sentinel (Copernicus)	Sentinel,Copernicus	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+earth-objects/tiangong	Tiangong Space Station	Space,Station	ja ko hi de fr es it nl pt-BR
+earth-objects/tundra-molniya	Molniya + Tundra (HEO 63.4°)	Tundra	ja zh-CN ko hi ar
+earth-objects/xmm	XMM-Newton	Newton	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+iss-modules/columbus	Columbus	Columbus	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+iss-modules/destiny	Destiny	Destiny	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+iss-modules/harmony	Harmony (Node 2)	Harmony,Node	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+iss-modules/leonardo	Leonardo (PMM)	Leonardo	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+iss-modules/quest	Quest	Quest	ru ja zh-CN hi ar sr-Cyrl de fr es it nl pt-BR
+iss-modules/tranquility	Tranquility (Node 3)	Tranquility,Node	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+iss-modules/unity	Unity (Node 1)	Unity,Node	ru ja zh-CN ko hi ar sr-Cyrl de fr es it nl pt-BR
+iss-modules/zvezda	Zvezda (Service Module)	Service,Module	zh-CN ko hi ar de es it nl pt-BR
+tiangong-modules/tianhe	Tianhe (Core Module)	Core,Module	ru ja ko ar de fr es it nl pt-BR

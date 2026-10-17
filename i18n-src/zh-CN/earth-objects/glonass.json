@@ -1,5 +1,5 @@
 {
-  "name": "GLONASS Constellation",
+  "name": "GLONASS星座",
   "short": "GLONASS",
   "description": "俄罗斯全球导航系统。冷战期间设计，1982年启动。相比GPS采用更高的轨道倾角——为极地地区提供更好的覆盖。俄罗斯在2007年向民用开放。",
   "scale_fact": "高轨道倾角（64.8°）意味着GLONASS为俄罗斯和北极地区提供更好的覆盖——地理因素塑造了轨道设计。"

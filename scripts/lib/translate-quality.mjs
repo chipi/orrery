@@ -11,7 +11,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
-import { nameRendered } from './name-origins.mjs';
+import { nameRendered } from '../../src/lib/name-origins.js';
 
 export const LANGUAGE_NAMES = {
   ar: 'Modern Standard Arabic',

@@ -12,6 +12,9 @@
   import { formatCountdown, formatNet, type LaunchEntry } from '$lib/launches/manifest.js';
   import * as m from '$lib/paraglide/messages';
   import ProvenanceChip from './ProvenanceChip.svelte';
+  import { launchStatusLabel } from '$lib/launches/status-label';
+  import { nativeCompound } from '$lib/name-origins.js';
+  import { getLocale } from '$lib/paraglide/runtime';
 
   let { entry, mode }: { entry: LaunchEntry; mode: 'upcoming' | 'historic' } = $props();
 
@@ -28,6 +31,13 @@
       ? formatCountdown(entry.net, now)
       : formatNet(entry.net, entry.net_precision),
   );
+
+  // Origin-language rule: a vehicle/mission name shows in its native form in its
+  // origin locale (ru: Протон-М/Бриз-М, zh-CN: 长征五号), English elsewhere.
+  const locale = getLocale();
+  function nativeOr(name: string): string {
+    return nativeCompound(locale, name) ?? name;
+  }
 
   function tierChipClass(t: string): string {
     if (t === 'T1') return 'tier tier-featured';
@@ -48,9 +58,9 @@
   </div>
   <div class="main-col">
     <h3 class="title">
-      {entry.rocket_config_name}
+      {nativeOr(entry.rocket_config_name)}
       <span class="separator">·</span>
-      <span class="mission">{entry.mission_name ?? entry.name}</span>
+      <span class="mission">{nativeOr(entry.mission_name ?? entry.name)}</span>
     </h3>
     {#if entry.editorial_note}
       <p class="editorial-note">{entry.editorial_note}</p>
@@ -82,7 +92,9 @@
     {:else if entry.tier === 'T4'}
       <span class={tierChipClass(entry.tier)}>{m.launches_tier_routine()}</span>
     {/if}
-    <span class="status status-{entry.status.code.toLowerCase()}">{entry.status.label}</span>
+    <span class="status status-{entry.status.code.toLowerCase()}" title={entry.status.label}
+      >{launchStatusLabel(entry.status)}</span
+    >
     {#if entry.provenance_chain && entry.provenance_chain.length > 0}
       <ProvenanceChip chain={entry.provenance_chain} />
     {/if}

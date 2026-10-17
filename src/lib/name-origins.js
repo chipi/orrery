@@ -6,6 +6,7 @@
  * nativeName() derives the full native form of a serial name ("Luna 9" → "Луна-9").
  */
 
+/** @type {Record<string, Record<string, string>>} */
 export const ORIGIN_NAMES = {
   ru: {
     Soyuz: 'Союз',
@@ -69,6 +70,15 @@ export const ORIGIN_NAMES = {
     'RD-253': 'РД-253',
     'RD-0110': 'РД-0110',
     Semyorka: 'Семёрка',
+    Briz: 'Бриз',
+    Persei: 'Персей',
+    Rokot: 'Рокот',
+    Dnepr: 'Днепр',
+    Strela: 'Стрела',
+    Polyot: 'Полёт',
+    "Shtil'": 'Штиль',
+    Tsyklon: 'Циклон',
+    'Start-1': 'Старт-1',
     Gagarin: 'Гагарин',
     'Yuri Gagarin': 'Юрий Гагарин',
     Titov: 'Титов',
@@ -101,6 +111,12 @@ export const ORIGIN_NAMES = {
     Tianwen: '天问',
     Zhurong: '祝融',
     'Long March': '长征',
+    'Chang Zheng': '长征',
+    Kuaizhou: '快舟',
+    Zhuque: '朱雀',
+    Jielong: '捷龙',
+    Lijian: '力箭',
+    Tianlong: '天龙',
     BeiDou: '北斗',
     Feitian: '飞天',
     Xuntian: '巡天',
@@ -151,10 +167,12 @@ export const ORIGIN_NAMES = {
 
 // Bases shared with names from elsewhere (NASA's Mars 2020, ESA's Vega rocket): only
 // these full Soviet names convert.
+/** @type {Record<string, Record<string, RegExp>>} */
 const AMBIGUOUS = {
   ru: { Mars: /^Mars[ -]([1-7]|500)$/, Vega: /^Vega[ -][12]$/, Luna: /^Luna[ -]\d+$/ },
 };
 // Latin letters in Russian designations are Cyrillic look-alikes or plain transliterations.
+/** @type {Record<string, string>} */
 const RU_LETTER = {
   A: 'А',
   B: 'Б',
@@ -178,6 +196,45 @@ const RU_LETTER = {
 };
 
 const ZH_DIGIT = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十'];
+/**
+ * A Russian designation code in Cyrillic ("MS-24" → "МС-24", "11K65M" → "11К65М",
+ * "2.1b" → "2.1б"), or null when it is not a code (a lowercase word with no digit,
+ * or a letter with no Cyrillic counterpart).
+ * @param {string} code
+ * @returns {string | null}
+ */
+function ruCode(code) {
+  if (/[a-z]/.test(code) && !/\d/.test(code)) return null;
+  let out = '';
+  for (const ch of code) {
+    const up = ch.toUpperCase();
+    if (!/[A-Za-z]/.test(ch)) out += ch;
+    else if (RU_LETTER[up]) out += ch === up ? RU_LETTER[up] : RU_LETTER[up].toLowerCase();
+    else return null;
+  }
+  return out;
+}
+
+/**
+ * Compound vehicle names ("Proton-M/Briz-M", "Proton-K/DM-2", "Chang Zheng 3B/YZ-1"):
+ * each part converts on its own; a bare code after a converted Russian part is
+ * transliterated. Null unless the first part has a native form.
+ * @param {string} locale
+ * @param {string} en
+ * @returns {string | null}
+ */
+export function nativeCompound(locale, en) {
+  if (!en) return null;
+  const parts = en.split('/');
+  const first = nativeName(locale, parts[0]);
+  if (!first) return null;
+  const rest = parts
+    .slice(1)
+    .map((p) => nativeName(locale, p) ?? (locale === 'ru' && /\d/.test(p) ? ruCode(p) : null) ?? p);
+  return [first, ...rest].join('/');
+}
+
+/** @param {number} n */
 const zhNumber = (n) =>
   n <= 10
     ? ZH_DIGIT[n]
@@ -190,6 +247,11 @@ const zhNumber = (n) =>
 /** The native form of an English name in `locale`, or null when the name is not
  *  from that locale's origin. Handles serial forms: "Luna 9" → "Луна-9",
  *  "Soyuz MS-24" → "Союз МС-24", "Chang'e 5" → "嫦娥五号", "Chandrayaan-3" → "चंद्रयान-3". */
+/**
+ * @param {string} locale
+ * @param {string} en
+ * @returns {string | null}
+ */
 export function nativeName(locale, en) {
   const table = ORIGIN_NAMES[locale];
   if (!table || !en) return null;
@@ -208,14 +270,14 @@ export function nativeName(locale, en) {
     // "MS-24" / "TMA" / "9" / "2 (OPS-1)" — suffix letters in Cyrillic, number after a hyphen.
     // Anything after the serial other than a bracketed designation is English prose
     // ("Mars 3 Orbiter"): no native form for the whole.
-    const m = rest.match(/^([A-Z0-9][A-Z0-9-]*)((?: \([^)]*\))?)$/);
+    const m = rest.match(/^([A-Za-z0-9][A-Za-z0-9.-]*)((?: \([^)]*\))?)$/);
     if (!m) return null;
     const [, code, tail] = m;
     const sep = en[base.length]; // "Proton-M" keeps the hyphen, "Soyuz MS" the space
     // A plain serial takes the Russian hyphen: "Luna 9" → "Луна-9".
     if (/^\d+$/.test(code)) return `${nat}-${code}${tail}`;
-    if ([...code].some((ch) => /[A-Z]/.test(ch) && !RU_LETTER[ch])) return null;
-    return `${nat}${sep}${code.replace(/[A-Z]/g, (ch) => RU_LETTER[ch])}${tail}`;
+    const ru = ruCode(code);
+    return ru === null ? null : `${nat}${sep}${ru}${tail}`;
   }
   if (locale === 'zh-CN') {
     // Pads and other codes stay Latin after the native name: "Xichang LC-3" → "西昌 LC-3".
@@ -228,9 +290,15 @@ export function nativeName(locale, en) {
   return `${nat}${en.slice(base.length)}`;
 }
 
+/** @param {string} s */
 const esc = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 /** A pattern matching the native form inside origin-locale text, tolerant of
  *  Russian case endings ("Луны-9", "Союза МС-24", «Союз»). */
+/**
+ * @param {string} locale
+ * @param {string} en
+ * @returns {RegExp | null}
+ */
 export function nativePattern(locale, en) {
   const nat = nativeName(locale, en);
   if (!nat) return null;
@@ -246,6 +314,13 @@ export function nativePattern(locale, en) {
 
 /** True when `out` names `en` the way `locale` should: English form, or the native
  *  form in the name's origin locale. */
+/**
+ * @param {string} locale
+ * @param {string} en
+ * @param {string} out
+ * @param {(x: string) => string} [norm]
+ * @returns {boolean}
+ */
 export function nameRendered(locale, en, out, norm = (x) => x) {
   if (norm(out).includes(norm(en))) return true;
   // A bare Russian code inside a converted name ("MS-15" of «Союз МС-15»).

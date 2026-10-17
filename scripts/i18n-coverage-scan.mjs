@@ -23,7 +23,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { SKIP_KEY } from './i18n-manifest.mjs';
 import { designations, knownNamesIn } from './lib/translate-quality.mjs';
-import { nativeName } from './lib/name-origins.mjs';
+import { nativeName } from '../src/lib/name-origins.js';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const SRC = path.join(ROOT, 'i18n-src');

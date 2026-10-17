@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { nativeName, nativePattern, nameRendered } from './name-origins.mjs';
+import { nativeCompound, nativeName, nativePattern, nameRendered } from './name-origins.js';
 
 describe('nativeName', () => {
   it('maps plain names in their origin locale only', () => {
@@ -47,6 +47,24 @@ describe('nativeName', () => {
     expect(nativeName('hi', 'Chandrayaan-3')).toBe('चंद्रयान-3');
     expect(nativeName('ja', 'Hayabusa2')).toBe('はやぶさ2');
     expect(nativeName('ar', 'Hope')).toBe('الأمل');
+  });
+});
+
+describe('nativeCompound (launch vehicles)', () => {
+  it('converts each part of a compound name', () => {
+    expect(nativeCompound('ru', 'Proton-M/Briz-M')).toBe('Протон-М/Бриз-М');
+    expect(nativeCompound('ru', 'Proton-K/DM-2')).toBe('Протон-К/ДМ-2');
+    expect(nativeCompound('ru', 'Kosmos 11K65M')).toBe('Космос 11К65М');
+    expect(nativeCompound('ru', 'Soyuz 2.1b')).toBe('Союз 2.1б');
+    expect(nativeCompound('ru', 'Soyuz-2-1A')).toBe('Союз-2-1А');
+    expect(nativeCompound('zh-CN', 'Chang Zheng 3B/YZ-1')).toBe('长征三号B/YZ-1');
+    expect(nativeCompound('zh-CN', 'Kuaizhou-1A')).toBe('快舟一号A');
+  });
+
+  it('leaves other origins and other locales alone', () => {
+    expect(nativeCompound('ru', 'Falcon 9')).toBeNull();
+    expect(nativeCompound('de', 'Proton-M/Briz-M')).toBeNull();
+    expect(nativeCompound('ru', 'Mars Express')).toBeNull();
   });
 });
 

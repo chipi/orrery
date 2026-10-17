@@ -8,7 +8,9 @@ const okFetch = (async (url: string, init: RequestInit) => {
     body: String(init.body),
     type: String((init.headers as Record<string, string>)['content-type']),
   });
-  return new Response('', { status: 204 });
+  // A 204 must have a null body: `new Response('', { status: 204 })` throws, which
+  // silently turned this "ok" fetch into the failure path.
+  return new Response(null, { status: 204 });
 }) as unknown as typeof fetch;
 
 afterEach(() => {
@@ -18,6 +20,7 @@ afterEach(() => {
 
 describe('createLogPusher', () => {
   it('ships NDJSON with the LOG-STANDARD stream fields and a plain trace_id', async () => {
+    const stderr = vi.spyOn(process.stderr, 'write').mockImplementation(() => true);
     const p = createLogPusher({
       url: 'https://vlogs.example/insert/jsonline',
       service: 'orrery-mcp',
@@ -48,6 +51,8 @@ describe('createLogPusher', () => {
     expect(lines[0]._time).toMatch(/^\d{4}-\d{2}-\d{2}T/);
     expect(lines[1]).toMatchObject({ level: 'error', _msg: 'boom' });
     expect(lines[1].trace_id).toBeUndefined();
+    // A successful push reports nothing.
+    expect(stderr.mock.calls.filter((c) => String(c[0]).includes('log push failed'))).toEqual([]);
   });
 
   it('batches at maxBatch', async () => {

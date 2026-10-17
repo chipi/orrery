@@ -2,5 +2,27 @@
   "name": "Arrokoth",
   "type": "Objet de la ceinture de Kuiper · Classique froid · Binaire de contact",
   "fact": "Le corps le plus distant jamais visité par une sonde spatiale — à 4,1 milliards de km du Soleil lorsque New Horizons est passée à 3 500 km le jour de l'an 2019. Ses deux lobes (Wenu et Weeyo) ont fusionné en douceur à l'aube du système solaire et sont restés fusionnés depuis 4,5 milliards d'années à ~40 K.",
-  "bio": "Découvert en 2014 par Hubble et catalogué à l'origine comme 2014 MU69. Renommé Arrokoth (« ciel » en powhatan) en 2019 après le survol par New Horizons — un vestige intact du disque planétésimal préservé sans modification depuis sa formation. Sa forme rouge de binaire de contact à accrétion douce est une empreinte directe de la manière dont la formation des planètes a commencé dans le système solaire externe."
+  "bio": "Découvert en 2014 par Hubble et catalogué à l'origine comme 2014 MU69. Renommé Arrokoth (« ciel » en powhatan) en 2019 après le survol par New Horizons — un vestige intact du disque planétésimal préservé sans modification depuis sa formation. Sa forme rouge de binaire de contact à accrétion douce est une empreinte directe de la manière dont la formation des planètes a commencé dans le système solaire externe.",
+  "links": [
+    {
+      "l": "Arrokoth — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/486958_Arrokoth",
+      "t": "intro"
+    },
+    {
+      "l": "Arrokoth flyby (NASA New Horizons)",
+      "u": "https://science.nasa.gov/solar-system/kuiper-belt/arrokoth-2014-mu69/",
+      "t": "intro"
+    },
+    {
+      "l": "Arrokoth's gentle origins (NASA / Stern et al., Science 2020)",
+      "u": "https://www.science.org/doi/10.1126/science.aay3999",
+      "t": "core"
+    },
+    {
+      "l": "Renaming 2014 MU69 → Arrokoth (NASA, 2019-11-12)",
+      "u": "https://www.nasa.gov/missions/new-horizons/far-far-away-in-the-sky-new-horizons-kuiper-belt-flyby-object-officially-named-arrokoth/",
+      "t": "deep"
+    }
+  ]
 }

@@ -21,5 +21,20 @@
       "section": "moons-of-the-system",
       "why": "De Maan is ongewoon groot ten opzichte van de Aarde — haar diameterverhouding (≈ 0,27) is de grootste onder de manen van de acht planeten."
     }
-  ]
+  ],
+  "library_labels": {
+    "moon-wiki": "Wikipedia — Maan",
+    "moon-nasa-overview": "NASA Science — overzicht van de Maan",
+    "moon-apollo": "NASA's Apollo-programma — archief van de landingsmissies",
+    "moon-artemis": "NASA Artemis — bemand programma voor de terugkeer naar de Maan",
+    "moon-lroc": "LROC — beeldarchief van de Lunar Reconnaissance Orbiter Camera"
+  },
+  "mission_visits": [
+    "Luna 2 — USSR, 1959 (eerste kunstmatige object op de Maan)",
+    "Apollo 11 — VS, 1969 (eerste bemande landing)",
+    "Luna 16 — USSR, 1970 (eerste robotische monsterterugkeer)",
+    "Chang'e 4 — China, 2019 (eerste landing op de achterkant)",
+    "Chandrayaan-3 — India, 2023 (eerste landing bij de zuidpool)"
+  ],
+  "surface_composition": "Hooglanden van anorthosiet (calcium-aluminiumsilicaten) + basaltische maria, overstroomd door oeroude lava; regoliet 4–15 m diep; sporen van waterijs in permanent beschaduwde poolkraters."
 }

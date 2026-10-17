@@ -21,5 +21,20 @@
       "section": "moons-of-the-system",
       "why": "달은 지구에 비해 이례적으로 크다. 그 지름의 비율(≈ 0.27)은 여덟 행성의 위성 중에서 가장 높다."
     }
-  ]
+  ],
+  "library_labels": {
+    "moon-wiki": "위키백과 — 달",
+    "moon-nasa-overview": "NASA Science — 달 개요",
+    "moon-apollo": "NASA Apollo 프로그램 — 착륙 임무 기록 보관소",
+    "moon-artemis": "NASA Artemis — 유인 달 귀환 프로그램",
+    "moon-lroc": "LROC — Lunar Reconnaissance Orbiter Camera 이미지 보관소"
+  },
+  "mission_visits": [
+    "Luna 2 — 소련, 1959년 (달에 닿은 최초의 인공 물체)",
+    "Apollo 11 — 미국, 1969년 (최초의 유인 착륙)",
+    "Luna 16 — 소련, 1970년 (최초의 무인 시료 회수)",
+    "Chang'e 4 — 중국, 2019년 (달 뒷면 최초 착륙)",
+    "Chandrayaan-3 — 인도, 2023년 (남극 최초 착륙)"
+  ],
+  "surface_composition": "회장암 고지대(칼슘·알루미늄 규산염) + 고대 용암이 채운 현무암 바다. 레골리스 깊이 4–15 m. 영구 음영 극지 크레이터에 미량의 물 얼음."
 }

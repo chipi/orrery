@@ -21,5 +21,20 @@
       "section": "moons-of-the-system",
       "why": "月は地球に対して異常に大きい——その直径比（≈ 0.27）は8つの惑星の衛星の中で最も高い。"
     }
-  ]
+  ],
+  "library_labels": {
+    "moon-wiki": "ウィキペディア — 月",
+    "moon-nasa-overview": "NASA Science — 月の概要",
+    "moon-apollo": "NASA の Apollo 計画 — 着陸ミッションのアーカイブ",
+    "moon-artemis": "NASA Artemis — 有人月面回帰計画",
+    "moon-lroc": "LROC — Lunar Reconnaissance Orbiter Camera の画像アーカイブ"
+  },
+  "mission_visits": [
+    "Luna 2 — ソ連、1959 年（月面に到達した最初の人工物）",
+    "Apollo 11 — 米国、1969 年（最初の有人着陸）",
+    "Luna 16 — ソ連、1970 年（最初の無人サンプルリターン）",
+    "Chang'e 4 — 中国、2019 年（月の裏側への最初の着陸）",
+    "Chandrayaan-3 — インド、2023 年（南極付近への最初の着陸）"
+  ],
+  "surface_composition": "斜長岩の高地（カルシウム・アルミニウムケイ酸塩）+ 古代の溶岩に満たされた玄武岩の海。レゴリスの深さは 4〜15 m。永久影の極域クレーターに微量の水の氷。"
 }

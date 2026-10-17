@@ -21,5 +21,20 @@
       "section": "moons-of-the-system",
       "why": "A Lua é inusitadamente grande em relação à Terra — sua razão de diâmetro (≈ 0,27) é a mais elevada entre as luas dos oito planetas."
     }
-  ]
+  ],
+  "library_labels": {
+    "moon-wiki": "Wikipédia — Lua",
+    "moon-nasa-overview": "NASA Science — visão geral da Lua",
+    "moon-apollo": "Programa Apollo da NASA — arquivo das missões de pouso",
+    "moon-artemis": "NASA Artemis — programa tripulado de retorno à Lua",
+    "moon-lroc": "LROC — arquivo de imagens da Lunar Reconnaissance Orbiter Camera"
+  },
+  "mission_visits": [
+    "Luna 2 — URSS, 1959 (primeiro objeto artificial na Lua)",
+    "Apollo 11 — EUA, 1969 (primeiro pouso tripulado)",
+    "Luna 16 — URSS, 1970 (primeiro retorno robótico de amostras)",
+    "Chang'e 4 — China, 2019 (primeiro pouso no lado oculto)",
+    "Chandrayaan-3 — Índia, 2023 (primeiro pouso no polo sul)"
+  ],
+  "surface_composition": "Planaltos de anortosito (silicatos de cálcio e alumínio) + mares basálticos inundados por lava antiga; regolito com 4–15 m de profundidade; traços de gelo de água em crateras polares em sombra permanente."
 }

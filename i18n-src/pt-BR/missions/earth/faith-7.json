@@ -3,5 +3,31 @@
   "dispatch": "Faith 7 encerrou o Mercury, e o fez da forma mais difícil. Gordon Cooper voou vinte e duas órbitas ao longo de um dia e meio — mais tempo do que todos os voos anteriores do Mercury combinados — e então, nas horas finais, seu sistema de controle automático falhou. Então ele pilotou a reentrada manualmente, alinhando a cápsula com o horizonte e as estrelas e acionando seus retrofoguetes em uma contagem falada, e pousou mais perto do navio do que qualquer voo anterior. Foi a última vez que um americano voou no espaço sozinho, e uma última palavra digna para um programa construído por pilotos de teste: quando a automação falhou, o piloto trouxe tudo para casa.",
   "type": "TRIPULADO ÓRBITA TERRESTRE · VOADO",
   "first": "Último voo espacial tripulado solo americano; 22 órbitas / 34 horas",
-  "description": "O voo de 22 órbitas de Gordon Cooper — última missão Mercury e último voo espacial tripulado solo americano de todos os tempos (todos os programas americanos posteriores levaram tripulações múltiplas). Duração 34 h 19 min — mais do que todos os voos Mercury anteriores somados. Cooper realizou observação da Terra, fotografia e fez a primeira refeição no espaço. No fim da missão, uma falha de alimentação forçou o controle manual de toda a atitude e da ignição dos retrofoguetes — Cooper usou as marcas de alinhamento pintadas na janela contra o horizonte terrestre para se orientar, alcançando o amerissagem mais preciso de qualquer voo Mercury (~7 km do alvo). A cápsula Faith 7 está em exposição no Space Center Houston, TX."
+  "description": "O voo de 22 órbitas de Gordon Cooper — última missão Mercury e último voo espacial tripulado solo americano de todos os tempos (todos os programas americanos posteriores levaram tripulações múltiplas). Duração 34 h 19 min — mais do que todos os voos Mercury anteriores somados. Cooper realizou observação da Terra, fotografia e fez a primeira refeição no espaço. No fim da missão, uma falha de alimentação forçou o controle manual de toda a atitude e da ignição dos retrofoguetes — Cooper usou as marcas de alinhamento pintadas na janela contra o horizonte terrestre para se orientar, alcançando o amerissagem mais preciso de qualquer voo Mercury (~7 km do alvo). A cápsula Faith 7 está em exposição no Space Center Houston, TX.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANÇAMENTO",
+      "note": "Atlas LV-3B a partir de Cape Canaveral LC-14, 1963-05-15 13:04 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0001,
+      "label": "INSERÇÃO EM ÓRBITA",
+      "note": "Inserção em uma órbita terrestre de 161 × 267 km.",
+      "type": "nominal"
+    },
+    {
+      "met": 1.3,
+      "label": "FALHA DE ENERGIA",
+      "note": "Falha no fornecimento de energia; Cooper passa para o controle manual de atitude + acionamento dos retrofoguetes — o que lhe rendeu a fama de \"melhor piloto\".",
+      "type": "warning"
+    },
+    {
+      "met": 1.43,
+      "label": "AMERISSAGEM",
+      "note": "Oceano Pacífico, a ~7 km do alvo após 22 órbitas / 34 h 19 min. Resgate pelo USS Kearsarge.",
+      "type": "nominal"
+    }
+  ]
 }

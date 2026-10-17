@@ -21,5 +21,20 @@
       "section": "moons-of-the-system",
       "why": "La Luna es inusualmente grande respecto a la Tierra — su razón de diámetros (≈ 0,27) es la más elevada entre los satélites de los ocho planetas."
     }
-  ]
+  ],
+  "library_labels": {
+    "moon-wiki": "Wikipedia — Luna",
+    "moon-nasa-overview": "NASA Science — panorama de la Luna",
+    "moon-apollo": "Programa Apollo de la NASA — archivo de misiones de alunizaje",
+    "moon-artemis": "NASA Artemis — programa tripulado de regreso a la Luna",
+    "moon-lroc": "LROC — archivo de imágenes de la Lunar Reconnaissance Orbiter Camera"
+  },
+  "mission_visits": [
+    "Luna 2 — URSS, 1959 (primer objeto artificial en la Luna)",
+    "Apollo 11 — EE. UU., 1969 (primer alunizaje tripulado)",
+    "Luna 16 — URSS, 1970 (primer retorno robótico de muestras)",
+    "Chang'e 4 — China, 2019 (primer aterrizaje en la cara oculta)",
+    "Chandrayaan-3 — India, 2023 (primer aterrizaje en el polo sur)"
+  ],
+  "surface_composition": "Tierras altas de anortosita (silicatos de calcio y aluminio) + mares basálticos inundados por lava antigua; regolito de 4–15 m de profundidad; rastros de hielo de agua en cráteres polares en sombra permanente."
 }

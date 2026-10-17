@@ -21,5 +21,20 @@
       "section": "moons-of-the-system",
       "why": "月球相对于地球而言大得异常——其直径比值（≈ 0.27）在八大行星的卫星中最高。"
     }
-  ]
+  ],
+  "library_labels": {
+    "moon-wiki": "维基百科 — 月球",
+    "moon-nasa-overview": "NASA Science — 月球概览",
+    "moon-apollo": "NASA Apollo 计划 — 着陆任务档案",
+    "moon-artemis": "NASA Artemis — 载人重返月球计划",
+    "moon-lroc": "LROC — Lunar Reconnaissance Orbiter Camera 图像档案"
+  },
+  "mission_visits": [
+    "Luna 2 — 苏联，1959 年（首个抵达月球的人造物体）",
+    "Apollo 11 — 美国，1969 年（首次载人登月）",
+    "Luna 16 — 苏联，1970 年（首次无人采样返回）",
+    "Chang'e 4 — 中国，2019 年（首次月背着陆）",
+    "Chandrayaan-3 — 印度，2023 年（首次南极着陆）"
+  ],
+  "surface_composition": "斜长岩高地（钙铝硅酸盐）+ 被古老熔岩淹没的玄武岩月海；月壤深 4–15 米；永久阴影的极区撞击坑中有少量水冰。"
 }

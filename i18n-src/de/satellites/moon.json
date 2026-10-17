@@ -21,5 +21,20 @@
       "section": "moons-of-the-system",
       "why": "Der Mond ist ungewöhnlich groß im Verhältnis zur Erde — sein Durchmesserverhältnis (≈ 0,27) ist das höchste unter den Monden der acht Planeten."
     }
-  ]
+  ],
+  "library_labels": {
+    "moon-wiki": "Wikipedia — Mond",
+    "moon-nasa-overview": "NASA Science — der Erdmond im Überblick",
+    "moon-apollo": "NASA-Apollo-Programm — Archiv der Landemissionen",
+    "moon-artemis": "NASA Artemis — bemanntes Programm zur Rückkehr zum Mond",
+    "moon-lroc": "LROC — Bildarchiv der Lunar Reconnaissance Orbiter Camera"
+  },
+  "mission_visits": [
+    "Luna 2 — UdSSR, 1959 (erstes künstliches Objekt auf dem Mond)",
+    "Apollo 11 — USA, 1969 (erste bemannte Landung)",
+    "Luna 16 — UdSSR, 1970 (erste robotische Probenrückführung)",
+    "Chang'e 4 — China, 2019 (erste Landung auf der Rückseite)",
+    "Chandrayaan-3 — Indien, 2023 (erste Landung am Südpol)"
+  ],
+  "surface_composition": "Hochländer aus Anorthosit (Calcium-Aluminium-Silikate) + basaltische Maria, die von uralter Lava geflutet wurden; Regolith 4–15 m tief; Spuren von Wassereis in dauerhaft beschatteten Polarkratern."
 }

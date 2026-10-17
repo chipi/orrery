@@ -3,5 +3,25 @@
   "dispatch": "Aurora 7 sollte eine Wiederholung werden und wurde zum Schreckmoment. Scott Carpenter flog dasselbe Drei-Orbit-Profil wie Glenn, doch abgelenkt durch Experimente und ein störrisches Steuerungssystem verbrauchte er seinen Lagetreibstoff und zündete seine Bremstriebwerke einige Sekunden zu spät und leicht versetzt — genug, um ihn rund 400 Kilometer über sein Landeziel hinauszutragen. Eine lange, stille Stunde lang wusste niemand, ob er am Leben war, bis ein Suchflugzeug ihn in einem Rettungsfloß treibend entdeckte. Es ist eine schlichte Erinnerung daran, dass in einer Maschine mit fast keiner Reserve kleine Fehler sich schnell potenzieren — und dass die Bewältigung solcher Fehler eine eigene Fertigkeit ist.",
   "type": "BEMANNT ERDORBIT · GEFLOGEN",
   "first": "Wiederholte Glenns Profil mit 3 Umläufen; überschoss das Landeziel um 400 km",
-  "description": "Scotts Carpenters 3-Orbit-Flug – wiederholte Glenns MA-6-Profil, um das Vertrauen in das Mercury-Atlas-Fahrzeug zu festigen, bevor die längeren Flüge von Schirra/Cooper versucht würden. Carpenter führte umfangreiche Mikrogravitations-Experimente und Beobachtungsaufgaben durch; die hohe experimentelle Belastung + ein festsitzender Yaw-Thruster führten dazu, dass er bei der Retrofeuerung ca. 25° außerhalb der Einstellung war und das Landeziel um ca. 400 km überschoss. Die Bergungsverzögerung von 1 h 7 min wurde weit verbreitet berichtet und beschädigte Carpenters Ruf in der NASA-Verwaltung; er flog nie wieder. Die Kapsel Aurora 7 wird im Museum of Science and Industry, Chicago IL, ausgestellt."
+  "description": "Scotts Carpenters 3-Orbit-Flug – wiederholte Glenns MA-6-Profil, um das Vertrauen in das Mercury-Atlas-Fahrzeug zu festigen, bevor die längeren Flüge von Schirra/Cooper versucht würden. Carpenter führte umfangreiche Mikrogravitations-Experimente und Beobachtungsaufgaben durch; die hohe experimentelle Belastung + ein festsitzender Yaw-Thruster führten dazu, dass er bei der Retrofeuerung ca. 25° außerhalb der Einstellung war und das Landeziel um ca. 400 km überschoss. Die Bergungsverzögerung von 1 h 7 min wurde weit verbreitet berichtet und beschädigte Carpenters Ruf in der NASA-Verwaltung; er flog nie wieder. Die Kapsel Aurora 7 wird im Museum of Science and Industry, Chicago IL, ausgestellt.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Atlas LV-3B von Cape Canaveral LC-14, 1962-05-24 12:45 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0001,
+      "label": "BAHNEINSCHUSS",
+      "note": "Einschuss in eine Erdumlaufbahn von 161 × 268 km.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.205,
+      "label": "WASSERUNG",
+      "note": "Atlantik, ~400 km hinter dem Zielpunkt; 1 h 7 min Verzögerung bei der Bergung. USS Pierce, USS Intrepid.",
+      "type": "warning"
+    }
+  ]
 }

@@ -3,5 +3,31 @@
   "dispatch": "Friendship 7 ist der Flug, bei dem die Vereinigten Staaten endlich aufatmen konnten. John Glenn war der erste Amerikaner im Orbit — dreimal um den Planeten, zehn Monate nach Gagarin — und für ein Land, das vier Jahre lang zugesehen hatte, wie die Sowjets die Ersten waren, reichte das aus, um ihn über Nacht zum berühmtesten Mann der Nation zu machen. Das Drama kam gegen Ende: Ein fehlerhafter Sensor deutete darauf hin, dass sein Hitzeschild locker sein könnte, und die Flugleiter ließen ihn sein verbrauchtes Retro-Pack während des Wiedereintritts angeschnallt lassen, als letzten Versuch, es an Ort und Stelle zu halten. Es hielt. Glenn kam nach Hause, und die Angst, die über dem gesamten Programm gehangen hatte, hob sich mit ihm.",
   "type": "BEMANNT ERDORBIT · GEFLOGEN",
   "first": "Erster Amerikaner in der Erdumlaufbahn",
-  "description": "John Glenns 3-Orbit-Flug — erster Amerikaner im Orbit um die Erde, 10 Monate nach Gagarin und 4 Monate nach Titov. Orbitleitung: 159 × 265 km, Inklination 32,5°. Ein Wärmeschutzschild-Warnungsindikator in der Flugkontrolle deutete darauf hin, dass das Schild möglicherweise locker war — das Retropack wurde durch den Wiedereintritt als Sicherung angebracht, was zu Glenns berühmter Beobachtung der „Glühwürmchen\" führte, als Teile des Retropack beim Ablieren an der Kapsel vorbeizogen. Wasserlandung 1287 km südöstlich von Cape Canaveral, 4 h 55 min nach dem Start. Glenn kehrte 36 Jahre später auf STS-95 (1998) im Alter von 77 Jahren ins All zurück. Friendship 7 ist im National Air and Space Museum, Washington DC, ausgestellt."
+  "description": "John Glenns 3-Orbit-Flug — erster Amerikaner im Orbit um die Erde, 10 Monate nach Gagarin und 4 Monate nach Titov. Orbitleitung: 159 × 265 km, Inklination 32,5°. Ein Wärmeschutzschild-Warnungsindikator in der Flugkontrolle deutete darauf hin, dass das Schild möglicherweise locker war — das Retropack wurde durch den Wiedereintritt als Sicherung angebracht, was zu Glenns berühmter Beobachtung der „Glühwürmchen\" führte, als Teile des Retropack beim Ablieren an der Kapsel vorbeizogen. Wasserlandung 1287 km südöstlich von Cape Canaveral, 4 h 55 min nach dem Start. Glenn kehrte 36 Jahre später auf STS-95 (1998) im Alter von 77 Jahren ins All zurück. Friendship 7 ist im National Air and Space Museum, Washington DC, ausgestellt.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Atlas LV-3B von Cape Canaveral LC-14, 1962-02-20 14:47 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.0001,
+      "label": "BAHNEINSCHUSS",
+      "note": "Einschuss in eine Erdumlaufbahn von 159 × 265 km, Inklination 32,5°.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.005,
+      "label": "„GLÜHWÜRMCHEN“",
+      "note": "Glenn meldet leuchtende „Glühwürmchen“ vor dem Fenster — Teilchen vom Retropaket, die beim Wiedereintritt abbrennen.",
+      "type": "info"
+    },
+    {
+      "met": 0.205,
+      "label": "WASSERUNG",
+      "note": "Die Kapsel wasserte 1287 km südöstlich von Cape Canaveral nach 3 Umläufen / 4 h 55 min. Bergung durch die USS Noa.",
+      "type": "nominal"
+    }
+  ]
 }

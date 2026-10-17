@@ -21,5 +21,20 @@
       "section": "moons-of-the-system",
       "why": "La Luna è insolitamente grande rispetto alla Terra — il suo rapporto di diametro (≈ 0,27) è il più elevato tra i satelliti degli otto pianeti."
     }
-  ]
+  ],
+  "library_labels": {
+    "moon-wiki": "Wikipedia — Luna",
+    "moon-nasa-overview": "NASA Science — panoramica sulla Luna",
+    "moon-apollo": "Programma Apollo della NASA — archivio delle missioni di allunaggio",
+    "moon-artemis": "NASA Artemis — programma con equipaggio per il ritorno sulla Luna",
+    "moon-lroc": "LROC — archivio immagini della Lunar Reconnaissance Orbiter Camera"
+  },
+  "mission_visits": [
+    "Luna 2 — URSS, 1959 (primo oggetto artificiale sulla Luna)",
+    "Apollo 11 — USA, 1969 (primo allunaggio con equipaggio)",
+    "Luna 16 — URSS, 1970 (primo ritorno robotico di campioni)",
+    "Chang'e 4 — Cina, 2019 (primo atterraggio sulla faccia nascosta)",
+    "Chandrayaan-3 — India, 2023 (primo atterraggio al polo sud)"
+  ],
+  "surface_composition": "Altopiani di anortosite (silicati di calcio e alluminio) + mari basaltici invasi da antiche colate laviche; regolite profonda 4–15 m; tracce di ghiaccio d'acqua nei crateri polari in ombra perenne."
 }

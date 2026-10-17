@@ -59,6 +59,7 @@ Names glossary (celestial names and people), in order:
 | `name-curate.mjs <classes.tsv> <curation.tsv> <out.tsv>` | Drops vehicle/deity/fiction classes and applies the hand decisions in `maps/…/names-curation.tsv`. |
 | `name-forms.mjs <curated.tsv> <out.tsv>` | Each locale's form: Wikipedia title (bodies, stars), label (people; Russian patronymic dropped); zh-CN through Wikidata's simplified converter; sr-Cyrl only where Cyrillic at the source. |
 | `name-glossary-merge.mjs <forms.tsv> <overrides.tsv> <features.tsv>` | Writes the `body` / `star` / `person` / `feature` classes of `native-terms.json` (never overwrites an existing key); guards for Bayer and catalogue aliases, designations, nicknames, transliteration-only changes in Latin-script locales. |
+| `star-pages.mjs [--dry]` | Pass 1 for stars: writes each named-star page's localized `name` from the `star` glossary. |
 | `person-case.test.ts` | Tests for the person declension in `ru-case.mjs` / `sr-case.mjs`. |
 
 ## maps/

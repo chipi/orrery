@@ -107,6 +107,7 @@ export function knownDigitNames() {
               const base = j[k]
                 .split(/\s+[—(/+]/)[0]
                 .replace(/(\s+[a-z][^\s]*)+$/, '')
+                .replace(/^((Earth|Moon|Sun|Mars|Lunar|Earth-Moon|Sun-Earth|Earth–Moon)\s+)+/, '') // "Earth-Moon L2" → "L2"
                 .trim();
               if (/\d/.test(base)) KNOWN.add(base);
             }
@@ -168,7 +169,11 @@ export function problems(locale, src, out) {
       ]),
     );
     const altered = [...new Set(out.match(/[A-Za-z][A-Za-z'’]*/g) || [])].filter(
-      (w) => w.length > 1 && !srcWords.has(w), // single letters are units (G, C) or initials
+      (w) =>
+        w.length > 1 &&
+        !srcWords.has(w) &&
+        !srcWords.has(w.replace(/'/g, '’')) && // Chang'e == Chang’e
+        !/^[IVXLCDM]+$/.test(w), // Roman numerals (centuries in ru: XXI)
     );
     if (altered.length)
       p.push(
@@ -195,8 +200,9 @@ export function problems(locale, src, out) {
       /(?:\bthe\s+)?[A-Z][\w'’-]*(?:\s+(?:of|the|and|de)\s+[A-Z][\w'’-]*|\s+[A-Z0-9][\w'’-]*)+/g,
     ) || [];
   for (const span of spans) stripped = stripped.split(span).join('');
-  const enWords = (stripped.match(/\b(the|and|with|which|that|this|from|into|between)\b/gi) || [])
-    .length;
+  const enWords = (
+    stripped.match(/\b(the|and|with|which|that|this|from|into|between|The)\b/g) || []
+  ).length;
   if (enWords >= 3) p.push('English words left in the translation');
   if (NATIVE[locale] && out.length > 60) {
     // Words that also occur in the source (names) don't count against the script.

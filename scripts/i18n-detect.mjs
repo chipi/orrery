@@ -59,7 +59,7 @@ const NATIVE = {
 };
 const FOREIGN =
   /[\p{Script=Hangul}\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Arabic}\p{Script=Devanagari}\p{Script=Cyrillic}]/gu;
-const EN_WORDS = /\b(the|and|with|which|that|this|from|into|between|their|were|have)\b/gi;
+const EN_WORDS = /\b(the|and|with|which|that|this|from|into|between|their|were|have|The)\b/g; // case-sensitive: "β-And" is Andromedae
 const NAME_SPAN =
   /(?:\bthe\s+)?[A-Z][\w'’-]*(?:\s+(?:of|the|and|de)\s+[A-Z][\w'’-]*|\s+[A-Z0-9][\w'’-]*)+/g;
 

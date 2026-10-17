@@ -1,0 +1,567 @@
+1014	Mars	body	Q111	inner planet of the Solar System	Mars	0
+989	Earth	body	Q2	inner planet of the Solar System	Earth	0
+562	Moon	body	Q405	planetary moon	Moon	0
+272	Sun	star	Q525	G-type main-sequence star	Sun	0
+262	Jupiter	star	Q319	gas giant	Jupiter	0
+243	Saturn	star	Q193	gas giant	Saturn	0
+177	Mercury	body	Q308	inner planet of the Solar System	Mercury (planet)	0
+158	Venus	body	Q313	inner planet of the Solar System	Venus	0
+112	Pluto	body	Q339	dwarf planet	Pluto	0
+93	Neptune	star	Q332	ice giant	Neptune	0
+73	Titan	body	Q2565	moon of Saturn	Titan (moon)	0
+69	Uranus	star	Q324	ice giant	Uranus	0
+66	Milky Way	star	Q321	barred spiral galaxy	Milky Way	0
+57	Europa	body	Q3143	moon of Jupiter	Europa (moon)	0
+53	Gagarin	person	Q7327	human	Yuri Gagarin	0
+35	Phobos	body	Q7547	moon of Mars	Phobos (moon)	0
+30	Ganymede	body	Q3169	moon of Jupiter	Ganymede (moon)	0
+27	Ryugu	body	Q1385178	potentially hazardous asteroid	162173 Ryugu	0
+27	Ceres	body	Q596	dwarf planet	Ceres (dwarf planet)	0
+25	Proxima Centauri	star	Q14266	flare star	Proxima Centauri	0
+23	Local Group	star	Q3944	galaxy cluster	Local Group	0
+22	Bennu	body	Q11558	Apollo asteroid	101955 Bennu	0
+21	Enceladus	body	Q3303	moon of Saturn	Enceladus	0
+20	Vesta	body	Q3030	asteroid	4 Vesta	0
+20	Charon	body	Q6604	moon of Pluto	Charon (moon)	0
+16	Sirius	star	Q3409	navigational star	Sirius	0
+16	Schirra	person	Q110450	human	Wally Schirra	0
+15	Itokawa	body	Q149374	potentially hazardous asteroid	25143 Itokawa	0
+15	Cernan	person	Q158486	human	Gene Cernan	0
+14	Barnard Star	star	Q14268	red dwarf	Barnard's Star	0
+14	Dimorphos	body	Q25387442	minor planet moon	Dimorphos	0
+13	Deimos	body	Q7548	moon of Mars	Deimos (moon)	0
+13	Patroclus	body	Q155906	asteroid	617 Patroclus	0
+13	Triton	body	Q3359	moon of Neptune	Triton (moon)	0
+12	Solar System	body	Q544	planetary system	Solar System	0
+12	Alan Shepard	person	Q174979	human	Alan Shepard	0
+12	Arrokoth	body	Q18325885	cubewano	486958 Arrokoth	0
+11	Southern Cross	star	Q10542	constellation	Crux	0
+10	Gale Crater	feature	Q622221	impact crater	Gale (crater)	0
+10	Yuri Gagarin	person	Q7327	human	Yuri Gagarin	0
+10	Tereshkova	person	Q44371	human	Valentina Tereshkova	1
+10	Gus Grissom	person	Q110879	human	Gus Grissom	0
+10	Didymos	body	Q2265762	binary asteroid	65803 Didymos	0
+10	Callisto	body	Q3134	moon of Jupiter	Callisto (moon)	0
+9	Eris	body	Q611	asteroid	Eris (dwarf planet)	0
+9	Chryse Planitia	feature	Q1088526	planitia	Chryse Planitia	0
+9	Jezero Crater	feature	Q914016	impact crater	Jezero (crater)	0
+9	Utopia Planitia	feature	Q1412602	impact crater	Utopia Planitia	0
+9	Polaris	star	Q12980	F-type star	Polaris	0
+9	Pollux	star	Q13028	red giant	Pollux (star)	0
+8	Sedna	body	Q15610	Sednoid	Sedna (dwarf planet)	0
+8	Carl Sagan	person	Q410	human	Carl Sagan	0
+8	Alpha Centauri	star	Q12176	triple star system	Alpha Centauri	0
+8	Oort Cloud	body	Q40864	trans-Neptunian object	Oort cloud	0
+8	John Glenn	person	Q182642	human	John Glenn	0
+8	Sergei Korolev	person	Q170842	human	Sergei Korolev	0
+8	Oceanus Procellarum	feature	Q488299	oceanus	Oceanus Procellarum	0
+8	Miranda	body	Q3352	moon of Uranus	Miranda (moon)	0
+8	1P/Halley	body	Q23054	Halley-type comet	Halley's Comet	0
+8	Aldebaran	star	Q88540091	binary star	Aldebaran	0
+8	Virgo Supercluster	star	Q175760	supercluster	Virgo Supercluster	0
+7	Mare Imbrium	feature	Q487895	lunar mare	Mare Imbrium	0
+7	Mare Fecunditatis	feature	Q26210	lunar mare	Mare Fecunditatis	0
+7	Fecunditatis	feature	Q26210	lunar mare	Mare Fecunditatis	0
+7	Neil Armstrong	person	Q1615	human	Neil Armstrong	0
+7	Mare Tranquillitatis	feature	Q320936	lunar mare	Mare Tranquillitatis	0
+7	Umbriel	body	Q3338	moon of Uranus	Umbriel	0
+7	Magellanic Clouds	star	Q50028	dwarf galaxy	Magellanic Clouds	0
+6	Toutatis	body	Q152907	potentially hazardous asteroid	4179 Toutatis	0
+6	Vladimir Komarov	person	Q104865	human	Vladimir Komarov	0
+6	Alexei Leonov	person	Q154269	human	Alexei Leonov	0
+6	Valentina Tereshkova	person	Q44371	human	Valentina Tereshkova	1
+6	Buzz Aldrin	person	Q2252	human	Buzz Aldrin	0
+6	Eros	body	Q16711	asteroid	433 Eros	0
+6	Betelgeuse	star	Q12124	red supergiant	Betelgeuse	0
+6	Deneb	star	Q12179	white supergiant	Deneb	0
+6	Rigel	star	Q12126	B-type supergiant star	Rigel	0
+5	Haumea	body	Q601	dwarf planet	Haumea	0
+5	Makemake	body	Q604	asteroid	Makemake	0
+5	Konstantin Tsiolkovsky	person	Q41239	human	Konstantin Tsiolkovsky	0
+5	Valeri Polyakov	person	Q317792	human	Valeri Polyakov	0
+5	Yang Liwei	person	Q147581	human	Yang Liwei	0
+5	Mare Crisium	feature	Q168416	lunar mare	Mare Crisium	0
+5	Aphrodite Terra	feature	Q618528	highland	Aphrodite Terra	0
+5	Wally Schirra	person	Q110450	human	Wally Schirra	0
+5	Eurybates	body	Q116663	asteroid	3548 Eurybates	0
+5	Mare Serenitatis	feature	Q169625	lunar mare	Mare Serenitatis	0
+5	Ariel	body	Q3343	moon of Uranus	Ariel (moon)	0
+5	Titania	body	Q3322	moon of Uranus	Titania (moon)	0
+5	Oberon	body	Q3332	moon of Uranus	Oberon (moon)	0
+5	Fomalhaut	star	Q13169	triple star system	Fomalhaut	0
+5	Tycho Brahe	person	Q36620	human	Tycho Brahe	0
+5	Magellanic Cloud	star	Q50028	dwarf galaxy	Magellanic Clouds	0
+5	Lalande 21185	star	Q683605	star	Lalande 21185	0
+5	Big Dipper	star	Q10460	asterism	Big Dipper	0
+5	Orion Belt	star	Q324312	asterism	Orion's Belt	0
+4	Pallas	body	Q3002	asteroid	2 Pallas	0
+4	Hermann Oberth	person	Q78503	human	Hermann Oberth	0
+4	Ophiuchus	star	Q8906	constellation	Ophiuchus	0
+4	Roger Chaffee	person	Q345678	human	Roger B. Chaffee	0
+4	Torifune	body	Q15194896	asteroid	98943 Torifune	0
+4	Apophis	body	Q118931	potentially hazardous asteroid	99942 Apophis	0
+4	Oxia Planum	feature	Q21197656	planum	Oxia Planum	0
+4	Patsayev	person	Q358525	human	Viktor Patsayev	0
+4	Meridiani Planum	feature	Q1133595	planum	Meridiani Planum	0
+4	Gusev Crater	feature	Q575919	impact crater	Gusev (Martian crater)	0
+4	Gordon Cooper	person	Q312833	human	Gordon Cooper	0
+4	Comet Kohoutek	body	Q31428	non-periodic comet	C/1973 E1 (Kohoutek)	0
+4	Polymele	body	Q8221733	asteroid	15094 Polymele	0
+4	Leucus	body	Q4540923	asteroid	11351 Leucus	0
+4	Orus	body	Q5193217	asteroid	21900 Orus	0
+4	Harrison Schmitt	person	Q108886	human	Harrison Schmitt	0
+4	Virgo Cluster	star	Q271818	galaxy cluster	Virgo Cluster	0
+4	Great Attractor	star	Q656857	galaxy filament	Great Attractor	0
+4	Queloz	person	Q124013	human	Didier Queloz	0
+4	Cabeus	feature	Q951023	impact crater	Cabeus (crater)	0
+4	Triangulum Galaxy	star	Q13724	flocculent spiral galaxy	Triangulum Galaxy	0
+4	Hamal	star	Q13213	variable star	Hamal	0
+4	Procyon	star	Q13034	star	Procyon	0
+4	Altair	star	Q12975	star	Altair	0
+4	Carina Nebula	star	Q50042	star-forming region	Carina Nebula	0
+4	Cassiopeia	star	Q10464	constellation	Cassiopeia (constellation)	0
+3	Oumuamua	body	Q42313338	interstellar object	1I/ʻOumuamua	0
+3	Gary Flandro	person	Q5525074	human	Gary Flandro	0
+3	Sea of Tranquility	feature	Q320936	lunar mare	Mare Tranquillitatis	0
+3	Jim Lovell	person	Q111240	human	Jim Lovell	0
+3	Robert Goddard	person	Q182546	human	Robert H. Goddard	0
+3	Ares Vallis	feature	Q784395	vallis	Ares Vallis	0
+3	Phoebe	body	Q17975	moon of Saturn	Phoebe (moon)	0
+3	Phoebe Regio	feature	Q21038917	regio	Phoebe Regio	0
+3	Geographos	body	Q141554	potentially hazardous asteroid	1620 Geographos	0
+3	Olympus Mons	feature	Q520	mons	Olympus Mons	0
+3	Frank Drake	person	Q299149	human	Frank Drake	0
+3	Pavel Popovich	person	Q118490	human	Pavel Popovich	0
+3	McDivitt	person	Q364476	human	James McDivitt	0
+3	Scott Carpenter	person	Q335503	human	Scott Carpenter	0
+3	Khrushchev	person	Q35314	human	Nikita Khrushchev	0
+3	Feoktistov	person	Q320068	human	Konstantin Feoktistov	0
+3	Gherman Titov	person	Q152298	human	Gherman Titov	0
+3	Valery Bykovsky	person	Q159681	human	Valery Bykovsky	0
+3	Donaldjohanson	body	Q15163754	asteroid	52246 Donaldjohanson	0
+3	Gene Cernan	person	Q158486	human	Gene Cernan	0
+3	Hygiea	body	Q2640	asteroid	10 Hygiea	0
+3	Quaoar	body	Q15586	cubewano	Quaoar	0
+3	Linenger	person	Q1376469	human	Jerry M. Linenger	0
+3	Andromeda Galaxy	star	Q2469	quasar	Andromeda Galaxy	0
+3	Ursa Minor	star	Q10478	constellation	Ursa Minor	0
+3	Arcturus	star	Q12985	double star	Arcturus	0
+3	Vande Hei	person	Q3294252	human	Mark T. Vande Hei	0
+3	Aries	star	Q10584	zodiacal constellation	Aries (constellation)	0
+3	GJ 273	star	Q1062596	star	Luyten's Star	0
+3	Crux	star	Q10542	constellation	Crux	0
+3	Algol	star	Q13080	double star	Algol	0
+3	Ursa Major	star	Q8918	constellation	Ursa Major	0
+3	Summer Triangle	star	Q324113	asterism	Summer Triangle	0
+3	Avior	star	Q14256	multiple star	Epsilon Carinae	0
+3	Canopus	star	Q12189	star	Canopus	0
+3	Regulus	star	Q76493786	triple star system	Regulus	0
+3	Dubhe	star	Q13084	binary star	Dubhe	0
+3	Pisces	star	Q8679	constellation	Pisces (constellation)	0
+3	Sadr	star	Q13327	variable star	Gamma Cygni	0
+3	Spica	star	Q13008	double star	Spica	0
+3	NGC 6302	star	Q497739	planetary nebula	NGC 6302	0
+3	NGC 6543	star	Q15829	planetary nebula	Cat's Eye Nebula	0
+3	Crab Nebula	star	Q10934	supernova remnant	Crab Nebula	0
+3	Cygnus Loop	star	Q1085275	supernova remnant	Cygnus Loop	0
+3	NGC 2392	star	Q215543	planetary nebula	Eskimo Nebula	0
+3	Orion Nebula	star	Q13903	star cluster	Orion Nebula	0
+3	Small Magellanic Cloud	star	Q49984	irregular galaxy	Small Magellanic Cloud	0
+2	Kip Thorne	person	Q323320	human	Kip Thorne	0
+2	Wernher von Braun	person	Q57384	human	Wernher von Braun	0
+2	South Pole-Aitken	feature	Q936117	impact crater	South Pole–Aitken basin	0
+2	Jeff Bezos	person	Q312556	human	Jeff Bezos	0
+2	Bezos	person	Q312556	human	Jeff Bezos	0
+2	Vint Cerf	person	Q92743	human	Vint Cerf	0
+2	Jules Verne	person	Q33977	human	Jules Verne	0
+2	Georges Lemaître	person	Q12998	human	Georges Lemaître	0
+2	Sally Ride	person	Q49285	human	Sally Ride	1
+2	Fred Haise	person	Q318965	human	Fred Haise	0
+2	Isidis Planitia	feature	Q2289080	planitia	Isidis Planitia	0
+2	Rheasilvia	feature	Q2631008	impact crater	Rheasilvia	0
+2	Aquila	star	Q10586	constellation	Aquila (constellation)	0
+2	Lacus Excellentiae	feature	Q487063	impact crater	Lacus Excellentiae	0
+2	Zhai Zhigang	person	Q197135	human	Zhai Zhigang	0
+2	Mt Sharp	feature	Q2422217	mons	Mount Sharp	0
+2	Elysium Planitia	feature	Q1334481	planitia	Elysium Planitia	0
+2	Valles Marineris	feature	Q621110	vallis	Valles Marineris	0
+2	Mathilde	body	Q149417	asteroid	253 Mathilde	0
+2	26P/Grigg-Skjellerup	body	Q1537693	Jupiter-family comet	26P/Grigg–Skjellerup	0
+2	James Lovell	person	Q111240	human	Jim Lovell	0
+2	Frank Borman	person	Q18762	human	Frank Borman	0
+2	David Scott	person	Q278656	human	David Scott	0
+2	Jared Isaacman	person	Q6160001	human	Jared Isaacman	0
+2	Pete Conrad	person	Q213076	human	Pete Conrad	0
+2	Alan Bean	person	Q310924	human	Alan Bean	0
+2	Georgy Dobrovolsky	person	Q355433	human	Georgy Dobrovolsky	0
+2	Vladislav Volkov	person	Q345658	human	Vladislav Volkov	0
+2	Viktor Patsayev	person	Q358525	human	Viktor Patsayev	0
+2	Andriyan Nikolayev	person	Q312474	human	Andriyan Nikolayev	0
+2	Dinkinesh	body	Q63240864	asteroid	152830 Dinkinesh	0
+2	John Aaron	person	Q6218012	human	John Aaron	0
+2	Ocean of Storms	feature	Q488299	oceanus	Oceanus Procellarum	0
+2	Descartes Highlands	feature	Q5263681	highland	Descartes Highlands	0
+2	Shorty Crater	feature	Q7502288	impact crater	Shorty (crater)	0
+2	Taurus-Littrow	feature	Q3516188	vallis	Taurus–Littrow	0
+2	Taurus-Littrow Valley	feature	Q3516188	vallis	Taurus–Littrow	0
+2	Shiv Shakti Point	feature	Q121856337	launch and/or landing site	Statio Shiv Shakti	0
+2	Janus	body	Q17754	moon of Saturn	Janus (moon)	0
+2	Epimetheus	body	Q17751	moon of Saturn	Epimetheus (moon)	0
+2	Charles Duke	person	Q112284	human	Charles Duke	0
+2	John F. Kennedy	person	Q9696	human	John F. Kennedy	0
+2	Hydra	body	Q102701	moon of Pluto	Hydra (moon)	0
+2	Verona Rupes	feature	Q2517547	rupes	Verona Rupes	0
+2	Messina Chasma	feature	Q2734318	chasma	Messina Chasmata	0
+2	Robert Heinlein	person	Q123078	human	Robert A. Heinlein	0
+2	Norma Cluster	star	Q1068075	galaxy cluster	Norma Cluster	0
+2	Michel Mayor	person	Q123975	human	Michel Mayor	0
+2	Didier Queloz	person	Q124013	human	Didier Queloz	0
+2	Sextans	star	Q10525	constellation	Sextans	0
+2	Canes Venatici	star	Q10452	constellation	Canes Venatici	0
+2	Boötes	star	Q8667	constellation	Boötes	0
+2	NGC 4889	star	Q754715	type-cD galaxy	NGC 4889	0
+2	NGC 6822	star	Q622789	dwarf galaxy	NGC 6822	0
+2	IC 1613	star	Q663703	irregular galaxy	IC 1613	0
+2	Tarantula Nebula	star	Q224145	star-forming region	Tarantula Nebula	0
+2	SN 1885A	star	Q546708	supernova	SN 1885A	0
+2	Stephen Hawking	person	Q17714	human	Stephen Hawking	0
+2	Robert Forward	person	Q2000229	human	Robert L. Forward	0
+2	Frank Rubio	person	Q30315159	human	Francisco Rubio (astronaut)	0
+2	Alpha Arietis	star	Q13213	variable star	Hamal	0
+2	GJ 411	star	Q683605	star	Lalande 21185	0
+2	Beta Geminorum	star	Q13028	red giant	Pollux (star)	0
+2	Eridanus	star	Q10433	constellation	Eridanus	0
+2	Acrux	star	Q66476660	star	Acrux	0
+2	Adhara	star	Q13414	navigational star	Epsilon Canis Majoris	0
+2	Canis Major	star	Q10538	constellation	Canis Major	0
+2	Alioth	star	Q13091	double star	Alioth	0
+2	Almach	star	Q66477099	multiple star	Gamma Andromedae	0
+2	Alpheratz	star	Q13039	variable star	Alpheratz	0
+2	Grus	star	Q10563	constellation	Grus (constellation)	0
+2	Alphecca	star	Q14046	binary star	Alpha Coronae Borealis	0
+2	Corona Borealis	star	Q10406	constellation	Corona Borealis	0
+2	Alpha Trianguli	star	Q1302050	double star	Alpha Trianguli	0
+2	Alpha Trianguli Australis	star	Q14242	navigational star	Alpha Trianguli Australis	0
+2	Capella	star	Q12970	multiple star	Capella	0
+2	Gamma Crucis	star	Q14233	navigational star	Gacrux	0
+2	Rigil Kentaurus	star	Q12176	triple star system	Alpha Centauri	0
+2	Mimosa	star	Q13105	double star	Mimosa (star)	0
+2	Mirfak	star	Q13790	star	Alpha Persei	0
+2	Alpha Persei	star	Q13790	star	Alpha Persei	0
+2	Nunki	star	Q14036	double star	Sigma Sagittarii	0
+2	Pavo	star	Q10515	constellation	Pavo (constellation)	0
+2	Saiph	star	Q14028	blue supergiant	Saiph	0
+2	Scorpius	star	Q8865	Chinese constellation	Scorpius	0
+2	NGC 3324	star	Q1104218	star cluster	NGC 3324	0
+2	Ring Nebula	star	Q13969	planetary nebula	Ring Nebula	0
+2	NGC 3132	star	Q725489	planetary nebula	NGC 3132	0
+2	Eagle Nebula	star	Q11349	open cluster	Eagle Nebula	0
+2	Dorado	star	Q8837	constellation	Dorado	0
+2	NGC 4038	star	Q725595	interacting galaxy	Antennae Galaxies	0
+2	Gum 29	star	Q3779756	star-forming region	RCW 49	0
+2	SN 1572	star	Q554280	type Ia supernova	SN 1572	0
+2	Perseus Cluster	star	Q1200684	galaxy cluster	Perseus Cluster	0
+2	Barnard 33	star	Q14271	emission nebula	Horsehead Nebula	0
+2	Monoceros	star	Q10428	constellation	Monoceros	0
+2	NGC 1365	star	Q494054	Seyfert 1 galaxy	NGC 1365	0
+2	NGC 602	star	Q913082	star cluster	NGC 602	0
+2	Rho Ophiuchi	star	Q782342	multiple star	Rho Ophiuchi	0
+2	NGC 2014	star	Q1046466	asterism	NGC 2014	0
+2	NGC 1300	star	Q487211	galaxy	NGC 1300	0
+2	NGC 346	star	Q1036219	star cluster	NGC 346	0
+2	IC 342	star	Q757396	intermediate spiral galaxy	IC 342	0
+1	Robert L. Forward	person	Q2000229	human	Robert L. Forward	0
+1	Bach	person	Q1339	human	Johann Sebastian Bach	0
+1	Chuck Berry	person	Q5921	human	Chuck Berry	0
+1	Don Pettit	person	Q363250	human	Donald Pettit	0
+1	Shakespeare	person	Q692	human	William Shakespeare	0
+1	South Pole-Aitken Basin	feature	Q936117	impact crater	South Pole–Aitken basin	0
+1	Johannes Kepler	person	Q8963	human	Johannes Kepler	0
+1	Peggy Whitson	person	Q235523	human	Peggy Whitson	1
+1	Reagan	person	Q9960	human	Ronald Reagan	0
+1	Christa McAuliffe	person	Q229674	human	Christa McAuliffe	1
+1	Gordon Fullerton	person	Q519268	human	C. Gordon Fullerton	0
+1	William Shatner	person	Q16297	human	William Shatner	0
+1	Margaritifer Terra	feature	Q252470	terra	Margaritifer Terra	0
+1	Satish Dhawan	person	Q325393	human	Satish Dhawan	0
+1	Shackleton Crater	feature	Q1507641	impact crater	Shackleton (crater)	0
+1	Ahuna Mons	feature	Q20652342	mons	Ahuna Mons	0
+1	Arthur C. Clarke	person	Q47087	human	Arthur C. Clarke	0
+1	Butch Wilmore	person	Q554409	human	Barry Wilmore	0
+1	Suni Williams	person	Q55177	human	Sunita Williams	1
+1	Yury Artyukhin	person	Q451259	human	Yuri Artyukhin	0
+1	Volynov	person	Q448538	human	Boris Volynov	0
+1	Gorbatko	person	Q348205	human	Viktor Gorbatko	0
+1	Vladimir Dzhanibekov	person	Q466513	human	Vladimir Dzhanibekov	0
+1	Dzhanibekov	person	Q466513	human	Vladimir Dzhanibekov	0
+1	Viktor Savinykh	person	Q431006	human	Viktor Savinykh	0
+1	Aeolis Mons	feature	Q2422217	mons	Mount Sharp	0
+1	Hellas Planitia	feature	Q748111	planitia	Hellas Planitia	0
+1	Ptolemaeus Crater	feature	Q2886300	Mars crater	Ptolemaeus (Martian crater)	0
+1	Margaritifer Sinus	feature	Q252470	terra	Margaritifer Terra	0
+1	Vera Rubin	person	Q234888	human	Vera Rubin	1
+1	Victoria Crater	feature	Q1144595	Mars crater	Victoria (crater)	0
+1	Endeavour Crater	feature	Q1340318	impact crater	Endeavour (crater)	0
+1	James McDivitt	person	Q364476	human	James McDivitt	0
+1	Sian Proctor	person	Q30323480	human	Sian Proctor	1
+1	Hayley Arceneaux	person	Q105627106	human	Hayley Arceneaux	1
+1	Chris Sembroski	person	Q106286882	human	Christopher Sembroski	0
+1	Tom Wolfe	person	Q216195	human	Tom Wolfe	0
+1	Kidd Poteet	person	Q110916469	human	Scott Poteet	0
+1	Sarah Gillis	person	Q110916738	human	Sarah Gillis	1
+1	Anna Menon	person	Q110916349	human	Anna Menon	1
+1	Pavel Belyayev	person	Q157931	human	Pavel Belyayev	0
+1	Oliver Daemen	person	Q107541364	human	Oliver Daemen	0
+1	Shoemaker-Levy 9	body	Q3076	comet	Comet Shoemaker–Levy 9	0
+1	Linda Salzman	person	Q4526447	human	Linda Salzman Sagan	1
+1	Linda Salzman Sagan	person	Q4526447	human	Linda Salzman Sagan	1
+1	Aeolis Palus	feature	Q857312	palus	Aeolis Palus	0
+1	Tharsis	feature	Q2170645	albedo feature	Tharsis	0
+1	Giovanni Schiaparelli	person	Q14281	human	Giovanni Schiaparelli	0
+1	Elon Musk	person	Q317521	human	Elon Musk	0
+1	Statio Cognitum	feature	Q285952	lunar mare	Mare Cognitum	0
+1	Jack Swigert	person	Q348358	human	Jack Swigert	0
+1	Swigert	person	Q348358	human	Jack Swigert	0
+1	Mare Cognitum	feature	Q285952	lunar mare	Mare Cognitum	0
+1	Stuart Roosa	person	Q375065	human	Stuart Roosa	0
+1	Charlie Duke	person	Q112284	human	Charles Duke	0
+1	Bill Anders	person	Q19242	human	William Anders	0
+1	Reid Wiseman	person	Q3116390	human	Reid Wiseman	0
+1	Victor Glover	person	Q13499227	human	Victor Glover	0
+1	Christina Koch	person	Q13500192	human	Christina Koch	1
+1	Jeremy Hansen	person	Q1687593	human	Jeremy Hansen	0
+1	Tombaugh Regio	feature	Q20669022	regio	Tombaugh Regio	0
+1	Edgar Mitchell	person	Q295873	human	Edgar Mitchell	0
+1	James Irwin	person	Q297801	human	James Irwin	0
+1	Planet Earth	body	Q2	inner planet of the Solar System	Earth	0
+1	Main Belt	body	Q2179	ring system	Asteroid belt	0
+1	Gliese 445	star	Q1341818	high proper-motion star	Gliese 445	0
+1	Jan Oort	person	Q309861	human	Jan Oort	0
+1	Planet Nine	body	Q22133699	hypothetical planet	Planet Nine	0
+1	Donald Johanson	person	Q503293	human	Donald Johanson	0
+1	Heinrich Hertz	person	Q41257	human	Heinrich Hertz	0
+1	Vladimir Chelomei	person	Q333260	human	Vladimir Chelomey	0
+1	Chelomei	person	Q333260	human	Vladimir Chelomey	0
+1	Valentin Glushko	person	Q342397	human	Valentin Glushko	0
+1	Nikita Khrushchev	person	Q35314	human	Nikita Khrushchev	0
+1	Vulcan Planitia	feature	Q21281734	planum	Vulcan Planitia	0
+1	Styx	body	Q105713	moon of Pluto	Styx (moon)	0
+1	Nix	body	Q102694	moon of Pluto	Nix (moon)	0
+1	Kerberos	body	Q105636	moon of Pluto	Kerberos (moon)	0
+1	Asaph Hall	person	Q106559	human	Asaph Hall	0
+1	Voltaire	person	Q9068	human	Voltaire	0
+1	Dione	body	Q15040	moon of Saturn	Dione (moon)	0
+1	Loki Patera	feature	Q765048	patera	Loki Patera	0
+1	South Pole–Aitken	feature	Q936117	impact crater	South Pole–Aitken basin	0
+1	Brent Tully	person	Q535965	human	R. Brent Tully	0
+1	Abell 3627	star	Q1068075	galaxy cluster	Norma Cluster	0
+1	Shapley Concentration	star	Q1513087	supercluster	Shapley Supercluster	0
+1	Enrico Fermi	person	Q8753	human	Enrico Fermi	0
+1	HR 8799	star	Q584300	A-type star	HR 8799	0
+1	Tranquillity Base	feature	Q732758	launch and/or landing site	Tranquility Base	0
+1	Christopher Kraft	person	Q735104	human	Christopher C. Kraft Jr.	0
+1	Glynn Lunney	person	Q3032002	human	Glynn Lunney	0
+1	Gene Kranz	person	Q711493	human	Gene Kranz	0
+1	Cliff Charlesworth	person	Q1101244	human	Clifford E. Charlesworth	0
+1	Christopher Wren	person	Q170373	human	Christopher Wren	0
+1	Leibniz	person	Q9047	human	Gottfried Wilhelm Leibniz	0
+1	Krikalev	person	Q313815	human	Sergei Krikalev	0
+1	Gidzenko	person	Q448491	human	Yuri Gidzenko	0
+1	Bruce McCandless	person	Q14505387	human	Bruce McCandless	0
+1	Pavonis Mons	feature	Q735657	mons	Pavonis Mons	0
+1	Hadriacus Mons	feature	Q1567537	mons	Hadriacus Mons	0
+1	Anatoly Solovyev	person	Q447311	human	Anatoly Solovyev	0
+1	Messier 31	star	Q2469	quasar	Andromeda Galaxy	0
+1	NGC 224	star	Q2469	quasar	Andromeda Galaxy	0
+1	Vesto Slipher	person	Q312248	human	Vesto Slipher	0
+1	Bernard Lyot	person	Q433773	human	Bernard Lyot	0
+1	Canes Venatici I	star	Q46034	dwarf galaxy	Canes Venatici I	0
+1	Marc Aaronson	person	Q2258893	human	Marc Aaronson	0
+1	Segue 1	star	Q1813110	dwarf galaxy	Segue 1	0
+1	Boötes II	star	Q2483957	galaxy	Boötes II	0
+1	Reticulum	star	Q10498	constellation	Reticulum	0
+1	Reticulum II	star	Q21600977	dwarf galaxy	Reticulum II	0
+1	NGC 147	star	Q493581	dwarf spheroidal galaxy	NGC 147	0
+1	NGC 185	star	Q490334	dwarf elliptical galaxy	NGC 185	0
+1	NGC 1052-DF2	star	Q51338449	ultra diffuse galaxy	NGC 1052-DF2	0
+1	Dragonfly 44	star	Q26703430	ultra diffuse galaxy	Dragonfly 44	0
+1	Sculptor Group	star	Q1521081	galaxy group	Sculptor Group	0
+1	Maffei Group	star	Q843331	galaxy group	IC 342/Maffei Group	0
+1	Centaurus A	star	Q487255	radio galaxy	Centaurus A	0
+1	Centaurus A Group	star	Q1881065	galaxy cluster	Centaurus A/M83 Group	0
+1	Ferdinand Magellan	person	Q1496	human	Ferdinand Magellan	0
+1	SN 1987A	star	Q584905	supernova	SN 1987A	0
+1	Scutum	star	Q10529	constellation	Scutum (constellation)	0
+1	Joseph Fraunhofer	person	Q43948	human	Joseph von Fraunhofer	0
+1	Joseph-Louis Lagrange	person	Q80222	human	Joseph-Louis Lagrange	0
+1	Donald Kessler	person	Q5294575	human	Donald J. Kessler	0
+1	Asteroid Belt	body	Q2179	ring system	Asteroid belt	0
+1	Giuseppe Piazzi	person	Q14280	human	Giuseppe Piazzi	0
+1	Gaspra	body	Q158244	asteroid	951 Gaspra	0
+1	Occator Crater	feature	Q20652331	impact crater	Occator (crater)	0
+1	Gerard Kuiper	person	Q192948	human	Gerard Kuiper	0
+1	David Jewitt	person	Q382992	human	David C. Jewitt	0
+1	Jane Luu	person	Q197941	human	Jane Luu	1
+1	Hartley 2	body	Q204997	periodic comet	103P/Hartley	0
+1	Sputnik Planitia	feature	Q20679593	planitia	Sputnik Planitia	0
+1	Yuri Milner	person	Q138076	human	Yuri Milner	0
+1	Apollonius of Perga	person	Q180109	human	Apollonius of Perga	0
+1	Walter Hohmann	person	Q63941	human	Walter Hohmann	0
+1	GJ 273b	star	Q43440038	exoplanet	Luyten b	0
+1	Achernar	star	Q12183	Be-type star	Achernar	0
+1	Alpha Eridani	star	Q12183	Be-type star	Achernar	0
+1	Alpha Crucis	star	Q66476660	star	Acrux	0
+1	Epsilon Canis Majoris	star	Q13414	navigational star	Epsilon Canis Majoris	0
+1	Alpha Tauri	star	Q88540091	binary star	Aldebaran	0
+1	Pleiades	star	Q13423	open cluster	Pleiades	0
+1	Beta Persei	star	Q13080	double star	Algol	0
+1	Alhena	star	Q14238	star	Gamma Geminorum	0
+1	Gamma Geminorum	star	Q14238	star	Gamma Geminorum	0
+1	Epsilon Ursae Majoris	star	Q13091	double star	Alioth	0
+1	Alkaid	star	Q13093	variable star	Alkaid	0
+1	Eta Ursae Majoris	star	Q13093	variable star	Alkaid	0
+1	Gamma Andromedae	star	Q66477099	multiple star	Gamma Andromedae	0
+1	Alpha Gruis	star	Q854042	double star	Alpha Gruis	0
+1	Alnilam	star	Q13070	double star	Alnilam	0
+1	Epsilon Orionis	star	Q13070	double star	Alnilam	0
+1	Alnitak	star	Q13076	star	Alnitak	0
+1	Zeta Orionis	star	Q13076	star	Alnitak	0
+1	Flame Nebula	star	Q490342	star cluster	Flame Nebula	0
+1	Alphard	star	Q13577	variable star	Alphard	0
+1	Alpha Hydrae	star	Q13577	variable star	Alphard	0
+1	Alpha Coronae Borealis	star	Q14046	binary star	Alpha Coronae Borealis	0
+1	Alpha Andromedae	star	Q13039	variable star	Alpheratz	0
+1	Alpha Aquilae	star	Q12975	star	Altair	0
+1	Alpha Scorpii	star	Q12166	double star	Antares	0
+1	Alpha Boötis	star	Q12985	double star	Arcturus	0
+1	Atria	star	Q14242	navigational star	Alpha Trianguli Australis	0
+1	Triangulum Australe	star	Q10422	constellation	Triangulum Australe	0
+1	Epsilon Carinae	star	Q14256	multiple star	Epsilon Carinae	0
+1	Bellatrix	star	Q13066	navigational star	Bellatrix	0
+1	Gamma Orionis	star	Q13066	navigational star	Bellatrix	0
+1	Alpha Orionis	star	Q12124	red supergiant	Betelgeuse	0
+1	Alpha Carinae	star	Q12189	star	Canopus	0
+1	Alpha Aurigae	star	Q12970	multiple star	Capella	0
+1	Alpha Geminorum	star	Q13029	multiple star	Castor (star)	0
+1	Alpha Cygni	star	Q12179	white supergiant	Deneb	0
+1	Denebola	star	Q13015	double star	Denebola	0
+1	Beta Leonis	star	Q13015	double star	Denebola	0
+1	Diphda	star	Q13170	variable star	Beta Ceti	0
+1	Beta Ceti	star	Q13170	variable star	Beta Ceti	0
+1	Cetus	star	Q8839	constellation	Cetus (constellation)	0
+1	Menkar	star	Q13173	variable star	Alpha Ceti	0
+1	Alpha Ursae Majoris	star	Q13084	binary star	Dubhe	0
+1	Merak	star	Q13096	peculiar star	Merak (star)	0
+1	Elnath	star	Q13508	mercury-manganese star	Beta Tauri	0
+1	Beta Tauri	star	Q13508	mercury-manganese star	Beta Tauri	0
+1	Alpha Piscis Austrini	star	Q13169	triple star system	Fomalhaut	0
+1	Gacrux	star	Q14233	navigational star	Gacrux	0
+1	Beta Centauri	star	Q13175	multiple star	Beta Centauri	0
+1	Kaus Australis	star	Q14034	double star	Epsilon Sagittarii	0
+1	Epsilon Sagittarii	star	Q14034	double star	Epsilon Sagittarii	0
+1	Joseph Jérôme de Lalande	person	Q168419	human	Jérôme Lalande	0
+1	Jérôme de Lalande	person	Q168419	human	Jérôme Lalande	0
+1	Canis Minor	star	Q9305	constellation	Canis Minor	0
+1	Willem Jacob Luyten	person	Q58961	human	Willem Jacob Luyten	0
+1	Menkalinan	star	Q13219	double star	Beta Aurigae	0
+1	Beta Aurigae	star	Q13219	double star	Beta Aurigae	0
+1	Menkent	star	Q14225	double star	Theta Centauri	0
+1	Theta Centauri	star	Q14225	double star	Theta Centauri	0
+1	Miaplacidus	star	Q13174	high proper-motion star	Beta Carinae	0
+1	Beta Carinae	star	Q13174	high proper-motion star	Beta Carinae	0
+1	Beta Crucis	star	Q13105	double star	Mimosa (star)	0
+1	Becrux	star	Q13105	double star	Mimosa (star)	0
+1	Mintaka	star	Q680341	multiple star	Mintaka	0
+1	Delta Orionis	star	Q680341	multiple star	Mintaka	0
+1	Alpha Persei Cluster	star	Q1072618	open cluster	Alpha Persei Cluster	0
+1	Sigma Sagittarii	star	Q14036	double star	Sigma Sagittarii	0
+1	Alpha Pavonis	star	Q14240	navigational star	Alpha Pavonis	0
+1	Alpha Ursae Minoris	star	Q12980	F-type star	Polaris	0
+1	Alpha Canis Minoris	star	Q13034	star	Procyon	0
+1	Winter Triangle	star	Q505816	asterism	Winter Triangle	0
+1	Rasalhague	star	Q13504	double star	Alpha Ophiuchi	0
+1	Alpha Ophiuchi	star	Q13504	double star	Alpha Ophiuchi	0
+1	Alpha Leonis	star	Q76493786	triple star system	Regulus	0
+1	Beta Orionis	star	Q12126	B-type supergiant star	Rigel	0
+1	Gamma Cygni	star	Q13327	variable star	Gamma Cygni	0
+1	Kappa Orionis	star	Q14028	blue supergiant	Saiph	0
+1	Sargas	star	Q14236	star	Theta Scorpii	0
+1	Theta Scorpii	star	Q14236	star	Theta Scorpii	0
+1	Alpha Canis Majoris	star	Q3409	navigational star	Sirius	0
+1	Sirius B	star	Q3962041	white dwarf	Sirius B	0
+1	Alpha Virginis	star	Q13008	double star	Spica	0
+1	Hipparchus	person	Q159905	human	Hipparchus	0
+1	Adriaan van Maanen	person	Q2013915	human	Adriaan van Maanen	0
+1	Alpha Lyrae	star	Q3427	A-type main sequence star	Vega	0
+1	Wezen	star	Q13411	variable star	Delta Canis Majoris	0
+1	Delta Canis Majoris	star	Q13411	variable star	Delta Canis Majoris	0
+1	Southern Ring Nebula	star	Q725489	planetary nebula	NGC 3132	0
+1	Vela	star	Q10521	constellation	Vela (constellation)	0
+1	HCG 92	star	Q5114	galaxy group	Stephan's Quintet	0
+1	Cartwheel Galaxy	star	Q1208155	lenticular galaxy	Cartwheel Galaxy	0
+1	ESO 350-40	star	Q1208155	lenticular galaxy	Cartwheel Galaxy	0
+1	Antennae Galaxies	star	Q725595	interacting galaxy	Antennae Galaxies	0
+1	Corvus	star	Q10517	constellation	Corvus (constellation)	0
+1	Westerlund 2	star	Q1331013	open cluster	Westerlund 2	0
+1	Whirlpool Galaxy	star	Q13957	grand design spiral galaxy	Whirlpool Galaxy	0
+1	Veil Nebula	star	Q828325	supernova remnant	Veil Nebula	0
+1	Sombrero Galaxy	star	Q91461627	peculiar galaxy	Sombrero Galaxy	0
+1	Eskimo Nebula	star	Q215543	planetary nebula	Eskimo Nebula	0
+1	Tycho Supernova	star	Q554280	type Ia supernova	SN 1572	0
+1	Helix Nebula	star	Q97017154	planetary nebula	Helix Nebula	0
+1	NGC 7293	star	Q97017154	planetary nebula	Helix Nebula	0
+1	Horsehead Nebula	star	Q14271	emission nebula	Horsehead Nebula	0
+1	Lagoon Nebula	star	Q11243	open cluster	Lagoon Nebula	0
+1	NGC 3372	star	Q50042	star-forming region	Carina Nebula	0
+1	Cassiopeia A	star	Q618273	supernova remnant	Cassiopeia A	0
+1	Cone Nebula	star	Q1709076	dark nebula	Cone Nebula	0
+1	NGC 2264	star	Q226134	open cluster	NGC 2264	0
+1	Omega Centauri	star	Q14275	globular cluster	Omega Centauri	0
+1	NGC 5139	star	Q14275	globular cluster	Omega Centauri	0
+1	Hydrus	star	Q10416	constellation	Hydrus	0
+1	Rho Ophiuchi Cloud	star	Q56510806	dark nebula	Rho Ophiuchi cloud complex	0
+1	Sagitta	star	Q10513	constellation	Sagitta	0
+1	WR 124	star	Q1687986	Wolf–Rayet star	WR 124	0
+1	NGC 2020	star	Q1046494	emission nebula	NGC 2020	0
+1	Southern Crab	star	Q1060819	planetary nebula	Southern Crab Nebula	0
+1	Southern Crab Nebula	star	Q1060819	planetary nebula	Southern Crab Nebula	0
+1	Pinwheel Galaxy	star	Q14371	interacting galaxy	Pinwheel Galaxy	0
+1	Tucana	star	Q10567	constellation	Tucana	0
+1	Hidden Galaxy	star	Q757396	intermediate spiral galaxy	IC 342	0
+1	Camelopardalis	star	Q8832	constellation	Camelopardalis	0
+1	Large Magellanic Cloud	star	Q49957	dwarf galaxy	Large Magellanic Cloud	0
+1	Sagittarius Dwarf Spheroidal	star	Q32885	dwarf galaxy	Sagittarius Dwarf Spheroidal Galaxy	0
+1	Sculptor Dwarf	star	Q32889	dwarf galaxy	Sculptor Dwarf Galaxy	0
+1	Fornax Dwarf	star	Q35818	dwarf galaxy	Fornax Dwarf	0
+1	Draco Dwarf	star	Q11566	dwarf spheroidal galaxy	Draco Dwarf	0
+1	Ursa Minor Dwarf	star	Q32883	dwarf elliptical galaxy	Ursa Minor Dwarf	0
+1	Leo I Dwarf	star	Q35810	elliptical galaxy	Leo I (dwarf galaxy)	0
+1	Sextans Dwarf	star	Q32886	dwarf galaxy	Sextans Dwarf Spheroidal	0
+1	Wolf-Lundmark-Melotte	star	Q1155745	low-surface-brightness galaxy	Wolf–Lundmark–Melotte	0
+1	Vega	star	Q3427	star	Vega	0
+1	Hadar	star	Q13175	star	Beta Centauri	0
+1	Antares	star	Q12166	star	Antares	0
+1	Castor	star	Q13029	star	Castor (star)	0
+1	Alnair	star	Q854042	star	Alpha Gruis	0
+1	Peacock	star	Q14240	star	Alpha Pavonis	0
+14	Barnard's Star	star	Q14268	star	Barnard's Star	0
+5	Luyten's Star	star	Q1062596	star	Luyten's Star	0
+1	Van Maanen's Star	star	Q868692	star	Van Maanen 2	0
+5	Orion's Belt	star	Q324312	asterism	Orion's Belt	0
+4	Halley's Comet	body	Q23054	comet	Halley's Comet	0
+1	Tycho's Supernova	star	Q554280	supernova	SN 1572	0
+1	Stephan's Quintet	star	Q5114	galaxy group	Stephan's Quintet	0
+1	Hoag's Object	star	Q872197	ring galaxy	Hoag's Object	0
+1	Cat's Eye Nebula	star	Q15829	planetary nebula	Cat's Eye Nebula	0
+1	Barnard's Galaxy	star	Q622789	dwarf galaxy	NGC 6822	0
+3	Cone Crater	feature	Q85753795	crater	Cone (crater)	0
+2	Husband Hill	feature	Q619047	hill	Husband Hill	0
+1	Columbia Hills	feature	Q619057	hills	Columbia Hills (Mars)	0
+1	Endurance Crater	feature	Q1341055	crater	Endurance (crater)	0
+1	Bonneville Crater	feature	Q892804	crater	Bonneville (crater)	0
+1	Erebus Crater	feature	Q2373332	crater	Erebus (crater)	0
+1	Tombaugh Regio	feature	Q20669022	regio	Tombaugh Regio	0
+1	Marius Hills	feature	Q13646960	hills	Marius Hills	0
+1	Ahuna Mons	feature	Q20652342	mons	Ahuna Mons	0
+1	Mount Sharp	feature	Q2422217	mons	Mount Sharp	0
+1	Le Monnier	feature	Q834286	crater	Le Monnier (crater)	0

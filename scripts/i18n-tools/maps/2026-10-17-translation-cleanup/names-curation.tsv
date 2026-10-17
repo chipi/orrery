@@ -1,0 +1,199 @@
+# Hand curation of wikidata-name-classes.tsv (name-inventory.mjs) before name-forms.mjs.
+# Rows: run \t decision \t why.  decision: drop | keep | full-only (a person whose bare
+# surname in the text is mostly a spacecraft, telescope, crater or eponymous term — only
+# the full name goes in the glossary; the surname waits for the eponym class).
+# Classes dropped wholesale (the class says it is a vehicle, a deity, a fiction, a
+# feature TYPE, a satellite constellation...) are listed in name-curate.mjs, not here.
+Apollo	drop	the program, not asteroid 1862 Apollo
+Atlas	drop	the rocket, not Saturn's moon
+Luna	drop	the Soviet program
+Hayabusa	drop	the JAXA probe
+Wikipedia	drop	the website
+California	drop	the US state
+Arizona	drop	the US state
+Massachusetts	drop	the US state
+Doppler	drop	the effect / the person, not asteroid 3905
+Komarov	drop	the cosmonaut (person class covers Vladimir Komarov)
+Hera	drop	the ESA mission
+Vulcan	drop	the rocket / hypothetical planet
+Air	drop	common word
+Rosalind	drop	the Rosalind Franklin rover
+Aurora	drop	common word / auroras
+Icarus	drop	myth / solar sail IKAROS context
+Odysseus	drop	the IM-1 lander
+Victoria	drop	place names; Victoria Crater is kept as a feature
+Medusa	drop	not the asteroid in context
+Sharp	drop	Mount Sharp is kept as a feature
+Johnson	drop	people / Johnson Space Center
+Suomi	drop	the Suomi NPP satellite
+Ursula	drop	not the asteroid in context
+Margaret	drop	not the moon of Uranus in context
+Ferdinand	drop	not the moon of Uranus in context
+Achilles	drop	the hero (Iliad) in context
+Juno	drop	mostly the NASA spacecraft; asteroid 3 Juno fixed by hand where meant
+Psyche	drop	mostly the NASA mission; asteroid 16 Psyche fixed by hand where meant
+Vega	drop	the Soviet Vega probes / Vega rocket; the star is set on its star page
+Vega 1	drop	probe
+Vega 2	drop	probe
+Main-belt	drop	adjective
+Solar-system	drop	adjective
+Martian	drop	adjective
+Neptunian	drop	adjective
+Jupiter's	drop	possessive (already covered by Jupiter)
+Saturn's	drop	possessive
+Neptune's	drop	possessive
+Earth's Moon	drop	covered by Earth + Moon
+EARTH	drop	all-caps UI label
+the Moon	drop	covered by Moon
+the Earth	drop	covered by Earth
+the Sun	drop	covered by Sun
+the Milky Way	drop	covered by Milky Way
+the Solar System	drop	covered by Solar System
+Earth 1	drop	fiction
+Planet Nine	keep	hypothetical planet, named in text
+Blue Moon	drop	the Blue Origin lander
+Halley's	drop	possessive; Halley's Comet kept
+Pluto-Charon	drop	covered by Pluto + Charon
+Patroclus-Menoetius	drop	covered by Patroclus + Menoetius
+Wenu	drop	lobe of Arrokoth, provisional nickname
+Weeyo	drop	lobe of Arrokoth, provisional nickname
+Genesis Rock	drop	a sample, not a body
+Gemini	drop	the NASA program
+Orion	drop	mostly the spacecraft; constellation set on star pages
+Orionis	drop	Latin genitive, inside designations
+Geminorum	drop	Latin genitive
+Starlink	drop	satellite constellation
+Crater	drop	common word
+Merlin	drop	SpaceX engine
+Lucy	drop	the NASA mission
+Cygnus	drop	the cargo spacecraft
+Phoenix	drop	the Mars lander
+Andromeda	drop	ambiguous with the galaxy; Andromeda Galaxy kept
+Sagittarius	drop	ambiguous (Sgr A*, constellation) — star pages
+Virgo	drop	ambiguous; Virgo Cluster / Supercluster kept
+Leo	drop	LEO / constellation ambiguity
+Carina	drop	ambiguous; Carina Nebula kept
+Taurus	drop	the rocket / Taurus-Littrow
+Draco	drop	SpaceX thruster
+Antares	drop	the rocket / LM Antares; star page sets the star
+Aquarius	drop	Apollo 13 LM
+Agena	drop	the upper stage
+Pegasus	drop	the rocket
+Castor	drop	rocket stage
+Centaurus	drop	rocket stage / constellation
+Perseus	drop	ambiguous
+Sculptor	drop	ambiguous; Sculptor Group/Dwarf kept
+Fornax	drop	ambiguous; Fornax Dwarf kept
+Triangulum	drop	ambiguous; Triangulum Galaxy kept
+Serpens	drop	ambiguous
+Auriga	drop	ambiguous
+Norma	drop	ambiguous; Norma Cluster kept
+Lyra	drop	ambiguous
+Archer	drop	common word
+Peacock	drop	common word; Alpha Pavonis kept
+Ran	drop	common word
+Fang	drop	common word
+Sol	drop	common word
+Coma	drop	comet coma
+Cancer	drop	disease / Tropic of Cancer
+Capricorn	drop	Tropic of Capricorn
+Great Dog	drop	descriptive gloss
+Dog Star	drop	descriptive gloss (in quotes)
+Demon Star	drop	descriptive gloss
+North Star	drop	descriptive gloss
+Northern Crown	drop	descriptive gloss
+Gemma	drop	alt name
+Hadar	drop	alt name
+Kentaurus	drop	fragment of Rigil Kentaurus
+Doradus	drop	Latin genitive
+Arietis	drop	Latin genitive
+Canis Majoris	drop	Latin genitive
+Ursae Majoris	drop	Latin genitive
+Ursae Minoris	drop	Latin genitive
+Ophiuchi	drop	Latin genitive
+Scorpii	drop	Latin genitive
+Aurigae	drop	Latin genitive
+Cygni	drop	Latin genitive
+Eridani	drop	Latin genitive
+Gruis	drop	Latin genitive
+Hydrae	drop	Latin genitive
+Lyrae	drop	Latin genitive
+Monocerotis	drop	Latin genitive
+Virginis	drop	Latin genitive
+Coronae Borealis	drop	Latin genitive
+Trianguli Australis	drop	Latin genitive
+Piscis Austrini	drop	Latin genitive
+Canis Minoris	drop	Latin genitive
+1987A	drop	fragment of SN 1987A
+Cas A	drop	abbreviation
+Galaxy M33	drop	covered by Triangulum Galaxy
+Dimidium	drop	exoplanet nickname
+Tatooine	drop	fiction
+Orlan	drop	the spacesuit
+Euclid	drop	the ESA telescope
+Giotto	drop	the ESA probe
+Magellan	drop	the NASA probe
+David	drop	first name
+Fra Mauro	drop	the feature, already in glossary
+Descartes	drop	the highlands
+St. Jude	drop	quoted saying
+St. George	drop	not a person in context
+Nancy Grace	drop	the Roman telescope
+Nancy Grace Roman	drop	the telescope
+Planck	drop	the ESA telescope / constant
+Rosalind Franklin	drop	the rover
+Shackleton	drop	the crater
+Molly Brown	drop	the Gemini 3 capsule
+Dong Fang	drop	the satellite
+JFK	drop	abbreviation
+Johns Hopkins	drop	the university
+Champlain	drop	not a person in context
+Bull.	drop	abbreviation
+Conics	drop	book title
+Ptolemaeus	drop	the crater
+Luyten	drop	the star
+Homeric	drop	adjective
+Napoleonic	drop	adjective
+Gerlache	drop	place (Gerlache Strait)
+Tombaugh	drop	Tombaugh Regio
+Galileo	full-only	mostly the Galileo probe / satellites
+Kepler	full-only	the Kepler telescope / laws
+Keplerian	drop	adjective (eponym class)
+Copernicus	full-only	crater / satellite programme
+Tsiolkovsky	full-only	the rocket equation / crater
+Lagrange	full-only	Lagrange points (eponym class)
+Oort	full-only	Oort cloud (eponym class)
+Laplace	full-only	Laplace resonance (eponym class)
+Von Kármán	full-only	the crater / Kármán line
+Einstein	full-only	eponymous terms
+Hertzsprung	full-only	diagram (eponym class)
+Milankovitch	full-only	cycles (eponym class)
+Kordylewski	full-only	clouds (eponym class)
+Mössbauer	full-only	spectrometer (eponym class)
+Fermi	full-only	the Fermi telescope
+St Jude	drop	quoted saying
+St George	drop	not a person in context
+Captain Cook	drop	title + surname; the text form stays
+President Reagan	drop	title; Reagan is kept
+Senator John Glenn	drop	title; John Glenn is kept
+Churyumov	drop	inside the comet designation 67P/Churyumov–Gerasimenko
+Asia	drop	the continent, not asteroid 67
+APL	drop	the Applied Physics Laboratory
+Levy	drop	Shoemaker-Levy fragment
+Poseidon	drop	not a moon in context
+Pan	drop	not Saturn's moon in context
+Queta	drop	Wikidata ties it to Eurybates itself; hand fix
+Menoetius	drop	already in glossary (Wikidata ties it to Patroclus)
+Halley Comet	drop	covered by Halley's Comet / Halley
+Great Square of Pegasus	drop	Wikidata ties it to the constellation
+Square of Pegasus	drop	Wikidata ties it to the constellation
+Taurus the Bull	drop	phrase
+Phantom Galaxy	drop	only M74 in most languages
+67P	drop	the designation reads the same everywhere
+Comet 67P	drop	the designation reads the same everywhere
+Grigg-Skjellerup	drop	26P/Grigg-Skjellerup is kept
+Shoemaker-Levy	drop	Shoemaker-Levy 9 is kept
+Selam	drop	no usable forms
+Sirius A	drop	component designation, not an alias
+Alpha Centauri A	drop	component designation
+Alpha Centauri B	drop	component designation

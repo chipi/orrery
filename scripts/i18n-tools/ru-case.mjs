@@ -124,3 +124,49 @@ export function guessCaseRu(before) {
   for (const [re, c] of PREP) if (re.test(b)) return c;
   return 'nom';
 }
+
+// People. Every word of the name declines (Юрий Гагарин → Юрия Гагарина); the accusative
+// of a man is the genitive. `slavic` (the Wikidata label carried a patronymic) gives
+// -ов/-ин surnames their own instrumental (Гагариным); foreign ones take -ом (Олдрином).
+// A woman's foreign surname on a consonant or vowel does not decline (Пегги Уитсон).
+function personWordRu(w, c, female, slavic, isLast) {
+  if (c === 'nom' || /^[A-Z0-9]|\.$|^(фон|де|ван|дер|да|ди|ле|ла|дю)$/.test(w)) return w;
+  if (female) {
+    if (/(ова|ева|ёва|ина|ына)$/.test(w) && isLast)
+      return w.slice(0, -1) + { gen: 'ой', dat: 'ой', acc: 'у', ins: 'ой', pre: 'ой' }[c];
+    if (/ая$/.test(w))
+      return w.slice(0, -2) + { gen: 'ой', dat: 'ой', acc: 'ую', ins: 'ой', pre: 'ой' }[c];
+    if (/ия$/.test(w))
+      return w.slice(0, -2) + { gen: 'ии', dat: 'ии', acc: 'ию', ins: 'ией', pre: 'ии' }[c];
+    if (/[ая]$/.test(w)) return declineWord(w, c);
+    return w;
+  }
+  if (/(ский|цкий|ской)$/.test(w))
+    return w.slice(0, -2) + { gen: 'ого', dat: 'ому', acc: 'ого', ins: 'им', pre: 'ом' }[c];
+  if (/ий$/.test(w))
+    return w.slice(0, -2) + { gen: 'ия', dat: 'ию', acc: 'ия', ins: 'ием', pre: 'ии' }[c];
+  if (/[ейоауя]й$/.test(w))
+    return w.slice(0, -1) + { gen: 'я', dat: 'ю', acc: 'я', ins: 'ем', pre: 'е' }[c];
+  if (/ь$/.test(w))
+    return w.slice(0, -1) + { gen: 'я', dat: 'ю', acc: 'я', ins: 'ем', pre: 'е' }[c];
+  if (/[ая]$/.test(w)) return declineWord(w, c);
+  if (/[бвгджзклмнпрстфхцчшщ]$/.test(w)) {
+    const ins =
+      slavic && isLast && /(ов|ев|ёв|ин|ын)$/.test(w) ? 'ым' : /[жшщчц]$/.test(w) ? 'ем' : 'ом';
+    return w + ({ gen: 'а', dat: 'у', acc: 'а', ins, pre: 'е' }[c] ?? '');
+  }
+  return w;
+}
+/** Decline a person's name (all words) in Russian. */
+export function declinePersonRu(name, c, female = false, slavic = false) {
+  if (c === 'nom') return name;
+  const ws = name.split(' ');
+  return ws
+    .map((w, i) =>
+      w
+        .split('-')
+        .map((p) => personWordRu(p, c, female, slavic, i === ws.length - 1))
+        .join('-'),
+    )
+    .join(' ');
+}

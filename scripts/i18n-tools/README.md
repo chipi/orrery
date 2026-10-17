@@ -51,6 +51,16 @@ Pass 1 (gallery/entity pages set each name) and pass 2 (article text follows the
 | `dedupe-descriptors.mjs` | Collapses a doubled descriptor (フラ・マウロ高地高地). |
 | `rocket-body-audit.mjs`, `rocket-body-restore.mjs` | Finds and restores rocket names turned into a planet (土星ロケット). |
 
+Names glossary (celestial names and people), in order:
+
+| Tool | What it does |
+|---|---|
+| `name-inventory.mjs <out.tsv>` | Every capitalised run in the English source looked up on English Wikipedia (single words also as "X (moon)", "(asteroid)"…) and classified by its Wikidata "instance of": body / feature / star / person. Paced, cached, resumable (`NAME_INV_CACHE`). |
+| `name-curate.mjs <classes.tsv> <curation.tsv> <out.tsv>` | Drops vehicle/deity/fiction classes and applies the hand decisions in `maps/…/names-curation.tsv`. |
+| `name-forms.mjs <curated.tsv> <out.tsv>` | Each locale's form: Wikipedia title (bodies, stars), label (people; Russian patronymic dropped); zh-CN through Wikidata's simplified converter; sr-Cyrl only where Cyrillic at the source. |
+| `name-glossary-merge.mjs <forms.tsv> <overrides.tsv> <features.tsv>` | Writes the `body` / `star` / `person` / `feature` classes of `native-terms.json` (never overwrites an existing key); guards for Bayer and catalogue aliases, designations, nicknames, transliteration-only changes in Latin-script locales. |
+| `person-case.test.ts` | Tests for the person declension in `ru-case.mjs` / `sr-case.mjs`. |
+
 ## maps/
 
 The hand-written inputs and analysis results, one folder per arc

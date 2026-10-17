@@ -1,0 +1,52 @@
+# Second batch of surface features for native-terms.json "feature" (merged by
+# name-glossary-merge.mjs --features). Evidence: wikidata-name-forms.tsv (each language's
+# Wikipedia title) — where a language has no article, the form follows that language's
+# pattern in the first batch (кратер X / Xクレーター / X撞击坑 / X 분화구 / X क्रेटर /
+# فوهة X; Latin-script locales keep IAU Latin names) and is unverified.
+# key	ru	ja	zh-CN	ko	hi	ar	sr-Cyrl	de	fr	es	it	nl	pt-BR
+Victoria Crater	кратер Виктория	ビクトリア・クレーター	维多利亚撞击坑	빅토리아 분화구	विक्टोरिया क्रेटर	فوهة فكتوريا	кратер Викторија	Victoria-Krater	cratère Victoria	cráter Victoria	cratere Victoria	Victoria-krater	cratera Victoria
+Endeavour Crater	кратер Индевор	エンデバー・クレーター	奋斗撞击坑	인데버 분화구	एंडेवर क्रेटर	فوهة إنديفور	кратер Индевор	Endeavour-Krater	cratère Endeavour	cráter Endeavour	cratere Endeavour	Endeavour-krater	cratera Endeavour
+Endurance Crater	кратер Эндьюранс	エンデュランス・クレーター	坚忍撞击坑	인듀어런스 분화구	एंड्यूरेंस क्रेटर	فوهة إندورانس	кратер Ендјуранс	Endurance-Krater	cratère Endurance	cráter Endurance	cratere Endurance	Endurance-krater	cratera Endurance
+Erebus Crater	кратер Эребус	エレバス・クレーター	厄瑞玻斯撞击坑	에레버스 분화구	एरेबस क्रेटर	فوهة إريبس	кратер Еребус	Erebus-Krater	cratère Erebus	cráter Erebus	cratere Erebus	Erebus-krater	cratera Erebus
+Bonneville Crater	кратер Бонневиль	ボンネビル・クレーター	邦纳维尔撞击坑	보너빌 분화구	बोनविल क्रेटर	فوهة بونفيل	кратер Боневил	Bonneville-Krater	cratère Bonneville	cráter Bonneville	cratere Bonneville	Bonneville-krater	cratera Bonneville
+Shackleton Crater	кратер Шеклтон	シャクルトン・クレーター	沙克尔顿撞击坑	섀클턴 분화구	शैकलटन क्रेटर	فوهة شاكلتون	кратер Шеклтон	Shackleton-Krater	cratère Shackleton	cráter Shackleton	cratere Shackleton	Shackleton-krater	cratera Shackleton
+Occator Crater	кратер Оккатор	オッカトル・クレーター	欧卡托撞击坑	오카토르 분화구	ऑकेटर क्रेटर	فوهة أوكاتور	кратер Окатор	Occator-Krater	cratère Occator	cráter Occator	cratere Occator	Occator-krater	cratera Occator
+Shorty Crater	кратер Шорти	ショーティ・クレーター	矮子撞击坑	쇼티 분화구	शॉर्टी क्रेटर	فوهة شورتي	кратер Шорти	Shorty-Krater	cratère Shorty	cráter Shorty	cratere Shorty	Shorty-krater	cratera Shorty
+Cone Crater	кратер Конус	コーン・クレーター	锥形撞击坑	콘 분화구	कोन क्रेटर	فوهة كون	кратер Конус	Cone-Krater	cratère Cone	cráter Cone	cratere Cone	Cone-krater	cratera Cone
+Cabeus	Кабео	カベウス	卡比厄斯	카베우스	कैबियस	كابيوس	Кабеус	-	-	-	Cabeo	-	-
+Rheasilvia	Реясильвия	レアシルヴィア	雷亚希尔维亚	레아실비아	रियासिल्विया	ريسيلفيا	Реасилвија	-	-	-	-	-	-
+Olympus Mons	гора Олимп	オリンポス山	奥林帕斯山	올림푸스산	ओलम्पस पर्वत	جبل أوليمبوس	планина Олимп	-	-	-	-	-	Monte Olimpo
+Pavonis Mons	гора Павлина	パヴォニス山	帕弗尼斯山	파보니스 산	पावोनिस पर्वत	جبل بافونيس	планина Павонис	-	-	-	-	-	-
+Hadriacus Mons	гора Адриатическая	ハドリアクス山	哈德里亚卡山	하드리아쿠스 산	हैड्रिएकस पर्वत	جبل هادرياكوس	планина Хадријакус	-	-	-	-	-	-
+Ahuna Mons	гора Ахуна	アフナ山	阿胡纳山	아후나 산	अहुना पर्वत	جبل أهونا	планина Ахуна	-	mont Ahuna	-	-	-	-
+Mount Sharp	гора Шарп	シャープ山	夏普山	샤프 산	शार्प पर्वत	جبل شارب	планина Шарп	-	mont Sharp	monte Sharp	monte Sharp	-	Monte Sharp
+Mt. Sharp	гора Шарп	シャープ山	夏普山	샤프 산	शार्प पर्वत	جبل شارب	планина Шарп	-	mont Sharp	monte Sharp	monte Sharp	-	Monte Sharp
+Sea of Tranquility	Море Спокойствия	静かの海	静海	고요의 바다	शांति सागर	بحر السكون	Море спокојства	Meer der Ruhe	mer de la Tranquillité	mar de la Tranquilidad	mare della Tranquillità	Zee der Rust	mar da Tranquilidade
+Ocean of Storms	Океан Бурь	嵐の大洋	风暴洋	폭풍의 대양	तूफ़ानों का महासागर	محيط العواصف	Океан олуја	Ozean der Stürme	océan des Tempêtes	océano de las Tormentas	oceano delle Tempeste	Oceaan der Stormen	oceano das Tempestades
+Mare Cognitum	Море Познанное	既知の海	知海	인식의 바다	ज्ञात सागर	البحر المعلوم	Море познатог	-	-	-	-	-	-
+Statio Cognitum	станция «Познанное»	スタティオ・コグニトゥム	知海站	스타티오 코그니툼	स्टेशियो कॉग्निटम	محطة كوغنيتوم	станица Когнитум	-	-	-	-	-	-
+Tranquillity Base	База Спокойствия	静かの基地	静海基地	고요의 기지	ट्रैंक्विलिटी बेस	قاعدة السكون	База Спокојство	-	base de la Tranquillité	Base Tranquilidad	Base della Tranquillità	-	Base Tranquilidade
+Taurus-Littrow Valley	долина Тавр-Литтров	タウルス・リットロウ渓谷	陶拉斯-利特罗谷	타우루스-리트로 계곡	टॉरस-लिट्रो घाटी	وادي توروس-ليترو	долина Таурус-Литроу	Taurus-Littrow-Tal	vallée Taurus-Littrow	valle Taurus-Littrow	valle Taurus-Littrow	Taurus-Littrowvallei	vale Taurus-Littrow
+South Pole-Aitken Basin	бассейн Южный полюс — Эйткен	南極エイトケン盆地	南极-艾特肯盆地	남극-에이트켄 분지	दक्षिणी ध्रुव-ऐटकेन बेसिन	حوض القطب الجنوبي-أيتكين	басен Јужни пол — Ејткен	Südpol-Aitken-Becken	bassin Pôle Sud-Aitken	cuenca Polo Sur-Aitken	bacino Polo Sud-Aitken	Zuidpool-Aitken-bekken	bacia do Polo Sul-Aitken
+South Pole-Aitken	Южный полюс — Эйткен	南極エイトケン	南极-艾特肯	남극-에이트켄	दक्षिणी ध्रुव-ऐटकेन	القطب الجنوبي-أيتكين	Јужни пол — Ејткен	Südpol-Aitken	Pôle Sud-Aitken	Polo Sur-Aitken	Polo Sud-Aitken	Zuidpool-Aitken	Polo Sul-Aitken
+South Pole–Aitken	Южный полюс — Эйткен	南極エイトケン	南极-艾特肯	남극-에이트켄	दक्षिणी ध्रुव-ऐटकेन	القطب الجنوبي-أيتكين	Јужни пол — Ејткен	Südpol-Aitken	Pôle Sud-Aitken	Polo Sur-Aitken	Polo Sud-Aitken	Zuidpool-Aitken	Polo Sul-Aitken
+Hadley Rille	борозда Хэдли	ハドリー谷	哈德利沟纹	해들리 열구	हैडली रिल	أخدود هادلي	бразда Хедли	Hadley-Rille	rainure Hadley	surco Hadley	solco Hadley	Hadley-rille	sulco Hadley
+Marius Hills	холмы Мариуса	マリウス丘	马里乌斯丘陵	마리우스 언덕	मारियस पहाड़ियाँ	تلال ماريوس	брда Маријус	Marius-Hügel	collines Marius	colinas Marius	colline Marius	Marius-heuvels	colinas Marius
+Columbia Hills	холмы Колумбия	コロンビア・ヒルズ	哥伦比亚丘陵	컬럼비아 힐스	कोलंबिया पहाड़ियाँ	تلال كولومبيا	брда Колумбија	-	-	colinas Columbia	-	-	Colinas Columbia
+Husband Hill	холм Хасбанда	ハズバンド・ヒル	赫斯本德山	허즈번드 언덕	हसबैंड हिल	تل هزبند	брдо Хазбанд	-	-	-	-	-	colina Husband
+Vera Rubin Ridge	гряда Веры Рубин	ベラ・ルービン尾根	薇拉·鲁宾山脊	베라 루빈 능선	वेरा रुबिन रिज	سلسلة فيرا روبين	гребен Вера Рубин	-	crête Vera Rubin	cresta Vera Rubin	cresta Vera Rubin	-	cume Vera Rubin
+Tharsis	Фарсида	タルシス	塔尔西斯	타르시스	थार्सिस	ثارسيس	Тарсис	-	-	-	-	-	-
+Valles Marineris	долины Маринер	マリネリス峡谷	水手号峡谷	매리너 계곡	मैरिनर घाटी	وادي مارينر	долина Маринера	-	-	-	-	-	-
+Margaritifer Terra	Жемчужная земля	マルガリティファー・テラ	珍珠湾高地	마르가리티페르 테라	मार्गरिटिफर टेरा	أرض مارغاريتيفر	Маргаритифер Тера	-	-	-	-	-	-
+Aeolis Palus	равнина Эолида	アイオリス・パルス	伊奥利亚沼	아이올리스 팔루스	एओलिस पेलस	سهل أيوليس	равница Еолида	-	-	-	-	-	-
+Aphrodite Terra	Земля Афродиты	アフロディーテ大陸	阿佛洛狄忒陆	아프로디테 대륙	एफ्रोडाइट टेरा	أرض أفروديت	Афродитина земља	-	-	-	-	-	-
+Rusalka Planitia	равнина Русалки	ルサルカ平原	鲁萨尔卡平原	루살카 평원	रुसाल्का मैदान	سهل روسالكا	равница Русалка	-	-	-	-	-	-
+Phoebe Regio	область Фебы	フェーベ地域	福柏区	포이베 지역	फ़ीबी क्षेत्र	منطقة فيبي	област Феба	-	-	-	-	-	-
+Vulcan Planitia	равнина Вулкана	ヴァルカン平原	瓦肯平原	벌컨 평원	वल्कन मैदान	سهل فولكان	равница Вулкан	-	-	-	-	-	-
+Loki Patera	патера Локи	ロキ火口	洛基火山口	로키 파테라	लोकी पटेरा	فوهة لوكي	патера Локи	-	-	-	-	-	-
+Messina Chasma	каньон Мессина	メッシーナ谷	墨西拿峡谷	메시나 협곡	मेसिना खाई	أخدود ميسينا	кањон Месина	-	-	-	-	-	-
+Verona Rupes	уступ Верона	ヴェローナ断崖	维罗纳断崖	베로나 절벽	वेरोना चट्टान	جرف فيرونا	литица Верона	-	-	-	-	Veronarots	-
+Lacus Excellentiae	Озеро Превосходства	卓越の湖	秀丽湖	탁월의 호수	उत्कृष्टता झील	بحيرة التفوق	Језеро изврсности	-	-	-	-	-	-
+Sputnik Planitia	равнина Спутника	スプートニク平原	斯普特尼克平原	스푸트니크 평원	स्पुतनिक मैदान	سهل سبوتنيك	равница Спутњик	Sputnik-Ebene	-	-	-	-	-
+Tombaugh Regio	область Томбо	トンボー地域	汤博区	톰보 지역	टॉमबॉ क्षेत्र	منطقة تومبو	област Томбо	-	-	-	-	-	-
+Shiv Shakti Point	точка Шив-Шакти	シヴ・シャクティ・ポイント	湿婆-沙克提点	시브샥티 지점	शिव शक्ति प्वाइंट	نقطة شيف شاكتي	тачка Шив Шакти	Statio Shiv Shakti	Statio Shiv Shakti	-	-	Statio Shiv Shakti	-

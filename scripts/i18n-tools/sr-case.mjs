@@ -96,3 +96,42 @@ export function guessCaseSr(before) {
   for (const [re, c] of PREP) if (re.test(b)) return c;
   return 'nom';
 }
+
+// People. Every word of the name declines (Јуриј Гагарин → Јурија Гагарина); a man's
+// accusative is his genitive. A woman's name on a consonant does not decline (Пеги Витсон).
+function personWordSr(w, c, female, isLast) {
+  if (c === 'nom' || /^[A-Z0-9]|\.$|^(фон|де|ван|дер|да|ди|ле|ла)$/.test(w)) return w;
+  if (female) {
+    // Russian women's surnames decline like adjectives: Терешкове, Терешковој
+    if (isLast && /(ова|ева|ина|ска|цка)$/.test(w))
+      return w.slice(0, -1) + { gen: 'е', dat: 'ој', acc: 'у', ins: 'ом', loc: 'ој' }[c];
+    if (/ија$/.test(w) || /а$/.test(w))
+      return w.slice(0, -1) + { gen: 'е', dat: 'и', acc: 'у', ins: 'ом', loc: 'и' }[c];
+    return w;
+  }
+  if (/(ски|цки|шки|чки)$/.test(w))
+    return w.slice(0, -1) + { gen: 'ог', dat: 'ом', acc: 'ог', ins: 'им', loc: 'ом' }[c];
+  if (/а$/.test(w))
+    return w.slice(0, -1) + { gen: 'е', dat: 'и', acc: 'у', ins: 'ом', loc: 'и' }[c];
+  if (/о$/.test(w))
+    return w.slice(0, -1) + { gen: 'а', dat: 'у', acc: 'а', ins: 'ом', loc: 'у' }[c];
+  if (/[еиу]$/.test(w)) return w + { gen: 'ја', dat: 'ју', acc: 'ја', ins: 'јем', loc: 'ју' }[c];
+  if (/[бвгдђжзјклљмнњпрстћфхцчџш]$/.test(w))
+    return (
+      w + { gen: 'а', dat: 'у', acc: 'а', ins: /[јљњћђчџшж]$/.test(w) ? 'ем' : 'ом', loc: 'у' }[c]
+    );
+  return w;
+}
+/** Decline a person's name (all words) in Serbian. */
+export function declinePersonSr(name, c, female = false) {
+  if (c === 'nom') return name;
+  const ws = name.split(' ');
+  return ws
+    .map((w, i) =>
+      w
+        .split('-')
+        .map((p) => personWordSr(p, c, female, i === ws.length - 1))
+        .join('-'),
+    )
+    .join(' ');
+}

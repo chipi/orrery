@@ -6,8 +6,8 @@
 //   node scripts/i18n-tools/glossary-apply.mjs <loc> <class[,class…]>
 import fs from 'node:fs';
 import path from 'node:path';
-import { declineRu, dropHeadIfRepeated, guessCaseRu } from './ru-case.mjs';
-import { caseFromSuffix, declineSr, guessCaseSr } from './sr-case.mjs';
+import { declinePersonRu, declineRu, dropHeadIfRepeated, guessCaseRu } from './ru-case.mjs';
+import { caseFromSuffix, declinePersonSr, declineSr, guessCaseSr } from './sr-case.mjs';
 const [loc, classes = 'body'] = process.argv.slice(2);
 const GL = JSON.parse(fs.readFileSync('scripts/i18n-tools/native-terms.json', 'utf8'));
 // Longest first, so "Cape Canaveral" is replaced before a shorter key could match inside it.
@@ -62,6 +62,9 @@ const ALIAS = {
       .replace('1/5', '1'),
   },
 };
+// people decline by their own rules (animate accusative, -ов/-ин surnames, a woman's
+// foreign surname indeclinable); _female/_slavic come from Wikidata (name-forms.mjs)
+const PERSON = classes.split(',').includes('person') ? (GL.person ?? {}) : {};
 const G = Object.fromEntries(
   [...classes.split(',').map((c) => GL[c] ?? {}), sitePages, ALIAS]
     .flatMap((o) => Object.entries(o))
@@ -307,6 +310,19 @@ for (const f of walk(`i18n-src/${loc}`)) {
             const trail =
               b && (CJK.test(after) || /[、。，：）」』)]/.test(after)) && loc !== 'ko' ? '' : b;
             let here = nat;
+            // a possessive ending glued to a person's name ("Gagarin-ов") is left alone
+            if (PERSON[en] && suf && /^-ј?(ов|ев|ин)/.test(suf)) return m;
+            if (loc === 'ru' && PERSON[en]) {
+              const before = str.slice(Math.max(0, off - 40), off) + a;
+              const p = PERSON[en];
+              return lead + declinePersonRu(nat, guessCaseRu(before), p._female, p._slavic) + trail;
+            }
+            if (loc === 'sr-Cyrl' && PERSON[en]) {
+              const before = str.slice(Math.max(0, off - 40), off) + a;
+              const p = PERSON[en];
+              const c = caseFromSuffix(suf, p._female) ?? guessCaseSr(before);
+              return lead + declinePersonSr(nat, c, p._female) + trail;
+            }
             if (loc === 'ru') {
               const before = str.slice(Math.max(0, off - 40), off) + a;
               here = dropHeadIfRepeated(nat, before) ?? declineRu(nat, guessCaseRu(before));

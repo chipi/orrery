@@ -1,0 +1,139 @@
+# Hand corrections to wikidata-name-forms.tsv, read by name-glossary-merge.mjs.
+# qid \t locale \t form ("-" = no form: the name stays as it is in that locale)
+# People: the text uses the nickname (Wally, Gus, Jim, Bill, Pete, Buzz, Jack, Frank,
+# Charlie, Butch, Don); the label carries the formal name.
+Q110450	ru	Уолли Ширра
+Q110450	ja	ウォーリー・シラー
+Q110450	zh-CN	沃利·施艾拉
+Q110450	sr-Cyrl	Воли Шира
+Q110879	ru	Гас Гриссом
+Q110879	zh-CN	格斯·格里森
+Q110879	sr-Cyrl	Гас Грисом
+Q111240	ru	Джим Ловелл
+Q19242	ru	Билл Андерс
+Q19242	ja	ビル・アンダース
+Q19242	zh-CN	比尔·安德斯
+Q19242	ar	بيل أندرس
+Q19242	sr-Cyrl	Бил Андерс
+Q213076	ru	Пит Конрад
+Q213076	ar	بيت كونراد
+Q2252	ja	バズ・オルドリン
+Q348358	ru	Джек Суайгерт
+Q30315159	ru	Фрэнк Рубио
+Q30315159	zh-CN	弗兰克·鲁比奥
+Q30315159	ar	فرانك روبيو
+Q3116390	ru	Рид Уайзмен
+Q3116390	ar	ريد وايزمان
+Q3116390	sr-Cyrl	Рид Вајзман
+Q123078	sr-Cyrl	Роберт Хајнлајн
+Q182546	sr-Cyrl	Роберт Годард
+Q159905	sr-Cyrl	Хипарх
+Q180109	sr-Cyrl	Аполоније из Перге
+Q180109	zh-CN	佩尔吉的阿波罗尼奥斯
+Q182642	hi	-
+Q182642	ja	ジョン・グレン
+Q182642	zh-CN	约翰·格伦
+Q310924	hi	-
+Q375065	ko	-
+Q554409	ru	Батч Уилмор
+Q554409	ja	ブッチ・ウィルモア
+Q554409	zh-CN	布奇·威尔莫尔
+Q554409	ko	부치 윌모어
+Q554409	ar	بوتش ويلمور
+Q554409	sr-Cyrl	Буч Вилмор
+Q363250	ru	Дон Петтит
+Q363250	ja	ドン・ペティ
+Q363250	zh-CN	唐·佩蒂特
+Q363250	ar	دون بيتيت
+Q519268	ar	غوردون فولرتون
+Q735104	ar	كريستوفر كرافت
+Q735104	ja	クリストファー・クラフト
+Q735104	zh-CN	克里斯托弗·克拉夫特
+Q735104	ko	크리스토퍼 크래프트
+Q112284	ar	تشارلز ديوك
+# Stars and deep sky
+Q680341	zh-CN	参宿三
+Q32883	ru	Карликовая галактика в Малой Медведице
+Q10542	ar	الصليب الجنوبي
+Q50042	ru	Туманность Киля
+Q50042	sr-Cyrl	Маглина Карина
+Q88540091	es	Aldebarán
+Q12980	fr	Étoile polaire
+Q2469	ar	مجرة المرأة المسلسلة
+Q2469	sr-Cyrl	Галаксија Андромеда
+Q490342	ru	Туманность Пламя
+Q490342	ja	-
+Q8837	sr-Cyrl	Златна риба
+Q3944	sr-Cyrl	Локална група
+Q10934	sr-Cyrl	Рачја маглина
+Q13903	sr-Cyrl	Орионова маглина
+Q11243	sr-Cyrl	Маглина Лагуна
+Q11349	sr-Cyrl	Маглина Орао
+Q13969	sr-Cyrl	Маглина Прстен
+Q13957	sr-Cyrl	Галаксија Вртлог
+Q91461627	sr-Cyrl	Галаксија Сомбреро
+Q13724	sr-Cyrl	Галаксија Троугао
+Q14371	sr-Cyrl	-
+Q828325	sr-Cyrl	-
+Q50028	zh-CN	麦哲伦云
+Q2179	sr-Cyrl	Астероидни појас
+Q204997	ru	комета Хартли 2
+Q204997	sr-Cyrl	комета Хартли 2
+Q42313338	ru	Оумуамуа
+Q31428	ru	комета Когоутека
+Q31428	sr-Cyrl	комета Кохоутек
+# Run-specific (4th column = the English key the row is for)
+Q111240	ru	Джеймс Ловелл	James Lovell
+Q111240	ja	ジェームズ・ラヴェル	James Lovell
+Q111240	zh-CN	詹姆斯·洛弗尔	James Lovell
+Q111240	ko	제임스 러벨	James Lovell
+Q111240	ar	جيمس لوفل	James Lovell
+Q111240	sr-Cyrl	Џејмс Лавел	James Lovell
+Q112284	ru	Чарли Дьюк	Charlie Duke
+Q112284	ja	チャーリー・デューク	Charlie Duke
+Q112284	zh-CN	查理·杜克	Charlie Duke
+Q112284	ko	찰리 듀크	Charlie Duke
+Q112284	ar	تشارلي ديوك	Charlie Duke
+Q112284	sr-Cyrl	Чарли Дјук	Charlie Duke
+Q110916469	ru	Кидд Потит
+Q110916469	zh-CN	基德·波蒂特
+Q106286882	ru	Крис Семброски
+Q106286882	ja	クリス・センブロスキ
+Q106286882	zh-CN	克里斯·森布罗斯基
+Q1101244	ja	クリフ・チャールズワース
+Q1101244	zh-CN	克利夫·查尔斯沃思
+Q55177	ru	Суни Уильямс
+Q55177	ja	スニ・ウィリアムズ
+Q55177	zh-CN	苏妮·威廉斯
+Q55177	ko	수니 윌리엄스
+Q55177	hi	सुनी विलियम्स
+Q55177	ar	سوني ويليامز
+Q55177	sr-Cyrl	Суни Вилијамс
+Q3294252	ru	Ванде Хай
+Q3294252	ja	ヴァンデ・ヘイ
+Q3294252	zh-CN	范德黑
+Q3294252	ar	فاندي هاي
+Q3294252	sr-Cyrl	Ванде Хај
+Q312833	ru	Гордон Купер
+Q335503	ru	Скотт Карпентер
+Q519268	ru	Гордон Фуллертон
+Q535965	ru	Брент Талли
+Q535965	ja	ブレント・タリー
+Q535965	ar	برينت تولي
+Q4526447	ru	Линда Зальцман	Linda Salzman
+Q92743	ru	Винт Серф
+Q92743	ja	ヴィント・サーフ
+Q92743	sr-Cyrl	Винт Серф
+Q80222	ru	Жозеф Луи Лагранж
+Q80222	hi	जोसेफ लुई लाग्रांज
+Q80222	ar	جوزيف لوي لاغرانج
+Q80222	sr-Cyrl	Жозеф Луј Лагранж
+Q9696	ru	Джон Ф. Кеннеди
+Q47087	ru	Артур Кларк
+Q47087	zh-CN	亚瑟·克拉克
+Q47087	sr-Cyrl	Артур Кларк
+Q147581	ar	يانغ لي وي
+Q197135	ar	تشاي تشي قانغ
+Q229674	ar	كريستا ماك أوليف
+Q14371	es	-
+Q50042	zh-CN	船底座星云

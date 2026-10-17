@@ -1,0 +1,144 @@
+// Native forms for the names name-inventory.mjs classified: for every Wikidata item, each
+// locale's form — the article title of that language's Wikipedia for bodies, features
+// and stars (disambiguator "(спутник)" dropped), the label for people (ruwiki titles are
+// "Surname, Name Patronymic"; the Russian patronymic is dropped from the running-text
+// form). "-" = that language has neither. Read-only; network (wikidata.org, free).
+//   node scripts/i18n-tools/name-forms.mjs <wikidata-name-classes.tsv> <out.tsv>
+// Output TSV: kind \t qid \t enwiki \t runs (|-joined) \t female \t slavic \t <loc>=<form>…
+// (a form from a label rather than an article is prefixed "label:", for review).
+import fs from 'node:fs';
+
+const [inv, out] = process.argv.slice(2);
+const LOCS = {
+  ru: ['ru', 'ru'],
+  ja: ['ja', 'ja'],
+  'zh-CN': ['zh', 'zh-cn|zh-hans|zh'],
+  ko: ['ko', 'ko'],
+  hi: ['hi', 'hi'],
+  ar: ['ar', 'ar'],
+  'sr-Cyrl': ['sr', 'sr-ec|sr'],
+  de: ['de', 'de'],
+  fr: ['fr', 'fr'],
+  es: ['es', 'es'],
+  it: ['it', 'it'],
+  nl: ['nl', 'nl'],
+  'pt-BR': ['pt', 'pt-br|pt'],
+};
+const items = new Map();
+for (const l of fs.readFileSync(inv, 'utf8').trim().split('\n')) {
+  const [n, run, kind, qid, , enwiki, female] = l.split('\t');
+  if (!items.has(qid)) items.set(qid, { kind, enwiki, female: female === '1', runs: [] });
+  items.get(qid).runs.push(`${run}:${n}`);
+}
+const CACHE = process.env.NAME_FORMS_CACHE ?? '/tmp/name-forms-cache.json';
+const cache = fs.existsSync(CACHE) ? JSON.parse(fs.readFileSync(CACHE, 'utf8')) : {};
+const langs = [...new Set(Object.values(LOCS).flatMap(([, l]) => l.split('|')))].join('|');
+async function wbget(params) {
+  for (let t = 0; t < 8; t++) {
+    await new Promise((r) => setTimeout(r, 1000));
+    const r = await fetch('https://www.wikidata.org/w/api.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'User-Agent': 'orrery-i18n-tools/1 (https://github.com/chipi/orrery; translation glossary)',
+      },
+      body: new URLSearchParams({ action: 'wbgetentities', format: 'json', ...params }),
+    });
+    const j = r.ok ? await r.json().catch(() => null) : null;
+    if (j && !j.error) return j;
+    console.error(`HTTP ${r.status} ${j?.error?.code ?? ''} — retry ${t + 1}`);
+    await new Promise((res) => setTimeout(res, 5000 * 2 ** Math.min(t, 4)));
+  }
+  throw new Error('wikidata API kept refusing');
+}
+const ids = [...items.keys()].filter((q) => !cache[q]?.conv);
+for (let i = 0; i < ids.length; i += 50) {
+  const batch = ids.slice(i, i + 50).join('|');
+  const j = await wbget({ ids: batch, props: 'labels|sitelinks', languages: langs });
+  // zh-cn / sr-ec labels through Wikidata's language converter (traditional → simplified,
+  // Latin → Cyrillic); kept only when the converted label came from a zh / sr variant
+  const k = await wbget({
+    ids: batch,
+    props: 'labels',
+    languages: 'zh-cn|sr-ec',
+    languagefallback: '1',
+  });
+  for (const e of Object.values(j.entities ?? {})) {
+    const conv = {};
+    for (const [l, v] of Object.entries(k.entities?.[e.id]?.labels ?? {}))
+      if ((v['source-language'] ?? v.language).slice(0, 2) === l.slice(0, 2)) conv[l] = v.value;
+    cache[e.id] = { ...e, conv };
+  }
+  fs.writeFileSync(CACHE, JSON.stringify(cache));
+  process.stderr.write(`\r${Math.min(i + 50, ids.length)}/${ids.length}`);
+}
+const noParen = (s) => s.replace(/\s*[（(][^)）]*[)）]\s*$/, '').trim();
+const CYR = /[Ѐ-ӿ]/;
+const rows = [];
+for (const [qid, it] of items) {
+  const e = cache[qid];
+  if (!e) continue;
+  let slavic = false;
+  const cells = Object.entries(LOCS).map(([loc, [wiki, lls]]) => {
+    const title = e.sitelinks?.[`${wiki}wiki`]?.title;
+    let label = lls
+      .split('|')
+      .map((l) => e.labels?.[l]?.value)
+      .find(Boolean);
+    // the converted label is the simplified form for zh-CN; Serbian's Latin → Cyrillic
+    // converter is mechanical on foreign spellings ("Qуаоар"), so sr-Cyrl takes only a
+    // label or title that is Cyrillic at the source
+    if (loc === 'zh-CN' && e.conv?.['zh-cn']) label = e.conv['zh-cn'];
+    if (loc === 'sr-Cyrl' && label && !CYR.test(label)) label = undefined;
+    let form;
+    if (it.kind === 'person') {
+      form = label ?? (title ? `label:${noParen(title)}` : null);
+      if (form && loc === 'ru') {
+        // "Юрий Алексеевич Гагарин" → "Юрий Гагарин"
+        const w = form.split(' ');
+        if (w.length === 3 && /(вич|вна|ична|ич)$/.test(w[1])) {
+          slavic = true;
+          form = `${w[0]} ${w[2]}`;
+        }
+      }
+      if (form && !label) form = form.replace(/^label:([^,]+), (.+)$/, 'label:$2 $1');
+    } else {
+      // zhwiki titles mix traditional characters and srwiki titles mix Latin script, so
+      // those two take the converted label; the others take the article title
+      // Latin-script Wikipedias often title a star by its Bayer designation (fr "Alpha
+      // Virginis" for Spica); the label is the star's name there
+      const latinStar = it.kind === 'star' && /^(de|fr|es|it|nl|pt-BR)$/.test(loc);
+      const scripted =
+        (loc === 'zh-CN' && label) ||
+        (loc === 'sr-Cyrl' && label && CYR.test(label)) ||
+        (latinStar && label);
+      form = scripted
+        ? noParen(label)
+        : title && !(loc === 'sr-Cyrl' && !CYR.test(title))
+          ? noParen(title)
+          : label
+            ? `label:${label}`
+            : null;
+      // a minor-planet number is not part of the name in running text:
+      // "(101955) Бенну", "4 Vesta", "بينو 101955" → the name alone
+      // (a bare number only for a numbered minor planet: "Shoemaker-Levy 9" keeps its 9)
+      if (form && it.kind === 'body') {
+        const numbered = /^\d+ /.test(it.enwiki);
+        const bare = form
+          .replace(numbered ? /^(label:)?\(?\p{Nd}+\)?\s+/u : /^(label:)?\(\p{Nd}+\)\s+/u, '$1')
+          .replace(numbered ? /\s+\p{Nd}+$/u : /$^/, '')
+          .replace(/^(label:)?(小行星|الكويكب )\p{Nd}+$/u, '');
+        form = /\p{L}/u.test(bare.replace(/^label:/, '')) ? bare : null;
+      }
+    }
+    return `${loc}=${form ?? '-'}`;
+  });
+  rows.push(
+    [it.kind, qid, it.enwiki, it.runs.join('|'), it.female ? 1 : 0, slavic ? 1 : 0, ...cells].join(
+      '\t',
+    ),
+  );
+}
+rows.sort();
+fs.writeFileSync(out, rows.join('\n') + '\n');
+console.error(`\nitems ${rows.length}`);

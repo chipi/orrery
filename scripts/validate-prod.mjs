@@ -176,7 +176,22 @@ async function load(ctx, path, { waitMs = 1500 } = {}) {
 
 // ── Main ─────────────────────────────────────────────────────────────────────
 const browser = await chromium.launch();
-const desktop = await browser.newContext({ viewport: { width: 1280, height: 800 } });
+
+// The validator is not a visitor. Every context carries the site's own analytics
+// opt-out (ADR-092 cookie), so its hundreds of synthetic pageviews never land in
+// the real Umami site of the tier it checks (prod's included). Per ADR-067's
+// 2026-09-10 amendment the opt-out also silences crash reports, so the opt-in
+// real-error check (VALIDATE_ERROR_POST=1) uses its own context without it.
+async function optOutOfAnalytics(context) {
+  await context.addCookies([
+    { name: 'orrery_analytics_optout', value: '1', domain: new URL(BASE).hostname, path: '/' },
+  ]);
+  return context;
+}
+
+const desktop = await optOutOfAnalytics(
+  await browser.newContext({ viewport: { width: 1280, height: 800 } }),
+);
 
 console.log(`\n  Orrery ${TIER} validator → ${BASE}\n`);
 
@@ -459,7 +474,9 @@ suite('regression-guards');
 
 // 7c. locale switch stays on the current route with its content (PWA shell fix).
 {
-  const ctx = await browser.newContext({ viewport: { width: 1200, height: 800 } });
+  const ctx = await optOutOfAnalytics(
+    await browser.newContext({ viewport: { width: 1200, height: 800 } }),
+  );
   const p = await ctx.newPage();
   await p.goto(BASE + '/explore', { waitUntil: 'networkidle', timeout: 30000 }).catch(() => {});
   await p.reload({ waitUntil: 'networkidle' }).catch(() => {}); // activate SW
@@ -513,7 +530,13 @@ suite('regression-guards');
 // don't pollute the GlitchTip prod project (18, orrery-prod) with a synthetic
 // event every time.
 {
-  const p = await desktop.newPage();
+  // The analytics opt-out also silences Sentry (ADR-067 amendment), so the opt-in
+  // real-error check needs a context WITHOUT it; otherwise the shared opted-out one.
+  const errCtx =
+    process.env.VALIDATE_ERROR_POST === '1'
+      ? await browser.newContext({ viewport: { width: 1280, height: 800 } })
+      : desktop;
+  const p = await errCtx.newPage();
   const posts = [],
     badLogs = [];
   p.on('request', (r) => {
@@ -590,6 +613,7 @@ suite('regression-guards');
     }
   }
   await p.close();
+  if (errCtx !== desktop) await errCtx.close();
 }
 
 // 7e. /moon has no route-patches 404 (the optional-fetch gate).
@@ -612,11 +636,13 @@ suite('regression-guards');
 // SUITE 8 — mobile + interaction smoke
 suite('interactions');
 {
-  const mob = await browser.newContext({
-    viewport: { width: 390, height: 844 },
-    isMobile: true,
-    hasTouch: true,
-  });
+  const mob = await optOutOfAnalytics(
+    await browser.newContext({
+      viewport: { width: 390, height: 844 },
+      isMobile: true,
+      hasTouch: true,
+    }),
+  );
   // mobile home + nav
   {
     const { p, status } = await load(mob, '/', { waitMs: 1500 });

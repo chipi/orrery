@@ -61,6 +61,7 @@ This is the architecture and design documentation, not the user-facing help. Rea
 - **[Mobile build & deploy](/guides/mobile-build-and-deploy)** — contributor runbook for the iOS/Android app: toolchain, `build:mobile` + stream-heavy prune, `cap sync`/run, TestFlight, and the safe-area / scroll / lockfile sharp edges.
 - **[Mobile testing strategy](/guides/mobile-testing)** — the test pyramid for the Capacitor app: what Layer 1 (`test:e2e:mobile`, device-free) asserts about the streaming contract + size budget, the Appium Layer 2 roadmap, and the on-device manual checklist.
 - **[Translator guide](/guides/i18n-style-guide)** — binding glossary for translators, per ADR-033.
+- **[Translation strategy](/guides/i18n-translation-strategy)** — how and why Orrery is translated: name rules, native science terms, one name per thing, glossary, tools, order of work, lessons.
 
 ### Decision history
 

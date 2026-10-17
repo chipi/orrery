@@ -19,6 +19,7 @@ Then drill into the matching doc by question type:
 | What is the open architecture question being deliberated? | `docs/rfc/` — RFCs in flight (RFC-001 through RFC-017) |
 | What does the UI look like? | `docs/uxs/` — UX specifications |
 | Per-language translation rules? | `docs/guides/i18n-style-guide.md` (binding per ADR-033) |
+| How we translate, and why (new language, clean-up pass)? | `docs/guides/i18n-translation-strategy.md` |
 | Image / link / text provenance? | `static/data/{image,link}-provenance.json` + ADR-046 / ADR-047 / ADR-051 |
 | How is a specific 3D scene built? | TA.md §rendering + `src/routes/<route>/+page.svelte` |
 | How does the build pipeline work? | TA.md §pipelines (10 pipelines documented) |

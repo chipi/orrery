@@ -10,7 +10,7 @@
 You are translating Orrery into a new language. Before you start:
 
 1. Read **§1 Universal symbols** — these are never translated. Use the symbol literally in every language.
-2. Read **§2 Names** — never translate or transliterate a name; keep it exactly as the English writes it, in Latin script, in every language.
+2. Read **§2 Names and terms** — vehicles and missions by the origin rule; science terms, places and people native in your language; one name per thing.
 3. Use **§3 + §4** as a binding glossary. The accepted-convention column for your language is the source of truth; pick from the column rather than translating the English literally.
 4. If your language column is empty (you're the first translator for it), populate it as you go and submit those decisions for review with the translation pass.
 5. **Citation column** points at the source authority for the term (ESA glossary, NASA Spanish-language style guide, JAXA glossary, etc.). Cite where possible; defer to authoritative sources over LLM judgement.
@@ -40,36 +40,31 @@ Numeric units (km, s, kg, N, K, etc.) are **never translated** — they are SI. 
 
 ---
 
-## §2 Names (KEEP EXACTLY AS IN ENGLISH — never translate, never transliterate)
+## §2 Names and terms (operator rulings 2026-10-17 — see the [translation strategy](i18n-translation-strategy.md) §3)
 
-**Operator ruling 2026-10-17, binding in every language.** Every name stays exactly as the
-English source writes it, in Latin script: missions, spacecraft, rockets, stations and
-modules; companies, agencies and instruments; people; places and sky features. A name that
-is not Latin in its own country (Chinese, Russian, Japanese) uses its English spelling as
-the de-facto name everywhere (Chang'e 5, Soyuz, Hayabusa2). Grammar may inflect around a
-name (a case ending after a hyphen where the language needs one: `NASA-ин`,
-`Canberra-и`), but the name's letters never change. Ordinary nouns are translated: the
-Moon, the Sun, Mars, Earth, the Solar System, comet, orbit.
+**Things people built — origin rule.** Missions, spacecraft, rockets, stations, modules,
+programs, agencies, companies, design bureaus: English in every language, **except the
+language of the name's origin**, which uses the original name (ru «Союз МС-24», «Мир»,
+«Протон-М»; zh-CN 神舟, 嫦娥五号; Iranian names in Arabic script in `ar`). Agencies keep
+their acronym (NASA stays NASA). Code: `ORIGIN_NAMES` in `src/lib/name-origins.js`.
 
-This supersedes the earlier "transliterate surnames per local convention" rule. Existing
-translations are being converted (docs/wip/2026-10-17-post-v1-arc-plan.md, item 9b). The
-rule ships in code as `NAME_POLICY` (`scripts/lib/translate-quality.mjs`), which every
-translation script appends to its prompt; `problems()` there rejects a changed
-designation or a Latin word that isn't a name from the source.
+**Science, geography, astronomy and people — native in every language,** written the
+way that country's universities, schools and space agency write them: planets and moons,
+eponymous terms (законы Кеплера, сфера Хилла, эффект Оберта), term abbreviations (НОО for
+LEO), Moon/planet features, stars, constellations, galaxies, places, and people's names
+(Кеплер, ケプラー, 开普勒; fr Iouri Gagarine). Unsure → search the term in that language
+and use the form native pages use. The per-locale forms are in
+`scripts/i18n-tools/native-terms.json`.
 
-### Scientist surnames (keep in Latin, also inside eponymous terms: Hohmann transfer, Kepler's laws)
-| English | Notes |
-|---------|-------|
-| Hohmann (transfer) | Walter Hohmann |
-| Tsiolkovsky (equation) | Konstantin Tsiolkovsky |
-| Lagrange (point, L1–L5) | Joseph-Louis Lagrange |
-| Lambert (problem, solver) | Johann Heinrich Lambert |
-| Kepler (laws, orbit) | Johannes Kepler |
-| Oberth (effect) | Hermann Oberth |
-| Newton (laws, units) | Isaac Newton |
+**One thing, one name per language.** The form on the thing's own page (fleet, program,
+mission, body, site) is canonical; every mention in articles and editorials uses it.
 
-### Mission names (KEEP IN ORIGINAL — do not translate or transliterate)
+This supersedes the 2026-10-17-morning ruling that kept every name in Latin script. The
+rules ship in code as `NAME_POLICY` and `problems()` (`scripts/lib/translate-quality.mjs`).
+
+### Mission names
 Rationale: missions are real-world objects with single canonical names. A user searching for "Curiosity" in Spanish documentation should still find "Curiosity", not "Curiosidad".
+(The origin language uses the original name instead — §2 above: ru «Луна-9», zh-CN 嫦娥四号.)
 
 | Mission | Original |
 |---------|----------|

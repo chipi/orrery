@@ -6,19 +6,19 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "LANÇAMENTO",
       "note": "Falcon 9 Block 4 from KSC LC-39A 2017-09-07.",
       "type": "nominal"
     },
     {
       "met": 390,
-      "label": "ON-ORBIT OPS",
+      "label": "OPERAÇÕES EM ÓRBITA",
       "note": "Apogeu ~360 km, inclinação de 54,5°; operações com carga paga classificada.",
       "type": "info"
     },
     {
       "met": 780,
-      "label": "LANDING",
+      "label": "POUSO",
       "note": "Pouso autônomo em pista no KSC Shuttle Landing Facility 2019-10-27.",
       "type": "nominal"
     }

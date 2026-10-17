@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "LANÇAMENTO",
       "note": "Saturn V (AS-505) de Kennedy Space Center LC-39B em 18 de maio de 1969 às 16:49 UTC — primeiro lançamento tripulado de LC-39B.",
       "type": "nominal"
     },
@@ -25,19 +25,19 @@
     },
     {
       "met": 4.6,
-      "label": "LM SEPARATION",
+      "label": "SEPARAÇÃO DO LM",
       "note": "Snoopy desacopla de Charlie Brown. Tripulação de dois (Stafford + Cernan) desce em direção a Mare Tranquillitatis.",
       "type": "nominal"
     },
     {
       "met": 4.66,
-      "label": "CLOSEST APPROACH",
+      "label": "MÁXIMA APROXIMAÇÃO",
       "note": "Snoopy atinge ~15,6 km acima do local alvo de Apollo 11 — sem pouso; tudo verificado exceto o próprio toque do solo.",
       "type": "info"
     },
     {
       "met": 4.76,
-      "label": "ASCENT + RENDEZVOUS",
+      "label": "SUBIDA + ENCONTRO",
       "note": "Estágio de ascensão do Snoopy encontra-se com Charlie Brown — primeiro acoplamento LM-para-CSM completo em órbita lunar.",
       "type": "nominal"
     },
@@ -49,7 +49,7 @@
     },
     {
       "met": 8.05,
-      "label": "SPLASHDOWN",
+      "label": "AMERISSAGEM",
       "note": "CM foi recuperado no Oceano Pacífico Sul em 26 de maio de 1969 às 16:52 UTC. Recuperação pelo USS Princeton.",
       "type": "nominal"
     }

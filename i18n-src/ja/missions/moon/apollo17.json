@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "打ち上げ",
       "note": "サターン V（AS-512）が KSC LC-39A から 1972-12-07 — Apollo で唯一の夜間打ち上げ。",
       "type": "nominal"
     },
@@ -25,25 +25,25 @@
     },
     {
       "met": 4,
-      "label": "TOUCHDOWN",
+      "label": "接地",
       "note": "月着陸船 Challenger がタウルス・リトロー谷に着陸 1972-12-11 19:54 UTC。",
       "type": "nominal"
     },
     {
       "met": 4.3,
-      "label": "FIRST EVA",
+      "label": "最初の船外活動",
       "note": "Cernan と Schmitt が最初の月面EVA開始（三期で計二十二時間四分）。",
       "type": "info"
     },
     {
       "met": 7,
-      "label": "ASCENT",
+      "label": "上昇",
       "note": "Cernan：『私たちは来たときと同じように去る。神の御心ならば、また戻ってくる』",
       "type": "nominal"
     },
     {
       "met": 12.6,
-      "label": "SPLASHDOWN",
+      "label": "着水",
       "note": "CM Americaが乗組員を太平洋に帰還 1972-12-19。",
       "type": "nominal"
     }

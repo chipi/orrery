@@ -3,17 +3,17 @@
   "dep_label": "Earth dep",
   "arr_label": "Earth return",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "Falcon Heavy 升空。自由返回轨道——无着陆。", "type": "nominal" },
-    { "met": 0.4, "label": "TMI BURN", "note": "火星转移注入：3.61 km/s。达到逃逸速度。", "type": "nominal" },
-    { "met": 1, "label": "DAY 1 CHECK", "note": "首次系统健康检查完成。一切正常。", "type": "nominal" },
+    { "met": 0, "label": "发射", "note": "Falcon Heavy 升空。自由返回轨道——无着陆。", "type": "nominal" },
+    { "met": 0.4, "label": "TMI 点火", "note": "火星转移注入：3.61 km/s。达到逃逸速度。", "type": "nominal" },
+    { "met": 1, "label": "第 1 天检查", "note": "首次系统健康检查完成。一切正常。", "type": "nominal" },
     { "met": 60, "label": "TCM-1", "note": "中途修正1：35 m/s。", "type": "nominal" },
-    { "met": 200, "label": "CRUISE", "note": "外向航行。地球日渐远去。", "type": "info" },
-    { "met": 220, "label": "COMMS GLITCH", "note": "X频段信号中断（8秒）。DSN 重新获得信号。原因：推进器羽流遮挡。无数据丢失。", "type": "warning" },
-    { "met": 259, "label": "MARS FLYBY", "note": "最近接近：约300 km高度。重力辅助启动返回。", "type": "nominal" },
-    { "met": 260, "label": "RETURN TRAJECTORY", "note": "自由返回重力辅助完成。航天器在地球轨道上。", "type": "nominal" },
-    { "met": 310, "label": "MID-COURSE 3", "note": "TCM-3：22 m/s。返回轨道已修正。", "type": "nominal" },
-    { "met": 400, "label": "HALFWAY HOME", "note": "返程中点已过。", "type": "info" },
-    { "met": 480, "label": "RE-ENTRY PREP", "note": "最终接近。隔热罩检查。", "type": "nominal" },
-    { "met": 509, "label": "EARTH ARRIVAL", "note": "大气进入。任务完成。", "type": "nominal" }
+    { "met": 200, "label": "巡航", "note": "外向航行。地球日渐远去。", "type": "info" },
+    { "met": 220, "label": "通信故障", "note": "X频段信号中断（8秒）。DSN 重新获得信号。原因：推进器羽流遮挡。无数据丢失。", "type": "warning" },
+    { "met": 259, "label": "飞掠火星", "note": "最近接近：约300 km高度。重力辅助启动返回。", "type": "nominal" },
+    { "met": 260, "label": "返回轨道", "note": "自由返回重力辅助完成。航天器在地球轨道上。", "type": "nominal" },
+    { "met": 310, "label": "中途修正 3", "note": "TCM-3：22 m/s。返回轨道已修正。", "type": "nominal" },
+    { "met": 400, "label": "返程过半", "note": "返程中点已过。", "type": "info" },
+    { "met": 480, "label": "再入准备", "note": "最终接近。隔热罩检查。", "type": "nominal" },
+    { "met": 509, "label": "抵达地球", "note": "大气进入。任务完成。", "type": "nominal" }
   ]
 }

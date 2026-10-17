@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "LANCERING",
       "note": "Saturn V (AS-503) van Kennedy Space Center LC-39A 1968-12-21 12:51 UTC — eerste bemande Saturn V-vlucht.",
       "type": "nominal"
     },
@@ -25,13 +25,13 @@
     },
     {
       "met": 3.16,
-      "label": "EARTHRISE",
+      "label": "AARDOPKOMST",
       "note": "Anders fotografeert de aarde die over de maanhorizon rijst tijdens de vierde baan (1968-12-24, AS08-14-2383).",
       "type": "info"
     },
     {
       "met": 3.5,
-      "label": "GENESIS READING",
+      "label": "VOORLEZING UIT GENESIS",
       "note": "Bemanning leest uit Genesis op live TV voor ~1 miljard kijkers — grootste live TV-publiek tot op dat moment.",
       "type": "info"
     },
@@ -43,7 +43,7 @@
     },
     {
       "met": 6.13,
-      "label": "SPLASHDOWN",
+      "label": "WATERLANDING",
       "note": "CM waterlandde in de Noord-Atlantische Oceaan op 1968-12-27. Bergingsoperatie door USS Yorktown.",
       "type": "nominal"
     }

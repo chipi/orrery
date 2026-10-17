@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "打ち上げ",
       "note": "Saturn V（AS-505）、Kennedy Space Center LC-39B から、1969年5月18日 16時49分 UTC に打ち上げ — LC-39B からの初有人打ち上げ。",
       "type": "nominal"
     },
@@ -25,19 +25,19 @@
     },
     {
       "met": 4.6,
-      "label": "LM SEPARATION",
+      "label": "LM 分離",
       "note": "Snoopy が Charlie Brown からドッキング解除。2名のクルー（Stafford + Cernan）が Mare Tranquillitatis に向けて降下。",
       "type": "nominal"
     },
     {
       "met": 4.66,
-      "label": "CLOSEST APPROACH",
+      "label": "最接近",
       "note": "Snoopy が Apollo 11 着陸地点上空約15.6 km に到達 — 着陸なし；タッチダウン自体を除くすべてを検証。",
       "type": "info"
     },
     {
       "met": 4.76,
-      "label": "ASCENT + RENDEZVOUS",
+      "label": "上昇 + ランデブー",
       "note": "Snoopy 上昇段が Charlie Brown とのランデブー — 月周回軌道での最初の完全な LM-CSM 再ドッキング。",
       "type": "nominal"
     },
@@ -49,7 +49,7 @@
     },
     {
       "met": 8.05,
-      "label": "SPLASHDOWN",
+      "label": "着水",
       "note": "CM が 1969年5月26日 16時52分 UTC に南太平洋に着水。USS Princeton により回収。",
       "type": "nominal"
     }

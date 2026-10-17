@@ -4,9 +4,9 @@
   "first": "インド初の月ミッション；月面に広く水があることを確認",
   "description": "ISROの最初の惑星間宇宙探査機。軌道船はMoon Impact Probeを月面に送り届けました。これは別の世界に到達したインドの最初の物体です。また、6カ国から提供された11個の機器を搭載していました。Chandrayaan-1に搭載されたNASAのMoon Mineralogy Mapper（M3）は、教科書を書き直す発見をしました。水分子は月面全体に広く存在し、極地の暗い影のクレーターだけに閉じ込められているのではなかったのです。ミッションは2009年8月、ISROが宇宙探査機との通信を失ったときに突然終了しました。",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "PSLV-XL (C11) から Sriharikota。", "type": "nominal" },
+    { "met": 0, "label": "打ち上げ", "note": "PSLV-XL (C11) から Sriharikota。", "type": "nominal" },
     { "met": 17, "label": "MOI", "note": "月軌道投入 2008-11-08。", "type": "nominal" },
-    { "met": 24, "label": "MIP IMPACT", "note": "Moon Impact Probeは南極近くへの硬着陸を目指していました。", "type": "info" },
-    { "met": 320, "label": "CONTACT LOST", "note": "通信途絶 2009-08-29；三百十二日運用。", "type": "warning" }
+    { "met": 24, "label": "MIP 衝突", "note": "Moon Impact Probeは南極近くへの硬着陸を目指していました。", "type": "info" },
+    { "met": 320, "label": "通信途絶", "note": "通信途絶 2009-08-29；三百十二日運用。", "type": "warning" }
   ]
 }

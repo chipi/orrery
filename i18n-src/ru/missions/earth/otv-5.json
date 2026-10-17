@@ -6,19 +6,19 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "ЗАПУСК",
       "note": "Falcon 9 Block 4 from KSC LC-39A 2017-09-07.",
       "type": "nominal"
     },
     {
       "met": 390,
-      "label": "ON-ORBIT OPS",
+      "label": "РАБОТА НА ОРБИТЕ",
       "note": "Апогей ~360 км, наклонение 54,5°; засекреченные операции с полезной нагрузкой.",
       "type": "info"
     },
     {
       "met": 780,
-      "label": "LANDING",
+      "label": "ПОСАДКА",
       "note": "Автономная посадка на взлётно-посадочную полосу КСЦ Shuttle Landing Facility 2019-10-27.",
       "type": "nominal"
     }

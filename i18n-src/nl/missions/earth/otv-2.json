@@ -6,13 +6,13 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "LANCERING",
       "note": "Atlas V 501 (AV-026) from CCAFS SLC-41 2011-03-05.",
       "type": "nominal"
     },
     {
       "met": 234.5,
-      "label": "ON-ORBIT OPS",
+      "label": "OPERATIES IN DE BAAN",
       "note": "Apogeum ~340 km; geclassificeerde nuttige lading-operaties.",
       "type": "info"
     },

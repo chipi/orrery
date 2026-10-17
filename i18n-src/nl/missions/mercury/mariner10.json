@@ -6,37 +6,37 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "LANCERING",
       "note": "Atlas SLV-3D Centaur AC-34 from CCAFS LC-36B 1973-11-03 05:45 UTC.",
       "type": "nominal"
     },
     {
       "met": 94,
-      "label": "VENUS FLYBY",
+      "label": "SCHEERVLUCHT LANGS VENUS",
       "note": "5768 km dichtste benadering 1974-02-05; eerste opzettelijke gravity-assist trajectorie in de ruimtevaartgeschiedenis.",
       "type": "nominal"
     },
     {
       "met": 146,
-      "label": "MERCURY 1",
+      "label": "MERCURIUS 1",
       "note": "703 km dichtste benadering 1974-03-29; eerste Mercury-beelden.",
       "type": "nominal"
     },
     {
       "met": 322,
-      "label": "MERCURY 2",
+      "label": "MERCURIUS 2",
       "note": "48069 km dichtste benadering 1974-09-21; beeldvorming zuidelijke hemisfeer.",
       "type": "nominal"
     },
     {
       "met": 498,
-      "label": "MERCURY 3",
+      "label": "MERCURIUS 3",
       "note": "327 km dichtste benadering 1975-03-16; herbevestiging magnetisch veld.",
       "type": "nominal"
     },
     {
       "met": 506,
-      "label": "PROPELLANT END",
+      "label": "STUWSTOF OP",
       "note": "N₂ attitude-control gas uitgeput 1975-03-24; zender uitgeschakeld op commando.",
       "type": "nominal"
     }

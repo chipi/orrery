@@ -4,12 +4,12 @@
   "first": "Première mission financée par le secteur privé à atteindre la Lune ; première mission lunaire israélienne",
   "description": "Le Beresheet de SpaceIL (hébreu : « In the beginning ») s'est envolé comme passager d'un vol partagé à bord d'une Falcon 9 en février 2019. Au lieu d'une injection trans-lunaire directe, le petit atterrisseur a effectué des semaines de manœuvres de circularisation du périgée pour s'échapper d'une orbite de stationnement jusqu'à la Lune — une trajectoire économe en carburant pionnière pour les missions à faible budget. Après une insertion réussie en orbite lunaire le 4 avril 2019, une réinitialisation de l'unité de mesure inertielle lors de la descente a provoqué l'arrêt du moteur principal. Le Beresheet s'est écrasé dans la Mare Serenitatis. SpaceIL s'est engagée à réaliser un successeur (Beresheet 2) en quelques jours.",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "Vol partagé Falcon 9 depuis Cape Canaveral 2019-02-22.", "type": "nominal" },
-    { "met": 0.01, "label": "PHASING BURN", "note": "Premier des sept rehaussements de périgée pour s'échapper de l'orbite terrestre basse et atteindre l'approche lunaire.", "type": "info" },
+    { "met": 0, "label": "LANCEMENT", "note": "Vol partagé Falcon 9 depuis Cape Canaveral 2019-02-22.", "type": "nominal" },
+    { "met": 0.01, "label": "MANŒUVRE DE PHASAGE", "note": "Premier des sept rehaussements de périgée pour s'échapper de l'orbite terrestre basse et atteindre l'approche lunaire.", "type": "info" },
     { "met": 10, "label": "TCM 1", "note": "Correction de trajectoire lors de la montée multi-orbitale.", "type": "info" },
     { "met": 20, "label": "TCM 2", "note": "Deuxième correction de trajectoire. L'apogée s'approche de la distance de capture lunaire.", "type": "info" },
-    { "met": 41, "label": "LUNAR APPROACH", "note": "Dernier rehaussement trans-lunaire — Beresheet en trajectoire directe vers la Lune.", "type": "nominal" },
-    { "met": 48, "label": "LUNAR ORBIT INSERTION", "note": "Capture en orbite lunaire elliptique 2019-04-04.", "type": "nominal" },
-    { "met": 48.01, "label": "DESCENT ANOMALY", "note": "Réinitialisation de l'IMU lors de la descente motorisée → arrêt du moteur → crash dans Mare Serenitatis 2019-04-11.", "type": "warning" }
+    { "met": 41, "label": "APPROCHE LUNAIRE", "note": "Dernier rehaussement trans-lunaire — Beresheet en trajectoire directe vers la Lune.", "type": "nominal" },
+    { "met": 48, "label": "INSERTION EN ORBITE LUNAIRE", "note": "Capture en orbite lunaire elliptique 2019-04-04.", "type": "nominal" },
+    { "met": 48.01, "label": "ANOMALIE DE DESCENTE", "note": "Réinitialisation de l'IMU lors de la descente motorisée → arrêt du moteur → crash dans Mare Serenitatis 2019-04-11.", "type": "warning" }
   ]
 }

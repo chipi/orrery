@@ -7,25 +7,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "发射",
       "note": "Saturn IB SA-206 from LC-39B 1973-05-25 13:00 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.33,
-      "label": "DOCK",
+      "label": "对接",
       "note": "CSM 对接到 Skylab 轴向端口，完成软对接故障排除。",
       "type": "nominal"
     },
     {
       "met": 14,
-      "label": "EVA #2 — POWER RESTORED",
+      "label": "第 2 次出舱 — 恢复供电",
       "note": "Conrad + Kerwin 在 3.5 小时的舱外活动中释放了卡住的太阳能电池翼。",
       "type": "nominal"
     },
     {
       "met": 28.04,
-      "label": "SPLASHDOWN",
+      "label": "溅落",
       "note": "CSM-116 于 1973-06-22 13:50 UTC 在太平洋溅落。",
       "type": "nominal"
     }

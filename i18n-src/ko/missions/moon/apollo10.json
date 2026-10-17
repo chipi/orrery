@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "발사",
       "note": "Saturn V (AS-505)는 Kennedy Space Center LC-39B에서 1969-05-18 16:49 UTC에 발사 — LC-39B에서의 첫 유인 발사.",
       "type": "nominal"
     },
@@ -25,19 +25,19 @@
     },
     {
       "met": 4.6,
-      "label": "LM SEPARATION",
+      "label": "LM 분리",
       "note": "스누피가 찰리 브라운에서 분리됨. 2명의 승무원(Stafford + Cernan)이 Mare Tranquillitatis를 향해 하강.",
       "type": "nominal"
     },
     {
       "met": 4.66,
-      "label": "CLOSEST APPROACH",
+      "label": "최근접",
       "note": "스누피가 Apollo 11 목표지점 위 ~15.6 km까지 도달 — 착륙 없음; 착륙 자체 외에는 모든 것이 검증됨.",
       "type": "info"
     },
     {
       "met": 4.76,
-      "label": "ASCENT + RENDEZVOUS",
+      "label": "상승 + 랑데부",
       "note": "스누피 상승 단계가 찰리 브라운과의 랑데부 — 달 궤도에서의 첫 완전한 LM-CSM 재도킹.",
       "type": "nominal"
     },
@@ -49,7 +49,7 @@
     },
     {
       "met": 8.05,
-      "label": "SPLASHDOWN",
+      "label": "착수",
       "note": "CM이 1969-05-26 16:52 UTC에 남태평양에 착수 — USS Princeton에 의해 회수됨.",
       "type": "nominal"
     }

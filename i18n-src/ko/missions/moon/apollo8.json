@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "발사",
       "note": "Saturn V (AS-503)이 Kennedy Space Center LC-39A에서 1968-12-21 12:51 UTC에 발사됨 — 처음으로 유인 우주비행이 진행된 Saturn V 비행.",
       "type": "nominal"
     },
@@ -25,13 +25,13 @@
     },
     {
       "met": 3.16,
-      "label": "EARTHRISE",
+      "label": "지구돋이",
       "note": "Anders가 네 번째 궤도 중에 달 지평선 위로 떠오르는 지구를 촬영함 (1968-12-24, AS08-14-2383).",
       "type": "info"
     },
     {
       "met": 3.5,
-      "label": "GENESIS READING",
+      "label": "창세기 낭독",
       "note": "승무원이 라이브 TV를 통해 창세기를 낭독함 — 약 10억 명의 시청자에게 방송됨 — 당시까지의 최대 라이브 TV 시청 규모.",
       "type": "info"
     },
@@ -43,7 +43,7 @@
     },
     {
       "met": 6.13,
-      "label": "SPLASHDOWN",
+      "label": "착수",
       "note": "CM이 1968-12-27에 북태평양에 착수함. USS Yorktown이 회수.",
       "type": "nominal"
     }

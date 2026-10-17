@@ -6,37 +6,37 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "발사",
       "note": "Atlas SLV-3D Centaur AC-34 from CCAFS LC-36B 1973-11-03 05:45 UTC.",
       "type": "nominal"
     },
     {
       "met": 94,
-      "label": "VENUS FLYBY",
+      "label": "금성 근접 비행",
       "note": "1974년 2월 5일에 최단 거리 5768km; 우주 역사상 처음으로 의도적인 중력 보조 궤도를 사용한 비행.",
       "type": "nominal"
     },
     {
       "met": 146,
-      "label": "MERCURY 1",
+      "label": "수성 1",
       "note": "1974년 3월 29일에 최단 거리 703km; 수성의 첫 영상.",
       "type": "nominal"
     },
     {
       "met": 322,
-      "label": "MERCURY 2",
+      "label": "수성 2",
       "note": "1974년 9월 21일에 최단 거리 48069km; 남반구 촬영.",
       "type": "nominal"
     },
     {
       "met": 498,
-      "label": "MERCURY 3",
+      "label": "수성 3",
       "note": "1975년 3월 16일에 최단 거리 327km; 자기장 재확인.",
       "type": "nominal"
     },
     {
       "met": 506,
-      "label": "PROPELLANT END",
+      "label": "추진제 소진",
       "note": "1975년 3월 24일 N₂ 자세 제어 가스 고갈; 송신기 원격 종료.",
       "type": "nominal"
     }

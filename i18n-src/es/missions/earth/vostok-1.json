@@ -7,25 +7,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "LANZAMIENTO",
       "note": "Vostok-K from Baikonur Site 1 (Gagarin's Start) 1961-04-12 06:07 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.0001,
-      "label": "ORBIT INSERT",
+      "label": "INSERCIÓN EN ÓRBITA",
       "note": "Órbita única de 169 × 327 km, inclinación de 65°.",
       "type": "nominal"
     },
     {
       "met": 0.063,
-      "label": "RETROFIRE",
+      "label": "ENCENDIDO DE RETROCOHETES",
       "note": "El retrocohete TDU-1 se enciende para abandonar la órbita. El sistema de separación del módulo de servicio falla parcialmente — los amarres se liberan con retraso, la cápsula da vueltas durante ~10 min.",
       "type": "warning"
     },
     {
       "met": 0.071,
-      "label": "CREW EJECT",
+      "label": "EYECCIÓN DEL COSMONAUTA",
       "note": "Gagarin fue eyectado del módulo de descenso a ~7 km de altitud; descendió en paracaídas hacia Smelovka, óblast de Saratov. La cápsula aterrizó por separado.",
       "type": "info"
     }

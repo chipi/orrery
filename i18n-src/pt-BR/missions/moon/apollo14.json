@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "LANÇAMENTO",
       "note": "Saturn V (AS-509) from Kennedy Space Center LC-39A 1971-01-31 21:03 UTC.",
       "type": "nominal"
     },
@@ -19,7 +19,7 @@
     },
     {
       "met": 0.25,
-      "label": "CSM-LM DOCKING",
+      "label": "ACOPLAMENTO CSM-LM",
       "note": "Cinco tentativas de acoplamento antes de Kitty Hawk capturar suavemente Antares — anomalia nos fechos de acoplamento; causa raiz nunca reproduzida em solo.",
       "type": "warning"
     },
@@ -31,7 +31,7 @@
     },
     {
       "met": 4.6,
-      "label": "TOUCHDOWN",
+      "label": "TOQUE NO SOLO",
       "note": "Antares pousa em Fra Mauro Highlands 1971-02-05 09:18 UTC — a 53 m do alvo apesar de uma falha no programa de cancelamento no computador do LM que a equipe corrigiu em tempo real.",
       "type": "nominal"
     },
@@ -43,13 +43,13 @@
     },
     {
       "met": 5.4,
-      "label": "CONE CRATER + GOLF",
+      "label": "CONE CRATER + GOLFE",
       "note": "EVA-2: travessia em direção ao Cone Crater (ficou ~30 m aquém da borda). Minutos finais — Shepard golpeia duas bolas de golfe com um taco improvisado.",
       "type": "info"
     },
     {
       "met": 5.6,
-      "label": "ASCENT",
+      "label": "SUBIDA",
       "note": "Antares decola após 33 h 31 m na superfície. 42 kg de amostras retornadas.",
       "type": "nominal"
     },
@@ -61,7 +61,7 @@
     },
     {
       "met": 9,
-      "label": "SPLASHDOWN",
+      "label": "AMERISSAGEM",
       "note": "Módulo de comando amarissou no Oceano Pacífico Sul 1971-02-09 21:05 UTC. Recuperação pelo USS New Orleans. Último confinamento de quarentena da Apollo.",
       "type": "nominal"
     }

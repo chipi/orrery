@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH (Apollo)",
+      "label": "发射（Apollo）",
       "note": "Saturn IB 火箭（AS-210）从 LC-39B 1975-07-15 19:50 UTC 发射。比 Soyuz 19（Baikonur 1975-07-15 12:20 UTC）晚 7.5 小时。",
       "type": "nominal"
     },
@@ -31,7 +31,7 @@
     },
     {
       "met": 9.06,
-      "label": "SPLASHDOWN (Apollo)",
+      "label": "溅落（Apollo）",
       "note": "Apollo号于1975-07-24 21:18 UTC在太平洋溅落——这是Apollo有史以来最后一次溅落，也是美国载人航天器直到2020年SpaceX Crew Dragon才再次进行的最后一次水面着陆。CSM-111现在在加州洛杉矶科学中心展出。",
       "type": "nominal"
     }

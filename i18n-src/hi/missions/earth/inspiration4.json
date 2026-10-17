@@ -6,25 +6,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "प्रक्षेपण",
       "note": "Falcon 9 B1062 from LC-39A 2021-09-15 00:02 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.05,
-      "label": "ORBIT",
+      "label": "कक्षा",
       "note": "585 किमी वृत्ताकार, 51.6° झुकाव — Hubble सेवा के बाद से सर्वोच्च मानवयुक्त कक्षा।",
       "type": "nominal"
     },
     {
       "met": 1,
-      "label": "CUPOLA WINDOW",
+      "label": "कपोला खिड़की",
       "note": "Crew Dragon कपोल के माध्यम से पहली बार देखना (डॉकिंग एडेप्टर की जगह)।",
       "type": "info"
     },
     {
       "met": 2.96,
-      "label": "SPLASHDOWN",
+      "label": "समुद्र में अवतरण",
       "note": "Resilience Florida तट से 2021-09-18 23:06 UTC पर जल में उतरा।",
       "type": "nominal"
     }

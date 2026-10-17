@@ -6,19 +6,19 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "प्रक्षेपण",
       "note": "Atlas V 501 (AV-026) from CCAFS SLC-41 2011-03-05.",
       "type": "nominal"
     },
     {
       "met": 234.5,
-      "label": "ON-ORBIT OPS",
+      "label": "कक्षा में संचालन",
       "note": "अपोजी ~340 किमी; वर्गीकृत पेलोड संचालन।",
       "type": "info"
     },
     {
       "met": 469,
-      "label": "LANDING",
+      "label": "अवतरण",
       "note": "Vandenberg AFB में स्वायत्त रनवे लैंडिंग 2012-06-16।",
       "type": "nominal"
     }

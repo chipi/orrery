@@ -4,9 +4,9 @@
   "first": "有史以来分辨率最高的月球地图",
   "description": "自2009年以来环绕月球，轨道高度为月球平均半径50 km，LRO的窄角相机以50 cm/像素的分辨率成像——足以拍摄到仍然保存在月壤中的Apollo着陆段、月球车轨迹和宇航员足迹。它在月球车停止工作三十九年后发现了Lunokhod 1。它为Artemis任务确定了200多个候选着陆点。驱动每一个现代月球项目的月球南极水冰沉积物由LRO仪器量化测定。一个作为现代月球时代基础的侦察任务。",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "Atlas V 401 from Cape Canaveral SLC-41 (carried LCROSS impactor as secondary).", "type": "nominal" },
+    { "met": 0, "label": "发射", "note": "Atlas V 401 from Cape Canaveral SLC-41 (carried LCROSS impactor as secondary).", "type": "nominal" },
     { "met": 5, "label": "MOI", "note": "月球轨道插入 2009-06-23", "type": "nominal" },
-    { "met": 90, "label": "PRIME MISSION", "note": "一年探测阶段（NASA项目）开始。", "type": "info" },
-    { "met": 455, "label": "EXTENDED SCIENCE", "note": "任务延长至NASA SMD下的多年科学阶段。", "type": "info" }
+    { "met": 90, "label": "主任务", "note": "一年探测阶段（NASA项目）开始。", "type": "info" },
+    { "met": 455, "label": "扩展科学任务", "note": "任务延长至NASA SMD下的多年科学阶段。", "type": "info" }
   ]
 }

@@ -6,19 +6,19 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "الإطلاق",
       "note": "Atlas V 501 (AV-026) from CCAFS SLC-41 2011-03-05.",
       "type": "nominal"
     },
     {
       "met": 234.5,
-      "label": "ON-ORBIT OPS",
+      "label": "العمليات في المدار",
       "note": "الحضيض تقريباً 340 كم؛ عمليات الحمولة السرية.",
       "type": "info"
     },
     {
       "met": 469,
-      "label": "LANDING",
+      "label": "الهبوط",
       "note": "هبوط مستقل على مدرج Vandenberg AFB في 2012-06-16.",
       "type": "nominal"
     }

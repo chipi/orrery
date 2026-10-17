@@ -6,25 +6,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "打ち上げ",
       "note": "Falcon 9 B1083 from LC-39A 2024-09-10 09:23 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.5,
-      "label": "APOGEE BOOST",
+      "label": "遠地点の引き上げ",
       "note": "軌道を遠地点1408 kmまで上昇させた―Apollo 17以来、最高高度の有人軌道飛行",
       "type": "info"
     },
     {
       "met": 3,
-      "label": "COMMERCIAL EVA",
+      "label": "民間船外活動",
       "note": "Isaacman + Gillisが船室ハッチから真空中へ退出―初の商業宇宙遊泳",
       "type": "nominal"
     },
     {
       "met": 4.93,
-      "label": "SPLASHDOWN",
+      "label": "着水",
       "note": "Resilienceはフロリダ沖に2024-09-15 07:36 UTC に着水した。",
       "type": "nominal"
     }

@@ -6,19 +6,19 @@
   "events": [
     {
       "met": 0,
-      "label": "PAD FIRE",
+      "label": "発射台の火災",
       "note": "1967年1月27日 東部標準時 17:31 のプラグアウトテスト。加圧された純酸素キャビンで火災が発生し、キャビン圧力が15秒で29 psi に急上昇した。",
       "type": "warning"
     },
     {
       "met": 1e-7,
-      "label": "CREW LOST",
+      "label": "乗員死亡",
       "note": "Grissom、White、Chaffeeが窒息により死亡。圧力差に抗してハッチを開くことができなかった。",
       "type": "warning"
     },
     {
       "met": 25,
-      "label": "PROGRAM PAUSE",
+      "label": "計画中断",
       "note": "Apollo有人プログラムが21か月間中止された。ミッションは故人への敬意を込めてApollo 1に改称された。",
       "type": "info"
     }

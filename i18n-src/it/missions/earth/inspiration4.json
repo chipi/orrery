@@ -6,25 +6,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "LANCIO",
       "note": "Falcon 9 B1062 from LC-39A 2021-09-15 00:02 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.05,
-      "label": "ORBIT",
+      "label": "ORBITA",
       "note": "585 km circolare, inclinazione 51,6° — orbita con equipaggio più alta dalla missione di manutenzione dell'Hubble.",
       "type": "nominal"
     },
     {
       "met": 1,
-      "label": "CUPOLA WINDOW",
+      "label": "FINESTRA DELLA CUPOLA",
       "note": "Prima osservazione attraverso la cupola della Crew Dragon (al posto dell'adattatore di attracco).",
       "type": "info"
     },
     {
       "met": 2.96,
-      "label": "SPLASHDOWN",
+      "label": "AMMARAGGIO",
       "note": "Resilience è ammarato al largo della costa della Florida il 2021-09-18 alle 23:06 UTC.",
       "type": "nominal"
     }

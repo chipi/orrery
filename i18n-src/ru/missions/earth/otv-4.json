@@ -6,19 +6,19 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "ЗАПУСК",
       "note": "Atlas V 501 (AV-054) from CCAFS SLC-41 2015-05-20.",
       "type": "nominal"
     },
     {
       "met": 359,
-      "label": "ON-ORBIT OPS",
+      "label": "РАБОТА НА ОРБИТЕ",
       "note": "Апогей ~325 км; засекреченные операции полезной нагрузки.",
       "type": "info"
     },
     {
       "met": 718,
-      "label": "LANDING",
+      "label": "ПОСАДКА",
       "note": "Автономная посадка на взлётно-посадочную полосу KSC Shuttle Landing Facility 2017-05-07.",
       "type": "nominal"
     }

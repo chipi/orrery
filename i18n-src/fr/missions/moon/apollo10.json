@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "LANCEMENT",
       "note": "Saturn V (AS-505) depuis le Kennedy Space Center LC-39B le 18/05/1969 à 16:49 UTC — premier vol habité depuis LC-39B.",
       "type": "nominal"
     },
@@ -25,19 +25,19 @@
     },
     {
       "met": 4.6,
-      "label": "LM SEPARATION",
+      "label": "SÉPARATION DU LM",
       "note": "Snoopy se détache de Charlie Brown. L'équipage de deux (Stafford + Cernan) descend vers Mare Tranquillitatis.",
       "type": "nominal"
     },
     {
       "met": 4.66,
-      "label": "CLOSEST APPROACH",
+      "label": "APPROCHE MAXIMALE",
       "note": "Snoopy atteint ~15,6 km au-dessus du site cible d'Apollo 11 — pas d'atterrissage ; tout a été vérifié sauf l'atterrissage lui-même.",
       "type": "info"
     },
     {
       "met": 4.76,
-      "label": "ASCENT + RENDEZVOUS",
+      "label": "REMONTÉE + RENDEZ-VOUS",
       "note": "Rendez-vous du module de remontée de Snoopy avec Charlie Brown — premier amarrage complet LM-vers-CSM en orbite lunaire.",
       "type": "nominal"
     },
@@ -49,7 +49,7 @@
     },
     {
       "met": 8.05,
-      "label": "SPLASHDOWN",
+      "label": "AMERRISSAGE",
       "note": "CM amerri dans le Pacifique sud le 26/05/1969 à 16:52 UTC. Récupération par l'USS Princeton.",
       "type": "nominal"
     }

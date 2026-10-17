@@ -7,19 +7,19 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "발사",
       "note": "Voskhod 11A57 from Baikonur Site 1 1964-10-12 07:30 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.8,
-      "label": "KHRUSHCHEV DEPOSED",
+      "label": "KHRUSHCHEV 실각",
       "note": "비행 중 소련 지도부 교체가 발생했습니다.",
       "type": "info"
     },
     {
       "met": 1.01,
-      "label": "LAND",
+      "label": "착륙",
       "note": "연착륙 역추력 로켓이 1964년 10월 13일 07:47 UTC에 Marevka 근처에 착지했습니다.",
       "type": "nominal"
     }

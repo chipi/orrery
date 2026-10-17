@@ -6,19 +6,19 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "LANZAMIENTO",
       "note": "Atlas V 501 (AV-026) from CCAFS SLC-41 2011-03-05.",
       "type": "nominal"
     },
     {
       "met": 234.5,
-      "label": "ON-ORBIT OPS",
+      "label": "OPERACIONES EN ÓRBITA",
       "note": "Apogeo ~340 km; operaciones de carga útil clasificadas.",
       "type": "info"
     },
     {
       "met": 469,
-      "label": "LANDING",
+      "label": "ATERRIZAJE",
       "note": "Aterrizaje autónomo en pista en la base Vandenberg AFB el 16 de junio de 2012.",
       "type": "nominal"
     }

@@ -4,9 +4,9 @@
   "first": "Primer alunizaje suave chino en la Luna; desplegó Yutu, el primer róver lunar de China",
   "description": "Chang'e 3 fue el tercer módulo de descenso del programa Chang'e de la CNSA y el primer alunizaje suave exitoso en la Luna desde el Luna 24 soviético en 1976, un hiato de 37 años. El Long March 3B se lanzó en trayectoria directa a la Luna en diciembre de 2013, con una única corrección de trayectoria media antes de la inserción en órbita lunar. El módulo de descenso tocó tierra en Mare Imbrium el 14 de diciembre y desplegó el róver Yutu (Jade Rabbit), que operó durante 31 meses a pesar de un fallo de movilidad que terminó su conducción el día lunar 2. El módulo de descenso de Chang'e 3 continuó capturando imágenes durante años después.",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "Long March 3B from Xichang 2013-12-01.", "type": "nominal" },
+    { "met": 0, "label": "LANZAMIENTO", "note": "Long March 3B from Xichang 2013-12-01.", "type": "nominal" },
     { "met": 0.01, "label": "TLI", "note": "Inyección translunar directa en la etapa superior del LM-3B.", "type": "nominal" },
-    { "met": 5, "label": "LUNAR ORBIT INSERTION", "note": "Captura en órbita lunar circular de 100 km el 2013-12-06.", "type": "nominal" },
-    { "met": 13, "label": "LANDING", "note": "Alunizaje suave en Mare Imbrium el 2013-12-14. Primer alunizaje suave desde Luna 24 (1976). Róver Yutu desplegado horas después.", "type": "nominal" }
+    { "met": 5, "label": "INSERCIÓN EN ÓRBITA LUNAR", "note": "Captura en órbita lunar circular de 100 km el 2013-12-06.", "type": "nominal" },
+    { "met": 13, "label": "ATERRIZAJE", "note": "Alunizaje suave en Mare Imbrium el 2013-12-14. Primer alunizaje suave desde Luna 24 (1976). Róver Yutu desplegado horas después.", "type": "nominal" }
   ]
 }

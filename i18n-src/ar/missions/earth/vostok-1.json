@@ -7,25 +7,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "الإطلاق",
       "note": "Vostok-K from Baikonur Site 1 (Gagarin's Start) 1961-04-12 06:07 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.0001,
-      "label": "ORBIT INSERT",
+      "label": "إدراج المدار",
       "note": "مدار واحد بارتفاع 169 × 327 كم، بميل 65°.",
       "type": "nominal"
     },
     {
       "met": 0.063,
-      "label": "RETROFIRE",
+      "label": "إشعال صواريخ الكبح",
       "note": "يطلق الصاروخ الارتجاجي TDU-1 لإنهاء المدار. ينفشل نظام فصل وحدة الخدمة بشكل جزئي — تتحرر الأحزمة بتأخير، وتدور الكبسولة لمدة ~10 دقائق.",
       "type": "warning"
     },
     {
       "met": 0.071,
-      "label": "CREW EJECT",
+      "label": "قذف رائد الفضاء",
       "note": "أُطلِق جاجارين من وحدة الهبوط على ارتفاع ~7 كم؛ هبط بالمظلّة إلى Smelovka بـ Saratov Oblast. هبطت المحفظة بشكل منفصل.",
       "type": "info"
     }

@@ -7,25 +7,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "发射",
       "note": "Saturn IB SA-207 from LC-39B 1973-07-28 11:11 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.5,
-      "label": "CSM THRUSTER LEAK",
+      "label": "CSM 推进器泄漏",
       "note": "服务舱RCS四元组泄漏；救援CSM-119在卡纳维拉尔角已做好准备但未飞行。",
       "type": "warning"
     },
     {
       "met": 30,
-      "label": "TWIN-POLE SHIELD EVA",
+      "label": "出舱：双杆遮阳罩",
       "note": "乘组在原始遮阳伞上方展开双极盾。",
       "type": "nominal"
     },
     {
       "met": 59.46,
-      "label": "SPLASHDOWN",
+      "label": "溅落",
       "note": "CSM-117于1973-09-25 22:19 UTC在太平洋溅落。",
       "type": "nominal"
     }

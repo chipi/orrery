@@ -4,10 +4,10 @@
   "first": "NASA-DoD 联合月球任务；首次在月球极地发现水冰迹象",
   "description": "Clementine 的主要设计目的是作为战略防御计划技术演示器，它在月球轨道运行 10 周，首次返回了月球系统性的全球地形图和多光谱图。在月球南极进行的双站雷达测量首次产生了水冰的迹象，这一发现后来得到 Lunar Prospector 和 Chandrayaan-1 的证实。后续的飞掠小行星 Geographos 任务因推进器故障导致航天器燃料耗尽而失败。",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "Titan II G from Vandenberg AFB.", "type": "nominal" },
+    { "met": 0, "label": "发射", "note": "Titan II G from Vandenberg AFB.", "type": "nominal" },
     { "met": 25, "label": "MOI", "note": "月球轨道插入 1994-02-19。", "type": "nominal" },
-    { "met": 30, "label": "MAPPING BEGIN", "note": "系统性多光谱和地形图测绘工作开始。", "type": "info" },
-    { "met": 95, "label": "DEPARTURE", "note": "离开月球轨道前往小行星 Geographos 飞掠。", "type": "nominal" },
-    { "met": 100, "label": "THRUSTER FAIL", "note": "星载推进器故障导致推进剂耗尽；小行星接近任务被取消。", "type": "warning" }
+    { "met": 30, "label": "开始测绘", "note": "系统性多光谱和地形图测绘工作开始。", "type": "info" },
+    { "met": 95, "label": "离开", "note": "离开月球轨道前往小行星 Geographos 飞掠。", "type": "nominal" },
+    { "met": 100, "label": "推进器故障", "note": "星载推进器故障导致推进剂耗尽；小行星接近任务被取消。", "type": "warning" }
   ]
 }

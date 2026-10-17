@@ -7,25 +7,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "打ち上げ",
       "note": "Saturn IB SA-207 from LC-39B 1973-07-28 11:11 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.5,
-      "label": "CSM THRUSTER LEAK",
+      "label": "CSM スラスターの漏れ",
       "note": "サービスモジュールRCS クワッドからの漏洩；救援用CSM-119がケープで準備されたが飛行しなかった。",
       "type": "warning"
     },
     {
       "met": 30,
-      "label": "TWIN-POLE SHIELD EVA",
+      "label": "船外活動：二本柱の遮光板",
       "note": "乗組員は双極シールドを元のパラソルの上に展開した。",
       "type": "nominal"
     },
     {
       "met": 59.46,
-      "label": "SPLASHDOWN",
+      "label": "着水",
       "note": "CSM-117はUTC 1973-09-25 22:19に太平洋に着水した。",
       "type": "nominal"
     }

@@ -7,25 +7,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "ЗАПУСК",
       "note": "Vostok-K from Baikonur Site 1 1961-08-06 06:00 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.5,
-      "label": "EARTH PHOTOS",
+      "label": "СНИМКИ ЗЕМЛИ",
       "note": "Титов сделал первые ручные фотографии Земли с орбиты.",
       "type": "info"
     },
     {
       "met": 0.8,
-      "label": "SLEEP",
+      "label": "СОН",
       "note": "Первый период сна в космосе (~8 часов).",
       "type": "info"
     },
     {
       "met": 1.04,
-      "label": "EJECT + LAND",
+      "label": "КАТАПУЛЬТИРОВАНИЕ + ПОСАДКА",
       "note": "Капсула сошла с орбиты; Титов был выброшен на высоте ~7 км и приземлился на парашюте в Красный Кут.",
       "type": "nominal"
     }

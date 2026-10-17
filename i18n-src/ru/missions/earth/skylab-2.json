@@ -7,25 +7,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "ЗАПУСК",
       "note": "Saturn IB SA-206 from LC-39B 1973-05-25 13:00 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.33,
-      "label": "DOCK",
+      "label": "СТЫКОВКА",
       "note": "CSM состыковался с Skylab в осевом люке после устранения неисправности при мягкой состыковке.",
       "type": "nominal"
     },
     {
       "met": 14,
-      "label": "EVA #2 — POWER RESTORED",
+      "label": "ВЫХОД №2 — ПИТАНИЕ ВОССТАНОВЛЕНО",
       "note": "Conrad + Kerwin освободили заклинившее солнечное крыло во время 3,5-часового выхода в открытый космос.",
       "type": "nominal"
     },
     {
       "met": 28.04,
-      "label": "SPLASHDOWN",
+      "label": "ПРИВОДНЕНИЕ",
       "note": "CSM-116 приводнился в Тихом океане 1973-06-22 13:50 UTC.",
       "type": "nominal"
     }

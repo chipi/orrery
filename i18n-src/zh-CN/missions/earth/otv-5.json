@@ -6,19 +6,19 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "发射",
       "note": "Falcon 9 Block 4 from KSC LC-39A 2017-09-07.",
       "type": "nominal"
     },
     {
       "met": 390,
-      "label": "ON-ORBIT OPS",
+      "label": "在轨运行",
       "note": "远地点约360千米，倾角54.5°；机密载荷运营。",
       "type": "info"
     },
     {
       "met": 780,
-      "label": "LANDING",
+      "label": "着陆",
       "note": "2019-10-27在KSC航天飞机着陆设施进行自主跑道着陆。",
       "type": "nominal"
     }

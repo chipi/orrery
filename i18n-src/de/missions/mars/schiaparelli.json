@@ -4,13 +4,13 @@
   "first": "Erster Marslandeversuch der ESA; sollte EDL vor ExoMars Rosalind Franklin demonstrieren",
   "description": "Schiaparelli war die Landedemonstratoren-Sonde, die als Zusatzlast an Bord des ExoMars Trace Gas Orbiter (TGO) transportiert wurde. Benannt nach dem italienischen Astronomen Giovanni Schiaparelli, war die Sonde konzipiert, um das EDL-System zu erproben, das die ESA für den Rosalind Franklin-Rover hochfahren wollte. Schiaparelli trennte sich am 16. Oktober 2016 von TGO und trat drei Tage später in die Marsatmosphäre ein. Das Abstiegsprofil kollabierte: eine gesättigte Trägheitsmesseinheit ließ die Navigationssoftware denken, die Sonde sei bereits in der Höhe gelandet – der Fallschirm wurde vorzeitig abgeworfen und die Bremsantriebe schalteten sich ab, nachdem sie nur 3 Sekunden lang gezündet hatten. Schiaparelli schlug mit etwa 150 m/s auf der Oberfläche auf. TGO selbst führte das Orbit-Einschwenken erfolgreich durch und ist weiterhin in Betrieb.",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "Proton-M von Baikonur 2016-03-14. TGO + Schiaparelli-Stapel.", "type": "nominal" },
+    { "met": 0, "label": "START", "note": "Proton-M von Baikonur 2016-03-14. TGO + Schiaparelli-Stapel.", "type": "nominal" },
     { "met": 0.01, "label": "TMI", "note": "Trans-Mars-Injektion auf der Briz-M-Oberstufe.", "type": "nominal" },
     { "met": 30, "label": "TCM 1", "note": "Erste Bahnkorrektur während der 7-monatigen Reiseflugphase.", "type": "info" },
     { "met": 120, "label": "TCM 2", "note": "Mid-cruise correction.", "type": "info" },
     { "met": 216, "label": "TCM 3", "note": "Letzte Bahnkorrektur vor der Trennung von TGO und Schiaparelli.", "type": "info" },
-    { "met": 216.5, "label": "SEPARATION", "note": "Schiaparelli trennte sich am 2016-10-16 von TGO, drei Tage vor dem Atmosphäreneintritt.", "type": "nominal" },
-    { "met": 219, "label": "ENTRY", "note": "Atmosphäreneintritt 2016-10-19.", "type": "nominal" },
-    { "met": 219.01, "label": "DESCENT ANOMALY", "note": "IMU-Sättigung → vorzeitiges Fallschirmabtrennung + Schubabschaltung in der Höhe → Aufprall ~150 m/s in Meridiani Planum.", "type": "warning" }
+    { "met": 216.5, "label": "TRENNUNG", "note": "Schiaparelli trennte sich am 2016-10-16 von TGO, drei Tage vor dem Atmosphäreneintritt.", "type": "nominal" },
+    { "met": 219, "label": "EINTRITT", "note": "Atmosphäreneintritt 2016-10-19.", "type": "nominal" },
+    { "met": 219.01, "label": "ANOMALIE BEIM ABSTIEG", "note": "IMU-Sättigung → vorzeitiges Fallschirmabtrennung + Schubabschaltung in der Höhe → Aufprall ~150 m/s in Meridiani Planum.", "type": "warning" }
   ]
 }

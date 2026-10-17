@@ -6,25 +6,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "LANCEMENT",
       "note": "Saturn IB (AS-205) from Cape Kennedy LC-34 1968-10-11 15:02 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.1,
-      "label": "ORBIT INSERT",
+      "label": "INSERTION ORBITALE",
       "note": "Le CSM se sépare du S-IVB en orbite terrestre de 232 × 285 km, inclinaison 31,6°. La séquence d'allumages du SPS (8 mises à feu sur 11 jours) valide la propulsion qui effectuera LOI + TEI à la Lune.",
       "type": "nominal"
     },
     {
       "met": 1.2,
-      "label": "FIRST LIVE TV",
+      "label": "PREMIÈRE TÉLÉ EN DIRECT",
       "note": "« Hello from the lovely Apollo room high atop everything. » Premier direct télévisé depuis un vaisseau spatial habité américain.",
       "type": "info"
     },
     {
       "met": 10.8,
-      "label": "SPLASHDOWN",
+      "label": "AMERRISSAGE",
       "note": "Le CM s'est amaré dans l'Atlantique Nord le 1968-10-22 à 11:11 UTC après 163 orbites / 7,4 millions km / 10 j 20 h. Récupération par l'USS Essex.",
       "type": "nominal"
     }

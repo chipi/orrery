@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "PAD SHUTDOWN",
+      "label": "UITSCHAKELING OP HET PLATFORM",
       "note": "1965-12-12: motoren ontbranden en stoppen vervolgens op het platform; Schirra werpt niet uit.",
       "type": "warning"
     },
@@ -25,7 +25,7 @@
     },
     {
       "met": 1,
-      "label": "SPLASHDOWN",
+      "label": "WATERLANDING",
       "note": "Atlantische splashdown na ~1 d 1 h / 16 banen.",
       "type": "nominal"
     }

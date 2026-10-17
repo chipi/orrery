@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "ЗАПУСК",
       "note": "Saturn V (AS-505) с Kennedy Space Center LC-39B 1969-05-18 16:49 UTC — первый пилотируемый запуск с LC-39B.",
       "type": "nominal"
     },
@@ -25,19 +25,19 @@
     },
     {
       "met": 4.6,
-      "label": "LM SEPARATION",
+      "label": "ОТДЕЛЕНИЕ LM",
       "note": "Snoopy отделяется от Charlie Brown. Экипаж из двух астронавтов (Stafford + Cernan) спускается к Mare Tranquillitatis.",
       "type": "nominal"
     },
     {
       "met": 4.66,
-      "label": "CLOSEST APPROACH",
+      "label": "НАИБОЛЬШЕЕ СБЛИЖЕНИЕ",
       "note": "Snoopy достигает ~15,6 км над целевым участком Apollo 11 — посадка не производилась; всё проверено, кроме самого приземления.",
       "type": "info"
     },
     {
       "met": 4.76,
-      "label": "ASCENT + RENDEZVOUS",
+      "label": "ВЗЛЁТ + СБЛИЖЕНИЕ",
       "note": "Встреча ступени подъёма Snoopy с Charlie Brown — первая полная стыковка LM с CSM на лунной орбите.",
       "type": "nominal"
     },
@@ -49,7 +49,7 @@
     },
     {
       "met": 8.05,
-      "label": "SPLASHDOWN",
+      "label": "ПРИВОДНЕНИЕ",
       "note": "КА приводнился в южной части Тихого океана 1969-05-26 16:52 UTC. Спасение произведено USS Princeton.",
       "type": "nominal"
     }

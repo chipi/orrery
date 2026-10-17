@@ -7,13 +7,13 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "发射",
       "note": "Atlas V 551 离开地球，沿着木星引力助推路径前往冥王星。",
       "type": "nominal"
     },
     {
       "met": 3463,
-      "label": "PLUTO FLYBY",
+      "label": "飞掠冥王星",
       "note": "最接近冥王星；高速率成像和等离子体数据涌向地球。",
       "type": "nominal"
     }

@@ -6,25 +6,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "LANCIO",
       "note": "Falcon 9 B1083 from LC-39A 2024-09-10 09:23 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.5,
-      "label": "APOGEE BOOST",
+      "label": "INNALZAMENTO DELL'APOGEO",
       "note": "Orbita innalzata a 1408 km di apogeo — l'orbita con equipaggio più alta dal lancio dell'Apollo 17.",
       "type": "info"
     },
     {
       "met": 3,
-      "label": "COMMERCIAL EVA",
+      "label": "EVA COMMERCIALE",
       "note": "Isaacman + Gillis sono usciti dal portello della cabina nello spazio — prima passeggiata spaziale commerciale.",
       "type": "nominal"
     },
     {
       "met": 4.93,
-      "label": "SPLASHDOWN",
+      "label": "AMMARAGGIO",
       "note": "Resilience è ammarato al largo della Florida il 2024-09-15 alle 07:36 UTC.",
       "type": "nominal"
     }

@@ -6,19 +6,19 @@
   "events": [
     {
       "met": 0,
-      "label": "PAD FIRE",
+      "label": "INCENDIE SUR LE PAS DE TIR",
       "note": "Test sans connecteurs 1967-01-27 17:31 EST. Incendie éclair dans la cabine pressurisée à O₂ pur ; la pression de cabine a monté en flèche à 29 psi en 15 s.",
       "type": "warning"
     },
     {
       "met": 1e-7,
-      "label": "CREW LOST",
+      "label": "ÉQUIPAGE PERDU",
       "note": "Grissom + White + Chaffee périssent par asphyxie. L'écoutille ne pouvait pas être ouverte contre la différence de pression.",
       "type": "warning"
     },
     {
       "met": 25,
-      "label": "PROGRAM PAUSE",
+      "label": "PROGRAMME SUSPENDU",
       "note": "Programme habité Apollo arrêté 21 mois. Mission renommée Apollo 1 en hommage posthume.",
       "type": "info"
     }

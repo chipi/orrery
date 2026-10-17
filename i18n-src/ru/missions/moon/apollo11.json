@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "ЗАПУСК",
       "note": "Saturn V (AS-506) с Kennedy Space Center LC-39A 1969-07-16 13:32 UTC.",
       "type": "nominal"
     },
@@ -25,25 +25,25 @@
     },
     {
       "met": 4,
-      "label": "TOUCHDOWN",
+      "label": "КАСАНИЕ ПОВЕРХНОСТИ",
       "note": "Лунный модуль Eagle садится на Mare Tranquillitatis 1969-07-20 20:17:40 UTC.",
       "type": "nominal"
     },
     {
       "met": 4.3,
-      "label": "FIRST STEP",
+      "label": "ПЕРВЫЙ ШАГ",
       "note": "Армстронг ступает на лунную поверхность: «маленький шаг для человека».",
       "type": "info"
     },
     {
       "met": 5,
-      "label": "ASCENT",
+      "label": "ВЗЛЁТ",
       "note": "Eagle взлетает после 21 ч 36 мин на поверхности.",
       "type": "nominal"
     },
     {
       "met": 8,
-      "label": "SPLASHDOWN",
+      "label": "ПРИВОДНЕНИЕ",
       "note": "CM Columbia возвращает экипаж в Тихий океан 1969-07-24.",
       "type": "nominal"
     }

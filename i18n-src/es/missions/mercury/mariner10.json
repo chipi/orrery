@@ -6,37 +6,37 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "LANZAMIENTO",
       "note": "Atlas SLV-3D Centaur AC-34 from CCAFS LC-36B 1973-11-03 05:45 UTC.",
       "type": "nominal"
     },
     {
       "met": 94,
-      "label": "VENUS FLYBY",
+      "label": "SOBREVUELO DE VENUS",
       "note": "Máxima aproximación de 5768 km el 5 de febrero de 1974; primera trayectoria de asistencia gravitatoria deliberada en la historia de la exploración espacial.",
       "type": "nominal"
     },
     {
       "met": 146,
-      "label": "MERCURY 1",
+      "label": "MERCURIO 1",
       "note": "Máxima aproximación de 703 km el 29 de marzo de 1974; primeras imágenes de Mercurio.",
       "type": "nominal"
     },
     {
       "met": 322,
-      "label": "MERCURY 2",
+      "label": "MERCURIO 2",
       "note": "Máxima aproximación de 48069 km el 21 de septiembre de 1974; imágenes del hemisferio austral.",
       "type": "nominal"
     },
     {
       "met": 498,
-      "label": "MERCURY 3",
+      "label": "MERCURIO 3",
       "note": "Máxima aproximación de 327 km el 16 de marzo de 1975; reconfirmación del campo magnético.",
       "type": "nominal"
     },
     {
       "met": 506,
-      "label": "PROPELLANT END",
+      "label": "FIN DEL PROPULSANTE",
       "note": "Gas de control de actitud N₂ agotado el 24 de marzo de 1975; transmisor desactivado por comando.",
       "type": "nominal"
     }

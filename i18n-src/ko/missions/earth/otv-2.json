@@ -6,19 +6,19 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "발사",
       "note": "Atlas V 501 (AV-026) from CCAFS SLC-41 2011-03-05.",
       "type": "nominal"
     },
     {
       "met": 234.5,
-      "label": "ON-ORBIT OPS",
+      "label": "궤도 운용",
       "note": "원지점 약 340 km; 기밀 탑재물 운영.",
       "type": "info"
     },
     {
       "met": 469,
-      "label": "LANDING",
+      "label": "착륙",
       "note": "2012-06-16에 Vandenberg AFB에서 자율 활주로 착륙.",
       "type": "nominal"
     }

@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "발사",
       "note": "Saturn V (AS-511) from Kennedy Space Center LC-39A 1972-04-16 17:54 UTC.",
       "type": "nominal"
     },
@@ -25,37 +25,37 @@
     },
     {
       "met": 4.79,
-      "label": "SPS ANOMALY",
+      "label": "SPS 이상",
       "note": "강하 전: SPS 짐벌 진동 백업이 실시간 6시간 착륙 대 중단 공학 검토를 강제했습니다. 착륙은 결국 승인되었습니다.",
       "type": "warning"
     },
     {
       "met": 5.04,
-      "label": "TOUCHDOWN",
+      "label": "착지",
       "note": "Orion이 1972-04-21 02:23 UTC에 Descartes Highlands에 착륙 — 첫 고지대(비-마레) 착륙.",
       "type": "nominal"
     },
     {
       "met": 5.5,
-      "label": "FIRST HIGHLANDS EVA",
+      "label": "고지대 첫 선외활동",
       "note": "EVA-1: ALSEP 배치 + LRV 배치 + 달 고지대의 첫 과학 탐사.",
       "type": "info"
     },
     {
       "met": 6.1,
-      "label": "LUNAR GRAND PRIX",
+      "label": "달 그랑프리",
       "note": "EVA-2: Young의 텔레비전 중계 LRV 속도 시험(\"달 그랑프리\") — 최고 속도 ~17 km/h. Stone Mountain 오르기 지질학 탐사.",
       "type": "info"
     },
     {
       "met": 6.7,
-      "label": "FAR-UV CAMERA",
+      "label": "원자외선 카메라",
       "note": "EVA-3: 다른 천체 표면에 배치된 첫 천문 관측소(NRL 자외선 카메라-분광계).",
       "type": "info"
     },
     {
       "met": 7.81,
-      "label": "ASCENT",
+      "label": "상승",
       "note": "Orion이 표면에서 71시간 02분 후 이륙. 95.7 kg의 시료 반환 — 그 당시까지의 가장 무거운 Apollo 채취물.",
       "type": "nominal"
     },
@@ -67,7 +67,7 @@
     },
     {
       "met": 11.07,
-      "label": "SPLASHDOWN",
+      "label": "착수",
       "note": "CM이 1972-04-27 19:45 UTC에 중태평양에 착수. USS Ticonderoga에 의해 회수.",
       "type": "nominal"
     }

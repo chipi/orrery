@@ -7,25 +7,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "발사",
       "note": "Vostok-K from Baikonur Site 1 1961-08-06 06:00 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.5,
-      "label": "EARTH PHOTOS",
+      "label": "지구 사진",
       "note": "티토프가 궤도에서 손으로 들고 촬영한 카메라로 지구의 첫 사진을 찍었습니다.",
       "type": "info"
     },
     {
       "met": 0.8,
-      "label": "SLEEP",
+      "label": "수면",
       "note": "우주에서의 첫 수면 기간(약 8시간).",
       "type": "info"
     },
     {
       "met": 1.04,
-      "label": "EJECT + LAND",
+      "label": "사출 + 착륙",
       "note": "캡슐이 궤도를 이탈했고, 티토프는 약 7km 고도에서 사출되어 Krasny Kut으로 낙하산 강하했습니다.",
       "type": "nominal"
     }

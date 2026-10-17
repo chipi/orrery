@@ -6,19 +6,19 @@
   "events": [
     {
       "met": 0,
-      "label": "PAD FIRE",
+      "label": "发射台火灾",
       "note": "拔塞测试 1967-01-27 17:31 EST。加压纯 O₂ 舱内闪火；舱压在 15 s 内飙升至 29 psi。",
       "type": "warning"
     },
     {
       "met": 1e-7,
-      "label": "CREW LOST",
+      "label": "乘员罹难",
       "note": "Grissom、White 和 Chaffee 因窒息而丧生。舱门无法根据压力差打开。",
       "type": "warning"
     },
     {
       "met": 25,
-      "label": "PROGRAM PAUSE",
+      "label": "计划暂停",
       "note": "Apollo 载人计划暂停 21 个月。任务被重新命名为 Apollo 1 以示事后敬礼。",
       "type": "info"
     }

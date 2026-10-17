@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "打ち上げ",
       "note": "Saturn V (AS-511) from Kennedy Space Center LC-39A 1972-04-16 17:54 UTC.",
       "type": "nominal"
     },
@@ -25,37 +25,37 @@
     },
     {
       "met": 4.79,
-      "label": "SPS ANOMALY",
+      "label": "SPS の異常",
       "note": "下降前：SPS ジンバルの振動のバックアップが強制され、6時間のリアルタイム着陸対中止エンジニアリングレビューが実施された。着陸は最終的に承認された。",
       "type": "warning"
     },
     {
       "met": 5.04,
-      "label": "TOUCHDOWN",
+      "label": "接地",
       "note": "Orion が 1972-04-21 02:23 UTC に Descartes Highlands に着陸 — 最初の高地（非月海）着陸。",
       "type": "nominal"
     },
     {
       "met": 5.5,
-      "label": "FIRST HIGHLANDS EVA",
+      "label": "高地での初の船外活動",
       "note": "EVA-1：ALSEP 配置 + LRV 配置 + 月の高地における最初の科学的探査。",
       "type": "info"
     },
     {
       "met": 6.1,
-      "label": "LUNAR GRAND PRIX",
+      "label": "月面グランプリ",
       "note": "EVA-2：Young のテレビ放映 LRV スピードテスト（「月のグランプリ」）— ピークスピード ~17 km/h。Stone Mountain への地質学的探査。",
       "type": "info"
     },
     {
       "met": 6.7,
-      "label": "FAR-UV CAMERA",
+      "label": "遠紫外線カメラ",
       "note": "EVA-3：別の天体の表面に配置された最初の天文台（NRL 紫外線カメラ分光器）。",
       "type": "info"
     },
     {
       "met": 7.81,
-      "label": "ASCENT",
+      "label": "上昇",
       "note": "Orion が表面での 71 h 02 m 後に離陸。95.7 kg のサンプルが返却 — その時点で最重量の Apollo 回収物。",
       "type": "nominal"
     },
@@ -67,7 +67,7 @@
     },
     {
       "met": 11.07,
-      "label": "SPLASHDOWN",
+      "label": "着水",
       "note": "CM が 1972-04-27 19:45 UTC に中太平洋で着水。USS Ticonderoga により回収。",
       "type": "nominal"
     }

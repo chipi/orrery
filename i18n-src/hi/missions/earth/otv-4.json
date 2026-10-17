@@ -6,19 +6,19 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "प्रक्षेपण",
       "note": "Atlas V 501 (AV-054) from CCAFS SLC-41 2015-05-20.",
       "type": "nominal"
     },
     {
       "met": 359,
-      "label": "ON-ORBIT OPS",
+      "label": "कक्षा में संचालन",
       "note": "अपोजी ~325 किमी; वर्गीकृत पेलोड संचालन।",
       "type": "info"
     },
     {
       "met": 718,
-      "label": "LANDING",
+      "label": "अवतरण",
       "note": "स्वायत्त रनवे लैंडिंग KSC Shuttle Landing Facility में 2017-05-07 को।",
       "type": "nominal"
     }

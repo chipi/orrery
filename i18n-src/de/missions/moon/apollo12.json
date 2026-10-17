@@ -37,13 +37,13 @@
     },
     {
       "met": 6.74,
-      "label": "ASCENT",
+      "label": "AUFSTIEG",
       "note": "Intrepid hebt ab nach 31 h 31 min auf der Oberfläche. 34 kg Proben zurückgebracht.",
       "type": "nominal"
     },
     {
       "met": 6.93,
-      "label": "LM IMPACT",
+      "label": "LM-AUFSCHLAG",
       "note": "Intrepid-Aufstiegsstufe absichtlich auf dem Mond abgestürzt, um ALSEP-Seismometer zu kalibrieren — die erste Aufstiegsstufe eines bemannten Raumfahrzeugs, die absichtlich auf dem Mond aufschlug und von einem Oberflächenseismometer aufgezeichnet wurde.",
       "type": "info"
     },
@@ -55,7 +55,7 @@
     },
     {
       "met": 10.18,
-      "label": "SPLASHDOWN",
+      "label": "WASSERUNG",
       "note": "CM wasserte am 24. November 1969 um 20:58 UTC im Südpazifik. Bergung durch die USS Hornet.",
       "type": "nominal"
     }

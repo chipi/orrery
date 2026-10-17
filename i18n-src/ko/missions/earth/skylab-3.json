@@ -7,25 +7,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "발사",
       "note": "Saturn IB SA-207 from LC-39B 1973-07-28 11:11 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.5,
-      "label": "CSM THRUSTER LEAK",
+      "label": "CSM 추력기 누설",
       "note": "서비스 모듈 RCS 4중 누출; Cape에서 구조용 CSM-119 준비되었으나 발사되지 않음.",
       "type": "warning"
     },
     {
       "met": 30,
-      "label": "TWIN-POLE SHIELD EVA",
+      "label": "선외활동: 이중 기둥 차양",
       "note": "승무원이 원래 파라솔 위에 쌍극 차폐막을 배치했습니다.",
       "type": "nominal"
     },
     {
       "met": 59.46,
-      "label": "SPLASHDOWN",
+      "label": "착수",
       "note": "CSM-117이 1973-09-25 22:19 UTC에 태평양에 착수했습니다.",
       "type": "nominal"
     }

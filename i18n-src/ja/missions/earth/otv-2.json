@@ -6,19 +6,19 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "打ち上げ",
       "note": "Atlas V 501 (AV-026) from CCAFS SLC-41 2011-03-05.",
       "type": "nominal"
     },
     {
       "met": 234.5,
-      "label": "ON-ORBIT OPS",
+      "label": "軌道上運用",
       "note": "遠地点 ~340 km; 機密ペイロード運用。",
       "type": "info"
     },
     {
       "met": 469,
-      "label": "LANDING",
+      "label": "着陸",
       "note": "2012-06-16にVandenberg AFBで自動滑走路着陸。",
       "type": "nominal"
     }

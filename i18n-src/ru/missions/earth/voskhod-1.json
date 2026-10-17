@@ -7,19 +7,19 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "ЗАПУСК",
       "note": "Voskhod 11A57 from Baikonur Site 1 1964-10-12 07:30 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.8,
-      "label": "KHRUSHCHEV DEPOSED",
+      "label": "KHRUSHCHEV СМЕЩЁН",
       "note": "Смена советского руководства произошла во время полёта.",
       "type": "info"
     },
     {
       "met": 1.01,
-      "label": "LAND",
+      "label": "ПОСАДКА",
       "note": "Мягкая посадка с использованием тормозных ракет близ Marevka 1964-10-13 07:47 UTC.",
       "type": "nominal"
     }

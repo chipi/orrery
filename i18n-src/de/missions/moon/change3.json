@@ -4,9 +4,9 @@
   "first": "Erste chinesische Weichlandung auf dem Mond; setzte Yutu aus, Chinas erstes Mondrover",
   "description": "Chang'e 3 war die dritte Sonde im Chang'e-Programm der CNSA und die erste erfolgreiche Weichlandung auf dem Mond seit der sowjetischen Luna 24 im Jahr 1976 – eine 37-jährige Lücke. Die Long March 3B startete im Dezember 2013 auf direkter Mondtrajektorie mit einer einzigen Mittelkurskorrektur vor der Mondorbitinsertion. Die Sonde landete am 14. Dezember in Mare Imbrium und setzte das Mondrover Yutu (Jade Rabbit) aus, das 31 Monate lang betrieben wurde, obwohl ein Mobilitätsschaden sein Fahren am Mondtag 2 beendete. Der Lander von Chang'e 3 setzte die Bildaufnahmen Jahre lang danach fort.",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "Long March 3B from Xichang 2013-12-01.", "type": "nominal" },
+    { "met": 0, "label": "START", "note": "Long March 3B from Xichang 2013-12-01.", "type": "nominal" },
     { "met": 0.01, "label": "TLI", "note": "Direkte Erd-Mond-Übergangsinjektion auf der Oberstufe der LM-3B.", "type": "nominal" },
-    { "met": 5, "label": "LUNAR ORBIT INSERTION", "note": "Einfang in 100-km-zirkuläre Mondumlaufbahn 2013-12-06.", "type": "nominal" },
-    { "met": 13, "label": "LANDING", "note": "Weichlandung in Mare Imbrium 2013-12-14. Erste Weichlandung seit Luna 24 (1976). Yutu-Rover Stunden später ausgesetzt.", "type": "nominal" }
+    { "met": 5, "label": "EINTRITT IN DIE MONDUMLAUFBAHN", "note": "Einfang in 100-km-zirkuläre Mondumlaufbahn 2013-12-06.", "type": "nominal" },
+    { "met": 13, "label": "LANDUNG", "note": "Weichlandung in Mare Imbrium 2013-12-14. Erste Weichlandung seit Luna 24 (1976). Yutu-Rover Stunden später ausgesetzt.", "type": "nominal" }
   ]
 }

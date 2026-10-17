@@ -7,13 +7,13 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "打ち上げ",
       "note": "Atlas V 551 が木星重力アシスト航路で冥王星へ地球を離れる。",
       "type": "nominal"
     },
     {
       "met": 3463,
-      "label": "PLUTO FLYBY",
+      "label": "冥王星フライバイ",
       "note": "冥王星最接近；高レート画像とプラズマデータが地球へ殺到。",
       "type": "nominal"
     }

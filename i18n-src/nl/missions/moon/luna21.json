@@ -4,10 +4,10 @@
   "first": "Tweede Sovjetmaanrover; langste rit op een hemellichaam (~39 km) voor meer dan 40 jaar",
   "description": "Luna 21 bracht Lunokhod 2, de tweede bemand bestuurde maanrover van de Sovjet-Unie, naar de krater Le Monnier aan de zuidrand van Mare Serenitatis in januari 1973. De rover werd vanuit een controleruimte op de Krim bestuurd door een team van vijf personen en legde ongeveer 39 km af over vier maandagen — een recordafstand op een hemellichaam die standhield tot NASA's Opportunity-rover dit in 2014 op Mars overwon. Lunokhod 2 stuurde 80.000 televisiebeelden en 86 panorama's terug voordat stofverontreiniging van zijn zonnepanelen de operaties beëindigde.",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "Proton-K from Baikonur 1973-01-08.", "type": "nominal" },
+    { "met": 0, "label": "LANCERING", "note": "Proton-K from Baikonur 1973-01-08.", "type": "nominal" },
     { "met": 0.005, "label": "TLI", "note": "Trans-lunaire injectie op het Blok-D bovenste trap.", "type": "nominal" },
     { "met": 4, "label": "TCM", "note": "Midcourse-correctie tijdens de kruisfase.", "type": "info" },
     { "met": 4.5, "label": "LANDING", "note": "Zachte landing in krater Le Monnier op 15 januari 1973. Lunokhod 2 rolde enkele uren later van de rampen af.", "type": "nominal" },
-    { "met": 7, "label": "ROVER ACTIVE", "note": "Grondpersoneel van vijf personen op de Krim begon met rij­operations. Totaal traject: ~39 km.", "type": "nominal" }
+    { "met": 7, "label": "ROVER ACTIEF", "note": "Grondpersoneel van vijf personen op de Krim begon met rij­operations. Totaal traject: ~39 km.", "type": "nominal" }
   ]
 }

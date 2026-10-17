@@ -6,25 +6,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "发射",
       "note": "Saturn IB (AS-205) from Cape Kennedy LC-34 1968-10-11 15:02 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.1,
-      "label": "ORBIT INSERT",
+      "label": "入轨",
       "note": "CSM 与 S-IVB 分离，进入近地距 232 × 285 km、倾角 31.6° 的地球轨道。SPS 点火序列（11 天内进行 8 次点火）验证了将在月球执行 LOI + TEI 的推进系统。",
       "type": "nominal"
     },
     {
       "met": 1.2,
-      "label": "FIRST LIVE TV",
+      "label": "首次电视直播",
       "note": "\"\\\"你好，来自高高在上的可爱 Apollo 舱。\\\" 来自美国载人航天器的首次实时电视直播。",
       "type": "info"
     },
     {
       "met": 10.8,
-      "label": "SPLASHDOWN",
+      "label": "溅落",
       "note": "CM 于 1968-10-22 11:11 UTC 在北大西洋溅落，完成 163 圈轨道、飞行 740 万 km、用时 10 天 20 小时。由 USS Essex 号航母负责回收。",
       "type": "nominal"
     }

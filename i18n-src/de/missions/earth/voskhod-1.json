@@ -7,19 +7,19 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "START",
       "note": "Voskhod 11A57 from Baikonur Site 1 1964-10-12 07:30 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.8,
-      "label": "KHRUSHCHEV DEPOSED",
+      "label": "KHRUSHCHEV GESTÜRZT",
       "note": "Während des Fluges fand ein Wechsel in der sowjetischen Führung statt.",
       "type": "info"
     },
     {
       "met": 1.01,
-      "label": "LAND",
+      "label": "LANDUNG",
       "note": "Sanfte Landung mit Bremsraketen in der Nähe von Marevka am 13. Oktober 1964 um 07:47 UTC.",
       "type": "nominal"
     }

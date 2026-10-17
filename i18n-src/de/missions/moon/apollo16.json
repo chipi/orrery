@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "START",
       "note": "Saturn V (AS-511) from Kennedy Space Center LC-39A 1972-04-16 17:54 UTC.",
       "type": "nominal"
     },
@@ -25,37 +25,37 @@
     },
     {
       "met": 4.79,
-      "label": "SPS ANOMALY",
+      "label": "SPS-ANOMALIE",
       "note": "Vor dem Abstieg: eine Sicherheitsmaßnahme bei SPS-Kardanaufhängungsschwingungen erzwang eine 6-Stunden-Bewertung in Echtzeit zwischen Landung und Abbruch. Die Landung wurde letztlich genehmigt.",
       "type": "warning"
     },
     {
       "met": 5.04,
-      "label": "TOUCHDOWN",
+      "label": "AUFSETZEN",
       "note": "Orion landet am 21.04.1972 02:23 UTC im Descartes Highlands — erste Landung im Hochland (kein Maria).",
       "type": "nominal"
     },
     {
       "met": 5.5,
-      "label": "FIRST HIGHLANDS EVA",
+      "label": "ERSTER AUSSTIEG IM HOCHLAND",
       "note": "EVA-1: ALSEP-Einsatz + LRV-Einsatz + erste wissenschaftliche Traverse im Mondhochtland.",
       "type": "info"
     },
     {
       "met": 6.1,
-      "label": "LUNAR GRAND PRIX",
+      "label": "MOND-GRAND-PRIX",
       "note": "EVA-2: Youngs im Fernsehen übertragener LRV-Geschwindigkeitstest („Lunar Grand Prix\") – Spitzengeschwindigkeit ~17 km/h. Geologische Traverse den Stone Mountain hinauf.",
       "type": "info"
     },
     {
       "met": 6.7,
-      "label": "FAR-UV CAMERA",
+      "label": "FERN-UV-KAMERA",
       "note": "EVA-3: Erstes astronomisches Observatorium auf der Oberfläche eines anderen Himmelskörpers installiert (NRL-UV-Kamera-Spektrograph).",
       "type": "info"
     },
     {
       "met": 7.81,
-      "label": "ASCENT",
+      "label": "AUFSTIEG",
       "note": "Orion hebt nach 71 h 02 m auf der Oberfläche ab. 95,7 kg Proben zurückgebracht – schwerste Apollo-Fracht bis zu diesem Zeitpunkt.",
       "type": "nominal"
     },
@@ -67,7 +67,7 @@
     },
     {
       "met": 11.07,
-      "label": "SPLASHDOWN",
+      "label": "WASSERUNG",
       "note": "Kapsellandung im Zentralpazifik am 27.04.1972 19:45 UTC. Bergung durch USS Ticonderoga.",
       "type": "nominal"
     }

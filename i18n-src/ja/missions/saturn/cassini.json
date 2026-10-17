@@ -7,19 +7,19 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "打ち上げ",
       "note": "Titan IVB / Centaur が Cassini-Huygens 複合体を打ち上げる。",
       "type": "nominal"
     },
     {
       "met": 207,
-      "label": "VENUS GRAVITY ASSIST",
+      "label": "金星スイングバイ",
       "note": "土星到達のエネルギーを蓄える 4 回の重力アシストの最初。",
       "type": "nominal"
     },
     {
       "met": 2451,
-      "label": "SATURN ORBIT INSERTION",
+      "label": "土星周回軌道投入",
       "note": "主エンジン噴射で Cassini を土星周回軌道へ — 13 年のツアー開幕。",
       "type": "nominal"
     }

@@ -7,19 +7,19 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "발사",
       "note": "Vostok-K from Baikonur Site 1 1963-06-14 11:59 UTC.",
       "type": "nominal"
     },
     {
       "met": 2,
-      "label": "VOSTOK 6 JOIN",
+      "label": "VOSTOK 6 합류",
       "note": "Vostok 6 (Tereshkova) launched 1963-06-16 09:30 UTC.",
       "type": "info"
     },
     {
       "met": 4.965,
-      "label": "EJECT + LAND",
+      "label": "사출 + 착륙",
       "note": "Karaganda 근처에 1963-06-19 11:06 UTC에 착륙, 81번의 궤도 회전 후.",
       "type": "nominal"
     }

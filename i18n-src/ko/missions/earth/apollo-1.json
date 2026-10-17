@@ -6,19 +6,19 @@
   "events": [
     {
       "met": 0,
-      "label": "PAD FIRE",
+      "label": "발사대 화재",
       "note": "플러그 분리 테스트 1967-01-27 17:31 EST. 가압된 순산소 캐빈에서 발생한 화염; 캐빈 압력이 15초 내에 29 psi까지 급증.",
       "type": "warning"
     },
     {
       "met": 1e-7,
-      "label": "CREW LOST",
+      "label": "승무원 사망",
       "note": "Grissom + White + Chaffee가 질식으로 사망. 압력 차이로 인해 해치를 열 수 없음.",
       "type": "warning"
     },
     {
       "met": 25,
-      "label": "PROGRAM PAUSE",
+      "label": "프로그램 중단",
       "note": "Apollo 유인 프로그램이 21개월 동안 중단됨. 미션이 사후에 경의를 표하기 위해 Apollo 1로 개칭됨.",
       "type": "info"
     }

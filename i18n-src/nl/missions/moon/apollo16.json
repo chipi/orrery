@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "LANCERING",
       "note": "Saturn V (AS-511) from Kennedy Space Center LC-39A 1972-04-16 17:54 UTC.",
       "type": "nominal"
     },
@@ -25,37 +25,37 @@
     },
     {
       "met": 4.79,
-      "label": "SPS ANOMALY",
+      "label": "SPS-AFWIJKING",
       "note": "Pre-descent: een oscillatie van de backup SPS-gimbal dwong een 6-uur durende engineering review over landen versus abort in real time. Landing uiteindelijk goedgekeurd.",
       "type": "warning"
     },
     {
       "met": 5.04,
-      "label": "TOUCHDOWN",
+      "label": "NEERKOMST",
       "note": "Orion lands at Descartes Highlands 1972-04-21 02:23 UTC — eerste highland (non-mare) landing.",
       "type": "nominal"
     },
     {
       "met": 5.5,
-      "label": "FIRST HIGHLANDS EVA",
+      "label": "EERSTE EVA IN HET HOOGLAND",
       "note": "EVA-1: ALSEP deployment + LRV deployment + eerste wetenschappelijke traverse van de maanhoogten.",
       "type": "info"
     },
     {
       "met": 6.1,
-      "label": "LUNAR GRAND PRIX",
+      "label": "GRAND PRIX OP DE MAAN",
       "note": "EVA-2: Young's televised LRV speed test (\\\"lunar Grand Prix\\\") — pieksnelheid ~17 km/h. Geology traverse up Stone Mountain.",
       "type": "info"
     },
     {
       "met": 6.7,
-      "label": "FAR-UV CAMERA",
+      "label": "VER-UV-CAMERA",
       "note": "EVA-3: Eerste astronomisch observatorium op het oppervlak van een ander hemellichaam geplaatst (NRL UV camera-spectrograaf).",
       "type": "info"
     },
     {
       "met": 7.81,
-      "label": "ASCENT",
+      "label": "OPSTIJGING",
       "note": "Orion stijgt op na 71 u 02 m op het oppervlak. 95,7 kg monsters teruggevoerd — zwaarste Apollo-lading tot die datum.",
       "type": "nominal"
     },
@@ -67,7 +67,7 @@
     },
     {
       "met": 11.07,
-      "label": "SPLASHDOWN",
+      "label": "WATERLANDING",
       "note": "CM splashed down in Central Pacific 1972-04-27 19:45 UTC. Bergingoperatie door USS Ticonderoga.",
       "type": "nominal"
     }

@@ -6,25 +6,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "प्रक्षेपण",
       "note": "Falcon 9 B1083 from LC-39A 2024-09-10 09:23 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.5,
-      "label": "APOGEE BOOST",
+      "label": "शिखर-बिंदु बढ़ाया",
       "note": "कक्षा को 1408 किमी अपोजी तक उठाया गया — Apollo 17 के बाद से सबसे ऊँची मानवयुक्त कक्षा।",
       "type": "info"
     },
     {
       "met": 3,
-      "label": "COMMERCIAL EVA",
+      "label": "व्यावसायिक स्पेसवॉक",
       "note": "Isaacman + Gillis ने केबिन हैच के माध्यम से निर्वात में बाहर निकला — पहली वाणिज्यिक स्पेसवॉक।",
       "type": "nominal"
     },
     {
       "met": 4.93,
-      "label": "SPLASHDOWN",
+      "label": "समुद्र में अवतरण",
       "note": "Resilience ने 2024-09-15 07:36 UTC को फ्लोरिडा के पास समुद्र में उतरा।",
       "type": "nominal"
     }

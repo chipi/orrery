@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "LANCIO",
       "note": "Saturn V (AS-503) da Kennedy Space Center LC-39A 1968-12-21 12:51 UTC — primo volo con equipaggio del Saturn V.",
       "type": "nominal"
     },
@@ -25,13 +25,13 @@
     },
     {
       "met": 3.16,
-      "label": "EARTHRISE",
+      "label": "SORGERE DELLA TERRA",
       "note": "Anders fotografa la Terra che sorge sull'orizzonte lunare durante la quarta orbita (1968-12-24, AS08-14-2383).",
       "type": "info"
     },
     {
       "met": 3.5,
-      "label": "GENESIS READING",
+      "label": "LETTURA DELLA GENESI",
       "note": "L'equipaggio legge dalla Genesi in diretta televisiva a circa 1 miliardo di spettatori — il pubblico televisivo in diretta più numeroso fino a quella data.",
       "type": "info"
     },
@@ -43,7 +43,7 @@
     },
     {
       "met": 6.13,
-      "label": "SPLASHDOWN",
+      "label": "AMMARAGGIO",
       "note": "CM ammaraggio nell'Oceano Pacifico settentrionale 1968-12-27. Recupero da parte di USS Yorktown.",
       "type": "nominal"
     }

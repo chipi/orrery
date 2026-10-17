@@ -6,19 +6,19 @@
   "events": [
     {
       "met": 0,
-      "label": "PAD FIRE",
+      "label": "INCÊNDIO NA PLATAFORMA",
       "note": "Teste de desconexão de plugues 27 jan 1967 17:31 EST. Incêndio fulminante em cabine pressuriz­ada com O₂ puro; pressão da cabine atingiu 29 psi em 15 s.",
       "type": "warning"
     },
     {
       "met": 1e-7,
-      "label": "CREW LOST",
+      "label": "TRIPULAÇÃO PERDIDA",
       "note": "Grissom + White + Chaffee morrem asfixiados. Escotilha não pôde ser aberta contra diferencial de pressão.",
       "type": "warning"
     },
     {
       "met": 25,
-      "label": "PROGRAM PAUSE",
+      "label": "PROGRAMA SUSPENSO",
       "note": "Programa Apolo com tripulação interrompido por 21 meses. Missão renomeada Apollo 1 em honra póstuma.",
       "type": "info"
     }

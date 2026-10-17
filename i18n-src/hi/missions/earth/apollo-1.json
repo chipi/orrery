@@ -6,19 +6,19 @@
   "events": [
     {
       "met": 0,
-      "label": "PAD FIRE",
+      "label": "लॉन्च पैड पर आग",
       "note": "Plugs-out परीक्षण 1967-01-27 17:31 EST। दबावयुक्त शुद्ध-O₂ केबिन में तेज आग; केबिन का दबाव 15 s में 29 psi तक बढ़ गया।",
       "type": "warning"
     },
     {
       "met": 1e-7,
-      "label": "CREW LOST",
+      "label": "दल की मृत्यु",
       "note": "Grissom + White + Chaffee दम घुटने से मारे जाते हैं। दबाव अंतर के विरुद्ध हैच को खोला नहीं जा सका।",
       "type": "warning"
     },
     {
       "met": 25,
-      "label": "PROGRAM PAUSE",
+      "label": "कार्यक्रम स्थगित",
       "note": "Apollo मानव-रहित कार्यक्रम 21 महीनों के लिए रोका गया। मिशन को मरणोपरांत सम्मान में Apollo 1 का नाम दिया गया।",
       "type": "info"
     }

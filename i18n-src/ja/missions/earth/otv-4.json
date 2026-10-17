@@ -6,19 +6,19 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "打ち上げ",
       "note": "Atlas V 501 (AV-054) from CCAFS SLC-41 2015-05-20.",
       "type": "nominal"
     },
     {
       "met": 359,
-      "label": "ON-ORBIT OPS",
+      "label": "軌道上運用",
       "note": "近地点 ~325 km；機密ペイロード運用。",
       "type": "info"
     },
     {
       "met": 718,
-      "label": "LANDING",
+      "label": "着陸",
       "note": "2017-05-07 に KSC Shuttle Landing Facility で自動滑走路着陸。",
       "type": "nominal"
     }

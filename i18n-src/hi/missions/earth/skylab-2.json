@@ -7,25 +7,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "प्रक्षेपण",
       "note": "Saturn IB SA-206 from LC-39B 1973-05-25 13:00 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.33,
-      "label": "DOCK",
+      "label": "डॉकिंग",
       "note": "एक सॉफ्ट-डॉक समस्या निवारण के बाद CSM ने Skylab के अक्षीय पोर्ट को डॉक किया।",
       "type": "nominal"
     },
     {
       "met": 14,
-      "label": "EVA #2 — POWER RESTORED",
+      "label": "EVA #2 — बिजली बहाल",
       "note": "Conrad + Kerwin ने 3.5 घंटे की EVA के दौरान जाम हुए सौर पंख को मुक्त किया।",
       "type": "nominal"
     },
     {
       "met": 28.04,
-      "label": "SPLASHDOWN",
+      "label": "समुद्र में अवतरण",
       "note": "CSM-116 ने 1973-06-22 13:50 UTC को Pacific में स्प्लैश डाउन किया।",
       "type": "nominal"
     }

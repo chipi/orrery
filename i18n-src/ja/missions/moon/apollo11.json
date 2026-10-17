@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "打ち上げ",
       "note": "Saturn V（AS-506）ケネディ宇宙センター LC-39A から 1969-07-16 13:32 UTC に打ち上げ",
       "type": "nominal"
     },
@@ -25,25 +25,25 @@
     },
     {
       "met": 4,
-      "label": "TOUCHDOWN",
+      "label": "接地",
       "note": "月着陸船 Eagle が静かの海に着陸 1969-07-20 20:17:40 UTC。",
       "type": "nominal"
     },
     {
       "met": 4.3,
-      "label": "FIRST STEP",
+      "label": "最初の一歩",
       "note": "アームストロングが月面へ。「人類にとって小さな一歩」。",
       "type": "info"
     },
     {
       "met": 5,
-      "label": "ASCENT",
+      "label": "上昇",
       "note": "イーグルが表面二十一時間三十六分後に離昇。",
       "type": "nominal"
     },
     {
       "met": 8,
-      "label": "SPLASHDOWN",
+      "label": "着水",
       "note": "CM Columbia は乗組員を太平洋に 1969-07-24 に帰還させた。",
       "type": "nominal"
     }

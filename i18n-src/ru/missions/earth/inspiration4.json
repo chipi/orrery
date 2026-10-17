@@ -6,25 +6,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "ЗАПУСК",
       "note": "Falcon 9 B1062 from LC-39A 2021-09-15 00:02 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.05,
-      "label": "ORBIT",
+      "label": "ОРБИТА",
       "note": "Круговая орбита 585 км, наклонение 51,6° — самая высокая пилотируемая орбита со времён обслуживания Hubble.",
       "type": "nominal"
     },
     {
       "met": 1,
-      "label": "CUPOLA WINDOW",
+      "label": "ИЛЛЮМИНАТОР КУПОЛА",
       "note": "Первый осмотр через купол Crew Dragon (заменяющий стыковочный адаптер).",
       "type": "info"
     },
     {
       "met": 2.96,
-      "label": "SPLASHDOWN",
+      "label": "ПРИВОДНЕНИЕ",
       "note": "Resilience совершила приводнение у побережья Флориды 2021-09-18 23:06 UTC.",
       "type": "nominal"
     }

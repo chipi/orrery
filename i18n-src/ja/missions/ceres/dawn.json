@@ -6,13 +6,13 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "打ち上げ",
       "note": "Delta IIがDawnをベスタとケレスへ低推力スパイラルハイウェイで送る。",
       "type": "nominal"
     },
     {
       "met": 2717,
-      "label": "CERES CAPTURE",
+      "label": "ケレス周回軌道への捕獲",
       "note": "イオンエンジンが Dawn をケレス軌道へ制動；マッピング開始。",
       "type": "nominal"
     }

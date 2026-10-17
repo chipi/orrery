@@ -6,25 +6,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "发射",
       "note": "Falcon 9 B1062 from LC-39A 2021-09-15 00:02 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.05,
-      "label": "ORBIT",
+      "label": "轨道",
       "note": "585 千米圆形轨道，倾角 51.6°——自 Hubble 服务任务以来最高的载人轨道。",
       "type": "nominal"
     },
     {
       "met": 1,
-      "label": "CUPOLA WINDOW",
+      "label": "穹顶舷窗",
       "note": "首次通过 Crew Dragon 舷窗进行观看（替代对接适配器）。",
       "type": "info"
     },
     {
       "met": 2.96,
-      "label": "SPLASHDOWN",
+      "label": "溅落",
       "note": "Resilience 于 2021-09-18 23:06 UTC 在佛罗里达海岸溅落。",
       "type": "nominal"
     }

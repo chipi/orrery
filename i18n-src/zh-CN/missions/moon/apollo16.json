@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "发射",
       "note": "Saturn V (AS-511) from Kennedy Space Center LC-39A 1972-04-16 17:54 UTC.",
       "type": "nominal"
     },
@@ -25,37 +25,37 @@
     },
     {
       "met": 4.79,
-      "label": "SPS ANOMALY",
+      "label": "SPS 异常",
       "note": "下降前：备用SPS万向节振荡迫使进行了6小时的着陆对比中止工程评审，实时进行。最终批准着陆。",
       "type": "warning"
     },
     {
       "met": 5.04,
-      "label": "TOUCHDOWN",
+      "label": "触地",
       "note": "Orion于1972-04-21 02:23 UTC在Descartes Highlands着陆——首次高地（非月海）着陆。",
       "type": "nominal"
     },
     {
       "met": 5.5,
-      "label": "FIRST HIGHLANDS EVA",
+      "label": "首次高地出舱",
       "note": "EVA-1：ALSEP部署+月球车部署+首次月球高地科学巡视。",
       "type": "info"
     },
     {
       "met": 6.1,
-      "label": "LUNAR GRAND PRIX",
+      "label": "月面大奖赛",
       "note": "EVA-2：Young的电视直播月球车速度测试（\"月球大奖赛\"）——峰值速度~17 km/h。地质巡视至石头山。",
       "type": "info"
     },
     {
       "met": 6.7,
-      "label": "FAR-UV CAMERA",
+      "label": "远紫外相机",
       "note": "EVA-3：首个在其他天体表面部署的天文观测台（NRL紫外线照相分光仪）。",
       "type": "info"
     },
     {
       "met": 7.81,
-      "label": "ASCENT",
+      "label": "上升",
       "note": "Orion在表面停留71小时02分后升空。返回样品95.7 kg——迄今为止Apollo最重的收获。",
       "type": "nominal"
     },
@@ -67,7 +67,7 @@
     },
     {
       "met": 11.07,
-      "label": "SPLASHDOWN",
+      "label": "溅落",
       "note": "指挥舱于1972-04-27 19:45 UTC在中太平洋溅落。由USS Ticonderoga号完成回收。",
       "type": "nominal"
     }

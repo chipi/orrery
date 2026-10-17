@@ -6,25 +6,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "发射",
       "note": "Falcon 9 B1083 from LC-39A 2024-09-10 09:23 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.5,
-      "label": "APOGEE BOOST",
+      "label": "抬升远地点",
       "note": "将轨道提升至远地点1408公里——自Apollo 17以来最高的载人轨道。",
       "type": "info"
     },
     {
       "met": 3,
-      "label": "COMMERCIAL EVA",
+      "label": "商业出舱活动",
       "note": "Isaacman和Gillis通过舱口进入真空——首次商业太空行走。",
       "type": "nominal"
     },
     {
       "met": 4.93,
-      "label": "SPLASHDOWN",
+      "label": "溅落",
       "note": "Resilience于2024-09-15 07:36 UTC在佛罗里达近海溅落。",
       "type": "nominal"
     }

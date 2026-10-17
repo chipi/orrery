@@ -7,25 +7,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "الإطلاق",
       "note": "Saturn IB SA-206 from LC-39B 1973-05-25 13:00 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.33,
-      "label": "DOCK",
+      "label": "الالتحام",
       "note": "التحم الوحدة CSM بمنفذ Skylab المحوري بعد استكشاف أخطاء الالتحام الناعم.",
       "type": "nominal"
     },
     {
       "met": 14,
-      "label": "EVA #2 — POWER RESTORED",
+      "label": "النشاط الخارجي 2 — استعادة الطاقة",
       "note": "حرر كونراد وكيروين الجناح الشمسي المحصور خلال نشاط سير فضائي مدته 3.5 ساعات.",
       "type": "nominal"
     },
     {
       "met": 28.04,
-      "label": "SPLASHDOWN",
+      "label": "الهبوط في المحيط",
       "note": "غاصت وحدة CSM-116 في المحيط الهادئ في 1973-06-22 الساعة 13:50 بتوقيت العالمي المنسق.",
       "type": "nominal"
     }

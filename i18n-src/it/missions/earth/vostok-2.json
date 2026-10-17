@@ -7,25 +7,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "LANCIO",
       "note": "Vostok-K from Baikonur Site 1 1961-08-06 06:00 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.5,
-      "label": "EARTH PHOTOS",
+      "label": "FOTO DELLA TERRA",
       "note": "Titov scattò le prime fotografie della Terra da orbita con una telecamera portatile.",
       "type": "info"
     },
     {
       "met": 0.8,
-      "label": "SLEEP",
+      "label": "SONNO",
       "note": "Primo periodo di sonno nello spazio (~8 ore).",
       "type": "info"
     },
     {
       "met": 1.04,
-      "label": "EJECT + LAND",
+      "label": "EIEZIONE + ATTERRAGGIO",
       "note": "Capsula disorbita; Titov si è lanciato a ~7 km e ha fatto paracadute verso Krasny Kut.",
       "type": "nominal"
     }

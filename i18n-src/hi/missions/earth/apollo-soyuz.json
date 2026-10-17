@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH (Apollo)",
+      "label": "प्रक्षेपण (Apollo)",
       "note": "Saturn IB (AS-210) LC-39B से 1975-07-15 19:50 UTC। Soyuz 19 के 7.5 घंटे बाद (Baikonur 1975-07-15 12:20 UTC)।",
       "type": "nominal"
     },
@@ -31,7 +31,7 @@
     },
     {
       "met": 9.06,
-      "label": "SPLASHDOWN (Apollo)",
+      "label": "समुद्र में अवतरण (Apollo)",
       "note": "Apollo प्रशांत महासागर में 1975-07-24 21:18 UTC पर उतरा — अंतिम Apollo स्प्लैशडाउन कभी, और 2020 में SpaceX Crew Dragon तक अंतिम अमेरिकी चालक दल वाली जल लैंडिंग। CSM-111 कैलिफोर्निया विज्ञान केंद्र LA में प्रदर्शित।",
       "type": "nominal"
     }

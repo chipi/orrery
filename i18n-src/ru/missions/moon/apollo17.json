@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "ЗАПУСК",
       "note": "Saturn V (AS-512) с KSC LC-39A 1972-12-07 — единственный ночной старт Apollo.",
       "type": "nominal"
     },
@@ -25,25 +25,25 @@
     },
     {
       "met": 4,
-      "label": "TOUCHDOWN",
+      "label": "КАСАНИЕ ПОВЕРХНОСТИ",
       "note": "Лунный модуль Challenger садится в долине Taurus-Littrow 1972-12-11 19:54 UTC.",
       "type": "nominal"
     },
     {
       "met": 4.3,
-      "label": "FIRST EVA",
+      "label": "ПЕРВЫЙ ВЫХОД",
       "note": "Cernan и Schmitt начинают первый из трёх выходов (всего 22 ч 4 мин).",
       "type": "info"
     },
     {
       "met": 7,
-      "label": "ASCENT",
+      "label": "ВЗЛЁТ",
       "note": "Cernan: «Мы уходим так же, как пришли, и, дай Бог, вернёмся».",
       "type": "nominal"
     },
     {
       "met": 12.6,
-      "label": "SPLASHDOWN",
+      "label": "ПРИВОДНЕНИЕ",
       "note": "КК America возвращает экипаж в Тихий океан 1972-12-19.",
       "type": "nominal"
     }

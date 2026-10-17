@@ -6,19 +6,19 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "발사",
       "note": "Falcon 9 Block 4 from KSC LC-39A 2017-09-07.",
       "type": "nominal"
     },
     {
       "met": 390,
-      "label": "ON-ORBIT OPS",
+      "label": "궤도 운용",
       "note": "원지점 약 360 km, 54.5° 궤도 기울기; 기밀 탑재체 운용.",
       "type": "info"
     },
     {
       "met": 780,
-      "label": "LANDING",
+      "label": "착륙",
       "note": "자동 활주로 착륙(KSC Shuttle Landing Facility, 2019-10-27).",
       "type": "nominal"
     }

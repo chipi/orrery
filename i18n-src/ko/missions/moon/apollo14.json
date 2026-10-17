@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "발사",
       "note": "Saturn V (AS-509) from Kennedy Space Center LC-39A 1971-01-31 21:03 UTC.",
       "type": "nominal"
     },
@@ -19,7 +19,7 @@
     },
     {
       "met": 0.25,
-      "label": "CSM-LM DOCKING",
+      "label": "CSM-LM 도킹",
       "note": "Kitty Hawk가 Antares를 부드럽게 포획하기 전 도킹 시도 5회 — 도킹 래치의 이상; 지상에서 근본 원인을 재현한 적 없음.",
       "type": "warning"
     },
@@ -31,7 +31,7 @@
     },
     {
       "met": 4.6,
-      "label": "TOUCHDOWN",
+      "label": "착지",
       "note": "Antares가 1971-02-05 09:18 UTC에 Fra Mauro Highlands에 착륙 — LM 컴퓨터의 중단 프로그램 결함으로 인해 팀이 실시간으로 패치했음에도 불구하고 목표 지점으로부터 53 m 이내.",
       "type": "nominal"
     },
@@ -43,13 +43,13 @@
     },
     {
       "met": 5.4,
-      "label": "CONE CRATER + GOLF",
+      "label": "CONE CRATER + 골프",
       "note": "EVA-2: Cone Crater 방향 탐사 (능선에서 약 30 m 미달). 최종 순간 — Shepard가 즉석으로 만든 클럽으로 골프공 2개를 쳐냄.",
       "type": "info"
     },
     {
       "met": 5.6,
-      "label": "ASCENT",
+      "label": "상승",
       "note": "Antares가 표면에서 33 h 31 m 후에 이륙. 42 kg의 샘플 회수.",
       "type": "nominal"
     },
@@ -61,7 +61,7 @@
     },
     {
       "met": 9,
-      "label": "SPLASHDOWN",
+      "label": "착수",
       "note": "CM이 1971-02-09 21:05 UTC에 남태평양에 착수. USS New Orleans에 의해 회수. 마지막 Apollo 격리.",
       "type": "nominal"
     }

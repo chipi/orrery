@@ -6,25 +6,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "打ち上げ",
       "note": "Saturn IB (AS-205) from Cape Kennedy LC-34 1968-10-11 15:02 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.1,
-      "label": "ORBIT INSERT",
+      "label": "軌道投入",
       "note": "CSMはS-IVBから分離して高度232 × 285 km、軌道傾斜角31.6°の地球周回軌道に入る。SPS噴射シーケンス（11日間にわたる8回の噴射）は、月でのLOI + TEIを実行する推進システムを検証する。",
       "type": "nominal"
     },
     {
       "met": 1.2,
-      "label": "FIRST LIVE TV",
+      "label": "初の生中継",
       "note": "「素晴らしいApollo司令室からのご報告です、万物の頂上から。」有人米国宇宙船からの初のテレビ生中継放送。",
       "type": "info"
     },
     {
       "met": 10.8,
-      "label": "SPLASHDOWN",
+      "label": "着水",
       "note": "CMは163周回・740万 km・10日20時間後、1968-10-22 11:11 UTCに北大西洋に着水。USS Essexにより回収された。",
       "type": "nominal"
     }

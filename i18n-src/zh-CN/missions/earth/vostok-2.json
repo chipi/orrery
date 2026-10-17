@@ -7,25 +7,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "发射",
       "note": "Vostok-K from Baikonur Site 1 1961-08-06 06:00 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.5,
-      "label": "EARTH PHOTOS",
+      "label": "地球照片",
       "note": "季托夫拍摄了首批从轨道上手持相机拍摄的地球照片。",
       "type": "info"
     },
     {
       "met": 0.8,
-      "label": "SLEEP",
+      "label": "睡眠",
       "note": "太空中首次睡眠周期（约8小时）。",
       "type": "info"
     },
     {
       "met": 1.04,
-      "label": "EJECT + LAND",
+      "label": "弹射 + 着陆",
       "note": "返回舱降轨；季托夫在约7公里高度弹射并降落伞飘降至Krasny Kut。",
       "type": "nominal"
     }

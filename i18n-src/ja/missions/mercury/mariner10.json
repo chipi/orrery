@@ -6,37 +6,37 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "打ち上げ",
       "note": "Atlas SLV-3D Centaur AC-34 from CCAFS LC-36B 1973-11-03 05:45 UTC.",
       "type": "nominal"
     },
     {
       "met": 94,
-      "label": "VENUS FLYBY",
+      "label": "金星フライバイ",
       "note": "最接近距離5768 km、1974-02-05；宇宙史上初の意図的な重力アシスト軌道。",
       "type": "nominal"
     },
     {
       "met": 146,
-      "label": "MERCURY 1",
+      "label": "水星 1",
       "note": "最接近距離703 km、1974-03-29；初の水星画像。",
       "type": "nominal"
     },
     {
       "met": 322,
-      "label": "MERCURY 2",
+      "label": "水星 2",
       "note": "最接近距離48069 km、1974-09-21；南半球の撮像。",
       "type": "nominal"
     },
     {
       "met": 498,
-      "label": "MERCURY 3",
+      "label": "水星 3",
       "note": "最接近距離327 km、1975-03-16；磁場の再確認。",
       "type": "nominal"
     },
     {
       "met": 506,
-      "label": "PROPELLANT END",
+      "label": "推進剤枯渇",
       "note": "N₂姿勢制御ガス枯渇1975-03-24；送信機をオフにコマンド。",
       "type": "nominal"
     }

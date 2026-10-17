@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "LANCEMENT",
       "note": "Saturn V (AS-503) depuis Kennedy Space Center LC-39A 1968-12-21 12:51 UTC — premier vol habité du Saturn V.",
       "type": "nominal"
     },
@@ -25,13 +25,13 @@
     },
     {
       "met": 3.16,
-      "label": "EARTHRISE",
+      "label": "LEVER DE TERRE",
       "note": "Anders photographie la Terre se levant au-dessus de l'horizon lunaire lors de la quatrième orbite (1968-12-24, AS08-14-2383).",
       "type": "info"
     },
     {
       "met": 3.5,
-      "label": "GENESIS READING",
+      "label": "LECTURE DE LA GENÈSE",
       "note": "L'équipage lit la Genèse à la télévision en direct devant environ 1 milliard de téléspectateurs — la plus grande audience de télévision en direct jusqu'à cette date.",
       "type": "info"
     },
@@ -43,7 +43,7 @@
     },
     {
       "met": 6.13,
-      "label": "SPLASHDOWN",
+      "label": "AMERRISSAGE",
       "note": "CM amerri dans l'Océan Atlantique Nord 1968-12-27. Récupération par l'USS Yorktown.",
       "type": "nominal"
     }

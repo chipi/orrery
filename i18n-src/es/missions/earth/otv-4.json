@@ -6,19 +6,19 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "LANZAMIENTO",
       "note": "Atlas V 501 (AV-054) from CCAFS SLC-41 2015-05-20.",
       "type": "nominal"
     },
     {
       "met": 359,
-      "label": "ON-ORBIT OPS",
+      "label": "OPERACIONES EN ÓRBITA",
       "note": "Apogeo ~325 km; operaciones de carga clasificada.",
       "type": "info"
     },
     {
       "met": 718,
-      "label": "LANDING",
+      "label": "ATERRIZAJE",
       "note": "Aterrizaje autónomo en la pista del Shuttle Landing Facility de KSC el 2017-05-07.",
       "type": "nominal"
     }

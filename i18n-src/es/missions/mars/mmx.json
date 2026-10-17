@@ -7,7 +7,7 @@
     { "met": 0, "label": "LANZAMIENTO", "note": "H3-24L desde Tanegashima — el nuevo lanzador pesado de la JAXA.", "type": "nominal" },
     { "met": 334, "label": "INSERCIÓN ORBITAL EN MARTE", "note": "Captura en órbita marciana; transferencia a cuasi-órbita de Phobos durante los meses siguientes.", "type": "nominal" },
     { "met": 600, "label": "DESPLIEGUE DEL RÓVER", "note": "Un róver del DLR/CNES (~25 kg) se libera sobre la superficie de Phobos para estudios in situ.", "type": "info" },
-    { "met": 1100, "label": "MUESTRA DE FOBOS", "note": "MMX se posa en Phobos; se recogen ~10 g de regolito.", "type": "info" },
+    { "met": 1100, "label": "MUESTRA DE PHOBOS", "note": "MMX se posa en Phobos; se recogen ~10 g de regolito.", "type": "info" },
     { "met": 1500, "label": "RETORNO A LA TIERRA", "note": "La cápsula de reentrada con la muestra llega a la Tierra ~2031.", "type": "info" }
   ]
 }

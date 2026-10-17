@@ -7,13 +7,13 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "打ち上げ",
       "note": "Titan IIIEが Cape Canaveral からVoyager 2をGrand Tour軌道へ。",
       "type": "nominal"
     },
     {
       "met": 4388,
-      "label": "NEPTUNE CLOSEST APPROACH",
+      "label": "海王星への最接近",
       "note": "海王星と大型衛星TritonのFlyby；Grand Tour最後の惑星遭遇。",
       "type": "nominal"
     }

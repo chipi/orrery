@@ -6,25 +6,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "打ち上げ",
       "note": "Falcon 9 B1062 from LC-39A 2021-09-15 00:02 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.05,
-      "label": "ORBIT",
+      "label": "軌道",
       "note": "高度585 kmの円軌道、傾斜角51.6° — Hubble保守以来、最高の有人軌道。",
       "type": "nominal"
     },
     {
       "met": 1,
-      "label": "CUPOLA WINDOW",
+      "label": "キューポラの窓",
       "note": "Crew Dragon キューポラ（ドッキングアダプターに代わる）を通じた初めての眺望。",
       "type": "info"
     },
     {
       "met": 2.96,
-      "label": "SPLASHDOWN",
+      "label": "着水",
       "note": "Resilience は2021-09-18 23:06 UTCにフロリダ海岸沖に着水した。",
       "type": "nominal"
     }

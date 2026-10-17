@@ -6,13 +6,13 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "发射",
       "note": "Delta II 将 Dawn 送向灶神星和谷神星，通过低推力螺旋航路。",
       "type": "nominal"
     },
     {
       "met": 2717,
-      "label": "CERES CAPTURE",
+      "label": "被谷神星捕获",
       "note": "离子引擎使 Dawn 减速进入谷神星轨道；测绘任务开始。",
       "type": "nominal"
     }

@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH (Apollo)",
+      "label": "LANÇAMENTO (Apollo)",
       "note": "Saturn IB (AS-210) de LC-39B em 1975-07-15 19:50 UTC. 7,5 h depois de Soyuz 19 (Baikonur 1975-07-15 12:20 UTC).",
       "type": "nominal"
     },
@@ -31,7 +31,7 @@
     },
     {
       "met": 9.06,
-      "label": "SPLASHDOWN (Apollo)",
+      "label": "AMERISSAGEM (Apollo)",
       "note": "Apollo amerissou no Pacífico em 1975-07-24 21:18 UTC — último amerissar do Apollo na história, e o último pouso tripulado em água dos EUA até o SpaceX Crew Dragon em 2020. CSM-111 exibido no California Science Center LA.",
       "type": "nominal"
     }

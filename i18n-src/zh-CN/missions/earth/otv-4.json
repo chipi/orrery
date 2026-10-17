@@ -6,19 +6,19 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "发射",
       "note": "Atlas V 501 (AV-054) from CCAFS SLC-41 2015-05-20.",
       "type": "nominal"
     },
     {
       "met": 359,
-      "label": "ON-ORBIT OPS",
+      "label": "在轨运行",
       "note": "近地点约325公里；机密载荷作业。",
       "type": "info"
     },
     {
       "met": 718,
-      "label": "LANDING",
+      "label": "着陆",
       "note": "2017-05-07在KSC航天飞机着陆设施进行自主跑道着陆。",
       "type": "nominal"
     }

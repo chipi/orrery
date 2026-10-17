@@ -6,37 +6,37 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "LANCEMENT",
       "note": "Atlas SLV-3D Centaur AC-34 from CCAFS LC-36B 1973-11-03 05:45 UTC.",
       "type": "nominal"
     },
     {
       "met": 94,
-      "label": "VENUS FLYBY",
+      "label": "SURVOL DE VÉNUS",
       "note": "Approche minimale 5768 km le 1974-02-05 ; première trajectoire de survol gravitationnel délibérée dans l'histoire de l'exploration spatiale.",
       "type": "nominal"
     },
     {
       "met": 146,
-      "label": "MERCURY 1",
+      "label": "MERCURE 1",
       "note": "Approche minimale 703 km le 1974-03-29 ; premières images de Mercure.",
       "type": "nominal"
     },
     {
       "met": 322,
-      "label": "MERCURY 2",
+      "label": "MERCURE 2",
       "note": "Approche minimale 48069 km le 1974-09-21 ; imagerie de l'hémisphère sud.",
       "type": "nominal"
     },
     {
       "met": 498,
-      "label": "MERCURY 3",
+      "label": "MERCURE 3",
       "note": "Approche minimale 327 km le 1975-03-16 ; re-confirmation du champ magnétique.",
       "type": "nominal"
     },
     {
       "met": 506,
-      "label": "PROPELLANT END",
+      "label": "FIN DU PROPERGOL",
       "note": "Réserve de gaz N₂ de contrôle d'attitude épuisée le 1975-03-24 ; émetteur commandé hors tension.",
       "type": "nominal"
     }

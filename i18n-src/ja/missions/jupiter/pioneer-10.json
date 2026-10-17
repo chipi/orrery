@@ -7,13 +7,13 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "打ち上げ",
       "note": "Atlas-Centaur がPioneer 10を木星への直接上昇軌道へ。",
       "type": "nominal"
     },
     {
       "met": 641,
-      "label": "JUPITER CLOSEST APPROACH",
+      "label": "木星への最接近",
       "note": "約 132,000 km での接近 — 惑星の初の近距離画像。",
       "type": "nominal"
     }

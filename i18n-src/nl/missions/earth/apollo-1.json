@@ -6,19 +6,19 @@
   "events": [
     {
       "met": 0,
-      "label": "PAD FIRE",
+      "label": "BRAND OP HET PLATFORM",
       "note": "Plugs-out test 1967-01-27 17:31 EST. Flits in onder druk staande pure-O₂-cabine; druk in cabine liep op tot 29 psi in 15 s.",
       "type": "warning"
     },
     {
       "met": 1e-7,
-      "label": "CREW LOST",
+      "label": "BEMANNING VERLOREN",
       "note": "Grissom + White + Chaffee sterven aan verstikking. Luke kon niet worden geopend tegen de drukverschil.",
       "type": "warning"
     },
     {
       "met": 25,
-      "label": "PROGRAM PAUSE",
+      "label": "PROGRAMMA STILGELEGD",
       "note": "Apollo-bemand programma 21 maanden stopgezet. Missie achteraf genoemd Apollo 1 ter nagedachtenis.",
       "type": "info"
     }

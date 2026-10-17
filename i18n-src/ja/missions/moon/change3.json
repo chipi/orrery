@@ -4,9 +4,9 @@
   "first": "中国初の月面軟着陸；中国初の月面探査車Yutuを配置",
   "description": "Chang'e 3はCNSAのChang'e計画における3番目の着陸船であり、1976年のソビエトLuna 24以来、月面への最初の成功した軟着陸でした。37年の間隔がありました。Long March 3Bは2013年12月に月直接軌道で打ち上げられ、月周回軌道投入前に1回の中途修正を行いました。着陸船はMare Imbriumに14日間で接触し、Yutu（Jade Rabbit）探査車を配置しました。この探査車は月面第2日に走行機能に障害が発生したものの、31か月間動作しました。Chang'e 3の着陸船はその後数年間、撮像を継続しました。",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "Long March 3B from Xichang 2013-12-01.", "type": "nominal" },
+    { "met": 0, "label": "打ち上げ", "note": "Long March 3B from Xichang 2013-12-01.", "type": "nominal" },
     { "met": 0.01, "label": "TLI", "note": "LM-3B上段による直接月トランスジェクション投入", "type": "nominal" },
-    { "met": 5, "label": "LUNAR ORBIT INSERTION", "note": "2013年12月6日、高度100 kmの円形月周回軌道への投入。", "type": "nominal" },
-    { "met": 13, "label": "LANDING", "note": "Mare Imbriumへの軟着陸2013年12月14日。Luna 24（1976年）以来初の軟着陸。数時間後にYutuローバーを配置。", "type": "nominal" }
+    { "met": 5, "label": "月周回軌道投入", "note": "2013年12月6日、高度100 kmの円形月周回軌道への投入。", "type": "nominal" },
+    { "met": 13, "label": "着陸", "note": "Mare Imbriumへの軟着陸2013年12月14日。Luna 24（1976年）以来初の軟着陸。数時間後にYutuローバーを配置。", "type": "nominal" }
   ]
 }

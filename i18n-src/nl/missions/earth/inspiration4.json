@@ -6,25 +6,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "LANCERING",
       "note": "Falcon 9 B1062 from LC-39A 2021-09-15 00:02 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.05,
-      "label": "ORBIT",
+      "label": "BAAN",
       "note": "585 km cirkelvormig, 51,6° inclinatie — hoogste bemande baan sinds de onderhoudsmissies naar Hubble.",
       "type": "nominal"
     },
     {
       "met": 1,
-      "label": "CUPOLA WINDOW",
+      "label": "KOEPELVENSTER",
       "note": "Eerste waarneming door de Crew Dragon-cupola (vervanging van dockingadapter).",
       "type": "info"
     },
     {
       "met": 2.96,
-      "label": "SPLASHDOWN",
+      "label": "WATERLANDING",
       "note": "Resilience landde af op 2021-09-18 23:06 UTC voor de kust van Florida.",
       "type": "nominal"
     }

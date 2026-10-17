@@ -7,25 +7,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "الإطلاق",
       "note": "Saturn IB SA-207 from LC-39B 1973-07-28 11:11 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.5,
-      "label": "CSM THRUSTER LEAK",
+      "label": "تسرّب في دافعات CSM",
       "note": "تسرّب في رباعي نظام التحكم بالمسار الخاص بوحدة الخدمة؛ تم تحضير مركبة القيادة والخدمة CSM-119 للإنقاذ في Cape لكن لم يتم إطلاقها.",
       "type": "warning"
     },
     {
       "met": 30,
-      "label": "TWIN-POLE SHIELD EVA",
+      "label": "نشاط خارجي: درع بعمودين",
       "note": "نشرت الطاقم درعاً ثنائي الأعمدة فوق المظلة الأصلية.",
       "type": "nominal"
     },
     {
       "met": 59.46,
-      "label": "SPLASHDOWN",
+      "label": "الهبوط في المحيط",
       "note": "هبطت مركبة القيادة والخدمة CSM-117 في المحيط الهادي في 1973-09-25 22:19 UTC.",
       "type": "nominal"
     }

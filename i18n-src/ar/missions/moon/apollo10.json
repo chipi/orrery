@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "الإطلاق",
       "note": "Saturn V (AS-505) من Kennedy Space Center LC-39B في 1969-05-18 الساعة 16:49 UTC — أول إطلاق مأهول بالبشر من LC-39B.",
       "type": "nominal"
     },
@@ -25,19 +25,19 @@
     },
     {
       "met": 4.6,
-      "label": "LM SEPARATION",
+      "label": "انفصال LM",
       "note": "Snoopy ينفصل عن Charlie Brown. الطاقم المكون من اثنين (Stafford + Cernan) ينحدران نحو Mare Tranquillitatis.",
       "type": "nominal"
     },
     {
       "met": 4.66,
-      "label": "CLOSEST APPROACH",
+      "label": "أقرب اقتراب",
       "note": "Snoopy يصل إلى ~15.6 كم فوق موقع هبوط Apollo 11 المستهدف — بدون هبوط؛ تم التحقق من كل شيء ما عدا الهبوط ذاته.",
       "type": "info"
     },
     {
       "met": 4.76,
-      "label": "ASCENT + RENDEZVOUS",
+      "label": "الصعود + الالتقاء",
       "note": "مرحلة الصعود Snoopy لقاء مع Charlie Brown — إعادة الالتحام الأولى الكاملة بين وحدة LM و CSM في المدار القمري.",
       "type": "nominal"
     },
@@ -49,7 +49,7 @@
     },
     {
       "met": 8.05,
-      "label": "SPLASHDOWN",
+      "label": "الهبوط في المحيط",
       "note": "CM هبط في جنوب المحيط الهادئ 1969-05-26 الساعة 16:52 UTC. تم التعافي من قبل USS Princeton.",
       "type": "nominal"
     }

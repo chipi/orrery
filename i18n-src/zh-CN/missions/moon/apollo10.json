@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "发射",
       "note": "Saturn V (AS-505) 于 1969-05-18 16:49 UTC 从肯尼迪航天中心 LC-39B 发射 — 首次从 LC-39B 进行的载人发射。",
       "type": "nominal"
     },
@@ -25,19 +25,19 @@
     },
     {
       "met": 4.6,
-      "label": "LM SEPARATION",
+      "label": "LM 分离",
       "note": "Snoopy 与 Charlie Brown 分离。两人乘组（Stafford + Cernan）下降前往宁静海。",
       "type": "nominal"
     },
     {
       "met": 4.66,
-      "label": "CLOSEST APPROACH",
+      "label": "最近距离",
       "note": "Snoopy 抵达 Apollo 11 目标区域上方约 15.6 km 处 — 未着陆；除着陆本身外，一切均已验证。",
       "type": "info"
     },
     {
       "met": 4.76,
-      "label": "ASCENT + RENDEZVOUS",
+      "label": "上升 + 交会",
       "note": "Snoopy 上升级与 Charlie Brown 交会 — 月球轨道中首次完整的 LM-到-CSM 对接。",
       "type": "nominal"
     },
@@ -49,7 +49,7 @@
     },
     {
       "met": 8.05,
-      "label": "SPLASHDOWN",
+      "label": "溅落",
       "note": "指令舱于 1969-05-26 16:52 UTC 在南太平洋溅落。由普林斯顿号航母（USS Princeton）回收。",
       "type": "nominal"
     }

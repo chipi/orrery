@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "发射",
       "note": "Saturn V（AS-512）从KSC LC-39A于1972-12-07发射——唯一的Apollo夜间发射。",
       "type": "nominal"
     },
@@ -25,25 +25,25 @@
     },
     {
       "met": 4,
-      "label": "TOUCHDOWN",
+      "label": "触地",
       "note": "登月舱Challenger在Taurus-Littrow Valley着陆于1972-12-11 19:54 UTC。",
       "type": "nominal"
     },
     {
       "met": 4.3,
-      "label": "FIRST EVA",
+      "label": "首次出舱",
       "note": "Cernan和Schmitt开始第一次月面舱外活动，共三次（总计22小时4分钟）。",
       "type": "info"
     },
     {
       "met": 7,
-      "label": "ASCENT",
+      "label": "上升",
       "note": "Cernan：\"我们如我们来时一样离开，上天保佑，我们终将归来。\"",
       "type": "nominal"
     },
     {
       "met": 12.6,
-      "label": "SPLASHDOWN",
+      "label": "溅落",
       "note": "指挥舱America于1972-12-19将宇航员送回太平洋。",
       "type": "nominal"
     }

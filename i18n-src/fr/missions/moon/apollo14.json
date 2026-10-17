@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "LANCEMENT",
       "note": "Saturn V (AS-509) from Kennedy Space Center LC-39A 1971-01-31 21:03 UTC.",
       "type": "nominal"
     },
@@ -19,7 +19,7 @@
     },
     {
       "met": 0.25,
-      "label": "CSM-LM DOCKING",
+      "label": "AMARRAGE CSM-LM",
       "note": "Cinq tentatives d'amarrage avant que Kitty Hawk ne saisisse doucement Antares — anomalie dans les verrous d'amarrage ; la cause première n'a jamais pu être reproduite au sol.",
       "type": "warning"
     },
@@ -31,7 +31,7 @@
     },
     {
       "met": 4.6,
-      "label": "TOUCHDOWN",
+      "label": "CONTACT AVEC LE SOL",
       "note": "Antares se pose dans les Fra Mauro Highlands le 1971-02-05 09:18 UTC — à 53 m de la cible malgré une défaillance du programme d'abandon dans l'ordinateur du LM que l'équipe a corrigée en temps réel.",
       "type": "nominal"
     },
@@ -49,7 +49,7 @@
     },
     {
       "met": 5.6,
-      "label": "ASCENT",
+      "label": "REMONTÉE",
       "note": "Antares décolle après 33 h 31 m à la surface. 42 kg d'échantillons rapportés.",
       "type": "nominal"
     },
@@ -61,7 +61,7 @@
     },
     {
       "met": 9,
-      "label": "SPLASHDOWN",
+      "label": "AMERRISSAGE",
       "note": "CM amerrit dans le Pacifique Sud le 1971-02-09 21:05 UTC. Récupération par l'USS New Orleans. Dernière quarantaine Apollo.",
       "type": "nominal"
     }

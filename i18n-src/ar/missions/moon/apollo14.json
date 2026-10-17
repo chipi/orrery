@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "الإطلاق",
       "note": "Saturn V (AS-509) from Kennedy Space Center LC-39A 1971-01-31 21:03 UTC.",
       "type": "nominal"
     },
@@ -19,7 +19,7 @@
     },
     {
       "met": 0.25,
-      "label": "CSM-LM DOCKING",
+      "label": "التحام CSM-LM",
       "note": "خمس محاولات رسو قبل أن تُحقق Kitty Hawk التقاطًا ناعمًا لـ Antares — شذوذ في آليات الرسو؛ لم يتم أبدًا إعادة إنتاج السبب الجذري على الأرض.",
       "type": "warning"
     },
@@ -31,7 +31,7 @@
     },
     {
       "met": 4.6,
-      "label": "TOUCHDOWN",
+      "label": "ملامسة السطح",
       "note": "تهبط Antares عند Fra Mauro Highlands 1971-02-05 09:18 UTC — ضمن 53 م من الهدف رغم عطل في برنامج الإجهاض في حاسوب LM قام الفريق بإصلاحه في الوقت الفعلي.",
       "type": "nominal"
     },
@@ -43,13 +43,13 @@
     },
     {
       "met": 5.4,
-      "label": "CONE CRATER + GOLF",
+      "label": "CONE CRATER + الغولف",
       "note": "الخرجة الثانية (EVA-2): حملة نحو Cone Crater (تقصر ~30 م عن الحافة). في الدقائق الأخيرة — يضرب Shepard كرتي جولف باستخدام عصا مرتجلة.",
       "type": "info"
     },
     {
       "met": 5.6,
-      "label": "ASCENT",
+      "label": "الصعود",
       "note": "تُقلع Antares بعد 33 س 31 د على السطح. عادت 42 كغ من العينات.",
       "type": "nominal"
     },
@@ -61,7 +61,7 @@
     },
     {
       "met": 9,
-      "label": "SPLASHDOWN",
+      "label": "الهبوط في المحيط",
       "note": "انطلقت CM في جنوب المحيط الهادئ 1971-02-09 21:05 UTC. تم استرجاعها بواسطة USS New Orleans. آخر حجر صحي لـ Apollo.",
       "type": "nominal"
     }

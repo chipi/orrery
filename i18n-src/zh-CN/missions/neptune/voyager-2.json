@@ -7,13 +7,13 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "发射",
       "note": "Titan IIIE lifts Voyager 2 from Cape Canaveral on a Grand-Tour trajectory.",
       "type": "nominal"
     },
     {
       "met": 4388,
-      "label": "NEPTUNE CLOSEST APPROACH",
+      "label": "最接近海王星",
       "note": "海王星及其大卫星三卫星的飞掠；四大巨行星大巡回之旅的最后一次行星相遇。",
       "type": "nominal"
     }

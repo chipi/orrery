@@ -7,25 +7,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "발사",
       "note": "Vostok-K from Baikonur Site 1 (Gagarin's Start) 1961-04-12 06:07 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.0001,
-      "label": "ORBIT INSERT",
+      "label": "궤도 진입",
       "note": "169 × 327 km, 경사각 65°의 단일 궤도.",
       "type": "nominal"
     },
     {
       "met": 0.063,
-      "label": "RETROFIRE",
+      "label": "역추진",
       "note": "TDU-1 역추진 로켓이 발사되어 궤도 이탈을 수행합니다. 서비스 모듈 분리 시스템이 부분적으로 작동 실패 — 스트랩이 늦게 해제되어 캡슐이 약 10분간 회전합니다.",
       "type": "warning"
     },
     {
       "met": 0.071,
-      "label": "CREW EJECT",
+      "label": "승무원 사출",
       "note": "가가린이 약 7km 고도에서 강하 모듈에서 사출되었고, Smelovka, Saratov Oblast로 낙하산 강하했습니다. 캡슐은 별도로 착륙했습니다.",
       "type": "info"
     }

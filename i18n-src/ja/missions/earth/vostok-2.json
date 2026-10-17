@@ -7,25 +7,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "打ち上げ",
       "note": "Vostok-K from Baikonur Site 1 1961-08-06 06:00 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.5,
-      "label": "EARTH PHOTOS",
+      "label": "地球の写真",
       "note": "チトフが軌道上から地球の最初の手持ちカメラ写真を撮影した。",
       "type": "info"
     },
     {
       "met": 0.8,
-      "label": "SLEEP",
+      "label": "睡眠",
       "note": "宇宙での初めての睡眠期間（約8時間）。",
       "type": "info"
     },
     {
       "met": 1.04,
-      "label": "EJECT + LAND",
+      "label": "射出 + 着陸",
       "note": "カプセルが軌道離脱；チトフは高度約7 kmで射出され、Krasny Kutにパラシュート降下した。",
       "type": "nominal"
     }

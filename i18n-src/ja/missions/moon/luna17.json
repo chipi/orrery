@@ -4,10 +4,10 @@
   "first": "別天体で初めて運用された遠隔操作ローバー",
   "description": "月面最初の輪 — クリミアの管制室から操縦。Lunokhod 1は322 kgの与圧容器で、8つの独立駆動輪に搭載され、クリミアの管制室から5人チームがリアルタイムで2.5秒の光速遅延を越えて操縦した。11の月日（322地球日）で10.5 kmを走行し、20,000以上のシーンを撮影し、90日の設計寿命をはるかに超えて運用された。1970年代に歴史から失われたが、2010年にNASAのLunar Reconnaissance Orbiterがそれが停止した場所に座っているのを発見して再び発見された。",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "Baikonurからの Proton-K とBlok-D上段。", "type": "nominal" },
+    { "met": 0, "label": "打ち上げ", "note": "Baikonurからの Proton-K とBlok-D上段。", "type": "nominal" },
     { "met": 5, "label": "MOI", "note": "月軌道投入；下降傾斜角への軌道修正。", "type": "nominal" },
-    { "met": 7, "label": "TOUCHDOWN", "note": "Mare Imbrium への軟着陸 1970-11-17。", "type": "nominal" },
-    { "met": 7.005, "label": "ROVER DEPLOYED", "note": "Lunokhod 1 がランプを月面へ。", "type": "info" },
-    { "met": 329, "label": "FINAL CONTACT", "note": "最後の指令セッション 1971-09-14；ローバーは寒い月夜に保存。", "type": "info" }
+    { "met": 7, "label": "接地", "note": "Mare Imbrium への軟着陸 1970-11-17。", "type": "nominal" },
+    { "met": 7.005, "label": "ローバー展開", "note": "Lunokhod 1 がランプを月面へ。", "type": "info" },
+    { "met": 329, "label": "最後の交信", "note": "最後の指令セッション 1971-09-14；ローバーは寒い月夜に保存。", "type": "info" }
   ]
 }

@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "LANCIO",
       "note": "Saturn V (AS-509) from Kennedy Space Center LC-39A 1971-01-31 21:03 UTC.",
       "type": "nominal"
     },
@@ -19,7 +19,7 @@
     },
     {
       "met": 0.25,
-      "label": "CSM-LM DOCKING",
+      "label": "AGGANCIO CSM-LM",
       "note": "Cinque tentativi di attracco prima che Kitty Hawk catturasse dolcemente Antares — anomalia nei meccanismi di aggancio; la causa radice non è mai stata riprodotta da terra.",
       "type": "warning"
     },
@@ -31,7 +31,7 @@
     },
     {
       "met": 4.6,
-      "label": "TOUCHDOWN",
+      "label": "CONTATTO CON IL SUOLO",
       "note": "Antares atterra sugli altopiani di Fra Mauro il 1971-02-05 alle 09:18 UTC — entro 53 m dal bersaglio nonostante un'anomalia nel programma di interruzione del computer del LM che il team ha corretto in tempo reale.",
       "type": "nominal"
     },
@@ -49,7 +49,7 @@
     },
     {
       "met": 5.6,
-      "label": "ASCENT",
+      "label": "RISALITA",
       "note": "Antares decolla dopo 33 h 31 m sulla superficie. 42 kg di campioni riportati.",
       "type": "nominal"
     },
@@ -61,7 +61,7 @@
     },
     {
       "met": 9,
-      "label": "SPLASHDOWN",
+      "label": "AMMARAGGIO",
       "note": "CM ammarò nel Pacifico meridionale il 1971-02-09 alle 21:05 UTC. Recupero da parte di USS New Orleans. Ultima quarantena Apollo.",
       "type": "nominal"
     }

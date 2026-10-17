@@ -6,19 +6,19 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "START",
       "note": "Atlas V 501 (AV-026) from CCAFS SLC-41 2011-03-05.",
       "type": "nominal"
     },
     {
       "met": 234.5,
-      "label": "ON-ORBIT OPS",
+      "label": "ORBITALE OPERATIONEN",
       "note": "Apogäum ~340 km; Operationen mit klassifizierten Nutzlasten.",
       "type": "info"
     },
     {
       "met": 469,
-      "label": "LANDING",
+      "label": "LANDUNG",
       "note": "Automatische Landung auf einer Landebahn in Vandenberg AFB 2012-06-16.",
       "type": "nominal"
     }

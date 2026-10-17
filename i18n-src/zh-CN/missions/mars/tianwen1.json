@@ -4,9 +4,9 @@
   "first": "首次在单次发射中向火星交付轨道器、着陆器和火星车的任务",
   "description": "中国首次火星任务完成了任何航天机构从未在单次发射中尝试过的壮举：轨道插入、大气层进入、软着陆和火星车部署。Zhurong火星车在乌托邦平原运行了358个火星日，行驶1.9千米，之后在2022年5月进入计划中的冬眠状态；此后便再未苏醒（可能是由于太阳能电池板上的尘埃积累）。轨道器仍在继续工作，以高分辨率绘制行星地图，并为地面资产充当中继。",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "Long March 5从文昌出发——中国首次超重型行星际发射。", "type": "nominal" },
+    { "met": 0, "label": "发射", "note": "Long March 5从文昌出发——中国首次超重型行星际发射。", "type": "nominal" },
     { "met": 202, "label": "火星轨道插入", "note": "发动机点火将航天器捕获进入火星轨道。", "type": "nominal" },
-    { "met": 295, "label": "ZHURONG LANDING", "note": "着陆器/火星车下降至乌托邦平原 2021-05-14；Zhurong从坡道上驶下 2021-05-22。", "type": "nominal" },
-    { "met": 651, "label": "ZHURONG HIBERNATION", "note": "火星车进入计划中的冬眠 2022-05；轨道器继续运行。", "type": "info" }
+    { "met": 295, "label": "ZHURONG 着陆", "note": "着陆器/火星车下降至乌托邦平原 2021-05-14；Zhurong从坡道上驶下 2021-05-22。", "type": "nominal" },
+    { "met": 651, "label": "ZHURONG 休眠", "note": "火星车进入计划中的冬眠 2022-05；轨道器继续运行。", "type": "info" }
   ]
 }

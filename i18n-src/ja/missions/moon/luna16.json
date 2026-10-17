@@ -4,10 +4,10 @@
   "first": "最初の自動機械による月のサンプル回収; 最初のアメリカ以外の月サンプル",
   "description": "Luna 16はソビエト連邦の最初の自動機械による月のサンプル回収ミッションであり、最初の無人による月からの帰還ミッションでした。Apollo 11が1969年に有人で採取した22 kgのサンプルを地球に持ち帰ったあと、Luna 16は1年後にMare Fecunditatisからレゴリスの101グラムを回収しました。これはApolloペイロードのほんの一部でしたが、代替的なアーキテクチャの概念実証として極めて重要でした。このミッションはProton-Kブースターを使用し、直接帰還方式を採用していました。表面への降下、コアドリル採取、上昇段階の発射、そしてカザフスタンへの弾道的な帰還カプセルという流れです。この技術はLuna 20とLuna 24で再利用され、数十年後にはChang'e 5とChang'e 6によって利用されました。",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "Proton-K from Baikonur 1970-09-12.", "type": "nominal" },
+    { "met": 0, "label": "打ち上げ", "note": "Proton-K from Baikonur 1970-09-12.", "type": "nominal" },
     { "met": 0.005, "label": "TLI", "note": "Blok-D上段でのトランスルナーインジェクション。", "type": "nominal" },
     { "met": 5, "label": "TCM", "note": "4.5日間の航行中の軌道修正。", "type": "info" },
-    { "met": 5.1, "label": "LANDING", "note": "Mare Fecunditatisへの軟着陸 1970-09-20。表面活動+ドリルコア（101 g）。", "type": "nominal" },
-    { "met": 8, "label": "SAMPLE RETURN", "note": "カザフスタンで回収されたカプセル 1970-09-24。最初の無人による月のサンプル回収。", "type": "nominal" }
+    { "met": 5.1, "label": "着陸", "note": "Mare Fecunditatisへの軟着陸 1970-09-20。表面活動+ドリルコア（101 g）。", "type": "nominal" },
+    { "met": 8, "label": "サンプルリターン", "note": "カザフスタンで回収されたカプセル 1970-09-24。最初の無人による月のサンプル回収。", "type": "nominal" }
   ]
 }

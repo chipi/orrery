@@ -7,25 +7,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "LANCIO",
       "note": "Saturn IB SA-206 from LC-39B 1973-05-25 13:00 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.33,
-      "label": "DOCK",
+      "label": "ATTRACCO",
       "note": "CSM attraccato al porto assiale di Skylab dopo una risoluzione di problemi di soft-dock.",
       "type": "nominal"
     },
     {
       "met": 14,
-      "label": "EVA #2 — POWER RESTORED",
+      "label": "EVA #2 — ENERGIA RIPRISTINATA",
       "note": "Conrad + Kerwin liberarono l'ala solare bloccata durante un'EVA di 3,5h.",
       "type": "nominal"
     },
     {
       "met": 28.04,
-      "label": "SPLASHDOWN",
+      "label": "AMMARAGGIO",
       "note": "CSM-116 ammarò nell'Oceano Pacifico il 1973-06-22 alle 13:50 UTC.",
       "type": "nominal"
     }

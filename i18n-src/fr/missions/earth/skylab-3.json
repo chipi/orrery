@@ -7,25 +7,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "LANCEMENT",
       "note": "Saturn IB SA-207 from LC-39B 1973-07-28 11:11 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.5,
-      "label": "CSM THRUSTER LEAK",
+      "label": "FUITE DES PROPULSEURS DU CSM",
       "note": "Fuite du quad de propulsion du module de service ; CSM-119 de secours préparé à Cape mais non lancé.",
       "type": "warning"
     },
     {
       "met": 30,
-      "label": "TWIN-POLE SHIELD EVA",
+      "label": "EVA : BOUCLIER À DEUX PERCHES",
       "note": "L'équipage a déployé un écran à deux mâts au-dessus du parasol d'origine.",
       "type": "nominal"
     },
     {
       "met": 59.46,
-      "label": "SPLASHDOWN",
+      "label": "AMERRISSAGE",
       "note": "CSM-117 amerri dans le Pacifique le 1973-09-25 à 22:19 UTC.",
       "type": "nominal"
     }

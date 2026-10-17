@@ -7,25 +7,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "LANCERING",
       "note": "Vostok-K from Baikonur Site 1 (Gagarin's Start) 1961-04-12 06:07 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.0001,
-      "label": "ORBIT INSERT",
+      "label": "BAANINBRENGING",
       "note": "Enkelbaan op 169 × 327 km, 65° inclinatie.",
       "type": "nominal"
     },
     {
       "met": 0.063,
-      "label": "RETROFIRE",
+      "label": "REMRAKETTEN",
       "note": "TDU-1 retrorocket schiet af voor deorbitatie. Onttkoppelingssysteem van servicemodule faalt gedeeltelijk — spanners lossen laat los, capsule tuimelt ~10 min.",
       "type": "warning"
     },
     {
       "met": 0.071,
-      "label": "CREW EJECT",
+      "label": "SCHIETSTOEL",
       "note": "Gagarin werd uit de afdaalmodule geworpen op ~7 km hoogte; parachuteerde naar Smelovka, Saratov Oblast. Capsule landde apart.",
       "type": "info"
     }

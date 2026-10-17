@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "प्रक्षेपण",
       "note": "Saturn V (AS-511) from Kennedy Space Center LC-39A 1972-04-16 17:54 UTC.",
       "type": "nominal"
     },
@@ -25,37 +25,37 @@
     },
     {
       "met": 4.79,
-      "label": "SPS ANOMALY",
+      "label": "SPS गड़बड़ी",
       "note": "अवतरण-पूर्व: एक आरक्षित SPS gimbal दोलन ने वास्तविक समय में 6-घंटे की लैंडिंग-बनाम-abort इंजीनियरिंग समीक्षा को बाध्य किया। लैंडिंग अंततः मंजूर की गई।",
       "type": "warning"
     },
     {
       "met": 5.04,
-      "label": "TOUCHDOWN",
+      "label": "सतह स्पर्श",
       "note": "Orion Descartes Highlands पर 1972-04-21 02:23 UTC को उतरता है — पहली पर्वतीय (गैर-सागर) लैंडिंग।",
       "type": "nominal"
     },
     {
       "met": 5.5,
-      "label": "FIRST HIGHLANDS EVA",
+      "label": "उच्चभूमि में पहला EVA",
       "note": "EVA-1: ALSEP तैनाती + LRV तैनाती + चंद्र पर्वतीय क्षेत्रों का पहला वैज्ञानिक भ्रमण।",
       "type": "info"
     },
     {
       "met": 6.1,
-      "label": "LUNAR GRAND PRIX",
+      "label": "चंद्र ग्रां प्री",
       "note": "EVA-2: Young का प्रसारित LRV गति परीक्षण (\"चंद्र Grand Prix\") — शिखर गति ~17 किमी/घंटा। Stone Mountain तक भूविज्ञान भ्रमण।",
       "type": "info"
     },
     {
       "met": 6.7,
-      "label": "FAR-UV CAMERA",
+      "label": "दूर-पराबैंगनी कैमरा",
       "note": "EVA-3: किसी अन्य खगोलीय पिंड की सतह पर तैनात पहली खगोलीय वेधशाला (NRL UV camera-spectrograph)।",
       "type": "info"
     },
     {
       "met": 7.81,
-      "label": "ASCENT",
+      "label": "आरोहण",
       "note": "Orion सतह पर 71 घंटे 02 मिनट के बाद उड़ान भरता है। 95.7 किग्रा नमूने वापस किए गए — उस तारीख तक Apollo की सबसे भारी खोज।",
       "type": "nominal"
     },
@@ -67,7 +67,7 @@
     },
     {
       "met": 11.07,
-      "label": "SPLASHDOWN",
+      "label": "समुद्र में अवतरण",
       "note": "CM मध्य प्रशांत महासागर में 1972-04-27 19:45 UTC को उतरता है। USS Ticonderoga द्वारा पुनः प्राप्त किया गया।",
       "type": "nominal"
     }

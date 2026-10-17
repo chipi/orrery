@@ -7,13 +7,13 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "ЗАПУСК",
       "note": "Titan IIIE выводит Voyager 2 с Cape Canaveral на траекторию Большого тура.",
       "type": "nominal"
     },
     {
       "met": 4388,
-      "label": "NEPTUNE CLOSEST APPROACH",
+      "label": "НАИБОЛЬШЕЕ СБЛИЖЕНИЕ С НЕПТУНОМ",
       "note": "Пролёт Нептуна и крупного спутника Triton; последняя планетная встреча Большого тура.",
       "type": "nominal"
     }

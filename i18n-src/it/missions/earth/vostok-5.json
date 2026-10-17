@@ -7,19 +7,19 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "LANCIO",
       "note": "Vostok-K from Baikonur Site 1 1963-06-14 11:59 UTC.",
       "type": "nominal"
     },
     {
       "met": 2,
-      "label": "VOSTOK 6 JOIN",
+      "label": "SI AGGIUNGE VOSTOK 6",
       "note": "Vostok 6 (Tereshkova) launched 1963-06-16 09:30 UTC.",
       "type": "info"
     },
     {
       "met": 4.965,
-      "label": "EJECT + LAND",
+      "label": "EIEZIONE + ATTERRAGGIO",
       "note": "Atterrato nei pressi di Karaganda il 1963-06-19 alle 11:06 UTC dopo 81 orbite.",
       "type": "nominal"
     }

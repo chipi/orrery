@@ -7,19 +7,19 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "ЗАПУСК",
       "note": "Vostok-K from Baikonur Site 1 1963-06-14 11:59 UTC.",
       "type": "nominal"
     },
     {
       "met": 2,
-      "label": "VOSTOK 6 JOIN",
+      "label": "ПОДКЛЮЧАЕТСЯ VOSTOK 6",
       "note": "Vostok 6 (Tereshkova) launched 1963-06-16 09:30 UTC.",
       "type": "info"
     },
     {
       "met": 4.965,
-      "label": "EJECT + LAND",
+      "label": "КАТАПУЛЬТИРОВАНИЕ + ПОСАДКА",
       "note": "Приземлился вблизи Караганды 1963-06-19 11:06 UTC после 81 витка.",
       "type": "nominal"
     }

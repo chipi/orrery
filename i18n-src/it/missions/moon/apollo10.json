@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "LANCIO",
       "note": "Saturn V (AS-505) dal Kennedy Space Center LC-39B 18 maggio 1969 ore 16:49 UTC — primo lancio con equipaggio da LC-39B.",
       "type": "nominal"
     },
@@ -25,19 +25,19 @@
     },
     {
       "met": 4.6,
-      "label": "LM SEPARATION",
+      "label": "SEPARAZIONE DEL LM",
       "note": "Snoopy si stacca da Charlie Brown. Equipaggio di due (Stafford + Cernan) scende verso Mare Tranquillitatis.",
       "type": "nominal"
     },
     {
       "met": 4.66,
-      "label": "CLOSEST APPROACH",
+      "label": "MASSIMO AVVICINAMENTO",
       "note": "Snoopy raggiunge ~15,6 km sopra il sito bersaglio di Apollo 11 — senza allunaggio; tutto verificato tranne l'allunaggio stesso.",
       "type": "info"
     },
     {
       "met": 4.76,
-      "label": "ASCENT + RENDEZVOUS",
+      "label": "RISALITA + RENDEZVOUS",
       "note": "Stadio di ascesa di Snoopy si aggancia a Charlie Brown — primo aggancio completo da LM a CSM in orbita lunare.",
       "type": "nominal"
     },
@@ -49,7 +49,7 @@
     },
     {
       "met": 8.05,
-      "label": "SPLASHDOWN",
+      "label": "AMMARAGGIO",
       "note": "CM ammarato nell'Oceano Pacifico meridionale 26 maggio 1969 ore 16:52 UTC. Recupero effettuato da USS Princeton.",
       "type": "nominal"
     }

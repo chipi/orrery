@@ -7,25 +7,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "प्रक्षेपण",
       "note": "Vostok-K from Baikonur Site 1 1961-08-06 06:00 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.5,
-      "label": "EARTH PHOTOS",
+      "label": "पृथ्वी की तस्वीरें",
       "note": "Titov ने कक्षा से पृथ्वी की पहली हाथ-चलিत कैमरा तस्वीरें लीं।",
       "type": "info"
     },
     {
       "met": 0.8,
-      "label": "SLEEP",
+      "label": "नींद",
       "note": "अंतरिक्ष में पहली नींद की अवधि (~8 घंटे)।",
       "type": "info"
     },
     {
       "met": 1.04,
-      "label": "EJECT + LAND",
+      "label": "इजेक्शन + अवतरण",
       "note": "कैप्सूल कक्षा से बाहर निकाला गया; Titov को ~7 किमी पर निष्कासित किया गया और Krasny Kut तक पैराशूट किया गया।",
       "type": "nominal"
     }

@@ -4,10 +4,10 @@
   "first": "Segundo rover lunar soviético; trajetória extraplanetária mais longa (~39 km) por mais de 40 anos",
   "description": "Luna 21 entregou Lunokhod 2, o segundo rover lunar controlado por tripulação da União Soviética, na cratera Le Monnier, na borda sul de Mare Serenitatis em janeiro de 1973. O rover foi dirigido por uma equipe de cinco pessoas de uma sala de controle na Crimeia e percorreu aproximadamente 39 km ao longo de quatro dias lunares — um recorde de distância extraplanetária que se manteve até o rover Opportunity da NASA ultrapassá-lo em Marte em 2014. Lunokhod 2 retornou 80.000 quadros de televisão e 86 panoramas antes que a contaminação de poeira de seus painéis solares encerrasse as operações.",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "Proton-K from Baikonur 1973-01-08.", "type": "nominal" },
+    { "met": 0, "label": "LANÇAMENTO", "note": "Proton-K from Baikonur 1973-01-08.", "type": "nominal" },
     { "met": 0.005, "label": "TLI", "note": "Injeção translunar no estágio superior Blok-D.", "type": "nominal" },
     { "met": 4, "label": "TCM", "note": "Correção de trajetória durante a navegação.", "type": "info" },
-    { "met": 4.5, "label": "LANDING", "note": "Pouso suave na cratera Le Monnier em 1973-01-15. Lunokhod 2 saiu das rampas poucas horas depois.", "type": "nominal" },
-    { "met": 7, "label": "ROVER ACTIVE", "note": "Equipe de terra de cinco pessoas na Crimeia iniciou operações de condução. Percurso total: ~39 km.", "type": "nominal" }
+    { "met": 4.5, "label": "POUSO", "note": "Pouso suave na cratera Le Monnier em 1973-01-15. Lunokhod 2 saiu das rampas poucas horas depois.", "type": "nominal" },
+    { "met": 7, "label": "ROVER ATIVO", "note": "Equipe de terra de cinco pessoas na Crimeia iniciou operações de condução. Percurso total: ~39 km.", "type": "nominal" }
   ]
 }

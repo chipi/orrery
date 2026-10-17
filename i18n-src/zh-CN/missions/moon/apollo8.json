@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "发射",
       "note": "Saturn V（AS-503）来自Kennedy Space Center LC-39A 1968-12-21 12:51 UTC — 首次载人Saturn V飞行。",
       "type": "nominal"
     },
@@ -25,13 +25,13 @@
     },
     {
       "met": 3.16,
-      "label": "EARTHRISE",
+      "label": "地出",
       "note": "Anders在第四圈轨道中拍摄地球从月球地平线升起的照片（1968-12-24，AS08-14-2383）。",
       "type": "info"
     },
     {
       "met": 3.5,
-      "label": "GENESIS READING",
+      "label": "朗读《创世记》",
       "note": "乘务组在电视直播中诵读《创世纪》，观众人数达约10亿人 — 创当时最大规模电视直播观众纪录。",
       "type": "info"
     },
@@ -43,7 +43,7 @@
     },
     {
       "met": 6.13,
-      "label": "SPLASHDOWN",
+      "label": "溅落",
       "note": "CM于1968-12-27在北太平洋溅落。由USS Yorktown执行回收。",
       "type": "nominal"
     }

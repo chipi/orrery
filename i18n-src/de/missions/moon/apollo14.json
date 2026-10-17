@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "START",
       "note": "Saturn V (AS-509) from Kennedy Space Center LC-39A 1971-01-31 21:03 UTC.",
       "type": "nominal"
     },
@@ -19,7 +19,7 @@
     },
     {
       "met": 0.25,
-      "label": "CSM-LM DOCKING",
+      "label": "CSM-LM-KOPPLUNG",
       "note": "Fünf Andockungsversuche, bevor Kitty Hawk Antares sanft eingefangen hat — Anomalie in den Andockungsverschlüssen; Grundursache wurde am Boden nie reproduziert.",
       "type": "warning"
     },
@@ -31,7 +31,7 @@
     },
     {
       "met": 4.6,
-      "label": "TOUCHDOWN",
+      "label": "AUFSETZEN",
       "note": "Antares landet am 05.02.1971 09:18 UTC in den Fra Mauro Highlands — innerhalb von 53 m des Ziels trotz eines Abbruchprogramm-Fehlers im LM-Computer, den das Team in Echtzeit behoben hat.",
       "type": "nominal"
     },
@@ -49,7 +49,7 @@
     },
     {
       "met": 5.6,
-      "label": "ASCENT",
+      "label": "AUFSTIEG",
       "note": "Antares hebt nach 33 h 31 m auf der Oberfläche ab. 42 kg Proben zurückgebracht.",
       "type": "nominal"
     },
@@ -61,7 +61,7 @@
     },
     {
       "met": 9,
-      "label": "SPLASHDOWN",
+      "label": "WASSERUNG",
       "note": "CM wasserte am 09.02.1971 21:05 UTC im Südpazifik ab. Bergung durch die USS New Orleans. Letzte Apollo-Quarantäne.",
       "type": "nominal"
     }

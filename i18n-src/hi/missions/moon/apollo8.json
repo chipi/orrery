@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "प्रक्षेपण",
       "note": "Saturn V (AS-503) Kennedy Space Center LC-39A से 1968-12-21 12:51 UTC — पहली मानवयुक्त Saturn V उड़ान।",
       "type": "nominal"
     },
@@ -25,13 +25,13 @@
     },
     {
       "met": 3.16,
-      "label": "EARTHRISE",
+      "label": "पृथ्वी-उदय",
       "note": "Anders चौथी कक्षा के दौरान चंद्रीय क्षितिज के ऊपर पृथ्वी के उदय की तस्वीर लेते हैं (1968-12-24, AS08-14-2383)।",
       "type": "info"
     },
     {
       "met": 3.5,
-      "label": "GENESIS READING",
+      "label": "उत्पत्ति ग्रंथ का पाठ",
       "note": "चालक दल लाइव टीवी पर Genesis से पढ़ते हैं, जिसे लगभग 1 अरब दर्शक देखते हैं — उस तारीख तक सबसे बड़ा लाइव टीवी दर्शक।",
       "type": "info"
     },
@@ -43,7 +43,7 @@
     },
     {
       "met": 6.13,
-      "label": "SPLASHDOWN",
+      "label": "समुद्र में अवतरण",
       "note": "CM उत्तरी प्रशांत महासागर में 1968-12-27 को उतरा। USS Yorktown द्वारा सुधार।",
       "type": "nominal"
     }

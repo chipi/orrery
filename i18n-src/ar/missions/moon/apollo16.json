@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "الإطلاق",
       "note": "Saturn V (AS-511) from Kennedy Space Center LC-39A 1972-04-16 17:54 UTC.",
       "type": "nominal"
     },
@@ -25,37 +25,37 @@
     },
     {
       "met": 4.79,
-      "label": "SPS ANOMALY",
+      "label": "خلل في SPS",
       "note": "قبل الهبوط: تذبذب احترازي في محرك SPS أجبر على إجراء مراجعة هندسية لمدة 6 ساعات حول الهبوط مقابل الإلغاء في الوقت الفعلي. تمت الموافقة على الهبوط في النهاية.",
       "type": "warning"
     },
     {
       "met": 5.04,
-      "label": "TOUCHDOWN",
+      "label": "ملامسة السطح",
       "note": "هبوط Orion في Descartes Highlands في 1972-04-21 02:23 UTC — أول هبوط على أراضٍ مرتفعة (غير بحرية).",
       "type": "nominal"
     },
     {
       "met": 5.5,
-      "label": "FIRST HIGHLANDS EVA",
+      "label": "أول نشاط خارجي في المرتفعات",
       "note": "EVA-1: نشر ALSEP + نشر LRV + أول عملية اجتياز علمية للأراضي المرتفعة بالقمر.",
       "type": "info"
     },
     {
       "met": 6.1,
-      "label": "LUNAR GRAND PRIX",
+      "label": "سباق الجائزة الكبرى القمري",
       "note": "EVA-2: اختبار السرعة المذاع تلفزيونياً لـ Young على LRV (\\\"سباق جائزة Grand Prix القمري\\\") — السرعة القصوى ~17 km/h. عملية اجتياز جيولوجية صعوداً على Stone Mountain.",
       "type": "info"
     },
     {
       "met": 6.7,
-      "label": "FAR-UV CAMERA",
+      "label": "كاميرا الأشعة فوق البنفسجية البعيدة",
       "note": "EVA-3: أول مرصد فلكي نُشر على سطح عالم آخر (كاميرا-مطياف NRL فوق البنفسجية).",
       "type": "info"
     },
     {
       "met": 7.81,
-      "label": "ASCENT",
+      "label": "الصعود",
       "note": "إقلاع Orion بعد 71 ساعة و02 دقيقة على السطح. 95.7 كغ من العينات أُعيدت — أثقل حمولة عينات Apollo حتى ذلك التاريخ.",
       "type": "nominal"
     },
@@ -67,7 +67,7 @@
     },
     {
       "met": 11.07,
-      "label": "SPLASHDOWN",
+      "label": "الهبوط في المحيط",
       "note": "هبط CM في المحيط الهادئ الأوسط في 1972-04-27 19:45 UTC. تم استرجاعه بواسطة USS Ticonderoga.",
       "type": "nominal"
     }

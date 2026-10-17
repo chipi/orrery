@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "प्रक्षेपण",
       "note": "Saturn V (AS-509) from Kennedy Space Center LC-39A 1971-01-31 21:03 UTC.",
       "type": "nominal"
     },
@@ -19,7 +19,7 @@
     },
     {
       "met": 0.25,
-      "label": "CSM-LM DOCKING",
+      "label": "CSM-LM डॉकिंग",
       "note": "Kitty Hawk द्वारा Antares के सॉफ्ट-कैप्चर से पहले पाँच डॉकिंग प्रयास — डॉकिंग लैच में विसंगति; मूल कारण को कभी भी जमीन पर पुनरुत्पादित नहीं किया जा सका।",
       "type": "warning"
     },
@@ -31,7 +31,7 @@
     },
     {
       "met": 4.6,
-      "label": "TOUCHDOWN",
+      "label": "सतह स्पर्श",
       "note": "Antares 1971-02-05 09:18 UTC को Fra Mauro Highlands पर उतरता है — LM कंप्यूटर में एक abort-program विसंगति के बावजूद जिसे टीम ने वास्तविक समय में पैच किया, लक्ष्य के 53 मीटर के भीतर।",
       "type": "nominal"
     },
@@ -43,13 +43,13 @@
     },
     {
       "met": 5.4,
-      "label": "CONE CRATER + GOLF",
+      "label": "CONE CRATER + गोल्फ़",
       "note": "EVA-2: Cone Crater की ओर यात्रा (रिम से लगभग 30 मीटर पहले रुक गई)। अंतिम मिनटों में — Shepard एक तैयार किए गए क्लब से दो गॉल्फ बॉल मारते हैं।",
       "type": "info"
     },
     {
       "met": 5.6,
-      "label": "ASCENT",
+      "label": "आरोहण",
       "note": "Antares सतह पर 33 घंटे 31 मिनट के बाद उड़ान भरता है। 42 किग्रा नमूने वापस लाए गए।",
       "type": "nominal"
     },
@@ -61,7 +61,7 @@
     },
     {
       "met": 9,
-      "label": "SPLASHDOWN",
+      "label": "समुद्र में अवतरण",
       "note": "CM 1971-02-09 21:05 UTC को South Pacific में जल-उतरण करता है। USS New Orleans द्वारा पुनः प्राप्ति। अंतिम Apollo संगरोध।",
       "type": "nominal"
     }

@@ -4,13 +4,13 @@
   "first": "Primer intento de la ESA en la superficie de Marte; tenía la intención de demostrar la tecnología de EDL antes de ExoMars Rosalind Franklin",
   "description": "Schiaparelli era el demostrador de entrada, descenso y aterrizaje transportado como carga secundaria en el ExoMars Trace Gas Orbiter (TGO). Nombrada en honor del astrónomo italiano Giovanni Schiaparelli, la sonda fue construida para demostrar el sistema de EDL que la ESA tenía intención de ampliar para el rover Rosalind Franklin. Schiaparelli se separó del TGO el 16 de octubre de 2016 e ingresó en la atmósfera marciana tres días después. El perfil de descenso se vino abajo: una unidad de medición inercial saturada hizo que el software de navegación creyese que la sonda ya había aterrizados a altitud — el paracaídas se expulsó prematuramente y los propulsores de frenado se apagaron tras funcionar solamente 3 segundos. Schiaparelli impactó la superficie a ~150 m/s. El TGO completó con éxito la inserción en órbita y continúa operando.",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "Proton-M desde Baikonur el 14 de marzo de 2016. Conjunto TGO + Schiaparelli.", "type": "nominal" },
+    { "met": 0, "label": "LANZAMIENTO", "note": "Proton-M desde Baikonur el 14 de marzo de 2016. Conjunto TGO + Schiaparelli.", "type": "nominal" },
     { "met": 0.01, "label": "TMI", "note": "Inyección transmarcianos en la etapa superior Briz-M.", "type": "nominal" },
     { "met": 30, "label": "TCM 1", "note": "Primera corrección de trayectoria durante el crucero de 7 meses.", "type": "info" },
     { "met": 120, "label": "TCM 2", "note": "Mid-cruise correction.", "type": "info" },
     { "met": 216, "label": "TCM 3", "note": "Corrección final de aproximación antes de la separación del TGO/Schiaparelli.", "type": "info" },
-    { "met": 216.5, "label": "SEPARATION", "note": "Schiaparelli se separó del TGO el 16 de octubre de 2016, tres días antes de la entrada en la atmósfera.", "type": "nominal" },
-    { "met": 219, "label": "ENTRY", "note": "Entrada en la atmósfera el 19 de octubre de 2016.", "type": "nominal" },
-    { "met": 219.01, "label": "DESCENT ANOMALY", "note": "Saturación de la IMU → jettison prematuro del paracaídas + corte de los propulsores a la altitud → impacto ~150 m/s en Meridiani Planum.", "type": "warning" }
+    { "met": 216.5, "label": "SEPARACIÓN", "note": "Schiaparelli se separó del TGO el 16 de octubre de 2016, tres días antes de la entrada en la atmósfera.", "type": "nominal" },
+    { "met": 219, "label": "ENTRADA", "note": "Entrada en la atmósfera el 19 de octubre de 2016.", "type": "nominal" },
+    { "met": 219.01, "label": "ANOMALÍA EN EL DESCENSO", "note": "Saturación de la IMU → jettison prematuro del paracaídas + corte de los propulsores a la altitud → impacto ~150 m/s en Meridiani Planum.", "type": "warning" }
   ]
 }

@@ -7,19 +7,19 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "发射",
       "note": "从Baikonur Site 1发射的Vostok-K，时间为1963-06-14 11:59 UTC。",
       "type": "nominal"
     },
     {
       "met": 2,
-      "label": "VOSTOK 6 JOIN",
+      "label": "VOSTOK 6 加入",
       "note": "Vostok 6 (Tereshkova) launched 1963-06-16 09:30 UTC.",
       "type": "info"
     },
     {
       "met": 4.965,
-      "label": "EJECT + LAND",
+      "label": "弹射 + 着陆",
       "note": "1963年6月19日11:06 UTC在Karaganda附近着陆,完成81圈轨道运行。",
       "type": "nominal"
     }

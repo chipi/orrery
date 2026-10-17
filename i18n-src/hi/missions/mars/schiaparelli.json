@@ -4,13 +4,13 @@
   "first": "ESA का पहला मंगल सतह अभियान; ExoMars Rosalind Franklin से पहले EDL प्रदर्शित करने के लिए अभिप्रायित",
   "description": "Schiaparelli ExoMars Trace Gas Orbiter (TGO) के साथ पिछली सीट पर ले जाया गया entry-descent-landing प्रदर्शक था। इतालवी खगोलशास्त्री Giovanni Schiaparelli के नाम पर, यह यान ESA द्वारा Rosalind Franklin रोवर के लिए बड़े पैमाने पर करने के लिए अभिप्रायित EDL स्टैक को सिद्ध करने के लिए बनाया गया था। Schiaparelli 16 अक्टूबर 2016 को TGO से अलग हुआ और तीन दिन बाद मंगल के वायुमंडल में प्रवेश किया। अवतरण प्रोफाइल ढह गया: एक संतृप्त inertial measurement unit ने नेविगेशन सॉफ़्टवेयर को यह सोचने के लिए प्रेरित किया कि यान पहले ही ऊंचाई पर उतर चुका है — पैराशूट समय से पहले छोड़ा गया और ब्रेकिंग thrusters केवल 3 सेकंड के लिए फायर करने के बाद बंद हो गए। Schiaparelli सतह पर ~150 m/s पर टकराया। TGO ने स्वयं सफलतापूर्वक कक्षा प्रविष्टि पूरी की और संचालन जारी रखता है।",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "Baikonur से Proton-M 2016-03-14। TGO + Schiaparelli स्टैक।", "type": "nominal" },
+    { "met": 0, "label": "प्रक्षेपण", "note": "Baikonur से Proton-M 2016-03-14। TGO + Schiaparelli स्टैक।", "type": "nominal" },
     { "met": 0.01, "label": "TMI", "note": "Briz-M ऊपरी चरण पर ट्रांस-मार्स इंजेक्शन।", "type": "nominal" },
     { "met": 30, "label": "TCM 1", "note": "7 महीने की यात्रा के दौरान पहला मध्य-पाठ्यक्रम सुधार।", "type": "info" },
     { "met": 120, "label": "TCM 2", "note": "Mid-cruise correction.", "type": "info" },
     { "met": 216, "label": "TCM 3", "note": "TGO/Schiaparelli अलगीकरण से पहले अंतिम दृष्टिकोण सुधार।", "type": "info" },
-    { "met": 216.5, "label": "SEPARATION", "note": "Schiaparelli 2016-10-16 को TGO से अलग हुआ, वायुमंडलीय प्रवेश से तीन दिन पहले।", "type": "nominal" },
-    { "met": 219, "label": "ENTRY", "note": "वायुमंडलीय प्रवेश 2016-10-19।", "type": "nominal" },
-    { "met": 219.01, "label": "DESCENT ANOMALY", "note": "IMU संतृप्ति → समय से पहले पैराशूट त्याग + ऊंचाई पर थ्रस्टर बंद → Meridiani Planum में ~150 m/s पर प्रभाव।", "type": "warning" }
+    { "met": 216.5, "label": "पृथक्करण", "note": "Schiaparelli 2016-10-16 को TGO से अलग हुआ, वायुमंडलीय प्रवेश से तीन दिन पहले।", "type": "nominal" },
+    { "met": 219, "label": "प्रवेश", "note": "वायुमंडलीय प्रवेश 2016-10-19।", "type": "nominal" },
+    { "met": 219.01, "label": "अवतरण में गड़बड़ी", "note": "IMU संतृप्ति → समय से पहले पैराशूट त्याग + ऊंचाई पर थ्रस्टर बंद → Meridiani Planum में ~150 m/s पर प्रभाव।", "type": "warning" }
   ]
 }

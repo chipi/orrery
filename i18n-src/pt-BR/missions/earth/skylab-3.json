@@ -7,25 +7,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "LANÇAMENTO",
       "note": "Saturn IB SA-207 from LC-39B 1973-07-28 11:11 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.5,
-      "label": "CSM THRUSTER LEAK",
+      "label": "VAZAMENTO NOS PROPULSORES DO CSM",
       "note": "Vazamento de quad de RCS do módulo de serviço; resgate com CSM-119 preparado em Cape, mas não foi realizado.",
       "type": "warning"
     },
     {
       "met": 30,
-      "label": "TWIN-POLE SHIELD EVA",
+      "label": "EVA: ESCUDO DE DUAS HASTES",
       "note": "Tripulação implantou protetor de duplo mastro sobre o parasol original.",
       "type": "nominal"
     },
     {
       "met": 59.46,
-      "label": "SPLASHDOWN",
+      "label": "AMERISSAGEM",
       "note": "CSM-117 amerissou no Pacífico em 1973-09-25 22:19 UTC.",
       "type": "nominal"
     }

@@ -4,13 +4,13 @@
   "first": "Il primo tentativo dell'ESA di atterraggio sulla superficie di Marte; progettato per dimostrare l'EDL in preparazione di ExoMars Rosalind Franklin",
   "description": "Schiaparelli era il dimostratore di entry-descent-landing trasportato a rimorchio su ExoMars Trace Gas Orbiter (TGO). Denominato in onore dell'astronomo italiano Giovanni Schiaparelli, il veicolo fu costruito per provare lo stack EDL che l'ESA aveva intenzione di aumentare di scala per il rover Rosalind Franklin. Schiaparelli si separò da TGO il 16 ottobre 2016 ed entrò nell'atmosfera marziana tre giorni dopo. Il profilo di discesa si collassò: un sensore inerziale saturo causò il software di navigazione a pensare che il veicolo avesse già atterrato in quota — il paracadute fu sganciato precocemente e i retrorazzi di frenata si spensero dopo aver sparato per soli 3 secondi. Schiaparelli colpì la superficie a ~150 m/s. Lo stesso TGO completò con successo l'inserimento orbitale e continua a operare.",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "Proton-M da Baikonur 2016-03-14. Stack TGO + Schiaparelli.", "type": "nominal" },
+    { "met": 0, "label": "LANCIO", "note": "Proton-M da Baikonur 2016-03-14. Stack TGO + Schiaparelli.", "type": "nominal" },
     { "met": 0.01, "label": "TMI", "note": "Iniezione verso Marte nello stadio superiore Briz-M.", "type": "nominal" },
     { "met": 30, "label": "TCM 1", "note": "Prima correzione di rotta durante la crociera di 7 mesi.", "type": "info" },
     { "met": 120, "label": "TCM 2", "note": "Mid-cruise correction.", "type": "info" },
     { "met": 216, "label": "TCM 3", "note": "Correzione finale di rotta prima della separazione TGO/Schiaparelli.", "type": "info" },
-    { "met": 216.5, "label": "SEPARATION", "note": "Schiaparelli si separò da TGO 2016-10-16, tre giorni prima dell'ingresso in atmosfera.", "type": "nominal" },
-    { "met": 219, "label": "ENTRY", "note": "Ingresso in atmosfera 2016-10-19.", "type": "nominal" },
-    { "met": 219.01, "label": "DESCENT ANOMALY", "note": "Saturazione IMU → espulsione prematura del paracadute + spegnimento dei propulsori in quota → impatto a ~150 m/s in Meridiani Planum.", "type": "warning" }
+    { "met": 216.5, "label": "SEPARAZIONE", "note": "Schiaparelli si separò da TGO 2016-10-16, tre giorni prima dell'ingresso in atmosfera.", "type": "nominal" },
+    { "met": 219, "label": "INGRESSO", "note": "Ingresso in atmosfera 2016-10-19.", "type": "nominal" },
+    { "met": 219.01, "label": "ANOMALIA IN DISCESA", "note": "Saturazione IMU → espulsione prematura del paracadute + spegnimento dei propulsori in quota → impatto a ~150 m/s in Meridiani Planum.", "type": "warning" }
   ]
 }

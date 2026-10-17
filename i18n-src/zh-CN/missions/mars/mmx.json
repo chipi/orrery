@@ -4,10 +4,10 @@
   "first": "首次从火星卫星返回样本",
   "description": "Martian Moons eXploration是JAXA登陆火卫一、铲取约10克风化层样本并将其带回地球的计划。这些样本可能会解决一个长期争议的问题：火卫一和火卫二是捕获的小行星，还是源自火星本身的一次古老撞击的碎片？该任务还包括一台用于火卫一表面机动的德法联合漫游车——这是一个与Hayabusa系列任务在小行星丝川和龙宫上执行的任何操作模式都完全不同的运作模式。发射原计划在2024年进行，但因JAXA的H3运载火箭延迟而推迟至2026年。",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "H3-24L自种子岛发射——JAXA的新型重型运载火箭。", "type": "nominal" },
-    { "met": 334, "label": "MARS ORBIT INSERTION", "note": "被火星轨道捕获；在随后的数月内转移至火卫一准轨道。", "type": "nominal" },
-    { "met": 600, "label": "ROVER DEPLOY", "note": "DLR/CNES漫游车（约25千克）在火卫一表面释放，进行原位研究。", "type": "info" },
-    { "met": 1100, "label": "PHOBOS SAMPLE", "note": "MMX在火卫一着陆；收集约10克风化层样本。", "type": "info" },
-    { "met": 1500, "label": "EARTH RETURN", "note": "样本返回舱约于2031年抵达地球。", "type": "info" }
+    { "met": 0, "label": "发射", "note": "H3-24L自种子岛发射——JAXA的新型重型运载火箭。", "type": "nominal" },
+    { "met": 334, "label": "进入火星轨道", "note": "被火星轨道捕获；在随后的数月内转移至火卫一准轨道。", "type": "nominal" },
+    { "met": 600, "label": "释放巡视器", "note": "DLR/CNES漫游车（约25千克）在火卫一表面释放，进行原位研究。", "type": "info" },
+    { "met": 1100, "label": "PHOBOS 样品", "note": "MMX在火卫一着陆；收集约10克风化层样本。", "type": "info" },
+    { "met": 1500, "label": "返回地球", "note": "样本返回舱约于2031年抵达地球。", "type": "info" }
   ]
 }

@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "打ち上げ",
       "note": "Saturn V (AS-509) from Kennedy Space Center LC-39A 1971-01-31 21:03 UTC.",
       "type": "nominal"
     },
@@ -19,7 +19,7 @@
     },
     {
       "met": 0.25,
-      "label": "CSM-LM DOCKING",
+      "label": "CSM-LM ドッキング",
       "note": "Kitty Hawkが Antares をソフトキャプチャするまで5回のドッキング試行 — ドッキングラッチの異常；根本原因は地上では再現されなかった。",
       "type": "warning"
     },
@@ -31,7 +31,7 @@
     },
     {
       "met": 4.6,
-      "label": "TOUCHDOWN",
+      "label": "接地",
       "note": "Antares が Fra Mauro Highlands に 1971-02-05 09:18 UTC に着陸 — LM コンピュータの中止プログラムの不具合をチームがリアルタイムで修正したにもかかわらず、目標地点から 53 m 以内に着陸。",
       "type": "nominal"
     },
@@ -43,13 +43,13 @@
     },
     {
       "met": 5.4,
-      "label": "CONE CRATER + GOLF",
+      "label": "CONE CRATER + ゴルフ",
       "note": "EVA-2: Cone Crater に向かう走行（縁から約 30 m 手前で到達）。最後の数分 — Shepard が即興クラブで2個のゴルフボールを打つ。",
       "type": "info"
     },
     {
       "met": 5.6,
-      "label": "ASCENT",
+      "label": "上昇",
       "note": "Antares が表面での 33 h 31 m 後に離陸。42 kg のサンプルが回収された。",
       "type": "nominal"
     },
@@ -61,7 +61,7 @@
     },
     {
       "met": 9,
-      "label": "SPLASHDOWN",
+      "label": "着水",
       "note": "CM が南太平洋に 1971-02-09 21:05 UTC に着水。USS New Orleans による回収。最後の Apollo 検疫。",
       "type": "nominal"
     }

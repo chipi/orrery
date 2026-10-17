@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "LANÇAMENTO",
       "note": "Saturn V (AS-511) from Kennedy Space Center LC-39A 1972-04-16 17:54 UTC.",
       "type": "nominal"
     },
@@ -25,37 +25,37 @@
     },
     {
       "met": 4.79,
-      "label": "SPS ANOMALY",
+      "label": "ANOMALIA DO SPS",
       "note": "Pré-descida: uma oscilação de gimbal do SPS de backup forçou uma análise técnica em tempo real de 6 horas entre pouso e aborto. O pouso foi finalmente aprovado.",
       "type": "warning"
     },
     {
       "met": 5.04,
-      "label": "TOUCHDOWN",
+      "label": "TOQUE NO SOLO",
       "note": "Orion pousa no Descartes Highlands em 1972-04-21 02:23 UTC — primeiro pouso em terras altas (fora de mare).",
       "type": "nominal"
     },
     {
       "met": 5.5,
-      "label": "FIRST HIGHLANDS EVA",
+      "label": "PRIMEIRA EVA NOS PLANALTOS",
       "note": "EVA-1: implantação do ALSEP + implantação do LRV + primeiro trajeto científico das terras altas lunares.",
       "type": "info"
     },
     {
       "met": 6.1,
-      "label": "LUNAR GRAND PRIX",
+      "label": "GRANDE PRÊMIO LUNAR",
       "note": "EVA-2: teste de velocidade do LRV transmitido pela televisão por Young (\"Grande Prêmio lunar\") — velocidade máxima ~17 km/h. Trajeto geológico até Stone Mountain.",
       "type": "info"
     },
     {
       "met": 6.7,
-      "label": "FAR-UV CAMERA",
+      "label": "CÂMERA DE UV DISTANTE",
       "note": "EVA-3: Primeiro observatório astronômico implantado na superfície de outro mundo (câmera-espectrógrafo UV da NRL).",
       "type": "info"
     },
     {
       "met": 7.81,
-      "label": "ASCENT",
+      "label": "SUBIDA",
       "note": "Orion decola após 71 h 02 m na superfície. 95,7 kg de amostras retornadas — o maior carregamento do Apollo até aquela data.",
       "type": "nominal"
     },
@@ -67,7 +67,7 @@
     },
     {
       "met": 11.07,
-      "label": "SPLASHDOWN",
+      "label": "AMERISSAGEM",
       "note": "Módulo de Comando amerissou no Pacífico Central em 1972-04-27 19:45 UTC. Recuperação por USS Ticonderoga.",
       "type": "nominal"
     }

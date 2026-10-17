@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "START",
       "note": "Saturn V (AS-505) von Kennedy Space Center LC-39B am 18.05.1969 um 16:49 UTC — erste bemannte Mission vom LC-39B.",
       "type": "nominal"
     },
@@ -25,19 +25,19 @@
     },
     {
       "met": 4.6,
-      "label": "LM SEPARATION",
+      "label": "LM-TRENNUNG",
       "note": "Snoopy dockt von Charlie Brown ab. Zweiköpfige Besatzung (Stafford + Cernan) steigt zum Mare Tranquillitatis ab.",
       "type": "nominal"
     },
     {
       "met": 4.66,
-      "label": "CLOSEST APPROACH",
+      "label": "GRÖSSTE ANNÄHERUNG",
       "note": "Snoopy erreicht ~15,6 km über dem Apollo 11-Landeplatz — keine Landung; alles bestätigt außer dem Aufsetzen selbst.",
       "type": "info"
     },
     {
       "met": 4.76,
-      "label": "ASCENT + RENDEZVOUS",
+      "label": "AUFSTIEG + RENDEZVOUS",
       "note": "Aufstiegsstufe von Snoopy Rendezvous mit Charlie Brown — erste vollständige LM-CSM-Rückbindung in Mondorbit.",
       "type": "nominal"
     },
@@ -49,7 +49,7 @@
     },
     {
       "met": 8.05,
-      "label": "SPLASHDOWN",
+      "label": "WASSERUNG",
       "note": "CM wasserte im Südpazifik am 26.05.1969 um 16:52 UTC. Bergung durch USS Princeton.",
       "type": "nominal"
     }

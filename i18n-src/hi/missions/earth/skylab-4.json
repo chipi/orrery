@@ -13,19 +13,19 @@
     },
     {
       "met": 30,
-      "label": "KOHOUTEK CAMPAIGN",
+      "label": "KOHOUTEK अवलोकन अभियान",
       "note": "Comet Kohoutek के व्यापक ATM + window अवलोकन।",
       "type": "info"
     },
     {
       "met": 42,
-      "label": "TIMELINE RESET",
+      "label": "समय-सारणी फिर तय",
       "note": "विवादास्पद विश्राम-दिवस स्टैंड-डाउन (क्रू + NASA ने बाद में कहा कि कोई औपचारिक strike नहीं हुआ); वास्तविक timeline अधिभार ने स्थायी NASA सुधारों की ओर ले जाया।",
       "type": "warning"
     },
     {
       "met": 84.05,
-      "label": "SPLASHDOWN",
+      "label": "समुद्र में अवतरण",
       "note": "CSM-118 Pacific में 1974-02-08 15:17 UTC पर splashdown — अंतिम Skylab splashdown।",
       "type": "nominal"
     }

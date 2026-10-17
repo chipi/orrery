@@ -7,25 +7,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "LANCERING",
       "note": "Saturn IB SA-207 from LC-39B 1973-07-28 11:11 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.5,
-      "label": "CSM THRUSTER LEAK",
+      "label": "LEK IN CSM-STUURRAKETTEN",
       "note": "Service-modulelek in RCS-vierpoot; reddingsvoertuig CSM-119 werd bij Cape voorbereid maar niet gevlogen.",
       "type": "warning"
     },
     {
       "met": 30,
-      "label": "TWIN-POLE SHIELD EVA",
+      "label": "EVA: TWEESTANGSSCHERM",
       "note": "Bemanning plaatste dubbele-pool scherm over originele parasol.",
       "type": "nominal"
     },
     {
       "met": 59.46,
-      "label": "SPLASHDOWN",
+      "label": "WATERLANDING",
       "note": "CSM-117 splashte neer in de Stille Oceaan op 1973-09-25 22:19 UTC.",
       "type": "nominal"
     }

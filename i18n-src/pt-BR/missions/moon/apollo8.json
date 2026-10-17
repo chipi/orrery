@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "LANÇAMENTO",
       "note": "Saturn V (AS-503) do Kennedy Space Center LC-39A 1968-12-21 12:51 UTC — primeiro voo tripulado do Saturn V.",
       "type": "nominal"
     },
@@ -25,13 +25,13 @@
     },
     {
       "met": 3.16,
-      "label": "EARTHRISE",
+      "label": "NASCER DA TERRA",
       "note": "Anders fotografa a Terra nascendo sobre o horizonte lunar durante a quarta órbita (1968-12-24, AS08-14-2383).",
       "type": "info"
     },
     {
       "met": 3.5,
-      "label": "GENESIS READING",
+      "label": "LEITURA DO GÊNESIS",
       "note": "A tripulação lê trechos do Gênesis na TV ao vivo para ~1 bilhão de espectadores — a maior audiência de TV ao vivo até essa data.",
       "type": "info"
     },
@@ -43,7 +43,7 @@
     },
     {
       "met": 6.13,
-      "label": "SPLASHDOWN",
+      "label": "AMERISSAGEM",
       "note": "CM pousou no Oceano Atlântico Norte 1968-12-27. Recuperação pelo USS Yorktown.",
       "type": "nominal"
     }

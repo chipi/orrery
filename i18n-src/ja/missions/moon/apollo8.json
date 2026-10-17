@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "打ち上げ",
       "note": "Saturn V（AS-503）ケネディ宇宙センター LC-39A発射 1968-12-21 12:51 UTC — 初の有人Saturn V飛行。",
       "type": "nominal"
     },
@@ -25,13 +25,13 @@
     },
     {
       "met": 3.16,
-      "label": "EARTHRISE",
+      "label": "地球の出",
       "note": "Andersが第4周回軌道中に月の地平線上に昇る地球を撮影（1968-12-24、AS08-14-2383）。",
       "type": "info"
     },
     {
       "met": 3.5,
-      "label": "GENESIS READING",
+      "label": "創世記の朗読",
       "note": "乗組員がライブTVで創世記を朗読 — 約10億視聴者に放送。当時最大のライブTV視聴者数。",
       "type": "info"
     },
@@ -43,7 +43,7 @@
     },
     {
       "met": 6.13,
-      "label": "SPLASHDOWN",
+      "label": "着水",
       "note": "CM北太平洋に着水 1968-12-27。USS Yorktownにより回収。",
       "type": "nominal"
     }

@@ -7,25 +7,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "START",
       "note": "Saturn IB SA-206 from LC-39B 1973-05-25 13:00 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.33,
-      "label": "DOCK",
+      "label": "ANDOCKEN",
       "note": "CSM dockte nach einer Behebung eines Soft-Dock-Problems an der axialen Schleuse von Skylab an.",
       "type": "nominal"
     },
     {
       "met": 14,
-      "label": "EVA #2 — POWER RESTORED",
+      "label": "EVA #2 — STROM WIEDERHERGESTELLT",
       "note": "Conrad + Kerwin befreiten die blockierte Solaranlage während eines 3,5h EVA.",
       "type": "nominal"
     },
     {
       "met": 28.04,
-      "label": "SPLASHDOWN",
+      "label": "WASSERUNG",
       "note": "CSM-116 wasserte am 1973-06-22 um 13:50 UTC im Pazifik.",
       "type": "nominal"
     }

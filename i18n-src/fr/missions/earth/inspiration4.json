@@ -6,25 +6,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "LANCEMENT",
       "note": "Falcon 9 B1062 from LC-39A 2021-09-15 00:02 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.05,
-      "label": "ORBIT",
+      "label": "ORBITE",
       "note": "Orbite circulaire de 585 km, inclinaison de 51,6° — orbite habitée la plus haute depuis l'entretien de Hubble.",
       "type": "nominal"
     },
     {
       "met": 1,
-      "label": "CUPOLA WINDOW",
+      "label": "HUBLOT DE LA COUPOLE",
       "note": "Premier regard à travers le dôme de la Crew Dragon (remplaçant l'adaptateur d'amarrage).",
       "type": "info"
     },
     {
       "met": 2.96,
-      "label": "SPLASHDOWN",
+      "label": "AMERRISSAGE",
       "note": "Resilience s'est amarée au large de la côte de la Floride le 2021-09-18 à 23:06 UTC.",
       "type": "nominal"
     }

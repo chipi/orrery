@@ -4,9 +4,9 @@
   "first": "首个致力于研究火星如何失去大气的任务",
   "description": "MAVEN — 火星大气与挥发物演化探测器 — 回答了\"火星的空气去了哪里？\"这个问题。其椭圆轨道深入上层大气，对太阳风剥离的离子和中性粒子进行采样。研究发现：火星每秒流失约 100 克的大气到太空 — 在数十亿年的时间尺度上，这足以解释消失的气候。该航天器还作为表面资产的关键中继站，包括 Curiosity 和 Perseverance。",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "Atlas V 401 from Cape Canaveral SLC-41.", "type": "nominal" },
+    { "met": 0, "label": "发射", "note": "Atlas V 401 from Cape Canaveral SLC-41.", "type": "nominal" },
     { "met": 7, "label": "TCM-1", "note": "首次轨道修正。", "type": "nominal" },
-    { "met": 308, "label": "MARS ORBIT INSERTION", "note": "33 分钟的主发动机燃烧将 MAVEN 捕获进一个 35 小时的椭圆科学轨道。", "type": "nominal" },
-    { "met": 350, "label": "FIRST SCIENCE", "note": "开始进行大气采样的\"深层俯冲\"活动，近火点高度约 125 千米。", "type": "info" }
+    { "met": 308, "label": "进入火星轨道", "note": "33 分钟的主发动机燃烧将 MAVEN 捕获进一个 35 小时的椭圆科学轨道。", "type": "nominal" },
+    { "met": 350, "label": "首批科学数据", "note": "开始进行大气采样的\"深层俯冲\"活动，近火点高度约 125 千米。", "type": "info" }
   ]
 }

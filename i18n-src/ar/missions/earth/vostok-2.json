@@ -7,25 +7,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "الإطلاق",
       "note": "Vostok-K from Baikonur Site 1 1961-08-06 06:00 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.5,
-      "label": "EARTH PHOTOS",
+      "label": "صور الأرض",
       "note": "التقط تيتوف أول صور لكوكب الأرض من المدار باستخدام كاميرا يدوية.",
       "type": "info"
     },
     {
       "met": 0.8,
-      "label": "SLEEP",
+      "label": "النوم",
       "note": "أول فترة نوم في الفضاء (حوالي 8 ساعات).",
       "type": "info"
     },
     {
       "met": 1.04,
-      "label": "EJECT + LAND",
+      "label": "القذف + الهبوط",
       "note": "تم إخراج الكبسولة من المدار؛ تم إقذاف تيتوف على ارتفاع حوالي 7 كم وهبط بالمظلة إلى Krasny Kut.",
       "type": "nominal"
     }

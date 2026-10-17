@@ -6,25 +6,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "LANÇAMENTO",
       "note": "Falcon 9 B1083 from LC-39A 2024-09-10 09:23 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.5,
-      "label": "APOGEE BOOST",
+      "label": "ELEVAÇÃO DO APOGEU",
       "note": "Elevou a órbita para apogeu de 1408 km — a órbita tripulada mais alta desde Apollo 17.",
       "type": "info"
     },
     {
       "met": 3,
-      "label": "COMMERCIAL EVA",
+      "label": "CAMINHADA ESPACIAL COMERCIAL",
       "note": "Isaacman + Gillis saíram pela escotilha da cabine para o vácuo — primeira atividade extravehicular comercial.",
       "type": "nominal"
     },
     {
       "met": 4.93,
-      "label": "SPLASHDOWN",
+      "label": "AMERISSAGEM",
       "note": "Resilience amerissou próximo à Florida 2024-09-15 07:36 UTC.",
       "type": "nominal"
     }

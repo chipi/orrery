@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "LANCIO",
       "note": "Saturn V (AS-511) from Kennedy Space Center LC-39A 1972-04-16 17:54 UTC.",
       "type": "nominal"
     },
@@ -25,37 +25,37 @@
     },
     {
       "met": 4.79,
-      "label": "SPS ANOMALY",
+      "label": "ANOMALIA DELL'SPS",
       "note": "Pre-descent: un'oscillazione anomala del gimbal SPS obbligò a una revisione ingegneristica di 6 ore tra discesa e aborto in tempo reale. Lo sbarco fu infine approvato.",
       "type": "warning"
     },
     {
       "met": 5.04,
-      "label": "TOUCHDOWN",
+      "label": "CONTATTO CON IL SUOLO",
       "note": "Orion atterra a Descartes Highlands 1972-04-21 02:23 UTC — primo sbarco negli highlands (non-mare).",
       "type": "nominal"
     },
     {
       "met": 5.5,
-      "label": "FIRST HIGHLANDS EVA",
+      "label": "PRIMA EVA SUGLI ALTOPIANI",
       "note": "EVA-1: deployment ALSEP + deployment LRV + primo percorso scientifico negli highlands lunari.",
       "type": "info"
     },
     {
       "met": 6.1,
-      "label": "LUNAR GRAND PRIX",
+      "label": "GRAN PREMIO LUNARE",
       "note": "EVA-2: test di velocità LRV televisivo di Young (\"Grand Prix lunare\") — velocità massima ~17 km/h. Percorso geologico su Stone Mountain.",
       "type": "info"
     },
     {
       "met": 6.7,
-      "label": "FAR-UV CAMERA",
+      "label": "FOTOCAMERA UV LONTANO",
       "note": "EVA-3: primo osservatorio astronomico distribuito sulla superficie di un altro mondo (fotocamera-spettrografo UV NRL).",
       "type": "info"
     },
     {
       "met": 7.81,
-      "label": "ASCENT",
+      "label": "RISALITA",
       "note": "Orion decolla dopo 71 h 02 m sulla superficie. 95,7 kg di campioni riportati — il carico Apollo più pesante fino a quella data.",
       "type": "nominal"
     },
@@ -67,7 +67,7 @@
     },
     {
       "met": 11.07,
-      "label": "SPLASHDOWN",
+      "label": "AMMARAGGIO",
       "note": "CM ammarato nel Pacifico centrale 1972-04-27 19:45 UTC. Recupero da USS Ticonderoga.",
       "type": "nominal"
     }

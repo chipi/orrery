@@ -4,12 +4,12 @@
   "first": "44年ぶりの月試料帰還（1976年Luna 24以来）",
   "description": "Chang'e 5は、ソビエト連邦のLuna 24が月から帰還した1976年以来、44年ぶりの月試料回収ミッションでした。構成は軌道船、着陸機、上昇段、試料回収カプセルで、すべて1回の打ち上げに統合されていました。着陸機はMons Rümkerに着陸し、1.731 kgの月面物質をドリルで採取し、スコップで掘削した後、発射して軌道船と会合・ドッキング（初の機械化された月面会合）を行い、カプセルは地球に帰還しました。試料は約20億年前という領域からのもので、いかなるApolloやLunaの試料よりもはるかに若く、月火山活動のモデルを塗り替えるものです。",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "Wenchang からのLong March 5。", "type": "nominal" },
+    { "met": 0, "label": "打ち上げ", "note": "Wenchang からのLong March 5。", "type": "nominal" },
     { "met": 5, "label": "MOI", "note": "月軌道投入。", "type": "nominal" },
-    { "met": 8, "label": "TOUCHDOWN", "note": "着陸機、Mons Rümker（Oceanus Procellarum）に降下、2020-12-01", "type": "nominal" },
-    { "met": 8.5, "label": "SAMPLING", "note": "すくいとドリルで一・七三一 kg 採取。", "type": "info" },
-    { "met": 10, "label": "ASCENT", "note": "上昇機が月面から離昇。", "type": "nominal" },
-    { "met": 11, "label": "RENDEZVOUS", "note": "初のロボット月ランデブウ；試料容器を軌道機へ移送。", "type": "info" },
-    { "met": 23, "label": "EARTH RETURN", "note": "試料カプセルが内モンゴルに着陸 2020-12-16。", "type": "info" }
+    { "met": 8, "label": "接地", "note": "着陸機、Mons Rümker（Oceanus Procellarum）に降下、2020-12-01", "type": "nominal" },
+    { "met": 8.5, "label": "試料採取", "note": "すくいとドリルで一・七三一 kg 採取。", "type": "info" },
+    { "met": 10, "label": "上昇", "note": "上昇機が月面から離昇。", "type": "nominal" },
+    { "met": 11, "label": "ランデブー", "note": "初のロボット月ランデブウ；試料容器を軌道機へ移送。", "type": "info" },
+    { "met": 23, "label": "地球帰還", "note": "試料カプセルが内モンゴルに着陸 2020-12-16。", "type": "info" }
   ]
 }

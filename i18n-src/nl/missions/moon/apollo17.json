@@ -25,7 +25,7 @@
     },
     {
       "met": 4,
-      "label": "TOUCHDOWN",
+      "label": "NEERKOMST",
       "note": "Lunar Module Challenger landt bij Taurus-Littrow Valley 1972-12-11 19:54 UTC.",
       "type": "nominal"
     },
@@ -43,7 +43,7 @@
     },
     {
       "met": 12.6,
-      "label": "SPLASHDOWN",
+      "label": "WATERLANDING",
       "note": "CM America brengt bemanning terug naar de Stille Oceaan 1972-12-19.",
       "type": "nominal"
     }

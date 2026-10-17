@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "发射",
       "note": "Saturn V (AS-509) from Kennedy Space Center LC-39A 1971-01-31 21:03 UTC.",
       "type": "nominal"
     },
@@ -19,7 +19,7 @@
     },
     {
       "met": 0.25,
-      "label": "CSM-LM DOCKING",
+      "label": "CSM-LM 对接",
       "note": "五次对接尝试后，Kitty Hawk 软捕获了 Antares——对接闩锁出现异常;根本原因从未在地面上复现。",
       "type": "warning"
     },
@@ -31,7 +31,7 @@
     },
     {
       "met": 4.6,
-      "label": "TOUCHDOWN",
+      "label": "触地",
       "note": "Antares 在 1971-02-05 09:18 UTC 登陆 Fra Mauro Highlands——尽管 LM 计算机中的中止程序故障，团队在实时进行了修补，但仍在距目标 53 m 以内。",
       "type": "nominal"
     },
@@ -43,13 +43,13 @@
     },
     {
       "met": 5.4,
-      "label": "CONE CRATER + GOLF",
+      "label": "CONE CRATER + 高尔夫",
       "note": "EVA-2：向锥形陨石坑进行越野考察（距陨石坑边缘相差约 30 m）。最后几分钟——Shepard 用临时制作的球杆击打了两个高尔夫球。",
       "type": "info"
     },
     {
       "met": 5.6,
-      "label": "ASCENT",
+      "label": "上升",
       "note": "Antares 在月面停留 33 h 31 m 后升空。返回了 42 kg 的样品。",
       "type": "nominal"
     },
@@ -61,7 +61,7 @@
     },
     {
       "met": 9,
-      "label": "SPLASHDOWN",
+      "label": "溅落",
       "note": "CM 于 1971-02-09 21:05 UTC 在南太平洋溅落。由 USS New Orleans 进行回收。最后一次 Apollo 隔离检疫。",
       "type": "nominal"
     }

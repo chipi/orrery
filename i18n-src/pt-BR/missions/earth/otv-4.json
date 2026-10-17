@@ -6,19 +6,19 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "LANÇAMENTO",
       "note": "Atlas V 501 (AV-054) from CCAFS SLC-41 2015-05-20.",
       "type": "nominal"
     },
     {
       "met": 359,
-      "label": "ON-ORBIT OPS",
+      "label": "OPERAÇÕES EM ÓRBITA",
       "note": "Apogeu ~325 km; operações com carga classificada.",
       "type": "info"
     },
     {
       "met": 718,
-      "label": "LANDING",
+      "label": "POUSO",
       "note": "Pouso autônomo em pista no Kennedy Space Center Shuttle Landing Facility em 2017-05-07.",
       "type": "nominal"
     }

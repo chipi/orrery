@@ -7,19 +7,19 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "प्रक्षेपण",
       "note": "Voskhod 11A57 from Baikonur Site 1 1964-10-12 07:30 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.8,
-      "label": "KHRUSHCHEV DEPOSED",
+      "label": "KHRUSHCHEV अपदस्थ",
       "note": "उड़ान के दौरान सोवियत नेतृत्व में परिवर्तन हुआ।",
       "type": "info"
     },
     {
       "met": 1.01,
-      "label": "LAND",
+      "label": "अवतरण",
       "note": "नरम-लैंडिंग रेट्रो-रॉकेट Marevka के पास 1964-10-13 07:47 UTC को स्पर्श किया।",
       "type": "nominal"
     }

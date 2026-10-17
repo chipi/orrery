@@ -4,10 +4,10 @@
   "first": "首个在另一个星球上运行的遥操控月球车",
   "description": "月球上的第一个车轮 — 从克里米亚的控制室驾驶。Lunokhod 1 是一个 322 千克的加压舱室，安装在八个独立驱动的轮子上，由克里米亚控制室中的五人团队在实时跨越 2.5 秒光速延迟的情况下控制。它在 11 个月球日（322 个地球日）内行驶了 10.5 千米，拍摄了 20,000 多张场景照片，并在其 90 天的设计寿命之后继续运行。在 20 世纪 70 年代消失于历史记录中，于 2010 年再次被发现，当时 NASA 的月球勘测轨道飞行器在它停下的地方发现了它。",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "来自拜科努尔的质子-K运载火箭与Blok-D上面级。", "type": "nominal" },
+    { "met": 0, "label": "发射", "note": "来自拜科努尔的质子-K运载火箭与Blok-D上面级。", "type": "nominal" },
     { "met": 5, "label": "MOI", "note": "月球轨道插入；下降倾角的轨道修正。", "type": "nominal" },
-    { "met": 7, "label": "TOUCHDOWN", "note": "Soft-landing at Mare Imbrium 1970-11-17.", "type": "nominal" },
-    { "met": 7.005, "label": "ROVER DEPLOYED", "note": "Lunokhod 1 沿坡道滚下进入月球表面。", "type": "info" },
-    { "met": 329, "label": "FINAL CONTACT", "note": "最后一次指令通话于 1971-09-14；月球车在寒冷的月夜中保存完好。", "type": "info" }
+    { "met": 7, "label": "触地", "note": "Soft-landing at Mare Imbrium 1970-11-17.", "type": "nominal" },
+    { "met": 7.005, "label": "巡视器驶下", "note": "Lunokhod 1 沿坡道滚下进入月球表面。", "type": "info" },
+    { "met": 329, "label": "最后一次通信", "note": "最后一次指令通话于 1971-09-14；月球车在寒冷的月夜中保存完好。", "type": "info" }
   ]
 }

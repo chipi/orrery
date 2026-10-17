@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "प्रक्षेपण",
       "note": "Saturn V (AS-505) Kennedy Space Center LC-39B से 1969-05-18 16:49 UTC — LC-39B से पहली मानवयुक्त प्रक्षेपण।",
       "type": "nominal"
     },
@@ -25,19 +25,19 @@
     },
     {
       "met": 4.6,
-      "label": "LM SEPARATION",
+      "label": "LM पृथक्करण",
       "note": "Snoopy Charlie Brown से अलग होता है। दो-सदस्यीय दल (Stafford + Cernan) Mare Tranquillitatis की ओर उतरता है।",
       "type": "nominal"
     },
     {
       "met": 4.66,
-      "label": "CLOSEST APPROACH",
+      "label": "निकटतम पहुँच",
       "note": "Snoopy Apollo 11 लक्ष्य स्थल के ऊपर ~15.6 किमी तक पहुंचता है — कोई लैंडिंग नहीं; टचडाउन को छोड़कर सब कुछ सत्यापित।",
       "type": "info"
     },
     {
       "met": 4.76,
-      "label": "ASCENT + RENDEZVOUS",
+      "label": "आरोहण + मिलन",
       "note": "Snoopy आरोहण चरण Charlie Brown के साथ पुनर्मिलन — चंद्र कक्षा में पहला पूर्ण LM-से-CSM पुनः डॉकिंग।",
       "type": "nominal"
     },
@@ -49,7 +49,7 @@
     },
     {
       "met": 8.05,
-      "label": "SPLASHDOWN",
+      "label": "समुद्र में अवतरण",
       "note": "CM 1969-05-26 16:52 UTC को दक्षिण प्रशांत महासागर में जल में गिरा। USS Princeton द्वारा पुनरुद्धार।",
       "type": "nominal"
     }

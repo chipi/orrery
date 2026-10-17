@@ -7,25 +7,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "发射",
       "note": "Vostok-K from Baikonur Site 1 (Gagarin's Start) 1961-04-12 06:07 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.0001,
-      "label": "ORBIT INSERT",
+      "label": "入轨",
       "note": "单圈轨道，近地点169 km、远地点327 km，倾角65°。",
       "type": "nominal"
     },
     {
       "met": 0.063,
-      "label": "RETROFIRE",
+      "label": "制动点火",
       "note": "TDU-1 制动火箭点火进行降轨。服务舱分离系统部分失效——结带释放延迟，返回舱翻滚约10分钟。",
       "type": "warning"
     },
     {
       "met": 0.071,
-      "label": "CREW EJECT",
+      "label": "航天员弹射",
       "note": "加加林在约7 km高度从下降舱弹出；降落伞着陆在萨马拉州斯梅洛夫卡。返回舱分别着陆。",
       "type": "info"
     }

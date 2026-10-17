@@ -6,19 +6,19 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "प्रक्षेपण",
       "note": "Falcon 9 Block 4 from KSC LC-39A 2017-09-07.",
       "type": "nominal"
     },
     {
       "met": 390,
-      "label": "ON-ORBIT OPS",
+      "label": "कक्षा में संचालन",
       "note": "अपोजी ~360 किमी, 54.5° झुकाव; वर्गीकृत पेलोड संचालन।",
       "type": "info"
     },
     {
       "met": 780,
-      "label": "LANDING",
+      "label": "अवतरण",
       "note": "2019-10-27 को KSC Shuttle Landing Facility पर स्वायत्त रनवे लैंडिंग।",
       "type": "nominal"
     }

@@ -7,25 +7,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "प्रक्षेपण",
       "note": "Saturn IB SA-207 from LC-39B 1973-07-28 11:11 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.5,
-      "label": "CSM THRUSTER LEAK",
+      "label": "CSM थ्रस्टर में रिसाव",
       "note": "सेवा-मॉड्यूल RCS क्वाड रिसाव; Cape में CSM-119 बचाव तैयार किया गया लेकिन उड़ान नहीं भरी गई।",
       "type": "warning"
     },
     {
       "met": 30,
-      "label": "TWIN-POLE SHIELD EVA",
+      "label": "EVA: दो-खंभे वाली ढाल",
       "note": "दल ने मूल छतरी पर ट्विन-पोल शील्ड तैनात किया।",
       "type": "nominal"
     },
     {
       "met": 59.46,
-      "label": "SPLASHDOWN",
+      "label": "समुद्र में अवतरण",
       "note": "CSM-117 1973-09-25 22:19 UTC को प्रशांत में जल में गिरा।",
       "type": "nominal"
     }

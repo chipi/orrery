@@ -7,7 +7,7 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "LANCEMENT",
       "note": "Saturn V (AS-511) from Kennedy Space Center LC-39A 1972-04-16 17:54 UTC.",
       "type": "nominal"
     },
@@ -25,37 +25,37 @@
     },
     {
       "met": 4.79,
-      "label": "SPS ANOMALY",
+      "label": "ANOMALIE DU SPS",
       "note": "Avant la descente : une oscillation de cardan SPS de secours a forcé un examen technique en temps réel de 6 heures sur l'atterrissage par rapport à l'abandon. L'atterrissage a finalement été approuvé.",
       "type": "warning"
     },
     {
       "met": 5.04,
-      "label": "TOUCHDOWN",
+      "label": "CONTACT AVEC LE SOL",
       "note": "Orion atterrit aux Descartes Highlands 1972-04-21 02:23 UTC — premier atterrissage en highlands (non-mare).",
       "type": "nominal"
     },
     {
       "met": 5.5,
-      "label": "FIRST HIGHLANDS EVA",
+      "label": "PREMIÈRE EVA DANS LES HAUTS PLATEAUX",
       "note": "EVA-1 : déploiement d'ALSEP + déploiement du LRV + premier parcours scientifique des highlands lunaires.",
       "type": "info"
     },
     {
       "met": 6.1,
-      "label": "LUNAR GRAND PRIX",
+      "label": "GRAND PRIX LUNAIRE",
       "note": "EVA-2 : test de vitesse du LRV télédiffusé par Young (« Grand Prix lunaire ») — vitesse maximale ~17 km/h. Parcours géologique vers Stone Mountain.",
       "type": "info"
     },
     {
       "met": 6.7,
-      "label": "FAR-UV CAMERA",
+      "label": "CAMÉRA UV LOINTAIN",
       "note": "EVA-3 : Premier observatoire astronomique déployé à la surface d'un autre monde (caméra-spectographe UV du NRL).",
       "type": "info"
     },
     {
       "met": 7.81,
-      "label": "ASCENT",
+      "label": "REMONTÉE",
       "note": "Orion décolle après 71 h 02 m à la surface. 95,7 kg d'échantillons rapportés — plus lourd chargement Apollo jusqu'à cette date.",
       "type": "nominal"
     },
@@ -67,7 +67,7 @@
     },
     {
       "met": 11.07,
-      "label": "SPLASHDOWN",
+      "label": "AMERRISSAGE",
       "note": "CM amerri dans le Pacifique central 1972-04-27 19:45 UTC. Récupération par l'USS Ticonderoga.",
       "type": "nominal"
     }

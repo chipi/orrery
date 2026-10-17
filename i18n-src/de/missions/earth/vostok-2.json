@@ -7,25 +7,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "START",
       "note": "Vostok-K from Baikonur Site 1 1961-08-06 06:00 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.5,
-      "label": "EARTH PHOTOS",
+      "label": "ERDFOTOS",
       "note": "Titov fertigte die ersten Handkamera-Fotografien der Erde aus der Umlaufbahn an.",
       "type": "info"
     },
     {
       "met": 0.8,
-      "label": "SLEEP",
+      "label": "SCHLAF",
       "note": "Erste Schlafperiode im All (~8 Stunden).",
       "type": "info"
     },
     {
       "met": 1.04,
-      "label": "EJECT + LAND",
+      "label": "AUSSTOSS + LANDUNG",
       "note": "Kapsel verlies die Umlaufbahn; Titov wurde in ~7 km Höhe ausgestoßen und fiel mit dem Fallschirm bei Krasny Kut ab.",
       "type": "nominal"
     }

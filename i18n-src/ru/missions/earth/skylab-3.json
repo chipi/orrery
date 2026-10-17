@@ -7,25 +7,25 @@
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
+      "label": "ЗАПУСК",
       "note": "Saturn IB SA-207 from LC-39B 1973-07-28 11:11 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.5,
-      "label": "CSM THRUSTER LEAK",
+      "label": "УТЕЧКА В ДВИГАТЕЛЯХ CSM",
       "note": "Утечка в блоке реактивных двигателей служебного модуля; спасательный CSM-119 подготовлен на мысе Канаверал, но не запущен.",
       "type": "warning"
     },
     {
       "met": 30,
-      "label": "TWIN-POLE SHIELD EVA",
+      "label": "ВЫХОД: ЭКРАН НА ДВУХ ШТАНГАХ",
       "note": "Экипаж развернул двойной защитный экран над исходным парашютом.",
       "type": "nominal"
     },
     {
       "met": 59.46,
-      "label": "SPLASHDOWN",
+      "label": "ПРИВОДНЕНИЕ",
       "note": "CSM-117 приводнился в Тихом океане 1973-09-25 22:19 UTC.",
       "type": "nominal"
     }

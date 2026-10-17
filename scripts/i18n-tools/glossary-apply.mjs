@@ -69,7 +69,7 @@ const ALIAS = {
 const CJK_LOCALE = new Set(['ja', 'zh-CN']);
 const GUARD = {
   Vega: {
-    path: /missions\/venus|fleet\/(orbiter|lander|launcher)|rockets\/|venus-sites|programs\/(vega|venera)/,
+    path: /missions\/venus|fleet\/(orbiter|lander|launcher)|rockets\/|venus-sites|programs\/(vega|venera)|science\/orbits\/space-debris/,
     after:
       /^[\s-]?(\d|rocket|C\b|-C|program|probe|balloon|lander|mission|spacecraft|flyby|Secondary|VESPA|AVUM)/i,
   },
@@ -78,8 +78,12 @@ const GUARD = {
   Castor: { path: /fleet\/|rockets\// },
   // the rockets and the NASA centre, not the astronauts; White Sands, the White House
   Shepard: { before: /New[\s-]?$/ },
-  Glenn: { before: /(New[\s-]?|NASA\s?)$/, after: /^\s?Research/ },
+  Glenn: { before: /(New[\s-]?|NASA\s?)$/, after: /^\s?(Research|Visitor)/ },
   White: { after: /^\s?(Sands|House|[Dd]warf)/ },
+  Collins: { after: /^\s?Aerospace/ },
+  // inside an English acronym's expansion: MOXIE (Mars OXygen …), Mars Design Reference
+  // Architecture, MOI (Mars Orbit Insertion), Mars-EDL
+  Mars: { after: /^[\s-]?(OXygen|Design Reference|Orbit Insertion|EDL)/ },
   Polaris: {
     after: /^\s?(Dawn|Program)/,
     path: /programs\/spacex|science\/life-in-space|essays\/the-body-in-the-dark|missions\//,
@@ -460,6 +464,9 @@ for (const f of walk(`i18n-src/${loc}`)) {
               const pre = str.slice(Math.max(0, off - 30), off) + a;
               const w = (pre.match(/(\S+)\s$/) ?? [])[1] ?? '';
               if (/["'”’]$/.test(w) || NAME_PARTS.has(w)) return m;
+              // …or a first name before a Latin surname ("Scott Kelly", "Scott 'Kidd' Poteet")
+              const post = str.slice(off + m.length - (b ? 1 : 0), off + m.length + 30);
+              if (/^\s?(?:['"‘“][^'"’”]+['"’”]\s)?[A-Z][a-z]/.test(post)) return m;
             }
             // a surname limited to some pages ("Mayor" only where it is Michel Mayor)
             if (PERSON[en]?._only && !new RegExp(PERSON[en]._only).test(rel)) return m;

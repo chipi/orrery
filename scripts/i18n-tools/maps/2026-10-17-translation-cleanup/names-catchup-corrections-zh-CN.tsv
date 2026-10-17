@@ -1,0 +1,21 @@
+# zh-CN hand corrections for the catch-up pass: crew names around the bare surnames, and
+# "宜昌"/"宜昙" (a city) where the lc-14 page meant the Atlas rocket (since cae1be941cc)
+fleet/launch-site/lc-14	卡纳维拉尔角水星-宜昌发射台	卡纳维拉尔角Mercury-Atlas发射台	tagline
+fleet/launch-site/lc-14	卡纳维拉尔角水星-宜昙发射台	卡纳维拉尔角Mercury-Atlas发射台	best_known_for
+fleet/launch-site/lc-14	曾用于宜昙导弹测试	曾用于Atlas导弹测试
+fleet/launch-site/lc-14	四次载人水星-宜昙轨道飞行任务	四次载人Mercury-Atlas轨道飞行任务
+fleet/launch-site/lc-14	四次无人的宜昙-Agena任务	四次无人的Atlas-Agena任务
+missions/earth/apollo-soyuz	（斯塔福德 + Brand + Slayton）	（斯塔福德 + 布兰德 + 斯莱顿）
+missions/earth/apollo9	Schweickart在月球舱舱门廊	施韦卡特在月球舱舱门廊
+missions/earth/gemini4	詹姆斯·麦克迪维特和Edward 怀特	詹姆斯·麦克迪维特和爱德华·怀特
+missions/earth/skylab-2	康拉德、Kerwin和Weitz	康拉德、克尔温和韦茨
+missions/earth/skylab-2	康拉德 + Kerwin 在	康拉德 + 克尔温在
+missions/earth/skylab-3	宾、Garriott 和 Lousma	宾、加里奥特和卢斯马
+missions/moon/apollo12	EECOM John Aaron 著名的	EECOM 约翰·阿伦著名的
+programs/skylab	康拉德、Kerwin、Weitz	康拉德、克尔温、韦茨
+missions/earth/apollo9	麦克迪维特和Schweickart从	麦克迪维特和施韦卡特从
+missions/earth/apollo9	地球。Schweickart在登月舱	地球。施韦卡特在登月舱
+missions/earth/skylab-2	任务：Weitz在第1天	任务：韦茨在第1天
+missions/earth/skylab-2	康拉德和Kerwin在第14天	康拉德和克尔温在第14天
+missions/earth/skylab-3	完成任务。Garriott领导了	完成任务。加里奥特领导了
+missions/moon/apollo12	一位名叫John Aaron的	一位名叫约翰·阿伦的

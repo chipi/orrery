@@ -180,7 +180,10 @@ already in the text.
 | A star's name became the same as its alternate name ("Deneb Kaitos …, also called Deneb Kaitos"; "Becrux …, also known as Becrux"). | The "also called" clause takes the other name; check every star bio's first sentence. |
 | Latin-script swaps put a bare constellation name where the language needs an article ("in Grote Beer", "di Croce del Sud", "Stella di Barnard è"). | Article and preposition fixes per language after the swap. |
 | The swap reached inside an acronym or a product name ("MOXIE (Марс OXygen …)", the Vega rocket's adapter → "Вега"), and into a sentence about the name itself ("'Gemma' derives from the Arabic …"). | Read every edit; etymology sentences keep the name they explain. |
-| A Russian pass found a false fact in a translation (Sally Ride listed among the Challenger dead). | A wrong fact found while editing is fixed in the same pass, against the English. |
+| A Russian pass found a false fact in a translation (Sally Ride listed among the Challenger dead). | A wrong fact found while editing is fixed in the same pass, against the English — and checked in every locale (it was in nine more). |
+| Wikidata labels in a non-Latin language were sometimes the English name copied in ("michael collins", "John Glenn" as Hindi labels), or carried a zero-width space or a direction mark. | `name-forms.mjs` drops a Latin-script label in a non-Latin locale and strips those characters; a lowercase English name in the text is the tell. |
+| A bare surname key hit a facility, a company or a first name ("NASA Glenn AEPS", "Glenn Visitor Center", "Collins Aerospace", "Scott Kelly"). | GUARD rows take `before` as well as `after`; a bare surname followed by a capitalised Latin name is a first name and is left alone. |
+| Keys added to the glossary after a locale's pass never reached that locale. | A catch-up run per locale after the glossary grows, read like any pass; a catch-up that would undo a hand correction is not applied. |
 
 ## 8. Status (2026-10-17)
 
@@ -191,10 +194,15 @@ es, it, nl, pt-BR, ru and sr-Cyrl; the names glossary (celestial names, stars an
 people from Wikidata, with small bodies and the Uranian moons) applied to the same
 eleven locales, read and corrected by hand.
 
-Not done: the names pass and pass 2 for hi and ar; eponyms and term abbreviations
-(§3.2: Kepler, Hohmann, Oberth stay as in English where the glossary does not key
-them); people whose bare surname is ambiguous are written by hand only in the strings
-this pass touched (Glenn, White, Scott, Cooper …), not across all text; the star
+The names pass and pass 2 now cover all thirteen locales (hi and ar included), with a
+catch-up run for ru, sr-Cyrl, ja, zh-CN and ko after the glossary gained surname keys.
+
+Not done: eponyms and term abbreviations (§3.2: Kepler, Hohmann, Oberth stay as in
+English where the glossary does not key them); crew names the glossary has no entry for
+(Kerwin, Weitz, Garriott, Lousma, Brand, Slayton …) are written by hand only in the
+strings these passes touched; hi people and stars without a Wikidata label carry
+overrides written for this pass (name-forms-overrides.tsv), not checked against a
+Hindi source; the star
 index and sky labels still show the English proper name (needs a UI change); sr-Cyrl
 star bios keep Latin designations ("Alpha Orionis"), because Wikidata has no
 Cyrillic ones for Serbian; Venus and some Mars and Moon features without a native

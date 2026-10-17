@@ -14,12 +14,16 @@
  *   sameAsEnglish  prose identical to en-US (not just names/designations)
  * UI messages (messages/<loc>.json vs messages/en-US.json): missingKey, empty,
  *   extraKey, sameAsEnglish, placeholder ({x} sets differ).
+ * nativeNameMissing: in a name's origin locale the English form is still used
+ *   (Soyuz in ru where «Союз» belongs — scripts/lib/name-origins.mjs).
  * Base data (static/data/*.json not under i18n/): prose strings in data sets
  *   that have no en-US overlay directory or file — English with no translation path.
  */
 import fs from 'node:fs';
 import path from 'node:path';
 import { SKIP_KEY } from './i18n-manifest.mjs';
+import { designations, knownNamesIn } from './lib/translate-quality.mjs';
+import { nativeName } from './lib/name-origins.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const SRC = path.join(ROOT, 'i18n-src');
@@ -82,6 +86,14 @@ function compare(loc, rel, en, tr, at = '') {
     if (/^<[A-Z_ ]+>$/.test(tr.trim()))
       return add(loc, 'placeholderText', `${rel} :: ${at} = ${tr}`);
     if (SKIP_KEY.test(at)) return;
+    // Origin-language rule: in a name's own locale the native form is used, so the
+    // English form left in the text is a miss (link labels are English source titles).
+    if (!/(^|\.)(l|u)$/.test(at))
+      for (const n of [...new Set([...designations(en), ...knownNamesIn(en)])]) {
+        const esc = n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        if (nativeName(loc, n) && new RegExp(`(^|[^A-Za-z0-9])${esc}(?![A-Za-z0-9])`).test(tr))
+          add(loc, 'nativeNameMissing', `${rel} :: ${at} — ${n} → ${nativeName(loc, n)}`);
+      }
     if (en.trim() && !tr.trim()) add(loc, 'empty', `${rel} :: ${at}`);
     else if (tr === en) {
       const field =

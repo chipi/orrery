@@ -11,6 +11,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { nameRendered } from './name-origins.mjs';
 
 export const LANGUAGE_NAMES = {
   ar: 'Modern Standard Arabic',
@@ -29,7 +30,7 @@ export const LANGUAGE_NAMES = {
 };
 
 /** Operator ruling 2026-10-17, binding in every language. */
-export const NAME_POLICY = `NAMES — never translate or transliterate a name. Keep every name exactly as the English source writes it, in Latin script, in every language: missions, spacecraft, rockets, stations and modules (Apollo 12, Cygnus, Falcon 9, Voyager 2, Soyuz MS-24, Chang'e 5, Tiangong); companies, agencies and instruments (Northrop Grumman, SpaceX, NASA, ESA, JAXA, Roscosmos, ALSEP, DSN, JWST); people (Neil Armstrong, Sergei Korolev, Johannes Kepler — also inside eponymous terms such as the Hohmann transfer or Kepler's laws); spaceports, launch sites, observatories, surface features of the Moon and planets, stars and galaxies (Cape Canaveral, Baikonur, Kennedy Space Center, Arecibo, Oceanus Procellarum, Ocean of Storms, Mare Tranquillitatis, Betelgeuse, Andromeda Galaxy as its proper name). Countries, continents, oceans, regions and cities are ordinary geography and ARE translated normally (Pacific, Inner Mongolia, Kazakhstan, Florida, Russia, Europe). Inflect around the name with the language's grammar where needed (a case ending after a hyphen only if the language requires it), but never change the name's letters. Ordinary nouns are translated normally: the Moon, the Sun, Mars, Earth, the Solar System, comet, orbit.`;
+export const NAME_POLICY = `NAMES — never translate or transliterate a name into another language. Keep every name exactly as the English source writes it, in Latin script — except in the name's own language: a Russian/Soviet name is written in its original Cyrillic in Russian (Союз МС-24, Мир, Протон-М, «Луна-9»), a Chinese name in Chinese characters in Chinese (神舟, 天宫, 嫦娥五号), and likewise Japanese, Korean, Hindi and Arabic names in their own language. In every other language: missions, spacecraft, rockets, stations and modules (Apollo 12, Cygnus, Falcon 9, Voyager 2, Soyuz MS-24, Chang'e 5, Tiangong); companies, agencies and instruments (Northrop Grumman, SpaceX, NASA, ESA, JAXA, Roscosmos, ALSEP, DSN, JWST); people (Neil Armstrong, Sergei Korolev, Johannes Kepler — also inside eponymous terms such as the Hohmann transfer or Kepler's laws); spaceports, launch sites, observatories, surface features of the Moon and planets, stars and galaxies (Cape Canaveral, Baikonur, Kennedy Space Center, Arecibo, Oceanus Procellarum, Ocean of Storms, Mare Tranquillitatis, Betelgeuse, Andromeda Galaxy as its proper name). Countries, continents, oceans, regions and cities are ordinary geography and ARE translated normally (Pacific, Inner Mongolia, Kazakhstan, Florida, Russia, Europe). Inflect around the name with the language's grammar where needed (a case ending after a hyphen only if the language requires it), but never change the name's letters. Ordinary nouns are translated normally: the Moon, the Sun, Mars, Earth, the Solar System, comet, orbit.`;
 
 export const BASE_RULES = `Translation rules (always):
 - Translate the WHOLE text: never shorten, summarise or drop a sentence or clause.
@@ -308,7 +309,9 @@ export function problems(locale, src, out) {
   if (/\uFFFD/.test(out)) p.push('corrupted characters (U+FFFD)');
   const names = designations(src);
   const apos = (x) => x.replace(/[’‘]/g, "'"); // Chang’e == Chang'e
-  const lost = names.filter((n) => !apos(out).includes(apos(n)));
+  // A name is kept when its English form survives, or — in the name's origin
+  // locale only — its native form (Союз МС-24 in ru, 嫦娥五号 in zh-CN).
+  const lost = names.filter((n) => !nameRendered(locale, n, out, apos));
   if (lost.length) p.push(`names changed or missing: ${lost.slice(0, 5).join(', ')}`);
   // Names from the data's own name list must survive verbatim (NAME_POLICY), in
   // every language: the 2026-10-17 graded samples found Huygens → 惠更斯号/ホイヘンス/
@@ -319,12 +322,12 @@ export function problems(locale, src, out) {
   // Hyphen and space are the same here: German writes "Atlas-V-Start" for an Atlas V launch.
   const norm = (x) => apos(x).replace(/[-\s]+/g, ' ');
   const translated = knownNamesIn(src).filter(
-    (n) => !names.includes(n) && !norm(out).includes(norm(n)),
+    (n) => !names.includes(n) && !nameRendered(locale, n, out, norm),
   );
 
   if (translated.length)
     p.push(
-      `names translated or missing (keep exactly as in English): ${translated.slice(0, 6).join(', ')}`,
+      `names translated or missing (keep exactly as in English, or the native form in the name's own language): ${translated.slice(0, 6).join(', ')}`,
     );
   // Locales not written in Latin: every Latin word in the output must be a name
   // taken verbatim from the source ("Canberri", "Madridu" glue a case ending onto

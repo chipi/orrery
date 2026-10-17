@@ -1,15 +1,50 @@
 {
-  "name": "Chang'e 5",
+  "name": "嫦娥五号",
   "type": "SAMPLE RETURN · FLOWN",
   "first": "44年来首次月球样品采样返回（自Luna 24，1976年以来）",
-  "description": "Chang'e 5是自苏联Luna 24（1976年）以来首次从月球采样返回——间隔44年。其架构包括：轨道器+着陆器+上升器+样品返回舱，通过单次发射完成。着陆器在Mons Rümker着陆，钻探和铲取了1.731千克的月壤，随后升空、与轨道器交会对接（首次月球机器人交会对接），样品返回舱返回地球。这些样品来自一个仅有20亿年历史的区域——远比任何Apollo或Luna样品更年轻，重新改写了月球火山活动模式。",
+  "description": "嫦娥五号是自苏联Luna 24（1976年）以来首次从月球采样返回——间隔44年。其架构包括：轨道器+着陆器+上升器+样品返回舱，通过单次发射完成。着陆器在Mons Rümker着陆，钻探和铲取了1.731千克的月壤，随后升空、与轨道器交会对接（首次月球机器人交会对接），样品返回舱返回地球。这些样品来自一个仅有20亿年历史的区域——远比任何Apollo或Luna样品更年轻，重新改写了月球火山活动模式。",
   "events": [
-    { "met": 0, "label": "发射", "note": "Long March 5 从 Wenchang 发射。", "type": "nominal" },
-    { "met": 5, "label": "MOI", "note": "进入环月轨道。", "type": "nominal" },
-    { "met": 8, "label": "触地", "note": "着陆器降落至Mons Rümker（Oceanus Procellarum）2020-12-01", "type": "nominal" },
-    { "met": 8.5, "label": "采样", "note": "通过铲取和钻探采集了1.731千克。", "type": "info" },
-    { "met": 10, "label": "上升", "note": "上升器从月球表面升空。", "type": "nominal" },
-    { "met": 11, "label": "交会", "note": "首次月球机器人交会对接；样品容器转移至轨道器。", "type": "info" },
-    { "met": 23, "label": "返回地球", "note": "样品返回舱在Inner Mongolia着陆 2020-12-16。", "type": "info" }
+    {
+      "met": 0,
+      "label": "发射",
+      "note": "长征五号从文昌发射。",
+      "type": "nominal"
+    },
+    {
+      "met": 5,
+      "label": "MOI",
+      "note": "进入环月轨道。",
+      "type": "nominal"
+    },
+    {
+      "met": 8,
+      "label": "触地",
+      "note": "着陆器降落至Mons Rümker（Oceanus Procellarum）2020-12-01",
+      "type": "nominal"
+    },
+    {
+      "met": 8.5,
+      "label": "采样",
+      "note": "通过铲取和钻探采集了1.731千克。",
+      "type": "info"
+    },
+    {
+      "met": 10,
+      "label": "上升",
+      "note": "上升器从月球表面升空。",
+      "type": "nominal"
+    },
+    {
+      "met": 11,
+      "label": "交会",
+      "note": "首次月球机器人交会对接；样品容器转移至轨道器。",
+      "type": "info"
+    },
+    {
+      "met": 23,
+      "label": "返回地球",
+      "note": "样品返回舱在Inner Mongolia着陆 2020-12-16。",
+      "type": "info"
+    }
   ]
 }

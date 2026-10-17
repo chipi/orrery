@@ -35,21 +35,21 @@
       "id": "chinese-mission-patches",
       "area": "任务与项目徽章",
       "subjects": [
-        "Tiangong",
-        "Shenzhou",
+        "天宫",
+        "神舟",
         "China Manned Space"
       ],
-      "want": "中国载人航天（CMS）项目标志和 Shenzhou 乘组徽章，以与 Tiangong 和 Shenzhou 页面上的 NASA 徽章并列。",
-      "wall": "中国载人航天项目确实使用任务徽章 — 每个 Shenzhou 乘组都有一枚 — 但 CMS 标志和 Shenzhou 徽章由中国载人航天工程办公室持有版权，未以自由许可证发布。Wikimedia Commons 上没有它们；这些搜索返回的唯一自由许可图像是无关的 NASA 照片。",
+      "want": "中国载人航天（CMS）项目标志和神舟乘组徽章，以与天宫和神舟页面上的 NASA 徽章并列。",
+      "wall": "中国载人航天项目确实使用任务徽章 — 每个神舟乘组都有一枚 — 但 CMS 标志和神舟徽章由中国载人航天工程办公室持有版权，未以自由许可证发布。Wikimedia Commons 上没有它们；这些搜索返回的唯一自由许可图像是无关的 NASA 照片。",
       "checked": [
-        "Wikimedia Commons — 英文关键词搜索（China Manned Space / Shenzhou / Tiangong emblem, patch, insignia）",
+        "Wikimedia Commons — 英文关键词搜索（China Manned Space / 神舟 / 天宫 emblem, patch, insignia）",
         "Wikimedia Commons — 中国载人航天局标志"
       ],
       "rejected": [
         "cmse.gov.cn 及中国官方媒体图像 — 受版权保护，无自由许可证",
-        "第三方粉丝复制的 Shenzhou 徽章 — 非真实且非自由"
+        "第三方粉丝复制的神舟徽章 — 非真实且非自由"
       ],
-      "resolution": "CNSA 机构标志作为诚实标记出现在 Tiangong 和 Shenzhou 卡片和页面上。",
+      "resolution": "CNSA 机构标志作为诚实标记出现在天宫和神舟卡片和页面上。",
       "status": "wall",
       "date": "2026-07-12"
     },

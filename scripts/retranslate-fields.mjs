@@ -25,7 +25,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import Anthropic from '@anthropic-ai/sdk';
 import { translationClient, translationModel } from './lib/translate-model.mjs';
-import { LANGUAGE_NAMES, problems } from './lib/translate-quality.mjs';
+import { fixHomoglyphs, LANGUAGE_NAMES, problems } from './lib/translate-quality.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 // Rules and checks live in lib/translate-quality.mjs (shared with every
@@ -156,10 +156,13 @@ async function main() {
             .join('')
             .trim() ||
             undefined);
-        const unq =
+        const unq = fixHomoglyphs(
+          u.loc,
           typeof t === 'string' && /^".*"$/s.test(t.trim()) && !/^".*"$/s.test(u.src.trim())
             ? t.trim().slice(1, -1)
-            : t;
+            : t,
+        );
+
         lastProblems = problems(u.loc, u.src, unq);
         if (process.env.RETRANSLATE_DEBUG)
           console.log(

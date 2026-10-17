@@ -72,3 +72,14 @@ describe('name guard (NAME_POLICY)', () => {
     ).toEqual(expect.arrayContaining([expect.stringMatching(/Canberri/)]));
   });
 });
+
+describe('fixHomoglyphs', () => {
+  it('maps Latin lookalikes inside Cyrillic words, leaves names alone', async () => {
+    const { fixHomoglyphs } = await import('./lib/translate-quality.mjs');
+    expect(fixHomoglyphs('sr-Cyrl', 'Врaтио је намеравa на Voyager 2 и NASA-ин halо')).toBe(
+      'Вратио је намерава на Voyager 2 и NASA-ин halо'.replace('halо', 'halо'),
+    );
+    expect(fixHomoglyphs('sr-Cyrl', '[Вojаџеров')).toBe('[Војаџеров');
+    expect(fixHomoglyphs('de', 'Врaтио')).toBe('Врaтио');
+  });
+});

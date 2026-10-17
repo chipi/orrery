@@ -14,8 +14,8 @@ import * as A from './analytics';
 
 // Must match the dev defaults in analytics.ts (asserted on observable output, since
 // the constants aren't exported).
-const DEV_UMAMI_HOST = 'http://homelab:3001';
-const DEV_UMAMI_ID = '1d2f214c-801c-45e4-b56b-446a333e88b2';
+const DEV_UMAMI_HOST = 'https://umami.tail6d0ed4.ts.net';
+const DEV_UMAMI_ID = '90cbabf7-ae88-45c9-a417-0cd808749602';
 
 afterEach(() => {
   vi.restoreAllMocks();

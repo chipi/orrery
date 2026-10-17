@@ -6,6 +6,7 @@ import { createServer, request, type IncomingMessage, type Server } from 'node:h
 import type { AddressInfo } from 'node:net';
 import {
   captureError,
+  DEV_SERVER_TARGETS,
   initObservability,
   instrumentRequest,
   llmMetadata,
@@ -83,16 +84,62 @@ afterEach(async () => {
 });
 
 describe('obsConfigFromEnv', () => {
-  it('maps the env, with nothing on by default', () => {
+  it('a local run (no env) is dev and reports to the dev targets', () => {
     expect(obsConfigFromEnv('orrery-mcp', {})).toEqual({
       service: 'orrery-mcp',
       environment: 'dev',
       release: undefined,
-      sentryDsn: undefined,
-      otlpTracesEndpoint: undefined,
+      sentryDsn: DEV_SERVER_TARGETS.sentryDsn,
+      otlpTracesEndpoint: DEV_SERVER_TARGETS.otlpTracesEndpoint,
       metricsPort: undefined,
-      umami: undefined,
+      umami: { ...DEV_SERVER_TARGETS.umami, hostname: 'orrery-mcp' },
+      logsPushUrl: DEV_SERVER_TARGETS.logsPushUrl,
     });
+    expect(DEV_SERVER_TARGETS.sentryDsn).toMatch(/\/30$/); // orrery-dev, never prod (18)
+    expect(DEV_SERVER_TARGETS.logsPushUrl).toMatch(
+      /_stream_fields=app,service,environment,instance/,
+    );
+  });
+
+  it('prod fails closed: no target in code, so nothing is sent', () => {
+    for (const env of [{ NODE_ENV: 'production' }, { ORRERY_ENVIRONMENT: 'prod' }]) {
+      const cfg = obsConfigFromEnv('orrery-lab-api', env);
+      expect(cfg.environment).toBe('prod');
+      expect(cfg.sentryDsn).toBeUndefined();
+      expect(cfg.otlpTracesEndpoint).toBeUndefined();
+      expect(cfg.umami).toBeUndefined();
+      expect(cfg.logsPushUrl).toBeUndefined();
+    }
+  });
+
+  it('staging uses the staging targets, never dev or prod ones, and pushes no logs', () => {
+    const cfg = obsConfigFromEnv('orrery-mcp', {
+      ORRERY_ENVIRONMENT: 'staging',
+      NODE_ENV: 'production',
+    });
+    expect(cfg.environment).toBe('staging');
+    expect(cfg.sentryDsn).toMatch(/@telemetry\.orrerylearn\.com\/6$/); // staging project 6
+    expect(cfg.umami?.websiteId).toBe('6e7ddfce-1437-49b9-8b77-a36d3584ccad'); // staging site
+    expect(cfg.logsPushUrl).toBeUndefined(); // a staging host ships stdout via Alloy
+  });
+
+  it('tests (NODE_ENV=test) never send', () => {
+    const cfg = obsConfigFromEnv('orrery-mcp', { NODE_ENV: 'test' });
+    expect(cfg.environment).toBe('test');
+    expect(cfg.sentryDsn).toBeUndefined();
+    expect(cfg.otlpTracesEndpoint).toBeUndefined();
+    expect(cfg.umami).toBeUndefined();
+    expect(cfg.logsPushUrl).toBeUndefined();
+  });
+
+  it('a deploy-provided target always wins, in dev too', () => {
+    const cfg = obsConfigFromEnv('orrery-mcp', {
+      SENTRY_DSN: 'https://k@telemetry.example/99',
+      OTEL_EXPORTER_OTLP_TRACES_ENDPOINT: 'https://traces.example/v1/traces',
+    });
+    expect(cfg.environment).toBe('dev');
+    expect(cfg.sentryDsn).toBe('https://k@telemetry.example/99');
+    expect(cfg.otlpTracesEndpoint).toBe('https://traces.example/v1/traces');
   });
 
   it('reads every signal and defaults environment from NODE_ENV', () => {
@@ -118,8 +165,15 @@ describe('obsConfigFromEnv', () => {
     });
   });
 
-  it('needs both Umami host and site id', () => {
-    expect(obsConfigFromEnv('orrery-mcp', { UMAMI_HOST: 'https://a' }).umami).toBeUndefined();
+  it('needs both Umami host and site id; a half-set pair is never used', () => {
+    const prod = obsConfigFromEnv('orrery-mcp', {
+      NODE_ENV: 'production',
+      UMAMI_HOST: 'https://a',
+    });
+    expect(prod.umami).toBeUndefined();
+    // In dev a half-set override falls back to the complete dev pair.
+    const dev = obsConfigFromEnv('orrery-mcp', { UMAMI_HOST: 'https://a' });
+    expect(dev.umami?.host).toBe(DEV_SERVER_TARGETS.umami?.host);
   });
 });
 

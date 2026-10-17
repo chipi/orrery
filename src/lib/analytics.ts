@@ -90,11 +90,13 @@ import { MOBILE_INTERNAL, targetConfig } from './target-env';
 import { analyticsSuppressed } from './analytics-optout';
 
 // Dev rung of the env ladder (mirrors sentry.ts). In `vite dev`, with no deploy-injected
-// PUBLIC_UMAMI_* override, analytics go to the dedicated dev Umami site via the Tailscale
-// host `homelab` — NO fixed IP, so only the operator's tailnet machine reaches it; a
-// stranger who runs the repo silently sends nothing. Staging/prod override via env.
-const DEV_UMAMI_HOST = 'http://homelab:3001';
-const DEV_UMAMI_WEBSITE_ID = '1d2f214c-801c-45e4-b56b-446a333e88b2';
+// PUBLIC_UMAMI_* override, analytics go to the "Orrery (dev)" Umami site (created
+// 2026-10-17, operator decision) through its tailnet TLS node. Only the operator's
+// machines reach it; a stranger who runs the repo silently sends nothing. Staging/prod
+// override via env. The old `homelab:3001` was loopback-only on the mini and its site id
+// didn't exist, so dev analytics recorded nothing (ADR-082 amendment 2026-10-17).
+const DEV_UMAMI_HOST = 'https://umami.tail6d0ed4.ts.net';
+const DEV_UMAMI_WEBSITE_ID = '90cbabf7-ae88-45c9-a417-0cd808749602';
 
 /** The self-hosted Umami host for the current rung: on an INTERNAL mobile build
  *  (ADR-083) the runtime target's host; else an env override (staging/prod) or, in

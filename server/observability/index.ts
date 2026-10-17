@@ -26,6 +26,7 @@ import { BatchSpanProcessor, TracerProvider } from '@opentelemetry/sdk-trace';
 import { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-proto';
 import { resourceFromAttributes } from '@opentelemetry/resources';
 import { Counter, Histogram, Registry } from 'prom-client';
+import { createLogPusher, teeConsole, type LogPusher } from './log-push';
 
 export type ServiceName = 'orrery-lab-api' | 'orrery-mcp';
 
@@ -38,22 +39,81 @@ export interface ObsConfig {
   otlpTracesEndpoint?: string;
   metricsPort?: number;
   umami?: { host: string; websiteId: string; hostname: string };
+  /** VictoriaLogs jsonline URL; set only where no Alloy ships stdout (dev). */
+  logsPushUrl?: string;
+}
+
+interface TierTargets {
+  sentryDsn?: string;
+  otlpTracesEndpoint?: string;
+  logsPushUrl?: string;
+  umami?: { host: string; websiteId: string };
+}
+
+// The telemetry ladder (ADR-082 + its 2026-10-17 amendment), same rule as the browser
+// bundle. A deploy-provided value always wins. Otherwise only dev and staging have
+// built-in targets; prod has none in code, so a prod run missing a target sends
+// nothing for it (fail closed, never to another tier), and tests never send.
+// - dev: a local run, through the tailnet TLS nodes that only the operator's machines
+//   reach (anyone else's run sends nothing). Errors share the web's dev project 30,
+//   separated by the `service` tag. Logs are pushed directly (no Alloy on laptops).
+// - staging: no server runs there today (GitHub Pages is static); these make a future
+//   staging server consistent from day one. Errors and Umami go through the public
+//   edges (as the staging web does); traces need a tailnet box. No log push: a
+//   staging host would ship stdout with Alloy, like prod.
+// DSN keys are public ingest keys, the same ones the browser bundles ship.
+export const TIER_TARGETS: Record<string, TierTargets> = {
+  dev: {
+    sentryDsn: 'https://183d550946d24740a87983a1b75d86ee@glitchtip.tail6d0ed4.ts.net/30',
+    otlpTracesEndpoint: 'https://vtraces.tail6d0ed4.ts.net/insert/opentelemetry/v1/traces',
+    logsPushUrl:
+      'https://vlogs.tail6d0ed4.ts.net/insert/jsonline?_stream_fields=app,service,environment,instance&_msg_field=_msg&_time_field=_time',
+    // "Orrery (dev)" (created 2026-10-17, operator decision): dev activity is tracked.
+    umami: {
+      host: 'https://umami.tail6d0ed4.ts.net',
+      websiteId: '90cbabf7-ae88-45c9-a417-0cd808749602',
+    },
+  },
+  staging: {
+    sentryDsn: 'https://bb3908e53882411cb896caa31072a4db@telemetry.orrerylearn.com/6',
+    otlpTracesEndpoint: 'https://vtraces.tail6d0ed4.ts.net/insert/opentelemetry/v1/traces',
+    umami: {
+      host: 'https://analytics.orrerylearn.com',
+      websiteId: '6e7ddfce-1437-49b9-8b77-a36d3584ccad',
+    },
+  },
+};
+
+/** Kept for callers/tests that name the dev rung directly. */
+export const DEV_SERVER_TARGETS = TIER_TARGETS.dev;
+
+/**
+ * The tier: ORRERY_ENVIRONMENT when set (deploys set it); otherwise the images'
+ * NODE_ENV=production is prod, vitest's NODE_ENV=test is test, and anything else
+ * (a local run) is dev.
+ */
+export function obsTier(env: NodeJS.ProcessEnv = process.env): string {
+  if (env.ORRERY_ENVIRONMENT) return env.ORRERY_ENVIRONMENT;
+  if (env.NODE_ENV === 'production') return 'prod';
+  if (env.NODE_ENV === 'test') return 'test';
+  return 'dev';
 }
 
 export function obsConfigFromEnv(service: ServiceName, env = process.env): ObsConfig {
   const umamiHost = env.UMAMI_HOST?.trim();
   const umamiSite = env.UMAMI_WEBSITE_ID?.trim();
+  const environment = obsTier(env);
+  const tier: TierTargets = TIER_TARGETS[environment] ?? {};
+  const umami = umamiHost && umamiSite ? { host: umamiHost, websiteId: umamiSite } : tier.umami;
   return {
     service,
-    environment: env.ORRERY_ENVIRONMENT || (env.NODE_ENV === 'production' ? 'prod' : 'dev'),
+    environment,
     release: env.ORRERY_RELEASE || undefined,
-    sentryDsn: env.SENTRY_DSN || undefined,
-    otlpTracesEndpoint: env.OTEL_EXPORTER_OTLP_TRACES_ENDPOINT || undefined,
+    sentryDsn: env.SENTRY_DSN || tier.sentryDsn,
+    otlpTracesEndpoint: env.OTEL_EXPORTER_OTLP_TRACES_ENDPOINT || tier.otlpTracesEndpoint,
     metricsPort: env.METRICS_PORT ? Number(env.METRICS_PORT) : undefined,
-    umami:
-      umamiHost && umamiSite
-        ? { host: umamiHost, websiteId: umamiSite, hostname: env.UMAMI_HOSTNAME || service }
-        : undefined,
+    umami: umami ? { ...umami, hostname: env.UMAMI_HOSTNAME || service } : undefined,
+    logsPushUrl: env.ORRERY_LOGS_PUSH_URL || tier.logsPushUrl,
   };
 }
 
@@ -65,6 +125,8 @@ interface State {
   provider?: TracerProvider;
   metricsServer?: Server;
   umamiDropReported?: boolean;
+  logPusher?: LogPusher;
+  untee?: () => void;
 }
 
 let state: State | null = null;
@@ -109,6 +171,17 @@ export function initObservability(
 ): void {
   if (state) return;
   state = { cfg, log, sentry: false, tracing: false };
+
+  // Dev only by default: no Alloy on a laptop, so ship our own stdout (access lines
+  // included, via the console tee) to VictoriaLogs. Prod/staging never set this.
+  if (cfg.logsPushUrl) {
+    state.logPusher = createLogPusher({
+      url: cfg.logsPushUrl,
+      service: cfg.service,
+      environment: cfg.environment,
+    });
+    state.untee = teeConsole(state.logPusher);
+  }
 
   if (cfg.sentryDsn) {
     Sentry.init({
@@ -175,7 +248,9 @@ export async function shutdownObservability(): Promise<void> {
   if (!state) return;
   const s = state;
   state = null;
+  s.untee?.();
   await Promise.all([
+    s.logPusher?.stop(),
     s.provider?.shutdown(),
     s.sentry ? Sentry.close(2000) : undefined,
     s.metricsServer

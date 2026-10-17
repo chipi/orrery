@@ -19,7 +19,7 @@ Umami so the events answer questions**. Decisions: [ADR-081](../adr/ADR-081.md)
 - **Direct SQL, no credentials needed, on the mini:**
   `docker exec -it umami-db psql -U umami -d umami`
 - **Sites:** prod `4a25d8da…` (orrerylearn.com), staging `6e7ddfce…`
-  (chipi.github.io), dev `1d2f214c…`. Three isolated sites — check which one
+  (chipi.github.io), dev "Orrery (dev)" `90cbabf7…` (on the tailnet node `umami.tail6d0ed4.ts.net`). Three isolated sites — check which one
   you're looking at before drawing conclusions.
 
 ## What this Umami build actually offers

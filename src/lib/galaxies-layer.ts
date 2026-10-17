@@ -21,6 +21,7 @@
  */
 import * as THREE from 'three';
 import localGroupData from '../../static/data/local-group-galaxies.json';
+import { galaxyLabel } from '$lib/galaxy-label';
 
 export interface LocalGroupGalaxy {
   id: string;
@@ -132,7 +133,7 @@ export function buildLocalGroupLayer(): BuiltLayer {
 
   for (const g of data.entries) {
     const color = colorForType(g.type);
-    const texture = buildGalaxySpriteTexture(g.name, color);
+    const texture = buildGalaxySpriteTexture(galaxyLabel(g), color);
     textures.push(texture);
     const material = new THREE.SpriteMaterial({
       map: texture,

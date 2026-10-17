@@ -3151,5 +3151,20 @@
   "traverse_current_rover_position": "Huidige positie van de rover",
   "traverse_final_rover_position": "Laatste positie van de rover",
   "traverse_current_position": "Huidige positie",
-  "traverse_sol": "Sol {sol}"
+  "traverse_sol": "Sol {sol}",
+  "galaxy_name_andromeda": "Andromeda-stelsel (M31)",
+  "galaxy_name_triangulum": "Triangulum-stelsel (M33)",
+  "galaxy_name_lmc": "Grote Magellan-wolk",
+  "galaxy_name_smc": "Kleine Magellan-wolk",
+  "galaxy_name_sagittarius_dwarf": "Sferoïdaal Sagittarius-dwergstelsel",
+  "galaxy_name_sculptor_dwarf": "Sculptor-dwergstelsel",
+  "galaxy_name_fornax_dwarf": "Fornax-dwergstelsel",
+  "galaxy_name_draco_dwarf": "Draco-dwergstelsel",
+  "galaxy_name_ursa_minor_dwarf": "Ursa-Minor-dwergstelsel",
+  "galaxy_name_leo_i": "Leo-I-dwergstelsel",
+  "galaxy_name_leo_ii": "Leo-II-dwergstelsel",
+  "galaxy_name_sextans_dwarf": "Sextans-dwergstelsel",
+  "galaxy_name_ngc_6822": "Barnard-stelsel (NGC 6822)",
+  "galaxy_name_ic_1613": "IC 1613",
+  "galaxy_name_wlm": "WLM (Wolf-Lundmark-Melotte)"
 }

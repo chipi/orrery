@@ -3151,5 +3151,20 @@
   "traverse_current_rover_position": "रोवर की वर्तमान स्थिति",
   "traverse_final_rover_position": "रोवर की अंतिम स्थिति",
   "traverse_current_position": "वर्तमान स्थिति",
-  "traverse_sol": "सोल {sol}"
+  "traverse_sol": "सोल {sol}",
+  "galaxy_name_andromeda": "Andromeda आकाशगंगा (M31)",
+  "galaxy_name_triangulum": "Triangulum आकाशगंगा (M33)",
+  "galaxy_name_lmc": "बड़ा Magellan बादल",
+  "galaxy_name_smc": "छोटा Magellan बादल",
+  "galaxy_name_sagittarius_dwarf": "Sagittarius गोलाभ बौनी आकाशगंगा",
+  "galaxy_name_sculptor_dwarf": "Sculptor बौनी आकाशगंगा",
+  "galaxy_name_fornax_dwarf": "Fornax बौनी आकाशगंगा",
+  "galaxy_name_draco_dwarf": "Draco बौनी आकाशगंगा",
+  "galaxy_name_ursa_minor_dwarf": "Ursa Minor बौनी आकाशगंगा",
+  "galaxy_name_leo_i": "Leo I बौनी आकाशगंगा",
+  "galaxy_name_leo_ii": "Leo II बौनी आकाशगंगा",
+  "galaxy_name_sextans_dwarf": "Sextans बौनी आकाशगंगा",
+  "galaxy_name_ngc_6822": "Barnard आकाशगंगा (NGC 6822)",
+  "galaxy_name_ic_1613": "IC 1613",
+  "galaxy_name_wlm": "WLM (Wolf-Lundmark-Melotte)"
 }

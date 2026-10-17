@@ -3151,5 +3151,20 @@
   "traverse_current_rover_position": "로버 현재 위치",
   "traverse_final_rover_position": "로버 최종 위치",
   "traverse_current_position": "현재 위치",
-  "traverse_sol": "솔 {sol}"
+  "traverse_sol": "솔 {sol}",
+  "galaxy_name_andromeda": "Andromeda 은하 (M31)",
+  "galaxy_name_triangulum": "Triangulum 은하 (M33)",
+  "galaxy_name_lmc": "대 Magellan 은하",
+  "galaxy_name_smc": "소 Magellan 은하",
+  "galaxy_name_sagittarius_dwarf": "Sagittarius 왜소 타원체 은하",
+  "galaxy_name_sculptor_dwarf": "Sculptor 왜소은하",
+  "galaxy_name_fornax_dwarf": "Fornax 왜소은하",
+  "galaxy_name_draco_dwarf": "Draco 왜소은하",
+  "galaxy_name_ursa_minor_dwarf": "Ursa Minor 왜소은하",
+  "galaxy_name_leo_i": "Leo I 왜소은하",
+  "galaxy_name_leo_ii": "Leo II 왜소은하",
+  "galaxy_name_sextans_dwarf": "Sextans 왜소은하",
+  "galaxy_name_ngc_6822": "Barnard 은하 (NGC 6822)",
+  "galaxy_name_ic_1613": "IC 1613",
+  "galaxy_name_wlm": "WLM (Wolf-Lundmark-Melotte)"
 }

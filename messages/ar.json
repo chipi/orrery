@@ -3151,5 +3151,20 @@
   "traverse_current_rover_position": "الموقع الحالي للمركبة الجوّالة",
   "traverse_final_rover_position": "الموقع الأخير للمركبة الجوّالة",
   "traverse_current_position": "الموقع الحالي",
-  "traverse_sol": "اليوم المريخي {sol}"
+  "traverse_sol": "اليوم المريخي {sol}",
+  "galaxy_name_andromeda": "مجرة Andromeda (M31)",
+  "galaxy_name_triangulum": "مجرة Triangulum (M33)",
+  "galaxy_name_lmc": "سحابة Magellan الكبرى",
+  "galaxy_name_smc": "سحابة Magellan الصغرى",
+  "galaxy_name_sagittarius_dwarf": "مجرة Sagittarius القزمة الكروية",
+  "galaxy_name_sculptor_dwarf": "مجرة Sculptor القزمة",
+  "galaxy_name_fornax_dwarf": "مجرة Fornax القزمة",
+  "galaxy_name_draco_dwarf": "مجرة Draco القزمة",
+  "galaxy_name_ursa_minor_dwarf": "مجرة Ursa Minor القزمة",
+  "galaxy_name_leo_i": "مجرة Leo I القزمة",
+  "galaxy_name_leo_ii": "مجرة Leo II القزمة",
+  "galaxy_name_sextans_dwarf": "مجرة Sextans القزمة",
+  "galaxy_name_ngc_6822": "مجرة Barnard (NGC 6822)",
+  "galaxy_name_ic_1613": "IC 1613",
+  "galaxy_name_wlm": "WLM (Wolf-Lundmark-Melotte)"
 }

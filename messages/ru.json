@@ -3151,5 +3151,20 @@
   "traverse_current_rover_position": "Текущее положение ровера",
   "traverse_final_rover_position": "Последнее положение ровера",
   "traverse_current_position": "Текущее положение",
-  "traverse_sol": "Сол {sol}"
+  "traverse_sol": "Сол {sol}",
+  "galaxy_name_andromeda": "Галактика Andromeda (M31)",
+  "galaxy_name_triangulum": "Галактика Triangulum (M33)",
+  "galaxy_name_lmc": "Большое облако Magellan",
+  "galaxy_name_smc": "Малое облако Magellan",
+  "galaxy_name_sagittarius_dwarf": "Карликовая сфероидальная галактика Sagittarius",
+  "galaxy_name_sculptor_dwarf": "Карликовая галактика Sculptor",
+  "galaxy_name_fornax_dwarf": "Карликовая галактика Fornax",
+  "galaxy_name_draco_dwarf": "Карликовая галактика Draco",
+  "galaxy_name_ursa_minor_dwarf": "Карликовая галактика Ursa Minor",
+  "galaxy_name_leo_i": "Карликовая галактика Leo I",
+  "galaxy_name_leo_ii": "Карликовая галактика Leo II",
+  "galaxy_name_sextans_dwarf": "Карликовая галактика Sextans",
+  "galaxy_name_ngc_6822": "Галактика Barnard (NGC 6822)",
+  "galaxy_name_ic_1613": "IC 1613",
+  "galaxy_name_wlm": "WLM (Wolf-Lundmark-Melotte)"
 }

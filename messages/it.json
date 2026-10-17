@@ -3151,5 +3151,20 @@
   "traverse_current_rover_position": "Posizione attuale del rover",
   "traverse_final_rover_position": "Posizione finale del rover",
   "traverse_current_position": "Posizione attuale",
-  "traverse_sol": "Sol {sol}"
+  "traverse_sol": "Sol {sol}",
+  "galaxy_name_andromeda": "Galassia Andromeda (M31)",
+  "galaxy_name_triangulum": "Galassia Triangulum (M33)",
+  "galaxy_name_lmc": "Grande Nube di Magellan",
+  "galaxy_name_smc": "Piccola Nube di Magellan",
+  "galaxy_name_sagittarius_dwarf": "Galassia nana sferoidale Sagittarius",
+  "galaxy_name_sculptor_dwarf": "Galassia nana Sculptor",
+  "galaxy_name_fornax_dwarf": "Galassia nana Fornax",
+  "galaxy_name_draco_dwarf": "Galassia nana Draco",
+  "galaxy_name_ursa_minor_dwarf": "Galassia nana Ursa Minor",
+  "galaxy_name_leo_i": "Galassia nana Leo I",
+  "galaxy_name_leo_ii": "Galassia nana Leo II",
+  "galaxy_name_sextans_dwarf": "Galassia nana Sextans",
+  "galaxy_name_ngc_6822": "Galassia di Barnard (NGC 6822)",
+  "galaxy_name_ic_1613": "IC 1613",
+  "galaxy_name_wlm": "WLM (Wolf-Lundmark-Melotte)"
 }

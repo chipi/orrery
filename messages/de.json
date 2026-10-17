@@ -3151,5 +3151,20 @@
   "traverse_current_rover_position": "Aktuelle Rover-Position",
   "traverse_final_rover_position": "Letzte Rover-Position",
   "traverse_current_position": "Aktuelle Position",
-  "traverse_sol": "Sol {sol}"
+  "traverse_sol": "Sol {sol}",
+  "galaxy_name_andromeda": "Andromeda-Galaxie (M31)",
+  "galaxy_name_triangulum": "Triangulum-Galaxie (M33)",
+  "galaxy_name_lmc": "Große Magellan-Wolke",
+  "galaxy_name_smc": "Kleine Magellan-Wolke",
+  "galaxy_name_sagittarius_dwarf": "Sphäroidale Sagittarius-Zwerggalaxie",
+  "galaxy_name_sculptor_dwarf": "Sculptor-Zwerggalaxie",
+  "galaxy_name_fornax_dwarf": "Fornax-Zwerggalaxie",
+  "galaxy_name_draco_dwarf": "Draco-Zwerggalaxie",
+  "galaxy_name_ursa_minor_dwarf": "Ursa-Minor-Zwerggalaxie",
+  "galaxy_name_leo_i": "Leo-I-Zwerggalaxie",
+  "galaxy_name_leo_ii": "Leo-II-Zwerggalaxie",
+  "galaxy_name_sextans_dwarf": "Sextans-Zwerggalaxie",
+  "galaxy_name_ngc_6822": "Barnard-Galaxie (NGC 6822)",
+  "galaxy_name_ic_1613": "IC 1613",
+  "galaxy_name_wlm": "WLM (Wolf-Lundmark-Melotte)"
 }

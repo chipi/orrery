@@ -94,7 +94,7 @@ Return EXACTLY as many translations as inputs, in the SAME ORDER. Never merge, s
 /** Translate a small array in one call; returns the array or null on count mismatch. */
 async function translateChunk(client, sys, locale, strings) {
   const r = await client.messages.create({
-    model: translationModel(locale),
+    model: translationModel(locale, { editorial: true }),
     _locale: locale,
     max_tokens: 8192,
     system: sys,

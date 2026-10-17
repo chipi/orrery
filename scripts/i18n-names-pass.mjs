@@ -15,7 +15,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import Anthropic from '@anthropic-ai/sdk';
 import { translationClient, translationModel } from './lib/translate-model.mjs';
-import { LANGUAGE_NAMES, designations, problems } from './lib/translate-quality.mjs';
+import { LANGUAGE_NAMES, ORDINARY, nameCandidates, problems } from './lib/translate-quality.mjs';
+
+export { nameCandidates };
 import { SKIP_KEY } from './i18n-manifest.mjs';
 import { writeJsonEdits } from './lib/json-surgical.mjs';
 
@@ -35,39 +37,6 @@ const LOCALES = [
   'sr-Cyrl',
   'zh-CN',
 ];
-
-// Capitalised English words that are ordinary nouns here and get translated.
-const ORDINARY = new Set(
-  (
-    'The A An In On At By For From To Of And Or But With As It Its This That These Those ' +
-    'Moon Earth Sun Mars Venus Mercury Jupiter Saturn Uranus Neptune Pluto Ceres Solar System Milky Way ' +
-    'January February March April May June July August September October November December ' +
-    'Monday Tuesday Wednesday Thursday Friday Saturday Sunday North South East West Northern Southern ' +
-    'I II III IV V VI What Why How When Where Who Each Every Its Their Our We You They He She ' +
-    'Russian Soviet American Chinese Japanese European Indian Israeli French German British Italian Korean Arab Arabic Spanish Dutch Brazilian Serbian ' +
-    'TV UTC GMT AM PM OK Lunar Martian Solar Earth-Moon Earth-Mars Moon-Earth Galaxy Universe Big Bang ' +
-    // Ordinary geography is translated (NAME_POLICY).
-    'Pacific Atlantic Indian Arctic Antarctic China Mongolia Inner Russia Kazakhstan India Japan Israel France Germany Italy Spain Europe Africa Asia America Americas Australia Antarctica Siberia Florida Texas California Hawaii Guiana Kourou Brazil Canada Mexico Korea Iran Ukraine Moscow Beijing Paris London Houston Washington USA US UK EU USSR'
-  ).split(' '),
-);
-
-/** Name candidates in an English string (best effort; the model handles the rest). */
-export function nameCandidates(en) {
-  const out = new Set();
-  // All-caps strings are labels (LAUNCH, TOUCHDOWN), not names.
-  if (!/[a-z]/.test(en)) return [];
-  // Designations: the shared finder (codes, CamelCase, digit-bearing names in the data).
-  for (const d of designations(en)) out.add(d);
-  // Acronyms and CamelCase: NASA, ALSEP, SpaceX (not unit-like or ordinary ones).
-  for (const m of en.matchAll(/\b(?:[A-Z]{2,}[A-Za-z]*|[A-Z][a-z]+[A-Z][A-Za-z]+)\b/g))
-    if (!ORDINARY.has(m[0])) out.add(m[0]);
-  // Capitalised words in mid-sentence (after a lowercase word, comma or bracket).
-  for (const m of en.matchAll(/(?<=[a-z,;:(] |[a-z]-)[A-Z][a-z'’]+(?:-[A-Z][a-z]+)?/g)) {
-    const w = m[0].replace(/['’]s$/, '');
-    if (!ORDINARY.has(w)) out.add(w);
-  }
-  return [...out];
-}
 
 function walk(dir, out = []) {
   for (const n of fs.readdirSync(dir).sort()) {

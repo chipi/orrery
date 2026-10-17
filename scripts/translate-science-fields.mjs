@@ -14,7 +14,7 @@
  * Path syntax: dot-separated; a numeric segment is an array index
  * (e.g. body_paragraphs.2 → body_paragraphs[2]).
  *
- * Model: translationModel(locale) (Haiku; Sonnet for problem locales). Edit the en-US
+ * Model: translationModel(locale, { editorial: true }) — Sonnet (editorial, every locale). Edit the en-US
  * source FIRST, then run this to propagate just those fields.
  */
 
@@ -101,7 +101,7 @@ const client = translationClient(new Anthropic({ apiKey: process.env.ANTHROPIC_A
 // ONE field per call → the tool returns a single `translation` string. No array
 // parsing, so prose with quotes/newlines can't corrupt the result (haiku was
 // intermittently returning stringified arrays for some locales).
-async function translateField(locale, text, model = translationModel(locale)) {
+async function translateField(locale, text, model = translationModel(locale, { editorial: true })) {
   const r = await client.messages.create({
     model,
     _locale: locale,

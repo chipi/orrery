@@ -24,7 +24,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import Anthropic from '@anthropic-ai/sdk';
-import { translationClient, translationModel } from './lib/translate-model.mjs';
+import { isEditorial, translationClient, translationModel } from './lib/translate-model.mjs';
 import { fixHomoglyphs, LANGUAGE_NAMES, problems } from './lib/translate-quality.mjs';
 import { writeJsonEdits } from './lib/json-surgical.mjs';
 
@@ -141,7 +141,7 @@ async function main() {
     for (let attempt = 0; attempt < 4 && !result; attempt++) {
       try {
         const r = await client.messages.create({
-          model: translationModel(u.loc),
+          model: translationModel(u.loc, { editorial: isEditorial(u.file, u.src) }),
           _locale: u.loc,
           max_tokens: 8000,
           system: system(u.loc),

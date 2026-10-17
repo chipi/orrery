@@ -52,6 +52,19 @@ const TASKS: Task[] = [
   },
   { name: 'check-tech-bom', cmd: 'tsx', args: ['scripts/build-tech-bom.ts', '--check'] },
   { name: 'check-doc-counts', cmd: 'node', args: ['scripts/gen-doc-counts.mjs', '--check'] },
+  // Translation defects that are never legitimate (2026-10-17 audit, plan 9b):
+  // placeholder tokens, Russian in Serbian, Latin letters inside Cyrillic words,
+  // another language's script, Latin-script Serbian, English spelled in Cyrillic.
+  // Untranslated/englishProse/truncated stay out: they have legitimate cases (names,
+  // quotes) and are reviewed through i18n-audit instead.
+  {
+    name: 'check-i18n-defects',
+    cmd: 'node',
+    args: [
+      'scripts/i18n-detect.mjs',
+      '--gate=placeholder,russianInSr,mixedWord,foreignScript,latinSerbian,phoneticEnglish,corrupted',
+    ],
+  },
   { name: 'validate-satellites', cmd: 'tsx', args: ['scripts/validate-satellites.ts'] },
   { name: 'validate-universe-stars', cmd: 'tsx', args: ['scripts/validate-universe-stars.ts'] },
   {

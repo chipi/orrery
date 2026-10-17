@@ -132,3 +132,18 @@ describe('every translation script', () => {
     }
   });
 });
+
+describe('editorial routing (operator ruling 2026-10-17)', () => {
+  it('sends editorial content to Sonnet in every locale, short strings to Haiku', async () => {
+    const { isEditorial } = await import('./translate-model.mjs');
+    expect(translationModel('de', { editorial: true })).toBe(PROBLEM_LOCALE_MODEL);
+    expect(translationModel('de')).toBe(DEFAULT_TRANSLATION_MODEL);
+    expect(translationModel('sr-Cyrl')).toBe(PROBLEM_LOCALE_MODEL);
+    expect(isEditorial('essays/comms')).toBe(true);
+    expect(isEditorial('science/orbits/keplers-laws')).toBe(true);
+    expect(isEditorial('programs/apollo')).toBe(true);
+    expect(isEditorial('fleet/launcher/antares')).toBe(false);
+    expect(isEditorial('messages', 'Launch')).toBe(false);
+    expect(isEditorial('messages', 'x'.repeat(200))).toBe(true);
+  });
+});

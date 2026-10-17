@@ -24,8 +24,20 @@ export const SONNET_LOCALES = new Map([
   ['sr-Cyrl', '2026-10-17 detector pass + graded segment sample'],
 ]);
 
-export function translationModel(locale) {
-  return SONNET_LOCALES.has(locale) ? PROBLEM_LOCALE_MODEL : DEFAULT_TRANSLATION_MODEL;
+/**
+ * `editorial`: long editorial content (essays, programs, science articles, long UI
+ * text). Operator ruling 2026-10-17, after graded samples showed Haiku failing 8 of
+ * 12 locales (7–22% broken), worst on long editorial: editorial goes to Sonnet in
+ * every language; short strings stay on Haiku except for SONNET_LOCALES.
+ */
+export function translationModel(locale, { editorial = false } = {}) {
+  return editorial || SONNET_LOCALES.has(locale) ? PROBLEM_LOCALE_MODEL : DEFAULT_TRANSLATION_MODEL;
+}
+
+/** Is this field editorial? `file` as in the manifests (overlay path or "messages"). */
+export function isEditorial(file, src = '') {
+  if (file === 'messages') return src.length > 120; // long UI text: help, panels, goal prose
+  return /^(essays|programs|science)\//.test(file);
 }
 
 // Models that reject a forced tool_choice (400 "type tool and any are not

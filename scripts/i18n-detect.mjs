@@ -14,7 +14,7 @@
  * e.g. CJK in hi/ko), mixedWord (Latin letters inside a Cyrillic word), russianInSr,
  * placeholder (__ACR0__ tokens), phoneticEnglish (English spelled in Cyrillic),
  * latinSerbian (a Latin-script Serbian string in sr-Cyrl), truncated (much shorter
- * than the locale's usual length ratio to the English).
+ * than the locale's usual length ratio to the English), corrupted (U+FFFD: bytes lost).
  * Detectors are evidence, not a verdict: a sample still needs a reviewer.
  */
 import fs from 'node:fs';
@@ -47,6 +47,7 @@ export const KINDS = [
   'phoneticEnglish',
   'latinSerbian',
   'truncated',
+  'corrupted',
 ];
 const NATIVE = {
   ar: /\p{Script=Arabic}/u,
@@ -142,9 +143,10 @@ export function detect(loc) {
       add('mixedWord', f, at, s);
     if (loc === 'sr-Cyrl' && /[яюёйщыэъь]/i.test(s)) add('russianInSr', f, at, s);
     if (/__[A-ZА-Я]{2,}\d+__/.test(s)) add('placeholder', f, at, s);
+    if (/\uFFFD/.test(s)) add('corrupted', f, at, s); // replacement character: bytes lost in an edit
     if (
       (loc === 'ru' || loc === 'sr-Cyrl') &&
-      /(^|[\s(])(тхе|витх|анд|оф|фор|ин тхе|лаунцх|уппер|стаге)(?=[\s,.)]|$)/i.test(s)
+      /(^|[\s(])(тхе|витх|анд|оф|фор|ин тхе|лаунцх|уппер|стаге)(?=[\s,.)]|$)/.test(s) // lowercase only: "Анд" is the Andes
     )
       add('phoneticEnglish', f, at, s);
     if (

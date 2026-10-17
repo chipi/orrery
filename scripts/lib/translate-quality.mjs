@@ -36,7 +36,19 @@ export const BASE_RULES = `Translation rules (always):
 - Write only in the target language and its script. No words from any other language (no Russian in Serbian, no Chinese or Japanese characters in Hindi or Korean, no English left in the prose), except names, which follow the NAMES rule.
 - Keep Markdown exactly (**bold**, *italic*, [text](url), lists): translate the visible text, never URLs or link targets.
 - Keep numbers, units, formulae and dates; adapt only decimal/thousands separators to the language's convention.
-- Never output placeholder tokens such as __ACR0__.`;
+- Never output placeholder tokens such as __ACR0__.
+
+Spaceflight terms (2026-10-17 graded samples got these wrong in many languages):
+- "coast" / "coast phase" = unpowered flight between burns — never a shore or beach.
+- "the ground" (as in "the ground is listening", "ground link") = ground control / the
+  ground station — never soil or terrain.
+- "uncrewed" = without a crew — never "unscrewed"; "crewed" = with a crew.
+- "man-rating" / "human-rating" = certifying a vehicle safe to carry people.
+- "capsule" = the crew/return vehicle; "rover" = a wheeled surface vehicle;
+  "lander" = a landing spacecraft; "probe" = a spacecraft (never an investigation).
+- "sensible atmosphere" = the part of the atmosphere dense enough to matter.
+- "re-entry" / "entry" = entering an atmosphere; "acknowledgement" (radio) = confirmation.
+- "knife-edge" = just barely; "plume" (Europa, Enceladus) = a jet of material.`;
 
 export const LOCALE_RULES = {
   'sr-Cyrl': `Serbian rules (strict):
@@ -67,7 +79,7 @@ const CHECKS = {
       'ijekavian form',
     ],
     [
-      /(^|[\s(])(тхе|витх|анд|оф|фор|лаунцх|уппер|стаге)(?=[\s,.)]|$)/i,
+      /(^|[\s(])(тхе|витх|анд|оф|фор|лаунцх|уппер|стаге)(?=[\s,.)]|$)/, // lowercase only: "Анд" is the Andes
       'English spelled phonetically in Cyrillic',
     ],
   ],
@@ -104,12 +116,17 @@ export function knownDigitNames() {
             if (typeof j[k] === 'string' && /\d/.test(j[k]) && j[k].length <= 40) {
               // The designation only: "Apollo 12 (Yankee Clipper)" → "Apollo 12",
               // "Tianwen-1 orbiter" → "Tianwen-1" (descriptive words get translated).
-              const base = j[k]
+              let base = j[k]
                 .split(/\s+[—(/+]/)[0]
                 .replace(/(\s+[a-z][^\s]*)+$/, '')
-                .replace(/^((Earth|Moon|Sun|Mars|Lunar|Earth-Moon|Sun-Earth|Earth–Moon)\s+)+/, '') // "Earth-Moon L2" → "L2"
                 .trim();
-              if (/\d/.test(base)) KNOWN.add(base);
+              // "Earth-Moon L2" → "L2" (ordinary words get translated), but only if
+              // a letter-bearing designation remains: "Mars 3" is a mission name.
+              const stripped = base
+                .replace(/^((Earth|Moon|Sun|Mars|Lunar|Earth-Moon|Sun-Earth|Earth–Moon)\s+)+/, '')
+                .trim();
+              if (stripped !== base && /[A-Za-z]/.test(stripped)) base = stripped;
+              if (/\d/.test(base) && /[A-Za-z]/.test(base)) KNOWN.add(base);
             }
         } catch {
           /* not JSON we care about */
@@ -141,6 +158,128 @@ export function designations(src) {
   return [...out];
 }
 
+// Capitalised English words that are ordinary nouns here and get translated.
+export const ORDINARY = new Set(
+  (
+    'The A An In On At By For From To Of And Or But With As It Its This That These Those ' +
+    'Moon Earth Sun Mars Venus Mercury Jupiter Saturn Uranus Neptune Pluto Ceres Solar System Milky Way ' +
+    'January February March April May June July August September October November December ' +
+    'Monday Tuesday Wednesday Thursday Friday Saturday Sunday North South East West Northern Southern ' +
+    'I II III IV V VI What Why How When Where Who Each Every Its Their Our We You They He She ' +
+    'Russian Soviet American Chinese Japanese European Indian Israeli French German British Italian Korean Arab Arabic Spanish Dutch Brazilian Serbian ' +
+    'TV UTC GMT AM PM OK Lunar Martian Solar Earth-Moon Earth-Mars Moon-Earth Galaxy Universe Big Bang ' +
+    'LEO MEO GEO HEO GTO SSO NRHO AU ' +
+    // Ordinary geography is translated (NAME_POLICY).
+    'Pacific Atlantic Indian Arctic Antarctic China Mongolia Inner Russia Kazakhstan India Japan Israel France Germany Italy Spain Europe Africa Asia America Americas Australia Antarctica Siberia Florida Texas California Hawaii Guiana Kourou Brazil Canada Mexico Korea Iran Ukraine Moscow Beijing Paris London Houston Washington USA US UK EU USSR'
+  ).split(' '),
+);
+
+/** Name candidates in an English string (best effort; the model handles the rest). */
+export function nameCandidates(en) {
+  const out = new Set();
+  // All-caps strings are labels (LAUNCH, TOUCHDOWN), not names.
+  if (!/[a-z]/.test(en)) return [];
+  // Designations: the shared finder (codes, CamelCase, digit-bearing names in the data).
+  for (const d of designations(en)) out.add(d);
+  // Acronyms and CamelCase: NASA, ALSEP, SpaceX (not unit-like or ordinary ones).
+  for (const m of en.matchAll(/\b(?:[A-Z]{2,}[A-Za-z]*|[A-Z][a-z]+[A-Z][A-Za-z]+)\b/g))
+    if (!ORDINARY.has(m[0])) out.add(m[0]);
+  // Capitalised words in mid-sentence (after a lowercase word, comma or bracket).
+  for (const m of en.matchAll(/(?<=[a-z,;:(] |[a-z]-)[A-Z][a-z'’]+(?:-[A-Z][a-z]+)?/g)) {
+    const w = m[0].replace(/['’]s$/, '');
+    if (!ORDINARY.has(w)) out.add(w);
+  }
+  return [...out];
+}
+
+const GENERIC_WORDS = new Set(
+  'Space Station Telescope Observatory Constellation Belt Orbiter Lander Rover Program Programme Project Mission Probe Satellite Satellites Spacecraft Module Laboratory Lab Reconnaissance International Standard Enhanced Cargo Crew Capsule Vehicle'.split(
+    ' ',
+  ),
+);
+const GENERIC_TAIL =
+  /(\s+(Space|Station|Telescope|Observatory|Constellation|Belt|Orbiter|Lander|Rover|Program|Programme|Project|Mission|Probe|Satellites?|Spacecraft|Module|Laboratory|Lab|Lunar|X-ray|Excursion|Command|Service))+$/;
+let GAZETTEER = null;
+/** Every entity name the data knows: en-US `name` fields of missions, spacecraft,
+ *  rockets, sites, satellites, stars and modules (the part before " (" / " — "),
+ *  plus agency acronyms. Planets, the Sun and ordinary words are excluded (they get
+ *  translated). Loaded once. */
+export function gazetteer() {
+  if (GAZETTEER) return GAZETTEER;
+  GAZETTEER = new Set([
+    'NASA',
+    'ESA',
+    'JAXA',
+    'ISRO',
+    'CNSA',
+    'Roscosmos',
+    'SpaceX',
+    'Blue Origin',
+    'ULA',
+    'ISS',
+    'JPL',
+  ]);
+  const root = path.resolve(import.meta.dirname, '../../i18n-src/en-US');
+  const skipDirs = new Set([
+    'orbit-regimes',
+    'orbit-regimes-explore',
+    'orbit-regimes-mars',
+    'orbit-regimes-moon',
+    'planets',
+    'essays',
+    'programs',
+    'science',
+    'sourcing',
+    'scenarios',
+    'culture-doors',
+    'hotspot-metadata',
+  ]);
+  const walk = (d, top) => {
+    for (const n of fs.readdirSync(d)) {
+      const p = path.join(d, n);
+      if (fs.statSync(p).isDirectory()) {
+        if (!(top && skipDirs.has(n))) walk(p, false);
+      } else if (n.endsWith('.json') && !(top && n === 'sun.json')) {
+        try {
+          const j = JSON.parse(fs.readFileSync(p, 'utf8'));
+          for (const k of ['name', 'short_name']) {
+            if (typeof j[k] !== 'string') continue;
+            let base = j[k]
+              .split(/\s+[—(/+·]/)[0]
+              .replace(/(\s+[a-z][^\s]*)+$/, '')
+              .trim();
+            // Generic descriptors get translated ("Hubble Space Telescope" →
+            // "Hubble", "BeiDou Constellation" → "BeiDou"); a name that is only
+            // descriptors and ordinary words ("International Space Station",
+            // "GEO Belt") adds nothing — its acronym (ISS) is listed separately.
+            base = base.replace(GENERIC_TAIL, '').trim();
+            const words = base.split(/\s+/);
+            if (words.every((w) => ORDINARY.has(w) || GENERIC_WORDS.has(w))) continue;
+            if (base.length >= 3 && /^[A-Z0-9]/.test(base) && !ORDINARY.has(base))
+              GAZETTEER.add(base);
+          }
+        } catch {
+          /* not JSON we care about */
+        }
+      }
+    }
+  };
+  if (fs.existsSync(root)) walk(root, true);
+  return GAZETTEER;
+}
+
+/** Known names that occur in `src` as whole words (longest first, no overlaps). */
+export function knownNamesIn(src) {
+  if (!src) return [];
+  const hits = [];
+  for (const n of [...gazetteer()].sort((a, b) => b.length - a.length)) {
+    if (!src.includes(n) || hits.some((h) => h.includes(n))) continue;
+    const esc = n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    if (new RegExp(`(^|[^A-Za-z0-9])${esc}(?![A-Za-z0-9])`).test(src)) hits.push(n);
+  }
+  return hits;
+}
+
 /**
  * Problems with a translation `out` of English `src` into `locale` (empty list
  * = acceptable). `src` may be '' when the caller doesn't have it (the client
@@ -151,10 +290,24 @@ export function problems(locale, src, out) {
   if (typeof out !== 'string' || !out.trim()) return ['empty'];
   src = src || '';
   if (/__[A-ZА-Я]{2,}\d+__/.test(out)) p.push('placeholder token');
+  if (/\uFFFD/.test(out)) p.push('corrupted characters (U+FFFD)');
   const names = designations(src);
   const apos = (x) => x.replace(/[’‘]/g, "'"); // Chang’e == Chang'e
   const lost = names.filter((n) => !apos(out).includes(apos(n)));
   if (lost.length) p.push(`names changed or missing: ${lost.slice(0, 5).join(', ')}`);
+  // Names from the data's own name list must survive verbatim (NAME_POLICY), in
+  // every language: the 2026-10-17 graded samples found Huygens → 惠更斯号/ホイヘンス/
+  // ह्यूजेंस/هويجنز/Хајгенс, Tianzhou → 天舟, Jezero → 杰泽罗, which the designation
+  // check can't see. A guessed candidate list flagged 8–20% of each locale (Observatory,
+  // Cold War, Orbit, DNA), so only known names count. Substring match, so inflections
+  // that keep the name intact (German "Shepards", Serbian "NASA-ин") pass.
+  const translated = knownNamesIn(src).filter(
+    (n) => !names.includes(n) && !apos(out).includes(apos(n)),
+  );
+  if (translated.length)
+    p.push(
+      `names translated or missing (keep exactly as in English): ${translated.slice(0, 6).join(', ')}`,
+    );
   // Locales not written in Latin: every Latin word in the output must be a name
   // taken verbatim from the source ("Canberri", "Madridu" glue a case ending onto
   // a name; NAME_POLICY wants "Canberra" or "Canberra-и").

@@ -64,7 +64,7 @@ const SECTIONS = ['the_land', 'goals', 'outcome', 'narrative', 'legacy', 'lesson
 // Single-string translation via a {translation: string} tool — cannot length-mismatch.
 async function translateOne(client, locale, str) {
   const r = await client.messages.create({
-    model: translationModel(locale),
+    model: translationModel(locale, { editorial: true }),
     _locale: locale,
     max_tokens: 4096,
     system: SYSTEM,
@@ -114,7 +114,7 @@ CRITICAL CONSTRAINTS:
 
 async function translateStrings(client, locale, strings) {
   const r = await client.messages.create({
-    model: translationModel(locale),
+    model: translationModel(locale, { editorial: true }),
     _locale: locale,
     max_tokens: 8192,
     system: SYSTEM,

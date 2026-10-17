@@ -535,8 +535,8 @@
     "tab": "mission-phases",
     "section": "skip-entry",
     "title": "Skip entry — surfing back out of the atmosphere",
-    "intro": "Too fast for a single dip, the capsule skips back out of the atmosphere, coasts, then re-enters — splitting a brutal heat load into two gentler bites.",
-    "haystack": "skip entry — surfing back out of the atmosphere too fast for a single dip, the capsule skips back out of the atmosphere, coasts, then re-enters — splitting a brutal heat load into two gentler bites. a skip entry is practical only above the speed of a circular orbit at that altitude (~7.9 km/s low down) — a \"super-circular\" return. during the first dip the vehicle uses lift-up to arrest the descent before it has slowed all the way down; with energy still above what a closed orbit at that altitude needs, the trajectory carries it back up out of the sensible atmosphere. it then follows an exo-atmospheric coast — energy conserved, no drag — until it falls back for the second, final entry."
+    "intro": "Rather than lose lunar-return speed in one plunge, the capsule skips out, coasts and re-enters — two milder peaks of heat and g instead of one.",
+    "haystack": "skip entry — surfing back out of the atmosphere rather than lose lunar-return speed in one plunge, the capsule skips out, coasts and re-enters — two milder peaks of heat and g instead of one. a skip entry is designed for returns faster than the speed of a circular orbit at that altitude (~7.9 km/s low down) — a \"super-circular\" return. during the first dip the vehicle uses lift-up to arrest the descent and bleed off enough speed that it leaves the dip suborbital, rising on a ballistic arc back out of the sensible atmosphere. that exo-atmospheric coast — energy conserved, no drag — carries it until it falls back for the second, final entry."
   },
   {
     "tab": "mission-phases",

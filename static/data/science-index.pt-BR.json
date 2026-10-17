@@ -1,0 +1,1199 @@
+[
+  {
+    "tab": "cosmology",
+    "section": "cosmic-distance-ladder",
+    "title": "A escada cósmica de distâncias",
+    "intro": "Nenhum método único mede todas as distâncias cósmicas. Os astrônomos constroem uma escada: cada técnica alcança um pouco mais longe e é calibrada pelo degrau abaixo dela, desde radar no sistema solar até a borda do universo observável.",
+    "haystack": "a escada cósmica de distâncias nenhum método único mede todas as distâncias cósmicas. os astrônomos constroem uma escada: cada técnica alcança um pouco mais longe e é calibrada pelo degrau abaixo dela, desde radar no sistema solar até a borda do universo observável. o primeiro degrau é a geometria. reflita radar em um planeta e você conhece a unidade astronômica diretamente. observe uma estrela próxima se deslocar para frente e para trás contra o fundo ao longo de um ano — paralaxe — e a trigonometria simples fornece sua distância; a missão gaia da esa fez isso para quase dois bilhões de estrelas, alcançando dezenas de milhares de anos-luz com precisão. the cosmic distance ladder"
+  },
+  {
+    "tab": "cosmology",
+    "section": "laniakea-and-the-great-attractor",
+    "title": "Laniakea e o Grande Atrator",
+    "intro": "Em 2014 astrônomos redesenharam nosso endereço cósmico — não traçando onde galáxias estão, mas para onde fluem. A resposta era Laniakea, um superaglomerado muito maior que o Superaglomerado de Virgo.",
+    "haystack": "laniakea e o grande atrator em 2014 astrônomos redesenharam nosso endereço cósmico — não traçando onde galáxias estão, mas para onde fluem. a resposta era laniakea, um superaglomerado muito maior que o superaglomerado de virgo. a ideia é um divisor de águas. na terra, uma bacia de drenagem é definida não por uma cerca, mas pelo caminho que a chuva percorre: toda gota que flui para a mesma foz pertence à mesma bacia. a equipe de brent tully aplicou a mesma lógica às galáxias. usando o levantamento cosmicflows de velocidades galácticas, eles mapearam para onde cada galáxia está se deslocando após subtrair a expansão geral do universo, e traçaram o limite onde os fluxos divergem. laniakea and the great attractor"
+  },
+  {
+    "tab": "cosmology",
+    "section": "large-scale-structure",
+    "title": "Estrutura em grande escala — a teia cósmica",
+    "intro": "Na maior escala, galáxias não se espalham ao acaso. Elas se reúnem em grupos e aglomerados, alinhadas em filamentos e folhas que envolvem imensos vazios — um padrão em forma de espuma que astrônomos chamam de teia cósmica.",
+    "haystack": "estrutura em grande escala — a teia cósmica na maior escala, galáxias não se espalham ao acaso. elas se reúnem em grupos e aglomerados, alinhadas em filamentos e folhas que envolvem imensos vazios — um padrão em forma de espuma que astrônomos chamam de teia cósmica. a hierarquia se aninha. as estrelas se agrupam em galáxias; as galáxias se juntam em grupos (como nosso grupo local) e aglomerados ricos (como o aglomerado de virgem, com mais de mil galáxias ligadas por um único poço gravitacional). grupos e aglomerados são por sua vez atraídos para supercúmulos — concentrações soltas e esparsas medindo dezenas de megaparsecs de largura. nosso grupo local fica nas margens do supercúmulo de virgem, com ~33 megaparsecs (cerca de 110 milhões de anos-luz) de largura e centrado no aglomerado de virgem. large-scale structure — the cosmic web"
+  },
+  {
+    "tab": "exoplanets",
+    "section": "are-we-alone",
+    "title": "Estamos Sozinhos?",
+    "intro": "Milhares de mundos depois, a pergunta mais antiga está mais perto de um teste do que nunca — mas a honestidade sobre o que sabemos e o que não sabemos é toda a disciplina.",
+    "haystack": "estamos sozinhos? milhares de mundos depois, a pergunta mais antiga está mais perto de um teste do que nunca — mas a honestidade sobre o que sabemos e o que não sabemos é toda a disciplina. a equação de drake enquadra as probabilidades como uma cadeia de fatores — quantas estrelas, quantas com planetas, quantas habitáveis, quantas que desenvolvem vida, e assim por diante. a ciência de exoplanetas agora fixou os primeiros fatores observacionalmente: planetas são comuns, e mundos rochosos em zona habitável são abundantes. os fatores posteriores permanecem desconhecidos. are we alone?"
+  },
+  {
+    "tab": "exoplanets",
+    "section": "astrometry",
+    "title": "Astrometria",
+    "intro": "Rastreie a posição exata de uma estrela no céu e você poderá vê-la traçar um pequeno loop à medida que um planeta invisível a balança em torno do centro de massa comum.",
+    "haystack": "astrometria rastreie a posição exata de uma estrela no céu e você poderá vê-la traçar um pequeno loop à medida que um planeta invisível a balança em torno do centro de massa comum. a astrometria mede o deslocamento periódico de uma estrela no plano do céu à medida que ela orbita o centro de massa do sistema. ao contrário da velocidade radial, ela detecta a órbita completa independentemente da orientação, então fornece uma massa verdadeira (não apenas um limite inferior) e funciona bem para planetas em órbitas amplas, onde o sinal astrométrico cresce. astrometry"
+  },
+  {
+    "tab": "exoplanets",
+    "section": "biosignatures",
+    "title": "Bioassinaturas",
+    "intro": "Os gases ou características na luz de um planeta que poderiam revelar vida — e por que nenhum deles isoladamente é prova por si só.",
+    "haystack": "bioassinaturas os gases ou características na luz de um planeta que poderiam revelar vida — e por que nenhum deles isoladamente é prova por si só. uma bioassinatura é um observável — um gás, uma característica superficial, um ciclo sazonal — cuja explicação mais plausível é a vida. os casos mais fortes dependem de desequilíbrio químico: combinações de gases (como oxigênio com metano) que reagem e desaparecem a menos que sejam continuamente reabastecidos, idealmente acompanhados de sinais de que fontes abióticas foram descartadas. biosignatures"
+  },
+  {
+    "tab": "exoplanets",
+    "section": "direct-imaging",
+    "title": "Imageamento Direto",
+    "intro": "Bloqueie o brilho intenso da estrela e, para alguns poucos planetas afortunados, você pode fotografar o tênue ponto de luz ao lado dela.",
+    "haystack": "imageamento direto bloqueie o brilho intenso da estrela e, para alguns poucos planetas afortunados, você pode fotografar o tênue ponto de luz ao lado dela. o imageamento direto bloqueia ou anula a luz estelar (com um coronógrafo ou interferômetro) para revelar planetas e discos que de outra forma se perderiam no brilho. como detecta a própria luz do planeta, permite exclusivamente a espectroscopia do mundo em isolamento — uma leitura direta de sua temperatura e atmosfera. direct imaging"
+  },
+  {
+    "tab": "exoplanets",
+    "section": "exoplanet-atmospheres",
+    "title": "Reading Exoplanet Atmospheres",
+    "intro": "Durante um trânsito, um fio de luz estelar filtra através do ar de um planeta e carrega de volta para nós as impressões digitais de seus gases.",
+    "haystack": "reading exoplanet atmospheres durante um trânsito, um fio de luz estelar filtra através do ar de um planeta e carrega de volta para nós as impressões digitais de seus gases. a espectroscopia de transmissão mede como a atmosfera de um planeta absorve a luz estelar durante o trânsito, comprimento de onda por comprimento de onda, revelando sua composição. a espectroscopia de emissão — capturando o próprio brilho térmico do planeta pouco antes de ele deslizar atrás da estrela — adiciona estrutura de temperatura. juntas, elas transformam um planeta em trânsito em um mundo com um céu mensurável. reading exoplanet atmospheres"
+  },
+  {
+    "tab": "exoplanets",
+    "section": "fifty-one-pegasi",
+    "title": "51 Pegasi b: O Primeiro",
+    "intro": "Em 1995, um planeta gigante foi encontrado orbitando uma estrela semelhante ao Sol a cada quatro dias — a descoberta que inaugurou a era dos exoplanetas e rendeu um Prêmio Nobel.",
+    "haystack": "51 pegasi b: o primeiro em 1995, um planeta gigante foi encontrado orbitando uma estrela semelhante ao sol a cada quatro dias — a descoberta que inaugurou a era dos exoplanetas e rendeu um prêmio nobel. 51 pegasi b foi encontrado por velocidade radial: uma oscilação doppler clara de ~4,2 dias revelando um planeta com pelo menos metade da massa de júpiter orbitando perigosamente perto de sua estrela. foi o primeiro planeta confirmado ao redor de uma estrela de sequência principal além do sol. 51 pegasi b: the first"
+  },
+  {
+    "tab": "exoplanets",
+    "section": "habitable-zone",
+    "title": "A Zona Habitável",
+    "intro": "A faixa de órbitas ao redor de uma estrela onde um planeta rochoso poderia manter água líquida em sua superfície — nem muito quente, nem muito frio.",
+    "haystack": "a zona habitável a faixa de órbitas ao redor de uma estrela onde um planeta rochoso poderia manter água líquida em sua superfície — nem muito quente, nem muito frio. a zona habitável circunstelar é definida pelo fluxo estelar: a borda interna é onde uma estufa descontrolada ferveria os oceanos (o destino de venus), a borda externa onde até mesmo uma forte estufa de dióxido de carbono não pode impedir o congelamento global (além de mars). sua distância escala com a raiz quadrada da luminosidade da estrela, então ela fica longe de estrelas brilhantes e perto de estrelas fracas. the habitable zone"
+  },
+  {
+    "tab": "exoplanets",
+    "section": "hot-jupiters",
+    "title": "Hot Jupiters",
+    "intro": "Planetas gigantes orbitando abrasadoramente perto de suas estrelas — a surpresa que recebeu as primeiras descobertas de exoplanetas e reescreveu como pensamos que os planetas se formam.",
+    "haystack": "hot jupiters planetas gigantes orbitando abrasadoramente perto de suas estrelas — a surpresa que recebeu as primeiras descobertas de exoplanetas e reescreveu como pensamos que os planetas se formam. hot jupiters são gigantes gasosos em órbitas de apenas alguns dias, com temperaturas no lado diurno frequentemente excedendo 1.000 graus. sua existência implica migração orbital em larga escala: eles provavelmente se formaram além da linha de neve e espiralam para dentro através de interações com o disco protoplanetário ou com outros corpos, terminando onde nenhum gigante poderia ter se montado no local. hot jupiters"
+  },
+  {
+    "tab": "exoplanets",
+    "section": "microlensing",
+    "title": "Gravitational Microlensing",
+    "intro": "Quando uma estrela deriva precisamente à frente de outra, sua gravidade amplifica a estrela de fundo — e um planeta adiciona um breve lampejo extra.",
+    "haystack": "gravitational microlensing quando uma estrela deriva precisamente à frente de outra, sua gravidade amplifica a estrela de fundo — e um planeta adiciona um breve lampejo extra. microlentes detecta planetas pela magnificação gravitacional transitória que eles adicionam a um alinhamento casual de duas estrelas. é exclusivamente sensível a planetas de baixa massa em órbitas amplas e frias — a região além da linha de neve que trânsitos e velocidade radial têm dificuldade de alcançar — e a planetas errantes à deriva sozinhos pela galáxia. gravitational microlensing"
+  },
+  {
+    "tab": "exoplanets",
+    "section": "orbital-resonance",
+    "title": "Ressonância Orbital",
+    "intro": "Quando os períodos orbitais dos planetas formam razões simples de números inteiros, seus alinhamentos repetidos travam o sistema em um ritmo autorreforçante.",
+    "haystack": "ressonância orbital quando os períodos orbitais dos planetas formam razões simples de números inteiros, seus alinhamentos repetidos travam o sistema em um ritmo autorreforçante. uma ressonância orbital ocorre quando corpos em órbita exercem influência gravitacional regular e periódica um sobre o outro, geralmente porque seus períodos estão em uma razão de números inteiros pequenos. ressonâncias podem estabilizar um sistema densamente empacotado mantendo os planetas em um padrão travado, ou desestabilizá-lo aumentando as excentricidades. orbital resonance"
+  },
+  {
+    "tab": "exoplanets",
+    "section": "planet-formation",
+    "title": "Formação e Migração",
+    "intro": "Planetas se condensam a partir de um disco de gás e poeira ao redor de uma estrela jovem — e frequentemente não permanecem onde nasceram.",
+    "haystack": "formação e migração planetas se condensam a partir de um disco de gás e poeira ao redor de uma estrela jovem — e frequentemente não permanecem onde nasceram. o modelo nebular constrói planetas por acreção de núcleo em um disco protoplanetário: poeira coagula em planetesimais, que se fundem em núcleos; um núcleo além da linha de neve que cresce rápido o suficiente pode capturar um envelope massivo de gás e se tornar um gigante antes que o disco se disperse. formation & migration"
+  },
+  {
+    "tab": "exoplanets",
+    "section": "proxima-system",
+    "title": "Proxima Centauri: Os Planetas Mais Próximos",
+    "intro": "Ao redor da estrela mais próxima do Sol orbita um planeta com massa aproximadamente igual à da Terra na zona habitável — o mundo potencialmente habitável mais próximo, a 4,24 anos-luz de distância.",
+    "haystack": "proxima centauri: os planetas mais próximos ao redor da estrela mais próxima do sol orbita um planeta com massa aproximadamente igual à da terra na zona habitável — o mundo potencialmente habitável mais próximo, a 4,24 anos-luz de distância. proxima centauri b foi detectado por velocidade radial: um sinal de ~11 dias implicando um planeta de pelo menos cerca de 1,1 massas terrestres na zona temperada da anã m5.5. um segundo planeta, muito mais leve, proxima d, foi confirmado no início dos anos 2020 em uma órbita mais apertada — um dos planetas de menor massa conhecidos. proxima centauri: the nearest planets"
+  },
+  {
+    "tab": "exoplanets",
+    "section": "radial-velocity",
+    "title": "O Método da Velocidade Radial",
+    "intro": "A gravidade de um planeta puxa sua estrela em uma minúscula oscilação de vai e vem; um espectrógrafo lê esse movimento como um desvio Doppler na luz estelar.",
+    "haystack": "o método da velocidade radial a gravidade de um planeta puxa sua estrela em uma minúscula oscilação de vai e vem; um espectrógrafo lê esse movimento como um desvio doppler na luz estelar. a velocidade radial foi o primeiro método a dar resultados, confirmando 51 pegasi b em 1995 e dominando a contagem inicial de exoplanetas. ele mede a velocidade radial da estrela a partir de desvios doppler em seu espectro; a amplitude dessa velocidade (k) escala com a massa do planeta e diminui com a distância orbital, então ele favorece planetas massivos em órbitas curtas — a razão pela qual as primeiras descobertas foram 'júpiteres quentes'. the radial-velocity method"
+  },
+  {
+    "tab": "exoplanets",
+    "section": "super-earths-sub-neptunes",
+    "title": "Super-Earths & Sub-Neptunes",
+    "intro": "Os planetas mais comuns da galáxia têm tamanhos que o Sistema Solar ignorou completamente — maiores que a Terra, menores que Netuno.",
+    "haystack": "super-earths & sub-neptunes os planetas mais comuns da galáxia têm tamanhos que o sistema solar ignorou completamente — maiores que a terra, menores que netuno. estatisticamente, super-earths e sub-neptunes são os planetas mais abundantes na galáxia, mas o sistema solar não contém nenhum. o 'vale de raios' — uma queda no número de planetas em torno de 1,5–2 raios terrestres — parece dividir núcleos rochosos nus de mundos que mantiveram um envelope espesso de hidrogênio-hélio ou vapor. super-earths & sub-neptunes"
+  },
+  {
+    "tab": "exoplanets",
+    "section": "tidal-locking",
+    "title": "Tidal Locking",
+    "intro": "Planetas orbitando próximos a estrelas pequenas frequentemente mantêm uma face voltada para a estrela para sempre — dia permanente de um lado, noite permanente do outro.",
+    "haystack": "tidal locking planetas orbitando próximos a estrelas pequenas frequentemente mantêm uma face voltada para a estrela para sempre — dia permanente de um lado, noite permanente do outro. o acoplamento de maré (sincronização spin-órbita) surge quando a atração de maré de uma estrela freia a rotação de um planeta próximo até que seu dia seja igual ao seu ano. como o efeito se intensifica fortemente com a proximidade, essencialmente todo planeta rochoso na zona habitável de uma anã vermelha é esperado estar acoplado ou em um estado de rotação ressonante relacionado. tidal locking"
+  },
+  {
+    "tab": "exoplanets",
+    "section": "transit",
+    "title": "O Método de Trânsito",
+    "intro": "Quando um planeta cruza na frente de sua estrela, ele bloqueia uma fração da luz; essa queda periódica no brilho revela o planeta e mede seu tamanho.",
+    "haystack": "o método de trânsito quando um planeta cruza na frente de sua estrela, ele bloqueia uma fração da luz; essa queda periódica no brilho revela o planeta e mede seu tamanho. a fotometria de trânsito é o método mais produtivo de longe, responsável pela grande maioria dos exoplanetas conhecidos. ela mede o raio de um planeta diretamente (a partir da queda fracionária na luz estelar) e seu período orbital (a partir do espaçamento das quedas); combinado com uma massa por velocidade radial, ela fornece uma densidade média. the transit method"
+  },
+  {
+    "tab": "exoplanets",
+    "section": "transit-timing",
+    "title": "Transit-Timing Variations",
+    "intro": "Em um sistema populoso, planetas puxam uns aos outros e chegam cedo ou tarde; a deriva nos tempos de trânsito revela mundos invisíveis e pesa aqueles que vemos.",
+    "haystack": "transit-timing variations em um sistema populoso, planetas puxam uns aos outros e chegam cedo ou tarde; a deriva nos tempos de trânsito revela mundos invisíveis e pesa aqueles que vemos. variações no tempo de trânsito (ttvs) exploram as interações gravitacionais entre planetas no mesmo sistema. um planeta perfeitamente isolado transita com um período constante; planetas que interagem mostram desvios periódicos cuja amplitude e padrão codificam as massas e órbitas dos planetas. transit-timing variations"
+  },
+  {
+    "tab": "exoplanets",
+    "section": "trappist-1-system",
+    "title": "TRAPPIST-1: Sete Mundos do Tamanho da Terra",
+    "intro": "Uma estrela anã vermelha tênue a 40 anos-luz de distância abriga sete planetas aproximadamente do tamanho da Terra — o sistema compacto mais rico conhecido e um terreno privilegiado para a busca por habitabilidade.",
+    "haystack": "trappist-1: sete mundos do tamanho da terra uma estrela anã vermelha tênue a 40 anos-luz de distância abriga sete planetas aproximadamente do tamanho da terra — o sistema compacto mais rico conhecido e um terreno privilegiado para a busca por habitabilidade. trappist-1 (uma anã m8 a ~40 anos-luz de distância em aquarius) abriga sete planetas em trânsito, b a h, com raios de cerca de 0,75 a 1,13 terra. descobertos por levantamentos de trânsito terrestres e pelo spitzer e anunciados por completo em 2017, suas massas vieram de variações no tempo de trânsito — os planetas são fracos demais para velocidade radial. trappist-1: seven earth-sized worlds"
+  },
+  {
+    "tab": "history",
+    "section": "apollo-11-1969",
+    "title": "Apollo 11 · 20 de julho de 1969",
+    "intro": "Três astronautas, um Saturn V e um prazo para a Lua que JFK estabeleceu em 1961. Base da Tranquilidade, oito anos depois, no cronograma.",
+    "haystack": "apollo 11 · 20 de julho de 1969 três astronautas, um saturn v e um prazo para a lua que jfk estabeleceu em 1961. base da tranquilidade, oito anos depois, no cronograma. saturn v era um monstro de combustível líquido de três estágios com 110 metros de altura, projetado sob a liderança de wernher von braun (o designer alemão do v-2, levado aos eua sob a operation paperclip em 1945). primeiro estágio: 5× motores f-1, 7,6 milhões de lbf de empuxo. ainda o foguete com maior empuxo a realizar uma missão tripulada completamente bem-sucedida (sls block 1 e starship excedem seu empuxo bruto de decolagem; nada ainda igualou sua carga útil tripulada até tli). apollo 11 · july 20, 1969"
+  },
+  {
+    "tab": "history",
+    "section": "goddard-liquid-rocket-1926",
+    "title": "O Primeiro Foguete de Combustível Líquido de Goddard · 1926",
+    "intro": "16 de março de 1926: um frágil artefato de 3 metros sobe 12 metros pelo céu de Massachusetts. O primeiro voo de foguete com combustível líquido da história.",
+    "haystack": "o primeiro foguete de combustível líquido de goddard · 1926 16 de março de 1926: um frágil artefato de 3 metros sobe 12 metros pelo céu de massachusetts. o primeiro voo de foguete com combustível líquido da história. local de lançamento em 16 de março de 1926: fazenda de effie ward, auburn, massachusetts. veículo: \"nell\" — estrutura de 3 metros de altura, ~3 m de comprimento, pesando aproximadamente 6 kg sem combustível. propelentes: oxigênio líquido + gasolina, com arrefecimento regenerativo, bocal com gimbal. goddard's first liquid-fuel rocket · 1926"
+  },
+  {
+    "tab": "history",
+    "section": "keplers-laws-1609",
+    "title": "Leis de Kepler · 1609–1619",
+    "intro": "Dados de Marte de Tycho Brahe ao longo de uma vida inteira, a olho nu, destilados por Kepler em três regras que todo orbit obedece.",
+    "haystack": "leis de kepler · 1609–1619 dados de marte de tycho brahe ao longo de uma vida inteira, a olho nu, destilados por kepler em três regras que todo orbit obedece. astronomia nova (1609) publicou as leis 1 + 2 — a regra da elipse e das áreas iguais, derivadas dos dados de oposição de marte. harmonices mundi (1619) publicou a lei 3 — período² ∝ semi-eixo maior³. kepler's laws · 1609–1619"
+  },
+  {
+    "tab": "history",
+    "section": "newton-principia-1687",
+    "title": "Principia de Newton · 1687",
+    "intro": "Um livro, três leis do movimento e a lei da gravitação do inverso do quadrado — a base sobre a qual toda astronáutica ainda repousa.",
+    "haystack": "principia de newton · 1687 um livro, três leis do movimento e a lei da gravitação do inverso do quadrado — a base sobre a qual toda astronáutica ainda repousa. philosophiæ naturalis principia mathematica foi publicada em julho de 1687 em latim. três livros: o movimento no vácuo, o movimento através de meios resistivos, o sistema do mundo. o terceiro livro aplica as leis ao cosmos real e reproduz todos os dados de kepler a partir de primeiros princípios. newton's principia · 1687"
+  },
+  {
+    "tab": "history",
+    "section": "sputnik-1957",
+    "title": "Sputnik 1 · 4 de outubro de 1957",
+    "intro": "Uma esfera de alumínio soviética de 84 kg entra em órbita de 96 minutos. Voo espacial é real agora — para todos, de uma vez.",
+    "haystack": "sputnik 1 · 4 de outubro de 1957 uma esfera de alumínio soviética de 84 kg entra em órbita de 96 minutos. voo espacial é real agora — para todos, de uma vez. veículo: r-7 semyorka, o primeiro icbm do mundo, repurposado. cinco impulsores strap-on do primeiro estágio ao redor de um núcleo sustentador. a mesma família de foguetes (altamente evoluída) lança tripulações soyuz para a iss hoje — linhagem de hardware direto do sputnik. sputnik 1 · october 4, 1957"
+  },
+  {
+    "tab": "history",
+    "section": "tsiolkovsky-equation-1903",
+    "title": "Tsiolkovsky Equation · 1903",
+    "intro": "Um professor surdo russo trabalha a equação de foguete 50 anos antes de alguém conseguir construir um foguete para usá-la.",
+    "haystack": "tsiolkovsky equation · 1903 um professor surdo russo trabalha a equação de foguete 50 anos antes de alguém conseguir construir um foguete para usá-la. tsiolkovsky publicou a equação, o conceito de foguete multietapas e o conceito de estação orbital anos antes de engenharia de foguetes séria existir. goddard construiria o primeiro foguete movido a combustível líquido em 1926 (eua); o v-2 de von braun em 1942 (alemanha); o r-7 de korolev em 1957 (urss). tsiolkovsky equation · 1903"
+  },
+  {
+    "tab": "life-in-space",
+    "section": "bone-density-loss",
+    "title": "Perda de densidade óssea",
+    "intro": "Os astronautas perdem cerca de 1–2% da massa óssea por mês em microgravidade — a mesma taxa que a osteoporose idosa, mas comprimida e reversível.",
+    "haystack": "perda de densidade óssea os astronautas perdem cerca de 1–2% da massa óssea por mês em microgravidade — a mesma taxa que a osteoporose idosa, mas comprimida e reversível. o osso é um tecido vivo que constantemente se remodela: osteoblastos colocam novo osso para baixo, osteoclastos dissolvem osso velho longe, e na terra o carregamento de andar, levantar, e apenas de pé mantém os dois aproximadamente equilibrados. leve esse carregamento para fora em órbita e as pontas de equilíbrio. a reabsorção continua à sua taxa normal; a deposição de novos ossos diminui. o resultado é uma perda líquida de cerca de 1–2% por mês, concentrada nas estruturas de suporte de peso: coluna lombar, pelve, colo femoral, calcâneo. bone density loss"
+  },
+  {
+    "tab": "life-in-space",
+    "section": "crew-dynamics-psychology",
+    "title": "Dinâmica de tripulação e psicologia — crises na Mir, protocolos da ISS, isolamento",
+    "intro": "A maior parte do que sabemos sobre a psicologia humana no espaço foi aprendida na Mir entre 1986 e 2001: 15 anos, 28 expedições, quatro eventos críticos e mudanças permanentes na composição de tripulações.",
+    "haystack": "dinâmica de tripulação e psicologia — crises na mir, protocolos da iss, isolamento a maior parte do que sabemos sobre a psicologia humana no espaço foi aprendida na mir entre 1986 e 2001: 15 anos, 28 expedições, quatro eventos críticos e mudanças permanentes na composição de tripulações. salyut 6 (soviética, 1977-82) foi a primeira estação com tripulações deliberadamente de longa duração, e a primeira a encontrar o problema psicológico que toda estação de longa missão subsequente teve: aproximadamente 4-6 semanas após o início da missão, mesmo tripulações altamente selecionadas entram numa fase que psicólogos soviéticos chamavam de *astenia* — fadiga, irritabilidade, retraimento da comunicação com o solo, motivação declinante. foi inicialmente atribuída a descondicionamento físico, mas ficou claro durante salyut 7 e mir que é primariamente psicológica — a novidade da órbita desaparece, o trabalho se torna rotina, a tripulação é acutamente consciente de que não pode partir por mais 5 meses, e a relação com o controle terrestre se torna adversarial. controladores de solo soviéticos costumavam deliberadamente agendar tempo pessoal não-estruturado, chamadas de vídeo com família e presentes surpresa ocasionais de ressuprimenta (chocolate, frutas frescas) como contramedidas; a prática agora é padrão na iss, tiangong e toda estação análoga. crew dynamics & psychology — mir crises, iss protocols, isolation"
+  },
+  {
+    "tab": "life-in-space",
+    "section": "crew-selection",
+    "title": "Seleção de tripulação — o funil do candidato ao astronauta",
+    "intro": "Cada agência espacial executa aproximadamente o mesmo funil de seleção — físico, cognitivo, psicológico, operacional — que estreita ~10.000 candidatos para ~10 selecionados. O gargalo é a dinâmica de tripulação sob estresse.",
+    "haystack": "seleção de tripulação — o funil do candidato ao astronauta cada agência espacial executa aproximadamente o mesmo funil de seleção — físico, cognitivo, psicológico, operacional — que estreita ~10.000 candidatos para ~10 selecionados. o gargalo é a dinâmica de tripulação sob estresse. a primeira geração de seleção foi ditada pelas limitações do hardware. mercury (nasa, 1959) aceitava apenas pilotos de teste militares de jatos com menos de 5'11\" (180 cm — o limite da cabine da cápsula mercury), com menos de 40 anos, formação em engenharia e experiência em salto de paraquedas. o programa soviético vostok (1959-60) aceitava apenas pilotos de caça com menos de 5'7\" (170 cm — a escotilha da vostok), com menos de 30 anos e menos de 70 kg. o raciocínio era que o veículo não tinha margem para levar alguém maior ou mais velho, e que um piloto de teste já tinha a perícia de voo e a tolerância ao estresse de que o programa precisava. do grupo original de 20 cosmonautas soviéticos (1960), só 12 chegaram a voar; dos mercury seven, os sete voaram. os dois números mostram que a barra de seleção estava muito alta em relação às missões disponíveis. crew selection — the funnel from applicant to astronaut"
+  },
+  {
+    "tab": "life-in-space",
+    "section": "crewed-station-design",
+    "title": "Projeto de estações tripuladas — de Salyut a ISS a Tiangong",
+    "intro": "Seis décadas de estações tripuladas, seis gerações de arquitetura — a resposta para 'como manter humanos vivos em órbita por meses' foi refinada cada vez que a anterior falhou.",
+    "haystack": "projeto de estações tripuladas — de salyut a iss a tiangong seis décadas de estações tripuladas, seis gerações de arquitetura — a resposta para 'como manter humanos vivos em órbita por meses' foi refinada cada vez que a anterior falhou. uma estação espacial são quatro problemas empilhados: um casco pressurizado forte o bastante para manter 1 atm contra o vácuo, um sistema de acoplamento que permita a chegada de tripulação e carga, um sistema de suporte à vida que recicle ar, água e calor, e alojamentos que não levem os ocupantes ao motim. cada estação que já voou fez uma escolha diferente entre esses quatro. a salyut 1 (soviética, 1971) era basicamente uma lata com uma porta de acoplamento e uma câmara de descompressão; sua primeira tripulação de longa duração (soyuz 11, 1971) morreu no retorno porque o problema do traje iva ainda não tinha sido resolvido. o skylab (eua, 1973) era um terceiro estágio de saturn v convertido — enorme volume interno (~360 m³) e uma única chance; o escudo contra micrometeoritos se soltou no lançamento e a primeira tripulação teve de abrir um guarda-sol pelo lado de fora para impedir que a oficina cozinhasse. a primeira tripulação de cada estação é a que encontra as falhas de projeto. crewed-station design — salyut to iss to tiangong"
+  },
+  {
+    "tab": "life-in-space",
+    "section": "eclss-life-support",
+    "title": "Suporte à vida — ECLSS, os ciclos de ar e água",
+    "intro": "Seis pessoas respiram 6 kg de oxigênio por dia, bebem 18 L de água e exalam 7 kg de CO₂. Nada é lançado da Terra se a estação conseguir evitar — cada grama precisa ser recuperada.",
+    "haystack": "suporte à vida — eclss, os ciclos de ar e água seis pessoas respiram 6 kg de oxigênio por dia, bebem 18 l de água e exalam 7 kg de co₂. nada é lançado da terra se a estação conseguir evitar — cada grama precisa ser recuperada. o sistema de controle ambiental e suporte à vida — eclss — é a parte de uma estação que ninguém vê e da qual todos dependem. seu trabalho é manter quatro números dentro da faixa verde: pressão parcial de oxigênio (~21 kpa, como ao nível do mar), pressão parcial de dióxido de carbono (<0,7 kpa nominal; humanos sofrem dores de cabeça acima de 1 kpa), temperatura da cabine (~22 °c) e umidade relativa (40-60%). se qualquer um desses parâmetros estiver errado, a tripulação adoece em horas. se o oxigênio ou co₂ estiverem muito errados, a tripulação morre. o sistema é projetado com pelo menos um subsistema redundante para cada função, e os segmentos estadounidense e russo da iss cada um executa seu próprio eclss completo para que uma falha em um lado não comprometa ambos. life support — eclss, the air and water loop"
+  },
+  {
+    "tab": "life-in-space",
+    "section": "eva-operations",
+    "title": "Operações EVA — a caminhada espacial de ponta a ponta",
+    "intro": "Abrir a câmara de ar, e 6–8 horas depois há carga útil na treliça. No meio, a atividade mais procedural do voo espacial — 50+ passos coreografados, cada um uma chance de falhar com segurança.",
+    "haystack": "operações eva — a caminhada espacial de ponta a ponta abrir a câmara de ar, e 6–8 horas depois há carga útil na treliça. no meio, a atividade mais procedural do voo espacial — 50+ passos coreografados, cada um uma chance de falhar com segurança. uma eva moderna começa cerca de 24 horas antes da saída. a tripulação revisa o manual de procedimentos (hoje um tablet) — cada troca de cabo de segurança, cada torque de parafuso, cada contingência. as ferramentas são posicionadas antes na parede da câmara de descompressão, na ordem em que serão usadas. na noite anterior, a tripulação dorme com pressão de cabine reduzida (10,2 psi no lado americano; o lado russo, do orlan, pula essa etapa por causa das diferenças de pressão dos trajes — veja o artigo `eva-physiology`). em t-menos 4 horas a tripulação já está no traje, respirando oxigênio puro pela máscara para eliminar o nitrogênio dos tecidos — o protocolo de pré-respiração. ele não é negociável; pulá-lo causa doença descompressiva (\"the bends\"), com o n₂ formando bolhas quando o traje despressuriza. eva operations — the spacewalk procedure end to end"
+  },
+  {
+    "tab": "life-in-space",
+    "section": "eva-physiology",
+    "title": "Fisiologia EVA",
+    "intro": "Um spacewalk é um evento de resistência de 6–8 horas em um traje pressurizado com oxigênio a 1/3 de atmosfera — precedido por horas de pré-respiração para evitar descompressão.",
+    "haystack": "fisiologia eva um spacewalk é um evento de resistência de 6–8 horas em um traje pressurizado com oxigênio a 1/3 de atmosfera — precedido por horas de pré-respiração para evitar descompressão. o problema fundamental da eva é que o corpo humano quer a atmosfera do nível do mar da terra — 1 atm de n₂/o₂ misturado — e o traje espacial não pode fornecê-la sem ficar tão rígido que o astronauta não consegue se mover. então o traje funciona a cerca de 4,3 psi (0,29 atm) de oxigênio puro. é pressão parcial de o₂ suficiente para respirar confortavelmente, mas a queda abrupta da pressão da estação (14,7 psi, ~80% n₂) para a pressão do traje (4,3 psi, 100% o₂) causaria doença descompressiva — descompressão — exatamente como os mergulhadores podem sofrer em uma ascensão rápida. eva physiology"
+  },
+  {
+    "tab": "life-in-space",
+    "section": "eva-suits",
+    "title": "Trajes EVA para caminhadas espaciais",
+    "intro": "Um traje EVA é uma espaçonave de uma pessoa — cápsula de pressão, sistema de suporte de vida em circuito fechado, controle térmico, viseira solar e um pacote de propulsores — construído para um humano passar 6–8 horas fora no vácuo.",
+    "haystack": "trajes eva para caminhadas espaciais um traje eva é uma espaçonave de uma pessoa — cápsula de pressão, sistema de suporte de vida em circuito fechado, controle térmico, viseira solar e um pacote de propulsores — construído para um humano passar 6–8 horas fora no vácuo. o problema central do traje eva é a **respiração em circuito fechado**. fora da eclusa não há atmosfera para expelir co₂, então o traje deve removê-lo da exalação do astronauta e reciclar o oxigênio restante. o emu americano atual executa um **cartucho de hidróxido de lítio (lioh)** na mochila que absorve co₂ irreversivelmente — substituído no solo após cada eva. o orlan russo e o cartucho metox mais recente dos eua usam um **leito oscilante de amina regenerável**: adsorve co₂ durante a eva, depois é aquecido na eclusa entre as caminhadas e reutilizado. o equivalente no lado da estação dentro da iss (o cdra, carbon dioxide removal assembly) faz o mesmo em ciclo regenerativo, enquanto o ogs (oxygen generation system) eletrólisa água para repor o₂. o traje é uma versão em miniatura e portátil do eclss da estação, funcionando por 8 horas com sua própria potência e suprimentos. eva spacewalk suits"
+  },
+  {
+    "tab": "life-in-space",
+    "section": "food-production-off-world",
+    "title": "Produção de alimentos fora do mundo — de Veggie a estufas em Marte",
+    "intro": "Tripulações da ISS comem comida que elas mesmas cultivaram desde 2015. O salto de 'suplemento de salada' para 'dieta diária de circuito fechado' é a fronteira aberta entre a ISS de hoje e qualquer assentamento marciano que mereça o nome.",
+    "haystack": "produção de alimentos fora do mundo — de veggie a estufas em marte tripulações da iss comem comida que elas mesmas cultivaram desde 2015. o salto de 'suplemento de salada' para 'dieta diária de circuito fechado' é a fronteira aberta entre a iss de hoje e qualquer assentamento marciano que mereça o nome. a iss iniciou seu programa de comida-em-órbita em 2014 com veggie, uma pequena câmara aparafusada no laboratório destiny com iluminação led vermelha e azul e módulos de raiz tipo travesseiro. a primeira colheita que a tripulação foi autorizada a comer foi a alface romana vermelha 'outredgeous', em agosto de 2015 — metade comida em órbita, metade devolvida para análise. desde então veggie ciclou mizuna, pak choi, mostarda, tatsoi, kale, pimentões e flores de zinnia (as flores foram um teste deliberado para culturas com estruturas reprodutivas), mais o advanced plant habitat (aph, instalado em 2017) adicionando um volume de cultivo em ambiente fechado de 0,4 m² com co₂, umidade e luz monitorados por sensor. a contribuição à nutrição da tripulação é pequena — medida em punhados por tripulação por mês — mas a contribuição psicológica é grande, validada contra as recomendações dos estudos de isolamento de mir dos anos 80 que sinalizaram a 'conexão com coisas que crescem' como contramedida central contra a astenia. food production off-world — from veggie to greenhouses on mars"
+  },
+  {
+    "tab": "life-in-space",
+    "section": "isru-resource-utilization",
+    "title": "ISRU — produzir oxigênio, água e combustível na Lua e em Marte",
+    "intro": "Transportar oxigênio e propelente da Terra escala mal. ISRU — extraí-los do regolito local, gelo e atmosfera — é a tecnologia que transforma estadias superficiais de plantar bandeira de 30 dias em vida de um ano.",
+    "haystack": "isru — produzir oxigênio, água e combustível na lua e em marte transportar oxigênio e propelente da terra escala mal. isru — extraí-los do regolito local, gelo e atmosfera — é a tecnologia que transforma estadias superficiais de plantar bandeira de 30 dias em vida de um ano. moxie foi a prova de conceito. aparafusada ao rover perseverance, a unidade de eletrólise de óxido sólido do tamanho de uma torradeira rodou 16 vezes entre 2021 e 2023, puxando co₂ da atmosfera marciana de 6 mbar, dividindo-o eletroquimicamente a ~800 °c, ventilando co e produzindo o₂ puro. rendimento total: 122 g de oxigênio, taxa de pico 12 g/hora. o ponto não era a quantidade mas a prova: que eletrólise de óxido sólido funciona através de tempestades de poeira, oscilações de temperatura marcianas, regime de pressão de 6 mbar. fator de escala para missão tripulada: ~200× em massa — uma planta classe moxie de 1 tonelada rodando 18-26 meses pré-implantada antes da chegada da tripulação produz ~25 toneladas de o₂, suficiente para oxidante do veículo de subida mais margem de respiração da tripulação. a arquitetura amadureceu o suficiente para que os documentos de planejamento da nasa agora tratem o isru de o₂ marciano como baseline comprometido em vez de meta de pesquisa. isru — making oxygen, water, and fuel on the moon and mars"
+  },
+  {
+    "tab": "life-in-space",
+    "section": "iva-suits",
+    "title": "Fatos de pressão IVA",
+    "intro": "O traje de voo – usado dentro da nave espacial durante os minutos de alto risco de lançamento, abortamento, reentrada e pouso – é um recipiente de pressão com braços que dá tempo suficiente para a tripulação pousar se a pressão da cabine.",
+    "haystack": "fatos de pressão iva o traje de voo – usado dentro da nave espacial durante os minutos de alto risco de lançamento, abortamento, reentrada e pouso – é um recipiente de pressão com braços que dá tempo suficiente para a tripulação pousar se a pressão da cabine. existem fatos iva (actividade intra-veicular) devido a um acidente. em 30 de junho de 1971, soyuz 11 retornou da primeira missão de estação espacial do mundo com seus três cosmonautas mortos em seus assentos — uma válvula de despressurização havia aberto a 168 km de altitude durante a separação, e a tripulação estava em mangas de camisa sem ternos para salvá-los. a resposta soviética foi o sokol kv-2: um terno de pressão suave enfeitado dentro do módulo de descida e usado para cada lançamento e retorno da soyuz desde 1973. os eua seguiram um caminho similar após as perdas de challenger e columbia: as subidas de mangas de camisa no ônibus espacial tornaram-se inaceitáveis, e o advanced crew escape suit (aces) foi tornado obrigatório. todas as naves espaciais que voam hoje têm o seu próprio fato iva. iva pressure suits"
+  },
+  {
+    "tab": "life-in-space",
+    "section": "long-duration-effects",
+    "title": "Efeitos de longa duração",
+    "intro": "Seis meses é a rotação padrão da ISS; um ano foi realizado duas vezes; Marte são três anos. Cada etapa estende a dose de todos os outros efeitos — e adiciona novos que ainda não conseguimos reverter completamente.",
+    "haystack": "efeitos de longa duração seis meses é a rotação padrão da iss; um ano foi realizado duas vezes; marte são três anos. cada etapa estende a dose de todos os outros efeitos — e adiciona novos que ainda não conseguimos reverter completamente. aproximadamente 70% da tripulação em voos de longa duração desenvolvem **sans** — space-associated neuro-ocular syndrome — uma constelação de inchaço do disco óptico, achatamento posterior do globo ocular, pregas coroidais e aumento do diâmetro da bainha do nervo óptico. a hipótese principal é deslocamento de fluido para a cabeça aumentando a pressão intracraniana; as alterações não se revertem completamente dentro de um ano do retorno para alguns astronautas. sans é o achado fisiológico único mais preocupante de voos espaciais de longa duração. long-duration effects"
+  },
+  {
+    "tab": "life-in-space",
+    "section": "lunar-habitat-design",
+    "title": "Design de habitat lunar — Artemis Base Camp, ILRS, estadias prolongadas na superfície",
+    "intro": "Duas arquiteturas paralelas estão agora consolidadas: Artemis Base Camp da NASA + ILRS chinês-russo. Ambos visam o pólo sul lunar; ambos apostam sua estratégia de gelo de água nos mesmos cerca de uma dúzia de crateras.",
+    "haystack": "design de habitat lunar — artemis base camp, ilrs, estadias prolongadas na superfície duas arquiteturas paralelas estão agora consolidadas: artemis base camp da nasa + ilrs chinês-russo. ambos visam o pólo sul lunar; ambos apostam sua estratégia de gelo de água nos mesmos cerca de uma dúzia de crateras. a escolha do sítio não está mais aberta. tanto o programa artemis da nasa quanto a estação internacional de pesquisa lunar (ilrs) chinês-russa selecionaram o pólo sul lunar, especificamente as bordas e paredes internas de crateras permanentemente sombreadas perto de 89°s: shackleton, de gerlache, haworth, faustini, shoemaker. três fatores tornam esta região singularmente valiosa. primeiro, as regiões permanentemente sombreadas (psrs) nos fundos dos crateres armazenam depósitos de gelo de água — confirmados pelo impacto do lcross (2009) na cratera cabeus e detecção de oh/h₂o na pluma de ejecta, e pelo instrumento m3 da chandrayaan-1 observando a assinatura espectral diretamente. segundo, picos-de-luz-eterna ao longo das bordas dos crateres veem o sol por >85% de cada ano, fornecendo energia solar quase contínua sem baterias de noite lunar. terceiro, o pólo sul é a única região onde ambos os pré-requisitos — água e luz solar — coexistem dentro de ~10 km um do outro, tornando a logística de travessia de superfície curta possível. lunar habitat design — artemis base camp, ilrs, sustained surface stays"
+  },
+  {
+    "tab": "life-in-space",
+    "section": "lunar-suits",
+    "title": "Trajes de superfície lunar",
+    "intro": "Um traje lunar tem de fazer tudo que um traje EVA orbital faz, mais caminhar por 7 horas em um piso de regolito poeirento com temperaturas que variam de −170 °C na sombra a +120 °C sob a luz solar — e sobreviver à poeira.",
+    "haystack": "trajes de superfície lunar um traje lunar tem de fazer tudo que um traje eva orbital faz, mais caminhar por 7 horas em um piso de regolito poeirento com temperaturas que variam de −170 °c na sombra a +120 °c sob a luz solar — e sobreviver à poeira. doze pessoas caminharam na lua, e fizeram isso em oito trajes da mesma família: o **apollo a7l** (apollo 11, 12, 14) e seu sucessor o **a7lb** (apollo 15, 16, 17). o a7l era uma peça única de vestiário pressurizado com um tórax superior rígido, braços e pernas de tecido flexível, sobre-botas lunares integradas, uma mochila plss sobre o ombro, e um sistema de purga de oxigênio (ops) como reserva de emergência montada acima do plss. a pressão de operação era 3,7 psi (0,26 atm) de oxigênio puro — a menor de qualquer traje espacial utilizado em voo, trocado contra mobilidade máxima para caminhar. o a7lb adicionou uma convolução de articulação na cintura que permitia os astronautas se sentar no lunar roving vehicle sem lutar contra o traje; sem essa articulação os evas da missão j não teriam sido possíveis. lunar surface suits"
+  },
+  {
+    "tab": "life-in-space",
+    "section": "lunar-surface-ops",
+    "title": "Operações na superfície lunar — 1/6 g, regolito, dia/noite",
+    "intro": "Apollo deu à humanidade 12 caminhantes lunares, 22 EVAs, ~80 horas de superfície, 382 kg de amostras. Cada equipe voltou desejando coisas diferentes. Artemis está reconstruindo o manual de EVA lunar com base no que esses 12 aprenderam.",
+    "haystack": "operações na superfície lunar — 1/6 g, regolito, dia/noite apollo deu à humanidade 12 caminhantes lunares, 22 evas, ~80 horas de superfície, 382 kg de amostras. cada equipe voltou desejando coisas diferentes. artemis está reconstruindo o manual de eva lunar com base no que esses 12 aprenderam. a locomoção em 1/6 g é a primeira surpresa. as equipes apollo treinaram no simulador de 9,5° do langley + parábolas kc-135, e todos ainda pousaram esperando um caminhar desajeitado. a realidade foi o oposto: caminhar em 1/6 g é *excessivamente* estável em alguns eixos (a força restauradora massa-vezes-1/6g do corpo é pequena, portanto você se assentar lentamente), e *insuficientemente* estável em outros (o momento para frente de um passo persiste muito mais tempo do que na terra, e não há atmosfera para desacelerá-lo). as equipes apollo convergiram para três modos de locomoção: caminhar (bom para movimento lento e cuidadoso), o trote-deslizante (bom para distâncias médias, ambos os pés saindo do solo por um período estendido), e o salto-canguru (descoberta de aldrin no apollo 11 — impulsionar com ambos os pés, deslizar). a transcrição do eva-3 da apollo 17 tem cernan e schmitt negociando abertamente qual modo usar em cada segmento da travessia; a resposta é principalmente trote. lunar surface operations — 1/6 g, regolith, day/night"
+  },
+  {
+    "tab": "life-in-space",
+    "section": "mars-habitat-design",
+    "title": "Projeto de habitat marciano — pré-implantado, alimentado por ISRU, ciente de perclorato",
+    "intro": "Marte adiciona três problemas que a Lua não tem: uma ida e volta de 25 meses sem aborto, tempestades de poeira que podem cobrir o planeta e um regolito impregnado de sais clorados que envenenam quem o respira.",
+    "haystack": "projeto de habitat marciano — pré-implantado, alimentado por isru, ciente de perclorato marte adiciona três problemas que a lua não tem: uma ida e volta de 25 meses sem aborto, tempestades de poeira que podem cobrir o planeta e um regolito impregnado de sais clorados que envenenam quem o respira. toda arquitetura humana marciana credível desde o início dos anos 1990 foi construída sobre a mesma observação: não se pode lançar habitat e tripulação na mesma janela de lançamento. a viagem é longa demais (6-9 meses só ida) e a permanência em superfície longa demais (tipicamente 500 dias, ditada pela mecânica orbital — a próxima janela hohmann marte-terra é 500 dias após a chegada) para a arquitetura caber em um único lançamento. solução: o habitat pousa primeiro, em uma janela de lançamento 26 meses antes da tripulação, totalmente autônomo. quando a tripulação chega, o habitat tem 26 meses operando, a planta isru está produzindo oxigênio e metano da atmosfera e do gelo subsuperficial há 18 meses, o veículo de retorno está totalmente abastecido e pré-testado. a design reference architecture 5.0 da nasa (2009) codificou isso; a arquitetura starship mars da spacex herda; toda variação de arquitetura marciana desde então manteve o padrão de pré-implantação. mars habitat design — pre-deployed, isru-fed, perchlorate-aware"
+  },
+  {
+    "tab": "life-in-space",
+    "section": "mars-human-architecture",
+    "title": "Arquitetura humana em Marte — o que realmente exige uma missão tripulada a Marte",
+    "intro": "Apollo foi à Lua e voltou em 8 dias. Marte tripulado é uma missão de 2-3 anos com trânsitos de 6-9 meses cada via, apagões de conjunção e permanência autossuficiente na superfície.",
+    "haystack": "arquitetura humana em marte — o que realmente exige uma missão tripulada a marte apollo foi à lua e voltou em 8 dias. marte tripulado é uma missão de 2-3 anos com trânsitos de 6-9 meses cada via, apagões de conjunção e permanência autossuficiente na superfície. o problema do trânsito domina a arquitetura. as janelas de transferência terra-marte abrem a cada 26 meses; as transferências de classe hohmann mais baratas (menor δv) levam ~7-9 meses por via, com uma permanência forçada na superfície de 18-20 meses até a próxima janela de lançamento se alinhar. trânsitos mais rápidos existem, mas custam muito mais δv — a linha de base dra 5.0 da nasa assume um trânsito de 6 meses usando propulsão térmica nuclear (ntp) que ainda não existe em escala operacional. a arquitetura starship da spacex usa aerocaptura + pouso propulsivo com propelente metano/oxigênio (a porção isru é fornecida in-situ a partir da atmosfera co₂ de marte); a abordagem starship possibilita plausivamente trânsitos de ~3-4 meses com δv maior. a arquitetura mars-2033 da cnsa está na mesma família conceitual, com um perfil isru diferente. as propostas mars da iki russa precedem os estudos de engenharia modernos. os estudos crewed-mars derivados do gaganyaan da isro indiana são conceituais. mars human architecture — what crewed mars actually requires"
+  },
+  {
+    "tab": "life-in-space",
+    "section": "microgravity-physiology",
+    "title": "Fisiologia da microgravidade",
+    "intro": "O que acontece quando a gravidade deixa de puxar o corpo humano — fluidos se redistribuem, ossos ficam frágeis, músculos se atrofiam, e o ouvido interno perde sua bússola.",
+    "haystack": "fisiologia da microgravidade o que acontece quando a gravidade deixa de puxar o corpo humano — fluidos se redistribuem, ossos ficam frágeis, músculos se atrofiam, e o ouvido interno perde sua bússola. a primeira coisa que acontece em órbita é o deslocamento de fluidos. na terra, a gravidade puxa cerca de um litro de sangue e linfa para baixo em suas pernas; em microgravidade, esse fluido se redistribui para cima em direção ao tórax e à cabeça. astronautas têm o rosto inchado tipo \"face lunar\" em poucas horas. o corpo responde eliminando o volume de plasma agora em excesso — nos primeiros dias, a água corporal total cai ~2 litros. ao retornar à terra, esse fluido ainda não foi refeito, então a intolerância ortostática pós-voo (tontura ao se levantar) é a norma por uma semana ou mais. microgravity physiology"
+  },
+  {
+    "tab": "life-in-space",
+    "section": "muscle-atrophy",
+    "title": "Atrofia muscular",
+    "intro": "Músculos posturais desaparecem primeiro — os músculos da panturrilha e das costas que você não percebeu estar usando até pararem de funcionar em 1 g novamente.",
+    "haystack": "atrofia muscular músculos posturais desaparecem primeiro — os músculos da panturrilha e das costas que você não percebeu estar usando até pararem de funcionar em 1 g novamente. o músculo esquelético é um tecido que se perde com o desuso. o corpo constantemente pesa o custo metabólico de manter um músculo contra a demanda sobre ele. em microgravidade, a demanda nos grupos musculares posturais — panturrilha (sóleo, gastrocnêmio), costas (paraespinhais, eretor da espinha) e quadríceps — desaparece da noite para o dia. o corpo para de mantê-los. em duas semanas, as fibras tipo i (contração lenta, posturais) ficam visivelmente menores; após aproximadamente seis meses sem contramedidas, a área transversal nas panturrilhas cai 15–20%. muscle atrophy"
+  },
+  {
+    "tab": "life-in-space",
+    "section": "pre-flight-training",
+    "title": "Treinamento pré-voo — os anos antes do lançamento",
+    "intro": "Astronautas modernos treinam 18-24 meses básico + 2-3 anos específico da missão antes de voar. Tripulações do Apollo treinaram 5 anos para uma missão de 10 dias. A proporção solo-voo é a mais alta de qualquer profissão operacional.",
+    "haystack": "treinamento pré-voo — os anos antes do lançamento astronautas modernos treinam 18-24 meses básico + 2-3 anos específico da missão antes de voar. tripulações do apollo treinaram 5 anos para uma missão de 10 dias. a proporção solo-voo é a mais alta de qualquer profissão operacional. o treinamento básico é aproximadamente igual em nasa, roscosmos, esa, jaxa, csa e cnsa: certificação de mergulho (para o trabalho em piscina de flutuabilidade neutra que depois ensinará eva), tempo de voo em aeronave (jatos t-38 no jsc, l-39s em star city, treinadores kj-200 no centro de astronautas da china), voo parabólico (~30s de exposição em microgravidade em aeronave modificada — o nome 'vomit comet' é preciso nos primeiros 10 voos), centrífuga até 8g (reentrada balística soyuz fora do nominal; nominal é ~4g), câmara de altitude até 30.000 pés, treinamento de sobrevivência em mar + deserto + ártico (em caso de pouso fora do nominal). a coorte de treinamento básico da nasa corre houston-cologne-tsukuba-tsukuba por 18-24 meses; o programa gctc da roscosmos é similar mas mais longo (24-30 meses) e inclui mais tempo de centrífuga. a fase básica não é sobre missões específicas — é sobre produzir um corpo de astronautas qualificados que possam ser designados para qualquer voo futuro. pre-flight training — the years before launch"
+  },
+  {
+    "tab": "life-in-space",
+    "section": "radiation-exposure",
+    "title": "Exposição à radiação",
+    "intro": "Raios cósmicos galácticos + eventos de partículas solares + cintos aprisionados da Terra — o ambiente de radiação fora da magnetosfera é o maior problema não resolvido para uma missão humana de Marte.",
+    "haystack": "exposição à radiação raios cósmicos galácticos + eventos de partículas solares + cintos aprisionados da terra — o ambiente de radiação fora da magnetosfera é o maior problema não resolvido para uma missão humana de marte. a superfície terrestre recebe cerca de 3 msv (milissieverts) de radiação de fundo por ano — radônio, rochas, alimentos, raios cósmicos atenuados por 100 km de atmosfera. a iss, em órbita terrestre baixa e ainda parcialmente protegida pela magnetosfera, recebe cerca de **150 msv por ano**. o espaço profundo, fora da magnetosfera, recebe cerca de **600 msv por ano** — e isso sem tempestades solares. radiation exposure"
+  },
+  {
+    "tab": "life-in-space",
+    "section": "sleep-nutrition-circadian",
+    "title": "Sono, nutrição e ritmos circadianos",
+    "intro": "A ISS vê 16 amanheceres por dia. A tripulação fica no GMT mesmo assim, come comida projetada para não flutuar, e dorme rotineiramente pior do que na Terra. Missões de longa duração vivem ou morrem por essa pilha.",
+    "haystack": "sono, nutrição e ritmos circadianos a iss vê 16 amanheceres por dia. a tripulação fica no gmt mesmo assim, come comida projetada para não flutuar, e dorme rotineiramente pior do que na terra. missões de longa duração vivem ou morrem por essa pilha. o ritmo circadiano é a restrição mais dura da órbita baixa. a iss dá uma volta na terra a cada 92 minutos, então a tripulação vê um nascer (ou pôr) do sol a cada 46 minutos — uns 16 de cada por dia de 24 horas. o sistema circadiano humano é construído em torno de um único ciclo de nascer e pôr do sol, então um fluxo constante de sinais de luz do tipo \"já é de manhã?\" atropela todos os outros sinais. a contramedida é uma agenda rígida (horário de greenwich, despertar fixo às 06:00 gmt, sono fixo às 21:30 gmt), cortinas blackout grossas em cada cabine de dormir e iluminação ativa alinhada ao ritmo circadiano em toda a cabine — a luz do dia é branco-azulada a ~5500 k e à noite passa para âmbar a ~2700 k, como seria de esperar na terra. mesmo assim, a tripulação da iss dorme cerca de 6 horas por noite contra ~7-8 na terra, e usa remédios para dormir com mais frequência que os grupos de controle em solo. os dados dos estudos de sono das expedições da iss (já ~30 anos de registros) são um dos conjuntos de dados sobre distúrbios do sono mais bem caracterizados de qualquer ambiente operacional. sleep, nutrition & circadian rhythms"
+  },
+  {
+    "tab": "life-in-space",
+    "section": "suit-lineage",
+    "title": "Linhagem de trajes — Sokol a Orlan a Feitian, A7L a AxEMU",
+    "intro": "Todo traje espacial moderno descende de uma de três famílias: American Apollo-derivado, Soviet/Russian Sokol + Orlan, e Chinese Feitian (derivado de Orlan). Seis décadas, três linhagens, muita fertilização cruzada.",
+    "haystack": "linhagem de trajes — sokol a orlan a feitian, a7l a axemu todo traje espacial moderno descende de uma de três famílias: american apollo-derivado, soviet/russian sokol + orlan, e chinese feitian (derivado de orlan). seis décadas, três linhagens, muita fertilização cruzada. o problema original do traje eva era simples e terrível: manter a tripulação viva se a espaçonave perdesse pressão. os cosmonautas de vostok e voskhod usavam trajes sk-1 / berkut. mercury utilizou uma versão modificada do mark iv da marinha. gemini usou o g3c / g4c. nenhum destes foi testado como salvador de descompressão total porque nenhum voo havia perdido pressão de cabine. então em junho de 1971 soyuz 11 retornou com a tripulação morta por descompressão rápida durante a separação — dobrovolsky, volkov, patsayev estavam em mangas de camisa porque a cabine soyuz não podia acomodar três cosmonautas em traje. a resposta soviética foi o sokol k-v (1973), um traje de pressão leve de tecido borrachudo projetado especificamente para se encaixar dentro do assento de soyuz e inflar em segundos se a cabine falhasse. toda tripulação de soyuz desde então veste um descendente do sokol — o atual sokol-m é sua variante modernizada mais recente. suit lineage — sokol to orlan to feitian, a7l to axemu"
+  },
+  {
+    "tab": "life-in-space",
+    "section": "surface-dust-mitigation",
+    "title": "Poeira superficial — o perigo lunar + marciano que todos subestimaram",
+    "intro": "Tripulações Apollo retornaram com trajes abrasados após 10 EVAs e eclusas travadas. O regolito marciano é quimicamente tóxico. Toda arquitetura longa é construída em torno de protocolos de poeira — perigo operacional persistente.",
+    "haystack": "poeira superficial — o perigo lunar + marciano que todos subestimaram tripulações apollo retornaram com trajes abrasados após 10 evas e eclusas travadas. o regolito marciano é quimicamente tóxico. toda arquitetura longa é construída em torno de protocolos de poeira — perigo operacional persistente. a poeira lunar é mecanicamente perigosa de uma maneira para a qual nenhuma poeira terrestre te prepara. a superfície é um regolito fino — tamanhos de partícula do submícron à areia grossa, com mediana de 70 µm — criada por 4 bilhões de anos de impactos de micrometeoritos. cada impacto é uma pequena explosão que fragmenta a rocha existente; os fragmentos esfriam no vácuo sem água para arredondar suas bordas. o resultado é um pó de fragmentos de vidro angulares, mais afiados que vidro moído. adicionando ao perigo: o regolito lunar é eletrostaticamente carregado por fotoionização uv no lado diurno e por exposição ao plasma na zona do terminador lunar. a poeira carregada gruda em tudo — adere ao tecido do traje por adesão eletrostática em um nível que escovar sozinho não pode remover. tripulações apollo relataram que a poeira lunar degradou as vedações das articulações dos trajes eva após cerca de 10 evas (apollo 17 foi a única missão a fazer três evas consecutivos, e o zíper do traje de cernan mostrava desgaste no terceiro). surface dust — the lunar + mars hazard everyone underestimated"
+  },
+  {
+    "tab": "life-in-space",
+    "section": "surface-mobility-rovers",
+    "title": "Mobilidade de superfície — do LRV Apollo a rovers pressurizados para Lua e Marte",
+    "intro": "Missões tripuladas dependem da distância que a tripulação pode percorrer. O LRV Apollo aumentou o alcance de 1 km para 35,7 km. A próxima geração — rovers pressurizados — permite expedições de semanas e centenas de km.",
+    "haystack": "mobilidade de superfície — do lrv apollo a rovers pressurizados para lua e marte missões tripuladas dependem da distância que a tripulação pode percorrer. o lrv apollo aumentou o alcance de 1 km para 35,7 km. a próxima geração — rovers pressurizados — permite expedições de semanas e centenas de km. o lunar roving vehicle (lrv) apollo voou nas últimas três missões apollo (15, 16, 17, 1971-72). antes do lrv, as travessias de superfície eram limitadas pelos consumíveis do traje a cerca de 1 km de raio do lm — e a fadiga da eva ao caminhar em 1/6-g usando um traje pressurizado tornava até esse limite de distância um desafio. o lrv foi deliberadamente projetado para caber dobrado no compartimento de armazenamento quad-1 do lm (envelope de 0,7 × 0,7 m), pesava apenas 210 kg descarregado e funcionava com duas baterias de prata-zinco de 36 v (sem recarga — o lrv era um ativo de missão única). velocidade máxima: 18 km/h. alcance total com essas baterias: ~92 km (57 mi), com um limite rígido de caminhada de retorno de metade dos consumíveis restantes (então as travessias práticas eram 5-10 km ida + 5-10 km volta). apollo 17 registrou 35,7 km totais em três evas, o recorde absoluto de condução humana na superfície. o modelo de design do lrv — estrutura aberta, não pressurizado, apenas com traje, descartável de missão única — é o que artemis está reconstruindo agora como o ltv. surface mobility — from apollo's lrv to pressurised rovers for moon and mars"
+  },
+  {
+    "tab": "life-in-space",
+    "section": "vestibular-adaptation",
+    "title": "Adaptação vestibular",
+    "intro": "O sensor de gravidade do ouvido interno silencia em órbita — cerca de 60–80% dos astronautas passam os primeiros 2–4 dias com náuseas enquanto o cérebro reequilibra pistas vestibulares vs visuais.",
+    "haystack": "adaptação vestibular o sensor de gravidade do ouvido interno silencia em órbita — cerca de 60–80% dos astronautas passam os primeiros 2–4 dias com náuseas enquanto o cérebro reequilibra pistas vestibulares vs visuais. o sistema vestibular no seu ouvido interno é construído em torno de três canais semicirculares (rotação) e dois órgãos otolíticos (aceleração linear + gravidade). na terra esses otólitos ficam em um campo de um g; suas células ciliadas são constantemente deslocadas pelos cristais de carbonato de cálcio (ototólios) pressionando para baixo. o cérebro interpreta esse deslocamento como \"baixo\". na microgravidade os ototólios flutuam livremente. o sinal fica ambíguo. vestibular adaptation"
+  },
+  {
+    "tab": "mission-phases",
+    "section": "aerobraking",
+    "title": "Frenagem Aerodinâmica",
+    "intro": "Reduzir uma órbita de captura ampla para uma órbita operacional com quase nenhum combustível — mergulhando no topo da atmosfera de um planeta a cada passagem.",
+    "haystack": "frenagem aerodinâmica reduzir uma órbita de captura ampla para uma órbita operacional com quase nenhum combustível — mergulhando no topo da atmosfera de um planeta a cada passagem. a frenagem aerodinâmica troca propelente por tempo e paciência. mars global surveyor, mars odyssey, mars reconnaissance orbiter, maven e magellan de vênus usaram para atingir suas órbitas finais, economizando centenas de quilogramas de combustível que de outra forma teriam de ser lançados da terra — frequentemente mais que a massa seca da própria sonda. aerobraking"
+  },
+  {
+    "tab": "mission-phases",
+    "section": "antenna-arrays",
+    "title": "Arranjos — muitas antenas pequenas em vez de uma gigante",
+    "intro": "Combinar sinais de múltiplas antenas em tempo real cria uma abertura virtual única maior que qualquer prato individual, capturando sinais mais fracos de naves espaciais sem construir estruturas cada vez maiores.",
+    "haystack": "arranjos — muitas antenas pequenas em vez de uma gigante combinar sinais de múltiplas antenas em tempo real cria uma abertura virtual única maior que qualquer prato individual, capturando sinais mais fracos de naves espaciais sem construir estruturas cada vez maiores. uma antena grande única é a forma óbvia de captar um fraco sinal de uma nave espacial a bilhões de quilómetros de distância. os pratos de 70 m da dsn — em goldstone, madrid e canberra — estão próximos do limite prático para refletores totalmente orientáveis baseados em terra. construir algo significativamente maior exigiria uma estrutura fixa (limitando a cobertura do céu) ou engenharia que ainda não existe. a alternativa é combinar muitas antenas menores: arranjos. arraying — many small ears instead of one giant one"
+  },
+  {
+    "tab": "mission-phases",
+    "section": "ascent-guidance",
+    "title": "Orientação de ascensão — o computador que lança um foguete em órbita",
+    "intro": "Chegar à órbita não é um roteiro fixo que se possa escrever antecipadamente — é um problema de valores limites resolvido novamente a cada segundo, razão pela qual a exploração espacial precisou aguardar o computador digital.",
+    "haystack": "orientação de ascensão — o computador que lança um foguete em órbita chegar à órbita não é um roteiro fixo que se possa escrever antecipadamente — é um problema de valores limites resolvido novamente a cada segundo, razão pela qual a exploração espacial precisou aguardar o computador digital. a orientação de ascensão é um negócio de duas fases. na fase atmosférica inicial o veículo voa em circuito aberto: um pequeno impulso de inclinação logo após o lançamento inicia uma curva por gravidade, e depois mantém um programa de arfagem pré-calculado que mantém o ângulo de ataque perto de zero para que as cargas aerodinâmicas e estruturais permaneçam limitadas através do máximo-q. há pouca liberdade aqui — o ar dita o caminho. ascent guidance — the computer that flies a rocket to orbit"
+  },
+  {
+    "tab": "mission-phases",
+    "section": "ballistic-coefficient",
+    "title": "Ballistic Coefficient",
+    "intro": "O número único — massa dividida pela área de arrasto — que determina a velocidade de queda de uma nave espacial na atmosfera e se ela consegue frear a tempo.",
+    "haystack": "ballistic coefficient o número único — massa dividida pela área de arrasto — que determina a velocidade de queda de uma nave espacial na atmosfera e se ela consegue frear a tempo. formalmente o coeficiente balístico é massa ÷ (coeficiente de arrasto × área de referência). a velocidade terminal escala com sua raiz quadrada, então reduzir o coeficiente balístico pela metade desacelera a queda em cerca de 30%. a desaceleração máxima e o aquecimento máximo também aumentam com ele — uma entrada mais pesada e compacta colide com a atmosfera mais forte e mais quente, razão pela qual grandes veículos enfrentam o pior dos dois cenários. ballistic coefficient"
+  },
+  {
+    "tab": "mission-phases",
+    "section": "comms-blackout",
+    "title": "Communications Blackout",
+    "intro": "Por alguns minutos na parte mais quente da reentrada, o próprio ar se transforma em plasma e engole todos os sinais de rádio — a cápsula silencia, e todos no solo só podem esperar.",
+    "haystack": "communications blackout por alguns minutos na parte mais quente da reentrada, o próprio ar se transforma em plasma e engole todos os sinais de rádio — a cápsula silencia, e todos no solo só podem esperar. o apagão é causado pela bainha de plasma: a onda de choque de proa à frente de um corpo de entrada rombo comprime e aquece o gás o suficiente para ionizá-lo, produzindo uma camada de elétrons livres ao redor do veículo. uma onda de rádio só consegue se propagar através do plasma acima da frequência de plasma local, que escala com a densidade eletrônica; durante o aquecimento máximo a densidade eletrônica é alta o suficiente para que esse limite suba acima das frequências de comunicação da espaçonave, e o sinal é refletido e atenuado em vez de transmitido. o link se perde em ambas as direções. communications blackout"
+  },
+  {
+    "tab": "mission-phases",
+    "section": "dead-reckoning",
+    "title": "Contagem morta",
+    "intro": "Integrar os acelerômetros para obter velocidade, integrar novamente para obter posição — funciona por horas, deriva visivelmente ao longo dos dias, e é exatamente por isso que cada cruzeiro precisa de correções periódicas baseadas no solo.",
+    "haystack": "contagem morta integrar os acelerômetros para obter velocidade, integrar novamente para obter posição — funciona por horas, deriva visivelmente ao longo dos dias, e é exatamente por isso que cada cruzeiro precisa de correções periódicas baseadas no solo. entre queimaduras e fora da gama de pontos de referência celestiais úteis, uma nave espacial rastreia seu próprio estado integrando a saída de sua unidade de medição inercial (imu): três acelerômetros medindo aceleração linear, três giroscópios medindo taxa de rotação. integrar aceleração uma vez → velocidade. integre novamente → posição. combinado com a orientação de [rastreadores de estrelas] (fases de emissão/rastreadores de estrelas), a nave espacial pode propagar seu vetor de estado completo para frente no tempo, sem qualquer ajuda externa. dead reckoning"
+  },
+  {
+    "tab": "mission-phases",
+    "section": "deorbit-corridor",
+    "title": "Desorbitação e o Corredor de Reentrada",
+    "intro": "Uma cápsula não cai simplesmente da órbita — ela é direcionada para um corredor de menos de um grau de largura, onde um ângulo muito acentuado incinera a tripulação e um muito suave os ricocheteiam de volta ao espaço.",
+    "haystack": "desorbitação e o corredor de reentrada uma cápsula não cai simplesmente da órbita — ela é direcionada para um corredor de menos de um grau de largura, onde um ângulo muito acentuado incinera a tripulação e um muito suave os ricocheteiam de volta ao espaço. a desorbitação é um impulso retrógrado que baixa o perigeu da altitude orbital para dentro da atmosfera sensível — para uma cápsula em órbita baixa terrestre, reduzindo o perigeu para cerca de 40–60 km com uma queima de apenas ~100 m/s. o veículo então planeja sem propulsão até a interface de entrada em cerca de 122 km, onde as forças aerodinâmicas assumem o controle. o único número que decide seu destino é o ângulo de trajetória de voo na entrada: o quanto abaixo da horizontal local o vetor velocidade aponta ao cruzar essa interface. deorbit & the re-entry corridor"
+  },
+  {
+    "tab": "mission-phases",
+    "section": "dsn",
+    "title": "DSN — Deep Space Network",
+    "intro": "Três complexos de antenas gigantes espaçaram 120° em torno da Terra — Goldstone, Madrid, Canberra — proporcionando cobertura contínua de qualquer espaçonave além da órbita terrestre baixa.",
+    "haystack": "dsn — deep space network três complexos de antenas gigantes espaçaram 120° em torno da terra — goldstone, madrid, canberra — proporcionando cobertura contínua de qualquer espaçonave além da órbita terrestre baixa. a deep space network é o que torna o voo espacial interplanetário legível. sem ele, a espaçonave ainda voaria (recuperando mortos + navegação autônoma pode manter uma missão unida por semanas), mas ninguém na terra saberia onde estava, o que estava fazendo, ou o que estava aprendendo. o dsn é o umbilical para todas as missões da nasa além da lua e um parceiro contratado para missões espaciais profundas da esa, jaxa e isro. dsn — deep space network"
+  },
+  {
+    "tab": "mission-phases",
+    "section": "edl",
+    "title": "EDL — Entrada, Descida, Pouso",
+    "intro": "Sete minutos do topo da atmosfera até as rodas no chão — a fase mais automatizada e com menor margem de erro de qualquer missão planetária.",
+    "haystack": "edl — entrada, descida, pouso sete minutos do topo da atmosfera até as rodas no chão — a fase mais automatizada e com menor margem de erro de qualquer missão planetária. a entrada começa quando a espaçonave atinge a atmosfera sensível — cerca de 125 km de altitude em marte, 100 km na terra. a partir desse momento, o arrasto atmosférico está fazendo a frenagem; os motores permanecem silenciosos. o escudo térmico suporta milhares de graus, o aeroshell mantém a forma, e a trajetória é essencialmente balística. edl — entry, descent, landing"
+  },
+  {
+    "tab": "mission-phases",
+    "section": "entry-footprint",
+    "title": "A pegada de pouso — onde o lift de uma cápsula pode levá-la",
+    "intro": "Uma cápsula em reentrada não é mirada como um dardo em um ponto — seu lift lhe dá uma área alcançável no solo, a \"pegada\", e o computador de guiagem escolhe um local de pouso dentro dela.",
+    "haystack": "a pegada de pouso — onde o lift de uma cápsula pode levá-la uma cápsula em reentrada não é mirada como um dardo em um ponto — seu lift lhe dá uma área alcançável no solo, a \"pegada\", e o computador de guiagem escolhe um local de pouso dentro dela. a pegada é o conjunto alcançável no espaço downrange–crossrange. o downrange é determinado principalmente por como o veículo gasta o lift vertical: lift totalmente para cima maximiza o alcance (a cápsula \"flutua\", desacelerando lentamente e viajando longe), lift totalmente para baixo o minimiza (uma chegada íngreme e rápida). o crossrange vem de inclinar o lift lateralmente, e sua extensão cresce com l/d. para uma cápsula de baixo l/d a pegada é modesta; para um corpo sustentador ou um veículo alado ela é enorme. the landing footprint — where a capsule’s lift can take it"
+  },
+  {
+    "tab": "mission-phases",
+    "section": "entry-heating",
+    "title": "Aquecimento de Entrada",
+    "intro": "Por que atingir uma atmosfera a quilómetros por segundo aquece uma espaçonave a milhares de graus — e como um escudo térmico suporta o impacto.",
+    "haystack": "aquecimento de entrada por que atingir uma atmosfera a quilómetros por segundo aquece uma espaçonave a milhares de graus — e como um escudo térmico suporta o impacto. dois picos importam durante a entrada e eles não coincidem. o aquecimento máximo acontece alto, onde o veículo ainda está rápido e a taxa de aquecimento (que escala aproximadamente com a velocidade ao cubo) é enorme mesmo no ar fino. a desaceleração máxima acontece mais baixo, no ar mais denso, onde a força sobre o veículo é maior — entradas em marte atingem picos de 8–15 g, entradas em vênus de 100–350 g. a estrutura de um lander é dimensionada para o pico de g; seu escudo térmico é dimensionado para o pico de calor. entry heating"
+  },
+  {
+    "tab": "mission-phases",
+    "section": "eva",
+    "title": "EVA — Extravehicular Activity",
+    "intro": "Uma caminhada no espaço: a porção de maior risco e maior recompensa de uma missão tripulada, limitada a cerca de 8 horas pelos consumíveis do traje.",
+    "haystack": "eva — extravehicular activity uma caminhada no espaço: a porção de maior risco e maior recompensa de uma missão tripulada, limitada a cerca de 8 horas pelos consumíveis do traje. consumíveis do traje: o emu (extravehicular mobility unit) da iss carrega cerca de 8 horas de oxigênio + bateria + sublimação de água de arrefecimento. a absorção de co₂ é o limitador típico — quando o cartucho de lioh ou amina se satura, a eva termina. eva — extravehicular activity"
+  },
+  {
+    "tab": "mission-phases",
+    "section": "gravity-turn",
+    "title": "Gravity Turn",
+    "intro": "O programa de arfagem que deixa a gravidade guiar o foguete — trocando uma subida vertical por velocidade orbital com quase nenhuma perda de direcionamento.",
+    "haystack": "gravity turn o programa de arfagem que deixa a gravidade guiar o foguete — trocando uma subida vertical por velocidade orbital com quase nenhuma perda de direcionamento. duas das três grandes perdas de subida são moldadas pela curva. perda de direcionamento é o ∆v desperdiçado sempre que o empuxo aponta para longe da direção do movimento; uma verdadeira curva gravitacional mantém o empuxo alinhado com a velocidade, então a perda de direcionamento permanece próxima a zero. perda gravitacional é o ∆v gasto mantendo o veículo suspenso contra seu próprio peso durante a subida — quanto mais rápido o foguete se inclina para horizontal, mais cedo esse peso para de comer sua aceleração. os dois puxam em direções opostas, e o programa de arfagem é o compromisso. gravity turn"
+  },
+  {
+    "tab": "mission-phases",
+    "section": "interplanetary-internet",
+    "title": "A internet interplanetária — conectividade através do atraso de propagação",
+    "intro": "Os protocolos de internet padrão falham através de atrasos de luz-minutos e ocultações planetárias; o Delay/Disruption-Tolerant Networking resolve isso com bundles de armazenamento-e-encaminhamento que aguardam o próximo enlace disponível.",
+    "haystack": "a internet interplanetária — conectividade através do atraso de propagação os protocolos de internet padrão falham através de atrasos de luz-minutos e ocultações planetárias; o delay/disruption-tolerant networking resolve isso com bundles de armazenamento-e-encaminhamento que aguardam o próximo enlace disponível. a internet ordinária assume que você pode enviar um pacote, aguardar uma fração de segundo por um reconhecimento e reenviar se não chegar. esse modelo falha catastroficamente no espaço profundo. um sinal de rádio da terra leva 4–24 minutos para alcançar marte dependendo da geometria orbital; durante a conjunção planetária o enlace desaparece completamente por semanas. a suposição de viagem de ida e volta do tcp/ip significa que uma sessão expira e falha muito antes de uma única troca ser concluída. the interplanetary internet — networking across the light-lag"
+  },
+  {
+    "tab": "mission-phases",
+    "section": "launch",
+    "title": "Lançamento + Ascensão",
+    "intro": "Os dez minutos mais violentos de qualquer missão — lutando contra gravidade, atmosfera e a equação do foguete simultaneamente.",
+    "haystack": "lançamento + ascensão os dez minutos mais violentos de qualquer missão — lutando contra gravidade, atmosfera e a equação do foguete simultaneamente. a ascensão de lançamento custa cerca de 9,4 km/s de ∆v, mas apenas 7,9 km/s disso é velocidade orbital real. o resto é perda gravitacional (você gasta energia mantendo o foguete no ar enquanto ele sobe) e perda por arrasto (atmosfera lutando de volta). programe a inclinação corretamente e você minimiza ambas — muito vertical desperdiça impulso em altitude que não ajuda na inserção orbital; muito horizontal e a atmosfera tem mais tempo para desacelerá-lo. launch + ascent"
+  },
+  {
+    "tab": "mission-phases",
+    "section": "lifting-entry",
+    "title": "Entrada com sustentação — navegando com a sustentação de uma cápsula",
+    "intro": "Uma cápsula romba não é só uma pedra caindo. Desloque seu centro de massa e ela voa com um pouco de sustentação — e essa sustentação, direcionada ao rolar a cápsula, torna uma reentrada crítica em uma sobrevivível.",
+    "haystack": "entrada com sustentação — navegando com a sustentação de uma cápsula uma cápsula romba não é só uma pedra caindo. desloque seu centro de massa e ela voa com um pouco de sustentação — e essa sustentação, direcionada ao rolar a cápsula, torna uma reentrada crítica em uma sobrevivível. a física é o arrasto fazendo a frenagem e a sustentação fazendo a mira. a razão sustentação-arrasto (l/d) de uma cápsula é pequena — cerca de 0,3 para apollo e orion, perto de 0,24 para um aeroshell marciano, versus 4+ para um avião comercial — mas não é zero, e em velocidade hipersônica até um pequeno l/d move a trajetória uma longa distância. como a cápsula não pode arfar (ela não tem asas ou profundores), a única maneira de redirecionar essa sustentação de magnitude fixa é inclinar: rolar em torno do vetor velocidade aponta o vetor sustentação para cima, para baixo ou para os lados sem mudar o quanto o ar empurra. lifting entry — steering with a capsule’s lift"
+  },
+  {
+    "tab": "mission-phases",
+    "section": "max-q",
+    "title": "Max-Q",
+    "intro": "O momento de máxima tensão aerodinâmica na ascensão — onde a pressão dinâmica atinge seu pico e o foguete é comprimido com mais intensidade pelo ar que atravessa.",
+    "haystack": "max-q o momento de máxima tensão aerodinâmica na ascensão — onde a pressão dinâmica atinge seu pico e o foguete é comprimido com mais intensidade pelo ar que atravessa. o valor de q aumenta com a velocidade ao quadrado mas diminui com a densidade do ar, portanto a altitude de max-q depende de quão rapidamente a nave acelera em comparação com quão rapidamente sai da atmosfera densa inferior. um conjunto pesado e de aceleração lenta atinge max-q mais baixo e com menor intensidade; um leve e ágil atinge mais alto. típicas naves tripuladas de lançamento veem pressões dinâmicas de pico em torno de 30–35 kpa. max-q"
+  },
+  {
+    "tab": "mission-phases",
+    "section": "met",
+    "title": "MET — Tempo Decorrido de Missão",
+    "intro": "Um cronômetro simples que inicia no lançamento e nunca para — a marcação de tempo universal para cada evento na linha do tempo da missão.",
+    "haystack": "met — tempo decorrido de missão um cronômetro simples que inicia no lançamento e nunca para — a marcação de tempo universal para cada evento na linha do tempo da missão. met é o tempo desde o lançamento. dia zero é a decolagem. cada evento — separação de estágios, injeção trans-x, correção de meio de curso, inserção orbital, operações de superfície — recebe um carimbo de tempo met. alunissagem da apollo 11: met 4 dias, 6 horas, 45 minutos. voyager 1 deixando a heliopausa: met 35 anos. met — mission elapsed time"
+  },
+  {
+    "tab": "mission-phases",
+    "section": "mission-types",
+    "title": "Tipos de Missão — Flyby, Orbiter, Lander, Rover, Sample Return",
+    "intro": "Cinco arquétipos de como uma espaçonave interage com seu destino — cada um com um custo ∆v diferente, perfil de risco e retorno científico.",
+    "haystack": "tipos de missão — flyby, orbiter, lander, rover, sample return cinco arquétipos de como uma espaçonave interage com seu destino — cada um com um custo ∆v diferente, perfil de risco e retorno científico. missões de sobrevoo pulam a queimada de inserção orbital inteiramente. elas passam com o v∞ com que chegam — ~10 km/s para voyager em júpiter, ~14 km/s para new horizons em plutão. o tempo de encontro é de minutos a dias. troca ciência rápida por cobertura rasa e zero acompanhamento. mission types — flyby, orbiter, lander, rover, sample return"
+  },
+  {
+    "tab": "mission-phases",
+    "section": "nrho",
+    "title": "NRHO — Near-Rectilinear Halo Orbit",
+    "intro": "Uma órbita em forma de ovo com ~6,5 dias em torno do ponto L2 Terra-Lua — lar escolhido do Gateway Lunar da NASA.",
+    "haystack": "nrho — near-rectilinear halo orbit uma órbita em forma de ovo com ~6,5 dias em torno do ponto l2 terra-lua — lar escolhido do gateway lunar da nasa. um nrho é uma órbita halo — uma trajetória periódica de três corpos que faz loop em torno de um ponto de lagrange — mas esticada até que uma extremidade quase toque o pólo sul lunar. parece mais uma órbita polar do que um halo, daí 'quase-retilínea'. uma revolução completa leva cerca de 6,5 dias; o '9' na ressonância gateway 9:2 refere-se a nove revoluções nrho por dois meses sinódicos lunares, não a um período de 9 dias. nrho — near-rectilinear halo orbit"
+  },
+  {
+    "tab": "mission-phases",
+    "section": "optical-comms",
+    "title": "Comunicações ópticas — conversando em um raio de luz",
+    "intro": "Links baseados em laser transportam 10–100 vezes mais dados que rádio para a mesma potência e abertura, ao custo de precisão de apontamento medida em microradianos.",
+    "haystack": "comunicações ópticas — conversando em um raio de luz links baseados em laser transportam 10–100 vezes mais dados que rádio para a mesma potência e abertura, ao custo de precisão de apontamento medida em microradianos. toda espaçonave em comunicação com a terra usa rádio — uma tecnologia bem compreendida que tolera erros de apontamento moderados e atravessa nuvens. seu limite fundamental é a largura de banda: frequências de rádio são regulamentadas e a física da difração limita como você pode concentrar um feixe. comunicações ópticas substitui a portadora de rádio por um laser infravermelho próximo. a mesma física que faz o feixe ser muito fino também concentra a energia, então uma dada potência transmitida fornece muito mais bits por segundo no receptor. optical comms — talking on a beam of light"
+  },
+  {
+    "tab": "mission-phases",
+    "section": "orbit-insertion",
+    "title": "Orbit Insertion — LOI / MOI",
+    "intro": "A queimada de frenagem que captura sua nave em órbita em vez de deixá-la voar para sempre.",
+    "haystack": "orbit insertion — loi / moi a queimada de frenagem que captura sua nave em órbita em vez de deixá-la voar para sempre. quando sua nave chega ao destino, ela está se movendo rápido — rápido o suficiente para escapar se você não fizer nada. para ser capturada em órbita, você tem que reduzir velocidade o bastante para cair abaixo da velocidade de escape local. essa queimada de frenagem é a inserção em órbita. loi para órbita lunar (apollo, lro), moi para marte (maven, mro, tianwen-1), e assim por diante. orbit insertion — loi / moi"
+  },
+  {
+    "tab": "mission-phases",
+    "section": "propulsive-landing",
+    "title": "Propulsive Landing",
+    "intro": "Pouso apenas com foguetes — o único caminho em um mundo sem atmosfera como a Lua, e como um gigante como o Starship descerá em Marte.",
+    "haystack": "propulsive landing pouso apenas com foguetes — o único caminho em um mundo sem atmosfera como a lua, e como um gigante como o starship descerá em marte. o custo em propelente é definido pela equação de foguete e a velocidade a cancelar. na lua um lunar module deve eliminar toda sua velocidade orbital ou de aproximação no motor, é por isso que tanta massa de um lunar module é combustível. em marte a atmosfera faz a primeira metade cara gratuitamente (o escudo térmico), deixando o motor para lidar apenas com os últimos quilómetros lentos — mas para um veículo pesado até isso é uma queimada volumosa. propulsive landing"
+  },
+  {
+    "tab": "mission-phases",
+    "section": "skip-entry",
+    "title": "Entrada com ricochete — voltando pela atmosfera",
+    "intro": "Em vez de perder a velocidade de retorno lunar em um único mergulho, a cápsula salta para fora, planeia e reingressa — dois picos mais suaves de calor e aceleração em vez de um.",
+    "haystack": "entrada com ricochete — voltando pela atmosfera em vez de perder a velocidade de retorno lunar em um único mergulho, a cápsula salta para fora, planeia e reingressa — dois picos mais suaves de calor e aceleração em vez de um. uma entrada de ressalto é projetada para retornos mais rápidos que a velocidade de uma órbita circular naquela altitude (~7,9 km/s em baixa altitude) — um retorno \"super-circular\". durante a primeira incursão, o veículo usa sustentação para desacelerar a descida e perder velocidade suficiente para que deixe a incursão em regime suborbital, subindo em um arco balístico de volta para fora da atmosfera sensível. aquele voo exoatmosférico — energia conservada, sem arrasto — o carrega até que ele caia novamente para a segunda e final entrada. skip entry — surfing back out of the atmosphere"
+  },
+  {
+    "tab": "mission-phases",
+    "section": "skycrane",
+    "title": "Sky-Crane",
+    "intro": "A plataforma movida a foguete que abaixa um rover até a superfície por cabos e depois decola — o sistema de pouso que colocou Curiosity e Perseverance em Marte.",
+    "haystack": "sky-crane a plataforma movida a foguete que abaixa um rover até a superfície por cabos e depois decola — o sistema de pouso que colocou curiosity e perseverance em marte. o sky-crane resolve dois problemas de uma vez. mantém os motores de foguete em altitude, assim suas plumas não abrem uma cratera ou jogam detritos sobre o rover, e entrega o rover diretamente sobre suas rodas, pronto para rodar — sem rampas, sem uma plataforma de pouso para descer. o custo é uma coreografia sem margem para erro, executada autonomamente, minutos após uma entrada flamejante, com a terra tão longe que não pode ajudar em tempo real. sky-crane"
+  },
+  {
+    "tab": "mission-phases",
+    "section": "star-trackers",
+    "title": "Rastreadores de estrelas",
+    "intro": "Uma pequena câmera apontou para o céu, identificando estrelas por correspondência padrão contra um catálogo a bordo — a maneira mais precisa para uma nave espacial saber para que lado ela está apontando.",
+    "haystack": "rastreadores de estrelas uma pequena câmera apontou para o céu, identificando estrelas por correspondência padrão contra um catálogo a bordo — a maneira mais precisa para uma nave espacial saber para que lado ela está apontando. uma espaçonave não pode perguntar para que lado está \"para cima\" — não há espaço para cima, e o gps não passa pelo leo. para executar uma queimadura, implantar um painel solar, ou apontar uma antena de alto ganho para a terra, a espaçonave precisa saber sua orientação no espaço inercial. o instrumento que fornece isso é o rastreador de estrelas: uma pequena câmera ccd apontou para um trecho do céu, tendo uma exposição curta, identificando as estrelas na imagem por correspondência de padrões em relação a um catálogo a bordo (geralmente o catálogo hipparcos ou tycho-2, ~104-105 estrelas). star trackers"
+  },
+  {
+    "tab": "mission-phases",
+    "section": "tcm",
+    "title": "TCM — Trajectory Correction Maneuver",
+    "intro": "Uma pequena queima no meio da viagem para corrigir os pequenos erros que sempre se infiltram na trajetória de lançamento.",
+    "haystack": "tcm — trajectory correction maneuver uma pequena queima no meio da viagem para corrigir os pequenos erros que sempre se infiltram na trajetória de lançamento. nenhum lançamento é perfeito. a trajetória real saindo do veículo de lançamento difere da planejada por dezenas de metros por segundo — pequeno em termos absolutos, catastrófico em precisão de chegada se deixado sozinho. um erro de 5 cm/s no tli se traduz em 100 km de erro de chegada na lua. tcms aparam esses erros antes que eles cresçam. tcm — trajectory correction maneuver"
+  },
+  {
+    "tab": "mission-phases",
+    "section": "terminal-velocity",
+    "title": "Terminal Velocity",
+    "intro": "Por que um módulo em queda para de acelerar — o equilíbrio entre arrasto e peso que determina a velocidade de descida sob paraquedas ou na atmosfera de um planeta.",
+    "haystack": "terminal velocity por que um módulo em queda para de acelerar — o equilíbrio entre arrasto e peso que determina a velocidade de descida sob paraquedas ou na atmosfera de um planeta. o número determinante é o coeficiente balístico — massa dividida pela área de arrasto. um veículo leve com um grande paraquedas (coeficiente balístico baixo) desce a uma velocidade terminal lenta; um compacto e pesado (coeficiente balístico alto) cai mais rápido. os projetistas fazem um trade-off entre os dois: um paraquedas maior compra uma descida mais lenta, mas pesa mais e é mais difícil de desdobrar supersonicamente em ar fino. terminal velocity"
+  },
+  {
+    "tab": "mission-phases",
+    "section": "trans-x-injection",
+    "title": "Injeção Trans-X — TLI / TMI / TVI / TJI",
+    "intro": "O grande queimador de partida que lança você para uma trajetória rumo ao seu destino.",
+    "haystack": "injeção trans-x — tli / tmi / tvi / tji o grande queimador de partida que lança você para uma trajetória rumo ao seu destino. após o lançamento, você normalmente está em órbita baixa terrestre (leo). para ir a qualquer outro lugar, você precisa de um segundo queimador que eleve seu apogeu até o destino — essa é a injeção trans-x. o x é a primeira letra do destino: tli para trans-lunar, tmi para trans-marte, tvi para trans-vênus, tji para trans-júpiter. mesma física, ponto de mira diferente. trans-x injection — tli / tmi / tvi / tji"
+  },
+  {
+    "tab": "observation",
+    "section": "adaptive-optics",
+    "title": "Óptica adaptativa",
+    "intro": "Os telescópios terrestres medem a distorção da atmosfera em tempo real com uma estrela guia laser, depois dobram um espelho deformável para cancelá-lo — afiando imagens por um fator de 10 ou mais.",
+    "haystack": "óptica adaptativa os telescópios terrestres medem a distorção da atmosfera em tempo real com uma estrela guia laser, depois dobram um espelho deformável para cancelá-lo — afiando imagens por um fator de 10 ou mais. a atmosfera da terra é uma confusão de células móveis de ar quente e frio, cada célula com um índice de refração ligeiramente diferente. a luz das estrelas que passa por ela fica confusa — é por isso que as estrelas brilham e por isso um telescópio terrestre de 10 metros sem correção não vê nada melhor do que um quintal de 20 cm numa noite estável. o limite atmosférico de \"ver\" é de cerca de 1 segundo de arco. o limite de difração de hubble é 0,05. adaptive optics"
+  },
+  {
+    "tab": "observation",
+    "section": "andromeda-galaxy",
+    "title": "Galáxia de Andrômeda (M31) — a maior espiral mais próxima",
+    "intro": "Andrômeda é a maior galáxia mais próxima da Via Láctea, a 2,5 milhões de anos-luz. Um dos objetos mais distantes visíveis a olho nu, aproxima-se de nós a 110 km/s — e pode colidir com a Via Láctea em alguns bilhões de anos.",
+    "haystack": "galáxia de andrômeda (m31) — a maior espiral mais próxima andrômeda é a maior galáxia mais próxima da via láctea, a 2,5 milhões de anos-luz. um dos objetos mais distantes visíveis a olho nu, aproxima-se de nós a 110 km/s — e pode colidir com a via láctea em alguns bilhões de anos. andromeda — catalogada como m31 (messier 31) e ngc 224 — é uma galáxia espiral (formalmente classificada sa(s)b — sem barra, embora evidências cinemáticas apontem para uma barra interna fraca) ligeiramente maior que a via láctea. estimativas de massa a partir da dinâmica estelar do gaia dr3 colocam-a em cerca de 1,5 × 10¹² massas solares, comparável ou ligeiramente mais massiva que a via láctea. hospeda aproximadamente um trilhão de estrelas, possui uma barra central e disco estruturalmente similares, dois braços espirais proeminentes, e um buraco negro supermassivo adormecido em seu centro (o núcleo de m31 é um buraco negro de 1,4 × 10⁸ massas solares; o sagittarius a* da via láctea tem 'apenas' 4,3 × 10⁶ massas solares). a olho nu, de um local escuro, andromeda é uma mancha pequena na constelação que lhe dá o nome — um dos objetos mais distantes que o olho humano pode perceber sem instrumentos, a cerca de 2,5 milhões de anos-luz. a luz que chega à terra hoje noite saiu de andromeda quando homo habilis estava começando a fazer ferramentas de pedra. andromeda galaxy (m31) — the closest large spiral"
+  },
+  {
+    "tab": "observation",
+    "section": "black-holes",
+    "title": "Buracos negros",
+    "intro": "Uma região do espaço-tempo onde a massa é tão comprimida que nem a luz consegue sair — e agora temos imagens das sombras de dois deles.",
+    "haystack": "buracos negros uma região do espaço-tempo onde a massa é tão comprimida que nem a luz consegue sair — e agora temos imagens das sombras de dois deles. um buraco negro se forma quando uma massa suficiente colapsa para dentro de seu raio de schwarzschild — o tamanho em que a velocidade de escape é igual à velocidade da luz. a fórmula à direita diz diretamente: para qualquer massa m, há um raio r s = 2gm/c2 dentro do qual nada escapa. o raio de schwarzschild é de 3 km. a terra tem 9 mm. compacta para esse tamanho e fizeste um. black holes"
+  },
+  {
+    "tab": "observation",
+    "section": "coronagraphs",
+    "title": "Coronagrafias",
+    "intro": "Um disco oculto dentro do telescópio bloqueia a estrela hospedeira, de modo que o planeta ao lado dela — um bilhão de vezes mais fraco — se torna visível.",
+    "haystack": "coronagrafias um disco oculto dentro do telescópio bloqueia a estrela hospedeira, de modo que o planeta ao lado dela — um bilhão de vezes mais fraco — se torna visível. uma estrela semelhante ao sol supera seus planetas por um fator de cerca de 109 em comprimentos de onda visíveis e 106 no infravermelho. os fótons do planeta não estão desaparecidos — estão a afogar-se nas asas de difração da função de difusão de pontos da estrela. imagem direta de um exoplaneta só é possível se você pode suprimir que psf por muitas ordens de magnitude. um coronagrama faz exactamente isso. coronagraphs"
+  },
+  {
+    "tab": "observation",
+    "section": "dwarf-spheroidals",
+    "title": "Esferoidais anãs — pequenas, fracas e quase inteiramente matéria escura",
+    "intro": "As galáxias esferoidais anãs são as galáxias mais numerosas no Grupo Local e os objetos mais dominados por matéria escura que jamais medimos — razões massa-luminosidade de 100, 500, até 1000 — muito maiores que qualquer espiral.",
+    "haystack": "esferoidais anãs — pequenas, fracas e quase inteiramente matéria escura as galáxias esferoidais anãs são as galáxias mais numerosas no grupo local e os objetos mais dominados por matéria escura que jamais medimos — razões massa-luminosidade de 100, 500, até 1000 — muito maiores que qualquer espiral. esferoidais anãs (frequentemente abreviadas dsph) são satélites pequenos, fracos, pobres em gás, aproximadamente elípticos, de galáxias maiores. em torno da via láctea, os membros mais brilhantes são sagittarius, sculptor, fornax, draco, ursa minor, leo i, leo ii, sextans, carina, canes venatici i, além de uma longa cauda de anãs ultra-fracas descobertas por sdss, des, pan-starrs, e agora pelo lsst do vera c. rubin observatory. a contagem total de satélites dsph conhecidos da via láctea agora ultrapassa 60 e aumenta. cada uma tem tipicamente apenas milhões a dezenas de milhões de estrelas — comparadas a centenas de bilhões da via láctea — e durante décadas foram descartadas como retardatárias entediantes. o quadro mudou nos anos 1980, quando medidas de dispersão de velocidade estelar mostraram que eram tudo menos entediantes. dwarf spheroidals — small, faint, and almost entirely dark matter"
+  },
+  {
+    "tab": "observation",
+    "section": "galaxy-types",
+    "title": "Tipos de galáxias — espirais, elípticas, irregulares, anãs",
+    "intro": "Galáxias se dividem em famílias estruturais: espirais (Milky Way, Andromeda), elípticas (M87, NGC 4889), irregulares (Magellanic Clouds) e anãs. Baseado na classificação de Hubble de 1936, refinada.",
+    "haystack": "tipos de galáxias — espirais, elípticas, irregulares, anãs galáxias se dividem em famílias estruturais: espirais (milky way, andromeda), elípticas (m87, ngc 4889), irregulares (magellanic clouds) e anãs. baseado na classificação de hubble de 1936, refinada. as galáxias espirais são discos achatados e em rotação de estrelas e gás ao redor de um bojo central, com um ou mais braços espirais proeminentes estendendo-se para fora. os braços não são estruturas rígidas — são ondas de densidade onde a formação estelar está elevada no momento, além de estrelas azuis jovens e regiões hii rosa que fazem os braços parecerem mais brilhantes que o disco interbraços. cerca de dois terços das galáxias espirais brilhantes próximas são espirais. a via láctea é uma espiral com barra (sbbc — seu bojo central é alongado em forma de barra ou 'charuto' que canaliza gás para dentro, alimentando a formação estelar central e alimentando o buraco negro supermassivo). o status de barra de andromeda é incerto: a classificação formal rc3 é sa(s)b (sem barra), embora estudos cinemáticos e fotométricos apontem para uma fraca assimetria não-axisimétrica no interior. a galáxia do triângulo m33 no grupo local é uma espiral sem barra. a terceira categoria de hubble — sc / sbc — tem braços espirais soltos e bem separados; a via láctea é do tipo sbbc ou sbc. galaxy types — spirals, ellipticals, irregulars, dwarfs"
+  },
+  {
+    "tab": "observation",
+    "section": "hertzsprung-russell",
+    "title": "Estrelas — cor, classe e o diagrama H–R",
+    "intro": "A cor de uma estrela é um termômetro, e seu brilho é uma história de vida. Plote os dois um contra o outro e quase toda estrela cai em uma única faixa diagonal — o diagrama de Hertzsprung–Russell, gráfico essencial da astronomia estelar.",
+    "haystack": "estrelas — cor, classe e o diagrama h–r a cor de uma estrela é um termômetro, e seu brilho é uma história de vida. plote os dois um contra o outro e quase toda estrela cai em uma única faixa diagonal — o diagrama de hertzsprung–russell, gráfico essencial da astronomia estelar. a cor vem em primeiro lugar. uma estrela irradia como um corpo negro quase perfeito, então sua cor é determinada quase inteiramente por sua temperatura superficial: estrelas quentes brilham em azul-branco (~30.000 k), o sol é amarelo-branco (~5.800 k), e estrelas frias brilham em vermelho profundo (~3.000 k). os astrônomos medem essa cor como o índice b–v — a diferença entre o brilho de uma estrela através de um filtro azul e um visual — e ele se mapeia claramente para a temperatura. classifique as estrelas da esquerda para a direita por cor e você tem a sequência espectral o, b, a, f, g, k, m, a mais quente para a mais fria (mnemônico: \"oh be a fine girl/guy, kiss me\"). stars — colour, class, and the h–r diagram"
+  },
+  {
+    "tab": "observation",
+    "section": "interferometry",
+    "title": "Interferometria",
+    "intro": "Costure telescópios separados em uma abertura virtual maior do que qualquer um deles — o Event Horizon Telescope é um interferômetro de rádio de tamanho Terra construído a partir de antenas em quatro continentes.",
+    "haystack": "interferometria costure telescópios separados em uma abertura virtual maior do que qualquer um deles — o event horizon telescope é um interferômetro de rádio de tamanho terra construído a partir de antenas em quatro continentes. a potência de resolução de um único telescópio depende da sua abertura (diâmetro/comprimento de onda). uma antena de rádio 30 m através de imagens a 1 mm de comprimento de onda tem uma resolução angular de cerca de 7 segundos de arco — muito grosseira para ver a maioria das coisas. mas duas antenas a 1000 km de distância, observando simultaneamente a mesma fonte e combinando seus sinais, comportam-se como um único telescópio **1000 km de diâmetro** nessa resolução — miliarcsegundos. interferometry"
+  },
+  {
+    "tab": "observation",
+    "section": "local-group",
+    "title": "O Grupo Local — nossa vizinhança ligada gravitacionalmente",
+    "intro": "O Grupo Local é um pequeno aglomerado de ~80 galáxias conhecidas ligadas à Via Láctea e Andromeda pela gravidade mútua, com cerca de 3 megaparsecs de extensão.",
+    "haystack": "o grupo local — nossa vizinhança ligada gravitacionalmente o grupo local é um pequeno aglomerado de ~80 galáxias conhecidas ligadas à via láctea e andromeda pela gravidade mútua, com cerca de 3 megaparsecs de extensão. o grupo local é dominado por três galáxias espirais — a via láctea, andromeda (m31) e a galáxia do triângulo (m33). ao redor da via láctea e andromeda estão nuvens de galáxias satélites, principalmente pequenas e fracas — as nuvens de magalhães, anã de sagitário, escultor, forno, draco, as anãs de leão, e muitas outras. total de membros conhecidos hoje: aproximadamente 80, e a contagem continua aumentando conforme os levantamentos de imagem profunda (des, lsst, euclid) encontram anãs ultra-fracas perdidas nas buscas anteriores. toda a estrutura está ligada gravitacionalmente — não está se expandindo com o fluxo de hubble, e a via láctea e andromeda estão realmente se aproximando uma da outra a aproximadamente 110 km/s. the local group — our gravitationally bound neighbourhood"
+  },
+  {
+    "tab": "observation",
+    "section": "magellanic-clouds",
+    "title": "As Nuvens de Magalhães — LMC e SMC, nossas vizinhas galáticas mais próximas",
+    "intro": "A Grande e Pequena Nuvem de Magalhães são as galáxias mais próximas grandes o suficiente para serem vistas a olho nu — galáxias anãs irregulares que traçam o pólo sul-galáctico da Via Láctea, a ~50 e ~62 kpc de distância.",
+    "haystack": "as nuvens de magalhães — lmc e smc, nossas vizinhas galáticas mais próximas a grande e pequena nuvem de magalhães são as galáxias mais próximas grandes o suficiente para serem vistas a olho nu — galáxias anãs irregulares que traçam o pólo sul-galáctico da via láctea, a ~50 e ~62 kpc de distância. as nuvens de magalhães dominam o céu do hemisfério sul de qualquer local razoavelmente escuro abaixo de cerca de +20° de latitude. parecem exatamente como soam — dois aglomerados difusos desconectados no céu noturno, a lmc com cerca de 5° de largura e a smc cerca de 3°. são catalogadas sob diversos nomes, mas magalhães vem da circunavegação de ferdinand magellan em 1519-1522, durante a qual as nuvens foram a referência de navegação mais confiável que sua tripulação tinha no atlântico sul. as nuvens têm sido continuamente observadas pela humanidade há tanto tempo quanto humanos vivem no hemisfério sul; arte rupestre e tradições orais de aborígenes australianos, dos khoisan e culturas andinas as referenciam pelo nome de formas que precedem em muito o contato europeu. the magellanic clouds — lmc and smc, our nearest galactic neighbours"
+  },
+  {
+    "tab": "observation",
+    "section": "our-galaxy",
+    "title": "Nossa galáxia — a Via Láctea vista de dentro",
+    "intro": "Vivemos dentro de uma galáxia espiral com barra de algumas centenas de bilhões de estrelas, e nunca a vimos de fora. Tudo o que sabemos sobre a forma da Via Láctea é reconstruído de dentro do disco, observando através dele.",
+    "haystack": "nossa galáxia — a via láctea vista de dentro vivemos dentro de uma galáxia espiral com barra de algumas centenas de bilhões de estrelas, e nunca a vimos de fora. tudo o que sabemos sobre a forma da via láctea é reconstruído de dentro do disco, observando através dele. a via láctea é um disco plano e em rotação de aproximadamente 100.000 anos-luz de diâmetro, mas apenas ~1.000 anos-luz de espessura — um disco de vinil cósmico. suas estrelas, gás e poeira estão enrolados em braços espirais (perseus, sagittarius, scutum-centaurus, norma, além do nosso pequeno orion spur), irradiando de uma barra central de estrelas mais velhas. envolvendo tudo isto está um halo esférico de aglomerados globulares antigos e a matéria escura invisível que domina a massa da galáxia. estimativas da contagem de estrelas variam de 100 a 400 bilhões. our galaxy — the milky way from the inside"
+  },
+  {
+    "tab": "observation",
+    "section": "space-photography",
+    "title": "Fotografia espacial",
+    "intro": "Cada famosa \"imagem telescópica\" é uma pilha de exposições longas através de filtros de banda estreita, calibrados, registrados, mapeados de cor falsa — a imagem é o que os humanos fazem da contagem.",
+    "haystack": "fotografia espacial cada famosa \"imagem telescópica\" é uma pilha de exposições longas através de filtros de banda estreita, calibrados, registrados, mapeados de cor falsa — a imagem é o que os humanos fazem da contagem. o sensor de imagem de um telescópio espacial é um chip ccd ou cmos — uma grade de fotões. cada pixel fica no plano focal para uma exposição (de milissegundos a várias horas), acumulando contagens de elétrons. a saída é um número por pixel: quantos fótons dos quais filtro de banda estreita atingiu lá. múltiplas exposições são empilhadas para bater o ruído de leitura, registrado para alinhamento sub-pixel, e mediana-combinado para rejeitar hits de raios cósmicos. space photography"
+  },
+  {
+    "tab": "observation",
+    "section": "spectroscopy",
+    "title": "Espectroscopia",
+    "intro": "Passe a luz das estrelas através de uma grade de prisma ou difração e o espectro lhe diz do que a estrela é feita — cada elemento imprime uma impressão digital única de linhas de absorção.",
+    "haystack": "espectroscopia passe a luz das estrelas através de uma grade de prisma ou difração e o espectro lhe diz do que a estrela é feita — cada elemento imprime uma impressão digital única de linhas de absorção. cada elemento químico absorve a luz num conjunto único de comprimentos de onda correspondentes às suas transições electrónicas. passe a luz das estrelas através de um prisma e você vê um arco-íris com linhas escuras finas exatamente nesses comprimentos de onda — joseph fraunhofer mapeou 574 deles através do espectro solar em 1814. cada linha é um elemento na atmosfera da estrela roubando fótons. spectroscopy"
+  },
+  {
+    "tab": "observation",
+    "section": "wormholes",
+    "title": "Buracos de minhocas",
+    "intro": "Soluções matemáticas para a relatividade geral que conectam regiões distantes do espaço-tempo. Nunca ninguém foi observado. Incluídos para a completude — NÃO são usados para voo espacial.",
+    "haystack": "buracos de minhocas soluções matemáticas para a relatividade geral que conectam regiões distantes do espaço-tempo. nunca ninguém foi observado. incluídos para a completude — não são usados para voo espacial. um buraco de minhoca — formalmente uma ponte einstein-rosen — é uma característica topológica do espaço-tempo que as equações da relatividade geral permitem, mas o universo nunca foi observado para realmente instanciar. a matemática é real (einstein e rosen trabalharam para fora em 1935); a física é incerta (nenhum candidato foi visto); a engenharia não existe (e pode ser fisicamente impossível). trate-os da maneira que trataria táquions ou paradoxos de viagem no tempo: quebra-cabeças interessantes nas equações, não hardware de voo. wormholes"
+  },
+  {
+    "tab": "orbits",
+    "section": "apsides",
+    "title": "Apsides — Perihelion, Aphelion, Perigee, Apogee",
+    "intro": "Os dois pontos extremos de toda órbita elíptica: o ponto de máxima aproximação e o de máxima distância.",
+    "haystack": "apsides — perihelion, aphelion, perigee, apogee os dois pontos extremos de toda órbita elíptica: o ponto de máxima aproximação e o de máxima distância. uma apse é um dos dois pontos em uma órbita elíptica onde o corpo está à distância mínima ou máxima de seu foco. a linha que os conecta — passando pelos dois focos — é a linha de apsides. toda órbita kepleriana tem exatamente duas: a mais próxima e a mais distante. apsides — perihelion, aphelion, perigee, apogee"
+  },
+  {
+    "tab": "orbits",
+    "section": "cislunar-orbits",
+    "title": "Órbitas cislunar — DRO, NRHO, halo, órbitas congeladas lunar",
+    "intro": "Entre a Terra e a superfície lunar existe um conjunto de órbitas cuidadosamente projetadas — nenhuma óbvia pela física de dois corpos, todas exploradas pela arquitetura lunar moderna do Gateway a sondas robóticas.",
+    "haystack": "órbitas cislunar — dro, nrho, halo, órbitas congeladas lunar entre a terra e a superfície lunar existe um conjunto de órbitas cuidadosamente projetadas — nenhuma óbvia pela física de dois corpos, todas exploradas pela arquitetura lunar moderna do gateway a sondas robóticas. a órbita de halo quase-retilínea (nrho) é a classe de órbita que a nasa escolheu para o lunar gateway. geometricamente: uma órbita de halo com período de seis dias ao redor do ponto de lagrange earth-moon l2 do sistema terra-lua, com perilúnio ≈1.500 km de altitude (raio do perilúnio ~3.200 km) sobre o pólo norte lunar e apolúnio ≈70.000 km sobre o pólo sul lunar. o nome \"quase-retilínea\" vem da forma da órbita no referencial em rotação terra-lua — ela descreve um loop longo e estreito perpendicular à linha terra-lua, quase como um retângulo. três propriedades a tornaram a escolha vencedora para o gateway. primeiro, a variação de velocidade (δv) para manutenção da estação é extraordinariamente baixa (~5 m/s/ano) comparada a órbitas lunares baixas (>100 m/s/ano). segundo, a comunicação com a terra não sofre obstáculos porque a órbita se mantém fora da sombra de rádio da lua. terceiro, o longo tempo de permanência próximo ao apolúnio sobre o pólo sul proporciona cobertura quase contínua dos sítios artemis do pólo sul no rebordo da cratera shackleton. a desvantagem é que a descida da nrho para a superfície lunar é mais difícil do que a partir de uma órbita circular lunar baixa (~2,5 km/s versus ~1,8 km/s) — mas para um programa que necessita um ponto de apoio duradouro, a desvantagem compensa. cislunar orbits — dro, nrho, halo, lunar frozen"
+  },
+  {
+    "tab": "orbits",
+    "section": "disposal-end-of-life",
+    "title": "Descarte ao fim da vida — órbitas cemitério, desorbitação controlada, a regra dos 25 anos",
+    "intro": "Todo satélite deve ter um plano de descarte ao fim da vida ao lançar — ou desorbitar na atmosfera, ou impulsionar a uma órbita cemitério estável. Descarte mal feito produz o problema de detritos do próximo artigo.",
+    "haystack": "descarte ao fim da vida — órbitas cemitério, desorbitação controlada, a regra dos 25 anos todo satélite deve ter um plano de descarte ao fim da vida ao lançar — ou desorbitar na atmosfera, ou impulsionar a uma órbita cemitério estável. descarte mal feito produz o problema de detritos do próximo artigo. descarte leo: desorbitação. sondas em leo são arrastadas pela densidade atmosférica residual (desprezível por órbita, cumulativa em anos). um satélite a 400 km decai naturalmente em um ano se a propulsão falhar; a 800 km o tempo natural é ~50 anos; a 1500 km são séculos. o padrão internacional codificado pela iadc (inter-agency space debris coordination committee) em 2002 e adotado por toda nação espacial: objetos leo devem ser desorbitados em 25 anos do fim da missão. a fcc apertou isso em 2022 para satélites licenciados nos eua a 5 anos. mecanismo: ao fim da vida, a sonda usa propelente remanescente para baixar o perigeu na atmosfera alta (tipicamente 200-300 km), garantindo decaimento rápido por arrasto em meses. objetos grandes (módulos iss, hubble, comsats leo aposentados) são mirados em spoua — a south pacific ocean uninhabited area, extensão oceânica remota centrada perto de point nemo, o 'cemitério de naves espaciais' oficial desde as desorbitações soviéticas salyut dos anos 70. mir foi desorbitada lá em 2001 (130 toneladas); iss está programada para desorbitação controlada lá em 2031. end-of-life disposal — graveyard orbits, controlled deorbit, the 25-year rule"
+  },
+  {
+    "tab": "orbits",
+    "section": "eccentricity",
+    "title": "Excentricidade",
+    "intro": "O quanto a órbita é esticada — zero é um círculo perfeito, um é uma fuga parabólica.",
+    "haystack": "excentricidade o quanto a órbita é esticada — zero é um círculo perfeito, um é uma fuga parabólica. excentricidade (`e`) é o número da forma. defina como 0 e você tem um círculo — os focos colapsam em um único centro, e o corpo em órbita permanece à mesma distância para sempre. aumente em direção a 1 e a elipse se estica em um charuto — o corpo chicoteia pelo foco no periélio, depois fica vagaroso no afélio durante a maior parte da órbita. eccentricity"
+  },
+  {
+    "tab": "orbits",
+    "section": "escape-velocity",
+    "title": "Velocidade de escape — a velocidade que nunca volta",
+    "intro": "Lance qualquer coisa para cima com velocidade suficiente e ela nunca cai — velocidade de escape é a velocidade exata em que a energia cinética de um corpo equilibra perfeitamente o poço gravitacional pelo qual está escapando.",
+    "haystack": "velocidade de escape — a velocidade que nunca volta lance qualquer coisa para cima com velocidade suficiente e ela nunca cai — velocidade de escape é a velocidade exata em que a energia cinética de um corpo equilibra perfeitamente o poço gravitacional pelo qual está escapando. a velocidade de escape segue da conservação de energia: iguale a energia total (cinética mais potencial gravitacional) a zero, e v_escape = √(2μ / r), onde μ é o parâmetro gravitacional do corpo e r a distância de seu centro. como a velocidade orbital circular é √(μ / r), a velocidade de escape é exatamente √2 vezes ela — o mesmo fator em qualquer altitude. uma trajetória lançada exatamente à velocidade de escape é uma parábola (energia orbital zero); acima dela, uma hipérbole que chega ao infinito com velocidade sobressalente, o \"excesso hiperbólico\" v∞. escape velocity — the speed that never comes back"
+  },
+  {
+    "tab": "orbits",
+    "section": "hill-sphere",
+    "title": "Hill Sphere",
+    "intro": "O volume do espaço onde a gravidade de um planeta vence a do Sol.",
+    "haystack": "hill sphere o volume do espaço onde a gravidade de um planeta vence a do sol. a fórmula do raio de hill aproxima o limite como r_h ≈ a × (1−e) × (m / 3m)^(1/3), onde `a` é o semi-eixo maior do planeta, `e` sua excentricidade, `m` sua massa e `m` a massa do sol. o fator (1−e) contabiliza a contração no periélio — uma órbita mais excêntrica significa que o planeta oscila mais perto do sol e sua autoridade gravitacional diminui proporcionalmente. a raiz cúbica significa que duplicar a massa de um planeta aumenta sua esfera de hill em apenas ~26%; duplicar sua distância orbital a aumenta em 100%. hill sphere"
+  },
+  {
+    "tab": "orbits",
+    "section": "inclination",
+    "title": "Inclinação",
+    "intro": "A inclinação do plano orbital em relação a um plano de referência — geralmente a eclíptica ou o equador da Terra.",
+    "haystack": "inclinação a inclinação do plano orbital em relação a um plano de referência — geralmente a eclíptica ou o equador da terra. inclinação (`i`) é o ângulo entre o plano orbital e uma referência escolhida. para uma órbita heliocêntrica, a referência é a eclíptica — o plano em que a terra orbita. para satélites terrestres, geralmente é o equador. o ângulo é medido no nodo ascendente, onde a órbita atravessa o plano de referência indo para norte. inclination"
+  },
+  {
+    "tab": "orbits",
+    "section": "keplerian-orbit",
+    "title": "Órbita Kepleriana",
+    "intro": "Uma elipse com o Sol em um dos focos — a órbita mais simples que um corpo pode ter ao redor de outro.",
+    "haystack": "órbita kepleriana uma elipse com o sol em um dos focos — a órbita mais simples que um corpo pode ter ao redor de outro. quando você cai em direção a algo massivo mas erra, você obtém uma órbita kepleriana. o caminho é uma elipse — um círculo esticado — e o corpo em direção ao qual você está caindo fica em um dos dois pontos focais, nunca no centro. terra ao redor do sol, lua ao redor da terra, toda espaçonave que você verá no orrery: todas keplerianas em primeira aproximação. keplerian orbit"
+  },
+  {
+    "tab": "orbits",
+    "section": "keplers-laws",
+    "title": "As Três Leis de Kepler",
+    "intro": "Três regras observacionais que transformaram o movimento planetário em uma ciência de forma fechada um século antes de Newton explicar o porquê.",
+    "haystack": "as três leis de kepler três regras observacionais que transformaram o movimento planetário em uma ciência de forma fechada um século antes de newton explicar o porquê. primeira lei: planetas orbitam em elipses com o sol em um dos focos. antes de kepler, todo modelo usava círculos — às vezes aninhados, às vezes deslocados, mas sempre circulares. kepler usou vinte anos de observações de marte de tycho brahe e desistiu: os dados não se ajustavam a círculos, e nada que ele pudesse fazer os fazia. elipses se ajustaram na primeira tentativa. kepler's three laws"
+  },
+  {
+    "tab": "orbits",
+    "section": "lagrange-points",
+    "title": "Pontos de Lagrange",
+    "intro": "Cinco pontos gravitacionalmente equilibrados em cada sistema de dois corpos onde uma pequena nave espacial pode pairar com quase nenhum combustível – e onde a maioria dos observatórios modernos do espaço profundo realmente vivem.",
+    "haystack": "pontos de lagrange cinco pontos gravitacionalmente equilibrados em cada sistema de dois corpos onde uma pequena nave espacial pode pairar com quase nenhum combustível – e onde a maioria dos observatórios modernos do espaço profundo realmente vivem. os cinco pontos situam-se em geometrias específicas. **l1** fica entre os dois corpos na linha que os conecta — para sun-earth, isso é ~1,5 milhão de km na direção do sol a partir da terra, onde a atração do sol e a atração da terra equilibram o requisito centrípeto. **l2** fica na mesma linha, mas do lado distante do corpo menor — para sun-earth, ~1,5 milhão de km na direção oposta ao sol a partir da terra. **l3** fica do lado oposto do corpo maior, oculto atrás do sol da perspectiva da terra. **l4** e **l5** ficam nos vértices de triângulos equiláteros formados com os dois corpos — 60° à frente e 60° atrás da órbita do corpo menor. lagrange points"
+  },
+  {
+    "tab": "orbits",
+    "section": "orbit-regimes",
+    "title": "Regimes de Órbita — LEO, MEO, GEO, HEO",
+    "intro": "As órbitas terrestres se agrupam em quatro faixas de altitude; cada uma é um compromisso diferente entre latência, tempo de vida útil e custo.",
+    "haystack": "regimes de órbita — leo, meo, geo, heo as órbitas terrestres se agrupam em quatro faixas de altitude; cada uma é um compromisso diferente entre latência, tempo de vida útil e custo. leo (low earth orbit, < 2.000 km de altitude): a mais barata de se alcançar, período mais rápido (~90 minutos para a iss a 408 km), menor atraso de enlace com o solo (alguns ms), menor tempo de vida útil devido ao arrasto atmosférico residual. hospeda a iss, hubble, starlink, a maioria dos satélites de observação da terra, toda atividade tripulada além do apollo. orbit regimes — leo, meo, geo, heo"
+  },
+  {
+    "tab": "orbits",
+    "section": "semi-major-axis",
+    "title": "Semi-Major Axis",
+    "intro": "Metade do diâmetro mais longo da elipse orbital — e o único número que determina o período orbital.",
+    "haystack": "semi-major axis metade do diâmetro mais longo da elipse orbital — e o único número que determina o período orbital. se você achatar uma elipse keplerian em sua dimensão mais longa, a linha que você traçou é o eixo maior. corte-a ao meio e você tem o semieixo maior — escrito `a`. é a distância média do corpo em órbita ao foco, mais ou menos: uma média aritmética do periélio (mais próximo) e afélio (mais distante). semi-major axis"
+  },
+  {
+    "tab": "orbits",
+    "section": "space-debris",
+    "title": "Lixo espacial — síndrome de Kessler, eventos ASAT e as tentativas de limpeza",
+    "intro": "A órbita terrestre contém ~36.000 objetos de lixo rastreados maiores que 10 cm e uma estimativa de 100+ milhões de peças menores. Dois eventos ASAT e uma colisão acidental criaram a maioria. A limpeza está apenas começando a acelerar.",
+    "haystack": "lixo espacial — síndrome de kessler, eventos asat e as tentativas de limpeza a órbita terrestre contém ~36.000 objetos de lixo rastreados maiores que 10 cm e uma estimativa de 100+ milhões de peças menores. dois eventos asat e uma colisão acidental criaram a maioria. a limpeza está apenas começando a acelerar. os números são brutais. o escritório de lixo espacial da esa, o programa de lixo orbital da nasa e a 18ª esquadrilha de defesa espacial da força aérea dos eua mantêm estimativas convergentes da população orbital (a partir de 2024-2025): ~36.000 objetos catalogados com diâmetro ≥10 cm, dos quais ~9.000 são espaçonaves ativas e o resto é lixo. ~1 milhão de peças estimadas entre 1 cm e 10 cm, principalmente não rastreadas. >100 milhões de peças entre 1 mm e 1 cm, completamente não rastreadas mas individualmente capazes de desabilitar uma espaçonave no impacto (um fragmento de alumínio de 1 cm a 14 km/s de velocidade de aproximação entrega a energia cinética de uma granada de mão). massa total na órbita terrestre: aproximadamente 11.000 toneladas. disso, talvez 8.000 toneladas seja a fração de lixo — derelitos, estágios superiores gastos, fragmentos de desintegrações, flocos de tinta, escória de motor-foguete. space debris — kessler syndrome, asat events, and the cleanup attempts"
+  },
+  {
+    "tab": "orbits",
+    "section": "special-orbits",
+    "title": "Órbitas especiais — Molniya, Tundra, GTO, congeladas",
+    "intro": "Além de LEO / MEO / GEO / HEO, algumas órbitas especiais nomeadas realizam tarefas específicas: comunicações acima de 70° latitude, transferência geoestacionária, manutenção sem deriva. Cada uma explora a mecânica orbital.",
+    "haystack": "órbitas especiais — molniya, tundra, gto, congeladas além de leo / meo / geo / heo, algumas órbitas especiais nomeadas realizam tarefas específicas: comunicações acima de 70° latitude, transferência geoestacionária, manutenção sem deriva. cada uma explora a mecânica orbital. órbita molniya (rússia, desde 1965). alta excentricidade (e ≈ 0,74), perigeu baixo (~600 km), apogeu alto (~40.000 km), inclinação 63,4°, período exatamente 12 horas. duas decisões de projeto a tornam funcional. primeiro, a inclinação de 63,4° é a 'inclinação crítica' na qual a perturbação j2 da terra não causa rotação da linha de ábsides (em qualquer outra inclinação o perigeu deriva ao redor da órbita ao longo de meses); o apogeu permanece fixo sobre o hemisfério norte onde você quer. segundo, com período de 12 horas o satélite passa cerca de 8 horas próximo ao apogeu, traçando lentamente o céu setentrional, depois percorre o perigeu em 4 horas. uma constelação de três satélites molniya em ângulos de fase escalonados fornece cobertura contínua de latitudes acima de 70°, onde os comsats geo não alcançam porque ficam no equador. usada pela rússia para telefonia e tv civis (série molniya i/ii/iii), comunicações militares (meridian) e satélites de alerta antecipado oko monitorando lançamentos de icbm dos eua. special orbits — molniya, tundra, gto, frozen"
+  },
+  {
+    "tab": "orbits",
+    "section": "sun-synchronous",
+    "title": "Órbitas síncronas ao Sol + órbitas polares — a espinha dorsal da observação terrestre",
+    "intro": "Órbitas síncronas ao Sol cruzam cada ponto da Terra na mesma hora solar local diariamente. Quase polares, retrógradas, ajustadas para usar o bojo equatorial terrestre como motor de precessão — o truque da observação terrestre consistente.",
+    "haystack": "órbitas síncronas ao sol + órbitas polares — a espinha dorsal da observação terrestre órbitas síncronas ao sol cruzam cada ponto da terra na mesma hora solar local diariamente. quase polares, retrógradas, ajustadas para usar o bojo equatorial terrestre como motor de precessão — o truque da observação terrestre consistente. uma órbita síncrona ao sol (sso) é uma órbita quase polar (inclinação geralmente 96-99°) em altitude leo baixa a média (600-900 km) cujo plano orbital roda para leste exatamente na mesma velocidade com que a terra orbita o sol — 360°/ano, ou cerca de 0,9856°/dia. o efeito: o ângulo entre o plano orbital do satélite e o sol permanece constante o ano todo, então o satélite sempre cruza qualquer latitude no mesmo horário solar local. um satélite sentinel-2, por exemplo, cruza o equador no nó descendente às 10h30 em horário local todos os dias; isso é o que permite comparar uma imagem landsat de uma floresta de 2010 com uma de 2025 e saber que as condições de iluminação são similares. sun-synchronous + polar orbits — the earth-observation backbone"
+  },
+  {
+    "tab": "orbits",
+    "section": "synodic-period",
+    "title": "Período sinódico — por que as janelas de lançamento se abrem e fecham",
+    "intro": "Dois planetas em órbitas diferentes se alinham e desalinham em um ritmo próprio — o período sinódico — e esse ritmo determina quando a rota barata entre eles está aberta.",
+    "haystack": "período sinódico — por que as janelas de lançamento se abrem e fecham dois planetas em órbitas diferentes se alinham e desalinham em um ritmo próprio — o período sinódico — e esse ritmo determina quando a rota barata entre eles está aberta. o período sinódico s é determinado pelos dois períodos orbitais através de 1/s = |1/t₁ − 1/t₂|: a taxa em que o planeta mais rápido ultrapassará o mais lento. para a terra (365,25 d) e marte (687 d) isso dá ~780 dias; para a terra e vênus ~584 dias; para a terra e júpiter ~399 dias (júpiter é tão lento que o período sinódico é apenas um pouco mais longo que o ano da terra). quanto mais próximos os dois períodos orbitais estão um do outro, mais longo é o período sinódico — planetas próximos levam séculos para se ultrapassarem. synodic period — why launch windows open and close"
+  },
+  {
+    "tab": "orbits",
+    "section": "true-anomaly",
+    "title": "True Anomaly",
+    "intro": "O ângulo que indica onde na órbita um corpo está neste momento, medido a partir do periélio.",
+    "haystack": "true anomaly o ângulo que indica onde na órbita um corpo está neste momento, medido a partir do periélio. os elementos keplerianos descrevem a forma e orientação de uma órbita; a anomalia verdadeira (`ν`) indica onde o corpo está ao longo daquela órbita em um dado instante. posicione-se no foco (o sol, para um planeta), aponte para o periélio e gire seu dedo para acompanhar o corpo ao redor. o ângulo que você varre é a anomalia verdadeira. true anomaly"
+  },
+  {
+    "tab": "orbits",
+    "section": "vis-viva",
+    "title": "Equação Vis-Viva",
+    "intro": "Quão rápido um corpo está se movendo em qualquer ponto de sua órbita — dado apenas seu raio atual e o semieixo maior da órbita.",
+    "haystack": "equação vis-viva quão rápido um corpo está se movendo em qualquer ponto de sua órbita — dado apenas seu raio atual e o semieixo maior da órbita. vis-viva é a equação de trabalho da mecânica orbital. ela conecta três números — o parâmetro gravitacional `μ` do que quer que você esteja orbitando, sua distância atual `r` do foco, e o semieixo maior `a` da órbita — e fornece a velocidade `v`. só isso. sem integração temporal, sem cadeia de anomalia, apenas uma raiz quadrada e você sabe quão rápido está indo. vis-viva equation"
+  },
+  {
+    "tab": "planets",
+    "section": "active-spacecraft-survey",
+    "title": "Active Spacecraft Survey",
+    "intro": "O que está em cada planeta agora: de MRO em Marte a Juno em Júpiter, passando por Akatsuki em Vênus.",
+    "haystack": "active spacecraft survey o que está em cada planeta agora: de mro em marte a juno em júpiter, passando por akatsuki em vênus. marte — frota orbital em 2026: mro (nasa, desde 2006, órbita polar de 300 km, câmera hirise + observações atmosféricas + retransmissão de dados). maven (nasa, desde 2014, órbita de 6200 km, taxas de escape atmosférico). mars express (esa, desde 2003, 4200 km, mineralogia + atmosfera). exomars tgo (esa, desde 2016, 400 km, gases-traço + retransmissão russa). mangalyaan / mom (isro, 2014–2022, metano + atmosfera — primeira missão asiática a orbitar com sucesso marte). tianwen-1 (cnsa, desde 2021, 4250 km, entregou rover zhurong + mapeamento global). hope / emm (agência espacial dos eau, desde 2021, 30.000 km equatorial, ciência atmosférica). na superfície: rovers perseverance + curiosity (ambos da nasa) e o helicóptero ingenuity agora desativado. active spacecraft survey"
+  },
+  {
+    "tab": "planets",
+    "section": "asteroid-belt",
+    "title": "O Cinturão de Asteroides",
+    "intro": "Um planeta que quase foi — os remanescentes rochosos entre Marte e Júpiter que a gravidade de Júpiter não permitiu que se unissem.",
+    "haystack": "o cinturão de asteroides um planeta que quase foi — os remanescentes rochosos entre marte e júpiter que a gravidade de júpiter não permitiu que se unissem. o cinturão tem estrutura interna. a espectroscopia o divide em três zonas aproximadas: o cinturão interno (2,1–2,5 ua) dominado por corpos rochosos do tipo s; o cinturão médio (2,5–3,2 ua) onde os tipos c carbonáceos assumem o controle (ceres + hygiea vivem aqui); e o cinturão externo mesclando-se aos asteroides troianos que compartilham a órbita de júpiter nos pontos de lagrange l4 e l5. populações parentais diferentes, temperaturas de formação diferentes, histórias diferentes — preservadas no mesmo cinturão porque as ressonâncias de júpiter as aprisionaram. the asteroid belt"
+  },
+  {
+    "tab": "planets",
+    "section": "axial-tilt-and-seasons",
+    "title": "Inclinação Axial e Estações",
+    "intro": "Por que a Terra tem estações, por que Urano tombou de lado e por que Vênus gira ao contrário.",
+    "haystack": "inclinação axial e estações por que a terra tem estações, por que urano tombou de lado e por que vênus gira ao contrário. obliquidade = o ângulo entre o eixo de rotação de um planeta e a reta perpendicular ao plano orbital. valores: mercúrio 0,034°, vênus 177,36°, terra 23,44°, marte 25,19°, júpiter 3,13°, saturno 26,73°, urano 97,77°, netuno 28,32°, plutão 122,53°. os dois aglomerados — pequena inclinação dos gigantes de gás exceto urano, e corpos rochosos de 23-28° + saturno + netuno — provavelmente refletem histórias de formação diferentes. os 97° de urano são a assinatura canônica de \"impacto gigante\"; os 177° de vênus e os 122° de plutão ainda são ativamente debatidos. axial tilt and seasons"
+  },
+  {
+    "tab": "planets",
+    "section": "kuiper-belt",
+    "title": "O Cinturão de Kuiper",
+    "intro": "Um disco de corpos gelados além de Netuno — previsto em 1951, confirmado em 1992, e a fonte de todos os cometas de período curto que passam pela Terra.",
+    "haystack": "o cinturão de kuiper um disco de corpos gelados além de netuno — previsto em 1951, confirmado em 1992, e a fonte de todos os cometas de período curto que passam pela terra. estruturalmente o cinturão tem três populações. o cinturão de kuiper clássico a 42–48 au contém corpos em órbitas quase circulares e de baixa inclinação — o remanescente dinamicamente não perturbado do disco original, albion e quaoar vivem aqui. a população ressonante é mantida em ressonância média de movimento 2:3 com netuno (plutão é o arquétipo — para cada duas órbitas de plutão, netuno faz três); esses são chamados plutinos. então o disco espalhado é a extensão excêntrica e de alta inclinação externa onde eris e sedna vagueiam, com periélios perto de netuno e afélios centenas de au para fora. cada população é um fóssil de um capítulo diferente da história gravitacional primordial do sistema solar. the kuiper belt"
+  },
+  {
+    "tab": "planets",
+    "section": "lunar-ice",
+    "title": "Gelo lunar — água na escuridão permanente",
+    "intro": "Perto dos polos lunares, alguns pisos de crateras nunca receberam luz solar — e nesse frio perpétuo, gelo de água entregue por cometas e asteroides ao longo de bilhões de anos se acumulou e ficou retido.",
+    "haystack": "gelo lunar — água na escuridão permanente perto dos polos lunares, alguns pisos de crateras nunca receberam luz solar — e nesse frio perpétuo, gelo de água entregue por cometas e asteroides ao longo de bilhões de anos se acumulou e ficou retido. a inclinação axial da lua é de apenas aproximadamente 1,5 graus, bem menor que os 23,5 graus da terra. como resultado, a luz solar próxima aos polos chega quase horizontalmente, e os pisos das crateras polares profundas permanecem permanentemente na sombra. essas regiões permanentemente sombreadas (rps) encontram-se entre os lugares mais frios do sistema solar: as temperaturas medidas ficam abaixo de 100 k (−170°c), e alguns pontos próximos ao polo sul lunar chegam a aproximadamente 25 k. nessas temperaturas, o gelo de água é estável por bilhões de anos — simplesmente não sofre sublimação. lunar ice — water in the permanent dark"
+  },
+  {
+    "tab": "planets",
+    "section": "magnetic-fields",
+    "title": "Campos Magnéticos",
+    "intro": "A magnetosfera de cada planeta é diferente. A de Saturno está alinhada de forma única, a de Urano é caótica, Vênus e Marte não têm nenhuma.",
+    "haystack": "campos magnéticos a magnetosfera de cada planeta é diferente. a de saturno está alinhada de forma única, a de urano é caótica, vênus e marte não têm nenhuma. inclinação do eixo magnético (ângulo entre o dipolo e o eixo de rotação) para cada planeta com um dínamo conhecido: mercury 0,7°, earth 10,5°, jupiter 9,6°, saturn ~0°, uranus 58,6°, neptune 46,9°. venus, mars e pluto não possuem dipolo globalmente significativo hoje. os dipolos fortemente desalinhados de uranus e neptune também estão deslocados do centro do planeta — o de uranus em cerca de 1/3 do raio do planeta. o dínamo convencional (núcleo de ferro) não consegue produzir facilmente essa geometria; a explicação mais aceita é que uranus e neptune abrigam seus dínamos em uma camada externa do manto composta de água iônica + amônia + metano, e não em um núcleo profundo. magnetic fields"
+  },
+  {
+    "tab": "planets",
+    "section": "moons-of-the-system",
+    "title": "Luas do Sistema",
+    "intro": "A observação de cinco noites de Galileo em 1610 encerrou o geocentrismo. As luas do sistema continuam derrubando velhas suposições.",
+    "haystack": "luas do sistema a observação de cinco noites de galileo em 1610 encerrou o geocentrismo. as luas do sistema continuam derrubando velhas suposições. as quatro luas galilean de júpiter são mundos selvagemente diferentes. io: corpo vulcanicamente mais ativo do sistema solar, com erupções ativas visíveis de telescópios — impulsionado por aquecimento de maré dos outros. europa: crosta de gelo sobre um oceano de água global, uma prioridade máxima em astrobiologia. ganymede: maior lua do sistema solar, maior do que mercúrio, e a única lua com seu próprio campo magnético. callisto: a mais externa das galilean, superfície antiga e cratera, possivelmente também um oceano subsuperficial. todas as quatro descobertas em 1610 por galileo de um telhado em pádua. moons of the system"
+  },
+  {
+    "tab": "planets",
+    "section": "planetary-stats",
+    "title": "Dados Planetários",
+    "intro": "O quanto Júpiter é realmente diferente da Terra? Onze vezes o diâmetro. Duas vezes e meia a gravidade superficial.",
+    "haystack": "dados planetários o quanto júpiter é realmente diferente da terra? onze vezes o diâmetro. duas vezes e meia a gravidade superficial. diâmetros relativos à terra: mercúrio 0,38, vênus 0,95 (quase do tamanho da terra), terra 1,0, marte 0,53, júpiter 10,97, saturno 9,14, urano 3,98, netuno 3,86, plutão 0,19. gravidades superficiais em g terrestre: mercúrio 0,38, vênus 0,91, terra 1,00, marte 0,38, júpiter 2,53, saturno 1,07, urano 0,89, netuno 1,14, plutão 0,06. surpresas notáveis: marte e mercúrio compartilham a mesma gravidade superficial (0,38 g) apesar de tamanhos muito diferentes, porque o produto densidade × raio de cada um resulta em valores próximos. urano e saturno têm gravidade menor que a da terra apesar de seus tamanhos gigantescos — ambos são dominados por h/he, muito menos densos do que a terra rochosa. planetary stats"
+  },
+  {
+    "tab": "planets",
+    "section": "regolith",
+    "title": "Regolito — o pó dos mundos sem ar",
+    "intro": "O regolito é o manto frouxo de rocha fragmentada e pó de vidro que cobre a Lua, Mercúrio e a maioria dos asteroides — desgastado por bilhões de anos de bombardeio por micrometeoritos, sem vento ou água para arredondar suas arestas.",
+    "haystack": "regolito — o pó dos mundos sem ar o regolito é o manto frouxo de rocha fragmentada e pó de vidro que cobre a lua, mercúrio e a maioria dos asteroides — desgastado por bilhões de anos de bombardeio por micrometeoritos, sem vento ou água para arredondar suas arestas. na terra, os grãos de sedimento são arredondados e polidos pela água e vento ao longo do tempo. corpos sem ar não possuem nenhum desses agentes, portanto suas superfícies são abradidas puramente por impactadores — desde asteroides com vários quilômetros até grãos de poeira interplanetária chegando a dezenas de quilômetros por segundo. o resultado é uma camada de fragmentos angulares e vítreos chamada regolito, variando de pó fino a matacões do tamanho de casas. na lua essa camada vai de alguns metros de profundidade nas terras altas a dezenas de metros nos mares lunares. regolith — the dust of airless worlds"
+  },
+  {
+    "tab": "planets",
+    "section": "sub-solar-and-terminator",
+    "title": "Ponto Subsolar e Terminador",
+    "intro": "Onde é meio-dia em um planeta neste instante, e a linha que divide o dia da noite.",
+    "haystack": "ponto subsolar e terminador onde é meio-dia em um planeta neste instante, e a linha que divide o dia da noite. a localização instantânea do ponto subsolar é calculada a partir de três ângulos: a fase de rotação do planeta (qual longitude está de frente para o sol agora), sua inclinação axial (qual latitude sazonal o sol ilumina) e sua posição orbital (qual hemisfério está voltado para o sol). na terra, a latitude subsolar oscila entre +23,4° e −23,4° no ciclo que chamamos de estações. em marte, o ciclo é semelhante (inclinação de 25,19°), mas mais lento (ano de 687 dias) e mais excêntrico (a órbita de marte é mais elíptica, portanto suas estações têm durações desiguais). sub-solar point and terminator"
+  },
+  {
+    "tab": "planets",
+    "section": "tides",
+    "title": "Marés",
+    "intro": "A gravidade da Lua puxa os oceanos formando duas protuberâncias — uma abaixo dela, outra no lado oposto — então a maioria das costas tem duas marés altas por dia.",
+    "haystack": "marés a gravidade da lua puxa os oceanos formando duas protuberâncias — uma abaixo dela, outra no lado oposto — então a maioria das costas tem duas marés altas por dia. uma maré não é a lua levantando a água diretamente para cima — é a diferença no puxão da lua através da largura da terra. o lado próximo é puxado em direção à lua com mais força do que o centro do planeta, e o lado distante com menos força, então o envelope de água é esticado numa forma prolata, com duas protuberâncias alinhadas com a linha terra–lua. tides"
+  },
+  {
+    "tab": "porkchop",
+    "section": "contour-reading",
+    "title": "Lendo os Contornos",
+    "intro": "A forma da zona barata revela a geometria das trajetórias viáveis — e onde estão os trade-offs.",
+    "haystack": "lendo os contornos a forma da zona barata revela a geometria das trajetórias viáveis — e onde estão os trade-offs. olhe para um diagrama de mars. você verá um lobo de células azul-piscina aproximadamente oval centrado perto de um tof de 250 dias, recorrendo a cada 26 meses. esta é a oportunidade de hohmann. dentro do lobo, todas as combinações de (partida, tof) entregam missões viáveis para mars em ∆v aceitável. reading the contours"
+  },
+  {
+    "tab": "porkchop",
+    "section": "departure-axis",
+    "title": "Departure-Window Axis",
+    "intro": "Quando você lança — percorrendo o eixo X, tipicamente um período de quatro anos amostrado diariamente.",
+    "haystack": "departure-window axis quando você lança — percorrendo o eixo x, tipicamente um período de quatro anos amostrado diariamente. o eixo x informa quando você sai da terra. cada coluna de pixel é uma data de lançamento diferente — para os gráficos do orrery, amostrada com resolução de um dia durante aproximadamente quatro anos. por que um período de quatro anos? porque o período sinódico terra-marte é ~26 meses; quatro anos capturam aproximadamente duas janelas completas de marte. para vênus (~19 meses) ou júpiter (~13 meses) o mesmo período se encaixa mais janelas — a largura de quatro anos é calibrada para planejamento em classe de marte. departure-window axis"
+  },
+  {
+    "tab": "porkchop",
+    "section": "dv-heatmap",
+    "title": "∆v Heatmap",
+    "intro": "A escala de cores que transforma números de ∆v em uma imagem que você consegue ler rapidamente.",
+    "haystack": "∆v heatmap a escala de cores que transforma números de ∆v em uma imagem que você consegue ler rapidamente. azul-petróleo fresco fica em ∆v baixo (~3 km/s) — o mínimo do impulso de partida para um hohmann-like a marte (este é o ∆v de injeção trans-marte de leo, não o ∆v da missão total). azul em ~5 km/s. amarelo em torno de 7 km/s — o limiar do caro. laranja e vermelho acima de 9 km/s — células de custo desenfreado, onde você precisaria de um veículo de lançamento classe sls apenas para fazer a matemática funcionar. ∆v heatmap"
+  },
+  {
+    "tab": "porkchop",
+    "section": "tof-axis",
+    "title": "Eixo de Tempo de Voo",
+    "intro": "Quanto tempo a viagem leva — subindo pelo eixo Y, em dias para planetas internos e anos para os externos.",
+    "haystack": "eixo de tempo de voo quanto tempo a viagem leva — subindo pelo eixo y, em dias para planetas internos e anos para os externos. o eixo y é a duração do trânsito. para alvos classe-marte o trânsito de hohmann natural é ~250 dias, então a faixa y do orrery vai aproximadamente de 100 a 500 dias. para júpiter ou saturno o trânsito de hohmann é em anos, então o eixo é em anos. time-of-flight axis"
+  },
+  {
+    "tab": "porkchop",
+    "section": "viability",
+    "title": "Reading Viability",
+    "intro": "Uma célula é viável quando a capacidade ∆v do seu foguete ≥ o custo ∆v da célula — e o porkchop transforma essa comparação em um mapa sim/não.",
+    "haystack": "reading viability uma célula é viável quando a capacidade ∆v do seu foguete ≥ o custo ∆v da célula — e o porkchop transforma essa comparação em um mapa sim/não. escolha um veículo. falcon heavy, sls block 1, atlas v n22, o que for. esse veículo possui uma curva de desempenho c3-vs-massa-de-carga publicada — cargas mais pesadas reduzem o lobo alcançável; as mais leves o expandem. para uma dada massa de carga você pode ler o máximo c3 (ou ∆v de saída equivalente) que o veículo pode entregar, depois compare com o porkchop: toda célula onde ∆v_cost ≤ capacidade é uma oportunidade de lançamento viável. toda célula onde é maior é impossível sem um veículo diferente ou uma espaçonave mais leve. reading viability"
+  },
+  {
+    "tab": "porkchop",
+    "section": "what-is-a-porkchop",
+    "title": "O que é um Porkchop Plot?",
+    "intro": "Um mapa de calor 2D que mostra o custo de trajetória para cada (data de partida, tempo de trânsito) — ferramenta padrão para encontrar janelas de lançamento. (Porkchops contornam C3 e V∞ de chegada; Orrery usa escala de cores ∆v-em-km/s.)",
+    "haystack": "o que é um porkchop plot? um mapa de calor 2d que mostra o custo de trajetória para cada (data de partida, tempo de trânsito) — ferramenta padrão para encontrar janelas de lançamento. (porkchops contornam c3 e v∞ de chegada; orrery usa escala de cores ∆v-em-km/s.) escolha uma data de partida no eixo x. escolha um tempo de trânsito no eixo y. a cor dessa célula indica quanto δv custaria para voar essa missão. azul-petróleo: barato. amarelo: moderado. vermelho: muito caro. repita para cada pixel e você obtém um gráfico porkchop — nomeado pela forma como os contornos da zona barata formam um lobo em formato de costela. what is a porkchop plot?"
+  },
+  {
+    "tab": "propulsion",
+    "section": "antimatter-propulsion",
+    "title": "Antimatéria — o combustível perfeito que não conseguimos produzir",
+    "intro": "Matéria encontrando antimatéria se aniquila completamente, liberando energia incomparável — alguns miligramas poderiam, em princípio, impulsionar uma sonda interestelar, mas a humanidade produziu menos de um nanograma no total.",
+    "haystack": "antimatéria — o combustível perfeito que não conseguimos produzir matéria encontrando antimatéria se aniquila completamente, liberando energia incomparável — alguns miligramas poderiam, em princípio, impulsionar uma sonda interestelar, mas a humanidade produziu menos de um nanograma no total. o argumento energético é exato, não aproximado. quando um próton encontra um antipróton, ambos se convertem integralmente em píons, raios gama e partículas leves — e = mc² aplicado completamente, sem resíduo químico ou nuclear. a densidade energética é aproximadamente 10 bilhões de vezes maior que a do melhor propelente químico e cerca de 1.000 vezes a da fissão ou fusão. um motor de aniquilação matéria-antimatéria com um bico magnético para direcionar o escape de píons carregados poderia, em teoria, alcançar valores de impulso específico da ordem de milhões de segundos e acelerar uma espaçonave para uma fração significativa da velocidade da luz. antimatter — the perfect fuel we cannot make"
+  },
+  {
+    "tab": "propulsion",
+    "section": "c3",
+    "title": "C3 — Characteristic Energy",
+    "intro": "Quanta energia por unidade de massa um foguete precisa para deixar o poço gravitacional da Terra com velocidade residual — a métrica padrão de energia de lançamento.",
+    "haystack": "c3 — characteristic energy quanta energia por unidade de massa um foguete precisa para deixar o poço gravitacional da terra com velocidade residual — a métrica padrão de energia de lançamento. c3 é o quadrado da velocidade hiperbólica em excesso. unidades: km²/s². ele indica quanta energia além do escape seu veículo de lançamento tem que entregar. c3 = 0 significa que você mal escapa da gravidade da terra, chegando ao infinito com velocidade zero. c3 = 25 km²/s² significa que você chega com v∞ = 5 km/s de velocidade heliocêntrica residual. c3 — characteristic energy"
+  },
+  {
+    "tab": "propulsion",
+    "section": "dv-budget",
+    "title": "∆v como Orçamento de Missão",
+    "intro": "O único número que diz se uma missão é possível — mudança total de velocidade necessária, somada em cada queima.",
+    "haystack": "∆v como orçamento de missão o único número que diz se uma missão é possível — mudança total de velocidade necessária, somada em cada queima. ∆v (delta-v) é a moeda de contabilidade do voo espacial. cada queima de motor — sair da terra, sair de órbita, corrigir trajetória, desacelerar no destino — custa um pouco de mudança de velocidade. some tudo e você tem o orçamento ∆v da missão. ∆v as mission budget"
+  },
+  {
+    "tab": "propulsion",
+    "section": "engine-clustering",
+    "title": "Agrupamento de motores — os 5 do Saturn V vs. os 33 do Starship",
+    "intro": "Duas filosofias opostas para obter empuxo megatonelada: construir um motor gigante e usar poucos (F-1, RS-25), ou construir um médio e usar muitos (Merlin, Raptor). A segunda venceu.",
+    "haystack": "agrupamento de motores — os 5 do saturn v vs. os 33 do starship duas filosofias opostas para obter empuxo megatonelada: construir um motor gigante e usar poucos (f-1, rs-25), ou construir um médio e usar muitos (merlin, raptor). a segunda venceu. o primeiro estágio do saturn v agrupava cinco f-1. cada f-1 produzia 6,77 mn ao nível do mar — em sua época e por cinquenta anos depois, o maior motor líquido já voado. o arco de desenvolvimento foi longo e doloroso: a instabilidade de combustão quase matou o programa no início dos anos 1960; a rocketdyne acabou resolvendo isso ajustando a placa de injeção para interromper modos ressonantes. a aposta apollo: menos motores maiores significa menos pontos de falha em um burn de primeiro estágio de 165 s. a resposta soviética foi oposta: o primeiro estágio do n1 agrupava *trinta* nk-15. sem motor classe f-1 no inventário e com nk-15s pequenos e baratos de produzir, os soviéticos escolheram número sobre tamanho. os quatro voos n1 falharam — embora as falhas tenham sido tanto de tubulação e software do controlador kord quanto do cluster em si. engine clustering — saturn v's 5 vs starship's 33"
+  },
+  {
+    "tab": "propulsion",
+    "section": "engine-types",
+    "title": "Tipos de motor — químico, elétrico, nuclear",
+    "intro": "Existem três famílias de motores de foguete que já voaram: química (tudo que tira coisas da Terra), elétrica (tudo que faz cruzeiros longos no espaço profundo) e térmica nuclear (NERVA testada, nenhuma ainda operacional).",
+    "haystack": "tipos de motor — químico, elétrico, nuclear existem três famílias de motores de foguete que já voaram: química (tudo que tira coisas da terra), elétrica (tudo que faz cruzeiros longos no espaço profundo) e térmica nuclear (nerva testada, nenhuma ainda operacional). motores químicos são a única família com empuxo suficiente para levantar seu próprio peso contra a gravidade terrestre, então cada lançador na história foi químico. dividem-se em três subfamílias. motores sólidos são basicamente um tubo de aço preenchido com propelente de borracha moldado em torno de um núcleo oco — você acende uma ponta, queima em taxa controlada, e não pode desligá-lo. baratos, simples, confiáveis, mas sem regulagem de empuxo e sem desligamento: os srbs do space shuttle, impulsionadores do ariane 5 / ariane 6, impulsionadores do sls, estágios do pslv indiano, cada icbm e a maioria dos mísseis militares são sólidos. motores líquidos bipropelentes bombeiam um combustível e um oxidante separadamente para uma câmara de combustão — muito mais flexível (regulagem, reinicialização, desligamento profundo) mas mecanicamente intrincado: f-1 do saturn v, merlin do falcon 9, rs-25, vulcain, raptor, yf-100. motores híbridos (combustível sólido + oxidante líquido ou gasoso) são um terceiro caminho silencioso usado pelo spaceshiptwo e um punhado de foguetes de sondagem — eles trocam a complexidade do líquido pela falta de desligamento do sólido. engine types — chemical, electric, nuclear"
+  },
+  {
+    "tab": "propulsion",
+    "section": "expander-cycle",
+    "title": "Ciclo expansor — alimentado pelo calor, não pelo fogo",
+    "intro": "Deixe o combustível criogênico absorver calor do bocal do motor, virar gás e girar a turbobomba. Sem gerador de gás, sem pré-queimador — o calor residual do motor é a fonte de energia. Limpo e confiável, mas não escala.",
+    "haystack": "ciclo expansor — alimentado pelo calor, não pelo fogo deixe o combustível criogênico absorver calor do bocal do motor, virar gás e girar a turbobomba. sem gerador de gás, sem pré-queimador — o calor residual do motor é a fonte de energia. limpo e confiável, mas não escala. uma câmara e bocal de foguete são ferozmente quentes, e um motor criogênico já bombeia seu combustível congelado através de canais nas paredes da câmara para evitar que derrretam — resfriamento regenerativo. o ciclo expansor transforma esse trabalho de resfriamento na usina de potência do motor. hidrogênio líquido (ou metano) entra nos canais das paredes próximo ao bocal, absorve uma quantidade enorme de calor e se transforma em um gás quente e de alta pressão. esse gás é expandido através da turbina para impulsionar a turbobomba e só então é entregue à câmara principal para queimar. nenhum propelente é queimado apenas para alimentar as bombas, então o gás da turbina é inócuo, livre de fuligem e suave no equipamento — por isso motores expansores são famosamente confiáveis e reinicializáveis. expander cycle — powered by heat, not fire"
+  },
+  {
+    "tab": "propulsion",
+    "section": "fuels-and-oxidizers",
+    "title": "Combustíveis e oxidantes — kerolox, hidrolox, metalox, hipergólicos, sólidos",
+    "intro": "Cinco combinações de propelentes cobrem quase todo voo orbital já feito. Cada uma é um compromisso entre Isp, densidade, armazenamento, manuseio e o que dá para fabricar em Marte.",
+    "haystack": "combustíveis e oxidantes — kerolox, hidrolox, metalox, hipergólicos, sólidos cinco combinações de propelentes cobrem quase todo voo orbital já feito. cada uma é um compromisso entre isp, densidade, armazenamento, manuseio e o que dá para fabricar em marte. kerolox (querosene + oxigênio líquido) é o cavalo de tração do lançamento orbital. o querosene é uma qualidade estritamente especificada chamada rp-1 (rocket propellant 1) — querosene de aviação comum, refinado para tirar ceras + enxofre que coqueariam um motor, e despojado de alcenos que polimerizam sob calor. lox carregado subresfriado. a combinação dá isp moderado (~300 s nível do mar, ~340 vácuo), alta densidade (tanques pequenos), manuseio em solo limpo. primeiro estágio saturn v, falcon 9, atlas v, soyuz, long march 2/3/4, estágios superiores do pslv indiano são todos kerolox. desvantagem: fuligem — querosene queima sujo, coqueia o interior do motor e limita reutilização. merlin contorna mantendo pressões de câmara bem abaixo do sweet-spot de combustão em estágios. fuels and oxidisers — kerolox, hydrolox, methalox, hypergolics, solids"
+  },
+  {
+    "tab": "propulsion",
+    "section": "fusion-propulsion",
+    "title": "Fusion Propulsion — a estrela que ainda não podemos acender",
+    "intro": "Fusão de núcleos atômicos leves libera muito mais energia por quilograma que reações químicas, tornando-a o caminho mais crível para trânsito interestelar — se alguém construir um motor funcional.",
+    "haystack": "fusion propulsion — a estrela que ainda não podemos acender fusão de núcleos atômicos leves libera muito mais energia por quilograma que reações químicas, tornando-a o caminho mais crível para trânsito interestelar — se alguém construir um motor funcional. a física é direta. fusão de deutério e trítio (ou deutério e hélio-3) converte uma pequena fração de sua massa diretamente em energia. o rendimento por quilograma é cerca de dez milhões de vezes o do melhor propelente químico. traduzido em impulso específico, um motor de fusão pode alcançar dezenas de milhares a centenas de milhares de segundos — compare o melhor motor químico a 450 s e o melhor propulsor iônico a 9.000 s. essa diferença separa uma viagem interestelar de séculos de uma medida em décadas. fusion propulsion — the star we cannot yet light"
+  },
+  {
+    "tab": "propulsion",
+    "section": "gas-generator",
+    "title": "Ciclo de geração de gás — o cavalo de trabalho",
+    "intro": "Queime uma pequena fração do propelente em uma câmara lateral, use o gás quente para girar as bombas de turbina, depois jogue esse gás para fora. É simples, robusto e a forma mais utilizada de construir um motor foguete.",
+    "haystack": "ciclo de geração de gás — o cavalo de trabalho queime uma pequena fração do propelente em uma câmara lateral, use o gás quente para girar as bombas de turbina, depois jogue esse gás para fora. é simples, robusto e a forma mais utilizada de construir um motor foguete. todo motor alimentado por bomba enfrenta o mesmo problema: para forçar o propelente a uma câmara de combustão a centenas de atmosferas, você precisa de bombas de turbina, e para girar essas bombas precisa de uma fonte de energia. o ciclo de geração de gás resolve isso de forma direta. uma pequena porcentagem do combustível e oxidante são desviados e queimados em uma câmara separada pequena — o gerador de gás — produzindo um fluxo de gás quente que aciona uma turbina no eixo da bomba. como esse gás cumpriu sua função antes de chegar à câmara principal, ele é simplesmente descartado para fora, geralmente por um duto de exaustão separado ou alimentado na saia do bocal onde a pressão já é baixa. isso o torna um ciclo *aberto*: parte do propelente deixa o motor sem passar pela câmara de combustão principal. gas-generator cycle — the workhorse"
+  },
+  {
+    "tab": "propulsion",
+    "section": "ion-drive",
+    "title": "Motores Ion — o impulso lento que nunca para",
+    "intro": "Motores iônicos alcançam impulsos específicos 10–30 vezes superiores aos foguetes químicos ao acelerar gás ionizado eletricamente em vez de queimá-lo — ao custo de empuxo muito baixo, medido em milinewtons e não em meganewtons.",
+    "haystack": "motores ion — o impulso lento que nunca para motores iônicos alcançam impulsos específicos 10–30 vezes superiores aos foguetes químicos ao acelerar gás ionizado eletricamente em vez de queimá-lo — ao custo de empuxo muito baixo, medido em milinewtons e não em meganewtons. todos os motores de foguete trocam massa de propelente por velocidade. quanto mais rápido o escapamento sai do bocal, menos propelente você precisa para uma mudança de velocidade dada — que é o que o impulso específico (isp) mede. os motores químicos são limitados pela temperatura da chama: a combinação de propelente mais quente praticável, hidrogênio líquido e oxigênio, alcança cerca de 450 segundos de isp. motores iônicos contornam esse limite completamente. eles ionizam um propelente — tipicamente xenônio, escolhido por sua massa atômica pesada e inércia química — e aceleram os íons eletricamente ou magneticamente a velocidades de escapamento de 20–100 km/s, fornecendo valores de isp de aproximadamente 3.000 a 10.000 segundos. ion drives — the slow push that never stops"
+  },
+  {
+    "tab": "propulsion",
+    "section": "laser-sail",
+    "title": "Velas a Laser — impulsionando uma sonda com um feixe do lar",
+    "intro": "A propulsão por feixe inverte a lógica usual: em vez de carregar combustível, a espaçonave carrega apenas uma vela refletora, e toda a energia é fornecida por um laser ou arranjo de micro-ondas deixado na Terra ou em órbita.",
+    "haystack": "velas a laser — impulsionando uma sonda com um feixe do lar a propulsão por feixe inverte a lógica usual: em vez de carregar combustível, a espaçonave carrega apenas uma vela refletora, e toda a energia é fornecida por um laser ou arranjo de micro-ondas deixado na terra ou em órbita. a ideia central é a transferência de momento. a luz carrega momento, e quando reflete em uma superfície transfere o dobro desse momento à vela. um feixe suficientemente poderoso pode acelerar uma vela leve a alta velocidade sem que a espaçonave carregue nenhum propelente. a equação do foguete de tsiolkovsky — que penaliza cada grama de combustível que você deve primeiro levantar e depois acelerar — não se aplica; não há exaustão, não há tanque de combustível, não há problema de fração de massa. a conta de energia fica em casa. laser sails — pushing a probe with a beam from home"
+  },
+  {
+    "tab": "propulsion",
+    "section": "nuclear-thermal",
+    "title": "Nuclear-Thermal Rockets — calor, não chama",
+    "intro": "Um foguete nuclear térmico troca a câmara de combustão por um reator de fissão: hidrogênio aquece no núcleo além de qualquer chama química e expande por um bocal — cerca de duas vezes o impulso específico dos melhores motores químicos.",
+    "haystack": "nuclear-thermal rockets — calor, não chama um foguete nuclear térmico troca a câmara de combustão por um reator de fissão: hidrogênio aquece no núcleo além de qualquer chama química e expande por um bocal — cerca de duas vezes o impulso específico dos melhores motores químicos. motores de foguete químicos são limitados pela temperatura máxima que seus propelentes podem queimar. a reação hidrogênio-oxigênio atinge pico em torno de 3.500 k na câmara de combustão — já próximo ao ponto de fusão da maioria dos materiais — produzindo um impulso específico de aproximadamente 450 segundos no vácuo. um foguete nuclear térmico (ntr) não é limitado por uma reação química. hidrogênio líquido flui através de canais em um núcleo de reator nuclear sólido operando a 2.500–3.000 k, absorve calor e sai através de um bocal como um gás muito quente e muito leve. como o hidrogênio é o elemento mais leve, suas moléculas aquecidas se movem rapidamente e produzem alta velocidade de exaustão. o isp resultante é de 800–1.000 segundos — mais que o dobro do químico — enquanto o empuxo permanece na faixa de 50–250 kn, muito acima de qualquer sistema de propulsão elétrica. nuclear-thermal rockets — heat, not flame"
+  },
+  {
+    "tab": "propulsion",
+    "section": "oberth-effect",
+    "title": "Efeito Oberth",
+    "intro": "Queime combustível no fundo de um poço gravitacional e seu combustível faz mais trabalho — fisicamente o mesmo motor produz mais energia orbital quando está se movendo rápido.",
+    "haystack": "efeito oberth queime combustível no fundo de um poço gravitacional e seu combustível faz mais trabalho — fisicamente o mesmo motor produz mais energia orbital quando está se movendo rápido. a energia cinética de um corpo em movimento vai como `½ m v²`. um pequeno ∆v em alta velocidade produz uma mudança muito maior na energia cinética do que o mesmo ∆v em baixa velocidade. aplique isso a uma queima de foguete: faça a queima no periapsis (onde você está se movendo mais rápido) e o mesmo propelente produz mais ganho de energia orbital do que produziria no apoapsis. oberth effect"
+  },
+  {
+    "tab": "propulsion",
+    "section": "rocket-stages",
+    "title": "Estágios — por que nenhum foguete já voou em estágio único até a órbita",
+    "intro": "A equação de Tsiolkovsky torna single-stage-to-orbit possível apenas com massa seca impossivelmente leve. Todo lançador orbital da história soltou pelo menos um estágio. A maioria solta dois ou três.",
+    "haystack": "estágios — por que nenhum foguete já voou em estágio único até a órbita a equação de tsiolkovsky torna single-stage-to-orbit possível apenas com massa seca impossivelmente leve. todo lançador orbital da história soltou pelo menos um estágio. a maioria solta dois ou três. a razão de massa para órbita (~9,4 km/s de ∆v a partir de um sítio de lançamento costeiro) é aproximadamente 12-15 com os melhores motores químicos. isso significa que 92-93% de um hipotético veículo monoestágio para órbita (ssto) é propelente; a massa seca — tanques, motores, aviônica, carga útil, equipamento de recuperação — deve caber nos 7-8% restantes. ninguém nunca construiu um. o programa ssto x-33 / venturestar dos anos 1990 foi encerrado quando o tanque de hidrogênio composto falhou no teste de pressão. skylon (reino unido, baseado em sabre) ainda está em papel. starship é às vezes descrito como capaz de ssto, mas voa como um veículo de dois estágios por razões muito boas: descartar o acelerador economiza massa seca e permite que o estágio superior continue com aceleração muito maior alimentada por twr. o estágio é o truque que transforma a equação logarítmica do foguete de impossível para apenas difícil. stages — why no rocket has ever flown single-stage to orbit"
+  },
+  {
+    "tab": "propulsion",
+    "section": "solar-sail",
+    "title": "Velas solares — o único empuxo livre",
+    "intro": "Uma vela solar não carrega propelente: é impulsionada pelo momento de fótons, sendo o único sistema de propulsão com impulso específico efetivamente ilimitado — e o único que fica mais barato de operar quanto mais tempo voa.",
+    "haystack": "velas solares — o único empuxo livre uma vela solar não carrega propelente: é impulsionada pelo momento de fótons, sendo o único sistema de propulsão com impulso específico efetivamente ilimitado — e o único que fica mais barato de operar quanto mais tempo voa. a luz carrega momento. quando um fóton se reflete em um espelho, transfere o dobro de seu momento ao espelho — uma pressão chamada pressão de radiação. na vida cotidiana essa força é negligenciável, mas no espaço, onde não há resistência do ar, até uma força contínua minúscula se acumula em uma mudança real de velocidade. uma vela perfeitamente refletiva de 800 m² a 1 ua (distância da terra ao sol) recebe cerca de 5 milinewtons de força — o peso de uma pequena uva. isso é menos do que qualquer motor iônico produz, mas não requer propelente, nenhum sistema de energia além da manutenção básica, e nunca para enquanto o sol brilha. solar sails — the only free push"
+  },
+  {
+    "tab": "propulsion",
+    "section": "specific-impulse",
+    "title": "Impulso Específico (Isp)",
+    "intro": "Quão eficiente um motor é — quantos segundos um quilograma de propelente produz um quilograma de empuxo.",
+    "haystack": "impulso específico (isp) quão eficiente um motor é — quantos segundos um quilograma de propelente produz um quilograma de empuxo. o isp é o número de economia de combustível para foguetes. quanto maior, melhor. definição: dividir empuxo pela taxa de fluxo de massa de propelente, dividir por `g₀` (gravidade padrão), obter um número em segundos. queimar um quilograma de propelente por segundo, obter `isp × g₀` newtons de empuxo. specific impulse (isp)"
+  },
+  {
+    "tab": "propulsion",
+    "section": "staged-combustion",
+    "title": "Combustão em estágios — fechando o ciclo",
+    "intro": "Em vez de descartar o gás de acionamento da turbobomba, alimentá-lo na câmara principal e queimá-lo também. Nada é desperdiçado, então o motor funciona mais quente, em maior pressão e com melhor desempenho.",
+    "haystack": "combustão em estágios — fechando o ciclo em vez de descartar o gás de acionamento da turbobomba, alimentá-lo na câmara principal e queimá-lo também. nada é desperdiçado, então o motor funciona mais quente, em maior pressão e com melhor desempenho. a combustão em estágios leva a ideia do gerador de gás e fecha o ciclo. uma pré-câmara ainda queima propelente para acionar as turbobombas, mas seu escapamento — cheio de combustível ou oxidante não queimado — não é descartado. é roteado para a câmara de combustão principal e queimado uma segunda vez, para que cada grama de propelente produza impulso. fechar o ciclo oferece duas coisas de uma vez: impulso específico mais alto, porque nada é desperdiçado, e pressão de câmara muito mais alta, porque as bombas podem ser acionadas com mais força. pressão de câmara mais alta significa um motor menor e mais poderoso para o mesmo impulso. o preço é brutal — a turbina agora fica no fluxo completo de propelente em temperatura e pressão extremas. staged combustion — closing the cycle"
+  },
+  {
+    "tab": "propulsion",
+    "section": "throttling-and-gimbaling",
+    "title": "Estrangulamento e gimbaling — como foguetes dirigem e como pousam",
+    "intro": "Uma vez aceso um motor, restam duas entradas de controle: com quanta força empurra (estrangulamento) e para onde aponta (gimbal). Juntas dirigem a subida, gerenciam g tripulação e permitem pousos propulsivos.",
+    "haystack": "estrangulamento e gimbaling — como foguetes dirigem e como pousam uma vez aceso um motor, restam duas entradas de controle: com quanta força empurra (estrangulamento) e para onde aponta (gimbal). juntas dirigem a subida, gerenciam g tripulação e permitem pousos propulsivos. estrangular soa trivial — girar uma válvula — mas é uma das coisas mais difíceis que um motor-foguete faz. câmaras de combustão são afinadas em um ponto operacional preciso: pressão câmara, razão fluxo mássico, velocidade injetores. reduzir o fluxo deixa a combustão instável; a queima áspera começa a roer o motor em segundos. a maioria dos motores tem banda estreita: merlin 1d estrangula 40-100 %, raptor 2 estrangula 40-100 %, rs-25 estrangula 67-109 % mas é qualificado apenas a potência plena durante a ascensão. o f-1 não tinha estrangulamento — seu único controle era 'on'. boosters sólidos não estrangulam em fluxo algum; o perfil de queima é travado quando o grão é moldado. throttling and gimbaling — how rockets steer and how they hover"
+  },
+  {
+    "tab": "propulsion",
+    "section": "thrust-and-twr",
+    "title": "Empuxo e TWR — quanto empuxo por quilograma é realmente necessário",
+    "intro": "Um foguete tem que empurrar mais do que pesa, ou fica na plataforma. A razão chama-se TWR. Todo lançador operacional da história decolou em uma faixa estreita entre 1,2 e 1,5.",
+    "haystack": "empuxo e twr — quanto empuxo por quilograma é realmente necessário um foguete tem que empurrar mais do que pesa, ou fica na plataforma. a razão chama-se twr. todo lançador operacional da história decolou em uma faixa estreita entre 1,2 e 1,5. empuxo é força. unidade: newton (ou quilonewton / meganewton para qualquer coisa que voa). um merlin 1d produz 845 kn ao nível do mar. um único f-1 produzia 6770 kn. boosters sls produzem 16 000 kn cada. empuxo não é isp: empuxo diz com quanta *força* o motor empurra; isp diz com quanta *eficiência*. um motor de alto empuxo baixo isp (booster sólido) e um de baixo empuxo alto isp (motor iônico) podem ambos ser úteis — para tarefas diferentes em fases diferentes da missão. a equação é simples: empuxo = vazão mássica × velocidade de saída, mais um pequeno termo de pressão onde a pressão de saída difere do ambiente. por isso motores de combustão em estágios com alta pressão de câmara produzem mais empuxo por kg de massa motor — empurram mais propelente por segundo pela mesma garganta a maior velocidade. thrust and twr — how much push per kilogram you actually need"
+  },
+  {
+    "tab": "propulsion",
+    "section": "tsiolkovsky",
+    "title": "Tsiolkovsky Rocket Equation",
+    "intro": "Quanto de variação de velocidade você consegue com um motor e uma carga de propelente determinados — a equação que torna o voo espacial um problema logarítmico.",
+    "haystack": "tsiolkovsky rocket equation quanto de variação de velocidade você consegue com um motor e uma carga de propelente determinados — a equação que torna o voo espacial um problema logarítmico. konstantin tsiolkovsky derivou a equação do foguete em 1903, décadas antes de alguém construir um foguete que valesse a pena voar. o resultado tem a inevitabilidade da física: ∆v depende do `isp` do motor e da razão entre a massa inicial e a massa final — e é logarítmico nessa razão. tsiolkovsky rocket equation"
+  },
+  {
+    "tab": "propulsion",
+    "section": "v-infinity",
+    "title": "V∞ — Velocidade Hiperbólica Excedente",
+    "intro": "A velocidade que sobra depois de você escalar para fora do poço gravitacional de um planeta — o que define a energia de chegada de um sobrevoo.",
+    "haystack": "v∞ — velocidade hiperbólica excedente a velocidade que sobra depois de você escalar para fora do poço gravitacional de um planeta — o que define a energia de chegada de um sobrevoo. imagine uma assíntota, infinitamente longe do planeta. a velocidade com que você estaria se movendo nessa assíntota é v∞ — pronunciado 'vê-infinito'. é a velocidade relativa ao sol menos a contribuição do planeta para seu movimento. em um sobrevoo hiperbólico, v∞ é constante ao longo de ambos os braços da hipérbole. v∞ — hyperbolic excess velocity"
+  },
+  {
+    "tab": "scales-time",
+    "section": "au",
+    "title": "AU — Unidade Astronômica",
+    "intro": "Distância média da Terra ao Sol, fixada em exatamente 149.597.870.700 metros — a régua natural para distâncias no sistema solar.",
+    "haystack": "au — unidade astronômica distância média da terra ao sol, fixada em exatamente 149.597.870.700 metros — a régua natural para distâncias no sistema solar. até 2012, a au era definida pela órbita da terra. conforme a órbita da terra evolui lentamente sob perturbações planetárias, a au também estava tecnicamente mudando. a iau fixou-a em 2012 em um número inteiro preciso de metros — 149.597.870.700 — e a definição tem se mantido estável desde então. a au não é mais 'a órbita da terra'; é uma régua métrica que por acaso se iguala a ela aproximadamente. au — astronomical unit"
+  },
+  {
+    "tab": "scales-time",
+    "section": "ecliptic-plane",
+    "title": "O Plano da Eclíptica",
+    "intro": "O plano da órbita da Terra ao redor do Sol — usado como referência para quase todas as medições do sistema solar.",
+    "haystack": "o plano da eclíptica o plano da órbita da terra ao redor do sol — usado como referência para quase todas as medições do sistema solar. o sol, a terra e a lua traçam caminhos no espaço. a órbita da terra define um plano. observando da terra, o sol parece se mover ao longo deste plano contra o fundo das estrelas — esse caminho no céu é a eclíptica. a maioria dos outros corpos do sistema solar fica perto dela: os oito planetas estão todos a poucos graus de distância, o cinturão de asteroides agrupa-se perto dela, cometas estão espalhados. the ecliptic plane"
+  },
+  {
+    "tab": "scales-time",
+    "section": "frames",
+    "title": "Referenciais Heliocêntrico · Geocêntrico · Centrado no Corpo",
+    "intro": "Três referenciais para três perguntas diferentes: onde ele está em relação ao Sol, à Terra ou ao planeta que você está estudando?",
+    "haystack": "referenciais heliocêntrico · geocêntrico · centrado no corpo três referenciais para três perguntas diferentes: onde ele está em relação ao sol, à terra ou ao planeta que você está estudando? heliocêntrico: origem no sol, eixos alinhados com a eclíptica. o referencial natural para movimento no sistema solar. posições dos planetas, órbitas de transferência, cruzeiros de missões — tudo mais naturalmente descrito aqui. o `/explore` do orrery é fundamentalmente heliocêntrico. heliocentric · geocentric · body-centric frames"
+  },
+  {
+    "tab": "scales-time",
+    "section": "j2000",
+    "title": "Época J2000",
+    "intro": "12:00 TT (Terrestrial Time) em 1º de janeiro de 2000 — o momento de ancoragem universal que astrônomos usam para datar elementos orbitais.",
+    "haystack": "época j2000 12:00 tt (terrestrial time) em 1º de janeiro de 2000 — o momento de ancoragem universal que astrônomos usam para datar elementos orbitais. os elementos orbitais se desviam ao longo do tempo — perturbações de outros planetas empurram a excentricidade, as longitudes precessam, as inclinações oscilam. para tornar os elementos de um planeta significativos, você tem que dizer \"a partir de quando.\" a resposta padrão é j2000: meio-dia tt (terrestrial time) em 1º de janeiro de 2000. as órbitas são citadas naquele momento; a propagação para frente ou para trás usa modelos analíticos ou numéricos. j2000 epoch"
+  },
+  {
+    "tab": "scales-time",
+    "section": "light-minute",
+    "title": "Minuto-luz e Ano-luz",
+    "intro": "Distância medida pelo tempo que a luz leva para atravessá-la — a unidade mais útil para pensar sobre atrasos de comunicação e distâncias estelares.",
+    "haystack": "minuto-luz e ano-luz distância medida pelo tempo que a luz leva para atravessá-la — a unidade mais útil para pensar sobre atrasos de comunicação e distâncias estelares. a luz se move a cerca de 300 mil km/s. um segundo-luz são 300 mil km. um minuto-luz são 18 milhões de km. um ano-luz são 9,46 trilhões de km. são distâncias, não tempos — nomes confusos, mas úteis: 1 ua ≈ 8,3 minutos-luz, então 'marte está a 4–22 minutos-luz de distância dependendo da órbita' te diz a latência do comando em ida e volta em qualquer momento. light-minute and light-year"
+  },
+  {
+    "tab": "scales-time",
+    "section": "long-duration",
+    "title": "Voos Espaciais de Longa Duração",
+    "intro": "Depois de aproximadamente três meses, a microgravidade deixa de ser neutra e começa a prejudicar mensuravelmente o corpo humano.",
+    "haystack": "voos espaciais de longa duração depois de aproximadamente três meses, a microgravidade deixa de ser neutra e começa a prejudicar mensuravelmente o corpo humano. osso + músculo — astronautas perdem 1-2% de densidade mineral óssea por mês em ossos que suportam peso sem medidas de proteção (~0,5% com o advanced resistive exercise device + alendronato). as fibras musculares tipo i atrofiam mais rapidamente; exercício diário de 2 horas em esteira + cicloergômetro + ared preserva cerca de 90% da massa muscular pré-voo. long-duration spaceflight"
+  },
+  {
+    "tab": "scales-time",
+    "section": "sidereal-synodic",
+    "title": "Sidereal vs Synodic Period",
+    "intro": "Duas formas de perguntar 'com que frequência isso se repete?' — mesmo corpo, referencial diferente, resposta diferente.",
+    "haystack": "sidereal vs synodic period duas formas de perguntar 'com que frequência isso se repete?' — mesmo corpo, referencial diferente, resposta diferente. período sideral: tempo para uma órbita completa em relação às estrelas fixas. este é o período geométrico da terceira lei de kepler — o ano sideral de marte é 687 dias terrestres. período sinódico: tempo para um corpo retornar à mesma posição em relação a outro corpo, geralmente visto de um terceiro. o período sinódico de marte — tempo entre alinhamentos terra-marte — é 780 dias, ou cerca de 26 meses. sidereal vs synodic period"
+  },
+  {
+    "tab": "space-stations",
+    "section": "expedition-cadence",
+    "title": "Expedition Cadence",
+    "intro": "As estações funcionam em rotações de tripulação de 6 meses — um equilíbrio entre consumíveis de traje, vida útil de veículos, pipelines de treinamento e fisiologia humana.",
+    "haystack": "expedition cadence as estações funcionam em rotações de tripulação de 6 meses — um equilíbrio entre consumíveis de traje, vida útil de veículos, pipelines de treinamento e fisiologia humana. constrangimentos que impulsionam a cadência de ~6 meses: vida certificada de nave acoplada (~6–7 meses; soyuz ~200 d; crew dragon originalmente ~210 d, desde então estendido; shenzhou ~180–210 d), reabastecimento e limites de certificação de consumíveis de traje eva em órbita, capacidade da despensa de alimentos por reabastecimento, e a preferência do programa de pesquisa humana da nasa por brackets de dados de perda óssea de 6 meses. expedition cadence"
+  },
+  {
+    "tab": "space-stations",
+    "section": "node-module",
+    "title": "Módulo Nó",
+    "intro": "Um hub pressurizado com múltiplos portos de atracação — o conector estrutural que permite uma estação se ramificar.",
+    "haystack": "módulo nó um hub pressurizado com múltiplos portos de atracação — o conector estrutural que permite uma estação se ramificar. nós são módulos conectores — hubs presurizados com múltiplos portos common berthing mechanism (cbm) ou de atracação — que permitem uma estação se ramificar em uma topologia em árvore em vez de uma cadeia linear. node module"
+  },
+  {
+    "tab": "space-stations",
+    "section": "pressurized-volume",
+    "title": "Volume Habitável",
+    "intro": "O interior habitável total de uma estação — quanto espaço o tripulante realmente tem para viver e trabalhar.",
+    "haystack": "volume habitável o interior habitável total de uma estação — quanto espaço o tripulante realmente tem para viver e trabalhar. volume habitável é o interior utilizável cheio de ar de uma estação espacial, medido em metros cúbicos. ele exclui estruturas, anteparos e volume de equipamentos — a figura usualmente citada é volume interno bruto, do qual 30-50% é ocupado por hardware. habitable volume"
+  },
+  {
+    "tab": "space-stations",
+    "section": "solar-power-budget",
+    "title": "Solar Power Budget",
+    "intro": "Quanto de eletricidade os painéis solares geram — a restrição primária em todos os sistemas que a tripulação pode operar.",
+    "haystack": "solar power budget quanto de eletricidade os painéis solares geram — a restrição primária em todos os sistemas que a tripulação pode operar. orçamento de energia solar = potência gerada no pico × fator de trabalho (fração iluminada da órbita) × eficiência a jusante (perdas em bateria + regulador). para estações em leo o fator de trabalho é cerca de 0,6 — aproximadamente 35 minutos iluminados a cada órbita de 92 minutos. solar power budget"
+  },
+  {
+    "tab": "transfers",
+    "section": "conic-sections",
+    "title": "Seções Cônicas",
+    "intro": "Corte um cone de quatro maneiras e obtenha todas as trajetórias Keplerian possíveis — círculo, elipse, parábola, hipérbole.",
+    "haystack": "seções cônicas corte um cone de quatro maneiras e obtenha todas as trajetórias keplerian possíveis — círculo, elipse, parábola, hipérbole. pegue um cone infinito e corte-o com um plano. corte horizontalmente: um círculo (`e = 0`). incline o corte: uma elipse (`0 < e < 1`). incline paralelo à aresta do cone: uma parábola (`e = 1`, o caso exato de escape). incline além disso: uma hipérbole (`e > 1`, escape com energia de sobra). dois mil anos antes de kepler, apollonius de perga catalogou essas curvas. dois séculos antes de newton, kepler descobriu que os planetas voam ao longo delas. conic sections"
+  },
+  {
+    "tab": "transfers",
+    "section": "coplanar-trajectories",
+    "title": "Por que as trajetórias de missão parecem planas",
+    "intro": "O Sistema Solar é um disco e o propelente é finito — então as missões não saem do disco a menos que precisem.",
+    "haystack": "por que as trajetórias de missão parecem planas o sistema solar é um disco e o propelente é finito — então as missões não saem do disco a menos que precisem. o preço por sair do plano é brutal. mudar a inclinação de uma trajetória heliocêntrica em apenas 1° na velocidade orbital da terra (~30 km/s) custa cerca de 0,5 km/s de `∆v`. fazer a mudança de plano de 80° que a ulysses precisava — para voar sobre os polos solares — teria custado ~38 km/s se feita com empuxo químico. nenhum foguete real pode entregar isso. então os engenheiros não pagam por mudanças de plano; eles projetam ao redor delas. why mission trajectories look flat"
+  },
+  {
+    "tab": "transfers",
+    "section": "free-return",
+    "title": "Free-Return Trajectory",
+    "intro": "Uma trajetória que passa pelo destino e usa a gravidade para criar um retorno automático — sem queimada de motor necessária.",
+    "haystack": "free-return trajectory uma trajetória que passa pelo destino e usa a gravidade para criar um retorno automático — sem queimada de motor necessária. o truque principal: saia da terra, passe pela lua (ou marte), e deixe a gravidade daquele corpo dobrar sua trajetória de volta para a terra. se você acertou a geometria, você reentra na atmosfera terrestre no retorno. a tripulação nunca precisa acionar um motor para voltar para casa. free-return trajectory"
+  },
+  {
+    "tab": "transfers",
+    "section": "gravity-assist",
+    "title": "Assistência Gravitacional",
+    "intro": "Roube o momento orbital de um planeta em um sobrevoo — o que mais se aproxima de um almoço grátis no espaço.",
+    "haystack": "assistência gravitacional roube o momento orbital de um planeta em um sobrevoo — o que mais se aproxima de um almoço grátis no espaço. aproxime-se de um planeta em movimento por trás em uma trajetória hiperbólica. a gravidade do planeta curva seu caminho, você contorna rapidamente e sai com a mesma velocidade relativa ao planeta — mas o planeta estava se movendo o tempo todo, e você carrega esse movimento com você. resultado líquido: você sai com mais velocidade relativa ao sol do que chegou. o planeta, em troca, desacelera por uma quantidade imensamente pequena. gravity assist"
+  },
+  {
+    "tab": "transfers",
+    "section": "hohmann-transfer",
+    "title": "Transferência de Hohmann",
+    "intro": "A viagem de dois impulsos mais barata entre duas órbitas circulares coplanares — e o referencial que planejadores de missão usam para medir tudo mais.",
+    "haystack": "transferência de hohmann a viagem de dois impulsos mais barata entre duas órbitas circulares coplanares — e o referencial que planejadores de missão usam para medir tudo mais. imagine que você está em uma órbita circular ao redor do sol e deseja alcançar uma mais alta — digamos, terra-marte. a forma mais barata é uma transferência de hohmann: uma elipse cujo periélio toca tangencialmente sua órbita de partida e cujo apélio toca tangencialmente a órbita de destino. dois impulsos do motor o levarão lá. um no periélio para sair da órbita terrestre e ingressar na elipse. outro no apélio para circularizar-se na órbita de destino. hohmann transfer"
+  },
+  {
+    "tab": "transfers",
+    "section": "lambert-problem",
+    "title": "Problema de Lambert",
+    "intro": "Dadas duas posições e um tempo de trânsito, encontre a órbita que as conecta — o problema central de toda trajetória interplanetária.",
+    "haystack": "problema de lambert dadas duas posições e um tempo de trânsito, encontre a órbita que as conecta — o problema central de toda trajetória interplanetária. o problema de lambert pergunta: estou aqui, quero estar lá e tenho este tempo. que elipse devo voar? dois vetores de posição e um tempo de voo, e a equação produz a órbita de transferência única (ou duas — há um caminho longo e um caminho curto ao redor do corpo central). lambert's problem"
+  },
+  {
+    "tab": "transfers",
+    "section": "patched-conics",
+    "title": "Patched Conics",
+    "intro": "Finja que a gravidade é de um corpo por vez — a aproximação que transforma o insolúvel problema de três corpos em uma cadeia de problemas de Kepler de dois corpos que você realmente pode resolver.",
+    "haystack": "patched conics finja que a gravidade é de um corpo por vez — a aproximação que transforma o insolúvel problema de três corpos em uma cadeia de problemas de kepler de dois corpos que você realmente pode resolver. a gravidade real é bagunçada. uma espaçonave cruzando entre a terra e marte sente a gravidade da terra, a gravidade do sol, a gravidade de marte, mais todo o resto, tudo de uma vez. a matemática completa (o problema de n-corpos) não tem solução em forma fechada — apenas integração numérica. isso é lento, frágil, difícil de planejar. patched conics"
+  },
+  {
+    "tab": "transfers",
+    "section": "transfer-ellipse",
+    "title": "Transfer Ellipse",
+    "intro": "O arco Keplerian que transporta uma nave espacial de uma órbita a outra — Sol em um dos focos, assim como qualquer outra órbita.",
+    "haystack": "transfer ellipse o arco keplerian que transporta uma nave espacial de uma órbita a outra — sol em um dos focos, assim como qualquer outra órbita. uma vez que você sai da órbita da terra com a queima, você está em uma elipse ao redor do sol. essa elipse é a órbita de transferência, e ela tem todas as mesmas propriedades de qualquer outra: semieixo maior, excentricidade, periélio, afélio. o fato de você estar indo para algum lugar não muda a geometria — a gravidade não se importa com seu destino. transfer ellipse"
+  }
+]

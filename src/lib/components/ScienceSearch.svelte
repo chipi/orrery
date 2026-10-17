@@ -20,6 +20,7 @@
   import * as m from '$lib/paraglide/messages';
   import { base } from '$app/paths';
   import { trackSearchHit } from '$lib/analytics';
+  import { getLocale } from '$lib/paraglide/runtime';
 
   type IndexEntry = {
     tab: string;
@@ -62,12 +63,24 @@
 
   async function loadIndex(): Promise<void> {
     if (index !== null) return;
-    try {
-      const res = await fetch(`${base}/data/science-index.json`);
-      if (res.ok) index = (await res.json()) as IndexEntry[];
-      else index = [];
-    } catch {
-      index = [];
+    // The reader's language index (titles/intros in their language, English
+    // titles still searchable); English when that index can't be loaded.
+    const locale = getLocale();
+    const urls = [
+      ...(locale === 'en-US' ? [] : [`${base}/data/science-index.${locale}.json`]),
+      `${base}/data/science-index.json`,
+    ];
+    index = [];
+    for (const url of urls) {
+      try {
+        const res = await fetch(url);
+        if (res.ok) {
+          index = (await res.json()) as IndexEntry[];
+          break;
+        }
+      } catch {
+        // try the next one
+      }
     }
   }
 

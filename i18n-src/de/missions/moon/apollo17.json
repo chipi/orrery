@@ -1,9 +1,9 @@
 {
   "name": "Apollo 17",
-  "dispatch": "Apollo 17 war das Ende, obwohl fast niemand, der im Dezember 1972 zuschaute, daran glaubte, dass es so sein würde. Es war auch, verspätet, der Flug, der einen echten Wissenschaftler zum Mond brachte – den Geologen Harrison Schmitt, dessen Blick das orange Vulkanglas im Shorty Crater entdeckte, das umschrieb, woraus der Mond besteht. Cernan und Schmitt blieben drei Tage, fuhren zweiundzwanzig Meilen, und dann stieg Cernan zum letzten Mal die Leiter hinauf, von dem an niemand mehr dies tat, und sagte, dass sie gingen „wie wir kamen, und so Gott will, werden wir zurückkehren.\" Mehr als ein Jahrhundert später ist niemand dorthin zurückgekehrt – und jedes ernsthafte Argument für eine Rückkehr beginnt immer noch mit der Tatsache, dass wir es einmal konnten.",
+  "dispatch": "Apollo 17 war das Ende, obwohl fast niemand, der im Dezember 1972 zuschaute, daran glaubte, dass es so sein würde. Es war auch, verspätet, der Flug, der einen echten Wissenschaftler zum Mond brachte – den Geologen Harrison Schmitt, dessen Blick das orange Vulkanglas im Shorty-Krater entdeckte, das umschrieb, woraus der Mond besteht. Cernan und Schmitt blieben drei Tage, fuhren zweiundzwanzig Meilen, und dann stieg Cernan zum letzten Mal die Leiter hinauf, von dem an niemand mehr dies tat, und sagte, dass sie gingen „wie wir kamen, und so Gott will, werden wir zurückkehren.\" Mehr als ein Jahrhundert später ist niemand dorthin zurückgekehrt – und jedes ernsthafte Argument für eine Rückkehr beginnt immer noch mit der Tatsache, dass wir es einmal konnten.",
   "type": "LANDER MIT BESATZUNG · ROVER · GEFLOGEN",
   "first": "Letzte bemannte Mission zum Mond (und die einzige Apollo-Mission mit einem ausgebildeten Geologen)",
-  "description": "Das letzte Mal, dass Menschen eine andere Welt besuchten – vor mehr als einem halben Jahrhundert. Cernan und Schmitt verbrachten 75 Stunden auf der Oberfläche, fuhren mit dem LRV 35,7 km und brachten 110,5 kg Proben mit zurück. Schmitt war der einzige ausgebildete Wissenschaftler (Geologe), der je auf dem Mond gelaufen ist, und seine Erkenntnisse – besonders das orangefarbene Vulkanglas am Shorty Crater – veränderten die Mondgeologie grundlegend. Cernans letzte Worte, bevor er zum letzten Mal die Leiter hinaufkletterte: „Wir gehen, wie wir kamen, und so Gott will, werden wir zurückkehren.\" Artemis III soll dieses Versprechen einlösen.",
+  "description": "Das letzte Mal, dass Menschen eine andere Welt besuchten – vor mehr als einem halben Jahrhundert. Cernan und Schmitt verbrachten 75 Stunden auf der Oberfläche, fuhren mit dem LRV 35,7 km und brachten 110,5 kg Proben mit zurück. Schmitt war der einzige ausgebildete Wissenschaftler (Geologe), der je auf dem Mond gelaufen ist, und seine Erkenntnisse – besonders das orangefarbene Vulkanglas am Shorty-Krater – veränderten die Mondgeologie grundlegend. Cernans letzte Worte, bevor er zum letzten Mal die Leiter hinaufkletterte: „Wir gehen, wie wir kamen, und so Gott will, werden wir zurückkehren.\" Artemis III soll dieses Versprechen einlösen.",
   "events": [
     {
       "met": 0,
@@ -26,7 +26,7 @@
     {
       "met": 4,
       "label": "LANDUNG",
-      "note": "Die Mondlandefähre Challenger landet am 11.12.1972 um 19:54 UTC im Taurus-Littrow Valley.",
+      "note": "Die Mondlandefähre Challenger landet am 11.12.1972 um 19:54 UTC im Taurus-Littrow-Tal.",
       "type": "nominal"
     },
     {

@@ -4,7 +4,7 @@
   "the_land": [
     {
       "type": "prose",
-      "md": "Nel 1964 la parte facile era finita. Vostok aveva ottenuto i suoi primati, ma gli americani stavano costruendo Gemini — una capsula biposto che poteva effettivamente manovrare, effettuare rendezvous e aggancio — e una volta in volo, il vantaggio sovietico sarebbe evaporato. Nikita Khrushchev voleva altri titoli prima che accadesse, e fece pressione su Sergei Korolev perché li producesse. Non c'era nessuna nuova capsula sovietica pronta. Così il team di Korolev fece l'unica cosa che il calendario consentiva: presero la Vostok monoposto e la modificarono per fare cose per cui non era mai stata progettata."
+      "md": "Nel 1964 la parte facile era finita. Vostok aveva ottenuto i suoi primati, ma gli americani stavano costruendo Gemini — una capsula biposto che poteva effettivamente manovrare, effettuare rendezvous e aggancio — e una volta in volo, il vantaggio sovietico sarebbe evaporato. Nikita Chruščёv voleva altri titoli prima che accadesse, e fece pressione su Sergej Korolëv perché li producesse. Non c'era nessuna nuova capsula sovietica pronta. Così il team di Korolëv fece l'unica cosa che il calendario consentiva: presero la Vostok monoposto e la modificarono per fare cose per cui non era mai stata progettata."
     },
     {
       "type": "prose",
@@ -36,11 +36,11 @@
     },
     {
       "type": "prose",
-      "md": "Le scommesse andarono a buon fine, a malapena. Nell'ottobre 1964 Voskhod 1 trasportò il primo equipaggio di tre persone — in maniche di camicia, senza tute, senza sedili eiettabili — attorno alla Terra per un giorno e tornò a casa sani e salvi. Cinque mesi dopo Voskhod 2 fece la cosa più difficile: Alexei Leonov aprì un portello e galleggiò nel vuoto nella prima passeggiata spaziale della storia. Poi andò quasi tutto storto in ogni modo possibile. La tuta di Leonov si gonfiò così rigidamente nel vuoto che non riuscì a rientrare attraverso il portello stagno, e dovette far uscire la propria pressione dell'aria — rischiando l'embolia — per rientrare a fatica. Il sistema di rientro automatico si guastò; l'equipaggio lo pilotò manualmente e atterrò centinaia di chilometri fuori rotta, in una foresta siberiana profonda, dove trascorsero due notti gelide nella foresta profonda — con i lupi nella taiga intorno a loro — prima di uscire con gli sci verso un elicottero che non poteva atterrare tra gli alberi."
+      "md": "Le scommesse andarono a buon fine, a malapena. Nell'ottobre 1964 Voskhod 1 trasportò il primo equipaggio di tre persone — in maniche di camicia, senza tute, senza sedili eiettabili — attorno alla Terra per un giorno e tornò a casa sani e salvi. Cinque mesi dopo Voskhod 2 fece la cosa più difficile: Aleksej Leonov aprì un portello e galleggiò nel vuoto nella prima passeggiata spaziale della storia. Poi andò quasi tutto storto in ogni modo possibile. La tuta di Leonov si gonfiò così rigidamente nel vuoto che non riuscì a rientrare attraverso il portello stagno, e dovette far uscire la propria pressione dell'aria — rischiando l'embolia — per rientrare a fatica. Il sistema di rientro automatico si guastò; l'equipaggio lo pilotò manualmente e atterrò centinaia di chilometri fuori rotta, in una foresta siberiana profonda, dove trascorsero due notti gelide nella foresta profonda — con i lupi nella taiga intorno a loro — prima di uscire con gli sci verso un elicottero che non poteva atterrare tra gli alberi."
     },
     {
       "type": "prose",
-      "md": "Due voli, altri due primati e due rischi di disastro di cui il mondo non venne informato per decenni. Korolev vide quanto Voskhod 2 fosse arrivata vicino e cancellò il resto del programma. L'hardware era fuori margine, e non c'erano altri primati che valessero il rischio — la prossima vera capacità, come tutto ciò di cui Apollo avrebbe avuto bisogno, sarebbe dovuta venire da una capsula che non esisteva ancora."
+      "md": "Due voli, altri due primati e due rischi di disastro di cui il mondo non venne informato per decenni. Korolëv vide quanto Voskhod 2 fosse arrivata vicino e cancellò il resto del programma. L'hardware era fuori margine, e non c'erano altri primati che valessero il rischio — la prossima vera capacità, come tutto ciò di cui Apollo avrebbe avuto bisogno, sarebbe dovuta venire da una capsula che non esisteva ancora."
     }
   ],
   "narrative": [
@@ -63,7 +63,7 @@
       "image": {
         "reuse": "missions/voskhod-2/02"
       },
-      "caption": "La passeggiata spaziale di Alexei Leonov, marzo 1965 — il primo essere umano nello spazio aperto, e uno dei rischi di disastro più vicini che l'era abbia prodotto.",
+      "caption": "La passeggiata spaziale di Aleksej Leonov, marzo 1965 — il primo essere umano nello spazio aperto, e uno dei rischi di disastro più vicini che l'era abbia prodotto.",
       "align": "left"
     },
     {
@@ -82,7 +82,7 @@
     },
     {
       "type": "prose",
-      "md": "La seconda lezione è a cosa serve un espediente, e a cosa non serve. Voskhod fece esattamente una cosa bene — guadagnò tempo e altri due primati mentre la vera capsula di nuova generazione veniva costruita. Questo è un uso legittimo di hardware improvvisato. L'errore sarebbe stato continuare a farla volare, inseguendo titoli oltre il punto in cui il margine si esaurì — e a credito di Korolev, lesse correttamente la quasi-catastrofe e si fermò. Sapere quando un espediente ha fatto il suo lavoro è tanto importante quanto costruirne uno."
+      "md": "La seconda lezione è a cosa serve un espediente, e a cosa non serve. Voskhod fece esattamente una cosa bene — guadagnò tempo e altri due primati mentre la vera capsula di nuova generazione veniva costruita. Questo è un uso legittimo di hardware improvvisato. L'errore sarebbe stato continuare a farla volare, inseguendo titoli oltre il punto in cui il margine si esaurì — e a credito di Korolëv, lesse correttamente la quasi-catastrofe e si fermò. Sapere quando un espediente ha fatto il suo lavoro è tanto importante quanto costruirne uno."
     }
   ]
 }

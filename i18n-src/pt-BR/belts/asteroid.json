@@ -7,11 +7,11 @@
   "largest_members": [
     "Ceres — planeta anão, ≈ 940 km de diâmetro, contém cerca de um terço da massa total do cinturão",
     "Vesta — segundo corpo mais massivo, corpo diferenciado rochoso pobre em hidrogênio",
-    "Pallas — ≈ 510 km, órbita altamente inclinada",
-    "Hygiea — ≈ 430 km, carbonáceo escuro"
+    "Palas — ≈ 510 km, órbita altamente inclinada",
+    "Hígia — ≈ 430 km, carbonáceo escuro"
   ],
   "description": "Um anel de remanescentes rochosos e metálicos que nunca se fundiram em um planeta — a gravidade de Júpiter agitou o material do cinturão interno com força excessiva para que a acreção vencesse a fragmentação. A maioria dos objetos do cinturão são condritos basálticos ou carbonáceos; os corpos-mãe dos meteoritos que caem na Terra são quase todos rastreáveis aqui. O cinturão é dinamicamente vazio — a separação média entre membros é de milhões de quilômetros, não o denso campo de rochas do cinema.",
-  "discovered": "1801 — Giuseppe Piazzi descobre Ceres em Palermo, originalmente classificado como planeta; o reconhecimento de que Ceres era um entre muitos veio ao longo do meio século seguinte conforme Pallas, Juno e Vesta foram descobertos.",
+  "discovered": "1801 — Giuseppe Piazzi descobre Ceres em Palermo, originalmente classificado como planeta; o reconhecimento de que Ceres era um entre muitos veio ao longo do meio século seguinte conforme Palas, Juno e Vesta foram descobertos.",
   "mission_visits": [
     "Dawn — NASA, 2011 + 2015 (levantamentos orbitais de Vesta e depois Ceres)",
     "Galileo — NASA, 1991 (sobrevoo de Gaspra) + 1993 (descoberta de Ida + Dactyl)",
@@ -38,7 +38,7 @@
     {
       "tab": "orbits",
       "section": "inclination",
-      "why": "A maioria dos asteroides do cinturão permanece próxima à eclíptica (< 10° de inclinação), mas a família Pallas de alta inclinação a 33° lembra que o cinturão é um disco 3-D, não um anel 2-D."
+      "why": "A maioria dos asteroides do cinturão permanece próxima à eclíptica (< 10° de inclinação), mas a família Palas de alta inclinação a 33° lembra que o cinturão é um disco 3-D, não um anel 2-D."
     }
   ]
 }

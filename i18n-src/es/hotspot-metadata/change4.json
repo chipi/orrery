@@ -1,6 +1,6 @@
 {
   "hotspot_annotations": [],
-  "panorama_caption": "El primer panorama transmitido desde la cara oculta de la Luna. El cráter Von Kármán, dentro del South Pole–Aitken Basin. El rover Yutu-2 a media distancia; la sombra del módulo de aterrizaje abajo a la izquierda.",
+  "panorama_caption": "El primer panorama transmitido desde la cara oculta de la Luna. El cráter Von Kármán, dentro de la cuenca Polo Sur-Aitken. El rover Yutu-2 a media distancia; la sombra del módulo de aterrizaje abajo a la izquierda.",
   "compass_zero_direction": "eje +X de la cámara del módulo de aterrizaje",
   "panorama_annotations": [
     {
@@ -11,7 +11,7 @@
     {
       "id": "von-karman-rim",
       "label": "Borde del cráter Von Kármán",
-      "body": "Borde interior del cráter de 180 km dentro del South Pole–Aitken Basin, la estructura de impacto más grande y antigua de la Luna."
+      "body": "Borde interior del cráter de 180 km dentro de la cuenca Polo Sur-Aitken, la estructura de impacto más grande y antigua de la Luna."
     },
     {
       "id": "change4-shadow",

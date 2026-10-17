@@ -32,6 +32,14 @@ for (const loc of LOCS)
     const form = g.star?.[s.proper]?.[loc];
     if (!form) {
       (missing[loc] ??= []).push(s.proper);
+      // a name the glossary no longer gives (a Flamsteed number written by an earlier run)
+      // goes: the page falls back to the catalogue's proper name
+      const doc = JSON.parse(fs.readFileSync(f, 'utf8'));
+      if (doc.name !== undefined) {
+        delete doc.name;
+        if (!dry) fs.writeFileSync(f, JSON.stringify(doc, null, 2) + '\n');
+        n++;
+      }
       continue;
     }
     const doc = JSON.parse(fs.readFileSync(f, 'utf8'));

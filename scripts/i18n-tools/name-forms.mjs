@@ -100,8 +100,9 @@ const BAYER_LOC = {
 const LATIN_BAYER =
   /^(Alpha|Alfa|Beta|Gamma|Delta|Epsilon|Zeta|Eta|Theta|Iota|Kappa|Lambda|Mu|Nu|Xi|Omicron|Pi|Rho|Sigma|Tau|Upsilon|Phi|Chi|Psi|Omega) [A-Z]/;
 const isBayer = (loc, v) => (BAYER_LOC[loc] ?? LATIN_BAYER).test(v) || /^[α-ω] /.test(v);
+const isFlamsteed = (v) => /^\d+ [A-Z][a-z]+( [A-Z][a-z]+)?$/.test(v);
 const isCatalogue = (v) =>
-  /^(HD|HIP|HR|GJ|Gliese|BD|SAO|\d+ )\s?\S*\d/.test(v) || /\d+番星/.test(v);
+  isFlamsteed(v) || /^(HD|HIP|HR|GJ|Gliese|BD|SAO|\d+ )\s?\S*\d/.test(v) || /\d+番星/.test(v);
 const noParen = (s) => s.replace(/\s*[（(][^)）]*[)）]\s*$/, '').trim();
 const CYR = /[Ѐ-ӿ]/;
 const rows = [];
@@ -124,7 +125,8 @@ for (const [qid, it] of items) {
     if (it.kind === 'star') {
       // a star's name (label first, then aliases, then the title) and its Bayer
       // designation (title first, then aliases), written "name¦designation"
-      const ok = (v) => v && !(loc === 'sr-Cyrl' && !CYR.test(v));
+      // an alias can be a whole catalogue list in one string ("α Tauri, 87 Tauri, HD 29139, …")
+      const ok = (v) => v && !v.includes(', ') && !(loc === 'sr-Cyrl' && !CYR.test(v));
       const aliases = lls
         .split('|')
         .flatMap((l) => (e.aliases?.[l] ?? []).map((a) => a.value))

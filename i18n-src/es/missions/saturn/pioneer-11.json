@@ -3,7 +3,7 @@
   "type": "SOBREVUELO · COMPLETADA",
   "first": "Primera nave en sobrevolar Saturno (1979-09-01); demostró la asistencia gravitatoria que envió al Voyager 2 hacia adelante",
   "dispatch": "Pioneer 11 fue la segunda sonda exploradora, y llegó más lejos que su gemela. Tras su propio paso por Júpiter utilizó la gravedad del planeta para cruzar el sistema solar y alcanzar Saturno en 1979 —la primera nave espacial en hacerlo— atravesando deliberadamente el plano de los anillos para comprobar si la región era segura. Encontró la brecha que los Voyager atravesarían un año después. Gran parte de lo que hizo posible el Grand Tour fue esto: una sonda pequeña y económica enviada como avanzadilla para asumir los riesgos y mapear los peligros, de modo que los buques insignia que venían detrás pudieran volar con confianza en lugar de temor.",
-  "description": "Gemela de Pioneer 10, lanzada un año después. Pioneer 11 utilizó la gravedad de Júpiter para desviar su trayectoria hacia Saturno — la prueba canónica de la propulsión de asistencia gravitatoria, la técnica que posteriormente permitió la Gran Gira de Voyager. En Saturno descubrió el anillo F y una pequeña luna interior que posteriormente se resolvió en el par coorbital Janus/Epimetheus. Lleva la misma placa Pioneer que su gemela. Señal perdida el 1995-09-30 desde una distancia heliocéntrica de ~43 AU; la sonda se dirige ahora hacia la constelación Aquila.",
+  "description": "Gemela de Pioneer 10, lanzada un año después. Pioneer 11 utilizó la gravedad de Júpiter para desviar su trayectoria hacia Saturno — la prueba canónica de la propulsión de asistencia gravitatoria, la técnica que posteriormente permitió la Gran Gira de Voyager. En Saturno descubrió el anillo F y una pequeña luna interior que posteriormente se resolvió en el par coorbital Jano/Epimeteo. Lleva la misma placa Pioneer que su gemela. Señal perdida el 1995-09-30 desde una distancia heliocéntrica de ~43 AU; la sonda se dirige ahora hacia la constelación Aquila.",
   "events": [
     {
       "met": 0,
@@ -20,7 +20,7 @@
     {
       "met": 2339,
       "label": "MÁXIMA APROXIMACIÓN A SATURNO",
-      "note": "Primeras imágenes del planeta a corta distancia; descubrió el anillo F y una pequeña luna interior (posteriormente resuelta en el par coorbital Janus/Epimetheus).",
+      "note": "Primeras imágenes del planeta a corta distancia; descubrió el anillo F y una pequeña luna interior (posteriormente resuelta en el par coorbital Jano/Epimeteo).",
       "type": "nominal"
     }
   ]

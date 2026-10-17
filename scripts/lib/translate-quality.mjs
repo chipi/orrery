@@ -368,7 +368,9 @@ export function problems(locale, src, out) {
     return (
       codes.length > 0 &&
       codes.every((c) => out.includes(c)) &&
-      words.every((w) => /\d/.test(w) || GENERIC.test(w) || terms.some((t) => t.split(/\s+/).includes(w)))
+      words.every(
+        (w) => /\d/.test(w) || GENERIC.test(w) || terms.some((t) => t.split(/\s+/).includes(w)),
+      )
     );
   };
   const lost = names.filter((n) => !kept.some((k) => k.includes(n)) && !builtKept(n));

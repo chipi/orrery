@@ -1,0 +1,824 @@
+[
+  {
+    "rel": "belts/asteroid.json",
+    "at": "largest_members.2",
+    "old": "Pallas — ≈ 510 km, órbita altamente inclinada",
+    "new": "Palas — ≈ 510 km, órbita altamente inclinada"
+  },
+  {
+    "rel": "belts/asteroid.json",
+    "at": "largest_members.3",
+    "old": "Hygiea — ≈ 430 km, carbonáceo escuro",
+    "new": "Hígia — ≈ 430 km, carbonáceo escuro"
+  },
+  {
+    "rel": "belts/asteroid.json",
+    "at": "discovered",
+    "old": "1801 — Giuseppe Piazzi descobre Ceres em Palermo, originalmente classificado como planeta; o reconhecimento de que Ceres era um entre muitos veio ao longo do meio século seguinte conforme Pallas, Juno e Vesta foram descobertos.",
+    "new": "1801 — Giuseppe Piazzi descobre Ceres em Palermo, originalmente classificado como planeta; o reconhecimento de que Ceres era um entre muitos veio ao longo do meio século seguinte conforme Palas, Juno e Vesta foram descobertos."
+  },
+  {
+    "rel": "belts/asteroid.json",
+    "at": "science_sections.2.why",
+    "old": "A maioria dos asteroides do cinturão permanece próxima à eclíptica (< 10° de inclinação), mas a família Pallas de alta inclinação a 33° lembra que o cinturão é um disco 3-D, não um anel 2-D.",
+    "new": "A maioria dos asteroides do cinturão permanece próxima à eclíptica (< 10° de inclinação), mas a família Palas de alta inclinação a 33° lembra que o cinturão é um disco 3-D, não um anel 2-D."
+  },
+  {
+    "rel": "culture-doors/barnard-rocheworld.json",
+    "at": "blurb",
+    "old": "Barnard's Star é um elemento recorrente na ficção e engenharia interestelar. Rocheworld de Robert L. Forward envia uma missão tripulada para lá, e o 'Project Daedalus' da British Interplanetary Society nos anos 1970 a escolheu como alvo para um estudo de design real de nave estelar não tripulada — décadas antes de Barnard b ser finalmente confirmado em 2024.",
+    "new": "A Estrela de Barnard é um elemento recorrente na ficção e engenharia interestelar. Rocheworld de Robert L. Forward envia uma missão tripulada para lá, e o 'Project Daedalus' da British Interplanetary Society nos anos 1970 a escolheu como alvo para um estudo de design real de nave estelar não tripulada — décadas antes de Barnard b ser finalmente confirmado em 2024."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/voskhod.json",
+    "at": "description",
+    "old": "Um Vostok modificado adaptado para transportar até três cosmonautas. Dois voos tripulados — Voskhod 1 (primeira tripulação múltipla) e Voskhod 2 (primeira caminhada espacial de Alexei Leonov em 1965). Empurrou para além da margem de design e foi aposentado a favor da Soyuz.",
+    "new": "Um Vostok modificado adaptado para transportar até três cosmonautas. Dois voos tripulados — Voskhod 1 (primeira tripulação múltipla) e Voskhod 2 (primeira caminhada espacial de Aleksei Leonov em 1965). Empurrou para além da margem de design e foi aposentado a favor da Soyuz."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/vostok.json",
+    "at": "description",
+    "old": "O módulo de descida esférica que devolveu Yuri Gagarin da órbita em 1961-04-12 — o primeiro voo espacial humano. Seis voos tripulados entre 1961 e 1963, incluindo a missão orbital de Valentina Tereshkova como primeira mulher no espaço.",
+    "new": "O módulo de descida esférica que devolveu Iuri Gagarin da órbita em 1961-04-12 — o primeiro voo espacial humano. Seis voos tripulados entre 1961 e 1963, incluindo a missão orbital de Valentina Tereshkova como primeira mulher no espaço."
+  },
+  {
+    "rel": "fleet/launch-site/baikonur-1-5.json",
+    "at": "description",
+    "old": "A plataforma de lançamento orbital mais historicamente significativa do mundo. Banco de testes do míssel balístico intercontinental R-7 desde 1957; imediatamente reutilizado para o Sputnik 1 em 4 de outubro de 1957 — o início da Era Espacial. Yuri Gagarin decolou daqui em 12 de abril de 1961. Todas as missões tripuladas Vostok, todas as Voskhod, a maioria dos manifestes Soyuz até MS-15 em setembro de 2019. Quinhentos e quarenta lançamentos de uma única plataforma ao longo de sessenta e dois anos. Preservado como monumento-museu; o plano de modernização da era 2019 foi abandonado quando o sítio foi transferido para o Cazaquistão em 2025.",
+    "new": "A plataforma de lançamento orbital mais historicamente significativa do mundo. Banco de testes do míssel balístico intercontinental R-7 desde 1957; imediatamente reutilizado para o Sputnik 1 em 4 de outubro de 1957 — o início da Era Espacial. Iuri Gagarin decolou daqui em 12 de abril de 1961. Todas as missões tripuladas Vostok, todas as Voskhod, a maioria dos manifestes Soyuz até MS-15 em setembro de 2019. Quinhentos e quarenta lançamentos de uma única plataforma ao longo de sessenta e dois anos. Preservado como monumento-museu; o plano de modernização da era 2019 foi abandonado quando o sítio foi transferido para o Cazaquistão em 2025."
+  },
+  {
+    "rel": "fleet/launch-site/gagarins-start.json",
+    "at": "dispatch",
+    "old": "O Complexo de Lançamento 1 em Baikonur é, por uma margem considerável, o pedaço de terra mais consequente na história da astronáutica. Deste único pad a União Soviética lançou o Sputnik em 1957, abrindo a era espacial; Gagarin em 1961, abrindo-a para seres humanos; e então, pelos próximos sessenta anos, quase todos os voos tripulados que o programa realizou, até as tripulações do Soyuz de 2019. Os cosmonautas o apelidaram de Gagarin's Start. Era um posto de lançamento de míssil R-7 em operação que entrou para a história, e por seis décadas a frase \"uma tripulação lançada hoje\" quase sempre significava que ela havia sido lançada daqui.",
+    "new": "O Complexo de Lançamento 1 em Baikonur é, por uma margem considerável, o pedaço de terra mais consequente na história da astronáutica. Deste único pad a União Soviética lançou o Sputnik em 1957, abrindo a era espacial; Gagarin em 1961, abrindo-a para seres humanos; e então, pelos próximos sessenta anos, quase todos os voos tripulados que o programa realizou, até as tripulações do Soyuz de 2019. Os cosmonautas o apelidaram de Plataforma Gagarin. Era um posto de lançamento de míssil R-7 em operação que entrou para a história, e por seis décadas a frase \"uma tripulação lançada hoje\" quase sempre significava que ela havia sido lançada daqui."
+  },
+  {
+    "rel": "fleet/launch-site/gagarins-start.json",
+    "at": "description",
+    "old": "O Sítio 1 do Cosmódromo de Baikonur (designação 5 nos documentos soviéticos; apelidado de \"Gagarin's Start\" após o Vostok 1) foi o pad de lançamento original do ICBM R-7 e o local de lançamento tripulado mais utilizado na história. Primeiro lançamento 1957-05-15 (teste de R-7); Sputnik 1 (1957-10-04 — primeiro satélite artificial); Vostok 1 (1961-04-12 — primeiro voo espacial tripulado); todos os Soyuz tripulados de Soyuz 1 (1967) até Soyuz MS-15 (2019) foram lançados do Sítio 1. Após 2019 o pad foi desativado para uma atualização para suportar o Soyuz-2 (o Soyuz-FG derivado do Vostok foi aposentado); as tripulações subsequentes da ISS (a partir do Soyuz MS-16 em abril de 2020) foram lançadas do Sítio 31 de Baikonur. O Sítio 1 é preservado como um monumento histórico. Visitado por todas as tripulações russas durante cerimônias de pré-voo.",
+    "new": "O Sítio 1 do Cosmódromo de Baikonur (designação 5 nos documentos soviéticos; apelidado de \"Plataforma Gagarin\" após o Vostok 1) foi o pad de lançamento original do ICBM R-7 e o local de lançamento tripulado mais utilizado na história. Primeiro lançamento 1957-05-15 (teste de R-7); Sputnik 1 (1957-10-04 — primeiro satélite artificial); Vostok 1 (1961-04-12 — primeiro voo espacial tripulado); todos os Soyuz tripulados de Soyuz 1 (1967) até Soyuz MS-15 (2019) foram lançados do Sítio 1. Após 2019 o pad foi desativado para uma atualização para suportar o Soyuz-2 (o Soyuz-FG derivado do Vostok foi aposentado); as tripulações subsequentes da ISS (a partir do Soyuz MS-16 em abril de 2020) foram lançadas do Sítio 31 de Baikonur. O Sítio 1 é preservado como um monumento histórico. Visitado por todas as tripulações russas durante cerimônias de pré-voo."
+  },
+  {
+    "rel": "fleet/launcher/r-7-vostok.json",
+    "at": "description",
+    "old": "O lançador que colocou Sputnik em órbita em 1957 e Yuri Gagarin no espaço em 1961. Um ancestral direto de cada foguete Soyuz voou desde então — a linhagem de produção mais longa em vôos espaciais, com milhares de voos em seis décadas.",
+    "new": "O lançador que colocou Sputnik em órbita em 1957 e Iuri Gagarin no espaço em 1961. Um ancestral direto de cada foguete Soyuz voou desde então — a linhagem de produção mais longa em vôos espaciais, com milhares de voos em seis décadas."
+  },
+  {
+    "rel": "fleet/orbiter/mariner-9.json",
+    "at": "description",
+    "old": "A primeira nave espacial a orbitar outro planeta (Marte, novembro de 1971). Mapeou 100% da superfície marciana — incluindo a tempestade de poeira global que escondeu tudo durante o primeiro mês e o primeiro close-up de Olympus Mons.",
+    "new": "A primeira nave espacial a orbitar outro planeta (Marte, novembro de 1971). Mapeou 100% da superfície marciana — incluindo a tempestade de poeira global que escondeu tudo durante o primeiro mês e o primeiro close-up do Monte Olimpo."
+  },
+  {
+    "rel": "fleet/orbiter/osiris-rex.json",
+    "at": "tagline",
+    "old": "Bennu (2023); agora a caminho de Apophis",
+    "new": "Bennu (2023); agora a caminho de Apófis"
+  },
+  {
+    "rel": "fleet/orbiter/osiris-rex.json",
+    "at": "description",
+    "old": "A missão de devolução de amostras de asteróides da NASA. Aproximou-se do asteróide Bennu em 2018, capturou uma amostra com seu braço TAGSAM em 2020, e devolveu a cápsula de amostra para Utah em setembro de 2023. Agora redesenhou OSIRIS-APEX, a caminho do asteróide Apophis para o seu voo 2029 próximo da Terra.",
+    "new": "A missão de devolução de amostras de asteróides da NASA. Aproximou-se do asteróide Bennu em 2018, capturou uma amostra com seu braço TAGSAM em 2020, e devolveu a cápsula de amostra para Utah em setembro de 2023. Agora redesenhou OSIRIS-APEX, a caminho do asteróide Apófis para o seu voo 2029 próximo da Terra."
+  },
+  {
+    "rel": "fleet/orbiter/osiris-rex.json",
+    "at": "best_known_for",
+    "old": "Bennu (2023); agora a caminho de Apophis",
+    "new": "Bennu (2023); agora a caminho de Apófis"
+  },
+  {
+    "rel": "fleet/station/salyut-2.json",
+    "at": "description",
+    "old": "A primeira das três estações espaciais militares soviéticas Almaz — chamada publicamente de Salyut 2 para disfarçar seu verdadeiro propósito (reconhecimento ao estilo DoD, com uma câmera panorâmica de comprimento focal de 6,4 m e uma cápsula de retorno de filme). Lançada em 1973-04-03 em um Proton-K de Baikonur, Salyut 2 alcançou a órbita com sucesso, mas detritos do terceiro estágio esgotado do Proton — que explodiu três dias após o lançamento — atingiram a estação ~10 dias depois, arrancando ambos os painéis solares e furando o casco. A perda de potência resultante causou despressurização no 13º dia (1973-04-14), tornando a estação inutilizável antes que qualquer tripulação pudesse ser enviada. A tripulação planejada (Pavel Popovich + Yury Artyukhin) voou em Salyut 3 no ano seguinte. Salyut 2 reentrante na atmosfera em 1973-05-28 — o programa de estação de vida mais curta da história até esse ponto. Sua existência como estação militar foi desclassificada apenas após o colapso da União Soviética.",
+    "new": "A primeira das três estações espaciais militares soviéticas Almaz — chamada publicamente de Salyut 2 para disfarçar seu verdadeiro propósito (reconhecimento ao estilo DoD, com uma câmera panorâmica de comprimento focal de 6,4 m e uma cápsula de retorno de filme). Lançada em 1973-04-03 em um Proton-K de Baikonur, Salyut 2 alcançou a órbita com sucesso, mas detritos do terceiro estágio esgotado do Proton — que explodiu três dias após o lançamento — atingiram a estação ~10 dias depois, arrancando ambos os painéis solares e furando o casco. A perda de potência resultante causou despressurização no 13º dia (1973-04-14), tornando a estação inutilizável antes que qualquer tripulação pudesse ser enviada. A tripulação planejada (Pavel Popovich + Yuri Artyukhin) voou em Salyut 3 no ano seguinte. Salyut 2 reentrante na atmosfera em 1973-05-28 — o programa de estação de vida mais curta da história até esse ponto. Sua existência como estação militar foi desclassificada apenas após o colapso da União Soviética."
+  },
+  {
+    "rel": "hotspot-metadata/baikonur-1-5.json",
+    "at": "panorama_caption",
+    "old": "Gagarin's Start (Site 1/5) antes do transporte da Soyuz TMA-13 — um recorte em faixa de resolução muito baixa.",
+    "new": "Plataforma Gagarin (Site 1/5) antes do transporte da Soyuz TMA-13 — um recorte em faixa de resolução muito baixa."
+  },
+  {
+    "rel": "hotspot-metadata/change4.json",
+    "at": "panorama_caption",
+    "old": "O primeiro panorama já transmitido do lado oculto da Lua. A cratera Von Kármán, dentro do South Pole–Aitken Basin. O rover Yutu-2 a meia distância; a sombra do módulo de pouso no canto inferior esquerdo.",
+    "new": "O primeiro panorama já transmitido do lado oculto da Lua. A cratera Von Kármán, dentro da bacia do Polo Sul-Aitken. O rover Yutu-2 a meia distância; a sombra do módulo de pouso no canto inferior esquerdo."
+  },
+  {
+    "rel": "hotspot-metadata/change4.json",
+    "at": "panorama_annotations.1.body",
+    "old": "Borda interna da cratera de 180 km dentro do South Pole–Aitken Basin — a maior e mais antiga estrutura de impacto da Lua.",
+    "new": "Borda interna da cratera de 180 km dentro da bacia do Polo Sul-Aitken — a maior e mais antiga estrutura de impacto da Lua."
+  },
+  {
+    "rel": "hotspot-metadata/curiosity.json",
+    "at": "panorama_annotations.0.body",
+    "old": "Antigo canal escavado pela água que desce as encostas do Mt. Sharp. Aqui o Curiosity perfurou a amostra Mammoth Lakes — os primeiros cristais de enxofre puro já encontrados em Marte.",
+    "new": "Antigo canal escavado pela água que desce as encostas do Monte Sharp. Aqui o Curiosity perfurou a amostra Mammoth Lakes — os primeiros cristais de enxofre puro já encontrados em Marte."
+  },
+  {
+    "rel": "hotspot-metadata/curiosity.json",
+    "at": "panorama_annotations.2.label",
+    "old": "Encosta inferior do Mt. Sharp",
+    "new": "Encosta inferior do Monte Sharp"
+  },
+  {
+    "rel": "hotspot-metadata/spirit.json",
+    "at": "panorama_caption",
+    "old": "A vista do Spirit do topo de Husband Hill — o primeiro cume marciano alcançado por um rover. Olhando para o sul, sobre o Inner Basin da cratera Gusev, rumo às Columbia Hills.",
+    "new": "A vista do Spirit do topo da colina Husband — o primeiro cume marciano alcançado por um rover. Olhando para o sul, sobre o Inner Basin da cratera Gusev, rumo às Colinas Columbia."
+  },
+  {
+    "rel": "mars-sites/mariner9.json",
+    "at": "fact",
+    "old": "Primeira sonda a orbitar outro planeta. Chegou a Marte durante uma tempestade de poeira planetária e aguardou até a atmosfera se dissipar. Retornou 7.329 imagens cobrindo 85% da superfície marciana — o primeiro mosaico global de qualquer planeta além da Terra. Descobriu Olympus Mons, Valles Marineris e o terreno estratificado polar.",
+    "new": "Primeira sonda a orbitar outro planeta. Chegou a Marte durante uma tempestade de poeira planetária e aguardou até a atmosfera se dissipar. Retornou 7.329 imagens cobrindo 85% da superfície marciana — o primeiro mosaico global de qualquer planeta além da Terra. Descobriu o Monte Olimpo, Valles Marineris e o terreno estratificado polar."
+  },
+  {
+    "rel": "mars-traverses/curiosity.json",
+    "at": "stops.3.label",
+    "old": "Vera Rubin Ridge",
+    "new": "cume Vera Rubin"
+  },
+  {
+    "rel": "mars-traverses/opportunity.json",
+    "at": "stops.0.label",
+    "old": "Endurance Crater",
+    "new": "cratera Endurance"
+  },
+  {
+    "rel": "mars-traverses/opportunity.json",
+    "at": "stops.1.label",
+    "old": "Erebus Crater",
+    "new": "cratera Erebus"
+  },
+  {
+    "rel": "mars-traverses/opportunity.json",
+    "at": "stops.2.label",
+    "old": "Victoria Crater",
+    "new": "cratera Victoria"
+  },
+  {
+    "rel": "mars-traverses/opportunity.json",
+    "at": "stops.3.label",
+    "old": "Chegada à borda da Endeavour Crater",
+    "new": "Chegada à borda da cratera Endeavour"
+  },
+  {
+    "rel": "mars-traverses/spirit.json",
+    "at": "stops.0.label",
+    "old": "Borda da Bonneville Crater",
+    "new": "Borda da cratera Bonneville"
+  },
+  {
+    "rel": "mars-traverses/spirit.json",
+    "at": "stops.1.label",
+    "old": "Base de Husband Hill",
+    "new": "Base da colina Husband"
+  },
+  {
+    "rel": "mars-traverses/spirit.json",
+    "at": "stops.2.label",
+    "old": "Cume de Husband Hill",
+    "new": "Cume da colina Husband"
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "description",
+    "old": "OSIRIS-REx realizou uma das operações de proximidade com asteroide mais precisas jamais tentadas. Lançado em 2016-09-08 de Cabo Canaveral em um Atlas V 411, utilizou uma assistência gravitacional terrestre em 2017 para rotacionar seu plano orbital até a inclinação de 6° de Bennu, e realizou o encontro com o asteroide carbonáceo próximo à Terra 2018-12-03, com 492 m de diâmetro. Após manutenção de estação a ~19 km, posteriormente entrou em uma órbita recorde de ~1,4 km — a órbita de espaçonave mais próxima jamais alcançada ao redor de qualquer corpo celeste. Passou dois anos mapeando a superfície repleta de boulders de Bennu e descobrindo ejeções ativas de partículas. Em 2020-10-20, o braço amostrador Touch-and-Go desceu até o sítio Nightingale, disparou gás N₂ na superfície e capturou uma pluma — penetrando 50 cm em uma superfície de \"fluido de pilha de entulho\". A Cápsula de Retorno de Amostra entregou 121,6 g de material de Bennu em Utah em 2023-09-24. A espaçonave em si foi imediatamente redesignada OSIRIS-APEX, em rota para um encontro com Apophis em 2029.",
+    "new": "OSIRIS-REx realizou uma das operações de proximidade com asteroide mais precisas jamais tentadas. Lançado em 2016-09-08 de Cabo Canaveral em um Atlas V 411, utilizou uma assistência gravitacional terrestre em 2017 para rotacionar seu plano orbital até a inclinação de 6° de Bennu, e realizou o encontro com o asteroide carbonáceo próximo à Terra 2018-12-03, com 492 m de diâmetro. Após manutenção de estação a ~19 km, posteriormente entrou em uma órbita recorde de ~1,4 km — a órbita de espaçonave mais próxima jamais alcançada ao redor de qualquer corpo celeste. Passou dois anos mapeando a superfície repleta de boulders de Bennu e descobrindo ejeções ativas de partículas. Em 2020-10-20, o braço amostrador Touch-and-Go desceu até o sítio Nightingale, disparou gás N₂ na superfície e capturou uma pluma — penetrando 50 cm em uma superfície de \"fluido de pilha de entulho\". A Cápsula de Retorno de Amostra entregou 121,6 g de material de Bennu em Utah em 2023-09-24. A espaçonave em si foi imediatamente redesignada OSIRIS-APEX, em rota para um encontro com Apófis em 2029."
+  },
+  {
+    "rel": "missions/earth/apollo-soyuz.json",
+    "at": "dispatch",
+    "old": "Apollo-Soyuz é onde a corrida espacial termina — não em uma linha de chegada, mas com um aperto de mão. Em julho de 1975, um Apollo americano e um Soyuz soviético, as espaçonaves rivais das superpotências rivais, encontraram-se e acoplaram em órbita, e Tom Stafford e Alexei Leonov apertaram as mãos através da eclusa aberta entre eles. Foi necessário um adaptador de acoplagem construído em conjunto, duas tripulações aprendendo a língua uma da outra, e um degelo na Guerra Fria profundo o bastante para deixar os competidores mais ferrenhos da era cooperarem em total visibilidade mundial. Nada disso era estritamente necessário; era justamente esse o ponto. Depois de dezoito anos competindo para serem os primeiros, os dois programas escolheram, em um único voo, simplesmente encontrar-se — e estabeleceram o modelo para a cooperação internacional que um dia construiria a Estação Espacial.",
+    "new": "Apollo-Soyuz é onde a corrida espacial termina — não em uma linha de chegada, mas com um aperto de mão. Em julho de 1975, um Apollo americano e um Soyuz soviético, as espaçonaves rivais das superpotências rivais, encontraram-se e acoplaram em órbita, e Tom Stafford e Aleksei Leonov apertaram as mãos através da eclusa aberta entre eles. Foi necessário um adaptador de acoplagem construído em conjunto, duas tripulações aprendendo a língua uma da outra, e um degelo na Guerra Fria profundo o bastante para deixar os competidores mais ferrenhos da era cooperarem em total visibilidade mundial. Nada disso era estritamente necessário; era justamente esse o ponto. Depois de dezoito anos competindo para serem os primeiros, os dois programas escolheram, em um único voo, simplesmente encontrar-se — e estabeleceram o modelo para a cooperação internacional que um dia construiria a Estação Espacial."
+  },
+  {
+    "rel": "missions/earth/freedom-7.json",
+    "at": "description",
+    "old": "O voo suborbital de 15 minutos de Alan Shepard — primeiro norte-americano no espaço, 23 dias após o voo orbital Vostok 1 de Yuri Gagarin. Apogeu 187 km; aceleração máxima 11,6 g na reentrada; max-Q 3,7 g. A cápsula Freedom 7 amerissou a 487 km no Atlântico. Shepard teria comentado 'What a beautiful view' no apogeu. O voo foi suborbital porque o lançador Mercury-Redstone não atingia a velocidade orbital; as missões orbitais Mercury seguintes usaram o mais potente Atlas LV-3B. A cápsula Freedom 7 está em exposição na JFK Presidential Library, Boston MA.",
+    "new": "O voo suborbital de 15 minutos de Alan Shepard — primeiro norte-americano no espaço, 23 dias após o voo orbital Vostok 1 de Iuri Gagarin. Apogeu 187 km; aceleração máxima 11,6 g na reentrada; max-Q 3,7 g. A cápsula Freedom 7 amerissou a 487 km no Atlântico. Shepard teria comentado 'What a beautiful view' no apogeu. O voo foi suborbital porque o lançador Mercury-Redstone não atingia a velocidade orbital; as missões orbitais Mercury seguintes usaram o mais potente Atlas LV-3B. A cápsula Freedom 7 está em exposição na JFK Presidential Library, Boston MA."
+  },
+  {
+    "rel": "missions/earth/soyuz-11.json",
+    "at": "dispatch",
+    "old": "Soyuz 11 realizou algo extraordinário e depois perdeu sua tripulação nos últimos minutos do voo. Georgy Dobrovolsky, Vladislav Volkov e Viktor Patsayev tornaram-se os primeiros seres humanos a viver a bordo de uma estação espacial, passando vinte e dois dias a bordo de Salyut 1 — e então, durante a reentrada, uma válvula abriu-se bruscamente no instante da separação dos módulos, deixando o ar da cabine vazar para o espaço. Não usavam trajes de pressão; não havia espaço para trajes quando os assentos foram ajustados para três pessoas. Em poucos segundos, na borda do espaço, todos os três estavam mortos. A cápsula pousou sozinha, perfeitamente no alvo; a equipe de recuperação a abriu e encontrou a tripulação ainda presa aos seus assentos. Eles permanecem sendo os únicos seres humanos a terem morrido no espaço — e o preço dessa tragédia comprou uma regra que se mantém desde então: tripulações usam trajes de pressão durante o lançamento e a reentrada, sempre.",
+    "new": "Soyuz 11 realizou algo extraordinário e depois perdeu sua tripulação nos últimos minutos do voo. Georgi Dobrovolski, Vladislav Volkov e Viktor Patsayev tornaram-se os primeiros seres humanos a viver a bordo de uma estação espacial, passando vinte e dois dias a bordo de Salyut 1 — e então, durante a reentrada, uma válvula abriu-se bruscamente no instante da separação dos módulos, deixando o ar da cabine vazar para o espaço. Não usavam trajes de pressão; não havia espaço para trajes quando os assentos foram ajustados para três pessoas. Em poucos segundos, na borda do espaço, todos os três estavam mortos. A cápsula pousou sozinha, perfeitamente no alvo; a equipe de recuperação a abriu e encontrou a tripulação ainda presa aos seus assentos. Eles permanecem sendo os únicos seres humanos a terem morrido no espaço — e o preço dessa tragédia comprou uma regra que se mantém desde então: tripulações usam trajes de pressão durante o lançamento e a reentrada, sempre."
+  },
+  {
+    "rel": "missions/earth/soyuz-11.json",
+    "at": "description",
+    "old": "A primeira missão tripulada para uma estação espacial — Salyut 1 — lançou em 6 de junho de 1971 com Georgy Dobrovolsky, Vladislav Volkov e Viktor Patsayev. A tripulação passou 22 dias a bordo de Salyut 1 (duração total da missão 23 dias 18 horas). Durante a reentrada em 30 de junho uma válvula de equalização de pressão abriu-se prematuramente na separação dos módulos (~168 km); a cabine descomprimiu e os três cosmonautas, sem trajes, morreram em poucos segundos. A cápsula pousou normalmente. Eles permanecem sendo os únicos seres humanos a terem morrido acima da linha de Kármán.",
+    "new": "A primeira missão tripulada para uma estação espacial — Salyut 1 — lançou em 6 de junho de 1971 com Georgi Dobrovolski, Vladislav Volkov e Viktor Patsayev. A tripulação passou 22 dias a bordo de Salyut 1 (duração total da missão 23 dias 18 horas). Durante a reentrada em 30 de junho uma válvula de equalização de pressão abriu-se prematuramente na separação dos módulos (~168 km); a cabine descomprimiu e os três cosmonautas, sem trajes, morreram em poucos segundos. A cápsula pousou normalmente. Eles permanecem sendo os únicos seres humanos a terem morrido acima da linha de Kármán."
+  },
+  {
+    "rel": "missions/earth/sputnik1.json",
+    "at": "description",
+    "old": "A esfera de alumínio polido de Korolev — 58 cm de largura, 83,6 kg, dois transmissores em 20,005 e 40,002 MHz — tornou-se o primeiro objeto feito pelo homem a alcançar a órbita em 1957-10-04 19:28 UTC. A trajetória de 215 × 939 km e 65,1° bipava sobre a América naquela noite e novamente a cada 96 minutos, audível em ondas curtas para qualquer um que sintonizasse. As baterias se esgotaram em 1957-10-26 (após 21 dias, ~315 órbitas); o satélite decaiu e queimou na reentrada em 1958-01-04 após cerca de 1440 órbitas. O voo foi um projeto paralelo da OKB-1: Korolev precisava de uma carga útil leve para seu R-7 ICBM ainda em desenvolvimento e apresentou o 'PS-1' (Prosteyshiy Sputnik — 'satélite mais simples') a Khrushchev como um golpe de propaganda. Funcionou. O choque em Washington desencadeou a ARPA (fundada em 1958-02), o National Aeronautics and Space Act (assinado em 1958-07) e o compromisso de Kennedy com o pouso na Lua quatro anos depois. O Sputnik 1 também devolveu os primeiros dados orbitais ionosféricos e de densidade atmosférica — engenheiros usaram o desvio Doppler nas portadoras de 20 / 40 MHz para mapear a densidade do ar a 215 km, trabalho que alimentou todos os cálculos subsequentes de reentrada.",
+    "new": "A esfera de alumínio polido de Korolev — 58 cm de largura, 83,6 kg, dois transmissores em 20,005 e 40,002 MHz — tornou-se o primeiro objeto feito pelo homem a alcançar a órbita em 1957-10-04 19:28 UTC. A trajetória de 215 × 939 km e 65,1° bipava sobre a América naquela noite e novamente a cada 96 minutos, audível em ondas curtas para qualquer um que sintonizasse. As baterias se esgotaram em 1957-10-26 (após 21 dias, ~315 órbitas); o satélite decaiu e queimou na reentrada em 1958-01-04 após cerca de 1440 órbitas. O voo foi um projeto paralelo da OKB-1: Korolev precisava de uma carga útil leve para seu R-7 ICBM ainda em desenvolvimento e apresentou o 'PS-1' (Prosteyshiy Sputnik — 'satélite mais simples') a Khrushchov como um golpe de propaganda. Funcionou. O choque em Washington desencadeou a ARPA (fundada em 1958-02), o National Aeronautics and Space Act (assinado em 1958-07) e o compromisso de Kennedy com o pouso na Lua quatro anos depois. O Sputnik 1 também devolveu os primeiros dados orbitais ionosféricos e de densidade atmosférica — engenheiros usaram o desvio Doppler nas portadoras de 20 / 40 MHz para mapear a densidade do ar a 215 km, trabalho que alimentou todos os cálculos subsequentes de reentrada."
+  },
+  {
+    "rel": "missions/earth/sputnik1.json",
+    "at": "events.0.note",
+    "old": "O Sputnik 8K71PS decola do NIIP-5 Site 1 (mais tarde Baikonur, Gagarin's Start) em 1957-10-04 19:28:34 UTC.",
+    "new": "O Sputnik 8K71PS decola do NIIP-5 Site 1 (mais tarde Baikonur, Plataforma Gagarin) em 1957-10-04 19:28:34 UTC."
+  },
+  {
+    "rel": "missions/earth/voskhod-1.json",
+    "at": "description",
+    "old": "Primeiro voo espacial com três tripulantes da história. Komarov, Feoktistov e Yegorov voaram de 1964-10-12 a 1964-10-13 em uma cápsula Vostok bastante modificada (designada Voskhod / 'Amanhecer'). Os assentos ejetáveis foram removidos e o sistema de pressurização da cabine recertificado para permitir que três homens viajassem em mangas de camisa — uma vitória propagandística sobre os voos Gemini americanos com dois tripulantes em planejamento, mas uma concessão brutal que deixou a tripulação sem qualquer capacidade de fuga durante o lançamento ou a reentrada. O espaço da cabine era tão apertado que Komarov relatou ter sentido a respiração de Yegorov na sua nuca por 24 horas. Pousaram em 1964-10-13 às 07:47 UTC perto de Marevka, Cazaquistão, usando o novo sistema retro de pouso suave a foguete sólido, pois a ejeção com paraquedas não era possível. Enquanto estavam em órbita, Khrushchev foi deposto; a tripulação voltou a uma liderança soviética totalmente diferente.",
+    "new": "Primeiro voo espacial com três tripulantes da história. Komarov, Feoktistov e Yegorov voaram de 1964-10-12 a 1964-10-13 em uma cápsula Vostok bastante modificada (designada Voskhod / 'Amanhecer'). Os assentos ejetáveis foram removidos e o sistema de pressurização da cabine recertificado para permitir que três homens viajassem em mangas de camisa — uma vitória propagandística sobre os voos Gemini americanos com dois tripulantes em planejamento, mas uma concessão brutal que deixou a tripulação sem qualquer capacidade de fuga durante o lançamento ou a reentrada. O espaço da cabine era tão apertado que Komarov relatou ter sentido a respiração de Yegorov na sua nuca por 24 horas. Pousaram em 1964-10-13 às 07:47 UTC perto de Marevka, Cazaquistão, usando o novo sistema retro de pouso suave a foguete sólido, pois a ejeção com paraquedas não era possível. Enquanto estavam em órbita, Khrushchov foi deposto; a tripulação voltou a uma liderança soviética totalmente diferente."
+  },
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "dispatch",
+    "old": "Voskhod 2 realizou o primeiro spacewalk e quase o transformou no primeiro morte no espaço. Alexei Leonov flutuou para fora de um compartimento de ar inflável para o vácuo, o primeiro ser humano completamente fora de uma nave — e então seu traje inchado ficou tão rígido que ele não conseguia se dobrar para voltar. Ele teve que abrir uma válvula e deixar seu próprio ar escapar, correndo o risco de embolia, apenas para encolher o suficiente para passar pela escotilha. Não acabou aí: o repouso automático falhou, a tripulação desceu manualmente, e pousaram centenas de quilômetros fora do curso na floresta gelada siberiana, onde esperaram por duas noites entre lobos antes que os resgatadores os alcançassem de esqui. O público viu doze minutos triunfantes; o quão perto chegou permaneceu secreto por anos.",
+    "new": "Voskhod 2 realizou o primeiro spacewalk e quase o transformou no primeiro morte no espaço. Aleksei Leonov flutuou para fora de um compartimento de ar inflável para o vácuo, o primeiro ser humano completamente fora de uma nave — e então seu traje inchado ficou tão rígido que ele não conseguia se dobrar para voltar. Ele teve que abrir uma válvula e deixar seu próprio ar escapar, correndo o risco de embolia, apenas para encolher o suficiente para passar pela escotilha. Não acabou aí: o repouso automático falhou, a tripulação desceu manualmente, e pousaram centenas de quilômetros fora do curso na floresta gelada siberiana, onde esperaram por duas noites entre lobos antes que os resgatadores os alcançassem de esqui. O público viu doze minutos triunfantes; o quão perto chegou permaneceu secreto por anos."
+  },
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "description",
+    "old": "Voo de 1 dia de Pavel Belyayev + Alexei Leonov — primeira EVA da história. Leonov passou 12 min fora de Voskhod 2 (1965-03-18 11:34 UTC), pressurizado através de um compartimento de ar Volga inflável que engenheiros soviéticos adicionaram porque o casco Voskhod não tinha espaço para despressurização completa. O traje de Leonov inchado no vácuo, travando-o fora do compartimento de ar; ele teve que ventilar a pressão do traje para reentrar, aumentando o risco de doença de descompressão. A reentrada foi igualmente dramática — o sistema automático de pouso falhou, e Belyayev pilotou manualmente o módulo de descida para um pouso duro na neve profunda dos Urais ~390 km fora do alvo; a tripulação sobreviveu a duas noites na floresta entre lobos antes que helicópteros de resgate chegassem 1965-03-21. A atmosfera do compartimento também ficou rica em O₂ em órbita, após a escotilha de EVA não conseguir se fechar novamente, brevemente arriscando combustão espontânea.",
+    "new": "Voo de 1 dia de Pavel Belyayev + Aleksei Leonov — primeira EVA da história. Leonov passou 12 min fora de Voskhod 2 (1965-03-18 11:34 UTC), pressurizado através de um compartimento de ar Volga inflável que engenheiros soviéticos adicionaram porque o casco Voskhod não tinha espaço para despressurização completa. O traje de Leonov inchado no vácuo, travando-o fora do compartimento de ar; ele teve que ventilar a pressão do traje para reentrar, aumentando o risco de doença de descompressão. A reentrada foi igualmente dramática — o sistema automático de pouso falhou, e Belyayev pilotou manualmente o módulo de descida para um pouso duro na neve profunda dos Urais ~390 km fora do alvo; a tripulação sobreviveu a duas noites na floresta entre lobos antes que helicópteros de resgate chegassem 1965-03-21. A atmosfera do compartimento também ficou rica em O₂ em órbita, após a escotilha de EVA não conseguir se fechar novamente, brevemente arriscando combustão espontânea."
+  },
+  {
+    "rel": "missions/earth/voskhod-2.json",
+    "at": "events.0.note",
+    "old": "Voskhod 11A57 do Baikonur, sítio 1 (Gagarin's Start) 1965-03-18 07:00 UTC.",
+    "new": "Voskhod 11A57 do Baikonur, sítio 1 (Plataforma Gagarin) 1965-03-18 07:00 UTC."
+  },
+  {
+    "rel": "missions/earth/vostok-1.json",
+    "at": "dispatch",
+    "old": "Vostok 1 é onde a era espacial começa com uma pessoa dentro dela. Durante 108 minutos em 12 de abril de 1961, Yuri Gagarin — um piloto de caça de 27 anos — tornou-se o primeiro ser humano a deixar o planeta e orbitá-lo, e o mundo acordou para descobrir que a União Soviética havia feito aquilo que todos assumiam que a América faria primeiro. Ele tinha quase nenhum controle da espaçonave; o voo foi conduzido do solo, e ele era tanto passageiro quanto piloto, selado em uma esfera construída para trazê-lo de volta estivesse ele consciente ou não. Não importava. Um humano havia circundado a Terra e retornado, e nada sobre como as pessoas viam seu lugar no universo foi exatamente o mesmo depois disso.",
+    "new": "Vostok 1 é onde a era espacial começa com uma pessoa dentro dela. Durante 108 minutos em 12 de abril de 1961, Iuri Gagarin — um piloto de caça de 27 anos — tornou-se o primeiro ser humano a deixar o planeta e orbitá-lo, e o mundo acordou para descobrir que a União Soviética havia feito aquilo que todos assumiam que a América faria primeiro. Ele tinha quase nenhum controle da espaçonave; o voo foi conduzido do solo, e ele era tanto passageiro quanto piloto, selado em uma esfera construída para trazê-lo de volta estivesse ele consciente ou não. Não importava. Um humano havia circundado a Terra e retornado, e nada sobre como as pessoas viam seu lugar no universo foi exatamente o mesmo depois disso."
+  },
+  {
+    "rel": "missions/earth/vostok-1.json",
+    "at": "description",
+    "old": "O voo de uma única órbita de 108 minutos de Yuri Gagarin — o primeiro voo espacial tripulado da história e o primeiro humano a orbitar a Terra. Lançado em 12/04/1961 às 06:07 UTC de Baikonur em um lançador Vostok-K (8K72K); órbita 169 × 327 km, inclinação 65°. O módulo de descida esférico ejetou Gagarin a cerca de 7 km de altitude (um fato que a URSS ocultou por anos para reivindicar pouso tripulado completo segundo as regras da FAI). Gagarin desceu de paraquedas até Smelovka, oblast de Saratov; a cápsula pousou separadamente e está em exibição no Museu RKK Energia em Korolyov, Rússia. O voo encerrou uma década de trabalho de Korolev com mísseis/satélites e desencadeou o programa norte-americano de voos tripulados + o compromisso lunar de Kennedy seis semanas depois.",
+    "new": "O voo de uma única órbita de 108 minutos de Iuri Gagarin — o primeiro voo espacial tripulado da história e o primeiro humano a orbitar a Terra. Lançado em 12/04/1961 às 06:07 UTC de Baikonur em um lançador Vostok-K (8K72K); órbita 169 × 327 km, inclinação 65°. O módulo de descida esférico ejetou Gagarin a cerca de 7 km de altitude (um fato que a URSS ocultou por anos para reivindicar pouso tripulado completo segundo as regras da FAI). Gagarin desceu de paraquedas até Smelovka, oblast de Saratov; a cápsula pousou separadamente e está em exibição no Museu RKK Energia em Korolyov, Rússia. O voo encerrou uma década de trabalho de Korolev com mísseis/satélites e desencadeou o programa norte-americano de voos tripulados + o compromisso lunar de Kennedy seis semanas depois."
+  },
+  {
+    "rel": "missions/earth/vostok-1.json",
+    "at": "events.0.note",
+    "old": "Vostok-K a partir de Baikonur, sítio 1 (Gagarin's Start), 1961-04-12 06:07 UTC.",
+    "new": "Vostok-K a partir de Baikonur, sítio 1 (Plataforma Gagarin), 1961-04-12 06:07 UTC."
+  },
+  {
+    "rel": "missions/earth/vostok-3.json",
+    "at": "dispatch",
+    "old": "Vostok 3 abriu o primeiro ato de uma peça de teatro orbital. Um dia após Andriyan Nikolayev atingir a órbita, Vostok 4 o seguiu, e por um tempo os dois vaivéns voaram a poucos quilômetros um do outro — a primeira vez que duas naves tripuladas estiveram no espaço juntas. Para o mundo parecia um encontro, e os soviéticos ficaram felizes em deixar assim. Na verdade, nenhuma nave conseguia manobrar; a proximidade veio de lançar uma quase no caminho da outra, e a distância aumentou constantemente depois. Um primeiro genuíno e um truque de mágica ao mesmo tempo — e uma amostra da verdadeira perícia, um encontro real, que ainda ninguém tinha conseguido.",
+    "new": "Vostok 3 abriu o primeiro ato de uma peça de teatro orbital. Um dia após Andrian Nikolayev atingir a órbita, Vostok 4 o seguiu, e por um tempo os dois vaivéns voaram a poucos quilômetros um do outro — a primeira vez que duas naves tripuladas estiveram no espaço juntas. Para o mundo parecia um encontro, e os soviéticos ficaram felizes em deixar assim. Na verdade, nenhuma nave conseguia manobrar; a proximidade veio de lançar uma quase no caminho da outra, e a distância aumentou constantemente depois. Um primeiro genuíno e um truque de mágica ao mesmo tempo — e uma amostra da verdadeira perícia, um encontro real, que ainda ninguém tinha conseguido."
+  },
+  {
+    "rel": "missions/earth/vostok-3.json",
+    "at": "description",
+    "old": "Voo de 64 órbitas de Andriyan Nikolayev, lançado 1962-08-11 08:24 UTC. Vinte e quatro horas após o lançamento, Vostok 4 (Popovich) o acompanhou em órbita — a aproximação mais próxima foi aproximadamente 6,5 km, embora nenhuma capacidade real de encontro existisse (as duas cápsulas não possuíam propulsores de manobra). O voo simultâneo foi uma resposta propagandística às missões suborbitais americanas e ao Friendship 7 de John Glenn. Nikolayev pousou 1962-08-15 06:52 UTC perto de Karaganda, República Socialista Soviética do Cazaquistão, após quase 4 dias no espaço.",
+    "new": "Voo de 64 órbitas de Andrian Nikolayev, lançado 1962-08-11 08:24 UTC. Vinte e quatro horas após o lançamento, Vostok 4 (Popovich) o acompanhou em órbita — a aproximação mais próxima foi aproximadamente 6,5 km, embora nenhuma capacidade real de encontro existisse (as duas cápsulas não possuíam propulsores de manobra). O voo simultâneo foi uma resposta propagandística às missões suborbitais americanas e ao Friendship 7 de John Glenn. Nikolayev pousou 1962-08-15 06:52 UTC perto de Karaganda, República Socialista Soviética do Cazaquistão, após quase 4 dias no espaço."
+  },
+  {
+    "rel": "missions/jupiter/pioneer-10.json",
+    "at": "description",
+    "old": "Pioneer 10 foi a desbravadora — primeira a atravessar o cinturão de asteroides (que depois descobrimos ser muito menos perigoso do que previsto), primeira a fotografar Júpiter em close-up, primeira a alcançar uma distância heliocêntrica maior que o periélio de Plutão (1983). Carrega a placa Pioneer projetada por Carl Sagan, Frank Drake e Linda Salzman Sagan — a primeira mensagem interestelar deliberada da humanidade. Último contato bem-sucedido em 2003-01-23 a partir de ~82 UA; a sonda agora flutua em direção à constelação Taurus, com um encontro próximo a Aldebaran em aproximadamente dois milhões de anos.",
+    "new": "Pioneer 10 foi a desbravadora — primeira a atravessar o cinturão de asteroides (que depois descobrimos ser muito menos perigoso do que previsto), primeira a fotografar Júpiter em close-up, primeira a alcançar uma distância heliocêntrica maior que o periélio de Plutão (1983). Carrega a placa Pioneer projetada por Carl Sagan, Frank Drake e Linda Salzman Sagan — a primeira mensagem interestelar deliberada da humanidade. Último contato bem-sucedido em 2003-01-23 a partir de ~82 UA; a sonda agora flutua em direção à constelação Taurus, com um encontro próximo a Aldebarã em aproximadamente dois milhões de anos."
+  },
+  {
+    "rel": "missions/mars/mariner9.json",
+    "at": "description",
+    "old": "Mariner 9 tornou possível cada orbitador que se seguiu. Após uma queimada MOI de 15 minutos colocá-la em órbita de Marte em 1971-11-14, o planeta abaixo era irreconhecível — uma tempestade de poeira global havia ocultado tudo, exceto os quatro topos dos vulcões de Tharsis. O JPL esperou. Até janeiro de 1972, a poeira assentou e Mariner 9 retornou 7.329 imagens cobrindo ~85% da superfície marciana, revelando Olympus Mons (o maior vulcão do sistema solar), Valles Marineris (o sistema de cânions que leva seu nome), canais fluviais secos sugerindo uma era líquida antiga, e os primeiros planos aproximados de Fobos e Deimos. A missão terminou em 1972-10-27 quando o gás de controle de atitude se esgotou; a espaçonave permanece em órbita, decaindo lentamente.",
+    "new": "Mariner 9 tornou possível cada orbitador que se seguiu. Após uma queimada MOI de 15 minutos colocá-la em órbita de Marte em 1971-11-14, o planeta abaixo era irreconhecível — uma tempestade de poeira global havia ocultado tudo, exceto os quatro topos dos vulcões de Tharsis. O JPL esperou. Até janeiro de 1972, a poeira assentou e Mariner 9 retornou 7.329 imagens cobrindo ~85% da superfície marciana, revelando o Monte Olimpo (o maior vulcão do sistema solar), Valles Marineris (o sistema de cânions que leva seu nome), canais fluviais secos sugerindo uma era líquida antiga, e os primeiros planos aproximados de Fobos e Deimos. A missão terminou em 1972-10-27 quando o gás de controle de atitude se esgotou; a espaçonave permanece em órbita, decaindo lentamente."
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "description",
+    "old": "Spirit (MER-A) saltou 28 vezes pelo piso da cratera Gusev em 2004-01-04 e rolou até parar a 250 m de seu primeiro impacto. Projetado para uma missão primária de 90 sols, sobreviveria a 2.208 sols. Dirigiu 7,7 km pelas planícies de Gusev, escalou as Columbia Hills e descobriu rochas ricas em hematita que sinalizavam água antiga e persistente. Em 2009-04 uma roda rompeu uma crosta de sulfato em \"Troy\" e Spirit parou em solo mole; a equipe o converteu em uma plataforma estacionária. Transmissão final em 2010-03-22; missão declarada encerrada em 2011-05-25. Gêmeo de Opportunity, que pousou três semanas depois no lado oposto de Marte.",
+    "new": "Spirit (MER-A) saltou 28 vezes pelo piso da cratera Gusev em 2004-01-04 e rolou até parar a 250 m de seu primeiro impacto. Projetado para uma missão primária de 90 sols, sobreviveria a 2.208 sols. Dirigiu 7,7 km pelas planícies de Gusev, escalou as Colinas Columbia e descobriu rochas ricas em hematita que sinalizavam água antiga e persistente. Em 2009-04 uma roda rompeu uma crosta de sulfato em \"Troy\" e Spirit parou em solo mole; a equipe o converteu em uma plataforma estacionária. Transmissão final em 2010-03-22; missão declarada encerrada em 2011-05-25. Gêmeo de Opportunity, que pousou três semanas depois no lado oposto de Marte."
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "dispatch",
+    "old": "Se Apollo 11 provou que você conseguia chegar à Lua, Apollo 12 provou que você conseguia chegar a um local específico dela. Trinta e seis segundos após o lançamento, um raio atingiu o foguete e desligou os instrumentos da espaçonave; um controlador de vinte e quatro anos chamado John Aaron puxou da memória um conserto obscuro — \"SCE to AUX\" — e o voo prosseguiu. Então Conrad e Bean pousaram seu Módulo Lunar no Ocean of Storms a poucas centenas de pés de uma sonda que estava lá há dois anos, caminharam até ela e trouxeram peças dela para casa. Essa precisão foi o verdadeiro resultado: a Lua tinha deixado de ser um destino e se tornado um endereço.",
+    "new": "Se Apollo 11 provou que você conseguia chegar à Lua, Apollo 12 provou que você conseguia chegar a um local específico dela. Trinta e seis segundos após o lançamento, um raio atingiu o foguete e desligou os instrumentos da espaçonave; um controlador de vinte e quatro anos chamado John Aaron puxou da memória um conserto obscuro — \"SCE to AUX\" — e o voo prosseguiu. Então Conrad e Bean pousaram seu Módulo Lunar no oceano das Tempestades a poucas centenas de pés de uma sonda que estava lá há dois anos, caminharam até ela e trouxeram peças dela para casa. Essa precisão foi o verdadeiro resultado: a Lua tinha deixado de ser um destino e se tornado um endereço."
+  },
+  {
+    "rel": "missions/moon/apollo14.json",
+    "at": "events.6.note",
+    "old": "EVA-2: travessia em direção ao Cone Crater (ficou ~30 m aquém da borda). Minutos finais — Shepard golpeia duas bolas de golfe com um taco improvisado.",
+    "new": "EVA-2: travessia em direção à cratera Cone (ficou ~30 m aquém da borda). Minutos finais — Shepard golpeia duas bolas de golfe com um taco improvisado."
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "description",
+    "old": "A primeira \"J-mission\" — Apollo científica de permanência estendida com o novo Lunar Roving Vehicle. O Lunar Roving Vehicle deu a Scott e Irwin um alcance de travessia de 27,9 km (contra os 3,5 km de caminhada apenas do Apollo 14), abrindo o dramático sítio de Hadley-Apennine ao pé de uma cordilheira de 4,5 km e à beira do sinuoso Hadley Rille. Três EVAs totalizando 18 h 35 m, 77 kg de amostras retornadas, incluindo a famosa \"Genesis Rock\" (amostra 15415) — um anortosito de 4,1 bilhões de anos confirmando a origem de oceano de magma da crosta das terras altas lunares. O experimento do \"martelo-pena\" televisionado de Scott verificou a lei da gravitação de Galileo ao vivo. Worden em órbita lunar operou uma baía SIM repleta de instrumentos de sensoriamento remoto (câmaras de mapeamento, espectrômetros de raios gama, raios X e partículas alfa) e realizou a primeira EVA em espaço profundo no caminho de volta (~39 minutos de EVA a ~317 000 km da Terra para recuperar os carretilhas de filme). A recuperação do Apollo 15 foi prejudicada pela falha de um dos três paraquedas principais em abrir completamente — o CM caiu com força, mas a tripulação se manteve segura.",
+    "new": "A primeira \"J-mission\" — Apollo científica de permanência estendida com o novo Lunar Roving Vehicle. O Lunar Roving Vehicle deu a Scott e Irwin um alcance de travessia de 27,9 km (contra os 3,5 km de caminhada apenas do Apollo 14), abrindo o dramático sítio de Hadley-Apennine ao pé de uma cordilheira de 4,5 km e à beira do sinuoso sulco Hadley. Três EVAs totalizando 18 h 35 m, 77 kg de amostras retornadas, incluindo a famosa \"Genesis Rock\" (amostra 15415) — um anortosito de 4,1 bilhões de anos confirmando a origem de oceano de magma da crosta das terras altas lunares. O experimento do \"martelo-pena\" televisionado de Scott verificou a lei da gravitação de Galileo ao vivo. Worden em órbita lunar operou uma baía SIM repleta de instrumentos de sensoriamento remoto (câmaras de mapeamento, espectrômetros de raios gama, raios X e partículas alfa) e realizou a primeira EVA em espaço profundo no caminho de volta (~39 minutos de EVA a ~317 000 km da Terra para recuperar os carretilhas de filme). A recuperação do Apollo 15 foi prejudicada pela falha de um dos três paraquedas principais em abrir completamente — o CM caiu com força, mas a tripulação se manteve segura."
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.4.note",
+    "old": "EVA-1: Primeiro desdobramento do Lunar Roving Vehicle + travessia de 10,3 km até a Cratera Elbow e a borda do Hadley Rille.",
+    "new": "EVA-1: Primeiro desdobramento do Lunar Roving Vehicle + travessia de 10,3 km até a Cratera Elbow e a borda do sulco Hadley."
+  },
+  {
+    "rel": "missions/moon/apollo17.json",
+    "at": "description",
+    "old": "A última vez que humanos visitaram outro mundo — há mais de meio século. Cernan e Schmitt passaram 75 horas na superfície, dirigiram o LRV 35,7 km e trouxeram de volta 110,5 kg de amostras. Schmitt foi o único cientista treinado (geólogo) a caminhar na Lua, e suas descobertas — particularmente o vidro vulcânico laranja em Shorty Crater — reformularam a geologia lunar. Últimas palavras de Cernan antes de subir a escada pela última vez: \"Partimos como chegamos, e Deus quiser, voltaremos.\" Artemis III deveria tornar essa promessa realidade.",
+    "new": "A última vez que humanos visitaram outro mundo — há mais de meio século. Cernan e Schmitt passaram 75 horas na superfície, dirigiram o LRV 35,7 km e trouxeram de volta 110,5 kg de amostras. Schmitt foi o único cientista treinado (geólogo) a caminhar na Lua, e suas descobertas — particularmente o vidro vulcânico laranja na cratera Shorty — reformularam a geologia lunar. Últimas palavras de Cernan antes de subir a escada pela última vez: \"Partimos como chegamos, e Deus quiser, voltaremos.\" Artemis III deveria tornar essa promessa realidade."
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "description",
+    "old": "O primeiro vôo tripulado do programa Artemis e a faísca que se tornou o Orrery. O SLS Block 1 de NASA lançou uma espaçonave Orion com quatro astronautas - Reid Wiseman (CDR), Victor Glover (PLT), Christina Koch (MS) e Jeremy Hansen (MS) da CSA - em uma trajetória híbrida de retorno livre que os girou ao redor do outro lado da Lua a cerca de 9.200 km de altitude e os devolveu à Terra sem qualquer queima de inserção na órbita lunar. Uma missão de 10 dias que termina com a chegada ao Pacífico. Sistemas qualificados de suporte de vida, navegação e reentrada do Orion para voo tripulado antes do pouso na superfície do Artemis III.",
+    "new": "O primeiro vôo tripulado do programa Artemis e a faísca que se tornou o Orrery. O SLS Block 1 de NASA lançou uma espaçonave Orion com quatro astronautas - Reid Wiseman (CDR), Victor Glover (PLT), Christina Hammock-Koch (MS) e Jeremy Hansen (MS) da CSA - em uma trajetória híbrida de retorno livre que os girou ao redor do outro lado da Lua a cerca de 9.200 km de altitude e os devolveu à Terra sem qualquer queima de inserção na órbita lunar. Uma missão de 10 dias que termina com a chegada ao Pacífico. Sistemas qualificados de suporte de vida, navegação e reentrada do Orion para voo tripulado antes do pouso na superfície do Artemis III."
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "description",
+    "old": "Gêmea de Pioneer 10, lançada um ano depois. Pioneer 11 usou a gravidade de Júpiter para curvar sua trajetória em direção a Saturno — a prova canônica da propulsão por assistência gravitacional, a técnica que posteriormente possibilitou o Grand Tour do Voyager. Em Saturno descobriu o anel F e uma pequena lua interior posteriormente resolvida como o par co-orbital Janus/Epimetheus. Carrega a mesma placa Pioneer que sua gêmea. Sinal perdido em 1995-09-30 a uma distância heliocêntrica de ~43 UA; a sonda agora se dirige em direção à constelação Aquila.",
+    "new": "Gêmea de Pioneer 10, lançada um ano depois. Pioneer 11 usou a gravidade de Júpiter para curvar sua trajetória em direção a Saturno — a prova canônica da propulsão por assistência gravitacional, a técnica que posteriormente possibilitou o Grand Tour do Voyager. Em Saturno descobriu o anel F e uma pequena lua interior posteriormente resolvida como o par co-orbital Jano/Epimeteu. Carrega a mesma placa Pioneer que sua gêmea. Sinal perdido em 1995-09-30 a uma distância heliocêntrica de ~43 UA; a sonda agora se dirige em direção à constelação Aquila."
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "events.2.note",
+    "old": "Primeiras imagens do planeta em proximidade; descobriu o anel F e uma pequena lua interna (posteriormente resolvida no par co-orbital Janus/Epimeteu).",
+    "new": "Primeiras imagens do planeta em proximidade; descobriu o anel F e uma pequena lua interna (posteriormente resolvida no par co-orbital Jano/Epimeteu)."
+  },
+  {
+    "rel": "orbit-regimes/LEO.json",
+    "at": "firsts.1.label",
+    "old": "Vostok 1 — Yuri Gagarin, primeiro voo orbital tripulado (USSR)",
+    "new": "Vostok 1 — Iuri Gagarin, primeiro voo orbital tripulado (USSR)"
+  },
+  {
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "residents.2.label",
+    "old": "Pallas — terceiro maior",
+    "new": "Palas — terceiro maior"
+  },
+  {
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "residents.3.label",
+    "old": "Hygiea — quarto maior, possivelmente anão",
+    "new": "Hígia — quarto maior, possivelmente anão"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "science_sections.1.why",
+    "old": "Tritão é a única lua grande do sistema solar com órbita retrógrada — evidência forte de que foi capturada do Kuiper Belt, não formada com Netuno.",
+    "new": "Tritão é a única lua grande do sistema solar com órbita retrógrada — evidência forte de que foi capturada do cinturão de Kuiper, não formada com Netuno."
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "science_sections.2.why",
+    "old": "As cinco luas uranianas principais (Miranda, Ariel, Umbriel, Titania, Oberon) compartilham a inclinação de Urano — elas orbitam no plano equatorial, que é quase perpendicular à eclíptica.",
+    "new": "As cinco luas uranianas principais (Miranda, Ariel, Umbriel, Titânia, Oberon) compartilham a inclinação de Urano — elas orbitam no plano equatorial, que é quase perpendicular à eclíptica."
+  },
+  {
+    "rel": "programs/apollo.json",
+    "at": "the_land.0.md",
+    "old": "Por noventa minutos de cada vez, no outono de 1957, uma esfera de metal polido do tamanho de uma bola de praia cruzava o céu sobre os Estados Unidos — e estava emitindo sinais sonoros. Sputnik 1 pertencia à União Soviética, e não havia nada que o país mais poderoso da Terra pudesse fazer além de ouvir. Menos de quatro anos depois, em 12 de abril de 1961, os soviéticos colocaram uma pessoa também: Yuri Gagarin, o primeiro ser humano a deixar o planeta. Washington não ouviu nada disso como ciência. Ouviu um silogismo que não conseguia ignorar — um foguete que pode elevar um satélite à órbita pode lançar uma ogiva sobre qualquer cidade que você queira nomear. Da noite para o dia, os voos espaciais deixaram de ser exploração e se tornaram a linha de frente da Guerra Fria.",
+    "new": "Por noventa minutos de cada vez, no outono de 1957, uma esfera de metal polido do tamanho de uma bola de praia cruzava o céu sobre os Estados Unidos — e estava emitindo sinais sonoros. Sputnik 1 pertencia à União Soviética, e não havia nada que o país mais poderoso da Terra pudesse fazer além de ouvir. Menos de quatro anos depois, em 12 de abril de 1961, os soviéticos colocaram uma pessoa também: Iuri Gagarin, o primeiro ser humano a deixar o planeta. Washington não ouviu nada disso como ciência. Ouviu um silogismo que não conseguia ignorar — um foguete que pode elevar um satélite à órbita pode lançar uma ogiva sobre qualquer cidade que você queira nomear. Da noite para o dia, os voos espaciais deixaram de ser exploração e se tornaram a linha de frente da Guerra Fria."
+  },
+  {
+    "rel": "programs/new-horizons.json",
+    "at": "goals.2.md",
+    "old": "Um segundo objetivo foi incluído uma vez que o primeiro foi cumprido: se a espaçonave sobrevivesse a Plutão, ela voaria adiante no Kuiper Belt — o vasto anel de corpos gelados além de Netuno — e, se o combustível permitisse, visitaria um deles, alcançando uma classe de objeto que nenhuma missão havia visto.",
+    "new": "Um segundo objetivo foi incluído uma vez que o primeiro foi cumprido: se a espaçonave sobrevivesse a Plutão, ela voaria adiante no cinturão de Kuiper — o vasto anel de corpos gelados além de Netuno — e, se o combustível permitisse, visitaria um deles, alcançando uma classe de objeto que nenhuma missão havia visto."
+  },
+  {
+    "rel": "programs/new-horizons.json",
+    "at": "narrative.2.md",
+    "old": "E completou algo. Com Plutão, uma espaçonave havia agora visitado todos os planetas da antiga contagem, fechando um reconhecimento do sistema solar que começou com as Mariners e Pioneers meio século antes. Então ultrapassou a linha de chegada no Kuiper Belt, alcançando os blocos de construção intocados dos próprios planetas — a missão que encerrou uma era de exploração e abriu a próxima.",
+    "new": "E completou algo. Com Plutão, uma espaçonave havia agora visitado todos os planetas da antiga contagem, fechando um reconhecimento do sistema solar que começou com as Mariners e Pioneers meio século antes. Então ultrapassou a linha de chegada no cinturão de Kuiper, alcançando os blocos de construção intocados dos próprios planetas — a missão que encerrou uma era de exploração e abriu a próxima."
+  },
+  {
+    "rel": "programs/new-horizons.json",
+    "at": "legacy.1.md",
+    "old": "O segundo é Arrokoth e o Kuiper Belt: o primeiro olhar próximo de uma relíquia pristina da formação do sistema solar, um corpo intocado desde o início, e a extensão da exploração na vasta região gelada além de Netuno que nunca havia sido visitada.",
+    "new": "O segundo é Arrokoth e o cinturão de Kuiper: o primeiro olhar próximo de uma relíquia pristina da formação do sistema solar, um corpo intocado desde o início, e a extensão da exploração na vasta região gelada além de Netuno que nunca havia sido visitada."
+  },
+  {
+    "rel": "programs/pioneer.json",
+    "at": "outcome.2.md",
+    "old": "As Pioneer continuaram transmitindo por décadas enquanto se afastavam. O último sinal fraco de Pioneer 10 foi recebido em 2003, de mais de doze bilhões de quilômetros de distância. Ambas ainda estão lá fora, silenciosas agora, deslizando em direção às estrelas — Pioneer 10 na direção da estrela Aldebaran, uma jornada que levará cerca de dois milhões de anos para completar.",
+    "new": "As Pioneer continuaram transmitindo por décadas enquanto se afastavam. O último sinal fraco de Pioneer 10 foi recebido em 2003, de mais de doze bilhões de quilômetros de distância. Ambas ainda estão lá fora, silenciosas agora, deslizando em direção às estrelas — Pioneer 10 na direção da estrela Aldebarã, uma jornada que levará cerca de dois milhões de anos para completar."
+  },
+  {
+    "rel": "programs/voskhod.json",
+    "at": "the_land.0.md",
+    "old": "Em 1964, a parte fácil havia acabado. A Vostok havia conquistado seus pioneirismos, mas os americanos estavam construindo a Gemini — uma espaçonave biplace que realmente podia manobrar, encontrar-se e acoplar — e, uma vez que voasse, a liderança soviética evaporaria. Nikita Khrushchev queria mais manchetes antes que isso acontecesse, e pressionou Sergei Korolev a produzi-las. Não havia nenhuma espaçonave soviética nova pronta. Então a equipe de Korolev fez a única coisa que o cronograma permitia: pegaram a Vostok de um assento e a modificaram para fazer coisas para as quais nunca foi projetada.",
+    "new": "Em 1964, a parte fácil havia acabado. A Vostok havia conquistado seus pioneirismos, mas os americanos estavam construindo a Gemini — uma espaçonave biplace que realmente podia manobrar, encontrar-se e acoplar — e, uma vez que voasse, a liderança soviética evaporaria. Nikita Khrushchov queria mais manchetes antes que isso acontecesse, e pressionou Sergei Korolev a produzi-las. Não havia nenhuma espaçonave soviética nova pronta. Então a equipe de Korolev fez a única coisa que o cronograma permitia: pegaram a Vostok de um assento e a modificaram para fazer coisas para as quais nunca foi projetada."
+  },
+  {
+    "rel": "programs/voskhod.json",
+    "at": "outcome.1.md",
+    "old": "As apostas deram certo, por pouco. Em outubro de 1964, a Voskhod 1 levou a primeira tripulação de três pessoas — em mangas de camisa, sem trajes, sem assentos ejetáveis — ao redor da Terra por um dia e voltou em segurança. Cinco meses depois, a Voskhod 2 fez a coisa mais difícil: Alexei Leonov abriu uma escotilha e flutuou no vácuo na primeira caminhada espacial da história. Então quase deu errado de todas as maneiras possíveis. O traje de Leonov inflou tão rigidamente no vácuo que ele não conseguiu voltar pela câmara de ar, e teve que sangrar sua própria pressão de ar — arriscando a descompressão — para se espremer para dentro. O sistema de reentrada automático falhou; a tripulação o pilotou manualmente e pousou centenas de quilômetros fora do alvo, em floresta siberiana profunda, onde passaram duas noites congelantes na floresta densa — lobos na taiga ao redor deles — antes de esquiar até um helicóptero que não podia pousar entre as árvores.",
+    "new": "As apostas deram certo, por pouco. Em outubro de 1964, a Voskhod 1 levou a primeira tripulação de três pessoas — em mangas de camisa, sem trajes, sem assentos ejetáveis — ao redor da Terra por um dia e voltou em segurança. Cinco meses depois, a Voskhod 2 fez a coisa mais difícil: Aleksei Leonov abriu uma escotilha e flutuou no vácuo na primeira caminhada espacial da história. Então quase deu errado de todas as maneiras possíveis. O traje de Leonov inflou tão rigidamente no vácuo que ele não conseguiu voltar pela câmara de ar, e teve que sangrar sua própria pressão de ar — arriscando a descompressão — para se espremer para dentro. O sistema de reentrada automático falhou; a tripulação o pilotou manualmente e pousou centenas de quilômetros fora do alvo, em floresta siberiana profunda, onde passaram duas noites congelantes na floresta densa — lobos na taiga ao redor deles — antes de esquiar até um helicóptero que não podia pousar entre as árvores."
+  },
+  {
+    "rel": "programs/voskhod.json",
+    "at": "legacy.0.caption",
+    "old": "A caminhada espacial de Alexei Leonov, março de 1965 — o primeiro humano em espaço aberto, e um dos encontros mais próximos com o desastre que a era produziu.",
+    "new": "A caminhada espacial de Aleksei Leonov, março de 1965 — o primeiro humano em espaço aberto, e um dos encontros mais próximos com o desastre que a era produziu."
+  },
+  {
+    "rel": "programs/vostok.json",
+    "at": "outcome.1.md",
+    "old": "Em pouco mais de dois anos, a Vostok marcou uma sequência de primeiros lugares que os Estados Unidos só podiam observar. Em 12 de abril de 1961, Yuri Gagarin se tornou o primeiro ser humano no espaço — uma única órbita que o tornou, da noite para o dia, a pessoa mais famosa da Terra. Gherman Titov seguiu com o primeiro dia completo em órbita. As Vostoks 3 e 4 voaram juntas, a primeira vez que duas naves tripuladas compartilharam o céu. Valery Bykovsky voou por quase cinco dias, ainda o voo espacial solo mais longo de todos os tempos. E Valentina Tereshkova se tornou a primeira mulher no espaço — um marco que os americanos só alcançariam em 1983.",
+    "new": "Em pouco mais de dois anos, a Vostok marcou uma sequência de primeiros lugares que os Estados Unidos só podiam observar. Em 12 de abril de 1961, Iuri Gagarin se tornou o primeiro ser humano no espaço — uma única órbita que o tornou, da noite para o dia, a pessoa mais famosa da Terra. Gherman Titov seguiu com o primeiro dia completo em órbita. As Vostoks 3 e 4 voaram juntas, a primeira vez que duas naves tripuladas compartilharam o céu. Valery Bykovsky voou por quase cinco dias, ainda o voo espacial solo mais longo de todos os tempos. E Valentina Tereshkova se tornou a primeira mulher no espaço — um marco que os americanos só alcançariam em 1983."
+  },
+  {
+    "rel": "programs/vostok.json",
+    "at": "legacy.0.caption",
+    "old": "Yuri Gagarin — o primeiro ser humano no espaço, e pelo resto de sua curta vida o rosto do programa espacial soviético.",
+    "new": "Iuri Gagarin — o primeiro ser humano no espaço, e pelo resto de sua curta vida o rosto do programa espacial soviético."
+  },
+  {
+    "rel": "satellites/charon.json",
+    "at": "description",
+    "old": "Metade do diâmetro de Plutão — a maior proporção tamanho-satélite-para-planeta do sistema solar. Caronte e Plutão estão mutuamente presos em travamento de maré, orbitando um centro de massa comum a cerca de 980 km acima da superfície de Plutão — efetivamente um sistema de planeta binário. New Horizons revelou um terreno surpreendentemente variado: a planície lisa Vulcan Planitia ao sul, um hemisfério antigo e cratizado ao norte, e uma calota polar vermelho-escura (Mordor Macula) de tholinas formada quando moléculas de metano escapando da atmosfera de Plutão se acumularam em Caronte e foram processadas pela luz ultravioleta. As quatro luas menores de Plutão (Styx, Nix, Kerberos, Hydra) orbitam o baricentro Plutão-Caronte com rotações caóticas impulsionadas pela gravidade flutuante do sistema binário.",
+    "new": "Metade do diâmetro de Plutão — a maior proporção tamanho-satélite-para-planeta do sistema solar. Caronte e Plutão estão mutuamente presos em travamento de maré, orbitando um centro de massa comum a cerca de 980 km acima da superfície de Plutão — efetivamente um sistema de planeta binário. New Horizons revelou um terreno surpreendentemente variado: a planície lisa Vulcan Planitia ao sul, um hemisfério antigo e cratizado ao norte, e uma calota polar vermelho-escura (Mordor Macula) de tholinas formada quando moléculas de metano escapando da atmosfera de Plutão se acumularam em Caronte e foram processadas pela luz ultravioleta. As quatro luas menores de Plutão (Estige, Nix, Cérbero, Hidra) orbitam o baricentro Plutão-Caronte com rotações caóticas impulsionadas pela gravidade flutuante do sistema binário."
+  },
+  {
+    "rel": "satellites/oberon.json",
+    "at": "description",
+    "old": "A mais externa das principais luas de Urano. A superfície de Oberon é fortemente craterizada e com tonalidade avermelhada — mais antiga que a de Titania, sem evidências claras de ressuperficiamento desde o intenso bombardeio tardio há ~4 Gyr. Várias crateras grandes possuem pisos notavelmente escuros; os espectros são consistentes com resíduos de hidrocarbonetos deixados por matéria orgânica alterada pelo intemperismo espacial. Uma montanha de 6 km — possivelmente o pico central de uma grande bacia de impacto — ergue-se próximo ao limbo na melhor imagem da Voyager 2.",
+    "new": "A mais externa das principais luas de Urano. A superfície de Oberon é fortemente craterizada e com tonalidade avermelhada — mais antiga que a de Titânia, sem evidências claras de ressuperficiamento desde o intenso bombardeio tardio há ~4 Gyr. Várias crateras grandes possuem pisos notavelmente escuros; os espectros são consistentes com resíduos de hidrocarbonetos deixados por matéria orgânica alterada pelo intemperismo espacial. Uma montanha de 6 km — possivelmente o pico central de uma grande bacia de impacto — ergue-se próximo ao limbo na melhor imagem da Voyager 2."
+  },
+  {
+    "rel": "satellites/titania.json",
+    "at": "library_labels.titania-wiki",
+    "old": "Wikipedia — Titania",
+    "new": "Wikipedia — Titânia"
+  },
+  {
+    "rel": "satellites/titania.json",
+    "at": "library_labels.titania-nasa",
+    "old": "NASA Science — visão geral de Titania",
+    "new": "NASA Science — visão geral de Titânia"
+  },
+  {
+    "rel": "satellites/triton.json",
+    "at": "description",
+    "old": "A maior lua de Netuno e um dos mundos geologicamente mais ativos do sistema solar. Tritão orbita Netuno para trás (retrógrado) e com uma inclinação extrema — diagnóstico de um objeto capturado do Kuiper Belt, tornando-o provavelmente um irmão de Plutão em vez de uma lua nativa de Netuno. A Voyager 2 detectou gêiseres de nitrogênio ativos expelindo poeira orgânica escura a 8 km de altura em uma atmosfera tênue de nitrogênio; o hemisfério sul apresenta 'terreno de melão' — uma rede de depressões e cristas nunca vista em nenhum outro lugar do sistema solar. A órbita retrógrada de Tritão está decaindo por forças de maré; em aproximadamente 3,6 Gyr ele será destruído em um anel semelhante ao de Saturno ou colidirá com Netuno.",
+    "new": "A maior lua de Netuno e um dos mundos geologicamente mais ativos do sistema solar. Tritão orbita Netuno para trás (retrógrado) e com uma inclinação extrema — diagnóstico de um objeto capturado do cinturão de Kuiper, tornando-o provavelmente um irmão de Plutão em vez de uma lua nativa de Netuno. A Voyager 2 detectou gêiseres de nitrogênio ativos expelindo poeira orgânica escura a 8 km de altura em uma atmosfera tênue de nitrogênio; o hemisfério sul apresenta 'terreno de melão' — uma rede de depressões e cristas nunca vista em nenhum outro lugar do sistema solar. A órbita retrógrada de Tritão está decaindo por forças de maré; em aproximadamente 3,6 Gyr ele será destruído em um anel semelhante ao de Saturno ou colidirá com Netuno."
+  },
+  {
+    "rel": "satellites/triton.json",
+    "at": "science_sections.0.why",
+    "old": "A inclinação orbital de 156,8° de Tritão — retrógrada, fortemente inclinada em relação ao equador de Netuno — é a evidência crucial de sua captura da Kuiper Belt em vez de formação com Netuno.",
+    "new": "A inclinação orbital de 156,8° de Tritão — retrógrada, fortemente inclinada em relação ao equador de Netuno — é a evidência crucial de sua captura do cinturão de Kuiper em vez de formação com Netuno."
+  },
+  {
+    "rel": "science/cosmology/_intro.json",
+    "at": "paragraphs.1",
+    "old": "Ela se emparelha com os shells externos da escada de escala /explore. Quando você sobe além do Local Group para a Local Sheet, o Virgo Supercluster e além, estes são os artigos que explicam o que você está vendo e como alguém poderia possivelmente saber a que distância está.",
+    "new": "Ela se emparelha com os shells externos da escada de escala /explore. Quando você sobe além do Grupo Local para a Local Sheet, o Superaglomerado local e além, estes são os artigos que explicam o que você está vendo e como alguém poderia possivelmente saber a que distância está."
+  },
+  {
+    "rel": "science/cosmology/_intro.json",
+    "at": "paragraphs.2",
+    "old": "O conjunto cresce com a escada: a estrutura em larga escala e a escada de distância chegam primeiro, com o Virgo Supercluster; a cosmologia mais profunda — desvio para o vermelho e lei de Hubble, matéria escura e energia escura, a radiação de fundo em micro-ondas, o próprio Big Bang — chega junto com os níveis que a necessitam.",
+    "new": "O conjunto cresce com a escada: a estrutura em larga escala e a escada de distância chegam primeiro, com o Superaglomerado local; a cosmologia mais profunda — desvio para o vermelho e lei de Hubble, matéria escura e energia escura, a radiação de fundo em micro-ondas, o próprio Big Bang — chega junto com os níveis que a necessitam."
+  },
+  {
+    "rel": "science/cosmology/cosmic-distance-ladder.json",
+    "at": "body_paragraphs.1",
+    "old": "Além da paralaxe, a geometria se esgota e você muda para velas padrão — objetos cuja verdadeira brilho você conhece, então seu desvanecimento aparente revela sua distância. As estrelas variáveis Cepheid pulsam com um período que rastreia sua luminosidade: meça o pulso, leia o brilho verdadeiro, compare com o quão brilhante parecem. As Cepheids, calibradas por paralaxe, levam a escada até aglomerados de galáxias próximas — é assim que o Virgo Cluster é fixado perto de 16,5 megaparsecs.",
+    "new": "Além da paralaxe, a geometria se esgota e você muda para velas padrão — objetos cuja verdadeira brilho você conhece, então seu desvanecimento aparente revela sua distância. As estrelas variáveis Cepheid pulsam com um período que rastreia sua luminosidade: meça o pulso, leia o brilho verdadeiro, compare com o quão brilhante parecem. As Cepheids, calibradas por paralaxe, levam a escada até aglomerados de galáxias próximas — é assim que o Aglomerado de Virgem é fixado perto de 16,5 megaparsecs."
+  },
+  {
+    "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+    "at": "body_paragraphs.1",
+    "old": "O resultado é Laniakea — havaiano para 'céu imenso' — com cerca de 160 megaparsecs (500 milhões de anos-luz) de largura e lar de aproximadamente 100 mil galáxias. Nosso Virgo Supercluster, outrora considerado todo o bairro, resulta ser um único lobo periférico. Tudo dentro de Laniakea está fluindo lentamente em direção a um único ponto gravitacional baixo.",
+    "new": "O resultado é Laniakea — havaiano para 'céu imenso' — com cerca de 160 megaparsecs (500 milhões de anos-luz) de largura e lar de aproximadamente 100 mil galáxias. Nosso Superaglomerado local, outrora considerado todo o bairro, resulta ser um único lobo periférico. Tudo dentro de Laniakea está fluindo lentamente em direção a um único ponto gravitacional baixo."
+  },
+  {
+    "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+    "at": "body_paragraphs.2",
+    "old": "Esse foco é o Great Attractor, uma concentração de massa ao redor do Norma Cluster (Abell 3627), a aproximadamente 65 megaparsecs de distância. É difícil de estudar porque fica atrás das densas nuvens estelares e poeira do disco da própria Via Láctea — a 'Zona de Evitação' — então muito do que sabemos vem de levantamentos de rádio e infravermelho que atravessam a obscuração, e dos movimentos das galáxias em si.",
+    "new": "Esse foco é o Grande Atrator, uma concentração de massa ao redor do Aglomerado do Esquadro (Abell 3627), a aproximadamente 65 megaparsecs de distância. É difícil de estudar porque fica atrás das densas nuvens estelares e poeira do disco da própria Via Láctea — a 'Zona de Evitação' — então muito do que sabemos vem de levantamentos de rádio e infravermelho que atravessam a obscuração, e dos movimentos das galáxias em si."
+  },
+  {
+    "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+    "at": "body_paragraphs.3",
+    "old": "Não para por aí. Laniakea em si não está em repouso: todo o superaglomerado, junto com seus vizinhos, é puxado por um fluxo maior em direção a uma concentração de massa ainda maior além de suas bordas — o Shapley Concentration, a coleção mais densa de aglomerados galácticos conhecida no universo próximo. Uma bacia dentro de uma encosta.",
+    "new": "Não para por aí. Laniakea em si não está em repouso: todo o superaglomerado, junto com seus vizinhos, é puxado por um fluxo maior em direção a uma concentração de massa ainda maior além de suas bordas — o Superaglomerado Shapley, a coleção mais densa de aglomerados galácticos conhecida no universo próximo. Uma bacia dentro de uma encosta."
+  },
+  {
+    "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+    "at": "diagram_caption",
+    "old": "Laniakea como uma bacia hidrográfica de fluxos galácticos: linhas de corrente convergem no Great Attractor perto do Norma Cluster, com o Virgo Supercluster (nosso lobo, e nossa posição) na borda. O shell /explore Laniakea renderiza esses membros esquematicamente — distâncias reais, layout ilustrativo.",
+    "new": "Laniakea como uma bacia hidrográfica de fluxos galácticos: linhas de corrente convergem no Grande Atrator perto do Aglomerado do Esquadro, com o Superaglomerado local (nosso lobo, e nossa posição) na borda. O shell /explore Laniakea renderiza esses membros esquematicamente — distâncias reais, layout ilustrativo."
+  },
+  {
+    "rel": "science/cosmology/large-scale-structure.json",
+    "at": "diagram_caption",
+    "old": "A hierarquia aninhada que a escala /explore sobe: Local Group → Local Sheet → Virgo Supercluster → Laniakea → a teia cósmica de filamentos e vazios. Cada casca é um esquema — distâncias reais do catálogo em um layout ilustrativo, não uma fotografia de uma estrutura que nenhum telescópio consegue enquadrar.",
+    "new": "A hierarquia aninhada que a escala /explore sobe: Grupo Local → Local Sheet → Superaglomerado local → Laniakea → a teia cósmica de filamentos e vazios. Cada casca é um esquema — distâncias reais do catálogo em um layout ilustrativo, não uma fotografia de uma estrutura que nenhum telescópio consegue enquadrar."
+  },
+  {
+    "rel": "science/life-in-space/lunar-habitat-design.json",
+    "at": "body_paragraphs.3",
+    "old": "Dois problemas estruturais dominam o design de habitats — tanto a Lua quanto Marte os compartilham, mas a Lua os enfrenta primeiro. Radiação: raios cósmicos galácticos + eventos episódicos de partículas solares entregam aproximadamente 1,4 mSv/dia na superfície lunar (medido pelo instrumento LND do Chang'e-4), vs ~0,5–0,7 mSv/dia na ISS dentro do blindagem magnetosférica parcial da Terra — aproximadamente 2–2,5× dose mais alta. As estratégias de mitigação sob design: diques de regolito empurrados ao redor de habitats fixos (1-2 m de regolito bloqueia ~80% da dose), interiores de tubos de lava (~80-100 m abaixo da superfície, em tubos detectados por Selene / LRO a partir de claraboias colapsadas — as fossas de Marius Hills e Mare Tranquillitatis são os sítios canônicos), ou escudos de parede de água pré-posicionados. Poeira: as tripulações do Apollo relataram que a poeira lunar degradou fatos de EVA em ~10 EVAs, travou ecluses de ar, abrasou selos, teve cheiro de pólvora, e desencadeou respostas alérgicas dentro do LM. Os designs de habitat de superfície todos incorporam suitlocks com ecluses de ar de poeira (fatos armazenados do lado de fora, tripulação entra de dentro sem trazer poeira para o volume pressurizado) — a mesma arquitetura usada em fatos Artemis EVA e plano ILRS.",
+    "new": "Dois problemas estruturais dominam o design de habitats — tanto a Lua quanto Marte os compartilham, mas a Lua os enfrenta primeiro. Radiação: raios cósmicos galácticos + eventos episódicos de partículas solares entregam aproximadamente 1,4 mSv/dia na superfície lunar (medido pelo instrumento LND do Chang'e-4), vs ~0,5–0,7 mSv/dia na ISS dentro do blindagem magnetosférica parcial da Terra — aproximadamente 2–2,5× dose mais alta. As estratégias de mitigação sob design: diques de regolito empurrados ao redor de habitats fixos (1-2 m de regolito bloqueia ~80% da dose), interiores de tubos de lava (~80-100 m abaixo da superfície, em tubos detectados por Selene / LRO a partir de claraboias colapsadas — as fossas das colinas Marius e do Mare Tranquillitatis são os sítios canônicos), ou escudos de parede de água pré-posicionados. Poeira: as tripulações do Apollo relataram que a poeira lunar degradou fatos de EVA em ~10 EVAs, travou ecluses de ar, abrasou selos, teve cheiro de pólvora, e desencadeou respostas alérgicas dentro do LM. Os designs de habitat de superfície todos incorporam suitlocks com ecluses de ar de poeira (fatos armazenados do lado de fora, tripulação entra de dentro sem trazer poeira para o volume pressurizado) — a mesma arquitetura usada em fatos Artemis EVA e plano ILRS."
+  },
+  {
+    "rel": "science/life-in-space/suit-lineage.json",
+    "at": "body_paragraphs.0",
+    "old": "O problema original do traje EVA era simples e terrível: manter a tripulação viva se a espaçonave perdesse pressão. Os cosmonautas de Vostok e Voskhod usavam trajes SK-1 / Berkut. Mercury utilizou uma versão modificada do Mark IV da Marinha. Gemini usou o G3C / G4C. Nenhum destes foi testado como salvador de descompressão total porque nenhum voo havia perdido pressão de cabine. Então em junho de 1971 Soyuz 11 retornou com a tripulação morta por descompressão rápida durante a separação — Dobrovolsky, Volkov, Patsayev estavam em mangas de camisa porque a cabine Soyuz não podia acomodar três cosmonautas em traje. A resposta soviética foi o Sokol K-V (1973), um traje de pressão leve de tecido borrachudo projetado especificamente para se encaixar dentro do assento de Soyuz e inflar em segundos se a cabine falhasse. Toda tripulação de Soyuz desde então veste um descendente do Sokol — o atual Sokol-M é sua variante modernizada mais recente.",
+    "new": "O problema original do traje EVA era simples e terrível: manter a tripulação viva se a espaçonave perdesse pressão. Os cosmonautas de Vostok e Voskhod usavam trajes SK-1 / Berkut. Mercury utilizou uma versão modificada do Mark IV da Marinha. Gemini usou o G3C / G4C. Nenhum destes foi testado como salvador de descompressão total porque nenhum voo havia perdido pressão de cabine. Então em junho de 1971 Soyuz 11 retornou com a tripulação morta por descompressão rápida durante a separação — Dobrovolski, Volkov, Patsayev estavam em mangas de camisa porque a cabine Soyuz não podia acomodar três cosmonautas em traje. A resposta soviética foi o Sokol K-V (1973), um traje de pressão leve de tecido borrachudo projetado especificamente para se encaixar dentro do assento de Soyuz e inflar em segundos se a cabine falhasse. Toda tripulação de Soyuz desde então veste um descendente do Sokol — o atual Sokol-M é sua variante modernizada mais recente."
+  },
+  {
+    "rel": "science/observation/galaxy-types.json",
+    "at": "intro_sentence",
+    "old": "Galáxias se dividem em famílias estruturais: espirais (Milky Way, Andromeda), elípticas (M87, NGC 4889), irregulares (Magellanic Clouds) e anãs. Baseado na classificação de Hubble de 1936, refinada.",
+    "new": "Galáxias se dividem em famílias estruturais: espirais (Via Láctea, Andromeda), elípticas (M87, NGC 4889), irregulares (Nuvens de Magalhães) e anãs. Baseado na classificação de Hubble de 1936, refinada."
+  },
+  {
+    "rel": "science/observation/galaxy-types.json",
+    "at": "body_paragraphs.1",
+    "old": "As galáxias elípticas são esferas sustentadas por dispersão, compostas principalmente por estrelas antigas com pouco gás, pouca poeira e praticamente nenhuma formação estelar em curso. Variam de pequenas (M32, a companheira anã elíptica compacta de Andromeda) a imensas (M87 no coração do Aglomerado de Virgem, hospedeira do primeiro buraco negro supermassivo fotografado; galáxias cD de classe brightest cluster, como NGC 4889 em Coma, que contêm trilhões de estrelas). A maioria das galáxias elípticas são produtos de antigas fusões em larga escala — quando duas espirais colidem, a estrutura de disco é perturbada, o gás é consumido em um surto de formação estelar, e o remanescente da fusão se estabelece em uma elíptica. A Milky Way está destinada a se tornar uma elíptica após sua fusão com Andromeda. Essencialmente não existem galáxias elípticas no Grupo Local, exceto M32, M110, NGC 147 e NGC 185 — pequenas companheiras de M31. As grandes galáxias elípticas todas vivem em ambientes de aglomerados densos.",
+    "new": "As galáxias elípticas são esferas sustentadas por dispersão, compostas principalmente por estrelas antigas com pouco gás, pouca poeira e praticamente nenhuma formação estelar em curso. Variam de pequenas (M32, a companheira anã elíptica compacta de Andromeda) a imensas (M87 no coração do Aglomerado de Virgem, hospedeira do primeiro buraco negro supermassivo fotografado; galáxias cD de classe brightest cluster, como NGC 4889 em Coma, que contêm trilhões de estrelas). A maioria das galáxias elípticas são produtos de antigas fusões em larga escala — quando duas espirais colidem, a estrutura de disco é perturbada, o gás é consumido em um surto de formação estelar, e o remanescente da fusão se estabelece em uma elíptica. A Via Láctea está destinada a se tornar uma elíptica após sua fusão com Andromeda. Essencialmente não existem galáxias elípticas no Grupo Local, exceto M32, M110, NGC 147 e NGC 185 — pequenas companheiras de M31. As grandes galáxias elípticas todas vivem em ambientes de aglomerados densos."
+  },
+  {
+    "rel": "science/observation/galaxy-types.json",
+    "at": "body_paragraphs.2",
+    "old": "Irregulares são tudo aquilo que não se encaixa. As Magellanic Clouds são os protótipos — ricas em gás, em formação estelar ativa, sem braços espirais claros ou bojo central, frequentemente alongadas ou distorcidas por interações de maré com vizinhos maiores. A maioria das galáxias de baixa massa em formação estelar são irregulares. Muitas foram uma vez classificadas como parecidas com espirais, mas foram tão perturbadas por forças de maré que a estrutura não é mais reconhecível; outras são muito pequenas para nunca terem desenvolvido um disco auto-sustentado. Irregulares dominam a contagem de galáxias na extremidade de baixa massa da função de massa galáctica — existem muito mais irregulares anãs do que espirais, mas são individualmente fracas, de modo que as espirais dominam o céu noturno e o registro histórico.",
+    "new": "Irregulares são tudo aquilo que não se encaixa. As Nuvens de Magalhães são os protótipos — ricas em gás, em formação estelar ativa, sem braços espirais claros ou bojo central, frequentemente alongadas ou distorcidas por interações de maré com vizinhos maiores. A maioria das galáxias de baixa massa em formação estelar são irregulares. Muitas foram uma vez classificadas como parecidas com espirais, mas foram tão perturbadas por forças de maré que a estrutura não é mais reconhecível; outras são muito pequenas para nunca terem desenvolvido um disco auto-sustentado. Irregulares dominam a contagem de galáxias na extremidade de baixa massa da função de massa galáctica — existem muito mais irregulares anãs do que espirais, mas são individualmente fracas, de modo que as espirais dominam o céu noturno e o registro histórico."
+  },
+  {
+    "rel": "science/observation/galaxy-types.json",
+    "at": "body_paragraphs.3",
+    "old": "Galáxias anãs se subdividem ainda mais. Esferoidais anãs (Sagittarius, Fornax, Sculptor) — pobres em gás, ~elípticas, dominadas por matéria escura, veja o artigo /science separado. Irregulares anãs (NGC 6822, IC 1613, WLM no Local Group) — ricas em gás, em formação estelar, sem morfologia definida. Elípticas anãs (M32 é o exemplo típico) — versões pequenas de elípticas grandes, frequentemente companheiras de galáxias grandes. Ultra-fracas — descobertas apenas desde 2005 por levantamentos SDSS / DES / LSST profundos, com luminosidades abaixo de 10⁵ luminosidades solares e massas estelares comparáveis a um único aglomerado globular, mas com razões massa-luminosidade na casa das centenas (isto é, ainda dominadas por matéria escura, não por estrelas). Essas ultra-fracas são provavelmente as galáxias mais fracas em existência — em massas menores, nenhuma galáxia é detectável porque não há estrelas em absoluto, apenas halos de matéria escura.",
+    "new": "Galáxias anãs se subdividem ainda mais. Esferoidais anãs (Sagittarius, Fornax, Sculptor) — pobres em gás, ~elípticas, dominadas por matéria escura, veja o artigo /science separado. Irregulares anãs (NGC 6822, IC 1613, WLM no Grupo Local) — ricas em gás, em formação estelar, sem morfologia definida. Elípticas anãs (M32 é o exemplo típico) — versões pequenas de elípticas grandes, frequentemente companheiras de galáxias grandes. Ultra-fracas — descobertas apenas desde 2005 por levantamentos SDSS / DES / LSST profundos, com luminosidades abaixo de 10⁵ luminosidades solares e massas estelares comparáveis a um único aglomerado globular, mas com razões massa-luminosidade na casa das centenas (isto é, ainda dominadas por matéria escura, não por estrelas). Essas ultra-fracas são provavelmente as galáxias mais fracas em existência — em massas menores, nenhuma galáxia é detectável porque não há estrelas em absoluto, apenas halos de matéria escura."
+  },
+  {
+    "rel": "science/observation/galaxy-types.json",
+    "at": "body_paragraphs.4",
+    "old": "Além do esquema de Hubble. Levantamentos modernos adicionaram vários tipos de galáxias que não se encaixavam no esquema de Hubble de 1936: galáxias starburst (M82) onde a formação estelar é muitas vezes mais alta que o normal devido a uma fusão recente ou interação de maré; galáxias hospedeiras de AGN (Seyferts, quasares, galáxias de rádio) onde o buraco negro central está acretando ativamente e dominando a saída luminosa; galáxias de anel (Objeto de Hoag) formadas por colisões de bala de frente; e as galáxias ultra-difusas (NGC 1052-DF2, Dragonfly 44) descobertas nos anos 2010, com tamanhos de galáxias de tamanho completo, mas densidades estelares tão baixas que você consegue quase ver através delas. O esquema de classificação continua sendo estendido conforme as observações melhoram; o garfo de sintonia de Hubble permanece como a espinha dorsal de como os astrônomos falam sobre morfologia, mesmo quando galáxias individuais se recusam a se encaixar.",
+    "new": "Além do esquema de Hubble. Levantamentos modernos adicionaram vários tipos de galáxias que não se encaixavam no esquema de Hubble de 1936: galáxias starburst (M82) onde a formação estelar é muitas vezes mais alta que o normal devido a uma fusão recente ou interação de maré; galáxias hospedeiras de AGN (Seyferts, quasares, galáxias de rádio) onde o buraco negro central está acretando ativamente e dominando a saída luminosa; galáxias de anel (Objeto de Hoag) formadas por colisões de bala de frente; e as galáxias ultra-difusas (NGC1052-DF2, Libélula 44) descobertas nos anos 2010, com tamanhos de galáxias de tamanho completo, mas densidades estelares tão baixas que você consegue quase ver através delas. O esquema de classificação continua sendo estendido conforme as observações melhoram; o garfo de sintonia de Hubble permanece como a espinha dorsal de como os astrônomos falam sobre morfologia, mesmo quando galáxias individuais se recusam a se encaixar."
+  },
+  {
+    "rel": "science/observation/galaxy-types.json",
+    "at": "diagram_caption",
+    "old": "Garfo de sintonia de Hubble: elípticas (E0-E7) à esquerda, espirais (S/SB, tipos a/b/c) à direita, irregulares de lado. Mais subclasses anãs (dSph / dE / dIrr / ultra-fracas) e adições modernas (starburst, AGN, anel, ultra-difusas). O Local Group abrange quase todas as categorias — um microcosmo pedagógico útil.",
+    "new": "Garfo de sintonia de Hubble: elípticas (E0-E7) à esquerda, espirais (S/SB, tipos a/b/c) à direita, irregulares de lado. Mais subclasses anãs (dSph / dE / dIrr / ultra-fracas) e adições modernas (starburst, AGN, anel, ultra-difusas). O Grupo Local abrange quase todas as categorias — um microcosmo pedagógico útil."
+  },
+  {
+    "rel": "science/observation/hertzsprung-russell.json",
+    "at": "body_paragraphs.3",
+    "old": "As estrelas interessantes são aquelas fora da sequência principal. Canto superior direito: os gigantes vermelhos e supergigantes — frios mas enormes e extremamente luminosos, estrelas que esgotaram seu hidrogênio central e inchaçaram (Betelgeuse, Aldebaran e Arcturus vivem aqui). Canto inferior esquerdo: as anãs brancas — quentes mas minúsculas e fracas, os núcleos expostos deixados quando uma estrela como o Sol morre. Onde uma estrela pousa e como se move pelo diagrama ao longo do tempo é toda a narrativa da evolução estelar escrita em duas coordenadas.",
+    "new": "As estrelas interessantes são aquelas fora da sequência principal. Canto superior direito: os gigantes vermelhos e supergigantes — frios mas enormes e extremamente luminosos, estrelas que esgotaram seu hidrogênio central e inchaçaram (Betelgeuse, Aldebarã e Arcturus vivem aqui). Canto inferior esquerdo: as anãs brancas — quentes mas minúsculas e fracas, os núcleos expostos deixados quando uma estrela como o Sol morre. Onde uma estrela pousa e como se move pelo diagrama ao longo do tempo é toda a narrativa da evolução estelar escrita em duas coordenadas."
+  },
+  {
+    "rel": "science/observation/magellanic-clouds.json",
+    "at": "body_paragraphs.0",
+    "old": "As Nuvens de Magalhães dominam o céu do hemisfério sul de qualquer local razoavelmente escuro abaixo de cerca de +20° de latitude. Parecem exatamente como soam — dois aglomerados difusos desconectados no céu noturno, a LMC com cerca de 5° de largura e a SMC cerca de 3°. São catalogadas sob diversos nomes, mas Magalhães vem da circunavegação de Ferdinand Magellan em 1519-1522, durante a qual as nuvens foram a referência de navegação mais confiável que sua tripulação tinha no Atlântico Sul. As nuvens têm sido continuamente observadas pela humanidade há tanto tempo quanto humanos vivem no hemisfério sul; arte rupestre e tradições orais de aborígenes australianos, dos Khoisan e culturas andinas as referenciam pelo nome de formas que precedem em muito o contato europeu.",
+    "new": "As Nuvens de Magalhães dominam o céu do hemisfério sul de qualquer local razoavelmente escuro abaixo de cerca de +20° de latitude. Parecem exatamente como soam — dois aglomerados difusos desconectados no céu noturno, a LMC com cerca de 5° de largura e a SMC cerca de 3°. São catalogadas sob diversos nomes, mas Magalhães vem da circunavegação de Fernão Magalhães em 1519-1522, durante a qual as nuvens foram a referência de navegação mais confiável que sua tripulação tinha no Atlântico Sul. As nuvens têm sido continuamente observadas pela humanidade há tanto tempo quanto humanos vivem no hemisfério sul; arte rupestre e tradições orais de aborígenes australianos, dos Khoisan e culturas andinas as referenciam pelo nome de formas que precedem em muito o contato europeu."
+  },
+  {
+    "rel": "science/observation/our-galaxy.json",
+    "at": "body_paragraphs.0",
+    "old": "A Via Láctea é um disco plano e em rotação de aproximadamente 100.000 anos-luz de diâmetro, mas apenas ~1.000 anos-luz de espessura — um disco de vinil cósmico. Suas estrelas, gás e poeira estão enrolados em braços espirais (Perseus, Sagittarius, Scutum-Centaurus, Norma, além do nosso pequeno Orion Spur), irradiando de uma barra central de estrelas mais velhas. Envolvendo tudo isto está um halo esférico de aglomerados globulares antigos e a matéria escura invisível que domina a massa da galáxia. Estimativas da contagem de estrelas variam de 100 a 400 bilhões.",
+    "new": "A Via Láctea é um disco plano e em rotação de aproximadamente 100.000 anos-luz de diâmetro, mas apenas ~1.000 anos-luz de espessura — um disco de vinil cósmico. Suas estrelas, gás e poeira estão enrolados em braços espirais (Perseu, Sagitário, Escudo-Centauro, Norma, além do nosso pequeno Braço de Orion), irradiando de uma barra central de estrelas mais velhas. Envolvendo tudo isto está um halo esférico de aglomerados globulares antigos e a matéria escura invisível que domina a massa da galáxia. Estimativas da contagem de estrelas variam de 100 a 400 bilhões."
+  },
+  {
+    "rel": "science/planets/asteroid-belt.json",
+    "at": "narrative_101.0",
+    "old": "Quando a Lei de Bode previu um corpo a 2,8 UA entre Marte e Júpiter no final do século XVIII, os astrônomos saíram à caça. No dia de Ano Novo de 1801, Giuseppe Piazzi no observatório de Palermo encontrou algo. Ele o chamou de Ceres em homenagem à deusa padroeira da Sicília, e a princípio a Royal Society o classificou como o planeta perdido. Em quatro anos, um segundo corpo — Pallas — apareceu na mesma vizinhança. Depois Juno (1804) e Vesta (1807). A percepção veio lentamente: isso não era um planeta, era um enxame.",
+    "new": "Quando a Lei de Bode previu um corpo a 2,8 UA entre Marte e Júpiter no final do século XVIII, os astrônomos saíram à caça. No dia de Ano Novo de 1801, Giuseppe Piazzi no observatório de Palermo encontrou algo. Ele o chamou de Ceres em homenagem à deusa padroeira da Sicília, e a princípio a Royal Society o classificou como o planeta perdido. Em quatro anos, um segundo corpo — Palas — apareceu na mesma vizinhança. Depois Juno (1804) e Vesta (1807). A percepção veio lentamente: isso não era um planeta, era um enxame."
+  },
+  {
+    "rel": "science/planets/asteroid-belt.json",
+    "at": "body_paragraphs.0",
+    "old": "O cinturão tem estrutura interna. A espectroscopia o divide em três zonas aproximadas: o cinturão interno (2,1–2,5 UA) dominado por corpos rochosos do tipo S; o cinturão médio (2,5–3,2 UA) onde os tipos C carbonáceos assumem o controle (Ceres + Hygiea vivem aqui); e o cinturão externo mesclando-se aos asteroides troianos que compartilham a órbita de Júpiter nos pontos de Lagrange L4 e L5. Populações parentais diferentes, temperaturas de formação diferentes, histórias diferentes — preservadas no mesmo cinturão porque as ressonâncias de Júpiter as aprisionaram.",
+    "new": "O cinturão tem estrutura interna. A espectroscopia o divide em três zonas aproximadas: o cinturão interno (2,1–2,5 UA) dominado por corpos rochosos do tipo S; o cinturão médio (2,5–3,2 UA) onde os tipos C carbonáceos assumem o controle (Ceres + Hígia vivem aqui); e o cinturão externo mesclando-se aos asteroides troianos que compartilham a órbita de Júpiter nos pontos de Lagrange L4 e L5. Populações parentais diferentes, temperaturas de formação diferentes, histórias diferentes — preservadas no mesmo cinturão porque as ressonâncias de Júpiter as aprisionaram."
+  },
+  {
+    "rel": "science/planets/asteroid-belt.json",
+    "at": "diagram_caption",
+    "old": "A extensão do cinturão de asteroides, 2,2–3,2 UA entre Marte e Júpiter. Principais membros Ceres / Vesta / Pallas / Hygiea rotulados. Setas de Júpiter mostram sua gravidade agitando o cinturão interno — a razão pela qual nenhum planeta se acumulou aqui.",
+    "new": "A extensão do cinturão de asteroides, 2,2–3,2 UA entre Marte e Júpiter. Principais membros Ceres / Vesta / Palas / Hígia rotulados. Setas de Júpiter mostram sua gravidade agitando o cinturão interno — a razão pela qual nenhum planeta se acumulou aqui."
+  },
+  {
+    "rel": "science/propulsion/fusion-propulsion.json",
+    "at": "body_paragraphs.1",
+    "old": "O estudo de engenharia mais detalhado até hoje é o Project Daedalus, realizado pela British Interplanetary Society nos anos 1970. O projeto usava fusão por confinamento inercial: esferas de deutério e hélio-3 ignidas por feixes de elétrons, cerca de 250 vezes por segundo, em uma câmara de reação magnética. A espaçonave resultante teria cerca de 54.000 toneladas no lançamento — quase tudo propelente — e alcançaria aproximadamente 12% da velocidade da luz, chegando à Barnard's Star (5,9 anos-luz de distância) em cerca de 50 anos, como um sobrevoo sem desaceleração. O Project Icarus, um estudo subsequente iniciado em 2009, revisitou o projeto com a restrição de permitir desaceleração na chegada; concluiu que os requisitos de massa são ainda mais difíceis de fechar.",
+    "new": "O estudo de engenharia mais detalhado até hoje é o Project Daedalus, realizado pela British Interplanetary Society nos anos 1970. O projeto usava fusão por confinamento inercial: esferas de deutério e hélio-3 ignidas por feixes de elétrons, cerca de 250 vezes por segundo, em uma câmara de reação magnética. A espaçonave resultante teria cerca de 54.000 toneladas no lançamento — quase tudo propelente — e alcançaria aproximadamente 12% da velocidade da luz, chegando à Estrela de Barnard (5,9 anos-luz de distância) em cerca de 50 anos, como um sobrevoo sem desaceleração. O Project Icarus, um estudo subsequente iniciado em 2009, revisitou o projeto com a restrição de permitir desaceleração na chegada; concluiu que os requisitos de massa são ainda mais difíceis de fechar."
+  },
+  {
+    "rel": "small-bodies/arrokoth.json",
+    "at": "science_sections.1.why",
+    "old": "Arrokoth orbita a 44,6 AU — Kuiper Belt clássica, além de Plutão, numa região onde corpos permaneceram largamente inalterados desde o início do sistema solar.",
+    "new": "Arrokoth orbita a 44,6 AU — cinturão de Kuiper clássico, além de Plutão, numa região onde corpos permaneceram largamente inalterados desde o início do sistema solar."
+  },
+  {
+    "rel": "small-bodies/haumea.json",
+    "at": "science_sections.1.why",
+    "old": "Haumea faz parte de uma pequena família colisional na Kuiper Belt — corpos com órbitas e espectros similares que compartilham um progenitor antigo.",
+    "new": "Haumea faz parte de uma pequena família colisional no cinturão de Kuiper — corpos com órbitas e espectros similares que compartilham um progenitor antigo."
+  },
+  {
+    "rel": "universe/exoplanets/alf-tau-b.json",
+    "at": "fact",
+    "old": "Um planeta massivo proposto em Aldebaran — o olho flamejante do Touro e um ponto de passagem da ficção científica.",
+    "new": "Um planeta massivo proposto em Aldebarã — o olho flamejante do Touro e um ponto de passagem da ficção científica."
+  },
+  {
+    "rel": "universe/exoplanets/alf-tau-b.json",
+    "at": "bio",
+    "old": "Aldebaran, o olho gigante laranja de Taurus, é uma das estrelas mais citadas pela ficção científica, desde aventuras pulp até o cinema. Um planeta com massa várias vezes superior à de Júpiter foi uma vez proposto a partir de décadas de sinais de velocidade sutis, mas análises posteriores atribuem esses sinais às próprias pulsações da estrela gigante — o planeta agora é considerado não confirmado — um lembrete de quão difícil é identificar planetas ao redor de sóis antigos e inquietos.",
+    "new": "Aldebarã, o olho gigante laranja do Touro, é uma das estrelas mais citadas pela ficção científica, desde aventuras pulp até o cinema. Um planeta com massa várias vezes superior à de Júpiter foi uma vez proposto a partir de décadas de sinais de velocidade sutis, mas análises posteriores atribuem esses sinais às próprias pulsações da estrela gigante — o planeta agora é considerado não confirmado — um lembrete de quão difícil é identificar planetas ao redor de sóis antigos e inquietos."
+  },
+  {
+    "rel": "universe/exoplanets/barnard-c.json",
+    "at": "bio",
+    "old": "Barnard c integra um sistema compacto de mundos pequenos e de baixa massa confirmados ao redor de Barnard's Star em 2024–2025 com o espectrógrafo ESPRESSO. Cada planeta tem uma fração da massa terrestre e orbita em apenas dias, muito quente demais para abrigar vida — mas sua descoberta finalmente entregou planetas reais em torno de uma estrela que havia frustrado caçadores durante cem anos.",
+    "new": "Barnard c integra um sistema compacto de mundos pequenos e de baixa massa confirmados ao redor da Estrela de Barnard em 2024–2025 com o espectrógrafo ESPRESSO. Cada planeta tem uma fração da massa terrestre e orbita em apenas dias, muito quente demais para abrigar vida — mas sua descoberta finalmente entregou planetas reais em torno de uma estrela que havia frustrado caçadores durante cem anos."
+  },
+  {
+    "rel": "universe/exoplanets/barnard-d.json",
+    "at": "fact",
+    "old": "Uma sub-Terra no sistema interno recém-revelado de Barnard's Star.",
+    "new": "Uma sub-Terra no sistema interno recém-revelado da Estrela de Barnard."
+  },
+  {
+    "rel": "universe/exoplanets/barnard-d.json",
+    "at": "bio",
+    "old": "Barnard d é um dos mundos diminutos detectados ao redor de Barnard's Star, uma anã vermelha a apenas seis anos-luz de distância. Pesando bem menos que uma massa terrestre e orbitando próximo à sua estrela fria, ele ajuda a fazer de nossa segunda vizinha estelar mais próxima um genuíno sistema planetário, em vez do céu vazio que se supunha antes.",
+    "new": "Barnard d é um dos mundos diminutos detectados ao redor da Estrela de Barnard, uma anã vermelha a apenas seis anos-luz de distância. Pesando bem menos que uma massa terrestre e orbitando próximo à sua estrela fria, ele ajuda a fazer de nossa segunda vizinha estelar mais próxima um genuíno sistema planetário, em vez do céu vazio que se supunha antes."
+  },
+  {
+    "rel": "universe/exoplanets/gj-273-c.json",
+    "at": "bio",
+    "old": "GJ 273 c é um planeta pequeno e quente orbitando a Estrela de Luyten bem próximo, interior ao seu irmão mais famoso GJ 273 b. Juntos, eles fazem da Estrela de Luyten — uma anã vermelha tênue perto do brilhante Procyon — um dos sistemas multiplanetários mais próximos do Sol.",
+    "new": "GJ 273 c é um planeta pequeno e quente orbitando a Estrela de Luyten bem próximo, interior ao seu irmão mais famoso GJ 273 b. Juntos, eles fazem da Estrela de Luyten — uma anã vermelha tênue perto do brilhante Prócion — um dos sistemas multiplanetários mais próximos do Sol."
+  },
+  {
+    "rel": "universe/named-stars/acrux.json",
+    "at": "cultural",
+    "old": "Como a estrela principal de Crux, Acrux compartilha do Cruzeiro do Sul que aparece nas bandeiras nacionais da Austrália, Nova Zelândia, Brasil, Papua-Nova Guiné e Samoa. Para culturas em todo o hemisfério sul, o Cruzeiro é um marcador central de navegação e de estações.",
+    "new": "Como a estrela principal do Cruzeiro do Sul, Acrux compartilha do Cruzeiro do Sul que aparece nas bandeiras nacionais da Austrália, Nova Zelândia, Brasil, Papua-Nova Guiné e Samoa. Para culturas em todo o hemisfério sul, o Cruzeiro é um marcador central de navegação e de estações."
+  },
+  {
+    "rel": "universe/named-stars/aldebaran.json",
+    "at": "bio",
+    "old": "Aldebaran (Alpha Tauri) é uma gigante alaranjada a cerca de 65 anos-luz de distância. Ela está em primeiro plano em relação ao aglomerado mais distante das Hyades, uma coincidência de linha de visada e não uma associação verdadeira.",
+    "new": "Aldebarã (Alpha Tauri) é uma gigante alaranjada a cerca de 65 anos-luz de distância. Ela está em primeiro plano em relação ao aglomerado mais distante das Hyades, uma coincidência de linha de visada e não uma associação verdadeira."
+  },
+  {
+    "rel": "universe/named-stars/aldebaran.json",
+    "at": "cultural",
+    "old": "Aldebaran é uma das quatro 'Estrelas Reais' da astronomia persa antiga. Seu nome significa 'a seguidora', pela maneira como ela acompanha as Pleiades através do céu.",
+    "new": "Aldebarã é uma das quatro 'Estrelas Reais' da astronomia persa antiga. Seu nome significa 'a seguidora', pela maneira como ela acompanha as Plêiades através do céu."
+  },
+  {
+    "rel": "universe/named-stars/alnilam.json",
+    "at": "cultural",
+    "old": "O nome vem do árabe e significa 'o colar de pérolas'. As três estrelas do Cinturão estão entre as mais universalmente reconhecidas no céu, usadas como indicador para Sirius e Aldebaran e entrelaçadas nas tradições estelares ao redor do mundo.",
+    "new": "O nome vem do árabe e significa 'o colar de pérolas'. As três estrelas do Cinturão estão entre as mais universalmente reconhecidas no céu, usadas como indicador para Sirius e Aldebarã e entrelaçadas nas tradições estelares ao redor do mundo."
+  },
+  {
+    "rel": "universe/named-stars/altair.json",
+    "at": "cultural",
+    "old": "O nome vem do árabe 'al-nasr al-ta'ir', a 'águia voadora'. Altair marca um dos vértices do Summer Triangle com Vega e Deneb, e no folclore chinês é o vaqueiro Niulang, separado da tecelã Zhinu (Vega) pelo Rio Prateado da Via Láctea.",
+    "new": "O nome vem do árabe 'al-nasr al-ta'ir', a 'águia voadora'. Altair marca um dos vértices do Triângulo de Verão com Vega e Deneb, e no folclore chinês é o vaqueiro Niulang, separado da tecelã Zhinu (Vega) pelo Rio Prateado da Via Láctea."
+  },
+  {
+    "rel": "universe/named-stars/atria.json",
+    "at": "bio",
+    "old": "Atria (Alpha Trianguli Australis) é uma gigante laranja a aproximadamente 390 anos-luz de distância, a estrela mais brilhante de Triangulum Australe, o Triângulo Austral.",
+    "new": "Átria (Alpha Trianguli Australis) é uma gigante laranja a aproximadamente 390 anos-luz de distância, a estrela mais brilhante de Triangulum Australe, o Triângulo Austral."
+  },
+  {
+    "rel": "universe/named-stars/barnards-star.json",
+    "at": "bio",
+    "old": "Barnard's Star tem o maior movimento próprio conhecido de qualquer estrela, atravessando uma largura aparente da Lua no céu aproximadamente a cada 180 anos — o que lhe valeu o apelido \"Barnard's Runaway Star\". É uma anã vermelha antiga e de baixa massa.",
+    "new": "A Estrela de Barnard tem o maior movimento próprio conhecido de qualquer estrela, atravessando uma largura aparente da Lua no céu aproximadamente a cada 180 anos — o que lhe valeu o apelido \"Barnard's Runaway Star\". É uma anã vermelha antiga e de baixa massa."
+  },
+  {
+    "rel": "universe/named-stars/denebola.json",
+    "at": "cultural",
+    "old": "O nome vem do árabe 'dhanab al-asad', 'a cauda do leão'. Na astrologia antiga era considerada uma estrela de má sorte, em contraste com a régia Regulus no coração do Leão.",
+    "new": "O nome vem do árabe 'dhanab al-asad', 'a cauda do leão'. Na astrologia antiga era considerada uma estrela de má sorte, em contraste com o régio Régulo no coração do Leão."
+  },
+  {
+    "rel": "universe/named-stars/gacrux.json",
+    "at": "cultural",
+    "old": "Seu nome é uma contração moderna de 'Gamma Crucis'. Como parte de Crux, ela figura na navegação do hemisfério sul e aparece, com suas companheiras, em diversas bandeiras nacionais do sul.",
+    "new": "Seu nome é uma contração moderna de 'Gamma Crucis'. Como parte do Cruzeiro do Sul, ela figura na navegação do hemisfério sul e aparece, com suas companheiras, em diversas bandeiras nacionais do sul."
+  },
+  {
+    "rel": "universe/named-stars/luytens-star.json",
+    "at": "bio",
+    "old": "Luyten's Star é uma anã vermelha a cerca de 12,4 anos-luz de distância em Canis Minor, não muito longe em nosso céu da brilhante Procyon. Ela abriga um sistema planetário que inclui uma super-Terra em sua zona habitável — um mundo tão próximo que foi escolhido como alvo para mensagens de rádio interestelares enviadas da Terra.",
+    "new": "A Estrela de Luyten é uma anã vermelha a cerca de 12,4 anos-luz de distância em Canis Minor, não muito longe em nosso céu do brilhante Prócion. Ela abriga um sistema planetário que inclui uma super-Terra em sua zona habitável — um mundo tão próximo que foi escolhido como alvo para mensagens de rádio interestelares enviadas da Terra."
+  },
+  {
+    "rel": "universe/named-stars/mimosa.json",
+    "at": "bio",
+    "old": "Mimosa (Beta Crucis), também conhecida como Becrux, é uma gigante azul quente a aproximadamente 280 anos-luz de distância e uma das estrelas brilhantes mais quentes visíveis a olho nu. Ela pulsa sutilmente e está situada dentro da figura marcante do Cruzeiro do Sul.",
+    "new": "Becrux (Beta Crucis), também conhecida como Mimosa, é uma gigante azul quente a aproximadamente 280 anos-luz de distância e uma das estrelas brilhantes mais quentes visíveis a olho nu. Ela pulsa sutilmente e está situada dentro da figura marcante do Cruzeiro do Sul."
+  },
+  {
+    "rel": "universe/named-stars/mimosa.json",
+    "at": "cultural",
+    "old": "Como uma das estrelas principais do Crux, Mimosa compartilha da proeminência do Crux em bandeiras do sul e na navegação e mitologia do hemisfério sul, desde histórias aborígenes australianas do céu até a cosmologia andina.",
+    "new": "Como uma das estrelas principais do Cruzeiro do Sul, Becrux compartilha da proeminência do Cruzeiro do Sul em bandeiras do sul e na navegação e mitologia do hemisfério sul, desde histórias aborígenes australianas do céu até a cosmologia andina."
+  },
+  {
+    "rel": "universe/named-stars/procyon.json",
+    "at": "bio",
+    "old": "Procyon (Alfa Canis Minoris) é uma estrela subanã branca próxima a apenas 11,5 anos-luz de distância, orbitada por uma fraca companheira anã branca. Sua proximidade a torna a oitava estrela mais brilhante do céu, apesar de sua luminosidade verdadeira modesta.",
+    "new": "Prócion (Alfa Canis Minoris) é uma estrela subanã branca próxima a apenas 11,5 anos-luz de distância, orbitada por uma fraca companheira anã branca. Sua proximidade a torna a oitava estrela mais brilhante do céu, apesar de sua luminosidade verdadeira modesta."
+  },
+  {
+    "rel": "universe/named-stars/procyon.json",
+    "at": "cultural",
+    "old": "O nome grego significa 'antes do cão', porque em muitas latitudes Procyon surge acima do horizonte pouco antes de Sirius. Com Sirius e Betelgeuse ela forma o brilhante 'Triângulo de Inverno'.",
+    "new": "O nome grego significa 'antes do cão', porque em muitas latitudes Prócion surge acima do horizonte pouco antes de Sirius. Com Sirius e Betelgeuse ela forma o brilhante 'Triângulo de Inverno'."
+  },
+  {
+    "rel": "universe/named-stars/rasalhague.json",
+    "at": "bio",
+    "old": "Rasalhague (Alpha Ophiuchi) é uma estrela branca a cerca de 48 anos-luz de distância, a mais brilhante em Ophiuchus, o Portador da Serpente. Ela gira rapidamente e é orbitada por uma companheira de baixa massa.",
+    "new": "Rasalhague (Alpha Ophiuchi) é uma estrela branca a cerca de 48 anos-luz de distância, a mais brilhante no Serpentário, o Portador da Serpente. Ela gira rapidamente e é orbitada por uma companheira de baixa massa."
+  },
+  {
+    "rel": "universe/named-stars/rasalhague.json",
+    "at": "cultural",
+    "old": "O nome vem do árabe para 'a cabeça do coletor de serpentes'. Ophiuchus — frequentemente identificado com o curador Asclepius segurando uma grande serpente — atravessa a eclíptica, a décima terceira figura pela qual o Sol passa.",
+    "new": "O nome vem do árabe para 'a cabeça do coletor de serpentes'. O Serpentário — frequentemente identificado com o curador Asclepius segurando uma grande serpente — atravessa a eclíptica, a décima terceira figura pela qual o Sol passa."
+  },
+  {
+    "rel": "universe/named-stars/regulus.json",
+    "at": "bio",
+    "old": "Regulus (Alpha Leonis) é uma estrela quente branco-azulada a cerca de 79 anos-luz de distância, a mais brilhante em Leão. Ela gira tão rapidamente que é visivelmente achatada, e encabeça um sistema múltiplo com companheiras mais fracas. Situada quase exatamente sobre a eclíptica, é regularmente ultrapassada — e ocasionalmente ocultada — pela Lua e pelos planetas.",
+    "new": "Régulo (Alpha Leonis) é uma estrela quente branco-azulada a cerca de 79 anos-luz de distância, a mais brilhante em Leão. Ela gira tão rapidamente que é visivelmente achatada, e encabeça um sistema múltiplo com companheiras mais fracas. Situada quase exatamente sobre a eclíptica, é regularmente ultrapassada — e ocasionalmente ocultada — pela Lua e pelos planetas."
+  },
+  {
+    "rel": "universe/named-stars/regulus.json",
+    "at": "cultural",
+    "old": "Chamada de 'pequeno rei' por Copernicus e conhecida na antiguidade como o Coração do Leão (Cor Leonis), Regulus foi uma das quatro 'Estrelas Reais' da Pérsia que marcavam a mudança das estações.",
+    "new": "Chamada de 'pequeno rei' por Copernicus e conhecida na antiguidade como o Coração do Leão (Cor Leonis), Régulo foi uma das quatro 'Estrelas Reais' da Pérsia que marcavam a mudança das estações."
+  },
+  {
+    "rel": "universe/named-stars/rigel.json",
+    "at": "bio",
+    "old": "Rigel (Beta Orionis) é uma supergigante azul quente a algumas centenas de anos-luz de distância, uma das estrelas intrinsecamente mais luminosas visíveis a olho nu. Apesar da designação 'Beta', geralmente supera Betelgeuse em brilho.",
+    "new": "Rígel (Beta Orionis) é uma supergigante azul quente a algumas centenas de anos-luz de distância, uma das estrelas intrinsecamente mais luminosas visíveis a olho nu. Apesar da designação 'Beta', geralmente supera Betelgeuse em brilho."
+  },
+  {
+    "rel": "universe/named-stars/rigel.json",
+    "at": "cultural",
+    "old": "O nome vem do árabe para 'pé'. A luz azul-branca metálica de Rigel é um contraste clássico com o vermelho de Betelgeuse na figura de Orion.",
+    "new": "O nome vem do árabe para 'pé'. A luz azul-branca metálica de Rígel é um contraste clássico com o vermelho de Betelgeuse na figura de Orion."
+  },
+  {
+    "rel": "universe/named-stars/saiph.json",
+    "at": "fact",
+    "old": "Uma supergigante azul no joelho de Orion — a gêmea mais quente e aparentemente mais fraca de Rigel.",
+    "new": "Uma supergigante azul no joelho de Orion — a gêmea mais quente e aparentemente mais fraca de Rígel."
+  },
+  {
+    "rel": "universe/named-stars/saiph.json",
+    "at": "bio",
+    "old": "Saiph (Kappa Orionis) é uma supergigante azul a aproximadamente 650 anos-luz de distância, marcando o canto inferior esquerdo de Orion, oposta a Rigel. É comparável a Rigel em tamanho e calor, mas aparece mais fraca para nós porque grande parte de sua intensa emissão se projeta como luz ultravioleta invisível.",
+    "new": "Saiph (Kappa Orionis) é uma supergigante azul a aproximadamente 650 anos-luz de distância, marcando o canto inferior esquerdo de Orion, oposta a Rígel. É comparável a Rígel em tamanho e calor, mas aparece mais fraca para nós porque grande parte de sua intensa emissão se projeta como luz ultravioleta invisível."
+  },
+  {
+    "rel": "universe/named-stars/saiph.json",
+    "at": "cultural",
+    "old": "O nome vem do árabe para \"espada\". Saiph marca o joelho do Caçador e Rigel seu pé, delimitando a base de uma das figuras mais reconhecíveis do céu.",
+    "new": "O nome vem do árabe para \"espada\". Saiph marca o joelho do Caçador e Rígel seu pé, delimitando a base de uma das figuras mais reconhecíveis do céu."
+  },
+  {
+    "rel": "universe/named-stars/sargas.json",
+    "at": "bio",
+    "old": "Sargas (Theta Scorpii) é uma gigante brilhante branco-amarelada a aproximadamente 300 anos-luz de distância, uma das estrelas principais na cauda curva de Scorpius perto de seu ferrão.",
+    "new": "Sargas (Theta Scorpii) é uma gigante brilhante branco-amarelada a aproximadamente 300 anos-luz de distância, uma das estrelas principais na cauda curva do Escorpião perto de seu ferrão."
+  },
+  {
+    "rel": "universe/named-stars/spica.json",
+    "at": "bio",
+    "old": "Spica (Alpha Virginis) é um par quente de estrelas azuis a cerca de 250 anos-luz de distância, tão próximas uma da outra que orbitam em apenas quatro dias e são distorcidas em formas ovais pela gravidade mútua. Sua luz combinada faz de Spica a estrela mais brilhante em Virgo.",
+    "new": "Espiga (Alpha Virginis) é um par quente de estrelas azuis a cerca de 250 anos-luz de distância, tão próximas uma da outra que orbitam em apenas quatro dias e são distorcidas em formas ovais pela gravidade mútua. Sua luz combinada faz de Espiga a estrela mais brilhante em Virgo."
+  },
+  {
+    "rel": "universe/named-stars/spica.json",
+    "at": "cultural",
+    "old": "Seu nome em latim significa 'espiga de grão', o feixe de trigo segurado por Virgo, a donzela da colheita. Observações de Spica permitiram que Hipparchus detectasse a lenta precessão dos equinócios há mais de dois mil anos.",
+    "new": "Seu nome em latim significa 'espiga de grão', o feixe de trigo segurado por Virgo, a donzela da colheita. Observações de Espiga permitiram que Hiparco detectasse a lenta precessão dos equinócios há mais de dois mil anos."
+  },
+  {
+    "rel": "universe/named-stars/vega.json",
+    "at": "cultural",
+    "old": "Vega foi a estrela polar norte por volta de 12.000 AEC e será novamente perto de 13.700 EC. Ela ancora o Summer Triangle com Deneb e Altair, e protagoniza Contact, de Carl Sagan, como a fonte do sinal alienígena.",
+    "new": "Vega foi a estrela polar norte por volta de 12.000 AEC e será novamente perto de 13.700 EC. Ela ancora o Triângulo de Verão com Deneb e Altair, e protagoniza Contact, de Carl Sagan, como a fonte do sinal alienígena."
+  }
+]

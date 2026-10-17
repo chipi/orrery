@@ -71,7 +71,7 @@ const GUARD = {
   Vega: {
     path: /missions\/venus|fleet\/(orbiter|lander|launcher)|rockets\/|venus-sites|programs\/(vega|venera)/,
     after:
-      /^\s?(\d|rocket|C\b|-C|program|probe|balloon|lander|mission|spacecraft|flyby|Secondary|VESPA|AVUM)/i,
+      /^[\s-]?(\d|rocket|C\b|-C|program|probe|balloon|lander|mission|spacecraft|flyby|Secondary|VESPA|AVUM)/i,
   },
   Sirius: { path: /fleet\/constellation|earth-objects/, after: /^\s?(XM|FM|Satellite|-)/ },
   Antares: { path: /fleet\/|missions\/|moon-sites|programs\/|hotspot-metadata|rockets\// },
@@ -81,6 +81,13 @@ const GUARD = {
     path: /programs\/spacex|science\/life-in-space|essays\/the-body-in-the-dark|missions\//,
   },
   Deneb: { after: /^\s?(Kaitos|Algedi)/ },
+  // the German satellite on Ariane 5's last flight, not the physicist
+  'Heinrich Hertz': { path: /programs\/ariane|fleet\/launcher\/ariane/ },
+  // dwarf galaxies listed by their Latin names alongside others that stay Latin
+  'Canes Venatici I': { path: /dwarf-spheroidals/, locs: /^(de|fr|es|it|nl|pt-BR)$/ },
+  'Boötes II': { path: /dwarf-spheroidals/, locs: /^(de|fr|es|it|nl|pt-BR)$/ },
+  'Reticulum II': { path: /dwarf-spheroidals/, locs: /^(de|fr|es|it|nl|pt-BR)$/ },
+  'Segue 1': { path: /dwarf-spheroidals/, locs: /^(de|fr|es|it|nl|pt-BR)$/ },
   // these two star names are explained as shortenings of the Latin designation
   'Alpha Trianguli Australis': { path: /named-stars\/atria/ },
   'Gamma Crucis': { path: /named-stars\/gacrux/ },
@@ -91,6 +98,17 @@ const GUARD = {
   Phoebe: { after: /^\s?Regio/ },
   Peacock: { path: /universe\/named-stars\/peacock/ },
 };
+// first and middle names of the people in the glossary: a bare surname right after one
+// of them is part of a fuller name
+const NAME_PARTS = new Set(
+  Object.keys(GL.person ?? {}).flatMap((k) =>
+    k
+      .split(' ')
+      .slice(0, -1)
+      .map((w) => w.replace(/[.,]$/, ''))
+      .filter((w) => /^[A-Z]/.test(w)),
+  ),
+);
 const PERSON = classes.split(',').includes('person') ? (GL.person ?? {}) : {};
 const G = Object.fromEntries(
   [...classes.split(',').map((c) => GL[c] ?? {}), sitePages, ALIAS]
@@ -105,6 +123,10 @@ const G = Object.fromEntries(
         : [[en, f]],
     )
     .sort((a, b) => b[0].length - a[0].length),
+);
+const GENITIVE_S = loc === 'de' || loc === 'nl';
+const SHIELD = new Set(
+  Object.keys(G).filter((k) => Object.keys(G).some((j) => j !== k && k.includes(j))),
 );
 const VEH =
   /\b(Saturn ?(V|IB|I|1B|5)\b|Blue Moon|[Tt]rans-[A-Z][a-z]+|[A-Z][a-z]+-watching|Lunar-Earth|Mars ?(Express|Pathfinder|Global|Reconnaissance|Odyssey|Climate|Polar|Observer|Science|Orbiter|Sample|Exploration|Atmosphere|Cube|One|Society|Direct|Base|Ascent|Helicopter|Organic|Z-2|Hope|Curiosity|[0-9]+(?![.,][0-9])|-[0-9])|Mercury[- ](Magnetospher|Atlas|Redstone|Seven|program|capsule|Mark|Transfer|Planetary|[0-9]+(?![.,][0-9]))|Atlas-Mercury|Project Mercury|Venus ?(Express|Climate)|Jupiter ?(Icy|C\b|-C|IRBM|Trojan)|Europa ?(Clipper|Lander|rocket)|Pluto ?(Kuiper|Express)|Moon ?(Mineralogy|Express)|Titan ?(II|III|IV|I\b|GLV|23|rocket)|Earth ?(Observing|Return)|Near-Earth|Sub-Earth|Trans-Earth|trans-Mars|Halley ?(Armada)|Pioneer Venus|ISS-[A-Za-z]|Phobos[ -]?[0-9]|[Oo]f the (Sun|Moon|Earth)|Moon Trees?|Halley Multicolour|Polar Jupiter|Tianwen Mars|Mars (Perseverance|Curiosity|2020)|Moon[ -](Village|Sniper)|close Earth|Earth (gravity|flyby|swing)|(Sun|Earth|Moon)[ -]?(point|flyby)|Emirates Mars Mission|Starship Mars|Mars Surveyor|Mars (Sample|Science|Ascent|Base|Society|Direct|Climate|Polar|Global|Observer|Odyssey|Express|Pathfinder|Exploration)|[Nn]ear-Earth|[A-Z][a-z]+-(sized|like|class|mass|radius|watching)|Moon Impact|Mars (Relay|Oxygen))/g;
@@ -307,6 +329,15 @@ for (const f of walk(`i18n-src/${loc}`)) {
         // "Formación Fra Mauro" holds the English key: swapping would rewrite text that already
         // names it ("Tierras Altas de Fra Mauro" → "…de Formación Fra Mauro").
         const nat = forms[loc];
+        // a longer name with no form in this language still shields the shorter keys inside
+        // it ("Linda Salzman Sagan" must not become "Linda Sagan Sagan")
+        if ((!nat || nat === en) && SHIELD.has(en)) {
+          s = s.replace(
+            new RegExp(`\\b${en.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'g'),
+            (m) => `\u{e000}${keep.push(m) - 1}\u{e000}`,
+          );
+          continue;
+        }
         if (!nat || nat === en) continue;
         const esc = en.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
         // whole words only: "Plutone" must not count as holding "Pluto"
@@ -314,13 +345,23 @@ for (const f of walk(`i18n-src/${loc}`)) {
           LATIN.has(loc) &&
           ((/[- ]/.test(en) && nat.startsWith(en)) ||
             new RegExp(`\\b${esc.replace(/-/g, ' ')}\\b`).test(nat.replace(/-/g, ' ')))
-        )
+        ) {
+          // …and that text is not open to the shorter keys inside it either
+          if (SHIELD.has(en))
+            s = s.replace(
+              new RegExp(`\\b${esc}\\b`, 'g'),
+              (m) => `\u{e000}${keep.push(m) - 1}\u{e000}`,
+            );
           continue;
+        }
         // ISS-RapidScat, ISS-CREAM… are instrument names
         const tail = en === 'ISS' ? '(?!-[A-Za-z])' : '';
         s = s.replace(
           // sr-Cyrl glues case endings to Latin names after a hyphen ("Mars-а", "ISS-у")
-          new RegExp(`( ?)\\b${esc}(?:'s|’s)?\\b${tail}(-[а-яђјљњћџ]+)?( ?)`, 'g'),
+          new RegExp(
+            `( ?)\\b${esc}(?:'s|’s${GENITIVE_S && PERSON[en] && /[^s]$/.test(en) ? '|s' : ''})?\\b${tail}(-[а-яђјљњћџ]+)?( ?)`,
+            'g',
+          ),
           (m, a, suf, b, off, str) => {
             // Saturn / Titan / Jupiter are also rocket and missile families: leave them in
             // launcher, engine, pad and crewed-program text, and wherever a rocket word is near.
@@ -332,21 +373,22 @@ for (const f of walk(`i18n-src/${loc}`)) {
               return m;
             // homonyms: a star, moon or person that is also a vehicle, engine or facility
             // a bare surname inside a fuller name ('Edwin "Buzz" Aldrin', "Linda Salzman Sagan")
-            if (
-              PERSON[en]?._bare &&
-              /([A-Z][\p{L}.]*|["'”’])\s$/u.test(str.slice(Math.max(0, off - 30), off) + a)
-            )
-              return m;
+            if (PERSON[en]?._bare) {
+              const pre = str.slice(Math.max(0, off - 30), off) + a;
+              const w = (pre.match(/(\S+)\s$/) ?? [])[1] ?? '';
+              if (/["'”’]$/.test(w) || NAME_PARTS.has(w)) return m;
+            }
             // a surname limited to some pages ("Mayor" only where it is Michel Mayor)
             if (PERSON[en]?._only && !new RegExp(PERSON[en]._only).test(rel)) return m;
             const g = GUARD[en];
             if (
               g &&
+              (!g.locs || g.locs.test(loc)) &&
               ((g.path && g.path.test(rel)) ||
                 (g.after &&
                   g.after.test(str.slice(off + m.length - (b ? 1 : 0), off + m.length + 25))))
             )
-              return m;
+              return `\u{e000}${keep.push(m) - 1}\u{e000}`;
             if (
               PERSON[en] &&
               /^\s?(Space Cent(?:er|re)|Crater|Regio|Telescope|Observatory|Base|Point|Ridge|Station|Rille|Hills?)\b/.test(
@@ -361,6 +403,18 @@ for (const f of walk(`i18n-src/${loc}`)) {
             const trail =
               b && (CJK.test(after) || /[、。，：）」』)]/.test(after)) && loc !== 'ko' ? '' : b;
             let here = nat;
+            // an English possessive left in Latin-script text ("Sergei Korolev's Team"):
+            // German and Dutch take the genitive -s; the other languages are left for a hand fix
+            if (LATIN.has(loc) && /^['’]?s/.test(m.trim().slice(en.length))) {
+              // a body's possessive ("Earth's" → der Erde) needs rewording: left for a hand fix
+              if ((loc !== 'de' && loc !== 'nl') || !PERSON[en]) return m;
+              const g2 = /[sßxz]$/.test(nat)
+                ? "'"
+                : loc === 'nl' && /[aeiouy]$/.test(nat)
+                  ? "'s"
+                  : 's';
+              return lead + nat + g2 + trail;
+            }
             // a possessive ending glued to a person's name ("Gagarin-ов") is left alone
             if (PERSON[en] && suf && /^-ј?(ов|ев|ин)/.test(suf)) return m;
             if (loc === 'ru' && PERSON[en]) {

@@ -98,7 +98,7 @@ for (const l of fs.readFileSync(formsTsv, 'utf8').trim().split('\n')) {
         LATIN.test(loc) &&
         o === undefined &&
         slavic !== '1' &&
-        surnameOf(f) === surnameOf(run)
+        surnameOf(f.replace(/[ ,]+(Jr\.?|II|III|IV)$/, '')) === surnameOf(run)
       )
         continue;
       // a two-word English name keeps two words: "Уолтер Марти Ширра" → first + last,
@@ -111,7 +111,7 @@ for (const l of fs.readFileSync(formsTsv, 'utf8').trim().split('\n')) {
         !chinese
       ) {
         const sep = /[・·]/.test(f) ? (f.match(/[・·]/) ?? [' '])[0] : ' ';
-        const t = f.split(/[\s・·]+/).filter((w) => !/^(Jr\.?|الابن|주니어)$/.test(w));
+        const t = f.split(/[\s・·]+/).filter((w) => !/^(Jr\.?|II|III|IV|الابن|주니어)$/.test(w));
         if (t.length > 2) f = `${t[0]}${sep}${t.at(-1)}`;
       }
       const v = bareSurname ? surnameOf(f) : f;
@@ -126,6 +126,11 @@ for (const l of fs.readFileSync(formsTsv, 'utf8').trim().split('\n')) {
       // the same in Latin script)
       if (!run.includes('/') && /^\p{Nd}*[A-ZА-ЯCP]?\/|^\d{4} [A-Z]{2}/u.test(v)) continue;
       if (!run.includes('/') && LATIN.test(loc) && v.includes('/')) continue;
+      if (!/\d{4} [A-Z]{2}/.test(run) && /\d{4} [A-Z]{2}\d*/.test(v)) continue;
+      // an X-ray or infrared catalogue label ("2XMM J143933.0-605008") is no name
+      if (/\bJ\d{4,}/.test(v) && !/\bJ\d{4,}/.test(run)) continue;
+      if (kind === 'star' && /^\d+ [A-Z][a-z]+( [A-Z][a-z]+)?$/.test(v) && !/^\d/.test(run))
+        continue;
       // Latin-script Wikipedias may label a star by its Bayer designation: keep the name
       if (kind === 'star' && LATIN.test(loc) && BAYER_ANY.test(v) && !BAYER_ANY.test(run)) continue;
       entry[loc] = v;

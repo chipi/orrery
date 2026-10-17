@@ -173,18 +173,31 @@ already in the text.
 | Tests that imported untested CLI scripts dropped the coverage gate. | Helpers go in small modules under `scripts/lib/` with their own tests. |
 | Serbian glues endings to Latin names after a hyphen; the swap read a possessive ending as a case ending and dropped it ("Phobos-ова разлика" → "Фобос разлика"). | Possessive endings make a possessive adjective (Фобосова, Бенуов); names that do not fit are left for a hand fix. |
 | `\b` in a JavaScript regex without the `u` flag never matches next to Cyrillic, so a clean-up rule silently did nothing. | Use `(?![а-я])` / `(?<![а-я])` around Cyrillic words; check that every rule fired. |
-| A markdown link put "[" between the preposition and the name ("до [Плутон](…)"), so no case was guessed. | Strip the bracket before guessing the case. |
+| A markdown link put "[" between the preposition and the name (`до [Плутон](…)`), so no case was guessed. | Strip the bracket before guessing the case. |
 | "комете Халејева комета": a glossary form that holds its own generic word landed after the text's generic word, with the head word last. | A per-language post-step merges them into the declined form (Халејеве комете). |
+| Wikidata gave a star's designation as an abbreviation or a whole catalogue list in one alias ("α UMi", "β Ориона", "α Tauri, 87 Tauri, HD 29139, …"), and some labels were the star system or a catalogue number (hi "…तारा तंत्र", ru "Глизе 411", "34 Возничего"). | `name-forms.mjs` takes only a spelled-out designation and never a list; every star-page name is read, and a wrong one gets an override in `name-forms-overrides.tsv`. |
+| Where the source had left a name in Latin, the generator had no case to keep and guessed; in ru and sr-Cyrl it guessed wrong in about one string in three ("полёт Алан Шепард", "Подножје брдо Хазбанд"). | Read every edit in an inflected language; the corrections are versioned per locale (`names-pass-corrections-<loc>.tsv`). |
+| A star's name became the same as its alternate name ("Deneb Kaitos …, also called Deneb Kaitos"; "Becrux …, also known as Becrux"). | The "also called" clause takes the other name; check every star bio's first sentence. |
+| Latin-script swaps put a bare constellation name where the language needs an article ("in Grote Beer", "di Croce del Sud", "Stella di Barnard è"). | Article and preposition fixes per language after the swap. |
+| The swap reached inside an acronym or a product name ("MOXIE (Марс OXygen …)", the Vega rocket's adapter → "Вега"), and into a sentence about the name itself ("'Gemma' derives from the Arabic …"). | Read every edit; etymology sentences keep the name they explain. |
+| A Russian pass found a false fact in a translation (Sally Ride listed among the Challenger dead). | A wrong fact found while editing is fixed in the same pass, against the English. |
 
 ## 8. Status (2026-10-17)
 
 Done: titles; origin names in ru/zh-CN/ja/hi/ar; Russian people, bureaus, systems
 declined; pass 1 (gallery/entity pages set one name per language); pass 2 (bodies,
 features, places, facilities and the ISS in article text) for ja, zh-CN, ko, de, fr,
-es, it, nl, pt-BR, ru and sr-Cyrl. Not done: pass 2 for hi and ar; glossary classes
-for people, stars, term abbreviations and eponyms (§3.2); small bodies not yet in the
-glossary (Haumea, Makemake, Pallas, Juno, the Uranian moons); Venus and some Mars and
-Moon features without a native form (Aphrodite Terra, Aeolis Palus, Le Monnier); then
-the remaining content items
+es, it, nl, pt-BR, ru and sr-Cyrl; the names glossary (celestial names, stars and
+people from Wikidata, with small bodies and the Uranian moons) applied to the same
+eleven locales, read and corrected by hand.
+
+Not done: the names pass and pass 2 for hi and ar; eponyms and term abbreviations
+(§3.2: Kepler, Hohmann, Oberth stay as in English where the glossary does not key
+them); people whose bare surname is ambiguous are written by hand only in the strings
+this pass touched (Glenn, White, Scott, Cooper …), not across all text; the star
+index and sky labels still show the English proper name (needs a UI change); sr-Cyrl
+star bios keep Latin designations ("Alpha Orionis"), because Wikidata has no
+Cyrillic ones for Serbian; Venus and some Mars and Moon features without a native
+form (Aphrodite Terra, Aeolis Palus, Le Monnier); then the remaining content items
 (videos, colophon, trajectories, deep-sky, site stories, alt text) in
 `docs/wip/2026-10-17-post-v1-arc-plan.md`.

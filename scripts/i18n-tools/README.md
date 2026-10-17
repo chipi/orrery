@@ -46,7 +46,7 @@ Pass 1 (gallery/entity pages set each name) and pass 2 (article text follows the
 | `site-names.mjs`, `planet-pages.mjs`, `launch-site-pages.mjs`, `unify-names.mjs`, `descriptor-names.mjs` | Pass-1 writers for the entity pages; `planet-pages.mjs` also syncs page names into the `body` glossary. |
 | `glossary-apply.mjs <loc> <classes>` | Pass-2 generator: glossary forms (`native-terms.json`) into running text, with rocket-family guards, Latin-script article rules, Korean particles, and Russian/Serbian declension. Writes `maps/…/glossary-edits-<loc>.json` for review. |
 | `ru-case.mjs`, `sr-case.mjs` | Declension and a case guess from the preceding words, for `glossary-apply.mjs`. `sr-case.mjs` also reads the case from a hyphenated ending ("Mars-а"); a possessive ending ("Phobos-ова") becomes a possessive adjective (Фобосова). |
-| `patch-edits.mjs <edits.json> <corrections.tsv>` | Hand corrections on the generated edits before applying; reports rows that no longer match. |
+| `patch-edits.mjs <edits.json> <corrections.tsv>` | Hand corrections on the generated edits before applying; reports rows that no longer match. An optional 4th column names the field, for a file where two fields carry the same text. |
 | `pass2-size.mjs` | Counts pass-2 candidates per locale before starting. |
 | `dedupe-descriptors.mjs` | Collapses a doubled descriptor (フラ・マウロ高地高地). |
 | `rocket-body-audit.mjs`, `rocket-body-restore.mjs` | Finds and restores rocket names turned into a planet (土星ロケット). |
@@ -57,9 +57,10 @@ Names glossary (celestial names and people), in order:
 |---|---|
 | `name-inventory.mjs <out.tsv>` | Every capitalised run in the English source looked up on English Wikipedia (single words also as "X (moon)", "(asteroid)"…) and classified by its Wikidata "instance of": body / feature / star / person. Paced, cached, resumable (`NAME_INV_CACHE`). |
 | `name-curate.mjs <classes.tsv> <curation.tsv> <out.tsv>` | Drops vehicle/deity/fiction classes and applies the hand decisions in `maps/…/names-curation.tsv`. |
-| `name-forms.mjs <curated.tsv> <out.tsv>` | Each locale's form: Wikipedia title (bodies, stars), label (people; Russian patronymic dropped); zh-CN through Wikidata's simplified converter; sr-Cyrl only where Cyrillic at the source. |
+| `name-forms.mjs <curated.tsv> <out.tsv>` | Each locale's form: Wikipedia title (bodies), label (people; Russian patronymic dropped); stars as `name¦designation` (name from label/aliases, never a Bayer, Flamsteed or catalogue label; designation spelled out only — an abbreviation such as "α UMi" or an alias that is a whole catalogue list is not taken); zh-CN through Wikidata's simplified converter; sr-Cyrl only where Cyrillic at the source. |
 | `name-glossary-merge.mjs <forms.tsv> <overrides.tsv> <features.tsv>` | Writes the `body` / `star` / `person` / `feature` classes of `native-terms.json` (never overwrites an existing key); guards for Bayer and catalogue aliases, designations, nicknames, transliteration-only changes in Latin-script locales. |
-| `star-pages.mjs [--dry]` | Pass 1 for stars: writes each named-star page's localized `name` from the `star` glossary. |
+| `star-pages.mjs [--dry]` | Pass 1 for stars: writes each named-star page's localized `name` from the `star` glossary, and removes a name the glossary no longer gives. |
+| `glossary-keys.mjs` | Per-key context report: where each glossary key occurs in the English source, to decide guards and overrides. |
 | `person-case.test.ts` | Tests for the person declension in `ru-case.mjs` / `sr-case.mjs`. |
 
 ## maps/

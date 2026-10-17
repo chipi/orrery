@@ -39,9 +39,11 @@ while [ "$i" -le 60 ]; do
   i=$((i + 1))
 done
 
-# Reset any prior serve config before re-registering. `|| true` so the
-# script doesn't fail if no serve was previously configured. The :8443
-# flag publishes HTTPS on that tailnet node port (not :443, which is
-# podcast_scraper's).
-/usr/bin/tailscale serve reset || true
+# Clear only OUR :8443 entry before re-registering. NOT `tailscale serve
+# reset`: that wipes every serve on the node, including podcast_scraper's
+# :443 (co-tenant). Port-scoped, the same way podcast #845 does it for :443.
+# `|| true` so a first run with nothing to clear doesn't fail. The live
+# root-owned copy on the VPS already omits the reset (checked 2026-10-17);
+# this file had drifted from it.
+/usr/bin/tailscale serve --https=8443 off || true
 exec /usr/bin/tailscale serve --bg --https=8443 "$PORT"

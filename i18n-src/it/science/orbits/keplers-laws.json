@@ -10,6 +10,6 @@
     "Seconda legge: la linea dal Sole al pianeta spazza aree uguali in tempi uguali. Questa è la conservazione del momento angolare travestita. Vicino al perielio il pianeta è vicino al Sole, la linea è corta — quindi deve muoversi velocemente per spazzare la stessa area di una linea lunga e lenta vicino all'afelio. È il motivo per cui la velocità orbitale non è costante.",
     "Terza legge: `T² ∝ a³`. Il quadrato del periodo orbitale è proporzionale al cubo del semiasse maggiore. Con la Terra posta a T = 1 anno e a = 1 UA, puoi leggere il periodo di qualsiasi pianeta dalla sua distanza — o la sua distanza dal suo periodo. Newton successivamente derivò questo dalla gravità; Kepler ci arrivò attraverso il puro riconoscimento di pattern nei dati di Tycho Brahe."
   ],
-  "formula_caption": "Terza legge moderna: T² dipende solo da a (e μ).",
+  "formula_caption": "Terza legge di Kepler in forma moderna: T² dipende solo da a (e dal μ del corpo centrale).",
   "diagram_caption": "Aree uguali in tempi uguali."
 }

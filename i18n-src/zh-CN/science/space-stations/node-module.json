@@ -9,9 +9,9 @@
   "body_paragraphs": [
     "节点是连接舱段——具有多个Common Berthing Mechanism（CBM）或对接口的加压枢纽——允许空间站采用树形拓扑而不是线性链式构成。",
     "ISS Unity (Node 1)于1998年随STS-88任务发射。六个CBM对接口：前向→Destiny，后向→Zarya，右舷→Quest气闸舱，顶部→Z1桁架，左舷→Tranquility（2010年），底部→PMA/货物停泊位（曾为Leonardo PMM 2011–2015年）。这是美国建造的第一个ISS舱段。",
-    "国际空间站Harmony节点舱（节点舱2号）于2007年发射。六个对接口：连接Destiny实验舱与Columbus（舷侧对接口）、Kibo（船舶对接口），以及两个用于Crew Dragon/Starliner的对接转接器（IDA-2前向，IDA-3天顶）。",
+    "ISS Harmony（Node 2）于2007年发射。六个对接口：连接Destiny实验舱与Columbus（左舷）、Kibo（右舷），以及两个用于Crew Dragon/Starliner的对接转接器（IDA-2前向，IDA-3天顶）。",
     "ISS Tranquility (Node 3)于2010年发射。搭载Cupola观测窗口（底部对接口）、永久多用途舱Leonardo（前向）和BEAM（后向）。",
-    "天宫Tianhe核心舱：融节点、乘员生活舱、推进系统和控制功能于一体。节点枢纽具有前向轴向对接口（Shenzhou），两个侧向径向对接口（Wentian停靠在右舷、Mengtian停靠在左舷，均由机械臂移动至此）和底部对接口；后向轴向对接口用于Tianzhou货运飞船对接。天宫使用中国对接机制，而非美国CBM。"
+    "Tiangong 的 Tianhe 核心舱：融节点、乘员生活舱、推进系统和控制功能于一体。节点枢纽具有前向轴向对接口（Shenzhou），两个侧向径向对接口（Wentian停靠在右舷、Mengtian停靠在左舷，均由机械臂移动至此）和底部对接口；后向轴向对接口用于Tianzhou货运飞船对接。对接口使用中国对接机构，而非美国CBM。"
   ],
   "diagram_caption": "六面体节点舱段示意图，六个对接口分别标示为前向/后向/左舷/右舷/顶部/底部。"
 }

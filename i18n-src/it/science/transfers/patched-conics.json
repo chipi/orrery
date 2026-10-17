@@ -1,6 +1,6 @@
 {
   "title": "Patched Conics",
-  "intro_sentence": "Fingi che la gravità sia un corpo alla volta — l'approssimazione che rende il problema a tre corpi tractabile.",
+  "intro_sentence": "Fingi che la gravità sia un corpo alla volta — l'approssimazione che trasforma l'irrisolvibile problema dei tre corpi in una catena di problemi di Kepler a due corpi che si possono davvero risolvere.",
   "narrative_101": [
     "Ecco un sporco segreto della meccanica orbitale: la vera fisica completa — ogni corpo del sistema solare che attira ogni altro — è matematicamente insolubile in modo semplice. NON esiste alcuna soluzione in forma chiusa al problema dei tre corpi, per non parlare della versione reale con dozzine di corpi. Allora come fanno i pianificatori di missioni a portare avanti il lavoro?",
     "Barano. Fingono che, in ogni momento, conta la gravità di UN SOLO corpo. Vicino alla Terra, soltanto la Terra attira. Durante il trasferimento, soltanto il Sole. Vicino a Marte, soltanto Marte. Ciascuna di queste regioni si chiama sfera d'influenza, e dentro ognuna l'astronave vola su una conica Kepleriana semplice. Quando l'astronave attraversa un confine, cambi il sistema di coordinate e inizi una nuova conica. Unite insieme, formano la traiettoria. Questo è il metodo delle coniche raccordate."

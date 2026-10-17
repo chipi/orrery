@@ -3,7 +3,7 @@
  * audit (docs/wip/2026-10-17-post-v1-arc-plan.md, item 9b).
  *
  *   set -a; . ./.env; set +a
- *   node scripts/retranslate-fields.mjs --manifest=<file.json> [--concurrency=6] [--dry-run]
+ *   node scripts/retranslate-fields.mjs --manifest=<file.json> [--concurrency=6] [--limits=tagline:140,…] [--dry-run]
  *
  * Manifest: [{ "loc": "sr-Cyrl", "file": "missions/moon/apollo12", "paths": ["description", "events.3.note"] },
  *            { "loc": "de", "file": "messages", "paths": ["landing_card_mars_desc"] }]
@@ -68,6 +68,22 @@ async function main() {
   }
   const manifest = JSON.parse(fs.readFileSync(args.manifest, 'utf8'));
   const conc = Number(args.concurrency || 6);
+  // Schema length limits (static/data/schemas/*.schema.json maxLength): a full
+  // translation can run longer than the old, truncated one (2026-10-17: 111
+  // taglines > 140, 65 intro sentences > 240). Override/extend with --limits=field:N,…
+  const limits = { tagline: 140, intro_sentence: 240 };
+  if (args.limits && args.limits !== true)
+    for (const kv of String(args.limits).split(',')) {
+      const [k, n] = kv.split(':');
+      limits[k] = Number(n);
+    }
+  const limitFor = (at) =>
+    limits[
+      at
+        .split('.')
+        .filter((x) => !/^\d+$/.test(x))
+        .pop()
+    ];
   const client = translationClient(new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY }));
 
   // Load sources/targets once; results applied per file at the end of that file's units.
@@ -144,7 +160,7 @@ async function main() {
           messages: [
             {
               role: 'user',
-              content: `Context: "${ctxTitle}" — field \`${u.at}\` (${u.file}).${prior}${feedback}\nTranslate into ${LANGUAGE_NAMES[u.loc]}:\n\n${JSON.stringify(u.src)}`,
+              content: `Context: "${ctxTitle}" — field \`${u.at}\` (${u.file}).${prior}${limitFor(u.at) ? `\nHard limit: at most ${limitFor(u.at)} characters (the UI and schema reject longer). Shorten the wording, never the names or numbers.` : ''}${feedback}\nTranslate into ${LANGUAGE_NAMES[u.loc]}:\n\n${JSON.stringify(u.src)}`,
             },
           ],
         });
@@ -165,6 +181,9 @@ async function main() {
         );
 
         lastProblems = problems(u.loc, u.src, unq);
+        const lim = limitFor(u.at);
+        if (lim && typeof unq === 'string' && unq.length > lim)
+          lastProblems.push(`${unq.length} characters, over the ${lim} limit — shorten it`);
         if (process.env.RETRANSLATE_DEBUG)
           console.log(
             `  [${u.loc} ${u.file} :: ${u.at} attempt ${attempt + 1}] ${lastProblems.join('; ') || 'ok'}`,

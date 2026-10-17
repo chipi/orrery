@@ -2,8 +2,9 @@
   "title": "Demi-grand axe",
   "intro_sentence": "Moitié du plus long diamètre de l'ellipse — le seul nombre qui fixe la période orbitale.",
   "narrative_101": [
-    "Ficelle, deux punaises, crayon. Punaises sur planche, ficelle autour, crayon tendu — tu dessines une ellipse. Le demi-grand axe est la moitié de la plus longue ligne — la taille de l'orbite.",
-    "Voilà la partie magique : ce simple nombre vous dit combien de temps il faut à la planète pour faire le tour du Soleil. Pas la forme de l'orbite, pas son inclinaison, pas où se trouve la planète en ce moment. Juste la taille. Une orbite en forme de cigare aplatie et une orbite parfaitement ronde ayant le même semi-grand axe prennent le même temps pour boucler leur course. Kepler l'a découvert il y a quatre cents ans et nous lui en rendons encore hommage dans les manuels scolaires."
+    "Prenez un bout de ficelle, deux punaises et un crayon. Plantez les punaises dans une planche, passez la ficelle autour en boucle, tendez-la avec le crayon et tracez le tour. Vous avez dessiné une ellipse. Le demi-grand axe est la moitié de la plus longue ligne que vous puissiez tracer à travers cette forme — la taille de l'orbite.",
+    "Voici la partie magique : ce seul nombre vous dit combien de temps la planète met pour faire le tour du Soleil. Ni la forme de l'orbite, ni son inclinaison, ni la position actuelle de la planète. Juste la taille. Une orbite déformée en cigare et une orbite parfaitement ronde de même demi-grand axe mettent le même temps à boucler un tour. Kepler l'a compris il y a quatre cents ans, et les manuels lui rendent encore hommage.",
+    "Quand vous dimensionnez une mission, c'est le premier levier que vous actionnez. Vous voulez atteindre Mars ? Votre ellipse de transfert doit avoir un demi-grand axe compris entre celui de la Terre et celui de Mars. Choisissez la taille, la durée du vol en découle automatiquement."
   ],
   "body_paragraphs": [
     "Si vous aplatissez une ellipse keplerienne dans sa plus grande dimension, la ligne que vous avez tracée est le grand axe. Coupez-le en deux et vous obtenez le demi-grand axe — noté `a`. C'est la distance moyenne du corps en orbite jusqu'au foyer, en quelque sorte : une moyenne arithmétique du périhélie (le plus proche) et de l'aphélie (le plus lointain).",

@@ -2,8 +2,9 @@
   "title": "V∞ — Velocità di eccesso iperbolico",
   "intro_sentence": "La velocità che ti rimane dopo aver lasciato il pozzo gravitazionale di un pianeta.",
   "narrative_101": [
-    "C3 è quello che il vostro razzo deve fornire al LANCIO. V∞ — pronunciato \"v-infinito\" — è la stessa idea, ma all'ALTRO capo del viaggio. Quando arrivate a Marte, a che velocità vi state muovendo rispetto a Marte, prima che la sua gravità vi catturi? Questo è V∞.",
-    "Ha importanza perché determina la vostra combustione di arrivo. Più veloce arrivate, più dovete frenare per fermarvi. Mars Reconnaissance Orbiter è arrivato con V∞ ≈ 2,6 km/s e ha bruciato ~1 km/s per catturarsi in orbita. Voyager 2 ha raggiunto Nettuno con V∞ ≈ 8 km/s e non si è nemmeno presa la briga di cercare di fermarsi — ha semplicemente sorvolato, ha scattato fotografie, e ha continuato fuori dal sistema solare per sempre."
+    "C3 è ciò che il tuo razzo deve fornire al LANCIO. V∞ — si pronuncia «v-infinito» — è la stessa idea, ma all'ALTRO capo del viaggio. Quando arrivi a Marte, quanto velocemente ti muovi rispetto a Marte, prima che la sua gravità ti afferri? Quello è V∞.",
+    "Conta perché determina l'accensione di arrivo. Più veloce arrivi, più devi frenare per fermarti. Mars Reconnaissance Orbiter arrivò con V∞ ≈ 2,6 km/s e consumò ~1 km/s per entrare in orbita. Voyager 2 raggiunse Nettuno con V∞ ≈ 8 km/s e non provò nemmeno a fermarsi — passò oltre, scattò foto e proseguì fuori dal Sistema solare per sempre.",
+    "La matematica ha una bella simmetria: il V∞ di arrivo a Marte è lo stesso numero che vedresti osservando Marte da molto lontano mentre il veicolo è in avvicinamento. L'intero viaggio, visto da fuori delle sfere d'influenza di entrambi i pianeti, diventa un arco di Kepler pulito con due valori di V∞ ben definiti — uno a ciascun capo. È il numero della verità sull'HUD di /fly quando il veicolo entra nel pozzo gravitazionale della destinazione."
   ],
   "body_paragraphs": [
     "Immagina un asintoto, infinitamente lontano dal pianeta. La velocità a cui ti muoveresti su quell'asintoto è V∞ — pronunciato \"V-infinito\". È la velocità relativa al Sole meno il contributo del pianeta al tuo moto. In un flyby iperbolico, V∞ è costante lungo entrambi i rami dell'iperbole.",

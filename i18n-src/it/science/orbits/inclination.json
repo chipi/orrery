@@ -2,8 +2,9 @@
   "title": "Inclinazione",
   "intro_sentence": "L'inclinazione del piano orbitale rispetto a un piano di riferimento.",
   "narrative_101": [
-    "Tieni un piatto da portata piano davanti a te — quello è il piano di riferimento. Ora inclinalo. L'angolo di cui l'hai inclinato è l'inclinazione. Questo è l'intero concetto. Ogni orbita vive sul suo proprio piatto inclinato.",
-    "Importa perché cambiare l'inclinazione è brutalmente costoso in carburante. Se lanci un razzo dalla Florida, la Terra sta già girando verso est a 0,4 km/s — lo ottieni gratis se la tua orbita va verso est. Prova invece a lanciare verso un'orbita polare e non solo perdi il vantaggio, devi anche combattere contro di esso. Scegliere l'inclinazione al lancio è una delle decisioni più importanti che una missione deve prendere; quasi mai vorrai cambiarla in seguito."
+    "Tieni un piatto piano davanti a te — quello è il piano di riferimento. Ora inclinalo. L'angolo di cui l'hai inclinato è l'inclinazione. Tutto qui. Ogni orbita vive sul proprio piatto inclinato.",
+    "Conta perché cambiare inclinazione costa una quantità brutale di carburante. Se lanci un razzo dalla Florida, la Terra lì ruota già verso est a 0,4 km/s — lo ottieni gratis se la tua orbita va verso est. Prova invece a lanciare in orbita polare e non solo perdi il regalo, devi anche combatterlo. Scegliere l'inclinazione al lancio è una delle decisioni più importanti di una missione; quasi mai vorrai cambiarla dopo.",
+    "Ecco perché la ISS sta a 51,6° — è l'angolo con cui devi lanciare per raggiungerla dalla base russa di Baikonur. Perché i satelliti per immagini vanno in orbita polare — devono sorvolare ogni latitudine. Perché i satelliti di comunicazione GEO stanno sull'equatore — per restare per sempre sopra lo stesso pezzo di terra. Ogni inclinazione è una scelta deliberata con un conto del carburante allegato."
   ],
   "body_paragraphs": [
     "L'inclinazione (`i`) è l'angolo tra il piano orbitale e un riferimento scelto. Per un'orbita eliocentrica, il riferimento è l'eclittica — il piano in cui orbita la Terra. Per gli oggetti in orbita terrestre, è solitamente l'equatore. L'angolo è misurato nel nodo ascendente, dove l'orbita attraversa il piano di riferimento dirigendosi verso nord.",

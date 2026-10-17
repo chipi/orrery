@@ -2,8 +2,9 @@
   "title": "Wahre Anomalie",
   "intro_sentence": "Der Winkel, der dir sagt, wo ein Körper auf der Bahn gerade ist, gemessen vom Perihel.",
   "narrative_101": [
-    "Stellen Sie sich einen Planeten vor, der seine Ellipse umrundet. Wir haben ihm bereits eine Größe, eine Form, eine Neigung gegeben. Das Einzige, das uns noch fehlt, ist: Wo befindet er sich in diesem Moment auf der Bahn? Das ist die wahre Anomalie. Stellen Sie sich an die Sonne, zeigen Sie auf die nächste Passage des Planeten, und messen Sie den Winkel zu dem Ort, an dem sich der Planet tatsächlich befindet. Das ist alles.",
-    "Aber: er sweept den Winkel nicht gleichmäßig. Nahe Perihel rast er, nahe Aphel schleicht er (Keplers zweites Gesetz). Astronomen erfanden zwei weitere Winkel — mittlere und exzentrische Anomalie — die gleichmäßig ticken, und eine Leiter aus Gleichungen verbindet alle drei. Das läuft 60-mal pro Sekunde unter `/explore`."
+    "Stell dir einen Planeten vor, der seine Ellipse entlangläuft. Wir haben ihm schon eine Größe, eine Form und eine Neigung gegeben. Was noch fehlt: Wo auf der Schleife ist er genau in diesem Augenblick? Das ist die wahre Anomalie. Stell dich auf die Sonne, zeig auf den sonnennächsten Punkt der Bahn und miss den Winkel bis dorthin, wo der Planet tatsächlich steht. Das ist alles.",
+    "Aber hier ist der Haken — und genau hier schleicht sich Keplers zweites Gesetz ein. Der Planet überstreicht diesen Winkel nicht gleichmäßig. In Sonnennähe saust er herum. Am fernen Ende trottet er. Fragst du also „wie viele Grad pro Tag?“, ändert sich die Antwort über den ganzen Umlauf ständig.",
+    "Astronomen hatten genug davon und erfanden zwei weitere Winkel — die mittlere Anomalie und die exzentrische Anomalie —, die SEHR WOHL gleichmäßig ticken, und bauten eine kleine Leiter aus Gleichungen, die alle drei verbindet. Wenn du die Planeten in /explore gleichmäßig wandern siehst, läuft genau diese Leiter unter der Haube, sechzigmal pro Sekunde."
   ],
   "body_paragraphs": [
     "Die Bahnelemente beschreiben Form und Orientierung; die wahre Anomalie (`ν`) sagt dir, wo der Körper gerade ist. Vom Brennpunkt zum Perihel zeigen, dann zum Körper drehen — der Winkel ist die wahre Anomalie.",

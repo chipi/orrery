@@ -2,8 +2,9 @@
   "title": "Anomalie vraie",
   "intro_sentence": "L'angle qui dit où un corps est sur l'orbite maintenant, mesuré depuis le périhélie.",
   "narrative_101": [
-    "Imaginez une planète qui tourne autour de son ellipse. Nous lui avons déjà donné une taille, une forme, une inclinaison. La seule chose dont nous avons encore besoin, c'est : où se trouve-t-elle sur la boucle en ce moment précis ? C'est l'anomalie vraie. Placez-vous au Soleil, pointez vers le passage le plus proche de la planète, et mesurez l'angle jusqu'à l'endroit où la planète se trouve réellement. C'est tout.",
-    "Mais elle ne balaie pas uniformément (deuxième loi de Kepler). Astronomes inventèrent deux autres angles — moyenne et excentrique — qui tickent uniformément, et une échelle d'équations connecte les trois."
+    "Imaginez une planète qui parcourt son ellipse. Nous lui avons déjà donné une taille, une forme, une inclinaison. Il reste une chose : où se trouve-t-elle sur la boucle à cet instant précis ? C'est l'anomalie vraie. Placez-vous sur le Soleil, pointez vers le point de passage le plus proche de la planète, et mesurez l'angle jusqu'à l'endroit où elle se trouve réellement. C'est tout.",
+    "Mais il y a un piège — et c'est là que la deuxième loi de Kepler s'invite. La planète ne balaie pas cet angle à rythme constant. Près du point le plus proche, elle file. À l'autre bout, elle se traîne. Donc si vous demandez « combien de degrés par jour ? », la réponse change sans cesse tout au long de l'orbite.",
+    "Les astronomes s'en sont lassés et ont inventé deux autres angles — l'anomalie moyenne et l'anomalie excentrique — qui, eux, avancent à rythme constant, puis ont construit une petite échelle d'équations reliant les trois. Quand vous voyez les planètes avancer en douceur dans /explore, c'est cette échelle qui tourne sous le capot, soixante fois par seconde."
   ],
   "body_paragraphs": [
     "Les éléments képlériens décrivent la forme et l'orientation d'une orbite ; l'anomalie vraie (`ν`) vous indique où se trouve le corps le long de cette orbite à un instant donné. Placez-vous au foyer (le Soleil, pour une planète), pointez vers le périhélie, et faites tourner votre doigt pour suivre le corps autour de celui-ci. L'angle que vous balayez est l'anomalie vraie.",

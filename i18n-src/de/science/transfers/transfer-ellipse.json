@@ -2,8 +2,9 @@
   "title": "Transferellipse",
   "intro_sentence": "Der Keplersche Bogen, der eine Sonde zwischen Bahnen trägt — Sonne im Brennpunkt, wie jede Bahn.",
   "narrative_101": [
-    "Missionsplanung klingt nach Triebwerken und Raketen. Es geht meistens darum, eine Ellipse zu wählen. Jede interplanetare Reise — Apollo, Voyager, Perseverance — ist eine Sonde, die auf einer elliptischen Bahn zwischen Start und Ziel reitet. Das Fachwort: Transferbahn.",
-    "Sie folgt denselben Regeln wie jede andere Keplerian-Umlaufbahn. Die Sonne sitzt in einem Brennpunkt. Das Raumschiff bewegt sich am fernen Ende langsam und am nahen Ende schnell. Die Vis-Viva-Gleichung funktioniert immer noch, um seine Geschwindigkeit zu berechnen. Keplers drittes Gesetz gibt dir immer noch die Flugzeit aus der Größe. Nichts Exotisches."
+    "Missionsplanung klingt nach Triebwerken und Raketen. Meistens geht es aber darum, eine Ellipse auszuwählen. Jeder interplanetare Flug — Apollo zum Mond, Voyager zum Neptun, Perseverance zum Mars — ist nur ein Raumfahrzeug, das auf einer elliptischen Bahn zwischen Start- und Zielort reitet. Das schicke Wort für diese Ellipse ist Transferbahn.",
+    "Sie folgt denselben Regeln wie jede andere Kepler-Bahn. Die Sonne sitzt in einem Brennpunkt. Das Raumfahrzeug ist am fernen Ende langsam und am nahen Ende schnell. Mit der Vis-viva-Gleichung lässt sich weiterhin seine Geschwindigkeit berechnen. Keplers drittes Gesetz liefert weiterhin die Flugzeit aus der Größe. Nichts Exotisches.",
+    "Das Einzige, was eine Transferellipse von einer Planetenbahn unterscheidet: Das Raumfahrzeug fliegt nur die HÄLFTE davon. Es steigt an einem Ende auf, fährt zum anderen und steigt aus. Deshalb hat das ∆v-Budget immer zwei große Burns — einen zum Eintritt in die Ellipse, einen zum Verlassen. Der Teil dazwischen, die achtmonatige Freiflugphase, kostet absolut nichts."
   ],
   "body_paragraphs": [
     "Sobald du aus der Erdumlaufbahn hinausgebrannt bist, befindest du dich auf einer Ellipse um die Sonne. Diese Ellipse ist die Transferbahn, und sie hat alle dieselben Eigenschaften wie jede andere: große Halbachse, Exzentrizität, Perihel, Aphel. Die Tatsache, dass du irgendwohin gehst, ändert nichts an der Geometrie – Schwerkraft kümmert sich nicht um dein Ziel.",

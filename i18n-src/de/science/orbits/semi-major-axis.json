@@ -2,8 +2,9 @@
   "title": "Große Halbachse",
   "intro_sentence": "Die Hälfte des längsten Durchmessers der Bahnellipse — die einzige Zahl, die die Umlaufzeit festlegt.",
   "narrative_101": [
-    "Schnur, zwei Reißnägel, Bleistift. Reißnägel ins Brett, Schnur drumherum, Bleistift gespannt — du zeichnest eine Ellipse. Die große Halbachse ist die Hälfte der längsten Linie quer durch die Form — die Größe der Bahn.",
-    "Das Magische: diese eine Zahl sagt dir, wie lange der Planet für eine Sonnenrunde braucht. Nicht die Form, nicht die Neigung, nicht wo er gerade ist. Nur die Größe. Eine Zigarrenform und ein Kreis mit derselben Halbachse brauchen gleich lang. Kepler vor 400 Jahren — gilt heute."
+    "Nimm ein Stück Schnur, zwei Reißzwecken und einen Bleistift. Steck die Zwecken in ein Brett, leg die Schnur als Schlaufe um sie, spann sie mit dem Bleistift und fahr rundherum. Du hast eine Ellipse gezeichnet. Die große Halbachse ist die Hälfte der längsten Linie, die du quer durch diese Form ziehen kannst — die Größe der Bahn.",
+    "Jetzt kommt das Magische: Diese eine Zahl verrät dir, wie lange der Planet für eine Runde um die Sonne braucht. Nicht die Form der Bahn, nicht ihre Neigung, nicht wo der Planet gerade steht. Nur die Größe. Eine schiefe, zigarrenförmige Bahn und eine perfekt runde mit derselben großen Halbachse brauchen gleich lange für einen Umlauf. Kepler hat das vor vierhundert Jahren herausgefunden, und wir zahlen es ihm bis heute in Lehrbüchern zurück.",
+    "Wenn du eine Mission dimensionierst, ist das der erste Hebel, an dem du ziehst. Du willst zum Mars? Deine Transferellipse braucht eine große Halbachse irgendwo zwischen der der Erde und der des Mars. Wähle die Größe, und die Flugzeit ergibt sich von selbst."
   ],
   "body_paragraphs": [
     "Wenn du eine Keplersche Ellipse in ihre längste Dimension abflachst, ist die Linie, die du gezeichnet hast, die große Achse. Halbiere diese, und du hast die große Halbachse – geschrieben `a`. Sie ist gewissermaßen die durchschnittliche Entfernung vom umkreisenden Körper zum Brennpunkt: das arithmetische Mittel aus Perihel (nächster Punkt) und Aphel (fernster Punkt).",

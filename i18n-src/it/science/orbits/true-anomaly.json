@@ -2,8 +2,9 @@
   "title": "True Anomaly",
   "intro_sentence": "L'angolo che dice dove un corpo è sull'orbita ora, misurato dal perielio.",
   "narrative_101": [
-    "Immagina un pianeta che orbita intorno alla sua ellisse. Le abbiamo già dato una dimensione, una forma, un'inclinazione. L'unica cosa che ancora ci serve è: dove si trova sul percorso in questo istante? Quella è l'anomalia vera. Stai in piedi al Sole, punta al passaggio più vicino del pianeta, e misura l'angolo fino al punto in cui il pianeta effettivamente si trova. Ecco fatto.",
-    "Ma qui c'è il trucco — ed è qui che la seconda legge di Kepler si introduce di nascosto. Il pianeta non spazza questo angolo a un ritmo costante. Vicino al passaggio più vicino si muove veloce. All'estremità più lontana procede lentamente. Quindi se chiedi \"quanti gradi al giorno?\", la risposta cambia costantemente durante l'orbita."
+    "Immagina un pianeta che corre lungo la sua ellisse. Gli abbiamo già dato una dimensione, una forma, un'inclinazione. L'unica cosa che ci manca è: dov'è sull'anello in questo preciso istante? Quella è l'anomalia vera. Mettiti sul Sole, punta verso il passaggio più vicino del pianeta e misura l'angolo fino a dove si trova davvero il pianeta. Tutto qui.",
+    "Ma c'è un inghippo — ed è qui che si intrufola la seconda legge di Kepler. Il pianeta non spazza questo angolo a ritmo costante. Vicino al passaggio ravvicinato sfreccia. All'estremità lontana arranca. Quindi se chiedi «quanti gradi al giorno?», la risposta cambia di continuo lungo tutta l'orbita.",
+    "Gli astronomi si stancarono di questo e inventarono altri due angoli — l'anomalia media e l'anomalia eccentrica — che invece avanzano a ritmo costante, e costruirono una piccola scala di equazioni che collega tutti e tre. Quando vedi i pianeti muoversi fluidamente in /explore, è quella scala che gira sotto il cofano, sessanta volte al secondo."
   ],
   "body_paragraphs": [
     "Gli elementi kepleriani descrivono la forma e l'orientamento di un'orbita; l'anomalia vera (`ν`) ti dice dove si trova il corpo lungo quell'orbita in un dato istante. Posizionati al fuoco (il Sole, per un pianeta), punta verso il periielio e ruota il dito per seguire il corpo lungo la sua traiettoria. L'angolo che descriverai è l'anomalia vera.",

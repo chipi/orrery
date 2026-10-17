@@ -526,7 +526,7 @@ jobs:
   #
   # No VALIDATE_ERROR_POST → the error-monitoring guard does config-only checks
   # (DSN baked + dashless key + CSP connect-src); it does NOT fire a synthetic
-  # error, so this never pollutes GlitchTip project 4 on every deploy.
+  # error, so this never pollutes GlitchTip project 18 (orrery-prod) on every deploy.
   validate:
     needs: deploy
     if: needs.deploy.outputs.skipped != 'true'

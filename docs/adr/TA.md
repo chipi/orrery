@@ -1093,7 +1093,7 @@ Locked technical choices. Each entry points to its ADR.
 | Lab identity + Ask | `lab-api` Node container: OAuth 2.1 AS (PKCE S256, DCR, ES256 JWTs) federating to Google OIDC, email allowlist, `/ask` over LiteLLM; zero cookies | RFC-037 A01.7–A01.8 (no ADR yet) |
 | MCP server | `mcp` Node container, Streamable HTTP, tools derived from the registry, JWT-gated via lab-api `/jwks` (`physics:read`), `mcp.orrerylearn.com` | RFC-037 §6, A01.7 |
 | Server-side observability | `@sentry/node` → GlitchTip, manual OTel → VictoriaTraces, `prom-client` on an unpublished port, access logs, Umami tool events, LiteLLM→Langfuse metadata; each signal env-gated, lab-api + mcp only | ADR-094 (amends RFC-025 / ADR-067 for servers) |
-| Telemetry environments | 3 isolated rungs — prod (`orrerylearn.com`, GlitchTip 4), staging (`chipi.github.io/orrery`, GlitchTip 6), dev (`vite dev` → tailnet `homelab`, GlitchTip 7); dev events tagged by git worktree | ADR-082 |
+| Telemetry environments | 3 isolated rungs — prod (`orrerylearn.com`, GlitchTip 18), staging (`chipi.github.io/orrery`, GlitchTip 6), dev (`vite dev` → tailnet `homelab`, GlitchTip 7); dev events tagged by git worktree | ADR-082 |
 
 ---
 

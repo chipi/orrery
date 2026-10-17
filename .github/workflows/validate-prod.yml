@@ -13,7 +13,7 @@ name: Validate prod
 #
 # No VALIDATE_ERROR_POST → config-only error-monitoring checks (DSN baked +
 # dashless key + CSP connect-src); it does NOT fire a synthetic error, so the
-# 6-hourly cadence never pollutes GlitchTip project 4.
+# 6-hourly cadence never pollutes GlitchTip project 18 (orrery-prod).
 
 on:
   # Deep-validate the moment a prod deploy completes — mirrors the staging chain

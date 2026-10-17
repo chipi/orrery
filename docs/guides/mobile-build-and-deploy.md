@@ -126,7 +126,7 @@ export PUBLIC_UMAMI_HOST='https://analytics.orrerylearn.com'
 export PUBLIC_UMAMI_WEBSITE_ID='<staging-umami-site-id>'
 npm run sync:mobile
 
-# Release / App Store build — ALWAYS prod: GlitchTip project 4, prod Umami
+# Release / App Store build — ALWAYS prod: GlitchTip project 18, prod Umami
 export PUBLIC_SENTRY_DSN='https://<prod-key>@telemetry.orrerylearn.com/4'
 export PUBLIC_SENTRY_ENVIRONMENT=prod
 export PUBLIC_UMAMI_HOST='https://analytics.orrerylearn.com'

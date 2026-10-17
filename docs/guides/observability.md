@@ -33,7 +33,7 @@ See **[`src/lib/observability/sentry.ts`](../../src/lib/observability/sentry.ts)
 Done once on the self-hosted GlitchTip (over the tailnet). Already provisioned: **project 18** `orrery-prod` (prod), **project 6** `orrery` (staging), **project 30** `orrery-dev` (dev). Each project's **Settings → Client Keys (DSN)** gives a public DSN of the form `http(s)://<32-hex-key>@<host>/<project-id>` — the project id at the end is what routes events to the right rung.
 
 - **prod / staging** DSNs are set as the `PUBLIC_SENTRY_DSN` secret inside the **`prod`** and **`staging`** GH environments respectively (Repo → Settings → Environments → pick env → Secrets). Never at the repo level — the environment gate is the point.
-- **dev** DSN is the `DEV_SENTRY_DSN` constant in `src/lib/observability/sentry.ts` (project 30, `homelab:8090`). It's committed on purpose: a DSN is a public browser id, and the `homelab` host is tailnet-only, so it's inert off the tailnet.
+- **dev** DSN is the `DEV_SENTRY_DSN` constant in `src/lib/observability/sentry.ts` (project 30, via the tailnet TLS node `glitchtip.tail6d0ed4.ts.net`; `homelab:8090` is loopback-only on the mini and never worked from a laptop). It's committed on purpose: a DSN is a public browser id, and the `homelab` host is tailnet-only, so it's inert off the tailnet.
 
 ### CI wiring (already in the workflows)
 
@@ -180,7 +180,7 @@ For most existing scripts this is fine — they print mission IDs, agency names,
 │  SvelteKit app                                                          │
 │    → hooks.client.ts → initSentry()   +   +layout → initAnalytics()     │
 │        DSN/site id resolves for the rung? (ADR-082)                      │
-│          prod  → GlitchTip 4  + Umami prod   (env=production)            │
+│          prod  → GlitchTip 18 + Umami prod   (env=prod)                  │
 │          staging → GlitchTip 6 + Umami staging (env=staging)             │
 │          vite dev → GlitchTip 7 + Umami dev  (env=dev, via homelab)      │
 │          else (fork / preview / CI) → no-op                             │

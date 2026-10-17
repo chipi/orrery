@@ -34,12 +34,14 @@ import { MOBILE_INTERNAL, targetConfig } from '../target-env';
 declare const __DEV_WORKTREE__: string;
 
 // Dev rung of the env ladder (dev → staging → prod). In `vite dev`, with no deploy-injected
-// PUBLIC_SENTRY_* override, errors go to the dedicated dev GlitchTip project via the
-// Tailscale host `homelab` — NO fixed IP. Only a device ON the tailnet (the operator's
-// machine) resolves `homelab`, so a stranger who checks out + runs the repo reports nothing
-// (the transport silently fails). Staging/prod builds set PUBLIC_SENTRY_* and override this.
-// The DSN key is a public browser id (ships in the bundle) — safe to commit.
-const DEV_SENTRY_DSN = 'http://183d550946d24740a87983a1b75d86ee@homelab:8090/30';
+// PUBLIC_SENTRY_* override, errors go to the dedicated dev GlitchTip project 30 (orrery-dev)
+// through its tailnet TLS node. Only a device ON the tailnet resolves that name (and the ACL
+// admits only the operator's machines), so a stranger who checks out + runs the repo reports
+// nothing (the transport silently fails). Staging/prod builds set PUBLIC_SENTRY_* and override
+// this. Not `homelab:8090`: GlitchTip listens on the mini's loopback there, so the old
+// fallback reached nothing (ADR-082 amendment 2026-10-17). The DSN key is a public browser
+// id (ships in the bundle) — safe to commit.
+const DEV_SENTRY_DSN = 'https://183d550946d24740a87983a1b75d86ee@glitchtip.tail6d0ed4.ts.net/30';
 
 const LOOPBACK_HOSTS = new Set(['localhost', '127.0.0.1', '[::1]', '::1']);
 

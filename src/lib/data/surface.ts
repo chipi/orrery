@@ -203,12 +203,24 @@ export async function marsSites(): Promise<MarsSite[]> {
   return get<MarsSite[]>('mars-sites.json');
 }
 
-/** Venus surface landing sites — the three Venera/Vega landers (RFC-034 §12).
- *  No per-site i18n overlays yet; loaded straight from the base catalogue. */
+/** Venus surface landing sites — the three Venera/Vega landers (RFC-034 §12),
+ *  merged with their per-locale overlay (`i18n/<locale>/venus-sites/<id>.json`,
+ *  falling back to en-US) — same pattern as getMoonSites. Names are English except
+ *  in a name's origin locale (ru: Венера-13). */
 export async function getVenusSites(
-  _locale = 'en-US',
+  locale = 'en-US',
 ): Promise<import('$types/surface-site').SurfaceSite[]> {
-  return get<import('$types/surface-site').SurfaceSite[]>('venus-sites.json');
+  type Site = import('$types/surface-site').SurfaceSite;
+  const base = await get<Site[]>('venus-sites.json');
+  const overlay = (loc: string, id: string) =>
+    get<Partial<Site>>(`i18n/${loc}/venus-sites/${id}.json`).catch(() => null);
+  return Promise.all(
+    base.map(async (s) => {
+      const o =
+        (await overlay(locale, s.id)) ?? (locale === 'en-US' ? null : await overlay('en-US', s.id));
+      return o ? { ...s, ...o } : s;
+    }),
+  );
 }
 
 /**

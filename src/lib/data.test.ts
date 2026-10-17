@@ -1426,10 +1426,16 @@ describe('Venus sites', () => {
     expect(venera).toBeDefined();
   });
 
-  it('getVenusSites locale param is accepted (no overlays yet, same result)', async () => {
-    const en = await getVenusSites('en-US');
-    const de = await getVenusSites('de');
-    expect(en.length).toBe(de.length);
+  it('getVenusSites: English names everywhere, native names in ru (origin locale)', async () => {
+    const [en, de, ru] = await Promise.all([
+      getVenusSites('en-US'),
+      getVenusSites('de'),
+      getVenusSites('ru'),
+    ]);
+    expect(en.map((s) => s.name)).toEqual(['Venera 13', 'Vega 1', 'Vega 2']);
+    expect(de.map((s) => s.name)).toEqual(['Venera 13', 'Vega 1', 'Vega 2']);
+    expect(ru.map((s) => s.name)).toEqual(['Венера-13', 'Вега-1', 'Вега-2']);
+    expect(ru.map((s) => s.lat)).toEqual(en.map((s) => s.lat));
   });
 
   it('getVenusSiteGallery returns an empty array (no galleries yet)', async () => {

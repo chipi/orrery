@@ -1,18 +1,19 @@
 {
   "version": 1,
   "featured": [],
-  "demoted": [
+  "demoted": [],
+  "first_flight_configs": [
     {
-      "launch_id": "2026-05-29-atlas-v-551-amazon-leo-la-07",
-      "reason": "Atlas V 551 first flew with New Horizons in 2006; the orchestrator's first-flight heuristic mistook the upcoming-only manifest's lone Atlas V 551 entry for a debut. Routine ULA flight.",
-      "added_by": "marko",
-      "added_at": "2026-05-21T00:00:00Z"
+      "rocket_config_id": "536",
+      "reason": "Long March 10: LL2 config has 0 launches but its family count is non-zero, so the count rule misses the maiden flight (#603)",
+      "added_by": "operator decision 2026-10-16 (Q-A)",
+      "added_at": "2026-10-16T00:00:00Z"
     },
     {
-      "launch_id": "2026-07-31-h3-24-htv-x2",
-      "reason": "H3 family first flew 2023-03-07; H3-24 variant flagged as first-flight-vehicle by the heuristic because the manifest only has this variant's entry. Routine JAXA cargo flight to ISS.",
-      "added_by": "marko",
-      "added_at": "2026-05-21T00:00:00Z"
+      "rocket_config_id": "502",
+      "reason": "Mir (Agency for Defense Development): LL2 config has 0 launches but its family count is 1 (#603)",
+      "added_by": "operator decision 2026-10-16 (Q-A)",
+      "added_at": "2026-10-16T00:00:00Z"
     }
   ]
 }

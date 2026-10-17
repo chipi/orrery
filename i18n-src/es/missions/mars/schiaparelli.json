@@ -7,7 +7,7 @@
     { "met": 0, "label": "LANZAMIENTO", "note": "Proton-M desde Baikonur el 14 de marzo de 2016. Conjunto TGO + Schiaparelli.", "type": "nominal" },
     { "met": 0.01, "label": "TMI", "note": "Inyección transmarcianos en la etapa superior Briz-M.", "type": "nominal" },
     { "met": 30, "label": "TCM 1", "note": "Primera corrección de trayectoria durante el crucero de 7 meses.", "type": "info" },
-    { "met": 120, "label": "TCM 2", "note": "Mid-cruise correction.", "type": "info" },
+    { "met": 120, "label": "TCM 2", "note": "Corrección de rumbo a mitad del crucero.", "type": "info" },
     { "met": 216, "label": "TCM 3", "note": "Corrección final de aproximación antes de la separación del TGO/Schiaparelli.", "type": "info" },
     { "met": 216.5, "label": "SEPARACIÓN", "note": "Schiaparelli se separó del TGO el 16 de octubre de 2016, tres días antes de la entrada en la atmósfera.", "type": "nominal" },
     { "met": 219, "label": "ENTRADA", "note": "Entrada en la atmósfera el 19 de octubre de 2016.", "type": "nominal" },

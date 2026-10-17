@@ -7,7 +7,7 @@
     { "met": 0, "label": "ЗАПУСК", "note": "Proton-M с космодрома Baikonur, 14.03.2016. Связка TGO + Schiaparelli.", "type": "nominal" },
     { "met": 0.01, "label": "TMI", "note": "Разгонный блок Briz-M обеспечил переход на траекторию полёта к Марсу.", "type": "nominal" },
     { "met": 30, "label": "TCM 1", "note": "Первая коррекция траектории во время семимесячного перелёта.", "type": "info" },
-    { "met": 120, "label": "TCM 2", "note": "Mid-cruise correction.", "type": "info" },
+    { "met": 120, "label": "TCM 2", "note": "Коррекция траектории на середине перелёта.", "type": "info" },
     { "met": 216, "label": "TCM 3", "note": "Финальная коррекция траектории перед разделением TGO и Schiaparelli.", "type": "info" },
     { "met": 216.5, "label": "ОТДЕЛЕНИЕ", "note": "Schiaparelli отделился от TGO 16.10.2016, за три дня до входа в атмосферу.", "type": "nominal" },
     { "met": 219, "label": "ВХОД В АТМОСФЕРУ", "note": "Вход в атмосферу 19.10.2016.", "type": "nominal" },

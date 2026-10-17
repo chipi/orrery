@@ -7,7 +7,7 @@
     { "met": 0, "label": "发射", "note": "2016年3月14日由拜科努尔发射Proton-M运载火箭。TGO + Schiaparelli组合体。", "type": "nominal" },
     { "met": 0.01, "label": "TMI", "note": "Briz-M上面级进行火星转移注入。", "type": "nominal" },
     { "met": 30, "label": "TCM 1", "note": "7个月巡航期间的首次中途修正。", "type": "info" },
-    { "met": 120, "label": "TCM 2", "note": "Mid-cruise correction.", "type": "info" },
+    { "met": 120, "label": "TCM 2", "note": "巡航中段轨道修正。", "type": "info" },
     { "met": 216, "label": "TCM 3", "note": "TGO/Schiaparelli分离前的最终逼近修正。", "type": "info" },
     { "met": 216.5, "label": "分离", "note": "Schiaparelli于2016年10月16日与TGO分离，三天后进入大气层。", "type": "nominal" },
     { "met": 219, "label": "进入大气层", "note": "2016年10月19日大气层进入。", "type": "nominal" },

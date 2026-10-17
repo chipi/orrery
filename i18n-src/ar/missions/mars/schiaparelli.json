@@ -7,7 +7,7 @@
     { "met": 0, "label": "الإطلاق", "note": "Proton-M من باﻳکونور في 14-03-2016. منظومة TGO و Schiaparelli.", "type": "nominal" },
     { "met": 0.01, "label": "TMI", "note": "حقن المسار الكوكبي نحو المريخ بواسطة المرحلة العليا Briz-M.", "type": "nominal" },
     { "met": 30, "label": "TCM 1", "note": "أول تصحيح لمسار الرحلة خلال رحلة الرحيل التي استمرت 7 أشهر.", "type": "info" },
-    { "met": 120, "label": "TCM 2", "note": "Mid-cruise correction.", "type": "info" },
+    { "met": 120, "label": "TCM 2", "note": "تصحيح المسار في منتصف الرحلة.", "type": "info" },
     { "met": 216, "label": "TCM 3", "note": "تصحيح المسار النهائي قبل فصل TGO عن Schiaparelli.", "type": "info" },
     { "met": 216.5, "label": "الانفصال", "note": "انفصل Schiaparelli عن TGO في 16-10-2016، قبل ثلاثة أيام من الدخول إلى الغلاف الجوي.", "type": "nominal" },
     { "met": 219, "label": "الدخول", "note": "الدخول إلى الغلاف الجوي في 19-10-2016.", "type": "nominal" },

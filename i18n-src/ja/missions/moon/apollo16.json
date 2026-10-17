@@ -8,13 +8,13 @@
     {
       "met": 0,
       "label": "打ち上げ",
-      "note": "Saturn V (AS-511) from Kennedy Space Center LC-39A 1972-04-16 17:54 UTC.",
+      "note": "Kennedy Space Center LC-39A から Saturn V (AS-511) で打ち上げ、1972-04-16 17:54 UTC。",
       "type": "nominal"
     },
     {
       "met": 0.12,
       "label": "TLI",
-      "note": "Trans-lunar injection.",
+      "note": "月遷移軌道投入。",
       "type": "nominal"
     },
     {

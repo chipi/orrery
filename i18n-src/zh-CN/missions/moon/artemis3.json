@@ -5,7 +5,7 @@
   "description": "超过半个世纪以来的首次载人月球着陆。架构：NASA 的 SLS Block 1 火箭将搭载 4 名航天员的 Orion 飞船发射至月球周围的近直线晕轨道（NRHO）。SpaceX Starship 人员着陆系统（HLS）预先配置在 NRHO，在跨月球注入前由加油机在近地轨道进行补给。Orion 航天员转移至 HLS；2 名航天员下降至月球南极地区进行约 6.5 天的月面操作，同时 2 名航天员留在 NRHO。月面操作后，HLS 从 NRHO 发射升空，转移至 Orion 并返回地球。将在月球上着陆首位女性航天员和首位有色人种航天员。",
   "events": [
     { "met": 0, "label": "SLS 发射", "note": "Orion 从 KSC LC-39B 发射，搭载 4 名航天员。", "type": "nominal" },
-    { "met": 1, "label": "TLI", "note": "Trans-lunar injection.", "type": "nominal" },
+    { "met": 1, "label": "TLI", "note": "地月转移轨道射入。", "type": "nominal" },
     { "met": 4, "label": "抵达 NRHO", "note": "Orion 抵达近直线晕轨道；与预先配置的 Starship 人员着陆系统（HLS）进行交会。", "type": "nominal" },
     { "met": 5, "label": "下降", "note": "2 名航天员转移至人员着陆系统（HLS）；动力下降至月球南极。", "type": "info" },
     { "met": 12, "label": "上升", "note": "人员着陆系统（HLS）在约 6.5 天月面操作后从月球南极上升至近直线晕轨道（NRHO）。", "type": "nominal" },

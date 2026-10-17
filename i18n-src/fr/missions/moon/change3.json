@@ -4,7 +4,7 @@
   "first": "Premier alunissage en douceur chinois sur la Lune ; a déployé Yutu, le premier rover lunaire chinois",
   "description": "Chang'e 3 était le troisième atterrisseur du programme Chang'e de la CNSA et le premier alunissage en douceur réussi sur la Lune depuis le Luna 24 soviétique en 1976 — un écart de 37 ans. La Long March 3B a été lancée sur une trajectoire lunaire directe en décembre 2013, avec une seule correction de trajectoire intermédiaire avant l'insertion en orbite lunaire. L'atterrisseur s'est posé dans la Mare Imbrium le 14 décembre et a déployé le rover Yutu (Jade Rabbit), qui a fonctionné pendant 31 mois malgré une défaillance de mobilité qui a mis fin à sa progression le jour lunaire 2. L'atterrisseur de Chang'e 3 a continué de prendre des images pendant des années par la suite.",
   "events": [
-    { "met": 0, "label": "LANCEMENT", "note": "Long March 3B from Xichang 2013-12-01.", "type": "nominal" },
+    { "met": 0, "label": "LANCEMENT", "note": "Long March 3B depuis Xichang, 2013-12-01.", "type": "nominal" },
     { "met": 0.01, "label": "TLI", "note": "Injection trans-lunaire directe sur l'étage supérieur du LM-3B.", "type": "nominal" },
     { "met": 5, "label": "INSERTION EN ORBITE LUNAIRE", "note": "Capture en orbite lunaire circulaire de 100 km le 2013-12-06.", "type": "nominal" },
     { "met": 13, "label": "ATTERRISSAGE", "note": "Alunissage en douceur dans Mare Imbrium le 2013-12-14. Premier alunissage en douceur depuis Luna 24 (1976). Le rover Yutu a été déployé quelques heures plus tard.", "type": "nominal" }

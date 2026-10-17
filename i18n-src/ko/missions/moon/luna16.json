@@ -4,7 +4,7 @@
   "first": "최초의 로봇 달 샘플 귀환; 최초의 미국이 아닌 국가의 달 샘플",
   "description": "Luna 16은 소비에트 연방의 최초의 성공적인 로봇 샘플 귀환 임무이자 어떤 종류의 최초의 무인 달 귀환이었습니다. Apollo 11이 1969년에 22 kg의 유인 샘플을 가지고 돌아온 후, Luna 16은 1년 뒤 Mare Fecunditatis에서 101그램의 레골리스를 귀환시켰습니다 — Apollo의 탑재량의 일부였지만, 대체 아키텍처에 대한 중대한 개념 증명이었습니다. 이 임무는 Proton-K 부스터와 직진 귀환 프로파일을 사용했습니다: 표면으로의 하강, 드릴 코어 채취, 상승 단계 발사, 카자흐스탄으로의 탄도 귀환 캡슐. 이 기술은 Luna 20과 Luna 24에서 재사용되었으며, 수십 년 뒤 Chang'e 5와 Chang'e 6에 의해 재사용되었습니다.",
   "events": [
-    { "met": 0, "label": "발사", "note": "Proton-K from Baikonur 1970-09-12.", "type": "nominal" },
+    { "met": 0, "label": "발사", "note": "Baikonur에서 Proton-K 발사, 1970-09-12.", "type": "nominal" },
     { "met": 0.005, "label": "TLI", "note": "Blok-D 상단 스테이지에서의 달 직항 궤도 투입.", "type": "nominal" },
     { "met": 5, "label": "TCM", "note": "4.5일 항행 중 중간 궤도 수정.", "type": "info" },
     { "met": 5.1, "label": "착륙", "note": "Mare Fecunditatis에 연착륙 1970-09-20. 표면 운영 + 드릴 코어 채취 (101 g).", "type": "nominal" },

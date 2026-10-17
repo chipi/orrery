@@ -4,8 +4,8 @@
   "first": "首次从月球背面采样返回",
   "description": "结合了Chang'e 4（远端通信）和Chang'e 5（样本返回）的架构。Queqiao-2中继卫星首先于2024年3月发射，为该任务提供支持。Chang'e 6随后从月球背面的Apollo Crater采集了1.935千克样本——这些物质的成分与之前返回的任何月球样本都明显不同。月球的两个半球差异巨大（背面地壳更厚，月海较少）；这些样本或许终于能解释这一原因。",
   "events": [
-    { "met": 0, "label": "发射", "note": "Long March 5 from Wenchang.", "type": "nominal" },
-    { "met": 5, "label": "MOI", "note": "Lunar orbit insertion.", "type": "nominal" },
+    { "met": 0, "label": "发射", "note": "Long March 5 从 Wenchang 发射。", "type": "nominal" },
+    { "met": 5, "label": "MOI", "note": "进入环月轨道。", "type": "nominal" },
     { "met": 30, "label": "触地", "note": "着陆器于2024-06-02降落到Apollo Crater（背面）。所有通信均通过Queqiao-2中继卫星进行。", "type": "nominal" },
     { "met": 32, "label": "采样", "note": "从月球背面风化层采集了1.935千克样本。", "type": "info" },
     { "met": 34, "label": "上升", "note": "上升器升空；与轨道器交会。", "type": "nominal" },

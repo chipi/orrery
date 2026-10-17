@@ -7,7 +7,7 @@
     { "met": 0, "label": "LANCERING", "note": "Proton-M vanuit Baikonur 14 maart 2016. TGO + Schiaparelli-stack.", "type": "nominal" },
     { "met": 0.01, "label": "TMI", "note": "Trans-Marsinjectionop de Briz-M-boventrip.", "type": "nominal" },
     { "met": 30, "label": "TCM 1", "note": "Eerste midcourseCorrectie tijdens 7-maandse cruise.", "type": "info" },
-    { "met": 120, "label": "TCM 2", "note": "Mid-cruise correction.", "type": "info" },
+    { "met": 120, "label": "TCM 2", "note": "Koerscorrectie halverwege de reis.", "type": "info" },
     { "met": 216, "label": "TCM 3", "note": "Laatste benaderingscorrectie vóór TGO/Schiaparelli-scheiding.", "type": "info" },
     { "met": 216.5, "label": "SCHEIDING", "note": "Schiaparelli scheidde zich van TGO af op 16 oktober 2016, drie dagen vóór de atmosfeertoetrede.", "type": "nominal" },
     { "met": 219, "label": "INTREDE", "note": "Atmosfeertoetrede 19 oktober 2016.", "type": "nominal" },

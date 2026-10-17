@@ -8,7 +8,7 @@
     {
       "met": 0,
       "label": "发射",
-      "note": "Saturn V (AS-506) from Kennedy Space Center LC-39A 1969-07-16 13:32 UTC.",
+      "note": "Saturn V (AS-506) 从 Kennedy Space Center LC-39A 发射，1969-07-16 13:32 UTC。",
       "type": "nominal"
     },
     {
@@ -20,7 +20,7 @@
     {
       "met": 3,
       "label": "MOI",
-      "note": "Lunar orbit insertion.",
+      "note": "进入环月轨道。",
       "type": "nominal"
     },
     {

@@ -14,13 +14,13 @@
     {
       "met": 0.13,
       "label": "TLI",
-      "note": "Trans-lunar injection.",
+      "note": "地月转移轨道射入。",
       "type": "nominal"
     },
     {
       "met": 3,
       "label": "MOI",
-      "note": "Lunar orbit insertion.",
+      "note": "进入环月轨道。",
       "type": "nominal"
     },
     {

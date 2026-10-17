@@ -4,7 +4,7 @@
   "first": "Secondo rover lunare sovietico; percorso più lungo fuori dal nostro mondo (~39 km) per oltre 40 anni",
   "description": "Luna 21 consegnò Lunokhod 2, il secondo rover lunare controllato dall'equipaggio dell'Unione Sovietica, al cratere Le Monnier sul bordo meridionale di Mare Serenitatis nel gennaio 1973. Il rover fu guidato da una sala di controllo in Crimea da un team di cinque persone e percorse circa 39 km in quattro giorni lunari — un record di percorso fuori dal nostro mondo che rimase imbattuto fino a quando il rover Opportunity della NASA lo superò su Marte nel 2014. Lunokhod 2 restituì 80.000 fotogrammi televisivi e 86 panorami prima che la contaminazione da polvere dei suoi pannelli solari terminasse le operazioni.",
   "events": [
-    { "met": 0, "label": "LANCIO", "note": "Proton-K from Baikonur 1973-01-08.", "type": "nominal" },
+    { "met": 0, "label": "LANCIO", "note": "Proton-K da Baikonur, 1973-01-08.", "type": "nominal" },
     { "met": 0.005, "label": "TLI", "note": "Iniezione trans-lunare sullo stadio superiore Blok-D.", "type": "nominal" },
     { "met": 4, "label": "TCM", "note": "Correzione di traiettoria durante la navigazione.", "type": "info" },
     { "met": 4.5, "label": "ATTERRAGGIO", "note": "Allunaggio dolce nel cratere Le Monnier il 15-01-1973. Lunokhod 2 scese dalle rampe poche ore dopo.", "type": "nominal" },

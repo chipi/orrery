@@ -7,7 +7,7 @@
     { "met": 0, "label": "LANCEMENT", "note": "Proton-M depuis Baikonur 2016-03-14. Pile TGO + Schiaparelli.", "type": "nominal" },
     { "met": 0.01, "label": "TMI", "note": "Injection trans-Mars sur l'étage supérieur Briz-M.", "type": "nominal" },
     { "met": 30, "label": "TCM 1", "note": "Première correction de trajectoire en milieu de croisière pendant la traversée de 7 mois.", "type": "info" },
-    { "met": 120, "label": "TCM 2", "note": "Mid-cruise correction.", "type": "info" },
+    { "met": 120, "label": "TCM 2", "note": "Correction de trajectoire à mi-croisière.", "type": "info" },
     { "met": 216, "label": "TCM 3", "note": "Dernière correction d'approche avant la séparation TGO/Schiaparelli.", "type": "info" },
     { "met": 216.5, "label": "SÉPARATION", "note": "Schiaparelli s'est séparé du TGO 2016-10-16, trois jours avant l'entrée atmosphérique.", "type": "nominal" },
     { "met": 219, "label": "ENTRÉE", "note": "Entrée atmosphérique 2016-10-19.", "type": "nominal" },

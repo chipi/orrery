@@ -7,7 +7,7 @@
     { "met": 0, "label": "प्रक्षेपण", "note": "Baikonur से Proton-M 2016-03-14। TGO + Schiaparelli स्टैक।", "type": "nominal" },
     { "met": 0.01, "label": "TMI", "note": "Briz-M ऊपरी चरण पर ट्रांस-मार्स इंजेक्शन।", "type": "nominal" },
     { "met": 30, "label": "TCM 1", "note": "7 महीने की यात्रा के दौरान पहला मध्य-पाठ्यक्रम सुधार।", "type": "info" },
-    { "met": 120, "label": "TCM 2", "note": "Mid-cruise correction.", "type": "info" },
+    { "met": 120, "label": "TCM 2", "note": "यात्रा के मध्य में मार्ग सुधार।", "type": "info" },
     { "met": 216, "label": "TCM 3", "note": "TGO/Schiaparelli अलगीकरण से पहले अंतिम दृष्टिकोण सुधार।", "type": "info" },
     { "met": 216.5, "label": "पृथक्करण", "note": "Schiaparelli 2016-10-16 को TGO से अलग हुआ, वायुमंडलीय प्रवेश से तीन दिन पहले।", "type": "nominal" },
     { "met": 219, "label": "प्रवेश", "note": "वायुमंडलीय प्रवेश 2016-10-19।", "type": "nominal" },

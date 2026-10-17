@@ -4,7 +4,7 @@
   "first": "Primeiro retorno robótico de amostras lunares; primeiras amostras lunares não-americanas",
   "description": "Luna 16 foi a primeira missão bem-sucedida de retorno robótico de amostras da União Soviética e o primeiro retorno lunar não-tripulado de qualquer tipo. Depois que Apollo 11 trouxe 22 kg de amostras tripuladas em 1969, Luna 16 retornou 101 gramas de regolito de Mare Fecunditatis um ano depois — uma fração da carga útil de Apollo, mas uma prova profunda de conceito para a arquitetura alternativa. A missão usou um foguete Proton-K e um perfil de retorno direto: descida à superfície, perfuração do núcleo, lançamento do estágio de ascensão, cápsula de retorno balístico para o Cazaquistão. A técnica foi reutilizada para Luna 20 e Luna 24, e décadas depois por Chang'e 5 e Chang'e 6.",
   "events": [
-    { "met": 0, "label": "LANÇAMENTO", "note": "Proton-K from Baikonur 1970-09-12.", "type": "nominal" },
+    { "met": 0, "label": "LANÇAMENTO", "note": "Proton-K a partir de Baikonur, 1970-09-12.", "type": "nominal" },
     { "met": 0.005, "label": "TLI", "note": "Injeção trans-lunar no estágio superior Blok-D.", "type": "nominal" },
     { "met": 5, "label": "TCM", "note": "Correção de trajetória durante a jornada de 4,5 dias.", "type": "info" },
     { "met": 5.1, "label": "POUSO", "note": "Pouso suave em Mare Fecunditatis 1970-09-20. Operações na superfície + núcleo perfurado (101 g).", "type": "nominal" },

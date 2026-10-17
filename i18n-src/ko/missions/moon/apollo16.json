@@ -8,13 +8,13 @@
     {
       "met": 0,
       "label": "발사",
-      "note": "Saturn V (AS-511) from Kennedy Space Center LC-39A 1972-04-16 17:54 UTC.",
+      "note": "Kennedy Space Center LC-39A에서 Saturn V (AS-511) 발사, 1972-04-16 17:54 UTC.",
       "type": "nominal"
     },
     {
       "met": 0.12,
       "label": "TLI",
-      "note": "Trans-lunar injection.",
+      "note": "달 전이 궤도 진입.",
       "type": "nominal"
     },
     {

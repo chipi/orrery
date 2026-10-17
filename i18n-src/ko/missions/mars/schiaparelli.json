@@ -7,7 +7,7 @@
     { "met": 0, "label": "발사", "note": "Baikonur에서 Proton-M 발사, 2016-03-14. TGO + Schiaparelli 스택.", "type": "nominal" },
     { "met": 0.01, "label": "TMI", "note": "Briz-M 상단 스테이지의 화성 궤도 진입 기동.", "type": "nominal" },
     { "met": 30, "label": "TCM 1", "note": "7개월간의 항행 중 첫 번째 중간 궤도 수정.", "type": "info" },
-    { "met": 120, "label": "TCM 2", "note": "Mid-cruise correction.", "type": "info" },
+    { "met": 120, "label": "TCM 2", "note": "순항 중반 궤도 수정.", "type": "info" },
     { "met": 216, "label": "TCM 3", "note": "TGO/Schiaparelli 분리 전 최종 접근 수정.", "type": "info" },
     { "met": 216.5, "label": "분리", "note": "Schiaparelli은 2016-10-16에 TGO에서 분리되었으며, 대기권 진입 3일 전입니다.", "type": "nominal" },
     { "met": 219, "label": "대기권 진입", "note": "대기권 진입 2016-10-19.", "type": "nominal" },

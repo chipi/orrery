@@ -7,7 +7,7 @@
     { "met": 0, "label": "LANCIO", "note": "Proton-M da Baikonur 2016-03-14. Stack TGO + Schiaparelli.", "type": "nominal" },
     { "met": 0.01, "label": "TMI", "note": "Iniezione verso Marte nello stadio superiore Briz-M.", "type": "nominal" },
     { "met": 30, "label": "TCM 1", "note": "Prima correzione di rotta durante la crociera di 7 mesi.", "type": "info" },
-    { "met": 120, "label": "TCM 2", "note": "Mid-cruise correction.", "type": "info" },
+    { "met": 120, "label": "TCM 2", "note": "Correzione di rotta a metà crociera.", "type": "info" },
     { "met": 216, "label": "TCM 3", "note": "Correzione finale di rotta prima della separazione TGO/Schiaparelli.", "type": "info" },
     { "met": 216.5, "label": "SEPARAZIONE", "note": "Schiaparelli si separò da TGO 2016-10-16, tre giorni prima dell'ingresso in atmosfera.", "type": "nominal" },
     { "met": 219, "label": "INGRESSO", "note": "Ingresso in atmosfera 2016-10-19.", "type": "nominal" },

@@ -7,7 +7,7 @@
     { "met": 0, "label": "打ち上げ", "note": "2016年3月14日、Baikonurから打ち上げたProton-M。TGO + Schiaparelliのスタック。", "type": "nominal" },
     { "met": 0.01, "label": "TMI", "note": "Briz-M上段によるTrans-Mars injection(火星遷移軌道投入)。", "type": "nominal" },
     { "met": 30, "label": "TCM 1", "note": "7ヶ月間の巡航中の最初の軌道修正。", "type": "info" },
-    { "met": 120, "label": "TCM 2", "note": "Mid-cruise correction.", "type": "info" },
+    { "met": 120, "label": "TCM 2", "note": "巡航中盤の軌道修正。", "type": "info" },
     { "met": 216, "label": "TCM 3", "note": "TGO/Schiaparelli分離前の最終接近軌道修正。", "type": "info" },
     { "met": 216.5, "label": "分離", "note": "Schiaparelliは2016年10月16日にTGOから分離し、大気圏突入の3日前でした。", "type": "nominal" },
     { "met": 219, "label": "大気圏突入", "note": "大気圏突入2016年10月19日。", "type": "nominal" },

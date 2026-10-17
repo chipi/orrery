@@ -4,7 +4,7 @@
   "first": "首次机器人月球样品返回；首次非美国月球样品",
   "description": "Luna 16 是苏联首次成功的机器人样品返回任务，也是首次非载人月球返回。在 Apollo 11 于 1969 年携回 22 千克载人样品后，Luna 16 在一年后从 Mare Fecunditatis 返回了 101 克月壤——虽然只是 Apollo 有效载荷的一小部分，但对这种替代构型来说是一个深远的概念验证。该任务使用 Proton-K 助推器和直接返回轨迹：下降到表面、钻取岩心、上升级发射、弹道返回舱返回哈萨克斯坦。这项技术后来被 Luna 20 和 Luna 24 重复使用，数十年后又被 Chang'e 5 和 Chang'e 6 采用。",
   "events": [
-    { "met": 0, "label": "发射", "note": "Proton-K from Baikonur 1970-09-12.", "type": "nominal" },
+    { "met": 0, "label": "发射", "note": "Proton-K 从 Baikonur 发射，1970-09-12。", "type": "nominal" },
     { "met": 0.005, "label": "TLI", "note": "Blok-D 上面级上的跨月注入。", "type": "nominal" },
     { "met": 5, "label": "TCM", "note": "4.5 天巡航期间的中途修正。", "type": "info" },
     { "met": 5.1, "label": "着陆", "note": "1970-09-20 在 Mare Fecunditatis 软着陆。表面操作 + 钻取岩心（101 克）。", "type": "nominal" },

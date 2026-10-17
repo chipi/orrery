@@ -7,7 +7,7 @@
     { "met": 0, "label": "START", "note": "Proton-M von Baikonur 2016-03-14. TGO + Schiaparelli-Stapel.", "type": "nominal" },
     { "met": 0.01, "label": "TMI", "note": "Trans-Mars-Injektion auf der Briz-M-Oberstufe.", "type": "nominal" },
     { "met": 30, "label": "TCM 1", "note": "Erste Bahnkorrektur während der 7-monatigen Reiseflugphase.", "type": "info" },
-    { "met": 120, "label": "TCM 2", "note": "Mid-cruise correction.", "type": "info" },
+    { "met": 120, "label": "TCM 2", "note": "Kurskorrektur in der Mitte der Reise.", "type": "info" },
     { "met": 216, "label": "TCM 3", "note": "Letzte Bahnkorrektur vor der Trennung von TGO und Schiaparelli.", "type": "info" },
     { "met": 216.5, "label": "TRENNUNG", "note": "Schiaparelli trennte sich am 2016-10-16 von TGO, drei Tage vor dem Atmosphäreneintritt.", "type": "nominal" },
     { "met": 219, "label": "EINTRITT", "note": "Atmosphäreneintritt 2016-10-19.", "type": "nominal" },

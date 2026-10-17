@@ -1,8 +1,8 @@
 {
-  "intro_heading": "तो आप Mars पर रॉकेट उड़ाना चाहते हैं।",
+  "intro_heading": "तो आप मंगल पर रॉकेट उड़ाना चाहते हैं।",
   "intro_paragraphs": [
     "स्वागत है। यह Orrery का वह हिस्सा है जहाँ बटन जादू नहीं रह जाते। HUD में हर लेबल, porkchop में हर रंगीन contour, trajectory पर हर burn marker — यह खंड समझाता है कि वे कहाँ से आते हैं। इसे comic book की तरह पढ़ें: diagrams ज़्यादातर काम करते हैं, और हर italicised शब्द एक link है जिसे आप जितना चाहें उतना गहराई से खोज सकते हैं।",
-    "हम साथ मिलकर एक रॉकेट बनाने जा रहे हैं। शाब्दिक नहीं — Orrery एक simulator है — लेकिन वही निर्णयों की श्रृंखला जो एक असली flight team लेती है, उसी क्रम में जिस क्रम में वे लेते। अंत तक आप जान जाएंगे कि Mars के लिए हर 26 महीने में launch windows क्यों होती हैं और Moon के लिए हर महीने क्यों, free-return trajectory क्यों मौजूद है, और thrust एक मिशन का सबसे सस्ता हिस्सा क्यों है और fuel पूरी लड़ाई क्यों है।"
+    "हम साथ मिलकर एक रॉकेट बनाने जा रहे हैं। शाब्दिक नहीं — Orrery एक simulator है — लेकिन वही निर्णयों की श्रृंखला जो एक असली flight team लेती है, उसी क्रम में जिस क्रम में वे लेते। अंत तक आप जान जाएंगे कि मंगल के लिए हर 26 महीने में launch windows क्यों होती हैं और चंद्रमा के लिए हर महीने क्यों, free-return trajectory क्यों मौजूद है, और thrust एक मिशन का सबसे सस्ता हिस्सा क्यों है और fuel पूरी लड़ाई क्यों है।"
   ],
   "chapters": [
     {
@@ -13,7 +13,7 @@
       "paragraphs": [
         "रॉकेट को एक पल के लिए भूल जाइए। पृथ्वी पर खड़े हों, जितनी ज़ोर से हो सके एक baseball फेंकें। यह वापस नीचे आ जाती है। इसे और ज़ोर से फेंकें, यह और दूर गिरती है। इसे इतनी ज़ोर से फेंकें कि ज़मीन गेंद के गिरने से तेज़ी से मुड़ जाए, और गेंद ग्रह को चूक जाए — हमेशा के लिए। यह एक [orbit](orbits/keplerian-orbit) है। हर अंतरिक्ष यान, हर ग्रह, asteroid belt में हर पत्थर किसी भारी चीज़ के चारों ओर यही चाल चल रहा है।",
         "एक orbit एक दीर्घवृत्त है। इसका एक [size](orbits/semi-major-axis), एक [shape](orbits/eccentricity) (गोल बनाम खिंचा हुआ), एक [tilt](orbits/inclination), और एक phase होता है जो आपको बताता है कि अंतरिक्ष यान अभी दीर्घवृत्त पर कहाँ है ([true anomaly](orbits/true-anomaly))। पाँच संख्याएँ और आप सौर मंडल में किसी भी वस्तु की स्थिति की भविष्यवाणी कर सकते हैं, हमेशा के लिए, बिना किसी अन्य डेटा के। यह [Kepler's three laws](orbits/keplers-laws) है, जो 1609 में लिखे गए — वे अभी भी काम करते हैं।",
-        "यहाँ आपको मिलने वाला सबसे उपयोगी समीकरण [vis-viva](orbits/vis-viva) है। अपनी त्रिज्या, अपने orbit का size डालें, और आपकी गति बाहर आ जाती है। बस इतना ही। Earth perihelion पर: 30.3 km/s। Earth aphelion पर: 29.3 km/s। समान orbit, समान ऊर्जा, अलग गति।"
+        "यहाँ आपको मिलने वाला सबसे उपयोगी समीकरण [vis-viva](orbits/vis-viva) है। अपनी त्रिज्या, अपने orbit का size डालें, और आपकी गति बाहर आ जाती है। बस इतना ही। पृथ्वी perihelion पर: 30.3 km/s। पृथ्वी aphelion पर: 29.3 km/s। समान orbit, समान ऊर्जा, अलग गति।"
       ]
     },
     {
@@ -31,24 +31,24 @@
     {
       "heading": "3 — एक बार जब आप orbit में हों, तो आप कहीं भी आधे रास्ते हैं।",
       "diagram": "hohmann-transfer.svg",
-      "diagram_alt": "एक दीर्घवृत्त जो Earth की orbit और Mars की orbit को स्पर्श करता है।",
+      "diagram_alt": "एक दीर्घवृत्त जो पृथ्वी की orbit और मंगल की orbit को स्पर्श करता है।",
       "diagram_caption": "दो burns, एक दीर्घवृत्त। orbits बदलने का सबसे सस्ता तरीका।",
       "paragraphs": [
         "रॉबर्ट हेनलेन ने लिखा था: \"एक बार जब आप कक्षा में पहुँच जाते हैं, तो आप सौर मंडल में कहीं भी जाने के लिए आधा रास्ता तय कर चुके होते हैं।\" वह मजाक नहीं कर रहे थे। निचली पृथ्वी कक्षा तक पहुँचने में लगभग 9.4 किमी/सेकंड की ∆v खर्च होती है। वहाँ से मंगल तक जाने में एक और लगभग 3.6 किमी/सेकंड खर्च होता है। सबसे कठिन हिस्सा पहले ही आपके पीछे रह गया है।",
-        "सबसे सस्ता interplanetary route एक [Hohmann transfer](transfers/hohmann-transfer) है: एक दीर्घवृत्त जो एक छोर पर Earth की orbit को और दूसरे छोर पर गंतव्य की orbit को बस मुश्किल से चूमता है। दो burns, कोई बर्बाद fuel नहीं। Mars तक इसमें ~8.5 महीने लगते हैं। धीमा, लेकिन optimal।",
+        "सबसे सस्ता interplanetary route एक [Hohmann transfer](transfers/hohmann-transfer) है: एक दीर्घवृत्त जो एक छोर पर पृथ्वी की orbit को और दूसरे छोर पर गंतव्य की orbit को बस मुश्किल से चूमता है। दो burns, कोई बर्बाद fuel नहीं। मंगल तक इसमें ~8.5 महीने लगते हैं। धीमा, लेकिन optimal।",
         "तेज़ी से जाना चाहते हैं? एक [Lambert's problem](transfers/lambert-problem) हल करें — अपनी departure date और अपना transit time चुनें, और Lambert आपको वह unique [transfer ellipse](transfers/transfer-ellipse) बताता है जो उन्हें जोड़ता है। Orrery की [/plan](app:/plan) screen बिल्कुल यही करती है, parallel में दस हज़ार बार, एक porkchop plot बनाने के लिए।",
-        "और भी दूर जाने की ज़रूरत है? किसी ग्रह से गति चुराएँ। एक [gravity assist](transfers/gravity-assist) आपकी trajectory को zero fuel cost पर बदलने के लिए एक flyby का उपयोग करता है — Voyager 2 ने Neptune तक पहुँचने के लिए उनमें से चार का उपयोग किया। पूरा सौर मंडल [patched conics](transfers/patched-conics) के रूप में जुड़ता है: [conic-section](transfers/conic-sections) arcs की एक श्रृंखला जो gravitational neighbourhoods के बीच relay race में batons की तरह सौंपी जाती है।"
+        "और भी दूर जाने की ज़रूरत है? किसी ग्रह से गति चुराएँ। एक [gravity assist](transfers/gravity-assist) आपकी trajectory को zero fuel cost पर बदलने के लिए एक flyby का उपयोग करता है — Voyager 2 ने वरुण तक पहुँचने के लिए उनमें से चार का उपयोग किया। पूरा सौर मंडल [patched conics](transfers/patched-conics) के रूप में जुड़ता है: [conic-section](transfers/conic-sections) arcs की एक श्रृंखला जो gravitational neighbourhoods के बीच relay race में batons की तरह सौंपी जाती है।"
       ]
     },
     {
       "heading": "4 — एक launch window चुनें, या दो साल प्रतीक्षा करें।",
       "diagram": "porkchop.svg",
       "diagram_alt": "क्लासिक porkchop contour plot — x पर departure date, y पर time of flight।",
-      "diagram_caption": "एक porkchop। प्रत्येक contour constant ∆v है; lobe तब होता है जब प्रकृति Mars को सस्ता बनाती है।",
+      "diagram_caption": "एक porkchop। प्रत्येक contour constant ∆v है; lobe तब होता है जब प्रकृति मंगल को सस्ता बनाती है।",
       "paragraphs": [
-        "Earth और Mars स्थिर नहीं बैठते। Earth सूर्य के चारों ओर हर 365 दिनों में दौड़ती है, Mars हर 687। उनकी सापेक्ष geometry केवल हर ~26 महीने में दोहराती है — और उन महीनों में से अधिकांश में, ग्रह बहुत दूर हैं, सूर्य के गलत पक्षों पर, सस्ते में पहुँचने के लिए। Mission design एक calendar से शुरू होता है, रॉकेट से नहीं।",
+        "पृथ्वी और मंगल स्थिर नहीं बैठते। पृथ्वी सूर्य के चारों ओर हर 365 दिनों में दौड़ती है, मंगल हर 687। उनकी सापेक्ष geometry केवल हर ~26 महीने में दोहराती है — और उन महीनों में से अधिकांश में, ग्रह बहुत दूर हैं, सूर्य के गलत पक्षों पर, सस्ते में पहुँचने के लिए। Mission design एक calendar से शुरू होता है, रॉकेट से नहीं।",
         "[porkchop plot](porkchop/what-is-a-porkchop) यह है कि इंजीनियर इसे कैसे देखते हैं। [प्रस्थान तारीख](porkchop/departure-axis) एक [अक्ष](porkchop/departure-axis) के साथ, [उड़ान का समय](porkchop/tof-axis) दूसरे के साथ, ∆v एक [रंग हीटमैप](porkchop/dv-heatmap) के रूप में। सस्ते क्षेत्र अंडाकार पालियों के रूप में दिखाई देते हैं — प्रक्षेपण की खिड़कियाँ। पालि के बाहर: लाल, महँगा, वर्तमान रॉकेटों के साथ असंभव। [समोच्च को पढ़ना](porkchop/contour-reading) एक उड़ान गतिविज्ञानी के काम का आधा हिस्सा है।",
-        "दो तकनीकी शब्द जो आप हर जगह देखेंगे: [C3](propulsion/c3) वह launch energy है जो आपके रॉकेट को Earth के gravity well से निकलने के लिए चाहिए। [V∞](propulsion/v-infinity) (\"v-infinity\") गंतव्य के सापेक्ष आपकी गति है जिस क्षण आप पहुँचते हैं। दोनों सीधे porkchop math से निकलते हैं।"
+        "दो तकनीकी शब्द जो आप हर जगह देखेंगे: [C3](propulsion/c3) वह launch energy है जो आपके रॉकेट को पृथ्वी के gravity well से निकलने के लिए चाहिए। [V∞](propulsion/v-infinity) (\"v-infinity\") गंतव्य के सापेक्ष आपकी गति है जिस क्षण आप पहुँचते हैं। दोनों सीधे porkchop math से निकलते हैं।"
       ]
     },
     {
@@ -58,15 +58,15 @@
       "diagram_caption": "Entry, descent, landing। छह मिनट का शुद्ध आतंक।",
       "paragraphs": [
         "लगभग हर interplanetary मिशन, Voyager से Perseverance तक, वही script चलाता है:",
-        "[Launch](mission-phases/launch) — वायुमंडल से बाहर निकलें और low Earth orbit में जाएँ। [Trans-X Injection](mission-phases/trans-x-injection) — perigee पर एक single hard burn जो आपको Moon (TLI), Mars (TMI), Venus (TVI), या Jupiter (TJI) के transfer ellipse पर फेंक देता है। [Trajectory Correction Maneuvers](mission-phases/tcm) — cruise के दौरान dispersion errors को ठीक करने के लिए छोटे burns। आमतौर पर उनमें से 1–3। [Orbit Insertion](mission-phases/orbit-insertion) — गंतव्य पर एक braking burn जो आपको एक captured orbit में मोड़ देता है। [EDL](mission-phases/edl) — Entry, Descent, Landing — lander के लिए। supersonic atmospheric अराजकता के छह मिनट।",
-        "Lunar मिशन कभी-कभी एक [Near-Rectilinear Halo Orbit](mission-phases/nrho) से होकर जाते हैं (Gateway एक में रहेगा), और crewed Apollo flights ने [free-return trajectories](transfers/free-return) उड़ाईं — figure-8 paths जो आपको स्वचालित रूप से Earth पर वापस गिरा देती हैं यदि अंतरिक्ष यान पर हर engine मर जाता है। Apollo 13 अपना जीवन इस geometry को देता है।"
+        "[Launch](mission-phases/launch) — वायुमंडल से बाहर निकलें और low पृथ्वी orbit में जाएँ। [Trans-X Injection](mission-phases/trans-x-injection) — perigee पर एक single hard burn जो आपको चंद्रमा (TLI), मंगल (TMI), शुक्र (TVI), या बृहस्पति (TJI) के transfer ellipse पर फेंक देता है। [Trajectory Correction Maneuvers](mission-phases/tcm) — cruise के दौरान dispersion errors को ठीक करने के लिए छोटे burns। आमतौर पर उनमें से 1–3। [Orbit Insertion](mission-phases/orbit-insertion) — गंतव्य पर एक braking burn जो आपको एक captured orbit में मोड़ देता है। [EDL](mission-phases/edl) — Entry, Descent, Landing — lander के लिए। supersonic atmospheric अराजकता के छह मिनट।",
+        "Lunar मिशन कभी-कभी एक [Near-Rectilinear Halo Orbit](mission-phases/nrho) से होकर जाते हैं (Gateway एक में रहेगा), और crewed Apollo flights ने [free-return trajectories](transfers/free-return) उड़ाईं — figure-8 paths जो आपको स्वचालित रूप से पृथ्वी पर वापस गिरा देती हैं यदि अंतरिक्ष यान पर हर engine मर जाता है। Apollo 13 अपना जीवन इस geometry को देता है।"
       ]
     },
     {
       "heading": "6 — दूरियाँ और समय, क्योंकि इनमें से कुछ भी Earth-sized नहीं है।",
       "diagram": "au.svg",
       "diagram_alt": "खगोलीय इकाई, पृथ्वी की कक्षीय त्रिज्या के साथ अंकित।",
-      "diagram_caption": "एक AU = एक Earth-Sun दूरी। Mars ~1.5 AU है। Jupiter ~5.2 है।",
+      "diagram_caption": "एक AU = एक पृथ्वी-सूर्य दूरी। मंगल ~1.5 AU है। बृहस्पति ~5.2 है।",
       "paragraphs": [
         "तीन इकाइयाँ हर जगह दिखाई देती हैं। [खगोलीय इकाई](scales-time/au) (AU) पृथ्वी-सूर्य की औसत दूरी है — 150 मिलियन किमी। हम सौर मंडल को AU में मापते हैं क्योंकि किलोमीटर जल्दी ही अनुपयोगी हो जाते हैं। [प्रकाश-मिनट](scales-time/light-minute) आपको बताता है कि रेडियो सिग्नल को अंतरिक्ष यान तक पहुँचने में कितना समय लगता है। मंगल: 4 से 24 मिनट एकतरफा। आप पृथ्वी से किसी रोवर को नियंत्रित नहीं कर सकते। सब कुछ महत्वपूर्ण स्वायत्त है।",
         "[J2000 epoch](scales-time/j2000) वह कैलेंडर शून्य है जिसका उपयोग हर खगोल गतिकी वैज्ञानिक करता है। [नाक्षत्र बनाम सिनोडिक अवधि](scales-time/sidereal-synodic) समझाती हैं कि मंगल की खिड़कियाँ हर 23 महीने की बजाय हर 26 महीने में क्यों आती हैं। [ग्रहण तल](scales-time/ecliptic-plane) वह समतल डिस्क है जिस पर ग्रह सभी (ज्यादातर) स्थित हैं। [संदर्भ फ्रेम](scales-time/frames) वे समन्वय प्रणालियाँ हैं जिनके बीच मिशन नियंत्रण पृथ्वी-केंद्रित, सूर्य-केंद्रित और पिंड-केंद्रित दृश्यों के बीच संतुलन रखता है।"
@@ -76,11 +76,11 @@
       "heading": "7 — मनुष्य इसके लिए नहीं बने हैं।",
       "diagram": "_cover-life-in-space.svg",
       "diagram_alt": "एक stylised अंतरिक्ष यात्री microgravity में तैर रहा है जिसमें bone/muscle/countermeasure indicator bars हैं।",
-      "diagram_caption": "हड्डी, मांसपेशी, दृष्टि, vestibular, प्रतिरक्षा — microgravity में सब कुछ फिर से wire हो जाता है, और Earth की ओर नहीं।",
+      "diagram_caption": "हड्डी, मांसपेशी, दृष्टि, vestibular, प्रतिरक्षा — microgravity में सब कुछ फिर से wire हो जाता है, और पृथ्वी की ओर नहीं।",
       "paragraphs": [
         "कक्षा में छह महीने बिताएँ और आप उससे छोटे, हल्के और कद में कम होकर लौटते हैं। [सूक्ष्मगुरुत्व](life-in-space/microgravity-physiology) मूल कारण है: तरल पदार्थ सिर की ओर पुनर्वितरित होते हैं, मुद्रा से संबंधित मांसपेशियाँ निष्क्रिय हो जाती हैं, [हड्डियाँ](life-in-space/bone-density-loss) प्रति माह अपने खनिज का 1–2% बहा देती हैं, [वेस्टिबुलर तंत्र](life-in-space/vestibular-adaptation) \"नीचे\" खोजने का प्रयास छोड़ देता है। [प्रतिवेधी उपाय](life-in-space/muscle-atrophy) — ARED और ट्रेडमिल पर प्रतिदिन दो घंटे की प्रतिरोधी और वायवीय व्यायाम — इसे धीमा करते हैं लेकिन इसका समाधान नहीं करते।",
-        "[Radiation](life-in-space/radiation-exposure) कठिन समस्या है। ISS को ~200 mSv/year मिलता है (Earth पर 3 mSv background बनाम); magnetosphere के बाहर deep space 600+ mSv/year है, अभी तक कोई अच्छी shielding strategy नहीं है। एक Mars-class यात्रा एक crew member को एक single round trip में career-limit कैंसर जोखिम के पास रखेगी।",
-        "फिर [EVA](life-in-space/eva-physiology) है (4.3 psi pure-oxygen suit में 6-घंटे का endurance event) और [long-duration effects](life-in-space/long-duration-effects) जैसे SANS — Space-Associated Neuro-ocular Syndrome — जहाँ long-flight crew के 60% में measurable आँख में परिवर्तन विकसित होते हैं जो पूरी तरह से reverse नहीं होते। ये अनसुलझी समस्याएँ हैं जो मानवता और Mars के बीच खड़ी हैं।"
+        "[Radiation](life-in-space/radiation-exposure) कठिन समस्या है। ISS को ~200 mSv/year मिलता है (पृथ्वी पर 3 mSv background बनाम); magnetosphere के बाहर deep space 600+ mSv/year है, अभी तक कोई अच्छी shielding strategy नहीं है। एक Mars-class यात्रा एक crew member को एक single round trip में career-limit कैंसर जोखिम के पास रखेगी।",
+        "फिर [EVA](life-in-space/eva-physiology) है (4.3 psi pure-oxygen suit में 6-घंटे का endurance event) और [long-duration effects](life-in-space/long-duration-effects) जैसे SANS — Space-Associated Neuro-ocular Syndrome — जहाँ long-flight crew के 60% में measurable आँख में परिवर्तन विकसित होते हैं जो पूरी तरह से reverse नहीं होते। ये अनसुलझी समस्याएँ हैं जो मानवता और मंगल के बीच खड़ी हैं।"
       ]
     },
     {
@@ -114,7 +114,7 @@
       "paths": [
         "/fly"
       ],
-      "text": "एक असली mission arc उड़ाएँ। HUD ∆v, V∞, MET, Earth से दूरी दिखाता है। हर संख्या कुछ ऐसी है जो आपने अभी सीखी।"
+      "text": "एक असली mission arc उड़ाएँ। HUD ∆v, V∞, MET, पृथ्वी से दूरी दिखाता है। हर संख्या कुछ ऐसी है जो आपने अभी सीखी।"
     },
     {
       "paths": [

@@ -60,6 +60,7 @@ Names glossary (celestial names and people), in order:
 | `name-forms.mjs <curated.tsv> <out.tsv>` | Each locale's form: Wikipedia title (bodies), label (people; Russian patronymic dropped); stars as `name¦designation` (name from label/aliases, never a Bayer, Flamsteed or catalogue label; designation spelled out only — an abbreviation such as "α UMi" or an alias that is a whole catalogue list is not taken); zh-CN through Wikidata's simplified converter; sr-Cyrl only where Cyrillic at the source. |
 | `name-glossary-merge.mjs <forms.tsv> <overrides.tsv> <features.tsv>` | Writes the `body` / `star` / `person` / `feature` classes of `native-terms.json` (never overwrites an existing key); guards for Bayer and catalogue aliases, designations, nicknames, transliteration-only changes in Latin-script locales. |
 | `star-pages.mjs [--dry]` | Pass 1 for stars: writes each named-star page's localized `name` from the `star` glossary, and removes a name the glossary no longer gives. |
+| `variant-sweep.mjs <loc> <map.tsv> <out-edits.json>` | One name per language in running text: replaces other spellings of a name (regex rows) with the gallery's form and writes an edits file for `apply-edits.mjs`; prints the hit count per row. |
 | `glossary-keys.mjs` | Per-key context report: where each glossary key occurs in the English source, to decide guards and overrides. |
 | `person-case.test.ts` | Tests for the person declension in `ru-case.mjs` / `sr-case.mjs`. |
 

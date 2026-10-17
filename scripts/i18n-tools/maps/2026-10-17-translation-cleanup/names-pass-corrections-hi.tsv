@@ -1,0 +1,34 @@
+# hi hand corrections for the names pass: Latin names left in the touched strings, doubled
+# glosses, alternate-name sentences, and sentences the swap broke
+belts/asteroid	पियाज़ी ने Palermo से	पियाज़ी ने पलेर्मो से
+belts/asteroid	पैलस, Juno, और वेस्टा	पैलस, जूनो और वेस्टा
+science/planets/asteroid-belt	1801 को, Palermo वेधशाला	1801 को, पलेर्मो वेधशाला
+fleet/crewed-spacecraft/new-shepard	जिसका नाम एलन शेपर्ड है।	जिसका नाम एलन शेपर्ड के नाम पर रखा गया है।
+fleet/lander/viking-1	क्राइसी मैदान मैदानों की	क्राइसी मैदान की
+fleet/launcher/r-7-vostok	Carried Sputnik और गगारिन to ऑर्बिट	Sputnik और गगारिन को कक्षा में पहुँचाया	tagline
+fleet/launcher/r-7-vostok	Carried Sputnik और गगारिन to ऑर्बिट	Sputnik और गगारिन को कक्षा में पहुँचाया	best_known_for
+fleet/launcher/r-7-vostok	1961 में यूरी गगारिन अंतरिक्ष में डाल दिया	1961 में यूरी गगारिन को अंतरिक्ष में पहुँचाया
+fleet/orbiter/lunar-prospector	Shackleton क्रेटर के पास	शैकलटन क्रेटर के पास
+science/orbits/cislunar-orbits	Shackleton क्रेटर रिम पर	शैकलटन क्रेटर रिम पर
+science/life-in-space/lunar-surface-ops	(Shackleton, कैबियस)	(शैकलटन, कैबियस)
+science/life-in-space/lunar-habitat-design	दीवारें: Shackleton, Gerlache	दीवारें: शैकलटन, Gerlache
+missions/earth/polaris-dawn	स्कॉट 'Kidd' Poteet (पायलट)	स्कॉट 'किड' पोटीट (पायलट)
+satellites/charon	चिकनी वल्कन मैदान	चिकना वल्कन मैदान
+science/exoplanets/fifty-one-pegasi	(hot बृहस्पति)	(गर्म बृहस्पति)
+science/history/apollo-11-1969	LMP Edwin "Buzz" Aldrin।	LMP एडविन "बज़" एल्ड्रिन।
+science/history/keplers-laws-1609	Hven पर Uraniborg वेधशाला	ह्वेन पर उरानिबोर्ग वेधशाला
+science/life-in-space/mars-habitat-design	मंगल Design Reference Architecture	Mars Design Reference Architecture
+science/life-in-space/mars-habitat-design	MOXIE (मंगल OXygen	MOXIE (Mars OXygen
+science/observation/andromeda-galaxy	आकाशगंगा आज Sagittarius को ग्रहण कर रहा है	आकाशगंगा आज Sagittarius को ग्रहण कर रही है
+universe/named-stars/alnair	आधुनिक तारामंडल सारस तारामंडल, Crane का सबसे	आधुनिक सारस तारामंडल का सबसे
+universe/named-stars/alphecca	जिसे Gemma भी कहा जाता है	जिसे जेम्मा भी कहा जाता है
+universe/named-stars/alphecca	वैकल्पिक नाम 'Gemma'	वैकल्पिक नाम 'जेम्मा'
+universe/named-stars/atria	एट्रिया (Alpha Trianguli Australis)	एट्रिया (अल्फ़ा ट्राऐंगुलाइ ऑस्ट्रालिस)
+universe/named-stars/diphda	जिसे Deneb Kaitos भी कहा जाता है	जिसे देनेब काइटोस भी कहा जाता है
+universe/named-stars/diphda	इसका वैकल्पिक नाम, Deneb Kaitos,	इसका वैकल्पिक नाम, देनेब काइटोस,
+universe/named-stars/hadar	जिसे Agena भी कहा जाता है	जिसे एजेना भी कहा जाता है
+universe/named-stars/hamal	'First Point of मेष तारामंडल'	'मेष का प्रथम बिंदु'
+universe/named-stars/mimosa	जिसे Becrux के नाम से	जिसे बेक्रक्स के नाम से
+universe/named-stars/peacock	Peacock (अल्फ़ा पैवोनिस तारा)	पीकॉक (अल्फ़ा पैवोनिस तारा)
+universe/named-stars/peacock	मोर तारामंडल, यानी Peacock, तारामंडल का सबसे	मोर तारामंडल का सबसे
+programs/new-horizons	अन्वेषण के वरुण से परे	अन्वेषण का वरुण से परे

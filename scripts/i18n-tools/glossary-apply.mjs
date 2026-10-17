@@ -76,6 +76,10 @@ const GUARD = {
   Sirius: { path: /fleet\/constellation|earth-objects/, after: /^\s?(XM|FM|Satellite|-)/ },
   Antares: { path: /fleet\/|missions\/|moon-sites|programs\/|hotspot-metadata|rockets\// },
   Castor: { path: /fleet\/|rockets\// },
+  // the rockets and the NASA centre, not the astronauts; White Sands, the White House
+  Shepard: { before: /New[\s-]?$/ },
+  Glenn: { before: /New[\s-]?$/, after: /^\s?Research/ },
+  White: { after: /^\s?(Sands|House|[Dd]warf)/ },
   Polaris: {
     after: /^\s?(Dawn|Program)/,
     path: /programs\/spacex|science\/life-in-space|essays\/the-body-in-the-dark|missions\//,
@@ -147,6 +151,33 @@ const RU_FORMS = (() => {
   return m;
 })();
 const RU_NOM = new Set([...RU_FORMS.values()].map(([, n]) => n));
+// Hindi: a noun before a postposition takes the oblique (व्याध तारा से → व्याध तारे से,
+// काइपर घेरा में → काइपर घेरे में) and a genitive before such a noun agrees (बारनर्ड का
+// तारा के → बारनर्ड के तारे के; तूफ़ानों का महासागर पर → के). Only where the swap made the
+// phrase: a match the old text already had is left alone. A descriptor the text already
+// had after an inserted name goes (हैली धूमकेतु धूमकेतु).
+const HI_POST = '(का|की|के|को|से|में|पर|ने|तक|द्वारा)(?=[\\s,।.;)—]|$)';
+function obliqueHi(s, old) {
+  const fresh =
+    (f) =>
+    (m, ...a) =>
+      old.includes(m) ? m : f(m, ...a);
+  return s
+    .replace(
+      new RegExp(`(^|\\s)का (\\S+) ${HI_POST}`, 'g'),
+      fresh((m, p, w, q) =>
+        /^(तारा|घेरा|अड्डा)$/.test(w) || !/[ािीुूेैोौंँ़ृ]$/.test(w) ? `${p}के ${w} ${q}` : m,
+      ),
+    )
+    .replace(
+      new RegExp(`(^|\\s)(तारा|घेरा|अड्डा) ${HI_POST}`, 'g'),
+      fresh((m, p, w, q) => `${p}${w.slice(0, -1)}े ${q}`),
+    )
+    .replace(
+      /(^|\s)(तारामंडल|घाटी|धूमकेतु|मैदान|क्रेटर|पर्वत|सागर) \2(?=[\s,।.;)—]|$)/g,
+      fresh((m, p, w) => `${p}${w}`),
+    );
+}
 function coordinateRu(s) {
   let prev;
   do {
@@ -385,6 +416,7 @@ for (const f of walk(`i18n-src/${loc}`)) {
               g &&
               (!g.locs || g.locs.test(loc)) &&
               ((g.path && g.path.test(rel)) ||
+                (g.before && g.before.test(str.slice(Math.max(0, off - 25), off) + a)) ||
                 (g.after &&
                   g.after.test(str.slice(off + m.length - (b ? 1 : 0), off + m.length + 25))))
             )
@@ -515,6 +547,7 @@ for (const f of walk(`i18n-src/${loc}`)) {
         );
       // Arabic: the preposition لـ before the article ال is written لل
       if (loc === 'ar' && s !== v) s = s.replace(/لـال/g, 'لل');
+      if (loc === 'hi' && s !== v) s = obliqueHi(s, v);
       if (loc === 'ru' && s !== v) s = coordinateRu(s);
       if (loc === 'sr-Cyrl' && s !== v) {
         s = coordinateSr(s);

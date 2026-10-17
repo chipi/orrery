@@ -21,13 +21,13 @@
       "label": "\"हम पूरी मानवता के लिए शांति से आए\" पट्टिका"
     }
   ],
-  "panorama_caption": "Tranquility Base, EVA-1. Buzz Aldrin ने उतरने के कुछ ही देर बाद LM Eagle और अमेरिकी झंडे की तस्वीर ली। LM के पास दिखने वाले Hasselblad के जोड़ और रंगीन सिलाई प्रकाशित मोज़ेक का हिस्सा हैं।",
+  "panorama_caption": "Tranquility Base, EVA-1. बज़ एल्ड्रिन ने उतरने के कुछ ही देर बाद LM Eagle और अमेरिकी झंडे की तस्वीर ली। LM के पास दिखने वाले Hasselblad के जोड़ और रंगीन सिलाई प्रकाशित मोज़ेक का हिस्सा हैं।",
   "compass_zero_direction": "LM का अगला भाग (ALSJ पैनोरमा अभिविन्यास के अनुसार)",
   "panorama_annotations": [
     {
       "id": "lm-eagle",
       "label": "LM Eagle",
-      "body": "चंद्र मॉड्यूल का अवतरण चरण, जहाँ EVA के दौरान Armstrong + Aldrin खड़े थे।"
+      "body": "चंद्र मॉड्यूल का अवतरण चरण, जहाँ EVA के दौरान आर्मस्ट्रांग + एल्ड्रिन खड़े थे।"
     },
     {
       "id": "us-flag-pan",
@@ -36,7 +36,7 @@
     },
     {
       "id": "buzz-shadow",
-      "label": "Buzz Aldrin की परछाईं",
+      "label": "बज़ एल्ड्रिन की परछाईं",
       "body": "अग्रभूमि में फ़ोटोग्राफ़र की अपनी परछाईं — Buzz हाथ में Hasselblad लिए हुए।"
     }
   ]

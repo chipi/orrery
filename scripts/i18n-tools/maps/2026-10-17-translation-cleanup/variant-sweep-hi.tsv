@@ -1,0 +1,8 @@
+# hi: one name per body in running text, as the gallery pages set it (planets/neptune वरुण,
+# planets/uranus अरुण, planets/pluto यम, Charon शैरन). Kept: compounds and terms
+# (ट्रांस-नेप्च्यूनियन, उप-/सब-नेप्च्यून, प्लूटोनियम) and the mission name यूरेनस ऑर्बिटर और प्रोब.
+# regex (flags gu) \t replacement
+(?<![ऀ-ॿ-])(?:नेपच्यून|नेप्च्यून)(?![ऀ-ॿ])	वरुण
+(?<![ऀ-ॿ-])यूरेनस(?![ऀ-ॿ])(?! ऑर्बिटर)	अरुण
+(?<![ऀ-ॿ-])प्लूटो(?![ऀ-ॿ])	यम
+(?<![ऀ-ॿ])(?:कैरन|चेरॉन|चारून)(?![ऀ-ॿ])	शैरन

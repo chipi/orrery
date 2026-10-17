@@ -40,3 +40,22 @@ Rubio	Frank Rubio
 Jewitt	David Jewitt
 Flandro	Gary Flandro
 Mayor	Michel Mayor	exoplanets
+# Added for the hi pass: in non-Latin text a Latin "Stafford" or "Bean" can only be the
+# person, and a Latin-script locale keeps the surname as it is (the form equals the key).
+# Shepard is guarded against "New Shepard" in glossary-apply.mjs.
+Stafford	Tom Stafford
+Conrad	Pete Conrad
+Mitchell	Edgar Mitchell
+Chaffee	Roger Chaffee
+Bean	Alan Bean
+Scott	David Scott
+Shepard	Alan Shepard
+Glenn	John Glenn
+Carpenter	Scott Carpenter
+Cooper	Gordon Cooper
+White	Ed White
+Young	John Young
+Duke	Charles Duke
+Collins	Michael Collins
+Anders	Bill Anders
+Roosa	Stuart Roosa

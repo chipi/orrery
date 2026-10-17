@@ -111,16 +111,24 @@ for (const [qid, it] of items) {
   if (!e) continue;
   let slavic = false;
   const cells = Object.entries(LOCS).map(([loc, [wiki, lls]]) => {
-    const title = e.sitelinks?.[`${wiki}wiki`]?.title;
-    let label = lls
-      .split('|')
-      .map((l) => e.labels?.[l]?.value)
-      .find(Boolean);
+    // a zero-width space is never part of a name (the hi label "ख़्रुश्चेव" + U+200B); ZWJ/ZWNJ are kept
+    const zw = (x) => x?.replace(/[\u200b\ufeff]/g, '');
+    const title = zw(e.sitelinks?.[`${wiki}wiki`]?.title);
+    let label = zw(
+      lls
+        .split('|')
+        .map((l) => e.labels?.[l]?.value)
+        .find(Boolean),
+    );
     // the converted label is the simplified form for zh-CN; Serbian's Latin → Cyrillic
     // converter is mechanical on foreign spellings ("Qуаоар"), so sr-Cyrl takes only a
     // label or title that is Cyrillic at the source
     if (loc === 'zh-CN' && e.conv?.['zh-cn']) label = e.conv['zh-cn'];
     if (loc === 'sr-Cyrl' && label && !CYR.test(label)) label = undefined;
+    // a non-Latin-script locale's label written in Latin letters is the English name copied
+    // in ("michael collins", "John Glenn" as hi labels), not a form
+    if (/^(ru|ja|zh-CN|ko|hi|ar)$/.test(loc) && label && /^[\p{Script=Latin}\s.'’-]+$/u.test(label))
+      label = undefined;
     let form;
     if (it.kind === 'star') {
       // a star's name (label first, then aliases, then the title) and its Bayer

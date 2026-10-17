@@ -6,7 +6,7 @@
   "residents": [
     {
       "id": "iss",
-      "label": "ISS — International Space Station",
+      "label": "ISS — अंतर्राष्ट्रीय अंतरिक्ष स्टेशन",
       "agency": "NASA"
     },
     {
@@ -33,7 +33,7 @@
     },
     {
       "year": 1961,
-      "label": "Vostok 1 — Yuri Gagarin, पहली चालक दल युक्त कक्षीय उड़ान (USSR)",
+      "label": "Vostok 1 — यूरी गगारिन, पहली चालक दल युक्त कक्षीय उड़ान (USSR)",
       "mission_id": "vostok-1"
     }
   ],

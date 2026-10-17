@@ -32,7 +32,7 @@
     },
     {
       "type": "prose",
-      "md": "O primeiro problema de engenharia é o mais fundamental: nada chega, e nada sai. Cada átomo de oxigênio, água, nitrogênio, carbono e mineral-traço que a tripulação precisa para toda a viagem deve ser lançado com a nave ou regenerado a bordo dela, indefinidamente, sem falha. O sistema [ECLSS de suporte à vida](/science/life-in-space/eclss-life-support) a bordo da International Space Station é o sistema de suporte à vida em circuito fechado mais sofisticado que a humanidade já operou — ele recupera água da umidade, da urina e do ar da cabine; gera oxigênio eletrolisando água; remove dióxido de carbono da atmosfera. É reabastecido por veículos de carga várias vezes por ano. Remova o reabastecimento, e cada ineficiência do circuito se acumula: cada quilograma de água não recuperada, cada molécula de gás não reciclada, é um quilograma ou uma molécula permanentemente perdida do inventário total da nave. Ao longo de uma viagem de quatro séculos, a composição de pequenas perdas se torna existencial. Um sistema que é 99,9 por cento eficiente perde, ao longo de 430 anos, o equivalente a seu estoque de trabalho inteiro muitas vezes. O circuito deve ser, na prática, completo."
+      "md": "O primeiro problema de engenharia é o mais fundamental: nada chega, e nada sai. Cada átomo de oxigênio, água, nitrogênio, carbono e mineral-traço que a tripulação precisa para toda a viagem deve ser lançado com a nave ou regenerado a bordo dela, indefinidamente, sem falha. O sistema [ECLSS de suporte à vida](/science/life-in-space/eclss-life-support) a bordo da Estação Espacial Internacional é o sistema de suporte à vida em circuito fechado mais sofisticado que a humanidade já operou — ele recupera água da umidade, da urina e do ar da cabine; gera oxigênio eletrolisando água; remove dióxido de carbono da atmosfera. É reabastecido por veículos de carga várias vezes por ano. Remova o reabastecimento, e cada ineficiência do circuito se acumula: cada quilograma de água não recuperada, cada molécula de gás não reciclada, é um quilograma ou uma molécula permanentemente perdida do inventário total da nave. Ao longo de uma viagem de quatro séculos, a composição de pequenas perdas se torna existencial. Um sistema que é 99,9 por cento eficiente perde, ao longo de 430 anos, o equivalente a seu estoque de trabalho inteiro muitas vezes. O circuito deve ser, na prática, completo."
     },
     {
       "type": "prose",
@@ -57,7 +57,7 @@
       "type": "figure",
       "image": "fleet/iss/01",
       "kind": "photo",
-      "caption": "A International Space Station é a coisa mais próxima que construímos de um mundo fechado — e ela é reabastecida da Terra a cada poucas semanas. Uma nave que deve fechar o circuito completamente, por mil anos, é uma ordem totalmente diferente de problema.",
+      "caption": "A Estação Espacial Internacional é a coisa mais próxima que construímos de um mundo fechado — e ela é reabastecida da Terra a cada poucas semanas. Uma nave que deve fechar o circuito completamente, por mil anos, é uma ordem totalmente diferente de problema.",
       "align": "wide",
       "credit": "NASA"
     },

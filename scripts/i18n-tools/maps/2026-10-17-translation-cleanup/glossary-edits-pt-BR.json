@@ -1,44 +1,164 @@
 [
   {
-    "rel": "orbit-regimes-explore/GIANTS.json",
-    "at": "story",
-    "old": "O reino planetário exterior — 5 a 30 AU. Dois gigantes gasosos (Júpiter, Saturn) com envoltórios de hidrogênio-hélio de milhares de quilômetros de profundidade sobre pequenos núcleos rochosos; dois gigantes de gelo (Urano, Netuno) com mantos de água/amônia/metano sob camadas gasosas mais finas. Juntos, eles concentram 99% de toda a massa planetária do sistema solar. Cada um possui seu próprio sistema de luas que funciona como um sistema solar em miniatura — somente Júpiter tem 95 luas conhecidas, incluindo quatro maiores que Plutão.",
-    "new": "O reino planetário exterior — 5 a 30 AU. Dois gigantes gasosos (Júpiter, Saturno) com envoltórios de hidrogênio-hélio de milhares de quilômetros de profundidade sobre pequenos núcleos rochosos; dois gigantes de gelo (Urano, Netuno) com mantos de água/amônia/metano sob camadas gasosas mais finas. Juntos, eles concentram 99% de toda a massa planetária do sistema solar. Cada um possui seu próprio sistema de luas que funciona como um sistema solar em miniatura — somente Júpiter tem 95 luas conhecidas, incluindo quatro maiores que Plutão."
+    "rel": "essays/generational-starships.json",
+    "at": "body.7.md",
+    "old": "O primeiro problema de engenharia é o mais fundamental: nada chega, e nada sai. Cada átomo de oxigênio, água, nitrogênio, carbono e mineral-traço que a tripulação precisa para toda a viagem deve ser lançado com a nave ou regenerado a bordo dela, indefinidamente, sem falha. O sistema [ECLSS de suporte à vida](/science/life-in-space/eclss-life-support) a bordo da International Space Station é o sistema de suporte à vida em circuito fechado mais sofisticado que a humanidade já operou — ele recupera água da umidade, da urina e do ar da cabine; gera oxigênio eletrolisando água; remove dióxido de carbono da atmosfera. É reabastecido por veículos de carga várias vezes por ano. Remova o reabastecimento, e cada ineficiência do circuito se acumula: cada quilograma de água não recuperada, cada molécula de gás não reciclada, é um quilograma ou uma molécula permanentemente perdida do inventário total da nave. Ao longo de uma viagem de quatro séculos, a composição de pequenas perdas se torna existencial. Um sistema que é 99,9 por cento eficiente perde, ao longo de 430 anos, o equivalente a seu estoque de trabalho inteiro muitas vezes. O circuito deve ser, na prática, completo.",
+    "new": "O primeiro problema de engenharia é o mais fundamental: nada chega, e nada sai. Cada átomo de oxigênio, água, nitrogênio, carbono e mineral-traço que a tripulação precisa para toda a viagem deve ser lançado com a nave ou regenerado a bordo dela, indefinidamente, sem falha. O sistema [ECLSS de suporte à vida](/science/life-in-space/eclss-life-support) a bordo da Estação Espacial Internacional é o sistema de suporte à vida em circuito fechado mais sofisticado que a humanidade já operou — ele recupera água da umidade, da urina e do ar da cabine; gera oxigênio eletrolisando água; remove dióxido de carbono da atmosfera. É reabastecido por veículos de carga várias vezes por ano. Remova o reabastecimento, e cada ineficiência do circuito se acumula: cada quilograma de água não recuperada, cada molécula de gás não reciclada, é um quilograma ou uma molécula permanentemente perdida do inventário total da nave. Ao longo de uma viagem de quatro séculos, a composição de pequenas perdas se torna existencial. Um sistema que é 99,9 por cento eficiente perde, ao longo de 430 anos, o equivalente a seu estoque de trabalho inteiro muitas vezes. O circuito deve ser, na prática, completo."
   },
   {
-    "rel": "orbit-regimes-explore/GIANTS.json",
-    "at": "residents.1.label",
-    "old": "Saturn — 9,58 AU, sistema de anéis",
-    "new": "Saturno — 9,58 AU, sistema de anéis"
+    "rel": "essays/generational-starships.json",
+    "at": "body.12.caption",
+    "old": "A International Space Station é a coisa mais próxima que construímos de um mundo fechado — e ela é reabastecida da Terra a cada poucas semanas. Uma nave que deve fechar o circuito completamente, por mil anos, é uma ordem totalmente diferente de problema.",
+    "new": "A Estação Espacial Internacional é a coisa mais próxima que construímos de um mundo fechado — e ela é reabastecida da Terra a cada poucas semanas. Uma nave que deve fechar o circuito completamente, por mil anos, é uma ordem totalmente diferente de problema."
   },
   {
-    "rel": "science/orbits/eccentricity.json",
-    "at": "body_paragraphs.1",
-    "old": "Acima de `e = 1` você não está mais preso. `e = 1` exatamente é uma trajetória parabólica (fuga, por pouco). Qualquer coisa maior é hiperbólica — um sobrevoo que nunca retorna. A maioria das trajetórias de espaçonaves que o Orrery mostra são elipses heliocêntricos com `e < 1`. A exceção: braços de assistência gravitacional desenhados ao redor de Júpiter ou Saturn mergulham em território hiperbólico.",
-    "new": "Acima de `e = 1` você não está mais preso. `e = 1` exatamente é uma trajetória parabólica (fuga, por pouco). Qualquer coisa maior é hiperbólica — um sobrevoo que nunca retorna. A maioria das trajetórias de espaçonaves que o Orrery mostra são elipses heliocêntricos com `e < 1`. A exceção: braços de assistência gravitacional desenhados ao redor de Júpiter ou Saturno mergulham em território hiperbólico."
+    "rel": "essays/going-to-mars.json",
+    "at": "body.11.md",
+    "old": "O segundo muro é a massa — e especificamente, a relação entre massa e distância em uma missão da qual nenhum reabastecimento é possível. Na International Space Station, um veículo de carga Progress chega a cada poucos meses com alimento, água, equipamento e peças de reposição. Os sistemas de suporte de vida da estação são de circuito fechado em alguns aspectos, mas vazam em outros; água é reciclada, mas consumíveis são reabastecidos regularmente da Terra. Uma tripulação de Marte não recebe tal reabastecimento. O que sai com eles é o que eles têm. Cada quilograma de alimento, cada litro de água, cada componente de reposição de cada sistema crítico deve ser carregado da Terra — a um custo de lançamento extraordinário — ou produzido no próprio Marte.",
+    "new": "O segundo muro é a massa — e especificamente, a relação entre massa e distância em uma missão da qual nenhum reabastecimento é possível. Na Estação Espacial Internacional, um veículo de carga Progress chega a cada poucos meses com alimento, água, equipamento e peças de reposição. Os sistemas de suporte de vida da estação são de circuito fechado em alguns aspectos, mas vazam em outros; água é reciclada, mas consumíveis são reabastecidos regularmente da Terra. Uma tripulação de Marte não recebe tal reabastecimento. O que sai com eles é o que eles têm. Cada quilograma de alimento, cada litro de água, cada componente de reposição de cada sistema crítico deve ser carregado da Terra — a um custo de lançamento extraordinário — ou produzido no próprio Marte."
   },
   {
-    "rel": "science/planets/magnetic-fields.json",
-    "at": "body_paragraphs.0",
-    "old": "Inclinação do eixo magnético (ângulo entre o dipolo e o eixo de rotação) para cada planeta com um dínamo conhecido: Mercúrio 0,7°, Terra 10,5°, Júpiter 9,6°, Saturn ~0°, Urano 58,6°, Netuno 46,9°. Vênus, Marte e Plutão não possuem dipolo globalmente significativo hoje. Os dipolos fortemente desalinhados de Urano e Netuno também estão deslocados do centro do planeta — o de Urano em cerca de 1/3 do raio do planeta. O dínamo convencional (núcleo de ferro) não consegue produzir facilmente essa geometria; a explicação mais aceita é que Urano e Netuno abrigam seus dínamos em uma camada externa do manto composta de água iônica + amônia + metano, e não em um núcleo profundo.",
-    "new": "Inclinação do eixo magnético (ângulo entre o dipolo e o eixo de rotação) para cada planeta com um dínamo conhecido: Mercúrio 0,7°, Terra 10,5°, Júpiter 9,6°, Saturno ~0°, Urano 58,6°, Netuno 46,9°. Vênus, Marte e Plutão não possuem dipolo globalmente significativo hoje. Os dipolos fortemente desalinhados de Urano e Netuno também estão deslocados do centro do planeta — o de Urano em cerca de 1/3 do raio do planeta. O dínamo convencional (núcleo de ferro) não consegue produzir facilmente essa geometria; a explicação mais aceita é que Urano e Netuno abrigam seus dínamos em uma camada externa do manto composta de água iônica + amônia + metano, e não em um núcleo profundo."
+    "rel": "fleet/crewed-spacecraft/endeavour.json",
+    "at": "dispatch",
+    "old": "Endeavour, OV-105, foi o último orbitador construído — montado a partir de peças estruturais sobressalentes para substituir o Challenger, de modo que até o membro mais novo da frota carregava a memória de seu pior dia. Voou a primeira missão de manutenção do Hubble, STS-61, o voo que corrigiu o espelho defeituoso do telescópio e resgatou a reputação do observatório, e realizou trabalho pesado na montagem da International Space Station. Foi o mais jovem da frota e entre os mais ocupados, voando até os anos finais do programa.",
+    "new": "Endeavour, OV-105, foi o último orbitador construído — montado a partir de peças estruturais sobressalentes para substituir o Challenger, de modo que até o membro mais novo da frota carregava a memória de seu pior dia. Voou a primeira missão de manutenção do Hubble, STS-61, o voo que corrigiu o espelho defeituoso do telescópio e resgatou a reputação do observatório, e realizou trabalho pesado na montagem da Estação Espacial Internacional. Foi o mais jovem da frota e entre os mais ocupados, voando até os anos finais do programa."
   },
   {
-    "rel": "science/planets/magnetic-fields.json",
-    "at": "body_paragraphs.1",
-    "old": "As magnetosferas se estendem muito além do próprio planeta. A da Terra alcança cerca de 65.000 km em direção ao Sol (onde se curva contra o vento solar) e se prolonga em uma longa cauda no lado noturno. A magnetosfera de Júpiter é a maior estrutura física dentro do sistema solar que não é a heliosfera do Sol: sua cauda magnética alcança a órbita de Saturn, com cerca de 1,4 bilhão de km de comprimento. A cauda é moldada pelo vento solar empurrando o campo para baixo; a extremidade frontal é comprimida.",
-    "new": "As magnetosferas se estendem muito além do próprio planeta. A da Terra alcança cerca de 65.000 km em direção ao Sol (onde se curva contra o vento solar) e se prolonga em uma longa cauda no lado noturno. A magnetosfera de Júpiter é a maior estrutura física dentro do sistema solar que não é a heliosfera do Sol: sua cauda magnética alcança a órbita de Saturno, com cerca de 1,4 bilhão de km de comprimento. A cauda é moldada pelo vento solar empurrando o campo para baixo; a extremidade frontal é comprimida."
+    "rel": "fleet/engine/le-7a.json",
+    "at": "description",
+    "old": "O LE-7A é o motor que conferiu ao Japão uma capacidade de lançamento pesado totalmente autóctone. Desenvolvido pela Mitsubishi Heavy Industries para a JAXA, funciona com ciclo de combustão em estágios usando LOX e LH2 — a abordagem termodinâmica que extrai o máximo de eficiência do propelente hidrogênio — e voo inaugural ocorreu no H-IIA em agosto de 2001 como sucessor refinado do LE-7 original. O redesenho resolveu os problemas das turbobombas que haviam causado falhas iniciais no H-II, e o LE-7A passou a servir como âncora nas carreiras operacionais do H-IIA e H-IIB até 2024, lançando os navios de carga HTV do Japão para a International Space Station e a série de satélites de radar ALOS da JAXA-ISRO.",
+    "new": "O LE-7A é o motor que conferiu ao Japão uma capacidade de lançamento pesado totalmente autóctone. Desenvolvido pela Mitsubishi Heavy Industries para a JAXA, funciona com ciclo de combustão em estágios usando LOX e LH2 — a abordagem termodinâmica que extrai o máximo de eficiência do propelente hidrogênio — e voo inaugural ocorreu no H-IIA em agosto de 2001 como sucessor refinado do LE-7 original. O redesenho resolveu os problemas das turbobombas que haviam causado falhas iniciais no H-II, e o LE-7A passou a servir como âncora nas carreiras operacionais do H-IIA e H-IIB até 2024, lançando os navios de carga HTV do Japão para a Estação Espacial Internacional e a série de satélites de radar ALOS da JAXA-ISRO."
   },
   {
-    "rel": "science/planets/magnetic-fields.json",
-    "at": "body_paragraphs.2",
-    "old": "Partículas aprisionadas no campo magnético criam cinturões de radiação — os cinturões de Van Allen na Terra, e os muito mais intensos em Júpiter (uma das razões pelas quais missões como Juno voam em órbitas polares, evitando o cinturão equatorial). Onde as linhas de campo convergem próximo aos polos magnéticos, partículas carregadas espiralizam para baixo e excitam a atmosfera — é a aurora. Todo planeta magnetizado tem auroras; nós as imageamos na Terra, em Júpiter, Saturn, Urano e Netuno.",
-    "new": "Partículas aprisionadas no campo magnético criam cinturões de radiação — os cinturões de Van Allen na Terra, e os muito mais intensos em Júpiter (uma das razões pelas quais missões como Juno voam em órbitas polares, evitando o cinturão equatorial). Onde as linhas de campo convergem próximo aos polos magnéticos, partículas carregadas espiralizam para baixo e excitam a atmosfera — é a aurora. Todo planeta magnetizado tem auroras; nós as imageamos na Terra, em Júpiter, Saturno, Urano e Netuno."
+    "rel": "fleet/engine/rd-107-108.json",
+    "at": "description",
+    "old": "O RD-107 e o RD-108 são os motores do R-7, o primeiro míssil balístico intercontinental do mundo, que a equipe de Sergei Korolev adaptou como veículo de lançamento. O RD-107 alimenta os quatro propulsores acoplados ao R-7; o RD-108 impulsiona o núcleo sustentador. Ambos funcionam com ciclo de gerador de gás usando LOX e querosene, e ambos voaram pela primeira vez em 21 de agosto de 1957 — meses antes do Sputnik. Atualizados como RD-107A e RD-108A, continuam a impulsionar os foguetes Soyuz que levam tripulações à International Space Station, tornando-os o sistema de propulsão homologado para voo humano com maior tempo de operação da história.",
+    "new": "O RD-107 e o RD-108 são os motores do R-7, o primeiro míssil balístico intercontinental do mundo, que a equipe de Sergei Korolev adaptou como veículo de lançamento. O RD-107 alimenta os quatro propulsores acoplados ao R-7; o RD-108 impulsiona o núcleo sustentador. Ambos funcionam com ciclo de gerador de gás usando LOX e querosene, e ambos voaram pela primeira vez em 21 de agosto de 1957 — meses antes do Sputnik. Atualizados como RD-107A e RD-108A, continuam a impulsionar os foguetes Soyuz que levam tripulações à Estação Espacial Internacional, tornando-os o sistema de propulsão homologado para voo humano com maior tempo de operação da história."
   },
   {
-    "rel": "science/planets/magnetic-fields.json",
-    "at": "diagram_caption",
-    "old": "Inclinações do eixo de dipolo em relação aos eixos de rotação dos planetas. Saturn está alinhado de forma única (<1°); Urano e Netuno estão caoticamente desalinhados, sugerindo dínamos no manto de água iônica em vez de núcleos profundos de ferro.",
-    "new": "Inclinações do eixo de dipolo em relação aos eixos de rotação dos planetas. Saturno está alinhado de forma única (<1°); Urano e Netuno estão caoticamente desalinhados, sugerindo dínamos no manto de água iônica em vez de núcleos profundos de ferro."
+    "rel": "fleet/station/iss.json",
+    "at": "dispatch",
+    "old": "A International Space Station é a maior estrutura que a humanidade já construiu no espaço e o lugar onde todos os fios da era espacial convergem. Seu núcleo russo descende diretamente da Salyut e da Mir; seu segmento americano da Skylab; foi montada pelo Space Shuttle, é tripulada pela Soyuz, reabastecida pelos descendentes do cargueiro Progress, e carrega laboratórios construídos pela Europa e Japão — praticamente todos os programas anteriores presentes nela como herança. Montada a partir de 1998 e continuamente tripulada desde novembro de 2000, é a mais longa presença humana ininterrupta fora da Terra na história, e a prova mais clara de uma única ideia: que as maiores coisas no espaço são construídas não vencendo uma corrida, mas por antigos rivais que escolhem, década após década, construí-las juntos.",
+    "new": "A Estação Espacial Internacional é a maior estrutura que a humanidade já construiu no espaço e o lugar onde todos os fios da era espacial convergem. Seu núcleo russo descende diretamente da Salyut e da Mir; seu segmento americano da Skylab; foi montada pelo Space Shuttle, é tripulada pela Soyuz, reabastecida pelos descendentes do cargueiro Progress, e carrega laboratórios construídos pela Europa e Japão — praticamente todos os programas anteriores presentes nela como herança. Montada a partir de 1998 e continuamente tripulada desde novembro de 2000, é a mais longa presença humana ininterrupta fora da Terra na história, e a prova mais clara de uma única ideia: que as maiores coisas no espaço são construídas não vencendo uma corrida, mas por antigos rivais que escolhem, década após década, construí-las juntos."
+  },
+  {
+    "rel": "fleet/station/iss.json",
+    "at": "description",
+    "old": "A International Space Station — o habitat mais longo da humanidade continuamente tripulado, ocupado desde novembro de 2000. Reunido em mais de 40 lançamentos da NASA, Roscosmos, ESA, JAXA e CSA. Atualmente programado para deorbit por volta de 2031.",
+    "new": "A Estação Espacial Internacional — o habitat mais longo da humanidade continuamente tripulado, ocupado desde novembro de 2000. Reunido em mais de 40 lançamentos da NASA, Roscosmos, ESA, JAXA e CSA. Atualmente programado para deorbit por volta de 2031."
+  },
+  {
+    "rel": "fleet/station/mir.json",
+    "at": "dispatch",
+    "old": "Mir foi a primeira estação espacial modular — e a ponte entre dois eras da exploração espacial. Enquanto toda estação anterior era lançada pronta, Mir foi montada em órbita ao longo de uma década, módulo após módulo, transformando-se em um complexo extenso que permaneceu no espaço por quinze anos. Estabeleceu o recorde de resistência que ainda se mantém (437 dias ininterruptos de Valeri Polyakov, prova de que uma tripulação conseguiria sobreviver a um voo de duração similar ao de uma missão a Marte), sobreviveu à União Soviética que a construiu por uma década, e resistiu a um incêndio e uma colisão com despressurização em 1997 que sua tripulação combateu manualmente. Em seus últimos anos, Space Shuttles americanos acoplaram a ela e astronautas dos EUA viveram a bordo — o ensaio, em hardware e em confiança, para a International Space Station que herdou quase tudo que Mir desenvolveu.",
+    "new": "Mir foi a primeira estação espacial modular — e a ponte entre dois eras da exploração espacial. Enquanto toda estação anterior era lançada pronta, Mir foi montada em órbita ao longo de uma década, módulo após módulo, transformando-se em um complexo extenso que permaneceu no espaço por quinze anos. Estabeleceu o recorde de resistência que ainda se mantém (437 dias ininterruptos de Valeri Polyakov, prova de que uma tripulação conseguiria sobreviver a um voo de duração similar ao de uma missão a Marte), sobreviveu à União Soviética que a construiu por uma década, e resistiu a um incêndio e uma colisão com despressurização em 1997 que sua tripulação combateu manualmente. Em seus últimos anos, Space Shuttles americanos acoplaram a ela e astronautas dos EUA viveram a bordo — o ensaio, em hardware e em confiança, para a Estação Espacial Internacional que herdou quase tudo que Mir desenvolveu."
+  },
+  {
+    "rel": "missions/earth/otv-7.json",
+    "at": "first",
+    "old": "USA-358 / USSF-52 — 434 dias em órbita, Vandenberg SFB",
+    "new": "USA-358 / USSF-52 — 434 dias em órbita, Base da Força Espacial de Vandenberg"
+  },
+  {
+    "rel": "missions/earth/otv-7.json",
+    "at": "description",
+    "old": "Sétimo voo do X-37B — primeiro para uma órbita altamente elíptica (HEO) e primeiro lançado no Falcon Heavy. Lançado em 2023-12-29 às 01:07 UTC do KSC LC-39A; ambos os foguetes laterais recuperados em LZ-1 / LZ-2, o núcleo central consumido para a energia de inserção HEO. A trajetória HEO levou o OTV a aproximadamente a altitude do cinturão GEO no apogeu. Realizou uma sequência controlada de desórbita em estilo aerofrenagem (USSF divulgou uma atualização pública da manobra, um afastamento deliberado da transparência em relação aos voos classificados anteriores). Pousou em Vandenberg SFB em 2025-03-07 às 09:22 UTC.",
+    "new": "Sétimo voo do X-37B — primeiro para uma órbita altamente elíptica (HEO) e primeiro lançado no Falcon Heavy. Lançado em 2023-12-29 às 01:07 UTC do KSC LC-39A; ambos os foguetes laterais recuperados em LZ-1 / LZ-2, o núcleo central consumido para a energia de inserção HEO. A trajetória HEO levou o OTV a aproximadamente a altitude do cinturão GEO no apogeu. Realizou uma sequência controlada de desórbita em estilo aerofrenagem (USSF divulgou uma atualização pública da manobra, um afastamento deliberado da transparência em relação aos voos classificados anteriores). Pousou na Base da Força Espacial de Vandenberg em 2025-03-07 às 09:22 UTC."
+  },
+  {
+    "rel": "missions/earth/otv-7.json",
+    "at": "events.2.note",
+    "old": "Pouso autônomo em pista em Vandenberg SFB em 2025-03-07.",
+    "new": "Pouso autônomo em pista na Base da Força Espacial de Vandenberg em 2025-03-07."
+  },
+  {
+    "rel": "orbit-regimes/LEO.json",
+    "at": "residents.0.label",
+    "old": "ISS — International Space Station",
+    "new": "ISS — Estação Espacial Internacional"
+  },
+  {
+    "rel": "programs/ariane.json",
+    "at": "outcome.2.md",
+    "old": "O manifesto de Ariane 5 é uma lista de honra da ciência e infraestrutura da era: a missão ao cometa Rosetta, a constelação de navegação Galileo, BepiColombo a Mercúrio, os cargueiros ATV que reabasteceram a International Space Station, e — a mais celebrada de suas cargas finais — o James Webb Space Telescope (dezembro de 2021), lançado com tal precisão que economizou anos de combustível do telescópio. O verdadeiro voo final de Ariane 5 ocorreu em julho de 2023, transportando os satélites de telecomunicações Heinrich Hertz e Syracuse 4B no VA261. Então o terreno mudou. Os foguetes reutilizáveis da SpaceX reduziram os preços de Ariane e terminaram seu domínio comercial, e Ariane 6, voando a partir de 2024, é a resposta da Europa: uma lançadora mais barata e flexível construída para manter o acesso independente do continente vivo em um mercado transformado.",
+    "new": "O manifesto de Ariane 5 é uma lista de honra da ciência e infraestrutura da era: a missão ao cometa Rosetta, a constelação de navegação Galileo, BepiColombo a Mercúrio, os cargueiros ATV que reabasteceram a Estação Espacial Internacional, e — a mais celebrada de suas cargas finais — o James Webb Space Telescope (dezembro de 2021), lançado com tal precisão que economizou anos de combustível do telescópio. O verdadeiro voo final de Ariane 5 ocorreu em julho de 2023, transportando os satélites de telecomunicações Heinrich Hertz e Syracuse 4B no VA261. Então o terreno mudou. Os foguetes reutilizáveis da SpaceX reduziram os preços de Ariane e terminaram seu domínio comercial, e Ariane 6, voando a partir de 2024, é a resposta da Europa: uma lançadora mais barata e flexível construída para manter o acesso independente do continente vivo em um mercado transformado."
+  },
+  {
+    "rel": "programs/ariane.json",
+    "at": "legacy.1.md",
+    "old": "O legado de Ariane é que a Europa nunca mais teve que pedir permissão para alcançar o espaço. Por mais de quatro décadas, uma linha ininterrupta de foguetes europeus lançou os satélites do continente, missões científicas e contribuições para a International Space Station — e por grande parte desse tempo lançou os do mundo também. A indústria de lançamentos comerciais que agora é tão central para os voos espaciais foi, em grande parte, inventada pela Arianespace; o modelo de vender acesso à órbita como serviço começou em Kourou.",
+    "new": "O legado de Ariane é que a Europa nunca mais teve que pedir permissão para alcançar o espaço. Por mais de quatro décadas, uma linha ininterrupta de foguetes europeus lançou os satélites do continente, missões científicas e contribuições para a Estação Espacial Internacional — e por grande parte desse tempo lançou os do mundo também. A indústria de lançamentos comerciais que agora é tão central para os voos espaciais foi, em grande parte, inventada pela Arianespace; o modelo de vender acesso à órbita como serviço começou em Kourou."
+  },
+  {
+    "rel": "programs/commercial-stations.json",
+    "at": "the_land.0.md",
+    "old": "A International Space Station é a maior coisa que a humanidade já construiu em órbita, e será deliberadamente destruída. Por volta de 2030, após mais de três décadas de operação tripulada contínua, a ISS será guiada para queimar sobre o Pacífico — porque está envelhecendo, é cara de manter, e seus parceiros decidiram que o futuro da órbita terrestre baixa pertence a empresas privadas e não a agências governamentais. As Commercial Stations são o que deve tomar seu lugar.",
+    "new": "A Estação Espacial Internacional é a maior coisa que a humanidade já construiu em órbita, e será deliberadamente destruída. Por volta de 2030, após mais de três décadas de operação tripulada contínua, a ISS será guiada para queimar sobre o Pacífico — porque está envelhecendo, é cara de manter, e seus parceiros decidiram que o futuro da órbita terrestre baixa pertence a empresas privadas e não a agências governamentais. As Commercial Stations são o que deve tomar seu lugar."
+  },
+  {
+    "rel": "programs/esa-human.json",
+    "at": "the_land.1.md",
+    "old": "Isso começou com Spacelab em 1983 — um laboratório construído pela Europa que viajava no compartimento de carga do Space Shuttle e transformava o Shuttle em uma plataforma científica, levando o primeiro astronauta da ESA em seu primeiro voo. Continuou com Columbus, o laboratório permanente da Europa acoplado à International Space Station, e com o Automated Transfer Vehicle, a maior e mais sofisticada nave de carga de sua era. Ao longo do caminho, astronautas europeus voaram em Shuttles e Soyuz, viveram a bordo da Mir e da ISS, e comandaram a Estação. A Europa nunca lançou sua própria tripulação — e tornou-se essencial para quase todos que o fizeram.",
+    "new": "Isso começou com Spacelab em 1983 — um laboratório construído pela Europa que viajava no compartimento de carga do Space Shuttle e transformava o Shuttle em uma plataforma científica, levando o primeiro astronauta da ESA em seu primeiro voo. Continuou com Columbus, o laboratório permanente da Europa acoplado à Estação Espacial Internacional, e com o Automated Transfer Vehicle, a maior e mais sofisticada nave de carga de sua era. Ao longo do caminho, astronautas europeus voaram em Shuttles e Soyuz, viveram a bordo da Mir e da ISS, e comandaram a Estação. A Europa nunca lançou sua própria tripulação — e tornou-se essencial para quase todos que o fizeram."
+  },
+  {
+    "rel": "programs/esa-human.json",
+    "at": "goals.0.caption",
+    "old": "A International Space Station, da qual a Europa é parceira plena. O laboratório Columbus da ESA é uma parte permanente dela, e astronautas europeus viveram a bordo e a comandaram — o fruto da escolha de se juntar em vez de agir sozinha.",
+    "new": "A Estação Espacial Internacional, da qual a Europa é parceira plena. O laboratório Columbus da ESA é uma parte permanente dela, e astronautas europeus viveram a bordo e a comandaram — o fruto da escolha de se juntar em vez de agir sozinha."
+  },
+  {
+    "rel": "programs/esa-human.json",
+    "at": "goals.2.md",
+    "old": "A estratégia tinha uma força oculta: contribuir com uma peça essencial garante um assento permanente à mesa. Ao construir o Spacelab, a Europa conquistou um lugar a bordo do Shuttle; ao construir o Columbus e o ATV, tornou-se uma parceira plena e igual na International Space Station, com seu próprio laboratório e sua própria nave de reabastecimento indispensável. Uma nação que apenas comprasse assentos seria uma cliente; a Europa, ao construir capacidades das quais outros dependiam, tornou-se uma parceira — com voz real no empreendimento.",
+    "new": "A estratégia tinha uma força oculta: contribuir com uma peça essencial garante um assento permanente à mesa. Ao construir o Spacelab, a Europa conquistou um lugar a bordo do Shuttle; ao construir o Columbus e o ATV, tornou-se uma parceira plena e igual na Estação Espacial Internacional, com seu próprio laboratório e sua própria nave de reabastecimento indispensável. Uma nação que apenas comprasse assentos seria uma cliente; a Europa, ao construir capacidades das quais outros dependiam, tornou-se uma parceira — com voz real no empreendimento."
+  },
+  {
+    "rel": "programs/esa-human.json",
+    "at": "legacy.0.caption",
+    "old": "A International Space Station — o empreendimento que a Europa ajudou a construir e sustentar, e a prova de que uma nação pode moldar profundamente o voo espacial tripulado sem nunca lançar uma tripulação própria.",
+    "new": "A Estação Espacial Internacional — o empreendimento que a Europa ajudou a construir e sustentar, e a prova de que uma nação pode moldar profundamente o voo espacial tripulado sem nunca lançar uma tripulação própria."
+  },
+  {
+    "rel": "programs/ros.json",
+    "at": "the_land.0.md",
+    "old": "Por um quarto de século, o voo espacial tripulado russo esteve vinculado ao do Ocidente. Sua metade da International Space Station — descendente direta de Salyut e Mir — manteve todo o posto avançado vivo, e por nove anos as cápsulas Soyuz russas foram o único meio de transporte para a ISS para qualquer um, americano ou russo. Essa parceria, um dos legados mais duradouros do fim da Guerra Fria, está agora terminando. A Rússia anunciou que deixará a ISS e construirá uma estação nacional própria: a Russian Orbital Station.",
+    "new": "Por um quarto de século, o voo espacial tripulado russo esteve vinculado ao do Ocidente. Sua metade da Estação Espacial Internacional — descendente direta de Salyut e Mir — manteve todo o posto avançado vivo, e por nove anos as cápsulas Soyuz russas foram o único meio de transporte para a ISS para qualquer um, americano ou russo. Essa parceria, um dos legados mais duradouros do fim da Guerra Fria, está agora terminando. A Rússia anunciou que deixará a ISS e construirá uma estação nacional própria: a Russian Orbital Station."
+  },
+  {
+    "rel": "programs/soyuz.json",
+    "at": "outcome.2.md",
+    "old": "Essa poderia ter sido toda a história: um projeto promissor que começou em tragédia e fechou a corrida com um aperto de mãos. Em vez disso, foi apenas o começo. A Soyuz continuou voando — para a Salyut, para a Mir, para a International Space Station — e continuou sendo refinada, até que a nave que matou duas tripulações em seus primeiros quatro anos se tornou a forma mais segura e confiável de alcançar a órbita que alguém já operou.",
+    "new": "Essa poderia ter sido toda a história: um projeto promissor que começou em tragédia e fechou a corrida com um aperto de mãos. Em vez disso, foi apenas o começo. A Soyuz continuou voando — para a Salyut, para a Mir, para a Estação Espacial Internacional — e continuou sendo refinada, até que a nave que matou duas tripulações em seus primeiros quatro anos se tornou a forma mais segura e confiável de alcançar a órbita que alguém já operou."
+  },
+  {
+    "rel": "programs/soyuz.json",
+    "at": "narrative.1.md",
+    "old": "Ele também mudou completamente de função. Concebida para correr contra os americanos até a Lua, Soyuz perdeu essa corrida e foi silenciosamente reaproveitada — como a balsa que levava tripulações às estações espaciais da União Soviética, depois para Mir, depois para a International Space Station construída com esses mesmos americanos. Quando o Space Shuttle dos EUA se aposentou em 2011, Soyuz se tornou, por nove anos, a *única* maneira de qualquer ser humano alcançar a Space Station: o programa internacional inteiro dependia de um projeto soviético dos anos 1960.",
+    "new": "Ele também mudou completamente de função. Concebida para correr contra os americanos até a Lua, Soyuz perdeu essa corrida e foi silenciosamente reaproveitada — como a balsa que levava tripulações às estações espaciais da União Soviética, depois para Mir, depois para a Estação Espacial Internacional construída com esses mesmos americanos. Quando o Space Shuttle dos EUA se aposentou em 2011, Soyuz se tornou, por nove anos, a *única* maneira de qualquer ser humano alcançar a Space Station: o programa internacional inteiro dependia de um projeto soviético dos anos 1960."
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "goals.0.caption",
+    "old": "Endeavour acoplado à International Space Station. A combinação única do Shuttle — uma tripulação grande, um compartimento de carga, um braço robótico e a capacidade de trazer coisas de volta — fez dele o veículo que montou e deu manutenção às grandes estruturas de sua era.",
+    "new": "Endeavour acoplado à Estação Espacial Internacional. A combinação única do Shuttle — uma tripulação grande, um compartimento de carga, um braço robótico e a capacidade de trazer coisas de volta — fez dele o veículo que montou e deu manutenção às grandes estruturas de sua era."
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "goals.2.md",
+    "old": "Duas dessas coisas justificam o programa inteiro. O Shuttle lançou o Hubble Space Telescope e depois, cinco vezes, enviou tripulações para reparar e aprimorá-lo em órbita — transformando um telescópio com falhas no observatório mais produtivo da história e mantendo-o atualizado por décadas. E montou a International Space Station, levando os módulos, treliças e painéis solares e parafusando-os juntos com seu braço e seus caminhantes espaciais. Nenhuma das duas foi possível sem um veículo que pudesse carregar uma tripulação grande, uma carga grande e as ferramentas para trabalhar no espaço. Esse era o verdadeiro propósito do Shuttle, e nisso, ele foi imbatível.",
+    "new": "Duas dessas coisas justificam o programa inteiro. O Shuttle lançou o Hubble Space Telescope e depois, cinco vezes, enviou tripulações para reparar e aprimorá-lo em órbita — transformando um telescópio com falhas no observatório mais produtivo da história e mantendo-o atualizado por décadas. E montou a Estação Espacial Internacional, levando os módulos, treliças e painéis solares e parafusando-os juntos com seu braço e seus caminhantes espaciais. Nenhuma das duas foi possível sem um veículo que pudesse carregar uma tripulação grande, uma carga grande e as ferramentas para trabalhar no espaço. Esse era o verdadeiro propósito do Shuttle, e nisso, ele foi imbatível."
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "legacy.1.md",
+    "old": "O legado mais duradouro do Shuttle é físico: a International Space Station, que ele montou e que não poderia ter sido construída de nenhuma outra forma, e o Hubble Space Telescope, que ele lançou e salvou repetidamente. Apenas esses dois garantem seu lugar. Mas seu legado é também preventivo — a demonstração mais clara em voos espaciais de que reutilização não é o mesmo que baixo custo, que um veículo experimental não deve ser vendido ou voado como um veículo rotineiro, e que a cultura organizacional, não apenas a engenharia, decide se uma máquina perigosa mata pessoas.",
+    "new": "O legado mais duradouro do Shuttle é físico: a Estação Espacial Internacional, que ele montou e que não poderia ter sido construída de nenhuma outra forma, e o Hubble Space Telescope, que ele lançou e salvou repetidamente. Apenas esses dois garantem seu lugar. Mas seu legado é também preventivo — a demonstração mais clara em voos espaciais de que reutilização não é o mesmo que baixo custo, que um veículo experimental não deve ser vendido ou voado como um veículo rotineiro, e que a cultura organizacional, não apenas a engenharia, decide se uma máquina perigosa mata pessoas."
+  },
+  {
+    "rel": "programs/tiangong.json",
+    "at": "the_land.0.md",
+    "old": "Em 2011 havia um lugar onde humanos viviam no espaço, e a China não era bem-vinda lá. A International Space Station era uma parceria dos Estados Unidos, Rússia, Europa, Japão e Canadá — e nesse mesmo ano o Congresso dos EUA aprovou a Wolf Amendment, que proibiu a NASA de cooperação bilateral com a China sem aprovação explícita. A mensagem era direta: o clube estava fechado. A resposta da China não foi protestar. Foi construir sua própria estação, em seu próprio foguete, com sua própria cápsula tripulada, em um cronograma que publicou antecipadamente e depois cumpriu.",
+    "new": "Em 2011 havia um lugar onde humanos viviam no espaço, e a China não era bem-vinda lá. A Estação Espacial Internacional era uma parceria dos Estados Unidos, Rússia, Europa, Japão e Canadá — e nesse mesmo ano o Congresso dos EUA aprovou a Wolf Amendment, que proibiu a NASA de cooperação bilateral com a China sem aprovação explícita. A mensagem era direta: o clube estava fechado. A resposta da China não foi protestar. Foi construir sua própria estação, em seu próprio foguete, com sua própria cápsula tripulada, em um cronograma que publicou antecipadamente e depois cumpriu."
   }
 ]

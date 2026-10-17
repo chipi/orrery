@@ -1,56 +1,122 @@
 [
   {
-    "rel": "orbit-regimes-explore/GIANTS.json",
-    "at": "story",
-    "old": "El reino planetario exterior — de 5 a 30 AU. Dos gigantes gaseosos (Júpiter, Saturn) con envolturas de hidrógeno-helio de miles de kilómetros de profundidad sobre pequeños núcleos rocosos; dos gigantes de hielo (Urano, Neptuno) con mantos de agua/amoníaco/metano bajo atmósferas gaseosas más delgadas. Juntos concentran el 99% de toda la masa planetaria del sistema solar. Cada uno tiene su propio sistema de lunas que funciona como un sistema solar en miniatura — solo Júpiter tiene 95 lunas conocidas, incluidas cuatro más grandes que Plutón.",
-    "new": "El reino planetario exterior — de 5 a 30 AU. Dos gigantes gaseosos (Júpiter, Saturno) con envolturas de hidrógeno-helio de miles de kilómetros de profundidad sobre pequeños núcleos rocosos; dos gigantes de hielo (Urano, Neptuno) con mantos de agua/amoníaco/metano bajo atmósferas gaseosas más delgadas. Juntos concentran el 99% de toda la masa planetaria del sistema solar. Cada uno tiene su propio sistema de lunas que funciona como un sistema solar en miniatura — solo Júpiter tiene 95 lunas conocidas, incluidas cuatro más grandes que Plutón."
+    "rel": "essays/going-to-mars.json",
+    "at": "body.11.md",
+    "old": "El segundo muro es la masa —y específicamente, la relación entre masa y distancia en una misión de la que no es posible ningún reabastecimiento. En la International Space Station, una nave de carga Progress llega cada pocos meses con comida, agua, equipamiento y piezas de repuesto. Los sistemas de soporte vital de la estación son de circuito cerrado en algunos aspectos pero con fugas en otros; el agua se recicla, pero los consumibles se reabastecen regularmente desde la Tierra. Una tripulación en Marte no recibe tal reabastecimiento. Lo que se lleva es todo lo que tiene. Cada kilogramo de comida, cada litro de agua, cada componente de repuesto para cada sistema crítico debe ser transportado desde la Tierra —a un costo de lanzamiento extraordinario— o producido en Marte mismo.",
+    "new": "El segundo muro es la masa —y específicamente, la relación entre masa y distancia en una misión de la que no es posible ningún reabastecimiento. En la Estación Espacial Internacional, una nave de carga Progress llega cada pocos meses con comida, agua, equipamiento y piezas de repuesto. Los sistemas de soporte vital de la estación son de circuito cerrado en algunos aspectos pero con fugas en otros; el agua se recicla, pero los consumibles se reabastecen regularmente desde la Tierra. Una tripulación en Marte no recibe tal reabastecimiento. Lo que se lleva es todo lo que tiene. Cada kilogramo de comida, cada litro de agua, cada componente de repuesto para cada sistema crítico debe ser transportado desde la Tierra —a un costo de lanzamiento extraordinario— o producido en Marte mismo."
   },
   {
-    "rel": "orbit-regimes-explore/GIANTS.json",
-    "at": "residents.1.label",
-    "old": "Saturn — 9.58 AU, sistema de anillos",
-    "new": "Saturno — 9.58 AU, sistema de anillos"
+    "rel": "fleet/engine/rd-107-108.json",
+    "at": "description",
+    "old": "Los RD-107 y RD-108 son los motores del R-7, el primer misil balístico intercontinental del mundo, que el equipo de Sergei Korolev adaptó como vehículo de lanzamiento. El RD-107 impulsa los cuatro aceleradores laterales del R-7; el RD-108 mueve el núcleo sustentador. Ambos funcionan con un ciclo de generador de gas con LOX y queroseno, y ambos volaron por primera vez el 21 de agosto de 1957 — meses antes de Sputnik. Mejorados como RD-107A y RD-108A, continúan impulsando los cohetes Soyuz que transportan tripulaciones a la International Space Station, lo que los convierte en el sistema de propulsión con clasificación para vuelos humanos más duradero de la historia.",
+    "new": "Los RD-107 y RD-108 son los motores del R-7, el primer misil balístico intercontinental del mundo, que el equipo de Sergei Korolev adaptó como vehículo de lanzamiento. El RD-107 impulsa los cuatro aceleradores laterales del R-7; el RD-108 mueve el núcleo sustentador. Ambos funcionan con un ciclo de generador de gas con LOX y queroseno, y ambos volaron por primera vez el 21 de agosto de 1957 — meses antes de Sputnik. Mejorados como RD-107A y RD-108A, continúan impulsando los cohetes Soyuz que transportan tripulaciones a la Estación Espacial Internacional, lo que los convierte en el sistema de propulsión con clasificación para vuelos humanos más duradero de la historia."
   },
   {
-    "rel": "science/planets/magnetic-fields.json",
-    "at": "intro_sentence",
-    "old": "La magnetosfera de cada planeta es diferente. La de Saturn es excepcionalmente alineada, la de Urano es caótica, y Venus y Marte no tienen ninguna.",
-    "new": "La magnetosfera de cada planeta es diferente. La de Saturno es excepcionalmente alineada, la de Urano es caótica, y Venus y Marte no tienen ninguna."
+    "rel": "fleet/station/iss.json",
+    "at": "dispatch",
+    "old": "La International Space Station es la estructura más grande que la humanidad ha construido jamás en el espacio y el lugar donde converge cada hilo de la era espacial. Su núcleo ruso desciende directamente de Salyut y Mir; su segmento estadounidense de Skylab; fue ensamblada por el Space Shuttle, es tripulada por Soyuz, reabastecida por los descendientes del carguero Progress, y alberga laboratorios construidos por Europa y Japón — casi todos los programas anteriores están presentes en ella como legado. Ensamblada a partir de 1998 y tripulada continuamente desde noviembre de 2000, representa la presencia humana ininterrumpida más larga fuera de la Tierra en la historia, y la prueba más clara de una sola idea: que las mayores cosas en el espacio no se construyen ganando una carrera, sino cuando antiguos rivales eligen, década tras década, construirlas juntos.",
+    "new": "La Estación Espacial Internacional es la estructura más grande que la humanidad ha construido jamás en el espacio y el lugar donde converge cada hilo de la era espacial. Su núcleo ruso desciende directamente de Salyut y Mir; su segmento estadounidense de Skylab; fue ensamblada por el Space Shuttle, es tripulada por Soyuz, reabastecida por los descendientes del carguero Progress, y alberga laboratorios construidos por Europa y Japón — casi todos los programas anteriores están presentes en ella como legado. Ensamblada a partir de 1998 y tripulada continuamente desde noviembre de 2000, representa la presencia humana ininterrumpida más larga fuera de la Tierra en la historia, y la prueba más clara de una sola idea: que las mayores cosas en el espacio no se construyen ganando una carrera, sino cuando antiguos rivales eligen, década tras década, construirlas juntos."
   },
   {
-    "rel": "science/planets/magnetic-fields.json",
-    "at": "narrative_101.2",
-    "old": "Luego está Saturn — un gigante gaseoso con un dínamo tan perfectamente alineado con su eje de rotación que la inclinación magnética es prácticamente nula. Todos los demás dínamos que conocemos tienen al menos algún desfase (Tierra 10.5°, Júpiter 9.6°), pero el de Saturn es < 1°. Nadie sabe bien por qué. La teoría más aceptada es que Saturn posee una estructura de capas inusual que suaviza mecánicamente la simetría del campo, aunque el mecanismo sigue debatiéndose. La alineación casi perfecta de Saturn es uno de los enigmas no resueltos de la física planetaria.",
-    "new": "Luego está Saturno — un gigante gaseoso con un dínamo tan perfectamente alineado con su eje de rotación que la inclinación magnética es prácticamente nula. Todos los demás dínamos que conocemos tienen al menos algún desfase (Tierra 10.5°, Júpiter 9.6°), pero el de Saturno es < 1°. Nadie sabe bien por qué. La teoría más aceptada es que Saturno posee una estructura de capas inusual que suaviza mecánicamente la simetría del campo, aunque el mecanismo sigue debatiéndose. La alineación casi perfecta de Saturno es uno de los enigmas no resueltos de la física planetaria."
+    "rel": "fleet/station/mir.json",
+    "at": "dispatch",
+    "old": "Mir fue la primera estación espacial modular — y el puente entre dos eras de la exploración espacial. Mientras que todas las estaciones anteriores se lanzaban completas, Mir se ensambló en órbita durante más de una década, módulo a módulo, convirtiéndose en un complejo expansivo que se mantuvo en vuelo durante quince años. Estableció el récord de resistencia que aún perdura (los 437 días ininterrumpidos de Valeri Polyakov, prueba de que una tripulación podría sobrevivir un vuelo de duración marciana), sobrevivió a la Unión Soviética que la construyó por una década, y resistió un incendio y una colisión despresurizada en 1997 que su tripulación controló manualmente. En sus últimos años, los Transbordadores estadounidenses acoplaron con ella y astronautas estadounidenses vivieron a bordo — el ensayo, en hardware y en confianza, para la International Space Station que heredó casi todo lo que Mir logró resolver.",
+    "new": "Mir fue la primera estación espacial modular — y el puente entre dos eras de la exploración espacial. Mientras que todas las estaciones anteriores se lanzaban completas, Mir se ensambló en órbita durante más de una década, módulo a módulo, convirtiéndose en un complejo expansivo que se mantuvo en vuelo durante quince años. Estableció el récord de resistencia que aún perdura (los 437 días ininterrumpidos de Valeri Polyakov, prueba de que una tripulación podría sobrevivir un vuelo de duración marciana), sobrevivió a la Unión Soviética que la construyó por una década, y resistió un incendio y una colisión despresurizada en 1997 que su tripulación controló manualmente. En sus últimos años, los Transbordadores estadounidenses acoplaron con ella y astronautas estadounidenses vivieron a bordo — el ensayo, en hardware y en confianza, para la Estación Espacial Internacional que heredó casi todo lo que Mir logró resolver."
   },
   {
-    "rel": "science/planets/magnetic-fields.json",
-    "at": "body_paragraphs.0",
-    "old": "Inclinación del eje magnético (ángulo entre el dipolo y el eje de rotación) para cada planeta con un dínamo conocido: Mercurio 0.7°, Tierra 10.5°, Júpiter 9.6°, Saturn ~0°, Urano 58.6°, Neptuno 46.9°. Venus, Marte y Plutón no presentan hoy un dipolo globalmente significativo. Los dipolos de Urano y Neptuno, enormemente desviados del eje, también están desplazados del centro del planeta — el de Urano aproximadamente 1/3 del radio planetario. El dínamo convencional (núcleo de hierro) no puede producir fácilmente esa geometría; la explicación más aceptada es que Urano y Neptuno albergan sus dínamos en una capa exterior del manto formada por agua iónica + amoníaco + metano, y no en un núcleo profundo.",
-    "new": "Inclinación del eje magnético (ángulo entre el dipolo y el eje de rotación) para cada planeta con un dínamo conocido: Mercurio 0.7°, Tierra 10.5°, Júpiter 9.6°, Saturno ~0°, Urano 58.6°, Neptuno 46.9°. Venus, Marte y Plutón no presentan hoy un dipolo globalmente significativo. Los dipolos de Urano y Neptuno, enormemente desviados del eje, también están desplazados del centro del planeta — el de Urano aproximadamente 1/3 del radio planetario. El dínamo convencional (núcleo de hierro) no puede producir fácilmente esa geometría; la explicación más aceptada es que Urano y Neptuno albergan sus dínamos en una capa exterior del manto formada por agua iónica + amoníaco + metano, y no en un núcleo profundo."
+    "rel": "missions/earth/otv-7.json",
+    "at": "first",
+    "old": "USA-358 / USSF-52 — 434 días en órbita, Vandenberg SFB",
+    "new": "USA-358 / USSF-52 — 434 días en órbita, Base de la Fuerza Espacial Vandenberg"
   },
   {
-    "rel": "science/planets/magnetic-fields.json",
-    "at": "body_paragraphs.1",
-    "old": "Las magnetosferas se extienden mucho más allá del planeta en sí. La de la Tierra alcanza unos 65.000 km en dirección al Sol (donde se dobla contra el viento solar) y se prolonga en una larga cola en el lado nocturno. La magnetosfera de Júpiter es la estructura física más grande dentro del sistema solar que no es la heliosfera del Sol: su magnetocola llega hasta la órbita de Saturn, con una longitud de unos 1.400 millones de km. La cola está conformada por el viento solar que empuja el campo en sentido descendente; la parte delantera, en dirección al Sol, queda comprimida.",
-    "new": "Las magnetosferas se extienden mucho más allá del planeta en sí. La de la Tierra alcanza unos 65.000 km en dirección al Sol (donde se dobla contra el viento solar) y se prolonga en una larga cola en el lado nocturno. La magnetosfera de Júpiter es la estructura física más grande dentro del sistema solar que no es la heliosfera del Sol: su magnetocola llega hasta la órbita de Saturno, con una longitud de unos 1.400 millones de km. La cola está conformada por el viento solar que empuja el campo en sentido descendente; la parte delantera, en dirección al Sol, queda comprimida."
+    "rel": "missions/earth/otv-7.json",
+    "at": "events.2.note",
+    "old": "Aterrizaje autónomo en pista en Vandenberg SFB, 2025-03-07.",
+    "new": "Aterrizaje autónomo en pista en la Base de la Fuerza Espacial Vandenberg, 2025-03-07."
   },
   {
-    "rel": "science/planets/magnetic-fields.json",
-    "at": "body_paragraphs.2",
-    "old": "Las partículas atrapadas en el campo magnético crean cinturones de radiación — los cinturones de Van Allen en la Tierra y los mucho más intensos en Júpiter (una de las razones por las que misiones como Juno vuelan en órbitas polares, evitando el cinturón ecuatorial). Donde las líneas de campo convergen cerca de los polos magnéticos, las partículas cargadas descienden en espiral y excitan la atmósfera — eso es la aurora. Todo planeta magnetizado tiene auroras; las hemos observado en la Tierra, Júpiter, Saturn, Urano y Neptuno.",
-    "new": "Las partículas atrapadas en el campo magnético crean cinturones de radiación — los cinturones de Van Allen en la Tierra y los mucho más intensos en Júpiter (una de las razones por las que misiones como Juno vuelan en órbitas polares, evitando el cinturón ecuatorial). Donde las líneas de campo convergen cerca de los polos magnéticos, las partículas cargadas descienden en espiral y excitan la atmósfera — eso es la aurora. Todo planeta magnetizado tiene auroras; las hemos observado en la Tierra, Júpiter, Saturno, Urano y Neptuno."
+    "rel": "orbit-regimes/LEO.json",
+    "at": "residents.0.label",
+    "old": "EEI — International Space Station",
+    "new": "EEI — Estación Espacial Internacional"
   },
   {
-    "rel": "science/planets/magnetic-fields.json",
-    "at": "diagram_caption",
-    "old": "Inclinaciones del eje dipolar frente a los ejes de rotación en los planetas. Saturn está excepcionalmente alineado (<1°); Urano y Neptuno presentan ejes caóticamente desviados, lo que apunta a dínamos en el manto de agua iónica más que en núcleos profundos de hierro.",
-    "new": "Inclinaciones del eje dipolar frente a los ejes de rotación en los planetas. Saturno está excepcionalmente alineado (<1°); Urano y Neptuno presentan ejes caóticamente desviados, lo que apunta a dínamos en el manto de agua iónica más que en núcleos profundos de hierro."
+    "rel": "programs/commercial-stations.json",
+    "at": "the_land.0.md",
+    "old": "La International Space Station es lo más grande que la humanidad ha construido jamás en órbita, y va a ser destruida deliberadamente. Hacia 2030, después de más de tres décadas de operación tripulada continua, la EEI será guiada hacia abajo para desintegrarse sobre el Pacífico, porque está envejeciendo, es costosa de mantener, y sus socios han decidido que el futuro de la órbita terrestre baja pertenece a empresas privadas en lugar de a agencias gubernamentales. Las estaciones comerciales son lo que se supone debe ocupar su lugar.",
+    "new": "La Estación Espacial Internacional es lo más grande que la humanidad ha construido jamás en órbita, y va a ser destruida deliberadamente. Hacia 2030, después de más de tres décadas de operación tripulada continua, la EEI será guiada hacia abajo para desintegrarse sobre el Pacífico, porque está envejeciendo, es costosa de mantener, y sus socios han decidido que el futuro de la órbita terrestre baja pertenece a empresas privadas en lugar de a agencias gubernamentales. Las estaciones comerciales son lo que se supone debe ocupar su lugar."
   },
   {
-    "rel": "science/planets/sub-solar-and-terminator.json",
-    "at": "body_paragraphs.1",
-    "old": "El terminador tiene una larga historia como el lugar científicamente más rico para observar los detalles de la superficie. Las sombras son más largas allí, exagerando la topografía. Las imágenes lunares de la era Apollo para la geología de cráteres se tomaban casi siempre con el terminador cercano. Las imágenes más impactantes de los planetas exteriores de Voyager 1 + 2 (la estructura de los anillos de Saturn, la Gran Mancha Oscura de Neptuno) se tomaron cerca del terminador de cada cuerpo por la misma razón: el ángulo solar bajo resalta los accidentes geográficos.",
-    "new": "El terminador tiene una larga historia como el lugar científicamente más rico para observar los detalles de la superficie. Las sombras son más largas allí, exagerando la topografía. Las imágenes lunares de la era Apollo para la geología de cráteres se tomaban casi siempre con el terminador cercano. Las imágenes más impactantes de los planetas exteriores de Voyager 1 + 2 (la estructura de los anillos de Saturno, la Gran Mancha Oscura de Neptuno) se tomaron cerca del terminador de cada cuerpo por la misma razón: el ángulo solar bajo resalta los accidentes geográficos."
+    "rel": "programs/esa-human.json",
+    "at": "the_land.1.md",
+    "old": "Esto comenzó con Spacelab en 1983 — un laboratorio de construcción europea que viajaba en la bodega de carga del Space Shuttle y convertía al Shuttle en una plataforma científica, llevando al primer astronauta de ESA en su primer vuelo. Continuó con Columbus, el laboratorio permanente de Europa acoplado a la International Space Station, y con el Automated Transfer Vehicle, la nave de carga más grande y sofisticada de su época. En el camino, los astronautas europeos volaron en Shuttles y Soyuz, vivieron a bordo de Mir y la EEI, y comandaron la Estación. Europa nunca lanzó su propia tripulación — y se volvió esencial para casi todos los que sí lo hicieron.",
+    "new": "Esto comenzó con Spacelab en 1983 — un laboratorio de construcción europea que viajaba en la bodega de carga del Space Shuttle y convertía al Shuttle en una plataforma científica, llevando al primer astronauta de ESA en su primer vuelo. Continuó con Columbus, el laboratorio permanente de Europa acoplado a la Estación Espacial Internacional, y con el Automated Transfer Vehicle, la nave de carga más grande y sofisticada de su época. En el camino, los astronautas europeos volaron en Shuttles y Soyuz, vivieron a bordo de Mir y la EEI, y comandaron la Estación. Europa nunca lanzó su propia tripulación — y se volvió esencial para casi todos los que sí lo hicieron."
+  },
+  {
+    "rel": "programs/esa-human.json",
+    "at": "goals.0.caption",
+    "old": "La International Space Station, de la cual Europa es socio de pleno derecho. El laboratorio Columbus de ESA es parte permanente de ella, y los astronautas europeos han vivido a bordo y la han comandado — el fruto de la decisión de unirse en lugar de actuar en solitario.",
+    "new": "La Estación Espacial Internacional, de la cual Europa es socio de pleno derecho. El laboratorio Columbus de ESA es parte permanente de ella, y los astronautas europeos han vivido a bordo y la han comandado — el fruto de la decisión de unirse en lugar de actuar en solitario."
+  },
+  {
+    "rel": "programs/esa-human.json",
+    "at": "goals.2.md",
+    "old": "La estrategia tenía una fortaleza oculta: contribuir con una pieza esencial compra un asiento permanente en la mesa. Al construir Spacelab, Europa ganó un lugar a bordo del Shuttle; al construir Columbus y el ATV, se convirtió en socio pleno e igualitario de la International Space Station, con su propio laboratorio y su propia nave de reabastecimiento indispensable. Una nación que solo comprara asientos sería un cliente; Europa, al construir capacidades de las que otros dependían, se convirtió en socio — con voz real en la empresa.",
+    "new": "La estrategia tenía una fortaleza oculta: contribuir con una pieza esencial compra un asiento permanente en la mesa. Al construir Spacelab, Europa ganó un lugar a bordo del Shuttle; al construir Columbus y el ATV, se convirtió en socio pleno e igualitario de la Estación Espacial Internacional, con su propio laboratorio y su propia nave de reabastecimiento indispensable. Una nación que solo comprara asientos sería un cliente; Europa, al construir capacidades de las que otros dependían, se convirtió en socio — con voz real en la empresa."
+  },
+  {
+    "rel": "programs/esa-human.json",
+    "at": "legacy.0.caption",
+    "old": "La International Space Station — la empresa que Europa ayudó a construir y sostener, y la prueba de que una nación puede moldear los vuelos espaciales tripulados profundamente sin jamás lanzar una tripulación propia.",
+    "new": "La Estación Espacial Internacional — la empresa que Europa ayudó a construir y sostener, y la prueba de que una nación puede moldear los vuelos espaciales tripulados profundamente sin jamás lanzar una tripulación propia."
+  },
+  {
+    "rel": "programs/iss.json",
+    "at": "the_land.0.md",
+    "old": "Todo en este atlas conduce aquí. La International Space Station no es un nuevo comienzo sino una convergencia: el punto donde las dos historias separadas del vuelo espacial tripulado, estadounidense y soviética, finalmente se fusionaron en una sola estructura y una sola tripulación. Su mitad rusa desciende directamente de Salyut y Mir; su mitad estadounidense de Skylab; fue ensamblada por el Space Shuttle, es tripulada por Soyuz, reabastecida por los descendientes del carguero Progress, y alberga laboratorios construidos por Europa y Japón. Casi todos los programas que la precedieron están presentes en ella, físicamente, como herencia atornillada en órbita.",
+    "new": "Todo en este atlas conduce aquí. La Estación Espacial Internacional no es un nuevo comienzo sino una convergencia: el punto donde las dos historias separadas del vuelo espacial tripulado, estadounidense y soviética, finalmente se fusionaron en una sola estructura y una sola tripulación. Su mitad rusa desciende directamente de Salyut y Mir; su mitad estadounidense de Skylab; fue ensamblada por el Space Shuttle, es tripulada por Soyuz, reabastecida por los descendientes del carguero Progress, y alberga laboratorios construidos por Europa y Japón. Casi todos los programas que la precedieron están presentes en ella, físicamente, como herencia atornillada en órbita."
+  },
+  {
+    "rel": "programs/iss.json",
+    "at": "goals.0.caption",
+    "old": "La International Space Station completada: una estructura del tamaño de un campo de fútbol, ensamblada en órbita a partir de módulos construidos en tres continentes, y permanentemente tripulada desde noviembre de 2000.",
+    "new": "La Estación Espacial Internacional completada: una estructura del tamaño de un campo de fútbol, ensamblada en órbita a partir de módulos construidos en tres continentes, y permanentemente tripulada desde noviembre de 2000."
+  },
+  {
+    "rel": "programs/iss.json",
+    "at": "outcome.0.caption",
+    "old": "La International Space Station a mitad de ensamblaje. Construida entre 1998 y 2011 a lo largo de más de cuarenta vuelos, módulo a módulo, fue el proyecto de construcción más ambicioso jamás realizado fuera de la Tierra.",
+    "new": "La Estación Espacial Internacional a mitad de ensamblaje. Construida entre 1998 y 2011 a lo largo de más de cuarenta vuelos, módulo a módulo, fue el proyecto de construcción más ambicioso jamás realizado fuera de la Tierra."
+  },
+  {
+    "rel": "programs/salyut.json",
+    "at": "narrative.2.md",
+    "old": "Para Salyut 6 y 7 el programa había dejado de ser sobre primeros logros y empezó a ser sobre permanencia: ocupación continua, tripulaciones internacionales, reabastecimiento como rutina. Ese cambio, de visitar la órbita a habitarla, es el verdadero logro de Salyut, y alimentó directamente lo que vino después. El módulo central de Mir era, en esencia, la siguiente Salyut; los patrones operativos que Salyut estableció —tripulaciones Soyuz, cargueros Progress, expediciones de larga duración— son exactamente como se opera hoy la International Space Station.",
+    "new": "Para Salyut 6 y 7 el programa había dejado de ser sobre primeros logros y empezó a ser sobre permanencia: ocupación continua, tripulaciones internacionales, reabastecimiento como rutina. Ese cambio, de visitar la órbita a habitarla, es el verdadero logro de Salyut, y alimentó directamente lo que vino después. El módulo central de Mir era, en esencia, la siguiente Salyut; los patrones operativos que Salyut estableció —tripulaciones Soyuz, cargueros Progress, expediciones de larga duración— son exactamente como se opera hoy la Estación Espacial Internacional."
+  },
+  {
+    "rel": "programs/salyut.json",
+    "at": "legacy.0.caption",
+    "old": "Una Salyut a escala completa con un transbordador Soyuz acoplado. El patrón estación-más-transbordador-más-carguero que Salyut elaboró a lo largo de siete estaciones es, esencialmente sin cambios, cómo se han operado Mir y luego la International Space Station desde entonces.",
+    "new": "Una Salyut a escala completa con un transbordador Soyuz acoplado. El patrón estación-más-transbordador-más-carguero que Salyut elaboró a lo largo de siete estaciones es, esencialmente sin cambios, cómo se han operado Mir y luego la Estación Espacial Internacional desde entonces."
+  },
+  {
+    "rel": "programs/salyut.json",
+    "at": "legacy.2.md",
+    "old": "También construyó la experiencia que hizo posible la cooperación posguerrafría. Para cuando se concibió la International Space Station, la Unión Soviética y luego Rusia habían acumulado dos décadas de experiencia sin igual en operaciones de estaciones de larga duración, experiencia que Estados Unidos, tras Skylab, simplemente no tenía. Ese desequilibrio es una gran parte de por qué la EEI se construyó sobre un núcleo ruso y una doctrina operativa rusa, y por qué Salyut, el programa nacido de perder la Luna, terminó dando forma a la estructura humana más ambiciosa jamás construida.",
+    "new": "También construyó la experiencia que hizo posible la cooperación posguerrafría. Para cuando se concibió la Estación Espacial Internacional, la Unión Soviética y luego Rusia habían acumulado dos décadas de experiencia sin igual en operaciones de estaciones de larga duración, experiencia que Estados Unidos, tras Skylab, simplemente no tenía. Ese desequilibrio es una gran parte de por qué la EEI se construyó sobre un núcleo ruso y una doctrina operativa rusa, y por qué Salyut, el programa nacido de perder la Luna, terminó dando forma a la estructura humana más ambiciosa jamás construida."
+  },
+  {
+    "rel": "programs/skylab.json",
+    "at": "narrative.0.md",
+    "old": "El momento definitorio de Skylab es la reparación, y tiene más importancia de lo que parece a primera vista. Hasta 1973, las naves espaciales eran esencialmente desechables e irreparables: si algo se rompía, la misión se degradaba o se perdía. Skylab demostró lo contrario — que una tripulación con herramientas, entrenamiento e improvisación podía salvar una máquina que había fallado catastróficamente. Esa única idea, que el hardware orbital es *mantenible*, se extiende directamente hacia las misiones de servicio del Hubble y hacia el trabajo constante de reparación y actualización que mantiene viva a la International Space Station.",
+    "new": "El momento definitorio de Skylab es la reparación, y tiene más importancia de lo que parece a primera vista. Hasta 1973, las naves espaciales eran esencialmente desechables e irreparables: si algo se rompía, la misión se degradaba o se perdía. Skylab demostró lo contrario — que una tripulación con herramientas, entrenamiento e improvisación podía salvar una máquina que había fallado catastróficamente. Esa única idea, que el hardware orbital es *mantenible*, se extiende directamente hacia las misiones de servicio del Hubble y hacia el trabajo constante de reparación y actualización que mantiene viva a la Estación Espacial Internacional."
+  },
+  {
+    "rel": "programs/tiangong.json",
+    "at": "the_land.0.md",
+    "old": "En 2011 había un lugar donde los humanos vivían en el espacio, y China no era bienvenida allí. La International Space Station era una asociación de Estados Unidos, Rusia, Europa, Japón y Canadá —y ese mismo año el Congreso de Estados Unidos aprobó la Wolf Amendment, que prohibía a la NASA la cooperación bilateral con China sin aprobación explícita. El mensaje era contundente: el club estaba cerrado. La respuesta de China no fue protestar. Fue construir su propia estación, en su propio cohete, con su propia cápsula tripulada, en un calendario que publicó por adelantado y luego cumplió.",
+    "new": "En 2011 había un lugar donde los humanos vivían en el espacio, y China no era bienvenida allí. La Estación Espacial Internacional era una asociación de Estados Unidos, Rusia, Europa, Japón y Canadá —y ese mismo año el Congreso de Estados Unidos aprobó la Wolf Amendment, que prohibía a la NASA la cooperación bilateral con China sin aprobación explícita. El mensaje era contundente: el club estaba cerrado. La respuesta de China no fue protestar. Fue construir su propia estación, en su propio cohete, con su propia cápsula tripulada, en un calendario que publicó por adelantado y luego cumplió."
   }
 ]

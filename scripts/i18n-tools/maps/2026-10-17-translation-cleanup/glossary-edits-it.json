@@ -1,242 +1,158 @@
 [
   {
-    "rel": "belts/asteroid.json",
-    "at": "total_mass_relative",
-    "old": "≈ 4 % della Luna (≈ 3 % di Pluto)",
-    "new": "≈ 4 % della Luna (≈ 3 % di Plutone)"
+    "rel": "essays/generational-starships.json",
+    "at": "body.7.md",
+    "old": "Il primo problema di ingegneria è il più fondamentale: nulla arriva, e nulla se ne va. Ogni atomo di ossigeno, acqua, azoto, carbonio e minerale traccia che l'equipaggio ha bisogno per l'intero viaggio deve essere lanciato con la nave o rigenerato a bordo, indefinitamente, senza fallire. Il [sistema ECLSS di supporto vitale](/science/life-in-space/eclss-life-support) della International Space Station è il più sofisticato sistema di supporto vitale a circuito chiuso che l'umanità abbia mai gestito — recupera acqua dall'umidità, dall'urina e dall'aria della cabina; genera ossigeno elettrolizzando l'acqua; rimuove l'anidride carbonica dall'atmosfera. Viene rifornito da veicoli cargo diverse volte all'anno. Rimuovi i rifornimenti, e ogni inefficienza nel circuito si accumula: ogni chilogrammo di acqua non recuperato, ogni molecola di gas non riciclata, è un chilogrammo o una molecola permanentemente persi dall'inventario totale della nave. Nel corso di un viaggio di quattro secoli, l'accumulo di piccole perdite diventa esistenziale. Un sistema che è efficiente al 99,9% perde, nel corso di 430 anni, l'equivalente dell'intero stock di lavoro molte volte. Il circuito deve essere, in pratica, completo.",
+    "new": "Il primo problema di ingegneria è il più fondamentale: nulla arriva, e nulla se ne va. Ogni atomo di ossigeno, acqua, azoto, carbonio e minerale traccia che l'equipaggio ha bisogno per l'intero viaggio deve essere lanciato con la nave o rigenerato a bordo, indefinitamente, senza fallire. Il [sistema ECLSS di supporto vitale](/science/life-in-space/eclss-life-support) della Stazione spaziale internazionale è il più sofisticato sistema di supporto vitale a circuito chiuso che l'umanità abbia mai gestito — recupera acqua dall'umidità, dall'urina e dall'aria della cabina; genera ossigeno elettrolizzando l'acqua; rimuove l'anidride carbonica dall'atmosfera. Viene rifornito da veicoli cargo diverse volte all'anno. Rimuovi i rifornimenti, e ogni inefficienza nel circuito si accumula: ogni chilogrammo di acqua non recuperato, ogni molecola di gas non riciclata, è un chilogrammo o una molecola permanentemente persi dall'inventario totale della nave. Nel corso di un viaggio di quattro secoli, l'accumulo di piccole perdite diventa esistenziale. Un sistema che è efficiente al 99,9% perde, nel corso di 430 anni, l'equivalente dell'intero stock di lavoro molte volte. Il circuito deve essere, in pratica, completo."
   },
   {
-    "rel": "belts/kuiper.json",
-    "at": "largest_members.0",
-    "old": "Pluto — pianeta nano, ≈ 2.377 km di diametro, accoppiato con Caronte come sistema binario",
-    "new": "Plutone — pianeta nano, ≈ 2.377 km di diametro, accoppiato con Caronte come sistema binario"
+    "rel": "essays/generational-starships.json",
+    "at": "body.12.caption",
+    "old": "La International Space Station è la cosa più vicina che abbiamo costruito a un mondo chiuso — ed è rifornita dalla Terra ogni poche settimane. Una nave che deve chiudere il ciclo completamente, per mille anni, è un ordine di problema completamente diverso.",
+    "new": "La Stazione spaziale internazionale è la cosa più vicina che abbiamo costruito a un mondo chiuso — ed è rifornita dalla Terra ogni poche settimane. Una nave che deve chiudere il ciclo completamente, per mille anni, è un ordine di problema completamente diverso."
   },
   {
-    "rel": "belts/kuiper.json",
-    "at": "largest_members.1",
-    "old": "Eris — leggermente più massiccio di Pluto, scoperto nel 2005 (la sua scoperta ha innescato la riclassificazione di Pluto)",
-    "new": "Eris — leggermente più massiccio di Plutone, scoperto nel 2005 (la sua scoperta ha innescato la riclassificazione di Plutone)"
+    "rel": "essays/going-to-mars.json",
+    "at": "body.11.md",
+    "old": "Il secondo muro è la massa — e specificamente, la relazione tra massa e distanza in una missione dalla quale nessun rifornimento è possibile. Sulla International Space Station, un veicolo cargo Progress arriva ogni pochi mesi con cibo, acqua, equipaggiamento e pezzi di ricambio. I sistemi di supporto vitale della stazione sono circuiti chiusi in alcuni aspetti ma dispersivi in altri; l'acqua viene riciclata, ma i consumabili vengono reintegrati regolarmente dalla Terra. Un equipaggio su Marte non ottiene tale rifornimento. Quello che parte con loro è quello che hanno. Ogni chilogrammo di cibo, ogni litro d'acqua, ogni componente di ricambio per ogni sistema critico deve essere trasportato dalla Terra — a costo di lancio straordinario — o prodotto su Marte stesso.",
+    "new": "Il secondo muro è la massa — e specificamente, la relazione tra massa e distanza in una missione dalla quale nessun rifornimento è possibile. Sulla Stazione spaziale internazionale, un veicolo cargo Progress arriva ogni pochi mesi con cibo, acqua, equipaggiamento e pezzi di ricambio. I sistemi di supporto vitale della stazione sono circuiti chiusi in alcuni aspetti ma dispersivi in altri; l'acqua viene riciclata, ma i consumabili vengono reintegrati regolarmente dalla Terra. Un equipaggio su Marte non ottiene tale rifornimento. Quello che parte con loro è quello che hanno. Ogni chilogrammo di cibo, ogni litro d'acqua, ogni componente di ricambio per ogni sistema critico deve essere trasportato dalla Terra — a costo di lancio straordinario — o prodotto su Marte stesso."
   },
   {
-    "rel": "belts/kuiper.json",
-    "at": "discovered",
-    "old": "1992 — David Jewitt e Jane Luu rilevano 1992 QB1 (ora 15760 Albion), il primo oggetto confermato della Fascia di Kuiper dopo Pluto + Caronte. La fascia stessa fu prevista nel 1951 da Gerard Kuiper come materiale residuo del disco del sistema solare primordiale.",
-    "new": "1992 — David Jewitt e Jane Luu rilevano 1992 QB1 (ora 15760 Albion), il primo oggetto confermato della Fascia di Kuiper dopo Plutone + Caronte. La fascia stessa fu prevista nel 1951 da Gerard Kuiper come materiale residuo del disco del sistema solare primordiale."
+    "rel": "fleet/crewed-spacecraft/endeavour.json",
+    "at": "dispatch",
+    "old": "Endeavour, OV-105, fu l'ultimo orbiter costruito — assemblato da componenti strutturali di riserva per rimpiazzare Challenger, cosicché persino il membro più recente della flotta portava la memoria del suo giorno peggiore. Volò la prima missione di manutenzione Hubble, STS-61, il volo che corresse lo specchio difettoso del telescopio e salvò la reputazione dell'osservatorio, e svolse lavori pesanti nell'assemblaggio della International Space Station. Fu il più giovane della flotta e tra i più impegnati, volando fino agli anni finali del programma.",
+    "new": "Endeavour, OV-105, fu l'ultimo orbiter costruito — assemblato da componenti strutturali di riserva per rimpiazzare Challenger, cosicché persino il membro più recente della flotta portava la memoria del suo giorno peggiore. Volò la prima missione di manutenzione Hubble, STS-61, il volo che corresse lo specchio difettoso del telescopio e salvò la reputazione dell'osservatorio, e svolse lavori pesanti nell'assemblaggio della Stazione spaziale internazionale. Fu il più giovane della flotta e tra i più impegnati, volando fino agli anni finali del programma."
   },
   {
-    "rel": "belts/kuiper.json",
-    "at": "mission_visits.0",
-    "old": "New Horizons — NASA, 2015 (sorvolo di Pluto + Caronte) + 2019 (Arrokoth, primo piano ravvicinato di un oggetto classico della Fascia di Kuiper)",
-    "new": "New Horizons — NASA, 2015 (sorvolo di Plutone + Caronte) + 2019 (Arrokoth, primo piano ravvicinato di un oggetto classico della Fascia di Kuiper)"
-  },
-  {
-    "rel": "belts/kuiper.json",
-    "at": "library_labels.kuiper-belt-newhorizons",
-    "old": "NASA New Horizons — sorvoli di Pluto + Arrokoth",
-    "new": "NASA New Horizons — sorvoli di Plutone + Arrokoth"
-  },
-  {
-    "rel": "fleet/orbiter/cassini.json",
-    "at": "tagline",
-    "old": "Saturno orbiter; Huygens atterrato su Titan",
-    "new": "Saturno orbiter; Huygens atterrato su Titano"
-  },
-  {
-    "rel": "fleet/orbiter/cassini.json",
+    "rel": "fleet/engine/le-7a.json",
     "at": "description",
-    "old": "L'orbitante di Saturno (2004-2017) che portava lander Huygens dell'ESA in Titan — ancora l'unico sbarco su una luna di un pianeta esterno. Scoperto le prugne geyser attivi di Encelado e l'oceano globale sotto la sua crosta ghiacciata. Finito in un tuffo pianificato nell'atmosfera di Saturno.",
-    "new": "L'orbitante di Saturno (2004-2017) che portava lander Huygens dell'ESA in Titano — ancora l'unico sbarco su una luna di un pianeta esterno. Scoperto le prugne geyser attivi di Encelado e l'oceano globale sotto la sua crosta ghiacciata. Finito in un tuffo pianificato nell'atmosfera di Saturno."
+    "old": "Il LE-7A è il motore che ha fornito al Giappone una capacità di lancio pesante completamente autoctona. Sviluppato da Mitsubishi Heavy Industries per JAXA, funziona con un ciclo a combustione graduale a LOX e LH2 — l'approccio termodinamico che estrae la massima efficienza dal propellente a idrogeno — e ha volato per la prima volta su H-IIA nell'agosto 2001 come successore perfezionato del LE-7 originale. Il ridisegno ha affrontato i problemi della turbopompa che avevano causato i primi fallimenti di H-II, e il LE-7A ha continuato ad ancorare le carriere operative di H-IIA e H-IIB fino al 2024, lanciando le navi cargo HTV del Giappone verso la International Space Station e il satellite radar ALOS della serie JAXA-ISRO.",
+    "new": "Il LE-7A è il motore che ha fornito al Giappone una capacità di lancio pesante completamente autoctona. Sviluppato da Mitsubishi Heavy Industries per JAXA, funziona con un ciclo a combustione graduale a LOX e LH2 — l'approccio termodinamico che estrae la massima efficienza dal propellente a idrogeno — e ha volato per la prima volta su H-IIA nell'agosto 2001 come successore perfezionato del LE-7 originale. Il ridisegno ha affrontato i problemi della turbopompa che avevano causato i primi fallimenti di H-II, e il LE-7A ha continuato ad ancorare le carriere operative di H-IIA e H-IIB fino al 2024, lanciando le navi cargo HTV del Giappone verso la Stazione spaziale internazionale e il satellite radar ALOS della serie JAXA-ISRO."
   },
   {
-    "rel": "fleet/orbiter/cassini.json",
-    "at": "best_known_for",
-    "old": "Saturno orbiter; Huygens atterrato su Titan",
-    "new": "Saturno orbiter; Huygens atterrato su Titano"
+    "rel": "fleet/engine/rd-107-108.json",
+    "at": "description",
+    "old": "Gli RD-107 e RD-108 sono i motori dell'R-7, il primo missile balistico intercontinentale del mondo, che il team di Sergei Korolev ha riproposto come vettore di lancio. L'RD-107 alimenta i quattro booster aggancciati dell'R-7; l'RD-108 alimenta il core sostenuto. Entrambi utilizzano un ciclo a generatore di gas su LOX e kerosene, e entrambi hanno volato per la prima volta il 21 agosto 1957 — mesi prima dello Sputnik. Aggiornati negli RD-107A e RD-108A, continuano ad alimentare i razzi Soyuz che trasportano equipaggi alla International Space Station, rendendoli il sistema di propulsione con equipaggio più longevo della storia.",
+    "new": "Gli RD-107 e RD-108 sono i motori dell'R-7, il primo missile balistico intercontinentale del mondo, che il team di Sergei Korolev ha riproposto come vettore di lancio. L'RD-107 alimenta i quattro booster aggancciati dell'R-7; l'RD-108 alimenta il core sostenuto. Entrambi utilizzano un ciclo a generatore di gas su LOX e kerosene, e entrambi hanno volato per la prima volta il 21 agosto 1957 — mesi prima dello Sputnik. Aggiornati negli RD-107A e RD-108A, continuano ad alimentare i razzi Soyuz che trasportano equipaggi alla Stazione spaziale internazionale, rendendoli il sistema di propulsione con equipaggio più longevo della storia."
   },
   {
-    "rel": "orbit-regimes-explore/BELT.json",
-    "at": "comparison",
-    "old": "Se ti trovassi su Cerere (il corpo più grande) faresti fatica a vedere un altro asteroide senza telescopio. La massa totale della fascia è all'incirca quella di Pluto.",
-    "new": "Se ti trovassi su Cerere (il corpo più grande) faresti fatica a vedere un altro asteroide senza telescopio. La massa totale della fascia è all'incirca quella di Plutone."
+    "rel": "fleet/station/iss.json",
+    "at": "dispatch",
+    "old": "La International Space Station è la struttura più grande che l'umanità abbia mai costruito nello spazio e il luogo in cui converge ogni filo dell'era spaziale. Il suo nucleo russo discende direttamente da Salyut e Mir; il suo segmento americano da Skylab; è stata assemblata dallo Space Shuttle, è servita dagli equipaggi Soyuz, rifornita dai discendenti del cargo Progress e ospita laboratori costruiti dall'Europa e dal Giappone — quasi ogni programma precedente è presente in essa come eredità. Assemblata a partire dal 1998 e con equipaggio continuo dal novembre 2000, rappresenta la più lunga presenza umana ininterrotta fuori dalla Terra nella storia, e la prova più chiara di una singola idea: che le cose più grandi nello spazio non si costruiscono vincendo una gara, ma quando ex rivali scelgono, decennio dopo decennio, di costruirle insieme.",
+    "new": "La Stazione spaziale internazionale è la struttura più grande che l'umanità abbia mai costruito nello spazio e il luogo in cui converge ogni filo dell'era spaziale. Il suo nucleo russo discende direttamente da Salyut e Mir; il suo segmento americano da Skylab; è stata assemblata dallo Space Shuttle, è servita dagli equipaggi Soyuz, rifornita dai discendenti del cargo Progress e ospita laboratori costruiti dall'Europa e dal Giappone — quasi ogni programma precedente è presente in essa come eredità. Assemblata a partire dal 1998 e con equipaggio continuo dal novembre 2000, rappresenta la più lunga presenza umana ininterrotta fuori dalla Terra nella storia, e la prova più chiara di una singola idea: che le cose più grandi nello spazio non si costruiscono vincendo una gara, ma quando ex rivali scelgono, decennio dopo decennio, di costruirle insieme."
   },
   {
-    "rel": "orbit-regimes-explore/GIANTS.json",
-    "at": "residents.1.label",
-    "old": "Saturn — 9,58 AU, sistema di anelli",
-    "new": "Saturno — 9,58 AU, sistema di anelli"
+    "rel": "fleet/station/mir.json",
+    "at": "dispatch",
+    "old": "Mir è stata la prima stazione spaziale modulare — e il ponte tra due epoche dell'esplorazione spaziale. Mentre tutte le stazioni precedenti erano lanciate già complete, Mir è stata assemblata in orbita nel corso di un decennio, modulo per modulo, trasformandosi in un complesso articolato che rimase in orbita per quindici anni. Ha stabilito il record di permanenza in orbita ancora oggi imbattuto (i 437 giorni consecutivi di Valeri Polyakov, prova che un equipaggio poteva sopravvivere a un volo della durata di una missione verso Marte), ha sovvissuto all'Unione Sovietica che l'aveva costruita di un decennio, e ha resistito a un incendio e a una collisione che causò la perdita di pressurizzazione nel 1997, affrontate manualmente dall'equipaggio. Negli ultimi anni Space Shuttle americani si agganciarono a essa e astronauti statunitensi vi alloggiarono — la prova generale, hardware e fiducia, per la International Space Station che ereditò quasi tutto quello che Mir aveva sperimentato.",
+    "new": "Mir è stata la prima stazione spaziale modulare — e il ponte tra due epoche dell'esplorazione spaziale. Mentre tutte le stazioni precedenti erano lanciate già complete, Mir è stata assemblata in orbita nel corso di un decennio, modulo per modulo, trasformandosi in un complesso articolato che rimase in orbita per quindici anni. Ha stabilito il record di permanenza in orbita ancora oggi imbattuto (i 437 giorni consecutivi di Valeri Polyakov, prova che un equipaggio poteva sopravvivere a un volo della durata di una missione verso Marte), ha sovvissuto all'Unione Sovietica che l'aveva costruita di un decennio, e ha resistito a un incendio e a una collisione che causò la perdita di pressurizzazione nel 1997, affrontate manualmente dall'equipaggio. Negli ultimi anni Space Shuttle americani si agganciarono a essa e astronauti statunitensi vi alloggiarono — la prova generale, hardware e fiducia, per la Stazione spaziale internazionale che ereditò quasi tutto quello che Mir aveva sperimentato."
   },
   {
-    "rel": "orbit-regimes-explore/KUIPER.json",
-    "at": "story",
-    "old": "Un anello di corpi ghiacciati oltre Nettuno — da 30 a 50 AU. L'analogo congelato della fascia degli asteroidi: centinaia di migliaia di corpi di cui solo i più grandi sono stati risolti. Composti di metano, ammoniaca, ghiaccio d'acqua + roccia. Pluto fu il primo membro identificato, nel 1930, sebbene la fascia non fosse riconosciuta come popolazione fino agli anni '90, quando Jewitt + Luu trovarono il secondo membro (1992 QB1). New Horizons ha regalato all'umanità i suoi primi sguardi ravvicinati a DUE oggetti Kuiper — Pluto nel 2015 e Arrokoth nel 2019.",
-    "new": "Un anello di corpi ghiacciati oltre Nettuno — da 30 a 50 AU. L'analogo congelato della fascia degli asteroidi: centinaia di migliaia di corpi di cui solo i più grandi sono stati risolti. Composti di metano, ammoniaca, ghiaccio d'acqua + roccia. Plutone fu il primo membro identificato, nel 1930, sebbene la fascia non fosse riconosciuta come popolazione fino agli anni '90, quando Jewitt + Luu trovarono il secondo membro (1992 QB1). New Horizons ha regalato all'umanità i suoi primi sguardi ravvicinati a DUE oggetti Kuiper — Plutone nel 2015 e Arrokoth nel 2019."
+    "rel": "missions/earth/otv-7.json",
+    "at": "first",
+    "old": "USA-358 / USSF-52 — 434 giorni in orbita, Vandenberg SFB",
+    "new": "USA-358 / USSF-52 — 434 giorni in orbita, Vandenberg Space Force Base"
   },
   {
-    "rel": "orbit-regimes-explore/KUIPER.json",
+    "rel": "missions/earth/otv-7.json",
+    "at": "description",
+    "old": "Settimo volo X-37B — primo verso un'orbita altamente ellittica (HEO) e primo lanciato con Falcon Heavy. Lanciato il 2023-12-29 01:07 UTC da KSC LC-39A; entrambi i booster laterali recuperati a LZ-1 / LZ-2, il nucleo centrale utilizzato per l'energia d'inserimento HEO. La traiettoria HEO ha portato l'OTV approssimativamente all'altitudine della cintura GEO all'apogeo. Ha eseguito una sequenza di de-orbita controllata in stile aerobraking (l'USSF ha rilasciato un aggiornamento pubblico sulla manovra, un allontanamento deliberato dalla trasparenza rispetto ai voli classificati precedenti). Atterrato a Vandenberg SFB il 2025-03-07 09:22 UTC.",
+    "new": "Settimo volo X-37B — primo verso un'orbita altamente ellittica (HEO) e primo lanciato con Falcon Heavy. Lanciato il 2023-12-29 01:07 UTC da KSC LC-39A; entrambi i booster laterali recuperati a LZ-1 / LZ-2, il nucleo centrale utilizzato per l'energia d'inserimento HEO. La traiettoria HEO ha portato l'OTV approssimativamente all'altitudine della cintura GEO all'apogeo. Ha eseguito una sequenza di de-orbita controllata in stile aerobraking (l'USSF ha rilasciato un aggiornamento pubblico sulla manovra, un allontanamento deliberato dalla trasparenza rispetto ai voli classificati precedenti). Atterrato a Vandenberg Space Force Base il 2025-03-07 09:22 UTC."
+  },
+  {
+    "rel": "missions/earth/otv-7.json",
+    "at": "events.2.note",
+    "old": "Atterraggio autonomo sulla pista a Vandenberg SFB il 2025-03-07.",
+    "new": "Atterraggio autonomo sulla pista a Vandenberg Space Force Base il 2025-03-07."
+  },
+  {
+    "rel": "orbit-regimes/LEO.json",
     "at": "residents.0.label",
-    "old": "Pluto — 39,5 AU, il più grande conosciuto",
-    "new": "Plutone — 39,5 AU, il più grande conosciuto"
+    "old": "ISS — International Space Station",
+    "new": "ISS — Stazione spaziale internazionale"
   },
   {
-    "rel": "orbit-regimes-explore/KUIPER.json",
-    "at": "firsts.0.label",
-    "old": "Scoperta di Pluto — primo KBO identificato (Tombaugh, USA)",
-    "new": "Scoperta di Plutone — primo KBO identificato (Tombaugh, USA)"
-  },
-  {
-    "rel": "orbit-regimes-explore/KUIPER.json",
-    "at": "firsts.1.label",
-    "old": "New Horizons — primo sorvolo di Pluto (USA)",
-    "new": "New Horizons — primo sorvolo di Plutone (USA)"
-  },
-  {
-    "rel": "planets/neptune.json",
-    "at": "science_sections.1.why",
-    "old": "Triton è l'unico grande satellite del sistema solare con orbita retrograda — forte evidenza che sia stato catturato dalla Kuiper Belt, non formato insieme a Nettuno.",
-    "new": "Tritone è l'unico grande satellite del sistema solare con orbita retrograda — forte evidenza che sia stato catturato dalla Kuiper Belt, non formato insieme a Nettuno."
-  },
-  {
-    "rel": "planets/saturn.json",
-    "at": "science_sections.1.why",
-    "old": "Saturno ha ~274 lune confermate — più di qualsiasi altro pianeta — con Titan abbastanza grande da possedere una densa atmosfera propria ed Encelado che espelle attivamente acqua da un oceano subsuperficiale.",
-    "new": "Saturno ha ~274 lune confermate — più di qualsiasi altro pianeta — con Titano abbastanza grande da possedere una densa atmosfera propria ed Encelado che espelle attivamente acqua da un oceano subsuperficiale."
-  },
-  {
-    "rel": "programs/cassini.json",
-    "at": "the_land.0.md",
-    "old": "Negli anni '90 Saturno era stato osservato tre volte, e solo di passaggio: Pioneer 11 e le due Voyager avevano attraversato il sistema in poche ore ciascuna, restituendo scorci allettanti di un mondo ad anelli con dozzine di lune e una luna gigante avvolta nella foschia, Titan, la cui superficie nessuna fotocamera riusciva a penetrare. Un sorvolo può fotografare un luogo; non può viverci. Per comprendere Saturno — i suoi anelli, il suo clima, la sua improbabile famiglia di lune — una sonda avrebbe dovuto fermarsi e restare.",
-    "new": "Negli anni '90 Saturno era stato osservato tre volte, e solo di passaggio: Pioneer 11 e le due Voyager avevano attraversato il sistema in poche ore ciascuna, restituendo scorci allettanti di un mondo ad anelli con dozzine di lune e una luna gigante avvolta nella foschia, Titano, la cui superficie nessuna fotocamera riusciva a penetrare. Un sorvolo può fotografare un luogo; non può viverci. Per comprendere Saturno — i suoi anelli, il suo clima, la sua improbabile famiglia di lune — una sonda avrebbe dovuto fermarsi e restare."
-  },
-  {
-    "rel": "programs/cassini.json",
-    "at": "the_land.1.md",
-    "old": "Cassini fu costruita esattamente per questo, e fu costruita da una coalizione: la NASA fornì l'orbiter, l'Agenzia Spaziale Europea fornì un lander chiamato Huygens per scendere attraverso la foschia di Titan, e l'Italia costruì la sua antenna ad alto guadagno. Venne lanciata nel 1997 come una delle sonde interplanetarie più grandi e capaci mai inviate — con davanti un viaggio di sette anni e tre miliardi e mezzo di chilometri solo per raggiungere il pianeta che era stata progettata per studiare.",
-    "new": "Cassini fu costruita esattamente per questo, e fu costruita da una coalizione: la NASA fornì l'orbiter, l'Agenzia Spaziale Europea fornì un lander chiamato Huygens per scendere attraverso la foschia di Titano, e l'Italia costruì la sua antenna ad alto guadagno. Venne lanciata nel 1997 come una delle sonde interplanetarie più grandi e capaci mai inviate — con davanti un viaggio di sette anni e tre miliardi e mezzo di chilometri solo per raggiungere il pianeta che era stata progettata per studiare."
-  },
-  {
-    "rel": "programs/cassini.json",
-    "at": "goals.0.md",
-    "old": "L'obiettivo principale era diventare il primo residente di Saturno: entrare in orbita e restarci per anni, studiando l'atmosfera del pianeta, i suoi anelli, il suo campo magnetico e le sue lune attraverso il lento susseguirsi delle stagioni saturniane — la scienza paziente e continuativa che nessun sorvolo può fare. Tra gli obiettivi principali c'era Titan, l'unica luna abbastanza grande da mantenere un'atmosfera densa, e il grande mistero del sistema solare esterno.",
-    "new": "L'obiettivo principale era diventare il primo residente di Saturno: entrare in orbita e restarci per anni, studiando l'atmosfera del pianeta, i suoi anelli, il suo campo magnetico e le sue lune attraverso il lento susseguirsi delle stagioni saturniane — la scienza paziente e continuativa che nessun sorvolo può fare. Tra gli obiettivi principali c'era Titano, l'unica luna abbastanza grande da mantenere un'atmosfera densa, e il grande mistero del sistema solare esterno."
-  },
-  {
-    "rel": "programs/cassini.json",
-    "at": "goals.1.caption",
-    "old": "Cassini trasportò la sonda europea Huygens sulla schiena per sette anni, poi la rilasciò perché scendesse col paracadute su Titan. L'orbiter stesso avrebbe trascorso tredici anni girando attorno a Saturno, infilandosi tra le lune e, alla fine, tra il pianeta e i suoi anelli.",
-    "new": "Cassini trasportò la sonda europea Huygens sulla schiena per sette anni, poi la rilasciò perché scendesse col paracadute su Titano. L'orbiter stesso avrebbe trascorso tredici anni girando attorno a Saturno, infilandosi tra le lune e, alla fine, tra il pianeta e i suoi anelli."
-  },
-  {
-    "rel": "programs/cassini.json",
-    "at": "goals.2.md",
-    "old": "Il secondo obiettivo apparteneva a Huygens: scendere attraverso la foschia arancione di Titan e atterrare — o ammarare — su una superficie che nessuno aveva mai visto, e scoprire se la luna avesse davvero i laghi e i fiumi di metano liquido che la teoria prevedeva. Fu un tentativo singolo, senza ritorno, dell'atterraggio più distante mai tentato.",
-    "new": "Il secondo obiettivo apparteneva a Huygens: scendere attraverso la foschia arancione di Titano e atterrare — o ammarare — su una superficie che nessuno aveva mai visto, e scoprire se la luna avesse davvero i laghi e i fiumi di metano liquido che la teoria prevedeva. Fu un tentativo singolo, senza ritorno, dell'atterraggio più distante mai tentato."
-  },
-  {
-    "rel": "programs/cassini.json",
-    "at": "outcome.0.md",
-    "old": "Cassini raggiunse Saturno nel 2004 e si sistemò in orbita. Mesi dopo rilasciò Huygens, che scese col paracadute attraverso la foschia di Titan nel gennaio 2005 e restituì le prime immagini dalla superficie di una luna del sistema solare esterno: una pianura arancione e fioca cosparsa di ciottoli arrotondati di ghiaccio d'acqua, modellata da fiumi di metano liquido. Resta l'unico atterraggio che l'umanità abbia mai compiuto oltre la fascia degli asteroidi.",
-    "new": "Cassini raggiunse Saturno nel 2004 e si sistemò in orbita. Mesi dopo rilasciò Huygens, che scese col paracadute attraverso la foschia di Titano nel gennaio 2005 e restituì le prime immagini dalla superficie di una luna del sistema solare esterno: una pianura arancione e fioca cosparsa di ciottoli arrotondati di ghiaccio d'acqua, modellata da fiumi di metano liquido. Resta l'unico atterraggio che l'umanità abbia mai compiuto oltre la fascia degli asteroidi."
-  },
-  {
-    "rel": "programs/cassini.json",
+    "rel": "programs/ariane.json",
     "at": "outcome.2.md",
-    "old": "Cassini lavorò per tredici anni, ben oltre la missione prevista, finché il carburante si esaurì. Piuttosto che rischiare che alla fine si schiantasse su Encelado o Titan contaminandole con microbi terrestri, i pianificatori della missione scelsero una fine deliberata: ventidue immersioni attraverso la fessura inesplorata tra Saturno e i suoi anelli, restituendo dati fino all'ultimo, e poi un tuffo finale nell'atmosfera del pianeta nel settembre 2017, trasmettendo fino a quando non bruciò.",
-    "new": "Cassini lavorò per tredici anni, ben oltre la missione prevista, finché il carburante si esaurì. Piuttosto che rischiare che alla fine si schiantasse su Encelado o Titano contaminandole con microbi terrestri, i pianificatori della missione scelsero una fine deliberata: ventidue immersioni attraverso la fessura inesplorata tra Saturno e i suoi anelli, restituendo dati fino all'ultimo, e poi un tuffo finale nell'atmosfera del pianeta nel settembre 2017, trasmettendo fino a quando non bruciò."
+    "old": "Il manifesto di Ariane 5 è un elenco della scienza e dell'infrastruttura di quell'era: la missione cometaria Rosetta, la costellazione di navigazione Galileo, BepiColombo verso Mercurio, i cargo ATV che rifornirono la International Space Station, e — il più celebrato dei suoi carichi finali — il James Webb Space Telescope (dicembre 2021), lanciato con tale precisione da risparmiare anni di carburante del telescopio. L'ultimo volo vero e proprio di Ariane 5 avvenne nel luglio 2023, portando i satelliti per telecomunicazioni Heinrich Hertz e Syracuse 4B sul volo VA261. Poi il terreno si spostò. I razzi riutilizzabili di SpaceX minarono i prezzi di Ariane e posero fine al suo dominio commerciale, e Ariane 6, in volo dal 2024, è la risposta dell'Europa: un lanciatore più economico e flessibile costruito per mantenere vivo l'accesso indipendente del continente in un mercato trasformato.",
+    "new": "Il manifesto di Ariane 5 è un elenco della scienza e dell'infrastruttura di quell'era: la missione cometaria Rosetta, la costellazione di navigazione Galileo, BepiColombo verso Mercurio, i cargo ATV che rifornirono la Stazione spaziale internazionale, e — il più celebrato dei suoi carichi finali — il James Webb Space Telescope (dicembre 2021), lanciato con tale precisione da risparmiare anni di carburante del telescopio. L'ultimo volo vero e proprio di Ariane 5 avvenne nel luglio 2023, portando i satelliti per telecomunicazioni Heinrich Hertz e Syracuse 4B sul volo VA261. Poi il terreno si spostò. I razzi riutilizzabili di SpaceX minarono i prezzi di Ariane e posero fine al suo dominio commerciale, e Ariane 6, in volo dal 2024, è la risposta dell'Europa: un lanciatore più economico e flessibile costruito per mantenere vivo l'accesso indipendente del continente in un mercato trasformato."
   },
   {
-    "rel": "programs/cassini.json",
+    "rel": "programs/ariane.json",
     "at": "legacy.1.md",
-    "old": "La seconda sono Encelado e Titan: due mondi oceanici e un mondo di metano spostati, dai dati di Cassini, in prima fila tra i luoghi a cui vale la pena tornare nella ricerca di vita. Ogni proposta per cercare biologia nel sistema solare esterno ora inizia con ciò che Cassini ha trovato.",
-    "new": "La seconda sono Encelado e Titano: due mondi oceanici e un mondo di metano spostati, dai dati di Cassini, in prima fila tra i luoghi a cui vale la pena tornare nella ricerca di vita. Ogni proposta per cercare biologia nel sistema solare esterno ora inizia con ciò che Cassini ha trovato."
+    "old": "L'eredità di Ariane è che l'Europa non ha mai più dovuto chiedere il permesso per raggiungere lo spazio. Per oltre quattro decenni una linea ininterrotta di razzi europei ha lanciato i satelliti del continente, le missioni scientifiche e i contributi alla International Space Station — e per gran parte di quel tempo ha lanciato anche quelli del mondo. L'industria dei lanci commerciali che ora è così centrale per i voli spaziali fu, in gran parte, inventata da Arianespace; il modello di vendere l'accesso all'orbita come servizio iniziò a Kourou.",
+    "new": "L'eredità di Ariane è che l'Europa non ha mai più dovuto chiedere il permesso per raggiungere lo spazio. Per oltre quattro decenni una linea ininterrotta di razzi europei ha lanciato i satelliti del continente, le missioni scientifiche e i contributi alla Stazione spaziale internazionale — e per gran parte di quel tempo ha lanciato anche quelli del mondo. L'industria dei lanci commerciali che ora è così centrale per i voli spaziali fu, in gran parte, inventata da Arianespace; il modello di vendere l'accesso all'orbita come servizio iniziò a Kourou."
   },
   {
-    "rel": "programs/cassini.json",
-    "at": "lessons.0.md",
-    "old": "La lezione di Cassini è che restare batte attraversare. Lo stesso pianeta che le Voyager caratterizzarono in ore rivelò i suoi segreti più profondi — l'oceano di Encelado, il ciclo del metano di Titan — solo a una sonda disposta a trascorrere tredici anni in orbita. Per le domande più difficili, la presenza nel tempo vale più di qualsiasi singolo sguardo brillante.",
-    "new": "La lezione di Cassini è che restare batte attraversare. Lo stesso pianeta che le Voyager caratterizzarono in ore rivelò i suoi segreti più profondi — l'oceano di Encelado, il ciclo del metano di Titano — solo a una sonda disposta a trascorrere tredici anni in orbita. Per le domande più difficili, la presenza nel tempo vale più di qualsiasi singolo sguardo brillante."
+    "rel": "programs/commercial-stations.json",
+    "at": "the_land.0.md",
+    "old": "La International Space Station è la più grande struttura che l'umanità abbia mai costruito in orbita, e sarà deliberatamente distrutta. Intorno al 2030, dopo oltre tre decenni di operazioni equipaggiate continue, la ISS sarà guidata verso il basso per bruciare sul Pacifico — perché sta invecchiando, è costosa da mantenere, e i suoi partner hanno deciso che il futuro dell'orbita terrestre bassa appartiene alle aziende private piuttosto che alle agenzie governative. Le Stazioni Commerciali sono ciò che dovrebbe prenderne il posto.",
+    "new": "La Stazione spaziale internazionale è la più grande struttura che l'umanità abbia mai costruito in orbita, e sarà deliberatamente distrutta. Intorno al 2030, dopo oltre tre decenni di operazioni equipaggiate continue, la ISS sarà guidata verso il basso per bruciare sul Pacifico — perché sta invecchiando, è costosa da mantenere, e i suoi partner hanno deciso che il futuro dell'orbita terrestre bassa appartiene alle aziende private piuttosto che alle agenzie governative. Le Stazioni Commerciali sono ciò che dovrebbe prenderne il posto."
   },
   {
-    "rel": "programs/voyager.json",
-    "at": "outcome.0.md",
-    "old": "Il tour mantenne più di quanto promesso. A Giove nel 1979 le Voyager trovarono vulcani attivi sulla luna Io — i primi mai visti oltre la Terra — e il ghiaccio liscio di Europa che nascondeva quello che sembrava un oceano. A Saturno risolsero gli anelli in migliaia di filamenti intricati e passarono vicino alla luna Titan avvolta nella foschia. Quel sorvolo di Titan piegò la traiettoria di Voyager 1 verso l'alto e fuori dal piano dei pianeti, inviandola in salita verso il confine del sistema solare.",
-    "new": "Il tour mantenne più di quanto promesso. A Giove nel 1979 le Voyager trovarono vulcani attivi sulla luna Io — i primi mai visti oltre la Terra — e il ghiaccio liscio di Europa che nascondeva quello che sembrava un oceano. A Saturno risolsero gli anelli in migliaia di filamenti intricati e passarono vicino alla luna Titano avvolta nella foschia. Quel sorvolo di Titano piegò la traiettoria di Voyager 1 verso l'alto e fuori dal piano dei pianeti, inviandola in salita verso il confine del sistema solare."
+    "rel": "programs/esa-human.json",
+    "at": "goals.2.md",
+    "old": "La strategia aveva un punto di forza nascosto: contribuire un pezzo essenziale assicura un posto permanente al tavolo. Costruendo Spacelab, l'Europa si è guadagnata un posto a bordo dello Shuttle; costruendo Columbus e l'ATV, è diventata partner pieno e paritario nella International Space Station, con il proprio laboratorio e la propria indispensabile nave di rifornimento. Una nazione che si limitasse ad acquistare posti sarebbe un cliente; l'Europa, costruendo capacità su cui altri facevano affidamento, è diventata un partner — con voce in capitolo reale nell'impresa.",
+    "new": "La strategia aveva un punto di forza nascosto: contribuire un pezzo essenziale assicura un posto permanente al tavolo. Costruendo Spacelab, l'Europa si è guadagnata un posto a bordo dello Shuttle; costruendo Columbus e l'ATV, è diventata partner pieno e paritario nella Stazione spaziale internazionale, con il proprio laboratorio e la propria indispensabile nave di rifornimento. Una nazione che si limitasse ad acquistare posti sarebbe un cliente; l'Europa, costruendo capacità su cui altri facevano affidamento, è diventata un partner — con voce in capitolo reale nell'impresa."
   },
   {
-    "rel": "programs/voyager.json",
-    "at": "outcome.1.md",
-    "old": "Voyager 2 completò l'intero Grand Tour. Raggiunse Urano nel 1986 e Nettuno nel 1989 — l'unica sonda spaziale mai arrivata a entrambi i mondi — trovando un pianeta inclinato su un lato, un gigante blu profondo con i venti più veloci del sistema solare, e una luna, Triton, con geyser di azoto che eruttavano nello spazio. Ancora oggi, tutto ciò che l'umanità conosce da distanza ravvicinata sui giganti di ghiaccio fu raccolto in quei due brevi sorvoli.",
-    "new": "Voyager 2 completò l'intero Grand Tour. Raggiunse Urano nel 1986 e Nettuno nel 1989 — l'unica sonda spaziale mai arrivata a entrambi i mondi — trovando un pianeta inclinato su un lato, un gigante blu profondo con i venti più veloci del sistema solare, e una luna, Tritone, con geyser di azoto che eruttavano nello spazio. Ancora oggi, tutto ciò che l'umanità conosce da distanza ravvicinata sui giganti di ghiaccio fu raccolto in quei due brevi sorvoli."
+    "rel": "programs/iss.json",
+    "at": "the_land.0.md",
+    "old": "Tutto in questo atlante conduce qui. La International Space Station non è un nuovo inizio ma una convergenza — il punto in cui le due storie separate del volo spaziale umano, americana e sovietica, si sono finalmente fuse in un'unica struttura e un unico equipaggio. La sua metà russa discende direttamente da Salyut e Mir; la sua metà americana da Skylab; è stata assemblata dallo Space Shuttle, è servita dagli equipaggi della Soyuz, rifornita dai discendenti del cargo Progress, e ospita laboratori costruiti dall'Europa e dal Giappone. Quasi ogni programma che l'ha preceduta è presente in essa, fisicamente, come eredità imbullonata in orbita.",
+    "new": "Tutto in questo atlante conduce qui. La Stazione spaziale internazionale non è un nuovo inizio ma una convergenza — il punto in cui le due storie separate del volo spaziale umano, americana e sovietica, si sono finalmente fuse in un'unica struttura e un unico equipaggio. La sua metà russa discende direttamente da Salyut e Mir; la sua metà americana da Skylab; è stata assemblata dallo Space Shuttle, è servita dagli equipaggi della Soyuz, rifornita dai discendenti del cargo Progress, e ospita laboratori costruiti dall'Europa e dal Giappone. Quasi ogni programma che l'ha preceduta è presente in essa, fisicamente, come eredità imbullonata in orbita."
   },
   {
-    "rel": "satellites/charon.json",
-    "at": "library_labels.charon-new-horizons",
-    "old": "NASA New Horizons — sorvolo di Pluto-Caronte (2015)",
-    "new": "NASA New Horizons — sorvolo di Plutone-Caronte (2015)"
+    "rel": "programs/iss.json",
+    "at": "goals.0.caption",
+    "old": "La International Space Station completata — una struttura grande quanto un campo da football, assemblata in orbita da moduli costruiti su tre continenti, e permanentemente abitata dal novembre 2000.",
+    "new": "La Stazione spaziale internazionale completata — una struttura grande quanto un campo da football, assemblata in orbita da moduli costruiti su tre continenti, e permanentemente abitata dal novembre 2000."
   },
   {
-    "rel": "satellites/titan.json",
-    "at": "library_labels.titan-wiki",
-    "old": "Wikipedia — Titan",
-    "new": "Wikipedia — Titano"
+    "rel": "programs/iss.json",
+    "at": "outcome.0.caption",
+    "old": "La International Space Station a metà assemblaggio. Costruita tra il 1998 e il 2011 attraverso più di quaranta voli, modulo dopo modulo, fu il progetto di costruzione più ambizioso mai realizzato oltre la Terra.",
+    "new": "La Stazione spaziale internazionale a metà assemblaggio. Costruita tra il 1998 e il 2011 attraverso più di quaranta voli, modulo dopo modulo, fu il progetto di costruzione più ambizioso mai realizzato oltre la Terra."
   },
   {
-    "rel": "satellites/titan.json",
-    "at": "library_labels.titan-nasa",
-    "old": "NASA Science — panoramica di Titan",
-    "new": "NASA Science — panoramica di Titano"
+    "rel": "programs/ros.json",
+    "at": "the_land.0.md",
+    "old": "Per un quarto di secolo, il volo spaziale umano russo è stato legato a quello occidentale. La sua metà della International Space Station — discendente diretta di Salyut e Mir — ha tenuto in vita l'intero avamposto, e per nove anni le capsule Soyuz russe sono state l'unico mezzo di trasporto verso la ISS per chiunque, americano o russo. Quella partnership, una delle eredità più durature della fine della Guerra Fredda, sta ora terminando. La Russia ha annunciato che lascerà la ISS e costruirà una stazione nazionale propria: la Russian Orbital Station.",
+    "new": "Per un quarto di secolo, il volo spaziale umano russo è stato legato a quello occidentale. La sua metà della Stazione spaziale internazionale — discendente diretta di Salyut e Mir — ha tenuto in vita l'intero avamposto, e per nove anni le capsule Soyuz russe sono state l'unico mezzo di trasporto verso la ISS per chiunque, americano o russo. Quella partnership, una delle eredità più durature della fine della Guerra Fredda, sta ora terminando. La Russia ha annunciato che lascerà la ISS e costruirà una stazione nazionale propria: la Russian Orbital Station."
   },
   {
-    "rel": "satellites/titan.json",
-    "at": "library_labels.titan-dragonfly",
-    "old": "NASA Dragonfly — missione rotore nucleare verso Titan",
-    "new": "NASA Dragonfly — missione rotore nucleare verso Titano"
+    "rel": "programs/soyuz.json",
+    "at": "outcome.2.md",
+    "old": "Quella avrebbe potuto essere l'intera storia: un progetto promettente iniziato con una tragedia e che chiuse la corsa con una stretta di mano. Invece fu solo l'inizio. Soyuz continuò a volare — verso Salyut, verso Mir, verso la International Space Station — e continuò a essere perfezionata, fino a quando la nave che aveva ucciso due equipaggi nei primi quattro anni divenne il modo più sicuro e affidabile per raggiungere l'orbita mai operato da chiunque.",
+    "new": "Quella avrebbe potuto essere l'intera storia: un progetto promettente iniziato con una tragedia e che chiuse la corsa con una stretta di mano. Invece fu solo l'inizio. Soyuz continuò a volare — verso Salyut, verso Mir, verso la Stazione spaziale internazionale — e continuò a essere perfezionata, fino a quando la nave che aveva ucciso due equipaggi nei primi quattro anni divenne il modo più sicuro e affidabile per raggiungere l'orbita mai operato da chiunque."
   },
   {
-    "rel": "satellites/triton.json",
-    "at": "description",
-    "old": "La più grande luna di Nettuno e uno dei mondi geologicamente più attivi del sistema solare. Triton orbita attorno a Nettuno all'indietro (retrogrado) e con un'inclinazione estrema — diagnostico di un oggetto catturato dalla Fascia di Kuiper, il che lo rende probabilmente un fratello di Plutone piuttosto che una luna nettuniana nativa. Voyager 2 ha rilevato geyser attivi di azoto che espellono polvere organica scura per 8 km in una tenue atmosfera di azoto; l'emisfero meridionale presenta il 'terreno a melone' — una rete di fossette e creste mai vista altrove nel sistema solare. L'orbita retrograda di Triton sta decadendo per effetto delle maree; in circa 3,6 Gyr verrà o frantumato in un anello simile a quello di Saturno o si schianterà su Nettuno.",
-    "new": "La più grande luna di Nettuno e uno dei mondi geologicamente più attivi del sistema solare. Tritone orbita attorno a Nettuno all'indietro (retrogrado) e con un'inclinazione estrema — diagnostico di un oggetto catturato dalla Fascia di Kuiper, il che lo rende probabilmente un fratello di Plutone piuttosto che una luna nettuniana nativa. Voyager 2 ha rilevato geyser attivi di azoto che espellono polvere organica scura per 8 km in una tenue atmosfera di azoto; l'emisfero meridionale presenta il 'terreno a melone' — una rete di fossette e creste mai vista altrove nel sistema solare. L'orbita retrograda di Tritone sta decadendo per effetto delle maree; in circa 3,6 Gyr verrà o frantumato in un anello simile a quello di Saturno o si schianterà su Nettuno."
+    "rel": "programs/soyuz.json",
+    "at": "narrative.1.md",
+    "old": "Cambiò anche completamente funzione. Concepita per competere con gli americani verso la Luna, Soyuz perse quella corsa e fu silenziosamente riconvertita — nel traghetto che portava gli equipaggi alle stazioni spaziali dell'Unione Sovietica, poi a Mir, poi alla International Space Station costruita con quegli stessi americani. Quando lo Space Shuttle americano andò in pensione nel 2011, Soyuz divenne, per nove anni, l'*unico* modo in cui qualsiasi essere umano potesse raggiungere la Space Station: l'intero programma internazionale dipendeva da un progetto sovietico degli anni '60.",
+    "new": "Cambiò anche completamente funzione. Concepita per competere con gli americani verso la Luna, Soyuz perse quella corsa e fu silenziosamente riconvertita — nel traghetto che portava gli equipaggi alle stazioni spaziali dell'Unione Sovietica, poi a Mir, poi alla Stazione spaziale internazionale costruita con quegli stessi americani. Quando lo Space Shuttle americano andò in pensione nel 2011, Soyuz divenne, per nove anni, l'*unico* modo in cui qualsiasi essere umano potesse raggiungere la Space Station: l'intero programma internazionale dipendeva da un progetto sovietico degli anni '60."
   },
   {
-    "rel": "satellites/triton.json",
-    "at": "library_labels.triton-wiki",
-    "old": "Wikipedia — Triton",
-    "new": "Wikipedia — Tritone"
+    "rel": "programs/space-shuttle.json",
+    "at": "goals.0.caption",
+    "old": "Endeavour attraccato alla International Space Station. La combinazione unica dello Shuttle — un equipaggio numeroso, una stiva di carico, un braccio robotico e la capacità di riportare cose a casa — ne fece il veicolo che assemblò e manuteneva le grandi strutture della sua epoca.",
+    "new": "Endeavour attraccato alla Stazione spaziale internazionale. La combinazione unica dello Shuttle — un equipaggio numeroso, una stiva di carico, un braccio robotico e la capacità di riportare cose a casa — ne fece il veicolo che assemblò e manuteneva le grandi strutture della sua epoca."
   },
   {
-    "rel": "satellites/triton.json",
-    "at": "science_sections.0.why",
-    "old": "L'inclinazione orbitale di Triton di 156,8° — retrograda, fortemente inclinata rispetto all'equatore di Nettuno — è la prova decisiva di una cattura dalla Kuiper Belt piuttosto che di una formazione insieme a Nettuno.",
-    "new": "L'inclinazione orbitale di Tritone di 156,8° — retrograda, fortemente inclinata rispetto all'equatore di Nettuno — è la prova decisiva di una cattura dalla Kuiper Belt piuttosto che di una formazione insieme a Nettuno."
+    "rel": "programs/space-shuttle.json",
+    "at": "goals.2.md",
+    "old": "Due di quelle cose giustificano l'intero programma. Lo Shuttle dispiegò l'Hubble Space Telescope e poi, cinque volte, inviò equipaggi a ripararlo e aggiornarlo in orbita — trasformando un telescopio difettoso nell'osservatorio più produttivo della storia e mantenendolo aggiornato per decenni. E assemblò la International Space Station, portando in orbita i moduli, le travature e i pannelli solari e imbullonandoli insieme con il suo braccio e i suoi spacewalker. Nessuno dei due era possibile senza un veicolo che potesse trasportare un equipaggio numeroso, un carico pesante e gli strumenti per lavorare nello spazio. Quello era il vero scopo dello Shuttle, e in questo era insuperabile.",
+    "new": "Due di quelle cose giustificano l'intero programma. Lo Shuttle dispiegò l'Hubble Space Telescope e poi, cinque volte, inviò equipaggi a ripararlo e aggiornarlo in orbita — trasformando un telescopio difettoso nell'osservatorio più produttivo della storia e mantenendolo aggiornato per decenni. E assemblò la Stazione spaziale internazionale, portando in orbita i moduli, le travature e i pannelli solari e imbullonandoli insieme con il suo braccio e i suoi spacewalker. Nessuno dei due era possibile senza un veicolo che potesse trasportare un equipaggio numeroso, un carico pesante e gli strumenti per lavorare nello spazio. Quello era il vero scopo dello Shuttle, e in questo era insuperabile."
   },
   {
-    "rel": "science/planets/_intro.json",
-    "at": "paragraphs.1",
-    "old": "Sei sezioni. Le prime tre riguardano i pianeti stessi — inclinazione assiale, campi magnetici e la geometria del giorno e della notte. Le due successive riguardano il sistema: i satelliti che orbitano ogni pianeta (Galileans, Titan, Triton, Caronte), e le statistiche di confronto che ti permettono di vedere a colpo d'occhio come Giove differisce dalla Terra. L'ultima sezione è un'indagine dei veicoli spaziali che studiano attivamente ogni pianeta in questo momento, nel 2026 — cosa c'è su Marte (sei orbiter attivi, più agenzie), su Giove (Juno), su Venere (Akatsuki), e le lunghe assenze altrove.",
-    "new": "Sei sezioni. Le prime tre riguardano i pianeti stessi — inclinazione assiale, campi magnetici e la geometria del giorno e della notte. Le due successive riguardano il sistema: i satelliti che orbitano ogni pianeta (Galileans, Titano, Tritone, Caronte), e le statistiche di confronto che ti permettono di vedere a colpo d'occhio come Giove differisce dalla Terra. L'ultima sezione è un'indagine dei veicoli spaziali che studiano attivamente ogni pianeta in questo momento, nel 2026 — cosa c'è su Marte (sei orbiter attivi, più agenzie), su Giove (Juno), su Venere (Akatsuki), e le lunghe assenze altrove."
+    "rel": "programs/space-shuttle.json",
+    "at": "legacy.1.md",
+    "old": "L'eredità più duratura dello Shuttle è fisica: la International Space Station, che assemblò e che non avrebbe potuto essere costruita in nessun altro modo, e l'Hubble Space Telescope, che dispiegò e salvò ripetutamente. Solo queste due assicurano il suo posto. Ma la sua eredità è anche ammonitrice — la dimostrazione più chiara nel volo spaziale che la riutilizzabilità non è la stessa cosa dell'economicità, che un veicolo sperimentale non deve essere venduto o fatto volare come uno di routine, e che la cultura organizzativa, non solo l'ingegneria, decide se una macchina pericolosa uccide le persone.",
+    "new": "L'eredità più duratura dello Shuttle è fisica: la Stazione spaziale internazionale, che assemblò e che non avrebbe potuto essere costruita in nessun altro modo, e l'Hubble Space Telescope, che dispiegò e salvò ripetutamente. Solo queste due assicurano il suo posto. Ma la sua eredità è anche ammonitrice — la dimostrazione più chiara nel volo spaziale che la riutilizzabilità non è la stessa cosa dell'economicità, che un veicolo sperimentale non deve essere venduto o fatto volare come uno di routine, e che la cultura organizzativa, non solo l'ingegneria, decide se una macchina pericolosa uccide le persone."
   },
   {
-    "rel": "science/planets/moons-of-the-system.json",
-    "at": "body_paragraphs.1",
-    "old": "Saturno ha il maggior numero di lune di qualsiasi pianeta — ~290 con orbite confermate a partire dal 2026. Due si distinguono: Titan, il secondo satellite più grande del sistema solare (dopo Ganimede), dotato di un'atmosfera di azoto più densa di quella terrestre al livello della superficie; la sonda Huygens vi atterrò nel 2005 e restituì le prime immagini della superficie. Encelado, molto più piccolo, presenta una superficie ghiacciata giovane, creste a «strisce di tigre» al polo sud, e sfiati crivolcanici attivi che spruzzano vapor d'acqua e composti organici nello spazio — campionati direttamente da Cassini nel suo passaggio attraverso il pennacchio. I pennacchi di Encelado sono la sorgente dell'anello E di Saturno — il ghiaccio crivolcanico fornisce direttamente l'anello.",
-    "new": "Saturno ha il maggior numero di lune di qualsiasi pianeta — ~290 con orbite confermate a partire dal 2026. Due si distinguono: Titano, il secondo satellite più grande del sistema solare (dopo Ganimede), dotato di un'atmosfera di azoto più densa di quella terrestre al livello della superficie; la sonda Huygens vi atterrò nel 2005 e restituì le prime immagini della superficie. Encelado, molto più piccolo, presenta una superficie ghiacciata giovane, creste a «strisce di tigre» al polo sud, e sfiati crivolcanici attivi che spruzzano vapor d'acqua e composti organici nello spazio — campionati direttamente da Cassini nel suo passaggio attraverso il pennacchio. I pennacchi di Encelado sono la sorgente dell'anello E di Saturno — il ghiaccio crivolcanico fornisce direttamente l'anello."
-  },
-  {
-    "rel": "science/planets/moons-of-the-system.json",
-    "at": "body_paragraphs.2",
-    "old": "Plutone e Caronte sono unici: con un raggio di 606 km rispetto ai 1188 km di Plutone, Caronte è metà del diametro di Plutone — il maggior rapporto luna-pianeta del sistema. I due corpi orbitano attorno a un centro di massa comune che si trova al di fuori della superficie di Plutone, quindi nessuno dei due oggetti orbita veramente attorno all'altro; si orbitano reciprocamente attorno a un baricentro condiviso. Il sorvolo di New Horizons nel 2015 ha fotografato entrambi per la prima volta, rivelando depositi equatoriali rossi su Caronte (tolini dall'atmosfera di Plutone soffiati sopra) e una pianura di azoto ghiacciata a forma di cuore su Plutone. Triton di Nettuno è similmente catturato (orbita retrograda, geologicamente giovane — possibilmente catturato dalla fascia di Kuiper) — e come Caronte, quasi certamente ospita un oceano subsuperficiale.",
-    "new": "Plutone e Caronte sono unici: con un raggio di 606 km rispetto ai 1188 km di Plutone, Caronte è metà del diametro di Plutone — il maggior rapporto luna-pianeta del sistema. I due corpi orbitano attorno a un centro di massa comune che si trova al di fuori della superficie di Plutone, quindi nessuno dei due oggetti orbita veramente attorno all'altro; si orbitano reciprocamente attorno a un baricentro condiviso. Il sorvolo di New Horizons nel 2015 ha fotografato entrambi per la prima volta, rivelando depositi equatoriali rossi su Caronte (tolini dall'atmosfera di Plutone soffiati sopra) e una pianura di azoto ghiacciata a forma di cuore su Plutone. Tritone di Nettuno è similmente catturato (orbita retrograda, geologicamente giovane — possibilmente catturato dalla fascia di Kuiper) — e come Caronte, quasi certamente ospita un oceano subsuperficiale."
-  },
-  {
-    "rel": "science/planets/sub-solar-and-terminator.json",
-    "at": "body_paragraphs.1",
-    "old": "Il terminatore ha una lunga storia come zona scientificamente più ricca per osservare i dettagli della superficie. Le ombre sono più lunghe lì, esagerando la topografia. Le immagini lunari dell'era Apollo per la geologia dei crateri venivano quasi sempre scattate con il terminatore nelle vicinanze. Le immagini più suggestive dei pianeti esterni scattate da Voyager 1 + 2 (la struttura degli anelli di Saturn, la Grande Macchia Scura di Nettuno) furono riprese vicino al terminatore di ciascun corpo per la stessa ragione: il basso angolo solare mette in risalto le caratteristiche della superficie.",
-    "new": "Il terminatore ha una lunga storia come zona scientificamente più ricca per osservare i dettagli della superficie. Le ombre sono più lunghe lì, esagerando la topografia. Le immagini lunari dell'era Apollo per la geologia dei crateri venivano quasi sempre scattate con il terminatore nelle vicinanze. Le immagini più suggestive dei pianeti esterni scattate da Voyager 1 + 2 (la struttura degli anelli di Saturno, la Grande Macchia Scura di Nettuno) furono riprese vicino al terminatore di ciascun corpo per la stessa ragione: il basso angolo solare mette in risalto le caratteristiche della superficie."
-  },
-  {
-    "rel": "science/propulsion/c3.json",
-    "at": "body_paragraphs.1",
-    "old": "I vettori di lancio sono caratterizzati dalla loro curva C3-vs-carico. Falcon Heavy può lanciare ~16 tonnellate a C3=10, ma solo ~5 tonnellate a C3=80. Marte tipicamente richiede C3 intorno a 8-12. Giove diretto: C3 intorno a 80. New Horizons è stato lanciato con C3 = 158 km²/s² — il più alto di qualunque missione mai realizzata — per fare il viaggio a Pluto in soli 9,5 anni.",
-    "new": "I vettori di lancio sono caratterizzati dalla loro curva C3-vs-carico. Falcon Heavy può lanciare ~16 tonnellate a C3=10, ma solo ~5 tonnellate a C3=80. Marte tipicamente richiede C3 intorno a 8-12. Giove diretto: C3 intorno a 80. New Horizons è stato lanciato con C3 = 158 km²/s² — il più alto di qualunque missione mai realizzata — per fare il viaggio a Plutone in soli 9,5 anni."
+    "rel": "programs/tiangong.json",
+    "at": "the_land.0.md",
+    "old": "Nel 2011 esisteva un unico luogo in cui gli esseri umani vivevano nello spazio, e la Cina non era benvenuta. La International Space Station era una partnership tra Stati Uniti, Russia, Europa, Giappone e Canada — e quello stesso anno il Congresso statunitense approvò il Wolf Amendment, che vietava alla NASA qualsiasi cooperazione bilaterale con la Cina senza esplicita autorizzazione. Il messaggio era netto: il club era chiuso. La risposta della Cina non fu protestare. Fu costruire la propria stazione, con il proprio razzo, con la propria capsula per equipaggio, secondo una tempistica pubblicata in anticipo e poi rispettata.",
+    "new": "Nel 2011 esisteva un unico luogo in cui gli esseri umani vivevano nello spazio, e la Cina non era benvenuta. La Stazione spaziale internazionale era una partnership tra Stati Uniti, Russia, Europa, Giappone e Canada — e quello stesso anno il Congresso statunitense approvò il Wolf Amendment, che vietava alla NASA qualsiasi cooperazione bilaterale con la Cina senza esplicita autorizzazione. Il messaggio era netto: il club era chiuso. La risposta della Cina non fu protestare. Fu costruire la propria stazione, con il proprio razzo, con la propria capsula per equipaggio, secondo una tempistica pubblicata in anticipo e poi rispettata."
   }
 ]

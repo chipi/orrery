@@ -1,1 +1,104 @@
-[]
+[
+  {
+    "rel": "fleet/crewed-spacecraft/endeavour.json",
+    "at": "dispatch",
+    "old": "Endeavour, OV-105, war der letzte gebaute Orbiter — zusammengesetzt aus strukturellen Ersatzteilen, um Challenger zu ersetzen, sodass selbst das neueste Mitglied der Flotte die Erinnerung an ihren schlimmsten Tag trug. Er flog die erste Hubble-Wartungsmission, STS-61, den Flug, der den fehlerhaften Spiegel des Teleskops korrigierte und den Ruf der Sternwarte rettete, und er leistete Schwerarbeit beim Aufbau der International Space Station. Er war der jüngste der Flotte und einer der meistbeschäftigten, im Einsatz bis in die letzten Jahre des Programms.",
+    "new": "Endeavour, OV-105, war der letzte gebaute Orbiter — zusammengesetzt aus strukturellen Ersatzteilen, um Challenger zu ersetzen, sodass selbst das neueste Mitglied der Flotte die Erinnerung an ihren schlimmsten Tag trug. Er flog die erste Hubble-Wartungsmission, STS-61, den Flug, der den fehlerhaften Spiegel des Teleskops korrigierte und den Ruf der Sternwarte rettete, und er leistete Schwerarbeit beim Aufbau der Internationalen Raumstation. Er war der jüngste der Flotte und einer der meistbeschäftigten, im Einsatz bis in die letzten Jahre des Programms."
+  },
+  {
+    "rel": "fleet/station/iss.json",
+    "at": "dispatch",
+    "old": "Die International Space Station ist die größte Struktur, die die Menschheit je im Weltraum gebaut hat, und der Ort, an dem jeder Strang des Raumfahrtzeitalters zusammenläuft. Ihr russischer Kern stammt direkt von Salyut und Mir ab; ihr amerikanisches Segment von Skylab; sie wurde vom Space Shuttle zusammengebaut, wird von Soyuz mit Besatzung versorgt, von den Nachfolgern des Progress-Frachters beliefert und trägt Labore, die von Europa und Japan gebaut wurden — nahezu jedes frühere Programm ist als Erbe in ihr präsent. Zusammengebaut ab 1998 und durchgehend bemannt seit November 2000, ist sie die längste ununterbrochene menschliche Präsenz außerhalb der Erde in der Geschichte und der klarste Beweis für eine einzige Idee: dass die größten Dinge im Weltraum nicht dadurch entstehen, dass man ein Rennen gewinnt, sondern dadurch, dass ehemalige Rivalen sich Jahrzehnt für Jahrzehnt entscheiden, sie gemeinsam zu bauen.",
+    "new": "Die Internationale Raumstation ist die größte Struktur, die die Menschheit je im Weltraum gebaut hat, und der Ort, an dem jeder Strang des Raumfahrtzeitalters zusammenläuft. Ihr russischer Kern stammt direkt von Salyut und Mir ab; ihr amerikanisches Segment von Skylab; sie wurde vom Space Shuttle zusammengebaut, wird von Soyuz mit Besatzung versorgt, von den Nachfolgern des Progress-Frachters beliefert und trägt Labore, die von Europa und Japan gebaut wurden — nahezu jedes frühere Programm ist als Erbe in ihr präsent. Zusammengebaut ab 1998 und durchgehend bemannt seit November 2000, ist sie die längste ununterbrochene menschliche Präsenz außerhalb der Erde in der Geschichte und der klarste Beweis für eine einzige Idee: dass die größten Dinge im Weltraum nicht dadurch entstehen, dass man ein Rennen gewinnt, sondern dadurch, dass ehemalige Rivalen sich Jahrzehnt für Jahrzehnt entscheiden, sie gemeinsam zu bauen."
+  },
+  {
+    "rel": "fleet/station/iss.json",
+    "at": "description",
+    "old": "Die International Space Station — der längste ständig bemannte Lebensraum der Menschheit seit November 2000. Zusammengebaut über 40 Starts von NASA, Roscosmos, ESA, JAXA und CSA. Derzeit für Deorbit um 2031 geplant.",
+    "new": "Die Internationale Raumstation — der längste ständig bemannte Lebensraum der Menschheit seit November 2000. Zusammengebaut über 40 Starts von NASA, Roscosmos, ESA, JAXA und CSA. Derzeit für Deorbit um 2031 geplant."
+  },
+  {
+    "rel": "missions/earth/otv-7.json",
+    "at": "first",
+    "old": "USA-358 / USSF-52 — 434 Tage im Orbit, Vandenberg SFB",
+    "new": "USA-358 / USSF-52 — 434 Tage im Orbit, Vandenberg Space Force Base"
+  },
+  {
+    "rel": "missions/earth/otv-7.json",
+    "at": "description",
+    "old": "Siebter X-37B-Flug — erster zu einer hochelliptischen (HEO) Umlaufbahn und erster Start mit Falcon Heavy. Gestartet 2023-12-29 01:07 UTC von KSC LC-39A; beide Seitenbooster wurden in LZ-1 / LZ-2 geborgen, der Mitteltriebwerk wurde für die HEO-Einsatzsenergie verbraucht. Die HEO-Flugbahn führte die OTV auf etwa die GEO-Gürtelaltitude am Apogäum. Durchführung einer kontrollierten Bremsmanöver-ähnlichen De-Orbit-Sequenz (die USSF veröffentlichte ein öffentliches Update zum Manöver — ein bewusster Bruch mit der Transparenzpolitik früherer geheimer Flüge). Landung auf Vandenberg SFB 2025-03-07 09:22 UTC.",
+    "new": "Siebter X-37B-Flug — erster zu einer hochelliptischen (HEO) Umlaufbahn und erster Start mit Falcon Heavy. Gestartet 2023-12-29 01:07 UTC von KSC LC-39A; beide Seitenbooster wurden in LZ-1 / LZ-2 geborgen, der Mitteltriebwerk wurde für die HEO-Einsatzsenergie verbraucht. Die HEO-Flugbahn führte die OTV auf etwa die GEO-Gürtelaltitude am Apogäum. Durchführung einer kontrollierten Bremsmanöver-ähnlichen De-Orbit-Sequenz (die USSF veröffentlichte ein öffentliches Update zum Manöver — ein bewusster Bruch mit der Transparenzpolitik früherer geheimer Flüge). Landung auf Vandenberg Space Force Base 2025-03-07 09:22 UTC."
+  },
+  {
+    "rel": "missions/earth/otv-7.json",
+    "at": "events.2.note",
+    "old": "Autonome Landebahn-Landung auf Vandenberg SFB 2025-03-07.",
+    "new": "Autonome Landebahn-Landung auf Vandenberg Space Force Base 2025-03-07."
+  },
+  {
+    "rel": "orbit-regimes/LEO.json",
+    "at": "residents.0.label",
+    "old": "ISS — International Space Station",
+    "new": "ISS — Internationale Raumstation"
+  },
+  {
+    "rel": "programs/ros.json",
+    "at": "the_land.0.md",
+    "old": "Seit einem Vierteljahrhundert ist Russlands bemannte Raumfahrt an den Westen gebunden. Seine Hälfte der International Space Station — direkt von Salyut und Mir abstammend — hielt den gesamten Außenposten am Leben, und neun Jahre lang waren russische Soyuz-Kapseln die einzige Mitfahrgelegenheit zur ISS für jedermann, Amerikaner wie Russen. Diese Partnerschaft, eines der dauerhaftesten Vermächtnisse vom Ende des Kalten Krieges, endet nun. Russland hat angekündigt, die ISS zu verlassen und eine eigene nationale Station zu bauen: die Russian Orbital Station.",
+    "new": "Seit einem Vierteljahrhundert ist Russlands bemannte Raumfahrt an den Westen gebunden. Seine Hälfte der Internationalen Raumstation — direkt von Salyut und Mir abstammend — hielt den gesamten Außenposten am Leben, und neun Jahre lang waren russische Soyuz-Kapseln die einzige Mitfahrgelegenheit zur ISS für jedermann, Amerikaner wie Russen. Diese Partnerschaft, eines der dauerhaftesten Vermächtnisse vom Ende des Kalten Krieges, endet nun. Russland hat angekündigt, die ISS zu verlassen und eine eigene nationale Station zu bauen: die Russian Orbital Station."
+  },
+  {
+    "rel": "programs/salyut.json",
+    "at": "narrative.2.md",
+    "old": "Ab Salyut 6 und 7 ging es im Programm nicht mehr um erste Male, sondern um Dauerhaftigkeit — kontinuierliche Besetzung, internationale Besatzungen, Versorgung als Routine. Diese Verschiebung, vom Besuch der Umlaufbahn zum Bewohnen derselben, ist Salyuts wahre Leistung, und sie floss direkt in das ein, was als Nächstes kam. Mirs Kernmodul war im Wesentlichen die nächste Salyut; die operativen Muster, die Salyut etablierte — Soyuz-Besatzungen, Progress-Frachter, Langzeitexpeditionen — sind genau so, wie die International Space Station heute betrieben wird.",
+    "new": "Ab Salyut 6 und 7 ging es im Programm nicht mehr um erste Male, sondern um Dauerhaftigkeit — kontinuierliche Besetzung, internationale Besatzungen, Versorgung als Routine. Diese Verschiebung, vom Besuch der Umlaufbahn zum Bewohnen derselben, ist Salyuts wahre Leistung, und sie floss direkt in das ein, was als Nächstes kam. Mirs Kernmodul war im Wesentlichen die nächste Salyut; die operativen Muster, die Salyut etablierte — Soyuz-Besatzungen, Progress-Frachter, Langzeitexpeditionen — sind genau so, wie die Internationale Raumstation heute betrieben wird."
+  },
+  {
+    "rel": "programs/salyut.json",
+    "at": "legacy.0.caption",
+    "old": "Eine maßstabsgetreue Salyut mit einer angedockten Soyuz-Fähre. Das Muster aus Station plus Fähre plus Frachter, das Salyut über sieben Stationen herausarbeitete, ist im Wesentlichen unverändert das, wie Mir und dann die International Space Station seither betrieben wurden.",
+    "new": "Eine maßstabsgetreue Salyut mit einer angedockten Soyuz-Fähre. Das Muster aus Station plus Fähre plus Frachter, das Salyut über sieben Stationen herausarbeitete, ist im Wesentlichen unverändert das, wie Mir und dann die Internationale Raumstation seither betrieben wurden."
+  },
+  {
+    "rel": "programs/skylab.json",
+    "at": "narrative.0.md",
+    "old": "Der entscheidende Moment von Skylab ist die Reparatur, und sie bedeutet mehr, als es zunächst scheint. Bis 1973 waren Raumfahrzeuge im Wesentlichen Einweg- und nicht wartbar: wenn etwas kaputt ging, wurde die Mission beeinträchtigt oder verloren. Skylab bewies das Gegenteil — dass eine Besatzung mit Werkzeugen, Training und Improvisation eine Maschine retten konnte, die katastrophal versagt hatte. Diese eine Idee, dass orbitale Hardware *wartbar* ist, führt direkt zu den Hubble-Wartungsmissionen und zur ständigen Reparatur- und Aufrüstungsarbeit, die die International Space Station am Leben hält.",
+    "new": "Der entscheidende Moment von Skylab ist die Reparatur, und sie bedeutet mehr, als es zunächst scheint. Bis 1973 waren Raumfahrzeuge im Wesentlichen Einweg- und nicht wartbar: wenn etwas kaputt ging, wurde die Mission beeinträchtigt oder verloren. Skylab bewies das Gegenteil — dass eine Besatzung mit Werkzeugen, Training und Improvisation eine Maschine retten konnte, die katastrophal versagt hatte. Diese eine Idee, dass orbitale Hardware *wartbar* ist, führt direkt zu den Hubble-Wartungsmissionen und zur ständigen Reparatur- und Aufrüstungsarbeit, die die Internationale Raumstation am Leben hält."
+  },
+  {
+    "rel": "programs/soyuz.json",
+    "at": "outcome.2.md",
+    "old": "Das hätte die ganze Geschichte sein können: ein vielversprechender Entwurf, der in Tragödie begann und das Rennen mit einem Händedruck beendete. Stattdessen war es nur der Anfang. Soyuz flog weiter — zu Salyut, zu Mir, zur International Space Station — und wurde weiter verfeinert, bis das Schiff, das zwei Besatzungen in seinen ersten vier Jahren tötete, zum sichersten und zuverlässigsten Weg in die Umlaufbahn wurde, den je jemand betrieben hat.",
+    "new": "Das hätte die ganze Geschichte sein können: ein vielversprechender Entwurf, der in Tragödie begann und das Rennen mit einem Händedruck beendete. Stattdessen war es nur der Anfang. Soyuz flog weiter — zu Salyut, zu Mir, zur Internationalen Raumstation — und wurde weiter verfeinert, bis das Schiff, das zwei Besatzungen in seinen ersten vier Jahren tötete, zum sichersten und zuverlässigsten Weg in die Umlaufbahn wurde, den je jemand betrieben hat."
+  },
+  {
+    "rel": "programs/soyuz.json",
+    "at": "narrative.1.md",
+    "old": "Es wechselte auch völlig seine Aufgabe. Konzipiert, um im Wettlauf zum Mond gegen die Amerikaner anzutreten, verlor Soyuz dieses Rennen und wurde stillschweigend umfunktioniert — zur Fähre, die Besatzungen zu den Raumstationen der Sowjetunion brachte, dann zu Mir, dann zur International Space Station, die mit eben diesen Amerikanern gebaut wurde. Als das Space Shuttle 2011 außer Dienst gestellt wurde, wurde Soyuz für neun Jahre die *einzige* Möglichkeit für irgendeinen Menschen, die Space Station zu erreichen: Das gesamte internationale Programm hing von einem sowjetischen Entwurf aus den 1960er Jahren ab.",
+    "new": "Es wechselte auch völlig seine Aufgabe. Konzipiert, um im Wettlauf zum Mond gegen die Amerikaner anzutreten, verlor Soyuz dieses Rennen und wurde stillschweigend umfunktioniert — zur Fähre, die Besatzungen zu den Raumstationen der Sowjetunion brachte, dann zu Mir, dann zur Internationalen Raumstation, die mit eben diesen Amerikanern gebaut wurde. Als das Space Shuttle 2011 außer Dienst gestellt wurde, wurde Soyuz für neun Jahre die *einzige* Möglichkeit für irgendeinen Menschen, die Space Station zu erreichen: Das gesamte internationale Programm hing von einem sowjetischen Entwurf aus den 1960er Jahren ab."
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "goals.0.caption",
+    "old": "Endeavour angedockt an die International Space Station. Die einzigartige Kombination des Shuttle — eine große Besatzung, eine Ladebucht, ein Roboterarm und die Fähigkeit, Dinge nach Hause zu bringen — machte es zum Fahrzeug, das die großen Strukturen seiner Ära zusammenbaute und wartete.",
+    "new": "Endeavour angedockt an die Internationale Raumstation. Die einzigartige Kombination des Shuttle — eine große Besatzung, eine Ladebucht, ein Roboterarm und die Fähigkeit, Dinge nach Hause zu bringen — machte es zum Fahrzeug, das die großen Strukturen seiner Ära zusammenbaute und wartete."
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "goals.2.md",
+    "old": "Zwei dieser Dinge rechtfertigen das gesamte Programm. Das Shuttle brachte das Hubble Space Telescope in den Orbit und schickte dann fünfmal Besatzungen, um es im Orbit zu reparieren und aufzurüsten — und verwandelte ein fehlerhaftes Teleskop in das produktivste Observatorium der Geschichte und hielt es jahrzehntelang aktuell. Und es baute die International Space Station zusammen, flog die Module, Traversen und Solarmodule hinauf und verschraubte sie mit seinem Arm und seinen Weltraumspaziergängern. Beides war ohne ein Fahrzeug, das eine große Besatzung, eine große Nutzlast und die Werkzeuge für Arbeiten im Weltraum tragen konnte, nicht möglich. Das war der wahre Zweck des Shuttle, und darin war es unübertroffen.",
+    "new": "Zwei dieser Dinge rechtfertigen das gesamte Programm. Das Shuttle brachte das Hubble Space Telescope in den Orbit und schickte dann fünfmal Besatzungen, um es im Orbit zu reparieren und aufzurüsten — und verwandelte ein fehlerhaftes Teleskop in das produktivste Observatorium der Geschichte und hielt es jahrzehntelang aktuell. Und es baute die Internationale Raumstation zusammen, flog die Module, Traversen und Solarmodule hinauf und verschraubte sie mit seinem Arm und seinen Weltraumspaziergängern. Beides war ohne ein Fahrzeug, das eine große Besatzung, eine große Nutzlast und die Werkzeuge für Arbeiten im Weltraum tragen konnte, nicht möglich. Das war der wahre Zweck des Shuttle, und darin war es unübertroffen."
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "legacy.1.md",
+    "old": "Das dauerhafteste Erbe des Shuttle ist physisch: die International Space Station, die es zusammenbaute und die auf keine andere Weise hätte gebaut werden können, und das Hubble Space Telescope, das es aussetzte und wiederholt rettete. Diese beiden allein sichern seinen Platz. Aber sein Erbe ist auch warnend — die deutlichste Demonstration in der Raumfahrt, dass Wiederverwendbarkeit nicht dasselbe wie Billigkeit ist, dass ein experimentelles Fahrzeug nicht als routinemäßiges verkauft oder geflogen werden darf, und dass die Organisationskultur, nicht nur die Technik, entscheidet, ob eine gefährliche Maschine Menschen tötet.",
+    "new": "Das dauerhafteste Erbe des Shuttle ist physisch: die Internationale Raumstation, die es zusammenbaute und die auf keine andere Weise hätte gebaut werden können, und das Hubble Space Telescope, das es aussetzte und wiederholt rettete. Diese beiden allein sichern seinen Platz. Aber sein Erbe ist auch warnend — die deutlichste Demonstration in der Raumfahrt, dass Wiederverwendbarkeit nicht dasselbe wie Billigkeit ist, dass ein experimentelles Fahrzeug nicht als routinemäßiges verkauft oder geflogen werden darf, und dass die Organisationskultur, nicht nur die Technik, entscheidet, ob eine gefährliche Maschine Menschen tötet."
+  },
+  {
+    "rel": "programs/tiangong.json",
+    "at": "the_land.0.md",
+    "old": "Bis 2011 gab es einen Ort, an dem Menschen im All lebten, und China war dort nicht willkommen. Die International Space Station war eine Partnerschaft der Vereinigten Staaten, Russlands, Europas, Japans und Kanadas — und im selben Jahr verabschiedete der US-Kongress das Wolf Amendment, das der NASA die bilaterale Zusammenarbeit mit China ohne ausdrückliche Genehmigung untersagte. Die Botschaft war unmissverständlich: der Club war geschlossen. Chinas Antwort bestand nicht darin zu protestieren. Sie bestand darin, eine eigene Station zu bauen, mit einer eigenen Rakete, mit einer eigenen Raumkapsel, nach einem Zeitplan, den es im Voraus veröffentlichte und dann einhielt.",
+    "new": "Bis 2011 gab es einen Ort, an dem Menschen im All lebten, und China war dort nicht willkommen. Die Internationale Raumstation war eine Partnerschaft der Vereinigten Staaten, Russlands, Europas, Japans und Kanadas — und im selben Jahr verabschiedete der US-Kongress das Wolf Amendment, das der NASA die bilaterale Zusammenarbeit mit China ohne ausdrückliche Genehmigung untersagte. Die Botschaft war unmissverständlich: der Club war geschlossen. Chinas Antwort bestand nicht darin zu protestieren. Sie bestand darin, eine eigene Station zu bauen, mit einer eigenen Rakete, mit einer eigenen Raumkapsel, nach einem Zeitplan, den es im Voraus veröffentlichte und dann einhielt."
+  }
+]

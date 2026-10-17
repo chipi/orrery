@@ -6,22 +6,22 @@
   "residents": [
     {
       "id": "mercury",
-      "label": "Mercury — 0,39 AU",
+      "label": "Меркурий — 0,39 AU",
       "agency": "NATURAL"
     },
     {
       "id": "venus",
-      "label": "Venus — 0,72 AU",
+      "label": "Венера — 0,72 AU",
       "agency": "NATURAL"
     },
     {
       "id": "earth",
-      "label": "Earth — 1,00 AU",
+      "label": "Земля — 1,00 AU",
       "agency": "NATURAL"
     },
     {
       "id": "mars",
-      "label": "Mars — 1,52 AU",
+      "label": "Марс — 1,52 AU",
       "agency": "NATURAL"
     }
   ],

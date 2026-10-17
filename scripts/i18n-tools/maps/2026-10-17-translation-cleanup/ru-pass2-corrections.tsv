@@ -1,0 +1,60 @@
+# Hand corrections for the ru pass-2 edits (patch-edits.mjs), read line by line 2026-10-17.
+belts/asteroid	открывает Церера из Палермо, первоначально классифицированный как планета	открывает Цереру из Палермо, первоначально классифицированную как планету
+belts/asteroid	что Церера был одним из многих	что Церера была одной из многих
+belts/asteroid	затем Церера)	затем Цереры)
+belts/kuiper	открыт в 2005 году (его открытие привело к реклассификации Плутон)	открыта в 2005 году (её открытие привело к реклассификации Плутона)
+essays/going-to-mars	историю кратер Гейл	историю кратера Гейл
+fleet/crewed-spacecraft/atlantis	открывших Венера и Юпитер	открывших Венеру и Юпитер
+fleet/launch-site/cape-canaveral-lc-36b	Стартовый комплекс мыс Канаверал Launch Complex 36B был	Стартовый комплекс 36B был
+fleet/launch-site/lc-39a	Стартовый комплекс 39A была построена	Стартовый комплекс 39A был построен
+fleet/launch-site/lc-5	Музея Air Force Station мыс Канаверал	Музея базы ВВС на мысе Канаверал
+fleet/launch-site/plesetsk-43	на Байконур или Вэньчан)	на Байконуре или в Вэньчане)
+fleet/launch-site/sriharikota-slp	запуск Марса-зонда Mangalyaan	запуск марсианского зонда Mangalyaan
+fleet/launch-site/taiyuan-lc-9	LC-9 центра космодрома Тайюань	LC-9 космодрома Тайюань
+fleet/launch-site/tanegashima-yoshinobu	География Танегасима	География Танегасимы
+fleet/launch-site/wenchang-lc-101	Вэньчан, LC-101 посвящена	LC-101 космодрома Вэньчан посвящена
+fleet/launch-site/xichang-lc-2	Центра запуска спутников Сичана	Центра запуска спутников Сичан
+fleet/launch-site/xichang-lc-3	Сичан, LC-3 принимал	LC-3 космодрома Сичан принимал
+fleet/launcher/ariane-1	программы Европы	программы Europa
+fleet/observatory/jwst	Расположен на Солнце-Земля L2	Расположен в точке L2 системы Солнце — Земля
+fleet/orbiter/dart	вокруг своего родителя Дидим	вокруг своего родителя Дидима
+fleet/rover/lunokhod-1	на Луне Море Дождей	на Луне в Море Дождей
+missions/ceres/dawn	с огромным Вестой	с огромной Вестой
+missions/earth/otv-4	на Shuttle Landing Facility Космический центр Кеннеди	на посадочной полосе шаттлов Космического центра Кеннеди
+missions/earth/otv-7	полосу база Ванденберг	полосу базы Ванденберг
+missions/asteroid/near-shoemaker	Мыс Канаверал, 17-02-1996	мыс Канаверал, 17-02-1996
+missions/eurybates/lucy	двойная система Патрокла-Менетий	двойная система Патрокл — Менетий
+missions/eurybates/lucy	401 с космодрома мыс Канаверал, SLC-41.	401 с мыса Канаверал, SLC-41.
+missions/jupiter/galileo	обвивало Европа	обвивало Европу
+missions/jupiter/galileo	не упасть на Европе	не упасть на Европу
+missions/mars/starship-demo	с Бока-Чика или мыс Канаверал	с Бока-Чики или мыса Канаверал
+missions/mars/starship-mars-crew	или мыс Канаверал.	или мыса Канаверал.
+missions/mars/viking1	для спуска на равнине Хриса	для спуска на равнину Хриса
+missions/moon/apollo13	в нагорья формация Фра Мауро	в нагорье Фра Мауро
+missions/moon/apollo13	на нагорья формация Фра Мауро	на нагорье Фра Мауро
+missions/moon/apollo13	подхода к формации Фра Мауро	подхода к нагорью Фра Мауро
+missions/moon/apollo14	в нагорье формация Фра Мауро	в нагорье Фра Мауро
+missions/moon/apollo14	на плато формация Фра Мауро	на плато Фра Мауро
+missions/moon/change5	спускается на пике Рюмкера (Океан Бурь)	спускается на пик Рюмкера (Океан Бурь)
+missions/moon/luna21	на южном краю Море Ясности	на южном краю Моря Ясности
+orbit-regimes/LEO	МКС — МКС	МКС — Международная космическая станция
+planets/menoetius	с Патрокла на 60° позади Юпитер	с Патроклом на 60° позади Юпитера
+planets/patroclus	в паре со 104-км Менетий	в паре со 104-км Менетием
+programs/galileo	не упадёт на Европе	не упадёт на Европу
+programs/new-horizons	спутник Харона:	спутник Харон:
+satellites/callisto	приливный нагрев Ио, Европа и Ганимед	приливный нагрев Ио, Европы и Ганимеда
+satellites/ganymede	с Ио и Европа —	с Ио и Европой —
+satellites/io	накачиваемой Европа и Ганимед	накачиваемой Европой и Ганимедом
+science/_landing	к Луне (TLI), Марс (TMI), Венера (TVI) или Юпитер (TJI)	к Луне (TLI), Марсу (TMI), Венере (TVI) или Юпитеру (TJI)
+science/life-in-space/mars-habitat-design	MOXIE (Марс OXygen	MOXIE (Mars OXygen
+science/mission-phases/trans-x-injection	Венера (Венера)	Венера
+science/mission-phases/trans-x-injection	Юпитер (Юпитер)	Юпитер
+science/mission-phases/trans-x-injection	в сторону Юпитер Voyager	в сторону Юпитера Voyager
+science/orbits/eccentricity	Комета Галлея Comet	Комета Галлея
+science/orbits/hill-sphere	«Марс-1»,1 млн км	Марс 1,1 млн км
+science/orbits/keplerian-orbit	тень Юпитер.	тень Юпитера.
+science/orbits/sun-synchronous	Плесецк (62,9°N) или Вэньчан (19,6°N	Плесецка (62,9°N) или Вэньчана (19,6°N
+science/planets/asteroid-belt	а затем Церера —	а затем Цереры —
+science/planets/magnetic-fields	Диполи Уран и Нептун	Диполи Урана и Нептуна
+science/planets/sub-solar-and-terminator	Большое Тёмное Пятно Нептун)	Большое Тёмное Пятно Нептуна)
+small-bodies/didymos	столкнулся с его спутником Диморф	столкнулся с его спутником Диморфом

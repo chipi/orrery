@@ -6,6 +6,7 @@
 //   node scripts/i18n-tools/glossary-apply.mjs <loc> <class[,class…]>
 import fs from 'node:fs';
 import path from 'node:path';
+import { declineRu, dropHeadIfRepeated, guessCaseRu } from './ru-case.mjs';
 const [loc, classes = 'body'] = process.argv.slice(2);
 const GL = JSON.parse(fs.readFileSync('scripts/i18n-tools/native-terms.json', 'utf8'));
 // Longest first, so "Cape Canaveral" is replaced before a shorter key could match inside it.
@@ -43,6 +44,16 @@ const ALIAS = {
       }),
   // Before 2021 it was an Air Force Base — not "Space Force" (dates matter in these notes).
   'Vandenberg AFB': AFB,
+  'Vandenberg SFB': GL.facility['Vandenberg Space Force Base'],
+  '1P/Halley': {
+    ru: '1P/Галлея',
+    ja: '1P/ハレー',
+    'zh-CN': '1P/哈雷',
+    ko: '1P/핼리',
+    hi: '1P/हैली',
+    ar: '1P/هالي',
+    'sr-Cyrl': '1P/Халеј',
+  },
   'Vandenberg Air Force Base': AFB,
   'Baikonur Site 1': sitePages["Baikonur Site 1/5 (Gagarin's Start)"] && {
     [loc]: sitePages["Baikonur Site 1/5 (Gagarin's Start)"][loc]
@@ -65,12 +76,43 @@ const G = Object.fromEntries(
     .sort((a, b) => b[0].length - a[0].length),
 );
 const VEH =
-  /\b(Saturn ?(V|IB|I|1B|5)\b|Blue Moon|[Tt]rans-[A-Z][a-z]+|[A-Z][a-z]+-watching|Lunar-Earth|Mars ?(Express|Pathfinder|Global|Reconnaissance|Odyssey|Climate|Polar|Observer|Science|Orbiter|Sample|Exploration|Atmosphere|Cube|One|Society|Direct|Base|Ascent|Helicopter|Organic|Z-2|Hope|Curiosity|[0-9]+(?![.,][0-9])|-[0-9])|Mercury[- ](Magnetospher|Atlas|Redstone|Seven|program|capsule|Mark|Transfer|Planetary|[0-9]+(?![.,][0-9]))|Atlas-Mercury|Project Mercury|Venus ?(Express|Climate)|Jupiter ?(Icy|C\b|-C|IRBM|Trojan)|Europa ?(Clipper|Lander|rocket)|Pluto ?(Kuiper|Express)|Moon ?(Mineralogy|Express)|Titan ?(II|III|IV|I\b|GLV|23|rocket)|Earth ?(Observing|Return)|Near-Earth|Sub-Earth|Trans-Earth|trans-Mars|Halley ?(Armada)|Pioneer Venus|ISS-[A-Za-z]|Phobos[ -]?[0-9]|[Oo]f the (Sun|Moon|Earth)|Moon Trees?|Moon[ -](Village|Sniper)|close Earth|Earth (gravity|flyby|swing)|(Sun|Earth|Moon)[ -]?(point|flyby)|Emirates Mars Mission|Starship Mars|Mars Surveyor|Mars (Sample|Science|Ascent|Base|Society|Direct|Climate|Polar|Global|Observer|Odyssey|Express|Pathfinder|Exploration)|[Nn]ear-Earth|[A-Z][a-z]+-(sized|like|class|mass|radius|watching)|Moon Impact|Mars (Relay|Oxygen))/g;
+  /\b(Saturn ?(V|IB|I|1B|5)\b|Blue Moon|[Tt]rans-[A-Z][a-z]+|[A-Z][a-z]+-watching|Lunar-Earth|Mars ?(Express|Pathfinder|Global|Reconnaissance|Odyssey|Climate|Polar|Observer|Science|Orbiter|Sample|Exploration|Atmosphere|Cube|One|Society|Direct|Base|Ascent|Helicopter|Organic|Z-2|Hope|Curiosity|[0-9]+(?![.,][0-9])|-[0-9])|Mercury[- ](Magnetospher|Atlas|Redstone|Seven|program|capsule|Mark|Transfer|Planetary|[0-9]+(?![.,][0-9]))|Atlas-Mercury|Project Mercury|Venus ?(Express|Climate)|Jupiter ?(Icy|C\b|-C|IRBM|Trojan)|Europa ?(Clipper|Lander|rocket)|Pluto ?(Kuiper|Express)|Moon ?(Mineralogy|Express)|Titan ?(II|III|IV|I\b|GLV|23|rocket)|Earth ?(Observing|Return)|Near-Earth|Sub-Earth|Trans-Earth|trans-Mars|Halley ?(Armada)|Pioneer Venus|ISS-[A-Za-z]|Phobos[ -]?[0-9]|[Oo]f the (Sun|Moon|Earth)|Moon Trees?|Halley Multicolour|Polar Jupiter|Tianwen Mars|Mars (Perseverance|Curiosity|2020)|Moon[ -](Village|Sniper)|close Earth|Earth (gravity|flyby|swing)|(Sun|Earth|Moon)[ -]?(point|flyby)|Emirates Mars Mission|Starship Mars|Mars Surveyor|Mars (Sample|Science|Ascent|Base|Society|Direct|Climate|Polar|Global|Observer|Odyssey|Express|Pathfinder|Exploration)|[Nn]ear-Earth|[A-Z][a-z]+-(sized|like|class|mass|radius|watching)|Moon Impact|Mars (Relay|Oxygen))/g;
 const ROCKET_FAMILY = new Set(['Saturn', 'Titan', 'Jupiter']);
 const ROCKET_PATH =
   /(^|\/)fleet\/(launcher|engine|launch-site)\/|programs\/(apollo|skylab|gemini|mercury)\b|missions\/earth\/(gemini|mercury)|rockets\//;
 const ROCKET_WORDS =
   /rocket|launch|booster|engine|missile|stage|Redstone|ロケット|エンジン|ミサイル|火箭|发动机|导弹|운반|로켓|엔진|미사일|ракет|двигател|ракета|रॉकेट|इंजन|صاروخ|محرك|ракет|мотор|razz|missil|misil|motor|fusée|cohete|foguete|Rakete|raket|Triebwerk|lanceur|lanzador/i;
+// ru: every glossary form in every case, to carry a case across "X и Y", "X, Y", "X + Y"
+const RU_FORMS = (() => {
+  const m = new Map();
+  for (const cls of ['body', 'feature', 'place', 'facility'])
+    for (const f of Object.values(GL[cls] ?? {}))
+      // indeclinable forms (Ио, Бенну) say nothing about the case of their neighbours
+      if (f.ru)
+        for (const c of ['gen', 'dat', 'ins', 'pre'])
+          if (declineRu(f.ru, c) !== f.ru) m.set(declineRu(f.ru, c), [c, f.ru]);
+  return m;
+})();
+const RU_NOM = new Set([...RU_FORMS.values()].map(([, n]) => n));
+function coordinateRu(s) {
+  let prev;
+  do {
+    prev = s;
+    for (const [form, [c]] of RU_FORMS) {
+      s = s.replace(
+        new RegExp(`(${form})(\\s*(?:,|и|или|\\+)\\s+)([А-ЯЁ][а-яё]+(?: [А-ЯЁа-яё]+)?)`, 'g'),
+        (m, a, sep, b) => {
+          const nom = [...RU_NOM].find(
+            (n) => b.startsWith(n) && (b.length === n.length || /\s/.test(b[n.length])),
+          );
+          if (!nom || (RU_FORMS.get(a)?.[1] === nom && declineRu(nom, c) === nom)) return m;
+          return a + sep + declineRu(nom, c) + b.slice(nom.length);
+        },
+      );
+    }
+  } while (s !== prev);
+  return s;
+}
 const LATIN = new Set(['de', 'fr', 'es', 'it', 'nl', 'pt-BR']);
 // The glossary holds the form used inside a sentence ("cráter Gale", "Terre"); a
 // Romance/Germanic sentence needs the article the English source didn't have. These
@@ -92,6 +134,8 @@ const ART = {
     [/\be (EEI)\b/g, 'y $1'],
   ],
   fr: [
+    [/\b([Dd]e |[Àà] )?l'Station spatiale/g, (m, p) => `${p ?? ''}la Station spatiale`],
+    [/\b([Dd])u Station spatiale/g, '$1e la Station spatiale'],
     [/\bà (Mer|Océan)\b/g, (m, w) => (w === 'Mer' ? 'dans la mer' : "dans l'océan")],
     [/\b(du|le) (base|station)\b/g, (m, a, w) => `${a === 'du' ? 'de la' : 'la'} ${w}`],
     [/\b(à|depuis|vers) (base|station)\b/g, '$1 la $2'],
@@ -122,6 +166,10 @@ const ART = {
     [/\bde Sol\b/g, 'do Sol'],
   ],
   de: [
+    [
+      /\b(der|zur|einer|an der|auf der|von der|bei der|mit der|in der) Internationale Raumstation/g,
+      '$1 Internationalen Raumstation',
+    ],
     [/\bdes ([A-Z][\wäöü-]*-Krater)(?!s)\b/g, 'des $1s'],
     [/\b(auf|von) Erde\b/g, '$1 der Erde'],
     [
@@ -187,6 +235,13 @@ for (const f of walk(`i18n-src/${loc}`)) {
       for (const [en, forms] of Object.entries(G)) {
         if (en === 'Mercury' && !MERCURY_PLANET.test(rel)) continue;
         if (en === 'Halley' && LATIN.has(loc)) continue;
+        if (
+          en === 'Halley' &&
+          !/comet|комет|彗星|혜성|धूमकेतु|مذنب|1P\/|Giotto|Vega|Вега|Halley[- ]?(flyby|armada)|пролёт|облёт|рой|флот/i.test(
+            v,
+          )
+        )
+          continue;
         // "Formación Fra Mauro" holds the English key: swapping would rewrite text that already
         // names it ("Tierras Altas de Fra Mauro" → "…de Formación Fra Mauro").
         const nat = forms[loc];
@@ -218,12 +273,29 @@ for (const f of walk(`i18n-src/${loc}`)) {
               a && (CJK.test(before) || /[（「『(]/.test(before)) && loc !== 'ko' ? '' : a;
             const trail =
               b && (CJK.test(after) || /[、。，：）」』)]/.test(after)) && loc !== 'ko' ? '' : b;
-            return lead + nat + trail;
+            let here = nat;
+            if (loc === 'ru') {
+              const before = str.slice(Math.max(0, off - 40), off) + a;
+              here = dropHeadIfRepeated(nat, before) ?? declineRu(nat, guessCaseRu(before));
+              // mid-sentence the generic word is lower-case (равнина Утопия); lunar seas keep Море
+              if (/^(Равнин|Плато|Долин|Кратер|Пик|Формаци|Нагорь|Космодром|Мыс)/.test(here))
+                here = here.charAt(0).toLowerCase() + here.slice(1);
+              if (!before.trim() || /[.!?:]\s*$/.test(before))
+                here = here.charAt(0).toUpperCase() + here.slice(1);
+            }
+            return lead + here + trail;
           },
         );
         if (loc === 'ko') s = koParticles(s, nat);
       }
       if (LATIN.has(loc) && s !== v) s = articles(s);
+      if (loc === 'ru' && s !== v) s = coordinateRu(s);
+      // Russian says "на" for plains, plateaus, peaks, mountains and capes (на плато Оксия)
+      if (loc === 'ru' && s !== v)
+        s = s.replace(
+          /(^|[\s(])[вВ] ((?:равнине|плато|пике|горе|мысе) [А-ЯЁ])/g,
+          (m, p, w) => `${p}${m.trim()[0] === 'В' ? 'На' : 'на'} ${w}`,
+        );
       s = s.replace(/\u{e000}(\d+)\u{e000}/gu, (_, i) => keep[i]);
       if (s !== v) {
         edits.push({ rel, at, old: v, new: s });

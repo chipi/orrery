@@ -5,7 +5,7 @@
     "ar:Ryugu,Arrokoth,Bennu": "qna.org.qa (ريوغو), aljazeera.net (أروكوث), youm7.com (ريوجو وبينو)",
     "features": "Wikidata sitelinks = each language Wikipedia title (scripts/i18n-tools/wikidata-labels.mjs → maps/2026-10-17-translation-cleanup/wikidata-features.tsv). ru/ja/zh/ko/ar/sr translate maria and Mars features; de/es/it/nl/pt keep Latin IAU names; fr per frwiki title (Mer de la Tranquillité, but Mare Crisium). zh-CN converted to simplified. hi: no hiwiki articles — meaning translated like ja/zh/ru (शांति सागर); Mars-feature forms without a native article follow the nearest language pattern and are unverified. Every cell whose locale shows \"-\" in wikidata-features.tsv (no article in that language) is a constructed form, unverified: Mars features in ko/hi/ar/sr-Cyrl, Hadley–Apennine and Fra Mauro in most locales, Margaritifer Sinus and Aeolis Mons (no Wikidata hit), Shioli in zh-CN.",
     "places": "Each language Wikipedia title via wikidata-labels.mjs (maps/2026-10-17-translation-cleanup/wikidata-launch-sites.tsv). Launch sites are places: native in every locale where its Wikipedia writes them natively; de/it/nl keep Cape Canaveral. Pad codes (SLC-40, LC-39A) unchanged. Unverified (no article in that language): sr-Cyrl Кејп Канаверал, Ђиуцјуен, Тајјуен, Венчанг, Сичанг, Старбејс, Танегашима; ar/hi Jiuquan..Xichang where \"-\"; Starbase in ja/ko/hi/ar.",
-    "station": "ISS: every Wikipedia uses its own language name; abbreviation in text: ru МКС, sr-Cyrl МСС (Међународна свемирска станица), es EEI; zh-CN and ar use the full name; others write ISS.",
+    "station": "ISS: every Wikipedia uses its own language name; abbreviation in text: ru МКС, sr-Cyrl МСС (Међународна свемирска станица), es EEI; zh-CN and ar use the full name; others write ISS. Full name: each Wikipedia title; ru uses МКС in running text (the full name needs adjective declension; Russian prose writes МКС). nl keeps ISS (nlwiki \"ISS (ruimtestation)\"; Dutch prose: het ISS).",
     "facility": "Whole facility names = each language Wikipedia title (wikidata-launch-sites.tsv), lower-cased where they run inside a sentence. Unverified where that language has no article (sr-Cyrl, hi for most, Air Force Station forms)."
   },
   "body": {
@@ -1259,6 +1259,21 @@
       "it": "ISS",
       "nl": "ISS",
       "pt-BR": "ISS"
+    },
+    "International Space Station": {
+      "ru": "МКС",
+      "ja": "国際宇宙ステーション",
+      "zh-CN": "国际空间站",
+      "ko": "국제우주정거장",
+      "hi": "अंतर्राष्ट्रीय अंतरिक्ष स्टेशन",
+      "ar": "محطة الفضاء الدولية",
+      "sr-Cyrl": "Међународна свемирска станица",
+      "de": "Internationale Raumstation",
+      "fr": "Station spatiale internationale",
+      "es": "Estación Espacial Internacional",
+      "it": "Stazione spaziale internazionale",
+      "nl": "ISS",
+      "pt-BR": "Estação Espacial Internacional"
     }
   },
   "facility": {

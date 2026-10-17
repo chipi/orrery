@@ -1,1 +1,116 @@
-[]
+[
+  {
+    "rel": "fleet/crewed-spacecraft/endeavour.json",
+    "at": "dispatch",
+    "old": "Endeavour，OV-105，是最后一架建造的轨道器——用结构备件组装以替代 Challenger，因此即使是机队中最新的成员也承载着其最黑暗时刻的记忆。它执行了首次 Hubble 维护任务 STS-61，该飞行任务修正了望远镜的缺陷镜面并挽救了天文台的声誉，并且在 International Space Station 的组装中承担了重要工作。它是机队中最年轻的，也是最繁忙的之一，一直飞行到该计划的最后几年。",
+    "new": "Endeavour，OV-105，是最后一架建造的轨道器——用结构备件组装以替代 Challenger，因此即使是机队中最新的成员也承载着其最黑暗时刻的记忆。它执行了首次 Hubble 维护任务 STS-61，该飞行任务修正了望远镜的缺陷镜面并挽救了天文台的声誉，并且在国际空间站的组装中承担了重要工作。它是机队中最年轻的，也是最繁忙的之一，一直飞行到该计划的最后几年。"
+  },
+  {
+    "rel": "fleet/engine/le-7a.json",
+    "at": "description",
+    "old": "LE-7A发动机赋予日本完全自主的重型运载能力。由Mitsubishi Heavy Industries为JAXA开发，采用分级燃烧循环，以LOX和LH2为推进剂——这种热力学方案可从氢燃料中提取最大效率——并于2001年8月首次搭载H-IIA飞行，是原始LE-7的改进继承者。重新设计解决了曾导致早期H-II失败的涡轮泵问题，LE-7A随后成为H-IIA和H-IIB运营生涯的中坚力量，服役至2024年，为International Space Station发射了日本的HTV货运飞船，并搭载了JAXA-ISRO雷达卫星ALOS系列。",
+    "new": "LE-7A发动机赋予日本完全自主的重型运载能力。由Mitsubishi Heavy Industries为JAXA开发，采用分级燃烧循环，以LOX和LH2为推进剂——这种热力学方案可从氢燃料中提取最大效率——并于2001年8月首次搭载H-IIA飞行，是原始LE-7的改进继承者。重新设计解决了曾导致早期H-II失败的涡轮泵问题，LE-7A随后成为H-IIA和H-IIB运营生涯的中坚力量，服役至2024年，为国际空间站发射了日本的HTV货运飞船，并搭载了JAXA-ISRO雷达卫星ALOS系列。"
+  },
+  {
+    "rel": "fleet/station/iss.json",
+    "at": "dispatch",
+    "old": "International Space Station是人类在太空中建造的最大结构,也是航天时代所有线索汇聚之处。它的俄罗斯核心舱直接源自Salyut和Mir;美国舱段则源自Skylab;由Space Shuttle组装,由Soyuz运送乘员,由Progress货运飞船的后续型号提供补给,并搭载着欧洲和日本建造的实验舱——几乎所有早期项目都以遗产的形式存在于其中。自1998年开始组装并自2000年11月起持续载人,它是历史上人类在地球之外最长的不间断驻留,也是一个理念的最清晰证明:太空中最伟大的成就不是靠赢得竞赛来实现的,而是由昔日的对手年复一年地选择共同建造而实现的。",
+    "new": "国际空间站是人类在太空中建造的最大结构,也是航天时代所有线索汇聚之处。它的俄罗斯核心舱直接源自Salyut和Mir;美国舱段则源自Skylab;由Space Shuttle组装,由Soyuz运送乘员,由Progress货运飞船的后续型号提供补给,并搭载着欧洲和日本建造的实验舱——几乎所有早期项目都以遗产的形式存在于其中。自1998年开始组装并自2000年11月起持续载人,它是历史上人类在地球之外最长的不间断驻留,也是一个理念的最清晰证明:太空中最伟大的成就不是靠赢得竞赛来实现的,而是由昔日的对手年复一年地选择共同建造而实现的。"
+  },
+  {
+    "rel": "fleet/station/iss.json",
+    "at": "description",
+    "old": "International Space Station是人类自2000年11月以来占用时间最长的连续载人生境。NASA、Roscosmos、ESA、JAXA以及CSA共进行了40多次发射。目前计划于2031年左右脱轨。",
+    "new": "国际空间站是人类自2000年11月以来占用时间最长的连续载人生境。NASA、Roscosmos、ESA、JAXA以及CSA共进行了40多次发射。目前计划于2031年左右脱轨。"
+  },
+  {
+    "rel": "orbit-regimes/LEO.json",
+    "at": "residents.0.label",
+    "old": "国际空间站 — International Space Station",
+    "new": "国际空间站"
+  },
+  {
+    "rel": "programs/esa-human.json",
+    "at": "the_land.1.md",
+    "old": "这始于1983年的Spacelab——一个欧洲建造的实验室,搭载在Space Shuttle的货舱中,将Space Shuttle变成了科学平台,并在首次飞行中载上了第一位ESA航天员。随后是Columbus,欧洲固定安装在International Space Station上的永久实验舱,以及Automated Transfer Vehicle,那个时代最大、最复杂的货运飞船。在此过程中,欧洲航天员搭乘Space Shuttle和Soyuz飞行,在Mir和国际空间站上生活,并担任空间站指令长。欧洲从未发射过自己的乘组——却成为了几乎所有这样做的国家的必需伙伴。",
+    "new": "这始于1983年的Spacelab——一个欧洲建造的实验室,搭载在Space Shuttle的货舱中,将Space Shuttle变成了科学平台,并在首次飞行中载上了第一位ESA航天员。随后是Columbus,欧洲固定安装在国际空间站上的永久实验舱,以及Automated Transfer Vehicle,那个时代最大、最复杂的货运飞船。在此过程中,欧洲航天员搭乘Space Shuttle和Soyuz飞行,在Mir和国际空间站上生活,并担任空间站指令长。欧洲从未发射过自己的乘组——却成为了几乎所有这样做的国家的必需伙伴。"
+  },
+  {
+    "rel": "programs/esa-human.json",
+    "at": "goals.0.caption",
+    "old": "International Space Station,欧洲是其完全合作伙伴。ESA的Columbus实验舱是它的永久组成部分,欧洲航天员曾在上面生活并担任指令长——这是选择加入而非单干的成果。",
+    "new": "国际空间站,欧洲是其完全合作伙伴。ESA的Columbus实验舱是它的永久组成部分,欧洲航天员曾在上面生活并担任指令长——这是选择加入而非单干的成果。"
+  },
+  {
+    "rel": "programs/esa-human.json",
+    "at": "goals.2.md",
+    "old": "这一策略有一个隐藏的优势:贡献一个必不可少的部分就能获得永久的话语权。通过建造Spacelab,欧洲赢得了Space Shuttle上的一席之地;通过建造Columbus和ATV,它成为International Space Station完全平等的伙伴,拥有自己的实验室和不可或缺的补给飞船。一个只购买座位的国家只是客户;而欧洲通过建造他人依赖的能力,成为了伙伴——在这项事业中拥有真正的发言权。",
+    "new": "这一策略有一个隐藏的优势:贡献一个必不可少的部分就能获得永久的话语权。通过建造Spacelab,欧洲赢得了Space Shuttle上的一席之地;通过建造Columbus和ATV,它成为国际空间站完全平等的伙伴,拥有自己的实验室和不可或缺的补给飞船。一个只购买座位的国家只是客户;而欧洲通过建造他人依赖的能力,成为了伙伴——在这项事业中拥有真正的发言权。"
+  },
+  {
+    "rel": "programs/esa-human.json",
+    "at": "legacy.0.caption",
+    "old": "International Space Station——欧洲帮助建造和维持的事业,也是一个国家可以在从未发射过自己乘组的情况下深刻塑造载人航天的证明。",
+    "new": "国际空间站——欧洲帮助建造和维持的事业,也是一个国家可以在从未发射过自己乘组的情况下深刻塑造载人航天的证明。"
+  },
+  {
+    "rel": "programs/iss.json",
+    "at": "the_land.0.md",
+    "old": "这部图集中的一切都通向这里。International Space Station不是全新的开始,而是汇聚点——美国和苏联两条独立的载人航天历史最终融合为一个单一结构和单一乘组的地方。它的俄罗斯部分直接继承自Salyut和Mir;它的美国部分继承自Skylab;它由Space Shuttle组装,由Soyuz运送乘组,由Progress货运飞船的后继型号提供补给,并搭载着欧洲和日本建造的实验舱。此前几乎每个项目都以实体形式存在于其中,作为遗产被栓接到轨道上。",
+    "new": "这部图集中的一切都通向这里。国际空间站不是全新的开始,而是汇聚点——美国和苏联两条独立的载人航天历史最终融合为一个单一结构和单一乘组的地方。它的俄罗斯部分直接继承自Salyut和Mir;它的美国部分继承自Skylab;它由Space Shuttle组装,由Soyuz运送乘组,由Progress货运飞船的后继型号提供补给,并搭载着欧洲和日本建造的实验舱。此前几乎每个项目都以实体形式存在于其中,作为遗产被栓接到轨道上。"
+  },
+  {
+    "rel": "programs/iss.json",
+    "at": "goals.0.caption",
+    "old": "建成后的International Space Station——一个足球场大小的结构,由在三大洲建造的舱段在轨道上组装而成,自2000年11月起持续载人。",
+    "new": "建成后的国际空间站——一个足球场大小的结构,由在三大洲建造的舱段在轨道上组装而成,自2000年11月起持续载人。"
+  },
+  {
+    "rel": "programs/iss.json",
+    "at": "outcome.0.caption",
+    "old": "组装过程中的International Space Station。在1998年至2011年间通过四十多次飞行逐舱建造,它是在地面之外进行过的最雄心勃勃的建设项目。",
+    "new": "组装过程中的国际空间站。在1998年至2011年间通过四十多次飞行逐舱建造,它是在地面之外进行过的最雄心勃勃的建设项目。"
+  },
+  {
+    "rel": "programs/salyut.json",
+    "at": "legacy.0.caption",
+    "old": "一个全尺寸 Salyut 与一艘对接的 Soyuz 渡船。Salyut 在七个空间站中摸索出的\"空间站+渡船+货运飞船\"模式，基本未变，此后 Mir 和 International Space Station 一直沿用至今。",
+    "new": "一个全尺寸 Salyut 与一艘对接的 Soyuz 渡船。Salyut 在七个空间站中摸索出的\"空间站+渡船+货运飞船\"模式，基本未变，此后 Mir 和国际空间站一直沿用至今。"
+  },
+  {
+    "rel": "programs/skylab.json",
+    "at": "narrative.0.md",
+    "old": "Skylab的决定性时刻是那次维修,它的意义比初看起来更重大。直到1973年,航天器本质上是一次性的、不可维修的:如果某处损坏,任务就会降级或失败。Skylab证明了相反的情况——一支配备工具、训练和应变能力的乘组能够拯救一台灾难性失效的机器。这个单一理念,即轨道硬件是*可维护的*,直接延伸到Hubble维修任务以及维持International Space Station运行的持续维修和升级工作。",
+    "new": "Skylab的决定性时刻是那次维修,它的意义比初看起来更重大。直到1973年,航天器本质上是一次性的、不可维修的:如果某处损坏,任务就会降级或失败。Skylab证明了相反的情况——一支配备工具、训练和应变能力的乘组能够拯救一台灾难性失效的机器。这个单一理念,即轨道硬件是*可维护的*,直接延伸到Hubble维修任务以及维持国际空间站运行的持续维修和升级工作。"
+  },
+  {
+    "rel": "programs/soyuz.json",
+    "at": "narrative.1.md",
+    "old": "它的任务也完全改变了。最初构想用于在登月竞赛中击败美国人,Soyuz输掉了那场竞赛,并被悄然重新定位——成为将乘组运送到苏联空间站、然后到Mir、再到与这些美国人共同建造的International Space Station的摆渡船。当美国Space Shuttle于2011年退役时,Soyuz在九年间成为任何人类抵达Space Station的*唯一*途径:整个国际计划依赖于一个源自1960年代的苏联设计。",
+    "new": "它的任务也完全改变了。最初构想用于在登月竞赛中击败美国人,Soyuz输掉了那场竞赛,并被悄然重新定位——成为将乘组运送到苏联空间站、然后到Mir、再到与这些美国人共同建造的国际空间站的摆渡船。当美国Space Shuttle于2011年退役时,Soyuz在九年间成为任何人类抵达Space Station的*唯一*途径:整个国际计划依赖于一个源自1960年代的苏联设计。"
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "goals.0.caption",
+    "old": "Endeavour对接到International Space Station。Shuttle独特的组合——大型机组、货舱、机械臂,以及将物品带回地球的能力——使其成为组装和维护那个时代伟大结构的飞行器。",
+    "new": "Endeavour对接到国际空间站。Shuttle独特的组合——大型机组、货舱、机械臂,以及将物品带回地球的能力——使其成为组装和维护那个时代伟大结构的飞行器。"
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "goals.2.md",
+    "old": "这两个成就足以为整个航天飞机计划辩护。航天飞机部署了Hubble Space Telescope，然后五次派遣航天员飞向轨道进行维修和升级——将一架有缺陷的望远镜变成了历史上最富成果的天文台，并使其保持数十年的前沿地位。它还组装了International Space Station，运上各个舱段、桁架和太阳能阵列，用机械臂和舱外航天员将它们连接在一起。没有一种能够运载大规模航天员、大型有效载荷和空间作业工具的航天器，这两项成就都是不可能的。这就是航天飞机真正的目的，在这方面，它是无与伦比的。",
+    "new": "这两个成就足以为整个航天飞机计划辩护。航天飞机部署了Hubble Space Telescope，然后五次派遣航天员飞向轨道进行维修和升级——将一架有缺陷的望远镜变成了历史上最富成果的天文台，并使其保持数十年的前沿地位。它还组装了国际空间站，运上各个舱段、桁架和太阳能阵列，用机械臂和舱外航天员将它们连接在一起。没有一种能够运载大规模航天员、大型有效载荷和空间作业工具的航天器，这两项成就都是不可能的。这就是航天飞机真正的目的，在这方面，它是无与伦比的。"
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "legacy.1.md",
+    "old": "Shuttle最持久的遗产是物质性的:International Space Station,由它组装且无法以任何其他方式建造,以及Hubble Space Telescope,由它部署并多次拯救。仅这两项就确保了它的地位。但它的遗产也是警示性的——航天飞行中最清晰地证明了可重复使用性不等于廉价,实验性飞行器不能被当作例行飞行器来推销或飞行,以及组织文化而非仅仅工程决定了一台危险机器是否会杀死人。",
+    "new": "Shuttle最持久的遗产是物质性的:国际空间站,由它组装且无法以任何其他方式建造,以及Hubble Space Telescope,由它部署并多次拯救。仅这两项就确保了它的地位。但它的遗产也是警示性的——航天飞行中最清晰地证明了可重复使用性不等于廉价,实验性飞行器不能被当作例行飞行器来推销或飞行,以及组织文化而非仅仅工程决定了一台危险机器是否会杀死人。"
+  },
+  {
+    "rel": "programs/tiangong.json",
+    "at": "the_land.0.md",
+    "old": "到2011年,人类在太空中生活的地方只有一个,而中国不受欢迎。International Space Station是美国、俄罗斯、欧洲、日本和加拿大的合作项目——同年,美国国会通过了Wolf Amendment,禁止NASA在未经明确批准的情况下与中国进行双边合作。信息很直白:俱乐部大门紧闭。中国的回应不是抗议,而是用自己的火箭、自己的载人舱,按照事先公布的时间表建造自己的空间站,并且如期完成。",
+    "new": "到2011年,人类在太空中生活的地方只有一个,而中国不受欢迎。国际空间站是美国、俄罗斯、欧洲、日本和加拿大的合作项目——同年,美国国会通过了Wolf Amendment,禁止NASA在未经明确批准的情况下与中国进行双边合作。信息很直白:俱乐部大门紧闭。中国的回应不是抗议,而是用自己的火箭、自己的载人舱,按照事先公布的时间表建造自己的空间站,并且如期完成。"
+  }
+]

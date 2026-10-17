@@ -1,128 +1,230 @@
 [
   {
-    "rel": "orbit-regimes-explore/GIANTS.json",
-    "at": "story",
-    "old": "Het buitenste planetaire domein — 5 tot 30 AU. Twee gasreuzen (Jupiter, Saturn) met waterstof-helium enveloppen van duizenden kilometers dik boven kleine rotsachtige kernen; twee ijsreuzen (Uranus, Neptunus) met water/ammoniak/methaan mantels onder dunnere gaslagen. Samen bevatten ze 99% van alle planetaire massa in het zonnestelsel. Elk heeft zijn eigen maansysteem dat fungeert als een miniatuur-zonnestelsel op zich — Jupiter alleen al heeft 95 bekende manen, waaronder vier die groter zijn dan Pluto.",
-    "new": "Het buitenste planetaire domein — 5 tot 30 AU. Twee gasreuzen (Jupiter, Saturnus) met waterstof-helium enveloppen van duizenden kilometers dik boven kleine rotsachtige kernen; twee ijsreuzen (Uranus, Neptunus) met water/ammoniak/methaan mantels onder dunnere gaslagen. Samen bevatten ze 99% van alle planetaire massa in het zonnestelsel. Elk heeft zijn eigen maansysteem dat fungeert als een miniatuur-zonnestelsel op zich — Jupiter alleen al heeft 95 bekende manen, waaronder vier die groter zijn dan Pluto."
+    "rel": "essays/generational-starships.json",
+    "at": "body.7.md",
+    "old": "Het eerste engineeringprobleem is het fundamenteelst: niets komt aan, niets vertrekt. Elk zuurstofatoom, water, stikstof, koolstof en spoormineraal dat de bemanning voor de hele reis nodig heeft, moet ofwel met het schip worden gelanceerd ofwel aan boord ervan oneindig worden geregeneerd, zonder falen. Het [ECLSS-levenondersteningssysteem](/science/life-in-space/eclss-life-support) aan boord van het International Space Station is het meest geavanceerde gesloten-kringlooplevenondersteningssysteem dat de mensheid heeft bediend — het herwint water uit vochtigheid, urine en cabinelucht; het genereert zuurstof door water te elektrolyseren; het onttrekt koolstofdioxide uit de atmosfeer. Het wordt enkele keren per jaar aangevuld met vrachtvoertuigen. Verwijder de aanvulling, en elke inefficiëntie in de lus accumuleert: elk kilogram water dat niet wordt teruggewonnen, elk gassenmolecuul dat niet wordt gerecycled, is een kilogram of een molecuul permanent verloren uit de totale inventaris van het schip. Over een reis van vier eeuwen wordt het aangroeien van kleine verliezen existentieel. Een systeem dat 99,9 procent efficiënt is, verliest over 430 jaar het equivalent van zijn volledige werkvoorraad vele malen. De lus moet, in de praktijk, compleet zijn.",
+    "new": "Het eerste engineeringprobleem is het fundamenteelst: niets komt aan, niets vertrekt. Elk zuurstofatoom, water, stikstof, koolstof en spoormineraal dat de bemanning voor de hele reis nodig heeft, moet ofwel met het schip worden gelanceerd ofwel aan boord ervan oneindig worden geregeneerd, zonder falen. Het [ECLSS-levenondersteningssysteem](/science/life-in-space/eclss-life-support) aan boord van het ISS is het meest geavanceerde gesloten-kringlooplevenondersteningssysteem dat de mensheid heeft bediend — het herwint water uit vochtigheid, urine en cabinelucht; het genereert zuurstof door water te elektrolyseren; het onttrekt koolstofdioxide uit de atmosfeer. Het wordt enkele keren per jaar aangevuld met vrachtvoertuigen. Verwijder de aanvulling, en elke inefficiëntie in de lus accumuleert: elk kilogram water dat niet wordt teruggewonnen, elk gassenmolecuul dat niet wordt gerecycled, is een kilogram of een molecuul permanent verloren uit de totale inventaris van het schip. Over een reis van vier eeuwen wordt het aangroeien van kleine verliezen existentieel. Een systeem dat 99,9 procent efficiënt is, verliest over 430 jaar het equivalent van zijn volledige werkvoorraad vele malen. De lus moet, in de praktijk, compleet zijn."
   },
   {
-    "rel": "orbit-regimes-explore/GIANTS.json",
-    "at": "residents.1.label",
-    "old": "Saturn — 9,58 AU, ringensysteem",
-    "new": "Saturnus — 9,58 AU, ringensysteem"
+    "rel": "essays/generational-starships.json",
+    "at": "body.12.caption",
+    "old": "Het International Space Station is het dichtst wat we hebben gebouwd naar een gesloten wereld — en het wordt om de paar weken van de aarde aangevuld. Een schip dat de lus compleet moet sluiten, voor duizend jaar, is een geheel ander probleem.",
+    "new": "Het ISS is het dichtst wat we hebben gebouwd naar een gesloten wereld — en het wordt om de paar weken van de aarde aangevuld. Een schip dat de lus compleet moet sluiten, voor duizend jaar, is een geheel ander probleem."
   },
   {
-    "rel": "planets/jupiter.json",
-    "at": "science_sections.0.why",
-    "old": "Jupiter heeft 101 bevestigde manen — de vier Galileïsche manen (Io, Europa, Ganymede, Callisto) zijn elk werelden op zich en volgen een 1:2:4 orbitale resonantie.",
-    "new": "Jupiter heeft 101 bevestigde manen — de vier Galileïsche manen (Io, Europa, Ganymedes, Callisto) zijn elk werelden op zich en volgen een 1:2:4 orbitale resonantie."
+    "rel": "essays/going-to-mars.json",
+    "at": "body.11.md",
+    "old": "De tweede muur is massa — en specifiek, de relatie tussen massa en afstand in een missie waarvan geen resupply mogelijk is. Op het International Space Station arriveert elke paar maanden een Progress-vrachtwagen met voedsel, water, apparatuur en onderdelen. De levenssteunsystemen van het station zijn in sommige opzichten gesloten maar in andere lek; water wordt gerecycled, maar consumptiegoederen worden regelmatig aangevuld vanaf Aarde. Een Marsbemanning krijgt geen dergelijke resupply. Wat met hen vertrekt is wat ze hebben. Elke kilogram voedsel, elke liter water, elk onderdeel voor elk cruciaal systeem moet ofwel van Aarde worden meegenomen — met buitengewone lanceerkosten — ofwel ter plaatse op Mars worden geproduceerd.",
+    "new": "De tweede muur is massa — en specifiek, de relatie tussen massa en afstand in een missie waarvan geen resupply mogelijk is. Op het ISS arriveert elke paar maanden een Progress-vrachtwagen met voedsel, water, apparatuur en onderdelen. De levenssteunsystemen van het station zijn in sommige opzichten gesloten maar in andere lek; water wordt gerecycled, maar consumptiegoederen worden regelmatig aangevuld vanaf Aarde. Een Marsbemanning krijgt geen dergelijke resupply. Wat met hen vertrekt is wat ze hebben. Elke kilogram voedsel, elke liter water, elk onderdeel voor elk cruciaal systeem moet ofwel van Aarde worden meegenomen — met buitengewone lanceerkosten — ofwel ter plaatse op Mars worden geproduceerd."
   },
   {
-    "rel": "satellites/europa.json",
-    "at": "science_sections.0.why",
-    "old": "Europa is het middelste lid van de Io–Europa–Ganymede 4:2:1 Laplace-resonantie — zijn gedwongen excentriciteit veroorzaakt getijdenbuiging die een ondergrondse oceaan vloeibaar houdt.",
-    "new": "Europa is het middelste lid van de Io–Europa–Ganymedes 4:2:1 Laplace-resonantie — zijn gedwongen excentriciteit veroorzaakt getijdenbuiging die een ondergrondse oceaan vloeibaar houdt."
+    "rel": "fleet/crewed-spacecraft/endeavour.json",
+    "at": "dispatch",
+    "old": "Endeavour, OV-105, was de laatst gebouwde orbiter — geassembleerd uit structurele reserveonderdelen ter vervanging van Challenger, zodat zelfs het nieuwste lid van de vloot de herinnering aan de zwartste dag meedroeg. Het vloog de eerste Hubble-onderhoudsmissie, STS-61, de vlucht die de gebrekkige spiegel van de telescoop corrigeerde en de reputatie van het observatorium redde, en het verrichtte zwaar werk bij de assemblage van het International Space Station. Het was de jongste van de vloot en een van de drukst bezette, vliegend tot de laatste jaren van het programma.",
+    "new": "Endeavour, OV-105, was de laatst gebouwde orbiter — geassembleerd uit structurele reserveonderdelen ter vervanging van Challenger, zodat zelfs het nieuwste lid van de vloot de herinnering aan de zwartste dag meedroeg. Het vloog de eerste Hubble-onderhoudsmissie, STS-61, de vlucht die de gebrekkige spiegel van de telescoop corrigeerde en de reputatie van het observatorium redde, en het verrichtte zwaar werk bij de assemblage van het ISS. Het was de jongste van de vloot en een van de drukst bezette, vliegend tot de laatste jaren van het programma."
   },
   {
-    "rel": "satellites/ganymede.json",
-    "at": "mission_visits.3",
-    "old": "JUICE — ESA, aankomst 2031 (inbrenging in Ganymede-baan 2034)",
-    "new": "JUICE — ESA, aankomst 2031 (inbrenging in Ganymedes-baan 2034)"
+    "rel": "fleet/engine/le-7a.json",
+    "at": "description",
+    "old": "De LE-7A is de motor die Japan een volledig inheemse zware-liftcapaciteit gaf. Ontwikkeld door Mitsubishi Heavy Industries voor JAXA, werkt het op basis van een staged-combustion-cyclus met LOX en LH2 — de thermodynamische benadering die maximale efficiëntie uit waterstofpropellant haalt — en vloog voor het eerst in augustus 2001 op H-IIA als een verfijnd opvolger van LE-7. Het herontwerp adresseerde turbopompproblemen die vroege H-II-mislukkingen hadden veroorzaakt, en LE-7A zou vervolgens de operationele carrières van H-IIA en H-IIB tot 2024 bepalen, lancerend Japans HTV-vrachtschepen naar International Space Station en de JAXA-ISRO-radarsatelliet ALOS-serie.",
+    "new": "De LE-7A is de motor die Japan een volledig inheemse zware-liftcapaciteit gaf. Ontwikkeld door Mitsubishi Heavy Industries voor JAXA, werkt het op basis van een staged-combustion-cyclus met LOX en LH2 — de thermodynamische benadering die maximale efficiëntie uit waterstofpropellant haalt — en vloog voor het eerst in augustus 2001 op H-IIA als een verfijnd opvolger van LE-7. Het herontwerp adresseerde turbopompproblemen die vroege H-II-mislukkingen hadden veroorzaakt, en LE-7A zou vervolgens de operationele carrières van H-IIA en H-IIB tot 2024 bepalen, lancerend Japans HTV-vrachtschepen naar ISS en de JAXA-ISRO-radarsatelliet ALOS-serie."
   },
   {
-    "rel": "satellites/ganymede.json",
-    "at": "science_sections.0.why",
-    "old": "Ganymede is de enige maan in het zonnestelsel met een eigen, intern gegenereerd magnetisch veld — geproduceerd door een ijzerrijke kern ingebed in Jupiters magnetosfeer.",
-    "new": "Ganymedes is de enige maan in het zonnestelsel met een eigen, intern gegenereerd magnetisch veld — geproduceerd door een ijzerrijke kern ingebed in Jupiters magnetosfeer."
+    "rel": "fleet/engine/rd-107-108.json",
+    "at": "description",
+    "old": "De RD-107 en RD-108 zijn de motoren van de R-7, de eerste intercontinentale ballistische raket ter wereld, die het team van Sergei Korolev omfunctioneerde tot lanceervoertuig. De RD-107 drijft de vier booster-eenheden van de R-7 aan; de RD-108 stuurt de hoofdtrap. Beide werken volgens het gasturbogeneratorproces op LOX en kerosine, en beiden vlogen voor het eerst op 21 augustus 1957 — maanden voor Sputnik. Als opgegradeerde RD-107A en RD-108A stuwen zij nog steeds Soyuz-raketten voort die bemanningen naar het International Space Station brengen, waardoor zij het langstoperationele bemande aandrijfsysteem in de geschiedenis zijn.",
+    "new": "De RD-107 en RD-108 zijn de motoren van de R-7, de eerste intercontinentale ballistische raket ter wereld, die het team van Sergei Korolev omfunctioneerde tot lanceervoertuig. De RD-107 drijft de vier booster-eenheden van de R-7 aan; de RD-108 stuurt de hoofdtrap. Beide werken volgens het gasturbogeneratorproces op LOX en kerosine, en beiden vlogen voor het eerst op 21 augustus 1957 — maanden voor Sputnik. Als opgegradeerde RD-107A en RD-108A stuwen zij nog steeds Soyuz-raketten voort die bemanningen naar het ISS brengen, waardoor zij het langstoperationele bemande aandrijfsysteem in de geschiedenis zijn."
   },
   {
-    "rel": "satellites/ganymede.json",
-    "at": "science_sections.1.why",
-    "old": "Buitenlid van de 4:2:1 Laplace-resonantie met Io en Europa — de stabiliteit van Ganymede verankert het gehele binnenste Galileïsche systeem.",
-    "new": "Buitenlid van de 4:2:1 Laplace-resonantie met Io en Europa — de stabiliteit van Ganymedes verankert het gehele binnenste Galileïsche systeem."
+    "rel": "fleet/station/iss.json",
+    "at": "dispatch",
+    "old": "Het International Space Station is de grootste structuur die de mensheid ooit in de ruimte heeft gebouwd en de plaats waar elke draad van het ruimtetijdperk samenkomt. De Russische kern stamt rechtstreeks af van Salyut en Mir; het Amerikaanse segment van Skylab; het werd geassembleerd door de Space Shuttle, wordt bemand door Soyuz, bevoorraad door de afstammelingen van het Progress-vrachtschip, en draagt laboratoria gebouwd door Europa en Japan — bijna elk eerder programma is erin aanwezig als erfgoed. Geassembleerd vanaf 1998 en continu bemand sinds november 2000, is het de langste ononderbroken menselijke aanwezigheid buiten de aarde in de geschiedenis, en het duidelijkste bewijs van één idee: dat de grootste dingen in de ruimte niet worden gebouwd door een race te winnen, maar doordat voormalige rivalen ervoor kiezen om, decennium na decennium, ze samen te bouwen.",
+    "new": "Het ISS is de grootste structuur die de mensheid ooit in de ruimte heeft gebouwd en de plaats waar elke draad van het ruimtetijdperk samenkomt. De Russische kern stamt rechtstreeks af van Salyut en Mir; het Amerikaanse segment van Skylab; het werd geassembleerd door de Space Shuttle, wordt bemand door Soyuz, bevoorraad door de afstammelingen van het Progress-vrachtschip, en draagt laboratoria gebouwd door Europa en Japan — bijna elk eerder programma is erin aanwezig als erfgoed. Geassembleerd vanaf 1998 en continu bemand sinds november 2000, is het de langste ononderbroken menselijke aanwezigheid buiten de aarde in de geschiedenis, en het duidelijkste bewijs van één idee: dat de grootste dingen in de ruimte niet worden gebouwd door een race te winnen, maar doordat voormalige rivalen ervoor kiezen om, decennium na decennium, ze samen te bouwen."
   },
   {
-    "rel": "satellites/io.json",
-    "at": "science_sections.0.why",
-    "old": "Io / Europa / Ganymede zijn opgesloten in een 4:2:1 Laplace-resonantie — voor elke 4 banen van Io, maakt Europa er 2 en Ganymede 1. De resonantie houdt de baan van Io niet-circulair.",
-    "new": "Io / Europa / Ganymedes zijn opgesloten in een 4:2:1 Laplace-resonantie — voor elke 4 banen van Io, maakt Europa er 2 en Ganymedes 1. De resonantie houdt de baan van Io niet-circulair."
+    "rel": "fleet/station/iss.json",
+    "at": "description",
+    "old": "Het International Space Station De mensheid is het langst bemand habitat, bezet sinds november 2000. Samengesteld over meer dan 40 lanceringen door NASA, Roscosmos, ESA, JAXA en CSA. Momenteel gepland voor deorbit rond 2031.",
+    "new": "Het ISS De mensheid is het langst bemand habitat, bezet sinds november 2000. Samengesteld over meer dan 40 lanceringen door NASA, Roscosmos, ESA, JAXA en CSA. Momenteel gepland voor deorbit rond 2031."
   },
   {
-    "rel": "satellites/io.json",
-    "at": "science_sections.1.why",
-    "old": "Io's getijdenverwarming (waardoor het de meest vulkanisch actieve wereld in het zonnestelsel is) komt voort uit geforceerde excentriciteit — opgepompt door Europa en Ganymede via de Laplace-resonantie.",
-    "new": "Io's getijdenverwarming (waardoor het de meest vulkanisch actieve wereld in het zonnestelsel is) komt voort uit geforceerde excentriciteit — opgepompt door Europa en Ganymedes via de Laplace-resonantie."
+    "rel": "fleet/station/mir.json",
+    "at": "dispatch",
+    "old": "Mir was het eerste modulaire ruimtestation — en de brug tussen twee eras van ruimtevaart. Waar elk station daarvoor als geheel werd gelanceerd, werd Mir in een decennium stap voor stap in een baan om de aarde samengesteld, module na module, groeiend tot een uitgestrekt complex dat vijftien jaar in de lucht bleef. Het stelde het uithoudingsrecord vast dat nog altijd geldig is (437 aaneengesloten dagen van Valeri Polyakov, bewijs dat een bemanning een Mars-lange vlucht kon overleven), overleefde de Sovjet-Unie die het bouwde met een decennium, en bleef overeind ondanks een brand en een ontluchting door botsing in 1997 die de bemanning met de hand wist af te slaan. In zijn laatste jaren dokten Amerikaanse Shuttles eraan en leefden Amerikaanse astronauten aan boord — de repetitie, in hardware en in vertrouwen, voor het International Space Station dat bijna alles wat Mir uitwerkte erfde.",
+    "new": "Mir was het eerste modulaire ruimtestation — en de brug tussen twee eras van ruimtevaart. Waar elk station daarvoor als geheel werd gelanceerd, werd Mir in een decennium stap voor stap in een baan om de aarde samengesteld, module na module, groeiend tot een uitgestrekt complex dat vijftien jaar in de lucht bleef. Het stelde het uithoudingsrecord vast dat nog altijd geldig is (437 aaneengesloten dagen van Valeri Polyakov, bewijs dat een bemanning een Mars-lange vlucht kon overleven), overleefde de Sovjet-Unie die het bouwde met een decennium, en bleef overeind ondanks een brand en een ontluchting door botsing in 1997 die de bemanning met de hand wist af te slaan. In zijn laatste jaren dokten Amerikaanse Shuttles eraan en leefden Amerikaanse astronauten aan boord — de repetitie, in hardware en in vertrouwen, voor het ISS dat bijna alles wat Mir uitwerkte erfde."
   },
   {
-    "rel": "science/planets/magnetic-fields.json",
-    "at": "intro_sentence",
-    "old": "De magnetosfeer van elke planeet is anders. Die van Saturn is uniek uitgelijnd, die van Uranus is chaotisch, Venus en Mars hebben er helemaal geen.",
-    "new": "De magnetosfeer van elke planeet is anders. Die van Saturnus is uniek uitgelijnd, die van Uranus is chaotisch, Venus en Mars hebben er helemaal geen."
+    "rel": "missions/earth/otv-7.json",
+    "at": "first",
+    "old": "USA-358 / USSF-52 — 434 dagen in baan, Vandenberg SFB",
+    "new": "USA-358 / USSF-52 — 434 dagen in baan, Vandenberg Space Force Base"
   },
   {
-    "rel": "science/planets/magnetic-fields.json",
-    "at": "narrative_101.2",
-    "old": "Dan is er Saturn — een gasreus met een dynamo die zo netjes uitgelijnd is met zijn rotatie-as dat de magnetische kanteling vrijwel nul is. Elke andere dynamo die we kennen heeft op zijn minst enige afwijking (Aarde 10,5°, Jupiter 9,6°), maar die van Saturn is < 1°. Niemand weet precies waarom. De meest gesteunde theorie is dat Saturn een ongewone gelaagde structuur heeft die de symmetrie van het veld mechanisch gladstrijkt, maar het mechanisme staat ter discussie. De vrijwel perfecte uitlijning van Saturn is een van de onopgeloste raadsels van de planetaire fysica.",
-    "new": "Dan is er Saturnus — een gasreus met een dynamo die zo netjes uitgelijnd is met zijn rotatie-as dat de magnetische kanteling vrijwel nul is. Elke andere dynamo die we kennen heeft op zijn minst enige afwijking (Aarde 10,5°, Jupiter 9,6°), maar die van Saturnus is < 1°. Niemand weet precies waarom. De meest gesteunde theorie is dat Saturnus een ongewone gelaagde structuur heeft die de symmetrie van het veld mechanisch gladstrijkt, maar het mechanisme staat ter discussie. De vrijwel perfecte uitlijning van Saturnus is een van de onopgeloste raadsels van de planetaire fysica."
+    "rel": "missions/earth/otv-7.json",
+    "at": "description",
+    "old": "Zevende X-37B-vlucht — eerste naar een zeer elliptische baan (HEO) en eerste gelanceerd op Falcon Heavy. Gelanceerd op 2023-12-29 01:07 UTC vanaf KSC LC-39A; beide zijboostersgevangen op LZ-1 / LZ-2, centrale kern gebruikt voor HEO-inbrenging. De HEO-baan voerde de OTV naar ongeveer GEO-gordel-hoogte op apogeë. Voerde een gecontroleerde aeroremming-achtige deorbit-sequentie uit (USSF gaf een openbare update over de manoeuvre, een opzettelijke afwijking van transparantie ten opzichte van eerdere geclassificeerde vluchten). Geland op Vandenberg SFB 2025-03-07 09:22 UTC.",
+    "new": "Zevende X-37B-vlucht — eerste naar een zeer elliptische baan (HEO) en eerste gelanceerd op Falcon Heavy. Gelanceerd op 2023-12-29 01:07 UTC vanaf KSC LC-39A; beide zijboostersgevangen op LZ-1 / LZ-2, centrale kern gebruikt voor HEO-inbrenging. De HEO-baan voerde de OTV naar ongeveer GEO-gordel-hoogte op apogeë. Voerde een gecontroleerde aeroremming-achtige deorbit-sequentie uit (USSF gaf een openbare update over de manoeuvre, een opzettelijke afwijking van transparantie ten opzichte van eerdere geclassificeerde vluchten). Geland op Vandenberg Space Force Base 2025-03-07 09:22 UTC."
   },
   {
-    "rel": "science/planets/magnetic-fields.json",
-    "at": "body_paragraphs.0",
-    "old": "De kanteling van de magnetische as (hoek tussen de dipool en de rotatie-as) voor elke planeet met een bekende dynamo: Mercurius 0,7°, Aarde 10,5°, Jupiter 9,6°, Saturn ~0°, Uranus 58,6°, Neptunus 46,9°. Venus, Mars en Pluto hebben vandaag de dag geen wereldwijd significante dipool. De sterk van de as afwijkende dipolen van Uranus en Neptunus zijn ook verschoven ten opzichte van het middelpunt van de planeet — die van Uranus met ongeveer 1/3 van de straal van de planeet. De conventionele dynamo (ijzeren kern) kan die geometrie niet gemakkelijk produceren; de meest gesteunde verklaring is dat Uranus en Neptunus hun dynamo's herbergen in een buitenste mantellaag van ionisch water + ammoniak + methaan, en niet in een diepe kern.",
-    "new": "De kanteling van de magnetische as (hoek tussen de dipool en de rotatie-as) voor elke planeet met een bekende dynamo: Mercurius 0,7°, Aarde 10,5°, Jupiter 9,6°, Saturnus ~0°, Uranus 58,6°, Neptunus 46,9°. Venus, Mars en Pluto hebben vandaag de dag geen wereldwijd significante dipool. De sterk van de as afwijkende dipolen van Uranus en Neptunus zijn ook verschoven ten opzichte van het middelpunt van de planeet — die van Uranus met ongeveer 1/3 van de straal van de planeet. De conventionele dynamo (ijzeren kern) kan die geometrie niet gemakkelijk produceren; de meest gesteunde verklaring is dat Uranus en Neptunus hun dynamo's herbergen in een buitenste mantellaag van ionisch water + ammoniak + methaan, en niet in een diepe kern."
+    "rel": "missions/earth/otv-7.json",
+    "at": "events.2.note",
+    "old": "Autonome baanlandingop Vandenberg SFB 2025-03-07.",
+    "new": "Autonome baanlandingop Vandenberg Space Force Base 2025-03-07."
   },
   {
-    "rel": "science/planets/magnetic-fields.json",
-    "at": "body_paragraphs.1",
-    "old": "Magnetosferen strekken zich ver buiten de planeet zelf uit. Die van de Aarde reikt ongeveer 65.000 km in de richting van de zon (waar die botst tegen de zonnewind) en strekt zich uit in een lange staart aan de nachtzijde. De magnetosfeer van Jupiter is de grootste fysieke structuur binnen het zonnestelsel die niet de heliosfeer van de Zon is: zijn magnetostaart reikt tot de baan van Saturn, ongeveer 1,4 miljard km lang. De staart wordt gevormd door de zonnewind die het veld stroomafwaarts duwt; de stroomopwaartse neus wordt samengedrukt.",
-    "new": "Magnetosferen strekken zich ver buiten de planeet zelf uit. Die van de Aarde reikt ongeveer 65.000 km in de richting van de zon (waar die botst tegen de zonnewind) en strekt zich uit in een lange staart aan de nachtzijde. De magnetosfeer van Jupiter is de grootste fysieke structuur binnen het zonnestelsel die niet de heliosfeer van de Zon is: zijn magnetostaart reikt tot de baan van Saturnus, ongeveer 1,4 miljard km lang. De staart wordt gevormd door de zonnewind die het veld stroomafwaarts duwt; de stroomopwaartse neus wordt samengedrukt."
+    "rel": "orbit-regimes/LEO.json",
+    "at": "residents.0.label",
+    "old": "ISS — International Space Station",
+    "new": "ISS — ISS"
   },
   {
-    "rel": "science/planets/magnetic-fields.json",
-    "at": "body_paragraphs.2",
-    "old": "Deeltjes die gevangen zitten in het magnetische veld vormen stralingsgordelsbanden — de Van Allen-gordels bij de Aarde, de veel intensere bij Jupiter (een van de redenen waarom missies als Juno polaire banen vliegen, om de equatoriale gordel te vermijden). Waar veldlijnen samenkomen nabij de magnetische polen, spiralen geladen deeltjes omlaag en brengen de atmosfeer in een aangeslagen toestand — dat is het poollicht. Elke gemagnetiseerde planeet heeft poollicht; we hebben het afgebeeld bij de Aarde, Jupiter, Saturn, Uranus en Neptunus.",
-    "new": "Deeltjes die gevangen zitten in het magnetische veld vormen stralingsgordelsbanden — de Van Allen-gordels bij de Aarde, de veel intensere bij Jupiter (een van de redenen waarom missies als Juno polaire banen vliegen, om de equatoriale gordel te vermijden). Waar veldlijnen samenkomen nabij de magnetische polen, spiralen geladen deeltjes omlaag en brengen de atmosfeer in een aangeslagen toestand — dat is het poollicht. Elke gemagnetiseerde planeet heeft poollicht; we hebben het afgebeeld bij de Aarde, Jupiter, Saturnus, Uranus en Neptunus."
+    "rel": "programs/ariane.json",
+    "at": "outcome.2.md",
+    "old": "Ariane 5's manifest is een erelijst van de wetenschap en infrastructuur van het tijdperk: de Rosetta-komeetzonde, de Galileo-navigatieconstellatie, BepiColombo naar Mercurius, de ATV-vrachtschepen die het International Space Station bevoorraadden, en — het meest gevierde van de latere ladingen — de James Webb Space Telescope (december 2021), zo nauwkeurig gelanceerd dat het jaren aan brandstof van de telescoop bespaarde. Ariane 5's werkelijke laatste vlucht vond plaats in juli 2023, met de Heinrich Hertz en Syracuse 4B-telecommunicatiesatellieten op VA261. Toen verschoof de grond. SpaceX's herbruikbare raketten ondermijnden Ariane's prijzen en maakten een einde aan zijn commerciële dominantie, en Ariane 6, dat vanaf 2024 vliegt, is Europa's antwoord: een goedkopere, flexibelere draagraket gebouwd om de onafhankelijke toegang van het continent levend te houden in een getransformeerde markt.",
+    "new": "Ariane 5's manifest is een erelijst van de wetenschap en infrastructuur van het tijdperk: de Rosetta-komeetzonde, de Galileo-navigatieconstellatie, BepiColombo naar Mercurius, de ATV-vrachtschepen die het ISS bevoorraadden, en — het meest gevierde van de latere ladingen — de James Webb Space Telescope (december 2021), zo nauwkeurig gelanceerd dat het jaren aan brandstof van de telescoop bespaarde. Ariane 5's werkelijke laatste vlucht vond plaats in juli 2023, met de Heinrich Hertz en Syracuse 4B-telecommunicatiesatellieten op VA261. Toen verschoof de grond. SpaceX's herbruikbare raketten ondermijnden Ariane's prijzen en maakten een einde aan zijn commerciële dominantie, en Ariane 6, dat vanaf 2024 vliegt, is Europa's antwoord: een goedkopere, flexibelere draagraket gebouwd om de onafhankelijke toegang van het continent levend te houden in een getransformeerde markt."
   },
   {
-    "rel": "science/planets/magnetic-fields.json",
-    "at": "diagram_caption",
-    "old": "Kantelingen van de dipoolassen versus rotatie-assen voor de planeten. Saturn is uniek uitgelijnd (<1°); Uranus en Neptunus wijken chaotisch van de as af, wat wijst op dynamo's in een ionisch-water-mantel in plaats van diepe ijzeren kernen.",
-    "new": "Kantelingen van de dipoolassen versus rotatie-assen voor de planeten. Saturnus is uniek uitgelijnd (<1°); Uranus en Neptunus wijken chaotisch van de as af, wat wijst op dynamo's in een ionisch-water-mantel in plaats van diepe ijzeren kernen."
+    "rel": "programs/ariane.json",
+    "at": "legacy.1.md",
+    "old": "Ariane's erfenis is dat Europa nooit meer toestemming heeft hoeven vragen om de ruimte te bereiken. Ruim vier decennia lang heeft een ononderbroken reeks Europese raketten de satellieten, wetenschappelijke missies en bijdragen aan het International Space Station van het continent gelanceerd — en een groot deel van die tijd ook die van de rest van de wereld. De commerciële lanceringsindustrie die nu zo centraal staat in de ruimtevaart werd grotendeels uitgevonden door Arianespace; het model van toegang tot een baan om de aarde als dienst verkopen begon in Kourou.",
+    "new": "Ariane's erfenis is dat Europa nooit meer toestemming heeft hoeven vragen om de ruimte te bereiken. Ruim vier decennia lang heeft een ononderbroken reeks Europese raketten de satellieten, wetenschappelijke missies en bijdragen aan het ISS van het continent gelanceerd — en een groot deel van die tijd ook die van de rest van de wereld. De commerciële lanceringsindustrie die nu zo centraal staat in de ruimtevaart werd grotendeels uitgevonden door Arianespace; het model van toegang tot een baan om de aarde als dienst verkopen begon in Kourou."
   },
   {
-    "rel": "science/planets/moons-of-the-system.json",
-    "at": "body_paragraphs.0",
-    "old": "De vier Galilean manen van Jupiter zijn totaal verschillende werelden. Io: het vulkanisch meest actieve lichaam in het zonnestelsel, met actieve uitbarstingen zichtbaar van telescopen — aangedreven door getijdenverwarming van de anderen. Europa: ijsmantel over een wereldwijde wateroceaan, een topprioriteit voor astrobiologie. Ganymede: grootste maan van het zonnestelsel, groter dan Mercurius, en de enige maan met zijn eigen magnetisch veld. Callisto: buitenste Galilean maan, oud gekratered oppervlak, mogelijk ook een ondergrondse oceaan. Alle vier ontdekt in 1610 door Galileo vanaf een dak in Padua.",
-    "new": "De vier Galilean manen van Jupiter zijn totaal verschillende werelden. Io: het vulkanisch meest actieve lichaam in het zonnestelsel, met actieve uitbarstingen zichtbaar van telescopen — aangedreven door getijdenverwarming van de anderen. Europa: ijsmantel over een wereldwijde wateroceaan, een topprioriteit voor astrobiologie. Ganymedes: grootste maan van het zonnestelsel, groter dan Mercurius, en de enige maan met zijn eigen magnetisch veld. Callisto: buitenste Galilean maan, oud gekratered oppervlak, mogelijk ook een ondergrondse oceaan. Alle vier ontdekt in 1610 door Galileo vanaf een dak in Padua."
+    "rel": "programs/commercial-stations.json",
+    "at": "the_land.0.md",
+    "old": "Het International Space Station is het grootste dat de mensheid ooit in een baan om de aarde heeft gebouwd, en het zal opzettelijk worden vernietigd. Rond 2030, na meer dan drie decennia ononderbroken bemande operaties, zal de ISS naar beneden worden gestuurd om te verbranden boven de Stille Oceaan — omdat het veroudert, duur is in onderhoud, en omdat de partners hebben besloten dat de toekomst van een lage aardbaan toebehoort aan particuliere bedrijven in plaats van overheidsinstanties. De Commercial Stations zijn wat ervoor in de plaats moet komen.",
+    "new": "Het ISS is het grootste dat de mensheid ooit in een baan om de aarde heeft gebouwd, en het zal opzettelijk worden vernietigd. Rond 2030, na meer dan drie decennia ononderbroken bemande operaties, zal de ISS naar beneden worden gestuurd om te verbranden boven de Stille Oceaan — omdat het veroudert, duur is in onderhoud, en omdat de partners hebben besloten dat de toekomst van een lage aardbaan toebehoort aan particuliere bedrijven in plaats van overheidsinstanties. De Commercial Stations zijn wat ervoor in de plaats moet komen."
   },
   {
-    "rel": "science/planets/planetary-stats.json",
-    "at": "narrative_101.1",
-    "old": "Mars is de omgekeerde afweging. Mars heeft slechts 11% van de massa van de Aarde, maar wel 53% van de diameter van de Aarde. Daardoor bedraagt de oppervlaktezwaartekracht 38% van die van de Aarde — veel hoger dan de massaverhouding alleen zou voorspellen, omdat je dichter bij een kleiner middelpunt zit. De relatie die beide gevallen begrijpelijk maakt: oppervlaktezwaartekracht schaalt als massa / straal². Voor een planeet met gemiddelde dichtheid schaalt de zwaartekracht lineair met de straal. Saturn (9,14× de diameter van de Aarde) heeft een oppervlaktezwaartekracht die bijna gelijk is aan die van de Aarde (1,07 g), omdat Saturn veel minder dicht is dan de Aarde — Saturn bestaat voornamelijk uit waterstof-helium, met minder dan 0,7× de dichtheid van water.",
-    "new": "Mars is de omgekeerde afweging. Mars heeft slechts 11% van de massa van de Aarde, maar wel 53% van de diameter van de Aarde. Daardoor bedraagt de oppervlaktezwaartekracht 38% van die van de Aarde — veel hoger dan de massaverhouding alleen zou voorspellen, omdat je dichter bij een kleiner middelpunt zit. De relatie die beide gevallen begrijpelijk maakt: oppervlaktezwaartekracht schaalt als massa / straal². Voor een planeet met gemiddelde dichtheid schaalt de zwaartekracht lineair met de straal. Saturnus (9,14× de diameter van de Aarde) heeft een oppervlaktezwaartekracht die bijna gelijk is aan die van de Aarde (1,07 g), omdat Saturnus veel minder dicht is dan de Aarde — Saturnus bestaat voornamelijk uit waterstof-helium, met minder dan 0,7× de dichtheid van water."
+    "rel": "programs/esa-human.json",
+    "at": "the_land.1.md",
+    "old": "Dit begon met Spacelab in 1983 — een door Europa gebouwd laboratorium dat meereed in het laadruim van de Space Shuttle en de Shuttle veranderde in een wetenschapsplatform, met de eerste ESA-astronaut aan boord tijdens zijn eerste vlucht. Het vervolgde met Columbus, Europa's permanente laboratorium vastgebout aan het International Space Station, en met de Automated Transfer Vehicle, het grootste en meest geavanceerde vrachtschip van zijn tijd. Onderweg vlogen Europese astronauten op Shuttles en Soyuz, woonden aan boord van Mir en het ISS, en voerden het commando over het Station. Europa lanceerde nooit zijn eigen bemanning — en werd essentieel voor bijna iedereen die dat wel deed.",
+    "new": "Dit begon met Spacelab in 1983 — een door Europa gebouwd laboratorium dat meereed in het laadruim van de Space Shuttle en de Shuttle veranderde in een wetenschapsplatform, met de eerste ESA-astronaut aan boord tijdens zijn eerste vlucht. Het vervolgde met Columbus, Europa's permanente laboratorium vastgebout aan het ISS, en met de Automated Transfer Vehicle, het grootste en meest geavanceerde vrachtschip van zijn tijd. Onderweg vlogen Europese astronauten op Shuttles en Soyuz, woonden aan boord van Mir en het ISS, en voerden het commando over het Station. Europa lanceerde nooit zijn eigen bemanning — en werd essentieel voor bijna iedereen die dat wel deed."
   },
   {
-    "rel": "science/planets/planetary-stats.json",
-    "at": "body_paragraphs.0",
-    "old": "Diameters ten opzichte van de Aarde: Mercurius 0,38, Venus 0,95 (bijna even groot als de Aarde), Aarde 1,0, Mars 0,53, Jupiter 10,97, Saturn 9,14, Uranus 3,98, Neptunus 3,86, Pluto 0,19. Oppervlaktezwaartekrachten in Aarde-g: Mercurius 0,38, Venus 0,91, Aarde 1,00, Mars 0,38, Jupiter 2,53, Saturn 1,07, Uranus 0,89, Neptunus 1,14, Pluto 0,06. Opvallende verrassingen: Mars en Mercurius hebben dezelfde oppervlaktezwaartekracht (0,38 g) ondanks hun sterk verschillende afmetingen, omdat hun dichtheid × straalproducten dicht bij elkaar uitkomen. Uranus en Saturn hebben allebei een lagere zwaartekracht dan de Aarde ondanks hun enorme afmetingen — beide worden gedomineerd door H/He, veel minder dicht dan de rotsachtige Aarde.",
-    "new": "Diameters ten opzichte van de Aarde: Mercurius 0,38, Venus 0,95 (bijna even groot als de Aarde), Aarde 1,0, Mars 0,53, Jupiter 10,97, Saturnus 9,14, Uranus 3,98, Neptunus 3,86, Pluto 0,19. Oppervlaktezwaartekrachten in Aarde-g: Mercurius 0,38, Venus 0,91, Aarde 1,00, Mars 0,38, Jupiter 2,53, Saturnus 1,07, Uranus 0,89, Neptunus 1,14, Pluto 0,06. Opvallende verrassingen: Mars en Mercurius hebben dezelfde oppervlaktezwaartekracht (0,38 g) ondanks hun sterk verschillende afmetingen, omdat hun dichtheid × straalproducten dicht bij elkaar uitkomen. Uranus en Saturnus hebben allebei een lagere zwaartekracht dan de Aarde ondanks hun enorme afmetingen — beide worden gedomineerd door H/He, veel minder dicht dan de rotsachtige Aarde."
+    "rel": "programs/esa-human.json",
+    "at": "goals.0.caption",
+    "old": "Het International Space Station, waarvan Europa een volwaardige partner is. ESA's Columbus-laboratorium is er een permanent onderdeel van, en Europese astronauten hebben er gewoond en het commando gevoerd — de vrucht van de keuze om deel te nemen in plaats van het alleen te doen.",
+    "new": "Het ISS, waarvan Europa een volwaardige partner is. ESA's Columbus-laboratorium is er een permanent onderdeel van, en Europese astronauten hebben er gewoond en het commando gevoerd — de vrucht van de keuze om deel te nemen in plaats van het alleen te doen."
   },
   {
-    "rel": "science/planets/planetary-stats.json",
-    "at": "body_paragraphs.1",
-    "old": "Rotatieperioden (sideriaal, in uren): Mercury 1407,5 (in wezen 58 Aardse dagen voor één volledige rotatie), Venus −5832,5 (retrograad, 243 dagen), Aarde 23,93, Mars 24,62, Jupiter 9,93 (de snelste rotator — zijn dag duurt minder dan 10 uur ondanks zijn omvang, waardoor Jupiter zichtbaar afgeplat is; centrifugaalkrachten drukken hem plat), Saturn 10,66, Uranus −17,24 (retrograad), Neptunus 16,11, Pluto −153,3 (retrograad). Zonsdagen (zonsopgang tot zonsopgang) verschillen van sideriaalperioden omdat de planeet ook langs zijn baan beweegt — de zonsdag van Venus duurt 117 Aardse dagen, ook al bedraagt zijn sideriaalrotatie 243 dagen, omdat de retrograde rotatie de baanbeweging gedeeltelijk opheft.",
-    "new": "Rotatieperioden (sideriaal, in uren): Mercury 1407,5 (in wezen 58 Aardse dagen voor één volledige rotatie), Venus −5832,5 (retrograad, 243 dagen), Aarde 23,93, Mars 24,62, Jupiter 9,93 (de snelste rotator — zijn dag duurt minder dan 10 uur ondanks zijn omvang, waardoor Jupiter zichtbaar afgeplat is; centrifugaalkrachten drukken hem plat), Saturnus 10,66, Uranus −17,24 (retrograad), Neptunus 16,11, Pluto −153,3 (retrograad). Zonsdagen (zonsopgang tot zonsopgang) verschillen van sideriaalperioden omdat de planeet ook langs zijn baan beweegt — de zonsdag van Venus duurt 117 Aardse dagen, ook al bedraagt zijn sideriaalrotatie 243 dagen, omdat de retrograde rotatie de baanbeweging gedeeltelijk opheft."
+    "rel": "programs/esa-human.json",
+    "at": "goals.2.md",
+    "old": "De strategie had een verborgen kracht: een essentieel onderdeel bijdragen koopt een permanente plaats aan tafel. Door Spacelab te bouwen, verdiende Europa een plaats aan boord van de Shuttle; door Columbus en de ATV te bouwen, werd het een volwaardige en gelijkwaardige partner in het International Space Station, met zijn eigen laboratorium en zijn eigen onmisbare bevoorradingsvaartuig. Een natie die alleen stoelen zou kopen zou een klant zijn; Europa werd, door capaciteiten te bouwen waar anderen op vertrouwden, een partner — met echt inspraak in de onderneming.",
+    "new": "De strategie had een verborgen kracht: een essentieel onderdeel bijdragen koopt een permanente plaats aan tafel. Door Spacelab te bouwen, verdiende Europa een plaats aan boord van de Shuttle; door Columbus en de ATV te bouwen, werd het een volwaardige en gelijkwaardige partner in het ISS, met zijn eigen laboratorium en zijn eigen onmisbare bevoorradingsvaartuig. Een natie die alleen stoelen zou kopen zou een klant zijn; Europa werd, door capaciteiten te bouwen waar anderen op vertrouwden, een partner — met echt inspraak in de onderneming."
   },
   {
-    "rel": "science/planets/planetary-stats.json",
-    "at": "diagram_caption",
-    "old": "Op schaal weergegeven diameters ten opzichte van de Aarde. Jupiter en Saturn zijn de reuzen; Mercurius, Mars en Pluto zijn kleiner dan de Aarde. Oppervlaktezwaartekracht volgt de grootte niet lineair — Saturn (9,1× de diameter van de Aarde) heeft een zwaartekracht die vrijwel gelijk is aan die van de Aarde, omdat het zoveel minder dicht is.",
-    "new": "Op schaal weergegeven diameters ten opzichte van de Aarde. Jupiter en Saturnus zijn de reuzen; Mercurius, Mars en Pluto zijn kleiner dan de Aarde. Oppervlaktezwaartekracht volgt de grootte niet lineair — Saturnus (9,1× de diameter van de Aarde) heeft een zwaartekracht die vrijwel gelijk is aan die van de Aarde, omdat het zoveel minder dicht is."
+    "rel": "programs/esa-human.json",
+    "at": "legacy.0.caption",
+    "old": "Het International Space Station — de onderneming die Europa hielp bouwen en in stand houden, en het bewijs dat een natie de bemande ruimtevaart diepgaand kan vormgeven zonder ooit een eigen bemanning te lanceren.",
+    "new": "Het ISS — de onderneming die Europa hielp bouwen en in stand houden, en het bewijs dat een natie de bemande ruimtevaart diepgaand kan vormgeven zonder ooit een eigen bemanning te lanceren."
   },
   {
-    "rel": "science/planets/sub-solar-and-terminator.json",
-    "at": "body_paragraphs.1",
-    "old": "De terminator heeft een lange geschiedenis als de wetenschappelijk rijkste plek om oppervlaktedetails te observeren. De schaduwen zijn er het langst, waardoor de topografie wordt uitvergroot. Maanopnamen uit het Apollo-tijdperk voor kratergeologie werden bijna altijd gemaakt met de terminator in de buurt. De meest opvallende opnamen van de buitenste planeten van Voyager 1 + 2 (de ringstructuur van Saturn, de Grote Donkere Vlek van Neptunus) werden ook genomen nabij de terminator van elk hemellichaam, om dezelfde reden: een lage zonnehoek benadrukt oppervlaktekenmerken.",
-    "new": "De terminator heeft een lange geschiedenis als de wetenschappelijk rijkste plek om oppervlaktedetails te observeren. De schaduwen zijn er het langst, waardoor de topografie wordt uitvergroot. Maanopnamen uit het Apollo-tijdperk voor kratergeologie werden bijna altijd gemaakt met de terminator in de buurt. De meest opvallende opnamen van de buitenste planeten van Voyager 1 + 2 (de ringstructuur van Saturnus, de Grote Donkere Vlek van Neptunus) werden ook genomen nabij de terminator van elk hemellichaam, om dezelfde reden: een lage zonnehoek benadrukt oppervlaktekenmerken."
+    "rel": "programs/iss.json",
+    "at": "the_land.0.md",
+    "old": "Alles in deze atlas leidt hierheen. Het International Space Station is geen frisse start maar een samenkomst — het punt waar de twee afzonderlijke geschiedenissen van bemande ruimtevaart, Amerikaanse en Sovjet, eindelijk samenvloeiden in één enkele structuur en één enkele bemanning. De Russische helft stamt rechtstreeks af van Salyut en Mir; de Amerikaanse helft van Skylab; het werd geassembleerd door de Space Shuttle, wordt bemand met Soyuz, bevoorraad door de nakomelingen van het Progress-vrachtschip, en draagt laboratoria gebouwd door Europa en Japan. Vrijwel elk programma dat eraan voorafging is erin aanwezig, fysiek, als erfgoed vastgebout in een baan om de aarde.",
+    "new": "Alles in deze atlas leidt hierheen. Het ISS is geen frisse start maar een samenkomst — het punt waar de twee afzonderlijke geschiedenissen van bemande ruimtevaart, Amerikaanse en Sovjet, eindelijk samenvloeiden in één enkele structuur en één enkele bemanning. De Russische helft stamt rechtstreeks af van Salyut en Mir; de Amerikaanse helft van Skylab; het werd geassembleerd door de Space Shuttle, wordt bemand met Soyuz, bevoorraad door de nakomelingen van het Progress-vrachtschip, en draagt laboratoria gebouwd door Europa en Japan. Vrijwel elk programma dat eraan voorafging is erin aanwezig, fysiek, als erfgoed vastgebout in een baan om de aarde."
+  },
+  {
+    "rel": "programs/iss.json",
+    "at": "goals.0.caption",
+    "old": "Het voltooide International Space Station — een structuur ter grootte van een voetbalveld, in een baan om de aarde geassembleerd uit modules gebouwd op drie continenten, en permanent bemand sinds november 2000.",
+    "new": "Het voltooide ISS — een structuur ter grootte van een voetbalveld, in een baan om de aarde geassembleerd uit modules gebouwd op drie continenten, en permanent bemand sinds november 2000."
+  },
+  {
+    "rel": "programs/iss.json",
+    "at": "outcome.0.caption",
+    "old": "Het International Space Station halverwege de assemblage. Gebouwd tussen 1998 en 2011 over meer dan veertig vluchten, module na module, was het het meest ambitieuze bouwproject ooit uitgevoerd buiten de grond.",
+    "new": "Het ISS halverwege de assemblage. Gebouwd tussen 1998 en 2011 over meer dan veertig vluchten, module na module, was het het meest ambitieuze bouwproject ooit uitgevoerd buiten de grond."
+  },
+  {
+    "rel": "programs/mir.json",
+    "at": "outcome.0.caption",
+    "old": "Mir gezien vanaf de Space Shuttle Atlantis tijdens het Shuttle-Mir-programma. Amerikaanse Shuttles die aankoppelden bij een Russisch station — ondenkbaar een decennium eerder — was de generale repetitie voor het International Space Station.",
+    "new": "Mir gezien vanaf de Space Shuttle Atlantis tijdens het Shuttle-Mir-programma. Amerikaanse Shuttles die aankoppelden bij een Russisch station — ondenkbaar een decennium eerder — was de generale repetitie voor het ISS."
+  },
+  {
+    "rel": "programs/mir.json",
+    "at": "narrative.0.md",
+    "old": "Mir's centrale innovatie is modulariteit, en het veranderde alles wat volgde. Een station gebouwd uit uitwisselbare, afzonderlijk gelanceerde modules kan groeien, worden gerepareerd door modulevervanging en worden geassembleerd door meer dan één natie — niets daarvan kan een enkel monolithisch blik doen. Het International Space Station is modulariteit tot zijn conclusie gebracht: tientallen modules van vele landen, over een decennium geassembleerd. Die hele aanpak werd eerst op Mir bewezen.",
+    "new": "Mir's centrale innovatie is modulariteit, en het veranderde alles wat volgde. Een station gebouwd uit uitwisselbare, afzonderlijk gelanceerde modules kan groeien, worden gerepareerd door modulevervanging en worden geassembleerd door meer dan één natie — niets daarvan kan een enkel monolithisch blik doen. Het ISS is modulariteit tot zijn conclusie gebracht: tientallen modules van vele landen, over een decennium geassembleerd. Die hele aanpak werd eerst op Mir bewezen."
+  },
+  {
+    "rel": "programs/mir.json",
+    "at": "legacy.0.caption",
+    "old": "Mir in een baan om de aarde — het eerste modulaire station, en het sjabloon, in architectuur en in internationaal partnerschap, voor het International Space Station dat het verving.",
+    "new": "Mir in een baan om de aarde — het eerste modulaire station, en het sjabloon, in architectuur en in internationaal partnerschap, voor het ISS dat het verving."
+  },
+  {
+    "rel": "programs/mir.json",
+    "at": "legacy.1.md",
+    "old": "Mir's erfenis is het International Space Station, in bijna elk opzicht. De modulaire architectuur, de mix van Soyuz-bemanningsveerboten en geautomatiseerde vrachtschepen, de expedities van meerdere maanden, de routines van langdurig leven en werken — het werd allemaal ontwikkeld of volwassen gemaakt op Mir en rechtstreeks overgedragen. Dat gold ook voor het partnerschap: het ISS wordt geleid op een Amerikaans-Russische kern precies omdat Shuttle-Mir bewees dat de twee samen een station konden bedienen, en omdat Rusland de opgebouwde station-expertise die Mir vertegenwoordigde inbracht.",
+    "new": "Mir's erfenis is het ISS, in bijna elk opzicht. De modulaire architectuur, de mix van Soyuz-bemanningsveerboten en geautomatiseerde vrachtschepen, de expedities van meerdere maanden, de routines van langdurig leven en werken — het werd allemaal ontwikkeld of volwassen gemaakt op Mir en rechtstreeks overgedragen. Dat gold ook voor het partnerschap: het ISS wordt geleid op een Amerikaans-Russische kern precies omdat Shuttle-Mir bewees dat de twee samen een station konden bedienen, en omdat Rusland de opgebouwde station-expertise die Mir vertegenwoordigde inbracht."
+  },
+  {
+    "rel": "programs/ros.json",
+    "at": "the_land.0.md",
+    "old": "Een kwart eeuw lang is Ruslands bemande ruimtevaart verbonden geweest met het Westen. Zijn helft van de International Space Station — direct afstammend van Salyut en Mir — hield de hele buitenpost in leven, en negen jaar lang waren Russische Soyuz-capsules het enige vervoermiddel naar het ISS voor iedereen, Amerikaan of Rus. Dat partnerschap, een van de meest duurzame erfenissen van het einde van de Koude Oorlog, eindigt nu. Rusland heeft aangekondigd dat het het ISS zal verlaten en een eigen nationaal station zal bouwen: het Russian Orbital Station.",
+    "new": "Een kwart eeuw lang is Ruslands bemande ruimtevaart verbonden geweest met het Westen. Zijn helft van de ISS — direct afstammend van Salyut en Mir — hield de hele buitenpost in leven, en negen jaar lang waren Russische Soyuz-capsules het enige vervoermiddel naar het ISS voor iedereen, Amerikaan of Rus. Dat partnerschap, een van de meest duurzame erfenissen van het einde van de Koude Oorlog, eindigt nu. Rusland heeft aangekondigd dat het het ISS zal verlaten en een eigen nationaal station zal bouwen: het Russian Orbital Station."
+  },
+  {
+    "rel": "programs/salyut.json",
+    "at": "narrative.2.md",
+    "old": "Tegen Salyut 6 en 7 was het programma gestopt met over primeurs gaan en begon het over permanentie te gaan — doorlopende bezetting, internationale bemanningen, herbevoorrading als routine. Die verschuiving, van het bezoeken van een baan naar het bewonen ervan, is de werkelijke prestatie van Salyut, en het voedde direct in wat daarna kwam. Mir's kernmodule was, in essentie, de volgende Salyut; de operationele patronen die Salyut vaststelde — Soyuz-bemanningen, Progress-vrachtschepen, langdurige expedities — zijn precies hoe het International Space Station vandaag wordt beheerd.",
+    "new": "Tegen Salyut 6 en 7 was het programma gestopt met over primeurs gaan en begon het over permanentie te gaan — doorlopende bezetting, internationale bemanningen, herbevoorrading als routine. Die verschuiving, van het bezoeken van een baan naar het bewonen ervan, is de werkelijke prestatie van Salyut, en het voedde direct in wat daarna kwam. Mir's kernmodule was, in essentie, de volgende Salyut; de operationele patronen die Salyut vaststelde — Soyuz-bemanningen, Progress-vrachtschepen, langdurige expedities — zijn precies hoe het ISS vandaag wordt beheerd."
+  },
+  {
+    "rel": "programs/salyut.json",
+    "at": "legacy.0.caption",
+    "old": "Een volledige Salyut met een Soyuz-veerboot gekoppeld. Het station-plus-veerboot-plus-vrachtschip-patroon dat Salyut uitwerkte over zeven stations is, in essentie onveranderd, hoe Mir en vervolgens het International Space Station sindsdien zijn beheerd.",
+    "new": "Een volledige Salyut met een Soyuz-veerboot gekoppeld. Het station-plus-veerboot-plus-vrachtschip-patroon dat Salyut uitwerkte over zeven stations is, in essentie onveranderd, hoe Mir en vervolgens het ISS sindsdien zijn beheerd."
+  },
+  {
+    "rel": "programs/salyut.json",
+    "at": "legacy.2.md",
+    "old": "Het bouwde ook de expertise die post-Koude-Oorlog-samenwerking mogelijk maakte. Tegen de tijd dat het International Space Station werd bedacht, had de Sovjet-Unie en vervolgens Rusland twee decennia aan ongeëvenaarde ervaring in langdurige stationoperaties verzameld — ervaring die de Verenigde Staten, na Skylab, simpelweg niet hadden. Die onevenwichtigheid is een groot deel van waarom het ISS werd gebouwd op een Russische kern en Russische operationele doctrine, en waarom Salyut, het programma geboren uit het verliezen van de Maan, uiteindelijk de meest ambitieuze menselijke structuur ooit gebouwd vorm gaf.",
+    "new": "Het bouwde ook de expertise die post-Koude-Oorlog-samenwerking mogelijk maakte. Tegen de tijd dat het ISS werd bedacht, had de Sovjet-Unie en vervolgens Rusland twee decennia aan ongeëvenaarde ervaring in langdurige stationoperaties verzameld — ervaring die de Verenigde Staten, na Skylab, simpelweg niet hadden. Die onevenwichtigheid is een groot deel van waarom het ISS werd gebouwd op een Russische kern en Russische operationele doctrine, en waarom Salyut, het programma geboren uit het verliezen van de Maan, uiteindelijk de meest ambitieuze menselijke structuur ooit gebouwd vorm gaf."
+  },
+  {
+    "rel": "programs/skylab.json",
+    "at": "narrative.0.md",
+    "old": "Het bepalende moment van Skylab is de reparatie, en het is belangrijker dan het op het eerste gezicht lijkt. Tot 1973 waren ruimtevaartuigen in wezen wegwerp en niet-onderhoudbaar: als iets kapotging, werd de missie gedegradeerd of verloren. Skylab bewees het tegendeel — dat een bemanning met gereedschap, training en improvisatie een machine kon redden die catastrofaal had gefaald. Die enkele gedachte, dat orbitale hardware *onderhoudbaar* is, loopt rechtstreeks door naar de Hubble-onderhoudsmissies en naar het constante reparatie- en upgradewerk dat het International Space Station in leven houdt.",
+    "new": "Het bepalende moment van Skylab is de reparatie, en het is belangrijker dan het op het eerste gezicht lijkt. Tot 1973 waren ruimtevaartuigen in wezen wegwerp en niet-onderhoudbaar: als iets kapotging, werd de missie gedegradeerd of verloren. Skylab bewees het tegendeel — dat een bemanning met gereedschap, training en improvisatie een machine kon redden die catastrofaal had gefaald. Die enkele gedachte, dat orbitale hardware *onderhoudbaar* is, loopt rechtstreeks door naar de Hubble-onderhoudsmissies en naar het constante reparatie- en upgradewerk dat het ISS in leven houdt."
+  },
+  {
+    "rel": "programs/soyuz.json",
+    "at": "outcome.2.md",
+    "old": "Dat had het hele verhaal kunnen zijn: een veelbelovend ontwerp dat begon in tragedie en de wedloop afsloot met een handdruk. In plaats daarvan was het slechts het begin. Soyuz bleef vliegen — naar Salyut, naar Mir, naar het International Space Station — en bleef verfijnd worden, totdat het schip dat twee bemanningen doodde in zijn eerste vier jaar het veiligste en meest betrouwbare middel werd om een baan te bereiken dat iemand ooit heeft gebruikt.",
+    "new": "Dat had het hele verhaal kunnen zijn: een veelbelovend ontwerp dat begon in tragedie en de wedloop afsloot met een handdruk. In plaats daarvan was het slechts het begin. Soyuz bleef vliegen — naar Salyut, naar Mir, naar het ISS — en bleef verfijnd worden, totdat het schip dat twee bemanningen doodde in zijn eerste vier jaar het veiligste en meest betrouwbare middel werd om een baan te bereiken dat iemand ooit heeft gebruikt."
+  },
+  {
+    "rel": "programs/soyuz.json",
+    "at": "narrative.1.md",
+    "old": "Het veranderde ook volledig van taak. Ontworpen om met de Amerikanen te racen naar de Maan, verloor Soyuz die wedloop en werd stilletjes een andere bestemming gegeven — de veerboot die bemanningen naar de ruimtestations van de Sovjet-Unie bracht, vervolgens naar Mir, vervolgens naar het International Space Station dat met diezelfde Amerikanen was gebouwd. Toen de Amerikaanse Space Shuttle in 2011 met pensioen ging, werd Soyuz gedurende negen jaar de *enige* manier waarop een mens het ruimtestation kon bereiken: het hele internationale programma was afhankelijk van een Sovjetontwerp uit de jaren zestig.",
+    "new": "Het veranderde ook volledig van taak. Ontworpen om met de Amerikanen te racen naar de Maan, verloor Soyuz die wedloop en werd stilletjes een andere bestemming gegeven — de veerboot die bemanningen naar de ruimtestations van de Sovjet-Unie bracht, vervolgens naar Mir, vervolgens naar het ISS dat met diezelfde Amerikanen was gebouwd. Toen de Amerikaanse Space Shuttle in 2011 met pensioen ging, werd Soyuz gedurende negen jaar de *enige* manier waarop een mens het ruimtestation kon bereiken: het hele internationale programma was afhankelijk van een Sovjetontwerp uit de jaren zestig."
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "goals.0.caption",
+    "old": "Endeavour aangemeerd aan het International Space Station. De unieke combinatie van de Shuttle — een grote bemanning, een laadruim, een robotarm en het vermogen om dingen naar huis te brengen — maakte het het voertuig dat de grote structuren van zijn tijd assembleerde en onderhield.",
+    "new": "Endeavour aangemeerd aan het ISS. De unieke combinatie van de Shuttle — een grote bemanning, een laadruim, een robotarm en het vermogen om dingen naar huis te brengen — maakte het het voertuig dat de grote structuren van zijn tijd assembleerde en onderhield."
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "goals.2.md",
+    "old": "Twee van die dingen rechtvaardigen het hele programma. De Shuttle plaatste de Hubble Space Telescope en stuurde vervolgens, vijf keer, bemanningen om het in de baan te repareren en upgraden — een gebrekkige telescoop veranderend in het meest productieve observatorium in de geschiedenis en het decennia actueel houdend. En het assembleerde het International Space Station, de modules, spanten en zonnepanelen omhoog vliegend en ze met zijn arm en zijn ruimtewandelaars aan elkaar boutend. Geen van beide was mogelijk zonder een voertuig dat een grote bemanning, een grote lading en de gereedschappen om in de ruimte te werken kon vervoeren. Dat was het echte doel van de Shuttle, en daarin was het ongeëvenaard.",
+    "new": "Twee van die dingen rechtvaardigen het hele programma. De Shuttle plaatste de Hubble Space Telescope en stuurde vervolgens, vijf keer, bemanningen om het in de baan te repareren en upgraden — een gebrekkige telescoop veranderend in het meest productieve observatorium in de geschiedenis en het decennia actueel houdend. En het assembleerde het ISS, de modules, spanten en zonnepanelen omhoog vliegend en ze met zijn arm en zijn ruimtewandelaars aan elkaar boutend. Geen van beide was mogelijk zonder een voertuig dat een grote bemanning, een grote lading en de gereedschappen om in de ruimte te werken kon vervoeren. Dat was het echte doel van de Shuttle, en daarin was het ongeëvenaard."
+  },
+  {
+    "rel": "programs/space-shuttle.json",
+    "at": "legacy.1.md",
+    "old": "De meest duurzame erfenis van de Shuttle is fysiek: het International Space Station, dat het assembleerde en dat op geen enkele andere manier had kunnen worden gebouwd, en de Hubble Space Telescope, die het plaatste en herhaaldelijk redde. Die twee alleen al verzekeren zijn plaats. Maar zijn erfenis is ook waarschuwend — de duidelijkste demonstratie in de ruimtevaart dat herbruikbaarheid niet hetzelfde is als goedkoopte, dat een experimenteel voertuig niet als een routinematig voertuig mag worden verkocht of gevlogen, en dat organisatiecultuur, niet alleen engineering, beslist of een gevaarlijke machine mensen doodt.",
+    "new": "De meest duurzame erfenis van de Shuttle is fysiek: het ISS, dat het assembleerde en dat op geen enkele andere manier had kunnen worden gebouwd, en de Hubble Space Telescope, die het plaatste en herhaaldelijk redde. Die twee alleen al verzekeren zijn plaats. Maar zijn erfenis is ook waarschuwend — de duidelijkste demonstratie in de ruimtevaart dat herbruikbaarheid niet hetzelfde is als goedkoopte, dat een experimenteel voertuig niet als een routinematig voertuig mag worden verkocht of gevlogen, en dat organisatiecultuur, niet alleen engineering, beslist of een gevaarlijke machine mensen doodt."
+  },
+  {
+    "rel": "programs/tiangong.json",
+    "at": "the_land.0.md",
+    "old": "In 2011 was er één plek waar mensen in de ruimte leefden, en China was daar niet welkom. Het International Space Station was een samenwerking tussen de Verenigde Staten, Rusland, Europa, Japan en Canada — en datzelfde jaar nam het Amerikaanse Congres het Wolf Amendment aan, dat NASA verbood bilaterale samenwerking met China aan te gaan zonder expliciete goedkeuring. De boodschap was ondubbelzinnig: de club was gesloten. China's antwoord was niet te protesteren. Het was om zijn eigen station te bouwen, met zijn eigen raket, met zijn eigen bemanningscapsule, volgens een tijdschema dat het van tevoren publiceerde en vervolgens naleefde.",
+    "new": "In 2011 was er één plek waar mensen in de ruimte leefden, en China was daar niet welkom. Het ISS was een samenwerking tussen de Verenigde Staten, Rusland, Europa, Japan en Canada — en datzelfde jaar nam het Amerikaanse Congres het Wolf Amendment aan, dat NASA verbood bilaterale samenwerking met China aan te gaan zonder expliciete goedkeuring. De boodschap was ondubbelzinnig: de club was gesloten. China's antwoord was niet te protesteren. Het was om zijn eigen station te bouwen, met zijn eigen raket, met zijn eigen bemanningscapsule, volgens een tijdschema dat het van tevoren publiceerde en vervolgens naleefde."
   }
 ]

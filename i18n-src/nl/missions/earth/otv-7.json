@@ -1,8 +1,8 @@
 {
   "name": "X-37B OTV-7 (USA-358, USSF-52)",
   "type": "ONBEMAND SPACEPLANE · VOLTOOID",
-  "first": "USA-358 / USSF-52 — 434 dagen in baan, Vandenberg SFB",
-  "description": "Zevende X-37B-vlucht — eerste naar een zeer elliptische baan (HEO) en eerste gelanceerd op Falcon Heavy. Gelanceerd op 2023-12-29 01:07 UTC vanaf KSC LC-39A; beide zijboostersgevangen op LZ-1 / LZ-2, centrale kern gebruikt voor HEO-inbrenging. De HEO-baan voerde de OTV naar ongeveer GEO-gordel-hoogte op apogeë. Voerde een gecontroleerde aeroremming-achtige deorbit-sequentie uit (USSF gaf een openbare update over de manoeuvre, een opzettelijke afwijking van transparantie ten opzichte van eerdere geclassificeerde vluchten). Geland op Vandenberg SFB 2025-03-07 09:22 UTC.",
+  "first": "USA-358 / USSF-52 — 434 dagen in baan, Vandenberg Space Force Base",
+  "description": "Zevende X-37B-vlucht — eerste naar een zeer elliptische baan (HEO) en eerste gelanceerd op Falcon Heavy. Gelanceerd op 2023-12-29 01:07 UTC vanaf KSC LC-39A; beide zijboostersgevangen op LZ-1 / LZ-2, centrale kern gebruikt voor HEO-inbrenging. De HEO-baan voerde de OTV naar ongeveer GEO-gordel-hoogte op apogeë. Voerde een gecontroleerde aeroremming-achtige deorbit-sequentie uit (USSF gaf een openbare update over de manoeuvre, een opzettelijke afwijking van transparantie ten opzichte van eerdere geclassificeerde vluchten). Geland op Vandenberg Space Force Base 2025-03-07 09:22 UTC.",
   "events": [
     {
       "met": 0,
@@ -19,7 +19,7 @@
     {
       "met": 434,
       "label": "LANDING",
-      "note": "Autonome baanlandingop Vandenberg SFB 2025-03-07.",
+      "note": "Autonome baanlandingop Vandenberg Space Force Base 2025-03-07.",
       "type": "nominal"
     }
   ]

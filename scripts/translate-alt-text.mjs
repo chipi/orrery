@@ -14,6 +14,7 @@
  */
 import fs from 'node:fs';
 import Anthropic from '@anthropic-ai/sdk';
+import { translationModel } from './lib/translate-model.mjs';
 
 const DIR = 'static/data/image-alt-text';
 const LOCALES = [
@@ -68,7 +69,7 @@ const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
 async function translateBatch(locale, strings) {
   const r = await client.messages.create({
-    model: 'claude-haiku-4-5',
+    model: translationModel(locale),
     max_tokens: 8192,
     system: `Translate short image alt-text captions from English to ${NAMES[locale]}. Keep proper nouns (spacecraft/mission/agency/place/person names), numbers, units, dates, symbols verbatim. Keep universal acronyms (ISS, JWST, NASA, ESA, JAXA, LRO, GPS). Return via the submit tool, same order + count.`,
     tools: [

@@ -19,6 +19,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import Anthropic from '@anthropic-ai/sdk';
+import { translationModel } from './lib/translate-model.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const EN = path.join(ROOT, 'i18n-src', 'en-US', 'programs');
@@ -63,7 +64,7 @@ const SECTIONS = ['the_land', 'goals', 'outcome', 'narrative', 'legacy', 'lesson
 // Single-string translation via a {translation: string} tool — cannot length-mismatch.
 async function translateOne(client, locale, str) {
   const r = await client.messages.create({
-    model: 'claude-haiku-4-5',
+    model: translationModel(locale),
     max_tokens: 4096,
     system: SYSTEM,
     tools: [
@@ -112,7 +113,7 @@ CRITICAL CONSTRAINTS:
 
 async function translateStrings(client, locale, strings) {
   const r = await client.messages.create({
-    model: 'claude-haiku-4-5',
+    model: translationModel(locale),
     max_tokens: 8192,
     system: SYSTEM,
     tools: [

@@ -19,6 +19,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import Anthropic from '@anthropic-ai/sdk';
+import { translationModel } from './lib/translate-model.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const MESSAGES_DIR = path.join(ROOT, 'messages');
@@ -67,7 +68,6 @@ const explicitKeys = args.keys ? String(args.keys).split(',') : null;
 const fixPlaceholders = !!args['fix-placeholders']; // re-translate keys whose {placeholders} got dropped
 // Model tier: Haiku, ALWAYS — AGENTS.md §"i18n rules" cost policy (operator,
 // 2026-09-09). Hardcoded on purpose: no --model flag, no env override.
-const MODEL = 'claude-haiku-4-5';
 
 const phset = (s) => new Set(String(s).match(/\{[^}]+\}/g) || []);
 const sameSet = (a, b) => a.size === b.size && [...a].every((x) => b.has(x));
@@ -94,7 +94,7 @@ CRITICAL:
 
 async function tx(client, locale, payload) {
   const r = await client.messages.create({
-    model: MODEL,
+    model: translationModel(locale),
     max_tokens: 4000,
     system: SYSTEM,
     messages: [

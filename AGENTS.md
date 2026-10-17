@@ -360,16 +360,18 @@ Cues + DOM actions in `src/lib/audio-tour.ts` are the interaction layer that run
 
 ## i18n rules — follow these exactly
 
-**Translation model tier (cost policy).** ALL `scripts/translate-*.mjs` LLM
-calls run on **Haiku** (`claude-haiku-4-5`) — hardcoded, no `--model` flag, no
-override input, no exceptions (operator ruling 2026-09-09; this supersedes the
-earlier essays//programs-on-Sonnet carve-out). Never escalate a translation
-call to Sonnet or Opus "for quality" — if quality is insufficient, raise it
-with the operator; do not change the model. Retry ladders re-prompt with
-corrections on Haiku, they never escalate.
+**Translation model tier (cost policy).** Every `scripts/translate-*.mjs` LLM
+call takes its model from `translationModel(locale)` in
+`scripts/lib/translate-model.mjs`: **Haiku** (`claude-haiku-4-5`) by default,
+**Sonnet** only for locales on that file's problem list, each with the evidence
+that put it there (operator rulings 2026-09-09 and 2026-10-17; today: `sr-Cyrl`).
+No `--model` flag, no override input, never Opus. Adding a locale to the list
+needs evidence (detector counts or a graded sample) and the operator's yes; if
+another locale's quality is insufficient, raise it with the operator, don't
+change the model. Retry ladders re-prompt with corrections on the locale's own
+model, they never escalate. `scripts/lib/translate-model.test.ts` enforces it.
 Always run the translators with a **concurrency pool** (≈6-wide), never a bare
-sequential `for await` loop. Current wiring: every live translate script →
-Haiku, hardcoded.
+sequential `for await` loop.
 
 **UI strings:** never hardcode user-facing text in `.svelte` files. All UI strings go through Paraglide-js.
 

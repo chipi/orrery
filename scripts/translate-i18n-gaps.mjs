@@ -25,6 +25,7 @@ import path from 'node:path';
 import Anthropic from '@anthropic-ai/sdk';
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
+import { translationModel } from './lib/translate-model.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 // i18n overlay source moved out of static/ (ADR-079 D2 / #377).
@@ -382,20 +383,16 @@ function summarizeErrors(errors) {
 }
 
 // Translate + validate against the real schema, retrying with concrete
-// correction instructions. Haiku ONLY — AGENTS.md §i18n cost policy (operator,
-// 2026-09-09): retries re-prompt with corrections, they never escalate the model.
+// correction instructions. Model per locale (translationModel: Haiku, Sonnet for
+// problem locales — AGENTS.md §i18n cost policy): retries re-prompt with
+// corrections on the locale's own model, they never escalate it.
 // Throws only if still invalid after the full ladder — caller skips the write.
-const MODEL_LADDER = [
-  'claude-haiku-4-5',
-  'claude-haiku-4-5',
-  'claude-haiku-4-5',
-  'claude-haiku-4-5',
-];
+const LADDER_STEPS = 4;
 
 // Translate one string in isolation — the atomic unit the model never collapses.
 async function translateString(client, text, locale) {
   const r = await client.messages.create({
-    model: 'claude-haiku-4-5',
+    model: translationModel(locale),
     max_tokens: 4096,
     system: SYSTEM_BASE,
     tools: [
@@ -455,7 +452,7 @@ async function repairArrays(client, out, locale, payload) {
 // key facts, drop a clause if needed.
 async function shortenString(client, text, locale, limit) {
   const r = await client.messages.create({
-    model: 'claude-haiku-4-5',
+    model: translationModel(locale),
     max_tokens: 1024,
     system: SYSTEM_BASE,
     tools: [
@@ -499,9 +496,9 @@ async function translate(client, surface, locale, payload) {
   const validate = VALIDATORS[surface];
   let corrections = null;
   let lastOut = null;
-  for (let i = 0; i < MODEL_LADDER.length; i++) {
+  for (let i = 0; i < LADDER_STEPS; i++) {
     lastOut = coerceStringifiedJson(
-      await callModel(client, MODEL_LADDER[i], cfg, surface, locale, payload, corrections),
+      await callModel(client, translationModel(locale), cfg, surface, locale, payload, corrections),
     );
     if (!validate || validate(lastOut)) return lastOut;
     corrections = summarizeErrors(validate.errors);

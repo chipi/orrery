@@ -19,6 +19,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import Anthropic from '@anthropic-ai/sdk';
+import { translationModel } from './lib/translate-model.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const EN = path.join(ROOT, 'i18n-src', 'en-US', 'essays');
@@ -58,8 +59,6 @@ const argOnly = (process.argv.find((a) => a.startsWith('--only=')) || '').split(
 const argLoc = (process.argv.find((a) => a.startsWith('--locales=')) || '').split('=')[1];
 const LOCALES = argLoc ? argLoc.split(',') : ALL_LOCALES;
 
-const MODEL = 'claude-haiku-4-5-20251001';
-
 /** Extract translatable strings in a fixed order: title, dek, then each body
  *  block's text field (prose.md | heading.text | figure.caption). */
 function extract(essay) {
@@ -95,7 +94,7 @@ Return EXACTLY as many translations as inputs, in the SAME ORDER. Never merge, s
 /** Translate a small array in one call; returns the array or null on count mismatch. */
 async function translateChunk(client, sys, locale, strings) {
   const r = await client.messages.create({
-    model: MODEL,
+    model: translationModel(locale),
     max_tokens: 8192,
     system: sys,
     tools: [

@@ -14,20 +14,20 @@
  * Path syntax: dot-separated; a numeric segment is an array index
  * (e.g. body_paragraphs.2 → body_paragraphs[2]).
  *
- * Model matches the science-essay pipeline (claude-haiku-4-5). Edit the en-US
+ * Model: translationModel(locale) (Haiku; Sonnet for problem locales). Edit the en-US
  * source FIRST, then run this to propagate just those fields.
  */
 
 import fs from 'node:fs';
 import path from 'node:path';
 import Anthropic from '@anthropic-ai/sdk';
+import { translationModel } from './lib/translate-model.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 // Subdir under i18n-src/<loc>/ holding the overlay. Defaults to 'science' (the
 // encyclopedia); pass --dir= (empty) or --dir=planets etc. for body overlays.
 let SUBDIR = 'science';
 const SCIENCE = (loc) => path.join(ROOT, 'i18n-src', loc, SUBDIR);
-const MODEL = 'claude-haiku-4-5';
 
 const NAMES = {
   ar: 'Modern Standard Arabic',
@@ -101,7 +101,7 @@ const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 // ONE field per call → the tool returns a single `translation` string. No array
 // parsing, so prose with quotes/newlines can't corrupt the result (haiku was
 // intermittently returning stringified arrays for some locales).
-async function translateField(locale, text, model = MODEL) {
+async function translateField(locale, text, model = translationModel(locale)) {
   const r = await client.messages.create({
     model,
     max_tokens: 4000,
@@ -132,15 +132,13 @@ async function translateField(locale, text, model = MODEL) {
   return typeof t === 'string' && t.trim().length > 0 ? t : null;
 }
 
-const FALLBACK_MODEL = 'claude-haiku-4-5'; // haiku-only policy — retry, never escalate
 async function translate(locale, strings) {
   const out = [];
   for (const s of strings) {
     let res = null;
-    for (let a = 0; a < 3 && !res; a++) res = await translateField(locale, s, MODEL);
+    for (let a = 0; a < 3 && !res; a++) res = await translateField(locale, s);
     for (let a = 0; a < 2 && !res; a++) {
-      res = await translateField(locale, s, FALLBACK_MODEL);
-      if (res) console.log(`    (${locale} field via ${FALLBACK_MODEL})`);
+      res = await translateField(locale, s);
     }
     if (!res) throw new Error(`${locale}: no translation returned for a field after retries`);
     out.push(res);

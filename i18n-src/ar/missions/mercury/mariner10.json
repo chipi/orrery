@@ -13,31 +13,31 @@
     {
       "met": 94,
       "label": "VENUS FLYBY",
-      "note": "5768 km closest approach 1974-02-05; first deliberate gravity-assist trajectory in space history.",
+      "note": "أقرب اقتراب 5768 كم في 1974-02-05؛ أول مسار مساعد جاذبية متعمد في تاريخ استكشاف الفضاء.",
       "type": "nominal"
     },
     {
       "met": 146,
       "label": "MERCURY 1",
-      "note": "703 km closest approach 1974-03-29; first Mercury images.",
+      "note": "أقرب اقتراب 703 كم في 1974-03-29؛ أول صور لعطارد.",
       "type": "nominal"
     },
     {
       "met": 322,
       "label": "MERCURY 2",
-      "note": "48069 km closest approach 1974-09-21; southern-hemisphere imaging.",
+      "note": "أقرب اقتراب 48069 كم في 1974-09-21؛ تصوير الكرة الأرضية الجنوبية.",
       "type": "nominal"
     },
     {
       "met": 498,
       "label": "MERCURY 3",
-      "note": "327 km closest approach 1975-03-16; magnetic-field re-confirmation.",
+      "note": "أقرب اقتراب 327 كم في 1975-03-16؛ إعادة تأكيد المجال المغناطيسي.",
       "type": "nominal"
     },
     {
       "met": 506,
       "label": "PROPELLANT END",
-      "note": "N₂ attitude-control gas depleted 1975-03-24; transmitter commanded off.",
+      "note": "غاز التحكم في الاتجاه N₂ استُنزف في 1975-03-24؛ أُطفئ المُرسِل بأمر.",
       "type": "nominal"
     }
   ]

@@ -39,7 +39,7 @@
     },
     {
       "type": "prose",
-      "md": "Este es el detalle que vale la pena retener. Cuando [Apollo 8](/missions?id=apollo8) se convirtió en la primera nave tripulada en dejar la gravedad terrestre y navegar hacia otro mundo en diciembre de 1968, su tripulación se orientó en parte de la manera en que Cook atravesó el Pacífico: Jim Lovell en un telescopio y sextante integrado en el casco, observando estrellas conocidas contra el horizonte de la Tierra, alimentando los ángulos a una computadora para corregir la deriva. La Computadora de Guía Apollo que realizaba esas sumas tenía alrededor de 72 kilobytes de memoria fija y funcionaba a una velocidad de reloj que un timbre moderno se burlaría — y llevó a nueve tripulaciones a la Luna y [dos puñados de ellas a ella](/missions?id=apollo11). El genio no estaba en el hardware. Estaba en el reconocimiento de que una máquina para mantener la cuenta y un humano para verificarla contra las estrellas, juntos, podían hacer lo que ninguno solo podía."
+      "md": "Este es el detalle que vale la pena retener. Cuando [Apollo 8](/missions?id=apollo8) se convirtió en la primera nave tripulada en dejar la gravedad terrestre y navegar hacia otro mundo en diciembre de 1968, su tripulación se orientó en parte de la manera en que Cook atravesó el Pacífico: Jim Lovell en un telescopio y sextante integrado en el casco, observando estrellas conocidas contra el horizonte de la Tierra, alimentando los ángulos a una computadora para corregir la deriva. La Apollo Guidance Computer que realizaba esas sumas tenía alrededor de 72 kilobytes de memoria fija y funcionaba a una velocidad de reloj que un timbre moderno se burlaría — y llevó a nueve tripulaciones a la Luna y [dos puñados de ellas a ella](/missions?id=apollo11). El genio no estaba en el hardware. Estaba en el reconocimiento de que una máquina para mantener la cuenta y un humano para verificarla contra las estrellas, juntos, podían hacer lo que ninguno solo podía."
     },
     {
       "type": "prose",
@@ -67,13 +67,13 @@
     },
     {
       "type": "prose",
-      "md": "El instrumento es la [Red de Espacio Profundo](/science/mission-phases/dsn) — tres enormes complejos de antenas espaciados aproximadamente 120° en California, España y Australia, de modo que a medida que la Tierra gira, al menos uno de ellos siempre puede ver el espacio profundo. Cuando una antena apunta a una sonda, principalmente no está escuchando datos. Está midiendo dos cosas con una precisión monumental. Primero, **distancia**: envía una señal de tiempo, la nave espacial la refleja de vuelta, y el tiempo de ida y vuelta — multiplicado por la velocidad de la luz — da la distancia, con precisión de algunos metros a través de miles de millones de kilómetros. Segundo, **velocidad**: la radio de la nave, desplazada en frecuencia por su movimiento hacia o alejándose de nosotros, se lee por su corrimiento Doppler, y el corrimiento da la velocidad a lo largo de la línea de mira a una fracción de milímetro por segundo."
+      "md": "El instrumento es la [Deep Space Network](/science/mission-phases/dsn) — tres grandes complejos de antenas distribuidas aproximadamente 120° entre sí en California, España y Australia, de modo que conforme la Tierra gira, al menos una de ellas siempre puede escrutar el espacio profundo. Cuando una antena apunta hacia una sonda, no está principalmente escuchando datos. Está midiendo dos cosas con precisión colosal. Primero, **distancia**: envía una señal de sincronización, la nave espacial la refleja de vuelta, y el tiempo de ida y vuelta —multiplicado por la velocidad de la luz— da la distancia, con una exactitud de unos pocos metros en miles de millones de kilómetros. Segundo, **velocidad**: la radio de la nave, desplazada en frecuencia por su movimiento hacia nosotros o alejándose de nosotros, se lee según su desplazamiento Doppler, y el desplazamiento da la velocidad a lo largo de la línea de visión con una precisión de una fracción de milímetro por segundo."
     },
     {
       "type": "figure",
       "image": "essays/navigation/deep-space-network",
       "kind": "diagram",
-      "caption": "La Red de Espacio Profundo: tres enormes antenas espaciadas aproximadamente 120°, de modo que una siempre mira el espacio profundo. La distancia viene del tiempo de luz de ida y vuelta; la velocidad del corrimiento Doppler de la radio. La tierra hace el vuelo.",
+      "caption": "La Deep Space Network: tres enormes antenas espaciadas aproximadamente 120°, de modo que una siempre mira el espacio profundo. La distancia viene del tiempo de luz de ida y vuelta; la velocidad del corrimiento Doppler de la radio. La tierra hace el vuelo.",
       "align": "wide"
     },
     {
@@ -82,7 +82,7 @@
     },
     {
       "type": "prose",
-      "md": "Pero la Red de Espacio Profundo tiene un adversario contra el que no puede argumentar, y su nombre es la velocidad de la luz. En Marte, un comando tarda entre aproximadamente tres y veintidós minutos en llegar, y el reconocimiento tarda el mismo tiempo en regresar. En Plutón son cuatro horas y media, en un solo sentido. La tierra puede navegar una sonda hermosamente — siempre que nada necesite ser decidido más rápido de lo que la luz puede llevar las noticias a casa y una respuesta de vuelta. Durante setenta años, casi nada lo hizo. Eso está a punto de ser todo el problema."
+      "md": "Pero la Deep Space Network tiene un adversario contra el que no puede argumentar, y su nombre es la velocidad de la luz. En Marte, un comando tarda entre aproximadamente tres y veintidós minutos en llegar, y el reconocimiento tarda el mismo tiempo en regresar. En Plutón son cuatro horas y media, en un solo sentido. La tierra puede navegar una sonda hermosamente — siempre que nada necesite ser decidido más rápido de lo que la luz puede llevar las noticias a casa y una respuesta de vuelta. Durante setenta años, casi nada lo hizo. Eso está a punto de ser todo el problema."
     },
     {
       "type": "heading",
@@ -148,7 +148,7 @@
     },
     {
       "type": "prose",
-      "md": "Luego vinieron los lugares donde tierra genuinamente no puede ayudar. Aterrizar en Marte es el ejemplo más pronunciado — la [entrada, descenso y aterrizaje](/science/mission-phases/edl) tarda alrededor de siete minutos, y Marte está a minutos de luz, así que para cuando la Tierra se entere de que la nave ha golpeado la atmósfera, todo hace mucho que terminó, de una forma u otra. Nadie en la Tierra aterriza un rover marciano. El rover se aterriza a sí mismo. [Perseverance](/missions?id=perseverance) llevaba un sistema que fotografiaba el terreno subiendo rápidamente, lo coincidía en tiempo real contra un mapa a bordo, reconocía el terreno, y *elegía* un lugar seguro para tocar tierra — una máquina haciendo el trabajo de Lovell, el trabajo de la Red de Espacio Profundo, y el trabajo de un piloto de arbusto todo a la vez, en siete minutos, sola."
+      "md": "Luego vinieron los lugares donde tierra genuinamente no puede ayudar. Aterrizar en Marte es el ejemplo más pronunciado — la [entrada, descenso y aterrizaje](/science/mission-phases/edl) tarda alrededor de siete minutos, y Marte está a minutos de luz, así que para cuando la Tierra se entere de que la nave ha golpeado la atmósfera, todo hace mucho que terminó, de una forma u otra. Nadie en la Tierra aterriza un rover marciano. El rover se aterriza a sí mismo. [Perseverance](/missions?id=perseverance) llevaba un sistema que fotografiaba el terreno subiendo rápidamente, lo coincidía en tiempo real contra un mapa a bordo, reconocía el terreno, y *elegía* un lugar seguro para tocar tierra — una máquina haciendo el trabajo de Lovell, el trabajo de Deep Space Network, y el trabajo de un piloto de arbusto todo a la vez, en siete minutos, sola."
     },
     {
       "type": "figure",
@@ -172,7 +172,7 @@
     },
     {
       "type": "prose",
-      "md": "Y está a punto de dejar de ser silencioso. Cuanto más lejos empujamos — hacia [el sistema exterior](/explore), hacia vuelos tripulados a Marte donde un retraso de veinte minutos es la brecha entre una corrección y un cráter — menos puede hacer la tierra a tiempo, y más debe convertirse cada nave en su propio navegador: su propio sextante, su propia [Red de Espacio Profundo](/science/mission-phases/dsn), su propia sala llena de gente. Pasamos setenta años enseñando a las máquinas a encontrar su camino por el cielo. Estamos a punto de descubrir cuán bien aprendieron."
+      "md": "Y está a punto de dejar de estar en silencio. Cuanto más lejos empujamos — hacia [el sistema exterior](/explore), hacia vuelos tripulados a Marte donde un desfase de veinte minutos es la brecha entre una corrección y un cráter — menos puede hacer la Tierra a tiempo, y más debe convertirse cada nave en su propio navegante: su propio sextante, su propia [Deep Space Network](/science/mission-phases/dsn), su propia sala llena de gente. Pasamos setenta años enseñando a las máquinas a encontrar su camino por el cielo. Estamos a punto de descubrir qué bien aprendieron."
     }
   ]
 }

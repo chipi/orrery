@@ -3,54 +3,54 @@
   "dispatch": "Apollo 10 vloog de volledige landing — tot op de laatste vijftien kilometer — en keerde toen, zoals bedoeld, om. Stafford en Cernan namen de Lunar Module mee naar beneden tot op een steenworp afstand van het oppervlak bij Tranquility, doorliepen elke stap van de afdaling, en klommen terug naar een baan om de maan zonder te landen. NASA liet zelfs de stijgtanks halfleeg, zodat het hoe verleidelijk het ook werd, er nooit een optie was om ervoor te gaan. Het is de minst gevierde vlucht van het programma en een van de meest gedisciplineerde: een repetitie op volle snelheid door twee mannen die vierhonderdduizend kilometer vlogen in de wetenschap dat de landing aan iemand anders toebehoorde.",
   "type": "BEMAND MAANBAAN · GEVLOGEN",
   "first": "Volledige maanlandings-generale repetitie — LM daalde tot ~15,6 km hoogte",
-  "description": "De volledige generale repetitie voor de eerste maanlanding. Stafford en Cernan vlogen LM Snoopy tot ~15,6 km hoogte boven de geplande Apollo 11-landingsplaats in Mare Tranquillitatis — elke stap van een landingsbenadering behalve de landing zelf. Ze bevestigden het afdalingsprofiel, de landingsradar, het opstijgingstraject en de rendez-vous-procedure die Apollo 11 twee maanden later zou gebruiken. De opstijgings-brandstoftanks van het LM werden opzettelijk ondervuld (~50 % van nominaal) om elke verleiding te voorkomen om een landing te proberen. Snoopy's opstijgingstrap was de enige die de maanbaan met positieve ∆v verliet — uitgeworpen in een heliocentrische baan waar hij vandaag nog steeds is.",
+  "description": "De volledige generalissimo voor de eerste maanlandinging. Stafford en Cernan vlogen LM Snoopy naar ~15,6 km hoogte boven de geplande Apollo 11-landingsplaats in Mare Tranquillitatis — elke stap van een landingsbenadering behalve de werkelijke landing zelf. Ze bevestigden het daallingsprofiel, de landingsradar, het opstijgingstraject en de ontmoetingsprocedure die Apollo 11 twee maanden later zou gebruiken. De brandstoftanks van het LM-opstijgingsstadium waren opzettelijk ondergevuld (~50 % van nominaal) om verleidingen tot een landingspoging te voorkomen. Het opstijgingsstadium van Snoopy was het enige dat de maanbaan verliet met positieve ∆v — weggeslingerd naar een heliocentrische baan waar het vandaag nog altijd verblijft, af en toe herontdekt door amateurastronomen (meest recent bevestigd door Nick Howes / Faulkes Telescope, 2019).",
   "events": [
     {
       "met": 0,
       "label": "LAUNCH",
-      "note": "Saturn V (AS-505) from Kennedy Space Center LC-39B 1969-05-18 16:49 UTC — first crewed launch from LC-39B.",
+      "note": "Saturn V (AS-505) van Kennedy Space Center LC-39B 18 mei 1969 16:49 UTC — eerste bemande lancering vanaf LC-39B.",
       "type": "nominal"
     },
     {
       "met": 0.12,
       "label": "TLI",
-      "note": "Trans-lunar injection. S-IVB ∆v ~3.05 km/s.",
+      "note": "Trans-lunaire injectie. S-IVB ∆v ~3,05 km/s.",
       "type": "nominal"
     },
     {
       "met": 3.16,
       "label": "LOI",
-      "note": "Lunar orbit insertion. SPS ∆v ~0.91 km/s.",
+      "note": "Maanbaan-insluiting. SPS ∆v ~0,91 km/s.",
       "type": "nominal"
     },
     {
       "met": 4.6,
       "label": "LM SEPARATION",
-      "note": "Snoopy undocks from Charlie Brown. Crew of two (Stafford + Cernan) descend toward Mare Tranquillitatis.",
+      "note": "Snoopy koppelt af van Charlie Brown. Bemanning van twee (Stafford + Cernan) daalt af naar Mare Tranquillitatis.",
       "type": "nominal"
     },
     {
       "met": 4.66,
       "label": "CLOSEST APPROACH",
-      "note": "Snoopy reaches ~15.6 km above Apollo 11 target site — no landing; everything verified except touchdown itself.",
+      "note": "Snoopy bereikt ~15,6 km boven Apollo 11-doellocatie — geen landing; alles geverifieerd behalve de landing zelf.",
       "type": "info"
     },
     {
       "met": 4.76,
       "label": "ASCENT + RENDEZVOUS",
-      "note": "Snoopy ascent stage rendezvous with Charlie Brown — first complete LM-to-CSM redocking in lunar orbit.",
+      "note": "Opstijgingsfase van Snoopy ontmoeting met Charlie Brown — eerste volledig LM-naar-CSM opnieuw koppelen in maanbaan.",
       "type": "nominal"
     },
     {
       "met": 5.96,
       "label": "TEI",
-      "note": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+      "note": "Trans-aardse injectie. SPS ∆v ~1,0 km/s.",
       "type": "nominal"
     },
     {
       "met": 8.05,
       "label": "SPLASHDOWN",
-      "note": "CM splashed down in South Pacific 1969-05-26 16:52 UTC. Recovery by USS Princeton.",
+      "note": "CM waterlandde in Zuid-Stille Oceaan 26 mei 1969 16:52 UTC. Bergingoperatie door USS Princeton.",
       "type": "nominal"
     }
   ]

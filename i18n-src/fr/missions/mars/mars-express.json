@@ -7,12 +7,12 @@
     {
       "met": 0,
       "label": "LANCEMENT",
-      "note": "Soyouz-FG / Fregat de Baïkonour.",
+      "note": "Soyuz-FG / Fregat depuis Baikonur.",
       "type": "nominal"
     },
     {
       "met": 7,
-      "label": "MTC-1",
+      "label": "TCM-1",
       "note": "Première correction à mi-parcours.",
       "type": "nominal"
     },

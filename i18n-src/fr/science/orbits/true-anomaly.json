@@ -2,13 +2,13 @@
   "title": "Anomalie vraie",
   "intro_sentence": "L'angle qui dit où un corps est sur l'orbite maintenant, mesuré depuis le périhélie.",
   "narrative_101": [
-    "Imagine une planète sur son ellipse. On a taille, forme, inclinaison. Où est-elle maintenant ? Anomalie vraie. Tiens-toi au Soleil, pointe vers périhélie, mesure l'angle.",
+    "Imaginez une planète qui tourne autour de son ellipse. Nous lui avons déjà donné une taille, une forme, une inclinaison. La seule chose dont nous avons encore besoin, c'est : où se trouve-t-elle sur la boucle en ce moment précis ? C'est l'anomalie vraie. Placez-vous au Soleil, pointez vers le passage le plus proche de la planète, et mesurez l'angle jusqu'à l'endroit où la planète se trouve réellement. C'est tout.",
     "Mais elle ne balaie pas uniformément (deuxième loi de Kepler). Astronomes inventèrent deux autres angles — moyenne et excentrique — qui tickent uniformément, et une échelle d'équations connecte les trois."
   ],
   "body_paragraphs": [
-    "Les éléments décrivent forme et orientation ; l'anomalie vraie (`ν`) dit où le corps est. Du foyer pointer périhélie, suivre le corps — angle balayé.",
-    "De 0 (périhélie) à 180° (aphélie). Tique non uniformément.",
-    "Anomalie moyenne (`M`, uniforme) et excentrique (`E`, pont). Équation de Kepler `M = E - e·sin(E)`."
+    "Les éléments képlériens décrivent la forme et l'orientation d'une orbite ; l'anomalie vraie (`ν`) vous indique où se trouve le corps le long de cette orbite à un instant donné. Placez-vous au foyer (le Soleil, pour une planète), pointez vers le périhélie, et faites tourner votre doigt pour suivre le corps autour de celui-ci. L'angle que vous balayez est l'anomalie vraie.",
+    "Il va de 0 au périhélie (passage le plus proche) à 90° (un quart du trajet) puis à 180° à l'aphélie (le point le plus éloigné), et revient. Contrairement à une horloge, il n'avance pas uniformément — la deuxième loi de Kepler vous dit que le corps se précipite près du périhélie et rampe près de l'aphélie. L'anomalie vraie par seconde change donc tout au long de l'orbite.",
+    "Deux angles apparentés que vous rencontrerez : l'anomalie moyenne (`M`), qui progresse uniformément avec le temps mais n'a aucune signification géométrique ; et l'anomalie excentrique (`E`), le pont entre elles. `M` avance à taux constant, vous résolvez l'équation de Kepler `M = E - e·sin(E)` pour obtenir `E`, puis convertissez en `ν`. Cette chaîne est le cœur battant de tout simulateur orbital, y compris celui d'Orrery."
   ],
   "diagram_caption": "Anomalie vraie ν mesurée au foyer, depuis périhélie jusqu'à la position actuelle."
 }

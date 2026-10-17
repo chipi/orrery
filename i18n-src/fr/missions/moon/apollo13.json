@@ -3,7 +3,7 @@
   "type": "VOL HABITÉ AUTOUR DE LA LUNE · EFFECTUÉ (ALUNISSAGE AVORTÉ)",
   "first": "La mission qui a transformé un quasi-désastre en sauvetage le plus célèbre de la NASA",
   "dispatch": "Apollo 13 n'a jamais aluni, et c'est la mission dont tout le monde se souvient. Deux jours après le départ, un réservoir d'oxygène s'est désintégré et a transformé un vol de routine vers les hautes terres de Fra Mauro en quatre jours de lutte pour maintenir trois hommes en vie dans un vaisseau en perdition à un quart de million de kilomètres de la maison. Ce qui les a sauvés n'était pas l'héroïsme ; c'était la préparation et une salle pleine de gens résolvant le problème en temps réel, improvisaient une façon de respirer et une façon de rentrer à partir de ce qui était déjà boulonné au véhicule. La NASA a appelé cela un « succès avec échec ». Il est plus juste de dire que c'est le vol qui a prouvé que l'agence était aussi bonne qu'elle le prétendait.",
-  "description": "Apollo 13 devait être le troisième alunissage habité, ciblé sur les hautes terres de Fra Mauro. À 55 heures 54 minutes dans le vol, un réservoir d'oxygène du module de service a éclaté, paralysant les systèmes électriques et de maintien de la vie du module de commande-service. L'alunissage étant annulé, l'équipage — James Lovell, Jack Swigert et Fred Haise — a désactivé le CSM, s'est déplacé vers le module lunaire Aquarius en tant que canot de sauvetage, et a utilisé le moteur de descente du LM pour une combustion à Péricynthion+2 heures qui les a placés sur une trajectoire de retour libre rapide. Ils ont contourné la Lune à 254 km d'altitude le 1970-04-15 et ont amerri en toute sécurité dans le Pacifique Sud le 1970-04-17. La mission est étudiée aujourd'hui comme un modèle d'improvisation d'ingénierie en temps réel disciplinée.",
+  "description": "Apollo 13 devait être le troisième alunissage habité, ciblé sur les hautes terres de Fra Mauro. À 55 heures 54 minutes dans le vol, un réservoir d'oxygène du module de service a éclaté, paralysant les systèmes électriques et de maintien de la vie du module de commande-service. L'alunissage étant annulé, l'équipage — James Lovell, Jack Swigert et Fred Haise — a désactivé le CSM, s'est déplacé vers le module lunaire Aquarius en tant que canot de sauvetage, et a utilisé le moteur de descente du LM pour une combustion à Pericynthion+2 heures qui les a placés sur une trajectoire de retour libre rapide. Ils ont contourné la Lune à 254 km d'altitude le 1970-04-15 et ont amerri en toute sécurité dans le Pacifique Sud le 1970-04-17. La mission est étudiée aujourd'hui comme un modèle d'improvisation d'ingénierie en temps réel disciplinée.",
   "events": [
     {
       "met": 0,
@@ -26,7 +26,7 @@
     {
       "met": 2.33,
       "label": "RUPTURE DU RÉSERVOIR D'OXYGÈNE #2",
-      "note": "La commande d'agitation cryo du SM initie un court-circuit incendie et rupture de réservoir. « Houston, nous avons eu un problème. » L'électricité et l'eau diminuent ; le module lunaire Aquarius devient le canot de sauvetage.",
+      "note": "La commande d'agitation cryo du SM initie un court-circuit incendie et rupture de réservoir. « Houston, nous avons eu un problème. » L'électricité et l'eau diminuent ; le Aquarius devient le canot de sauvetage.",
       "type": "warning"
     },
     {

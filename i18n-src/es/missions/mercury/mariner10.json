@@ -13,31 +13,31 @@
     {
       "met": 94,
       "label": "VENUS FLYBY",
-      "note": "5768 km closest approach 1974-02-05; first deliberate gravity-assist trajectory in space history.",
+      "note": "Máxima aproximación de 5768 km el 5 de febrero de 1974; primera trayectoria de asistencia gravitatoria deliberada en la historia de la exploración espacial.",
       "type": "nominal"
     },
     {
       "met": 146,
       "label": "MERCURY 1",
-      "note": "703 km closest approach 1974-03-29; first Mercury images.",
+      "note": "Máxima aproximación de 703 km el 29 de marzo de 1974; primeras imágenes de Mercurio.",
       "type": "nominal"
     },
     {
       "met": 322,
       "label": "MERCURY 2",
-      "note": "48069 km closest approach 1974-09-21; southern-hemisphere imaging.",
+      "note": "Máxima aproximación de 48069 km el 21 de septiembre de 1974; imágenes del hemisferio austral.",
       "type": "nominal"
     },
     {
       "met": 498,
       "label": "MERCURY 3",
-      "note": "327 km closest approach 1975-03-16; magnetic-field re-confirmation.",
+      "note": "Máxima aproximación de 327 km el 16 de marzo de 1975; reconfirmación del campo magnético.",
       "type": "nominal"
     },
     {
       "met": 506,
       "label": "PROPELLANT END",
-      "note": "N₂ attitude-control gas depleted 1975-03-24; transmitter commanded off.",
+      "note": "Gas de control de actitud N₂ agotado el 24 de marzo de 1975; transmisor desactivado por comando.",
       "type": "nominal"
     }
   ]

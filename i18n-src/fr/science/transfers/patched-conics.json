@@ -1,15 +1,15 @@
 {
-  "title": "Coniques raccordées",
+  "title": "Patched Conics",
   "intro_sentence": "Prétends que la gravité est un corps à la fois — l'approximation qui transforme le problème à trois corps insoluble en chaîne de problèmes Kepler à deux corps solubles.",
   "narrative_101": [
-    "Petit secret sale : la physique vraie complète est mathématiquement insoluble en forme close. AUCUNE solution close du problème à trois corps.",
-    "Comment planificateurs font ? Ils trichent. Prétendre qu'à un moment, seule la gravité d'UN corps compte. Près Terre : seule Terre. Croisière : seul Soleil. Près Mars : seul Mars. Régions = sphères d'influence. Coniques képlériennes propres dans chacune. Aux frontières : changer cadre.",
-    "Maths à quelques pour cent près — petit assez pour planifier, assez pour tourner dans Web Worker."
+    "Voici un secret inavouable de la mécanique orbitale : la physique réelle complète — chaque corps du système solaire attirant tous les autres — est mathématiquement insoluble de manière rigoureuse. Nous n'avons AUCUNE solution sous forme fermée au problème à trois corps, sans parler de la version réelle avec des dizaines de corps. Alors comment les planificateurs de missions arrivent-ils à accomplir quelque chose ?",
+    "Ils trichent. Ils prétendent que, à tout moment, seule la gravité d'UN SEUL corps compte. Près de la Terre, seule la Terre tire. Durant la croisière, seul le Soleil. Près de Mars, seule Mars. Chacune de ces régions s'appelle une sphère d'influence, et à l'intérieur de chacune le vaisseau spatial vole une conique képlérienne rigoureuse. Quand le vaisseau spatial franchit une limite, vous changez de systèmes de coordonnées et commencez une nouvelle conique. Assemblées ensemble, elles forment la trajectoire. C'est les coniques raccordées.",
+    "Les mathématiques s'écartent de la réalité de quelques pour cent — suffisamment peu pour que les vraies missions la planifient en première approximation, puis l'affinent numériquement avant le lancement. C'est également suffisamment peu pour qu'Orrery puisse faire tous ces calculs dans votre navigateur, dans un Web Worker, assez vite pour redessiner tout le porkchop quand vous modifiez l'année de lancement. L'ensemble du simulateur repose sur cette astuce."
   ],
   "body_paragraphs": [
-    "Gravité réelle est désordonnée. Une sonde Terre-Mars sent Terre, Soleil, Mars + tout autre, simultanément. Maths complètes (n-corps) sans solution close — seulement intégration numérique.",
-    "Coniques raccordées = compromis. Sphère d'influence autour de chaque corps. Dans sphère Terre : seule gravité Terre, arc képlérien autour Terre. Frontière → région héliocentrique. Frontière Mars → arc autour Mars.",
-    "Faux mais utile. Erreurs aux frontières petites — quelques % Δv max pour cislunaire. Maths gérables pour Web Worker. Vrai planning NASA utilise même approximation comme premier coup."
+    "La gravité réelle est compliquée. Un engin spatial voyageant entre la Terre et Mars subit la gravité de la Terre, celle du Soleil, celle de Mars, plus celle de tout le reste, tous à la fois. Les mathématiques complètes (le problème des n corps) n'ont pas de solution de forme fermée — seulement l'intégration numérique. C'est lent, fragile, difficile à planifier.",
+    "Les coniques raccordées constituent le compromis opérationnel : déclarez une sphère d'influence autour de chaque corps. À l'intérieur de la sphère terrestre, seule la gravité de la Terre compte ; vous volez selon un arc képlérien autour de la Terre. Franchissez la frontière jusqu'à la région héliocentrique, passez à un arc Kepler centré sur le Soleil. Entrez dans la sphère de Mars, basculez à nouveau. Trois problèmes Kepler, raccordés ensemble aux frontières.",
+    "C'est inexact mais utile. Les erreurs aux frontières sont minimes — quelques pour cent de ∆v au maximum pour les travaux cislunarires, moins pour l'héliocentriquement — et les mathématiques deviennent suffisamment traitables pour tenir dans un Web Worker. Les porkchops `/plan` d'Orrery sont calculés de cette manière ; c'est aussi le cas des trajectoires sur `/fly`. La planification réelle des vols à la NASA utilise la même approximation en première itération, puis l'affine numériquement avant le lancement."
   ],
   "diagram_caption": "Trois cadres, trois coniques, raccordés aux frontières des sphères d'influence."
 }

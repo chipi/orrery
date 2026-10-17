@@ -1,7 +1,7 @@
 {
   "name": "Il sole",
   "type": "Stella · Sequenza principale di tipo G",
-  "fact": "Il Sole contiene il 99,86% di tutta la massa del sistema solare. La sua gravità tiene tutto in orbita, da Mercurio alla nube di Oort. Ogni secondo fonde 600 milioni di tonnellate di idrogeno in elio, rilasciando l'energia che ha sostenuto la vita sulla Terra per 4,5 miliardi di anni.",
+  "fact": "Il Sole contiene il 99,86% di tutta la massa del sistema solare. La sua gravità mantiene in orbita tutto — da Mercurio alla Nube di Oort. Ogni secondo, fonde 600 milioni di tonnellate di idrogeno in elio, rilasciando l'energia che ha sostenuto la vita sulla Terra per 4,5 miliardi di anni.",
   "bio": "Una stella della sequenza principale di tipo G di 4,6 miliardi di anni, a metà dei suoi 10 miliardi di anni di vita. Il Sole ruota in modo differenziale: il suo equatore impiega 25 giorni, i suoi poli 35. In circa 5 miliardi di anni esaurirà l'idrogeno del suo nucleo, si espanderà in una gigante rossa e inghiottirà i pianeti interni. L'influenza gravitazionale del Sole definisce l'eliosfera fino a circa 120 AU.",
   "links": [
     {
@@ -34,7 +34,7 @@
     {
       "tab": "orbits",
       "section": "keplerian-orbit",
-      "why": "Ogni pianeta, satellite di pianeta, cometa e veicolo spaziale umano orbita perché la gravità del Sole definisce il potenziale centrale — un'orbita kepleriana È un'orbita attorno al Sole."
+      "why": "Ogni pianeta, satellite di pianeta, cometa e veicolo spaziale umano orbita perché la gravità del Sole definisce il potenziale centrale — un'orbita Keplerian È un'orbita attorno al Sole."
     },
     {
       "tab": "orbits",

@@ -8,7 +8,7 @@
     },
     {
       "type": "prose",
-      "md": "Isso começou com o Spacelab em 1983 — um laboratório construído pela Europa que viajava no compartimento de carga do Space Shuttle e transformava o Shuttle em uma plataforma científica, levando o primeiro astronauta da ESA em seu primeiro voo. Continuou com o Columbus, o laboratório permanente da Europa acoplado à Estação Espacial Internacional, e com o Automated Transfer Vehicle, a maior e mais sofisticada nave de carga de sua era. Ao longo do caminho, astronautas europeus voaram em Shuttles e Soyuz, viveram a bordo da Mir e da ISS, e comandaram a Estação. A Europa nunca lançou sua própria tripulação — e tornou-se essencial para quase todos que o fizeram."
+      "md": "Isso começou com Spacelab em 1983 — um laboratório construído pela Europa que viajava no compartimento de carga do Space Shuttle e transformava o Shuttle em uma plataforma científica, levando o primeiro astronauta da ESA em seu primeiro voo. Continuou com Columbus, o laboratório permanente da Europa acoplado à International Space Station, e com o Automated Transfer Vehicle, a maior e mais sofisticada nave de carga de sua era. Ao longo do caminho, astronautas europeus voaram em Shuttles e Soyuz, viveram a bordo da Mir e da ISS, e comandaram a Estação. A Europa nunca lançou sua própria tripulação — e tornou-se essencial para quase todos que o fizeram."
     }
   ],
   "goals": [
@@ -17,7 +17,7 @@
       "image": {
         "reuse": "fleet/iss/01"
       },
-      "caption": "A Estação Espacial Internacional, da qual a Europa é parceira plena. O laboratório Columbus da ESA é uma parte permanente dela, e astronautas europeus viveram a bordo e a comandaram — o fruto da escolha de se juntar em vez de agir sozinha.",
+      "caption": "A International Space Station, da qual a Europa é parceira plena. O laboratório Columbus da ESA é uma parte permanente dela, e astronautas europeus viveram a bordo e a comandaram — o fruto da escolha de se juntar em vez de agir sozinha.",
       "align": "right"
     },
     {
@@ -26,7 +26,7 @@
     },
     {
       "type": "prose",
-      "md": "A estratégia tinha uma força oculta: contribuir com uma peça essencial garante um assento permanente à mesa. Ao construir o Spacelab, a Europa conquistou um lugar a bordo do Shuttle; ao construir o Columbus e o ATV, tornou-se uma parceira plena e igual na Estação Espacial Internacional, com seu próprio laboratório e sua própria nave de reabastecimento indispensável. Uma nação que apenas comprasse assentos seria uma cliente; a Europa, ao construir capacidades das quais outros dependiam, tornou-se uma parceira — com voz real no empreendimento."
+      "md": "A estratégia tinha uma força oculta: contribuir com uma peça essencial garante um assento permanente à mesa. Ao construir o Spacelab, a Europa conquistou um lugar a bordo do Shuttle; ao construir o Columbus e o ATV, tornou-se uma parceira plena e igual na International Space Station, com seu próprio laboratório e sua própria nave de reabastecimento indispensável. Uma nação que apenas comprasse assentos seria uma cliente; a Europa, ao construir capacidades das quais outros dependiam, tornou-se uma parceira — com voz real no empreendimento."
     }
   ],
   "outcome": [
@@ -40,7 +40,7 @@
     },
     {
       "type": "prose",
-      "md": "Os resultados foram substanciais e distintamente europeus. O Spacelab voou em 22 missões do Shuttle entre 1983 e 1998, dando à Europa duas décadas de ciência tripulada prática e uma geração de astronautas experientes. O Columbus, instalado em 2008, deu à Europa um laboratório permanente em órbita e a tornou uma parceira de primeira linha na maior estrutura que os humanos já construíram. E o Automated Transfer Vehicle — cinco cargueiros enormes lançados entre 2008 e 2015, cada um batizado em homenagem a um pensador europeu, de Jules Verne a Georges Lemaître — fez algo genuinamente avançado: uma nave de vinte toneladas que navegava sozinha até um acoplamento totalmente automático com a ISS, entregava suprimentos e combustível, e reimpulsionava a Estação inteira com seus motores."
+      "md": "Os resultados foram substanciais e distintamente europeus. O Spacelab voou em 22 missões do Shuttle entre 1983 e 1998, dando à Europa duas décadas de ciência tripulada prática e uma geração de astronautas experientes. O Columbus, instalado em 2008, deu à Europa um laboratório permanente em órbita e a tornou uma parceira de primeira linha na maior estrutura que os humanos já construíram. E o Automated Transfer Vehicle — cinco cargueiros enormes lançados entre 2008 e 2015, cada um batizado em homenagem a um pensador europeu, de Jules Verne a Georges Lemaître — fez algo genuinamente avançado: uma nave de vinte toneladas que navegava sozinha até um acoplamento totalmente automático com o ISS, entregava suprimentos e combustível, e reimpulsionava a Estação inteira com seus motores."
     },
     {
       "type": "prose",
@@ -63,7 +63,7 @@
       "image": {
         "reuse": "fleet/iss/04"
       },
-      "caption": "A Estação Espacial Internacional — o empreendimento que a Europa ajudou a construir e sustentar, e a prova de que uma nação pode moldar profundamente o voo espacial tripulado sem nunca lançar uma tripulação própria.",
+      "caption": "A International Space Station — o empreendimento que a Europa ajudou a construir e sustentar, e a prova de que uma nação pode moldar profundamente o voo espacial tripulado sem nunca lançar uma tripulação própria.",
       "align": "left"
     },
     {

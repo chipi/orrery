@@ -13,13 +13,13 @@
     {
       "met": 234.5,
       "label": "ON-ORBIT OPS",
-      "note": "Apogee ~340 km; classified payload operations.",
+      "note": "Apogeum ~340 km; geclassificeerde nuttige lading-operaties.",
       "type": "info"
     },
     {
       "met": 469,
       "label": "LANDING",
-      "note": "Autonomous runway landing at Vandenberg AFB 2012-06-16.",
+      "note": "Autonome landding op startbaan bij Vandenberg AFB 2012-06-16.",
       "type": "nominal"
     }
   ]

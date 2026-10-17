@@ -1,44 +1,43 @@
 {
   "name": "Magellan",
   "type": "ORBITER · FLOWN",
-  "first": "Najsveobuhvatnija radarska mapa Venere — 98% površine na rezoluciji od ~120 m; prvi planetarni svemirski brod lansiran sa Space Shuttlea",
-  "description": "Magellan je Veneru transformisao od besličnog oblaka na nebu u mapiranu planetu. Lansiran iz teretnog prostora Shuttle-a Atlantis 1989-05-04 — prvi planetarni svemirski brod koji je putovao Shuttle-om — i stigao na Veneru 1990-08-10 preko duge putanje tipa IV (1,5 orbite oko Sunca). Tokom četiri ciklusa mapiranja sintetičko-aperturski radar je snimio 98% površine Venere na rezoluciji od ~120 m, otkriti plato tesere, korone, loptaste kupole i mlađu, vulkanskog aktivnosti preformiranu površinu. Misija je završena 1994-10-13 u Eksperimentu terminacije — prvom planiranom kontrolisanom ulasku planetarnog svemirskog broda u atmosferu.",
-  "dispatch": "Magellan je Veneru transformisao od besličnog oblaka na nebu u mapiranu planetu. Lansiran iz teretnog prostora Shuttle-a Atlantis 1989-05-04 — prvi planetarni svemirski brod koji je putovao Shuttle-om — i stigao na Veneru 1990-08-10 preko duge putanje tipa IV (1,5 orbite oko Sunca). Tokom četiri ciklusa mapiranja sintetičko-aperturski radar je snimio 98% površine Venere na rezoluciji od ~120 m, otkrili plato tesere, korone, loptaste kupole i mlađu, vulkanskom aktivnošću preformiranu površinu. Misija je završena 1994-10-13 u Eksperimentu terminacije — prvom planiranom kontrolisanom ulasku planetarnog svemirskog broda u atmosferu.",
+  "first": "Најпотпунија радарска мапа Венере — 98% површине у резолуцији од ~120 m; прва планетарна сонда лансирана са свемирског шатла Space Shuttle",
+  "description": "Magellan је претворио Венеру из безличног диска прекривеног облацима у картографисану планету. Лансиран је 1989-05-04 из теретног простора шатла Atlantis — прва планетарна сонда која је путовала шатлом — а до Венере је стигао 1990-08-10 дугом путањом типа IV (1,5 обилазак Сунца). Током четири циклуса картографисања радар са синтетичком апертуром снимио је 98% површине Венере у резолуцији од ~120 m, откривши висораван тесере, короне, куполе у облику палачинки и младу површину поново обликовану вулканизмом. Мисија је окончана 1994-10-13 огледом Termination Experiment — првим планираним контролисаним уласком у атмосферу једне планетарне сонде.",
   "events": [
     {
       "met": 0,
-      "label": "LANSIRANJE",
-      "note": "STS-30 / Atlantis sa Kennedy LC-39B; IUS raspoređen iz Shuttle-ovog teretnog prostora.",
+      "label": "ЛАНСИРАЊЕ",
+      "note": "STS-30 / Atlantis са комплекса Kennedy LC-39B; IUS је отпуштен из теретног простора шатла.",
       "type": "nominal"
     },
     {
       "met": 60,
       "label": "TCM-1",
-      "note": "Prva korekcija toka putanje.",
+      "note": "Прва корекција путање у међупланетарном лету.",
       "type": "nominal"
     },
     {
       "met": 455,
       "label": "TCM-4",
-      "note": "Finalna prilagodba pre VOI.",
+      "note": "Завршна корекција пре VOI.",
       "type": "nominal"
     },
     {
       "met": 463,
       "label": "VOI",
-      "note": "Spaljena krutog motora u orbitu 295 × 8543 km, 85,5° blizu polarne orbite.",
+      "note": "Паљење мотора на чврсто гориво и улазак у готово поларну орбиту од 295 × 8.543 km са нагибом од 85,5°.",
       "type": "info"
     },
     {
       "met": 950,
-      "label": "PRVI MAPIRNI CIKLUS ZAVRŠEN",
-      "note": "Prvi kompletan prolaz — 84% pokrivenosti površine na rezoluciji od 100 m.",
+      "label": "ЗАВРШЕН MAPPING CYCLE 1",
+      "note": "Први потпуни циклус — покривеност 84% површине у резолуцији од 100 m.",
       "type": "info"
     },
     {
       "met": 1988,
-      "label": "EKSPERIMENT TERMINACIJE",
-      "note": "1994-10-13. Periapsis snižen u atmosferu — prvi planirani ulazak planetarnog svemirskog broda.",
+      "label": "ЗАВРШНИ ЕКСПЕРИМЕНТ",
+      "note": "1994-10-13. Перицентар је спуштен у атмосферу — први планирани улазак једне планетарне сонде у атмосферу.",
       "type": "warning"
     }
   ]

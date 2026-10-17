@@ -2,7 +2,7 @@
   "name": "Luna 10",
   "type": "ORBITER ROBOTICO · COMPLETATO",
   "first": "Primo veicolo spaziale a orbitare attorno alla Luna (e a qualsiasi corpo celeste diverso dalla Terra)",
-  "description": "Lanciato il 1966-03-31 da Baikonur, Luna 10 divenne il primo veicolo spaziale a orbitare attorno alla Luna — e il primo satellite artificiale di qualsiasi corpo celeste diverso dalla Terra — quando si inserì in un'orbita lunare di 350 × 1017 km con inclinazione di 71,9° il 1966-04-03. Due anni e mezzo prima che l'Apollo 8 raggiungesse la Luna con equipaggio umano. Trasportava un magnetometro, uno spettrometro a raggi gamma, un radiometro infrarosso, rivelatori di micrometeoriti, sensori al plasma e una sonda radio del campo gravitazionale lunare. I dati dei raggi gamma rappresentarono il primo telerilevamento composizionale della Luna, suggerendo una composizione dei mari simile a quella del basalto. Ha trasmesso in modo celebre l'inno L'Internazionale durante il 23° Congresso del Partito Comunista Sovietico il 1966-04-04 — una trovata propagandistica più che scientifica. Ha operato per 56 giorni / 460 orbite prima che le batterie NiCd si esaurissero il 1966-05-30; rimane in orbita lunare.",
+  "description": "Lanciato il 1966-03-31 da Baikonur, Luna 10 divenne il primo veicolo spaziale a orbitare attorno alla Luna — e il primo satellite artificiale di qualsiasi corpo celeste diverso dalla Terra — quando si inserì in un'orbita lunare di 350 × 1017 km con inclinazione di 71,9° il 1966-04-03. Due anni e mezzo prima che l'Apollo 8 raggiungesse la Luna con equipaggio umano. Trasportava un magnetometro, uno spettrometro a raggi gamma, un radiometro infrarosso, rivelatori di micrometeoriti, sensori al plasma e una sonda radio del campo gravitazionale lunare. I dati dei raggi gamma rappresentarono il primo telerilevamento composizionale della Luna, suggerendo una composizione dei mari simile a quella del basalto. Ha trasmesso in modo celebre l'inno Internationale durante il 23° Congresso del Partito Comunista Sovietico il 1966-04-04 — una trovata propagandistica più che scientifica. Ha operato per 56 giorni / 460 orbite prima che le batterie NiCd si esaurissero il 1966-05-30; rimane in orbita lunare.",
   "events": [
     {
       "met": 0,
@@ -25,7 +25,7 @@
     {
       "met": 3.5,
       "label": "TRASMISSIONE L'INTERNAZIONALE",
-      "note": "Trasmissione dell'inno L'Internazionale durante il 23° Congresso del Partito Comunista Sovietico (1966-04-04).",
+      "note": "Trasmissione dell'inno Internationale durante il 23° Congresso del Partito Comunista Sovietico (1966-04-04).",
       "type": "info"
     },
     {

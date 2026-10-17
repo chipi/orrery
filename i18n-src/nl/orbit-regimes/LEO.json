@@ -1,12 +1,12 @@
 {
-  "name": "Lage Aardbaan",
+  "name": "Lage aardorbiet",
   "short": "LEO",
   "story": "De dichtstbijzijnde band van de ruimte — 160 tot 2.000 km omhoog. Korte communicatielatentie (~7 ms enkele reis), atmosferische weerstand trekt nog aan de onderste rand, en de stralingsgordels zijn nog niet actief. Bemande ruimtevaart bevindt zich hier om dezelfde redenen: redbaar, bereikbaar, en het menselijk lichaam verdraagt een reis van enkele honderden kilometers. Elk ruimtestation dat ooit heeft gevlogen, heeft in LEO geparkeerd.",
   "comparison": "Ongeveer 1/600ste van de afstand naar de Maan. Het ISS op 408 km draait op dezelfde hoogte als de afstand van Londen naar Genève — zijwaarts gelegd.",
   "residents": [
     {
       "id": "iss",
-      "label": "ISS — Internationaal Ruimtestation",
+      "label": "ISS — International Space Station",
       "agency": "NASA"
     },
     {
@@ -16,7 +16,7 @@
     },
     {
       "id": "hubble",
-      "label": "Hubble ruimtetelescoop",
+      "label": "Hubble Space Telescope",
       "agency": "NASA"
     },
     {

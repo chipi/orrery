@@ -1,5 +1,5 @@
 {
-  "title": "EVA — Atividade Extravehicular",
+  "title": "EVA — Extravehicular Activity",
   "intro_sentence": "Uma caminhada no espaço: a porção de maior risco e maior recompensa de uma missão tripulada, limitada a cerca de 8 horas pelos consumíveis do traje.",
   "narrative_101": [
     "Uma EVA — atividade extravehicular — é quando um membro da tripulação sai do interior pressurizado da estação para trabalhar fora no vácuo. Toda tarefa externa que não pode ser feita por um braço robótico — instalar um módulo, substituir uma bateria, reparar um vazamento de fluido de arrefecimento — acontece em uma EVA. Elas são coreografadas ao minuto, ensaiadas embaixo da água por centenas de horas, e limitadas a cerca de 8 horas cada pelos consumíveis de oxigênio e capacidade de absorção de CO₂ do traje.",
@@ -7,9 +7,9 @@
     "A tripulação se prende com cabos de segurança aos corrimões do lado externo da estação — perder a apreensão significa que o cabo de segurança te pega, mas o jato SAFER no dorso do traje fornece uma recuperação propulsiva de último recurso se você de algum modo se soltar de ambos. As ferramentas são atadas a anéis em D, as luvas são pressurizadas e rígidas (é por isso que a fadiga das mãos é o problema #1 do dia da EVA), e o visor de displays da cabeça do traje mostra o status de oxigênio, CO₂, bateria e cabo de segurança."
   ],
   "body_paragraphs": [
-    "Consumíveis do traje: o EMU (Unidade de Mobilidade Extravehicular) da ISS carrega cerca de 8 horas de oxigênio + bateria + sublimação de água de arrefecimento. A absorção de CO₂ é o limitador típico — quando o cartucho de LiOH ou amina se satura, a EVA termina.",
+    "Consumíveis do traje: o EMU (Extravehicular Mobility Unit) da ISS carrega cerca de 8 horas de oxigênio + bateria + sublimação de água de arrefecimento. A absorção de CO₂ é o limitador típico — quando o cartucho de LiOH ou amina se satura, a EVA termina.",
     "Protocolo de pré-respiração: 60-90 minutos de 100% O₂ a pressão reduzida para remover nitrogênio do sangue (prevenção de doença descompressiva). Os trajes russos Orlan operam a pressão mais alta que o EMU dos EUA e precisam de pré-respiração mais curta.",
-    "Tradução: EVAs usam corrimões (amarelos) cobrindo todo o exterior da estação; ferramentas e tripulação são presas com cabos. SAFER (Auxílio Simplificado Para Resgate em EVA): jato com 24 pequenos propulsores no dorso PLSS do traje, ∆v total de 1,4 m/s — apenas para recuperação de emergência.",
+    "Tradução: EVAs usam corrimões (amarelos) cobrindo todo o exterior da estação; ferramentas e tripulação são presas com cabos. SAFER (Auxílio Simplificado Para Resgate em EVA) jato com 24 pequenos propulsores no dorso PLSS do traje, ∆v total de 1,4 m/s — apenas para recuperação de emergência.",
     "Recordes: Anatoly Solovyev detém o recorde cumulativo em 82h 22m ao longo de 16 EVAs. A EVA singular mais longa foi 8h 56m (STS-102, 2001) até que a primeira EVA do Shenzhou-19 estabeleceu um novo recorde em 9h 06m em dezembro de 2024. Mais EVAs já realizadas em um único local: ISS, com mais de 270 até 2025.",
     "Perfil de risco: eventos de perda de veículo em EVA são raros mas documentados — o incidente de água no capacete de Parmitano em 2013 na EVA-23 quase afogou um astronauta e forçou redimensionamentos do separador de água do EMU. Perfuração de traje, perda de cabo de segurança e acúmulo de CO₂ são as ameaças reais."
   ],

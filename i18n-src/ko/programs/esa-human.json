@@ -8,7 +8,7 @@
     },
     {
       "type": "prose",
-      "md": "이는 1983년 Spacelab으로 시작되었다 — Space Shuttle의 화물칸에 실려 Shuttle을 과학 플랫폼으로 전환시킨 유럽 제작 실험실로, 첫 비행에서 첫 ESA 우주비행사를 태웠다. 이는 International Space Station에 고정된 유럽의 영구 실험실인 Columbus, 그리고 그 시대 가장 크고 정교한 화물선인 Automated Transfer Vehicle로 이어졌다. 그 과정에서 유럽 우주비행사들은 Shuttle과 Soyuz를 타고 비행했고, Mir와 ISS에 거주했으며, 스테이션을 지휘했다. 유럽은 자체 승무원을 발사한 적이 없었지만 — 발사한 거의 모든 이들에게 필수적인 존재가 되었다."
+      "md": "이는 1983년 Spacelab으로 시작되었다 — Space Shuttle의 화물칸에 실려 Shuttle을 과학 플랫폼으로 전환시킨 유럽 제작 실험실로, 첫 비행에서 첫 ESA 우주비행사를 태웠다. 이는 International Space Station에 고정된 유럽의 영구 실험실인 Columbus, 그리고 그 시대 가장 크고 정교한 화물선인 Automated Transfer Vehicle로 이어졌다. 그 과정에서 유럽 우주비행사들은 Shuttle과 Soyuz를 타고 비행했고, Mir와 ISS에 거주했으며, Station을 지휘했다. 유럽은 자체 승무원을 발사한 적이 없었지만 — 발사한 거의 모든 이들에게 필수적인 존재가 되었다."
     }
   ],
   "goals": [
@@ -35,12 +35,12 @@
       "image": {
         "reuse": "fleet/atv/02"
       },
-      "caption": "Automated Transfer Vehicle — 유럽의 ISS 화물선. 완전 적재 시 20톤으로, 스테이션과의 자동 도킹을 위해 스스로 비행했고, 화물, 물, 공기, 추진제를 운반했으며, 엔진을 사용하여 ISS의 궤도를 상승시켰다.",
+      "caption": "Automated Transfer Vehicle — 유럽의 ISS 화물선. 완전 적재 시 20톤으로, Station과의 자동 도킹을 위해 스스로 비행했고, 화물, 물, 공기, 추진제를 운반했으며, 엔진을 사용하여 ISS의 궤도를 상승시켰다.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "그 결과는 상당했고 명백히 유럽적이었다. Spacelab은 1983년부터 1998년까지 22회의 Shuttle 임무에서 비행하여, 유럽에 20년간의 실전 유인 과학과 한 세대의 경험 많은 우주비행사들을 제공했다. 2008년에 설치된 Columbus는 유럽에 궤도상의 영구 실험실을 제공했고, 인류가 건조한 가장 큰 구조물의 일류 파트너로 만들었다. 그리고 Automated Transfer Vehicle — 2008년부터 2015년까지 비행한 다섯 대의 거대한 화물선으로, 각각 Jules Verne부터 Georges Lemaître에 이르는 유럽 사상가의 이름을 따서 명명되었다 — 은 진정으로 진보된 무언가를 해냈다: ISS와의 완전 자동 도킹을 위해 스스로 항해하는 20톤급 우주선으로, 보급품과 연료를 운반하고, 엔진으로 전체 스테이션을 재상승시켰다."
+      "md": "그 결과는 상당했고 명백히 유럽적이었다. Spacelab은 1983년부터 1998년까지 22회의 Shuttle 임무에서 비행하여, 유럽에 20년간의 실전 유인 과학과 한 세대의 경험 많은 우주비행사들을 제공했다. 2008년에 설치된 Columbus는 유럽에 궤도상의 영구 실험실을 제공했고, 인류가 건조한 가장 큰 구조물의 일류 파트너로 만들었다. 그리고 Automated Transfer Vehicle — 2008년부터 2015년까지 비행한 다섯 대의 거대한 화물선으로, 각각 Jules Verne부터 Georges Lemaître에 이르는 유럽 사상가의 이름을 따서 명명되었다 — 은 진정으로 진보된 무언가를 해냈다: ISS와의 완전 자동 도킹을 위해 스스로 항해하는 20톤급 우주선으로, 보급품과 연료를 운반하고, 엔진으로 전체 Station을 재상승시켰다."
     },
     {
       "type": "prose",

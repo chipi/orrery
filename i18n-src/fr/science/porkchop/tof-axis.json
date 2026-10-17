@@ -2,13 +2,13 @@
   "title": "Axe temps de vol",
   "intro_sentence": "Combien dure le voyage — sur axe Y, en jours pour planètes intérieures et années pour extérieures.",
   "narrative_101": [
-    "X dit QUAND, Y dit COMBIEN DE TEMPS. Bas : court rapide. Haut : long lent. Cibles classe Mars : 100 à 500 jours. Jupiter : années.",
-    "Lis trade-off un coup d'œil. Monte une colonne — même date, transits différents. Bas (rapide) cellules rouges — rapide cher. Plus haut bleu frais — bande Hohmann naturelle.",
-    "Pourquoi Hohmann Mars toujours ~8,5 mois. Plus rapide : payes raide pour vitesse. Cargo peut lent ; équipage non — chaque mois extra = nourriture, eau, oxygène, radiation."
+    "Si l'axe des X vous dit QUAND vous partez, l'axe des Y vous dit COMBIEN DE TEMPS le voyage dure. Bas du graphique : trajets rapides et courts. Haut du graphique : trajets lents et longs. Pour les destinations de classe Mars, l'axe s'étend sur environ 100 à 500 jours. Pour Jupiter, c'est des années.",
+    "Vous pouvez maintenant lire l'intégralité du compromis en un coup d'œil. Remontez tout droit une colonne sur le diagramme en cuillère — c'est la MÊME date de lancement mais des temps de transit différents. Près du bas (trajets rapides), les cellules deviennent rouges — les trajets rapides sont coûteux car vous forcez une ellipse de transfert raide. Plus haut (trajets plus lents), les cellules deviennent bleu froid — c'est la bande naturelle de Hohmann où les mathématiques veulent que le voyage dure.",
+    "C'est pourquoi un transfert de Hohmann vers Mars dure toujours environ 8,5 mois. Descendez en dessous et vous payez cher la vitesse. Montez beaucoup plus haut et vous traînez sans raison. Le porkchop visualise ce compromis en dégradé de couleur dans chaque colonne. Les missions cargo peuvent se permettre la lenteur ; les missions habitées généralement ne le peuvent pas, car chaque mois supplémentaire signifie plus de nourriture, d'eau, d'oxygène et d'exposition aux radiations."
   ],
   "body_paragraphs": [
-    "Y = durée transit. Cibles classe Mars Hohmann ~250 jours, plage Y ~100-500 jours. Jupiter/Saturne en années.",
-    "Rangées différentes échangent transit contre Δv. Cellules moins chères = bande Hohmann. Tirer transit bas (rapide) = Δv monte raide. Haut = options lentes mais bon marché.",
-    "Forme zone bon marché révèle compromis. Bande étroite = optimum aigu. Large = flexibilité. Mars étroit. Jupiter plus large (paysage assistance gravitationnelle)."
+    "L'axe des Y est la durée de transit. Pour les cibles de classe Mars, le transit Hohmann naturel est d'environ 250 jours, donc la plage Y d'Orrery s'étend sur environ 100 à 500 jours. Pour Jupiter ou Saturne, le transit Hohmann dure des années, donc l'axe est en années.",
+    "Les différentes lignes du porkchop font le compromis entre le temps de transit et le coût en ∆v. Les cellules les moins chères (bande de Hohmann) se situent au temps de transit de Hohmann naturel. Abaissez le temps de transit (voyage plus rapide) et le coût en ∆v augmente fortement. Relevez-le (voyage plus lent) et vous obtenez des options moins chères mais plus lentes — parfois intéressantes pour les cargaisons ou les charges utiles non sensibles au temps.",
+    "La forme de la zone bon marché vous dit quelque chose sur les compromis. Une bande Hohmann étroite signifie que l'optimum est précis ; une zone bon marché large signifie que vous avez de la flexibilité. Le diagramme en cuillère de Mars a un optimum étroit. Celui de Jupiter est plus large — le paysage des manœuvres gravitationnelles étale les options de lancement sur plus de dates."
   ]
 }

@@ -4,7 +4,7 @@
   "arr_label": "Возврат на Землю",
   "events": [
     { "met": 0, "label": "LAUNCH", "note": "Старт Falcon Heavy. Свободный возврат — без посадки.", "type": "nominal" },
-    { "met": 0.4, "label": "TMI BURN", "note": "Трансмарсианская инъекция: 3,61 км/с. Достигнута вторая космическая скорость.", "type": "nominal" },
+    { "met": 0.4, "label": "TMI BURN", "note": "Trans-Mars Injection: 3,61 км/с. Достигнута скорость убегания.", "type": "nominal" },
     { "met": 1, "label": "DAY 1 CHECK", "note": "Первая проверка систем завершена. Всё в пределах нормы.", "type": "nominal" },
     { "met": 60, "label": "TCM-1", "note": "Коррекция траектории 1: 35 м/с.", "type": "nominal" },
     { "met": 200, "label": "CRUISE", "note": "Исходящий перелёт. Земля удаляется.", "type": "info" },

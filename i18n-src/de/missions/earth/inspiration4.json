@@ -13,19 +13,19 @@
     {
       "met": 0.05,
       "label": "ORBIT",
-      "note": "585 km circular, 51.6° inclination — highest crewed orbit since Hubble servicing.",
+      "note": "585 km zirkular, 51,6° Inklination – die höchste bemannte Umlaufbahn seit der Wartung des Hubble Space Telescope.",
       "type": "nominal"
     },
     {
       "met": 1,
       "label": "CUPOLA WINDOW",
-      "note": "First viewing through the Crew Dragon cupola (replacing docking adapter).",
+      "note": "Erste Beobachtung durch die Kuppel der Crew Dragon (ersetzte das Docking-Adapter).",
       "type": "info"
     },
     {
       "met": 2.96,
       "label": "SPLASHDOWN",
-      "note": "Resilience splashed down off Florida coast 2021-09-18 23:06 UTC.",
+      "note": "Resilience wasserte vor der Küste Floridas am 2021-09-18 23:06 UTC auf.",
       "type": "nominal"
     }
   ]

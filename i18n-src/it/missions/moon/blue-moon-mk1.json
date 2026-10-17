@@ -1,5 +1,5 @@
 {
-  "name": "Luna Blu MK1",
+  "name": "Blue Moon MK1",
   "type": "LANDER CARGO · PIANIFICATO",
   "first": "Primo volo dell'architettura del lander lunare Blue Moon di Blue Origin",
   "description": "Il primo lander cargo Blue Moon di Blue Origin, contratto nell'ambito del programma CLPS (Commercial Lunar Payload Services) di NASA. Un veicolo di discesa a stadio singolo alimentato dal motore criogenico BE-7, progettato per trasportare fino a circa 3 tonnellate di carico utile sulla superficie lunare. Si lancia sul New Glenn di Blue Origin da Cape Canaveral, esegue l'iniezione translunare sul secondo stadio del New Glenn, quindi esegue l'inserimento nell'orbita lunare e la discesa motorizzata. Il volo cargo Mark 1 precede il Mark 2, classificato come umano, che è incaricato di supportare l'atterraggio lunare con equipaggio dell'Artemis V di NASA.",
@@ -18,7 +18,7 @@
     },
     {
       "met": 1.5,
-      "label": "MTC-1",
+      "label": "TCM-1",
       "note": "Prima correzione di metà percorso.",
       "type": "nominal"
     },

@@ -1,8 +1,8 @@
 {
-  "title": "Inyección Orbital — LOI / MOI",
+  "title": "Orbit Insertion — LOI / MOI",
   "intro_sentence": "La quemadura de frenado que captura tu nave en órbita en lugar de dejarla volar eternamente.",
   "narrative_101": [
-    "Llevas ocho meses en viaje. Ves Marte haciéndose más grande por la ventanilla. Si no haces nada, pasarás de largo y continuarás por el sistema solar, nunca para volver. Para orbitar de verdad, tienes que frenar. Esa quemadura de frenado —Inyección en Órbita Lunar o en Órbita de Marte o el planeta que sea— es el momento crucial de cualquier misión orbital.",
+    "Has navegado durante ocho meses. Puedes ver cómo Marte se va agrandando por la ventanilla. Si no haces nada, pasarás volando junto a Marte y continuarás hacia el espacio profundo del sistema solar, sin poder volver jamás. Para entrar en órbita de verdad, tienes que frenar. Esa maniobra de frenado —Inserción en Órbita Lunar o Inserción en Órbita de Marte o la que corresponda al planeta donde te encuentres— es el momento crucial de cualquier misión orbital.",
     "Las matemáticas no tienen piedad. Llegas al planeta a varios kilómetros por segundo de velocidad residual (V∞). Para quedarte, tienes que descender por debajo de la velocidad de escape local del planeta. Eso significa una quemadura de motor larga, difícil y precisamente cronometrada exactamente en el paso más cercano al planeta, donde Oberth te da el frenado más eficiente. Mars Reconnaissance Orbiter quemó durante 27 minutos. La inyección de Saturno de Cassini duró ~96 minutos —la quemadura más larga que jamás realizó la nave.",
     "Si la quemadura falla o tiene un rendimiento insuficiente, escapas, y no hay segunda oportunidad. Mars Climate Orbiter en 1999 tenía un error de conversión de unidades —libras-fuerza confundidas con newtons— su quemadura de inyección fue demasiado débil, pasó demasiado cerca de Marte, y la resistencia atmosférica la destruyó. La misión se perdió en segundos. Por eso el diseño de la inyección orbital es una de las actividades de ingeniería más paranoica que los humanos realizan."
   ],

@@ -1,10 +1,10 @@
 {
-  "name": "Internationale Raumstation",
+  "name": "International Space Station",
   "tagline": "Das größte Ding, das die Menschheit je im Weltraum gebaut hat, und der Ort, an dem jeder Strang des Raumfahrtzeitalters zusammenläuft — die Rivalität der einstigen Rivalen verwandelte sich nach vierzig Jahren in den längsten Akt der Zusammenarbeit in der Geschichte der Raumfahrt.",
   "the_land": [
     {
       "type": "prose",
-      "md": "Alles in diesem Atlas führt hierher. Die Internationale Raumstation ist kein Neuanfang, sondern eine Konvergenz — der Punkt, an dem die beiden getrennten Geschichten der bemannten Raumfahrt, die amerikanische und die sowjetische, schließlich zu einer einzigen Struktur und einer einzigen Besatzung verschmolzen. Ihre russische Hälfte stammt direkt von Salyut und Mir ab; ihre amerikanische Hälfte von Skylab; sie wurde vom Space Shuttle zusammengebaut, wird von Soyuz bemannt, von den Nachfahren des Progress-Frachters versorgt und trägt Laboratorien, die von Europa und Japan gebaut wurden. Nahezu jedes Programm, das ihr vorausging, ist in ihr physisch präsent, als Erbe, das in den Orbit geschraubt wurde."
+      "md": "Alles in diesem Atlas führt hierher. Die International Space Station ist kein Neuanfang, sondern eine Konvergenz — der Punkt, an dem die beiden getrennten Geschichten der bemannten Raumfahrt, die amerikanische und die sowjetische, schließlich zu einer einzigen Struktur und einer einzigen Besatzung verschmolzen. Ihre russische Hälfte stammt direkt von Salyut und Mir ab; ihre amerikanische Hälfte von Skylab; sie wurde von Space Shuttle zusammengebaut, wird von Soyuz bemannt, von den Nachfahren des Progress-Frachters versorgt und trägt Laboratorien, die von Europa und Japan gebaut wurden. Nahezu jedes Programm, das ihr vorausging, ist in ihr physisch präsent, als Erbe, das in den Orbit geschraubt wurde."
     },
     {
       "type": "prose",
@@ -17,7 +17,7 @@
       "image": {
         "reuse": "fleet/iss/04"
       },
-      "caption": "Die fertiggestellte Internationale Raumstation — eine Struktur von der Größe eines Fußballfelds, im Orbit aus Modulen zusammengebaut, die auf drei Kontinenten gebaut wurden, und seit November 2000 dauerhaft bemannt.",
+      "caption": "Die fertiggestellte International Space Station — eine Struktur von der Größe eines Fußballfelds, im Orbit aus Modulen zusammengebaut, die auf drei Kontinenten gebaut wurden, und seit November 2000 dauerhaft bemannt.",
       "align": "right"
     },
     {
@@ -35,7 +35,7 @@
       "image": {
         "reuse": "fleet/iss/01"
       },
-      "caption": "Die Internationale Raumstation während der Montage. Zwischen 1998 und 2011 über mehr als vierzig Flüge hinweg gebaut, Modul für Modul, war sie das ehrgeizigste Bauprojekt, das je außerhalb der Erde durchgeführt wurde.",
+      "caption": "Die International Space Station während der Montage. Zwischen 1998 und 2011 über mehr als vierzig Flüge hinweg gebaut, Modul für Modul, war sie das ehrgeizigste Bauprojekt, das je außerhalb der Erde durchgeführt wurde.",
       "align": "right"
     },
     {

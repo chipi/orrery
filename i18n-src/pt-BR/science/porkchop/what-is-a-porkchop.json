@@ -1,6 +1,6 @@
 {
-  "title": "O que é um Gráfico Porkchop?",
-  "intro_sentence": "Mapa de calor 2D mostrando o custo da trajetória para cada par (data de partida, tempo de trânsito) — ferramenta padrão para encontrar janelas de lançamento.",
+  "title": "O que é um Porkchop Plot?",
+  "intro_sentence": "Um mapa de calor 2D que mostra o custo de trajetória para cada (data de partida, tempo de trânsito) — ferramenta padrão para encontrar janelas de lançamento. (Porkchops contornam C3 e V∞ de chegada; Orrery usa escala de cores ∆v-em-km/s.)",
   "narrative_101": [
     "Quando planejadores de missões querem saber se uma viagem a Marte é viável, não computam uma trajetória. Computam MILHÕES — cada data de partida possível, cada tempo de trânsito possível, em uma grade gigante — e pintam um mapa de calor. Trajetórias baratas aparecem como zonas azuis frias, as caras como vermelhas. O resultado, curiosamente, parece uma costela. A zona barata é a carne da costela; a crista cara é o osso.",
     "Por que usar um mapa de calor inteiro em vez de apenas uma resposta ótima? Porque missões reais têm restrições. Talvez uma plataforma de lançamento específica esteja disponível apenas em 2026. Talvez você precise pousar antes do fim de uma estação de tempestades de poeira. Talvez um foguete específico esteja pronto apenas a partir de um certo mês. O gráfico porkchop permite ver TODOS os compromissos de uma vez — escolha a trajetória barata o suficiente que se encaixe no seu calendário real.",

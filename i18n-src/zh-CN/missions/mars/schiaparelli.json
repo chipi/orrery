@@ -1,16 +1,16 @@
 {
   "name": "Schiaparelli EDM",
   "type": "ENTRY/DESCENT/LANDING DEMONSTRATOR · CRASHED",
-  "first": "ESA's first Mars surface attempt; intended to demonstrate EDL ahead of ExoMars Rosalind Franklin",
-  "description": "Schiaparelli was the entry-descent-landing demonstrator carried piggyback on the ExoMars Trace Gas Orbiter (TGO). Named for the Italian astronomer Giovanni Schiaparelli, the craft was built to prove the EDL stack ESA intended to scale up for the Rosalind Franklin rover. Schiaparelli separated from TGO on 16 October 2016 and entered the Martian atmosphere three days later. The descent profile collapsed: a saturated inertial measurement unit caused the navigation software to think the craft had already landed at altitude — the parachute jettisoned early and the braking thrusters cut off after firing for only 3 seconds. Schiaparelli struck the surface at ~150 m/s. TGO itself completed orbit insertion successfully and continues operating.",
+  "first": "ESA首次火星表面着陆尝试；旨在为ExoMars Rosalind Franklin演示EDL能力",
+  "description": "Schiaparelli是搭载在ExoMars Trace Gas Orbiter (TGO)上的进入-下降-着陆演示器。该航天器以意大利天文学家Giovanni Schiaparelli的名字命名，旨在验证ESA计划为Rosalind Franklin漫游车扩展应用的EDL堆栈。Schiaparelli于2016年10月16日与TGO分离，三天后进入火星大气层。下降过程遭遇失败：饱和的惯性测量单元导致导航软件错误地认为该航天器已在高空着陆——降落伞提前抛弃，制动推进器在仅点火3秒后关闭。Schiaparelli以约150米/秒的速度撞击地表。TGO本身成功完成了轨道插入并继续运行。",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "Proton-M from Baikonur 2016-03-14. TGO + Schiaparelli stack.", "type": "nominal" },
-    { "met": 0.01, "label": "TMI", "note": "Trans-Mars injection on the Briz-M upper stage.", "type": "nominal" },
-    { "met": 30, "label": "TCM 1", "note": "First mid-course correction during 7-month cruise.", "type": "info" },
+    { "met": 0, "label": "LAUNCH", "note": "2016年3月14日由拜科努尔发射Proton-M运载火箭。TGO + Schiaparelli组合体。", "type": "nominal" },
+    { "met": 0.01, "label": "TMI", "note": "Briz-M上面级进行火星转移注入。", "type": "nominal" },
+    { "met": 30, "label": "TCM 1", "note": "7个月巡航期间的首次中途修正。", "type": "info" },
     { "met": 120, "label": "TCM 2", "note": "Mid-cruise correction.", "type": "info" },
-    { "met": 216, "label": "TCM 3", "note": "Final approach correction before TGO/Schiaparelli separation.", "type": "info" },
-    { "met": 216.5, "label": "SEPARATION", "note": "Schiaparelli separated from TGO 2016-10-16, three days before atmospheric entry.", "type": "nominal" },
-    { "met": 219, "label": "ENTRY", "note": "Atmospheric entry 2016-10-19.", "type": "nominal" },
-    { "met": 219.01, "label": "DESCENT ANOMALY", "note": "IMU saturation → premature parachute jettison + thruster cutoff at altitude → impact ~150 m/s in Meridiani Planum.", "type": "warning" }
+    { "met": 216, "label": "TCM 3", "note": "TGO/Schiaparelli分离前的最终逼近修正。", "type": "info" },
+    { "met": 216.5, "label": "SEPARATION", "note": "Schiaparelli于2016年10月16日与TGO分离，三天后进入大气层。", "type": "nominal" },
+    { "met": 219, "label": "ENTRY", "note": "2016年10月19日大气层进入。", "type": "nominal" },
+    { "met": 219.01, "label": "DESCENT ANOMALY", "note": "惯性测量单元饱和 → 降落伞提前抛弃 + 高空制动推进器关闭 → 在子午平原以~150米/秒速度撞击。", "type": "warning" }
   ]
 }

@@ -1,12 +1,12 @@
 {
-  "name": "Órbita Lunar",
+  "name": "Lunar Orbit",
   "short": "MOON",
   "story": "La Luna es el único satélite natural de la Tierra — a 384.400 km de distancia, bloqueada por marea para mostrar siempre la misma cara, y orbitando una vez cada 27,3 días. Las naves espaciales la visitan de camino a alunizajes (NASA Apollo, CNSA Chang'e, ISRO Chandrayaan, JAXA SLIM) o para cartografiar la superficie para futuros retornos. La Lunar Gateway, cuando vuele, será el primer puesto avanzado tripulado permanente más allá de LEO.",
   "comparison": "1.200× más lejos que la ISS. Una señal de radio Tierra → Luna → Tierra tarda ~2,6 segundos — lo suficiente para que los controladores de misión en Houston hablen con frases lentas y deliberadas.",
   "residents": [
     {
       "id": "lro",
-      "label": "LRO — Orbitador de Reconocimiento Lunar",
+      "label": "LRO — Lunar Reconnaissance Orbiter",
       "agency": "NASA"
     },
     {

@@ -3,12 +3,12 @@
   "type": "VAISSEAU HABITÉ EN ORBITE TERRESTRE · EFFECTUÉ",
   "first": "Premier rendez-vous en double décollage — a volé à ~6,5 km de Vostok 4",
   "dispatch": "Vostok 3 ouvre le premier acte d'une pièce de théâtre orbital. Un jour après qu'Andriyan Nikolayev atteigne l'orbite, Vostok 4 le suit, et pendant un moment les deux vaisseaux volent à quelques kilomètres l'un de l'autre — la première fois que deux engins habités se trouvent ensemble dans l'espace. Pour le monde, cela ressemblait à un rendez-vous, et les Soviétiques étaient heureux de le laisser croire. En réalité, aucun des deux vaisseaux ne pouvait se manœuvrer ; la proximité provenait du lancement de l'un presque dans la trajectoire de l'autre, et l'écart s'élargissait régulièrement après. Un véritable premier exploit et un peu de magie à la fois — et un aperçu du véritable savoir-faire, le vrai rendez-vous, que personne ne possédait encore.",
-  "description": "Vol de 64 orbites d'Andriyan Nikolayev, lancé 1962-08-11 08:24 UTC. Vingt-quatre heures après le décollage, Vostok 4 (Popovich) le rejoint en orbite — l'approche la plus proche était d'environ 6,5 km, bien qu'aucune véritable capacité de rendez-vous n'existait (les deux capsules n'avaient pas de propulseurs de manœuvre). Le vol simultané était une réponse propagandiste aux missions suborbitales américaines et au Friendship 7 de John Glenn. Nikolayev a atterri 1962-08-15 06:52 UTC près de Karaganda, RSS du Kazakhstan, après près de 4 jours dans l'espace.",
+  "description": "Vol de 64 orbites d'Andriyan Nikolayev, lancé 1962-08-11 08:24 UTC. Vingt-quatre heures après le décollage, Vostok 4 (Popovich) le rejoint en orbite — l'approche la plus proche était d'environ 6,5 km, bien qu'aucune véritable capacité de rendez-vous n'existait (les deux capsules n'avaient pas de propulseurs de manœuvre). Le vol simultané était une réponse propagandiste aux missions suborbitales américaines et à Friendship 7 de John Glenn. Nikolayev a atterri 1962-08-15 06:52 UTC près de Karaganda, RSS du Kazakhstan, après près de 4 jours dans l'espace.",
   "events": [
     {
       "met": 0,
       "label": "DÉCOLLAGE",
-      "note": "Vostok-K depuis le Site 1 de Baïkonour 1962-08-11 08:24 UTC.",
+      "note": "Vostok-K depuis le Site 1 de Baikonur 1962-08-11 08:24 UTC.",
       "type": "nominal"
     },
     {

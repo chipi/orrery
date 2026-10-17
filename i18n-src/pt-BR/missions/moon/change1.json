@@ -2,12 +2,12 @@
   "name": "Chang'e 1",
   "type": "ORBITADOR ROBÓTICO · REALIZADO",
   "first": "Primeira missão lunar chinesa e primeiro veículo espacial chinês a alcançar a Lua",
-  "description": "Primeira fase do Programa de Exploração Lunar da China (CLEP) e primeira missão da CNSA além da Terra. Lançado em 24 de outubro de 2007 do Centro de Lançamento de Satélites de Xichang em um Long March 3A, o Chang'e 1 (nomeado após a deusa lunar da mitologia chinesa) entrou em órbita lunar polar circular de 200 km em 7 de novembro de 2007. Carregava 8 instrumentos — uma câmera estéreo CCD, um altímetro a laser, um espectrômetro de imagem, espectrômetros de raios gama e raios X, um radiômetro de micro-ondas, um detector de vento solar e um detector de partículas de alta energia. Produziu o primeiro mapa topográfico lunar global completo da China com resolução de 120–200 m e mapas de abundância elemental de Th, K, U, O, Si, Mg, Al, Ca, Ti, Fe. Missão encerrada deliberadamente em 1º de março de 2009 com impacto controlado a 1,50° S, 52,36° E no Mare Fecunditatis — primeiro objeto da China na superfície lunar, abrindo o caminho para o Chang'e 3 (pouso em superfície em 2013) e Chang'e 5 (retorno de amostras em 2020). Operou por 16 meses — 4 meses além do nominativo.",
+  "description": "Primeira fase do Programa de Exploração Lunar da China (CLEP) e primeira missão da CNSA além da Terra. Lançado em 24 de outubro de 2007 do Centro de Lançamento de Satélites de Xichang em um Long March 3A, o Chang'e 1 (nomeado após a deusa lunar da mitologia chinesa) entrou em órbita lunar polar circular de 200 km em 7 de novembro de 2007. Carregava 8 instrumentos — uma câmera estéreo CCD, um altímetro a laser, um espectrômetro de imagem, espectrômetros de raios gama e raios X, um radiômetro de micro-ondas, um detector de vento solar e um detector de partículas de alta energia. Produziu o primeiro mapa topográfico lunar global completo da China com resolução de 120–200 m e mapas de abundância elemental de Th, K, U, O, Si, Mg, Al, Ca, Ti, Fe. Missão encerrada deliberadamente em 1º de março de 2009 com impacto controlado a 1,50° S, 52,36° E em Mare Fecunditatis — primeiro objeto da China na superfície lunar, abrindo o caminho para o Chang'e 3 (pouso em superfície em 2013) e Chang'e 5 (retorno de amostras em 2020). Operou por 16 meses — 4 meses além do nominativo.",
   "events": [
     {
       "met": 0,
       "label": "LANÇAMENTO",
-      "note": "Long March 3A da LC-3 de Xichang em 24 de outubro de 2007 às 10:05 UTC.",
+      "note": "Long March 3A de Xichang LC-3 24/10/2007 10:05 UTC.",
       "type": "nominal"
     },
     {

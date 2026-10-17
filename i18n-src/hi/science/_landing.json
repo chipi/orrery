@@ -17,7 +17,7 @@
       ]
     },
     {
-      "heading": "2 — Rocket equation boss fight है।",
+      "heading": "2 — रॉकेट समीकरण ही प्रमुख चुनौती है।",
       "diagram": "tsiolkovsky.svg",
       "diagram_alt": "Mass-ratio curve: ∆v आपके कितना fuel जलाने के साथ logarithmically बढ़ता है।",
       "diagram_caption": "क्रूर सच: अपने ∆v को दोगुना करने का मतलब है 2× से बहुत अधिक fuel जलाना।",
@@ -34,7 +34,7 @@
       "diagram_alt": "एक दीर्घवृत्त जो Earth की orbit और Mars की orbit को स्पर्श करता है।",
       "diagram_caption": "दो burns, एक दीर्घवृत्त। orbits बदलने का सबसे सस्ता तरीका।",
       "paragraphs": [
-        "Robert Heinlein ने लिखा: \"एक बार जब आप orbit में हों, तो आप सौर मंडल में कहीं भी आधे रास्ते हैं।\" वह मज़ाक नहीं कर रहे थे। Low Earth orbit तक पहुँचने में ~9.4 km/s का ∆v लगता है। वहाँ से Mars तक जाने में और ~3.6 km/s लगता है। सबसे कठिन हिस्सा पहले से ही आपके पीछे है।",
+        "रॉबर्ट हेनलेन ने लिखा था: \"एक बार जब आप कक्षा में पहुँच जाते हैं, तो आप सौर मंडल में कहीं भी जाने के लिए आधा रास्ता तय कर चुके होते हैं।\" वह मजाक नहीं कर रहे थे। निचली पृथ्वी कक्षा तक पहुँचने में लगभग 9.4 किमी/सेकंड की ∆v खर्च होती है। वहाँ से मंगल तक जाने में एक और लगभग 3.6 किमी/सेकंड खर्च होता है। सबसे कठिन हिस्सा पहले ही आपके पीछे रह गया है।",
         "सबसे सस्ता interplanetary route एक [Hohmann transfer](transfers/hohmann-transfer) है: एक दीर्घवृत्त जो एक छोर पर Earth की orbit को और दूसरे छोर पर गंतव्य की orbit को बस मुश्किल से चूमता है। दो burns, कोई बर्बाद fuel नहीं। Mars तक इसमें ~8.5 महीने लगते हैं। धीमा, लेकिन optimal।",
         "तेज़ी से जाना चाहते हैं? एक [Lambert's problem](transfers/lambert-problem) हल करें — अपनी departure date और अपना transit time चुनें, और Lambert आपको वह unique [transfer ellipse](transfers/transfer-ellipse) बताता है जो उन्हें जोड़ता है। Orrery की [/plan](app:/plan) screen बिल्कुल यही करती है, parallel में दस हज़ार बार, एक porkchop plot बनाने के लिए।",
         "और भी दूर जाने की ज़रूरत है? किसी ग्रह से गति चुराएँ। एक [gravity assist](transfers/gravity-assist) आपकी trajectory को zero fuel cost पर बदलने के लिए एक flyby का उपयोग करता है — Voyager 2 ने Neptune तक पहुँचने के लिए उनमें से चार का उपयोग किया। पूरा सौर मंडल [patched conics](transfers/patched-conics) के रूप में जुड़ता है: [conic-section](transfers/conic-sections) arcs की एक श्रृंखला जो gravitational neighbourhoods के बीच relay race में batons की तरह सौंपी जाती है।"
@@ -47,12 +47,12 @@
       "diagram_caption": "एक porkchop। प्रत्येक contour constant ∆v है; lobe तब होता है जब प्रकृति Mars को सस्ता बनाती है।",
       "paragraphs": [
         "Earth और Mars स्थिर नहीं बैठते। Earth सूर्य के चारों ओर हर 365 दिनों में दौड़ती है, Mars हर 687। उनकी सापेक्ष geometry केवल हर ~26 महीने में दोहराती है — और उन महीनों में से अधिकांश में, ग्रह बहुत दूर हैं, सूर्य के गलत पक्षों पर, सस्ते में पहुँचने के लिए। Mission design एक calendar से शुरू होता है, रॉकेट से नहीं।",
-        "[Porkchop plot](porkchop/what-is-a-porkchop) इस तरह engineers इसे देखते हैं। [एक अक्ष](porkchop/departure-axis) के साथ departure date, दूसरे के साथ [flight time](porkchop/tof-axis), ∆v एक [colour heatmap](porkchop/dv-heatmap) के रूप में। सस्ते क्षेत्र oval lobes के रूप में दिखाई देते हैं — launch windows। Lobe के बाहर: लाल, महंगा, वर्तमान-रॉकेटों-से-असंभव। [Contours पढ़ना](porkchop/contour-reading) flight dynamicist के काम का आधा हिस्सा है।",
+        "[porkchop plot](porkchop/what-is-a-porkchop) यह है कि इंजीनियर इसे कैसे देखते हैं। [प्रस्थान तारीख](porkchop/departure-axis) एक [अक्ष](porkchop/departure-axis) के साथ, [उड़ान का समय](porkchop/tof-axis) दूसरे के साथ, ∆v एक [रंग हीटमैप](porkchop/dv-heatmap) के रूप में। सस्ते क्षेत्र अंडाकार पालियों के रूप में दिखाई देते हैं — प्रक्षेपण की खिड़कियाँ। पालि के बाहर: लाल, महँगा, वर्तमान रॉकेटों के साथ असंभव। [समोच्च को पढ़ना](porkchop/contour-reading) एक उड़ान गतिविज्ञानी के काम का आधा हिस्सा है।",
         "दो तकनीकी शब्द जो आप हर जगह देखेंगे: [C3](propulsion/c3) वह launch energy है जो आपके रॉकेट को Earth के gravity well से निकलने के लिए चाहिए। [V∞](propulsion/v-infinity) (\"v-infinity\") गंतव्य के सापेक्ष आपकी गति है जिस क्षण आप पहुँचते हैं। दोनों सीधे porkchop math से निकलते हैं।"
       ]
     },
     {
-      "heading": "5 — Flight बस पाँच phases हैं जो दोहराते हैं।",
+      "heading": "5 — उड़ान महज पाँच चरणों की पुनरावृत्ति है।",
       "diagram": "edl.svg",
       "diagram_alt": "Atmospheric entry, parachute deploy, retropropulsion, landing।",
       "diagram_caption": "Entry, descent, landing। छह मिनट का शुद्ध आतंक।",
@@ -65,11 +65,11 @@
     {
       "heading": "6 — दूरियाँ और समय, क्योंकि इनमें से कुछ भी Earth-sized नहीं है।",
       "diagram": "au.svg",
-      "diagram_alt": "Astronomical unit, Earth की orbital त्रिज्या के साथ चिह्नित।",
+      "diagram_alt": "खगोलीय इकाई, पृथ्वी की कक्षीय त्रिज्या के साथ अंकित।",
       "diagram_caption": "एक AU = एक Earth-Sun दूरी। Mars ~1.5 AU है। Jupiter ~5.2 है।",
       "paragraphs": [
-        "तीन units हर जगह दिखाई देती हैं। [Astronomical unit](scales-time/au) (AU) औसत Earth-Sun दूरी है — 150 मिलियन km। हम सौर मंडल को AU में मापते हैं क्योंकि kilometres तेज़ी से बेकाबू हो जाते हैं। [Light-minute](scales-time/light-minute) आपको बताता है कि एक radio signal को अंतरिक्ष यान तक पहुँचने में कितना समय लगता है। Mars: 4 से 24 मिनट एक-तरफा। आप Earth से एक rover को joystick नहीं कर सकते। हर महत्वपूर्ण चीज़ स्वायत्त है।",
-        "[J2000 epoch](scales-time/j2000) वह calendar शून्य है जिसका हर astrodynamicist उपयोग करता है। [Sidereal vs. synodic periods](scales-time/sidereal-synodic) समझाते हैं कि Mars windows हर 26 महीने में क्यों दोहराती हैं बजाय हर 23 के। [Ecliptic plane](scales-time/ecliptic-plane) वह सपाट disc है जिस पर सभी ग्रह (ज़्यादातर) स्थित हैं। [Reference frames](scales-time/frames) वे coordinate systems हैं जो mission control Earth-centred, Sun-centred, और body-centred views के बीच juggle करता है।"
+        "तीन इकाइयाँ हर जगह दिखाई देती हैं। [खगोलीय इकाई](scales-time/au) (AU) पृथ्वी-सूर्य की औसत दूरी है — 150 मिलियन किमी। हम सौर मंडल को AU में मापते हैं क्योंकि किलोमीटर जल्दी ही अनुपयोगी हो जाते हैं। [प्रकाश-मिनट](scales-time/light-minute) आपको बताता है कि रेडियो सिग्नल को अंतरिक्ष यान तक पहुँचने में कितना समय लगता है। मंगल: 4 से 24 मिनट एकतरफा। आप पृथ्वी से किसी रोवर को नियंत्रित नहीं कर सकते। सब कुछ महत्वपूर्ण स्वायत्त है।",
+        "[J2000 epoch](scales-time/j2000) वह कैलेंडर शून्य है जिसका उपयोग हर खगोल गतिकी वैज्ञानिक करता है। [नाक्षत्र बनाम सिनोडिक अवधि](scales-time/sidereal-synodic) समझाती हैं कि मंगल की खिड़कियाँ हर 23 महीने की बजाय हर 26 महीने में क्यों आती हैं। [ग्रहण तल](scales-time/ecliptic-plane) वह समतल डिस्क है जिस पर ग्रह सभी (ज्यादातर) स्थित हैं। [संदर्भ फ्रेम](scales-time/frames) वे समन्वय प्रणालियाँ हैं जिनके बीच मिशन नियंत्रण पृथ्वी-केंद्रित, सूर्य-केंद्रित और पिंड-केंद्रित दृश्यों के बीच संतुलन रखता है।"
       ]
     },
     {
@@ -78,7 +78,7 @@
       "diagram_alt": "एक stylised अंतरिक्ष यात्री microgravity में तैर रहा है जिसमें bone/muscle/countermeasure indicator bars हैं।",
       "diagram_caption": "हड्डी, मांसपेशी, दृष्टि, vestibular, प्रतिरक्षा — microgravity में सब कुछ फिर से wire हो जाता है, और Earth की ओर नहीं।",
       "paragraphs": [
-        "छह महीने orbit में बिताएँ और आप छोटे, हल्के, और छोटे होकर वापस आते हैं जब आप गए थे। [Microgravity](life-in-space/microgravity-physiology) मूल कारण है: fluids सिर की ओर पुनर्वितरित होते हैं, postural muscles unload होती हैं, [bones](life-in-space/bone-density-loss) प्रति महीने अपने खनिज का 1–2% खो देती हैं, [vestibular system](life-in-space/vestibular-adaptation) \"down\" खोजने की कोशिश करना छोड़ देता है। [Counter-measures](life-in-space/muscle-atrophy) — ARED + treadmill पर प्रतिदिन दो घंटे का resistive और aerobic व्यायाम — इसे हल किए बिना धीमा करते हैं।",
+        "कक्षा में छह महीने बिताएँ और आप उससे छोटे, हल्के और कद में कम होकर लौटते हैं। [सूक्ष्मगुरुत्व](life-in-space/microgravity-physiology) मूल कारण है: तरल पदार्थ सिर की ओर पुनर्वितरित होते हैं, मुद्रा से संबंधित मांसपेशियाँ निष्क्रिय हो जाती हैं, [हड्डियाँ](life-in-space/bone-density-loss) प्रति माह अपने खनिज का 1–2% बहा देती हैं, [वेस्टिबुलर तंत्र](life-in-space/vestibular-adaptation) \"नीचे\" खोजने का प्रयास छोड़ देता है। [प्रतिवेधी उपाय](life-in-space/muscle-atrophy) — ARED और ट्रेडमिल पर प्रतिदिन दो घंटे की प्रतिरोधी और वायवीय व्यायाम — इसे धीमा करते हैं लेकिन इसका समाधान नहीं करते।",
         "[Radiation](life-in-space/radiation-exposure) कठिन समस्या है। ISS को ~200 mSv/year मिलता है (Earth पर 3 mSv background बनाम); magnetosphere के बाहर deep space 600+ mSv/year है, अभी तक कोई अच्छी shielding strategy नहीं है। एक Mars-class यात्रा एक crew member को एक single round trip में career-limit कैंसर जोखिम के पास रखेगी।",
         "फिर [EVA](life-in-space/eva-physiology) है (4.3 psi pure-oxygen suit में 6-घंटे का endurance event) और [long-duration effects](life-in-space/long-duration-effects) जैसे SANS — Space-Associated Neuro-ocular Syndrome — जहाँ long-flight crew के 60% में measurable आँख में परिवर्तन विकसित होते हैं जो पूरी तरह से reverse नहीं होते। ये अनसुलझी समस्याएँ हैं जो मानवता और Mars के बीच खड़ी हैं।"
       ]
@@ -89,8 +89,8 @@
       "diagram_alt": "एक space telescope एक दूर की galaxy की ओर लक्षित है जिसके नीचे एक representative emission spectrum है।",
       "diagram_caption": "Telescope + filter + spectrograph + maths। ब्रह्मांड के बारे में लगभग हर तथ्य प्रकाश से पुनर्निर्मित किया गया था।",
       "paragraphs": [
-        "[Space photography](observation/space-photography) वह नहीं है जो लोग सोचते हैं। कोई shutter clicking नहीं है; हर observatory image जो आपने देखा है वह narrow-band filters के माध्यम से long exposures का एक stack है, calibrated, registered, false-colour assigned। Hardware एक CCD या CMOS sensor है — photon-counters का एक grid — और data count है, picture नहीं। Picture वह है जो मनुष्य count से बनाते हैं।",
-        "[Adaptive optics](observation/adaptive-optics) वायुमंडल को real time में इसकी विकृति को मापकर और इसे cancel करने के लिए mirror को मोड़कर हराता है। [Coronagraphs](observation/coronagraphs) central star को block करते हैं ताकि इसकी orbit में planets को देखा जा सके। [Spectroscopy](observation/spectroscopy) एक तारे के प्रकाश में absorption lines से उसकी रासायनिक संरचना पढ़ती है। [Interferometry](observation/interferometry) अलग telescopes को एक virtual aperture में जोड़ती है जो उनमें से किसी से भी बड़ा है।",
+        "[अंतरिक्ष फोटोग्राफी](observation/space-photography) वह नहीं है जो लोग सोचते हैं। यहाँ कोई शटर नहीं क्लिक करता; जो भी वेधशाला की तस्वीर आपने देखी है वह संकीर्ण-बैंड फिल्टरों के माध्यम से लंबे एक्सपोज़र का एक स्टैक है, अंशांकित, पंजीकृत, झूठे-रंग निर्दिष्ट। हार्डवेयर एक CCD या CMOS सेंसर है — फोटॉन-गणकों की एक ग्रिड — और डेटा गणना है, तस्वीर नहीं। तस्वीर वह है जो मनुष्य उस गणना से बनाते हैं।",
+        "[अनुकूली प्रकाशिकी](observation/adaptive-optics) वायुमंडल को वास्तविक समय में इसके विकृति को मापकर और दर्पण को झुकाकर इसे रद्द करने के द्वारा हराती है। [कोरोनाग्राफ](observation/coronagraphs) ग्रहों को देखने के लिए केंद्रीय तारे को रोकते हैं जो इसके चारों ओर परिक्रमा करते हैं। [स्पेक्ट्रोस्कोपी](observation/spectroscopy) अपने प्रकाश में अवशोषण रेखाओं से एक तारे की रासायनिक संरचना पढ़ता है। [इंटरफेरोमेट्री](observation/interferometry) अलग-अलग दूरदर्शकों को एक आभासी द्वारक में सिलता है जो उनमें से किसी से भी बड़ा है।",
         "और उन methods ने जो सबसे अजीब वस्तुएँ पाई हैं: [black holes](observation/black-holes) (असली, mapped, दो galaxies के केंद्र में shadow-imaged) और [wormholes](observation/wormholes) (शुद्ध गणित, शामिल किए गए ताकि आप जान सकें कि जब आप एक फिल्म में देखें तो उनके साथ क्या करना है)। /fleet ↦ Observatory category में actual machines हैं — Hubble, JWST, Chandra, Spitzer, Kepler, TESS — प्रत्येक के साथ उसकी अपनी gallery है जो उसने देखा।"
       ]
     }
@@ -102,13 +102,13 @@
       "paths": [
         "/explore"
       ],
-      "text": "सौर मंडल को घुमाएँ। Kepler के नियमों को live देखें। किसी भी ग्रह को उसके orbital elements के लिए click करें।"
+      "text": "सौर मंडल को घुमाएँ। Kepler के नियमों को जीवंत देखें। इसके कक्षीय तत्वों के लिए किसी भी ग्रह को क्लिक करें।"
     },
     {
       "paths": [
         "/plan"
       ],
-      "text": "एक गंतव्य चुनें, एक launch year चुनें, porkchop देखें। Lobe वहाँ है जहाँ Hohmann transfers छुपते हैं।"
+      "text": "एक गंतव्य चुनें, एक प्रक्षेपण वर्ष चुनें, porkchop देखें। पालि वह है जहाँ Hohmann अंतरण छिपे होते हैं।"
     },
     {
       "paths": [

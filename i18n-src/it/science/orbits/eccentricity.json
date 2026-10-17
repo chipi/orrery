@@ -2,12 +2,12 @@
   "title": "Eccentricità",
   "intro_sentence": "Quanto stirata è l'orbita — zero è cerchio perfetto, uno è fuga parabolica.",
   "narrative_101": [
-    "Se la dimensione è il primo bottone, l'eccentricità è il secondo. A 0 cerchio. Verso 1, ellisse stirata in sigaro.",
-    "Cambia la velocità. Cerchio calmo. Stirata no. Halley meno di un anno su 76 — il resto a passo di tartaruga vicino all'afelio."
+    "Se la dimensione è la prima manopola dell'orbita, l'eccentricità è la seconda. Scegli un numero da 0 a quasi 1. A 0 l'orbita è un cerchio perfetto — noioso, prevedibile, stessa velocità ovunque. Spingilo verso 1 e l'ellisse si allunga in un ovale lungo, poi un sigaro, poi quasi una linea retta.",
+    "Cosa cambia fisicamente? La velocità. Un'orbita circolare è tranquilla. Una allungata no. Il corpo sfreccia oltre l'estremità più vicina dell'ellisse e poi se ne sta al ralluci all'estremità più lontana per gran parte dell'orbita. La Cometa di Halley sta qui per meno di un anno ogni 76 — il resto del tempo è alla deriva intorno all'afelio a passo di lumaca. Stessa orbita, ritmo selvaggiamente diverso."
   ],
   "body_paragraphs": [
-    "Eccentricità (`e`) è il numero di forma. A 0 cerchio. Verso 1 sigaro. Oltre 1 iperbolica.",
-    "Pianeti reali a bassa eccentricità. Terra 0,0167. Marte 0,093. Mercurio 0,205. Plutone e comete molto più alte."
+    "L'eccentricità (`e`) è il numero della forma. Impostalo a 0 e hai un cerchio — i fuochi collassano su un singolo centro, e il corpo in orbita resta alla stessa distanza per sempre. Aumentalo verso 1 e l'ellisse si allunga in un sigaro — il corpo sfreccia al fuoco al perielio, poi si attarda all'afelio per la maggior parte dell'orbita.",
+    "Sopra `e = 1` non sei più legato. `e = 1` esattamente è una traiettoria parabolica (fuga, appena appena). Qualsiasi cosa più alta è iperbolica — un passaggio ravvicinato che non torna mai. La maggior parte delle traiettorie dei veicoli spaziali che Orrery mostra sono ellissi eliocentriche con `e < 1`. L'eccezione: i bracci di assistenza gravitazionale disegnati attorno a Giove o Saturno si spingono in territorio iperbolico."
   ],
   "formula_caption": "Eccentricità da perielio e afelio.",
   "diagram_caption": "Tre orbite con stesso a ma e = 0, 0,4, 0,8."

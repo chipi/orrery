@@ -1,6 +1,6 @@
 {
   "title": "Sections Coniques",
-  "intro_sentence": "Coupez un cône quatre façons et vous obtenez chaque trajectoire képlérienne possible — cercle, ellipse, parabole, hyperbole.",
+  "intro_sentence": "Coupez un cône quatre façons et vous obtenez chaque trajectoire Keplerian possible — cercle, ellipse, parabole, hyperbole.",
   "narrative_101": [
     "Il y a une bizarre coïncidence mathématique au cœur de la mécanique orbitale. Les formes que vous pouvez créer en coupant un cône avec un plan plat — cercle, ellipse, parabole, hyperbole — s'avèrent être EXACTEMENT les seules formes qu'un corps sous l'effet de la gravité peut emprunter. Les Grecs ont étudié ces courbes pour le plaisir autour de 200 avant JC. Deux mille ans plus tard, nous avons découvert que l'univers fonctionne selon elles.",
     "Les quatre formes forment un continuum. Assez lent ? Vous êtes sur un cercle ou une ellipse — lié, vous reviendrez. Exactement à la vitesse d'échappement ? Parabole — vous ne reviendrez que tout juste jamais. Plus rapide que cela ? Hyperbole — vous déchirez à travers et ne revenez jamais. L'excentricité est le cadran : 0 est un cercle, 1 est le bord d'échappement, au-dessus de 1 vous êtes libre.",
@@ -8,7 +8,7 @@
   ],
   "body_paragraphs": [
     "Prenez un cône infini et coupez-le avec un plan plat. Coupez horizontalement : un cercle (`e = 0`). Inclinez la coupe : une ellipse (`0 < e < 1`). Inclinez parallèlement à l'arête du cône : une parabole (`e = 1`, le cas d'échappement exact). Inclinez au-delà : une hyperbole (`e > 1`, échappement avec énergie de rechange). Deux mille ans avant Kepler, Apollonius de Perga a catalogué ces courbes. Deux siècles avant Newton, Kepler a découvert que les planètes les suivent.",
-    "Chaque orbite képlérienne est l'une de ces quatre. Les orbites liées — planètes, lunes, satellites, tout ce qui revient — sont des cercles ou des ellipses. Les trajectoires non liées — survols, échappements, captures hyperboliques — sont des paraboles ou des hyperboles. La limite est exacte : à `e = 1` vous vous déplacez à exactement la vitesse d'échappement locale.",
+    "Chaque orbite Keplerian est l'une de ces quatre. Les orbites liées — planètes, lunes, satellites, tout ce qui revient — sont des cercles ou des ellipses. Les trajectoires non liées — survols, échappements, captures hyperboliques — sont des paraboles ou des hyperboles. La limite est exacte : à `e = 1` vous vous déplacez à exactement la vitesse d'échappement locale.",
     "Les concepteurs de missions exploitent les quatre. Naviguez sur une ellipse, survolez une planète sur une hyperbole (par rapport à cette planète), insérez-vous en orbite sur une ellipse à nouveau. L'itinéraire `/fly` du simulateur fait cela naturellement — la même équation de trajectoire gère chaque cas, l'excentricité vous dit quel conique vous volez."
   ],
   "diagram_caption": "Quatre coniques issues de la coupe d'un cône : cercle, ellipse, parabole, hyperbole. L'excentricité détermine laquelle."

@@ -7,7 +7,7 @@
     "Cuando dimensionas una misión, esta es la primera palanca que tiras. ¿Quieres llegar a Marte? Tu elipse de transferencia necesita un semieje mayor entre el de la Tierra y el de Marte. Eliges el tamaño, el tiempo de vuelo se sigue automáticamente."
   ],
   "body_paragraphs": [
-    "Si aplastas una elipse kepleriana en su dimensión más larga, la línea que has dibujado es el eje mayor. Córtala por la mitad y tienes el semieje mayor — escrito `a`. Es la distancia media del cuerpo orbitante al foco, más o menos: una media aritmética del perihelio (cercano) y el afelio (lejano).",
+    "Si aplastas una elipse Keplerian en su dimensión más larga, la línea que has dibujado es el eje mayor. Córtala por la mitad y tienes el semieje mayor — escrito `a`. Es la distancia media del cuerpo orbitante al foco, más o menos: una media aritmética del perihelio (cercano) y el afelio (lejano).",
     "¿Por qué importa? Por la tercera ley de Kepler: `T² ∝ a³`. El período orbital depende solo del semieje mayor. La forma no importa. La inclinación no importa. Estira una órbita hasta que sea un cigarro y otra hasta que sea un círculo — si ambas tienen el mismo `a`, ambas tardan exactamente lo mismo en volver.",
     "En los paneles de `/explore` de Orrery verás este número en unidades astronómicas. Tierra: a ≈ 1,0 UA. Marte: 1,52 UA. Júpiter: 5,2 UA. Sustituye en la fórmula del período y has reproducido el reloj orrery: 1 año, 687 días, 11,86 años."
   ],

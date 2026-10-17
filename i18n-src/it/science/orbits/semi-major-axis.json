@@ -2,13 +2,13 @@
   "title": "Semiasse maggiore",
   "intro_sentence": "Metà del diametro più lungo dell'ellisse — l'unico numero che fissa il periodo orbitale.",
   "narrative_101": [
-    "Spago, due puntine, matita. Disegnano un'ellisse. Il semiasse maggiore è la metà della linea più lunga — la dimensione dell'orbita.",
-    "Magia: questo solo numero dice quanto Mars impiega a fare il giro del Sole. Non la forma, non l'inclinazione. Solo la dimensione."
+    "Prendi un pezzo di spago, due puntine da disegno e una matita. Fissa le puntine su una tavola, passa lo spago intorno a loro, tienilo teso con la matita e traccia il contorno. Hai disegnato un'ellisse. Il semiasse maggiore è la metà della linea più lunga che puoi tracciare attraverso quella forma — la dimensione dell'orbita.",
+    "Ecco il trucco magico: quel singolo numero ti dice quanto tempo impiega il pianeta a fare un giro intorno al Sole. Non la forma dell'orbita, non la sua inclinazione, non dove si trovi il pianeta in questo momento. Solo la dimensione. Un'orbita a forma di sigaro irregolare e una perfettamente rotonda con lo stesso semiasse maggiore impiegano lo stesso tempo per completare il loro percorso. Kepler ha scoperto questo quattrocento anni fa e ancora oggi gli facciamo onore nei manuali scolastici."
   ],
   "body_paragraphs": [
-    "Appiattisci un'ellisse kepleriana nella sua dimensione più lunga e hai l'asse maggiore. Tagliatelo a metà: semiasse maggiore — `a`. Distanza media dal corpo al fuoco.",
-    "Importante per la terza legge di Keplero: `T² ∝ a³`. Il periodo dipende solo dal semiasse maggiore.",
-    "In `/explore`: Terra a ≈ 1,0 UA. Marte 1,52 UA. Giove 5,2 UA."
+    "Se appiattisci un'ellisse kepleriana nella sua dimensione più lunga, la linea che hai tracciato è l'asse maggiore. Dividila a metà e otterrai l'asse semi-maggiore — scritto `a`. È la distanza media dal corpo orbitante al fuoco, in un certo senso: la media aritmetica tra il perielio (il punto più vicino) e l'afelio (il punto più lontano).",
+    "Perché importa? A causa della terza legge di Kepler: `T² ∝ a³`. Il periodo orbitale dipende solo dal semiasse maggiore. La forma non importa. L'inclinazione non importa. Deforma un'orbita così da farla diventare un sigaro e un'altra così da farla diventare un cerchio — se entrambe hanno lo stesso `a`, entrambe impiegano esattamente lo stesso tempo per tornare al punto di partenza.",
+    "Negli `/explore` panel di Orrery vedrai questo numero in unità astronomiche. Terra: a ≈ 1,0 AU. Marte: 1,52 AU. Giove: 5,2 AU. Inserisci nella formula del periodo e avrai riprodotto l'orologio dell'orrery: 1 anno, 687 giorni, 11,86 anni."
   ],
   "formula_caption": "Semiasse maggiore come media dei raggi perielio e afelio.",
   "diagram_caption": "Asse maggiore da perielio a afelio. Semiasse a è la metà."

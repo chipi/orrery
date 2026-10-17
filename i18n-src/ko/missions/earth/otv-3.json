@@ -1,8 +1,8 @@
 {
   "name": "X-37B OTV-3 (USA-240)",
   "type": "무인 우주비행기 · 비행 완료",
-  "first": "USA-240 — 궤도상 675일, 밴더버그 공군기지",
-  "description": "세 번째 X-37B 비행, OTV-1 비행체 재사용. 2012-12-11 18:03 UTC에 CCAFS SLC-41에서 Atlas V 501 AV-034로 발사; 2014-10-17 16:24 UTC에 밴더버그 공군기지에 착륙. 궤도상 675일.",
+  "first": "USA-240 — 궤도상 675일, Vandenberg AFB",
+  "description": "세 번째 X-37B 비행, OTV-1 비행체 재사용. 2012-12-11 18:03 UTC에 CCAFS SLC-41에서 Atlas V 501 AV-034로 발사; 2014-10-17 16:24 UTC에 Vandenberg AFB에 착륙. 궤도상 675일.",
   "events": [
     {
       "met": 0,
@@ -19,7 +19,7 @@
     {
       "met": 675,
       "label": "착륙",
-      "note": "2014-10-17 밴더버그 공군기지에서 자동 활주로 착륙.",
+      "note": "2014-10-17 Vandenberg AFB에서 자동 활주로 착륙.",
       "type": "nominal"
     }
   ]

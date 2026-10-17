@@ -1,19 +1,19 @@
 {
   "name": "Apollo 9",
   "type": "유인 지구 궤도 · 비행 완료",
-  "first": "최초의 유인 달 착륙선 비행 — 지구 궤도 달 착륙선 분리 및 랑데부 테스트",
-  "description": "달 착륙선의 최초 유인 비행. 지구 궤도에서 McDivitt와 Schweickart는 달 착륙선 Spider를 우주선 Gumdrop에서 도킹 해제하고, 6시간에 걸쳐 183 km까지 날아간 후 랑데부하여 다시 도킹했다 — 달 랑데부 절차의 모든 단계가 우주선으로 승무원을 데려올 수 없는 상황에서 테스트되었다. Schweickart는 달 착륙선 현관에서 38분간의 선외활동을 수행했으며, 달 위를 걷게 될 승무원들이 사용할 Apollo 선외활동용 우주복과 PLSS 백팩 설계를 입증했다. Scott은 우주선 해치에서 직립 선외활동을 수행했다. 달 착륙선 하드웨어와 랑데부 절차가 확인됨에 따라, NASA는 2개월 후 Apollo 10을 달로 보낼 준비가 되었다.",
+  "first": "최초의 유인 LM 비행 — 지구 궤도 LM 분리 및 랑데부 테스트",
+  "description": "달 착륙선의 최초 유인 비행. 지구 궤도에서 McDivitt와 Schweickart는 LM Spider를 CSM Gumdrop에서 도킹 해제하고, 6시간에 걸쳐 183 km까지 날아간 후 랑데부하여 다시 도킹했다 — 달 랑데부 절차의 모든 단계가 CSM으로 승무원을 데려올 수 없는 상황에서 테스트되었다. Schweickart는 LM 현관에서 38분간의 선외활동을 수행했으며, 달 위를 걷게 될 승무원들이 사용할 Apollo 선외활동용 우주복과 PLSS 백팩 설계를 입증했다. Scott은 CSM 해치에서 직립 선외활동을 수행했다. LM 하드웨어와 랑데부 절차가 확인됨에 따라, NASA는 2개월 후 Apollo 10을 달로 보낼 준비가 되었다.",
   "events": [
     {
       "met": 0,
       "label": "발사",
-      "note": "Saturn V (AS-504), Kennedy 우주 센터 LC-39A에서 1969-03-03 16:00 UTC 발사 — 세 번째 Saturn V 비행, 달 착륙선을 탑재한 최초의 유인 발사.",
+      "note": "Saturn V (AS-504), Kennedy Space Center LC-39A에서 1969-03-03 16:00 UTC 발사 — 세 번째 Saturn V 비행, LM을 탑재한 최초의 유인 발사.",
       "type": "nominal"
     },
     {
       "met": 0.13,
       "label": "우주선-달 착륙선 분리/도킹",
-      "note": "우주선 Gumdrop이 방향을 바꾸고 SLA 어댑터의 달 착륙선 Spider와 도킹 — 최초의 유인 전치 및 도킹. 모든 Apollo 달 미션이 이 기동을 반복한다.",
+      "note": "CSM Gumdrop이 방향을 바꾸고 SLA 어댑터의 LM Spider와 도킹 — 최초의 유인 전치 및 도킹. 모든 Apollo 달 미션이 이 기동을 반복한다.",
       "type": "nominal"
     },
     {
@@ -25,7 +25,7 @@
     {
       "met": 4.5,
       "label": "선외활동",
-      "note": "Schweickart는 달 착륙선 현관에서 38분간의 선외활동을 수행한다. Scott은 우주선 해치에서 직립 선외활동을 수행한다. Apollo PLSS 백팩의 최초 검증.",
+      "note": "Schweickart는 LM 현관에서 38분간의 선외활동을 수행한다. Scott은 CSM 해치에서 직립 선외활동을 수행한다. Apollo PLSS 백팩의 최초 검증.",
       "type": "info"
     },
     {

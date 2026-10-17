@@ -58,7 +58,7 @@
       "diagram_caption": "进入、下降、着陆。六分钟的纯粹恐怖。",
       "paragraphs": [
         "几乎每个行星际任务,从 Voyager 到 Perseverance,都运行相同的脚本:",
-        "[发射](mission-phases/launch)——离开大气层进入近地轨道。[跨行星入轨](mission-phases/trans-x-injection)——在近地点进行一次强力燃烧,将你抛向月球(TLI)、Mars(TMI)、Venus(TVI)或 Jupiter(TJI)的转移椭圆。[轨迹修正机动](mission-phases/tcm)——巡航期间的微小燃烧,用于修正偏差误差。通常进行 1-3 次。[入轨](mission-phases/orbit-insertion)——在目的地进行制动燃烧,使你进入捕获轨道。[EDL](mission-phases/edl)——进入、下降、着陆——用于着陆器。六分钟的超音速大气混乱。",
+        "[发射](mission-phases/launch)——离开大气层进入近地轨道。[跨行星入轨](mission-phases/trans-x-injection)——在近地点进行一次强力燃烧,将你抛向月球(TLI)、火星(TMI)、金星(TVI)或木星(TJI)的转移椭圆。[轨迹修正机动](mission-phases/tcm)——巡航期间的微小燃烧,用于修正偏差误差。通常进行 1-3 次。[入轨](mission-phases/orbit-insertion)——在目的地进行制动燃烧,使你进入捕获轨道。[EDL](mission-phases/edl)——进入、下降、着陆——用于着陆器。六分钟的超音速大气混乱。",
         "月球任务有时会绕道经过[近直线晕轨道](mission-phases/nrho)(Gateway 将驻留在其中一个),载人 Apollo 飞行采用[自由返回轨道](transfers/free-return)——8 字形路径,如果航天器上的每个发动机都失效,会自动将你送回地球。Apollo 13 的生命归功于这种几何学。"
       ]
     },
@@ -66,9 +66,9 @@
       "heading": "6 — 距离和时间,因为这些都不是地球尺度的。",
       "diagram": "au.svg",
       "diagram_alt": "天文单位,沿着地球轨道半径标记。",
-      "diagram_caption": "一个 AU = 一个地球-太阳距离。Mars 约为 1.5 AU。Jupiter 约为 5.2。",
+      "diagram_caption": "一个 AU = 一个地球-太阳距离。火星约为 1.5 AU。木星约为 5.2。",
       "paragraphs": [
-        "三个单位无处不在。[天文单位](scales-time/au)(AU)是地球-太阳的平均距离——1.5 亿 km。我们用 AU 来测量太阳系,因为 km 很快就变得难以处理。[光分](scales-time/light-minute)告诉你无线电信号到达航天器需要多长时间。Mars:单程 4 到 24 分钟。你无法从地球上用操纵杆控制漫游车。所有重要的事情都是自主的。",
+        "三个单位无处不在。[天文单位](scales-time/au)(AU)是地球-太阳的平均距离——1.5 亿 km。我们用 AU 来测量太阳系,因为 km 很快就变得难以处理。[光分](scales-time/light-minute)告诉你无线电信号到达航天器需要多长时间。火星:单程 4 到 24 分钟。你无法从地球上用操纵杆控制漫游车。所有重要的事情都是自主的。",
         "[J2000 历元](scales-time/j2000)是每个天体动力学家使用的日历零点。[恒星周期 vs. 会合周期](scales-time/sidereal-synodic)解释了为什么 Mars 窗口每 26 个月重复一次而不是每 23 个月。[黄道面](scales-time/ecliptic-plane)是行星大多所在的平面圆盘。[参考系](scales-time/frames)是任务控制在以地球为中心、以太阳为中心和以天体为中心的视图之间切换的坐标系统。"
       ]
     },
@@ -80,7 +80,7 @@
       "paragraphs": [
         "在轨道上待六个月,你回来时会比离开时更矮小、更轻、更短。[微重力](life-in-space/microgravity-physiology)是根本原因:体液向头部重新分布,姿势肌肉卸载,[骨骼](life-in-space/bone-density-loss)每月流失 1-2% 的矿物质,[前庭系统](life-in-space/vestibular-adaptation)放弃寻找\"下方\"。[对策](life-in-space/muscle-atrophy)——每天在 ARED + 跑步机上进行两小时的阻力和有氧运动——减缓但不能解决它。",
         "[辐射](life-in-space/radiation-exposure)是更难的问题。ISS 每年约 200 mSv(相比地球上 3 mSv 的背景辐射);磁层外的深空每年超过 600 mSv,目前还没有好的屏蔽策略。一次 Mars 级别的旅行会使机组成员在一次往返中接近职业生涯极限的癌症风险。",
-        "然后是 [EVA](life-in-space/eva-physiology)(在 4.3 psi 纯氧宇航服中进行 6 小时的耐力活动)和[长期影响](life-in-space/long-duration-effects),如 SANS——太空相关神经眼综合征——60% 的长期飞行机组人员出现可测量的眼部变化,并且不能完全逆转。这些是阻碍人类前往 Mars 的未解决问题。"
+        "然后是 [EVA](life-in-space/eva-physiology)(在 4.3 psi 纯氧宇航服中进行 6 小时的耐力活动)和[长期影响](life-in-space/long-duration-effects),如 SANS——太空相关神经眼综合征——60% 的长期飞行机组人员出现可测量的眼部变化,并且不能完全逆转。这些是阻碍人类前往火星的未解决问题。"
       ]
     },
     {

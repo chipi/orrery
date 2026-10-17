@@ -1,6 +1,6 @@
 {
   "name": "Planet Labs (PlanetScope + SkySat)",
   "short": "Planet",
-  "description": "~150機のPlanetScope 3U CubeSat + ~21機のSkySatが高度475 kmの太陽同期軌道で運用 — 毎日再訪する地球観測。PlanetScopeは3-5 mの全球日次観測を提供し、SkySatはオンデマンドで50 cmの撮像を実現。地球上の陸地すべてが毎日撮影される。",
-  "scale_fact": "Planetのドーブ衛星群は1日あたり約25テラバイトの画像データを生成 — NASAの地球観測プログラム全体を上回る量。"
+  "description": "~150台のPlanetScope 3U CubeSats + ~21台のSkySatsが475 km太陽同期軌道上で運用中 — 毎日の地球画像取得。PlanetScopeは3~5 mの解像度で世界規模の毎日撮影を提供し、SkySatsは50 cmの要求に応じたタスキングを提供します。地球の陸地表面のあらゆる地域が毎日撮影されます。",
+  "scale_fact": "PlanetのDoves衛星群は1日あたり約25テラバイトの画像データを生成 — NASAの地球観測プログラム全体を上回る量。"
 }

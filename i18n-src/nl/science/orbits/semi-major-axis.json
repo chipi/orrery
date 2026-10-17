@@ -1,5 +1,5 @@
 {
-  "title": "Halve lange as",
+  "title": "Semi-Major Axis",
   "intro_sentence": "De helft van de langste diameter van de baanellips — en het enige getal dat de omlooptijd bepaalt.",
   "narrative_101": [
     "Neem een stuk touw, twee punaises en een potlood. Prik de punaises op een plank, sla het touw eromheen, trek het strak met het potlood en teken de vorm. Je hebt een ellips getekend. De halve lange as is de helft van de langste lijn die je door die vorm kunt trekken — de grootte van de baan.",
@@ -7,7 +7,7 @@
     "Als je een missie plant, is dit de eerste hendel die je overhaalt. Wil je Mars bereiken? Je transfer-ellips heeft een halve lange as nodig ergens tussen die van de aarde en Mars. Kies de grootte, de vliegtijd volgt automatisch."
   ],
   "body_paragraphs": [
-    "Als je een Kepleriaanse ellips samendrukt tot zijn langste dimensie, is de lijn die je hebt getekend de lange as. Deel die doormidden en je hebt de halve lange as — geschreven als `a`. Het is de gemiddelde afstand van het cirkelende lichaam tot het brandpunt, min of meer: een rekenkundig gemiddelde van perihelium (dichtst) en aphelium (verst).",
+    "Als je een Keplerian ellips samendrukt tot zijn langste dimensie, is de lijn die je hebt getekend de lange as. Deel die doormidden en je hebt de halve lange as — geschreven als `a`. Het is de gemiddelde afstand van het cirkelende lichaam tot het brandpunt, min of meer: een rekenkundig gemiddelde van perihelium (dichtst) en aphelium (verst).",
     "Waarom maakt het uit? Vanwege de derde wet van Kepler: `T² ∝ a³`. De omlooptijd hangt alleen af van de halve lange as. De vorm maakt niet uit. De inclinatie maakt niet uit. Rek de ene baan uit tot een sigaar en de andere tot een cirkel — als beide dezelfde `a` hebben, doen beide er precies even lang over om terug te keren.",
     "In de `/explore`-panelen van Orrery zie je dit getal in astronomische eenheden. Aarde: a ≈ 1,0 AU. Mars: 1,52 AU. Jupiter: 5,2 AU. Stop ze in de periode-formule en je hebt de orrery-klok gereproduceerd: 1 jaar, 687 dagen, 11,86 jaar."
   ],

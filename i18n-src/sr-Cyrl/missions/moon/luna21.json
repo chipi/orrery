@@ -1,13 +1,13 @@
 {
   "name": "Luna 21 / Lunokhod 2",
   "type": "UNCREWED LANDER + ROVER · FLOWN",
-  "first": "Second Soviet lunar rover; longest off-world drive (~39 km) for over 40 years",
-  "description": "Luna 21 delivered Lunokhod 2, the Soviet Union's second crewed-controlled lunar rover, to Le Monnier crater on the southern edge of Mare Serenitatis in January 1973. The rover was driven from a control room in Crimea by a five-person team and traversed approximately 39 km over four lunar days — a record off-world distance that held until NASA's Opportunity rover passed it on Mars in 2014. Lunokhod 2 returned 80,000 television frames and 86 panoramas before dust contamination of its solar arrays ended operations.",
+  "first": "Други совјетски лунарни ровер; најдужа вожња ван Земље (~39 km) више од 40 година",
+  "description": "Luna 21 је у јануару 1973. допремила Lunokhod 2, други лунарни ровер Совјетског Савеза којим се управљало са Земље, у кратер Le Monnier на јужном ободу Mare Serenitatis. Ровером је из контролне собе на Криму управљао петочлани тим, а он је током четири лунарна дана прешао приближно 39 km — рекордну раздаљину ван Земље, која је опстала све док је 2014. на Марсу није премашио NASA-ин ровер Opportunity. Lunokhod 2 је послао 80.000 телевизијских кадрова и 86 панорама пре него што је прашина на његовим соларним панелима окончала рад.",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "Proton-K from Baikonur 1973-01-08.", "type": "nominal" },
-    { "met": 0.005, "label": "TLI", "note": "Trans-lunar injection on the Blok-D upper stage.", "type": "nominal" },
-    { "met": 4, "label": "TCM", "note": "Mid-course correction during cruise.", "type": "info" },
-    { "met": 4.5, "label": "LANDING", "note": "Soft landing in Le Monnier crater 1973-01-15. Lunokhod 2 rolled off ramps a few hours later.", "type": "nominal" },
-    { "met": 7, "label": "ROVER ACTIVE", "note": "Five-person ground crew in Crimea began driving operations. Total traverse: ~39 km.", "type": "nominal" }
+    { "met": 0, "label": "ЛАНСИРАЊЕ", "note": "Proton-K са Baikonur-а, 8. јануара 1973.", "type": "nominal" },
+    { "met": 0.005, "label": "TLI", "note": "Убацивање на путању ка Месецу помоћу горњег степена Blok-D.", "type": "nominal" },
+    { "met": 4, "label": "TCM", "note": "Корекција путање у средишњем делу лета.", "type": "info" },
+    { "met": 4.5, "label": "СЛЕТАЊЕ", "note": "Меко слетање у кратер Le Monnier 15. јануара 1973. Lunokhod 2 је неколико сати касније сишао низ рампе.", "type": "nominal" },
+    { "met": 7, "label": "РОВЕР АКТИВАН", "note": "Петочлана копнена екипа на Криму започела је вожњу ровера. Укупно пређени пут: ~39 km.", "type": "nominal" }
   ]
 }

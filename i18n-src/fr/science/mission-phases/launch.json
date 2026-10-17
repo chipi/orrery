@@ -2,14 +2,14 @@
   "title": "Lancement + Ascension",
   "intro_sentence": "Les dix minutes les plus violentes de toute mission — luttant contre gravité, atmosphère et équation de fusée.",
   "narrative_101": [
-    "Plupart du danger arrive en huit premières minutes. Fusée allume, lutte poids, monte par air dense, accélère 0 à 7,5 km/s. Si quelque chose va mal, rarement temps de réparer.",
-    "Arithmétique brutale : ~9,4 km/s Δv mais seulement 7,9 contribuent à vitesse orbitale. Reste = perte gravité + perte traînée.",
-    "Assez haut, atmosphère abandonne. Étages séparent, coiffes tombent. SpaceX rompt ça et récupère premiers étages."
+    "L'essentiel du danger du vol spatial se joue dans les huit premières minutes. La fusée s'allume, combat son propre poids pour décoller du pas de tir, traverse une atmosphère suffisamment dense pour la déchirer, et accélère de zéro à sept kilomètres et demi par seconde au moment où le moteur s'arrête. Si quelque chose tourne mal pendant l'ascension, il y a rarement le temps de le corriger.",
+    "L'arithmétique est brutale. Atteindre l'orbite demande ~9,4 km/s de ∆v, mais seulement ~7,9 km/s contribuent réellement à la vitesse orbitale. Le reste est gaspillé en « perte de gravité » (il faut continuer à brûler le carburant simplement pour maintenir la fusée en altitude pendant qu'elle monte) et « perte de traînée » (l'atmosphère qui repousse). Les ingénieurs passent des années à optimiser le programme de tangage — exactement quand et de combien incliner — pour minimiser ces pertes.",
+    "Une fois que la fusée est assez haute pour que l'air abandonne, les choses deviennent plus faciles. Les étages se séparent, les carénages se détachent, le deuxième étage prend le relais pour une poussée plus longue et plus douce. Le voyage entier est une chute calibrée de masse sèche : chaque kilogramme de réservoir vide que vous pouvez vous débarrasser est un kilogramme que l'étage suivant n'a pas à accélérer. SpaceX échappe à cela et récupère ses premiers étages ; tous les autres les jettent."
   ],
   "body_paragraphs": [
-    "Ascension ~9,4 km/s Δv mais à peine 7,9 km/s vitesse orbitale réelle. Reste = perte gravité (énergie pour tenir fusée haute) et perte traînée (atmosphère freine). Programme cabrage minimise.",
-    "Étages tombent. Première séparation, deuxième allume, jettison coiffe. Falcon 9 retourne premier étage ; Saturn V non.",
-    "Dans `/missions` champ launch_vehicle : Saturn V Apollo, Atlas V Curiosity, Falcon 9 Crew Dragon, SLS Artemis I."
+    "L'ascension au lancement coûte environ 9,4 km/s de ∆v, mais à peine 7,9 km/s de cela correspond à la véritable vitesse orbitale. Le reste est perte de gravité (vous dépensez de l'énergie pour maintenir la fusée en altitude pendant qu'elle monte) et perte de traînée (l'atmosphère qui résiste). Programmer correctement l'inclinaison et vous minimisez les deux — trop vertical gaspille la poussée en altitude qui n'aide pas l'insertion orbitale ; trop horizontal et l'atmosphère a plus de temps pour vous ralentir.",
+    "Les étages se séparent en cours de route. Séparation du premier étage, allumage du deuxième étage, éjection du carénage, libération de la charge utile. Chaque étage laisse tomber la masse sèche que le suivant n'a plus besoin d'accélérer. Falcon 9 récupère son premier étage ; Saturn V ne le faisait pas. Le compromis est de savoir si le matériel de récupération coûte plus cher que le carburant qui aurait été nécessaire pour se débarrasser de l'étage.",
+    "Sur `/missions`, le champ launch_vehicle vous indique quel lanceur a effectué la mission. Saturn V pour Apollo. Atlas V pour Curiosity. Falcon 9 pour Crew Dragon. SLS pour Artemis I. Chaque lanceur possède une courbe C3-vs-charge utile fixe — le lanceur détermine la limite de ce qui est possible."
   ],
   "diagram_caption": "Profil lancement : montée verticale → cabrage → étagement → insertion orbitale."
 }

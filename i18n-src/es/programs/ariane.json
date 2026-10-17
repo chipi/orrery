@@ -35,7 +35,7 @@
       "image": {
         "reuse": "fleet/ariane-5/03"
       },
-      "caption": "Ariane 5 en su plataforma de lanzamiento en Kourou. Tras un famoso fallo en su vuelo inaugural, se convirtió en uno de los cohetes de carga pesada más fiables jamás volados, lanzando Rosetta, Galileo, los cargueros ATV a la ISS y el Telescopio Espacial James Webb.",
+      "caption": "Ariane 5 en su rampa de lanzamiento en Kourou. Tras un famoso fracaso en su primer vuelo, se convirtió en uno de los cohetes de carga pesada más fiables jamás operados —lanzando Rosetta, Galileo, los cargueros ATV hacia la ISS y el Telescopio Espacial James Webb.",
       "align": "right"
     },
     {
@@ -44,7 +44,7 @@
     },
     {
       "type": "prose",
-      "md": "El manifiesto de Ariane 5 es una lista de honor de la ciencia e infraestructura de la época: la misión de cometa Rosetta, la constelación de navegación Galileo, BepiColombo a Mercurio, los cargueros ATV que reabastecieron la Estación Espacial Internacional y, la más celebrada de sus últimas cargas útiles, el Telescopio Espacial James Webb (diciembre de 2021), lanzado con tanta precisión que ahorró años de combustible del telescopio. El verdadero vuelo final de Ariane 5 llegó en julio de 2023, transportando los satélites de telecomunicaciones Heinrich Hertz y Syracuse 4B en VA261. Entonces el terreno cambió. Los cohetes reutilizables de SpaceX socavaron los precios de Ariane y pusieron fin a su dominio comercial, y Ariane 6, volando desde 2024, es la respuesta de Europa: un lanzador más barato y flexible construido para mantener vivo el acceso independiente del continente en un mercado transformado."
+      "md": "El manifiesto de Ariane 5 es una lista de honor de la ciencia e infraestructura de la época: la misión de cometa Rosetta, la constelación de navegación Galileo, BepiColombo a Mercurio, los cargueros ATV que reabastecieron la Estación Espacial Internacional y, la más celebrada de sus últimas cargas útiles, el James Webb Space Telescope (diciembre de 2021), lanzado con tanta precisión que ahorró años de combustible del telescopio. El verdadero vuelo final de Ariane 5 llegó en julio de 2023, transportando los satélites de telecomunicaciones Heinrich Hertz y Syracuse 4B en VA261. Entonces el terreno cambió. Los cohetes reutilizables de SpaceX socavaron los precios de Ariane y pusieron fin a su dominio comercial, y Ariane 6, volando desde 2024, es la respuesta de Europa: un lanzador más barato y flexible construido para mantener vivo el acceso independiente del continente en un mercado transformado."
     }
   ],
   "narrative": [
@@ -86,7 +86,7 @@
     },
     {
       "type": "prose",
-      "md": "La segunda lección está escrita en el Vuelo 501: el software reutilizado no es automáticamente software seguro. Ariane 5 fue destruido porque el código de guiado probado en Ariane 4 fue trasladado sin probar a un cohete que volaba más rápido, donde una suposición incorporada en el código antiguo ya no se cumplía. Los componentes eran sólidos; el fallo estuvo en asumir que lo que funcionaba en un contexto funcionaría sin cambios en otro. Todo sistema reutilizado debe ser revalidado frente a las nuevas condiciones que realmente enfrentará: una lección que llega mucho más allá de los cohetes."
+      "md": "La segunda lección está escrita en Flight 501: el software reutilizado no es automáticamente software seguro. Ariane 5 fue destruido porque el código de guiado probado en Ariane 4 fue trasladado sin probar a un cohete que volaba más rápido, donde una suposición incorporada en el código antiguo ya no se cumplía. Los componentes eran sólidos; el fallo estuvo en asumir que lo que funcionaba en un contexto funcionaría sin cambios en otro. Todo sistema reutilizado debe ser revalidado frente a las nuevas condiciones que realmente enfrentará: una lección que llega mucho más allá de los cohetes."
     }
   ]
 }

@@ -3,13 +3,13 @@
   "intro_sentence": "Drei Beobachtungsregeln, die Planetenbewegung ein Jahrhundert vor Newton zu einer geschlossenen Wissenschaft machten.",
   "narrative_101": [
     "Kepler hatte keinen Calculus, keine Newton-Gravitation, keinen Computer. Er hatte zwanzig Jahre Tycho Brahes mühsamer Marsbeobachtungen — und Geduld. Daraus drei Regeln, die nach 400 Jahren immer noch exakt richtig sind.",
-    "Erstes Gesetz: Bahnen sind Ellipsen, keine Kreise. Zweites: die Linie Sonne-Planet überstreicht gleiche Flächen in gleicher Zeit (= Drehimpulserhaltung). Drittes: T² skaliert mit a³.",
-    "Newton siebzig Jahre später bewies, dass alle drei aus einer Gravitationsgleichung folgen. Kepler kam zuerst, ohne Theorie — pures Pattern-Matching auf Daten."
+    "Erstes Gesetz: Umlaufbahnen sind Ellipsen, keine Kreise. Zu dieser Zeit ketzerisch. Zweites Gesetz: die Linie von einem Planeten zur Sonne überstreicht in gleichen Zeiten gleiche Flächen – eine raffinierte Art zu sagen, dass Planeten schneller werden, wenn sie der Sonne nahe sind, und langsamer, wenn sie weit weg sind. Drittes Gesetz: je größer die Umlaufbahn, desto länger das Jahr, auf präzise Weise (T² skaliert als a³).",
+    "Newton kam siebzig Jahre später und bewies, dass alle drei Gesetze aus einer einzigen, einfachen Gravitationsgleichung folgen. Aber Kepler war zuerst da, ohne Theorie – nur indem er auf Zahlen starrte, bis sie gestanden. Das ist die Art von Ansatz, die man noch in der modernen Wissenschaft verfolgen kann, wenn man die Geduld dafür aufbringt."
   ],
   "body_paragraphs": [
-    "Erstes Gesetz: Planeten umkreisen Ellipsen mit der Sonne in einem Brennpunkt. Vor Kepler nur Kreise. Brahes 20 Jahre Marsdaten passten nicht. Ellipsen passten beim ersten Versuch.",
-    "Zweites Gesetz: gleiche Flächen in gleicher Zeit. Drehimpulserhaltung in Verkleidung. Nahe Perihel kurze Linie, hohe Geschwindigkeit; nahe Aphel umgekehrt.",
-    "Drittes Gesetz: `T² ∝ a³`. Mit Erde T = 1 Jahr, a = 1 AE liest du jede Periode von der Distanz ab."
+    "Erstes Gesetz: Planeten bewegen sich auf Ellipsen um die Sonne, die sich in einem Brennpunkt befindet. Vor Kepler verwendete jedes Modell Kreise — manchmal verschachtelt, manchmal versetzt, aber immer kreisförmig. Kepler nutzte zwanzig Jahre von Tycho Brahe's Marsbeobachtungen und gab auf: Die Daten passten nicht zu Kreisen, und nichts, das er tun konnte, machte es möglich. Ellipsen passten beim ersten Versuch.",
+    "Zweites Gesetz: die Linie von der Sonne zum Planeten überstreicht gleiche Flächen in gleichen Zeiten. Das ist Drehimpulserhaltung in verkleideter Form. In der Nähe des Perihels ist der Planet der Sonne nah, die Linie ist kurz – daher muss er schnell schwingen, um die gleiche Fläche wie eine lange, langsame Linie beim Aphel zu überstreichen. Das ist der Grund, warum die Orbitalgeschwindigkeit nicht konstant ist.",
+    "Drittes Gesetz: `T² ∝ a³`. Das Quadrat der Umlaufzeit ist proportional zur dritten Potenz der großen Halbachse. Mit der Erde auf T = 1 Jahr und a = 1 AU kann man die Umlaufzeit jedes Planeten aus seiner Entfernung ablesen — oder seine Entfernung aus seiner Umlaufzeit. Newton würde dies später aus der Gravitation herleiten; Kepler kam dorthin durch reines Mustererkennen in Brahe's Daten."
   ],
   "formula_caption": "Keplers drittes Gesetz modern: T² hängt nur von a (und μ) ab.",
   "diagram_caption": "Gleiche Flächen in gleicher Zeit: kurzer Bogen am Perihel überstreicht dieselbe Fläche wie der lange am Aphel."

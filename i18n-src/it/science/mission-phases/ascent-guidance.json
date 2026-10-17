@@ -1,5 +1,5 @@
 {
-  "title": "Ascent guidance — the computer that flies a rocket to orbit",
+  "title": "Guida di salita — il computer che porta un razzo in orbita",
   "intro_sentence": "Raggiungere l'orbita non è uno script fisso — è un problema ai limiti risolto ogni secondo, per questo il volo spaziale ha dovuto attendere il computer digitale.",
   "narrative_101": [
     "Un razzo che sale verso l'orbita deve soddisfare una condizione finale esatta: allo spegnimento del motore deve trovarsi all'altitudine giusta, muovendosi orizzontalmente, a velocità orbitale precisa. Se la velocità è leggermente errata, l'orbita è sbagliata o il veicolo ricade. Ma il razzo diventa sempre più leggero ogni secondo mentre brucia il propellente, l'aria si rarefà, la gravità tira, i venti spingono — così il \"modo giusto\" di puntare il motore è diverso a ogni istante e dipende da tutto ciò che è accaduto finora. Nessun profilo di beccheggio fisso può colpire il bersaglio esattamente.",

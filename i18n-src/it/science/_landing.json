@@ -20,7 +20,7 @@
       "heading": "2 — L'equazione del razzo è il boss fight.",
       "diagram": "tsiolkovsky.svg",
       "diagram_alt": "Curva del rapporto di massa: il ∆v aumenta logaritmicamente con la quantità di carburante che bruci.",
-      "diagram_caption": "La crudele verità: raddoppiare il tuo ∆v significa bruciare molto più del doppio del carburante.",
+      "diagram_caption": "La cruda verità: raddoppiare il tuo ∆v significa bruciare molto più che 2× il carburante.",
       "paragraphs": [
         "Ora: come cambi orbita? Bruci carburante. Il [∆v](propulsion/dv-budget) (\"delta-v\") è la valuta universale del volo spaziale — il cambiamento totale di velocità di cui una missione ha bisogno. Ogni mossa che fai su una traiettoria ha un cartellino del prezzo in km/s.",
         "E quel prezzo è brutale. L'[equazione del razzo di Tsiolkovsky](propulsion/tsiolkovsky) dice che il ∆v scala con il logaritmo di quanto del tuo razzo è carburante. Vuoi il doppio del ∆v? Non porti il doppio del carburante — ne porti esponenzialmente di più. Ecco perché un Saturn V era propellente al 90%. La maggior parte del razzo è il carburante che solleva il carburante che solleva il carburante che solleva il veicolo spaziale.",
@@ -58,7 +58,7 @@
       "diagram_caption": "Entrata, discesa, atterraggio. Sei minuti di puro terrore.",
       "paragraphs": [
         "Praticamente ogni missione interplanetaria, da Voyager a Perseverance, segue lo stesso copione:",
-        "[Lancio](mission-phases/launch) — esci dall'atmosfera ed entra nell'orbita terrestre bassa. [Iniezione Trans-X](mission-phases/trans-x-injection) — una singola accensione dura al perigeo che ti lancia sull'ellisse di trasferimento verso la Luna (TLI), Marte (TMI), Venere (TVI), o Giove (TJI). [Manovre di Correzione della Traiettoria](mission-phases/tcm) — piccole accensioni durante la crociera per correggere errori di dispersione. Di solito 1–3 di esse. [Inserimento in Orbita](mission-phases/orbit-insertion) — un'accensione di frenata alla destinazione per piegarti in un'orbita catturata. [EDL](mission-phases/edl) — Entrata, Discesa, Atterraggio — per il lander. Sei minuti di caos atmosferico supersonico.",
+        "[Lancio](mission-phases/launch) — uscire dall'atmosfera e raggiungere l'orbita terrestre bassa. [Iniezione Trans-X](mission-phases/trans-x-injection) — una singola accensione potente al perigeo che ti catapulta sull'ellisse di trasferimento verso la Luna (TLI), Marte (TMI), Venere (TVI) o Giove (TJI). [Manovre di Correzione Traiettoria](mission-phases/tcm) — piccole accensioni durante la crociera per correggere gli errori di dispersione. Di solito 1–3. [Inserimento Orbitale](mission-phases/orbit-insertion) — un'accensione di frenata alla destinazione per inserirvi un'orbita catturata. [EDL](mission-phases/edl) — Entry, Descent, Landing — per il lander. Sei minuti di caos atmosferico supersonico.",
         "Le missioni lunari a volte deviano attraverso un'[Orbita ad Alone Quasi-Rettilinea](mission-phases/nrho) (Gateway vivrà in una), e i voli Apollo con equipaggio volavano [traiettorie di ritorno libero](transfers/free-return) — percorsi a otto che ti riportano sulla Terra automaticamente se ogni motore sul veicolo spaziale muore. Apollo 13 deve la sua vita a questa geometria."
       ]
     },
@@ -80,7 +80,7 @@
       "paragraphs": [
         "Trascorri sei mesi in orbita e torni più piccolo, più leggero e più basso di quando sei partito. La [microgravità](life-in-space/microgravity-physiology) è la causa principale: i fluidi si ridistribuiscono verso la testa, i muscoli posturali si scaricano, le [ossa](life-in-space/bone-density-loss) perdono l'1–2% dei loro minerali al mese, il [sistema vestibolare](life-in-space/vestibular-adaptation) rinuncia a cercare il \"basso\". Le [contromisure](life-in-space/muscle-atrophy) — due ore al giorno di esercizio resistivo e aerobico sull'ARED + il tapis roulant — lo rallentano senza risolverlo.",
         "La [radiazione](life-in-space/radiation-exposure) è il problema più difficile. La ISS riceve ~200 mSv/anno (vs 3 mSv di fondo sulla Terra); lo spazio profondo fuori dalla magnetosfera è 600+ mSv/anno, senza ancora una buona strategia di schermatura. Un viaggio di classe marziana metterebbe un membro dell'equipaggio vicino al limite di carriera per il rischio di cancro in un solo viaggio di andata e ritorno.",
-        "Poi c'è l'[EVA](life-in-space/eva-physiology) (un evento di resistenza di 6 ore in una tuta a ossigeno puro a 4,3 psi) e gli [effetti di lunga durata](life-in-space/long-duration-effects) come il SANS — Sindrome Neuro-oculare Associata allo Spazio — dove il 60% dell'equipaggio di voli lunghi sviluppa cambiamenti oculari misurabili che non si invertono completamente. Questi sono i problemi irrisolti che stanno tra l'umanità e Marte."
+        "Poi c'è l'[EVA](life-in-space/eva-physiology) (una prova di resistenza di 6 ore in una tuta a ossigeno puro a 4,3 psi) e gli [effetti della lunga durata](life-in-space/long-duration-effects) come la SANS — Space-Associated Neuro-ocular Syndrome — dove il 60% dell'equipaggio in voli lunghi sviluppa cambiamenti oculari misurabili che non si risolvono completamente. Questi sono i problemi irrisolti che si frappongono tra l'umanità e Marte."
       ]
     },
     {

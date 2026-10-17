@@ -1,14 +1,14 @@
 {
-  "title": "MET — Temps écoulé de mission",
+  "title": "MET — Mission Elapsed Time",
   "intro_sentence": "Un chronomètre simple qui démarre au lancement et ne s'arrête jamais — l'étiquette temporelle universelle.",
   "narrative_101": [
-    "MET = Mission Elapsed Time. Chronomètre. Jour 0, heure 0, seconde 0 = liftoff. Tout après étiquetté MET. Apollo 11 premier pas Lune : MET 109h24min. Voyager 1 quitter héliopause : MET 35 ans.",
-    "Pourquoi pas calendrier ? Calendrier sans rapport avec sonde. Loin = horloges dérivent. MET = ligne temporelle propre sonde.",
-    "Dans `/fly` MET en jours. HUD MET 173d au survol Mars. Date Terre ? Pas d'importance. Mission Control parle MET."
+    "MET signifie Mission Elapsed Time (Temps écoulé depuis le début de la mission). C'est un chronomètre. Jour zéro, heure zéro, minute zéro, seconde zéro, c'est le moment où la fusée quitte le pad. Tout ce qui se passe après reçoit un tag MET. Le premier pas d'Apollo 11 sur la Lune ? MET 109 heures 24 minutes. Voyager 1 franchissant l'espace interstellaire ? MET 35 ans.",
+    "Pourquoi un chronomètre plutôt qu'un calendrier ordinaire ? Deux raisons. Premièrement, les calendriers terrestres n'ont rien à voir avec ce que fait le vaisseau spatial — Voyager se fiche des mardis. Deuxièmement, plus vous vous éloignez, plus les horloges s'écartent. Mars est à plusieurs minutes-lumière de distance ; les signaux accusent un retard. Les vaisseaux spatiaux se déplaçant à des vitesses relativistes (certains d'entre eux) mesurent le temps légèrement différemment de nous. Le MET contourne tout cela — c'est la propre ligne temporelle privée du vaisseau spatial.",
+    "Ouvrez l'écran /fly et regardez le MET augmenter en jours à mesure que le voyage simulé progresse. Le HUD indique MET 173d lorsque la sonde spatiale se balance près de Mars. Traduction : 173 jours se sont écoulés depuis le lancement du point de vue de la sonde spatiale. Quelle date est-ce sur Terre ? Ça n'a pas d'importance. Mission control parle en MET."
   ],
   "body_paragraphs": [
-    "MET = temps depuis lancement. Jour 0 = liftoff. Chaque événement étiquetté. Apollo 11 atterrissage : MET 4j 6h 45min. Voyager 1 héliopause : MET 35 ans.",
-    "Pourquoi MET ? Horloge Terre ne correspond pas horloge sonde rapide ou loin. Délais lumière croissent. Dilatation relativiste pour sondes rapides. MET = temps propre sonde.",
-    "Dans `/fly` HUD MET en jours."
+    "MET est le temps écoulé depuis le lancement. Le jour zéro est le décollage. Chaque événement — largage d'étages, injection translunar, correction de trajectoire, insertion en orbite, opérations de surface — reçoit un timestamp MET. Alunissage d'Apollo 11 : MET 4 jours, 6 heures, 45 minutes. Voyager 1 quittant l'héliosphère : MET 35 ans.",
+    "Pourquoi MET au lieu de UTC ? Parce que l'horloge sur Terre ne correspond pas tout à fait à l'horloge de la sonde spatiale quand celle-ci se déplace rapidement ou loin. Les délais de temps de propagation augmentent (Mars est à 4-22 minutes-lumière selon la géométrie orbitale). La dilatation relativiste s'ajoute pour les sondes rapides. MET est le temps écoulé propre de la sonde spatiale, l'ancre naturelle pour séquencer les événements à bord.",
+    "Sur le HUD de `/fly`, vous verrez le MET augmenter en jours à mesure que la simulation progresse. C'est la perspective de la sonde spatiale sur la durée du voyage — indépendante de la date qu'il est sur Terre."
   ]
 }

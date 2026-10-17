@@ -1,16 +1,16 @@
 {
-  "title": "Période sidérale vs synodique",
+  "title": "Sidereal vs Synodic Period",
   "intro_sentence": "Deux façons de demander \"à quelle fréquence ?\" — même corps, repères différents.",
   "narrative_101": [
     "Deux réponses à \"combien dure une année Mars ?\".",
-    "Combien temps Mars pour UN tour Soleil : 687 jours Terre. Sidérale — contre étoiles fixes lointaines. Vérité géométrique.",
-    "À quelle fréquence Terre et Mars S'ALIGNENT PAREIL (pour lancer mission) : 780 jours — ~26 mois. Synodique. Pourquoi plus long ? Pendant que Mars fait un tour, Terre presque deux. Alignement répète quand Terre rattrape Mars.",
-    "Pourquoi fenêtres Mars tous 26 mois. Manques : 2 ans. Curiosity 2011, Perseverance 2020, prochaine 2026."
+    "Si vous voulez savoir combien de temps Mars met pour faire UNE BOUCLE autour du Soleil, la réponse est 687 jours terrestres. C'est la période sidérale — mesurée par rapport aux étoiles lointaines immobiles. C'est la vérité géométrique de l'orbite. La vis-viva et la troisième loi de Kepler fonctionnent toutes deux en temps sidéral.",
+    "Mais si vous voulez savoir à quelle fréquence la Terre et Mars S'ALIGNENT DE LA MÊME FAÇON (pour que vous puissiez lancer une mission), la réponse est 780 jours — environ 26 mois. C'est la période synodique. Pourquoi plus longue ? Parce que tandis que Mars fait une boucle autour du Soleil, la Terre en fait presque deux — les deux planètes continuent de bouger. L'alignement ne se répète que lorsque la Terre a dépassé Mars dans la danse.",
+    "C'est pourquoi les fenêtres de lancement vers Mars apparaissent tous les 26 mois. Si vous en manquez une, vous attendez deux ans. Chaque mission vers Mars dont vous avez jamais entendu parler a dû se caler sur une fenêtre synodique — Curiosity en 2011, Perseverance en 2020, la prochaine en 2026. La période synodique est le battement cardiaque de la planification des missions interplanétaires."
   ],
   "body_paragraphs": [
-    "Sidérale : tour complet contre étoiles fixes. Mars sidérale 687 jours. Synodique : retour position relative à autre corps. Mars synodique 780 jours = ~26 mois.",
-    "Synodique compte pour planificateurs. Hohmann Terre-Mars seulement quand Mars au bon endroit. Prochaine fenêtre tous 26 mois.",
-    "Math : `1/T_syn = 1/T_int − 1/T_ext`. Terre 1,0 an, Mars 1,88 : T_syn ≈ 26 mois."
+    "Période sidérale : temps pour une orbite complète par rapport aux étoiles fixes. C'est la période géométrique, celle de la troisième loi de Kepler — l'année sidérale de Mars est 687 jours terrestres. Période synodique : temps pour qu'un corps revienne à la même position par rapport à un autre corps, généralement tel qu'on l'observe depuis un troisième. Période synodique de Mars — temps entre les alignements Terre-Mars — est 780 jours, ou environ 26 mois.",
+    "La période synodique est celle qui préoccupe les planificateurs de missions. Les transferts de Hohmann Terre-Mars ne fonctionnent que lorsque Mars est au bon endroit. La prochaine fenêtre de lancement viable apparaît tous les 26 mois. En manquer une, attendre deux ans pour une autre. C'est la cadence de chaque mission vers Mars jamais effectuée.",
+    "Mathématiquement : `1/T_syn = 1/T_inner − 1/T_outer`. Si l'année de la Terre est 1,0 an et celle de Mars est 1,88 an : `1/T_syn = 1 − 1/1,88 = 0,468`, donc `T_syn = 2,14 an ≈ 26 mois`. Les mathématiques sont simples ; la conséquence opérationnelle — chaque calendrier de mission doit la respecter — est où elle vit dans la planification de mission."
   ],
   "diagram_caption": "Sidéral : même alignement étoiles. Synodique : même alignement Terre-Mars-Soleil."
 }

@@ -1,8 +1,8 @@
 {
-  "name": "アポロ 7 号",
+  "name": "Apollo 7",
   "type": "有人地球周回 · 飛行済み",
-  "first": "最初の有人アポロ飛行 — 地球周回軌道での CSM 検証",
-  "description": "アポロ 1 号火災 (1967 年 1 月 27 日) で Grissom、White、Chaffee が射場で命を落としてから 21 か月後の最初の有人アポロ飛行。アポロ 7 は再設計された Block II 司令船・機械船を地球周回軌道で検証 — 生命維持、電力、推進 (SPS を 8 回点火)、熱制御、そして有人米国宇宙船からの世界初の生中継 TV 放送。10 日 20 時間の飛行で 2 か月後のアポロ 8 号の月周回軌道への挑戦への道を開いた。",
+  "first": "最初の有人Apollo飛行 — 地球周回軌道での CSM 検証",
+  "description": "最初の有人アポロ飛行。Apollo 1火災（1967年1月27日）がパッドでGrissom、White、Chaffeeを殺したのから21ヶ月後のこと。Apollo 7は地球軌道で再設計されたBlock II司令船・機関船の検証を行った。生命維持装置、電力、推進システム（SPS は8回始動）、熱制御、そして有人米国宇宙船からの初めてのライブTV放送を実施した。Schirra（風邪気味で終始機嫌が悪かった）は再突入ヘルメットの問題についてHoustonの判断を却下し、これが3人の宇宙飛行士全員がもう飛行しないというMission Controlの決定に寄与した。10日20時間の飛行は、2ヶ月後のApollo 8の月軌道への冒険を切り開いた。",
   "events": [
     {
       "met": 0,
@@ -13,19 +13,19 @@
     {
       "met": 0.1,
       "label": "ORBIT INSERT",
-      "note": "CSM separates from S-IVB into 232 × 285 km Earth orbit, inclination 31.6°. SPS firing sequence (8 burns over 11 days) validates the propulsion that will perform LOI + TEI at the Moon.",
+      "note": "CSMはS-IVBから分離して高度232 × 285 km、軌道傾斜角31.6°の地球周回軌道に入る。SPS噴射シーケンス（11日間にわたる8回の噴射）は、月でのLOI + TEIを実行する推進システムを検証する。",
       "type": "nominal"
     },
     {
       "met": 1.2,
       "label": "FIRST LIVE TV",
-      "note": "\"Hello from the lovely Apollo room high atop everything.\" First live TV broadcast from a crewed US spacecraft.",
+      "note": "「素晴らしいApollo司令室からのご報告です、万物の頂上から。」有人米国宇宙船からの初のテレビ生中継放送。",
       "type": "info"
     },
     {
       "met": 10.8,
       "label": "SPLASHDOWN",
-      "note": "CM splashed down in the North Atlantic 1968-10-22 11:11 UTC after 163 orbits / 7.4 million km / 10 d 20 h. Recovery by USS Essex.",
+      "note": "CMは163周回・740万 km・10日20時間後、1968-10-22 11:11 UTCに北大西洋に着水。USS Essexにより回収された。",
       "type": "nominal"
     }
   ]

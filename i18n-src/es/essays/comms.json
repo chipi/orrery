@@ -16,7 +16,7 @@
     },
     {
       "type": "prose",
-      "md": "La [Red de Espacio Profundo](/science/mission-phases/dsn) es una creación de principios de los años sesenta, construida cuando las primeras sondas se dirigían a Venus y Marte y la cuestión de cómo hablarles mientras se alejaban se volvió urgentemente práctica. La respuesta a la que llegó el JPL fue elegante en su simplicidad: coloca complejos de antenas aproximadamente 120 grados de longitud aparte alrededor del planeta, de modo que conforme la Tierra gira, al menos uno de ellos siempre esté orientado hacia la parte del cielo donde está la misión. Tres sitios: Goldstone en el desierto de California, Madrid en España, y Canberra en Australia. Han sido los oídos y la boca del Sistema Solar desde entonces."
+      "md": "La [Red del Espacio Profundo](/science/mission-phases/dsn) es una creación de los primeros años sesenta, construida cuando las primeras sondas se dirigían a Venus y Marte y la cuestión de cómo comunicarse con ellas a medida que se alejaban se volvió urgentemente práctica. La solución a la que llegó el JPL fue elegante en su simplicidad: colocar complejos de antenas aproximadamente 120 grados de longitud los unos de los otros alrededor del planeta, de modo que a medida que la Tierra rota, al menos uno de ellos siempre se orienta hacia la parte del cielo donde está la misión. Tres emplazamientos: Goldstone en el desierto de California, Madrid en España y Canberra en Australia. Han sido los oídos y la boca del sistema solar desde entonces."
     },
     {
       "type": "prose",
@@ -78,7 +78,7 @@
     },
     {
       "type": "prose",
-      "md": "Esa paciencia ha moldeado cada misión de maneras que el público casi nunca ve. Las correcciones de trayectoria para sondas de planetas exteriores se planifican semanas de anticipación y se cargan como secuencias cronometradas; si la posición de la nave espacial resulta ser ligeramente diferente de la predicción — lo que siempre es, en cierta cantidad — los navegadores tienen que esperar el siguiente rastreo de la DSN, reconstruir la posición real, planificar una quemadura correctora, y cargarla, todo antes de que la ventana se cierre. Para una nave espacial que se acerca a su objetivo a varios kilómetros por segundo, ese tiempo puede ser la diferencia entre abrir paso por la brecha y fallar. El ensayo de navegación describió la [Red de Espacio Profundo](/science/mission-phases/dsn) como el instrumento que permite que el terreno vuele la nave espacial. Lo que no profundizó es que el terreno solo puede responder a lo que la nave espacial reportó minutos u horas atrás, y solo puede corregir lo que predijo minutos u horas adelante. La navegación es perfecta en principio, paciente en la práctica, y siempre ligeramente atrás."
+      "md": "Esa paciencia ha moldeado todas y cada una de las misiones de formas que el público casi nunca ve. Las correcciones de trayectoria para sondas de los planetas exteriores se planifican semanas antes y se envían como secuencias cronometradas; si la posición real de la sonda resulta ser ligeramente diferente de la predicción —lo que siempre sucede, en alguna pequeña medida—, los navegadores tienen que esperar al siguiente rastreo de la Red del Espacio Profundo, reconstruir la posición real, planificar una corrección de combustible y enviarla, todo antes de que se cierre la ventana de oportunidad. Para una sonda que se acerca a su objetivo a varios kilómetros por segundo, ese cronometraje puede ser la diferencia entre atravesar la brecha y fallar. El ensayo de navegación describió la [Red del Espacio Profundo](/science/mission-phases/dsn) como el instrumento que permite al control terrestre pilotar la sonda. Lo que no enfatizó es que el control terrestre solo puede responder a lo que la sonda informó hace minutos u horas, y solo puede corregir lo que predijo hace minutos u horas. La navegación es perfecta en principio, paciente en la práctica, y siempre ligeramente retrasada."
     },
     {
       "type": "prose",
@@ -125,7 +125,7 @@
     },
     {
       "type": "prose",
-      "md": "Y a través de esto: todo. Las imágenes de Voyager de Neptuno que ninguna nave espacial ha repetido en los treinta y siete años desde entonces. Los retratos de Cassini de Saturno — la tormenta hexagonal en el polo, los géiseres de Encélado, el anillo F trenzado — entregados un fotograma comprimido a la vez a lo largo de más de una hora de silencio. Las muestras de [Perseverance](/missions?id=perseverance) preparadas para eventual retorno, sus coordenadas de GPS conocidas al centímetro porque cada transmisión de la posición del vehículo regresó a través de una antena en California o España o Australia, fue verificada contra la mecánica orbital, y se convirtió en un número en el que todo el atlas se fundamenta. Todo en este atlas que vino desde más allá de la Luna llegó aquí a través de un susurro de 22 vatios y una sala llena de personas pacientes lo suficiente para esperar la respuesta."
+      "md": "Y a través de esto: todo. Las imágenes de Voyager de Neptuno que ninguna nave espacial ha repetido en los treinta y siete años desde entonces. Los retratos de Cassini de Saturno — la tormenta hexagonal en el polo, los géiseres de Enceladus, el anillo F trenzado — entregados un fotograma comprimido a la vez a lo largo de más de una hora de silencio. Las muestras de [Perseverance](/missions?id=perseverance) preparadas para eventual retorno, sus coordenadas de GPS conocidas al centímetro porque cada transmisión de la posición del vehículo regresó a través de una antena en California o España o Australia, fue verificada contra la mecánica orbital, y se convirtió en un número en el que todo el atlas se fundamenta. Todo en este atlas que vino desde más allá de la Luna llegó aquí a través de un susurro de 22 vatios y una sala llena de personas pacientes lo suficiente para esperar la respuesta."
     },
     {
       "type": "prose",
@@ -135,7 +135,7 @@
       "type": "figure",
       "image": "missions/pioneer-10/01",
       "kind": "photo",
-      "caption": "Pioneer 10 fue la primera nave rastreada hacia la oscuridad exterior. Su señal final, débil, llegó a la Red de Espacio Profundo en 2003, desde más allá de la órbita de Plutón — un susurro que al fin cayó por debajo del sonido audible, aún hacia afuera.",
+      "caption": "Pioneer 10 fue la primera nave rastreada hacia la oscuridad exterior. Su señal final, débil, llegó a Deep Space Network en 2003, desde más allá de la órbita de Plutón — un susurro que al fin cayó por debajo del sonido audible, aún hacia afuera.",
       "align": "wide",
       "credit": "NASA/Ames Research Center"
     }

@@ -1,5 +1,5 @@
 {
-  "title": "Asse della Finestra di Lancio",
+  "title": "Asse della Departure-Window",
   "intro_sentence": "Quando lanciate — attraversando l'asse X, tipicamente un intervallo di quattro anni campionato giornalmente.",
   "narrative_101": [
     "Leggete il diagramma come un calendario. L'asse orizzontale — da sinistra a destra — è la data in cui lasciate la Terra. Ogni colonna di pixel è un giorno di lancio diverso. Orrery campiona a risoluzione giornaliera su circa quattro anni; è sufficiente per catturare due cicli sinodici completi di Marte (il ciclo di ~26 mesi si adatta circa due volte in quattro anni), abbastanza per vedere il pattern della finestra di lancio ripetersi.",
@@ -9,6 +9,6 @@
   "body_paragraphs": [
     "L'asse X vi dice quando lasciate la Terra. Ogni colonna di pixel è una data di lancio diversa — per i diagrammi di Orrery, campionati a risoluzione giornaliera su circa quattro anni. Perché un intervallo di quattro anni? Perché il periodo sinodico Terra-Marte è ~26 mesi; quattro anni catturano approssimativamente due finestre complete di Marte. Per Venere (~19 mesi) o Giove (~13 mesi) lo stesso intervallo contiene più finestre — la larghezza di quattro anni è calibrata per la pianificazione di classe Marte.",
     "Leggete l'asse X come un calendario. I lobi a basso costo (il 'maiale' del diagramma) si trovano a intervalli prevedibili. Per Marte: ogni ~26 mesi. Per Venere: ogni ~19 mesi. Per Giove: ogni ~13 mesi (Giove si muove abbastanza lentamente che il periodo sinodico è vicino all'anno terrestre).",
-    "Su `/plan` l'etichetta dell'asse X è `FINESTRA DI LANCIO · 2026 — 2030`. Le date esatte del calendario appaiono nel tooltip quando passate il cursore."
+    "Su `/plan` l'etichetta dell'asse X è `DEPARTURE WINDOW · 2026 — 2030`. Le date esatte del calendario appaiono nel tooltip quando passate il cursore."
   ]
 }

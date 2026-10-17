@@ -1,12 +1,12 @@
 {
   "name": "Chang'e 3",
   "type": "UNCREWED LANDER + ROVER · FLOWN",
-  "first": "First Chinese soft landing on the Moon; deployed Yutu, China's first lunar rover",
-  "description": "Chang'e 3 was the third lander in CNSA's Chang'e programme and the first successful soft landing on the Moon since the Soviet Luna 24 in 1976 — a 37-year gap. The Long March 3B launched on a direct lunar trajectory in December 2013, with a single mid-course correction before lunar orbit insertion. The lander touched down in Mare Imbrium on 14 December and deployed the Yutu (Jade Rabbit) rover, which operated for 31 months despite a mobility failure ending its drive on lunar day 2. Chang'e 3's lander continued imaging for years afterward.",
+  "first": "चंद्रमा पर चीन का पहला नरम लैंडिंग; Yutu को तैनात किया, चीन का पहला चंद्र रोवर",
+  "description": "Chang'e 3 CNSA के Chang'e कार्यक्रम का तीसरा लैंडर था और 1976 में सोवियत Luna 24 के बाद चंद्रमा पर पहला सफल नरम लैंडिंग था — 37 वर्ष का अंतराल। Long March 3B को दिसंबर 2013 में सीधे चंद्र प्रक्षेपवक्र पर लॉन्च किया गया था, चंद्र कक्षा प्रविष्टि से पहले एक एकल मध्य-पाठ्यक्रम सुधार के साथ। लैंडर 14 दिसंबर को Mare Imbrium में उतरा और Yutu (Jade Rabbit) रोवर को तैनात किया, जो 31 महीनों तक काम करता रहा, इस बावजूद कि गतिशीलता की विफलता के कारण यह चंद्र दिन 2 पर चलना बंद कर गया। Chang'e 3 का लैंडर उसके बाद वर्षों तक इमेजिंग जारी रखता रहा।",
   "events": [
     { "met": 0, "label": "LAUNCH", "note": "Long March 3B from Xichang 2013-12-01.", "type": "nominal" },
-    { "met": 0.01, "label": "TLI", "note": "Direct trans-lunar injection on the LM-3B upper stage.", "type": "nominal" },
-    { "met": 5, "label": "LUNAR ORBIT INSERTION", "note": "Capture into 100-km circular lunar orbit 2013-12-06.", "type": "nominal" },
-    { "met": 13, "label": "LANDING", "note": "Soft landing in Mare Imbrium 2013-12-14. First soft landing since Luna 24 (1976). Yutu rover deployed hours later.", "type": "nominal" }
+    { "met": 0.01, "label": "TLI", "note": "LM-3B ऊपरी चरण पर सीधा ट्रांस-चंद्र प्रक्षेपण।", "type": "nominal" },
+    { "met": 5, "label": "LUNAR ORBIT INSERTION", "note": "100 किमी की वृत्ताकार चंद्र कक्षा में पकड़ा गया 2013-12-06।", "type": "nominal" },
+    { "met": 13, "label": "LANDING", "note": "Mare Imbrium में नरम लैंडिंग 2013-12-14। Luna 24 (1976) के बाद पहली नरम लैंडिंग। Yutu रोवर को कुछ घंटों बाद तैनात किया गया।", "type": "nominal" }
   ]
 }

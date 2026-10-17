@@ -3,12 +3,12 @@
   "intro_sentence": "L'inclinaison du plan orbital par rapport à un plan de référence — généralement l'écliptique ou l'équateur terrestre.",
   "narrative_101": [
     "Tiens une assiette plate — c'est le plan de référence. Incline-la. L'angle est l'inclinaison. Chaque orbite vit sur sa propre assiette inclinée.",
-    "Important car changer l'inclinaison est brutalement cher. ISS à 51,6° — pour Baïkonour. Imageurs polaires. GEO équatorial. Chaque inclinaison = décision avec facture carburant."
+    "Cela importe parce que modifier l'inclinaison coûte terriblement cher en carburant. Si vous lancez une fusée depuis la Floride, la Terre tourne déjà vers l'est à 0,4 km/s — vous obtenez cela gratuitement si votre orbite va vers l'est. Essayez plutôt de lancer une orbite polaire et vous ne perdez pas seulement ce cadeau gratuit, vous devez lutter contre lui. Choisir votre inclinaison au lancement est l'une des plus grandes décisions qu'une mission prend ; vous n'avez presque jamais envie de la modifier plus tard."
   ],
   "body_paragraphs": [
-    "Inclinaison (`i`) = angle entre plan orbital et référence. Héliocentrique : écliptique. Satellites : équateur. Mesuré au nœud ascendant.",
-    "Planètes proches de l'écliptique. Mercure 7° outlier. Pluton 17° — raison de sa rétrogradation.",
-    "Satellites Terre : équatorial (0°) GEO. ~28° depuis Cap Canaveral. ~51,6° ISS. Polaire (~90°) imagerie. Héliosynchrone (~98°) éclairement constant."
+    "L'inclinaison (`i`) est l'angle entre le plan de l'orbite et un plan de référence choisi. Pour une orbite héliocentrique, la référence est l'écliptique — le plan dans lequel la Terre orbite. Pour les satellites en orbite autour de la Terre, c'est habituellement l'équateur. L'angle se mesure au nœud ascendant, là où l'orbite traverse le plan de référence en montant vers le nord.",
+    "La plupart des planètes restent proches de l'écliptique — la Terre la définit (`i = 0°` par construction), et les autres restent dans quelques degrés. Mercure à 7° est l'exception. L'inclinaison sauvage de 17° de Pluton est l'une des raisons de sa rétrogradation : les vraies planètes restent presque coplanaires.",
+    "Pour les satellites terrestres, l'histoire de l'inclinaison est différente et pragmatique. Équatoriale (0°) pour les satellites de télécommunications géostationnaires. ~28° pour les lancements depuis Cape Canaveral qui doivent profiter de la rotation de la Terre. ~51,6° pour la Station spatiale internationale — choisie pour que les équipages russes puissent décoller de Baikonur. Polaire (~90°) pour les satellites d'observation terrestre qui ont besoin de chaque latitude. Héliosynchrone (~98°) pour les plates-formes scientifiques qui veulent un éclairage constant à chaque passage."
   ],
   "diagram_caption": "Plan orbital incliné de l'angle i. Nœud ascendant N."
 }

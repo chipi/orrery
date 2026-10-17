@@ -1,12 +1,12 @@
 {
   "name": "Chandrayaan-1",
   "type": "ORBITER · FLOWN",
-  "first": "India's first lunar mission; confirmed widespread water on the Moon",
-  "description": "ISRO's first interplanetary spacecraft. The orbiter delivered the Moon Impact Probe to the lunar surface — the first Indian object on another world — and carried 11 instruments from 6 countries. NASA's Moon Mineralogy Mapper (M3) instrument, hosted on Chandrayaan-1, made the discovery that rewrote textbooks: water molecules are widespread across the lunar surface, not just locked in polar shadowed craters. The mission ended abruptly in August 2009 when ISRO lost communication with the spacecraft.",
+  "first": "印度首次月球任务；确认月球上广泛存在水",
+  "description": "ISRO首个行星际航天器。该轨道器将月球撞击探测器送上月球表面——第一个印度物体抵达另一个天体——并搭载了来自6个国家的11个仪器。NASA的月球矿物绘图仪（M3）搭载在Chandrayaan-1上，这项仪器的发现改写了教科书：水分子广泛分布在月球表面，而不仅仅被锁存在极地阴影陨石坑中。该任务在2009年8月突然结束，当时ISRO失去了与航天器的通信。",
   "events": [
     { "met": 0, "label": "LAUNCH", "note": "PSLV-XL (C11) from Sriharikota.", "type": "nominal" },
-    { "met": 17, "label": "MOI", "note": "Lunar orbit insertion 2008-11-08.", "type": "nominal" },
-    { "met": 24, "label": "MIP IMPACT", "note": "Moon Impact Probe targeted hard-landing near south pole.", "type": "info" },
-    { "met": 320, "label": "CONTACT LOST", "note": "Communication lost 2009-08-29; 312 days of operations.", "type": "warning" }
+    { "met": 17, "label": "MOI", "note": "月球轨道插入 2008-11-08", "type": "nominal" },
+    { "met": 24, "label": "MIP IMPACT", "note": "月球撞击探测器计划在南极附近硬着陆。", "type": "info" },
+    { "met": 320, "label": "CONTACT LOST", "note": "通信中断 2009-08-29；运行312天。", "type": "warning" }
   ]
 }

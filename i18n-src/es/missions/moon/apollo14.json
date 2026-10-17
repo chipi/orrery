@@ -1,9 +1,9 @@
 {
   "name": "Apollo 14",
-  "dispatch": "Apollo 14 tenía que demostrar que el programa aún podía alunizar. Voló nueve meses después de que Apollo 13 casi matara a su tripulación, se hizo cargo del objetivo que Apollo 13 nunca alcanzó, y devolvió a Alan Shepard al espacio una década después de que se convirtiera en el primer estadounidense en abandonar el planeta — en tierra firme durante años por un trastorno del oído interno, y ahora, a los cuarenta y siete, la persona de mayor edad en caminar sobre la Luna. Él y Mitchell se quedaron a unos treinta metros del borde del Cráter Cone, incapaces de determinar en el confuso terreno qué tan cerca habían llegado realmente. Luego, en los últimos minutos en la superficie, Shepard golpeó con un hierro seis improvisado dos pelotas de golf — una exhibición, y también una señal silenciosa de que la crisis había quedado atrás y Apollo volvía a volar.",
+  "dispatch": "Apollo 14 tenía que demostrar que el programa aún podía alunizar. Voló nueve meses después de que Apollo 13 casi matara a su tripulación, se hizo cargo del objetivo que Apollo 13 nunca alcanzó, y devolvió a Alan Shepard al espacio una década después de que se convirtiera en el primer estadounidense en abandonar el planeta — en tierra firme durante años por un trastorno del oído interno, y ahora, a los cuarenta y siete, la persona de mayor edad en caminar sobre la Luna. Él y Mitchell se quedaron a unos treinta metros del borde del Cone Crater, incapaces de determinar en el confuso terreno qué tan cerca habían llegado realmente. Luego, en los últimos minutos en la superficie, Shepard golpeó con un hierro seis improvisado dos pelotas de golf — una exhibición, y también una señal silenciosa de que la crisis había quedado atrás y Apollo volvía a volar.",
   "type": "ATERRIZADOR TRIPULADO · VOLÓ",
   "first": "Tercer alunizaje — alcanzado el objetivo perdido de Apollo 13; tiros de golf de Shepard",
-  "description": "El tercer alunizaje tripulado y el segundo vuelo de Alan Shepard — convirtiéndolo en el primer estadounidense en el espacio y el quinto hombre en la Luna, a los 47 años el caminante lunar más viejo. Apollo 14 fue la misión de recuperación tras el alunizaje abortado de Apollo 13, asumiendo el objetivo previsto de Apollo 13 en las Tierras Altas de Fra Mauro. Shepard y Mitchell desplegaron ALSEP, completaron dos EVAs totalizando 9 h 23 m. En los últimos minutos de EVA-2, Shepard improvisó una cabeza de palo de golf de hierro seis sobre un mango de recolección de muestras y golpeó dos pelotas de golf \"millas y millas y millas\". 42 kg de muestras devueltos.",
+  "description": "El tercer alunizaje tripulado y segundo vuelo de Alan Shepard —convirtiéndolo en el primer estadounidense en el espacio (Freedom 7, 1961) y el quinto hombre en la Luna, con 47 años el Moonwalker más anciano. Apollo 14 fue la misión de recuperación tras el alunizaje abortado de Apollo 13, asumiendo el objetivo previsto de las Tierras Altas de Fra Mauro de Apollo 13. Shepard y Mitchell desplegaron ALSEP, completaron dos EVA con una duración total de 9 h 23 m, e impulsaron el transportador modular de equipos (MET, un carrito tipo rickshaw —el LRV aún estaba a una misión de distancia) hacia el cráter Cone, aunque quedaron ~30 m por debajo del borde debido a la incertidumbre en la navegación en el terreno cratérizado. En los últimos minutos de EVA-2, Shepard improvisó una cabeza de palo de golf de seis hierros en un mango de recogida de muestras y golpeó dos pelotas de golf «millas y millas y millas» (una fue posteriormente analizada a partir de imágenes a ~24 m y ~37 m). Stuart Roosa llevaba semillas de árbol en Kitty Hawk que se convirtieron en los «Moon Trees» plantados en todo EE.UU. Se devolvieron 42 kg de muestras.",
   "events": [
     {
       "met": 0,
@@ -14,55 +14,55 @@
     {
       "met": 0.12,
       "label": "TLI",
-      "note": "Trans-lunar injection. S-IVB ∆v ~3.05 km/s.",
+      "note": "Inyección translunar. S-IVB ∆v ~3,05 km/s.",
       "type": "nominal"
     },
     {
       "met": 0.25,
       "label": "CSM-LM DOCKING",
-      "note": "Five docking attempts before Kitty Hawk soft-captured Antares — anomaly in docking latches; root cause never reproduced on ground.",
+      "note": "Cinco intentos de acoplamiento antes de que Kitty Hawk capturase suavemente Antares — anomalía en los mecanismos de cierre de acoplamiento; la causa raíz nunca se reprodujo en tierra.",
       "type": "warning"
     },
     {
       "met": 3.82,
       "label": "LOI",
-      "note": "Lunar orbit insertion. SPS ∆v ~0.88 km/s.",
+      "note": "Inserción en órbita lunar. SPS ∆v ~0,88 km/s.",
       "type": "nominal"
     },
     {
       "met": 4.6,
       "label": "TOUCHDOWN",
-      "note": "Antares lands at Fra Mauro Highlands 1971-02-05 09:18 UTC — within 53 m of target despite an abort-program glitch in the LM computer that the team patched in real-time.",
+      "note": "Antares aterriza en las Tierras Altas de Fra Mauro el 1971-02-05 a las 09:18 UTC — a menos de 53 m del objetivo a pesar de un fallo en el programa de abortaje del ordenador del LM que el equipo parcheó en tiempo real.",
       "type": "nominal"
     },
     {
       "met": 5,
       "label": "EVA-1",
-      "note": "Shepard + Mitchell deploy ALSEP + first lunar geology traverse on this mission.",
+      "note": "Shepard + Mitchell despliegan ALSEP + primer recorrido de geología lunar en esta misión.",
       "type": "info"
     },
     {
       "met": 5.4,
       "label": "CONE CRATER + GOLF",
-      "note": "EVA-2: traverse toward Cone Crater (came up ~30 m short of rim). Final minutes — Shepard hits two golf balls with an improvised club.",
+      "note": "EVA-2: recorrido hacia el Cráter Cone (llegaron a unos 30 m del borde). Minutos finales — Shepard golpea dos bolas de golf con un palo improvisado.",
       "type": "info"
     },
     {
       "met": 5.6,
       "label": "ASCENT",
-      "note": "Antares lifts off after 33 h 31 m on surface. 42 kg of samples returned.",
+      "note": "Antares despega después de 33 h 31 m en la superficie. Se devolvieron 42 kg de muestras.",
       "type": "nominal"
     },
     {
       "met": 6.4,
       "label": "TEI",
-      "note": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+      "note": "Inyección transtelúrica. SPS ∆v ~1,0 km/s.",
       "type": "nominal"
     },
     {
       "met": 9,
       "label": "SPLASHDOWN",
-      "note": "CM splashed down in South Pacific 1971-02-09 21:05 UTC. Recovery by USS New Orleans. Last Apollo quarantine.",
+      "note": "CM ameriza en el Pacífico Sur el 1971-02-09 a las 21:05 UTC. Recuperado por USS New Orleans. Última cuarentena del Apolo.",
       "type": "nominal"
     }
   ]

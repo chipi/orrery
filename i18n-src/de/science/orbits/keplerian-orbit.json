@@ -1,15 +1,15 @@
 {
-  "title": "Keplersche Bahn",
+  "title": "Keplerian Orbit",
   "intro_sentence": "Eine Ellipse mit der Sonne in einem Brennpunkt — die einfachste Bahn, die ein Körper um einen anderen haben kann.",
   "narrative_101": [
     "Stell dir vor, du wirfst einen Ball von einem hohen Turm. Er fällt zur Erde. Wirfst du stärker, fliegt er weiter. So stark, dass der Boden schneller wegfällt, als der Ball — und der Ball landet nie. Das ist eine Bahn. Jede Sonde, jeder Planet macht diesen Trick.",
-    "Was die Schleife zur Keplerschen Bahn macht: wir behandeln die Schwerkraft als einen sauberen Zug zu einem schweren Körper. Zwei Körper, eine Kraft. Das Resultat ist immer eine Ellipse, mit dem schweren Körper in einem Brennpunkt — nie im Zentrum.",
-    "Realität ist unordentlicher — Monde stören, der Erdwulst zieht an Satelliten — aber die Unordnung ist meist eine kleine Korrektur auf einer Keplerschen Bahn."
+    "Was die Schleife spezifisch zu einer Keplerschen Umlaufbahn macht, ist, dass wir die Gravitation als einen einzigen, sauberen Zug zu einem schweren Objekt behandeln — die Sonne für Planeten, die Erde für Satelliten, Mars für InSight. Zwei Körper, eine Kraft, keine Komplikationen. Das Ergebnis ist immer eine Ellipse, und der schwere Körper sitzt immer in einem der beiden Brennpunkte, niemals in der Mitte. Dieses eine Bild steckt hinter jeder Zahl, die du in dieser ganzen Enzyklopädie sehen wirst.",
+    "Die Realität ist ungeordneter — Monde stören Planeten, die Ausbuchtung der Erde zieht an Satelliten, die Sonne zieht an Mondbahnen — aber die Ungeordnetheit ist meist eine kleine Korrektur auf einer Keplerschen Umlaufbahn. Also fangen wir hier an. Bringt die Ellipse in Ordnung und alles andere ist Dekoration."
   ],
   "body_paragraphs": [
-    "Wenn du auf etwas Massereiches zufällst und es verfehlst, bekommst du eine Keplersche Bahn. Der Pfad ist eine Ellipse, der Körper sitzt in einem Brennpunkt, nie im Zentrum. Erde um die Sonne, Mond um die Erde, jede Sonde, die du in Orrery siehst: alle keplersch in erster Näherung.",
-    "Sechs Zahlen beschreiben eine solche Bahn vollständig: Größe (große Halbachse), Streckung (Exzentrizität), drei Winkel (Inklination, Knotenlänge, Argument der Periapsis), und Position (wahre Anomalie). Das sind die Bahnelemente.",
-    "Das Modell bricht, wenn ein dritter Körper zählt: Sonden nahe dem Mond, LEO-Satelliten am Erdäquatorwulst. Orrery nutzt Keplersche Bahnen für die heliozentrische Geschichte und Patched-Conics für den Rest."
+    "Wenn du auf etwas Massives zufällst, es aber verfehlst, bekommst du eine Keplersche Umlaufbahn. Der Pfad ist eine Ellipse — ein gestreckter Kreis — und der Körper, auf den du zufällst, sitzt an einem der beiden Brennpunkte, niemals in der Mitte. Erde um die Sonne, Mond um die Erde, jede Raumsonde, die du in Orrery sehen wirst: alle sind Keplersch bis zu einer ersten Näherung.",
+    "Sechs Zahlen beschreiben eine dieser Bahnen vollständig: die Größe (Große Halbachse), die Exzentrizität (Exzentrizität), drei Winkel, die die Ellipse im Raum ausrichten (Inklination, Länge des aufsteigenden Knotens, Argument der Periapsis), und wo sich der Körper gerade auf der Bahn befindet (Wahre Anomalie). Dies sind die Keplerian-Elemente – die Sprache, in die jeder andere Abschnitt auf dieser Registerkarte übersetzt wird, um etwas zu zeigen, das man sich vorstellen kann.",
+    "Das Modell versagt, wann immer die Gravitation eines dritten Körpers relevant ist: Raumsonden in der Nähe des Mondes, Satelliten in niedriger Erdumlaufbahn, die die Ausbuchtung des Äquators spüren, alles, das durch Jupiters Schatten geht. Orrery verwendet Keplersche Umlaufbahnen für die heliozentrische Geschichte und geflickte Kegelschnittnäherungen für den Rest."
   ],
   "diagram_caption": "Ellipse mit Brennpunkt F₁ in der Sonne. Große Halbachse a · Perihel und Aphel auf der Apsidenlinie."
 }

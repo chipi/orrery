@@ -1,10 +1,10 @@
 {
-  "title": "El Muro",
-  "dek": "Todo plan de vuelo espacial humano acaba chocando con Marte, y Marte quiebra todos ellos sobre las mismas tres cosas a la vez: el tiempo, la masa y el cuerpo. No es como Apolo sino algo más allá. Es un problema categóricamente diferente —y entender por qué esas fechas de partida confiadas siguen retrasándose es el comienzo de comprenderlo honestamente.",
+  "title": "La Pared",
+  "dek": "Todo plan de vuelo espacial humano acaba chocando con Marte, y Marte quiebra todos ellos sobre las mismas tres cosas a la vez: el tiempo, la masa y el cuerpo. No es Apollo sino algo más allá. Es un problema categóricamente diferente —y entender por qué esas fechas de partida confiadas siguen retrasándose es el comienzo de comprenderlo honestamente.",
   "body": [
     {
       "type": "prose",
-      "md": "Hay una fecha que sigue moviéndose. En 1969, Wernher von Braun le dijo a una comisión del Senado que los humanos podrían estar en Marte en 1982. En 1986, la Comisión Nacional del Espacio propuso 2010. En 2010, un discurso de política presidencial apuntó a mediados de los años 30. Cada década ha producido un plan con hardware específico, cronogramas específicos y una década específica en la que sucedería —y cada plan se ha disuelto, de una u otra forma. El hardware cambia, la agencia cambia, la justificación cambia, pero la fecha se retrae de forma fiable aproximadamente la misma distancia que se prometió cerrar. Algo estructural está en juego."
+      "md": "Hay una fecha que no deja de moverse. En 1969, Wernher von Braun le dijo a una comisión del Senado que los humanos podrían estar en Marte en 1982. En 1986, la Comisión Nacional del Espacio propuso 2010. En 2010, un discurso de política presidencial apuntaba a mediados de los años treinta. Cada década ha producido un plan con hardware específico, cronogramas específicos y una década concreta en la que la cosa sucedería —y cada plan se ha disuelto, de una forma u otra. El hardware cambia, la agencia cambia, la justificación cambia, pero la fecha se aleja de manera fiable por aproximadamente la misma distancia que se prometió cerrar. Algo estructural está en juego."
     },
     {
       "type": "prose",
@@ -12,11 +12,11 @@
     },
     {
       "type": "heading",
-      "text": "No es como Apolo sino algo más allá"
+      "text": "No es Apollo sino algo más allá"
     },
     {
       "type": "prose",
-      "md": "La comparación con Apolo es casi siempre el primer movimiento en un argumento sobre Marte, y casi siempre es engañosa. Lo que hizo funcionar a Apolo fue una convergencia específica: un objetivo único y definido, un marco de emergencia nacional, crecimiento de presupuesto esencialmente ilimitado en los años 60, y un retardo de luz de 1,3 segundos que mantenía a las tripulaciones en contacto en tiempo real con tierra. Nada de eso existe para Marte, y nada de ello puede ser replicado por desearlo."
+      "md": "La comparación con Apollo es casi siempre el primer movimiento en un argumento sobre Marte, y casi siempre es engañosa. Lo que hizo funcionar a Apollo fue una convergencia específica: un objetivo único y definido, un marco de emergencia nacional, crecimiento de presupuesto esencialmente ilimitado en los años 60, y un retardo de luz de 1,3 segundos que mantenía a las tripulaciones en contacto en tiempo real con tierra. Nada de eso existe para Marte, y nada de ello puede ser replicado por desearlo."
     },
     {
       "type": "prose",
@@ -36,7 +36,7 @@
     },
     {
       "type": "prose",
-      "md": "La consecuencia de compromiso de la ventana es absoluta. A diferencia de una misión lunar de Apolo —donde una [trayectoria de retorno libre](/science/transfers/free-return) mantenía el aborto a Tierra disponible durante gran parte de la navegación de salida— una misión a Marte en un arco de Hohmann no tiene esa opción una vez que se dispara la quemadura de inyección transMarte. No hay trayectoria que traiga la tripulación a casa rápidamente si algo va mal en el camino. Hay trayectorias de aborto de energía más alta, pero requieren reservas de propulsante enormes que ninguna misión ha propuesto aún llevar, precisamente porque el propulsante es el segundo muro."
+      "md": "La consecuencia del compromiso de la ventana es absoluta. A diferencia de una misión lunar Apollo — en la que una [trayectoria de retorno libre](/science/transfers/free-return) mantenía disponible el aborto hacia la Tierra durante gran parte del viaje de ida — una misión a Marte en un arco de Hohmann no tiene tal opción una vez que se dispara la quemadura de inyección trans-Marte. No hay ninguna trayectoria que traiga a la tripulación de vuelta rápido si algo sale mal en el camino. Hay trayectorias de aborto de mayor energía, pero requieren enormes reservas de propulsor que ninguna misión ha propuesto aún transportar, precisamente porque el propulsor es la segunda pared."
     },
     {
       "type": "figure",
@@ -51,7 +51,7 @@
     },
     {
       "type": "prose",
-      "md": "El segundo muro es la masa —y específicamente, la relación entre masa y distancia en una misión de la que no es posible ningún reabastecimiento. En la Estación Espacial Internacional, una nave de carga Progress llega cada pocos meses con comida, agua, equipamiento y piezas de repuesto. Los sistemas de soporte vital de la estación son de circuito cerrado en algunos aspectos pero con fugas en otros; el agua se recicla, pero los consumibles se reabastecen regularmente desde la Tierra. Una tripulación en Marte no recibe tal reabastecimiento. Lo que se lleva es todo lo que tiene. Cada kilogramo de comida, cada litro de agua, cada componente de repuesto para cada sistema crítico debe ser transportado desde la Tierra —a un costo de lanzamiento extraordinario— o producido en Marte mismo."
+      "md": "El segundo muro es la masa —y específicamente, la relación entre masa y distancia en una misión de la que no es posible ningún reabastecimiento. En la International Space Station, una nave de carga Progress llega cada pocos meses con comida, agua, equipamiento y piezas de repuesto. Los sistemas de soporte vital de la estación son de circuito cerrado en algunos aspectos pero con fugas en otros; el agua se recicla, pero los consumibles se reabastecen regularmente desde la Tierra. Una tripulación en Marte no recibe tal reabastecimiento. Lo que se lleva es todo lo que tiene. Cada kilogramo de comida, cada litro de agua, cada componente de repuesto para cada sistema crítico debe ser transportado desde la Tierra —a un costo de lanzamiento extraordinario— o producido en Marte mismo."
     },
     {
       "type": "prose",
@@ -121,7 +121,7 @@
     },
     {
       "type": "prose",
-      "md": "La dimensión global de esta vanguardia es poco apreciada. [Mangalyaan](/missions?id=mangalyaan) —la Misión Orbitador de Marte de la Organización India de Investigación Espacial— llegó a Marte el 24 de septiembre de 2014 en su primer intento, haciendo a India la cuarta agencia espacial en alcanzar Marte y la primera nación asiática en hacerlo, con un costo total de misión de aproximadamente 74 millones de dólares, menos que el presupuesto de producción de la película *Gravity*. Operó durante casi ocho años, muy por encima de su vida de diseño de seis meses. [Tianwen-1](/missions?id=tianwen1), lanzada por China en julio de 2020, logró una hazaña que ninguna agencia espacial había conseguido en un primer intento a Marte: orbitar, aterrizar y desplegar un rover —Zhurong— todo en una sola misión. Zhurong manejó por Utopia Planitia comenzando en mayo de 2021 y devolvió datos geológicos y atmosféricos durante más de un año. Ese logro, al primer intento, de un programa nacional de Marte que no existía antes del siglo XXI, reshapea el mapa geopolítico de dónde reside actualmente la capacidad de ir a Marte."
+      "md": "La dimensión global de esta vanguardia está poco valorada. [Mangalyaan](/missions?id=mangalyaan) — la Misión Orbitadora de Marte de la Organización India de Investigación Espacial — llegó a Marte el 24 de septiembre de 2014 en su primer intento, convirtiendo a India en la cuarta agencia espacial en alcanzar Marte y la primera nación asiática en hacerlo, con un costo total de la misión de aproximadamente 74 millones de dólares, menos que el presupuesto de producción de la película *Gravity*. Operó durante casi ocho años, muy por encima de su vida útil de diseño de seis meses. [Tianwen-1](/missions?id=tianwen1), lanzada por China en julio de 2020, realizó una hazaña que ninguna agencia espacial había conseguido en un primer intento en Marte: orbitó, aterrizó y desplegó un róver — Zhurong — todo en una única misión. Zhurong condujo a través de Utopia Planitia comenzando en mayo de 2021 y devolvió datos geológicos y atmosféricos durante más de un año. Ese logro, en el primer intento, de un programa marciano nacional que no existía antes del siglo XXI, reconfigura el mapa geopolítico de dónde reside actualmente la capacidad de ir a Marte."
     },
     {
       "type": "prose",

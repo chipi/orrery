@@ -2,7 +2,7 @@
   "name": "Apollo 7",
   "type": "BEMAND AARDBAAN · GEVLOGEN",
   "first": "Eerste bemande Apollo-vlucht — aardbaan-CSM-test",
-  "description": "De eerste bemande Apollo-vlucht, 21 maanden na de Apollo 1-brand (27-1-1967) die Grissom, White en Chaffee op het platform doodde. Apollo 7 verifieerde de herontworpen Block II Command and Service Module in een aardbaan — levensondersteuning, vermogen, voortstuwing (SPS achtmaal ontstoken), thermisch beheer, en de eerste live TV-uitzending ter wereld vanuit een bemand Amerikaans ruimtevaartuig. De vlucht van 10 dagen 20 uur maakte de weg vrij voor Apollo 8's gok op de maanbaan twee maanden later.",
+  "description": "De eerste bemande Apollo-vlucht, 21 maanden na de Apollo 1-brand (1967-01-27) die Grissom, White en Chaffee op de lanceerplaats doodde. Apollo 7 verifieerde de herontworpen Block II Command and Service Module in aardobit — levensondersteuning, stroomvoorziening, stuwing (SPS vuurde acht keer af), thermische controle, en de wereldwijde eerste live tv-uitzending vanuit een bemand Amerikaans ruimtevaartuig. Schirra (verkouden + prikkelbaal gedurende het hele traject) verwierp Houston op een vraag over de re-entry helm, wat bijdroeg aan de beslissing van Mission Control dat geen van de drie bemanningsleden ooit opnieuw zouden vliegen. De vlucht van 10 dagen en 20 uur baande de weg voor Apollo 8's maanbaanweddenschap twee maanden later.",
   "events": [
     {
       "met": 0,
@@ -13,19 +13,19 @@
     {
       "met": 0.1,
       "label": "ORBIT INSERT",
-      "note": "CSM separates from S-IVB into 232 × 285 km Earth orbit, inclination 31.6°. SPS firing sequence (8 burns over 11 days) validates the propulsion that will perform LOI + TEI at the Moon.",
+      "note": "CSM scheidt zich af van S-IVB in een aardebaan van 232 × 285 km, inclinatie 31,6°. SPS-brandingsreeks (8 branden over 11 dagen) valideert de voortstuwing die LOI + TEI bij de Maan zal uitvoeren.",
       "type": "nominal"
     },
     {
       "met": 1.2,
       "label": "FIRST LIVE TV",
-      "note": "\"Hello from the lovely Apollo room high atop everything.\" First live TV broadcast from a crewed US spacecraft.",
+      "note": "\\\"Hallo vanuit de prachtige Apollo-ruimte hoog boven alles.\\\" Eerste live-tv-uitzending vanuit een bemand Amerikaans ruimtevaartuig.",
       "type": "info"
     },
     {
       "met": 10.8,
       "label": "SPLASHDOWN",
-      "note": "CM splashed down in the North Atlantic 1968-10-22 11:11 UTC after 163 orbits / 7.4 million km / 10 d 20 h. Recovery by USS Essex.",
+      "note": "CM splashte neer in de Noord-Atlantische Oceaan op 1968-10-22 11:11 UTC na 163 banen / 7,4 miljoen km / 10 d 20 h. Bergingsoperatie door USS Essex.",
       "type": "nominal"
     }
   ]

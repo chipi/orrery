@@ -67,13 +67,13 @@
     },
     {
       "type": "prose",
-      "md": "Lo strumento è la [Rete dello Spazio Profondo](/science/mission-phases/dsn) — tre grandi complessi di antenne paraboliche distanziati approssimativamente 120° a parte in California, Spagna e Australia, in modo che mentre la Terra ruota, almeno uno di loro possa sempre guardare nello spazio profondo. Quando un'antenna punta a una sonda, non sta principalmente ascoltando dati. Sta misurando due cose con una precisione mostruosa. Prima, **distanza**: invia un segnale di temporizzazione, il veicolo spaziale lo rimanda indietro, e il tempo di andata e ritorno — moltiplicato per la velocità della luce — dà la distanza, buona a pochi metri attraverso miliardi di chilometri. Secondo, **velocità**: la radio del veicolo, spostata in frequenza dal suo movimento verso o lontano da noi, è letta per il suo spostamento Doppler, e lo spostamento dà la velocità lungo la linea di vista a una frazione di millimetro al secondo."
+      "md": "Lo strumento è la [Deep Space Network](/science/mission-phases/dsn) — tre grandi complessi di parabole distanziati approssimativamente 120° l'uno dall'altro in California, Spagna e Australia, così che mentre la Terra ruota, almeno uno di essi può sempre guardare nello spazio profondo. Quando una parabola punta verso una sonda, non sta principalmente ascoltando i dati. Sta misurando due cose con precisione mostruosa. In primo luogo, **distanza**: invia un segnale di timing, l'astronave lo rimanda indietro, e il tempo dell'andata e ritorno — moltiplicato per la velocità della luce — fornisce la distanza, buona a pochi metri su miliardi di chilometri. In secondo luogo, **velocità**: la radio dell'astronave, spostata in frequenza dal suo movimento verso di noi o da noi, viene letta per il suo spostamento Doppler, e lo spostamento fornisce la velocità lungo la linea di vista a una frazione di millimetro al secondo."
     },
     {
       "type": "figure",
       "image": "essays/navigation/deep-space-network",
       "kind": "diagram",
-      "caption": "La Rete dello Spazio Profondo: tre grandi antenne distanziate approssimativamente 120° a parte, così che una guardi sempre nello spazio profondo. La distanza viene dal tempo di andata e ritorno della luce; la velocità dallo spostamento Doppler della radio. Il terreno fa il volo.",
+      "caption": "La Deep Space Network: tre grandi antenne distanziate approssimativamente 120° a parte, così che una guardi sempre nello spazio profondo. La distanza viene dal tempo di andata e ritorno della luce; la velocità dallo spostamento Doppler della radio. Il terreno fa il volo.",
       "align": "wide"
     },
     {
@@ -82,7 +82,7 @@
     },
     {
       "type": "prose",
-      "md": "Ma la Rete dello Spazio Profondo ha un avversario con cui non può discutere, e il suo nome è la velocità della luce. Su Marte, un comando impiega da circa tre a ventidue minuti per arrivare, e il riconoscimento impiega altrettanto tempo per tornare indietro. Su Plutone sono quattro ore e mezza, in un'unica direzione. Il terreno può navigare una sonda magnificamente — purché nulla debba essere deciso più velocemente di quanto la luce possa portare le notizie a casa e una risposta torni indietro. Per settant'anni, quasi nulla lo ha fatto. Questo sta per essere l'intero problema."
+      "md": "Ma la Deep Space Network ha un avversario con cui non può discutere, e il suo nome è la velocità della luce. Su Marte, un comando impiega da circa tre a ventidue minuti per arrivare, e il riconoscimento impiega altrettanto tempo per tornare indietro. Su Plutone sono quattro ore e mezza, in un'unica direzione. Il terreno può navigare una sonda magnificamente — purché nulla debba essere deciso più velocemente di quanto la luce possa portare le notizie a casa e una risposta torni indietro. Per settant'anni, quasi nulla lo ha fatto. Questo sta per essere l'intero problema."
     },
     {
       "type": "heading",
@@ -148,7 +148,7 @@
     },
     {
       "type": "prose",
-      "md": "Poi vennero i luoghi dove il terreno genuinamente non poteva aiutare. L'atterraggio su Marte è l'esempio più netto — l'[entrata, discesa e atterraggio](/science/mission-phases/edl) impiega circa sette minuti, e Marte è a minuti di luce di distanza, così al momento in cui la Terra sente anche che il veicolo ha colpito l'atmosfera, l'intera cosa è da tempo finita, in un modo o nell'altro. Nessuno sulla Terra atterra un rover di Marte. Il rover atterra se stesso. La [Perseverance](/missions?id=perseverance) ha trasportato un sistema che ha fotografato il terreno che si precipitava, l'ha abbinato in tempo reale contro una mappa di bordo, ha riconosciuto il terreno, e ha *scelto* un punto sicuro su cui atterrare — una macchina che fa il lavoro di Lovell, il lavoro della Rete dello Spazio Profondo, e il lavoro di un pilota di bush in una volta, in sette minuti, da sola."
+      "md": "Poi vennero i luoghi dove il terreno genuinamente non poteva aiutare. L'atterraggio su Marte è l'esempio più netto — l'[entrata, discesa e atterraggio](/science/mission-phases/edl) impiega circa sette minuti, e Marte è a minuti di luce di distanza, così al momento in cui la Terra sente anche che il veicolo ha colpito l'atmosfera, l'intera cosa è da tempo finita, in un modo o nell'altro. Nessuno sulla Terra atterra un rover di Marte. Il rover atterra se stesso. La Perseverance ha trasportato un sistema che ha fotografato il terreno che si precipitava, l'ha abbinato in tempo reale contro una mappa di bordo, ha riconosciuto il terreno, e ha *scelto* un punto sicuro su cui atterrare — una macchina che fa il lavoro di Lovell, il lavoro della Deep Space Network, e il lavoro di un pilota di bush in una volta, in sette minuti, da sola."
     },
     {
       "type": "figure",
@@ -172,7 +172,7 @@
     },
     {
       "type": "prose",
-      "md": "E sta per smettere di essere silenzioso. Più lontano spingiamo — verso [il sistema esterno](/explore), verso voli con equipaggio a Marte dove un ritardo di venti minuti è il divario tra una correzione e un cratere — meno il terreno può fare in tempo, e più ogni veicolo deve diventare il suo proprio navigatore: il suo proprio sestante, la sua propria [Rete dello Spazio Profondo](/science/mission-phases/dsn), la sua propria stanza piena di persone. Abbiamo speso settant'anni insegnando alle macchine a trovare il loro cammino dal cielo. Siamo sul punto di scoprire quanto bene l'hanno imparato."
+      "md": "E sta per smettere di essere silenzioso. Più lontano spingiamo — verso [il sistema esterno](/explore), verso voli con equipaggio a Marte dove un ritardo di venti minuti è il divario tra una correzione e un cratere — meno il terreno può fare in tempo, e più ogni veicolo deve diventare il suo proprio navigatore: il suo proprio sestante, la sua propria Deep Space Network, la sua propria stanza piena di persone. Abbiamo speso settant'anni insegnando alle macchine a trovare il loro cammino dal cielo. Siamo sul punto di scoprire quanto bene l'hanno imparato."
     }
   ]
 }

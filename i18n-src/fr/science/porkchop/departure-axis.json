@@ -1,5 +1,5 @@
 {
-  "title": "Axe de la Fenêtre de Départ",
+  "title": "Departure-Window Axis",
   "intro_sentence": "Au moment du lancement — parcourant l'axe X, typiquement une durée de quatre ans échantillonnée quotidiennement.",
   "narrative_101": [
     "Lisez le porkchop comme un calendrier. L'axe horizontal — de gauche à droite — est la date à laquelle vous quittez la Terre. Chaque colonne de pixels correspond à un jour de lancement différent. Orrery échantillonne à une résolution d'un jour sur environ quatre ans ; c'est suffisant pour capturer deux cycles synodiques complets pour Mars (le cycle d'environ 26 mois s'ajuste à peu près deux fois en quatre ans), ce qui suffit pour voir le motif de la fenêtre de lancement se répéter.",
@@ -9,6 +9,6 @@
   "body_paragraphs": [
     "L'axe X vous indique quand vous quittez la Terre. Chaque colonne de pixels correspond à une date de lancement différente — pour les tracés d'Orrery, échantillonnée à une résolution d'un jour sur environ quatre ans. Pourquoi une durée de quatre ans ? Parce que la période synodique Terre-Mars est d'environ 26 mois ; quatre ans captureront à peu près deux fenêtres complètes pour Mars. Pour Vénus (environ 19 mois) ou Jupiter (environ 13 mois), le même intervalle s'ajuste à plus de fenêtres — la largeur de quatre ans est calibrée pour la planification de classe Mars.",
     "Lisez l'axe X comme un calendrier. Les lobes à bas coût (la « viande » du porkchop) se situent à des intervalles prévisibles. Pour Mars : environ tous les 26 mois. Pour Vénus : environ tous les 19 mois. Pour Jupiter : environ tous les 13 mois (Jupiter se déplace assez lentement pour que la période synodique soit proche de l'année terrestre).",
-    "Sur `/plan`, l'étiquette de l'axe X est `FENÊTRE DE DÉPART · 2026 — 2030`. Les dates du calendrier littérales apparaissent dans l'infobulle lorsque vous survolez."
+    "Sur `/plan`, l'étiquette de l'axe X est `DEPARTURE WINDOW · 2026 — 2030`. Les dates du calendrier littérales apparaissent dans l'infobulle lorsque vous survolez."
   ]
 }

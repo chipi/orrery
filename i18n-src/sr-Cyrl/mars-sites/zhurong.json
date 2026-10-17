@@ -1,7 +1,7 @@
 {
-  "name": "Zhurong (са Tianwen-1 лендером)",
-  "mission_type": "Бестелесни ровер · Мисија завршена",
+  "name": "Zhurong (са десантним модулом мисије Tianwen-1)",
+  "mission_type": "Ровер без посаде · Мисија завршена",
   "site_name": "Utopia Planitia",
-  "fact": "Pierwszy rover Kine na Marsu. Operisao je 358 sola, prešao je 1,92 km. Vratio je dokaze георадара za zakopane slojevima ispod površine u skladu sa drevnim katastrofalnim poplavama. Izgubljen kontakt tokom 2022. marsovske zime; CNSA je potvrdio da nema daljnjih komunikacija.",
-  "capability": "Prvi rover koji nije iz SAD-a da radi na Marsu; prvi rover sa GPR opremom na Marsu koji nije iz SAD-a."
+  "fact": "Први кинески ровер на Марсу. Радио је 358 сола и прешао 1,92 km. Радаром који продире кроз тло прикупио је доказе о закопаним подповршинским слојевима који су у складу с древним катастрофалним поплавама. Веза је изгубљена током марсовске зиме 2022. године; CNSA је потврдила да даљих комуникација није било.",
+  "capability": "Први ровер ван САД који је радио на Марсу; први марсовски ровер ван САД опремљен радаром за проучавање тла (GPR)."
 }

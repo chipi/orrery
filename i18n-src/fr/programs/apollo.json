@@ -4,11 +4,11 @@
   "the_land": [
     {
       "type": "prose",
-      "md": "Pendant quatre-vingt-dix minutes d'affilée, à l'automne 1957, une sphère métallique polie de la taille d'un ballon de plage traversait le ciel au-dessus des États-Unis — et elle émettait des bips. Spoutnik 1 appartenait à l'Union soviétique, et le pays le plus puissant de la Terre ne pouvait rien faire d'autre qu'écouter. Moins de quatre ans plus tard, le 12 avril 1961, les Soviétiques ont envoyé une personne aussi : Youri Gagarine, le premier humain à quitter la planète. Washington n'y a rien entendu de scientifique. Il a entendu un syllogisme qu'il ne pouvait pas oublier — une fusée capable de mettre un satellite en orbite peut larguer une ogive sur n'importe quelle ville de votre choix. Presque du jour au lendemain, le vol spatial a cessé d'être de l'exploration pour devenir le fer de lance de la Guerre froide."
+      "md": "Pendant quatre-vingt-dix minutes d'affilée, à l'automne 1957, une sphère métallique polie de la taille d'un ballon de plage traversait le ciel au-dessus des États-Unis — et elle émettait des bips. Sputnik 1 appartenait à l'Union soviétique, et le pays le plus puissant de la Terre ne pouvait rien faire d'autre qu'écouter. Moins de quatre ans plus tard, le 12 avril 1961, les Soviétiques ont envoyé une personne aussi : Yuri Gagarin, le premier humain à quitter la planète. Washington n'y a rien entendu de scientifique. Il a entendu un syllogisme qu'il ne pouvait pas oublier — une fusée capable de mettre un satellite en orbite peut larguer une ogive sur n'importe quelle ville de votre choix. Presque du jour au lendemain, le vol spatial a cessé d'être de l'exploration pour devenir le fer de lance de la Guerre froide."
     },
     {
       "type": "prose",
-      "md": "Le 25 mai 1961 — six semaines après Gagarine, et vingt jours après le saut suborbital de quinze minutes d'Alan Shepard qui fit de l'Amérique une nation spatiale pour des raisons techniques — John F. Kennedy se tint devant le Congrès et paria le pays sur la Lune. Y faire atterrir un homme et le ramener sain et sauf, dit-il, « avant la fin de cette décennie ». En éliminant la rhétorique, c'était un concours de prestige : une tentative de battre les Soviétiques dans le seul domaine où ils étaient clairement en avance. La science serait réelle, et elle survivrait à la politique — mais elle roulait derrière elle. Apollo est né de ce choix, et il vaut la peine de le dire sans détour."
+      "md": "Le 25 mai 1961 — six semaines après Gagarin, et vingt jours après le saut suborbital de quinze minutes d'Alan Shepard qui fit de l'Amérique une nation spatiale pour des raisons techniques — John F. Kennedy se tint devant le Congrès et paria le pays sur la Lune. Y faire atterrir un homme et le ramener sain et sauf, dit-il, « avant la fin de cette décennie ». En éliminant la rhétorique, c'était un concours de prestige : une tentative de battre les Soviétiques dans le seul domaine où ils étaient clairement en avance. La science serait réelle, et elle survivrait à la politique — mais elle roulait derrière elle. Apollo est né de ce choix, et il vaut la peine de le dire sans détour."
     }
   ],
   "goals": [
@@ -35,12 +35,12 @@
       "image": {
         "reuse": "missions/apollo11/03"
       },
-      "caption": "Apollo 11 sur la Mer de la Tranquillité, 20 juillet 1969 — le moment où la course fut décidée.",
+      "caption": "Apollo 11 sur la Mer de Tranquility, 20 juillet 1969 — le moment où la course fut décidée.",
       "align": "right"
     },
     {
       "type": "prose",
-      "md": "Cela a fonctionné. Le 20 juillet 1969, Neil Armstrong et Buzz Aldrin ont marché sur la Mer de la Tranquillité tandis que Michael Collins pilotait seul le Module de Commande au-dessus, perdant le contact radio chaque fois que son orbite le portait derrière la Lune. Cinq autres atterrissages ont suivi jusqu'en décembre 1972. Douze personnes au total ont marché sur la Lune et sont rentrées, rapportant 382 kilogrammes de roches et de sol qui ancrent toujours la science lunaire plus d'un demi-siècle plus tard."
+      "md": "Ça a marché. Le 20 juillet 1969, Neil Armstrong et Buzz Aldrin ont marché sur la Mer de la Tranquillité tandis que Michael Collins pilotait seul le Module de Commande au-dessus, perdant le contact radio chaque fois que son orbite le portait derrière la Lune. Cinq autres alunissages ont suivi jusqu'en décembre 1972. Douze personnes en tout ont marché sur la Lune et sont rentrées chez elles, transportant 382 kilogrammes de roches et de sol qui ancrent encore la science lunaire plus d'un demi-siècle plus tard."
     },
     {
       "type": "prose",
@@ -50,15 +50,15 @@
   "narrative": [
     {
       "type": "prose",
-      "md": "L'arc est exceptionnellement net pour quelque chose d'aussi grand. Il s'ouvre sur une catastrophe : l'incendie de 1967 a forcé une refonte complète du vaisseau spatial et de toute la culture de sécurité de la NASA — le règlement de comptes qui a rendu possible tout ce qui a suivi. Puis le matériel réparé s'est mis au travail. En 1968, Apollo 7 a testé le Module de Commande redessiné en orbite terrestre ; en décembre de cette année-là, Apollo 8 est devenu le premier vol habité à quitter complètement la gravité terrestre et à contourner la Lune, son équipage lisant la Genèse en télévision en direct devant le plus large public qui ait jamais existé."
+      "md": "L'arc est inhabituellement épuré pour quelque chose d'une telle envergure. Il s'ouvre sur une catastrophe : l'incendie de 1967 a forcé une refonte complète du vaisseau spatial et de toute la culture de sécurité de la NASA — l'épreuve de vérité qui a rendu possible tout ce qui a suivi. Puis le matériel révisé s'est mis au travail. En 1968, Apollo 7 a testé le Module de Commande repensé en orbite terrestre ; ce mois de décembre, Apollo 8 est devenu le premier vol habité à quitter complètement la gravité terrestre et à orbiter autour de la Lune, son équipage lisant la Genèse à la télévision en direct au plus grand public qui ait jamais existé."
     },
     {
       "type": "prose",
-      "md": "Apollo 11 a répondu à Kennedy. Et puis le programme a fait quelque chose qu'un instrument de la Guerre froide n'avait aucune obligation de faire : il s'est tourné vers la science. Les Apollo 12 à 17 sont devenus progressivement plus ambitieux — des séjours plus longs, le Véhicule Lunaire à batteries Lunar Roving Vehicle, et enfin, lors d'Apollo 17, un géologue de terrain qualifié nommé Harrison Schmitt marchant sur la surface qu'il avait étudiée pendant des années. Apollo 13, le quasi-désastre au milieu de cette série, a fait quelque chose d'étrange à la réputation de la NASA : en y survivant, l'agence a paru plus compétente qu'elle ne l'aurait été en n'échouant jamais du tout."
+      "md": "Apollo 11 a répondu à Kennedy. Et puis le programme a fait quelque chose qu'un instrument de la Guerre froide n'avait aucune obligation de faire : il s'est tourné vers la science. Les Apollo 12 à 17 sont devenus progressivement plus ambitieux — des séjours plus longs, le Lunar Roving Vehicle à batteries, et enfin, lors d'Apollo 17, un géologue de terrain qualifié nommé Harrison Schmitt marchant sur la surface qu'il avait étudiée pendant des années. Apollo 13, le quasi-désastre au milieu de cette série, a fait quelque chose d'étrange à la réputation de la NASA : en y survivant, l'agence a paru plus compétente qu'elle ne l'aurait été en n'échouant jamais du tout."
     },
     {
       "type": "prose",
-      "md": "Apollo 17 a décollé de la Lune le 14 décembre 1972. Aucun humain n'y est retourné depuis. Mais le matériel du programme, ses gens et son élan se sont directement prolongés dans presque tout ce que le vol spatial habité américain a fait ensuite — Skylab, la Navette Spatiale, et, cinquante ans plus tard, Artemis, qui vise maintenant le pôle sud lunaire qu'Apollo n'a jamais touché."
+      "md": "Apollo 17 a décollé de la Lune le 14 décembre 1972. Aucun humain n'y est retourné depuis. Mais le matériel du programme, ses gens et son élan se sont directement prolongés dans presque tout ce que le vol spatial habité américain a fait ensuite — Skylab, la Space Shuttle, et, cinquante ans plus tard, Artemis, qui vise maintenant le pôle sud lunaire qu'Apollo n'a jamais touché."
     }
   ],
   "legacy": [
@@ -90,7 +90,7 @@
     },
     {
       "type": "prose",
-      "md": "La deuxième leçon vit dans la Salle de Contrôle de Mission. Apollo a institutionnalisé un type particulier de travail d'équipe sous pression : des contrôleurs entraînés à anticiper les mouvements du véhicule, à prendre la parole indépendamment de la hiérarchie, et à résoudre les problèmes en équipe plutôt que selon une chaîne de commandement. Quand Apollo 13 s'est gravement endommagé à environ 320 000 kilomètres de la Terre, aucun héros solitaire n'a sauvé l'équipage — une salle pleine de gens a travaillé le problème ensemble, contre la montre, et a improvisé un retour. « Travailler le problème » a vaincu la panique. Toute équipe confrontée un jour à une crise peut emprunter cette habitude."
+      "md": "Le deuxième enseignement vit à la Mission Control. Apollo a institutionnalisé un type particulier de travail d'équipe sous pression : des contrôleurs entraînés à anticiper le comportement du véhicule, à prendre la parole indépendamment de leur rang, et à résoudre les problèmes collectivement plutôt que selon une hiérarchie de commandement. Quand Apollo 13 s'est paralysée à environ 320 000 kilomètres de la maison, aucun héros solitaire n'a sauvé l'équipage — une pièce remplie de gens a travaillé le problème ensemble, contre la montre, et a improvvisé un chemin du retour. « Travailler le problème » a surmonté la panique. N'importe quelle équipe qui fait face à une crise peut emprunter cette habitude."
     },
     {
       "type": "prose",

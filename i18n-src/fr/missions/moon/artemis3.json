@@ -2,7 +2,7 @@
   "name": "Artémis III",
   "type": "ATTERRISSAGE AVEC ÉQUIPAGE · PRÉVU",
   "first": "Premier alunissage en équipage depuis Apollo 17 (1972)",
-  "description": "Le premier alunissage en équipage depuis plus d’un demi-siècle. Architecture : Le bloc SLS 1 de NASA lance Orion avec 4 équipages sur une orbite de halo quasi rectiligne (NRHO) autour de la Lune. Un système d'atterrissage humain (HLS) pour vaisseau spatial SpaceX est prépositionné au NRHO, rempli en orbite terrestre basse par des pétroliers avant son injection translunaire. L'équipage d'Orion est transféré à HLS ; 2 astronautes descendent dans la région du pôle sud lunaire pour environ 6,5 jours d'opérations en surface tandis que 2 restent au NRHO. Après les opérations de surface, HLS retourne vers NRHO pour le transfert vers Orion et le retour sur Terre. Fera atterrir la première femme et la première personne de couleur sur la Lune.",
+  "description": "Le premier alunissage habité en plus d'un demi-siècle. Architecture : le SLS Block 1 de la NASA lance Orion avec 4 astronautes vers une Near-Rectilinear Halo Orbit (NRHO) autour de la Lune. Un SpaceX Starship Human Landing System (HLS) est pré-positionné à l'NRHO, ravitaillé en orbite basse terrestre par des ravitailleurs avant son injection trans-lunaire. L'équipage d'Orion se transfère vers le HLS ; 2 astronautes descendent vers la région du pôle sud lunaire pour ~6,5 jours d'opérations de surface tandis que 2 restent à l'NRHO. Après les opérations de surface, le HLS décolle vers l'NRHO pour un transfert vers Orion et un retour sur Terre. Permettra d'alunir la première femme et la première personne de couleur sur la Lune.",
   "events": [
     {
       "met": 0,
@@ -19,7 +19,7 @@
     {
       "met": 4,
       "label": "ARRIVÉE NRHO",
-      "note": "Orion arrive sur l'orbite quasi rectiligne de Halo ; rendez-vous avec le Starship HLS prépositionné.",
+      "note": "Orion arrive sur l'orbite quasi rectiligne de Halo ; rendez-vous avec le Starship HLS prépositionné.",
       "type": "nominal"
     },
     {

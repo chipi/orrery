@@ -13,19 +13,19 @@
     {
       "met": 0.5,
       "label": "APOGEE BOOST",
-      "note": "Raised orbit to 1408 km apogee — highest crewed orbit since Apollo 17.",
+      "note": "Baan verhoogd tot 1408 km apogeum — meest verheven bemande baan sinds Apollo 17.",
       "type": "info"
     },
     {
       "met": 3,
       "label": "COMMERCIAL EVA",
-      "note": "Isaacman + Gillis exited through cabin hatch into vacuum — first commercial spacewalk.",
+      "note": "Isaacman + Gillis verlaten via luikje van cabine de ruimte in — eerste commerciële ruimtewandeling.",
       "type": "nominal"
     },
     {
       "met": 4.93,
       "label": "SPLASHDOWN",
-      "note": "Resilience splashed down off Florida 2024-09-15 07:36 UTC.",
+      "note": "Resilience geland in de oceaan voor de kust van Florida op 2024-09-15 07:36 UTC.",
       "type": "nominal"
     }
   ]

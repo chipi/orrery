@@ -1,19 +1,19 @@
 {
   "name": "Dawn",
   "type": "ORBITER · FLOWN",
-  "first": "First mission to orbit two extraterrestrial bodies — Vesta, then Ceres",
-  "description": "Dawn proved ion propulsion at planetary scale: it matched orbits with massive Vesta, left, and spiralled down onto dwarf planet Ceres — the largest object in the asteroid belt. Bright spots in Occator crater became one of the mission's iconic mysteries, later tied to briny eruptions from a deep reservoir. This catalogue entry uses Ceres as the primary destination; Vesta is covered in the narrative above.",
+  "first": "首个绕行两个地外天体的任务——先是灶神星，后是谷神星",
+  "description": "Dawn 验证了行星级离子推进：它与巨大的灶神星相对接轨，后来螺旋式下降到矮行星谷神星——小行星带中最大的天体。Occator 陨石坑中的亮点成为该任务最具标志性的谜团之一，后来被确认与来自深层储存库的咸水喷发有关。本目录条目以谷神星作为主要目标；灶神星在上文叙述中有所涉及。",
   "events": [
     {
       "met": 0,
       "label": "LAUNCH",
-      "note": "Delta II lifts Dawn toward Vesta and Ceres on a low-thrust spiral highway.",
+      "note": "Delta II 将 Dawn 送向灶神星和谷神星，通过低推力螺旋航路。",
       "type": "nominal"
     },
     {
       "met": 2717,
       "label": "CERES CAPTURE",
-      "note": "Ion engines brake Dawn into orbit around Ceres; mapping campaign begins.",
+      "note": "离子引擎使 Dawn 减速进入谷神星轨道；测绘任务开始。",
       "type": "nominal"
     }
   ]

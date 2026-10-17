@@ -1,15 +1,15 @@
 {
-  "title": "V∞ — Hyperbolische Überschussgeschwindigkeit",
+  "title": "V∞ — Hyperbolic Excess Velocity",
   "intro_sentence": "Die Geschwindigkeit, die übrig bleibt, nachdem du den Schwerkrafttopf eines Planeten verlassen hast.",
   "narrative_101": [
-    "C₃ ist, was die Rakete am START liefert. V∞ ist dasselbe Konzept am ZIEL. Mit welcher Geschwindigkeit triffst du Mars relativ zu Mars, bevor seine Schwerkraft greift?",
-    "Setzt deine Ankunftsbrennphase. MRO ankam V∞ ≈ 2,6 km/s, brannte ~1 km/s zur Capture. Voyager 2 erreichte Neptun V∞ ≈ 8 km/s — versuchte gar nicht zu stoppen.",
-    "Symmetrie: V∞ ist die Anflug-Asymptotengeschwindigkeit. Auf `/fly` poppt sie auf, wenn die Sonde die Sphere of Influence betritt — Wahrheitsmoment."
+    "C3 ist das, was deine Rakete beim START liefern muss. V∞ – ausgesprochen „v-unendlich\" – ist die gleiche Idee, aber am ANDEREN Ende der Reise. Wenn du beim Mars ankommst, wie schnell bewegst du dich relativ zum Mars, bevor seine Gravitation dich erfasst? Das ist V∞.",
+    "Es ist wichtig, weil es dein Bremsmanöver beim Ankunft bestimmt. Je schneller du ankommst, desto mehr musst du bremsen, um zu stoppen. Mars Reconnaissance Orbiter kam mit V∞ ≈ 2,6 km/s an und verbrauchte ~1 km/s, um in die Umlaufbahn einzufangen. Voyager 2 erreichte Neptun mit V∞ ≈ 8 km/s und bemühte sich nicht einmal, zu stoppen – es flog einfach vorbei, machte Aufnahmen und setzte seinen Weg für immer aus dem Sonnensystem fort.",
+    "Die Mathematik hat eine wunderbare Symmetrie: Das Ankunfts-V∞ am Mars ist dieselbe Zahl, die man sehen würde, wenn man vom Weltall aus zusähe, wie das Raumschiff ankommt. Die ganze Reise, von außerhalb der Einflusssphären beider Planeten betrachtet, wird zu einem sauberen Keplerschen Bogen mit zwei wohldefinierten V∞-Werten — einem an jedem Ende. Das ist die entscheidende Zahl auf dem HUD des Raumschiffs, wenn es in den Gravitationsbereich des Zielplaneten eindringt."
   ],
   "body_paragraphs": [
-    "Stell dir eine Asymptote unendlich weit vom Planeten vor. Die Geschwindigkeit dort ist V∞. Auf einer hyperbolischen Begegnung konstant auf beiden Armen.",
-    "V∞ kontrolliert die Ankunftsbrennphase. Capture: bleed Energie unter Escape. Tieferer Topf, mehr Δv kostet. Mars Reconnaissance Orbiter V∞ ≈ 2,6 km/s, ~1 km/s Capture. Voyager 2 Neptun V∞ ≈ 8 km/s, kein Insertion.",
-    "Im `/fly`-HUD erscheint V∞ beim Eintritt in die Ziel-SoI."
+    "Stellen Sie sich eine Asymptote vor, unendlich weit vom Planeten entfernt. Die Geschwindigkeit, mit der Sie sich auf dieser Asymptote fortbewegen würden, ist V∞ – ausgesprochen „V-unendlich\". Sie ist die Sonne-relative Geschwindigkeit minus des Beitrags des Planeten zu Ihrer Bewegung. Bei einem hyperbolischen Vorbeiflug ist V∞ konstant entlang beider Arme der Hyperbel.",
+    "V∞ bestimmt, wie groß die Ankunftszündung sein muss. Um in eine Umlaufbahn einzuschwenken, müssen Sie genug Energie abbauen, um unter die Fluchtgeschwindigkeit zu fallen – je tiefer der Brunnen, desto mehr `∆v` kostet es, Sie zu verlangsamen. Mars Reconnaissance Orbiter kam am Mars mit V∞ ≈ 2,6 km/s an und benötigte dann ~1 km/s `∆v` für das Einschwenken in die Umlaufbahn. Voyager 2 erreichte Neptun mit V∞ ≈ 8 km/s und versuchte nicht einmal einzuschwenken – es flog einfach vorbei.",
+    "Auf dem HUD von `/fly` sehen Sie V∞ erscheinen, wenn das Raumschiff die Einflusssphäre des Zielplaneten erreicht. Es ist der Moment der Wahrheit: Wie viel Geschwindigkeit müssen Sie abbauen, und kann Ihre Rakete sich leisten, sie abzubauen?"
   ],
   "diagram_caption": "Hyperbolischer Vorbeiflug: V∞ ist die konstante Asymptotengeschwindigkeit weit vom Planeten."
 }

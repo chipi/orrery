@@ -1,14 +1,14 @@
 {
-  "title": "Le tre leggi di Keplero",
+  "title": "Le tre leggi di Kepler",
   "intro_sentence": "Tre regole osservazionali che fecero del moto planetario una scienza chiusa un secolo prima di Newton.",
   "narrative_101": [
-    "Keplero non aveva calcolo, gravità di Newton, computer. Aveva 20 anni di osservazioni di Marte di Tycho Brahe e pazienza. Ne ricavò tre regole ancora esatte 400 anni dopo.",
-    "Legge 1: ellissi non cerchi. Legge 2: aree uguali in tempi uguali. Legge 3: T² scala come a³."
+    "Kepler non aveva il calcolo infinitesimale. Non aveva la gravità di Newton. Non aveva un computer. Aveva venti anni di meticolose osservazioni di Marte del suo capo Tycho Brahe, effettuate a occhio nudo con un quadrante, e aveva pazienza. Da quello scrisse tre leggi ancora oggi esattamente corrette, quattrocento anni dopo.",
+    "Legge uno: le orbite sono ellissi, non cerchi. Ereticale all'epoca. Legge due: la linea da un pianeta al Sole spazza aree uguali in tempi uguali — il che è un modo subdolo di dire che i pianeti accelerano quando sono vicini al Sole e rallentano quando sono lontani. Legge tre: più grande è l'orbita, più lungo è l'anno, in modo preciso (T² scala come a³)."
   ],
   "body_paragraphs": [
-    "Prima legge: pianeti su ellissi, Sole a un fuoco. Prima di Keplero solo cerchi. Dati su Marte non si adattavano.",
-    "Seconda legge: aree uguali in tempi uguali. Conservazione del momento angolare.",
-    "Terza legge: `T² ∝ a³`. Con Terra T=1, a=1, leggi qualsiasi periodo dalla distanza."
+    "Prima legge: i pianeti orbitano su ellissi con il Sole in uno dei fuochi. Prima di Kepler, ogni modello utilizzava cerchi — a volte annidati, a volte sfalsati, ma sempre circolari. Kepler utilizzò venti anni di osservazioni di Marte di Tycho Brahe e si arrese: i dati non si adattavano ai cerchi, e nulla di quello che potesse fare li avrebbe fatti adattare. Le ellissi si adattavano al primo tentativo.",
+    "Seconda legge: la linea dal Sole al pianeta spazza aree uguali in tempi uguali. Questa è la conservazione del momento angolare travestita. Vicino al perielio il pianeta è vicino al Sole, la linea è corta — quindi deve muoversi velocemente per spazzare la stessa area di una linea lunga e lenta vicino all'afelio. È il motivo per cui la velocità orbitale non è costante.",
+    "Terza legge: `T² ∝ a³`. Il quadrato del periodo orbitale è proporzionale al cubo del semiasse maggiore. Con la Terra posta a T = 1 anno e a = 1 UA, puoi leggere il periodo di qualsiasi pianeta dalla sua distanza — o la sua distanza dal suo periodo. Newton successivamente derivò questo dalla gravità; Kepler ci arrivò attraverso il puro riconoscimento di pattern nei dati di Tycho Brahe."
   ],
   "formula_caption": "Terza legge moderna: T² dipende solo da a (e μ).",
   "diagram_caption": "Aree uguali in tempi uguali."

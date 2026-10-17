@@ -1,6 +1,6 @@
 {
   "name": "Planet Labs (PlanetScope + SkySat)",
-  "tagline": "每日地球成像 — 约150颗立方星 + 21颗SkySat",
-  "description": "通过两支卫星队列实现每日重访地球成像 — 约150颗PlanetScope 3U立方星(3-5米分辨率全球每日影像)和约21颗SkySat(50厘米定向高分辨率)。全部运行在约475 km太阳同步轨道。\"Doves\"理念是\"发射数百颗廉价小卫星,接受少数故障,每天对地球每片土地成像\" — 而且确实有效。Planet的影像档案被NGO、政府和记者广泛查阅。",
-  "best_known_for": "每日地球成像 — 约150颗立方星 + 21颗SkySat"
+  "tagline": "每日地球成像 — ~150 CubeSats + 21 SkySats",
+  "description": "来自两个卫星群的每日地球成像——约150颗PlanetScope 3U CubeSats（3-5米分辨率全球每日影像）和约21颗SkySats（50厘米分辨率任务型高分辨率）。全部在约475千米太阳同步轨道上。\"Doves\"理念是\"发射数百颗廉价小卫星，接受少数失败，每天获取地球每个地区的影像\"——这个方法确实奏效。Planet的影像档案库被非政府组织、政府部门和记者广泛查阅。",
+  "best_known_for": "每日地球成像 — ~150 CubeSats + 21 SkySats"
 }

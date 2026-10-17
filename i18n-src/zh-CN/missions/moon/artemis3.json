@@ -1,15 +1,15 @@
 {
   "name": "Artemis III",
   "type": "CREWED LANDER · PLANNED",
-  "first": "First crewed lunar landing since Apollo 17 (1972)",
-  "description": "The first crewed lunar landing in over half a century. Architecture: NASA's SLS Block 1 launches Orion with 4 crew to a Near-Rectilinear Halo Orbit (NRHO) around the Moon. Pre-positioned at NRHO is a SpaceX Starship Human Landing System (HLS), refilled in low-Earth orbit by tankers before its trans-lunar injection. The Orion crew transfers to HLS; 2 astronauts descend to the lunar south pole region for ~6.5 days of surface ops while 2 remain in NRHO. After surface operations, HLS launches back to NRHO for transfer to Orion and Earth return. Will land the first woman and first person of colour on the Moon.",
+  "first": "自 Apollo 17（1972）以来的首次载人月球着陆",
+  "description": "超过半个世纪以来的首次载人月球着陆。架构：NASA 的 SLS Block 1 火箭将搭载 4 名航天员的 Orion 飞船发射至月球周围的近直线晕轨道（NRHO）。SpaceX Starship 人员着陆系统（HLS）预先配置在 NRHO，在跨月球注入前由加油机在近地轨道进行补给。Orion 航天员转移至 HLS；2 名航天员下降至月球南极地区进行约 6.5 天的月面操作，同时 2 名航天员留在 NRHO。月面操作后，HLS 从 NRHO 发射升空，转移至 Orion 并返回地球。将在月球上着陆首位女性航天员和首位有色人种航天员。",
   "events": [
-    { "met": 0, "label": "SLS LAUNCH", "note": "Orion launches from KSC LC-39B with crew of 4.", "type": "nominal" },
+    { "met": 0, "label": "SLS LAUNCH", "note": "Orion 从 KSC LC-39B 发射，搭载 4 名航天员。", "type": "nominal" },
     { "met": 1, "label": "TLI", "note": "Trans-lunar injection.", "type": "nominal" },
-    { "met": 4, "label": "NRHO ARRIVAL", "note": "Orion arrives at Near-Rectilinear Halo Orbit; rendezvous with pre-positioned Starship HLS.", "type": "nominal" },
-    { "met": 5, "label": "DESCENT", "note": "2 crew transfer to HLS; powered descent to lunar south pole.", "type": "info" },
-    { "met": 12, "label": "ASCENT", "note": "HLS ascent to NRHO after ~6.5 days surface operations.", "type": "nominal" },
-    { "met": 14, "label": "TEI", "note": "Trans-Earth injection from NRHO.", "type": "nominal" },
-    { "met": 18, "label": "SPLASHDOWN", "note": "Orion splashes down in Pacific Ocean.", "type": "info" }
+    { "met": 4, "label": "NRHO ARRIVAL", "note": "Orion 抵达近直线晕轨道；与预先配置的 Starship 人员着陆系统（HLS）进行交会。", "type": "nominal" },
+    { "met": 5, "label": "DESCENT", "note": "2 名航天员转移至人员着陆系统（HLS）；动力下降至月球南极。", "type": "info" },
+    { "met": 12, "label": "ASCENT", "note": "人员着陆系统（HLS）在约 6.5 天月面操作后从月球南极上升至近直线晕轨道（NRHO）。", "type": "nominal" },
+    { "met": 14, "label": "TEI", "note": "从近直线晕轨道（NRHO）进行地球转移注入。", "type": "nominal" },
+    { "met": 18, "label": "SPLASHDOWN", "note": "Orion 在太平洋溅落。", "type": "info" }
   ]
 }

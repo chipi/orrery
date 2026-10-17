@@ -1,16 +1,16 @@
 {
   "name": "Schiaparelli EDM",
   "type": "ENTRY/DESCENT/LANDING DEMONSTRATOR · CRASHED",
-  "first": "ESA's first Mars surface attempt; intended to demonstrate EDL ahead of ExoMars Rosalind Franklin",
-  "description": "Schiaparelli was the entry-descent-landing demonstrator carried piggyback on the ExoMars Trace Gas Orbiter (TGO). Named for the Italian astronomer Giovanni Schiaparelli, the craft was built to prove the EDL stack ESA intended to scale up for the Rosalind Franklin rover. Schiaparelli separated from TGO on 16 October 2016 and entered the Martian atmosphere three days later. The descent profile collapsed: a saturated inertial measurement unit caused the navigation software to think the craft had already landed at altitude — the parachute jettisoned early and the braking thrusters cut off after firing for only 3 seconds. Schiaparelli struck the surface at ~150 m/s. TGO itself completed orbit insertion successfully and continues operating.",
+  "first": "Primer intento de la ESA en la superficie de Marte; tenía la intención de demostrar la tecnología de EDL antes de ExoMars Rosalind Franklin",
+  "description": "Schiaparelli era el demostrador de entrada, descenso y aterrizaje transportado como carga secundaria en el Orbitador de Gases Traza ExoMars (TGO). Nombrada en honor del astrónomo italiano Giovanni Schiaparelli, la sonda fue construida para demostrar el sistema de EDL que la ESA tenía intención de ampliar para el rover Rosalind Franklin. Schiaparelli se separó del TGO el 16 de octubre de 2016 e ingresó en la atmósfera marciana tres días después. El perfil de descenso se vino abajo: una unidad de medición inercial saturada hizo que el software de navegación creyese que la sonda ya había aterrizados a altitud — el paracaídas se expulsó prematuramente y los propulsores de frenado se apagaron tras funcionar solamente 3 segundos. Schiaparelli impactó la superficie a ~150 m/s. El TGO completó con éxito la inserción en órbita y continúa operando.",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "Proton-M from Baikonur 2016-03-14. TGO + Schiaparelli stack.", "type": "nominal" },
-    { "met": 0.01, "label": "TMI", "note": "Trans-Mars injection on the Briz-M upper stage.", "type": "nominal" },
-    { "met": 30, "label": "TCM 1", "note": "First mid-course correction during 7-month cruise.", "type": "info" },
+    { "met": 0, "label": "LAUNCH", "note": "Protón-M desde Baikonur el 14 de marzo de 2016. Conjunto TGO + Schiaparelli.", "type": "nominal" },
+    { "met": 0.01, "label": "TMI", "note": "Inyección transmarcianos en la etapa superior Briz-M.", "type": "nominal" },
+    { "met": 30, "label": "TCM 1", "note": "Primera corrección de trayectoria durante el crucero de 7 meses.", "type": "info" },
     { "met": 120, "label": "TCM 2", "note": "Mid-cruise correction.", "type": "info" },
-    { "met": 216, "label": "TCM 3", "note": "Final approach correction before TGO/Schiaparelli separation.", "type": "info" },
-    { "met": 216.5, "label": "SEPARATION", "note": "Schiaparelli separated from TGO 2016-10-16, three days before atmospheric entry.", "type": "nominal" },
-    { "met": 219, "label": "ENTRY", "note": "Atmospheric entry 2016-10-19.", "type": "nominal" },
-    { "met": 219.01, "label": "DESCENT ANOMALY", "note": "IMU saturation → premature parachute jettison + thruster cutoff at altitude → impact ~150 m/s in Meridiani Planum.", "type": "warning" }
+    { "met": 216, "label": "TCM 3", "note": "Corrección final de aproximación antes de la separación del TGO/Schiaparelli.", "type": "info" },
+    { "met": 216.5, "label": "SEPARATION", "note": "Schiaparelli se separó del TGO el 16 de octubre de 2016, tres días antes de la entrada en la atmósfera.", "type": "nominal" },
+    { "met": 219, "label": "ENTRY", "note": "Entrada en la atmósfera el 19 de octubre de 2016.", "type": "nominal" },
+    { "met": 219.01, "label": "DESCENT ANOMALY", "note": "Saturación de la IMU → jettison prematuro del paracaídas + corte de los propulsores a la altitud → impacto ~150 m/s en Meridiani Planum.", "type": "warning" }
   ]
 }

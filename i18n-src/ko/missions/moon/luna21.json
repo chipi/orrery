@@ -1,13 +1,13 @@
 {
   "name": "Luna 21 / Lunokhod 2",
   "type": "UNCREWED LANDER + ROVER · FLOWN",
-  "first": "Second Soviet lunar rover; longest off-world drive (~39 km) for over 40 years",
-  "description": "Luna 21 delivered Lunokhod 2, the Soviet Union's second crewed-controlled lunar rover, to Le Monnier crater on the southern edge of Mare Serenitatis in January 1973. The rover was driven from a control room in Crimea by a five-person team and traversed approximately 39 km over four lunar days — a record off-world distance that held until NASA's Opportunity rover passed it on Mars in 2014. Lunokhod 2 returned 80,000 television frames and 86 panoramas before dust contamination of its solar arrays ended operations.",
+  "first": "두 번째 소비에트 달 탐사 로버; 40년 이상 동안 행성 밖에서 가장 긴 주행 거리(~39 km)",
+  "description": "Luna 21은 1973년 1월 세레니타티스 해의 남쪽 가장자리에 있는 르 모니에 분화구에 소비에트 연방의 두 번째 유인 조종 달 탐사 로버인 Lunokhod 2를 전달했습니다. 로버는 크림반도의 통제실에서 5명의 팀에 의해 조종되었으며 4개의 달의 날 동안 약 39 km를 주행했습니다. 이는 2014년 NASA의 Opportunity 로버가 화성에서 이를 능가할 때까지 40년 이상 동안 유지된 행성 밖에서의 주행 거리 기록입니다. Lunokhod 2는 80,000개의 텔레비전 프레임과 86개의 파노라마를 반환했으며, 태양전지판의 먼지 오염으로 운영이 종료되었습니다.",
   "events": [
     { "met": 0, "label": "LAUNCH", "note": "Proton-K from Baikonur 1973-01-08.", "type": "nominal" },
-    { "met": 0.005, "label": "TLI", "note": "Trans-lunar injection on the Blok-D upper stage.", "type": "nominal" },
-    { "met": 4, "label": "TCM", "note": "Mid-course correction during cruise.", "type": "info" },
-    { "met": 4.5, "label": "LANDING", "note": "Soft landing in Le Monnier crater 1973-01-15. Lunokhod 2 rolled off ramps a few hours later.", "type": "nominal" },
-    { "met": 7, "label": "ROVER ACTIVE", "note": "Five-person ground crew in Crimea began driving operations. Total traverse: ~39 km.", "type": "nominal" }
+    { "met": 0.005, "label": "TLI", "note": "Blok-D 상단 스테이지에서의 달 궤도 투입.", "type": "nominal" },
+    { "met": 4, "label": "TCM", "note": "항해 중 중로 수정.", "type": "info" },
+    { "met": 4.5, "label": "LANDING", "note": "1973년 1월 15일 르 모니에 분화구에 연착륙. Lunokhod 2는 몇 시간 후 경사로에서 내려왔습니다.", "type": "nominal" },
+    { "met": 7, "label": "ROVER ACTIVE", "note": "크림반도의 5명 지상 승무원이 주행 작업을 시작했습니다. 총 주행 거리: ~39 km.", "type": "nominal" }
   ]
 }

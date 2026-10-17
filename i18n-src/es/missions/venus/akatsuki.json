@@ -19,7 +19,7 @@
     {
       "met": 201,
       "label": "FALLO VOI-1",
-      "note": "2010-12-07. Anomalía de estrangulador del motor principal 152 s después del inicio de la maniobra; la sonda continúa hacia la órbita solar.",
+      "note": "2010-12-07. Anomalía de OME 152 s después del inicio de la maniobra; la sonda continúa hacia la órbita solar.",
       "type": "warning"
     },
     {
@@ -37,7 +37,7 @@
     {
       "met": 2200,
       "label": "OPERACIONES CIENTÍFICAS",
-      "note": "Seguimiento de características de nubes UV/IR; estudios de superrotación; ondas gravitacionales de forma arqueada sobre Tierra de Afrodita. Contacto perdido en 2024; operaciones declaradas completadas el 2025-09-18.",
+      "note": "Seguimiento de características nubosas en UV/IR; estudios de la super-rotación; ondas de gravedad en forma de arco por encima de Aphrodite Terra. Pérdida de contacto en 2024; operaciones declaradas completas el 2025-09-18.",
       "type": "info"
     }
   ]

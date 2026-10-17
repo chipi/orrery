@@ -1,5 +1,5 @@
 {
-  "title": "Vertrekvenster-As",
+  "title": "Departure-Window Axis",
   "intro_sentence": "Wanneer je lanceert — over de X-as lopend, meestal een periode van vier jaar met dagelijkse steekproeven.",
   "narrative_101": [
     "Lees de porkchop als een kalender. De horizontale as — van links naar rechts — is de datum waarop je de Aarde verlaat. Elke pixelkolom is een ander lanceringsdag. Orrery bemonster met één-dag resolutie over ongeveer vier jaar; dat is genoeg om twee volledige synodische cycli voor Mars vast te leggen (de ~26-maandcyclus past ruwweg tweemaal in vier jaar), wat voldoende is om het lanceringsvensterpatroon te zien herhalen.",
@@ -9,6 +9,6 @@
   "body_paragraphs": [
     "De X-as geeft aan wanneer je de Aarde verlaat. Elke pixelkolom is een ander lanceringsdatum — voor Orrery's grafieken, bemonsterd met één-dag resolutie over ongeveer vier jaar. Waarom een periode van vier jaar? Omdat de synodische periode Aarde-Mars ~26 maanden is; vier jaar omvat ruwweg twee volledige Mars-vensters. Voor Venus (~19 maanden) of Jupiter (~13 maanden) bevat dezelfde periode meer vensters — de breedte van vier jaar is gekalibreerd voor Mars-achtige planning.",
     "Lees de X-as als een kalender. De goedkope-kostlobes (het 'vlees' van de porkchop) zitten op voorspelbare intervallen. Voor Mars: elke ~26 maanden. Voor Venus: elke ~19 maanden. Voor Jupiter: elke ~13 maanden (Jupiter beweegt langzaam genoeg dat de synodische periode dicht bij Aarde's jaar ligt).",
-    "Op `/plan` is het X-as label `VERTREKVENSTER · 2026 — 2030`. De letterlijke kalenderdatums verschijnen in de tooltip wanneer je je muisaanwijzer erover beweegt."
+    "Op `/plan` is het X-as label `DEPARTURE WINDOW · 2026 — 2030`. De letterlijke kalenderdatums verschijnen in de tooltip wanneer je je muisaanwijzer erover beweegt."
   ]
 }

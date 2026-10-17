@@ -14,19 +14,19 @@
     {
       "met": 0.5,
       "label": "EARTH PHOTOS",
-      "note": "Titov made the first hand-camera photographs of Earth from orbit.",
+      "note": "Titov a pris les premières photographies de la Terre à main levée depuis l'orbite.",
       "type": "info"
     },
     {
       "met": 0.8,
       "label": "SLEEP",
-      "note": "First sleep period in space (~8 hours).",
+      "note": "Première période de sommeil dans l'espace (~8 heures).",
       "type": "info"
     },
     {
       "met": 1.04,
       "label": "EJECT + LAND",
-      "note": "Capsule de-orbited; Titov ejected at ~7 km and parachuted to Krasny Kut.",
+      "note": "La capsule a été mise en désorbite ; Titov a été éjecté à ~7 km et a fait un parachutage vers Krasny Kut.",
       "type": "nominal"
     }
   ]

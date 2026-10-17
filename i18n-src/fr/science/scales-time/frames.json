@@ -1,14 +1,14 @@
 {
-  "title": "Repères héliocentrique · géocentrique · centré-corps",
+  "title": "Heliocentric · Geocentric · Body-Centric Frames",
   "intro_sentence": "Trois repères pour trois questions : où relativement Soleil, Terre, ou planète ?",
   "narrative_101": [
-    "Où est la Lune ? Réponse honnête : \"ça dépend où TU es\". Depuis Terre 1h matin overhead. Depuis Soleil point minuscule 1 UA. Depuis Mars insignifiant. Aucune fausse — origines différentes. Choix origine = \"repère\".",
-    "Vol spatial jongle trois. Héliocentrique pour croisière. Géocentrique pour satellites et Lune. Centré-corps pour insertion arrivée et opérations surface.",
-    "Changer = arithmétique. Mais important conceptuellement. Ellipse transfert héliocentrique. Survol Mars centré-corps. Transition = patched conics."
+    "Où est la Lune ? La réponse honnête est « cela dépend de l'endroit où VOUS vous trouvez ». De la surface de la Terre, elle est au-dessus de nous à 1 h du matin ce soir. Du Soleil, c'est un minuscule point à 1 UA de distance près de la Terre. De Mars, c'est une poussière sans importance. Aucune de ces réponses n'est fausse — elles sont simplement mesurées à partir d'origines différentes. Ce choix d'origine est ce que signifie « référentiel ».",
+    "L'astronautique en jongle constamment trois. L'héliocentrique (origine au Soleil) est le référentiel naturel pour la croisière — tout ce qui se passe de la Terre à Mars se déroule ici. Le géocentrique (origine à la Terre) est le référentiel naturel pour les satellites et la Lune. Le référentiel centré sur le corps céleste (origine à la planète que vous dépassez ou autour de laquelle vous orbitez) est le référentiel naturel pour les manœuvres d'arrivée et les opérations de surface.",
+    "Passer de l'un à l'autre est surtout arithmétique — traduire l'origine, peut-être faire tourner les axes. Mais c'est important de savoir où vous vous situez conceptuellement : une ellipse de transfert est héliocentrique. Un survol de Mars est centrique au corps. Le passage entre eux est exactement l'astuce des coniques raccordées. Chaque écran de cette application choisit un référentiel et s'y tient : /explore est héliocentrique, /earth est géocentrique, /moon et /mars sont centriques au corps."
   ],
   "body_paragraphs": [
-    "Héliocentrique : origine Soleil, axes alignés écliptique. Naturel pour mouvement système solaire. `/explore` Orrery est fondamentalement héliocentrique.",
-    "Géocentrique : origine Terre. Utile satellites, Lune, sondes dans sphère Terre. `/earth` ici.",
-    "Centré-corps (Mars-, Saturne-, Lune-) : origine corps orbité. Utilisé insertion, surface, géométrie survol."
+    "Héliocentrique : origine au Soleil, axes alignés avec l'écliptique. Le référentiel naturel pour le mouvement du système solaire. Les positions des planètes, les orbites de transfert, les croisières de mission — tout cela se décrit le plus naturellement ici. Le `/explore` d'Orrery est fondamentalement héliocentrique.",
+    "Géocentrique : origine à la Terre. Utile pour les satellites, la Lune et tout engin spatial situé dans la sphère d'influence de la Terre. La route `/earth` de la Terre fonctionne dans ce référentiel. Les coordonnées géocentriques se rapportent aux coordonnées héliocentriques par une translation (position héliocentrique de la Terre) et possiblement une rotation (inclinaison axiale de la Terre).",
+    "Centrique au corps (centrique à Mars, centrique à Saturne, centrique à la Lune, etc.) : origine au corps que vous orbitez ou devant lequel vous volez. Utilisé pour l'insertion orbitale, les opérations de surface, la géométrie de survol — tout ce pour quoi la gravité du corps domine. La conception des missions par coniques recollées bascule entre les référentiels aux limites de la sphère d'influence : vous décrivez un arc dans le référentiel qui rend les mathématiques locales."
   ]
 }

@@ -1,8 +1,8 @@
 {
-  "name": "阿波罗 7 号",
+  "name": "Apollo 7",
   "type": "载人地球轨道 · 已飞行",
-  "first": "首次载人阿波罗飞行 — 地球轨道 CSM 验证",
-  "description": "阿波罗 1 号大火（1967-01-27 在发射台上夺去 Grissom、White、Chaffee 三名宇航员生命）后 21 个月，首次执行的载人阿波罗飞行。阿波罗 7 号在地球轨道中验证了重新设计的 Block II 指令舱与服务舱 — 生命保障、电力、推进（SPS 点火 8 次）、热控、以及全世界首次美国载人航天器实时电视广播。10 天 20 小时的飞行为两个月后阿波罗 8 号的月球轨道豪赌铺平了道路。",
+  "first": "首次载人Apollo飞行 — 地球轨道 CSM 验证",
+  "description": "首次载人Apollo飞行，发生在Apollo 1火灾（1967-01-27）导致Grissom、White和Chaffee在发射台丧生21个月之后。Apollo 7在地球轨道上验证了重新设计的Block II指挥舱和服务舱——生命保障、电力、推进（SPS点火8次）、热控制，以及来自载人美国航天器的世界首次实时电视直播。Schirra（整个任务期间感冒且脾气暴躁）推翻了休斯顿关于再入头盔的建议，促成了任务控制中心的决定——三名宇航员都不再执行飞行任务。这次持续10天20小时的飞行为两个月后Apollo 8月球轨道的冒险搭建了道路。",
   "events": [
     {
       "met": 0,
@@ -13,19 +13,19 @@
     {
       "met": 0.1,
       "label": "ORBIT INSERT",
-      "note": "CSM separates from S-IVB into 232 × 285 km Earth orbit, inclination 31.6°. SPS firing sequence (8 burns over 11 days) validates the propulsion that will perform LOI + TEI at the Moon.",
+      "note": "CSM 与 S-IVB 分离，进入近地距 232 × 285 km、倾角 31.6° 的地球轨道。SPS 点火序列（11 天内进行 8 次点火）验证了将在月球执行 LOI + TEI 的推进系统。",
       "type": "nominal"
     },
     {
       "met": 1.2,
       "label": "FIRST LIVE TV",
-      "note": "\"Hello from the lovely Apollo room high atop everything.\" First live TV broadcast from a crewed US spacecraft.",
+      "note": "\"\\\"你好，来自高高在上的可爱 Apollo 舱。\\\" 来自美国载人航天器的首次实时电视直播。",
       "type": "info"
     },
     {
       "met": 10.8,
       "label": "SPLASHDOWN",
-      "note": "CM splashed down in the North Atlantic 1968-10-22 11:11 UTC after 163 orbits / 7.4 million km / 10 d 20 h. Recovery by USS Essex.",
+      "note": "CM 于 1968-10-22 11:11 UTC 在北大西洋溅落，完成 163 圈轨道、飞行 740 万 km、用时 10 天 20 小时。由 USS Essex 号航母负责回收。",
       "type": "nominal"
     }
   ]

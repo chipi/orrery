@@ -1,6 +1,6 @@
 {
   "name": "Lunar Prospector",
   "short": "Prospector",
-  "description": "First NASA Discovery-class lunar mission, 1998-1999. Direct neutron-spectrometer detection of hydrogen at both lunar poles — strong evidence for water ice in permanently-shadowed crater floors. Deliberately impacted into Shoemaker crater at end of mission, hoping the impact ejecta would confirm water; Earth-based observers detected nothing definitive.",
-  "scale_fact": "Polar orbit at 100 km altitude. Confirmed Clementine's polar-ice hypothesis; established neutron spectroscopy as the primary tool for lunar volatiles."
+  "description": "Primera misión lunar de la clase Discovery de la NASA, 1998-1999. Detección directa mediante espectrómetro de neutrones de hidrógeno en ambos polos lunares — fuerte evidencia de hielo de agua en los fondos de cráteres en sombra permanente. Impactó deliberadamente en el cráter Shoemaker al final de la misión, con la esperanza de que los eyecta del impacto confirmasen la presencia de agua; los observadores terrestres no detectaron nada definitivo.",
+  "scale_fact": "Órbita polar a 100 km de altitud. Confirmó la hipótesis del hielo polar de Clementine; estableció la espectroscopia de neutrones como la herramienta principal para los volátiles lunares."
 }

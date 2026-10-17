@@ -1,10 +1,10 @@
 {
-  "description": "La Luna è l'unico satellite naturale della Terra e l'unico mondo oltre alla Terra su cui gli esseri umani abbiano camminato. Il suo blocco mareale 1:1 mantiene sempre lo stesso emisfero rivolto verso la Terra — il lato vicino dominato da bacini marini inondati di lava, il lato lontano un antico terreno craterizzato delle terre alte coronato dal bacino del Polo Sud–Aitken, la più grande struttura d'impatto del Sistema Solare. La lenta recessione della Luna dalla Terra (~3,8 cm/anno) sta gradualmente allungando la giornata terrestre.",
+  "description": "L'unico satellite naturale della Terra e l'unico mondo diverso dalla Terra su cui gli esseri umani hanno camminato. Il suo blocco tidale 1:1 mantiene lo stesso emisfero rivolto verso la Terra in ogni momento — il lato vicino dominato da bacini mare allagati di lava, il lato opposto un antico terreno altopiano crateri-costellato coronato dal bacino South Pole–Aitken, la più grande struttura da impatto del sistema solare (~2.500 km di larghezza, ~13 km di profondità). La lenta recessione della Luna dalla Terra (~3,8 cm/anno) sta gradualmente allungando il giorno terrestre; nel lontano passato appariva quasi tre volte la sua attuale dimensione angolare nel cielo.",
   "science_sections": [
     {
       "tab": "orbits",
       "section": "keplerian-orbit",
-      "why": "L'orbita della Luna attorno alla Terra è il sistema kepleriano a due corpi da manuale — ogni altro calcolo luna-attorno-pianeta si generalizza da qui."
+      "why": "L'orbita della Luna attorno alla Terra è il sistema Keplerian a due corpi da manuale — ogni altro calcolo luna-attorno-pianeta si generalizza da qui."
     },
     {
       "tab": "orbits",

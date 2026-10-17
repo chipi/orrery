@@ -1,14 +1,14 @@
 {
-  "title": "Anomalia vera",
+  "title": "True Anomaly",
   "intro_sentence": "L'angolo che dice dove un corpo è sull'orbita ora, misurato dal perielio.",
   "narrative_101": [
-    "Pianeta sulla sua ellisse. Abbiamo dimensione, forma, inclinazione. Dove è ora? Anomalia vera. Stai al Sole, punta al perielio, misura l'angolo.",
-    "Ma non sweepa uniformemente (seconda legge di Keplero). Astronomi inventarono altri due angoli — media ed eccentrica — uniformi, e una scala di equazioni li connette."
+    "Immagina un pianeta che orbita intorno alla sua ellisse. Le abbiamo già dato una dimensione, una forma, un'inclinazione. L'unica cosa che ancora ci serve è: dove si trova sul percorso in questo istante? Quella è l'anomalia vera. Stai in piedi al Sole, punta al passaggio più vicino del pianeta, e misura l'angolo fino al punto in cui il pianeta effettivamente si trova. Ecco fatto.",
+    "Ma qui c'è il trucco — ed è qui che la seconda legge di Kepler si introduce di nascosto. Il pianeta non spazza questo angolo a un ritmo costante. Vicino al passaggio più vicino si muove veloce. All'estremità più lontana procede lentamente. Quindi se chiedi \"quanti gradi al giorno?\", la risposta cambia costantemente durante l'orbita."
   ],
   "body_paragraphs": [
-    "Gli elementi descrivono forma e orientamento; l'anomalia vera (`ν`) dice dove. Dal fuoco al perielio, ruota il dito al corpo.",
-    "Da 0 (perielio) a 180° (afelio) e ritorno. Non uniforme.",
-    "Anomalia media (uniforme), eccentrica (ponte). Equazione di Keplero `M = E - e·sin(E)`."
+    "Gli elementi kepleriani descrivono la forma e l'orientamento di un'orbita; l'anomalia vera (`ν`) ti dice dove si trova il corpo lungo quell'orbita in un dato istante. Posizionati al fuoco (il Sole, per un pianeta), punta verso il periielio e ruota il dito per seguire il corpo lungo la sua traiettoria. L'angolo che descriverai è l'anomalia vera.",
+    "Va da 0 al perielio (avvicinamento più vicino) passando per 90° (un quarto del percorso) fino a 180° all'afelio (il più lontano), e poi ritorna. A differenza di un orologio, non scorre uniformemente — la seconda legge di Kepler ti dice che il corpo corre veloce vicino al perielio e striscia vicino all'afelio. Quindi l'anomalia vera al secondo cambia continuamente lungo l'orbita.",
+    "Angoli sorella che incontrerai: l'anomalia media (`M`), che avanza uniformemente nel tempo ma è geometricamente priva di significato; e l'anomalia eccentrica (`E`), il ponte tra loro. `M` progredisce a velocità costante, risolvi l'equazione di Kepler `M = E - e·sin(E)` per ottenere `E`, poi converti a `ν`. La catena è il battito cardiaco di ogni simulatore orbitale, incluso Orrery's."
   ],
   "diagram_caption": "Anomalia vera ν misurata al fuoco, dal perielio alla posizione attuale."
 }

@@ -4,6 +4,6 @@
   "site_name": "Apollo Crater (far side)",
   "crew": [],
   "left": "Descent stage",
-  "fact": "First sample return from the lunar far side — possibly the most scientifically significant lunar mission since Apollo. Far-side material (thicker crust, older surface, different composition) was completely unstudied. These samples may finally explain why the Moon's two hemispheres are so fundamentally different.",
-  "capability": "Sample return from a relay-only site — combines the architectures of Chang'e 4 (far-side comms) and Chang'e 5 (sample return). The full set of capabilities for Mars Sample Return at any latitude."
+  "fact": "首次从月球背面采样返回——可能是自Apollo以来最具科学意义的月球任务。月球背面物质（厚壳层、较古老的表面、不同的组成）此前完全未被研究过。这些样本可能最终能够解释为什么月球的两个半球如此根本上不同。",
+  "capability": "从中继站点采样返回——结合了Chang'e 4（背面通信）和Chang'e 5（采样返回）的架构。具备火星样本返回在任何纬度所需的全套能力。"
 }

@@ -3,8 +3,8 @@
   "dep_label": "지구 출발",
   "arr_label": "지구 귀환",
   "events": [
-    { "met": 0, "label": "발사", "note": "팰컨 헤비 발사. 자유 귀환 — 착륙 없음.", "type": "nominal" },
-    { "met": 0.4, "label": "TMI 연소", "note": "화성 이행 주입: 3.61 km/s. 탈출 속도 달성.", "type": "nominal" },
+    { "met": 0, "label": "발사", "note": "Falcon Heavy 발사. 자유 귀환 — 착륙 없음.", "type": "nominal" },
+    { "met": 0.4, "label": "TMI 연소", "note": "화성 전이 분사: 3.61 km/s. 탈출 속도 달성됨.", "type": "nominal" },
     { "met": 1, "label": "1일차 점검", "note": "첫 계통 건강 점검 완료. 모두 정상.", "type": "nominal" },
     { "met": 60, "label": "TCM-1", "note": "경로 중간 수정 1: 35 m/s.", "type": "nominal" },
     { "met": 200, "label": "크루즈", "note": "외향 크루즈. 지구가 멀어진다.", "type": "info" },

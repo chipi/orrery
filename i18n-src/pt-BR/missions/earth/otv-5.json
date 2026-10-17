@@ -13,13 +13,13 @@
     {
       "met": 390,
       "label": "ON-ORBIT OPS",
-      "note": "Apogee ~360 km, 54.5° inclination; classified payload operations.",
+      "note": "Apogeu ~360 km, inclinação de 54,5°; operações com carga paga classificada.",
       "type": "info"
     },
     {
       "met": 780,
       "label": "LANDING",
-      "note": "Autonomous runway landing at KSC Shuttle Landing Facility 2019-10-27.",
+      "note": "Pouso autônomo em pista no KSC Shuttle Landing Facility 2019-10-27.",
       "type": "nominal"
     }
   ]

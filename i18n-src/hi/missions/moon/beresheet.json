@@ -1,15 +1,15 @@
 {
   "name": "Beresheet",
   "type": "PRIVATE LANDER · CRASHED",
-  "first": "First privately-funded mission to reach the Moon; first Israeli lunar mission",
-  "description": "SpaceIL's Beresheet (Hebrew: 'In the beginning') launched as a shared-ride passenger on a Falcon 9 in February 2019. Instead of a direct trans-lunar injection, the small lander performed weeks of perigee-raising phasing burns to climb from a parking orbit out to the Moon — a fuel-saving trajectory pioneered for low-budget missions. After successful lunar orbit insertion on 4 April 2019, an inertial measurement unit reset during descent caused the main engine to shut down. Beresheet crashed in Mare Serenitatis. SpaceIL committed to a successor (Beresheet 2) within days.",
+  "first": "चंद्रमा तक पहुँचने वाला पहला निजी स्रोत से वित्तपोषित मिशन; पहला इज़राइली चंद्र मिशन",
+  "description": "SpaceIL का Beresheet (हिब्रू: 'शुरुआत में') फरवरी 2019 में Falcon 9 पर साझा यात्री के रूप में प्रक्षेपित हुआ। सीधे ट्रांस-चंद्र इंजेक्शन के बजाय, इस छोटे लैंडर ने पार्किंग ऑर्बिट से चंद्रमा तक पहुँचने के लिए कई हफ्तों तक पेरिजी-उठाने वाली फेजिंग बर्न्स की — एक ईंधन-बचत वाली कक्षा जो कम बजट वाले मिशनों के लिए अग्रणी थी। 4 अप्रैल 2019 को सफल चंद्र कक्षा प्रविष्टि के बाद, अवतरण के दौरान एक अक्षीय माप इकाई के रीसेट के कारण मुख्य इंजन बंद हो गया। Beresheet Mare Serenitatis में दुर्घटनाग्रस्त हुआ। SpaceIL ने कुछ दिनों के भीतर एक उत्तराधिकारी (Beresheet 2) के लिए प्रतिबद्धता जताई।",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "Falcon 9 rideshare from Cape Canaveral 2019-02-22.", "type": "nominal" },
-    { "met": 0.01, "label": "PHASING BURN", "note": "First of seven perigee raises to climb from LEO to lunar approach.", "type": "info" },
-    { "met": 10, "label": "TCM 1", "note": "Trajectory correction during multi-orbit climb.", "type": "info" },
-    { "met": 20, "label": "TCM 2", "note": "Second TCM. Apogee approaching lunar capture distance.", "type": "info" },
-    { "met": 41, "label": "LUNAR APPROACH", "note": "Final translunar burn — Beresheet on direct lunar trajectory.", "type": "nominal" },
-    { "met": 48, "label": "LUNAR ORBIT INSERTION", "note": "Capture into elliptical lunar orbit 2019-04-04.", "type": "nominal" },
-    { "met": 48.01, "label": "DESCENT ANOMALY", "note": "IMU reset during powered descent → engine shutdown → crash in Mare Serenitatis 2019-04-11.", "type": "warning" }
+    { "met": 0, "label": "LAUNCH", "note": "Cape Canaveral से Falcon 9 राइडशेयर 2019-02-22।", "type": "nominal" },
+    { "met": 0.01, "label": "PHASING BURN", "note": "चंद्रमा के पास पहुँचने के लिए LEO से चढ़ने के लिए सात पेरिजी उठाने वाले कार्यक्रमों में से पहला।", "type": "info" },
+    { "met": 10, "label": "TCM 1", "note": "बहु-ऑर्बिट चढ़ाई के दौरान प्रक्षेपवक्र सुधार।", "type": "info" },
+    { "met": 20, "label": "TCM 2", "note": "दूसरा TCM। एपोजी चंद्र कैप्चर दूरी के पास पहुँच रहा है।", "type": "info" },
+    { "met": 41, "label": "LUNAR APPROACH", "note": "अंतिम ट्रांसलुनर बर्न — Beresheet सीधे चंद्र प्रक्षेपवक्र पर।", "type": "nominal" },
+    { "met": 48, "label": "LUNAR ORBIT INSERTION", "note": "2019-04-04 को अंडाकार चंद्र कक्षा में कैप्चर।", "type": "nominal" },
+    { "met": 48.01, "label": "DESCENT ANOMALY", "note": "शक्तिशाली अवतरण के दौरान IMU रीसेट → इंजन बंद → Mare Serenitatis में क्रैश 2019-04-11।", "type": "warning" }
   ]
 }

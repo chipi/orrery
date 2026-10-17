@@ -1,8 +1,8 @@
 {
-  "name": "아폴로 7호",
+  "name": "Apollo 7",
   "type": "유인 지구 궤도 · 완료",
-  "first": "최초의 유인 아폴로 비행 — 지구 궤도 CSM 검증",
-  "description": "아폴로 1호 화재(1967-01-27)로 발사대에서 Grissom, White, Chaffee가 사망한 지 21개월 후의 최초 유인 아폴로 비행. 아폴로 7호는 재설계된 Block II 사령선·기계선을 지구 궤도에서 검증 — 생명 유지, 전력, 추진(SPS 8회 점화), 열 제어, 유인 미국 우주선에서 세계 최초의 생방송 TV 송출. 10일 20시간의 비행은 2개월 후 아폴로 8호의 달 궤도 도전을 위한 길을 닦았다.",
+  "first": "최초의 유인 Apollo 비행 — 지구 궤도 CSM 검증",
+  "description": "Apollo 1 화재(1967-01-27)로 Grissom, White, Chaffee가 발사대에서 사망한 지 21개월 후, 첫 유인 Apollo 비행이었습니다. Apollo 7은 지구 궤도에서 재설계된 Block II Command and Service Module을 검증했습니다. 생명 유지, 전력, 추진력(SPS는 8번 분사), 열 제어, 그리고 유인 미국 우주선에서 처음으로 생중계된 TV 방송이 이루어졌습니다. Schirra(감기에 걸려 내내 불평했음)는 재진입 헬멧 문제에 관해 Houston의 지시를 무시했고, 이는 Mission Control이 세 명의 우주비행사 모두 다시 비행하지 않기로 결정하는 데 영향을 미쳤습니다. 10일 20시간의 비행은 2개월 후 Apollo 8의 달 궤도 모험의 길을 열었습니다.",
   "events": [
     {
       "met": 0,
@@ -13,19 +13,19 @@
     {
       "met": 0.1,
       "label": "ORBIT INSERT",
-      "note": "CSM separates from S-IVB into 232 × 285 km Earth orbit, inclination 31.6°. SPS firing sequence (8 burns over 11 days) validates the propulsion that will perform LOI + TEI at the Moon.",
+      "note": "CSM이 S-IVB에서 분리되어 지구 궤도 232 × 285 km(경사각 31.6°)에 진입합니다. SPS 발화 수열(11일에 걸친 8번의 연소)이 달에서 LOI + TEI를 수행할 추진력을 검증합니다.",
       "type": "nominal"
     },
     {
       "met": 1.2,
       "label": "FIRST LIVE TV",
-      "note": "\"Hello from the lovely Apollo room high atop everything.\" First live TV broadcast from a crewed US spacecraft.",
+      "note": "\"높은 곳에서 멋진 Apollo 실내를 바라보며 인사합니다.\" 미국 유인 우주선에서 처음 생중계된 TV 방송입니다.",
       "type": "info"
     },
     {
       "met": 10.8,
       "label": "SPLASHDOWN",
-      "note": "CM splashed down in the North Atlantic 1968-10-22 11:11 UTC after 163 orbits / 7.4 million km / 10 d 20 h. Recovery by USS Essex.",
+      "note": "CM이 163바퀴 / 740만 km / 10일 20시간 후 1968-10-22 11:11 UTC에 북대서양에 착수했습니다. USS Essex에 의해 회수되었습니다.",
       "type": "nominal"
     }
   ]

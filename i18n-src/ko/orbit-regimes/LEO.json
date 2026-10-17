@@ -6,7 +6,7 @@
   "residents": [
     {
       "id": "iss",
-      "label": "ISS — 국제우주정거장",
+      "label": "ISS — International Space Station",
       "agency": "NASA"
     },
     {
@@ -16,7 +16,7 @@
     },
     {
       "id": "hubble",
-      "label": "Hubble 우주망원경",
+      "label": "Hubble Space Telescope",
       "agency": "NASA"
     },
     {

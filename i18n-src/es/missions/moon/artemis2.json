@@ -6,9 +6,9 @@
   "events": [
     { "met": 0, "label": "LANZAMIENTO SLS", "note": "Orion despega desde KSC LC-39B con cuatro tripulantes a bordo.", "type": "nominal" },
     { "met": 0.13, "label": "ITL", "note": "Encendido de inyección translunar por el ICPS — Orion se separa hacia trayectoria cislunar.", "type": "nominal" },
-    { "met": 1.5, "label": "MCT-1", "note": "Primera corrección de trayectoria.", "type": "nominal" },
+    { "met": 1.5, "label": "TCM-1", "note": "Primera corrección de trayectoria.", "type": "nominal" },
     { "met": 4, "label": "SOBREVUELO LUNAR", "note": "Aproximación máxima sobre la cara oculta, ~9200 km de altitud. Sin inserción orbital — la geometría de retorno libre devuelve a Orion a la Tierra.", "type": "info" },
-    { "met": 6, "label": "MCT-2", "note": "Corrección de trayectoria de retorno.", "type": "nominal" },
+    { "met": 6, "label": "TCM-2", "note": "Corrección de trayectoria de retorno.", "type": "nominal" },
     { "met": 10, "label": "AMERIZAJE", "note": "Reentrada de Orion y amerizaje en el océano Pacífico.", "type": "info" }
   ]
 }

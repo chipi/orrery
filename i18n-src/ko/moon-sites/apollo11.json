@@ -1,7 +1,7 @@
 {
   "name": "Apollo 11",
-  "mission_type": "유인 착륙선",
-  "site_name": "고요의 바다",
+  "mission_type": "Crewed Lander",
+  "site_name": "Mare Tranquillitatis",
   "crew": [
     "Neil Armstrong",
     "Buzz Aldrin"

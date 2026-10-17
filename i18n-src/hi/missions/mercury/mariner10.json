@@ -13,31 +13,31 @@
     {
       "met": 94,
       "label": "VENUS FLYBY",
-      "note": "5768 km closest approach 1974-02-05; first deliberate gravity-assist trajectory in space history.",
+      "note": "5768 किमी निकटतम दूरी 1974-02-05; अंतरिक्ष इतिहास में पहली जानबूझकर गुरुत्वाकर्षण-सहायता प्रक्षेप पथ।",
       "type": "nominal"
     },
     {
       "met": 146,
       "label": "MERCURY 1",
-      "note": "703 km closest approach 1974-03-29; first Mercury images.",
+      "note": "703 किमी निकटतम दूरी 1974-03-29; बुध के पहले चित्र।",
       "type": "nominal"
     },
     {
       "met": 322,
       "label": "MERCURY 2",
-      "note": "48069 km closest approach 1974-09-21; southern-hemisphere imaging.",
+      "note": "48069 किमी निकटतम दूरी 1974-09-21; दक्षिणी-गोलार्ध इमेजिंग।",
       "type": "nominal"
     },
     {
       "met": 498,
       "label": "MERCURY 3",
-      "note": "327 km closest approach 1975-03-16; magnetic-field re-confirmation.",
+      "note": "327 किमी निकटतम दूरी 1975-03-16; चुंबकीय-क्षेत्र पुष्टिकरण।",
       "type": "nominal"
     },
     {
       "met": 506,
       "label": "PROPELLANT END",
-      "note": "N₂ attitude-control gas depleted 1975-03-24; transmitter commanded off.",
+      "note": "N₂ मुद्रा-नियंत्रण गैस 1975-03-24 को समाप्त; ट्रांसमीटर को बंद करने का आदेश दिया गया।",
       "type": "nominal"
     }
   ]

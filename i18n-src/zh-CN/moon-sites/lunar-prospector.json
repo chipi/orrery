@@ -1,7 +1,7 @@
 {
   "name": "Lunar Prospector",
   "mission_type": "Orbiter · Ended 1999",
-  "site_name": "Lunar polar orbit, 100 km",
-  "fact": "Direct neutron-spectrometer detection of hydrogen at both lunar poles — strong evidence for water ice in permanently-shadowed crater floors. Deliberately impacted into Shoemaker crater at end of mission, hoping the impact ejecta would confirm water; Earth-based observers detected nothing definitive (a follow-up only delivered by LCROSS in 2009).",
-  "capability": "Confirmed Clementine's polar-ice hypothesis; established neutron-spectroscopy as the primary tool for lunar volatiles."
+  "site_name": "月球极地轨道，100 公里",
+  "fact": "中子能谱仪直接探测到月球两极的氢——月球永久阴影坑底存在水冰的有力证据。任务结束时故意撞击进Shoemaker撞击坑，希望撞击溅射物能够证实水的存在；基于地球的观测者未检测到明确的结果（随后的确认工作只由LCROSS在2009年完成）。",
+  "capability": "证实了Clementine的极地冰假说；确立了中子能谱法作为月球挥发物探测的主要工具。"
 }

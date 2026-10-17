@@ -7,19 +7,19 @@
     {
       "met": 0,
       "label": "PAD FIRE",
-      "note": "Plugs-out test 1967-01-27 17:31 EST. Flash fire in pressurised pure-O₂ cabin; cabin pressure spiked to 29 psi in 15 s.",
+      "note": "Plugs-out-Test am 27.01.1967, 17:31 EST. Brand in unter Druck stehendem Reinraum mit reinem O₂; Kabinendruck stieg in 15 s auf 29 psi an.",
       "type": "warning"
     },
     {
       "met": 1e-7,
       "label": "CREW LOST",
-      "note": "Grissom + White + Chaffee perish from asphyxiation. Hatch could not be unsealed against pressure differential.",
+      "note": "Grissom + White + Chaffee sterben durch Ersticken. Luke konnte gegen den Druckunterschied nicht geöffnet werden.",
       "type": "warning"
     },
     {
       "met": 25,
       "label": "PROGRAM PAUSE",
-      "note": "Apollo crewed program halted 21 months. Mission renamed Apollo 1 in posthumous honour.",
+      "note": "Bemanntes Apollo-Programm für 21 Monate unterbrochen. Mission posthum als Apollo 1 umbenannt.",
       "type": "info"
     }
   ]

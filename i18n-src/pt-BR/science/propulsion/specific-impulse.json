@@ -8,7 +8,7 @@
   ],
   "body_paragraphs": [
     "O Isp é o número de economia de combustível para foguetes. Quanto maior, melhor. Definição: dividir empuxo pela taxa de fluxo de massa de propelente, dividir por `g₀` (gravidade padrão), obter um número em segundos. Queimar um quilograma de propelente por segundo, obter `Isp × g₀` newtons de empuxo.",
-    "O número varia em quatro ordens de magnitude. Foguetes sólidos: 250s. Líquidos de hidrogênio/oxigênio (Motor Principal do Space Shuttle): 452s. Hipergólicos armazenáveis (Módulo de Serviço do Apollo): 314s. Motores iônicos (Dawn, BepiColombo): 3.000-9.000s. Térmico nuclear (NERVA, nunca voo): 800-1.000s em teoria.",
+    "O número varia em quatro ordens de magnitude. Foguetes sólidos: 250s. Líquidos de hidrogênio/oxigênio (Space Shuttle Main Engine): 452s. Hipergólicos armazenáveis (Apollo Service Module): 314s. Motores iônicos (Dawn, BepiColombo): 3.000-9.000s. Térmico nuclear (NERVA, nunca voo): 800-1.000s em teoria.",
     "Compromissos em todos os lugares. Isp elevado geralmente significa empuxo baixo — motores iônicos produzem cerca de dez newtons, úteis para cruzeiros de anos-luz no espaço profundo, mas inúteis para sair da Terra. Motores químicos entregam meganewtons de empuxo, mas gastam propelente em minutos. Missões reais escolhem os estágios: químico para ascensão, iônico para cruzeiro."
   ]
 }

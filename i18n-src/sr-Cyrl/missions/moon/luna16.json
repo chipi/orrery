@@ -1,13 +1,13 @@
 {
   "name": "Luna 16",
   "type": "ROBOTIC SAMPLE RETURN · FLOWN",
-  "first": "First robotic lunar sample return; first non-American lunar samples",
-  "description": "Luna 16 was the Soviet Union's first successful robotic sample-return mission and the first non-crewed lunar return of any kind. After Apollo 11 brought home 22 kg of crewed samples in 1969, Luna 16 returned 101 grams of regolith from Mare Fecunditatis a year later — a fraction of Apollo's payload, but a profound proof-of-concept for the alternative architecture. The mission used a Proton-K booster and a direct return profile: descent to the surface, drill core, ascent stage launch, ballistic return capsule to Kazakhstan. The technique was reused for Luna 20 and Luna 24, and decades later by Chang'e 5 and Chang'e 6.",
+  "first": "Први роботски повратак узорака са Месеца; први неамерички узорци са Месеца",
+  "description": "Luna 16 била је прва успешна роботска мисија Совјетског Савеза за повратак узорака и први повратак са Месеца без посаде уопште. Пошто је Apollo 11 1969. донео кући 22 kg узорака прикупљених уз присуство посаде, Luna 16 је годину дана касније вратила 101 грам реголита из Mare Fecunditatis — делић корисног терета програма Apollo, али дубоко значајан доказ изводљивости алтернативне архитектуре. Мисија је користила ракету Proton-K и профил директног повратка: спуштање на површину, бушење језгра, лансирање полетног степена и балистичка повратна капсула која је слетела у Казахстан. Та техника поново је употребљена за Luna 20 и Luna 24, а деценијама касније и за Chang'e 5 и Chang'e 6.",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "Proton-K from Baikonur 1970-09-12.", "type": "nominal" },
-    { "met": 0.005, "label": "TLI", "note": "Trans-lunar injection on the Blok-D upper stage.", "type": "nominal" },
-    { "met": 5, "label": "TCM", "note": "Mid-course correction during 4.5-day cruise.", "type": "info" },
-    { "met": 5.1, "label": "LANDING", "note": "Soft landing in Mare Fecunditatis 1970-09-20. Surface ops + drill core (101 g).", "type": "nominal" },
-    { "met": 8, "label": "SAMPLE RETURN", "note": "Capsule recovered in Kazakhstan 1970-09-24. First non-crewed lunar sample return.", "type": "nominal" }
+    { "met": 0, "label": "ЛАНСИРАЊЕ", "note": "Proton-K са Baikonur-а, 12. 9. 1970.", "type": "nominal" },
+    { "met": 0.005, "label": "Убацивање на путању ка Месецу (TLI)", "note": "Убацивање на путању ка Месецу помоћу горњег степена Blok-D.", "type": "nominal" },
+    { "met": 5, "label": "Корекција путање (TCM)", "note": "Корекција путање усред лета током четвородневног и по крстарења.", "type": "info" },
+    { "met": 5.1, "label": "СЛЕТАЊЕ", "note": "Меко слетање у Mare Fecunditatis, 20. 9. 1970. Операције на површини + језгро из бушилице (101 g).", "type": "nominal" },
+    { "met": 8, "label": "ПОВРАТАК УЗОРАКА", "note": "Капсула пронађена у Казахстану, 24. 9. 1970. Први повратак узорака са Месеца без посаде.", "type": "nominal" }
   ]
 }

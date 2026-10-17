@@ -9,7 +9,7 @@
   "body_paragraphs": [
     "El ascenso del lanzamiento cuesta unos 9,4 km/s de Δv, pero apenas 7,9 km/s de eso es velocidad orbital real. El resto es pérdida por gravedad (gastas energía manteniendo el cohete arriba mientras sube) y pérdida por arrastre (la atmósfera empuja hacia atrás). Programa el cabeceo bien y minimizas ambas — demasiado vertical desperdicia empuje en altitud que no ayuda a la inserción orbital; demasiado horizontal y la atmósfera tiene más tiempo para frenarte.",
     "Las etapas caen por el camino. Separación de la primera etapa, encendido de la segunda, jettison de cofias, separación de carga útil. Cada etapa cae masa seca que la siguiente no tiene que acelerar. Falcon 9 devuelve su primera etapa; el Saturno V no. El compromiso es si el hardware de recuperación cuesta más que el propelente que habría tomado tirar la etapa.",
-    "En `/missions` el campo launch_vehicle te dice qué cohete voló la misión. Saturno V para Apolo. Atlas V para Curiosity. Falcon 9 para Crew Dragon. SLS para Artemis I. Cada cohete tiene una curva fija de C3-vs-carga útil — el cohete fija el techo de lo posible."
+    "En `/missions` el campo launch_vehicle te indica qué cohete realizó la misión. Saturn V para Apollo. Atlas V para Curiosity. Falcon 9 para Crew Dragon. SLS para Artemis I. Cada cohete tiene una curva C3-vs-carga fija — el cohete establece el techo de lo que es posible."
   ],
   "diagram_caption": "Perfil de lanzamiento: subida vertical → programa de cabeceo → separación → inserción orbital."
 }

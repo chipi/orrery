@@ -2,13 +2,13 @@
   "title": "Assistenza gravitazionale",
   "intro_sentence": "Ruba il momento orbitale di un pianeta in un flyby — la cosa più vicina a un pranzo gratis nello spazio.",
   "narrative_101": [
-    "Lancia una palla da tennis a un treno in moto. Rimbalza più veloce — velocità del treno aggiunta. Quella è l'assistenza gravitazionale.",
-    "Dal pianeta: stessa velocità. Dal Sole: sonda eredita momento orbitale. Voyager 2 ne usò quattro per Nettuno."
+    "Lancia una pallina da tennis contro un treno in movimento. La pallina rimbalza sul davanti e torna verso di te più veloce di quanto l'hai lanciata — perché il treno si stava muovendo verso di essa, e la velocità del treno si è aggiunta al rimbalzo. Quello, sostanzialmente, è un gravity assist. L'astronave è la pallina da tennis, il pianeta è il treno, e «rimbalzare» viene sostituito da «cadere oltre su un'iperbola».",
+    "Dal punto di vista del pianeta, l'astronave entra e esce esattamente alla stessa velocità — la gravità è conservativa, niente energia guadagnata o persa. Ma dal punto di vista del Sole, l'astronave eredita parte del moto orbitale del pianeta all'uscita e arriva da qualche parte di nuovo con una velocità maggiore (o minore). Non è una violazione della fisica; il pianeta ne paga il prezzo rallentando — di una quantità troppo minuscola per essere rilevata."
   ],
   "body_paragraphs": [
-    "Avvicina il pianeta da dietro su iperbole. Gravità piega il percorso, esci con stessa velocità relativa al pianeta — ma il pianeta si muoveva, porti il moto con te.",
-    "Geometria inversa = rallenti. Pioneer 11 Jupiter→Saturno. Voyager 2 catena quattro. Cassini Venere×2 + Terra a Saturno.",
-    "Senza assistenze metà del catalogo Orrery non avrebbe potuto volare."
+    "Avvicinati a un pianeta in movimento da dietro su una traiettoria iperbolica. La gravità del pianeta piega il tuo percorso, tu passi accanto, e esci con la stessa velocità relativa al pianeta — ma il pianeta si stava muovendo tutto il tempo, e porti con te quel moto. Risultato netto: esci con una velocità maggiore relativa al Sole di quella con cui sei arrivato. Il pianeta, in cambio, si rallenta di una quantità immisurabilmente minuscola.",
+    "Inverti la geometria — avvicinati da davanti — e rallenti. Pioneer 11 usò Giove per spingersi verso Saturno. Voyager 2 concatenò Giove, Saturno, Urano, Nettuno in uno dei più raffinati tour di fionda gravitazionale mai compiuti. Cassini rimbalzò su Venere due volte e sulla Terra una volta prima di raggiungere Saturno. New Horizons colpì Giove per risparmiare tre anni nel viaggio verso Plutone.",
+    "Senza gravity assist, metà delle missioni nel catalogo di Orrery non avrebbero potuto volare. I pianeti esterni sono semplicemente troppo lontani per traiettorie dirette con razzi chimici — i loro costi in `∆v` supererebbero quello che qualsiasi razzo può fornire. I gravity assist trasformano quell'aritmetica da impossibile a difficile ma fattibile."
   ],
   "diagram_caption": "Sonda entra ed esce dal sistema planetario alla stessa velocità."
 }

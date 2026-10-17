@@ -1,9 +1,9 @@
 {
-  "name": "아폴로 16호",
+  "name": "Apollo 16",
   "dispatch": "Apollo 16은 고대 화산을 채취하기 위해 달 고지대로 갔지만 화산은 전혀 존재하지 않았음을 발견했다. 지질학자들은 창백하고 험준한 Descartes 지역이 화산 지대일 것이라고 확신했지만, Young과 Duke가 가져온 모든 암석은 각력암 — 충돌로 용접된 잔해 — 이었다. 틀렸다는 것이 오히려 소득이었다. 달의 밝은 고지대는 분출이 아니라 끊임없는 충돌을 받은 젊은 태양계의 기록으로 밝혀진 것이다. 이것은 탐사가 실제로 어떻게 그 가치를 입증하는지 보여주는 명확한 사례다 — 이미 안다고 생각하는 것을 확인하러 갔다가, 그 장소가 더 나은 무언가를 알려준다.",
   "type": "유인 착륙선 · 완료",
   "first": "달 고지대에서 첫 달 착륙 — Descartes; John Young의 \"월면 그랑프리\"",
-  "description": "다섯 번째 유인 달 착륙이자 비-바다 고지대에 첫 착륙. 지질학자들은 Descartes가 화산성일 것이라 예상했으나 아폴로 16호가 이를 반증 — 가져온 모든 암석은 brecccia(충격으로 부서진 잔해)였고, 달 고지대를 고대 화산 활동이 아닌 파괴적 충돌의 산물로 이해를 재구성했다. Young과 Duke는 총 20시간 14분의 LRV-지원 EVA 3회 완료, 26.7km 횡단, 95.7kg 시료 반환(당시까지 가장 무거운 아폴로 수확). Young의 \"월면 그랑프리\" — LRV의 TV 중계 속도 시험 — 약 17km/h 최고 속도.",
+  "description": "다섯 번째 유인 달 착륙이자 비마(非mare) 고지대 지역으로의 첫 착륙. 지질학자들은 데스카르테스가 화산성이라고 예상했지만, Apollo 16이 이를 부정했다. 귀환한 모든 암석이 각력(충돌로 부서진 잔해)이었으므로, 달의 고지대에 대한 이해가 고대 화산 활동의 산물이 아닌 재앙적 충돌의 산물로 재형성되었다. Young과 Duke는 LRV의 지원을 받아 총 20시간 14분의 EVA 3회를 완료했고, 26.7 km를 횡단했으며, 95.7 kg의 표본을 회수했다(당시까지 가장 많은 Apollo 수집량). Young의 \"달의 그랑프리\"는 LRV의 텔레비전 방송 속력 테스트로 최고 약 17 km/h에 도달했다. Duke의 11초 홉 시도는 장거리 점프 기록 도전 중에 PLSS 배낭 손상의 위험에 빠지게 하여 중단되었다. Charlie Duke의 가족 사진과 \"Far-UV Camera/Spectrograph\" — 다른 세계의 표면에서 운영된 첫 번째 천문 관측소 — 두 가지 모두 착륙 지점에 남겨졌다. Mattingly는 원래 Apollo 13에 배정되었으나(홍역 우려로 발사 전에 교체됨) 마침내 달로의 비행을 감행했다.",
   "events": [
     {
       "met": 0,
@@ -20,55 +20,55 @@
     {
       "met": 3.3,
       "label": "LOI",
-      "note": "Lunar orbit insertion. SPS ∆v ~0.91 km/s.",
+      "note": "달 궤도 삽입. SPS ∆v ~0.91 km/s.",
       "type": "nominal"
     },
     {
       "met": 4.79,
       "label": "SPS ANOMALY",
-      "note": "Pre-descent: a backup SPS gimbal oscillation forced a 6-hour landing-vs-abort engineering review in real time. Landing ultimately approved.",
+      "note": "강하 전: SPS 짐벌 진동 백업이 실시간 6시간 착륙 대 중단 공학 검토를 강제했습니다. 착륙은 결국 승인되었습니다.",
       "type": "warning"
     },
     {
       "met": 5.04,
       "label": "TOUCHDOWN",
-      "note": "Orion lands at Descartes Highlands 1972-04-21 02:23 UTC — first highland (non-mare) landing.",
+      "note": "Orion이 1972-04-21 02:23 UTC에 Descartes Highlands에 착륙 — 첫 고지대(비-마레) 착륙.",
       "type": "nominal"
     },
     {
       "met": 5.5,
       "label": "FIRST HIGHLANDS EVA",
-      "note": "EVA-1: ALSEP deployment + LRV deployment + first scientific traverse of the lunar highlands.",
+      "note": "EVA-1: ALSEP 배치 + LRV 배치 + 달 고지대의 첫 과학 탐사.",
       "type": "info"
     },
     {
       "met": 6.1,
       "label": "LUNAR GRAND PRIX",
-      "note": "EVA-2: Young's televised LRV speed test (\"lunar Grand Prix\") — peak speed ~17 km/h. Geology traverse up Stone Mountain.",
+      "note": "EVA-2: Young의 텔레비전 중계 LRV 속도 시험(\"달 그랑프리\") — 최고 속도 ~17 km/h. Stone Mountain 오르기 지질학 탐사.",
       "type": "info"
     },
     {
       "met": 6.7,
       "label": "FAR-UV CAMERA",
-      "note": "EVA-3: First astronomical observatory deployed on the surface of another world (NRL UV camera-spectrograph).",
+      "note": "EVA-3: 다른 천체 표면에 배치된 첫 천문 관측소(NRL 자외선 카메라-분광계).",
       "type": "info"
     },
     {
       "met": 7.81,
       "label": "ASCENT",
-      "note": "Orion lifts off after 71 h 02 m on surface. 95.7 kg samples returned — heaviest Apollo haul to that date.",
+      "note": "Orion이 표면에서 71시간 02분 후 이륙. 95.7 kg의 시료 반환 — 그 당시까지의 가장 무거운 Apollo 채취물.",
       "type": "nominal"
     },
     {
       "met": 8.5,
       "label": "TEI",
-      "note": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+      "note": "지구 귀환 궤도 투입. SPS ∆v ~1.0 km/s.",
       "type": "nominal"
     },
     {
       "met": 11.07,
       "label": "SPLASHDOWN",
-      "note": "CM splashed down in Central Pacific 1972-04-27 19:45 UTC. Recovery by USS Ticonderoga.",
+      "note": "CM이 1972-04-27 19:45 UTC에 중태평양에 착수. USS Ticonderoga에 의해 회수.",
       "type": "nominal"
     }
   ]

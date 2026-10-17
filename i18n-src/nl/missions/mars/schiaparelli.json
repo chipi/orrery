@@ -1,16 +1,16 @@
 {
   "name": "Schiaparelli EDM",
   "type": "ENTRY/DESCENT/LANDING DEMONSTRATOR · CRASHED",
-  "first": "ESA's first Mars surface attempt; intended to demonstrate EDL ahead of ExoMars Rosalind Franklin",
-  "description": "Schiaparelli was the entry-descent-landing demonstrator carried piggyback on the ExoMars Trace Gas Orbiter (TGO). Named for the Italian astronomer Giovanni Schiaparelli, the craft was built to prove the EDL stack ESA intended to scale up for the Rosalind Franklin rover. Schiaparelli separated from TGO on 16 October 2016 and entered the Martian atmosphere three days later. The descent profile collapsed: a saturated inertial measurement unit caused the navigation software to think the craft had already landed at altitude — the parachute jettisoned early and the braking thrusters cut off after firing for only 3 seconds. Schiaparelli struck the surface at ~150 m/s. TGO itself completed orbit insertion successfully and continues operating.",
+  "first": "Eerste Marsolandingspoging van ESA; bedoeld om EDL aan te tonen ter voorbereiding van ExoMars Rosalind Franklin",
+  "description": "Schiaparelli was de demonstrator voor in- en landingsfasen die piggyback werd vervoerd op de ExoMars Trace Gas Orbiter (TGO). Genoemd naar de Italiaanse astronoom Giovanni Schiaparelli, was het voertuig ontworpen om de EDL-stack aan te tonen die ESA van plan was op te schalen voor de Rosalind Franklin rover. Schiaparelli scheidde zich op 16 oktober 2016 van TGO af en drong drie dagen later de Martiaanse atmosfeer binnen. Het dalingspatroon stortte in: een verzadigde traagheidsmeeteenheid zorgde ervoor dat de navigatiesoftware dacht dat het voertuig al op hoogte was geland — de parachute werd voortijdig afgeworpen en de remthusters stopten na slechts 3 seconden afvuren. Schiaparelli raakte het oppervlak met ~150 m/s. TGO zelf voltooide de baanopname succesvol en blijft operationeel.",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "Proton-M from Baikonur 2016-03-14. TGO + Schiaparelli stack.", "type": "nominal" },
-    { "met": 0.01, "label": "TMI", "note": "Trans-Mars injection on the Briz-M upper stage.", "type": "nominal" },
-    { "met": 30, "label": "TCM 1", "note": "First mid-course correction during 7-month cruise.", "type": "info" },
+    { "met": 0, "label": "LAUNCH", "note": "Proton-M vanuit Baikonur 14 maart 2016. TGO + Schiaparelli-stack.", "type": "nominal" },
+    { "met": 0.01, "label": "TMI", "note": "Trans-Marsinjectionop de Briz-M-boventrip.", "type": "nominal" },
+    { "met": 30, "label": "TCM 1", "note": "Eerste midcourseCorrectie tijdens 7-maandse cruise.", "type": "info" },
     { "met": 120, "label": "TCM 2", "note": "Mid-cruise correction.", "type": "info" },
-    { "met": 216, "label": "TCM 3", "note": "Final approach correction before TGO/Schiaparelli separation.", "type": "info" },
-    { "met": 216.5, "label": "SEPARATION", "note": "Schiaparelli separated from TGO 2016-10-16, three days before atmospheric entry.", "type": "nominal" },
-    { "met": 219, "label": "ENTRY", "note": "Atmospheric entry 2016-10-19.", "type": "nominal" },
-    { "met": 219.01, "label": "DESCENT ANOMALY", "note": "IMU saturation → premature parachute jettison + thruster cutoff at altitude → impact ~150 m/s in Meridiani Planum.", "type": "warning" }
+    { "met": 216, "label": "TCM 3", "note": "Laatste benaderingscorrectie vóór TGO/Schiaparelli-scheiding.", "type": "info" },
+    { "met": 216.5, "label": "SEPARATION", "note": "Schiaparelli scheidde zich van TGO af op 16 oktober 2016, drie dagen vóór de atmosfeertoetrede.", "type": "nominal" },
+    { "met": 219, "label": "ENTRY", "note": "Atmosfeertoetrede 19 oktober 2016.", "type": "nominal" },
+    { "met": 219.01, "label": "DESCENT ANOMALY", "note": "IMU-verzadiging → voortijdig parachutebevrijding + stuwerstopping op hoogte → inslag ~150 m/s in Meridiani Planum.", "type": "warning" }
   ]
 }

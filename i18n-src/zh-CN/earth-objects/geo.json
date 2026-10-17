@@ -1,6 +1,6 @@
 {
   "name": "GEO Belt",
   "short": "GEO",
-  "description": "The geostationary ring. At exactly 35,786 km, orbital period equals Earth's rotation — satellites appear fixed in the sky. GOES weather satellites, Meteosat, thousands of communications satellites. The specific altitude where physics and utility perfectly align.",
-  "scale_fact": "35,786 km is not a round number by design — it's the exact altitude where gravity and orbital speed balance to give a 24-hour period. Physics chose it."
+  "description": "地球同步卫星轨道带。在海拔恰好35,786千米处，轨道周期等于地球自转周期——卫星在天空中显得静止不动。GOES气象卫星、Meteosat和数千颗通信卫星。这是物理性质与实用性完美结合的特定高度。",
+  "scale_fact": "35,786千米不是设计意义上的整数——它是重力与轨道速度平衡以产生24小时周期的精确高度。这是物理学的选择。"
 }

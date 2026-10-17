@@ -1,8 +1,8 @@
 {
   "name": "X-37B OTV-2 (USA-226)",
   "type": "무인 우주비행기 · 비행 완료",
-  "first": "USA-226 — 궤도상 469일, 밴덴버그 공군기지",
-  "description": "두 번째 X-37B 비행, 두 비행체 중 두 번째. 2011-03-05 22:46 UTC에 CCAFS SLC-41에서 아틀라스 V 501 AV-026으로 발사; 2012-06-16 12:48 UTC에 밴덴버그 공군기지에 착륙. 궤도상 469일 — 당시 미국에서 가장 긴 자율 궤도 우주비행이었으며, 이후 모든 OTV 비행이 이를 경신. 페이로드 기밀.",
+  "first": "USA-226 — 궤도상 469일, Vandenberg AFB",
+  "description": "두 번째 X-37B 비행, 두 비행체 중 두 번째. 2011-03-05 22:46 UTC에 CCAFS SLC-41에서 Atlas V 501 AV-026으로 발사; 2012-06-16 12:48 UTC에 Vandenberg AFB에 착륙. 궤도상 469일 — 당시 미국에서 가장 긴 자율 궤도 우주비행이었으며, 이후 모든 OTV 비행이 이를 경신. 페이로드 기밀.",
   "events": [
     {
       "met": 0,
@@ -13,13 +13,13 @@
     {
       "met": 234.5,
       "label": "ON-ORBIT OPS",
-      "note": "Apogee ~340 km; classified payload operations.",
+      "note": "원지점 약 340 km; 기밀 탑재물 운영.",
       "type": "info"
     },
     {
       "met": 469,
       "label": "LANDING",
-      "note": "Autonomous runway landing at Vandenberg AFB 2012-06-16.",
+      "note": "2012-06-16에 Vandenberg AFB에서 자율 활주로 착륙.",
       "type": "nominal"
     }
   ]

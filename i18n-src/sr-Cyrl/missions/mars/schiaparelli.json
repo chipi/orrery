@@ -1,16 +1,16 @@
 {
   "name": "Schiaparelli EDM",
   "type": "ENTRY/DESCENT/LANDING DEMONSTRATOR · CRASHED",
-  "first": "ESA's first Mars surface attempt; intended to demonstrate EDL ahead of ExoMars Rosalind Franklin",
-  "description": "Schiaparelli was the entry-descent-landing demonstrator carried piggyback on the ExoMars Trace Gas Orbiter (TGO). Named for the Italian astronomer Giovanni Schiaparelli, the craft was built to prove the EDL stack ESA intended to scale up for the Rosalind Franklin rover. Schiaparelli separated from TGO on 16 October 2016 and entered the Martian atmosphere three days later. The descent profile collapsed: a saturated inertial measurement unit caused the navigation software to think the craft had already landed at altitude — the parachute jettisoned early and the braking thrusters cut off after firing for only 3 seconds. Schiaparelli struck the surface at ~150 m/s. TGO itself completed orbit insertion successfully and continues operating.",
+  "first": "ESA-ин први покушај спуштања на површину Марса; требало је да демонстрира EDL пре мисије ExoMars Rosalind Franklin",
+  "description": "Schiaparelli је био демонстратор уласка, спуштања и слетања (EDL) који је као «слепи путник» путовао на орбитеру ExoMars Trace Gas Orbiter (TGO). Летелица је добила име по италијанском астроному Giovanni Schiaparelli и била је направљена да потврди EDL систем који је ESA намеравала да увећа за ровер Rosalind Franklin. Schiaparelli се одвојио од TGO-а 16. октобра 2016. и три дана касније ушао у атмосферу Марса. Профил спуштања се распао: засићена инерцијална мерна јединица навела је навигациони софтвер да закључи да је летелица већ слетела, иако се још налазила у висини — падобран је рано одбачен, а кочиони потисници су се угасили након само 3 секунде рада. Schiaparelli је ударио у површину брзином од ~150 m/s. Сам TGO је успешно завршио убацивање у орбиту и наставља да ради.",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "Proton-M from Baikonur 2016-03-14. TGO + Schiaparelli stack.", "type": "nominal" },
-    { "met": 0.01, "label": "TMI", "note": "Trans-Mars injection on the Briz-M upper stage.", "type": "nominal" },
-    { "met": 30, "label": "TCM 1", "note": "First mid-course correction during 7-month cruise.", "type": "info" },
-    { "met": 120, "label": "TCM 2", "note": "Mid-cruise correction.", "type": "info" },
-    { "met": 216, "label": "TCM 3", "note": "Final approach correction before TGO/Schiaparelli separation.", "type": "info" },
-    { "met": 216.5, "label": "SEPARATION", "note": "Schiaparelli separated from TGO 2016-10-16, three days before atmospheric entry.", "type": "nominal" },
-    { "met": 219, "label": "ENTRY", "note": "Atmospheric entry 2016-10-19.", "type": "nominal" },
-    { "met": 219.01, "label": "DESCENT ANOMALY", "note": "IMU saturation → premature parachute jettison + thruster cutoff at altitude → impact ~150 m/s in Meridiani Planum.", "type": "warning" }
+    { "met": 0, "label": "ЛАНСИРАЊЕ", "note": "Ракета-носач Proton-M полетела је са космодрома Baikonur 14. марта 2016. године. Склоп летелица TGO + Schiaparelli.", "type": "nominal" },
+    { "met": 0.01, "label": "TMI", "note": "Убацивање на путању ка Марсу помоћу горњег степена Briz-M.", "type": "nominal" },
+    { "met": 30, "label": "TCM 1", "note": "Прва корекција путање током седмомесечног крстарења.", "type": "info" },
+    { "met": 120, "label": "TCM 2", "note": "Корекција путање на средини крстарења.", "type": "info" },
+    { "met": 216, "label": "TCM 3", "note": "Завршна корекција путање при приласку пре раздвајања летелица TGO и Schiaparelli.", "type": "info" },
+    { "met": 216.5, "label": "РАЗДВАЈАЊЕ", "note": "Schiaparelli се одвојио од летелице TGO 16. октобра 2016. године, три дана пре уласка у атмосферу.", "type": "nominal" },
+    { "met": 219, "label": "УЛАЗАК", "note": "Улазак у атмосферу 19. октобра 2016. године.", "type": "nominal" },
+    { "met": 219.01, "label": "АНОМАЛИЈА ПРИ СПУШТАЊУ", "note": "Засићење IMU-а → превремено одбацивање падобрана и искључивање потисника на висини → удар брзином од ~150 m/s у Meridiani Planum.", "type": "warning" }
   ]
 }

@@ -3,7 +3,7 @@
   "type": "VUELO TRIPULADO LUNAR · REALIZADO (ATERRIZAJE ABORTADO)",
   "first": "La misión que convirtió un desastre casi seguro en el rescate más celebrado de la NASA",
   "dispatch": "Apollo 13 nunca aterrizó, y es la misión que todos recuerdan. Dos días después del despegue, un tanque de oxígeno se desgarró y transformó un vuelo de rutina hacia las tierras altas de Fra Mauro en un problema de cuatro días: mantener vivos a tres hombres en una nave agonizante a un cuarto de millón de millas de casa. Lo que los salvó no fue el heroísmo, sino la preparación y una sala llena de personas resolviendo el problema en tiempo real, improvisando una manera de respirar y una ruta a casa con lo que ya estaba atornillado al vehículo. La NASA lo llamó un fracaso exitoso. Es más cercano a la verdad decir que es el vuelo que demostró que la agencia era tan competente como afirmaba serlo.",
-  "description": "Apollo 13 estaba destinada a ser el tercer aterrizaje lunar tripulado, apuntando a las tierras altas de Fra Mauro. A las 55 horas 54 minutos del vuelo, un tanque de oxígeno en el Módulo de Servicio se rompió, incapacitando los sistemas eléctricos y de soporte vital del Módulo de Comando-Servicio. Con el aterrizaje cancelado, la tripulación —James Lovell, Jack Swigert y Fred Haise— apagó el CSM, se trasladó al Módulo Lunar Aquarius como bote salvavidas, y utilizó el motor de descenso del LM para un encendido de Pericintio+2 horas que los colocó en una trayectoria de retorno libre rápida. Pasaron junto a la Luna a 254 km de altitud el 1970-04-15 y amarizaron con seguridad en el Pacífico Sur el 1970-04-17. La misión se estudia hoy como un modelo de improvisación de ingeniería disciplinada en tiempo real.",
+  "description": "Apollo 13 estaba destinada a ser el tercer aterrizaje lunar tripulado, apuntando a las tierras altas de Fra Mauro. A las 55 horas 54 minutos del vuelo, un tanque de oxígeno en el Módulo de Servicio se rompió, incapacitando los sistemas eléctricos y de soporte vital del Módulo de Comando-Servicio. Con el aterrizaje cancelado, la tripulación —James Lovell, Jack Swigert y Fred Haise— apagó el CSM, se trasladó al Lunar Module Aquarius como bote salvavidas, y utilizó el motor de descenso del LM para un encendido de Pericynthion+2 horas que los colocó en una trayectoria de retorno libre rápida. Pasaron junto a la Luna a 254 km de altitud el 1970-04-15 y amarizaron con seguridad en el Pacífico Sur el 1970-04-17. La misión se estudia hoy como un modelo de improvisación de ingeniería disciplinada en tiempo real.",
   "events": [
     {
       "met": 0,
@@ -26,7 +26,7 @@
     {
       "met": 2.33,
       "label": "RUPTURA DEL TANQUE DE OXÍGENO #2",
-      "note": "El comando de agitación criogénica del SM inicia un cortocircuito e incendio y ruptura del tanque. «Houston, tenemos un problema.» La energía y el agua disminuyen; el Módulo Lunar Aquarius se convierte en el bote salvavidas.",
+      "note": "El comando de agitación criogénica del SM inicia un cortocircuito, incendio y ruptura del tanque. «Houston, tenemos un problema.» La energía y el agua disminuyen; el LM Aquarius se convierte en el bote salvavidas.",
       "type": "warning"
     },
     {

@@ -6,7 +6,7 @@
   "events": [
     { "met": 0, "label": "LANZAMIENTO NEW GLENN", "note": "Despega desde Cape Canaveral LC-36; la primera etapa regresa para recuperación.", "type": "nominal" },
     { "met": 0.2, "label": "ITL", "note": "La segunda etapa del New Glenn realiza el encendido de inyección translunar.", "type": "nominal" },
-    { "met": 1.5, "label": "MCT-1", "note": "Primera corrección de trayectoria.", "type": "nominal" },
+    { "met": 1.5, "label": "TCM-1", "note": "Primera corrección de trayectoria.", "type": "nominal" },
     { "met": 4, "label": "ILO", "note": "Inserción en órbita lunar mediante el motor principal BE-7.", "type": "nominal" },
     { "met": 4.1, "label": "DESCENSO PROPULSADO", "note": "Descenso del BE-7 modulado a la superficie lunar — primer aterrizaje lunar de Blue Origin.", "type": "info" }
   ]

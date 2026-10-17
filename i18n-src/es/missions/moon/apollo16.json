@@ -3,7 +3,7 @@
   "dispatch": "Apollo 16 fue a las tierras altas lunares para muestrear antiguos volcanes y descubrió que nunca había habido ninguno. Los geólogos estaban seguros de que la pálida y accidentada región de Descartes era volcánica; cada roca que Young y Duke trajeron de vuelta era brecha — escombros soldados entre sí por impactos. Estar equivocados fue la recompensa: las brillantes tierras altas de la Luna resultaron ser un registro de un joven sistema solar bajo bombardeo incesante, no erupción. Es un ejemplo claro de cómo la exploración realmente justifica su valor — vas a confirmar lo que ya crees saber, y el lugar te dice algo mejor.",
   "type": "ATERRIZADOR TRIPULADO · VOLÓ",
   "first": "Primer alunizaje en las tierras altas lunares — Descartes; \"Lunar Grand Prix\" de John Young",
-  "description": "El quinto alunizaje tripulado y el primero en un sitio de tierras altas no-mare. Los geólogos esperaban que Descartes fuera volcánico; Apollo 16 lo desmintió — cada roca devuelta era brecha (escombros destrozados por impacto), reformulando la comprensión de las tierras altas lunares como productos de impactos catastróficos en lugar de vulcanismo antiguo. Young y Duke completaron tres EVAs apoyadas por LRV totalizando 20 h 14 m, atravesaron 26,7 km y devolvieron 95,7 kg de muestras (la mayor cosecha de Apollo hasta esa fecha). El \"Lunar Grand Prix\" de Young — una prueba de velocidad televisada del LRV — alcanzó un pico de ~17 km/h.",
+  "description": "El quinto alunizaje tripulado y el primero en un sitio de tierras altas no lunarejo. Los geólogos esperaban que Descartes fuera volcánico; Apollo 16 desacreditó esta teoría — todas las rocas devueltas fueron brecha (escombro fragmentado por impacto), remodelando la comprensión de las tierras altas lunares como productos de impactos catastróficos más que de vulcanismo antiguo. Young y Duke completaron tres EVAs con apoyo de LRV totalizando 20 h 14 m, recorrieron 26,7 km y devolvieron 95,7 kg de muestras (el envío de Apollo más pesado hasta esa fecha). El «Gran Prix lunar» de Young — una prueba de velocidad televisada del LRV — alcanzó un máximo de ~17 km/h. El intento de salto de 11 segundos de Duke durante un intento de récord de salto en largo lo puso en riesgo de dañar su mochila PLSS y fue cancelado. La foto familiar de Charlie Duke y la «Cámara/Espectrógrafo de UV Lejano» — el primer observatorio astronómico operado desde la superficie de otro mundo — ambos terminaron en el sitio de alunizaje. Mattingly, originalmente en Apollo 13 (reemplazado antes del lanzamiento por preocupaciones de sarampión alemán), finalmente logró volar a la Luna.",
   "events": [
     {
       "met": 0,
@@ -20,55 +20,55 @@
     {
       "met": 3.3,
       "label": "LOI",
-      "note": "Lunar orbit insertion. SPS ∆v ~0.91 km/s.",
+      "note": "Inserción en órbita lunar. SPS ∆v ~0,91 km/s.",
       "type": "nominal"
     },
     {
       "met": 4.79,
       "label": "SPS ANOMALY",
-      "note": "Pre-descent: a backup SPS gimbal oscillation forced a 6-hour landing-vs-abort engineering review in real time. Landing ultimately approved.",
+      "note": "Anterior al descenso: una oscilación de cardán SPS de reserva obligó a una revisión de ingeniería en tiempo real de 6 horas sobre aterrizaje versus aborto. El aterrizaje fue finalmente aprobado.",
       "type": "warning"
     },
     {
       "met": 5.04,
       "label": "TOUCHDOWN",
-      "note": "Orion lands at Descartes Highlands 1972-04-21 02:23 UTC — first highland (non-mare) landing.",
+      "note": "Orion desciende en Descartes Highlands 1972-04-21 02:23 UTC — primer aterrizaje en las tierras altas (no en mare).",
       "type": "nominal"
     },
     {
       "met": 5.5,
       "label": "FIRST HIGHLANDS EVA",
-      "note": "EVA-1: ALSEP deployment + LRV deployment + first scientific traverse of the lunar highlands.",
+      "note": "EVA-1: despliegue de ALSEP + despliegue de LRV + primer recorrido científico de las tierras altas lunares.",
       "type": "info"
     },
     {
       "met": 6.1,
       "label": "LUNAR GRAND PRIX",
-      "note": "EVA-2: Young's televised LRV speed test (\"lunar Grand Prix\") — peak speed ~17 km/h. Geology traverse up Stone Mountain.",
+      "note": "EVA-2: prueba de velocidad del LRV televisada por Young (« Grand Prix lunar ») — velocidad máxima ~17 km/h. Recorrido geológico hacia Stone Mountain.",
       "type": "info"
     },
     {
       "met": 6.7,
       "label": "FAR-UV CAMERA",
-      "note": "EVA-3: First astronomical observatory deployed on the surface of another world (NRL UV camera-spectrograph).",
+      "note": "EVA-3: Primer observatorio astronómico desplegado en la superficie de otro mundo (cámara-espectrógrafo UV de la NRL).",
       "type": "info"
     },
     {
       "met": 7.81,
       "label": "ASCENT",
-      "note": "Orion lifts off after 71 h 02 m on surface. 95.7 kg samples returned — heaviest Apollo haul to that date.",
+      "note": "Orion despega después de 71 h 02 m en la superficie. Se devolvieron 95,7 kg de muestras — la carga más pesada de Apolo hasta esa fecha.",
       "type": "nominal"
     },
     {
       "met": 8.5,
       "label": "TEI",
-      "note": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+      "note": "Inyección trans-Tierra. SPS ∆v ~1,0 km/s.",
       "type": "nominal"
     },
     {
       "met": 11.07,
       "label": "SPLASHDOWN",
-      "note": "CM splashed down in Central Pacific 1972-04-27 19:45 UTC. Recovery by USS Ticonderoga.",
+      "note": "CM amerizó en el Pacífico Central 1972-04-27 19:45 UTC. Recuperación por el USS Ticonderoga.",
       "type": "nominal"
     }
   ]

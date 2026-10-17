@@ -1,25 +1,25 @@
 {
   "name": "X-37B OTV-4 (USA-261, AFSPC-5)",
   "type": "БЕСПИЛОТНИ СВЕМИРСКИ АВИОН · ЛЕТЕО",
-  "first": "USA-261 / AFSPC-5 — 718 дана у орбити, KSC Shuttle Landing Facility",
-  "description": "Четврти лет X-37B. Лансиран 2015-05-20 у 15:05 UTC са CCAFS SLC-41 ракетом Atlas V 501 AV-054; прво OTV слетање на Shuttle Landing Facility Кенедијевог свемирског центра (иста писта дуга 4,6 km коју су раније користили орбитери Спејс шатла) 2017-05-07 у 11:47 UTC. Носио је AFRL експеримент са потисником на Холовом ефекту (XR-5A, јонски погон) и NASA платформу за тестирање изложености материјала.",
+  "first": "USA-261 / AFSPC-5 — 718 дана у орбити, а потом слетање на писту за слетање Shuttle Landing Facility у свемирском центру KSC",
+  "description": "Четврти лет летелице X-37B. Лансиран 2015-05-20 у 15:05 UTC са комплекса CCAFS SLC-41 на ракети Atlas V 501 AV-054; прво слетање неке летелице OTV на писту Shuttle Landing Facility у Kennedy Space Center (исту писту дугу 4,6 km коју су раније користили орбитери Space Shuttle-а) обављено је 2017-05-07 у 11:47 UTC. Носио је AFRL-ов експеримент са Холовим потисником (XR-5A, јонски погон) и NASA-ину платформу за испитивање излагања материјала Materials Exposure Test bed.",
   "events": [
     {
       "met": 0,
-      "label": "LAUNCH",
-      "note": "Atlas V 501 (AV-054) from CCAFS SLC-41 2015-05-20.",
+      "label": "ЛАНСИРАЊЕ",
+      "note": "Atlas V 501 (AV-054) са комплекса CCAFS SLC-41, 2015-05-20.",
       "type": "nominal"
     },
     {
       "met": 359,
-      "label": "ON-ORBIT OPS",
-      "note": "Apogee ~325 km; classified payload operations.",
+      "label": "ОПЕРАЦИЈЕ У ОРБИТИ",
+      "note": "Апогеј ~325 km; операције са поверљивим корисним теретом.",
       "type": "info"
     },
     {
       "met": 718,
-      "label": "LANDING",
-      "note": "Autonomous runway landing at KSC Shuttle Landing Facility 2017-05-07.",
+      "label": "СЛЕТАЊЕ",
+      "note": "Аутономно слетање на писту Shuttle Landing Facility у свемирском центру KSC, 2017-05-07.",
       "type": "nominal"
     }
   ]

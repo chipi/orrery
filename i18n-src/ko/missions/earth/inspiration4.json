@@ -1,8 +1,8 @@
 {
-  "name": "인스피레이션4",
+  "name": "Inspiration4",
   "type": "유인 자유비행선 · 비행 완료",
   "first": "최초의 전원 민간인 궤도 우주비행; 세인트 주드 어린이 연구병원을 위해 2억 4,300만 달러 모금",
-  "description": "재러드 아이작먼, 시안 프록터, 헤일리 아세노, 크리스 셈브로스키 — 전원이 직업 정부 우주비행사가 아닌 사람들로 구성된 최초의 궤도 비행. 2021-09-15 00:02 UTC LC-39A에서 팰컨 9 B1062(세 번째 비행)로 발사되었고, 크루 드래건 레질리언스(C207, Crew-1에서 이미 비행)에 탑승했다. 51.6° 경사각, 585 km 원형 궤도에 도달했다 — 허블 정비 임무 이후 가장 높은 유인 궤도. 어떠한 정거장과도 도킹하지 않았으며 도킹 어댑터 자리에 장착된 최초의 온보드 큐폴라를 포함한 3일간의 자유 비행을 수행했다. 2021-09-18 23:06 UTC 플로리다 해안 인근에 착수했다. 임무는 세인트 주드 어린이 연구병원을 위해 2억 4,300만 달러 이상을 모금했다 — 아세노는 세인트 주드의 전 환자이며 궤도에 오른 최초의 암 생존자다.",
+  "description": "Jared Isaacman, Sian Proctor, Hayley Arceneaux, Chris Sembroski — 전문 정부 우주비행사가 아닌 사람들로만 구성된 첫 번째 궤도 비행. 2021년 9월 15일 00:02 UTC에 LC-39A에서 Falcon 9 B1062(세 번째 비행)로 발사되었으며, Crew Dragon Resilience(C207, 이전에 Crew-1에서 비행함) 위에 탑재됨. 높이 585km의 원형 궤도에 진입하였으며, 경사각 51.6° — Hubble 서비스 임무 이후 가장 높은 유인 궤도. 어떤 우주정거장과도 도킹하지 않았으며, 3일간의 자유 비행 포함 (도킹 어댑터를 대체하는 첫 번째 기내 큐폴라). 2021년 9월 18일 23:06 UTC에 플로리다 해안 인근에서 물에 착수함. 이 임무는 St. Jude Children's Research Hospital을 위해 2억 4,300만 달러 이상을 모금했음 — Arceneaux는 전직 St. Jude 환자이며 궤도에 진입한 첫 번째 암 생존자.",
   "events": [
     {
       "met": 0,
@@ -13,19 +13,19 @@
     {
       "met": 0.05,
       "label": "ORBIT",
-      "note": "585 km circular, 51.6° inclination — highest crewed orbit since Hubble servicing.",
+      "note": "고도 585km 원형, 기울기 51.6° — Hubble 정비 이후 가장 높은 유인 궤도.",
       "type": "nominal"
     },
     {
       "met": 1,
       "label": "CUPOLA WINDOW",
-      "note": "First viewing through the Crew Dragon cupola (replacing docking adapter).",
+      "note": "Crew Dragon 큐폴라를 통한 최초 관측 (도킹 어댑터 대체).",
       "type": "info"
     },
     {
       "met": 2.96,
       "label": "SPLASHDOWN",
-      "note": "Resilience splashed down off Florida coast 2021-09-18 23:06 UTC.",
+      "note": "Resilience는 2021-09-18 23:06 UTC에 Florida 해안 앞바다에 착수했습니다.",
       "type": "nominal"
     }
   ]

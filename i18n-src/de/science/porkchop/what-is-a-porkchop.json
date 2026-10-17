@@ -1,6 +1,6 @@
 {
   "title": "Was ist ein Porkchop-Plot?",
-  "intro_sentence": "Eine 2D-Heatmap, die Trajektoriekosten über alle (Abflugdatum, Flugdauer)-Paare zeigt — das Standardwerkzeug für die Suche nach Startfenstern.",
+  "intro_sentence": "2D-Wärmekarte der Trajektorienkosten für alle (Startdatum, Flugzeit)-Paare – Standard-Werkzeug für Startfenster. (Standard-Porkchops konturieren C3 und Ankunft V∞; Orrery nutzt vereinfachte ∆v-in-km/s-Farbskala.)",
   "narrative_101": [
     "Wenn Missionsplaner überprüfen wollen, ob eine Marsmission machbar ist, berechnen sie nicht eine Trajektorie. Sie berechnen MILLIONEN — jedes mögliche Abflugdatum, jede mögliche Flugdauer, in einem riesigen Gitter — und färben eine Heatmap. Günstige Trajektorien erscheinen als kühle blaue Zonen, teure als rot. Das Ergebnis sieht merkwürdigerweise aus wie ein Schweinekotelett. Die günstige Zone ist das Fleisch des Koteletts; der teure Grat ist der Knochen.",
     "Warum sich mit einer ganzen Heatmap abgeben statt nur eine optimale Lösung zu berechnen? Weil echte Missionen Einschränkungen haben. Vielleicht ist ein bestimmtes Startgelände nur 2026 verfügbar. Vielleicht musst du vor Ende einer Staubsturmsaison landen. Vielleicht ist eine bestimmte Rakete erst ab einem gewissen Monat einsatzbereit. Der Porkchop zeigt dir ALLE Kompromisse auf einmal — wähle eine ausreichend günstige Trajektorie, die in deinen realen Kalender passt.",

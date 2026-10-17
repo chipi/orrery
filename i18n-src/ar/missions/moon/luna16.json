@@ -1,13 +1,13 @@
 {
   "name": "Luna 16",
   "type": "ROBOTIC SAMPLE RETURN · FLOWN",
-  "first": "First robotic lunar sample return; first non-American lunar samples",
-  "description": "Luna 16 was the Soviet Union's first successful robotic sample-return mission and the first non-crewed lunar return of any kind. After Apollo 11 brought home 22 kg of crewed samples in 1969, Luna 16 returned 101 grams of regolith from Mare Fecunditatis a year later — a fraction of Apollo's payload, but a profound proof-of-concept for the alternative architecture. The mission used a Proton-K booster and a direct return profile: descent to the surface, drill core, ascent stage launch, ballistic return capsule to Kazakhstan. The technique was reused for Luna 20 and Luna 24, and decades later by Chang'e 5 and Chang'e 6.",
+  "first": "أول عودة آلية للعينات من سطح القمر؛ أول عينات قمرية غير أمريكية",
+  "description": "كانت Luna 16 أول مهمة عودة عينات آلية ناجحة للاتحاد السوفييتي وأول عودة قمرية غير مأهولة بالبشر من أي نوع. بعد أن أحضرت Apollo 11 22 كيلوغرام من العينات المأهولة بالبشر في عام 1969، أعادت Luna 16 101 غرام من التربة السطحية من Mare Fecunditatis بعد سنة — وهي نسبة صغيرة من حمولة Apollo، لكنها برهان عملي عميق على البنية المعمارية البديلة. استخدمت المهمة محركاً Proton-K وملف عودة مباشر: الهبوط إلى السطح والحفر وإطلاق مرحلة الصعود وكبسولة العودة الباليستية إلى كازاخستان. أعيد استخدام هذه التقنية في Luna 20 و Luna 24، وبعد عقود لاحقة من قبل Chang'e 5 و Chang'e 6.",
   "events": [
     { "met": 0, "label": "LAUNCH", "note": "Proton-K from Baikonur 1970-09-12.", "type": "nominal" },
-    { "met": 0.005, "label": "TLI", "note": "Trans-lunar injection on the Blok-D upper stage.", "type": "nominal" },
-    { "met": 5, "label": "TCM", "note": "Mid-course correction during 4.5-day cruise.", "type": "info" },
-    { "met": 5.1, "label": "LANDING", "note": "Soft landing in Mare Fecunditatis 1970-09-20. Surface ops + drill core (101 g).", "type": "nominal" },
-    { "met": 8, "label": "SAMPLE RETURN", "note": "Capsule recovered in Kazakhstan 1970-09-24. First non-crewed lunar sample return.", "type": "nominal" }
+    { "met": 0.005, "label": "TLI", "note": "حقن عبر مسار القمر على المرحلة العليا Blok-D.", "type": "nominal" },
+    { "met": 5, "label": "TCM", "note": "تصحيح المسار أثناء الرحلة البالغة 4.5 أيام.", "type": "info" },
+    { "met": 5.1, "label": "LANDING", "note": "الهبوط الناعم في Mare Fecunditatis في 1970-09-20. عمليات سطحية + حفر نواة (101 غرام).", "type": "nominal" },
+    { "met": 8, "label": "SAMPLE RETURN", "note": "تم استرجاع الكبسولة في كازاخستان 1970-09-24. أول عودة عينات قمرية غير مأهولة بالبشر.", "type": "nominal" }
   ]
 }

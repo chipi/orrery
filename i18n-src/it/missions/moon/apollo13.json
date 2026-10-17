@@ -3,7 +3,7 @@
   "type": "VOLO CON SORVOLO EQUIPAGGIO · COMPLETATO (ALLUNAGGIO ANNULLATO)",
   "first": "La missione che trasformò un quasi-disastro nel salvataggio più celebre della NASA",
   "dispatch": "Apollo 13 non ha mai allunato, eppure è la missione che tutti ricordano. Due giorni dopo il lancio, un serbatoio di ossigeno si squarciò e trasformò un volo di routine verso gli altopiani di Fra Mauro in un problema di quattro giorni per mantenere in vita tre uomini in un'astronave morente a trecentomila chilometri da casa. A salvarli non fu l'eroismo, ma la preparazione e una stanza piena di persone che risolvevano il problema in tempo reale, improvvisando un modo per respirare e un modo per tornare a casa con quello che era già bullonato al veicolo. La NASA lo chiamò un successo mancato. È più accurato dire che è il volo che ha provato che l'agenzia era all'altezza di quello che asseriva.",
-  "description": "Apollo 13 doveva essere il terzo allunaggio con equipaggio, mirato agli altopiani di Fra Mauro. A 55 ore e 54 minuti di volo, un serbatoio di ossigeno nel Modulo di Servizio si ruppe, compromettendo i sistemi elettrici e di supporto vitale del Modulo di Comando e Servizio. Con l'allunaggio annullato, l'equipaggio — James Lovell, Jack Swigert e Fred Haise — spense il CSM, si trasferì nel Modulo Lunare Aquarius come scialuppa di salvataggio, e utilizzò il motore di discesa dell'LM per un'accensione a Pericintio+2 ore che li pose su una traiettoria di ritorno libero veloce. Sorvolarono la Luna a 254 km di altitudine il 15 aprile 1970 e ammararono in sicurezza nell'Oceano Pacifico meridionale il 17 aprile 1970. La missione è studiata oggi come modello di improvvisazione ingegneristica disciplinata in tempo reale.",
+  "description": "Apollo 13 era destinata a essere il terzo allunaggio con equipaggio umano, con obiettivo l'altopiano Fra Mauro. A 55 ore e 54 minuti dal lancio, un serbatoio di ossigeno nel Modulo di Servizio si ruppe, disabilitando i sistemi elettrici e di supporto vitale del Modulo di Comando-Servizio. Con l'allunaggio cancellato, l'equipaggio — James Lovell, Jack Swigert e Fred Haise — spense il CSM, si trasferì nel Modulo Lunare Aquarius usandolo come scialuppa di salvataggio, e utilizzò il motore di discesa del LM per un'accensione a Pericynthion+2 ore che li mise su una traiettoria libera di ritorno veloce. Passarono accanto alla Luna a 254 km di altitudine il 1970-04-15 e ammararono in sicurezza nell'Oceano Pacifico meridionale il 1970-04-17. La missione è studiata oggi come modello di improvvisazione ingegneristica disciplinata in tempo reale.",
   "events": [
     {
       "met": 0,
@@ -26,7 +26,7 @@
     {
       "met": 2.33,
       "label": "ROTTURA SERBATOIO OSSIGENO #2",
-      "note": "Il comando di mescolamento criogenico del SM innesca un cortocircuito e la rottura del serbatoio. \"Houston, abbiamo avuto un problema.\" Potenza e acqua calano; il Modulo Lunare Aquarius diventa la scialuppa di salvataggio.",
+      "note": "Il comando di mescolamento criogenico del SM innesca un cortocircuito e la rottura del serbatoio. \"Houston, abbiamo avuto un problema.\" Potenza e acqua calano; il LM Aquarius diventa la scialuppa di salvataggio.",
       "type": "warning"
     },
     {

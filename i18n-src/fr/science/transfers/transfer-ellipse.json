@@ -1,14 +1,14 @@
 {
   "title": "Ellipse de transfert",
-  "intro_sentence": "L'arc képlérien qui porte une sonde d'une orbite à une autre — Soleil au foyer.",
+  "intro_sentence": "L'arc Keplerian qui porte une sonde d'une orbite à une autre — Soleil au foyer.",
   "narrative_101": [
-    "Planification de mission semble être à propos de moteurs. C'est surtout choisir une ellipse. Apollo, Voyager, Perseverance — tous chevauchent une orbite elliptique entre départ et arrivée.",
-    "Mêmes règles que toute orbite képlérienne. Sonde n'en vole que la MOITIÉ : monte d'un côté, descend de l'autre."
+    "La planification de mission, ça ressemble à de l'ingénierie moteurs et fusées. C'est surtout une question de choisir une ellipse. Toute croisière interplanétaire — Apollo vers la Lune, Voyager vers Neptune, Perseverance vers Mars — n'est que l'histoire d'un engin spatial qui chemine sur une orbite elliptique entre son point de départ et sa destination. Le nom savant pour cette ellipse, c'est l'orbite de transfert.",
+    "Elle suit les mêmes règles que n'importe quelle autre orbite keplerienne. Le Soleil occupe l'un des foyers. Le vaisseau spatial se déplace lentement à l'extrémité la plus éloignée et rapidement à l'extrémité la plus proche. L'équation vis-viva permet toujours de calculer sa vitesse. La troisième loi de Kepler vous donne toujours le temps de transfert en fonction de la taille. Rien d'exotique."
   ],
   "body_paragraphs": [
-    "Après avoir quitté l'orbite Terre, tu es sur une ellipse autour du Soleil = orbite de transfert. Mêmes propriétés : demi-grand axe, excentricité, périhélie, aphélie.",
-    "Deux ancrages : départ (périhélie si extérieur) et arrivée (aphélie). Demi-grand axe = moyenne.",
-    "Dans le HUD `/fly` la sonde trace cette ellipse en temps réel."
+    "Une fois que vous avez brûlé votre carburant pour sortir de l'orbite terrestre, vous êtes sur une ellipse autour du Soleil. Cette ellipse est l'orbite de transfert, et elle possède toutes les mêmes propriétés que toute autre : demi-grand axe, excentricité, périhélie, aphélie. Le fait que vous alliez quelque part ne change pas la géométrie — la gravité se fiche de votre destination.",
+    "Deux ancres définissent une ellipse de transfert : le point d'où vous partez (périhélie si vous allez vers l'extérieur) et le point où vous aboutirez (aphélie). Le demi-grand axe est la moyenne de ces deux rayons. Modifiez l'une ou l'autre ancre et toute l'ellipse se remodèle — allez plus loin, l'ellipse s'étire, le voyage dure plus longtemps.",
+    "Sur le HUD `/fly` d'Orrery, vous verrez le vaisseau spatial tracer cette ellipse en temps réel. L'arc de transfert à l'écran est un rendu visuel de la même conique que les mathématiques le décrivent — le Soleil à l'un des foyers, le périhélie derrière vous, l'aphélie devant vous."
   ],
   "diagram_caption": "Deux orbites coplanaires connectées par ellipse de transfert avec Soleil au foyer."
 }

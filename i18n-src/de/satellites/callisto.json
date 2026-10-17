@@ -1,9 +1,9 @@
 {
-  "description": "Callisto liegt außerhalb der Laplace-Resonanz, die die Gezeitenwärmung in Io, Europa und Ganymed antreibt – daher schmolz sein Inneres nie ausreichend auf, um sich vollständig zu differenzieren oder seine Kruste zu erneuern. Das Ergebnis ist die am besten erhaltene Aufzeichnung des Impaktbombardements im inneren Galilei-System, einschließlich des spektakulären Valhalla-Beckens mit seinem ~10-Ring-System, das sich über etwa ein Viertel des Umfangs des Mondes erstreckt. Trotz des Fehlens von Gezeitenwärmung entdeckte Galileos Magnetometer ein induziertes Magnetfeld, das mit einem tiefen salzigen Ozean ~100 km unter der Oberfläche vereinbar ist. Seine niedrige Strahlenumgebung (im Vergleich zu Europa oder Ganymed) und das langlebige Wasser machen ihn zu einem wahrscheinlichen Ausgangspunkt für zukünftige bemannte Missionen zum Jupiter-System.",
+  "description": "Callisto liegt außerhalb der Laplace-Resonanz, die die Gezeitenwärmung in Io, Europa und Ganymede antreibt – daher schmolz sein Inneres nie ausreichend auf, um sich vollständig zu differenzieren oder seine Kruste zu erneuern. Das Ergebnis ist die am besten erhaltene Aufzeichnung des Impaktbombardements im inneren Galilei-System, einschließlich des spektakulären Valhalla-Beckens mit seinem ~10-Ring-System, das sich über etwa ein Viertel des Umfangs des Mondes erstreckt. Trotz des Fehlens von Gezeitenwärmung entdeckte Galileos Magnetometer ein induziertes Magnetfeld, das mit einem tiefen salzigen Ozean ~100 km unter der Oberfläche vereinbar ist. Seine niedrige Strahlenumgebung (im Vergleich zu Europa oder Ganymede) und das langlebige Wasser machen ihn zu einem wahrscheinlichen Ausgangspunkt für zukünftige bemannte Missionen zum Jupiter-System.",
   "surface_composition": "Rund 40 % Wassereis + 60 % Silikatgestein; die am stärksten verkraterte Oberfläche im Sonnensystem — nahezu gesättigt, unberührt von Oberflächenerneuerung. Bemerkenswertes Merkmal: das 3.800 km große Valhalla-Mehrringeinschlagsbecken.",
   "mission_visits": [
     "Voyager 1 + 2 — USA, 1979 (mapping)",
-    "Galileo orbiter — USA, 1995–2003 (multiple flybys; ocean candidate)"
+    "Galileo orbiter – USA, 1995–2003 (mehrfache Vorbeiflüge; Kandidat für einen Ozean)"
   ],
   "library_labels": {
     "callisto-wiki": "Wikipedia — Kallisto",
@@ -14,7 +14,7 @@
     {
       "tab": "orbits",
       "section": "semi-major-axis",
-      "why": "Callisto umkreist Jupiter außerhalb der Laplace-Resonanz — seine große Halbachse von 1,88 Millionen km liegt jenseits der intensivsten Strahlungsgürtel Jupiters und macht ihn zum raumfahrtfreundlichsten Galileischen Mond."
+      "why": "Callisto umkreist Jupiter außerhalb der Laplace-Resonanz — seine große Halbachse von 1,88 Millionen km liegt jenseits der intensivsten Strahlungsgürtel Jupiters und macht ihn zum raumfahrtfreundlichsten Galilean Mond."
     },
     {
       "tab": "orbits",

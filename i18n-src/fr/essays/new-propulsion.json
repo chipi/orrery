@@ -32,7 +32,7 @@
     },
     {
       "type": "prose",
-      "md": "Ce qui a été lancé en octobre 2023 vers l'astéroïde métallique Psyché a poussé l'idée plus loin. [Psyché](/missions?id=psyche) utilise des propulseurs à effet Hall — une architecture différente, dans laquelle le champ magnétique piège les électrons et crée une décharge annulaire qui accélère les ions plus efficacement à faible puissance. Les propulseurs Hall sont moins chers, plus simples et compacts assez pour en installer quatre sur un engin spatial de classe Discovery. Les propulseurs de Psyché fonctionnent à environ 1 750 secondes d'impulsion spécifique, inférieur aux moteurs ioniques de Dawn mais plus de quatre fois le plafond chimique, et ils représentent la première fois que les propulseurs Hall — des outils de travail communs du maintien à poste en orbite terrestre — ont été de confiance pour la propulsion principale en espace lointain. La même technologie qui pousse les satellites géostationnaires de quelques centimètres par seconde vole maintenant une mission interplanétaire."
+      "md": "Ce qui s'est lancé en octobre 2023 vers l'astéroïde métallique Psyché a poussé l'idée plus loin. [Psyche](/missions?id=psyche) utilise des propulseurs à effet Hall — une architecture différente, dans laquelle le champ magnétique piège les électrons et crée une décharge annulaire qui accélère les ions plus efficacement à puissance réduite. Les propulseurs à effet Hall sont moins chers, plus simples et suffisamment compacts pour en embarquer quatre à bord d'un vaisseau de classe Discovery. Les propulseurs de Psyche fonctionnent à environ 1 750 secondes d'impulsion spécifique, moins que les moteurs ioniques de Dawn mais plus de quatre fois le plafond chimique, et ils représentent la première fois que les propulseurs à effet Hall — des chevaux de bataille courants du maintien en orbite terrestre — sont confiés à la propulsion primaire interplanétaire. La même technologie qui pousse les satellites géostationnaires de centimètres par seconde vole désormais une mission interplanétaire."
     },
     {
       "type": "figure",
@@ -122,7 +122,7 @@
     },
     {
       "type": "prose",
-      "md": "Ce qui est étrange, en examinant cette histoire, ce n'est pas que les alternatives n'aient pas volé — c'est qu'elles ont été prêtes, en principe, depuis si longtemps. Les limites d'impulsion spécifique de la propulsion nucléo-thermique ont été calculées avant Spoutnik. La physique de la navigation solaire était comprise avant la Deuxième Guerre mondiale. Le concept de propulsion ionique est apparu dans une mémoire d'Esther Goddard décrivant une conversation avec Robert Goddard en 1906, quatre ans avant qu'il ne fasse voler quoi que ce soit. Les idées sont anciennes. Le vol est nouveau."
+      "md": "Ce qui est étrange, en examinant cette histoire, ce n'est pas que les solutions alternatives ne se soient pas concrétisées — c'est qu'elles aient été prêtes, en principe, depuis si longtemps. Les limites d'impulsion spécifique de la propulsion nucléo-thermique ont été calculées avant Spoutnik. La physique de la voile solaire était comprise avant la Seconde Guerre mondiale. Le concept de propulsion ionique a été présenté dans une biographie d'Esther Goddard décrivant une conversation avec Robert Goddard en 1906, quatre ans avant qu'il ne fasse voler quoi que ce soit. Les idées sont anciennes. Le vol est nouveau."
     },
     {
       "type": "prose",
@@ -138,7 +138,7 @@
     },
     {
       "type": "prose",
-      "md": "La fusée chimique a fait des choses extraordinaires. Elle a porté douze personnes à la surface de la Lune. Elle a atterri un rover de la taille d'une voiture sur Mars à la fin de sept minutes de terreur automatisée. Elle a mis le télescope James Webb dans son orbite de halo L2 avec si peu d'erreur que la marge de carburant pour le maintien à poste, initialement budgétisée pour dix ans, projette maintenant de durer vingt ans. Pour mettre de la masse hors de la surface terrestre contre la gravité — la partie la plus difficile de toute mission spatiale — elle restera l'outil pour un avenir prévisible. L'équation Tsiolkovsky punit la masse d'ergol en orbite moins qu'au sol, et aucun propulseur ionique ne lèvera quoi que ce soit d'un pas de tir."
+      "md": "La fusée chimique a réalisé des choses extraordinaires. Elle a transporté douze personnes à la surface de la Lune. Elle a fait atterrir un rover de la taille d'une voiture sur Mars au terme de sept minutes de terreur automatisée. Elle a placé le James Webb Space Telescope sur son orbite en halo L2 avec une précision si faible en erreur que la marge de carburant pour le maintien à poste, initialement budgétisée pour dix ans, devrait désormais durer vingt ans. Pour éjecter la masse de la surface de la Terre en combattant la gravité — la partie la plus difficile de toute mission spatiale — elle restera l'outil pour l'avenir prévisible. L'équation de Tsiolkovsky pénalise la masse de propergol en orbite moins qu'elle ne le fait au sol, et aucun propulseur ionique ne soulèvera quoi que ce soit depuis une rampe de lancement."
     },
     {
       "type": "prose",

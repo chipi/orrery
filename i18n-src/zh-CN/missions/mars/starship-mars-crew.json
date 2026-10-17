@@ -1,16 +1,16 @@
 {
   "name": "Starship Mars Crew",
   "type": "CREWED SAMPLE RETURN · CONCEPT",
-  "first": "First proposed crewed return mission to Mars (SpaceX architecture)",
-  "description": "SpaceX's long-term crewed Mars architecture as outlined in Elon Musk's 2016, 2017, and 2024 IAC presentations. A Starship lifts off from Earth fully fuelled in low-Earth orbit via a fleet of refilling tanker flights, performs trans-Mars injection, and lands a crew of roughly 10 with cargo and ISRU equipment on the Martian surface. Return-leg propellant (methane + liquid oxygen) is manufactured on Mars from atmospheric CO₂ and subsurface water ice via the Sabatier process, enabling the same Starship to lift off again, perform trans-Earth injection, and return the crew. Round-trip duration depends on the launch window and surface stay; the illustrative timeline shown here is ~2.5 years door-to-door (213 days outbound, ~500-day surface stay, return on the next favourable window). The architecture is conceptual — date and parameters subject to substantial revision pending Starship maturation and ISRU validation.",
+  "first": "首个提议的载人火星往返任务（SpaceX 方案）",
+  "description": "SpaceX 的长期载人火星建筑方案，如 Elon Musk 在 2016 年、2017 年和 2024 年 IAC 演讲中所述。Starship 从地球起飞时在近地轨道上完全加注燃料，需要通过一支加油油轮飞队进行多次补给，执行火星转移注入，并将约 10 名乘员及货物和 ISRU 设备送达火星表面。返回阶段推进剂（甲烷+液态氧）通过 Sabatier 工艺利用火星大气中的二氧化碳和地下冰储备在火星上制造，使同一 Starship 能够再次起飞、执行地球转移注入并将乘员送回。往返时间取决于发射窗口和地表停留时间；此处所示的示意时间表约为 2.5 年（门到门），包括 213 天的往程、约 500 天的地表停留以及在下一个有利窗口返回。该建筑方案具有概念性——具体日期和参数在 Starship 成熟度提高和 ISRU 验证完成后可能会进行重大修订。",
   "events": [
-    { "met": 0, "label": "STARSHIP LAUNCH", "note": "Crewed Starship lifts off from Boca Chica or Cape Canaveral.", "type": "nominal" },
-    { "met": 1, "label": "ORBITAL REFILLING", "note": "Tanker fleet rendezvous and propellant transfer in LEO across multiple flights.", "type": "nominal" },
-    { "met": 2, "label": "TMI BURN", "note": "Trans-Mars injection from fully-fuelled LEO state.", "type": "nominal" },
-    { "met": 30, "label": "TCM-1", "note": "First mid-course correction.", "type": "nominal" },
-    { "met": 213, "label": "MARS LANDING", "note": "Powered descent to Mars surface — no parachutes, no airbags, no sky-crane.", "type": "info" },
-    { "met": 700, "label": "RETURN PROP COMPLETE", "note": "ISRU plant has produced sufficient methane + LOX for return-trip propellant.", "type": "info" },
-    { "met": 750, "label": "TEI BURN", "note": "Trans-Earth injection — Starship lifts off Mars surface and burns for Earth-return trajectory.", "type": "nominal" },
-    { "met": 950, "label": "EARTH ARRIVAL", "note": "Atmospheric entry. Mission complete.", "type": "info" }
+    { "met": 0, "label": "STARSHIP LAUNCH", "note": "载人 Starship 从 Boca Chica 或 Cape Canaveral 起飞。", "type": "nominal" },
+    { "met": 1, "label": "ORBITAL REFILLING", "note": "油轮舰队在近地轨道进行多次汇合和推进剂转移。", "type": "nominal" },
+    { "met": 2, "label": "TMI BURN", "note": "从完全加注燃料的近地轨道状态执行火星转移注入。", "type": "nominal" },
+    { "met": 30, "label": "TCM-1", "note": "第一次中途修正。", "type": "nominal" },
+    { "met": 213, "label": "MARS LANDING", "note": "动力下降至火星表面 — 无降落伞、无充气垫、无天空起重机。", "type": "info" },
+    { "met": 700, "label": "RETURN PROP COMPLETE", "note": "ISRU 工厂已生产足够的甲烷 + 液态氧作为往返推进剂。", "type": "info" },
+    { "met": 750, "label": "TEI BURN", "note": "地球转移注入 — Starship 从火星表面起飞并点火进入地球返回轨道。", "type": "nominal" },
+    { "met": 950, "label": "EARTH ARRIVAL", "note": "大气进入。任务完成。", "type": "info" }
   ]
 }

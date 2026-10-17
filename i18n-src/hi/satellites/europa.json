@@ -3,9 +3,9 @@
   "surface_composition": "~15–25 km मोटी जल-बर्फ की परत, जो कैओस भू-भाग द्वारा चापाकार कटकों (arcuate ridges) और लेंटीकुली (lenticulae) के जाल में विदीर्ण है; लवण (संभवतः मैग्नीशियम सल्फेट + सोडियम क्लोराइड) कैओस क्षेत्रों में बर्फ को लाल-भूरा रंग प्रदान करते हैं।",
   "mission_visits": [
     "Voyager 1 + 2 — USA, 1979 (mapping)",
-    "Galileo orbiter — USA, 1995–2003 (subsurface-ocean evidence)",
-    "Juno — USA, 2022 (closest pass since Galileo)",
-    "Europa Clipper — USA, launch 2024 (mission underway)"
+    "Galileo ऑर्बिटर — USA, 1995–2003 (उपसतह महासागर के साक्ष्य)",
+    "Juno — USA, 2022 (Galileo के बाद से सबसे निकट गुजर)",
+    "Europa Clipper — USA, 2024 में प्रक्षेपण (मिशन जारी है)"
   ],
   "library_labels": {
     "europa-wiki": "Wikipedia — यूरोपा",
@@ -22,7 +22,7 @@
     {
       "tab": "orbits",
       "section": "eccentricity",
-      "why": "यूरोपा की ничтожный 0.009 उत्केंद्रता Io के व्यतिक्रमणों द्वारा बाध्य है — इसके बिना उप-सतह महासागर जम जाता। Europa Clipper (NASA, 2024–) इसका अध्ययन करने के लिए प्रक्षेपित हो रहा है।"
+      "why": "Europa की छोटी 0.009 विलक्षणता Io के विक्षोभों द्वारा मजबूर की जाती है — इसके बिना उपसतह महासागर जम जाता। Europa Clipper (NASA, 2024–) इसका अध्ययन करने के लिए प्रक्षेपित हो रहा है।"
     }
   ]
 }

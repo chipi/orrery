@@ -1,5 +1,5 @@
 {
-  "title": "La Grammatica del Delta-V",
+  "title": "La grammatica del delta-v",
   "dek": "Ogni veicolo spaziale che abbia mai lasciato la Terra ha portato con sé una cosa più importante di ogni altra: un bilancio. Non denaro — velocità. L'equazione del razzo lo distribuiva in chilometri al secondo, la gravità era l'unico riempimento gratuito, e ogni ingegnere che abbia mai pianificato una missione è vissuto dentro quel vincolo dal 1903.",
   "body": [
     {
@@ -8,7 +8,7 @@
     },
     {
       "type": "prose",
-      "md": "La regola che ha scritto questo vincolo fu pubblicata nel 1903 da un insegnante russo autodidatta di una piccola provincia di nome Konstantin Tsiolkovsky, che lavorava da solo in una piccola città provinciale. La sua [equazione del razzo](/science/propulsion/tsiolkovsky) non è stata abrogata da allora: **∆v = Isp · g₀ · ln(m₀/mf)**. Leggendola in italiano: la velocità che puoi ottenere equivale all'efficienza del tuo motore — misurata in secondi di [impulso specifico](/science/propulsion/specific-impulse) e moltiplicata per una costante gravitazionale di 9,807 m/s² — per il logaritmo naturale di quanto era più pesante il razzo all'inizio rispetto alla fine. Quel logaritmo è il villano. Perché *ln* è la funzione a crescita più lenta in matematica, significa che ogni chilometro al secondo in più che vuoi aggiungere ti costa un boccone esponenzialmente più grande di massa del propellente — e il propellente deve essere sollevato, il che significa che ha bisogno del suo propellente, che deve essere sollevato a sua volta, e così via in una regressione che non ha fondo."
+      "md": "La regola che ha scritto questo vincolo fu pubblicata nel 1903 da un insegnante russo autodidatta di nome Konstantin Tsiolkovsky, che lavorava da solo in una piccola città provinciale. La sua [equazione del razzo](/science/propulsion/tsiolkovsky) non è stata abrogata da allora: **∆v = Isp · g₀ · ln(m₀/mf)**. Leggendola in italiano: la velocità che puoi ottenere equivale all'efficienza del tuo motore — misurata in secondi di [impulso specifico](/science/propulsion/specific-impulse) e moltiplicata per una costante gravitazionale di 9,807 m/s² — per il logaritmo naturale di quanto era più pesante il razzo all'inizio rispetto alla fine. Quel logaritmo è il villano. Perché *ln* è la funzione a crescita più lenta in matematica, significa che ogni chilometro al secondo in più che vuoi aggiungere ti costa un boccone esponenzialmente più grande di massa del propellente — e il propellente deve essere sollevato, il che significa che ha bisogno del suo propellente, che deve essere sollevato a sua volta, e così via in una regressione che non ha fondo."
     },
     {
       "type": "prose",

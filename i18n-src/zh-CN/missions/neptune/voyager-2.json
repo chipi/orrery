@@ -1,9 +1,9 @@
 {
   "name": "Voyager 2",
   "type": "FLYBY · FLOWN",
-  "first": "Only spacecraft to visit Uranus and Neptune; Grand Tour of four giant planets",
-  "dispatch": "旅行者2号飞行的那条航线,可能再也无法重现。它比孪生兄弟晚发射十六天,走的是一条更慢、更长的弧线,是有史以来唯一造访过天王星和海王星的航天器——这两个世界在几十年后的今天,我们对它们的了解几乎完全来自它飞掠每颗行星时那短短几小时收集的数据。它发现了一颗侧躺着的行星、太阳系中最快的风,以及一颗向太空喷射间歇泉的冰冻卫星,然后在2018年,它也穿越进入了星际空间。每一个返回冰巨星的严肃计划,至今仍依赖于这艘单独的航天器在离去途中所看到的一切。",
-  "description": "The twin that kept going when budgets tightened, Voyager 2 carried the Grand Tour from Jupiter and Saturn out to Uranus and Neptune — still the only close-up images we have of the ice giants. Its Neptune encounter in 1989 revealed the Great Dark Spot and Triton's geysers. Today both Voyagers sail in interstellar space with a golden record as humanity's calling card. Orrery lists Neptune as the catalogue destination; the real path relied on multiple gravity assists.",
+  "first": "唯一访问天王星和海王星的航天器；四大巨行星大巡回之旅",
+  "dispatch": "Voyager 2飞行的那条航线,可能再也无法重现。它比孪生兄弟晚发射十六天,走的是一条更慢、更长的弧线,是有史以来唯一造访过天王星和海王星的航天器——这两个世界在几十年后的今天,我们对它们的了解几乎完全来自它飞掠每颗行星时那短短几小时收集的数据。它发现了一颗侧躺着的行星、太阳系中最快的风,以及一颗向太空喷射间歇泉的冰冻卫星,然后在2018年,它也穿越进入了星际空间。每一个返回冰巨星的严肃计划,至今仍依赖于这艘单独的航天器在离去途中所看到的一切。",
+  "description": "这位坚守岗位的孪生航天器在预算紧张时仍在继续前行，Voyager 2 将四大巨行星大巡回之旅从木星和土星延伸到天王星和海王星——至今我们所拥有的冰巨行星最清晰的图像仍来自它。它在1989年与海王星的相遇揭示了大黑斑和三卫星的间歇泉。如今两艘Voyager都在星际空间中航行，携带着黄金唱片作为人类的问候名片。Orrery 将海王星列为目录目的地；实际路径依靠多次重力辅助实现。",
   "events": [
     {
       "met": 0,
@@ -14,7 +14,7 @@
     {
       "met": 4388,
       "label": "NEPTUNE CLOSEST APPROACH",
-      "note": "Flyby of Neptune and large moon Triton; last planetary encounter of the Grand Tour.",
+      "note": "海王星及其大卫星三卫星的飞掠；四大巨行星大巡回之旅的最后一次行星相遇。",
       "type": "nominal"
     }
   ]

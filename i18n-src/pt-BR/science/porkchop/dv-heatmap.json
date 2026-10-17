@@ -1,5 +1,5 @@
 {
-  "title": "Mapa de Calor de ∆v",
+  "title": "∆v Heatmap",
   "intro_sentence": "A escala de cores que transforma números de ∆v em uma imagem que você consegue ler rapidamente.",
   "narrative_101": [
     "O ponto inteiro de um gráfico de porkchop é a cor. Números em uma grade gigante diriam a mesma coisa, mas você não conseguiria ver os padrões. Então pintamos cada célula — azul-petróleo fresco para trajetórias baratas, amarelo para intermediário, laranja e vermelho para proibitivamente caro. O reconhecimento de padrões toma o lugar da aritmética.",

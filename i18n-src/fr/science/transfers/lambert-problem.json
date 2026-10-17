@@ -2,14 +2,14 @@
   "title": "Problème de Lambert",
   "intro_sentence": "Données deux positions et un temps de transit, trouve l'orbite qui les connecte.",
   "narrative_101": [
-    "Hohmann est le moins cher mais ne te laisse pas choisir date d'arrivée. Lambert le fait.",
-    "Question : je suis en A, je veux être en B en X jours. Quelle orbite ? Lambert 1761 : exactement une ellipse (parfois deux) connecte deux points en temps donné.",
-    "Le cœur de chaque porkchop. Chaque pixel = un problème de Lambert. Orrery résout dans Web Worker."
+    "Le transfert de Hohmann est le chemin le moins cher d'une orbite à une autre, mais la plupart des missions ne volent pas réellement en Hohmann. Elles veulent partir à une date spécifique — par exemple, quand une fusée particulière est prête, ou quand un pas de tir particulier est disponible — et elles veulent arriver à une date spécifique — par exemple, avant qu'une tempête de poussière martienne ne s'apaise. Hohmann ne vous permet pas de choisir. Lambert le permet.",
+    "La question de Lambert semble plus simple que ses mathématiques : je suis au point A, je veux être au point B, et je veux prendre exactement ce nombre de jours pour y arriver. Quelle orbite dois-je suivre ? Lambert a écrit la réponse en 1761 — il existe exactement une ellipse (ou parfois deux, selon la direction que vous prenez) qui relie deux points dans un temps donné.",
+    "C'est le cœur de chaque graphe de fenêtres de tir que vous verrez. Chaque pixel du graphe dans /plan est un problème de Lambert : « partir de la Terre à la date X, atteindre Mars à la date Y — quel en est le coût ? » La couleur est la réponse. Résoudre cela dix mille fois en parallèle et vous obtenez la carte entière en une seule fois. Orrery le fait dans un Web Worker pour que l'interface utilisateur ne se fige pas pendant qu'il réfléchit."
   ],
   "body_paragraphs": [
-    "Lambert demande : je suis ici, veux y aller, ai ce temps. Quelle ellipse ? Deux vecteurs position et temps de vol → orbite unique.",
-    "Hohmann = solution Lambert spécifique. Autres positions/temps = autre ellipse. Temps serré = excentricité plus haute.",
-    "Orrery résout Lambert dans Web Worker à chaque hover de cellule porkchop sur `/plan`."
+    "Le problème de Lambert pose la question : je suis ici, je veux être là, et j'ai ce temps disponible. Quelle ellipse dois-je suivre ? Deux vecteurs position et un temps de vol, et l'équation produit l'orbite de transfert unique (ou deux — il y a un chemin long et un chemin court autour du corps central).",
+    "Le transfert de Hohmann est une solution de Lambert spécifique : positions aux apsides opposées, temps de trajet égal à la moitié de la période de l'ellipse de transfert. Ajustez l'un ou l'autre paramètre — positions différentes, temps différent — et vous obtenez une ellipse différente. Temps plus court, ellipse plus excentrique, énergie de départ plus grande. Les mathématiques ne changent pas ; seules les conditions aux limites changent.",
+    "Orrery résout le problème de Lambert dans un Web Worker chaque fois que vous survolez une cellule du graphique de marche sur `/plan`. Chaque cellule demande : « partir de la Terre à la date X, arriver à Mars à la date Y — quel est le coût en ∆v ? » La couleur que vous voyez est la réponse à cette question, calculée une fois par pixel."
   ],
   "diagram_caption": "Deux vecteurs r₁ et r₂ ; le solveur Lambert trouve l'ellipse de transfert unique."
 }

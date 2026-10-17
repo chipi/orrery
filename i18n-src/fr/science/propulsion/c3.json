@@ -1,15 +1,15 @@
 {
-  "title": "C₃ — Énergie caractéristique",
+  "title": "C3 — Characteristic Energy",
   "intro_sentence": "Combien d'énergie par masse une fusée doit livrer pour quitter le puits gravitationnel terrestre avec vitesse résiduelle.",
   "narrative_101": [
-    "C₃ = jargon ingénieur : combien fort la fusée doit lancer ? Énergie résiduelle après sortie puits Terre. C₃=0 = juste s'échappe. C₃>0 = vitesse en réserve.",
-    "Unité km²/s². Mars C₃ = 8-12. Jupiter direct ~80. New Horizons C₃ = 158 — plus haut jamais — Pluton en 9,5 ans.",
-    "Pourquoi important ? Chaque fusée a courbe C₃ vs charge utile. Falcon Heavy 16 t à C₃=10, seulement 5 t à C₃=80."
+    "C3 est du jargon des ingénieurs de mission pour une question très spécifique : avec quelle force la fusée doit-elle projeter le vaisseau spatial ? C'est l'énergie qui subsiste une fois que vous avez échappé au puits gravitationnel de la Terre. C3 = 0 signifie que vous échappez exactement à la Terre, en arrivant à l'infini avec une vitesse nulle. C3 supérieur à zéro signifie que vous en avez réchappé avec une vitesse supplémentaire en réserve — et c'est cette vitesse supplémentaire qui vous porte vers Mars, Jupiter ou n'importe quel autre endroit.",
+    "Elle se mesure en km²/s² (ce qui semble bizarre mais c'est juste la vitesse au carré) pour que les chiffres restent maniables. Mars demande généralement C3 = 8 à 12. Les vols directs vers Jupiter exigent C3 autour de 80. New Horizons s'est lancée avec C3 = 158 — la plus élevée jamais atteinte — pour atteindre Pluton en neuf ans et demi au lieu de décennies.",
+    "Pourquoi ce nombre compte-t-il autant ? Parce que chaque fusée possède une courbe C3-en-fonction-de-la-charge-utile publiée. À mesure que C3 augmente, la fusée peut livrer moins de masse. Falcon Heavy peut projeter 16 tonnes à C3 = 10, mais seulement 5 tonnes à C3 = 80. La première décision dans la conception d'une mission consiste à adapter le besoin en C3 de la destination à une fusée capable de lancer votre vaisseau spatial à cette énergie. Se tromper ici et la mission ne pourra pas décoller."
   ],
   "body_paragraphs": [
-    "C₃ = V∞² en km²/s². Énergie au-delà d'évasion. C₃=0 = s'échappe juste. C₃=25 = V∞ = 5 km/s héliocentrique résiduelle.",
-    "Lanceurs caractérisés par courbe C₃ vs charge utile. Falcon Heavy ~16 t à C₃=10, ~5 t à C₃=80. Mars 8-12. Jupiter direct ~80. New Horizons C₃ = 158.",
-    "Dans `/missions` FLIGHT tab : C₃ de chaque mission interplanétaire = premier point canonique."
+    "C3 est le carré de la vitesse hyperbolique excédentaire. Unités : km²/s². Il vous indique quelle énergie au-delà de l'échappement votre lanceur doit livrer. C3 = 0 signifie que vous échappez à peine à la gravité terrestre, arrivant à l'infini avec une vitesse nulle. C3 = 25 km²/s² signifie que vous arrivez avec V∞ = 5 km/s de vitesse héliocentriqueexcédentaire.",
+    "Les lanceurs se caractérisent par leur courbe C3-en-fonction-de-la-charge-utile. Falcon Heavy peut projeter ~16 tonnes à C3=10, mais seulement ~5 tonnes à C3=80. Mars demande généralement C3 autour de 8-12. Jupiter en vol direct : C3 autour de 80. New Horizons s'est lancée avec C3 = 158 km²/s² — la plus élevée jamais atteinte pour une mission — pour accomplir le trajet vers Pluto en seulement 9,5 ans.",
+    "Dans l'onglet FLIGHT du `/missions` d'Orrery, le C3 de chaque mission interplanétaire est le point de données de la première ligne canonique. C'est l'unique nombre qui capture « à quel point c'était difficile de lancer »."
   ],
-  "formula_caption": "C₃ = V∞ au carré."
+  "formula_caption": "C3 est simplement V∞ au carré. Même physique, unités différentes."
 }

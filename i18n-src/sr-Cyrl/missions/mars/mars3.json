@@ -1,37 +1,37 @@
 {
   "name": "Mars 3",
   "type": "ORBITER · LANDER · FLOWN",
-  "first": "Prva letilica koja je meko sletela na Mars",
-  "description": "Ambiciozna dvostruka misija Sovjetskog Saveza na Mars 1971. godine — Mars 2 i Mars 3 lansirirani su sa razmakom od 9 dana. Lander Marsa 2 je pao; lander Marsa 3 je ostvario prvo meko sletanje na Mars ali je postao nečujan ~110 sekundi nakon dodira — stvarna transmisija je trajala samo ~14,5 sekundi — moguće usled globalnih pešćanih oluja koja je besnjela u tom vremenu. Orbiter je radio 8 meseci, vraćajući desertine slika i merenja atmosfere. Uprkos kratkoj površinskoj misiji, Mars 3 je pokazao da je problem spuštanja i sletanja na Mars rešiv.",
+  "first": "Прва летелица која је извела меко спуштање на Марс",
+  "description": "Смела двострука мисија Совјетског Савеза ка Марсу 1971. године — Mars 2 и Mars 3 лансирани су с размаком од 9 дана. Лендер летелице Mars 2 се срушио; лендер летелице Mars 3 извео је прво меко спуштање на Марс, али је утихнуо ~110 секунди након додира с тлом — стварни пренос трајао је тек ~14,5 секунди — вероватно због глобалне прашинске олује која је тада беснела. Орбитер је радио 8 месеци и послао десетине снимака и мерења атмосфере. Упркос кратком раду на површини, Mars 3 је показао да је проблем спуштања и слетања на Марс решив.",
   "events": [
     {
       "met": 0,
-      "label": "LANSIRANJE",
-      "note": "Proton-K sa Blok-D gornjom stepenima sa Bajkonura.",
+      "label": "ЛАНСИРАЊЕ",
+      "note": "Proton-K са горњим степеном Blok-D из Baikonur-а.",
       "type": "nominal"
     },
     {
       "met": 188,
-      "label": "ORBITER MOI",
-      "note": "Orbiter se hvata u orbitu Marsa tokom globalne pešćane oluje.",
+      "label": "ОРБИТЕР MOI",
+      "note": "Орбитер улази у орбиту око Марса током глобалне прашинске олује.",
       "type": "nominal"
     },
     {
       "met": 188.05,
-      "label": "SEPARACIJA LANDERA",
-      "note": "Lander se odvaja i počinje atmosferski ulazak.",
+      "label": "ОДВАЈАЊЕ ЛЕНДЕРА",
+      "note": "Лендер се одваја и започиње улазак у атмосферу.",
       "type": "nominal"
     },
     {
       "met": 188.1,
-      "label": "KONTAKT SA POVRŠINOM",
-      "note": "Prvo meko sletanje na Mars; transmisija počinje.",
+      "label": "ДОДИР С ТЛОМ",
+      "note": "Прво меко спуштање на Марс; пренос почиње.",
       "type": "nominal"
     },
     {
       "met": 188.101,
-      "label": "GUBITAK SIGNALA",
-      "note": "Signal izgubljen ~110 s nakon dodira (transmisija je trajala ~14,5 s). Uzrok netvrd; pešćana oluja je vodeći osumnjičeni uzrok.",
+      "label": "ГУБИТАК СИГНАЛА",
+      "note": "Сигнал изгубљен ~110 s након додира с тлом (пренос је трајао ~14,5 s). Узрок није потврђен; прашинска олуја је главни осумњичени.",
       "type": "warning"
     }
   ]

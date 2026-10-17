@@ -21,7 +21,7 @@
       "image": {
         "reuse": "fleet/slim/01"
       },
-      "caption": "SLIM — a 'Atiradora de Elite Lunar'. Seu objetivo não era explorar, mas provar uma técnica: pouso de precisão dentro de 100 metros de um ponto escolhido, a capacidade que toda sonda e missão tripulada futura precisará para alcançar um local específico e valioso.",
+      "caption": "SLIM — o \"Atirador de Lua\". Seu objetivo não era explorar, mas provar uma técnica: pousar com precisão em até 100 metros de um ponto escolhido, a capacidade que toda missão futura de pouso e de tripulação precisará para alcançar um local específico e valioso.",
       "align": "right"
     },
     {
@@ -32,7 +32,7 @@
   "outcome": [
     {
       "type": "prose",
-      "md": "O histórico é uma sequência de sucessos duramente conquistados. A Kaguya (2007) retornou a maior quantidade de dados de mapeamento de uma missão lunar desde a Apollo e as primeiras imagens em HD de um nascer da Terra. A Akatsuki falhou na inserção orbital em Vênus em 2010 quando seu motor principal falhou — uma perda total por qualquer cálculo normal — e ainda assim, após cinco anos orbitando o Sol, a JAXA usou os pequenos propulsores de atitude da sonda para inseri-la na órbita de Vênus em uma segunda tentativa, resgatando a missão inteiramente. A SLIM (2024) pousou a cerca de 55 metros de seu alvo, tombou de lado e ainda entregou sua ciência."
+      "md": "O histórico é uma sequência de sucessos duramente conquistados. Kaguya (2007) retornou a maior quantidade de dados de mapeamento de uma missão lunar desde Apollo e as primeiras imagens em HD de um nascer da Terra. Akatsuki falhou na inserção orbital em Vênus em 2010 quando seu motor principal falhou — uma perda total por qualquer cálculo normal — e ainda assim, após cinco anos orbitando o Sol, a JAXA usou os pequenos propulsores de atitude da sonda para inseri-la na órbita de Vênus em uma segunda tentativa, resgatando a missão inteiramente. SLIM (2024) pousou a cerca de 55 metros de seu alvo, tombou de lado e ainda entregou sua ciência."
     },
     {
       "type": "figure",

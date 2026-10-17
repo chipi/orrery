@@ -2,12 +2,12 @@
   "title": "Excentricité",
   "intro_sentence": "À quel point l'orbite est étirée — zéro est cercle parfait, un est échappée parabolique.",
   "narrative_101": [
-    "Si la taille est le premier bouton, l'excentricité est le deuxième. Choisis 0 à presque 1. À 0 cercle parfait. Vers 1, ellipse étirée en cigare.",
-    "Vitesse change. Cercle calme. Étirée pas. Halley moins d'un an sur 76 — le reste à l'aphélie au ralenti."
+    "Si la taille est le premier curseur de l'orbite, l'excentricité est le second. Choisissez un nombre entre 0 et presque-1. À 0, l'orbite est un cercle parfait — ennuyeux, prévisible, même vitesse partout. Poussez-le vers 1 et l'ellipse s'étire en un long œuf, puis un cigare, puis presque une ligne droite.",
+    "Qu'est-ce qui change physiquement ? La vitesse. Une orbite circulaire est paisible. Une orbite étirée ne l'est pas. Le corps fonce à toute vitesse à l'extrémité proche de l'ellipse, puis s'attarde à l'extrémité lointaine pendant la majeure partie de l'orbite. La Comète de Halley se trouve ici moins d'un an sur 76 — le reste du temps, elle dérive près de l'aphélie à faible allure. Même orbite, rythme radicalement différent."
   ],
   "body_paragraphs": [
-    "Excentricité (`e`) = nombre de forme. À 0 = cercle. Vers 1 = cigare. Au-delà de 1, hyperbolique — survol sans retour.",
-    "Planètes réelles à basse excentricité. Terre 0,0167. Mars 0,093. Mercure 0,205. Pluton et comètes beaucoup plus haut."
+    "L'excentricité (`e`) est le nombre de forme. Réglez-la à 0 et vous avez un cercle — les foyers s'effondrent en un seul centre, et le corps en orbite reste à la même distance indéfiniment. Augmentez-la vers 1 et l'ellipse s'étire en un cigare — le corps passe à grande vitesse près du foyer au périhélie, puis s'attarde à l'aphélie pendant la majeure partie de l'orbite.",
+    "Au-delà de `e = 1`, vous n'êtes plus lié. `e = 1` exactement est une trajectoire parabolique (évasion, tout juste). Tout au-dessus est hyperbolique — un survol qui ne revient jamais. La plupart des trajectoires spatiales que l'Orrery affiche sont des ellipses héliocentriques avec `e < 1`. L'exception : les bras d'assistance gravitationnelle tracés autour de Jupiter ou de Saturne pénètrent en territoire hyperbolique."
   ],
   "formula_caption": "Excentricité à partir des rayons périhélie et aphélie.",
   "diagram_caption": "Trois orbites avec même demi-grand axe mais e = 0, 0,4, 0,8."

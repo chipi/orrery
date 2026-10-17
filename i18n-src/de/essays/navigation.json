@@ -1,5 +1,5 @@
 {
-  "title": "Den Mars in der Finsternis finden",
+  "title": "Mars in der Finsternis finden",
   "dek": "Wie steuert man zu einem sich bewegenden Planeten über hundert Millionen Kilometer des Nichts, ohne Karte, ohne Horizont und mit einer zwanzigminütigen Verzögerung bei jedem Befehl? Die Antwort aus siebzig Jahren ist seltsamer und menschlicher, als die Maschinen vermuten lassen.",
   "body": [
     {
@@ -39,7 +39,7 @@
     },
     {
       "type": "prose",
-      "md": "Das ist ein Detail, das man behalten sollte. Als [Apollo 8](/missions?id=apollo8) im Dezember 1968 das erste bemannte Schiff wurde, das die Anziehungskraft der Erde verließ und zu einer anderen Welt navigierte, steuerte ihre Besatzung teilweise wie Cook über den Pazifik: Jim Lovell an einem Teleskop und Sextanten, die in die Hülle eingebaut waren, sichtete bekannte Sterne gegen den Horizont der Erde, führte die Winkel in einen Computer ein, um die Abweichung zu korrigieren. Der Apollo-Leitcomputer, der diese Berechnungen ausführte, hatte etwa 72 Kilobyte Festspeicher und lief mit einer Taktfrequenz, über die eine moderne Türklingel nur lachen würde — und er flog neun Besatzungen zum Mond und [zwei Handvoll davon drauf](/missions?id=apollo11). Das Genie war nicht die Hardware. Es war die Erkenntnis, dass eine Maschine zum Zählen und ein Mensch zum Überprüfen gegen die Sterne zusammen tun konnten, was keiner allein konnte."
+      "md": "Das ist ein Detail, das man behalten sollte. Als [Apollo 8](/missions?id=apollo8) im Dezember 1968 das erste bemannte Schiff wurde, das die Anziehungskraft der Erde verließ und zu einer anderen Welt navigierte, steuerte ihre Besatzung teilweise wie Cook über den Pazifik: Jim Lovell an einem Teleskop und Sextanten, die in die Hülle eingebaut waren, sichtete bekannte Sterne gegen den Horizont der Erde, führte die Winkel in einen Computer ein, um die Abweichung zu korrigieren. Der Apollo Guidance Computer, der diese Berechnungen ausführte, hatte etwa 72 Kilobyte Festspeicher und lief mit einer Taktfrequenz, über die eine moderne Türklingel nur lachen würde — und er flog neun Besatzungen zum Mond und [zwei Handvoll davon drauf](/missions?id=apollo11). Das Genie war nicht die Hardware. Es war die Erkenntnis, dass eine Maschine zum Zählen und ein Mensch zum Überprüfen gegen die Sterne zusammen tun konnten, was keiner allein konnte."
     },
     {
       "type": "prose",
@@ -67,13 +67,13 @@
     },
     {
       "type": "prose",
-      "md": "Das Instrument ist das [Tiefraum-Netzwerk](/science/mission-phases/dsn) — drei große Schüsselkomplexe, etwa 120° auseinander in Kalifornien, Spanien und Australien, so dass, wenn die Erde sich dreht, mindestens eines von ihnen immer ins Tiefraum schauen kann. Wenn eine Schüssel auf eine Sonde zeigt, hört sie hauptsächlich nicht auf Daten. Sie misst zwei Dinge mit ungeheurer Präzision. Erstens, **Entfernung**: es sendet ein Zeitsignal, das Raumschiff echot es zurück, und die Echtlaufzeit — multipliziert mit der Lichtgeschwindigkeit — gibt die Entfernung an, gut einige Meter über Milliarden Kilometer. Zweitens, **Geschwindigkeit**: Das Radio des Raumschiffs, verschoben in der Frequenz durch seine Bewegung auf uns zu oder weg von uns, wird auf seine Dopplerverschiebung gelesen, und die Verschiebung gibt die Geschwindigkeit entlang der Sichtlinie auf einen Bruchteil eines Millimeters pro Sekunde."
+      "md": "Das Instrument ist das [Deep Space Network](/science/mission-phases/dsn) — drei große Schüsselkomplexe, die ungefähr 120° auseinander in Kalifornien, Spanien und Australien angeordnet sind, sodass bei der Rotation der Erde mindestens einer von ihnen immer in den tiefsten Weltraum blicken kann. Wenn eine Schüssel auf eine Sonde zeigt, hört sie nicht hauptsächlich nach Daten. Sie misst zwei Dinge mit ungeheurer Präzision. Erstens, **Entfernung**: Sie sendet ein Zeitsignal, das Raumfahrzeug echot es zurück, und die Hin- und Rückflugzeit — multipliziert mit der Lichtgeschwindigkeit — gibt die Entfernung an, genau bis auf wenige Meter über Milliarden von Kilometern. Zweitens, **Geschwindigkeit**: Das Funkgerät des Raumfahrzeugs, dessen Frequenz durch seine Bewegung zu uns hin oder von uns weg verschoben ist, wird auf seine Dopplerverschiebung hin gelesen, und die Verschiebung gibt die Geschwindigkeit entlang der Sichtlinie bis auf einen Bruchteil eines Millimeters pro Sekunde an."
     },
     {
       "type": "figure",
       "image": "essays/navigation/deep-space-network",
       "kind": "diagram",
-      "caption": "Das Tiefraum-Netzwerk: drei große Schüsseln etwa 120° auseinander, damit eine immer ins Tiefraum schaut. Die Entfernung kommt von der Echtlaufzeit; die Geschwindigkeit von der Dopplerverschiebung des Radios. Der Boden fliegt.",
+      "caption": "Das Deep Space Network: drei große Schüsseln etwa 120° auseinander, damit eine immer ins Tiefraum schaut. Die Entfernung kommt von der Echtlaufzeit; die Geschwindigkeit von der Dopplerverschiebung des Radios. Der Boden fliegt.",
       "align": "wide"
     },
     {
@@ -82,7 +82,7 @@
     },
     {
       "type": "prose",
-      "md": "Aber das Tiefraum-Netzwerk hat einen Gegner, mit dem es nicht argumentieren kann, und sein Name ist die Lichtgeschwindigkeit. Beim Mars dauert ein Befehl überall von etwa drei bis zweiundzwanzig Minuten zum Eintreffen, und die Bestätigung dauert genauso lange zurückzukommen. Bei Pluto sind es vier einhalb *Stunden*, einfach. Der Boden kann eine Sonde wunderbar navigieren — solange nichts schneller als das Licht entschieden werden muss, um die Nachricht nach Hause und eine Antwort zurück nach draußen zu bringen. Für siebzig Jahre war fast nichts schneller. Das ist etwa zum ganzen Problem zu werden."
+      "md": "Aber das Deep Space Network hat einen Gegner, mit dem es nicht argumentieren kann, und sein Name ist die Lichtgeschwindigkeit. Beim Mars dauert ein Befehl überall von etwa drei bis zweiundzwanzig Minuten zum Eintreffen, und die Bestätigung dauert genauso lange zurückzukommen. Bei Pluto sind es vier einhalb *Stunden*, einfach. Der Boden kann eine Sonde wunderbar navigieren — solange nichts schneller als das Licht entschieden werden muss, um die Nachricht nach Hause und eine Antwort zurück nach draußen zu bringen. Für siebzig Jahre war fast nichts schneller. Das ist etwa zum ganzen Problem zu werden."
     },
     {
       "type": "heading",
@@ -148,7 +148,7 @@
     },
     {
       "type": "prose",
-      "md": "Dann kamen die Orte, wo der Boden wirklich nicht helfen konnte. Auf dem Mars zu landen ist das schärfste Beispiel — der [Eintritt, Abstieg und Landung](/science/mission-phases/edl) dauert etwa sieben Minuten, und der Mars ist Lichtminuten entfernt, daher ist zum Zeitpunkt, an dem die Erde auch nur hört, dass das Raumschiff in die Atmosphäre eintritt, die ganze Sache längst vorbei, auf die eine oder andere Weise. Niemand auf der Erde landen einen Marsrover. Der Rover landen sich selbst. [Perseverance](/missions?id=perseverance) trug ein System mit sich, das den Boden fotografierte, der emporschoss, es in Echtzeit gegen eine bordeigene Karte abglich, das Gelände erkannte und *wählte* einen sicheren Platz zum Landen — eine Maschine, die Lovells Job, den Job des Tiefraum-Netzwerks und den Job eines Buschfliegers auf einmal, in sieben Minuten, allein tat."
+      "md": "Dann kamen die Orte, an denen der Boden wirklich keine Hilfe leisten kann. Die Landung auf dem Mars ist das schärfste Beispiel — der [Eintritt, Abstieg und die Landung](/science/mission-phases/edl) dauert etwa sieben Minuten, und der Mars ist lichtminuten entfernt, sodass zu dem Zeitpunkt, an dem die Erde überhaupt hört, dass das Raumfahrzeug die Atmosphäre erreicht hat, das Ganze längst vorbei ist, auf die eine oder andere Weise. Niemand auf der Erde landet einen Mars-Rover. Der Rover landet sich selbst. [Perseverance](/missions?id=perseverance) trug ein System, das den Boden fotografierte, der heranraste, es in Echtzeit gegen eine Bordkarte abglich, das Gelände erkannte und einen sicheren Landeplatz *wählte* — eine Maschine, die Lovells Arbeit, die Arbeit des Deep Space Network und die Arbeit eines Buschpiloten gleichzeitig verrichtete, in sieben Minuten, allein."
     },
     {
       "type": "figure",
@@ -172,7 +172,7 @@
     },
     {
       "type": "prose",
-      "md": "Und es ist dabei, still zu sein, um aufzuhören. Je weiter nach draußen wir drängen — hin zum [äußeren System](/explore), hin zu bemannten Flügen zum Mars, wo ein zwanzigminütiger Lag der Unterschied zwischen einer Korrektur und einem Krater ist — desto weniger kann der Boden rechtzeitig tun, und desto mehr muss jedes Raumschiff sein eigener Navigator werden: sein eigener Sextant, sein eigenes [Tiefraum-Netzwerk](/science/mission-phases/dsn), sein eigener Raum voller Menschen. Wir verbrachten siebzig Jahre damit, Maschinen beizubringen, ihren Weg am Himmel zu finden. Wir werden gleich herausfinden, wie gut sie gelernt haben."
+      "md": "Und es wird bald aufhören, leise zu sein. Je weiter wir vorstoßen — zu [dem äußeren System](/explore), zu bemannten Flügen zum Mars, bei denen eine zwanzigminütige Verzögerung der Unterschied zwischen einer Korrektur und einem Krater ist — desto weniger kann der Boden rechtzeitig tun, und desto mehr muss jedes Raumfahrzeug zu seinem eigenen Navigator werden: sein eigener Sextant, sein eigenes [Deep Space Network](/science/mission-phases/dsn), sein eigener Raum voller Menschen. Wir haben siebzig Jahre damit verbracht, Maschinen zu lehren, ihren Weg am Himmel zu finden. Wir sind dabei zu erfahren, wie gut sie gelernt haben."
     }
   ]
 }

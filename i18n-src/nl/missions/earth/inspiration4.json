@@ -13,19 +13,19 @@
     {
       "met": 0.05,
       "label": "ORBIT",
-      "note": "585 km circular, 51.6° inclination — highest crewed orbit since Hubble servicing.",
+      "note": "585 km cirkelvormig, 51,6° inclinatie — hoogste bemande baan sinds de onderhoudsmissies naar Hubble.",
       "type": "nominal"
     },
     {
       "met": 1,
       "label": "CUPOLA WINDOW",
-      "note": "First viewing through the Crew Dragon cupola (replacing docking adapter).",
+      "note": "Eerste waarneming door de Crew Dragon-cupola (vervanging van dockingadapter).",
       "type": "info"
     },
     {
       "met": 2.96,
       "label": "SPLASHDOWN",
-      "note": "Resilience splashed down off Florida coast 2021-09-18 23:06 UTC.",
+      "note": "Resilience landde af op 2021-09-18 23:06 UTC voor de kust van Florida.",
       "type": "nominal"
     }
   ]

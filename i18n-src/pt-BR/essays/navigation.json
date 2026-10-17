@@ -67,13 +67,13 @@
     },
     {
       "type": "prose",
-      "md": "O instrumento é a [Rede de Espaço Profundo](/science/mission-phases/dsn) — três grandes complexos de pratos espaçados aproximadamente 120° em Califórnia, Espanha e Austrália, então enquanto a Terra gira, pelo menos um deles sempre pode ver o espaço profundo. Quando um prato aponta para uma sonda, não está principalmente ouvindo dados. Está medindo duas coisas com precisão monstra. Primeiro, **alcance**: ele envia um sinal de tempo, a nave o ecoa de volta, e o tempo de ida e volta — multiplicado pela velocidade da luz — dá a distância, boa para alguns metros em bilhões de quilômetros. Segundo, **velocidade**: o rádio da nave, deslocado em frequência por seu movimento em direção a nós ou para longe, é lido por seu deslocamento Doppler, e o deslocamento dá a velocidade ao longo da linha de visão até uma fração de milímetro por segundo."
+      "md": "O instrumento é a [Deep Space Network](/science/mission-phases/dsn) — três grandes complexos de antenas parabólicas espaçados aproximadamente 120° em Califórnia, Espanha e Austrália, de modo que, conforme a Terra gira, pelo menos um deles sempre consegue ver o espaço profundo. Quando uma antena aponta para uma sonda, ela não está principalmente escutando dados. Está medindo duas coisas com precisão monstruosa. Primeiro, **distância**: envia um sinal de sincronismo, a sonda o reflete e o tempo da viagem de ida e volta — multiplicado pela velocidade da luz — fornece a distância, com precisão de alguns metros em bilhões de quilômetros. Segundo, **velocidade**: o rádio da sonda, deslocado em frequência por seu movimento em nossa direção ou para longe de nós, é analisado para seu desvio Doppler, e o desvio fornece a velocidade ao longo da linha de visada com precisão de uma fração de milímetro por segundo."
     },
     {
       "type": "figure",
       "image": "essays/navigation/deep-space-network",
       "kind": "diagram",
-      "caption": "A Rede de Espaço Profundo: três grandes pratos espaçados aproximadamente 120°, então um sempre enfrenta o espaço profundo. O alcance vem do tempo de luz de ida e volta; a velocidade do deslocamento Doppler do rádio. O solo faz o voo.",
+      "caption": "A Deep Space Network: três grandes pratos espaçados aproximadamente 120°, então um sempre enfrenta o espaço profundo. O alcance vem do tempo de luz de ida e volta; a velocidade do deslocamento Doppler do rádio. O solo faz o voo.",
       "align": "wide"
     },
     {
@@ -82,7 +82,7 @@
     },
     {
       "type": "prose",
-      "md": "Mas a Rede de Espaço Profundo tem um adversário que não pode argumentar, e seu nome é a velocidade da luz. Em Marte, um comando leva em qualquer lugar de cerca de três a vinte e dois minutos para chegar, e o reconhecimento leva exatamente o mesmo tempo para voltar. Em Plutão são quatro horas e meia, uma via. O solo pode navegar uma sonda belamente — contanto que nada precise ser decidido mais rápido do que a luz pode carregar as notícias para casa e uma resposta de volta. Por setenta anos, quase nada precisou. Isso está prestes a ser o problema inteiro."
+      "md": "Mas a Deep Space Network tem um adversário que não pode argumentar, e seu nome é a velocidade da luz. Em Marte, um comando leva em qualquer lugar de cerca de três a vinte e dois minutos para chegar, e o reconhecimento leva exatamente o mesmo tempo para voltar. Em Plutão são quatro horas e meia, uma via. O solo pode navegar uma sonda belamente — contanto que nada precise ser decidido mais rápido do que a luz pode carregar as notícias para casa e uma resposta de volta. Por setenta anos, quase nada precisou. Isso está prestes a ser o problema inteiro."
     },
     {
       "type": "heading",
@@ -148,7 +148,7 @@
     },
     {
       "type": "prose",
-      "md": "Então vieram os lugares onde o solo genuinamente não pode ajudar. Pousar em Marte é o exemplo mais afiado — a [entrada, descida e pouso](/science/mission-phases/edl) leva cerca de sete minutos, e Marte está a anos-luz de distância, então no tempo em que a Terra até ouve que a nave entrou na atmosfera, a coisa toda já passou, de um jeito ou de outro. Ninguém na Terra pousa um rover de Marte. O rover pousa a si mesmo. A [Perseverance](/missions?id=perseverance) carregava um sistema que fotografava o solo se aproximando rápido, o comparava em tempo real contra um mapa a bordo, reconhecia o terreno e *escolhia* um local seguro para tocar o solo — uma máquina fazendo o trabalho de Lovell, o trabalho da Rede de Espaço Profundo, e o trabalho de um piloto de arbusto uma vez, em sete minutos, sozinha."
+      "md": "Então vieram os lugares onde o solo genuinamente não pode ajudar. Pousar em Marte é o exemplo mais afiado — a [entrada, descida e pouso](/science/mission-phases/edl) leva cerca de sete minutos, e Marte está a anos-luz de distância, então no tempo em que a Terra até ouve que a nave entrou na atmosfera, a coisa toda já passou, de um jeito ou de outro. Ninguém na Terra pousa um rover de Marte. O rover pousa a si mesmo. O Perseverance carregava um sistema que fotografava o solo se aproximando rápido, o comparava em tempo real contra um mapa a bordo, reconhecia o terreno e *escolhia* um local seguro para tocar o solo — uma máquina fazendo o trabalho de Lovell, o trabalho da Deep Space Network, e o trabalho de um piloto de arbusto uma vez, em sete minutos, sozinha."
     },
     {
       "type": "figure",
@@ -172,7 +172,7 @@
     },
     {
       "type": "prose",
-      "md": "E está prestes a parar de ser silencioso. Quanto mais longe avançamos — em direção ao [sistema externo](/explore), em direção a voos tripulados para Marte onde um atraso de vinte minutos é a lacuna entre uma correção e uma cratera — menos o solo pode fazer a tempo, e mais cada nave deve se tornar seu próprio navegador: seu próprio sextante, sua própria [Rede de Espaço Profundo](/science/mission-phases/dsn), sua própria sala cheia de pessoas. Passamos setenta anos ensinando máquinas a encontrar seu caminho pelo céu. Estamos prestes a descobrir o quão bem elas aprenderam."
+      "md": "E está prestes a parar de ser silencioso. Quanto mais longe avançamos — em direção ao [sistema externo](/explore), em direção a voos tripulados para Marte onde um atraso de vinte minutos é a lacuna entre uma correção e uma cratera — menos o solo pode fazer a tempo, e mais cada nave deve se tornar seu próprio navegador: seu próprio sextante, sua própria Deep Space Network, sua própria sala cheia de pessoas. Passamos setenta anos ensinando máquinas a encontrar seu caminho pelo céu. Estamos prestes a descobrir o quão bem elas aprenderam."
     }
   ]
 }

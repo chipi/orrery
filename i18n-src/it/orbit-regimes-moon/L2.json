@@ -1,7 +1,7 @@
 {
   "name": "Terra-Luna L2",
   "short": "L2",
-  "story": "Il punto di Lagrange situato a circa 61.000 km dietro la Luna vista dalla Terra — la sella gravitazionale dove le forze di Terra, Luna e centrifuga si equilibrano. La Luna rimane sempre interposta tra il veicolo spaziale e la Terra, rendendo impossibili le comunicazioni dirette — ma un satellite parcheggiato qui in un'orbita alone intorno a L2 ha linea di vista sia verso il lato oscuro lunare che verso la Terra. Così la Cina ha fatto allunare il Chang'e 4 sul lato nascosto nel 2019: il satellite relè Queqiao, parcheggiato in un alone intorno a L2 del sistema Terra-Luna, trasmette ogni comando e immagine.",
+  "story": "Il punto di Lagrange a circa 61.000 km dietro la Luna, visto dalla Terra — la sella gravitazionale dove le forze gravitazionali di Terra e Luna, insieme alla forza centrifuga, si equilibrano. La Luna rimane sempre interposta tra il veicolo spaziale e la Terra, rendendo impossibili le comunicazioni dirette — ma un satellite parcheggiato qui in un'orbita alone intorno a L2 ha linea di vista VERSO SIA il lato nascosto lunare CHE la Terra. È così che la Cina ha fatto atterrare Chang'e 4 sul lato nascosto nel 2019: il satellite relè Queqiao, parcheggiato in un alone intorno a Earth-Moon L2, collega ogni comando e immagine.",
   "comparison": "Circa 1/6 della distanza dalla Terra alla Luna. Senza un relay in L2, l'intero lato nascosto lunare è una zona di blackout delle comunicazioni — ogni veicolo spaziale che vi è atterrato ne ha avuto bisogno di uno.",
   "residents": [
     {
@@ -18,7 +18,7 @@
   "firsts": [
     {
       "year": 2018,
-      "label": "Queqiao — primo relay operativo Terra-Luna L2 (Cina)"
+      "label": "Queqiao — primo relais operativo Earth-Moon L2 (Cina)"
     }
   ],
   "science_link": {

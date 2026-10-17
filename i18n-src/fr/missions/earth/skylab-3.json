@@ -14,19 +14,19 @@
     {
       "met": 0.5,
       "label": "CSM THRUSTER LEAK",
-      "note": "Service-module RCS quad leak; rescue CSM-119 prepared at Cape but not flown.",
+      "note": "Fuite du quad de propulsion du module de service ; CSM-119 de secours préparé à Cape mais non lancé.",
       "type": "warning"
     },
     {
       "met": 30,
       "label": "TWIN-POLE SHIELD EVA",
-      "note": "Crew deployed twin-pole shield over original parasol.",
+      "note": "L'équipage a déployé un écran à deux mâts au-dessus du parasol d'origine.",
       "type": "nominal"
     },
     {
       "met": 59.46,
       "label": "SPLASHDOWN",
-      "note": "CSM-117 splashed down in Pacific 1973-09-25 22:19 UTC.",
+      "note": "CSM-117 amerri dans le Pacifique le 1973-09-25 à 22:19 UTC.",
       "type": "nominal"
     }
   ]

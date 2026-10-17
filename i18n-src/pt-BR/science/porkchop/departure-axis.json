@@ -1,5 +1,5 @@
 {
-  "title": "Eixo da Janela de Partida",
+  "title": "Departure-Window Axis",
   "intro_sentence": "Quando você lança — percorrendo o eixo X, tipicamente um período de quatro anos amostrado diariamente.",
   "narrative_101": [
     "Leia o porkchop como um calendário. O eixo horizontal — da esquerda para a direita — é a data em que você deixa a Terra. Cada coluna de pixel é um dia de lançamento diferente. O Orrery faz amostragem com resolução de um dia durante aproximadamente quatro anos; isso é o suficiente para capturar dois ciclos sinódicos completos de Marte (o ciclo de ~26 meses se encaixa aproximadamente duas vezes em quatro anos), o que é suficiente para ver o padrão da janela de lançamento repetir.",
@@ -9,6 +9,6 @@
   "body_paragraphs": [
     "O eixo X informa quando você sai da Terra. Cada coluna de pixel é uma data de lançamento diferente — para os gráficos do Orrery, amostrada com resolução de um dia durante aproximadamente quatro anos. Por que um período de quatro anos? Porque o período sinódico Terra-Marte é ~26 meses; quatro anos capturam aproximadamente duas janelas completas de Marte. Para Vênus (~19 meses) ou Júpiter (~13 meses) o mesmo período se encaixa mais janelas — a largura de quatro anos é calibrada para planejamento em classe de Marte.",
     "Leia o eixo X como um calendário. Os lóbulos de baixo custo (a 'carne' do porkchop) ficam em intervalos previsíveis. Para Marte: aproximadamente a cada 26 meses. Para Vênus: aproximadamente a cada 19 meses. Para Júpiter: aproximadamente a cada 13 meses (Júpiter se move lentamente o suficiente para que o período sinódico fique próximo ao ano terrestre).",
-    "Em `/plan` o rótulo do eixo X é `JANELA DE PARTIDA · 2026 — 2030`. As datas do calendário literais aparecem na dica de ferramenta quando você passa o mouse."
+    "Em `/plan` o rótulo do eixo X é `DEPARTURE WINDOW · 2026 — 2030`. As datas do calendário literais aparecem na dica de ferramenta quando você passa o mouse."
   ]
 }

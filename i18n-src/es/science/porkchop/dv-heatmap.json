@@ -1,5 +1,5 @@
 {
-  "title": "Mapa de calor ∆v",
+  "title": "∆v Heatmap",
   "intro_sentence": "La escala de colores que convierte los números ∆v en una imagen que puedes leer de un vistazo.",
   "narrative_101": [
     "El sentido de un diagrama de chuleta es el color. Los números en una cuadrícula gigante te dirían lo mismo, pero no podrías ver los patrones. Así que pintamos cada celda — azul teal frío para trayectorias económicas, amarillo para las intermedias, naranja y rojo para las prohibitivamente caras. El reconocimiento de patrones sustituye la aritmética.",

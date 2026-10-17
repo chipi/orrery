@@ -4,7 +4,7 @@
   "the_land": [
     {
       "type": "prose",
-      "md": "Après Apollo, la NASA voulait rendre le vol spatial ordinaire. Les missions lunaires avaient été magnifiques et insoutenables — d'énormes fusées jetées après un seul usage, à un coût qu'aucune nation ne supporterait longtemps. La réponse, soutenait la NASA, était la réutilisabilité : un avion spatial ailé qui volerait en orbite, planerait pour rentrer, et se relancerait en quelques semaines, transformant l'accès à l'espace d'une série d'expéditions ponctuelles en quelque chose de plus proche d'une compagnie aérienne. La Space Shuttle fut vendue au Congrès exactement sur cette promesse — un vol bon marché, routinier, réutilisable."
+      "md": "Après Apollo, la NASA voulait rendre le vol spatial ordinaire. Les missions lunaires avaient été magnifiques et insoutenables — d'énormes fusées jetées après un seul usage, à un coût qu'aucune nation ne supporterait longtemps. La réponse, soutenait la NASA, était la réutilisabilité : un avion spatial ailé qui volerait en orbite, planerait pour rentrer, et se relancerait en quelques semaines, transformant l'accès à l'espace d'une série d'expéditions ponctuelles en quelque chose de plus proche d'une compagnie aérienne. La Space Shuttle a été vendue au Congrès exactement sur cette promesse — un vol bon marché, routinier, réutilisable."
     },
     {
       "type": "prose",
@@ -26,7 +26,7 @@
     },
     {
       "type": "prose",
-      "md": "Deux de ces choses justifient l'ensemble du programme. La Shuttle déploya le télescope spatial Hubble puis, à cinq reprises, envoya des équipages le réparer et le moderniser en orbite — transformant un télescope imparfait en l'observatoire le plus productif de l'histoire et le maintenant à jour pendant des décennies. Et elle assembla la Station spatiale internationale, acheminant les modules, les poutrelles et les panneaux solaires et les assemblant avec son bras et ses marcheurs spatiaux. Ni l'un ni l'autre n'était possible sans un véhicule capable de transporter un équipage nombreux, une charge utile importante et les outils nécessaires pour travailler dans l'espace. C'était là la véritable raison d'être de la Shuttle, et dans ce domaine, elle était inégalée."
+      "md": "Deux de ces choses justifient l'ensemble du programme. La Shuttle déploya le Hubble Space Telescope puis, à cinq reprises, envoya des équipages le réparer et le moderniser en orbite — transformant un télescope imparfait en l'observatoire le plus productif de l'histoire et le maintenant à jour pendant des décennies. Et elle assembla la International Space Station, acheminant les modules, les poutrelles et les panneaux solaires et les assemblant avec son bras et ses marcheurs spatiaux. Ni l'un ni l'autre n'était possible sans un véhicule capable de transporter un équipage nombreux, une charge utile importante et les outils nécessaires pour travailler dans l'espace. C'était là la véritable raison d'être de la Shuttle, et dans ce domaine, elle était inégalée."
     }
   ],
   "outcome": [
@@ -58,7 +58,7 @@
     },
     {
       "type": "prose",
-      "md": "Il y a aussi la question de ce que la Shuttle a évincé. Pendant trente ans, elle fut le seul véhicule habité que les États-Unis pilotaient, et son coût et sa cadence façonnèrent tout autour d'elle — il n'y avait pas de capsule moins chère maintenue en réserve, pas de voie parallèle. Ainsi, lorsqu'elle prit sa retraite en 2011, en toute sécurité et dans les délais, elle laissa les États-Unis sans aucun moyen de lancer leurs propres astronautes, dépendants des sièges Soyuz russes pendant neuf ans jusqu'à ce que les capsules commerciales comblent enfin le vide. La Shuttle était si centrale que son absence fut elle-même une crise."
+      "md": "Il y a aussi la question de ce que la Navette a relégué au second plan. Pendant trente ans, c'a été le seul véhicule habité que les États-Unis ont lancé, et son coût et sa cadence ont façonné tout ce qui l'entourait — il n'y avait pas de capsule moins chère gardée en réserve, pas de voie parallèle. Alors quand elle a pris sa retraite en 2011, sans danger et selon le calendrier prévu, elle a laissé les États-Unis sans aucun moyen de lancer leurs propres astronautes, dépendants des sièges Soyuz russes pendant neuf ans jusqu'à ce que des capsules commerciales comblent enfin le vide. La Navette était si centrale que son absence était elle-même une crise."
     }
   ],
   "legacy": [
@@ -67,12 +67,12 @@
       "image": {
         "reuse": "fleet/atlantis/01"
       },
-      "caption": "Atlantis après STS-135, le dernier vol de la Shuttle, en juillet 2011 — la fin de trente ans de vol spatial américain réutilisable, et du véhicule qui construisit la Station spatiale qu'elle laissait derrière elle.",
+      "caption": "Atlantis après STS-135, le dernier vol du Space Shuttle, en juillet 2011 — la fin de trente ans de vol spatial américain réutilisable, et du véhicule qui construisit la Station spatiale qu'elle laissait derrière elle.",
       "align": "left"
     },
     {
       "type": "prose",
-      "md": "L'héritage le plus durable de la Shuttle est physique : la Station spatiale internationale, qu'elle assembla et qui n'aurait pu être construite autrement, et le télescope spatial Hubble, qu'elle déploya et sauva à plusieurs reprises. Ces deux seuls éléments assurent sa place. Mais son héritage est aussi un avertissement — la démonstration la plus claire dans le vol spatial que la réutilisabilité n'est pas la même chose que le faible coût, qu'un véhicule expérimental ne doit pas être vendu ou piloté comme un véhicule routinier, et que la culture organisationnelle, pas seulement l'ingénierie, détermine si une machine dangereuse tue des gens."
+      "md": "L'héritage le plus durable de la Navette est physique : la Station Spatiale Internationale, qu'elle a assemblée et qui n'aurait pas pu être construite d'une autre façon, et le Télescope Spatial Hubble, qu'elle a déployé et sauvé à plusieurs reprises. Ces deux là seuls sécurisent sa place. Mais son héritage est aussi prémonitoire — la démonstration la plus claire dans l'astronautique que la réutilisabilité n'est pas la même chose que l'économie, qu'un véhicule expérimental ne doit pas être vendu ou lancé comme un véhicule de routine, et que la culture organisationnelle, pas seulement l'ingénierie, décide si une machine dangereuse tue des gens."
     },
     {
       "type": "prose",

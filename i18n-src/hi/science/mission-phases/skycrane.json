@@ -8,8 +8,8 @@
   ],
   "body_paragraphs": [
     "sky-crane एक साथ दो समस्याओं को हल करता है। यह रॉकेट इंजन को ऊपर रखता है, इसलिए उनके plumes एक क्रेटर नहीं खोदते या रोवर पर मलबा नहीं फेंकते, और यह रोवर को सीधे इसके पहियों पर deliver करता है, चलाने के लिए तैयार — कोई ramps नहीं, कोई lander deck नहीं। लागत एक choreography है जिसमें error के लिए शून्य margin है, जो autonomously निष्पादित होती है, fiery entry के कुछ मिनट बाद, Earth बहुत दूर होने के साथ real time में मदद करने के लिए।",
-    "यह seven minutes of terror का terminal chapter है: entry heating, फिर supersonic parachute, फिर heat-shield separation, फिर powered descent, फिर sky-crane lower और fly-away — प्रत्येक step को cue पर fire करना चाहिए अन्यथा mission landing पर खो जाती है। केवल मुट्ठी भर राष्ट्र Mars पर soft-land करने में सक्षम हैं; sky-crane सबसे audacious तरीका है जिसमें यह किया गया है।",
-    "`/fly` पर, Curiosity या Perseverance को `?descent=1` में fly करें और descent stage के तारों को parachute-और-retro sequence के नीचे pay out होते देखें, रोवर को सतह तक lower करते हुए stage को fly clear करने से पहले — sky-crane beat को दृश्यमान बनाया गया।"
+    "यह सात मिनट की आतंक की अंतिम कड़ी है: प्रवेश ताप, फिर अतिध्वनिक पैराशूट, फिर ऊष्मा-ढाल पृथक्करण, फिर संचालित अवतरण, फिर स्काई-क्रेन निम्नन और उड़ान-विदाई — प्रत्येक चरण को सही समय पर सक्रिय होना चाहिए अन्यथा मिशन लैंडिंग पर खो जाएगा। केवल मुट्ठी भर राष्ट्रों ने ही Mars पर कभी नरम लैंडिंग की है; स्काई-क्रेन सबसे साहसी तरीका है जिससे यह किया गया है।",
+    "On `/fly`, fly Curiosity या Perseverance को `?descent=1` के साथ उड़ाएँ और अवतरण चरण के टेदर को पैराशूट-और-रेट्रो क्रम के नीचे बाहर आते हुए देखें, रोवर को सतह पर निम्नन करते हुए इससे पहले कि चरण स्पष्ट उड़ जाए — स्काई-क्रेन बीट को दृश्यमान बनाया गया।"
   ],
   "diagram_caption": "Sky-crane: एक रॉकेट-संचालित descent stage सतह पर तारों पर रोवर को hover और lower करता है, फिर तारों को काट देता है और स्पष्ट रूप से उड़ जाता है।"
 }

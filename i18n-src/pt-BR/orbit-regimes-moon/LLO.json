@@ -1,12 +1,12 @@
 {
-  "name": "Órbita Lunar Baixa",
+  "name": "Low Lunar Orbit",
   "short": "LLO",
   "story": "A faixa mais próxima da superfície lunar — tipicamente de 50 a 100 km de altitude. Espaçonaves aqui podem fotografar a superfície com resolução submétrica, mas pagam um preço alto: a distribuição de massa da Lua é extremamente irregular (mascons subsuperficiais gigantes sob os mares lunares), então uma órbita baixa sofre perturbações agressivas. A maioria das missões em LLO precisa de controle ativo de posição ou uma inclinação 'congelada' cuidadosamente escolhida que resiste à deriva. A LRO voa aqui continuamente desde 2009 — a missão lunar de maior longevidade.",
   "comparison": "Cerca de 1/3.800 do caminho de volta à Terra. Da LLO, o horizonte da Lua é acentuadamente curvado — você pode ver 30-40 km em qualquer direção antes que a superfície desapareça.",
   "residents": [
     {
       "id": "lro",
-      "label": "LRO — Orbitador de Reconhecimento Lunar",
+      "label": "LRO — Lunar Reconnaissance Orbiter",
       "agency": "NASA"
     },
     {

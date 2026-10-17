@@ -1,5 +1,5 @@
 {
-  "title": "Presupuesto de Energía Solar",
+  "title": "Solar Power Budget",
   "intro_sentence": "Cuánta electricidad generan los paneles solares — la limitación fundamental de todos los sistemas que puede ejecutar la tripulación.",
   "narrative_101": [
     "Una estación espacial funciona con electricidad solar. Las alas solares se extienden a lo largo de la estructura de ~109 m de la ISS — más grande que un campo de fútbol — porque todo lo demás depende de los vatios que extraen de la luz solar: soporte vital, comunicaciones, instrumentos científicos, la máquina de ejercicio de la tripulación, el ventilador de flujo de aire del inodoro.",
@@ -10,7 +10,7 @@
     "Presupuesto de energía solar = potencia máxima generada × ciclo de trabajo (fracción de órbita bajo luz solar) × eficiencia descendente (pérdidas de batería + regulador). Para estaciones en LEO el ciclo de trabajo es aproximadamente 0,6 — aproximadamente 35 minutos bajo luz solar de cada órbita de 92 minutos.",
     "Paneles solares de la ISS: 8 alas IEA principales (4× P3/P4, P6 + 4× S3/S4, S6) con ~160 kW de potencia máxima BOL, reducida a ~84 kW EOL a los 15 años. Seis paneles iROSA desplegables (cubriendo 6 de los 8 alas originales), cada uno añadiendo >20 kW, llevan la generación instalada total a ~215 kW bajo luz solar. Potencia promedio en órbita entregada a las cargas (×~0,6 fracción bajo luz solar, menos pérdidas de almacenamiento/regulación) ≈ 84–120 kW.",
     "Paneles solares de Tiangong: 4 alas en Tianhe (2 retráctiles en cada lado) más 4 alas grandes en Wentian y Mengtian. Total ~30 kW BOL × ciclo de trabajo = ~18 kW continuos, con 27 kW de potencia máxima durante paso bajo luz solar.",
-    "Almacenamiento en batería: la ISS utiliza baterías de iones de litio ORU (unidades de reemplazo orbital) con capacidad de ~50 kWh por par. Cada batería cubre la carga del lado nocturno de un panel principal. Tiangong utiliza bancos de Li-ion similares, dimensionados para la carga menor.",
+    "Almacenamiento en batería: ISS utiliza baterías de iones de litio ORU (unidades de reemplazo orbital) con capacidad de ~50 kWh por par. Cada batería cubre la carga del lado nocturno de un panel principal. Tiangong utiliza bancos de Li-ion similares, dimensionados para la carga menor.",
     "Mir, por el contrario, alcanzó su máximo con ~30 kW de 1500 m² de panel — comparable por volumen a Tiangong pero con almacenamiento de batería de níquel-cadmio más antiguo que requería reconstrucciones más profundas durante su vida de 15 años."
   ],
   "diagram_caption": "Entrada solar → panel → bus CC → batería + cargas. La barra de ciclo de trabajo muestra la fracción del 60% bajo luz solar por órbita de 92 minutos."

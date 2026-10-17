@@ -44,7 +44,7 @@
     },
     {
       "type": "prose",
-      "md": "Le manifeste d'Ariane 5 est un palmarès de la science et de l'infrastructure de l'époque : la mission cométaire Rosetta, la constellation de navigation Galileo, BepiColombo vers Mercure, les cargos ATV qui ont ravitaillé la Station spatiale internationale et — la plus célèbre de ses dernières charges utiles — le James Webb Space Telescope (décembre 2021), lancé avec une telle précision qu'il a économisé des années de carburant du télescope. Le véritable vol final d'Ariane 5 a eu lieu en juillet 2023, transportant les satellites de télécommunications Heinrich Hertz et Syracuse 4B sur le vol VA261. Puis le terrain s'est dérobé. Les fusées réutilisables de SpaceX ont cassé les prix d'Ariane et mis fin à sa domination commerciale, et Ariane 6, en vol depuis 2024, est la réponse de l'Europe : un lanceur moins cher et plus flexible conçu pour maintenir l'accès indépendant du continent dans un marché transformé."
+      "md": "Le manifeste d'Ariane 5 est un palmarès de la science et de l'infrastructure de l'époque : la mission cométaire Rosetta, la constellation de navigation Galileo, BepiColombo vers Mercure, les cargos ATV qui ont ravitaillé la Station spatiale internationale et — la plus célèbre de ses dernières charges utiles — le James Webb Space Telescope (décembre 2021), lancé avec une telle précision qu'il a économisé des années de carburant du télescope. Le véritable vol final d'Ariane 5 a eu lieu en juillet 2023, transportant les satellites de télécommunications Heinrich Hertz et Syracuse 4B sur VA261. Puis le terrain s'est dérobé. Les fusées réutilisables de SpaceX ont cassé les prix d'Ariane et mis fin à sa domination commerciale, et Ariane 6, en vol depuis 2024, est la réponse de l'Europe : un lanceur moins cher et plus flexible conçu pour maintenir l'accès indépendant du continent dans un marché transformé."
     }
   ],
   "narrative": [
@@ -58,7 +58,7 @@
     },
     {
       "type": "prose",
-      "md": "Ce concurrent, bien sûr, était la réutilisabilité réussie — ce que la navette spatiale avait promis sans le livrer, et qu'une nouvelle génération a réalisé. Ariane, longtemps construit sur la logique de la fusée jetable fiable, a vu cette logique renversée presque du jour au lendemain, et Ariane 6 est la réponse d'une puissance établie à une puissance perturbatrice. Le résultat est encore en train de s'écrire, mais l'enjeu est exactement le même qu'en 1979 : que l'Europe conserve sa propre voie garantie vers l'espace."
+      "md": "Ce concurrent, bien sûr, était la réutilisabilité réussie — ce que la Space Shuttle avait promis sans le livrer, et qu'une nouvelle génération a réalisé. Ariane, longtemps construit sur la logique de la fusée jetable fiable, a vu cette logique renversée presque du jour au lendemain, et Ariane 6 est la réponse d'une puissance établie à une puissance perturbatrice. Le résultat est encore en train de s'écrire, mais l'enjeu est exactement le même qu'en 1979 : que l'Europe conserve sa propre voie garantie vers l'espace."
     }
   ],
   "legacy": [
@@ -86,7 +86,7 @@
     },
     {
       "type": "prose",
-      "md": "La deuxième leçon est écrite dans le vol 501 : un logiciel réutilisé n'est pas automatiquement un logiciel sûr. Ariane 5 a été détruit parce que le code de guidage éprouvé sur Ariane 4 a été repris sans test dans une fusée qui volait plus vite, où une hypothèse intégrée dans l'ancien code ne tenait plus. Les composants étaient solides ; l'échec résidait dans le fait de supposer que ce qui fonctionnait dans un contexte fonctionnerait sans changement dans un autre. Tout système réutilisé doit être revalidé par rapport aux nouvelles conditions auxquelles il sera réellement confronté — une leçon qui va bien au-delà des fusées."
+      "md": "La deuxième leçon est écrite dans Flight 501 : un logiciel réutilisé n'est pas automatiquement un logiciel sûr. Ariane 5 a été détruit parce que le code de guidage éprouvé sur Ariane 4 a été repris sans test dans une fusée qui volait plus vite, où une hypothèse intégrée dans l'ancien code ne tenait plus. Les composants étaient solides ; l'échec résidait dans le fait de supposer que ce qui fonctionnait dans un contexte fonctionnerait sans changement dans un autre. Tout système réutilisé doit être revalidé par rapport aux nouvelles conditions auxquelles il sera réellement confronté — une leçon qui va bien au-delà des fusées."
     }
   ]
 }

@@ -3,7 +3,7 @@
   "type": "NAVE TRIPULADA ÓRBITA TERRESTRE · REALIZADO",
   "first": "Primer encuentro de vuelo dual — voló a ~6,5 km de Vostok 4",
   "dispatch": "Vostok 3 abrió el primer acto de una obra de teatro orbital. Un día después de que Andriyan Nikolayev alcanzase la órbita, Vostok 4 lo siguió, y durante un tiempo ambas naves volaron a pocos kilómetros la una de la otra — la primera vez que dos naves tripuladas estaban simultáneamente en el espacio. Para el mundo parecía un encuentro de proximidad, y los soviéticos estaban encantados de permitirlo. En realidad ninguna de las dos naves podía maniobrar; la proximidad resultó de lanzar una casi en la trayectoria de la otra, y la distancia se incrementó constantemente después. Un primer logro genuino y también un truco de magia — e indicio de la verdadera destreza, un encuentro real, que aún nadie había dominado.",
-  "description": "Vuelo de 64 órbitas de Andriyan Nikolayev, lanzado 1962-08-11 08:24 UTC. Veinticuatro horas después del lanzamiento Vostok 4 (Popovich) se unió a él en órbita — el acercamiento más cercano fue aproximadamente 6,5 km, aunque ninguna capacidad real de encuentro de proximidad existía (ambas cápsulas carecían de propulsores de maniobra). El vuelo simultáneo fue una respuesta propagandística a las misiones suborbitales estadounidenses y al Friendship 7 de John Glenn. Nikolayev aterrizó 1962-08-15 06:52 UTC cerca de Karagandá, RSS de Kazajistán, después de casi 4 días en el espacio.",
+  "description": "Vuelo de 64 órbitas de Andriyan Nikolayev, lanzado 1962-08-11 08:24 UTC. Veinticuatro horas después del lanzamiento Vostok 4 (Popovich) se unió a él en órbita — el acercamiento más cercano fue aproximadamente 6,5 km, aunque ninguna capacidad real de encuentro de proximidad existía (ambas cápsulas carecían de propulsores de maniobra). El vuelo simultáneo fue una respuesta propagandística a las misiones suborbitales estadounidenses y al Friendship 7 de John Glenn. Nikolayev aterrizó 1962-08-15 06:52 UTC cerca de Karaganda, RSS de Kazajistán, después de casi 4 días en el espacio.",
   "events": [
     {
       "met": 0,
@@ -20,7 +20,7 @@
     {
       "met": 3.98,
       "label": "EYECCIÓN + ATERRIZAJE",
-      "note": "Nikolayev aterrizó cerca de Karagandá 1962-08-15 06:52 UTC después de 64 órbitas.",
+      "note": "Nikolayev aterrizó cerca de Karaganda 1962-08-15 06:52 UTC después de 64 órbitas.",
       "type": "nominal"
     }
   ]

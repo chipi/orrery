@@ -1,8 +1,8 @@
 {
   "name": "Apollo 15",
   "type": "BEMAND MAANLANDINGSVAARTUIG · UITGEVOERD",
-  "first": "Eerste J-mission — uitgebreide missie, eerste Maanrovers, \"Genesisrots\"",
-  "dispatch": "Met Apollo 15 was de race allang voorbij, en de wetenschap nam het stuur over — letterlijk. Dit was de eerste vlucht met een Maanrover, die een twee-kilometer loopradius omtoverde in een echte achttien-kilometer veldexpeditie, en die niet op een veilige vlakte landde maar in een vallei tussen een bergketen en een kronkelende kloof. Scott en Irwin keerden huiswaarts met de \"Genesisrots,\" een vier miljard jaar oude schaard van de maan's originele korst die bevestigde hoe deze was ontstaan. Apollo was gestopt met bezoeken aan de maan en was begonnen deze te bestuderen — en het werd daar steeds beter in tot het werd stopgezet.",
+  "first": "Eerste J-missie — langer verblijf, eerste Maanrobot, \\\"Genesis Rock\\\"",
+  "dispatch": "Bij Apollo 15 was de race al lang voorbij, en de wetenschap nam het roer over — letterlijk. Dit was de eerste vlucht met de Lunar Rover, die een wandelradius van twee mijl veranderde in een echte achttien-mijl veldexpeditie, en het zette neer niet op een veilige vlakke vlakte maar in een vallei tussen een bergketen en een bochtige canyon. Scott en Irwin keerden huiswaarts met de \\\"Genesis Rock\\\", een vier miljard jaar oud scherfje van de maan's originele korst dat bevestigde hoe deze was ontstaan. Apollo was gestopt met de Maan bezoeken en was begonnen deze te bestuderen — en het werd er steeds beter in totdat het werd geannuleerd.",
   "description": "De eerste \"J-mission\" — uitgebreide-verblijfs wetenschappelijke Apollo met de nieuwe Maanrover. De LRV gaf Scott + Irwin een 27,9 km traverseerbereik (tegen de 3,5 km van alleen-wandelen Apollo 14), openmakend de dramatische Hadley-Apennine locatie aan de voet van een 4,5 km hoge bergketen en de rand van de sinueuze Hadley Rille. Drie EVA's totaal 18 u 35 m, 77 kg monsters teruggebracht, inclusief de beroemde \"Genesisrots\" (monster 15415) — een 4,1 miljard jaar oud anortosiet dat de magma-oceaan-oorsprong van de maanhoogtekorst bevestigt. Scott's televisie-uitgezonden \"hamer-veerdrop\" verifieerde Galileo's zwaartekrachtswet live. Worden in maanomloop bediente een SIM-baai vol afstandsmeetinstrumenten (afbeeldingscamera's, gamma-straling, röntgen-, alfadeeltjespectrometers) en voerde de eerste diepe-ruimte-EVA uit op de terugweg (~39-minuten EVA op ~317 000 km van de aarde om filmcassettes op te halen). Apollo 15's herstel werd bemoeilijkt door een van de drie parachutes die niet volledig uitvouwde — CM maakte een harde landing maar bemanning was veilig.",
   "events": [
     {
@@ -32,13 +32,13 @@
     {
       "met": 5,
       "label": "EERSTE MAANROVER-TRAVERSERING",
-      "note": "EVA-1: Eerste Maanrover inzet + 10,3 km traversering naar Elbow Krater + rand van Hadley Rille.",
+      "note": "EVA-1: Eerste Maanrover inzet + 10,3 km traversering naar Elbow Crater + rand van Hadley Rille.",
       "type": "info"
     },
     {
       "met": 5.5,
       "label": "GENESISROTS",
-      "note": "EVA-2: Bij Spur Krater, Scott + Irwin bergen monster 15415 — een 4,1 miljard jaar oud anortosiet uit de originele maankorst.",
+      "note": "EVA-2: Bij Spur Crater, Scott + Irwin bergen monster 15415 — een 4,1 miljard jaar oud anortosiet uit de originele maankorst.",
       "type": "info"
     },
     {

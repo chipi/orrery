@@ -2,8 +2,8 @@
   "name": "Curiosity",
   "type": "ROVER · AKTIV",
   "first": "Erster kernkraftbetriebener Mars-Rover; erste Sky-Crane-Landung",
-  "dispatch": "Curiosity ist ein kernkraftbetriebenes Laboratorium in der Größe eines Kleinwagens, und es auf dem Mars zu landen war die schwierigste Aufgabe. Zu schwer für Airbags, wurde es 2012 von einem raketenbetriebenen Sky Crane in einer Sequenz auf den Mars herabgelassen, die so riskant war, dass ihre Planer sie „sieben Minuten des Terrors\" nannten — und es funktionierte beim ersten Versuch. Seitdem hat es sich über den Gale-Krater gebohrt und die Frage beantwortet, für die es entsandt wurde: Der Krater beherbergte einst einen See mit einer Chemie, die eine lebende Organismus hätte nutzen können. Der Mars war bewohnbar. Curiosity fährt immer noch und erklimmt einen Berg aus geschichtetem Stein, der wie das eigene Geschichtsbuch des Planeten zu lesen ist.",
-  "description": "Die Flaggschiff-Mission, die die moderne Marsforschung definierte. Curiosity ist klein-wagengroß, plutoniumbetrieben und hat seit der Landung 2012 über 36 km über den Gale-Krater zurückgelegt. Seine Instrumente bestätigten, dass der Mars einst bewohnbare Bedingungen hatte — fließendes Wasser, komplexe organische Stoffe, die Chemie, die Leben benötigen würde. Die „sieben Minuten des Terrors\" EDL-Sequenz, endend mit einem Sky Crane, der den Rover an Seilen herabsenkt, ist nun NASAs Standard für die Lieferung großer Nutzlasten zur Mars-Oberfläche.",
+  "dispatch": "Curiosity ist ein kernkraftbetriebenes Laboratorium in der Größe eines Kleinwagens, und es auf dem Mars zu landen war die schwierigste Aufgabe. Zu schwer für Airbags, wurde es 2012 von einem raketenbetriebenen Sky Crane in einer Sequenz auf den Mars herabgelassen, die so riskant war, dass ihre Planer sie „sieben Minuten des Terrors\" nannten — und es funktionierte beim ersten Versuch. Seitdem hat es sich über den Gale Crater gebohrt und die Frage beantwortet, für die es entsandt wurde: Der Krater beherbergte einst einen See mit einer Chemie, die eine lebende Organismus hätte nutzen können. Der Mars war bewohnbar. Curiosity fährt immer noch und erklimmt einen Berg aus geschichtetem Stein, der wie das eigene Geschichtsbuch des Planeten zu lesen ist.",
+  "description": "Die Flaggschiff-Mission, die die moderne Marsforschung definierte. Curiosity ist klein-wagengroß, plutoniumbetrieben und hat seit der Landung 2012 über 36 km über den Gale Crater zurückgelegt. Seine Instrumente bestätigten, dass der Mars einst bewohnbare Bedingungen hatte — fließendes Wasser, komplexe organische Stoffe, die Chemie, die Leben benötigen würde. Die „sieben Minuten des Terrors\" EDL-Sequenz, endend mit einem Sky Crane, der den Rover an Seilen herabsenkt, ist nun NASAs Standard für die Lieferung großer Nutzlasten zur Mars-Oberfläche.",
   "events": [
     {
       "met": 0,
@@ -26,7 +26,7 @@
     {
       "met": 119,
       "label": "TCM-3",
-      "note": "Letzte Korrektur vor EDL; Flugbahn zielt auf die Landungsellipse des Gale-Kraters.",
+      "note": "Letzte Vorkorrektur vor EDL; Flugbahn zielt auf Landungsellipse des Gale-Kraters.",
       "type": "nominal"
     },
     {
@@ -38,7 +38,7 @@
     {
       "met": 254.005,
       "label": "LANDUNG",
-      "note": "Curiosity kommt in Aeolis Palus, Gale-Krater an, 2012-08-06 05:17:57 UTC.",
+      "note": "Curiosity kommt in Aeolis Palus, Gale Crater an, 2012-08-06 05:17:57 UTC.",
       "type": "nominal"
     },
     {

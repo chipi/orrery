@@ -2,7 +2,7 @@
   "description": "Die Hälfte von Plutos Durchmesser — das größte Mond-zu-Planet-Größenverhältnis im Sonnensystem. Charon und Pluto sind gegenseitig gezeitengebunden und umkreisen einen gemeinsamen Massenschwerpunkt etwa 980 km über Plutos Oberfläche — praktisch ein binäres Planetensystem. New Horizons offenbarte ein überraschend vielfältiges Gelände: die glatte Ebene Vulcan Planitia im Süden, eine antike kratergeprägte Hemisphäre im Norden und eine dunkelrote Polkappe (Mordor Macula) aus Tholinen, die entstanden, als Methanmoleküle, die aus Plutos Atmosphäre entweichen, sich auf Charon sammelten und durch ultraviolettes Licht umgewandelt wurden. Die vier kleineren Pluto-Monde (Styx, Nix, Kerberos, Hydra) umkreisen den Pluto-Charon-Baryzentrum mit chaotischen Rotationen, angetrieben durch die wechselnde Gravitation des binären Systems.",
   "surface_composition": "Wassereis-Kruste mit Ammoniakhydraten und Tholinen; die dunkelrote Polkappe (Mordor Macula) besteht aus Methangas, das von Pluto entwichen ist und auf Charons eiskalter Oberfläche zu Tholinen verarbeitet wurde.",
   "mission_visits": [
-    "New Horizons — USA, 2015 (first and only flyby)"
+    "New Horizons – USA, 2015 (erster und einziger Vorbeiflug)"
   ],
   "library_labels": {
     "charon-wiki": "Wikipedia — Charon",
@@ -13,7 +13,7 @@
     {
       "tab": "orbits",
       "section": "keplerian-orbit",
-      "why": "Charon und Pluto umkreisen ein Baryzentrum, das sich AUßERHALB von Pluto befindet — was es zum einzigen bekannten echten Doppelsystem im Sonnensystem macht, anstelle eines Planeten mit Mond."
+      "why": "Charon und Pluto umkreisen einen Baryzentrum, das AUSSERHALB von Pluto liegt – womit es das einzige bekannte echte Doppelsternsystem im Sonnensystem ist und keine Konstellation aus einem Planeten und seinem Mond darstellt."
     },
     {
       "tab": "orbits",

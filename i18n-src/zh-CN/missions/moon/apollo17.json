@@ -1,14 +1,14 @@
 {
   "name": "Apollo 17",
-  "dispatch": "[",
+  "dispatch": "Apollo 17 是结束，尽管在 1972 年 12 月观看的几乎没有人相信会是这样。它也延迟地成为了将一位真正的科学家送上月球的飞行——地质学家 Harrison Schmitt，他的眼睛在 Shorty 坑捕捉到了橙色的火山玻璃，这改写了我们对月球构成的认识。Cernan 和 Schmitt 停留了三天，驾驶了二十二英里，随后 Cernan 爬上梯子最后一次，说他们\"如同来时一样离去，承蒙上帝保佑，我们必将归来\"。半个多世纪后没有人回去过——每一个关于回去的严肃论证仍然始于我们曾经能够做到这一点的事实。",
   "type": "CREWED LANDER · ROVER · FLOWN",
-  "first": "Last crewed mission to the Moon (and the only Apollo with a trained geologist)",
-  "description": "The last time humans visited another world — over half a century ago. Cernan and Schmitt spent 75 hours on the surface, drove the LRV 35.7 km, and brought back 110.5 kg of samples. Schmitt was the only trained scientist (geologist) ever to walk on the Moon, and his findings — particularly the orange volcanic glass at Shorty Crater — reshaped lunar geology. Cernan's last words before climbing the ladder for the final time: 'We leave as we came, and God willing, we shall return.' Artemis III is supposed to make good on that promise.",
+  "first": "最后一次载人登月任务（也是唯一配有训练有素的地质学家的Apollo任务）",
+  "description": "人类最后一次访问另一个世界——那已经是半个多世纪前的事了。Cernan和Schmitt在月面上度过了75小时，用LRV驾驶了35.7公里，并带回了110.5公斤的样本。Schmitt是唯一在月球上行走过的受过训练的科学家（地质学家），他的发现——特别是Shorty Crater的橙色火山玻璃——改变了月球地质学。Cernan在最后一次爬上梯子前说的最后一句话：\"我们如同来时一样离开，祈愿上天，我们终将归来。\"Artemis III应该会兑现这一诺言。",
   "events": [
     {
       "met": 0,
       "label": "LAUNCH",
-      "note": "Saturn V (AS-512) from KSC LC-39A 1972-12-07 — only Apollo night launch.",
+      "note": "Saturn V（AS-512）从KSC LC-39A于1972-12-07发射——唯一的Apollo夜间发射。",
       "type": "nominal"
     },
     {
@@ -26,25 +26,25 @@
     {
       "met": 4,
       "label": "TOUCHDOWN",
-      "note": "Lunar Module Challenger lands at Taurus-Littrow Valley 1972-12-11 19:54 UTC.",
+      "note": "登月舱Challenger在Taurus-Littrow Valley着陆于1972-12-11 19:54 UTC。",
       "type": "nominal"
     },
     {
       "met": 4.3,
       "label": "FIRST EVA",
-      "note": "Cernan and Schmitt begin first of three lunar EVAs (total 22h 4m).",
+      "note": "Cernan和Schmitt开始第一次月面舱外活动，共三次（总计22小时4分钟）。",
       "type": "info"
     },
     {
       "met": 7,
       "label": "ASCENT",
-      "note": "Cernan: 'We leave as we came, and God willing, we shall return.'",
+      "note": "Cernan：\"我们如我们来时一样离开，上天保佑，我们终将归来。\"",
       "type": "nominal"
     },
     {
       "met": 12.6,
       "label": "SPLASHDOWN",
-      "note": "CM America returns crew to Pacific Ocean 1972-12-19.",
+      "note": "指挥舱America于1972-12-19将宇航员送回太平洋。",
       "type": "nominal"
     }
   ]

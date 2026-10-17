@@ -18,7 +18,7 @@
     },
     {
       "met": 1.5,
-      "label": "MTC-1",
+      "label": "TCM-1",
       "note": "Prima correzione di metà percorso.",
       "type": "nominal"
     },
@@ -30,7 +30,7 @@
     },
     {
       "met": 6,
-      "label": "MTC-2",
+      "label": "TCM-2",
       "note": "Correzione della traiettoria di ritorno.",
       "type": "nominal"
     },

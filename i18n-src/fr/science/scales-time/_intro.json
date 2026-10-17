@@ -1,8 +1,8 @@
 {
   "headline": "Échelles et temps — rien n'est de taille terrestre.",
   "paragraphs": [
-    "Le système solaire est plus grand que ton intuition n'est calibrée. Mars 200 millions km. Saturne 1,4 milliard. Pluton 6 milliards. Astronomes : une règle plus humaine — la distance Terre-Soleil = UA.",
-    "Le temps est l'autre axe. Signal Terre vers Mars 4-22 minutes. Pas de pilotage temps réel. Fenêtres Mars tous les 26 mois.",
-    "Six sections. UA et minute-lumière sont les règles. J2000 est le zéro. Sidéral vs synodique explique la cadence 26 mois. Le plan écliptique est le disque plat. Repères pour la comptabilité."
+    "Le système solaire est plus grand que ce pour quoi votre intuition est calibrée. Mars se trouve à 200 millions de km. Saturne à 1,4 milliard. Pluton à 6 milliards. Les nombres en kilomètres ne sont plus d'une grande aide. Les astronomes ont donc adopté une unité plus humaine — une distance Terre-Soleil, appelée unité astronomique (UA). Mars se trouve à 1,5 UA. Jupiter à 5. Pluton orbite entre 30 et 50.",
+    "Le temps est l'autre axe que vous devez recalibrer. Un signal de la Terre met 4 à 22 minutes pour atteindre Mars. Il n'existe aucun moyen de piloter un rover martien depuis la Terre — chaque manœuvre importante doit être autonome, car au moment où vous découvrez qu'elle a échoué, elle échoue depuis une heure. Les fenêtres de lancement vers Mars ne s'ouvrent que tous les 26 mois. Si vous en ratez une, vous attendez deux ans.",
+    "Six sections ici. L'AU et la minute-lumière vous donnent les unités de mesure. J2000 est l'année zéro du calendrier universel sur lequel tous les astronomes s'accordent. Sidéral vs synodique explique pourquoi les fenêtres de Mars se reproduisent tous les 26 mois, non pas 23. Le plan écliptique est le disque plat sur lequel se situent (pour la plupart) toutes les planètes. Les systèmes de référence correspondent à la comptabilité des changements entre les vues héliocentriques, géocentriques et héliocentriques des corps — ce avec quoi le contrôle de mission jongle constamment."
   ]
 }

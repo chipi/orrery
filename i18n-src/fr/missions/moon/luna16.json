@@ -1,13 +1,13 @@
 {
   "name": "Luna 16",
   "type": "ROBOTIC SAMPLE RETURN · FLOWN",
-  "first": "First robotic lunar sample return; first non-American lunar samples",
-  "description": "Luna 16 was the Soviet Union's first successful robotic sample-return mission and the first non-crewed lunar return of any kind. After Apollo 11 brought home 22 kg of crewed samples in 1969, Luna 16 returned 101 grams of regolith from Mare Fecunditatis a year later — a fraction of Apollo's payload, but a profound proof-of-concept for the alternative architecture. The mission used a Proton-K booster and a direct return profile: descent to the surface, drill core, ascent stage launch, ballistic return capsule to Kazakhstan. The technique was reused for Luna 20 and Luna 24, and decades later by Chang'e 5 and Chang'e 6.",
+  "first": "Premier retour d'échantillons lunaires par un engin automatique ; premiers échantillons lunaires non-américains",
+  "description": "Luna 16 était la première mission de retour d'échantillons par engin automatique réussie de l'Union soviétique et le premier retour lunaire non-habité de quelque nature qu'il soit. Après qu'Apollo 11 ait ramené 22 kg d'échantillons prélevés en équipage en 1969, Luna 16 a rapporté 101 grammes de régolithe provenant de Mare Fecunditatis un an plus tard — une fraction de la charge utile d'Apollo, mais une preuve de concept profonde pour l'architecture alternative. La mission a utilisé un lanceur Proton-K et un profil de retour direct : descente à la surface, forage carotté, lancement du module de remontée, capsule de retour balistique vers le Kazakhstan. La technique a été réutilisée pour Luna 20 et Luna 24, et décennies plus tard par Chang'e 5 et Chang'e 6.",
   "events": [
     { "met": 0, "label": "LAUNCH", "note": "Proton-K from Baikonur 1970-09-12.", "type": "nominal" },
-    { "met": 0.005, "label": "TLI", "note": "Trans-lunar injection on the Blok-D upper stage.", "type": "nominal" },
-    { "met": 5, "label": "TCM", "note": "Mid-course correction during 4.5-day cruise.", "type": "info" },
-    { "met": 5.1, "label": "LANDING", "note": "Soft landing in Mare Fecunditatis 1970-09-20. Surface ops + drill core (101 g).", "type": "nominal" },
-    { "met": 8, "label": "SAMPLE RETURN", "note": "Capsule recovered in Kazakhstan 1970-09-24. First non-crewed lunar sample return.", "type": "nominal" }
+    { "met": 0.005, "label": "TLI", "note": "Injection trans-lunaire sur l'étage supérieur Blok-D.", "type": "nominal" },
+    { "met": 5, "label": "TCM", "note": "Correction de trajectoire pendant la croisière de 4,5 jours.", "type": "info" },
+    { "met": 5.1, "label": "LANDING", "note": "Alunissage en douceur dans Mare Fecunditatis le 1970-09-20. Opérations de surface + carottage (101 g).", "type": "nominal" },
+    { "met": 8, "label": "SAMPLE RETURN", "note": "Capsule récupérée au Kazakhstan le 1970-09-24. Premier retour d'échantillons lunaires non-habité.", "type": "nominal" }
   ]
 }

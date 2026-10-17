@@ -1,6 +1,6 @@
 {
   "name": "Apollo 10",
-  "dispatch": "Apollo 10 voló todo el alunizaje — hasta los últimos quince kilómetros — y luego, según lo previsto, dio la vuelta. Stafford y Cernan llevaron el Módulo Lunar hasta prácticamente rozar la superficie en Tranquility, ejecutaron cada paso del descenso y regresaron a órbita sin posarse. La NASA incluso dejó los tanques de ascenso medio vacíos, de modo que por muy tentador que resultara, intentarlo nunca fue una opción. Es el vuelo menos celebrado del programa y uno de los más disciplinados: un ensayo a velocidad real de dos hombres que volaron un cuarto de millón de millas sabiendo que el alunizaje le pertenecía a otro.",
+  "dispatch": "Apollo 10 voló todo el alunizaje — hasta los últimos quince kilómetros — y luego, según lo previsto, dio la vuelta. Stafford y Cernan llevaron el Lunar Module hasta prácticamente rozar la superficie en Tranquility, ejecutaron cada paso del descenso y regresaron a órbita sin posarse. La NASA incluso dejó los tanques de ascenso medio vacíos, de modo que por muy tentador que resultara, intentarlo nunca fue una opción. Es el vuelo menos celebrado del programa y uno de los más disciplinados: un ensayo a velocidad real de dos hombres que volaron un cuarto de millón de millas sabiendo que el alunizaje le pertenecía a otro.",
   "type": "TRIPULADO ÓRBITA LUNAR · VOLÓ",
   "first": "Ensayo general completo del alunizaje — el LM descendió a ~15,6 km de altitud",
   "description": "El ensayo general completo del primer alunizaje. Stafford y Cernan volaron el LM Snoopy a ~15,6 km de altitud sobre el sitio de aterrizaje previsto del Apollo 11 en Mare Tranquillitatis — cada paso de una aproximación de aterrizaje excepto el aterrizaje mismo. Confirmaron el perfil de descenso, el radar de aterrizaje, la trayectoria de ascenso y el procedimiento de rendez-vous que Apollo 11 usaría dos meses después. Los tanques de propulsante de ascenso del LM fueron deliberadamente subllenados (~50 % de lo nominal) para evitar cualquier tentación de intentar aterrizar. La etapa de ascenso de Snoopy fue la única que dejó la órbita lunar con ∆v positivo — lanzada a una órbita heliocéntrica donde permanece hoy.",
@@ -8,49 +8,49 @@
     {
       "met": 0,
       "label": "LAUNCH",
-      "note": "Saturn V (AS-505) from Kennedy Space Center LC-39B 1969-05-18 16:49 UTC — first crewed launch from LC-39B.",
+      "note": "Saturn V (AS-505) desde Kennedy Space Center LC-39B el 18/05/1969 16:49 UTC — primer lanzamiento tripulado desde LC-39B.",
       "type": "nominal"
     },
     {
       "met": 0.12,
       "label": "TLI",
-      "note": "Trans-lunar injection. S-IVB ∆v ~3.05 km/s.",
+      "note": "Inyección trans-lunar. S-IVB ∆v ~3,05 km/s.",
       "type": "nominal"
     },
     {
       "met": 3.16,
       "label": "LOI",
-      "note": "Lunar orbit insertion. SPS ∆v ~0.91 km/s.",
+      "note": "Inserción en órbita lunar. SPS ∆v ~0,91 km/s.",
       "type": "nominal"
     },
     {
       "met": 4.6,
       "label": "LM SEPARATION",
-      "note": "Snoopy undocks from Charlie Brown. Crew of two (Stafford + Cernan) descend toward Mare Tranquillitatis.",
+      "note": "Snoopy se desacopla de Charlie Brown. Tripulación de dos (Stafford + Cernan) desciende hacia Mare Tranquillitatis.",
       "type": "nominal"
     },
     {
       "met": 4.66,
       "label": "CLOSEST APPROACH",
-      "note": "Snoopy reaches ~15.6 km above Apollo 11 target site — no landing; everything verified except touchdown itself.",
+      "note": "Snoopy alcanza ~15,6 km sobre el sitio de destino del Apollo 11 — sin alunizaje; todo verificado excepto el descenso en sí.",
       "type": "info"
     },
     {
       "met": 4.76,
       "label": "ASCENT + RENDEZVOUS",
-      "note": "Snoopy ascent stage rendezvous with Charlie Brown — first complete LM-to-CSM redocking in lunar orbit.",
+      "note": "Etapa de ascenso de Snoopy en cita con Charlie Brown — primer acoplamiento completo de LM con CSM en órbita lunar.",
       "type": "nominal"
     },
     {
       "met": 5.96,
       "label": "TEI",
-      "note": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+      "note": "Inyección trans-terrestre. SPS ∆v ~1,0 km/s.",
       "type": "nominal"
     },
     {
       "met": 8.05,
       "label": "SPLASHDOWN",
-      "note": "CM splashed down in South Pacific 1969-05-26 16:52 UTC. Recovery by USS Princeton.",
+      "note": "CM amerizó en el Pacífico Sur el 26/05/1969 16:52 UTC. Recuperado por USS Princeton.",
       "type": "nominal"
     }
   ]

@@ -86,7 +86,7 @@
     },
     {
       "type": "prose",
-      "md": "Die zweite Lehre ist in Flug 501 geschrieben: wiederverwendete Software ist nicht automatisch sichere Software. Ariane 5 wurde zerstört, weil Steuerungscode, der auf Ariane 4 bewährt war, ungetestet in eine Rakete übernommen wurde, die schneller flog, wo eine in den alten Code eingebackene Annahme nicht mehr galt. Die Komponenten waren solide; der Fehler lag darin anzunehmen, dass was in einem Kontext funktionierte, unverändert in einem anderen funktionieren würde. Jedes wiederverwendete System muss gegen die neuen Bedingungen, denen es tatsächlich begegnen wird, neu validiert werden — eine Lehre, die weit über Raketen hinausreicht."
+      "md": "Die zweite Lehre ist in Flight 501 geschrieben: wiederverwendete Software ist nicht automatisch sichere Software. Ariane 5 wurde zerstört, weil Steuerungscode, der auf Ariane 4 bewährt war, ungetestet in eine Rakete übernommen wurde, die schneller flog, wo eine in den alten Code eingebackene Annahme nicht mehr galt. Die Komponenten waren solide; der Fehler lag darin anzunehmen, dass was in einem Kontext funktionierte, unverändert in einem anderen funktionieren würde. Jedes wiederverwendete System muss gegen die neuen Bedingungen, denen es tatsächlich begegnen wird, neu validiert werden — eine Lehre, die weit über Raketen hinausreicht."
     }
   ]
 }

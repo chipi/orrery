@@ -2,7 +2,7 @@
   "headline": "Antrieb — die Raketengleichung ist der Endgegner.",
   "paragraphs": [
     "Raumfahrt hat eine Währung: Δv, in km/s. Jede Brennphase kostet was. Jeder Zug auf einer Trajektorie hat einen Preis. Das Δv-Budget ist die einzige Zahl, die sagt, ob die Mission fliegen kann.",
-    "Die grausame Schranke ist die Raketengleichung von Tsiolkovsky (1903). Δv skaliert LOGARITHMISCH mit dem Treibstoffanteil. Doppeltes Δv? Exponentiell mehr Treibstoff. Deshalb ist Saturn V zu 90% Treibmittel. Deshalb ist Mars-Landung und -Rückkehr viel schwerer als der Mond.",
-    "Sechs Abschnitte. Beginne mit Δv-Budget — der Rahmen für alles. Dann Tsiolkovsky. Spezifischer Impuls erklärt die Motorseite; C₃ und V∞ sind Energie-Zahlen, die du im FLIGHT-Tab auf /missions siehst. Der Oberth-Effekt am Ende ist seltene Gratis-Magie."
+    "Die grausame Beschränkung ist die Raketengleichung, die Konstantin Tsiolkovsky 1903 aufgeschrieben hat. Sie besagt, dass ∆v LOGARITHMISCH mit dem Treibstoffanteil deiner Rakete skaliert. Du wünschst dir doppelte ∆v? Dann brauchst du exponentiell mehr Treibstoff. Darum besteht eine Saturn V zu 90% aus Treibstoff. Darum ist eine Landung auf dem Mars und die Rückkehr so viel schwärer als eine Landung auf dem Mond. Um jedes Gramm Masse, das kein Treibstoff ist, wird erbittert gekämpft.",
+    "Sechs Abschnitte hier. Beginne mit ∆v als Missionsbudget — das ist der Rahmen für alles. Dann Tsiolkovsky, um zu verstehen, warum die Mathematik so unbarmherzig ist. Spezifischer Impuls erklärt die Engine-Seite; C3 und V∞ sind die Startenergie- und Ankunftsenergiezahlen, die du überall im FLIGHT-Tab in /missions siehst. Der Oberth-Effekt am Ende ist ein seltenes Stück kostenlose Magie — brenne tief in einem Gravitationsfeld und dein Treibstoff leistet mehr Arbeit."
   ]
 }

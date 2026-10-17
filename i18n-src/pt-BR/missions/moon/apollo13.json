@@ -3,7 +3,7 @@
   "type": "VOO TRIPULADO EM SOBREVOO · REALIZADO (POUSO ABORTADO)",
   "first": "A missão que transformou um quase-desastre no resgate mais célebre da NASA",
   "dispatch": "Apollo 13 nunca pousou, e é a missão que todos lembram. Dois dias após o lançamento, um tanque de oxigênio se desintegrou e transformou um voo de rotina para as terras altas de Fra Mauro em um problema de quatro dias: manter três homens vivos em uma nave agonizante a um quarto de milhão de milhas de casa. O que os salvou não foi heroísmo; foi preparação e uma sala cheia de pessoas trabalhando o problema em tempo real, improvisando uma forma de respirar e um caminho de volta usando apenas o que já estava preso ao veículo. A NASA chamou de um fracasso bem-sucedido. Seria mais preciso dizer que foi o voo que provou que a agência era tão competente quanto afirmava ser.",
-  "description": "Apollo 13 seria o terceiro pouso lunar tripulado, com destino às terras altas de Fra Mauro. Com 55 horas 54 minutos de voo, um tanque de oxigênio no Módulo de Serviço se rompeu, incapacitando os sistemas elétricos e de suporte à vida do Módulo de Comando-Serviço. Com o pouso cancelado, a tripulação — James Lovell, Jack Swigert e Fred Haise — desligou o CSM, mudou-se para o Módulo Lunar Aquarius como bote salva-vidas e usou o motor de descida do LM para uma queimada de Pericíntio+2 horas que os colocou em uma trajetória de retorno livre rápido. Passaram pela Lua a 254 km de altitude em 1970-04-15 e pousaram com segurança no Oceano Pacífico Sul em 1970-04-17. A missão é estudada atualmente como um modelo de improvisação de engenharia em tempo real disciplinada.",
+  "description": "Apollo 13 seria o terceiro pouso lunar tripulado, com destino às terras altas de Fra Mauro. Com 55 horas 54 minutos de voo, um tanque de oxigênio no Módulo de Serviço se rompeu, incapacitando os sistemas elétricos e de suporte à vida do Módulo de Comando-Serviço. Com o pouso cancelado, a tripulação — James Lovell, Jack Swigert e Fred Haise — desligou o CSM, mudou-se para o Lunar Module Aquarius como bote salva-vidas e usou o motor de descida do LM para uma queimada de Pericynthion+2 horas que os colocou em uma trajetória de retorno livre rápido. Passaram pela Lua a 254 km de altitude em 1970-04-15 e pousaram com segurança no Oceano Pacífico Sul em 1970-04-17. A missão é estudada atualmente como um modelo de improvisação de engenharia em tempo real disciplinada.",
   "events": [
     {
       "met": 0,
@@ -26,7 +26,7 @@
     {
       "met": 2.33,
       "label": "RUPTURA DO TANQUE DE OXIGÊNIO #2",
-      "note": "O comando de agitação de criogênico do SM inicia um incêndio de curto-circuito e ruptura do tanque. \"Houston, temos um problema.\" Energia e água diminuem; Módulo Lunar Aquarius se torna o bote salva-vidas.",
+      "note": "O comando de agitação de criogênico do SM inicia um incêndio de curto-circuito e ruptura do tanque. \"Houston, temos um problema.\" Energia e água diminuem; LM Aquarius se torna o bote salva-vidas.",
       "type": "warning"
     },
     {

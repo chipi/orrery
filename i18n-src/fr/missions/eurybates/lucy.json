@@ -2,7 +2,7 @@
   "name": "Lucy",
   "type": "SURVOL MULTIPLE · ACTIF",
   "first": "Première mission vers les Troyens de Jupiter ; visite 11 corps répartis sur 8 astéroïdes et leurs satellites sur une seule trajectoire de 12 ans — un nombre record d'objets en orbites solaires distinctes",
-  "description": "Lucy se dirige vers les nuages de Lagrange L4 et L5 — des populations d'astéroïdes primordiaux précédant et suivant Jupiter de 60°, censés préserver la matière du disque protoplanétaire externe. Trois assistances gravitationnelles terrestres (2022, 2024, 2030) structurent une trajectoire unique qui visite sept astéroïdes Troyens plus des cibles supplémentaires de la ceinture principale. Premier rapprochement : 152830 Dinkinesh (2023-11-01, ~790 m), dont l'imagerie a révélé le satellite binaire de contact Selam. Ceinture principale bonus : Donaldjohanson 2025-04. Nuage L4 : Eurybates + lune Queta (2027-08), Polymele (2027-09), Leucus (2028-04), Orus (2028-11). Après AGT-3 (2030-12), le nuage L5 arrière : Patroclus-Menoetius (2033-03) — le plus grand binaire Troyen connu, un apothéose approprié pour l'éponyme de la mission (Lucy le fossile d'hominidé ; Patroclus-Menoetius les deux personnages tombés ensemble dans l'Iliade).",
+  "description": "Lucy se dirige vers les nuages de Lagrange L4 et L5 — populations d'astéroïdes primordiaux précédant et suivant Jupiter de 60°, censés préserver de la matière du disque protoplanétaire externe. Trois assistances gravitationnelles terrestres (2022, 2024, 2030) façonnent une trajectoire unique qui visite sept astéroïdes Troyens ainsi que des cibles bonus de la ceinture principale. Premier rencontre d'astéroïde : 152830 Dinkinesh (2023-11-01, ~790 m), où l'imagerie a révélé le satellite binaire de contact Selam. Cible bonus de la ceinture principale : Donaldjohanson 2025-04. Essaim L4 : Eurybates et sa lune Queta (2027-08), Polymele (2027-09), Leucus (2028-04), Orus (2028-11). Après EGA-3 (2030-12), l'essaim L5 traînant : le système binaire Patroclus-Menoetius (2033-03) — le plus grand système binaire troyen connu, un apothéose appropriée pour la mission dont elle porte le nom (Lucy le fossile d'hominidé ; Patroclus-Menoetius les deux personnages qui tombèrent ensemble dans l'Iliade).",
   "events": [
     {
       "met": 0,
@@ -12,7 +12,7 @@
     },
     {
       "met": 365,
-      "label": "AGT-1",
+      "label": "EGA-1",
       "note": "Première assistance gravitationnelle terrestre 2022-10-16.",
       "type": "info"
     },
@@ -54,7 +54,7 @@
     },
     {
       "met": 3445,
-      "label": "AGT-3",
+      "label": "EGA-3",
       "note": "Assistance finale 2030-12. Se dirige vers le nuage L5.",
       "type": "info"
     },

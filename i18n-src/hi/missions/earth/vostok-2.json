@@ -14,19 +14,19 @@
     {
       "met": 0.5,
       "label": "EARTH PHOTOS",
-      "note": "Titov made the first hand-camera photographs of Earth from orbit.",
+      "note": "Titov ने कक्षा से पृथ्वी की पहली हाथ-चलিत कैमरा तस्वीरें लीं।",
       "type": "info"
     },
     {
       "met": 0.8,
       "label": "SLEEP",
-      "note": "First sleep period in space (~8 hours).",
+      "note": "अंतरिक्ष में पहली नींद की अवधि (~8 घंटे)।",
       "type": "info"
     },
     {
       "met": 1.04,
       "label": "EJECT + LAND",
-      "note": "Capsule de-orbited; Titov ejected at ~7 km and parachuted to Krasny Kut.",
+      "note": "कैप्सूल कक्षा से बाहर निकाला गया; Titov को ~7 किमी पर निष्कासित किया गया और Krasny Kut तक पैराशूट किया गया।",
       "type": "nominal"
     }
   ]

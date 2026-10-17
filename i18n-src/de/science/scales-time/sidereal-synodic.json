@@ -1,16 +1,16 @@
 {
-  "title": "Siderische vs synodische Periode",
+  "title": "Sidereal vs Synodic Period",
   "intro_sentence": "Zwei Arten zu fragen \"wie oft kommt das wieder?\" — gleicher Körper, anderer Bezugsrahmen, andere Antwort.",
   "narrative_101": [
     "Zwei verschiedene Antworten auf \"wie lang ist ein Marsjahr?\" — und welche du willst, hängt davon ab, was du tust.",
-    "Wie lange Mars für EINEN Lauf um die Sonne braucht: 687 Erdtage. Das ist die siderische Periode — gegen unbewegliche ferne Sterne. Geometrische Wahrheit der Bahn.",
+    "Wenn Sie wissen möchten, wie lange Mars braucht, um EINE SCHLEIFE um die Sonne zu machen, lautet die Antwort 687 Erdtage. Das ist die Sternperiode – gemessen gegen die unbewegten fernen Sterne. Sie ist die geometrische Wahrheit der Umlaufbahn. Vis-viva und Kepler's drittes Gesetz funktionieren beide in Sternzeit.",
     "Wie oft Erde und Mars sich GLEICH AUSRICHTEN (für Missionsstart): 780 Tage — ~26 Monate. Synodische Periode. Warum länger? Weil während Mars einmal um die Sonne, Erde fast zweimal — beide bewegen sich. Die Ausrichtung wiederholt erst, wenn Erde Mars im Tanz überrundet.",
-    "Deshalb erscheinen Mars-Startfenster alle 26 Monate. Verfehlst du, wartest 2 Jahre. Curiosity 2011, Perseverance 2020, nächste 2026."
+    "Deshalb erscheinen Marsstartfenster alle 26 Monate. Wenn Sie eines verpassen, warten Sie zwei Jahre. Jede Mars-Mission, von der Sie je gehört haben, musste sich auf ein synodisches Fenster abstimmen – Curiosity 2011, Perseverance 2020, die nächste 2026. Die synodische Periode ist der Herzschlag der interplanetaren Missionsplanung."
   ],
   "body_paragraphs": [
     "Siderische Periode: Zeit für eine volle Umdrehung gegen Fixsterne. Mars siderisches Jahr: 687 Erdtage. Synodische Periode: Zeit, bis ein Körper relativ zu einem anderen wieder gleiche Position hat. Mars-Erde-Synodisch: 780 Tage ≈ 26 Monate.",
-    "Synodisch interessiert Missionsplaner. Erde-Mars-Hohmann nur wenn Mars am richtigen Ort. Nächstes Fenster alle 26 Monate. Verfehl eines, warte zwei Jahre.",
-    "Mathematisch: `1/T_syn = 1/T_inner − 1/T_outer`. Erde 1,0 J, Mars 1,88 J: T_syn ≈ 26 Monate."
+    "Die synodische Periode ist das, worauf sich Missionsplaner konzentrieren. Earth-Mars Hohmann-Transfers funktionieren nur, wenn Mars sich an der richtigen Stelle befindet. Das nächste gangbare Startfenster erscheint alle 26 Monate. Verpassen Sie eines, warten Sie zwei Jahre auf das nächste. Das ist der Rhythmus jeder jemals durchgeführten Mars-Mission.",
+    "Mathematisch: `1/T_syn = 1/T_inner − 1/T_outer`. Wenn das Erdenjahr 1,0 yr ist und das Marsjahr 1,88 yr: `1/T_syn = 1 − 1/1,88 = 0,468`, also `T_syn = 2,14 yr ≈ 26 Monate`. Die Mathematik ist einfach; die operationale Konsequenz — jeder Missionszeitplan muss sie respektieren — ist dort, wo sie in der Missionsplanung lebt."
   ],
   "diagram_caption": "Siderisch: gleiche Sternausrichtung. Synodisch: gleiche Erde-Mars-Sonne-Ausrichtung, länger weil beide sich bewegten."
 }

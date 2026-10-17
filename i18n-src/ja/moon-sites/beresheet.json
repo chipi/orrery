@@ -3,7 +3,7 @@
   "mission_type": "Robotic Lander (failed)",
   "site_name": "Mare Serenitatis",
   "crew": [],
-  "left": "Crash-impact debris field (April 2019)",
-  "fact": "民間資金による初の月面着陸試行——イスラエルのNPO、SpaceILによる585 kgのランダー。月軌道に到達したが、下降中のジャイロスコープの故障によってエンジンが停止し、秒速約950 m（ほぼ秒速1 km）での衝突に至った。ニッケル製のディスクに刻まれた人類の知識の「月面図書館」と、暗号生物状態（クリプトビオーシス）が可能な環境耐性生物であるクマムシの標本を搭載していたが、衝撃で生き残ったかどうかは不確実である。Beresheet 2（計画中）の着想をもたらした。",
-  "capability": "Demonstrated that a small private team can reach the Moon. The crash itself surfaced lessons about descent-engine restart and IMU redundancy adopted by later commercial landers."
+  "left": "衝突時のデブリ場（2019年4月）",
+  "fact": "初めての民間資金による月面着陸試行 — イスラエルの非営利団体SpaceILによる585 kgのランダー。月軌道に到達したが、降下中のジャイロスコープの故障により、エンジンがシャットダウンし、時速約950 m/s（ほぼ1 km/s）での衝突に至った。人間の知識を記録したニッケル製ディスク上の「月面図書館」と、暗号生物症が可能な好極限性生物であるクマムシのサンプルを搭載していたが、衝突時に生き残ったかどうかは不明である。Beresheet 2（計画中）に着想を与えた。",
+  "capability": "小規模な民間チームが月に到達できることを実証した。衝突自体は、その後の商用着陸機に採用された降下エンジン再始動とIMU冗長性に関する教訓をもたらした。"
 }

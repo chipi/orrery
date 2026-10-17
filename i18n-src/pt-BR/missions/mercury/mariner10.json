@@ -13,31 +13,31 @@
     {
       "met": 94,
       "label": "VENUS FLYBY",
-      "note": "5768 km closest approach 1974-02-05; first deliberate gravity-assist trajectory in space history.",
+      "note": "5768 km de aproximação mínima em 1974-02-05; primeira trajetória de assistência gravitacional deliberada na história da exploração espacial.",
       "type": "nominal"
     },
     {
       "met": 146,
       "label": "MERCURY 1",
-      "note": "703 km closest approach 1974-03-29; first Mercury images.",
+      "note": "703 km de aproximação mínima em 1974-03-29; primeiras imagens de Mercúrio.",
       "type": "nominal"
     },
     {
       "met": 322,
       "label": "MERCURY 2",
-      "note": "48069 km closest approach 1974-09-21; southern-hemisphere imaging.",
+      "note": "48069 km de aproximação mínima em 1974-09-21; imageamento do hemisfério sul.",
       "type": "nominal"
     },
     {
       "met": 498,
       "label": "MERCURY 3",
-      "note": "327 km closest approach 1975-03-16; magnetic-field re-confirmation.",
+      "note": "327 km de aproximação mínima em 1975-03-16; reconfirmação do campo magnético.",
       "type": "nominal"
     },
     {
       "met": 506,
       "label": "PROPELLANT END",
-      "note": "N₂ attitude-control gas depleted 1975-03-24; transmitter commanded off.",
+      "note": "Gás de controle de atitude N₂ esgotado em 1975-03-24; transmissor desligado por comando.",
       "type": "nominal"
     }
   ]

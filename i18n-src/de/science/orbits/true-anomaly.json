@@ -2,13 +2,13 @@
   "title": "Wahre Anomalie",
   "intro_sentence": "Der Winkel, der dir sagt, wo ein Körper auf der Bahn gerade ist, gemessen vom Perihel.",
   "narrative_101": [
-    "Stell dir den Planeten auf seiner Ellipse vor. Wir haben Größe, Form, Neigung. Wo steht er gerade? Das ist die wahre Anomalie. Steh in der Sonne, zeig zum Perihel, und miss den Winkel zum Planeten.",
+    "Stellen Sie sich einen Planeten vor, der seine Ellipse umrundet. Wir haben ihm bereits eine Größe, eine Form, eine Neigung gegeben. Das Einzige, das uns noch fehlt, ist: Wo befindet er sich in diesem Moment auf der Bahn? Das ist die wahre Anomalie. Stellen Sie sich an die Sonne, zeigen Sie auf die nächste Passage des Planeten, und messen Sie den Winkel zu dem Ort, an dem sich der Planet tatsächlich befindet. Das ist alles.",
     "Aber: er sweept den Winkel nicht gleichmäßig. Nahe Perihel rast er, nahe Aphel schleicht er (Keplers zweites Gesetz). Astronomen erfanden zwei weitere Winkel — mittlere und exzentrische Anomalie — die gleichmäßig ticken, und eine Leiter aus Gleichungen verbindet alle drei. Das läuft 60-mal pro Sekunde unter `/explore`."
   ],
   "body_paragraphs": [
     "Die Bahnelemente beschreiben Form und Orientierung; die wahre Anomalie (`ν`) sagt dir, wo der Körper gerade ist. Vom Brennpunkt zum Perihel zeigen, dann zum Körper drehen — der Winkel ist die wahre Anomalie.",
-    "Sie läuft von 0 (Perihel) über 90° (Viertel) bis 180° (Aphel) und zurück. Anders als eine Uhr tickt sie ungleichmäßig.",
-    "Schwesterwinkel: mittlere Anomalie (`M`, gleichmäßig) und exzentrische Anomalie (`E`, Brücke). `M` linear, dann Keplers Gleichung `M = E - e·sin(E)` lösen, dann zu `ν` umrechnen."
+    "Sie verläuft von 0° beim Perihel (nächste Annäherung) über 90° (ein Viertel der Bahn) bis zu 180° beim Aphel (größte Entfernung) und zurück. Anders als eine Uhr tickt sie nicht gleichmäßig — Keplers zweites Gesetz besagt, dass der Himmelskörper beim Perihel rast und beim Aphel kriecht. Die wahre Anomalie pro Sekunde ändert sich daher während der gesamten Umlaufbahn.",
+    "Schwesterwinkel, die du treffen wirst: die mittlere Anomalie (`M`), die sich zwar gleichmäßig mit der Zeit verändert, geometrisch aber bedeutungslos ist; und die exzentrische Anomalie (`E`), die Brücke zwischen ihnen. `M` nimmt mit konstanter Rate zu, du löst Keplers Gleichung `M = E - e·sin(E)`, um `E` zu erhalten, und konvertierst dann zu `ν`. Diese Verkettung ist der Herzschlag eines jeden Orbitalsimulators, einschließlich Orrery's."
   ],
   "diagram_caption": "Wahre Anomalie ν gemessen am Brennpunkt, vom Perihel zur aktuellen Position."
 }

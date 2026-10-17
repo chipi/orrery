@@ -1,10 +1,10 @@
 {
-  "description": "La Lune est le seul satellite naturel de la Terre et le seul monde autre que la Terre sur lequel des humains ont marché. Son verrouillage gravitationnel 1:1 maintient le même hémisphère face à la Terre en permanence — la face visible dominée par des bassins maritimes inondés de lave, la face cachée un ancien terrain cratérisé des hautes terres couronné par le bassin du Pôle Sud–Aitken, la plus grande structure d'impact du Système solaire. Le lent éloignement de la Lune par rapport à la Terre (~3,8 cm/an) allonge progressivement la journée terrestre.",
+  "description": "Le seul satellite naturel de la Terre et le seul monde autre que la Terre sur lequel des humains ont marché. Son verrouillage de marée 1:1 maintient le même hémisphère face à la Terre en permanence — le côté proche dominé par des bassins de mares inondés de lave, le côté lointain un ancien terrain de highlands cratérisés couronné par le bassin du Pôle Sud–Aitken, la plus grande structure d'impact du système solaire (~2 500 km de large, ~13 km de profondeur). La lente récession de la Lune par rapport à la Terre (~3,8 cm/an) allonge progressivement le jour terrestre ; dans un passé lointain elle apparaissait presque trois fois sa taille angulaire actuelle dans le ciel.",
   "science_sections": [
     {
       "tab": "orbits",
       "section": "keplerian-orbit",
-      "why": "L'orbite de la Lune autour de la Terre est le système képlérien à deux corps du manuel — tous les autres calculs lune-autour-de-planète se généralisent à partir de là."
+      "why": "L'orbite de la Lune autour de la Terre est le système Keplerian à deux corps du manuel — tous les autres calculs lune-autour-de-planète se généralisent à partir de là."
     },
     {
       "tab": "orbits",

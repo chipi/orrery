@@ -2,7 +2,7 @@
   "name": "Apollo 7",
   "type": "मानवयुक्त पृथ्वी-कक्षा · उड़ा",
   "first": "पहली मानवयुक्त Apollo उड़ान — पृथ्वी-कक्षा में CSM परीक्षण",
-  "description": "Apollo 1 की आग (1967-01-27) के 21 महीने बाद पहली मानवयुक्त Apollo उड़ान जिसने पैड पर Grissom, White और Chaffee को मार डाला था। Apollo 7 ने पृथ्वी की कक्षा में पुनः डिज़ाइन किए गए Block II Command and Service Module की पुष्टि की — जीवन समर्थन, शक्ति, प्रणोदन (SPS आठ बार दागा), तापीय नियंत्रण, और एक मानवयुक्त अमेरिकी अंतरिक्ष यान से दुनिया का पहला लाइव टीवी प्रसारण। 10 दिन 20 घंटे की उड़ान ने दो महीने बाद Apollo 8 के चंद्र-कक्षा जुए के लिए रास्ता साफ कर दिया।",
+  "description": "पहली मानवयुक्त Apollo 7 उड़ान, Apollo 1 के अग्निकांड के 21 महीने बाद (1967-01-27), जिसमें Grissom, White और Chaffee लॉन्च पैड पर मारे गए थे। Apollo 7 ने पुनर्डिज़ाइन किए गए Block II Command and Service Module को Earth की कक्षा में सत्यापित किया — जीवन समर्थन, विद्युत, प्रणोदन (SPS ने आठ बार प्रज्वलन किया), तापीय नियंत्रण, और मानवयुक्त US अंतरिक्ष यान से दुनिया के पहले लाइव टीवी प्रसारण। Schirra (पूरे समय सिरदर्द और चिड़चिड़ा) ने पुनः प्रवेश हेलमेट के सवाल पर Houston के फैसले को रद्द कर दिया, जिसने Mission Control के निर्णय में योगदान दिया कि तीनों क्रू सदस्यों में से कोई भी फिर से उड़ान नहीं भरेगा। 10 दिन 20 घंटे की उड़ान ने Apollo 8 के दो महीने बाद की चंद्रमा-कक्षा जोखिम भरी योजना का रास्ता साफ कर दिया।",
   "events": [
     {
       "met": 0,
@@ -13,19 +13,19 @@
     {
       "met": 0.1,
       "label": "ORBIT INSERT",
-      "note": "CSM separates from S-IVB into 232 × 285 km Earth orbit, inclination 31.6°. SPS firing sequence (8 burns over 11 days) validates the propulsion that will perform LOI + TEI at the Moon.",
+      "note": "CSM, S-IVB से अलग होकर 232 × 285 किमी पृथ्वी कक्षा में प्रवेश करता है, झुकाव 31.6°। SPS ईंधन संदहन क्रम (11 दिनों में 8 दहन) उस प्रणोदन को सिद्ध करता है जो चंद्रमा पर LOI + TEI करेगा।",
       "type": "nominal"
     },
     {
       "met": 1.2,
       "label": "FIRST LIVE TV",
-      "note": "\"Hello from the lovely Apollo room high atop everything.\" First live TV broadcast from a crewed US spacecraft.",
+      "note": "\"\\\"हैलो द लवली Apollo रूम से, सब कुछ के ऊपर।\\\" Apollo अंतरिक्ष यान से भेजा गया पहला लाइव टीवी प्रसारण।",
       "type": "info"
     },
     {
       "met": 10.8,
       "label": "SPLASHDOWN",
-      "note": "CM splashed down in the North Atlantic 1968-10-22 11:11 UTC after 163 orbits / 7.4 million km / 10 d 20 h. Recovery by USS Essex.",
+      "note": "CM 1968-10-22 11:11 UTC को 163 कक्षाओं / 74 लाख किमी / 10 दि 20 घं के बाद उत्तरी अटलांटिक में उतरा। USS Essex द्वारा प्रायः निकाला गया।",
       "type": "nominal"
     }
   ]

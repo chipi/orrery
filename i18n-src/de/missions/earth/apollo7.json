@@ -2,7 +2,7 @@
   "name": "Apollo 7",
   "type": "BEMANNTE ERDUMLAUFBAHN · GEFLOGEN",
   "first": "Erster bemannter Apollo-Flug — Erdumlaufbahn-CSM-Erprobung",
-  "description": "Der erste bemannte Apollo-Flug, 21 Monate nach dem Apollo-1-Brand (27.1.1967), bei dem Grissom, White und Chaffee auf der Rampe ums Leben kamen. Apollo 7 verifizierte das neu konstruierte Block-II-Command-and-Service-Module in der Erdumlaufbahn — Lebenserhaltung, Energie, Antrieb (SPS achtmal gezündet), Wärmeschutz, und die weltweit erste Live-TV-Übertragung aus einem bemannten US-Raumfahrzeug. Der 10-Tage-20-Stunden-Flug machte den Weg frei für Apollo 8s Mondumlaufbahn-Wagnis zwei Monate später.",
+  "description": "Der erste bemannte Apollo-Flug, 21 Monate nach dem Apollo 1-Brand (1967-01-27), der Grissom, White und Chaffee auf der Startrampe tötete. Apollo 7 verifizierte das überarbeitete Block II Command and Service Module in der Erdumlaufbahn – Lebenserhaltung, Stromversorgung, Antrieb (SPS achtmal gezündet), thermische Kontrolle und die erste live Fernsehübertragung von einem bemannten US-Raumfahrzeug. Schirra (die ganze Zeit erkältet und gereizt) setzte sich gegen Houston in einer Frage zur Rückkehrkabine durch, was zu Mission Controls Entscheidung beitrug, dass keiner der drei Besatzungsmitglieder jemals wieder fliegen würde. Der 10 Tage 20 Stunden lange Flug ebnete den Weg für Apollo 8s Mondumkreisungs-Wagnis zwei Monate später.",
   "events": [
     {
       "met": 0,
@@ -13,19 +13,19 @@
     {
       "met": 0.1,
       "label": "ORBIT INSERT",
-      "note": "CSM separates from S-IVB into 232 × 285 km Earth orbit, inclination 31.6°. SPS firing sequence (8 burns over 11 days) validates the propulsion that will perform LOI + TEI at the Moon.",
+      "note": "CSM trennt sich vom S-IVB in einer 232 × 285 km-Erdumlaufbahn ab, Inklination 31,6°. Abfolge von SPS-Zündungen (8 Brennvorgänge über 11 Tage) validiert den Antrieb, der bei LOI + TEI am Mond zum Einsatz kommt.",
       "type": "nominal"
     },
     {
       "met": 1.2,
       "label": "FIRST LIVE TV",
-      "note": "\"Hello from the lovely Apollo room high atop everything.\" First live TV broadcast from a crewed US spacecraft.",
+      "note": "„Hello from the lovely Apollo room high atop everything.\" Erste Live-TV-Übertragung von einem bemannten US-Raumschiff.",
       "type": "info"
     },
     {
       "met": 10.8,
       "label": "SPLASHDOWN",
-      "note": "CM splashed down in the North Atlantic 1968-10-22 11:11 UTC after 163 orbits / 7.4 million km / 10 d 20 h. Recovery by USS Essex.",
+      "note": "CM wasserte im Nordatlantik am 22.10.1968 11:11 UTC nach 163 Umläufen / 7,4 Millionen km / 10 d 20 h ab. Bergung durch USS Essex.",
       "type": "nominal"
     }
   ]

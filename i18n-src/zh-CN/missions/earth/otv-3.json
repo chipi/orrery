@@ -1,8 +1,8 @@
 {
   "name": "X-37B OTV-3 (USA-240)",
   "type": "无人航天飞机 · 已执行",
-  "first": "USA-240 — 在轨675天，范登堡空军基地",
-  "description": "第三次X-37B飞行，重复使用OTV-1飞行器。2012-12-11 18:03 UTC从CCAFS SLC-41搭乘Atlas V 501 AV-034火箭发射；2014-10-17 16:24 UTC在范登堡空军基地着陆。在轨675天。",
+  "first": "USA-240 — 在轨675天，Vandenberg AFB",
+  "description": "第三次X-37B飞行，重复使用OTV-1飞行器。2012-12-11 18:03 UTC从CCAFS SLC-41搭乘Atlas V 501 AV-034火箭发射；2014-10-17 16:24 UTC在Vandenberg AFB着陆。在轨675天。",
   "events": [
     {
       "met": 0,
@@ -19,7 +19,7 @@
     {
       "met": 675,
       "label": "着陆",
-      "note": "2014-10-17自主在范登堡空军基地跑道着陆。",
+      "note": "2014-10-17自主在Vandenberg AFB跑道着陆。",
       "type": "nominal"
     }
   ]

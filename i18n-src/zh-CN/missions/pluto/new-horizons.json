@@ -1,20 +1,20 @@
 {
   "name": "New Horizons",
   "type": "FLYBY · FLOWN",
-  "first": "First flyby of Pluto and its moons; sharpest images of a Kuiper belt world",
-  "dispatch": "新视野号只有一次机会，而它抓住了。没有轨道，也无法减速——九年半的旅程，史上最快的发射速度，一切都汇聚在冥王星附近的几个小时，由一台远到每条指令都要数小时才能抵达的机器执行。它在2015年7月14日完美完成了飞掠，推翻了那是个死寂世界的预期：冥王星原来有水冰构成的山脉，有一片巨大的心形冰川由冻结的氮组成且仍在缓慢翻动，还有一个年轻、活跃的表面——没人想到如此小而冷的天体能保持这样的状态。随后它继续飞向Arrokoth，一个比冥王星还远十亿千米的地方——那是人类近距离见过的最遥远世界——而它仍在前行。",
-  "description": "A nine-year sprint after the fastest launch to date, New Horizons compressed decades of anticipation into one July 2015 day — a world turned from a pixelated blur into mountains of water ice and nitrogen glaciers on Pluto's heart-shaped Tombaugh Regio. The spacecraft later flew Arrokoth, linking the mission to the primordial solar system. Flight arcs in Orrery are direct-transfer teaching models, not the actual Jupiter gravity assist.",
+  "first": "首次飞掠冥王星及其卫星；柯伊伯带天体最清晰的图像",
+  "dispatch": "New Horizons只有一次机会，而它抓住了。没有轨道，也无法减速——九年半的旅程，史上最快的发射速度，一切都汇聚在冥王星附近的几个小时，由一台远到每条指令都要数小时才能抵达的机器执行。它在2015年7月14日完美完成了飞掠，推翻了那是个死寂世界的预期：冥王星原来有水冰构成的山脉，有一片巨大的心形冰川由冻结的氮组成且仍在缓慢翻动，还有一个年轻、活跃的表面——没人想到如此小而冷的天体能保持这样的状态。随后它继续飞向Arrokoth，一个比冥王星还远十亿千米的地方——那是人类近距离见过的最遥远世界——而它仍在前行。",
+  "description": "经过迄今最快发射速度后的九年冲刺，New Horizons 在 2015 年 7 月的一天里将数十年的期待压缩成现实——一个曾经是像素模糊的世界变成了冥王星心形的汤博地区上的水冰山脉和氮冰川。该航天器后来飞掠了 Arrokoth，将这次任务与原始太阳系联系起来。《Orrery》中的飞行轨迹是直接转移教学模型，而非 木星引力助推的实际轨迹。",
   "events": [
     {
       "met": 0,
       "label": "LAUNCH",
-      "note": "Atlas V 551 leaves Earth on a Jupiter-gravity-assist path to Pluto.",
+      "note": "Atlas V 551 离开地球，沿着木星引力助推路径前往冥王星。",
       "type": "nominal"
     },
     {
       "met": 3463,
       "label": "PLUTO FLYBY",
-      "note": "Closest approach to Pluto; high-rate imaging and plasma data flood Earth.",
+      "note": "最接近冥王星；高速率成像和等离子体数据涌向地球。",
       "type": "nominal"
     }
   ]

@@ -14,19 +14,19 @@
     {
       "met": 0.0001,
       "label": "ORBIT INSERT",
-      "note": "Single orbit at 169 × 327 km, 65° inclination.",
+      "note": "Orbite unique à 169 × 327 km, inclinaison de 65°.",
       "type": "nominal"
     },
     {
       "met": 0.063,
       "label": "RETROFIRE",
-      "note": "TDU-1 retro-rocket fires for de-orbit. Service-module separation system partially fails — straps release late, capsule tumbles for ~10 min.",
+      "note": "Le rétrofusée TDU-1 s'allume pour la désorbitation. Le système de séparation du module de service fonctionne partiellement — les sangles se libèrent tardivement, la capsule effectue une chute chaotique pendant ~10 min.",
       "type": "warning"
     },
     {
       "met": 0.071,
       "label": "CREW EJECT",
-      "note": "Gagarin ejected from the descent module at ~7 km altitude; parachuted to Smelovka, Saratov Oblast. Capsule landed separately.",
+      "note": "Gagarin a été éjecté du module de descente à ~7 km d'altitude ; a parachuté jusqu'à Smelovka, oblast de Saratov. La capsule s'est posée séparément.",
       "type": "info"
     }
   ]

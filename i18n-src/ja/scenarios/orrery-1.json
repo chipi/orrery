@@ -3,8 +3,8 @@
   "dep_label": "地球出発",
   "arr_label": "地球帰還",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "ファルコン・ヘビーが離昇。フリーリターン — 着陸なし。", "type": "nominal" },
-    { "met": 0.4, "label": "TMI BURN", "note": "火星注入（TMI）：3.61 km/s。脱出速度に到達。", "type": "nominal" },
+    { "met": 0, "label": "LAUNCH", "note": "Falcon Heavy が離昇。フリーリターン — 着陸なし。", "type": "nominal" },
+    { "met": 0.4, "label": "TMI BURN", "note": "火星遷移投入：秒速3.61 km。脱出速度を達成しました。", "type": "nominal" },
     { "met": 1, "label": "DAY 1 CHECK", "note": "初回の機器健全性チェック完了。すべて規定範囲内。", "type": "nominal" },
     { "met": 60, "label": "TCM-1", "note": "軌道途中修正 1：35 m/s。", "type": "nominal" },
     { "met": 200, "label": "CRUISE", "note": "外向き巡航。地球は遠ざかる。", "type": "info" },

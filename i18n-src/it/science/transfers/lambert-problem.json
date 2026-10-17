@@ -2,13 +2,13 @@
   "title": "Problema di Lambert",
   "intro_sentence": "Date due posizioni e un tempo di transito, trova l'orbita che le connette.",
   "narrative_101": [
-    "Hohmann è il più economico ma non ti lascia scegliere date. Lambert lo fa.",
-    "Lambert 1761: esattamente un'ellisse (a volte due) connette due punti in tempo dato. Cuore di ogni porkchop."
+    "Il trasferimento di Hohmann è il percorso più economico da un'orbita all'altra, ma la maggior parte delle missioni non vola effettivamente con trasferimenti di Hohmann. Vogliono partire in una data specifica — per esempio, quando un particolare razzo è pronto, o quando una particolare rampa di lancio è disponibile — e vogliono arrivare in una data specifica — per esempio, in tempo per la dissipazione di una tempesta di polvere marziana. Hohmann non te lo consente. Lambert sì.",
+    "La domanda di Lambert suona più semplice della sua matematica: sono nel punto A, voglio arrivare al punto B, e voglio impiegare esattamente questi giorni per arrivarci. Quale orbita dovrei seguire? Lambert scrisse la risposta nel 1761 — esiste esattamente un'ellisse (o a volte due, a seconda della direzione che scegli) che connette due punti in un tempo dato."
   ],
   "body_paragraphs": [
-    "Domanda: sono qui, voglio essere lì in X giorni. Quale orbita? Due vettori e tempo → orbita unica.",
-    "Hohmann = soluzione Lambert specifica. Tempo stretto = ellisse più eccentrica.",
-    "Orrery risolve Lambert in Web Worker per il porkchop di `/plan`."
+    "Il problema di Lambert chiede: sono qui, voglio essere là, e ho questo tempo a disposizione. Quale ellisse dovrei seguire? Due vettori di posizione e un tempo di volo, e l'equazione produce l'orbita di trasferimento unica (o due — c'è una strada lunga e una strada corta intorno al corpo centrale).",
+    "Il trasferimento di Hohmann è una soluzione di Lambert specifica: posizioni agli apsidi opposti, tempo di volo pari a metà del periodo dell'ellisse di trasferimento. Sposta uno qualsiasi dei due parametri — posizioni diverse, tempo diverso — e ottieni un'ellisse diversa. Tempo più breve, ellisse più eccentrica, energia di partenza maggiore. La matematica non cambia; cambiano solo le condizioni al contorno.",
+    "Orrery risolve il problema di Lambert in un Web Worker ogni volta che passi il mouse su una cella porkchop in `/plan`. Ogni cella chiede: \"partire dalla Terra nella data X, arrivare su Marte nella data Y — qual è il costo in ∆v?\" Il colore che vedi è la risposta a quella domanda, calcolata una volta per pixel."
   ],
   "diagram_caption": "Due vettori r₁ e r₂; il solver Lambert trova l'ellisse unica."
 }

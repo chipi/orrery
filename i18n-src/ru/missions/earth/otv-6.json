@@ -1,7 +1,7 @@
 {
   "name": "X-37B OTV-6 (USA-299, USSF-7)",
   "type": "БЕСПИЛОТНЫЙ КОСМОПЛАН · ЗАВЕРШЕНА",
-  "first": "USA-299 / USSF-7 — 908 суток на орбите, пусковая площадка Shuttle Landing Facility КСЦ",
+  "first": "USA-299 / USSF-7 — 908 суток на орбите, KSC Shuttle Landing Facility",
   "description": "Шестой полёт X-37B — первый под новым организационным обозначением USSF; рекордные 908 суток на орбите (~2,5 года). Запущена 17.05.2020 13:14 UTC с площадки CCAFS SLC-41 на Atlas V 501 AV-081; приземлилась на KSC SLF 12.11.2022 10:22 UTC. Несла полезную нагрузку Naval Research Laboratory PRAM (Photovoltaic RF Antenna Module — эксперимент по преобразованию солнечной энергии в микроволновое излучение мощностью 1 Вт) и средство развёртывания AFRL FalconSAT-8.",
   "events": [
     {
@@ -19,7 +19,7 @@
     {
       "met": 908,
       "label": "ПРИЗЕМЛЕНИЕ",
-      "note": "Автоматическое приземление на взлётно-посадочную полосу Shuttle Landing Facility КСЦ, 12.11.2022.",
+      "note": "Автоматическое приземление на взлётно-посадочную полосу Shuttle Landing Facility в KSC, 12.11.2022.",
       "type": "nominal"
     }
   ]

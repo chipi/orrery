@@ -2,8 +2,8 @@
   "name": "Apollo 16",
   "dispatch": "ذهبت Apollo 16 إلى المرتفعات القمرية لأخذ عينات من البراكين القديمة واكتشفت أنه لم يكن هناك أي براكين قط. كان الجيولوجيون متأكدين من أن منطقة Descartes الشاحبة الوعرة كانت بركانية؛ لكن كل صخرة أحضرها Young وDuke كانت بريشيا — حطام ملحوم معًا بفعل الاصطدامات. كان الخطأ هو المكسب: اتضح أن المرتفعات المضيئة للقمر كانت سجلاً لنظام شمسي فتي تحت قصف متواصل، وليس ثورانًا بركانيًا. إنه مثال واضح على كيف أن الاستكشاف يستحق قيمته فعليًا — تذهب لتؤكد ما تعتقد أنك تعرفه بالفعل، فيخبرك المكان بشيء أفضل.",
   "type": "مركبة هبوط مأهولة · حُلّقت",
-  "first": "أول هبوط قمري في المرتفعات القمرية — Descartes؛ \"جائزة جون يونغ القمرية الكبرى\"",
-  "description": "الهبوط القمري المأهول الخامس وأول هبوط في موقع مرتفعات قمرية غير بحرية. توقع الجيولوجيون أن Descartes ستكون بركانية؛ دحضت Apollo 16 ذلك — كل صخرة عادت كانت breccia (حطام محطم بسبب الصدمات)، مما أعاد تشكيل فهم المرتفعات القمرية كنتاج للصدمات الكارثية بدلاً من البراكين القديمة. أكمل Young و Duke ثلاث EVAs مدعومة بـ LRV بإجمالي 20 ساعة و 14 دقيقة، اجتازا 26.7 كم، وأعادا 95.7 كغ من العينات (أثقل حصاد Apollo حتى ذلك التاريخ). \"Lunar Grand Prix\" ليونغ — اختبار سرعة LRV المتلفز — بلغ ذروته عند ~17 كم/س.",
+  "first": "أول هبوط قمري في المرتفعات القمرية — Descartes؛ \"جائزة John Young القمرية الكبرى\"",
+  "description": "الهبوط البشري الخامس على القمر والأول على موقع هضبة بعيدة عن البحار. كان الجيولوجيون يتوقعون أن تكون ديكارت بركانية؛ لكن Apollo 16 دحض هذا التوقع — فكل صخرة تم إحضارها كانت بريشيا (حطاماً محطماً بالتأثير)، مما أعاد تشكيل فهمنا للمرتفعات القمرية باعتبارها نتاجات تصادمات كارثية وليس بركانية قديمة. أكمل Young و Duke ثلاث نشاطات سير خارجي مدعومة بـ LRV بإجمالي 20 ساعة 14 دقيقة، وقطعا مسافة 26.7 كم، وأحضرا 95.7 كغ من العينات (أثقل حمولة Apollo حتى ذلك التاريخ). «سباق القمر الأكبر» لـ Young — اختبار سرعة مباشر على التلفاز لـ LRV — بلغ ذروته بحوالي 17 كم/س. محاولة الارتفاع التي مدتها 11 ثانية من Duke أثناء محاولة تسجيل رقم قياسي في الوثب الطويل عرضته لخطر إتلاف حقيبة PLSS الخاصة به وتم إيقافها. صورة الأسرة لـ Charlie Duke وكاميرا Far-UV Camera/Spectrograph التصويرية — أول مرصد فلكي يعمل من سطح عالم آخر — انتهى بهما الحال معاً في موقع الهبوط. Mattingly، الذي كان في الأصل مقرراً للـ Apollo 13 (تم استبداله قبل الإقلاع بسبب مخاوف من الحصبة الألمانية)، تمكن أخيراً من الإقلاع إلى القمر.",
   "events": [
     {
       "met": 0,
@@ -20,55 +20,55 @@
     {
       "met": 3.3,
       "label": "LOI",
-      "note": "Lunar orbit insertion. SPS ∆v ~0.91 km/s.",
+      "note": "إدراج المسار حول القمر. SPS ∆v ~0.91 km/s.",
       "type": "nominal"
     },
     {
       "met": 4.79,
       "label": "SPS ANOMALY",
-      "note": "Pre-descent: a backup SPS gimbal oscillation forced a 6-hour landing-vs-abort engineering review in real time. Landing ultimately approved.",
+      "note": "قبل الهبوط: تذبذب احترازي في محرك SPS أجبر على إجراء مراجعة هندسية لمدة 6 ساعات حول الهبوط مقابل الإلغاء في الوقت الفعلي. تمت الموافقة على الهبوط في النهاية.",
       "type": "warning"
     },
     {
       "met": 5.04,
       "label": "TOUCHDOWN",
-      "note": "Orion lands at Descartes Highlands 1972-04-21 02:23 UTC — first highland (non-mare) landing.",
+      "note": "هبوط Orion في Descartes Highlands في 1972-04-21 02:23 UTC — أول هبوط على أراضٍ مرتفعة (غير بحرية).",
       "type": "nominal"
     },
     {
       "met": 5.5,
       "label": "FIRST HIGHLANDS EVA",
-      "note": "EVA-1: ALSEP deployment + LRV deployment + first scientific traverse of the lunar highlands.",
+      "note": "EVA-1: نشر ALSEP + نشر LRV + أول عملية اجتياز علمية للأراضي المرتفعة بالقمر.",
       "type": "info"
     },
     {
       "met": 6.1,
       "label": "LUNAR GRAND PRIX",
-      "note": "EVA-2: Young's televised LRV speed test (\"lunar Grand Prix\") — peak speed ~17 km/h. Geology traverse up Stone Mountain.",
+      "note": "EVA-2: اختبار السرعة المذاع تلفزيونياً لـ Young على LRV (\\\"سباق جائزة Grand Prix القمري\\\") — السرعة القصوى ~17 km/h. عملية اجتياز جيولوجية صعوداً على Stone Mountain.",
       "type": "info"
     },
     {
       "met": 6.7,
       "label": "FAR-UV CAMERA",
-      "note": "EVA-3: First astronomical observatory deployed on the surface of another world (NRL UV camera-spectrograph).",
+      "note": "EVA-3: أول مرصد فلكي نُشر على سطح عالم آخر (كاميرا-مطياف NRL فوق البنفسجية).",
       "type": "info"
     },
     {
       "met": 7.81,
       "label": "ASCENT",
-      "note": "Orion lifts off after 71 h 02 m on surface. 95.7 kg samples returned — heaviest Apollo haul to that date.",
+      "note": "إقلاع Orion بعد 71 ساعة و02 دقيقة على السطح. 95.7 كغ من العينات أُعيدت — أثقل حمولة عينات Apollo حتى ذلك التاريخ.",
       "type": "nominal"
     },
     {
       "met": 8.5,
       "label": "TEI",
-      "note": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+      "note": "حقن المسار نحو الأرض. SPS ∆v ~1.0 km/s.",
       "type": "nominal"
     },
     {
       "met": 11.07,
       "label": "SPLASHDOWN",
-      "note": "CM splashed down in Central Pacific 1972-04-27 19:45 UTC. Recovery by USS Ticonderoga.",
+      "note": "هبط CM في المحيط الهادئ الأوسط في 1972-04-27 19:45 UTC. تم استرجاعه بواسطة USS Ticonderoga.",
       "type": "nominal"
     }
   ]

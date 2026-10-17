@@ -3,48 +3,48 @@
   "dispatch": "Apollo 8 fue una apuesta hecha a toda prisa. Los informes de inteligencia sugerían que los soviéticos podrían enviar una tripulación alrededor de la Luna primero, así que en el verano de 1968 la NASA desechó el plan de vuelo y envió a tres hombres a la órbita lunar en apenas el tercer lanzamiento de un cohete que nunca había llevado tripulación. Debería haber sido temerario. En cambio, se convirtió en la única buena noticia del año — 1968 había sido asesinatos, Vietnam, ciudades en llamas — y en Nochebuena mil millones de personas escucharon el Génesis leído desde la órbita lunar y, en la fotografía de Bill Anders, vieron su mundo entero elevarse sobre un horizonte muerto por primera vez. Apollo 11 es recordado por la Luna. Apollo 8 es el que nos mostró la Tierra.",
   "type": "TRIPULADO ÓRBITA LUNAR · VOLÓ",
   "first": "Primeros humanos en salir de órbita terrestre baja + orbitar la Luna",
-  "description": "La primera misión tripulada en salir de órbita terrestre baja, la primera en escapar de la gravedad terrestre, y la primera en orbitar la Luna. Lanzada el 21-12-1968 en el primer vuelo tripulado del Saturn V (AS-503), Apollo 8 entró en órbita lunar en Nochebuena de 1968. La fotografía \"Earthrise\" de Anders durante la cuarta órbita se convirtió en una de las imágenes más influyentes de la historia. La tripulación leyó del Génesis en televisión en vivo a ~1.000 millones de espectadores. 10 órbitas después, encendieron el motor SPS para TEI en el lado oculto de la Luna, regresando al amerizaje en el Pacífico el 27-12-1968.",
+  "description": "La primera misión tripulada en abandonar la órbita baja terrestre, la primera en escapar la gravedad de la Tierra, y la primera en orbitar la Luna. Lanzada el 1968-12-21 en el primer vuelo tripulado del Saturn V (AS-503), Apollo 8 entró en órbita lunar en la Nochebuena de 1968. La fotografía «Earthrise» de Anders durante la cuarta órbita se convirtió en una de las imágenes más influyentes de la historia. La tripulación leyó del Génesis en directo a aproximadamente 1 mil millones de espectadores — la audiencia televisiva más grande hasta esa fecha. 10 órbitas después encendieron el motor SPS para el TEI en la cara oculta de la Luna, regresando a un amerizaje en el Pacífico el 1968-12-27. NASA había decidido en agosto de 1968 cambiar la carga útil de Apollo 8 de una prueba del LM en órbita terrestre alta a una misión CSM-only en órbita lunar después de que la inteligencia de la CIA sugiriese que la URSS podría intentar un vuelo circunlunar primero.",
   "events": [
     {
       "met": 0,
       "label": "LAUNCH",
-      "note": "Saturn V (AS-503) from Kennedy Space Center LC-39A 1968-12-21 12:51 UTC — first crewed Saturn V flight.",
+      "note": "Saturn V (AS-503) desde Kennedy Space Center LC-39A 1968-12-21 12:51 UTC — primer vuelo tripulado del Saturn V.",
       "type": "nominal"
     },
     {
       "met": 0.12,
       "label": "TLI",
-      "note": "Trans-lunar injection burn — first crewed escape of Earth gravity. S-IVB ∆v ~3.05 km/s.",
+      "note": "Quemado de inyección translunar — primer escape tripulado de la gravedad terrestre. S-IVB ∆v ~3,05 km/s.",
       "type": "nominal"
     },
     {
       "met": 2.79,
       "label": "LOI",
-      "note": "Lunar orbit insertion behind the Moon, out of radio contact. SPS burn ~0.91 km/s. First humans to orbit another body.",
+      "note": "Inserción en órbita lunar detrás de la Luna, sin contacto de radio. Quemado del SPS ~0,91 km/s. Primeros humanos en orbitar otro cuerpo celeste.",
       "type": "nominal"
     },
     {
       "met": 3.16,
       "label": "EARTHRISE",
-      "note": "Anders photographs Earth rising over the lunar horizon during the fourth orbit (1968-12-24, AS08-14-2383).",
+      "note": "Anders fotografía la Tierra elevándose sobre el horizonte lunar durante la cuarta órbita (1968-12-24, AS08-14-2383).",
       "type": "info"
     },
     {
       "met": 3.5,
       "label": "GENESIS READING",
-      "note": "Crew reads from Genesis on live TV to ~1 billion viewers — largest live TV audience to that date.",
+      "note": "La tripulación lee del Génesis en televisión en directo ante ~1 mil millones de espectadores — la audiencia de televisión en directo más grande hasta esa fecha.",
       "type": "info"
     },
     {
       "met": 3.96,
       "label": "TEI",
-      "note": "Trans-Earth injection behind the Moon (1968-12-25 06:10 UTC). SPS ∆v ~1.07 km/s.",
+      "note": "Inyección de regreso a la Tierra detrás de la Luna (1968-12-25 06:10 UTC). SPS ∆v ~1,07 km/s.",
       "type": "nominal"
     },
     {
       "met": 6.13,
       "label": "SPLASHDOWN",
-      "note": "CM splashed down in North Pacific 1968-12-27. Recovery by USS Yorktown.",
+      "note": "CM amerizó en el Pacífico norte 1968-12-27. Recuperado por el USS Yorktown.",
       "type": "nominal"
     }
   ]

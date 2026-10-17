@@ -7,7 +7,7 @@
     { "met": 0, "label": "LANZAMIENTO STARSHIP", "note": "Starship tripulada despega desde Boca Chica o Cape Canaveral.", "type": "nominal" },
     { "met": 1, "label": "REPOSTAJE ORBITAL", "note": "Flota de cisternas se encuentra y transfiere propelente en LEO a lo largo de varios vuelos.", "type": "nominal" },
     { "met": 2, "label": "ENCENDIDO ITM", "note": "Inyección transmarciana desde un estado en LEO totalmente cargado.", "type": "nominal" },
-    { "met": 30, "label": "MCT-1", "note": "Primera corrección de trayectoria.", "type": "nominal" },
+    { "met": 30, "label": "TCM-1", "note": "Primera corrección de trayectoria.", "type": "nominal" },
     { "met": 213, "label": "ATERRIZAJE EN MARTE", "note": "Descenso propulsado a la superficie de Marte — sin paracaídas, sin airbags, sin grúa aérea.", "type": "info" },
     { "met": 700, "label": "PROPELENTE DE RETORNO LISTO", "note": "La planta de ISRU ha producido suficiente metano + LOX para el propelente del viaje de retorno.", "type": "info" },
     { "met": 750, "label": "ENCENDIDO ITT", "note": "Inyección transterrestre — Starship despega de la superficie marciana y enciende para la trayectoria de retorno a la Tierra.", "type": "nominal" },

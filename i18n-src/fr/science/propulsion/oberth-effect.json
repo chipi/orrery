@@ -2,14 +2,14 @@
   "title": "Effet Oberth",
   "intro_sentence": "Brûle profond dans un puits gravitationnel et ton carburant fait plus de travail.",
   "narrative_101": [
-    "Magie gratuite physique. Imagine quantité fixe de carburant. Quand brûler ? Sens commun : peu importe. Faux.",
-    "Brûle quand tu vas VITE, même carburant donne beaucoup plus d'énergie utile. Énergie cinétique va comme v² — petit Δv au-dessus de haute vitesse ajoute proportionnellement plus.",
-    "Hermann Oberth 1929. TLI Apollo au périgée, hugging Terre, aussi vite que possible. Parker Solar Probe brûle au plus proche Soleil."
+    "Voici un tour de magie gratuit tiré de la physique. Imaginez que vous disposez d'une quantité précise de carburant à brûler. Vous pouvez l'enflammer quand vous le souhaitez. Où devriez-vous le faire ? Le bon sens suggère que cela n'a pas d'importance — même carburant, même moteur, même poussée. Le bon sens se trompe.",
+    "Effectuez le freinage quand vous allez VITE et le même carburant vous donne beaucoup plus d'énergie utile que le même freinage quand vous allez lentement. La raison se cache dans le fait que l'énergie cinétique varie en v² — quand vous êtes déjà en mouvement, un petit ∆v ajouté génère proportionnellement plus d'énergie que quand vous êtes immobile. Donc un freinage de 1 km/s au périastre (allant à 11 km/s) vous donne plus d'augmentation orbitale que le même freinage de 1 km/s à l'apastre (allant à 1 km/s).",
+    "Hermann Oberth l'a signalé en 1929 et les concepteurs de missions l'exploitent depuis. L'injection trans-lunaire d'Apollo s'est produite au périgée, collée à la Terre, allant aussi vite que possible. Parker Solar Probe brûle au passage le plus proche du Soleil à chaque boucle pour plonger plus profond la fois suivante. Ce n'est pas de l'énergie gratuite — la planète à laquelle vous vous collez fait le don — mais c'est la chose la plus proche d'un déjeuner gratuit que vous trouverez jamais en astronautique."
   ],
   "body_paragraphs": [
-    "Énergie cinétique va comme ½mv². Petit Δv à haute vitesse change KE beaucoup plus qu'à basse. Périapsis = plus rapide → même propergol = plus de gain énergie orbitale qu'apoapsis.",
-    "Hermann Oberth 1929. Schedule grosses combustions Δv où tu vas déjà vite. Parker Solar Probe brûle à chaque périhélie. Juno feu à périapsis jovien.",
-    "Compromis : combustions profondes courtes intenses. Sonde doit gérer chaleur, pression dynamique, timing précis."
+    "L'énergie cinétique d'un corps en mouvement varie en `½ m v²`. Un petit ∆v à grande vitesse produit un changement beaucoup plus important de l'énergie cinétique que le même ∆v à faible vitesse. Appliquez ceci à un allumage de fusée : effectuez l'allumage au périapsis (où vous vous déplacez le plus vite) et le même ergol produit un gain d'énergie orbitale supérieur à celui qu'il produirait à l'apoapsis.",
+    "Hermann Oberth l'a signalé en 1929. L'implication pour la conception de missions : planifiez vos grands allumages ∆v là où vous vous déplacez déjà vite — au périhélie de l'ellipse de croisière, au périapsis d'un survol. Parker Solar Probe brûle au périhélie de chaque arc de passage au Soleil pour plonger plus profondément vers le Soleil à la boucle suivante. Juno s'enflamme au périapsis jovien pour contrôler son orbite scientifique.",
+    "Le compromis : les freinage en puits profond sont brefs et intenses ; le vaisseau spatial doit être capable de supporter la chaleur, la pression dynamique et l'exactitude du chronométrage. Il n'y a pas de repas gratuit — mais l'effet Oberth vous montre quels repas coûtent moins cher."
   ],
   "diagram_caption": "Même Δv au périapsis (haut v) donne plus de gain énergie qu'apoapsis (bas v)."
 }

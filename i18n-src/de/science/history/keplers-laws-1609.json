@@ -4,7 +4,7 @@
   "narrative_101": [
     "Tycho Brahe verbrachte etwa 20 Jahre im Uraniborg-Observatorium auf Hven und maß Mars's Position mit Quadranten aus Messing und Eiche – besser als eine Bogenminute Genauigkeit, alles mit bloßem Auge. Er starb 1601, ohne von seinen Planetenergebnissen viel veröffentlicht zu haben.",
     "Kepler erbte die Marsnotizbücher. Er verbrachte noch ein Jahrzehnt damit, sie an Kreise anzupassen, und scheiterte. Der Durchbruch kam, als er eine Ellipse versuchte – Mars stimmte sofort überein. Daraus ergaben sich drei Gesetze: Umlaufbahnen sind Ellipsen mit der Sonne im einen Brennpunkt; gleiche Flächen werden in gleicher Zeit überstrichen; Periode zum Quadrat gleich große Halbachse zum Kubik.",
-    "Ohne diese drei Gesetze würde keine Raumfahrzeugtrajektorie in dieser App berechnet werden. Jede Porkchop-Zelle, jeder Transferbogen, jeder Planet unter /explore ist eine Keplersche Lösung."
+    "Ohne diese drei Gesetze würde keine Raumfahrzeugtrajektorie in dieser App berechnet. Jede Porkchop-Zelle, jeder Transferbogen, jeder Planet auf /explore ist eine keplersche Lösung."
   ],
   "body_paragraphs": [
     "Astronomia Nova (1609) veröffentlichte die Gesetze 1 und 2 – die Ellipsen- und Flächengleichheitsregeln, abgeleitet aus den Marsoppositionsdaten. Harmonices Mundi (1619) veröffentlichte Gesetz 3 – Periode² ∝ große Halbachse³.",

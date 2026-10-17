@@ -3,7 +3,7 @@
   "type": "SORVOLO · COMPLETATO",
   "first": "Primo veicolo spaziale a sorvolare Saturno (1979-09-01); ha dimostrato la manovra gravitazionale che ha mandato avanti Voyager 2",
   "dispatch": "Pioneer 11 era la seconda sonda esplorativa, e andò più lontano dei suoi gemelli. Dopo il suo passaggio da Giove ha usato la gravità del pianeta per attraversare il sistema solare e raggiungere Saturno nel 1979 — il primo veicolo spaziale a farlo — sorvolando deliberatamente il piano degli anelli per verificare se la regione fosse sicura. Ha trovato il varco che i Voyager avrebbero attraversato un anno dopo. Gran parte di ciò che ha reso possibile il Grand Tour era questo: una piccola e economica sonda inviata in avanguardia per correre i rischi e tracciare i pericoli, affinché le navi ammiraglia dietro di essa potessero volare con fiducia piuttosto che con paura.",
-  "description": "Gemella di Pioneer 10, lanciata un anno dopo. Pioneer 11 ha usato la gravità di Giove per piegare la sua traiettoria verso Saturno — la dimostrazione canonica della propulsione a manovra gravitazionale, la tecnica che in seguito ha reso possibile il Grand Tour dei Voyager. Su Saturno ha scoperto l'anello F e una piccola luna interna in seguito risolta nella coppia co-orbitale Giano/Epimeteo. Porta la stessa placca Pioneer del suo gemello. Il segnale è andato perduto il 1995-09-30 a una distanza eliocentrica di ~43 AU; il veicolo spaziale sta ora dirigendosi verso la costellazione dell'Aquila.",
+  "description": "Gemello di Pioneer 10, lanciato un anno dopo. Pioneer 11 utilizzò la gravità di Giove per deflettere la sua traiettoria verso Saturno — la prova canonica della propulsione a fionda gravitazionale, la tecnica che in seguito rese possibile il Grand Tour del Voyager. A Saturno scoprì l'anello F e una piccola luna interna in seguito risolta nella coppia coorbitalante Janus/Epimetheus. Trasporta la stessa placca Pioneer del suo gemello. Segnale perso il 1995-09-30 da una distanza eliocentrica di ~43 UA; l'astronave si sta ora dirigendo verso la costellazione Aquila.",
   "events": [
     {
       "met": 0,
@@ -20,7 +20,7 @@
     {
       "met": 2339,
       "label": "MASSIMO AVVICINAMENTO A SATURNO",
-      "note": "Prime immagini del pianeta da breve distanza; ha scoperto l'anello F e una piccola luna interna (in seguito risolta nella coppia co-orbitale Giano/Epimeteo).",
+      "note": "Prime immagini del pianeta da breve distanza; ha scoperto l'anello F e una piccola luna interna (in seguito risolta nella coppia co-orbitale Janus/Epimetheus).",
       "type": "nominal"
     }
   ]

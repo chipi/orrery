@@ -13,19 +13,19 @@
     {
       "met": 0.5,
       "label": "APOGEE BOOST",
-      "note": "Raised orbit to 1408 km apogee — highest crewed orbit since Apollo 17.",
+      "note": "Altitude orbitale portée à 1408 km d'apogée — l'orbite habitée la plus haute depuis Apollo 17.",
       "type": "info"
     },
     {
       "met": 3,
       "label": "COMMERCIAL EVA",
-      "note": "Isaacman + Gillis exited through cabin hatch into vacuum — first commercial spacewalk.",
+      "note": "Isaacman et Gillis ont quitté la cabine par le sas de sortie dans le vide — première sortie extravéhiculaire commerciale.",
       "type": "nominal"
     },
     {
       "met": 4.93,
       "label": "SPLASHDOWN",
-      "note": "Resilience splashed down off Florida 2024-09-15 07:36 UTC.",
+      "note": "Resilience a amerri au large de la Floride 2024-09-15 07:36 UTC.",
       "type": "nominal"
     }
   ]

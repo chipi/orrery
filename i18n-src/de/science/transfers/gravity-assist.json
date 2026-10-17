@@ -1,15 +1,15 @@
 {
-  "title": "Schwerkraftumlenkung (Swing-by)",
+  "title": "Gravity Assist",
   "intro_sentence": "Stiehl den Bahnimpuls eines Planeten beim Vorbeiflug — das Nächste an einem freien Mittagessen im Raum.",
   "narrative_101": [
     "Wirf einen Tennisball auf einen fahrenden Zug. Der Ball prallt von der Front zurück und kommt schneller, als du geworfen hast — die Zuggeschwindigkeit hat sich addiert. Das ist Swing-by. Sonde = Tennisball, Planet = Zug, \"Aufprall\" = \"Vorbeifall auf Hyperbel\".",
-    "Vom Planeten aus: gleiche Geschwindigkeit rein wie raus. Von der Sonne aus: Sonde erbt Bahnimpuls, kommt schneller (oder langsamer) raus. Kein Physikbruch — der Planet zahlt durch winziges Abbremsen.",
-    "Der Trick baute Voyagers Grand Tour. Voyager 2 verkettete vier: Jupiter, Saturn, Uranus, Neptun. Cassini bouncte zweimal Venus, einmal Erde zu Saturn. Das äußere Sonnensystem ist nur durch diesen Trick zugänglich."
+    "Aus der Perspektive des Planeten betritt und verlässt die Raumsonde ihn mit genau derselben Geschwindigkeit – die Gravitation ist konservativ, es wird keine Energie gewonnen oder verloren. Aber aus der Perspektive der Sonne erbt die Raumsonde auf der Ausreise einen Teil der Umlaufbahn des Planeten und kommt irgendwo anders mit zusätzlicher (oder geringerer) Geschwindigkeit an. Das ist keine Verletzung der Physik; der Planet zahlt dafür, indem er abbremst – um einen Betrag, der viel zu winzig ist, um ihn nachzuweisen.",
+    "Das ist der Trick, der die Voyager-Große Tour ermöglichte. Ohne Gravitationsunterstützungen kannst du mit chemischen Raketen weder den Saturn noch erst recht nicht den Uranus oder Neptun erreichen – die Treibstoffkosten sind astronomisch. Voyager 2 kettete vier Unterstützungen hintereinander: Jupiter, Saturn, Uranus, Neptun, alles in einer Reise. Cassini sprang zweimal von der Venus und einmal von der Erde ab auf dem Weg zum Saturn. Das äußere Sonnensystem ist nur wegen dieses Tricks erreichbar."
   ],
   "body_paragraphs": [
     "Nähere dich einem Planeten von hinten auf hyperbolischer Trajektorie. Die Gravitation biegt deinen Pfad, du schwingst vorbei, raus mit gleicher Relativgeschwindigkeit zum Planeten — aber der Planet bewegte sich, du trägst die Bewegung mit. Netto: mehr Sonnen-Geschwindigkeit raus.",
-    "Geometrie umkehren — von vorn — und du bremst. Pioneer 11 nutzte Jupiter Richtung Saturn. Voyager 2 verkettete vier in einer der schönsten Touren je geflogen. Cassini bouncte Venus zweimal, Erde einmal vor Saturn.",
-    "Ohne Swing-bys hätte halb Orrerys Katalog nicht fliegen können. Die äußeren Planeten sind zu weit für direkte Trajektorien mit Chemierakten."
+    "Kehren Sie die Geometrie um – nähern Sie sich von vorne – und Sie verlangsamen sich. Pioneer 11 nutzte Jupiter, um zu Saturn zu drängen. Voyager 2 verknüpfte Jupiter, Saturn, Uranus, Neptun in einer der raffiniertesten Gravity-Assist-Manöver, die je geflogen wurden. Cassini prallte zweimal auf Venus und einmal auf Earth ab, bevor es Saturn erreichte. New Horizons traf Jupiter, um drei Jahre von der Reise zu Pluto zu sparen.",
+    "Ohne Gravitationsunterstützungen hätten die Hälfte der Missionen in Orrery's Katalog nicht fliegen können. Die äußeren Planeten sind einfach zu weit entfernt für direkte Flugbahnen mit chemischen Raketen – ihre Kosten in `∆v` würden übersteigen, was jede Rakete liefern kann. Gravitationsunterstützungen verwandeln diese Rechnung vom Unmöglichen ins Schwierig-aber-Machbar."
   ],
   "diagram_caption": "Sonde tritt mit gleicher Geschwindigkeit ein und aus dem Planetenrahmen; Planetenbewegung addiert heliozentrisch."
 }

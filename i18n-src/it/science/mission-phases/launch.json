@@ -2,14 +2,14 @@
   "title": "Lancio + Ascesa",
   "intro_sentence": "I dieci minuti più violenti di ogni missione.",
   "narrative_101": [
-    "La maggior parte del pericolo è nei primi otto minuti. Razzo accende, lotta peso, sale per aria densa, accelera 0 a 7,5 km/s.",
-    "~9,4 km/s Δv ma solo 7,9 contribuiscono a velocità orbitale. Resto = perdita gravità + traino.",
-    "Abbastanza alto, atmosfera cede. Stadi separano, ogive cadono. SpaceX recupera primi stadi."
+    "La maggior parte dei pericoli del volo spaziale avviene nei primi otto minuti. Il razzo si accende, lotta contro il proprio peso per decollare dalla rampa, risale attraverso l'aria sufficientemente densa da poterlo stacciare, e accelera da zero a sette chilometri e mezzo al secondo nel momento in cui il motore si spegne. Se qualcosa va storto durante l'ascesa, raramente c'è il tempo per rimediare.",
+    "L'aritmetica è brutale. Raggiungere l'orbita richiede ~9,4 km/s di ∆v, ma solo ~7,9 km/s contribuiscono effettivamente alla velocità orbitale. Il resto viene sprecato in \"perdita gravitazionale\" (devi continuare a sparare solo per mantenere il razzo sollevato mentre sale) e \"perdita di resistenza\" (l'atmosfera che spinge indietro). Gli ingegneri passano anni a ottimizzare il programma di assetto — esattamente quando e di quanto inclinare — per minimizzare queste perdite.",
+    "Una volta che il razzo è abbastanza alto da sfuggire all'aria, le cose diventano più facili. Gli stadi si separano, i carenaggi si staccano, il secondo stadio subentra per una spinta più lunga e dolce. L'intero viaggio è un calibrato sgravamento di massa secca: ogni chilogrammo di serbatoio vuoto che puoi disfarti è un chilogrammo che lo stadio successivo non deve accelerare. SpaceX fa eccezione e recupera i suoi primi stadi; tutti gli altri li buttano via."
   ],
   "body_paragraphs": [
-    "Ascesa ~9,4 km/s ma appena 7,9 sono velocità orbitale reale. Programma di pitching minimizza perdite.",
-    "Stadi cadono. Prima separazione, secondo accende, ogiva jettison.",
-    "In `/missions` il campo launch_vehicle: Saturn V Apollo, Atlas V Curiosity, Falcon 9 Crew Dragon, SLS Artemis I."
+    "La salita dal lancio costa circa 9,4 km/s di ∆v, ma solo 7,9 km/s di questo sono effettiva velocità orbitale. Il resto è perdita gravitazionale (consumi energia per mantenere il razzo sollevato mentre sale) e perdita di resistenza (l'atmosfera che oppone resistenza). Programmi di inclinazione corretti e minimizzi entrambe — troppo verticale spreca spinta su altitudine che non aiuta l'inserimento orbitale; troppo orizzontale e l'atmosfera ha più tempo per rallentarti.",
+    "Gli stadi si separano lungo il percorso. Separazione del primo stadio, accensione del secondo stadio, gettison del carenaggio, rilascio del payload. Ogni stadio abbandona la massa secca che lo stadio successivo non deve più accelerare. Falcon 9 recupera il suo primo stadio; Saturn V no. Il compromesso è se l'hardware di recupero costa più del propellente che sarebbe servito per gettare via lo stadio.",
+    "Su `/missions` il campo launch_vehicle ti dice quale razzo ha volato nella missione. Saturn V per Apollo. Atlas V per Curiosity. Falcon 9 per Crew Dragon. SLS per Artemis I. Ogni razzo ha una curva C3-vs-carico fissa — il razzo fissa il limite massimo di ciò che è possibile."
   ],
   "diagram_caption": "Profilo lancio: salita verticale → pitching → stadiazione → inserimento."
 }

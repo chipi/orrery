@@ -1,15 +1,15 @@
 {
-  "title": "Équation de vis-viva",
+  "title": "Vis-Viva Equation",
   "intro_sentence": "À quelle vitesse un corps va à tout point de son orbite — depuis seulement le rayon actuel et le demi-grand axe.",
   "narrative_101": [
-    "Si tu n'apprends qu'une équation de mécanique orbitale, c'est celle-ci. Trois entrées — ce que tu orbites, distance, taille — une racine carrée, voilà ta vitesse.",
-    "Fonctionne par conservation d'énergie. Sonde échange altitude pour vitesse — énergie totale constante.",
-    "L'affichage vitesse en /fly ? Vis-viva. Vitesses départ/arrivée du porkchop ? Vis-viva."
+    "Si vous ne deviez retenir qu'une seule équation de mécanique orbitale, ce serait celle-ci. Donnez à vis-viva trois informations — ce autour de quoi vous orbitez, à quelle distance vous êtes actuellement, et la taille de votre orbite — et elle vous dit exactement à quelle vitesse vous vous déplacez. Pas de temps, pas d'intégration, pas de tour de passe-passe. Trois entrées, une racine carrée, terminé.",
+    "La raison pour laquelle elle fonctionne, c'est la conservation de l'énergie. Un engin spatial qui échange de l'altitude contre de la vitesse (ou vice versa) conserve son énergie totale constante sur une orbite donnée. Donc si vous savez où il se trouve le long de l'ellipse, vous savez comment cette énergie se divise entre potentielle et cinétique — et une fois que vous connaissez la partie cinétique, vous avez la vitesse.",
+    "Ouvrez l'écran /fly et regardez l'affichage de la vélocité tandis qu'un engin spatial passe près d'une planète. C'est vis-viva, recalculée à chaque image. Les nombres de vélocité de départ et de vélocité d'arrivée sur chaque diagramme de lancement dans /plan ? Vis-viva, calculée au rayon de lancement et au rayon d'arrivée. C'est partout."
   ],
   "body_paragraphs": [
-    "Vis-viva = équation de travail. Trois nombres : `μ`, `r` actuel, `a` demi-grand axe → vitesse `v`. Une racine carrée.",
-    "Conservation d'énergie : énergie mécanique constante sur l'orbite. Au périhélie petit r, vitesse haute. Aphélie : grand r, vitesse basse. Terre : 30,3 km/s vs 29,3 km/s.",
-    "Dans Orrery : `/fly` HUD vitesse en temps réel. `/plan` porkchop énergies de départ/arrivée."
+    "Vis-viva est l'équation fondamentale de la mécanique orbitale. Elle relie trois nombres — le paramètre gravitationnel `μ` du corps autour duquel vous orbitez, votre distance actuelle `r` au foyer, et le demi-grand axe `a` de l'orbite — et vous donne la vitesse `v`. C'est tout. Aucune intégration temporelle, aucune chaîne d'anomalies, juste une racine carrée et vous savez à quelle vitesse vous vous déplacez.",
+    "L'équation synthétise la conservation de l'énergie : l'énergie mécanique totale sur une orbite képlérienne est constante, donc chaque fois que vous connaissez `r` vous pouvez retrouver la vitesse. Au périhélie `r` est petit, le terme entre parenthèses est grand, `v` est élevée. À l'aphélie `r` est grand, le terme rétrécit, `v` chute. La Terre fonce par le périhélie à 30,3 km/s et progresse lentement par l'aphélie à 29,3 km/s — même orbite, vitesse différente, même énergie.",
+    "Dans Orrery, vis-viva est ce qui calcule les affichages de vélocité que vous voyez sur l'HUD de `/fly` tandis qu'un engin spatial passe près d'une planète — et les nombres d'énergie de départ et de vélocité d'arrivée alimentant la carte thermique de diagramme de lancement sur `/plan`."
   ],
   "formula_caption": "v depuis paramètre gravitationnel μ, rayon r, demi-grand axe a.",
   "diagram_caption": "Vitesse varie : haute périhélie, basse aphélie."

@@ -1,5 +1,5 @@
 {
-  "title": "Viable Zellen auslesen",
+  "title": "Reading Viability",
   "intro_sentence": "Eine Zelle ist machbar, wenn die ∆v-Leistung Ihrer Rakete ≥ den ∆v-Kosten der Zelle entspricht — das Porkchop macht diesen Vergleich zu einer Ja/Nein-Karte.",
   "narrative_101": [
     "Dies ist die Frage, die ein Porkchop von einer hübschen Heatmap zu einer echten Missionsenscheidung macht: Kann meine Rakete das wirklich fliegen? Jede Rakete – Falcon Heavy, SLS, Atlas V, nennen Sie sie – hat eine dokumentierte ∆v-Leistung für eine bestimmte Nutzlastmasse. Vergleichen Sie diese Obergrenze mit den Pro-Zelle-Kosten des Porkchop und Sie erhalten eine Ja/Nein-Karte.",

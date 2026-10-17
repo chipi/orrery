@@ -1,5 +1,5 @@
 {
-  "title": "Node-Modul",
+  "title": "Node Module",
   "intro_sentence": "Ein druckbelüfteter Hub mit mehreren Andockplätzen — der Strukturverbinder, der eine Station verzweigt.",
   "narrative_101": [
     "Ein Node ist eine spezielle Art von druckbelüftetem Modul: Es beherbergt keine Experimente oder Besatzungsquartiere, sondern verbindet einfach andere Module miteinander. Stellen Sie sich eine sechseckige Box vor, bei der jede Fläche einen Andockplatz hat. Befestigen Sie einen Node an einer Startrakete, schicken Sie ihn hoch, dann koppeln Sie fünf weitere Module an die fünf verbleibenden Anschlüsse an und Ihre Station ist von einem Modul auf sechs gewachsen.",
@@ -11,7 +11,7 @@
     "ISS Unity (Node 1) startete 1998 an Bord von STS-88. Sechs CBM-Häfen: vorne → Destiny, hinten → Zarya, Steuerbord → Quest-Luftschleuse, Zenit → Z1-Fachwerk, Backbord → Tranquility (2010), Nadir → PMA/Frachtandockung (ehemals Leonardo PMM 2011–2015). Das erste von den USA gebaute ISS-Modul.",
     "ISS Harmony (Node 2) startete 2007. Sechs Häfen: verbindet Destiny mit Columbus (Backbord), Kibo (Steuerbord) und den beiden Andockhülsen (IDA-2 vorne, IDA-3 Zenit) für Crew Dragon / Starliner.",
     "ISS Tranquility (Node 3) startete 2010. Beherbergt die Cupola-Beobachtungskuppel (Nadir-Hafen), das Permanent Multipurpose Module Leonardo (vorne) und BEAM (hinten).",
-    "Tiangongs Tianhe-Kern: verbindet Node + Besatzungsquartier + Antrieb + Kontrolle. Der Node-Hub verfügt über einen vorderen axialen Hafen (Shenzhou), zwei seitliche radiale Häfen (Wentian zu Steuerbord, Mengtian zu Backbord, beide durch den Arm dorthin verlagert) und einen Nadir-Hafen; der hintere axiale Hafen nimmt die Tianzhou-Fracht auf. Die Häfen nutzen den chinesischen Andockmechanismus, nicht das US-CBM."
+    "Tiangongs Tianhe-Kern verbindet Knotenpunkt + Besatzungsquartiere + Antrieb + Kontrolle. Das Knotenpunkt-Drehkreuz hat einen achsialen Bug-Anschlussanker (Shenzhou), zwei laterale radiale Anschlussanker (Wentian an Steuerbord, Mengtian an Backbord, beide durch den Manipulator dorthin verlagert) und einen nadir-Anschlussanker; der achsiale Heck-Anschlussanker nimmt Tianzhou-Versorgung auf. Die Anschlussanker verwenden den Chinese Docking Mechanism und nicht den amerikanischen CBM."
   ],
   "diagram_caption": "Sechseckiges Node-Modul mit sechs beschrifteten Andockplätzen: vorne / hinten / Backbord / Steuerbord / Zenit / Nadir."
 }

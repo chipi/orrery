@@ -2,13 +2,13 @@
   "title": "Inclinazione",
   "intro_sentence": "L'inclinazione del piano orbitale rispetto a un piano di riferimento.",
   "narrative_101": [
-    "Tieni un piatto piatto — è il piano di riferimento. Inclinalo. Quell'angolo è l'inclinazione.",
-    "Importa perché cambiarla è brutalmente caro. ISS a 51,6° per Bajkonur. Imager polari. GEO equatoriale."
+    "Tieni un piatto da portata piano davanti a te — quello è il piano di riferimento. Ora inclinalo. L'angolo di cui l'hai inclinato è l'inclinazione. Questo è l'intero concetto. Ogni orbita vive sul suo proprio piatto inclinato.",
+    "Importa perché cambiare l'inclinazione è brutalmente costoso in carburante. Se lanci un razzo dalla Florida, la Terra sta già girando verso est a 0,4 km/s — lo ottieni gratis se la tua orbita va verso est. Prova invece a lanciare verso un'orbita polare e non solo perdi il vantaggio, devi anche combattere contro di esso. Scegliere l'inclinazione al lancio è una delle decisioni più importanti che una missione deve prendere; quasi mai vorrai cambiarla in seguito."
   ],
   "body_paragraphs": [
-    "Inclinazione (`i`) = angolo tra piano orbitale e riferimento. Eliocentrico: eclittica. Satelliti: equatore.",
-    "Pianeti vicino all'eclittica. Mercurio 7° outlier. Plutone 17° — motivo del declassamento.",
-    "Satelliti: equatoriale (0°) GEO. ~28° Cape Canaveral. ~51,6° ISS. Polare (~90°) imaging."
+    "L'inclinazione (`i`) è l'angolo tra il piano orbitale e un riferimento scelto. Per un'orbita eliocentrica, il riferimento è l'eclittica — il piano in cui orbita la Terra. Per gli oggetti in orbita terrestre, è solitamente l'equatore. L'angolo è misurato nel nodo ascendente, dove l'orbita attraversa il piano di riferimento dirigendosi verso nord.",
+    "La maggior parte dei pianeti si trova vicino all'eclittica — la Terra la definisce (`i = 0°` per costruzione), e gli altri restano entro pochi gradi. Mercurio a 7° è l'eccezione. L'inclinazione selvaggia di Plutone di 17° è uno dei motivi per cui è stato retrocesso: i veri pianeti rimangono quasi complanari.",
+    "Per i satelliti terrestri la storia dell'inclinazione è diversa e pragmatica. Equatoriale (0°) per i satelliti geostazionari di telecomunicazioni. ~28° per i lanci da Cape Canaveral che devono sfruttare la rotazione della Terra. ~51,6° per la ISS — scelta per permettere ai cosmonauti russi di lanciare da Baikonur. Polare (~90°) per i satelliti di osservazione terrestre che hanno bisogno di coprire ogni latitudine. Sincrona al Sole (~98°) per le piattaforme scientifiche che vogliono un'illuminazione coerente ad ogni passaggio."
   ],
   "diagram_caption": "Piano orbitale inclinato di angolo i. Nodo ascendente N."
 }

@@ -2,6 +2,6 @@
   "name": "Mars 6",
   "mission_type": "Uncrewed Lander · Lost",
   "site_name": "Approx. 23.9°S, 19.4°W (Margaritifer Sinus)",
-  "fact": "First spacecraft to return atmospheric data during Mars descent. Communications were lost at touchdown, but the descent telemetry — pressure, temperature, and a partial atmospheric composition profile — fed the engineering models that Viking would rely on three years later.",
-  "capability": "First in-situ atmospheric profile of Mars during EDL — direct input to all subsequent EDL designs."
+  "fact": "首个在火星下降过程中返回大气数据的航天器。虽然通信在着陆时中断，但下降遥测数据——包括压强、温度和部分大气成分分布——为三年后 Viking 所依赖的工程模型提供了信息。",
+  "capability": "火星进入、下降和着陆过程中首个原位大气分布测量——直接为所有后续进入、下降和着陆设计提供数据输入。"
 }

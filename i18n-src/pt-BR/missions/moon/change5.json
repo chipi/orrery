@@ -1,5 +1,5 @@
 {
-  "name": "Mudança 5",
+  "name": "Chang'e 5",
   "type": "RETORNO DE AMOSTRA · VOADO",
   "first": "Primeira amostra lunar retornada em 44 anos (desde Luna 24, 1976)",
   "description": "Chang'e 5 foi o primeiro retorno de amostra da Lua desde a Luna 24 da União Soviética em 1976 - um intervalo de 44 anos. A arquitetura: orbitador + módulo de pouso + veículo de subida + cápsula de retorno de amostra, tudo em um único lançamento. O módulo de pouso pousou em Mons Rümker, perfurou e retirou 1.731 kg de regolito, decolou, encontrou-se e acoplou-se ao orbitador (o primeiro encontro robótico lunar), e a cápsula retornou à Terra. As amostras são provenientes de uma região com apenas 2 mil milhões de anos – muito mais jovem do que qualquer amostra da Apollo ou da Luna, reescrevendo modelos de vulcanismo lunar.",
@@ -7,7 +7,7 @@
     {
       "met": 0,
       "label": "LANÇAR",
-      "note": "Longo 5 de março de Wenchang.",
+      "note": "Long March 5 de Wenchang.",
       "type": "nominal"
     },
     {
@@ -19,7 +19,7 @@
     {
       "met": 8,
       "label": "ATERRAGEM",
-      "note": "Descida do Lander pronta para o Monte Rümker (Oceano de Tempestades) 12/01/2020.",
+      "note": "Descida do Lander pronta para Mons Rümker (Oceanus Procellarum) 12/01/2020.",
       "type": "nominal"
     },
     {

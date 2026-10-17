@@ -8,7 +8,7 @@
   ],
   "body_paragraphs": [
     "Vis-viva es la ecuación de trabajo de la mecánica orbital. Conecta tres números — el parámetro gravitacional `μ` de lo que orbites, tu distancia actual `r` al foco, y el semieje mayor `a` — y escupe la velocidad `v`. Eso es todo. Sin integración temporal, sin cadena de anomalías, solo una raíz cuadrada y conoces tu velocidad.",
-    "La ecuación empaqueta la conservación de la energía: la energía mecánica total en una órbita kepleriana es constante, así que cuando conoces `r` puedes recuperar la velocidad. En perihelio `r` es pequeño, el término entre paréntesis es grande, `v` es alta. En afelio `r` es grande, el término encoge, `v` baja. La Tierra pasa veloz por el perihelio a 30,3 km/s y se arrastra por el afelio a 29,3 km/s — misma órbita, distinta velocidad, misma energía.",
+    "La ecuación empaqueta la conservación de la energía: la energía mecánica total en una órbita Keplerian es constante, así que cuando conoces `r` puedes recuperar la velocidad. En perihelio `r` es pequeño, el término entre paréntesis es grande, `v` es alta. En afelio `r` es grande, el término encoge, `v` baja. La Tierra pasa veloz por el perihelio a 30,3 km/s y se arrastra por el afelio a 29,3 km/s — misma órbita, distinta velocidad, misma energía.",
     "En Orrery, vis-viva es lo que calcula las lecturas de velocidad que ves en el HUD de `/fly` mientras una nave sobrevuela un planeta — y los números de energía de lanzamiento y velocidad de llegada que alimentan el mapa de calor del porkchop en `/plan`."
   ],
   "formula_caption": "v a partir del parámetro gravitacional μ, el radio actual r y el semieje mayor a.",

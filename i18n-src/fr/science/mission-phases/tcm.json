@@ -1,14 +1,14 @@
 {
-  "title": "TCM — Manœuvre de correction de trajectoire",
+  "title": "TCM — Trajectory Correction Maneuver",
   "intro_sentence": "Petite combustion mi-croisière pour corriger les petites erreurs qui se glissent toujours dans la trajectoire de lancement.",
   "narrative_101": [
-    "Aucun lancement parfait. 5 cm/s erreur début = 100 km miss à Mars.",
-    "TCM = combustions minuscules — quelques m/s — semaines/mois en croisière. Bon marché en carburant, cher opérationnellement. Missions planifient le moins possible.",
-    "Plupart missions interplanétaires planifient quatre. TCM-1 jours après. TCM-2 semaines. TCM-3 proche arrivée. TCM-4 final. Apollo 4-5 aller et retour. Curiosity 4."
+    "Aucun lancement de fusée n'est parfait. Après l'ascension et l'injection trans-X, votre vaisseau spatial suit une trajectoire à peu près correcte — mais « à peu près » compte beaucoup quand votre destination est une petite planète à 250 millions de kilomètres de distance. Une erreur de 5 cm/s au début du voyage se traduit par 100 km d'erreur de distance à Mars. Alors vous la corrigez.",
+    "Les TCM sont de minuscules allumages — généralement seulement quelques mètres par seconde de ∆v, parfois moins — effectués des semaines ou des mois après le début de la croisière, après que le suivi au sol a eu le temps de mesurer exactement où se trouve réellement le vaisseau spatial. Bon marché en carburant, mais coûteux operationnellement : chaque allumage est une chance que quelque chose se casse, donc les missions en planifient le moins possible.",
+    "La plupart des missions interplanétaires en planifient quatre. TCM-1 quelques jours après le départ. TCM-2 quelques semaines après. TCM-3 plus près de l'arrivée. TCM-4 l'ajustement final avant que la gravité de la planète ne vous capture. Apollo en a utilisé quatre à cinq sur le trajet vers la Lune et autant sur le chemin du retour. Curiosity en a utilisé quatre. L'onglet /missions FLIGHT vous indique exactement combien de TCM chaque mission a utilisées ; le nombre le plus bas signifie généralement que le lancement a été d'une propreté exceptionnelle."
   ],
   "body_paragraphs": [
-    "Aucun lancement parfait. Trajectoire réelle dévie de quelques cm/s — petit absolu, catastrophique précision arrivée. 5 cm/s ITL → 100 km miss Lune.",
-    "Trois ou quatre. TCM-1 jours après (erreur lancement caractérisée). TCM-2 semaines (orbite raffinée). TCM-3 près arrivée. TCM-4 trim final. Quelques m/s — bon marché propergol, mais chaque combustion = risque.",
-    "Champ `tcm_count` dans onglet FLIGHT `/missions`. Curiosity 4. MRO 4. Apollo 4-5."
+    "Aucun lancement n'est parfait. La trajectoire réelle du lanceur diffère de la trajectoire prévue de quelques dizaines de mètres par seconde — petit en valeurs absolues, catastrophique pour la précision d'arrivée si on le laisse faire. Une erreur de 5 cm/s au TLI se traduit par 100 km d'écart à la Lune. Les TCM corrigent ces erreurs avant qu'elles n'augmentent.",
+    "La plupart des missions en planifient trois ou quatre. La TCM-1 se produit dans les jours suivant le lancement, quand l'erreur de lancement est la mieux caractérisée. La TCM-2 quelques semaines plus tard, après que le suivi initial ait affiné l'orbite. La TCM-3 plus proche de l'arrivée. La TCM-4 est généralement un ajustement final en phase d'approche. Chacune ne coûte que quelques mètres par seconde — bon marché en ergols, mais onéreuse opérationnellement (chaque allumage est une chance que quelque chose tourne mal).",
+    "Le champ `tcm_count` sur les onglets FLIGHT de `/missions` indique le nombre de TCM utilisées par chaque mission. Curiosity en a utilisé 4. Mars Reconnaissance Orbiter en a utilisé 4. Les missions Apollo ont utilisé 4 à 5 corrections de trajectoire en route vers la Lune et au retour."
   ]
 }

@@ -2,7 +2,7 @@
   "name": "X-37B OTV-4 (USA-261, AFSPC-5)",
   "type": "ONBEMAND RUIMTEVLIEGTUIG · GEVLOGEN",
   "first": "USA-261 / AFSPC-5 — 718 dagen in een baan, Shuttle Landing Facility van KSC",
-  "description": "Vierde X-37B-vlucht. Gelanceerd op 2015-05-20 om 15:05 UTC vanaf CCAFS SLC-41 met een Atlas V 501 AV-054; eerste OTV-landing op de Shuttle Landing Facility van het Kennedy Space Center (dezelfde 4,6 km lange landingsbaan die eerder door de Space Shuttle-orbiters werd gebruikt) op 2017-05-07 om 11:47 UTC. Vervoerde het AFRL Hall-effect-stuwraketexperiment (XR-5A, ionenvoortstuwing) en een NASA-materiaalblootstellingstestbed.",
+  "description": "Vierde X-37B-vlucht. Gelanceerd op 2015-05-20 15:05 UTC van CCAFS SLC-41 met Atlas V 501 AV-054; eerste OTV-landing op het Kennedy Space Center Shuttle Landing Facility (dezelfde 4,6 km lange baan die eerder door de Space Shuttle-orbiter werd gebruikt) op 2017-05-07 11:47 UTC. Vervoerde het AFRL Hall-effect-thruster-experiment (XR-5A, ionische voortstuwing) en een NASA Materials Exposure Test bed.",
   "events": [
     {
       "met": 0,
@@ -13,13 +13,13 @@
     {
       "met": 359,
       "label": "ON-ORBIT OPS",
-      "note": "Apogee ~325 km; classified payload operations.",
+      "note": "Apogeum ~325 km; geclassificeerde payload-operaties.",
       "type": "info"
     },
     {
       "met": 718,
       "label": "LANDING",
-      "note": "Autonomous runway landing at KSC Shuttle Landing Facility 2017-05-07.",
+      "note": "Autonome landingsmanoeuvre op KSC Shuttle Landing Facility 2017-05-07.",
       "type": "nominal"
     }
   ]

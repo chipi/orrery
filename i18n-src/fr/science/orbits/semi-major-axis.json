@@ -3,12 +3,12 @@
   "intro_sentence": "Moitié du plus long diamètre de l'ellipse — le seul nombre qui fixe la période orbitale.",
   "narrative_101": [
     "Ficelle, deux punaises, crayon. Punaises sur planche, ficelle autour, crayon tendu — tu dessines une ellipse. Le demi-grand axe est la moitié de la plus longue ligne — la taille de l'orbite.",
-    "Magique : ce seul nombre te dit combien de temps la planète prend pour faire le tour du Soleil. Pas la forme, pas l'inclinaison, pas où elle est. Juste la taille."
+    "Voilà la partie magique : ce simple nombre vous dit combien de temps il faut à la planète pour faire le tour du Soleil. Pas la forme de l'orbite, pas son inclinaison, pas où se trouve la planète en ce moment. Juste la taille. Une orbite en forme de cigare aplatie et une orbite parfaitement ronde ayant le même semi-grand axe prennent le même temps pour boucler leur course. Kepler l'a découvert il y a quatre cents ans et nous lui en rendons encore hommage dans les manuels scolaires."
   ],
   "body_paragraphs": [
-    "Aplatis une ellipse képlérienne dans sa plus longue dimension, tu as l'axe majeur. Coupe en deux : demi-grand axe — `a`. Distance moyenne du corps au foyer.",
-    "Pourquoi important ? Troisième loi de Kepler : `T² ∝ a³`. Période ne dépend que du demi-grand axe. Forme et inclinaison sans importance.",
-    "Dans `/explore` : Terre a ≈ 1,0 UA. Mars 1,52 UA. Jupiter 5,2 UA."
+    "Si vous aplatissez une ellipse keplerienne dans sa plus grande dimension, la ligne que vous avez tracée est le grand axe. Coupez-le en deux et vous obtenez le demi-grand axe — noté `a`. C'est la distance moyenne du corps en orbite jusqu'au foyer, en quelque sorte : une moyenne arithmétique du périhélie (le plus proche) et de l'aphélie (le plus lointain).",
+    "Pourquoi s'en préoccuper ? À cause de la loi de Kepler : `T² ∝ a³`. La période orbitale dépend uniquement du demi-grand axe. La forme n'a pas d'importance. L'inclinaison n'a pas d'importance. Étirez une orbite pour qu'elle ressemble à un cigare et une autre pour qu'elle soit un cercle — si les deux ont le même `a`, elles prennent exactement le même temps pour revenir.",
+    "Dans les panneaux `/explore` d'Orrery, vous verrez ce nombre en unités astronomiques. Terre : a ≈ 1,0 UA. Mars : 1,52 UA. Jupiter : 5,2 UA. Appliquez la formule de période et vous avez reproduit l'horloge de l'orrery : 1 an, 687 jours, 11,86 ans."
   ],
   "formula_caption": "Demi-grand axe comme moyenne des rayons périhélie et aphélie.",
   "diagram_caption": "Axe majeur de périhélie à aphélie. Demi-grand axe a est la moitié."

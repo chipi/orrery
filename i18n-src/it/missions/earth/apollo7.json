@@ -2,7 +2,7 @@
   "name": "Apollo 7",
   "type": "EQUIPAGGIATO ORBITA TERRESTRE · VOLATO",
   "first": "Primo volo Apollo equipaggiato — collaudo del CSM in orbita terrestre",
-  "description": "Il primo volo Apollo equipaggiato, 21 mesi dopo l'incendio di Apollo 1 (27-1-1967) che uccise Grissom, White e Chaffee sulla rampa. Apollo 7 ha verificato il riprogettato Modulo di Comando e Servizio Block II in orbita terrestre — supporto vitale, alimentazione, propulsione (SPS acceso otto volte), controllo termico, e la prima trasmissione TV dal vivo al mondo da una navicella spaziale americana equipaggiata. Il volo di 10 giorni 20 ore ha aperto la strada alla scommessa di Apollo 8 sull'orbita lunare due mesi dopo.",
+  "description": "Il primo volo Apollo con equipaggio, 21 mesi dopo l'incendio dell'Apollo 1 (1967-01-27) che uccise Grissom, White e Chaffee sulla rampa di lancio. Apollo 7 verificò il Command and Service Module Block II riprogettato in orbita terrestre — i sistemi di supporto vitale, alimentazione, propulsione (SPS acceso otto volte), controllo termico, e la prima trasmissione televisiva in diretta dal mondo da un veicolo spaziale con equipaggio statunitense. Schirra (raffreddore + irritabile per tutto il tempo) ignorò Houston su una questione riguardante l'elmetto di rientro, contribuendo alla decisione del Mission Control che nessuno dei tre membri dell'equipaggio avrebbe volato di nuovo. Il volo di 10 giorni e 20 ore ha aperto la strada al rischio dell'orbita lunare dell'Apollo 8 due mesi dopo.",
   "events": [
     {
       "met": 0,
@@ -13,19 +13,19 @@
     {
       "met": 0.1,
       "label": "ORBIT INSERT",
-      "note": "CSM separates from S-IVB into 232 × 285 km Earth orbit, inclination 31.6°. SPS firing sequence (8 burns over 11 days) validates the propulsion that will perform LOI + TEI at the Moon.",
+      "note": "Il CSM si separa dall'S-IVB in un'orbita terrestre di 232 × 285 km, inclinazione 31,6°. La sequenza di accensioni dell'SPS (8 bruciature in 11 giorni) convalida la propulsione che eseguirà il LOI + TEI alla Luna.",
       "type": "nominal"
     },
     {
       "met": 1.2,
       "label": "FIRST LIVE TV",
-      "note": "\"Hello from the lovely Apollo room high atop everything.\" First live TV broadcast from a crewed US spacecraft.",
+      "note": "«Salve dalla bellissima Apollo room in cima a tutto.» Prima trasmissione televisiva in diretta da un veicolo spaziale statunitense con equipaggio.",
       "type": "info"
     },
     {
       "met": 10.8,
       "label": "SPLASHDOWN",
-      "note": "CM splashed down in the North Atlantic 1968-10-22 11:11 UTC after 163 orbits / 7.4 million km / 10 d 20 h. Recovery by USS Essex.",
+      "note": "CM ammarrato nell'Atlantico settentrionale il 1968-10-22 alle 11:11 UTC dopo 163 orbite / 7,4 milioni di km / 10 g 20 h. Recupero da parte di USS Essex.",
       "type": "nominal"
     }
   ]

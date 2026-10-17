@@ -1,14 +1,14 @@
 {
-  "title": "MET — Tempo trascorso missione",
+  "title": "MET — Mission Elapsed Time",
   "intro_sentence": "Un cronometro semplice che inizia al lancio e non si ferma mai.",
   "narrative_101": [
-    "MET = Mission Elapsed Time. Cronometro. Day 0 hour 0 = liftoff. Tutto dopo etichettato MET. Apollo 11 primo passo Luna: MET 109h 24min.",
-    "Perché non calendario? Calendario non ha rapporto con il lavoro della sonda.",
-    "In `/fly` MET in giorni. HUD MET 173d al flyby Marte."
+    "MET sta per Mission Elapsed Time, cioè il tempo trascorso dalla missione. È un cronometro. Il giorno zero, l'ora zero, il minuto zero, il secondo zero è il momento in cui il razzo lascia la rampa di lancio. Tutto ciò che accade dopo viene etichettato con il MET. Il primo passo sulla Luna dell'Apollo 11? MET 109 ore 24 minuti. Il Voyager 1 che attraversa lo spazio interstellare? MET 35 anni.",
+    "Perché un cronometro invece di un normale calendario? Due ragioni. Innanzitutto, i calendari sulla Terra non hanno niente a che fare con ciò che fa l'astronave — Voyager non se ne importa dei martedì. In secondo luogo, più lontano vai, più gli orologi si desincronizzano. Marte dista minuti di luce; i segnali hanno ritardi. Le astronavi che viaggiano a velocità relativistiche (alcune di esse) misurano il tempo leggermente diversamente da noi. MET aggira tutto questo — è la linea temporale privata dell'astronave.",
+    "Apri la schermata /fly e guarda il MET salire in giorni mentre il viaggio simulato progredisce. L'HUD dice MET 173d quando l'astronave passa accanto a Marte. Traduzione: sono trascorsi 173 giorni dal lancio dalla prospettiva dell'astronave. Che data è sulla Terra? Non importa. Il controllo missione parla in MET."
   ],
   "body_paragraphs": [
-    "MET = tempo dal lancio. Day 0 = liftoff. Ogni evento etichettato MET.",
-    "Perché MET? Orologio Terra non corrisponde a sonda veloce o lontana. Voyager 1 a 22,5 ore-luce.",
-    "Sul HUD `/fly` MET in giorni."
+    "MET è il tempo dal lancio. Giorno zero è il decollo. Ogni evento — separazione di stadio, iniezione trans-X, correzione di rotta, inserimento orbitale, operazioni di superficie — ottiene un timestamp MET. Allunaggio dell'Apollo 11: MET 4 giorni, 6 ore, 45 minuti. Il Voyager 1 che abbandona l'eliopausa: MET 35 anni.",
+    "Perché MET invece di UTC? Perché l'orologio sulla Terra non corrisponde esattamente all'orologio dell'astronave quando l'astronave si muove veloce o è lontana. I ritardi della luce crescono (Marte dista 4-22 minuti di luce a seconda della geometria orbitale). La dilatazione relativistica si insinua per le sonde veloci. MET è il tempo trascorso proprio dell'astronave, l'ancoraggio naturale per la sequenziazione degli eventi a bordo.",
+    "Sulla HUD di `/fly` vedrai il MET aumentare in giorni mentre la simulazione progredisce. È la prospettiva dell'astronave su quanto tempo ha richiesto il viaggio — indipendente da quale data sia sulla Terra."
   ]
 }

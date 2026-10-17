@@ -3,13 +3,13 @@
   "intro_sentence": "Due modi di chiedere \"quanto spesso?\" — stesso corpo, frame diverso.",
   "narrative_101": [
     "Siderale: tempo per un giro completo contro stelle fisse. Marte 687 giorni Terra.",
-    "Sinodico: tempo perché Terra e Marte si ALLINEINO STESSO MODO. 780 giorni = ~26 mesi.",
-    "Perché finestre Marte ogni 26 mesi. Curiosity 2011, Perseverance 2020."
+    "Se vuoi sapere quanto tempo impiega Marte a fare UN GIRO completo attorno al Sole, la risposta è 687 giorni terrestri. Questo è il periodo sidereo — misurato rispetto alle stelle lontane e immobili. È la verità geometrica dell'orbita. La vis-viva e la terza legge di Kepler funzionano entrambe nel tempo sidereo.",
+    "Ma se vuoi sapere ogni quanto la Terra e Marte SI ALLINEANO ALLO STESSO MODO (per poter lanciare una missione), la risposta è 780 giorni — circa 26 mesi. È il periodo sinodico. Perché più lungo? Perché mentre Marte orbita attorno al Sole una volta, la Terra lo fa quasi due volte — entrambi i pianeti continuano a muoversi. L'allineamento si ripete solo quando la Terra ha sorpassato Marte nella danza."
   ],
   "body_paragraphs": [
-    "Siderale: orbita completa rispetto a stelle. Marte 687 giorni.",
-    "Sinodico: posizione relativa rispetto a altro corpo. Marte sinodico 780 giorni ≈ 26 mesi.",
-    "Math: 1/T_syn = 1/T_inner − 1/T_outer."
+    "Periodo siderale: tempo per un'orbita completa rispetto alle stelle fisse. È il periodo geometrico della legge di Keplero — l'anno siderale di Marte è di 687 giorni terrestri. Periodo sinodico: tempo affinché un corpo ritorni nella stessa posizione rispetto a un altro corpo, solitamente visto da un terzo. Il periodo sinodico di Marte — il tempo tra gli allineamenti Terra-Marte — è di 780 giorni, ovvero circa 26 mesi.",
+    "Il periodo sinodico è quello che interessa ai pianificatori di missioni. I trasferimenti di Hohmann Terra-Marte funzionano solo quando Marte si trova nel posto giusto. La prossima finestra di lancio praticabile appare ogni 26 mesi. Se la perdi, aspetta due anni per un'altra. Questo è il ritmo di ogni missione su Marte mai condotta.",
+    "Matematicamente: `1/T_sin = 1/T_interno − 1/T_esterno`. Se l'anno terrestre è 1,0 yr e quello di Marte è 1,88 yr: `1/T_sin = 1 − 1/1,88 = 0,468`, quindi `T_sin = 2,14 yr ≈ 26 mesi`. La matematica è semplice; la conseguenza operativa — ogni cronologia di missione deve rispettarla — è dove acquista importanza nella pianificazione delle missioni."
   ],
   "diagram_caption": "Siderale vs sinodico."
 }

@@ -1,7 +1,7 @@
 {
   "name": "Phoenix lander",
   "mission_type": "Uncrewed Lander · Mission Complete",
-  "site_name": "Vastitas Borealis (northern polar plain)",
-  "fact": "First spacecraft to physically touch Martian water ice. Phoenix's robotic arm scooped ice that sublimated in front of its cameras within hours — direct visual confirmation of the subsurface ice that Mars Odyssey's neutron spectrometer had inferred from orbit. Operated 157 sols before the northern winter froze its solar panels.",
-  "capability": "Validated water-ice-driven Mars exploration strategy; baselined polar-region surface operations."
+  "site_name": "Vastitas Borealis（北极平原）",
+  "fact": "首个直接接触火星冰水的航天器。Phoenix的机械臂铲起冰块，在相机前数小时内升华——直观证实了Mars Odyssey中子分光计从轨道推断出的地下冰。在北半球冬季冻结其太阳能电池板之前，该探测器运作了157个火星日。",
+  "capability": "验证了冰水驱动的火星探测策略；确立了极地区域表面操作的基准。"
 }

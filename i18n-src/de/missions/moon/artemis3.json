@@ -2,7 +2,7 @@
   "name": "Artemis III",
   "type": "LANDER MIT BESATZUNG · GEPLANT",
   "first": "Erste bemannte Mondlandung seit Apollo 17 (1972)",
-  "description": "Die erste bemannte Mondlandung seit über einem halben Jahrhundert. Architektur: NASAs SLS Block 1 bringt Orion mit 4 Besatzungsmitgliedern in eine nahezu geradlinige Halo-Umlaufbahn (NRHO) um den Mond. Bei NRHO ist ein SpaceX Starship Human Landing System (HLS) vorpositioniert, das vor seiner translunaren Injektion im erdnahen Orbit von Tankern wieder aufgefüllt wird. Die Orion-Besatzung wechselt zum HLS; Zwei Astronauten steigen für etwa 6,5 ​​Tage an der Oberfläche in die Südpolregion des Mondes ab, während zwei in NRHO bleiben. Nach den Oberflächenoperationen startet HLS zurück zu NRHO, wo es zum Orion transportiert und zur Erde zurückkehrt. Wird die erste Frau und den ersten farbigen Menschen auf dem Mond landen.",
+  "description": "Die erste bemannte Mondlandung seit über einem halben Jahrhundert. Architektur: NASAs SLS Block 1 startet Orion mit 4 Besatzungsmitgliedern zu einer Near-Rectilinear Halo Orbit (NRHO) um den Mond. Vorgeplatziert in der NRHO ist ein SpaceX Starship Human Landing System (HLS), das in einer niedrigen Erdumlaufbahn durch Tanker aufgefüllt wird, bevor es zur Trans-Lunar-Injektion gelangt. Die Orion-Besatzung wechselt zum HLS; 2 Astronauten steigen in der Region des Mondsüdpols ab für etwa 6,5 Tage Oberflächenoperationen, während 2 in der NRHO bleiben. Nach den Oberflächenoperationen startet das HLS zurück zur NRHO für den Transfer zu Orion und die Rückkehr zur Erde. Wird die erste Frau und die erste Person of colour auf dem Mond landen.",
   "events": [
     {
       "met": 0,
@@ -19,7 +19,7 @@
     {
       "met": 4,
       "label": "NRHO-ANKUNFT",
-      "note": "Orion erreicht die nahezu geradlinige Halo-Umlaufbahn; Rendezvous mit dem vorpositionierten Raumschiff HLS.",
+      "note": "Orion erreicht die Near-Rectilinear Halo Orbit; Rendezvous mit dem vorgeplatzten Starship HLS.",
       "type": "nominal"
     },
     {

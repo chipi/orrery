@@ -2,13 +2,13 @@
   "title": "V∞ — Vitesse d'excès hyperbolique",
   "intro_sentence": "Vitesse résiduelle après sortie du puits gravitationnel d'une planète — définit l'énergie d'arrivée d'un survol.",
   "narrative_101": [
-    "C₃ est ce que la fusée livre au LANCEMENT. V∞ (\"v-infini\") est même idée à l'AUTRE bout. À quelle vitesse arrives-tu à Mars relativement à Mars ?",
-    "Important car fixe ta combustion d'arrivée. MRO V∞ ≈ 2,6 km/s, ~1 km/s capture. Voyager 2 Neptune V∞ ≈ 8 km/s — n'a même pas essayé d'insérer."
+    "C3 est ce que votre fusée doit fournir au LANCEMENT. V∞ — prononcé « v-infini » — est la même idée, mais à L'AUTRE bout du voyage. Quand vous arrivez à Mars, à quelle vitesse vous déplacez-vous par rapport à Mars, avant que sa gravité vous capture ? C'est V∞.",
+    "Cela importe parce que V∞ détermine votre manœuvre d'arrivée. Plus vite vous arrivez, plus vous devez freiner pour vous arrêter. Mars Reconnaissance Orbiter est arrivée avec V∞ ≈ 2,6 km/s et a brûlé ~1 km/s pour se capturer en orbite. Voyager 2 a atteint Neptune avec V∞ ≈ 8 km/s et n'a même pas essayé de s'arrêter — elle a juste survolé, a pris des photos, et a continué hors du système solaire pour toujours."
   ],
   "body_paragraphs": [
-    "Imagine asymptote infiniment loin du planète. Vitesse là-bas = V∞. Sur survol hyperbolique, V∞ constant sur les deux bras.",
-    "V∞ contrôle taille combustion d'arrivée. Capture : drainer assez pour tomber sous évasion. MRO V∞ 2,6 km/s, 1 km/s pour capture. Voyager 2 Neptune 8 km/s, pas inséré — survol seulement.",
-    "Sur HUD `/fly` V∞ apparaît à entrée sphère d'influence destination."
+    "Imaginez une asymptote, infiniment loin de la planète. La vitesse à laquelle vous vous déplaceriez sur cette asymptote est V∞ — prononcé « V-infini ». C'est la vitesse relative au Soleil moins la contribution de la planète à votre mouvement. Sur un survol hyperbolique, V∞ est constant le long des deux branches de l'hyperbole.",
+    "V∞ détermine l'importance de la manœuvre d'arrivée. Pour vous capturer en orbite, vous devez dissiper assez d'énergie pour passer sous la vitesse de libération — plus profond est le puits, plus `∆v` il faut pour vous ralentir. Mars Reconnaissance Orbiter est arrivée à Mars avec V∞ ≈ 2,6 km/s, puis a consommé ~1 km/s de `∆v` pour l'insertion en orbite. Voyager 2 a atteint Neptune avec V∞ ≈ 8 km/s et n'a même pas tenté de s'insérer — elle a simplement survolé.",
+    "Sur le HUD de `/fly`, vous verrez V∞ s'afficher quand le vaisseau entre dans la sphère d'influence de la destination. C'est le moment de vérité : à quelle vitesse devez-vous réduire, et votre fusée peut-elle se le permettre ?"
   ],
   "diagram_caption": "Survol hyperbolique : V∞ constante sur asymptotes, loin du planète."
 }

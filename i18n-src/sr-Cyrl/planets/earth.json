@@ -1,7 +1,7 @@
 {
   "name": "Земља",
   "type": "Почетна · Референтна орбита",
-  "fact": "Сваки човек који је икада живео је то учинио овде. Референтна орбита по којој се мере све остале.",
+  "fact": "Сваки човек који је икада живео, живео је овде. Референтна орбита по којој се мере све остале.",
   "bio": "Аксијални нагиб од 23,44° ствара годишња доба - а не удаљеност од Сунца. Земља је заправо ближа Сунцу у јануару него у јулу.",
   "links": [
     {
@@ -32,29 +32,29 @@
   ],
   "science_sections": [
     {
-      "tab": "scales-time",
+      "tab": "Размере и време",
       "section": "au",
-      "why": "Astronomska jedinica JE srednja udaljenost Zemlja-Sunce — Zemlja je doslovno merilo za svako merenje u Sunčevom sistemu."
+      "why": "Астрономска јединица ЈЕСТЕ средња удаљеност између Земље и Сунца — Земља је буквални мерни штап за свако мерење у Сунчевом систему."
     },
     {
-      "tab": "scales-time",
+      "tab": "Размере и време",
       "section": "ecliptic-plane",
-      "why": "Zemljina orbita definiše ekliptičku ravan. Nagib svakog drugog planeta meri se u odnosu na ovu referencu."
+      "why": "Земљина орбита одређује раван еклиптике. Нагиб путање сваке друге планете мери се у односу на ову референтну раван."
     },
     {
-      "tab": "planets",
+      "tab": "Планете",
       "section": "axial-tilt-and-seasons",
-      "why": "Zemljin nagib od 23,4° je udžbeniski stroj godišnjih doba — ekvinoksijumi i solsticijumi nastaju direktno iz ugla između ose rotacije i orbitalne ravni."
+      "why": "Earth's 23,4° нагиб осе уџбенички је механизам годишњих доба — равнодневице и сунцестоји произлазе непосредно из угла између осе ротације и равни орбите."
     },
     {
-      "tab": "transfers",
+      "tab": "Трансфери",
       "section": "hohmann-transfer",
-      "why": "Svaki prozor za lansiranje na Mars — svakih 26 meseci — je Hohmannov transfer iz Zemlje. Stepenice počinju odavde."
+      "why": "Сваки лансирни прозор за Mars — на сваких 26 месеци — јесте Hohmann-ов трансфер с поласком са Земље. Лествица креће одавде."
     },
     {
-      "tab": "planets",
+      "tab": "Планете",
       "section": "moons-of-the-system",
-      "why": "Mesec je neobično veliki za svojeg roditelja — odnos (prečnik ≈ 0,27 od Zemlje) je najveći u bilo kom paru planeta i satelita."
+      "why": "Месец је необично велик за своје матично тело — однос (пречник ≈ 0,27 пречника Земље) највећи је у било ком пару планета–сателит."
     }
   ]
 }

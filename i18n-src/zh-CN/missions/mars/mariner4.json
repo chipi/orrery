@@ -1,12 +1,12 @@
 {
   "name": "Mariner 4",
   "type": "FLYBY · FLOWN",
-  "first": "First spacecraft to reach Mars and return close-up images of another planet",
-  "description": "The mission that ended dreams of a habitable Mars. Mariner 4's 22 grainy images, taken during a 25-minute closest approach at 9,846 km altitude, showed a cratered surface resembling the Moon — no canals, no vegetation, no obvious life. The atmosphere was 100× thinner than expected. The discovery reshaped Mars in the public imagination from sister-Earth to dead world. Tracking the spacecraft also produced the first measurement of the solar wind's structure between planets.",
+  "first": "首个到达火星并拍摄另一颗行星近距离图像的航天器",
+  "description": "这个任务终结了人们关于宜居火星的梦想。Mariner 4在距离9,846公里的高度进行了25分钟的最近接近时拍摄了22张粗粒度图像，显示出一个布满陨石坑的表面，类似于月球——没有运河，没有植被，没有明显的生命迹象。大气密度比预期薄100倍。这一发现在公众想象中将火星从类地姐妹星球重新塑造成荒凉世界。对这艘航天器的追踪还产生了首次测量行星间太阳风结构的成果。",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "Atlas LV-3 Agena-D lifts off from Cape Canaveral LC-12.", "type": "nominal" },
-    { "met": 7, "label": "TCM-1", "note": "First mid-course correction completed; trajectory locked.", "type": "nominal" },
-    { "met": 228, "label": "MARS FLYBY", "note": "Closest approach 9,846 km. 22 images returned over 8 hours during data playback.", "type": "nominal" },
-    { "met": 228.5, "label": "FIRST IMAGES", "note": "First close-up images of another planet ever returned to Earth.", "type": "info" }
+    { "met": 0, "label": "LAUNCH", "note": "Atlas LV-3 Agena-D从卡纳维拉尔角LC-12发射架升空。", "type": "nominal" },
+    { "met": 7, "label": "TCM-1", "note": "首次中途修正完成；轨迹已锁定。", "type": "nominal" },
+    { "met": 228, "label": "MARS FLYBY", "note": "最近接近距离9,846公里。数据回放期间8小时内传回22张图像。", "type": "nominal" },
+    { "met": 228.5, "label": "FIRST IMAGES", "note": "首次返回地球的另一颗行星近距离图像。", "type": "info" }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "name": "Apollo 11",
-  "dispatch": "[",
+  "dispatch": "Apollo 11 war der Flug, für den das gesamte Programm konzipiert wurde — derjenige, der funktionieren musste. Acht Jahre lang und 25 Milliarden Dollar später liefen alle Anstrengungen der NASA letztlich darauf hinaus, zwei Menschen auf diesen speziellen Flecken grauen Staubes zu bringen und sie heil zurückzubringen. Als Armstrong „the Eagle has landed\" funksprach, war das Weltraum-Wettrennnen des Kalten Krieges, das mit einer piepsenden Kugel über amerikanischen Städten begonnen hatte, faktisch vorbei. Was man leicht vergisst: Die Sicherheitsmarge war winzig — die Crew kam mit nur noch Sekunden Treibstoff herunter, vorbei an einem Felsbrockenfeld, das auf den Karten nicht verzeichnet war, während ein Bordcomputer die ganze Zeit über Alarme auslöste. Und doch gelang es — und für eine Nacht beobachtete ein Fünftel der Menschheit dasselbe zur gleichen Zeit.",
   "type": "LANDER MIT BESATZUNG · GEFLOGEN",
   "first": "Erste Menschen auf einem anderen Himmelskörper",
   "description": "Die Mission, die Kennedys Versprechen von 1961 erfüllte, bis zum Ende des Jahrzehnts einen Menschen auf den Mond zu bringen. Armstrong und Aldrin verbrachten 21 Stunden und 36 Minuten auf der Mondoberfläche – 2,5 Stunden EVA, 21,55 kg Proben und eine einzige Gedenktafel. Der von ihnen am Mare Tranquillitatis installierte Laser-Retroreflektor empfängt noch heute Impulse und misst den Abstand zwischen Erde und Mond millimetergenau. Die Mission wurde von rund 600 Millionen Menschen live verfolgt, einem Fünftel der damaligen Menschheit.",
@@ -26,7 +26,7 @@
     {
       "met": 4,
       "label": "LANDUNG",
-      "note": "Mondlandefähre Eagle landet am Mare Tranquillitatis am 20.07.1969 um 20:17:40 UTC.",
+      "note": "Mondlandefähre Eagle landet am Mare Tranquillitatis 1969-07-20 20:17:40 UTC.",
       "type": "nominal"
     },
     {
@@ -44,7 +44,7 @@
     {
       "met": 8,
       "label": "WASSERUNG",
-      "note": "CM Columbia bringt Besatzung in den Pazifischen Ozean zurück 24.07.1969.",
+      "note": "CM Columbia bringt Besatzung am 24.07.1969 zum Pazifik zurück.",
       "type": "nominal"
     }
   ]

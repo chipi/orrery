@@ -1,9 +1,9 @@
 {
   "name": "Artemis III",
   "mission_type": "Crewed Lander (Planned)",
-  "site_name": "Lunar South Pole (specific site TBD)",
-  "crew": ["TBD — first woman and first person of colour on Moon"],
+  "site_name": "月球南极（具体地点待定）",
+  "crew": ["待定 — 首位登月女性和首位登月有色人种人士"],
   "left": "TBD",
-  "fact": "The first crewed lunar landing since Apollo 17 in 1972 — a 55-year gap. Targets the south pole for its water ice deposits, which may enable refuelling for future deep space missions. Will land the first woman and first person of colour on the Moon. If it happens on schedule, it begins the sustained human presence that leads to Mars.",
-  "capability": "Human polar surface operations and in-situ resource utilisation rehearsal — the direct precursor to crewed Mars missions, which will depend on polar water ice for both consumables and propellant."
+  "fact": "自Apollo 17在1972年登月以来首次有人月球着陆 — 间隔55年。以月球南极为目标，那里的水冰沉积可能为未来深空任务的补充燃料提供便利。将使首位登月女性和首位登月有色人种人士踏足月球。如果按计划进行，它将开启持续的人类月球存在，进而通往火星。",
+  "capability": "人类极地表面作业和原位资源利用演练 — 直接前驱任务，为载人火星任务做准备，后者将依赖极地水冰来获取消耗物资和推进剂。"
 }

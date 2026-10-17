@@ -14,19 +14,19 @@
     {
       "met": 0.33,
       "label": "DOCK",
-      "note": "CSM docked to Skylab axial port after a soft-dock troubleshoot.",
+      "note": "एक सॉफ्ट-डॉक समस्या निवारण के बाद CSM ने Skylab के अक्षीय पोर्ट को डॉक किया।",
       "type": "nominal"
     },
     {
       "met": 14,
       "label": "EVA #2 — POWER RESTORED",
-      "note": "Conrad + Kerwin freed the jammed solar wing during a 3.5h EVA.",
+      "note": "Conrad + Kerwin ने 3.5 घंटे की EVA के दौरान जाम हुए सौर पंख को मुक्त किया।",
       "type": "nominal"
     },
     {
       "met": 28.04,
       "label": "SPLASHDOWN",
-      "note": "CSM-116 splashed down in Pacific 1973-06-22 13:50 UTC.",
+      "note": "CSM-116 ने 1973-06-22 13:50 UTC को Pacific में स्प्लैश डाउन किया।",
       "type": "nominal"
     }
   ]

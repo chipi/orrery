@@ -1,50 +1,50 @@
 {
-  "name": "아폴로 8호",
+  "name": "Apollo 8호",
   "dispatch": "Apollo 8은 서둘러 내린 도박이었다. 소련이 먼저 달 주위를 도는 유인 비행을 할 수 있다는 정보에 따라, 1968년 여름 NASA는 비행 계획을 전면 수정하고 세 명의 우주인을 달 궤도로 보냈다. 그것도 한 번도 유인 비행을 한 적 없는 로켓의 세 번째 발사로 말이다. 무모한 일이었어야 했다. 그러나 오히려 그 해의 유일한 희소식이 되었다 — 1968년은 암살, 베트남, 불타는 도시들로 점철된 해였다 — 그리고 크리스마스 이브에 10억 명의 사람들이 달 궤도에서 낭독되는 창세기를 들었고, Bill Anders의 사진을 통해 죽은 지평선 너머로 처음으로 떠오르는 그들의 세계 전체를 목격했다. Apollo 11은 달로 기억된다. Apollo 8은 우리에게 지구를 보여준 임무다.",
   "type": "유인 달 궤도 · 완료",
   "first": "최초로 저지구 궤도를 벗어나 달을 공전한 인류",
-  "description": "최초로 저지구 궤도를 떠나, 지구 중력을 벗어나, 달을 공전한 유인 임무. 1968-12-21에 새턴 V의 첫 유인 비행(AS-503)으로 발사, 아폴로 8호는 1968년 크리스마스 이브에 달 궤도에 진입. 네 번째 궤도 중 Anders의 \"Earthrise\" 사진은 역사상 가장 영향력 있는 이미지 중 하나가 되었다. 승무원은 약 10억 시청자에게 생방송 TV로 창세기를 낭독. 10회 공전 후 달 뒷면에서 TEI를 위해 SPS 엔진을 점화, 1968-12-27 태평양 스플래시다운으로 귀환.",
+  "description": "지구 저궤도를 벗어난 첫 유인 미션, 지구 중력을 벗어난 첫 미션, 그리고 달을 궤도하는 첫 미션. 1968년 12월 21일 Saturn V의 첫 유인 비행(AS-503)으로 발사된 Apollo 8은 1968년 크리스마스 이브에 달 궤도에 진입했습니다. 네 번째 궤도 중 Anders의 \"Earthrise\" 사진은 역사상 가장 영향력 있는 이미지 중 하나가 되었습니다. 승무원은 라이브 텔레비전을 통해 약 10억 명의 시청자들에게 창세기를 낭독했습니다. 당시까지의 최대 텔레비전 시청자였습니다. 10개의 궤도가 더 지난 후, 달의 뒷면에서 SPS 엔진을 발화하여 TEI를 수행했고, 1968년 12월 27일 태평양 해상 착수로 돌아왔습니다. NASA는 1968년 8월 CIA 정보가 소련이 먼저 달 주변 비행을 시도할 수 있다는 것을 시사한 후 Apollo 8의 페이로드를 고궤도 LM 시험에서 달 궤도 CSM 전용 미션으로 바꾸기로 결정했습니다.",
   "events": [
     {
       "met": 0,
       "label": "LAUNCH",
-      "note": "Saturn V (AS-503) from Kennedy Space Center LC-39A 1968-12-21 12:51 UTC — first crewed Saturn V flight.",
+      "note": "Saturn V (AS-503)이 Kennedy Space Center LC-39A에서 1968-12-21 12:51 UTC에 발사됨 — 처음으로 유인 우주비행이 진행된 Saturn V 비행.",
       "type": "nominal"
     },
     {
       "met": 0.12,
       "label": "TLI",
-      "note": "Trans-lunar injection burn — first crewed escape of Earth gravity. S-IVB ∆v ~3.05 km/s.",
+      "note": "월간전이 분사 — 지구 중력에서 처음으로 유인 탈출. S-IVB ∆v ~3.05 km/s.",
       "type": "nominal"
     },
     {
       "met": 2.79,
       "label": "LOI",
-      "note": "Lunar orbit insertion behind the Moon, out of radio contact. SPS burn ~0.91 km/s. First humans to orbit another body.",
+      "note": "달 뒤쪽에서 달 궤도 진입, 무선 통신 두절. SPS 분사 ~0.91 km/s. 다른 천체를 공전한 첫 인류.",
       "type": "nominal"
     },
     {
       "met": 3.16,
       "label": "EARTHRISE",
-      "note": "Anders photographs Earth rising over the lunar horizon during the fourth orbit (1968-12-24, AS08-14-2383).",
+      "note": "Anders가 네 번째 궤도 중에 달 지평선 위로 떠오르는 지구를 촬영함 (1968-12-24, AS08-14-2383).",
       "type": "info"
     },
     {
       "met": 3.5,
       "label": "GENESIS READING",
-      "note": "Crew reads from Genesis on live TV to ~1 billion viewers — largest live TV audience to that date.",
+      "note": "승무원이 라이브 TV를 통해 창세기를 낭독함 — 약 10억 명의 시청자에게 방송됨 — 당시까지의 최대 라이브 TV 시청 규모.",
       "type": "info"
     },
     {
       "met": 3.96,
       "label": "TEI",
-      "note": "Trans-Earth injection behind the Moon (1968-12-25 06:10 UTC). SPS ∆v ~1.07 km/s.",
+      "note": "달 뒤쪽에서 지구복귀 분사 (1968-12-25 06:10 UTC). SPS ∆v ~1.07 km/s.",
       "type": "nominal"
     },
     {
       "met": 6.13,
       "label": "SPLASHDOWN",
-      "note": "CM splashed down in North Pacific 1968-12-27. Recovery by USS Yorktown.",
+      "note": "CM이 1968-12-27에 북태평양에 착수함. USS Yorktown이 회수.",
       "type": "nominal"
     }
   ]

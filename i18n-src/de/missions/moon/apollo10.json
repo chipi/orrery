@@ -3,54 +3,54 @@
   "dispatch": "Apollo 10 flog die gesamte Landung — bis auf die letzten fünfzehn Kilometer — und drehte dann planmäßig um. Stafford und Cernan brachten die Lunar Module bis auf einen Steinwurf an die Oberfläche bei Tranquility heran, führten jeden Schritt des Abstiegs aus und stiegen zurück in den Orbit, ohne aufzusetzen. NASA ließ die Aufstiegstanks sogar halbvoll, sodass es, wie verlockend es auch wurde, niemals eine Option war, es zu versuchen. Es ist der am wenigsten gefeierte Flug des Programms und einer der diszipliniertesten: eine Probe mit voller Geschwindigkeit von zwei Männern, die eine Viertelmillion Meilen flogen in dem Wissen, dass die Landung jemand anderem gehörte.",
   "type": "BEMANNTE MONDUMLAUFBAHN · GEFLOGEN",
   "first": "Vollständige Mondlandung-Generalprobe — LM stieg auf ~15,6 km Höhe ab",
-  "description": "Die vollständige Generalprobe für die erste Mondlandung. Stafford und Cernan flogen LM Snoopy bis ~15,6 km Höhe über der geplanten Apollo-11-Landestelle bei Mare Tranquillitatis — jeder Schritt eines Landeanflugs außer der eigentlichen Landung. Sie verifizierten das Abstiegsprofil, das Landeradar, die Aufstiegstrajektorie und das Rendezvous-Verfahren, das Apollo 11 zwei Monate später verwenden würde. Die Aufstiegsstufentanks des LM waren absichtlich unterbetankt (~50% nominal), um jede Versuchung eines Landeversuchs zu verhindern. Snoopys Aufstiegsstufe war die einzige, die die Mondumlaufbahn mit positivem ∆v verließ — in eine heliozentrische Umlaufbahn ausgeworfen, wo sie heute noch ist.",
+  "description": "Die komplette Generalprobe für die erste Mondlandung. Stafford und Cernan flogen das LM Snoopy auf etwa 15,6 km Höhe über der geplanten Landestelle von Apollo 11 am Mare Tranquillitatis hinab – jeden Schritt eines Landeanflugs außer der eigentlichen Landung selbst. Sie bestätigten das Abstiegsprofil, das Landeradar, die Aufstiegsflugbahn und das Rendezvous-Verfahren, das Apollo 11 zwei Monate später anwenden würde. Die Aufstiegsmodul-Treibstofftanks wurden absichtlich unterbeladen (~50 % der Nennmenge), um jede Versuchung zur Durchführung einer Landung auszuschließen. Snoop's Aufstiegsstufe war die einzige, die mit positivem ∆v die Mondumlaufbahn verließ – in eine heliozentrische Umlaufbahn ausgestoßen, wo sie heute noch vorhanden ist, gelegentlich wiederentdeckt durch Amateurastronomen (zuletzt bestätigt durch Nick Howes / Faulkes Telescope, 2019).",
   "events": [
     {
       "met": 0,
       "label": "LAUNCH",
-      "note": "Saturn V (AS-505) from Kennedy Space Center LC-39B 1969-05-18 16:49 UTC — first crewed launch from LC-39B.",
+      "note": "Saturn V (AS-505) von Kennedy Space Center LC-39B am 18.05.1969 um 16:49 UTC — erste bemannte Mission vom LC-39B.",
       "type": "nominal"
     },
     {
       "met": 0.12,
       "label": "TLI",
-      "note": "Trans-lunar injection. S-IVB ∆v ~3.05 km/s.",
+      "note": "Translunar-Injection. S-IVB ∆v ~3,05 km/s.",
       "type": "nominal"
     },
     {
       "met": 3.16,
       "label": "LOI",
-      "note": "Lunar orbit insertion. SPS ∆v ~0.91 km/s.",
+      "note": "Lunar-Orbit-Insertion. SPS ∆v ~0,91 km/s.",
       "type": "nominal"
     },
     {
       "met": 4.6,
       "label": "LM SEPARATION",
-      "note": "Snoopy undocks from Charlie Brown. Crew of two (Stafford + Cernan) descend toward Mare Tranquillitatis.",
+      "note": "Snoopy dockt von Charlie Brown ab. Zweiköpfige Besatzung (Stafford + Cernan) steigt zum Mare Tranquillitatis ab.",
       "type": "nominal"
     },
     {
       "met": 4.66,
       "label": "CLOSEST APPROACH",
-      "note": "Snoopy reaches ~15.6 km above Apollo 11 target site — no landing; everything verified except touchdown itself.",
+      "note": "Snoopy erreicht ~15,6 km über dem Apollo 11-Landeplatz — keine Landung; alles bestätigt außer dem Aufsetzen selbst.",
       "type": "info"
     },
     {
       "met": 4.76,
       "label": "ASCENT + RENDEZVOUS",
-      "note": "Snoopy ascent stage rendezvous with Charlie Brown — first complete LM-to-CSM redocking in lunar orbit.",
+      "note": "Aufstiegsstufe von Snoopy Rendezvous mit Charlie Brown — erste vollständige LM-CSM-Rückbindung in Mondorbit.",
       "type": "nominal"
     },
     {
       "met": 5.96,
       "label": "TEI",
-      "note": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+      "note": "Trans-Earth-Injection. SPS ∆v ~1,0 km/s.",
       "type": "nominal"
     },
     {
       "met": 8.05,
       "label": "SPLASHDOWN",
-      "note": "CM splashed down in South Pacific 1969-05-26 16:52 UTC. Recovery by USS Princeton.",
+      "note": "CM wasserte im Südpazifik am 26.05.1969 um 16:52 UTC. Bergung durch USS Princeton.",
       "type": "nominal"
     }
   ]

@@ -8,7 +8,7 @@
     },
     {
       "type": "prose",
-      "md": "这始于1983年的Spacelab——一个欧洲建造的实验室,搭载在航天飞机的货舱中,将航天飞机变成了科学平台,并在首次飞行中载上了第一位ESA航天员。随后是Columbus,欧洲固定安装在国际空间站上的永久实验舱,以及自动转移飞行器(Automated Transfer Vehicle),那个时代最大、最复杂的货运飞船。在此过程中,欧洲航天员搭乘航天飞机和Soyuz飞行,在Mir和ISS上生活,并担任空间站指令长。欧洲从未发射过自己的乘组——却成为了几乎所有这样做的国家的必需伙伴。"
+      "md": "这始于1983年的Spacelab——一个欧洲建造的实验室,搭载在Space Shuttle的货舱中,将Space Shuttle变成了科学平台,并在首次飞行中载上了第一位ESA航天员。随后是Columbus,欧洲固定安装在International Space Station上的永久实验舱,以及Automated Transfer Vehicle,那个时代最大、最复杂的货运飞船。在此过程中,欧洲航天员搭乘Space Shuttle和Soyuz飞行,在Mir和ISS上生活,并担任空间站指令长。欧洲从未发射过自己的乘组——却成为了几乎所有这样做的国家的必需伙伴。"
     }
   ],
   "goals": [
@@ -17,7 +17,7 @@
       "image": {
         "reuse": "fleet/iss/01"
       },
-      "caption": "国际空间站,欧洲是其完全合作伙伴。ESA的Columbus实验舱是它的永久组成部分,欧洲航天员曾在上面生活并担任指令长——这是选择加入而非单干的成果。",
+      "caption": "International Space Station,欧洲是其完全合作伙伴。ESA的Columbus实验舱是它的永久组成部分,欧洲航天员曾在上面生活并担任指令长——这是选择加入而非单干的成果。",
       "align": "right"
     },
     {
@@ -26,7 +26,7 @@
     },
     {
       "type": "prose",
-      "md": "这一策略有一个隐藏的优势:贡献一个必不可少的部分就能获得永久的话语权。通过建造Spacelab,欧洲赢得了航天飞机上的一席之地;通过建造Columbus和ATV,它成为国际空间站完全平等的伙伴,拥有自己的实验室和不可或缺的补给飞船。一个只购买座位的国家只是客户;而欧洲通过建造他人依赖的能力,成为了伙伴——在这项事业中拥有真正的发言权。"
+      "md": "这一策略有一个隐藏的优势:贡献一个必不可少的部分就能获得永久的话语权。通过建造Spacelab,欧洲赢得了Space Shuttle上的一席之地;通过建造Columbus和ATV,它成为International Space Station完全平等的伙伴,拥有自己的实验室和不可或缺的补给飞船。一个只购买座位的国家只是客户;而欧洲通过建造他人依赖的能力,成为了伙伴——在这项事业中拥有真正的发言权。"
     }
   ],
   "outcome": [
@@ -35,7 +35,7 @@
       "image": {
         "reuse": "fleet/atv/02"
       },
-      "caption": "自动转移飞行器(Automated Transfer Vehicle)——欧洲的ISS货运飞船。满载重达20吨,它自主飞行并与空间站自动对接,运送货物、水、空气和推进剂,并使用自己的发动机提升ISS轨道。",
+      "caption": "Automated Transfer Vehicle——欧洲的ISS货运飞船。满载重达20吨,它自主飞行并与空间站自动对接,运送货物、水、空气和推进剂,并使用自己的发动机提升ISS轨道。",
       "align": "right"
     },
     {
@@ -63,7 +63,7 @@
       "image": {
         "reuse": "fleet/iss/04"
       },
-      "caption": "国际空间站——欧洲帮助建造和维持的事业,也是一个国家可以在从未发射过自己乘组的情况下深刻塑造载人航天的证明。",
+      "caption": "International Space Station——欧洲帮助建造和维持的事业,也是一个国家可以在从未发射过自己乘组的情况下深刻塑造载人航天的证明。",
       "align": "left"
     },
     {

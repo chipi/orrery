@@ -36,7 +36,7 @@
       "paragraphs": [
         "Robert Heinlein はこう書きました：「一度軌道に乗れば、太陽系のどこへでも半分到達したようなものだ。」彼は冗談ではありませんでした。低地球軌道に到達するには約9.4 km/s の ∆v がかかります。そこから火星へは、さらに約3.6 km/s です。最も困難な部分はすでに終わっています。",
         "最も安価な惑星間ルートは[ホーマン遷移](transfers/hohmann-transfer)です：一端で地球の軌道にかろうじて接し、もう一端で目的地の軌道に接する楕円です。2回の燃焼、無駄な燃料なし。火星まで約8.5ヶ月かかります。遅いですが、最適です。",
-        "もっと速く行きたいですか？[ランベルト問題](transfers/lambert-problem)を解きます — 出発日と飛行時間を選び、ランベルトはそれらを繋ぐ一意な[遷移楕円](transfers/transfer-ellipse)を教えてくれます。それがまさに Orrery の [/plan](app:/plan) 画面がポークチョッププロットを描くために並列で1万回行っていることです。",
+        "もっと速く行きたいですか？[Lambert's problem](transfers/lambert-problem) を解いてください。出発日と所要時間を選べば、Lambert が両者を結ぶ唯一の[transfer ellipse](transfers/transfer-ellipse)を教えてくれます。それがまさに Orrery の[/plan](app:/plan)画面が行うことです。10,000 回並列に計算して、ポークチョップ・プロットを描きます。",
         "さらに遠くへ行く必要がありますか？惑星から速度を盗みます。[重力アシスト](transfers/gravity-assist)はフライバイを使って燃料コストゼロで軌道を変えます — Voyager 2 は海王星に到達するために4回使いました。太陽系全体が[パッチドコニック](transfers/patched-conics)として繋ぎ合わされています：[円錐曲線](transfers/conic-sections)の弧のシリーズが、リレーレースのバトンのように重力圏の間で受け渡されます。"
       ]
     },
@@ -58,8 +58,8 @@
       "diagram_caption": "突入、降下、着陸。6分間の純粋な恐怖。",
       "paragraphs": [
         "Voyager から Perseverance まで、ほとんどすべての惑星間ミッションは同じ台本を実行します：",
-        "[打ち上げ](mission-phases/launch) — 大気圏を抜けて低地球軌道へ。[Trans-X 投入](mission-phases/trans-x-injection) — 近地点での一度の強い燃焼で、月（TLI）、火星（TMI）、金星（TVI）、または木星（TJI）への遷移楕円へ投入されます。[軌道修正マヌーバ](mission-phases/tcm) — 巡航中の分散誤差を修正する小さな燃焼。通常1〜3回。[軌道投入](mission-phases/orbit-insertion) — 目的地での制動燃焼で捕獲軌道へ。[EDL](mission-phases/edl) — 突入、降下、着陸 — 着陸機用。6分間の超音速大気カオス。",
-        "月ミッションは時々[準直線ハロー軌道](mission-phases/nrho)を経由します（Gateway はその中に存在します）、そして有人 Apollo 飛行は[自由帰還軌道](transfers/free-return)を飛びました — 宇宙船のすべてのエンジンが死んでも自動的に地球に戻る8の字経路です。Apollo 13 はこの幾何学に命を救われました。"
+        "[Launch](mission-phases/launch) — 大気圏を抜けて低地球軌道へ。[Trans-X Injection](mission-phases/trans-x-injection) — 近地点での一度の強い燃焼で、月（TLI）、火星（TMI）、金星（TVI）、または木星（TJI）への遷移楕円へ投入されます。[軌道修正マヌーバ](mission-phases/tcm) — 巡航中の分散誤差を修正する小さな燃焼。通常1〜3回。[軌道投入](mission-phases/orbit-insertion) — 目的地での制動燃焼で捕獲軌道へ。[EDL](mission-phases/edl) — 突入、降下、着陸 — 着陸機用。6分間の超音速大気カオス。",
+        "月ミッションは時々[Near-Rectilinear Halo Orbit](mission-phases/nrho)を経由します（Gateway はその中に存在します）、そして有人 Apollo 飛行は[自由帰還軌道](transfers/free-return)を飛びました — 宇宙船のすべてのエンジンが死んでも自動的に地球に戻る8の字経路です。Apollo 13 はこの幾何学に命を救われました。"
       ]
     },
     {
@@ -80,7 +80,7 @@
       "paragraphs": [
         "軌道上で6ヶ月過ごすと、出発時よりも小さく、軽く、背が低くなって帰ってきます。[微小重力](life-in-space/microgravity-physiology)が根本原因です：体液が頭側へ再分配され、姿勢筋が負荷を失い、[骨](life-in-space/bone-density-loss)は月に1〜2%のミネラルを失い、[前庭系](life-in-space/vestibular-adaptation)は「下」を見つけようとするのをあきらめます。[対策](life-in-space/muscle-atrophy) — ARED とトレッドミルでの1日2時間の抵抗運動と有酸素運動 — は解決せずに遅らせます。",
         "[放射線](life-in-space/radiation-exposure)はより困難な問題です。ISS は年間約200 mSv を受けます（地球上の背景3 mSv に対して）；磁気圏外の深宇宙は年間600+ mSv で、まだ良い遮蔽戦略がありません。火星級の旅行は、乗組員を1回の往復でキャリア限界のがんリスク近くに置くでしょう。",
-        "それから[EVA](life-in-space/eva-physiology)（4.3 psi の純酸素スーツでの6時間の持久イベント）と[長期間効果](life-in-space/long-duration-effects)、例えば SANS — 宇宙関連神経眼症候群 — があります。長期飛行乗組員の60%が完全には回復しない測定可能な眼の変化を発症します。これらは人類と火星の間に立ちはだかる未解決の問題です。"
+        "次に[EVA](life-in-space/eva-physiology)（4.3 psi の純酸素スーツでの 6 時間の耐久イベント）と、SANS（Space-Associated Neuro-ocular Syndrome）のような[長期滞在の影響](life-in-space/long-duration-effects)があります。長期飛行乗員の 60% が測定可能な眼の変化を発症し、完全には回復しないのです。これらは人類と火星の間に立ちはだかる未解決の問題なのです。"
       ]
     },
     {
@@ -102,13 +102,13 @@
       "paths": [
         "/explore"
       ],
-      "text": "太陽系を回してください。ケプラーの法則をライブで見てください。任意の惑星をクリックして軌道要素を表示します。"
+      "text": "太陽系を回してください。Kepler の法則をライブで見てください。任意の惑星をクリックして軌道要素を表示します。"
     },
     {
       "paths": [
         "/plan"
       ],
-      "text": "目的地を選び、打ち上げ年を選び、ポークチョップを見ます。ローブはホーマン遷移が隠れている場所です。"
+      "text": "目的地を選び、打ち上げ年を選び、ポークチョップを見ます。ローブはHohmann遷移が隠れている場所です。"
     },
     {
       "paths": [

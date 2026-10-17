@@ -1,14 +1,14 @@
 {
   "name": "Chang'e 6",
   "type": "FAR-SIDE SAMPLE RETURN · FLOWN",
-  "first": "First sample return from the lunar far side",
-  "description": "Combines the architectures of Chang'e 4 (far-side communications) and Chang'e 5 (sample return). The Queqiao-2 relay satellite was launched first (March 2024) to support the mission. Chang'e 6 then collected 1.935 kg from Apollo Crater on the far side — material with very different composition from any lunar sample previously returned. The Moon's two hemispheres are radically different (the far side has thicker crust, fewer mare); these samples may finally explain why.",
+  "first": "首次从月球背面采样返回",
+  "description": "结合了Chang'e 4（远端通信）和Chang'e 5（样本返回）的架构。Queqiao-2中继卫星首先于2024年3月发射，为该任务提供支持。Chang'e 6随后从月球背面的Apollo Crater采集了1.935千克样本——这些物质的成分与之前返回的任何月球样本都明显不同。月球的两个半球差异巨大（背面地壳更厚，月海较少）；这些样本或许终于能解释这一原因。",
   "events": [
     { "met": 0, "label": "LAUNCH", "note": "Long March 5 from Wenchang.", "type": "nominal" },
     { "met": 5, "label": "MOI", "note": "Lunar orbit insertion.", "type": "nominal" },
-    { "met": 30, "label": "TOUCHDOWN", "note": "Lander descends to Apollo Crater (far side) 2024-06-02. All comms via Queqiao-2 relay.", "type": "nominal" },
-    { "met": 32, "label": "SAMPLING", "note": "1.935 kg collected from far-side regolith.", "type": "info" },
-    { "met": 34, "label": "ASCENT", "note": "Ascent vehicle lifts off; rendezvous with orbiter.", "type": "nominal" },
-    { "met": 53, "label": "EARTH RETURN", "note": "Capsule lands in Inner Mongolia 2024-06-25 with the first far-side samples ever recovered.", "type": "info" }
+    { "met": 30, "label": "TOUCHDOWN", "note": "着陆器于2024-06-02降落到Apollo Crater（背面）。所有通信均通过Queqiao-2中继卫星进行。", "type": "nominal" },
+    { "met": 32, "label": "SAMPLING", "note": "从月球背面风化层采集了1.935千克样本。", "type": "info" },
+    { "met": 34, "label": "ASCENT", "note": "上升器升空；与轨道器交会。", "type": "nominal" },
+    { "met": 53, "label": "EARTH RETURN", "note": "返回舱于2024-06-25在内蒙古着陆，携带有史以来首次回收的月球背面样本。", "type": "info" }
   ]
 }

@@ -1,9 +1,9 @@
 {
-  "title": "Elipse de Transferência",
-  "intro_sentence": "O arco kepleriano que transporta uma nave espacial de uma órbita a outra — Sol em um dos focos, assim como qualquer outra órbita.",
+  "title": "Transfer Ellipse",
+  "intro_sentence": "O arco Keplerian que transporta uma nave espacial de uma órbita a outra — Sol em um dos focos, assim como qualquer outra órbita.",
   "narrative_101": [
     "O planejamento de missões parece ser sobre motores e foguetes. Na verdade, é principalmente sobre escolher uma elipse. Toda viagem interplanetária — Apollo até a Lua, Voyager até Netuno, Perseverance até Marte — é apenas uma nave espacial percorrendo uma órbita elíptica entre onde começou e para onde está indo. O termo técnico para essa elipse é órbita de transferência.",
-    "Ela obedece às mesmas regras de qualquer outra órbita kepleriana. O Sol fica em um dos focos. A nave espacial se move lentamente na extremidade distante e rapidamente na extremidade próxima. A equação vis-viva ainda funciona para calcular sua velocidade. A terceira lei de Kepler ainda fornece o tempo de voo a partir do tamanho. Nada exótico.",
+    "Ela segue as mesmas regras de qualquer outra órbita Kepleriana. O Sol está em um dos focos. A espaçonave se move lentamente na extremidade distante e rapidamente na extremidade próxima. A fórmula vis-viva ainda funciona para calcular sua velocidade. A terceira lei de Kepler ainda fornece o tempo de voo a partir do tamanho. Nada excepcional.",
     "A única coisa que torna uma elipse de transferência diferente da órbita de um planeta é que a nave espacial voa apenas METADE dela. Ela embarca em uma extremidade, percorre até a outra e desembarca. É por isso que o orçamento de ∆v sempre tem duas grandes queimas — uma para entrar na elipse, outra para sair dela. A parte do meio, a navegação de oito meses, não custa absolutamente nada."
   ],
   "body_paragraphs": [

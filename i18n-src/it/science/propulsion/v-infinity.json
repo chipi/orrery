@@ -2,13 +2,13 @@
   "title": "V∞ — Velocità di eccesso iperbolico",
   "intro_sentence": "La velocità che ti rimane dopo aver lasciato il pozzo gravitazionale di un pianeta.",
   "narrative_101": [
-    "C₃ è quello che il razzo deve consegnare al LANCIO. V∞ è la stessa idea all'ALTRO capo.",
-    "Determina la grande accensione di arrivo. MRO V∞ ≈ 2,6 km/s, ~1 km/s per cattura. Voyager 2 Nettuno V∞ ≈ 8 km/s — non ha provato a fermarsi."
+    "C3 è quello che il vostro razzo deve fornire al LANCIO. V∞ — pronunciato \"v-infinito\" — è la stessa idea, ma all'ALTRO capo del viaggio. Quando arrivate a Marte, a che velocità vi state muovendo rispetto a Marte, prima che la sua gravità vi catturi? Questo è V∞.",
+    "Ha importanza perché determina la vostra combustione di arrivo. Più veloce arrivate, più dovete frenare per fermarvi. Mars Reconnaissance Orbiter è arrivato con V∞ ≈ 2,6 km/s e ha bruciato ~1 km/s per catturarsi in orbita. Voyager 2 ha raggiunto Nettuno con V∞ ≈ 8 km/s e non si è nemmeno presa la briga di cercare di fermarsi — ha semplicemente sorvolato, ha scattato fotografie, e ha continuato fuori dal sistema solare per sempre."
   ],
   "body_paragraphs": [
-    "Asintoto infinitamente lontano dal pianeta. Velocità lì = V∞. Costante sui due bracci dell'iperbole.",
-    "V∞ controlla l'accensione di arrivo. Cattura: scarica abbastanza per cadere sotto la fuga.",
-    "Sul HUD `/fly` V∞ appare entrando nella sfera di influenza."
+    "Immagina un asintoto, infinitamente lontano dal pianeta. La velocità a cui ti muoveresti su quell'asintoto è V∞ — pronunciato \"V-infinito\". È la velocità relativa al Sole meno il contributo del pianeta al tuo moto. In un flyby iperbolico, V∞ è costante lungo entrambi i rami dell'iperbole.",
+    "V∞ controlla quanto deve essere grande la combustione di arrivo. Per catturarvi in orbita, dovete dissipare abbastanza energia da scendere sotto la velocità di fuga — più profondo è il pozzo, più `∆v` vi costa rallentarvi. Mars Reconnaissance Orbiter è arrivato a Marte con V∞ ≈ 2,6 km/s, poi ha speso ~1 km/s di `∆v` per l'inserimento in orbita. Voyager 2 ha raggiunto Nettuno con V∞ ≈ 8 km/s e non ha nemmeno tentato di inserirsi — ha semplicemente sorvolato.",
+    "Nel HUD di `/fly` vedrai V∞ comparire quando l'astronave entra nella sfera d'influenza della destinazione. È il momento della verità: quanta velocità devi dissipare, e il tuo razzo può permettersi di dissiparne così tanta?"
   ],
   "diagram_caption": "Flyby iperbolico: V∞ è la velocità costante sugli asintoti."
 }

@@ -1,13 +1,13 @@
 {
   "name": "Luna 21 / Lunokhod 2",
   "type": "UNCREWED LANDER + ROVER · FLOWN",
-  "first": "Second Soviet lunar rover; longest off-world drive (~39 km) for over 40 years",
-  "description": "Luna 21 delivered Lunokhod 2, the Soviet Union's second crewed-controlled lunar rover, to Le Monnier crater on the southern edge of Mare Serenitatis in January 1973. The rover was driven from a control room in Crimea by a five-person team and traversed approximately 39 km over four lunar days — a record off-world distance that held until NASA's Opportunity rover passed it on Mars in 2014. Lunokhod 2 returned 80,000 television frames and 86 panoramas before dust contamination of its solar arrays ended operations.",
+  "first": "Secondo rover lunare sovietico; percorso più lungo fuori dal nostro mondo (~39 km) per oltre 40 anni",
+  "description": "Luna 21 consegnò Lunokhod 2, il secondo rover lunare controllato dall'equipaggio dell'Unione Sovietica, al cratere Le Monnier sul bordo meridionale di Mare Serenitatis nel gennaio 1973. Il rover fu guidato da una sala di controllo in Crimea da un team di cinque persone e percorse circa 39 km in quattro giorni lunari — un record di percorso fuori dal nostro mondo che rimase imbattuto fino a quando il rover Opportunity della NASA lo superò su Marte nel 2014. Lunokhod 2 restituì 80.000 fotogrammi televisivi e 86 panorami prima che la contaminazione da polvere dei suoi pannelli solari terminasse le operazioni.",
   "events": [
     { "met": 0, "label": "LAUNCH", "note": "Proton-K from Baikonur 1973-01-08.", "type": "nominal" },
-    { "met": 0.005, "label": "TLI", "note": "Trans-lunar injection on the Blok-D upper stage.", "type": "nominal" },
-    { "met": 4, "label": "TCM", "note": "Mid-course correction during cruise.", "type": "info" },
-    { "met": 4.5, "label": "LANDING", "note": "Soft landing in Le Monnier crater 1973-01-15. Lunokhod 2 rolled off ramps a few hours later.", "type": "nominal" },
-    { "met": 7, "label": "ROVER ACTIVE", "note": "Five-person ground crew in Crimea began driving operations. Total traverse: ~39 km.", "type": "nominal" }
+    { "met": 0.005, "label": "TLI", "note": "Iniezione trans-lunare sullo stadio superiore Blok-D.", "type": "nominal" },
+    { "met": 4, "label": "TCM", "note": "Correzione di traiettoria durante la navigazione.", "type": "info" },
+    { "met": 4.5, "label": "LANDING", "note": "Allunaggio dolce nel cratere Le Monnier il 15-01-1973. Lunokhod 2 scese dalle rampe poche ore dopo.", "type": "nominal" },
+    { "met": 7, "label": "ROVER ACTIVE", "note": "Equipaggio da terra di cinque persone in Crimea iniziò le operazioni di guida. Percorso totale: ~39 km.", "type": "nominal" }
   ]
 }

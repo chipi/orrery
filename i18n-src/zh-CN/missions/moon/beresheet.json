@@ -1,15 +1,15 @@
 {
   "name": "Beresheet",
   "type": "PRIVATE LANDER · CRASHED",
-  "first": "First privately-funded mission to reach the Moon; first Israeli lunar mission",
-  "description": "SpaceIL's Beresheet (Hebrew: 'In the beginning') launched as a shared-ride passenger on a Falcon 9 in February 2019. Instead of a direct trans-lunar injection, the small lander performed weeks of perigee-raising phasing burns to climb from a parking orbit out to the Moon — a fuel-saving trajectory pioneered for low-budget missions. After successful lunar orbit insertion on 4 April 2019, an inertial measurement unit reset during descent caused the main engine to shut down. Beresheet crashed in Mare Serenitatis. SpaceIL committed to a successor (Beresheet 2) within days.",
+  "first": "首次私人资助的月球登月任务；首次以色列月球任务",
+  "description": "SpaceIL 的 Beresheet（希伯来文：'In the beginning'）于 2019 年 2 月作为 Falcon 9 火箭的共乘乘客发射升空。这个小型着陆器没有进行直接的月球转移注入，而是进行了数周的近地点提升变轨机动，从停泊轨道爬升到月球——这是为低预算任务开创的燃料节约型轨迹。在 2019 年 4 月 4 日成功进行月球轨道插入后，下降期间惯性测量装置的重置导致主发动机关闭。Beresheet 在风暴洋坠毁。SpaceIL 在数天内承诺实施后续任务（Beresheet 2）。",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "Falcon 9 rideshare from Cape Canaveral 2019-02-22.", "type": "nominal" },
-    { "met": 0.01, "label": "PHASING BURN", "note": "First of seven perigee raises to climb from LEO to lunar approach.", "type": "info" },
-    { "met": 10, "label": "TCM 1", "note": "Trajectory correction during multi-orbit climb.", "type": "info" },
-    { "met": 20, "label": "TCM 2", "note": "Second TCM. Apogee approaching lunar capture distance.", "type": "info" },
-    { "met": 41, "label": "LUNAR APPROACH", "note": "Final translunar burn — Beresheet on direct lunar trajectory.", "type": "nominal" },
-    { "met": 48, "label": "LUNAR ORBIT INSERTION", "note": "Capture into elliptical lunar orbit 2019-04-04.", "type": "nominal" },
-    { "met": 48.01, "label": "DESCENT ANOMALY", "note": "IMU reset during powered descent → engine shutdown → crash in Mare Serenitatis 2019-04-11.", "type": "warning" }
+    { "met": 0, "label": "LAUNCH", "note": "Falcon 9 Cape Canaveral 共乘火箭 2019-02-22", "type": "nominal" },
+    { "met": 0.01, "label": "PHASING BURN", "note": "七次近地点提升变轨中的第一次，从近地轨道爬升至月球接近轨道。", "type": "info" },
+    { "met": 10, "label": "TCM 1", "note": "多轨道爬升期间的轨迹修正。", "type": "info" },
+    { "met": 20, "label": "TCM 2", "note": "第二次轨迹修正。远地点接近月球捕获距离。", "type": "info" },
+    { "met": 41, "label": "LUNAR APPROACH", "note": "最后的月球转移变轨——Beresheet 进入直接月球轨迹。", "type": "nominal" },
+    { "met": 48, "label": "LUNAR ORBIT INSERTION", "note": "进入椭圆形月球轨道 2019-04-04", "type": "nominal" },
+    { "met": 48.01, "label": "DESCENT ANOMALY", "note": "惯性测量装置重置（在动力下降期间）→ 发动机关闭 → 坠毁在宁静海 2019-04-11", "type": "warning" }
   ]
 }

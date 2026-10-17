@@ -2,7 +2,7 @@
   "name": "Apollo 7",
   "type": "مدار أرضي مأهول · حُلّق",
   "first": "أول رحلة Apollo مأهولة — اختبار CSM في المدار الأرضي",
-  "description": "أول رحلة Apollo مأهولة، بعد 21 شهراً من حريق Apollo 1 (1967-01-27) الذي قتل Grissom و White و Chaffee على منصة الإطلاق. تحقّق Apollo 7 من Command and Service Module المُعاد تصميمه Block II في المدار الأرضي — دعم الحياة، الطاقة، الدفع (أُطلق SPS ثماني مرات)، التحكم الحراري، وأول بث تلفزيوني مباشر من مركبة فضائية أمريكية مأهولة. 10 أيام و 20 ساعة من الرحلة فتحت الطريق لمراهنة Apollo 8 على مدار القمر بعد شهرين.",
+  "description": "أول رحلة مأهولة بالبشر في برنامج Apollo، بعد 21 شهراً من حريق Apollo 1 (1967-01-27) الذي أودى بحياة Grissom و White و Chaffee على منصة الإطلاق. تحقّقت Apollo 7 من موثوقية وحدة القيادة والخدمة Block II المُعادة تصميمها في مدار الأرض — أنظمة دعم الحياة والطاقة والدفع (أُطلقت SPS ثماني مرات)، والتحكم الحراري، وأول بث تلفزيوني مباشر من مركبة فضائية أمريكية مأهولة في العالم. تجاوز Schirra (الذي عاني من الزكام وكان متهيّجاً طوال الوقت) تعليمات Houston بشأن مسألة خوذة العودة إلى الأرض، الأمر الذي ساهم في قرار مركز التحكم في المهام بعدم السماح لأي من أفراد الطاقم الثلاثة بالتحليق مرة أخرى. أتاحت الرحلة التي استغرقت 10 أيام و20 ساعة الطريق أمام Apollo 8 لمحاولتها الجريئة في مدار القمر بعد شهرين.",
   "events": [
     {
       "met": 0,
@@ -13,19 +13,19 @@
     {
       "met": 0.1,
       "label": "ORBIT INSERT",
-      "note": "CSM separates from S-IVB into 232 × 285 km Earth orbit, inclination 31.6°. SPS firing sequence (8 burns over 11 days) validates the propulsion that will perform LOI + TEI at the Moon.",
+      "note": "انفصال وحدة القيادة والخدمة (CSM) عن مرحلة S-IVB إلى مدار أرضي بارتفاعات 232 × 285 كم، وميل 31.6°. تسلسل إطلاق محرك الخدمة (SPS) (8 احتراقات على مدار 11 يوماً) يثبت صحة الدفع الذي سيؤدي عمليات الدخول إلى مدار القمر (LOI) والخروج من مداره (TEI).",
       "type": "nominal"
     },
     {
       "met": 1.2,
       "label": "FIRST LIVE TV",
-      "note": "\"Hello from the lovely Apollo room high atop everything.\" First live TV broadcast from a crewed US spacecraft.",
+      "note": "\"«مرحباً من غرفة Apollo الجميلة عالياً فوق كل شيء.» أول بث تلفزيوني مباشر من مركبة فضائية أمريكية مأهولة بالبشر.",
       "type": "info"
     },
     {
       "met": 10.8,
       "label": "SPLASHDOWN",
-      "note": "CM splashed down in the North Atlantic 1968-10-22 11:11 UTC after 163 orbits / 7.4 million km / 10 d 20 h. Recovery by USS Essex.",
+      "note": "هبط وحدة القيادة في المحيط الأطلسي الشمالي في 1968-10-22 الساعة 11:11 بتوقيت UTC بعد 163 مداراً / 7.4 مليون كم / 10 أيام 20 ساعة. تم انتشالها بواسطة USS Essex.",
       "type": "nominal"
     }
   ]

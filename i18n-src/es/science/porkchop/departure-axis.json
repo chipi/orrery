@@ -1,5 +1,5 @@
 {
-  "title": "Eje de Ventana de Partida",
+  "title": "Departure-Window Axis",
   "intro_sentence": "Cuando lanzas — recorriendo el eje X, típicamente un intervalo de cuatro años muestreado diariamente.",
   "narrative_101": [
     "Lee la gráfica porkchop como un calendario. El eje horizontal — de izquierda a derecha — es la fecha en que abandonas la Tierra. Cada columna de píxeles es un día de lanzamiento diferente. Orrery muestrea a resolución de un día durante aproximadamente cuatro años; eso es suficiente para capturar dos ciclos sinódicos completos de Marte (el ciclo de ~26 meses cabe aproximadamente dos veces en cuatro años), lo cual es suficiente para ver que el patrón de la ventana de lanzamiento se repita.",
@@ -9,6 +9,6 @@
   "body_paragraphs": [
     "El eje X te dice cuándo abandonas la Tierra. Cada columna de píxeles es una fecha de lanzamiento diferente — para las gráficas de Orrery, muestreadas a resolución de un día durante aproximadamente cuatro años. ¿Por qué un intervalo de cuatro años? Porque el período sinódico Tierra-Marte es ~26 meses; cuatro años capturan aproximadamente dos ventanas de Marte completas. Para Venus (~19 meses) o Júpiter (~13 meses) el mismo intervalo contiene más ventanas — el ancho de cuatro años está calibrado para la planificación de clase Marte.",
     "Lee el eje X como un calendario. Los lóbulos de bajo costo (la \"carne\" de la gráfica porkchop) se encuentran a intervalos predecibles. Para Marte: cada ~26 meses. Para Venus: cada ~19 meses. Para Júpiter: cada ~13 meses (Júpiter se mueve lo suficientemente lento como para que el período sinódico esté cerca del año terrestre).",
-    "En `/plan` la etiqueta del eje X es `VENTANA DE PARTIDA · 2026 — 2030`. Las fechas de calendario literales aparecen en la información emergente cuando pasas el cursor."
+    "En `/plan` la etiqueta del eje X es `DEPARTURE WINDOW · 2026 — 2030`. Las fechas de calendario literales aparecen en la información emergente cuando pasas el cursor."
   ]
 }

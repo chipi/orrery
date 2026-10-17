@@ -3,7 +3,7 @@
   "dispatch": "Apollo 16 flog zum lunaren Hochland, um alte Vulkane zu beproben, und stellte fest, dass es dort nie welche gegeben hatte. Geologen waren sich sicher, dass die blasse, zerklüftete Descartes-Region vulkanisch war; jedes Gestein, das Young und Duke zurückbrachten, war Brekzie — Geröll, das durch Einschläge zusammengeschweißt wurde. Falsch zu liegen war der Gewinn: Das helle Hochland des Mondes erwies sich als Aufzeichnung eines jungen Sonnensystems unter unerbittlichem Bombardement, nicht unter Eruptionen. Es ist ein klares Beispiel dafür, wie Exploration sich tatsächlich bewährt — man geht hin, um zu bestätigen, was man bereits zu wissen glaubt, und der Ort erzählt einem etwas Besseres.",
   "type": "BEMANNTER LANDER · GEFLOGEN",
   "first": "Erste Mondlandung im Mondhochland — Descartes; John Youngs \"Lunar Grand Prix\"",
-  "description": "Die fünfte bemannte Mondlandung und die erste an einer Nicht-Mare-Hochlandstelle. Geologen erwarteten, dass Descartes vulkanisch wäre; Apollo 16 widerlegte dies — jeder zurückgebrachte Stein war Breccia (impakt-zertrümmerter Schutt), was das Verständnis der Mondhochlande als Produkte katastrophaler Einschläge statt alten Vulkanismus neu prägte. Young und Duke absolvierten drei LRV-gestützte EVAs mit insgesamt 20 h 14 m, durchquerten 26,7 km und brachten 95,7 kg Proben zurück (die schwerste Apollo-Ausbeute bis dahin). Youngs \"Lunar Grand Prix\" — ein im Fernsehen übertragener Geschwindigkeitstest des LRV — erreichte ~17 km/h.",
+  "description": "Die fünfte bemannte Mondlandung und die erste an einem Nicht-Mare-Hochland. Geologen hatten erwartet, dass Descartes vulkanischen Ursprungs sei; Apollo 16 widerlegte dies — jedes zurückgebrachte Gestein war Brekzie (durch Einschlag zerstörmter Schutt), was unser Verständnis der Mondhochland-Regionen umgestaltete: Produkte katastrophaler Einschläge statt antiker Vulkanismus. Young und Duke führten drei von LRV unterstützte EVAs durch, insgesamt 20 h 14 m dauerhaft, legten 26,7 km zurück und brachten 95,7 kg Proben zurück (die schwerste Apollo-Ausbeute bis zu jenem Zeitpunkt). Youngs „Lunar Grand Prix\" — ein im Fernsehen übertragener LRV-Geschwindigkeitstest — erreichte maximal ~17 km/h. Dukes 11-sekündiger Sprungversuch während eines Weitsprung-Rekordversuchs brachte ihn in Gefahr, seinen PLSS-Rucksack zu beschädigen, und wurde abgebrochen. Charlie Dukes Familienfoto und die „Far-UV Camera/Spectrograph\" — das erste astronomische Observatorium, das von der Oberfläche einer anderen Welt aus betrieben wurde — endeten beide an der Landestelle. Mattingly, ursprünglich auf Apollo 13 (vor dem Start wegen Masernsorgen ausgetauscht), kam endlich zum Flug zum Mond.",
   "events": [
     {
       "met": 0,
@@ -20,55 +20,55 @@
     {
       "met": 3.3,
       "label": "LOI",
-      "note": "Lunar orbit insertion. SPS ∆v ~0.91 km/s.",
+      "note": "Mondorbitalisierung. SPS ∆v ~0,91 km/s.",
       "type": "nominal"
     },
     {
       "met": 4.79,
       "label": "SPS ANOMALY",
-      "note": "Pre-descent: a backup SPS gimbal oscillation forced a 6-hour landing-vs-abort engineering review in real time. Landing ultimately approved.",
+      "note": "Vor dem Abstieg: eine Sicherheitsmaßnahme bei SPS-Kardanaufhängungsschwingungen erzwang eine 6-Stunden-Bewertung in Echtzeit zwischen Landung und Abbruch. Die Landung wurde letztlich genehmigt.",
       "type": "warning"
     },
     {
       "met": 5.04,
       "label": "TOUCHDOWN",
-      "note": "Orion lands at Descartes Highlands 1972-04-21 02:23 UTC — first highland (non-mare) landing.",
+      "note": "Orion landet am 21.04.1972 02:23 UTC im Descartes Highlands — erste Landung im Hochland (kein Maria).",
       "type": "nominal"
     },
     {
       "met": 5.5,
       "label": "FIRST HIGHLANDS EVA",
-      "note": "EVA-1: ALSEP deployment + LRV deployment + first scientific traverse of the lunar highlands.",
+      "note": "EVA-1: ALSEP-Einsatz + LRV-Einsatz + erste wissenschaftliche Traverse im Mondhochtland.",
       "type": "info"
     },
     {
       "met": 6.1,
       "label": "LUNAR GRAND PRIX",
-      "note": "EVA-2: Young's televised LRV speed test (\"lunar Grand Prix\") — peak speed ~17 km/h. Geology traverse up Stone Mountain.",
+      "note": "EVA-2: Youngs im Fernsehen übertragener LRV-Geschwindigkeitstest („Lunar Grand Prix\") – Spitzengeschwindigkeit ~17 km/h. Geologische Traverse den Stone Mountain hinauf.",
       "type": "info"
     },
     {
       "met": 6.7,
       "label": "FAR-UV CAMERA",
-      "note": "EVA-3: First astronomical observatory deployed on the surface of another world (NRL UV camera-spectrograph).",
+      "note": "EVA-3: Erstes astronomisches Observatorium auf der Oberfläche eines anderen Himmelskörpers installiert (NRL-UV-Kamera-Spektrograph).",
       "type": "info"
     },
     {
       "met": 7.81,
       "label": "ASCENT",
-      "note": "Orion lifts off after 71 h 02 m on surface. 95.7 kg samples returned — heaviest Apollo haul to that date.",
+      "note": "Orion hebt nach 71 h 02 m auf der Oberfläche ab. 95,7 kg Proben zurückgebracht – schwerste Apollo-Fracht bis zu diesem Zeitpunkt.",
       "type": "nominal"
     },
     {
       "met": 8.5,
       "label": "TEI",
-      "note": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+      "note": "Translunarflug-Injektion. SPS ∆v ~1,0 km/s.",
       "type": "nominal"
     },
     {
       "met": 11.07,
       "label": "SPLASHDOWN",
-      "note": "CM splashed down in Central Pacific 1972-04-27 19:45 UTC. Recovery by USS Ticonderoga.",
+      "note": "Kapsellandung im Zentralpazifik am 27.04.1972 19:45 UTC. Bergung durch USS Ticonderoga.",
       "type": "nominal"
     }
   ]

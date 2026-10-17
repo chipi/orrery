@@ -1,11 +1,11 @@
 {
-  "title": "Missiontypen — Voorbijvlucht, Orbiter, Lander, Rover, Monsterreturn",
+  "title": "Mission Types — Flyby, Orbiter, Lander, Rover, Sample Return",
   "intro_sentence": "Vijf archetypen van hoe een ruimtevaartuig zijn bestemming benadert — elk met een ander ∆v-budget, risicoprofiel en wetenschappelijke opbrengst.",
   "narrative_101": [
     "Elke robotmissie naar een ander hemellichaam kiest een van vijf strategieën. Deze keuze bepaalt vrijwel alles — hoe groot de raket moet zijn, hoe de baan buigt, wat het ruimtevaartuig meeneemt, welke wetenschap het bedrijft en of het overleeft. De taxonomie volgt netjes langs een ∆v-ladder: voorbijvlucht is het goedkoopst, monsterreturn is het duurst.",
-    "VOORBIJVLUCHT: richten, fotograferen, vertrekken. Helemaal geen remstuwing. Voyager 1/2 langs Jupiter, Saturnus, Uranus, Neptunus; New Horizons langs Pluto; Pioneer 10/11. Één kans, uren wetenschappelijke waarnemingen in dicht voorbijgaan, het ruimtevaartuig zeilt eindeloos door. Goedkoopst in ∆v maar je komt niet terug.",
+    "FLYBY: richten, fotograferen, vertrekken. Helemaal geen remstuwing. Voyager 1/2 langs Jupiter, Saturnus, Uranus, Neptunus; New Horizons langs Pluto; Pioneer 10/11. Één kans, uren wetenschappelijke waarnemingen in dicht voorbijgaan, het ruimtevaartuig zeilt eindeloos door. Goedkoopst in ∆v maar je komt niet terug.",
     "ORBITER: afremmen in een captuurbaan en jaren blijven. MAVEN, MRO, Cassini, Galileo. De baaninsertieworp kost veel (1-2 km/s) maar je kunt het hele hemellichaam in kaart brengen. LANDER voegt EDL toe — hitteschild, parachute, retrorockets — bovenop een orbiter. ROVER voegt wielen, aandrijving en autonomie toe — elk kilogram rover kost een hele stapel eronder.",
-    "MONSTERRETURN is het hoogtepunt: lander + opstijgfase vanaf het oppervlak + terugreis + EDL op Aarde. Hayabusa-2, OSIRIS-REx, Chang'e 5, de Apollo-maanvluchten. De massa-naar-Aarde-vertrekverhouding is brutal — Mars Sample Return is nu in ontwikkeling en is een van de moeilijkste robotmissies ooit ondernomen."
+    "SAMPLE RETURN is het hoogtepunt: lander + opstijgfase vanaf het oppervlak + terugreis + EDL op Aarde. Hayabusa-2, OSIRIS-REx, Chang'e 5, de Apollo-maanvluchten. De massa-naar-Aarde-vertrekverhouding is brutal — Mars Sample Return is nu in ontwikkeling en is een van de moeilijkste robotmissies ooit ondernomen."
   ],
   "body_paragraphs": [
     "Voorbijvluchtmissies slaan de baaninsertieworp over. Ze gaan voorbij met de V∞ waarmee ze aankomen — ~10 km/s voor Voyager bij Jupiter, ~14 km/s voor New Horizons bij Pluto. Ontmoetingstijd is minuten tot dagen. Levert snelle wetenschap maar oppervlakkige dekking en geen vervolgwaarnemingen.",

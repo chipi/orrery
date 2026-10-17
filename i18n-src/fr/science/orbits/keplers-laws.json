@@ -2,14 +2,14 @@
   "title": "Les trois lois de Kepler",
   "intro_sentence": "Trois règles d'observation qui ont fait du mouvement planétaire une science fermée un siècle avant Newton.",
   "narrative_101": [
-    "Kepler n'avait pas le calcul, ni la gravité de Newton, ni d'ordinateur. Il avait vingt ans d'observations martiennes minutieuses de Tycho Brahé. Et de la patience. Il en tira trois règles encore exactes 400 ans plus tard.",
-    "Loi 1 : ellipses, pas cercles. Loi 2 : aires égales en temps égal (= conservation du moment angulaire). Loi 3 : T² scale comme a³.",
-    "Newton 70 ans plus tard prouva que les trois sortent d'une seule équation gravitationnelle. Kepler arriva premier — pure correspondance de motifs sur des données."
+    "Kepler n'avait pas le calcul. Il n'avait pas la gravitation de Newton. Il n'avait pas d'ordinateur. Il avait vingt ans d'observations laborieuses de Mars effectuées par son patron Tycho Brahe avec un quadrant à l'œil nu, et il avait de la patience. De cela, il a écrit trois lois qui sont encore exactement correctes aujourd'hui, quatre cents ans plus tard.",
+    "Loi première : les orbites sont des ellipses, non des cercles. Une hérésie à l'époque. Loi deuxième : la ligne allant d'une planète au Soleil balaie des aires égales en des temps égaux — ce qui est une manière sournoise de dire que les planètes s'accélèrent quand elles sont proches du Soleil et ralentissent quand elles en sont loin. Loi troisième : plus l'orbite est grande, plus l'année est longue, de manière précise (T² varie comme a³).",
+    "Newton arriva soixante-dix ans plus tard et prouva que les trois lois découlent d'une seule équation gravitationnelle simple. Mais Kepler y parvint en premier, sans théorie — en fixant simplement des chiffres jusqu'à ce qu'ils se confessent. C'est le genre de coup que vous pouvez encore faire dans la science moderne si vous avez la patience pour cela."
   ],
   "body_paragraphs": [
-    "Première loi : planètes sur ellipses, Soleil à un foyer. Avant Kepler : cercles. Données martiennes ne collaient pas. Ellipses — premier essai.",
-    "Deuxième loi : aires égales en temps égal. Conservation du moment angulaire. Périhélie : ligne courte, vitesse haute ; aphélie : longue, lente.",
-    "Troisième loi : `T² ∝ a³`. Avec Terre T=1, a=1, lis n'importe quelle période depuis la distance."
+    "Première loi : les planètes orbitent sur des ellipses avec le Soleil à l'un des foyers. Avant Kepler, chaque modèle utilisait des cercles — parfois imbriqués, parfois décalés, mais toujours circulaires. Kepler utilisa les vingt années d'observations de Mars de Tycho Brahe et abandonna : les données ne correspondaient pas à des cercles, et rien de ce qu'il pouvait faire ne les faisait cadrer. Les ellipses correspondaient du premier coup.",
+    "Deuxième loi : la ligne allant du Soleil à la planète balaie des aires égales en des temps égaux. C'est la conservation du moment cinétique déguisée. Près du périhélie, la planète est proche du Soleil, la ligne est courte — donc elle doit s'agiter rapidement pour balayer la même aire qu'une ligne longue et lente près de l'aphélie. C'est pourquoi la vitesse orbitale n'est pas constante.",
+    "Troisième loi : `T² ∝ a³`. Le carré de la période orbitale est proportionnel au cube du demi-grand axe. En fixant la Terre à T = 1 an et a = 1 UA, vous pouvez lire la période de n'importe quelle planète à partir de sa distance — ou sa distance à partir de sa période. Newton dériverait plus tard cela de la gravitation ; Kepler y parvint par la pure reconnaissance de motifs sur les données de Brahe."
   ],
   "formula_caption": "Troisième loi de Kepler moderne : T² dépend de a (et μ).",
   "diagram_caption": "Aires égales en temps égal."

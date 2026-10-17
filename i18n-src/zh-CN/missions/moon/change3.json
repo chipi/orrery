@@ -1,12 +1,12 @@
 {
   "name": "Chang'e 3",
   "type": "UNCREWED LANDER + ROVER · FLOWN",
-  "first": "First Chinese soft landing on the Moon; deployed Yutu, China's first lunar rover",
-  "description": "Chang'e 3 was the third lander in CNSA's Chang'e programme and the first successful soft landing on the Moon since the Soviet Luna 24 in 1976 — a 37-year gap. The Long March 3B launched on a direct lunar trajectory in December 2013, with a single mid-course correction before lunar orbit insertion. The lander touched down in Mare Imbrium on 14 December and deployed the Yutu (Jade Rabbit) rover, which operated for 31 months despite a mobility failure ending its drive on lunar day 2. Chang'e 3's lander continued imaging for years afterward.",
+  "first": "中国首次月球软着陆；部署了中国首个月球车玉兔",
+  "description": "Chang'e 3 是 CNSA Chang'e 项目的第三个着陆器，也是自苏联 Luna 24 在 1976 年着陆以来月球上首次成功的软着陆——间隔 37 年。Long March 3B 火箭在 2013 年 12 月以直接月球轨迹发射，在月球轨道插入前进行了一次轨道中期修正。着陆器于 12 月 14 日在 Mare Imbrium 着陆，并部署了玉兔（Yutu）月球车。尽管在月球日第 2 天因移动故障而停止行驶，但该月球车运行了 31 个月。Chang'e 3 的着陆器在之后的数年里继续进行成像。",
   "events": [
     { "met": 0, "label": "LAUNCH", "note": "Long March 3B from Xichang 2013-12-01.", "type": "nominal" },
-    { "met": 0.01, "label": "TLI", "note": "Direct trans-lunar injection on the LM-3B upper stage.", "type": "nominal" },
-    { "met": 5, "label": "LUNAR ORBIT INSERTION", "note": "Capture into 100-km circular lunar orbit 2013-12-06.", "type": "nominal" },
-    { "met": 13, "label": "LANDING", "note": "Soft landing in Mare Imbrium 2013-12-14. First soft landing since Luna 24 (1976). Yutu rover deployed hours later.", "type": "nominal" }
+    { "met": 0.01, "label": "TLI", "note": "LM-3B 上面级的直接月球转移注入。", "type": "nominal" },
+    { "met": 5, "label": "LUNAR ORBIT INSERTION", "note": "捕获进入 100 千米圆形月球轨道 2013-12-06", "type": "nominal" },
+    { "met": 13, "label": "LANDING", "note": "在 Mare Imbrium 软着陆 2013-12-14。自 Luna 24（1976）以来首次软着陆。玉兔月球车数小时后部署。", "type": "nominal" }
   ]
 }

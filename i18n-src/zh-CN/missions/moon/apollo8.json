@@ -1,50 +1,50 @@
 {
-  "name": "阿波罗 8 号",
-  "dispatch": "Apollo 8是一次仓促下注。情报显示苏联可能会率先派遣载人飞船环绕月球,因此在1968年夏天,NASA撕毁了原定飞行计划,仅在一枚从未载人的火箭进行第三次发射时,就将三名宇航员送往月球轨道。这本应是鲁莽之举,却成为那一年唯一的好消息——1968年充斥着暗杀、越南战争、城市烈火——在平安夜,十亿人听到了从月球轨道传来的《创世记》朗读,并通过比尔·安德斯的照片,第一次看到他们的整个世界从死寂的地平线上升起。人们因登月而铭记Apollo 11,而Apollo 8则是那个让我们看见地球的任务。",
+  "name": "Apollo 8",
+  "dispatch": "Apollo 8是一次仓促下注。情报显示苏联可能会率先派遣载人飞船环绕月球,因此在1968年夏天,NASA撕毁了原定飞行计划,仅在一枚从未载人的火箭进行第三次发射时,就将三名宇航员送往月球轨道。这本应是鲁莽之举,却成为那一年唯一的好消息——1968年充斥着暗杀、越南战争、城市烈火——在平安夜,十亿人听到了从月球轨道传来的《创世记》朗读,并通过Bill Anders的照片,第一次看到他们的整个世界从死寂的地平线上升起。人们因登月而铭记Apollo 11,而Apollo 8则是那个让我们看见地球的任务。",
   "type": "载人月球轨道 · 已飞行",
   "first": "人类首次离开低地球轨道 + 环绕月球",
-  "description": "首次离开低地球轨道、首次脱离地球引力、首次环绕月球的载人任务。1968-12-21 在土星五号首次载人飞行（AS-503）中发射，阿波罗 8 号在 1968 年圣诞夜进入月球轨道。Anders 在第四圈轨道中拍摄的\"Earthrise\"照片成为历史上最具影响力的图像之一。机组人员在直播 TV 上向约 10 亿观众朗读《创世记》。10 圈轨道后，他们在月球背面点燃 SPS 发动机执行 TEI，1968-12-27 返回太平洋溅落。",
+  "description": "首次载人飞行离开近地轨道、首次逃逸地球引力，以及首次绕月飞行的任务。Apollo 8 于1968年12月21日在Saturn V（AS-503）首次载人飞行中发射，并于1968年平安夜进入月球轨道。宇航员Anders在第四圈轨道上拍摄的\"Earthrise\"照片成为历史上最具影响力的图像之一。机组人员在电视直播中诵读《创世纪》，观众约10亿人——这是迄今为止最大的电视观众群体。10圈轨道后，他们在月球远侧点火SPS发动机进行TEI机动，于1968年12月27日返回太平洋溅落区。NASA于1968年8月决定将Apollo 8的载荷从高地轨LM测试改为仅限月球轨道CSM的任务，原因是CIA情报显示苏联可能会率先尝试绕月飞行。",
   "events": [
     {
       "met": 0,
       "label": "LAUNCH",
-      "note": "Saturn V (AS-503) from Kennedy Space Center LC-39A 1968-12-21 12:51 UTC — first crewed Saturn V flight.",
+      "note": "Saturn V（AS-503）来自Kennedy Space Center LC-39A 1968-12-21 12:51 UTC — 首次载人Saturn V飞行。",
       "type": "nominal"
     },
     {
       "met": 0.12,
       "label": "TLI",
-      "note": "Trans-lunar injection burn — first crewed escape of Earth gravity. S-IVB ∆v ~3.05 km/s.",
+      "note": "跨月球注入变轨 — 首次载人脱离地球引力。S-IVB ∆v ~3.05 km/s。",
       "type": "nominal"
     },
     {
       "met": 2.79,
       "label": "LOI",
-      "note": "Lunar orbit insertion behind the Moon, out of radio contact. SPS burn ~0.91 km/s. First humans to orbit another body.",
+      "note": "月球轨道插入（在月球背面，无法进行无线电联系）。SPS变轨 ~0.91 km/s。首批环绕另一天体的人类。",
       "type": "nominal"
     },
     {
       "met": 3.16,
       "label": "EARTHRISE",
-      "note": "Anders photographs Earth rising over the lunar horizon during the fourth orbit (1968-12-24, AS08-14-2383).",
+      "note": "Anders在第四圈轨道中拍摄地球从月球地平线升起的照片（1968-12-24，AS08-14-2383）。",
       "type": "info"
     },
     {
       "met": 3.5,
       "label": "GENESIS READING",
-      "note": "Crew reads from Genesis on live TV to ~1 billion viewers — largest live TV audience to that date.",
+      "note": "乘务组在电视直播中诵读《创世纪》，观众人数达约10亿人 — 创当时最大规模电视直播观众纪录。",
       "type": "info"
     },
     {
       "met": 3.96,
       "label": "TEI",
-      "note": "Trans-Earth injection behind the Moon (1968-12-25 06:10 UTC). SPS ∆v ~1.07 km/s.",
+      "note": "跨地球注入（在月球背面，1968-12-25 06:10 UTC）。SPS ∆v ~1.07 km/s。",
       "type": "nominal"
     },
     {
       "met": 6.13,
       "label": "SPLASHDOWN",
-      "note": "CM splashed down in North Pacific 1968-12-27. Recovery by USS Yorktown.",
+      "note": "CM于1968-12-27在北太平洋溅落。由USS Yorktown执行回收。",
       "type": "nominal"
     }
   ]

@@ -3,12 +3,12 @@
   "type": "VAISSEAU SPATIAL HABITÉ EN ORBITE TERRESTRE · RÉALISÉ",
   "first": "Première femme dans l'espace — Valentina Tereshkova, 48 orbites",
   "dispatch": "Vostok 6 transportait Valentina Tereshkova et en fit la première femme dans l'espace — un record qui resta inégalé pendant dix-neuf ans et que les États-Unis ne battirent pas avant 1983. Elle n'était pas pilote mais ouvrière textile et parachutiste amateur, choisie en partie pour cette symbolique même : la preuve, déclarait le programme soviétique, que dans l'État des travailleurs, même la frontière de l'espace était ouverte à tous. Quelles qu'aient été les motivations, quarante-huit orbites plus tard ce jalon était réel et permanent, et il faudrait deux décennies avant qu'une autre nation puisse en dire autant.",
-  "description": "Vol de 48 orbites et 2 jours 23 heures de Valentina Tereshkova — première femme dans l'espace et toujours l'unique femme ayant piloté seule une mission spatiale. Sélectionnée parmi un groupe de cinq candidates cosmonautes recruté en 1962, Tereshkova a décollé le 1963-06-16 à 09:30 UTC, seulement 2 ans après le vol orbital de Gagarin. Sa capsule était programmée pour effectuer une correction d'orbite vers le haut plutôt que vers le bas — elle a manuellement identifié l'erreur et les contrôleurs au sol ont téléchargé un logiciel d'attitude corrigé le lendemain. Atterrissage le 1963-06-19 à 08:20 UTC près de Bayevo, Altaï. Tereshkova devint par la suite une personnalité majeure de la politique soviétique et reste la plus jeune femme jamais lancée en orbite, avec 26 ans lors de son vol.",
+  "description": "Vol de 48 orbites sur 2 jours et 23 heures de Valentina Tereshkova — la première femme dans l'espace, et toujours l'unique femme à avoir piloté en solo une mission spatiale. Sélectionnée parmi un groupe de cinq candidates cosmonautes assemblé en 1962, Tereshkova a lancé le 1963-06-16 à 09:30 UTC, seulement 2 ans après le premier vol orbital de Gagarin. Sa capsule était programmée pour une correction d'orbite vers le haut plutôt que vers le bas — elle a manuellement identifié l'erreur et les contrôleurs au sol ont téléchargé à nouveau le logiciel d'attitude corrigé le lendemain. Atterrissage le 1963-06-19 à 08:20 UTC près de Bayevo, Altai Krai. Tereshkova est devenue plus tard une figure importante de la politique soviétique et reste la plus jeune femme jamais envoyée en orbite à 26 ans.",
   "events": [
     {
       "met": 0,
       "label": "LANCEMENT",
-      "note": "Vostok-K depuis le site 1 de Baïkonour, 1963-06-16 à 09:30 UTC.",
+      "note": "Vostok-K depuis le site 1 de Baikonur, 1963-06-16 à 09:30 UTC.",
       "type": "nominal"
     },
     {
@@ -20,7 +20,7 @@
     {
       "met": 2.95,
       "label": "ÉJECTION + ATTERRISSAGE",
-      "note": "Atterrissage près de Bayevo, Altaï, le 1963-06-19 à 08:20 UTC après 48 orbites.",
+      "note": "Atterrissage près de Bayevo, Altai Krai, le 1963-06-19 à 08:20 UTC après 48 orbites.",
       "type": "nominal"
     }
   ]

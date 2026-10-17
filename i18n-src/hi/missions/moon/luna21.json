@@ -1,13 +1,13 @@
 {
   "name": "Luna 21 / Lunokhod 2",
   "type": "UNCREWED LANDER + ROVER · FLOWN",
-  "first": "Second Soviet lunar rover; longest off-world drive (~39 km) for over 40 years",
-  "description": "Luna 21 delivered Lunokhod 2, the Soviet Union's second crewed-controlled lunar rover, to Le Monnier crater on the southern edge of Mare Serenitatis in January 1973. The rover was driven from a control room in Crimea by a five-person team and traversed approximately 39 km over four lunar days — a record off-world distance that held until NASA's Opportunity rover passed it on Mars in 2014. Lunokhod 2 returned 80,000 television frames and 86 panoramas before dust contamination of its solar arrays ended operations.",
+  "first": "दूसरा सोवियत चंद्र रोवर; 40 से अधिक वर्षों तक पृथ्वी से परे सबसे लंबी ड्राइव (~39 किमी)",
+  "description": "Luna 21 ने जनवरी 1973 में Le Monnier क्रेटर में, जो Mare Serenitatis के दक्षिणी किनारे पर है, Lunokhod 2 को पहुंचाया। Lunokhod 2 सोवियत संघ का दूसरा मानव-नियंत्रित चंद्र रोवर था। इस रोवर को क्रीमिया के एक नियंत्रण कक्ष से पांच सदस्यीय टीम द्वारा संचालित किया गया और इसने चार चंद्र दिनों में लगभग 39 किमी की यात्रा की — यह एक पृथ्वी से परे की रिकॉर्ड दूरी थी जो 2014 में NASA के Opportunity रोवर द्वारा मंगल पर इसे पार करने तक बनी रही। Lunokhod 2 ने 80,000 टेलीविजन फ्रेम और 86 पैनोरमा लौटाए, इससे पहले कि इसके सौर सरणियों पर धूल संदूषण के कारण संचालन समाप्त हो गया।",
   "events": [
     { "met": 0, "label": "LAUNCH", "note": "Proton-K from Baikonur 1973-01-08.", "type": "nominal" },
-    { "met": 0.005, "label": "TLI", "note": "Trans-lunar injection on the Blok-D upper stage.", "type": "nominal" },
-    { "met": 4, "label": "TCM", "note": "Mid-course correction during cruise.", "type": "info" },
-    { "met": 4.5, "label": "LANDING", "note": "Soft landing in Le Monnier crater 1973-01-15. Lunokhod 2 rolled off ramps a few hours later.", "type": "nominal" },
-    { "met": 7, "label": "ROVER ACTIVE", "note": "Five-person ground crew in Crimea began driving operations. Total traverse: ~39 km.", "type": "nominal" }
+    { "met": 0.005, "label": "TLI", "note": "Blok-D ऊपरी चरण पर ट्रांस-चंद्र इंजेक्शन।", "type": "nominal" },
+    { "met": 4, "label": "TCM", "note": "क्रूज के दौरान मध्य-पथ सुधार।", "type": "info" },
+    { "met": 4.5, "label": "LANDING", "note": "Le Monnier क्रेटर में 1973-01-15 को नरम लैंडिंग। Lunokhod 2 कुछ घंटों बाद रैंप से नीचे उतरा।", "type": "nominal" },
+    { "met": 7, "label": "ROVER ACTIVE", "note": "क्रीमिया में पांच सदस्यीय जमीनी दल ने ड्राइविंग संचालन शुरू किया। कुल ट्रैवर्स: ~39 किमी।", "type": "nominal" }
   ]
 }

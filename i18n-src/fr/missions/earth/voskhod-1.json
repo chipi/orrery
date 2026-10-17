@@ -14,13 +14,13 @@
     {
       "met": 0.8,
       "label": "KHRUSHCHEV DEPOSED",
-      "note": "Soviet leadership change occurred during the flight.",
+      "note": "Le changement de direction soviétique s'est produit pendant le vol.",
       "type": "info"
     },
     {
       "met": 1.01,
       "label": "LAND",
-      "note": "Soft-landing retro-rocket touchdown near Marevka 1964-10-13 07:47 UTC.",
+      "note": "Atterrissage en douceur avec rétrofusée près de Marevka 1964-10-13 07:47 UTC.",
       "type": "nominal"
     }
   ]

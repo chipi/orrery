@@ -1,14 +1,14 @@
 {
-  "title": "Coniche raccordate",
+  "title": "Patched Conics",
   "intro_sentence": "Fingi che la gravità sia un corpo alla volta — l'approssimazione che rende il problema a tre corpi tractabile.",
   "narrative_101": [
-    "Segreto sporco: la fisica vera è matematicamente irrisolvibile. NESSUNA soluzione chiusa al problema dei tre corpi.",
-    "I pianificatori barano. Solo UN corpo conta in ogni momento. Vicino a Terra solo Terra. In crociera solo Sole. Vicino a Marte solo Marte. Sfere di influenza."
+    "Ecco un sporco segreto della meccanica orbitale: la vera fisica completa — ogni corpo del sistema solare che attira ogni altro — è matematicamente insolubile in modo semplice. NON esiste alcuna soluzione in forma chiusa al problema dei tre corpi, per non parlare della versione reale con dozzine di corpi. Allora come fanno i pianificatori di missioni a portare avanti il lavoro?",
+    "Barano. Fingono che, in ogni momento, conta la gravità di UN SOLO corpo. Vicino alla Terra, soltanto la Terra attira. Durante il trasferimento, soltanto il Sole. Vicino a Marte, soltanto Marte. Ciascuna di queste regioni si chiama sfera d'influenza, e dentro ognuna l'astronave vola su una conica Kepleriana semplice. Quando l'astronave attraversa un confine, cambi il sistema di coordinate e inizi una nuova conica. Unite insieme, formano la traiettoria. Questo è il metodo delle coniche raccordate."
   ],
   "body_paragraphs": [
-    "Gravità reale è disordinata. Sonda Terra-Marte sente Terra, Sole, Marte. Equazione completa (n-corpi) senza soluzione chiusa.",
-    "Coniche raccordate: dichiara una sfera di influenza intorno a ogni corpo. Dentro Terra solo Terra; fuori, eliocentrico. Conici raccordate alle frontiere.",
-    "Sbagliato ma utile. Errori a frontiere piccoli — pochi % Δv. Vera pianificazione NASA usa la stessa approssimazione."
+    "La gravità reale è caotica. Un'astronave in trasferimento tra la Terra e Marte sente la gravità della Terra, la gravità del Sole, la gravità di Marte, più tutto il resto, tutto insieme. La matematica completa (il problema degli n-corpi) non ha alcuna soluzione in forma chiusa — soltanto integrazione numerica. Questo è lento, fragile, difficile da pianificare.",
+    "Le coniche frammentate rappresentano il compromesso operativo: si dichiara una sfera di influenza intorno a ogni corpo celeste. Nella sfera di influenza terrestre, conta solo la gravità della Terra; si vola seguendo un arco kepleriano intorno alla Terra. Oltrepassando il confine nella regione eliocentrica, si passa a un arco kepleriano centrato sul Sole. Entrando nella sfera di Marte, si passa di nuovo. Tre problemi kepleriani, raccordati insieme ai confini.",
+    "È sbagliato ma utile. Gli errori ai confini sono piccoli — pochi punti percentuali di ∆v al massimo per il lavoro cislunar, ancora meno per l'eliocentric — e la matematica diventa sufficientemente trattabile da adattarsi in un Web Worker. I diagrammi di portata (`porkchops`) di Orrery sono calcolati in questo modo; lo sono anche le traiettorie su `/fly`. La pianificazione del volo reale alla NASA usa la stessa approssimazione come primo tentativo, poi la affina numericamente prima del lancio."
   ],
   "diagram_caption": "Tre frame, tre coniche, raccordate alle sfere d'influenza."
 }

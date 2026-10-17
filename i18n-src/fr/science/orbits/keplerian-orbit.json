@@ -2,14 +2,14 @@
   "title": "Orbite képlérienne",
   "intro_sentence": "Une ellipse avec le Soleil à un foyer — l'orbite la plus simple qu'un corps peut avoir autour d'un autre.",
   "narrative_101": [
-    "Imagine lancer une balle d'une tour. Elle tombe. Plus fort, elle tombe plus loin. Si fort que le sol s'écarte sous elle aussi vite — elle ne tombe jamais. C'est une orbite. Chaque sonde, chaque lune, chaque planète fait ce tour.",
-    "Une orbite képlérienne traite la gravité comme une seule traction vers un corps lourd. Deux corps, une force. Le résultat est toujours une ellipse, le corps lourd à un foyer — jamais au centre.",
-    "La réalité est plus désordonnée — perturbations lunaires, bourrelet équatorial. Mais le désordre est une petite correction sur une orbite képlérienne."
+    "Imaginez lancer une balle du haut d'une tour. Elle courbe vers le sol. Lancez-la plus fort, la courbe s'allonge. Lancez-la si fort que le sol s'éloigne sous elle aussi vite que la balle tombe — et la balle ne touche jamais le sol. Elle continue juste de tomber, éternellement, dans une boucle fermée. C'est une orbite. Tous les engins spatiaux, toutes les lunes, toutes les planètes font ce seul tour.",
+    "Ce qui fait de cette boucle une orbite Keplérienne spécifiquement, c'est que nous traitons la gravité comme une seule et unique traction vers une chose lourde — le Soleil pour les planètes, la Terre pour les satellites, Mars pour InSight. Deux corps, une force, aucune complication. Le résultat est toujours une ellipse, et le corps lourd se situe toujours à l'un des deux foyers, jamais au centre. Cette image unique se trouve derrière chaque nombre que vous verrez dans toute cette encyclopédie.",
+    "La réalité est plus compliquée — les lunes perturbent les planètes, le renflement de la Terre tire sur les satellites, le Soleil tire sur les trajectoires lunaires — mais cette complexité n'est généralement qu'une petite correction superposée à une orbite Keplérienne. Voilà pourquoi nous commençons ici. Maîtrisez l'ellipse et tout le reste n'est que décoration."
   ],
   "body_paragraphs": [
-    "Quand tu tombes vers quelque chose de massif et le rates, tu obtiens une orbite képlérienne. Trajectoire = ellipse, le corps à un foyer, jamais au centre. Terre autour du Soleil, Lune autour de la Terre, chaque sonde — toutes képlériennes en première approximation.",
-    "Six nombres décrivent l'orbite : taille (demi-grand axe), étirement (excentricité), trois angles (inclinaison, longitude du nœud ascendant, argument du périapse), et position (anomalie vraie). Ce sont les éléments orbitaux.",
-    "Le modèle se brise quand un troisième corps compte : sondes près de la Lune, satellites LEO sentant le bourrelet. Orrery utilise képlérien pour l'histoire héliocentrique et coniques raccordées pour le reste."
+    "Quand vous tombez vers quelque chose de massif mais le manquez, vous obtenez une orbite Keplérienne. Le chemin est une ellipse — un cercle étiré — et le corps vers lequel vous tombez se situe à l'un des deux foyers, jamais au centre. La Terre autour du Soleil, la Lune autour de la Terre, tous les engins spatiaux que vous verrez dans Orrery : tous Keplériens en première approximation.",
+    "Six nombres décrivent complètement l'une de ces orbites : la taille (demi-grand axe), l'excentricité (allongement), trois angles qui orientent l'ellipse dans l'espace (inclinaison, longitude du nœud ascendant, argument du périapsis), et où se trouve le corps le long de la trajectoire en ce moment (anomalie vraie). Ce sont les éléments Keplériens — le langage dans lequel chaque autre section de cet onglet traduit quelque chose que vous pouvez visualiser.",
+    "Le modèle s'effondre dès qu'une gravité d'un tiers corps compte : les engins spatiaux près de la Lune, les satellites en orbite terrestre basse ressentant le renflement de l'équateur, n'importe quoi passant par l'ombre de Jupiter. Orrery utilise les orbites Keplériennes pour l'histoire héliocentriques et des approximations coniques raccordées pour le reste."
   ],
   "diagram_caption": "Ellipse avec foyer F₁ au Soleil. Demi-grand axe a · périhélie et aphélie sur la ligne des apsides."
 }

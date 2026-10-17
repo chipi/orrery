@@ -2,13 +2,13 @@
   "name": "Curiosity",
   "type": "ROVER · ACTIVO",
   "first": "Primer róver marciano con energía nuclear; primer aterrizaje con grúa celeste",
-  "dispatch": "Curiosity es un laboratorio con energía nuclear del tamaño de un coche pequeño, y lo difícil fue bajarlo. Demasiado pesado para bolsas de aire, fue descendido a Marte en 2012 por una grúa celeste impulsada por cohetes en una secuencia tan arriesgada que sus planificadores la llamaron siete minutos de terror — y funcionó a la primera. Desde entonces ha perforado su camino a través del cráter Gale y respondió la pregunta para la que fue enviado: el cráter albergó alguna vez un lago, con la química que algo viviente podría haber utilizado. Marte había sido habitable. Curiosity sigue funcionando, escalando una montaña de roca estratificada que se lee como el propio libro de historia del planeta.",
-  "description": "La misión insignia que definió la exploración moderna de Marte. Curiosity tiene el tamaño de un coche, está impulsado por plutonio, y ha recorrido más de 36 km a través del cráter Gale desde su aterrizaje en 2012. Sus instrumentos confirmaron que Marte alguna vez tuvo condiciones habitables — agua en movimiento, compuestos orgánicos complejos, la química que la vida necesitaría. La secuencia de EDL de los «siete minutos de terror», terminando con una grúa celeste bajando el róver por cables, es ahora el estándar de la NASA para entregar cargas útiles grandes a la superficie de Marte.",
+  "dispatch": "Curiosity es un laboratorio con energía nuclear del tamaño de un coche pequeño, y lo difícil fue bajarlo. Demasiado pesado para bolsas de aire, fue descendido a Marte en 2012 por una grúa celeste impulsada por cohetes en una secuencia tan arriesgada que sus planificadores la llamaron siete minutos de terror — y funcionó a la primera. Desde entonces ha perforado su camino a través de Gale Crater y respondió la pregunta para la que fue enviado: el cráter albergó alguna vez un lago, con la química que algo viviente podría haber utilizado. Marte había sido habitable. Curiosity sigue funcionando, escalando una montaña de roca estratificada que se lee como el propio libro de historia del planeta.",
+  "description": "La misión insignia que definió la exploración moderna de Marte. Curiosity tiene el tamaño de un coche, está impulsado por plutonio, y ha recorrido más de 36 km a través del Gale Crater desde su aterrizaje en 2012. Sus instrumentos confirmaron que Marte alguna vez tuvo condiciones habitables — agua en movimiento, compuestos orgánicos complejos, la química que la vida necesitaría. La secuencia de EDL de los «siete minutos de terror», terminando con una grúa celeste bajando el róver por cables, es ahora el estándar de NASA para entregar cargas útiles grandes a la superficie de Marte.",
   "events": [
     {
       "met": 0,
       "label": "LANZAMIENTO",
-      "note": "Atlas V 541 despega desde la Estación de Cabo Cañaveral SLC-41.",
+      "note": "Atlas V 541 despega desde Cape Canaveral SLC-41.",
       "type": "nominal"
     },
     {
@@ -26,7 +26,7 @@
     {
       "met": 119,
       "label": "TCM-3",
-      "note": "Corrección final previa a EDL; la trayectoria apunta a la elipse de aterrizaje del cráter Gale.",
+      "note": "Corrección previa a EDL final; la trayectoria apunta a la elipse de aterrizaje en el cráter Gale.",
       "type": "nominal"
     },
     {
@@ -38,7 +38,7 @@
     {
       "met": 254.005,
       "label": "TOMA DE CONTACTO",
-      "note": "Curiosity llega a Aeolis Palus, cráter Gale, 2012-08-06 05:17:57 UTC.",
+      "note": "Curiosity llega a Aeolis Palus, cráter Gale Crater, 2012-08-06 05:17:57 UTC.",
       "type": "nominal"
     },
     {

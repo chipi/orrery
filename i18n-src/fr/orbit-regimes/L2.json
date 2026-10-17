@@ -1,12 +1,12 @@
 {
-  "name": "Point de Lagrange L2 Soleil-Terre",
+  "name": "Sun–Earth L2",
   "short": "L2",
   "story": "Le deuxième point de Lagrange — à 1,5 million de km de la Terre, sur la ligne allant du Soleil à travers la Terre et vers l'arrière. La gravité du Soleil + de la Terre se combinent pour maintenir un vaisseau spatial en station avec un minimum de carburant. Un ciel toujours nocturne, un côté face à la Terre toujours chaud, le même angle solaire pour toujours — l'endroit idéal pour les télescopes infrarouges qui doivent rester froids et pointés à l'opposé du Soleil. JWST est stationné ici, sur une orbite en halo de ~800 000 km de large.",
   "comparison": "Quatre fois plus loin que la Lune. Le Soleil, la Terre et la Lune sont tous situés du même côté du vaisseau spatial, simplifiant la géométrie du bouclier solaire.",
   "residents": [
     {
       "id": "jwst",
-      "label": "JWST — Télescope spatial James Webb",
+      "label": "JWST — James Webb Space Telescope",
       "agency": "NASA"
     },
     {

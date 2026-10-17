@@ -3,54 +3,54 @@
   "dispatch": "Apollo 10 voou o pouso completo — até os últimos quinze quilômetros — e então, conforme planejado, deu meia-volta. Stafford e Cernan levaram o Lunar Module até a uma distância mínima da superfície em Tranquility, executaram cada etapa da descida e subiram de volta à órbita sem pousar. A NASA até deixou os tanques de ascensão pela metade, de modo que por mais tentador que fosse, arriscar nunca foi uma opção. É o voo menos celebrado do programa e um dos mais disciplinados: um ensaio em velocidade total por dois homens que voaram quatrocentos mil quilômetros sabendo que o pouso pertencia a outra pessoa.",
   "type": "TRIPULADO ÓRBITA LUNAR · VOOU",
   "first": "Ensaio geral completo do pouso lunar — LM desceu a ~15,6 km de altitude",
-  "description": "O ensaio geral completo do primeiro pouso lunar. Stafford e Cernan voaram o LM Snoopy a ~15,6 km de altitude acima do local de pouso planejado de Apollo 11 em Mare Tranquillitatis — cada passo de uma aproximação de pouso exceto o pouso em si. Confirmaram o perfil de descida, o radar de pouso, a trajetória de subida e o procedimento de rendezvous que Apollo 11 usaria dois meses depois. Os tanques de propelente de subida do LM foram deliberadamente subabastecidos (~50 % do nominal) para evitar qualquer tentação de tentar pousar. O estágio de subida de Snoopy foi o único a deixar a órbita lunar com ∆v positivo — lançado em órbita heliocêntrica onde permanece hoje.",
+  "description": "O ensaio geral completo para o primeiro pouso lunar. Stafford e Cernan pilotaram o LM Snoopy até uma altitude de ~15,6 km acima do local planejado para o pouso da Apollo 11 em Mare Tranquillitatis — cada etapa de uma abordagem de pouso, exceto o próprio pouso. Confirmaram o perfil de descida, o radar de pouso, a trajetória de ascensão e o procedimento de rendezvous que Apollo 11 usaria dois meses depois. Os tanques de combustível do estágio de ascensão do LM foram deliberadamente sub-abastecidos (~50 % do nominal) para evitar qualquer tentação de tentar um pouso. O estágio de ascensão de Snoopy foi o único a deixar a órbita lunar com ∆v positivo — lançado para uma órbita heliocêntrica onde permanece até hoje, sendo redescoberto intermitentemente por astrônomos amadores (confirmado mais recentemente por Nick Howes / Faulkes Telescope, 2019).",
   "events": [
     {
       "met": 0,
       "label": "LAUNCH",
-      "note": "Saturn V (AS-505) from Kennedy Space Center LC-39B 1969-05-18 16:49 UTC — first crewed launch from LC-39B.",
+      "note": "Saturn V (AS-505) de Kennedy Space Center LC-39B em 18 de maio de 1969 às 16:49 UTC — primeiro lançamento tripulado de LC-39B.",
       "type": "nominal"
     },
     {
       "met": 0.12,
       "label": "TLI",
-      "note": "Trans-lunar injection. S-IVB ∆v ~3.05 km/s.",
+      "note": "Injeção translunar. S-IVB ∆v ~3,05 km/s.",
       "type": "nominal"
     },
     {
       "met": 3.16,
       "label": "LOI",
-      "note": "Lunar orbit insertion. SPS ∆v ~0.91 km/s.",
+      "note": "Inserção em órbita lunar. SPS ∆v ~0,91 km/s.",
       "type": "nominal"
     },
     {
       "met": 4.6,
       "label": "LM SEPARATION",
-      "note": "Snoopy undocks from Charlie Brown. Crew of two (Stafford + Cernan) descend toward Mare Tranquillitatis.",
+      "note": "Snoopy desacopla de Charlie Brown. Tripulação de dois (Stafford + Cernan) desce em direção a Mare Tranquillitatis.",
       "type": "nominal"
     },
     {
       "met": 4.66,
       "label": "CLOSEST APPROACH",
-      "note": "Snoopy reaches ~15.6 km above Apollo 11 target site — no landing; everything verified except touchdown itself.",
+      "note": "Snoopy atinge ~15,6 km acima do local alvo de Apollo 11 — sem pouso; tudo verificado exceto o próprio toque do solo.",
       "type": "info"
     },
     {
       "met": 4.76,
       "label": "ASCENT + RENDEZVOUS",
-      "note": "Snoopy ascent stage rendezvous with Charlie Brown — first complete LM-to-CSM redocking in lunar orbit.",
+      "note": "Estágio de ascensão do Snoopy encontra-se com Charlie Brown — primeiro acoplamento LM-para-CSM completo em órbita lunar.",
       "type": "nominal"
     },
     {
       "met": 5.96,
       "label": "TEI",
-      "note": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+      "note": "Injeção trans-terrestre. SPS ∆v ~1,0 km/s.",
       "type": "nominal"
     },
     {
       "met": 8.05,
       "label": "SPLASHDOWN",
-      "note": "CM splashed down in South Pacific 1969-05-26 16:52 UTC. Recovery by USS Princeton.",
+      "note": "CM foi recuperado no Oceano Pacífico Sul em 26 de maio de 1969 às 16:52 UTC. Recuperação pelo USS Princeton.",
       "type": "nominal"
     }
   ]

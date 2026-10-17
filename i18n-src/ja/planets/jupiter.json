@@ -34,7 +34,7 @@
     {
       "tab": "planets",
       "section": "moons-of-the-system",
-      "why": "木星には101個の確認された衛星があります。そのうちガリレイ衛星4個（イオ、エウロパ、ガニメデ、カリスト）はそれぞれが独自の世界であり、1:2:4の軌道共鳴を示しています。"
+      "why": "木星には101個の確認された衛星があります。そのうちガリレイ衛星4個（Io、Europa、Ganymede、Callisto）はそれぞれが独自の世界であり、1:2:4の軌道共鳴を示しています。"
     },
     {
       "tab": "planets",
@@ -44,7 +44,7 @@
     {
       "tab": "transfers",
       "section": "gravity-assist",
-      "why": "木星は外側領域のミッションに好まれる重力アシスト目標です。ボイジャー1号・2号、カッシーニ、ガリレオ、ニューホライズンズ、ジュノー、ヨーロッパ・クリッパー、JUICEはすべて木星フライバイを用いるか用いています。"
+      "why": "木星は外部太陽系ミッションにおける好適な重力アシスト目標です。Voyager 1+2、Cassini、Galileo、New Horizons、Juno、Europa Clipper、JUICEはすべて木星の重力スイングバイを利用して速度を獲得しました、または獲得しています。"
     },
     {
       "tab": "orbits",
@@ -54,7 +54,7 @@
     {
       "tab": "planets",
       "section": "active-spacecraft-survey",
-      "why": "ジュノー（NASA）は現在極軌道にあります。ヨーロッパ・クリッパー（NASA）とJUICE（ESA）は現在進行中で、ガニメデへの軌道投入は2034年です。"
+      "why": "Juno（NASA）は現在極軌道にあります。Europa Clipper（NASA）とJUICE（ESA）は現在進行中で、ガニメデへの軌道投入は2034年です。"
     }
   ]
 }

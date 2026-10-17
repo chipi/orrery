@@ -3,7 +3,7 @@
   "dispatch": "Apollo 14 doveva dimostrare che il programma poteva ancora allunare. Volò nove mesi dopo che Apollo 13 aveva quasi ucciso il suo equipaggio, subentrò all'obiettivo che Apollo 13 non aveva mai raggiunto e riportò Alan Shepard nello spazio un decennio dopo che era diventato il primo americano a lasciare il pianeta — tenuto a terra nel frattempo per anni a causa di un disturbo dell'orecchio interno, e ora, a quarantasette anni, la persona più anziana a camminare sulla Luna. Lui e Mitchell arrivarono a circa trenta metri dal bordo del Cone Crater, incapaci di capire nel terreno confuso quanto si fossero effettivamente avvicinati. Poi, negli ultimi minuti sulla superficie, Shepard colpì con un ferro sei improvvisato due palline da golf — una trovata pubblicitaria, e anche un segnale discreto che la crisi era alle spalle e Apollo volava di nuovo.",
   "type": "LANDER EQUIPAGGIATO · VOLATO",
   "first": "Terzo allunaggio — raggiunto l'obiettivo perso di Apollo 13; tiri di golf di Shepard",
-  "description": "Il terzo allunaggio equipaggiato e il secondo volo di Alan Shepard — rendendolo il primo americano nello spazio e il quinto uomo sulla Luna, a 47 anni il più vecchio camminatore lunare. Apollo 14 fu la missione di recupero dopo l'allunaggio abortito di Apollo 13, prendendo l'obiettivo previsto di Apollo 13 nelle Highlands di Fra Mauro. Shepard e Mitchell dispiegarono ALSEP, completarono due EVA per un totale di 9 h 23 m. Negli ultimi minuti di EVA-2, Shepard improvvisò una testa di mazza da golf sei di ferro su un manico di raccolta campioni e colpì due palline da golf \"miglia e miglia e miglia\". 42 kg di campioni riportati.",
+  "description": "Il terzo allunaggio con equipaggio e il secondo volo di Alan Shepard — facendolo sia il primo americano nello spazio (Freedom 7, 1961) che il quinto uomo sulla Luna, a 47 anni il più anziano Moonwalker. Apollo 14 fu la missione di recupero dopo l'allunaggio abortito dell'Apollo 13, assumendo l'obiettivo previsto dell'Apollo 13 negli altopiani di Fra Mauro. Shepard e Mitchell distribuirono ALSEP, completarono due EVA per un totale di 9 h 23 m, e trascinarono il trasportatore modulare di equipaggiamento (MET, un carrello in stile risciò — l'LRV era ancora a una missione di distanza) verso il Crater Cone, anche se arrivarono a circa 30 m di distanza dal ciglio a causa dell'incertezza di navigazione nel terreno craterizzato. Negli ultimi minuti dell'EVA-2, Shepard ha improvvisato una testa di bastone da golf six-iron su un manico per la raccolta di campioni e ha colpito due palline da golf «chilometri e chilometri e chilometri» (una in seguito fu analizzata dalle immagini a circa 24 m e circa 37 m). Stuart Roosa portò semi di alberi in Kitty Hawk che divennero gli «Moon Trees» piantati in tutto gli Stati Uniti. 42 kg di campioni rientrati.",
   "events": [
     {
       "met": 0,
@@ -14,55 +14,55 @@
     {
       "met": 0.12,
       "label": "TLI",
-      "note": "Trans-lunar injection. S-IVB ∆v ~3.05 km/s.",
+      "note": "Iniezione translunar. S-IVB ∆v ~3,05 km/s.",
       "type": "nominal"
     },
     {
       "met": 0.25,
       "label": "CSM-LM DOCKING",
-      "note": "Five docking attempts before Kitty Hawk soft-captured Antares — anomaly in docking latches; root cause never reproduced on ground.",
+      "note": "Cinque tentativi di attracco prima che Kitty Hawk catturasse dolcemente Antares — anomalia nei meccanismi di aggancio; la causa radice non è mai stata riprodotta da terra.",
       "type": "warning"
     },
     {
       "met": 3.82,
       "label": "LOI",
-      "note": "Lunar orbit insertion. SPS ∆v ~0.88 km/s.",
+      "note": "Inserimento in orbita lunare. SPS ∆v ~0,88 km/s.",
       "type": "nominal"
     },
     {
       "met": 4.6,
       "label": "TOUCHDOWN",
-      "note": "Antares lands at Fra Mauro Highlands 1971-02-05 09:18 UTC — within 53 m of target despite an abort-program glitch in the LM computer that the team patched in real-time.",
+      "note": "Antares atterra sugli altopiani di Fra Mauro il 1971-02-05 alle 09:18 UTC — entro 53 m dal bersaglio nonostante un'anomalia nel programma di interruzione del computer del LM che il team ha corretto in tempo reale.",
       "type": "nominal"
     },
     {
       "met": 5,
       "label": "EVA-1",
-      "note": "Shepard + Mitchell deploy ALSEP + first lunar geology traverse on this mission.",
+      "note": "Shepard + Mitchell dispiegano ALSEP + primo traverse geologico lunare in questa missione.",
       "type": "info"
     },
     {
       "met": 5.4,
       "label": "CONE CRATER + GOLF",
-      "note": "EVA-2: traverse toward Cone Crater (came up ~30 m short of rim). Final minutes — Shepard hits two golf balls with an improvised club.",
+      "note": "EVA-2: traverse verso il Cone Crater (raggiunsero circa 30 m dal bordo). Ultimi minuti — Shepard colpisce due palline da golf con una mazza improvvisata.",
       "type": "info"
     },
     {
       "met": 5.6,
       "label": "ASCENT",
-      "note": "Antares lifts off after 33 h 31 m on surface. 42 kg of samples returned.",
+      "note": "Antares decolla dopo 33 h 31 m sulla superficie. 42 kg di campioni riportati.",
       "type": "nominal"
     },
     {
       "met": 6.4,
       "label": "TEI",
-      "note": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+      "note": "Iniezione trans-terrestre. SPS ∆v ~1,0 km/s.",
       "type": "nominal"
     },
     {
       "met": 9,
       "label": "SPLASHDOWN",
-      "note": "CM splashed down in South Pacific 1971-02-09 21:05 UTC. Recovery by USS New Orleans. Last Apollo quarantine.",
+      "note": "CM ammarò nel Pacifico meridionale il 1971-02-09 alle 21:05 UTC. Recupero da parte di USS New Orleans. Ultima quarantena Apollo.",
       "type": "nominal"
     }
   ]

@@ -1,15 +1,15 @@
 {
   "name": "Beresheet",
   "type": "PRIVATE LANDER · CRASHED",
-  "first": "First privately-funded mission to reach the Moon; first Israeli lunar mission",
-  "description": "SpaceIL's Beresheet (Hebrew: 'In the beginning') launched as a shared-ride passenger on a Falcon 9 in February 2019. Instead of a direct trans-lunar injection, the small lander performed weeks of perigee-raising phasing burns to climb from a parking orbit out to the Moon — a fuel-saving trajectory pioneered for low-budget missions. After successful lunar orbit insertion on 4 April 2019, an inertial measurement unit reset during descent caused the main engine to shut down. Beresheet crashed in Mare Serenitatis. SpaceIL committed to a successor (Beresheet 2) within days.",
+  "first": "Первая финансируемая частным образом миссия, достигшая Луны; первая израильская лунная миссия",
+  "description": "Beresheet компании SpaceIL (иврит: «В начале») стартовала в феврале 2019 года как попутный груз на Falcon 9. Вместо прямого трансселенного маневра малый лунный модуль выполнил серию многонедельных манёвров поднятия апогея для подъёма с парковочной орбиты к Луне — траектория, сокращающая расход топлива и впервые применённая для низкобюджетных миссий. После успешного выхода на лунную орбиту 4 апреля 2019 года при снижении произошёл сброс показаний инерциального измерительного блока, в результате чего главный двигатель отключился. Beresheet упала в Mare Serenitatis. Компания SpaceIL в течение нескольких дней объявила о разработке преемника (Beresheet 2).",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "Falcon 9 rideshare from Cape Canaveral 2019-02-22.", "type": "nominal" },
-    { "met": 0.01, "label": "PHASING BURN", "note": "First of seven perigee raises to climb from LEO to lunar approach.", "type": "info" },
-    { "met": 10, "label": "TCM 1", "note": "Trajectory correction during multi-orbit climb.", "type": "info" },
-    { "met": 20, "label": "TCM 2", "note": "Second TCM. Apogee approaching lunar capture distance.", "type": "info" },
-    { "met": 41, "label": "LUNAR APPROACH", "note": "Final translunar burn — Beresheet on direct lunar trajectory.", "type": "nominal" },
-    { "met": 48, "label": "LUNAR ORBIT INSERTION", "note": "Capture into elliptical lunar orbit 2019-04-04.", "type": "nominal" },
-    { "met": 48.01, "label": "DESCENT ANOMALY", "note": "IMU reset during powered descent → engine shutdown → crash in Mare Serenitatis 2019-04-11.", "type": "warning" }
+    { "met": 0, "label": "LAUNCH", "note": "Полёт Falcon 9 в режиме совместного использования с Cape Canaveral 22 февраля 2019 года.", "type": "nominal" },
+    { "met": 0.01, "label": "PHASING BURN", "note": "Первый из семи манёвров поднятия перигея для подъёма с низкой околоземной орбиты к подлётному расстоянию от Луны.", "type": "info" },
+    { "met": 10, "label": "TCM 1", "note": "Коррекция траектории при многооборотном подъёме.", "type": "info" },
+    { "met": 20, "label": "TCM 2", "note": "Вторая коррекция траектории. Апогей приближается к расстоянию захвата Луной.", "type": "info" },
+    { "met": 41, "label": "LUNAR APPROACH", "note": "Финальный трансселенный манёвр — Beresheet на прямой траектории к Луне.", "type": "nominal" },
+    { "met": 48, "label": "LUNAR ORBIT INSERTION", "note": "Захват на эллиптическую лунную орбиту 4 апреля 2019 года.", "type": "nominal" },
+    { "met": 48.01, "label": "DESCENT ANOMALY", "note": "Сброс ИНС при управляемом спуске → остановка двигателя → крах в Mare Serenitatis 11 апреля 2019 года.", "type": "warning" }
   ]
 }

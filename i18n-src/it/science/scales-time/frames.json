@@ -1,14 +1,14 @@
 {
-  "title": "Sistemi di riferimento eliocentrico/geocentrico/centrato corpo",
+  "title": "Heliocentric · Geocentric · Body-Centric Frames",
   "intro_sentence": "Tre frame per tre domande.",
   "narrative_101": [
-    "Dove è la Luna? Dipende da dove SEI tu. Da Terra overhead. Da Sole punto piccolo. Da Marte irrilevante.",
-    "Vol spaziale giocola tre. Eliocentrico per crociera. Geocentrico per satelliti. Centrato corpo per insertion e ops superficie.",
-    "Cambiare = aritmetica. Ma importa concettualmente."
+    "Dov'è la Luna? La risposta onesta è \"dipende da dove SEI TU.\" Dalla superficie della Terra è sopra di te all'1 di questa notte. Dal Sole è un puntino minuscolo a 1 UA di distanza vicino alla Terra. Da Marte è una macchia irrilevante. Nessuna di queste risposte è sbagliata — sono semplicemente misurate da origini diverse. Quella scelta dell'origine è ciò che \"sistema di riferimento\" significa.",
+    "I voli spaziali si destreggiammo costantemente tra tre di esse. L'eliocentrico (origine al Sole) è il sistema naturale per la crociera — tutto ciò che accade tra Terra e Marte avviene qui. Il geocentrico (origine alla Terra) è il sistema naturale per i satelliti e la Luna. Il sistema centro del corpo (origine su qualsiasi pianeta stiate sorvolando o orbita) è il sistema naturale per le manovre di arrivo e le operazioni di superficie.",
+    "Il passaggio tra essi è principalmente un'operazione aritmetica — trasli l'origine, magari ruota gli assi. Ma conta dove sei concettualmente: un'ellisse di trasferimento è eliocentrica. Un sorvolo di Marte è centro del corpo. Il passaggio tra essi è esattamente il trucco delle coniche raccordate. Ogni schermata in questa app sceglie un sistema e vi rimane fedele: /explore è eliocentrico, /earth è geocentrico, /moon e /mars sono centro del corpo."
   ],
   "body_paragraphs": [
-    "Eliocentrico: origine Sole. Naturale per movimento solare. `/explore` fondamentale eliocentrico.",
-    "Geocentrico: origine Terra. Per satelliti, Luna. `/earth`.",
-    "Centrato corpo: origine corpo orbitato. Per insertion, ops superficie."
+    "Eliocentrico: origine al Sole, assi allineati con l'eclittica. Il sistema naturale per il moto nel sistema solare. Posizioni dei pianeti, orbite di trasferimento, crociere di missione — tutto è più naturalmente descritto qui. L'`/explore` di Orrery è fondamentalmente eliocentrico.",
+    "Geocentrico: origine alla Terra. Utile per i satelliti, la Luna e qualsiasi navicella spaziale all'interno della sfera d'influenza della Terra. La rotta `/earth` di Orrery funziona in questo sistema. Le coordinate geocentriche si relazionano a quelle eliocentriche tramite una traslazione (posizione eliocentrica della Terra) e possibilmente una rotazione (inclinazione assiale della Terra).",
+    "Centro del corpo (centrato su Marte, centrato su Saturno, centrato sulla Luna, ecc.): origine nel corpo che stai orbitando o sorvolando. Utilizzato per l'inserimento orbitale, le operazioni di superficie, la geometria del sorvolo — qualsiasi cosa dove la gravità del corpo domina. La progettazione di missioni con coniche raccordate commuta tra i sistemi ai confini delle sfere d'influenza: descrivi un arco nel sistema che mantiene la matematica locale."
   ]
 }

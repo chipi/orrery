@@ -3,7 +3,7 @@
   "mission_type": "Robotic Lander (failed)",
   "site_name": "Mare Serenitatis",
   "crew": [],
-  "left": "Crash-impact debris field (April 2019)",
+  "left": "Campo de escombros por impacto (abril de 2019)",
   "fact": "Primer intento de alunizaje financiado íntegramente por el sector privado — módulo de aterrizaje de 585 kg de la organización sin ánimo de lucro israelí SpaceIL. Alcanzó la órbita lunar pero una avería del giroscopio durante el descenso provocó el apagado del motor y un impacto a ~950 m/s (casi 1 km/s). Transportaba una «biblioteca lunar» de conocimiento humano grabado en discos de níquel, además de una muestra de tardígrados —extremófilos capaces de criptobiosis— que quizá sobrevivieron o no al impacto. Inspiró Beresheet 2 (previsto).",
-  "capability": "Demonstrated that a small private team can reach the Moon. The crash itself surfaced lessons about descent-engine restart and IMU redundancy adopted by later commercial landers."
+  "capability": "Demostró que un pequeño equipo privado puede llegar a la Luna. El impacto en sí mismo sacó a la luz lecciones sobre el reinicio del motor de descenso y la redundancia de la IMU adoptadas por los módulos comerciales posteriores."
 }

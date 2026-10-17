@@ -6,37 +6,37 @@
   "residents": [
     {
       "id": "goes",
-      "label": "GOES — NOAA геостационарна метеорологија",
+      "label": "GOES — геостационарни метеоролошки сателити агенције NOAA",
       "agency": "NASA"
     },
     {
       "id": "inmarsat",
-      "label": "Inmarsat — глобални комсати",
+      "label": "Inmarsat — глобални комуникациони сателити",
       "agency": "ESA"
     },
     {
       "id": "meteosat",
-      "label": "Meteosat — ESA метеорологија",
+      "label": "Meteosat — метеоролошки сателити агенције ESA",
       "agency": "ESA"
     },
     {
       "id": "fengyun",
-      "label": "Fengyun — кинеска метеорологија",
+      "label": "Fengyun — кинески метеоролошки сателити",
       "agency": "CNSA"
     }
   ],
   "firsts": [
     {
       "year": 1963,
-      "label": "Syncom 2 — први геосинхрони сателит (USA)"
+      "label": "Syncom 2 — први геосинхрони сателит (САД)"
     },
     {
       "year": 1964,
-      "label": "Syncom 3 — први прави геостационарни сателит (USA)"
+      "label": "Syncom 3 — први прави геостационарни сателит (САД)"
     }
   ],
   "science_link": {
-    "tab": "orbits",
+    "tab": "орбите",
     "section": "keplers-laws"
   }
 }

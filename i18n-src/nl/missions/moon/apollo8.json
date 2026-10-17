@@ -1,50 +1,50 @@
 {
   "name": "Apollo 8",
-  "dispatch": "Apollo 8 was een gok die in haast werd gewaagd. Inlichtingen suggereerden dat de Sovjets misschien als eerste een bemanning rond de maan zouden sturen, dus in de zomer van 1968 gooide NASA het vluchtplan overboord en stuurde drie mannen naar de maanbaan met slechts de derde lancering van een raket die nog nooit een bemanning had gedragen. Het had roekeloos moeten zijn. In plaats daarvan werd het het enige goede nieuws van het jaar — 1968 was een jaar van moordaanslagen, Vietnam, brandende steden — en op kerstavond hoorde een miljard mensen Genesis voorgelezen vanuit de maanbaan en zagen ze, op Bill Anders' foto, voor het eerst hun hele wereld opkomen boven een dode horizon. Apollo 11 wordt herinnerd om de maan. Apollo 8 is degene die ons de aarde toonde.",
+  "dispatch": "Apollo 8 was een gok die in haast werd gewaagd. Inlichtingen suggereerden dat de Soviets misschien als eerste een bemanning rond de maan zouden sturen, dus in de zomer van 1968 gooide NASA het vluchtplan overboord en stuurde drie mannen naar de maanbaan met slechts de derde lancering van een raket die nog nooit een bemanning had gedragen. Het had roekeloos moeten zijn. In plaats daarvan werd het het enige goede nieuws van het jaar — 1968 was een jaar van moordaanslagen, Vietnam, brandende steden — en op kerstavond hoorde een miljard mensen Genesis voorgelezen vanuit de maanbaan en zagen ze, op Bill Anders' foto, voor het eerst hun hele wereld opkomen boven een dode horizon. Apollo 11 wordt herinnerd om de maan. Apollo 8 is degene die ons de aarde toonde.",
   "type": "BEMAND MAANBAAN · GEVLOGEN",
   "first": "Eerste mensen die de lage aardbaan verlaten + de Maan omcirkelen",
-  "description": "De eerste bemande missie die de lage aardbaan verliet, de eerste die aan de aardse zwaartekracht ontsnapte, en de eerste die de Maan omcirkelde. Gelanceerd op 21-12-1968 op de eerste bemande Saturn V-vlucht (AS-503), trad Apollo 8 op Kerstavond 1968 in de maanbaan. Anders' \"Earthrise\"-foto tijdens de vierde omloop werd een van de meest invloedrijke beelden in de geschiedenis. De bemanning las uit Genesis op live TV voor ~1 miljard kijkers. 10 omlopen later vuurden ze de SPS-motor voor TEI aan de achterkant van de Maan, en keerden terug naar de Stille Oceaan op 27-12-1968.",
+  "description": "De eerste bemande missie die een lage aardbaan verliet, de eerste die de zwaartekracht van de aarde ontsnapte, en de eerste die de maan omcirkelde. Gelanceerd op 1968-12-21 met de eerste bemande vlucht van de Saturn V (AS-503), bereikte Apollo 8 op Kerstavond 1968 een baan rond de maan. De \"Earthrise\"-foto van Anders tijdens de vierde omloop werd een van de meest invloedrijke afbeeldingen in de geschiedenis. De bemanning las uit Genesis voor live televisie naar ~1 miljard kijkers — het grootste televisie-publiek tot die datum. 10 omloop later zetten zij de SPS-motor aan voor TEI aan de achterkant van de maan en keerden terug voor een splashdown in de Stille Oceaan op 1968-12-27. NASA had in augustus 1968 besloten om de lading van Apollo 8 om te wisselen van een LM-test in een hoge aardbaan naar een CSM-only missie in een baan rond de maan, nadat CIA-inlichtingen suggereerden dat de USSR mogelijk eerst een circumlunaire vlucht zou proberen.",
   "events": [
     {
       "met": 0,
       "label": "LAUNCH",
-      "note": "Saturn V (AS-503) from Kennedy Space Center LC-39A 1968-12-21 12:51 UTC — first crewed Saturn V flight.",
+      "note": "Saturn V (AS-503) van Kennedy Space Center LC-39A 1968-12-21 12:51 UTC — eerste bemande Saturn V-vlucht.",
       "type": "nominal"
     },
     {
       "met": 0.12,
       "label": "TLI",
-      "note": "Trans-lunar injection burn — first crewed escape of Earth gravity. S-IVB ∆v ~3.05 km/s.",
+      "note": "Trans-lunar injection burn — eerste bemande ontsnapping aan aardzwaartekracht. S-IVB ∆v ~3,05 km/s.",
       "type": "nominal"
     },
     {
       "met": 2.79,
       "label": "LOI",
-      "note": "Lunar orbit insertion behind the Moon, out of radio contact. SPS burn ~0.91 km/s. First humans to orbit another body.",
+      "note": "Lunar orbit insertion achter de maan, zonder radiocommunicatie. SPS burn ~0,91 km/s. Eerste mensen in een baan om een ander hemellichaam.",
       "type": "nominal"
     },
     {
       "met": 3.16,
       "label": "EARTHRISE",
-      "note": "Anders photographs Earth rising over the lunar horizon during the fourth orbit (1968-12-24, AS08-14-2383).",
+      "note": "Anders fotografeert de aarde die over de maanhorizon rijst tijdens de vierde baan (1968-12-24, AS08-14-2383).",
       "type": "info"
     },
     {
       "met": 3.5,
       "label": "GENESIS READING",
-      "note": "Crew reads from Genesis on live TV to ~1 billion viewers — largest live TV audience to that date.",
+      "note": "Bemanning leest uit Genesis op live TV voor ~1 miljard kijkers — grootste live TV-publiek tot op dat moment.",
       "type": "info"
     },
     {
       "met": 3.96,
       "label": "TEI",
-      "note": "Trans-Earth injection behind the Moon (1968-12-25 06:10 UTC). SPS ∆v ~1.07 km/s.",
+      "note": "Trans-Earth injection achter de maan (1968-12-25 06:10 UTC). SPS ∆v ~1,07 km/s.",
       "type": "nominal"
     },
     {
       "met": 6.13,
       "label": "SPLASHDOWN",
-      "note": "CM splashed down in North Pacific 1968-12-27. Recovery by USS Yorktown.",
+      "note": "CM waterlandde in de Noord-Atlantische Oceaan op 1968-12-27. Bergingsoperatie door USS Yorktown.",
       "type": "nominal"
     }
   ]

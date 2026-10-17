@@ -1,8 +1,8 @@
 {
-  "name": "灵感四号",
+  "name": "Inspiration4",
   "type": "载人自由飞行 · 已飞行",
-  "first": "首次全平民轨道航天飞行；为圣裘德儿童研究医院筹集2.43亿美元",
-  "description": "贾里德·艾萨克曼、西安·普罗克特、海莉·阿西诺和克里斯·森布罗斯基 — 首次完全由非职业政府宇航员的人士组成的轨道乘组。2021-09-15 00:02 UTC自LC-39A由猎鹰9号B1062(第三次飞行)发射，搭乘载人龙飞船坚韧号(C207，此前曾执行Crew-1任务)。进入585公里、倾角51.6°的圆轨道 — 是自哈勃维修任务以来最高的载人轨道。未与任何空间站对接；三天自由飞行，包括首次在轨配备的舷窗穹顶(替换了对接适配器)。2021-09-18 23:06 UTC于佛罗里达海岸附近溅落。任务为圣裘德儿童研究医院筹集了超过2.43亿美元 — 阿西诺曾是圣裘德的患者，并是首位进入轨道的癌症幸存者。",
+  "first": "首次全民航天轨道飞行；为圣裘德儿童研究医院筹集243百万美元",
+  "description": "Jared Isaacman、Sian Proctor、Hayley Arceneaux 和 Chris Sembroski——首次全部由非职业政府宇航员组成的轨道飞行机组。2021年9月15日00:02 UTC 从 LC-39A 发射，搭乘 Falcon 9 B1062（第三次飞行），顶部为 Crew Dragon Resilience（C207，之前在 Crew-1 上飞行过）。到达高度 585 千米、倾角 51.6° 的圆形轨道——自 Hubble 维修任务以来最高的载人轨道。无与任何空间站对接；进行三天的自由飞行，包括首次搭载圆顶舱（取代对接适配器）。2021年9月18日23:06 UTC 在佛罗里达沿岸溅落。该任务为圣裘德儿童研究医院筹集了超过243百万美元——Arceneaux 是前圣裘德患者，也是首位在轨道上的癌症幸存者。",
   "events": [
     {
       "met": 0,
@@ -13,19 +13,19 @@
     {
       "met": 0.05,
       "label": "ORBIT",
-      "note": "585 km circular, 51.6° inclination — highest crewed orbit since Hubble servicing.",
+      "note": "585 千米圆形轨道，倾角 51.6°——自 Hubble 服务任务以来最高的载人轨道。",
       "type": "nominal"
     },
     {
       "met": 1,
       "label": "CUPOLA WINDOW",
-      "note": "First viewing through the Crew Dragon cupola (replacing docking adapter).",
+      "note": "首次通过 Crew Dragon 舷窗进行观看（替代对接适配器）。",
       "type": "info"
     },
     {
       "met": 2.96,
       "label": "SPLASHDOWN",
-      "note": "Resilience splashed down off Florida coast 2021-09-18 23:06 UTC.",
+      "note": "Resilience 于 2021-09-18 23:06 UTC 在佛罗里达海岸溅落。",
       "type": "nominal"
     }
   ]

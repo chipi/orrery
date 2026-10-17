@@ -2,7 +2,7 @@
   "name": "Chandrayaan-1",
   "type": "ORBITER · VOADO",
   "first": "A primeira missão lunar da Índia; confirmou água generalizada na Lua",
-  "description": "A primeira espaçonave interplanetária de ISRO. O orbitador entregou a Sonda de Impacto Lunar à superfície lunar – o primeiro objeto indiano em outro mundo – e transportou 11 instrumentos de 6 países. O instrumento Moon Mineralogy Mapper (M3) do NASA, hospedado no Chandrayaan-1, fez a descoberta que reescreveu os livros didáticos: as moléculas de água estão espalhadas por toda a superfície lunar, não apenas presas em crateras polares sombreadas. A missão terminou abruptamente em agosto de 2009, quando ISRO perdeu a comunicação com a espaçonave.",
+  "description": "A primeira espaçonave interplanetária de ISRO. O orbitador entregou a Moon Impact Probe à superfície lunar – o primeiro objeto indiano em outro mundo – e transportou 11 instrumentos de 6 países. O instrumento Moon Mineralogy Mapper (M3) do NASA, hospedado no Chandrayaan-1, fez a descoberta que reescreveu os livros didáticos: as moléculas de água estão espalhadas por toda a superfície lunar, não apenas presas em crateras polares sombreadas. A missão terminou abruptamente em agosto de 2009, quando ISRO perdeu a comunicação com a espaçonave.",
   "events": [
     {
       "met": 0,
@@ -19,7 +19,7 @@
     {
       "met": 24,
       "label": "IMPACTO DO PMI",
-      "note": "A sonda de impacto lunar teve como alvo um pouso forçado próximo ao pólo sul.",
+      "note": "Moon Impact Probe direcionada para impacto controlado próximo ao polo sul.",
       "type": "info"
     },
     {

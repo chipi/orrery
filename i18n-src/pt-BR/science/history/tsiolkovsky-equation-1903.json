@@ -1,8 +1,8 @@
 {
-  "title": "Equação de Tsiolkovsky · 1903",
+  "title": "Tsiolkovsky Equation · 1903",
   "intro_sentence": "Um professor surdo russo trabalha a equação de foguete 50 anos antes de alguém conseguir construir um foguete para usá-la.",
   "narrative_101": [
-    "Konstantin Tsiolkovsky era um professor provincial autodidata na cidade de Kaluga, surdo desde a infância por causa de escarlatina, que passava suas noites esboçando foguetes multietapas enquanto ensinava aritmética durante o dia. Em 1903, ele publicou \"A Investigação do Espaço por Meios de Dispositivos Reativos\" em um obscuro periódico russo — e deduziu a equação que governaria cada foguete jamais construído.",
+    "Konstantin Tsiolkovsky era um professor provincial autodidata em Kaluga, surdo desde a infância por causa de escarlatina, que passava suas noites esboçando foguetes multietapas enquanto ensinava aritmética durante o dia. Em 1903, ele publicou \"A Investigação do Espaço por Meios de Dispositivos Reativos\" em um obscuro periódico russo — e deduziu a equação que governaria cada foguete jamais construído.",
     "A equação de Tsiolkovsky: ∆v = vₑ × ln(m₀/m₁). A mudança em velocidade que um foguete pode produzir equivale à sua velocidade de exaustão vezes o logaritmo natural de sua razão de massa. Esse termo de logaritmo natural é brutal — obter mais ∆v exige exponencialmente mais combustível. A maioria de cada foguete é combustível. O Saturn V era 85% propelente por massa.",
     "Tsiolkovsky também descobriu: combustíveis líquidos venceriam os sólidos; multietapas eram necessárias para escapar da Terra; estações orbitais poderiam abrigar humanos permanentemente. Ele morreu em 1935, dois anos antes dos foguetes de Goddard atingirem altitudes sérias."
   ],

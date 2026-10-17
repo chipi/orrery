@@ -1,12 +1,12 @@
 {
   "name": "Chang'e 3",
   "type": "UNCREWED LANDER + ROVER · FLOWN",
-  "first": "First Chinese soft landing on the Moon; deployed Yutu, China's first lunar rover",
-  "description": "Chang'e 3 was the third lander in CNSA's Chang'e programme and the first successful soft landing on the Moon since the Soviet Luna 24 in 1976 — a 37-year gap. The Long March 3B launched on a direct lunar trajectory in December 2013, with a single mid-course correction before lunar orbit insertion. The lander touched down in Mare Imbrium on 14 December and deployed the Yutu (Jade Rabbit) rover, which operated for 31 months despite a mobility failure ending its drive on lunar day 2. Chang'e 3's lander continued imaging for years afterward.",
+  "first": "Прво кинеско меко спуштање на Месец; распоређен је Yutu, први кинески лунарни ровер",
+  "description": "Chang'e 3 био је трећи лендер у CNSA-иној програму Chang'e и прво успешно меко спуштање на Месец од совјетске мисије Luna 24 1976. године — после паузе од 37 година. Ракета Long March 3B лансирана је у децембру 2013. на директну путању ка Месецу, уз само једну корекцију путање на средини лета пре убацивања у лунарну орбиту. Лендер је 14. децембра слетео у Mare Imbrium и распоредио ровер Yutu (Jade Rabbit), који је радио 31 месец, упркос квару на покретљивости који је окончао његову вожњу већ током другог лунарног дана. Лендер мисије Chang'e 3 наставио је да снима још низ година након тога.",
   "events": [
-    { "met": 0, "label": "LAUNCH", "note": "Long March 3B from Xichang 2013-12-01.", "type": "nominal" },
-    { "met": 0.01, "label": "TLI", "note": "Direct trans-lunar injection on the LM-3B upper stage.", "type": "nominal" },
-    { "met": 5, "label": "LUNAR ORBIT INSERTION", "note": "Capture into 100-km circular lunar orbit 2013-12-06.", "type": "nominal" },
-    { "met": 13, "label": "LANDING", "note": "Soft landing in Mare Imbrium 2013-12-14. First soft landing since Luna 24 (1976). Yutu rover deployed hours later.", "type": "nominal" }
+    { "met": 0, "label": "ЛАНСИРАЊЕ", "note": "Long March 3B са Xichang-а, 1. децембра 2013.", "type": "nominal" },
+    { "met": 0.01, "label": "TLI", "note": "Директно убацивање на трансмесечеву путању помоћу горњег степена ракете LM-3B.", "type": "nominal" },
+    { "met": 5, "label": "УБАЦИВАЊЕ У МЕСЕЧЕВУ ОРБИТУ", "note": "Захват у кружну месечеву орбиту на 100 km, 6. децембра 2013.", "type": "nominal" },
+    { "met": 13, "label": "СПУШТАЊЕ", "note": "Меко спуштање у Mare Imbrium 14. децембра 2013. Прво меко спуштање од мисије Luna 24 (1976). Ровер Yutu распоређен је неколико сати касније.", "type": "nominal" }
   ]
 }

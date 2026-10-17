@@ -1,5 +1,5 @@
 {
-  "title": "Carte thermique Δv",
+  "title": "∆v Heatmap",
   "intro_sentence": "L'échelle de couleur qui transforme les nombres Δv en une image lisible au coup d'œil.",
   "narrative_101": [
     "L'intérêt d'une courbe d'énergie est la couleur. Des chiffres dans une grille géante vous diraient la même chose, mais vous ne pourriez pas voir les motifs. Nous peignons donc chaque cellule — bleu-vert glacé pour les trajectoires bon marché, jaune pour la limite, orange et rouge pour les trajectoires désespérément coûteuses. La reconnaissance des motifs prend le pas sur l'arithmétique.",

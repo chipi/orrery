@@ -1,12 +1,12 @@
 {
   "name": "Chang'e 3",
   "type": "UNCREWED LANDER + ROVER · FLOWN",
-  "first": "First Chinese soft landing on the Moon; deployed Yutu, China's first lunar rover",
-  "description": "Chang'e 3 was the third lander in CNSA's Chang'e programme and the first successful soft landing on the Moon since the Soviet Luna 24 in 1976 — a 37-year gap. The Long March 3B launched on a direct lunar trajectory in December 2013, with a single mid-course correction before lunar orbit insertion. The lander touched down in Mare Imbrium on 14 December and deployed the Yutu (Jade Rabbit) rover, which operated for 31 months despite a mobility failure ending its drive on lunar day 2. Chang'e 3's lander continued imaging for years afterward.",
+  "first": "أول هبوط ناعم صيني على القمر؛ ونشرت Yutu، أول مسيار قمري صيني",
+  "description": "كانت Chang'e 3 ثالث مسبار هبوط في برنامج Chang'e التابع لـ CNSA وأول هبوط ناعم ناجح على القمر منذ Luna 24 السوفييتية عام 1976 — فجوة زمنية مدتها 37 سنة. أطلقت Long March 3B في مسار مباشر نحو القمر في ديسمبر 2013، مع تصحيح مسار وحيد في منتصف الطريق قبل الدخول إلى مدار القمر. هبط المسبار في Mare Imbrium في 14 ديسمبر ونشرت مسيار Yutu (Jade Rabbit)، الذي عمل لمدة 31 شهراً رغم عطل في القدرة على التحرك أنهى حركته في اليوم القمري الثاني. استمرت كاميرات مسبار Chang'e 3 في التصوير لسنوات بعد ذلك.",
   "events": [
     { "met": 0, "label": "LAUNCH", "note": "Long March 3B from Xichang 2013-12-01.", "type": "nominal" },
-    { "met": 0.01, "label": "TLI", "note": "Direct trans-lunar injection on the LM-3B upper stage.", "type": "nominal" },
-    { "met": 5, "label": "LUNAR ORBIT INSERTION", "note": "Capture into 100-km circular lunar orbit 2013-12-06.", "type": "nominal" },
-    { "met": 13, "label": "LANDING", "note": "Soft landing in Mare Imbrium 2013-12-14. First soft landing since Luna 24 (1976). Yutu rover deployed hours later.", "type": "nominal" }
+    { "met": 0.01, "label": "TLI", "note": "حقن عبر القمري مباشر على المرحلة العليا من LM-3B.", "type": "nominal" },
+    { "met": 5, "label": "LUNAR ORBIT INSERTION", "note": "الالتقاط إلى مدار قمري دائري بارتفاع 100 كيلومتر في 2013-12-06.", "type": "nominal" },
+    { "met": 13, "label": "LANDING", "note": "هبوط ناعم في Mare Imbrium في 2013-12-14. أول هبوط ناعم منذ Luna 24 (1976). تم نشر مسيار Yutu بعد ساعات من ذلك.", "type": "nominal" }
   ]
 }

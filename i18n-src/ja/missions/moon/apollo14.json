@@ -1,9 +1,9 @@
 {
-  "name": "アポロ 14 号",
-  "dispatch": "Apollo 14は、プログラムがまだ着陸可能であることを証明しなければならなかった。Apollo 13が乗組員を死の淵に追いやった9か月後に飛行し、Apollo 13が到達できなかった目標地点を引き継ぎ、アラン・シェパードを10年ぶりに宇宙へ送り返した——彼は地球を離れた最初のアメリカ人となって以来、内耳疾患により何年も地上勤務を余儀なくされ、そして今、47歳で月面を歩いた最年長者となった。彼とミッチェルはCone Craterの縁まで約30メートルのところまで来たが、混乱した地形の中で実際にどれだけ近づいていたかを判断することができなかった。そして、月面での最後の数分間、シェパードは即席の6番アイアンで2個のゴルフボールを打った——それは演出であると同時に、危機は過ぎ去りApolloが再び飛行していることを示す静かな合図でもあった。",
+  "name": "Apollo 14",
+  "dispatch": "Apollo 14は、プログラムがまだ着陸可能であることを証明しなければならなかった。Apollo 13が乗組員を死の淵に追いやった9か月後に飛行し、Apollo 13が到達できなかった目標地点を引き継ぎ、Alan Shepardを10年ぶりに宇宙へ送り返した——彼は地球を離れた最初のアメリカ人となって以来、内耳疾患により何年も地上勤務を余儀なくされ、そして今、47歳で月面を歩いた最年長者となった。彼とMitchellはCone Craterの縁まで約30メートルのところまで来たが、混乱した地形の中で実際にどれだけ近づいていたかを判断することができなかった。そして、月面での最後の数分間、Shepardは即席の6番アイアンで2個のゴルフボールを打った——それは演出であると同時に、危機は過ぎ去りApolloが再び飛行していることを示す静かな合図でもあった。",
   "type": "有人着陸機 · 飛行済み",
-  "first": "3 回目の月着陸 — アポロ 13 号が失った目標に到達；Shepard のゴルフショット",
-  "description": "3 回目の有人月着陸であり、Alan Shepard の 2 回目の飛行 — アメリカ初の宇宙飛行士であり、月面に立った 5 番目の男、47 歳で最年長の月面歩行者となった。アポロ 14 号は、アポロ 13 号の中止された着陸後の回復ミッションで、アポロ 13 号が計画していた Fra Mauro 高地の目標を引き継いだ。Shepard と Mitchell は ALSEP を展開し、合計 9 時間 23 分の 2 回の EVA を完了。EVA-2 の最後の数分間、Shepard はサンプル収集ハンドルに 6 番アイアンのゴルフクラブヘッドを即興で取り付け、2 つのゴルフボールを「何マイルも何マイルも何マイルも」打った。42 kg のサンプルを持ち帰った。",
+  "first": "3 回目の月着陸 — Apollo 13 が失った目標に到達；Shepard のゴルフショット",
+  "description": "3度目の有人月面着陸であり、アラン・シェパードの2度目の飛行。シェパードはアメリカ初の宇宙飛行士（Freedom 7、1961年）であり、月面歩行者としては5番目であり、47歳で月面歩行者としては最年長である。Apollo 14はApollo 13の着陸中止後のリカバリーミッションで、Apollo 13が予定していたフラ・マウロ高地を目標に引き継いだ。シェパードとミッチェルはALSEPを配置し、合計9時間23分のEVA 2回を実施し、モジュール式機器運搬車（MET、リキシャスタイルのカート—LRVはまだ1ミッション先）をコーン・クレーターに向かって牽引したが、クレーター地形での航行の不確実性のため、リムから約30 m手前で止まった。EVA-2の最終段階で、シェパードは即興で6番アイアンのゴルフクラブヘッドをサンプル採取用ハンドルに装着し、「何マイルも何マイルも何マイルも」ゴルフボール2個を打った（1個は後に画像分析により約24 m、約37 mの地点で分析された）。スチュアート・ロオサはKitty Hawkに樹木の種子を搭載し、それが米国各地に植えられた「Moon Trees」となった。42 kgのサンプルが回収された。",
   "events": [
     {
       "met": 0,
@@ -14,55 +14,55 @@
     {
       "met": 0.12,
       "label": "TLI",
-      "note": "Trans-lunar injection. S-IVB ∆v ~3.05 km/s.",
+      "note": "月遷移注入。S-IVB ∆v ~3.05 km/s。",
       "type": "nominal"
     },
     {
       "met": 0.25,
       "label": "CSM-LM DOCKING",
-      "note": "Five docking attempts before Kitty Hawk soft-captured Antares — anomaly in docking latches; root cause never reproduced on ground.",
+      "note": "Kitty Hawkが Antares をソフトキャプチャするまで5回のドッキング試行 — ドッキングラッチの異常；根本原因は地上では再現されなかった。",
       "type": "warning"
     },
     {
       "met": 3.82,
       "label": "LOI",
-      "note": "Lunar orbit insertion. SPS ∆v ~0.88 km/s.",
+      "note": "月周回軌道投入。SPS ∆v ~0.88 km/s。",
       "type": "nominal"
     },
     {
       "met": 4.6,
       "label": "TOUCHDOWN",
-      "note": "Antares lands at Fra Mauro Highlands 1971-02-05 09:18 UTC — within 53 m of target despite an abort-program glitch in the LM computer that the team patched in real-time.",
+      "note": "Antares が Fra Mauro Highlands に 1971-02-05 09:18 UTC に着陸 — LM コンピュータの中止プログラムの不具合をチームがリアルタイムで修正したにもかかわらず、目標地点から 53 m 以内に着陸。",
       "type": "nominal"
     },
     {
       "met": 5,
       "label": "EVA-1",
-      "note": "Shepard + Mitchell deploy ALSEP + first lunar geology traverse on this mission.",
+      "note": "Shepard + Mitchell が ALSEP を展開し、本ミッションにおいて最初の月面地質調査走行を実施。",
       "type": "info"
     },
     {
       "met": 5.4,
       "label": "CONE CRATER + GOLF",
-      "note": "EVA-2: traverse toward Cone Crater (came up ~30 m short of rim). Final minutes — Shepard hits two golf balls with an improvised club.",
+      "note": "EVA-2: Cone Crater に向かう走行（縁から約 30 m 手前で到達）。最後の数分 — Shepard が即興クラブで2個のゴルフボールを打つ。",
       "type": "info"
     },
     {
       "met": 5.6,
       "label": "ASCENT",
-      "note": "Antares lifts off after 33 h 31 m on surface. 42 kg of samples returned.",
+      "note": "Antares が表面での 33 h 31 m 後に離陸。42 kg のサンプルが回収された。",
       "type": "nominal"
     },
     {
       "met": 6.4,
       "label": "TEI",
-      "note": "Trans-Earth injection. SPS ∆v ~1.0 km/s.",
+      "note": "地球遷移注入。SPS ∆v ~1.0 km/s。",
       "type": "nominal"
     },
     {
       "met": 9,
       "label": "SPLASHDOWN",
-      "note": "CM splashed down in South Pacific 1971-02-09 21:05 UTC. Recovery by USS New Orleans. Last Apollo quarantine.",
+      "note": "CM が南太平洋に 1971-02-09 21:05 UTC に着水。USS New Orleans による回収。最後の Apollo 検疫。",
       "type": "nominal"
     }
   ]

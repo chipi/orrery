@@ -2,19 +2,19 @@
   "name": "Voyager 1",
   "type": "SOBREVUELO · EJECUTADA",
   "first": "Objeto más lejano creado por la humanidad — actualmente a ~170 UA del Sol en el espacio interestelar",
-  "dispatch": "Voyager 1 es lo más lejano que la humanidad ha creado jamás, y llegó allí casi por un accidente de geometría. Un sobrevuelo cercano a Titán, la luna gigante de Saturno —elegido por la ciencia— torció su trayectoria hacia arriba y fuera del plano de los planetas, apuntándola hacia el borde del sistema solar, y ha estado ascendiendo desde entonces. Por el camino encontró volcanes activos en Ío, los primeros vistos fuera de la Tierra, y en 1990 se giró para captar el Punto Azul Pálido. En 2012 se convirtió en la primera máquina en cruzar hacia el espacio interestelar. Aún transmite, con energía nuclear menguante, desde más de cien veces la distancia de la Tierra al Sol.",
-  "description": "Lanzada 16 días después de Voyager 2, Voyager 1 voló más rápido y llegó a Júpiter primero (1979) y a Saturno primero (1980). Su sobrevuelo de Titán torció la trayectoria hacia arriba fuera del plano de la eclíptica, terminando el recorrido planetario pero enviándola por la ruta más directa hacia la heliopausa — que cruzó el 2012-08-25, el primer objeto creado por la humanidad en entrar en el espacio interestelar. Desde una distancia heliocéntrica de ~6 mil millones de km capturó la fotografía familiar del Punto Azul Pálido (1990-02-14), la fotografía de la que Carl Sagan escribió. Ambas Voyagers llevan el Disco de Oro como tarjeta de visita de la humanidad.",
+  "dispatch": "Voyager 1 es lo más lejano que la humanidad ha creado jamás, y llegó allá casi por accidente de geometría. Un paso cercano por Titán, la luna gigante de Saturno —elegido por la ciencia—, dobló su trayectoria hacia arriba y fuera del plano de los planetas y la dirigió hacia el borde del sistema solar, y no ha dejado de ascender desde entonces. En el camino descubrió volcanes activos en Ío, los primeros jamás vistos fuera de la Tierra, y en 1990 se giró para capturar el Pale Blue Dot. En 2012 se convirtió en la primera máquina en cruzar hacia el espacio interestelar. Sigue transmitiendo, con una potencia nuclear decreciente, desde más de cien veces la distancia de la Tierra al Sol.",
+  "description": "Lanzada 16 días después de Voyager 2, Voyager 1 voló más rápido y llegó a Júpiter primero (1979) y a Saturno primero (1980). Su sobrevuelo de Titán torció la trayectoria hacia arriba fuera del plano de la eclíptica, terminando el recorrido planetario pero enviándola por la ruta más directa hacia la heliopausa — que cruzó el 2012-08-25, el primer objeto creado por la humanidad en entrar en el espacio interestelar. Desde una distancia heliocéntrica de ~6 mil millones de km capturó la fotografía familiar del Pale Blue Dot (1990-02-14), la fotografía de la que Carl Sagan escribió. Ambas Voyagers llevan el Golden Record como tarjeta de visita de la humanidad.",
   "events": [
     {
       "met": 0,
       "label": "LANZAMIENTO",
-      "note": "El cohete Titán IIIE / Centauro lanza Voyager 1 desde Cabo Cañaveral.",
+      "note": "El cohete Titan IIIE / Centaur lanza Voyager 1 desde Cabo Cañaveral.",
       "type": "nominal"
     },
     {
       "met": 546,
       "label": "MÁXIMA APROXIMACIÓN A JÚPITER",
-      "note": "Sobrevuelo a ~349.000 km; descubrimiento del vulcanismo en Ío, cartografiado de la superficie de Europa.",
+      "note": "Sobrevuelo a ~349.000 km; descubrimiento del vulcanismo en Io, cartografiado de la superficie de Europa.",
       "type": "nominal"
     },
     {

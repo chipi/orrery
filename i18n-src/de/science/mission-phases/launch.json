@@ -3,13 +3,13 @@
   "intro_sentence": "Die gewalttätigsten zehn Minuten jeder Mission — gegen Schwerkraft, Atmosphäre und Raketengleichung gleichzeitig.",
   "narrative_101": [
     "Die meiste Gefahr passiert in den ersten acht Minuten. Rakete zündet, kämpft Eigengewicht, klettert durch dichte Luft, beschleunigt von Null auf 7,5 km/s wenn der Motor aus geht. Geht was schief, ist selten Zeit zum Reparieren.",
-    "Brutale Arithmetik: ~9,4 km/s Δv, aber nur ~7,9 davon Bahnenergie. Rest = Schwerkraftverlust + Luftwiderstand. Pitch-Programm optimiert beides.",
-    "Hoch genug, nimmt die Atmosphäre Pause. Stufen trennen, Verkleidungen ab, zweite Stufe übernimmt. SpaceX bricht das und landet erste Stufen."
+    "Die Rechnung ist unbarmherzig. Um die Umlaufbahn zu erreichen, benötigt man etwa 9,4 km/s ∆v, aber nur etwa 7,9 km/s tragen tatsächlich zur Umlaufgeschwindigkeit bei. Der Rest wird durch „Gravitationsverlust\" (man muss kontinuierlich Schub geben, um die Rakete gegen die Schwerkraft hochzufahren) und „Luftwiderstandsverlust\" (die Atmosphäre drückt zurück) verschwendet. Ingenieure verbringen Jahre damit, das Pitch-Programm zu optimieren – genau wann und wie stark geneigt werden soll – um diese Verluste zu minimieren.",
+    "Wenn die Rakete hoch genug ist, dass die Luft aufgibt, wird es leichter. Stufen trennen sich ab, Verkleidungen fallen ab, die zweite Stufe übernimmt für einen längeren, sanfteren Schub. Die gesamte Reise ist ein kalibriertes Reduzieren der Trockenmasse: Jedes Kilogramm leerer Tank, das man abwerfen kann, ist ein Kilogramm, das die nächste Stufe nicht beschleunigen muss. SpaceX bricht mit diesem Prinzip und borgt sich seine erste Stufe zurück; alle anderen werfen sie weg."
   ],
   "body_paragraphs": [
-    "Aufstieg ~9,4 km/s Δv, aber nur ~7,9 davon Orbitalgeschwindigkeit. Der Rest ist Gravity Loss (Energie hochhalten beim Steigen) und Drag Loss (Atmosphäre bremst). Pitch-Programm optimiert beides.",
-    "Stufen fallen unterwegs. Erste Trennung, zweite zündet, Verkleidung jettison, Nutzlasttrennung. Falcon 9 bringt erste Stufe zurück; Saturn V nicht.",
-    "In `/missions` zeigt launch_vehicle die Rakete: Saturn V für Apollo, Atlas V für Curiosity, Falcon 9 für Crew Dragon, SLS für Artemis I."
+    "Der Raketenaufstieg kostet etwa 9,4 km/s ∆v, aber nur etwa 7,9 km/s davon sind tatsächliche Orbitalgeschwindigkeit. Der Rest ist Gravitationsverlust (man verbraucht Energie, um die Rakete gegen die Schwerkraft hochzufahren) und Widerstandsverlust (die Atmosphäre wirkt sich bremsend aus). Das richtige Pitch-Programm minimiert beide – zu steil verschwendet man Schub für Höhe, die bei der Orbitaleinführung nicht hilft; zu flach, und die Atmosphäre hat mehr Zeit, dich zu bremsen.",
+    "Stufen trennen sich ab. Erste-Stufen-Abtrennung, Zündung der zweiten Stufe, Verkleidungsabwurf, Nutzlastfreisetzung. Jede Stufe wirft Trockenmasse ab, die die nächste nicht mehr beschleunigen muss. Falcon 9 bringt seine erste Stufe zurück; Saturn V tat das nicht. Der Kompromiss besteht darin, ob die Bergungshardware teurer ist als der Treibstoff, der erforderlich wäre, um die Stufe wegzuwerfen.",
+    "Auf `/missions` zeigt das Feld launch_vehicle, welche Rakete die Mission geflogen hat. Saturn V für Apollo. Atlas V für Curiosity. Falcon 9 für Crew Dragon. SLS für Artemis I. Jede Rakete hat eine feste C3-Nutzlast-Kurve – die Rakete setzt die Obergrenze für das Mögliche."
   ],
   "diagram_caption": "Startprofil: vertikaler Anstieg → Pitch-Programm → Stufung → Bahneinschuss."
 }

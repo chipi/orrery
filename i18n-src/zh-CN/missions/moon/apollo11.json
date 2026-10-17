@@ -1,9 +1,9 @@
 {
   "name": "Apollo 11",
-  "dispatch": "[",
+  "dispatch": "Apollo 11 是这整个航天计划为之而生的飞行任务——这一次非成功不可。八年和 250 亿美元的投入，NASA 所做的一切最终都归结为一点：把两个人送上这片特殊的月球灰尘，再活着带他们回来。当 Armstrong 说出\"鹰已着陆\"时，那场随着一个在美国城市上空发出蜂鸣声的球体而开始的冷战太空竞赛实际上已经结束。现在容易被遗忘的是空间之小：飞船带着仅余几秒的燃料下降，越过地图上从未显示过的巨石区域，依靠一台一路上都在报警的制导计算机。但它成功了——在那一个夜晚，五分之一的人类看着同一件事情发生。",
   "type": "CREWED LANDER · FLOWN",
-  "first": "First humans on another celestial body",
-  "description": "The mission that fulfilled Kennedy's 1961 commitment to put a man on the Moon by the end of the decade. Armstrong and Aldrin spent 21 hours 36 minutes on the lunar surface — 2.5 hours of EVA, 21.55 kg of samples, and a single commemorative plaque. The laser retroreflector they installed at Mare Tranquillitatis still receives pulses today, measuring the Earth-Moon distance to millimetre precision. The mission was watched live by ~600 million people, one fifth of humanity at the time.",
+  "first": "首次登陆另一个天体的人类",
+  "description": "这次任务实现了肯尼迪在1961年做出的承诺，即在这个十年末前将人类送上月球。Armstrong和Aldrin在月面停留了21小时36分钟——进行了2.5小时的舱外活动，采集了21.55千克的样本，并留下了一块纪念碑。他们在静海安装的激光反射器至今仍在接收地球发出的脉冲，将地月距离的测量精度控制在毫米级。这次任务被约6亿人直播观看，占当时全球人口的五分之一。",
   "events": [
     {
       "met": 0,
@@ -14,7 +14,7 @@
     {
       "met": 0.13,
       "label": "TLI",
-      "note": "Trans-lunar injection burn — S-IVB stage propels CSM/LM toward Moon.",
+      "note": "跨月球注入点燃烧——S-IVB级火箭将指挥舱/登月舱推向月球。",
       "type": "nominal"
     },
     {
@@ -26,25 +26,25 @@
     {
       "met": 4,
       "label": "TOUCHDOWN",
-      "note": "Lunar Module Eagle lands at Mare Tranquillitatis 1969-07-20 20:17:40 UTC.",
+      "note": "登月舱Eagle在静海着陆 1969-07-20 20:17:40 UTC",
       "type": "nominal"
     },
     {
       "met": 4.3,
       "label": "FIRST STEP",
-      "note": "Armstrong steps onto lunar surface; 'one small step for [a] man'.",
+      "note": "Armstrong踏上月面；\"这是一个人的一小步\"。",
       "type": "info"
     },
     {
       "met": 5,
       "label": "ASCENT",
-      "note": "Eagle lifts off after 21h 36m on surface.",
+      "note": "Eagle在月面停留21小时36分钟后升空。",
       "type": "nominal"
     },
     {
       "met": 8,
       "label": "SPLASHDOWN",
-      "note": "CM Columbia returns crew to Pacific Ocean 1969-07-24.",
+      "note": "指挥舱Columbia将宇航员送回太平洋 1969-07-24。",
       "type": "nominal"
     }
   ]

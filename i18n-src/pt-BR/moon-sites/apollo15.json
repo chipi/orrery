@@ -1,12 +1,12 @@
 {
   "name": "Apollo 15",
-  "mission_type": "Módulo de pouso tripulado · Rover",
+  "mission_type": "Crewed Lander · Rover",
   "site_name": "Hadley–Apennine",
   "crew": [
     "David Scott",
     "James Irwin"
   ],
   "left": "Estágio de descida · ALSEP · Rover LRV · bandeira · Escultura Astronauta Caído",
-  "fact": "Primeira missão com o Veículo Lunar de Exploração — percorreu 27,9 km. Scott deixou uma pequena figurinha de alumínio, 'Astronauta Caído', e uma placa listando todos os astronautas e cosmonautas que morreram na corrida espacial. É a única obra de arte na Lua, deixada sem anúncio público na época.",
+  "fact": "Primeira missão com o Lunar Roving Vehicle — percorreu 27,9 km. Scott deixou uma pequena figurinha de alumínio, 'Fallen Astronaut', e uma placa listando todos os astronautas e cosmonautas que morreram na corrida espacial. É a única obra de arte na Lua, deixada sem anúncio público na época.",
   "capability": "Primeira mobilidade de superfície tripulada — raio de exploração estendido de centenas de metros a dezenas de quilômetros, o modelo para operações de superfície lunar tripulada em Marte."
 }

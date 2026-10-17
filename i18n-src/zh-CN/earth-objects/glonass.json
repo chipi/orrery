@@ -1,6 +1,6 @@
 {
   "name": "GLONASS Constellation",
   "short": "GLONASS",
-  "description": "Russia's global navigation system. Designed during the Cold War, launched 1982. Uses a higher inclination than GPS — better coverage of polar regions. Russia opened it to civilian use in 2007.",
-  "scale_fact": "The high inclination (64.8°) means GLONASS provides better coverage of Russia and the Arctic — geography shaped the orbital design."
+  "description": "俄罗斯全球导航系统。冷战期间设计，1982年启动。相比GPS采用更高的轨道倾角——为极地地区提供更好的覆盖。俄罗斯在2007年向民用开放。",
+  "scale_fact": "高轨道倾角（64.8°）意味着GLONASS为俄罗斯和北极地区提供更好的覆盖——地理因素塑造了轨道设计。"
 }

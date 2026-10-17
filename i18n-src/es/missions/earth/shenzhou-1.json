@@ -1,14 +1,14 @@
 {
   "name": "Shenzhou 1",
   "type": "NAVE PRUEBA CON CAPACIDAD TRIPULADA · SIN TRIPULACIÓN · VOLADO",
-  "first": "Primera prueba orbital china Shenzhou — abrió el camino hacia el vuelo espacial tripulado de la República Popular China",
-  "description": "Primer vuelo del programa de nave espacial tripulada Shenzhou. Lanzado el 1999-11-19 a las 22:30 UTC desde Jiuquan en el vuelo inaugural del Lanzador Largo de la Marcha 2F de capacidad humana (CZ-2F). La cápsula completó 14 órbitas a 195 × 315 km, inclinación de 42,6°, y reingresó a recuperación en la estepa de Mongolia Interior el 1999-11-20 a las 19:41 UTC. Transportaba equipos de soporte vital simulados, paquetes de telemetría e una bandera china, además de semillas para carga de retorno de genética en microgravedad. Marcó el compromiso de China de seguir a la URSS y EE.UU. en el vuelo espacial tripulado independiente; condujo directamente a Shenzhou 5 (2003) con Yang Liwei.",
+  "first": "Primera prueba orbital Shenzhou — abrió el camino hacia el vuelo espacial tripulado de la República Popular China",
+  "description": "Primer vuelo del programa de nave espacial tripulada Shenzhou. Lanzada el 19 de noviembre de 1999 a las 22:30 UTC desde Jiuquan en el vuelo inaugural del Long March 2F (CZ-2F) certificado para vuelos tripulados. La cápsula completó 14 órbitas a 195 × 315 km, inclinación de 42,6°, y reingresó siendo recuperada en la estepa de Mongolia Interior el 20 de noviembre de 1999 a las 19:41 UTC. Llevaba equipos simulados de soporte vital, paquetes de telemetría y una bandera china, además de semillas para cargo de retorno de genética en microgravedad. Marcó el compromiso de China para seguir a la Unión Soviética y Estados Unidos hacia vuelos espaciales tripulados independientes; condujo directamente a Shenzhou 5 (2003) con Yang Liwei.",
   "dispatch": "<UNKNOWN>",
   "events": [
     {
       "met": 0,
       "label": "LANZAMIENTO",
-      "note": "Vuelo inaugural de Lanzador Largo de la Marcha 2F desde LA-4 Jiuquan el 1999-11-19 a las 22:30 UTC.",
+      "note": "Primer vuelo del Long March 2F desde Jiuquan LA-4 a las 22:30 UTC del 19 de noviembre de 1999.",
       "type": "nominal"
     },
     {

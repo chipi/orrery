@@ -3,7 +3,7 @@
   "dispatch": "Skylab 2 es la misión que salvó la primera estación espacial de Estados Unidos y, al hacerlo, demostró que los astronautas son equipos de reparación tanto como exploradores. Skylab había alcanzado la órbita dañada — su escudo solar arrancado durante el lanzamiento, un panel solar perdido, el otro bloqueado, el interior sobrecalentándose hacia lo inhabitable. La tripulación de Pete Conrad voló hacia una estación que podría haber sido una pérdida total, desplegó un parasol protector a través de una pequeña esclusa de aire para enfriarla, y luego liberó el panel atascado en una peligrosa caminata espacial improvisada que restauró su energía. Fue la primera vez que una tripulación rescató una nave espacial en fallo en órbita, y reescribió la suposición de que el hardware espacial era desechable.",
   "type": "TRIPULACIÓN DE ESTACIÓN · VOLADA",
   "first": "Primera visita tripulada a Skylab — reparó el taller dañado y salvó el programa",
-  "description": "Conrad, Kerwin y Weitz — la primera tripulación que habitó la estación espacial estadounidense Skylab. Lanzados el 1973-05-25 a las 13:00 UTC en un Saturno IB (SA-206), 11 días después de que el propio Skylab resultara dañado en el lanzamiento (el escudo micrometeoroides / solar se arrancó arrastrando consigo una de las alas solares y bloqueando la segunda). La tripulación ejecutó un rescate de 28 días: Weitz intentó (sin éxito) liberar el ala atascada durante un EVA de pie de 38 minutos el primer día, y luego Conrad y Kerwin lograron cortar la correa que la retenía en un EVA de 3,5 horas el día 14, restaurando la energía. Desplegaron un parasol térmico diseñado en Marshall a través de la esclusa científica para devolver la temperatura de la cabina de 54 °C a 24 °C. Regresaron el 1973-06-22 a las 13:50 UTC; el CSM-116 se exhibe en el Museo Nacional del Aire y el Espacio, Washington D. C.",
+  "description": "Conrad, Kerwin y Weitz — la primera tripulación en habitar la estación espacial Skylab estadounidense. Lanzados el 1973-05-25 13:00 UTC en Saturn IB (SA-206), 11 días después de que el propio Skylab resultara dañado en el lanzamiento (el escudo anti-micrometeoroides y anti-solar se desprendió, llevándose consigo una de las alas solares e incapacitando la segunda). La tripulación ejecutó un rescate de 28 días: Weitz intentó (y no consiguió) liberar el ala atascada durante un EVA sin presión de 38 minutos en el día 1, después Conrad y Kerwin cortaron exitosamente la correa de sujeción durante un EVA de 3,5 horas el día 14, restaurando la potencia. Desplegaron un escudo térmico parasol diseñado por Marshall a través de la esclusa científica para devolver la temperatura de la cabina de 54 °C a 24 °C. Regresaron el 1973-06-22 13:50 UTC; el CSM-116 se exhibe en el National Air and Space Museum, Washington DC.",
   "events": [
     {
       "met": 0,
@@ -14,19 +14,19 @@
     {
       "met": 0.33,
       "label": "DOCK",
-      "note": "CSM docked to Skylab axial port after a soft-dock troubleshoot.",
+      "note": "El CSM se acopló al puerto axial del Skylab tras resolver problemas en el acoplamiento suave.",
       "type": "nominal"
     },
     {
       "met": 14,
       "label": "EVA #2 — POWER RESTORED",
-      "note": "Conrad + Kerwin freed the jammed solar wing during a 3.5h EVA.",
+      "note": "Conrad y Kerwin liberaron el panel solar atascado durante una EVA de 3,5 h.",
       "type": "nominal"
     },
     {
       "met": 28.04,
       "label": "SPLASHDOWN",
-      "note": "CSM-116 splashed down in Pacific 1973-06-22 13:50 UTC.",
+      "note": "El CSM-116 amarizó en el Pacífico el 1973-06-22 a las 13:50 UTC.",
       "type": "nominal"
     }
   ]

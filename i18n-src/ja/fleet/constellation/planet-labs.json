@@ -1,6 +1,6 @@
 {
   "name": "Planet Labs (PlanetScope + SkySat)",
-  "tagline": "毎日の地球画像 — 約150機のCubeSat + 21機のSkySat",
-  "description": "2つのフリートによる毎日再訪地球画像 — 約150機のPlanetScope 3U CubeSat(3-5 m解像度の全球毎日画像)と約21機のSkySat(50 cm指向型高解像度)。すべて約475 kmの太陽同期軌道。「Doves」の思想は「何百機もの安価な小型衛星を打ち上げ、いくつかの失敗を受け入れ、地表のあらゆる場所を毎日撮像する」— そしてそれは機能している。Planetの画像アーカイブはNGO、政府、ジャーナリストに利用されている。",
-  "best_known_for": "毎日の地球画像 — 約150機のCubeSat + 21機のSkySat"
+  "tagline": "毎日の地球観測 — 約150基のCubeSats + 21基のSkySats",
+  "description": "2つの衛星群から毎日の地球観測画像を提供 — 約150機のPlanetScope 3U CubeSats（解像度3～5 m、世界中の毎日画像）と約21機のSkySats（50 cm、指定されたエリアの高解像度画像）。すべて太陽同期軌道の高度約475 kmで運用。「Doves」の哲学は「数百機の低コスト小型衛星を打ち上げ、数機の失敗を受け入れ、すべての土地を毎日撮像する」というもの — そしてそれは実現しました。Planet社の画像アーカイブはNGO、政府機関、ジャーナリストから活用されています。",
+  "best_known_for": "毎日の地球観測 — 約150基のCubeSats + 21基のSkySats"
 }

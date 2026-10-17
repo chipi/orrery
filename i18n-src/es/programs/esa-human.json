@@ -8,7 +8,7 @@
     },
     {
       "type": "prose",
-      "md": "Esto comenzó con Spacelab en 1983 — un laboratorio de construcción europea que viajaba en la bodega de carga del Space Shuttle y convertía al Shuttle en una plataforma científica, llevando al primer astronauta de la ESA en su primer vuelo. Continuó con Columbus, el laboratorio permanente de Europa acoplado a la Estación Espacial Internacional, y con el Automated Transfer Vehicle, la nave de carga más grande y sofisticada de su época. En el camino, los astronautas europeos volaron en Shuttles y Soyuz, vivieron a bordo de Mir y la ISS, y comandaron la Estación. Europa nunca lanzó su propia tripulación — y se volvió esencial para casi todos los que sí lo hicieron."
+      "md": "Esto comenzó con Spacelab en 1983 — un laboratorio de construcción europea que viajaba en la bodega de carga del Space Shuttle y convertía al Shuttle en una plataforma científica, llevando al primer astronauta de ESA en su primer vuelo. Continuó con Columbus, el laboratorio permanente de Europa acoplado a la International Space Station, y con el Automated Transfer Vehicle, la nave de carga más grande y sofisticada de su época. En el camino, los astronautas europeos volaron en Shuttles y Soyuz, vivieron a bordo de Mir y la ISS, y comandaron la Estación. Europa nunca lanzó su propia tripulación — y se volvió esencial para casi todos los que sí lo hicieron."
     }
   ],
   "goals": [
@@ -17,7 +17,7 @@
       "image": {
         "reuse": "fleet/iss/01"
       },
-      "caption": "La Estación Espacial Internacional, de la cual Europa es socio de pleno derecho. El laboratorio Columbus de la ESA es parte permanente de ella, y los astronautas europeos han vivido a bordo y la han comandado — el fruto de la decisión de unirse en lugar de actuar en solitario.",
+      "caption": "La International Space Station, de la cual Europa es socio de pleno derecho. El laboratorio Columbus de ESA es parte permanente de ella, y los astronautas europeos han vivido a bordo y la han comandado — el fruto de la decisión de unirse en lugar de actuar en solitario.",
       "align": "right"
     },
     {
@@ -26,7 +26,7 @@
     },
     {
       "type": "prose",
-      "md": "La estrategia tenía una fortaleza oculta: contribuir con una pieza esencial compra un asiento permanente en la mesa. Al construir Spacelab, Europa ganó un lugar a bordo del Shuttle; al construir Columbus y el ATV, se convirtió en socio pleno e igualitario de la Estación Espacial Internacional, con su propio laboratorio y su propia nave de reabastecimiento indispensable. Una nación que solo comprara asientos sería un cliente; Europa, al construir capacidades de las que otros dependían, se convirtió en socio — con voz real en la empresa."
+      "md": "La estrategia tenía una fortaleza oculta: contribuir con una pieza esencial compra un asiento permanente en la mesa. Al construir Spacelab, Europa ganó un lugar a bordo del Shuttle; al construir Columbus y el ATV, se convirtió en socio pleno e igualitario de la International Space Station, con su propio laboratorio y su propia nave de reabastecimiento indispensable. Una nación que solo comprara asientos sería un cliente; Europa, al construir capacidades de las que otros dependían, se convirtió en socio — con voz real en la empresa."
     }
   ],
   "outcome": [
@@ -63,7 +63,7 @@
       "image": {
         "reuse": "fleet/iss/04"
       },
-      "caption": "La Estación Espacial Internacional — la empresa que Europa ayudó a construir y sostener, y la prueba de que una nación puede moldear los vuelos espaciales tripulados profundamente sin jamás lanzar una tripulación propia.",
+      "caption": "La International Space Station — la empresa que Europa ayudó a construir y sostener, y la prueba de que una nación puede moldear los vuelos espaciales tripulados profundamente sin jamás lanzar una tripulación propia.",
       "align": "left"
     },
     {

@@ -2,13 +2,13 @@
   "title": "Orbita kepleriana",
   "intro_sentence": "Un'ellisse con il Sole a un fuoco — l'orbita più semplice possibile.",
   "narrative_101": [
-    "Immagina di lanciare una palla da una torre. Cade. Più forte, cade più lontano. Così forte che il suolo si curva sotto di essa più veloce — non cade mai. Quella è un'orbita.",
-    "Un'orbita kepleriana tratta la gravità come una sola trazione verso un corpo pesante. Due corpi, una forza. Il risultato è sempre un'ellisse."
+    "Immagina di lanciare una palla da una torre alta. Curva verso il basso fino al terreno. Lanciala più forte e la curva diventa più lunga. Lanciala così forte che il terreno si allontana sotto di essa alla stessa velocità con cui la palla cade — e la palla non cade mai. Continua a cadere per sempre, in un anello chiuso. Questo è un'orbita. Ogni veicolo spaziale, ogni luna, ogni pianeta sta facendo questo unico trucco.",
+    "Ciò che rende l'orbita una Keplerian orbit in particolare è che trattiamo la gravità come un singolo, chiaro tiraggio verso una cosa pesante — il Sole per i pianeti, la Terra per i satelliti, Marte per InSight. Due corpi, una forza, nessuna complicazione. Il risultato è sempre un'ellisse, e il corpo pesante si trova sempre in uno dei due fuochi, mai nel mezzo. Questo singolo quadro sta dietro a ogni numero che vedrai in questa intera enciclopedia."
   ],
   "body_paragraphs": [
-    "Quando cadi verso qualcosa di massiccio e lo manchi, ottieni un'orbita kepleriana. Traiettoria = ellisse, corpo a un fuoco. Terra-Sole, Luna-Terra, ogni sonda — tutte kepleriane in prima approssimazione.",
-    "Sei numeri: dimensione (semiasse maggiore), allungamento (eccentricità), tre angoli (inclinazione, longitudine del nodo ascendente, argomento del periapside), e posizione (anomalia vera). Sono gli elementi orbitali.",
-    "Il modello si rompe quando un terzo corpo conta. Orrery usa kepleriano per la storia eliocentrica e coniche raccordate per il resto."
+    "Quando cadi verso qualcosa di massiccio ma lo manci, ottieni una Keplerian orbit. Il percorso è un'ellisse — un cerchio allungato — e il corpo verso cui stai cadendo si trova in uno dei due fuochi, mai al centro. La Terra intorno al Sole, la Luna intorno alla Terra, ogni veicolo spaziale che vedrai in Orrery: tutto Keplerian con una prima approssimazione.",
+    "Sei numeri descrivono completamente una di queste orbite: la dimensione (semi-major axis), l'allungamento (eccentricity), tre angoli che orientano l'ellisse nello spazio (inclination, longitude of ascending node, argument of periapsis), e dove si trova il corpo lungo il percorso proprio ora (true anomaly). Questi sono gli elementi Kepleriani — il linguaggio che ogni altra sezione in questa scheda traduce in qualcosa che puoi visualizzare.",
+    "Il modello si rompe ogni volta che la gravità di un terzo corpo è importante: veicoli spaziali vicino alla Luna, satelliti in orbita terrestre bassa che sentono il rigonfiamento dell'equatore, qualsiasi cosa passi attraverso l'ombra di Giove. Orrery utilizza Keplerian orbits per la storia eliocentrica e approssimazioni coniche applicate per il resto."
   ],
   "diagram_caption": "Ellisse con fuoco F₁ al Sole. Semiasse maggiore a · perielio e afelio sulla linea degli apsidi."
 }

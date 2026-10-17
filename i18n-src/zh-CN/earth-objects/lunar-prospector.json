@@ -1,6 +1,6 @@
 {
   "name": "Lunar Prospector",
   "short": "Prospector",
-  "description": "First NASA Discovery-class lunar mission, 1998-1999. Direct neutron-spectrometer detection of hydrogen at both lunar poles — strong evidence for water ice in permanently-shadowed crater floors. Deliberately impacted into Shoemaker crater at end of mission, hoping the impact ejecta would confirm water; Earth-based observers detected nothing definitive.",
-  "scale_fact": "Polar orbit at 100 km altitude. Confirmed Clementine's polar-ice hypothesis; established neutron spectroscopy as the primary tool for lunar volatiles."
+  "description": "首次NASA Discovery项目月球任务，1998-1999年。利用直接中子分光计在月球两极探测到氢元素——为永久阴影陨石坑底部存在水冰提供了强有力证据。任务末期故意撞击Shoemaker陨石坑，希望撞击喷出物能证实水的存在；地球上的观测者未能检测到明确证据。",
+  "scale_fact": "极地轨道，高度100 km。证实了Clementine的极地冰假说；确立中子分光法作为探测月球挥发物的主要工具。"
 }

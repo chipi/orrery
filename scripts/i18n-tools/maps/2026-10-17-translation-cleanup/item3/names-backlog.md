@@ -52,3 +52,6 @@ zh titles partly traditional (中途島, 哈欽森, 堅忍, 卡門線, 科羅廖
 - Astronomical-unit symbol is mixed per locale (2026-10-18 counts after a number): es 49 AU / 66 UA (science now UA), it 84 AU / 28 UA, fr 30 AU / 82 UA, pt-BR 57 AU / 55 UA, nl 109 AU / 2 AE, de now AE in science. Pick each locale's standard symbol (check its grader file first) and sweep once after item 3.
 - it: gravity assist = fionda gravitazionale (graded 2026-10-18 fix; it.wikipedia title). Science group 26 uses it; the rest of the it site has ~45 'assistenza gravitazionale' — sweep after item 3 (elisions: l'/un'/dell'/all'assistenza → la/una/della/alla fionda).
 - it: Pallas / Hygiea (it.wikipedia '2 Pallas', '10 Hygiea'; Q3002, Q2640) — add it forms to the glossary; the site still has Pallade 1 and Igea 2.
+- English source (ja essays reviewers): interstellar-exploration body.4 says 61,000 km/h takes you London→Sydney "in under a minute" (it is ~17 minutes); going-to-the-moon body.19 links [Luna 2](/missions?id=luna9) — the path should be luna2.
+- ja: Lambert problem = ランベルト問題 (ja.wikipedia ヨハン・ハインリヒ・ランベルト); 4 'Lambert問題' left outside the essays — sweep with the Lambert glossary key.
+  (ja and zh-CN essays now follow the English path luna9 — when the English link is fixed to luna2, sweep every locale's going-to-the-moon body.19.)

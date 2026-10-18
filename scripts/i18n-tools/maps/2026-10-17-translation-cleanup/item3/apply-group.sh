@@ -5,6 +5,8 @@
 set -euo pipefail
 loc=$1 seg=$2
 M=scripts/i18n-tools/maps/2026-10-17-translation-cleanup
+# numbers first: a changed number missing from the English stops the run until read (NUMS_OK=1)
+if node "$M"/item3/numcheck.mjs "$M"/item3/fixes/"$loc"-"$seg"-[0-9][0-9].json | grep CHECK && [ "${NUMS_OK:-}" != 1 ]; then echo "NUMBERS TO READ — rerun with NUMS_OK=1 after checking"; exit 3; fi
 for f in "$M"/item3/fixes/"$loc"-"$seg"-[0-9][0-9].json; do
   mise exec -- node scripts/i18n-tools/apply-edits.mjs "$loc" "$f" 2>&1 | grep -v '^\s*$'
 done

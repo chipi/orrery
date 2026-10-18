@@ -2,14 +2,14 @@
   "title": "Astrometría",
   "intro_sentence": "Sigue la posición exacta de una estrella en el cielo y podrás ver cómo traza un pequeño bucle mientras un planeta invisible la hace oscilar alrededor de su centro de masas común.",
   "narrative_101": [
-    "La velocidad radial capta el movimiento de la estrella hacia nosotros y alejándose de nosotros. La astrometría capta el otro componente: el bamboleo lateral de la estrella a través del cielo a medida que un planeta la arrastra en su órbita.",
+    "La velocidad radial capta el movimiento de la estrella que se acerca y se aleja de nosotros. La astrometría capta el otro componente: el bamboleo lateral de la estrella a través del cielo a medida que un planeta la arrastra en círculo.",
     "El bucle que traza la estrella es extraordinariamente pequeño, medido en millonésimas de grado, razón por la cual la astrometría fue durante mucho tiempo el gran casi-éxito de la búsqueda de planetas: prometida durante décadas, pero ofreciendo poco, porque simplemente no había la precisión necesaria.",
     "La astrometría espacial ha cambiado eso. La misión Gaia de ESA ha cartografiado las posiciones de casi dos mil millones de estrellas con la precisión necesaria para detectar el tirón de un planeta gigante, y está empezando a cosechar planetas a partir de esos bamboleos."
   ],
   "body_paragraphs": [
     "La astrometría mide el desplazamiento periódico de una estrella en el plano del cielo mientras orbita el centro de masas del sistema. A diferencia de la velocidad radial, detecta la órbita completa independientemente de su orientación, por lo que produce una masa verdadera (no solo un límite inferior) y funciona bien para planetas en órbitas amplias, donde la señal astrométrica crece.",
-    "Históricamente produjo más retractaciones que planetas: la famosa estrella de Barnard es un caso de advertencia clásico, con sus célebres «planetas» de los años sesenta resultado de un error astrométrico. La señal es simplemente minúscula, y la deriva instrumental la falsifica fácilmente.",
-    "La astrometría de alta precisión de todo el cielo de Gaia está ahora entregando detecciones genuinas y, de manera crucial, masas verdaderas para planetas encontrados por otros métodos, cerrando un capítulo que permaneció abierto durante la mayor parte de un siglo."
+    "Históricamente produjo más retractaciones que planetas: la Estrella de Barnard es el caso clásico de advertencia, con sus célebres «planetas» de la astrometría de los años sesenta, todos espurios. La señal es simplemente minúscula, y la deriva instrumental la falsifica fácilmente.",
+    "La astrometría de alta precisión de todo el cielo de Gaia ofrece ahora detecciones genuinas y, sobre todo, masas verdaderas para planetas hallados por otros métodos, y cierra así un capítulo que permaneció abierto durante buena parte de un siglo."
   ],
   "diagram_caption": "La estrella traza un pequeño bucle en el cielo mientras un planeta invisible la hace oscilar alrededor de su centro de masas común."
 }

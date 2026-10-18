@@ -120,8 +120,9 @@ const GUARD = {
   Hadar: { path: /named-stars\/hadar/ },
   Mimosa: { path: /named-stars\/mimosa/ },
   "Tycho's Supernova": { path: /deep-sky/, locs: /^nl$/ },
-  // the label already reads 'ISS — محطة الفضاء الدولية'
-  ISS: { path: /orbit-regimes\/LEO\.json:residents\.0\.label/, locs: /^ar$/ },
+  // the label already reads 'ISS — محطة الفضاء الدولية'; 'ISS Food System' is a built
+  // thing's English name
+  ISS: { path: /orbit-regimes\/LEO\.json:residents\.0\.label/, after: /^\s?Food System/ },
   Polaris: {
     after: /^\s?(Dawn|Program)/,
     path: /programs\/spacex|science\/life-in-space|essays\/the-body-in-the-dark|missions\//,

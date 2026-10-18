@@ -1,0 +1,590 @@
+[
+  {
+    "rel": "science/porkchop/what-is-a-porkchop.json",
+    "at": "narrative_101.2",
+    "old": "Abre /plan en este simulador. Elige un destino. Elige un año de lanzamiento. Lo que ves es un diagrama de longaniza, calculado en directo. Cada píxel es un problema de Lambert — «salir de la Tierra el día X, llegar el día Y, ¿cuál es el coste?» Sitúa el ratón sobre cualquier píxel y el simulador te muestra las fechas exactas y ∆v. Haz clic y la trayectoria se carga en /fly. Los cuatro apartados siguientes explican cómo leerlo.",
+    "new": "Abre /plan en este simulador. Elige un destino. Elige un año de lanzamiento. Lo que ves es un gráfico porkchop, calculado en directo. Cada píxel es un problema de Lambert — «salir de la Tierra el día X, llegar el día Y, ¿cuál es el coste?» Sitúa el ratón sobre cualquier píxel y el simulador te muestra las fechas exactas y el ∆v. Haz clic y la trayectoria se carga en /fly. Los cuatro apartados siguientes explican cómo leerlo."
+  },
+  {
+    "rel": "science/porkchop/what-is-a-porkchop.json",
+    "at": "body_paragraphs.0",
+    "old": "Elige una fecha de salida en el eje X. Elige un tiempo de tránsito en el eje Y. El color de esa celda te dice cuánto ∆v costaría volar esa misión. Azul turquesa frío: barato. Amarillo: moderado. Rojo: muy caro. Repite para cada píxel y obtienes un diagrama de longaniza — llamado así porque las curvas de nivel de la zona barata forman un lóbulo en forma de longaniza.",
+    "new": "Elige una fecha de salida en el eje X. Elige un tiempo de tránsito en el eje Y. El color de esa celda te dice cuánto ∆v costaría volar esa misión. Azul turquesa frío: barato. Amarillo: moderado. Rojo: muy caro. Repite para cada píxel y obtienes un gráfico porkchop, llamado así porque las curvas de nivel de la zona barata forman un lóbulo con forma de chuleta de cerdo."
+  },
+  {
+    "rel": "science/porkchop/what-is-a-porkchop.json",
+    "at": "body_paragraphs.2",
+    "old": "La ruta `/plan` de Orrery te muestra el diagrama de longaniza para cualquiera de nueve destinos (Marte, Mercurio, Venus, los gigantes gaseosos, Plutón, Ceres). Sitúa el ratón sobre cualquier celda para ver las fechas exactas y ∆v. Haz clic para cargar esa misión en `/fly`.",
+    "new": "La ruta `/plan` de Orrery te muestra el gráfico porkchop para cualquiera de nueve destinos (Marte, Mercurio, Venus, los gigantes gaseosos, Plutón, Ceres). Sitúa el ratón sobre cualquier celda para ver las fechas exactas y el ∆v. Haz clic para cargar esa misión en `/fly`."
+  },
+  {
+    "rel": "science/porkchop/what-is-a-porkchop.json",
+    "at": "diagram_caption",
+    "old": "Diagrama de longaniza: X = fecha de salida, Y = tiempo de tránsito, color = coste de ∆v (escala simplificada de Orrery; diagramas estándar muestran C3 / V∞ de llegada). Las zonas baratas se agrupan alrededor de ventanas Hohmann naturales.",
+    "new": "Gráfico porkchop: X = fecha de salida, Y = tiempo de tránsito, color = coste de ∆v (escala simplificada de Orrery; los gráficos estándar muestran C3 / V∞ de llegada). Las zonas baratas se agrupan alrededor de las ventanas naturales de Hohmann."
+  },
+  {
+    "rel": "science/propulsion/_intro.json",
+    "at": "paragraphs.0",
+    "old": "La astronáutica tiene una moneda universal: Δv, pronunciado \"delta-v,\" medido en kilómetros por segundo. Cada quemada cuesta algo. Cada movimiento en una trayectoria tiene un precio. El presupuesto de Δv de la misión — la suma de todo lo que vas a gastar, de principio a fin — es el único número que dice si la misión puede volar.",
+    "new": "La astronáutica tiene una única moneda universal: el ∆v, que se pronuncia «delta-v» y se mide en kilómetros por segundo. Cada encendido te cuesta una parte. Cada maniobra en una trayectoria lleva su precio. El presupuesto de ∆v de la misión —la suma de todo lo que vas a gastar, de principio a fin— es el único número que dice si la misión puede volar."
+  },
+  {
+    "rel": "science/propulsion/_intro.json",
+    "at": "paragraphs.1",
+    "old": "La cruel restricción es la ecuación del cohete, escrita por Konstantín Tsiolkovski en 1903. Dice que Δv escala LOGARÍTMICAMENTE con cuánto de tu cohete es combustible. ¿Quieres el doble de Δv? Necesitas exponencialmente más combustible. Por eso un Saturno V es 90% propelente. Por eso aterrizar en Marte y volver es mucho más difícil que aterrizar en la Luna. Cada gramo de masa que no es combustible se pelea.",
+    "new": "La restricción cruel es la ecuación del cohete, formulada por Konstantín Tsiolkovski en 1903. Dice que el ∆v crece de forma LOGARÍTMICA con la fracción del cohete que es combustible. ¿Quieres el doble de ∆v? Necesitas exponencialmente más combustible. Por eso un Saturn V es un 90% propelente. Por eso aterrizar en Marte y volver es mucho más difícil que aterrizar en la Luna. Cada gramo de masa que no es combustible se disputa."
+  },
+  {
+    "rel": "science/propulsion/_intro.json",
+    "at": "paragraphs.2",
+    "old": "Seis secciones aquí. Empezamos con ∆v como presupuesto de misión — ese es el marco para todo lo demás. Luego Tsiolkovsky para ver por qué las matemáticas son tan implacables. El impulso específico explica el lado del motor; C3 y V∞ son los números de energía de lanzamiento y energía de llegada que verás por toda la pestaña FLIGHT en /missions. El efecto Oberth al final es un raro trozo de magia gratis — quema profundo en un pozo gravitatorio y tu combustible realiza más trabajo.",
+    "new": "Aquí hay seis secciones. Empieza por el ∆v como presupuesto de misión: es el marco de todo lo demás. Después, Tsiolkovski, para ver por qué las matemáticas son tan implacables. El impulso específico explica la parte del motor; C3 y V∞ son los números de energía de lanzamiento y de llegada que verás por toda la pestaña FLIGHT de /missions. El efecto Oberth, al final, es un raro regalo de magia gratuita: quema a gran profundidad en un pozo gravitatorio y tu combustible rinde más."
+  },
+  {
+    "rel": "science/propulsion/antimatter-propulsion.json",
+    "at": "title",
+    "old": "Antimateria — el combustible perfecto que no podemos crear",
+    "new": "Antimateria — el combustible perfecto que no sabemos fabricar"
+  },
+  {
+    "rel": "science/propulsion/antimatter-propulsion.json",
+    "at": "body_paragraphs.1",
+    "old": "Dos problemas hacen que esta perfección teórica sea prácticamente inalcanzable con la tecnología previsible. El primero es la producción. La antimateria no existe en cantidades útiles en ningún lugar accesible — el universo observable parece abrumadoramente dominado por la materia, y la razón de esa asimetría es una de las preguntas abiertas de la física. La antimateria debe fabricarse, átomo por átomo, en aceleradores de partículas. El Antiproton Decelerator del CERN produce aproximadamente 10 a 15 nanogramos de antiprotones por año en operación completa. Escalar la producción actual a los miligramos que necesitaría una sonda, a los costos energéticos actuales, arroja estimaciones en el rango de decenas a cientos de billones de dólares por gramo — y eso asume que la energía está disponible, no que es asequible.",
+    "new": "Dos problemas hacen que esta perfección teórica sea prácticamente inalcanzable con la tecnología previsible. El primero es la producción. La antimateria no existe en cantidades útiles en ningún lugar accesible — el universo observable parece abrumadoramente dominado por la materia, y la razón de esa asimetría es una de las preguntas abiertas de la física. La antimateria debe fabricarse, átomo por átomo, en aceleradores de partículas. El Antiproton Decelerator del CERN produce aproximadamente entre 10 y 15 nanogramos de antiprotones al año a pleno rendimiento. Escalar la producción actual hasta los miligramos que necesitaría una sonda, con los costes energéticos de hoy, arroja estimaciones de entre decenas y cientos de billones de dólares por gramo — y eso suponiendo que la energía esté disponible, no que sea asequible."
+  },
+  {
+    "rel": "science/propulsion/antimatter-propulsion.json",
+    "at": "body_paragraphs.2",
+    "old": "El segundo problema es el almacenamiento. La antimateria se aniquila en contacto con la materia ordinaria, lo que significa que no puede tocar ninguna pared, ningún contenedor, ningún rastro de gas residual. El único enfoque conocido es el confinamiento magnético o electromagnético — mantener antiprotones en una trampa de Penning o antihidrógeno en una botella magnética. El récord de antihidrógeno almacenado se mide en minutos a horas para pequeños números de átomos. Almacenar miligramos durante tránsitos de años, a bordo de una nave espacial que debe resistir vibración de lanzamiento y radiación, no es un problema resuelto en ningún sentido de la ingeniería.",
+    "new": "El segundo problema es el almacenamiento. La antimateria se aniquila en contacto con la materia ordinaria, lo que significa que no puede tocar ninguna pared, ningún contenedor, ningún rastro de gas residual. El único enfoque conocido es el confinamiento magnético o electromagnético — mantener antiprotones en una trampa de Penning o antihidrógeno en una botella magnética. El récord de antihidrógeno almacenado se mide en minutos u horas, y con muy pocos átomos. Almacenar miligramos durante tránsitos de años, a bordo de una nave espacial que debe resistir las vibraciones del lanzamiento y la radiación, no es un problema resuelto en ningún sentido de la ingeniería."
+  },
+  {
+    "rel": "science/propulsion/antimatter-propulsion.json",
+    "at": "body_paragraphs.3",
+    "old": "Los esquemas de antimateria parcial — utilizando antiprotones para catalizar reacciones de fisión o fusión en lugar de aniquilarse completamente — reducen la cantidad requerida, pero esos conceptos aún necesitan nanogramos o microgramos y aún enfrentan las mismas limitaciones de almacenamiento. Han sido estudiados sobre papel en el Marshall Space Flight Center de la NASA y en otros lugares; ninguno ha avanzado hasta hardware.",
+    "new": "Los esquemas de antimateria parcial — que emplean antiprotones para catalizar reacciones de fisión o de fusión en lugar de aniquilarse por completo — reducen la cantidad necesaria, pero esos conceptos siguen necesitando nanogramos o microgramos y se topan con las mismas limitaciones de almacenamiento. Se han estudiado sobre el papel en el Marshall Space Flight Center de la NASA y en otros lugares; ninguno ha pasado al hardware."
+  },
+  {
+    "rel": "science/propulsion/antimatter-propulsion.json",
+    "at": "body_paragraphs.4",
+    "old": "La propulsión por antimateria es el caso límite de lo que la física permite. Establece el techo de la eficiencia con que la masa puede convertirse en empuje. Vale la pena entenderla precisamente por esa razón — te dice lo mejor que la termodinámica jamás permitirá. Pero no es una tecnología en ninguna hoja de ruta creíble. Solo el problema de la producción la coloca en una categoría más cercana a 'requiere una civilización diferente' que 'requiere más financiación'.",
+    "new": "La propulsión por antimateria es el caso límite de lo que la física permite. Marca el techo de la eficiencia con que la masa puede convertirse en empuje. Vale la pena entenderla precisamente por eso — te dice lo mejor que la termodinámica permitirá jamás. Pero no figura en ninguna hoja de ruta creíble. Solo el problema de la producción la sitúa en una categoría más cercana a «requiere otra civilización» que a «requiere más financiación»."
+  },
+  {
+    "rel": "science/propulsion/c3.json",
+    "at": "title",
+    "old": "C3 — Energía Característica",
+    "new": "C3 — Energía característica"
+  },
+  {
+    "rel": "science/propulsion/c3.json",
+    "at": "intro_sentence",
+    "old": "Cuánta energía por unidad de masa necesita un cohete para salir del pozo gravitatorio terrestre con velocidad sobrante — la métrica estándar de energía de lanzamiento.",
+    "new": "Cuánta energía por unidad de masa necesita un cohete para salir del pozo gravitatorio terrestre con velocidad de sobra: la medida estándar de la energía de lanzamiento."
+  },
+  {
+    "rel": "science/propulsion/c3.json",
+    "at": "narrative_101.0",
+    "old": "C3 es jerga de ingenieros de misiones para una pregunta muy específica: ¿con qué fuerza tiene que lanzar el cohete la nave? Es la energía que queda una vez que has escapado del pozo gravitatorio de la Tierra. C3 = 0 significa que escapas exactamente de la Tierra, llegando al infinito con velocidad cero. C3 superior a cero significa que saliste con velocidad extra de sobra — y esa velocidad extra es lo que te lleva hacia Marte o Júpiter o donde sea.",
+    "new": "C3 es jerga de ingenieros de misiones para una pregunta muy específica: ¿con qué fuerza tiene que lanzar el cohete la nave? Es la energía que queda una vez que has escapado del pozo gravitatorio de la Tierra. C3 = 0 significa que escapas justo de la Tierra, llegando al infinito con velocidad cero. Un C3 superior a cero significa que has salido con velocidad de sobra — y esa velocidad extra es lo que te lleva hacia Marte, Júpiter o donde sea."
+  },
+  {
+    "rel": "science/propulsion/c3.json",
+    "at": "narrative_101.1",
+    "old": "Se mide en km²/s² (que parece extraño pero es simplemente la velocidad al cuadrado) para que los números se mantengan manejables. Marte típicamente requiere C3 = 8 a 12. Los vuelos directos a Júpiter necesitan C3 alrededor de 80. New Horizons fue lanzado con C3 = 158 —el más alto jamás alcanzado— para alcanzar Plutón en nueve años y medio en lugar de décadas.",
+    "new": "Se mide en km²/s² (que parece extraño pero es simplemente la velocidad al cuadrado) para que los números sean manejables. Marte suele requerir un C3 de 8 a 12. Los vuelos directos a Júpiter necesitan un C3 de alrededor de 80. New Horizons fue lanzado con C3 = 158 —el más alto jamás alcanzado— para llegar a Plutón en nueve años y medio en lugar de décadas."
+  },
+  {
+    "rel": "science/propulsion/c3.json",
+    "at": "narrative_101.2",
+    "old": "¿Por qué importa tanto este número? Porque cada cohete tiene una curva de C3 frente a carga útil publicada. Conforme C3 aumenta, el cohete puede entregar menos masa. Falcon Heavy puede lanzar 16 toneladas con C3 = 10, pero solo 5 toneladas con C3 = 80. La decisión más importante en el diseño de una misión es hacer coincidir el requisito de C3 del destino con un cohete capaz de lanzar tu nave a esa energía. Si cometes un error aquí, la misión no puede realizarse.",
+    "new": "¿Por qué importa tanto este número? Porque cada cohete tiene una curva de C3 frente a carga útil publicada. Conforme C3 aumenta, el cohete puede entregar menos masa. Falcon Heavy puede lanzar 16 toneladas con C3 = 10, pero solo 5 toneladas con C3 = 80. La primera decisión en el diseño de una misión es hacer coincidir el requisito de C3 del destino con un cohete capaz de lanzar tu nave a esa energía. Si te equivocas aquí, la misión no puede volar."
+  },
+  {
+    "rel": "science/propulsion/c3.json",
+    "at": "body_paragraphs.0",
+    "old": "C3 es el cuadrado de la velocidad heliocéntrica hiperbólica en exceso. Unidades: km²/s². Te dice cuánta energía más allá de la de escape tu lanzador tiene que entregar. C3 = 0 significa que escapas apenas de la gravedad de la Tierra, llegando al infinito con velocidad cero. C3 = 25 km²/s² significa que llegas con V∞ = 5 km/s de velocidad heliocéntrica sobrante.",
+    "new": "C3 es el cuadrado de la velocidad hiperbólica en exceso. Unidades: km²/s². Te dice cuánta energía por encima de la de escape tiene que aportar tu lanzador. C3 = 0 significa que escapas justo de la gravedad de la Tierra, llegando al infinito con velocidad cero. C3 = 25 km²/s² significa que llegas con V∞ = 5 km/s de velocidad heliocéntrica sobrante."
+  },
+  {
+    "rel": "science/propulsion/c3.json",
+    "at": "body_paragraphs.1",
+    "old": "Los lanzadores se caracterizan por su curva de C3 frente a carga útil. Falcon Heavy puede lanzar ~16 toneladas a C3=10, pero solo ~5 toneladas a C3=80. Marte típicamente requiere C3 alrededor de 8-12. Júpiter directo: C3 alrededor de 80. New Horizons fue lanzado con C3 = 158 km²/s² —el más alto de cualquier misión jamás realizada— para hacer el viaje a Plutón en solo 9,5 años.",
+    "new": "Los lanzadores se caracterizan por su curva de C3 frente a carga útil. Falcon Heavy puede lanzar ~16 toneladas a C3=10, pero solo ~5 toneladas a C3=80. Marte suele requerir un C3 de 8-12. Júpiter directo: C3 de alrededor de 80. New Horizons fue lanzado con C3 = 158 km²/s² —el más alto de cualquier misión jamás realizada— para hacer el viaje a Plutón en solo 9,5 años."
+  },
+  {
+    "rel": "science/propulsion/c3.json",
+    "at": "body_paragraphs.2",
+    "old": "En la pestaña FLIGHT del `/missions` de Orrery, el C3 de cada misión interplanetaria es el punto de datos canónico de la primera fila. Es el número único que captura «con qué dificultad fue lanzado».",
+    "new": "En la pestaña FLIGHT del `/missions` de Orrery, el C3 de cada misión interplanetaria es el dato canónico de la primera fila. Es el único número que resume «lo difícil que fue el lanzamiento»."
+  },
+  {
+    "rel": "science/propulsion/dv-budget.json",
+    "at": "narrative_101.1",
+    "old": "Ahora viene el giro crucial. Tu cohete no tiene ∆v ilimitado. Tiene un techo duro, establecido por la ecuación de Tsiolkovsky, determinado completamente por cuánto de tu cohete es combustible y cuán buenos son tus motores. Si tu factura supera el techo, la misión es imposible. Gastar más dinero no lo soluciona. Las matemáticas ganan.",
+    "new": "Ahora viene el giro crucial. Tu cohete no tiene ∆v ilimitado. Tiene un techo infranqueable, fijado por la ecuación de Tsiolkovski y determinado por completo por la parte de tu cohete que es combustible y por lo buenos que son tus motores. Si tu factura supera el techo, la misión es imposible. Gastar más dinero no lo arregla. Ganan las matemáticas."
+  },
+  {
+    "rel": "science/propulsion/dv-budget.json",
+    "at": "narrative_101.2",
+    "old": "Números de referencia rápida para internalizar: escapar de la Tierra hacia órbita cuesta ~9,4 km/s. De órbita a una transferencia de Hohmann a Marte suma ~3,6. La inyección en Marte añade otros ~2. Eso son alrededor de 15 km/s para alcanzar el sistema marciano y frenar en órbita —la atmósfera delgada de Marte hace la mayor parte del aterrizaje. Por eso aterrizar en Marte es mucho más difícil que en la Luna, y por qué cada gramo de masa en un módulo de aterrizaje marciano se disputa ferozmente.",
+    "new": "Algunas cifras de referencia para tener en la cabeza: salir de la Tierra y llegar a órbita cuesta ~9,4 km/s. De la órbita a una transferencia de Hohmann a Marte suma ~3,6. La inserción en órbita de Marte añade otros ~2. Eso son alrededor de 15 km/s para alcanzar el sistema marciano y frenar hasta quedar en órbita — después, la atmósfera delgada de Marte hace la mayor parte del aterrizaje. Por eso aterrizar en Marte es mucho más difícil que aterrizar en la Luna, y por eso cada gramo de masa de un módulo de aterrizaje marciano se disputa."
+  },
+  {
+    "rel": "science/propulsion/dv-budget.json",
+    "at": "body_paragraphs.0",
+    "old": "∆v (delta-v) es la moneda de contabilidad del vuelo espacial. Cada encendido de motor —escapar de la Tierra, abandonar órbita, corregir rumbo, frenar en el destino— te cuesta algún cambio de velocidad. Súmalo todo y tienes el presupuesto de ∆v de la misión.",
+    "new": "El ∆v (delta-v) es la moneda contable del vuelo espacial. Cada encendido de motor —salir de la Tierra, abandonar la órbita, corregir el rumbo, frenar en el destino— te cuesta algún cambio de velocidad. Súmalo todo y tendrás el presupuesto de ∆v de la misión."
+  },
+  {
+    "rel": "science/propulsion/dv-budget.json",
+    "at": "body_paragraphs.1",
+    "old": "En el lado de la oferta: la capacidad de ∆v de tu cohete viene de la ecuación de Tsiolkovsky —el `Isp` del motor y la fracción de propelente establecen el techo. En el lado de la demanda: el diseño de trayectoria elige la ruta con el menor coste sumado. Una misión vuela si la oferta de presupuesto ≥ demanda. No lo hace si no es así, no importa cuánto dinero gastes en el problema.",
+    "new": "Por el lado de la oferta: la capacidad de ∆v de tu cohete sale de la ecuación de Tsiolkovski — el `Isp` del motor y la fracción de propelente fijan el techo. Por el lado de la demanda: el diseño de trayectoria elige la ruta de menor coste total. Una misión vuela si la oferta de presupuesto ≥ la demanda. Si no se cumple, no vuela, por mucho dinero que eches al problema."
+  },
+  {
+    "rel": "science/propulsion/dv-budget.json",
+    "at": "body_paragraphs.2",
+    "old": "Algunos números de referencia: la superficie de la Tierra a LEO cuesta ~9,4 km/s de ∆v (la mayor parte lidiando con la gravedad y atmósfera). LEO a una transferencia de Hohmann a Marte suma ~3,6 km/s. La inyección en órbita marciana suma otros ~2 km/s. Eso son alrededor de 15 km/s para alcanzar el sistema marciano y capturar en órbita —la atmósfera delgada de Marte maneja el descenso, no propulsión adicional.",
+    "new": "Algunas cifras de referencia: pasar de la superficie de la Tierra a LEO cuesta ~9,4 km/s de ∆v (la mayor parte, venciendo la gravedad y la atmósfera). De LEO a una transferencia de Hohmann a Marte suma ~3,6 km/s. La inserción en órbita marciana suma otros ~2 km/s. Eso son alrededor de 15 km/s para alcanzar el sistema marciano y quedar capturado en órbita — la atmósfera delgada de Marte se encarga del descenso, no una propulsión adicional."
+  },
+  {
+    "rel": "science/propulsion/engine-clustering.json",
+    "at": "intro_sentence",
+    "old": "Dos filosofías opuestas para conseguir empuje megatonelada: construir un motor gigante y usar pocos (F-1, RS-25), o construir uno mediano y usar muchos (Merlin, Raptor). Ganó la segunda.",
+    "new": "Dos filosofías opuestas para lograr un empuje de clase megatonelada: construir un motor gigante y usar pocos (F-1, RS-25), o construir uno mediano y usar muchos (Merlin, Raptor). Ganó la segunda."
+  },
+  {
+    "rel": "science/propulsion/engine-clustering.json",
+    "at": "body_paragraphs.0",
+    "old": "La primera etapa del Saturn V agrupaba cinco motores F-1. Cada F-1 producía 6,77 MN de empuje a nivel del mar — en su momento y durante cincuenta años después, el motor líquido más grande jamás puesto en vuelo. El arco de desarrollo fue largo y doloroso: la inestabilidad de combustión casi mata el programa a principios de los años sesenta; Rocketdyne finalmente lo resolvió ajustando la placa inyectora para interrumpir los modos resonantes. La apuesta del programa Apollo era que menos motores más grandes significaban menos puntos de fallo durante una quema de primera etapa de 165 segundos. La respuesta soviética fue la opuesta: la primera etapa del N1 agrupaba *treinta* motores NK-15. Sin un motor de la clase del F-1 en su inventario y siendo los NK-15 pequeños y baratos de producir, los soviéticos eligieron cantidad de motores sobre tamaño del motor. Los cuatro vuelos del N1 fracasaron — aunque los fallos fueron tanto sobre tuberías y el software del controlador de apagado KORD como sobre el cluster mismo.",
+    "new": "La primera etapa del Saturn V agrupaba cinco motores F-1. Cada F-1 producía 6,77 MN de empuje a nivel del mar — en su momento y durante cincuenta años después, el motor líquido más grande jamás puesto en vuelo. El camino del desarrollo fue largo y doloroso: la inestabilidad de combustión estuvo a punto de acabar con el programa a principios de los años sesenta; Rocketdyne acabó resolviéndola ajustando la placa del inyector para interrumpir los modos resonantes. La apuesta del programa Apollo era que menos motores, y más grandes, significaban menos puntos de fallo durante los 165 segundos de funcionamiento de la primera etapa. La respuesta soviética fue la contraria: la primera etapa del N1 agrupaba *treinta* motores NK-15. Sin un motor de la clase del F-1 en su inventario, y con unos NK-15 pequeños y baratos de producir, los soviéticos optaron por el número de motores antes que por su tamaño. Los cuatro vuelos del N1 fracasaron, aunque los fallos tuvieron tanto que ver con las tuberías y con el software del controlador de apagado KORD como con la propia agrupación."
+  },
+  {
+    "rel": "science/propulsion/engine-clustering.json",
+    "at": "body_paragraphs.1",
+    "old": "El veredicto moderno es lo opuesto de Saturn V. Falcon 9 agrupa nueve Merlin 1D en cuadrícula 3-3-3 (luego un 'octaweb' — 8 perimetrales, 1 central) para ~7,6 MN al despegue. Falcon Heavy apila tres primeras etapas Falcon 9 lado a lado: 27 Merlins, 22,8 MN. Super Heavy lleva 33 Raptor 2 (13 en cluster central, 20 en anillo exterior) para ~76 MN al despegue, doble del empuje de etapa de Saturn V. Tres cosas cambiaron desde 1969 que inclinaron la balanza a muchos-pequeños. Una: control moderno de vectorización + apagado puede compensar fallo motor en vuelo — Falcon 9 perdió motores en ascenso (CRS-1, octubre 2012) y aun insertó la carga. Dos: producción masiva de un motor sobre cientos de vehículos baja coste unitario — economía que los nueve vuelos de Saturn V nunca pudieron lograr. Tres: la CFD ahora permite predecir + amortiguar interacciones acústicas y de calentamiento de base que históricamente fragilizaban los clusters.",
+    "new": "El veredicto moderno es el contrario del del Saturn V. Falcon 9 agrupa nueve Merlin 1D en una cuadrícula 3-3-3 (más tarde un «octaweb»: 8 en el perímetro y 1 en el centro) para ~7,6 MN al despegue. Falcon Heavy apila tres primeras etapas de Falcon 9 una al lado de otra: 27 Merlin, 22,8 MN. Super Heavy lleva 33 Raptor 2 (13 en una agrupación central y 20 en el anillo exterior) para ~76 MN al despegue, el doble del empuje de la etapa del Saturn V. Desde 1969 han cambiado tres cosas que inclinaron la balanza hacia muchos motores pequeños. Primera: el control moderno de vectorización del empuje y de apagado de motores puede compensar el fallo de un motor en pleno vuelo — Falcon 9 perdió motores durante el ascenso (CRS-1, octubre de 2012) y aun así puso la carga en órbita. Segunda: la producción en serie de un solo motor para cientos de vehículos reduce el coste unitario — una economía que los nueve vuelos del Saturn V nunca pudieron lograr. Tercera: la dinámica de fluidos computacional permite ahora predecir y amortiguar las interacciones acústicas y de calentamiento de la base que históricamente volvían frágiles las agrupaciones."
+  },
+  {
+    "rel": "science/propulsion/engine-clustering.json",
+    "at": "body_paragraphs.2",
+    "old": "Los clusters fallan distinto que motores individuales. Con cinco F-1, perder uno significa no poder terminar la misión — Apollo 6 perdió dos J-2 en su etapa S-II y se arrastró a un órbita degradado, en última instancia no-misión. Con 33 Raptors, perder uno (o tres, o seis) en Super Heavy está diseñado-para: la aviónica apaga el motor fallido + su par simétrico para mantener el vector de empuje por el centro de masa, luego redistribuye empuje entre supervivientes. Falcon 9 puede perder hasta dos de nueve motores tras una altitud crítica y aún completar la misión principal. El compromiso cluster-vs-monolito ha cambiado: agrupar antes significaba fragilidad porque rotura de tubería podía cascadear; la compartimentación moderna (escudos individuales del Raptor, válvulas de aislamiento rápidas) hace que un RUD de un solo motor esté contenido, no catastrófico.",
+    "new": "Las agrupaciones de motores fallan de forma distinta a los motores individuales. Con cinco F-1, perder uno significa que no puedes terminar la misión — Apollo 6 perdió dos J-2 en su etapa S-II y llegó a duras penas a una órbita degradada, en la práctica una misión fallida. Con 33 Raptor, perder uno (o tres, o seis) en Super Heavy está previsto en el diseño: la aviónica apaga el motor averiado y su compañero simétrico para mantener el vector de empuje por el centro de masa, y luego redistribuye la potencia entre los supervivientes. Falcon 9 puede perder hasta dos de sus nueve motores pasada una altitud crítica y aun así completar la misión principal. El equilibrio entre agrupación y monolito ha cambiado: antes agrupar significaba fragilidad, porque la rotura de una tubería de un motor podía propagarse en cascada; la compartimentación moderna (los escudos individuales del Raptor, las válvulas de aislamiento de acción rápida) hace que el RUD de un solo motor quede contenido y no sea catastrófico."
+  },
+  {
+    "rel": "science/propulsion/engine-clustering.json",
+    "at": "body_paragraphs.3",
+    "old": "Queda un argumento a favor del enfoque monolítico. Las etapas superiores y las etapas principales con hidrolox aún prefieren unos pocos motores grandes: el SLS utiliza 4 RS-25s, el Ariane 6 utiliza 1 Vulcain 2.1, el Long March 5 utiliza 2 YF-77. La plomería de hidrógeno es tan voluminosa y tan fría que multiplicar el número de motores multiplica la complejidad del fondo del tanque. La generación de combustión en etapas de todas las etapas rusas RD-170 (y su descendiente el RD-180 / RD-191) también se mantuvo en una a cuatro cámaras grandes. El patrón: el queroseno y el metanol han optado por muchos motores pequeños; el hidrolox se ha mantenido con pocos motores grandes. La combustión en etapas de flujo completo del Raptor a escala de agrupación de motores es lo que hizo posible el Super Heavy — esa combinación de ciclo, propelente y agrupación no había sido intentada previamente.",
+    "new": "Queda un argumento a favor del enfoque monolítico. Las etapas superiores y las etapas centrales de hidrolox siguen prefiriendo pocos motores grandes: el SLS usa 4 RS-25, el Ariane 6 usa 1 Vulcain 2.1, el Long March 5 usa 2 YF-77. Las tuberías de hidrógeno son tan voluminosas y tan frías que multiplicar el número de motores multiplica la complejidad del fondo del tanque. La generación rusa RD-170 (y sus descendientes, el RD-180 y el RD-191), toda ella de combustión en etapas, también se mantuvo en una a cuatro cámaras grandes. El patrón: los motores de queroseno-oxígeno y de metano-oxígeno se han pasado a muchos motores pequeños; los de hidrolox han seguido con pocos y grandes. La combustión en etapas de flujo completo del Raptor, a la escala de una agrupación de motores, es lo que hizo posible el Super Heavy — esa combinación de ciclo, propelente y agrupación no se había intentado antes."
+  },
+  {
+    "rel": "science/propulsion/engine-types.json",
+    "at": "title",
+    "old": "Tipos de motores — químico, eléctrico, nuclear",
+    "new": "Tipos de motores — químicos, eléctricos, nucleares"
+  },
+  {
+    "rel": "science/propulsion/engine-types.json",
+    "at": "intro_sentence",
+    "old": "Hay tres familias de motores de cohete que han volado: químicos (todo lo que despega de la Tierra), eléctricos (crucero de larga distancia en el espacio profundo) y nucleares térmicos (NERVA fue probado, ninguno operacional aún).",
+    "new": "Hay tres familias de motores de cohete que han volado: químicos (todo lo que despega de la Tierra), eléctricos (todo lo que hace los largos cruceros por el espacio profundo) y nucleares térmicos (NERVA se probó; ninguno operativo aún)."
+  },
+  {
+    "rel": "science/propulsion/engine-types.json",
+    "at": "body_paragraphs.0",
+    "old": "Los motores químicos son la única familia con suficiente empuje para levantarse contra la gravedad terrestre, por lo que cada lanzador de la historia ha sido químico. Se dividen en tres subfamilias. Los motores sólidos son básicamente un tubo de acero lleno de propelente gomoso moldeado alrededor de un núcleo hueco — enciendes un extremo, arde a velocidad controlada y no puedes apagarlo. Baratos, simples, confiables, pero sin regulación ni apagado: los SRB del Space Shuttle, los aceleradores Ariane 5 / Ariane 6, los aceleradores SLS, las etapas PSLV indias, cada ICBM y la mayoría de misiles militares son sólidos. Los motores líquidos bipropelentes bombean un combustible y un oxidante por separado hacia una cámara de combustión — mucho más flexibles (regulación, reinicio, apagado, modulación profunda) pero mecánicamente complejos: el F-1 del Saturn V, Merlin del Falcon 9, RS-25, Vulcain, Raptor, YF-100. Los motores híbridos (combustible sólido + oxidante líquido o gaseoso) son un tercer camino silencioso utilizado por SpaceShipTwo y un puñado de cohetes de sondeo — canjean la complejidad del líquido por la falta de apagado del sólido.",
+    "new": "Los motores químicos son la única familia con empuje suficiente para levantar su propio peso contra la gravedad terrestre, por lo que todos los lanzadores de la historia han sido químicos. Se dividen en tres subfamilias. Los motores sólidos son básicamente un tubo de acero lleno de propelente gomoso moldeado alrededor de un núcleo hueco — se enciende por un extremo, arde a velocidad controlada y no se puede apagar. Baratos, simples, fiables, pero sin regulación ni apagado: son sólidos los SRB del Space Shuttle, los aceleradores del Ariane 5 / Ariane 6, los aceleradores del SLS, las etapas del PSLV indio, todos los ICBM y la mayoría de los misiles militares. Los motores líquidos bipropelentes bombean un combustible y un oxidante por separado hacia una cámara de combustión — mucho más flexibles (regulación, reinicio, apagado, modulación profunda) pero mecánicamente complejos: el F-1 del Saturn V, el Merlin del Falcon 9, el RS-25, el Vulcain, el Raptor, el YF-100. Los motores híbridos (combustible sólido + oxidante líquido o gaseoso) son un tercer camino discreto, empleado por SpaceShipTwo y un puñado de cohetes sonda — cambian la complejidad del líquido por la imposibilidad de apagado del sólido."
+  },
+  {
+    "rel": "science/propulsion/engine-types.json",
+    "at": "body_paragraphs.1",
+    "old": "Dentro de la familia líquida, el *ciclo* del motor importa tanto como los propelentes. Generador de gas (Merlin, F-1): una pequeña fracción de propelente arde en una cámara lateral para impulsar la turbobomba, luego se expulsa al exterior — ineficiente pero simple. Expansor (RL10): el combustible criogénico enfría la tobera, se vaporiza y el gas resultante impulsa la turbobomba — elegante pero limitado a motores pequeños. Combustión en etapas (RS-25, NK-33, Raptor): todo el propelente pasa por la ruta de precámara-luego-cámara principal, capturando toda la energía. Combustión en etapas de flujo completo (Raptor, la primera jamás volada): dos precámaras, una rica en oxidante y otra rica en combustible, impulsando dos turbobombas — el arreglo de mejor rendimiento jamás intentado. Cada paso hacia arriba en la escalera de ciclos te compra 20-40 segundos de impulso específico pero añade tuberías, masa y costo de desarrollo.",
+    "new": "Dentro de la familia líquida, el *ciclo* del motor importa tanto como los propelentes. Generador de gas (Merlin, F-1): una pequeña fracción del propelente arde en una cámara lateral para mover la turbobomba y después se expulsa por la borda — derrochador pero simple. Expansor (RL10): el combustible criogénico enfría la tobera, se vaporiza y el gas resultante mueve la turbobomba — elegante pero limitado a motores pequeños. Combustión en etapas (RS-25, NK-33, Raptor): todo el propelente recorre el camino de la precámara a la cámara principal, con lo que se aprovecha toda la energía. Combustión en etapas de flujo completo (Raptor, el primero en volar): dos precámaras, una rica en oxidante y otra rica en combustible, que mueven dos turbobombas — la configuración de mayor rendimiento jamás intentada. Cada peldaño de la escalera de ciclos te da 20-40 segundos de impulso específico, pero añade tuberías, masa y coste de desarrollo."
+  },
+  {
+    "rel": "science/propulsion/engine-types.json",
+    "at": "body_paragraphs.2",
+    "old": "La propulsión eléctrica (motores iónicos, propulsores de efecto Hall) no levanta nada de un planeta, pero una vez en el espacio su impulso específico es 10-30× mayor que cualquier motor químico. El trueque es empuje: una primera etapa química produce millones de newtons; un propulsor Hall de última generación (AEPS de NASA Glenn, 12 kW) produce alrededor de 0,6 N — menos que el peso de una manzana. Lo compensa el tiempo: los cuatro propulsores iónicos de rejilla T6 de BepiColombo han estado disparando casi continuamente durante años para frenar en órbita de Mercurio, donde una misión solo química necesitaría una carga de combustible imposiblemente grande. Dawn utilizó el mismo enfoque para orbitar dos asteroides en un único lanzamiento. La fuente de potencia es solar en el sistema solar interior, impulsada por RTG para conceptos de planeta exterior.",
+    "new": "La propulsión eléctrica (motores iónicos, propulsores de efecto Hall) no levanta nada de un planeta, pero una vez en el espacio su impulso específico es de 10 a 30 veces mayor que el de cualquier motor químico. La contrapartida es el empuje: una primera etapa química produce millones de newtons; un propulsor Hall de última generación (AEPS de NASA Glenn, 12 kW) produce unos 0,6 N — menos que el peso de una manzana. Se compensa con tiempo: los cuatro propulsores iónicos de rejilla T6 de BepiColombo llevan años funcionando casi sin pausa para frenar y entrar en órbita de Mercurio, donde una misión solo química necesitaría una carga de combustible imposiblemente grande. Dawn empleó el mismo método para orbitar dos asteroides con un único lanzamiento. La fuente de energía es solar en el sistema solar interior y, en los conceptos para los planetas exteriores, un RTG."
+  },
+  {
+    "rel": "science/propulsion/engine-types.json",
+    "at": "body_paragraphs.3",
+    "old": "La propulsión nuclear térmica (NTP) es la familia que ha estado casi lista desde 1965. El principio: hidrógeno fluye pasando un reactor nuclear caliente, se calienta a 2500-3000 K y se expande a través de una tobera. El Isp es 800-1000 segundos — el doble que un motor hidrolox — con empuje en el rango 50-250 kN (menor que químico pero vastamente superior al eléctrico). El programa NERVA de NASA pruebas dispara motores a escala completa durante los años 1960; el demostrador DRACO más reciente (NASA + DARPA) apuntaba a una prueba en órbita alrededor de 2027 pero fue cancelado en el presupuesto de 2026. A partir de 2026 ningún motor NTP ha volado. El obstáculo siempre ha sido político y regulatorio más que técnico: lanzar un reactor nuclear, incluso uno sin combustible diseñado para volverse crítico solo en órbita, se sitúa en una categoría de aceptación pública y restricción de tratados que históricamente ha matado el programa cada década o así.",
+    "new": "La propulsión nuclear térmica (NTP) es la familia que lleva casi lista desde 1965. El principio: el hidrógeno pasa junto a un reactor nuclear caliente, se calienta hasta 2500-3000 K y se expande por una tobera. El Isp es de 800-1000 segundos — el doble que el de un motor hidrolox — con un empuje de 50-250 kN (menor que el químico, pero muy superior al eléctrico). El programa NERVA de la NASA probó motores a escala real durante los años 1960; el demostrador DRACO, más reciente (NASA + DARPA), apuntaba a una prueba en órbita hacia 2027, pero se canceló en el presupuesto de 2026. A fecha de 2026, ningún motor NTP ha volado. El obstáculo siempre ha sido político y regulatorio más que técnico: lanzar un reactor nuclear, incluso uno sin combustible y diseñado para volverse crítico solo en órbita, entra en una categoría de aceptación pública y restricciones de tratados que históricamente ha acabado con el programa más o menos cada década."
+  },
+  {
+    "rel": "science/propulsion/engine-types.json",
+    "at": "diagram_caption",
+    "old": "Químico (sólido / líquido generador de gas / líquido en etapas / etapas de flujo completo) para despegue y ascenso. Eléctrico (Hall / ión de rejilla) para crucero de larga distancia en el espacio profundo. Nuclear térmico (NERVA probado años 1960; ningún motor NTP ha volado) para tránsito de alto empuje + alto Isp.",
+    "new": "Químicos (sólido / líquido con generador de gas / líquido en etapas / en etapas de flujo completo) para el despegue y el ascenso. Eléctricos (Hall / iónico de rejilla) para los largos cruceros por el espacio profundo. Nuclear térmico (NERVA probado en los años 1960; ningún motor NTP ha volado) para tránsitos de alto empuje + alto Isp."
+  },
+  {
+    "rel": "science/propulsion/expander-cycle.json",
+    "at": "intro_sentence",
+    "old": "El combustible criogénico absorbe el calor de la tobera del motor, se vaporiza en un gas de alta presión y lo usa para impulsar la turbobomba, sin generador de gas ni precámara de combustión.",
+    "new": "El combustible criogénico absorbe el calor de la propia tobera, se vaporiza y con ese gas hace girar la turbobomba. Sin generador de gas ni precámara: el calor residual del motor es la fuente de energía. Limpio y fiable, pero no escala."
+  },
+  {
+    "rel": "science/propulsion/expander-cycle.json",
+    "at": "body_paragraphs.0",
+    "old": "Una cámara de cohete y tobera están ferozmente calientes, y un motor criogénico ya bombea su combustible congelado a través de canales en las paredes de la cámara para evitar que se derritan — enfriamiento regenerativo. El ciclo expansor convierte ese trabajo de enfriamiento en la planta de potencia del motor. El hidrógeno líquido (o metano) entra en los canales de la pared cerca de la tobera, absorbe una cantidad enorme de calor y se convierte en un gas caliente de alta presión. Ese gas se expande a través de la turbina para impulsar la turbobomba, y solo entonces se entrega a la cámara principal para quemar. Ningún propelente se quema solo para hacer funcionar las bombas, por lo que el gas de la turbina es inerte, sin hollín y suave con el hardware — por eso los motores expansores son famosos por su confiabilidad y capacidad de reinicio.",
+    "new": "La cámara y la tobera de un cohete están ferozmente calientes, y un motor criogénico ya bombea su combustible helado por canales en las paredes de la cámara para que no se fundan — es el enfriamiento regenerativo. El ciclo expansor convierte esa tarea de enfriamiento en la central de energía del motor. El hidrógeno líquido (o el metano) entra en los canales de la pared cerca de la tobera, absorbe una cantidad enorme de calor y se convierte de golpe en un gas caliente de alta presión. Ese gas se expande en la turbina para mover la turbobomba y solo entonces pasa a la cámara principal para arder. No se prende fuego a ningún propelente solo para hacer funcionar las bombas, así que el gas de la turbina es benigno, no deja hollín y es suave con los componentes — por eso los motores expansores tienen fama de fiables y reiniciables."
+  },
+  {
+    "rel": "science/propulsion/expander-cycle.json",
+    "at": "body_paragraphs.1",
+    "old": "El problema es un límite físico duro. La potencia que puedes extraer depende de cuánto calor las paredes pueden ceder al combustible, y eso escala con el *área de superficie* de la cámara y tobera. Pero el empuje — y por lo tanto el flujo de propelente que las bombas deben mover — escala con el *volumen* de la cámara. A medida que haces el motor más grande, el volumen crece más rápido que la superficie, así que en algún punto las paredes simplemente no pueden calentar suficiente gas para impulsar bombas lo bastante grandes para el flujo. En la práctica un expansor cerrado se detiene alrededor de unos pocos cientos de kilonewtons de empuje. Eso lo hace perfecto para etapas superiores e imposible para una gran etapa inicial.",
+    "new": "El inconveniente es un techo físico infranqueable. La potencia que puedes extraer depende de cuánto calor pueden ceder las paredes al combustible, y eso escala con el *área de superficie* de la cámara y la tobera. Pero el empuje — y, por tanto, el caudal de propelente que deben mover las bombas — escala con el *volumen* de la cámara. A medida que haces el motor más grande, el volumen crece más rápido que la superficie, así que en algún punto las paredes simplemente no pueden calentar gas suficiente para mover bombas lo bastante grandes para ese caudal. En la práctica, un expansor cerrado se queda en unos pocos cientos de kilonewtons de empuje. Eso lo hace perfecto para etapas superiores e imposible para una gran primera etapa."
+  },
+  {
+    "rel": "science/propulsion/expander-cycle.json",
+    "at": "body_paragraphs.2",
+    "old": "El clásico es el RL10, que voló por primera vez en Centaur en 1962 y aún está en producción — una de las carreras más largas de cualquier motor. Ese techo de empuje aplica al ciclo completamente cerrado; cambiar a la variante expansor-sangría lo rompe. La sangría extrae una porción del gas calentado para impulsar la turbina y luego lo expulsa al exterior en lugar de enrutarlo todo a la cámara — sacrificando un poco de Isp a cambio de mucha más potencia. El LE-9 de Japón muestra cuán lejos puede llegar: un motor expansor-sangría que produce 1.471 kN, impulsa la primera etapa del H3, algo que un expansor cerrado nunca podría hacer. Su hermano el LE-5B y el Vinci de Europa en Ariane 6 usan el mismo enfoque de sangría para etapas superiores. Donde la combustión escalonada persigue el desempeño puro, el ciclo expansor persigue la confiabilidad y capacidad de reinicio para el trabajo silencioso y preciso de colocar una carga útil exactamente donde pertenece.",
+    "new": "El clásico es el RL10, que voló por primera vez en Centaur en 1962 y sigue en producción — una de las trayectorias más largas de cualquier motor. Ese techo de empuje se aplica al ciclo totalmente cerrado; pasar a la variante de expansor con sangrado lo rompe. El sangrado toma una parte del gas calentado para mover la turbina y luego la expulsa por la borda en lugar de dirigirlo todo a la cámara — se renuncia a un poco de Isp a cambio de mucha más potencia. El LE-9 de Japón muestra hasta dónde se puede llegar: un motor de expansor con sangrado que produce 1.471 kN e impulsa la primera etapa del H3, algo que un expansor cerrado nunca podría hacer. Su hermano LE-5B y el Vinci europeo del Ariane 6 usan el mismo enfoque de sangrado para etapas superiores. Donde la combustión en etapas persigue el rendimiento puro, el ciclo expansor persigue la fiabilidad y la capacidad de reinicio para el trabajo discreto y preciso de dejar una carga útil exactamente donde debe estar."
+  },
+  {
+    "rel": "science/propulsion/expander-cycle.json",
+    "at": "diagram_caption",
+    "old": "El combustible criogénico se calienta en gas en los canales de enfriamiento de la tobera, impulsa la turbobomba, luego arde en la cámara. El ciclo cerrado (RL10) retiene todo el gas; expansor-sangría (LE-5B, LE-9) expulsa una fracción para elevar el techo de empuje.",
+    "new": "El combustible criogénico se calienta hasta convertirse en gas en los canales de enfriamiento de la tobera, mueve la turbobomba y después arde en la cámara. El ciclo cerrado (RL10) conserva todo el gas; el expansor con sangrado (LE-5B, LE-9) expulsa una fracción para elevar el techo de empuje."
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "intro_sentence",
+    "old": "Cinco combinaciones de propelentes cubren casi todo vuelo orbital de la historia. Cada una es un compromiso entre Isp, densidad, almacenamiento, manejo y lo que puede fabricarse en Marte.",
+    "new": "Cinco combinaciones de propelentes cubren casi todos los vuelos orbitales realizados. Cada una es un compromiso entre impulso específico, densidad, almacenabilidad, manipulación y lo que puede fabricarse en Marte."
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.0",
+    "old": "El kerolox (queroseno + oxígeno líquido) es el caballo de tiro del lanzamiento orbital. El queroseno es una calidad estrictamente especificada llamada RP-1 (Rocket Propellant 1) — queroseno de aviación ordinario, refinado para quitar ceras + azufre que cokerían un motor, y desprovisto de alquenos que polimerizan bajo calor. LOX cargado subenfriado. La combinación da Isp moderado (~300 s nivel mar, ~340 vacío), alta densidad (tanques pequeños) y manejo limpio en tierra. Primer etapa Saturn V, Falcon 9, Atlas V, Soyuz, Long March 2/3/4, etapas superiores del PSLV indio son todos kerolox. Inconveniente: hollín — el queroseno arde sucio, coquiza el interior del motor y limita reutilización. Merlin lo sortea con presiones de cámara bien debajo del sweet-spot de combustión escalonada.",
+    "new": "El kerolox (queroseno + oxígeno líquido) es el caballo de batalla del lanzamiento orbital. El queroseno es una calidad estrictamente especificada llamada RP-1 (Rocket Propellant 1) — queroseno de aviación ordinario, refinado para eliminar las ceras y el azufre que coquizarían un motor cohete, y despojado de los alquenos que polimerizan con el calor. El LOX se carga enfriado. La combinación da un Isp moderado (~300 s a nivel del mar, ~340 en vacío), una densidad alta (los tanques se mantienen pequeños) y una manipulación limpia en tierra. La primera etapa del Saturn V, Falcon 9, Atlas V, Soyuz, Long March 2/3/4 y las etapas superiores del PSLV indio son todos kerolox. El inconveniente es el hollín: el queroseno arde sucio, coquiza el interior del motor y limita la reutilización — Merlin lo esquiva con presiones de cámara a nivel del mar muy por debajo del punto óptimo de la combustión en etapas."
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.1",
+    "old": "Hidrolox (hidrógeno líquido + oxígeno líquido) es el par químico de mayor Isp específico que la humanidad usa (~450 s en vacío en RS-25). El hidrógeno arde convirtiéndose en agua, sin hollín. La penalización es la densidad: el H₂ líquido tiene aproximadamente 70 kg/m³ frente a los 800 kg/m³ del queroseno, por lo que el depósito de combustible es enorme y la mayor parte del cohete se convierte en aislamiento. Por tanto, el hidrolox es un propelente de *etapa superior* para casi todos los lanzadores (Centaur, DCSS, ICPS, las etapas superiores de Ariane 5/6, Long March 5, H-IIA) y solo se utiliza a escala de propulsores donde el Isp extremo se paga en tamaño del vehículo — Saturn V S-II + S-IVB, depósito externo del Space Shuttle + RS-25, núcleo del SLS, núcleo Vulcain de Ariane 5. La evaporación es el dolor de cabeza operativo: el H₂ líquido a 20 K no puede permanecer en la plataforma de lanzamiento durante mucho tiempo.",
+    "new": "El hidrolox (hidrógeno líquido + oxígeno líquido) es el par químico de mayor Isp que vuela la humanidad (~450 s en vacío con el RS-25). El hidrógeno arde y se convierte en agua, sin hollín. La penalización es la densidad: el H₂ líquido tiene unos 70 kg/m³ frente a los 800 kg/m³ del queroseno, de modo que el depósito de combustible es enorme y la mayor parte del cohete acaba siendo aislamiento. Por eso el hidrolox es un propelente de *etapa superior* para casi todos los lanzadores (Centaur, DCSS, ICPS, las etapas superiores de Ariane 5/6, Long March 5, H-IIA) y solo se usa a escala de primera etapa cuando el Isp extremo se paga con el tamaño del vehículo — Saturn V S-II + S-IVB, depósito externo del Space Shuttle + RS-25, etapa central del SLS, núcleo Vulcain del Ariane 5. La evaporación es el dolor de cabeza operativo: el H₂ líquido a 20 K no puede esperar mucho tiempo en la plataforma de lanzamiento."
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.2",
+    "old": "El metalox (metano líquido + LOX) es el recién llegado, operacional con Raptor en Starship (2023) y Zhuque-2 (2023, primero en órbita), y viene en Vulcan (BE-4), Neutron y Terran R. Tres propiedades lo hacen interesante. Una: densidad del metano ~420 kg/m³ — ~6× el hidrógeno, tanque razonable. Dos: arde lo bastante limpio para ser reutilizable (sin coque como RP-1). Tres: metano y oxígeno pueden ambos fabricarse en Marte desde CO₂ atmosférico + hielo vía reacción de Sabatier — toda la arquitectura SpaceX-Marte se apoya ahí. Isp entre kerolox e hidrolox (~330 s nivel mar, ~380 vacío), valor sweet-spot para vehículo clase single-stage-to-orbit.",
+    "new": "El metalox (metano líquido + LOX) es el recién llegado: ya operativo con el Raptor en Starship (2023) y con el Zhuque-2 (2023, el primero en llegar a órbita), y en camino en el Vulcan (BE-4), el Neutron y el Terran R. Tres propiedades lo hacen interesante. Primera: la densidad del metano es de ~420 kg/m³, unas 6 veces la del hidrógeno, así que el tanque es razonable. Segunda: arde lo bastante limpio como para ser reutilizable (sin coquización, como la del RP-1). Tercera: tanto el metano como el oxígeno pueden fabricarse en Marte a partir del CO₂ atmosférico y del hielo mediante la reacción de Sabatier; toda la arquitectura de SpaceX para Marte se apoya en esto. Su Isp queda entre el del kerolox y el del hidrolox (~330 s a nivel del mar, ~380 en vacío), un valor intermedio óptimo para un vehículo de clase monoetapa a órbita."
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.3",
+    "old": "Los propulsores hipergólicos (la familia almacenable) se encienden espontáneamente al contacto — sin chispa, sin precámara. El par canónico es UDMH (dimetilhidrazina asimétrica) o MMH (monometilhidrazina) como combustible con N₂O₄ (tetróxido de dinitrógeno) como oxidante. Son contaminantes: UDMH es un carcinógeno, N₂O₄ es tóxico agudo, ambos pueden permanecer en un tanque sellado durante años. La combinación impulsó todos los módulos de servicio Apollo, todos los motores de ascenso y descenso del Apollo LM, todos los encendidos del OMS del Space Shuttle, la propulsión orbital del Soyuz y Progress, y el motor principal de casi todas las sondas de espacio profundo chinas, rusas e indias. La razón: ignición instantánea cada vez, vida útil de una década, sin tuberías criogénicas. Las misiones occidentales modernas han intentado eliminarlas progresivamente (Draco de Dragon funciona con mezclas monopropulsoras más seguras, los propulsores de gas frío de JWST usan hidrazina sola) pero la mayoría de la propulsión de espacio profundo sigue siendo hipergólica.",
+    "new": "Los propelentes hipergólicos (la familia almacenable) se encienden espontáneamente al contacto — sin chispa, sin precámara. El par canónico es UDMH (dimetilhidrazina asimétrica) o MMH (monometilhidrazina) como combustible, con N₂O₄ (tetróxido de dinitrógeno) como oxidante. Son muy sucios: el UDMH es cancerígeno, el N₂O₄ es de toxicidad aguda, y ambos pueden permanecer años en un tanque sellado. Esta combinación movió todos los módulos de servicio Apollo, todos los motores de ascenso y descenso del módulo lunar Apollo, todos los encendidos del OMS del Space Shuttle, las maniobras orbitales de Soyuz y Progress, y el motor principal de casi todas las sondas de espacio profundo chinas, rusas e indias. La razón: ignición instantánea siempre, una vida útil en almacén de décadas, sin tuberías criogénicas. Las misiones occidentales modernas han intentado abandonarlos (el Draco de Dragon funciona con mezclas monopropelentes más seguras, los propulsores de gas frío del JWST usan solo hidrazina), pero la mayor parte de la propulsión de espacio profundo sigue siendo hipergólica."
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "body_paragraphs.4",
+    "old": "Los propelentes sólidos son un único bloque moldeado de aglutinante gomoso (HTPB, base polibutadieno) cargado de perclorato de amonio (oxidante) + polvo de aluminio (aditivo combustible de alta energía). El grano se moldea alrededor de un núcleo hueco cuya sección fija el perfil de velocidad de combustión — núcleo en estrella da empuje largo y parejo, núcleo cilíndrico da perfil regresivo (decreciente). Una vez encendido, no se detiene ni se modula; solo se elige cómo se moldeó el grano. Isp bajo (~250 s) pero empuje enorme y hardware simple: boosters SLS producen 16 MN cada uno, más que cuatro Merlin Vacuum. Space Shuttle SRBs, Ariane 6 P120C, todo ICBM, primer etapa de PSLV indio, todo misil aire-aire, y la mayoría de etapas de impulso CubeSat son sólidos.",
+    "new": "Los propelentes sólidos son un único bloque moldeado de aglutinante gomoso (HTPB, a base de polibutadieno) cargado con perclorato de amonio (el oxidante) y polvo de aluminio (un aditivo combustible de alta energía). El grano se moldea alrededor de un núcleo hueco cuya sección fija el perfil de velocidad de combustión: un núcleo en forma de estrella da un empuje largo y uniforme, y uno cilíndrico da un perfil regresivo (decreciente). Una vez encendido, no puedes detenerlo ni regularlo; solo puedes elegir cómo se moldeó el grano al principio. El Isp es bajo (~250 s), pero el empuje es enorme y los componentes son simples: los aceleradores del SLS producen 16 MN cada uno, más que cuatro Merlin Vacuum. Los SRB del Space Shuttle, el P120C del Ariane 6, todos los ICBM, la primera etapa del PSLV indio, todos los misiles aire-aire y la mayoría de las etapas de impulso de CubeSats son sólidos."
+  },
+  {
+    "rel": "science/propulsion/fuels-and-oxidizers.json",
+    "at": "diagram_caption",
+    "old": "Cinco familias: kerolox (caballo de tiro de primer etapa), hidrolox (etapas superiores de alto Isp + núcleos pesados), metalox (reutilizable + fabricable en Marte), hipergólicos (larga estantería para espacio profundo + maniobra), sólidos (boosters baratos y simples sin modulación).",
+    "new": "Cinco familias: kerolox (caballo de batalla de las primeras etapas), hidrolox (etapas superiores de alto Isp + etapas centrales pesadas), metalox (reutilizable + fabricable en Marte), hipergólicos (larga vida útil en almacén para espacio profundo + maniobras), sólidos (aceleradores baratos y simples, sin regulación)."
+  },
+  {
+    "rel": "science/propulsion/fusion-propulsion.json",
+    "at": "intro_sentence",
+    "old": "La fusión de núcleos atómicos ligeros libera mucha más energía por kilogramo que cualquier reacción química, haciendo de la propulsión por fusión el camino más creíble hacia el tránsito interestelar de alta velocidad.",
+    "new": "La fusión de núcleos atómicos ligeros libera por kilogramo mucha más energía que cualquier reacción química, y es el camino más creíble al tránsito interestelar rápido — si alguien logra un motor de fusión, cosa que nadie ha conseguido."
+  },
+  {
+    "rel": "science/propulsion/fusion-propulsion.json",
+    "at": "body_paragraphs.0",
+    "old": "La física es directa. La fusión de deuterio y tritio (o deuterio y helio-3) convierte una pequeña fracción de su masa directamente en energía. El rendimiento por kilogramo es aproximadamente diez millones de veces superior al del mejor propelente químico. Traducido en impulso específico, un motor de fusión podría alcanzar decenas de miles a cientos de miles de segundos — comparado con los mejores motores químicos a 450 s y los mejores motores iónicos a 9.000 s. Esa diferencia es la que existe entre un viaje interestelar de siglos y uno medido en décadas.",
+    "new": "La física es directa. La fusión de deuterio y tritio (o de deuterio y helio-3) convierte directamente en energía una pequeña fracción de su masa. El rendimiento por kilogramo es aproximadamente diez millones de veces el del mejor propelente químico. Traducido a impulso específico, un motor de fusión podría alcanzar de decenas a cientos de miles de segundos, frente a los 450 s del mejor motor químico y los 9.000 s del mejor motor iónico. Esa diferencia separa un viaje interestelar de siglos de uno medido en décadas."
+  },
+  {
+    "rel": "science/propulsion/fusion-propulsion.json",
+    "at": "body_paragraphs.1",
+    "old": "El estudio de ingeniería más detallado hasta la fecha es el Proyecto Daedalus, realizado por la Sociedad Interplanetaria Británica en los años 70. El diseño utilizaba fusión de confinamiento inercial: pellets de deuterio y helio-3 encendidos por haces de electrones, aproximadamente 250 veces por segundo, en una cámara de reacción magnética. La nave resultante habría tenido una masa de aproximadamente 54 000 toneladas en el lanzamiento —casi totalmente propelente— y habría alcanzado aproximadamente el 12 % de la velocidad de la luz, llegando a la estrella de Barnard (5,9 años luz de distancia) en unos 50 años, como un sobrevuelo sin desaceleración. El Proyecto Icarus, un estudio de continuación iniciado en 2009, revisó el diseño con la restricción de permitir desaceleración al llegar; encontró que los requisitos de masa eran aún más difíciles de cerrar.",
+    "new": "El estudio de ingeniería más detallado hasta la fecha es el Project Daedalus, realizado por la Sociedad Interplanetaria Británica en los años 70. El diseño usaba fusión por confinamiento inercial: gránulos de deuterio y helio-3 encendidos por haces de electrones, unas 250 veces por segundo, en una cámara de reacción magnética. La nave resultante habría tenido una masa de unas 54 000 toneladas en el lanzamiento —casi todo propelente— y habría alcanzado aproximadamente el 12 % de la velocidad de la luz, llegando a la Estrella de Barnard (a 5,9 años luz) en unos 50 años, en un sobrevuelo sin desaceleración. El Project Icarus, un estudio posterior iniciado en 2009, revisó el diseño con la condición de poder frenar al llegar; halló que los requisitos de masa seguían siendo más difíciles de cuadrar."
+  },
+  {
+    "rel": "science/propulsion/fusion-propulsion.json",
+    "at": "body_paragraphs.2",
+    "old": "La barrera es fundamental, no incremental. Ningún reactor de fusión en la Tierra ha producido aún más energía de la que consumió — el tan buscado umbral de 'encendido' fue cruzado en la National Ignition Facility en diciembre de 2022 para el confinamiento inercial impulsado por láser, pero la producción neta sostenida y positiva a escala útil sigue sin resolverse. Escalar eso a un motor de peso de vuelo que dispare cientos de veces por segundo es un problema diferente. El combustible de helio-3 que Daedalus requería no existe en cantidades útiles en la Tierra y tendría que ser extraído de los planetas exteriores — en sí mismo un proyecto de escala civilizatoria.",
+    "new": "La barrera es fundamental, no incremental. Ningún reactor de fusión en la Tierra ha producido aún más energía de la que consumió — el tan buscado umbral de «ignición» se superó en la National Ignition Facility en diciembre de 2022 con confinamiento inercial por láser, pero la producción neta positiva y sostenida a escala útil sigue sin resolverse. Llevar eso a un motor con peso apto para el vuelo que dispare cientos de veces por segundo es otro problema distinto. El helio-3 que requería Daedalus no existe en cantidades útiles en la Tierra y habría que extraerlo de los planetas exteriores — un proyecto que ya de por sí tendría la escala de una civilización."
+  },
+  {
+    "rel": "science/propulsion/fusion-propulsion.json",
+    "at": "body_paragraphs.3",
+    "old": "Los dos principales enfoques de confinamiento tienen cada uno sus dificultades. El confinamiento magnético (tokamaks, esteladores) requiere imanes superconductores y control sostenido del plasma; ITER, el tokamak internacional en construcción en Francia, está diseñado para demostrar ganancia de energía pero no producirá electricidad. El confinamiento inercial requiere impulsores — láseres o haces de partículas — lo suficientemente potentes para comprimir el combustible a condiciones estelares; el encendido conseguido en NIF requirió una cápsula cuidadosamente diseñada y está lejos de la tasa de repetición que un sistema de propulsión necesita. Ninguno de los dos enfoques tiene una trayectoria de ingeniería clara hacia una aplicación de propulsión.",
+    "new": "Los dos grandes enfoques de confinamiento tienen cada uno sus dificultades. El confinamiento magnético (tokamaks, estelaradores) requiere imanes superconductores y un control sostenido del plasma; ITER, el tokamak internacional en construcción en Francia, está diseñado para demostrar ganancia neta de energía, pero no producirá electricidad. El confinamiento inercial requiere sistemas de impulsión — láseres o haces de partículas — lo bastante potentes para comprimir el combustible hasta condiciones estelares; la ignición lograda en NIF exigió una cápsula diseñada con precisión y está lejos de la frecuencia de repetición que necesita un sistema de propulsión. Ninguno de los dos enfoques tiene un camino de ingeniería claro hacia una aplicación de propulsión."
+  },
+  {
+    "rel": "science/propulsion/fusion-propulsion.json",
+    "at": "body_paragraphs.4",
+    "old": "La propulsión por fusión es físicamente sólida y matemáticamente atractiva. No es ciencia ficción de ingeniería — los números funcionan en papel — pero no tiene hardware operativo, ninguna fuente de energía neta demostrada de la que extraer energía, y ningún cronograma. Cualquier concepto de misión que dependa de ella es, honestamente, un estudio de lo que se hace posible si alguna vez se resuelve el problema de la fusión.",
+    "new": "La propulsión por fusión es físicamente sólida y matemáticamente atractiva. No es ficción técnica — los números funcionan sobre el papel —, pero no hay ningún componente que funcione, ninguna fuente demostrada de energía neta de la que alimentarse, ni calendario alguno. Cualquier concepto de misión que dependa de ella es, con franqueza, un estudio de lo que sería posible si alguna vez se resuelve el problema de la fusión."
+  },
+  {
+    "rel": "science/propulsion/fusion-propulsion.json",
+    "at": "diagram_caption",
+    "old": "Escalera de impulso específico desde cohetes sólidos (250 s) hasta químicos LH2/LOX (450 s) hasta motores iónicos (9.000 s) hasta motores de fusión proyectados (decenas de miles a cientos de miles de segundos) — cada escalón un salto cualitativo en lo que las distancias interplanetarias e interestelares cuestan en masa de propelente.",
+    "new": "Escalera de impulso específico, desde los cohetes sólidos (250 s) hasta los químicos LH2/LOX (450 s), los motores iónicos (9.000 s) y los motores de fusión proyectados (de decenas a cientos de miles de segundos): cada peldaño es un salto cualitativo en lo que cuestan, en masa de propelente, las distancias interplanetarias e interestelares."
+  },
+  {
+    "rel": "science/propulsion/gas-generator.json",
+    "at": "intro_sentence",
+    "old": "Quemar una pequeña porción de propulsor en una cámara lateral, usar el gas caliente para impulsar las turbobombas y expulsarlo. Desperdicia algo de rendimiento, pero es simple, robusto y el método más usado en motores cohete.",
+    "new": "Se quema una pizca de propelente en una cámara lateral, el gas caliente mueve las turbobombas y se arroja por la borda. Cuesta algo de rendimiento, pero es simple, robusto y la forma más extendida de construir un motor cohete."
+  },
+  {
+    "rel": "science/propulsion/gas-generator.json",
+    "at": "body_paragraphs.0",
+    "old": "Todo motor alimentado por bombas tiene el mismo problema: para forzar propulsor en una cámara de combustión a centenares de atmósferas, necesitas turbobombas, y para girarlas necesitas una fuente de energía. El ciclo de generador de gas lo resuelve de forma directa. Un pequeño porcentaje del combustible y oxidante se desvía y se quema en una cámara pequeña separada —el generador de gas— produciendo un flujo de gas caliente que impulsa una turbina en el eje de la bomba. Como ese gas ya ha cumplido su función antes de llegar a la cámara principal, simplemente se expulsa al exterior, normalmente a través de una tobera de escape separada o se introduce en la falda de la tobera donde la presión ya es baja. Esto lo convierte en un ciclo *abierto*: parte del propulsor abandona el motor sin pasar por la cámara de combustión principal.",
+    "new": "Todo motor alimentado por bombas tiene el mismo problema: para forzar el propelente dentro de una cámara de combustión a centenares de atmósferas necesitas turbobombas, y para hacerlas girar necesitas una fuente de energía. El ciclo de generador de gas lo resuelve por la vía directa. Un pequeño porcentaje del combustible y del oxidante se desvía y se quema en otra cámara pequeña —el generador de gas—, que produce un flujo de gas caliente que mueve una turbina en el eje de la bomba. Como ese gas ya ha cumplido su función antes de llegar a la cámara principal, simplemente se arroja por la borda, normalmente por un conducto de escape aparte o hacia la falda de la tobera, donde la presión ya es baja. Eso lo convierte en un ciclo *abierto*: parte del propelente abandona el motor sin pasar por la cámara de combustión principal."
+  },
+  {
+    "rel": "science/propulsion/gas-generator.json",
+    "at": "body_paragraphs.1",
+    "old": "La mayoría de generadores de gas funcionan deliberadamente con exceso de combustible, porque una llama estequiométrica fundiría los álabes de la turbina; algunos motores soviéticos antiguos, incluyendo el RD-107 y RD-108, hacen girar sus turbinas con vapor procedente de la descomposición catalítica de peróxido de hidrógeno. De cualquier forma, la temperatura de entrada en la turbina es el número limitante del diseño —limita con qué intensidad puedes impulsar las bombas y, por tanto, la presión de cámara que el motor puede alcanzar. La expulsión al exterior cuesta algunos segundos de impulso específico comparado con un ciclo cerrado, ya que ese propulsor produce poco empuje útil. Para una primera etapa, donde el empuje bruto y el bajo coste importan más que los últimos segundos de Isp, ese compromiso casi siempre vale la pena.",
+    "new": "La mayoría de los generadores de gas funcionan deliberadamente con exceso de combustible, porque una llama estequiométrica fundiría los álabes de la turbina; algunos de los primeros motores soviéticos, incluidos el RD-107 y el RD-108, hacen girar sus turbinas con vapor procedente de peróxido de hidrógeno descompuesto catalíticamente. En cualquier caso, la temperatura de entrada a la turbina es el parámetro limitante del diseño: fija hasta dónde puedes forzar las bombas y, por tanto, la presión de cámara que puede alcanzar el motor. La descarga por la borda cuesta unos pocos segundos de impulso específico frente a un ciclo cerrado, ya que ese propelente produce poco empuje útil. Para una primera etapa, donde el empuje bruto y el bajo coste importan más que los últimos segundos de Isp, ese compromiso casi siempre compensa."
+  },
+  {
+    "rel": "science/propulsion/gas-generator.json",
+    "at": "body_paragraphs.2",
+    "old": "El resultado es el ciclo que ha volado en más equipamiento que ningún otro: el F-1 del Saturno V, el Merlin 1D del Falcon 9, los RD-107 y RD-108 de la familia R-7 / Soyuz, el Vikas de India, el Viking de Europa y el RS-68 de NASA son todos motores de generador de gas. Sus virtudes son exactamente las que importan a un operador de lanzamiento —menos modos de fallo, menor coste de desarrollo, condiciones suaves de la turbina y fácil reinicio y regulación. Cuando los ingenieros quieren el máximo rendimiento, en cambio, cierran el ciclo, que es la historia de la combustión por etapas y el ciclo expansor.",
+    "new": "El resultado es el ciclo que ha volado en más máquinas que ningún otro: el F-1 del Saturn V, el Merlin 1D del Falcon 9, los RD-107 y RD-108 de la familia R-7 / Soyuz, el Vikas de India, el Viking de Europa y el RS-68 de la NASA son todos motores de generador de gas. Sus virtudes son justo las que le importan a un operador de lanzamiento: menos modos de fallo, menor coste de desarrollo, condiciones benignas en la turbina y facilidad de reinicio y de regulación. Cuando los ingenieros buscan el máximo rendimiento, cierran el ciclo, y esa es la historia de la combustión en etapas y del ciclo expansor."
+  },
+  {
+    "rel": "science/propulsion/gas-generator.json",
+    "at": "diagram_caption",
+    "old": "Ciclo abierto: un generador de gas (GG) con exceso de combustible impulsa la turbobomba, luego su escape se expulsa al exterior —ese propulsor expulsado es el pequeño precio de Isp pagado por un motor simple y robusto.",
+    "new": "Ciclo abierto: un generador de gas (GG) con exceso de combustible mueve la turbobomba y luego su escape se arroja por la borda; ese propelente desechado es el pequeño precio en Isp que se paga por un motor simple y robusto."
+  },
+  {
+    "rel": "science/propulsion/ion-drive.json",
+    "at": "title",
+    "old": "Ion Drives — el empuje lento que nunca se detiene",
+    "new": "Motores iónicos — el empuje lento que nunca se detiene"
+  },
+  {
+    "rel": "science/propulsion/ion-drive.json",
+    "at": "intro_sentence",
+    "old": "Los motores iónicos consiguen impulsos específicos 10–30 veces superiores a los cohetes químicos al acelerar gas ionizado eléctricamente en lugar de quemarlo, al costo de un empuje muy bajo medido en milinewtons, no meganewtons.",
+    "new": "Los motores iónicos logran impulsos específicos de 10 a 30 veces superiores a los de los cohetes químicos al acelerar gas ionizado eléctricamente en lugar de quemarlo, a costa de un empuje muy bajo: milinewtons, no meganewtons."
+  },
+  {
+    "rel": "science/propulsion/ion-drive.json",
+    "at": "body_paragraphs.0",
+    "old": "Todos los motores cohete intercambian masa de propulsor por velocidad. Cuanto más rápido sale el propulsor por la tobera, menos propulsor necesitas para un cambio de velocidad dado, que es lo que mide el impulso específico (Isp). Los motores químicos están limitados por la temperatura de la llama: la combinación de propulsor más caliente práctica, hidrógeno líquido y oxígeno, alcanza alrededor de 450 segundos de Isp. Los motores iónicos evitan completamente ese límite. Ionizan un propulsor —típicamente xenón, elegido por su masa atómica pesada e inercia química— y aceleran los iones eléctrica o magnéticamente a velocidades de escape de 20–100 km/s, dando valores de Isp de aproximadamente 3.000 a 10.000 segundos.",
+    "new": "Todos los motores cohete intercambian masa de propelente por velocidad. Cuanto más rápido sale el escape por la tobera, menos propelente necesitas para un cambio de velocidad dado, y eso es lo que mide el impulso específico (Isp). Los motores químicos están limitados por la temperatura de la llama: la combinación práctica de propelentes más caliente, hidrógeno y oxígeno líquidos, alcanza unos 450 segundos de Isp. Los motores iónicos esquivan por completo ese límite. Ionizan un propelente —por lo general xenón, elegido por su elevada masa atómica y su inercia química— y aceleran los iones eléctrica o magnéticamente hasta velocidades de escape de 20–100 km/s, lo que da valores de Isp de aproximadamente 3.000 a 10.000 segundos."
+  },
+  {
+    "rel": "science/propulsion/ion-drive.json",
+    "at": "body_paragraphs.1",
+    "old": "Dos diseños dominan el uso en vuelo. Los motores iónicos con rejilla (como el NSTAR de la NASA) utilizan un par de rejillas de metal cargadas para acelerar iones en un haz; el haz se neutraliza con un cañón de electrones para evitar que la nave acumule carga. Los propulsores de efecto Hall confinen electrones en un anillo magnético cerca de la salida, y esos electrones ionizan y aceleran el propulsor —una disposición más simple sin rejillas que se erosionan, lo que es por qué los propulsores de efecto Hall se han convertido en el estándar para el mantenimiento de estación de satélites comerciales. NSTAR voló en Deep Space 1 y en Dawn; NEXT-C de la NASA, un motor de rejilla más grande, voló en la misión DART en 2021.",
+    "new": "Dos diseños dominan el uso en vuelo. Los motores iónicos de rejilla (como el NSTAR de la NASA) usan un par de rejillas metálicas cargadas para acelerar los iones en un haz; un cañón de electrones neutraliza el haz para evitar que la nave acumule carga. Los propulsores de efecto Hall confinan electrones en un anillo magnético cerca de la salida, y esos electrones ionizan y aceleran el propelente: una disposición más simple, sin rejillas que se erosionen, y por eso los propulsores Hall se han convertido en el estándar para el mantenimiento orbital de los satélites comerciales. El NSTAR voló en Deep Space 1 y en Dawn; el NEXT-C de la NASA, un motor de rejilla más grande, voló en la misión DART en 2021."
+  },
+  {
+    "rel": "science/propulsion/ion-drive.json",
+    "at": "body_paragraphs.2",
+    "old": "Los números de empuje son sobrecogadores. Un propulsor de efecto Hall de punta de lanza de 12 kW produce aproximadamente 0,6 newtons, aproximadamente el peso de una pequeña manzana. No puedes levantar un lápiz de un escritorio con un motor iónico. Lo que puedes hacer es ejecutarlo continuamente durante meses o años, porque la carga de propulsor es pequeña y la energía proviene de paneles solares. Los tres motores NSTAR de Dawn funcionaron durante un total de 2.009 días en vuelo, acumulando un cambio de velocidad de aproximadamente 11,5 km/s —más que cualquier nave anterior por fracción de propulsor únicamente. Esto fue suficiente para frenar en órbita alrededor de Vesta, escapar de ella, y luego frenar en órbita alrededor de Ceres: una hazaña químicamente posible solo con una carga de propulsor prohibitivamente grande.",
+    "new": "Las cifras de empuje son aleccionadoras. Un propulsor Hall de última generación de 12 kW produce unos 0,6 newtons, aproximadamente el peso de una manzana pequeña. Con un motor iónico no puedes levantar un lápiz de un escritorio. Lo que sí puedes hacer es mantenerlo en funcionamiento sin pausa durante meses o años, porque la carga de propelente es pequeña y la energía procede de paneles solares. Los tres motores NSTAR de Dawn funcionaron en total 2.009 días en vuelo y acumularon un cambio de velocidad de aproximadamente 11,5 km/s —más que ninguna nave anterior, solo por la fracción de propelente—. Fue suficiente para frenar y entrar en órbita alrededor de Vesta, escapar de ella y luego frenar y entrar en órbita alrededor de Ceres: una hazaña que con propulsión química solo sería posible con una carga de propelente prohibitiva."
+  },
+  {
+    "rel": "science/propulsion/ion-drive.json",
+    "at": "body_paragraphs.3",
+    "old": "La restricción es la energía. En el sistema solar interior, los grandes paneles solares pueden alimentar decenas de kilovatios a un propulsor. Más allá de Júpiter, la luz solar es demasiado débil para la propulsión iónica impulsada por energía solar a niveles de empuje útiles; la alternativa es un reactor nuclear, que ninguna misión de propulsión eléctrica ha utilizado aún en el espacio profundo. A altos niveles de empuje, los motores iónicos también responden más lentamente que los propulsores químicos, lo que limita su uso para el control de actitud o maniobras de aborto. Son un motor de crucero, no un motor de lanzamiento —cada nave impulsada por iones en la historia montó primero un cohete químico a órbita o velocidad de escape. Ver también: /science/propulsion/specific-impulse para los números en contexto, y /science/propulsion/tsiolkovsky para entender por qué la alta velocidad de escape reduce la masa de propulsor de manera tan dramática.",
+    "new": "La limitación es la potencia. En el sistema solar interior, los grandes paneles solares pueden alimentar a un propulsor con decenas de kilovatios. Más allá de Júpiter, la luz solar es demasiado débil para una propulsión iónica solar con niveles de empuje útiles; la alternativa es un reactor nuclear, que ninguna misión de propulsión eléctrica ha usado aún en el espacio profundo. Con niveles de empuje altos, los motores iónicos también responden más despacio que los propulsores químicos, lo que limita su uso para el control de actitud o para maniobras de aborto. Son un motor de crucero, no de lanzamiento: todas las naves impulsadas por iones de la historia subieron primero a lomos de un cohete químico hasta la órbita o la velocidad de escape. Véase también: /science/propulsion/specific-impulse para las cifras en contexto, y /science/propulsion/tsiolkovsky para entender por qué una velocidad de escape alta reduce tanto la masa de propelente."
+  },
+  {
+    "rel": "science/propulsion/laser-sail.json",
+    "at": "title",
+    "old": "Laser Sails — impulsar una sonda con un haz desde casa",
+    "new": "Velas láser — impulsar una sonda con un haz desde casa"
+  },
+  {
+    "rel": "science/propulsion/laser-sail.json",
+    "at": "intro_sentence",
+    "old": "La propulsión por haz invierte la lógica habitual: en lugar de transportar combustible, la nave lleva solo una vela reflectante, y toda la energía la suministra un láser o una matriz de microondas dejada atrás en la Tierra u órbita.",
+    "new": "La propulsión por haz invierte la lógica habitual: en lugar de llevar combustible, la nave lleva solo una vela reflectante, y toda la energía la suministra una red de láseres o de microondas que se queda en la Tierra o en órbita."
+  },
+  {
+    "rel": "science/propulsion/laser-sail.json",
+    "at": "body_paragraphs.0",
+    "old": "La idea central es la transferencia de cantidad de movimiento. La luz lleva cantidad de movimiento, y cuando se refleja en una superficie transfiere el doble de esa cantidad a la vela. Un haz lo suficientemente potente puede acelerar una vela ligera a alta velocidad sin que la nave transporte propelente alguno. La ecuación de cohetes de Tsiolkovsky —que penaliza cada gramo de combustible que primero hay que elevar y luego acelerar— no se aplica; no hay escape, no hay depósito de combustible, no hay problema de fracción de masa. La factura energética se queda en casa.",
+    "new": "La idea central es la transferencia de cantidad de movimiento. La luz lleva cantidad de movimiento y, cuando se refleja en una superficie, transfiere a la vela el doble de esa cantidad. Un haz lo bastante potente puede acelerar una vela ligera hasta una velocidad alta sin que la nave lleve propelente alguno. La ecuación del cohete de Tsiolkovski —que penaliza cada gramo de combustible que primero hay que elevar y luego acelerar— no se aplica: no hay gases de escape, ni depósito de combustible, ni problema de fracción de masa. La factura energética se queda en casa."
+  },
+  {
+    "rel": "science/propulsion/laser-sail.json",
+    "at": "body_paragraphs.2",
+    "old": "Las limitaciones son severas y honestas. Primero, deceleración: una vela de láser acelerada al 20% de la velocidad de la luz no tiene forma de frenar en el destino. Breakthrough Starshot está diseñado explícitamente como una misión de paso —recopilación de datos de unas pocas horas en Proxima, sin inserción orbital, sin retorno. Las propias propuestas de Forward para desacelerar utilizaban una segunda vela más grande dejada atrás para reflejar el haz hacia adelante sobre una vela de frenado más pequeña; la masa de ingeniería se escala desfavorablemente. Segundo, comunicación: un transmisor a escala de gramos a 4 años luz debe enviar una señal detectable por los receptores más grandes de la Tierra. El balance de enlace es marginal y requiere que la vela completa de 4 metros funcione también como antena de matriz de fase. Tercero, supervivencia: la vela debe sobrevivir la fase de aceleración (miles de g durante minutos), impactos de polvo interestelar a velocidad relativista, y radiación durante un crucero de 20 años.",
+    "new": "Las limitaciones son serias y hay que decirlas con franqueza. Primera, el frenado: una vela láser acelerada al 20% de la velocidad de la luz no tiene modo de frenar en el destino. Breakthrough Starshot está diseñado explícitamente como una misión de sobrevuelo: unas pocas horas de toma de datos en Próxima Centauri, sin inserción orbital y sin regreso. Las propuestas del propio Forward para frenar usaban una segunda vela, más grande, dejada atrás para reflejar el haz hacia delante sobre una vela de frenado más pequeña; la masa necesaria crece de forma desfavorable. Segunda, la comunicación: un transmisor de escala de gramos a 4 años luz debe enviar una señal que detecten los mayores receptores de la Tierra. El balance del enlace es justo y exige que la vela entera de 4 metros funcione además como antena de red en fase. Tercera, la supervivencia: la vela debe resistir la fase de aceleración (miles de g durante minutos), los impactos de polvo interestelar a velocidad relativista y la radiación durante un crucero de 20 años."
+  },
+  {
+    "rel": "science/propulsion/laser-sail.json",
+    "at": "body_paragraphs.3",
+    "old": "La propia matriz de láser es el desafío de ingeniería más inmediato. 100 gigavatio es aproximadamente la producción de 100 grandes plantas de energía nuclear, enfocado con precisión limitada por difracción a una distancia de millones de kilómetros y mantenido allí durante minutos sin distorsión térmica de la óptica. Ninguna instalación existente o financiada se aproxima a esto. Breakthrough Starshot ha producido estudios técnicos detallados e inversión en investigación relevante (coherencia de láser, materiales de vela, diseño de chips), pero el programa se describe explícitamente como un esfuerzo de desarrollo de tecnología de 30 años, no una misión a corto plazo.",
+    "new": "La propia red de láseres es el desafío de ingeniería más inmediato. 100 gigavatios son aproximadamente la producción de 100 grandes centrales nucleares, enfocados con una precisión limitada por la difracción a una distancia de millones de kilómetros y mantenidos así durante minutos sin que la óptica sufra distorsión térmica. Ninguna instalación existente ni financiada se acerca a eso. Breakthrough Starshot ha producido estudios técnicos detallados y ha financiado investigación pertinente (coherencia del láser, materiales de la vela, diseño de chips), pero el programa se describe explícitamente como un esfuerzo de desarrollo tecnológico de 30 años, no como una misión a corto plazo."
+  },
+  {
+    "rel": "science/propulsion/laser-sail.json",
+    "at": "body_paragraphs.4",
+    "old": "De los tres conceptos de propulsión de horizonte lejano cubiertos en este atlas, las velas de láser son las más estudiadas, las menos dependientes de física sin resolver, y las más cercanas a tener una senda de ingeniería creíble (aunque enormemente ambiciosa). La física no requiere nada más allá de lo que se entiende. La ingeniería requiere una matriz de láser, materiales de vela, y tecnología de chips que aún no existen a la escala requerida. Es el candidato más honesto para 'la cosa más difícil que la humanidad podría llegar a construir algún día' en lugar de 'requiere un milagro'.",
+    "new": "De los tres conceptos de propulsión de horizonte lejano que recoge este atlas, las velas láser son los más estudiados, los que menos dependen de física sin resolver y los más cercanos a tener un camino de ingeniería creíble (aunque enormemente ambicioso). La física no requiere nada que no se comprenda ya. La ingeniería requiere una red de láseres, materiales para la vela y tecnología de chips que aún no existen a la escala necesaria. Es el candidato más honesto a «lo más difícil que la humanidad podría llegar a construir algún día», y no a «requiere un milagro»."
+  },
+  {
+    "rel": "science/propulsion/laser-sail.json",
+    "at": "diagram_caption",
+    "old": "Perfil de aceleración de la vela: un láser de 100 GW empuja una vela de 4 g desde el reposo a 0,2c en aproximadamente 10 minutos a lo largo de ~2 millones de km —después el haz se diverge más allá de la intensidad útil y la sonda navega durante 20 años hacia Próxima Centauri, llegando sin forma de frenar.",
+    "new": "Perfil de aceleración de la vela: un láser de 100 GW empuja una vela de 4 g desde el reposo hasta 0,2c en unos 10 minutos a lo largo de ~2 millones de km; después el haz diverge más allá de la intensidad útil y la sonda avanza por inercia durante 20 años hasta Próxima Centauri, a donde llega sin modo de frenar."
+  },
+  {
+    "rel": "science/propulsion/nuclear-thermal.json",
+    "at": "intro_sentence",
+    "old": "Un cohete nucleotérmico sustituye la cámara de combustión por un reactor de fisión: el hidrógeno se calienta en el núcleo más allá de cualquier llama química y se expande por una tobera — impulso específico doble.",
+    "new": "Un cohete nucleotérmico cambia la cámara de combustión por un reactor de fisión: el hidrógeno se calienta en el núcleo más que en cualquier llama química y se expande por una tobera — casi el doble de impulso específico, con empuje real."
+  },
+  {
+    "rel": "science/propulsion/nuclear-thermal.json",
+    "at": "body_paragraphs.0",
+    "old": "Los motores de cohetes químicos están limitados por la temperatura a la que pueden arder sus propulsantes. La reacción hidrógeno-oxígeno alcanza un pico alrededor de 3.500 K en la cámara de combustión — ya cerca del punto de fusión de la mayoría de los materiales — produciendo un impulso específico de aproximadamente 450 segundos en el vacío. Un cohete nucleotérmico (NTR) no está limitado por una reacción química. El hidrógeno líquido fluye a través de canales en un núcleo de reactor nuclear sólido operando a 2.500–3.000 K, absorbe calor y sale a través de una tobera como un gas muy caliente y muy ligero. Debido a que el hidrógeno es el elemento más ligero, sus moléculas calentadas se mueven rápido y producen alta velocidad de escape. El Isp resultante es de 800–1.000 segundos — más del doble que el químico — mientras que el empuje permanece en el rango de 50–250 kN, muy por encima de cualquier sistema de propulsión eléctrica.",
+    "new": "Los motores cohete químicos están limitados por la temperatura a la que pueden arder sus propelentes. La reacción hidrógeno-oxígeno alcanza su máximo en torno a 3.500 K en la cámara de combustión —ya cerca del punto de fusión de la mayoría de los materiales— y produce un impulso específico de aproximadamente 450 segundos en el vacío. Un cohete nucleotérmico (NTR) no está limitado por una reacción química. El hidrógeno líquido fluye por canales de un núcleo de reactor nuclear sólido que funciona a 2.500–3.000 K, absorbe calor y sale por una tobera como un gas muy caliente y muy ligero. Como el hidrógeno es el elemento más ligero, sus moléculas calentadas se mueven rápido y producen una velocidad de escape alta. El Isp resultante es de 800–1.000 segundos —más del doble que el químico—, mientras que el empuje se mantiene en el rango de 50–250 kN, muy por encima de cualquier sistema de propulsión eléctrica."
+  },
+  {
+    "rel": "science/propulsion/nuclear-thermal.json",
+    "at": "body_paragraphs.1",
+    "old": "Esa combinación — alto Isp con alto empuje — es la brecha que llena el NTR. Los propulsores iónicos ofrecen mayor Isp pero empuje medido en milinewtons; los motores químicos ofrecen alto empuje pero la mitad del Isp. Para misiones que requieren grandes cambios de velocidad rápidamente — particularmente un tránsito tripulado a Marte — la combinación del NTR significa una carga de propulsante sustancialmente menor, un viaje más corto, o ambos. Un tránsito más corto a Marte importa médicamente: menos tiempo en el espacio profundo significa menos dosis de radiación acumulada, que es una de las restricciones más difíciles en una arquitectura tripulada a Marte (ver /essays/going-to-mars).",
+    "new": "Esa combinación —Isp alto con empuje alto— es el hueco que llena el NTR. Los motores iónicos ofrecen un Isp mayor, pero con un empuje medido en milinewtons; los motores químicos ofrecen mucho empuje, pero la mitad de Isp. Para misiones que exigen grandes cambios de velocidad con rapidez —sobre todo un tránsito tripulado a Marte—, la combinación del NTR significa una carga de propelente sustancialmente menor, un viaje más corto, o ambas cosas. Un tránsito más corto a Marte importa desde el punto de vista médico: menos tiempo en el espacio profundo supone menos dosis acumulada de radiación, una de las restricciones más duras de una arquitectura tripulada a Marte (véase /essays/going-to-mars)."
+  },
+  {
+    "rel": "science/propulsion/nuclear-thermal.json",
+    "at": "body_paragraphs.2",
+    "old": "La historia de ingeniería es inusualmente completa para una tecnología que nunca ha volado. El programa estadounidense NERVA/Rover (1955–1973) construyó y probó en tierra 22 configuraciones de reactor en Jackass Flats, Nevada. El motor Phoebus-2A en 1968 funcionó a 4.100 MW térmicos durante más de 12 minutos — suficiente para levantar el motor del soporte con su propio empuje. NERVA XE-Prime demostró una configuración de motor de peso de vuelo. La gestión del programa estimó que un motor listo para vuelo estaba a dos años de la cancelación del programa en 1973. La Unión Soviética llevó a cabo un programa paralelo (RD-0410, también llamado IRGIT) que de manera similar produjo hardware de prueba funcional sin volar.",
+    "new": "La historia de ingeniería es inusualmente completa para una tecnología que nunca ha volado. El programa estadounidense NERVA/Rover (1955–1973) construyó y probó en tierra 22 configuraciones de reactor en Jackass Flats, Nevada. El motor Phoebus-2A funcionó en 1968 a 4.100 MW térmicos durante más de 12 minutos: suficiente para levantar el motor del soporte con su propio empuje. NERVA XE-Prime demostró una configuración de motor con peso de vuelo. La dirección del programa calculó que un motor listo para volar estaba a menos de dos años de distancia cuando se canceló el programa en 1973. La Unión Soviética llevó un programa paralelo (RD-0410, también llamado IRGIT) que igualmente produjo componentes de prueba operativos sin llegar a volar."
+  },
+  {
+    "rel": "science/propulsion/nuclear-thermal.json",
+    "at": "body_paragraphs.3",
+    "old": "El programa DRACO (Demonstration Rocket for Agile Cislunar Operations) de DARPA y NASA tenía como objetivo demostrar un motor NTR en órbita a finales de la década de 2020, usando un diseño de uranio de bajo enriquecimiento (LEU) para evitar algunas de las restricciones regulatorias que rodeaban al uranio altamente enriquecido en NERVA. El programa fue cancelado en el presupuesto federal estadounidense de 2026. A partir de 2026, ningún motor nucleotérmico ha volado. Los obstáculos técnicos son reales pero manejables: masa del reactor, almacenamiento y manejo de hidrógeno, erosión de la tobera a alta temperatura. El bloqueador persistente ha sido político — la aceptación pública de lanzar un reactor nuclear, las obligaciones del tratado bajo el Tratado del Espacio Exterior, y el coste de las pruebas que no pueden realizarse en un banco de pruebas de motor estándar.",
+    "new": "El programa DRACO (Demonstration Rocket for Agile Cislunar Operations) de DARPA y de la NASA se proponía demostrar un motor NTR en órbita a finales de la década de 2020, con un diseño de uranio poco enriquecido (LEU) para sortear parte de las restricciones regulatorias que rodeaban al uranio muy enriquecido de NERVA. El programa se canceló en el presupuesto federal estadounidense de 2026. A fecha de 2026, ningún motor nucleotérmico ha volado. Los obstáculos técnicos son reales pero abordables: la masa del reactor, el almacenamiento y la manipulación del hidrógeno, la erosión de la tobera a alta temperatura. El freno persistente ha sido político: la aceptación pública de lanzar un reactor nuclear, las obligaciones del Tratado del Espacio Exterior y el coste de unas pruebas que no pueden hacerse en un banco de pruebas de motores estándar."
+  },
+  {
+    "rel": "science/propulsion/nuclear-thermal.json",
+    "at": "body_paragraphs.4",
+    "old": "Para misiones no tripuladas al espacio profundo, el NTR compite con propulsores iónicos cada vez más capaces, que son más baratos de desarrollar y no conllevan ninguna carga regulatoria nuclear. El nicho donde el NTR es más difícil de reemplazar es una misión tripulada a Marte con una ventana de lanzamiento ajustada y una tripulación que no puede pasar tres años en tránsito. Si esa misión alguna vez ocurre, y si el NTR es elegido para ella sobre otras opciones, permanece abierto. Ver también: /science/propulsion/specific-impulse para ver cómo se comparan 800 s entre tipos de motores, y /science/propulsion/tsiolkovsky para entender por qué duplicar el Isp tiene un efecto tan dramático en la fracción de propulsante requerida.",
+    "new": "Para misiones no tripuladas al espacio profundo, el NTR compite con motores iónicos cada vez más capaces, que son más baratos de desarrollar y no cargan con ninguna traba regulatoria nuclear. El nicho donde al NTR le cuesta más ser sustituido es una misión tripulada a Marte con una ventana de lanzamiento ajustada y una tripulación que no puede pasar tres años en tránsito. Que esa misión llegue a realizarse algún día, y que se elija el NTR para ella frente a otras opciones, sigue siendo una incógnita. Véase también: /science/propulsion/specific-impulse para ver cómo se compara 800 s entre tipos de motor, y /science/propulsion/tsiolkovsky para entender por qué duplicar el Isp tiene un efecto tan drástico en la fracción de propelente necesaria."
+  },
+  {
+    "rel": "science/propulsion/nuclear-thermal.json",
+    "at": "diagram_caption",
+    "old": "Esquema de NTR: hidrógeno líquido bombeado a través de reactor de fisión de núcleo sólido a 2.500–3.000 K, expulsado por tobera — Isp ~800–1.000 s, empuje 50–250 kN, sin combustión.",
+    "new": "Esquema del NTR: hidrógeno líquido bombeado a través de un reactor de fisión de núcleo sólido a 2.500–3.000 K y expulsado por una tobera — Isp ~800–1.000 s, empuje 50–250 kN, sin combustión."
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "intro_sentence",
+    "old": "Quema profundo en un pozo gravitatorio y tu combustible hace más trabajo — físicamente el mismo motor produce más energía orbital cuando se mueve rápido.",
+    "new": "Quema en lo más hondo de un pozo gravitatorio y tu combustible rinde más: físicamente, el mismo motor produce más energía orbital cuando se mueve rápido."
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "narrative_101.0",
+    "old": "Aquí va un truco de magia gratis de la física. Imagina que tienes una cantidad específica de combustible para quemar. Puedes encenderlo cuando quieras. ¿Dónde deberías hacerlo? El sentido común dice que no debería importar — mismo combustible, mismo motor, mismo empuje. El sentido común se equivoca.",
+    "new": "Aquí tienes un truco de magia gratuito de la física. Imagina que tienes una cantidad concreta de combustible para quemar. Puedes encenderlo cuando quieras. ¿Dónde deberías hacerlo? El sentido común dice que no debería importar: mismo combustible, mismo motor, mismo empuje. El sentido común se equivoca."
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "narrative_101.1",
+    "old": "Quémalo cuando vayas RÁPIDO y el mismo combustible te da mucha más energía útil que la misma quemada cuando vayas lento. La razón se esconde en el hecho de que la energía cinética va como v² — cuando ya te mueves, un pequeño Δv encima añade proporcionalmente más energía que cuando estás parado. Así que una quemada de 1 km/s en perigeo (yendo a 11 km/s) te da más empuje orbital que la misma quemada de 1 km/s en apogeo (yendo a 1 km/s).",
+    "new": "Quémalo cuando vayas RÁPIDO y el mismo combustible te dará mucha más energía útil que ese mismo encendido a poca velocidad. La razón está en que la energía cinética crece como v²: cuando ya te mueves, un ∆v pequeño añadido suma proporcionalmente más energía que cuando estás parado. Así, un encendido de 1 km/s en el perigeo (a 11 km/s) te da más impulso orbital que el mismo encendido de 1 km/s en el apogeo (a 1 km/s)."
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "narrative_101.2",
+    "old": "Hermann Oberth señaló esto en 1929 y los diseñadores de misión llevan explotándolo desde entonces. La inyección translunar del Apollo ocurrió en perigeo, abrazando la Tierra, yendo lo más rápido posible. Parker Solar Probe quema en el paso más cercano al Sol en cada bucle para zambullirse más profundo la próxima vez. No es energía gratis — el planeta que estás abrazando hace la donación — pero es lo más cerca que llegarás a un almuerzo gratis en astronáutica.",
+    "new": "Hermann Oberth lo señaló en 1929 y los diseñadores de misiones llevan explotándolo desde entonces. La inyección translunar de Apollo se hizo en el perigeo, abrazando la Tierra, a la mayor velocidad posible. Parker Solar Probe enciende su motor en el paso más cercano al Sol de cada vuelta para sumergirse más hondo en la siguiente. No es energía gratis —la regala el planeta al que te pegas—, pero es lo más parecido a una comida gratis que encontrarás en la astronáutica."
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "body_paragraphs.0",
+    "old": "La energía cinética de un cuerpo en movimiento va como `½ m v²`. Un pequeño Δv a alta velocidad produce un cambio mucho mayor en energía cinética que el mismo Δv a baja velocidad. Aplica esto a una quemada de cohete: haz la quemada en periapsis (donde te mueves más rápido) y el mismo propelente produce más ganancia de energía orbital de la que produciría en apoapsis.",
+    "new": "La energía cinética de un cuerpo en movimiento crece como `½ m v²`. Un ∆v pequeño a alta velocidad produce un cambio de energía cinética mucho mayor que el mismo ∆v a baja velocidad. Aplícalo a un encendido de cohete: hazlo en el periapsis (donde te mueves más rápido) y el mismo propelente produce más ganancia de energía orbital que en el apoapsis."
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "body_paragraphs.1",
+    "old": "Hermann Oberth señaló esto en 1929. La implicación para el diseño de misión: programa tus grandes quemadas de Δv donde ya te mueves rápido — en perihelio de la elipse de crucero, en periapsis de un sobrevuelo. Parker Solar Probe quema en perihelio de cada arco solar para caer más profundo hacia el Sol en el siguiente bucle. Juno dispara en periapsis joviano para controlar su órbita científica.",
+    "new": "Hermann Oberth lo señaló en 1929. La consecuencia para el diseño de misiones: programa tus grandes encendidos de ∆v donde ya te mueves rápido, en el perihelio de la elipse de crucero o en el periapsis de un sobrevuelo. Parker Solar Probe enciende su motor en el perihelio de cada arco que pasa junto al Sol para caer más hondo hacia él en la siguiente vuelta. Juno dispara en el periapsis joviano para controlar su órbita científica."
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "body_paragraphs.2",
+    "old": "El compromiso: las quemadas profundas son cortas e intensas; la nave tiene que estar lista para manejar el calor, la presión dinámica y la temporización precisa. No hay almuerzo gratis — pero Oberth te muestra qué almuerzos son más baratos.",
+    "new": "La contrapartida: los encendidos en lo hondo del pozo son breves e intensos; la nave tiene que estar preparada para soportar el calor, la presión dinámica y una sincronización precisa. No hay comida gratis, pero Oberth te muestra cuáles salen más baratas."
+  },
+  {
+    "rel": "science/propulsion/oberth-effect.json",
+    "at": "diagram_caption",
+    "old": "Mismo Δv en periapsis (alto v) produce más ganancia de energía que en apoapsis (bajo v).",
+    "new": "El mismo ∆v en el periapsis (v alta) rinde más ganancia de energía que en el apoapsis (v baja)."
+  },
+  {
+    "rel": "science/propulsion/rocket-stages.json",
+    "at": "intro_sentence",
+    "old": "La ecuación de Tsiolkovski hace posible monoetapa-a-órbita sólo con masa seca imposiblemente ligera. Todo lanzador orbital de la historia ha soltado al menos una etapa. La mayoría sueltan dos o tres.",
+    "new": "La ecuación de Tsiolkovski solo permite llegar a órbita con una sola etapa si la masa seca es imposiblemente ligera. Todos los lanzadores orbitales de la historia han soltado al menos una etapa. La mayoría, dos o tres."
+  },
+  {
+    "rel": "science/propulsion/rocket-stages.json",
+    "at": "body_paragraphs.0",
+    "old": "La razón másica para órbita (~9,4 km/s de ∆v desde un sitio costero) ronda 12–15 con los mejores motores químicos. Eso significa 92–93 % de un vehículo SSTO teórico es propelente; la masa seca — tanques, motores, aviónica, carga útil, hardware de recuperación — debe caber en el 7–8 % restante. Nadie ha construido uno jamás. El programa SSTO X-33 / VentureStar de los 90 cerró cuando el tanque compuesto de hidrógeno falló la prueba de presión. Skylon (UK, basado en SABRE) sigue sobre papel. A Starship a veces se le describe como capaz de SSTO pero vuela como vehículo de dos etapas por muy buenas razones: soltar el booster ahorra masa seca y deja la etapa superior continuar con aceleración mucho mayor. El escalonado es el truco que pasa la ecuación logarítmica del cohete de imposible a sólo difícil.",
+    "new": "La razón de masas para llegar a órbita (~9,4 km/s de ∆v desde una base de lanzamiento costera) ronda 12–15 con los mejores motores químicos. Eso significa que el 92–93 % de un vehículo teórico de una sola etapa a órbita (SSTO) es propelente; la masa seca —tanques, motores, aviónica, carga útil, equipos de recuperación— tiene que caber en el 7–8 % restante. Nadie ha construido uno jamás. El programa SSTO X-33 / VentureStar de los años 90 se cerró cuando el tanque de hidrógeno de material compuesto no superó la prueba de presión. Skylon (Reino Unido, basado en SABRE) sigue sobre el papel. A Starship se la describe a veces como capaz de SSTO, pero vuela como vehículo de dos etapas por muy buenas razones: soltar el propulsor ahorra masa seca y permite que la etapa superior siga con una aceleración mucho mayor, gracias a un TWR más alto. La separación por etapas es el truco que convierte la ecuación logarítmica del cohete de imposible en meramente difícil."
+  },
+  {
+    "rel": "science/propulsion/rocket-stages.json",
+    "at": "body_paragraphs.1",
+    "old": "La arquitectura de dos etapas es el mínimo moderno. Falcon 9 (booster + segunda etapa), Falcon Heavy (booster tri-núcleo + segunda etapa), Starship (Super Heavy + Starship), Electron (kerolox primera + kerolox segunda + a veces una etapa de impulso Curie), Neutron (planeado), Terran R (planeado). El booster hace el levantamiento pesado por la atmósfera baja densa donde el empuje importa más que el Isp; la etapa superior corre a menor TWR en vacío donde el Isp paga. ¿Por qué no tres? Porque cada evento de escalonado es un modo de fallo discreto (pirotecnia de separación, gestión del penacho de hot-staging, escombros del interetapa) y los motores modernos son lo bastante buenos para hacer el burn superior de una vez. Las excepciones suelen ser GTO o interplanetarias donde una etapa de impulso (Star 48, Briz-M, Fregat, YZ-1/2, Centaur como tercera etapa) da un burn final preciso — Voyager, New Horizons, Solar Orbiter, JUICE, todo rover marciano.",
+    "new": "La arquitectura de dos etapas es el mínimo moderno. Falcon 9 (propulsor + segunda etapa), Falcon Heavy (propulsor de tres núcleos + segunda etapa), Starship (Super Heavy + Starship), Electron (primera etapa de kerolox + segunda de kerolox + a veces una etapa de impulso Curie), Neutron (prevista), Terran R (prevista). El propulsor hace el trabajo pesado en la atmósfera baja y densa, donde el empuje importa más que el Isp; la etapa superior trabaja a menor TWR en el vacío, donde el Isp compensa. ¿Por qué no tres? Porque cada evento de separación es un modo de fallo en sí mismo (pirotecnia de separación, gestión de la pluma en la separación en caliente, restos del interetapa) y los motores modernos son lo bastante buenos para hacer el encendido de la etapa superior de una sola vez. Las excepciones suelen ser las misiones a GTO o interplanetarias, donde una etapa de impulso (Star 48, Briz-M, Fregat, YZ-1/2, Centaur como tercera etapa) da un encendido final preciso: Voyager, New Horizons, Solar Orbiter, JUICE, todos los rovers marcianos."
+  },
+  {
+    "rel": "science/propulsion/rocket-stages.json",
+    "at": "body_paragraphs.2",
+    "old": "La arquitectura de tres etapas fue estándar en la era Apollo porque los motores de la época no producían Isp ni empuje suficientes para bajar directo a dos. Saturn V: S-IC booster kerolox (5 × F-1, ~2,5 min), S-II sustentador hidrolox (5 × J-2, ~6 min), S-IVB superior hidrolox (1 × J-2, dos burns — uno para circularizar, uno para inyección translunar). Soyuz aún vuela tres etapas más cuatro boosters strap-on de primera etapa en una arquitectura de 1957 más antigua que el vuelo tripulado mismo. Long March 3B/E y Long March 5 chinos son de 2,5 etapas (núcleo + strap-ons + superior) con etapa de impulso separada para GEO/escape. El PSLV indio es único cuatro-etapas con alternancia sólido-líquido — herencia de un programa de los 70 que carecía de una sola familia de propelente capaz de hacer todo el trabajo.",
+    "new": "La arquitectura de tres etapas fue la norma en la era Apollo porque los motores de la época no daban Isp ni empuje suficientes para reducirla directamente a dos. Saturn V: propulsor S-IC de kerolox (5 × F-1, ~2,5 min), etapa sustentadora S-II de hidrolox (5 × J-2, ~6 min), etapa superior S-IVB de hidrolox (1 × J-2, dos encendidos: uno para circularizar y otro para la inyección translunar). Soyuz sigue volando con tres etapas más cuatro aceleradores laterales de primera etapa, en una arquitectura de 1957 más antigua que el propio vuelo espacial tripulado. Los Long March 3B/E y Long March 5 chinos son de 2,5 etapas (núcleo + aceleradores laterales + etapa superior), con una etapa de impulso aparte para GEO o escape. El PSLV indio es único: cuatro etapas que alternan sólido y líquido, herencia de un programa de los años 70 que carecía de una única familia de propelente capaz de hacerlo todo."
+  },
+  {
+    "rel": "science/propulsion/rocket-stages.json",
+    "at": "body_paragraphs.3",
+    "old": "El escalonado ocurre de una de tres maneras. Separación por pernos pirotécnicos: pernos explosivos disparan, muelles empujan la etapa gastada, después la etapa superior enciende en el hueco resultante. Usada por casi todos (Soyuz, Atlas, Ariane, Long March). Fire-in-the-hole / hot staging: la etapa superior enciende *antes* de separar, expulsando el booster con su escape. Soviético (Soyuz, Proton) y ahora SpaceX (Starship) — pierde 1–2 % de Isp del superior escapando contra el interetapa pero elimina el tiempo muerto en separación donde el arrastre gravitacional come velocidad. Pushed staging: la etapa inferior da un pequeño retro-burn para retroceder antes del encendido superior — Falcon 9 entre MECO y encendido segunda etapa es esencialmente esto, más una maniobra boost-back si el booster va a recuperarse. Cada método es un compromiso distinto entre riesgo mecánico, pérdidas gravitacionales y simplicidad operativa.",
+    "new": "La separación de etapas se hace de una de tres maneras. Separación por pernos pirotécnicos: los pernos explosivos se disparan, unos muelles apartan la etapa agotada y después la etapa superior se enciende en el hueco resultante. La usan casi todos (Soyuz, Atlas, Ariane, Long March). Separación en caliente (fire-in-the-hole / hot staging): la etapa superior se enciende *antes* de separarse y aparta el propulsor con su escape. Es la soviética (Soyuz, Proton) y ahora la de SpaceX (Starship): pierde un 1–2 % de Isp porque la etapa superior expulsa sus gases contra el interetapa, pero elimina el tiempo muerto de la separación, durante el cual la resistencia gravitatoria se come velocidad. Separación empujada (pushed staging): la etapa inferior da un pequeño encendido de frenado para retroceder antes de que se encienda la superior; el Falcon 9 entre el MECO y el encendido de la segunda etapa hace esencialmente esto, más una maniobra de retorno (boost-back) si el propulsor se va a recuperar. Cada método es un compromiso distinto entre riesgo mecánico, pérdidas gravitatorias y simplicidad operativa."
+  },
+  {
+    "rel": "science/propulsion/rocket-stages.json",
+    "at": "diagram_caption",
+    "old": "Dos etapas: mínimo moderno (Falcon 9, Starship, Electron). Tres etapas: herencia Apollo + Soyuz (Saturn V, Soyuz, Long March 3B). 2,5 etapas: núcleo + boosters strap-on (Long March 5, Ariane 5/6, Delta IV Heavy, SLS). Más etapa de impulso opcional para órbitas finales precisas (Star 48, Centaur, Fregat, Briz-M, YZ-1).",
+    "new": "Dos etapas: el mínimo moderno (Falcon 9, Starship, Electron). Tres etapas: herencia de la era Apollo y de Soyuz (Saturn V, Soyuz, Long March 3B). 2,5 etapas: núcleo + aceleradores laterales (Long March 5, Ariane 5/6, Delta IV Heavy, SLS). Más una etapa de impulso opcional para órbitas finales precisas (Star 48, Centaur, Fregat, Briz-M, YZ-1)."
+  },
+  {
+    "rel": "science/propulsion/solar-sail.json",
+    "at": "intro_sentence",
+    "old": "Una vela solar no lleva propulsante: la empuja el momento de los fotones, lo que la convierte en el único sistema de propulsión con un impulso específico efectivamente ilimitado.",
+    "new": "Una vela solar no lleva propelente: la empuja la cantidad de movimiento de los fotones, el único sistema con un impulso específico prácticamente ilimitado y el único que sale más barato cuanto más vuela."
+  },
+  {
+    "rel": "science/propulsion/solar-sail.json",
+    "at": "body_paragraphs.0",
+    "old": "La luz transporta momento. Cuando un fotón rebota en un espejo, transfiere el doble de su momento al espejo — una presión llamada presión de radiación. En la vida cotidiana esa fuerza es insignificante, pero en el espacio, donde no hay resistencia del aire, incluso una fuerza continua diminuta se acumula en un cambio de velocidad real. Una vela de 800 m² perfectamente reflectante a 1 UA (la distancia de la Tierra al Sol) recibe aproximadamente 5 milinewtons de fuerza — el peso de una pequeña uva. Eso es menos que lo que produce cualquier motor iónico, pero no requiere propulsante, ningún sistema de energía más allá del mantenimiento básico, y nunca se detiene mientras el Sol brille.",
+    "new": "La luz transporta cantidad de movimiento. Cuando un fotón se refleja en un espejo, le transmite el doble de su cantidad de movimiento: es la llamada presión de radiación. En la vida cotidiana esa fuerza es insignificante, pero en el espacio, donde no hay resistencia del aire, incluso una fuerza continua diminuta se acumula hasta producir un cambio de velocidad real. Una vela perfectamente reflectante de 800 m² a 1 UA (la distancia de la Tierra al Sol) recibe unos 5 milinewtons de fuerza: el peso de una uva pequeña. Es menos de lo que produce cualquier motor iónico, pero no requiere propelente ni sistema de energía más allá de las tareas básicas de a bordo, y no se detiene mientras brille el Sol."
+  },
+  {
+    "rel": "science/propulsion/solar-sail.json",
+    "at": "body_paragraphs.1",
+    "old": "Como la nave no transporta propulsante, el concepto de impulso específico se vuelve matemáticamente infinito: no hay tasa de flujo de masa de propulsante para dividir el empuje. Una figura más útil es la aceleración característica de la vela — empuje dividido por la masa total de la nave espacial. Las misiones de demostración actuales logran fracciones de milímetro por segundo al cuadrado; escalar a velas grandes y ligeras podría alcanzar valores competitivos con los motores iónicos para ciertos tipos de trayectoria. Una vela solar también puede bordejear: inclinando la vela en un ángulo, la componente de empuje perpendicular a la línea Sol-nave puede elevar o bajar la órbita, o espiralar la nave hacia adentro hacia el Sol para un sobrevuelo solar cercano antes de dirigirse hacia afuera en una trayectoria hiperbólica.",
+    "new": "Como la nave no lleva propelente, el concepto de impulso específico se vuelve matemáticamente infinito: no hay gasto másico de propelente por el que dividir el empuje. Una magnitud más útil es la aceleración característica de la vela: el empuje dividido por la masa total de la nave. Las misiones de demostración actuales alcanzan fracciones de milímetro por segundo al cuadrado; escalar a velas grandes y ligeras podría dar valores competitivos con los motores iónicos para ciertos tipos de trayectoria. Una vela solar también puede bordejear: al inclinar la vela, la componente del empuje perpendicular a la línea Sol-nave puede elevar o bajar la órbita, o hacer que la nave describa una espiral hacia el Sol para un sobrevuelo solar cercano antes de salir hacia fuera en una trayectoria hiperbólica."
+  }
+]

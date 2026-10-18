@@ -1,0 +1,818 @@
+[
+ {
+  "rel": "science/propulsion/solar-sail.json",
+  "at": "body_paragraphs.2",
+  "old": "La primera nave en volar mediante propulsión de vela solar en el espacio interplanetario fue IKAROS de JAXA, lanzada en mayo de 2010 como carga secundaria en la misión Akatsuki a Venus. IKAROS desplegó una vela de poliimida de 196 m² de solo 7,5 micrómetros de espesor — más delgada que un cabello humano — y demostró aceleración medible y control de actitud mediante paneles de cristal líquido integrados en los bordes de la vela. El LightSail 2 de The Planetary Society (2019) se convirtió en la primera nave en elevar su órbita usando solo propulsión de vela solar, demostrando propulsión sostenida en órbita terrestre baja. El CubeSat NEA Scout de la NASA (lanzado 2022 en Artemis I) fue la primera misión solar interplanetaria estadounidense, aunque no se estableció contacto después del despliegue. La misión ACS3 de la NASA (2024) demostró una estructura de brazo compuesto más grande para futuras ampliaciones.",
+  "new": "La primera nave que voló con propulsión de vela solar en el espacio interplanetario fue IKAROS, de JAXA, lanzada en mayo de 2010 como carga secundaria de la misión Akatsuki a Venus. IKAROS desplegó una vela de poliimida de 196 m² y solo 7,5 micrómetros de espesor — más delgada que un cabello humano — y demostró una aceleración medible y control de actitud mediante paneles de cristal líquido integrados en los bordes de la vela. El LightSail 2 de The Planetary Society (2019) fue la primera nave en elevar su órbita usando únicamente el empuje de una vela solar, y demostró una propulsión sostenida en órbita terrestre baja. El CubeSat NEA Scout de la NASA (lanzado en 2022 con Artemis I) fue la primera misión estadounidense de vela solar interplanetaria, aunque no se logró establecer contacto tras el despliegue. La misión ACS3 de la NASA (2024) demostró una estructura de mástiles de material compuesto de mayor tamaño, pensada para futuros escalados."
+ },
+ {
+  "rel": "science/propulsion/solar-sail.json",
+  "at": "body_paragraphs.3",
+  "old": "El límite fundamental es la distancia. La presión de radiación cae según el cuadrado inverso de la distancia al Sol: en Júpiter (5,2 UA), es 27 veces más débil que en la Tierra. Para trayectorias más allá del cinturón de asteroides, una vela debe ser muy grande o muy ligera — o usar una fuente de energía diferente. El concepto sucesor natural es la propulsión láser (a veces llamada vela láser o enfoque Breakthrough Starshot), donde un conjunto de láseres basado en tierra o en el espacio ilumina la vela con una intensidad mucho mayor que la que proporciona el Sol, permitiendo velocidades de clase interestelar. Eso sigue siendo ingeniería especulativa; las velas solares son hardware volador hoy. Ver también: /science/propulsion/specific-impulse y /essays/new-propulsion para ver a dónde llevan estas ideas.",
+  "new": "El límite fundamental es la distancia. La presión de radiación disminuye con el cuadrado inverso de la distancia al Sol: en Júpiter (5,2 UA) es 27 veces más débil que en la Tierra. Para trayectorias más allá del cinturón de asteroides, una vela debe ser muy grande o muy ligera — o recurrir a otra fuente de energía. El sucesor natural del concepto es la propulsión láser (a veces llamada vela láser o enfoque Breakthrough Starshot), en la que una batería de láseres, situada en tierra o en el espacio, ilumina la vela con una intensidad mucho mayor que la del Sol, lo que permitiría velocidades de clase interestelar. Eso sigue siendo ingeniería especulativa; las velas solares, en cambio, son hoy hardware en vuelo. Ver también: /science/propulsion/specific-impulse y /essays/new-propulsion, para ver adónde conducen estas ideas."
+ },
+ {
+  "rel": "science/propulsion/solar-sail.json",
+  "at": "diagram_caption",
+  "old": "Transferencia de momento de fotón: fotón reflejado transfiere 2p a la vela; fuerza = 2 × (flujo solar / c) × área × cos²θ — independiente de propulsante, cae como 1/r² desde el Sol.",
+  "new": "Transferencia de cantidad de movimiento del fotón: el fotón reflejado transmite 2p a la vela; fuerza = 2 × (flujo solar / c) × área × cos²θ — independiente del propelente, decae como 1/r² con la distancia al Sol."
+ },
+ {
+  "rel": "science/propulsion/specific-impulse.json",
+  "at": "title",
+  "old": "Impulso Específico (Isp)",
+  "new": "Impulso específico (Isp)"
+ },
+ {
+  "rel": "science/propulsion/specific-impulse.json",
+  "at": "intro_sentence",
+  "old": "Qué eficiente es un motor — cuántos segundos un kilogramo de propelente produce un kilogramo de empuje.",
+  "new": "Cuán eficiente es un motor — durante cuántos segundos un kilogramo de propelente produce un kilogramo de empuje."
+ },
+ {
+  "rel": "science/propulsion/specific-impulse.json",
+  "at": "narrative_101.0",
+  "old": "Si alguna vez te has preocupado por los kilómetros por litro de un coche, el impulso específico es la misma idea para cohetes. Te dice qué tan eficientemente el motor convierte el combustible en empuje. Mayor Isp = mejor rendimiento = más ∆v con la misma carga de propelente.",
+  "new": "Si alguna vez te han importado los kilómetros por litro de un coche, el impulso específico es la misma idea aplicada a los cohetes. Indica con qué eficiencia convierte el motor el combustible en empuje. Isp más alto = mejor rendimiento = más ∆v con la misma carga de propelente."
+ },
+ {
+  "rel": "science/propulsion/specific-impulse.json",
+  "at": "narrative_101.1",
+  "old": "La unidad es extraña — se mide en segundos, lo que no tiene mucho sentido intuitivo al principio. La razón: Isp = empuje ÷ (combustible-quemado-por-segundo × gravedad-terrestre). Las unidades de masa y longitud se cancelan, dejando segundos puros — por eso puedes comparar dos motores cualesquiera con un único número. Cuanto mayor sea el número, más eficiente es el motor, y puedes comparar motores a lo largo de décadas y continentes usando el mismo número.",
+  "new": "La unidad es extraña — se mide en segundos, lo que al principio no tiene mucho sentido intuitivo. La razón: Isp = empuje ÷ (combustible quemado por segundo × gravedad terrestre). Las unidades de masa y de longitud se cancelan y quedan segundos puros — por eso puedes comparar dos motores cualesquiera con un único número. Cuanto mayor es el número, más eficiente es el motor, y así se pueden comparar motores de distintas décadas y continentes con el mismo número."
+ },
+ {
+  "rel": "science/propulsion/specific-impulse.json",
+  "at": "narrative_101.2",
+  "old": "El rango es enorme. Cohetes sólidos (los impulsores del Space Shuttle): ~250 segundos. Hidrógeno-oxígeno líquido (lo mejor que puedes hacer químicamente): ~450 segundos. Hipergólicos almacenables (baratos, confiables, lo que la mayoría de naves utilizan para correcciones de rumbo): ~310 segundos. Motores iónicos (super eficientes pero con empuje muy bajo): 3.000-9.000 segundos. La regla práctica: para escapar de planetas, necesitas alto empuje; para navegar en el espacio profundo, quieres alto Isp. Las misiones reales combinan sus opciones — química para escapar de la Tierra, iónica para navegar.",
+  "new": "El rango es enorme. Cohetes de combustible sólido (los propulsores auxiliares del Space Shuttle): ~250 segundos. Hidrógeno-oxígeno líquido (lo mejor que se puede lograr con química): ~450 segundos. Hipergólicos almacenables (baratos, fiables, lo que usan la mayoría de las naves para correcciones de rumbo): ~310 segundos. Motores iónicos (muy eficientes, pero con muy poco empuje): 3.000-9.000 segundos. La regla práctica: para despegar de un planeta necesitas mucho empuje; para navegar por el espacio profundo, un Isp alto. Las misiones reales reparten la elección por etapas — química para escapar de la Tierra, propulsión iónica para el crucero."
+ },
+ {
+  "rel": "science/propulsion/specific-impulse.json",
+  "at": "body_paragraphs.0",
+  "old": "Isp es el número de consumo de combustible para cohetes. Mayor es mejor. Definición: divide el empuje entre la tasa de flujo de masa del propelente, divide entre `g₀` (gravedad estándar), obtén un número en segundos. Quema un kilogramo de propelente por segundo, obtén `Isp × g₀` newtons de empuje.",
+  "new": "El Isp es el dato de consumo de combustible de los cohetes: cuanto más alto, mejor. Definición: divide el empuje entre el flujo másico de propelente, divide de nuevo entre `g₀` (gravedad estándar) y obtendrás un número en segundos. Si quemas un kilogramo de propelente por segundo, obtienes `Isp × g₀` newtons de empuje."
+ },
+ {
+  "rel": "science/propulsion/specific-impulse.json",
+  "at": "body_paragraphs.1",
+  "old": "El número abarca cuatro órdenes de magnitud. Cohetes sólidos: 250 s. Líquidos hidrógeno/oxígeno (Space Shuttle Main Engine): 452 s. Hipergólicos almacenables (Apollo Service Module): 314 s. Motores iónicos (Dawn, BepiColombo): 3.000-9.000 s. Térmico nuclear (NERVA, nunca volado): 800-1.000 s en teoría.",
+  "new": "El valor abarca varios órdenes de magnitud. Cohetes de combustible sólido: 250 s. Líquidos hidrógeno/oxígeno (Space Shuttle Main Engine): 452 s. Hipergólicos almacenables (Apollo Service Module): 314 s. Motores iónicos (Dawn, BepiColombo): 3.000-9.000 s. Propulsión térmica nuclear (NERVA, nunca voló): 800-1.000 s en teoría."
+ },
+ {
+  "rel": "science/propulsion/specific-impulse.json",
+  "at": "body_paragraphs.2",
+  "old": "Compensaciones en todas partes. Alto Isp generalmente significa bajo empuje — los motores iónicos producen alrededor de diez newtons, útiles para cruceros espaciales profundos que duran años pero inútiles para escapar de la Tierra. Los motores químicos entregan mega-newtons de empuje pero agotan el propelente en minutos. Las misiones reales combinan la opción: química para ascenso, iónica para crucero.",
+  "new": "Todo son compromisos. Un Isp alto suele implicar poco empuje — los motores iónicos empujan con unos diez newtons, útiles para cruceros de años por el espacio profundo pero inservibles para despegar de la Tierra. Los motores químicos entregan meganewtons de empuje, pero consumen el propelente en minutos. Las misiones reales reparten la elección por etapas: química para el ascenso, propulsión iónica para el crucero."
+ },
+ {
+  "rel": "science/propulsion/staged-combustion.json",
+  "at": "intro_sentence",
+  "old": "En lugar de expulsar el gas de accionamiento de la turbobomba al exterior, introdúcelo en la cámara principal y quémalo también. Sin desperdicio, el motor funciona más caliente, a mayor presión y con mejor rendimiento.",
+  "new": "En vez de expulsar el gas que acciona la turbobomba, se introduce en la cámara principal y se quema también. Nada se desperdicia: el motor trabaja más caliente, a mayor presión y con más rendimiento, a costa de una tubería temible."
+ },
+ {
+  "rel": "science/propulsion/staged-combustion.json",
+  "at": "body_paragraphs.0",
+  "old": "La combustión por etapas cierra el ciclo del generador de gas. Una precámara aún quema propelente para acionar las turbobombas, pero su escape —cargado de combustible u oxidante sin quemar— no se descarta. Se canaliza hacia la cámara de combustión principal y se quema una segunda vez, de modo que cada gramo de propelente genera empuje. Cerrar el ciclo ofrece dos ventajas simultáneamente: impulso específico más alto, porque no se desperdicia nada, y presión en cámara mucho mayor, porque las bombas pueden accionarse más intensamente. Una presión en cámara más alta significa un motor más pequeño y más potente para el mismo empuje. El precio son las condiciones operativas brutales: la turbina ahora se sienta en el flujo completo de propelente a temperatura y presión extremas.",
+  "new": "La combustión por etapas toma la idea del generador de gas y cierra el circuito. Una precámara sigue quemando propelente para accionar las turbobombas, pero su escape —cargado de combustible u oxidante sin quemar— no se descarta: se canaliza hacia la cámara de combustión principal y se quema por segunda vez, de modo que cada gramo de propelente acaba generando empuje. Cerrar el ciclo aporta dos ventajas a la vez: un impulso específico más alto, porque no se tira nada, y una presión de cámara mucho mayor, porque las bombas pueden accionarse con más fuerza. Una presión de cámara más alta significa un motor más pequeño y potente para el mismo empuje. El precio son unas condiciones de funcionamiento brutales: la turbina queda inmersa en todo el flujo de propelente, a temperatura y presión extremas."
+ },
+ {
+  "rel": "science/propulsion/staged-combustion.json",
+  "at": "body_paragraphs.1",
+  "old": "Hay dos formas de hacer funcionar la precámara, y la elección dividió el mundo espacial durante décadas. Los motores estadounidenses como el RS-25 (motor principal del Space Shuttle, ahora volando en SLS) utilizaban combustible en exceso: el hidrógeno excedente mantiene el gas de la precámara relativamente frío y suave para la metalurgia. Los ingenieros soviéticos tomaron el camino más difícil de la combustión por etapas con exceso de oxidante — la familia RD-170, RD-180 y RD-253 accionan sus turbinas con gas caliente, rico en oxígeno, que corroe aleaciones comunes al contacto. Resolver eso fue un triunfo metalúrgico que los ingenieros occidentales habían creído imposible durante mucho tiempo. El YF-100 chino continúa la tradición con exceso de oxidante hoy, mientras que el LE-7A japonés es un moderno motor de combustión por etapas con exceso de combustible al estilo RS-25.",
+  "new": "Hay dos maneras de hacer funcionar la precámara, y la elección dividió al mundo espacial durante décadas. Los motores estadounidenses como el RS-25 (el motor principal del Space Shuttle, que ahora vuela en el SLS) optaron por el ciclo rico en combustible: el exceso de hidrógeno mantiene el gas de la precámara relativamente frío y poco exigente con la metalurgia. Los ingenieros soviéticos tomaron el camino más difícil de la combustión por etapas rica en oxidante — la familia RD-170, el RD-180 y el RD-253 accionan sus turbinas con gas caliente, rico en oxígeno, que corroe las aleaciones comunes al contacto. Resolverlo fue un triunfo metalúrgico que los ingenieros occidentales llevaban mucho tiempo considerando imposible. El YF-100 chino mantiene hoy la tradición del ciclo rico en oxidante, mientras que el LE-7A japonés es un motor moderno de combustión por etapas rico en combustible, según el molde del RS-25."
+ },
+ {
+  "rel": "science/propulsion/staged-combustion.json",
+  "at": "body_paragraphs.2",
+  "old": "La versión definitiva es la combustión por etapas de flujo completo, que utiliza dos precámaras —una con exceso de oxidante, otra con exceso de combustible— para que ambos propelentes se gasifiquen completamente antes de encontrarse en la cámara principal. Ambas turbobombas obtienen su propio gas de accionamiento, las temperaturas permanecen manejables, y los sellos ya no tienen que separar una turbina accionada por combustible del oxígeno líquido. Se había diseñado sobre papel durante medio siglo, pero el Raptor de SpaceX, en Starship, es el primer motor de combustión por etapas de flujo completo que vuela. Cada peldaño en esta escalera compra quizá veinte a cuarenta segundos de impulso específico sobre un motor generador de gas —y añade un paso correspondiente en complejidad, masa y costo de desarrollo.",
+  "new": "La versión definitiva es la combustión por etapas de flujo completo, que emplea dos precámaras —una rica en oxidante y otra rica en combustible— para que ambos propelentes se gasifiquen por completo antes de encontrarse en la cámara principal. Cada turbobomba recibe su propio gas de accionamiento, las temperaturas se mantienen manejables y los sellos ya no tienen que separar una turbina movida por combustible del oxígeno líquido. Llevaba medio siglo diseñada sobre el papel, pero el Raptor de SpaceX, en Starship, es el primer motor de combustión por etapas de flujo completo que ha volado. Cada peldaño de esta escalera aporta quizá de veinte a cuarenta segundos de impulso específico respecto a un motor de generador de gas —y añade un escalón equivalente de complejidad, masa y coste de desarrollo."
+ },
+ {
+  "rel": "science/propulsion/staged-combustion.json",
+  "at": "diagram_caption",
+  "old": "Ciclo cerrado: el escape de la precámara que accionaba la turbobomba se introduce en la cámara principal y se quema, no se descarta. Con exceso de combustible (RS-25), con exceso de oxidante (RD-180), o de flujo completo con ambos (Raptor).",
+  "new": "Ciclo cerrado: el escape de la precámara que accionaba la turbobomba se introduce en la cámara principal y se quema, no se descarta. Rico en combustible (RS-25), rico en oxidante (RD-180) o de flujo completo con ambos (Raptor)."
+ },
+ {
+  "rel": "science/propulsion/throttling-and-gimbaling.json",
+  "at": "title",
+  "old": "Modulación y gimbaling — cómo dirigen los cohetes y cómo se posan",
+  "new": "Regulación y orientación del empuje — cómo se dirigen y cómo se ciernen los cohetes"
+ },
+ {
+  "rel": "science/propulsion/throttling-and-gimbaling.json",
+  "at": "intro_sentence",
+  "old": "Una vez encendido un motor, quedan dos entradas de control: con cuánta fuerza empuja (modulación) y hacia dónde apunta (gimbal). Juntas dirigen el ascenso, gestionan g tripulación y permiten aterrizajes propulsivos.",
+  "new": "Con el motor encendido quedan dos controles: con cuánta fuerza empuja (regulación) y hacia dónde apunta (orientación de la tobera). Juntos dirigen el ascenso, gestionan las cargas g de la tripulación y permiten aterrizar con propulsión."
+ },
+ {
+  "rel": "science/propulsion/throttling-and-gimbaling.json",
+  "at": "body_paragraphs.0",
+  "old": "Modular suena trivial — girar una válvula — pero es una de las cosas más duras que hace un motor cohete. Las cámaras de combustión se afinan en un punto operativo preciso: presión cámara, razón flujo másico, velocidad inyección. Bajar el flujo vuelve la combustión inestable; la quema rugosa empieza a roer el motor en segundos. La mayoría de motores tienen banda estrecha: Merlin 1D modula 40-100 %, Raptor 2 modula 40-100 %, RS-25 modula 67-109 % pero está calificado sólo a potencia plena durante el ascenso. El F-1 no tenía modulación — su único control era 'on'. Los boosters sólidos no modulan a ningún flujo; el perfil de quema queda bloqueado al fundir el grano.",
+  "new": "Regular el empuje parece trivial —basta con girar una válvula—, pero es una de las cosas más difíciles que hace un motor cohete. Las cámaras de combustión se afinan para un punto de funcionamiento concreto: presión de cámara, relación de flujo másico, velocidad de inyección. Si se reduce el flujo, la combustión se vuelve inestable; una combustión áspera empieza a destrozar el motor en cuestión de segundos. La mayoría de los motores tienen una banda estrecha: el Merlin 1D se regula entre el 40 y el 100 %, el Raptor 2 también, y el RS-25 entre el 67 y el 109 %, aunque solo está calificado para potencia plena durante todo el ascenso. El F-1 no se regulaba en absoluto: su único control era «encendido». Los propulsores de combustible sólido no pueden regularse a ningún nivel; el perfil de combustión queda fijado al fundir el grano."
+ },
+ {
+  "rel": "science/propulsion/throttling-and-gimbaling.json",
+  "at": "body_paragraphs.1",
+  "old": "La modulación profunda (bajo ~40 %) es otra clase de problema. Los aterrizajes suaves necesitan motores capaces de mantener al vehículo apenas sobre su propio peso — TWR ≈ 1 — para el hover y toque finales. El motor de descenso del Apollo Lunar Module modulaba 10-65 %, récord de su era, usando un inyector pintle de área variable que se movía físicamente para mantener velocidad de inyección. La misma estirpe pintle-inyector está en Merlin y (con mecanismo distinto) Raptor. La razón por la que rovers marcianos no pueden aterrizar directamente sobre motores (Curiosity / Perseverance usan el Skycrane) es que ningún motor clase MR-80 modula lo bastante profundo para toque directo de un rover de una tonelada, y los modulables más ligeros carecen de empuje. El último aterrizaje chino Tianwen-1 / Zhurong usó un motor de empuje variable 7500 N que hizo hover y posó; el aterrizaje Starship de SpaceX depende de la calificación de modulación profunda del Raptor.",
+  "new": "La regulación profunda (por debajo de ~40 %) es otra clase de problema. Los aterrizajes suaves exigen motores capaces de mantener el vehículo apenas por encima de su propio peso — TWR ≈ 1 — durante el tramo final de suspensión y posado. El motor de descenso del módulo lunar del Apollo se regulaba entre el 10 y el 65 %, un récord para su época, gracias a un inyector pintle de área variable que se desplazaba físicamente para mantener la velocidad de inyección. Ese mismo descenso con inyector pintle se usa en el Merlin y (con un mecanismo distinto) en el Raptor. La razón por la que los róveres marcianos no pueden aterrizar directamente sobre motores (Curiosity y Perseverance usan la Skycrane) es que ningún motor de la clase MR-80 se regula lo bastante a fondo para posar directamente un róver de una tonelada, y los motores regulables más ligeros carecen de empuje. El aterrizaje chino más reciente, el de Tianwen-1 / Zhurong, usó un motor de empuje variable de 7500 N que se mantuvo suspendido y luego descendió; el aterrizaje de la Starship de SpaceX depende de la calificación del Raptor para regulación profunda."
+ },
+ {
+  "rel": "science/propulsion/throttling-and-gimbaling.json",
+  "at": "body_paragraphs.2",
+  "old": "Gimbaling — pivotar la tobera para redirigir empuje — es cómo casi todo cohete moderno dirige. Dos actuadores hidráulicos o eléctricos inclinan el motor sobre un bloque-gimbal; el vector empuje sigue. Primer etapa Falcon 9: ±5° en cada Merlin, con el central haciendo la mayoría del trabajo de dirección y los ocho exteriores contribuyendo autoridad de roll vía gimbal diferencial. Starship Super Heavy: los 13 Raptors interiores gimbalan, los 20 exteriores son fijos. SLS: cada RS-25 gimbala ±10,5°. Los boosters sólidos no pueden gimbalar en vuelo (la tobera está empernada) — usan un *cojinete flexible* que deja a toda la tobera pivotar respecto al cuerpo, lo que SRBs del Shuttle y boosters SLS usan para pilotaje en fase booster. SLS perdió mucho de su pilotaje trans-etapa al heredar los SRBs del Shuttle; las toberas de cojinete flexible se encargan.",
+  "new": "Orientar la tobera —pivotarla para redirigir el empuje— es como se dirigen casi todos los cohetes modernos. Dos actuadores hidráulicos o eléctricos inclinan el motor sobre una montura cardán y el vector de empuje lo sigue. Primera etapa del Falcon 9: ±5° en cada Merlin; el motor central hace la mayor parte del trabajo de dirección y los ocho exteriores aportan control de balanceo mediante orientación diferencial. Starship Super Heavy: los 13 Raptor interiores se orientan; los 20 exteriores son fijos. SLS: cada RS-25 se orienta ±10,5°. Los propulsores de combustible sólido no pueden orientar la tobera en vuelo (va empernada), así que usan un *cojinete flexible* que permite pivotar toda la tobera respecto a la carcasa; los SRB del Shuttle y los propulsores del SLS lo emplean para dirigir durante la fase de propulsores. El SLS perdió gran parte de su control direccional entre etapas al heredar los SRB del Shuttle; de eso se encargan las toberas de cojinete flexible."
+ },
+ {
+  "rel": "science/propulsion/throttling-and-gimbaling.json",
+  "at": "body_paragraphs.3",
+  "old": "Un puñado de vehículos dirigen distinto. Soyuz usa motores principales fijos con motores vernier gimbalables separados alrededor de los cuerpos booster. El S-IC de Saturn V gimbalaba los cuatro F-1 exteriores; el central era fijo. Propulsores de gas frío en el ápice o lado del booster manejan actitud en fases de coast (Falcon 9 entre apagado booster y reentrada, Starship durante volteos de altura). Y muchas naves pequeñas no usan gimbal alguno: un solo motor fijo + ruedas de reacción y pequeños propulsores RCS. La elección es compromiso másico: el hardware gimbal cuesta 50-200 kg por motor; para un lanzador con diez motores y 200 t de carga útil el coste vale, para un smallsat de 100 kg con un solo motor de impulso normalmente no.",
+  "new": "Unos pocos vehículos se dirigen de otra manera. La Soyuz usa motores principales fijos con motores vernier orientables independientes alrededor de los cuerpos propulsores. El S-IC del Saturn V orientaba los cuatro F-1 exteriores; el central era fijo. Propulsores de gas frío, en la parte superior o en el costado del propulsor, controlan la actitud en las fases de inercia (el Falcon 9 entre el apagado del propulsor y la reentrada; Starship en los giros a gran altitud). Y muchas naves pequeñas no usan orientación alguna: un solo motor fijo más ruedas de reacción y pequeños propulsores RCS. La decisión es un compromiso de masa: el equipo de orientación cuesta 50-200 kg por motor; para un lanzador con diez motores y 200 t de carga útil merece la pena, pero para un satélite pequeño de 100 kg con un único motor de apogeo, normalmente no."
+ },
+ {
+  "rel": "science/propulsion/throttling-and-gimbaling.json",
+  "at": "diagram_caption",
+  "old": "Modulación: cambia magnitud de empuje. Estrecha en la mayoría de motores (40-100 %); profunda en motores de aterrizaje (10-65 % LM, calificada profunda en Merlin / Raptor para aterrizajes). Gimbal: inclina la tobera para vectorizar dirección de empuje. ±5-10° típico. Motores líquidos gimbalan directo; boosters sólidos usan toberas de cojinete flexible.",
+  "new": "Regulación: cambia la magnitud del empuje. Estrecha en la mayoría de los motores (40-100 %); profunda en los motores de aterrizaje (10-65 % en el LM; calificados a fondo en Merlin / Raptor para aterrizajes). Orientación (gimbal): inclina la tobera para dirigir el vector de empuje; lo habitual es ±5-10°. Los motores líquidos orientan la tobera directamente; los propulsores sólidos usan toberas de cojinete flexible."
+ },
+ {
+  "rel": "science/propulsion/thrust-and-twr.json",
+  "at": "intro_sentence",
+  "old": "Un cohete debe empujar más de lo que pesa, o se queda en plataforma. La razón se llama TWR. Todo lanzador operativo de la historia despegó en la banda estrecha 1,2 a 1,5.",
+  "new": "Un cohete debe empujar más de lo que pesa, o se queda en la plataforma. Esa relación se llama TWR. Todos los lanzadores operativos de la historia han despegado dentro de una banda estrecha, de 1,2 a 1,5."
+ },
+ {
+  "rel": "science/propulsion/thrust-and-twr.json",
+  "at": "body_paragraphs.0",
+  "old": "El empuje es una fuerza. Su unidad es el newton (o el kilonewton y el meganewton para todo lo que vuela). Un Merlin 1D produce 845 kN a nivel del mar. Un solo F-1 producía 6770 kN. Cada propulsor de combustible sólido del SLS produce 16 000 kN. El empuje no es el impulso específico: el empuje indica con cuánta *fuerza* empuja el motor; el Isp indica con cuánta *eficiencia* lo hace. Un motor de alto empuje y bajo Isp (un propulsor de combustible sólido) y uno de bajo empuje y alto Isp (un motor iónico) pueden ser útiles, para tareas distintas en fases distintas de una misión. La ecuación del empuje es sencilla: el empuje es igual al flujo másico de propelente multiplicado por la velocidad de escape, más un pequeño término de presión cuando la presión de salida de la tobera difiere de la ambiente. Por eso los motores de combustión escalonada con alta presión en la cámara producen más empuje por kilogramo de masa del motor: hacen pasar más propelente por la misma garganta cada segundo y a mayor velocidad.",
+  "new": "El empuje es una fuerza. Su unidad es el newton (o el kilonewton y el meganewton para todo lo que vuela). Un Merlin 1D produce 845 kN a nivel del mar. Un solo F-1 producía 6770 kN. Cada propulsor de combustible sólido del SLS produce 16 000 kN. El empuje no es el impulso específico: el empuje indica con cuánta *fuerza* empuja el motor; el Isp indica con cuánta *eficiencia* lo hace. Un motor de alto empuje y bajo Isp (un propulsor de combustible sólido) y uno de bajo empuje y alto Isp (un motor iónico) pueden ser útiles, para tareas distintas en fases distintas de una misión. La ecuación del empuje es sencilla: el empuje es igual al flujo másico de propelente multiplicado por la velocidad de escape, más un pequeño término de presión cuando la presión de salida de la tobera difiere de la ambiente. Por eso los motores de combustión por etapas, con alta presión de cámara, producen más empuje por kilogramo de masa del motor: hacen pasar más propelente por la misma garganta cada segundo y a mayor velocidad."
+ },
+ {
+  "rel": "science/propulsion/thrust-and-twr.json",
+  "at": "body_paragraphs.1",
+  "old": "La razón empuje-peso (TWR) es el empuje dividido por el peso *actual* del vehículo en la Tierra. Al despegue debe ser mayor que 1, o el cohete no se mueve. En la práctica no se quiere TWR justo en 1,0 — cada segundo luchando contra la gravedad sin ganar altitud es propelente quemado sin ganar velocidad vertical (pérdidas gravitacionales). El sweet-spot de los contables: TWR 1,2–1,5 al despegue. Saturn V despegó a 1,18, considerado incómodamente bajo — el vehículo subía tan lento que la torre casi rozó la tobera. Falcon 9, SLS y Starship están por diseño en la banda 1,3–1,5. La N1 soviética estaba en 1,07, marginal incluso con los motores funcionando; los cuatro vuelos fracasaron.",
+  "new": "La relación empuje-peso (TWR) es el empuje dividido por el peso *actual* del vehículo en la Tierra. Al despegue debe ser mayor que 1, o el cohete no puede abandonar la plataforma. En la práctica no conviene un TWR justo de 1,0, porque cada segundo luchando contra la gravedad sin ganar altitud es propelente quemado sin ganar velocidad vertical (pérdidas gravitacionales). El punto óptimo de los contables es un TWR de 1,2–1,5 al despegue. El Saturn V despegó con 1,18, valor que se consideró incómodamente bajo: el vehículo subía tan despacio que la torre de lanzamiento casi se enganchó con la tobera. Falcon 9, SLS y Starship se sitúan por diseño en la banda de 1,3–1,5. El N1 soviético tenía 1,07, un margen mínimo incluso con los motores funcionando; los cuatro vuelos fracasaron."
+ },
+ {
+  "rel": "science/propulsion/thrust-and-twr.json",
+  "at": "body_paragraphs.2",
+  "old": "El TWR también importa en pleno vuelo. A medida que el propelente quema, la masa cae y el TWR sube — al MECO el TWR de un primer etapa puede ser 3–4. El F-1 central interior del S-IC de Saturn V se apagaba temprano para mantener las aceleraciones tripulación bajo 4 g. Los boosters reutilizables modernos (Falcon 9, Starship) apagan algunos motores y modulan el resto por la misma razón — y para dejar propelente suficiente para el boost-back y el aterrizaje. Las etapas superiores funcionan a menor TWR (a menudo 0,7 al encendido) porque disparan horizontalmente en vacío donde las pérdidas gravitacionales no las comen y el Isp alto importa más que llegar rápido al empuje pico.",
+  "new": "El TWR también importa en pleno vuelo. A medida que se quema el propelente, la masa disminuye y el TWR sube — en el apagado del motor principal, el TWR de una primera etapa puede ser de 3–4. El F-1 central del S-IC del Saturn V se apagaba antes de tiempo para mantener las aceleraciones de la tripulación por debajo de 4 g. Los propulsores reutilizables modernos (Falcon 9, Starship) apagan algunos motores y regulan el resto por la misma razón — y para dejar propelente suficiente para el encendido de retorno (boostback) y el de aterrizaje. Las etapas superiores trabajan con un TWR menor (a menudo 0,7 en el encendido) porque disparan horizontalmente en el vacío, donde las pérdidas gravitacionales no las penalizan y un Isp alto importa más que alcanzar rápido el empuje máximo."
+ },
+ {
+  "rel": "science/propulsion/thrust-and-twr.json",
+  "at": "body_paragraphs.3",
+  "old": "¿Cuánto empuje por kg se necesita realmente para despegar? Con TWR 1,3 y gravedad terrestre 9,81 m/s², los motores deben entregar unos 12,8 N/kg de masa vehículo. Para un vehículo de 3000 toneladas (masa húmeda Saturn V) hacen falta 38 MN — exactamente por qué Saturn V usaba cinco F-1 sumando 33,9 MN a nivel del mar, subiendo a más de 40 MN al caer la presión ambiente. Para Starship (5000 toneladas húmedas) hacen falta ~64 MN, por eso Super Heavy lleva 33 Raptors. El número de motores no es un capricho estético — cae directamente de la aritmética TWR-vs-masa-despegue y del empuje del mayor motor que el programa supo desarrollar.",
+  "new": "¿Cuánto empuje por kilogramo hace falta realmente para despegar? Con un TWR de 1,3 y una gravedad terrestre de 9,81 m/s², los motores deben entregar unos 12,8 N/kg de masa del vehículo. Para un vehículo de 3000 toneladas (la masa húmeda del Saturn V) hacen falta 38 MN de empuje — justo por eso el Saturn V usaba cinco motores F-1 que sumaban 33,9 MN a nivel del mar, y superaban los 40 MN al caer la presión ambiente. Para Starship (5000 toneladas húmedas) hacen falta ~64 MN, y por eso el propulsor Super Heavy lleva 33 Raptor. El número de motores de un conjunto no es una elección estética: se deduce directamente de la aritmética que relaciona el TWR con la masa de lanzamiento y del empuje del mayor motor que el programa pudo desarrollar."
+ },
+ {
+  "rel": "science/propulsion/thrust-and-twr.json",
+  "at": "diagram_caption",
+  "old": "TWR = empuje / (masa × g). Bajo 1: se queda en plataforma. 1,0–1,2: marginal, grandes pérdidas gravitacionales. 1,3–1,5: sweet-spot operativo. Sobre 1,5: aceleración tripulación + carga aerodinámica se vuelven el límite. N° motores = empuje requerido / empuje mono-motor.",
+  "new": "TWR = empuje / (masa × g). Por debajo de 1: se queda en la plataforma. 1,0–1,2: marginal, grandes pérdidas gravitacionales. 1,3–1,5: punto óptimo operativo. Por encima de 1,5: la aceleración de la tripulación y la carga aerodinámica pasan a ser el límite. N.º de motores = empuje requerido / empuje de un solo motor."
+ },
+ {
+  "rel": "science/propulsion/tsiolkovsky.json",
+  "at": "title",
+  "old": "Ecuación del cohete de Tsiolkovsky",
+  "new": "Ecuación del cohete de Tsiolkovski"
+ },
+ {
+  "rel": "science/propulsion/tsiolkovsky.json",
+  "at": "narrative_101.0",
+  "old": "Konstantín Tsiolkovski era un maestro de escuela ruso sordo que pensaba en vuelos espaciales en su tiempo libre, décadas antes de que alguien pudiera construir un cohete real. En 1903 escribió una ecuación de la que nadie podía escapar, y aún no lo hemos hecho. Dice: el ∆v que puedes extraer de un cohete depende de dos cosas — la calidad de tu motor y cuánto de tu cohete es combustible. Y la relación es LOGARÍTMICA.",
+  "new": "Konstantín Tsiolkovski era un maestro de escuela ruso, sordo, que pensaba en los vuelos espaciales en sus ratos libres, décadas antes de que nadie pudiera construir un cohete de verdad. En 1903 escribió una ecuación de la que nadie podía escapar, y aún no lo hemos conseguido. Dice que el ∆v que puedes extraer de un cohete depende de dos cosas — la calidad de tu motor y qué parte de tu cohete es combustible. Y la relación es LOGARÍTMICA."
+ },
+ {
+  "rel": "science/propulsion/tsiolkovsky.json",
+  "at": "narrative_101.1",
+  "old": "El logaritmo es la trampa. Si tu cohete es mitad combustible, obtienes un cierto ∆v. Para duplicar ese ∆v, no haces tu cohete dos tercios combustible — tienes que hacer que sea aproximadamente el 75% combustible. Para triplicarlo, más cerca del 87–88% combustible. Los números se escapan exponencialmente. Por eso un Saturn V es una torre de 110 metros que es casi enteramente propelente — la nave espacial es una cápsula diminuta en la parte superior.",
+  "new": "El logaritmo es la trampa. Si tu cohete es mitad combustible, obtienes un cierto ∆v. Para duplicar ese ∆v no basta con que el cohete sea dos tercios combustible: tiene que serlo en un 75 % aproximadamente. Para triplicarlo, más cerca del 87–88 %. Las cifras se disparan de forma exponencial. Por eso un Saturn V es una torre de 110 metros casi toda ella propelente — la nave espacial es una cápsula diminuta en la parte superior."
+ },
+ {
+  "rel": "science/propulsion/tsiolkovsky.json",
+  "at": "narrative_101.2",
+  "old": "Dos salidas. Una: motores mejores (impulso específico más alto) — eso sube el multiplicador para que obtengas más ∆v de la misma relación de masas. Dos: escalonamiento — suelta los tanques vacíos conforme se vacían para no cargar peso muerto. Los cohetes reales hacen ambas cosas. Incluso así, las misiones de un solo disparo se limitan alrededor de 10–15 km/s de ∆v. Más allá de eso, la ecuación dice que necesitas reabastecerte en órbita, o usar motores exóticos, u obtener ayuda de un planeta.",
+  "new": "Dos salidas. Una: motores mejores (impulso específico más alto) — eso sube el multiplicador y obtienes más ∆v con la misma relación de masas. Dos: las etapas — se sueltan los tanques vacíos conforme se vacían para no cargar con peso muerto. Los cohetes reales hacen las dos cosas. Aun así, las misiones de un solo lanzamiento tocan techo en torno a 10–15 km/s de ∆v. Más allá, la ecuación dice que hay que repostar en órbita, usar motores exóticos u obtener ayuda de un planeta."
+ },
+ {
+  "rel": "science/propulsion/tsiolkovsky.json",
+  "at": "body_paragraphs.1",
+  "old": "El logaritmo es la parte cruel. Duplicar el propelente no duplica ∆v; suma solo un fragmento constante. ¿Quieres volar el doble de lejos? Necesitas un cohete exponencialmente más grande. Esta es la tiranía de la ecuación del cohete: los motores químicos (`Isp` ~300–450s) golpean una pared alrededor de 10–15 km/s de ∆v antes de que la relación de masas se vuelva absurda. Para ir más lejos necesitas mayor `Isp` (motores de iones, ~3000s) o escalonamiento (suelta tanques conforme se vacían), o ambos.",
+  "new": "El logaritmo es la parte cruel. Duplicar el propelente no duplica el ∆v; añade una cantidad constante. ¿Quieres volar el doble de lejos? Necesitas un cohete exponencialmente más grande. Esa es la tiranía de la ecuación del cohete: los motores químicos (`Isp` ~300–450s) chocan contra un muro en torno a 10–15 km/s de ∆v, antes de que la relación de masas se vuelva absurda. Para ir más lejos necesitas un `Isp` mayor (motores iónicos, ~3000s) o etapas (soltar los tanques conforme se vacían), o ambas cosas."
+ },
+ {
+  "rel": "science/propulsion/tsiolkovsky.json",
+  "at": "body_paragraphs.2",
+  "old": "Saturn V: 7800 toneladas en húmedo, 600 toneladas en seco. Relación de masas 13. Isp ~330s. ∆v ≈ 8,3 km/s — apenas suficiente para alcanzar inyección trans-lunar. El Falcon 9 reutilizable golpea una pared diferente: cada kilogramo de hardware recuperable te cuesta proporcional de carga útil.",
+  "new": "Saturn V: 7800 toneladas en húmedo, 600 toneladas en seco. Relación de masas 13. Isp ~330s. ∆v ≈ 8,3 km/s — apenas suficiente para alcanzar la inyección translunar. La reutilización del Falcon 9 choca contra otro muro: cada kilogramo de hardware recuperable te cuesta una cantidad proporcional de carga útil."
+ },
+ {
+  "rel": "science/propulsion/tsiolkovsky.json",
+  "at": "formula_caption",
+  "old": "∆v a partir del impulso específico, aceleración gravitatoria g₀, y relación de masas m₀/m_f.",
+  "new": "∆v a partir del impulso específico, la aceleración gravitatoria g₀ y la relación de masas m₀/m_f."
+ },
+ {
+  "rel": "science/propulsion/tsiolkovsky.json",
+  "at": "diagram_caption",
+  "old": "Curva de ∆v vs relación de masas: logarítmica. Duplicar el propelente suma solo un fragmento ∆v constante.",
+  "new": "Curva de ∆v frente a relación de masas: logarítmica. Duplicar el propelente solo suma una cantidad constante de ∆v."
+ },
+ {
+  "rel": "science/propulsion/v-infinity.json",
+  "at": "title",
+  "old": "V∞ — Velocidad de Exceso Hiperbólico",
+  "new": "V∞ — velocidad de exceso hiperbólico"
+ },
+ {
+  "rel": "science/propulsion/v-infinity.json",
+  "at": "narrative_101.0",
+  "old": "C3 es lo que tu cohete tiene que entregar en el LANZAMIENTO. V∞ — pronunciado \"v-infinito\" — es la misma idea, pero al OTRO extremo del viaje. Cuando llegas a Marte, ¿cuán rápido te mueves relativo a Marte, antes de que su gravedad te agarre? Eso es V∞.",
+  "new": "C3 es lo que tu cohete tiene que entregar en el LANZAMIENTO. V∞ —que se lee «v-infinito»— es la misma idea, pero en el OTRO extremo del viaje. Cuando llegas a Marte, ¿a qué velocidad te mueves respecto a Marte, antes de que su gravedad te atrape? Eso es V∞."
+ },
+ {
+  "rel": "science/propulsion/v-infinity.json",
+  "at": "narrative_101.1",
+  "old": "Importa porque fija tu quemada de llegada. Cuanto más rápido llegas, más tienes que frenar para parar. Mars Reconnaissance Orbiter llegó con V∞ ≈ 2,6 km/s y quemó ~1 km/s para capturar en órbita. Voyager 2 alcanzó Neptuno con V∞ ≈ 8 km/s y ni siquiera intentó parar — solo pasó volando, sacó fotos, y continuó fuera del sistema solar para siempre.",
+  "new": "Importa porque determina tu encendido de llegada. Cuanto más rápido llegas, más tienes que frenar para detenerte. Mars Reconnaissance Orbiter llegó con V∞ ≈ 2,6 km/s y frenó con un encendido de ~1 km/s para quedar capturada en órbita. Voyager 2 alcanzó Neptuno con V∞ ≈ 8 km/s y ni siquiera intentó detenerse — simplemente pasó de largo, tomó fotografías y siguió su camino, fuera del sistema solar para siempre."
+ },
+ {
+  "rel": "science/propulsion/v-infinity.json",
+  "at": "body_paragraphs.0",
+  "old": "Imagina una asíntota, infinitamente lejos del planeta. La velocidad a la que te moverías sobre esa asíntota es V∞ — pronunciado \"V-infinito.\" Es la velocidad relativa al Sol menos la contribución del planeta a tu movimiento. En un sobrevuelo hiperbólico, V∞ es constante a lo largo de ambos brazos de la hipérbola.",
+  "new": "Imagina una asíntota, infinitamente lejos del planeta. La velocidad a la que te moverías sobre esa asíntota es V∞, que se lee «V-infinito». Es la velocidad relativa al Sol menos la contribución del planeta a tu movimiento. En un sobrevuelo hiperbólico, V∞ es constante a lo largo de ambos brazos de la hipérbola."
+ },
+ {
+  "rel": "science/propulsion/v-infinity.json",
+  "at": "body_paragraphs.1",
+  "old": "V∞ controla cuán grande tiene que ser la quemada de llegada. Para capturar en órbita, necesitas drenar suficiente energía para caer por debajo del escape — cuanto más profundo el pozo, más Δv cuesta frenarte. Mars Reconnaissance Orbiter llegó a Marte con V∞ ≈ 2,6 km/s, luego gastó ~1 km/s de Δv para inserción en órbita. Voyager 2 alcanzó Neptuno con V∞ ≈ 8 km/s y ni siquiera intentó insertarse — solo sobrevoló.",
+  "new": "V∞ controla de qué tamaño tiene que ser el encendido de llegada. Para quedar capturado en órbita hay que disipar la energía suficiente para caer por debajo de la velocidad de escape — cuanto más profundo es el pozo, más `∆v` cuesta frenarte. Mars Reconnaissance Orbiter llegó a Marte con V∞ ≈ 2,6 km/s y luego gastó ~1 km/s de `∆v` en la inserción orbital. Voyager 2 alcanzó Neptuno con V∞ ≈ 8 km/s y ni siquiera intentó entrar en órbita — solo lo sobrevoló."
+ },
+ {
+  "rel": "science/propulsion/v-infinity.json",
+  "at": "body_paragraphs.2",
+  "old": "En el HUD de `/fly` verás aparecer V∞ cuando la nave entre en la esfera de influencia del destino. Es el momento de la verdad: ¿cuánta velocidad tienes que matar, y puede tu cohete permitírselo?",
+  "new": "En el HUD de `/fly` verás aparecer V∞ cuando la nave entre en la esfera de influencia del destino. Es el momento de la verdad: ¿cuánta velocidad tienes que eliminar, y puede permitírselo tu cohete?"
+ },
+ {
+  "rel": "science/scales-time/_intro.json",
+  "at": "headline",
+  "old": "Escalas y Tiempo — nada de esto es del tamaño de la Tierra, y todo ocurre en un reloj lento.",
+  "new": "Escalas y tiempo — nada de esto tiene el tamaño de la Tierra, y todo ocurre con un reloj lento."
+ },
+ {
+  "rel": "science/scales-time/_intro.json",
+  "at": "paragraphs.0",
+  "old": "El sistema solar es más grande que lo que tu intuición puede calibrar. Marte está a 200 millones de km. Saturno, a 1.400 millones. Plutón, a 6.000 millones. Los números en kilómetros dejan de ser útiles. Así que los astrónomos eligieron una regla más humana: una distancia Tierra-Sol, llamada unidad astronómica (UA). Marte está a 1,5 UA. Júpiter, a 5. Plutón orbita entre 30 y 50.",
+  "new": "El sistema solar es más grande de lo que tu intuición está preparada para asimilar. Marte está a 200 millones de km. Saturno, a 1.400 millones. Plutón, a 6.000 millones. Los números en kilómetros dejan de ser útiles. Así que los astrónomos eligieron una regla más humana: una distancia Tierra-Sol, llamada unidad astronómica (UA). Marte está a 1,5 UA. Júpiter, a 5. Plutón orbita entre 30 y 50."
+ },
+ {
+  "rel": "science/scales-time/_intro.json",
+  "at": "paragraphs.1",
+  "old": "El tiempo es el otro eje que tienes que recalibrar. Una señal desde la Tierra tarda de 4 a 22 minutos en llegar a Marte. No hay forma de pilotar un róver marciano desde la Tierra — cada maniobra importante tiene que ser autónoma, porque cuando descubres que falló, lleva fallando una hora. Las ventanas de lanzamiento a Marte solo se abren cada 26 meses. Si pierdes una, esperas dos años.",
+  "new": "El tiempo es el otro eje que tienes que recalibrar. Una señal desde la Tierra tarda entre 4 y 22 minutos en llegar a Marte. No hay forma de manejar con un joystick un róver marciano desde la Tierra — toda maniobra importante tiene que ser autónoma, porque cuando te enteras de que ha fallado, lleva una hora fallando. Las ventanas de lanzamiento a Marte solo se abren cada 26 meses. Si pierdes una, esperas dos años."
+ },
+ {
+  "rel": "science/scales-time/_intro.json",
+  "at": "paragraphs.2",
+  "old": "Seis secciones aquí. AU y minuto-luz te dan las reglas. J2000 es el cero del calendario en el que todos los astrónomos están de acuerdo. Sidéreo vs sinódico explica por qué las ventanas a Marte se repiten cada 26 meses, no 23. El plano eclíptico es el disco plano sobre el que (casi) yacen todos los planetas. Sistemas de referencia es la contabilidad para cambiar entre vistas centradas en el Sol, en la Tierra y en el cuerpo — algo que el control de misión malabarea constantemente.",
+  "new": "Aquí hay seis secciones. UA y minuto luz te dan las reglas. J2000 es el origen del calendario en el que coinciden todos los astrónomos. Período sidéreo y sinódico explica por qué las ventanas a Marte se repiten cada 26 meses, y no cada 23. El plano de la eclíptica es el disco plano sobre el que se sitúan (casi) todos los planetas. Sistemas de referencia es la contabilidad que permite pasar de vistas centradas en el Sol a otras centradas en la Tierra o en el cuerpo — algo con lo que el control de misión hace malabares constantemente."
+ },
+ {
+  "rel": "science/scales-time/au.json",
+  "at": "title",
+  "old": "AU — Unidad Astronómica",
+  "new": "UA — unidad astronómica"
+ },
+ {
+  "rel": "science/scales-time/au.json",
+  "at": "narrative_101.0",
+  "old": "Una vez empiezas a medir distancias en el espacio, los kilómetros se vuelven inmanejables rápidamente. Marte está a 200 millones de km. Saturno a 1.400 millones de km. Plutón a 6.000 millones de km. Tu cerebro deja de procesar esos números como nada más que \"grande\". Así que los astrónomos eligieron una regla más humana: una distancia Tierra-Sol. Esa es una Astronomical Unit, abreviada AU.",
+  "new": "Una vez que empiezas a medir distancias en el espacio, los kilómetros se vuelven enseguida inmanejables. Marte está a 200 millones de km. Saturno, a 1.400 millones de km. Plutón, a 6.000 millones de km. Tu cerebro deja de procesar esos números como algo más que «grande». Así que los astrónomos eligieron una regla más humana: una distancia Tierra-Sol. Esa es la unidad astronómica, abreviada UA."
+ },
+ {
+  "rel": "science/scales-time/au.json",
+  "at": "narrative_101.1",
+  "old": "La unidad está anclada a un número entero específico de metros — 149.597.870.700 de ellos, fijos desde 2012 — pero la idea práctica es más simple. Marte está a 1,5 AU del Sol. Júpiter a 5 AU. Plutón orbita entre 30 y 50 AU. Voyager 1, el objeto hecho por el ser humano más distante, ya está pasando 170 AU y todavía sigue avanzando. Números que realmente puedes mantener en tu cabeza.",
+  "new": "La unidad está anclada a un número entero concreto de metros — 149.597.870.700, fijado en 2012 —, pero la idea práctica es más simple. Marte está a 1,5 UA del Sol. Júpiter, a 5 UA. Plutón orbita entre 30 y 50 UA. Voyager 1, el objeto fabricado por el ser humano más lejano, ya ha superado las 170 UA y sigue avanzando. Cifras que de verdad caben en la cabeza."
+ },
+ {
+  "rel": "science/scales-time/au.json",
+  "at": "narrative_101.2",
+  "old": "AU está en todas partes en esta aplicación. La pantalla /explore dibuja los radios orbitales en AU. Los ejes porkchop de /plan están calibrados en AU. El HUD en /fly convierte AU a kilómetros y luz-minutos cuando lo necesitas, pero la regla subyacente es siempre AU. Una vez que lo interiorizas, el sistema solar deja de sentirse abstracto — puedes mapear aproximadamente las distancias contando saltos en AU.",
+  "new": "La UA está en todas partes en esta aplicación. La pantalla /explore dibuja los radios orbitales en UA. Los ejes de los gráficos porkchop de /plan están calibrados en UA. El HUD de /fly convierte las UA a kilómetros y minutos luz cuando lo necesitas, pero la regla subyacente es siempre la UA. Cuando la interiorizas, el sistema solar deja de parecer abstracto — puedes hacerte una idea de las distancias contando saltos de UA."
+ },
+ {
+  "rel": "science/scales-time/au.json",
+  "at": "body_paragraphs.0",
+  "old": "Hasta 2012 la AU se definía por la órbita de la Tierra. Como la órbita de la Tierra evoluciona lentamente bajo perturbaciones planetarias, la AU también estaba técnicamente cambiando. La IAU la fijó en 2012 a un número entero preciso de metros — 149.597.870.700 — y la definición ha sido estable desde entonces. La AU ya no es 'la órbita de la Tierra'; es una regla métrica que simplemente la iguala aproximadamente.",
+  "new": "Hasta 2012, la UA se definía a partir de la órbita de la Tierra. Como esa órbita evoluciona lentamente bajo las perturbaciones planetarias, técnicamente la UA también cambiaba. La UAI la fijó en 2012 en un número entero preciso de metros — 149.597.870.700 — y la definición es estable desde entonces. La UA ya no es «la órbita de la Tierra»; es una regla métrica que casualmente coincide, más o menos, con ella."
+ },
+ {
+  "rel": "science/scales-time/au.json",
+  "at": "body_paragraphs.1",
+  "old": "Distancias en el sistema solar en UA: Mercurio 0,39, Venus 0,72, Tierra 1,0, Marte 1,52, Júpiter 5,20, Saturno 9,58, Urano 19,22, Neptuno 30,05, Plutón 39,5 (promedios: la excentricidad hace que varíen). Los Voyagers están mucho más allá de 150 UA y siguen viajando. La nube de Oort se extiende decenas de miles de UA.",
+  "new": "Distancias en el sistema solar en UA: Mercurio 0,39, Venus 0,72, Tierra 1,0, Marte 1,52, Júpiter 5,20, Saturno 9,58, Urano 19,22, Neptuno 30,05, Plutón 39,5 (promedios: la excentricidad hace que varíen). Las Voyager están mucho más allá de 150 UA y siguen viajando. La Nube de Oort se extiende decenas de miles de UA."
+ },
+ {
+  "rel": "science/scales-time/au.json",
+  "at": "body_paragraphs.2",
+  "old": "¿Por qué AU en lugar de metros? Porque los números en metros son engorrosos a escala de sistema solar. Los 1.400 millones de km de Saturno son ilegibles. 9,58 AU es un número que puedes mantener en tu cabeza. Los paneles y HUD de Orrery utilizan AU para las posiciones del sistema solar — convertidos a km, luz-minutos y otras unidades solo donde la audiencia necesita la conversión.",
+  "new": "¿Por qué UA en lugar de metros? Porque los números en metros son engorrosos a escala del sistema solar. Los 1.400 millones de km de Saturno son ilegibles. 9,58 UA es un número que cabe en la cabeza. Los paneles y el HUD de Orrery usan la UA para las posiciones del sistema solar — y solo convierten a km, minutos luz y otras unidades donde el lector necesita la conversión."
+ },
+ {
+  "rel": "science/scales-time/au.json",
+  "at": "diagram_caption",
+  "old": "1 AU ≈ distancia Tierra-Sol. Semieje mayor de los planetas en AU, escala logarítmica para manejar los planetas exteriores.",
+  "new": "1 UA ≈ distancia Tierra-Sol. Semieje mayor de los planetas en UA, en escala logarítmica para dar cabida a los planetas exteriores."
+ },
+ {
+  "rel": "science/scales-time/ecliptic-plane.json",
+  "at": "narrative_101.1",
+  "old": "Aquí está la cosa extraña: la mayor parte del sistema solar vive aproximadamente en este plano. Los ocho planetas están todos dentro de unos pocos grados de él. La Luna orbita la Tierra en un plano apenas 5 grados alejado de él. El cinturón de asteroides está en gran medida sobre él. Esto no es una coincidencia — es un fósil de cómo se formó el sistema solar, cuando todo se condensó a partir de un gran disco de gas y polvo giratorio alrededor del Sol joven. El disco estableció el plano y la mayoría de lo que queda todavía lo respeta.",
+  "new": "Lo curioso es que casi todo el sistema solar vive, más o menos, sobre este plato. Los ocho planetas están a unos pocos grados de él. La Luna orbita la Tierra en un plano que se desvía apenas 5 grados del de la eclíptica. El cinturón de asteroides está en su mayor parte sobre él. No es una coincidencia — es un fósil de cómo se formó el sistema solar, cuando todo se condensó a partir de un gran disco giratorio de gas y polvo alrededor del Sol joven. El disco fijó el plano, y la mayor parte de lo que queda todavía lo respeta."
+ },
+ {
+  "rel": "science/scales-time/ecliptic-plane.json",
+  "at": "narrative_101.2",
+  "old": "Los cometas son los comodines. Los cometas de período largo vienen de cualquier dirección con cualquier inclinación — son restos de la Nube de Oort externa que nunca se asentó en el disco. Plutón orbita 17 grados fuera del plano — con mucho la más inclinada de los nueve clásicos. (Su reclasificación de 2006 se debió a no haber despejado su vecindario orbital, no a su inclinación.)",
+  "new": "Los cometas son los comodines. Los cometas de período largo llegan desde cualquier dirección y con cualquier inclinación — son restos de la Nube de Oort exterior, que nunca se asentó en el disco. Plutón orbita con una inclinación de 17 grados respecto al plano — con mucho el más inclinado de los nueve clásicos. (Su reclasificación de 2006 se debió a que no había despejado su vecindad orbital, no a su inclinación.)"
+ },
+ {
+  "rel": "science/scales-time/ecliptic-plane.json",
+  "at": "body_paragraphs.0",
+  "old": "El Sol, la Tierra y la Luna trazan caminos en el espacio. La órbita de la Tierra define un plano. Mirando desde la Tierra, el Sol parece moverse a lo largo de este plano sobre el fondo de las estrellas — ese camino en el cielo es la eclíptica. La mayoría de otros cuerpos del sistema solar están cerca de ella: los ocho planetas están todos dentro de unos pocos grados, el cinturón de asteroides se agrupa cerca de ella, los cometas están dispersos.",
+  "new": "El Sol, la Tierra y la Luna trazan trayectorias en el espacio. La órbita de la Tierra define un plano. Vista desde la Tierra, el Sol parece moverse a lo largo de este plano sobre el fondo de estrellas — ese camino en el cielo es la eclíptica. La mayoría de los demás cuerpos del sistema solar están cerca de ella: los ocho planetas se encuentran a pocos grados, el cinturón de asteroides se agrupa cerca de ella y los cometas están dispersos."
+ },
+ {
+  "rel": "science/scales-time/ecliptic-plane.json",
+  "at": "body_paragraphs.2",
+  "old": "La vista `/explore` de Orrery mira hacia abajo en el plano de la eclíptica desde arriba por defecto — la perspectiva natural para pensar en el movimiento heliocéntrico. Inclinar la vista te muestra por qué las órbitas de Mercurio y Plutón se ven 'incorrectas' aunque sean perfectamente Keplerianas: sus planos orbitales no coinciden con el del resto del grupo.",
+  "new": "La vista `/explore` de Orrery mira por defecto hacia el plano de la eclíptica desde arriba — la perspectiva natural para pensar en el movimiento heliocéntrico. Al inclinar la vista descubres por qué las órbitas de Mercurio y Plutón parecen «incorrectas» aunque sean perfectamente keplerianas: sus planos orbitales no coinciden con el del resto del grupo."
+ },
+ {
+  "rel": "science/scales-time/frames.json",
+  "at": "title",
+  "old": "Marcos heliocéntrico · geocéntrico · centrado en el cuerpo",
+  "new": "Sistemas heliocéntrico · geocéntrico · centrado en el cuerpo"
+ },
+ {
+  "rel": "science/scales-time/frames.json",
+  "at": "intro_sentence",
+  "old": "Tres sistemas de referencia para tres preguntas distintas: ¿dónde está relativo al Sol, a la Tierra, o al planeta que estudias?",
+  "new": "Tres sistemas de referencia para tres preguntas distintas: ¿dónde está respecto al Sol, a la Tierra o al planeta que estudias?"
+ },
+ {
+  "rel": "science/scales-time/frames.json",
+  "at": "narrative_101.1",
+  "old": "La astronáutica malabarea constantemente con tres de ellos. Heliocéntrico (origen en el Sol) es el sistema natural para crucero — todo lo Tierra-a-Marte ocurre aquí. Geocéntrico (origen en la Tierra) es el sistema natural para satélites y la Luna. Centrado en el cuerpo (origen en cualquier planeta que sobrevueles u orbites) es el sistema natural para quemadas de llegada y operaciones de superficie.",
+  "new": "Los vuelos espaciales manejan tres de ellos constantemente. El heliocéntrico (origen en el Sol) es el sistema natural para la fase de crucero — todo el trayecto de la Tierra a Marte ocurre aquí. El geocéntrico (origen en la Tierra) es el natural para los satélites y la Luna. El centrado en el cuerpo (origen en el planeta que sobrevuelas u orbitas) es el natural para los encendidos de llegada y las operaciones de superficie."
+ },
+ {
+  "rel": "science/scales-time/frames.json",
+  "at": "narrative_101.2",
+  "old": "Cambiar entre ellos es sobre todo aritmética — traduce el origen, quizás rota los ejes. Pero importa dónde estás conceptualmente: una elipse de transferencia es heliocéntrica. Un sobrevuelo a Marte es centrado en el cuerpo. La transferencia entre ellos es exactamente el truco de las cónicas parcheadas. Cada pantalla de esta app elige un sistema y se queda con él: /explore es heliocéntrica, /earth es geocéntrica, /moon y /mars son centrados en el cuerpo.",
+  "new": "Pasar de uno a otro es sobre todo aritmética — trasladar el origen y, quizás, rotar los ejes. Pero importa dónde estás conceptualmente: una elipse de transferencia es heliocéntrica. Un sobrevuelo de Marte está centrado en el cuerpo. El traspaso entre ambos es exactamente el truco de las cónicas parcheadas. Cada pantalla de esta app elige un sistema y se queda con él: /explore es heliocéntrica, /earth es geocéntrica, /moon y /mars están centradas en el cuerpo."
+ },
+ {
+  "rel": "science/scales-time/frames.json",
+  "at": "body_paragraphs.0",
+  "old": "Heliocéntrico: origen en el Sol, ejes alineados con la eclíptica. El sistema natural para movimiento del sistema solar. Posiciones planetarias, órbitas de transferencia, cruceros de misión — todo se describe más naturalmente aquí. El `/explore` de Orrery es fundamentalmente heliocéntrico.",
+  "new": "Heliocéntrico: origen en el Sol, ejes alineados con la eclíptica. El sistema natural para el movimiento en el sistema solar. Posiciones planetarias, órbitas de transferencia, cruceros de misión — todo se describe aquí de la manera más natural. El `/explore` de Orrery es fundamentalmente heliocéntrico."
+ },
+ {
+  "rel": "science/scales-time/frames.json",
+  "at": "body_paragraphs.1",
+  "old": "Geocéntrico: origen en la Tierra. Útil para satélites, la Luna y cualquier nave dentro de la esfera de influencia de la Tierra. La ruta `/earth` de la Tierra trabaja en este sistema. Las coordenadas geocéntricas se relacionan con las heliocéntricas por una traslación (la posición heliocéntrica de la Tierra) y posiblemente una rotación (la inclinación axial de la Tierra).",
+  "new": "Geocéntrico: origen en la Tierra. Útil para satélites, la Luna y cualquier nave dentro de la esfera de influencia de la Tierra. La ruta `/earth` de la Tierra funciona en este sistema. Las coordenadas geocéntricas se relacionan con las heliocéntricas mediante una traslación (la posición heliocéntrica de la Tierra) y, posiblemente, una rotación (la inclinación axial de la Tierra)."
+ },
+ {
+  "rel": "science/scales-time/frames.json",
+  "at": "body_paragraphs.2",
+  "old": "Centrado en el cuerpo (centrado en Marte, en Saturno, en la Luna, etc.): origen en el cuerpo que orbitas o sobrevuelas. Usado para inserción orbital, operaciones de superficie, geometría de sobrevuelo — cualquier cosa donde domine la gravedad del cuerpo. El diseño de misión por cónicas parcheadas cambia de sistemas en las fronteras de la esfera de influencia: describes un arco en el sistema que mantenga la matemática local.",
+  "new": "Centrado en el cuerpo (centrado en Marte, en Saturno, en la Luna, etc.): origen en el cuerpo que orbitas o sobrevuelas. Se usa para la inserción orbital, las operaciones de superficie y la geometría de los sobrevuelos — para todo aquello en que domina la gravedad del cuerpo. El diseño de misiones por cónicas parcheadas cambia de sistema en las fronteras de la esfera de influencia: describes cada arco en el sistema que mantenga local el cálculo."
+ },
+ {
+  "rel": "science/scales-time/j2000.json",
+  "at": "intro_sentence",
+  "old": "12:00 TT (Terrestrial Time) del 1 de enero de 2000 — el momento de referencia universal que los astrónomos utilizan para datar los elementos orbitales.",
+  "new": "12:00 TT (Tiempo Terrestre) del 1 de enero de 2000 — el momento de referencia universal que los astrónomos utilizan para datar los elementos orbitales."
+ },
+ {
+  "rel": "science/scales-time/j2000.json",
+  "at": "narrative_101.1",
+  "old": "¿Por qué mediodía y no medianoche? Porque el conteo del Day Julian — el recuento continuo de los astrónomos desde el año 4713 BC — siempre ha cambiado de día al mediodía, no a la medianoche, para que los observadores no tengan que cambiar la fecha en mitad de la noche de trabajo. J2000 corresponde exactamente al Julian Day 2.451.545,0 — una referencia limpia y entera.",
+  "new": "¿Por qué mediodía y no medianoche? Porque el conteo del día juliano — el recuento continuo de días de los astrónomos desde el año 4713 a. C. — siempre ha cambiado de día al mediodía, no a medianoche, para que los observadores no tengan que lidiar con un cambio de fecha en plena jornada nocturna. J2000 corresponde exactamente al día juliano 2.451.545,0 — una referencia limpia y entera."
+ },
+ {
+  "rel": "science/scales-time/j2000.json",
+  "at": "narrative_101.2",
+  "old": "Cada órbita que ves en este simulador está anclada a J2000. La longitud media de la Tierra en J2000. El argumento del perihelio de Marte en J2000. Las posiciones de los planetas que ves animar en /explore se extrapolan hacia adelante (o hacia atrás) desde J2000 usando matemáticas lineales simples: \"comienza aquí, avanza a este ritmo, aquí es donde estás ahora\". Elige cualquier fecha en la historia y el orrery puede decirte dónde estaban los planetas.",
+  "new": "Cada órbita que ves en este simulador está anclada a J2000. La longitud media de la Tierra en J2000. El argumento del perihelio de Marte en J2000. Las posiciones de los planetas que ves animadas en /explore se extrapolan hacia adelante (o hacia atrás) desde J2000 con matemáticas lineales simples: «empieza aquí, avanza a este ritmo, aquí es donde estás ahora». Elige cualquier fecha de la historia y el orrery puede decirte dónde estaban los planetas."
+ },
+ {
+  "rel": "science/scales-time/j2000.json",
+  "at": "body_paragraphs.0",
+  "old": "Los elementos orbitales se desplazan con el tiempo — las perturbaciones de otros planetas modifican la excentricidad, las longitudes precesionan, las inclinaciones oscilan. Para que los elementos de un planeta sean significativos, debes indicar \"a partir de cuándo\". La respuesta estándar es J2000: mediodía TT (Terrestrial Time) del 1 de enero de 2000. Las órbitas se citan en ese momento; la propagación hacia adelante o hacia atrás utiliza modelos analíticos o numéricos.",
+  "new": "Los elementos orbitales se desplazan con el tiempo — las perturbaciones de otros planetas alteran levemente la excentricidad, las longitudes experimentan precesión, las inclinaciones oscilan. Para que los elementos de un planeta tengan sentido, hay que decir «a partir de cuándo». La respuesta estándar es J2000: mediodía TT (Tiempo Terrestre) del 1 de enero de 2000. Las órbitas se citan en ese momento; la propagación hacia adelante o hacia atrás usa modelos analíticos o numéricos."
+ },
+ {
+  "rel": "science/scales-time/j2000.json",
+  "at": "body_paragraphs.1",
+  "old": "¿Por qué mediodía? Porque Fecha Juliana (JD) — el conteo continuo de días de los astrónomos que comienza al mediodía de Tiempo Universal el 1 de enero de 4713 AC (calendario juliano proléptico) — se incrementa al mediodía, no a la medianoche. J2000 corresponde exactamente a JD 2.451.545,0, un punto de referencia limpio sin días fraccionarios.",
+  "new": "¿Por qué mediodía? Porque la fecha juliana (JD) — el conteo continuo de días de los astrónomos, que comienza al mediodía de Tiempo Universal del 1 de enero de 4713 a. C. (calendario juliano proléptico) — se incrementa al mediodía, no a medianoche. J2000 corresponde exactamente a JD 2.451.545,0, un punto de referencia limpio, sin días fraccionarios."
+ },
+ {
+  "rel": "science/scales-time/j2000.json",
+  "at": "body_paragraphs.2",
+  "old": "Los datos planetarios del Orrery utilizan elementos J2000 en todo momento. El campo de longitud media `L₀` en los paneles de `/explore` es el ángulo de posición heliocéntrica del planeta en J2000. A partir de ahí, el movimiento medio `n = 2π / T` avanza `L` linealmente a cualquier otra época — módulo pequeñas perturbaciones que el simulador ignora.",
+  "new": "Los datos planetarios de Orrery usan siempre elementos J2000. El campo de longitud media `L₀` de los paneles de `/explore` es el ángulo de posición heliocéntrico del planeta en J2000. A partir de ahí, el movimiento medio `n = 2π / T` hace avanzar `L` linealmente hasta cualquier otra época — salvo pequeñas perturbaciones que el simulador ignora."
+ },
+ {
+  "rel": "science/scales-time/light-minute.json",
+  "at": "narrative_101.1",
+  "old": "¿Por qué importa? Porque las ondas de radio viajan a la velocidad de la luz, y ese es también el tiempo que tus comandos tardan en llegar a una nave espacial. Cuando Curiosity se mueve por Marte, el equipo del rover envía un comando y luego espera — 8 a 22 minutos — para que el rover comience a moverse. Luego otros 8 a 22 para descubrir si funcionó. NO hay forma de controlar por joystick un rover en Marte desde la Tierra. Todo lo importante debe ser autónomo.",
+  "new": "¿Por qué importa? Porque las ondas de radio viajan a la velocidad de la luz, y ese es también el tiempo que tardan tus comandos en llegar a una nave espacial. Cuando Curiosity recorre Marte, el equipo del róver envía un comando y luego espera —de 8 a 22 minutos— a que el róver empiece a moverse. Luego, otros 8 a 22 para saber si funcionó. NO hay manera de manejar con un joystick un róver en Marte desde la Tierra. Todo lo importante tiene que ser autónomo."
+ },
+ {
+  "rel": "science/scales-time/light-minute.json",
+  "at": "narrative_101.2",
+  "old": "A la distancia de Voyager-1 (alrededor de 170 UA ahora), el retraso de luz unidireccional es de unos 23,5 horas — alcanzará un día de luz completo (24 horas) a finales de 2026. Envía un comando hoy, descubres mañana por la tarde si funcionó. Los años de luz existen para la siguiente escala — la distancia a otras estrellas. La más cercana, Próxima Centauri, está a 4,2 años de luz. A la velocidad de Voyager tardaría 70 000 años en llegar allí. El universo es grande y lento.",
+  "new": "A la distancia de Voyager 1 (alrededor de 170 UA ahora), el retraso de la luz en un solo sentido es de unas 23,5 horas — alcanzará un día luz completo (24 horas) a finales de 2026. Envías un comando hoy y mañana por la tarde descubres si funcionó. Los años luz existen para la siguiente escala — la distancia a otras estrellas. La más cercana, Próxima Centauri, está a 4,2 años luz. A la velocidad de Voyager tardaría 70 000 años en llegar. El universo es grande y lento."
+ },
+ {
+  "rel": "science/scales-time/light-minute.json",
+  "at": "body_paragraphs.0",
+  "old": "La luz se mueve a unos 300 000 km/s. Un segundo de luz es 300 000 km. Un minuto de luz es 18 millones de km. Un año de luz es 9,46 billones de km. Son distancias, no tiempos — confusamente nombrados, pero útiles: 1 UA ≈ 8,3 minutos de luz, así que 'Marte está a 4–22 minutos de luz de distancia dependiendo de la órbita' te dice la latencia de comando de viaje redondo en cualquier momento.",
+  "new": "La luz se mueve a unos 300 000 km/s. Un segundo luz son 300 000 km. Un minuto luz son 18 millones de km. Un año luz son 9,46 billones de km. Son distancias, no tiempos — nombres que confunden, pero útiles: 1 UA ≈ 8,3 minutos luz, así que «Marte está a 4–22 minutos luz según la órbita» te da la latencia de ida y vuelta de un comando en cada momento."
+ },
+ {
+  "rel": "science/scales-time/light-minute.json",
+  "at": "body_paragraphs.1",
+  "old": "Cuando Curiosity se mueve por Marte, el equipo del rover envía un comando y luego espera 8–22 minutos para que el rover comience la maniobra — y otros 8–22 para descubrir si funcionó. El control en tiempo real es imposible a distancias planetarias. Lo suficientemente lejos (Voyager 1 a ~23,5 horas de luz) estás enviando nudos unidireccionales que llegan casi un día después.",
+  "new": "Cuando Curiosity recorre Marte, el equipo del róver envía un comando y espera de 8 a 22 minutos a que el róver inicie la maniobra — y otros 8-22 para saber si funcionó. El control en tiempo real es imposible a distancias planetarias. Mucho más lejos (Voyager 1, a ~23,5 horas luz), los mensajes solo van en un sentido y llegan casi un día después."
+ },
+ {
+  "rel": "science/scales-time/light-minute.json",
+  "at": "body_paragraphs.2",
+  "old": "Los años de luz son para las estrellas. Próxima Centauri está a 4,2 años de luz. Voyager 1 se mueve a ~17 km/s, que es rápido para una nave espacial pero lento comparado con la luz: a esa velocidad Proxima tardaría ~70 000 años.",
+  "new": "Los años luz son para las estrellas. Próxima Centauri está a 4,2 años luz. Voyager 1 se mueve a ~17 km/s, que es rápido para una nave espacial pero lento comparado con la luz: a esa velocidad, llegar a Próxima llevaría ~70 000 años."
+ },
+ {
+  "rel": "science/scales-time/long-duration.json",
+  "at": "intro_sentence",
+  "old": "Después de aproximadamente tres meses, la microgravedad deja de ser neutral y comienza a causar daños medibles en el cuerpo humano.",
+  "new": "Pasados unos tres meses, la microgravedad deja de ser neutra y empieza a causar daños medibles en el cuerpo humano."
+ },
+ {
+  "rel": "science/scales-time/long-duration.json",
+  "at": "narrative_101.0",
+  "old": "En la Tierra, la gravedad realiza un trabajo constante: atrae fluidos hacia tus pies, carga tus huesos a cada paso, ejerce presión sobre tu corazón contra el peso de la sangre. Sin ella, el cuerpo se descompone: los huesos pierden ~1-2% de densidad por mes si no luchas contra ello, los músculos se atrofian, el sistema cardiovascular se descondiciona, los cambios de fluidos aumentan la presión en el cráneo y comprimen ligeramente tus globos oculares. Dos horas diarias en una cinta de correr con arnés y un dispositivo de ejercicio resistivo recuperan la mayor parte, pero no todo.",
+  "new": "En la Tierra, la gravedad hace un trabajo de fondo todo el día: atrae los fluidos hacia los pies, carga los huesos a cada paso, obliga al corazón a trabajar contra el peso de la sangre. Si se elimina, el cuerpo se deshace: los huesos pierden ~1-2 % de densidad por mes si no se contrarresta, los músculos se atrofian, el sistema cardiovascular se descondiciona, los desplazamientos de fluidos aumentan la presión en el cráneo y aplastan ligeramente los globos oculares. Dos horas diarias en una cinta de correr con arnés y un dispositivo de ejercicio resistivo recuperan la mayor parte, pero no todo."
+ },
+ {
+  "rel": "science/scales-time/long-duration.json",
+  "at": "narrative_101.1",
+  "old": "El récord actual de una sola misión en la EEI es Frank Rubio con 371 días (sep 2022 – sep 2023). El récord histórico fue Valeri Poliakov en Mir con 437,7 días en 1994-95 — una prueba deliberada para una potencial misión a Marte. Las tripulaciones de Tiangong rotan actualmente en intervalos de aproximadamente 6 meses, equiparables al estándar de la EEI.",
+  "new": "El récord actual de una sola misión en la EEI es el de Frank Rubio, con 371 días (sep 2022 – sep 2023). El récord histórico lo tiene Valeri Poliakov en la Mir, con 437,7 días en 1994-95 — una prueba deliberada de cara a una posible misión a Marte. Las tripulaciones de Tiangong rotan actualmente en intervalos de aproximadamente 6 meses, igual que el estándar de la EEI."
+ },
+ {
+  "rel": "science/scales-time/long-duration.json",
+  "at": "narrative_101.2",
+  "old": "Más allá de hueso y músculo, los problemas más difíciles son la radiación (los rayos cósmicos galácticos se acumulan a ~0,5 mSv/día en órbita baja — aproximadamente 100× el nivel del mar), la vista (el Spaceflight-Associated Neuro-ocular Syndrome sigue siendo poco comprendido) y la salud mental (espacios reducidos, aislamiento, falta de privacidad).",
+  "new": "Más allá de los huesos y los músculos, los problemas más difíciles son la radiación (los rayos cósmicos galácticos se acumulan a ~0,5 mSv/día en órbita baja — unas 100 veces el nivel del mar), la vista (el síndrome neuroocular asociado a los vuelos espaciales sigue siendo poco comprendido) y la salud conductual (espacios reducidos, aislamiento, falta de privacidad)."
+ },
+ {
+  "rel": "science/scales-time/long-duration.json",
+  "at": "body_paragraphs.0",
+  "old": "HUESO + MÚSCULO — los astronautas pierden 1-2% de densidad mineral ósea por mes en huesos que soportan peso sin medidas de contrapeso (~0,5% con el Advanced Resistive Exercise Device + bifosfonatos). Las fibras musculares de tipo I se atrofian más rápidamente; el ejercicio diario de 2 horas en cinta de correr + cicloergómetro + ARED conserva aproximadamente el 90% de la masa muscular previa al vuelo.",
+  "new": "HUESO + MÚSCULO — sin contramedidas, los astronautas pierden 1-2 % de densidad mineral ósea por mes en los huesos que soportan peso (~0,5 % con el Advanced Resistive Exercise Device + bifosfonatos). Las fibras musculares de tipo I son las que se atrofian más rápido; el ejercicio diario de 2 horas en cinta de correr + cicloergómetro + ARED conserva aproximadamente el 90 % de la masa muscular previa al vuelo."
+ },
+ {
+  "rel": "science/scales-time/long-duration.json",
+  "at": "body_paragraphs.1",
+  "old": "CARDIOVASCULAR + CAMBIO DE FLUIDOS — el ventrículo izquierdo del corazón pierde aproximadamente el 9-12% de su masa durante una misión de 6 meses; la intolerancia ortostática persiste durante semanas tras el regreso. Aproximadamente 2 L de fluido migran de las piernas a la cabeza en microgravedad, causando hinchazón facial, presión intracraneal elevada, e implicado en el Spaceflight-Associated Neuro-ocular Syndrome (SANS).",
+  "new": "SISTEMA CARDIOVASCULAR + DESPLAZAMIENTO DE FLUIDOS — el ventrículo izquierdo pierde aproximadamente el 9-12 % de su masa durante una misión de 6 meses; la intolerancia ortostática persiste durante semanas tras el regreso. Unos 2 L de fluido migran de las piernas a la cabeza en microgravedad, lo que provoca hinchazón facial y aumento de la presión intracraneal, y se considera implicado en el síndrome neuroocular asociado a los vuelos espaciales (SANS)."
+ },
+ {
+  "rel": "science/scales-time/long-duration.json",
+  "at": "body_paragraphs.2",
+  "old": "VESTIBULAR / SENSORIOMOTOR — la readaptación a la gravedad toma horas o días tras el aterrizaje; el control motor fino está mediblemente degradado durante ~2 semanas.",
+  "new": "VESTIBULAR / SENSORIOMOTOR — la readaptación a la gravedad lleva de horas a días tras el aterrizaje; el control motor fino se degrada de forma medible durante ~2 semanas."
+ },
+ {
+  "rel": "science/scales-time/long-duration.json",
+  "at": "body_paragraphs.3",
+  "old": "RADIACIÓN — la tripulación en órbita baja recibe ~150-180 mSv por misión de 6 meses. Los límites de carrera se establecen por agencia; el marco de límite de dosis efectiva de NASA limita el riesgo de carrera a una mortalidad por cáncer aumentada del 3%, lo que se traduce en aproximadamente 3-5 misiones de duración EEI para la mayoría de astronautas.",
+  "new": "RADIACIÓN — la tripulación en órbita baja recibe ~150-180 mSv por misión de 6 meses. Los límites para toda la carrera se fijan por agencia; el marco de límites de dosis efectiva de la NASA fija en un 3 % el aumento máximo de la mortalidad por cáncer a lo largo de la carrera, lo que equivale a unas 3-5 misiones de la duración de las de la EEI para la mayoría de los astronautas."
+ },
+ {
+  "rel": "science/scales-time/long-duration.json",
+  "at": "diagram_caption",
+  "old": "Curvas de pérdida fisiológica durante una misión de 12 meses. Hueso (rojo, caída más pronunciada), músculo (azul), cardiovascular (dorado). Las medidas de contrapeso del ejercicio diario (discontinuo) aplanan cada curva.",
+  "new": "Curvas de pérdida fisiológica durante una misión de 12 meses. Hueso (rojo, la caída más pronunciada), músculo (azul), sistema cardiovascular (dorado). Las contramedidas de ejercicio diario (línea discontinua) aplanan cada curva."
+ },
+ {
+  "rel": "science/scales-time/sidereal-synodic.json",
+  "at": "title",
+  "old": "Período Sidéreo vs Sinódico",
+  "new": "Período sidéreo y sinódico"
+ },
+ {
+  "rel": "science/scales-time/sidereal-synodic.json",
+  "at": "narrative_101.1",
+  "old": "Si quieres saber cuánto tarda Marte en hacer UNA VUELTA al Sol, la respuesta es 687 días terrestres. Ese es el período sidéreo — medido contra las estrellas distantes inmóviles. Es la verdad geométrica de la órbita. Vis-viva y la tercera ley de Kepler ambos funcionan en tiempo sidéreo.",
+  "new": "Si quieres saber cuánto tarda Marte en dar UNA VUELTA al Sol, la respuesta es 687 días terrestres. Ese es el período sidéreo — medido respecto a las estrellas lejanas e inmóviles. Es la verdad geométrica de la órbita. Tanto la ecuación vis-viva como la tercera ley de Kepler funcionan en tiempo sidéreo."
+ },
+ {
+  "rel": "science/scales-time/sidereal-synodic.json",
+  "at": "body_paragraphs.0",
+  "old": "Período sidéreo: tiempo para una órbita completa relativa a las estrellas fijas. Este es el período geométrico de la tercera ley de Kepler — el año sidéreo de Marte es 687 días terrestres. Período sinódico: tiempo para que un cuerpo vuelva a la misma posición relativa a otro cuerpo, normalmente visto desde un tercero. El período sinódico de Marte — tiempo entre alineaciones Marte-Tierra — es 780 días, o unos 26 meses.",
+  "new": "Período sidéreo: tiempo que tarda un cuerpo en completar una órbita respecto a las estrellas fijas. Es el período geométrico de la tercera ley de Kepler — el año sidéreo de Marte es de 687 días terrestres. Período sinódico: tiempo que tarda un cuerpo en volver a la misma posición relativa a otro cuerpo, normalmente visto desde un tercero. El período sinódico de Marte — el tiempo entre alineaciones Marte-Tierra — es de 780 días, unos 26 meses."
+ },
+ {
+  "rel": "science/scales-time/sidereal-synodic.json",
+  "at": "body_paragraphs.1",
+  "old": "El período sinódico es lo que importa a los planificadores de misión. Las transferencias de Hohmann Tierra-Marte solo funcionan cuando Marte está en el lugar correcto. La siguiente ventana de lanzamiento viable aparece cada 26 meses. Pierde una, espera dos años para otra. Esa es la cadencia de cada misión a Marte jamás volada.",
+  "new": "El período sinódico es lo que interesa a los planificadores de misiones. Las transferencias de Hohmann Tierra-Marte solo funcionan cuando Marte está en el lugar correcto. La siguiente ventana de lanzamiento viable aparece cada 26 meses. Si pierdes una, esperas dos años a la siguiente. Esa es la cadencia de todas las misiones a Marte que han volado."
+ },
+ {
+  "rel": "science/scales-time/sidereal-synodic.json",
+  "at": "body_paragraphs.2",
+  "old": "Matemáticamente: `1/T_sin = 1/T_int − 1/T_ext`. Si el año de la Tierra es 1,0 año y el de Marte es 1,88 año: `1/T_sin = 1 − 1/1,88 = 0,468`, así que `T_sin = 2,14 años ≈ 26 meses`. La matemática es simple; la consecuencia operativa — cada cronograma de misión debe respetarla — es donde vive en la planificación de misión.",
+  "new": "Matemáticamente: `1/T_sin = 1/T_int − 1/T_ext`. Si el año de la Tierra es de 1,0 año y el de Marte de 1,88 años: `1/T_sin = 1 − 1/1,88 = 0,468`, así que `T_sin = 2,14 años ≈ 26 meses`. Las matemáticas son simples; lo que pesa en la planificación es la consecuencia operativa: todo cronograma de misión tiene que respetarla."
+ },
+ {
+  "rel": "science/scales-time/sidereal-synodic.json",
+  "at": "diagram_caption",
+  "old": "Sidéreo: misma alineación con estrellas. Sinódico: misma alineación Tierra-Marte-Sol, más largo porque ambos planetas se movieron.",
+  "new": "Sidéreo: misma alineación con las estrellas. Sinódico: misma alineación Tierra-Marte-Sol, más largo porque ambos planetas se movieron."
+ },
+ {
+  "rel": "science/space-stations/_intro.json",
+  "at": "headline",
+  "old": "Space Stations — cajas presurizadas que caen por siempre.",
+  "new": "Estaciones espaciales — cajas presurizadas que caen para siempre."
+ },
+ {
+  "rel": "science/space-stations/_intro.json",
+  "at": "paragraphs.0",
+  "old": "Una estación espacial es lo que obtienes cuando apilas vasos de presión certificados para humanos en órbita terrestre baja y nunca los dejas bajar. Todos los sistemas a bordo existen para mantener el interior más cálido que -270°C y a una atmósfera de aire respirable, mientras que el exterior hace lo posible por arrancar el aire hacia afuera (vacío) y enfriar el metal a temperaturas espaciales (enfriamiento radiativo).",
+  "new": "Una estación espacial es lo que obtienes cuando apilas recipientes a presión aptos para humanos en órbita terrestre baja y nunca los dejas bajar. Todos los sistemas a bordo existen para mantener el interior más cálido que -270°C y a una atmósfera de aire respirable, mientras el exterior hace lo posible por arrancar el aire (vacío) y enfriar el metal hasta las temperaturas del espacio (enfriamiento radiativo)."
+ },
+ {
+  "rel": "science/space-stations/_intro.json",
+  "at": "paragraphs.1",
+  "old": "Tres números realmente definen una estación: cuánto volumen presurizado tiene la tripulación para vivir y trabajar, cómo se conectan los módulos de presión (nodos) y cuánta potencia eléctrica pueden suministrar las matrices solares. Las tres secciones aquí desglosan cada uno de esos aspectos — qué son, cómo se dimensionan y cómo la EEI y Tiangong hicieron opciones de diseño diferentes.",
+  "new": "Tres números definen de verdad una estación: cuánto volumen presurizado tiene la tripulación para vivir y trabajar, cómo se conectan los módulos de presión (nodos) y cuánta potencia eléctrica pueden suministrar los paneles solares. Las tres secciones siguientes desglosan cada uno de esos aspectos — qué son, cómo se dimensionan y cómo la EEI y Tiangong tomaron decisiones de diseño distintas."
+ },
+ {
+  "rel": "science/space-stations/_intro.json",
+  "at": "paragraphs.2",
+  "old": "Las estaciones no son simplemente «naves espaciales grandes». Son permanentes, modulares y crecen con el tiempo. La EEI comenzó con un módulo único (Zarya, lanzado en 1998 — fabricado en Rusia, financiado por EE. UU.) y creció durante quince años hasta una estructura de aproximadamente 109 m de ancho con alrededor de una docena y media de elementos presurizados. Tiangong se lanzó más rápido (2021–2022) pero sigue la misma lógica: lanza una caja, acopla la siguiente, conéctala.",
+  "new": "Las estaciones no son simplemente «naves espaciales grandes». Son permanentes, modulares y crecen con el tiempo. La EEI comenzó con un módulo único (Zarya, lanzado en 1998 — fabricado en Rusia, financiado por EE. UU.) y creció durante quince años hasta una estructura de aproximadamente 109 m de ancho con alrededor de una docena y media de elementos presurizados. Tiangong se montó más rápido (2021–2022) pero sigue la misma lógica: lanza una caja, acopla la siguiente, conéctala."
+ },
+ {
+  "rel": "science/space-stations/expedition-cadence.json",
+  "at": "intro_sentence",
+  "old": "Las estaciones funcionan con rotaciones de tripulación de 6 meses — un equilibrio entre consumibles de traje, vida útil del vehículo, tuberías de entrenamiento y fisiología humana.",
+  "new": "Las estaciones funcionan con rotaciones de tripulación de 6 meses — un equilibrio entre los consumibles de los trajes, la vida útil de las naves, el flujo de formación de astronautas y la fisiología humana."
+ },
+ {
+  "rel": "science/space-stations/expedition-cadence.json",
+  "at": "narrative_101.0",
+  "old": "¿Por qué seis meses? Es la respuesta a varias limitaciones que confluyen en un mismo punto. Las naves Soyuz y Crew Dragon están certificadas para permanecer acopladas durante ~6–7 meses (Soyuz ~200 d; Crew Dragon originalmente ~210 d, posteriormente extendido) antes de que sus propulsores y sellos requieran renovación. Los consumibles de los trajes EVA (O₂, LiOH, batería) se reponen en órbita; la vida de certificación del traje limita cuánto tiempo puede permanecer un traje en servicio. Los datos de contrameasura de pérdida ósea de la NASA son más confiables en ciclos de 6 meses. Rotar un tercio de la tripulación cada 4-6 meses mantiene personal fresco a bordo sin solapamiento de literas.",
+  "new": "¿Por qué seis meses? Es la respuesta a varias limitaciones que confluyen en un mismo punto. Las naves Soyuz y Crew Dragon están certificadas para permanecer acopladas ~6–7 meses (Soyuz ~200 d; Crew Dragon originalmente ~210 d, ampliado después) antes de que sus propulsores y sellos necesiten renovarse. Los consumibles de los trajes EVA (O₂, LiOH, batería) se reponen en órbita; la vida de certificación del traje limita cuánto tiempo puede seguir en servicio. Los datos de contramedidas contra la pérdida ósea de la NASA son más fiables en tramos de 6 meses. Rotar un tercio de la tripulación cada 4-6 meses mantiene gente descansada a bordo sin tener que compartir literas por turnos."
+ },
+ {
+  "rel": "science/space-stations/expedition-cadence.json",
+  "at": "narrative_101.1",
+  "old": "La EEI comenzó con expediciones de 3 personas (Expedición 1 en 2000) y pasó a tripulaciones de 6 personas en 2009 una vez que la capacidad de bote salvavidas estuvo disponible. Cada expedición típicamente dura ~6 meses. Algunas duran más — la estadía accidental de 371 días de Frank Rubio (Expediciones 67/68/69) ocurrió cuando su Soyuz fue dañada por escombros y hubo que enviar un reemplazo.",
+  "new": "La EEI comenzó con expediciones de 3 personas (Expedición 1, en 2000) y pasó a tripulaciones de 6 en 2009, cuando hubo capacidad de evacuación para todos. Cada expedición suele durar ~6 meses. Algunas duran más — la estancia accidental de 371 días de Frank Rubio (Expediciones 67/68/69) ocurrió cuando su Soyuz fue dañada por escombros y hubo que enviar una de repuesto."
+ },
+ {
+  "rel": "science/space-stations/expedition-cadence.json",
+  "at": "narrative_101.2",
+  "old": "Tiangong comenzó con rotaciones más cortas (Shenzhou 12: 92 días; Shenzhou 13: 183 días) y se estabilizó en ~6 meses a partir de Shenzhou 14 en adelante. Las tripulaciones de tres personas rotan; la tripulación saliente y la entrante comparten aproximadamente una semana a bordo para transferir el estado operacional.",
+  "new": "Tiangong comenzó con rotaciones más cortas (Shenzhou 12: 92 días; Shenzhou 13: 183 días) y se estabilizó en ~6 meses a partir de la Shenzhou 14. Rotan tripulaciones de tres personas; la saliente y la entrante comparten aproximadamente una semana a bordo para traspasar el estado operativo."
+ },
+ {
+  "rel": "science/space-stations/expedition-cadence.json",
+  "at": "body_paragraphs.0",
+  "old": "Limitaciones que impulsan la cadencia de ~6 meses: vida útil certificada de nave acoplada (~6–7 meses; Soyuz ~200 d; Crew Dragon originalmente ~210 d, posteriormente extendido; Shenzhou ~180–210 d), reposición de consumibles de traje EVA en órbita y límites de certificación, capacidad de despensa de alimentos por reabastecimiento, y la preferencia del Programa de Investigación Humana de la NASA por ciclos de datos de pérdida ósea de 6 meses.",
+  "new": "Limitaciones que fijan la cadencia de ~6 meses: vida útil certificada de las naves acopladas (~6–7 meses; Soyuz ~200 d; Crew Dragon originalmente ~210 d, ampliado después; Shenzhou ~180–210 d), reposición en órbita de los consumibles de los trajes EVA y límites de certificación, capacidad de la despensa por cada reabastecimiento, y la preferencia del Programa de Investigación Humana de la NASA por intervalos de 6 meses en los datos de pérdida ósea."
+ },
+ {
+  "rel": "science/space-stations/expedition-cadence.json",
+  "at": "body_paragraphs.1",
+  "old": "Expediciones EEI: numeradas secuencialmente desde Expedition 1 (nov 2000). Tamaños de tripulación — 3 (Exp 1-19), 6 (Exp 20-63), 7 (Exp 64–), brevemente mayores durante transiciones de tripulación.",
+  "new": "Expediciones de la EEI: numeradas correlativamente desde la Expedición 1 (nov 2000). Tamaño de la tripulación — 3 (Exp 1-19), 6 (Exp 20-63), 7 (Exp 64–), brevemente mayor durante los relevos."
+ },
+ {
+  "rel": "science/space-stations/expedition-cadence.json",
+  "at": "body_paragraphs.2",
+  "old": "Transferencia: la Soyuz/Crew Dragon entrante se acopla 5-10 días antes de la salida de la nave saliente. Ambas tripulaciones comparten la estación, realizan briefings, transfieren carga, y luego la tripulación saliente se desacopla. El período de tripulación combinada es el más estresado en términos de recursos: más personas, más CO₂, mayor consumo de alimentos.",
+  "new": "Traspaso: la Soyuz o Crew Dragon entrante se acopla 5-10 días antes de la partida de la saliente. Ambas tripulaciones comparten la estación, celebran reuniones informativas, transfieren carga, y luego la saliente se desacopla. El período con tripulación combinada es el que más tensiona los recursos: más personas, más CO₂, mayor consumo de alimentos."
+ },
+ {
+  "rel": "science/space-stations/expedition-cadence.json",
+  "at": "body_paragraphs.3",
+  "old": "Casos atípicos de larga duración: Poliakov 437,7 d (Mir, 1994-95, prueba deliberada de resistencia tipo Marte); Rubio 371 d (EEI, 2022-23, contingencia); Vande Hei 355 d (EEI, 2021-22, reconfiguración de asiento Soyuz); Kelly + Kornienko 340 d (EEI, 2015-16, programa de estudio gemelo).",
+  "new": "Casos atípicos de larga duración: Poliakov 437,7 d (Mir, 1994-95, prueba deliberada de resistencia de clase Marte); Rubio 371 d (EEI, 2022-23, contingencia); Vande Hei 355 d (EEI, 2021-22, reasignación de asientos en la Soyuz); Kelly + Kornienko 340 d (EEI, 2015-16, programa de estudio de gemelos)."
+ },
+ {
+  "rel": "science/space-stations/expedition-cadence.json",
+  "at": "body_paragraphs.4",
+  "old": "Cadencia Tiangong: Shenzhou 12 (92 d), 13 (183 d), 14 (186 d), 15 (186 d), 16 (155 d), 17 (187 d), 18 (192 d). Ritmo estable que coincide con la práctica EEI.",
+  "new": "Cadencia de Tiangong: Shenzhou 12 (92 d), 13 (183 d), 14 (186 d), 15 (186 d), 16 (155 d), 17 (187 d), 18 (192 d). Ritmo estable, en línea con la práctica de la EEI."
+ },
+ {
+  "rel": "science/space-stations/node-module.json",
+  "at": "narrative_101.0",
+  "old": "Un nodo es un tipo especial de módulo presurizado: no alberga experimentos ni camarotes, simplemente conecta otros módulos entre sí. Imagina una caja hexagonal donde cada cara tiene un puerto de acoplamiento. Acopla un nodo al cohete lanzador, envíalo al espacio y luego acopla cinco módulos más a los cinco puertos restantes y habrás expandido tu estación de un módulo a seis.",
+  "new": "Un nodo es un tipo especial de módulo presurizado: no alberga experimentos ni camarotes, simplemente conecta otros módulos entre sí. Imagina una caja hexagonal con un puerto de acoplamiento en cada cara. Fija un nodo a un cohete, envíalo al espacio y luego acopla cinco módulos más a los cinco puertos restantes: habrás pasado de una estación de un módulo a una de seis."
+ },
+ {
+  "rel": "science/space-stations/node-module.json",
+  "at": "narrative_101.2",
+  "old": "Tiangong adoptó un enfoque diferente: en lugar de nodos dedicados, el módulo central Tianhe actúa como tanto alojamiento como centro de conexión, con múltiples puertos de acoplamiento integrados directamente en sus extremos delantero y trasero. Es un diseño más compacto que cuesta menos masa para lanzar, pero limita cuántos módulos pueden ramificarse.",
+  "new": "Tiangong adoptó un enfoque diferente: en lugar de nodos dedicados, el módulo central Tianhe actúa a la vez como zona de alojamiento y como centro de conexión, con varios puertos de acoplamiento integrados directamente en sus extremos delantero y trasero. Es un diseño más compacto, que cuesta menos masa en el lanzamiento, pero limita cuántos módulos pueden ramificarse."
+ },
+ {
+  "rel": "science/space-stations/node-module.json",
+  "at": "body_paragraphs.1",
+  "old": "EEI Unity (Node 1) fue lanzado en 1998 en STS-88. Seis puertos CBM: hacia adelante → Destiny, hacia atrás → Zarya, estribor → esclusa Quest, cenit → estructura Z1, babor → Tranquility (2010), nadir → PMA/acoplamiento de carga (anteriormente Leonardo PMM 2011–2015). El primer módulo EEI construido por Estados Unidos.",
+  "new": "Unity (Node 1), de la EEI, se lanzó en 1998 en la STS-88. Seis puertos CBM: hacia adelante → Destiny, hacia atrás → Zarya, estribor → esclusa Quest, cenit → estructura Z1, babor → Tranquility (2010), nadir → PMA/acoplamiento de carga (antes Leonardo PMM, 2011–2015). El primer módulo de la EEI construido por Estados Unidos."
+ },
+ {
+  "rel": "science/space-stations/node-module.json",
+  "at": "body_paragraphs.2",
+  "old": "EEI Harmony (Node 2) lanzado en 2007. Seis puertos: conecta Destiny a Columbus (babor), Kibo (estribor) y los dos adaptadores de acoplamiento (IDA-2 hacia adelante, IDA-3 cenit) para Crew Dragon/Starliner.",
+  "new": "Harmony (Node 2), de la EEI, se lanzó en 2007. Seis puertos: conecta Destiny con Columbus (babor), Kibo (estribor) y los dos adaptadores de acoplamiento (IDA-2 hacia adelante, IDA-3 cenit) para Crew Dragon / Starliner."
+ },
+ {
+  "rel": "science/space-stations/node-module.json",
+  "at": "body_paragraphs.3",
+  "old": "EEI Tranquility (Node 3) lanzado en 2010. Alberga la cúpula de observación Cupola (puerto nadir), el Módulo Multipropósito Permanente Leonardo (hacia adelante) y BEAM (hacia atrás).",
+  "new": "Tranquility (Node 3), de la EEI, se lanzó en 2010. Alberga la cúpula de observación Cupola (puerto nadir), el Módulo Multipropósito Permanente Leonardo (hacia adelante) y BEAM (hacia atrás)."
+ },
+ {
+  "rel": "science/space-stations/node-module.json",
+  "at": "body_paragraphs.4",
+  "old": "Centro Tianhe de Tiangong: combina nodo + camarotes + propulsión + control. El centro nodo lleva un puerto axial delantero (Shenzhou), dos puertos radiales laterales (Wentian a estribor, Mengtian a babor, ambos reubicados allí por el brazo) y un puerto nadir; el puerto axial trasero recibe carga Tianzhou. Los puertos utilizan el Mecanismo de Acoplamiento Chino, no el CBM estadounidense.",
+  "new": "Módulo central Tianhe de Tiangong: combina nodo + camarotes + propulsión + control. El nodo lleva un puerto axial delantero (Shenzhou), dos puertos radiales laterales (Wentian a estribor, Mengtian a babor, ambos reubicados allí por el brazo) y un puerto nadir; el puerto axial trasero recibe las naves de carga Tianzhou. Los puertos usan el mecanismo de acoplamiento chino, no el CBM estadounidense."
+ },
+ {
+  "rel": "science/space-stations/pressurized-volume.json",
+  "at": "narrative_101.1",
+  "old": "El volumen presurizado está limitado por dos techos: el diámetro de la cofia del vehículo de lanzamiento (solo puedes transportar un módulo tan ancho como el cohete puede levantar) y la masa de la carcasa de presión (cuanto más gruesa la pared, más pesado el lanzamiento). Los cascos modernos de aluminio compuesto alcanzan un punto óptimo entre 2 y 4 mm de espesor. Cualquier cosa más allá y estás pagando masa por margen de seguridad que no usas; cualquier cosa más delgada y un micrometeorito podría perforarte.",
+  "new": "El volumen presurizado está limitado por dos techos: el diámetro de la cofia del lanzador (solo puedes enviar un módulo tan ancho como el cohete pueda levantar) y la masa de la carcasa a presión (cuanto más gruesa la pared, más pesado el lanzamiento). Los cascos modernos de aluminio compuesto alcanzan un punto óptimo con 2-4 mm de espesor. Con más, se paga masa por un margen de seguridad que no se usa; con menos, un micrometeorito podría perforar el casco."
+ },
+ {
+  "rel": "science/space-stations/pressurized-volume.json",
+  "at": "narrative_101.2",
+  "old": "Las tripulaciones necesitan aproximadamente 15-25 m³ por persona de volumen habitable neto para misiones de varios meses (la orientación de volumen habitable neto de NASA-STD-3001 es dependiente de la duración, no un valor único fijo). La EEI y Tiangong superan cómodamente el mínimo — lo que parece excesivo hasta que recuerdas que la tripulación está despierta 16 horas al día, todos los días, durante meses.",
+  "new": "Las tripulaciones necesitan aproximadamente 15-25 m³ por persona de volumen habitable neto en misiones de varios meses (la orientación de NASA-STD-3001 sobre volumen habitable neto depende de la duración y no da un único valor fijo). La EEI y Tiangong superan cómodamente el mínimo — lo que parece excesivo hasta que recuerdas que la tripulación está despierta 16 horas al día, todos los días, durante meses."
+ },
+ {
+  "rel": "science/space-stations/pressurized-volume.json",
+  "at": "body_paragraphs.0",
+  "old": "El volumen habitable es el interior utilizable lleno de aire de una estación espacial, medido en metros cúbicos. Excluye bastidores estructurales, mamparos y volumen de equipos — la cifra que suele citarse es el volumen interno bruto, del cual el 30-50% está ocupado por hardware.",
+  "new": "El volumen habitable es el interior útil y lleno de aire de una estación espacial, medido en metros cúbicos. Excluye bastidores estructurales, mamparos y volumen de equipos — la cifra que suele citarse es el volumen interno bruto, del cual el 30-50 % está ocupado por equipamiento."
+ },
+ {
+  "rel": "science/space-stations/pressurized-volume.json",
+  "at": "body_paragraphs.3",
+  "old": "Mir: ~350 m³ de volumen presurizado total en su apogeo (1986-2001) — aproximadamente comparable en escala a la envolvente presurizada de Tiangong, pero construido con módulos de paredes más gruesas y una generación anterior de sistemas de soporte vital.",
+  "new": "Mir: ~350 m³ de volumen presurizado total en su apogeo (1986-2001) — de escala comparable a la envolvente presurizada de Tiangong, pero construida con módulos de paredes más gruesas y con sistemas de soporte vital de una generación anterior."
+ },
+ {
+  "rel": "science/space-stations/pressurized-volume.json",
+  "at": "body_paragraphs.4",
+  "old": "La orientación de volumen habitable neto en NASA-STD-3001 Volumen 2 se deriva empíricamente de estudios de psicología de entornos confinados que datan del Skylab y del programa soviético Salyut, y se ajusta según la duración de la misión en lugar de establecer un mínimo único. Por debajo de la banda de orientación mínima, el bienestar de la tripulación y el rendimiento de la misión disminuyen de manera medible.",
+  "new": "La orientación de NASA-STD-3001 Volumen 2 sobre el volumen habitable neto se deriva empíricamente de estudios de psicología en entornos confinados que se remontan al Skylab y al programa soviético Salyut, y se ajusta a la duración de la misión en lugar de fijar un único mínimo. Por debajo de la banda mínima recomendada, el bienestar de la tripulación y el rendimiento de la misión disminuyen de forma medible."
+ },
+ {
+  "rel": "science/space-stations/pressurized-volume.json",
+  "at": "diagram_caption",
+  "old": "Tres volúmenes habitable de estación a escala: Tiangong (~122 m³), Mir (~350 m³ presurizado total), EEI (~388 m³ habitable). Una silueta humana como referencia de escala.",
+  "new": "Tres volúmenes habitables de estaciones, a escala: Tiangong (~122 m³), Mir (~350 m³ presurizados en total), EEI (~388 m³ habitables). Una silueta humana como referencia de escala."
+ },
+ {
+  "rel": "science/space-stations/solar-power-budget.json",
+  "at": "intro_sentence",
+  "old": "Cuánta electricidad generan los paneles solares — la limitación fundamental de todos los sistemas que puede ejecutar la tripulación.",
+  "new": "Cuánta electricidad generan los paneles solares — la restricción de la que depende todo sistema que la tripulación puede poner en marcha."
+ },
+ {
+  "rel": "science/space-stations/solar-power-budget.json",
+  "at": "narrative_101.2",
+  "old": "La potencia dicta la ambición. ¿Quieres ejecutar un experimento de biología con centrífuga? Conéctalo — te costará 1,5 kW. ¿Quieres añadir diez bastidores más de cargas útiles? Necesitas un presupuesto de potencia, y o bien aumentas el panel (costoso — nueva misión) o reduces la carga de otra cosa.",
+  "new": "La potencia dicta la ambición. ¿Quieres poner en marcha un experimento de biología con centrífuga? Conéctalo — te costará 1,5 kW. ¿Quieres añadir diez bastidores más de cargas útiles? Necesitas un presupuesto de potencia, y o bien amplías el campo de paneles (costoso — una misión nueva) o prescindes de otra carga."
+ },
+ {
+  "rel": "science/space-stations/solar-power-budget.json",
+  "at": "body_paragraphs.0",
+  "old": "Presupuesto de energía solar = potencia máxima generada × ciclo de trabajo (fracción de órbita bajo luz solar) × eficiencia descendente (pérdidas de batería + regulador). Para estaciones en LEO el ciclo de trabajo es aproximadamente 0,6 — aproximadamente 35 minutos bajo luz solar de cada órbita de 92 minutos.",
+  "new": "Presupuesto de energía solar = potencia máxima generada × ciclo de trabajo (fracción de la órbita bajo luz solar) × eficiencia aguas abajo (pérdidas de batería + regulador). En las estaciones en órbita baja el ciclo de trabajo es de alrededor de 0,6 — unos 35 minutos de sol en cada órbita de 92 minutos."
+ },
+ {
+  "rel": "science/space-stations/solar-power-budget.json",
+  "at": "body_paragraphs.1",
+  "old": "Paneles solares de la EEI: 8 alas IEA principales (4× P3/P4, P6 + 4× S3/S4, S6) con ~160 kW de potencia máxima BOL, reducida a ~84 kW EOL a los 15 años. Seis paneles iROSA desplegables (cubriendo 6 de los 8 alas originales), cada uno añadiendo >20 kW, llevan la generación instalada total a ~215 kW bajo luz solar. Potencia promedio en órbita entregada a las cargas (×~0,6 fracción bajo luz solar, menos pérdidas de almacenamiento/regulación) ≈ 84–120 kW.",
+  "new": "Paneles solares de la EEI: 8 alas IEA principales (4× P3/P4, P6 + 4× S3/S4, S6) con ~160 kW de potencia máxima BOL, reducida a ~84 kW EOL a los 15 años. Seis paneles iROSA desplegables (que cubren 6 de las 8 alas originales), cada uno con >20 kW adicionales, llevan la generación instalada total a ~215 kW bajo luz solar. Potencia promedio en órbita entregada a las cargas (×~0,6 fracción bajo luz solar, menos pérdidas de almacenamiento/regulación) ≈ 84–120 kW."
+ },
+ {
+  "rel": "science/space-stations/solar-power-budget.json",
+  "at": "body_paragraphs.2",
+  "old": "Paneles solares de Tiangong: 4 alas en Tianhe (2 retráctiles en cada lado) más 4 alas grandes en Wentian y Mengtian. Total ~30 kW BOL × ciclo de trabajo = ~18 kW continuos, con 27 kW de potencia máxima durante paso bajo luz solar.",
+  "new": "Paneles solares de Tiangong: 4 alas en Tianhe (2 retráctiles a cada lado) más 4 alas grandes en Wentian y Mengtian. Total ~30 kW BOL × ciclo de trabajo = ~18 kW continuos, con 27 kW de potencia máxima durante el paso por la zona iluminada."
+ },
+ {
+  "rel": "science/space-stations/solar-power-budget.json",
+  "at": "body_paragraphs.3",
+  "old": "Almacenamiento en batería: EEI utiliza baterías de iones de litio ORU (unidades de reemplazo orbital) con capacidad de ~50 kWh por par. Cada batería cubre la carga del lado nocturno de un panel principal. Tiangong utiliza bancos de Li-ion similares, dimensionados para la carga menor.",
+  "new": "Almacenamiento en baterías: la EEI utiliza baterías de iones de litio en unidades de reemplazo orbital (ORU), con capacidad de ~50 kWh por par. Cada batería cubre la carga del lado nocturno de un panel principal. Tiangong utiliza bancos de iones de litio similares, dimensionados para su carga menor."
+ },
+ {
+  "rel": "science/space-stations/solar-power-budget.json",
+  "at": "body_paragraphs.4",
+  "old": "Mir, por el contrario, alcanzó su máximo con ~30 kW de 1500 m² de panel — comparable por volumen a Tiangong pero con almacenamiento de batería de níquel-cadmio más antiguo que requería reconstrucciones más profundas durante su vida de 15 años.",
+  "new": "Mir, por el contrario, alcanzó su máximo con ~30 kW procedentes de 1500 m² de paneles — comparable por volumen a Tiangong, pero con un almacenamiento de baterías de níquel-cadmio más antiguo que requería renovaciones más profundas a lo largo de sus 15 años de vida."
+ },
+ {
+  "rel": "science/transfers/_intro.json",
+  "at": "headline",
+  "old": "Transferencias — una vez en órbita, estás a mitad de camino a cualquier lugar.",
+  "new": "Transferencias — una vez en órbita, estás a medio camino de cualquier sitio."
+ },
+ {
+  "rel": "science/transfers/_intro.json",
+  "at": "paragraphs.0",
+  "old": "Robert Heinlein escribió eso. Tenía razón. Alcanzar la órbita baja terrestre cuesta aproximadamente 9,4 km/s de ∆v — la parte más difícil de cualquier viaje. El encendido de inyección trans-Marte añade solo ~3,6 km/s. Una vez que estés fuera de la atmósfera del planeta y en una órbita adecuada, el resto del sistema solar es principalmente geometría.",
+  "new": "Robert Heinlein escribió eso. Tenía razón. Alcanzar la órbita baja terrestre cuesta aproximadamente 9,4 km/s de ∆v — la parte más difícil de cualquier viaje. El encendido de inyección transmarciana añade solo ~3,6 km/s. Una vez que estás fuera de la atmósfera del planeta y en una órbita adecuada, el resto del sistema solar es principalmente geometría."
+ },
+ {
+  "rel": "science/transfers/_intro.json",
+  "at": "paragraphs.1",
+  "old": "Las siete secciones de esta pestaña cubren la geometría. La transferencia de Hohmann es el viaje más económico posible entre dos órbitas — dos encendidos, ocho meses de inercia. El problema de Lambert generaliza Hohmann a fechas de salida y llegada arbitrarias. Los asistentes gravitacionales te permiten robar velocidad de un planeta (esencialmente) gratis, que es cómo Voyager 2 alcanzó Neptuno. Las trayectorias de retorno libre son la red de seguridad que llevó Apollo 13 a casa. Las cónicas parcheadas es la aproximación práctica que nos permite calcular todo esto en un navegador.",
+  "new": "Las siete secciones de esta pestaña cubren la geometría. La transferencia de Hohmann es el viaje más económico posible entre dos órbitas — dos encendidos, ocho meses de navegación por inercia. El problema de Lambert generaliza el de Hohmann a fechas de salida y llegada arbitrarias. Las asistencias gravitatorias te permiten robar velocidad a un planeta (casi) gratis, que es como Voyager 2 llegó a Neptuno. Las trayectorias de retorno libre son la red de seguridad que devolvió a casa al Apollo 13. Las cónicas parcheadas son la aproximación práctica que nos permite calcular todo esto en un navegador."
+ },
+ {
+  "rel": "science/transfers/conic-sections.json",
+  "at": "intro_sentence",
+  "old": "Corta un cono de cuatro formas y obtienes todas las trayectorias Keplerianas posibles: círculo, elipse, parábola, hipérbola.",
+  "new": "Corta un cono de cuatro maneras y obtienes todas las trayectorias keplerianas posibles: círculo, elipse, parábola, hipérbola."
+ },
+ {
+  "rel": "science/transfers/conic-sections.json",
+  "at": "narrative_101.0",
+  "old": "Hay una suerte matemática extraña en el corazón de la mecánica orbital. Las formas que puedes hacer cortando un cono con un plano — círculo, elipse, parábola, hipérbola — resultan ser EXACTAMENTE las únicas formas en que un cuerpo bajo gravedad puede moverse. Los griegos estudiaban estas curvas por diversión en 200 BC. Dos mil años después descubrimos que el universo funciona con ellas.",
+  "new": "Hay una extraña suerte matemática en el corazón de la mecánica orbital. Las formas que se obtienen al cortar un cono con un plano — círculo, elipse, parábola, hipérbola — resultan ser EXACTAMENTE las únicas trayectorias que puede seguir un cuerpo bajo la gravedad. Los griegos estudiaban estas curvas por pura curiosidad en el 200 a. C. Dos mil años después descubrimos que el universo funciona con ellas."
+ },
+ {
+  "rel": "science/transfers/conic-sections.json",
+  "at": "narrative_101.1",
+  "old": "Las cuatro formas forman un continuo. ¿Lo suficientemente lento? Estás en un círculo o elipse — ligado, volverás. ¿Exactamente a velocidad de escape? Parábola — apenas nunca volverás. ¿Más rápido que eso? Hipérbola — te disparas y nunca regresas. La excentricidad es el marcador: 0 es un círculo, 1 es el borde de escape, por encima de 1 eres libre.",
+  "new": "Las cuatro formas constituyen un continuo. ¿Vas lo bastante lento? Estás en un círculo o una elipse — ligado, volverás. ¿Justo a la velocidad de escape? Parábola — por muy poco, no volverás jamás. ¿Más rápido? Hipérbola — sales disparado y no regresas. La excentricidad es el mando: 0 es un círculo, 1 es el límite de escape, por encima de 1 eres libre."
+ },
+ {
+  "rel": "science/transfers/conic-sections.json",
+  "at": "narrative_101.2",
+  "old": "Las misiones reales usan las cuatro. El viaje de la Tierra a Marte es una elipse. El sobrevuelo pasado Júpiter en camino a Saturno es una hipérbola — respecto a Júpiter, vas demasiado rápido para ser capturado. Las sondas Voyager ahora están en trayectorias de escape hiperbólicas (e > 1) que las llevarán fuera del sistema solar para siempre. La misma ecuación describe todas ellas; solo la excentricidad difiere.",
+  "new": "Las misiones reales usan las cuatro. El viaje de la Tierra a Marte es una elipse. El sobrevuelo de Júpiter camino de Saturno es una hipérbola — respecto a Júpiter, vas demasiado rápido para ser capturado. Las sondas Voyager están ahora en trayectorias hiperbólicas de escape (e > 1) que las llevarán fuera del sistema solar para siempre. La misma ecuación describe todas ellas; solo cambia la excentricidad."
+ },
+ {
+  "rel": "science/transfers/conic-sections.json",
+  "at": "body_paragraphs.0",
+  "old": "Toma un cono infinito y córtalo con un plano. Corta horizontalmente: un círculo (`e = 0`). Inclina el corte: una elipse (`0 < e < 1`). Inclina paralelo al borde del cono: una parábola (`e = 1`, el caso exacto de escape). Inclina más allá: una hipérbola (`e > 1`, escape con energía de sobra). Dos mil años antes de Kepler, Apollonius de Perga catalogó estas curvas. Dos siglos antes de Newton, Kepler descubrió que los planetas vuelan a lo largo de ellas.",
+  "new": "Toma un cono infinito y córtalo con un plano. Corta horizontalmente: un círculo (`e = 0`). Inclina el corte: una elipse (`0 < e < 1`). Inclínalo paralelamente al lado del cono: una parábola (`e = 1`, el caso exacto de escape). Inclínalo más aún: una hipérbola (`e > 1`, escape con energía de sobra). Dos mil años antes de Kepler, Apolonio de Perge catalogó estas curvas. Dos siglos antes de Newton, Kepler descubrió que los planetas vuelan a lo largo de ellas."
+ },
+ {
+  "rel": "science/transfers/conic-sections.json",
+  "at": "body_paragraphs.1",
+  "old": "Cada órbita Kepleriana es una de estas cuatro. Las órbitas ligadas — planetas, lunas, satélites, cualquier cosa que regresa — son círculos o elipses. Las trayectorias no ligadas — sobrevuelos, escapes, capturas hiperbólicas — son parábolas o hipérbolas. El límite es exacto: en `e = 1` te mueves exactamente a la velocidad de escape local.",
+  "new": "Toda órbita kepleriana es una de estas cuatro. Las órbitas ligadas — planetas, lunas, satélites, cualquier cosa que regresa — son círculos o elipses. Las trayectorias no ligadas — sobrevuelos, escapes, capturas hiperbólicas — son parábolas o hipérbolas. El límite es exacto: con `e = 1` te mueves exactamente a la velocidad de escape local."
+ },
+ {
+  "rel": "science/transfers/conic-sections.json",
+  "at": "body_paragraphs.2",
+  "old": "Los diseñadores de misiones explotan las cuatro. Viaja en una elipse, sobrevuela un planeta en una hipérbola (respecto a ese planeta), inserta en órbita en una elipse de nuevo. La ruta `/fly` del simulador hace esto naturalmente — la misma ecuación de trayectoria maneja cada caso, la excentricidad te dice cuál cónica estás volando.",
+  "new": "Los diseñadores de misiones aprovechan las cuatro. Cruzan en una elipse, sobrevuelan un planeta en una hipérbola (respecto a ese planeta) e insertan en órbita, otra vez, en una elipse. La ruta `/fly` del simulador lo hace con naturalidad — la misma ecuación de trayectoria sirve para todos los casos; la excentricidad te dice qué cónica estás recorriendo."
+ },
+ {
+  "rel": "science/transfers/conic-sections.json",
+  "at": "diagram_caption",
+  "old": "Cuatro cónicas cortando un cono: círculo, elipse, parábola, hipérbola. La excentricidad determina cuál.",
+  "new": "Cuatro cónicas obtenidas al cortar un cono: círculo, elipse, parábola, hipérbola. La excentricidad determina cuál."
+ },
+ {
+  "rel": "science/transfers/coplanar-trajectories.json",
+  "at": "intro_sentence",
+  "old": "El Sistema Solar es un disco, y el propulsor es finito — así que las misiones no abandonan el disco a menos que tengan que hacerlo.",
+  "new": "El sistema solar es un disco, y el propelente es finito — así que las misiones no abandonan el disco a menos que tengan que hacerlo."
+ }
+]

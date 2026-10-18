@@ -1,0 +1,530 @@
+[
+  {
+    "rel": "science/planets/active-spacecraft-survey.json",
+    "at": "narrative_101.0",
+    "old": "Cada planeta tiene, como máximo, un puñado de robots estudiándolo activamente. Marte tiene la mayor cantidad: seis orbitadores activos (MRO y MAVEN de NASA, Mars Express y ExoMars TGO de la ESA, Tianwen-1 de China, Hope de los EAU) más vehículos de superficie (Perseverance y Curiosity) y el helicóptero Ingenuity. Júpiter tiene uno: Juno de NASA, en órbita polar desde 2016, estudiando el campo magnético + auroras + atmósfera profunda de Júpiter. Venus tiene uno: Akatsuki de JAXA, el único orbitador activo de Venus, estudiando los vientos en la capa de nubes + rayos. Saturno actualmente no tiene ninguno — Cassini terminó en 2017; la próxima misión dedicada (Dragonfly de NASA a Titán) se lanzará a mediados de 2027. Mercurio, Urano, Neptuno y Plutón actualmente tampoco tienen orbitadores activos.",
+    "new": "Cada planeta tiene, como máximo, un puñado de robots estudiándolo activamente. Marte tiene la mayor cantidad: seis orbitadores activos (MRO y MAVEN de la NASA, Mars Express y ExoMars TGO de la ESA, Tianwen-1 de China, Hope de los EAU) más vehículos de superficie (Perseverance y Curiosity) y el helicóptero Ingenuity. Júpiter tiene uno: Juno, de la NASA, en órbita polar desde 2016, que estudia el campo magnético, las auroras y la atmósfera profunda de Júpiter. Venus tiene uno: Akatsuki, de la JAXA, el único orbitador activo de Venus, que estudia los vientos en la capa de nubes y los rayos. Saturno actualmente no tiene ninguno — Cassini terminó en 2017; la próxima misión dedicada (Dragonfly, de la NASA, a Titán) se lanzará a mediados de 2027. Mercurio, Urano, Neptuno y Plutón actualmente tampoco tienen orbitadores activos."
+  },
+  {
+    "rel": "science/planets/active-spacecraft-survey.json",
+    "at": "narrative_101.1",
+    "old": "El carácter global de esta lista es importante. Marte en 2026 tiene naves espaciales de EE.UU., Europa, Rusia, India, China y los EAU orbitando activamente. La era de \"solo NASA hace esto\" terminó alrededor de 2014 cuando llegó Mangalyaan. Hope (2021) fue la primera misión interplanetaria de cualquier país árabe. Tianwen-1 (2021) hizo que China fuera la segunda nación en poner un vehículo explorador en Marte (después de EE.UU.). Akatsuki, después de un casi fracaso en 2010, se convirtió en el primer éxito interplanetario de JAXA cuando JAXA reintenté la inserción en órbita cinco años después. El gráfico que ves cuando amplías Marte en Orrery tiene todas esas banderas representadas.",
+    "new": "El carácter global de esta lista es importante. Marte en 2026 tiene naves espaciales de EE.UU., Europa, Rusia, India, China y los EAU orbitando activamente. La era de «solo la NASA hace esto» terminó alrededor de 2014, cuando llegó Mangalyaan. Hope (2021) fue la primera misión interplanetaria de cualquier país árabe. Tianwen-1 (2021) convirtió a China en la segunda nación en poner un róver en Marte (después de EE.UU.). Akatsuki, tras un intento fallido por poco en 2010, se convirtió en el primer éxito interplanetario de la JAXA cuando esta repitió la inserción en órbita cinco años después. El gráfico que ves cuando amplías Marte en Orrery tiene todas esas banderas representadas."
+  },
+  {
+    "rel": "science/planets/active-spacecraft-survey.json",
+    "at": "narrative_101.2",
+    "old": "La mayoría de estas misiones superan sus vidas útiles diseñadas por años o décadas. MRO fue diseñada para una misión primaria de 2 años; lleva 20 años en Marte y contando, y sirve como relé de datos crítico para cada misión de superficie. Mars Express fue de 2 años de primaria; lleva 22 años. Juno fue diseñada para 33 pasos por perihelio; ha hecho más de 60. Estas extensiones son cómo la ciencia planetaria obtiene líneas de base largas.",
+    "new": "La mayoría de estas misiones superan por años o décadas la vida útil para la que fueron diseñadas. MRO fue diseñada para una misión primaria de 2 años; lleva 20 años en Marte y contando, y sirve como relé de datos crítico para cada misión de superficie. Mars Express tenía una misión primaria de 2 años; lleva 22. Juno fue diseñada para 33 pasos por el perijovio; ha hecho más de 60. Estas extensiones son lo que da a la ciencia planetaria sus largas series de observaciones."
+  },
+  {
+    "rel": "science/planets/active-spacecraft-survey.json",
+    "at": "body_paragraphs.0",
+    "old": "Marte — flota orbital a partir de 2026: MRO (NASA, desde 2006, órbita polar de 300 km, cámara HiRISE + observaciones de atmósfera + relé de datos). MAVEN (NASA, desde 2014, órbita de 6200 km, tasas de escape atmosférico). Mars Express (ESA, desde 2003, 4200 km, mineralogía + atmósfera). ExoMars TGO (ESA, desde 2016, 400 km, gases traza + relé ruso). Mangalyaan / MOM (ISRO, 2014–2022, metano + atmósfera — primera misión asiática en orbitar exitosamente Marte). Tianwen-1 (CNSA, desde 2021, 4250 km, entregó el vehículo explorador Zhurong + mapeo global). Hope / EMM (Agencia Espacial de los EAU, desde 2021, 30 000 km ecuatorial, ciencia atmosférica). En la superficie: los vehículos exploradores Perseverance y Curiosity (ambos de NASA) y el helicóptero Ingenuity ya inmovilizado.",
+    "new": "Marte — flota orbital a partir de 2026: MRO (NASA, desde 2006, órbita polar de 300 km, cámara HiRISE + observaciones de atmósfera + relé de datos). MAVEN (NASA, desde 2014, órbita de 6200 km, tasas de escape atmosférico). Mars Express (ESA, desde 2003, 4200 km, mineralogía + atmósfera). ExoMars TGO (ESA, desde 2016, 400 km, gases traza + relé ruso). Mangalyaan / MOM (ISRO, 2014–2022, metano + atmósfera — primera misión asiática en orbitar Marte con éxito). Tianwen-1 (CNSA, desde 2021, 4250 km, desplegó el róver Zhurong + cartografía global). Hope / EMM (UAESA, desde 2021, 30 000 km ecuatorial, ciencia atmosférica). En la superficie: los róvers Perseverance y Curiosity (ambos de la NASA) y el helicóptero Ingenuity, ya inmovilizado."
+  },
+  {
+    "rel": "science/planets/active-spacecraft-survey.json",
+    "at": "body_paragraphs.1",
+    "old": "Sistema de Júpiter: Juno (NASA, desde 2016, órbita polar de 53 días). Diseñada para mapear el campo magnético + atmósfera + estructura interna de Júpiter. La órbita polar evita el cinturón de radiación ecuatorial intenso de Júpiter — el cinturón es tan hostil que otros orbitadores de gigantes gaseosos se dañarían permanentemente en meses con una trayectoria ecuatorial. La misión de Juno se ha extendido varias veces; continuará hasta que se desorbite en Júpiter (diseñado para prevenir contaminación biológica de Europa, que la nave espacial pasa cerca). La próxima misión a Júpiter es JUICE de la ESA (Jupiter Icy moons Explorer, llegada en 2031); Europa Clipper de NASA se lanza en 2024 y llega en 2030.",
+    "new": "Sistema de Júpiter: Juno (NASA, desde 2016, órbita polar de 53 días). Diseñada para mapear el campo magnético + atmósfera + estructura interna de Júpiter. La órbita polar evita el intenso cinturón de radiación ecuatorial de Júpiter — el cinturón es tan hostil que otros orbitadores de gigantes gaseosos se dañarían de forma permanente en pocos meses en una trayectoria ecuatorial. La misión de Juno se ha extendido varias veces; continuará hasta que se la haga caer sobre Júpiter (para evitar la contaminación biológica de Europa, cerca de la cual pasa la nave). La próxima misión a Júpiter es JUICE de la ESA (Jupiter Icy moons Explorer, llegada en 2031); Europa Clipper de la NASA se lanza en 2024 y llega en 2030."
+  },
+  {
+    "rel": "science/planets/active-spacecraft-survey.json",
+    "at": "body_paragraphs.2",
+    "old": "Venus: Akatsuki / PLANET-C (JAXA, desde 2015 después de una recuperación de 5 años). Circulación en la capa de nubes, estudios de superrotación, detección de rayos. Las próximas misiones a Venus se lanzan a finales de los años 2020 — DAVINCI + VERITAS de NASA, EnVision de la ESA, Shukrayaan de ISRO. Después de un hiato de 30 años en la exploración de Venus (Magellan terminó en 1994), a finales de los años 2020 llegarán cuatro nuevos orbitadores dentro de unos pocos años entre sí. Mercurio actualmente no tiene naves espaciales activas (MESSENGER terminó en 2015); BepiColombo de ESA/JAXA llega en 2026. Urano + Neptuno solo han sido visitados por Voyager 2 (1986 + 1989); una misión dedicada a Urano es la máxima prioridad de la Encuesta Decadal Planetaria de 2023.",
+    "new": "Venus: Akatsuki / PLANET-C (JAXA, desde 2015 tras una recuperación de 5 años). Circulación en la capa de nubes, estudios de superrotación, detección de rayos. Las próximas misiones a Venus se lanzan a finales de los años 2020 — DAVINCI + VERITAS de la NASA, EnVision de la ESA, Shukrayaan de la ISRO. Tras un hiato de 30 años en la exploración de Venus (Magellan terminó en 1994), a finales de los años 2020 llegarán cuatro nuevos orbitadores con pocos años de diferencia entre sí. Mercurio actualmente no tiene naves espaciales activas (MESSENGER terminó en 2015); BepiColombo, de la ESA y la JAXA, llega en 2026. Urano + Neptuno solo han sido visitados por Voyager 2 (1986 + 1989); una misión dedicada a Urano es la máxima prioridad del Estudio Decenal de Ciencias Planetarias de 2023."
+  },
+  {
+    "rel": "science/planets/active-spacecraft-survey.json",
+    "at": "diagram_caption",
+    "old": "Orbitadores activos por planeta, 2026. Marte: 6 (NASA, ESA, CNSA, UAESA). Júpiter: 1 (Juno de NASA). Venus: 1 (Akatsuki de JAXA). Saturno, Mercurio, planetas exteriores: ninguno activo.",
+    "new": "Orbitadores activos por planeta, 2026. Marte: 6 (NASA, ESA, CNSA, UAESA). Júpiter: 1 (Juno, de la NASA). Venus: 1 (Akatsuki, de la JAXA). Saturno, Mercurio, planetas exteriores: ninguno activo."
+  },
+  {
+    "rel": "science/planets/asteroid-belt.json",
+    "at": "intro_sentence",
+    "old": "Un planeta que casi fue: los restos rocosos entre Marte y Júpiter que la gravedad de Júpiter no permitió fusionar.",
+    "new": "Un planeta que casi fue: los restos rocosos entre Marte y Júpiter que la gravedad de Júpiter impidió que se unieran."
+  },
+  {
+    "rel": "science/planets/asteroid-belt.json",
+    "at": "narrative_101.1",
+    "old": "Hoy los catálogos registran más de 1,3 millones de asteroides mayores de 1 km, y los modelos dinámicos estiman la población de cuerpos de clase 100 metros en cientos de millones. La masa total es una sorpresa: solo alrededor del 4% de la Luna, y aproximadamente un tercio de eso reside únicamente en Ceres. El cinturón está mayormente vacío —la separación promedio entre miembros es de millones de kilómetros. El denso campo de rocas del cine es una invención de Hollywood.",
+    "new": "Hoy los catálogos registran más de 1,3 millones de asteroides mayores de 1 km, y los modelos dinámicos estiman la población de cuerpos de unos 100 metros en cientos de millones. La masa total es una sorpresa: solo alrededor del 4% de la Luna, y aproximadamente un tercio de eso se concentra solo en Ceres. El cinturón está casi vacío —la separación media entre sus miembros es de millones de kilómetros. El denso campo de rocas del cine es una invención de Hollywood."
+  },
+  {
+    "rel": "science/planets/asteroid-belt.json",
+    "at": "narrative_101.2",
+    "old": "Por qué nunca se formó un planeta aquí es la historia en sí misma. Júpiter se sitúa justo fuera del cinturón a 5,2 UA, y durante la formación del sistema solar la gravedad de Júpiter agitó el material del cinturón interior con demasiado vigor para que la acreción pudiera vencer a la fragmentación. Lo que intentaba crecer hasta convertirse en un planeta fue destrozado de vuelta a fragmentos más rápido de lo que podía volver a acretar. El cinturón de asteroides es el planeta inacabado, congelado en una etapa temprana de la evolución del sistema solar.",
+    "new": "Por qué nunca se formó un planeta aquí es la historia en sí misma. Júpiter se sitúa justo fuera del cinturón a 5,2 UA, y durante la formación del sistema solar la gravedad de Júpiter agitó el material del cinturón interior con demasiado vigor para que la acreción pudiera vencer a la fragmentación. Lo que intentaba crecer hasta convertirse en un planeta se hacía añicos más rápido de lo que podía volver a agregarse. El cinturón de asteroides es el planeta inacabado, congelado en una etapa temprana de la evolución del sistema solar."
+  },
+  {
+    "rel": "science/planets/asteroid-belt.json",
+    "at": "body_paragraphs.0",
+    "old": "El cinturón tiene estructura interna. La espectroscopía lo divide en tres zonas aproximadas: el cinturón interior (2,1–2,5 UA) dominado por cuerpos pedregosos tipo S; el cinturón medio (2,5–3,2 UA) donde toman el control los tipos C carbonáceos (Ceres + Higía viven aquí); y el cinturón exterior que se fusiona con los asteroides Troyanos que comparten la órbita de Júpiter en los puntos de Lagrange L4 y L5. Diferentes poblaciones parentales, diferentes temperaturas de formación, diferentes historias —preservadas en el mismo cinturón porque las resonancias de Júpiter las acorralaron.",
+    "new": "El cinturón tiene estructura interna. La espectroscopía lo divide en tres zonas aproximadas: el cinturón interior (2,1–2,5 UA), dominado por cuerpos pedregosos de tipo S; el cinturón medio (2,5–3,2 UA), donde pasan a dominar los de tipo C, carbonáceos (Ceres e Higía viven aquí); y el cinturón exterior, que se funde con los asteroides troyanos que comparten la órbita de Júpiter en los puntos de Lagrange L4 y L5. Poblaciones de origen distinto, temperaturas de formación distintas, historias distintas —preservadas en el mismo cinturón porque las resonancias de Júpiter las confinaron."
+  },
+  {
+    "rel": "science/planets/asteroid-belt.json",
+    "at": "body_paragraphs.1",
+    "old": "Las misiones principales han visitado directamente solo un puñado de miembros del cinturón. El sobrevuelo de Gaspra (1991) por parte de Galileo de la NASA fue la primera imagen cercana de cualquier asteroide. Dawn (2011 + 2015) orbitó Vesta y luego Ceres —la única nave espacial que jamás haya orbitado dos cuerpos extraterrestres. Ceres resultó ser un mundo de hielo de agua + salmuera: depósitos brillantes de carbonato de sodio en el cráter Occator son residuos de erupciones criovolcánicas de agua salada subsuperficial, y Dawn detectó una atmósfera transitoria delgada de vapor de agua. Vesta es el otro extremo —un proto-planeta rocoso diferenciado cuyo hemisferio sur es una cuenca de impacto gigante de 500 km de ancho (Rheasilvia), y los fragmentos expulsados de ese impacto son la clase de meteoritos HED en la Tierra.",
+    "new": "Las misiones principales han visitado directamente solo un puñado de miembros del cinturón. El sobrevuelo de Gaspra (1991) por parte de Galileo, de la NASA, fue la primera imagen de cerca de cualquier asteroide. Dawn (2011 + 2015) orbitó Vesta y luego Ceres —la única nave espacial que jamás haya orbitado dos cuerpos extraterrestres. Ceres resultó ser un mundo de hielo de agua + salmuera: los brillantes depósitos de carbonato de sodio del cráter Occator son residuos de erupciones criovolcánicas de agua salada subterránea, y Dawn detectó una tenue atmósfera transitoria de vapor de agua. Vesta es el otro extremo —un protoplaneta rocoso diferenciado cuyo hemisferio sur es una gigantesca cuenca de impacto de 500 km de ancho (Rheasilvia), y los fragmentos expulsados de ese impacto son la clase de meteoritos HED en la Tierra."
+  },
+  {
+    "rel": "science/planets/asteroid-belt.json",
+    "at": "body_paragraphs.2",
+    "old": "La mayoría de los meteoritos que caen en la Tierra provienen del cinturón de asteroides. La deriva de Yarkovsky —re-radiación térmica desigual que empuja lentamente la órbita de un cuerpo durante milenios— impulsa asteroides fuera de los vacíos de resonancia hacia órbitas que cruzan la Tierra. Las misiones de retorno de muestras están comenzando a cerrar el ciclo directamente: Hayabusa2 de JAXA retornó 5,4 gramos del asteroide Ryugu en 2020, y OSIRIS-REx de la NASA retornó muestras de Bennu en 2023. Ambos son asteroides cercanos a la Tierra derivados de cuerpos parentales del cinturón. La misión Lucy de la NASA (lanzada en 2021) es el juego largo: visitando ocho asteroides Troyanos más el miembro del cinturón Dinkinesh, la primera gira multi-Troyano, explorando fragmentos de la población del cinturón exterior que comparten la órbita de Júpiter pero se mantienen 60° adelante o atrás.",
+    "new": "La mayoría de los meteoritos que caen en la Tierra provienen del cinturón de asteroides. La deriva de Yarkovsky —la reemisión térmica desigual que empuja lentamente la órbita de un cuerpo durante milenios— hace derivar a los asteroides desde los huecos de resonancia hacia órbitas que cruzan la de la Tierra. Las misiones de retorno de muestras están empezando a cerrar el ciclo directamente: Hayabusa2 de la JAXA trajo a la Tierra 5,4 gramos del asteroide Ryugu en 2020, y OSIRIS-REx de la NASA trajo muestras de Bennu en 2023. Ambos son asteroides cercanos a la Tierra procedentes de cuerpos progenitores del cinturón. La misión Lucy de la NASA (lanzada en 2021) es la apuesta a largo plazo: visitará ocho asteroides troyanos más el miembro del cinturón Dinkinesh, la primera gira por varios troyanos, para explorar fragmentos de la población del cinturón exterior que comparten la órbita de Júpiter pero se mantienen 60° por delante o por detrás."
+  },
+  {
+    "rel": "science/planets/asteroid-belt.json",
+    "at": "diagram_caption",
+    "old": "El barrido del cinturón de asteroides, 2,2–3,2 UA entre Marte y Júpiter. Miembros principales Ceres / Vesta / Pallas / Higía etiquetados. Las flechas desde Júpiter muestran su gravedad agitando el cinturón interior —la razón por la que nunca se acretó un planeta aquí.",
+    "new": "El barrido del cinturón de asteroides, 2,2–3,2 UA entre Marte y Júpiter. Se han etiquetado los miembros principales: Ceres / Vesta / Pallas / Higía. Las flechas desde Júpiter muestran su gravedad agitando el cinturón interior —la razón por la que nunca llegó a formarse un planeta por acreción aquí."
+  },
+  {
+    "rel": "science/planets/axial-tilt-and-seasons.json",
+    "at": "narrative_101.1",
+    "old": "Cada planeta tiene alguna inclinación axial, pero el sistema solar contiene algunas excepciones salvajes. Urano está inclinado 97,77° — su eje de rotación yace casi en el plano orbital. Cada polo recibe 42 años terrestres de luz solar continua seguidos de 42 años de oscuridad continua. No hay un verdadero \"ciclo día-noche\" cerca de los polos de Urano en el sentido usual; solo un amanecer lento de cuarenta años. La hipótesis principal es que un impacto gigante en la historia temprana de Urano volcó el planeta.",
+    "new": "Cada planeta tiene alguna inclinación axial, pero el sistema solar contiene algunos casos extremos. Urano está inclinado 97,77° — su eje de rotación yace casi en el plano orbital. Cada polo recibe 42 años terrestres de luz solar continua seguidos de 42 años de oscuridad continua. No hay un verdadero «ciclo día-noche» cerca de los polos de Urano en el sentido usual; solo un amanecer lento de cuarenta años. La hipótesis principal es que un impacto gigante en la historia temprana de Urano volcó el planeta."
+  },
+  {
+    "rel": "science/planets/axial-tilt-and-seasons.json",
+    "at": "narrative_101.2",
+    "old": "Venus es aún más extraño: inclinado 177,4°, lo que es efectivamente cabeza abajo. La convención es que el \"polo norte\" de un planeta es el que está por encima de la eclíptica en el mismo sentido rotacional que el de la Tierra. Por esa convención, la rotación de Venus es retrógrada — gira hacia el lado equivocado respecto a su órbita. Un día solar en Venus dura 117 días terrestres, a pesar de una rotación sidérea de 243 días terrestres, porque la rotación retrógrada se cancela parcialmente con el movimiento orbital. Por qué Venus gira de esta manera aún está sin resolver — las mareas atmosféricas desbocadas son un candidato.",
+    "new": "Venus es todavía más extraño: está inclinado 177,4°, es decir, prácticamente boca abajo. La convención es que el «polo norte» de un planeta es el que está por encima de la eclíptica en el mismo sentido rotacional que el de la Tierra. Por esa convención, la rotación de Venus es retrógrada — gira en sentido contrario al de su órbita. Un día solar en Venus dura 117 días terrestres, a pesar de una rotación sidérea de 243 días terrestres, porque la rotación retrógrada se cancela parcialmente con el movimiento orbital. Por qué Venus gira de esta manera aún está sin resolver — las mareas atmosféricas desbocadas son un candidato."
+  },
+  {
+    "rel": "science/planets/axial-tilt-and-seasons.json",
+    "at": "body_paragraphs.1",
+    "old": "Las estaciones en un planeta están impulsadas por el cambio de ángulo entre su eje de rotación y la línea Sol-planeta mientras el planeta orbita. La latitud subsolar (donde el Sol está directamente en lo alto al mediodía) oscila durante el año — en la Tierra entre 23,4°N (solsticio de junio) y 23,4°S (solsticio de diciembre). Los hemisferios reciben más flujo solar cuando su polo se inclina hacia el Sol y menos cuando se aleja; esa diferencia de flujo, integrada durante meses, impulsa la temperatura superficial y atmosférica.",
+    "new": "Las estaciones de un planeta se deben al cambio de ángulo entre su eje de rotación y la línea Sol-planeta mientras el planeta orbita. La latitud subsolar (donde el Sol está directamente en lo alto al mediodía) oscila durante el año — en la Tierra entre 23,4°N (solsticio de junio) y 23,4°S (solsticio de diciembre). Los hemisferios reciben más flujo solar cuando su polo se inclina hacia el Sol y menos cuando se aleja; esa diferencia de flujo, integrada durante meses, determina la temperatura superficial y atmosférica."
+  },
+  {
+    "rel": "science/planets/axial-tilt-and-seasons.json",
+    "at": "body_paragraphs.2",
+    "old": "La inclinación de la Tierra en sí no es constante — oscila entre 22,1° y 24,5° (aproximadamente ±1,2° alrededor de la media) durante ~41.000 años, uno de los ciclos de Milankovitch que impulsan la cronología de las edades de hielo. La inclinación de Marte es mucho más variable: las simulaciones muestran que la oblicuidad de Marte ha vagado caóticamente entre 0° y 60° a lo largo del tiempo geológico, en parte porque Marte carece de una luna grande (la Luna de la Tierra estabiliza nuestra inclinación). Sin la Luna, la inclinación de la Tierra también podría vagar caóticamente — un punto sobrecogedor sobre lo frágil que es un clima estable.",
+    "new": "La inclinación de la Tierra en sí no es constante — oscila entre 22,1° y 24,5° (aproximadamente ±1,2° alrededor de la media) durante ~41.000 años, uno de los ciclos de Milankovitch que marcan el ritmo de las edades de hielo. La inclinación de Marte es mucho más variable: las simulaciones muestran que la oblicuidad de Marte ha variado caóticamente entre 0° y 60° a lo largo del tiempo geológico, en parte porque Marte carece de una luna grande (la Luna de la Tierra estabiliza nuestra inclinación). Sin la Luna, la inclinación de la Tierra también podría variar caóticamente — un recordatorio aleccionador de lo frágil que puede ser un clima estable."
+  },
+  {
+    "rel": "science/planets/axial-tilt-and-seasons.json",
+    "at": "diagram_caption",
+    "old": "Oblicuidad = ángulo entre el eje de rotación y la normal orbital. La Tierra a 23,4° impulsa las estaciones. Urano a 97,8° yace sobre su lado; cada polo experimenta 42 años de oscuridad.",
+    "new": "Oblicuidad = ángulo entre el eje de rotación y la normal orbital. La Tierra, a 23,4°, es la causa de las estaciones. Urano, a 97,8°, está tumbado de lado; cada polo experimenta 42 años de oscuridad."
+  },
+  {
+    "rel": "science/planets/kuiper-belt.json",
+    "at": "narrative_101.1",
+    "old": "En 1992 David Jewitt y Jane Luu, observando desde Mauna Kea con un detector CCD entonces novedoso, encontraron 1992 QB1 (posteriormente nombrado Albion). Un cuerpo helado de ~160 km en una órbita circular estable a 44 UA. En menos de un año encontraron un segundo. En cinco años había docenas. Hoy los catálogos contienen más de 3.000 objetos del cinturón de Kuiper confirmados y los modelos dinámicos predicen más de 100.000 cuerpos mayores de 100 km —y en torno a mil millones de objetos del tamaño de cometas. La masa total es pequeña (~2% de la Tierra) pero aún así es ~50× el cinturón de asteroides.",
+    "new": "En 1992 David Jewitt y Jane Luu, observando desde Mauna Kea con un detector CCD entonces novedoso, encontraron 1992 QB1 (posteriormente nombrado Albion). Un cuerpo helado de ~160 km en una órbita circular estable a 44 UA. En menos de un año encontraron un segundo. En cinco años había docenas. Hoy los catálogos contienen más de 3.000 objetos del cinturón de Kuiper confirmados y los modelos dinámicos predicen más de 100.000 cuerpos mayores de 100 km —y en torno a mil millones de objetos del tamaño de cometas. La masa total es pequeña (~2% de la Tierra) pero aun así es ~50× el cinturón de asteroides."
+  },
+  {
+    "rel": "science/planets/kuiper-belt.json",
+    "at": "narrative_101.2",
+    "old": "Plutón, degradado en 2006, resultó ser el miembro más grande conocido del cinturón en lugar del más pequeño de los planetas. Eris, descubierto en 2005 y ligeramente más masivo que Plutón, es lo que desencadenó la reclasificación de la IAU: si Eris es un planeta, entonces también lo son Haumea, Makemake, Quaoar, Sedna y docenas de candidatos probables más lejanos. La IAU trazó la línea en 'planeta enano' en su lugar, y el cinturón de Kuiper es el depósito de planetas enanos.",
+    "new": "Plutón, degradado en 2006, resultó ser el miembro más grande conocido del cinturón en lugar del más pequeño de los planetas. Eris, descubierta en 2005 y ligeramente más masiva que Plutón, es lo que desencadenó la reclasificación de la IAU: si Eris es un planeta, entonces también lo son Haumea, Makemake, Quaoar, Sedna y docenas de candidatos probables más lejanos. La IAU trazó la línea en «planeta enano» en su lugar, y el cinturón de Kuiper es el depósito de planetas enanos."
+  },
+  {
+    "rel": "science/planets/kuiper-belt.json",
+    "at": "body_paragraphs.0",
+    "old": "Estructuralmente el cinturón tiene tres poblaciones. El cinturón de Kuiper clásico a 42–48 UA alberga cuerpos en órbitas casi circulares de baja inclinación —el remanente dinámicamente inperturbado del disco original; Albion y Quaoar viven aquí. La población resonante está retenida en resonancia de movimiento medio 2:3 con Neptuno (Plutón es el arquetipo —por cada dos órbitas de Plutón, Neptuno completa tres); estos se llaman Plutinos. Luego está el disco disperso, la extensión excéntrica de alta inclinación en el exterior donde Eris y Sedna deambulan, con perihelios cerca de Neptuno y afelios cientos de UA lejos. Cada población es un fósil de un capítulo diferente de la historia gravitacional del sistema solar primitivo.",
+    "new": "Estructuralmente el cinturón tiene tres poblaciones. El cinturón de Kuiper clásico, a 42–48 UA, alberga cuerpos en órbitas casi circulares de baja inclinación —el remanente dinámicamente no perturbado del disco original; Albion y Quaoar viven aquí. La población resonante está retenida en resonancia de movimiento medio 2:3 con Neptuno (Plutón es el arquetipo —por cada dos órbitas de Plutón, Neptuno completa tres); estos objetos se llaman plutinos. Luego está el disco disperso, la extensión excéntrica y de alta inclinación en el exterior donde deambulan Eris y Sedna, con perihelios cerca de Neptuno y afelios a cientos de UA. Cada población es un fósil de un capítulo diferente de la historia gravitacional del sistema solar primitivo."
+  },
+  {
+    "rel": "science/planets/kuiper-belt.json",
+    "at": "body_paragraphs.1",
+    "old": "El Cinturón de Kuiper es el depósito de origen de los cometas de período corto — cuerpos como Halley, Hartley 2 y 67P/Churyumov–Gerasimenko cuyos órbitas retornan al sistema solar interior en menos de 200 años. Los empujones gravitatorios de Neptuno ocasionalmente lanzan miembros hacia adentro, donde el calentamiento solar sublima los hielos de la superficie en la coma y la cola visibles. Los cometas de período largo provienen de mucho más lejos (la Nube de Oort a miles de UA), pero los cometas de período corto son parientes del Cinturón de Kuiper. La misión europea Rosetta orbitó 67P de 2014 a 2016 y detectó glicina + fósforo + oxígeno — los bloques de construcción molecular de la vida — sublimándose de la superficie.",
+    "new": "El cinturón de Kuiper es el depósito de origen de los cometas de período corto — cuerpos como Halley, Hartley 2 y 67P/Churyumov–Gerasimenko cuyas órbitas retornan al sistema solar interior en menos de 200 años. Los empujones gravitatorios de Neptuno de vez en cuando lanzan miembros hacia adentro, donde el calentamiento solar sublima los hielos de la superficie en la coma y la cola visibles. Los cometas de período largo provienen de mucho más lejos (la nube de Oort, a miles de UA), pero los cometas de período corto son parientes del cinturón de Kuiper. La misión europea Rosetta orbitó 67P de 2014 a 2016 y detectó glicina + fósforo + oxígeno — los bloques de construcción molecular de la vida — desprendiéndose por sublimación de la superficie."
+  },
+  {
+    "rel": "science/planets/kuiper-belt.json",
+    "at": "body_paragraphs.2",
+    "old": "New Horizons sigue siendo la única nave espacial que ha visitado directamente el cinturón. El sobrevuelo de Plutón + Caronte el 14 de julio de 2015 devolvió las primeras imágenes en primer plano de un objeto clásico del cinturón de Kuiper, revelando Sputnik Planitia (una llanura de hielo de nitrógeno de 1.000 km), montañas de hielo de agua y depósitos de tiolín rojo oscuro en el polo de Caronte. En enero de 2019 New Horizons llegó a su objetivo de misión extendida en el cinturón de Kuiper, Arrokoth —un objeto bilobado de 36 km que se parece a dos panqueques presionados juntos, el planetesimal más prístino que los humanos hayan jamás fotografiado. Voyager 1 + 2 pasaron por el borde interior del cinturón en los años 80 en camino hacia el espacio interestelar, pero no tuvieron encuentros dirigidos.",
+    "new": "New Horizons sigue siendo la única nave espacial que ha visitado directamente el cinturón. El sobrevuelo de Plutón y Caronte el 14 de julio de 2015 obtuvo las primeras imágenes de cerca de un objeto clásico del cinturón de Kuiper, y reveló Sputnik Planitia (una llanura de hielo de nitrógeno de 1.000 km), montañas de hielo de agua y depósitos de tolinas rojo oscuro en el polo de Caronte. En enero de 2019 New Horizons llegó a su objetivo de misión extendida en el cinturón de Kuiper, Arrokoth —un objeto bilobulado de 36 km que parece dos tortitas pegadas, el planetesimal más prístino que se haya fotografiado jamás. Voyager 1 + 2 pasaron por el borde interior del cinturón en los años 80 en camino hacia el espacio interestelar, pero no tuvieron encuentros dirigidos."
+  },
+  {
+    "rel": "science/planets/kuiper-belt.json",
+    "at": "diagram_caption",
+    "old": "Las tres poblaciones del Cinturón de Kuiper. Los KBO clásicos entre 42–48 AU en órbitas casi circulares; los Plutinos resonantes en relación 2:3 con Neptuno (Plutón + Caronte a 39 AU); el disco disperso que se extiende excéntricamente hacia la Nube de Oort interior (el afelio de Eris está a 96 AU).",
+    "new": "Las tres poblaciones del cinturón de Kuiper. Los KBO clásicos, entre 42–48 UA, en órbitas casi circulares; los plutinos resonantes en relación 2:3 con Neptuno (Plutón + Caronte a 39 UA); el disco disperso que se extiende excéntricamente hacia la nube de Oort interior (el afelio de Eris está a 96 UA)."
+  },
+  {
+    "rel": "science/planets/lunar-ice.json",
+    "at": "intro_sentence",
+    "old": "Cerca de los polos lunares, algunos fondos de cráteres nunca han visto la luz solar — y en ese frío perpetuo, el hielo de agua entregado por cometas y asteroides durante miles de millones de años se ha acumulado y atrapado.",
+    "new": "Cerca de los polos lunares, algunos fondos de cráteres nunca han visto la luz solar — y en ese frío perpetuo, el hielo de agua aportado por cometas y asteroides durante miles de millones de años se ha acumulado y ha quedado atrapado."
+  },
+  {
+    "rel": "science/planets/lunar-ice.json",
+    "at": "body_paragraphs.1",
+    "old": "La evidencia de agua en PSRs ha sido reunida por varias misiones. La Chandrayaan-1 de India llevaba el instrumento Moon Mineralogy Mapper (M3) de la NASA, que en 2009 detectó la firma espectral de moléculas de hidróxilo y agua en la superficie en un rango de latitudes — incluyendo terreno iluminado por el sol, donde el viento solar puede estar creando agua implantando hidrógeno en minerales portadores de oxígeno. Lo más dramático fue que la misión LCROSS de la NASA en 2009 deliberadamente estrelló una etapa de cohete gastada contra una PSR cerca del polo sur y observó la pluma resultante con una nave espacial de seguimiento; la pluma contenía vapor de agua y hielo, confirmando directamente la presencia de agua en la trampa fría.",
+    "new": "Varias misiones han reunido pruebas de agua en las PSR. La Chandrayaan-1 de la India llevaba el instrumento Moon Mineralogy Mapper (M3) de la NASA, que en 2009 detectó la firma espectral de moléculas de hidroxilo y agua en la superficie en un rango de latitudes — incluido el terreno iluminado por el Sol, donde el viento solar puede estar creando agua al implantar hidrógeno en minerales portadores de oxígeno. Lo más espectacular: la misión LCROSS de la NASA estrelló deliberadamente en 2009 una etapa de cohete agotada contra una PSR cerca del polo sur y observó la pluma resultante con una nave de seguimiento; la pluma contenía vapor de agua y hielo, lo que confirmó directamente la presencia de agua en la trampa fría."
+  },
+  {
+    "rel": "science/planets/lunar-ice.json",
+    "at": "body_paragraphs.2",
+    "old": "Las estimaciones de hielo de agua total en PSRs lunares varían — cifras en el rango de cientos de millones a miles de millones de toneladas han sido publicadas — pero la cantidad exacta, el perfil de profundidad, la concentración y la forma física (hielo puro, hielo mezclado con regolito, o capas de escarcha fina) siguen siendo inciertas. El hielo parece ser heterogéneo: parcheado, mezclado con tierra, y no una capa uniforme. El aterrizaje de Chandrayaan-3 de la ISRO en 2023 apuntó a la región del polo sur en parte para comenzar a caracterizar este terreno de cerca.",
+    "new": "Las estimaciones del total de hielo de agua en las PSR lunares varían — se han publicado cifras del orden de cientos de millones a miles de millones de toneladas — pero la cantidad exacta, el perfil de profundidad, la concentración y la forma física (hielo puro, hielo mezclado con regolito, o finas capas de escarcha) siguen siendo inciertas. El hielo parece ser heterogéneo: irregular, mezclado con polvo, y no una capa uniforme. El aterrizaje de Chandrayaan-3 de la ISRO en 2023 tuvo como objetivo la región del polo sur en parte para empezar a caracterizar este terreno de cerca."
+  },
+  {
+    "rel": "science/planets/lunar-ice.json",
+    "at": "body_paragraphs.3",
+    "old": "La importancia estratégica es directa. El agua es H2O: divídela y tienes hidrógeno y oxígeno — la combinación de propulsor químico para cohetes más energética que se conoce. También tienes aire respirable y agua potable. El hielo polar lunar, si es accesible y extraíble a escala, haría que la Luna fuera un posible depósito de combustible para misiones en todo el espacio cislunar y más allá, reduciendo dramáticamente la masa que debe ser lanzada desde la Tierra. Ese cambio en la economía es la razón central por la que el programa Artemis de la NASA, la ESA, la ISRO, Roscosmos y la CNSA apuntan al polo sur en lugar de los sitios ecuatoriales de Apollo.",
+    "new": "La importancia estratégica es directa. El agua es H2O: divídela y tienes hidrógeno y oxígeno — la combinación de propulsor químico para cohetes más energética que se conoce. También tienes aire respirable y agua potable. El hielo polar lunar, si es accesible y extraíble a escala, convertiría la Luna en un posible depósito de combustible para misiones en todo el espacio cislunar y más allá, reduciendo dramáticamente la masa que hay que lanzar desde la Tierra. Ese cambio en la economía es la razón central por la que el programa Artemis de la NASA, la ESA, la ISRO, Roscosmos y la CNSA apuntan al polo sur en lugar de los sitios ecuatoriales de Apollo."
+  },
+  {
+    "rel": "science/planets/lunar-ice.json",
+    "at": "body_paragraphs.4",
+    "old": "El acceso es la parte difícil. El terreno más frío y más oscuro de la Luna es también el más difícil de alcanzar y operar. Los paneles solares de los rovers generan poca potencia en sombra casi permanente. El equipo debe sobrevivir a ciclos térmicos extremos entre el borde del cráter iluminado (necesario para la potencia) y el piso sombreado (donde está el hielo). Perforar o minar en regolito de baja gravedad sin contaminar el hielo es un problema de ingeniería sin resolver. La ciencia es lo suficientemente sólida para motivar una carrera; la ingeniería no lo es.",
+    "new": "El acceso es la parte difícil. El terreno más frío y más oscuro de la Luna es también el más difícil de alcanzar y de operar en él. Los paneles solares de los róvers generan poca energía en sombra casi permanente. El equipo debe sobrevivir a ciclos térmicos extremos entre el borde iluminado del cráter (necesario para la energía) y el fondo sombreado (donde está el hielo). Perforar o extraer en regolito de baja gravedad sin contaminar el hielo es un problema de ingeniería sin resolver. La ciencia es lo bastante sólida para motivar una carrera; la ingeniería no lo es."
+  },
+  {
+    "rel": "science/planets/lunar-ice.json",
+    "at": "diagram_caption",
+    "old": "Sección transversal de un cráter del polo sur lunar — la luz solar roza el borde mientras el piso se mantiene permanentemente sombreado, atrapando por el frío el hielo de agua entregado durante el tiempo geológico.",
+    "new": "Sección transversal de un cráter del polo sur lunar — la luz solar roza el borde mientras el fondo se mantiene permanentemente sombreado, atrapando en frío el hielo de agua aportado a lo largo del tiempo geológico."
+  },
+  {
+    "rel": "science/planets/magnetic-fields.json",
+    "at": "narrative_101.2",
+    "old": "Luego está Saturno — un gigante gaseoso con un dínamo tan perfectamente alineado con su eje de rotación que la inclinación magnética es prácticamente nula. Todos los demás dínamos que conocemos tienen al menos algún desfase (Tierra 10.5°, Júpiter 9.6°), pero el de Saturno es < 1°. Nadie sabe bien por qué. La teoría más aceptada es que Saturno posee una estructura de capas inusual que suaviza mecánicamente la simetría del campo, aunque el mecanismo sigue debatiéndose. La alineación casi perfecta de Saturno es uno de los enigmas no resueltos de la física planetaria.",
+    "new": "Luego está Saturno — un gigante gaseoso con un dínamo tan perfectamente alineado con su eje de rotación que la inclinación magnética es prácticamente nula. Todos los demás dínamos que conocemos tienen al menos algún desfase (Tierra 10,5°, Júpiter 9,6°), pero el de Saturno es < 1°. Nadie sabe bien por qué. La teoría más aceptada es que Saturno posee una estructura de capas inusual que suaviza mecánicamente la simetría del campo, aunque el mecanismo sigue debatiéndose. La alineación casi perfecta de Saturno es uno de los enigmas no resueltos de la física planetaria."
+  },
+  {
+    "rel": "science/planets/magnetic-fields.json",
+    "at": "body_paragraphs.0",
+    "old": "Inclinación del eje magnético (ángulo entre el dipolo y el eje de rotación) para cada planeta con un dínamo conocido: Mercurio 0.7°, Tierra 10.5°, Júpiter 9.6°, Saturno ~0°, Urano 58.6°, Neptuno 46.9°. Venus, Marte y Plutón no presentan hoy un dipolo globalmente significativo. Los dipolos de Urano y Neptuno, enormemente desviados del eje, también están desplazados del centro del planeta — el de Urano aproximadamente 1/3 del radio planetario. El dínamo convencional (núcleo de hierro) no puede producir fácilmente esa geometría; la explicación más aceptada es que Urano y Neptuno albergan sus dínamos en una capa exterior del manto formada por agua iónica + amoníaco + metano, y no en un núcleo profundo.",
+    "new": "Inclinación del eje magnético (ángulo entre el dipolo y el eje de rotación) para cada planeta con un dínamo conocido: Mercurio 0,7°, Tierra 10,5°, Júpiter 9,6°, Saturno ~0°, Urano 58,6°, Neptuno 46,9°. Venus, Marte y Plutón no presentan hoy un dipolo globalmente significativo. Los dipolos de Urano y Neptuno, enormemente desviados del eje, también están desplazados del centro del planeta — el de Urano aproximadamente 1/3 del radio planetario. El dínamo convencional (núcleo de hierro) no puede producir fácilmente esa geometría; la explicación más aceptada es que Urano y Neptuno albergan sus dínamos en una capa exterior del manto formada por agua iónica + amoníaco + metano, y no en un núcleo profundo."
+  },
+  {
+    "rel": "science/planets/magnetic-fields.json",
+    "at": "body_paragraphs.1",
+    "old": "Las magnetosferas se extienden mucho más allá del planeta en sí. La de la Tierra alcanza unos 65.000 km en dirección al Sol (donde se dobla contra el viento solar) y se prolonga en una larga cola en el lado nocturno. La magnetosfera de Júpiter es la estructura física más grande dentro del sistema solar que no es la heliosfera del Sol: su magnetocola llega hasta la órbita de Saturno, con una longitud de unos 1.400 millones de km. La cola está conformada por el viento solar que empuja el campo en sentido descendente; la parte delantera, en dirección al Sol, queda comprimida.",
+    "new": "Las magnetosferas se extienden mucho más allá del planeta en sí. La de la Tierra alcanza unos 65.000 km en dirección al Sol (donde se comprime contra el viento solar) y se prolonga en una larga cola en el lado nocturno. La magnetosfera de Júpiter es la estructura física más grande dentro del sistema solar que no es la heliosfera del Sol: su cola magnética llega hasta la órbita de Saturno, con una longitud de unos 1.400 millones de km. La cola está conformada por el viento solar, que empuja el campo corriente abajo; la parte delantera, en dirección al Sol, queda comprimida."
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "narrative_101.1",
+    "old": "Cuatro siglos después, las lunas de los planetas exteriores son donde se concentra la mayoría de la astrobiología moderna. Europa, alrededor de Júpiter, posee un océano subsuperficial de agua líquida bajo una gruesa corteza de hielo —potencialmente 2-3× el volumen de los océanos terrestres. Encélado, alrededor de Saturno, expulsa ese mismo océano por grietas en su polo sur; la misión Cassini atravesó las plumas y detectó moléculas orgánicas. Titán, también de Saturno, tiene una densa atmósfera de nitrógeno (más densa en la superficie que la terrestre), lagos de metano líquido, y un probable océano subterráneo de agua y amoníaco. Tres mundos oceánicos independientes, todos en un recorrido por el sistema solar exterior.",
+    "new": "Cuatro siglos después, las lunas de los planetas exteriores son donde se concentra buena parte de la astrobiología moderna. Europa, alrededor de Júpiter, posee un océano subsuperficial de agua líquida bajo una gruesa corteza de hielo —potencialmente 2-3× el volumen de los océanos terrestres. Encélado, alrededor de Saturno, expulsa ese mismo océano por grietas en su polo sur; la misión Cassini atravesó los penachos y detectó moléculas orgánicas. Titán, también de Saturno, tiene una densa atmósfera de nitrógeno (más densa en la superficie que la terrestre), lagos de metano líquido y un probable océano subterráneo de agua y amoníaco. Tres mundos oceánicos independientes, todos en un recorrido por el sistema solar exterior."
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "narrative_101.2",
+    "old": "Las dos diminutas lunas de Marte —Fobos y Deimos— casi con certeza son asteroides capturados del cinturón principal. Fobos orbita más rápido que Marte rota, de modo que en Marte sale por el oeste y se pone por el este —la única luna del sistema que lo hace. Fobos también está en una lenta espiral de muerte hacia Marte: las fuerzas de marea lo están atrayendo, y en aproximadamente 50 millones de años se estrellará o se desintegrará en un breve anillo marciano.",
+    "new": "Las dos diminutas lunas de Marte —Fobos y Deimos— son casi con certeza asteroides capturados del cinturón principal. Fobos orbita más rápido de lo que rota Marte, de modo que en Marte sale por el oeste y se pone por el este —la única luna del sistema que lo hace. Fobos también está en una lenta espiral de muerte hacia Marte: las fuerzas de marea tiran de él hacia abajo, y en aproximadamente 50 millones de años se estrellará o se desintegrará en un breve anillo marciano."
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "body_paragraphs.0",
+    "old": "Las cuatro lunas galileanas de Júpiter son mundos radicalmente diferentes. Ío: cuerpo más volcanicamente activo del sistema solar, con erupciones activas visibles desde telescopios —impulsadas por calentamiento de marea de los otros. Europa: corteza de hielo sobre un océano de agua global, una prioridad máxima en astrobiología. Ganímedes: la luna más grande del sistema solar, más grande que Mercurio, y la única luna con su propio campo magnético. Calisto: la galileana más externa, con una antigua superficie craterizada, posiblemente también con un océano subsuperficial. Las cuatro fueron descubiertas en 1610 por Galileo desde un tejado en Padua.",
+    "new": "Las cuatro lunas galileanas de Júpiter son mundos radicalmente diferentes. Ío: el cuerpo con mayor actividad volcánica del sistema solar, con erupciones activas visibles con telescopios —impulsadas por el calentamiento de marea causado por las otras lunas. Europa: corteza de hielo sobre un océano de agua global, una prioridad máxima en astrobiología. Ganímedes: la luna más grande del sistema solar, más grande que Mercurio, y la única luna con su propio campo magnético. Calisto: la galileana más externa, con una antigua superficie craterizada, posiblemente también con un océano subsuperficial. Las cuatro fueron descubiertas en 1610 por Galileo desde un tejado en Padua."
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "body_paragraphs.1",
+    "old": "Saturno tiene más lunas que cualquier otro planeta — ~290 con órbitas confirmadas a partir de 2026. Dos destacan especialmente: Titán, la segunda luna más grande del sistema solar (después de Ganímedes), con una atmósfera de nitrógeno más densa que la terrestre en la superficie; la sonda Huygens se posó allí en 2005 y devolvió las primeras imágenes de la superficie. Encélado, mucho más pequeño, posee una superficie helada joven, características crestas denominadas «franjas de tigre» en el polo sur, y chimeneas crivolcánicas activas que expulsan vapor de agua y materia orgánica al espacio — muestreadas directamente por Cassini al atravesar la pluma. Las plumas de Encélado son la fuente del anillo E de Saturno — el hielo crivolcánico de la luna alimenta el anillo de manera directa.",
+    "new": "Saturno tiene más lunas que cualquier otro planeta — ~290 con órbitas confirmadas a partir de 2026. Dos destacan especialmente: Titán, la segunda luna más grande del sistema solar (después de Ganímedes), con una atmósfera de nitrógeno más densa que la terrestre en la superficie; la sonda Huygens se posó allí en 2005 y devolvió las primeras imágenes de la superficie. Encélado, mucho más pequeño, posee una superficie helada joven, crestas características llamadas «rayas de tigre» en el polo sur, y chimeneas criovolcánicas activas que expulsan vapor de agua y materia orgánica al espacio — muestreadas directamente por Cassini al atravesar el penacho. Los penachos de Encélado son la fuente del anillo E de Saturno — su hielo criovolcánico alimenta el anillo de manera directa."
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "body_paragraphs.2",
+    "old": "Plutón y Caronte son únicos: con un radio de 606 km frente a los 1188 km de Plutón, Caronte tiene la mitad del diámetro de Plutón —la mayor proporción luna-planeta del sistema. Los dos cuerpos orbitan alrededor de un centro de masa común que se encuentra fuera de la superficie de Plutón, de modo que ninguno de los dos orbita realmente al otro; se están orbitando mutuamente alrededor de un baricentro compartido. El sobrevuelo de New Horizons en 2015 fotografió ambos por primera vez, revelando depósitos ecuatoriales rojos en Caronte (tholinas de la atmósfera de Plutón dispersadas) y una llanura de hielo nitrogenado en forma de corazón en Plutón. Tritón, luna de Neptuno, es similarmente capturada (órbita retrógrada, geológicamente joven —posiblemente capturada del cinturón de Kuiper) — y al igual que Caronte, casi con certeza alberga un océano subsuperficial.",
+    "new": "Plutón y Caronte son únicos: con un radio de 606 km frente a los 1188 km de Plutón, Caronte tiene la mitad del diámetro de Plutón —la mayor proporción luna-planeta del sistema. Los dos cuerpos orbitan alrededor de un centro de masa común que se encuentra fuera de la superficie de Plutón, de modo que ninguno de los dos orbita realmente al otro; se orbitan mutuamente alrededor de un baricentro compartido. El sobrevuelo de New Horizons en 2015 fotografió ambos por primera vez, revelando depósitos ecuatoriales rojos en Caronte (tolinas de la atmósfera de Plutón arrastradas hasta allí) y una llanura de hielo de nitrógeno en forma de corazón en Plutón. Tritón, la luna de Neptuno, es otro cuerpo capturado (órbita retrógrada, geológicamente joven —posiblemente capturado del cinturón de Kuiper) — y al igual que Caronte, casi con certeza alberga un océano subsuperficial."
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "diagram_caption",
+    "old": "Lunas principales de los planetas gigantes a escala comparativa. Ganimedes (Júpiter) es la más grande con un radio de 2,634 km —más grande que Mercurio. Caronte es la mitad del diámetro de Plutón, la mayor proporción luna-planeta en cualquier lugar.",
+    "new": "Lunas principales de los planetas gigantes a escala comparativa. Ganímedes (Júpiter) es la más grande, con un radio de 2634 km —más grande que Mercurio. Caronte tiene la mitad del diámetro de Plutón, la mayor proporción luna-planeta de todo el sistema."
+  },
+  {
+    "rel": "science/planets/planetary-stats.json",
+    "at": "body_paragraphs.1",
+    "old": "Períodos de rotación (sidéreos, en horas): Mercurio 1407,5 (aproximadamente 58 días terrestres para una rotación completa); Venus −5832,5 (retrógrado, 243 días); Tierra 23,93; Marte 24,62; Júpiter 9,93 (el rotador más rápido: su día dura menos de 10 horas pese a su tamaño, razón por la que Júpiter es visiblemente oblato; las fuerzas centrífugas lo aplanan); Saturno 10,66; Urano −17,24 (retrógrado); Neptuno 16,11; Plutón −153,3 (retrógrado). Los días solares (de amanecer a amanecer) difieren de los períodos sidéreos porque el planeta también se desplaza en su órbita: el día solar de Venus dura 117 días terrestres aunque su rotación sidérea sea de 243 días, porque el giro retrógrado cancela parcialmente el movimiento orbital.",
+    "new": "Períodos de rotación (sidéreos, en horas): Mercurio 1407,5 (aproximadamente 58 días terrestres para una rotación completa); Venus −5832,5 (retrógrado, 243 días); Tierra 23,93; Marte 24,62; Júpiter 9,93 (el de rotación más rápida: su día dura menos de 10 horas pese a su tamaño, razón por la que Júpiter es visiblemente oblato; las fuerzas centrífugas lo aplanan); Saturno 10,66; Urano −17,24 (retrógrado); Neptuno 16,11; Plutón −153,3 (retrógrado). Los días solares (de amanecer a amanecer) difieren de los períodos sidéreos porque el planeta también se desplaza en su órbita: el día solar de Venus dura 117 días terrestres aunque su rotación sidérea sea de 243 días, porque el giro retrógrado cancela parcialmente el movimiento orbital."
+  },
+  {
+    "rel": "science/planets/planetary-stats.json",
+    "at": "body_paragraphs.2",
+    "old": "El fantasma de comparación con la Tierra en /explore permite leer estas proporciones de un vistazo: la imagen de Júpiter aparece con 11× el tamaño aparente de la miniatura de la Tierra, la de Marte con aproximadamente la mitad, y la de Plutón con cerca de 1/5. La capa de exploración táctica muestra los números más difíciles de imaginar: la gravedad que sentirías en la superficie, la presión del aire que respirarías (o que te aplastaría, o que no tendría nada para respirar), y el período de rotación que determina la duración del día en el planeta. Los cuatro valores provienen de la ficha de datos planetarios, codificados directamente en el mapa PLANET_STATS en /explore (Slice E.4).",
+    "new": "El fantasma de comparación con la Tierra en /explore permite leer estas proporciones de un vistazo: la imagen de Júpiter aparece con 11× el tamaño aparente de la miniatura de la Tierra, la de Marte con aproximadamente la mitad, y la de Plutón con cerca de 1/5. La capa de escaneo táctico muestra los números más difíciles de imaginar: la gravedad que sentirías en la superficie, la presión del aire que respirarías (o que te aplastaría, o la ausencia total de aire que respirar), y el período de rotación que determina la duración del día en el planeta. Los cuatro valores provienen de la ficha de datos planetarios, codificados directamente en el mapa PLANET_STATS en /explore (Slice E.4)."
+  },
+  {
+    "rel": "science/planets/regolith.json",
+    "at": "intro_sentence",
+    "old": "El regolito es la capa suelta de roca fragmentada y polvo de vidrio que cubre la Luna, Mercurio y la mayoría de asteroides, pulida por miles de millones de años de bombardeo de micrometeoritos.",
+    "new": "El regolito es la capa suelta de roca fragmentada y polvo de vidrio que cubre la Luna, Mercurio y la mayoría de los asteroides, triturada por miles de millones de años de micrometeoritos, sin viento ni agua que redondeen sus aristas."
+  },
+  {
+    "rel": "science/planets/regolith.json",
+    "at": "body_paragraphs.0",
+    "old": "En la Tierra, los granos de sedimento se redondean y pulen por el agua y el viento con el tiempo. Los cuerpos sin atmósfera carecen de ambos, por lo que sus superficies se erosionan únicamente por impactadores —desde asteroides de varios kilómetros de diámetro hasta granos de polvo interplanetario que llegan a decenas de kilómetros por segundo—. El resultado es una capa de fragmentos angulares y vítreos llamada regolito, que varía desde polvo fino hasta rocas del tamaño de una casa. En la Luna, esta capa va desde unos pocos metros de profundidad en las tierras altas hasta decenas de metros en los mares lunares.",
+    "new": "En la Tierra, los granos de sedimento se redondean y pulen por el agua y el viento con el tiempo. Los cuerpos sin atmósfera carecen de ambos, por lo que sus superficies se erosionan únicamente por el impacto de otros cuerpos —desde asteroides de varios kilómetros de diámetro hasta granos de polvo interplanetario que llegan a decenas de kilómetros por segundo—. El resultado es una capa de fragmentos angulares y vítreos llamada regolito, que varía desde polvo fino hasta rocas del tamaño de una casa. En la Luna, esta capa va desde unos pocos metros de profundidad en las tierras altas hasta decenas de metros en los mares lunares."
+  },
+  {
+    "rel": "science/planets/regolith.json",
+    "at": "body_paragraphs.1",
+    "old": "El regolito lunar tiene una propiedad que lo hace activamente peligroso: está cargado electroestáticamente. En el lado diurno de la Luna, la luz ultravioleta solar arranca electrones de los granos por efecto fotoeléctrico, dejando la superficie iluminada cargada positivamente; en el lado nocturno, los electrones del viento solar la cargan negativamente. En cualquier caso, los granos mantienen una carga electrostática persistente. El polvo se adhiere a todo —visores, juntas del traje, óptica de instrumentos, radiadores térmicos—. Los astronautas de Apollo descubrieron que sus trajes se volvían gris negruzco al cabo de horas de sus primeros paseos lunares, y la abrasión de los granos afilados degradó las costuras del traje durante un único EVA.",
+    "new": "El regolito lunar tiene una propiedad que lo hace activamente peligroso: está cargado electrostáticamente. En el lado diurno de la Luna, la luz ultravioleta solar arranca electrones de los granos por efecto fotoeléctrico, dejando la superficie iluminada cargada positivamente; en el lado nocturno, los electrones del viento solar la cargan negativamente. En cualquier caso, los granos mantienen una carga electrostática persistente. El polvo se adhiere a todo —visores, juntas del traje, óptica de instrumentos, radiadores térmicos—. Los astronautas de Apollo descubrieron que sus trajes se volvían gris negruzco al cabo de horas de sus primeros paseos lunares, y la abrasión de los granos afilados degradó las costuras del traje durante una única EVA."
+  },
+  {
+    "rel": "science/planets/regolith.json",
+    "at": "body_paragraphs.3",
+    "old": "El regolito de asteroides presenta su propia física. En cuerpos de escombros como Bennu (muestreado por OSIRIS-REx de la NASA en 2020) y Ryugu (muestreado por Hayabusa2 de la JAXA en 2019), la gravedad es tan débil —millonésimas partes de la terrestre— que el regolito apenas se mantiene cohesionado. El brazo muestreador de OSIRIS-REx se hundió inesperadamente en profundidad en la superficie de Bennu, revelando un cuerpo menos parecido a una roca sólida y más a una bolsa de grava suelta. Cómo se mueve el material, se consolida y se comporta bajo tales condiciones sigue siendo un área activa de investigación.",
+    "new": "El regolito de asteroides presenta su propia física. En cuerpos de tipo pila de escombros como Bennu (muestreado por OSIRIS-REx de la NASA en 2020) y Ryugu (muestreado por Hayabusa2 de la JAXA en 2019), la gravedad es tan débil —millonésimas partes de la terrestre— que el regolito apenas se mantiene cohesionado. El brazo muestreador de OSIRIS-REx se hundió inesperadamente a gran profundidad en la superficie de Bennu, revelando un cuerpo menos parecido a una roca sólida y más a una bolsa de grava suelta. Cómo se mueve el material, se consolida y se comporta bajo tales condiciones sigue siendo un área activa de investigación."
+  },
+  {
+    "rel": "science/planets/regolith.json",
+    "at": "body_paragraphs.4",
+    "old": "La profundidad y composición del regolito también registran la historia planetaria. La velocidad de jardinería de impactos —la removilización de la superficie por sucesivos impactos— se puede utilizar para datar superficies: conteos de cráteres más densos significan terreno más antiguo y menos removilizado. Los elementos traza entregados por cometas y el viento solar se preservan en los granos de regolito de una manera que las rocas erosionadas de la Tierra no pueden preservar, haciendo que las muestras retornadas sean archivos irreemplazables de la química del sistema solar primitivo.",
+    "new": "La profundidad y composición del regolito también registran la historia planetaria. La tasa de jardinería de impactos —la remoción de la superficie por impactos sucesivos— se puede utilizar para datar superficies: recuentos de cráteres más densos significan terreno más antiguo y menos removido. Los elementos traza aportados por cometas y el viento solar se preservan en los granos de regolito de una manera que las rocas erosionadas de la Tierra no pueden preservar, lo que convierte las muestras traídas a la Tierra en archivos irremplazables de la química del sistema solar primitivo."
+  },
+  {
+    "rel": "science/planets/sub-solar-and-terminator.json",
+    "at": "narrative_101.0",
+    "old": "Párate en el ecuador al mediodía solar. El Sol está justo encima de ti. Donde quiera que estés en ese momento defines el punto subsolar: la única longitud donde los rayos del Sol golpean la superficie perpendicularmente. A medida que el planeta rota hacia el este, el punto subsolar se desplaza hacia el oeste por la superficie. A medida que el planeta orbita el Sol y su inclinación lleva los hemisferios hacia la luz solar o los aleja de ella, la latitud subsolar también cambia; en la Tierra oscila entre 23,4°N y 23,4°S a lo largo del año (los trópicos de Cáncer y Capricornio).",
+    "new": "Colócate en el ecuador al mediodía solar. El Sol está justo encima de ti. Donde quiera que estés en ese momento defines el punto subsolar: la única longitud donde los rayos del Sol inciden sobre la superficie perpendicularmente. A medida que el planeta rota hacia el este, el punto subsolar se desplaza hacia el oeste por la superficie. A medida que el planeta orbita el Sol y su inclinación lleva los hemisferios hacia la luz solar o los aleja de ella, la latitud subsolar también cambia; en la Tierra oscila entre 23,4°N y 23,4°S a lo largo del año (los trópicos de Cáncer y Capricornio)."
+  },
+  {
+    "rel": "science/planets/sub-solar-and-terminator.json",
+    "at": "body_paragraphs.0",
+    "old": "La ubicación instantánea del punto subsolar se calcula a partir de tres ángulos: la fase de rotación del planeta (qué longitud enfrenta al Sol en este momento), su inclinación axial (qué latitud estacional ilumina el Sol) y su posición orbital (qué hemisferio está orientado hacia el Sol). En la Tierra, la latitud subsolar oscila entre +23,4° y −23,4° en el ciclo que llamamos estaciones. En Marte, el ciclo es similar (inclinación de 25,19°) pero más lento (año de 687 días) y más excéntrico (la órbita de Marte es más elíptica, por lo que sus estaciones tienen duraciones desiguales).",
+    "new": "La ubicación instantánea del punto subsolar se calcula a partir de tres ángulos: la fase de rotación del planeta (qué longitud mira al Sol en este momento), su inclinación axial (qué latitud estacional ilumina el Sol) y su posición orbital (qué hemisferio está orientado hacia el Sol). En la Tierra, la latitud subsolar oscila entre +23,4° y −23,4° en el ciclo que llamamos estaciones. En Marte, el ciclo es similar (inclinación de 25,19°) pero más lento (año de 687 días) y más excéntrico (la órbita de Marte es más elíptica, por lo que sus estaciones tienen duraciones desiguales)."
+  },
+  {
+    "rel": "science/planets/sub-solar-and-terminator.json",
+    "at": "diagram_caption",
+    "old": "Punto subsolar (dirección perpendicular al Sol) + terminador (círculo máximo a 90°). En los cuerpos sin atmósfera el terminador es nítido; en la Tierra y Venus, la luz solar dispersa lo difumina en un crepúsculo.",
+    "new": "Punto subsolar (el Sol en el cenit) + terminador (círculo máximo a 90°). En los cuerpos sin atmósfera el terminador es nítido; en la Tierra y Venus, la luz solar dispersa lo difumina en un crepúsculo."
+  },
+  {
+    "rel": "science/planets/tides.json",
+    "at": "body_paragraphs.0",
+    "old": "Una marea no es que la Luna levante el agua directamente hacia arriba —es la diferencia en la atracción de la Luna a lo ancho de la Tierra. El lado cercano es atraído hacia la Luna con más fuerza que el centro del planeta, y el lado lejano con menos fuerza, por lo que la envoltura de agua se estira adoptando una forma prolata de dos protuberancias alineada con la línea Tierra–Luna.",
+    "new": "Una marea no es la Luna levantando el agua en vertical, sino la diferencia de su atracción a lo ancho de la Tierra. El lado cercano es atraído hacia la Luna con más fuerza que el centro del planeta, y el lado lejano con menos fuerza, por lo que la envoltura de agua se estira hasta adoptar una forma alargada (prolata), con dos protuberancias alineadas con la línea Tierra–Luna."
+  },
+  {
+    "rel": "science/planets/tides.json",
+    "at": "body_paragraphs.3",
+    "old": "El mismo efecto ya terminó la tarea en la Luna: la fricción de marea frenó su rotación hasta que esta coincidió con su órbita, por lo que mantiene una cara orientada hacia la Tierra —bloqueo de marea—. La lente de Mareas en /earth muestra los dos abultamientos gemelos; la lente Punto Subestelar en /moon presenta el lado cercano bloqueado que produjeron.",
+    "new": "El mismo efecto ya terminó la tarea en la Luna: la fricción de marea frenó su rotación hasta que esta coincidió con su órbita, por lo que mantiene una cara orientada hacia la Tierra —acoplamiento de marea—. La lente de Mareas en /earth muestra las dos protuberancias gemelas; la lente Punto subterrestre en /moon presenta la cara visible bloqueada que produjeron."
+  },
+  {
+    "rel": "science/porkchop/_intro.json",
+    "at": "headline",
+    "old": "Porkchop Plots — cuándo lanzar, y por qué las ventanas son las ventanas.",
+    "new": "Gráficas porkchop — cuándo lanzar, y por qué las ventanas son las ventanas."
+  },
+  {
+    "rel": "science/porkchop/_intro.json",
+    "at": "paragraphs.1",
+    "old": "¿Por qué dibujamos el mapa entero en lugar de solo el óptimo? Porque las misiones reales tienen restricciones — un cohete que solo está listo un año en particular, una rampa de lanzamiento que solo está disponible ciertas semanas, un sitio de aterrizaje que necesita una estación específica en Marte. El morcillo te permite ver TODOS los compromisos a la vez y elegir la trayectoria lo-suficientemente-económica que se ajuste a tu calendario del mundo real.",
+    "new": "¿Por qué dibujamos el mapa entero en lugar de solo el óptimo? Porque las misiones reales tienen restricciones — un cohete que solo está listo un año en particular, una plataforma de lanzamiento que solo está disponible ciertas semanas, un sitio de aterrizaje que necesita una estación específica en Marte. El porkchop te permite ver TODOS los compromisos a la vez y elegir la trayectoria lo bastante económica que se ajuste a tu calendario del mundo real."
+  },
+  {
+    "rel": "science/porkchop/_intro.json",
+    "at": "paragraphs.2",
+    "old": "Seis secciones aquí, en orden de lectura. Empieza con \"¿Qué es un diagrama de morcillo?\" y recorre los ejes (salida, tiempo de vuelo), la escala de color (mapa de calor ∆v), cómo leer la forma del lóbulo (lectura de contornos), y cómo mapear el morcillo a un cohete específico (viabilidad). Una nota sobre convención: los diagramas de morcillo estándar contornean la energía característica C3 (km²/s²) en salida y llegada V∞ (km/s) — Orrery simplifica esto a una única escala de color ∆v-en-km/s para legibilidad. Al final podrás mirar el morcillo de /plan para cualquiera de nueve destinos y leerlo como un dinamicista de vuelo.",
+    "new": "Seis secciones aquí, en orden de lectura. Empieza con «¿Qué es una gráfica porkchop?» y recorre los ejes (salida, tiempo de vuelo), la escala de color (mapa de calor de ∆v), cómo leer la forma del lóbulo (lectura de contornos) y cómo aplicar el porkchop a un cohete específico (viabilidad). Una nota sobre convención: las gráficas porkchop estándar trazan curvas de nivel de la energía característica C3 (km²/s²) en la salida y de la V∞ (km/s) en la llegada — Orrery simplifica esto a una única escala de color de ∆v en km/s para facilitar la lectura. Al final podrás mirar el porkchop de /plan para cualquiera de nueve destinos y leerlo como un especialista en dinámica de vuelo."
+  },
+  {
+    "rel": "science/porkchop/contour-reading.json",
+    "at": "title",
+    "old": "Leyendo los Contornos",
+    "new": "Lectura de los contornos"
+  },
+  {
+    "rel": "science/porkchop/contour-reading.json",
+    "at": "narrative_101.0",
+    "old": "Ahora conoces los ejes y la escala de color. La siguiente habilidad es leer la FORMA de la zona económica. El lóbulo de azul verdoso no es solo un blob genérico: es un mapa literal de qué trayectorias funcionan y cuáles no.",
+    "new": "Ahora conoces los ejes y la escala de color. La siguiente habilidad es leer la FORMA de la zona económica. El lóbulo de azul verdoso no es solo una mancha genérica: es un mapa literal de qué trayectorias funcionan y cuáles no."
+  },
+  {
+    "rel": "science/porkchop/contour-reading.json",
+    "at": "narrative_101.1",
+    "old": "El clásico porkchop marciano tiene DOS lóbulos económicos por ventana de lanzamiento, uno al lado del otro. Se llaman trayectorias «Tipo I» y «Tipo II» — misma ventana, dos formas distintas de rodear el Sol. El Tipo I toma el camino corto (ángulo de transferencia menor que 180 grados) y es más rápido. El Tipo II toma el camino largo (ángulo de transferencia mayor que 180 grados) y es más lento pero a veces más barato. Ambos son reales, ambos se han volado.",
+    "new": "El clásico porkchop marciano tiene DOS lóbulos económicos por ventana de lanzamiento, uno al lado del otro. Se llaman trayectorias «Tipo I» y «Tipo II» — misma ventana, dos formas distintas de rodear el Sol. El Tipo I toma el camino corto (ángulo de transferencia menor que 180 grados) y es más rápido. El Tipo II toma el camino largo (ángulo de transferencia mayor que 180 grados) y es más lento pero a veces más barato. Ambos son reales, ambos se han utilizado en misiones."
+  },
+  {
+    "rel": "science/porkchop/contour-reading.json",
+    "at": "narrative_101.2",
+    "old": "Fuera de los lóbulos: rojo. La mayor parte del porkchop es rojo, en realidad. Esa es la lección. Hay muy pocos momentos económicos para lanzar una nave espacial a otro planeta, y no son negociables. «Solo espera la ventana correcta» casi siempre vence a «inventa una trayectoria ingeniosa». Leer la forma del lóbulo — dónde se ensancha, dónde se estrecha, dónde se encuentran los óptimos — es lo que hacen los dinamicistas de vuelo para vivir.",
+    "new": "Fuera de los lóbulos: rojo. La mayor parte del porkchop es roja, en realidad. Esa es la lección. Hay muy pocos momentos económicos para lanzar una nave espacial a otro planeta, y no son negociables. «Solo espera la ventana correcta» casi siempre supera a «inventa una trayectoria ingeniosa». Leer la forma del lóbulo — dónde se ensancha, dónde se estrecha, dónde se encuentran los óptimos — es lo que hacen los especialistas en dinámica de vuelo para ganarse la vida."
+  },
+  {
+    "rel": "science/porkchop/contour-reading.json",
+    "at": "body_paragraphs.0",
+    "old": "Mira un porkchop marciano. Verás un lóbulo aproximadamente ovalado de celdas azul verdoso centrado cerca de un TOF de 250 días, repitiéndose cada 26 meses. Esa es la oportunidad de Hohmann. Dentro del lóbulo, todas las combinaciones de (salida, TOF) entregan misiones marcianas viables con ∆v aceptables.",
+    "new": "Mira un porkchop marciano. Verás un lóbulo aproximadamente ovalado de celdas azul verdoso centrado cerca de un tiempo de vuelo de 250 días, que se repite cada 26 meses. Esa es la oportunidad de Hohmann. Dentro del lóbulo, todas las combinaciones de (salida, tiempo de vuelo) permiten misiones marcianas viables con un ∆v aceptable."
+  },
+  {
+    "rel": "science/porkchop/contour-reading.json",
+    "at": "body_paragraphs.1",
+    "old": "Dos soluciones por ventana. El «camino corto» (ángulo de transferencia < 180°) y el «camino largo» (ángulo de transferencia > 180°) conectan la Tierra con Marte pero a través de elipses distintas. Aparecen como dos lóbulos económicos en el porkchop, separados por una cresta de alto ∆v en el ángulo de transferencia de ~180° — esta cresta es literalmente el «hueso» del pork chop. A veces aparecen ambos lóbulos, a veces solo uno, dependiendo de la geometría.",
+    "new": "Dos soluciones por ventana. El «camino corto» (ángulo de transferencia < 180°) y el «camino largo» (ángulo de transferencia > 180°) conectan la Tierra con Marte pero a través de elipses distintas. Aparecen como dos lóbulos económicos en el porkchop, separados por una cresta de alto ∆v en el ángulo de transferencia de ~180° — esta cresta es literalmente el «hueso» de la chuleta. A veces aparecen ambos lóbulos, a veces solo uno, según la geometría."
+  },
+  {
+    "rel": "science/porkchop/contour-reading.json",
+    "at": "body_paragraphs.2",
+    "old": "Fuera de las zonas económicas: rojo. Lejos de cualquier ventana natural, necesitarías una trayectoria personalizada de alta energía (asistencia gravitatoria, quemada múltiple) para que las matemáticas funcionen. Las misiones reales se agrupan en las zonas económicas; la filosofía de diseño «solo espera la ventana correcta» a menudo vence a «inventa una trayectoria ingeniosa».",
+    "new": "Fuera de las zonas económicas: rojo. Lejos de cualquier ventana natural, necesitarías una trayectoria a medida de alta energía (asistencia gravitatoria, encendidos múltiples) para que las cuentas salgan. Las misiones reales se agrupan en las zonas económicas; la filosofía de diseño «solo espera la ventana correcta» a menudo supera a «inventa una trayectoria ingeniosa»."
+  },
+  {
+    "rel": "science/porkchop/departure-axis.json",
+    "at": "intro_sentence",
+    "old": "Cuando lanzas — recorriendo el eje X, típicamente un intervalo de cuatro años muestreado diariamente.",
+    "new": "El momento del lanzamiento: recorre el eje X, normalmente un intervalo de cuatro años muestreado día a día."
+  },
+  {
+    "rel": "science/porkchop/departure-axis.json",
+    "at": "narrative_101.0",
+    "old": "Lee la gráfica porkchop como un calendario. El eje horizontal — de izquierda a derecha — es la fecha en que abandonas la Tierra. Cada columna de píxeles es un día de lanzamiento diferente. Orrery muestrea a resolución de un día durante aproximadamente cuatro años; eso es suficiente para capturar dos ciclos sinódicos completos de Marte (el ciclo de ~26 meses cabe aproximadamente dos veces en cuatro años), lo cual es suficiente para ver que el patrón de la ventana de lanzamiento se repita.",
+    "new": "Lee la gráfica porkchop como un calendario. El eje horizontal — de izquierda a derecha — es la fecha en que abandonas la Tierra. Cada columna de píxeles es un día de lanzamiento diferente. Orrery muestrea con resolución de un día durante aproximadamente cuatro años; eso es suficiente para capturar dos ciclos sinódicos completos de Marte (el ciclo de ~26 meses cabe aproximadamente dos veces en cuatro años), lo cual basta para ver repetirse el patrón de la ventana de lanzamiento."
+  },
+  {
+    "rel": "science/porkchop/departure-axis.json",
+    "at": "narrative_101.1",
+    "old": "Observa la fila de celdas de bajo costo (el lóbulo azul verdoso frío) y puedes leer en el calendario exactamente cuándo están las ventanas de lanzamiento. Para Marte son aproximadamente cada 26 meses. Para Venus cada 19. Para Júpiter cada 13. Cada zona barata es una ventana — fuera de esas zonas, el calendario te lo pone difícil.",
+    "new": "Observa la fila de celdas de bajo coste (el lóbulo azul verdoso frío) y podrás leer en el calendario exactamente cuándo están las ventanas de lanzamiento. Para Marte son aproximadamente cada 26 meses. Para Venus, cada 19. Para Júpiter, cada 13. Cada zona barata es una ventana — fuera de esas zonas, el calendario juega en tu contra."
+  },
+  {
+    "rel": "science/porkchop/departure-axis.json",
+    "at": "narrative_101.2",
+    "old": "Cuando ajustas el selector de año de lanzamiento en /plan, estás deslizando el eje X. Año diferente, posición de ventana diferente, pero la física subyacente es la misma. Por eso la programación de misiones es impulsada por el calendario: las zonas baratas no se mueven solo porque tenemos un plazo.",
+    "new": "Cuando ajustas el selector de año de lanzamiento en /plan, estás deslizando el eje X. Año diferente, posición de ventana diferente, pero la física subyacente es la misma. Por eso el calendario manda en la programación de misiones: las zonas baratas no se mueven solo porque tengamos un plazo."
+  },
+  {
+    "rel": "science/porkchop/departure-axis.json",
+    "at": "body_paragraphs.1",
+    "old": "Lee el eje X como un calendario. Los lóbulos de bajo costo (la \"carne\" de la gráfica porkchop) se encuentran a intervalos predecibles. Para Marte: cada ~26 meses. Para Venus: cada ~19 meses. Para Júpiter: cada ~13 meses (Júpiter se mueve lo suficientemente lento como para que el período sinódico esté cerca del año terrestre).",
+    "new": "Lee el eje X como un calendario. Los lóbulos de bajo coste (la «carne» del porkchop) se encuentran a intervalos predecibles. Para Marte: cada ~26 meses. Para Venus: cada ~19 meses. Para Júpiter: cada ~13 meses (Júpiter se mueve lo bastante lento como para que el período sinódico esté cerca del año terrestre)."
+  },
+  {
+    "rel": "science/porkchop/dv-heatmap.json",
+    "at": "narrative_101.0",
+    "old": "El sentido de un diagrama de chuleta es el color. Los números en una cuadrícula gigante te dirían lo mismo, pero no podrías ver los patrones. Así que pintamos cada celda — azul teal frío para trayectorias económicas, amarillo para las intermedias, naranja y rojo para las prohibitivamente caras. El reconocimiento de patrones sustituye la aritmética.",
+    "new": "Lo esencial de una gráfica porkchop es el color. Los números en una cuadrícula gigante te dirían lo mismo, pero no podrías ver los patrones. Así que pintamos cada celda — verde azulado frío para trayectorias económicas, amarillo para las intermedias, naranja y rojo para las prohibitivamente caras. El reconocimiento de patrones sustituye a la aritmética."
+  },
+  {
+    "rel": "science/porkchop/dv-heatmap.json",
+    "at": "narrative_101.1",
+    "old": "El azul teal frío ronda los 3 km/s de ∆v — la quemadura de salida desde LEO para una transferencia tipo Hohmann a Marte (inyección trans-Marte). Azul alrededor de 5 km/s — viajes asequibles, un poco más rápidos. Amarillo alrededor de 7 km/s — cada vez más caro, pagas por velocidad. Naranja y rojo más allá de 9 km/s — has salido del ámbito de lo que los cohetes actuales pueden entregar prácticamente. La correspondencia color-coste es consistente en todos los diagramas de chuleta de /plan.",
+    "new": "El verde azulado frío ronda los 3 km/s de ∆v — el encendido de salida desde LEO para una transferencia tipo Hohmann a Marte (inyección trans-Marte). Azul alrededor de 5 km/s — viajes asequibles, un poco más rápidos. Amarillo alrededor de 7 km/s — cada vez más caro, pagas por velocidad. Naranja y rojo más allá de 9 km/s — has salido del ámbito de lo que los cohetes actuales pueden lograr en la práctica. La correspondencia entre color y coste es la misma en todos los porkchops de /plan."
+  },
+  {
+    "rel": "science/porkchop/dv-heatmap.json",
+    "at": "narrative_101.2",
+    "old": "Pasar el cursor sobre cualquier celda te muestra el ∆v exacto en km/s, pero la historia visual es el truco óptico que hace indispensables los diagramas de chuleta. Puedes recorrer el gráfico en un segundo y saber si un destino es alcanzable, cuándo son las ventanas, y cuál es el coste de los compromisos. Ninguna fórmula hace eso.",
+    "new": "Pasar el cursor sobre cualquier celda te muestra el ∆v exacto en km/s, pero la historia visual es el truco óptico que hace indispensables las gráficas porkchop. Puedes recorrer el gráfico en un segundo y saber si un destino es alcanzable, cuándo son las ventanas y cuál es el coste de los compromisos. Ninguna fórmula hace eso."
+  },
+  {
+    "rel": "science/porkchop/dv-heatmap.json",
+    "at": "body_paragraphs.0",
+    "old": "El azul teal frío se sitúa en ∆v bajo (~3 km/s) — el mínimo de quemadura de salida para un Hohmann tipo Marte (este es el ∆v de inyección trans-Marte desde LEO, no el ∆v total de la misión). Azul en ~5 km/s. Amarillo alrededor de 7 km/s — el umbral de lo caro. Naranja y rojo por encima de 9 km/s — celdas de coste desmesurado, donde necesitarías un vehículo de lanzamiento clase SLS solo para hacer que las matemáticas se acerquen.",
+    "new": "El verde azulado frío se sitúa en un ∆v bajo (~3 km/s) — el mínimo del encendido de salida para un Hohmann tipo Marte (este es el ∆v de inyección trans-Marte desde LEO, no el ∆v total de la misión). Azul en ~5 km/s. Amarillo alrededor de 7 km/s — el umbral de lo caro. Naranja y rojo por encima de 9 km/s — celdas de coste desmesurado, donde necesitarías un vehículo de lanzamiento de clase SLS solo para que las cuentas cuadren."
+  },
+  {
+    "rel": "science/porkchop/dv-heatmap.json",
+    "at": "body_paragraphs.1",
+    "old": "La escala de Orrery toca techo alrededor de 11+ km/s. Cualquier cosa más allá se representa en rojo más oscuro porque en la práctica ningún vehículo de lanzamiento actual puede entregar la carga útil a esos costes de ∆v. Voyager 1 es un ejemplo del extremo rojo lejano: su salida de la Tierra requirió una energía característica C3 ≈ 100 km²/s² (nota: C3 es V∞ al cuadrado, así que C3 y ∆v están en escalas diferentes — √100 km²/s² ≈ 10 km/s de exceso hiperbólico). Convertir a un ∆v de salida desde LEO coloca a Voyager 1 por encima de 7 km/s — ya cerca del límite de lo que un Titan IIIE/Centaur podía entregar en 1977.",
+    "new": "La escala de Orrery toca techo alrededor de 11+ km/s. Cualquier cosa más allá se representa en el rojo más intenso porque en la práctica ningún vehículo de lanzamiento actual puede lanzar la carga útil con esos costes de ∆v. Voyager 1 es un ejemplo del extremo del rojo intenso: su salida de la Tierra requirió una energía característica C3 ≈ 100 km²/s² (nota: C3 es V∞ al cuadrado, así que C3 y ∆v están en escalas diferentes — √100 km²/s² ≈ 10 km/s de exceso hiperbólico). Convertir a un ∆v de salida desde LEO coloca a Voyager 1 por encima de 7 km/s — ya cerca del límite de lo que un Titan IIIE/Centaur podía entregar en 1977."
+  },
+  {
+    "rel": "science/porkchop/tof-axis.json",
+    "at": "intro_sentence",
+    "old": "Cuánto tarda el viaje — corriendo hacia arriba por el eje Y, en días para planetas interiores y años para los exteriores.",
+    "new": "Cuánto dura el viaje — a lo largo del eje Y, hacia arriba, en días para los planetas interiores y en años para los exteriores."
+  },
+  {
+    "rel": "science/porkchop/tof-axis.json",
+    "at": "narrative_101.0",
+    "old": "Si el eje X te dice CUÁNDO sales, el eje Y te dice CUÁNTO tarda el viaje. Parte inferior del gráfico: viajes rápidos y cortos. Parte superior: viajes lentos y largos. Para destinos clase Marte el eje cubre aproximadamente de 100 a 500 días. Para Júpiter son años.",
+    "new": "Si el eje X te dice CUÁNDO sales, el eje Y te dice CUÁNTO tarda el viaje. Parte inferior del gráfico: viajes rápidos y cortos. Parte superior: viajes lentos y largos. Para destinos de la clase de Marte el eje cubre aproximadamente de 100 a 500 días. Para Júpiter son años."
+  },
+  {
+    "rel": "science/porkchop/tof-axis.json",
+    "at": "narrative_101.1",
+    "old": "Ahora puedes leer todo el compromiso de un vistazo. Camina recto hacia arriba por una columna del porkchop — esa es la MISMA fecha de lanzamiento pero distintos tiempos de tránsito. Cerca del fondo (viaje rápido) las celdas se vuelven rojas — los viajes rápidos son caros porque estás forzando una elipse de transferencia empinada. Más arriba (viaje más lento) las celdas se vuelven azul fresco — esa es la banda natural de Hohmann donde la matemática quiere que el viaje vaya.",
+    "new": "Ahora puedes leer todo el compromiso de un vistazo. Sube en línea recta por una columna del porkchop — esa es la MISMA fecha de lanzamiento pero con distintos tiempos de tránsito. Cerca del fondo (viaje rápido) las celdas se vuelven rojas — los viajes rápidos son caros porque estás forzando una elipse de transferencia muy inclinada. Más arriba (viaje más lento) las celdas se vuelven azul frío — esa es la banda natural de Hohmann, donde las cuentas indican que debería durar el viaje."
+  },
+  {
+    "rel": "science/porkchop/tof-axis.json",
+    "at": "narrative_101.2",
+    "old": "Por eso una transferencia de Hohmann a Marte es siempre alrededor de 8,5 meses. Tira por debajo de eso y pagas mucho por la velocidad. Tira mucho por encima y te demoras sin razón. El porkchop visualiza ese compromiso como un gradiente de color por cada columna. Las misiones de carga pueden permitirse lento; las tripuladas normalmente no, porque cada mes extra es más comida, agua, oxígeno y exposición a radiación.",
+    "new": "Por eso una transferencia de Hohmann a Marte dura siempre alrededor de 8,5 meses. Si lo acortas, pagas mucho por la velocidad. Si lo alargas demasiado, te demoras sin razón. El porkchop visualiza ese compromiso como un gradiente de color en cada columna. Las misiones de carga pueden permitirse ir despacio; las tripuladas normalmente no, porque cada mes extra es más comida, agua, oxígeno y exposición a radiación."
+  },
+  {
+    "rel": "science/porkchop/tof-axis.json",
+    "at": "body_paragraphs.0",
+    "old": "Eje Y es la duración del tránsito. Para objetivos clase Marte el tránsito natural de Hohmann es ~250 días, así que el rango Y de Orrery va aproximadamente de 100 a 500 días. Para Júpiter o Saturno el tránsito de Hohmann son años, así que el eje está en años.",
+    "new": "El eje Y es la duración del tránsito. Para objetivos de la clase de Marte el tránsito natural de Hohmann es de ~250 días, así que el rango Y de Orrery va aproximadamente de 100 a 500 días. Para Júpiter o Saturno el tránsito de Hohmann dura años, así que el eje está en años."
+  },
+  {
+    "rel": "science/porkchop/tof-axis.json",
+    "at": "body_paragraphs.1",
+    "old": "Distintas filas en el porkchop intercambian tiempo de tránsito por coste de Δv. Las celdas más baratas (banda de Hohmann) se sientan en el tiempo natural de tránsito de Hohmann. Tira el tiempo de tránsito hacia abajo (viaje más rápido) y el coste de Δv sube empinadamente. Tíralo hacia arriba (viaje más lento) y obtienes opciones más baratas pero más lentas — a veces vale la pena para carga o cargas no sensibles al tiempo.",
+    "new": "Las distintas filas del porkchop intercambian tiempo de tránsito por coste de ∆v. Las celdas más baratas (banda de Hohmann) se sitúan en el tiempo de tránsito natural de Hohmann. Si reduces el tiempo de tránsito (viaje más rápido), el coste de ∆v sube bruscamente. Si lo aumentas (viaje más lento), obtienes opciones más baratas pero más lentas — a veces vale la pena para carga o para cargas útiles sin urgencia."
+  },
+  {
+    "rel": "science/porkchop/tof-axis.json",
+    "at": "body_paragraphs.2",
+    "old": "La forma de la zona barata te dice sobre los compromisos. Una banda Hohmann estrecha significa que el óptimo es agudo; una zona barata ancha significa que tienes flexibilidad. El porkchop de Marte tiene un óptimo estrecho. El de Júpiter más ancho — el paisaje de asistencia gravitatoria reparte las opciones de lanzamiento a través de más fechas.",
+    "new": "La forma de la zona barata informa sobre los compromisos. Una banda de Hohmann estrecha significa que el óptimo es marcado; una zona barata ancha significa que tienes flexibilidad. El porkchop de Marte tiene un óptimo estrecho. El de Júpiter es más ancho — el panorama de asistencias gravitatorias reparte las opciones de lanzamiento entre más fechas."
+  },
+  {
+    "rel": "science/porkchop/viability.json",
+    "at": "narrative_101.0",
+    "old": "La pregunta que transforma una gráfica porkchop de un bonito mapa de calor en una decisión de misión real es: ¿puede mi cohete volar realmente esto? Cada cohete — Falcon Heavy, SLS, Atlas V, el que sea — tiene una capacidad ∆v publicada para una masa de carga útil dada. Compara ese límite con los costes por celda de la porkchop y tienes un mapa sí/no.",
+    "new": "La pregunta que transforma un porkchop de un bonito mapa de calor en una decisión de misión real es: ¿puede mi cohete volar realmente esto? Cada cohete — Falcon Heavy, SLS, Atlas V, el que sea — tiene una capacidad de ∆v publicada para una masa de carga útil dada. Compara ese límite con los costes por celda del porkchop y tienes un mapa sí/no."
+  },
+  {
+    "rel": "science/porkchop/viability.json",
+    "at": "narrative_101.1",
+    "old": "Las celdas donde la capacidad del cohete supera el coste son viables, con margen de sobra. Las celdas donde la capacidad coincide exactamente con el coste son viables pero ajustadas — arriesgadas, sin holgura para que algo salga mal. ¿Las celdas donde el coste supera la capacidad? Esa trayectoria simplemente no es volable con ese cohete. Puedes desearlo todo lo que quieras; la física dice que no.",
+    "new": "Las celdas donde la capacidad del cohete supera el coste son viables, con margen de sobra. Las celdas donde la capacidad coincide exactamente con el coste son viables pero ajustadas — arriesgadas, sin holgura si algo sale mal. ¿Y las celdas donde el coste supera la capacidad? Esa trayectoria simplemente no es viable con ese cohete. Puedes desearlo todo lo que quieras; la física dice que no."
+  },
+  {
+    "rel": "science/porkchop/viability.json",
+    "at": "narrative_101.2",
+    "old": "Elige un cohete en /plan y la porkchop superpone un color de margen/déficit. El lóbulo se encoge para cohetes más pequeños, se expande para los más grandes. Así es como los planificadores de misiones trabajan realmente: prueba un vehículo, mira qué es viable, mira qué no lo es, cambia el vehículo, la carga útil o la fecha hasta que la zona barata encaje dentro de la capacidad del cohete. La planificación real de vuelo es exactamente esta iteración, solo que con más decimales.",
+    "new": "Elige un cohete en /plan y el porkchop superpone un color de margen/déficit. El lóbulo se encoge para cohetes más pequeños y se expande para los más grandes. Así es como trabajan realmente los planificadores de misiones: prueba un vehículo, mira qué es viable, mira qué no lo es, cambia el vehículo, la carga útil o la fecha hasta que la zona barata encaje dentro de la capacidad del cohete. La planificación real de vuelo es exactamente esta iteración, solo que con más decimales."
+  },
+  {
+    "rel": "science/porkchop/viability.json",
+    "at": "body_paragraphs.0",
+    "old": "Elige un vehículo. Falcon Heavy, SLS Block 1, Atlas V N22, el que sea. Ese vehículo tiene una curva de rendimiento C3 frente a masa de carga útil publicada — las cargas útiles más pesadas encogen el lóbulo alcanzable; las más ligeras lo expanden. Para una masa de carga útil dada puedes leer el máximo C3 (o ∆v de salida equivalente) que el vehículo puede entregar, luego comparar contra la porkchop: cada celda donde ∆v_coste ≤ capacidad es una oportunidad de lanzamiento viable. Cada celda donde es mayor es imposible sin un vehículo diferente o una nave más ligera.",
+    "new": "Elige un vehículo. Falcon Heavy, SLS Block 1, Atlas V N22, el que sea. Ese vehículo tiene una curva de rendimiento de C3 frente a masa de carga útil publicada — las cargas útiles más pesadas reducen el lóbulo alcanzable; las más ligeras lo amplían. Para una masa de carga útil dada puedes leer el C3 máximo (o el ∆v de salida equivalente) que el vehículo puede entregar y compararlo con el porkchop: cada celda donde ∆v_coste ≤ capacidad es una oportunidad de lanzamiento viable. Cada celda donde es mayor es imposible sin un vehículo diferente o una nave más ligera."
+  },
+  {
+    "rel": "science/porkchop/viability.json",
+    "at": "body_paragraphs.1",
+    "old": "En `/plan` puedes elegir un vehículo de lanzamiento y Orrery superpone un indicador de margen/déficit. Las celdas azul verdoso frescan se convierten en 'viable, margen grande.' Las celdas amarillas se convierten en 'viable pero ajustado.' Las celdas rojas se convierten en imposible-con-este-vehículo, y cambian a una visualización de déficit mostrando cuánta capacidad más necesitarías.",
+    "new": "En `/plan` puedes elegir un vehículo de lanzamiento y Orrery superpone un indicador de margen/déficit. Las celdas azul verdoso frías pasan a ser «viable, margen grande». Las celdas amarillas pasan a ser «viable pero ajustado». Las celdas rojas pasan a ser «imposible con este vehículo» y cambian a una visualización de déficit que muestra cuánta capacidad más necesitarías."
+  },
+  {
+    "rel": "science/porkchop/viability.json",
+    "at": "body_paragraphs.2",
+    "old": "Este es el análisis de viabilidad de misión en una sola vista. Los planificadores reales lo ejecutan muchas veces — para diferentes vehículos, masas de carga útil, variantes de trayectoria — para encontrar la combinación más barata que cumpla con los requisitos científicos. La porkchop es la visualización; la opción subyacente es siempre 'cuánto cohete necesito versus cuánto viaje estoy comprando.'",
+    "new": "Este es el análisis de viabilidad de misión en una sola vista. Los planificadores reales lo ejecutan muchas veces — con diferentes vehículos, masas de carga útil y variantes de trayectoria — para encontrar la combinación más barata que cumpla los requisitos científicos. El porkchop es la visualización; la decisión de fondo es siempre «cuánto cohete necesito frente a cuánto viaje estoy comprando»."
+  },
+  {
+    "rel": "science/porkchop/what-is-a-porkchop.json",
+    "at": "title",
+    "old": "¿Qué es un Porkchop Plot?",
+    "new": "¿Qué es una gráfica porkchop?"
+  },
+  {
+    "rel": "science/porkchop/what-is-a-porkchop.json",
+    "at": "intro_sentence",
+    "old": "Mapa 2D de coste de trayectoria para cada par (fecha de salida, tiempo de tránsito) — herramienta estándar para encontrar ventanas de lanzamiento. (Los porkchops muestran C3 y V∞ de llegada; Orrery usa escala de color ∆v en km/s.)",
+    "new": "Mapa 2D del coste de la trayectoria para cada par (fecha de salida, tiempo de tránsito), herramienta estándar para hallar ventanas de lanzamiento. (Los porkchops estándar trazan C3 y V∞ de llegada; Orrery usa una escala de ∆v en km/s.)"
+  },
+  {
+    "rel": "science/porkchop/what-is-a-porkchop.json",
+    "at": "narrative_101.1",
+    "old": "¿Por qué molestarse con un mapa de calor entero en lugar de solo una respuesta óptima? Porque las misiones reales tienen restricciones. Quizá un lanzadera particular solo está disponible en 2026. Quizá necesites aterrizar antes de que termine una temporada de tormentas de polvo. Quizá un cohete particular solo está listo para una determinada fecha. El diagrama te permite ver TODOS los compromisos a la vez — elige la trayectoria lo bastante barata que se ajuste a tu calendario real.",
+    "new": "¿Por qué molestarse con un mapa de calor entero en lugar de solo una respuesta óptima? Porque las misiones reales tienen restricciones. Quizá una plataforma de lanzamiento concreta solo está disponible en 2026. Quizá necesites aterrizar antes de que termine una temporada de tormentas de polvo. Quizá un cohete concreto solo esté listo a partir de cierto mes. El porkchop te permite ver TODOS los compromisos a la vez — elige la trayectoria lo bastante barata que se ajuste a tu calendario real."
+  }
+]

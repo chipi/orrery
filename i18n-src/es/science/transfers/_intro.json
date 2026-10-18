@@ -1,8 +1,8 @@
 {
-  "headline": "Transferencias — una vez en órbita, estás a mitad de camino a cualquier lugar.",
+  "headline": "Transferencias — una vez en órbita, estás a medio camino de cualquier sitio.",
   "paragraphs": [
-    "Robert Heinlein escribió eso. Tenía razón. Alcanzar la órbita baja terrestre cuesta aproximadamente 9,4 km/s de ∆v — la parte más difícil de cualquier viaje. El encendido de inyección trans-Marte añade solo ~3,6 km/s. Una vez que estés fuera de la atmósfera del planeta y en una órbita adecuada, el resto del sistema solar es principalmente geometría.",
-    "Las siete secciones de esta pestaña cubren la geometría. La transferencia de Hohmann es el viaje más económico posible entre dos órbitas — dos encendidos, ocho meses de inercia. El problema de Lambert generaliza Hohmann a fechas de salida y llegada arbitrarias. Los asistentes gravitacionales te permiten robar velocidad de un planeta (esencialmente) gratis, que es cómo Voyager 2 alcanzó Neptuno. Las trayectorias de retorno libre son la red de seguridad que llevó Apollo 13 a casa. Las cónicas parcheadas es la aproximación práctica que nos permite calcular todo esto en un navegador.",
+    "Robert Heinlein escribió eso. Tenía razón. Alcanzar la órbita baja terrestre cuesta aproximadamente 9,4 km/s de ∆v — la parte más difícil de cualquier viaje. El encendido de inyección transmarciana añade solo ~3,6 km/s. Una vez que estás fuera de la atmósfera del planeta y en una órbita adecuada, el resto del sistema solar es principalmente geometría.",
+    "Las siete secciones de esta pestaña cubren la geometría. La transferencia de Hohmann es el viaje más económico posible entre dos órbitas — dos encendidos, ocho meses de navegación por inercia. El problema de Lambert generaliza el de Hohmann a fechas de salida y llegada arbitrarias. Las asistencias gravitatorias te permiten robar velocidad a un planeta (casi) gratis, que es como Voyager 2 llegó a Neptuno. Las trayectorias de retorno libre son la red de seguridad que devolvió a casa al Apollo 13. Las cónicas parcheadas son la aproximación práctica que nos permite calcular todo esto en un navegador.",
     "Si solo lees una sección: transferencia de Hohmann. Todo lo demás se construye sobre ella."
   ]
 }

@@ -49,3 +49,4 @@ zh titles partly traditional (中途島, 哈欽森, 堅忍, 卡門線, 科羅廖
 
 ## From group 24 (de science)
 - German unit symbol: AE, not AU (the 2026-10-18 grader flags "AU" in de; de.wikipedia uses AE). Group 24 outputs use AE; the rest of the de site still has ~99 "<number> AU" — sweep after item 3 (de only, digits + AU only; "AU Mic" etc. are names).
+- Astronomical-unit symbol is mixed per locale (2026-10-18 counts after a number): es 49 AU / 66 UA (science now UA), it 84 AU / 28 UA, fr 30 AU / 82 UA, pt-BR 57 AU / 55 UA, nl 109 AU / 2 AE, de now AE in science. Pick each locale's standard symbol (check its grader file first) and sweep once after item 3.

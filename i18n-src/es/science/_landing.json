@@ -9,9 +9,9 @@
       "heading": "1 — La gravedad es la única física que importa.",
       "diagram": "keplerian-orbit.svg",
       "diagram_alt": "Una elipse con el Sol en uno de los focos.",
-      "diagram_caption": "Un cuerpo, un foco, una elipse. Ese es todo el sistema solar.",
+      "diagram_caption": "Un cuerpo, un foco, una elipse. Eso es todo el sistema solar.",
       "paragraphs": [
-        "Olvida los cohetes por un segundo. Párate en la Tierra, lanza una pelota de béisbol tan fuerte como puedas. Vuelve a bajar. Lánzala más fuerte, aterriza más lejos. Lánzala tan fuerte que el suelo se curve más rápido de lo que cae la pelota, y la pelota no toque el planeta —para siempre. Eso es una [órbita](orbits/keplerian-orbit). Cada nave espacial, cada planeta, cada roca en el cinturón de asteroides está haciendo este truco alrededor de algo más pesado.",
+        "Olvida los cohetes por un segundo. Ponte de pie sobre la Tierra y lanza una pelota de béisbol tan fuerte como puedas. Vuelve a caer. Lánzala más fuerte y cae más lejos. Lánzala tan fuerte que el suelo se curve más rápido de lo que cae la pelota, y la pelota pase de largo sin tocar el planeta, para siempre. Eso es una [órbita](orbits/keplerian-orbit). Cada nave espacial, cada planeta, cada roca del cinturón de asteroides hace este mismo truco alrededor de algo más pesado.",
         "Una órbita es una elipse. Tiene un [tamaño](orbits/semi-major-axis), una [forma](orbits/eccentricity) (redonda vs. alargada), una [inclinación](orbits/inclination), y una fase que te dice dónde está la nave espacial ahora mismo en la elipse ([anomalía verdadera](orbits/true-anomaly)). Cinco números y puedes predecir la posición de cualquier objeto en el sistema solar, para siempre, sin ningún otro dato. Esas son [las tres leyes de Kepler](orbits/keplers-laws), escritas en 1609 —todavía funcionan.",
         "La ecuación más útil que encontrarás aquí es [vis-viva](orbits/vis-viva). Introduce tu radio, el tamaño de tu órbita, y obtienes tu velocidad. Eso es todo. La Tierra en el perihelio: 30,3 km/s. La Tierra en el afelio: 29,3 km/s. Misma órbita, misma energía, diferente velocidad."
       ]
@@ -19,57 +19,57 @@
     {
       "heading": "2 — La ecuación del cohete es el jefe final.",
       "diagram": "tsiolkovsky.svg",
-      "diagram_alt": "Curva de relación de masas: ∆v aumenta logarítmicamente con cuánto combustible quemas.",
-      "diagram_caption": "La verdad incómoda: duplicar tu ∆v implica quemar mucho más que 2× combustible.",
+      "diagram_alt": "Curva de relación de masas: ∆v aumenta logarítmicamente con la cantidad de combustible que quemas.",
+      "diagram_caption": "La cruda verdad: duplicar tu ∆v implica quemar mucho más del doble de combustible.",
       "paragraphs": [
         "Ahora: ¿cómo cambias de órbita? Quemas combustible. [∆v](propulsion/dv-budget) (\"delta-v\") es la moneda universal de los vuelos espaciales —el cambio de velocidad total que necesita una misión. Cada movimiento que haces en una trayectoria tiene un precio en km/s.",
-        "Y ese precio es brutal. La [ecuación del cohete de Tsiolkovsky](propulsion/tsiolkovsky) dice que ∆v escala con el logaritmo de cuánto de tu cohete es combustible. ¿Quieres el doble de ∆v? No llevas el doble de combustible —llevas exponencialmente más. Por eso un Saturn V era 90% propelente. La mayor parte del cohete es el combustible que levanta el combustible que levanta el combustible que levanta la nave espacial.",
-        "Dos números combaten este impuesto gravitatorio. El empuje te dice cuán fuerte empuja el motor —ese es el número que a nadie le importa realmente después del lanzamiento. El [impulso específico](propulsion/specific-impulse) te dice cuán eficientemente empuja el motor —y ese es el que importa. Un cohete químico obtiene ~450 segundos. Un propulsor iónico obtiene más de 4000 —sorbe combustible durante meses y supera cualquier cosa química para cruceros en espacio profundo.",
-        "El mejor truco de magia de todos: el [efecto Oberth](propulsion/oberth-effect). Quemar tu motor cuando ya te estás moviendo rápido (bajo y cerca de un planeta) te da mucho más rendimiento por el mismo combustible. Por eso cada misión interplanetaria hace su gran quemado de salida en el perigeo, abrazando la Tierra, yendo tan rápido como la física permite. Energía gratis de la geometría."
+        "Y ese precio es brutal. La [ecuación del cohete de Tsiolkovski](propulsion/tsiolkovsky) dice que ∆v escala con el logaritmo de la fracción de tu cohete que es combustible. ¿Quieres el doble de ∆v? No llevas el doble de combustible: llevas exponencialmente más. Por eso el 90 % de un Saturn V era propelente. La mayor parte del cohete es el combustible que levanta el combustible que levanta el combustible que levanta la nave espacial.",
+        "Dos números luchan contra este impuesto gravitatorio. El empuje te dice con qué fuerza empuja el motor —ese es el número que a nadie le importa realmente después del lanzamiento—. El [impulso específico](propulsion/specific-impulse) te dice con qué eficiencia empuja el motor, y ese es el que importa. Un cohete químico alcanza ~450 segundos. Un propulsor iónico llega a más de 4000: bebe combustible a sorbos durante meses y supera a cualquier motor químico en los cruceros por el espacio profundo.",
+        "El mejor truco de magia de todos: el [efecto Oberth](propulsion/oberth-effect). Encender el motor cuando ya te mueves rápido (a baja altura y cerca de un planeta) te da mucho más rendimiento por el mismo combustible. Por eso toda misión interplanetaria hace su gran encendido de salida en el perigeo, pegada a la Tierra, a la mayor velocidad que permite la física. Energía gratis gracias a la geometría."
       ]
     },
     {
       "heading": "3 — Una vez que estás en órbita, estás a medio camino de cualquier parte.",
       "diagram": "hohmann-transfer.svg",
       "diagram_alt": "Una elipse tangente a la órbita de la Tierra y a la órbita de Marte.",
-      "diagram_caption": "Dos quemados, una elipse. La forma más barata de cambiar de órbita.",
+      "diagram_caption": "Dos encendidos, una elipse. La forma más barata de cambiar de órbita.",
       "paragraphs": [
         "Robert Heinlein lo escribió: \"Una vez que estás en órbita, estás a medio camino de cualquier lugar del sistema solar\". No bromeaba. Alcanzar una órbita terrestre baja cuesta ~9,4 km/s de ∆v. Ir de allí a Marte cuesta otros ~3,6 km/s. La parte más difícil ya está detrás de ti.",
-        "La ruta interplanetaria más barata es una [transferencia de Hohmann](transfers/hohmann-transfer): una elipse que apenas roza la órbita de la Tierra en un extremo y la órbita del destino en el otro. Dos quemados, sin combustible desperdiciado. A Marte lleva ~8,5 meses. Lento, pero óptimo.",
+        "La ruta interplanetaria más barata es una [transferencia de Hohmann](transfers/hohmann-transfer): una elipse que apenas roza la órbita de la Tierra en un extremo y la órbita del destino en el otro. Dos encendidos, sin combustible desperdiciado. A Marte lleva ~8,5 meses. Lento, pero óptimo.",
         "¿Quieres ir más rápido? Resuelve un [problema de Lambert](transfers/lambert-problem) —elige tu fecha de salida y tu tiempo de tránsito, y Lambert te dice la [elipse de transferencia](transfers/transfer-ellipse) única que las conecta. Eso es exactamente lo que hace la pantalla [/plan](app:/plan) de Orrery, diez mil veces en paralelo, para dibujar un gráfico porkchop.",
-        "¿Necesitas ir aún más lejos? Roba velocidad de un planeta. Una [asistencia gravitatoria](transfers/gravity-assist) usa un sobrevuelo para cambiar tu trayectoria sin costo de combustible —Voyager 2 usó cuatro de ellas para llegar a Neptuno. Todo el sistema solar se une como [cónicas parcheadas](transfers/patched-conics): una serie de arcos de [secciones cónicas](transfers/conic-sections) pasados entre vecindarios gravitacionales como testigos en una carrera de relevos."
+        "¿Necesitas llegar aún más lejos? Roba velocidad a un planeta. Una [asistencia gravitatoria](transfers/gravity-assist) usa un sobrevuelo para cambiar tu trayectoria sin gastar combustible —Voyager 2 usó cuatro de ellas para llegar a Neptuno—. Todo el sistema solar se une como [cónicas empalmadas](transfers/patched-conics): una serie de arcos de [secciones cónicas](transfers/conic-sections) que se pasan de un entorno gravitatorio a otro como testigos en una carrera de relevos."
       ]
     },
     {
       "heading": "4 — Elige una ventana de lanzamiento, o espera dos años.",
       "diagram": "porkchop.svg",
       "diagram_alt": "El clásico gráfico de contornos porkchop —fecha de salida en x, tiempo de vuelo en y.",
-      "diagram_caption": "Un porkchop. Cada contorno es ∆v constante; el lóbulo es cuando la naturaleza hace a Marte barato.",
+      "diagram_caption": "Un porkchop. Cada contorno es ∆v constante; el lóbulo marca cuándo la naturaleza abarata Marte.",
       "paragraphs": [
         "La Tierra y Marte no se quedan quietos. La Tierra orbita alrededor del Sol cada 365 días, Marte cada 687. Su geometría relativa se repite solo cada ~26 meses —y la mayoría de esos meses, los planetas están demasiado separados, en los lados equivocados del Sol, para alcanzarlos de forma barata. El diseño de misiones comienza con un calendario, no con un cohete.",
-        "El [gráfico porkchop](porkchop/what-is-a-porkchop) es cómo los ingenieros ven esto. Fecha de salida a lo largo de [un eje](porkchop/departure-axis), [tiempo de vuelo](porkchop/tof-axis) a lo largo del otro, ∆v como un [mapa de calor de color](porkchop/dv-heatmap). Las zonas baratas aparecen como lóbulos ovalados —las ventanas de lanzamiento. Fuera del lóbulo: rojo, caro, imposible con los cohetes actuales. [Leer los contornos](porkchop/contour-reading) es la mitad del trabajo de un dinamicista de vuelo.",
+        "El [gráfico porkchop](porkchop/what-is-a-porkchop) es la forma en que los ingenieros ven esto. Fecha de salida a lo largo de [un eje](porkchop/departure-axis), [tiempo de vuelo](porkchop/tof-axis) a lo largo del otro, ∆v como un [mapa de calor de color](porkchop/dv-heatmap). Las zonas baratas aparecen como lóbulos ovalados: las ventanas de lanzamiento. Fuera del lóbulo: rojo, caro, imposible con los cohetes actuales. [Leer los contornos](porkchop/contour-reading) es la mitad del trabajo de un dinamicista de vuelo.",
         "Dos términos técnicos que verás en todas partes: [C3](propulsion/c3) es la energía de lanzamiento que tu cohete necesita para abandonar el pozo gravitatorio de la Tierra. [V∞](propulsion/v-infinity) (\"v-infinito\") es tu velocidad relativa al destino en el momento en que llegas. Ambos provienen directamente de las matemáticas del porkchop."
       ]
     },
     {
-      "heading": "5 — El vuelo son solo cinco fases en repetición.",
+      "heading": "5 — El vuelo es solo cinco fases que se repiten.",
       "diagram": "edl.svg",
       "diagram_alt": "Entrada atmosférica, despliegue de paracaídas, retropropulsión, aterrizaje.",
       "diagram_caption": "Entrada, descenso, aterrizaje. Seis minutos de puro terror.",
       "paragraphs": [
         "Prácticamente toda misión interplanetaria, desde Voyager hasta Perseverance, sigue el mismo guion:",
-        "[Lanzamiento](mission-phases/launch) —sal de la atmósfera y entra en órbita terrestre baja. [Inyección Trans-X Injection](mission-phases/trans-x-injection) —un único quemado fuerte en el perigeo que te lanza a la elipse de transferencia hacia la Luna (TLI), Marte (TMI), Venus (TVI), o Júpiter (TJI). [Maniobras de Trajectory Correction Maneuvers](mission-phases/tcm) —pequeños quemados durante el crucero para corregir errores de dispersión. Generalmente 1–3 de ellos. [Inserción Orbit Insertion](mission-phases/orbit-insertion) —un quemado de frenado en el destino para doblarte en una órbita capturada. [EDL](mission-phases/edl) —Entrada, Descenso, Aterrizaje— para el módulo de aterrizaje. Seis minutos de caos atmosférico supersónico.",
-        "Las misiones lunares a veces hacen un desvío a través de una [Near-Rectilinear Halo Orbit](mission-phases/nrho) (Gateway vivirá en una), y los vuelos tripulados Apollo volaron [trayectorias de retorno libre](transfers/free-return) —rutas en forma de ocho que te devuelven a la Tierra automáticamente si cada motor de la nave muere. Apollo 13 le debe su vida a esta geometría."
+        "[Lanzamiento](mission-phases/launch): sal de la atmósfera y entra en órbita terrestre baja. [Inyección Trans-X](mission-phases/trans-x-injection): un único encendido fuerte en el perigeo que te lanza a la elipse de transferencia hacia la Luna (TLI), Marte (TMI), Venus (TVI) o Júpiter (TJI). [Maniobras de corrección de trayectoria](mission-phases/tcm): pequeños encendidos durante el crucero para corregir errores de dispersión. Normalmente 1–3. [Inserción orbital](mission-phases/orbit-insertion): un encendido de frenado en el destino para meterte en una órbita de captura. [EDL](mission-phases/edl): entrada, descenso y aterrizaje, para el módulo de aterrizaje. Seis minutos de caos atmosférico supersónico.",
+        "A veces las misiones lunares hacen un desvío por una [órbita de halo casi rectilínea](mission-phases/nrho) (Gateway estará en una), y los vuelos tripulados Apollo siguieron [trayectorias de retorno libre](transfers/free-return): rutas en forma de ocho que te devuelven a la Tierra automáticamente si fallan todos los motores de la nave. Apollo 13 le debe la vida a esta geometría."
       ]
     },
     {
-      "heading": "6 — Distancias y tiempo, ya que nada de esto tiene tamaño terrestre.",
+      "heading": "6 — Distancias y tiempo, porque nada de esto tiene el tamaño de la Tierra.",
       "diagram": "au.svg",
       "diagram_alt": "La unidad astronómica, marcada a lo largo del radio orbital de la Tierra.",
       "diagram_caption": "Una AU = una distancia Tierra-Sol. Marte está a ~1,5 AU. Júpiter está a ~5,2.",
       "paragraphs": [
-        "Tres unidades aparecen en todas partes. La [unidad astronómica](scales-time/au) (AU) es la distancia promedio Tierra-Sol —150 millones de km. Medimos el sistema solar en AU porque los kilómetros se vuelven inmanejables rápidamente. El [minuto-luz](scales-time/light-minute) te dice cuánto tarda una señal de radio en llegar a una nave espacial. Marte: de 4 a 24 minutos en un sentido. No puedes controlar un róver desde la Tierra con joystick. Todo lo importante es autónomo.",
-        "La [época J2000](scales-time/j2000) es el cero del calendario que usa cada astrodinamicista. [Periodos sidéreo vs. sinódico](scales-time/sidereal-synodic) explican por qué las ventanas de Marte se repiten cada 26 meses en lugar de cada 23. El [plano eclíptico](scales-time/ecliptic-plane) es el disco plano sobre el que (en su mayoría) se encuentran todos los planetas. Los [marcos de referencia](scales-time/frames) son los sistemas de coordenadas que el control de misión maneja entre vistas centradas en la Tierra, centradas en el Sol y centradas en el cuerpo."
+        "Tres unidades aparecen en todas partes. La [unidad astronómica](scales-time/au) (AU) es la distancia media entre la Tierra y el Sol: 150 millones de km. Medimos el sistema solar en AU porque los kilómetros se vuelven inmanejables enseguida. El [minuto-luz](scales-time/light-minute) te dice cuánto tarda una señal de radio en llegar a una nave espacial. Marte: de 4 a 24 minutos en un solo sentido. No puedes manejar un róver desde la Tierra con un joystick. Todo lo importante es autónomo.",
+        "La [época J2000](scales-time/j2000) es el cero del calendario que usa cada astrodinamicista. Los [periodos sidéreo y sinódico](scales-time/sidereal-synodic) explican por qué las ventanas de Marte se repiten cada 26 meses en lugar de cada 23. El [plano eclíptico](scales-time/ecliptic-plane) es el disco plano sobre el que (en su mayoría) se encuentran todos los planetas. Los [marcos de referencia](scales-time/frames) son los sistemas de coordenadas que el control de misión maneja entre vistas centradas en la Tierra, centradas en el Sol y centradas en el cuerpo."
       ]
     },
     {
@@ -78,25 +78,25 @@
       "diagram_alt": "Un astronauta estilizado flotando en microgravedad con barras indicadoras de hueso/músculo/contramedidas.",
       "diagram_caption": "Hueso, músculo, visión, vestibular, inmunidad —todo se reconfigura en microgravedad, y no hacia la Tierra.",
       "paragraphs": [
-        "Pasa seis meses en órbita y vuelves más pequeño, más ligero y más bajo de lo que te fuiste. La [microgravedad](life-in-space/microgravity-physiology) es la causa raíz: los fluidos se redistribuyen hacia la cabeza, los músculos posturales se descargan, los [huesos](life-in-space/bone-density-loss) pierden 1–2% de su mineral por mes, el [sistema vestibular](life-in-space/vestibular-adaptation) deja de intentar encontrar \"abajo\". Las [contramedidas](life-in-space/muscle-atrophy) —dos horas de ejercicio resistivo y aeróbico al día en ARED + la cinta de correr— lo ralentizan sin resolverlo.",
-        "La [radiación](life-in-space/radiation-exposure) es el problema más difícil. La EEI recibe ~200 mSv/año (vs 3 mSv de fondo en la Tierra); el espacio profundo fuera de la magnetosfera es de más de 600 mSv/año, sin una buena estrategia de blindaje aún. Un viaje clase Marte pondría a un miembro de la tripulación cerca del riesgo de cáncer límite de carrera en un solo viaje de ida y vuelta.",
-        "Luego está la [EVA](life-in-space/eva-physiology) (un evento de resistencia de 6 horas en un traje de oxígeno puro a 4,3 psi) y [efectos de larga duración](life-in-space/long-duration-effects) como SANS —Space-Associated Neuro-ocular Syndrome— donde el 60% de la tripulación de vuelos largos desarrolla cambios oculares medibles que no se revierten completamente. Estos son los problemas sin resolver que se interponen entre la humanidad y Marte."
+        "Pasa seis meses en órbita y vuelves más pequeño, más ligero y más bajo que cuando te fuiste. La [microgravedad](life-in-space/microgravity-physiology) es la causa raíz: los fluidos se redistribuyen hacia la cabeza, los músculos posturales se descargan, los [huesos](life-in-space/bone-density-loss) pierden 1–2 % de su mineral al mes, el [sistema vestibular](life-in-space/vestibular-adaptation) deja de intentar encontrar el «abajo». Las [contramedidas](life-in-space/muscle-atrophy) —dos horas de ejercicio resistivo y aeróbico al día en ARED + la cinta de correr— lo ralentizan sin resolverlo.",
+        "La [radiación](life-in-space/radiation-exposure) es el problema más difícil. La EEI recibe ~200 mSv/año (frente a los 3 mSv de fondo en la Tierra); el espacio profundo fuera de la magnetosfera supera los 600 mSv/año, y aún no hay una buena estrategia de blindaje. Un viaje de clase Marte pondría a un miembro de la tripulación cerca del límite de riesgo de cáncer de toda una carrera profesional en un solo viaje de ida y vuelta.",
+        "Luego está la [EVA](life-in-space/eva-physiology) (una prueba de resistencia de 6 horas con un traje de oxígeno puro a 4,3 psi) y los [efectos de larga duración](life-in-space/long-duration-effects) como el SANS —síndrome neuroocular asociado a los vuelos espaciales—, en el que el 60 % de las tripulaciones de vuelos largos desarrolla cambios oculares medibles que no se revierten del todo. Estos son los problemas sin resolver que se interponen entre la humanidad y Marte."
       ]
     },
     {
       "heading": "8 — Todo lo que sabemos sobre el universo llegó como un fotón.",
       "diagram": "_cover-observation.svg",
-      "diagram_alt": "Un telescopio espacial apuntando a una galaxia distante con un espectro de emisión representativo debajo.",
+      "diagram_alt": "Un telescopio espacial dirigido hacia una galaxia lejana, con un espectro de emisión representativo debajo.",
       "diagram_caption": "Telescopio + filtro + espectrógrafo + matemáticas. Casi todos los datos sobre el cosmos se reconstruyeron a partir de la luz.",
       "paragraphs": [
-        "La [fotografía espacial](observation/space-photography) no es lo que la gente piensa. No hay obturador haciendo clic; cada imagen de observatorio que has visto es una pila de exposiciones largas a través de filtros de banda estrecha, calibradas, registradas, con falso color asignado. El hardware es un sensor CCD o CMOS —una cuadrícula de contadores de fotones— y los datos son el conteo, no la imagen. La imagen es lo que los humanos hacen del conteo.",
-        "La [óptica adaptativa](observation/adaptive-optics) vence a la atmósfera midiendo su distorsión en tiempo real y doblando el espejo para cancelarla. Los [coronógrafos](observation/coronagraphs) bloquean la estrella central para ver los planetas que la orbitan. La [espectroscopia](observation/spectroscopy) lee la composición química de una estrella a partir de las líneas de absorción en su luz. La [interferometría](observation/interferometry) une telescopios separados en una apertura virtual más grande que cualquiera de ellos.",
-        "Y los objetos más extraños que esos métodos han encontrado: [agujeros negros](observation/black-holes) (reales, mapeados, con imagen de sombra en el centro de dos galaxias) y [agujeros de gusano](observation/wormholes) (matemáticas puras, incluidos para que sepas qué hacer con ellos cuando veas uno en una película). La categoría /fleet ↦ Observatory tiene las máquinas reales —Hubble, JWST, Chandra, Spitzer, Kepler, TESS— cada una con su propia galería de lo que vio."
+        "La [fotografía espacial](observation/space-photography) no es lo que la gente piensa. No hay ningún obturador que haga clic: cada imagen de observatorio que has visto es un apilado de exposiciones largas a través de filtros de banda estrecha, calibradas, registradas y con falso color asignado. El hardware es un sensor CCD o CMOS —una cuadrícula de contadores de fotones— y los datos son el recuento, no la imagen. La imagen es lo que las personas hacen con el recuento.",
+        "La [óptica adaptativa](observation/adaptive-optics) vence a la atmósfera midiendo su distorsión en tiempo real y deformando el espejo para cancelarla. Los [coronógrafos](observation/coronagraphs) bloquean la estrella central para ver los planetas que la orbitan. La [espectroscopia](observation/spectroscopy) lee la composición química de una estrella a partir de las líneas de absorción en su luz. La [interferometría](observation/interferometry) une telescopios separados en una apertura virtual más grande que cualquiera de ellos.",
+        "Y los objetos más extraños que han encontrado esos métodos: los [agujeros negros](observation/black-holes) (reales, cartografiados, con su sombra captada en imagen en el centro de dos galaxias) y los [agujeros de gusano](observation/wormholes) (matemáticas puras, incluidos para que sepas qué hacer con ellos cuando veas uno en una película). La categoría /fleet ↦ Observatory tiene las máquinas reales —Hubble, JWST, Chandra, Spitzer, Kepler, TESS—, cada una con su propia galería de lo que vio."
       ]
     }
   ],
   "tools_heading": "Ahora ve a jugar.",
-  "tools_intro": "Ese es todo el ciclo. Ahora sabes lo suficiente para leer cada etiqueta, contorno y lectura del HUD en el resto de la aplicación. Aquí es donde ponerlo en práctica:",
+  "tools_intro": "Ese es todo el ciclo. Ahora sabes lo suficiente para leer cada etiqueta, contorno y lectura del HUD en el resto de la aplicación. Aquí tienes dónde ponerlo en práctica:",
   "tools": [
     {
       "paths": [
@@ -120,7 +120,7 @@
       "paths": [
         "/missions"
       ],
-      "text": "36 naves espaciales reales, desde Luna 9 hasta Artemis II. La pestaña FLIGHT de cada una descompone su presupuesto real de ∆v a través de las fases anteriores."
+      "text": "36 naves espaciales reales, desde Luna 9 hasta Artemis II. La pestaña FLIGHT de cada una descompone su presupuesto real de ∆v a lo largo de las fases anteriores."
     },
     {
       "paths": [
@@ -128,14 +128,14 @@
         "/moon",
         "/mars"
       ],
-      "text": "Verdad absoluta. Donde cada Apollo, cada róver, cada satélite activo realmente se encuentra."
+      "text": "La verdad sobre el terreno. El lugar exacto donde se encuentra cada Apollo, cada róver, cada satélite activo."
     },
     {
       "paths": [
         "/iss",
         "/tiangong"
       ],
-      "text": "Los dos puestos orbitales habitados, módulo por módulo."
+      "text": "Los dos puestos avanzados orbitales habitados, módulo por módulo."
     }
   ],
   "closing": "Debajo de esta historia, la enciclopedia propiamente dicha: seis pestañas, cuarenta entradas, cada fórmula y cada diagrama en un solo lugar. Márcalo como favorito. Estaremos aquí cuando lo necesites."

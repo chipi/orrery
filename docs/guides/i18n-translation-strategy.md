@@ -209,6 +209,11 @@ already in the text.
 | The glossary swap hit names that only look like a body or a star: the Antares rocket, the Vega probes, the "Snow White" trench, the "Moon" inside SLIM's English expansion, a quoted English title. | Read every edit; drop these by hand (`datasets-glossary-review.json`). |
 | A glossary key spelled differently from the text ("Tranquillity Base" vs "Tranquility Base") silently matched nothing. | After a pass, list the Latin-script runs left in each non-Latin locale and check them against the glossary by hand. |
 | A translation carried a wrong number (ar: Hubble's "50th" anniversary for the 25th). | Read dates and ordinals in `taken`-style fields against the English. |
+| The names tool never read the UI bundle, so pages and interface named the same thing two ways (ru pages МКС, Lab button "Поймай ISS"); 973 UI strings across 13 locales. | `glossary-apply.mjs` reads `messages/<loc>.json` too (rel `messages`); `apply-edits.mjs` writes it back. |
+| The checker only judged new strings; vehicle names translated long ago were never re-checked (zh Sojourner as 大师 "master", 毅力号, ko 화성 익스프레스, ja/ko Tiangong, ar ناسا …, about 115). | `name-drift-scan.mjs` runs the same name tests over every existing string; it is a `validate-data` gate. |
+| A name containing a glossary term passed once the term was native ("Mars Express" → 화성 익스프레스, because Mars → 화성 is allowed). | The rest of the name must survive (`restKept` in `translate-quality.mjs`), with a regression test. |
+| The shared skip list ignored every `links.*` field, so visible link labels were never checked, and an sr-Cyrl placeholder (`__АЦР0__`) and letter-by-letter garble (Цассини) shipped on eight planet pages. | `SKIP_KEY` skips link URLs (`u`) only; the defect gate now reads the labels. |
+| Proposals rejected in review came back on every glossary run, ready to be applied by the next agent. | Every rejection becomes a `GUARD` row; a full run proposes nothing. |
 
 ## 8. Status (2026-10-17)
 

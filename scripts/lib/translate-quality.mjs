@@ -249,6 +249,9 @@ export function gazetteer() {
     'scenarios',
     'culture-doors',
     'hotspot-metadata',
+    // tour titles ("Cassini Saturn-system tour"), not names; the craft names come from
+    // fleet/ and missions/
+    'trajectories',
   ]);
   const walk = (d, top) => {
     for (const n of fs.readdirSync(d)) {
@@ -383,11 +386,21 @@ export function problems(locale, src, out) {
   // that keep the name intact (German "Shepards", Serbian "NASA-ин") pass.
   // Hyphen and space are the same here: German writes "Atlas-V-Start" for an Atlas V launch.
   const norm = (x) => apos(x).replace(/[-\s]+/g, ' ');
+  // A name that contains a natively rendered glossary term is kept only when the rest of
+  // the name survives too: "Cape Canaveral SLC-40" → "мыс Канаверал, SLC-40" passes, but
+  // "Mars Express" → "화성 익스프레스" or "Saturn V" → "土星V" does not.
+  const restKept = (n, t) => {
+    const rest = n
+      .replace(t, '')
+      .split(/[\s–]+/)
+      .filter((w) => w && !GENERIC.test(w));
+    return rest.every((w) => norm(out).includes(norm(w)));
+  };
   const translated = knownNamesIn(src).filter(
     (n) =>
       !names.includes(n) &&
       !nameRendered(locale, n, out, norm) &&
-      !terms.some((t) => t.includes(n) || n.includes(t)),
+      !terms.some((t) => t.includes(n) || (n.includes(t) && restKept(n, t))),
   );
 
   if (translated.length)

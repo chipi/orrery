@@ -1,0 +1,14 @@
+[
+  {
+    "rel": "sun.json",
+    "at": "links.2.l",
+    "old": "Sonda Solar Parker (NASA)",
+    "new": "Parker Solar Probe (NASA)"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-cruise-schiaparelli_webp.what",
+    "old": "Sonda Orbital de Gases Traço do ExoMars transportando a cápsula de entrada Schiaparelli.",
+    "new": "ExoMars Trace Gas Orbiter transportando a cápsula de entrada Schiaparelli."
+  }
+]

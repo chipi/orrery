@@ -1,0 +1,308 @@
+[
+  {
+    "rel": "messages",
+    "at": "iss_page_title",
+    "old": "ISS Explorer · Orrery",
+    "new": "EEI Explorer · Orrery"
+  },
+  {
+    "rel": "messages",
+    "at": "iss_load_failed",
+    "old": "No se pudieron cargar los módulos de la ISS.",
+    "new": "No se pudieron cargar los módulos de la EEI."
+  },
+  {
+    "rel": "messages",
+    "at": "iss_hud_aria",
+    "old": "Controles de vista ISS",
+    "new": "Controles de vista EEI"
+  },
+  {
+    "rel": "messages",
+    "at": "earth_layer_tip_habitats",
+    "old": "Estaciones orbitales tripuladas — ISS, Tiangong",
+    "new": "Estaciones orbitales tripuladas — EEI, Tiangong"
+  },
+  {
+    "rel": "messages",
+    "at": "library_category_iss_module",
+    "old": "Módulo de la ISS",
+    "new": "Módulo de la EEI"
+  },
+  {
+    "rel": "messages",
+    "at": "library_category_iss_visitor",
+    "old": "Visitante de la ISS",
+    "new": "Visitante de la EEI"
+  },
+  {
+    "rel": "messages",
+    "at": "credits_used_route_iss",
+    "old": "Explorador de la ISS",
+    "new": "Explorador de la EEI"
+  },
+  {
+    "rel": "messages",
+    "at": "credits_category_iss_module",
+    "old": "Módulos de la ISS",
+    "new": "Módulos de la EEI"
+  },
+  {
+    "rel": "messages",
+    "at": "why_earth_inclination_body",
+    "old": "La inclinación es la inclinación de la órbita respecto al ecuador terrestre. 0° (ecuatorial) es barato desde bases de lanzamiento de baja latitud; 51,6° (ISS) es la inclinación más baja a la que llegan los lanzamientos rusos sin sobrevolar zonas pobladas; ~98° (heliosíncrona) mantiene la misma iluminación para imágenes. Es una restricción, no una elección.",
+    "new": "La inclinación es la inclinación de la órbita respecto al ecuador terrestre. 0° (ecuatorial) es barato desde bases de lanzamiento de baja latitud; 51,6° (EEI) es la inclinación más baja a la que llegan los lanzamientos rusos sin sobrevolar zonas pobladas; ~98° (heliosíncrona) mantiene la misma iluminación para imágenes. Es una restricción, no una elección."
+  },
+  {
+    "rel": "messages",
+    "at": "why_station_inclination_body",
+    "old": "La inclinación la fija el sitio de lanzamiento, no la preferencia del diseñador. La ISS a 51,6° es la inclinación más baja a la que pueden llegar los lanzamientos rusos Soyuz sin dejar caer etapas gastadas en tierra poblada. Tiangong a 41,5° es alcanzable desde Wenchang en el sur de China sin sobrevolar zonas pobladas. Cada elección compensa ∆v de lanzamiento por alcance de cobertura terrestre.",
+    "new": "La inclinación la fija el sitio de lanzamiento, no la preferencia del diseñador. La EEI a 51,6° es la inclinación más baja a la que pueden llegar los lanzamientos rusos Soyuz sin dejar caer etapas gastadas en tierra poblada. Tiangong a 41,5° es alcanzable desde Wenchang en el sur de China sin sobrevolar zonas pobladas. Cada elección compensa ∆v de lanzamiento por alcance de cobertura terrestre."
+  },
+  {
+    "rel": "messages",
+    "at": "science_layer_galaxies_desc",
+    "old": "Sprites en cartel de ~15 galaxias vecinas (Andromeda, Magellanic Clouds, esferoidales enanas) en la esfera celeste con AR/Dec correctos — superposición celeste, no a escala real.",
+    "new": "Sprites en cartel de ~15 galaxias vecinas (Andromeda, Nubes de Magallanes, esferoidales enanas) en la esfera celeste con AR/Dec correctos — superposición celeste, no a escala real."
+  },
+  {
+    "rel": "messages",
+    "at": "landing_card_earth_desc",
+    "old": "Satélites activos, GPS, ISS, JWST — todo en nuestro patio trasero.",
+    "new": "Satélites activos, GPS, EEI, JWST — todo en nuestro patio trasero."
+  },
+  {
+    "rel": "messages",
+    "at": "landing_card_iss_title",
+    "old": "Explorador de módulos de la ISS",
+    "new": "Explorador de módulos de la EEI"
+  },
+  {
+    "rel": "messages",
+    "at": "a11y_moon_sites_list_aria",
+    "old": "Lugares de aterrizaje en la Moon — vista de lista (paralela al mapa 3D)",
+    "new": "Lugares de aterrizaje en la Luna — vista de lista (paralela al mapa 3D)"
+  },
+  {
+    "rel": "messages",
+    "at": "a11y_mars_sites_list_aria",
+    "old": "Lugares de aterrizaje en Mars — vista de lista (paralela al mapa 3D)",
+    "new": "Lugares de aterrizaje en Marte — vista de lista (paralela al mapa 3D)"
+  },
+  {
+    "rel": "messages",
+    "at": "a11y_iss_modules_list_aria",
+    "old": "Módulos de la ISS — vista de lista (paralela al modelo 3D)",
+    "new": "Módulos de la EEI — vista de lista (paralela al modelo 3D)"
+  },
+  {
+    "rel": "messages",
+    "at": "chip_label_sleep_nutrition_circadian",
+    "old": "Sueño + nutrición + circadiano — 16 amaneceres/día, ciclos de 90-min, cocina ISS",
+    "new": "Sueño + nutrición + circadiano — 16 amaneceres/día, ciclos de 90-min, cocina EEI"
+  },
+  {
+    "rel": "messages",
+    "at": "iss_toggle_timeline_aria",
+    "old": "Activar/desactivar línea temporal de ensamblaje de la ISS",
+    "new": "Activar/desactivar línea temporal de ensamblaje de la EEI"
+  },
+  {
+    "rel": "messages",
+    "at": "iss_timeline_title",
+    "old": "Línea temporal cronológica de cuándo se unió cada módulo + visitante a la ISS",
+    "new": "Línea temporal cronológica de cuándo se unió cada módulo + visitante a la EEI"
+  },
+  {
+    "rel": "messages",
+    "at": "poster_iss_aria",
+    "old": "Póster de la ISS — colores de las banderas de las naciones socias rodeando la estación",
+    "new": "Póster de la EEI — colores de las banderas de las naciones socias rodeando la estación"
+  },
+  {
+    "rel": "messages",
+    "at": "programs_era_iss",
+    "old": "La era de la ISS · 1998–2030",
+    "new": "La era de la EEI · 1998–2030"
+  },
+  {
+    "rel": "messages",
+    "at": "live_intro",
+    "old": "Vistas en tiempo real y retransmisiones desde el espacio — la emisión permanente de la ISS, más cualquier lanzamiento que ocurra ahora o próximamente.",
+    "new": "Vistas en tiempo real y retransmisiones desde el espacio — la emisión permanente de la EEI, más cualquier lanzamiento que ocurra ahora o próximamente."
+  },
+  {
+    "rel": "messages",
+    "at": "landing_card_live_desc",
+    "old": "La retransmisión permanente de la ISS y cualquier lanzamiento en curso o próximo — visualizado en la aplicación, con crédito a los canales oficiales.",
+    "new": "La retransmisión permanente de la EEI y cualquier lanzamiento en curso o próximo — visualizado en la aplicación, con crédito a los canales oficiales."
+  },
+  {
+    "rel": "messages",
+    "at": "live_iss_watch",
+    "old": "Ver la ISS en directo →",
+    "new": "Ver la EEI en directo →"
+  },
+  {
+    "rel": "messages",
+    "at": "live_iss_unavailable",
+    "old": "La transmisión en directo de la ISS no está disponible en este momento.",
+    "new": "La transmisión en directo de la EEI no está disponible en este momento."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_lg_blurb_spiral",
+    "old": "Una de las grandes galaxias espirales de Local Group: cientos de miles de millones de estrellas en un disco giratorio de brazos, gas y polvo.",
+    "new": "Una de las grandes galaxias espirales de Grupo Local: cientos de miles de millones de estrellas en un disco giratorio de brazos, gas y polvo."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_hub_desc_localgroup",
+    "old": "Un paso más allá — Andromeda, Triangulum, las Magellanic Clouds y docenas de galaxias enanas.",
+    "new": "Un paso más allá — Andromeda, Triangulum, las Nubes de Magallanes y docenas de galaxias enanas."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_heading_pioneer_10",
+    "old": "la dirección general de Aldebaran, en Tauro — una deriva de 2 millones de años, no un acercamiento",
+    "new": "la dirección general de Aldebarán, en Tauro — una deriva de 2 millones de años, no un acercamiento"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_lens_story_lg_title",
+    "old": "Local Group",
+    "new": "Grupo Local"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_lens_story_ls_body",
+    "old": "Los grupos de galaxias más allá de Local Group se encuentran en una capa fina y casi plana — Local Sheet — moviéndose juntos dentro del Volumen Local más amplio. Es un primer vistazo a la geometría de la trama cósmica: las galaxias no están dispersas al azar sino que tienden a encontrarse a lo largo de sábanas y filamentos.",
+    "new": "Los grupos de galaxias más allá de Grupo Local se encuentran en una capa fina y casi plana — Local Sheet — moviéndose juntos dentro del Volumen Local más amplio. Es un primer vistazo a la geometría de la trama cósmica: las galaxias no están dispersas al azar sino que tienden a encontrarse a lo largo de sábanas y filamentos."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_lens_story_virgo_title",
+    "old": "Virgo Supercluster",
+    "new": "Supercúmulo de Virgo"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_lens_story_laniakea_body",
+    "old": "'Cielo inmenso' en hawaiano — el supercúmulo definido en 2014 no por dónde se sitúan las galaxias sino por dónde fluyen. Con unos 160 megaparsecs (500 millones de años luz) de diámetro, conteniendo aproximadamente 100 000 galaxias, Laniakea es la cuenca de atracción hacia la que drena nuestro Virgo Supercluster, hacia el Gran Atractor. Y Laniakea, junto con sus vecinos, forma parte de un flujo más amplio hacia algo aún mayor: la Concentración de Shapley.",
+    "new": "'Cielo inmenso' en hawaiano — el supercúmulo definido en 2014 no por dónde se sitúan las galaxias sino por dónde fluyen. Con unos 160 megaparsecs (500 millones de años luz) de diámetro, conteniendo aproximadamente 100 000 galaxias, Laniakea es la cuenca de atracción hacia la que drena nuestro Supercúmulo de Virgo, hacia el Gran Atractor. Y Laniakea, junto con sus vecinos, forma parte de un flujo más amplio hacia algo aún mayor: la Concentración de Shapley."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_lar_cape",
+    "old": "Cape Canaveral (28°N) — la zona de lanzamiento de la costa este de EE.UU.",
+    "new": "Cabo Cañaveral (28°N) — la zona de lanzamiento de la costa este de EE.UU."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_catch_iss_title",
+    "old": "Atrapa la ISS",
+    "new": "Atrapa la EEI"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_g9_track",
+    "old": "Por eso no puedes simplemente mirar a la misma hora cada noche: en los ~92 minutos que tarda en dar una vuelta, la Tierra gira por debajo unos 23° (~2.500 km en el ecuador), así que cada paso traza un camino nuevo, avanzando hacia el oeste. La huella en sí es una sinusoide — la latitud oscila hasta la inclinación de la órbita (±51,6°) y no más allá, por eso la ISS solo alcanza tu latitud si vives dentro de esa banda.",
+    "new": "Por eso no puedes simplemente mirar a la misma hora cada noche: en los ~92 minutos que tarda en dar una vuelta, la Tierra gira por debajo unos 23° (~2.500 km en el ecuador), así que cada paso traza un camino nuevo, avanzando hacia el oeste. La huella en sí es una sinusoide — la latitud oscila hasta la inclinación de la órbita (±51,6°) y no más allá, por eso la EEI solo alcanza tu latitud si vives dentro de esa banda."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_g9_visible",
+    "old": "Y solo puedes VERLA en una ventana estrecha. La ISS brilla por luz solar reflejada, así que es visible cuando aún está iluminada pero tu cielo se ha oscurecido. A 420 km permanece bajo la luz solar hasta que el Sol está unos 20° bajo tu horizonte — justo después del final del crepúsculo — así que busca en un par de horas después del atardecer o antes del amanecer, cuando una \"estrella\" constante, rápida y sin parpadeo atraviesa el cielo en pocos minutos.",
+    "new": "Y solo puedes VERLA en una ventana estrecha. La EEI brilla por luz solar reflejada, así que es visible cuando aún está iluminada pero tu cielo se ha oscurecido. A 420 km permanece bajo la luz solar hasta que el Sol está unos 20° bajo tu horizonte — justo después del final del crepúsculo — así que busca en un par de horas después del atardecer o antes del amanecer, cuando una \"estrella\" constante, rápida y sin parpadeo atraviesa el cielo en pocos minutos."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_g9_why",
+    "old": "Todo aquí es a simple vista y gratuito: la ISS es una de las cosas más brillantes del cielo nocturno — más brillante que cualquier estrella — y atraviesa en 2–5 minutos sin parpadear (sin luces de avión). Las aplicaciones y \"Spot the Station\" de la NASA convierten estos mismos tres números — altitud, inclinación, ventana de crepúsculo — en los horarios exactos en que pasa sobre tu ubicación.",
+    "new": "Todo aquí es a simple vista y gratuito: la EEI es una de las cosas más brillantes del cielo nocturno — más brillante que cualquier estrella — y atraviesa en 2–5 minutos sin parpadear (sin luces de avión). Las aplicaciones y \"Spot the Station\" de la NASA convierten estos mismos tres números — altitud, inclinación, ventana de crepúsculo — en los horarios exactos en que pasa sobre tu ubicación."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_g9_iss",
+    "old": "La ISS — la estación que estás atrapando, en 3D",
+    "new": "La EEI — la estación que estás atrapando, en 3D"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_g9_iss_fleet",
+    "old": "ISS — la estación ensamblada y sus módulos",
+    "new": "EEI — la estación ensamblada y sus módulos"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_isspass_title",
+    "old": "Próximo paso de la ISS",
+    "new": "Próximo paso de la EEI"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_g10_azimuth",
+    "old": "Un último hilo, volviendo a donde comenzamos: el lanzamiento. No puedes alcanzar cualquier órbita desde cualquier plataforma — la inclinación nunca puede ser menor que tu latitud de lanzamiento, y la orientación de brújula viene fijada por cos(azimuth) = cos(inclination)/cos(latitude). Apunta hacia el este exacto y obtendrás una órbita inclinada a tu latitud, la más económica (por qué la ISS se suministra desde Baikonur y el Cabo). Y una órbita heliosíncrona, siendo retrógrada, significa apuntar hacia el SUR — exactamente por qué esas misiones se lanzan hacia abajo por la costa de California desde Vandenberg.",
+    "new": "Un último hilo, volviendo a donde comenzamos: el lanzamiento. No puedes alcanzar cualquier órbita desde cualquier plataforma — la inclinación nunca puede ser menor que tu latitud de lanzamiento, y la orientación de brújula viene fijada por cos(azimuth) = cos(inclination)/cos(latitude). Apunta hacia el este exacto y obtendrás una órbita inclinada a tu latitud, la más económica (por qué la EEI se suministra desde Baikonur y el Cabo). Y una órbita heliosíncrona, siendo retrógrada, significa apuntar hacia el SUR — exactamente por qué esas misiones se lanzan hacia abajo por la costa de California desde Vandenberg."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_ro_iss",
+    "old": "La ISS: vivir en órbita",
+    "new": "La EEI: vivir en órbita"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_land_titan_title",
+    "old": "Aterrizar en Titan",
+    "new": "Aterrizar en Titán"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_lot_main_chute",
+    "old": "Desplegar un paracaídas de tamaño completo aquí y caes al paso de una caminata — lo que suena perfecto y es en realidad mortal. El aire de Titan es tan denso y su gravedad tan débil que bajo el paracaídas principal de 8,3 metros de Huygens la sonda derivaría durante muchas horas, y sus baterías tenían menos de tres. En Titan la paradoja del paracaídas funciona al revés: demasiada resistencia te mata lentamente.",
+    "new": "Desplegar un paracaídas de tamaño completo aquí y caes al paso de una caminata — lo que suena perfecto y es en realidad mortal. El aire de Titán es tan denso y su gravedad tan débil que bajo el paracaídas principal de 8,3 metros de Huygens la sonda derivaría durante muchas horas, y sus baterías tenían menos de tres. En Titán la paradoja del paracaídas funciona al revés: demasiada resistencia te mata lentamente."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_lot_drogue",
+    "old": "Así que quince minutos después, Huygens soltó el gran paracaídas e intercambió por un drogue más pequeño que una sombrilla de playa. Incluso bajo ese trozo de tela, el aire de Titan te deja a menos de 5 m/s — un golpe firme contra el barro congelado. El aterrizaje más suave del sistema solar, conseguido con el paracaídas más pequeño.",
+    "new": "Así que quince minutos después, Huygens soltó el gran paracaídas e intercambió por un drogue más pequeño que una sombrilla de playa. Incluso bajo ese trozo de tela, el aire de Titán te deja a menos de 5 m/s — un golpe firme contra el barro congelado. El aterrizaje más suave del sistema solar, conseguido con el paracaídas más pequeño."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_land_titan_desc",
+    "old": "Aire espeso y frío y gravedad suave hacen de Titan el mundo más grande más fácil de aterrizar — un paracaídas solo puede hacerlo. Vuela la deriva de Huygens a través de la bruma naranja.",
+    "new": "Aire espeso y frío y gravedad suave hacen de Titán el mundo más grande más fácil de aterrizar — un paracaídas solo puede hacerlo. Vuela la deriva de Huygens a través de la bruma naranja."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_catch_iss_desc",
+    "old": "El rendezvous es una persecución en espacio curvo, donde acelerar te deja atrás. Usa datos en vivo de la estación para calcular dónde está la ISS y cómo alcanzarla.",
+    "new": "El rendezvous es una persecución en espacio curvo, donde acelerar te deja atrás. Usa datos en vivo de la estación para calcular dónde está la EEI y cómo alcanzarla."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_isspass_glossary",
+    "old": "Sin fórmula cerrada aquí: propaga el TLE vivo hacia adelante y encuentra la próxima vez que la ISS suba por encima de 10° en tu sitio. La tarjeta de ventana de visibilidad dijo que existe un paso — esta dice CUÁNDO.",
+    "new": "Sin fórmula cerrada aquí: propaga el TLE vivo hacia adelante y encuentra la próxima vez que la EEI suba por encima de 10° en tu sitio. La tarjeta de ventana de visibilidad dijo que existe un paso — esta dice CUÁNDO."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_illustration_alt_catch_the_iss",
+    "old": "La ISS dibujada en silueta de panel solar con una pequeña cápsula acercándose a lo largo de una espiral de encuentro debajo de ella.",
+    "new": "La EEI dibujada en silueta de panel solar con una pequeña cápsula acercándose a lo largo de una espiral de encuentro debajo de ella."
+  },
+  {
+    "rel": "messages",
+    "at": "ar_hint_place_iss",
+    "old": "Apunta a una superficie y toca para colocar la ISS",
+    "new": "Apunta a una superficie y toca para colocar la EEI"
+  },
+  {
+    "rel": "messages",
+    "at": "galaxy_name_ursa_minor_dwarf",
+    "old": "Galaxia enana Ursa Minor",
+    "new": "Galaxia enana Osa Menor"
+  }
+]

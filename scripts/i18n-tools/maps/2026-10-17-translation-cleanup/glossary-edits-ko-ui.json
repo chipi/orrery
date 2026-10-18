@@ -1,0 +1,500 @@
+[
+  {
+    "rel": "messages",
+    "at": "library_category_mars_site",
+    "old": "Mars 사이트",
+    "new": "화성 사이트"
+  },
+  {
+    "rel": "messages",
+    "at": "library_category_earth_object",
+    "old": "Earth-orbit 객체",
+    "new": "지구 궤도 천체"
+  },
+  {
+    "rel": "messages",
+    "at": "credits_used_route_mars",
+    "old": "Mars 지도",
+    "new": "화성 지도"
+  },
+  {
+    "rel": "messages",
+    "at": "why_orbital_period_body",
+    "old": "태양(또는 모체) 주위를 한 바퀴 도는 데 걸리는 시간입니다. Kepler의 제3법칙에 의해 궤도 장반경과 연결됩니다: P² ∝ a³. 멀수록 느려집니다; Neptune의 1년은 지구의 165년입니다.",
+    "new": "태양(또는 모체) 주위를 한 바퀴 도는 데 걸리는 시간입니다. Kepler의 제3법칙에 의해 궤도 장반경과 연결됩니다: P² ∝ a³. 멀수록 느려집니다; 해왕성의 1년은 지구의 165년입니다."
+  },
+  {
+    "rel": "messages",
+    "at": "why_axial_tilt_body",
+    "old": "천체의 자전축과 궤도면의 수직선 사이의 각도입니다. 지구의 23.4°는 계절을 만듭니다. Uranus의 98°는 궤도를 따라 옆으로 구르는 것을 의미합니다. 기울기는 착륙 지점에서 태양이 뜨고 지는 위치도 결정합니다 — 태양광 발전 계획에 결정적입니다.",
+    "new": "천체의 자전축과 궤도면의 수직선 사이의 각도입니다. 지구의 23.4°는 계절을 만듭니다. 천왕성의 98°는 궤도를 따라 옆으로 구르는 것을 의미합니다. 기울기는 착륙 지점에서 태양이 뜨고 지는 위치도 결정합니다 — 태양광 발전 계획에 결정적입니다."
+  },
+  {
+    "rel": "messages",
+    "at": "why_mean_velocity_body",
+    "old": "평균 궤도 속도입니다. 가까운 천체는 빠릅니다(Mercury는 평균 47 km/s); 먼 천체는 느립니다(Neptune은 평균 5.4 km/s). Vis-viva는 속도를 타원상 위치와 연결합니다 — 근일점은 빠르고, 원일점은 느립니다.",
+    "new": "평균 궤도 속도입니다. 가까운 천체는 빠릅니다(Mercury는 평균 47 km/s); 먼 천체는 느립니다(해왕성은 평균 5.4 km/s). Vis-viva는 속도를 타원상 위치와 연결합니다 — 근일점은 빠르고, 원일점은 느립니다."
+  },
+  {
+    "rel": "messages",
+    "at": "why_samples_body",
+    "old": "반환된 샘플은 질량분석기, 전자현미경, 동위원소 연대측정법으로 분석할 수 있습니다 — 이러한 장비들은 너무 크거나 전력 소비가 많아 우주선에 탑재할 수 없습니다. Apollo는 382 kg을 가져왔고; Chang'e 5는 더 젊은 근지 레골리스(Oceanus Procellarum) 1.7 kg을 가져왔습니다. 각 킬로그램은 수십 년의 후속 과학 연구를 가능하게 합니다.",
+    "new": "반환된 샘플은 질량분석기, 전자현미경, 동위원소 연대측정법으로 분석할 수 있습니다 — 이러한 장비들은 너무 크거나 전력 소비가 많아 우주선에 탑재할 수 없습니다. Apollo는 382 kg을 가져왔고; Chang'e 5는 더 젊은 근지 레골리스(폭풍의 대양) 1.7 kg을 가져왔습니다. 각 킬로그램은 수십 년의 후속 과학 연구를 가능하게 합니다."
+  },
+  {
+    "rel": "messages",
+    "at": "why_station_inclination_body",
+    "old": "궤도경사각은 설계자의 선호가 아닌 발사장에 의해 결정됩니다. ISS의 51.6°는 러시아 Soyuz 발사체가 인구 밀집 지역에 사용 단 떨어뜨리지 않고 도달할 수 있는 최저 경사각입니다. Tiangong의 41.5°는 중국 남부 Wenchang에서 인구 밀집 지역을 피하며 도달 가능합니다. 각 선택은 발사 ∆v와 지상 커버리지 범위를 교환합니다.",
+    "new": "궤도경사각은 설계자의 선호가 아닌 발사장에 의해 결정됩니다. ISS의 51.6°는 러시아 Soyuz 발사체가 인구 밀집 지역에 사용 단 떨어뜨리지 않고 도달할 수 있는 최저 경사각입니다. Tiangong의 41.5°는 중국 남부 원창에서 인구 밀집 지역을 피하며 도달 가능합니다. 각 선택은 발사 ∆v와 지상 커버리지 범위를 교환합니다."
+  },
+  {
+    "rel": "messages",
+    "at": "science_layer_atmosphere_desc",
+    "old": "몸의 효과적인 대기 가장자리에 반투명 포탄 — 지구에 Kármán 선, Mars에 ~120 km.",
+    "new": "몸의 효과적인 대기 가장자리에 반투명 포탄 — 지구에 Kármán 선, 화성에 ~120 km."
+  },
+  {
+    "rel": "messages",
+    "at": "science_layer_tidal_lock_desc",
+    "old": "Moon's near-side (always-Earth-facing) hemisphere를 표시하십시오.",
+    "new": "달의 앞면(항상 지구를 향하는 반구)을 표시합니다 — 동주기 자전의 결과입니다."
+  },
+  {
+    "rel": "messages",
+    "at": "science_layer_galaxies_desc",
+    "old": "약 15개 이웃 은하(Andromeda, Magellanic Clouds, 왜소 타원체)의 빌보드 스프라이트를 정확한 RA/Dec로 천구에 배치 — 하늘 오버레이일 뿐, 실제 축척 아님.",
+    "new": "약 15개 이웃 은하(Andromeda, 마젤란 은하, 왜소 타원체)의 빌보드 스프라이트를 정확한 RA/Dec로 천구에 배치 — 하늘 오버레이일 뿐, 실제 축척 아님."
+  },
+  {
+    "rel": "messages",
+    "at": "earth_load_failed",
+    "old": "Earth-orbit 개체를로드하는 실패.",
+    "new": "지구 궤도 천체를 불러오지 못했습니다."
+  },
+  {
+    "rel": "messages",
+    "at": "iss_canvas_aria",
+    "old": "International Space Station의 Interactive 3D 모델. 보기를 궤도에 드래그; 단위를 눌러 세부 사항을 엽니 다.",
+    "new": "국제우주정거장의 Interactive 3D 모델. 보기를 궤도에 드래그; 단위를 눌러 세부 사항을 엽니 다."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_layer_tip_dwarfs",
+    "old": "dwarf 행성의 토대 가시성 (Pluto, Eris, Ceres, Haumea, Makemake)",
+    "new": "dwarf 행성의 토대 가시성 (명왕성, 에리스, 세레스, 하우메아, 마케마케)"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_layer_tip_interstellar",
+    "old": "Interstellar 방문자 - 태양계를 통과하거나 개체를 숨깁니다 (예 : УOumuamua)",
+    "new": "Interstellar 방문자 - 태양계를 통과하거나 개체를 숨깁니다 (예 : У오우무아무아)"
+  },
+  {
+    "rel": "messages",
+    "at": "mars_layer_tip_orbiters",
+    "old": "쇼 또는 숨기기 활성 및 역사적인 Mars 궤도",
+    "new": "쇼 또는 숨기기 활성 및 역사적인 화성 궤도"
+  },
+  {
+    "rel": "messages",
+    "at": "moon_page_title",
+    "old": "Moon Map · 궤도계",
+    "new": "달 Map · 궤도계"
+  },
+  {
+    "rel": "messages",
+    "at": "mars_load_failed",
+    "old": "Mars 사이트에로드 실패. 자주 묻는 질문",
+    "new": "화성 사이트에로드 실패. 자주 묻는 질문"
+  },
+  {
+    "rel": "messages",
+    "at": "mars_meta_description",
+    "old": "모든 artefact 인류는 Mars에 배치했다 - 착륙, 로버, 활성 궤도 - 전체 임무 역사와 해군 3D 지구에.",
+    "new": "모든 artefact 인류는 화성에 배치했다 - 착륙, 로버, 활성 궤도 - 전체 임무 역사와 해군 3D 지구에."
+  },
+  {
+    "rel": "messages",
+    "at": "landing_section_why_p1",
+    "old": "이 프로젝트는 Artemis II에 진출했습니다. NASA는 1972 년부터 처음으로 달 주위에 4 명의 인간을 보내고 거의 완전히 비공식적이었습니다. 사람들은 'free-return trajectory'가 의미하는 것을 모른다. 그들은 왜 Mars 발사 창이 매 26 개월 일어날지 모른다. 그들은 로켓 방정식을 모른다.",
+    "new": "이 프로젝트는 Artemis II에 진출했습니다. NASA는 1972 년부터 처음으로 달 주위에 4 명의 인간을 보내고 거의 완전히 비공식적이었습니다. 사람들은 'free-return trajectory'가 의미하는 것을 모른다. 그들은 왜 화성 발사 창이 매 26 개월 일어날지 모른다. 그들은 로켓 방정식을 모른다."
+  },
+  {
+    "rel": "messages",
+    "at": "landing_card_mars_title",
+    "old": "Mars 표면 맵",
+    "new": "화성 표면 맵"
+  },
+  {
+    "rel": "messages",
+    "at": "a11y_mars_sites_list_aria",
+    "old": "Mars 착륙 지점 — 목록 보기 (3D 지도와 병행)",
+    "new": "화성 착륙 지점 — 목록 보기 (3D 지도와 병행)"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_iconic_tagline_pioneer_10",
+    "old": "소행성대를 통과하고 Jupiter를 근접 비행한 최초의 우주선입니다.",
+    "new": "소행성대를 통과하고 목성을 근접 비행한 최초의 우주선입니다."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_iconic_tagline_pioneer_11",
+    "old": "Saturn 최초의 근접 비행 — Cassini의 길을 열었습니다.",
+    "new": "토성 최초의 근접 비행 — Cassini의 길을 열었습니다."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_iconic_tagline_vega_1",
+    "old": "Venus 착륙선 + 풍선, 이어 1986년 Halley's Comet과 조우했습니다.",
+    "new": "금성 착륙선 + 풍선, 이어 1986년 핼리 혜성과 조우했습니다."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_iconic_tagline_vega_2",
+    "old": "Vega 1의 쌍둥이 — 1986년 두 번째 Venus + Halley's Comet 비행입니다.",
+    "new": "Vega 1의 쌍둥이 — 1986년 두 번째 금성 + 핼리 혜성 비행입니다."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_iconic_tagline_giotto",
+    "old": "혜성 핵(1P/Halley)의 최초 근접 이미지를 촬영했습니다.",
+    "new": "혜성 핵(1P/핼리)의 최초 근접 이미지를 촬영했습니다."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_iconic_tagline_galileo",
+    "old": "Jupiter 최초의 궤도선; 대기 진입 탐사선을 투하했습니다.",
+    "new": "목성 최초의 궤도선; 대기 진입 탐사선을 투하했습니다."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_iconic_tagline_ulysses",
+    "old": "Sun의 극지방 상공을 비행한 최초의 우주선입니다.",
+    "new": "태양의 극지방 상공을 비행한 최초의 우주선입니다."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_iconic_tagline_cassini",
+    "old": "13년간 Saturn 궤도선; Huygens 탐사선이 Titan에 착륙했습니다.",
+    "new": "13년간 토성 궤도선; Huygens 탐사선이 타이탄에 착륙했습니다."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_iconic_tagline_new_horizons",
+    "old": "Pluto와 Kuiper Belt 최초의 근접 비행입니다.",
+    "new": "명왕성과 카이퍼 벨트 최초의 근접 비행입니다."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_iconic_tagline_dawn",
+    "old": "두 외계 천체(Vesta, Ceres)를 공전한 최초의 임무입니다.",
+    "new": "두 외계 천체(베스타, 세레스)를 공전한 최초의 임무입니다."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_iconic_tagline_juno",
+    "old": "극궤도에서 Jupiter 내부 + 자기장을 매핑합니다.",
+    "new": "극궤도에서 목성 내부 + 자기장을 매핑합니다."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_iconic_tagline_hayabusa2",
+    "old": "소행성 Ryugu에서 시료를 채취해 귀환했습니다.",
+    "new": "소행성 류구에서 시료를 채취해 귀환했습니다."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_iconic_tagline_juice",
+    "old": "세 차례 Galilean 위성 비행 + Ganymede 궤도 진입이 예정되어 있습니다.",
+    "new": "세 차례 Galilean 위성 비행 + 가니메데 궤도 진입이 예정되어 있습니다."
+  },
+  {
+    "rel": "messages",
+    "at": "poster_gagarin_aria",
+    "old": "Yuri Gagarin 포스터 — 금빛 유리에 반사된 지구가 비친 SK-1 헬멧 바이저",
+    "new": "유리 가가린 포스터 — 금빛 유리에 반사된 지구가 비친 SK-1 헬멧 바이저"
+  },
+  {
+    "rel": "messages",
+    "at": "science_layer_moons_desc",
+    "old": "각 행성 주위의 주요 위성 + 궤도 고리 (목성의 Galilean 위성, 토성의 Titan/Enceladus/Iapetus, 지구의 Moon, 화성의 Phobos/Deimos, 해왕성의 Triton).",
+    "new": "각 행성 주위의 주요 위성 + 궤도 고리 (목성의 Galilean 위성, 토성의 타이탄/엔켈라두스/Iapetus, 지구의 달, 화성의 포보스/데이모스, 해왕성의 트리톤)."
+  },
+  {
+    "rel": "messages",
+    "at": "science_layer_mars_moons_label",
+    "old": "Phobos & Deimos",
+    "new": "포보스 & 데이모스"
+  },
+  {
+    "rel": "messages",
+    "at": "science_layer_mars_moons_desc",
+    "old": "포획된 소행성으로 이루어진 두 개의 위성. Phobos는 화성의 자전보다 빠르게 공전하므로 서쪽에서 뜨고 동쪽에서 집니다. 약 5천만 년 후에 고리로 분해될 것입니다.",
+    "new": "포획된 소행성으로 이루어진 두 개의 위성. 포보스는 화성의 자전보다 빠르게 공전하므로 서쪽에서 뜨고 동쪽에서 집니다. 약 5천만 년 후에 고리로 분해될 것입니다."
+  },
+  {
+    "rel": "messages",
+    "at": "science_panel_mars_title",
+    "old": "Mars · 얇은 CO₂ 껍질 + 잠든 다이나모",
+    "new": "화성 · 얇은 CO₂ 껍질 + 잠든 다이나모"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_ctx_local_group",
+    "old": "Local Group",
+    "new": "국부 은하군"
+  },
+  {
+    "rel": "messages",
+    "at": "fly_recovery_caption_soyuz1",
+    "old": "낙하산 고장으로 귀환 모듈이 고속으로 지면에 충돌했다. Vladimir Komarov가 사망했으며, 이는 우주 비행 중 최초의 사망 사고였다.",
+    "new": "낙하산 고장으로 귀환 모듈이 고속으로 지면에 충돌했다. 블라디미르 코마로프가 사망했으며, 이는 우주 비행 중 최초의 사망 사고였다."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_heading_pioneer_10",
+    "old": "황소자리의 Aldebaran 방향 — 200만 년에 걸친 표류, 최근접은 아님",
+    "new": "황소자리의 알데바란 방향 — 200만 년에 걸친 표류, 최근접은 아님"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_mw_satellite_blurb",
+    "old": "은하수에 중력으로 묶인 위성 은하로, 은하수를 공전하며 천천히 그 중력에 의해 파괴되고 있습니다. Magellanic Clouds이 가장 밝은 사례이며, 남쪽 하늘에서 육안으로 볼 수 있습니다.",
+    "new": "은하수에 중력으로 묶인 위성 은하로, 은하수를 공전하며 천천히 그 중력에 의해 파괴되고 있습니다. 마젤란 은하가 가장 밝은 사례이며, 남쪽 하늘에서 육안으로 볼 수 있습니다."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_ctx_virgo",
+    "old": "Virgo Supercluster",
+    "new": "처녀자리 초은하단"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_virgo_schematic_badge",
+    "old": "Virgo Supercluster · 개략도 · 축척 없음",
+    "new": "처녀자리 초은하단 · 개략도 · 축척 없음"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_virgo_blurb",
+    "old": "Virgo Supercluster 내의 은하군, 은하 구름, 또는 은하단 — 우리 국부은하군이 속한 약 33메가파섹의 초은하단입니다. 이 구성원들은 초은하단의 중력 중심인 Virgo Cluster(1,000개 이상의 은하가 밀집된 곳)으로 끌려가고 있습니다.",
+    "new": "처녀자리 초은하단 내의 은하군, 은하 구름, 또는 은하단 — 우리 국부은하군이 속한 약 33메가파섹의 초은하단입니다. 이 구성원들은 초은하단의 중력 중심인 처녀자리 은하단(1,000개 이상의 은하가 밀집된 곳)으로 끌려가고 있습니다."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_virgo_anchor_blurb",
+    "old": "당신은 여기, 초은하단의 가장자리에 있습니다. 전체 국부은하군은 단 한 점이며, Virgo Supercluster를 통해 펼쳐진 수많은 은하군 중 하나이고 천천히 Virgo Cluster로 떨어지고 있습니다.",
+    "new": "당신은 여기, 초은하단의 가장자리에 있습니다. 전체 국부은하군은 단 한 점이며, 처녀자리 초은하단을 통해 펼쳐진 수많은 은하군 중 하나이고 천천히 처녀자리 은하단으로 떨어지고 있습니다."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_laniakea_blurb",
+    "old": "Laniakea 내의 초은하단 또는 은하단 — 우리의 Virgo Supercluster가 단지 한 엽엽일 뿐인 약 160 메가파섹 규모의 중력 집수 분지. 이곳의 모든 것은 우주의 시간에 걸쳐 동일한 중력 저점인 Great Attractor로 흘러간다.",
+    "new": "Laniakea 내의 초은하단 또는 은하단 — 우리의 처녀자리 초은하단이 단지 한 엽엽일 뿐인 약 160 메가파섹 규모의 중력 집수 분지. 이곳의 모든 것은 우주의 시간에 걸쳐 동일한 중력 저점인 거대 인력체로 흘러간다."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_laniakea_anchor_blurb",
+    "old": "당신은 여기입니다. 전체 Virgo Supercluster — Local Group, Virgo Cluster, 모두 — 은 Laniakea의 단일 엽엽이며, Great Attractor로 흘러가는 흐름의 가장자리에 있다.",
+    "new": "당신은 여기입니다. 전체 처녀자리 초은하단 — 국부 은하군, 처녀자리 은하단, 모두 — 은 Laniakea의 단일 엽엽이며, 거대 인력체로 흘러가는 흐름의 가장자리에 있다."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_laniakea_attractor_blurb",
+    "old": "Great Attractor — Laniakea의 중력 저점이며, 은하수 평면 뒤의 Norma Cluster 근처에 위치. 수천 개의 은하들을 포함한 우리 은하의 운동이 모두 이 지역으로 향하며, 이것이 Laniakea를 단일 구조로 정의하는 것이다.",
+    "new": "거대 인력체 — Laniakea의 중력 저점이며, 은하수 평면 뒤의 직각자자리 은하단 근처에 위치. 수천 개의 은하들을 포함한 우리 은하의 운동이 모두 이 지역으로 향하며, 이것이 Laniakea를 단일 구조로 정의하는 것이다."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_lens_story_laniakea_body",
+    "old": "하와이어로 '광대한 하늘' — 2014년에 은하들이 어디에 위치하는지가 아니라 어디로 흘러가는지에 따라 정의된 초은하단. 약 160 메가파섹(5억 광년) 규모로, 약 100,000개의 은하를 포함하며, Laniakea는 우리의 Virgo Supercluster가 Great Attractor로 흘러가는 중력 집수 분지이다. 그리고 Laniakea는 이웃 구조들과 함께 더욱 거대한 무언가인 Shapley Concentration을 향한 광범위한 흐름의 일부이다.",
+    "new": "하와이어로 '광대한 하늘' — 2014년에 은하들이 어디에 위치하는지가 아니라 어디로 흘러가는지에 따라 정의된 초은하단. 약 160 메가파섹(5억 광년) 규모로, 약 100,000개의 은하를 포함하며, Laniakea는 우리의 처녀자리 초은하단이 거대 인력체로 흘러가는 중력 집수 분지이다. 그리고 Laniakea는 이웃 구조들과 함께 더욱 거대한 무언가인 섀플리 초은하단을 향한 광범위한 흐름의 일부이다."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_hub_desc_virgo",
+    "old": "우리 집단초은하 — Virgo Cluster를 향해 끌려가는 수백 개의 은하군.",
+    "new": "우리 집단초은하 — 처녀자리 은하단을 향해 끌려가는 수백 개의 은하군."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_hub_desc_laniakea",
+    "old": "우리 집단초은하가 Great Attractor를 향해 흘러드는 ~160-Mpc 규모의 은하 흐름 분지.",
+    "new": "우리 집단초은하가 거대 인력체를 향해 흘러드는 ~160-Mpc 규모의 은하 흐름 분지."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_lar_launch_site",
+    "old": "지구 어디에서 발사하느냐가 공짜 초기 이점입니다. 행성의 자전이 이미 발사대를 동쪽으로 실어 나르는데, 적도에서 가장 빠르고 극지방에서는 전혀 없습니다. 이것이 Ariane이 Kourou에서 발사하는 이유이며, 기업들이 해상으로 플랫폼을 예인하는 이유입니다.",
+    "new": "지구 어디에서 발사하느냐가 공짜 초기 이점입니다. 행성의 자전이 이미 발사대를 동쪽으로 실어 나르는데, 적도에서 가장 빠르고 극지방에서는 전혀 없습니다. 이것이 Ariane이 쿠루에서 발사하는 이유이며, 기업들이 해상으로 플랫폼을 예인하는 이유입니다."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_mark_baikonur",
+    "old": "Baikonur",
+    "new": "바이코누르"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_mark_kourou",
+    "old": "Kourou",
+    "new": "쿠루"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_lar_cape",
+    "old": "Cape Canaveral (북위 28°) — 미국 동해안 발사장",
+    "new": "케이프 커내버럴 (북위 28°) — 미국 동해안 발사장"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_lar_baikonur",
+    "old": "Baikonur (북위 46°) — Gagarin이 발사된 곳",
+    "new": "바이코누르 (북위 46°) — 가가린이 발사된 곳"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_loe_hook",
+    "old": "최초의 우주비행은 정확히 이 궤적이었습니다 — 로켓으로 올라가서 낙하산으로 내려오는 것. Gagarin은 심지어 Vostok 캡슐에서 사출되어 별도로 낙하산으로 내려왔고, Shepard와 Glenn은 바다로 착수했습니다.",
+    "new": "최초의 우주비행은 정확히 이 궤적이었습니다 — 로켓으로 올라가서 낙하산으로 내려오는 것. 가가린은 심지어 Vostok 캡슐에서 사출되어 별도로 낙하산으로 내려왔고, 셰퍼드와 글렌은 바다로 착수했습니다."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_loe_friendship7",
+    "old": "Friendship 7 — 미국인 최초로 지구를 선회한 Glenn",
+    "new": "Friendship 7 — 미국인 최초로 지구를 선회한 글렌"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_motion_hook",
+    "old": "다시 뉴턴의 대포알: 느리게 던지면 지구로 떨어지지만(준궤도 도약), 약 7.9 km/s로 쏘면 행성을 한 바퀴 돌며 떨어진다. Shepard는 도약을, Gagarin은 완전한 선회를 비행했다.",
+    "new": "다시 뉴턴의 대포알: 느리게 던지면 지구로 떨어지지만(준궤도 도약), 약 7.9 km/s로 쏘면 행성을 한 바퀴 돌며 떨어진다. 셰퍼드는 도약을, 가가린은 완전한 선회를 비행했다."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_lss_galileo",
+    "old": "Galileo — 목성에 도달하기 위해 Venus와 지구 플라이바이 사용",
+    "new": "Galileo — 목성에 도달하기 위해 금성과 지구 플라이바이 사용"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_g10_coverage",
+    "old": "그렇다면 위성은 몇 개나 필요할까요? 더 높은 궤도는 지구의 더 넓은 부분을 보므로 더 적게 필요합니다: 정지궤도에서는 단 세 개면 사람이 사는 전 세계를 덮습니다 — Arthur C. Clarke가 1945년에 발표한 아이디어입니다. 550 km 껍질로 내려가면 각각이 보는 범위가 너무 작아 지평선을 잇는 데만도 완전한 고리 하나가 필요하고, 전 지구를 덮으려면 여러 고리에 수천 개가 필요합니다. 이것이 Starlink와 OneWeb 뒤에 있는 초대형 위성군의 계산입니다.",
+    "new": "그렇다면 위성은 몇 개나 필요할까요? 더 높은 궤도는 지구의 더 넓은 부분을 보므로 더 적게 필요합니다: 정지궤도에서는 단 세 개면 사람이 사는 전 세계를 덮습니다 — 아서 C. 클라크가 1945년에 발표한 아이디어입니다. 550 km 껍질로 내려가면 각각이 보는 범위가 너무 작아 지평선을 잇는 데만도 완전한 고리 하나가 필요하고, 전 지구를 덮으려면 여러 고리에 수천 개가 필요합니다. 이것이 Starlink와 OneWeb 뒤에 있는 초대형 위성군의 계산입니다."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_g10_azimuth",
+    "old": "마지막 실마리로 돌아가기, 출발점으로 돌아가는 것입니다: 발사. 어떤 패드에서든 어떤 궤도에도 도달할 수 없습니다 — 경사각은 절대 발사 위도보다 작을 수 없으며, 나침반 방향은 cos(방위각) = cos(경사각)/cos(위도)로 결정됩니다. 정동쪽(정확히 동쪽)을 겨냥하면 당신의 위도로 기울어진 궤도, 즉 가장 저렴한 궤도를 얻습니다(ISS가 Baikonur와 Cape에서 운용되는 이유). 그리고 태양동기궤도는 역행이기 때문에 정남쪽을 겨냥한다는 뜻입니다 — 정확히 그 이유로 이러한 임무들은 Vandenberg에서 캘리포니아 해안 아래로 발사됩니다.",
+    "new": "마지막 실마리로 돌아가기, 출발점으로 돌아가는 것입니다: 발사. 어떤 패드에서든 어떤 궤도에도 도달할 수 없습니다 — 경사각은 절대 발사 위도보다 작을 수 없으며, 나침반 방향은 cos(방위각) = cos(경사각)/cos(위도)로 결정됩니다. 정동쪽(정확히 동쪽)을 겨냥하면 당신의 위도로 기울어진 궤도, 즉 가장 저렴한 궤도를 얻습니다(ISS가 바이코누르와 Cape에서 운용되는 이유). 그리고 태양동기궤도는 역행이기 때문에 정남쪽을 겨냥한다는 뜻입니다 — 정확히 그 이유로 이러한 임무들은 반덴버그에서 캘리포니아 해안 아래로 발사됩니다."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_ro_why",
+    "old": "우주의 모든 것은 여기서 시작됩니다: 먼저 궤도에 오르지 않으면 — 옆으로 충분히 빠르게 움직여 지구 주위로 계속 떨어지지 않으면 — 달이든 화성이든 어디로도 갈 수 없습니다. Sputnik이 1957년에 이를 증명했고, 4년 후 Gagarin이 같은 원리를 타고 궤도에 오른 최초의 인간이 되었습니다.",
+    "new": "우주의 모든 것은 여기서 시작됩니다: 먼저 궤도에 오르지 않으면 — 옆으로 충분히 빠르게 움직여 지구 주위로 계속 떨어지지 않으면 — 달이든 화성이든 어디로도 갈 수 없습니다. Sputnik이 1957년에 이를 증명했고, 4년 후 가가린이 같은 원리를 타고 궤도에 오른 최초의 인간이 되었습니다."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_ro_vostok1",
+    "old": "Vostok 1 — Gagarin, 궤도에 오른 최초의 인간",
+    "new": "Vostok 1 — 가가린, 궤도에 오른 최초의 인간"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_sysland_hook",
+    "old": "Apollo 11의 착륙 컴퓨터는 과부하 상태에서 1202 경보를 냈지만 그럼에도 하강을 계속 조종했습니다 — 유도 루프가 낮은 우선순위 작업을 버리도록 설계되어, 중요한 단 하나의 임무, 즉 우주선을 착륙시키는 일은 결코 놓치지 않았기 때문입니다. Armstrong은 자세를 수동으로 제어했지만, 컴퓨터는 여전히 스로틀을 담당했습니다.",
+    "new": "Apollo 11의 착륙 컴퓨터는 과부하 상태에서 1202 경보를 냈지만 그럼에도 하강을 계속 조종했습니다 — 유도 루프가 낮은 우선순위 작업을 버리도록 설계되어, 중요한 단 하나의 임무, 즉 우주선을 착륙시키는 일은 결코 놓치지 않았기 때문입니다. 암스트롱은 자세를 수동으로 제어했지만, 컴퓨터는 여전히 스로틀을 담당했습니다."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_lot_entry",
+    "old": "Titan은 지표면 기준으로 지구보다 절반가량 더 두꺼운 질소 대기 아래에 모습을 감추고 있으며, 그 대기는 아주 높은 곳까지 뻗어 있습니다. Huygens는 1,000km도 넘는 상공에서부터 대기의 영향을 느끼기 시작했습니다. 탐사선은 초속 6km로 진입하면서 방열판 뒤에서 12g가 넘는 가속도를 견뎠습니다. 위성에서 이루어진, 진짜 대기 진입이었습니다.",
+    "new": "타이탄은 지표면 기준으로 지구보다 절반가량 더 두꺼운 질소 대기 아래에 모습을 감추고 있으며, 그 대기는 아주 높은 곳까지 뻗어 있습니다. Huygens는 1,000km도 넘는 상공에서부터 대기의 영향을 느끼기 시작했습니다. 탐사선은 초속 6km로 진입하면서 방열판 뒤에서 12g가 넘는 가속도를 견뎠습니다. 위성에서 이루어진, 진짜 대기 진입이었습니다."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_lot_main_chute",
+    "old": "여기서 정규 크기의 낙하산을 펼치면 걷는 속도로 떨어진다 — 완벽해 보이지만 실제로는 치명적이다. Titan의 공기는 너무 짙고 중력은 너무 약해서 Huygens의 8.3미터 주낙하산 아래에서 프로브는 수 시간 동안 표류할 것이고, 배터리는 3시간도 채 못 간다. Titan에서 낙하산 역설은 반대로 작용한다: 과도한 항력이 당신을 천천히 죽인다.",
+    "new": "여기서 정규 크기의 낙하산을 펼치면 걷는 속도로 떨어진다 — 완벽해 보이지만 실제로는 치명적이다. 타이탄의 공기는 너무 짙고 중력은 너무 약해서 Huygens의 8.3미터 주낙하산 아래에서 프로브는 수 시간 동안 표류할 것이고, 배터리는 3시간도 채 못 간다. 타이탄에서 낙하산 역설은 반대로 작용한다: 과도한 항력이 당신을 천천히 죽인다."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_lot_drogue",
+    "old": "15분 후, Huygens는 큰 낙하산을 떨어뜨리고 해변 우산보다 작은 드로그 낙하산으로 교체했다. 그 작은 천 조각 아래에서도 Titan의 공기는 당신을 초속 5미터 미만의 속도로 내린다 — 얼어붙은 진흙으로의 단단한 충격. 태양계에서 가장 완만한 착륙이며, 가장 작은 낙하산으로 얻어낸 것이다.",
+    "new": "15분 후, Huygens는 큰 낙하산을 떨어뜨리고 해변 우산보다 작은 드로그 낙하산으로 교체했다. 그 작은 천 조각 아래에서도 타이탄의 공기는 당신을 초속 5미터 미만의 속도로 내린다 — 얼어붙은 진흙으로의 단단한 충격. 태양계에서 가장 완만한 착륙이며, 가장 작은 낙하산으로 얻어낸 것이다."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_lot_why",
+    "old": "Huygens는 여전히 가장 먼 거리에서 이루어진 착륙이다 — 지구에서 12억 킬로미터, 7년 동안 Cassini의 배 아래에 실려 있다가 안개 속으로 혼자 떨어졌다. 2시간 27분의 강하 동안 Titan 표면의 첫 사진을 돌려보냈다: 얼어붙은 강 삼각주에 있는 둥근 물 얼음 자갈들. 배터리로 구동되는 하나의 프로브, 작은 낙하산 하나, 완전히 새로운 세계.",
+    "new": "Huygens는 여전히 가장 먼 거리에서 이루어진 착륙이다 — 지구에서 12억 킬로미터, 7년 동안 Cassini의 배 아래에 실려 있다가 안개 속으로 혼자 떨어졌다. 2시간 27분의 강하 동안 타이탄 표면의 첫 사진을 돌려보냈다: 얼어붙은 강 삼각주에 있는 둥근 물 얼음 자갈들. 배터리로 구동되는 하나의 프로브, 작은 낙하산 하나, 완전히 새로운 세계."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_lot_hook",
+    "old": "Huygens는 Titan 표면에서 1시간 이상 신호를 보냈다 — 설계자들이 감히 바라던 것보다 더 오래 — Cassini가 지평선 아래로 내려갈 때까지.",
+    "new": "Huygens는 타이탄 표면에서 1시간 이상 신호를 보냈다 — 설계자들이 감히 바라던 것보다 더 오래 — Cassini가 지평선 아래로 내려갈 때까지."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_lot_huygens",
+    "old": "Huygens — Titan 강하, 비행임무로서 (ESA)",
+    "new": "Huygens — 타이탄 강하, 비행임무로서 (ESA)"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_tsw_bennu",
+    "old": "이제 Bennu에 같은 종류의 반발을 시도하세요 — 그리고 공식은 정점을 주지 않습니다, 왜냐하면 없기 때문입니다: 반발이 Bennu의 약 0.2 m/s 탈출 속도를 초과하고 단순히 떠납니다. 이것은 고칠 버그가 아닙니다; OSIRIS-REx가 착륙을 시도하지 않은 이유입니다. 그 TAG 기동 — Touch-And-Go — 샘플링 암을 자갈에 약 6초간 눌렀다가, 스러스터를 발사하고 보물과 함께 물러났습니다. 머물 수 없는 천체에서, 정직한 착륙은 멈추는 척 결코 하지 않는 것입니다.",
+    "new": "이제 베누에 같은 종류의 반발을 시도하세요 — 그리고 공식은 정점을 주지 않습니다, 왜냐하면 없기 때문입니다: 반발이 베누의 약 0.2 m/s 탈출 속도를 초과하고 단순히 떠납니다. 이것은 고칠 버그가 아닙니다; OSIRIS-REx가 착륙을 시도하지 않은 이유입니다. 그 TAG 기동 — Touch-And-Go — 샘플링 암을 자갈에 약 6초간 눌렀다가, 스러스터를 발사하고 보물과 함께 물러났습니다. 머물 수 없는 천체에서, 정직한 착륙은 멈추는 척 결코 하지 않는 것입니다."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_tsw_ryugu",
+    "old": "Hayabusa2는 반발을 위험에서 수단으로 바꿨습니다. 소형 MINERVA-II 로버는 바퀴가 없었습니다 — Ryugu에서 바퀴는 지면에서 튕겨 나갑니다. 대신 내부 토크 휠을 갖추고 HOPPED했습니다: 회전, 초당 십분의 미터 푸시, 약 15미터 거리의 완만한 호, 다음 스텝까지 최대 15분의 부양 시간. 의도적으로, 반복적으로 그 천체를 떠남으로써 운전하는 첫 로버입니다.",
+    "new": "Hayabusa2는 반발을 위험에서 수단으로 바꿨습니다. 소형 MINERVA-II 로버는 바퀴가 없었습니다 — 류구에서 바퀴는 지면에서 튕겨 나갑니다. 대신 내부 토크 휠을 갖추고 HOPPED했습니다: 회전, 초당 십분의 미터 푸시, 약 15미터 거리의 완만한 호, 다음 스텝까지 최대 15분의 부양 시간. 의도적으로, 반복적으로 그 천체를 떠남으로써 운전하는 첫 로버입니다."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_tsw_itokawa",
+    "old": "Itokawa는 이 사다리의 가장 작은 천체입니다 — 길이 수백 미터의 자갈 땅콩, 힘든 밀어내기로 이길 수 있는 탈출 속도를 가집니다. 2005년 첫 Hayabusa가 접촉했고, 고투했으며, 즉흥 대응했고, 여전히 2010년 지구로 반환된 첫 소행성 먼지를 전달했습니다. 그 샘플은 조용하지만 깊은 것을 확인했습니다: 이 '산'은 암석이 아니라 당신 중력의 만분의 1로 함께 묶인 자갈 더미입니다.",
+    "new": "이토카와는 이 사다리의 가장 작은 천체입니다 — 길이 수백 미터의 자갈 땅콩, 힘든 밀어내기로 이길 수 있는 탈출 속도를 가집니다. 2005년 첫 Hayabusa가 접촉했고, 고투했으며, 즉흥 대응했고, 여전히 2010년 지구로 반환된 첫 소행성 먼지를 전달했습니다. 그 샘플은 조용하지만 깊은 것을 확인했습니다: 이 '산'은 암석이 아니라 당신 중력의 만분의 1로 함께 묶인 자갈 더미입니다."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_tsw_hayabusa2",
+    "old": "Hayabusa2 — Ryugu 터치앤고 (JAXA)",
+    "new": "Hayabusa2 — 류구 터치앤고 (JAXA)"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_tsw_osirisrex",
+    "old": "OSIRIS-REx — Bennu TAG (NASA)",
+    "new": "OSIRIS-REx — 베누 TAG (NASA)"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_tsw_hayabusa1",
+    "old": "Hayabusa — 첫 샘플 회수, Itokawa (JAXA)",
+    "new": "Hayabusa — 첫 샘플 회수, 이토카와 (JAXA)"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_tsw_near",
+    "old": "NEAR Shoemaker — Eros 착륙 (NASA)",
+    "new": "NEAR Shoemaker — 에로스 착륙 (NASA)"
+  },
+  {
+    "rel": "messages",
+    "at": "galaxy_name_ursa_minor_dwarf",
+    "old": "Ursa Minor 왜소은하",
+    "new": "작은곰자리 왜소은하"
+  },
+  {
+    "rel": "messages",
+    "at": "galaxy_name_sextans_dwarf",
+    "old": "Sextans 왜소은하",
+    "new": "육분의자리 왜소은하"
+  }
+]

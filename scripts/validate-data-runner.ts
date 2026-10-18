@@ -65,6 +65,14 @@ const TASKS: Task[] = [
       '--gate=placeholder,russianInSr,mixedWord,foreignScript,latinSerbian,phoneticEnglish,corrupted',
     ],
   },
+  // Names of vehicles, missions and agencies kept as in English outside their origin
+  // locale, in every translated string — pages and UI (2026-10-18; ko 화성 익스프레스
+  // for Mars Express and ~115 more had passed every earlier check).
+  {
+    name: 'check-i18n-name-drift',
+    cmd: 'node',
+    args: ['scripts/i18n-tools/name-drift-scan.mjs'],
+  },
   { name: 'validate-satellites', cmd: 'tsx', args: ['scripts/validate-satellites.ts'] },
   { name: 'validate-universe-stars', cmd: 'tsx', args: ['scripts/validate-universe-stars.ts'] },
   {

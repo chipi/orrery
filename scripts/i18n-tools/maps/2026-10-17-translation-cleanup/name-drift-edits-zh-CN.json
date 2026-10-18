@@ -1,0 +1,140 @@
+[
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-t.json",
+    "at": "name",
+    "old": "联盟T",
+    "new": "Soyuz T"
+  },
+  {
+    "rel": "fleet/orbiter/juno.json",
+    "at": "name",
+    "old": "朱诺",
+    "new": "Juno"
+  },
+  {
+    "rel": "fleet/rover/sojourner.json",
+    "at": "name",
+    "old": "大师",
+    "new": "Sojourner"
+  },
+  {
+    "rel": "fleet/rover/yutu.json",
+    "at": "name",
+    "old": "尤图",
+    "new": "玉兔号"
+  },
+  {
+    "rel": "iss-modules/poisk.json",
+    "at": "name",
+    "old": "探索号",
+    "new": "Poisk"
+  },
+  {
+    "rel": "iss-visitors/cygnus.json",
+    "at": "name",
+    "old": "天鹅座",
+    "new": "Cygnus"
+  },
+  {
+    "rel": "missions/jupiter/juno.json",
+    "at": "name",
+    "old": "朱诺",
+    "new": "Juno"
+  },
+  {
+    "rel": "missions/mars/perseverance.json",
+    "at": "name",
+    "old": "毅力号",
+    "new": "Perseverance"
+  },
+  {
+    "rel": "missions/saturn/huygens.json",
+    "at": "name",
+    "old": "惠更斯",
+    "new": "Huygens"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/new-glenn_webp.title",
+    "old": "新格伦",
+    "new": "New Glenn"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/new-shepard_webp.title",
+    "old": "新谢泼德",
+    "new": "New Shepard"
+  },
+  {
+    "rel": "trajectories/galileo-tour.json",
+    "at": "name",
+    "old": "伽利略木星系统探测之旅",
+    "new": "Galileo 木星系统探测之旅"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-46ec373795e7.title",
+    "old": "火星快车 — 飞越尼利槽沟",
+    "new": "Mars Express — 飞越尼利槽沟"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-46ec373795e7.caption",
+    "old": "ESA火星快车飞越尼利槽沟",
+    "new": "ESA Mars Express 飞越尼利槽沟"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-a5ae1b625fcc.title",
+    "old": "火星探路者号和Sojourner巡视器",
+    "new": "Mars Pathfinder 和 Sojourner 巡视器"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-ce51b7fd5ff0.title",
+    "old": "新格伦——处女航(NG-1)",
+    "new": "New Glenn——处女航(NG-1)"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-ce51b7fd5ff0.caption",
+    "old": "新格伦火箭在首飞中进入轨道——2025年1月16日。",
+    "new": "New Glenn 火箭在首飞中进入轨道——2025年1月16日。"
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "links.2.l",
+    "old": "朱诺号任务（NASA）",
+    "new": "Juno 任务（NASA）"
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "links.2.l",
+    "old": "信使号任务（NASA）",
+    "new": "MESSENGER 任务概览（NASA）"
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "links.3.l",
+    "old": "贝比科隆博（欧空局 / 宇宙航空研究开发机构）",
+    "new": "BepiColombo（ESA / JAXA）"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "links.2.l",
+    "old": "旅行者 2 号飞掠海王星（NASA JPL）",
+    "new": "Voyager 2 飞掠海王星（NASA JPL）"
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "links.2.l",
+    "old": "旅行者 2 号飞掠天王星（NASA JPL）",
+    "new": "Voyager 2 飞掠天王星（NASA JPL）"
+  },
+  {
+    "rel": "sun.json",
+    "at": "links.2.l",
+    "old": "帕克太阳探测器（NASA）",
+    "new": "Parker Solar Probe（NASA）"
+  }
+]

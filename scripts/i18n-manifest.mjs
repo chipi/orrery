@@ -14,7 +14,7 @@ import path from 'node:path';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 export const SKIP_KEY =
-  /(^|\.)(u|url|href|src|image|id|slug|credit|credits|license|source|sources|wiki|file|links|code|met|type|kind|align|layout|variant|icon|color|alt_source|section|date|iso|year)(\.|$)/i;
+  /(^|\.)(u|url|href|src|image|id|slug|credit|credits|license|source|sources|wiki|file|code|met|type|kind|align|layout|variant|icon|color|alt_source|section|date|iso|year)(\.|$)/i;
 
 function walk(dir, out = []) {
   for (const n of fs.readdirSync(dir).sort()) {

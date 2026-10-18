@@ -69,21 +69,43 @@ const ALIAS = {
 const CJK_LOCALE = new Set(['ja', 'zh-CN']);
 const GUARD = {
   Vega: {
-    path: /missions\/venus|fleet\/(orbiter|lander|launcher)|rockets\/|venus-sites|programs\/(vega|venera)|science\/orbits\/space-debris/,
+    path: /missions\/venus|fleet\/(orbiter|lander|launcher)|rockets\/|venus-sites|programs\/(vega|venera)|science\/orbits\/space-debris|messages:landing_card_venus_desc|original-work\.json/,
     after:
       /^[\s-]?(\d|rocket|C\b|-C|program|probe|balloon|lander|mission|spacecraft|flyby|Secondary|VESPA|AVUM)/i,
   },
-  Sirius: { path: /fleet\/constellation|earth-objects/, after: /^\s?(XM|FM|Satellite|-)/ },
-  Antares: { path: /fleet\/|missions\/|moon-sites|programs\/|hotspot-metadata|rockets\// },
+  // Sirius XM, the satellite radio company, in the Lab's frozen-orbit text
+  Sirius: {
+    path: /fleet\/constellation|earth-objects|messages:lab_(conn|goal)_g10_(hook|frozen)/,
+    after: /^\s?(XM|FM|Satellite|-)/,
+  },
+  // the rocket and the Apollo 14 lunar module, not the star
+  Antares: {
+    path: /fleet\/|missions\/|moon-sites|programs\/|hotspot-metadata|rockets\/|original-work\.json:anatomy_art|site-stories\/apollo14/,
+  },
   Castor: { path: /fleet\/|rockets\// },
   // the rockets and the NASA centre, not the astronauts; White Sands, the White House
   Shepard: { before: /New[\s-]?$/ },
   Glenn: { before: /(New[\s-]?|NASA\s?)$/, after: /^\s?(Research|Visitor)/ },
-  White: { after: /^\s?(Sands|House|[Dd]warf)/ },
+  White: { after: /^\s?(Sands|House|[Dd]warf)/, before: /Snow\s?$/ },
   Collins: { after: /^\s?Aerospace/ },
   // inside an English acronym's expansion: MOXIE (Mars OXygen …), Mars Design Reference
   // Architecture, MOI (Mars Orbit Insertion), Mars-EDL
-  Mars: { after: /^[\s-]?(OXygen|Design Reference|Orbit Insertion|EDL)/ },
+  Mars: {
+    after: /^[\s-]?(OXygen|Design Reference|Orbit Insertion|EDL)/,
+    // the Soviet Mars probe series, beside Venera
+    path: /site-stories\/mars3\.json:chapters\.0\.images\.1\./,
+  },
+  // inside SLIM's English expansion and the quoted title 'The Last Man on the Moon'
+  Moon: { before: /(Investigating|on the)\s?$/ },
+  // the colophon's Vega probe models; the laser and solar sail (it 'Vela'), not the stars
+  Vela: { after: /^\s(laser|solare)/ },
+  // a star bio's 'also called' clause names the other name on purpose
+  Diphda: { path: /named-stars\/diphda/ },
+  Hadar: { path: /named-stars\/hadar/ },
+  Mimosa: { path: /named-stars\/mimosa/ },
+  "Tycho's Supernova": { path: /deep-sky/, locs: /^nl$/ },
+  // the label already reads 'ISS — محطة الفضاء الدولية'
+  ISS: { path: /orbit-regimes\/LEO\.json:residents\.0\.label/, locs: /^ar$/ },
   Polaris: {
     after: /^\s?(Dawn|Program)/,
     path: /programs\/spacex|science\/life-in-space|essays\/the-body-in-the-dark|missions\//,
@@ -106,6 +128,10 @@ const GUARD = {
   Phoebe: { after: /^\s?Regio/ },
   Peacock: { path: /universe\/named-stars\/peacock/ },
   // the museum "Space Center Houston", and the city inside the English Apollo 13 quote
+  // 'hot Jupiter' (an exoplanet class), 'Sun-synchronous' (an orbit type) stay whole
+  Jupiter: { before: /\bhot\s?$/i },
+  Sun: { after: /^-synchronous/ },
+  'Wolf-Lundmark-Melotte': { path: /messages:galaxy_name_wlm/, locs: /^ko$/ },
   Houston: { before: /Space Center\s?$/, after: /^,\s?we/ },
 };
 // first and middle names of the people in the glossary: a bare surname right after one
@@ -396,8 +422,13 @@ const walk = (d) =>
   });
 const edits = [];
 let n = 0;
-for (const f of walk(`i18n-src/${loc}`)) {
-  const rel = f.slice(`i18n-src/${loc}/`.length);
+// The overlays, then the UI bundle (rel "messages" = messages/<loc>.json, flat keys;
+// apply-edits.mjs writes it back there), so a name is the same in pages and in the UI.
+const files = [
+  ...walk(`i18n-src/${loc}`).map((f) => [f, f.slice(`i18n-src/${loc}/`.length)]),
+  [`messages/${loc}.json`, 'messages'],
+];
+for (const [f, rel] of files) {
   const doc = JSON.parse(fs.readFileSync(f, 'utf8'));
   const visit = (v, at) => {
     if (typeof v === 'string') {
@@ -476,7 +507,8 @@ for (const f of walk(`i18n-src/${loc}`)) {
             if (
               g &&
               (!g.locs || g.locs.test(loc)) &&
-              ((g.path && g.path.test(rel)) ||
+              // the path guard sees "<file>:<field>" ("messages:<key>" for the UI bundle)
+              ((g.path && g.path.test(`${rel}:${at}`)) ||
                 (g.before && g.before.test(str.slice(Math.max(0, off - 25), off) + a)) ||
                 (g.after &&
                   g.after.test(str.slice(off + m.length - (b ? 1 : 0), off + m.length + 25))))

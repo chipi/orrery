@@ -1,0 +1,14 @@
+[
+  {
+    "rel": "planets/jupiter.json",
+    "at": "links.2.l",
+    "old": "Missione Giunone (NASA)",
+    "new": "Missione Juno (NASA)"
+  },
+  {
+    "rel": "sun.json",
+    "at": "links.2.l",
+    "old": "Sonda solare Parker (NASA)",
+    "new": "Parker Solar Probe (NASA)"
+  }
+]

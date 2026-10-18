@@ -1,0 +1,92 @@
+[
+  {
+    "rel": "earth-objects/chandra.json",
+    "at": "short",
+    "old": "찬드라",
+    "new": "Chandra"
+  },
+  {
+    "rel": "earth-objects/hubble.json",
+    "at": "short",
+    "old": "허블",
+    "new": "Hubble"
+  },
+  {
+    "rel": "earth-objects/tiangong.json",
+    "at": "short",
+    "old": "톈궁",
+    "new": "Tiangong"
+  },
+  {
+    "rel": "iss-modules/cupola.json",
+    "at": "name",
+    "old": "컵폴라",
+    "new": "Cupola"
+  },
+  {
+    "rel": "iss-modules/kibo.json",
+    "at": "name",
+    "old": "키보",
+    "new": "Kibo"
+  },
+  {
+    "rel": "iss-modules/pirs.json",
+    "at": "name",
+    "old": "피르스",
+    "new": "Pirs"
+  },
+  {
+    "rel": "iss-modules/prichal.json",
+    "at": "name",
+    "old": "프리찰",
+    "new": "Prichal"
+  },
+  {
+    "rel": "missions/ceres/dawn.json",
+    "at": "name",
+    "old": "던",
+    "new": "Dawn"
+  },
+  {
+    "rel": "tiangong-visitors/shenzhou.json",
+    "at": "name",
+    "old": "선저우",
+    "new": "Shenzhou"
+  },
+  {
+    "rel": "tiangong-visitors/tianzhou.json",
+    "at": "name",
+    "old": "톈저우",
+    "new": "Tianzhou"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-46ec373795e7.title",
+    "old": "화성 익스프레스 — 닐리 포새 상공 비행",
+    "new": "Mars Express — 닐리 포새 상공 비행"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-46ec373795e7.caption",
+    "old": "ESA 화성 익스프레스의 닐리 포새 플라이오버.",
+    "new": "ESA Mars Express의 닐리 포새 플라이오버."
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-cbb1768008c1.title",
+    "old": "폴라리스 던 — 첫 번째 상업 우주유영",
+    "new": "Polaris Dawn — 첫 번째 상업 우주유영"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-ce51b7fd5ff0.title",
+    "old": "뉴 글렌 — 처녀 비행(NG-1)",
+    "new": "New Glenn — 처녀 비행(NG-1)"
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-ce51b7fd5ff0.caption",
+    "old": "뉴 글렌이 데뷔 비행에서 궤도에 진입하다 — 2025년 1월 16일",
+    "new": "New Glenn이 데뷔 비행에서 궤도에 진입하다 — 2025년 1월 16일"
+  }
+]

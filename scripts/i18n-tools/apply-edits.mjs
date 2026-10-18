@@ -1,20 +1,21 @@
 // Apply reviewed edits [{rel, at, old, new}] for one locale; every new string must pass problems().
+// rel "messages" is the UI bundle messages/<loc>.json (flat keys); any other rel is an
+// overlay under i18n-src/<loc>/.
 import fs from 'node:fs';
 import { writeJsonEdits } from '../lib/json-surgical.mjs';
 import { problems } from '../lib/translate-quality.mjs';
 const [loc, file] = process.argv.slice(2);
 const edits = JSON.parse(fs.readFileSync(file, 'utf8'));
+const isMessages = (rel) => rel === 'messages';
+const target = (rel, l) => (isMessages(rel) ? `messages/${l}.json` : `i18n-src/${l}/${rel}`);
 const byFile = new Map();
 const bad = [];
 for (const e of edits) {
   const en = (() => {
     try {
-      return e.at
-        .split('.')
-        .reduce(
-          (a, k) => a?.[/^\d+$/.test(k) ? +k : k],
-          JSON.parse(fs.readFileSync(`i18n-src/en-US/${e.rel}`, 'utf8')),
-        );
+      const doc = JSON.parse(fs.readFileSync(target(e.rel, 'en-US'), 'utf8'));
+      if (isMessages(e.rel)) return doc[e.at];
+      return e.at.split('.').reduce((a, k) => a?.[/^\d+$/.test(k) ? +k : k], doc);
     } catch {
       return '';
     }
@@ -30,7 +31,7 @@ for (const e of edits) {
 let n = 0,
   skipped = 0;
 for (const [rel, es] of byFile) {
-  const r = writeJsonEdits(`i18n-src/${loc}/${rel}`, es);
+  const r = writeJsonEdits(target(rel, loc), es, { flat: isMessages(rel) });
   n += r.applied;
   skipped += r?.skipped?.length ?? 0;
 }

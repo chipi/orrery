@@ -1,0 +1,128 @@
+[
+  {
+    "rel": "planets/earth.json",
+    "at": "links.1.l",
+    "old": "الأرض (استكشاف النظام الشمسي في ناسا)",
+    "new": "الأرض (استكشاف النظام الشمسي في NASA)"
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "links.2.l",
+    "old": "نظام رصد الأرض (ناسا)",
+    "new": "نظام رصد الأرض (NASA)"
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "links.3.l",
+    "old": "لماذا للأرض فصول (ناسا كلايميت كيدز)",
+    "new": "لماذا للأرض فصول (NASA Climate Kids)"
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "links.1.l",
+    "old": "المشتري (استكشاف النظام الشمسي في ناسا)",
+    "new": "المشتري (استكشاف النظام الشمسي في NASA)"
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "links.2.l",
+    "old": "مهمة جونو (ناسا)",
+    "new": "مهمة Juno (NASA)"
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "links.1.l",
+    "old": "المريخ (استكشاف النظام الشمسي في ناسا)",
+    "new": "المريخ (استكشاف النظام الشمسي في NASA)"
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "links.2.l",
+    "old": "برنامج استكشاف المريخ (ناسا)",
+    "new": "برنامج استكشاف المريخ (NASA)"
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "links.1.l",
+    "old": "عطارد (استكشاف النظام الشمسي في ناسا)",
+    "new": "عطارد (استكشاف النظام الشمسي في NASA)"
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "links.2.l",
+    "old": "مهمة مسنجر — نظرة عامة (ناسا)",
+    "new": "مهمة MESSENGER — نظرة عامة (NASA)"
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "links.3.l",
+    "old": "بيبيكولومبو (إيسا / جاكسا)",
+    "new": "BepiColombo (ESA / JAXA)"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "links.1.l",
+    "old": "نبتون (استكشاف النظام الشمسي في ناسا)",
+    "new": "نبتون (استكشاف النظام الشمسي في NASA)"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "links.2.l",
+    "old": "فوياجر 2 عند نبتون (ناسا جيه بي إل)",
+    "new": "Voyager 2 عند نبتون (NASA JPL)"
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "links.1.l",
+    "old": "زحل (استكشاف النظام الشمسي في ناسا)",
+    "new": "زحل (استكشاف النظام الشمسي في NASA)"
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "links.2.l",
+    "old": "أرشيف مهمة كاسيني (ناسا)",
+    "new": "أرشيف مهمة Cassini (NASA)"
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "links.1.l",
+    "old": "أورانوس (استكشاف النظام الشمسي في ناسا)",
+    "new": "أورانوس (استكشاف النظام الشمسي في NASA)"
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "links.2.l",
+    "old": "فوياجر 2 عند أورانوس (ناسا جيه بي إل)",
+    "new": "Voyager 2 عند أورانوس (NASA JPL)"
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "links.1.l",
+    "old": "الزهرة (استكشاف النظام الشمسي في ناسا)",
+    "new": "الزهرة (استكشاف النظام الشمسي في NASA)"
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "links.3.l",
+    "old": "دافنشي + فيريتاس (ناسا)",
+    "new": "DAVINCI + VERITAS (NASA)"
+  },
+  {
+    "rel": "sun.json",
+    "at": "links.1.l",
+    "old": "الشمس (استكشاف النظام الشمسي في ناسا)",
+    "new": "الشمس (استكشاف النظام الشمسي في NASA)"
+  },
+  {
+    "rel": "sun.json",
+    "at": "links.2.l",
+    "old": "مسبار باركر الشمسي (ناسا)",
+    "new": "Parker Solar Probe (NASA)"
+  },
+  {
+    "rel": "sun.json",
+    "at": "links.3.l",
+    "old": "مرصد الديناميكا الشمسية (ناسا)",
+    "new": "مرصد الديناميكا الشمسية (NASA)"
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "rel": "earth-objects/hubble.json",
+    "at": "short",
+    "old": "हबल",
+    "new": "Hubble"
+  },
+  {
+    "rel": "missions/ceres/dawn.json",
+    "at": "name",
+    "old": "डॉन",
+    "new": "Dawn"
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "links.2.l",
+    "old": "जूनो मिशन (NASA)",
+    "new": "Juno मिशन (NASA)"
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "links.3.l",
+    "old": "बेपीकोलोम्बो (ESA / JAXA)",
+    "new": "BepiColombo (ESA / JAXA)"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "links.2.l",
+    "old": "वॉयेजर 2 वरुण पर (NASA JPL)",
+    "new": "Voyager 2 वरुण पर (NASA JPL)"
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "links.2.l",
+    "old": "वॉयेजर 2 अरुण पर (NASA JPL)",
+    "new": "Voyager 2 अरुण पर (NASA JPL)"
+  },
+  {
+    "rel": "sun.json",
+    "at": "links.2.l",
+    "old": "पार्कर सौर जाँच (NASA)",
+    "new": "Parker Solar Probe (NASA)"
+  }
+]

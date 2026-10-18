@@ -1,0 +1,128 @@
+[
+  {
+    "rel": "planets/earth.json",
+    "at": "links.1.l",
+    "old": "Земља (__АЦР0__ Истраживање соларног система)",
+    "new": "Земља (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "links.2.l",
+    "old": "Систем за посматрање Земље (__АЦР0__)",
+    "new": "Систем за посматрање Земље (NASA)"
+  },
+  {
+    "rel": "planets/earth.json",
+    "at": "links.3.l",
+    "old": "Зашто Земља има годишња доба (__АЦР0__ Цлимате Кидс)",
+    "new": "Зашто Земља има годишња доба (NASA Climate Kids)"
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "links.1.l",
+    "old": "Јупитер (__АЦР0__ Истраживање соларног система)",
+    "new": "Јупитер (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "links.2.l",
+    "old": "Јуно мисија (__АЦР0__)",
+    "new": "Мисија Juno (NASA)"
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "links.1.l",
+    "old": "Марс (__АЦР0__ истраживање соларног система)",
+    "new": "Марс (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/mars.json",
+    "at": "links.2.l",
+    "old": "Програм истраживања Марса (__АЦР0__)",
+    "new": "Програм истраживања Марса (NASA)"
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "links.1.l",
+    "old": "Меркур (__АЦР0__ Истраживање соларног система)",
+    "new": "Меркур (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "links.2.l",
+    "old": "Преглед мисије МЕССЕНГЕР (__АЦР0__)",
+    "new": "Преглед мисије MESSENGER (NASA)"
+  },
+  {
+    "rel": "planets/mercury.json",
+    "at": "links.3.l",
+    "old": "БепиЦоломбо (__АЦР0__ / __АЦР1__)",
+    "new": "BepiColombo (ESA / JAXA)"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "links.1.l",
+    "old": "Нептун (__АЦР0__ Истраживање соларног система)",
+    "new": "Нептун (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "links.2.l",
+    "old": "Воиагер 2 на Нептуну (__АЦР0__ ЈПЛ)",
+    "new": "Voyager 2 код Нептуна (NASA JPL)"
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "links.1.l",
+    "old": "Сатурн (__АЦР0__ Истраживање соларног система)",
+    "new": "Сатурн (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "links.2.l",
+    "old": "Архива мисије Цассини (__АЦР0__)",
+    "new": "Архива мисије Cassini (NASA)"
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "links.1.l",
+    "old": "Уран (__АЦР0__ истраживање соларног система)",
+    "new": "Уран (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "links.2.l",
+    "old": "Воиагер 2 на Урану (__АЦР0__ ЈПЛ)",
+    "new": "Voyager 2 код Урана (NASA JPL)"
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "links.1.l",
+    "old": "Венера (__АЦР0__ истраживање соларног система)",
+    "new": "Венера (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "planets/venus.json",
+    "at": "links.3.l",
+    "old": "ДАВИНЦИ + ВЕРИТАС (__АЦР0__)",
+    "new": "DAVINCI + VERITAS (NASA)"
+  },
+  {
+    "rel": "sun.json",
+    "at": "links.1.l",
+    "old": "Сунце (__АЦР0__ Истраживање соларног система)",
+    "new": "Сунце (NASA Solar System Exploration)"
+  },
+  {
+    "rel": "sun.json",
+    "at": "links.2.l",
+    "old": "Паркер соларна сонда (__АЦР0__)",
+    "new": "Parker Solar Probe (NASA)"
+  },
+  {
+    "rel": "sun.json",
+    "at": "links.3.l",
+    "old": "Опсерваторија соларне динамике (__АЦР0__)",
+    "new": "Опсерваторија Solar Dynamics (NASA)"
+  }
+]

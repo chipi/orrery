@@ -23,7 +23,7 @@ Not part of the app or CI; excluded from the coverage gate (`vite.config.ts`).
 |---|---|
 | `apply-literal.mjs <map.tsv>` | `file\tfrom\tto` rows; each `from` must occur exactly once. For grammar-aware hand fixes. |
 | `apply-keys.mjs <loc> <spec.json>` | `{ file: { key: value } }` — replace top-level keys, shape checked against en-US. |
-| `apply-edits.mjs <loc> <edits.json>` | `[{rel, at, old, new}]` — reviewed path edits; refuses any that add a `problems()` failure. |
+| `apply-edits.mjs <loc> <edits.json>` | `[{rel, at, old, new}]` — reviewed path edits; refuses any that add a `problems()` failure. `rel: "messages"` writes the UI bundle `messages/<loc>.json`. |
 | `showdiff.mjs <edits.json>` | One line per edit, only the changed window — for reviewing before applying. |
 | `bodies-apply.mjs <loc>` | Candidate edits: English planet/moon/small-body names → glossary form (CJK spacing, Korean particles), vehicle names protected. Writes `maps/…/bodies-edits-<loc>.json`. |
 | `bodies.mjs <loc> [out.tsv]` | Counts body names left in English outside vehicle names, with context. |
@@ -44,7 +44,7 @@ Pass 1 (gallery/entity pages set each name) and pass 2 (article text follows the
 | `wikidata-labels.mjs "<enwiki title>"…` | Prints the title each locale's own Wikipedia uses — the evidence for a native name. |
 | `canonical-names.mjs`, `canonical-check.mjs`, `canonical-english-words.mjs`, `name-variants.mjs` | One name per thing per language: list the page names, find the text that spells them differently. |
 | `site-names.mjs`, `planet-pages.mjs`, `launch-site-pages.mjs`, `unify-names.mjs`, `descriptor-names.mjs` | Pass-1 writers for the entity pages; `planet-pages.mjs` also syncs page names into the `body` glossary. |
-| `glossary-apply.mjs <loc> <classes>` | Pass-2 generator: glossary forms (`native-terms.json`) into running text, with rocket-family guards, Latin-script article rules, Korean particles, and Russian/Serbian declension. Writes `maps/…/glossary-edits-<loc>.json` for review. |
+| `glossary-apply.mjs <loc> <classes>` | Pass-2 generator: glossary forms (`native-terms.json`) into running text, with rocket-family guards, Latin-script article rules, Korean particles, and Russian/Serbian declension, over the overlays **and the UI bundle** (`messages/<loc>.json`, rel `messages`). Guards (`GUARD`) keep homonyms out (Vega probes, Sirius XM, Snow White, SLIM, Space Center Houston); a path guard matches `<file>:<field>`. A full run should propose nothing; anything it proposes is either a new fix or a missing guard. Writes `maps/…/glossary-edits-<loc>.json` for review. |
 | `ru-case.mjs`, `sr-case.mjs` | Declension and a case guess from the preceding words, for `glossary-apply.mjs`. `sr-case.mjs` also reads the case from a hyphenated ending ("Mars-а"); a possessive ending ("Phobos-ова") becomes a possessive adjective (Фобосова). |
 | `patch-edits.mjs <edits.json> <corrections.tsv>` | Hand corrections on the generated edits before applying; reports rows that no longer match. An optional 4th column names the field, for a file where two fields carry the same text. |
 | `pass2-size.mjs` | Counts pass-2 candidates per locale before starting. |
@@ -61,6 +61,7 @@ Names glossary (celestial names and people), in order:
 | `name-glossary-merge.mjs <forms.tsv> <overrides.tsv> <features.tsv>` | Writes the `body` / `star` / `person` / `feature` classes of `native-terms.json` (never overwrites an existing key); guards for Bayer and catalogue aliases, designations, nicknames, transliteration-only changes in Latin-script locales. |
 | `star-pages.mjs [--dry]` | Pass 1 for stars: writes each named-star page's localized `name` from the `star` glossary, and removes a name the glossary no longer gives. |
 | `build-en-overlays.mjs <surface> [--seed=<locs>] [--manifest=<out.json>]` | en-US overlays for data sets whose English lives only in `static/data` (`site-stories`, `deep-sky`, `trajectories`, `videos`, `original-work`), in the shape each loader merges; seeds missing locale files with the English and writes a `retranslate-fields.mjs` manifest for them. |
+| `name-drift-scan.mjs [locs] [--json=out]` | Runs the checker's name tests (`problems()`: designations and the site's own names kept as in English outside their origin locale) over every existing translation, overlays and UI. A `validate-data` gate (`check-i18n-name-drift`): any hit fails. Reviewed exceptions sit in its `ALLOW` list. |
 | `variant-sweep.mjs <loc> <map.tsv> <out-edits.json>` | One name per language in running text: replaces other spellings of a name (regex rows) with the gallery's form and writes an edits file for `apply-edits.mjs`; prints the hit count per row. |
 | `glossary-keys.mjs` | Per-key context report: where each glossary key occurs in the English source, to decide guards and overrides. |
 | `person-case.test.ts` | Tests for the person declension in `ru-case.mjs` / `sr-case.mjs`. |

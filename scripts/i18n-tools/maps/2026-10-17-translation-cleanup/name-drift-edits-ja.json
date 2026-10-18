@@ -1,0 +1,68 @@
+[
+  {
+    "rel": "earth-objects/tiangong.json",
+    "at": "short",
+    "old": "天宮",
+    "new": "Tiangong"
+  },
+  {
+    "rel": "fleet/rover/yutu.json",
+    "at": "name",
+    "old": "ユトゥ",
+    "new": "Yutu"
+  },
+  {
+    "rel": "iss-modules/pirs.json",
+    "at": "name",
+    "old": "ピルス",
+    "new": "Pirs"
+  },
+  {
+    "rel": "missions/ceres/dawn.json",
+    "at": "name",
+    "old": "ドーン",
+    "new": "Dawn"
+  },
+  {
+    "rel": "tiangong-visitors/shenzhou.json",
+    "at": "name",
+    "old": "神舟",
+    "new": "Shenzhou"
+  },
+  {
+    "rel": "tiangong-visitors/tianzhou.json",
+    "at": "name",
+    "old": "天舟",
+    "new": "Tianzhou"
+  },
+  {
+    "rel": "trajectories/galileo-tour.json",
+    "at": "name",
+    "old": "ガリレオ木星系探査",
+    "new": "Galileo 木星系探査"
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "links.2.l",
+    "old": "ジュノー（NASA）",
+    "new": "Juno ミッション（NASA）"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "links.2.l",
+    "old": "ボイジャー 2 号の海王星（NASA JPL）",
+    "new": "海王星の Voyager 2（NASA JPL）"
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "links.2.l",
+    "old": "ボイジャー 2 号の天王星（NASA JPL）",
+    "new": "天王星の Voyager 2（NASA JPL）"
+  },
+  {
+    "rel": "sun.json",
+    "at": "links.2.l",
+    "old": "パーカー・ソーラー・プローブ（NASA）",
+    "new": "Parker Solar Probe（NASA）"
+  }
+]

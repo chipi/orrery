@@ -1,0 +1,554 @@
+[
+  {
+    "rel": "messages",
+    "at": "nav_iss",
+    "old": "ISS",
+    "new": "国际空间站"
+  },
+  {
+    "rel": "messages",
+    "at": "library_category_iss_module",
+    "old": "ISS模块",
+    "new": "国际空间站模块"
+  },
+  {
+    "rel": "messages",
+    "at": "library_category_iss_visitor",
+    "old": "ISS 访客",
+    "new": "国际空间站访客"
+  },
+  {
+    "rel": "messages",
+    "at": "credits_used_route_iss",
+    "old": "ISS 探索器",
+    "new": "国际空间站探索器"
+  },
+  {
+    "rel": "messages",
+    "at": "credits_category_iss_module",
+    "old": "ISS模块",
+    "new": "国际空间站模块"
+  },
+  {
+    "rel": "messages",
+    "at": "why_mean_velocity_body",
+    "old": "平均轨道速度. 近身移动速度快(Mercury平均47公里/秒);外体爬行(Neptune平均5.4公里/秒). Vis-viva 链接速度在椭圆上的位置——近地点速度快,异端速度慢.",
+    "new": "平均轨道速度. 近身移动速度快(Mercury平均47公里/秒);外体爬行(海王星平均5.4公里/秒). Vis-viva 链接速度在椭圆上的位置——近地点速度快,异端速度慢."
+  },
+  {
+    "rel": "messages",
+    "at": "why_earth_inclination_body",
+    "old": "倾角是轨道的倾斜相对于地球的赤道. 0°(赤道)从低纬度发射场出发,价格低廉;51.6°(ISS)是俄罗斯发射在不飞越人口密集地区的情况下达到的最低倾角;~98°(太阳同步)保持同样的成像照明. 是一种制约,而不是选择.",
+    "new": "倾角是轨道的倾斜相对于地球的赤道. 0°(赤道)从低纬度发射场出发,价格低廉;51.6°(国际空间站)是俄罗斯发射在不飞越人口密集地区的情况下达到的最低倾角;~98°(太阳同步)保持同样的成像照明. 是一种制约,而不是选择."
+  },
+  {
+    "rel": "messages",
+    "at": "why_samples_body",
+    "old": "返回的样品可以用质谱仪、电子显微镜、同位素测年仪等仪器进行分析——这些仪器太大或耗电太多，无法飞上太空。Apollo 带回了 382 千克；Chang'e 5 从月球靠近地球一侧带回了 1.7 千克较年轻的风化层样品（Oceanus Procellarum）。每一千克都能为后续数十年的科学研究打开大门。",
+    "new": "返回的样品可以用质谱仪、电子显微镜、同位素测年仪等仪器进行分析——这些仪器太大或耗电太多，无法飞上太空。Apollo 带回了 382 千克；Chang'e 5 从月球靠近地球一侧带回了 1.7 千克较年轻的风化层样品（风暴洋）。每一千克都能为后续数十年的科学研究打开大门。"
+  },
+  {
+    "rel": "messages",
+    "at": "why_station_inclination_body",
+    "old": "倾角由发射场决定，而非设计师偏好。ISS处于51.6°是俄罗斯Soyuz火箭在不将废弃级落在有人居住陆地上的前提下能达到的最低倾角。Tiangong处于41.5°可从中国南部的Wenchang发射场到达，且无需飞越有人居住地区。每种选择都在发射Δv与地面覆盖范围之间做出权衡。",
+    "new": "倾角由发射场决定，而非设计师偏好。国际空间站处于51.6°是俄罗斯Soyuz火箭在不将废弃级落在有人居住陆地上的前提下能达到的最低倾角。Tiangong处于41.5°可从中国南部的文昌发射场到达，且无需飞越有人居住地区。每种选择都在发射Δv与地面覆盖范围之间做出权衡。"
+  },
+  {
+    "rel": "messages",
+    "at": "iss_page_title",
+    "old": "ISS Explorer · 轨道仪",
+    "new": "国际空间站 Explorer · 轨道仪"
+  },
+  {
+    "rel": "messages",
+    "at": "iss_load_failed",
+    "old": "装入 ISS 模块失败。",
+    "new": "装入国际空间站模块失败。"
+  },
+  {
+    "rel": "messages",
+    "at": "iss_hud_aria",
+    "old": "ISS视图控制",
+    "new": "国际空间站视图控制"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_layer_tip_dwarfs",
+    "old": "切换矮行星的能见度( Pluto, Eris, Ceres, Haumea, Makemake)",
+    "new": "切换矮行星的能见度(冥王星, 阋神星, 谷神星, 妊神星, 鸟神星)"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_layer_tip_comets",
+    "old": "切换彗星轨迹的可见度（Halley、Hale-Bopp等）",
+    "new": "切换彗星轨迹的可见度（哈雷彗星、Hale-Bopp等）"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_layer_tip_interstellar",
+    "old": "星际访问者——显示或隐藏通过太阳系的物体(如 Oumuamua).",
+    "new": "星际访问者——显示或隐藏通过太阳系的物体(如奥陌陌)."
+  },
+  {
+    "rel": "messages",
+    "at": "earth_layer_tip_habitats",
+    "old": "碎裂轨道生境——ISS、Tiangong",
+    "new": "碎裂轨道生境——国际空间站、Tiangong"
+  },
+  {
+    "rel": "messages",
+    "at": "landing_card_earth_desc",
+    "old": "活跃的卫星,GPS,ISS,JWST——我们后院的一切.",
+    "new": "活跃的卫星,GPS,国际空间站,JWST——我们后院的一切."
+  },
+  {
+    "rel": "messages",
+    "at": "landing_card_iss_title",
+    "old": "ISS舱探险员",
+    "new": "国际空间站舱探险员"
+  },
+  {
+    "rel": "messages",
+    "at": "a11y_iss_modules_list_aria",
+    "old": "ISS 舱段 — 列表视图（与三维模型并列）",
+    "new": "国际空间站舱段 — 列表视图（与三维模型并列）"
+  },
+  {
+    "rel": "messages",
+    "at": "chip_label_sleep_nutrition_circadian",
+    "old": "睡眠、营养与昼夜节律 — 每天16次日出、90-min周期、ISS厨房",
+    "new": "睡眠、营养与昼夜节律 — 每天16次日出、90-min周期、国际空间站厨房"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_iconic_tagline_pioneer_10",
+    "old": "首个穿越小行星带并飞越 Jupiter 的航天器。",
+    "new": "首个穿越小行星带并飞越木星的航天器。"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_iconic_tagline_pioneer_11",
+    "old": "首次近距离飞越 Saturn — 为 Cassini 铺平道路。",
+    "new": "首次近距离飞越土星 — 为 Cassini 铺平道路。"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_iconic_tagline_vega_1",
+    "old": "Venus 着陆器加气球,随后于 1986 年与 Halley's Comet 交会。",
+    "new": "金星着陆器加气球,随后于 1986 年与哈雷彗星交会。"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_iconic_tagline_vega_2",
+    "old": "Vega 1 的孪生兄弟 — 1986 年第二次 Venus 与 Halley's Comet 飞越。",
+    "new": "Vega 1 的孪生兄弟 — 1986 年第二次金星与哈雷彗星飞越。"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_iconic_tagline_giotto",
+    "old": "首批彗核近距离图像 (1P/Halley)。",
+    "new": "首批彗核近距离图像 (1P/哈雷)。"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_iconic_tagline_galileo",
+    "old": "首颗 Jupiter 轨道器;释放大气进入探测器。",
+    "new": "首颗木星轨道器;释放大气进入探测器。"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_iconic_tagline_ulysses",
+    "old": "首个飞越 Sun 两极的航天器。",
+    "new": "首个飞越太阳两极的航天器。"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_iconic_tagline_cassini",
+    "old": "13 年 Saturn 轨道器;Huygens 探测器登陆 Titan。",
+    "new": "13 年土星轨道器;Huygens 探测器登陆土卫六。"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_iconic_tagline_new_horizons",
+    "old": "首次飞越 Pluto 与 Kuiper Belt。",
+    "new": "首次飞越冥王星与柯伊伯带。"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_iconic_tagline_dawn",
+    "old": "首个环绕两个地外天体的任务 (Vesta, Ceres)。",
+    "new": "首个环绕两个地外天体的任务 (灶神星, 谷神星)。"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_iconic_tagline_juno",
+    "old": "从极轨道测绘 Jupiter 的内部与磁场。",
+    "new": "从极轨道测绘木星的内部与磁场。"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_iconic_tagline_hayabusa2",
+    "old": "从小行星 Ryugu 带回样本。",
+    "new": "从小行星龙宫带回样本。"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_iconic_tagline_juice",
+    "old": "三次 Galilean 卫星飞越,随后进入 Ganymede 轨道。",
+    "new": "三次 Galilean 卫星飞越,随后进入木卫三轨道。"
+  },
+  {
+    "rel": "messages",
+    "at": "iss_toggle_timeline_aria",
+    "old": "切换ISS组装时间线",
+    "new": "切换国际空间站组装时间线"
+  },
+  {
+    "rel": "messages",
+    "at": "iss_timeline_title",
+    "old": "每个舱段 + 访客加入ISS的时间顺序",
+    "new": "每个舱段 + 访客加入国际空间站的时间顺序"
+  },
+  {
+    "rel": "messages",
+    "at": "poster_iss_aria",
+    "old": "ISS海报——伙伴国旗帜色彩环绕空间站",
+    "new": "国际空间站海报——伙伴国旗帜色彩环绕空间站"
+  },
+  {
+    "rel": "messages",
+    "at": "poster_gagarin_aria",
+    "old": "Yuri Gagarin海报——SK-1头盔面罩，金色玻璃中映出地球倒影",
+    "new": "尤里·加加林海报——SK-1头盔面罩，金色玻璃中映出地球倒影"
+  },
+  {
+    "rel": "messages",
+    "at": "science_layer_moons_desc",
+    "old": "主要卫星 + 各行星轨道环（木星的伽利略卫星、土星的Titan/Enceladus/Iapetus、地球的月球、火星的Phobos/Deimos、海王星的Triton）。",
+    "new": "主要卫星 + 各行星轨道环（木星的伽利略卫星、土星的土卫六/土卫二/Iapetus、地球的月球、火星的火卫一/火卫二、海王星的海卫一）。"
+  },
+  {
+    "rel": "messages",
+    "at": "programs_era_iss",
+    "old": "ISS时代 · 1998–2030",
+    "new": "国际空间站时代 · 1998–2030"
+  },
+  {
+    "rel": "messages",
+    "at": "live_intro",
+    "old": "来自太空的实时视景和直播——ISS的永久直播流,加上正在进行或即将进行的任何发射。",
+    "new": "来自太空的实时视景和直播——国际空间站的永久直播流,加上正在进行或即将进行的任何发射。"
+  },
+  {
+    "rel": "messages",
+    "at": "landing_card_live_desc",
+    "old": "国际空间站（ISS）的永久直播流以及正在进行或即将进行的发射——在应用内观看，内容来自官方频道。",
+    "new": "国际空间站的永久直播流以及正在进行或即将进行的发射——在应用内观看，内容来自官方频道。"
+  },
+  {
+    "rel": "messages",
+    "at": "live_iss_watch",
+    "old": "观看 ISS 直播 →",
+    "new": "观看国际空间站直播 →"
+  },
+  {
+    "rel": "messages",
+    "at": "live_iss_unavailable",
+    "old": "ISS直播目前无法使用。",
+    "new": "国际空间站直播目前无法使用。"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_hub_desc_localgroup",
+    "old": "再远一步 — Andromeda、Triangulum、Magellanic Clouds，以及数十个矮星系。",
+    "new": "再远一步 — Andromeda、Triangulum、麦哲伦云，以及数十个矮星系。"
+  },
+  {
+    "rel": "messages",
+    "at": "fly_recovery_caption_soyuz1",
+    "old": "降落伞失效——返回舱高速撞向地面。Vladimir Komarov遇难，成为航天飞行史上首位罹难者。",
+    "new": "降落伞失效——返回舱高速撞向地面。弗拉基米尔·科马罗夫遇难，成为航天飞行史上首位罹难者。"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_heading_voyager_1",
+    "old": "鹿豹座的Gliese 445 — 约 40,000 年后的最近接近",
+    "new": "鹿豹座的格利泽445 — 约 40,000 年后的最近接近"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_heading_pioneer_10",
+    "old": "金牛座Aldebaran的方向 — 漂移约 200 万年，非最近接近",
+    "new": "金牛座毕宿五的方向 — 漂移约 200 万年，非最近接近"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_virgo_schematic_badge",
+    "old": "Virgo Supercluster · 示意图 · 非按比例",
+    "new": "室女座超星系团 · 示意图 · 非按比例"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_virgo_anchor_blurb",
+    "old": "你在这里，位于超星系团的边缘。整个本星系群只是一个点，是散布在Virgo Supercluster中众多星系群之一，并缓慢向处女座星系团坠落。",
+    "new": "你在这里，位于超星系团的边缘。整个本星系群只是一个点，是散布在室女座超星系团中众多星系群之一，并缓慢向处女座星系团坠落。"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_lens_story_virgo_body",
+    "old": "我们的家乡超星系团 — 超过一百个星系群和星系团散布在约33兆秒差距（约1.1亿光年，按某些定义更大）的范围内，由Virgo Cluster主导。人们长期以为它是我们所属的最大结构；后来Laniakea的发现揭示它只是更庞大天体的一个叶瓣。",
+    "new": "我们的家乡超星系团 — 超过一百个星系群和星系团散布在约33兆秒差距（约1.1亿光年，按某些定义更大）的范围内，由室女座星系团主导。人们长期以为它是我们所属的最大结构；后来Laniakea的发现揭示它只是更庞大天体的一个叶瓣。"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_laniakea_blurb",
+    "old": "Laniakea内的一个超星系团或星系团 — 这个约160百万秒差距的吸引域盆地中，我们的Virgo Supercluster仅是其中的一个叶片。这里的所有物质在宇宙时间尺度上都流向同一个引力低点：Great Attractor。",
+    "new": "Laniakea内的一个超星系团或星系团 — 这个约160百万秒差距的吸引域盆地中，我们的室女座超星系团仅是其中的一个叶片。这里的所有物质在宇宙时间尺度上都流向同一个引力低点：巨引源。"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_laniakea_anchor_blurb",
+    "old": "你在这里。整个Virgo Supercluster — 本星系群、Virgo Cluster及所有这些 — 是Laniakea的单一叶片，位于流向Great Attractor的流场边缘。",
+    "new": "你在这里。整个室女座超星系团 — 本星系群、室女座星系团及所有这些 — 是Laniakea的单一叶片，位于流向巨引源的流场边缘。"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_laniakea_attractor_blurb",
+    "old": "Great Attractor — Laniakea的引力低点，位于银河系平面后方的Norma Cluster附近。数千个星系的运动，包括我们自己的星系，都朝向这个区域倾斜；它正是定义Laniakea为单一结构的因素。",
+    "new": "巨引源 — Laniakea的引力低点，位于银河系平面后方的矩尺座星系团附近。数千个星系的运动，包括我们自己的星系，都朝向这个区域倾斜；它正是定义Laniakea为单一结构的因素。"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_lens_story_laniakea_body",
+    "old": "'夏威夷语中意为'广阔的天空' — 2014年定义的超星系团，不是按星系所处位置而是按星系流动方向来划分。Laniakea超星系团跨度约160百万秒差距（5亿光年），包含约10万个星系，是我们本星系群引力流向之处，朝向Great Attractor方向。Laniakea及其邻近星系团都是一个更大引力流的组成部分：Shapley Concentration。",
+    "new": "'夏威夷语中意为'广阔的天空' — 2014年定义的超星系团，不是按星系所处位置而是按星系流动方向来划分。Laniakea超星系团跨度约160百万秒差距（5亿光年），包含约10万个星系，是我们本星系群引力流向之处，朝向巨引源方向。Laniakea及其邻近星系团都是一个更大引力流的组成部分：夏普力超星系团。"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_hub_desc_virgo",
+    "old": "我们的本超星系团 — 一百个星系群被Virgo Cluster吸引。",
+    "new": "我们的本超星系团 — 一百个星系群被室女座星系团吸引。"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_lar_cape",
+    "old": "Cape Canaveral（北纬28°）——美国东海岸靶场",
+    "new": "卡纳维拉尔角（北纬28°）——美国东海岸靶场"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_lar_baikonur",
+    "old": "Baikonur（北纬46°）——Gagarin升空之地",
+    "new": "拜科努尔（北纬46°）——加加林升空之地"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_lar_vostok1",
+    "old": "Vostok 1——Gagarin,第一位进入轨道的人类",
+    "new": "Vostok 1——加加林,第一位进入轨道的人类"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_loe_hook",
+    "old": "最早的太空飞行正是这样的弧线——乘火箭升空，在伞盖下降落。Gagarin甚至从他的Vostok中弹射出来单独用伞降落；Shepard和Glenn则溅落入海。",
+    "new": "最早的太空飞行正是这样的弧线——乘火箭升空，在伞盖下降落。加加林甚至从他的Vostok中弹射出来单独用伞降落；谢泼德和格伦则溅落入海。"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_loe_vostok1",
+    "old": "Vostok 1——Gagarin升空并靠降落伞返回",
+    "new": "Vostok 1——加加林升空并靠降落伞返回"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_loe_freedom7",
+    "old": "Freedom 7——Shepard，第一位进入太空的美国人",
+    "new": "Freedom 7——谢泼德，第一位进入太空的美国人"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_loe_friendship7",
+    "old": "Friendship 7——Glenn，第一位绕行地球轨道的美国人",
+    "new": "Friendship 7——格伦，第一位绕行地球轨道的美国人"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_motion_hook",
+    "old": "又是牛顿的大炮：缓慢的抛射会落回地球（一次亚轨道跳跃），但以约7.9 km/s发射，它就会绕整个星球坠落。Shepard飞的是抛射；Gagarin飞的是完整一圈。",
+    "new": "又是牛顿的大炮：缓慢的抛射会落回地球（一次亚轨道跳跃），但以约7.9 km/s发射，它就会绕整个星球坠落。谢泼德飞的是抛射；加加林飞的是完整一圈。"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_catch_iss_title",
+    "old": "捕捉 ISS",
+    "new": "捕捉国际空间站"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_g9_track",
+    "old": "这就是你不能每晚在同一时刻抬头就能看到它的原因：在它绕行一圈所需的约 92 分钟里，地球在下方自转了约 23°（赤道处约 2,500 公里），因此每一次过境都描出一条全新的轨迹，逐渐向西推移。轨迹本身是一条正弦曲线——纬度最高摆动到轨道倾角（±51.6°）便不再上升，这也是为什么只有你居住在这一纬度带内，ISS 才有可能经过你的纬度。",
+    "new": "这就是你不能每晚在同一时刻抬头就能看到它的原因：在它绕行一圈所需的约 92 分钟里，地球在下方自转了约 23°（赤道处约 2,500 公里），因此每一次过境都描出一条全新的轨迹，逐渐向西推移。轨迹本身是一条正弦曲线——纬度最高摆动到轨道倾角（±51.6°）便不再上升，这也是为什么只有你居住在这一纬度带内，国际空间站才有可能经过你的纬度。"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_g9_visible",
+    "old": "而且你只能在一个狭窄的时间窗口内看到它。ISS是靠反射太阳光而发光的，当它仍然被照亮而你的天空已经变暗时，它就是可见的。由于ISS在420公里的高度，当太阳下沉到地平线以下约20°时才会进入地球阴影——刚好过了暮光的末尾——所以要在黄昏后的几小时或黎明前观看，一颗稳定、快速、不闪烁的\"星星\"会在几分钟内滑过天空。",
+    "new": "而且你只能在一个狭窄的时间窗口内看到它。国际空间站是靠反射太阳光而发光的，当它仍然被照亮而你的天空已经变暗时，它就是可见的。由于国际空间站在420公里的高度，当太阳下沉到地平线以下约20°时才会进入地球阴影——刚好过了暮光的末尾——所以要在黄昏后的几小时或黎明前观看，一颗稳定、快速、不闪烁的\"星星\"会在几分钟内滑过天空。"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_g9_why",
+    "old": "这里的一切都用肉眼可见且免费：ISS 是夜空中最亮的物体之一——比任何恒星都亮——它在 2–5 分钟内不闪烁地划过（没有飞机灯）。各类应用和 NASA 的“Spot the Station”会把同样这三个数字——高度、倾角、暮光窗口——转化为它经过你所在地址的精确时刻。",
+    "new": "这里的一切都用肉眼可见且免费：国际空间站是夜空中最亮的物体之一——比任何恒星都亮——它在 2–5 分钟内不闪烁地划过（没有飞机灯）。各类应用和 NASA 的“Spot the Station”会把同样这三个数字——高度、倾角、暮光窗口——转化为它经过你所在地址的精确时刻。"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_g9_iss",
+    "old": "ISS——你正在捕捉的空间站，3D 呈现",
+    "new": "国际空间站——你正在捕捉的空间站，3D 呈现"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_g9_iss_fleet",
+    "old": "ISS——已组装的空间站及其舱段",
+    "new": "国际空间站——已组装的空间站及其舱段"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_isspass_title",
+    "old": "下一次ISS过境",
+    "new": "下一次国际空间站过境"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_g10_coverage",
+    "old": "那么需要多少颗卫星呢？更高的轨道能看到更大一片地球，所以需要的数量更少：从地球静止轨道，只需三颗就能覆盖整个有人居住的地球——这正是 Arthur C. Clarke 在 1945 年发表的构想。降到 550 千米的壳层，每颗看到的范围小到你需要一整圈才能跨越地平线，而全球覆盖则需要数千颗分布在许多圈层中。这就是 Starlink 和 OneWeb 背后的巨型星座数学。",
+    "new": "那么需要多少颗卫星呢？更高的轨道能看到更大一片地球，所以需要的数量更少：从地球静止轨道，只需三颗就能覆盖整个有人居住的地球——这正是亚瑟·克拉克在 1945 年发表的构想。降到 550 千米的壳层，每颗看到的范围小到你需要一整圈才能跨越地平线，而全球覆盖则需要数千颗分布在许多圈层中。这就是 Starlink 和 OneWeb 背后的巨型星座数学。"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_g10_azimuth",
+    "old": "最后一个主题，回到我们起点：发射。从任何发射台都无法到达任何轨道——倾角永远不会小于你的发射纬度，而罗盘方向由 cos(方位角) = cos(倾角)/cos(纬度) 确定。向正东瞄准，你就会得到一个以你所在纬度倾斜的轨道，这是最便宜的（这就是为什么ISS由Baikonur和Cape进行补给）。而太阳同步轨道是逆行的，这意味着向南瞄准——这正是为什么那些任务从Vandenberg沿加州海岸发射。",
+    "new": "最后一个主题，回到我们起点：发射。从任何发射台都无法到达任何轨道——倾角永远不会小于你的发射纬度，而罗盘方向由 cos(方位角) = cos(倾角)/cos(纬度) 确定。向正东瞄准，你就会得到一个以你所在纬度倾斜的轨道，这是最便宜的（这就是为什么国际空间站由拜科努尔和Cape进行补给）。而太阳同步轨道是逆行的，这意味着向南瞄准——这正是为什么那些任务从范登堡沿加州海岸发射。"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_fc_hook",
+    "old": "1965年，在JPL工作的加州理工研究生Gary Flandro注意到，外行星将在1970年代末排成一线，让一艘飞船能巡游它们全部——这一巧合直到2153年才会重现。那次观察成就了Voyager。",
+    "new": "1965年，在JPL工作的加州理工研究生加里·弗兰德罗注意到，外行星将在1970年代末排成一线，让一艘飞船能巡游它们全部——这一巧合直到2153年才会重现。那次观察成就了Voyager。"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_ro_why",
+    "old": "太空中的一切都从这里开始：在你首先进入轨道之前——即横向移动足够快以持续绕地球坠落——你无法前往月球、火星或任何地方。Sputnik 在 1957 年证明了这一点；四年后 Gagarin 凭同一原理成为首位进入轨道的人类。",
+    "new": "太空中的一切都从这里开始：在你首先进入轨道之前——即横向移动足够快以持续绕地球坠落——你无法前往月球、火星或任何地方。Sputnik 在 1957 年证明了这一点；四年后加加林凭同一原理成为首位进入轨道的人类。"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_ro_vostok1",
+    "old": "Vostok 1 —— Gagarin，首位入轨人类",
+    "new": "Vostok 1 —— 加加林，首位入轨人类"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_ro_iss",
+    "old": "ISS —— 在轨生活",
+    "new": "国际空间站 —— 在轨生活"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_sysland_hook",
+    "old": "Apollo 11的着陆计算机在过载时抛出了 1202 报警，却依然继续飞完下降——因为它的制导回路被设计成能舍弃低优先级工作，而绝不放弃那唯一要紧的任务：让飞船着陆。Armstrong接管了姿态手动控制，但节流阀仍由计算机运行。",
+    "new": "Apollo 11的着陆计算机在过载时抛出了 1202 报警，却依然继续飞完下降——因为它的制导回路被设计成能舍弃低优先级工作，而绝不放弃那唯一要紧的任务：让飞船着陆。阿姆斯特朗接管了姿态手动控制，但节流阀仍由计算机运行。"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_lot_entry",
+    "old": "土卫六(Titan)藏身于一层氮气大气之下,其地表气压约为地球的一点五倍,而且大气层向上延伸得很高——Huygens 在一千多公里的高空就已开始感受到它的存在。探测器以 6 km/s 的速度进入,在防热罩后承受了十几个 g 的过载:这是一次真正的再入,而且发生在一颗卫星上。",
+    "new": "土卫六藏身于一层氮气大气之下,其地表气压约为地球的一点五倍,而且大气层向上延伸得很高——Huygens 在一千多公里的高空就已开始感受到它的存在。探测器以 6 km/s 的速度进入,在防热罩后承受了十几个 g 的过载:这是一次真正的再入,而且发生在一颗卫星上。"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_lot_why",
+    "old": "Huygens仍然是有史以来最远的着陆——距地球12亿公里，在Cassini的保护下航行七年，然后孤身一人坠入薄雾。它的2小时27分钟下降过程传回了Titan表面的第一批图像：冰冻河三角洲中光滑的水冰鹅卵石。一个电池供电的探测器，一个小降落伞，一个全新的世界。",
+    "new": "Huygens仍然是有史以来最远的着陆——距地球12亿公里，在Cassini的保护下航行七年，然后孤身一人坠入薄雾。它的2小时27分钟下降过程传回了土卫六表面的第一批图像：冰冻河三角洲中光滑的水冰鹅卵石。一个电池供电的探测器，一个小降落伞，一个全新的世界。"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_tsw_hayabusa2",
+    "old": "Hayabusa2 — Ryugu 触接采样（JAXA）",
+    "new": "Hayabusa2 — 龙宫触接采样（JAXA）"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_tsw_osirisrex",
+    "old": "OSIRIS-REx——Bennu取样（NASA）",
+    "new": "OSIRIS-REx——贝努取样（NASA）"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_tsw_hayabusa1",
+    "old": "Hayabusa——首次样本采集，Itokawa（JAXA）",
+    "new": "Hayabusa——首次样本采集，糸川（JAXA）"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_tsw_near",
+    "old": "NEAR Shoemaker——Eros着陆（NASA）",
+    "new": "NEAR Shoemaker——爱神星着陆（NASA）"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_tsw_bennu",
+    "old": "现在对Bennu尝试同样的反弹——公式拒绝给你顶点，因为没有顶点：反弹速度超过了Bennu的逃逸速度（约0.2米/秒），直接飞离。这不是需要修复的错误；这正是OSIRIS-REx从不尝试着陆的原因。它的TAG机动——触及并离开——将采样臂按入碎屑约六秒，启动推进器，带着收获撤离。在你无法停留的天体上，诚实的着陆就是从不假装停止。",
+    "new": "现在对贝努尝试同样的反弹——公式拒绝给你顶点，因为没有顶点：反弹速度超过了贝努的逃逸速度（约0.2米/秒），直接飞离。这不是需要修复的错误；这正是OSIRIS-REx从不尝试着陆的原因。它的TAG机动——触及并离开——将采样臂按入碎屑约六秒，启动推进器，带着收获撤离。在你无法停留的天体上，诚实的着陆就是从不假装停止。"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_tsw_itokawa",
+    "old": "Itokawa是这个序列中最小的天体——一颗花生般的碎石堆，长数百米，逃逸速度可用用力一推来超越。2005年第一颗Hayabusa触及它，艰难前行，临机应变，仍然成功送回了首批小行星尘埃，于2010年返回地球。其样本证实了一个深刻的事实：这座'山峰'不是岩石而是碎石堆，由重力加速度仅为地球十万分之一的引力粘合在一起。",
+    "new": "糸川是这个序列中最小的天体——一颗花生般的碎石堆，长数百米，逃逸速度可用用力一推来超越。2005年第一颗Hayabusa触及它，艰难前行，临机应变，仍然成功送回了首批小行星尘埃，于2010年返回地球。其样本证实了一个深刻的事实：这座'山峰'不是岩石而是碎石堆，由重力加速度仅为地球十万分之一的引力粘合在一起。"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_catch_iss_desc",
+    "old": "交会是一场在弯曲空间中的追逐，加速反而会让你落后。用实时空间站数据算出ISS的位置以及如何追上它。",
+    "new": "交会是一场在弯曲空间中的追逐，加速反而会让你落后。用实时空间站数据算出国际空间站的位置以及如何追上它。"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_isspass_glossary",
+    "old": "没有闭形式公式：传播实时 TLE 并找到 ISS 在你的位置上升超过 10° 的下一时刻。可见窗口卡说明有经过 — 这张卡说明何时。",
+    "new": "没有闭形式公式：传播实时 TLE 并找到国际空间站在你的位置上升超过 10° 的下一时刻。可见窗口卡说明有经过 — 这张卡说明何时。"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_illustration_alt_catch_the_iss",
+    "old": "ISS 以太阳能帆板剪影形式绘制，小型返回舱沿汇合螺旋线在其下方逼近。",
+    "new": "国际空间站以太阳能帆板剪影形式绘制，小型返回舱沿汇合螺旋线在其下方逼近。"
+  },
+  {
+    "rel": "messages",
+    "at": "ar_hint_place_iss",
+    "old": "指向一个表面并点击以放置ISS",
+    "new": "指向一个表面并点击以放置国际空间站"
+  },
+  {
+    "rel": "messages",
+    "at": "galaxy_name_ursa_minor_dwarf",
+    "old": "Ursa Minor 矮星系",
+    "new": "小熊座矮星系"
+  },
+  {
+    "rel": "messages",
+    "at": "galaxy_name_sextans_dwarf",
+    "old": "Sextans 矮星系",
+    "new": "六分仪座矮星系"
+  },
+  {
+    "rel": "messages",
+    "at": "galaxy_name_wlm",
+    "old": "WLM (Wolf-Lundmark-Melotte)",
+    "new": "WLM (沃尔夫-隆达马克-梅洛帝星系)"
+  }
+]

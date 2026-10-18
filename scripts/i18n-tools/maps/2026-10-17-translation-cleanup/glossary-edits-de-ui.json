@@ -1,0 +1,116 @@
+[
+  {
+    "rel": "messages",
+    "at": "science_layer_galaxies_desc",
+    "old": "Billboard-Sprites von ~15 Nachbargalaxien (Andromeda, Magellanic Clouds, Zwergsphäroide) auf der Himmelskugel mit korrekten RA/Dec — nur Himmelsüberlagerung, nicht echter Maßstab.",
+    "new": "Billboard-Sprites von ~15 Nachbargalaxien (Andromeda, Magellansche Wolken, Zwergsphäroide) auf der Himmelskugel mit korrekten RA/Dec — nur Himmelsüberlagerung, nicht echter Maßstab."
+  },
+  {
+    "rel": "messages",
+    "at": "plan_destination_halley",
+    "old": "Halley's Comet",
+    "new": "Halleyscher Komet"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_iconic_tagline_ulysses",
+    "old": "Erste Sonde, die über die Pole der Sun flog.",
+    "new": "Erste Sonde, die über die Pole der Sonne flog."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_iconic_tagline_new_horizons",
+    "old": "Erster Vorbeiflug an Pluto und dem Kuiper Belt.",
+    "new": "Erster Vorbeiflug an Pluto und dem Kuipergürtel."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_lg_schematic_badge",
+    "old": "Local Group · schematisch · nicht maßstabsgetreu",
+    "new": "Lokale Gruppe · schematisch · nicht maßstabsgetreu"
+  },
+  {
+    "rel": "messages",
+    "at": "fly_recovery_caption_soyuz1",
+    "old": "Fallschirmversagen — das Landemodul schlug mit hoher Geschwindigkeit auf dem Boden auf. Vladimir Komarov kam ums Leben, der erste Todesfall während eines Raumflugs.",
+    "new": "Fallschirmversagen — das Landemodul schlug mit hoher Geschwindigkeit auf dem Boden auf. Wladimir Komarow kam ums Leben, der erste Todesfall während eines Raumflugs."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_heading_voyager_1",
+    "old": "Gliese 445 in Camelopardalis — engste Annäherung in etwa 40.000 Jahren",
+    "new": "Gliese 445 in Giraffe — engste Annäherung in etwa 40.000 Jahren"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_heading_pioneer_11",
+    "old": "das Sternbild Aquila — sein nächster Stern in etwa 4 Millionen Jahren",
+    "new": "das Sternbild Adler — sein nächster Stern in etwa 4 Millionen Jahren"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_ctx_virgo",
+    "old": "Virgo Supercluster",
+    "new": "Virgo-Superhaufen"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_virgo_schematic_badge",
+    "old": "Virgo Supercluster · Schematisch · Nicht maßstabsgetreu",
+    "new": "Virgo-Superhaufen · Schematisch · Nicht maßstabsgetreu"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_lens_story_virgo_title",
+    "old": "Der Virgo Supercluster",
+    "new": "Der Virgo-Superhaufen"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_laniakea_blurb",
+    "old": "Ein Supercluster oder Galaxienhaufen innerhalb von Laniakea — des ~160-Megaparsec-Einzugsbereichs, von dem unser Virgo-Supercluster nur ein Lappen ist. Alles hier strömt über kosmische Zeiten hinweg zum gleichen gravitativen Tiefpunkt: dem Great Attractor.",
+    "new": "Ein Supercluster oder Galaxienhaufen innerhalb von Laniakea — des ~160-Megaparsec-Einzugsbereichs, von dem unser Virgo-Supercluster nur ein Lappen ist. Alles hier strömt über kosmische Zeiten hinweg zum gleichen gravitativen Tiefpunkt: dem Großen Attraktor."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_laniakea_anchor_blurb",
+    "old": "Du bist hier. Der gesamte Virgo Supercluster — die Lokale Gruppe, der Virgo Cluster, alles — ist ein einzelner Lappen von Laniakea, am Rand einer Strömung, die zum Great Attractor hinführt.",
+    "new": "Du bist hier. Der gesamte Virgo-Superhaufen — die Lokale Gruppe, der Virgo-Galaxienhaufen, alles — ist ein einzelner Lappen von Laniakea, am Rand einer Strömung, die zum Großen Attraktor hinführt."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_laniakea_attractor_blurb",
+    "old": "Der Great Attractor — der gravitative Tiefpunkt von Laniakea, nahe des Norma-Clusters hinter der Ebene der Milchstraße. Die Bewegungen von Tausenden Galaxien, einschließlich unserer eigenen, neigen sich diesem Gebiet zu; es ist das, was Laniakea als einzige Struktur definiert.",
+    "new": "Der Große Attraktor — der gravitative Tiefpunkt von Laniakea, nahe des Norma-Clusters hinter der Ebene der Milchstraße. Die Bewegungen von Tausenden Galaxien, einschließlich unserer eigenen, neigen sich diesem Gebiet zu; es ist das, was Laniakea als einzige Struktur definiert."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_lens_story_laniakea_body",
+    "old": "„Immenser Himmel\" im Hawaiischen – der 2014 definierte Superhaufen, nicht nach der Position der Galaxien bestimmt, sondern nach ihrer Strömung. Mit etwa 160 Megaparsec (500 Millionen Lichtjahren) Durchmesser und etwa 100.000 Galaxien ist Laniakea das Anziehungsbecken, in das unser Virgo-Superhaufen fließt, hin zum Great Attractor. Und Laniakea bildet zusammen mit seinen Nachbarn Teil einer breiteren Strömung zu etwas noch Größerem: der Shapley Concentration.",
+    "new": "„Immenser Himmel\" im Hawaiischen – der 2014 definierte Superhaufen, nicht nach der Position der Galaxien bestimmt, sondern nach ihrer Strömung. Mit etwa 160 Megaparsec (500 Millionen Lichtjahren) Durchmesser und etwa 100.000 Galaxien ist Laniakea das Anziehungsbecken, in das unser Virgo-Superhaufen fließt, hin zum Großen Attraktor. Und Laniakea bildet zusammen mit seinen Nachbarn Teil einer breiteren Strömung zu etwas noch Größerem: der Shapley-Superhaufen."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_hub_desc_laniakea",
+    "old": "Das ~160-Mpc-Becken von Galaxienströmungen, in das unser Supercluster drainiert, in Richtung des Great Attractor.",
+    "new": "Das ~160-Mpc-Becken von Galaxienströmungen, in das unser Supercluster drainiert, in Richtung des Großen Attraktors."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_g9_orbit",
+    "old": "Die International Space Station umkreist die Erde in etwa 420 km Höhe – niedrig genug, um sie alle ~92 Minuten zu umrunden mit einer Geschwindigkeit von knapp 7,7 km/s, etwa 16 Umläufe täglich. Nutzen Sie das Orbit-Tool erneut, voreingestellt auf die Stationsflughöhe, und Geschwindigkeit sowie Umlaufzeit ergeben sich unmittelbar.",
+    "new": "Die Internationale Raumstation umkreist die Erde in etwa 420 km Höhe – niedrig genug, um sie alle ~92 Minuten zu umrunden mit einer Geschwindigkeit von knapp 7,7 km/s, etwa 16 Umläufe täglich. Nutzen Sie das Orbit-Tool erneut, voreingestellt auf die Stationsflughöhe, und Geschwindigkeit sowie Umlaufzeit ergeben sich unmittelbar."
+  },
+  {
+    "rel": "messages",
+    "at": "science_layer_mass_period_desc",
+    "old": "Alle bekannten Exoplaneten mit gemessener Masse, aufgetragen nach Umlaufperiode — Hot Jupiter, Super-Erden und Sub-Neptune bilden sichtbare Familien. Die Planeten dieses Systems sind hervorgehoben.",
+    "new": "Alle bekannten Exoplaneten mit gemessener Masse, aufgetragen nach Umlaufperiode — Hot Jupiter, Super-Erden und Sub-Neptun bilden sichtbare Familien. Die Planeten dieses Systems sind hervorgehoben."
+  },
+  {
+    "rel": "messages",
+    "at": "galaxy_name_sextans_dwarf",
+    "old": "Sextans-Zwerggalaxie",
+    "new": "Sextant-Zwerggalaxie"
+  }
+]

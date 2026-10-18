@@ -1,0 +1,14 @@
+[
+  {
+    "rel": "messages",
+    "at": "library_category_earth_object",
+    "old": "पृथ्वी-orbit वस्तु",
+    "new": "पृथ्वी-कक्षा वस्तु"
+  },
+  {
+    "rel": "messages",
+    "at": "earth_load_failed",
+    "old": "पृथ्वी-orbit वस्तुओं को लोड करने में विफल रहा।",
+    "new": "पृथ्वी-कक्षा की वस्तुओं को लोड करने में विफल रहा।"
+  }
+]

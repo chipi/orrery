@@ -1,0 +1,188 @@
+[
+  {
+    "rel": "messages",
+    "at": "explore_layer_tip_dwarfs",
+    "old": "Afficher ou masquer les planètes naines (Pluton, Éris, Cérès, Haumea, Makemake)",
+    "new": "Afficher ou masquer les planètes naines (Pluton, Éris, Cérès, Hauméa, Makémaké)"
+  },
+  {
+    "rel": "messages",
+    "at": "why_samples_body",
+    "old": "Les échantillons retournés peuvent être analysés avec des spectromètres de masse, des microscopes électroniques, des datations isotopiques — des instruments trop volumineux ou gourmands en énergie pour voler. Apollo a ramené 382 kg ; Chang'e 5 a ramené 1,7 kg de régolithe plus jeune de la face proche (Oceanus Procellarum). Chaque kilogramme déverrouille des décennies de science de suivi.",
+    "new": "Les échantillons retournés peuvent être analysés avec des spectromètres de masse, des microscopes électroniques, des datations isotopiques — des instruments trop volumineux ou gourmands en énergie pour voler. Apollo a ramené 382 kg ; Chang'e 5 a ramené 1,7 kg de régolithe plus jeune de la face proche (Océan des Tempêtes). Chaque kilogramme déverrouille des décennies de science de suivi."
+  },
+  {
+    "rel": "messages",
+    "at": "science_layer_galaxies_desc",
+    "old": "Sprites en panneau de ~15 galaxies voisines (Andromeda, Magellanic Clouds, sphéroïdales naines) sur la sphère céleste aux AD/Déc corrects — simple superposition céleste, pas à l'échelle.",
+    "new": "Sprites en panneau de ~15 galaxies voisines (Andromeda, nuages de Magellan, sphéroïdales naines) sur la sphère céleste aux AD/Déc corrects — simple superposition céleste, pas à l'échelle."
+  },
+  {
+    "rel": "messages",
+    "at": "plan_destination_bennu",
+    "old": "Bennu",
+    "new": "Bénou"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_iconic_tagline_juice",
+    "old": "Trois survols des lunes galiléennes + insertion en orbite autour de Ganymede à venir.",
+    "new": "Trois survols des lunes galiléennes + insertion en orbite autour de Ganymède à venir."
+  },
+  {
+    "rel": "messages",
+    "at": "science_layer_moons_desc",
+    "old": "Principales lunes + anneaux orbitaux autour de chaque planète (galiléennes à Jupiter, Titan/Encelade/Japet à Saturne, la Lune à la Terre, Phobos/Deimos à Mars, Triton à Neptune).",
+    "new": "Principales lunes + anneaux orbitaux autour de chaque planète (galiléennes à Jupiter, Titan/Encelade/Japet à Saturne, la Lune à la Terre, Phobos/Déimos à Mars, Triton à Neptune)."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_lg_group_independent",
+    "old": "Membre indépendant du Local Group",
+    "new": "Membre indépendant du groupe local"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_lg_blurb_spiral",
+    "old": "L'une des grandes galaxies spirales du Local Group — des centaines de milliards d'étoiles dans un disque en rotation de bras, de gaz et de poussière.",
+    "new": "L'une des grandes galaxies spirales du groupe local — des centaines de milliards d'étoiles dans un disque en rotation de bras, de gaz et de poussière."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_lg_group_anchor",
+    "old": "Galaxie majeure du Local Group",
+    "new": "Galaxie majeure du groupe local"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_heading_pioneer_10",
+    "old": "la direction générale d'Aldebaran, dans le Taureau — une dérive de 2 millions d'années, pas un passage rapproché",
+    "new": "la direction générale d'Aldébaran, dans le Taureau — une dérive de 2 millions d'années, pas un passage rapproché"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_mw_satellite_blurb",
+    "old": "Une galaxie satellite liée à la Voie lactée, orbitant autour d'elle et lentement déchirée par sa gravité. Les Magellanic Clouds en sont les exemples les plus brillants, visibles à l'œil nu depuis le ciel austral.",
+    "new": "Une galaxie satellite liée à la Voie lactée, orbitant autour d'elle et lentement déchirée par sa gravité. Les nuages de Magellan en sont les exemples les plus brillants, visibles à l'œil nu depuis le ciel austral."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_lens_story_lg_title",
+    "old": "Le Local Group",
+    "new": "Le groupe local"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_lens_story_ls_body",
+    "old": "Les groupes de galaxies juste au-delà du Local Group se situent dans une couche mince, quasi plane — la Local Sheet — se déplaçant ensemble dans le Local Volume plus large. C'est un premier aperçu de la géométrie de la toile cosmique : les galaxies ne sont pas dispersées au hasard mais tendent à se situer le long de feuillets et de filaments.",
+    "new": "Les groupes de galaxies juste au-delà du groupe local se situent dans une couche mince, quasi plane — la Local Sheet — se déplaçant ensemble dans le Local Volume plus large. C'est un premier aperçu de la géométrie de la toile cosmique : les galaxies ne sont pas dispersées au hasard mais tendent à se situer le long de feuillets et de filaments."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_virgo_schematic_badge",
+    "old": "Virgo Supercluster · schéma · sans échelle",
+    "new": "superamas de la Vierge · schéma · sans échelle"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_virgo_blurb",
+    "old": "Un groupe, nuage ou amas de galaxies au sein du Virgo Supercluster — le superamas d'environ 33 mégaparsecs auquel appartient notre Groupe local. Ses membres sont attirés vers le Virgo Cluster, la concentration dense de plus d'un millier de galaxies au cœur gravitationnel du superamas.",
+    "new": "Un groupe, nuage ou amas de galaxies au sein du superamas de la Vierge — le superamas d'environ 33 mégaparsecs auquel appartient notre Groupe local. Ses membres sont attirés vers l'amas de la Vierge, la concentration dense de plus d'un millier de galaxies au cœur gravitationnel du superamas."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_lens_story_virgo_title",
+    "old": "Le Virgo Supercluster",
+    "new": "Le superamas de la Vierge"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_laniakea_blurb",
+    "old": "Un superamas ou amas au sein de Laniakea — le bassin d'attraction d'environ 160 mégaparsecs dont notre Virgo Supercluster n'est qu'un lobe. Tout ici s'écoule, à l'échelle cosmique, vers le même point bas gravitationnel : le Grand Attracteur.",
+    "new": "Un superamas ou amas au sein de Laniakea — le bassin d'attraction d'environ 160 mégaparsecs dont notre superamas de la Vierge n'est qu'un lobe. Tout ici s'écoule, à l'échelle cosmique, vers le même point bas gravitationnel : le Grand Attracteur."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_laniakea_anchor_blurb",
+    "old": "Vous êtes ici. La Virgo Supercluster tout entière — le Groupe Local, l'Amas de la Vierge, tout cela — est un seul lobe de Laniakea, en bordure d'un flux qui s'écoule vers le Grand Attracteur.",
+    "new": "Vous êtes ici. Le superamas de la Vierge tout entier — le Groupe Local, l'Amas de la Vierge, tout cela — est un seul lobe de Laniakea, en bordure d'un flux qui s'écoule vers le Grand Attracteur."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_laniakea_attractor_blurb",
+    "old": "Le Grand Attracteur — le point bas gravitationnel de Laniakea, près du Norma Cluster derrière le plan de la Voie lactée. Les mouvements de milliers de galaxies, y compris la nôtre, s'inclinent tous vers cette région ; c'est ce qui définit Laniakea comme une structure unique.",
+    "new": "Le Grand Attracteur — le point bas gravitationnel de Laniakea, près de l'amas de la Règle derrière le plan de la Voie lactée. Les mouvements de milliers de galaxies, y compris la nôtre, s'inclinent tous vers cette région ; c'est ce qui définit Laniakea comme une structure unique."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_lar_why",
+    "old": "Pourquoi les fusées décollent-elles près de l'équateur ? La rotation terrestre elle-même vous offre un lancement gratuit, et c'est le plus rapide à l'équateur (cela diminue avec le cosinus de votre latitude). L'Europe tire de Kourou à seulement 5° nord pour encaisser le meilleur gain ; Baikonur à 46° en perd près d'un tiers. Cette vitesse invisible représente du carburant réel — et moins de carburant signifie une plus petite fusée.",
+    "new": "Pourquoi les fusées décollent-elles près de l'équateur ? La rotation terrestre elle-même vous offre un lancement gratuit, et c'est le plus rapide à l'équateur (cela diminue avec le cosinus de votre latitude). L'Europe tire de Kourou à seulement 5° nord pour encaisser le meilleur gain ; Baïkonour à 46° en perd près d'un tiers. Cette vitesse invisible représente du carburant réel — et moins de carburant signifie une plus petite fusée."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_motion_hook",
+    "old": "Le boulet de Newton à nouveau : un tir lent retombe sur Terre (un saut suborbital), mais tiré à environ 7,9 km/s il tombe tout autour de la planète. Shepard a volé le tir lent ; Gagarin a volé le cercle complet.",
+    "new": "Le boulet de Newton à nouveau : un tir lent retombe sur la Terre (un saut suborbital), mais tiré à environ 7,9 km/s il tombe tout autour de la planète. Shepard a volé le tir lent ; Gagarine a volé le cercle complet."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_g10_why",
+    "old": "Il n'existe pas d'orbite « idéale », seulement des compromis. Basse (LEO) : rapide, proche, délai minuscule — mais chaque satellite ne voit qu'une petite zone et passe rapidement, donc il en faut des milliers (Starlink, OneWeb). Moyenne (MEO) : le compromis GPS, quelques dizaines de satellites couvrant le globe. Géostationnaire (GEO) : un satellite, couverture d'un hémisphère entier qui ne bouge pas — au prix de la distance et du délai. Sun-synchronous (SSO) : une orbite polaire basse qui traverse chaque point à la même heure locale, idéale pour l'imagerie.",
+    "new": "Il n'existe pas d'orbite « idéale », seulement des compromis. Basse (LEO) : rapide, proche, délai minuscule — mais chaque satellite ne voit qu'une petite zone et passe rapidement, donc il en faut des milliers (Starlink, OneWeb). Moyenne (MEO) : le compromis GPS, quelques dizaines de satellites couvrant le globe. Géostationnaire (GEO) : un satellite, couverture d'un hémisphère entier qui ne bouge pas — au prix de la distance et du délai. Héliosynchrone (SSO) : une orbite polaire basse qui traverse chaque point à la même heure locale, idéale pour l'imagerie."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_g10_azimuth",
+    "old": "Un dernier fil, retour à notre point de départ : le lancement. On ne peut pas atteindre n'importe quelle orbite depuis n'importe quel pas de tir — l'inclinaison ne peut jamais être inférieure à la latitude de lancement, et le cap au compas est fixé par cos(azimut) = cos(inclinaison)/cos(latitude). Visez plein est et vous obtenez une orbite inclinée à votre latitude, la moins coûteuse (d'où l'ISS desservie depuis Baikonur et le Cap). Et une orbite héliosynchrone, étant rétrograde, impose de viser au SUD — exactement pourquoi ces missions décollent le long de la côte californienne depuis Vandenberg.",
+    "new": "Un dernier fil, retour à notre point de départ : le lancement. On ne peut pas atteindre n'importe quelle orbite depuis n'importe quel pas de tir — l'inclinaison ne peut jamais être inférieure à la latitude de lancement, et le cap au compas est fixé par cos(azimut) = cos(inclinaison)/cos(latitude). Visez plein est et vous obtenez une orbite inclinée à votre latitude, la moins coûteuse (d'où l'ISS desservie depuis Baïkonour et le Cap). Et une orbite héliosynchrone, étant rétrograde, impose de viser au SUD — exactement pourquoi ces missions décollent le long de la côte californienne depuis Vandenberg."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_fc_why",
+    "old": "Voici comment les vraies missions sont conçues : une fenêtre de lancement fixée par les planètes, une chaîne de tronçons de transfert, et des assistances gravitationnelles pour acheter le Δv que la chimie ne peut offrir. Voyager 2 reste le seul engin à avoir visité les quatre planètes géantes — sur une route qui n'a existé que le temps d'un instant de 176 ans. Cassini a pris le parti inverse : quatre assistances (Venus deux fois, la Terre, Jupiter) qui l'ont d'abord envoyé vers l'INTÉRIEUR pour prendre de la vitesse avant de le projeter vers Saturne.",
+    "new": "Voici comment les vraies missions sont conçues : une fenêtre de lancement fixée par les planètes, une chaîne de tronçons de transfert, et des assistances gravitationnelles pour acheter le Δv que la chimie ne peut offrir. Voyager 2 reste le seul engin à avoir visité les quatre planètes géantes — sur une route qui n'a existé que le temps d'un instant de 176 ans. Cassini a pris le parti inverse : quatre assistances (Vénus deux fois, la Terre, Jupiter) qui l'ont d'abord envoyé vers l'INTÉRIEUR pour prendre de la vitesse avant de le projeter vers Saturne."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_tsw_bennu",
+    "old": "Essayez maintenant le même type de rebond sur Bennu — et la formule refuse de vous donner un apogée, parce qu'il n'y en a pas : le rebond dépasse la vitesse de libération de Bennu (~0,2 m/s) et s'en va simplement. Ce n'est pas un bogue à corriger ; c'est la raison pour laquelle OSIRIS-REx n'a jamais tenté d'atterrir. Sa manœuvre TAG — Touch-And-Go — a appuyé un bras d'échantillonnage dans les débris pendant environ six secondes, a tiré les propulseurs et s'est retiré avec le trésor. Sur un monde où vous ne pouvez pas rester, l'atterrissage honnête est celui qui ne prétend jamais s'arrêter.",
+    "new": "Essayez maintenant le même type de rebond sur Bénou — et la formule refuse de vous donner un apogée, parce qu'il n'y en a pas : le rebond dépasse la vitesse de libération de Bénou (~0,2 m/s) et s'en va simplement. Ce n'est pas un bogue à corriger ; c'est la raison pour laquelle OSIRIS-REx n'a jamais tenté d'atterrir. Sa manœuvre TAG — Touch-And-Go — a appuyé un bras d'échantillonnage dans les débris pendant environ six secondes, a tiré les propulseurs et s'est retiré avec le trésor. Sur un monde où vous ne pouvez pas rester, l'atterrissage honnête est celui qui ne prétend jamais s'arrêter."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_tsw_eros",
+    "old": "Eros est le contre-exemple qui prouve l'échelle. À une trentaine de kilomètres, c'est un géant parmi ces mondes, et sa vitesse d'échappement moyenne d'environ 10 m/s (variant de roughly 3 à 17 m/s selon sa surface allongée) se comporte enfin comme un endroit où l'on peut atterrir. En 2001, NEAR Shoemaker — un orbiteur sans train d'atterrissage — a été descendu à moins de 2 m/s en fin de mission et, à la grande satisfaction de tous, a continué à transmettre depuis la surface pendant deux semaines. Sur un monde suffisamment petit, même un engin spatial jamais conçu pour atterrir peut simplement... arriver.",
+    "new": "Éros est le contre-exemple qui prouve l'échelle. À une trentaine de kilomètres, c'est un géant parmi ces mondes, et sa vitesse d'échappement moyenne d'environ 10 m/s (variant de roughly 3 à 17 m/s selon sa surface allongée) se comporte enfin comme un endroit où l'on peut atterrir. En 2001, NEAR Shoemaker — un orbiteur sans train d'atterrissage — a été descendu à moins de 2 m/s en fin de mission et, à la grande satisfaction de tous, a continué à transmettre depuis la surface pendant deux semaines. Sur un monde suffisamment petit, même un engin spatial jamais conçu pour atterrir peut simplement... arriver."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_tsw_osirisrex",
+    "old": "OSIRIS-REx — le TAG de Bennu (NASA)",
+    "new": "OSIRIS-REx — le TAG de Bénou (NASA)"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_tsw_near",
+    "old": "NEAR Shoemaker — l'atterrissage sur Eros (NASA)",
+    "new": "NEAR Shoemaker — l'atterrissage sur Éros (NASA)"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_body_bennu",
+    "old": "Bennu",
+    "new": "Bénou"
+  },
+  {
+    "rel": "messages",
+    "at": "galaxy_name_ursa_minor_dwarf",
+    "old": "Galaxie naine Ursa Minor",
+    "new": "Galaxie naine Petite Ourse"
+  },
+  {
+    "rel": "messages",
+    "at": "galaxy_name_sextans_dwarf",
+    "old": "Galaxie naine Sextans",
+    "new": "Galaxie naine Sextant"
+  }
+]

@@ -1,0 +1,68 @@
+[
+  {
+    "rel": "messages",
+    "at": "science_layer_galaxies_desc",
+    "old": "Sprites em outdoor de ~15 galáxias vizinhas (Andromeda, Magellanic Clouds, esferoidais anãs) na esfera celeste com AR/Dec corretos — sobreposição celeste, não em escala real.",
+    "new": "Sprites em outdoor de ~15 galáxias vizinhas (Andromeda, Nuvens de Magalhães, esferoidais anãs) na esfera celeste com AR/Dec corretos — sobreposição celeste, não em escala real."
+  },
+  {
+    "rel": "messages",
+    "at": "poster_gagarin_aria",
+    "old": "Pôster de Yuri Gagarin — viseira do capacete SK-1 com a Terra refletida no vidro dourado",
+    "new": "Pôster de Iuri Gagarin — viseira do capacete SK-1 com a Terra refletida no vidro dourado"
+  },
+  {
+    "rel": "messages",
+    "at": "science_layer_moons_desc",
+    "old": "Luas principais + anéis orbitais ao redor de cada planeta (galileanas em Júpiter, Titan, Enceladus, Iapetus em Saturno, a Lua na Terra, Phobos, Deimos em Marte, Triton em Netuno).",
+    "new": "Luas principais + anéis orbitais ao redor de cada planeta (galileanas em Júpiter, Titã, Encélado, Iapetus em Saturno, a Lua na Terra, Fobos, Deimos em Marte, Tritão em Netuno)."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_ctx_local_group",
+    "old": "Local Group",
+    "new": "Grupo Local"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_hub_desc_localgroup",
+    "old": "Um passo mais adiante — Andromeda, Triangulum, as Magellanic Clouds, e dezenas de galáxias anãs.",
+    "new": "Um passo mais adiante — Andromeda, Triangulum, as Nuvens de Magalhães, e dezenas de galáxias anãs."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_heading_pioneer_10",
+    "old": "a direção geral de Aldebaran, em Taurus — uma deriva de 2 milhões de anos, não uma passagem próxima",
+    "new": "a direção geral de Aldebarã, em Taurus — uma deriva de 2 milhões de anos, não uma passagem próxima"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_ctx_virgo",
+    "old": "Virgo Supercluster",
+    "new": "Superaglomerado local"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_virgo_schematic_badge",
+    "old": "Virgo Supercluster · esquemático · sem escala",
+    "new": "Superaglomerado local · esquemático · sem escala"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_virgo_blurb",
+    "old": "Um grupo, nuvem ou aglomerado de galáxias dentro do Virgo Supercluster — o superaglomerado de ~33 megaparsecs ao qual nosso Grupo Local pertence. Seus membros são atraídos em direção ao Virgo Cluster, a densa concentração de mais de mil galáxias no coração gravitacional do superaglomerado.",
+    "new": "Um grupo, nuvem ou aglomerado de galáxias dentro do Superaglomerado local — o superaglomerado de ~33 megaparsecs ao qual nosso Grupo Local pertence. Seus membros são atraídos em direção ao Aglomerado de Virgem, a densa concentração de mais de mil galáxias no coração gravitacional do superaglomerado."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_hub_desc_localsheet",
+    "old": "A laje plana de grupos de galáxias logo além do Local Group — o primeiro indício de estrutura cósmica.",
+    "new": "A laje plana de grupos de galáxias logo além do Grupo Local — o primeiro indício de estrutura cósmica."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_lar_cape",
+    "old": "Cape Canaveral (28°N) — a base da costa leste dos EUA",
+    "new": "Cabo Canaveral (28°N) — a base da costa leste dos EUA"
+  }
+]

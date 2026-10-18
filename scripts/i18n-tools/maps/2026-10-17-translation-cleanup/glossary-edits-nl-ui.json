@@ -1,0 +1,212 @@
+[
+  {
+    "rel": "messages",
+    "at": "credits_used_route_explore",
+    "old": "Solar System Explorer",
+    "new": "Zonnestelsel Explorer"
+  },
+  {
+    "rel": "messages",
+    "at": "iss_canvas_aria",
+    "old": "Interactief 3D-model van het International Space Station. Sleep om het beeld rond te draaien; tik op een module om details te openen.",
+    "new": "Interactief 3D-model van het ISS. Sleep om het beeld rond te draaien; tik op een module om details te openen."
+  },
+  {
+    "rel": "messages",
+    "at": "a11y_moon_sites_list_aria",
+    "old": "Landingsplaatsen op de Moon — lijstweergave (parallel aan de 3D-kaart)",
+    "new": "Landingsplaatsen op de Maan — lijstweergave (parallel aan de 3D-kaart)"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_iconic_tagline_ulysses",
+    "old": "Eerste ruimtevaartuig dat over de polen van de Sun vloog.",
+    "new": "Eerste ruimtevaartuig dat over de polen van de Zon vloog."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_iconic_tagline_new_horizons",
+    "old": "Eerste scheervlucht langs Pluto en de Kuiper Belt.",
+    "new": "Eerste scheervlucht langs Pluto en de Kuipergordel."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_iconic_tagline_juice",
+    "old": "Drie Galilean maan-scheervluchten + Ganymede-intrede in het verschiet.",
+    "new": "Drie Galilean maan-scheervluchten + Ganymedes-intrede in het verschiet."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_ctx_local_group",
+    "old": "Local Group",
+    "new": "Lokale Groep"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_lg_schematic_badge",
+    "old": "Local Group · schematisch · niet op schaal",
+    "new": "Lokale Groep · schematisch · niet op schaal"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_lg_blurb_dwarf",
+    "old": "Een klein, zwak dwergsterrenstelsel — een van de tientallen die de Local Group bevolken.",
+    "new": "Een klein, zwak dwergsterrenstelsel — een van de tientallen die de Lokale Groep bevolken."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_hub_desc_localgroup",
+    "old": "Nog een stap verder uit — Andromeda, Triangulum, de Magellanic Clouds, en tientallen dwergstelstels.",
+    "new": "Nog een stap verder uit — Andromeda, Triangulum, de Magelhaense wolken, en tientallen dwergstelstels."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_heading_voyager_1",
+    "old": "Gliese 445, in Camelopardalis — dichtstbij in ongeveer 40.000 jaar",
+    "new": "Gliese 445, in Giraffe — dichtstbij in ongeveer 40.000 jaar"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_heading_pioneer_11",
+    "old": "het sterrenbeeld Aquila — zijn dichtstbijzijnde ster in ongeveer 4 miljoen jaar",
+    "new": "het sterrenbeeld Arend — zijn dichtstbijzijnde ster in ongeveer 4 miljoen jaar"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_mw_satellite_blurb",
+    "old": "Een sterrenstelsel-satelliet gebonden aan de Melkweg, omwentelend daaromheen en langzaam uit elkaar getrokken door de zwaartekracht. De Magellanic Clouds zijn de helderste voorbeelden, zichtbaar voor het blote oog vanaf de zuidelijke hemel.",
+    "new": "Een sterrenstelsel-satelliet gebonden aan de Melkweg, omwentelend daaromheen en langzaam uit elkaar getrokken door de zwaartekracht. De Magelhaense wolken zijn de helderste voorbeelden, zichtbaar voor het blote oog vanaf de zuidelijke hemel."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_lens_story_lg_title",
+    "old": "De Local Group",
+    "new": "De Lokale Groep"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_lens_story_ls_body",
+    "old": "De sterrenstelsgelgroepen net buiten de Local Group liggen in een dun, bijna vlak laag — het Local Sheet — bewegend samen binnen het bredere Local Volume. Het is een eerste glimp van de geometrie van het kosmische web: sterrenstelsels zijn niet willekeurig verspreid maar hebben de neiging langs bladen en filamenten te liggen.",
+    "new": "De sterrenstelsgelgroepen net buiten de Lokale Groep liggen in een dun, bijna vlak laag — het Local Sheet — bewegend samen binnen het bredere Local Volume. Het is een eerste glimp van de geometrie van het kosmische web: sterrenstelsels zijn niet willekeurig verspreid maar hebben de neiging langs bladen en filamenten te liggen."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_ctx_virgo",
+    "old": "Virgo Supercluster",
+    "new": "Virgosupercluster"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_virgo_schematic_badge",
+    "old": "Virgo Supercluster · schematisch · niet op schaal",
+    "new": "Virgosupercluster · schematisch · niet op schaal"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_virgo_blurb",
+    "old": "Een galaxiegroep, -wolk of -cluster binnen de Virgo Supercluster — de ongeveer 33 megaparsec grote supercluster waartoe onze Lokale Groep behoort. De leden worden aangetrokken naar het Virgo Cluster, de dichte concentratie van meer dan duizend sterrenstelsels in het zwaartekrachthart van de supercluster.",
+    "new": "Een galaxiegroep, -wolk of -cluster binnen de Virgosupercluster — de ongeveer 33 megaparsec grote supercluster waartoe onze Lokale Groep behoort. De leden worden aangetrokken naar het Virgocluster, de dichte concentratie van meer dan duizend sterrenstelsels in het zwaartekrachthart van de supercluster."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_virgo_anchor_blurb",
+    "old": "Je bent hier, aan de rand van de supercluster. De hele Lokale Groep is slechts een enkel stipje, één van vele groepen die zich door de Virgo Supercluster uitstrekken en langzaam naar het Virgo Cluster vallen.",
+    "new": "Je bent hier, aan de rand van de supercluster. De hele Lokale Groep is slechts een enkel stipje, één van vele groepen die zich door de Virgosupercluster uitstrekken en langzaam naar het Virgocluster vallen."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_lens_story_virgo_title",
+    "old": "De Virgo Supercluster",
+    "new": "De Virgosupercluster"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_lens_story_virgo_body",
+    "old": "Ons thuisstelselstelsel — honderd of meer sterrenstelselbewolkingen en clusters verspreid over ongeveer 33 megaparsecs (ongeveer 110 miljoen lichtjaar, en groter volgens bepaalde definities), gedomineerd door het Virgo Cluster. Men dacht lange tijd dat het de grootste structuur was waartoe we behoren; Laniakea bleek later dat het slechts een lob is van iets veel groters.",
+    "new": "Ons thuisstelselstelsel — honderd of meer sterrenstelselbewolkingen en clusters verspreid over ongeveer 33 megaparsecs (ongeveer 110 miljoen lichtjaar, en groter volgens bepaalde definities), gedomineerd door het Virgocluster. Men dacht lange tijd dat het de grootste structuur was waartoe we behoren; Laniakea bleek later dat het slechts een lob is van iets veel groters."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_laniakea_blurb",
+    "old": "Een supercluster of hoop binnen Laniakea — het ~160-megaparsec aantrekkingsgebied waarvan onze Virgo Supercluster slechts één lob is. Alles hier stroomt over kosmische tijd heen naar dezelfde zwaartekrachtdiepte: de Great Attractor.",
+    "new": "Een supercluster of hoop binnen Laniakea — het ~160-megaparsec aantrekkingsgebied waarvan onze Virgosupercluster slechts één lob is. Alles hier stroomt over kosmische tijd heen naar dezelfde zwaartekrachtdiepte: de Grote Aantrekker."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_laniakea_anchor_blurb",
+    "old": "Je bent hier. De gehele Virgo Supercluster — de Local Group, de Virgo Cluster, alles — is één lob van Laniakea, op de rand van een stroming die naar de Great Attractor afwatert.",
+    "new": "Je bent hier. De gehele Virgosupercluster — de Lokale Groep, de Virgocluster, alles — is één lob van Laniakea, op de rand van een stroming die naar de Grote Aantrekker afwatert."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_laniakea_attractor_blurb",
+    "old": "De Great Attractor — het zwaartekrachtcentrum van Laniakea, dicht bij de Norma Cluster achter het vlak van de Melkweg. De bewegingen van duizenden sterrenstelsels, ook het onze, buigen allemaal af naar deze regio; dit bepaalt Laniakea als één structuur.",
+    "new": "De Grote Aantrekker — het zwaartekrachtcentrum van Laniakea, dicht bij de Norma Cluster achter het vlak van de Melkweg. De bewegingen van duizenden sterrenstelsels, ook het onze, buigen allemaal af naar deze regio; dit bepaalt Laniakea als één structuur."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_lens_story_laniakea_body",
+    "old": "'Immense heaven' in het Hawaiaans — de supercluster gedefinieerd in 2014 niet door waar sterrenstelsels zich bevinden, maar door waar zij stromen. Laniakea, ongeveer 160 megaparsec (500 miljoen lichtjaar) groot en met zo'n 100.000 sterrenstelsels, is het aantrekkingsbekken waar onze Virgo Supercluster in drainerert, in de richting van de Great Attractor. En Laniakea, samen met zijn buren, maakt deel uit van een bredere stroming naar iets nog groters: de Shapley Concentration.",
+    "new": "'Immense heaven' in het Hawaiaans — de supercluster gedefinieerd in 2014 niet door waar sterrenstelsels zich bevinden, maar door waar zij stromen. Laniakea, ongeveer 160 megaparsec (500 miljoen lichtjaar) groot en met zo'n 100.000 sterrenstelsels, is het aantrekkingsbekken waar onze Virgosupercluster in draineert, in de richting van de Grote Aantrekker. En Laniakea, samen met zijn buren, maakt deel uit van een bredere stroming naar iets nog groters: de Shapley Supercluster."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_hub_desc_virgo",
+    "old": "Ons thuissuper cluster — honderd sterrenstelsels groepen aangetrokken naar het Virgo Cluster.",
+    "new": "Ons thuissuper cluster — honderd sterrenstelsels groepen aangetrokken naar het Virgocluster."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_hub_desc_laniakea",
+    "old": "Het ~160-Mpc bekken van sterrenstelselstromen waar onze superster naar toe afvloeit, richting de Great Attractor.",
+    "new": "Het ~160-Mpc bekken van sterrenstelselstromen waar onze superster naar toe afvloeit, richting de Grote Aantrekker."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_mark_baikonur",
+    "old": "Baikonur",
+    "new": "Bajkonoer"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_lar_why",
+    "old": "Waarom lanceren raketten in de buurt van de evenaar? De rotatie van de Aarde geeft je een gratis voorsprong, en die is het snelst aan de evenaar (deze neemt af met de cosinus van je breedtegraad). Europa lanceert vanuit Kourou op slechts 5° noord om de grootste boost mee te nemen; Baikonur op 46° geeft bijna een derde ervan op. Die onzichtbare snelheid is echte brandstof waard — en minder brandstof betekent een kleinere raket.",
+    "new": "Waarom lanceren raketten in de buurt van de evenaar? De rotatie van de Aarde geeft je een gratis voorsprong, en die is het snelst aan de evenaar (deze neemt af met de cosinus van je breedtegraad). Europa lanceert vanuit Kourou op slechts 5° noord om de grootste boost mee te nemen; Bajkonoer op 46° geeft bijna een derde ervan op. Die onzichtbare snelheid is echte brandstof waard — en minder brandstof betekent een kleinere raket."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_lar_baikonur",
+    "old": "Baikonur (46°N) — waar Gagarin vertrok",
+    "new": "Bajkonoer (46°N) — waar Gagarin vertrok"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_g9_orbit",
+    "old": "Het International Space Station draait op ongeveer 420 km hoogte — laag genoeg om de Aarde elke ~92 minuten af te leggen op bijna 7,7 km/s, ruwweg 16 ronden per dag. Hergebruik het baangereedschap, vooringesteld op de stationshoogte, en snelheid en periode rollen er direct uit.",
+    "new": "Het ISS draait op ongeveer 420 km hoogte — laag genoeg om de Aarde elke ~92 minuten af te leggen op bijna 7,7 km/s, ruwweg 16 ronden per dag. Hergebruik het baangereedschap, vooringesteld op de stationshoogte, en snelheid en periode rollen er direct uit."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_g10_azimuth",
+    "old": "Nog één draad, terug naar waar we begonnen: lanceren. Je kunt niet elke baan vanaf elk platform bereiken — de inclinatie kan nooit minder zijn dan je lanceerbreedtegraad, en de kompaskoers ligt vast door cos(azimut) = cos(inclinatie)/cos(breedtegraad). Richt pal oost en je krijgt een baan die schuin staat op je breedtegraad, de goedkoopste (waarom het ISS vanaf Baikonur wordt bediend en vanaf de Cape). En een zonsynchrone baan, die retrograde is, betekent naar het ZUIDEN richten — precies waarom die missies langs de kust van Californië vanaf Vandenberg lanceren.",
+    "new": "Nog één draad, terug naar waar we begonnen: lanceren. Je kunt niet elke baan vanaf elk platform bereiken — de inclinatie kan nooit minder zijn dan je lanceerbreedtegraad, en de kompaskoers ligt vast door cos(azimut) = cos(inclinatie)/cos(breedtegraad). Richt pal oost en je krijgt een baan die schuin staat op je breedtegraad, de goedkoopste (waarom het ISS vanaf Bajkonoer wordt bediend en vanaf de Cape). En een zonsynchrone baan, die retrograde is, betekent naar het ZUIDEN richten — precies waarom die missies langs de kust van Californië vanaf Vandenberg lanceren."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_rtm_cislunar",
+    "old": "Zet het nu in het aardgecentreerde stelsel en ZIE de reis. Vanuit een lage parkeerbaan ontsteek je de trans-lunar injection bij het perigeum en zweef je langs een lange halve ellips waarvan het verre uiteinde (apogeum) net de afstand van de Maan bereikt — een ruwweg vijf dagen durende klim omhoog. Maar je richt niet OP de Maan: die beweegt zo'n 62° langs haar baan terwijl jij zweeft, dus richt je waar ze ZAL zijn en kom je aan terwijl ze je inhaalt. Aan het verre uiteinde ontsteek je opnieuw om in een maanbaan te worden ingevangen. Beide Δv hier zijn de echte patched-conic-waarden uit de Earth-Moon Lambert-solver van de kernel — dit is de geometrie die elke bemande maanmissie van Apollo tot Artemis vliegt.",
+    "new": "Zet het nu in het aardgecentreerde stelsel en ZIE de reis. Vanuit een lage parkeerbaan ontsteek je de trans-lunar injection bij het perigeum en zweef je langs een lange halve ellips waarvan het verre uiteinde (apogeum) net de afstand van de Maan bereikt — een ruwweg vijf dagen durende klim omhoog. Maar je richt niet OP de Maan: die beweegt zo'n 62° langs haar baan terwijl jij zweeft, dus richt je waar ze ZAL zijn en kom je aan terwijl ze je inhaalt. Aan het verre uiteinde ontsteek je opnieuw om in een maanbaan te worden ingevangen. Beide Δv hier zijn de echte patched-conic-waarden uit de Aarde-Maan Lambert-solver van de kernel — dit is de geometrie die elke bemande maanmissie van Apollo tot Artemis vliegt."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_illustration_alt_get_to_mars",
+    "old": "Aarde en Mars op hun Sun-middelpuntige banen met de raaklijn transferellips die ze verbindt, de Zon gloeiend amberkleurig in het centrum.",
+    "new": "Aarde en Mars op hun Zon-middelpuntige banen met de raaklijn transferellips die ze verbindt, de Zon gloeiend amberkleurig in het centrum."
+  },
+  {
+    "rel": "messages",
+    "at": "galaxy_name_sextans_dwarf",
+    "old": "Sextans-dwergstelsel",
+    "new": "Sextant-dwergstelsel"
+  }
+]

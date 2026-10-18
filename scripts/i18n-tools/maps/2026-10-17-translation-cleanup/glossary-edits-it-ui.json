@@ -1,0 +1,92 @@
+[
+  {
+    "rel": "messages",
+    "at": "science_layer_galaxies_label",
+    "old": "Galassie Local Group",
+    "new": "Galassie Gruppo Locale"
+  },
+  {
+    "rel": "messages",
+    "at": "science_layer_galaxies_desc",
+    "old": "Sprite a cartello di ~15 galassie vicine (Andromeda, Magellanic Clouds, sferoidali nane) sulla sfera celeste con AR/Dec corretti — solo sovrapposizione celeste, non in scala reale.",
+    "new": "Sprite a cartello di ~15 galassie vicine (Andromeda, Nubi di Magellano, sferoidali nane) sulla sfera celeste con AR/Dec corretti — solo sovrapposizione celeste, non in scala reale."
+  },
+  {
+    "rel": "messages",
+    "at": "landing_card_explore_desc",
+    "old": "Zoom attraverso otto scale nidificate — sistema solare, galassia, Local Group, ragnatela cosmica — ognuna a distanza reale.",
+    "new": "Zoom attraverso otto scale nidificate — sistema solare, galassia, Gruppo Locale, ragnatela cosmica — ognuna a distanza reale."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_iconic_tagline_dawn",
+    "old": "Prima missione a orbitare due corpi extraterrestri (Vesta, Ceres).",
+    "new": "Prima missione a orbitare due corpi extraterrestri (Vesta, Cerere)."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_ctx_local_group",
+    "old": "Local Group",
+    "new": "Gruppo Locale"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_heading_voyager_1",
+    "old": "Gliese 445, in Camelopardalis — passaggio più vicino tra circa 40.000 anni",
+    "new": "Gliese 445, in Giraffa — passaggio più vicino tra circa 40.000 anni"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_ctx_virgo",
+    "old": "Virgo Supercluster",
+    "new": "Superammasso Locale"
+  },
+  {
+    "rel": "messages",
+    "at": "explore_laniakea_attractor_blurb",
+    "old": "Il Great Attractor — il punto di equilibrio gravitazionale di Laniakea, vicino all'Ammasso della Norma dietro il piano della Via Lattea. I moti di migliaia di galassie, inclusa la nostra, convergono tutti verso questa regione; è ciò che definisce Laniakea come una struttura unica.",
+    "new": "Il Grande Attrattore — il punto di equilibrio gravitazionale di Laniakea, vicino all'Ammasso della Norma dietro il piano della Via Lattea. I moti di migliaia di galassie, inclusa la nostra, convergono tutti verso questa regione; è ciò che definisce Laniakea come una struttura unica."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_mark_baikonur",
+    "old": "Baikonur",
+    "new": "Bajkonur"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_lar_why",
+    "old": "Perché i razzi si lanciano vicino all'equatore? La rotazione stessa della Terra ti dà una spinta gratuita, ed è più veloce all'equatore (diminuisce con il coseno della tua latitudine). L'Europa lancia da Kourou a soli 5° nord per incassare il massimo vantaggio; Baikonur a 46° rinuncia a quasi un terzo. Quella velocità invisibile vale carburante vero — e meno carburante significa un razzo più piccolo.",
+    "new": "Perché i razzi si lanciano vicino all'equatore? La rotazione stessa della Terra ti dà una spinta gratuita, ed è più veloce all'equatore (diminuisce con il coseno della tua latitudine). L'Europa lancia da Kourou a soli 5° nord per incassare il massimo vantaggio; Bajkonur a 46° rinuncia a quasi un terzo. Quella velocità invisibile vale carburante vero — e meno carburante significa un razzo più piccolo."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_lar_baikonur",
+    "old": "Baikonur (46°N) — dove Gagarin si lanciò",
+    "new": "Bajkonur (46°N) — dove Gagarin si lanciò"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_g10_why",
+    "old": "Non esiste un'orbita \"migliore\", solo compromessi. Bassa (LEO): veloce, vicina, ritardo minimo — ma ogni satellite vede una piccola zona e passa velocemente, quindi servono migliaia di satelliti (Starlink, OneWeb). Media (MEO): il compromesso del GPS, un paio di dozzine di satelliti che coprono il globo. Geostazionaria (GEO): un satellite, copertura dell'intero emisfero che non si muove — al costo della distanza e del ritardo. Sun-synchronous (SSO): un'orbita polare bassa che attraversa ogni punto alla stessa ora locale, ideale per l'osservazione.",
+    "new": "Non esiste un'orbita \"migliore\", solo compromessi. Bassa (LEO): veloce, vicina, ritardo minimo — ma ogni satellite vede una piccola zona e passa velocemente, quindi servono migliaia di satelliti (Starlink, OneWeb). Media (MEO): il compromesso del GPS, un paio di dozzine di satelliti che coprono il globo. Geostazionaria (GEO): un satellite, copertura dell'intero emisfero che non si muove — al costo della distanza e del ritardo. Eliosincrona (SSO): un'orbita polare bassa che attraversa ogni punto alla stessa ora locale, ideale per l'osservazione."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_g10_azimuth",
+    "old": "Un ultimo filo, tornando al punto di partenza: il lancio. Non puoi raggiungere qualsiasi orbita da qualsiasi rampa — l'inclinazione non può mai essere inferiore alla tua latitudine di lancio, e la rotta bussola è fissata da cos(azimut) = cos(inclinazione)/cos(latitudine). Punta verso est esatto e ottieni un'orbita inclinata quanto la tua latitudine, la più economica (perché la ISS è servita da Baikonur e da Cape Canaveral). E un'orbita eliosincrona, essendo retrograda, significa puntare a SUD — esattamente il motivo per cui quelle missioni partono lungo la costa californiana da Vandenberg.",
+    "new": "Un ultimo filo, tornando al punto di partenza: il lancio. Non puoi raggiungere qualsiasi orbita da qualsiasi rampa — l'inclinazione non può mai essere inferiore alla tua latitudine di lancio, e la rotta bussola è fissata da cos(azimut) = cos(inclinazione)/cos(latitudine). Punta verso est esatto e ottieni un'orbita inclinata quanto la tua latitudine, la più economica (perché la ISS è servita da Bajkonur e da Cape Canaveral). E un'orbita eliosincrona, essendo retrograda, significa puntare a SUD — esattamente il motivo per cui quelle missioni partono lungo la costa californiana da Vandenberg."
+  },
+  {
+    "rel": "messages",
+    "at": "galaxy_name_ursa_minor_dwarf",
+    "old": "Galassia nana Ursa Minor",
+    "new": "Galassia nana Orsa Minore"
+  },
+  {
+    "rel": "messages",
+    "at": "galaxy_name_sextans_dwarf",
+    "old": "Galassia nana Sextans",
+    "new": "Galassia nana Sestante"
+  }
+]

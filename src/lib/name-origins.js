@@ -169,6 +169,7 @@ export const ORIGIN_NAMES = {
     Xuntian: '巡天',
     Jiuquan: '酒泉',
     CNSA: '国家航天局',
+    CMSA: '中国载人航天工程办公室',
     Wenchang: '文昌',
     Xichang: '西昌',
     Taiyuan: '太原',

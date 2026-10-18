@@ -180,7 +180,7 @@ already in the text.
    class, checking unsure forms on native pages (§4). Add the language's origin names
    to `ORIGIN_NAMES` (Israeli missions and satellites: Beresheet → בראשית in `he`).
 4. Size the run (field count × cost) and get a go before any paid translation; the
-   prompt carries `NAME_POLICY` and the glossary.
+   prompt carries `NAME_POLICY` but not the glossary: run `glossary-apply.mjs` on the output.
 5. Translate UI messages, then the gallery and entity pages (their names become the
    canonical forms, §3.3), then the editorial and article text, using those forms.
 6. Gate: `validate-data`, guard replay (no new rejections), coverage scan

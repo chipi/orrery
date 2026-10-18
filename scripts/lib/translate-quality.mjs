@@ -61,15 +61,15 @@ export const LOCALE_RULES = {
 - Standard Serbian, EKAVIAN only (време, место, цео, уместо — never вријеме, мјесто, цијел, умјесто).
 - Serbian Cyrillic only for Serbian words. Never Latin letters inside a Cyrillic word, never Russian/Ukrainian/Bulgarian letters or words (я ю ё й щ ы э ъ ь і, это, один, ничего, держи, първи), never a Latin-script Serbian sentence.
 - Moon = Месец (not Луна); Sun = Сунце; Solar System = Сунчев систем; Earth = Земља.
-- Names follow the NAMES rule: in Latin, exactly as the English writes them (Apollo 12, Cygnus, NASA, ISS, Northrop Grumman, Oceanus Procellarum). Never transliterate a name into Cyrillic and never spell English phonetically in Cyrillic ("тхе", "витх", "Рецоннаиссанце" are wrong). Inflect with a hyphen when a case ending is needed (NASA-ин, Voyager-а), never by gluing Cyrillic letters onto a Latin word.
+- Names follow the NAMES rule: things people built and agencies in Latin, exactly as the English writes them (Apollo 12, Voyager 2, NASA, Northrop Grumman); planets, places, surface features, stars, constellations and people in Serbian Cyrillic, in the glossary form (Лабуд, Кеплер); the International Space Station is МСС. Never transliterate the name of a built thing into Cyrillic and never spell English phonetically in Cyrillic ("тхе", "витх", "Рецоннаиссанце" are wrong). Inflect with a hyphen when a case ending is needed (NASA-ин, Voyager-а), never by gluing Cyrillic letters onto a Latin word.
 - Decimal comma (0,967), thousands with a dot (35.786).
 - Glossary: International Space Station spelled out = Међународна свемирска станица (acronym ISS); Deep Space Network spelled out = Мрежа за далеки свемир (acronym DSN); lunar mare as a common noun = маре (never кобила).
 - Terms: atmospheric entry = улазак у атмосферу; skip entry = улазак са одскоком; coast phase = лет по инерцији; flyby = прелет; rendezvous = сусрет у орбити; hatch = отвор; periapsis = перицентар; stage (of a rocket) = степен (masculine: први степен, првих степена); launch vehicle = ракета-носач; trace gases = гасови у траговима; plane (geometry) = раван.`,
-  ru: `Russian rules: Cyrillic only for Russian words; never Latin letters inside a Cyrillic word; names follow the NAMES rule (Latin, as in English).`,
+  ru: `Russian rules: Cyrillic only for Russian words; never Latin letters inside a Cyrillic word; names follow the NAMES rule (built things and agencies in Latin as in English, except Russian and Soviet ones in Cyrillic; people, places and science terms in Russian).`,
   hi: `Hindi rules: Devanagari for Hindi words; never Chinese/Japanese characters (e.g. 着陸, 弹道 are wrong); names follow the NAMES rule.`,
   ko: `Korean rules: Hangul for Korean words; never Chinese characters/hanja (e.g. 西昌衛星發射中心, 衛星群 are wrong); names follow the NAMES rule.`,
   ar: `Arabic rules: Arabic script for Arabic words; never Cyrillic or other letters inside an Arabic word; names follow the NAMES rule.`,
-  he: `Hebrew rules: Modern Hebrew in Hebrew script, without niqqud (vowel points); never Arabic or other letters inside a Hebrew word; names follow the NAMES rule (Latin, as in English, except Israeli names).`,
+  he: `Hebrew rules: Modern Hebrew in Hebrew script, without niqqud (vowel points); never Arabic or other letters inside a Hebrew word; names follow the NAMES rule (built things and agencies in Latin as in English, except Israeli ones in Hebrew; people, places and science terms in Hebrew).`,
 };
 
 export function systemAddendum(locale) {

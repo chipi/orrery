@@ -56,3 +56,4 @@ zh titles partly traditional (中途島, 哈欽森, 堅忍, 卡門線, 科羅廖
 - ja: Lambert problem = ランベルト問題 (ja.wikipedia ヨハン・ハインリヒ・ランベルト); 4 'Lambert問題' left outside the essays — sweep with the Lambert glossary key.
   (ja and zh-CN essays now follow the English path luna9 — when the English link is fixed to luna2, sweep every locale's going-to-the-moon body.19.)
 - zh-CN ORIGIN_NAMES: LandSpace 蓝箭航天 (Q48772158), iSpace 星际荣耀 (Q56692271) added 2026-10-18; Hyperbola-3 (双曲线三号?) has no en.wikipedia article to source a form — kept Latin, needs a source.
+- hi: Bengaluru = बेंगलुरु (hi.wikipedia, Q1355) used in essays; Byalalu (Q5003923) has no hi form — kept Latin. Indian Deep Space Network = भारतीय गहन अंतरिक्ष नेटवर्क (hi.wikipedia) if it ever needs a native form.

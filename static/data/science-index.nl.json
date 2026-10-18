@@ -809,7 +809,7 @@
     "section": "asteroid-belt",
     "title": "De Planetoïdengordel",
     "intro": "Een planeet die er bijna was — de rotsachtige restanten tussen Mars en Jupiter die door de zwaartekracht van Jupiter niet konden samensmelten.",
-    "haystack": "de planetoïdengordel een planeet die er bijna was — de rotsachtige restanten tussen mars en jupiter die door de zwaartekracht van jupiter niet konden samensmelten. de gordel heeft een interne structuur. spectroscopie verdeelt hem in drie grove zones: de binnenste gordel (2,1–2,5 au), gedomineerd door stenige lichamen van het s-type; de middelste gordel (2,5–3,2 au), waar koolstofhoudende c-types de overhand krijgen (ceres + hygiea bevinden zich hier); en de buitenste gordel, die overgaat in de trojaanse asteroïden die de baan van jupiter delen op de lagrangepunten l4 en l5. verschillende ouderpopulaties, verschillende vormingstemperaturen, verschillende geschiedenissen — bewaard in dezelfde gordel omdat de resonanties van jupiter ze bijeendreven. the asteroid belt"
+    "haystack": "de planetoïdengordel een planeet die er bijna was — de rotsachtige restanten tussen mars en jupiter die door de zwaartekracht van jupiter niet konden samensmelten. de gordel heeft een interne structuur. spectroscopie verdeelt hem in drie grove zones: de binnenste gordel (2,1–2,5 ae), gedomineerd door stenige lichamen van het s-type; de middelste gordel (2,5–3,2 ae), waar koolstofhoudende c-types de overhand krijgen (ceres + hygiea bevinden zich hier); en de buitenste gordel, die overgaat in de trojaanse asteroïden die de baan van jupiter delen op de lagrangepunten l4 en l5. verschillende ouderpopulaties, verschillende vormingstemperaturen, verschillende geschiedenissen — bewaard in dezelfde gordel omdat de resonanties van jupiter ze bijeendreven. the asteroid belt"
   },
   {
     "tab": "planets",
@@ -823,7 +823,7 @@
     "section": "kuiper-belt",
     "title": "De Kuipergordel",
     "intro": "Een schijf van ijslichamen voorbij Neptunus — voorspeld in 1951, bevestigd in 1992, en de bron van elke kortperiodieke komeet die langs de Aarde vliegt.",
-    "haystack": "de kuipergordel een schijf van ijslichamen voorbij neptunus — voorspeld in 1951, bevestigd in 1992, en de bron van elke kortperiodieke komeet die langs de aarde vliegt. structureel heeft de gordel drie populaties. de klassieke kuipergordel op 42–48 au bevat lichamen op vrijwel cirkelvormige banen met een kleine inclinatie — het dynamisch ongestoorde restant van de oorspronkelijke schijf; albion en quaoar horen hier thuis. de resonante populatie zit vast in een 2:3-resonantie van de gemiddelde beweging met neptunus (pluto is het archetype — voor elke twee pluto-omlopen maakt neptunus er drie); deze lichamen heten plutino's. dan is er de verstrooide schijf, de excentrische buitenuitbreiding met grote inclinaties waar eris en sedna rondzwerven, met perihelia dicht bij neptunus en aphelia honderden au ver weg. elke populatie is een fossiel van een ander hoofdstuk uit de gravitatiegeschiedenis van het vroege zonnestelsel. the kuiper belt"
+    "haystack": "de kuipergordel een schijf van ijslichamen voorbij neptunus — voorspeld in 1951, bevestigd in 1992, en de bron van elke kortperiodieke komeet die langs de aarde vliegt. structureel heeft de gordel drie populaties. de klassieke kuipergordel op 42–48 ae bevat lichamen op vrijwel cirkelvormige banen met een kleine inclinatie — het dynamisch ongestoorde restant van de oorspronkelijke schijf; albion en quaoar horen hier thuis. de resonante populatie zit vast in een 2:3-resonantie van de gemiddelde beweging met neptunus (pluto is het archetype — voor elke twee pluto-omlopen maakt neptunus er drie); deze lichamen heten plutino's. dan is er de verstrooide schijf, de excentrische buitenuitbreiding met grote inclinaties waar eris en sedna rondzwerven, met perihelia dicht bij neptunus en aphelia honderden ae ver weg. elke populatie is een fossiel van een ander hoofdstuk uit de gravitatiegeschiedenis van het vroege zonnestelsel. the kuiper belt"
   },
   {
     "tab": "planets",
@@ -1019,7 +1019,7 @@
     "section": "solar-sail",
     "title": "Zonnezeil — de enige gratis stuwkracht",
     "intro": "Een zonnezeil voert geen drijfstof mee maar wordt voortgeduwd door de impuls van fotonen: een onbegrensde specifieke impuls, en hoe langer het vliegt, hoe goedkoper.",
-    "haystack": "zonnezeil — de enige gratis stuwkracht een zonnezeil voert geen drijfstof mee maar wordt voortgeduwd door de impuls van fotonen: een onbegrensde specifieke impuls, en hoe langer het vliegt, hoe goedkoper. licht draagt impuls. wanneer een foton van een spiegel weerkaatst, geeft het tweemaal zijn impuls aan de spiegel — een druk die stralingsdruk heet. in het dagelijks leven is die kracht verwaarloosbaar, maar in de ruimte, waar geen luchtweerstand is, loopt zelfs een piepkleine continue kracht op tot een echte snelheidsverandering. een perfect reflecterend zeil van 800 m² op 1 au (de afstand van de aarde tot de zon) ondervindt ongeveer 5 millinewton — het gewicht van een kleine druif. dat is minder dan welke ionenmotor ook levert, maar het vraagt geen drijfstof, geen energiesysteem buiten de basisvoorzieningen, en het stopt nooit zolang de zon schijnt. solar sails — the only free push"
+    "haystack": "zonnezeil — de enige gratis stuwkracht een zonnezeil voert geen drijfstof mee maar wordt voortgeduwd door de impuls van fotonen: een onbegrensde specifieke impuls, en hoe langer het vliegt, hoe goedkoper. licht draagt impuls. wanneer een foton van een spiegel weerkaatst, geeft het tweemaal zijn impuls aan de spiegel — een druk die stralingsdruk heet. in het dagelijks leven is die kracht verwaarloosbaar, maar in de ruimte, waar geen luchtweerstand is, loopt zelfs een piepkleine continue kracht op tot een echte snelheidsverandering. een perfect reflecterend zeil van 800 m² op 1 ae (de afstand van de aarde tot de zon) ondervindt ongeveer 5 millinewton — het gewicht van een kleine druif. dat is minder dan welke ionenmotor ook levert, maar het vraagt geen drijfstof, geen energiesysteem buiten de basisvoorzieningen, en het stopt nooit zolang de zon schijnt. solar sails — the only free push"
   },
   {
     "tab": "propulsion",
@@ -1066,9 +1066,9 @@
   {
     "tab": "scales-time",
     "section": "au",
-    "title": "AU — astronomische eenheid",
+    "title": "AE — astronomische eenheid",
     "intro": "De gemiddelde afstand van de Aarde tot de Zon, vastgesteld op exact 149.597.870.700 meter — de natuurlijke maatstaf voor afstanden in het zonnestelsel.",
-    "haystack": "au — astronomische eenheid de gemiddelde afstand van de aarde tot de zon, vastgesteld op exact 149.597.870.700 meter — de natuurlijke maatstaf voor afstanden in het zonnestelsel. tot 2012 werd de au gedefinieerd door de baan van de aarde. doordat die baan onder invloed van verstoringen door andere planeten langzaam verandert, veranderde strikt genomen ook de au mee. de iau legde de au in 2012 vast op een exact geheel aantal meters — 149.597.870.700 — en de definitie is sindsdien stabiel. de au is niet langer 'de baan van de aarde'; het is een metrische maatstaf die er toevallig ongeveer mee overeenkomt. au — astronomical unit"
+    "haystack": "ae — astronomische eenheid de gemiddelde afstand van de aarde tot de zon, vastgesteld op exact 149.597.870.700 meter — de natuurlijke maatstaf voor afstanden in het zonnestelsel. tot 2012 werd de ae gedefinieerd door de baan van de aarde. doordat die baan onder invloed van verstoringen door andere planeten langzaam verandert, veranderde strikt genomen ook de ae mee. de iau legde de ae in 2012 vast op een exact geheel aantal meters — 149.597.870.700 — en de definitie is sindsdien stabiel. de ae is niet langer 'de baan van de aarde'; het is een metrische maatstaf die er toevallig ongeveer mee overeenkomt. au — astronomical unit"
   },
   {
     "tab": "scales-time",
@@ -1096,7 +1096,7 @@
     "section": "light-minute",
     "title": "Lichtminuut en lichtjaar",
     "intro": "Afstand gemeten in de tijd die licht erover doet — de meest bruikbare eenheid voor communicatievertragingen en stellaire afstanden.",
-    "haystack": "lichtminuut en lichtjaar afstand gemeten in de tijd die licht erover doet — de meest bruikbare eenheid voor communicatievertragingen en stellaire afstanden. licht beweegt met ongeveer 300.000 km/s. een lichtseconde is 300.000 km. een lichtminuut is 18 miljoen km. een lichtjaar is 9,46 biljoen km. het zijn afstanden, geen tijden — verwarrend genoemd, maar handig: 1 au ≈ 8,3 lichtminuten, dus \"mars staat 4–22 lichtminuten ver, afhankelijk van de baan\" zegt je op elk moment hoe lang een commando heen en terug onderweg is. light-minute and light-year"
+    "haystack": "lichtminuut en lichtjaar afstand gemeten in de tijd die licht erover doet — de meest bruikbare eenheid voor communicatievertragingen en stellaire afstanden. licht beweegt met ongeveer 300.000 km/s. een lichtseconde is 300.000 km. een lichtminuut is 18 miljoen km. een lichtjaar is 9,46 biljoen km. het zijn afstanden, geen tijden — verwarrend genoemd, maar handig: 1 ae ≈ 8,3 lichtminuten, dus \"mars staat 4–22 lichtminuten ver, afhankelijk van de baan\" zegt je op elk moment hoe lang een commando heen en terug onderweg is. light-minute and light-year"
   },
   {
     "tab": "scales-time",

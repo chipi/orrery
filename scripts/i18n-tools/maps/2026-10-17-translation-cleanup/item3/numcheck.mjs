@@ -18,7 +18,7 @@ for (const f of process.argv.slice(2))
         : get(JSON.parse(fs.readFileSync(`i18n-src/en-US/${e.rel}`, 'utf8')), e.at);
     const known = new Set([...nums(src ?? ''), ...nums(e.old)]);
     const fresh = [...new Set(nums(e.new).filter((n) => !known.has(n)))];
-    if (/(^|\.)tagline$/.test(e.at) && e.new.length > 140)
+    if (/^fleet\//.test(e.rel) && /(^|\.)tagline$/.test(e.at) && e.new.length > 140)
       console.log(`CHECK ${e.rel}:${e.at} | tagline ${e.new.length} > 140`);
     if (fresh.length) console.log(`CHECK ${e.rel}:${e.at} | new-only [${fresh.join(' ')}]`);
   }

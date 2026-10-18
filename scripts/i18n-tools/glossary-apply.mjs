@@ -147,6 +147,11 @@ const GUARD = {
   Houston: { before: /Space Center\s?$/, after: /^,\s?we/ },
   // ELDO's Europa rocket programme, not Jupiter's moon
   Europa: { path: /fleet\/launcher\/ariane-1\.json/ },
+  // the president, not the launch site (Kennedy LC-39A, Kennedy Space Center, KSC pages)
+  Kennedy: {
+    path: /fleet\/launch-site\/|launch-sites|kennedy-space-center/,
+    after: /^\s?(LC|SLC|Space|Launch|Center|Centre|Complex|Pad|-?\d)/,
+  },
   // the English search terms used on Commons, listed as typed
   ISRO: { path: /sourcing\/gaps\.json:gaps\.2\.checked\.0$/ },
 };

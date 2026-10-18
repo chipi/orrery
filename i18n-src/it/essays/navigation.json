@@ -1,18 +1,18 @@
 {
   "title": "Trovare Marte al buio",
-  "dek": "Come si guida un veicolo verso un pianeta in movimento attraverso cento milioni di chilometri di vuoto, senza mappa, senza orizzonte, e con un ritardo di venti minuti per ogni comando? La risposta di settant'anni è più strana e più umana di quanto i macchinari suggeriscono.",
+  "dek": "Come si dirige un veicolo verso un pianeta in movimento attraverso cento milioni di chilometri di vuoto, senza mappa, senza orizzonte, e con un ritardo di venti minuti per ogni istruzione? La risposta, maturata in settant'anni, è più strana e più umana di quanto le macchine lascino pensare.",
   "body": [
     {
       "type": "prose",
-      "md": "Non ci sono strade nello spazio. Nessuna costa, nessun orizzonte, nessun punto di riferimento per navigare — e l'unica cosa che ogni conducente sulla Terra ora dà per scontata, una costellazione di satelliti che sussurra *sei qui*, esiste solo in uno strato sottile di pochi migliaia di chilometri di spessore attorno a un pianeta. Lasciatolo, siete soli con un problema articolato in tre parti: **Dove sono? In quale direzione sto puntando? E come arrivo da qui a un luogo che si sta già muovendo velocemente e non sarà dove l'avevo previsto?**"
+      "md": "Nello spazio non ci sono strade. Nessuna costa, nessun orizzonte, nessun punto di riferimento con cui orientarsi — e l'unica cosa che ogni automobilista sulla Terra ormai dà per scontata, una costellazione di satelliti che sussurra *sei qui*, esiste soltanto in un sottile involucro spesso poche migliaia di chilometri attorno a un solo pianeta. Lasciatelo, e siete soli con un problema in tre parti: **Dove sono? In quale direzione sono puntato? E come arrivo da qui a un luogo che a sua volta si muove, veloce, e non sarà più lì quando arriverò?**"
     },
     {
       "type": "prose",
-      "md": "Sbagliare non ammette correzione: una frazione di grado di errore di puntamento, moltiplicata su cento milioni di chilometri, è la differenza fra un'orbita e un cratere. Azzeccare il bersaglio e passa inosservato — la navigazione è l'abilità silenziosa sotto tutte le fragorose, la cosa di cui nessun comunicato stampa parla per primo e senza cui nessuna missione sopravvive. Consideriamo gli standard cui è sottoposta. [New Horizons](/missions?id=new-horizons) ha percorso quasi cinque miliardi di chilometri fino a [Plutone](/explore) in nove anni e mezzo e è arrivata a poco più di cento chilometri, e circa due minuti e mezzo, da un piano elaborato prima che lasciasse il pad di lancio. È questa la precisione di cui si parla — e l'aspetto stupefacente è quanto vecchie, e quanto umane, risultino essere le idee che le stanno dietro."
+      "md": "Sbagliare non lascia scampo: una frazione di grado di errore di puntamento, moltiplicata per cento milioni di chilometri, è la differenza fra un'orbita e un cratere. Farlo giusto, invece, lo rende invisibile — la navigazione è l'abilità silenziosa sotto tutte quelle rumorose, la cosa con cui nessun comunicato stampa si apre e senza la quale nessuna missione sopravvive. Pensate al metro con cui viene giudicata. [New Horizons](/missions?id=new-horizons) ha percorso quasi cinque miliardi di chilometri fino a [Plutone](/explore) in nove anni e mezzo ed è arrivata a circa cento chilometri, e a circa due minuti e mezzo, da un piano tracciato prima che lasciasse la rampa di lancio. È questa la precisione di cui parliamo — e la cosa sorprendente è quanto siano antiche, e quanto umane, le idee che le stanno dietro."
     },
     {
       "type": "prose",
-      "md": "Perché la risposta è appena cambiata. I macchinari si sono rimpiccioliti e poi sono diventati intelligenti; le distanze si sono allungate finché il terreno non ha potuto più stare al passo; ma sotto, gli spacecraft navigano ancora come faceva un marinaio del diciottesimo secolo — misurando gli angoli verso le uniche cose fisse che ci sono, le stelle, e tenendo un conto onesto di ogni spinta che hanno mai sentito. Questa è la storia di quel conto, e del lento passaggio dell'intera delicata operazione da una stanza piena di persone a terra al veicolo spaziale stesso."
+      "md": "Perché la risposta è cambiata appena. Le macchine sono diventate più piccole e poi intelligenti; le distanze sono cresciute finché da terra non è stato più possibile tenere il passo; ma in fondo i veicoli spaziali navigano ancora come un marinaio del XVIII secolo — misurando gli angoli rispetto alle uniche cose fisse che esistono, le stelle, e tenendo un conto onesto di ogni spinta subita. Questa è la storia di quel conto, e del lento passaggio dell'intera, delicata faccenda da una sala piena di persone a terra al veicolo stesso."
     },
     {
       "type": "heading",
@@ -20,69 +20,69 @@
     },
     {
       "type": "prose",
-      "md": "Cominciate con la più difficile delle tre domande, quella che suona più semplice: *dove sono?* Sulla Terra guardate. Nello spazio, per molto tempo, non potevate — allora invece **contavate**."
+      "md": "Cominciate dalla più difficile delle tre domande, quella che sembra la più facile: *dove sono?* Sulla Terra guardate. Nello spazio, per molto tempo, non potevate — e allora **tenevate il conto**."
     },
     {
       "type": "prose",
-      "md": "La tecnica si chiama [estrazione morta](/science/mission-phases/dead-reckoning), ed è esattamente vecchia quanto la navigazione oceanica. Se sapete dove avete iniziato, e misurate ogni accelerazione che avete sentito da allora — ogni accensione del motore, ogni spinta — potete sommarle tutte e sapere, in linea di principio, dove siete adesso. Un veicolo spaziale lo fa con un'*unità di misura inerziale*: un insieme di giroscopi che mantengono un orientamento fisso e accelerometri che sentono ogni cambiamento nel movimento, integrando tranquillamente nel nucleo del veicolo l'intero viaggio in una stima continua della posizione e della velocità."
+      "md": "La tecnica si chiama [navigazione stimata](/science/mission-phases/dead-reckoning), ed è antica quanto la navigazione oceanica. Se sapete da dove siete partiti, e misurate ogni accelerazione subita da allora — ogni accensione dei motori, ogni piccola spinta — potete sommarle tutte e sapere, in linea di principio, dove siete adesso. Un veicolo spaziale lo fa con un'*unità di misura inerziale*: un gruppo di giroscopi che mantengono un orientamento fisso e di accelerometri che avvertono ogni variazione del moto, e che al centro del veicolo integrano in silenzio, per tutto il viaggio, ogni misura in una stima continua di posizione e velocità."
     },
     {
       "type": "figure",
       "image": "essays/navigation/dead-reckoning",
       "kind": "diagram",
-      "caption": "L'estrazione morta — il trucco più antico in mare, e ancora quello sottostante. Tenete fermi gli inizi noti, aggiungete ogni spinta che avete sentito da allora, e la stima continua di dove siete lentamente marcisce; un'osservazione stellare ripristina la deriva a zero.",
+      "caption": "La navigazione stimata — il trucco più antico del mare, e ancora quello su cui tutto poggia. Partite da un punto noto, aggiungete ogni spinta subita da allora, e la stima di dove siete si deteriora lentamente; l'osservazione di una stella azzera la deriva.",
       "align": "wide"
     },
     {
       "type": "prose",
-      "md": "\"In linea di principio\" sta portando peso in quella frase. L'estrazione morta deriva. Ogni minuscolo errore in ogni misurazione si accumula, così la stima lentamente marcisce, e più lontano si va peggio diventa. Ecco perché, nei voli che contavano di più, mettevano un umano nel circuito con un sestante."
+      "md": "In quella frase \"in linea di principio\" pesa molto. La navigazione stimata deriva. Ogni minimo errore in ogni misura si accumula, così la stima si deteriora piano piano, e più si va lontano peggio diventa. Ecco perché, nei voli che contavano di più, si metteva un essere umano nel ciclo, con un sestante."
     },
     {
       "type": "prose",
-      "md": "Questo è il dettaglio che vale la pena tenere a mente. Quando l'[Apollo 8](/missions?id=apollo8) divenne il primo veicolo con equipaggio a lasciare la gravità della Terra e navigare verso un altro mondo nel dicembre 1968, l'equipaggio sterzò in parte nel modo in cui Cook attraversò il Pacifico: Jim Lovell a un telescopio e a un sestante incorporato nello scafo, osservando stelle note contro l'orizzonte della Terra, introducendo gli angoli in un computer per corregere la deriva. L'Apollo Guidance Computer che eseguiva questi calcoli aveva circa 72 kilobyte di memoria fissa e girava a una velocità di clock che un campanello moderno farebbe sembrare lenta — e ha portato nove equipaggi sulla Luna e [due manate di loro sopra](/missions?id=apollo11). Il genio non era l'hardware. Era il riconoscimento che una macchina per tenere il conto e un umano per controllarlo contro le stelle, insieme, potevano fare ciò che nessuno dei due poteva da solo."
+      "md": "Questo è il dettaglio da ricordare. Quando l'[Apollo 8](/missions?id=apollo8), nel dicembre 1968, divenne la prima nave con equipaggio a lasciare la gravità terrestre e a navigare verso un altro mondo, l'equipaggio si orientò in parte come Cook aveva attraversato il Pacifico: Jim Lovell a un telescopio e a un sestante integrati nello scafo, a puntare stelle note contro l'orizzonte terrestre e a inserire gli angoli in un computer per correggere la deriva. L'Apollo Guidance Computer che eseguiva quei calcoli aveva circa 72 kilobyte di memoria fissa e andava a una velocità di clock che un campanello moderno guarderebbe con sufficienza — eppure ha portato nove equipaggi alla Luna e [due manciate di loro fin sulla superficie](/missions?id=apollo11). Il genio non stava nell'hardware. Stava nell'aver capito che una macchina a tenere il conto e un essere umano a verificarlo sulle stelle, insieme, potevano fare ciò che nessuno dei due poteva da solo."
     },
     {
       "type": "prose",
-      "md": "L'idea non apparteneva nemmeno al volo spaziale. In quegli stessi anni un aereo da ricognizione la stava mettendo in pratica: l'SR-71 Blackbird, che crociera a tre volte la velocità del suono dove il cielo diurno è già scuro, trasportava un tracciatore stellare dietro la cabina di pilotaggio che osservava le stelle attraverso una finestra di quarzo — almeno due alla volta, abbinate a un catalogo di bordo — e le usava per correggere la deriva della sua piattaforma inerziale, esattamente come fa un veicolo spaziale. I suoi equipaggi chiamavano l'unità R2-D2. Il problema è lo stesso problema a settantamila piedi o in orbita: tenere un conto onesto, e controllarlo contro l'unica cosa che non si muove."
+      "md": "L'idea non apparteneva nemmeno al volo spaziale. In quegli stessi anni la applicava un aereo da ricognizione: l'SR-71 Blackbird, in crociera a tre volte la velocità del suono, a quote dove il cielo diurno è già scuro, portava dietro l'abitacolo un sensore stellare che inquadrava le stelle attraverso un finestrino di quarzo — almeno due alla volta, confrontate con un catalogo di bordo — e le usava per correggere la deriva della piattaforma inerziale, esattamente come fa un veicolo spaziale. I suoi equipaggi chiamavano l'unità R2-D2. Il problema è lo stesso a settantamila piedi come in orbita: tenere un conto onesto, e verificarlo sull'unica cosa che non si muove."
     },
     {
       "type": "figure",
       "image": "missions/apollo8/01",
       "kind": "photo",
-      "caption": "Apollo 8, dicembre 1968 — il primo equipaggio a lasciare la Terra e navigare verso un altro mondo, correggendo un conto alla deriva nel modo in cui farebbe un marinaio: un sestante, le stelle, e l'orizzonte della Terra.",
+      "caption": "Apollo 8, dicembre 1968 — il primo equipaggio a lasciare la Terra e a navigare verso un altro mondo, correggendo un conto alla deriva come avrebbe fatto un marinaio: con un sestante, le stelle e l'orizzonte della Terra.",
       "align": "wide",
       "credit": "NASA"
     },
     {
       "type": "prose",
-      "md": "Ogni veicolo dello spazio profondo ancora trasporta la metà macchina di questa coppia. Ma il sestante con equipaggio era una soluzione temporanea per un decennio specifico. Per tutto ciò che non è equipaggiato — ogni sonda verso ogni pianeta — il conto onesto doveva essere controllato in qualche altro modo. Doveva essere controllato da terra."
+      "md": "Ogni veicolo dello spazio profondo porta ancora con sé la metà macchina di quella coppia. Ma il sestante con equipaggio fu un ripiego per un decennio preciso. Per tutto ciò che non ha equipaggio — ogni sonda verso ogni pianeta — il conto onesto doveva essere verificato in un altro modo. Doveva essere verificato da terra."
     },
     {
       "type": "heading",
-      "text": "Il terreno fa il volo"
+      "text": "Il volo si fa da terra"
     },
     {
       "type": "prose",
-      "md": "Ecco il fatto che rovescia l'intuizione di la maggior parte delle persone sulla navigazione dello spazio: per la maggior parte delle missioni in questo atlante, **il veicolo spaziale non sa dove si trova. Lo sa il terreno.**"
+      "md": "Ecco il fatto che manda in frantumi l'intuizione di molti sulla navigazione spaziale: per la maggior parte delle missioni di questo atlante, **il veicolo non sa dove si trova. Lo sa il controllo a terra.**"
     },
     {
       "type": "prose",
-      "md": "Lo strumento è la [Deep Space Network](/science/mission-phases/dsn) — tre grandi complessi di parabole distanziati approssimativamente 120° l'uno dall'altro in California, Spagna e Australia, così che mentre la Terra ruota, almeno uno di essi può sempre guardare nello spazio profondo. Quando una parabola punta verso una sonda, non sta principalmente ascoltando i dati. Sta misurando due cose con precisione mostruosa. In primo luogo, **distanza**: invia un segnale di timing, l'astronave lo rimanda indietro, e il tempo dell'andata e ritorno — moltiplicato per la velocità della luce — fornisce la distanza, buona a pochi metri su miliardi di chilometri. In secondo luogo, **velocità**: la radio dell'astronave, spostata in frequenza dal suo movimento verso di noi o da noi, viene letta per il suo spostamento Doppler, e lo spostamento fornisce la velocità lungo la linea di vista a una frazione di millimetro al secondo."
+      "md": "Lo strumento è la [Deep Space Network](/science/mission-phases/dsn) — tre grandi complessi di antenne paraboliche distanziati di circa 120° l'uno dall'altro, in California, in Spagna e in Australia, così che mentre la Terra ruota almeno uno di essi possa sempre guardare nello spazio profondo. Quando un'antenna punta una sonda, non è tanto in ascolto dei dati. Sta misurando due cose con precisione mostruosa. Primo, la **distanza**: invia un segnale temporale, il veicolo lo rimanda indietro, e il tempo di andata e ritorno — moltiplicato per la velocità della luce — dà la distanza, con un'incertezza di pochi metri su miliardi di chilometri. Secondo, la **velocità**: la radio del veicolo, spostata in frequenza dal suo moto di avvicinamento o di allontanamento, viene letta per il suo spostamento Doppler, e quello spostamento dà la velocità lungo la linea di vista con la precisione di una frazione di millimetro al secondo."
     },
     {
       "type": "figure",
       "image": "essays/navigation/deep-space-network",
       "kind": "diagram",
-      "caption": "La Deep Space Network: tre grandi antenne distanziate approssimativamente 120° a parte, così che una guardi sempre nello spazio profondo. La distanza viene dal tempo di andata e ritorno della luce; la velocità dallo spostamento Doppler della radio. Il terreno fa il volo.",
+      "caption": "La Deep Space Network: tre grandi antenne distanziate di circa 120°, così che una sia sempre rivolta verso lo spazio profondo. La distanza si ricava dal tempo di andata e ritorno della luce; la velocità dallo spostamento Doppler della radio. Il volo si fa da terra.",
       "align": "wide"
     },
     {
       "type": "prose",
-      "md": "Tracciate questi due numeri per ore mentre la Terra ruota e la geometria cambia, e una stanza di navigatori può ricostruire il percorso di un veicolo spaziale attraverso il sistema solare senza che il veicolo spaziale abbia alcuna opinione forte al riguardo. Quando il [Mariner 4](/missions?id=mariner4) restituì le prime fotografie ravvicinate di un altro pianeta nel 1965, il veicolo era un passeggero; la navigazione è stata fatta sulla Terra. Lo stesso era vero per i [Voyager](/missions?id=voyager-1) e per la [Cassini](/missions?id=cassini) — e quell'arrivo sul filo del rasoio a Plutone, quello che ha aperto questo saggio, è stato pilotato allo stesso modo: ricostruito e corretto quasi interamente da tre antenne a terra."
+      "md": "Seguite quei due numeri per ore, mentre la Terra ruota e la geometria cambia, e una sala di navigatori può ricostruire il percorso di un veicolo attraverso il sistema solare senza che il veicolo stesso abbia in proposito alcuna opinione. Quando il [Mariner 4](/missions?id=mariner4) restituì nel 1965 le prime fotografie ravvicinate di un altro pianeta, il veicolo era un passeggero; la navigazione si faceva sulla Terra. Lo stesso valeva per i [Voyager](/missions?id=voyager-1) e per [Cassini](/missions?id=cassini) — e quell'arrivo sul filo del rasoio a Plutone, quello con cui si è aperto questo saggio, fu pilotato allo stesso modo: ricostruito e corretto quasi interamente da tre antenne a terra."
     },
     {
       "type": "prose",
-      "md": "Ma la Deep Space Network ha un avversario con cui non può discutere, e il suo nome è la velocità della luce. Su Marte, un comando impiega da circa tre a ventidue minuti per arrivare, e il riconoscimento impiega altrettanto tempo per tornare indietro. Su Plutone sono quattro ore e mezza, in un'unica direzione. Il terreno può navigare una sonda magnificamente — purché nulla debba essere deciso più velocemente di quanto la luce possa portare le notizie a casa e una risposta torni indietro. Per settant'anni, quasi nulla lo ha fatto. Questo sta per essere l'intero problema."
+      "md": "Ma la Deep Space Network ha un avversario con cui non può discutere, e si chiama velocità della luce. Su Marte un comando impiega da circa tre a ventidue minuti ad arrivare, e la conferma di ricezione altrettanto per tornare. Su Plutone sono quattro ore e mezza, *solo andata*. Da terra si può guidare una sonda in modo magnifico — finché nulla deve essere deciso più in fretta di quanto la luce impieghi a portare la notizia a casa e a rimandare fuori una risposta. Per settant'anni, quasi nulla lo ha richiesto. Sta per diventare tutto il problema."
     },
     {
       "type": "heading",
@@ -90,21 +90,21 @@
     },
     {
       "type": "prose",
-      "md": "Prima di poter andare ovunque, devi risolvere la seconda domanda — *in quale direzione sto puntando?* — e lo spazio è tranquillamente ostile ad essa. Non c'è niente in alto. Non c'è niente in basso. Un veicolo spaziale che tumula nell'oscurità non ha pavimento che gli dica verso quale direzione sta guardando, e sbagliare significa puntare l'antenna lontano dalla Terra, la fotocamera lontano dal bersaglio, il motore nella direzione sbagliata lungo la traiettoria."
+      "md": "Prima di poter andare ovunque, dovete risolvere la seconda domanda — *in quale direzione sono puntato?* — e lo spazio le è silenziosamente ostile. Non c'è un alto. Non c'è un basso. Un veicolo che rotola nel buio non ha un pavimento che gli dica verso dove sta guardando, e sbagliare significa puntare l'antenna lontano dalla Terra, la camera lontano dal bersaglio, il motore nel verso sbagliato lungo la traiettoria."
     },
     {
       "type": "prose",
-      "md": "La soluzione è concordare, in anticipo, su un insieme di direzioni che non si muovono mai, e misurarvi contro di loro costantemente. Questo accordo è un [sistema di riferimento](/science/scales-time/frames) — per la maggior parte del volo spaziale moderno, quello chiamato J2000, un'orientamento fissato alle posizioni medie delle stelle a mezzogiorno del primo giorno dell'anno 2000. È un'ancora arbitraria, scelta per convenienza, ed è ora la griglia condivisa da cui dipendono tranquillamente quasi tutti i veicoli spaziali, le effemeridi e i piani di missione."
+      "md": "La soluzione è accordarsi in anticipo su un insieme di direzioni che non si muovono mai, e misurarsi di continuo rispetto a esse. Quell'accordo è un [sistema di riferimento](/science/scales-time/frames) — per la maggior parte del volo spaziale moderno, quello chiamato J2000, un orientamento fissato sulle posizioni medie delle stelle a mezzogiorno del primo giorno dell'anno 2000. È un ancoraggio arbitrario, scelto per comodità, ed è ormai la griglia condivisa da cui, senza darlo a vedere, dipendono quasi tutti i veicoli spaziali, le effemeridi e i piani di missione."
     },
     {
       "type": "prose",
-      "md": "Per trovare il suo posto in quella griglia, un veicolo legge il cielo. Un **tracciatore stellare** è una piccola fotocamera che fotografa una porzione di stelle, abbina il modello a un catalogo di bordo, e da quel singolo punto sa esattamente come è orientato nella cornice fissa — una macchina che fa, in una frazione di secondo, esattamente ciò che Lovell ha fatto a mano al suo sestante. Tra le osservazioni, i giroscopi alla deriva portano il conto; ogni volta che il tracciatore stellare ha una visione pulita, ripristina la deriva a zero. Il cielo, di nuovo, è l'unica cosa che vale la pena fidarsi. Tutto il resto è interpolazione tra i vislumbri di esso."
+      "md": "Per trovare il proprio posto in quella griglia, un veicolo legge il cielo. Un **sensore stellare** è una piccola camera che fotografa un lembo di stelle, ne confronta lo schema con un catalogo di bordo e, da quell'unica determinazione, sa con precisione come è orientato nel sistema fisso — una macchina che fa, in una frazione di secondo, esattamente ciò che Lovell faceva a mano con il suo sestante. Tra una determinazione e l'altra, i giroscopi alla deriva portano avanti il conto; ogni volta che il sensore stellare ha una visuale pulita, azzera la deriva. Il cielo, ancora una volta, è l'unica cosa di cui valga la pena fidarsi. Tutto il resto è interpolazione tra un suo scorcio e l'altro."
     },
     {
       "type": "figure",
       "image": "essays/navigation/reference-frame",
       "kind": "diagram",
-      "caption": "Qual è l'alto, quando non esiste un alto: un inseguitore stellare fotografa una porzione di cielo, confronta lo schema con un catalogo di bordo e sa subito come è orientato il veicolo nel sistema di riferimento fisso J2000. Tra una determinazione e l'altra, i giroscopi mantengono il conto.",
+      "caption": "Qual è l'alto, quando un alto non esiste: un sensore stellare fotografa un lembo di cielo, confronta lo schema con un catalogo di bordo e sa subito come è orientato il veicolo nel sistema fisso J2000. Tra una determinazione e l'altra, i giroscopi portano avanti il conto.",
       "align": "wide"
     },
     {
@@ -113,26 +113,26 @@
     },
     {
       "type": "prose",
-      "md": "Ora la terza domanda, quella che trasforma la navigazione da contabilità in qualcosa di più simile alla precisione di tiro. Sapete dove siete. Sapete verso quale direzione state puntando. **Marte è da qualche altra parte — e quando arriverete lì, si sarà mosso.**"
+      "md": "Ora la terza domanda, quella che trasforma la navigazione da contabilità in qualcosa di più vicino al tiro di precisione. Sapete dove siete. Sapete in quale direzione siete puntati. **Marte è altrove — e quando ci arriverete si sarà spostato.**"
     },
     {
       "type": "prose",
-      "md": "Non volate mai diritto verso di esso. Il carburante è la valuta del volo spaziale, e non ce n'è mai abbastanza, così volate il percorso che costa meno: una lunga [orbita di trasferimento](/science/transfers/hohmann-transfer) che parte dalla Terra e costeggia, senza motore, lungo un arco calcolato in modo che la sua estremità lontana e il pianeta bersaglio arrivino al medesimo punto di rendezvous nello stesso istante, mesi dopo. Calcolare quell'arco — *quale velocità, in quale direzione, mi porta da questo punto in movimento a quel punto in movimento in esattamente questo tempo?* — è un pezzo di meccanica orbitale abbastanza antico da avere un nome, il [problema di Lambert](/science/transfers/lambert-problem), e risolverlo è il nucleo di ogni finestra di lancio interplanetaria."
+      "md": "Non puntate mai dritto sul bersaglio. Il carburante è la moneta del volo spaziale, e non ce n'è mai abbastanza, così seguite la traiettoria che costa meno: una lunga [orbita di trasferimento](/science/transfers/hohmann-transfer) che parte dalla Terra e procede per inerzia, senza motore, lungo un arco calcolato in modo che la sua estremità lontana e il pianeta bersaglio arrivino nello stesso punto di appuntamento nello stesso istante, mesi dopo. Calcolare quell'arco — *quale velocità, in quale direzione, mi porta da questo punto in movimento a quel punto in movimento in questo preciso intervallo di tempo?* — è un problema di meccanica orbitale abbastanza antico da avere un nome, il [problema di Lambert](/science/transfers/lambert-problem), e risolverlo è il cuore di ogni finestra di lancio interplanetaria."
     },
     {
       "type": "prose",
-      "md": "Il trucco più elegante di tutta la disciplina è lasciare che i pianeti facciano la spinta. Un veicolo spaziale che si dondola vicino a un pianeta può rubare un sussurro del movimento orbitale proprio di quel pianeta e lanciarsi via più veloce di come è venuto, gratuitamente — un [assistenza gravitazionale](/science/transfers/gravity-assist). A metà degli anni '60 un giovane matematico al JPL di nome Gary Flandro, elaborando calcoli da lavoro estivo, notò che i pianeti esterni stavano entrando in un allineamento una volta ogni 175 anni che avrebbe permesso a un'unica sonda di prendere un'assistenza nel successiva nel successiva, tutto il modo fuori. Quell'osservazione divenne il Grand Tour: il [Voyager 2](/missions?id=voyager-2) ha usato Giove per raggiungere Saturno, Saturno per raggiungere Urano, Urano per raggiungere Nettuno, una sequenza di quattro pianeti che ha risparmiato decenni di tempo di volo e rimane, oggi, l'unica volta che qualcosa ha visitato i giganti di ghiaccio a tutti."
+      "md": "Il trucco più elegante dell'intera disciplina è lasciare che a spingere siano i pianeti. Un veicolo che sfiora un pianeta può sottrargli un sussurro del suo moto orbitale e schizzare via più veloce di come era arrivato, gratis — è la [fionda gravitazionale](/science/transfers/gravity-assist). A metà degli anni Sessanta un giovane matematico del JPL, Gary Flandro, mentre svolgeva calcoli per un lavoro estivo, si accorse che i pianeti esterni stavano scivolando verso un allineamento che si ripresenta una volta ogni 175 anni e che avrebbe permesso a una sola sonda di concatenare una fionda con la successiva, e con quella dopo ancora, fino in fondo. Quell'osservazione divenne il Grand Tour: [Voyager 2](/missions?id=voyager-2) ha usato Giove per raggiungere Saturno, Saturno per raggiungere Urano, Urano per raggiungere Nettuno, un colpo di sponda a quattro pianeti che ha risparmiato decenni di volo e resta, a oggi, l'unica volta in cui qualcosa ha visitato i giganti di ghiaccio."
     },
     {
       "type": "figure",
       "image": "essays/navigation/gravity-assist",
       "kind": "diagram",
-      "caption": "Non volate mai diritto verso di esso. Un trasferimento Hohmann costeggia lungo l'arco più economico verso un pianeta in movimento; un'assistenza gravitazionale ruba un sussurro del movimento proprio di un pianeta gratuitamente — il trucco che ha permesso a una sonda di prendere Giove in Saturno in Urano in Nettuno.",
+      "caption": "Non puntate mai dritto sul bersaglio. Un trasferimento di Hohmann procede lungo l'arco più economico verso un pianeta in movimento; una fionda gravitazionale sottrae gratis un sussurro del moto di un pianeta — il trucco che ha permesso a una sola sonda di concatenare Giove, Saturno, Urano e Nettuno.",
       "align": "wide"
     },
     {
       "type": "prose",
-      "md": "Nessun arco è mai volato perfettamente. Piccoli errori al lancio diventano enormi su cento milioni di chilometri, così ogni volo nello spazio profondo è una lenta sequenza di [manovre di correzione della traiettoria](/science/mission-phases/tcm) — brevi, spinte precise e ben-temporate, ognuna dei navigatori a terra che chiudono il divario tra dove il veicolo *è* e dove il piano dice che dovrebbe essere. La navigazione, in pratica, non è un singolo atto di puntamento. È mirare, controllare, e rimirare, ancora e ancora, per anni."
+      "md": "Nessun arco viene mai percorso alla perfezione. Piccoli errori al lancio diventano enormi su cento milioni di chilometri, così ogni volo nello spazio profondo è una lenta sequenza di [manovre di correzione della traiettoria](/science/mission-phases/tcm) — brevi spinte, calibrate con esattezza nel tempo, con cui i navigatori a terra colmano ogni volta il divario tra dove il veicolo *si trova* e dove il piano dice che dovrebbe trovarsi. La navigazione, in pratica, non è un singolo atto di puntamento. È puntare, controllare e puntare di nuovo, più e più volte, per anni."
     },
     {
       "type": "heading",
@@ -140,27 +140,27 @@
     },
     {
       "type": "prose",
-      "md": "Tutto finora ha una stanza piena di persone sulla Terra nel circuito. L'ultimo atto di questa storia è il macchinario che toglie il conto loro — perché alla frontiera, la luce è semplicemente troppo lenta per chiedere il permesso."
+      "md": "In tutto ciò che abbiamo visto finora, una sala piena di persone sulla Terra fa parte del ciclo. L'ultimo atto di questa storia è la macchina che toglie loro il conto — perché alla frontiera la luce è semplicemente troppo lenta per chiedere il permesso."
     },
     {
       "type": "prose",
-      "md": "La prima crepa nel vecchio modello era la **navigazione ottica**: invece di affidarsi solo alla radio da terra, il veicolo spaziale fotografa il bersaglio stesso sullo sfondo delle stelle e calcola, a bordo, esattamente dove il bersaglio si trova rispetto al suo stesso approccio. La [Cassini](/missions?id=cassini) ha affinato questo contro le lune di Saturno; è così che si infila un ago in un corpo la cui posizione, prima che arrivi, è nota meno precisamente della propria."
+      "md": "La prima crepa nel vecchio modello fu la **navigazione ottica**: invece di affidarsi soltanto alla radio da terra, il veicolo fotografa il bersaglio stesso sullo sfondo delle stelle e ricava a bordo, con esattezza, dove il bersaglio si trova rispetto alla propria traiettoria di avvicinamento. [Cassini](/missions?id=cassini) l'ha affinata sulle lune di Saturno; è così che si infila un ago su un corpo la cui posizione, prima di arrivare, è nota con meno precisione della vostra."
     },
     {
       "type": "prose",
-      "md": "Poi vennero i luoghi dove il terreno genuinamente non poteva aiutare. L'atterraggio su Marte è l'esempio più netto — l'[entrata, discesa e atterraggio](/science/mission-phases/edl) impiega circa sette minuti, e Marte è a minuti di luce di distanza, così al momento in cui la Terra sente anche che il veicolo ha colpito l'atmosfera, l'intera cosa è da tempo finita, in un modo o nell'altro. Nessuno sulla Terra atterra un rover di Marte. Il rover atterra se stesso. La Perseverance ha trasportato un sistema che ha fotografato il terreno che si precipitava, l'ha abbinato in tempo reale contro una mappa di bordo, ha riconosciuto il terreno, e ha *scelto* un punto sicuro su cui atterrare — una macchina che fa il lavoro di Lovell, il lavoro della Deep Space Network, e il lavoro di un pilota di bush in una volta, in sette minuti, da sola."
+      "md": "Poi vennero i casi in cui da terra non si può davvero aiutare. L'atterraggio su Marte è l'esempio più netto — [entrata, discesa e atterraggio](/science/mission-phases/edl) durano circa sette minuti, e Marte dista minuti luce, così quando la Terra viene a sapere che il veicolo ha toccato l'atmosfera tutto è finito da un pezzo, in un modo o nell'altro. Nessuno sulla Terra fa atterrare un rover su Marte. Il rover atterra da solo. [Perseverance](/missions?id=perseverance) portava un sistema che fotografava il suolo in rapido avvicinamento, lo confrontava in tempo reale con una mappa di bordo, ne riconosceva il terreno e *sceglieva* un punto sicuro dove posarsi — una macchina che svolgeva insieme il lavoro di Lovell, quello della Deep Space Network e quello di un pilota delle terre selvagge, in sette minuti, da sola."
     },
     {
       "type": "figure",
       "image": "missions/perseverance/01",
       "kind": "photo",
-      "caption": "Perseverance atterra se stessa. Marte è a minuti di luce di distanza, così al momento in cui la Terra sente che il veicolo ha colpito l'atmosfera è già atterrato, in un modo o nell'altro — il rover legge il terreno che si precipita e sceglie il proprio punto sicuro.",
+      "caption": "Perseverance atterra da sola. Marte dista minuti luce, così quando la Terra viene a sapere che il veicolo ha toccato l'atmosfera questo è già a terra, in un modo o nell'altro — il rover legge il terreno che gli corre incontro e sceglie da sé il punto sicuro.",
       "align": "wide",
       "credit": "NASA/JPL-Caltech"
     },
     {
       "type": "prose",
-      "md": "L'[OSIRIS-REx](/missions?id=osiris-rex) ha fatto qualcosa nella stessa famiglia nell'asteroide Bennu: navigando autonomamente contro le caratteristiche della superficie per toccare una roccia costellata di massi della dimensione di una piccola montagna e rubare un pugno di essa. Questi non sono più il terreno che vola un passeggero. Questi sono veicoli spaziali che navigano se stessi, perché l'alternativa — aspettare la velocità della luce — ucciderebbe la missione."
+      "md": "[OSIRIS-REx](/missions?id=osiris-rex) ha fatto qualcosa di simile sull'asteroide Bennu: navigando in autonomia rispetto ai rilievi della superficie per toccare una roccia disseminata di massi, grande quanto una piccola montagna, e portarne via una manciata. Non è più il controllo a terra a guidare un passeggero. Sono veicoli che navigano da soli, perché l'alternativa — aspettare la velocità della luce — ucciderebbe la missione."
     },
     {
       "type": "heading",
@@ -168,11 +168,11 @@
     },
     {
       "type": "prose",
-      "md": "Fate un passo indietro, e settant'anni crollano in una singola linea. L'[Apollo 8](/missions?id=apollo8) Lovell al sestante, osservando le stelle per correggere un conto alla deriva. Il tracciatore stellare su una sonda che fa la stessa cosa identica, automaticamente, a un miliardo di chilometri di distanza. La fotocamera di discesa della [Perseverance](/missions?id=perseverance) che legge il terreno perché le persone che l'hanno costruita sono a dodici minuti di luce di distanza troppo lontane per aiutare. Macchine diverse, sessant'anni a parte, e sotto di loro un fatto testardo che non si è mai mosso: non c'è una mappa dello spazio, e non ce n'è stata mai. C'è solo il cielo, che non si muove, e un conto onesto di ogni spinta, che lentamente lo fa — e l'intera disciplina si riduce a fidarsi del primo per correggere il secondo. Ogni atterraggio, ogni passaggio ravvicinato, ogni fotografia in questo atlante è andato su ottenendo questo giusto, e quasi nulla di esso è stato mai il titolo."
+      "md": "Fate un passo indietro, e settant'anni si riducono a un'unica linea. Lovell dell'[Apollo 8](/missions?id=apollo8) al sestante, a puntare stelle per correggere un conto alla deriva. Il sensore stellare di una sonda che fa la stessa identica cosa, in automatico, a un miliardo di chilometri. La camera di discesa di [Perseverance](/missions?id=perseverance) che legge il terreno perché chi l'ha costruita è troppo lontano — dodici minuti luce — per aiutarla. Macchine diverse, a sessant'anni di distanza, e sotto di loro un fatto ostinato che non si è mai spostato: non esiste una mappa dello spazio, e non è mai esistita. C'è solo il cielo, che non si muove, e un conto onesto di ogni spinta, che invece lentamente si sposta — e l'intera disciplina si riduce a fidarsi del primo per correggere il secondo. Ogni atterraggio, ogni sorvolo, ogni fotografia di questo atlante poggiava sull'aver fatto bene questa cosa, e quasi mai ne è stata il titolo."
     },
     {
       "type": "prose",
-      "md": "E sta per smettere di essere silenzioso. Più lontano spingiamo — verso [il sistema esterno](/explore), verso voli con equipaggio a Marte dove un ritardo di venti minuti è il divario tra una correzione e un cratere — meno il terreno può fare in tempo, e più ogni veicolo deve diventare il suo proprio navigatore: il suo proprio sestante, la sua propria Deep Space Network, la sua propria stanza piena di persone. Abbiamo speso settant'anni insegnando alle macchine a trovare il loro cammino dal cielo. Siamo sul punto di scoprire quanto bene l'hanno imparato."
+      "md": "E sta per smettere di essere silenziosa. Più ci spingiamo lontano — verso [il sistema esterno](/explore), verso i voli con equipaggio su Marte dove un ritardo di venti minuti è la distanza tra una correzione e un cratere — meno il controllo a terra riesce a fare in tempo, e più ogni veicolo deve diventare il proprio navigatore: il proprio sestante, la propria [Deep Space Network](/science/mission-phases/dsn), la propria sala piena di persone. Abbiamo passato settant'anni a insegnare alle macchine a trovare la strada con il cielo. Stiamo per scoprire quanto bene abbiano imparato."
     }
   ]
 }

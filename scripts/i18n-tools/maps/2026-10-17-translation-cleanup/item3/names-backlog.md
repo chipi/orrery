@@ -58,3 +58,4 @@ zh titles partly traditional (中途島, 哈欽森, 堅忍, 卡門線, 科羅廖
 - zh-CN ORIGIN_NAMES: LandSpace 蓝箭航天 (Q48772158), iSpace 星际荣耀 (Q56692271) added 2026-10-18; Hyperbola-3 (双曲线三号?) has no en.wikipedia article to source a form — kept Latin, needs a source.
 - hi: Bengaluru = बेंगलुरु (hi.wikipedia, Q1355) used in essays; Byalalu (Q5003923) has no hi form — kept Latin. Indian Deep Space Network = भारतीय गहन अंतरिक्ष नेटवर्क (hi.wikipedia) if it ever needs a native form.
 - es: thousands separator — RAE space (science group 25 and es essays group 34 use plain spaces); the rest of the es site still has ~268 'N.NNN' dots, 34 of them in the essays' unchanged strings. Sweep after item 3, reviewing each (a dot could be a misplaced decimal).
+- it: 'condriti carbonacei' (2, wrong gender) → 'condriti carbonacee' outside the essays.

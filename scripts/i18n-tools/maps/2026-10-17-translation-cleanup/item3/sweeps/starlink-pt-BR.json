@@ -1,0 +1,26 @@
+[
+ {
+  "rel": "earth-objects/starlink.json",
+  "at": "description",
+  "old": "~6.000 satélites ativos a 550 km em camadas de 53° / 70° / 97,6° — a maior constelação LEO já lançada. Internet de banda larga da SpaceX, operacional desde 2019. Desvio autônomo de colisões + links interssatelitais a laser. Visível como um trem de pontos brilhantes cruzando o céu nos dias após cada lançamento.",
+  "new": "Mais de 11.000 satélites ativos (em outubro de 2026) a 550 km em camadas de 53° / 70° / 97,6° — a maior constelação LEO já lançada. Internet de banda larga da SpaceX, operacional desde 2019. Desvio autônomo de colisões + links interssatelitais a laser. Visível como um trem de pontos brilhantes cruzando o céu nos dias após cada lançamento."
+ },
+ {
+  "rel": "fleet/constellation/starlink.json",
+  "at": "tagline",
+  "old": "Maior constelação de banda larga em LEO — mais de 10.800 satélites ativos",
+  "new": "Maior constelação de banda larga em LEO — mais de 11.000 satélites ativos (em outubro de 2026)"
+ },
+ {
+  "rel": "fleet/constellation/starlink.json",
+  "at": "description",
+  "old": "Constelação de banda larga LEO da SpaceX — mais de 10.800 satélites ativos a 550 km de altitude, distribuídos em várias camadas (inclinações de 53°, 70° e 97,6°). Primeiro serviço operacional em 2019; cobertura global alcançada em 2023. Cada satélite Gen-2 tem enlaces a laser entre satélites, o que permite à constelação rotear pacotes de um satélite a outro sem passar por estações terrestres. O sistema autônomo de prevenção de colisões faz dezenas de milhares de manobras por ano — mais do que todos os outros operadores LEO somados.",
+  "new": "Constelação de banda larga LEO da SpaceX — mais de 11.000 satélites ativos (em outubro de 2026) a 550 km de altitude, distribuídos em várias camadas (inclinações de 53°, 70° e 97,6°). Primeiro serviço operacional em 2019; cobertura global alcançada em 2023. Cada satélite Gen-2 tem enlaces a laser entre satélites, o que permite à constelação rotear pacotes de um satélite a outro sem passar por estações terrestres. O sistema autônomo de prevenção de colisões faz dezenas de milhares de manobras por ano — mais do que todos os outros operadores LEO somados."
+ },
+ {
+  "rel": "fleet/constellation/starlink.json",
+  "at": "best_known_for",
+  "old": "Maior constelação de banda larga em LEO — ~6.500–7.000 satélites ativos",
+  "new": "Maior constelação de banda larga em LEO — mais de 11.000 satélites ativos (em outubro de 2026)"
+ }
+]

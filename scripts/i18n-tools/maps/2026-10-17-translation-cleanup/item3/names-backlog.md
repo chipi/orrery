@@ -24,7 +24,7 @@ zh titles partly traditional (中途島, 哈欽森, 堅忍, 卡門線, 科羅廖
 
 ## English source issues reported by reviewers — fixed in phase 2 item 6 (2026-10-18) unless noted
 - DONE: fleet boilerplate descriptions (Hakuto-R, Mars Polar Lander, Vikram, …): "informs the redemption-arc layer of the shuttle and Mir epoch" — meaningless in English; needs rewriting at the source.
-- fleet (ko batch 1): LE-7A ALOS "JAXA-ISRO radar satellite" — DONE (now JAXA Earth-observation). Starlink "~6,500–7,000" vs "over 10,800" — NOT checked (needs a dated source), left as is.
+- fleet (ko batch 1): LE-7A ALOS "JAXA-ISRO radar satellite" — DONE (now JAXA Earth-observation). Starlink count — DONE: one figure everywhere, "over 11,000 active satellites (as of October 2026)", from planet4589.org/space/con/star/stats.html (2026 Oct 15: 11,154 in orbit, 11,140 working).
 - fleet (ru batch 2): Mercury-Atlas "six flights" — DONE (four crewed orbital flights, MA-6 to MA-9, Feb 1962–May 1963). Apollo 9 on LC-39A — DONE (tagline + best_known_for). STS-51-L / Pad 39B — checked, correct as written.
 
 ## From group 11 (ru fleet)

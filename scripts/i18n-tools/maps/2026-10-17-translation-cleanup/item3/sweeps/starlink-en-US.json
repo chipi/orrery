@@ -1,0 +1,26 @@
+[
+ {
+  "rel": "earth-objects/starlink.json",
+  "at": "description",
+  "old": "~6,000 active satellites at 550 km in 53° / 70° / 97.6° shells — the largest LEO constellation ever flown. SpaceX broadband internet, operational since 2019. Autonomous collision avoidance + laser inter-satellite links. Visible as a train of bright dots crossing the sky in the days after each launch.",
+  "new": "Over 11,000 active satellites (as of October 2026) at 550 km in 53° / 70° / 97.6° shells — the largest LEO constellation ever flown. SpaceX broadband internet, operational since 2019. Autonomous collision avoidance + laser inter-satellite links. Visible as a train of bright dots crossing the sky in the days after each launch."
+ },
+ {
+  "rel": "fleet/constellation/starlink.json",
+  "at": "tagline",
+  "old": "Largest LEO broadband constellation — over 10,800 active satellites",
+  "new": "Largest LEO broadband constellation — over 11,000 active satellites (as of October 2026)"
+ },
+ {
+  "rel": "fleet/constellation/starlink.json",
+  "at": "description",
+  "old": "SpaceX's broadband LEO constellation — over 10,800 active satellites at 550 km altitude split across multiple shells (53°, 70°, 97.6° inclinations). First operational service 2019; achieved global coverage 2023. Each Gen-2 satellite carries laser inter-satellite links, allowing the constellation to route packets between satellites without ground station hops. Autonomous collision-avoidance system performs tens of thousands of manoeuvres per year — more than every other LEO operator combined.",
+  "new": "SpaceX's broadband LEO constellation — over 11,000 active satellites (as of October 2026) at 550 km altitude split across multiple shells (53°, 70°, 97.6° inclinations). First operational service 2019; achieved global coverage 2023. Each Gen-2 satellite carries laser inter-satellite links, allowing the constellation to route packets between satellites without ground station hops. Autonomous collision-avoidance system performs tens of thousands of manoeuvres per year — more than every other LEO operator combined."
+ },
+ {
+  "rel": "fleet/constellation/starlink.json",
+  "at": "best_known_for",
+  "old": "Largest LEO broadband constellation — ~6,500–7,000 active satellites",
+  "new": "Largest LEO broadband constellation — over 11,000 active satellites (as of October 2026)"
+ }
+]

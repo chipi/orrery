@@ -1,0 +1,26 @@
+[
+ {
+  "rel": "earth-objects/starlink.json",
+  "at": "description",
+  "old": "~6 000 satellites actifs à 550 km dans des coques à 53° / 70° / 97,6° — la plus grande constellation LEO jamais déployée. Internet haut débit de SpaceX, opérationnel depuis 2019. Évitement autonome de collision + liaisons inter-satellites par laser. Visibles comme un train de points lumineux traversant le ciel dans les jours suivant chaque lancement.",
+  "new": "Plus de 11 000 satellites actifs (en octobre 2026) à 550 km dans des coques à 53° / 70° / 97,6° — la plus grande constellation LEO jamais déployée. Internet haut débit de SpaceX, opérationnel depuis 2019. Évitement autonome de collision + liaisons inter-satellites par laser. Visibles comme un train de points lumineux traversant le ciel dans les jours suivant chaque lancement."
+ },
+ {
+  "rel": "fleet/constellation/starlink.json",
+  "at": "tagline",
+  "old": "Plus grande constellation de bande large en orbite basse — plus de 10 800 satellites actifs",
+  "new": "Plus grande constellation de bande large en orbite basse — plus de 11 000 satellites actifs (en octobre 2026)"
+ },
+ {
+  "rel": "fleet/constellation/starlink.json",
+  "at": "description",
+  "old": "Constellation LEO haut débit de SpaceX — plus de 10 800 satellites actifs à 550 km d'altitude répartis sur plusieurs couches orbitales (inclinaisons de 53°, 70°, 97,6°). Premier service opérationnel en 2019 ; couverture mondiale atteinte en 2023. Chaque satellite Gen-2 embarque des liaisons inter-satellites laser, permettant à la constellation d'acheminer des paquets entre satellites sans dépendre des relais de stations terrestres. Le système autonome d'évitement de collision effectue des dizaines de milliers de manœuvres par an — davantage que tous les autres exploitants LEO réunis.",
+  "new": "Constellation LEO haut débit de SpaceX — plus de 11 000 satellites actifs (en octobre 2026) à 550 km d'altitude répartis sur plusieurs couches orbitales (inclinaisons de 53°, 70°, 97,6°). Premier service opérationnel en 2019 ; couverture mondiale atteinte en 2023. Chaque satellite Gen-2 embarque des liaisons inter-satellites laser, permettant à la constellation d'acheminer des paquets entre satellites sans dépendre des relais de stations terrestres. Le système autonome d'évitement de collision effectue des dizaines de milliers de manœuvres par an — davantage que tous les autres exploitants LEO réunis."
+ },
+ {
+  "rel": "fleet/constellation/starlink.json",
+  "at": "best_known_for",
+  "old": "Plus grande constellation de haut débit en orbite basse — ~6 500–7 000 satellites actifs",
+  "new": "Plus grande constellation de haut débit en orbite basse — plus de 11 000 satellites actifs (en octobre 2026)"
+ }
+]

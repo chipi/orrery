@@ -1,0 +1,668 @@
+[
+ {
+  "rel": "science/exoplanets/transit.json",
+  "at": "body_paragraphs.1",
+  "old": "De bias is geometrisch — het vangt alleen de minderheid van systemen waarvan we de banen bijna vanaf de zijkant zien — en het bevoordeelt grote planeten met korte periodes, die vaker en dieper transiteren. Vals-positieven van eclipserende dubbelsterren en stellaire activiteit betekenen dat transits meestal door een tweede methode worden bevestigd.",
+  "new": "De vertekening is geometrisch — de methode vangt alleen de minderheid van de stelsels op waarvan we de baan bijna van opzij zien — en bevoordeelt grote planeten met korte omlooptijden, die vaker en dieper transiteren. Valse positieven door bedekkingsdubbelsterren en stellaire activiteit maken dat transits meestal met een tweede methode worden bevestigd."
+ },
+ {
+  "rel": "science/exoplanets/transit.json",
+  "at": "body_paragraphs.2",
+  "old": "Naast ontdekking is een transit een deur naar de atmosfeer van een planeet: tijdens de oversteek filtert een dunne ring sterrenlicht door de atmosfeer van de planeet en drukt de vingerafdrukken van zijn gassen erop — de techniek die de James Webb Space Telescope nu gebruikt om exoplaneetluchten te ruiken.",
+  "new": "Naast het ontdekken van planeten is een transit een deur naar de lucht van een planeet: tijdens de passage filtert een dunne ring sterlicht door de atmosfeer van de planeet en drukt de vingerafdrukken van haar gassen erin — de techniek waarmee de James Webb Space Telescope nu de luchten van exoplaneten besnuffelt."
+ },
+ {
+  "rel": "science/exoplanets/trappist-1-system.json",
+  "at": "title",
+  "old": "TRAPPIST-1: Zeven aardse werelden",
+  "new": "TRAPPIST-1: zeven werelden ter grootte van de Aarde"
+ },
+ {
+  "rel": "science/exoplanets/trappist-1-system.json",
+  "at": "narrative_101.0",
+  "old": "In februari 2017 onthulde NASA een systeem als geen ander: zeven planeten, allemaal ongeveer zo groot als de Aarde, die een enkele ultrakoele dwergster omcirkelen die nauwelijks groter is dan Jupiter, en allemaal dichter bij hun ster gepakt dan Mercurius bij de Zon.",
+  "new": "In februari 2017 onthulde NASA een systeem als geen ander: zeven planeten, allemaal ongeveer zo groot als de Aarde, die een enkele ultrakoele dwergster omcirkelen die nauwelijks groter is dan Jupiter, en allemaal dichter bij hun ster dan Mercurius bij de Zon."
+ },
+ {
+  "rel": "science/exoplanets/trappist-1-system.json",
+  "at": "narrative_101.1",
+  "old": "Drie of vier van hen bevinden zich in de bewoonbare zone. De ster is zo zwak dat zelfs die gematigde werelden in een kwestie van dagen om hun ster draaien, en het hele systeem zou binnen de baan van Mercurius passen.",
+  "new": "Drie of vier van hen bevinden zich in de bewoonbare zone. De ster is zo zwak dat zelfs die gematigde werelden in slechts enkele dagen om hun ster draaien, en het hele systeem zou binnen de baan van Mercurius passen."
+ },
+ {
+  "rel": "science/exoplanets/trappist-1-system.json",
+  "at": "narrative_101.2",
+  "old": "De zeven bewegen in een bijna perfecte keten van baanresonanties — een kosmische metronoom — waardoor astronomen ze konden wegen aan de hand van hun onderlinge zwaartekrachtstoeren en waardoor ze de belangrijkste doelwitten voor kleine planeten werden voor de James Webb Space Telescope.",
+  "new": "De zeven bewegen in een bijna perfecte keten van baanresonanties — een kosmische metronoom — waardoor astronomen ze konden wegen aan de hand van hun onderlinge aantrekkingskracht, en die hen tot de belangrijkste doelwitten onder de kleine planeten voor de James Webb Space Telescope maakte."
+ },
+ {
+  "rel": "science/exoplanets/trappist-1-system.json",
+  "at": "body_paragraphs.0",
+  "old": "TRAPPIST-1 (een M8-dwerg op ~40 lichtjaar afstand in Aquarius) herbergt zeven transiterende planeten, b tot en met h, met stralen van ongeveer 0,75 tot 1,13 keer die van de Aarde. Ontdekt door grondgebonden transitonderzoeken en Spitzer en in 2017 volledig aangekondigd, kwamen hun massa's uit transit-timing-variaties — de planeten zijn veel te zwak voor radiale snelheid.",
+  "new": "TRAPPIST-1 (een M8-dwerg op ~40 lichtjaar afstand in Aquarius) heeft zeven transiterende planeten, b tot en met h, met stralen van ongeveer 0,75 tot 1,13 keer die van de Aarde. Ontdekt met transitsurveys vanaf de grond en met Spitzer, en in 2017 volledig bekendgemaakt; hun massa's volgden uit variaties in de transittijden — de planeten zijn veel te zwak voor de radiale-snelheidsmethode."
+ },
+ {
+  "rel": "science/exoplanets/trappist-1-system.json",
+  "at": "body_paragraphs.1",
+  "old": "De planeten bevinden zich in een keten van eerste-orde resonanties, sterk bewijs dat ze samen naar binnen migreerden door de geboorteschijf. Planeten e, f en g liggen in de conservatieve bewoonbare zone; ze zijn waarschijnlijk allemaal getijdenvergrendeld.",
+  "new": "De planeten vormen een keten van eerste-orderesonanties, een sterk bewijs dat ze samen door de geboorteschijf naar binnen migreerden. Planeten e, f en g liggen in de conservatieve bewoonbare zone; ze zijn waarschijnlijk allemaal getijdenvergrendeld."
+ },
+ {
+  "rel": "science/history/_intro.json",
+  "at": "paragraphs.0",
+  "old": "Ruimtevaartkunde ontstond niet uit het niets. Het berust op een stapel ontdekkingen — Kepler's ellipsen, Newton's zwaartekracht, Tsiolkovsky's raketequatie, Goddard's eerste vloeistofbrand, Koroljovs R-7 — elk ervan gebouwd op het vorige. Dit tabblad doorloopt de mijlpalen in chronologische volgorde, noemt de mensen die daar zijn aangekomen, en verwijst terug naar het rest van /science waar de wiskunde zit.",
+  "new": "Ruimtevaart ontstond niet uit het niets. Ze berust op een stapel ontdekkingen — de ellipsen van Kepler, de zwaartekracht van Newton, de raketvergelijking van Tsiolkovski, Goddards eerste vloeistofraket, Koroljovs R-7 — elk voortbouwend op het vorige. Dit tabblad loopt de mijlpalen in chronologische volgorde langs, noemt de mensen die dat voor elkaar kregen, en verwijst terug naar de rest van /science waar de wiskunde te vinden is."
+ },
+ {
+  "rel": "science/history/_intro.json",
+  "at": "paragraphs.1",
+  "old": "We hebben zes cruciale momenten geselecteerd: Kepler's ellipsen, Newton's zwaartekracht, Tsiolkovsky's raketequatie, Goddard's eerste vloeistofbrand, Koroljovs R-7 en Apollo 11. Honderden anderen verdienen een plaats; toekomstige herzieingen zullen deze aanvullen (Galileo's telescopen, Hohmann's transferpaper, Goddard's vrouw die de meeste foto's maakte, de Sovjet-ingenieurs die Koroljov niet in het openbaar kon benoemen, Ed White's ruimtewandeling, von Kármán's hoogtelijkn). Het verhaal is niet eigendom van één natie — elk hoofdstuk heeft mensen die je nog nooit hebt gehoord en die het mogelijk maakten.",
+  "new": "We hebben zes cruciale momenten uitgekozen: de ellipsen van Kepler, de zwaartekracht van Newton, de raketvergelijking van Tsiolkovski, Goddards eerste vloeistofraket, Koroljovs R-7 en Apollo 11. Honderden andere verdienen een plaats; toekomstige herzieningen vullen die aan (Galileo's telescopen, Hohmanns artikel over de transfer, Goddards vrouw die de meeste foto's nam, de Sovjetingenieurs die Koroljov in het openbaar niet mocht noemen, de ruimtewandeling van Ed White, de hoogtegrens van Von Kármán). Het verhaal is niet van één natie — achter elk hoofdstuk staan mensen van wie je nog nooit hebt gehoord en die het mogelijk maakten."
+ },
+ {
+  "rel": "science/history/_intro.json",
+  "at": "paragraphs.2",
+  "old": "Lees het als een keten. Elke stap vereiste de vorige. Geen daarvan waren onvermijdelijk.",
+  "new": "Lees het als een keten. Elke stap vereiste de vorige. Geen enkele was onvermijdelijk."
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "intro_sentence",
+  "old": "Drie astronauten, een Saturn V en een maanlandingsdoel dat JFK in 1961 had gesteld. Tranquility Base, acht jaar later, volgens planning.",
+  "new": "Drie astronauten, een Saturn V en een maanlandingsdoel dat JFK in 1961 had gesteld. Tranquillity Base, acht jaar later, volgens planning."
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "narrative_101.1",
+  "old": "Apollo 11: commandant Neil Armstrong, CMP Michael Collins, LMP Edwin \"Buzz\" Aldrin. Saturn V-lancering 16 juli; maanbaan 19 juli; landing 20 juli om 20:17 UTC; eerste stap 02:56 UTC 21 juli (UTC; 22:56 EDT 20 juli in de VS). Splash-down 24 juli. In totaal 8 dagen, 3 uur, 18 minuten.",
+  "new": "Apollo 11: commandant Neil Armstrong, CMP Michael Collins, LMP Edwin \"Buzz\" Aldrin. Saturn V-lancering 16 juli; maanbaan 19 juli; landing 20 juli om 20:17 UTC; eerste stap 02:56 UTC 21 juli (UTC; 22:56 EDT 20 juli in de VS). Splashdown 24 juli. In totaal 8 dagen, 3 uur, 18 minuten."
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "narrative_101.2",
+  "old": "De maanlanding werd live bekeken door naar schatting 600 miljoen mensen — ongeveer een vijfde van de mensheid van dat moment. De \"one small step\"-uitspraak was van Armstrong; zij was niet ingesproken (hij zei later dat hij \"one small step for a man\" had willen zeggen, maar het onbepaalde lidwoord ging verloren in de transmissie).",
+  "new": "De maanlanding werd live bekeken door naar schatting 600 miljoen mensen — ongeveer een vijfde van de mensheid van dat moment. De uitspraak \"one small step\" was van Armstrong; ze stond niet in het script (hij zei later dat hij \"one small step for a man\" had willen zeggen, maar het onbepaalde lidwoord ging verloren in de transmissie)."
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "body_paragraphs.0",
+  "old": "Saturn V was een 110 meter grote, drietrapsconstuctie met vloeibare brandstof, ontworpen onder Wernher von Braun (de Duitse V-2-ontwerper, onder Operatie Paperclip in 1945 naar de VS gebracht). Eerste trap: 5× F-1-motoren, 7,6 miljoen lbf stuwkracht. Nog steeds de raket met de grootste stuwkracht die een volledig succesvolle bemande missie heeft uitgevoerd (SLS Block 1 en Starship overtreffen zijn ruwe startschub; niets heeft nog zijn bemande lading naar TLI geevenaard).",
+  "new": "Saturn V was een 110 meter hoog, driedelig monster op vloeibare brandstof, ontworpen onder Wernher von Braun (de Duitse V-2-ontwerper, in 1945 onder Operatie Paperclip naar de VS gebracht). Eerste trap: 5× F-1-motoren, 7,6 miljoen lbf stuwkracht. Nog steeds de raket met de grootste stuwkracht die een volledig succesvolle bemande missie heeft uitgevoerd (SLS Block 1 en Starship overtreffen zijn ruwe startstuwkracht; niets heeft nog zijn bemande lading naar TLI geëvenaard)."
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "body_paragraphs.1",
+  "old": "Traject: vrij-retourlusje, de \"figure-8\" Aarde-Maan-Aarde. Als de maanbaan-insertiebranding mislukte, zou Apollo 11 rond de Maan hebben gelooid en op dezelfde boog naar de Aarde zijn teruggekeerd — ingebouwde nooduitgang. Apollo 13 gebruikte precies deze eigenschap toen zijn servicemodule uitviel, loopde achter de Maan om en keerde naar huis.",
+  "new": "Traject: een vrije-terugkeerlus, de \"figuur-8\" Aarde–Maan–Aarde. Als de motorbrand voor het ingaan van de maanbaan mislukte, zou Apollo 11 om de Maan heen zijn gezwaaid en via dezelfde boog naar de Aarde zijn teruggekeerd — een ingebouwde noodroute. Apollo 13 maakte gebruik van precies deze eigenschap toen zijn servicemodule uitviel: het zwaaide achter de Maan om en kwam thuis."
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "body_paragraphs.2",
+  "old": "Sleutelpersoneel buiten de bemanning: George Mueller (NASA Apollo-programmadirecteur), Christopher Kraft (oprichter Mission Control), Margaret Hamilton (leidinggeving Apollo Guidance Computer-software — zij leidde het team dat de AGC-code schreef die in de LM tijdens de landing liep), Glynn Lunney + Gene Kranz + Cliff Charlesworth (vluchtleiders).",
+  "new": "Sleutelfiguren buiten de bemanning: George Mueller (NASA Apollo-programmadirecteur), Christopher Kraft (oprichter van Mission Control), Margaret Hamilton (hoofd van de software voor de Apollo Guidance Computer — zij leidde het team dat de AGC-code schreef die tijdens de daling op de LM draaide), Glynn Lunney + Gene Kranz + Cliff Charlesworth (vluchtleiders)."
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "body_paragraphs.3",
+  "old": "Dingen die hen hadden kunnen doden: AGC-alarmen 1201 en 1202 tijdens de daling (uitvoeringsoverflow — Hamiltons robuuste softwareontwerp herstelde automatisch); handmatige landing omdat het automatische doel een rotsveld was (Armstrong landde met ~25 seconden brandstof over); de LM-opstijgmotor had MAAR ÉÉN kans om af te gaan en was nog niet volledig getest in de vlucht.",
+  "new": "Dingen die hen hadden kunnen doden: AGC-alarmen 1201 en 1202 tijdens de daling (overbelasting van het taakbeheer — Hamiltons robuuste softwareontwerp herstelde automatisch); handmatige landing omdat het automatische doel een blokkenveld was (Armstrong landde met ~25 seconden brandstof over); de LM-opstijgmotor had MAAR ÉÉN kans om te ontsteken en was in de vlucht nooit op volle brandduur getest."
+ },
+ {
+  "rel": "science/history/apollo-11-1969.json",
+  "at": "body_paragraphs.4",
+  "old": "Apollo voerde zes succesvol landingen uit: 11, 12, 14, 15, 16, 17 (1969-1972). Apollo 13 miste de Maan (LOI geannuleerd), loopde er achter, keerde veilig terug. 12 mensen liepen op de Maan; de laatste (Gene Cernan, Apollo 17) vertrok op 14 december 1972.",
+  "new": "Apollo voerde zes geslaagde landingen uit: 11, 12, 14, 15, 16, 17 (1969-1972). Apollo 13 miste de Maan (LOI geannuleerd), zwaaide erachter om en keerde veilig terug. 12 mensen liepen op de Maan; de laatste (Gene Cernan, Apollo 17) vertrok op 14 december 1972."
+ },
+ {
+  "rel": "science/history/goddard-liquid-rocket-1926.json",
+  "at": "title",
+  "old": "Goddard's eerste vloeibare-brandstofraket · 1926",
+  "new": "Goddards eerste raket op vloeibare brandstof · 1926"
+ },
+ {
+  "rel": "science/history/goddard-liquid-rocket-1926.json",
+  "at": "intro_sentence",
+  "old": "16 maart 1926: een 3 meter lange fragiele constructie stijgt 12 meter op in de hemel van Massachusetts. De eerste vloeibare-brandstofraketstart in de geschiedenis.",
+  "new": "16 maart 1926: een ranke constructie van 3 meter stijgt 12 meter op in de lucht van Massachusetts. De eerste vlucht van een raket op vloeibare brandstof in de geschiedenis."
+ },
+ {
+  "rel": "science/history/goddard-liquid-rocket-1926.json",
+  "at": "narrative_101.0",
+  "old": "Robert Goddard was een natuurkundeprofessor aan Clark University in Worcester, Massachusetts, met een Smithsonian-artikel uit 1919 waarin hij stelde dat raketten de Maan konden bereiken — waarom de New York Times hem in een redactioneel stuk uit 1920 bespot omwille van zijn gebrek aan natuurkundekennis. (De Times trok dit in op 17 juli 1969 — de dag na de lancering van Apollo 11, toen het ruimtevaartuig onderweg was naar de Maan.)",
+  "new": "Robert Goddard was natuurkundeprofessor aan Clark University in Worcester, Massachusetts, en schreef in 1919 een Smithsonian-artikel waarin hij stelde dat raketten de Maan konden bereiken — waarvoor de New York Times hem in 1920 in een hoofdartikel bespotte met de bewering dat hij zelfs de natuurkunde van de middelbare school niet begreep. (De Times trok dit in op 17 juli 1969 — de dag na de lancering van Apollo 11, toen het ruimtevaartuig onderweg was naar de Maan.)"
+ },
+ {
+  "rel": "science/history/goddard-liquid-rocket-1926.json",
+  "at": "narrative_101.1",
+  "old": "Op een sneeuwrijke 16 maart 1926, op de boerderij van zijn tante Effie Ward in Auburn, lanceerde Goddard een 2 kg zware, 3 meter lange raket gevoed door vloeibare zuurstof en benzine. Deze vloog 2,5 seconden, bereikte 12,5 meter hoogte en crashte 56 meter verderop in het koolzaadveld. Zijn echtgenote Esther Goddard fotografeerde het. Deze korte sprong is het begin van elke moderne raketstamstoom.",
+  "new": "Op een besneeuwde 16 maart 1926, op de boerderij van zijn tante Effie Ward in Auburn, lanceerde Goddard een raket van 2 kg en 3 meter lang, aangedreven door vloeibare zuurstof en benzine. Ze vloog 2,5 seconden, bereikte een hoogte van 12,5 meter en stortte 56 meter verderop neer in een koolveld. Zijn echtgenote Esther Goddard fotografeerde het. Dat korte sprongetje is het begin van elke moderne raketlijn."
+ },
+ {
+  "rel": "science/history/goddard-liquid-rocket-1926.json",
+  "at": "narrative_101.2",
+  "old": "Goddard was terughoudend — paranoïde over concurrenten, weigerde het grootste deel van de samenwerking. Zijn patenten dekten fundamenteel alles af: gimbalmotor's, pompen, gyroscopische geleiding, meertraps-configuraties. Duitsers na de oorlog hadden zijn patenten gelezen; Amerikanen na de oorlog moesten het meeste van zijn werk opnieuw leren omdat hij het niet had gedeeld.",
+  "new": "Goddard was geheimzinnig — paranoïde over concurrenten, en weigerde de meeste samenwerking. Zijn patenten dekten in wezen alles: zwenkbare motoren (gimbals), pompen, gyroscopische geleiding, meertrapsconfiguraties. Duitsers hadden na de oorlog zijn patenten gelezen; Amerikanen moesten na de oorlog het meeste van zijn werk opnieuw leren omdat hij het niet had gedeeld."
+ },
+ {
+  "rel": "science/history/goddard-liquid-rocket-1926.json",
+  "at": "body_paragraphs.0",
+  "old": "Lanceringslokatie 16 maart 1926: boerderij van tante Effie Ward, Auburn, Massachusetts. Voertuig: \"Nell\" — 3 meter lang, ongeveer 3 m lange structuur, wegende ongeveer 6 kg droog. Brandstof: vloeibare zuurstof + benzine, regeneratief gekoeld, gimbal-mondstuk.",
+  "new": "Lanceerplaats op 16 maart 1926: de boerderij van tante Effie Ward, Auburn, Massachusetts. Voertuig: \"Nell\" — 3 meter hoog, een constructie van ~3 m lang, ongeveer 6 kg leeg. Drijfstoffen: vloeibare zuurstof + benzine, regeneratief gekoeld, zwenkbaar mondstuk (gimbal)."
+ },
+ {
+  "rel": "science/history/goddard-liquid-rocket-1926.json",
+  "at": "body_paragraphs.3",
+  "old": "Goddard's latere vluchten vanaf Roswell, New Mexico (1930-1941), bereikten hoogte van 2,7 km (maart 1937) en 2,7 km (1941). Bescheiden naar moderne maatstaven, maar elke sleuteltechnologie — gimbal-motoren, pompen, gyroscopen, parachute-terugwinning — werd bewezen op Goddard's hardware decennia voordat massaproductie-rakettechnologie inhaalde.",
+  "new": "De latere vluchten van Goddard vanaf Roswell, New Mexico (1930-1941), bereikten een hoogte van 2,7 km (maart 1937) en 2,7 km (1941). Bescheiden naar moderne maatstaven, maar elke sleuteltechnologie — zwenkbare motoren, pompen, gyroscopen, parachuteberging — werd bewezen op Goddards hardware, tientallen jaren voordat de serieproductie van raketten hem inhaalde."
+ },
+ {
+  "rel": "science/history/keplers-laws-1609.json",
+  "at": "intro_sentence",
+  "old": "Tycho Brahes levenswerk van ongewapende-oog Marsgegevens, destilleerd door Kepler in drie regels die elke baan gehoorzaamt.",
+  "new": "Tycho Brahes levenslange waarnemingen van Mars met het blote oog, door Kepler gedestilleerd tot de drie regels waaraan elke baan gehoorzaamt."
+ },
+ {
+  "rel": "science/history/keplers-laws-1609.json",
+  "at": "narrative_101.0",
+  "old": "Tycho Brahe besteedde ongeveer 20 jaar aan de sterrenwacht Uraniborg op Hven en mat Mars' positie met kwadranten van messing en eik — precisie beter dan boogminuten, allemaal met het blote oog. Hij stierf in 1601 zonder veel van zijn planetaire resultaten te hebben gepubliceerd.",
+  "new": "Tycho Brahe besteedde ongeveer 20 jaar aan de sterrenwacht Uraniborg op Hven en mat de positie van Mars met kwadranten van messing en eik — met een nauwkeurigheid beter dan een boogminuut, allemaal met het blote oog. Hij stierf in 1601 zonder veel van zijn planetaire resultaten te hebben gepubliceerd."
+ },
+ {
+  "rel": "science/history/keplers-laws-1609.json",
+  "at": "narrative_101.1",
+  "old": "Kepler erfde de Marsnotitieboeken. Hij bracht nog een decennium door met het proberen ze in cirkels in te passen en faalde. De doorbraak kwam toen hij een ellips probeerde — Mars kwam onmiddellijk overeen. Daaruit ontstonden drie wetten: banen zijn ellipsen met de Zon in één brandpunt; gelijke gebieden worden in gelijke tijd beschreven; kwadraat van periode gelijk aan kubus van halve grote as.",
+  "new": "Kepler erfde de notitieboeken over Mars. Hij besteedde nog een decennium aan pogingen om ze in cirkels te passen en faalde. De doorbraak kwam toen hij een ellips probeerde — Mars paste meteen. Daaruit ontstonden drie wetten: banen zijn ellipsen met de Zon in één brandpunt; gelijke oppervlakken worden in gelijke tijd doorlopen; het kwadraat van de omlooptijd is gelijk aan de derde macht van de halve lange as."
+ },
+ {
+  "rel": "science/history/keplers-laws-1609.json",
+  "at": "narrative_101.2",
+  "old": "Zonder die drie wetten zou geen ruimtesondetraject in deze app berekenen. Elke porkchop-cel, elke transferboog, elke planeet op /explore is een Kepleriaanse oplossing.",
+  "new": "Zonder die drie wetten zou geen enkel ruimtevaarttraject in deze app te berekenen zijn. Elke porkchop-cel, elke transferboog, elke planeet op /explore is een Kepleriaanse oplossing."
+ },
+ {
+  "rel": "science/history/keplers-laws-1609.json",
+  "at": "body_paragraphs.0",
+  "old": "Astronomia Nova (1609) publiceerde Wetten 1 + 2 — de ellips + gebiedswetten, afgeleid uit de Marsopposatiegegevens. Harmonices Mundi (1619) publiceerde Wet 3 — periode² ∝ halve grote as³.",
+  "new": "Astronomia Nova (1609) publiceerde wet 1 + 2 — de ellips- en de perkenwet, afgeleid uit de oppositiegegevens van Mars. Harmonices Mundi (1619) publiceerde wet 3 — omlooptijd² ∝ halve lange as³."
+ },
+ {
+  "rel": "science/history/keplers-laws-1609.json",
+  "at": "body_paragraphs.1",
+  "old": "Kepler had geen theoretische rechtvaardiging — de wetten waren empirische patronen die uit gegevens waren geëxtraheerd. Newton zou 70 jaar later het waarom leveren (zwaartekracht gaat als 1/r²; gebonden banen zijn kegelsneden; Wet 3 volgt uit energiebehoud).",
+  "new": "Kepler had geen theoretische verklaring — de wetten waren empirische patronen die uit de gegevens waren gehaald. Newton zou 70 jaar later het waarom leveren (de zwaartekracht verloopt als 1/r²; gebonden banen zijn kegelsneden; wet 3 volgt uit energiebehoud)."
+ },
+ {
+  "rel": "science/history/keplers-laws-1609.json",
+  "at": "body_paragraphs.2",
+  "old": "Brahes bijdrage was niet alleen gegevens: hij was een nauwgezette instrumentenbouwer die ongewapende-oog meting tot zijn fysieke limiet voerde. Telescoopkwaliteitsprecisie kwam pas na Galileo's telescoop van 1609 — te laat om met Brahes carrière te overlappen.",
+  "new": "De bijdrage van Brahe bestond niet alleen uit gegevens: hij was een nauwgezette instrumentenbouwer die metingen met het blote oog tot de fysieke limiet dreef. Precisie op telescoopniveau kwam pas na Galileo's telescoop van 1609 — te laat om met de carrière van Brahe te overlappen."
+ },
+ {
+  "rel": "science/history/keplers-laws-1609.json",
+  "at": "body_paragraphs.3",
+  "old": "Moderne heranalyse: Keplers Marsuitsluiting bedraagt sub-boogminuten. Hij raampte een ellips met excentriciteit 0,0934 uit gegevens die onvermijdbare meetonzekerheid van ongeveer 1 boogminuut hadden. De aanpassing was echt.",
+  "new": "Moderne heranalyse: de residuen van Keplers Marsbaan zijn kleiner dan een boogminuut. Hij bepaalde een ellips met excentriciteit 0,0934 uit gegevens met een onvermijdelijke meetonzekerheid van ongeveer 1 boogminuut. De fit was echt."
+ },
+ {
+  "rel": "science/history/newton-principia-1687.json",
+  "at": "intro_sentence",
+  "old": "Één boek, drie bewegingswetten en de inverse-kwadratenwet van zwaartekracht — de grondslag waarop alles wat ruimtevaartuigen nog steeds doen, rust.",
+  "new": "Één boek, drie bewegingswetten en de wet van de omgekeerde kwadraten voor de zwaartekracht — het fundament waarop alles wat de ruimtevaart doet nog steeds rust."
+ },
+ {
+  "rel": "science/history/newton-principia-1687.json",
+  "at": "narrative_101.0",
+  "old": "In 1684 stelde Halley de juiste mensen de vraag welk vorm een baan zou hebben als de Zon aan 1/r² zou trekken. Christopher Wren wedde een boek van veertig shilling dat niemand het kon bewijzen; Hooke beweerde een bewijs te hebben dat hij niet had. Halley vroeg Newton — Newton zei zonder aarzeling \"een ellips\", viste het bewijs uit jaren oude aantekeningen op, en publiceerde drie jaar later de Principia.",
+  "new": "In 1684 vroeg Halley de juiste mensen welke vorm een baan zou hebben als de aantrekking van de Zon met 1/r² afnam. Christopher Wren wedde een boek ter waarde van veertig shilling dat niemand het kon bewijzen; Hooke beweerde een bewijs te hebben dat hij niet had. Halley vroeg Newton — Newton zei zonder aarzeling \"een ellips\", viste het bewijs uit jaren oude aantekeningen op, en publiceerde drie jaar later de Principia."
+ },
+ {
+  "rel": "science/history/newton-principia-1687.json",
+  "at": "narrative_101.1",
+  "old": "Drie bewegingswetten (inertie, F = ma, actie-reactie) plus de inverse-kwadratenwet van zwaartekracht (F = Gm₁m₂/r²) plus de calculus om het allemaal uit te voeren — één boek, drie jaar, geen peer review. Halley betaalde de drukkosten zelf toen de Royal Society geen geld meer had door een boek over visanatomie.",
+  "new": "Drie bewegingswetten (inertie, F = ma, actie-reactie) plus de wet van de omgekeerde kwadraten voor de zwaartekracht (F = Gm₁m₂/r²) plus de calculus om het allemaal door te rekenen — één boek, drie jaar, geen peer review. Halley betaalde de drukkosten zelf toen de Royal Society zonder geld zat door een boek over de anatomie van vissen."
+ },
+ {
+  "rel": "science/history/newton-principia-1687.json",
+  "at": "narrative_101.2",
+  "old": "Uit deze vergelijkingen: de drie wetten van Kepler volgen netjes af. Getijden, projectielbeweging, de precessie van de equinoxen, de vorm van de Aarde — allemaal gevolgen. Ruimtevaart 280 jaar later is rechtlijnige Newtonse mechanica met motoren eraan toegevoegd.",
+  "new": "Uit die vergelijkingen volgen de drie wetten van Kepler zonder omwegen. Getijden, projectielbeweging, de precessie van de equinoxen, de vorm van de Aarde — allemaal gevolgen. Ruimtevaart 280 jaar later is gewone Newtoniaanse mechanica met motoren erbij."
+ },
+ {
+  "rel": "science/history/newton-principia-1687.json",
+  "at": "body_paragraphs.0",
+  "old": "Philosophiæ Naturalis Principia Mathematica werd in juli 1687 in het Latijn gepubliceerd. Drie boeken: beweging in een vacuüm, beweging door weerstandgevende media, het systeem van de wereld. Het derde boek past de wetten toe op het werkelijke heelal en reproduceert al Keplers gegevens vanuit eerste principes.",
+  "new": "Philosophiæ Naturalis Principia Mathematica werd in juli 1687 in het Latijn gepubliceerd. Drie boeken: beweging in een vacuüm, beweging door media met weerstand, het systeem van de wereld. Het derde boek past de wetten toe op het heelal zelf en reproduceert alle gegevens van Kepler vanuit de grondbeginselen."
+ },
+ {
+  "rel": "science/history/newton-principia-1687.json",
+  "at": "body_paragraphs.1",
+  "old": "Calculus was Newtons uitvinding specifiek om dit te doen. Hij noemde het \"fluxionen\" — Leibniz vond onafhankelijk in Duitsland rond dezelfde tijd in wezen dezelfde wiskundige gereedschappen uit, en de rivaliteit over prioriteit duurde decennia.",
+  "new": "De calculus vond Newton juist hiervoor uit. Hij noemde haar \"fluxies\" — Leibniz vond onafhankelijk daarvan rond dezelfde tijd in Duitsland in wezen hetzelfde gereedschap uit, en de strijd om de voorrang duurde decennia."
+ },
+ {
+  "rel": "science/history/newton-principia-1687.json",
+  "at": "body_paragraphs.3",
+  "old": "Moderne numerieke baanpropagatoren voeren in wezen Newtons vergelijkingen uit met drijvende-komma-rekenkunde. /fly's heliocentrische boog, /plan's varkensvlees, elke Keplerse oplossing — Newtonse zwaartekracht helemaal naar beneden.",
+  "new": "Moderne numerieke baanpropagatoren voeren in wezen de vergelijkingen van Newton uit met rekenwerk in drijvende komma. De heliocentrische boog van /fly, de porkchop van /plan, elke Kepleriaanse oplossing — newtoniaanse zwaartekracht tot op de bodem."
+ },
+ {
+  "rel": "science/history/newton-principia-1687.json",
+  "at": "formula_caption",
+  "old": "Newtons wet van universele zwaartekracht. G ≈ 6.674 × 10⁻¹¹ N·m²/kg².",
+  "new": "De gravitatiewet van Newton. G ≈ 6.674 × 10⁻¹¹ N·m²/kg²."
+ },
+ {
+  "rel": "science/history/sputnik-1957.json",
+  "at": "intro_sentence",
+  "old": "Een Sovjet aluminium bol van 84 kg gaat in een baan van 96 minuten. Ruimtevaartuig is nu echt — voor iedereen, allemaal tegelijk.",
+  "new": "Een Sovjetbol van aluminium van 84 kg gaat in een baan met een omlooptijd van 96 minuten. De ruimtevaart is nu echt — voor iedereen, allemaal tegelijk."
+ },
+ {
+  "rel": "science/history/sputnik-1957.json",
+  "at": "narrative_101.0",
+  "old": "4 oktober 1957, kosmodroom Bajkonoer, Kazachse SSR: Sergej Koroljovs R-7-raket stuurt een aluminium bol van 58 cm met vier slagantennes in een lage aardbaan. De bol zendt elke 0,4 seconden één pieptoon uit op 20 en 40 MHz. Iedereen op Aarde met een kortegolfradio kon het horen — en dat deden zij ook. De ruimtevaart begint die nacht.",
+  "new": "4 oktober 1957, kosmodroom Bajkonoer, Kazachse SSR: Sergej Koroljovs R-7-raket stuurt een aluminium bol van 58 cm met vier zweepantennes in een lage baan om de Aarde. De bol zendt elke 0,4 seconden één pieptoon uit op 20 en 40 MHz. Iedereen op Aarde met een kortegolfradio kon het horen — en dat deden zij ook. De ruimtevaart begint die nacht."
+ },
+ {
+  "rel": "science/history/sputnik-1957.json",
+  "at": "narrative_101.1",
+  "old": "Sergej Koroljov, de Sovjet-hoofdontwerper, leidde het R-7-programma als een ICBM-project — de satelliet was een bijzaak. Zijn engineeringteam lanceerde een maand later een biologische satelliet van ~500 kg (Sputnik 2, met de hond Laika). Koroljovs naam was zijn hele leven een staatgeheim; hij stond alleen als \"Chief Designer\" vermeld tot zijn obituarium in 1966.",
+  "new": "Sergej Koroljov, de Sovjet-hoofdontwerper, leidde het R-7-programma als een ICBM-project — de satelliet was een bijzaak. Zijn ingenieursteam lanceerde een maand later een biologische satelliet van ~500 kg (Sputnik 2, met de hond Laika). Koroljovs naam was zijn hele leven een staatsgeheim; hij stond alleen vermeld als \"Hoofdontwerper\" tot zijn overlijdensbericht in 1966."
+ },
+ {
+  "rel": "science/history/sputnik-1957.json",
+  "at": "narrative_101.2",
+  "old": "Amerika had in 1957 geen operationele raket voor een baan — Vanguard explodeerde in december op het lanceerpunt. Explorer 1 bereikte eindelijk op 31 januari 1958 een baan op een von Braun Redstone-derivaat. De \"Sputnik-schok\" lanceerde NASA (1958), de National Defense Education Act, en de hele ruimtewedloop die het volgende decennium zou bepalen.",
+  "new": "Amerika had in 1957 geen operationele draagraket die een baan kon bereiken — Vanguard explodeerde in december op het lanceerplatform. Explorer 1 bereikte eindelijk op 31 januari 1958 een baan, met een van Redstone afgeleide raket van Von Braun. De \"Sputnik-schok\" bracht NASA (1958), de National Defense Education Act en de hele ruimtewedloop voort die het volgende decennium zou bepalen."
+ },
+ {
+  "rel": "science/history/sputnik-1957.json",
+  "at": "body_paragraphs.0",
+  "old": "Voertuig: R-7 Semyorka, 's werelds eerste ICBM, hergebruikt. Vijf strap-on eerste-fase boosters rond een sustainer-kern. Dezelfde rakettenfamilie (zwaar verder ontwikkeld) lanceert vandaag Soyuz-crews naar het ISS — directe hardware-afstamming van Sputnik.",
+  "new": "Draagraket: R-7 Semyorka, 's werelds eerste ICBM, omgebouwd. Vijf aangekoppelde boosters van de eerste trap rond een centrale kern. Dezelfde rakettenfamilie (sterk doorontwikkeld) lanceert vandaag Soyuz-bemanningen naar het ISS — een rechtstreekse hardwarelijn vanaf Sputnik."
+ },
+ {
+  "rel": "science/history/sputnik-1957.json",
+  "at": "body_paragraphs.1",
+  "old": "Sputnik-baan: perigeum 215 km, apogeum 939 km, inclinatie 65°, periode 96 minuten. Het herviel op 4 januari 1958, na 92 dagen en 1440 omwentelingen.",
+  "new": "Baan van Sputnik: perigeum 215 km, apogeum 939 km, inclinatie 65°, omlooptijd 96 minuten. Hij kwam op 4 januari 1958 terug in de dampkring, na 92 dagen en 1440 omwentelingen."
+ },
+ {
+  "rel": "science/history/sputnik-1957.json",
+  "at": "body_paragraphs.2",
+  "old": "Belangrijk personeel buiten Koroljov: Tichonravov (rocketontwerper), Keldysj (wiskundige — baanberekeningen), Glushko (raketmotorontwerper voor de R-7 boosters). Russische techniek had Duits V-2-werk na WWII in zich opgenomen (de Soviëts veroverde de Mittelwerk-faciliteit), maar de R-7 was substantieel inheems.",
+  "new": "Sleutelfiguren naast Koroljov: Tichonravov (raketontwerper), Keldysj (wiskundige — baanberekeningen), Glushko (raketmotorontwerper voor de R-7-boosters). De Russische techniek had na de Tweede Wereldoorlog Duits V-2-werk in zich opgenomen (de Sovjets namen de Mittelwerk-fabriek in beslag), maar de R-7 was in wezen eigen werk."
+ },
+ {
+  "rel": "science/history/sputnik-1957.json",
+  "at": "body_paragraphs.3",
+  "old": "Amerikaanse reactie was buitensporig: Sputnik was technisch eenvoudig (een radiobaken) maar politiek enorm. Het feit dat de USSR 84 kg in een baan kon brengen betekende dat zij elke thermonucleaire oorlogskop overal op Aarde konden brengen via dezelfde raket. ICBM-paniek dreef een decennium van Amerikaanse O&O-versnelling.",
+  "new": "De Amerikaanse reactie was buitenproportioneel: Sputnik was technisch eenvoudig (een radiobaken) maar politiek enorm. Dat de USSR 84 kg in een baan kon brengen, betekende dat ze met dezelfde raket een thermonucleaire kernkop overal op Aarde konden afleveren. De ICBM-paniek zette in de VS een decennium van versnelde O&O in gang."
+ },
+ {
+  "rel": "science/history/tsiolkovsky-equation-1903.json",
+  "at": "title",
+  "old": "De vergelijking van Tsiolkovsky · 1903",
+  "new": "De vergelijking van Tsiolkovski · 1903"
+ },
+ {
+  "rel": "science/history/tsiolkovsky-equation-1903.json",
+  "at": "intro_sentence",
+  "old": "Een dove Russische leraar werkt 50 jaar voor de eerste raket de vergelijking uit die alle raketten zal besturen.",
+  "new": "Een dove Russische leraar werkt de raketvergelijking uit, 50 jaar voordat iemand een raket kon bouwen om haar te gebruiken."
+ },
+ {
+  "rel": "science/history/tsiolkovsky-equation-1903.json",
+  "at": "narrative_101.0",
+  "old": "Konstantin Tsiolkovski was een autodidactische leraar rekenkunde in het provinciale Kaluga, sinds zijn jeugd doof door roodvonk, die zijn avonden vulde met schetsen van meertrapraketten terwijl hij overdag rekenkunde onderwees. In 1903 publiceerde hij \"Het onderzoek van de ruimte door middel van reactieve toestellen\" in een obscuur Russisch tijdschrift — en werkte hij de vergelijking uit die voortaan elke gebouwde raket zou beheersen.",
+  "new": "Konstantin Tsiolkovski was een autodidactische schoolleraar in het provinciale Kaluga, sinds zijn jeugd doof door roodvonk, die zijn avonden vulde met schetsen van meertrapsraketten terwijl hij overdag rekenen onderwees. In 1903 publiceerde hij \"Het onderzoek van de ruimte door middel van reactieve toestellen\" in een obscuur Russisch tijdschrift — en werkte hij de vergelijking uit die elke raket zou beheersen die ooit gebouwd werd."
+ },
+ {
+  "rel": "science/history/tsiolkovsky-equation-1903.json",
+  "at": "narrative_101.1",
+  "old": "De Tsiolkovsky-vergelijking: ∆v = vₑ × ln(m₀/m₁). De snelheidsverandering die een raket kan voortbrengen is gelijk aan de uitlaatsnelheid maal de natuurlijke logaritme van de massaverhouding. Die logaritmische term is brutaal — meer ∆v vereist exponentieel meer brandstof. Het grootste deel van elke raket is brandstof. De Saturn V bestond voor 85% uit drijfstof naar massa.",
+  "new": "De vergelijking van Tsiolkovski: ∆v = vₑ × ln(m₀/m₁). De snelheidsverandering die een raket kan voortbrengen is gelijk aan de uitlaatsnelheid maal de natuurlijke logaritme van de massaverhouding. Die logaritmische term is meedogenloos — meer ∆v vereist exponentieel meer brandstof. Het grootste deel van elke raket is brandstof. De Saturn V bestond voor 85% van zijn massa uit drijfstof."
+ },
+ {
+  "rel": "science/history/tsiolkovsky-equation-1903.json",
+  "at": "narrative_101.2",
+  "old": "Tsiolkovskij realiseerde zich ook: vloeibare brandstoffen zouden beter zijn dan vaste; meertrapbouw was nodig om de aarde te ontkomen; baanstations konden permanent mensen huisvesten. Hij stierf in 1935, twee jaar voordat Goddards raketten serieuze hoogte bereikten.",
+  "new": "Tsiolkovski bedacht ook: vloeibare brandstoffen zouden beter zijn dan vaste; meertrapsraketten waren nodig om de Aarde te ontvluchten; ruimtestations in een baan konden permanent mensen huisvesten. Hij stierf in 1935, twee jaar voordat Goddards raketten serieuze hoogte bereikten."
+ },
+ {
+  "rel": "science/history/tsiolkovsky-equation-1903.json",
+  "at": "body_paragraphs.0",
+  "old": "Tsiolkovskij publiceerde de vergelijking, het meertrap-raketkoncept en het baanstation-concept jaren voordat serieuze raketingenieurs bestonden. Goddard zou in 1926 de eerste vloeibare-brandstofraket bouwen (VS); von Braun's V-2 in 1942 (Duitsland); Koroljovs R-7 in 1957 (USSR).",
+  "new": "Tsiolkovski publiceerde de vergelijking, het concept van de meertrapsraket en het concept van het ruimtestation jaren voordat serieuze raketbouw bestond. Goddard zou in 1926 de eerste raket op vloeibare brandstof bouwen (VS); de V-2 van Von Braun volgde in 1942 (Duitsland); Koroljovs R-7 in 1957 (USSR)."
+ },
+ {
+  "rel": "science/history/tsiolkovsky-equation-1903.json",
+  "at": "body_paragraphs.2",
+  "old": "Waarom logaritmische schaal belangrijk is: ∆v verdubbelen vereist de massaverhouding in het kwadraat. Verdrievoudigen vereist in de derde macht. Om van 0 naar ontsnapsnelheid (~11,2 km/s) te gaan met een typische chemische uitlaatsnelheid van 4,4 km/s, is de massaverhouding = e^(11,2/4,4) ≈ 13. Een lading van 1 tonne vereist dus 12 ton drijfstof, plus de constructie om dat vast te houden.",
+  "new": "Waarom de logaritmische schaal ertoe doet: ∆v verdubbelen vereist de massaverhouding in het kwadraat. Verdrievoudigen vereist de derde macht. Om van 0 naar ontsnapsnelheid (~11,2 km/s) te gaan met een typische chemische uitlaatsnelheid van 4,4 km/s, is de massaverhouding = e^(11,2/4,4) ≈ 13. Een lading van 1 ton vereist dus 12 ton drijfstof, plus de constructie om die te dragen."
+ },
+ {
+  "rel": "science/history/tsiolkovsky-equation-1903.json",
+  "at": "body_paragraphs.3",
+  "old": "Tsiolkovskij testte nooit iets. Hij was geen ingenieur — hij was een theoreticus met krijt. Het Sovjet-ruimteprogramma kanoniseerde hem postuum; zijn huis in Kaluga is nu een museum en zijn naam staat op een krater aan de verre zijde van de maan, waar de Soviets naar mikte.",
+  "new": "Tsiolkovski testte nooit iets. Hij was geen ingenieur — hij was een theoreticus met krijt. Het Sovjet-ruimteprogramma kanoniseerde hem postuum; zijn huis in Kaluga is nu een museum en zijn naam staat op de krater aan de achterzijde van de Maan waarop de Sovjet-maanmissies mikten."
+ },
+ {
+  "rel": "science/life-in-space/_intro.json",
+  "at": "headline",
+  "old": "Leven in de ruimte, wat het menselijk lichaam doet als de zwaartekracht verdwijnt.",
+  "new": "Leven in de ruimte — wat het menselijk lichaam doet als de zwaartekracht verdwijnt."
+ },
+ {
+  "rel": "science/life-in-space/_intro.json",
+  "at": "paragraphs.0",
+  "old": "Ruimtevlucht is een langzaam medisch experiment dat de mensheid al 65 jaar op zichzelf draait. Het lichaam ontwikkelde zich in 1 g, in een dikke atmosfeer, achter een magnetisch veld. Neem een van die weg en fysiologie re-draads ",
+  "new": "Ruimtevaart is een langzaam medisch experiment dat de mensheid al 65 jaar op zichzelf uitvoert. Het lichaam is geëvolueerd bij 1 g, in een dikke atmosfeer, achter een magnetisch veld. Haal een van die drie weg en de fysiologie bedraadt zich opnieuw — vloeistoffen verplaatsen zich, botten worden dunner, spieren verslappen, ogen veranderen van vorm, het immuunsysteem raakt van slag en het evenwichtsorgaan geeft het op om te bepalen waar beneden is."
+ },
+ {
+  "rel": "science/life-in-space/_intro.json",
+  "at": "paragraphs.1",
+  "old": "Dit tabblad loopt door de hoofdeffecten en wat astronauten doen om ze te bestrijden. Microzwaartekracht is de grote een  Straling is de andere die we nog niet kunnen verslaan voor een Mars reis. EVA is zijn eigen fysiologische probleem: een hard vacuüm aan de andere kant van een dun drukpak verandert alles.",
+  "new": "Dit tabblad loopt de belangrijkste effecten langs en wat astronauten doen om ze te bestrijden. Microzwaartekracht is de grootste — elk ander onderdeel van dit tabblad gaat erop terug. Straling is de andere die we voor een Marsreis nog niet weten te verslaan. EVA is een fysiologisch probleem op zich: een hard vacuüm aan de andere kant van een dun drukpak verandert alles."
+ },
+ {
+  "rel": "science/life-in-space/_intro.json",
+  "at": "paragraphs.2",
+  "old": "De tegenmaatregelen zijn echt: ARED oefenmachines op het ISS, slaapschema's gekalibreerd tegen orbitale zonsopgang, pre-adem protocollen voor elke ruimtewandeling. Geen van hen is perfect. Hoe langer we vliegen, hoe meer we leren over wat eerst weggeeft.",
+  "new": "De tegenmaatregelen zijn echt: ARED-trainingsapparaten op het ISS, slaapschema's afgestemd op de zonsopgang in de baan, protocollen voor het voorademen vóór elke ruimtewandeling. Geen daarvan is perfect. Hoe langere vluchten we maken, hoe meer we leren over wat als eerste bezwijkt."
+ },
+ {
+  "rel": "science/life-in-space/bone-density-loss.json",
+  "at": "intro_sentence",
+  "old": "Astronauten verliezen ruwweg 1,2% van de botmassa per maand in microzwaartekracht, hetzelfde percentage als oudere osteoporose, maar gecomprimeerd en omkeerbaar.",
+  "new": "Astronauten verliezen in microzwaartekracht ruwweg 1–2% van hun botmassa per maand — even snel als bij osteoporose op hoge leeftijd, maar samengeperst en min of meer omkeerbaar."
+ },
+ {
+  "rel": "science/life-in-space/bone-density-loss.json",
+  "at": "body_paragraphs.0",
+  "old": "Botweefsel is levendige weefsel dat zich voortdurend vernieuwt: osteoblasten leggen nieuwe botmassa aan, osteoclasten lossen oud bot op, en op Aarde zorgt de belasting van lopen, tillen en gewoon staan ervoor dat deze twee grotendeels in evenwicht blijven. Verwijder die belasting in een baan rond de Aarde en het evenwicht verschuift. Resorptie gaat door tegen zijn normale snelheid; aanmaak van nieuw bot vertraagt. Het resultaat is een nettoverlies van ongeveer 1–2% per maand, geconcentreerd in de gewichtdragende structuren: lendenwervels, bekken, femurhals, hielbot.",
+  "new": "Bot is een levend weefsel dat zichzelf voortdurend vernieuwt: osteoblasten leggen nieuw bot aan, osteoclasten lossen oud bot op, en op Aarde zorgt de belasting van lopen, tillen en gewoon staan ervoor dat deze twee grotendeels in evenwicht blijven. Verwijder die belasting in een baan rond de Aarde en het evenwicht verschuift. De resorptie gaat door in het normale tempo; de aanmaak van nieuw bot vertraagt. Het resultaat is een nettoverlies van ongeveer 1–2% per maand, geconcentreerd in de gewichtdragende structuren: lendenwervelkolom, bekken, dijbeenhals, hielbot."
+ },
+ {
+  "rel": "science/life-in-space/bone-density-loss.json",
+  "at": "body_paragraphs.1",
+  "old": "Ter vergelijking, postmenopauzale osteoporose op aarde loopt op ongeveer 1,2% per **jaar**. Een zes maanden durende ISS missie comprimeert ongeveer een decennium van leeftijd-gerelateerd verlies in een half jaar. Sommige komen terug na de vlucht, andere niet. Studies van langdurige bemanning suggereren meetbare bot-minerale dichtheid tekorten blijven voor jaren na de vlucht, zelfs na de speciale rehabilitatie.",
+  "new": "Ter vergelijking: postmenopauzale osteoporose op Aarde verloopt met ongeveer 1–2% per **jaar**. Een ISS-missie van zes maanden perst ongeveer een decennium leeftijdsgebonden verlies samen in een half jaar. Een deel komt na de vlucht terug, een deel niet. Studies naar langdurige bemanningen wijzen erop dat meetbare tekorten in de botmineraaldichtheid nog jaren na de vlucht blijven bestaan, zelfs na gerichte revalidatie."
+ },
+ {
+  "rel": "science/life-in-space/bone-density-loss.json",
+  "at": "body_paragraphs.2",
+  "old": "De tegenmaatregelenstapel op het ISS bestaat uit ARED (Advanced Resistive Exercise Device — een vacuümzuiger-belaste namaak-squatrack), de T2-loopband (hardlopen terwijl je vastgegespt bent) en de cyclusergometer. Moderne protocollen bereiken ongeveer 1100 N axiale belasting op ARED — hoog genoeg om osteogeen te werken. Met ARED plus bisfosfonaatmedicijnschema's keren zesmaandse bemanningen terug met bottenverlies van ongeveer 0,5%/maand in plaats van de 1,5%/maand van voor ARED. Beter, niet opgelost.",
+  "new": "De set tegenmaatregelen op het ISS bestaat uit ARED (Advanced Resistive Exercise Device — een nagemaakt squatrek met vacuümzuigerweerstand), de T2-loopband (hardlopen terwijl je met elastieken vastgebonden bent) en de fietsergometer. Moderne protocollen bereiken op ARED een axiale belasting van ongeveer 1100 N — hoog genoeg om osteogeen te werken. Met ARED plus medicatieschema's met bisfosfonaten keren bemanningen van zes maanden nu terug met een botverlies van ongeveer 0,5%/maand in plaats van de 1,5%/maand van vóór ARED. Beter, niet opgelost."
+ },
+ {
+  "rel": "science/life-in-space/bone-density-loss.json",
+  "at": "body_paragraphs.3",
+  "old": "Voor een rondreis van drie jaar op Mars... impliceert zelfs de beste tegenmaatregelen... een paranormale landingsastronaut. Actieve onderzoekslijnen omvatten trillingsplatforms, mechanische laadpakken, en onderzoeken of kunstmatige zwaartekracht (een langzaam roterende habitat) het enige duurzame antwoord is.",
+  "new": "Voor een Mars-rondreis van drie jaar betekent zelfs de beste huidige tegenmaatregel dat een astronaut met een verhoogd risico op botbreuken zou landen. Actieve onderzoekslijnen omvatten trillingsplatforms, mechanische belastingspakken, en onderzoek naar de vraag of kunstmatige zwaartekracht (een langzaam roterende habitat) het enige duurzame antwoord is."
+ },
+ {
+  "rel": "science/life-in-space/bone-density-loss.json",
+  "at": "diagram_caption",
+  "old": "ARED + loopband + cyclus blijven laden op het gewichtdragende skelet; met tegenmaatregelen verliest de moderne bemanning ~ 0,5%/maand vs. de voor-ARED 1,5%/maand.",
+  "new": "ARED + loopband + fietsergometer blijven het gewichtdragende skelet belasten; met tegenmaatregelen verliest een moderne bemanning ~0,5%/maand, tegenover 1,5%/maand vóór ARED."
+ },
+ {
+  "rel": "science/life-in-space/crew-dynamics-psychology.json",
+  "at": "title",
+  "old": "Crewdynamica & psychologie — Mir-crises, ISS-protocollen, isolatie",
+  "new": "Bemanningsdynamiek & psychologie — Mir-crises, ISS-protocollen, isolatie"
+ },
+ {
+  "rel": "science/life-in-space/crew-dynamics-psychology.json",
+  "at": "intro_sentence",
+  "old": "Het meeste over psychologie van mensen in de ruimte leerden we van Mir (1986–2001): 15 jaar, 28 expedities, vier vrijwel-verloren-missies, en een paradigmashift in het denken van elke ruimtevaartagentschap over crewsamenstelling.",
+  "new": "Wat we over de psychologie van mensen in de ruimte weten, leerden we vooral op Mir tussen 1986 en 2001: vijftien jaar, 28 expedities, vier bijna-rampen en een blijvende kentering in hoe elk agentschap over bemanningssamenstelling denkt."
+ },
+ {
+  "rel": "science/life-in-space/crew-dynamics-psychology.json",
+  "at": "body_paragraphs.0",
+  "old": "Salyut 6 (Sovjet, 1977–82) was het eerste station met opzettelijke langdurige crewploegen en het eerste dat het psychologische probleem ontmoette dat daarna elk langdurend station had: rond week 4–6 van een missie voelen zelfs intensief gescreende crews een fase die Sovjet-psychologen *asthenia* noemden — vermoeidheid, prikkelbaarheid, terugtrekking uit communicatie met grondstation, afnemende motivatie. Dit werd eerst aan fysieke deconditioning toegeschreven, maar bleek tijdens Salyut 7 en Mir vooral psychologisch van aard — de nieuwheid van de baan vervaagt, het werk wordt routineus, de crew realiseert zich acuut dat zij 5 maanden niet kunnen vertrekken, en de relatie met grondcontrole wordt adversariaal. Sovjet-grondcontrollers inplannen opzettelijk ongestructureerde persoonlijke tijd + familievideogesprekken + af en toe verrassingsgeschenken (chocolade, vers fruit) als tegenmaatregelen; dit is nu standaard op ISS + Tiangong + elk analoogstation.",
+  "new": "Salyut 6 (Sovjet, 1977–82) was het eerste station met bewust langdurige bemanningen, en het eerste dat te maken kreeg met het psychologische probleem dat elk later station voor lange missies heeft gehad: na ongeveer 4–6 weken in een missie komen zelfs streng gescreende bemanningen in een fase die Sovjetpsychologen *astenie* noemden — vermoeidheid, prikkelbaarheid, terugtrekking uit het contact met de grond, afnemende motivatie. Eerst werd het toegeschreven aan lichamelijk conditieverlies, maar tijdens Salyut 7 en Mir werd duidelijk dat het vooral psychologisch is — de nieuwigheid van de baan slijt, het werk wordt routine, de bemanning beseft scherp dat ze nog 5 maanden niet weg kan, en de verhouding met de vluchtleiding wordt conflictueus. Sovjetvluchtleiders planden daarom bewust ongestructureerde persoonlijke tijd, videogesprekken met familie en af en toe verrassingsgeschenken (chocolade, vers fruit) in als tegenmaatregel; die praktijk is nu standaard op het ISS, Tiangong en elk analoog station."
+ },
+ {
+  "rel": "science/life-in-space/crew-dynamics-psychology.json",
+  "at": "body_paragraphs.1",
+  "old": "Mir's 1997 was het vormende jaar. In februari vatte een Vika-zuurstofkaars vlam in de Kvant-1-module — vlammen die Linenger beschreef als ongeveer 14 minuten brandend (Russische verslagen stellen de actieve vlam dichter op 90 seconden) scheeurden door de gang die Mir's modules met de Soyuz-reddingsboten verbond en blokkeerden de vluchtweg. Het twee-kosmonauten + één-NASA-astronaut-team (Tsibliyev, Lazutkin, Linenger) trok respiratoren aan en bestrede de brand met blusapparaten in nulzwaartekracht (wat moeilijker is dan het klinkt; de reactiemassa van de bluser werpt de gebruiker achteruit). Zij wonnnen, maar de cabine zat days lang vol giftige rook. Vier maanden later (juni 1997) liep een handmatige afstandsbediende Progress-aanvliegmanoeuvre mis — het onbemande vrachtschip trof de Spektr-module met 1 m/s, doorboorde de romp. Tsibliyev en Lazutkin sloten Spektr in 11 minuten af (het luik moest met kabels worden dichtgebonden omdat elektriciteitskabels door het schot liepen), wat totale stationverlies voorkwam. Na beide incidenten bleef dezelfde crew op het station tot de reguliere crewwisseling. Linen­gers memoires en psychiatrische verslagen na de missie documenteerden ernstige cumulatieve stress, terugtrekking, en conflict tussen kosmonauten en grondcontrole over operationele beslissingen.",
+  "new": "1997 was het vormende jaar van Mir. In februari vatte een Vika-zuurstofkaars vlam in de Kvant-1-module — vlammen die volgens Linenger tot ~14 minuten brandden (Russische verslagen spreken van een actieve vlam van eerder 90 seconden) joegen door de gang die de modules van Mir met de Soyuz-reddingsboten verbond en versperden de vluchtroute. De bemanning van twee kosmonauten en één NASA-astronaut (Tsibliyev, Lazutkin, Linenger) zette ademhalingsmaskers op en bestreed de brand met blusapparaten in gewichtloosheid (moeilijker dan het klinkt: de reactiemassa van de blusser duwt de gebruiker achteruit). Ze wonnen het, maar de cabine zat dagenlang vol giftige rook. Vier maanden later (juni 1997) ging een handmatig, op afstand bestuurde koppeling van een Progress mis — het onbemande vrachtschip raakte de Spektr-module met 1 m/s en sloeg een gat in de romp. Tsibliyev en Lazutkin sloten Spektr in 11 minuten af (het luik moest met draad worden dichtgezet omdat er kabels door het schot liepen), wat verlies van het hele station voorkwam. Na beide gebeurtenissen bleef dezelfde bemanning aan boord tot de reguliere bemanningswissel. De memoires van Linenger en de psychiatrische debriefings na de missie documenteerden zware cumulatieve stress, terugtrekking en conflict tussen de kosmonauten en de vluchtleiding over operationele beslissingen."
+ },
+ {
+  "rel": "science/life-in-space/crew-dynamics-psychology.json",
+  "at": "body_paragraphs.2",
+  "old": "ISS Expedition 1 (Shepherd-Krikaljov-Gidzenko, 2000–01) was de eerste echte internationale langdurige crew. Het protocolpakket — dagelijks grondoplink-schema, verplichte rustperiodes, wekelijkse persoonlijke psychiatrische conferenties (PPCs) met een flight surgeon, verplichte familievideogesprekken — was ontworpen naar de Mir-lessen. Het interpersoonlijke model lijkt meer op een klein onderzeeërs-team dan op een bedrijfskantoor: duidelijke autoriteit maar platte besluitvorming in niet-noodgevallen; gestructureerde conflictbeslechting (een probleem wordt besproken, gestemd als onenigheid voortduurt, uitgesteld naar commandant bij voortdurende onenigheid); actief grondmanagement van persoonlijkheidswrijving (een crew-lid dat niet goed samenwerkt met een ander kan samen met een derde worden ingezet). Elke multinationaal team sinds Expedition 1 heeft Engels als operationele taal (NASA-Russische teams gebruiken Russisch voor Russische-segment-operaties, Engels voor gezamenlijke operaties); Chinees-Amerikaanse directe samenwerking blijft operationeel begrensd door de Wolf Amendment, maar het ISS-Tiangong-profiel is toch naar soortgelijke communicatieprotocollen geconvergeerd.",
+  "new": "ISS Expedition 1 (Shepherd, Krikaljov, Gidzenko; 2000–01) was de eerste echte internationale langdurige bemanning. Het protocollenpakket — een dagelijks uplinkschema vanaf de grond, verplichte rustperioden, wekelijkse privé psychiatrische gesprekken (PPC's) met een vluchtarts, verplichte videogesprekken met familie — is ontworpen op basis van de lessen van Mir. Het onderlinge model lijkt meer op dat van een kleine onderzeeërbemanning dan op een bedrijfskantoor: duidelijk gezag, maar vlakke besluitvorming buiten noodsituaties; gestructureerde conflictoplossing (een probleem wordt besproken, bij aanhoudend meningsverschil wordt gestemd, bij blijvend meningsverschil beslist de commandant); actief beheer van persoonlijkheidswrijving door de grond (een bemanningslid dat het niet goed kan vinden met een ander, kan bij taken met een derde worden gekoppeld). Elke multinationale bemanning sinds Expedition 1 heeft Engels als gemeenschappelijke werktaal (NASA-Russische bemanningen gebruiken Russisch voor operaties in het Russische segment, Engels voor gezamenlijke operaties); directe Chinees-Amerikaanse samenwerking blijft operationeel beperkt door het Wolf Amendment, maar het operationele profiel van ISS en Tiangong is toch naar vergelijkbare communicatieprotocollen toegegroeid."
+ },
+ {
+  "rel": "science/life-in-space/crew-dynamics-psychology.json",
+  "at": "body_paragraphs.3",
+  "old": "Tiangong's crewdynamica is anders geconstrueerd. Enkel-agentschap betekent alle crew hebben PLA-officiersstatus met soortgelijke militaire-rang-achtergronden; de hiërarchie is verticaler dan ISS, met de commandant die meer unilaterale autoriteit heeft. Shenzhou 13 (Zhai-Wang-Ye, 2021–22, Tiangong's eerste 6-maands-crew) rapporteerde in post-missie-briefings dat de uniforme operationele taal + gedeelde trainingsachtergrond + dezelfde-agentschap-autoriteitsketen de internationale-vertaal-wrijving die ISS-crews ervaren reduceerde, maar voegde ander wrijving toe (onderlinge conflictbeslechting tussen gelijkniveaucollega's was reportedly moeilijker dan onderlinge conflictbeslechting tussen overagentschap-collega's met verschillende bazen). De CMSA-interne psychologische screeningscriteria benadrukken samenwerkingsgedrag nog sterker dan NASA's, deels omdat de verticale-autoriteit-architectuur niet de overagentschap-veiligheidsklep heeft die ISS biedt.",
+  "new": "De bemanningsdynamiek van Tiangong is anders opgebouwd. Eén agentschap betekent dat alle bemanningsleden de status van PLA-officier hebben, met vergelijkbare militaire achtergronden; de hiërarchie is verticaler dan op het ISS, en de commandant heeft meer eigenstandig gezag. Shenzhou 13 (Zhai, Wang, Ye; 2021–22, de eerste zesmaandsbemanning van Tiangong) meldde in debriefings na de missie dat de gemeenschappelijke werktaal, de gedeelde trainingsachtergrond en de gezagsketen binnen één agentschap de wrijving door internationale vertaling verminderden die ISS-bemanningen ervaren, maar een andere wrijving toevoegden (het oplossen van conflicten tussen gelijken van dezelfde rang was naar verluidt moeilijker dan tussen collega's van verschillende agentschappen met verschillende bazen). De interne psychologische selectiecriteria van de CMSA leggen nog sterker de nadruk op samenwerkingsgedrag dan die van NASA, mede omdat de verticale gezagsstructuur niet de veiligheidsklep tussen agentschappen heeft die het ISS biedt."
+ },
+ {
+  "rel": "science/life-in-space/crew-dynamics-psychology.json",
+  "at": "body_paragraphs.4",
+  "old": "Mars-klasse-missies zijn het open psychologische probleem. Het minimaal-energie-missie-profiel van 26 maanden betekent crews zitten in opsluiting voor ongeveer 33 maanden inclusief transit + oppervlak + terugkeer. De grond-naar-voertuig-transmissietijd groeit van <0,1 seconde (Maan) naar 4–24 minuten (Mars); real-time gesprek met familie en missioncontrole is onmogelijk voor het merendeel van de reis. De cumulatieve stress-modellering is grotendeels geëxtrapoleerd uit analoogcampagnes (HI-SEAS Hawaii, Roscosmos SIRIUS in Moskou, MARS-500 in Moskou — het laatste was 520 gesimuleerde dagen crewsisolatie, met opmerkelijke onderlinge conflictpatronen rond dag ~200). De conservatieve architectuurveronderstelling is dat een Mars-crew ongeveer 7 personen (niet 6) nodig heeft voor redundantie onder acute gedragsgezondheidsevenementen; de verliesaanname is dat AI / autonome medische ondersteuning + procedurele-vaardigheidsuitbreiding verlies van real-time psychologische grondondersteuning kan compenseren. Geen van beide is gevalideerd. De eerste bemande Mars-missie zal het eerste langeafstands-ruimte-isolatie-experiment ooit zijn dat wordt uitgevoerd met inzetten zo hoog dat mislukking niet-recuperabel is.",
+  "new": "Missies van Mars-formaat zijn het openstaande psychologische probleem. Het missieprofiel met minimale energie van 26 maanden betekent dat bemanningen ~33 maanden opgesloten zitten, inclusief heenreis, verblijf op het oppervlak en terugreis. De heen-en-terugsignaaltijd tussen grond en voertuig groeit van <0,1 seconde (Maan) naar 4–24 minuten (Mars); een gesprek in realtime met familie en vluchtleiding is gedurende het grootste deel van de reis onmogelijk. De modellering van cumulatieve stress is grotendeels geëxtrapoleerd uit analoge campagnes (HI-SEAS op Hawaï, SIRIUS van Roscosmos in Moskou, MARS-500 in Moskou — die laatste was 520 gesimuleerde dagen bemanningsisolatie, met opvallende patronen van onderling conflict rond dag ~200). De behoudende architectuuraanname is dat een Marsbemanning ~7 mensen nodig heeft (niet 6) als reserve bij acute gedragsgezondheidsproblemen; de riskantere aanname is dat AI / autonome medische ondersteuning plus uitbreiding van procedurele vaardigheden het verlies van realtime psychologische ondersteuning vanaf de grond kan compenseren. Geen van beide is gevalideerd. De eerste bemande Marsmissie wordt het eerste isolatie-experiment over grote afstand in de ruimte ooit waarbij de inzet zo hoog is dat mislukking niet te herstellen is."
+ },
+ {
+  "rel": "science/life-in-space/crew-dynamics-psychology.json",
+  "at": "diagram_caption",
+  "old": "Mir 1997 (brand + Spektr-botsing) is de canonieke casestudy; ISS-protocollen (dagelijks uplink-schema + PPCs + multinationaal-autoriteitsketen) zijn operationele reactie; Tiangong (enkel-agentschap-hiërarchie) is contrastcase; Mars (33 maanden + 4–24 min grondvertraging + geen herbevoorrading) is onopgelost volgende-generatie-probleem.",
+  "new": "Mir 1997 (brand + Spektr-botsing) is de canonieke casestudy; ISS-protocollen (dagelijks uplinkschema + PPC's + gezagsketen van meerdere naties) zijn de operationele reactie; Tiangong (hiërarchie van één agentschap) is het contrastgeval; Mars (33 maanden + 4–24 min vertraging met de grond + geen bevoorrading) is het onopgeloste probleem van de volgende generatie."
+ },
+ {
+  "rel": "science/life-in-space/crew-selection.json",
+  "at": "intro_sentence",
+  "old": "Elk ruimtevaartagentschap hanteert dezelfde selectietrechter — fysiek, cognitief, psychologisch, operationeel — van ~10.000 kandidaten naar ~10 geselecteerden. Het knelpunt: groepsdynamiek onder stress.",
+  "new": "Elk ruimtevaartagentschap hanteert ongeveer dezelfde selectietrechter — fysiek, cognitief, psychologisch, operationeel — die ~10.000 kandidaten terugbrengt tot ~10 geselecteerden. Het knelpunt is de dynamiek van de bemanning onder stress."
+ },
+ {
+  "rel": "science/life-in-space/crew-selection.json",
+  "at": "body_paragraphs.1",
+  "old": "Moderne selectie zoekt naar andere dingen. De NASA-lichting van 2017 nam 12 van de 18.300 kandidaten aan (0,07% — veel strenger dan Harvard). Opleidingseis: een master in een bèta- of technische richting of gelijkwaardige operationele ervaring (testpiloot, arts, promotie). Lengte: 4'9\"–6'4\" (149-193 cm — Crew Dragon en Soyuz passen allebei op dat bereik). Geen beperking voor het zicht zolang het corrigeerbaar is. Geen maximumleeftijd. Minstens twee jaar relevante werkervaring, maar wie geselecteerd wordt heeft er gemiddeld 13. De fysieke lat is verschoven van 'G-tolerantie van een straaljagerpiloot' naar 'wordt niet ernstig ziek tijdens een expeditie van 6 maanden op het ISS' — ander probleem, andere test.",
+  "new": "Moderne selectie zoekt naar andere dingen. De NASA-lichting van 2017 nam 12 van de 18.300 kandidaten aan (0,07% — veel strenger dan Harvard). Opleidingseis: een master in een bèta- of technische richting of gelijkwaardige operationele ervaring (testpiloot, arts, PhD). Lengte: 4'9\"–6'4\" (149-193 cm — Crew Dragon en Soyuz kunnen dat bereik allebei aan). Geen beperking voor het zicht zolang het corrigeerbaar is. Geen maximumleeftijd. Minstens twee jaar relevante werkervaring, maar wie geselecteerd wordt heeft er gemiddeld 13. De fysieke lat is verschoven van 'G-tolerantie van een straaljagerpiloot' naar 'wordt niet ernstig ziek tijdens een expeditie van 6 maanden op het ISS' — ander probleem, andere test."
+ },
+ {
+  "rel": "science/life-in-space/crew-selection.json",
+  "at": "body_paragraphs.2",
+  "old": "De medische fase is de grootste afzonderlijke filter. De Lovelace Clinic (Mercury, 1959) nam in een week ~30 verschillende tests af, waaronder de beruchte evenwichtsschok met ijswater in het oor en de isolatietest 'hoe lang houd je het uit in een donkere tank zonder prikkels'. Moderne keuringen gebruiken nog steeds isolatiekamers (NASA een evaluatie van 12 uur in een besloten ruimte; Roscosmos een langere sessie van 5 dagen in de isolatiekamer Звезда), maar het medisch onderzoek is verfijnder: volledig metabool profiel, volledige cardiologie met inspanningsecho, neurologische beeldvorming, tandheelkundige goedkeuring (een tandabces in de ruimte kan een missie kosten) en een psychiatrische screening via een panelgesprek. De kwalificatie voor de Soyuz voegt centrifugetolerantie tot 8 g toe en 14 dagen quarantaine om het immuunprofiel te bevestigen.",
+  "new": "De medische fase is de grootste afzonderlijke filter. De Lovelace Clinic (Mercury, 1959) nam in een week ~30 verschillende tests af, waaronder de beruchte evenwichtsschok met ijswater in het oor en de isolatietest 'hoe lang houd je het uit in een donkere tank zonder prikkels'. Moderne keuringen gebruiken nog steeds isolatiekamers (NASA een evaluatie van 12 uur in een besloten ruimte; Roscosmos een langere sessie van 5 dagen in de isolatiekamer Zvezda), maar het medisch onderzoek is verfijnder: volledig metabool profiel, volledige cardiologie met inspanningsecho, neurologische beeldvorming, tandheelkundige goedkeuring (een tandabces in de ruimte kan een missie kosten) en een psychiatrische screening via een panelgesprek. De kwalificatie voor de Soyuz voegt centrifugetolerantie tot 8 g toe en 14 dagen quarantaine om het immuunprofiel te bevestigen."
+ },
+ {
+  "rel": "science/life-in-space/crew-selection.json",
+  "at": "body_paragraphs.4",
+  "old": "Programma's buiten NASA volgen een vergelijkbare logica met nationale verschillen. De kosmonautenselectie van Roscosmos erft de Sovjetvoorkeur voor sterk technische achtergronden en langere quarantaines; een typische Soyuz-commandant heeft voor zijn aanstelling al twee of drie missies gevlogen. CSA, ESA en JAXA selecteren elk kleine groepen (meestal 1-2 per generatie) volgens eigen medische en psychologische normen, maar maken steeds meer gebruik van gedeelde trainingsfaciliteiten — elk modern ISS-bemanningslid traint in Houston, Star City en Tsukuba of Keulen. De taikonautenselectie van China, uitgevoerd door de China Manned Space Agency (CMSA), nam in de eerste twee groepen (1998, 2010) alleen PLAAF-piloten aan; de derde groep, geselecteerd in 2020, voegde vluchtingenieurs en payloadspecialisten toe, net zoals NASA zich in 1965 openstelde voor meer dan testpiloten. De Gaganyaan-bemanning van India (4 geselecteerd, 2022) komt volledig uit de testpilotenpool van de IAF — het programma volgt het draaiboek van Mercury uit 1959 omdat het, net als Mercury, India's eerste bemande poging is.",
+  "new": "Programma's buiten NASA volgen een vergelijkbare logica met nationale verschillen. De kosmonautenselectie van Roscosmos erft de Sovjetvoorkeur voor sterk technische achtergronden en langere quarantaines; een typische Soyuz-commandant heeft voor zijn aanstelling al twee of drie missies gevlogen. CSA, ESA en JAXA selecteren elk kleine groepen (meestal 1-2 per generatie) volgens eigen medische en psychologische normen, maar maken steeds meer gebruik van gedeelde trainingsfaciliteiten — elk modern ISS-bemanningslid traint in Houston, Star City en Tsukuba of Keulen. De taikonautenselectie van China, uitgevoerd door de China Manned Space Agency (CMSA), nam in de eerste twee groepen (1998, 2010) alleen PLAAF-piloten aan; de derde groep, geselecteerd in 2020, voegde vluchtingenieurs en payloadspecialisten toe, net zoals NASA zich in 1965 openstelde voor meer dan testpiloten. De Gaganyaan-bemanning van India (4 geselecteerd, 2022) komt volledig uit de testpilotenpool van de IAF — het programma volgt het draaiboek van Mercury uit 1959 omdat het, net als Mercury, de eerste bemande poging van India is."
+ },
+ {
+  "rel": "science/life-in-space/crew-selection.json",
+  "at": "diagram_caption",
+  "old": "Selectietrechter c. 2024: ~10.000 kandidaten → medisch → fysiek → cognitief → psychologisch → centrifuge / isolatie → panelgesprek → ~10 geselecteerden. 99,9% afgevallen: 70% medisch, 15% cognitief, 15% psychologisch.",
+  "new": "Selectietrechter circa 2024: ~10.000 kandidaten → medisch → fysiek → cognitief → psychologisch → centrifuge / isolatie → panelgesprek → ~10 geselecteerden. De uitval van 99,9% is grofweg verdeeld: 70% bij de medische keuring, 15% cognitief, 15% psychologisch/expeditiegedrag."
+ },
+ {
+  "rel": "science/life-in-space/crewed-station-design.json",
+  "at": "title",
+  "old": "Bemande ruimtestation-architectuur — Saljoet tot ISS tot Tiangong",
+  "new": "Ontwerp van bemande ruimtestations — van Salyut tot ISS en Tiangong"
+ },
+ {
+  "rel": "science/life-in-space/crewed-station-design.json",
+  "at": "body_paragraphs.0",
+  "old": "Een ruimtestation is vier gestapelde problemen: een drukromp die sterk genoeg is om 1 atm tegen vacuüm vast te houden, een koppelsysteem waarmee bemanning en vracht kunnen aankomen, een levensondersteuningssysteem dat lucht, water en warmte recyclet, en verblijfsruimtes die de bewoners niet tot muiterij drijven. Elk station dat ooit heeft gevlogen maakte een andere afweging tussen die vier. Salyut 1 (Sovjet, 1971) was in wezen een blikje met een koppelpoort en één luchtsluis; de eerste langeduurbemanning (Soyuz 11, 1971) kwam om bij de terugkeer omdat het probleem van het IVA-pak nog niet was opgelost. Skylab (VS, 1973) was een omgebouwde derde trap van een Saturn V — een enorm binnenvolume (~360 m³) en maar één kans; het micrometeorietenschild scheurde bij de lancering af en de eerste bemanning moest van buitenaf een parasol uitklappen om te voorkomen dat het werkstation oververhit raakte. De eerste bemanning van elk station is degene die de ontwerpfouten vindt.",
+  "new": "Een ruimtestation is vier gestapelde problemen: een drukromp die sterk genoeg is om 1 atm tegen vacuüm vast te houden, een koppelsysteem waarmee bemanning en vracht kunnen aankomen, een levensondersteuningssysteem dat lucht, water en warmte recyclet, en verblijfsruimtes die de bewoners niet tot muiterij drijven. Elk station dat ooit heeft gevlogen maakte een andere afweging tussen die vier. Salyut 1 (Sovjet, 1971) was in wezen een blikken bus met een koppelpoort en één luchtsluis; de eerste langeduurbemanning (Soyuz 11, 1971) kwam om bij de terugkeer omdat het probleem van het IVA-pak nog niet was opgelost. Skylab (VS, 1973) was een omgebouwde derde trap van een Saturn V — een enorm binnenvolume (~360 m³) en maar één kans; het micrometeorietenschild scheurde bij de lancering af en de eerste bemanning moest van buitenaf een parasol uitklappen om te voorkomen dat het werkstation oververhit raakte. De eerste bemanning van elk station is degene die de ontwerpfouten vindt."
+ },
+ {
+  "rel": "science/life-in-space/crewed-station-design.json",
+  "at": "body_paragraphs.2",
+  "old": "Het ISS (1998–) erfde de modulaire logica van Mir en schaalde die op: 16 drukelementen gebouwd door NASA, Roscosmos, ESA, JAXA en CSA, verbonden via een klein aantal gestandaardiseerde koppelpoorten (CBM voor berthing, IDSS voor autonoom koppelen). Het Amerikaanse segment (Unity, Destiny, Tranquility, Harmony, Columbus, Kibo enz.) hangt aan de truss, met de voorzieningen via Harmony; het Russische segment (Zarya, Zvezda, Nauka, Poisk, Rassvet, Prichal) draait op een eigen ECLSS- en stroomcircuit en kan in theorie overleven als de segmenten van elkaar worden geïsoleerd. De redundantie is dubbel, omdat men de twee helften nooit helemaal vertrouwde om samen te falen. De prijs was complexiteit — de assemblage van het ISS duurde 13 jaar, met meer dan 30 assemblagevluchten en ruim 160 ruimtewandelingen.",
+  "new": "Het ISS (1998–) erfde de modulaire logica van Mir en schaalde die op: 16 drukelementen gebouwd door NASA, Roscosmos, ESA, JAXA en CSA, verbonden via een klein aantal gestandaardiseerde koppelpoorten (CBM voor berthing, IDSS voor autonoom koppelen). Het Amerikaanse segment (Unity, Destiny, Tranquility, Harmony, Columbus, Kibo enz.) hangt aan de truss, met de voorzieningen via Harmony; het Russische segment (Zarya, Zvezda, Nauka, Poisk, Rassvet, Prichal) draait op een eigen ECLSS- en stroomcircuit en kan in theorie overleven als de segmenten van elkaar worden geïsoleerd. De redundantie is dubbel, omdat men er nooit helemaal op vertrouwde dat beide helften tegelijk zouden uitvallen. De prijs was complexiteit — de assemblage van het ISS duurde 13 jaar, met meer dan 30 assemblagevluchten en ruim 160 ruimtewandelingen."
+ },
+ {
+  "rel": "science/life-in-space/crewed-station-design.json",
+  "at": "diagram_caption",
+  "old": "Zes decennia, zes architecturen: Salyut 1 (enkele blik) → Skylab (grote blik) → Mir (kern + modules) → ISS (US + Russisch segment + internationale ruggengraat) → Tiangong (compact tri-module) → volgende generatie (commercieel / Mars-voorloper).",
+  "new": "Zes decennia, zes architecturen: Salyut 1 (één blikken bus) → Skylab (één grote blikken bus) → Mir (kern + aangekoppelde modules) → ISS (Amerikaans + Russisch segment + internationale truss) → Tiangong (compact, drie modules) → volgende generatie (commercieel / Mars-voorloper)."
+ },
+ {
+  "rel": "science/life-in-space/eclss-life-support.json",
+  "at": "intro_sentence",
+  "old": "Zes personen ademen 6 kg zuurstof per dag in, drinken 18 L water en stoten 7 kg CO₂ uit. Niets ervan wordt vanuit de aarde gelanceerd als het station daar iets tegen kan doen — elk gram moet worden teruggewonnen.",
+  "new": "Zes personen ademen 6 kg zuurstof per dag in, drinken 18 L water en stoten 7 kg CO₂ uit. Niets ervan wordt vanaf de Aarde gelanceerd als het station het kan voorkomen — elk gram moet worden teruggewonnen."
+ },
+ {
+  "rel": "science/life-in-space/eclss-life-support.json",
+  "at": "body_paragraphs.0",
+  "old": "Environmental Control and Life Support System — ECLSS — is het deel van een station dat niemand ziet en waarvan iedereen afhangt. Het werk is om vier getallen in het groene gebied te houden: zuurstofpartiaaldruk (~21 kPa, zoals zeespiegelniveau), kooldioxide-partiaaldruk (<0,7 kPa nominaal; mensen krijgen hoofdpijn boven 1 kPa), cabinetemperatuur (~22 °C) en relatieve vochtigheid (40-60%). Zet een van die getallen fout en de bemanning wordt binnen enkele uren ziek. Zet zuurstof of CO₂ erg fout en de bemanning sterft. Het systeem is ontworpen met ten minste één redundant subsysteem voor elke functie, en het Amerikaanse segment + Russische segment van het ISS draaien elk hun eigen complete ECLSS, zodat een storing aan de ene kant niet beide teeltelt.",
+  "new": "Het Environmental Control and Life Support System (ECLSS) is het deel van een station dat niemand ziet en waarvan iedereen afhankelijk is. De taak is vier waarden binnen de groene band te houden: de partiële zuurstofdruk (~21 kPa, zoals op zeeniveau), de partiële kooldioxidedruk (<0,7 kPa nominaal; boven 1 kPa krijgen mensen hoofdpijn), de cabinetemperatuur (~22 °C) en de relatieve luchtvochtigheid (40-60%). Gaat een van die waarden mis, dan wordt de bemanning binnen enkele uren ziek. Gaat zuurstof of CO₂ ernstig mis, dan sterft de bemanning. Het systeem is ontworpen met minstens één redundant subsysteem voor elke functie, en het Amerikaanse en het Russische segment van het ISS draaien elk een eigen volledig ECLSS, zodat een storing aan de ene kant niet beide kanten uitschakelt."
+ },
+ {
+  "rel": "science/life-in-space/eclss-life-support.json",
+  "at": "body_paragraphs.1",
+  "old": "Zuurstof komt van elektrolyse. Het ISS Oxygen Generation System (OGS, in het Tranquility-knooppunt) elektrolyseert water — gepompt uit het Water Recovery System — in O₂ (uitgeblazen in de cabine) en H₂ (tot 2010 in de ruimte geblazen, daarna naar de Sabatier-reactor geleid; zie hieronder). Bij nominale belasting produceert OGS ongeveer 9 kg O₂ per dag, wat volstaat voor 6 bemanning à 1,5 kg per persoon plus verliezen. De Russische Elektron-VM doet hetzelfde aan de andere kant, plus vaste-stof zuurstofkaarsen als backup (in feite rookgranaten die O₂ vrijgeven wanneer ze ontstoken worden — gebruikt tijdens de brandrijke weken van Mir in 1997, waar zij ook de oorzaak van de brand waren). De Tianhe-module van Tiangong draait een vergelijkbare elektrolyseur; de Chinese architectuur spiegelt expliciet de ISS Sabatier-electrolyse gesloten kring.",
+  "new": "Zuurstof komt van elektrolyse. Het Oxygen Generation System (OGS) van het ISS, in het Tranquility-knooppunt, elektrolyseert water — aangevoerd door het Water Recovery System — tot O₂ (naar de cabine afgevoerd) en H₂ (tot 2010 overboord gelaten in de ruimte, daarna naar de Sabatier-reactor geleid; zie hieronder). Bij nominale belasting produceert OGS ongeveer 9 kg O₂ per dag, wat volstaat voor 6 bemanningsleden à 1,5 kg plus verliezen. De Russische Elektron-VM doet hetzelfde aan de andere kant, plus zuurstofkaarsen op vaste brandstof als reserve (in feite rookgranaten die O₂ vrijgeven als ze worden ontstoken — gebruikt in de door brand geteisterde weken van Mir in 1997, waar ze ook de oorzaak van de brand waren). De Tianhe-module van Tiangong draait een vergelijkbare elektrolyseur; de Chinese architectuur volgt uitdrukkelijk de gesloten Sabatier-elektrolysekring van het ISS."
+ },
+ {
+  "rel": "science/life-in-space/eclss-life-support.json",
+  "at": "body_paragraphs.2",
+  "old": "CO₂-verwijdering is meer geëvolueerd dan enig ander ECLSS-systeem. Apollo en vroege Shuttle gebruikten lithiumhydroxide-cassettes (LiOH absorbeert CO₂ onomkeerbaar; de improvvisatie 'vierkante pin in een rond gat' van Apollo 13 was een LiOH-cassette-adapter). Moderner ISS gebruikt twee regenereerbare systemen: de Amerikaanse CDRA (Carbon Dioxide Removal Assembly), die moleculaire zeefstoffen gebruikt die CO₂ adsorberen en dan thermisch desorberen voor venting, en de Russische Vozdukh, die aminezwengarmbanden gebruikt. De Sabatier-reactor (Hamilton Sundstrand, geïnstalleerd op ISS in 2010) neemt die ventilatie CO₂ en combineert deze met door elektrolyse gegenereerde H₂ om methaan en water te maken — de kring sluiten. Het methaan wordt momenteel geloosd; toekomstige Mars-gerichte architecturen (Moxie op Perseverance is een gerelateerde demo) zijn van plan om het als drijfgas te gebruiken.",
+  "new": "De verwijdering van CO₂ heeft zich meer ontwikkeld dan welke andere ECLSS-functie ook. Apollo en de vroege Shuttle gebruikten lithiumhydroxidecassettes (LiOH neemt CO₂ onomkeerbaar op; de improvisatie 'vierkante pin in een rond gat' van Apollo 13 was een adapter voor een LiOH-cassette). Het huidige ISS gebruikt twee regenereerbare systemen: de Amerikaanse CDRA (Carbon Dioxide Removal Assembly), die moleculaire zeven van zeoliet gebruikt die CO₂ adsorberen en het daarna thermisch weer vrijmaken om het af te voeren, en de Russische Vozdukh, die wisselbedden met amine gebruikt. De Sabatier-reactor (Hamilton Sundstrand, in 2010 op het ISS geïnstalleerd) neemt dat afgevoerde CO₂ en combineert het met de door elektrolyse geproduceerde H₂ tot methaan en water — en sluit zo de kring. Het methaan wordt momenteel overboord gelaten; toekomstige architecturen voor Mars (Moxie op Perseverance is een verwante demonstratie) willen het als drijfgas gebruiken."
+ },
+ {
+  "rel": "science/life-in-space/eclss-life-support.json",
+  "at": "body_paragraphs.3",
+  "old": "Waterterugwinning is het meest geëngineeerde subsysteem. Het ISS Water Recovery System (WRS, ook in Tranquility) neemt urine, vochtigheidscondensat uit de airconditioning, EVA-pakwater (wat klein is) en afval van hygiëne, en voert deze door een urineprocessor (vacuümdestillatie om water uit zout water te verwijderen) en een waterprocessor (multi-filtratie, katalytische oxidatie, ionenwisseling). De output is drinkwater schoner dan de meeste gemeentelijke waterleidingen. Herwinning aan de Amerikaanse kant was ~93–94% voordat de Brine Processor Assembly (toegevoegd 2021) werd toegevoegd; met de BPA demonstreerde NASA ~98% in 2023. De resterende verliezen worden als hervoorzieningswater in wegwerpbare zakken vanuit de aarde gelanceerd, vooral omdat het zout dat uit urinebewerking komt nog steeds 15–20% water bevat dat niet economisch kan worden teruggewonnen — de BPA sluit het meeste dicht maar niet alles van die kloof. Het doel voor Mars-klasse missies is >98% voortdurend.",
+  "new": "Waterterugwinning is het meest doorontwikkelde subsysteem. Het Water Recovery System (WRS) van het ISS, ook in Tranquility, neemt urine, vochtcondensaat uit de luchtbehandeling, water uit EVA-pakken (weinig) en afvalwater van hygiëne, en voert dat door een urineprocessor (vacuümdestillatie om water uit pekel te halen) en een waterprocessor (meervoudige filtratie, katalytische oxidatie, ionenuitwisseling). Het resultaat is drinkwater dat schoner is dan het meeste leidingwater. De terugwinning aan Amerikaanse zijde was ~93–94% vóór de Brine Processor Assembly (toegevoegd in 2021); met de BPA toonde NASA in 2023 ~98% aan. De resterende verliezen worden als bevoorradingswater in wegwerpzakken vanaf de Aarde gelanceerd, vooral omdat de pekel die uit de urineverwerking komt nog 15–20% water bevat dat economisch niet terug te winnen is — de BPA dicht het grootste deel van die kloof, maar niet alles. Het doel voor missies van Mars-formaat is >98% doorlopend."
+ },
+ {
+  "rel": "science/life-in-space/eclss-life-support.json",
+  "at": "body_paragraphs.4",
+  "old": "Warmtebeheersing is het laatste en grootste subsysteem — het ISS werpt ongeveer 75 kW warmteverlies af door externe ammoniaklusvoeders met 14 opklapbare radiatoren. De interne warmtetransportlus gebruikt water (niet-giftig); de externe lus gebruikt ammoniak (uitstekende thermische eigenschappen, maar een lek in het station zou de bemanning doden, vandaar het ontwerp met twee lussen met warmtewisselaars op de segmentgrens). Het Russische segment gebruikt een ethyleenglycol-gebaseerde interne lus en een ander extern arrangement. Elk ammoniaklek op het ISS (er zijn er enkele geweest over 25 jaar) wordt een groot operationeel evenement vanwege het risico op kruisbesmetting; de EVA-procedure aan de pak-kant voor het omgaan met een ammoniaklek is een van de langere trainingsonderdelen in het astronautencurriculum.",
+  "new": "Warmtebeheersing is het laatste en grootste subsysteem — het ISS voert ongeveer 75 kW afvalwarmte af via externe ammoniaklussen die 14 uitklapbare radiatoren voeden. De interne warmtetransportlus gebruikt water (niet-giftig); de externe lus gebruikt ammoniak (uitstekende thermische eigenschappen, maar een lek in het station zou de bemanning doden, vandaar het ontwerp met twee lussen en warmtewisselaars op de grens tussen de segmenten). Het Russische segment gebruikt een interne lus op basis van ethyleenglycol en een andere externe opzet. Elk ammoniaklek op het ISS (er zijn er in 25 jaar enkele geweest) wordt een grote operationele gebeurtenis vanwege het risico op kruisbesmetting; de EVA-procedure voor het omgaan met een ammoniaklek, aan de kant van het pak, is een van de langere trainingsonderdelen in het astronautencurriculum."
+ },
+ {
+  "rel": "science/life-in-space/eclss-life-support.json",
+  "at": "diagram_caption",
+  "old": "Lucht: O₂ uit elektrolyse van gerecycled water → cabine → CO₂ verwijderd door zeolieten (VS) / aminen (Rusland) → Sabatier zet CO₂ + H₂ om in methaan + water → terug in de waterkring. Water: urine + condensat → destillatie + multi-filtratie → drinkwater → drink + elektrolyseer. Warmte: interne waterlus → ammonia externe lus → 14 radiatoren.",
+  "new": "Lucht: O₂ uit elektrolyse van gerecycled water → cabine → CO₂ verwijderd door zeoliet (VS) / amine (Rusland) → Sabatier zet CO₂ + H₂ om in methaan + water → terug in de waterkring. Water: urine + condensaat → destillatie + meervoudige filtratie → drinkwater → drinken + elektrolyse. Warmte: interne waterlus → externe ammoniaklus → 14 radiatoren."
+ },
+ {
+  "rel": "science/life-in-space/eva-operations.json",
+  "at": "intro_sentence",
+  "old": "Sluis open, en 6–8 uur later staat een lading op de ruggengraat. Daartussen ligt de meest procedurele activiteit van de ruimtevaart — 50+ gechoreografeerde stappen, elk een kans om veilig te falen.",
+  "new": "Sluis open, en 6–8 uur later staat een lading op de truss. Daartussen ligt de meest procedurele activiteit van de ruimtevaart — 50+ gechoreografeerde stappen, elk een kans om veilig te falen."
+ },
+ {
+  "rel": "science/life-in-space/eva-operations.json",
+  "at": "body_paragraphs.0",
+  "old": "Een moderne ruimtewandeling begint ongeveer 24 uur voor het naar buiten gaan. De bemanning neemt het procedureboek door (nu een tablet) — elke wissel van veiligheidslijn, elk aanhaalmoment, elk noodscenario. Gereedschap wordt vooraf aan de wand van de luchtsluis klaargelegd in de volgorde waarin het nodig is. De nacht ervoor slaapt de bemanning bij verlaagde cabinedruk (10,2 psi aan Amerikaanse kant; de Russische Orlan-kant slaat deze stap over vanwege andere pakdrukken — zie het artikel `eva-physiology`). Op T-min 4 uur zit de bemanning in het pak en ademt via een masker zuivere zuurstof om stikstof uit het lichaamsweefsel te spoelen — het prebreathe-protocol. Daar valt niet over te onderhandelen; wie het overslaat krijgt decompressieziekte ('the bends') doordat N₂ bellen vormt als de druk in het pak daalt.",
+  "new": "Een moderne ruimtewandeling begint ongeveer 24 uur voor het naar buiten gaan. De bemanning neemt het procedureboek door (nu een tablet) — elke wissel van veiligheidslijn, elk aanhaalmoment, elk noodscenario. Gereedschap wordt vooraf aan de wand van de luchtsluis klaargelegd in de volgorde waarin het nodig is. De nacht ervoor slaapt de bemanning bij verlaagde cabinedruk (10,2 psi aan de Amerikaanse kant; de Russische Orlan-kant slaat deze stap over vanwege andere pakdrukken — zie het artikel `eva-physiology`). Op T-min 4 uur zit de bemanning in het pak en ademt via een masker zuivere zuurstof om stikstof uit het lichaamsweefsel te spoelen — het voorademprotocol. Daar valt niet over te onderhandelen; wie het overslaat krijgt decompressieziekte ('the bends') doordat N₂ bellen vormt als de druk in het pak daalt."
+ },
+ {
+  "rel": "science/life-in-space/eva-operations.json",
+  "at": "body_paragraphs.1",
+  "old": "Naar buiten gaan zijn de riskantste 15 minuten. De luchtsluis gaat naar 5,0 psi voor een lektest (geen hoorbaar gesis = geen gat in het pak) en daarna naar vacuüm. Het bemanningslid opent het buitenluik, haakt een primaire veiligheidslijn aan een handreling van het station, haakt een tweede lokale lijn aan en stapt naar buiten. Elke moderne ruimtewandeling werkt standaard met twee lijnen: de lichaamslijn naar het station en een lokale lijn aan een vast punt op de werkplek. De derde reserve is SAFER — een kleine jetpack die over het pak wordt gedragen. De enige taak ervan is een losgeraakte astronaut terug naar de constructie te vliegen als beide hoofdlijnen falen. Hij gaat sinds 1994 mee op elke Amerikaanse ruimtewandeling en is nul keer echt gebruikt.",
+  "new": "Het naar buiten gaan is de riskantste periode van 15 minuten. De luchtsluis gaat naar 5,0 psi voor een lektest (geen hoorbaar gesis = geen gat in het pak) en daarna naar vacuüm. Het bemanningslid opent het buitenluik, haakt een primaire veiligheidslijn aan een handreling van het station, haakt een tweede lokale lijn aan en stapt naar buiten. Elke moderne ruimtewandeling werkt standaard met twee lijnen: de lichaamslijn naar het station en een lokale lijn aan een vast punt op de werkplek. De derde reserve is SAFER — een kleine jetpack die over het pak wordt gedragen. De enige taak ervan is een losgeraakte astronaut terug naar de constructie te vliegen als beide hoofdlijnen falen. Hij gaat sinds 1994 mee op elke Amerikaanse ruimtewandeling en is nog nooit echt gebruikt."
+ },
+ {
+  "rel": "science/life-in-space/eva-operations.json",
+  "at": "diagram_caption",
+  "old": "T-24h: procedure controleren → T-12h: gereedschappen voorbereiden → T-4h: prebreathe + pak aantrekken → T-0: depress to vacuum, twee-tether egress → 6-8u werk bij voetsteun, SAFER als laatste vangnet → ingress, repress, pak afleggen. 50+ procedurele stappen, elk één kans om veilig te falen.",
+  "new": "T-24h: procedure controleren → T-12h: gereedschap klaarleggen → T-4h: voorademen + pak aantrekken → T-0: druk laten zakken tot vacuüm, uitstap met twee veiligheidslijnen → 6-8u werk bij voetsteun, SAFER als laatste vangnet → terug naar binnen, druk herstellen, pak uit. 50+ procedurele stappen, elk een kans om veilig te falen."
+ },
+ {
+  "rel": "science/life-in-space/eva-physiology.json",
+  "at": "intro_sentence",
+  "old": "Een ruimtewandeling is een 6–8 uur durend uithoudingsevenement in een drukpak met zuiversuurstof op 1/3-atmosfeer — voorafgegaan door uren pre-breathe om de decompressiesiekte te voorkomen.",
+  "new": "Een ruimtewandeling is een duurinspanning van 6–8 uur in een drukpak met zuivere zuurstof op 1/3 atmosfeer — voorafgegaan door uren voorademen om decompressieziekte te voorkomen."
+ },
+ {
+  "rel": "science/life-in-space/eva-physiology.json",
+  "at": "body_paragraphs.0",
+  "old": "Het fundamentele EVA-probleem is dat het menselijk lichaam de atmosfeer op zeeniveau wil — 1 atm gemengde N₂/O₂ — en het ruimtepak kan dit niet leveren zonder zo stijf te worden dat de astronaut niet kan bewegen. Het pak werkt dus op ongeveer 4,3 psi (0,29 atm) zuiversuurstof. Dat is voldoende partiële zuurstofdruk om comfortabel te ademen, maar de plotselinge daling van de stationdruk (14,7 psi, ~80% N₂) naar pakdruk (4,3 psi, 100% O₂) zou decompressiesiekte veroorzaken — de bochten — precies zoals duikers die krijgen bij een snelle stijging.",
+  "new": "Het fundamentele EVA-probleem is dat het menselijk lichaam de atmosfeer op zeeniveau wil — 1 atm gemengde N₂/O₂ — en het ruimtepak die niet kan leveren zonder zo stijf te worden dat de astronaut niet kan bewegen. Het pak werkt dus op ongeveer 4,3 psi (0,29 atm) zuivere zuurstof. Dat is voldoende partiële zuurstofdruk om comfortabel te ademen, maar de plotselinge daling van de stationsdruk (14,7 psi, ~80% N₂) naar de pakdruk (4,3 psi, 100% O₂) zou decompressieziekte veroorzaken — caissonziekte — precies zoals duikers die krijgen bij een snelle opstijging."
+ },
+ {
+  "rel": "science/life-in-space/eva-physiology.json",
+  "at": "body_paragraphs.1",
+  "old": "De tegenmaatregel is pre-breathe: uren zuivere zuurstof ademen bij geleidelijk lagere druk vóór het naar buiten gaan, zodat stikstof uit het lichaamsweefsel wordt gespoeld. Het huidige protocol aan Amerikaanse zijde van het ISS gebruikt in-suit pre-breathe + het Campout-protocol (overnacht bij 10,2 psi), samen ongeveer 4 uur voordat de sluis wordt gedecomprimeerd. Russische Orlan-pakken werken op 5,7 psi, wat de pre-breathe aanzienlijk verkort — een andere afweging.",
+  "new": "De tegenmaatregel is voorademen: uren zuivere zuurstof ademen bij geleidelijk lagere druk vóór het naar buiten gaan, zodat stikstof uit het lichaamsweefsel wordt gespoeld. Het huidige protocol aan Amerikaanse zijde van het ISS gebruikt voorademen in het pak + het Campout-protocol (een nacht op 10,2 psi), samen ongeveer 4 uur voordat de luchtsluis wordt gedecomprimeerd. Russische Orlan-pakken werken op 5,7 psi, wat het voorademen aanzienlijk verkort — een andere afweging."
+ },
+ {
+  "rel": "science/life-in-space/eva-physiology.json",
+  "at": "body_paragraphs.2",
+  "old": "Eenmaal buiten is het werk fysiek zwaarder dan het lijkt. Zelfs kleine bewegingen vereisen constante arm- en grijpkracht tegen de stijfheid van het pak; ervaren ruimtewandelaars beschrijven de EMU-handschoenen als het enige meest vermoeiende stuk apparatuur dat ooit is gevlogen. Vingernagelbeschadiging is gebruikelijk. Handkrampen en schouderbelasting beperken de EVA-duur vóórdat het metabolische budget dat doet. Moderne EVA's plafonneren op ongeveer 7 uur nominaal, 8,5 uur met uitbreiding; langer dan dat en de foutpercentages van de bemanning stijgen scherp.",
+  "new": "Eenmaal buiten is het werk fysiek zwaarder dan het lijkt. Zelfs kleine bewegingen vereisen voortdurend arm- en grijpkracht tegen de stijfheid van het pak; ervaren ruimtewandelaars noemen de EMU-handschoenen het meest vermoeiende stuk uitrusting dat ooit is gevlogen. Schade aan vingernagels komt vaak voor. Handkrampen en overbelaste schouders beperken de duur van een EVA vóórdat het metabolische budget dat doet. Moderne EVA's duren nominaal hooguit ongeveer 7 uur, 8,5 uur met verlenging; langer dan dat en de foutkans van de bemanning stijgt scherp."
+ },
+ {
+  "rel": "science/life-in-space/eva-physiology.json",
+  "at": "body_paragraphs.3",
+  "old": "Pakrisico's omvatten ook thermisch beheer (het pak stoot ongeveer 250 W metabolische warmte af via een sublimator die waterdamp naar de ruimte afvoert), CO₂-absorptie (lithiumhydroxide-cartridge of amine swing bed) en het constante risico van een gaatje in handschoen of vizier. Astronauten trainen dezelfde EVA in het Neutral Buoyancy Laboratory-zwembad ongeveer 7–10 uur training per 1 uur vluchts-EVA — de kostprijs per uur van ruimtewandelen is de hoogste van alle astronautactiviteiten.",
+  "new": "Risico's van het pak zijn ook thermisch beheer (het pak stoot ongeveer 250 W metabolische warmte af via een sublimator die waterdamp naar de ruimte afvoert), CO₂-absorptie (lithiumhydroxidepatroon of amine-wisselbed) en het constante risico van een gaatje in handschoen of vizier. Astronauten trainen dezelfde EVA in het zwembad van het Neutral Buoyancy Laboratory, ongeveer 7–10 uur training per uur ruimtewandeling in de vlucht — de kosten per uur van ruimtewandelen zijn de hoogste van alle astronautenactiviteiten."
+ },
+ {
+  "rel": "science/life-in-space/eva-physiology.json",
+  "at": "diagram_caption",
+  "old": "Pre-breathe O₂ om stikstof uit te wassen → stap in pak van 4,3 psi zuiversuurstof → 6–8 uur metabolisch-begroot wandelen → vingernagelbeschadiging en schoudervermoeidheid. Russische Orlan op 5,7 psi verkort de pre-breathe.",
+  "new": "Voorademen met O₂ om stikstof uit te spoelen → stap in een pak van 4,3 psi met zuivere O₂ → 6–8 uur wandelen binnen een metabolisch budget → schade aan vingernagels en vermoeide schouders. De Russische Orlan op 5,7 psi verkort het voorademen."
+ },
+ {
+  "rel": "science/life-in-space/eva-suits.json",
+  "at": "intro_sentence",
+  "old": "Een EVA-pak is een eenpersoonsruimtevaartuig — drukhuis, gesloten-kringteelefsussteem, thermische controle, zonneklep en stuwstoffenpakket — ontworpen zodat een astronaut 6–8 uur buiten in vacuüm kan verblijven.",
+  "new": "Een EVA-pak is een ruimtevaartuig voor één persoon — drukhuls, levensondersteuning met gesloten kring, thermische regeling, zonnevizier en een pakket met stuurraketjes — gebouwd zodat een mens 6–8 uur buiten in vacuüm kan verblijven."
+ },
+ {
+  "rel": "science/life-in-space/eva-suits.json",
+  "at": "body_paragraphs.0",
+  "old": "Het centrale probleem van het EVA-pak is **gesloten-kring heademing**. Buiten de luchtsluis is er geen atmosfeer om CO₂ in af te voeren, dus het pak moet het uit de uitadeling van de astronaut verwijderen en de resterende zuurstof recyclen. De huidige Amerikaanse EMU werkt met een **lithiumhydroxide (LiOH) patroon** in het rugpakket dat CO₂ onomkeerbaar opneemt — na elke EVA ter plaatse vervangen. De Russische Orlan en het nieuwste Amerikaanse METOX-patroon gebruiken een **regenereerbare amineoscillatie**: het adsorbeert CO₂ tijdens de EVA, wordt dan in de luchtsluis tussen wandelingen uitgebakken en opnieuw gebruikt. Het station-equivalent binnen het ISS (de CDRA, Carbon Dioxide Removal Assembly) doet hetzelfde op een regeneratieve cyclus, terwijl het OGS (Oxygen Generation System) water elektrolyseert om O₂ aan te vullen. Het pak is een miniatuurbovable versie van het station-ECLSS-systeem, dat 8 uur op zijn eigen energie en voorraden draait.",
+  "new": "Het centrale probleem van het EVA-pak is **herademing in een gesloten kring**. Buiten de luchtsluis is er geen atmosfeer om CO₂ in af te voeren, dus het pak moet het uit de uitgeademde lucht van de astronaut verwijderen en de resterende zuurstof recyclen. De huidige Amerikaanse EMU gebruikt in het rugpakket een **lithiumhydroxidepatroon (LiOH)** dat CO₂ onomkeerbaar opneemt — na elke EVA op de grond vervangen. De Russische Orlan en het nieuwste Amerikaanse METOX-patroon gebruiken een **regenereerbaar amine-wisselbed**: het adsorbeert CO₂ tijdens de EVA, wordt in de luchtsluis tussen twee wandelingen uitgebakken en opnieuw gebruikt. Het equivalent binnen het ISS (de CDRA, Carbon Dioxide Removal Assembly) doet hetzelfde in een regeneratieve cyclus, terwijl het OGS (Oxygen Generation System) water elektrolyseert om O₂ aan te vullen. Het pak is een miniatuur, draagbare versie van het ECLSS van het station, dat 8 uur op eigen energie en voorraden draait."
+ },
+ {
+  "rel": "science/life-in-space/eva-suits.json",
+  "at": "body_paragraphs.1",
+  "old": "Het Primary Life Support System (**PLSS**) rugpakket voert zuurstof mee op ~6800 kPa (1000 psi) in twee tanks, een batterij, het LiOH-patroon, een ventilator om lucht door de helm te circuleren, een watertank voor koeling, en een sublimatior — een poreuze plaat die vloeistoffen water in vacuüm laat koken, waardoor ~250 W metabolische warmte als waterdamp naar de ruimte wordt afgevoerd. Een vloeibare koelkledij wordt tegen de huid gedragen: water dat door buisjes tegen het lichaam vloeit, neemt warmte op en keert terug naar de sublimatior. De armen en handschoenen krijgen drukhandschoenen; het lichaam krijgt een Hard Upper Torso (HUT) van glasvezel of composiet; de benen scharnieren door zachte stoffengewrichten. De bedrijfsdruk is 4,3 psi (Amerikaanse EMU, zuivere O₂) of 5,7 psi (Russische Orlan, zuivere O₂). Lagere druk = gemakkelijker bewegen; hogere druk = minder voorademdijd.",
+  "new": "Het rugpakket van het Primary Life Support System (**PLSS**) bevat zuurstof op ~6800 kPa (1000 psi) in twee tanks, een batterij, het LiOH-patroon, een ventilator om lucht door de helm te laten circuleren, een watertank voor koeling en een sublimator — een poreuze plaat waarop vloeibaar water in vacuüm kan koken, waardoor ~250 W metabolische warmte als waterdamp naar de ruimte wordt afgevoerd. Tegen de huid wordt een vloeistofkoelpak gedragen: water dat door slangetjes langs het lichaam stroomt, neemt warmte op en keert terug naar de sublimator. Armen en handen krijgen drukhandschoenen; het lichaam krijgt een Hard Upper Torso (HUT) van glasvezel of composiet; de benen scharnieren via zachte stoffen gewrichten. De werkdruk is 4,3 psi (Amerikaanse EMU, zuivere O₂) of 5,7 psi (Russische Orlan, zuivere O₂). Lagere druk = makkelijker bewegen; hogere druk = minder voorademtijd."
+ },
+ {
+  "rel": "science/life-in-space/eva-suits.json",
+  "at": "body_paragraphs.2",
+  "old": "Twee gespecialiseerde details. **Zonneklep**: de goudverguld buitenklep op elke EVA-helm is om een reden goud — een dunne dampdepositie goudfilm reflecteert ~98% van de infraroodstraling terwijl zichtbaar licht doorlaat. Met de zon in het gezichtsveld van het pak (ongeveer de helft van de baan op het ISS), zou direct zonlicht op een heldere polycarbonaat-klep de helm onaanvaardbaar verwarmen. De astronaut klept de gouden klep omlaag wanneer naar de zon kijkend en weer omhoog wanneer werkend in de schaduw. **EVA-stuwstoffenpakketten**: het SAFER (Simplified Aid For EVA Rescue) rugpakket op elk modern Amerikaanse EVA draagt 1,4 kg gecomprimeerde stikstof en 24 kleine stuwstoffen, wat de astronaut ongeveer 3 m/s totale Δv geeft — genoeg om terug naar het station te vliegen als een tether breekt en niet meer. De eerdere **MMU** (Manned Maneuvering Unit, 1984–1985) droeg ~12 kg stikstof en ~25 m/s; Bruce McCandless en Robert Stewart vlogen beroemd ongebonden ermee op STS-41B. Na Challenger grondde NASA de MMU als te risicovol en keerde terug naar gebonden EVA met SAFER alleen als backup.",
+  "new": "Twee specialistische details. **Zonnevizier**: het verguld buitenste vizier op elke EVA-helm is niet zonder reden van goud — een dunne, opgedampte goudfilm weerkaatst ~98% van de infraroodstraling en laat zichtbaar licht door. Met de Zon in het gezichtsveld van het pak (ongeveer de helft van de baan op het ISS) zou direct zonlicht op een helder polycarbonaatvizier de helm onaanvaardbaar verwarmen. De astronaut klapt het gouden vizier omlaag als hij naar de Zon kijkt en weer omhoog als hij in de schaduw werkt. **EVA-stuurraketten**: het SAFER-rugpakket (Simplified Aid For EVA Rescue) bij elke moderne Amerikaanse EVA bevat 1,4 kg gecomprimeerde stikstof en 24 kleine stuurraketten, goed voor ongeveer 3 m/s totale Δv — genoeg om terug naar het station te vliegen als een veiligheidslijn breekt, en niet meer. De eerdere **MMU** (Manned Maneuvering Unit, 1984–1985) had ~12 kg stikstof en ~25 m/s; Bruce McCandless en Robert Stewart vlogen er beroemd ongebonden mee op STS-41B. Na Challenger zette NASA de MMU aan de grond als te riskant en keerde terug naar EVA's aan een veiligheidslijn, met SAFER alleen als reserve."
+ },
+ {
+  "rel": "science/life-in-space/eva-suits.json",
+  "at": "body_paragraphs.3",
+  "old": "Vier EVA-pak families vliegen vandaag — zie /fleet voor elk: EMU (Amerikaanse Shuttle/ISS, 1981 tot heden), Orlan-MKS (Rusland, nieuwste van de achteringang-familie die sinds 1977 vliegt), Feitian (China, Tiangong + Shenzhou), en AxEMU (Axiom, kwalificerend voor Artemis III). De architectonische keuze die hen het schoonst scheidt is ingangsgeometrie — Amerikaanse EMU is vooringang (HUT + LTA samengesteld), Orlan en Feitian zijn achteringang (PLSS-luik op de rug) — en bedrijfsdruk (4,3 vs 5,7 psi), wat bepaalt hoeveel voorademdijd elk programma vereist.",
+  "new": "Vier families van EVA-pakken vliegen vandaag — zie /fleet voor elk: EMU (Amerikaanse Shuttle/ISS, 1981 tot nu), Orlan-MKS (Rusland, de nieuwste van de familie met instap aan de achterkant die sinds 1977 vliegt), Feitian (China, Tiangong + Shenzhou) en AxEMU (Axiom, wordt gekwalificeerd voor Artemis III). De ontwerpkeuze die ze het scherpst scheidt is de instapgeometrie — de Amerikaanse EMU heeft instap aan de voorkant (HUT + LTA samengesteld), Orlan en Feitian aan de achterkant (PLSS-luik op de rug) — en de werkdruk (4,3 vs 5,7 psi), die bepaalt hoeveel voorademtijd elk programma nodig heeft."
+ },
+ {
+  "rel": "science/life-in-space/eva-suits.json",
+  "at": "diagram_caption",
+  "old": "PLSS rugpakket op de rug · gouden zonneklep · hard upper torso · vloeibare koelkledij eronder · LiOH of amineoscillatie CO₂-scrubber · sublimatior voert ~250 W metabolische warmte af als waterdamp · SAFER mini-stuwstof pakket met ~3 m/s stikstof Δv voor redding.",
+  "new": "PLSS-rugpakket op de rug · gouden zonnevizier · Hard Upper Torso · vloeistofkoelpak eronder · LiOH- of amine-CO₂-wasser · sublimator voert ~250 W metabolische warmte af als waterdamp · SAFER-stuurraketpakket met ~3 m/s stikstof-Δv voor redding."
+ },
+ {
+  "rel": "science/life-in-space/food-production-off-world.json",
+  "at": "title",
+  "old": "Voedselproductie off-world — van Veggie tot kassen op Mars",
+  "new": "Voedselproductie buiten de Aarde — van Veggie tot kassen op Mars"
+ },
+ {
+  "rel": "science/life-in-space/food-production-off-world.json",
+  "at": "intro_sentence",
+  "old": "ISS-bemanning eet sinds 2015 voedsel dat ze zelf hebben verbouwd. De sprong van 'salade-supplement' naar 'gesloten-lus dagelijks dieet' is de open grens tussen de ISS van vandaag en elke Mars-nederzetting die de naam waard is.",
+  "new": "De bemanning van het ISS eet sinds 2015 voedsel dat ze zelf heeft gekweekt. De sprong van 'saladesupplement' naar 'gesloten dagelijks dieet' is de open grens tussen het ISS van vandaag en elke Marsnederzetting die die naam waard is."
+ },
+ {
+  "rel": "science/life-in-space/food-production-off-world.json",
+  "at": "body_paragraphs.0",
+  "old": "De ISS begon zijn voedsel-vanuit-baan programma in 2014 met Veggie, een kleine kamer vastgeschroefd in het Destiny-lab met rode en blauwe LED-verlichting en kussenachtige wortelmodules. Het eerste gewas dat de bemanning mocht eten was 'Outredgeous' rode romaine sla, in augustus 2015 — de helft op de baan gegeten, de helft teruggebracht voor analyse. Sindsdien heeft Veggie mizuna, pak choi, mosterdgreens, tatsoi, boerenkool, pepers en zinnia-bloemen gecycled (de bloemen waren een opzettelijke test voor gewassen met reproductieve structuren), plus de Advanced Plant Habitat (APH, geïnstalleerd in 2017) die een 0,4 m² gesloten-omgeving groeivolume toevoegt met sensor-gecontroleerde CO₂, vochtigheid en licht. De bijdrage aan bemanningsvoeding is klein — gemeten in handsvol per bemanning per maand — maar de psychologische bijdrage is groot, gevalideerd tegen aanbevelingen uit de Mir-isolatiestudies van de jaren '80 die 'verbinding met groeiende dingen' als kernmaatregel tegen asthenie aanwezen.",
+  "new": "Het ISS begon in 2014 met Veggie zijn programma voor voedsel uit de ruimte: een kleine kweekkamer, vastgeschroefd in het Destiny-lab, met rood en blauw LED-licht en kussenvormige wortelmodules. Het eerste gewas dat de bemanning mocht eten was de rode romaine-sla 'Outredgeous', in augustus 2015 — de helft van de oogst werd in de baan opgegeten, de helft ging terug voor analyse. Sindsdien heeft Veggie mizuna, paksoi, mosterdgroen, tatsoi, boerenkool, pepers en zinnia's (de bloemen waren een bewuste test voor gewassen met voortplantingsorganen) gekweekt, plus de Advanced Plant Habitat (APH, geïnstalleerd in 2017), die een gesloten kweekruimte van 0,4 m² toevoegt met sensoren voor CO₂, vochtigheid en licht. De bijdrage aan de voeding van de bemanning is klein — gemeten in handenvol per bemanning per maand — maar de psychologische bijdrage is groot, en bevestigd door aanbevelingen uit de isolatiestudies van Mir in de jaren tachtig, die 'contact met groeiende dingen' als kernmaatregel tegen astenie aanwezen."
+ }
+]

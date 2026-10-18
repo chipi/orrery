@@ -1,15 +1,15 @@
 {
   "title": "Variaties in transittijden",
-  "intro_sentence": "In een druk systeem trekken planeten aan elkaar en arriveren vroeg of laat; de verschuiving in transittijden onthult onzichtbare werelden en weegt degenen die we wel zien.",
+  "intro_sentence": "In een druk bevolkt systeem trekken planeten aan elkaar en arriveren vroeg of laat; de verschuiving in transittijden onthult onzichtbare werelden en weegt de werelden die we wel zien.",
   "narrative_101": [
-    "Een solitaire transiterende planeet arriveert als een klokwerk — hetzelfde interval, elke omwenteling. Maar plaats meerdere planeten in één systeem en hun wederzijdse zwaartekracht stoot elkaar aan, waardoor transits een beetje vroeger of een beetje later kruipen in een herhalend patroon.",
-    "Die verschuivingen van enkele minuten zijn een gravitationele handtekening. Modelleer ze en je kunt de planeten wegen vanuit hun trekkracht alleen — geen spectrograaf nodig — en soms een planeet afleiden die helemaal nooit transite vertoont, alleen gevoeld door zijn aantrekkingskracht op de anderen.",
-    "Zo werden de zeven kleine werelden van TRAPPIST-1 gewogen: te zwak voor radiale snelheid, hun massa's kwamen voort uit de manier waarop ze elkaar haasten en vertragen over de ster."
+    "Een eenzame planeet in transit komt aan als een uurwerk — hetzelfde interval, bij elke omloop. Maar plaats meerdere planeten in één systeem en ze trekken met hun wederzijdse zwaartekracht aan elkaar, waardoor transits in een zich herhalend patroon iets te vroeg of iets te laat komen.",
+    "Die verschuivingen van enkele minuten zijn een handtekening van de zwaartekracht. Modelleer ze en je kunt de planeten wegen uit alleen hun onderlinge trekkracht — geen spectrograaf nodig — en soms een planeet afleiden die nooit een transit vertoont, alleen voelbaar door zijn aantrekkingskracht op de anderen.",
+    "Zo werden de zeven kleine werelden van TRAPPIST-1 gewogen: te zwak voor radiale snelheid, hun massa's kwamen voort uit de manier waarop ze elkaar versnellen en vertragen terwijl ze voor de ster langs trekken."
   ],
   "body_paragraphs": [
-    "Transit-timing-variaties (TTV's) maken gebruik van de gravitationele interacties tussen planeten in hetzelfde systeem. Een perfect geïsoleerde planeet vertoont transits met een constante periode; interacterende planeten vertonen periodieke afwijkingen waarvan de amplitude en het patroon de massa's en banen van de planeten coderen.",
-    "TTVs blinken precies uit waar radiale snelheid het moeilijk heeft — rondom zwakke, kleine sterren waarvan de Doppler-schommeling begraven ligt in ruis — en ze kunnen niet-transiterende planeten onthullen door hun invloed alleen. Ze zijn het meest gevoelig nabij orbitale resonanties, waar herhaalde nauwe ontmoetingen de trekkracht versterken.",
-    "De massa's van de methode vullen transitstralen aan om dichtheden te geven, en daarom zijn compacte resonante systemen zoals TRAPPIST-1 en Kepler's multi-planeetkettingen zo goed gekarakteriseerd ondanks dat ze om zwakke sterren draaien."
+    "Variaties in transittijden (TTV's) maken gebruik van de zwaartekrachtinteracties tussen planeten in hetzelfde systeem. Een perfect geïsoleerde planeet vertoont transits met een constante periode; planeten die op elkaar inwerken vertonen periodieke afwijkingen waarvan de amplitude en het patroon de massa's en banen van de planeten vastleggen.",
+    "TTV's blinken precies uit waar radiale snelheid het moeilijk heeft — rondom zwakke, kleine sterren waarvan de dopplerwiebeling begraven ligt in ruis — en ze kunnen niet-transiterende planeten onthullen door hun invloed alleen. Ze zijn het meest gevoelig nabij baanresonanties, waar herhaalde nauwe ontmoetingen de trekkracht versterken.",
+    "De massa's uit deze methode vullen de transitstralen aan tot dichtheden, en daarom zijn compacte resonante systemen zoals TRAPPIST-1 en de meervoudige planetenstelsels van Kepler zo goed in kaart gebracht, ook al draaien ze om zwakke sterren."
   ],
-  "diagram_caption": "Wederzijdse gravitationele trekkracht zorgt ervoor dat transits vroeg of laat arriveren; het patroon van verschuiving codeert de massa's van de planeten."
+  "diagram_caption": "De wederzijdse zwaartekracht zorgt ervoor dat transits te vroeg of te laat komen; het patroon van de verschuiving legt de massa's van de planeten vast."
 }

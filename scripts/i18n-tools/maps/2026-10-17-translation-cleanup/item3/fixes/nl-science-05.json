@@ -1,0 +1,854 @@
+[
+ {
+  "rel": "science/mission-phases/entry-heating.json",
+  "at": "diagram_caption",
+  "old": "Entry heating: een stomp hitteschild houdt een voorkschokgolf voor het voertuig; het gecomprimeerde gas verwarmt tot extreem hoge temperaturen en gloeit terwijl het schild de hitte afblaast.",
+  "new": "Opwarming bij atmosferische intrede: een stomp hitteschild houdt een boegschokgolf vóór het voertuig; het samengeperste gas wordt extreem heet en gloeit, terwijl het schild de hitte door ablatie afvoert."
+ },
+ {
+  "rel": "science/mission-phases/eva.json",
+  "at": "intro_sentence",
+  "old": "Een ruimtewandeling: het risicovollste en meest beloningsvolle onderdeel van een bemande missie, beperkt tot ongeveer 8 uur door pak-verbruiksmiddelen.",
+  "new": "Een ruimtewandeling: het gevaarlijkste maar ook meest lonende onderdeel van een bemande missie, begrensd op ongeveer 8 uur door de voorraden in het ruimtepak."
+ },
+ {
+  "rel": "science/mission-phases/eva.json",
+  "at": "narrative_101.0",
+  "old": "Een EVA — extravehiculaire activiteit — is wanneer een bemanningslid de drukvastgestelde binnenruimte van het station verlaat om buiten in vacuüm te werken. Elke externe taak die niet door een robotarm kan worden uitgevoerd — een module installeren, een batterij vervangen, een koelvloeistoflekke repareren — gebeurt tijdens een EVA. Ze worden tot op de minuut nauwkeurig gecoördineerd, honderden uren geoefend onder water, en beperkt tot ongeveer 8 uur elk door de zuurstof- en CO₂-absorbeercapaciteit van het pak.",
+  "new": "Een EVA — extravehiculaire activiteit — is wanneer een bemanningslid het onder druk staande binnenste van het station verlaat om buiten in vacuüm te werken. Elke externe taak die niet door een robotarm kan worden gedaan — een module installeren, een batterij vervangen, een koelvloeistoflek repareren — gebeurt tijdens een EVA. Ze worden tot op de minuut uitgekiend, honderden uren onder water geoefend, en zijn elk beperkt tot ongeveer 8 uur door de capaciteit van de zuurstofvoorraad en de CO₂-filters van het pak."
+ },
+ {
+  "rel": "science/mission-phases/eva.json",
+  "at": "narrative_101.1",
+  "old": "EVA's beginnen in de airlock — een kleine tweederdeurssluis waar de bemanning 60-90 minuten lang 100% zuurstof inademt (stikstof uit de bloedsomloop wassen zodat ze geen caissonziekte krijgen), waarna de sluis wordt ontlucht en ze naar buiten drijven. Het ISS gebruikt Quest als de Amerikaanse EVA-hub; het Russische segment gebruikt Pirs (nu Poisk nadat Pirs in 2021 uit baan werd gebracht). De primaire airlock van Tiangong bevindt zich op de Wentian-module.",
+  "new": "Een EVA begint in de sluis — een klein compartiment met twee deuren waar de bemanning 60-90 minuten lang 100% zuurstof inademt (om stikstof uit het bloed te spoelen, zodat ze geen caissonziekte krijgen). Daarna wordt de sluis drukloos gemaakt en zweven ze naar buiten. Op het ISS is Quest de Amerikaanse EVA-hub; het Russische segment gebruikt Pirs (sinds Pirs in 2021 uit de baan is gebracht: Poisk). De hoofdsluis van Tiangong zit op de Wentian-module."
+ },
+ {
+  "rel": "science/mission-phases/eva.json",
+  "at": "narrative_101.2",
+  "old": "De bemanning bevestigt zich met teugels aan handgrepen aan de buitenkant van het station — je grip verliezen betekent dat de veiligheidsteugel je opvangt, maar de SAFER-jetpack op de rug van het pak biedt een noodoplossing voor voortgestuwd herstel als je je op de een of andere manier van beide losmaak. Gereedschap is vastgebonden aan D-ringen, handschoenen zijn onder druk gezet en stijf (daarom is vermoeidheid in de handen het #1-probleem op EVA-dag), en het display in het pak toont zuurstof, CO₂, batterij en teugel-status.",
+  "new": "De bemanning maakt zich met kabels vast aan handgrepen aan de buitenkant van het station — verlies je je grip, dan vangt de veiligheidskabel je op, maar de SAFER-jetpack op de rug van het pak biedt een laatste redmiddel met eigen voortstuwing als je je op de een of andere manier van beide losmaakt. Gereedschap hangt aan D-ringen, handschoenen staan onder druk en zijn stijf (daarom is vermoeide handen het probleem nummer 1 op EVA-dagen), en het head-updisplay in het pak toont zuurstof, CO₂, batterij en de status van de kabel."
+ },
+ {
+  "rel": "science/mission-phases/eva.json",
+  "at": "body_paragraphs.0",
+  "old": "Pak-verbruiksmiddelen: ISS EMU (Extravehicular Mobility Unit) bevat ongeveer 8 uur zuurstof + batterij + koelwatersublimatie. CO₂-absorptie is meestal de beperkende factor — wanneer de LiOH- of amine-swing-cassette verzadigd is, eindigt de EVA.",
+  "new": "Verbruiksvoorraden van het pak: de EMU (Extravehicular Mobility Unit) van het ISS heeft zuurstof, batterij en koelwatersublimatie voor ongeveer 8 uur. De CO₂-verwijdering is meestal de beperkende factor — zodra het LiOH- of amine-swingpatroon verzadigd is, eindigt de EVA."
+ },
+ {
+  "rel": "science/mission-phases/eva.json",
+  "at": "body_paragraphs.1",
+  "old": "Voorbereathings-protocol: 60-90 minuten 100% O₂ bij verlaagde druk om stikstof uit het bloed te wassen (caissonziektevoorkoming). Russische Orlan-pakken werken op hogere druk dan Amerikaanse EMU en hebben kortere voorbreathe nodig.",
+  "new": "Voorademprotocol: 60-90 minuten 100% O₂ ademen bij verlaagde druk om stikstof uit het bloed te spoelen (voorkoming van decompressieziekte). Russische Orlan-pakken werken op hogere druk dan de Amerikaanse EMU en vragen om een kortere voorademperiode."
+ },
+ {
+  "rel": "science/mission-phases/eva.json",
+  "at": "body_paragraphs.2",
+  "old": "Vertaling: EVA's gebruiken handgrepen (geel) die de gehele buitenkant van het station bedekken; gereedschap en bemanning zijn vastgebonden. SAFER (Simplified Aid For EVA Rescue) jetpack: 24 kleine thrusters op de PLSS-rugtas van het pak, 1,4 m/s ∆v totaal — alleen noodherstel.",
+  "new": "In gewone woorden: EVA's maken gebruik van handgrepen (geel) over de hele buitenkant van het station; gereedschap en bemanning zitten vast aan kabels. SAFER-jetpack (Simplified Aid For EVA Rescue): 24 kleine stuwraketjes op de PLSS-rugpack van het pak, in totaal 1,4 m/s ∆v — uitsluitend voor noodherstel."
+ },
+ {
+  "rel": "science/mission-phases/eva.json",
+  "at": "body_paragraphs.3",
+  "old": "Records: Anatoly Solovyev houdt het cumulatieve record met 82u 22m verdeeld over 16 EVA's. De langste enkele EVA was 8u 56m (STS-102, 2001) tot Shenzhou-19's eerste EVA stelde een nieuw record in van 9u 06m in december 2024. Meeste EVA's ooit uitgevoerd op één locatie: ISS, met meer dan 270 tegen 2025.",
+  "new": "Records: Anatoly Solovyev heeft het recordtotaal met 82u 22m verdeeld over 16 EVA's. De langste enkele EVA duurde 8u 56m (STS-102, 2001), tot de eerste EVA van Shenzhou-19 in december 2024 een nieuw record vestigde van 9u 06m. De meeste EVA's ooit op één plek: het ISS, met meer dan 270 tot 2025."
+ },
+ {
+  "rel": "science/mission-phases/eva.json",
+  "at": "body_paragraphs.4",
+  "old": "Risicoprofiel: voertuigverlies-incidenten tijdens EVA zijn zeldzaam maar gedocumenteerd — het helm-water-incident van Parmitano in 2013 op EVA-23 dreigde een astronaut te verdrinken en dwong herontwerpen van de EMU's waterscheider. Pakscheur, verloren teugel en CO₂-opbouw zijn de levensbedreigende risico's.",
+  "new": "Risicoprofiel: voertuigverlies tijdens een EVA is zeldzaam maar gedocumenteerd — het incident met water in de helm van Parmitano in 2013, tijdens EVA-23, bracht een astronaut bijna aan het verdrinken en leidde tot een herontwerp van de waterscheider van de EMU. Een scheur in het pak, een losgeraakte kabel en ophoping van CO₂ zijn de acute bedreigingen."
+ },
+ {
+  "rel": "science/mission-phases/eva.json",
+  "at": "diagram_caption",
+  "old": "Gestileerde EVA-route: airlock-uitgang → handgreeptranslatie langs truss → werkplek (batterij/lading) → handgreeptranslatie terug → airlock-ingang. Stippellijn toont de route, omcirkelde punten markeren de ankerpunten van de veiligheidsteugel.",
+  "new": "Gestileerde EVA-route: uit de sluis → langs de handgrepen over het vakwerk → werkplek (batterij/lading) → langs de handgrepen terug → de sluis in. De stippellijn toont de route, omcirkelde punten markeren de bevestigingspunten van de veiligheidskabel."
+ },
+ {
+  "rel": "science/mission-phases/gravity-turn.json",
+  "at": "intro_sentence",
+  "old": "Het pitch-programma dat de zwaartekracht zelf de raket stuurlangzaam laat draaien — een verticale klimming omzetten in baansnelheid met vrijwel geen stuusverlies.",
+  "new": "Het kantelprogramma waarmee de zwaartekracht zelf de raket in de vliegrichting laat afbuigen — een verticale klim wordt omgezet in baansnelheid, vrijwel zonder stuurverlies."
+ },
+ {
+  "rel": "science/mission-phases/gravity-turn.json",
+  "at": "narrative_101.0",
+  "old": "Een raket vliegt niet rechtstreeks omhoog naar een baan. Hij stijgt verticaal op om het lanceerplatform vrij te komen en door de dikste lucht heen te breken, en kantelt dan langzaam naar de horizon. Op het moment dat de motor wordt uitgeschakeld, vliegt hij bijna zijwaarts — omdat een baan erom draait zijwaarts snel genoeg te gaan, niet hoog genoeg omhoog.",
+  "new": "Een raket vliegt niet rechtstreeks omhoog naar een baan. Hij stijgt verticaal op om vrij te komen van het lanceerplatform en door de dikste lucht heen te breken, en kantelt dan langzaam naar de horizon. Op het moment dat de motor uitgaat, vliegt hij bijna zijwaarts — want een baan bereik je door zijwaarts snel genoeg te gaan, niet door hoog genoeg te komen."
+ },
+ {
+  "rel": "science/mission-phases/gravity-turn.json",
+  "at": "narrative_101.1",
+  "old": "Het slimme deel is dat de raket niet tegen die kanteling in vecht. Even na het opstijgen kantelt hij een klein beetje, en daarna doet de zwaartekracht het sturen: dezelfde neerwaartse trekkracht die de raket tegengaat draait ook zachtjes zijn snelheid naar horizontaal, gratis. Houd de motor recht langs het vluchtpad gericht en het voertuig snijdt een gladde boog zonder verspilde zijwaartse stuwkracht. Dat is een gravity turn.",
+  "new": "Het slimme is dat de raket niet tegen die kanteling in hoeft te vechten. Kort na het opstijgen kantelt hij een klein beetje, en vanaf dan doet de zwaartekracht het sturen: dezelfde neerwaartse trekkracht waartegen de raket vecht, draait zijn snelheid ook zachtjes richting horizontaal, helemaal gratis. Houd de motor recht langs de vliegroute gericht en het voertuig beschrijft een gladde boog zonder verspilde zijwaartse stuwkracht. Dat is een gravity turn."
+ },
+ {
+  "rel": "science/mission-phases/gravity-turn.json",
+  "at": "narrative_101.2",
+  "old": "Een fout bij het kantelen betaal je voor. Te vroeg of te steil kantelen en de raket brengt zijn klim zijwaarts door dikke lucht, ophooping van weerstand. Te laat kantelen en het verspilt brandstof door zichzelf tegen de zwaartekracht omhoog te houden. Het pitch-programma — precies wanneer en hoe snel moet worden gekanteld — wordt voor elk voertuig afgestemd om zo weinig mogelijk totale ∆v te gebruiken om een baan te bereiken.",
+  "new": "Gaat de kanteling mis, dan betaal je ervoor. Kantel je te vroeg of te steil, dan legt de raket zijn klim zijwaarts af door dikke lucht en stapelt de luchtweerstand zich op. Kantel je te laat, dan verspilt hij brandstof om zichzelf tegen de zwaartekracht in omhoog te houden. Het kantelprogramma — precies wanneer en hoe snel er gekanteld wordt — is voor elk voertuig afgestemd op zo min mogelijk totale ∆v om een baan te bereiken."
+ },
+ {
+  "rel": "science/mission-phases/gravity-turn.json",
+  "at": "body_paragraphs.0",
+  "old": "Twee van de drie grote opstijgingsverliezen worden bepaald door de draai. Stuusverlies is de ∆v die verloren gaat wanneer stuwkracht niet in de richting van beweging wijst; een echte gravity turn houdt de stuwkracht gelijk aan de snelheid, dus het stuusverlies blijft dicht bij nul. Zwaartekrachtverlies is de ∆v besteed aan het omhoog houden van het voertuig tegen zijn eigen gewicht terwijl het klimt — hoe sneller de raket naar horizontaal kantelt, hoe eerder dat gewicht ophoudt zijn versnelling op te eten. De twee trekken in tegengestelde richtingen, en het pitch-programma is het compromis.",
+  "new": "Twee van de drie grote opstijgverliezen worden door de kanteling bepaald. Stuurverlies is de ∆v die verloren gaat wanneer de stuwkracht niet in de bewegingsrichting wijst; een echte gravity turn houdt de stuwkracht in lijn met de snelheid, dus het stuurverlies blijft bijna nul. Zwaartekrachtverlies is de ∆v die opgaat aan het omhoog houden van het voertuig tegen zijn eigen gewicht terwijl het klimt — hoe sneller de raket naar de horizontaal kantelt, hoe eerder dat gewicht ophoudt zijn versnelling op te eten. De twee werken elkaar tegen, en het kantelprogramma is het compromis."
+ },
+ {
+  "rel": "science/mission-phases/gravity-turn.json",
+  "at": "body_paragraphs.1",
+  "old": "De draai wordt geïnitieerd door een korte, opzettelijke kanteling een paar seconden na het opstijgen — de enige echte sturingsbeweging van de hele opstijging. Daarna houdt de begeleiding meestal alleen de neus gelijk met de snelheidsvector en laat de boog zich ontwikkelen. Laat in de vlucht, boven de atmosfeer, past een tweede-fase begeleiding (gesloten lus of PEG-stijl) de uiteindelijke hoek fijn af om precies de doelbaan te raken.",
+  "new": "De kanteling wordt een paar seconden na het opstijgen ingezet met een korte, bewuste pitch-over-manoeuvre — de enige echte stuurinput van de hele opstijging. Daarna houdt de geleiding de neus vooral in lijn met de snelheidsvector en laat ze de boog zich vormen. Laat in de vlucht, boven de atmosfeer, stelt een geleidingswet voor de tweede trap (met gesloten lus of in PEG-stijl) de eindhoek nauwkeurig bij om precies de doelbaan te halen."
+ },
+ {
+  "rel": "science/mission-phases/gravity-turn.json",
+  "at": "body_paragraphs.2",
+  "old": "Op `/fly`, schakel je de stuwkracht- en snelheidslagen van de Science-Lens in tijdens elke `?launch=1`-opstijging en zie je de twee pijlen bijna parallel blijven terwijl de raket kantelt — die uitlijning is de gravity turn die werkt. Het Δv-verlies register toont het stuusverlies klein blijvend terwijl het zwaartekrachtverlies door de klim ophoopt.",
+  "new": "Zet op `/fly` tijdens elke `?launch=1`-opstijging de Wetenschapslens-lagen voor stuwkracht en snelheid aan en zie hoe de twee pijlen bijna parallel blijven terwijl de raket kantelt — die uitlijning is de gravity turn aan het werk. Het Δv-verliesregister laat zien dat het stuurverlies klein blijft terwijl het zwaartekrachtverlies tijdens de klim oploopt."
+ },
+ {
+  "rel": "science/mission-phases/gravity-turn.json",
+  "at": "diagram_caption",
+  "old": "Gravity turn: een verticale lancering, een kleine kanteling, dan een door de zwaartekracht gevormde boog van verticaal naar horizontaal bij baanopbouw.",
+  "new": "Gravity turn: een verticale lancering, een kleine pitch-over, daarna een door de zwaartekracht gevormde boog van verticaal naar horizontaal tegen de tijd dat de baan bereikt is."
+ },
+ {
+  "rel": "science/mission-phases/interplanetary-internet.json",
+  "at": "title",
+  "old": "Het interplanetaire internet — netwerken over het lichtvertraging",
+  "new": "Het interplanetaire internet — netwerken over de lichtvertraging heen"
+ },
+ {
+  "rel": "science/mission-phases/interplanetary-internet.json",
+  "at": "intro_sentence",
+  "old": "Standaardinternetprotocollen falen over lichtminuten en planetaire occultaties; Delay/Disruption-Tolerant Networking lost dit op met store-and-forward bundels die wachten op de volgende beschikbare link.",
+  "new": "Standaard-internetprotocollen werken niet over afstanden van lichtminuten en bij bedekking door planeten; Delay/Disruption-Tolerant Networking lost dit op met store-and-forward-bundels die wachten op de volgende beschikbare verbinding."
+ },
+ {
+  "rel": "science/mission-phases/interplanetary-internet.json",
+  "at": "body_paragraphs.0",
+  "old": "Het normale internet gaat ervan uit dat u een pakket kunt verzenden, een fractie van een seconde op een bevestiging wacht, en opnieuw verzendt als het niet aankomt. Dat model faalt catastrofaal in de diepe ruimte. Een radiosignaal van de Aarde bereikt Mars in 4–24 minuten, afhankelijk van de baan; tijdens planetaire conjunctie valt de link volledig uit voor weken. De round-trip aanname van TCP/IP betekent dat een sessie timeout en faalt lang voordat een enkele uitwisseling is voltooid.",
+  "new": "Het gewone internet gaat ervan uit dat je een pakket kunt versturen, een fractie van een seconde op een bevestiging wacht en het opnieuw verstuurt als het niet aankomt. Dat model gaat in de diepe ruimte catastrofaal mis. Een radiosignaal van de Aarde doet er afhankelijk van de baangeometrie 4–24 minuten over om Mars te bereiken; tijdens een planetaire conjunctie valt de verbinding wekenlang helemaal weg. Doordat TCP/IP uitgaat van een heen-en-terugtijd, verloopt een sessie en mislukt ze lang voordat één enkele uitwisseling voltooid is."
+ },
+ {
+  "rel": "science/mission-phases/interplanetary-internet.json",
+  "at": "body_paragraphs.1",
+  "old": "Delay/Disruption-Tolerant Networking (DTN) lost het probleem op met een ander architectuur. In plaats van het onderhouden van een end-to-end verbinding, houdt elk knooppunt in het netwerk een zelfstandige 'bundel' met gegevens — een eenheid met routeringsmetadata, vervaltijden en de lading — en stuurt het door als een geschikte link beschikbaar is. Het knooppunt slaat de bundel voor onbepaalde tijd op als er momenteel geen link open is, en levert het af wanneer het volgende contactvenster opent. Het protocol is gestandaardiseerd: het Bundle Protocol is een IETF-standaard (RFC 9171). De basis daarvan — de architectuur voor delay-tolerant netwerking, RFC 4838 — werd onder meer door Vint Cerf gelegd, een van de originele ontwerpers van TCP/IP, werkend met NASA/JPL.",
+  "new": "Delay/Disruption-Tolerant Networking (DTN) lost het probleem op met een andere architectuur. In plaats van een doorlopende verbinding van begin tot eind te onderhouden, houdt elk knooppunt in het netwerk een zelfstandige gegevens-'bundel' vast — een eenheid met routeringsmetadata, vervaltijden en de lading — en stuurt die pas door als een geschikte verbinding beschikbaar is. Is er op dat moment geen verbinding open, dan bewaart het knooppunt de bundel zo lang als nodig en levert die af zodra het volgende contactvenster opengaat. Het protocol is gestandaardiseerd: het Bundle Protocol is een IETF-standaard (RFC 9171). De basis ervan — de architectuur voor vertragingstolerante netwerken, RFC 4838 — werd mede gelegd door Vint Cerf, een van de oorspronkelijke architecten van TCP/IP, in samenwerking met NASA/JPL."
+ },
+ {
+  "rel": "science/mission-phases/interplanetary-internet.json",
+  "at": "body_paragraphs.2",
+  "old": "DTN is al operationeel, niet experimenteel. Het ISS voert sinds 2016 een DTN-knooppunt uit, demonstreerde de architectuur in een echte omgeving met beperkte links. In de diepe ruimte fungeren Mars-orbiters als de relay-laag: NASA's Mars Reconnaissance Orbiter, MAVEN en ESA's Trace Gas Orbiter dragen elk store-and-forward relay-capaciteit, geven bundels door van baan naar oppervlakterovers en terug naar de Aarde. De rovers spreken niet rechtstreeks met de Aarde voor grote gegevenshoeveelheden — de orbitale relay handelt dit af, opslaan van de downlink totdat een contactvenster met een DSN-antenne opent.",
+  "new": "DTN is al operationeel en niet meer experimenteel. Het ISS draait sinds 2016 een DTN-knooppunt, waarmee de architectuur is aangetoond in een echte omgeving met beperkte verbindingen. In de diepe ruimte vormen Marsorbiters de relaislaag: NASA's Mars Reconnaissance Orbiter, MAVEN en ESA's Trace Gas Orbiter hebben elk store-and-forward-relaiscapaciteit en geven bundels door van de baan naar rovers op het oppervlak en weer terug naar de Aarde. De rovers praten voor grote datavolumes niet rechtstreeks met de Aarde — het relais in de baan handelt dat af en bewaart de downlink tot er een contactvenster met een DSN-antenne opengaat."
+ },
+ {
+  "rel": "science/mission-phases/interplanetary-internet.json",
+  "at": "body_paragraphs.3",
+  "old": "DTN verslaat niet de snelheid van het licht. Een bundel van een Marsrover bereikt de Aarde nog steeds in 4–24 minuten; DTN garandeert alleen dat het uiteindelijk aankomt, zonder gegevens verlies tijdens de onvermijdelijke gaten. Wat het toevoegt is betrouwbaarheid en asynchronie: wetenschapsgegevens in de wachtrij op een rover tijdens een stofstorm of occultatie worden intact bezorgd wanneer de link heropent, zonder dat een menselijke operator handmatig herzendigingen hoeft in te plannen.",
+  "new": "DTN is niet sneller dan het licht. Een bundel van een Marsrover doet er nog steeds 4–24 minuten over om de Aarde te bereiken; DTN garandeert alleen dat hij uiteindelijk aankomt, zonder dat er gegevens verloren gaan tijdens de onvermijdelijke onderbrekingen. Het voegt betrouwbaarheid en asynchroniciteit toe: wetenschappelijke gegevens die op een rover in de wachtrij staan tijdens een stofstorm of bedekking, worden intact bezorgd zodra de verbinding weer open is, zonder dat een menselijke operator handmatig herzendingen hoeft in te plannen."
+ },
+ {
+  "rel": "science/mission-phases/interplanetary-internet.json",
+  "at": "diagram_caption",
+  "old": "Rover plaatst bundel in wachtrij → MRO/TGO orbitale relay slaat het op → contactvenster opent → bundel doorgegeven aan DSN → intact bezorgd ondanks lichtvertraging en occultatie-gaten.",
+  "new": "De rover zet een bundel in de wachtrij → het MRO/TGO-relais in de baan slaat hem op → het contactvenster gaat open → de bundel wordt doorgestuurd naar het DSN → intact bezorgd ondanks lichtvertraging en onderbrekingen door bedekking."
+ },
+ {
+  "rel": "science/mission-phases/launch.json",
+  "at": "intro_sentence",
+  "old": "De meest gewelddadige tien minuten van elke missie — tegelijkertijd vechten tegen de zwaartekracht, atmosfeer en de raketvergelijking.",
+  "new": "De heftigste tien minuten van elke missie — een gelijktijdige strijd tegen de zwaartekracht, de atmosfeer en de raketvergelijking."
+ },
+ {
+  "rel": "science/mission-phases/launch.json",
+  "at": "narrative_101.1",
+  "old": "De rekensom is genadeloos. Een baan bereiken kost ~9,4 km/s aan ∆v, maar slechts ~7,9 km/s draagt daadwerkelijk bij aan de baansnelheid. De rest gaat verloren aan \"zwaartekrachtverlies\" (je moet blijven vuren alleen om de raket omhoog te houden terwijl hij klimt) en \"luchtweerstandverlies\" (de atmosfeer die terug duwt). Ingenieurs besteden jaren aan het optimaliseren van het hellingsschema — precies wanneer en hoeveel kantelen — om deze verliezen te minimaliseren.",
+  "new": "De rekensom is genadeloos. Een baan bereiken kost ~9,4 km/s aan ∆v, maar slechts ~7,9 km/s draagt daadwerkelijk bij aan de baansnelheid. De rest gaat verloren aan \"zwaartekrachtverlies\" (je moet blijven vuren alleen om de raket omhoog te houden terwijl hij klimt) en \"luchtweerstandverlies\" (de atmosfeer die terugduwt). Ingenieurs besteden jaren aan het optimaliseren van het kantelprogramma — precies wanneer en hoeveel er gekanteld wordt — om deze verliezen te minimaliseren."
+ },
+ {
+  "rel": "science/mission-phases/launch.json",
+  "at": "narrative_101.2",
+  "old": "Zodra de raket hoog genoeg is dat de lucht opgeeft, wordt het makkelijker. Trappen scheiden, neuskegels springen los, de tweede trap neemt het over voor een langere, zachtere duw. De hele reis is een gekalibreerde afname van droge massa: elke kilogram lege tank die je kunt afwerpen is een kilogram die de volgende trap niet hoeft te versnellen. SpaceX gaat hier tegenin en recupereert zijn eerste trappen; alle anderen gooien ze weg.",
+  "new": "Zodra de raket zo hoog is dat de lucht het laat afweten, wordt het makkelijker. Trappen scheiden, beschermkappen springen los, de tweede trap neemt het over voor een langere, zachtere duw. De hele reis is een berekend afstoten van droge massa: elke kilo lege tank die je kwijtraakt is een kilo die de volgende trap niet hoeft te versnellen. SpaceX doorbreekt dit en haalt zijn eerste trappen terug; alle anderen gooien ze weg."
+ },
+ {
+  "rel": "science/mission-phases/launch.json",
+  "at": "body_paragraphs.0",
+  "old": "Lanceeropstijging kost ongeveer 9,4 km/s aan ∆v, maar nauwelijks 7,9 km/s daarvan is daadwerkelijke baansnelheid. De rest is zwaartekrachtverlies (je besteedt energie aan het omhoog houden van de raket terwijl hij klimt) en luchtweerstandverlies (atmosfeer die terugvecht). Programmeer de helling juist en je minimaliseert beide — te verticaal verspilt stuwkracht aan hoogte die niet helpt bij het inbrengen in een baan; te horizontaal en de atmosfeer heeft meer tijd om je te vertragen.",
+  "new": "De opstijging naar een baan kost ongeveer 9,4 km/s aan ∆v, maar nauwelijks 7,9 km/s daarvan is echte baansnelheid. De rest is zwaartekrachtverlies (je besteedt energie aan het omhoog houden van de raket terwijl hij klimt) en luchtweerstandverlies (de atmosfeer die terugvecht). Stel het kantelprogramma goed af en je beperkt beide — te verticaal verspilt stuwkracht aan hoogte die niet helpt om in een baan te komen; te horizontaal en de atmosfeer heeft meer tijd om je af te remmen."
+ },
+ {
+  "rel": "science/mission-phases/launch.json",
+  "at": "body_paragraphs.1",
+  "old": "Trappen vallen onderweg af. Eerste-trapscheiding, tweede-trapontsteking, neuskegel-afwerping, lading-vrijgave. Elke trap laat droge massa vallen die de volgende niet meer hoeft te versnellen. Falcon 9 brengt zijn eerste trap terug; Saturn V deed dat niet. De afweging is of de recuperatiehardware meer kost dan de brandstof die het gekost zou hebben om de trap weg te gooien.",
+  "new": "Onderweg vallen trappen af. Scheiding van de eerste trap, ontsteking van de tweede trap, afwerpen van de beschermkap, vrijgave van de lading. Elke trap laat droge massa vallen die de volgende niet meer hoeft te versnellen. Falcon 9 brengt zijn eerste trap terug; Saturn V deed dat niet. De afweging is of de hardware voor het terughalen meer kost dan de brandstof die nodig zou zijn geweest om de trap weg te gooien."
+ },
+ {
+  "rel": "science/mission-phases/launch.json",
+  "at": "body_paragraphs.2",
+  "old": "Op `/missions` vertelt het launch_vehicle-veld je welke raket de missie vloog. Saturn V voor Apollo. Atlas V voor Curiosity. Falcon 9 voor Crew Dragon. SLS voor Artemis I. Elke raket heeft een vaste C3-vs-lading-curve — de raket bepaalt het plafond van wat mogelijk is.",
+  "new": "Op `/missions` vertelt het veld launch_vehicle je welke raket de missie vloog. Saturn V voor Apollo. Atlas V voor Curiosity. Falcon 9 voor Crew Dragon. SLS voor Artemis I. Elke raket heeft een vaste curve van C3 tegen lading — de raket bepaalt het plafond van wat mogelijk is."
+ },
+ {
+  "rel": "science/mission-phases/launch.json",
+  "at": "diagram_caption",
+  "old": "Lanceerprofiel: verticale stijging → hellingsschema → trapsgewijze scheiding → inbrengen in baan.",
+  "new": "Lanceerprofiel: verticale stijging → kantelprogramma → trapscheiding → in een baan komen."
+ },
+ {
+  "rel": "science/mission-phases/lifting-entry.json",
+  "at": "title",
+  "old": "Lifting entry — sturen met de lift van een capsule",
+  "new": "Terugkeer met lift — sturen met de lift van een capsule"
+ },
+ {
+  "rel": "science/mission-phases/lifting-entry.json",
+  "at": "intro_sentence",
+  "old": "Een stompe capsule is niet zomaar een vallende steen. Verschuif het massamiddelpunt en het vliegt met wat lift — en die lift, gericht door de capsule te rollen, wordt een stuurwiel dat een scherpe terugkeer vol beheersing mogelijk maakt.",
+  "new": "Een stompe capsule is niet zomaar een vallende steen. Verschuif het zwaartepunt en hij vliegt met wat lift — en die lift, gericht door de capsule te rollen, wordt een stuur dat een terugkeer op het scherpst van de snede overleefbaar maakt."
+ },
+ {
+  "rel": "science/mission-phases/lifting-entry.json",
+  "at": "narrative_101.0",
+  "old": "Bij terugkeer van de Maan ramt een Apollo-capsule de bovenkant van de atmosfeer met bijna 11 kilometer per seconde — anderhalf keer zo snel als iets dat uit een lage baan terugvalt. Te steil binnenkomen en de vertraging vermorzelt de bemanning en de hitte is onoverleefbaar; te ondiep en je stuitert van de atmosfeer af zoals een steen over een meer en zeilt terug naar de ruimte zonder tweede kans. Het bereik van invoekshoeken dat zowel overleefbaar als gevangen is, is de \"corridor\", en bij snelheid van maanterugkeer is het hartbrekend nauw — minder dan een paar graden breed.",
+  "new": "Bij terugkeer van de Maan treft een Apollo-capsule de bovenkant van de atmosfeer met bijna 11 kilometer per seconde — anderhalf keer zo snel als iets dat uit een lage baan terugvalt. Kom je te steil binnen, dan verplettert de vertraging de bemanning en is de hitte niet te overleven; kom je te ondiep binnen, dan stuiter je als een steen over water van de atmosfeer af en zeil je zonder tweede kans terug de ruimte in. De band van intredehoeken die zowel overleefbaar is als tot een vangst leidt, is de \"corridor\", en bij de snelheid van een maanterugkeer is die hartverscheurend smal — nog geen paar graden breed."
+ },
+ {
+  "rel": "science/mission-phases/lifting-entry.json",
+  "at": "narrative_101.1",
+  "old": "De truc die de bemanning redt, is lift. Een capsule ziet eruit als een symmetrische kegel, maar zijn hitteschild hangt opzettelijk decentraal, zodat hij gekanteld vliegt, de lucht onder een kleine hoek ontmoet en een kleine hoeveelheid lift genereert — niet veel, een lift-sleepverhouding van maar ongeveer 0,3, maar genoeg. En de capsule heeft precies één besturing om die lift te richten: bankhoek. Roll zodat de lift omhoog wijst en de capsule rekt zijn duik, blijft hoger en vertraagt zacht. Roll zodat de lift omlaag wijst en het bijt dieper in de lucht. Roll naar de zijkant en het stuurt links of rechts.",
+  "new": "De truc die de bemanning redt, is lift. Een capsule lijkt een symmetrische kegel, maar het hitteschild hangt bewust uit het midden, zodat de capsule gekanteld vliegt, de lucht onder een kleine hoek ontmoet en een beetje lift opwekt — niet veel, een lift-weerstandsverhouding van maar ongeveer 0,3, maar genoeg. En de capsule heeft precies één middel om die lift te richten: de rolhoek. Rol zo dat de lift omhoog wijst, en de capsule rekt haar duik, blijft hoger en remt zachter af. Rol zo dat de lift omlaag wijst, en ze bijt dieper in de lucht. Rol opzij, en ze stuurt naar links of rechts."
+ },
+ {
+  "rel": "science/mission-phases/lifting-entry.json",
+  "at": "narrative_101.2",
+  "old": "Die enkele hefboom verbreed de overleefbare corridor enkele malen — ruwweg drie tot vijf keer — vergeleken met een zuiver ballistisch duik, en daarom vliegt elke bemande terugkeer van de Maan — Apollo en nu Orion bij Artemis — een lifting entry, met de begeleidscomputer die de capsule heen en weer rolt om de vertraging binnen menselijke grenzen te houden en nog steeds daar neer te komen waar de reddingsschepen wachten.",
+  "new": "Die ene hendel maakt de overleefbare corridor enkele malen breder — grofweg drie tot vijf keer — vergeleken met een zuiver ballistische duik, en daarom vliegt elke bemande terugkeer van de Maan — Apollo, en nu Orion bij Artemis — met lift, waarbij de geleidingscomputer de capsule heen en weer rolt om de vertraging binnen menselijke grenzen te houden en toch neer te komen waar de bergingsschepen wachten."
+ },
+ {
+  "rel": "science/mission-phases/lifting-entry.json",
+  "at": "body_paragraphs.0",
+  "old": "De fysica is dat slepen de remming doet en lift de richting geeft. De lift-sleepverhouding (L/D) van een capsule is klein — ongeveer 0,3 voor Apollo en Orion, dicht bij 0,24 voor een Mars-aeroshell, tegenover 4+ voor een vliegtuig — maar het is niet nul, en bij hypersonische snelheid verplaatst zelfs een kleine L/D het traject ver. Omdat de capsule niet kan stampen (hij heeft geen vleugels of hoogtestuurvlakken), is de ENIGE manier om die liftvector met vaste grootte om te buigen rollen: rond de snelheidsvector zwenken wijst de liftvector omhoog, omlaag of zijwaarts zonder te veranderen hoe hard de lucht duwt.",
+  "new": "De natuurkunde komt erop neer dat de luchtweerstand het remwerk doet en de lift het richten. De lift-weerstandsverhouding (L/D) van een capsule is klein — ongeveer 0,3 voor Apollo en Orion, bijna 0,24 voor een Mars-aeroshell, tegenover 4+ voor een verkeersvliegtuig — maar niet nul, en bij hypersonische snelheid verlegt zelfs een kleine L/D het traject over een flinke afstand. Omdat de capsule niet kan stampen (ze heeft geen vleugels of hoogteroeren), is rollen de ENIGE manier om die lift met vaste grootte om te buigen: rollen om de snelheidsvector wijst de liftvector omhoog, omlaag of opzij, zonder dat de kracht waarmee de lucht duwt verandert."
+ },
+ {
+  "rel": "science/mission-phases/lifting-entry.json",
+  "at": "body_paragraphs.1",
+  "old": "De overleefbare corridor wordt aan beide zijden begrensd. Te steil en piekverlaging en verwarming schieten langs limieten omhoog — een zuiver ballistisch maanterugkeertraject kan ruim boven 10 g gaan (de onbemande Zond-ballistische terugkeren bereikten ~15 g), terwijl Apollo's geleide lifting entry zijn piek dicht bij 7 g hield; te ondiep en het voertuig wordt niet gevangen en stuitert terug. Lift stelt de begeleiding in staat het midden aan te vliegen: vroegtijdig lift-omhoog commando vlakt de afdaling af en houdt de g-belasting omlaag, en het moduleren van bank door het traject houdt het hele profiel in de corridor. Het gepubliceerde resultaat is dat lift het overleefbare hoekveld enkele malen verbreed — ruwweg drie tot vijf keer — ten opzichte van een ballistische entry.",
+  "new": "De overleefbare corridor is aan beide kanten begrensd. Te steil en de piekvertraging en -verhitting schieten door de grenzen — een zuiver ballistische maanterugkeer kan ruim boven 10 g uitkomen (de onbemande ballistische terugkeren van Zond haalden ~15 g), terwijl de gestuurde terugkeer met lift van Apollo zijn piek rond 7 g hield; te ondiep en het voertuig wordt niet ingevangen en stuitert terug. Lift laat de geleiding het midden aanhouden: vroeg lift omhoog geven vlakt de afdaling af en houdt de g-belasting laag, en het bijsturen van de rolhoek tijdens de terugkeer houdt het hele profiel in de corridor. Het gepubliceerde resultaat is dat lift de overleefbare hoekband enkele malen verbreedt — grofweg drie tot vijf keer — ten opzichte van een ballistische terugkeer."
+ },
+ {
+  "rel": "science/mission-phases/lifting-entry.json",
+  "at": "body_paragraphs.2",
+  "old": "Een begeleidscomputer vliegt het in gesloten lus. Hij kent het doelbereik en de g- en verwarmingslimieten, en rolt de capsule — volle lift-omhoog, gedeeltelijke lift-omlaag, omkeringen links en rechts om dwarsafstandsdrift op te heffen — en werkt veel keren per seconde bij op basis van de gevoelde vertraging. Apollo's entry werd op deze manier gevlogen; Orion's ook. De zelfde bankhoek-hefboom richt ook het landingspunt, wat het onderwerp is van de entry-footprint pagina.",
+  "new": "Een geleidingscomputer vliegt dit in gesloten lus. Hij kent het doelbereik en de limieten voor g en verhitting, en rolt de capsule — volledig lift omhoog, deels lift omlaag, omkeringen naar links en rechts om afwijking opzij te corrigeren — en werkt dat vele malen per seconde bij op basis van de gemeten vertraging. Zo is de terugkeer van Apollo gevlogen; die van Orion ook. Dezelfde rolhoek-hendel richt ook het landingspunt, het onderwerp van de entry-footprint-pagina."
+ },
+ {
+  "rel": "science/mission-phases/lifting-entry.json",
+  "at": "diagram_caption",
+  "old": "Bank-hoek sturen: de capsule rollen wijst zijn kleine liftvector omhoog (glijd rekken, lage-g) of omlaag (steiler), wat de overleefbare terugkeercorridor verbreed.",
+  "new": "Sturen met de rolhoek: door de capsule te rollen wijst haar kleine liftvector omhoog (de glijvlucht rekken, lage g) of omlaag (steiler), waardoor de overleefbare terugkeercorridor breder wordt."
+ },
+ {
+  "rel": "science/mission-phases/max-q.json",
+  "at": "intro_sentence",
+  "old": "Het moment van maximale aerodynamische belasting tijdens de opstijging — waar dynamische druk piekt en de raket het hardst door de lucht wordt samengeperst.",
+  "new": "Het moment van maximale aerodynamische belasting tijdens de opstijging — waarop de dynamische druk piekt en de raket het hardst wordt samengeperst door de lucht waar hij doorheen stoot."
+ },
+ {
+  "rel": "science/mission-phases/max-q.json",
+  "at": "narrative_101.0",
+  "old": "Ongeveer een minuut na de lancering raakt de raket een muur die hij niet kan zien. Geen fysieke muur — een druk muur. Terwijl hij versnelt, duwt de lucht steeds harder terug; maar terwijl hij stijgt, wordt de lucht ook dunner. Deze twee effecten strijden met elkaar, en ergens tussen 11–14 km hoogte bereikt het product van beide een piek. Die piek is Max-Q: maximale dynamische druk, het moment waarop het voertuig onder de grootste aerodynamische belasting van de hele opstijging staat.",
+  "new": "Ongeveer een minuut na de lancering loopt de raket tegen een muur aan die hij niet kan zien. Geen fysieke muur — een muur van druk. Naarmate hij versnelt, duwt de lucht steeds harder terug; maar naarmate hij stijgt, wordt de lucht ook ijler. Die twee effecten werken elkaar tegen, en ergens rond 11–14 km hoogte bereikt het product van beide een piek. Die piek is Max-Q: maximale dynamische druk, het moment waarop het voertuig tijdens de hele opstijging onder de grootste aerodynamische belasting staat."
+ },
+ {
+  "rel": "science/mission-phases/max-q.json",
+  "at": "narrative_101.1",
+  "old": "Dynamische druk wordt geschreven als q = ½ρv² — half de luchtdichtheid keer snelheid in het kwadraat. In het begin is de raket langzaam maar diep in dichte lucht; hoger op is hij snel maar is de lucht dun. Het ergste van beide werelden valt in het midden, en daar buigt het vliegtuigframe het meest en werkt de constructie het hardst.",
+  "new": "Dynamische druk wordt geschreven als q = ½ρv² — de helft van de luchtdichtheid maal de snelheid in het kwadraat. In het begin is de raket langzaam maar zit hij diep in dikke lucht; hoger op is hij snel maar is de lucht ijl. Het slechtste van twee werelden ligt in het midden, en daar buigt het casco het meest en moet de constructie het hardst werken."
+ },
+ {
+  "rel": "science/mission-phases/max-q.json",
+  "at": "narrative_101.2",
+  "old": "Raketten zijn gebouwd om Max-Q te overleven, maar veel dempen hun motoren als ze eraan naderen om de belasting te verlichten, en geven dan weer vol vermogen nadat ze erlangs zijn — dit kun je in lanceringsuitzendingen horen als de aankondiging \"throttling up\" enkele seconden na \"Max-Q.\" Daarna wordt de lucht snel dunner, daalt de dynamische druk sterk af, en is het aerodynamische gevaar vrijwel voorbij.",
+  "new": "Raketten zijn gebouwd om Max-Q te overleven, maar veel regelen hun motoren terug als ze het naderen om de belasting te verlichten, en geven daarna weer vol gas zodra ze erdoorheen zijn — op lanceeruitzendingen hoor je dat aan de aankondiging \"throttling up\" een paar seconden na \"Max-Q\". Daarna wordt de lucht snel ijler, valt de dynamische druk weg en is het aerodynamische gevaar in feite voorbij."
+ },
+ {
+  "rel": "science/mission-phases/max-q.json",
+  "at": "body_paragraphs.0",
+  "old": "De waarde van q stijgt met snelheid in het kwadraat maar daalt met luchtdichtheid, dus de Max-Q hoogte hangt af van hoe snel het voertuig versnelt versus hoe snel het uit de dichte onderste atmosfeer klimt. Een zware, langzaam versnellende stack raakt Max-Q lager en zachter; een snelle, lichte raakt het hoger. Typische bemande lanceerders zien piekdynamische drukken rond de 30–35 kPa.",
+  "new": "De waarde van q stijgt met het kwadraat van de snelheid maar daalt met de luchtdichtheid, dus de hoogte van Max-Q hangt af van hoe snel het voertuig versnelt in verhouding tot hoe snel het uit de dichte onderste atmosfeer klimt. Een zware, langzaam versnellende raket bereikt Max-Q lager en zachter; een felle, lichte raket bereikt het hoger. Bij bemande lanceerraketten ligt de piek in de dynamische druk doorgaans rond 30–35 kPa."
+ },
+ {
+  "rel": "science/mission-phases/max-q.json",
+  "at": "body_paragraphs.1",
+  "old": "Aerodynamische weerstand — een van de drie opstijgings-∆v verliezen — volgt dezelfde q-curve, dus weerstandsverlies accumuleert het snelst rond Max-Q. Dit is precies waarom de gravity turn belangrijk is: te agressief vroeg overhellen zou het voertuig zijwaarts door de dichtste lucht duwen precies wanneer q stijgt, wat zowel de structurele belasting als het weerstandsverlies verveelvoudigt.",
+  "new": "Aerodynamische weerstand — een van de drie ∆v-verliezen bij de opstijging — volgt dezelfde q-curve, dus het weerstandsverlies loopt het snelst op rond Max-Q. Precies daarom doet de gravity turn ertoe: te vroeg en te fel overhellen zou het voertuig zijwaarts door de dichtste lucht duwen op het moment dat q stijgt, waardoor zowel de constructiebelasting als het weerstandsverlies vermenigvuldigd wordt."
+ },
+ {
+  "rel": "science/mission-phases/max-q.json",
+  "at": "body_paragraphs.2",
+  "old": "Op `/fly` bereikt de DYNAMIC PRESSURE strookgrafiek in de lanceringstelemetrie zijn piek op Max-Q, en de tijdlijn draagt een MAX-Q beatmarker. Activeer de drag Science-Lens-laag om te zien hoe de weerstandspijl op dat moment tot zijn langste punt zwelt, en dan afneemt als de atmosfeer opgegeven is.",
+  "new": "Op `/fly` piekt het strookdiagram DYNAMIC PRESSURE in de lanceertelemetrie bij Max-Q, en de tijdlijn heeft een MAX-Q-markering. Schakel de Wetenschapslens-laag voor luchtweerstand in om de weerstandspijl precies dan het langst te zien uitgroeien en daarna te zien krimpen naarmate de atmosfeer ijler wordt."
+ },
+ {
+  "rel": "science/mission-phases/max-q.json",
+  "at": "diagram_caption",
+  "old": "Dynamische druk q = ½ρv² stijgt met snelheid en daalt met dunnere lucht; de snijpuntpiek, ~11–14 km hoog, is Max-Q.",
+  "new": "Dynamische druk q = ½ρv² neemt toe met de snelheid en af met de ijler wordende lucht; de piek op het kruispunt, op ~11–14 km hoogte, is Max-Q."
+ },
+ {
+  "rel": "science/mission-phases/met.json",
+  "at": "narrative_101.2",
+  "old": "Open het /fly-scherm en zie MET in dagen oplopen terwijl een gesimuleerde reis vordert. De HUD toont MET 173d wanneer het ruimtevaartuig langs Mars zweeft. Vertaling: het is 173 dagen geleden sinds de lancering vanuit het perspectief van het ruimtevaartuig. Welke datum is het op Aarde? Maakt niet uit. Missiecontrole spreekt MET.",
+  "new": "Open het /fly-scherm en zie MET in dagen oplopen terwijl een gesimuleerde reis vordert. De HUD toont MET 173d wanneer het ruimtevaartuig langs Mars zweeft. Vertaling: vanuit het perspectief van het ruimtevaartuig zijn er 173 dagen verstreken sinds de lancering. Welke datum het op Aarde is? Maakt niet uit. Missiecontrole spreekt MET."
+ },
+ {
+  "rel": "science/mission-phases/met.json",
+  "at": "body_paragraphs.0",
+  "old": "MET is de tijd sinds de lancering. Dag nul is het moment van lancering. Elke gebeurtenis — staging, trans-X-injectie, mid-course correctie, baaninsertie, oppervlakteoperaties — krijgt een MET-tijdstempel. Apollo 11 maanlanding: MET 4 dagen, 6 uur, 45 minuten. Voyager 1 die de heliopauze verlaat: MET 35 jaar.",
+  "new": "MET is de tijd sinds de lancering. Dag nul is het moment van opstijgen. Elke gebeurtenis — trapscheiding, trans-X-injectie, koerscorrectie onderweg, inbrengen in een baan, werkzaamheden op het oppervlak — krijgt een MET-tijdstempel. Maanlanding van Apollo 11: MET 4 dagen, 6 uur, 45 minuten. Voyager 1 verlaat de heliopauze: MET 35 jaar."
+ },
+ {
+  "rel": "science/mission-phases/met.json",
+  "at": "body_paragraphs.1",
+  "old": "Waarom MET in plaats van UTC? Omdat de klok op Aarde niet helemaal gelijk loopt met de klok op het ruimtevaartuig wanneer het ruimtevaartuig snel of ver weg beweegt. Lichtlooptijdvertragingen nemen toe (Mars is 4-22 lichtminuten verwijderd, afhankelijk van de baangeometrie). Relativistische tijddilatatie sluipt erin bij snelle sondes. MET is de eigen verstreken tijd van het ruimtevaartuig, het natuurlijke ankerpunt voor het sequencen van gebeurtenissen aan boord.",
+  "new": "Waarom MET en niet UTC? Omdat de klok op Aarde niet helemaal gelijk loopt met de klok op het ruimtevaartuig wanneer dat snel of ver weg beweegt. De lichtvertraging loopt op (Mars ligt 4-22 lichtminuten weg, afhankelijk van de baangeometrie). Bij snelle sondes sluipt relativistische tijddilatatie erin. MET is de eigen verstreken tijd van het ruimtevaartuig, het natuurlijke ankerpunt om gebeurtenissen aan boord op volgorde te zetten."
+ },
+ {
+  "rel": "science/mission-phases/mission-types.json",
+  "at": "title",
+  "old": "Missietypen — Scheervlucht, orbiter, lander, rover, monsterterugkeer",
+  "new": "Missietypen — voorbijvlucht, orbiter, lander, rover, monsterterugkeer"
+ },
+ {
+  "rel": "science/mission-phases/mission-types.json",
+  "at": "narrative_101.0",
+  "old": "Elke robotmissie naar een ander hemellichaam kiest een van vijf strategieën. Deze keuze bepaalt vrijwel alles — hoe groot de raket moet zijn, hoe de baan buigt, wat het ruimtevaartuig meeneemt, welke wetenschap het bedrijft en of het overleeft. De taxonomie volgt netjes langs een ∆v-ladder: voorbijvlucht is het goedkoopst, monsterreturn is het duurst.",
+  "new": "Elke robotmissie naar een andere wereld kiest een van vijf strategieën. Die keuze bepaalt vrijwel al het andere — hoe groot de raket moet zijn, hoe het traject buigt, wat het ruimtevaartuig meeneemt, welke wetenschap het bedrijft en of het het overleeft. De indeling past netjes op een ∆v-ladder: een voorbijvlucht is het goedkoopst, een monsterterugkeer het duurst."
+ },
+ {
+  "rel": "science/mission-phases/mission-types.json",
+  "at": "narrative_101.1",
+  "old": "FLYBY: richten, fotograferen, vertrekken. Helemaal geen remstuwing. Voyager 1/2 langs Jupiter, Saturnus, Uranus, Neptunus; New Horizons langs Pluto; Pioneer 10/11. Één kans, uren wetenschappelijke waarnemingen in dicht voorbijgaan, het ruimtevaartuig zeilt eindeloos door. Goedkoopst in ∆v maar je komt niet terug.",
+  "new": "VOORBIJVLUCHT: richten, fotograferen, vertrekken. Helemaal geen remstoot. Voyager 1/2 langs Jupiter, Saturnus, Uranus, Neptunus; New Horizons langs Pluto; Pioneer 10/11. Eén kans, uren aan wetenschap van dichtbij, en het ruimtevaartuig zeilt eindeloos door. Het goedkoopst in ∆v, maar je komt niet terug."
+ },
+ {
+  "rel": "science/mission-phases/mission-types.json",
+  "at": "narrative_101.2",
+  "old": "ORBITER: afremmen in een captuurbaan en jaren blijven. MAVEN, MRO, Cassini, Galileo. De baaninsertieworp kost veel (1-2 km/s) maar je kunt het hele hemellichaam in kaart brengen. LANDER voegt EDL toe — hitteschild, parachute, retrorockets — bovenop een orbiter. ROVER voegt wielen, aandrijving en autonomie toe — elk kilogram rover kost een hele stapel eronder.",
+  "new": "ORBITER: afremmen tot een ingevangen baan en er jarenlang blijven. MAVEN, MRO, Cassini, Galileo. De stoot om in een baan te komen is duur (1-2 km/s), maar je kunt het hele hemellichaam in kaart brengen. Een LANDER voegt EDL toe — hitteschild, parachute, remraketten — bovenop een orbiter. Een ROVER voegt wielen, aandrijving en autonomie toe — elk kilo rover kost een hele stapel eronder."
+ },
+ {
+  "rel": "science/mission-phases/mission-types.json",
+  "at": "narrative_101.3",
+  "old": "SAMPLE RETURN is het hoogtepunt: lander + opstijgfase vanaf het oppervlak + terugreis + EDL op Aarde. Hayabusa-2, OSIRIS-REx, Chang'e 5, de Apollo-maanvluchten. De massa-naar-Aarde-vertrekverhouding is brutal — Mars Sample Return is nu in ontwikkeling en is een van de moeilijkste robotmissies ooit ondernomen.",
+  "new": "MONSTERTERUGKEER is het hoogtepunt: lander + opstijgtrap vanaf het oppervlak + terugreis + EDL op Aarde. Hayabusa-2, OSIRIS-REx, Chang'e 5, de Apollo-maanvluchten. De verhouding tussen de massa en het vertrek vanaf de Aarde is meedogenloos — Mars Sample Return is nu in ontwikkeling en is een van de moeilijkste robotmissies die ooit zijn ondernomen."
+ },
+ {
+  "rel": "science/mission-phases/mission-types.json",
+  "at": "body_paragraphs.0",
+  "old": "Voorbijvluchtmissies slaan de baaninsertieworp over. Ze gaan voorbij met de V∞ waarmee ze aankomen — ~10 km/s voor Voyager bij Jupiter, ~14 km/s voor New Horizons bij Pluto. Ontmoetingstijd is minuten tot dagen. Levert snelle wetenschap maar oppervlakkige dekking en geen vervolgwaarnemingen.",
+  "new": "Voorbijvluchtmissies slaan de stoot om in een baan te komen helemaal over. Ze razen voorbij met de V∞ waarmee ze aankomen — ~10 km/s voor Voyager bij Jupiter, ~14 km/s voor New Horizons bij Pluto. De ontmoeting duurt minuten tot dagen. Je ruilt snelle wetenschap in voor oppervlakkige dekking en geen vervolg."
+ },
+ {
+  "rel": "science/mission-phases/mission-types.json",
+  "at": "body_paragraphs.1",
+  "old": "Orbitermissies verruilen ∆v voor tijd-boven-doel. Insertie kost meestal 1-2 km/s remming, maar het ruimtevaartuig heeft dan jaren om het hemellichaam in kaart te brengen. Aerobremming (atmosferische wrijving bij periapsis) kan het budget verder verlagen — Mars Reconnaissance Orbiter gebruikte aerobremming voor 6 maanden naar zijn wetenschappelijke baan om brandstof te sparen.",
+  "new": "Orbitermissies ruilen ∆v in voor tijd bij het doel. Het inbrengen kost doorgaans 1-2 km/s aan remming, maar daarna heeft het ruimtevaartuig jaren om het hemellichaam in kaart te brengen. Aerobraking (atmosferische weerstand gebruiken bij de periapsis) kan het budget verder verlagen — Mars Reconnaissance Orbiter remde 6 maanden lang aerodynamisch af tot in zijn wetenschappelijke baan om brandstof te sparen."
+ },
+ {
+  "rel": "science/mission-phases/mission-types.json",
+  "at": "body_paragraphs.2",
+  "old": "Landers voegen EDL toe — intrede, afdaling, landing — op het orbiterbudget, plus de structuurmassa van hitteschild, parachute, retroraketten en landingspooten. EDL is de hoogste-risicomissie van elke vlucht; Mars heeft een ~50% historisch succespercentage voor landingen.",
+  "new": "Landers voegen EDL toe — intrede, afdaling, landing — bovenop het budget van de orbiter, plus de constructiemassa van hitteschild, parachute, remmotoren en landingspoten. EDL is de risicovolste fase van elke missie; bij Mars ligt het historische slagingspercentage voor landingen op ~50%."
+ },
+ {
+  "rel": "science/mission-phases/mission-types.json",
+  "at": "body_paragraphs.4",
+  "old": "Monsterreturn is het hoogtepunt. De massa die Aarde moet verlaten schalt ongeveer 10× de monsterreturnmassa voor een Mars-heen-en-terugrit — je betaalt voor de raket die de raket tilt die de lander tilt die de monsterbak tilt die de kruistrap tilt die de monsters naar huis brengt. Hayabusa-2 bracht ongeveer 5 g asteroïde Ryugu terug in een capsule die in je hand paste.",
+  "new": "Een monsterterugkeer is het hoogtepunt. De massa die de Aarde moet verlaten is bij een retourreis naar Mars ongeveer 10× de massa van het teruggebrachte monster — je betaalt voor de raket die de raket optilt die de lander optilt die de monsterhouder optilt die de kruistrap optilt die de monsters naar huis brengt. Hayabusa-2 bracht ongeveer 5 g van de asteroïde Ryugu terug in een capsule die in je hand past."
+ },
+ {
+  "rel": "science/mission-phases/mission-types.json",
+  "at": "diagram_caption",
+  "old": "Vijf missionarchetypen gerangschikt naar toenemende complexiteit: voorbijvlucht → orbiter → lander → rover → monsterreturn.",
+  "new": "Vijf missiearchetypen geordend naar oplopende complexiteit: voorbijvlucht → orbiter → lander → rover → monsterterugkeer."
+ },
+ {
+  "rel": "science/mission-phases/nrho.json",
+  "at": "narrative_101.0",
+  "old": "NRHO is de baan die NASA koos voor Gateway, het kleine ruimtestation dat vanaf eind jaren 2020 in de buurt van de Maan zal werken. Het acroniem staat voor Near-Rectilinear Halo Orbit — een term die bijna niets betekent tot je de vorm ziet. Stelt je een ei voor, uitgerekt, bijna-maar-niet-helemaal in evenwicht op het Aarde-Maan L2 Lagrangepunt, met de dichtste passage boven de zuidpool van de Maan. Het ruimtevaartuig draait er om heen, eenmaal per ~6,5 dagen.",
+  "new": "NRHO is de baan die NASA koos voor Gateway, het kleine ruimtestation dat vanaf eind jaren 2020 in de buurt van de Maan zal werken. De afkorting staat voor Near-Rectilinear Halo Orbit — een term die vrijwel niets zegt tot je de vorm ziet. Stel je een ei voor, uitgerekt, bijna maar niet helemaal in balans bij het Lagrangepunt L2 van Aarde-Maan, met de dichtste passage boven de zuidpool van de Maan. Het ruimtevaartuig doorloopt die lus eens per ~6,5 dagen."
+ },
+ {
+  "rel": "science/mission-phases/nrho.json",
+  "at": "narrative_101.1",
+  "old": "Waarom juist deze baan, uit alle mogelijke banen? Het is een perfect compromis. Het kost bijna geen brandstof om in stand te houden — ongeveer 5 meter per seconde per jaar voor stationkeeping, wat in feite gratis is. Het heeft altijd een duidelijk zichtlijn terug naar de Aarde, dus radiocontact wordt nooit door de Maan geblokkeerd. En één kant van het ei duikt dicht genoeg naar de Maan zodat landers naar de zuidpool kunnen gaan en terugkomen zonder enorme ∆v-kosten.",
+  "new": "Waarom juist deze baan, uit alle mogelijke banen? Het is een perfect compromis. Hij kost bijna geen brandstof om te onderhouden — ongeveer 5 meter per seconde per jaar aan baanonderhoud, wat in feite gratis is. Hij heeft altijd een vrije zichtlijn naar de Aarde, dus het radiocontact wordt nooit door de Maan geblokkeerd. En één uiteinde van het ei komt dicht genoeg bij de Maan dat landers naar de zuidpool kunnen afdalen en weer terugkeren zonder enorme ∆v-kosten."
+ },
+ {
+  "rel": "science/mission-phases/nrho.json",
+  "at": "body_paragraphs.0",
+  "old": "Een NRHO is een haloorbaan — een periodieke drielichaamstrajectorie die rond een Lagrangepunt draait — maar uitgerekt tot één kant bijna de zuidpool van de Maan raakt. Het ziet er meer uit als een poolbaan dan een halorbaan, vandaar 'near-rectilinear'. Één volledige omwenteling duurt ongeveer 6,5 dagen; de '9' in de Gateway 9:2 resonantie verwijst naar negen NRHO-omwentelingen per twee synodische maanmaanden, niet een periode van 9 dagen.",
+  "new": "Een NRHO is een halobaan — een periodiek drielichamentraject dat om een Lagrangepunt heen loopt — maar zo uitgerekt dat het ene uiteinde bijna de zuidpool van de Maan raakt. Hij lijkt meer op een poolbaan dan op een halo, vandaar 'near-rectilinear'. Eén volledige omloop duurt ongeveer 6,5 dagen; de '9' in de 9:2-resonantie van Gateway verwijst naar negen NRHO-omlopen per twee synodische maanden, niet naar een periode van 9 dagen."
+ },
+ {
+  "rel": "science/mission-phases/nrho.json",
+  "at": "body_paragraphs.1",
+  "old": "Waarom deze baan? Stabiliteit met lage ∆v-onderhoudsvereisten — ongeveer 5 m/s per jaar stationkeeping. Continue zichtlijn naar de Aarde (Gateway gaat nooit lang achter de Maan). Goedkope ∆v-toegang vanaf de Aarde (ongeveer 4 km/s voor overdracht en inbrengen, vergelijkbaar met LLO maar met veel betere thermische stabiliteit). Toegang tot het maanoppervlak via kleine landers vanuit perilunium.",
+  "new": "Waarom deze baan? Stabiliteit met weinig ∆v-onderhoud — ongeveer 5 m/s per jaar aan baanonderhoud. Continue zichtlijn naar de Aarde (Gateway gaat nooit lang achter de Maan). Goedkope ∆v-toegang vanaf de Aarde (ongeveer 4 km/s voor overdracht en inbrengen, vergelijkbaar met LLO maar met veel betere thermische stabiliteit). Toegang tot het maanoppervlak via kleine landers vanuit het perilunium."
+ },
+ {
+  "rel": "science/mission-phases/nrho.json",
+  "at": "diagram_caption",
+  "old": "Uitgerekte halorbaan op het Aarde-Maan L2-punt: ~6,5-dagse periode, perilunium boven de zuidpool, continue zichtlijn naar de Aarde.",
+  "new": "Uitgerekte haloorbaan bij het Aarde-Maan-L2-punt: periode van ~6,5 dagen, perilunium boven de zuidpool, continue zichtlijn naar de Aarde."
+ },
+ {
+  "rel": "science/mission-phases/optical-comms.json",
+  "at": "intro_sentence",
+  "old": "Laserbanden dragen 10–100 keer meer data dan radiogolven bij hetzelfde vermogen en dezelfde apertuur, ten koste van nauwkeurigheid van micro-radialen.",
+  "new": "Laserverbindingen dragen 10–100 keer meer data dan radio bij hetzelfde vermogen en dezelfde apertuur, ten koste van een richtnauwkeurigheid die in microradialen wordt gemeten."
+ },
+ {
+  "rel": "science/mission-phases/optical-comms.json",
+  "at": "body_paragraphs.0",
+  "old": "Elk ruimtevaartuig dat met de Aarde communiceert maakt gebruik van radio — een goed begrepen technologie die matige aanwijzingsfouten tolereert en door wolken heen gaat. De fundamentele limiet is bandbreedte: radiofrequenties zijn gereglementeerd en de fysica van diffractie bepaalt hoe strak je een straal kunt pakken. Optische communicatie vervangt de radiodrager door een laserlicht in het nabij-infrarood. Dezelfde fysica die de straal potlood-dun maakt, concentreert ook de energie, zodat een bepaald uitgezonden vermogen veel meer bits per seconde levert bij de ontvanger.",
+  "new": "Elk ruimtevaartuig dat met de Aarde communiceert, gebruikt radio — een goed begrepen technologie die matige richtfouten verdraagt en door wolken heen gaat. De fundamentele limiet is de bandbreedte: radiofrequenties zijn gereguleerd en de natuurkunde van diffractie bepaalt hoe smal je een bundel kunt maken. Optische communicatie vervangt de radiodrager door een laser in het nabije infrarood. Dezelfde natuurkunde die de bundel potloodsmal maakt, concentreert ook de energie, zodat een bepaald zendvermogen bij de ontvanger veel meer bits per seconde oplevert."
+ },
+ {
+  "rel": "science/mission-phases/optical-comms.json",
+  "at": "body_paragraphs.1",
+  "old": "De demonstrator voor optische communicatie in de diepe ruimte van NASA (DSOC), aan boord van het ruimtevaartuig Psyche, toonde wat dit in de praktijk betekent. In de tweede helft van 2023 en begin 2024 bereikt DSOC downlink-snelheden in de orde van honderden megabits per seconde vanuit tientallen miljoen kilometer — snelheden vergelijkbaar met breedband glasvezel, vanuit de diepe ruimte. NASA's Laser Communications Relay Demonstration (LCRD), sinds 2021 in geostationaire baan actief, bewees de relay-architectuur: een ruimtegebaseerd optisch knooppunt dat ruimtevaartuigen en grondstations verbindt.",
+  "new": "De Deep Space Optical Communications-demonstrator (DSOC) van NASA, die aan boord van het ruimtevaartuig Psyche vloog, liet zien wat dit in de praktijk betekent. Eind 2023 en begin 2024 haalde DSOC downlinksnelheden in de orde van honderden megabits per seconde vanaf tientallen miljoenen kilometers — snelheden vergelijkbaar met breedbandglasvezel, vanuit de diepe ruimte. De Laser Communications Relay Demonstration (LCRD) van NASA, sinds 2021 actief vanuit een geostationaire baan, bewees de relaisarchitectuur: een optisch knooppunt in de ruimte dat ruimtevaartuigen en grondstations met elkaar verbindt."
+ },
+ {
+  "rel": "science/mission-phases/optical-comms.json",
+  "at": "body_paragraphs.2",
+  "old": "De voordelen zijn reëel maar de kosten zijn hoog. Een straal smal genoeg om hoge bandbreedte te dragen is ook smal genoeg dat een kleine aanwijzingsfout de ontvanger volledig mist. Grondstations moeten het ruimtevaartuig volgen met nauwkeurigheid in micro-radialen, en het ruimtevaartuig moet zijn laser op een bewegend doel (de Aarde) richten terwijl het zelf beweegt en draait. Atmosferische turbulentie en, vooral praktisch, wolken blokkeren optische golflengte volledig — dus optische grondnetwerken hebben ofwel meerdere geografisch verspreide stations ofwel een ruimterelay nodig om dekking te garanderen.",
+  "new": "De voordelen zijn reëel, maar de prijs is hoog. Een bundel die smal genoeg is om veel bandbreedte te dragen, is ook zo smal dat een kleine richtfout de ontvanger volledig mist. Grondstations moeten het ruimtevaartuig tot op microradialen nauwkeurig volgen, en het ruimtevaartuig moet zijn laser op een bewegend doel (de Aarde) richten terwijl het zelf beweegt en draait. Turbulentie in de atmosfeer en, het meest praktisch, wolken blokkeren optische golflengten volledig — dus optische grondnetwerken hebben ofwel meerdere geografisch verspreide stations ofwel een relais in de ruimte nodig om dekking te garanderen."
+ },
+ {
+  "rel": "science/mission-phases/optical-comms.json",
+  "at": "body_paragraphs.3",
+  "old": "Optische communicatie is een bandbreedtetechnologie, geen latentietechnologie. De fotonen reizen nog steeds met de snelheid van het licht; een signaal naar Mars duurt 4–24 minuten heen en terug, ongeacht of het radio of laser is. Wat verandert is hoeveel wetenschapsgegevens een enkel contactvenster kan dragen — en voor missies die petabytes aan beeldmateriaal of radargegevens terugbrengen, is dat verschil missiebepalend.",
+  "new": "Optische communicatie is een bandbreedtetechnologie, geen vertragingstechnologie. De fotonen reizen nog steeds met de lichtsnelheid; een signaal naar Mars doet er elke kant op 4–24 minuten over, of het nu radio of laser is. Wat verandert, is hoeveel wetenschappelijke data één contactvenster kan dragen — en voor missies die petabytes aan beelden of radargegevens terugsturen is dat verschil bepalend voor de missie."
+ },
+ {
+  "rel": "science/mission-phases/optical-comms.json",
+  "at": "diagram_caption",
+  "old": "Laserstraal van ruimtevaartuig → zeer smalle divergentiehoek → veel hoger ontvangen vermogen per Hz → veel hogere datahoeveelheid per watt dan radio, maar aanwijzingstolerantie gemeten in micro-radialen.",
+  "new": "Laserbundel van het ruimtevaartuig → kleine divergentiehoek → veel hoger ontvangen vermogen per Hz → ordes van grootte meer data per watt dan radio, maar met een richttolerantie die in microradialen wordt gemeten."
+ },
+ {
+  "rel": "science/mission-phases/orbit-insertion.json",
+  "at": "narrative_101.0",
+  "old": "Je bent acht maanden lang coasting geweest. Je ziet Mars steeds groter worden buiten het raam. Als je niets doet, vliegen je langs Mars en ga je door naar het zonnestelsel, om nooit terug te keren. Om werkelijk in een baan te gaan, moet je remmen. Die remstoot — Lunar Orbit Insertion of Mars Orbit Insertion of welke planeet je ook benadert — is het kritieke moment van elke baanmissie.",
+  "new": "Je hebt acht maanden gevlogen zonder te remmen. Door het raam zie je Mars steeds groter worden. Als je niets doet, vlieg je langs Mars en ga je door het zonnestelsel verder, om nooit terug te keren. Om echt in een baan te komen, moet je remmen. Die remstoot — Lunar Orbit Insertion of Mars Orbit Insertion of welke planeet je ook bereikt — is het kritieke moment van elke baanmissie."
+ },
+ {
+  "rel": "science/mission-phases/orbit-insertion.json",
+  "at": "narrative_101.1",
+  "old": "De wiskunde kent geen genade. Je nadert een planeet met een restsnelheid van enkele kilometers per seconde (V∞). Om te blijven moet je onder de lokale ontsnappingssnelheid van de planeet gaan. Dat betekent een lange, intense en nauwkeurig getimede motorstoot op precies het dichtste punt van de planeet, waar Oberth je de meest efficiënte remming geeft. Mars Reconnaissance Orbiter brandde 27 minuten lang. Cassini's Saturnus-invoeg duurde ongeveer 96 minuten — de langste stoot die het ruimtevaartuig ooit maakte.",
+  "new": "De wiskunde kent geen genade. Je nadert een planeet met een restsnelheid van enkele kilometers per seconde (V∞). Om te blijven moet je onder de lokale ontsnappingssnelheid van de planeet komen. Dat vraagt om een lange, krachtige en nauwkeurig getimede motorstoot precies in het dichtstbijzijnde punt bij de planeet, waar het Oberth-effect je de efficiëntste remming geeft. Mars Reconnaissance Orbiter brandde 27 minuten. Cassini's inbrengstoot bij Saturnus duurde ~96 minuten — de langste stoot die het ruimtevaartuig ooit maakte."
+ },
+ {
+  "rel": "science/mission-phases/orbit-insertion.json",
+  "at": "narrative_101.2",
+  "old": "Als de stoot mislukt of onderpresteerd, ontsnap je, en er is geen tweede kans. Mars Climate Orbiter in 1999 had een eenheidconversiefout — pond-kracht verward met newton — zijn invoegstoot was te zwak, het kwam te dicht bij Mars, en atmosferische weerstand vernietigde het. De missie ging verloren in seconden. Dit is waarom het ontwerp van baansinvoeg een van de meest voorzichtige engineering-activiteiten is die mensen doen.",
+  "new": "Mislukt de stoot of presteert hij onder de maat, dan ontsnap je, en er is geen tweede kans. Mars Climate Orbiter had in 1999 een fout bij het omrekenen van eenheden — pound-force verward met newton — waardoor de inbrengstoot te zwak was, het ruimtevaartuig te dicht bij Mars kwam en de atmosferische weerstand het vernietigde. De missie ging in seconden verloren. Daarom is het ontwerp van het baaninbrengen een van de meest paranoïde ingenieursactiviteiten die mensen doen."
+ },
+ {
+  "rel": "science/mission-phases/orbit-insertion.json",
+  "at": "body_paragraphs.0",
+  "old": "Als je ruimtevaartuig het doel bereikt, beweegt het snel — snel genoeg om te ontsnappen als je niets doet. Om in een baan te worden gevangen, moet je genoeg snelheid afstoten om onder de lokale ontsnappingssnelheid te gaan. Die remstoot is de baansinvoeg. LOI voor maanvaartuigen (Apollo, LRO), MOI voor Mars (MAVEN, MRO, Tianwen-1), enzovoort.",
+  "new": "Wanneer je ruimtevaartuig op de bestemming aankomt, beweegt het snel — snel genoeg om te ontsnappen als je niets doet. Om in een baan te worden ingevangen, moet je genoeg snelheid wegremmen om onder de lokale ontsnappingssnelheid te komen. Die remstoot is het inbrengen in een baan. LOI voor de Maan (Apollo, LRO), MOI voor Mars (MAVEN, MRO, Tianwen-1), enzovoort."
+ },
+ {
+  "rel": "science/mission-phases/orbit-insertion.json",
+  "at": "body_paragraphs.1",
+  "old": "De stoot vindt plaats bij de periapsis van de inkomende hyperbool, waar Oberth de stoot het goedkoopste maakt. De grootte hangt af van V∞ — de restsnelheid op oneindig — en de gewenste baanhoogte. Mars MRO arriveerde met V∞ ≈ 2,6 km/s en gebruikte ongeveer 1 km/s `∆v` voor invanging. Cassini's Saturnus-baansinvoeg was ongeveer een 96-minuten-stoot, de langste in het leven van het ruimtevaartuig.",
+  "new": "De stoot vindt plaats in de periapsis van de aankomsthyperbool, waar het Oberth-effect de stoot het goedkoopst maakt. De omvang hangt af van V∞ — de restsnelheid op oneindig — en de gewenste baanhoogte. MRO bij Mars kwam aan met V∞ ≈ 2,6 km/s en gebruikte ongeveer 1 km/s `∆v` voor de inbreng. De stoot waarmee Cassini in een baan om Saturnus kwam duurde ~96 minuten, de langste in het leven van het ruimtevaartuig."
+ },
+ {
+  "rel": "science/mission-phases/orbit-insertion.json",
+  "at": "body_paragraphs.2",
+  "old": "Als de stoot mislukt of onderpresteerd, ontsnapt het ruimtevaartuig. Er is geen tweede kans. Mars Climate Orbiter is de waarschuwing: een eenheidconversiefout betekende dat zijn MOI-stoot te laag was, het ruimtevaartuig kwam te dicht voorbij, en atmosferische weerstand scheurde het uiteen.",
+  "new": "Mislukt de stoot of presteert hij onder de maat, dan ontsnapt het ruimtevaartuig. Er is geen tweede kans. Mars Climate Orbiter is het waarschuwende voorbeeld: door een fout bij het omrekenen van eenheden was de MOI-stoot te zwak, kwam het ruimtevaartuig te dicht bij de planeet en scheurde de atmosferische weerstand het uiteen."
+ },
+ {
+  "rel": "science/mission-phases/propulsive-landing.json",
+  "at": "title",
+  "old": "Landen op stuwkracht",
+  "new": "Voortgestuwde landing"
+ },
+ {
+  "rel": "science/mission-phases/propulsive-landing.json",
+  "at": "intro_sentence",
+  "old": "Landing op raketmotoren alleen — de enige manier omlaag op een wereld zonder lucht zoals de Maan, en hoe een reus als Starship op Mars zal neerdalen.",
+  "new": "Alleen op raketmotoren landen — de enige manier omlaag op een wereld zonder lucht zoals de Maan, en de manier waarop een reus als Starship op Mars zal neerkomen."
+ },
+ {
+  "rel": "science/mission-phases/propulsive-landing.json",
+  "at": "narrative_101.0",
+  "old": "Op een wereld zonder lucht is er niets voor een parachute om grip op te krijgen. De enige manier om af te remmen is een motor naar de grond te wijzen en te branden — propellant ruilen voor elke meter per seconde snelheid die je moet opheffen. Dit is voortgestuwde landing, en zo hebben alle maanlanders van Apollo tot vandaag geland: een lange rembranding, gevolgd door zachtjes gasgeven om tot stilstand op het oppervlak te komen.",
+  "new": "Op een wereld zonder lucht heeft een parachute niets om zich aan vast te grijpen. De enige manier om af te remmen is een motor naar de grond richten en branden — drijfgas ruilen voor elke meter per seconde snelheid die je moet wegnemen. Dit is voortgestuwde landing, en zo is elke maanlander van Apollo tot vandaag geland: een lange remstoot, gevolgd door een rustig, teruggeregeld zweven naar het oppervlak."
+ },
+ {
+  "rel": "science/mission-phases/propulsive-landing.json",
+  "at": "narrative_101.1",
+  "old": "Het is onvergeeflijk. Neem te weinig propellant mee en je raakt op voordat je stopt; bedien de motor verkeerd en je slaat neer of klimt weer omhoog. De motor moet diep regelbaar zijn, de geleiding moet het brandstof-versus-tijd probleem in realtime oplossen, en er is geen tweede kans — je kunt geen parachute uitstekken. Apollo's astronauten zagen de brandstofmeter naar nul dalen terwijl zij naar een veilige plek zochten.",
+  "new": "Het is onvergeeflijk. Neem je te weinig drijfgas mee, dan ben je op voordat je stilstaat; regel je verkeerd, dan sla je te hard neer of klim je weer omhoog. De motor moet diep regelbaar zijn, de geleiding moet het probleem van brandstof tegen tijd in realtime oplossen, en er is geen tweede kans — je kunt geen parachute opnieuw uitklappen. De bemanningen van Apollo keken hoe de brandstofmeter richting nul zakte terwijl ze op zoek waren naar een veilige plek."
+ },
+ {
+  "rel": "science/mission-phases/propulsive-landing.json",
+  "at": "narrative_101.2",
+  "old": "Mars zit ertussenin. Zijn lucht is dun — genoeg om een lichte lander met parachute te helpen, maar nutteloos voor een voertuig zo massief als SpaceX's Starship. Voor die dingen is het plan voortgestuwde landing helemaal: hypersonische ingang om het meeste van de snelheid op het hiteschild af te remmen, dan een landingsbranding naar het oppervlak, helemaal geen parachute — zeer veel zoals landen op de Maan, maar dan aankomst door een zuchtje atmosfeer.",
+  "new": "Mars zit daartussenin. De lucht is er dun — genoeg om een lichte lander met een parachute te helpen, maar nutteloos voor een voertuig zo massief als Starship van SpaceX. Voor zulke voertuigen is het plan helemaal voortgestuwd: een hypersonische intrede om het grootste deel van de snelheid op het hitteschild kwijt te raken, daarna een landingsstoot naar het oppervlak, helemaal zonder parachute — veel zoals landen op de Maan, maar dan door een zuchtje atmosfeer heen."
+ },
+ {
+  "rel": "science/mission-phases/propulsive-landing.json",
+  "at": "body_paragraphs.0",
+  "old": "De propellantkosten worden bepaald door de raketvergelijking en de snelheid die je moet opheffen. Op de Maan moet een lander zijn volledige baan- of naderingssnelheid op de motor opheffen, daarom bestaat veel van de massa van een maanlander uit brandstof. Op Mars doet de atmosfeer het dure eerste deel gratis voor je (het hiteschild), waardoor de motor alleen de laatste, langzame kilometer hoeft af te handelen — maar voor een zwaar voertuig is dat ook al een grote branding.",
+  "new": "De drijfgaskosten worden bepaald door de raketvergelijking en de snelheid die moet worden weggenomen. Op de Maan moet een lander zijn volledige baan- of naderingssnelheid met de motor wegnemen, en daarom bestaat zo veel van de massa van een maanlander uit brandstof. Op Mars neemt de atmosfeer het dure eerste deel gratis voor haar rekening (via het hitteschild), zodat de motor alleen de laatste, trage kilometers hoeft te doen — maar voor een zwaar voertuig is ook dat een grote stoot."
+ },
+ {
+  "rel": "science/mission-phases/propulsive-landing.json",
+  "at": "body_paragraphs.1",
+  "old": "Gasregeling is het hart ervan. Een landingsmotor moet soepel kunnen lopen van volledige stuwkracht naar een fractie daarvan, zodat het voertuig een vallende afdaalsnelheid kan volgen en bij stapsnelheid op de grond kan stilstaan. Diep regelbare motoren (de Apollo afdalingsmotor, de sky-crane's MLE-thrusters, Starship's Raptors) maken een gecontroleerde landing — eerder dan een gecontroleerde crash — mogelijk.",
+  "new": "Gasregeling is de kern. Een landingsmotor moet soepel kunnen werken van volle stuwkracht tot een fractie ervan, zodat het voertuig een dalend schema van daalsnelheden kan volgen en op wandeltempo op de grond kan neerkomen. Diep regelbare motoren (de afdalingsmotor van Apollo, de MLE-motoren van de sky-crane, de Raptors van Starship) maken een gecontroleerde landing mogelijk — in plaats van een gecontroleerde crash."
+ },
+ {
+  "rel": "science/mission-phases/propulsive-landing.json",
+  "at": "body_paragraphs.2",
+  "old": "Op `/fly` is elke maanlanding in `?descent=1` voortgestuwd van begin tot eind (geen parachute in vacuüm), en de Starship Mars-profielen remmen op het hiteschild en landen op hun motoren. De afstelhoogtemeter retro-indicator + de brandstofmeting volgen de branding — dezelfde opgave die Apollo's crews oog-gebaseerd hebben opgelost, nu getoond als live telemetrie.",
+  "new": "Op `/fly` is elke maanlanding in `?descent=1` van begin tot eind voortgestuwd (geen parachute in vacuüm), en de Starship-profielen voor Mars remmen op het hitteschild en landen daarna op hun motoren. De retro-indicator van de afdaal-HUD en de brandstofmeter volgen de stoot — hetzelfde probleem dat de bemanningen van Apollo op het oog oplosten, nu getoond als live telemetrie."
+ },
+ {
+  "rel": "science/mission-phases/propulsive-landing.json",
+  "at": "diagram_caption",
+  "old": "Voortgestuwde landing: zonder bruikbare lucht heft een motor direct de afdaalsnelheid op — een rembranding, dan voorzichtig gasgeven tot touchdown.",
+  "new": "Voortgestuwde landing: zonder bruikbare lucht neemt een motor de daalsnelheid rechtstreeks weg — een remstoot, daarna teruggeregeld zweven tot de landing."
+ },
+ {
+  "rel": "science/mission-phases/skip-entry.json",
+  "at": "title",
+  "old": "Skip-entry — terugkaatsen uit de atmosfeer",
+  "new": "Skip-terugkeer — de atmosfeer weer uit surfen"
+ },
+ {
+  "rel": "science/mission-phases/skip-entry.json",
+  "at": "intro_sentence",
+  "old": "In plaats van alle terugkeersnelheid van de maan in één duik te verliezen, springt de capsule eruit, glijdt en keert terug — twee mildere pieken van hitte en g in plaats van één.",
+  "new": "In plaats van de snelheid van een maanterugkeer in één duik kwijt te raken, springt de capsule de atmosfeer uit, glijdt door en keert terug — twee mildere pieken in hitte en g in plaats van één."
+ },
+ {
+  "rel": "science/mission-phases/skip-entry.json",
+  "at": "narrative_101.0",
+  "old": "Iets dat terugvalt uit een lage baan om de aarde bereikt een snelheid van ongeveer 7,8 kilometer per seconde. Iets dat terugvalt van de Maan bereikt ongeveer 11 km/s. Die extra snelheid is een enorme hoeveelheid extra energie, die allemaal in warmte moet worden omgezet, en het dumpen ervan in één doortocht betekent een scherper hoogtepunt van verwarming en vertraging. Apollo-bemanning keerde vanuit de Maan in één doortocht naar huis, dus het kan overleefd worden, maar sommige van de snelste terugkeren doen iets dat als een fout klinkt: ze maken opzettelijk een skip.",
+  "new": "Iets dat uit een lage baan om de Aarde terugvalt, komt aan met ongeveer 7,8 kilometer per seconde. Iets dat van de Maan terugvalt, komt aan met ongeveer 11 km/s. Die extra snelheid is een enorme hoeveelheid extra energie, die allemaal in warmte moet worden omgezet, en alles in één passage kwijtraken betekent een scherpere piek in verhitting en vertraging. De Apollo-bemanningen kwamen in één passage van de Maan naar huis, dus het is te overleven, maar sommige van de snelste terugkeren doen iets dat als een fout klinkt: ze maken opzettelijk een skip."
+ },
+ {
+  "rel": "science/mission-phases/skip-entry.json",
+  "at": "narrative_101.1",
+  "old": "De capsule duikt in de bovenste atmosfeer, gebruikt de lift om net genoeg snelheid af te remmen, en trekt zich dan terug en glijdt — even — terug boven de dichte lucht, een lange ballistisch boog door bijna-vacuüm, voordat het een tweede keer naar beneden gaat voor de uiteindelijke afdaling. Het is dezelfde fysica als een steen over water kaatsen, behalve dat het doel niet is om omhoog te blijven maar om de straf van terugkeer over twee zachter hapjes te verdelen in plaats van één verschrikkelijk hapje.",
+  "new": "De capsule duikt de bovenste atmosfeer in, gebruikt haar lift om net genoeg snelheid af te remmen, trekt dan weer op en glijdt — kort — terug boven de merkbare lucht, in een lange ballistische boog door bijna-vacuüm, voordat ze een tweede keer naar beneden valt voor de uiteindelijke afdaling. Het is dezelfde natuurkunde als een steen over water laten keilen, behalve dat het doel niet is om hoog te blijven, maar om de straf van de terugkeer over twee mildere happen te verdelen in plaats van één wrede."
+ },
+ {
+  "rel": "science/mission-phases/skip-entry.json",
+  "at": "narrative_101.2",
+  "old": "De bemande Apollo-vluchten gebruikten geen skip-entry, maar de onbemande Sovjet Zond-sondes (Zond 6 en 7) demonstreerden een dubbele skip-entry met geleiding. Chinees Chang'e 5, dat monsters teruggracht, gebruikte skip-entry om de snelheid van maanretournering af te remmen voordat het in Binnen-Mongolië landde. NASA's Orion voert een skip-guidance entry uit op Artemis — de skip vergroot ook het bereikbare bereik met duizenden kilometers, zodat de capsule vanuit een breder scala aan aankomstvoorwaarden een bergingszone in de buurt van de vloot kan bereiken.",
+  "new": "De Apollo-vluchten met bemanning maakten geen skip, maar de onbemande Sovjet-sondes Zond 6 en 7 lieten een gestuurde terugkeer met dubbele duik zien, de monsterterugkeer van het Chinese Chang'e 5 maakte een skip om de snelheid van de maanterugkeer af te remmen voor de landing in Binnen-Mongolië, en NASA's Orion vliegt op Artemis een terugkeer met skip-geleiding — de skip rekt ook het bereikbare gebied met duizenden kilometers op, zodat de capsule vanuit een bredere reeks aankomstomstandigheden een bergingszone bij de vloot kan halen."
+ },
+ {
+  "rel": "science/mission-phases/skip-entry.json",
+  "at": "body_paragraphs.0",
+  "old": "Een skip entry is ontworpen voor terugkeer sneller dan de snelheid van een cirkelbaan op die hoogte (~7,9 km/s laag neer) — een \"supercirculaire\" terugkeer. Tijdens de eerste duik gebruikt het voertuig lift-up om de afdaling af te remmen en genoeg snelheid af te voeren zodat het de duik suborbitaal verlaat, oprijzend op een ballistische boog terug uit de waarneembare atmosfeer. Die exo-atmosferische vaart — energie behouden, geen weerstand — voert het mee totdat het terug valt voor de tweede, uiteindelijke entry.",
+  "new": "Een skip-terugkeer is ontworpen voor terugkeren die sneller gaan dan een cirkelbaan op die hoogte (~7,9 km/s vlak boven het oppervlak) — een \"supercirculaire\" terugkeer. Tijdens de eerste duik gebruikt het voertuig lift omhoog om de daling te stoppen en genoeg snelheid af te voeren om de duik suborbitaal te verlaten, in een ballistische boog weer omhoog uit de merkbare atmosfeer. Die vlucht buiten de atmosfeer — energie behouden, geen weerstand — voert het mee tot het terugvalt voor de tweede, definitieve terugkeer."
+ },
+ {
+  "rel": "science/mission-phases/skip-entry.json",
+  "at": "body_paragraphs.1",
+  "old": "De voordelen zijn tweeledig. Piekverwarming en piekafremming zijn lager, omdat de energie in twee passages in plaats van één wordt afgevoerd. En de bereikbare afstand neerwaarts groeit dramatisch — de kust tussen duiken kan zich over duizenden kilometers uitstrekken — waardoor missionplanners vanuit een breed scala aan aankomstvoorwaarden een specifieke bergingszone kunnen bepalen. De totale hitte die door het schild wordt opgenomen is niet noodzakelijk kleiner: een skip rekt de entry uit in de tijd, dus het schild moet nog steeds worden gedimensioneerd voor de hele, langere blootstelling.",
+  "new": "Het voordeel is tweeledig. De piekverhitting en de piekvertraging zijn lager, omdat de energie in twee passages wordt afgevoerd in plaats van in één. En de bereikbare afstand in vliegrichting groeit enorm — de glijvlucht tussen de duiken kan duizenden kilometers beslaan — zodat missieplanners een specifieke bergingszone kunnen aanvliegen vanuit een brede reeks aankomstomstandigheden. De totale hitte die het schild opneemt, is niet per se kleiner: een skip rekt de terugkeer in de tijd uit, dus het schild moet nog steeds worden gedimensioneerd voor de hele, langere blootstelling."
+ },
+ {
+  "rel": "science/mission-phases/skip-entry.json",
+  "at": "body_paragraphs.2",
+  "old": "De kosten zijn navigatiedoelstelling moeilijkheid: het voertuig moet de eerste dip nauwkeurig beoordelen, want te weinig energie afgevoerd en het springt te hoog terug of komt niet nuttig naar beneden, te veel en het verlaat nooit de atmosfeer. Moderne skip-guidance (zoals op Orion) lost dit in een gesloten lus op, moduleert bankhoek door de eerste ingang om de uitgangsvoorwaarden — en daarom de tweede ingang en het landingspunt — exact waar ze moeten zijn.",
+  "new": "De prijs is een lastiger geleiding: het voertuig moet de eerste duik precies beoordelen, want als er te weinig energie wordt afgevoerd, springt het te hoog of komt het niet bruikbaar weer omlaag, en bij te veel verlaat het de atmosfeer nooit. Moderne skip-geleiding (zoals op Orion) lost dit in gesloten lus op en stuurt de rolhoek tijdens de eerste intrede bij om de uittredecondities — en daarmee de tweede intrede en het landingspunt — precies te laten uitkomen waar ze moeten zijn."
+ },
+ {
+  "rel": "science/mission-phases/skip-entry.json",
+  "at": "diagram_caption",
+  "old": "Super-cirkelvormige skip: een eerste atmosferische dip voert energie af, het voertuig klimt terug in een exo-atmosferische glijvlucht, en keert dan terug — twee zachter hapjes in plaats van één, en duizenden km meer bereik.",
+  "new": "Supercirculaire skip: een eerste duik in de atmosfeer voert energie af, het voertuig klimt terug in een glijvlucht buiten de atmosfeer en keert dan terug — twee milde happen in plaats van één, en duizenden km meer bereik."
+ },
+ {
+  "rel": "science/mission-phases/skycrane.json",
+  "at": "narrative_101.0",
+  "old": "Vroege Marsrovers waren klein genoeg om naar beneden te stuiteren in een cocon van airbags. Maar Curiosity was zo groot als een auto — veel te zwaar voor airbags — en grote landingspoten onder de rover plaatsen zou hebben betekend dat deze hoog op een omvangrijk platform werd gezet, waarna het er op een of andere manier af moest rijden. NASAs antwoord was vreemder en eleganter: de sky-crane.",
+  "new": "Vroege Marsrovers waren klein genoeg om in een cocon van airbags naar beneden te stuiteren. Maar Curiosity was zo groot als een auto — veel te zwaar voor airbags — en grote landingspoten onder de rover zouden hebben betekend dat hij hoog op een logge landingsmodule zou zitten, waar hij dan op een of andere manier vanaf zou moeten rijden. NASA's antwoord was vreemder en eleganter: de sky-crane."
+ },
+ {
+  "rel": "science/mission-phases/skycrane.json",
+  "at": "narrative_101.1",
+  "old": "Nadat de hitteschild en parachute hun werk hebben gedaan, neemt een raketaangedreven daaltrap het over en vuurt acht motoren af om tot een bijna-zweven op enkele meters hoogte af te remmen. Dan, in plaats van zelf te landen, laat het de rover eronder zakken aan een reeks kabels — als een helikopter die een last plaatst — totdat de wielen van de rover de grond raken. De rover is zelf zijn landingsgestel.",
+  "new": "Nadat het hitteschild en de parachute hun werk hebben gedaan, neemt een door raketten aangedreven daaltrap het over, die acht motoren afvuurt om af te remmen tot bijna zweven op enkele meters hoogte. Dan, in plaats van zelf te landen, laat hij de rover onder zich zakken aan een stel kabels — als een helikopter die een last neerzet — totdat de wielen van de rover de grond raken. De rover is zijn eigen landingsgestel."
+ },
+ {
+  "rel": "science/mission-phases/skycrane.json",
+  "at": "narrative_101.2",
+  "old": "Op het moment dat de rover beneden is en het gewicht van de kabels afvalt, snijdt de daaltrap de kabels door en vliegt weg om op veilige afstand neer te storten, zodat zijn uitlaat en puin de rover nooit raken. De hele reeks — zweven, zakken, landen, wegvliegen — duurt slechts enkele seconden, en het heeft nu twee keer gewerkt: voor Curiosity in 2012 en Perseverance in 2021.",
+  "new": "Zodra de rover beneden is en zijn gewicht van de kabels af is, snijdt de daaltrap de kabels door en vliegt weg om op veilige afstand neer te storten, zodat zijn uitlaatgassen en wrakstukken de rover nooit raken. De hele reeks — zweven, neerlaten, landen, wegvliegen — duurt maar enkele seconden en heeft nu twee keer gewerkt: voor Curiosity in 2012 en Perseverance in 2021."
+ },
+ {
+  "rel": "science/mission-phases/skycrane.json",
+  "at": "body_paragraphs.0",
+  "old": "De sky-crane lost twee problemen tegelijk op. Het houdt de raketmotoren hoog, zodat hun pluimen geen krater graven of puin tegen de rover gooien, en het levert de rover direct op zijn wielen af, klaar om te rijden — geen hellingen, geen landingsplatform om af te gaan. De prijs is een choreografie zonder foutmarge, autonoom uitgevoerd, minuten na een vurige ingang, terwijl de Aarde te ver weg is om in real-time te helpen.",
+  "new": "De sky-crane lost twee problemen tegelijk op. Hij houdt de raketmotoren hoog, zodat hun pluimen geen krater uitgraven en geen puin naar de rover gooien, en hij zet de rover direct op zijn wielen af, klaar om te rijden — geen hellingen, geen landingsdek om vanaf te rijden. De prijs is een choreografie zonder enige foutmarge, autonoom uitgevoerd, minuten na een vurige intrede, terwijl de Aarde te ver weg is om in realtime te helpen."
+ },
+ {
+  "rel": "science/mission-phases/skycrane.json",
+  "at": "body_paragraphs.1",
+  "old": "Het is het slothoofdstuk van de zeven minuten van terreur: ingangsverwarming, dan de supersone parachute, dan scheiding van de hitteschild, dan de aangedreven afdaling, dan de sky-crane-afdaling en wegvliegen — elke stap moet op tijd plaatsvinden of de missie gaat verloren bij landing. Slechts een handvol landen hebben zacht op Mars geland; de sky-crane is de meest gedurfde manier waarop het is gedaan.",
+  "new": "Het is het slothoofdstuk van de zeven minuten van terreur: verwarming bij de intrede, dan de supersonische parachute, dan het loslaten van het hitteschild, dan de aangedreven afdaling, dan het neerlaten en wegvliegen van de sky-crane — elke stap moet op het juiste moment vuren, anders gaat de missie bij de landing verloren. Slechts een handvol landen heeft überhaupt zacht op Mars geland; de sky-crane is de gedurfdste manier waarop het is gelukt."
+ },
+ {
+  "rel": "science/mission-phases/skycrane.json",
+  "at": "body_paragraphs.2",
+  "old": "Op `/fly`, vlieg Curiosity of Perseverance in `?descent=1` en bekijk hoe de kabels van de daaltrap zich uitrollen onder de parachute-en-terugsturingsvolgorde, de rover naar het oppervlak latend zakken voordat de trap wegvliegt — de sky-crane-beweging zichtbaar gemaakt.",
+  "new": "Vlieg op `/fly` Curiosity of Perseverance in `?descent=1` en zie hoe de kabels van de daaltrap uitlopen onder de volgorde van parachute en remraketten, terwijl de rover naar het oppervlak zakt voordat de trap wegvliegt — het sky-crane-moment zichtbaar gemaakt."
+ },
+ {
+  "rel": "science/mission-phases/star-trackers.json",
+  "at": "intro_sentence",
+  "old": "Een kleine camera gericht op de hemel, het identificeren van sterren door patroon-matching met een aan boord catalogus ... de meest accurate manier voor een ruimteschip om te weten welke kant het wijst.",
+  "new": "Een kleine camera die op de hemel is gericht en sterren herkent door patronen te vergelijken met een catalogus aan boord — de nauwkeurigste manier waarop een ruimtevaartuig kan weten welke kant het op wijst."
+ },
+ {
+  "rel": "science/mission-phases/star-trackers.json",
+  "at": "body_paragraphs.0",
+  "old": "Een ruimtevaartuig kan GPS niet vragen welke kant \"boven\" op is. Er is geen omhoog in de ruimte, en GPS bereikt toch niet langs LEO. Om een brandwond uit te voeren, een zonnepaneel in te zetten, of een hoge gain antenne op de Aarde te richten, moet het ruimtevaartuig zijn oriëntatie in de traagheidsruimte kennen. Het instrument dat dit levert is de ster tracker: een kleine CCD camera gericht op een stuk hemel, het nemen van een korte belichting, het identificeren van de sterren in de afbeelding door patroon-matching met een onboard catalogus (meestal de Hipparcos of Tycho-2 catalogus, ~104",
+  "new": "Een ruimtevaartuig kan niet aan GPS vragen welke kant \"boven\" is — in de diepe ruimte bestaat geen boven, en GPS reikt sowieso niet voorbij LEO. Om een motorstoot uit te voeren, een zonnepaneel uit te klappen of een hoogwinstantenne op de Aarde te richten, moet het ruimtevaartuig zijn oriëntatie in de inertiaalruimte kennen. Het instrument dat dat levert is de sterrensensor (star tracker): een kleine CCD-camera die op een stukje hemel is gericht, een korte belichting maakt en de sterren in het beeld herkent door patronen te vergelijken met een catalogus aan boord (meestal de Hipparcos- of Tycho-2-catalogus, ~10⁴–10⁵ sterren)."
+ },
+ {
+  "rel": "science/mission-phases/star-trackers.json",
+  "at": "body_paragraphs.1",
+  "old": "Zodra het drie of meer sterren heeft geïdentificeerd, bepaalt de geometrie op unieke wijze de oriëntatie van de camera. In combinatie met de kennis van hoe de camera op het ruimteschiplichaam wordt gemonteerd, is het resultaat een kwartion dat de ruimtevaartuighouding beschrijft tot 1 Moderne interplanetaire missies dragen twee of drie trackers in onafhankelijke oriëntaties, zodat ten minste één altijd een schoon zicht heeft (geen zonsverblinding, geen planeet in het gezichtsveld).",
+  "new": "Zodra het drie of meer sterren heeft herkend, ligt de oriëntatie van de camera door de geometrie eenduidig vast. Samen met de kennis van hoe de camera op het ruimtevaartuig is gemonteerd, levert dat een quaternion op dat de standhoek van het ruimtevaartuig beschrijft met een nauwkeurigheid van 1–10 boogseconden — beter dan elke andere sensor aan boord. Moderne interplanetaire missies hebben twee of drie sterrensensoren met onafhankelijke oriëntaties, zodat er altijd minstens één een vrij zicht heeft (geen zonlicht in de lens, geen planeet in het gezichtsveld)."
+ },
+ {
+  "rel": "science/mission-phases/star-trackers.json",
+  "at": "body_paragraphs.2",
+  "old": "Sterrensensoren werken continu tussen stoten door en bieden de absolute referentie die IMU-metingen (zie [dode navigatie](mission-phases/dead-reckoning)) nodig hebben om gekalibreerd te blijven. Zonder sterrensensoren drijft de IMU af en verliest de ruimtevaartuig oriëntatiekennis binnen enkele uren. Daarmee is de oriëntatie goed tot boogseconden gedurende jaren achtereen — lang genoeg om JWST op een sterrenstelsel 13 miljard lichtjaar ver weg te richten en de positie binnen milliboogseconden vast te houden gedurende een integratie van 100.000 seconden.",
+  "new": "Sterrensensoren werken continu tussen de motorstoten door en leveren de absolute referentie die de integrerende IMU-metingen (zie [dode navigatie](mission-phases/dead-reckoning)) nodig hebben om gekalibreerd te blijven. Zonder sterrensensoren drijft de IMU af en verliest het ruimtevaartuig binnen enkele uren zijn kennis van de stand. Met sterrensensoren blijft de stand jarenlang nauwkeurig tot op boogseconden — lang genoeg om JWST op een sterrenstelsel op 13 miljard lichtjaar te richten en de positie tijdens een integratie van 100.000 seconden tot op milliboogseconden vast te houden."
+ },
+ {
+  "rel": "science/mission-phases/star-trackers.json",
+  "at": "diagram_caption",
+  "old": "Camera neemt blootstelling → te identificeren sterren door driehoek-matching met catalogus → quaternion attitude oplossing → boogsecond-accurate \"welke kant wijs ik op?\" ",
+  "new": "De camera maakt een opname → sterren worden herkend door driehoeken te vergelijken met de catalogus → quaternion als oplossing voor de stand → \"welke kant wijs ik op?\" tot op de boogseconde nauwkeurig — om de paar seconden, voor altijd."
+ },
+ {
+  "rel": "science/mission-phases/tcm.json",
+  "at": "intro_sentence",
+  "old": "Een kleine brandstof-burn halverwege de reis om de kleine fouten te corrigeren die altijd in het lanceertraject sluipen.",
+  "new": "Een korte motorstoot halverwege de reis om de kleine fouten te corrigeren die altijd in het lanceertraject sluipen."
+ },
+ {
+  "rel": "science/mission-phases/tcm.json",
+  "at": "narrative_101.0",
+  "old": "Geen raketlancering is perfect. Na de stijgfase en de trans-X-injectie bevindt je ruimtevaartuig zich op ruwweg het juiste traject — maar \"ruwweg\" maakt veel uit wanneer je bestemming een kleine planeet is die 250 miljoen kilometer ver weg ligt. Een fout van 5 cm/s aan het begin van de reis vertaalt zich in 100 km mis-afstand bij Mars. Dus corrigeer je het.",
+  "new": "Geen enkele raketlancering is perfect. Na de opstijging en de trans-X-injectie zit je ruimtevaartuig op ruwweg het goede traject — maar \"ruwweg\" maakt veel uit als je bestemming een kleine planeet is op 250 miljoen kilometer afstand. Een fout van 5 cm/s aan het begin van de reis betekent bij Mars een misser van 100 km. Dus corrigeer je het."
+ },
+ {
+  "rel": "science/mission-phases/tcm.json",
+  "at": "narrative_101.1",
+  "old": "TCMs zijn kleine burns — meestal slechts een paar meter per seconde aan ∆v, soms minder — uitgevoerd weken of maanden na het begin van de reis, nadat grondvolging de tijd heeft gehad om exact te meten waar het ruimtevaartuig zich werkelijk bevindt. Goedkoop qua brandstof, maar operationeel kostbaar: elke burn is een kans dat er iets misgaat, dus missies plannen er zo min mogelijk.",
+  "new": "TCM's zijn kleine stoten — meestal maar een paar meter per seconde aan ∆v, soms minder — die weken of maanden na het begin van de reis worden uitgevoerd, nadat het volgen vanaf de grond de tijd heeft gehad om precies te meten waar het ruimtevaartuig werkelijk is. Goedkoop in brandstof, maar operationeel duur: elke stoot is een kans dat er iets kapotgaat, dus missies plannen er zo min mogelijk."
+ },
+ {
+  "rel": "science/mission-phases/tcm.json",
+  "at": "narrative_101.2",
+  "old": "De meeste interplanetaire missies plannen er vier. TCM-1 een paar dagen na de start. TCM-2 een paar weken na de start. TCM-3 dichter bij aankomst. TCM-4 de laatste bijstelling voordat de zwaartekracht van de planeet je grijpt. Apollo gebruikte vier tot vijf op weg naar de Maan en hetzelfde op de terugweg. Curiosity gebruikte er vier. Het /missions FLIGHT-tabblad vertelt je precies hoeveel TCM's elke missie gebruikte; het laagste aantal betekent meestal dat de lancering buitengewoon schoon was.",
+  "new": "De meeste interplanetaire missies plannen er vier. TCM-1 een paar dagen na de start. TCM-2 een paar weken na de start. TCM-3 dichter bij de aankomst. TCM-4 de laatste bijstelling voordat de zwaartekracht van de planeet je grijpt. Apollo gebruikte er vier tot vijf op weg naar de Maan en evenveel op de terugweg. Curiosity gebruikte er vier. Het VLUCHT-tabblad op /missions vertelt je precies hoeveel TCM's elke missie gebruikte; het laagste aantal betekent meestal dat de lancering uitzonderlijk zuiver was."
+ },
+ {
+  "rel": "science/mission-phases/tcm.json",
+  "at": "body_paragraphs.0",
+  "old": "Geen lancering is perfect. Het werkelijke traject vanaf het lanceervoertuig verschilt van het geplande traject met tientallen meters per seconde — klein in absolute termen, catastrofaal voor de aankomstnauwkeurigheid als het zo gelaten wordt. Een fout van 5 cm/s bij TLI vertaalt zich in 100 km mis-afstand bij de Maan. TCM's corrigeren die fouten voordat ze groeien.",
+  "new": "Geen enkele lancering is perfect. Het werkelijke traject na de draagraket verschilt tientallen meters per seconde van het geplande — in absolute zin klein, maar rampzalig voor de aankomstnauwkeurigheid als je er niets aan doet. Een fout van 5 cm/s bij TLI betekent bij de Maan een misser van 100 km. TCM's trimmen die fouten voordat ze groeien."
+ },
+ {
+  "rel": "science/mission-phases/tcm.json",
+  "at": "body_paragraphs.1",
+  "old": "De meeste missies plannen er drie of vier. TCM-1 vindt plaats binnen enkele dagen na de lancering, wanneer de lanceringsfout het beste gekarakteriseerd is. TCM-2 een paar weken later, nadat vroege tracking de baan verfijnt. TCM-3 dichter bij aankomst. TCM-4 is meestal een laatste naderingsbijstelling. Elk kost slechts meters per seconde — goedkoop qua brandstof, maar operationeel kostbaar (elke burn is een kans dat er iets misgaat).",
+  "new": "De meeste missies plannen er drie of vier. TCM-1 vindt plaats binnen enkele dagen na de lancering, wanneer de lanceerfout het best in kaart te brengen is. TCM-2 een paar weken later, nadat de eerste volgmetingen de baan hebben verfijnd. TCM-3 dichter bij de aankomst. TCM-4 is meestal een laatste bijstelling bij de nadering. Elke kost maar enkele meters per seconde — goedkoop in brandstof, maar operationeel duur (elke stoot is een kans dat er iets misgaat)."
+ },
+ {
+  "rel": "science/mission-phases/tcm.json",
+  "at": "body_paragraphs.2",
+  "old": "Het `tcm_count`-veld op de `/missions` FLIGHT-tabbladen rapporteert hoeveel TCM's elke missie gebruikte. Curiosity gebruikte er 4. Mars Reconnaissance Orbiter gebruikte er 4. Apollo-missies gebruikten 4-5 mid-course correcties op weg naar en van de Maan.",
+  "new": "Het veld `tcm_count` op de VLUCHT-tabbladen van `/missions` geeft aan hoeveel TCM's elke missie gebruikte. Curiosity gebruikte er 4. Mars Reconnaissance Orbiter gebruikte er 4. De Apollo-missies gebruikten 4-5 koerscorrecties onderweg naar de Maan en terug."
+ },
+ {
+  "rel": "science/mission-phases/terminal-velocity.json",
+  "at": "narrative_101.1",
+  "old": "Hoe zacht hangt af van de lucht. Mars heeft een atmosfeer ongeveer 1% zo dik als die van de aarde, dus zelfs een enorme supersonische parachute — die van Curiosity was meer dan 20 meter breed — vertraagt het voertuig slechts tot enkele honderden kilometer per uur. Dat is veel te snel om te landen, daarom hebben marslanders altijd een tweede fase nodig: tegenstuwraketten, airbags of een sky-crane om het werk af te maken.",
+  "new": "Hoe zacht, hangt af van de lucht. Mars heeft een atmosfeer die ongeveer 1% zo dik is als die van de Aarde, dus zelfs een enorme supersonische parachute — die van Curiosity was meer dan 20 meter breed — vertraagt het voertuig slechts tot enkele honderden kilometers per uur. Dat is veel te snel om te landen, daarom hebben Marslanders altijd een tweede bedrijf nodig: remraketten, airbags of een sky-crane om het karwei af te maken."
+ },
+ {
+  "rel": "science/mission-phases/terminal-velocity.json",
+  "at": "narrative_101.2",
+  "old": "Venus is het tegenovergestelde. Zijn atmosfeer is zo dicht — ongeveer 90 keer de oppervlaktedruk van de aarde — dat een Venera-lander slechts een kleine parachute hoog boven nodig had, deze daarna kon afwerpen en eenvoudig naar het oppervlak kon zinken op een bescheiden weerstandsplaat, zich gedurende een goed uur omlaag driftend. En de maan, zonder atmosfeer, heeft geen eindsnelheid: een maanlander moet elke meter per seconde van zijn snelheid met zijn motor opheffen, helemaal tot aan de landing.",
+  "new": "Venus is het tegenovergestelde. De atmosfeer is zo dicht — ongeveer 90 keer de druk aan het oppervlak van de Aarde — dat een Venera-lander hoog in de lucht aan een kleine parachute genoeg had, die vervolgens kon afwerpen en op een bescheiden weerstandsplaat gewoon naar het oppervlak kon zakken, ruim een uur lang omlaag zwevend. En de Maan, zonder enige atmosfeer, heeft geen eindsnelheid: een maanlander moet elke meter per seconde van zijn snelheid met zijn motor wegnemen, helemaal tot de landing."
+ },
+ {
+  "rel": "science/mission-phases/terminal-velocity.json",
+  "at": "body_paragraphs.0",
+  "old": "Het doorslaggevende getal is de balistische coëfficiënt — massa gedeeld door weerstandsoppervlak. Een licht voertuig met een grote parachute (lage balistische coëfficiënt) settelt op een lage eindsnelheid; een zwaar, compact voertuig (hoge balistische coëfficiënt) valt sneller. Ontwerpers wegen beide af: een grotere parachute geeft een langzamer descent maar weegt meer en is moeilijker supersoon in dunne lucht in te zetten.",
+  "new": "Het bepalende getal is de ballistische coëfficiënt — massa gedeeld door weerstandsoppervlak. Een licht voertuig met een grote parachute (lage ballistische coëfficiënt) komt uit op een lage eindsnelheid; een zwaar, compact voertuig (hoge ballistische coëfficiënt) valt sneller. Ontwerpers wegen die twee tegen elkaar af: een grotere parachute geeft een langzamere afdaling maar weegt meer en is in ijle lucht moeilijker supersonisch uit te klappen."
+ },
+ {
+  "rel": "science/mission-phases/terminal-velocity.json",
+  "at": "body_paragraphs.2",
+  "old": "Op `/fly` is dit waarom de drie hemellichamen er zo verschillend uitzien in `?descent=1`. Een marsdescent verliest het meeste van zijn snelheid onder de parachute, daarna wordt het overgedragen aan een aangedreven of airbag-landing; een Venusdescent is een lange, langzame drift onder alleen luchtweerstand; een maandescent wordt van begin tot eind aangedreven, omdat er geen lucht is om te helpen.",
+  "new": "Op `/fly` is dit waarom de drie hemellichamen er in `?descent=1` zo verschillend uitzien. Een afdaling naar Mars verliest het grootste deel van de snelheid onder de parachute en draagt daarna over aan een aangedreven landing of een landing met airbags; een afdaling naar Venus is een lange, langzame zweefvlucht met alleen luchtweerstand; een afdaling naar de Maan is van begin tot eind aangedreven, omdat er geen lucht is die kan helpen."
+ },
+ {
+  "rel": "science/mission-phases/terminal-velocity.json",
+  "at": "diagram_caption",
+  "old": "Eindsnelheid: luchtweerstand stijgt met snelheid totdat deze het gewicht in evenwicht houdt; een parachute vergroten het weerstandsoppervlak zodat het evenwicht wordt bereikt bij een zachte daalsnelheid.",
+  "new": "Eindsnelheid: de luchtweerstand neemt toe met de snelheid tot ze het gewicht in evenwicht houdt; een parachute vergroot het weerstandsoppervlak zodat dat evenwicht bij een zachte daalsnelheid wordt bereikt."
+ },
+ {
+  "rel": "science/mission-phases/trans-x-injection.json",
+  "at": "title",
+  "old": "Trans-X-inspuiting — TLI / TMI / TVI / TJI",
+  "new": "Trans-X-injectie — TLI / TMI / TVI / TJI"
+ },
+ {
+  "rel": "science/mission-phases/trans-x-injection.json",
+  "at": "intro_sentence",
+  "old": "De grote vertrekbrand die je op een baan naar je bestemming catapulteert.",
+  "new": "De grote vertrekstoot die je op een traject naar je bestemming slingert."
+ },
+ {
+  "rel": "science/mission-phases/trans-x-injection.json",
+  "at": "narrative_101.0",
+  "old": "Stap één van elke interplanetaire reis: lanceer jezelf naar lage aardbaan. Nu ben je in de ruimte, maar je gaat nergens heen — je cirkelt alleen rond de Aarde. Om werkelijk naar de Maan, Mars of Jupiter te gaan, heb je een TWEEDE brand nodig. Dat is de trans-X-inspuiting. \"X\" is de planeet waar je op mikt. TLI = trans-lunar (naar de Maan). TMI = trans-Mars. TVI = Venus. TJI = Jupiter. Dezelfde truc, ander doel.",
+  "new": "Stap één van elke interplanetaire reis: breng jezelf naar een lage baan om de Aarde. Nu ben je in de ruimte, maar je gaat nergens heen — je draait alleen rondjes om de Aarde. Om echt naar de Maan, Mars of Jupiter te vertrekken, heb je een TWEEDE stoot nodig. Dat is de trans-X-injectie. \"X\" is de planeet waarop je mikt. TLI = trans-lunair (naar de Maan). TMI = trans-Mars. TVI = Venus. TJI = Jupiter. Dezelfde truc, ander doel."
+ },
+ {
+  "rel": "science/mission-phases/trans-x-injection.json",
+  "at": "narrative_101.1",
+  "old": "Het is een enkele, harde, dramatische brand — meestal 5 tot 30 minuten lang, afhankelijk van de motor — uitgevoerd op de perigeum van je parkeerrbaan, waar je al zo snel mogelijk beweegt (Oberth-effect, opnieuw). Het katapulteert je op de elliptische transfer naar je bestemming. Na deze brand vuurt de motor eigenlijk maanden lang niet meer. Je drijft.",
+  "new": "Het is één harde, dramatische stoot — meestal 5 tot 30 minuten lang, afhankelijk van de motor — in het perigeum van je parkeerbaan, waar je al zo snel mogelijk beweegt (Oberth-effect, alweer). Die slingert je op de elliptische transferbaan naar je bestemming. Na deze stoot vuurt de motor maandenlang in feite niet meer. Je vaart door op je snelheid."
+ },
+ {
+  "rel": "science/mission-phases/trans-x-injection.json",
+  "at": "narrative_101.2",
+  "old": "Op elke interplanetaire missionkaart in /missions zie je dit getal: ∆v_TLI of ∆v_TMI. Het is HET enige grootste besluit in missionontwerp — te klein en je ontsnapt nooit aan de Aarde, te groot en je verspilt brandstof die lading had kunnen vervoeren. Apollo's TLI was 3,05 km/s. Mars Curiosity's TMI was 3,7 km/s. Voyager 2's trans-Jupiter-inspuiting was ongeveer 7 km/s — het grootste deel van zijn budget.",
+  "new": "Op elke interplanetaire missiekaart in /missions zie je dit getal genoemd: ∆v_TLI of ∆v_TMI. Het is DE grootste afweging in het missieontwerp — te klein en je ontsnapt nooit aan de Aarde, te groot en je verspilt brandstof die lading had kunnen vervoeren. De TLI van Apollo was 3,05 km/s. De TMI van Curiosity naar Mars was 3,7 km/s. De trans-Jupiter-injectie van Voyager 2 was ongeveer 7 km/s — het grootste deel van het budget."
+ },
+ {
+  "rel": "science/mission-phases/trans-x-injection.json",
+  "at": "body_paragraphs.0",
+  "old": "Na de lancering bevind je je doorgaans in lage aardbaan (LEO). Om ergens anders heen te gaan, heb je een tweede brand nodig die je apogeum verhoogt naar de bestemming — dat is de trans-X-inspuiting. De X is de eerste letter van de bestemming: TLI voor trans-lunar, TMI voor trans-Mars, TVI voor trans-Venus, TJI voor trans-Jupiter. Dezelfde natuurkunde, ander doel.",
+  "new": "Na de lancering zit je doorgaans in een lage baan om de Aarde (LEO). Om ergens anders heen te gaan, heb je een tweede stoot nodig die je apogeum verhoogt tot aan de bestemming — dat is de trans-X-injectie. De X is de eerste letter van de bestemming: TLI voor trans-lunair, TMI voor trans-Mars, TVI voor trans-Venus, TJI voor trans-Jupiter. Dezelfde natuurkunde, ander richtpunt."
+ },
+ {
+  "rel": "science/mission-phases/trans-x-injection.json",
+  "at": "body_paragraphs.1",
+  "old": "De brand gebeurt op de perigeum van je parkeerrbaan, waar Oberth je de meeste energie per kilogram brandstof geeft. Voor een Hohmann naar Mars kost TMI ongeveer 3,6 km/s — ruwweg een derde van de ~9,4 km/s opstijg-∆v die nodig was om LEO te bereiken. Voyager 2's trans-Jupiter-inspuiting was ~7 km/s, de grootste enkele brand; Saturnus, Uranus en Neptunus werden daarna bereikt via zwaartekrachtsassistentie, niet via extra vertrekbranden.",
+  "new": "De stoot vindt plaats in het perigeum van de parkeerbaan, waar het Oberth-effect je de meeste energie per kilo drijfgas geeft. Voor een Hohmann-overdracht naar Mars kost TMI ongeveer 3,6 km/s — grofweg een derde van de ~9,4 km/s aan ∆v voor de opstijging die nodig was om LEO te bereiken. De trans-Jupiter-injectie van Voyager 2 was ~7 km/s, de grootste enkele stoot; Saturnus, Uranus en Neptunus werden daarna bereikt met zwaartekrachtassistenties, niet met extra vertrekstoten."
+ },
+ {
+  "rel": "science/mission-phases/trans-x-injection.json",
+  "at": "body_paragraphs.2",
+  "old": "Op het FLIGHT-tabblad van elke interplanetaire missionkaart in `/missions` vind je dit getal aangeduid als ∆v_TLI of ∆v_TMI. Het is de prijs van het verlaten van Aarde's buurt, los van de prijs van het bereiken van LEO zelf.",
+  "new": "Op het VLUCHT-tabblad van elke interplanetaire missiekaart in `/missions` vind je dit getal als ∆v_TLI of ∆v_TMI. Het is de prijs voor het verlaten van de omgeving van de Aarde, los van de prijs om LEO überhaupt te bereiken."
+ },
+ {
+  "rel": "science/observation/_intro.json",
+  "at": "headline",
+  "old": "Observatie hoe we eigenlijk het universum zien.",
+  "new": "Waarnemen — hoe we het universum werkelijk zien."
+ },
+ {
+  "rel": "science/observation/_intro.json",
+  "at": "paragraphs.0",
+  "old": "Bijna alles wat de mensheid weet over de kosmos kwam als een foton. Een telescoop is een machine voor het vangen van die fotonen zorgvuldiger dan uw oog kan  Optische telescopen voor zichtbaar licht, röntgenobservatoria voor het gewelddadige spul, infrarood voor de koude en de verre, radio voor de dingen die helemaal niet gloeien. Elk instrument is een venster op een andere natuurkunde.",
+  "new": "Bijna alles wat de mensheid over de kosmos weet, kwam binnen als een foton. Een telescoop is een machine om die fotonen zorgvuldiger op te vangen dan je oog kan — over een groter deel van het spectrum, langer, en met de ruis eruit gefilterd. Optische telescopen voor zichtbaar licht, röntgenobservatoria voor het gewelddadige spul, infrarood voor het koude en verre, radio voor de dingen die helemaal niet gloeien. Elk instrument is een venster op een andere natuurkunde."
+ },
+ {
+  "rel": "science/observation/_intro.json",
+  "at": "paragraphs.1",
+  "old": "Deze tab is twee helften. De eerste vijf secties hebben betrekking op de methoden, hoe foto's genomen worden in de ruimte, hoe adaptieve optiek de atmosfeer verslaat, hoe coronagraphs een ster verbergen om zijn planeten te vinden, hoe een spectrum je vertelt waar een ster van gemaakt is, hoe interferometrie de telescopen in één virtueel diafragma steekt dat groter is dan elk van hen.",
+  "new": "Dit tabblad bestaat uit twee helften. De eerste vijf onderdelen behandelen de methoden: hoe foto's in de ruimte worden gemaakt, hoe adaptieve optiek de atmosfeer te slim af is, hoe coronagrafen een ster verbergen om zijn planeten te vinden, hoe een spectrum je vertelt waar een ster van gemaakt is, en hoe interferometrie aparte telescopen samenvoegt tot één virtuele apertuur die groter is dan die van elk van hen."
+ },
+ {
+  "rel": "science/observation/_intro.json",
+  "at": "paragraphs.2",
+  "old": "De laatste twee hebben betrekking op de vreemdste objecten die deze methoden hebben gevonden. Zwarte gaten zijn echt, in kaart gebracht en gewogen; we hebben schaduwbeelden van twee van hen. Wormgaten zijn pure wiskunde, dus je weet precies wat je ermee moet doen als je er een ziet in een film (bewonder de geometrie; verwacht geen ruimtevaartuig).",
+  "new": "De laatste twee gaan over de vreemdste objecten die die methoden hebben gevonden. Zwarte gaten zijn echt, in kaart gebracht en gewogen; van twee ervan hebben we schaduwbeelden. Wormgaten zijn pure wiskunde — hier opgenomen zodat je precies weet wat je ermee moet doen als je er een in een film ziet (bewonder de meetkunde; verwacht geen ruimtevaartuig)."
+ },
+ {
+  "rel": "science/observation/_intro.json",
+  "at": "paragraphs.3",
+  "old": "Kies een sectie die je belt. De ruimtefoto is het makkelijkste ingangspunt. Elk beeld dat je hebt gezien van een sterrenstelsel of nevel of exoplanet host ster komt eigenlijk vandaan.",
+  "new": "Kies een onderdeel dat je aanspreekt. Dat over ruimtefotografie is de makkelijkste ingang — daar komt elk beeld dat je ooit hebt gezien van een sterrenstelsel, nevel of ster met een exoplaneet daadwerkelijk vandaan."
+ },
+ {
+  "rel": "science/observation/adaptive-optics.json",
+  "at": "intro_sentence",
+  "old": "Op de grond gebaseerde telescopen meten de vervorming van de atmosfeer in real time met een lasergeleide ster, en buigen dan een vervormbare spiegel om het uit te wissen en scherpen beelden met een factor 10 of meer.",
+  "new": "Telescopen op de grond meten de vervorming door de atmosfeer in realtime met een laserleidster en buigen daarna een vervormbare spiegel om die te compenseren — beelden worden daardoor minstens 10 keer scherper."
+ },
+ {
+  "rel": "science/observation/adaptive-optics.json",
+  "at": "body_paragraphs.0",
+  "old": "De atmosfeer van de aarde is een puinhoop van bewegende cellen van warme en koude lucht, elke cel met een iets andere brekingsindex. Sterrenlicht dat doorloopt wordt door elkaar geschud.Daarom twinkelen sterren en waarom een 10-meter aardtelescoop zonder correctie niet beter ziet dan een achtertuin 20 cm scope op een vaste nacht. De atmosferische \"zien\" limiet is ongeveer 1 boogseconde. Hubble's diffractielimiet is 0,05.",
+  "new": "De atmosfeer van de Aarde is een warboel van bewegende cellen warme en koude lucht, elk met een iets andere brekingsindex. Sterrenlicht dat erdoorheen gaat, raakt door elkaar gehusseld — daarom twinkelen sterren, en daarom ziet een grondtelescoop van 10 meter zonder correctie niet beter dan een telescoopje van 20 cm in de achtertuin op een rustige nacht. De grens van de atmosferische \"seeing\" ligt rond 1 boogseconde. De diffractielimiet van Hubble is 0,05."
+ },
+ {
+  "rel": "science/observation/adaptive-optics.json",
+  "at": "body_paragraphs.1",
+  "old": "Adaptieve optiek sluit dat gat door het meten van de vervorming op honderden punten over de opening en het tegenbogen van een vervormbare spiegel, vaak een dun glas met honderden niet-elektrische actuators erachter met 1000 Hz. De referentie voor \"hoe perfect er uit moet zien\" is ofwel een heldere natuurlijke ster in de buurt van het wetenschappelijke doel (zeldzaam om er één dicht genoeg te hebben) ofwel een **lasergeleide ster**: een natriumresonantielaser die in de bovenste atmosfeer wordt afgevuurd om een kunstmatige gloed op de juiste hoogte te maken.",
+  "new": "Adaptieve optiek dicht die kloof door de vervorming op honderden punten over de apertuur te meten en een vervormbare spiegel — vaak een dun glasplaatje met honderden piëzo-elektrische actuatoren erachter — met 1000 Hz tegen te buigen. De referentie voor \"hoe perfect eruit moet zien\" is ofwel een heldere natuurlijke ster vlak bij het wetenschappelijke doel (zelden zo dichtbij te vinden) ofwel een **laserleidster**: een natriumresonantielaser die in de bovenste atmosfeer wordt afgevuurd om op de juiste hoogte een kunstmatige gloed te maken."
+ },
+ {
+  "rel": "science/observation/adaptive-optics.json",
+  "at": "body_paragraphs.2",
+  "old": "Keck, VLT, Gemini, Subaru en de aankomende ELTs vertrouwen allemaal op AO. Deze techniek maakte waarnemingen van exoplaneten vanaf de grond mogelijk — zonder AO zou de PSF van de moederster het signaal van de planeet overstemmen. JWST en Hubble bevinden zich in de ruimte onder meer om AO helemaal te omzeilen; AO vanaf de grond is het alternatief wanneer de atmosfeer het enige obstakel is en het budget een lancering niet kan financieren.",
+  "new": "Keck, VLT, Gemini, Subaru en de komende ELT's vertrouwen allemaal op AO. De techniek maakte het mogelijk om exoplaneten vanaf de grond af te beelden — zonder AO zou de PSF van de moederster het signaal van de planeet overstemmen. JWST en Hubble staan deels in de ruimte om AO helemaal te omzeilen; AO vanaf de grond is het alternatief wanneer de atmosfeer het enige obstakel is en het budget geen lancering toelaat."
+ },
+ {
+  "rel": "science/observation/adaptive-optics.json",
+  "at": "body_paragraphs.3",
+  "old": "AO werkt niet bij elke golflengte: zichtbaar licht AO is moeilijker dan infrarood omdat de coherentietijd van de atmosfeer korter is bij korte golflengten. De langste golflengte banden (mid-IR, sub-mm) kunnen vanaf de grond worden gedaan met AO en rivaliserende ruimtetelescopen. Optisch/UV blijft een sterke zaak voor de ruimte.",
+  "new": "AO werkt niet bij elke golflengte: AO voor zichtbaar licht is moeilijker dan voor infrarood, omdat de coherentietijd van de atmosfeer bij korte golflengten korter is. De banden met de langste golflengten (mid-IR, sub-mm) kunnen met AO vanaf de grond worden bestreken en wedijveren met ruimtetelescopen. Voor optisch/UV blijft de ruimte een sterk argument."
+ },
+ {
+  "rel": "science/observation/adaptive-optics.json",
+  "at": "diagram_caption",
+  "old": "Lasergeleiding ster → wavefront sensor → vervormbare spiegel bij 1000 Hz → 10× scherpere beelden. Versla de atmosfeer zonder een telescoop te lanceren.",
+  "new": "Laserleidster → golffrontsensor → vervormbare spiegel bij 1000 Hz → 10× scherpere beelden. De atmosfeer wordt verslagen zonder dat er een telescoop gelanceerd hoeft te worden."
+ },
+ {
+  "rel": "science/observation/andromeda-galaxy.json",
+  "at": "title",
+  "old": "Andromedastelsel (M31) — de dichtstbijzijnde grote spiraal",
+  "new": "Andromedanevel (M31) — het dichtstbijzijnde grote spiraalstelsel"
+ },
+ {
+  "rel": "science/observation/andromeda-galaxy.json",
+  "at": "intro_sentence",
+  "old": "Andromeda is het dichtstbijzijnde grote sterrenstelsel voor de Melkweg op 2,5 miljoen lichtjaar. Een van de verst verwijderde objecten die het blote oog kan zien, beweegt het naar ons toe met 110 km/s.",
+  "new": "Andromeda is het dichtstbijzijnde grote sterrenstelsel bij de Melkweg: 2,5 miljoen lichtjaar. Het is een van de verste objecten met het blote oog, komt met 110 km/s op ons af en botst mogelijk over enkele miljarden jaren met de Melkweg."
+ }
+]

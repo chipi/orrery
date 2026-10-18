@@ -1,0 +1,68 @@
+[
+ {
+  "rel": "deep-sky.json",
+  "at": "hst-carina-pano.caption",
+  "old": "Een panorama van 50 lichtjaar breed van een van de grootste sterfabrieken in de melkweg.",
+  "new": "Een panorama van 50 lichtjaar breed van een van de grootste sterfabrieken in de Melkweg."
+ },
+ {
+  "rel": "deep-sky.json",
+  "at": "jwst-casa.caption",
+  "old": "Webbs infrarode blik op de jongste bekende supernovaresta in de melkweg.",
+  "new": "Webbs infrarode blik op de jongste bekende supernovaresta in de Melkweg."
+ },
+ {
+  "rel": "essays/generational-starships.json",
+  "at": "body.32.md",
+  "old": "De [Voyagers](/missions?id=voyager-1) zullen door blijven vliegen. [Pioneer 10](/missions?id=pioneer-10) is nog steeds uitbound, stil nu, de zender al lang dood, drijvend door interstellaire ruimte op het momentum van een lancering uit 1972. [Pioneer 11](/missions?id=pioneer-11) hetzelfde. Ze zijn de verste fysieke extensies van deze beschaving, en ze zullen het overleven — de zon waarschijnlijk overleven, drijvend door de melkweg miljarden jaren nadat elke menselijke structuur is opgelost. Ze dragen plaatjes, omdat de mensen die ze bouwden, correct, over het lange perspectief dachten: niet alleen wat deze ruimtevaartuigen zouden doen, maar wat ze zouden betekenen voor iemand die hen zou vinden nadat we weg waren. Die intuïtie — om voor ontvangers te bouwen die je nooit zult ontmoeten, om iets vooruit te sturen naar een tijd die je niet kunt zien — is de generatieimpuls van het schip in het klein. Het is ook, in de meest eerlijke lezing van waar we zijn, de enige impuls die ertoe zou kunnen doen. We zijn de bemanning. We zijn al in vlucht. De vraag die het generatieschip stelt — kan een beschaving, over generaties heen, de systemen en de bedoelingen en de zorg handhaven die overleven vereist? — is geen vraag over een schip dat niet bestaat. Het is de vraag van dit eeuw, gesteld in de taal van de sterren.",
+  "new": "De [Voyagers](/missions?id=voyager-1) zullen door blijven vliegen. [Pioneer 10](/missions?id=pioneer-10) is nog steeds uitbound, stil nu, de zender al lang dood, drijvend door interstellaire ruimte op het momentum van een lancering uit 1972. [Pioneer 11](/missions?id=pioneer-11) hetzelfde. Ze zijn de verste fysieke extensies van deze beschaving, en ze zullen het overleven — de zon waarschijnlijk overleven, drijvend door de Melkweg miljarden jaren nadat elke menselijke structuur is opgelost. Ze dragen plaatjes, omdat de mensen die ze bouwden, correct, over het lange perspectief dachten: niet alleen wat deze ruimtevaartuigen zouden doen, maar wat ze zouden betekenen voor iemand die hen zou vinden nadat we weg waren. Die intuïtie — om voor ontvangers te bouwen die je nooit zult ontmoeten, om iets vooruit te sturen naar een tijd die je niet kunt zien — is de generatieimpuls van het schip in het klein. Het is ook, in de meest eerlijke lezing van waar we zijn, de enige impuls die ertoe zou kunnen doen. We zijn de bemanning. We zijn al in vlucht. De vraag die het generatieschip stelt — kan een beschaving, over generaties heen, de systemen en de bedoelingen en de zorg handhaven die overleven vereist? — is geen vraag over een schip dat niet bestaat. Het is de vraag van dit eeuw, gesteld in de taal van de sterren."
+ },
+ {
+  "rel": "essays/the-body-in-the-dark.json",
+  "at": "body.4.md",
+  "old": "De ruimte is niet leeg. Het is vol [straling](/science/life-in-space/radiation-exposure) — en niet de gelokaliseerde, voorspelbare straling van een röntgentoestel, dat een bekende dosis in een bekende geometrie aflevert en stopt. Ruimtestraling komt in twee verschillende en gevaarlijke smaken. De eerste zijn zonnepartikelgebeurtenissen: stormen van protonen versneld door zonnefakkels en coronale massa-ejecties, die in staat zijn om in uren tijd een dodelijke dosis af te leveren zonder bescherming. De tweede zijn galactische kosmische stralen: hoogenergetische atoomkernen die miljarden jaren door de melkweg versnellen en van alle richtingen continu aankomen, bij energieën zo extreem dat de praktische hoeveelheid metaal of water die ze zou stoppen in honderden tonnen wordt gemeten — ver voorbij wat elke voorzienbare raket kan tillen. Het magnetische veld en de atmosfeer van de aarde behandelen beide. Voorbij lage aardbaan, geen van beide is er.",
+  "new": "De ruimte is niet leeg. Het is vol [straling](/science/life-in-space/radiation-exposure) — en niet de gelokaliseerde, voorspelbare straling van een röntgentoestel, dat een bekende dosis in een bekende geometrie aflevert en stopt. Ruimtestraling komt in twee verschillende en gevaarlijke smaken. De eerste zijn zonnepartikelgebeurtenissen: stormen van protonen versneld door zonnefakkels en coronale massa-ejecties, die in staat zijn om in uren tijd een dodelijke dosis af te leveren zonder bescherming. De tweede zijn galactische kosmische stralen: hoogenergetische atoomkernen die miljarden jaren door de Melkweg versnellen en van alle richtingen continu aankomen, bij energieën zo extreem dat de praktische hoeveelheid metaal of water die ze zou stoppen in honderden tonnen wordt gemeten — ver voorbij wat elke voorzienbare raket kan tillen. Het magnetische veld en de atmosfeer van de aarde behandelen beide. Voorbij lage aardbaan, geen van beide is er."
+ },
+ {
+  "rel": "orbit-regimes-explore/HELIOPAUSE.json",
+  "at": "story",
+  "old": "De grens waar de zonnewind van de Zon de strijd verliest tegen het interstellaire medium — ruwweg op 120 AU afstand. Binnen bevindt zich de heliosfeer, een bel van geladen zonnedeeltjes die naar buiten stromen met honderden km/s. Daarbuiten: het koude, dichte gas en de kosmische straling van de melkweg zelf. De Voyager-sondes zijn de enige artefacten die de mensheid ooit over deze grens heeft geplaatst — Voyager 1 stak over in 2012, Voyager 2 in 2018. Beide zenden nog steeds zwakjes gegevens uit vanuit de interstellaire ruimte.",
+  "new": "De grens waar de zonnewind van de Zon de strijd verliest tegen het interstellaire medium — ruwweg op 120 AU afstand. Binnen bevindt zich de heliosfeer, een bel van geladen zonnedeeltjes die naar buiten stromen met honderden km/s. Daarbuiten: het koude, dichte gas en de kosmische straling van de Melkweg zelf. De Voyager-sondes zijn de enige artefacten die de mensheid ooit over deze grens heeft geplaatst — Voyager 1 stak over in 2012, Voyager 2 in 2018. Beide zenden nog steeds zwakjes gegevens uit vanuit de interstellaire ruimte."
+ },
+ {
+  "rel": "science/exoplanets/microlensing.json",
+  "at": "body_paragraphs.0",
+  "old": "Microlensing detecteert planeten door de tijdelijke gravitationele vergroting die ze toevoegen aan een toevallige uitlijning van twee sterren. Het is uniek gevoelig voor planeten met lage massa op wijde, koude banen — het gebied voorbij de sneeuwlijn dat transits en radiale snelheid moeilijk kunnen bereiken — en voor zwerversplaneten die alleen door de melkweg drijven.",
+  "new": "Microlensing detecteert planeten door de tijdelijke gravitationele vergroting die ze toevoegen aan een toevallige uitlijning van twee sterren. Het is uniek gevoelig voor planeten met lage massa op wijde, koude banen — het gebied voorbij de sneeuwlijn dat transits en radiale snelheid moeilijk kunnen bereiken — en voor zwerversplaneten die alleen door de Melkweg drijven."
+ },
+ {
+  "rel": "science/exoplanets/trappist-1-system.json",
+  "at": "body_paragraphs.2",
+  "old": "JWST onderzoekt systematisch hun atmosferen. Vroege resultaten wijzen erop dat de binnenste werelden (b, c) grotendeels luchtloos zijn — de verwachte tol van rode-dwerguitbarstingen — terwijl de gematigde buitenste planeten het paradepaardje blijven voor de test of de meest voorkomende bewoonbare zones van de melkweg lucht kunnen vasthouden.",
+  "new": "JWST onderzoekt systematisch hun atmosferen. Vroege resultaten wijzen erop dat de binnenste werelden (b, c) grotendeels luchtloos zijn — de verwachte tol van rode-dwerguitbarstingen — terwijl de gematigde buitenste planeten het paradepaardje blijven voor de test of de meest voorkomende bewoonbare zones van de Melkweg lucht kunnen vasthouden."
+ },
+ {
+  "rel": "universe/named-stars/kaus-australis.json",
+  "at": "fact",
+  "old": "De 'zuidelijke boog' van de Boogschutter, helderste ster gericht op het hart van de melkweg.",
+  "new": "De 'zuidelijke boog' van de Boogschutter, helderste ster gericht op het hart van de Melkweg."
+ },
+ {
+  "rel": "universe/named-stars/kaus-australis.json",
+  "at": "cultural",
+  "old": "'Kaus' komt van het Arabisch voor 'boog', met het Latijnse 'australis' voor 'zuidelijk'. De pijl en boog van Sagittarius richten op het hart van de melkweg, een richting dicht bezaaid met de helderste wolken van de Melkweg.",
+  "new": "'Kaus' komt van het Arabisch voor 'boog', met het Latijnse 'australis' voor 'zuidelijk'. De pijl en boog van Sagittarius richten op het hart van de Melkweg, een richting dicht bezaaid met de helderste wolken van de Melkweg."
+ },
+ {
+  "rel": "universe/named-stars/wezen.json",
+  "at": "fact",
+  "old": "Een superreus van de Grote Hond, zo helder dat hij van ver aan de overkant van de melkweg straalt.",
+  "new": "Een superreus van de Grote Hond, zo helder dat hij van ver aan de overkant van de Melkweg straalt."
+ },
+ {
+  "rel": "messages",
+  "at": "explore_hub_shortcut_milkyway",
+  "old": "Onze melkweg, als een gelabeld schema.",
+  "new": "Onze Melkweg, als een gelabeld schema."
+ }
+]

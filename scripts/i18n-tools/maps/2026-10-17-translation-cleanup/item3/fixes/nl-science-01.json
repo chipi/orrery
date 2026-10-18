@@ -1,0 +1,884 @@
+[
+ {
+  "rel": "science/_landing.json",
+  "at": "intro_heading",
+  "old": "Dus je wilt een raket naar Mars vliegen.",
+  "new": "Dus je wilt met een raket naar Mars vliegen."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "intro_paragraphs.0",
+  "old": "Welkom. Dit is het deel van Orrery waar de knoppen ophouden met magie zijn. Elk label in de HUD, elke gekleurde contourlijn in de porkchop, elke brandmarkering op de baan — dit onderdeel legt uit waar het vandaan komt. Lees het als een stripverhaal: de diagrammen doen het meeste werk, en elke term in cursief is een link die je zo diep kunt volgen als je wilt.",
+  "new": "Welkom. Dit is het deel van Orrery waar de knoppen geen magie meer zijn. Elk label in de HUD, elke gekleurde contourlijn in de porkchop, elke brandmarkering op de baan — dit onderdeel legt uit waar het vandaan komt. Lees het als een stripverhaal: de diagrammen doen het meeste werk, en elke term in cursief is een link die je zo diep kunt volgen als je wilt."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "intro_paragraphs.1",
+  "old": "We gaan samen een raket bouwen. Geen letterlijke — Orrery is een simulator — maar dezelfde keten van beslissingen die een echt vluchtteam neemt, in de volgorde waarin ze ze zouden nemen. Aan het eind weet je waarom lanceervensters voor Mars om de 26 maanden voorkomen en elke maand voor de Maan, waarom een free-return-baan bestaat, en waarom stuwkracht het goedkoopste onderdeel van een missie is en brandstof de hele strijd.",
+  "new": "We gaan samen een raket bouwen. Geen echte — Orrery is een simulator — maar wel dezelfde keten van beslissingen die een echt vluchtteam neemt, in de volgorde waarin zij ze nemen. Aan het eind weet je waarom lanceervensters voor Mars om de 26 maanden voorkomen en voor de Maan elke maand, waarom een free-return-baan bestaat, en waarom stuwkracht het goedkoopste onderdeel van een missie is en brandstof het hele gevecht."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.0.heading",
+  "old": "1 — Zwaartekracht is de enige fysica die ertoe doet.",
+  "new": "1 — Zwaartekracht is de enige natuurkunde die ertoe doet."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.0.paragraphs.0",
+  "old": "Vergeet raketten even. Sta op de Aarde, gooi een honkbal zo hard als je kunt. Hij komt terug naar beneden. Gooi harder, hij landt verder. Gooi zo hard dat de grond sneller wegkromt dan de bal valt, en de bal mist de planeet — voor altijd. Dat is een [baan](orbits/keplerian-orbit). Elk ruimtevaartuig, elke planeet, elke rots in de asteroïdengordel doet deze truc rond iets zwaardere.",
+  "new": "Vergeet raketten even. Sta op de Aarde en gooi een honkbal zo hard als je kunt. Hij komt terug naar beneden. Gooi harder, en hij landt verder weg. Gooi zo hard dat de grond sneller wegkromt dan de bal valt, en de bal mist de planeet — voor altijd. Dat is een [baan](orbits/keplerian-orbit). Elk ruimtevaartuig, elke planeet, elke rots in de planetoïdengordel doet deze truc rond iets zwaarders."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.0.paragraphs.2",
+  "old": "De meest nuttige vergelijking die je hier tegenkomt is [vis-viva](orbits/vis-viva). Vul je straal in, de grootte van je baan, en eruit komt je snelheid. Dat is alles. De Aarde bij perihelium: 30,3 km/s. De Aarde bij aphelium: 29,3 km/s. Dezelfde baan, dezelfde energie, verschillende snelheid.",
+  "new": "De nuttigste vergelijking die je hier tegenkomt is [vis-viva](orbits/vis-viva). Vul je straal in, de grootte van je baan, en eruit komt je snelheid. Dat is alles. De Aarde bij perihelium: 30,3 km/s. De Aarde bij afhelium: 29,3 km/s. Dezelfde baan, dezelfde energie, een andere snelheid."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.1.diagram_alt",
+  "old": "Massaverhouding-curve: ∆v stijgt logaritmisch met hoeveel brandstof je verbrandt.",
+  "new": "Massaverhoudingscurve: ∆v stijgt logaritmisch met de hoeveelheid brandstof die je verbrandt."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.1.diagram_caption",
+  "old": "De wrede waarheid: je ∆v verdubbelen betekent veel meer dan 2× de brandstof verbranden.",
+  "new": "De wrede waarheid: je ∆v verdubbelen kost veel meer dan 2× de brandstof."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.1.paragraphs.0",
+  "old": "Nu: hoe verander je van baan? Je verbrandt brandstof. [∆v](propulsion/dv-budget) (\"delta-v\") is de universele munteenheid van ruimtevaart — de totale snelheidsverandering die een missie nodig heeft. Elke beweging die je maakt op een baan heeft een prijskaartje in km/s.",
+  "new": "Nu: hoe verander je van baan? Je verbrandt brandstof. [∆v](propulsion/dv-budget) (\"delta-v\") is de universele munteenheid van de ruimtevaart — de totale snelheidsverandering die een missie nodig heeft. Elke beweging die je maakt op een baan heeft een prijskaartje in km/s."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.1.paragraphs.1",
+  "old": "En die prijs is brutaal. De [Tsiolkovsky-raketvergelijking](propulsion/tsiolkovsky) zegt dat ∆v schaalt met de logaritme van hoeveel van je raket brandstof is. Wil je twee keer de ∆v? Je draagt niet twee keer de brandstof — je draagt exponentieel meer. Daarom was een Saturn V voor 90% stuwstof. Het grootste deel van de raket is de brandstof die de brandstof tilt die de brandstof tilt die het ruimtevaartuig tilt.",
+  "new": "En die prijs is brutaal. De [Tsiolkovski-raketvergelijking](propulsion/tsiolkovsky) zegt dat ∆v meegroeit met de logaritme van het aandeel van je raket dat brandstof is. Wil je twee keer de ∆v? Dan neem je niet twee keer zoveel brandstof mee — maar exponentieel meer. Daarom bestond een Saturn V voor 90% uit stuwstof. Het grootste deel van de raket is de brandstof die de brandstof optilt die de brandstof optilt die het ruimtevaartuig optilt."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.1.paragraphs.2",
+  "old": "Twee getallen bestrijden deze zwaartekrachtbelasting. Stuwkracht vertelt je hoe hard de motor duwt — dat is het getal waar niemand echt om geeft na de lancering. [Specifieke impuls](propulsion/specific-impulse) vertelt je hoe efficiënt de motor duwt — en dat is degene die ertoe doet. Een chemische raket haalt ~450 seconden. Een ionenmotor haalt 4.000+ — nipt maandenlang aan brandstof en presteert beter dan alles chemisch voor ruimtereizen naar de diepe ruimte.",
+  "new": "Twee getallen bepalen de strijd tegen deze zwaartekrachtbelasting. Stuwkracht vertelt je hoe hard de motor duwt — het getal waar na de lancering niemand echt meer om geeft. [Specifieke impuls](propulsion/specific-impulse) vertelt je hoe efficiënt de motor duwt — en dat is het getal dat ertoe doet. Een chemische raket haalt ~450 seconden. Een ionenmotor haalt 4.000+ — hij gebruikt maandenlang nauwelijks brandstof en doet het bij tochten door de diepe ruimte beter dan alles wat chemisch is."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.1.paragraphs.3",
+  "old": "Beste goocheltruc van allemaal: het [Oberth-effect](propulsion/oberth-effect). Je motor aansteken wanneer je al snel beweegt (laag en dicht bij een planeet) geeft je veel meer resultaat voor dezelfde brandstof. Daarom doet elke interplanetaire missie zijn grote vertrekbrand bij perigeum, dicht tegen de Aarde, zo snel als de fysica toestaat. Gratis energie uit geometrie.",
+  "new": "Het beste goocheltruukje van allemaal: het [Oberth-effect](propulsion/oberth-effect). Je motor aansteken terwijl je al hard beweegt (laag en dicht bij een planeet) levert veel meer op voor dezelfde brandstof. Daarom doet elke interplanetaire missie haar grote vertrekbrand bij perigeum, dicht tegen de Aarde aan, zo snel als de natuurkunde toestaat. Gratis energie uit geometrie."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.2.paragraphs.0",
+  "old": "Robert Heinlein schreef het: \"Zodra je in een baan bent, ben je halverwege naar overal in het zonnestelsel.\" Hij grapte niet. Het bereiken van een lage Aardbaan kost ~9,4 km/s aan ∆v. Van daaruit naar Mars gaan kost nog eens ~3,6 km/s. Het moeilijkste deel ligt al achter je.",
+  "new": "Robert Heinlein schreef het: \"Zodra je in een baan bent, ben je halverwege naar overal in het zonnestelsel.\" Hij grapte niet. Het bereiken van een lage aardbaan kost ~9,4 km/s aan ∆v. Van daaruit naar Mars gaan kost nog eens ~3,6 km/s. Het moeilijkste deel ligt al achter je."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.2.paragraphs.1",
+  "old": "De goedkoopste interplanetaire route is een [Hohmann-transfer](transfers/hohmann-transfer): een ellips die net de baan van de Aarde aan het ene eind kust en de baan van de bestemming aan de andere kant. Twee branden, geen verspilde brandstof. Naar Mars duurt het ~8,5 maanden. Langzaam, maar optimaal.",
+  "new": "De goedkoopste interplanetaire route is een [Hohmann-overdracht](transfers/hohmann-transfer): een ellips die de baan van de Aarde aan het ene uiteinde net raakt en die van de bestemming aan het andere. Twee branden, geen verspilde brandstof. Naar Mars duurt het ~8,5 maanden. Langzaam, maar optimaal."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.2.paragraphs.3",
+  "old": "Moet je nog verder? Steel snelheid van een planeet. Een [zwaartekrachtassistentie](transfers/gravity-assist) gebruikt een scheervlucht om je baan te veranderen zonder brandstofkosten — Voyager 2 gebruikte er vier om Neptunus te bereiken. Het hele zonnestelsel is aan elkaar genaaid als [patched conics](transfers/patched-conics): een reeks [kegelsnede](transfers/conic-sections)-bogen doorgegeven tussen zwaartekrachtbuurten zoals stokjes in een estafetterace.",
+  "new": "Moet je nog verder? Steel snelheid van een planeet. Een [zwaartekrachtassistentie](transfers/gravity-assist) gebruikt een voorbijvlucht om je baan te veranderen zonder brandstofkosten — Voyager 2 gebruikte er vier om Neptunus te bereiken. Het hele zonnestelsel wordt aan elkaar gestikt als [patched conics](transfers/patched-conics): een reeks bogen van [kegelsneden](transfers/conic-sections), doorgegeven tussen zwaartekrachtgebieden als estafettestokjes in een estafetteloop."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.3.diagram_caption",
+  "old": "Een porkchop. Elke contour is constante ∆v; de lob is wanneer de natuur Mars goedkoop maakt.",
+  "new": "Een porkchop. Elke contour is een lijn van gelijke ∆v; de lob is het moment waarop de natuur Mars goedkoop maakt."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.3.paragraphs.1",
+  "old": "De [porkchop-plot](porkchop/what-is-a-porkchop) is hoe ingenieurs dit zien. Vertrekdatum langs [één as](porkchop/departure-axis), [vliegtijd](porkchop/tof-axis) langs de andere, ∆v als een [kleurenwarmtekaart](porkchop/dv-heatmap). Goedkope zones verschijnen als ovale lobben — de lanceervensters. Buiten de lob: rood, duur, onmogelijk-met-huidige-raketten. [De contouren lezen](porkchop/contour-reading) is de helft van het werk van een vluchtdynamicus.",
+  "new": "De [porkchop-plot](porkchop/what-is-a-porkchop) is hoe ingenieurs dit in beeld brengen. Vertrekdatum langs [de ene as](porkchop/departure-axis), [vliegtijd](porkchop/tof-axis) langs de andere, ∆v als [heatmap in kleur](porkchop/dv-heatmap). Goedkope zones verschijnen als ovale lobben — de lanceervensters. Buiten de lob: rood, duur, onmogelijk met de huidige raketten. [De contouren lezen](porkchop/contour-reading) is het halve werk van een vluchtdynamicus."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.3.paragraphs.2",
+  "old": "Twee technische termen die je overal ziet: [C3](propulsion/c3) is de lanceerenergie die je raket nodig heeft om de zwaartekrachtkuil van de Aarde te verlaten. [V∞](propulsion/v-infinity) (\"v-oneindig\") is je snelheid relatief aan de bestemming op het moment dat je aankomt. Beide komen rechtstreeks uit de porkchop-wiskunde.",
+  "new": "Twee technische termen die je overal ziet: [C3](propulsion/c3) is de lanceerenergie die je raket nodig heeft om de zwaartekrachtput van de Aarde te verlaten. [V∞](propulsion/v-infinity) (\"v-oneindig\") is je snelheid ten opzichte van de bestemming op het moment dat je aankomt. Beide komen rechtstreeks uit de porkchop-wiskunde."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.4.paragraphs.1",
+  "old": "[Lancering](mission-phases/launch) — uit de atmosfeer en in een lage aardbaan komen. [Trans-X-injectie](mission-phases/trans-x-injection) — een enkele harde verbranding bij het perigeum die je op de overdrachtellips naar de Maan (TLI), Mars (TMI), Venus (TVI) of Jupiter (TJI) werpt. [Trajectcorrectiemanoeuvres](mission-phases/tcm) — kleine verbrandingen tijdens de cruise om verstuivingsfouten te corrigeren. Meestal 1–3 stuks. [Baanopstelling](mission-phases/orbit-insertion) — een remverbranding bij de bestemming om je in een vastgelegde baan te buigen. [EDL](mission-phases/edl) — Entry, Descent, Landing — voor de lander. Zes minuten atmosferische supersone chaos.",
+  "new": "[Lancering](mission-phases/launch) — uit de atmosfeer en in een lage aardbaan komen. [Trans-X-injectie](mission-phases/trans-x-injection) — één krachtige brand bij het perigeum die je op de transferellips naar de Maan (TLI), Mars (TMI), Venus (TVI) of Jupiter (TJI) werpt. [Trajectcorrectiemanoeuvres](mission-phases/tcm) — kleine branden tijdens de kruisvlucht om spreidingsfouten te corrigeren. Meestal 1–3 stuks. [Baaninsertie](mission-phases/orbit-insertion) — een remburn bij de bestemming om je in een gebonden baan te buigen. [EDL](mission-phases/edl) — intrede, afdaling, landing — voor de lander. Zes minuten supersonisch atmosferisch tumult."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.4.paragraphs.2",
+  "old": "Maanmissies maken soms een omweg door een [Near-Rectilinear Halo Orbit](mission-phases/nrho) (Gateway zal in één wonen), en bemande Apollo-vluchten vlogen [free-return-banen](transfers/free-return) — achtvormige paden die je automatisch terug naar de Aarde laten vallen als elke motor op het ruimtevaartuig sterft. Apollo 13 dankt zijn leven aan deze geometrie.",
+  "new": "Maanmissies maken soms een omweg via een [bijna-rechtlijnige halobaan](mission-phases/nrho) (Gateway komt in zo'n baan te staan), en bemande Apollo-vluchten vlogen [free-return-banen](transfers/free-return) — achtvormige paden die je automatisch terug naar de Aarde brengen als elke motor van het ruimtevaartuig uitvalt. Apollo 13 heeft zijn leven aan deze geometrie te danken."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.5.heading",
+  "old": "6 — Afstanden en tijd, want niets hiervan is Aarde-formaat.",
+  "new": "6 — Afstanden en tijd, want niets hiervan is op aardse schaal."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.5.diagram_alt",
+  "old": "De astronomische eenheid, gemarkeerd langs de baan-straal van de Aarde.",
+  "new": "De astronomische eenheid, gemarkeerd langs de baanstraal van de Aarde."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.5.paragraphs.0",
+  "old": "Drie eenheden duiken overal op. De [astronomische eenheid](scales-time/au) (AU) is de gemiddelde Aarde-Zon-afstand — 150 miljoen km. We meten het zonnestelsel in AU omdat kilometers snel onhandelbaar worden. De [lichtminuut](scales-time/light-minute) vertelt je hoe lang het duurt voordat een radiosignaal een ruimtevaartuig bereikt. Mars: 4 tot 24 minuten enkel. Je kunt een rover niet vanaf de Aarde besturen met een joystick. Alles belangrijke is autonoom.",
+  "new": "Drie eenheden duiken overal op. De [astronomische eenheid](scales-time/au) (AU) is de gemiddelde afstand tussen Aarde en Zon — 150 miljoen km. We meten het zonnestelsel in AU omdat kilometers snel onhandig worden. De [lichtminuut](scales-time/light-minute) vertelt je hoe lang een radiosignaal erover doet om een ruimtevaartuig te bereiken. Mars: 4 tot 24 minuten enkele reis. Je kunt een rover niet vanaf de Aarde met een joystick besturen. Alles wat belangrijk is, gebeurt autonoom."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.5.paragraphs.1",
+  "old": "Het [J2000-tijdperk](scales-time/j2000) is de kalendernul die elke astrodynamus gebruikt. [Siderische versus synodische perioden](scales-time/sidereal-synodic) verklaren waarom Mars-vensters elke 26 maanden terugkomen in plaats van elke 23. Het [eclipticavlak](scales-time/ecliptic-plane) is de platte schijf waarop alle planeten (meestal) liggen. [Referentiekaders](scales-time/frames) zijn de coördinatensystemen die missiecontrole jongleert tussen Aarde-gecentreerde, Zon-gecentreerde en lichaam-gecentreerde weergaven.",
+  "new": "De [J2000-epoche](scales-time/j2000) is de kalendernul die elke astrodynamicus gebruikt. [Siderische versus synodische perioden](scales-time/sidereal-synodic) verklaren waarom Marsvensters elke 26 maanden terugkomen in plaats van elke 23. Het [eclipticavlak](scales-time/ecliptic-plane) is de platte schijf waarin alle planeten (meestal) liggen. [Referentiekaders](scales-time/frames) zijn de coördinatensystemen waartussen missiecontrole schakelt: weergaven met de Aarde, de Zon of het hemellichaam zelf als middelpunt."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.6.diagram_alt",
+  "old": "Een gestileerde astronaut zwevend in microzwaartekracht met bot/spier/tegenmaatregel-indicatorbalken.",
+  "new": "Een gestileerde astronaut die zweeft in microzwaartekracht, met indicatorbalken voor bot, spier en tegenmaatregelen."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.6.diagram_caption",
+  "old": "Bot, spier, zicht, vestibulaire systeem, immuunsysteem — alles bedraden opnieuw in microzwaartekracht, en niet richting de Aarde.",
+  "new": "Bot, spier, zicht, evenwichtsorgaan, immuunsysteem — alles wordt opnieuw bedraad in microzwaartekracht, en niet in de richting van de Aarde."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.6.paragraphs.1",
+  "old": "[Straling](life-in-space/radiation-exposure) is het moeilijkere probleem. Het ISS krijgt ~200 mSv/jaar (versus 3 mSv achtergrond op Aarde); diepe ruimte buiten de magnetosfeer is 600+ mSv/jaar, zonder goede afschermingsstrategie tot nu toe. Een Mars-reis zou een bemanningslid bij de carrièrelimiet voor kankerrisico brengen in één enkele rondreis.",
+  "new": "[Straling](life-in-space/radiation-exposure) is het moeilijkere probleem. Op het ISS loopt men ~200 mSv/jaar op (tegenover 3 mSv achtergrondstraling op Aarde); in de diepe ruimte buiten de magnetosfeer is dat 600+ mSv/jaar, en er is nog geen goede afschermingsstrategie. Een reis naar Mars zou een bemanningslid in één enkele retourvlucht bij de carrièrelimiet voor kankerrisico brengen."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.6.paragraphs.2",
+  "old": "Dan is er nog [EVA](life-in-space/eva-physiology) (een 6-uur durende uithoudingsevenement in een 4,3 psi zuurstofreinpak) en [langdurige effecten](life-in-space/long-duration-effects) zoals SANS — Space-Associated Neuro-ocular Syndrome — waarbij 60% van langvliegende bemanning meetbare oogveranderingen ontwikkelt die niet volledig omkeren. Dit zijn de onopgeloste problemen die tussen de mensheid en Mars staan.",
+  "new": "Dan is er nog [EVA](life-in-space/eva-physiology) (een uithoudingsproef van 6 uur in een pak met zuivere zuurstof van 4,3 psi) en [langetermijneffecten](life-in-space/long-duration-effects) zoals SANS — ruimtegerelateerd neuro-oculair syndroom — waarbij 60% van de bemanningsleden na lange vluchten meetbare oogveranderingen ontwikkelt die niet volledig herstellen. Dit zijn de onopgeloste problemen die tussen de mensheid en Mars staan."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.7.diagram_alt",
+  "old": "Een ruimtetelescoop gericht op een verre melkweg met een representatief emissiespectrum eronder.",
+  "new": "Een ruimtetelescoop gericht op een verre sterrenstelsel, met een representatief emissiespectrum eronder."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.7.paragraphs.0",
+  "old": "[Ruimtefotografie](observation/space-photography) is niet wat mensen denken dat het is. Er is geen sluiter die klikt; elke waarnemingsafbeelding die je hebt gezien is een stapel lange belichtingen door smalbandfilters, gekalibreerd, geregistreerd, valse kleur toegewezen. De hardware is een CCD- of CMOS-sensor — een raster van foton-tellers — en de gegevens zijn het aantal, niet de afbeelding. De afbeelding is wat mensen van het aantal maken.",
+  "new": "[Ruimtefotografie](observation/space-photography) is niet wat mensen denken dat het is. Er klikt geen sluiter; elke opname van een observatorium die je hebt gezien is een stapel lange belichtingen door smalbandfilters, gekalibreerd, op elkaar uitgelijnd en van valse kleuren voorzien. De hardware is een CCD- of CMOS-sensor — een raster van fotontellers — en de gegevens zijn de telling, niet de afbeelding. De afbeelding is wat mensen van die telling maken."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.7.paragraphs.1",
+  "old": "[Adaptieve optica](observation/adaptive-optics) verslaat de atmosfeer door de vervorming ervan in realtime te meten en de spiegel te buigen om het te annuleren. [Coronagrafen](observation/coronagraphs) blokkeren de centrale ster om de planeten te zien die eromheen draaien. [Spectroscopie](observation/spectroscopy) leest de chemische samenstelling van een ster uit de absorptielijnen in zijn licht. [Interferometrie](observation/interferometry) naait afzonderlijke telescopen aan elkaar tot één virtuele opening groter dan elk van hen.",
+  "new": "[Adaptieve optica](observation/adaptive-optics) verslaat de atmosfeer door de vervorming ervan in realtime te meten en de spiegel zo te buigen dat die wordt gecompenseerd. [Coronagrafen](observation/coronagraphs) blokkeren de centrale ster om de planeten te zien die eromheen draaien. [Spectroscopie](observation/spectroscopy) leest de chemische samenstelling van een ster af uit de absorptielijnen in zijn licht. [Interferometrie](observation/interferometry) koppelt afzonderlijke telescopen aan elkaar tot één virtuele opening die groter is dan die van elk van hen."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "chapters.7.paragraphs.2",
+  "old": "En de vreemdste objecten die deze methoden hebben gevonden: [zwarte gaten](observation/black-holes) (echt, in kaart gebracht, schaduw-afgebeeld in het centrum van twee sterrenstelsels) en [wormgaten](observation/wormholes) (pure wiskunde, opgenomen zodat je weet wat je ermee moet doen wanneer je er een in een film ziet). De /fleet ↦ Observatory-categorie heeft de echte machines — Hubble, JWST, Chandra, Spitzer, Kepler, TESS — elk met zijn eigen galerij van wat het zag.",
+  "new": "En de vreemdste objecten die deze methoden hebben gevonden: [zwarte gaten](observation/black-holes) (echt, in kaart gebracht, met de schaduw afgebeeld in het centrum van twee sterrenstelsels) en [wormgaten](observation/wormholes) (pure wiskunde, opgenomen zodat je weet wat je ermee moet doen wanneer je er een in een film ziet). De /fleet ↦ Observatory-categorie heeft de echte machines — Hubble, JWST, Chandra, Spitzer, Kepler, TESS — elk met zijn eigen galerij van wat het zag."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "tools.5.text",
+  "old": "De twee bewoonde orbitale buitenposten, module voor module.",
+  "new": "De twee bewoonde buitenposten in een baan om de Aarde, module voor module."
+ },
+ {
+  "rel": "science/_landing.json",
+  "at": "closing",
+  "old": "Onder dit verhaal, de eigenlijke encyclopedie: zes tabbladen, veertig items, elke formule en elk diagram op één plek. Bookmark het. We zijn hier wanneer je het nodig hebt.",
+  "new": "Onder dit verhaal, de eigenlijke encyclopedie: zes tabbladen, veertig artikelen, elke formule en elk diagram op één plek. Sla het op als bladwijzer. We zijn er als je het nodig hebt."
+ },
+ {
+  "rel": "science/cosmology/_intro.json",
+  "at": "headline",
+  "old": "Kosmologie — het universum op grote schaal, en hoe we de grootte ervan kennen.",
+  "new": "Kosmologie — het universum op grote schaal, en hoe we weten hoe groot het is."
+ },
+ {
+  "rel": "science/cosmology/_intro.json",
+  "at": "paragraphs.0",
+  "old": "Zoom ver genoeg uit en het individuele sterrenstelsel doet er niet meer toe. Wat in zicht komt is structuur: sterrenstelsels verzameld in groepen, groepen in clusters, clusters opgeregen langs filamenten en vellen die zich uitstrekken rond nagenoeg lege voids — het kosmische web. Dit tabblad gaat over die grootste schaal, en over de meetlat waarmee we eerlijke afstanden eraan kunnen toekennen.",
+  "new": "Zoom ver genoeg uit en het individuele sterrenstelsel doet er niet meer toe. Wat in zicht komt is structuur: sterrenstelsels verzameld in groepen, groepen in clusters, clusters opgeregen langs filamenten en vellen die nagenoeg lege leegtes omsluiten — het kosmische web. Dit tabblad gaat over die grootste schaal, en over de meetketen waarmee we er betrouwbare afstanden aan kunnen toekennen."
+ },
+ {
+  "rel": "science/cosmology/_intro.json",
+  "at": "paragraphs.1",
+  "old": "Het combineert met de buitenste lagen van de /explore schaalladder. Wanneer je omhoog klimt voorbij de Lokale Groep naar het Local Sheet, de Virgosupercluster en verder, zijn dit de artikelen die uitleggen wat je ziet en hoe iemand in hemelsnaam zou kunnen weten hoe ver het weg is.",
+  "new": "Het sluit aan op de buitenste lagen van de /explore-schaalladder. Wanneer je voorbij de Lokale Groep klimt, naar het Local Sheet, de Virgosupercluster en verder, zijn dit de artikelen die uitleggen wat je ziet en hoe iemand in hemelsnaam zou kunnen weten hoe ver het weg is."
+ },
+ {
+  "rel": "science/cosmology/_intro.json",
+  "at": "paragraphs.2",
+  "old": "De verzameling groeit met de ladder: grootschalige structuur en de afstandsladder komen eerst, met de Virgosupercluster; de diepere kosmologie — roodverschuiving en Hubble's wet, donkere materie en donkere energie, de microgolfachtergrond, de Oerknal zelf — verschijnt tegelijk met de lagen die het nodig hebben.",
+  "new": "De verzameling groeit met de ladder: grootschalige structuur en de afstandsladder komen eerst, met de Virgosupercluster; de diepere kosmologie — roodverschuiving en de wet van Hubble, donkere materie en donkere energie, de microgolfachtergrond, de Oerknal zelf — verschijnt tegelijk met de lagen die haar nodig hebben."
+ },
+ {
+  "rel": "science/cosmology/cosmic-distance-ladder.json",
+  "at": "intro_sentence",
+  "old": "Geen enkele methode meet elke kosmische afstand. Astronomen bouwen een ladder: elke techniek reikt een stukje verder en wordt gekalibreerd door de spijl eronder, van radar in het zonnestelsel tot aan de rand van het waarneembare universum.",
+  "new": "Geen enkele methode meet elke kosmische afstand. Astronomen bouwen een ladder: elke techniek reikt een stukje verder en wordt gekalibreerd door de sport eronder, van radar in het zonnestelsel tot aan de rand van het waarneembare universum."
+ },
+ {
+  "rel": "science/cosmology/cosmic-distance-ladder.json",
+  "at": "body_paragraphs.0",
+  "old": "De onderste spijl is meetkunde. Stuur radarstalen naar een planeet en je kent de astronomische eenheid direct. Zien hoe een nabije ster over een jaar tegen de achtergrond heen en weer verschuift — parallax — en eenvoudige goniometrie geeft de afstand; de Gaia-missie van ESA heeft dit gedaan voor bijna twee miljard sterren, tot tienduizenden lichtjaren bereik met precisie.",
+  "new": "De onderste sport is meetkunde. Kaats radarsignalen terug van een planeet en je kent de astronomische eenheid direct. Zie hoe een nabije ster in de loop van een jaar tegen de achtergrond heen en weer verschuift — parallax — en eenvoudige trigonometrie geeft de afstand; de Gaia-missie van ESA heeft dit gedaan voor bijna twee miljard sterren en reikt met precisie tot tienduizenden lichtjaren ver."
+ },
+ {
+  "rel": "science/cosmology/cosmic-distance-ladder.json",
+  "at": "body_paragraphs.1",
+  "old": "Voorbij parallax raakt de meetkunde op en switch je naar standaardkaarsen — objecten waarvan je de werkelijke helderheid kent, zodat hun schijnbare zwakheid hun afstand onthult. Cepheid variabele sterren pulseren met een periode die hun lichtkracht volgt: meet de puls, lees de werkelijke helderheid af, vergelijk met hoe helder het eruitziet. Cepheids, gekalibreerd door parallax, voeren de ladder naar nabijgelegen sterrenstelselhopen — zo wordt het Virgocluster vastgesteld op ongeveer 16,5 megaparsec.",
+  "new": "Voorbij de parallax raakt de meetkunde op en stap je over op standaardkaarsen — objecten waarvan je de werkelijke helderheid kent, zodat hun schijnbare zwakte hun afstand onthult. Cepheïden, veranderlijke sterren, pulseren met een periode die hun lichtkracht volgt: meet de puls, lees de werkelijke helderheid af, vergelijk met hoe helder de ster eruitziet. Cepheïden, gekalibreerd met parallax, voeren de ladder naar nabijgelegen clusters van sterrenstelsels — zo wordt de Virgocluster vastgesteld op ongeveer 16,5 megaparsec."
+ },
+ {
+  "rel": "science/cosmology/cosmic-distance-ladder.json",
+  "at": "body_paragraphs.2",
+  "old": "Voor de verre spijlen heb je een helderder kaars nodig. Type Ia-supernovae — de thermokernfusie-explosie van een witte dwerg — bereiken allemaal bijna dezelfde lichtkracht en kunnen even helder zijn als het totale licht van hun gasthuis-sterrenstelsel, dus zijn ze zichtbaar over miljarden lichtjaren. Gekalibreerd door Cepheids in sterrenstelsels waar beide voorkomen, verlengen zij de ladder diep het uitdijende universum in.",
+  "new": "Voor de verre sporten heb je een helderdere kaars nodig. Type Ia-supernovae — de thermonucleaire explosie van een witte dwerg — bereiken allemaal bijna dezelfde lichtkracht en kunnen even helder zijn als het totale licht van het sterrenstelsel waarin ze optreden, dus zijn ze zichtbaar over miljarden lichtjaren. Gekalibreerd met cepheïden in sterrenstelsels waar beide voorkomen, verlengen zij de ladder diep het uitdijende universum in."
+ },
+ {
+  "rel": "science/cosmology/cosmic-distance-ladder.json",
+  "at": "body_paragraphs.3",
+  "old": "Bovenaan versmelten afstand en kosmische uitdijing. Hoe verder een sterrenstelsel, hoe sneller het zich terugtrekt en hoe meer zijn licht roodverschoven is — Hubbles wet. Eenmaal de ladder de uitdijingssnelheid gekalibreerd heeft, wordt roodverschuiving zelf het maatstaf voor de meest verre sterrenstelsels. Elke spijl leunt op de eronder, dus een fout laag beneden propagateert helemaal naar boven — daarom wordt het aanhoudende onenigheid over de exacte uitdijingssnelheid (de 'Hubble-spanning') zo serieus genomen.",
+  "new": "Bovenaan versmelten afstand en kosmische uitdijing. Hoe verder een sterrenstelsel, hoe sneller het zich verwijdert en hoe meer zijn licht roodverschoven is — de wet van Hubble. Zodra de ladder de uitdijingssnelheid heeft gekalibreerd, wordt roodverschuiving zelf de maatstaf voor de verste sterrenstelsels. Elke sport leunt op die eronder, dus een fout laag beneden plant zich helemaal naar boven voort — daarom wordt de aanhoudende onenigheid over de exacte uitdijingssnelheid (de 'Hubble-spanning') zo serieus genomen."
+ },
+ {
+  "rel": "science/cosmology/cosmic-distance-ladder.json",
+  "at": "diagram_caption",
+  "old": "De ladder, spijl voor spijl: radar en parallax (meetkunde) → Cepheid variabelen (gekalibreerd door parallax) → Type Ia-supernovae (gekalibreerd door Cepheid) → roodverschuiving en Hubbles wet. Elke methode geeft door naar de volgende; de megaparsec-afstanden op de /explore buitenschillen rusten allemaal op deze keten.",
+  "new": "De ladder, sport voor sport: radar en parallax (meetkunde) → cepheïden (gekalibreerd met parallax) → Type Ia-supernovae (gekalibreerd met cepheïden) → roodverschuiving en de wet van Hubble. Elke methode geeft door aan de volgende; de megaparsecafstanden op de buitenste schillen van /explore rusten allemaal op deze keten."
+ },
+ {
+  "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+  "at": "intro_sentence",
+  "old": "In 2014 tekenden astronomen ons kosmische adres opnieuw — niet door waar sterrenstelsels zitten, maar door waar ze stromen. Het antwoord was Laniakea, een supercluster veel groter dan de Virgosupercluster.",
+  "new": "In 2014 tekenden astronomen ons kosmische adres opnieuw — niet via waar sterrenstelsels staan, maar via waarheen ze stromen. Het antwoord: Laniakea, een supercluster veel groter dan de Virgosupercluster die we voor ons thuis hielden."
+ },
+ {
+  "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+  "at": "body_paragraphs.0",
+  "old": "Het idee is een waterscheiding. Op Aarde wordt een stroomgebied niet door een hek bepaald, maar door de richting van het water: elke druppel die naar dezelfde riviermond stroomt, behoort tot hetzelfde bekken. Het team van Brent Tully paste dezelfde logica toe op sterrenstelsels. Met behulp van de Cosmicflows-survey van sterrenstelselbewegingen brachten zij in kaart waarheen elk stelsel drijft als de algemene expansie van het universum wordt afgetrokken, en trokken de grens waar de stromingen uiteenlopen.",
+  "new": "Het idee is een waterscheiding. Op Aarde wordt een stroomgebied niet door een hek bepaald, maar door de richting waarin het regenwater stroomt: elke druppel die naar dezelfde riviermond stroomt, behoort tot hetzelfde stroomgebied. Het team van Brent Tully paste dezelfde logica toe op sterrenstelsels. Met behulp van de Cosmicflows-survey van sterrenstelselsnelheden brachten zij in kaart waarheen elk stelsel drijft zodra de algemene uitdijing van het universum eraf is getrokken, en trokken de grens waar de stromingen uiteenlopen."
+ },
+ {
+  "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+  "at": "body_paragraphs.1",
+  "old": "Het resultaat is Laniakea — Hawaiiaans voor 'immens hemel' — ongeveer 160 megaparsec (500 miljoen lichtjaar) groot en thuisbasis van ongeveer 100.000 sterrenstelsels. Ons Virgosupercluster, ooit gedacht het hele buurtschap te zijn, blijkt slechts een enkele uitstekende lob van Laniakea te zijn. Alles binnen Laniakea stroomt langzaam naar één zwaartekrachtslaagte.",
+  "new": "Het resultaat is Laniakea — Hawaiiaans voor 'immense hemel' — ongeveer 160 megaparsec (500 miljoen lichtjaar) groot en de thuisbasis van ongeveer 100.000 sterrenstelsels. Onze Virgosupercluster, waarvan men ooit dacht dat die onze hele omgeving was, blijkt slechts één uitstekende lob van Laniakea te zijn. Alles binnen Laniakea stroomt langzaam naar één laagste punt van het zwaartekrachtveld."
+ },
+ {
+  "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+  "at": "body_paragraphs.2",
+  "old": "Dat middelpunt is de Grote Aantrekker, een massaconcentratie rond het Norma Cluster (Abell 3627), ongeveer 65 megaparsec weg. Het is lastig te bestuderen omdat het achter de dichte sterwolken en stof van de schijf van de Melkweg ligt — de 'Zone van Vermijding' — dus veel van wat we weten komt uit radio- en infraroodenquêtes die door de verduistering heen zien, en uit de bewegingen van sterrenstelsels zelf.",
+  "new": "Dat middelpunt is de Grote Aantrekker, een massaconcentratie rond het Norma Cluster (Abell 3627), ongeveer 65 megaparsec ver weg. Het is lastig te bestuderen omdat het achter de dichte sterwolken en het stof van de schijf van de Melkweg zelf ligt — de 'Zone van Vermijding' — dus veel van wat we weten komt uit radio- en infraroodonderzoeken die door de verduistering heen kijken, en uit de bewegingen van sterrenstelsels zelf."
+ },
+ {
+  "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+  "at": "body_paragraphs.3",
+  "old": "Het stopt daar niet. Laniakea zelf is niet in rust: het hele supercluster, samen met zijn buren, wordt meegenomen in een bredere stroming naar een nog grotere massaconcentratie buiten zijn grens — de Shapley Supercluster, de dichtstbevolkte verzameling van sterrenstelselclusters in het dichtbije universum. Een bekken op een helling.",
+  "new": "Het stopt daar niet. Laniakea zelf is niet in rust: de hele supercluster, samen met haar buren, wordt meegevoerd in een bredere stroming naar een nog grotere massaconcentratie voorbij haar grens — de Shapley Supercluster, de dichtste bekende verzameling van sterrenstelselclusters in het nabije universum. Een stroomgebied op een helling."
+ },
+ {
+  "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+  "at": "body_paragraphs.4",
+  "old": "En er zit een wending in het verhaal. Deze stromingen ontstonden over miljarden jaren, maar donkere energie drijft nu de expansie van het universum te versnellen. Over kosmische tijd wint die versnelling: Laniakea is niet zwaartekrachtgebonden en zal niet in één object ineenstorten. Het is een momentopname van een stroming, niet een structuur die zal blijven bestaan — een nuttige manier om onze plaats te noemen, niet een permanent thuis.",
+  "new": "En er zit een wending in de staart. Deze stromingen ontstonden over miljarden jaren, maar donkere energie laat de uitdijing van het universum nu versnellen. Op kosmische tijdschaal wint die versnelling: Laniakea is niet door de zwaartekracht gebonden en zal niet in één object ineenstorten. Het is een momentopname van een stroming, geen structuur die zal blijven bestaan — een nuttige manier om onze plaats te benoemen, geen blijvend thuis."
+ },
+ {
+  "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+  "at": "diagram_caption",
+  "old": "Laniakea als waterscheiding van sterrenstelstelstromingen: stroomlijnen convergeren naar de Grote Aantrekker in de buurt van het Norma Cluster, met het Virgosupercluster (ons lob, en onze positie) aan de rand. De /explore Laniakea-schil toont deze leden schematisch — echte afstanden, illustratieve indeling.",
+  "new": "Laniakea als waterscheiding van stromingen van sterrenstelsels: stroomlijnen komen samen bij de Grote Aantrekker in de buurt van het Norma Cluster, met de Virgosupercluster (onze lob, en onze positie) aan de rand. De /explore-schil van Laniakea toont deze leden schematisch — echte afstanden, illustratieve indeling."
+ },
+ {
+  "rel": "science/cosmology/large-scale-structure.json",
+  "at": "intro_sentence",
+  "old": "Op de grootste schalen zijn sterrenstelsels niet willekeurig verspreid. Ze vormen groepen en clusters, geregen langs filamenten en vellen rond enorme lege ruimtes — een schuimachtig patroon dat het kosmische web wordt genoemd.",
+  "new": "Op de grootste schalen zijn sterrenstelsels niet willekeurig verspreid. Ze vormen groepen en clusters, geregen langs filamenten en vellen rond enorme, nagenoeg lege leegtes — een schuimachtig patroon dat astronomen het kosmische web noemen."
+ },
+ {
+  "rel": "science/cosmology/large-scale-structure.json",
+  "at": "body_paragraphs.0",
+  "old": "De hiërarchie is genest. Sterren verzamelen zich in sterrenstelsels; sterrenstelsels vallen samen tot groepen (zoals onze Lokale Groep) en rijke clusters (zoals de Virgocluster, met meer dan duizend sterrenstelsels gebonden in één zwaartekrachtput). Groepen en clusters worden zelf weer samengetrokken tot superclusters — losse, uitgestrekte concentraties van tientallen megaparsecs groot. Onze Lokale Groep ligt aan de rand van de Virgosupercluster, ~33 megaparsecs (ongeveer 110 miljoen lichtjaar) breed en gecentreerd op de Virgocluster.",
+  "new": "De hiërarchie is genest. Sterren verzamelen zich in sterrenstelsels; sterrenstelsels vallen samen tot groepen (zoals onze Lokale Groep) en rijke clusters (zoals de Virgocluster, met meer dan duizend sterrenstelsels gebonden in één zwaartekrachtput). Groepen en clusters worden zelf weer samengetrokken tot superclusters — losse, uitgestrekte concentraties van tientallen megaparsec groot. Onze Lokale Groep ligt aan de rand van de Virgosupercluster, ~33 megaparsec (ongeveer 110 miljoen lichtjaar) breed en met de Virgocluster als middelpunt."
+ },
+ {
+  "rel": "science/cosmology/large-scale-structure.json",
+  "at": "body_paragraphs.1",
+  "old": "Superclusters zijn niet het einde. Kaarten je de bewegingen van sterrenstelsels in plaats van alleen hun posities, dan blijkt de Virgo-supercluster slechts één lobe van een veel groter aantrekkingsbassin — Laniakea, ongeveer 160 megaparsecs groot, in 2014 gedefinieerd als het gebied waar galactische stromingen allemaal naar een gezamenlijk zwaartekrachtcentrum bij de Grote Aantrekker stromen. Laniakea grenst op zijn beurt aan naburige superclusters aan de hemel.",
+  "new": "Superclusters zijn niet het einde. Breng je de bewegingen van sterrenstelsels in kaart in plaats van alleen hun posities, dan blijkt de Virgosupercluster slechts één lob van een veel groter aantrekkingsgebied — Laniakea, ongeveer 160 megaparsec groot, in 2014 gedefinieerd als het gebied waar de stromingen van sterrenstelsels allemaal naar een gezamenlijk zwaartekrachtcentrum bij de Grote Aantrekker lopen. Laniakea grenst op zijn beurt aan naburige superclusters aan de hemel."
+ },
+ {
+  "rel": "science/cosmology/large-scale-structure.json",
+  "at": "body_paragraphs.2",
+  "old": "Tussen de heldere filamenten liggen de voids — enorme, ruwweg bolvormige gebieden tientallen megaparsecs groot die bijna geen sterrenstelsels bevatten. Het grootste deel van het volume van het universum is void; de meeste sterrenstelsels leven in de dunne wanden en draden ertussenin. Op de grootste schaal gezien ziet de verdeling er uit als een spons of een web van gloeiende draden rond donkere bellen.",
+  "new": "Tussen de heldere filamenten liggen de leegtes — enorme, ruwweg bolvormige gebieden van tientallen megaparsec groot die bijna geen sterrenstelsels bevatten. Het grootste deel van het volume van het universum is leegte; de meeste sterrenstelsels bevinden zich in de dunne wanden en draden ertussen. Op de grootste schaal gezien ziet de verdeling eruit als een spons of een web van gloeiende draden rond donkere bellen."
+ },
+ {
+  "rel": "science/cosmology/large-scale-structure.json",
+  "at": "body_paragraphs.3",
+  "old": "Dit patroon is niet decoratief — het is de fossiel van het vroege universum. Minuscule dichtheidsgolven die aanwezig waren toen het universum 380.000 jaar oud was, ingedrukt op de kosmische achtergrondstraling, werden over miljarden jaren door zwaartekracht versterkt: dichte gebieden trokken meer materie aan en groeiden, lege gebieden werden leeg. Donkere materie, die ongeveer vijf keer zwaarder weegt dan gewone materie, deed het meeste trekken en legde de steiger waarop zichtbare sterrenstelsels zich later ontstaken.",
+  "new": "Dit patroon is niet decoratief — het is het fossiel van het vroege universum. Minuscule dichtheidsrimpelingen die aanwezig waren toen het universum 380.000 jaar oud was, ingeprent in de kosmische achtergrondstraling, werden over miljarden jaren door de zwaartekracht versterkt: dichte gebieden trokken meer materie aan en groeiden, lege gebieden raakten nog leger. Donkere materie, die ongeveer vijf keer zwaarder weegt dan gewone materie, deed het meeste aantrekkingswerk en legde het raamwerk neer waarop de zichtbare sterrenstelsels later oplichtten."
+ },
+ {
+  "rel": "science/cosmology/large-scale-structure.json",
+  "at": "body_paragraphs.4",
+  "old": "Het kosmische web is ook de grens van de eerlijke kaart. Op deze afstanden komen posities uit roodverschuiving, niet uit een meetlint, en de fijnste structuur is modelafhankelijk — daarom geeft Orrery de buitenste schaalschillen weer als expliciete schema's, echte catalogusafstanden in een illustratieve opzet, in plaats van te pretenderen een nauwkeurigheid die geen enkele waarneming nog heeft bereikt.",
+  "new": "Het kosmische web is ook het randgebied van de eerlijke kaart. Op deze afstanden komen posities uit roodverschuiving, niet uit een meetlint, en de fijnste structuur is modelafhankelijk — daarom geeft Orrery de buitenste schaalschillen weer als expliciete schema's, met echte afstanden in een illustratieve opzet, in plaats van te doen alsof we een nauwkeurigheid hebben die geen enkel onderzoek tot nu toe heeft bereikt."
+ },
+ {
+  "rel": "science/cosmology/large-scale-structure.json",
+  "at": "diagram_caption",
+  "old": "De geneste hiërarchie die de /explore schaalladder beklimt: Lokale Groep → Local Sheet → Virgosupercluster → Laniakea → het kosmische web van filamenten en voids. Elke schil is een schema — echte catalogusafstanden in een illustratieve opzet, geen foto van een structuur die geen enkele telescoop kan omvatten.",
+  "new": "De geneste hiërarchie die de /explore-schaalladder beklimt: Lokale Groep → Local Sheet → Virgosupercluster → Laniakea → het kosmische web van filamenten en leegtes. Elke schil is een schema — echte catalogusafstanden in een illustratieve opzet, geen foto van een structuur die geen enkele telescoop in beeld kan krijgen."
+ },
+ {
+  "rel": "science/exoplanets/_intro.json",
+  "at": "headline",
+  "old": "Exoplaneten — de andere zonnesstelsels.",
+  "new": "Exoplaneten — de andere zonnestelsels."
+ },
+ {
+  "rel": "science/exoplanets/_intro.json",
+  "at": "paragraphs.0",
+  "old": "Gedurende het grootste deel van de geschiedenis pasten de planeten die we kenden op één pagina: de familie van de Zon. Dat veranderde in 1995, toen de eerste wereld werd bevestigd rond een andere zonachtige ster. Vandaag loopt de telling in de duizenden, en de vreemdheid is het punt — lavawerelden die hun sterren omhelzen, reuzenplaneten in wilde gekantelde banen, en kleine rotsachtige werelden in de gematigde zone waar water zich zou kunnen verzamelen.",
+  "new": "Gedurende het grootste deel van de geschiedenis pasten de planeten die we kenden op één pagina: de familie van de Zon. Dat veranderde in 1995, toen de eerste wereld werd bevestigd rond een andere zonachtige ster. Vandaag de dag loopt de telling in de duizenden, en juist het vreemde is de pointe — lavawerelden die hun sterren omhelzen, reuzenplaneten in wild gekantelde banen, en kleine rotsachtige werelden in de gematigde zone waar water zich zou kunnen verzamelen."
+ },
+ {
+  "rel": "science/exoplanets/_intro.json",
+  "at": "paragraphs.1",
+  "old": "Dit tabblad gaat over hoe we ze vinden — je kunt de meeste exoplaneten niet fotograferen, dus detecteren we ze aan hun vingerafdrukken: het waggelen van een ster, een periodieke verduistering, een zwaartekrachtflits. Vervolgens gaat het over wat we hebben geleerd: bewoonbare zones, hete Jupiters, de zeven klinkende werelden van TRAPPIST-1, en de eerlijke stand van de vraag die iedereen stelt — zijn we alleen?",
+  "new": "Dit tabblad gaat over hoe we ze vinden — je kunt de meeste exoplaneten niet fotograferen, dus sporen we ze op aan hun vingerafdrukken: het wiebelen van een ster, een periodieke verzwakking van het licht, een zwaartekrachtflits. Vervolgens gaat het over wat we hebben geleerd: bewoonbare zones, hete Jupiters, de zeven beierende werelden van TRAPPIST-1, en de eerlijke stand van de vraag die iedereen stelt — zijn we alleen?"
+ },
+ {
+  "rel": "science/exoplanets/are-we-alone.json",
+  "at": "narrative_101.0",
+  "old": "De telling van exoplaneten loopt nu in de duizenden, en statistieken zeggen dat ruwweg elke ster planeten herbergt, waarbij kleine rotsachtige werelden in bewoonbare zones in de miljarden lopen door het hele sterrenstelsel. Het toneel voor leven is op zijn minst uitgestrekt.",
+  "new": "De telling van exoplaneten loopt nu in de duizenden, en statistieken zeggen dat ruwweg elke ster planeten herbergt, waarbij het aantal kleine rotsachtige werelden in bewoonbare zones in de miljarden loopt in het hele sterrenstelsel. Het toneel voor leven is in elk geval uitgestrekt."
+ },
+ {
+  "rel": "science/exoplanets/are-we-alone.json",
+  "at": "narrative_101.2",
+  "old": "We zijn gegaan van 'zijn er andere werelden?' — afgehandeld, ja — naar 'is er een van hen levend?', een vraag die we eindelijk kunnen beginnen te testen in plaats van er alleen maar over te argumenteren.",
+  "new": "We zijn gegaan van 'zijn er andere werelden?' — beslecht: ja — naar 'leeft er een van?', een vraag die we eindelijk kunnen beginnen te toetsen in plaats van er alleen maar over te twisten."
+ },
+ {
+  "rel": "science/exoplanets/are-we-alone.json",
+  "at": "body_paragraphs.0",
+  "old": "De Drake-vergelijking formuleert de kansen als een keten van factoren — hoeveel sterren, hoeveel met planeten, hoeveel bewoonbaar, hoeveel die leven ontwikkelen, enzovoort. Exoplanetenwetenschap heeft nu de eerste factoren observationeel vastgepind: planeten zijn gebruikelijk, en rotsachtige werelden in de bewoonbare zone overvloedig. De latere factoren blijven onbekend.",
+  "new": "De Drake-vergelijking formuleert de kansen als een keten van factoren — hoeveel sterren, hoeveel met planeten, hoeveel bewoonbaar, hoeveel die leven ontwikkelen, enzovoort. De exoplanetenwetenschap heeft de eerste factoren nu met waarnemingen vastgelegd: planeten zijn algemeen, en rotsachtige werelden in de bewoonbare zone talrijk. De latere factoren blijven onbekend."
+ },
+ {
+  "rel": "science/exoplanets/are-we-alone.json",
+  "at": "body_paragraphs.1",
+  "old": "De volgende stap is empirisch, niet filosofisch. Het lezen van de atmosferen van gematigde rotsachtige werelden voor biosignaturen — geduldig, met instrumenten en standaarden gebouwd om nauwkeurig onderzoek te doorstaan — is hoe de vraag verschuift van de gissingen van de Drake-vergelijking naar een meting.",
+  "new": "De volgende stap is empirisch, niet filosofisch. De atmosferen van gematigde rotsachtige werelden onderzoeken op biosignaturen — geduldig, met instrumenten en standaarden die gebouwd zijn om kritisch onderzoek te doorstaan — is hoe de vraag verschuift van de gissingen van de Drake-vergelijking naar een meting."
+ },
+ {
+  "rel": "science/exoplanets/are-we-alone.json",
+  "at": "body_paragraphs.2",
+  "old": "De eerlijke stand van de kunst: geen leven buiten de Aarde is gedetecteerd, geen biosignatuur bevestigd. Maar voor het eerst zijn de middelen om te kijken echt — en dat is de stille revolutie die het exoplaneetentijdperk heeft geleverd.",
+  "new": "De eerlijke stand van de kunst: er is geen leven buiten de Aarde gedetecteerd, geen biosignatuur bevestigd. Maar voor het eerst zijn de middelen om te zoeken reëel — en dat is de stille revolutie die het tijdperk van de exoplaneten heeft gebracht."
+ },
+ {
+  "rel": "science/exoplanets/astrometry.json",
+  "at": "intro_sentence",
+  "old": "Volg de exacte positie van een ster aan de hemel en je ziet hoe deze een minuscule lus beschrijft terwijl een onzichtbare planeet hem rond hun gemeenschappelijk massacentrum slingert.",
+  "new": "Volg de exacte positie van een ster aan de hemel en je ziet hoe deze een minuscule lus beschrijft terwijl een onzichtbare planeet hem rond hun gemeenschappelijk massamiddelpunt slingert."
+ },
+ {
+  "rel": "science/exoplanets/astrometry.json",
+  "at": "narrative_101.1",
+  "old": "De lus die de ster beschrijft is fantastisch klein, gemeten in miljoensten van een graad, wat verklaart waarom astrometrie lang de grote bijna-hit van de planetenjacht was: decennialang beloofd, weinig opgeleverd, omdat de precisie er simpelweg niet was.",
+  "new": "De lus die de ster beschrijft is fantastisch klein, gemeten in miljoensten van een graad, en daarom was astrometrie lang de grote belofte van de planetenjacht die net niet werd ingelost: decennialang beloofd, weinig opgeleverd, omdat de precisie er simpelweg niet was."
+ },
+ {
+  "rel": "science/exoplanets/astrometry.json",
+  "at": "body_paragraphs.0",
+  "old": "Astrometrie meet de periodieke verplaatsing van een ster in het vlak van de hemel terwijl deze rond het massacentrum van het systeem draait. In tegenstelling tot radiale snelheid registreert het de volledige baan ongeacht de oriëntatie, zodat het een echte massa oplevert (niet alleen een ondergrens) en goed werkt voor planeten in wijde banen, waar het astrometrische signaal groter wordt.",
+  "new": "Astrometrie meet de periodieke verplaatsing van een ster in het vlak van de hemel terwijl deze rond het massamiddelpunt van het systeem draait. In tegenstelling tot radiale snelheid registreert het de volledige baan ongeacht de oriëntatie, zodat het een echte massa oplevert (niet alleen een ondergrens) en goed werkt voor planeten in wijde banen, waar het astrometrische signaal groter wordt."
+ },
+ {
+  "rel": "science/exoplanets/astrometry.json",
+  "at": "body_paragraphs.1",
+  "old": "Historisch gezien produceerde het meer intrekkingen dan planeten — de Ster van Barnard is het klassieke waarschuwende verhaal, waarvan de beroemde 'planeten' uit de jaren zestig astrometrie allemaal vals bleken. Het signaal is simpelweg minuscuul, en instrumentele drift bootst het gemakkelijk na.",
+  "new": "Historisch gezien leverde het meer intrekkingen op dan planeten — de Ster van Barnard is het klassieke waarschuwende voorbeeld, want de beroemde 'planeten' uit de astrometrie van de jaren zestig bleken allemaal onecht. Het signaal is simpelweg minuscuul, en instrumentele drift bootst het gemakkelijk na."
+ },
+ {
+  "rel": "science/exoplanets/astrometry.json",
+  "at": "body_paragraphs.2",
+  "old": "Gaia's hemeldekkende, hoogprecieze astrometrie levert nu echte detecties en, cruciaal, echte massa's voor planeten die door andere methoden zijn gevonden — waarmee een hoofdstuk wordt gesloten dat bijna een eeuw open bleef staan.",
+  "new": "De astrometrie van Gaia, die de hele hemel beslaat en uiterst nauwkeurig is, levert nu echte detecties en, cruciaal, echte massa's voor planeten die met andere methoden zijn gevonden — waarmee een hoofdstuk wordt afgesloten dat bijna een eeuw open bleef staan."
+ },
+ {
+  "rel": "science/exoplanets/astrometry.json",
+  "at": "diagram_caption",
+  "old": "De ster beschrijft een kleine lus aan de hemel terwijl een onzichtbare planeet hem rond hun gemeenschappelijk massacentrum slingert.",
+  "new": "De ster beschrijft een kleine lus aan de hemel terwijl een onzichtbare planeet hem rond hun gemeenschappelijk massamiddelpunt slingert."
+ },
+ {
+  "rel": "science/exoplanets/biosignatures.json",
+  "at": "intro_sentence",
+  "old": "De gassen of kenmerken in het licht van een planeet die het bestaan van leven zouden kunnen verraden — en waarom geen enkel bewijs op zichzelf ooit voldoende is.",
+  "new": "De gassen of kenmerken in het licht van een planeet die leven zouden kunnen verraden — en waarom geen van die kenmerken ooit op zichzelf een bewijs is."
+ },
+ {
+  "rel": "science/exoplanets/biosignatures.json",
+  "at": "narrative_101.0",
+  "old": "Als een verre wereld leven herbergt, zou dat een chemisch spoor kunnen achterlaten in de atmosfeer — een gas dat er niet zou mogen zijn zonder dat iets het produceert. Zuurstof op aarde is het klassieke voorbeeld: het zou binnen enkele miljoenen jaren verdwijnen als fotosynthese zou stoppen met het aanvullen ervan.",
+  "new": "Als een verre wereld leven herbergt, kan dat een chemisch spoor achterlaten in de atmosfeer — een gas dat er niet zou zijn zonder dat iets het maakt. Zuurstof op Aarde is het klassieke voorbeeld: het zou binnen enkele miljoenen jaren verdwijnen als de fotosynthese het niet meer aanvulde."
+ },
+ {
+  "rel": "science/exoplanets/biosignatures.json",
+  "at": "narrative_101.1",
+  "old": "Het probleem is dat de natuur het kan nabootsen. Zuurstof, methaan en andere kandidaat-'biosignaturen' kunnen allemaal op niet-biologische manieren ophopen, dus elke afzonderlijke detectie is een aanwijzing, geen verdict.",
+  "new": "Het probleem is dat de natuur het kan nabootsen. Zuurstof, methaan en andere kandidaat-'biosignaturen' kunnen allemaal op niet-biologische manieren ophopen, dus elke afzonderlijke detectie is een aanwijzing, geen oordeel."
+ },
+ {
+  "rel": "science/exoplanets/biosignatures.json",
+  "at": "narrative_101.2",
+  "old": "De eerlijke test is context en combinatie: de juiste gassen samen, buiten chemisch evenwicht, op een wereld waar geologie en sterrenlicht ze niet gemakkelijk kunnen verklaren. Dat is een hoge lat, en die bereiken is het doel.",
+  "new": "De eerlijke test is context en combinatie: de juiste gassen samen, buiten chemisch evenwicht, op een wereld waar geologie en sterrenlicht ze niet gemakkelijk kunnen verklaren. Dat is een hoge lat, en juist die halen is de bedoeling."
+ },
+ {
+  "rel": "science/exoplanets/biosignatures.json",
+  "at": "body_paragraphs.1",
+  "old": "Elke voorgestelde biosignatuur heeft bekende vals-positieven. Zuurstof kan zich ophopen door waterfotolyse op sommige werelden; methaan heeft overvloedige geologische bronnen. Daarom benadrukt het vakgebied meerdere, elkaar versterkende bewijslijnen en zorgvuldige modellering van de planeet en zijn ster voordat enige claim wordt gedaan.",
+  "new": "Elke voorgestelde biosignatuur heeft bekende valse positieven. Zuurstof kan zich ophopen door waterfotolyse op sommige werelden; methaan heeft overvloedige geologische bronnen. Daarom legt het vakgebied de nadruk op meerdere, elkaar versterkende lijnen van bewijs en op zorgvuldige modellering van de planeet en zijn ster voordat enige bewering wordt gedaan."
+ },
+ {
+  "rel": "science/exoplanets/biosignatures.json",
+  "at": "body_paragraphs.2",
+  "old": "Er is nog geen exoplaneet-biosignatuur bevestigd. Het detecteren ervan zou buitengewoon bewijs vereisen — en dat is precies waarom de zoektocht geduldig wordt opgebouwd, op instrumenten en standaarden die ontworpen zijn om de nauwkeurige beoordeling te doorstaan waarmee zo'n claim geconfronteerd zou worden.",
+  "new": "Er is nog geen exoplaneet-biosignatuur bevestigd. Het detecteren ervan zou buitengewoon bewijs vereisen — en dat is precies waarom de zoektocht geduldig wordt opgebouwd, met instrumenten en standaarden die ontworpen zijn om de kritische toetsing te doorstaan waarmee zo'n bewering geconfronteerd zou worden."
+ },
+ {
+  "rel": "science/exoplanets/direct-imaging.json",
+  "at": "intro_sentence",
+  "old": "Blokkeer de overweldigende gloed van de ster en, voor een bevoorrecht aantal planeten, kun je de zwakke lichtspikkel ernaast fotograferen.",
+  "new": "Blokkeer de overweldigende gloed van de ster en, voor een gelukkig handjevol planeten, kun je de zwakke lichtspikkel ernaast fotograferen."
+ },
+ {
+  "rel": "science/exoplanets/direct-imaging.json",
+  "at": "narrative_101.1",
+  "old": "Het probleem is contrast. Een planeet kan een miljard keer zwakker zijn dan zijn ster en bevindt zich er vlak naast, zoals het spotten van een vuurvliegje naast een vuurtoren. Dus verbergt de techniek de ster achter een masker — een coronagraaf in de telescoop, of een op afstand vliegend sterscherm — en laat het licht van de planeet door.",
+  "new": "Het probleem is contrast. Een planeet kan een miljard keer zwakker zijn dan zijn ster en bevindt zich er vlak naast, als een vuurvliegje naast een vuurtoren. Dus verbergt de techniek de ster achter een masker — een coronagraaf in de telescoop, of een ver weg vrij vliegend sterscherm — en laat het licht van de planeet door."
+ },
+ {
+  "rel": "science/exoplanets/direct-imaging.json",
+  "at": "body_paragraphs.0",
+  "old": "Directe beeldvorming blokkeert of neutraliseert het sterlicht (met een coronagraaf of interferometer) om planeten en schijven te onthullen die anders verloren zouden gaan in de gloed. Omdat het het eigen licht van de planeet detecteert, maakt het op unieke wijze spectroscopie van de wereld in isolatie mogelijk — een directe meting van zijn temperatuur en atmosfeer.",
+  "new": "Directe beeldvorming blokkeert of neutraliseert het sterlicht (met een coronagraaf of interferometer) om planeten en schijven te onthullen die anders verloren zouden gaan in de gloed. Omdat het het eigen licht van de planeet detecteert, maakt het op unieke wijze spectroscopie van de wereld los van zijn ster mogelijk — een directe meting van zijn temperatuur en atmosfeer."
+ },
+ {
+  "rel": "science/exoplanets/direct-imaging.json",
+  "at": "body_paragraphs.1",
+  "old": "Zijn voorkeur is het spiegelbeeld van de andere: het begunstigt grote, zelf-lumineuze planeten ver van hun sterren (wijde banen verlichten het contrastprobleem, en jeugdigheid houdt de planeet heet en helder). Systemen zoals HR 8799 — vier reuzenplaneten tegelijk afgebeeld — en de gebeeldhouwde puinring van Fomalhaut zijn paradepaardje.",
+  "new": "De selectie is het spiegelbeeld van die van de andere methoden: ze begunstigt grote, zelflichtgevende planeten ver van hun sterren (wijde banen verzachten het contrastprobleem, en jeugd houdt de planeet heet en helder). Systemen zoals HR 8799 — vier reuzenplaneten tegelijk afgebeeld — en de als gebeeldhouwd ogende puinring van Fomalhaut zijn paradepaardjes."
+ },
+ {
+  "rel": "science/exoplanets/direct-imaging.json",
+  "at": "body_paragraphs.2",
+  "old": "De methode stuurt de volgende generatie vlaggenschip-instrumenten aan, waarvan het doel is om een rotsachtige planeet in de bewoonbare zone van een Zon-achtige ster af te beelden en het spectrum ervan te nemen — en zijn atmosfeer te doorzoeken naar tekenen van leven.",
+  "new": "De methode drijft de volgende generatie vlaggenschipinstrumenten aan, waarvan het doel is om een rotsachtige planeet in de bewoonbare zone van een zonachtige ster af te beelden en het spectrum ervan te nemen — en de atmosfeer ervan te doorzoeken op tekenen van leven."
+ },
+ {
+  "rel": "science/exoplanets/exoplanet-atmospheres.json",
+  "at": "intro_sentence",
+  "old": "Tijdens een transit filtert een klein straaltje sterrenlicht door de lucht van een planeet en draagt de vingerafdrukken van zijn gassen naar ons terug.",
+  "new": "Tijdens een transit filtert een dun randje sterrenlicht door de lucht van een planeet en brengt de vingerafdrukken van zijn gassen naar ons terug."
+ },
+ {
+  "rel": "science/exoplanets/exoplanet-atmospheres.json",
+  "at": "narrative_101.0",
+  "old": "Je kunt niet landen op een exoplaneet, maar je kunt zijn atmosfeer proeven van lichtjaren afstand. Wanneer een planeet transiteert, gaat een dunne ring sterrenlicht door de atmosfeer op weg naar ons, en elk gas absorbeert zijn eigen set kleuren.",
+  "new": "Je kunt niet landen op een exoplaneet, maar je kunt zijn atmosfeer proeven van lichtjaren ver. Wanneer een planeet transiteert, gaat een dunne ring sterrenlicht door de atmosfeer op weg naar ons, en elk gas absorbeert zijn eigen reeks kleuren."
+ },
+ {
+  "rel": "science/exoplanets/exoplanet-atmospheres.json",
+  "at": "narrative_101.1",
+  "old": "Splits dat licht in een spectrum en de ontbrekende kleuren spellen uit waar de lucht uit bestaat — water, koolstofdioxide, methaan, natrium. Dit is transmissie-spectroscopie, en de James Webb Space Telescope is hiervoor gebouwd.",
+  "new": "Splits dat licht in een spectrum en de ontbrekende kleuren spellen uit waar de lucht uit bestaat — water, koolstofdioxide, methaan, natrium. Dit is transmissiespectroscopie, en de James Webb Space Telescope is hiervoor gebouwd."
+ },
+ {
+  "rel": "science/exoplanets/exoplanet-atmospheres.json",
+  "at": "body_paragraphs.0",
+  "old": "Transmissie-spectroscopie meet hoe de atmosfeer van een planeet sterrenlicht absorbeert tijdens een transit, golflengte voor golflengte, en onthult zo zijn samenstelling. Emissie-spectroscopie — het opvangen van de eigen thermische gloed van de planeet net voordat hij achter de ster verdwijnt — voegt temperatuurstructuur toe. Samen veranderen ze een transiterende planeet in een wereld met een meetbare lucht.",
+  "new": "Transmissiespectroscopie meet hoe de atmosfeer van een planeet sterrenlicht absorbeert tijdens een transit, golflengte voor golflengte, en onthult zo zijn samenstelling. Emissiespectroscopie — het opvangen van de eigen thermische gloed van de planeet net voordat hij achter de ster verdwijnt — voegt de temperatuurstructuur toe. Samen veranderen ze een planeet in transit in een wereld met een meetbare hemel."
+ },
+ {
+  "rel": "science/exoplanets/exoplanet-atmospheres.json",
+  "at": "body_paragraphs.1",
+  "old": "JWST heeft het veld van hete reuzen tot aan de rand van rotsachtige-wereldatmosferen geduwd: duidelijke koolstofdioxide-detecties op gasplaneten, en gevoelige zoekacties rond TRAPPIST-1 die tot nu toe suggereren dat zijn binnenste planeten grotendeels geen lucht hebben. Rode-dwergfakkels maken het moeilijk om een atmosfeer vast te houden, en dat oordeel is precies wat deze waarnemingen testen.",
+  "new": "JWST heeft het vakgebied van hete reuzen tot aan de rand van de atmosferen van rotsachtige werelden gebracht: duidelijke detecties van koolstofdioxide op gasplaneten, en gevoelige zoekacties rond TRAPPIST-1 die tot nu toe suggereren dat de binnenste planeten grotendeels luchtloos zijn. Uitbarstingen van rode dwergen maken het moeilijk een atmosfeer vast te houden, en die uitspraak is precies wat deze waarnemingen toetsen."
+ },
+ {
+  "rel": "science/exoplanets/fifty-one-pegasi.json",
+  "at": "intro_sentence",
+  "old": "In 1995 werd een reuzenplaneet ontdekt die elke vier dagen langs een zonachtige ster scheerde — de ontdekking die het exoplanetenwerk opende en een Nobelprijs won.",
+  "new": "In 1995 werd een reuzenplaneet ontdekt die elke vier dagen langs een zonachtige ster scheerde — de ontdekking die het exoplanetentijdperk inluidde en een Nobelprijs opleverde."
+ },
+ {
+  "rel": "science/exoplanets/fifty-one-pegasi.json",
+  "at": "narrative_101.2",
+  "old": "Het opende de sluizen. Binnen enkele jaren doken tientallen meer 'hete Jupiters' op, kreeg de theorie over planeetvorming een hoofdstuk over migratie, en in 2019 deelden Mayor en Queloz de Nobelprijs voor Natuurkunde.",
+  "new": "Het opende de sluizen. Binnen enkele jaren doken nog tientallen 'hete Jupiters' op, kreeg de theorie over planeetvorming een hoofdstuk over migratie, en in 2019 deelden Mayor en Queloz de Nobelprijs voor Natuurkunde."
+ },
+ {
+  "rel": "science/exoplanets/fifty-one-pegasi.json",
+  "at": "body_paragraphs.0",
+  "old": "51 Pegasi b werd gevonden met de radiale-snelheidsmethode: een duidelijke ~4,2-daagse Dopplerwobbling die een planeet onthulde van minstens de helft van Jupiters massa, die hachelijk dicht bij zijn ster draait. Het was de eerste bevestigde planeet rond een hoofdreeksster anders dan de zon.",
+  "new": "51 Pegasi b werd gevonden met de radiale-snelheidsmethode: een duidelijke dopplerwiebeling van ~4,2 dagen die een planeet onthulde van minstens de helft van de massa van Jupiter, die gevaarlijk dicht bij zijn ster draait. Het was de eerste bevestigde planeet rond een hoofdreeksster, behalve de Zon."
+ },
+ {
+  "rel": "science/exoplanets/fifty-one-pegasi.json",
+  "at": "body_paragraphs.1",
+  "old": "De vondst was dubbel belangrijk — het bewees dat de radiale-snelheidstechniek werkte, en het onthulde een planeettype (de hete Jupiter) dat orbitale migratie vereiste en de vormingstheorie herschreef. Zijn informele naam, Dimidium, betekent 'half', vanwege zijn minimummassa.",
+  "new": "De vondst was dubbel belangrijk — het bewees dat de radiale-snelheidstechniek werkte, en het onthulde een planeettype (de hete Jupiter) dat baanmigratie vereiste en de vormingstheorie herschreef. Zijn informele naam, Dimidium, betekent 'half', vanwege zijn minimummassa."
+ },
+ {
+  "rel": "science/exoplanets/fifty-one-pegasi.json",
+  "at": "body_paragraphs.2",
+  "old": "De Nobelprijs voor Natuurkunde van 2019 erkende Mayor en Queloz voor de ontdekking — het moment waarop de studie van andere werelden van filosofie veranderde in observationele wetenschap.",
+  "new": "De Nobelprijs voor Natuurkunde van 2019 ging naar Mayor en Queloz voor de ontdekking — het moment waarop de studie van andere werelden van filosofie veranderde in een waarnemende wetenschap."
+ },
+ {
+  "rel": "science/exoplanets/habitable-zone.json",
+  "at": "narrative_101.0",
+  "old": "Water is alleen vloeibaar over een smal temperatuurbereik, en temperatuur neemt af met afstand tot een ster. Dus rondom elke ster is er een ring van banen — de bewoonbare zone — waar een aardachtige planeet oceanen zou kunnen behouden in plaats van ze weg te koken of te bevriezen.",
+  "new": "Water is alleen vloeibaar binnen een smal temperatuurbereik, en temperatuur neemt af met de afstand tot een ster. Dus rondom elke ster is er een ring van banen — de bewoonbare zone — waar een aardachtige planeet oceanen zou kunnen behouden in plaats van ze weg te koken of te bevriezen."
+ },
+ {
+  "rel": "science/exoplanets/habitable-zone.json",
+  "at": "narrative_101.2",
+  "old": "'Bewoonbare zone' is een hoopvolle afkorting, geen belofte. Een wereld daar zou nog steeds een luchtloze rots of een op hol geslagen broeikaseffect kunnen zijn — locatie is noodzakelijk, niet voldoende.",
+  "new": "'Bewoonbare zone' is een hoopvolle verkorte term, geen belofte. Een wereld daar zou nog steeds een luchtloze rots of een op hol geslagen broeikaswereld kunnen zijn — locatie is noodzakelijk, niet voldoende."
+ },
+ {
+  "rel": "science/exoplanets/habitable-zone.json",
+  "at": "body_paragraphs.0",
+  "old": "De circumstellaire bewoonbare zone wordt gedefinieerd door stellaire flux: de binnenrand is waar een op hol geslagen broeikaseffect de oceanen zou koken (het lot van Venus), de buitenrand waar zelfs een sterk koolstofdioxide-broeikaseffect wereldwijde bevriezing niet kan stoppen (voorbij Mars). De afstand schaalt met de vierkantswortel van de lichtkracht van de ster, dus ligt hij ver van heldere sterren en dicht bij zwakke.",
+  "new": "De circumstellaire bewoonbare zone wordt gedefinieerd door stellaire flux: de binnenrand is waar een op hol geslagen broeikaseffect de oceanen zou koken (het lot van Venus), de buitenrand waar zelfs een sterk koolstofdioxidebroeikaseffect wereldwijde bevriezing niet kan stoppen (voorbij Mars). De afstand schaalt met de vierkantswortel van de lichtkracht van de ster, dus ligt de zone ver van heldere sterren en dicht bij zwakke."
+ },
+ {
+  "rel": "science/exoplanets/habitable-zone.json",
+  "at": "body_paragraphs.1",
+  "old": "Omdat kleine rode dwergen verreweg de meest voorkomende sterren zijn, draaien de meeste bekende planeten in de bewoonbare zone om hen — werelden zoals TOI-700 d en verschillende van de TRAPPIST-1 planeten. Hun krappe banen brengen complicaties met zich mee: getijdenvergrendeling en blootstelling aan stellaire uitbarstingen die een atmosfeer kunnen afpellen.",
+  "new": "Omdat kleine rode dwergen verreweg de meest voorkomende sterren zijn, draaien de meeste bekende planeten in de bewoonbare zone om hen — werelden zoals TOI-700 d en verschillende van de TRAPPIST-1-planeten. Hun krappe banen brengen complicaties met zich mee: getijdenvergrendeling en blootstelling aan stellaire uitbarstingen die een atmosfeer kunnen afstropen."
+ },
+ {
+  "rel": "science/exoplanets/hot-jupiters.json",
+  "at": "narrative_101.0",
+  "old": "De eerste exoplaneten die rond zonachtige sterren werden gevonden leken totaal niet op onze eigen reuzen. In plaats van een Jupiter die ver weg in de kou geparkeerd staat, waren dit Jupiters die op een paar sterstralen afstand van hun sterren roosteren en in dagen rond draaien.",
+  "new": "De eerste exoplaneten die rond zonachtige sterren werden gevonden leken totaal niet op onze eigen reuzen. In plaats van een Jupiter die ver weg in de kou geparkeerd staat, waren dit Jupiters die op een paar sterstralen afstand van hun ster braadden en in enkele dagen rondracen."
+ },
+ {
+  "rel": "science/exoplanets/hot-jupiters.json",
+  "at": "narrative_101.2",
+  "old": "Hete Jupiters zijn zeldzaam in absolute zin maar makkelijk te vinden — enorm, dichtbij en met diepe transits — dus domineerden ze de vroege jaren en blijven ze de best bestudeerde exoplaneten van allemaal.",
+  "new": "Hete Jupiters zijn in absolute aantallen zeldzaam maar makkelijk te vinden — enorm, dichtbij en met diepe transits — dus domineerden ze de vroege jaren en blijven ze de best bestudeerde exoplaneten van allemaal."
+ },
+ {
+  "rel": "science/exoplanets/hot-jupiters.json",
+  "at": "body_paragraphs.0",
+  "old": "Hete Jupiters zijn gasreuzen in banen van slechts een paar dagen, met dagzijde-temperaturen die vaak boven de 1.000 graden uitkomen. Hun bestaan impliceert grootschalige baanmigratie: ze zijn waarschijnlijk ontstaan voorbij de sneeuwlijn en naar binnen gespiraliseerd door interacties met de protoplanetaire schijf of met andere hemellichamen, en eindigden waar geen reus ter plekke had kunnen ontstaan.",
+  "new": "Hete Jupiters zijn gasreuzen in banen van slechts een paar dagen, met temperaturen aan de dagzijde die vaak boven de 1.000 graden uitkomen. Hun bestaan wijst op grootschalige baanmigratie: ze zijn waarschijnlijk ontstaan voorbij de sneeuwlijn en naar binnen gespiraald door interacties met de protoplanetaire schijf of met andere hemellichamen, en belandden waar geen reus ter plekke had kunnen ontstaan."
+ },
+ {
+  "rel": "science/exoplanets/hot-jupiters.json",
+  "at": "body_paragraphs.1",
+  "old": "Hun grootte en nabijheid maken ze de werkpaarden van de exoplaneetatmosfeerwetenschappen. Opgeblazen door de warmte van hun sterren produceren ze diepe transits en sterke signalen, en het waren de eerste werelden waarvan de atmosferen, winden en zelfs ontsnapte staarten werden gedetecteerd.",
+  "new": "Hun grootte en nabijheid maken ze de werkpaarden van de wetenschap van exoplaneetatmosferen. Opgeblazen door de warmte van hun sterren produceren ze diepe transits en sterke signalen, en het waren de eerste werelden waarvan de atmosferen, winden en zelfs ontsnappende staarten werden gedetecteerd."
+ },
+ {
+  "rel": "science/exoplanets/microlensing.json",
+  "at": "title",
+  "old": "Gravitationele Microlensing",
+  "new": "Gravitationele microlensing"
+ },
+ {
+  "rel": "science/exoplanets/microlensing.json",
+  "at": "narrative_101.0",
+  "old": "Zwaartekracht buigt licht. Wanneer een voorgrondster bijna precies voor een veel verder verwijderde ster langs beweegt, werkt hij als een lens en verlicht tijdelijk de achtergrondster gedurende dagen of weken.",
+  "new": "Zwaartekracht buigt licht. Wanneer een voorgrondster bijna precies voor een veel verder verwijderde ster langs beweegt, werkt hij als een lens en laat hij de achtergrondster gedurende dagen of weken tijdelijk helderder oplichten."
+ },
+ {
+  "rel": "science/exoplanets/microlensing.json",
+  "at": "narrative_101.2",
+  "old": "Omdat het afhankelijk is van een eenmalige toevallige uitlijning, vindt elke microlensingevenement eenmaal plaats en herhaalt zich nooit. Maar de methode reikt waar andere niet kunnen: koude planeten ver van hun sterren, en zelfs vrijzwevende werelden die aan geen enkele ster gebonden zijn.",
+  "new": "Omdat het afhankelijk is van een eenmalige toevallige uitlijning, vindt elke microlensinggebeurtenis één keer plaats en herhaalt zich nooit. Maar de methode reikt waar andere niet kunnen: koude planeten ver van hun sterren, en zelfs vrijzwevende werelden die aan geen enkele ster gebonden zijn."
+ },
+ {
+  "rel": "science/exoplanets/microlensing.json",
+  "at": "body_paragraphs.1",
+  "old": "De afweging is dat evenementen eenmalig en niet herhaalbaar zijn, dat de gastheer en planeet vaak te ver zijn om verder te bestuderen, en dat de massa en afstand enigszins ontaard uitkomen. Het is een statistisch hulpmiddel: het meet hoe algemeen koude en vrijzwevende planeten zijn, meer dan dat het individuele werelden catalogiseert.",
+  "new": "De afweging is dat gebeurtenissen eenmalig en niet herhaalbaar zijn, dat de gastster en de planeet vaak te ver weg staan om verder te bestuderen, en dat de massa en de afstand enigszins ontaard uitkomen. Het is een statistisch hulpmiddel: het meet hoe vaak koude en vrijzwevende planeten voorkomen, meer dan dat het individuele werelden catalogiseert."
+ },
+ {
+  "rel": "science/exoplanets/microlensing.json",
+  "at": "body_paragraphs.2",
+  "old": "NASA's Nancy Grace Roman Space Telescope zal een uitgebreid microlensingonderzoek uitvoeren waarvan verwacht wordt dat het duizenden van deze anders onzichtbare planeten zal vinden, waarmee de koude buitengebieden van de exoplanetencensus worden ingevuld.",
+  "new": "NASA's Nancy Grace Roman Space Telescope zal een grootschalig microlensingonderzoek uitvoeren dat naar verwachting duizenden van deze anders onzichtbare planeten zal vinden, en zo de koude buitengebieden van de exoplanetentelling invult."
+ },
+ {
+  "rel": "science/exoplanets/orbital-resonance.json",
+  "at": "narrative_101.0",
+  "old": "Als de ene planeet precies twee keer rond draait voor elke keer dat zijn buurman dat doet, komen de twee steeds weer op dezelfde plaats op één lijn te staan, en tellen hun zwaartekrachtduwtjes zich op in plaats van uit te middelen. Dat is een resonantie — een ritmische vergrendeling tussen banen.",
+  "new": "Als de ene planeet precies twee keer rondgaat voor elke keer dat zijn buurplaneet dat doet, komen de twee steeds weer op dezelfde plaats op één lijn te staan, en tellen hun zwaartekrachtduwtjes zich op in plaats van uit te middelen. Dat is een resonantie — een ritmische vergrendeling tussen banen."
+ },
+ {
+  "rel": "science/exoplanets/orbital-resonance.json",
+  "at": "narrative_101.2",
+  "old": "Resonanties zijn voetafdrukken van hoe een systeem is ontstaan — ze ontstaan wanneer planeten samen naar binnen migreren door de geboorteschijf en elkaar in de pas vangen.",
+  "new": "Resonanties zijn sporen van hoe een systeem is ontstaan — ze ontstaan wanneer planeten samen door de geboorteschijf naar binnen migreren en elkaar in de pas vangen."
+ },
+ {
+  "rel": "science/exoplanets/orbital-resonance.json",
+  "at": "body_paragraphs.0",
+  "old": "Een orbitale resonantie treedt op wanneer draaiende hemellichamen regelmatig, periodiek zwaartekrachtinvloed op elkaar uitoefenen, meestal omdat hun perioden in een verhouding van kleine gehele getallen staan. Resonanties kunnen een dicht opeengepakt systeem stabiliseren door planeten in een vergrendeld patroon te houden, of het destabiliseren door excentriciteiten op te pompen.",
+  "new": "Een baanresonantie treedt op wanneer hemellichamen in een baan regelmatig en periodiek zwaartekrachtinvloed op elkaar uitoefenen, meestal omdat hun omlooptijden in een verhouding van kleine gehele getallen staan. Resonanties kunnen een dicht opeengepakt systeem stabiliseren door planeten in een vergrendeld patroon te houden, of het destabiliseren door excentriciteiten op te pompen."
+ },
+ {
+  "rel": "science/exoplanets/orbital-resonance.json",
+  "at": "body_paragraphs.1",
+  "old": "Ketens van resonanties, zoals die van TRAPPIST-1, zijn sterk bewijs voor convergente migratie: planeten die verder naar buiten vormen en naar binnen drijven door de gasschijf, terwijl ze achtereenvolgens in resonanties gevangen raken. De delicate schikking maakt ook dat de onderlinge trekkrachten van de planeten meetbaar zijn als transittijdvariaties, en zo zijn hun massa's gewogen.",
+  "new": "Ketens van resonanties, zoals die van TRAPPIST-1, zijn sterk bewijs voor convergente migratie: planeten die zich verder naar buiten vormen en naar binnen drijven door de gasschijf, en onderweg achtereenvolgens in resonanties vast komen te zitten. Deze delicate opstelling maakt ook dat de onderlinge trekkrachten van de planeten meetbaar zijn als transittijdvariaties, en zo zijn hun massa's gewogen."
+ },
+ {
+  "rel": "science/exoplanets/orbital-resonance.json",
+  "at": "diagram_caption",
+  "old": "Planeten in bijna-gehele periodeverhoudingen komen herhaaldelijk op één lijn, waardoor hun zwaartekrachttrekkingen zich versterken.",
+  "new": "Planeten met periodeverhoudingen die bijna een geheel getal zijn, komen herhaaldelijk op één lijn, waardoor hun onderlinge zwaartekracht elkaar versterkt."
+ },
+ {
+  "rel": "science/exoplanets/planet-formation.json",
+  "at": "narrative_101.1",
+  "old": "Waar een planeet zich vormt hangt af van de temperatuur: gesteente en metaal condenseren dichtbij, ijs alleen voorbij de 'sneeuwgrens'. Daarom heeft het zonnestelsel kleine rotsachtige werelden aan de binnenkant en reuzen aan de buitenkant.",
+  "new": "Waar een planeet zich vormt hangt af van de temperatuur: gesteente en metaal condenseren dichtbij, ijs alleen voorbij de 'sneeuwlijn'. Daarom heeft het Zonnestelsel kleine rotsachtige werelden aan de binnenkant en reuzen aan de buitenkant."
+ },
+ {
+  "rel": "science/exoplanets/planet-formation.json",
+  "at": "narrative_101.2",
+  "old": "Maar de exoplaneten-dierentuin — hete Jupiters, resonante ketens — bewees dat planeten migreren. Ze wisselen impuls uit met de schijf en met elkaar en kunnen ver spiraliseren van waar ze geboren zijn, waardoor het keurige plaatje in de war raakt.",
+  "new": "Maar de exoplanetendierentuin — hete Jupiters, resonante ketens — bewees dat planeten migreren. Ze wisselen impuls uit met de schijf en met elkaar en kunnen ver wegspiralen van waar ze geboren zijn, waardoor het keurige plaatje in de war raakt."
+ },
+ {
+  "rel": "science/exoplanets/planet-formation.json",
+  "at": "body_paragraphs.0",
+  "old": "Het nevelmodel bouwt planeten door kernaccretie in een protoplanetaire schijf: stof klontert samen tot planetesimalen, die samensmelten tot kernen; een kern voorbij de sneeuwgrens die snel genoeg groeit kan een massieve gashuls vangen en een reus worden voordat de schijf oplost.",
+  "new": "Het nevelmodel bouwt planeten door kernaccretie in een protoplanetaire schijf: stof klontert samen tot planetesimalen, die samensmelten tot kernen; een kern voorbij de sneeuwlijn die snel genoeg groeit kan een massief gasomhulsel invangen en een reus worden voordat de schijf verdwijnt."
+ },
+ {
+  "rel": "science/exoplanets/planet-formation.json",
+  "at": "body_paragraphs.2",
+  "old": "Exoplanet-demografie — de overvloed aan nabije reuzen, de alomtegenwoordigheid van super-Earths, de resonante multi's — zijn de observationele beperkingen die elke vormings- en migratietheorie nu moet reproduceren.",
+  "new": "De demografie van exoplaneten — de overvloed aan reuzen dicht bij hun ster, de alomtegenwoordigheid van superaardes, de resonante meervoudige stelsels — levert de randvoorwaarden uit waarnemingen die elke vormings- en migratietheorie nu moet reproduceren."
+ },
+ {
+  "rel": "science/exoplanets/proxima-system.json",
+  "at": "narrative_101.2",
+  "old": "Het probleem is de ster zelf: Proxima vertoont heftige uitbarstingen, en zijn planeet in de bewoonbare zone — waarschijnlijk getijdengekoppeld — bevindt zich dicht genoeg om de volle laag te krijgen, een serieuze bedreiging voor elke atmosfeer of leven.",
+  "new": "Het probleem is de ster zelf: Proxima vertoont heftige uitbarstingen, en zijn planeet in de bewoonbare zone — waarschijnlijk getijdenvergrendeld — bevindt zich dicht genoeg om de volle laag te krijgen, een serieuze bedreiging voor elke atmosfeer en elk leven."
+ },
+ {
+  "rel": "science/exoplanets/proxima-system.json",
+  "at": "body_paragraphs.0",
+  "old": "Proxima Centauri b werd gedetecteerd door middel van radiale snelheid: een signaal van ~11 dagen dat wijst op een planeet van minstens ongeveer 1,1 Aardmassa's in de gematigde zone van de M5.5-dwerg. Een tweede, veel lichtere planeet, Proxima d, werd begin jaren 2020 bevestigd in een nauwere baan — een van de planeten met de laagste massa die bekend zijn.",
+  "new": "Proxima Centauri b werd gedetecteerd door middel van radiale snelheid: een signaal van ~11 dagen dat wijst op een planeet van minstens ongeveer 1,1 aardmassa's in de gematigde zone van de M5.5-dwerg. Een tweede, veel lichtere planeet, Proxima d, werd begin jaren 2020 bevestigd in een nauwere baan — een van de lichtste bekende planeten."
+ },
+ {
+  "rel": "science/exoplanets/proxima-system.json",
+  "at": "body_paragraphs.1",
+  "old": "Nabijheid is het hele verhaal. Op 4,24 lichtjaar vormt het systeem het ankerpunt voor interstellaire gedachte-experimenten, van de lichtzeilsondes van Breakthrough Starshot tot generaties sciencefiction, en het is een prioritair doelwit voor toekomstige direct-imaging-zoektochten.",
+  "new": "Nabijheid is het hele verhaal. Op 4,24 lichtjaar vormt het systeem het ankerpunt voor interstellaire gedachte-experimenten, van de lichtzeilsondes van Breakthrough Starshot tot generaties sciencefiction, en het is een prioritair doelwit voor toekomstige zoektochten met directe beeldvorming."
+ },
+ {
+  "rel": "science/exoplanets/proxima-system.json",
+  "at": "body_paragraphs.2",
+  "old": "Bewoonbaarheid is echt onzeker. Uitbarstingen van rode dwergen, getijdenkoppeling en de moeilijkheid om een atmosfeer vanaf de Aarde te bevestigen houden Proxima b allemaal in de verleidelijke-maar-onbewezen kolom — het dichtstbijzijnde testgeval voor de vraag of werelden rond rode dwergen levend kunnen zijn.",
+  "new": "Bewoonbaarheid is echt onzeker. Uitbarstingen van rode dwergen, getijdenvergrendeling en de moeilijkheid om een atmosfeer vanaf de Aarde te bevestigen houden Proxima b allemaal in de kolom 'verleidelijk maar onbewezen' — het dichtstbijzijnde testgeval voor de vraag of werelden rond rode dwergen levend kunnen zijn."
+ },
+ {
+  "rel": "science/exoplanets/radial-velocity.json",
+  "at": "title",
+  "old": "De radiaelsnelheidsmethode",
+  "new": "De radiale-snelheidsmethode"
+ },
+ {
+  "rel": "science/exoplanets/radial-velocity.json",
+  "at": "intro_sentence",
+  "old": "De zwaartekracht van een planeet trekt zijn ster in een kleine heen-en-weer-wiebelbeweging; een spectrograaf leest die beweging af als een Dopplerverschuiving in het sterrenlicht.",
+  "new": "De zwaartekracht van een planeet trekt zijn ster in een kleine heen-en-weerbeweging; een spectrograaf leest die beweging af als een dopplerverschuiving in het sterrenlicht."
+ },
+ {
+  "rel": "science/exoplanets/radial-velocity.json",
+  "at": "narrative_101.0",
+  "old": "Een planeet draait niet alleen om zijn ster — de twee zwaaien rond hun gedeelde massamiddelpunt, dus beschrijft de ster zelf ook een kleine cirkel. Vanuit ons perspectief zien we dat als de ster die zich een beetje naar ons toe beweegt, dan een beetje van ons af, steeds opnieuw.",
+  "new": "Een planeet draait niet alleen om zijn ster — de twee draaien om hun gemeenschappelijk massamiddelpunt, dus beschrijft de ster zelf ook een kleine cirkel. Vanuit ons gezichtspunt lijkt de ster zich steeds opnieuw een beetje naar ons toe en dan weer een beetje van ons af te bewegen."
+ },
+ {
+  "rel": "science/exoplanets/radial-velocity.json",
+  "at": "narrative_101.1",
+  "old": "Die nadering en verwijdering verschuift de spectraallijnen van de ster eerst naar blauw, dan naar rood — hetzelfde Doppler-effect dat de toonhoogte van een passerende sirene verhoogt en verlaagt. Meet de verschuiving nauwkeurig genoeg en de planeet onthult zichzelf, ook al zie je hem nooit.",
+  "new": "Dat naderen en terugwijken verschuift de spectraallijnen van de ster eerst naar blauw, dan naar rood — hetzelfde dopplereffect dat de toonhoogte van een passerende sirene verhoogt en verlaagt. Meet de verschuiving nauwkeurig genoeg en de planeet onthult zichzelf, ook al zie je hem nooit."
+ },
+ {
+  "rel": "science/exoplanets/radial-velocity.json",
+  "at": "narrative_101.2",
+  "old": "De wiebelbeweging is minuscuul: Jupiter trekt aan de Zon met ongeveer 12 meter per seconde, de Aarde met nauwelijks 9 centimeter per seconde. Het bereiken van die snelheden is een decennialang instrumentverhaal dat nog steeds voortduurt.",
+  "new": "De wiebelbeweging is minuscuul: Jupiter trekt aan de Zon met ongeveer 12 meter per seconde, de Aarde met nauwelijks 9 centimeter per seconde. Het vermogen om zulke snelheden te meten is het resultaat van tientallen jaren instrumentontwikkeling die nog steeds doorgaat."
+ },
+ {
+  "rel": "science/exoplanets/radial-velocity.json",
+  "at": "body_paragraphs.0",
+  "old": "Radiale snelheid was de eerste methode die resultaat opleverde, met de bevestiging van 51 Pegasi b in 1995, en domineerde het vroege aantal exoplaneten. Het meet de snelheid van de ster in de gezichtslijn aan de hand van Dopplerverschuivingen in zijn spectrum; de amplitude van die snelheid (K) schaalt met de massa van de planeet en neemt af met de orbitale afstand, dus bevoordeelt het massieve planeten in korte banen — de reden waarom de eerste vondsten 'hete Jupiters' waren.",
+  "new": "Radiale snelheid was de eerste methode die resultaat opleverde, met de bevestiging van 51 Pegasi b in 1995, en domineerde de vroege exoplanetentelling. Het meet de snelheid van de ster in de gezichtslijn aan de hand van dopplerverschuivingen in zijn spectrum; de amplitude van die snelheid (K) schaalt met de massa van de planeet en neemt af met de baanafstand, dus begunstigt het massieve planeten in korte banen — de reden waarom de eerste vondsten 'hete Jupiters' waren."
+ },
+ {
+  "rel": "science/exoplanets/radial-velocity.json",
+  "at": "body_paragraphs.1",
+  "old": "Zijn grote kracht is massa: radiale snelheid levert de minimummassa van de planeet op (m·sin i), de grootheid die je vertelt of een wereld rotsachtig, ijzig of gasvormig is. Zijn beperkingen zijn de onbekende orbitale inclinatie (slechts een ondergrens voor de massa zonder transit) en de muur die wordt opgeworpen door het eigen oppervlakteroeren van de ster, dat een wiebelbeweging nabootst en momenteel echte aarde-analoge signalen verbergt.",
+  "new": "Zijn grote kracht is massa: radiale snelheid levert de minimummassa van de planeet op (m·sin i), de grootheid die je vertelt of een wereld rotsachtig, ijzig of gasvormig is. Zijn beperkingen zijn de onbekende baanhelling (zonder transit slechts een ondergrens voor de massa) en de muur die wordt opgeworpen door het borrelen aan het oppervlak van de ster zelf, dat een wiebelbeweging nabootst en momenteel de signalen van echte Aarde-analogen verbergt."
+ },
+ {
+  "rel": "science/exoplanets/radial-velocity.json",
+  "at": "body_paragraphs.2",
+  "old": "Moderne spectrografen zoals ESPRESSO bereiken een precisie van sub-meter-per-seconde, voldoende om de sub-aarde werelden te detecteren die onlangs rond de Ster van Barnard zijn gevonden. Gecombineerd met een transit, verandert radiale snelheid een grootte in een dichtheid — en een dichtheid in een schatting van waaruit een planeet is opgebouwd.",
+  "new": "Moderne spectrografen zoals ESPRESSO bereiken een precisie van minder dan een meter per seconde, voldoende om de werelden kleiner dan de Aarde te detecteren die onlangs rond de Ster van Barnard zijn gevonden. Gecombineerd met een transit, verandert radiale snelheid een grootte in een dichtheid — en een dichtheid in een schatting van waaruit een planeet is opgebouwd."
+ },
+ {
+  "rel": "science/exoplanets/radial-velocity.json",
+  "at": "formula_caption",
+  "old": "De snelheids-semi-amplitude K groeit met de massa van de planeet en neemt af met de orbitale periode.",
+  "new": "De semi-amplitude K van de snelheid groeit met de massa van de planeet en neemt af met de omlooptijd."
+ },
+ {
+  "rel": "science/exoplanets/super-earths-sub-neptunes.json",
+  "at": "intro_sentence",
+  "old": "De meest voorkomende planeten in de melkweg zijn formaten die het zonnestelsel volledig heeft overgeslagen — groter dan de aarde, kleiner dan Neptunus.",
+  "new": "De meest voorkomende planeten in de Melkweg hebben een formaat dat het Zonnestelsel helemaal heeft overgeslagen — groter dan de Aarde, kleiner dan Neptunus."
+ },
+ {
+  "rel": "science/exoplanets/super-earths-sub-neptunes.json",
+  "at": "narrative_101.0",
+  "old": "Ons eigen stelsel heeft een gat: niets tussen de aarde en Neptunus, een factor van bijna vier in grootte zonder leden. De melkweg blijkt van dat gat te houden — planeten erin zijn het meest voorkomende type dat we hebben gevonden.",
+  "new": "Ons eigen stelsel heeft een gat: niets tussen de Aarde en Neptunus, een factor van bijna vier in grootte zonder leden. De Melkweg blijkt van dat gat te houden — planeten erin zijn het meest voorkomende type dat we hebben gevonden."
+ },
+ {
+  "rel": "science/exoplanets/super-earths-sub-neptunes.json",
+  "at": "narrative_101.1",
+  "old": "Ze komen in twee smaken die in elkaar overlopen: rotsachtige 'super-aardes' tot ongeveer 1,5 keer de grootte van de aarde, en met gas omhulde 'sub-Neptunus' boven ongeveer tweemaal de grootte van de aarde. Daartussen ligt een echte schaarste — de 'straalvallei' — die hints geeft over hoe deze werelden hun atmosferen verliezen of behouden.",
+  "new": "Ze komen in twee smaken die in elkaar overlopen: rotsachtige 'superaardes' tot ongeveer 1,5 keer de grootte van de Aarde, en met gas omhulde 'sub-Neptunussen' boven ongeveer tweemaal de grootte van de Aarde. Daartussen ligt een echte schaarste — de 'straalvallei' — die aanwijzingen geeft over hoe deze werelden hun atmosferen verliezen of behouden."
+ },
+ {
+  "rel": "science/exoplanets/super-earths-sub-neptunes.json",
+  "at": "body_paragraphs.0",
+  "old": "Statistisch gezien zijn super-Earths en sub-Neptunes de meest voorkomende planeten in de melkweg, maar het zonnestelsel bevat er geen enkele. De 'straalvallei' — een daling in het aantal planeten rond 1,5–2 aardstralen — lijkt kale rotsachtige kernen te scheiden van werelden die een dikke waterstof-helium of stoomomhulsel hebben behouden.",
+  "new": "Statistisch gezien zijn superaardes en sub-Neptunussen de meest voorkomende planeten in de Melkweg, maar het Zonnestelsel bevat er geen enkele. De 'straalvallei' — een dip in het aantal planeten rond 1,5–2 aardstralen — lijkt kale rotsachtige kernen te scheiden van werelden die een dik omhulsel van waterstof en helium of van stoom hebben behouden."
+ },
+ {
+  "rel": "science/exoplanets/super-earths-sub-neptunes.json",
+  "at": "body_paragraphs.1",
+  "old": "De scheidslijn wordt waarschijnlijk bepaald door atmosferisch ontsnappen: dichtbij gelegen planeten kunnen hun lichte omhulsels laten wegstromen door stellaire straling, waardoor een rotsachtige super-aarde overblijft, terwijl degenen die het omhulsel behouden als grotere, minder dichte sub-Neptunus verschijnen.",
+  "new": "De scheidslijn wordt waarschijnlijk bepaald door het ontsnappen van de atmosfeer: planeten dicht bij hun ster kunnen hun lichte omhulsels door stellaire straling kwijtraken, waardoor een rotsachtige superaarde overblijft, terwijl planeten die het omhulsel behouden als grotere, minder dichte sub-Neptunussen verschijnen."
+ },
+ {
+  "rel": "science/exoplanets/super-earths-sub-neptunes.json",
+  "at": "body_paragraphs.2",
+  "old": "Massa-en-straalmetingen van gekoppelde transit- en radiale-snelheidsgegevens — en steeds vaker atmosferische spectra van JWST — zijn wat ons in staat stelt het ene van het andere te onderscheiden en een klasse van planeten te onderzoeken waar de aarde geen neef van heeft.",
+  "new": "Metingen van massa en straal uit gekoppelde transit- en radiale-snelheidsgegevens — en steeds vaker atmosferische spectra van JWST — stellen ons in staat het ene van het andere te onderscheiden en een klasse van planeten te onderzoeken waarvan de Aarde geen verwant heeft."
+ },
+ {
+  "rel": "science/exoplanets/tidal-locking.json",
+  "at": "body_paragraphs.1",
+  "old": "De consequentie is een extreem, permanent temperatuurverschil tussen het substellaire 'oog' en de antistellaire nachtzijde. Of dat bewoonbaar is hangt af van warmtetransport: klimaatmodellen tonen aan dat een voldoende dikke atmosfeer of een mondiale oceaan warmte kan herverdelen en de terminator — of zelfs een groot deel van de nachtzijde — gematigd kan houden.",
+  "new": "Het gevolg is een extreem, permanent temperatuurverschil tussen het substellaire 'oog' en de antistellaire nachtzijde. Of dat bewoonbaar is hangt af van warmtetransport: klimaatmodellen tonen aan dat een voldoende dikke atmosfeer of een mondiale oceaan warmte kan herverdelen en de terminator — of zelfs een groot deel van de nachtzijde — gematigd kan houden."
+ },
+ {
+  "rel": "science/exoplanets/tidal-locking.json",
+  "at": "body_paragraphs.2",
+  "old": "Aangezien rode dwergen het meeste onroerend goed in de bewoonbare zone van de melkweg herbergen, is het lot van getijdenvergrendelde werelden zoals Proxima b centraal voor de vraag of de meest voorkomende bewoonbare zones daadwerkelijk bewoonbaar zijn.",
+  "new": "Aangezien rode dwergen het meeste onroerend goed in de bewoonbare zone van de Melkweg herbergen, is het lot van getijdenvergrendelde werelden zoals Proxima b bepalend voor de vraag of de meest voorkomende bewoonbare zones daadwerkelijk bewoonbaar zijn."
+ },
+ {
+  "rel": "science/exoplanets/transit-timing.json",
+  "at": "intro_sentence",
+  "old": "In een druk systeem trekken planeten aan elkaar en arriveren vroeg of laat; de verschuiving in transittijden onthult onzichtbare werelden en weegt degenen die we wel zien.",
+  "new": "In een druk bevolkt systeem trekken planeten aan elkaar en arriveren vroeg of laat; de verschuiving in transittijden onthult onzichtbare werelden en weegt de werelden die we wel zien."
+ },
+ {
+  "rel": "science/exoplanets/transit-timing.json",
+  "at": "narrative_101.0",
+  "old": "Een solitaire transiterende planeet arriveert als een klokwerk — hetzelfde interval, elke omwenteling. Maar plaats meerdere planeten in één systeem en hun wederzijdse zwaartekracht stoot elkaar aan, waardoor transits een beetje vroeger of een beetje later kruipen in een herhalend patroon.",
+  "new": "Een eenzame planeet in transit komt aan als een uurwerk — hetzelfde interval, bij elke omloop. Maar plaats meerdere planeten in één systeem en ze trekken met hun wederzijdse zwaartekracht aan elkaar, waardoor transits in een zich herhalend patroon iets te vroeg of iets te laat komen."
+ },
+ {
+  "rel": "science/exoplanets/transit-timing.json",
+  "at": "narrative_101.1",
+  "old": "Die verschuivingen van enkele minuten zijn een gravitationele handtekening. Modelleer ze en je kunt de planeten wegen vanuit hun trekkracht alleen — geen spectrograaf nodig — en soms een planeet afleiden die helemaal nooit transite vertoont, alleen gevoeld door zijn aantrekkingskracht op de anderen.",
+  "new": "Die verschuivingen van enkele minuten zijn een handtekening van de zwaartekracht. Modelleer ze en je kunt de planeten wegen uit alleen hun onderlinge trekkracht — geen spectrograaf nodig — en soms een planeet afleiden die nooit een transit vertoont, alleen voelbaar door zijn aantrekkingskracht op de anderen."
+ },
+ {
+  "rel": "science/exoplanets/transit-timing.json",
+  "at": "narrative_101.2",
+  "old": "Zo werden de zeven kleine werelden van TRAPPIST-1 gewogen: te zwak voor radiale snelheid, hun massa's kwamen voort uit de manier waarop ze elkaar haasten en vertragen over de ster.",
+  "new": "Zo werden de zeven kleine werelden van TRAPPIST-1 gewogen: te zwak voor radiale snelheid, hun massa's kwamen voort uit de manier waarop ze elkaar versnellen en vertragen terwijl ze voor de ster langs trekken."
+ },
+ {
+  "rel": "science/exoplanets/transit-timing.json",
+  "at": "body_paragraphs.0",
+  "old": "Transit-timing-variaties (TTV's) maken gebruik van de gravitationele interacties tussen planeten in hetzelfde systeem. Een perfect geïsoleerde planeet vertoont transits met een constante periode; interacterende planeten vertonen periodieke afwijkingen waarvan de amplitude en het patroon de massa's en banen van de planeten coderen.",
+  "new": "Variaties in transittijden (TTV's) maken gebruik van de zwaartekrachtinteracties tussen planeten in hetzelfde systeem. Een perfect geïsoleerde planeet vertoont transits met een constante periode; planeten die op elkaar inwerken vertonen periodieke afwijkingen waarvan de amplitude en het patroon de massa's en banen van de planeten vastleggen."
+ },
+ {
+  "rel": "science/exoplanets/transit-timing.json",
+  "at": "body_paragraphs.1",
+  "old": "TTVs blinken precies uit waar radiale snelheid het moeilijk heeft — rondom zwakke, kleine sterren waarvan de Doppler-schommeling begraven ligt in ruis — en ze kunnen niet-transiterende planeten onthullen door hun invloed alleen. Ze zijn het meest gevoelig nabij orbitale resonanties, waar herhaalde nauwe ontmoetingen de trekkracht versterken.",
+  "new": "TTV's blinken precies uit waar radiale snelheid het moeilijk heeft — rondom zwakke, kleine sterren waarvan de dopplerwiebeling begraven ligt in ruis — en ze kunnen niet-transiterende planeten onthullen door hun invloed alleen. Ze zijn het meest gevoelig nabij baanresonanties, waar herhaalde nauwe ontmoetingen de trekkracht versterken."
+ },
+ {
+  "rel": "science/exoplanets/transit-timing.json",
+  "at": "body_paragraphs.2",
+  "old": "De massa's van de methode vullen transitstralen aan om dichtheden te geven, en daarom zijn compacte resonante systemen zoals TRAPPIST-1 en Kepler's multi-planeetkettingen zo goed gekarakteriseerd ondanks dat ze om zwakke sterren draaien.",
+  "new": "De massa's uit deze methode vullen de transitstralen aan tot dichtheden, en daarom zijn compacte resonante systemen zoals TRAPPIST-1 en de meervoudige planetenstelsels van Kepler zo goed in kaart gebracht, ook al draaien ze om zwakke sterren."
+ },
+ {
+  "rel": "science/exoplanets/transit-timing.json",
+  "at": "diagram_caption",
+  "old": "Wederzijdse gravitationele trekkracht zorgt ervoor dat transits vroeg of laat arriveren; het patroon van verschuiving codeert de massa's van de planeten.",
+  "new": "De wederzijdse zwaartekracht zorgt ervoor dat transits te vroeg of te laat komen; het patroon van de verschuiving legt de massa's van de planeten vast."
+ },
+ {
+  "rel": "science/exoplanets/transit.json",
+  "at": "narrative_101.0",
+  "old": "Als de baan van een planeet toevallig vanaf de zijkant naar ons toe staat, passeert hij eenmaal per omwenteling recht tussen ons en zijn ster — een transit — en dimt de ster met een kleine, precieze fractie terwijl de planeet ervoor staat.",
+  "new": "Als de baan van een planeet toevallig precies van opzij op ons gericht is, passeert hij eenmaal per omloop recht tussen ons en zijn ster — een transit — en dimt de ster met een kleine, precieze fractie terwijl de planeet ervoor staat."
+ },
+ {
+  "rel": "science/exoplanets/transit.json",
+  "at": "narrative_101.1",
+  "old": "De diepte van die dip is simpelweg de verhouding van oppervlakten: een grotere planeet blokkeert meer licht. Een Aarde die voor de Zon langs trekt, dimt hem met ongeveer één deel op tienduizend; een Jupiter met één procent. Vang de herhalende dippen op met een klok en je hebt de grootte en omlooptijd van een planeet.",
+  "new": "De diepte van die dip is simpelweg de verhouding van oppervlakten: een grotere planeet blokkeert meer licht. Een Aarde die voor de Zon langs trekt, dimt hem met ongeveer één deel op tienduizend; een Jupiter met één procent. Zie je de dips zich met klokvaste regelmaat herhalen, dan heb je de grootte en omlooptijd van een planeet."
+ },
+ {
+  "rel": "science/exoplanets/transit.json",
+  "at": "body_paragraphs.0",
+  "old": "Transitfotometrie is verreweg de meest productieve methode, verantwoordelijk voor de grote meerderheid van bekende exoplaneten. Het meet de straal van een planeet direct (aan de hand van de fractionele dip in sterrenlicht) en zijn omlooptijd (aan de hand van de tussenruimte tussen de dippen); gecombineerd met een radiaalsnelheidsmassa levert het een bulkdichtheid op.",
+  "new": "Transitfotometrie is verreweg de meest productieve methode, verantwoordelijk voor de grote meerderheid van bekende exoplaneten. Het meet de straal van een planeet direct (aan de hand van de relatieve afname van het sterrenlicht) en zijn omlooptijd (aan de hand van de tussenpozen tussen de dips); gecombineerd met een massa uit radiale snelheid levert het de gemiddelde dichtheid op."
+ }
+]

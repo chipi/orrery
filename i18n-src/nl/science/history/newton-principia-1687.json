@@ -1,16 +1,16 @@
 {
   "title": "De Principia van Newton · 1687",
-  "intro_sentence": "Één boek, drie bewegingswetten en de inverse-kwadratenwet van zwaartekracht — de grondslag waarop alles wat ruimtevaartuigen nog steeds doen, rust.",
+  "intro_sentence": "Één boek, drie bewegingswetten en de wet van de omgekeerde kwadraten voor de zwaartekracht — het fundament waarop alles wat de ruimtevaart doet nog steeds rust.",
   "narrative_101": [
-    "In 1684 stelde Halley de juiste mensen de vraag welk vorm een baan zou hebben als de Zon aan 1/r² zou trekken. Christopher Wren wedde een boek van veertig shilling dat niemand het kon bewijzen; Hooke beweerde een bewijs te hebben dat hij niet had. Halley vroeg Newton — Newton zei zonder aarzeling \"een ellips\", viste het bewijs uit jaren oude aantekeningen op, en publiceerde drie jaar later de Principia.",
-    "Drie bewegingswetten (inertie, F = ma, actie-reactie) plus de inverse-kwadratenwet van zwaartekracht (F = Gm₁m₂/r²) plus de calculus om het allemaal uit te voeren — één boek, drie jaar, geen peer review. Halley betaalde de drukkosten zelf toen de Royal Society geen geld meer had door een boek over visanatomie.",
-    "Uit deze vergelijkingen: de drie wetten van Kepler volgen netjes af. Getijden, projectielbeweging, de precessie van de equinoxen, de vorm van de Aarde — allemaal gevolgen. Ruimtevaart 280 jaar later is rechtlijnige Newtonse mechanica met motoren eraan toegevoegd."
+    "In 1684 vroeg Halley de juiste mensen welke vorm een baan zou hebben als de aantrekking van de Zon met 1/r² afnam. Christopher Wren wedde een boek ter waarde van veertig shilling dat niemand het kon bewijzen; Hooke beweerde een bewijs te hebben dat hij niet had. Halley vroeg Newton — Newton zei zonder aarzeling \"een ellips\", viste het bewijs uit jaren oude aantekeningen op, en publiceerde drie jaar later de Principia.",
+    "Drie bewegingswetten (inertie, F = ma, actie-reactie) plus de wet van de omgekeerde kwadraten voor de zwaartekracht (F = Gm₁m₂/r²) plus de calculus om het allemaal door te rekenen — één boek, drie jaar, geen peer review. Halley betaalde de drukkosten zelf toen de Royal Society zonder geld zat door een boek over de anatomie van vissen.",
+    "Uit die vergelijkingen volgen de drie wetten van Kepler zonder omwegen. Getijden, projectielbeweging, de precessie van de equinoxen, de vorm van de Aarde — allemaal gevolgen. Ruimtevaart 280 jaar later is gewone Newtoniaanse mechanica met motoren erbij."
   ],
   "body_paragraphs": [
-    "Philosophiæ Naturalis Principia Mathematica werd in juli 1687 in het Latijn gepubliceerd. Drie boeken: beweging in een vacuüm, beweging door weerstandgevende media, het systeem van de wereld. Het derde boek past de wetten toe op het werkelijke heelal en reproduceert al Keplers gegevens vanuit eerste principes.",
-    "Calculus was Newtons uitvinding specifiek om dit te doen. Hij noemde het \"fluxionen\" — Leibniz vond onafhankelijk in Duitsland rond dezelfde tijd in wezen dezelfde wiskundige gereedschappen uit, en de rivaliteit over prioriteit duurde decennia.",
+    "Philosophiæ Naturalis Principia Mathematica werd in juli 1687 in het Latijn gepubliceerd. Drie boeken: beweging in een vacuüm, beweging door media met weerstand, het systeem van de wereld. Het derde boek past de wetten toe op het heelal zelf en reproduceert alle gegevens van Kepler vanuit de grondbeginselen.",
+    "De calculus vond Newton juist hiervoor uit. Hij noemde haar \"fluxies\" — Leibniz vond onafhankelijk daarvan rond dezelfde tijd in Duitsland in wezen hetzelfde gereedschap uit, en de strijd om de voorrang duurde decennia.",
     "Wat Newton NIET verklaarde: WAAROM zwaartekracht 1/r² volgt. Zijn eigen beroemde opmerking — toegevoegd aan de tweede editie van 1713: \"Hypotheses non fingo\" — \"Ik stel geen hypothesen op.\" Het mechanisme zou tot 1915 op Einstein moeten wachten.",
-    "Moderne numerieke baanpropagatoren voeren in wezen Newtons vergelijkingen uit met drijvende-komma-rekenkunde. /fly's heliocentrische boog, /plan's varkensvlees, elke Keplerse oplossing — Newtonse zwaartekracht helemaal naar beneden."
+    "Moderne numerieke baanpropagatoren voeren in wezen de vergelijkingen van Newton uit met rekenwerk in drijvende komma. De heliocentrische boog van /fly, de porkchop van /plan, elke Kepleriaanse oplossing — newtoniaanse zwaartekracht tot op de bodem."
   ],
-  "formula_caption": "Newtons wet van universele zwaartekracht. G ≈ 6.674 × 10⁻¹¹ N·m²/kg²."
+  "formula_caption": "De gravitatiewet van Newton. G ≈ 6.674 × 10⁻¹¹ N·m²/kg²."
 }

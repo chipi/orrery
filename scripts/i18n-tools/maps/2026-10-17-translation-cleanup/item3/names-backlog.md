@@ -27,3 +27,6 @@ zh titles partly traditional (中途島, 哈欽森, 堅忍, 卡門線, 科羅廖
 
 ## From group 11 (ru fleet)
 - Xi'an, Sichuan, Siziwang Banner, Surgut, Vernadsky Institute, von Braun, Boca Chica, Bay of Bengal, Centre Spatial Guyanais, NIIP-53, Lesobaza / SK-1, Sarafanov, Demin, Zholobov, Glazkov, Zudov, Rozhdestvensky, Lake Tengiz, Dunhuang, Psyche (asteroid)
+
+## From group 10 (ar missions)
+- Taurus (كوكبة الثور, reviewer-written), Faulkes Telescope, Linda Salzman Sagan (no ar form), Dinkinesh (no ar form), Siberia, leucite (term)

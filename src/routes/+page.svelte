@@ -9,6 +9,27 @@
   import { assetOrigin } from '$lib/asset-url';
   import { DEFAULT_LOCALE, localeFromPage } from '$lib/locale';
   import * as m from '$lib/paraglide/messages';
+
+  // The author's other sites. Their footers list Orrery; this is the link back.
+  // Names are brands (not translated); the sites are English, hence hreflang.
+  const MORE_UTM = '?utm_source=orrery&utm_medium=referral&utm_content=landing_about';
+  const MORE_SITES = [
+    {
+      name: 'Human Copilot',
+      href: `https://www.humancopilot.eu/${MORE_UTM}`,
+      line: m.landing_more_humancopilot,
+    },
+    {
+      name: 'DevWhateverOps',
+      href: `https://www.devwhateverops.com/${MORE_UTM}`,
+      line: m.landing_more_devwhateverops,
+    },
+    {
+      name: 'eval-harness',
+      href: `https://evals.humancopilot.eu/${MORE_UTM}`,
+      line: m.landing_more_evalharness,
+    },
+  ];
   import { audio } from '$lib/audio-state.svelte';
   import { audioRegistry } from '$lib/audio-registry.svelte';
   import { CURATOR_FULL_TOUR } from '$lib/audio-tour';
@@ -1184,6 +1205,16 @@
           `<a href="${base}/privacy">${m.landing_footer_privacy_link()}</a>`,
         )}
     </p>
+    <h3 class="more-heading">{m.landing_more_heading()}</h3>
+    <ul class="more-list">
+      {#each MORE_SITES as site (site.href)}
+        <li>
+          <a href={site.href} hreflang="en" target="_blank" rel="noopener noreferrer">{site.name}</a
+          >
+          <span class="more-line">— {site.line()}</span>
+        </li>
+      {/each}
+    </ul>
     <!-- Project links live in the persistent site-footer (rendered by
          src/routes/+layout.svelte) so they're available on every route,
          not just here. The About prose stays — the landing is the right
@@ -1472,6 +1503,30 @@
     line-height: 1.7;
     color: rgba(255, 255, 255, 0.7);
     margin: 0;
+  }
+  .more-heading {
+    font-family: var(--font-display);
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin: 20px 0 8px;
+    color: var(--color-text);
+  }
+  .more-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-mono), 'Space Mono', monospace;
+    font-size: 12px;
+    line-height: 1.7;
+  }
+  .more-list li + li {
+    margin-top: 6px;
+  }
+  .more-list a {
+    color: var(--color-text);
+  }
+  .more-line {
+    color: rgba(255, 255, 255, 0.6);
   }
 
   /* ─── Tablet enhancement (≥768px) ─────────────────────────── */

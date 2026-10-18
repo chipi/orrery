@@ -1415,7 +1415,7 @@
   "wave_aria_play": "播放此大气层的声音",
   "wave_aria_silent": "真空 — 无声",
   "tile_pressure_vacuum": "真空",
-  "science_layer_hill_sphere_label": "Hill球",
+  "science_layer_hill_sphere_label": "希尔球",
   "science_layer_hill_sphere_desc": "该行星引力相对太阳占主导地位的边界。风格化半径（实际希尔球可能超出行星轨道）。",
   "science_layer_lagrange_points_label": "拉格朗日点",
   "science_layer_lagrange_points_desc": "沿行星→太阳连线的L1 + L2标记。JWST运行于地球L2点；SOHO位于地球L1点。",

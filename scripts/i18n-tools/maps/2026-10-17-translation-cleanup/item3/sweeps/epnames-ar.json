@@ -1,0 +1,20 @@
+[
+  {
+    "rel": "orbit-regimes-explore/OORT.json",
+    "at": "name",
+    "old": "Oort Cloud",
+    "new": "سحابة أورط"
+  },
+  {
+    "rel": "orbit-regimes-mars/HILL.json",
+    "at": "name",
+    "old": "كرة Hill Sphere المريخية",
+    "new": "كرة هيل المريخية"
+  },
+  {
+    "rel": "orbit-regimes-moon/HILL.json",
+    "at": "name",
+    "old": "كرة Hill Sphere القمرية",
+    "new": "كرة هيل القمرية"
+  }
+]

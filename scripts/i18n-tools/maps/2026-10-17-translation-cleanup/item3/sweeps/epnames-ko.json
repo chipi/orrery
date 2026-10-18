@@ -1,0 +1,20 @@
+[
+  {
+    "rel": "orbit-regimes-explore/OORT.json",
+    "at": "name",
+    "old": "Oort Cloud",
+    "new": "오르트 구름"
+  },
+  {
+    "rel": "orbit-regimes-mars/HILL.json",
+    "at": "name",
+    "old": "화성 Hill Sphere",
+    "new": "화성의 힐 구"
+  },
+  {
+    "rel": "orbit-regimes-moon/HILL.json",
+    "at": "name",
+    "old": "달의 Hill Sphere",
+    "new": "달의 힐 구"
+  }
+]

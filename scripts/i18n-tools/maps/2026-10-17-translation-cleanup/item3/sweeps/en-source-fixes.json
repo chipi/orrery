@@ -1,0 +1,68 @@
+[
+ {
+  "rel": "fleet/launcher/atlas-lv-3b.json",
+  "at": "description",
+  "old": "Atlas LV-3B was Convair's orbital launcher that lifted Mercury astronauts to orbit on six flights (Mercury-Atlas 6 through 10) between February and May 1963. The thin-skinned booster — so light it required pressurization to stand upright — proved that a ballistic missile could be man-rated. Retired after the Mercury program.",
+  "new": "Atlas LV-3B was Convair's orbital launcher that lifted Mercury astronauts to orbit on four flights (Mercury-Atlas 6 through 9) between February 1962 and May 1963. The thin-skinned booster — so light it required pressurization to stand upright — proved that a ballistic missile could be man-rated. Retired after the Mercury program."
+ },
+ {
+  "rel": "fleet/launch-site/lc-39a.json",
+  "at": "tagline",
+  "old": "Launched Apollo 8, 9, 11-17 (all crewed lunar missions to the Moon); today flies Falcon 9, Falcon Heavy, and Crew Dragon",
+  "new": "Launched Apollo 8, 9 and 11–17 (Apollo 9 in Earth orbit; Apollo 10 flew from 39B); today flies Falcon 9, Falcon Heavy, and Crew Dragon"
+ },
+ {
+  "rel": "fleet/launch-site/lc-39a.json",
+  "at": "best_known_for",
+  "old": "Launched Apollo 8, 9, 11-17 (all crewed lunar missions to the Moon); today flies Falcon 9, Falcon Heavy, and Crew Dragon",
+  "new": "Launched Apollo 8, 9 and 11–17 (Apollo 9 in Earth orbit; Apollo 10 flew from 39B); today flies Falcon 9, Falcon Heavy, and Crew Dragon"
+ },
+ {
+  "rel": "fleet/engine/le-7a.json",
+  "at": "description",
+  "old": "The LE-7A is the engine that gave Japan a fully indigenous heavy-lift capability. Developed by Mitsubishi Heavy Industries for JAXA, it runs a staged-combustion cycle on LOX and LH2 — the thermodynamic approach that extracts maximum efficiency from hydrogen propellant — and first flew on H-IIA in August 2001 as a refined successor to the original LE-7. The redesign addressed turbopump issues that had caused early H-II failures, and the LE-7A went on to anchor H-IIA and H-IIB's operational careers through 2024, launching Japan's HTV cargo ships to the International Space Station and the JAXA-ISRO radar satellite ALOS series.",
+  "new": "The LE-7A is the engine that gave Japan a fully indigenous heavy-lift capability. Developed by Mitsubishi Heavy Industries for JAXA, it runs a staged-combustion cycle on LOX and LH2 — the thermodynamic approach that extracts maximum efficiency from hydrogen propellant — and first flew on H-IIA in August 2001 as a refined successor to the original LE-7. The redesign addressed turbopump issues that had caused early H-II failures, and the LE-7A went on to anchor H-IIA and H-IIB's operational careers through 2024, launching Japan's HTV cargo ships to the International Space Station and JAXA's ALOS Earth-observation satellites."
+ },
+ {
+  "rel": "fleet/lander/mars-polar-lander.json",
+  "at": "description",
+  "old": "Mars Polar Lander is a planetary lander built by Lockheed Martin in USA. Lost on landing; drove faster-better-cheaper review. Flew in 1999 but failed; informs the redemption-arc layer of the Shuttle and Mir epoch.",
+  "new": "Mars Polar Lander is a planetary lander built by Lockheed Martin in USA. Lost on landing; drove faster-better-cheaper review. Flew in 1999 but failed."
+ },
+ {
+  "rel": "fleet/lander/hakuto-r.json",
+  "at": "description",
+  "old": "Hakuto-R program is a planetary lander built by ispace in Japan. First private Japanese lunar lander; M1 + M2 both crashed. Flew in 2023 but failed; informs the redemption-arc layer of the commercial era epoch.",
+  "new": "Hakuto-R program is a planetary lander built by ispace in Japan. First private Japanese lunar lander; M1 + M2 both crashed. Flew in 2023 but failed."
+ },
+ {
+  "rel": "fleet/lander/vikram-cy2.json",
+  "at": "description",
+  "old": "Vikram (Chandrayaan-2) is a planetary lander built by ISRO in India. Chandrayaan-2 lander; crashed; orbiter lives on. Flew in 2019 but failed; informs the redemption-arc layer of the commercial era epoch.",
+  "new": "Vikram (Chandrayaan-2) is a planetary lander built by ISRO in India. Chandrayaan-2 lander; crashed; orbiter lives on. Flew in 2019 but failed."
+ },
+ {
+  "rel": "science/planets/planetary-stats.json",
+  "at": "body_paragraphs.0",
+  "old": "Diameters relative to Earth: Mercury 0.38, Venus 0.95 (nearly Earth-sized), Earth 1.0, Mars 0.53, Jupiter 10.97, Saturn 9.14, Uranus 3.98, Neptune 3.86, Pluto 0.19. Surface gravities in Earth-g: Mercury 0.38, Venus 0.91, Earth 1.00, Mars 0.38, Jupiter 2.53, Saturn 1.07, Uranus 0.89, Neptune 1.14, Pluto 0.06. Notable surprises: Mars and Mercury share the same surface gravity (0.38 g) despite very different sizes, because their density × radius products land close. Uranus and Saturn both have lower-than-Earth gravity despite their giant sizes — both are dominated by H/He, much less dense than rocky Earth.",
+  "new": "Diameters relative to Earth: Mercury 0.38, Venus 0.95 (nearly Earth-sized), Earth 1.0, Mars 0.53, Jupiter 10.97, Saturn 9.14, Uranus 3.98, Neptune 3.86, Pluto 0.19. Surface gravities in Earth-g: Mercury 0.38, Venus 0.91, Earth 1.00, Mars 0.38, Jupiter 2.53, Saturn 1.07, Uranus 0.89, Neptune 1.14, Pluto 0.06. Notable surprises: Mars and Mercury share the same surface gravity (0.38 g) despite very different sizes, because their density × radius products land close. Uranus has lower-than-Earth gravity and Saturn barely more than Earth's, despite their giant sizes — both are dominated by H/He, much less dense than rocky Earth."
+ },
+ {
+  "rel": "science/planets/active-spacecraft-survey.json",
+  "at": "body_paragraphs.1",
+  "old": "Jupiter system: Juno (NASA, since 2016, polar 53-day orbit). Designed to map Jupiter's magnetic field + atmosphere + interior structure. Polar orbit avoids Jupiter's intense equatorial radiation belt — the belt is so harsh that other gas-giant orbiters would be permanently damaged within months on an equatorial trajectory. Juno's mission has been extended multiple times; it will continue until it's deorbited into Jupiter (designed to prevent biological contamination of Europa, which the spacecraft passes near). The next Jupiter mission is ESA's JUICE (Jupiter Icy moons Explorer, arriving 2031); NASA's Europa Clipper launches 2024 and arrives 2030.",
+  "new": "Jupiter system: Juno (NASA, since 2016, polar 53-day orbit). Designed to map Jupiter's magnetic field + atmosphere + interior structure. Polar orbit avoids Jupiter's intense equatorial radiation belt — the belt is so harsh that other gas-giant orbiters would be permanently damaged within months on an equatorial trajectory. Juno's mission has been extended multiple times; it will continue until it's deorbited into Jupiter (designed to prevent biological contamination of Europa, which the spacecraft passes near). The next Jupiter mission is ESA's JUICE (Jupiter Icy moons Explorer, arriving 2031); NASA's Europa Clipper launched in October 2024 and arrives in 2030."
+ },
+ {
+  "rel": "essays/interstellar-exploration.json",
+  "at": "body.4.md",
+  "old": "[Voyager 1](/missions?id=voyager-1) is the fastest-receding human object in existence. Launched in 1977, slung past Jupiter and Saturn on a trajectory that borrowed energy from both planets' gravitational fields, it is now travelling at roughly 17 kilometres per second relative to the Sun — about 61,000 kilometres per hour, a speed that would take you from London to Sydney in under a minute. By any terrestrial measure it is unimaginably fast. By interstellar measure, it is glacial. At 17 km/s, Voyager 1 would take on the order of 73,000 years to cover the distance to Proxima Centauri — and it is not even aimed there. It is headed in a different direction entirely, toward the constellation Ophiuchus, on a trajectory that was designed to survey the outer solar system, not to reach the stars.",
+  "new": "[Voyager 1](/missions?id=voyager-1) is the fastest-receding human object in existence. Launched in 1977, slung past Jupiter and Saturn on a trajectory that borrowed energy from both planets' gravitational fields, it is now travelling at roughly 17 kilometres per second relative to the Sun — about 61,000 kilometres per hour, a speed that would take you from London to Sydney in about seventeen minutes. By any terrestrial measure it is unimaginably fast. By interstellar measure, it is glacial. At 17 km/s, Voyager 1 would take on the order of 73,000 years to cover the distance to Proxima Centauri — and it is not even aimed there. It is headed in a different direction entirely, toward the constellation Ophiuchus, on a trajectory that was designed to survey the outer solar system, not to reach the stars."
+ },
+ {
+  "rel": "essays/going-to-the-moon.json",
+  "at": "body.19.md",
+  "old": "The renewed interest in the Moon is not an American programme. It is a genuine global phenomenon, and it has a history that predates Apollo by nearly a decade. The Soviet Luna programme put the first human-made object on the Moon — [Luna 2](/missions?id=luna9) impacted the surface in September 1959 — then returned the first photographs of the lunar farside with Luna 3 the same year, and spent the following decade accumulating firsts that are not as well remembered as they should be. [Luna 9](/missions?id=luna9) made the first soft landing in 1966, settling a genuine scientific controversy about whether the surface was solid enough to support a spacecraft (there was a serious argument, before that, that the Moon's surface might be metres-deep dust in which any lander would simply sink). Luna 16, in 1970, returned the first robotic sample to Earth — proving that you did not need a crewed mission to bring back lunar material. Luna 24, in 1976, was the last Soviet lunar sample return, and it remained the last lunar sample return by anyone for 44 years.",
+  "new": "The renewed interest in the Moon is not an American programme. It is a genuine global phenomenon, and it has a history that predates Apollo by nearly a decade. The Soviet Luna programme put the first human-made object on the Moon — Luna 2 impacted the surface in September 1959 — then returned the first photographs of the lunar farside with Luna 3 the same year, and spent the following decade accumulating firsts that are not as well remembered as they should be. [Luna 9](/missions?id=luna9) made the first soft landing in 1966, settling a genuine scientific controversy about whether the surface was solid enough to support a spacecraft (there was a serious argument, before that, that the Moon's surface might be metres-deep dust in which any lander would simply sink). Luna 16, in 1970, returned the first robotic sample to Earth — proving that you did not need a crewed mission to bring back lunar material. Luna 24, in 1976, was the last Soviet lunar sample return, and it remained the last lunar sample return by anyone for 44 years."
+ }
+]

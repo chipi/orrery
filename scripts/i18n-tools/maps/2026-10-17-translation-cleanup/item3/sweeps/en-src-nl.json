@@ -1,0 +1,68 @@
+[
+ {
+  "rel": "fleet/launcher/atlas-lv-3b.json",
+  "at": "description",
+  "old": "Atlas LV-3B was de orbitale lanceerder van Convair die zes keer Mercury-astronauten in een baan bracht (Mercury-Atlas 6 tot en met 10) tussen februari en mei 1963. De dunwandige booster — zo licht dat deze onder druk moest worden gehouden om rechtop te staan — bewees dat een ballistische raket geschikt kon worden gemaakt voor bemanning. Na het Mercury-programma buiten dienst gesteld.",
+  "new": "Atlas LV-3B was de orbitale lanceerder van Convair die vier keer Mercury-astronauten in een baan bracht (Mercury-Atlas 6 tot en met 9) tussen februari 1962 en mei 1963. De dunwandige booster — zo licht dat deze onder druk moest worden gehouden om rechtop te staan — bewees dat een ballistische raket geschikt kon worden gemaakt voor bemanning. Na het Mercury-programma buiten dienst gesteld."
+ },
+ {
+  "rel": "fleet/launch-site/lc-39a.json",
+  "at": "tagline",
+  "old": "Lanceerde Apollo 8, 9, 11-17 (alle bemande maanmissies); vandaag lancert Falcon 9, Falcon Heavy en Crew Dragon",
+  "new": "Lanceerde Apollo 8, 9, 11-17 (Apollo 9 in een baan om de aarde; Apollo 10 vanaf 39B); vandaag lancert Falcon 9, Falcon Heavy en Crew Dragon"
+ },
+ {
+  "rel": "fleet/launch-site/lc-39a.json",
+  "at": "best_known_for",
+  "old": "Lanceerde Apollo 8, 9, 11-17 (alle bemande maanmissies); vandaag lancert Falcon 9, Falcon Heavy en Crew Dragon",
+  "new": "Lanceerde Apollo 8, 9, 11-17 (Apollo 9 in een baan om de aarde; Apollo 10 vanaf 39B); vandaag lancert Falcon 9, Falcon Heavy en Crew Dragon"
+ },
+ {
+  "rel": "fleet/engine/le-7a.json",
+  "at": "description",
+  "old": "De LE-7A is de motor die Japan een volledig inheemse zware-liftcapaciteit gaf. Ontwikkeld door Mitsubishi Heavy Industries voor JAXA, werkt het op basis van een staged-combustion-cyclus met LOX en LH2 — de thermodynamische benadering die maximale efficiëntie uit waterstofpropellant haalt — en vloog voor het eerst in augustus 2001 op H-IIA als een verfijnd opvolger van LE-7. Het herontwerp adresseerde turbopompproblemen die vroege H-II-mislukkingen hadden veroorzaakt, en LE-7A zou vervolgens de operationele carrières van H-IIA en H-IIB tot 2024 bepalen, lancerend Japans HTV-vrachtschepen naar ISS en de JAXA-ISRO-radarsatelliet ALOS-serie.",
+  "new": "De LE-7A is de motor die Japan een volledig inheemse zware-liftcapaciteit gaf. Ontwikkeld door Mitsubishi Heavy Industries voor JAXA, werkt het op basis van een staged-combustion-cyclus met LOX en LH2 — de thermodynamische benadering die maximale efficiëntie uit waterstofpropellant haalt — en vloog voor het eerst in augustus 2001 op H-IIA als een verfijnd opvolger van LE-7. Het herontwerp adresseerde turbopompproblemen die vroege H-II-mislukkingen hadden veroorzaakt, en LE-7A zou vervolgens de operationele carrières van H-IIA en H-IIB tot 2024 bepalen, lancerend Japans HTV-vrachtschepen naar ISS en de ALOS-aardobservatiesatellieten van JAXA."
+ },
+ {
+  "rel": "fleet/lander/mars-polar-lander.json",
+  "at": "description",
+  "old": "Mars Polar Lander is een planetaire lander gebouwd door Lockheed Martin in de VS. Verloren bij de landing; reed sneller-beter-goedkoper beoordeling. Vloog in 1999 maar faalde; informeert de verlossing-arc laag van het Shuttle- en Mir-tijdperk.",
+  "new": "Mars Polar Lander is een planetaire lander gebouwd door Lockheed Martin in de VS. Verloren bij de landing; reed sneller-beter-goedkoper beoordeling. Vloog in 1999 maar faalde."
+ },
+ {
+  "rel": "fleet/lander/hakuto-r.json",
+  "at": "description",
+  "old": "Hakuto-R programma is een planetaire lander gebouwd door Ispace in Japan. Eerste prive-Japanse maanlander; M1 + M2 crashte beide. Vloog in 2023 maar faalde; informeert de relief-arc laag van het commerciële tijdperk tijdperk.",
+  "new": "Hakuto-R programma is een planetaire lander gebouwd door Ispace in Japan. Eerste prive-Japanse maanlander; M1 + M2 crashte beide. Vloog in 2023 maar faalde."
+ },
+ {
+  "rel": "fleet/lander/vikram-cy2.json",
+  "at": "description",
+  "old": "Vikram (Chandrayaan-2) is een planetaire lander gebouwd door ISRO in India. Chandrayaan-2 lander; neergestort; orbiter leeft voort. Vloog in 2019 maar faalde; informeert de replacement-arc laag van het commerciële tijdperk tijdperk.",
+  "new": "Vikram (Chandrayaan-2) is een planetaire lander gebouwd door ISRO in India. Chandrayaan-2 lander; neergestort; orbiter leeft voort. Vloog in 2019 maar faalde."
+ },
+ {
+  "rel": "science/planets/planetary-stats.json",
+  "at": "body_paragraphs.0",
+  "old": "Diameters ten opzichte van de Aarde: Mercurius 0,38, Venus 0,95 (bijna even groot als de Aarde), Aarde 1,0, Mars 0,53, Jupiter 10,97, Saturnus 9,14, Uranus 3,98, Neptunus 3,86, Pluto 0,19. Oppervlaktezwaartekracht in g van de Aarde: Mercurius 0,38, Venus 0,91, Aarde 1,00, Mars 0,38, Jupiter 2,53, Saturnus 1,07, Uranus 0,89, Neptunus 1,14, Pluto 0,06. Opvallende verrassingen: Mars en Mercurius hebben dezelfde oppervlaktezwaartekracht (0,38 g) ondanks sterk verschillende afmetingen, omdat het product van dichtheid × straal bij beide dicht bij elkaar ligt. Uranus en Saturnus hebben allebei een lagere zwaartekracht dan de Aarde ondanks hun enorme afmetingen — beide worden gedomineerd door H/He en zijn veel minder dicht dan de rotsachtige Aarde.",
+  "new": "Diameters ten opzichte van de Aarde: Mercurius 0,38, Venus 0,95 (bijna even groot als de Aarde), Aarde 1,0, Mars 0,53, Jupiter 10,97, Saturnus 9,14, Uranus 3,98, Neptunus 3,86, Pluto 0,19. Oppervlaktezwaartekracht in g van de Aarde: Mercurius 0,38, Venus 0,91, Aarde 1,00, Mars 0,38, Jupiter 2,53, Saturnus 1,07, Uranus 0,89, Neptunus 1,14, Pluto 0,06. Opvallende verrassingen: Mars en Mercurius hebben dezelfde oppervlaktezwaartekracht (0,38 g) ondanks sterk verschillende afmetingen, omdat het product van dichtheid × straal bij beide dicht bij elkaar ligt. Uranus heeft een lagere zwaartekracht dan de Aarde en Saturnus nauwelijks een hogere, ondanks hun enorme afmetingen — beide worden gedomineerd door H/He en zijn veel minder dicht dan de rotsachtige Aarde."
+ },
+ {
+  "rel": "science/planets/active-spacecraft-survey.json",
+  "at": "body_paragraphs.1",
+  "old": "Jupitersysteem: Juno (NASA, sinds 2016, polaire baan van 53 dagen). Ontworpen om het magnetisch veld, de atmosfeer en de interne structuur van Jupiter in kaart te brengen. Een polaire baan vermijdt de intense equatoriale stralingsgordel van Jupiter — de gordel is zo meedogenloos dat andere orbiters rond gasreuzen in een equatoriale baan binnen enkele maanden blijvend beschadigd zouden raken. De missie van Juno is meerdere keren verlengd; hij blijft doorgaan tot hij gecontroleerd in Jupiter wordt neergestort (om biologische besmetting van Europa te voorkomen, waar het ruimtevaartuig dichtbij langs komt). De volgende Jupitermissie is JUICE van ESA (Jupiter Icy Moons Explorer, aankomst 2031); Europa Clipper van NASA wordt in 2024 gelanceerd en arriveert in 2030.",
+  "new": "Jupitersysteem: Juno (NASA, sinds 2016, polaire baan van 53 dagen). Ontworpen om het magnetisch veld, de atmosfeer en de interne structuur van Jupiter in kaart te brengen. Een polaire baan vermijdt de intense equatoriale stralingsgordel van Jupiter — de gordel is zo meedogenloos dat andere orbiters rond gasreuzen in een equatoriale baan binnen enkele maanden blijvend beschadigd zouden raken. De missie van Juno is meerdere keren verlengd; hij blijft doorgaan tot hij gecontroleerd in Jupiter wordt neergestort (om biologische besmetting van Europa te voorkomen, waar het ruimtevaartuig dichtbij langs komt). De volgende Jupitermissie is JUICE van ESA (Jupiter Icy Moons Explorer, aankomst 2031); Europa Clipper van NASA werd in oktober 2024 gelanceerd en arriveert in 2030."
+ },
+ {
+  "rel": "essays/interstellar-exploration.json",
+  "at": "body.4.md",
+  "old": "[Voyager 1](/missions?id=voyager-1) is het snelst wegvliegende door mensen gemaakte object dat bestaat. In 1977 gelanceerd en langs Jupiter en Saturnus geslingerd op een baan die energie leende uit de zwaartekrachtvelden van beide planeten, reist het nu met ongeveer 17 kilometer per seconde ten opzichte van de Zon — zo'n 61.000 kilometer per uur, een snelheid waarmee je in minder dan een minuut van Londen naar Sydney zou komen. Naar aardse maatstaven is dat onvoorstelbaar snel. Naar interstellaire maatstaven is het een gletsjer. Met 17 km/s zou Voyager 1 zo'n 73.000 jaar nodig hebben om de afstand tot Proxima Centauri af te leggen — en het is daar niet eens op gericht. Het vliegt een heel andere kant op, richting het sterrenbeeld Slangendrager, op een baan die was ontworpen om het buitenste zonnestelsel in kaart te brengen, niet om de sterren te bereiken.",
+  "new": "[Voyager 1](/missions?id=voyager-1) is het snelst wegvliegende door mensen gemaakte object dat bestaat. In 1977 gelanceerd en langs Jupiter en Saturnus geslingerd op een baan die energie leende uit de zwaartekrachtvelden van beide planeten, reist het nu met ongeveer 17 kilometer per seconde ten opzichte van de Zon — zo'n 61.000 kilometer per uur, een snelheid waarmee je in zo'n zeventien minuten van Londen naar Sydney zou komen. Naar aardse maatstaven is dat onvoorstelbaar snel. Naar interstellaire maatstaven is het een gletsjer. Met 17 km/s zou Voyager 1 zo'n 73.000 jaar nodig hebben om de afstand tot Proxima Centauri af te leggen — en het is daar niet eens op gericht. Het vliegt een heel andere kant op, richting het sterrenbeeld Slangendrager, op een baan die was ontworpen om het buitenste zonnestelsel in kaart te brengen, niet om de sterren te bereiken."
+ },
+ {
+  "rel": "essays/going-to-the-moon.json",
+  "at": "body.19.md",
+  "old": "De hernieuwde belangstelling voor de Maan is geen Amerikaans programma. Het is een werkelijk wereldwijd verschijnsel, en de geschiedenis ervan begint bijna tien jaar vóór Apollo. Het Sovjet-Luna-programma bracht het eerste door mensen gemaakte object op de Maan — [Luna 2](/missions?id=luna9) sloeg in september 1959 op het oppervlak in — maakte datzelfde jaar met Luna 3 de eerste foto's van de achterkant van de Maan en boekte in het decennium daarna een reeks primeurs die minder bekend zijn dan ze zouden moeten zijn. [Luna 9](/missions?id=luna9) maakte in 1966 de eerste zachte landing en beslechtte daarmee een echte wetenschappelijke controverse over de vraag of het oppervlak stevig genoeg was om een ruimtevaartuig te dragen (daarvoor werd serieus beargumenteerd dat het maanoppervlak uit meters diep stof kon bestaan waarin elke lander gewoon zou wegzinken). Luna 16 bracht in 1970 het eerste robotmonster naar de Aarde — het bewijs dat je geen bemande missie nodig had om maanmateriaal terug te halen. Luna 24 was in 1976 de laatste Sovjet-monsterterugkeer van de Maan en bleef 44 jaar lang de laatste monsterterugkeer van de Maan door wie dan ook.",
+  "new": "De hernieuwde belangstelling voor de Maan is geen Amerikaans programma. Het is een werkelijk wereldwijd verschijnsel, en de geschiedenis ervan begint bijna tien jaar vóór Apollo. Het Sovjet-Luna-programma bracht het eerste door mensen gemaakte object op de Maan — Luna 2 sloeg in september 1959 op het oppervlak in — maakte datzelfde jaar met Luna 3 de eerste foto's van de achterkant van de Maan en boekte in het decennium daarna een reeks primeurs die minder bekend zijn dan ze zouden moeten zijn. [Luna 9](/missions?id=luna9) maakte in 1966 de eerste zachte landing en beslechtte daarmee een echte wetenschappelijke controverse over de vraag of het oppervlak stevig genoeg was om een ruimtevaartuig te dragen (daarvoor werd serieus beargumenteerd dat het maanoppervlak uit meters diep stof kon bestaan waarin elke lander gewoon zou wegzinken). Luna 16 bracht in 1970 het eerste robotmonster naar de Aarde — het bewijs dat je geen bemande missie nodig had om maanmateriaal terug te halen. Luna 24 was in 1976 de laatste Sovjet-monsterterugkeer van de Maan en bleef 44 jaar lang de laatste monsterterugkeer van de Maan door wie dan ook."
+ }
+]

@@ -1,0 +1,68 @@
+[
+ {
+  "rel": "fleet/launcher/atlas-lv-3b.json",
+  "at": "description",
+  "old": "L'Atlas LV-3B era il lanciatore orbitale della Convair che ha portato gli astronauti del Mercury in orbita in sei voli (Mercury-Atlas 6 a 10) tra febbraio e maggio 1963. Il booster con struttura sottile — così leggero da richiedere la pressurizzazione per stare in piedi — ha provato che un missile balistico poteva essere certificato per i voli umani. Ritirato dopo il programma Mercury.",
+  "new": "L'Atlas LV-3B era il lanciatore orbitale della Convair che ha portato gli astronauti del Mercury in orbita in quattro voli (dal Mercury-Atlas 6 al 9) tra febbraio 1962 e maggio 1963. Il booster con struttura sottile — così leggero da richiedere la pressurizzazione per stare in piedi — ha provato che un missile balistico poteva essere certificato per i voli umani. Ritirato dopo il programma Mercury."
+ },
+ {
+  "rel": "fleet/launch-site/lc-39a.json",
+  "at": "tagline",
+  "old": "Ha lanciato Apollo 8, 9, 11-17 (tutte le missioni lunari con equipaggio verso la Luna); oggi lancia Falcon 9, Falcon Heavy e Crew Dragon",
+  "new": "Ha lanciato Apollo 8, 9, 11-17 (Apollo 9 in orbita terrestre; Apollo 10 partì dal 39B); oggi lancia Falcon 9, Falcon Heavy e Crew Dragon"
+ },
+ {
+  "rel": "fleet/launch-site/lc-39a.json",
+  "at": "best_known_for",
+  "old": "Ha lanciato Apollo 8, 9, 11-17 (tutte le missioni lunari con equipaggio verso la Luna); oggi lancia Falcon 9, Falcon Heavy e Crew Dragon",
+  "new": "Ha lanciato Apollo 8, 9, 11-17 (Apollo 9 in orbita terrestre; Apollo 10 partì dal 39B); oggi lancia Falcon 9, Falcon Heavy e Crew Dragon"
+ },
+ {
+  "rel": "fleet/engine/le-7a.json",
+  "at": "description",
+  "old": "Il LE-7A è il motore che ha fornito al Giappone una capacità di lancio pesante completamente autoctona. Sviluppato da Mitsubishi Heavy Industries per JAXA, funziona con un ciclo a combustione graduale a LOX e LH2 — l'approccio termodinamico che estrae la massima efficienza dal propellente a idrogeno — e ha volato per la prima volta su H-IIA nell'agosto 2001 come successore perfezionato del LE-7 originale. Il ridisegno ha affrontato i problemi della turbopompa che avevano causato i primi fallimenti di H-II, e il LE-7A ha continuato ad ancorare le carriere operative di H-IIA e H-IIB fino al 2024, lanciando le navi cargo HTV del Giappone verso la Stazione spaziale internazionale e il satellite radar ALOS della serie JAXA-ISRO.",
+  "new": "Il LE-7A è il motore che ha fornito al Giappone una capacità di lancio pesante completamente autoctona. Sviluppato da Mitsubishi Heavy Industries per JAXA, funziona con un ciclo a combustione graduale a LOX e LH2 — l'approccio termodinamico che estrae la massima efficienza dal propellente a idrogeno — e ha volato per la prima volta su H-IIA nell'agosto 2001 come successore perfezionato del LE-7 originale. Il ridisegno ha affrontato i problemi della turbopompa che avevano causato i primi fallimenti di H-II, e il LE-7A ha continuato ad ancorare le carriere operative di H-IIA e H-IIB fino al 2024, lanciando le navi cargo HTV del Giappone verso la Stazione spaziale internazionale e i satelliti di osservazione della Terra ALOS della JAXA."
+ },
+ {
+  "rel": "fleet/lander/mars-polar-lander.json",
+  "at": "description",
+  "old": "Mars Polar Lander è un lander planetario costruito da Lockheed Martin negli Stati Uniti. Perso all'atterraggio; ha guidato più veloce-migliore-cheaper recensione. Ha volato nel 1999 ma è fallito; informa lo strato redentore-arc della navette e dell'epoca Mir.",
+  "new": "Mars Polar Lander è un lander planetario costruito da Lockheed Martin negli Stati Uniti. Perso all'atterraggio; ha guidato più veloce-migliore-cheaper recensione. Ha volato nel 1999 ma è fallito."
+ },
+ {
+  "rel": "fleet/lander/hakuto-r.json",
+  "at": "description",
+  "old": "Il programma Hakuto-R è un lander planetario costruito da ispace in Giappone. Prima lavanda lunare giapponese privata; M1 + M2 entrambi si sono schiantati. Flew nel 2023 ma fallito; informa lo strato redenzione-arc dell'epoca commerciale.",
+  "new": "Il programma Hakuto-R è un lander planetario costruito da ispace in Giappone. Prima lavanda lunare giapponese privata; M1 + M2 entrambi si sono schiantati. Ha volato nel 2023 ma è fallito."
+ },
+ {
+  "rel": "fleet/lander/vikram-cy2.json",
+  "at": "description",
+  "old": "Vikram (Chandrayaan-2) è un lander planetario costruito da ISRO in India. Chandrayaan-2 lander; crashed; orbiter vive. Flew nel 2019 ma fallito; informa lo strato redenzione-arc dell'epoca commerciale.",
+  "new": "Vikram (Chandrayaan-2) è un lander planetario costruito da ISRO in India. Chandrayaan-2 lander; crashed; orbiter vive. Ha volato nel 2019 ma è fallito."
+ },
+ {
+  "rel": "science/planets/planetary-stats.json",
+  "at": "body_paragraphs.0",
+  "old": "Diametri relativi alla Terra: Mercurio 0,38, Venere 0,95 (quasi delle dimensioni della Terra), Terra 1,0, Marte 0,53, Giove 10,97, Saturno 9,14, Urano 3,98, Nettuno 3,86, Plutone 0,19. Gravità superficiali in unità g terrestri: Mercurio 0,38, Venere 0,91, Terra 1,00, Marte 0,38, Giove 2,53, Saturno 1,07, Urano 0,89, Nettuno 1,14, Plutone 0,06. Sorprese notevoli: Marte e Mercurio condividono la stessa gravità superficiale (0,38 g) nonostante le dimensioni molto diverse, perché i loro prodotti densità × raggio risultano simili. Urano e Saturno hanno entrambi una gravità inferiore a quella terrestre nonostante le loro dimensioni gigantesche — entrambi sono dominati da H/He, molto meno densi della rocciosa Terra.",
+  "new": "Diametri relativi alla Terra: Mercurio 0,38, Venere 0,95 (quasi delle dimensioni della Terra), Terra 1,0, Marte 0,53, Giove 10,97, Saturno 9,14, Urano 3,98, Nettuno 3,86, Plutone 0,19. Gravità superficiali in unità g terrestri: Mercurio 0,38, Venere 0,91, Terra 1,00, Marte 0,38, Giove 2,53, Saturno 1,07, Urano 0,89, Nettuno 1,14, Plutone 0,06. Sorprese notevoli: Marte e Mercurio condividono la stessa gravità superficiale (0,38 g) nonostante le dimensioni molto diverse, perché i loro prodotti densità × raggio risultano simili. Urano ha una gravità inferiore a quella terrestre e Saturno appena superiore, nonostante le loro dimensioni gigantesche — entrambi sono dominati da H/He, molto meno densi della rocciosa Terra."
+ },
+ {
+  "rel": "science/planets/active-spacecraft-survey.json",
+  "at": "body_paragraphs.1",
+  "old": "Sistema di Giove: Juno (NASA, dal 2016, orbita polare di 53 giorni). Progettato per mappare il campo magnetico di Giove + atmosfera + struttura interna. L'orbita polare evita l'intensa fascia di radiazioni equatoriale di Giove — una fascia così severa che qualunque altro orbiter di un gigante gassoso, su una traiettoria equatoriale, subirebbe danni permanenti nel giro di mesi. La missione di Juno è stata prolungata più volte; proseguirà finché la sonda non verrà fatta precipitare su Giove (una scelta pensata per evitare la contaminazione biologica di Europa, vicino alla quale passa il veicolo). La prossima missione su Giove è JUICE dell'ESA (Jupiter Icy moons Explorer, in arrivo nel 2031); l'Europa Clipper della NASA viene lanciato nel 2024 e arriva nel 2030.",
+  "new": "Sistema di Giove: Juno (NASA, dal 2016, orbita polare di 53 giorni). Progettato per mappare il campo magnetico di Giove + atmosfera + struttura interna. L'orbita polare evita l'intensa fascia di radiazioni equatoriale di Giove — una fascia così severa che qualunque altro orbiter di un gigante gassoso, su una traiettoria equatoriale, subirebbe danni permanenti nel giro di mesi. La missione di Juno è stata prolungata più volte; proseguirà finché la sonda non verrà fatta precipitare su Giove (una scelta pensata per evitare la contaminazione biologica di Europa, vicino alla quale passa il veicolo). La prossima missione su Giove è JUICE dell'ESA (Jupiter Icy moons Explorer, in arrivo nel 2031); l'Europa Clipper della NASA è stato lanciato nell'ottobre 2024 e arriva nel 2030."
+ },
+ {
+  "rel": "essays/interstellar-exploration.json",
+  "at": "body.4.md",
+  "old": "[Voyager 1](/missions?id=voyager-1) è il più veloce, tra gli oggetti costruiti dall'uomo, ad allontanarsi dal Sole. Lanciato nel 1977 e sospinto oltre Giove e Saturno lungo una traiettoria che ha preso in prestito energia dai campi gravitazionali di entrambi i pianeti, viaggia ora a circa 17 chilometri al secondo rispetto al Sole — circa 61.000 chilometri all'ora, una velocità che da Londra a Sydney ti porterebbe in meno di un minuto. Con qualsiasi metro terrestre è inimmaginabilmente veloce. Con il metro interstellare, procede a passo di ghiacciaio. A 17 km/s, Voyager 1 impiegherebbe dell'ordine di 73.000 anni per coprire la distanza fino a Proxima Centauri — e non è nemmeno diretto lì. Va in tutt'altra direzione, verso la costellazione dell'Ofiuco, lungo una traiettoria pensata per esplorare il sistema solare esterno, non per raggiungere le stelle.",
+  "new": "[Voyager 1](/missions?id=voyager-1) è il più veloce, tra gli oggetti costruiti dall'uomo, ad allontanarsi dal Sole. Lanciato nel 1977 e sospinto oltre Giove e Saturno lungo una traiettoria che ha preso in prestito energia dai campi gravitazionali di entrambi i pianeti, viaggia ora a circa 17 chilometri al secondo rispetto al Sole — circa 61.000 chilometri all'ora, una velocità che da Londra a Sydney ti porterebbe in circa diciassette minuti. Con qualsiasi metro terrestre è inimmaginabilmente veloce. Con il metro interstellare, procede a passo di ghiacciaio. A 17 km/s, Voyager 1 impiegherebbe dell'ordine di 73.000 anni per coprire la distanza fino a Proxima Centauri — e non è nemmeno diretto lì. Va in tutt'altra direzione, verso la costellazione dell'Ofiuco, lungo una traiettoria pensata per esplorare il sistema solare esterno, non per raggiungere le stelle."
+ },
+ {
+  "rel": "essays/going-to-the-moon.json",
+  "at": "body.19.md",
+  "old": "Il rinnovato interesse per la Luna non è un programma americano. È un fenomeno davvero globale, e ha una storia che precede l'Apollo di quasi un decennio. Il programma sovietico Luna ha messo sulla Luna il primo oggetto costruito dall'uomo — [Luna 2](/missions?id=luna9) si è schiantata sulla superficie nel settembre 1959 — poi ha riportato le prime fotografie della faccia nascosta con Luna 3, lo stesso anno, e nel decennio successivo ha accumulato primati che non sono ricordati quanto meriterebbero. [Luna 9](/missions?id=luna9) ha compiuto il primo atterraggio morbido nel 1966, chiudendo una vera controversia scientifica sulla solidità della superficie, se bastasse a reggere un veicolo (prima di allora c'era chi sosteneva con serietà che la superficie lunare fosse una polvere profonda metri, in cui qualunque lander sarebbe semplicemente affondato). Luna 16, nel 1970, ha riportato sulla Terra il primo campione prelevato da un robot — dimostrando che per riportare materiale lunare non serviva una missione con equipaggio. Luna 24, nel 1976, è stato l'ultimo ritorno di campioni lunari sovietico, e per 44 anni è rimasto l'ultimo ritorno di campioni lunari di chiunque.",
+  "new": "Il rinnovato interesse per la Luna non è un programma americano. È un fenomeno davvero globale, e ha una storia che precede l'Apollo di quasi un decennio. Il programma sovietico Luna ha messo sulla Luna il primo oggetto costruito dall'uomo — Luna 2 si è schiantata sulla superficie nel settembre 1959 — poi ha riportato le prime fotografie della faccia nascosta con Luna 3, lo stesso anno, e nel decennio successivo ha accumulato primati che non sono ricordati quanto meriterebbero. [Luna 9](/missions?id=luna9) ha compiuto il primo atterraggio morbido nel 1966, chiudendo una vera controversia scientifica sulla solidità della superficie, se bastasse a reggere un veicolo (prima di allora c'era chi sosteneva con serietà che la superficie lunare fosse una polvere profonda metri, in cui qualunque lander sarebbe semplicemente affondato). Luna 16, nel 1970, ha riportato sulla Terra il primo campione prelevato da un robot — dimostrando che per riportare materiale lunare non serviva una missione con equipaggio. Luna 24, nel 1976, è stato l'ultimo ritorno di campioni lunari sovietico, e per 44 anni è rimasto l'ultimo ritorno di campioni lunari di chiunque."
+ }
+]

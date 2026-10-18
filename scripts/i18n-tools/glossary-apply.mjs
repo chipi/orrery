@@ -353,7 +353,7 @@ function coordinateSr(s) {
 }
 const LATIN = new Set(['de', 'fr', 'es', 'it', 'nl', 'pt-BR']);
 const EPONYM_HEAD_RU =
-  /(^|[\s«(\[])(перел[её]т|передач|вопрос|окон|переход|трансфер|задач|закон|уравнени|решени|решател|предел|окн|полос|эллипс|траектори|орбит|гравитаци|мост|эффект|постоянн|сфер|радиус|пояс|сдвиг|анализ|Principia)[а-яё]*»?\s*$/i;
+  /(^|[\s«([])(перел[её]т|передач|вопрос|окон|переход|трансфер|задач|закон|уравнени|решени|решател|предел|окн|полос|эллипс|траектори|орбит|гравитаци|мост|эффект|постоянн|сфер|радиус|пояс|сдвиг|анализ|Principia)[а-яё]*»?\s*$/i;
 // The glossary holds the form used inside a sentence ("cráter Gale", "Terre"); a
 // Romance/Germanic sentence needs the article the English source didn't have. These
 // rules only add an article where a preposition stands right before the swapped word;

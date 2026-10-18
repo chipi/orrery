@@ -1,62 +1,62 @@
 [
- {
-  "rel": "fleet/lander/hakuto-r.json",
-  "at": "tagline",
-  "old": "Eerste prive-Japanse maanlander; M1 + M2 beide neergestort",
-  "new": "Japans eerste private pogingen tot een maanlanding; missie 1 (2023) en missie 2 (2025) stortten beide neer"
- },
- {
-  "rel": "fleet/lander/hakuto-r.json",
-  "at": "best_known_for",
-  "old": "Eerste prive-Japanse maanlander; M1 + M2 beide neergestort",
-  "new": "Japans eerste private pogingen tot een maanlanding; missie 1 (2023) en missie 2 (2025) stortten beide neer"
- },
- {
-  "rel": "fleet/lander/hakuto-r.json",
-  "at": "description",
-  "old": "Hakuto-R programma is een planetaire lander gebouwd door Ispace in Japan. Eerste prive-Japanse maanlander; M1 + M2 crashte beide. Vloog in 2023 maar faalde.",
-  "new": "Hakuto-R is een programma van maanlanders van het Japanse bedrijf ispace. De lander van missie 1, gelanceerd in december 2022, was Japans eerste private poging tot een maanlanding en stortte in april 2023 neer. De lander van missie 2, Resilience, stortte in juni 2025 neer."
- },
- {
-  "rel": "fleet/lander/hakuto-r.json",
-  "at": "name",
-  "old": "Hakuto-R programma",
-  "new": "Hakuto-R-programma"
- },
- {
-  "rel": "fleet/lander/vikram-cy2.json",
-  "at": "tagline",
-  "old": "Chandrayaan-2 lander; neergestort; orbiter leeft op",
-  "new": "Lander van de Indiase missie Chandrayaan-2; stortte in 2019 neer, maar de orbiter bleef werken"
- },
- {
-  "rel": "fleet/lander/vikram-cy2.json",
-  "at": "best_known_for",
-  "old": "Chandrayaan-2 lander; neergestort; orbiter leeft op",
-  "new": "Lander van de Indiase missie Chandrayaan-2; stortte in 2019 neer, maar de orbiter bleef werken"
- },
- {
-  "rel": "fleet/lander/vikram-cy2.json",
-  "at": "description",
-  "old": "Vikram (Chandrayaan-2) is een planetaire lander gebouwd door ISRO in India. Chandrayaan-2 lander; neergestort; orbiter leeft voort. Vloog in 2019 maar faalde.",
-  "new": "Vikram was de lander van de Indiase missie Chandrayaan-2, gebouwd door ISRO. Hij stortte in september 2019 neer tijdens de landingspoging, maar de orbiter van Chandrayaan-2 bleef werken in een baan om de Maan."
- },
- {
-  "rel": "fleet/lander/mars-polar-lander.json",
-  "at": "tagline",
-  "old": "Verloren op de landing; reed sneller-beter-goedkoper beoordeling",
-  "new": "In 1999 verloren tijdens de landing; de mislukking bracht NASA ertoe haar aanpak “sneller, beter, goedkoper” te herzien"
- },
- {
-  "rel": "fleet/lander/mars-polar-lander.json",
-  "at": "best_known_for",
-  "old": "Verloren op de landing; reed sneller-beter-goedkoper beoordeling",
-  "new": "In 1999 verloren tijdens de landing; de mislukking bracht NASA ertoe haar aanpak “sneller, beter, goedkoper” te herzien"
- },
- {
-  "rel": "fleet/lander/mars-polar-lander.json",
-  "at": "description",
-  "old": "Mars Polar Lander is een planetaire lander gebouwd door Lockheed Martin in de VS. Verloren bij de landing; reed sneller-beter-goedkoper beoordeling. Vloog in 1999 maar faalde.",
-  "new": "Mars Polar Lander was een lander van NASA, gebouwd door Lockheed Martin. Tijdens de afdaling naar het zuidpoolgebied van Mars in december 1999 ging het contact verloren. Enkele maanden na het verlies van Mars Climate Orbiter bracht deze mislukking NASA ertoe haar aanpak “sneller, beter, goedkoper” te herzien."
- }
+  {
+    "rel": "fleet/lander/hakuto-r.json",
+    "at": "tagline",
+    "old": "Eerste prive-Japanse maanlander; M1 + M2 beide neergestort",
+    "new": "Japans eerste private pogingen tot een maanlanding; missie 1 (2023) en missie 2 (2025) stortten beide neer"
+  },
+  {
+    "rel": "fleet/lander/hakuto-r.json",
+    "at": "best_known_for",
+    "old": "Eerste prive-Japanse maanlander; M1 + M2 beide neergestort",
+    "new": "Japans eerste private pogingen tot een maanlanding; missie 1 (2023) en missie 2 (2025) stortten beide neer"
+  },
+  {
+    "rel": "fleet/lander/hakuto-r.json",
+    "at": "description",
+    "old": "Hakuto-R programma is een planetaire lander gebouwd door Ispace in Japan. Eerste prive-Japanse maanlander; M1 + M2 crashte beide. Vloog in 2023 maar faalde.",
+    "new": "Hakuto-R is een programma van maanlanders van het Japanse bedrijf ispace. De lander van missie 1, gelanceerd in december 2022, was Japans eerste private poging tot een maanlanding en stortte in april 2023 neer. De lander van missie 2, Resilience, stortte in juni 2025 neer."
+  },
+  {
+    "rel": "fleet/lander/hakuto-r.json",
+    "at": "name",
+    "old": "Hakuto-R programma",
+    "new": "Hakuto-R-programma"
+  },
+  {
+    "rel": "fleet/lander/vikram-cy2.json",
+    "at": "tagline",
+    "old": "Chandrayaan-2 lander; neergestort; orbiter leeft op",
+    "new": "Lander van de Indiase missie Chandrayaan-2; stortte in 2019 neer, maar de orbiter bleef werken"
+  },
+  {
+    "rel": "fleet/lander/vikram-cy2.json",
+    "at": "best_known_for",
+    "old": "Chandrayaan-2 lander; neergestort; orbiter leeft op",
+    "new": "Lander van de Indiase missie Chandrayaan-2; stortte in 2019 neer, maar de orbiter bleef werken"
+  },
+  {
+    "rel": "fleet/lander/vikram-cy2.json",
+    "at": "description",
+    "old": "Vikram (Chandrayaan-2) is een planetaire lander gebouwd door ISRO in India. Chandrayaan-2 lander; neergestort; orbiter leeft voort. Vloog in 2019 maar faalde.",
+    "new": "Vikram was de lander van de Indiase missie Chandrayaan-2, gebouwd door ISRO. Hij stortte in september 2019 neer tijdens de landingspoging, maar de orbiter van Chandrayaan-2 bleef werken in een baan om de Maan."
+  },
+  {
+    "rel": "fleet/lander/mars-polar-lander.json",
+    "at": "tagline",
+    "old": "Verloren op de landing; reed sneller-beter-goedkoper beoordeling",
+    "new": "In 1999 verloren tijdens de landing; de mislukking bracht NASA ertoe haar aanpak “sneller, beter, goedkoper” te herzien"
+  },
+  {
+    "rel": "fleet/lander/mars-polar-lander.json",
+    "at": "best_known_for",
+    "old": "Verloren op de landing; reed sneller-beter-goedkoper beoordeling",
+    "new": "In 1999 verloren tijdens de landing; de mislukking bracht NASA ertoe haar aanpak “sneller, beter, goedkoper” te herzien"
+  },
+  {
+    "rel": "fleet/lander/mars-polar-lander.json",
+    "at": "description",
+    "old": "Mars Polar Lander is een planetaire lander gebouwd door Lockheed Martin in de VS. Verloren bij de landing; reed sneller-beter-goedkoper beoordeling. Vloog in 1999 maar faalde.",
+    "new": "Mars Polar Lander was een lander van NASA, gebouwd door Lockheed Martin. Tijdens de afdaling naar het zuidpoolgebied van Mars in december 1999 ging het contact verloren. Enkele maanden na het verlies van Mars Climate Orbiter bracht deze mislukking NASA ertoe haar aanpak “sneller, beter, goedkoper” te herzien."
+  }
 ]

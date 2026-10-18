@@ -1,302 +1,302 @@
 [
- {
-  "rel": "science/transfers/coplanar-trajectories.json",
-  "at": "narrative_101.0",
-  "old": "Stell dich ins Zentrum des Sonnensystems und schau dir die Planeten an — du siehst einen Pfannkuchen, keine Kugel. Merkur, Venus, Erde, Mars, Jupiter, Saturn — sie alle umkreisen innerhalb von etwa 7° derselben flachen Ebene (der Ekliptik). Die Planeten entstanden aus einer einzigen rotierenden Gas-und-Staub-Wolke, und diese Rotation kollabierte alles zu einer dünnen Scheibe. Alles seitdem ist in dieser Scheibe geblieben.",
-  "new": "Stell dich ins Zentrum des Sonnensystems und schau dir die Planeten an — du siehst einen Pfannkuchen, keine Kugel. Merkur, Venus, Erde, Mars, Jupiter, Saturn — sie alle umkreisen die Sonne innerhalb von etwa 7° derselben flachen Ebene (der Ekliptik). Die Planeten entstanden aus einer einzigen rotierenden Gas- und Staubwolke, und diese Rotation ließ alles zu einer dünnen Scheibe kollabieren. Seitdem ist alles in dieser Scheibe geblieben."
- },
- {
-  "rel": "science/transfers/coplanar-trajectories.json",
-  "at": "narrative_101.1",
-  "old": "Stell dir nun vor, eine Reise zum Mars zu planen. Der billigste Weg dorthin ist ein langer gebogener Bogen, der um die Sonne führt und an der Marsbahn ankommt, genau in dem Moment, in dem der Mars dort ist. Der billigste Bogen liegt in derselben Ebene, die Erde und Mars teilen — der Ekliptik. Die Scheibe zu verlassen für einen \"Umweg nach oben\" kostet Treibstoff, den die Raumsonde sich nicht leisten kann.",
-  "new": "Stell dir nun vor, eine Reise zum Mars zu planen. Der billigste Weg dorthin ist ein langer gebogener Bogen, der um die Sonne führt und die Marsbahn genau in dem Moment erreicht, in dem der Mars dort ist. Der billigste Bogen liegt in derselben Ebene, die Erde und Mars teilen — der Ekliptik. Die Scheibe für einen „Umweg nach außen und oben“ zu verlassen, kostet Treibstoff, den die Raumsonde sich nicht leisten kann."
- },
- {
-  "rel": "science/transfers/coplanar-trajectories.json",
-  "at": "narrative_101.2",
-  "old": "Also kämpfen Missionsplaner nicht gegen die Scheibe. Sie warten, bis die Orbitalgeometrie passt (das bedeutet \"Startfenster\"), richten die Rakete entlang der Ekliptik aus und lassen die Planeten steuern. Das Ergebnis: Wenn man sich jede Raumsondentrajektorie ansieht, die wir haben, sieht man einen Haufen Kurven, die alle dieselbe Ebene umarmen — wie Autos, die auf einer flachen Bahn rennen.",
-  "new": "Missionsplaner kämpfen also nicht gegen die Scheibe. Sie warten, bis die Bahngeometrie passt (das meint der Begriff „Startfenster“), richten die Rakete entlang der Ekliptik aus und lassen die Planeten steuern. Das Ergebnis: Sieht man sich alle Flugbahnen von Raumsonden an, die wir haben, ist es ein Bündel von Kurven, die sich alle an dieselbe Ebene schmiegen — als würden Autos auf einer flachen Rennstrecke fahren."
- },
- {
-  "rel": "science/transfers/coplanar-trajectories.json",
-  "at": "body_paragraphs.0",
-  "old": "Der Preis dafür, die Ebene zu verlassen, ist brutal. Eine heliozentrische Trajektorie um nur 1° zu kippen, kostet bei Erdumlaufgeschwindigkeit (~30 km/s) etwa 0,5 km/s `∆v`. Die 80°-Bahnänderung, die Ulysses brauchte — um über die Sonnenpole zu fliegen — hätte ~38 km/s gekostet, wenn sie chemisch durchgeführt worden wäre. Keine echte Rakete kann das liefern. Daher zahlen Ingenieure nicht für Bahnänderungen; sie umgehen sie konstruktiv.",
-  "new": "Der Preis dafür, die Ebene zu verlassen, ist brutal. Die Bahnneigung einer heliozentrischen Flugbahn um nur 1° zu ändern, kostet bei der Bahngeschwindigkeit der Erde (~30 km/s) etwa 0,5 km/s `∆v`. Der 80°-Ebenenwechsel, den Ulysses brauchte — um über die Sonnenpole zu fliegen —, hätte mit chemischem Antrieb ~38 km/s gekostet. Keine echte Rakete kann das liefern. Ingenieure zahlen deshalb nicht für Ebenenwechsel; sie planen um sie herum."
- },
- {
-  "rel": "science/transfers/coplanar-trajectories.json",
-  "at": "body_paragraphs.1",
-  "old": "Gravitationsassistenzen unterliegen derselben Einschränkung. Wenn eine Raumsonde an Jupiter oder Venus vorbeischwingt, sitzt der Planet in der Ekliptik, sodass der Ablenkungsvektor — der immer durch den Planeten verläuft — auch die Trajektorie nahe der Ekliptik hält. Cassinis sechsjährige Reise sieht in der /explore-Ansicht wie ein 2D-Gekritzel aus, weil jeder Assistenz-Körper, den sie besuchte, 2D-flach war.",
-  "new": "Swing-by-Manöver unterliegen derselben Einschränkung. Wenn eine Raumsonde an Jupiter oder Venus vorbeischwingt, liegt der Planet in der Ekliptik, sodass der Ablenkungsvektor — der immer durch den Planeten verläuft — auch die Flugbahn nahe der Ekliptik hält. Cassinis sechsjährige Reise sieht in der /explore-Ansicht wie ein 2D-Gekritzel aus, weil jeder Himmelskörper, an dem sie ein Swing-by flog, in dieser Ebene lag."
- },
- {
-  "rel": "science/transfers/coplanar-trajectories.json",
-  "at": "body_paragraphs.2",
-  "old": "Ulysses ist die einzige Raumsonde, die die Scheibe absichtlich gebrochen hat. Ihr Wissenschaftsziel waren die Sonnenpole, aber sie zu erreichen erforderte ~80° Inklination — chemisch unmöglich. Die Mission tat also das Einzige, was funktionierte: gestartet nach außen zum Jupiter, nutzte Jupiters Gravitation als kostenlose \"Rakete\", um die Sonde aus der Ekliptik zu lenken, dann umkreiste sie die Sonne 18 Jahre lang von Pol zu Pol. Der große Umweg war der billigste Weg. Jede andere Tiefraummission, die du in /explore siehst, blieb in der Scheibe, weil die Scheibe dort ist, wo die Ziele sind — und wohin der Treibstoff dich gehen lässt.",
-  "new": "Ulysses ist die einzige Raumsonde, die die Scheibe absichtlich verlassen hat. Ihr wissenschaftliches Ziel waren die Sonnenpole, doch dafür waren ~80° Bahnneigung nötig — chemisch unmöglich. Also tat die Mission das Einzige, was funktionierte: Sie startete nach außen zu Jupiter, nutzte dessen Schwerkraft als kostenlose „Rakete“, um die Sonde aus der Ekliptik zu lenken, und umkreiste dann 18 Jahre lang die Sonne von Pol zu Pol. Der große Umweg war der billigste Weg. Jede andere Tiefraummission, die du in /explore siehst, blieb in der Scheibe, weil dort die Ziele liegen — und weil der Treibstoff dich nur dorthin kommen lässt."
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "narrative_101.0",
-  "old": "Stell dir vor, du fliegst zum Mond. Du machst dir Sorgen — was, wenn das Triebwerk unterwegs ausfällt? Du wärst gestrandet, für immer treibend. Hier ist die geniale Antwort: Wähle einen Pfad, bei dem die Schwerkraft allein dich um den Mond schwingt und automatisch zur Erde zurückwirft, selbst wenn jedes Triebwerk deines Raumschiffs in dem Moment ausfällt, in dem du die Erdumlaufbahn verlässt. Das ist eine Freiflug-Rückkehrbahn.",
-  "new": "Stell dir vor, du fliegst zum Mond. Du machst dir Sorgen — was, wenn das Triebwerk unterwegs ausfällt? Du wärst gestrandet und triebest für immer dahin. Hier ist die geniale Antwort: Wähle einen Pfad, bei dem die Schwerkraft allein dich um den Mond schwingt und automatisch zur Erde zurückwirft, selbst wenn jedes Triebwerk deines Raumschiffs in dem Moment ausfällt, in dem du die Erdumlaufbahn verlässt. Das ist eine Freiflug-Rückkehrbahn."
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "narrative_101.2",
-  "old": "Apollo 8 war die erste bemannte Mission, die eine solche Bahn flog. Apollo 13 — die berühmte \"Houston, wir haben ein Problem\"-Mission — verdankt ihr ihr Überleben. Als ihr Haupttriebwerk unbrauchbar wurde, ritten sie die Freiflug-Rückkehrbahn nach Hause und zündeten nur das Triebwerk der Mondfähre für Kurskorrekturen — nie das beschädigte Haupttriebwerk. Orrerys Standard-/fly-Szenario macht genau das für Mars: Erde → Mars-Vorbeiflug → Erde, keine Kurskorrektur-Zündungen erforderlich. Die billigste mögliche Mars-Reise, die man mit Menschen an Bord fliegen kann.",
-  "new": "Apollo 8 war die erste bemannte Mission, die eine solche Bahn flog. Apollo 13 — die berühmte Mission mit dem Satz „Houston, wir haben ein Problem“ — verdankt ihr das Überleben. Als das Haupttriebwerk unbrauchbar wurde, flogen sie auf der Freiflug-Rückkehrbahn nach Hause und zündeten für Kurskorrekturen nur das Triebwerk der Mondfähre — nie das beschädigte Haupttriebwerk. Orrerys Standard-/fly-Szenario macht genau das für den Mars: Erde → Mars-Vorbeiflug → Erde, ohne Kurskorrekturen unterwegs. Die günstigste Marsreise, die sich mit Menschen an Bord fliegen lässt."
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "body_paragraphs.1",
-  "old": "Apollo 8 war die erste bemannte Freiflug-Rückkehrbahn. Apollo 13 griff berühmterweise auf die Technik zurück, als sein Servicemodul beschädigt wurde — ritt die Freiflug-Rückkehrbahn nach Hause, zündete nur das Triebwerk der Mondfähre für Kurskorrekturen, nie das beschädigte Haupttriebwerk. Für Mars ist die Geometrie schwieriger — man braucht eine 500-Tage-Schleife mit zwei Durchgängen — aber das Konzept ist dasselbe: Die Vorbeiflug-Geometrie erledigt die Arbeit der Rückkehrzündung.",
-  "new": "Apollo 8 war der erste bemannte Flug auf einer Freiflug-Rückkehrbahn. Auf dieselbe Technik griff Apollo 13 berühmterweise zurück, als sein Servicemodul beschädigt wurde: Die Besatzung flog auf der Freiflug-Rückkehrbahn nach Hause und zündete für Kurskorrekturen nur das Triebwerk der Mondfähre, nie das beschädigte Haupttriebwerk. Für den Mars ist die Geometrie schwieriger — man braucht eine 500-Tage-Schleife mit zwei Durchgängen —, aber das Konzept ist dasselbe: Die Vorbeiflug-Geometrie übernimmt die Arbeit der Rückkehrzündung."
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "body_paragraphs.2",
-  "old": "Orrerys Standard-`/fly`-Szenario, ORRERY-1, ist genau das: Erde-Mars-Erde auf einem Freiflug-Rückkehrbogen, keine Kurskorrekturen, keine Orbit-Einschuss-Zündung am Mars. Du beobachtest, wie das Raumschiff einmal die Sonne umkreist, am Mars vorbeischwingt und zurückkommt. Es ist der billigste bemannte Mars-Vorbeiflug, der je vorgeschlagen wurde.",
-  "new": "Orrerys Standard-`/fly`-Szenario, ORRERY-1, ist genau das: Erde–Mars–Erde auf einem Freiflug-Rückkehrbogen, keine Kurskorrekturen, keine Zündung zum Einschwenken in die Marsumlaufbahn. Du beobachtest, wie das Raumschiff einmal die Sonne umkreist, am Mars vorbeischwingt und zurückkommt. Es ist der billigste bemannte Mars-Vorbeiflug, der je vorgeschlagen wurde."
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "diagram_caption",
-  "old": "Erde → Mars-Vorbeiflug → Erde. Die Schwerkraft des Mondes (oder Mars) macht die Kehrtwende kostenlos.",
-  "new": "Erde → Mars-Vorbeiflug → Erde. Die Schwerkraft des Mondes (oder des Mars) macht die Kehrtwende kostenlos."
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "intro_sentence",
-  "old": "Stiehl den Bahnimpuls eines Planeten beim Vorbeiflug — das Nächste an einem freien Mittagessen im Raum.",
-  "new": "Stiehl einem Planeten beim Vorbeiflug etwas von seinem Bahnimpuls — das, was einem kostenlosen Mittagessen im All am nächsten kommt."
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "narrative_101.0",
-  "old": "Wirf einen Tennisball auf einen fahrenden Zug. Der Ball prallt von der Front zurück und kommt schneller, als du geworfen hast — die Zuggeschwindigkeit hat sich addiert. Das ist Swing-by. Sonde = Tennisball, Planet = Zug, \"Aufprall\" = \"Vorbeifall auf Hyperbel\".",
-  "new": "Wirf einen Tennisball auf einen fahrenden Zug. Er prallt an der Front ab und kommt schneller zurück, als du ihn geworfen hast — der Zug fuhr ihm entgegen, und seine Geschwindigkeit kam beim Abprall hinzu. Das ist im Grunde ein Swing-by: Sonde = Tennisball, Planet = Zug, „Abprallen“ = „Vorbeifallen auf einer Hyperbel“."
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "narrative_101.1",
-  "old": "Aus der Perspektive des Planeten betritt und verlässt die Raumsonde ihn mit genau derselben Geschwindigkeit – die Gravitation ist konservativ, es wird keine Energie gewonnen oder verloren. Aber aus der Perspektive der Sonne erbt die Raumsonde auf der Ausreise einen Teil der Umlaufbahn des Planeten und kommt irgendwo anders mit zusätzlicher (oder geringerer) Geschwindigkeit an. Das ist keine Verletzung der Physik; der Planet zahlt dafür, indem er abbremst – um einen Betrag, der viel zu winzig ist, um ihn nachzuweisen.",
-  "new": "Aus Sicht des Planeten tritt die Raumsonde mit genau derselben Geschwindigkeit ein und aus – die Gravitation ist konservativ, es wird keine Energie gewonnen oder verloren. Aus Sicht der Sonne aber erbt die Raumsonde beim Verlassen einen Teil der Bahnbewegung des Planeten und kommt an einem neuen Ort mit zusätzlicher (oder geringerer) Geschwindigkeit an. Das ist kein Verstoß gegen die Physik; der Planet zahlt dafür, indem er abbremst – um einen Betrag, der viel zu winzig ist, um ihn nachzuweisen."
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "narrative_101.2",
-  "old": "Das ist der Trick, der die Voyager-Große Tour ermöglichte. Ohne Gravitationsunterstützungen kannst du mit chemischen Raketen weder den Saturn noch erst recht nicht den Uranus oder Neptun erreichen – die Treibstoffkosten sind astronomisch. Voyager 2 kettete vier Unterstützungen hintereinander: Jupiter, Saturn, Uranus, Neptun, alles in einer Reise. Cassini sprang zweimal von der Venus und einmal von der Erde ab auf dem Weg zum Saturn. Das äußere Sonnensystem ist nur wegen dieses Tricks erreichbar.",
-  "new": "Das ist der Trick, der die Grand Tour der Voyager-Sonden ermöglichte. Ohne Swing-by-Manöver erreicht man mit chemischen Raketen nicht einmal Saturn, geschweige denn Uranus oder Neptun – die Treibstoffkosten wären astronomisch. Voyager 2 reihte vier Swing-bys aneinander: Jupiter, Saturn, Uranus, Neptun, alles auf einer Reise. Cassini flog auf dem Weg zu Saturn zweimal an der Venus und einmal an der Erde vorbei. Das äußere Sonnensystem ist nur dank dieses Tricks erreichbar."
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "body_paragraphs.0",
-  "old": "Nähere dich einem Planeten von hinten auf hyperbolischer Trajektorie. Die Gravitation biegt deinen Pfad, du schwingst vorbei, raus mit gleicher Relativgeschwindigkeit zum Planeten — aber der Planet bewegte sich, du trägst die Bewegung mit. Netto: mehr Sonnen-Geschwindigkeit raus.",
-  "new": "Nähere dich einem Planeten von hinten auf einer Hyperbelbahn. Seine Schwerkraft lenkt dich ab, du schwingst vorbei und verlässt ihn mit derselben Geschwindigkeit relativ zum Planeten — doch der Planet war in Bewegung, und diese Bewegung nimmst du mit. Am Ende bist du relativ zur Sonne schneller als bei der Ankunft. Der Planet wird unmessbar winzig langsamer."
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "body_paragraphs.1",
-  "old": "Kehren Sie die Geometrie um – nähern Sie sich von vorne – und Sie verlangsamen sich. Pioneer 11 nutzte Jupiter, um zu Saturn zu drängen. Voyager 2 verknüpfte Jupiter, Saturn, Uranus, Neptun in einer der raffiniertesten Gravity-Assist-Manöver, die je geflogen wurden. Cassini prallte zweimal auf Venus und einmal auf der Erde ab, bevor es Saturn erreichte. New Horizons traf Jupiter, um drei Jahre von der Reise zu Pluto zu sparen.",
-  "new": "Kehre die Geometrie um — Anflug von vorn — und du wirst langsamer. Pioneer 11 nutzte Jupiter, um Saturn zu erreichen. Voyager 2 verknüpfte Jupiter, Saturn, Uranus und Neptun zu einer der raffiniertesten Swing-by-Touren, die je geflogen wurden. Cassini flog vor Saturn zweimal an der Venus und einmal an der Erde vorbei. New Horizons nutzte Jupiter, um drei Jahre von der Reise zu Pluto abzuziehen."
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "body_paragraphs.2",
-  "old": "Ohne Gravitationsunterstützungen hätten die Hälfte der Missionen in Orrery's Katalog nicht fliegen können. Die äußeren Planeten sind einfach zu weit entfernt für direkte Flugbahnen mit chemischen Raketen – ihre Kosten in `∆v` würden übersteigen, was jede Rakete liefern kann. Gravitationsunterstützungen verwandeln diese Rechnung vom Unmöglichen ins Schwierig-aber-Machbar.",
-  "new": "Ohne Swing-by-Manöver wäre die Hälfte der Missionen im Katalog von Orrery nicht möglich gewesen. Die äußeren Planeten sind für direkte Flugbahnen mit chemischen Raketen schlicht zu weit entfernt – ihre Kosten in `∆v` würden übersteigen, was jede Rakete liefern kann. Swing-by-Manöver machen aus dieser Rechnung etwas Schwieriges, aber Machbares statt etwas Unmögliches."
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "diagram_caption",
-  "old": "Sonde tritt mit gleicher Geschwindigkeit ein und aus dem Planetenrahmen; Planetenbewegung addiert heliozentrisch.",
-  "new": "Die Sonde tritt mit gleicher Geschwindigkeit in das Planetensystem ein und aus; die Planetenbewegung addiert heliozentrische Geschwindigkeit."
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "intro_sentence",
-  "old": "Die billigste Zwei-Burn-Reise zwischen zwei koplanaren Kreisbahnen — und die Baseline, an die Missionsplaner alles andere messen.",
-  "new": "Die günstigste Reise mit zwei Zündungen zwischen zwei koplanaren Kreisbahnen — und die Vergleichsgröße, an der Missionsplaner alles andere messen."
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "narrative_101.1",
-  "old": "Die Antwort, die Walter Hohmann 1925 ausarbeitete, ist überraschend elegant. Finde eine Ellipse, die die Erdumlaufbahn auf einer Seite nur knapp berührt und auf der anderen Seite knapp die Marsumlaufbahn. Brenne dein Triebwerk kurz ab, um die Erde zu verlassen und die Ellipse zu betreten. Gleite etwa 8,5 Monate lang ohne Triebwerksfeuer — die Schwerkraft verrichtet die Arbeit. Wenn du am anderen Ende ankommst, brenne nochmal ab, um dich in der Marsumlaufbahn einzusetzen. Zwei Abbrände, insgesamt. Fertig.",
-  "new": "Die Antwort, die Walter Hohmann 1925 ausarbeitete, ist verblüffend elegant. Finde eine Ellipse, die auf der einen Seite gerade eben die Erdbahn und auf der anderen gerade eben die Marsbahn berührt. Zünde dein Triebwerk kurz, um die Erde zu verlassen und auf diese Ellipse einzuschwenken. Gleite etwa 8,5 Monate, ohne das Triebwerk überhaupt zu zünden — die Schwerkraft erledigt die Arbeit. Am fernen Ende zündest du erneut, um in die Marsumlaufbahn einzuschwenken. Zwei Zündungen insgesamt. Fertig."
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "narrative_101.2",
-  "old": "Es ist die billigste mögliche Reise — aber auch die langsamste. Die 8,5-Monate-Wartezeit ist nicht verhandelbar; die Physik setzt den Timer. Schneller gehen? Du kannst, aber du zahlst dafür: eine steilere Ellipse, ein schnelleres Durchqueren, ein viel größerer Bremsabbrand am anderen Ende. Dies ist der Kompromiss, den du in jedem Porkchop-Diagramm im `/plan` sehen wirst.",
-  "new": "Es ist die günstigste mögliche Reise — aber auch die langsamste. An der Wartezeit von 8,5 Monaten führt kein Weg vorbei; die Physik stellt den Timer. Schneller ans Ziel? Das geht, aber du zahlst dafür: eine steilere Ellipse, eine schnellere Überfahrt und eine viel größere Bremszündung am anderen Ende. Diesen Kompromiss siehst du in jedem Porkchop-Diagramm unter `/plan`."
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "body_paragraphs.0",
-  "old": "Stellen dir vor, du bist in einer Kreisbahn um die Sonne und möchtest eine höhere erreichen — sagen wir Erde-zu-Mars. Die billigste Methode ist ein Hohmann-Transfer: eine Ellipse, deren Perihelium deine Startbahn berührt und deren Aphelium die Zielorbita berührt. Zwei Triebwerksabbrände bringen dich dorthin. Einer beim Perihelium, um die Erdumlaufbahn zu verlassen und die Ellipse zu betreten. Einer beim Aphelium, um dich in die Zielumlaufbahn zu zirkularisieren.",
-  "new": "Stell dir vor, du bist auf einer Kreisbahn um die Sonne und willst auf eine höhere — sagen wir von der Erde zum Mars. Am günstigsten gelingt das mit einem Hohmann-Transfer: einer Ellipse, deren Perihel deine Startbahn berührt und deren Aphel die Zielbahn. Zwei Triebwerkszündungen bringen dich dorthin. Eine im Perihel, um die Erdbahn zu verlassen und auf die Ellipse zu wechseln. Eine im Aphel, um in die Zielbahn einzuschwenken."
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "body_paragraphs.1",
-  "old": "Es ist der billigste Festimpuls-Weg, aber auch der langsamste. Erde-zu-Mars dauert auf einem Hohmann-Transfer etwa 259 Tage. Schneller gehen? Stärker abbrennen, eine gestreckte Ellipse mit höherer Perihelium-Geschwindigkeit fliegen. Das Ankunfts-V∞ steigt, der Einbrennabbrand am Ziel wird größer, deine gesamte ∆v-Kosten klettert steil.",
-  "new": "Es ist der günstigste Weg mit kurzen, impulsiven Zündungen, aber auch der langsamste. Von der Erde zum Mars dauert ein Hohmann-Transfer etwa 259 Tage. Schneller? Dann zünde stärker und fliege eine gestreckte Ellipse mit höherer Geschwindigkeit im Perihel. Das Ankunfts-V∞ steigt, die Bremszündung am Ziel wird größer, und die ∆v-Gesamtkosten klettern steil."
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "body_paragraphs.2",
-  "old": "Im `/plan`-Porkchop von Orrery sieht man das direkt: es gibt ein ruhiges Becken aus kühlen Türkis-Zellen um das natürliche Hohmann-Fenster, alle 26 Monate für Mars, und zunehmend teurere Konturen, wenn du dich kürzeren Transitzeiten näherst.",
-  "new": "Im Porkchop-Diagramm von Orrery unter `/plan` siehst du das direkt: Um das natürliche Hohmann-Fenster, das beim Mars alle 26 Monate wiederkehrt, liegt ein ruhiges Becken kühler türkisfarbener Zellen, und je kürzer die Flugzeit, desto teurer werden die Konturen."
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "diagram_caption",
-  "old": "Erdumlaufbahn (innen) · Marsumlaufbahn (außen) · Hohmann-Transfer-Ellipse mit Perihelium bei der Erde, Aphelium bei Mars.",
-  "new": "Erdumlaufbahn (innen) · Marsumlaufbahn (außen) · Hohmann-Transferellipse mit dem Perihel an der Erde und dem Aphel am Mars."
- },
- {
-  "rel": "science/transfers/lambert-problem.json",
-  "at": "intro_sentence",
-  "old": "Gegeben zwei Positionen und eine Reisezeit, finde die Bahn, die sie verbindet.",
-  "new": "Zwei Positionen, eine Flugzeit, gesucht die verbindende Bahn — das Kernproblem jeder Planetenreise."
- },
- {
-  "rel": "science/transfers/lambert-problem.json",
-  "at": "narrative_101.0",
-  "old": "Die Hohmann-Bahn ist der günstigste Weg von einer Umlaufbahn zur anderen, aber die meisten Missionen fliegen tatsächlich keine Hohmanns. Sie wollen an einem bestimmten Datum starten – etwa, wenn eine bestimmte Rakete bereit ist oder wenn ein bestimmter Startplatz verfügbar ist – und sie wollen an einem bestimmten Datum ankommen – etwa, um rechtzeitig vor einem Marsstaubsturm dort zu sein. Die Hohmann-Bahn lässt Sie nicht wählen. Lambert tut es.",
-  "new": "Der Hohmann-Transfer ist der günstigste Weg von einer Umlaufbahn zur anderen, doch die meisten Missionen fliegen gar keinen Hohmann-Transfer. Sie wollen an einem bestimmten Datum starten – etwa wenn eine bestimmte Rakete bereit oder eine bestimmte Startrampe frei ist – und an einem bestimmten Datum ankommen, etwa rechtzeitig, wenn ein Marsstaubsturm abgeklungen ist. Der Hohmann-Transfer lässt dir diese Wahl nicht. Lambert schon."
- },
- {
-  "rel": "science/transfers/lambert-problem.json",
-  "at": "narrative_101.1",
-  "old": "Lamberts Frage klingt einfacher als ihre Mathematik: Ich bin in Punkt A, ich will in Punkt B sein, und ich will genau so viele Tage unterwegs sein. Welche Umlaufbahn soll ich fliegen? Lambert hat die Antwort 1761 aufgeschrieben – es gibt genau eine Ellipse (oder manchmal zwei, je nachdem, in welche Richtung man geht), die zwei Punkte in einer gegebenen Zeit verbindet.",
-  "new": "Lamberts Frage klingt einfacher als ihre Mathematik: Ich bin an Punkt A, ich will an Punkt B sein, und ich will genau so viele Tage unterwegs sein. Welche Bahn soll ich fliegen? Lambert schrieb die Antwort 1761 auf – es gibt genau eine Ellipse (oder manchmal zwei, je nachdem, in welcher Richtung man herumfliegt), die zwei Punkte in einer gegebenen Zeit verbindet."
- },
- {
-  "rel": "science/transfers/lambert-problem.json",
-  "at": "narrative_101.2",
-  "old": "Dies ist das Herz eines jeden Porkchop-Diagramms, das du sehen wirst. Jedes Pixel auf dem Porkchop in /plan ist ein Lambert-Problem: „Die Erde an Datum X verlassen, den Mars an Datum Y erreichen – was kostet das?\" Die Farbe ist die Antwort. Löse es zehntausendmal parallel und du hast die ganze Karte auf einmal. Orrery macht das in einem Web Worker, damit die UI nicht einfriert, während es nachdenkt.",
-  "new": "Das ist das Herz jedes Porkchop-Diagramms, das du sehen wirst. Jedes Pixel auf dem Porkchop unter /plan ist ein Lambert-Problem: „Die Erde am Datum X verlassen, den Mars am Datum Y erreichen – was kostet das?“ Die Farbe ist die Antwort. Löse es zehntausendmal parallel und du hast die ganze Karte auf einmal. Orrery macht das in einem Web Worker, damit die Oberfläche nicht einfriert, während es rechnet."
- },
- {
-  "rel": "science/transfers/lambert-problem.json",
-  "at": "body_paragraphs.0",
-  "old": "Lamberts Problem fragt: Ich bin hier, ich will dort sein, und ich habe diese viel Zeit. Welche Ellipse soll ich fliegen? Zwei Positionsvektoren und eine Flugzeit, und die Gleichung liefert die eindeutige Transferumlaufbahn (oder zwei – es gibt den langen und den kurzen Weg um den Zentralkörper).",
-  "new": "Lamberts Problem fragt: Ich bin hier, ich will dort sein, und ich habe so viel Zeit. Welche Ellipse soll ich fliegen? Zwei Positionsvektoren und eine Flugzeit, und die Gleichung liefert die eindeutige Transferbahn (oder zwei – es gibt den langen und den kurzen Weg um den Zentralkörper)."
- },
- {
-  "rel": "science/transfers/lambert-problem.json",
-  "at": "body_paragraphs.1",
-  "old": "Die Hohmann-Transferbahn ist eine spezifische Lambert-Lösung: Positionen auf gegenüberliegenden Apsiden, Flugzeit gleich der halben Umlaufperiode der Transferellipse. Drehe an einem der beiden Regler – andere Positionen, andere Zeit – und du erhältst eine andere Ellipse. Kürzere Zeit, exzentrischere Ellipse, höhere Startenergie. Die Mathematik ändert sich nicht; nur die Randbedingungen.",
-  "new": "Der Hohmann-Transfer ist eine bestimmte Lösung des Lambert-Problems: Positionen auf gegenüberliegenden Apsiden, Flugzeit gleich der halben Umlaufperiode der Transferellipse. Drehe an einem der beiden Regler – andere Positionen, andere Zeit – und du erhältst eine andere Ellipse. Kürzere Zeit, exzentrischere Ellipse, höhere Startenergie. Die Mathematik ändert sich nicht; nur die Randbedingungen."
- },
- {
-  "rel": "science/transfers/lambert-problem.json",
-  "at": "body_paragraphs.2",
-  "old": "Orrery löst Lamberts Problem in einem Web Worker jedesmal, wenn Sie über eine Porkchop-Zelle auf `/plan` fahren. Jede Zelle fragt: „Die Erde am Datum X verlassen, auf dem Mars am Datum Y ankommen – welche ∆v-Kosten fallen an?\" Die Farbe, die Sie sehen, ist die Antwort auf diese Frage, berechnet einmal pro Pixel.",
-  "new": "Orrery löst Lamberts Problem in einem Web Worker, jedes Mal wenn du mit dem Mauszeiger über eine Porkchop-Zelle auf `/plan` fährst. Jede Zelle fragt: „Die Erde am Datum X verlassen, am Datum Y am Mars ankommen – welche ∆v-Kosten fallen an?“ Die Farbe, die du siehst, ist die Antwort auf diese Frage, einmal pro Pixel berechnet."
- },
- {
-  "rel": "science/transfers/lambert-problem.json",
-  "at": "diagram_caption",
-  "old": "Zwei Positionsvektoren r₁ und r₂; der Lambert-Solver findet die einzige verbindende Transferellipse.",
-  "new": "Zwei Positionsvektoren r₁ und r₂; der Lambert-Löser findet die eindeutige Transferellipse, die sie in der Flugzeit verbindet."
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "title",
-  "old": "Aneinandergesetzte Kegelschnitte",
-  "new": "Patched-Conics-Methode"
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "intro_sentence",
-  "old": "So tun, als wirke Schwerkraft jeweils nur eines Körpers — die Approximation, die das unlösbare Dreikörperproblem in lösbare Zweikörper-Kepler-Probleme zerlegt.",
-  "new": "Tu so, als wirke immer nur die Schwerkraft eines einzigen Körpers — die Näherung, die das unlösbare Dreikörperproblem in eine Kette lösbarer Zweikörper-Kepler-Probleme verwandelt."
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "narrative_101.0",
-  "old": "Hier ist ein schmutziges Geheimnis der Bahnmechanik: Die eigentliche vollständige Physik – jeder Körper im Sonnensystem zieht an jedem anderen – ist mathematisch auf keine saubere Weise lösbar. Es gibt KEINE geschlossene Lösung für das Drei-Körper-Problem, geschweige denn für die Version mit Dutzenden Körpern in der Realität. Wie schaffen es Missionsplaner also, überhaupt etwas zu vollbringen?",
-  "new": "Hier ist ein schmutziges Geheimnis der Bahnmechanik: Die eigentliche vollständige Physik – jeder Körper im Sonnensystem zieht an jedem anderen – ist mathematisch auf keine saubere Weise lösbar. Es gibt KEINE geschlossene Lösung für das Dreikörperproblem, geschweige denn für die reale Version mit Dutzenden Körpern. Wie bringen Missionsplaner dann überhaupt etwas zustande?"
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "narrative_101.1",
-  "old": "Sie schummeln. Sie tun so, als würde in einem beliebigen Moment nur die Gravitation EINES Körpers zählen. In der Nähe der Erde zieht nur die Erde. Auf der Reise durch den Weltraum nur die Sonne. In der Nähe des Mars nur der Mars. Jede dieser Regionen wird Einflusssphäre genannt, und innerhalb jeder fliegt das Raumschiff einen sauberen keplerischen Kegelschnitt. Wenn das Raumschiff eine Grenze überquert, wechselst du das Koordinatensystem und startest einen neuen Kegelschnitt. Zusammengeflickt bilden sie die Flugbahn. Das ist Patched Conics.",
-  "new": "Sie schummeln. Sie tun so, als zähle in jedem Moment nur die Gravitation EINES Körpers. In der Nähe der Erde zieht nur die Erde. Im Reiseflug nur die Sonne. In der Nähe des Mars nur der Mars. Jede dieser Regionen heißt Einflusssphäre, und innerhalb jeder fliegt das Raumschiff einen sauberen keplerschen Kegelschnitt. Überquert das Raumschiff eine Grenze, wechselt man das Koordinatensystem und beginnt einen neuen Kegelschnitt. Zusammengesetzt bilden sie die Flugbahn. Das sind Patched Conics."
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "narrative_101.2",
-  "old": "Die Mathematik weicht um einige Prozent von der Wahrheit ab – klein genug, dass echte Missionen damit als ersten Entwurf planen und dann numerisch für den Start verfeinern. Es ist auch klein genug, dass Orrery all das in deinem Browser in einem Web Worker ausführen kann, schnell genug, um die ganze Reichweitenkarte neu zu zeichnen, wenn du das Startjahr verschiebst. Der ganze Simulator basiert auf diesem Trick.",
-  "new": "Die Mathematik weicht um einige Prozent von der Wahrheit ab – klein genug, dass echte Missionen damit als ersten Entwurf planen und dann für den Start numerisch verfeinern. Es ist auch klein genug, dass Orrery all das in deinem Browser in einem Web Worker ausführen kann, schnell genug, um das ganze Porkchop-Diagramm neu zu zeichnen, wenn du das Startjahr verschiebst. Der ganze Simulator basiert auf diesem Trick."
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "body_paragraphs.0",
-  "old": "Echte Schwerkraft ist unordentlich. Eine Sonde im Cruise zwischen Erde und Mars spürt Erde, Sonne, Mars und alles andere. Die volle Mathematik (n-Körper) hat keine geschlossene Lösung — nur numerische Integration.",
-  "new": "Echte Schwerkraft ist unordentlich. Eine Sonde zwischen Erde und Mars spürt Erde, Sonne, Mars und alles andere zugleich. Die volle Mathematik (das n-Körper-Problem) hat keine geschlossene Lösung, nur numerische Integration — langsam, fragil und schwer zu planen."
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "body_paragraphs.1",
-  "old": "Gepatschte Kegelschnitte sind der praktische Kompromiss: erkläre eine Einflusssphäre um jeden Körper. Innerhalb der Einflusssphäre der Erde zählt nur die Gravitation der Erde; du fliegst einen Keplerschen Bogen um die Erde. Überquere die Grenze in die heliozentrische Region, wechsle zu einem sonnenzentrierten Keplerbogen. Überquere die Grenze in die Einflusssphäre des Mars, wechsle erneut. Drei Kepler-Probleme, an den Grenzen zusammengepatcht.",
-  "new": "Patched Conics sind der praktische Kompromiss: Lege um jeden Körper eine Einflusssphäre fest. Innerhalb der Einflusssphäre der Erde zählt nur die Gravitation der Erde; du fliegst einen Kepler-Bogen um die Erde. Überquere die Grenze in die heliozentrische Region, wechsle zu einem sonnenzentrierten Kepler-Bogen. Überquere die Grenze in die Einflusssphäre des Mars, wechsle erneut. Drei Kepler-Probleme, an den Grenzen aneinandergefügt."
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "body_paragraphs.2",
-  "old": "Es ist falsch, aber nützlich. Fehler an den Grenzen sind klein – höchstens ein paar Prozent des ∆v bei zislunatischen Missionen, noch weniger bei heliozentrischen – und die Mathematik wird tractabel genug, um in einem Web Worker zu laufen. Orrerrys `/plan`-Porkchops werden auf diese Weise berechnet; ebenso die Trajektorien auf `/fly`. Die echte Flugplannung bei der NASA nutzt die gleiche Näherung als erste Stufe und verfeinert dann numerisch vor dem Start.",
-  "new": "Es ist falsch, aber nützlich. Fehler an den Grenzen sind klein – höchstens ein paar Prozent des ∆v bei zislunaren Missionen, noch weniger bei heliozentrischen – und die Mathematik wird handhabbar genug, um in einem Web Worker zu laufen. Orrerys `/plan`-Porkchops werden auf diese Weise berechnet; ebenso die Flugbahnen unter `/fly`. Die echte Flugplanung bei der NASA nutzt dieselbe Näherung als erste Stufe und verfeinert dann vor dem Start numerisch."
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "diagram_caption",
-  "old": "Drei Rahmen, drei Koniken: Erd-zentriert → heliozentrisch → Mars-zentriert, an SoI-Grenzen verbunden.",
-  "new": "Drei Bezugssysteme, drei Kegelschnitte: erdzentriert → heliozentrisch → marszentriert, an den Einflusssphären-Grenzen verbunden."
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "intro_sentence",
-  "old": "Der Keplersche Bogen, der eine Sonde zwischen Bahnen trägt — Sonne im Brennpunkt, wie jede Bahn.",
-  "new": "Der Kepler-Bogen, der eine Sonde von einer Bahn zur anderen trägt — Sonne im Brennpunkt, wie bei jeder Bahn."
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "narrative_101.0",
-  "old": "Missionsplanung klingt nach Triebwerken und Raketen. Meistens geht es aber darum, eine Ellipse auszuwählen. Jeder interplanetare Flug — Apollo zum Mond, Voyager zum Neptun, Perseverance zum Mars — ist nur ein Raumfahrzeug, das auf einer elliptischen Bahn zwischen Start- und Zielort reitet. Das schicke Wort für diese Ellipse ist Transferbahn.",
-  "new": "Missionsplanung klingt nach Triebwerken und Raketen. Meistens geht es aber darum, eine Ellipse auszuwählen. Jeder interplanetare Flug — Apollo zum Mond, Voyager zu Neptun, Perseverance zum Mars — ist nur ein Raumfahrzeug, das auf einer elliptischen Bahn zwischen Start- und Zielort fährt. Das Fachwort für diese Ellipse lautet Transferbahn."
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "narrative_101.2",
-  "old": "Das Einzige, was eine Transferellipse von einer Planetenbahn unterscheidet: Das Raumfahrzeug fliegt nur die HÄLFTE davon. Es steigt an einem Ende auf, fährt zum anderen und steigt aus. Deshalb hat das ∆v-Budget immer zwei große Burns — einen zum Eintritt in die Ellipse, einen zum Verlassen. Der Teil dazwischen, die achtmonatige Freiflugphase, kostet absolut nichts.",
-  "new": "Das Einzige, was eine Transferellipse von einer Planetenbahn unterscheidet: Das Raumfahrzeug fliegt nur die HÄLFTE davon. Es steigt an einem Ende auf, fährt zum anderen und steigt aus. Deshalb hat das ∆v-Budget immer zwei große Zündungen — eine zum Eintritt in die Ellipse, eine zum Verlassen. Der Teil dazwischen, die achtmonatige Freiflugphase, kostet absolut nichts."
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "body_paragraphs.0",
-  "old": "Sobald du aus der Erdumlaufbahn hinausgebrannt bist, befindest du dich auf einer Ellipse um die Sonne. Diese Ellipse ist die Transferbahn, und sie hat alle dieselben Eigenschaften wie jede andere: große Halbachse, Exzentrizität, Perihel, Aphel. Die Tatsache, dass du irgendwohin gehst, ändert nichts an der Geometrie – Schwerkraft kümmert sich nicht um dein Ziel.",
-  "new": "Sobald du die Erdumlaufbahn per Zündung verlassen hast, befindest du dich auf einer Ellipse um die Sonne. Diese Ellipse ist die Transferbahn, und sie hat alle dieselben Eigenschaften wie jede andere: große Halbachse, Exzentrizität, Perihel, Aphel. Dass du irgendwohin fliegst, ändert nichts an der Geometrie – die Schwerkraft kümmert sich nicht um dein Ziel."
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "body_paragraphs.1",
-  "old": "Zwei Ankerpunkte definieren eine Transferellipse: wo du startest (Perihel, wenn du nach außen gehst) und wo du landen wirst (Aphel). Die große Halbachse ist der Durchschnitt dieser beiden Radien. Verstelle einen der Ankerpunkte, und die ganze Ellipse verformt sich neu – geh weiter nach außen, die Ellipse dehnt sich, die Reise wird länger.",
-  "new": "Zwei Ankerpunkte definieren eine Transferellipse: wo du startest (Perihel, wenn du nach außen fliegst) und wo du ankommst (Aphel). Die große Halbachse ist der Mittelwert dieser beiden Radien. Verschiebst du einen der Ankerpunkte, ändert sich die ganze Ellipse – geh weiter nach außen, dann dehnt sie sich, und die Reise wird länger."
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "body_paragraphs.2",
-  "old": "Auf Orrery's `/fly` HUD sehen Sie das Raumschiff diese Ellipse in Echtzeit zeichnen. Der Transfer-Arc auf dem Bildschirm ist eine visuelle Darstellung desselben Kegelschnitts, den die Mathematik vorgibt – die Sonne in einem Brennpunkt, das Perihel hinter dir, das Aphel vor dir.",
-  "new": "Auf Orrerys `/fly`-HUD siehst du, wie das Raumschiff diese Ellipse in Echtzeit nachzeichnet. Der Transferbogen auf dem Bildschirm ist die visuelle Darstellung desselben Kegelschnitts, den die Mathematik vorgibt – die Sonne in einem Brennpunkt, das Perihel hinter dir, das Aphel vor dir."
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "diagram_caption",
-  "old": "Zwei koplanare Bahnen verbunden durch eine Transferellipse mit der Sonne im Brennpunkt.",
-  "new": "Zwei koplanare Bahnen (innen Start, außen Ziel), verbunden durch eine Transferellipse; Sonne im Brennpunkt."
- }
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "narrative_101.0",
+    "old": "Stell dich ins Zentrum des Sonnensystems und schau dir die Planeten an — du siehst einen Pfannkuchen, keine Kugel. Merkur, Venus, Erde, Mars, Jupiter, Saturn — sie alle umkreisen innerhalb von etwa 7° derselben flachen Ebene (der Ekliptik). Die Planeten entstanden aus einer einzigen rotierenden Gas-und-Staub-Wolke, und diese Rotation kollabierte alles zu einer dünnen Scheibe. Alles seitdem ist in dieser Scheibe geblieben.",
+    "new": "Stell dich ins Zentrum des Sonnensystems und schau dir die Planeten an — du siehst einen Pfannkuchen, keine Kugel. Merkur, Venus, Erde, Mars, Jupiter, Saturn — sie alle umkreisen die Sonne innerhalb von etwa 7° derselben flachen Ebene (der Ekliptik). Die Planeten entstanden aus einer einzigen rotierenden Gas- und Staubwolke, und diese Rotation ließ alles zu einer dünnen Scheibe kollabieren. Seitdem ist alles in dieser Scheibe geblieben."
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "narrative_101.1",
+    "old": "Stell dir nun vor, eine Reise zum Mars zu planen. Der billigste Weg dorthin ist ein langer gebogener Bogen, der um die Sonne führt und an der Marsbahn ankommt, genau in dem Moment, in dem der Mars dort ist. Der billigste Bogen liegt in derselben Ebene, die Erde und Mars teilen — der Ekliptik. Die Scheibe zu verlassen für einen \"Umweg nach oben\" kostet Treibstoff, den die Raumsonde sich nicht leisten kann.",
+    "new": "Stell dir nun vor, eine Reise zum Mars zu planen. Der billigste Weg dorthin ist ein langer gebogener Bogen, der um die Sonne führt und die Marsbahn genau in dem Moment erreicht, in dem der Mars dort ist. Der billigste Bogen liegt in derselben Ebene, die Erde und Mars teilen — der Ekliptik. Die Scheibe für einen „Umweg nach außen und oben“ zu verlassen, kostet Treibstoff, den die Raumsonde sich nicht leisten kann."
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "narrative_101.2",
+    "old": "Also kämpfen Missionsplaner nicht gegen die Scheibe. Sie warten, bis die Orbitalgeometrie passt (das bedeutet \"Startfenster\"), richten die Rakete entlang der Ekliptik aus und lassen die Planeten steuern. Das Ergebnis: Wenn man sich jede Raumsondentrajektorie ansieht, die wir haben, sieht man einen Haufen Kurven, die alle dieselbe Ebene umarmen — wie Autos, die auf einer flachen Bahn rennen.",
+    "new": "Missionsplaner kämpfen also nicht gegen die Scheibe. Sie warten, bis die Bahngeometrie passt (das meint der Begriff „Startfenster“), richten die Rakete entlang der Ekliptik aus und lassen die Planeten steuern. Das Ergebnis: Sieht man sich alle Flugbahnen von Raumsonden an, die wir haben, ist es ein Bündel von Kurven, die sich alle an dieselbe Ebene schmiegen — als würden Autos auf einer flachen Rennstrecke fahren."
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "body_paragraphs.0",
+    "old": "Der Preis dafür, die Ebene zu verlassen, ist brutal. Eine heliozentrische Trajektorie um nur 1° zu kippen, kostet bei Erdumlaufgeschwindigkeit (~30 km/s) etwa 0,5 km/s `∆v`. Die 80°-Bahnänderung, die Ulysses brauchte — um über die Sonnenpole zu fliegen — hätte ~38 km/s gekostet, wenn sie chemisch durchgeführt worden wäre. Keine echte Rakete kann das liefern. Daher zahlen Ingenieure nicht für Bahnänderungen; sie umgehen sie konstruktiv.",
+    "new": "Der Preis dafür, die Ebene zu verlassen, ist brutal. Die Bahnneigung einer heliozentrischen Flugbahn um nur 1° zu ändern, kostet bei der Bahngeschwindigkeit der Erde (~30 km/s) etwa 0,5 km/s `∆v`. Der 80°-Ebenenwechsel, den Ulysses brauchte — um über die Sonnenpole zu fliegen —, hätte mit chemischem Antrieb ~38 km/s gekostet. Keine echte Rakete kann das liefern. Ingenieure zahlen deshalb nicht für Ebenenwechsel; sie planen um sie herum."
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "body_paragraphs.1",
+    "old": "Gravitationsassistenzen unterliegen derselben Einschränkung. Wenn eine Raumsonde an Jupiter oder Venus vorbeischwingt, sitzt der Planet in der Ekliptik, sodass der Ablenkungsvektor — der immer durch den Planeten verläuft — auch die Trajektorie nahe der Ekliptik hält. Cassinis sechsjährige Reise sieht in der /explore-Ansicht wie ein 2D-Gekritzel aus, weil jeder Assistenz-Körper, den sie besuchte, 2D-flach war.",
+    "new": "Swing-by-Manöver unterliegen derselben Einschränkung. Wenn eine Raumsonde an Jupiter oder Venus vorbeischwingt, liegt der Planet in der Ekliptik, sodass der Ablenkungsvektor — der immer durch den Planeten verläuft — auch die Flugbahn nahe der Ekliptik hält. Cassinis sechsjährige Reise sieht in der /explore-Ansicht wie ein 2D-Gekritzel aus, weil jeder Himmelskörper, an dem sie ein Swing-by flog, in dieser Ebene lag."
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "body_paragraphs.2",
+    "old": "Ulysses ist die einzige Raumsonde, die die Scheibe absichtlich gebrochen hat. Ihr Wissenschaftsziel waren die Sonnenpole, aber sie zu erreichen erforderte ~80° Inklination — chemisch unmöglich. Die Mission tat also das Einzige, was funktionierte: gestartet nach außen zum Jupiter, nutzte Jupiters Gravitation als kostenlose \"Rakete\", um die Sonde aus der Ekliptik zu lenken, dann umkreiste sie die Sonne 18 Jahre lang von Pol zu Pol. Der große Umweg war der billigste Weg. Jede andere Tiefraummission, die du in /explore siehst, blieb in der Scheibe, weil die Scheibe dort ist, wo die Ziele sind — und wohin der Treibstoff dich gehen lässt.",
+    "new": "Ulysses ist die einzige Raumsonde, die die Scheibe absichtlich verlassen hat. Ihr wissenschaftliches Ziel waren die Sonnenpole, doch dafür waren ~80° Bahnneigung nötig — chemisch unmöglich. Also tat die Mission das Einzige, was funktionierte: Sie startete nach außen zu Jupiter, nutzte dessen Schwerkraft als kostenlose „Rakete“, um die Sonde aus der Ekliptik zu lenken, und umkreiste dann 18 Jahre lang die Sonne von Pol zu Pol. Der große Umweg war der billigste Weg. Jede andere Tiefraummission, die du in /explore siehst, blieb in der Scheibe, weil dort die Ziele liegen — und weil der Treibstoff dich nur dorthin kommen lässt."
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "narrative_101.0",
+    "old": "Stell dir vor, du fliegst zum Mond. Du machst dir Sorgen — was, wenn das Triebwerk unterwegs ausfällt? Du wärst gestrandet, für immer treibend. Hier ist die geniale Antwort: Wähle einen Pfad, bei dem die Schwerkraft allein dich um den Mond schwingt und automatisch zur Erde zurückwirft, selbst wenn jedes Triebwerk deines Raumschiffs in dem Moment ausfällt, in dem du die Erdumlaufbahn verlässt. Das ist eine Freiflug-Rückkehrbahn.",
+    "new": "Stell dir vor, du fliegst zum Mond. Du machst dir Sorgen — was, wenn das Triebwerk unterwegs ausfällt? Du wärst gestrandet und triebest für immer dahin. Hier ist die geniale Antwort: Wähle einen Pfad, bei dem die Schwerkraft allein dich um den Mond schwingt und automatisch zur Erde zurückwirft, selbst wenn jedes Triebwerk deines Raumschiffs in dem Moment ausfällt, in dem du die Erdumlaufbahn verlässt. Das ist eine Freiflug-Rückkehrbahn."
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "narrative_101.2",
+    "old": "Apollo 8 war die erste bemannte Mission, die eine solche Bahn flog. Apollo 13 — die berühmte \"Houston, wir haben ein Problem\"-Mission — verdankt ihr ihr Überleben. Als ihr Haupttriebwerk unbrauchbar wurde, ritten sie die Freiflug-Rückkehrbahn nach Hause und zündeten nur das Triebwerk der Mondfähre für Kurskorrekturen — nie das beschädigte Haupttriebwerk. Orrerys Standard-/fly-Szenario macht genau das für Mars: Erde → Mars-Vorbeiflug → Erde, keine Kurskorrektur-Zündungen erforderlich. Die billigste mögliche Mars-Reise, die man mit Menschen an Bord fliegen kann.",
+    "new": "Apollo 8 war die erste bemannte Mission, die eine solche Bahn flog. Apollo 13 — die berühmte Mission mit dem Satz „Houston, wir haben ein Problem“ — verdankt ihr das Überleben. Als das Haupttriebwerk unbrauchbar wurde, flogen sie auf der Freiflug-Rückkehrbahn nach Hause und zündeten für Kurskorrekturen nur das Triebwerk der Mondfähre — nie das beschädigte Haupttriebwerk. Orrerys Standard-/fly-Szenario macht genau das für den Mars: Erde → Mars-Vorbeiflug → Erde, ohne Kurskorrekturen unterwegs. Die günstigste Marsreise, die sich mit Menschen an Bord fliegen lässt."
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "body_paragraphs.1",
+    "old": "Apollo 8 war die erste bemannte Freiflug-Rückkehrbahn. Apollo 13 griff berühmterweise auf die Technik zurück, als sein Servicemodul beschädigt wurde — ritt die Freiflug-Rückkehrbahn nach Hause, zündete nur das Triebwerk der Mondfähre für Kurskorrekturen, nie das beschädigte Haupttriebwerk. Für Mars ist die Geometrie schwieriger — man braucht eine 500-Tage-Schleife mit zwei Durchgängen — aber das Konzept ist dasselbe: Die Vorbeiflug-Geometrie erledigt die Arbeit der Rückkehrzündung.",
+    "new": "Apollo 8 war der erste bemannte Flug auf einer Freiflug-Rückkehrbahn. Auf dieselbe Technik griff Apollo 13 berühmterweise zurück, als sein Servicemodul beschädigt wurde: Die Besatzung flog auf der Freiflug-Rückkehrbahn nach Hause und zündete für Kurskorrekturen nur das Triebwerk der Mondfähre, nie das beschädigte Haupttriebwerk. Für den Mars ist die Geometrie schwieriger — man braucht eine 500-Tage-Schleife mit zwei Durchgängen —, aber das Konzept ist dasselbe: Die Vorbeiflug-Geometrie übernimmt die Arbeit der Rückkehrzündung."
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "body_paragraphs.2",
+    "old": "Orrerys Standard-`/fly`-Szenario, ORRERY-1, ist genau das: Erde-Mars-Erde auf einem Freiflug-Rückkehrbogen, keine Kurskorrekturen, keine Orbit-Einschuss-Zündung am Mars. Du beobachtest, wie das Raumschiff einmal die Sonne umkreist, am Mars vorbeischwingt und zurückkommt. Es ist der billigste bemannte Mars-Vorbeiflug, der je vorgeschlagen wurde.",
+    "new": "Orrerys Standard-`/fly`-Szenario, ORRERY-1, ist genau das: Erde–Mars–Erde auf einem Freiflug-Rückkehrbogen, keine Kurskorrekturen, keine Zündung zum Einschwenken in die Marsumlaufbahn. Du beobachtest, wie das Raumschiff einmal die Sonne umkreist, am Mars vorbeischwingt und zurückkommt. Es ist der billigste bemannte Mars-Vorbeiflug, der je vorgeschlagen wurde."
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "diagram_caption",
+    "old": "Erde → Mars-Vorbeiflug → Erde. Die Schwerkraft des Mondes (oder Mars) macht die Kehrtwende kostenlos.",
+    "new": "Erde → Mars-Vorbeiflug → Erde. Die Schwerkraft des Mondes (oder des Mars) macht die Kehrtwende kostenlos."
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "intro_sentence",
+    "old": "Stiehl den Bahnimpuls eines Planeten beim Vorbeiflug — das Nächste an einem freien Mittagessen im Raum.",
+    "new": "Stiehl einem Planeten beim Vorbeiflug etwas von seinem Bahnimpuls — das, was einem kostenlosen Mittagessen im All am nächsten kommt."
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "narrative_101.0",
+    "old": "Wirf einen Tennisball auf einen fahrenden Zug. Der Ball prallt von der Front zurück und kommt schneller, als du geworfen hast — die Zuggeschwindigkeit hat sich addiert. Das ist Swing-by. Sonde = Tennisball, Planet = Zug, \"Aufprall\" = \"Vorbeifall auf Hyperbel\".",
+    "new": "Wirf einen Tennisball auf einen fahrenden Zug. Er prallt an der Front ab und kommt schneller zurück, als du ihn geworfen hast — der Zug fuhr ihm entgegen, und seine Geschwindigkeit kam beim Abprall hinzu. Das ist im Grunde ein Swing-by: Sonde = Tennisball, Planet = Zug, „Abprallen“ = „Vorbeifallen auf einer Hyperbel“."
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "narrative_101.1",
+    "old": "Aus der Perspektive des Planeten betritt und verlässt die Raumsonde ihn mit genau derselben Geschwindigkeit – die Gravitation ist konservativ, es wird keine Energie gewonnen oder verloren. Aber aus der Perspektive der Sonne erbt die Raumsonde auf der Ausreise einen Teil der Umlaufbahn des Planeten und kommt irgendwo anders mit zusätzlicher (oder geringerer) Geschwindigkeit an. Das ist keine Verletzung der Physik; der Planet zahlt dafür, indem er abbremst – um einen Betrag, der viel zu winzig ist, um ihn nachzuweisen.",
+    "new": "Aus Sicht des Planeten tritt die Raumsonde mit genau derselben Geschwindigkeit ein und aus – die Gravitation ist konservativ, es wird keine Energie gewonnen oder verloren. Aus Sicht der Sonne aber erbt die Raumsonde beim Verlassen einen Teil der Bahnbewegung des Planeten und kommt an einem neuen Ort mit zusätzlicher (oder geringerer) Geschwindigkeit an. Das ist kein Verstoß gegen die Physik; der Planet zahlt dafür, indem er abbremst – um einen Betrag, der viel zu winzig ist, um ihn nachzuweisen."
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "narrative_101.2",
+    "old": "Das ist der Trick, der die Voyager-Große Tour ermöglichte. Ohne Gravitationsunterstützungen kannst du mit chemischen Raketen weder den Saturn noch erst recht nicht den Uranus oder Neptun erreichen – die Treibstoffkosten sind astronomisch. Voyager 2 kettete vier Unterstützungen hintereinander: Jupiter, Saturn, Uranus, Neptun, alles in einer Reise. Cassini sprang zweimal von der Venus und einmal von der Erde ab auf dem Weg zum Saturn. Das äußere Sonnensystem ist nur wegen dieses Tricks erreichbar.",
+    "new": "Das ist der Trick, der die Grand Tour der Voyager-Sonden ermöglichte. Ohne Swing-by-Manöver erreicht man mit chemischen Raketen nicht einmal Saturn, geschweige denn Uranus oder Neptun – die Treibstoffkosten wären astronomisch. Voyager 2 reihte vier Swing-bys aneinander: Jupiter, Saturn, Uranus, Neptun, alles auf einer Reise. Cassini flog auf dem Weg zu Saturn zweimal an der Venus und einmal an der Erde vorbei. Das äußere Sonnensystem ist nur dank dieses Tricks erreichbar."
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "body_paragraphs.0",
+    "old": "Nähere dich einem Planeten von hinten auf hyperbolischer Trajektorie. Die Gravitation biegt deinen Pfad, du schwingst vorbei, raus mit gleicher Relativgeschwindigkeit zum Planeten — aber der Planet bewegte sich, du trägst die Bewegung mit. Netto: mehr Sonnen-Geschwindigkeit raus.",
+    "new": "Nähere dich einem Planeten von hinten auf einer Hyperbelbahn. Seine Schwerkraft lenkt dich ab, du schwingst vorbei und verlässt ihn mit derselben Geschwindigkeit relativ zum Planeten — doch der Planet war in Bewegung, und diese Bewegung nimmst du mit. Am Ende bist du relativ zur Sonne schneller als bei der Ankunft. Der Planet wird unmessbar winzig langsamer."
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "body_paragraphs.1",
+    "old": "Kehren Sie die Geometrie um – nähern Sie sich von vorne – und Sie verlangsamen sich. Pioneer 11 nutzte Jupiter, um zu Saturn zu drängen. Voyager 2 verknüpfte Jupiter, Saturn, Uranus, Neptun in einer der raffiniertesten Gravity-Assist-Manöver, die je geflogen wurden. Cassini prallte zweimal auf Venus und einmal auf der Erde ab, bevor es Saturn erreichte. New Horizons traf Jupiter, um drei Jahre von der Reise zu Pluto zu sparen.",
+    "new": "Kehre die Geometrie um — Anflug von vorn — und du wirst langsamer. Pioneer 11 nutzte Jupiter, um Saturn zu erreichen. Voyager 2 verknüpfte Jupiter, Saturn, Uranus und Neptun zu einer der raffiniertesten Swing-by-Touren, die je geflogen wurden. Cassini flog vor Saturn zweimal an der Venus und einmal an der Erde vorbei. New Horizons nutzte Jupiter, um drei Jahre von der Reise zu Pluto abzuziehen."
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "body_paragraphs.2",
+    "old": "Ohne Gravitationsunterstützungen hätten die Hälfte der Missionen in Orrery's Katalog nicht fliegen können. Die äußeren Planeten sind einfach zu weit entfernt für direkte Flugbahnen mit chemischen Raketen – ihre Kosten in `∆v` würden übersteigen, was jede Rakete liefern kann. Gravitationsunterstützungen verwandeln diese Rechnung vom Unmöglichen ins Schwierig-aber-Machbar.",
+    "new": "Ohne Swing-by-Manöver wäre die Hälfte der Missionen im Katalog von Orrery nicht möglich gewesen. Die äußeren Planeten sind für direkte Flugbahnen mit chemischen Raketen schlicht zu weit entfernt – ihre Kosten in `∆v` würden übersteigen, was jede Rakete liefern kann. Swing-by-Manöver machen aus dieser Rechnung etwas Schwieriges, aber Machbares statt etwas Unmögliches."
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "diagram_caption",
+    "old": "Sonde tritt mit gleicher Geschwindigkeit ein und aus dem Planetenrahmen; Planetenbewegung addiert heliozentrisch.",
+    "new": "Die Sonde tritt mit gleicher Geschwindigkeit in das Planetensystem ein und aus; die Planetenbewegung addiert heliozentrische Geschwindigkeit."
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "intro_sentence",
+    "old": "Die billigste Zwei-Burn-Reise zwischen zwei koplanaren Kreisbahnen — und die Baseline, an die Missionsplaner alles andere messen.",
+    "new": "Die günstigste Reise mit zwei Zündungen zwischen zwei koplanaren Kreisbahnen — und die Vergleichsgröße, an der Missionsplaner alles andere messen."
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "narrative_101.1",
+    "old": "Die Antwort, die Walter Hohmann 1925 ausarbeitete, ist überraschend elegant. Finde eine Ellipse, die die Erdumlaufbahn auf einer Seite nur knapp berührt und auf der anderen Seite knapp die Marsumlaufbahn. Brenne dein Triebwerk kurz ab, um die Erde zu verlassen und die Ellipse zu betreten. Gleite etwa 8,5 Monate lang ohne Triebwerksfeuer — die Schwerkraft verrichtet die Arbeit. Wenn du am anderen Ende ankommst, brenne nochmal ab, um dich in der Marsumlaufbahn einzusetzen. Zwei Abbrände, insgesamt. Fertig.",
+    "new": "Die Antwort, die Walter Hohmann 1925 ausarbeitete, ist verblüffend elegant. Finde eine Ellipse, die auf der einen Seite gerade eben die Erdbahn und auf der anderen gerade eben die Marsbahn berührt. Zünde dein Triebwerk kurz, um die Erde zu verlassen und auf diese Ellipse einzuschwenken. Gleite etwa 8,5 Monate, ohne das Triebwerk überhaupt zu zünden — die Schwerkraft erledigt die Arbeit. Am fernen Ende zündest du erneut, um in die Marsumlaufbahn einzuschwenken. Zwei Zündungen insgesamt. Fertig."
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "narrative_101.2",
+    "old": "Es ist die billigste mögliche Reise — aber auch die langsamste. Die 8,5-Monate-Wartezeit ist nicht verhandelbar; die Physik setzt den Timer. Schneller gehen? Du kannst, aber du zahlst dafür: eine steilere Ellipse, ein schnelleres Durchqueren, ein viel größerer Bremsabbrand am anderen Ende. Dies ist der Kompromiss, den du in jedem Porkchop-Diagramm im `/plan` sehen wirst.",
+    "new": "Es ist die günstigste mögliche Reise — aber auch die langsamste. An der Wartezeit von 8,5 Monaten führt kein Weg vorbei; die Physik stellt den Timer. Schneller ans Ziel? Das geht, aber du zahlst dafür: eine steilere Ellipse, eine schnellere Überfahrt und eine viel größere Bremszündung am anderen Ende. Diesen Kompromiss siehst du in jedem Porkchop-Diagramm unter `/plan`."
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "body_paragraphs.0",
+    "old": "Stellen dir vor, du bist in einer Kreisbahn um die Sonne und möchtest eine höhere erreichen — sagen wir Erde-zu-Mars. Die billigste Methode ist ein Hohmann-Transfer: eine Ellipse, deren Perihelium deine Startbahn berührt und deren Aphelium die Zielorbita berührt. Zwei Triebwerksabbrände bringen dich dorthin. Einer beim Perihelium, um die Erdumlaufbahn zu verlassen und die Ellipse zu betreten. Einer beim Aphelium, um dich in die Zielumlaufbahn zu zirkularisieren.",
+    "new": "Stell dir vor, du bist auf einer Kreisbahn um die Sonne und willst auf eine höhere — sagen wir von der Erde zum Mars. Am günstigsten gelingt das mit einem Hohmann-Transfer: einer Ellipse, deren Perihel deine Startbahn berührt und deren Aphel die Zielbahn. Zwei Triebwerkszündungen bringen dich dorthin. Eine im Perihel, um die Erdbahn zu verlassen und auf die Ellipse zu wechseln. Eine im Aphel, um in die Zielbahn einzuschwenken."
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "body_paragraphs.1",
+    "old": "Es ist der billigste Festimpuls-Weg, aber auch der langsamste. Erde-zu-Mars dauert auf einem Hohmann-Transfer etwa 259 Tage. Schneller gehen? Stärker abbrennen, eine gestreckte Ellipse mit höherer Perihelium-Geschwindigkeit fliegen. Das Ankunfts-V∞ steigt, der Einbrennabbrand am Ziel wird größer, deine gesamte ∆v-Kosten klettert steil.",
+    "new": "Es ist der günstigste Weg mit kurzen, impulsiven Zündungen, aber auch der langsamste. Von der Erde zum Mars dauert ein Hohmann-Transfer etwa 259 Tage. Schneller? Dann zünde stärker und fliege eine gestreckte Ellipse mit höherer Geschwindigkeit im Perihel. Das Ankunfts-V∞ steigt, die Bremszündung am Ziel wird größer, und die ∆v-Gesamtkosten klettern steil."
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "body_paragraphs.2",
+    "old": "Im `/plan`-Porkchop von Orrery sieht man das direkt: es gibt ein ruhiges Becken aus kühlen Türkis-Zellen um das natürliche Hohmann-Fenster, alle 26 Monate für Mars, und zunehmend teurere Konturen, wenn du dich kürzeren Transitzeiten näherst.",
+    "new": "Im Porkchop-Diagramm von Orrery unter `/plan` siehst du das direkt: Um das natürliche Hohmann-Fenster, das beim Mars alle 26 Monate wiederkehrt, liegt ein ruhiges Becken kühler türkisfarbener Zellen, und je kürzer die Flugzeit, desto teurer werden die Konturen."
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "diagram_caption",
+    "old": "Erdumlaufbahn (innen) · Marsumlaufbahn (außen) · Hohmann-Transfer-Ellipse mit Perihelium bei der Erde, Aphelium bei Mars.",
+    "new": "Erdumlaufbahn (innen) · Marsumlaufbahn (außen) · Hohmann-Transferellipse mit dem Perihel an der Erde und dem Aphel am Mars."
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "intro_sentence",
+    "old": "Gegeben zwei Positionen und eine Reisezeit, finde die Bahn, die sie verbindet.",
+    "new": "Zwei Positionen, eine Flugzeit, gesucht die verbindende Bahn — das Kernproblem jeder Planetenreise."
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "narrative_101.0",
+    "old": "Die Hohmann-Bahn ist der günstigste Weg von einer Umlaufbahn zur anderen, aber die meisten Missionen fliegen tatsächlich keine Hohmanns. Sie wollen an einem bestimmten Datum starten – etwa, wenn eine bestimmte Rakete bereit ist oder wenn ein bestimmter Startplatz verfügbar ist – und sie wollen an einem bestimmten Datum ankommen – etwa, um rechtzeitig vor einem Marsstaubsturm dort zu sein. Die Hohmann-Bahn lässt Sie nicht wählen. Lambert tut es.",
+    "new": "Der Hohmann-Transfer ist der günstigste Weg von einer Umlaufbahn zur anderen, doch die meisten Missionen fliegen gar keinen Hohmann-Transfer. Sie wollen an einem bestimmten Datum starten – etwa wenn eine bestimmte Rakete bereit oder eine bestimmte Startrampe frei ist – und an einem bestimmten Datum ankommen, etwa rechtzeitig, wenn ein Marsstaubsturm abgeklungen ist. Der Hohmann-Transfer lässt dir diese Wahl nicht. Lambert schon."
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "narrative_101.1",
+    "old": "Lamberts Frage klingt einfacher als ihre Mathematik: Ich bin in Punkt A, ich will in Punkt B sein, und ich will genau so viele Tage unterwegs sein. Welche Umlaufbahn soll ich fliegen? Lambert hat die Antwort 1761 aufgeschrieben – es gibt genau eine Ellipse (oder manchmal zwei, je nachdem, in welche Richtung man geht), die zwei Punkte in einer gegebenen Zeit verbindet.",
+    "new": "Lamberts Frage klingt einfacher als ihre Mathematik: Ich bin an Punkt A, ich will an Punkt B sein, und ich will genau so viele Tage unterwegs sein. Welche Bahn soll ich fliegen? Lambert schrieb die Antwort 1761 auf – es gibt genau eine Ellipse (oder manchmal zwei, je nachdem, in welcher Richtung man herumfliegt), die zwei Punkte in einer gegebenen Zeit verbindet."
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "narrative_101.2",
+    "old": "Dies ist das Herz eines jeden Porkchop-Diagramms, das du sehen wirst. Jedes Pixel auf dem Porkchop in /plan ist ein Lambert-Problem: „Die Erde an Datum X verlassen, den Mars an Datum Y erreichen – was kostet das?\" Die Farbe ist die Antwort. Löse es zehntausendmal parallel und du hast die ganze Karte auf einmal. Orrery macht das in einem Web Worker, damit die UI nicht einfriert, während es nachdenkt.",
+    "new": "Das ist das Herz jedes Porkchop-Diagramms, das du sehen wirst. Jedes Pixel auf dem Porkchop unter /plan ist ein Lambert-Problem: „Die Erde am Datum X verlassen, den Mars am Datum Y erreichen – was kostet das?“ Die Farbe ist die Antwort. Löse es zehntausendmal parallel und du hast die ganze Karte auf einmal. Orrery macht das in einem Web Worker, damit die Oberfläche nicht einfriert, während es rechnet."
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "body_paragraphs.0",
+    "old": "Lamberts Problem fragt: Ich bin hier, ich will dort sein, und ich habe diese viel Zeit. Welche Ellipse soll ich fliegen? Zwei Positionsvektoren und eine Flugzeit, und die Gleichung liefert die eindeutige Transferumlaufbahn (oder zwei – es gibt den langen und den kurzen Weg um den Zentralkörper).",
+    "new": "Lamberts Problem fragt: Ich bin hier, ich will dort sein, und ich habe so viel Zeit. Welche Ellipse soll ich fliegen? Zwei Positionsvektoren und eine Flugzeit, und die Gleichung liefert die eindeutige Transferbahn (oder zwei – es gibt den langen und den kurzen Weg um den Zentralkörper)."
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "body_paragraphs.1",
+    "old": "Die Hohmann-Transferbahn ist eine spezifische Lambert-Lösung: Positionen auf gegenüberliegenden Apsiden, Flugzeit gleich der halben Umlaufperiode der Transferellipse. Drehe an einem der beiden Regler – andere Positionen, andere Zeit – und du erhältst eine andere Ellipse. Kürzere Zeit, exzentrischere Ellipse, höhere Startenergie. Die Mathematik ändert sich nicht; nur die Randbedingungen.",
+    "new": "Der Hohmann-Transfer ist eine bestimmte Lösung des Lambert-Problems: Positionen auf gegenüberliegenden Apsiden, Flugzeit gleich der halben Umlaufperiode der Transferellipse. Drehe an einem der beiden Regler – andere Positionen, andere Zeit – und du erhältst eine andere Ellipse. Kürzere Zeit, exzentrischere Ellipse, höhere Startenergie. Die Mathematik ändert sich nicht; nur die Randbedingungen."
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "body_paragraphs.2",
+    "old": "Orrery löst Lamberts Problem in einem Web Worker jedesmal, wenn Sie über eine Porkchop-Zelle auf `/plan` fahren. Jede Zelle fragt: „Die Erde am Datum X verlassen, auf dem Mars am Datum Y ankommen – welche ∆v-Kosten fallen an?\" Die Farbe, die Sie sehen, ist die Antwort auf diese Frage, berechnet einmal pro Pixel.",
+    "new": "Orrery löst Lamberts Problem in einem Web Worker, jedes Mal wenn du mit dem Mauszeiger über eine Porkchop-Zelle auf `/plan` fährst. Jede Zelle fragt: „Die Erde am Datum X verlassen, am Datum Y am Mars ankommen – welche ∆v-Kosten fallen an?“ Die Farbe, die du siehst, ist die Antwort auf diese Frage, einmal pro Pixel berechnet."
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "diagram_caption",
+    "old": "Zwei Positionsvektoren r₁ und r₂; der Lambert-Solver findet die einzige verbindende Transferellipse.",
+    "new": "Zwei Positionsvektoren r₁ und r₂; der Lambert-Löser findet die eindeutige Transferellipse, die sie in der Flugzeit verbindet."
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "title",
+    "old": "Aneinandergesetzte Kegelschnitte",
+    "new": "Patched-Conics-Methode"
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "intro_sentence",
+    "old": "So tun, als wirke Schwerkraft jeweils nur eines Körpers — die Approximation, die das unlösbare Dreikörperproblem in lösbare Zweikörper-Kepler-Probleme zerlegt.",
+    "new": "Tu so, als wirke immer nur die Schwerkraft eines einzigen Körpers — die Näherung, die das unlösbare Dreikörperproblem in eine Kette lösbarer Zweikörper-Kepler-Probleme verwandelt."
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "narrative_101.0",
+    "old": "Hier ist ein schmutziges Geheimnis der Bahnmechanik: Die eigentliche vollständige Physik – jeder Körper im Sonnensystem zieht an jedem anderen – ist mathematisch auf keine saubere Weise lösbar. Es gibt KEINE geschlossene Lösung für das Drei-Körper-Problem, geschweige denn für die Version mit Dutzenden Körpern in der Realität. Wie schaffen es Missionsplaner also, überhaupt etwas zu vollbringen?",
+    "new": "Hier ist ein schmutziges Geheimnis der Bahnmechanik: Die eigentliche vollständige Physik – jeder Körper im Sonnensystem zieht an jedem anderen – ist mathematisch auf keine saubere Weise lösbar. Es gibt KEINE geschlossene Lösung für das Dreikörperproblem, geschweige denn für die reale Version mit Dutzenden Körpern. Wie bringen Missionsplaner dann überhaupt etwas zustande?"
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "narrative_101.1",
+    "old": "Sie schummeln. Sie tun so, als würde in einem beliebigen Moment nur die Gravitation EINES Körpers zählen. In der Nähe der Erde zieht nur die Erde. Auf der Reise durch den Weltraum nur die Sonne. In der Nähe des Mars nur der Mars. Jede dieser Regionen wird Einflusssphäre genannt, und innerhalb jeder fliegt das Raumschiff einen sauberen keplerischen Kegelschnitt. Wenn das Raumschiff eine Grenze überquert, wechselst du das Koordinatensystem und startest einen neuen Kegelschnitt. Zusammengeflickt bilden sie die Flugbahn. Das ist Patched Conics.",
+    "new": "Sie schummeln. Sie tun so, als zähle in jedem Moment nur die Gravitation EINES Körpers. In der Nähe der Erde zieht nur die Erde. Im Reiseflug nur die Sonne. In der Nähe des Mars nur der Mars. Jede dieser Regionen heißt Einflusssphäre, und innerhalb jeder fliegt das Raumschiff einen sauberen keplerschen Kegelschnitt. Überquert das Raumschiff eine Grenze, wechselt man das Koordinatensystem und beginnt einen neuen Kegelschnitt. Zusammengesetzt bilden sie die Flugbahn. Das sind Patched Conics."
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "narrative_101.2",
+    "old": "Die Mathematik weicht um einige Prozent von der Wahrheit ab – klein genug, dass echte Missionen damit als ersten Entwurf planen und dann numerisch für den Start verfeinern. Es ist auch klein genug, dass Orrery all das in deinem Browser in einem Web Worker ausführen kann, schnell genug, um die ganze Reichweitenkarte neu zu zeichnen, wenn du das Startjahr verschiebst. Der ganze Simulator basiert auf diesem Trick.",
+    "new": "Die Mathematik weicht um einige Prozent von der Wahrheit ab – klein genug, dass echte Missionen damit als ersten Entwurf planen und dann für den Start numerisch verfeinern. Es ist auch klein genug, dass Orrery all das in deinem Browser in einem Web Worker ausführen kann, schnell genug, um das ganze Porkchop-Diagramm neu zu zeichnen, wenn du das Startjahr verschiebst. Der ganze Simulator basiert auf diesem Trick."
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "body_paragraphs.0",
+    "old": "Echte Schwerkraft ist unordentlich. Eine Sonde im Cruise zwischen Erde und Mars spürt Erde, Sonne, Mars und alles andere. Die volle Mathematik (n-Körper) hat keine geschlossene Lösung — nur numerische Integration.",
+    "new": "Echte Schwerkraft ist unordentlich. Eine Sonde zwischen Erde und Mars spürt Erde, Sonne, Mars und alles andere zugleich. Die volle Mathematik (das n-Körper-Problem) hat keine geschlossene Lösung, nur numerische Integration — langsam, fragil und schwer zu planen."
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "body_paragraphs.1",
+    "old": "Gepatschte Kegelschnitte sind der praktische Kompromiss: erkläre eine Einflusssphäre um jeden Körper. Innerhalb der Einflusssphäre der Erde zählt nur die Gravitation der Erde; du fliegst einen Keplerschen Bogen um die Erde. Überquere die Grenze in die heliozentrische Region, wechsle zu einem sonnenzentrierten Keplerbogen. Überquere die Grenze in die Einflusssphäre des Mars, wechsle erneut. Drei Kepler-Probleme, an den Grenzen zusammengepatcht.",
+    "new": "Patched Conics sind der praktische Kompromiss: Lege um jeden Körper eine Einflusssphäre fest. Innerhalb der Einflusssphäre der Erde zählt nur die Gravitation der Erde; du fliegst einen Kepler-Bogen um die Erde. Überquere die Grenze in die heliozentrische Region, wechsle zu einem sonnenzentrierten Kepler-Bogen. Überquere die Grenze in die Einflusssphäre des Mars, wechsle erneut. Drei Kepler-Probleme, an den Grenzen aneinandergefügt."
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "body_paragraphs.2",
+    "old": "Es ist falsch, aber nützlich. Fehler an den Grenzen sind klein – höchstens ein paar Prozent des ∆v bei zislunatischen Missionen, noch weniger bei heliozentrischen – und die Mathematik wird tractabel genug, um in einem Web Worker zu laufen. Orrerrys `/plan`-Porkchops werden auf diese Weise berechnet; ebenso die Trajektorien auf `/fly`. Die echte Flugplannung bei der NASA nutzt die gleiche Näherung als erste Stufe und verfeinert dann numerisch vor dem Start.",
+    "new": "Es ist falsch, aber nützlich. Fehler an den Grenzen sind klein – höchstens ein paar Prozent des ∆v bei zislunaren Missionen, noch weniger bei heliozentrischen – und die Mathematik wird handhabbar genug, um in einem Web Worker zu laufen. Orrerys `/plan`-Porkchops werden auf diese Weise berechnet; ebenso die Flugbahnen unter `/fly`. Die echte Flugplanung bei der NASA nutzt dieselbe Näherung als erste Stufe und verfeinert dann vor dem Start numerisch."
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "diagram_caption",
+    "old": "Drei Rahmen, drei Koniken: Erd-zentriert → heliozentrisch → Mars-zentriert, an SoI-Grenzen verbunden.",
+    "new": "Drei Bezugssysteme, drei Kegelschnitte: erdzentriert → heliozentrisch → marszentriert, an den Einflusssphären-Grenzen verbunden."
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "intro_sentence",
+    "old": "Der Keplersche Bogen, der eine Sonde zwischen Bahnen trägt — Sonne im Brennpunkt, wie jede Bahn.",
+    "new": "Der Kepler-Bogen, der eine Sonde von einer Bahn zur anderen trägt — Sonne im Brennpunkt, wie bei jeder Bahn."
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "narrative_101.0",
+    "old": "Missionsplanung klingt nach Triebwerken und Raketen. Meistens geht es aber darum, eine Ellipse auszuwählen. Jeder interplanetare Flug — Apollo zum Mond, Voyager zum Neptun, Perseverance zum Mars — ist nur ein Raumfahrzeug, das auf einer elliptischen Bahn zwischen Start- und Zielort reitet. Das schicke Wort für diese Ellipse ist Transferbahn.",
+    "new": "Missionsplanung klingt nach Triebwerken und Raketen. Meistens geht es aber darum, eine Ellipse auszuwählen. Jeder interplanetare Flug — Apollo zum Mond, Voyager zu Neptun, Perseverance zum Mars — ist nur ein Raumfahrzeug, das auf einer elliptischen Bahn zwischen Start- und Zielort fährt. Das Fachwort für diese Ellipse lautet Transferbahn."
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "narrative_101.2",
+    "old": "Das Einzige, was eine Transferellipse von einer Planetenbahn unterscheidet: Das Raumfahrzeug fliegt nur die HÄLFTE davon. Es steigt an einem Ende auf, fährt zum anderen und steigt aus. Deshalb hat das ∆v-Budget immer zwei große Burns — einen zum Eintritt in die Ellipse, einen zum Verlassen. Der Teil dazwischen, die achtmonatige Freiflugphase, kostet absolut nichts.",
+    "new": "Das Einzige, was eine Transferellipse von einer Planetenbahn unterscheidet: Das Raumfahrzeug fliegt nur die HÄLFTE davon. Es steigt an einem Ende auf, fährt zum anderen und steigt aus. Deshalb hat das ∆v-Budget immer zwei große Zündungen — eine zum Eintritt in die Ellipse, eine zum Verlassen. Der Teil dazwischen, die achtmonatige Freiflugphase, kostet absolut nichts."
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "body_paragraphs.0",
+    "old": "Sobald du aus der Erdumlaufbahn hinausgebrannt bist, befindest du dich auf einer Ellipse um die Sonne. Diese Ellipse ist die Transferbahn, und sie hat alle dieselben Eigenschaften wie jede andere: große Halbachse, Exzentrizität, Perihel, Aphel. Die Tatsache, dass du irgendwohin gehst, ändert nichts an der Geometrie – Schwerkraft kümmert sich nicht um dein Ziel.",
+    "new": "Sobald du die Erdumlaufbahn per Zündung verlassen hast, befindest du dich auf einer Ellipse um die Sonne. Diese Ellipse ist die Transferbahn, und sie hat alle dieselben Eigenschaften wie jede andere: große Halbachse, Exzentrizität, Perihel, Aphel. Dass du irgendwohin fliegst, ändert nichts an der Geometrie – die Schwerkraft kümmert sich nicht um dein Ziel."
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "body_paragraphs.1",
+    "old": "Zwei Ankerpunkte definieren eine Transferellipse: wo du startest (Perihel, wenn du nach außen gehst) und wo du landen wirst (Aphel). Die große Halbachse ist der Durchschnitt dieser beiden Radien. Verstelle einen der Ankerpunkte, und die ganze Ellipse verformt sich neu – geh weiter nach außen, die Ellipse dehnt sich, die Reise wird länger.",
+    "new": "Zwei Ankerpunkte definieren eine Transferellipse: wo du startest (Perihel, wenn du nach außen fliegst) und wo du ankommst (Aphel). Die große Halbachse ist der Mittelwert dieser beiden Radien. Verschiebst du einen der Ankerpunkte, ändert sich die ganze Ellipse – geh weiter nach außen, dann dehnt sie sich, und die Reise wird länger."
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "body_paragraphs.2",
+    "old": "Auf Orrery's `/fly` HUD sehen Sie das Raumschiff diese Ellipse in Echtzeit zeichnen. Der Transfer-Arc auf dem Bildschirm ist eine visuelle Darstellung desselben Kegelschnitts, den die Mathematik vorgibt – die Sonne in einem Brennpunkt, das Perihel hinter dir, das Aphel vor dir.",
+    "new": "Auf Orrerys `/fly`-HUD siehst du, wie das Raumschiff diese Ellipse in Echtzeit nachzeichnet. Der Transferbogen auf dem Bildschirm ist die visuelle Darstellung desselben Kegelschnitts, den die Mathematik vorgibt – die Sonne in einem Brennpunkt, das Perihel hinter dir, das Aphel vor dir."
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "diagram_caption",
+    "old": "Zwei koplanare Bahnen verbunden durch eine Transferellipse mit der Sonne im Brennpunkt.",
+    "new": "Zwei koplanare Bahnen (innen Start, außen Ziel), verbunden durch eine Transferellipse; Sonne im Brennpunkt."
+  }
 ]

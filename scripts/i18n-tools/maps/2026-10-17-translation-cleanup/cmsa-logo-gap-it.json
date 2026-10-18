@@ -1,8 +1,8 @@
 [
- {
-  "rel": "sourcing/gaps.json",
-  "at": "gaps.1.resolution",
-  "old": "Il logo dell'agenzia CNSA funge da segno onesto sulle schede e pagine Tiangong e Shenzhou.",
-  "new": "Le schede e le pagine Tiangong e Shenzhou mostrano il nome CMSA senza logo: l'emblema della CMSA non ha una licenza libera e l'insegna della CNSA appartiene a un'altra agenzia."
- }
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.1.resolution",
+    "old": "Il logo dell'agenzia CNSA funge da segno onesto sulle schede e pagine Tiangong e Shenzhou.",
+    "new": "Le schede e le pagine Tiangong e Shenzhou mostrano il nome CMSA senza logo: l'emblema della CMSA non ha una licenza libera e l'insegna della CNSA appartiene a un'altra agenzia."
+  }
 ]

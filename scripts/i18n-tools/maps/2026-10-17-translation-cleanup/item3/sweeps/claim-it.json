@@ -1,14 +1,14 @@
 [
- {
-  "rel": "earth-objects/starlink.json",
-  "at": "scale_fact",
-  "old": "Starlink ha eseguito oltre 355.000 manovre autonome di evitamento sull'intera costellazione tra giugno 2025 e maggio 2026 — più di tutti gli altri operatori messi insieme.",
-  "new": "Starlink ha eseguito oltre 355.000 manovre autonome di evitamento sull'intera costellazione tra giugno 2025 e maggio 2026."
- },
- {
-  "rel": "fleet/constellation/starlink.json",
-  "at": "description",
-  "old": "La costellazione di banda larga LEO di SpaceX — oltre 11.000 satelliti attivi (a ottobre 2026) a 550 km di altitudine distribuiti su più gusci orbitali (inclinazioni di 53°, 70°, 97,6°). Primo servizio operativo nel 2019; copertura globale raggiunta nel 2023. Ogni satellite Gen-2 è equipaggiato con link laser inter-satellitari, permettendo alla costellazione di instradare pacchetti di dati tra satelliti senza passaggi attraverso stazioni di terra. Il sistema autonomo di prevenzione delle collisioni ha eseguito oltre 355.000 manovre tra giugno 2025 e maggio 2026 — più di ogni altro operatore LEO combinato.",
-  "new": "La costellazione di banda larga LEO di SpaceX — oltre 11.000 satelliti attivi (a ottobre 2026) a 550 km di altitudine distribuiti su più gusci orbitali (inclinazioni di 53°, 70°, 97,6°). Primo servizio operativo nel 2019; copertura globale raggiunta nel 2023. Ogni satellite Gen-2 è equipaggiato con link laser inter-satellitari, permettendo alla costellazione di instradare pacchetti di dati tra satelliti senza passaggi attraverso stazioni di terra. Il sistema autonomo di prevenzione delle collisioni ha eseguito oltre 355.000 manovre tra giugno 2025 e maggio 2026."
- }
+  {
+    "rel": "earth-objects/starlink.json",
+    "at": "scale_fact",
+    "old": "Starlink ha eseguito oltre 355.000 manovre autonome di evitamento sull'intera costellazione tra giugno 2025 e maggio 2026 — più di tutti gli altri operatori messi insieme.",
+    "new": "Starlink ha eseguito oltre 355.000 manovre autonome di evitamento sull'intera costellazione tra giugno 2025 e maggio 2026."
+  },
+  {
+    "rel": "fleet/constellation/starlink.json",
+    "at": "description",
+    "old": "La costellazione di banda larga LEO di SpaceX — oltre 11.000 satelliti attivi (a ottobre 2026) a 550 km di altitudine distribuiti su più gusci orbitali (inclinazioni di 53°, 70°, 97,6°). Primo servizio operativo nel 2019; copertura globale raggiunta nel 2023. Ogni satellite Gen-2 è equipaggiato con link laser inter-satellitari, permettendo alla costellazione di instradare pacchetti di dati tra satelliti senza passaggi attraverso stazioni di terra. Il sistema autonomo di prevenzione delle collisioni ha eseguito oltre 355.000 manovre tra giugno 2025 e maggio 2026 — più di ogni altro operatore LEO combinato.",
+    "new": "La costellazione di banda larga LEO di SpaceX — oltre 11.000 satelliti attivi (a ottobre 2026) a 550 km di altitudine distribuiti su più gusci orbitali (inclinazioni di 53°, 70°, 97,6°). Primo servizio operativo nel 2019; copertura globale raggiunta nel 2023. Ogni satellite Gen-2 è equipaggiato con link laser inter-satellitari, permettendo alla costellazione di instradare pacchetti di dati tra satelliti senza passaggi attraverso stazioni di terra. Il sistema autonomo di prevenzione delle collisioni ha eseguito oltre 355.000 manovre tra giugno 2025 e maggio 2026."
+  }
 ]

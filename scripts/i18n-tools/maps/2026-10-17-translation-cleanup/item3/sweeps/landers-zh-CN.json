@@ -1,62 +1,62 @@
 [
- {
-  "rel": "fleet/lander/hakuto-r.json",
-  "at": "tagline",
-  "old": "日本首台私人月球着陆器；M1和M2均坠毁",
-  "new": "日本首批私人登月尝试；任务1（2023年）和任务2（2025年）均坠毁"
- },
- {
-  "rel": "fleet/lander/hakuto-r.json",
-  "at": "best_known_for",
-  "old": "日本首台私人月球着陆器；M1和M2均坠毁",
-  "new": "日本首批私人登月尝试；任务1（2023年）和任务2（2025年）均坠毁"
- },
- {
-  "rel": "fleet/lander/hakuto-r.json",
-  "at": "description",
-  "old": "Hakuto-R计划是日本ispace公司研制的行星着陆器。日本首台私人月球着陆器；M1和M2均坠毁。2023年飞行，但以失败告终。",
-  "new": "Hakuto-R是日本ispace公司的月球着陆器计划。任务1着陆器于2022年12月发射，是日本首次私人登月尝试，于2023年4月坠毁。任务2着陆器Resilience于2025年6月坠毁。"
- },
- {
-  "rel": "fleet/lander/hakuto-r.json",
-  "at": "name",
-  "old": "Hakuto-R程序",
-  "new": "Hakuto-R计划"
- },
- {
-  "rel": "fleet/lander/vikram-cy2.json",
-  "at": "tagline",
-  "old": "Chandrayaan-2着陆器；坠毁；轨道器仍在运行",
-  "new": "印度Chandrayaan-2的着陆器；2019年坠毁，但轨道器继续运行"
- },
- {
-  "rel": "fleet/lander/vikram-cy2.json",
-  "at": "best_known_for",
-  "old": "Chandrayaan-2着陆器；坠毁；轨道器仍在运行",
-  "new": "印度Chandrayaan-2的着陆器；2019年坠毁，但轨道器继续运行"
- },
- {
-  "rel": "fleet/lander/vikram-cy2.json",
-  "at": "description",
-  "old": "Vikram（Chandrayaan-2）是印度ISRO研制的行星着陆器。Chandrayaan-2着陆器；坠毁；轨道器继续运行。2019年飞行，但以失败告终。",
-  "new": "Vikram是印度Chandrayaan-2任务的着陆器，由ISRO研制。它在2019年9月的着陆尝试中坠毁，但Chandrayaan-2轨道器继续在月球轨道上运行。"
- },
- {
-  "rel": "fleet/lander/mars-polar-lander.json",
-  "at": "tagline",
-  "old": "落地时丢失;驾驶速度更快的便宜审查",
-  "new": "1999年在着陆时失联；这次失败促使NASA重新审视“更快、更好、更省”方针"
- },
- {
-  "rel": "fleet/lander/mars-polar-lander.json",
-  "at": "best_known_for",
-  "old": "落地时丢失;驾驶速度更快的便宜审查",
-  "new": "1999年在着陆时失联；这次失败促使NASA重新审视“更快、更好、更省”方针"
- },
- {
-  "rel": "fleet/lander/mars-polar-lander.json",
-  "at": "description",
-  "old": "Mars Polar Lander是由美国Lockheed Martin公司建造的行星着陆器。在着陆时丧失；推动了更快更好更廉价的评审。在1999年飞行但失败。",
-  "new": "Mars Polar Lander是由Lockheed Martin公司建造的NASA着陆器。1999年12月，它在向火星南极地区下降时失去联系。继数月前Mars Climate Orbiter失利之后，这次失败促使NASA重新审视“更快、更好、更省”方针。"
- }
+  {
+    "rel": "fleet/lander/hakuto-r.json",
+    "at": "tagline",
+    "old": "日本首台私人月球着陆器；M1和M2均坠毁",
+    "new": "日本首批私人登月尝试；任务1（2023年）和任务2（2025年）均坠毁"
+  },
+  {
+    "rel": "fleet/lander/hakuto-r.json",
+    "at": "best_known_for",
+    "old": "日本首台私人月球着陆器；M1和M2均坠毁",
+    "new": "日本首批私人登月尝试；任务1（2023年）和任务2（2025年）均坠毁"
+  },
+  {
+    "rel": "fleet/lander/hakuto-r.json",
+    "at": "description",
+    "old": "Hakuto-R计划是日本ispace公司研制的行星着陆器。日本首台私人月球着陆器；M1和M2均坠毁。2023年飞行，但以失败告终。",
+    "new": "Hakuto-R是日本ispace公司的月球着陆器计划。任务1着陆器于2022年12月发射，是日本首次私人登月尝试，于2023年4月坠毁。任务2着陆器Resilience于2025年6月坠毁。"
+  },
+  {
+    "rel": "fleet/lander/hakuto-r.json",
+    "at": "name",
+    "old": "Hakuto-R程序",
+    "new": "Hakuto-R计划"
+  },
+  {
+    "rel": "fleet/lander/vikram-cy2.json",
+    "at": "tagline",
+    "old": "Chandrayaan-2着陆器；坠毁；轨道器仍在运行",
+    "new": "印度Chandrayaan-2的着陆器；2019年坠毁，但轨道器继续运行"
+  },
+  {
+    "rel": "fleet/lander/vikram-cy2.json",
+    "at": "best_known_for",
+    "old": "Chandrayaan-2着陆器；坠毁；轨道器仍在运行",
+    "new": "印度Chandrayaan-2的着陆器；2019年坠毁，但轨道器继续运行"
+  },
+  {
+    "rel": "fleet/lander/vikram-cy2.json",
+    "at": "description",
+    "old": "Vikram（Chandrayaan-2）是印度ISRO研制的行星着陆器。Chandrayaan-2着陆器；坠毁；轨道器继续运行。2019年飞行，但以失败告终。",
+    "new": "Vikram是印度Chandrayaan-2任务的着陆器，由ISRO研制。它在2019年9月的着陆尝试中坠毁，但Chandrayaan-2轨道器继续在月球轨道上运行。"
+  },
+  {
+    "rel": "fleet/lander/mars-polar-lander.json",
+    "at": "tagline",
+    "old": "落地时丢失;驾驶速度更快的便宜审查",
+    "new": "1999年在着陆时失联；这次失败促使NASA重新审视“更快、更好、更省”方针"
+  },
+  {
+    "rel": "fleet/lander/mars-polar-lander.json",
+    "at": "best_known_for",
+    "old": "落地时丢失;驾驶速度更快的便宜审查",
+    "new": "1999年在着陆时失联；这次失败促使NASA重新审视“更快、更好、更省”方针"
+  },
+  {
+    "rel": "fleet/lander/mars-polar-lander.json",
+    "at": "description",
+    "old": "Mars Polar Lander是由美国Lockheed Martin公司建造的行星着陆器。在着陆时丧失；推动了更快更好更廉价的评审。在1999年飞行但失败。",
+    "new": "Mars Polar Lander是由Lockheed Martin公司建造的NASA着陆器。1999年12月，它在向火星南极地区下降时失去联系。继数月前Mars Climate Orbiter失利之后，这次失败促使NASA重新审视“更快、更好、更省”方针。"
+  }
 ]

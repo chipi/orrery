@@ -1,290 +1,290 @@
 [
- {
-  "rel": "belts/asteroid.json",
-  "at": "location",
-  "old": "Entre Marte e Júpiter · 2,2–3,2 AU do Sol",
-  "new": "Entre Marte e Júpiter · 2,2–3,2 UA do Sol"
- },
- {
-  "rel": "belts/asteroid.json",
-  "at": "science_sections.1.why",
-  "old": "O cinturão ocupa o anel de 2.2–3.2 AU. Os hiatos de Kirkwood — zonas orbitais vazias nas ressonâncias de movimento médio de Júpiter — definem o padrão da população.",
-  "new": "O cinturão ocupa o anel de 2.2–3.2 UA. Os hiatos de Kirkwood — zonas orbitais vazias nas ressonâncias de movimento médio de Júpiter — definem o padrão da população."
- },
- {
-  "rel": "fleet/orbiter/parker-solar-probe.json",
-  "at": "description",
-  "old": "Missão da NASA rasante ao Sol. Lançada em 2018-08-12 em um conjunto Delta IV Heavy + Star 48BV, com o maior C3 já alcançado para uma carga científica (154 km²/s²). Sete assistências gravitacionais de Vênus ao longo de seis anos aproximaram o periélio de 0,16 AU (P1) até 0,046 AU (P22, 2024-12-24) — 9,86 raios solares, a 6,1 milhões de km da superfície do Sol. No P8 (2021-04-28), a Parker mergulhou abaixo da superfície crítica de Alfvén — a primeira espaçonave a entrar na coroa solar. Velocidade máxima no periélio: 192,22 km/s, o objeto mais rápido já feito pela humanidade.",
-  "new": "Missão da NASA rasante ao Sol. Lançada em 2018-08-12 em um conjunto Delta IV Heavy + Star 48BV, com o maior C3 já alcançado para uma carga científica (154 km²/s²). Sete assistências gravitacionais de Vênus ao longo de seis anos aproximaram o periélio de 0,16 UA (P1) até 0,046 UA (P22, 2024-12-24) — 9,86 raios solares, a 6,1 milhões de km da superfície do Sol. No P8 (2021-04-28), a Parker mergulhou abaixo da superfície crítica de Alfvén — a primeira espaçonave a entrar na coroa solar. Velocidade máxima no periélio: 192,22 km/s, o objeto mais rápido já feito pela humanidade."
- },
- {
-  "rel": "missions/sun/parker-solar-probe.json",
-  "at": "description",
-  "old": "Parker Solar Probe executou o lançamento de maior energia já realizado para uma missão científica — C3 de 154 km²/s², exigindo um terceiro estágio sólido Star 48BV personalizado no topo de um Delta IV Heavy apenas para escapar da Terra em uma trajetória de queda para o Sol. Sete assistências gravitacionais de Vênus ao longo de seis anos reduziram progressivamente o periélio de 0,16 AU (P1, 2018-11-05) para 0,046 AU (P22, 2024-12-24 — 9,86 raios solares, 6,1 milhões de km da superfície). No P8 em 2021-04-28, Parker mergulhou abaixo da superfície crítica de Alfvén — a primeira nave a entrar na coroa do Sol. No P22 alcançou ~191 km/s, tornando-se o objeto feito pelo homem mais rápido de todos os tempos. O escudo térmico de carbono-carbono de 11,43 cm sustentou 1.377 °C enquanto o barco da nave 1 metro atrás permanecia à temperatura ambiente.",
-  "new": "Parker Solar Probe executou o lançamento de maior energia já realizado para uma missão científica — C3 de 154 km²/s², exigindo um terceiro estágio sólido Star 48BV personalizado no topo de um Delta IV Heavy apenas para escapar da Terra em uma trajetória de queda para o Sol. Sete assistências gravitacionais de Vênus ao longo de seis anos reduziram progressivamente o periélio de 0,16 UA (P1, 2018-11-05) para 0,046 UA (P22, 2024-12-24 — 9,86 raios solares, 6,1 milhões de km da superfície). No P8 em 2021-04-28, Parker mergulhou abaixo da superfície crítica de Alfvén — a primeira nave a entrar na coroa do Sol. No P22 alcançou ~191 km/s, tornando-se o objeto feito pelo homem mais rápido de todos os tempos. O escudo térmico de carbono-carbono de 11,43 cm sustentou 1.377 °C enquanto o barco da nave 1 metro atrás permanecia à temperatura ambiente."
- },
- {
-  "rel": "missions/sun/parker-solar-probe.json",
-  "at": "events.2.note",
-  "old": "2018-11-05, 0,16 AU. Mais próximo do Sol já alcançado, superando Helios 2.",
-  "new": "2018-11-05, 0,16 UA. Mais próximo do Sol já alcançado, superando Helios 2."
- },
- {
-  "rel": "orbit-regimes-explore/BELT.json",
-  "at": "story",
-  "old": "Um anel de restos rochosos entre Marte e Júpiter — 2,2 a 3,2 AU. Centenas de milhares de corpos catalogados; massa total estimada em menos de 4% da Lua. Não é o campo de asteroides densamente compactado da ficção científica: o espaçamento típico entre objetos é de cerca de 1 milhão de quilômetros. O cinturão nunca se acretou em um planeta porque a gravidade de Júpiter continuou perturbando as órbitas, impedindo que as colisões se consolidassem. Três lacunas de Kirkwood marcam ressonâncias com Júpiter onde os asteroides são removidos.",
-  "new": "Um anel de restos rochosos entre Marte e Júpiter — 2,2 a 3,2 UA. Centenas de milhares de corpos catalogados; massa total estimada em menos de 4% da Lua. Não é o campo de asteroides densamente compactado da ficção científica: o espaçamento típico entre objetos é de cerca de 1 milhão de quilômetros. O cinturão nunca se acretou em um planeta porque a gravidade de Júpiter continuou perturbando as órbitas, impedindo que as colisões se consolidassem. Três lacunas de Kirkwood marcam ressonâncias com Júpiter onde os asteroides são removidos."
- },
- {
-  "rel": "orbit-regimes-explore/GIANTS.json",
-  "at": "story",
-  "old": "O reino planetário exterior — 5 a 30 AU. Dois gigantes gasosos (Júpiter, Saturno) com envoltórios de hidrogênio-hélio de milhares de quilômetros de profundidade sobre pequenos núcleos rochosos; dois gigantes de gelo (Urano, Netuno) com mantos de água/amônia/metano sob camadas gasosas mais finas. Juntos, eles concentram 99% de toda a massa planetária do sistema solar. Cada um possui seu próprio sistema de luas que funciona como um sistema solar em miniatura — somente Júpiter tem 95 luas conhecidas, incluindo quatro maiores que Plutão.",
-  "new": "O reino planetário exterior — 5 a 30 UA. Dois gigantes gasosos (Júpiter, Saturno) com envoltórios de hidrogênio-hélio de milhares de quilômetros de profundidade sobre pequenos núcleos rochosos; dois gigantes de gelo (Urano, Netuno) com mantos de água/amônia/metano sob camadas gasosas mais finas. Juntos, eles concentram 99% de toda a massa planetária do sistema solar. Cada um possui seu próprio sistema de luas que funciona como um sistema solar em miniatura — somente Júpiter tem 95 luas conhecidas, incluindo quatro maiores que Plutão."
- },
- {
-  "rel": "orbit-regimes-explore/GIANTS.json",
-  "at": "residents.0.label",
-  "old": "Júpiter — 5,20 AU",
-  "new": "Júpiter — 5,20 UA"
- },
- {
-  "rel": "orbit-regimes-explore/GIANTS.json",
-  "at": "residents.1.label",
-  "old": "Saturno — 9,58 AU, sistema de anéis",
-  "new": "Saturno — 9,58 UA, sistema de anéis"
- },
- {
-  "rel": "orbit-regimes-explore/GIANTS.json",
-  "at": "residents.2.label",
-  "old": "Urano — 19,18 AU, inclinado 97°",
-  "new": "Urano — 19,18 UA, inclinado 97°"
- },
- {
-  "rel": "orbit-regimes-explore/GIANTS.json",
-  "at": "residents.3.label",
-  "old": "Netuno — 30,07 AU, ventos mais rápidos do sistema",
-  "new": "Netuno — 30,07 UA, ventos mais rápidos do sistema"
- },
- {
-  "rel": "orbit-regimes-explore/HELIOPAUSE.json",
-  "at": "story",
-  "old": "O limite onde o vento solar do Sol perde sua batalha contra o meio interestelar — aproximadamente 120 AU de distância. Dentro está a heliosfera, uma bolha de partículas solares carregadas fluindo para fora a centenas de km/s. Além dela: o gás frio e denso e os raios cósmicos da própria galáxia. As sondas Voyager são os únicos artefatos que a humanidade já colocou através dessa fronteira — Voyager 1 cruzou em 2012, Voyager 2 em 2018. Ambas ainda transmitem dados, fracamente, do espaço interestelar.",
-  "new": "O limite onde o vento solar do Sol perde sua batalha contra o meio interestelar — aproximadamente 120 UA de distância. Dentro está a heliosfera, uma bolha de partículas solares carregadas fluindo para fora a centenas de km/s. Além dela: o gás frio e denso e os raios cósmicos da própria galáxia. As sondas Voyager são os únicos artefatos que a humanidade já colocou através dessa fronteira — Voyager 1 cruzou em 2012, Voyager 2 em 2018. Ambas ainda transmitem dados, fracamente, do espaço interestelar."
- },
- {
-  "rel": "orbit-regimes-explore/KUIPER.json",
-  "at": "story",
-  "old": "Um anel de corpos gelados além de Netuno — 30 a 50 AU. O análogo congelado do cinturão de asteroides: centenas de milhares de corpos dos quais apenas os poucos maiores foram resolvidos. Composto de metano, amônia, gelo de água + rocha. Plutão foi o primeiro membro identificado, em 1930, embora o cinturão não tenha sido reconhecido como uma população até os anos 1990, quando Jewitt + Luu encontraram o segundo membro (1992 QB1). New Horizons deu à humanidade suas primeiras visões próximas de DOIS objetos Kuiper — Plutão em 2015 e Arrokoth em 2019.",
-  "new": "Um anel de corpos gelados além de Netuno — 30 a 50 UA. O análogo congelado do cinturão de asteroides: centenas de milhares de corpos dos quais apenas os poucos maiores foram resolvidos. Composto de metano, amônia, gelo de água + rocha. Plutão foi o primeiro membro identificado, em 1930, embora o cinturão não tenha sido reconhecido como uma população até os anos 1990, quando Jewitt + Luu encontraram o segundo membro (1992 QB1). New Horizons deu à humanidade suas primeiras visões próximas de DOIS objetos Kuiper — Plutão em 2015 e Arrokoth em 2019."
- },
- {
-  "rel": "orbit-regimes-explore/KUIPER.json",
-  "at": "residents.0.label",
-  "old": "Plutão — 39,5 AU, maior conhecido",
-  "new": "Plutão — 39,5 UA, maior conhecido"
- },
- {
-  "rel": "orbit-regimes-explore/KUIPER.json",
-  "at": "residents.1.label",
-  "old": "Éris — 96,4 AU (disco disperso)",
-  "new": "Éris — 96,4 UA (disco disperso)"
- },
- {
-  "rel": "orbit-regimes-explore/KUIPER.json",
-  "at": "residents.2.label",
-  "old": "Makemake — 45,8 AU",
-  "new": "Makemake — 45,8 UA"
- },
- {
-  "rel": "orbit-regimes-explore/KUIPER.json",
-  "at": "residents.3.label",
-  "old": "Haumea — 43,3 AU, rotação rápida",
-  "new": "Haumea — 43,3 UA, rotação rápida"
- },
- {
-  "rel": "orbit-regimes-explore/KUIPER.json",
-  "at": "residents.4.label",
-  "old": "Quaoar — 43,4 AU, possui anéis",
-  "new": "Quaoar — 43,4 UA, possui anéis"
- },
- {
-  "rel": "orbit-regimes-explore/KUIPER.json",
-  "at": "residents.5.label",
-  "old": "Arrokoth — 44,6 AU, binário de contato",
-  "new": "Arrokoth — 44,6 UA, binário de contato"
- },
- {
-  "rel": "orbit-regimes-explore/OORT.json",
-  "at": "story",
-  "old": "Uma concha esférica hipotética de corpos gelados cercando todo o sistema solar — estendendo-se de aproximadamente 2.000 a 100.000 AU. Nunca observada diretamente, apenas inferida: os cometas de longo período que vemos têm órbitas tão amplas que devem vir daqui. População estimada: trilhões de corpos. A nuvem de Oort representa os restos da nuvem de nascimento do sistema solar, dinamicamente estável por bilhões de anos a essa distância do Sol. Estrelas que passam podem perturbar objetos individuais para dentro, tornando-se os cometas que observamos.",
-  "new": "Uma concha esférica hipotética de corpos gelados cercando todo o sistema solar — estendendo-se de aproximadamente 2.000 a 100.000 UA. Nunca observada diretamente, apenas inferida: os cometas de longo período que vemos têm órbitas tão amplas que devem vir daqui. População estimada: trilhões de corpos. A nuvem de Oort representa os restos da nuvem de nascimento do sistema solar, dinamicamente estável por bilhões de anos a essa distância do Sol. Estrelas que passam podem perturbar objetos individuais para dentro, tornando-se os cometas que observamos."
- },
- {
-  "rel": "orbit-regimes-explore/TERRESTRIAL.json",
-  "at": "story",
-  "old": "O sistema solar interno rochoso — 0,4 a 1,5 AU do Sol. Quatro pequenos mundos com núcleos metálicos, mantos de silicato e atmosferas finas ou ausentes. Eles se formaram dentro da linha de congelamento, onde estava quente demais para que gelos voláteis condensassem, então apenas materiais refratários (silicatos, ferro, níquel) permaneceram sólidos. Três dos quatro foram alvos de exploração tripulada (Terra, Lua, direção a Marte).",
-  "new": "O sistema solar interno rochoso — 0,4 a 1,5 UA do Sol. Quatro pequenos mundos com núcleos metálicos, mantos de silicato e atmosferas finas ou ausentes. Eles se formaram dentro da linha de congelamento, onde estava quente demais para que gelos voláteis condensassem, então apenas materiais refratários (silicatos, ferro, níquel) permaneceram sólidos. Três dos quatro foram alvos de exploração tripulada (Terra, Lua, direção a Marte)."
- },
- {
-  "rel": "orbit-regimes-explore/TERRESTRIAL.json",
-  "at": "residents.0.label",
-  "old": "Mercúrio — 0,39 AU",
-  "new": "Mercúrio — 0,39 UA"
- },
- {
-  "rel": "orbit-regimes-explore/TERRESTRIAL.json",
-  "at": "residents.1.label",
-  "old": "Vênus — 0,72 AU",
-  "new": "Vênus — 0,72 UA"
- },
- {
-  "rel": "orbit-regimes-explore/TERRESTRIAL.json",
-  "at": "residents.2.label",
-  "old": "Terra — 1,00 AU",
-  "new": "Terra — 1,00 UA"
- },
- {
-  "rel": "orbit-regimes-explore/TERRESTRIAL.json",
-  "at": "residents.3.label",
-  "old": "Marte — 1,52 AU",
-  "new": "Marte — 1,52 UA"
- },
- {
-  "rel": "planets/neptune.json",
-  "at": "science_sections.0.why",
-  "old": "A 30.07 AU de distância média, Netuno está tão distante que um sinal de luz em mão única leva 4 horas em cada sentido. A Voyager 2 precisou de 12 anos para alcançá-lo.",
-  "new": "A 30.07 UA de distância média, Netuno está tão distante que um sinal de luz em mão única leva 4 horas em cada sentido. A Voyager 2 precisou de 12 anos para alcançá-lo."
- },
- {
-  "rel": "planets/neptune.json",
-  "at": "science_sections.2.why",
-  "old": "A excentricidade suave de 0.0086 de Netuno oferece uma órbita tão circular que a oscilação periélio–afélio é inferior a 200 milhões de km em um semi-eixo maior de 30 AU — uma variação de 1.4 %.",
-  "new": "A excentricidade suave de 0.0086 de Netuno oferece uma órbita tão circular que a oscilação periélio–afélio é inferior a 200 milhões de km em um semi-eixo maior de 30 UA — uma variação de 1.4 %."
- },
- {
-  "rel": "planets/saturn.json",
-  "at": "science_sections.3.why",
-  "old": "A órbita de Saturno é suave (excentricidade 0,054) mas sua distância média de 9,6 AU significa que periélio e afélio diferem por 100 milhões de km — Cassini cronometrou sua chegada para usar a velocidade de aproximação.",
-  "new": "A órbita de Saturno é suave (excentricidade 0,054) mas sua distância média de 9,6 UA significa que periélio e afélio diferem por 100 milhões de km — Cassini cronometrou sua chegada para usar a velocidade de aproximação."
- },
- {
-  "rel": "science/_landing.json",
-  "at": "chapters.5.diagram_caption",
-  "old": "Uma AU = uma distância Terra-Sol. Marte está a ~1,5 AU. Júpiter a ~5,2.",
-  "new": "Uma AU = uma distância Terra-Sol. Marte está a ~1,5 UA. Júpiter a ~5,2."
- },
- {
-  "rel": "science/orbits/escape-velocity.json",
-  "at": "body_paragraphs.1",
-  "old": "Os valores valem a pena ser conhecidos: ~11,2 km/s da superfície terrestre, ~2,4 km/s da Lua, ~5,0 km/s de Marte, ~618 km/s da superfície do Sol, e ~42,1 km/s para escapar do Sol a partir da órbita terrestre de 1 AU. A velocidade de escape cai com a altitude (r maior), então partir de uma órbita alta é mais barato do que do solo — uma das razões pelas quais as missões ganham velocidade em etapas.",
-  "new": "Os valores valem a pena ser conhecidos: ~11,2 km/s da superfície terrestre, ~2,4 km/s da Lua, ~5,0 km/s de Marte, ~618 km/s da superfície do Sol, e ~42,1 km/s para escapar do Sol a partir da órbita terrestre de 1 UA. A velocidade de escape cai com a altitude (r maior), então partir de uma órbita alta é mais barato do que do solo — uma das razões pelas quais as missões ganham velocidade em etapas."
- },
- {
-  "rel": "science/orbits/keplers-laws.json",
-  "at": "body_paragraphs.2",
-  "old": "Terceira lei: `T² ∝ a³`. O quadrado do período orbital é proporcional ao cubo do semi-eixo maior. Com a Terra definida como T = 1 ano e a = 1 AU, você pode determinar o período de qualquer planeta a partir de sua distância — ou sua distância a partir de seu período. Newton mais tarde derivaria isso da gravidade; Kepler chegou lá através de pura identificação de padrões nos dados de Brahe.",
-  "new": "Terceira lei: `T² ∝ a³`. O quadrado do período orbital é proporcional ao cubo do semi-eixo maior. Com a Terra definida como T = 1 ano e a = 1 UA, você pode determinar o período de qualquer planeta a partir de sua distância — ou sua distância a partir de seu período. Newton mais tarde derivaria isso da gravidade; Kepler chegou lá através de pura identificação de padrões nos dados de Brahe."
- },
- {
-  "rel": "science/orbits/semi-major-axis.json",
-  "at": "body_paragraphs.2",
-  "old": "Nos painéis `/explore` do Orrery você verá este número em unidades astronômicas. Terra: a ≈ 1.0 AU. Marte: 1.52 AU. Júpiter: 5.2 AU. Aplique na fórmula do período e você reproduziu o relógio do orrery: 1 ano, 687 dias, 11,86 anos.",
-  "new": "Nos painéis `/explore` do Orrery você verá este número em unidades astronômicas. Terra: a ≈ 1.0 UA. Marte: 1.52 UA. Júpiter: 5.2 UA. Aplique na fórmula do período e você reproduziu o relógio do orrery: 1 ano, 687 dias, 11,86 anos."
- },
- {
-  "rel": "science/planets/kuiper-belt.json",
-  "at": "narrative_101.1",
-  "old": "Em 1992 David Jewitt e Jane Luu, observando de Mauna Kea com um detector CCD então inovador, encontraram 1992 QB1 (posteriormente nomeado Albion). Um corpo gelado de ~160 km em uma órbita circular estável a 44 AU. Dentro de um ano eles tinham um segundo. Dentro de cinco anos havia dezenas. Hoje os catálogos contêm mais de 3.000 objetos do Cinturão de Kuiper confirmados e modelos dinâmicos predizem mais de 100.000 corpos maiores que 100 km — e na ordem de um bilhão de objetos do tamanho de cometas. A massa total é pequena (~2% da Terra) mas ainda assim é ~50× o cinturão de asteroides.",
-  "new": "Em 1992 David Jewitt e Jane Luu, observando de Mauna Kea com um detector CCD então inovador, encontraram 1992 QB1 (posteriormente nomeado Albion). Um corpo gelado de ~160 km em uma órbita circular estável a 44 UA. Dentro de um ano eles tinham um segundo. Dentro de cinco anos havia dezenas. Hoje os catálogos contêm mais de 3.000 objetos do Cinturão de Kuiper confirmados e modelos dinâmicos predizem mais de 100.000 corpos maiores que 100 km — e na ordem de um bilhão de objetos do tamanho de cometas. A massa total é pequena (~2% da Terra) mas ainda assim é ~50× o cinturão de asteroides."
- },
- {
-  "rel": "science/planets/kuiper-belt.json",
-  "at": "body_paragraphs.0",
-  "old": "Estruturalmente o cinturão tem três populações. O Cinturão de Kuiper clássico a 42–48 AU contém corpos em órbitas quase circulares e de baixa inclinação — o remanescente dinamicamente não perturbado do disco original, Albion e Quaoar vivem aqui. A população ressonante é mantida em ressonância média de movimento 2:3 com Netuno (Plutão é o arquétipo — para cada duas órbitas de Plutão, Netuno faz três); esses são chamados Plutinos. Então o disco espalhado é a extensão excêntrica e de alta inclinação externa onde Éris e Sedna vagueiam, com periélios perto de Netuno e afélios centenas de AU para fora. Cada população é um fóssil de um capítulo diferente da história gravitacional primordial do sistema solar.",
-  "new": "Estruturalmente o cinturão tem três populações. O Cinturão de Kuiper clássico a 42–48 UA contém corpos em órbitas quase circulares e de baixa inclinação — o remanescente dinamicamente não perturbado do disco original, Albion e Quaoar vivem aqui. A população ressonante é mantida em ressonância média de movimento 2:3 com Netuno (Plutão é o arquétipo — para cada duas órbitas de Plutão, Netuno faz três); esses são chamados Plutinos. Então o disco espalhado é a extensão excêntrica e de alta inclinação externa onde Éris e Sedna vagueiam, com periélios perto de Netuno e afélios centenas de AU para fora. Cada população é um fóssil de um capítulo diferente da história gravitacional primordial do sistema solar."
- },
- {
-  "rel": "science/planets/kuiper-belt.json",
-  "at": "diagram_caption",
-  "old": "As três populações do Cinturão de Kuiper. KBOs clássicos a 42–48 AU em órbitas quase circulares; Plutinos ressonantes em 2:3 com Netuno (Plutão + Caronte a 39 AU); o disco espalhado estendendo-se excentricamente em direção à Nuvem de Oort interior (o afélio de Éris está a 96 AU).",
-  "new": "As três populações do Cinturão de Kuiper. KBOs clássicos a 42–48 UA em órbitas quase circulares; Plutinos ressonantes em 2:3 com Netuno (Plutão + Caronte a 39 UA); o disco espalhado estendendo-se excentricamente em direção à Nuvem de Oort interior (o afélio de Éris está a 96 UA)."
- },
- {
-  "rel": "science/scales-time/_intro.json",
-  "at": "paragraphs.0",
-  "old": "O sistema solar é maior do que sua intuição está calibrada para entender. Marte está a 200 milhões de km de distância. Saturno está a 1,4 bilhão. Plutão está a 6 bilhões. Números em quilômetros param de ajudar. Então os astrônomos escolheram uma régua mais humana — uma distância Terra-Sol, chamada de unidade astronômica (AU). Marte está a 1,5 AU. Júpiter está a 5. Plutão orbita entre 30 e 50.",
-  "new": "O sistema solar é maior do que sua intuição está calibrada para entender. Marte está a 200 milhões de km de distância. Saturno está a 1,4 bilhão. Plutão está a 6 bilhões. Números em quilômetros param de ajudar. Então os astrônomos escolheram uma régua mais humana — uma distância Terra-Sol, chamada de unidade astronômica (AU). Marte está a 1,5 UA. Júpiter está a 5. Plutão orbita entre 30 e 50."
- },
- {
-  "rel": "science/scales-time/au.json",
-  "at": "narrative_101.1",
-  "old": "A unidade está ancorada em um número inteiro específico de metros — 149.597.870.700 deles, fixado em 2012 — mas a ideia prática é mais simples. Marte fica a 1,5 AU do Sol. Júpiter a 5 AU. Plutão orbita entre 30 e 50 AU. A Voyager 1, o objeto feito pelo homem mais distante, está além de 170 AU agora e ainda segue. Números que você realmente consegue manter em sua mente.",
-  "new": "A unidade está ancorada em um número inteiro específico de metros — 149.597.870.700 deles, fixado em 2012 — mas a ideia prática é mais simples. Marte fica a 1,5 UA do Sol. Júpiter a 5 UA. Plutão orbita entre 30 e 50 UA. A Voyager 1, o objeto feito pelo homem mais distante, está além de 170 UA agora e ainda segue. Números que você realmente consegue manter em sua mente."
- },
- {
-  "rel": "science/scales-time/au.json",
-  "at": "body_paragraphs.2",
-  "old": "Por que AU em vez de metros? Porque números em metros são desajeitados na escala do sistema solar. Os 1,4 bilhão de km de Saturno são ilegíveis. 9,58 AU é um número que você consegue manter em sua mente. Os painéis e HUD do Orrery usam AU para posições no sistema solar — convertidos para km, luz-minutos e outras unidades apenas onde o público precisa da conversão.",
-  "new": "Por que AU em vez de metros? Porque números em metros são desajeitados na escala do sistema solar. Os 1,4 bilhão de km de Saturno são ilegíveis. 9,58 UA é um número que você consegue manter em sua mente. Os painéis e HUD do Orrery usam AU para posições no sistema solar — convertidos para km, luz-minutos e outras unidades apenas onde o público precisa da conversão."
- },
- {
-  "rel": "science/scales-time/au.json",
-  "at": "diagram_caption",
-  "old": "1 AU ≈ distância Terra-Sol. Semi-eixos maiores dos planetas em AU, escala logarítmica para acomodar os planetas externos.",
-  "new": "1 UA ≈ distância Terra-Sol. Semi-eixos maiores dos planetas em AU, escala logarítmica para acomodar os planetas externos."
- },
- {
-  "rel": "science/scales-time/frames.json",
-  "at": "narrative_101.0",
-  "old": "Onde está a Lua? A resposta honesta é \"depende de onde VOCÊ está.\" Da superfície da Terra, ela está acima da cabeça à 1h da manhã. Do Sol, ela é um ponto minúsculo a 1 AU de distância, perto da Terra. De Marte, ela é um pontinho irrelevante. Nenhuma dessas respostas está errada — elas são apenas medidas a partir de origens diferentes. Essa escolha de origem é o que significa \"referencial\".",
-  "new": "Onde está a Lua? A resposta honesta é \"depende de onde VOCÊ está.\" Da superfície da Terra, ela está acima da cabeça à 1h da manhã. Do Sol, ela é um ponto minúsculo a 1 UA de distância, perto da Terra. De Marte, ela é um pontinho irrelevante. Nenhuma dessas respostas está errada — elas são apenas medidas a partir de origens diferentes. Essa escolha de origem é o que significa \"referencial\"."
- },
- {
-  "rel": "small-bodies/arrokoth.json",
-  "at": "science_sections.1.why",
-  "old": "Arrokoth orbita a 44,6 AU — cinturão de Kuiper clássico, além de Plutão, numa região onde corpos permaneceram largamente inalterados desde o início do sistema solar.",
-  "new": "Arrokoth orbita a 44,6 UA — cinturão de Kuiper clássico, além de Plutão, numa região onde corpos permaneceram largamente inalterados desde o início do sistema solar."
- },
- {
-  "rel": "small-bodies/ceres.json",
-  "at": "science_sections.1.why",
-  "old": "Ceres orbita a 2,77 AU — bem dentro do cinturão de asteroides e é usado como a distância de referência canônica do \"meio do cinturão\".",
-  "new": "Ceres orbita a 2,77 UA — bem dentro do cinturão de asteroides e é usado como a distância de referência canônica do \"meio do cinturão\"."
- },
- {
-  "rel": "small-bodies/didymos.json",
-  "at": "science_sections.0.why",
-  "old": "Dídimo é um asteroide binário próximo à Terra (semieixo maior 1,64 AU). DART (NASA, 2022) atingiu seu pequeno companheiro Dimorfos para testar a física de deflexão de asteroides.",
-  "new": "Dídimo é um asteroide binário próximo à Terra (semieixo maior 1,64 UA). DART (NASA, 2022) atingiu seu pequeno companheiro Dimorfos para testar a física de deflexão de asteroides."
- },
- {
-  "rel": "small-bodies/halley.json",
-  "at": "science_sections.1.why",
-  "old": "O enorme deslocamento periélio-afélio de Halley (35 a 0.59 AU) impulsiona os gelos superficiais a sublimarem violentamente perto do periélio, produzindo a coma e cauda. Próximo periélio: 2061.",
-  "new": "O enorme deslocamento periélio-afélio de Halley (35 a 0.59 UA) impulsiona os gelos superficiais a sublimarem violentamente perto do periélio, produzindo a coma e cauda. Próximo periélio: 2061."
- },
- {
-  "rel": "small-bodies/makemake.json",
-  "at": "science_sections.0.why",
-  "old": "O semi-eixo maior de 45,7 AU de Makemake o coloca na Cintura de Kuiper clássica — distante o suficiente para que o metano da superfície persista como o gelo dominante.",
-  "new": "O semi-eixo maior de 45,7 UA de Makemake o coloca na Cintura de Kuiper clássica — distante o suficiente para que o metano da superfície persista como o gelo dominante."
- },
- {
-  "rel": "small-bodies/vesta.json",
-  "at": "science_sections.1.why",
-  "old": "Vesta orbita a 2,36 AU — cinturão interno. Sua proximidade levou Dawn a escolher visitar Vesta primeiro (2011), depois partir para Ceres (2015).",
-  "new": "Vesta orbita a 2,36 UA — cinturão interno. Sua proximidade levou Dawn a escolher visitar Vesta primeiro (2011), depois partir para Ceres (2015)."
- },
- {
-  "rel": "trajectories/pioneer-10.json",
-  "at": "current_distance_label",
-  "old": "135 AU · ~18,8 light-horas do Sol (último contato em 23-01-2003)",
-  "new": "135 UA · ~18,8 light-horas do Sol (último contato em 23-01-2003)"
- },
- {
-  "rel": "trajectories/vega-1.json",
-  "at": "current_distance_label",
-  "old": "0,98 AU · sonda em órbita heliocêntrica desde o sobrevoo de Halley 1986-03-06",
-  "new": "0,98 UA · sonda em órbita heliocêntrica desde o sobrevoo de Halley 1986-03-06"
- }
+  {
+    "rel": "belts/asteroid.json",
+    "at": "location",
+    "old": "Entre Marte e Júpiter · 2,2–3,2 AU do Sol",
+    "new": "Entre Marte e Júpiter · 2,2–3,2 UA do Sol"
+  },
+  {
+    "rel": "belts/asteroid.json",
+    "at": "science_sections.1.why",
+    "old": "O cinturão ocupa o anel de 2.2–3.2 AU. Os hiatos de Kirkwood — zonas orbitais vazias nas ressonâncias de movimento médio de Júpiter — definem o padrão da população.",
+    "new": "O cinturão ocupa o anel de 2.2–3.2 UA. Os hiatos de Kirkwood — zonas orbitais vazias nas ressonâncias de movimento médio de Júpiter — definem o padrão da população."
+  },
+  {
+    "rel": "fleet/orbiter/parker-solar-probe.json",
+    "at": "description",
+    "old": "Missão da NASA rasante ao Sol. Lançada em 2018-08-12 em um conjunto Delta IV Heavy + Star 48BV, com o maior C3 já alcançado para uma carga científica (154 km²/s²). Sete assistências gravitacionais de Vênus ao longo de seis anos aproximaram o periélio de 0,16 AU (P1) até 0,046 AU (P22, 2024-12-24) — 9,86 raios solares, a 6,1 milhões de km da superfície do Sol. No P8 (2021-04-28), a Parker mergulhou abaixo da superfície crítica de Alfvén — a primeira espaçonave a entrar na coroa solar. Velocidade máxima no periélio: 192,22 km/s, o objeto mais rápido já feito pela humanidade.",
+    "new": "Missão da NASA rasante ao Sol. Lançada em 2018-08-12 em um conjunto Delta IV Heavy + Star 48BV, com o maior C3 já alcançado para uma carga científica (154 km²/s²). Sete assistências gravitacionais de Vênus ao longo de seis anos aproximaram o periélio de 0,16 UA (P1) até 0,046 UA (P22, 2024-12-24) — 9,86 raios solares, a 6,1 milhões de km da superfície do Sol. No P8 (2021-04-28), a Parker mergulhou abaixo da superfície crítica de Alfvén — a primeira espaçonave a entrar na coroa solar. Velocidade máxima no periélio: 192,22 km/s, o objeto mais rápido já feito pela humanidade."
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "description",
+    "old": "Parker Solar Probe executou o lançamento de maior energia já realizado para uma missão científica — C3 de 154 km²/s², exigindo um terceiro estágio sólido Star 48BV personalizado no topo de um Delta IV Heavy apenas para escapar da Terra em uma trajetória de queda para o Sol. Sete assistências gravitacionais de Vênus ao longo de seis anos reduziram progressivamente o periélio de 0,16 AU (P1, 2018-11-05) para 0,046 AU (P22, 2024-12-24 — 9,86 raios solares, 6,1 milhões de km da superfície). No P8 em 2021-04-28, Parker mergulhou abaixo da superfície crítica de Alfvén — a primeira nave a entrar na coroa do Sol. No P22 alcançou ~191 km/s, tornando-se o objeto feito pelo homem mais rápido de todos os tempos. O escudo térmico de carbono-carbono de 11,43 cm sustentou 1.377 °C enquanto o barco da nave 1 metro atrás permanecia à temperatura ambiente.",
+    "new": "Parker Solar Probe executou o lançamento de maior energia já realizado para uma missão científica — C3 de 154 km²/s², exigindo um terceiro estágio sólido Star 48BV personalizado no topo de um Delta IV Heavy apenas para escapar da Terra em uma trajetória de queda para o Sol. Sete assistências gravitacionais de Vênus ao longo de seis anos reduziram progressivamente o periélio de 0,16 UA (P1, 2018-11-05) para 0,046 UA (P22, 2024-12-24 — 9,86 raios solares, 6,1 milhões de km da superfície). No P8 em 2021-04-28, Parker mergulhou abaixo da superfície crítica de Alfvén — a primeira nave a entrar na coroa do Sol. No P22 alcançou ~191 km/s, tornando-se o objeto feito pelo homem mais rápido de todos os tempos. O escudo térmico de carbono-carbono de 11,43 cm sustentou 1.377 °C enquanto o barco da nave 1 metro atrás permanecia à temperatura ambiente."
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "events.2.note",
+    "old": "2018-11-05, 0,16 AU. Mais próximo do Sol já alcançado, superando Helios 2.",
+    "new": "2018-11-05, 0,16 UA. Mais próximo do Sol já alcançado, superando Helios 2."
+  },
+  {
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "story",
+    "old": "Um anel de restos rochosos entre Marte e Júpiter — 2,2 a 3,2 AU. Centenas de milhares de corpos catalogados; massa total estimada em menos de 4% da Lua. Não é o campo de asteroides densamente compactado da ficção científica: o espaçamento típico entre objetos é de cerca de 1 milhão de quilômetros. O cinturão nunca se acretou em um planeta porque a gravidade de Júpiter continuou perturbando as órbitas, impedindo que as colisões se consolidassem. Três lacunas de Kirkwood marcam ressonâncias com Júpiter onde os asteroides são removidos.",
+    "new": "Um anel de restos rochosos entre Marte e Júpiter — 2,2 a 3,2 UA. Centenas de milhares de corpos catalogados; massa total estimada em menos de 4% da Lua. Não é o campo de asteroides densamente compactado da ficção científica: o espaçamento típico entre objetos é de cerca de 1 milhão de quilômetros. O cinturão nunca se acretou em um planeta porque a gravidade de Júpiter continuou perturbando as órbitas, impedindo que as colisões se consolidassem. Três lacunas de Kirkwood marcam ressonâncias com Júpiter onde os asteroides são removidos."
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "story",
+    "old": "O reino planetário exterior — 5 a 30 AU. Dois gigantes gasosos (Júpiter, Saturno) com envoltórios de hidrogênio-hélio de milhares de quilômetros de profundidade sobre pequenos núcleos rochosos; dois gigantes de gelo (Urano, Netuno) com mantos de água/amônia/metano sob camadas gasosas mais finas. Juntos, eles concentram 99% de toda a massa planetária do sistema solar. Cada um possui seu próprio sistema de luas que funciona como um sistema solar em miniatura — somente Júpiter tem 95 luas conhecidas, incluindo quatro maiores que Plutão.",
+    "new": "O reino planetário exterior — 5 a 30 UA. Dois gigantes gasosos (Júpiter, Saturno) com envoltórios de hidrogênio-hélio de milhares de quilômetros de profundidade sobre pequenos núcleos rochosos; dois gigantes de gelo (Urano, Netuno) com mantos de água/amônia/metano sob camadas gasosas mais finas. Juntos, eles concentram 99% de toda a massa planetária do sistema solar. Cada um possui seu próprio sistema de luas que funciona como um sistema solar em miniatura — somente Júpiter tem 95 luas conhecidas, incluindo quatro maiores que Plutão."
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "residents.0.label",
+    "old": "Júpiter — 5,20 AU",
+    "new": "Júpiter — 5,20 UA"
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "residents.1.label",
+    "old": "Saturno — 9,58 AU, sistema de anéis",
+    "new": "Saturno — 9,58 UA, sistema de anéis"
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "residents.2.label",
+    "old": "Urano — 19,18 AU, inclinado 97°",
+    "new": "Urano — 19,18 UA, inclinado 97°"
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "residents.3.label",
+    "old": "Netuno — 30,07 AU, ventos mais rápidos do sistema",
+    "new": "Netuno — 30,07 UA, ventos mais rápidos do sistema"
+  },
+  {
+    "rel": "orbit-regimes-explore/HELIOPAUSE.json",
+    "at": "story",
+    "old": "O limite onde o vento solar do Sol perde sua batalha contra o meio interestelar — aproximadamente 120 AU de distância. Dentro está a heliosfera, uma bolha de partículas solares carregadas fluindo para fora a centenas de km/s. Além dela: o gás frio e denso e os raios cósmicos da própria galáxia. As sondas Voyager são os únicos artefatos que a humanidade já colocou através dessa fronteira — Voyager 1 cruzou em 2012, Voyager 2 em 2018. Ambas ainda transmitem dados, fracamente, do espaço interestelar.",
+    "new": "O limite onde o vento solar do Sol perde sua batalha contra o meio interestelar — aproximadamente 120 UA de distância. Dentro está a heliosfera, uma bolha de partículas solares carregadas fluindo para fora a centenas de km/s. Além dela: o gás frio e denso e os raios cósmicos da própria galáxia. As sondas Voyager são os únicos artefatos que a humanidade já colocou através dessa fronteira — Voyager 1 cruzou em 2012, Voyager 2 em 2018. Ambas ainda transmitem dados, fracamente, do espaço interestelar."
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "story",
+    "old": "Um anel de corpos gelados além de Netuno — 30 a 50 AU. O análogo congelado do cinturão de asteroides: centenas de milhares de corpos dos quais apenas os poucos maiores foram resolvidos. Composto de metano, amônia, gelo de água + rocha. Plutão foi o primeiro membro identificado, em 1930, embora o cinturão não tenha sido reconhecido como uma população até os anos 1990, quando Jewitt + Luu encontraram o segundo membro (1992 QB1). New Horizons deu à humanidade suas primeiras visões próximas de DOIS objetos Kuiper — Plutão em 2015 e Arrokoth em 2019.",
+    "new": "Um anel de corpos gelados além de Netuno — 30 a 50 UA. O análogo congelado do cinturão de asteroides: centenas de milhares de corpos dos quais apenas os poucos maiores foram resolvidos. Composto de metano, amônia, gelo de água + rocha. Plutão foi o primeiro membro identificado, em 1930, embora o cinturão não tenha sido reconhecido como uma população até os anos 1990, quando Jewitt + Luu encontraram o segundo membro (1992 QB1). New Horizons deu à humanidade suas primeiras visões próximas de DOIS objetos Kuiper — Plutão em 2015 e Arrokoth em 2019."
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "residents.0.label",
+    "old": "Plutão — 39,5 AU, maior conhecido",
+    "new": "Plutão — 39,5 UA, maior conhecido"
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "residents.1.label",
+    "old": "Éris — 96,4 AU (disco disperso)",
+    "new": "Éris — 96,4 UA (disco disperso)"
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "residents.2.label",
+    "old": "Makemake — 45,8 AU",
+    "new": "Makemake — 45,8 UA"
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "residents.3.label",
+    "old": "Haumea — 43,3 AU, rotação rápida",
+    "new": "Haumea — 43,3 UA, rotação rápida"
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "residents.4.label",
+    "old": "Quaoar — 43,4 AU, possui anéis",
+    "new": "Quaoar — 43,4 UA, possui anéis"
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "residents.5.label",
+    "old": "Arrokoth — 44,6 AU, binário de contato",
+    "new": "Arrokoth — 44,6 UA, binário de contato"
+  },
+  {
+    "rel": "orbit-regimes-explore/OORT.json",
+    "at": "story",
+    "old": "Uma concha esférica hipotética de corpos gelados cercando todo o sistema solar — estendendo-se de aproximadamente 2.000 a 100.000 AU. Nunca observada diretamente, apenas inferida: os cometas de longo período que vemos têm órbitas tão amplas que devem vir daqui. População estimada: trilhões de corpos. A nuvem de Oort representa os restos da nuvem de nascimento do sistema solar, dinamicamente estável por bilhões de anos a essa distância do Sol. Estrelas que passam podem perturbar objetos individuais para dentro, tornando-se os cometas que observamos.",
+    "new": "Uma concha esférica hipotética de corpos gelados cercando todo o sistema solar — estendendo-se de aproximadamente 2.000 a 100.000 UA. Nunca observada diretamente, apenas inferida: os cometas de longo período que vemos têm órbitas tão amplas que devem vir daqui. População estimada: trilhões de corpos. A nuvem de Oort representa os restos da nuvem de nascimento do sistema solar, dinamicamente estável por bilhões de anos a essa distância do Sol. Estrelas que passam podem perturbar objetos individuais para dentro, tornando-se os cometas que observamos."
+  },
+  {
+    "rel": "orbit-regimes-explore/TERRESTRIAL.json",
+    "at": "story",
+    "old": "O sistema solar interno rochoso — 0,4 a 1,5 AU do Sol. Quatro pequenos mundos com núcleos metálicos, mantos de silicato e atmosferas finas ou ausentes. Eles se formaram dentro da linha de congelamento, onde estava quente demais para que gelos voláteis condensassem, então apenas materiais refratários (silicatos, ferro, níquel) permaneceram sólidos. Três dos quatro foram alvos de exploração tripulada (Terra, Lua, direção a Marte).",
+    "new": "O sistema solar interno rochoso — 0,4 a 1,5 UA do Sol. Quatro pequenos mundos com núcleos metálicos, mantos de silicato e atmosferas finas ou ausentes. Eles se formaram dentro da linha de congelamento, onde estava quente demais para que gelos voláteis condensassem, então apenas materiais refratários (silicatos, ferro, níquel) permaneceram sólidos. Três dos quatro foram alvos de exploração tripulada (Terra, Lua, direção a Marte)."
+  },
+  {
+    "rel": "orbit-regimes-explore/TERRESTRIAL.json",
+    "at": "residents.0.label",
+    "old": "Mercúrio — 0,39 AU",
+    "new": "Mercúrio — 0,39 UA"
+  },
+  {
+    "rel": "orbit-regimes-explore/TERRESTRIAL.json",
+    "at": "residents.1.label",
+    "old": "Vênus — 0,72 AU",
+    "new": "Vênus — 0,72 UA"
+  },
+  {
+    "rel": "orbit-regimes-explore/TERRESTRIAL.json",
+    "at": "residents.2.label",
+    "old": "Terra — 1,00 AU",
+    "new": "Terra — 1,00 UA"
+  },
+  {
+    "rel": "orbit-regimes-explore/TERRESTRIAL.json",
+    "at": "residents.3.label",
+    "old": "Marte — 1,52 AU",
+    "new": "Marte — 1,52 UA"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "science_sections.0.why",
+    "old": "A 30.07 AU de distância média, Netuno está tão distante que um sinal de luz em mão única leva 4 horas em cada sentido. A Voyager 2 precisou de 12 anos para alcançá-lo.",
+    "new": "A 30.07 UA de distância média, Netuno está tão distante que um sinal de luz em mão única leva 4 horas em cada sentido. A Voyager 2 precisou de 12 anos para alcançá-lo."
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "science_sections.2.why",
+    "old": "A excentricidade suave de 0.0086 de Netuno oferece uma órbita tão circular que a oscilação periélio–afélio é inferior a 200 milhões de km em um semi-eixo maior de 30 AU — uma variação de 1.4 %.",
+    "new": "A excentricidade suave de 0.0086 de Netuno oferece uma órbita tão circular que a oscilação periélio–afélio é inferior a 200 milhões de km em um semi-eixo maior de 30 UA — uma variação de 1.4 %."
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "science_sections.3.why",
+    "old": "A órbita de Saturno é suave (excentricidade 0,054) mas sua distância média de 9,6 AU significa que periélio e afélio diferem por 100 milhões de km — Cassini cronometrou sua chegada para usar a velocidade de aproximação.",
+    "new": "A órbita de Saturno é suave (excentricidade 0,054) mas sua distância média de 9,6 UA significa que periélio e afélio diferem por 100 milhões de km — Cassini cronometrou sua chegada para usar a velocidade de aproximação."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.5.diagram_caption",
+    "old": "Uma AU = uma distância Terra-Sol. Marte está a ~1,5 AU. Júpiter a ~5,2.",
+    "new": "Uma AU = uma distância Terra-Sol. Marte está a ~1,5 UA. Júpiter a ~5,2."
+  },
+  {
+    "rel": "science/orbits/escape-velocity.json",
+    "at": "body_paragraphs.1",
+    "old": "Os valores valem a pena ser conhecidos: ~11,2 km/s da superfície terrestre, ~2,4 km/s da Lua, ~5,0 km/s de Marte, ~618 km/s da superfície do Sol, e ~42,1 km/s para escapar do Sol a partir da órbita terrestre de 1 AU. A velocidade de escape cai com a altitude (r maior), então partir de uma órbita alta é mais barato do que do solo — uma das razões pelas quais as missões ganham velocidade em etapas.",
+    "new": "Os valores valem a pena ser conhecidos: ~11,2 km/s da superfície terrestre, ~2,4 km/s da Lua, ~5,0 km/s de Marte, ~618 km/s da superfície do Sol, e ~42,1 km/s para escapar do Sol a partir da órbita terrestre de 1 UA. A velocidade de escape cai com a altitude (r maior), então partir de uma órbita alta é mais barato do que do solo — uma das razões pelas quais as missões ganham velocidade em etapas."
+  },
+  {
+    "rel": "science/orbits/keplers-laws.json",
+    "at": "body_paragraphs.2",
+    "old": "Terceira lei: `T² ∝ a³`. O quadrado do período orbital é proporcional ao cubo do semi-eixo maior. Com a Terra definida como T = 1 ano e a = 1 AU, você pode determinar o período de qualquer planeta a partir de sua distância — ou sua distância a partir de seu período. Newton mais tarde derivaria isso da gravidade; Kepler chegou lá através de pura identificação de padrões nos dados de Brahe.",
+    "new": "Terceira lei: `T² ∝ a³`. O quadrado do período orbital é proporcional ao cubo do semi-eixo maior. Com a Terra definida como T = 1 ano e a = 1 UA, você pode determinar o período de qualquer planeta a partir de sua distância — ou sua distância a partir de seu período. Newton mais tarde derivaria isso da gravidade; Kepler chegou lá através de pura identificação de padrões nos dados de Brahe."
+  },
+  {
+    "rel": "science/orbits/semi-major-axis.json",
+    "at": "body_paragraphs.2",
+    "old": "Nos painéis `/explore` do Orrery você verá este número em unidades astronômicas. Terra: a ≈ 1.0 AU. Marte: 1.52 AU. Júpiter: 5.2 AU. Aplique na fórmula do período e você reproduziu o relógio do orrery: 1 ano, 687 dias, 11,86 anos.",
+    "new": "Nos painéis `/explore` do Orrery você verá este número em unidades astronômicas. Terra: a ≈ 1.0 UA. Marte: 1.52 UA. Júpiter: 5.2 UA. Aplique na fórmula do período e você reproduziu o relógio do orrery: 1 ano, 687 dias, 11,86 anos."
+  },
+  {
+    "rel": "science/planets/kuiper-belt.json",
+    "at": "narrative_101.1",
+    "old": "Em 1992 David Jewitt e Jane Luu, observando de Mauna Kea com um detector CCD então inovador, encontraram 1992 QB1 (posteriormente nomeado Albion). Um corpo gelado de ~160 km em uma órbita circular estável a 44 AU. Dentro de um ano eles tinham um segundo. Dentro de cinco anos havia dezenas. Hoje os catálogos contêm mais de 3.000 objetos do Cinturão de Kuiper confirmados e modelos dinâmicos predizem mais de 100.000 corpos maiores que 100 km — e na ordem de um bilhão de objetos do tamanho de cometas. A massa total é pequena (~2% da Terra) mas ainda assim é ~50× o cinturão de asteroides.",
+    "new": "Em 1992 David Jewitt e Jane Luu, observando de Mauna Kea com um detector CCD então inovador, encontraram 1992 QB1 (posteriormente nomeado Albion). Um corpo gelado de ~160 km em uma órbita circular estável a 44 UA. Dentro de um ano eles tinham um segundo. Dentro de cinco anos havia dezenas. Hoje os catálogos contêm mais de 3.000 objetos do Cinturão de Kuiper confirmados e modelos dinâmicos predizem mais de 100.000 corpos maiores que 100 km — e na ordem de um bilhão de objetos do tamanho de cometas. A massa total é pequena (~2% da Terra) mas ainda assim é ~50× o cinturão de asteroides."
+  },
+  {
+    "rel": "science/planets/kuiper-belt.json",
+    "at": "body_paragraphs.0",
+    "old": "Estruturalmente o cinturão tem três populações. O Cinturão de Kuiper clássico a 42–48 AU contém corpos em órbitas quase circulares e de baixa inclinação — o remanescente dinamicamente não perturbado do disco original, Albion e Quaoar vivem aqui. A população ressonante é mantida em ressonância média de movimento 2:3 com Netuno (Plutão é o arquétipo — para cada duas órbitas de Plutão, Netuno faz três); esses são chamados Plutinos. Então o disco espalhado é a extensão excêntrica e de alta inclinação externa onde Éris e Sedna vagueiam, com periélios perto de Netuno e afélios centenas de AU para fora. Cada população é um fóssil de um capítulo diferente da história gravitacional primordial do sistema solar.",
+    "new": "Estruturalmente o cinturão tem três populações. O Cinturão de Kuiper clássico a 42–48 UA contém corpos em órbitas quase circulares e de baixa inclinação — o remanescente dinamicamente não perturbado do disco original, Albion e Quaoar vivem aqui. A população ressonante é mantida em ressonância média de movimento 2:3 com Netuno (Plutão é o arquétipo — para cada duas órbitas de Plutão, Netuno faz três); esses são chamados Plutinos. Então o disco espalhado é a extensão excêntrica e de alta inclinação externa onde Éris e Sedna vagueiam, com periélios perto de Netuno e afélios centenas de AU para fora. Cada população é um fóssil de um capítulo diferente da história gravitacional primordial do sistema solar."
+  },
+  {
+    "rel": "science/planets/kuiper-belt.json",
+    "at": "diagram_caption",
+    "old": "As três populações do Cinturão de Kuiper. KBOs clássicos a 42–48 AU em órbitas quase circulares; Plutinos ressonantes em 2:3 com Netuno (Plutão + Caronte a 39 AU); o disco espalhado estendendo-se excentricamente em direção à Nuvem de Oort interior (o afélio de Éris está a 96 AU).",
+    "new": "As três populações do Cinturão de Kuiper. KBOs clássicos a 42–48 UA em órbitas quase circulares; Plutinos ressonantes em 2:3 com Netuno (Plutão + Caronte a 39 UA); o disco espalhado estendendo-se excentricamente em direção à Nuvem de Oort interior (o afélio de Éris está a 96 UA)."
+  },
+  {
+    "rel": "science/scales-time/_intro.json",
+    "at": "paragraphs.0",
+    "old": "O sistema solar é maior do que sua intuição está calibrada para entender. Marte está a 200 milhões de km de distância. Saturno está a 1,4 bilhão. Plutão está a 6 bilhões. Números em quilômetros param de ajudar. Então os astrônomos escolheram uma régua mais humana — uma distância Terra-Sol, chamada de unidade astronômica (AU). Marte está a 1,5 AU. Júpiter está a 5. Plutão orbita entre 30 e 50.",
+    "new": "O sistema solar é maior do que sua intuição está calibrada para entender. Marte está a 200 milhões de km de distância. Saturno está a 1,4 bilhão. Plutão está a 6 bilhões. Números em quilômetros param de ajudar. Então os astrônomos escolheram uma régua mais humana — uma distância Terra-Sol, chamada de unidade astronômica (AU). Marte está a 1,5 UA. Júpiter está a 5. Plutão orbita entre 30 e 50."
+  },
+  {
+    "rel": "science/scales-time/au.json",
+    "at": "narrative_101.1",
+    "old": "A unidade está ancorada em um número inteiro específico de metros — 149.597.870.700 deles, fixado em 2012 — mas a ideia prática é mais simples. Marte fica a 1,5 AU do Sol. Júpiter a 5 AU. Plutão orbita entre 30 e 50 AU. A Voyager 1, o objeto feito pelo homem mais distante, está além de 170 AU agora e ainda segue. Números que você realmente consegue manter em sua mente.",
+    "new": "A unidade está ancorada em um número inteiro específico de metros — 149.597.870.700 deles, fixado em 2012 — mas a ideia prática é mais simples. Marte fica a 1,5 UA do Sol. Júpiter a 5 UA. Plutão orbita entre 30 e 50 UA. A Voyager 1, o objeto feito pelo homem mais distante, está além de 170 UA agora e ainda segue. Números que você realmente consegue manter em sua mente."
+  },
+  {
+    "rel": "science/scales-time/au.json",
+    "at": "body_paragraphs.2",
+    "old": "Por que AU em vez de metros? Porque números em metros são desajeitados na escala do sistema solar. Os 1,4 bilhão de km de Saturno são ilegíveis. 9,58 AU é um número que você consegue manter em sua mente. Os painéis e HUD do Orrery usam AU para posições no sistema solar — convertidos para km, luz-minutos e outras unidades apenas onde o público precisa da conversão.",
+    "new": "Por que AU em vez de metros? Porque números em metros são desajeitados na escala do sistema solar. Os 1,4 bilhão de km de Saturno são ilegíveis. 9,58 UA é um número que você consegue manter em sua mente. Os painéis e HUD do Orrery usam AU para posições no sistema solar — convertidos para km, luz-minutos e outras unidades apenas onde o público precisa da conversão."
+  },
+  {
+    "rel": "science/scales-time/au.json",
+    "at": "diagram_caption",
+    "old": "1 AU ≈ distância Terra-Sol. Semi-eixos maiores dos planetas em AU, escala logarítmica para acomodar os planetas externos.",
+    "new": "1 UA ≈ distância Terra-Sol. Semi-eixos maiores dos planetas em AU, escala logarítmica para acomodar os planetas externos."
+  },
+  {
+    "rel": "science/scales-time/frames.json",
+    "at": "narrative_101.0",
+    "old": "Onde está a Lua? A resposta honesta é \"depende de onde VOCÊ está.\" Da superfície da Terra, ela está acima da cabeça à 1h da manhã. Do Sol, ela é um ponto minúsculo a 1 AU de distância, perto da Terra. De Marte, ela é um pontinho irrelevante. Nenhuma dessas respostas está errada — elas são apenas medidas a partir de origens diferentes. Essa escolha de origem é o que significa \"referencial\".",
+    "new": "Onde está a Lua? A resposta honesta é \"depende de onde VOCÊ está.\" Da superfície da Terra, ela está acima da cabeça à 1h da manhã. Do Sol, ela é um ponto minúsculo a 1 UA de distância, perto da Terra. De Marte, ela é um pontinho irrelevante. Nenhuma dessas respostas está errada — elas são apenas medidas a partir de origens diferentes. Essa escolha de origem é o que significa \"referencial\"."
+  },
+  {
+    "rel": "small-bodies/arrokoth.json",
+    "at": "science_sections.1.why",
+    "old": "Arrokoth orbita a 44,6 AU — cinturão de Kuiper clássico, além de Plutão, numa região onde corpos permaneceram largamente inalterados desde o início do sistema solar.",
+    "new": "Arrokoth orbita a 44,6 UA — cinturão de Kuiper clássico, além de Plutão, numa região onde corpos permaneceram largamente inalterados desde o início do sistema solar."
+  },
+  {
+    "rel": "small-bodies/ceres.json",
+    "at": "science_sections.1.why",
+    "old": "Ceres orbita a 2,77 AU — bem dentro do cinturão de asteroides e é usado como a distância de referência canônica do \"meio do cinturão\".",
+    "new": "Ceres orbita a 2,77 UA — bem dentro do cinturão de asteroides e é usado como a distância de referência canônica do \"meio do cinturão\"."
+  },
+  {
+    "rel": "small-bodies/didymos.json",
+    "at": "science_sections.0.why",
+    "old": "Dídimo é um asteroide binário próximo à Terra (semieixo maior 1,64 AU). DART (NASA, 2022) atingiu seu pequeno companheiro Dimorfos para testar a física de deflexão de asteroides.",
+    "new": "Dídimo é um asteroide binário próximo à Terra (semieixo maior 1,64 UA). DART (NASA, 2022) atingiu seu pequeno companheiro Dimorfos para testar a física de deflexão de asteroides."
+  },
+  {
+    "rel": "small-bodies/halley.json",
+    "at": "science_sections.1.why",
+    "old": "O enorme deslocamento periélio-afélio de Halley (35 a 0.59 AU) impulsiona os gelos superficiais a sublimarem violentamente perto do periélio, produzindo a coma e cauda. Próximo periélio: 2061.",
+    "new": "O enorme deslocamento periélio-afélio de Halley (35 a 0.59 UA) impulsiona os gelos superficiais a sublimarem violentamente perto do periélio, produzindo a coma e cauda. Próximo periélio: 2061."
+  },
+  {
+    "rel": "small-bodies/makemake.json",
+    "at": "science_sections.0.why",
+    "old": "O semi-eixo maior de 45,7 AU de Makemake o coloca na Cintura de Kuiper clássica — distante o suficiente para que o metano da superfície persista como o gelo dominante.",
+    "new": "O semi-eixo maior de 45,7 UA de Makemake o coloca na Cintura de Kuiper clássica — distante o suficiente para que o metano da superfície persista como o gelo dominante."
+  },
+  {
+    "rel": "small-bodies/vesta.json",
+    "at": "science_sections.1.why",
+    "old": "Vesta orbita a 2,36 AU — cinturão interno. Sua proximidade levou Dawn a escolher visitar Vesta primeiro (2011), depois partir para Ceres (2015).",
+    "new": "Vesta orbita a 2,36 UA — cinturão interno. Sua proximidade levou Dawn a escolher visitar Vesta primeiro (2011), depois partir para Ceres (2015)."
+  },
+  {
+    "rel": "trajectories/pioneer-10.json",
+    "at": "current_distance_label",
+    "old": "135 AU · ~18,8 light-horas do Sol (último contato em 23-01-2003)",
+    "new": "135 UA · ~18,8 light-horas do Sol (último contato em 23-01-2003)"
+  },
+  {
+    "rel": "trajectories/vega-1.json",
+    "at": "current_distance_label",
+    "old": "0,98 AU · sonda em órbita heliocêntrica desde o sobrevoo de Halley 1986-03-06",
+    "new": "0,98 UA · sonda em órbita heliocêntrica desde o sobrevoo de Halley 1986-03-06"
+  }
 ]

@@ -1,26 +1,26 @@
 [
- {
-  "rel": "videos.json",
-  "at": "vid-2c3894bf9f2f.caption",
-  "old": "Документальный фильм Roscosmos о станции Мир (1986–2001).",
-  "new": "Документальный фильм Роскосмос о станции Мир (1986–2001)."
- },
- {
-  "rel": "messages",
-  "at": "panel_gallery_credit",
-  "old": "Изображения с помощью Wikimedia Commons и NASA Images API. Оригиналы © операционное агентство (NASA, ESA, JAXA, CSA, Roscosmos, CNSA, ISRO, MBRSC и т.д.) и повторно используемые под публичным доменом или Creative Commons (CC BY / CC BY-SA) термины — см. каждую страницу файла Commons для полной атрибуции.",
-  "new": "Изображения с помощью Wikimedia Commons и NASA Images API. Оригиналы © операционное агентство (NASA, ESA, JAXA, CSA, Роскосмос, CNSA, ISRO, MBRSC и т.д.) и повторно используемые под публичным доменом или Creative Commons (CC BY / CC BY-SA) термины — см. каждую страницу файла Commons для полной атрибуции."
- },
- {
-  "rel": "messages",
-  "at": "credits_intro_body_1",
-  "old": "Orrery существует потому, что мировые космические агентства, операторы и сообщество Викимедиа делают свою работу свободно доступной. NASA, ESA, JAXA, ISRO, CNSA, Roscosmos, MBRSC, Канадское космическое агентство, SpaceX, Blue Origin, авторы Wikimedia Commons и редакторы Википедии коллективно создали общедоступный архив планетарных исследований, который не имеет аналогов в истории человечества. Спасибо.",
-  "new": "Orrery существует потому, что мировые космические агентства, операторы и сообщество Викимедиа делают свою работу свободно доступной. NASA, ESA, JAXA, ISRO, CNSA, Роскосмос, MBRSC, Канадское космическое агентство, SpaceX, Blue Origin, авторы Wikimedia Commons и редакторы Википедии коллективно создали общедоступный архив планетарных исследований, который не имеет аналогов в истории человечества. Спасибо."
- },
- {
-  "rel": "messages",
-  "at": "mp_gallery_credit",
-  "old": "Снимки миссий из Wikimedia Commons и NASA Images API. Оригиналы © соответствующие агентства (NASA, ESA, JAXA, ISRO, CNSA, Roscosmos, MBRSC, SpaceX, Blue Origin и др.) и переиспользованы в соответствии с лицензиями открытого доступа или Creative Commons (CC BY / CC BY-SA) — полная информация об авторстве указана на странице каждого файла на Commons.",
-  "new": "Снимки миссий из Wikimedia Commons и NASA Images API. Оригиналы © соответствующие агентства (NASA, ESA, JAXA, ISRO, CNSA, Роскосмос, MBRSC, SpaceX, Blue Origin и др.) и переиспользованы в соответствии с лицензиями открытого доступа или Creative Commons (CC BY / CC BY-SA) — полная информация об авторстве указана на странице каждого файла на Commons."
- }
+  {
+    "rel": "videos.json",
+    "at": "vid-2c3894bf9f2f.caption",
+    "old": "Документальный фильм Roscosmos о станции Мир (1986–2001).",
+    "new": "Документальный фильм Роскосмос о станции Мир (1986–2001)."
+  },
+  {
+    "rel": "messages",
+    "at": "panel_gallery_credit",
+    "old": "Изображения с помощью Wikimedia Commons и NASA Images API. Оригиналы © операционное агентство (NASA, ESA, JAXA, CSA, Roscosmos, CNSA, ISRO, MBRSC и т.д.) и повторно используемые под публичным доменом или Creative Commons (CC BY / CC BY-SA) термины — см. каждую страницу файла Commons для полной атрибуции.",
+    "new": "Изображения с помощью Wikimedia Commons и NASA Images API. Оригиналы © операционное агентство (NASA, ESA, JAXA, CSA, Роскосмос, CNSA, ISRO, MBRSC и т.д.) и повторно используемые под публичным доменом или Creative Commons (CC BY / CC BY-SA) термины — см. каждую страницу файла Commons для полной атрибуции."
+  },
+  {
+    "rel": "messages",
+    "at": "credits_intro_body_1",
+    "old": "Orrery существует потому, что мировые космические агентства, операторы и сообщество Викимедиа делают свою работу свободно доступной. NASA, ESA, JAXA, ISRO, CNSA, Roscosmos, MBRSC, Канадское космическое агентство, SpaceX, Blue Origin, авторы Wikimedia Commons и редакторы Википедии коллективно создали общедоступный архив планетарных исследований, который не имеет аналогов в истории человечества. Спасибо.",
+    "new": "Orrery существует потому, что мировые космические агентства, операторы и сообщество Викимедиа делают свою работу свободно доступной. NASA, ESA, JAXA, ISRO, CNSA, Роскосмос, MBRSC, Канадское космическое агентство, SpaceX, Blue Origin, авторы Wikimedia Commons и редакторы Википедии коллективно создали общедоступный архив планетарных исследований, который не имеет аналогов в истории человечества. Спасибо."
+  },
+  {
+    "rel": "messages",
+    "at": "mp_gallery_credit",
+    "old": "Снимки миссий из Wikimedia Commons и NASA Images API. Оригиналы © соответствующие агентства (NASA, ESA, JAXA, ISRO, CNSA, Roscosmos, MBRSC, SpaceX, Blue Origin и др.) и переиспользованы в соответствии с лицензиями открытого доступа или Creative Commons (CC BY / CC BY-SA) — полная информация об авторстве указана на странице каждого файла на Commons.",
+    "new": "Снимки миссий из Wikimedia Commons и NASA Images API. Оригиналы © соответствующие агентства (NASA, ESA, JAXA, ISRO, CNSA, Роскосмос, MBRSC, SpaceX, Blue Origin и др.) и переиспользованы в соответствии с лицензиями открытого доступа или Creative Commons (CC BY / CC BY-SA) — полная информация об авторстве указана на странице каждого файла на Commons."
+  }
 ]

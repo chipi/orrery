@@ -1,386 +1,386 @@
 [
- {
-  "rel": "science/transfers/conic-sections.json",
-  "at": "body_paragraphs.1",
-  "en": "Every Keplerian orbit is one of these four. Bound orbits — planets, moons, satellites, anything that returns — are circles or ellipses. Unbound trajectories — flybys, escapes, hyperbolic captures — are parabolas or hyperbolas. The boundary is exact: at `e = 1` you're moving at exactly the local escape velocity.",
-  "cur": "Ogni orbita Keplerian è una di queste quattro. Le orbite legate — pianeti, lune, satelliti, qualsiasi cosa che ritorna — sono cerchi o ellissi. Le traiettorie non legate — flyby, fughe, catture iperboliche — sono parabole o iperbole. Il confine è esatto: a `e = 1` ti stai muovendo esattamente alla velocità di fuga locale."
- },
- {
-  "rel": "science/transfers/conic-sections.json",
-  "at": "body_paragraphs.2",
-  "en": "Mission designers exploit all four. Cruise on an ellipse, flyby a planet on a hyperbola (relative to that planet), insert into orbit on an ellipse again. The simulator's `/fly` route does this naturally — the same trajectory equation handles every case, the eccentricity tells you which conic you're flying.",
-  "cur": "I progettisti di missioni sfruttano tutti e quattro. Naviga su un'ellisse, effettua un flyby di un pianeta su un'iperbole (rispetto a quel pianeta), inserisciti in orbita di nuovo su un'ellisse. Il percorso `/fly` del simulatore fa questo naturalmente — la stessa equazione di traiettoria gestisce ogni caso, l'eccentricità ti dice quale conica stai volando."
- },
- {
-  "rel": "science/transfers/conic-sections.json",
-  "at": "diagram_caption",
-  "en": "Four conics from cutting a cone: circle, ellipse, parabola, hyperbola. Eccentricity sets which.",
-  "cur": "Quattro coniche dall'affettamento di un cono: cerchio, ellisse, parabola, iperbole. L'eccentricità determina quale."
- },
- {
-  "rel": "science/transfers/coplanar-trajectories.json",
-  "at": "title",
-  "en": "Why mission trajectories look flat",
-  "cur": "Perché le traiettorie di missione sembrano piatte"
- },
- {
-  "rel": "science/transfers/coplanar-trajectories.json",
-  "at": "intro_sentence",
-  "en": "The solar system is a disk, and propellant is finite — so missions don't leave the disk unless they have to.",
-  "cur": "Il Sistema Solare è un disco, e il propellente è limitato — quindi le missioni non lasciano il disco a meno che non debbano."
- },
- {
-  "rel": "science/transfers/coplanar-trajectories.json",
-  "at": "narrative_101.0",
-  "en": "Stand at the centre of the solar system and look at the planets and you see a pancake, not a sphere. Mercury, Venus, Earth, Mars, Jupiter, Saturn — they all orbit within about 7° of the same flat plane (the ecliptic). The planets formed from a single rotating gas-and-dust cloud, and that rotation collapsed everything to a thin disk. Everything since has stayed in that disk.",
-  "cur": "Mettiti al centro del Sistema Solare e guarda i pianeti — vedrai una frittella, non una sfera. Mercurio, Venere, Terra, Marte, Giove, Saturno — tutti orbitano entro circa 7° dallo stesso piano piatto (l'eclittica). I pianeti si sono formati da una singola nube rotante di gas e polvere, e quella rotazione ha collassato tutto in un disco sottile. Tutto da allora è rimasto in quel disco."
- },
- {
-  "rel": "science/transfers/coplanar-trajectories.json",
-  "at": "narrative_101.1",
-  "en": "Now imagine planning a trip to Mars. The cheapest way to get there is a long curved arc that goes around the Sun and arrives at Mars's orbit at the same moment Mars is there. The cheapest arc lies in the same plane that Earth and Mars share — the ecliptic. Leaving the disk to take a 'detour out and over' costs propellant the spacecraft cannot afford.",
-  "cur": "Ora immagina di pianificare un viaggio su Marte. Il modo più economico per arrivarci è un lungo arco curvo che gira intorno al Sole e arriva all'orbita di Marte nello stesso momento in cui Marte è lì. L'arco più economico giace nello stesso piano condiviso da Terra e Marte — l'eclittica. Lasciare il disco per prendere una \"deviazione fuori e sopra\" costa propellente che il veicolo non può permettersi."
- },
- {
-  "rel": "science/transfers/coplanar-trajectories.json",
-  "at": "narrative_101.2",
-  "en": "So mission planners don't fight the disk. They wait for the orbital geometry to line up (that's what 'launch window' means), point the rocket along the ecliptic, and let the planets do the steering. The result, when you look at every spacecraft trajectory we have, is a pile of curves all hugging the same plane — like watching cars race on a flat track.",
-  "cur": "Quindi i pianificatori di missione non combattono il disco. Aspettano che la geometria orbitale si allinei (è ciò che significa \"finestra di lancio\"), puntano il razzo lungo l'eclittica e lasciano che i pianeti gestiscano lo sterzo. Il risultato, quando guardi ogni traiettoria di veicolo spaziale che abbiamo, è una pila di curve tutte abbracciate allo stesso piano — come guardare auto correre su una pista piatta."
- },
- {
-  "rel": "science/transfers/coplanar-trajectories.json",
-  "at": "body_paragraphs.0",
-  "en": "The price tag for leaving the plane is brutal. Changing a heliocentric trajectory's inclination by even 1° at Earth's orbital speed (~30 km/s) costs roughly 0.5 km/s of `∆v`. Doing the 80° plane change Ulysses needed — to fly over the Sun's poles — would have cost ~38 km/s if done with chemical thrust. No real rocket can deliver that. So engineers don't pay for plane changes; they design around them.",
-  "cur": "Il prezzo da pagare per lasciare il piano è brutale. Cambiare l'inclinazione di una traiettoria eliocentrica anche solo di 1° alla velocità orbitale terrestre (~30 km/s) costa circa 0,5 km/s di `∆v`. Fare il cambio di piano di 80° di cui Ulysses aveva bisogno — per sorvolare i poli solari — sarebbe costato ~38 km/s se fatto con spinta chimica. Nessun razzo reale può fornirlo. Quindi gli ingegneri non pagano per i cambi di piano; progettano attorno ad essi."
- },
- {
-  "rel": "science/transfers/coplanar-trajectories.json",
-  "at": "body_paragraphs.1",
-  "en": "Gravity assists obey the same constraint. When a spacecraft slingshots off Jupiter or Venus, the planet sits in the ecliptic, so the deflection vector — which always passes through the planet — keeps the trajectory near-ecliptic too. Cassini's six-year cruise looks like a 2D doodle in the /explore view because every assist body it visited was 2D-flat.",
-  "cur": "Le assistenze gravitazionali obbediscono allo stesso vincolo. Quando un veicolo spaziale fa una fionda attorno a Giove o Venere, il pianeta sta nell'eclittica, quindi il vettore di deflessione — che passa sempre attraverso il pianeta — mantiene anche la traiettoria vicina all'eclittica. La crociera di sei anni di Cassini sembra uno scarabocchio 2D nella vista /explore perché ogni corpo di assistenza che ha visitato era 2D piatto."
- },
- {
-  "rel": "science/transfers/coplanar-trajectories.json",
-  "at": "body_paragraphs.2",
-  "en": "Ulysses is the only spacecraft that ever broke the disk on purpose. Its science target was the Sun's poles, but reaching them required ~80° of inclination — chemically impossible. So the mission did the only thing that worked: launched outward to Jupiter, used Jupiter's gravity as a free 'rocket' to deflect the spacecraft out of the ecliptic, then orbited the Sun pole-to-pole for 18 years. The big detour was the cheapest path. Every other deep-space mission you see in /explore stayed in the disk because the disk is where the destinations are — and where the propellant lets you go.",
-  "cur": "Ulysses è l'unico veicolo spaziale che ha rotto il disco di proposito. Il suo obiettivo scientifico erano i poli del Sole, ma raggiungerli richiedeva ~80° di inclinazione — chimicamente impossibile. Quindi la missione ha fatto l'unica cosa che funzionava: lanciata verso l'esterno verso Giove, ha usato la gravità di Giove come \"razzo\" gratuito per deviare il veicolo fuori dall'eclittica, poi ha orbitato il Sole da polo a polo per 18 anni. La grande deviazione era il percorso più economico. Ogni altra missione di spazio profondo che vedi in /explore è rimasta nel disco perché il disco è dove sono le destinazioni — e dove il propellente ti permette di andare."
- },
- {
-  "rel": "science/transfers/coplanar-trajectories.json",
-  "at": "diagram_caption",
-  "en": "Solar system layouts collapse to the same plane because the planets formed from a single rotating disk. Departures stay in that plane because plane changes are propellant-prohibitive.",
-  "cur": "Il Sistema solare è quasi piatto perché i pianeti si sono formati da un unico disco in rotazione. Le partenze restano su quel piano perché i cambi di piano costano un propellente proibitivo."
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "title",
-  "en": "Free-Return Trajectory",
-  "cur": "Traiettoria di ritorno libero"
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "intro_sentence",
-  "en": "A trajectory that swings past the destination and bends gravity itself into a return ticket — no engine burn required.",
-  "cur": "Una traiettoria che vola oltre la destinazione e piega la gravità stessa in un biglietto di ritorno — nessun accensione del motore richiesta."
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "narrative_101.0",
-  "en": "Imagine you're flying to the Moon. You're worried — what if the engine fails on the way? You'd be stranded, drifting forever. Here's the genius answer: pick a path where, even if every engine on your spacecraft dies the moment you leave Earth orbit, gravity alone will swing you around the Moon and toss you back home automatically. That's a free-return trajectory.",
-  "cur": "Immagina di volare verso la Luna. Sei preoccupato — e se il motore si guasta durante il viaggio? Saresti bloccato, alla deriva per sempre. Ecco la risposta geniale: scegli un percorso dove, anche se ogni motore della tua navicella muore nel momento in cui lasci l'orbita terrestre, la sola gravità ti farà girare attorno alla Luna e ti getterà a casa automaticamente. Quella è una traiettoria di ritorno libero."
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "narrative_101.1",
-  "en": "It's an actual figure-8 in space. You leave Earth, climb out to the Moon, the Moon's gravity bends your path 180 degrees, and you fall back toward Earth, hitting the atmosphere on the rebound. No engine required. The Moon does all the work. The geometry just has to be right.",
-  "cur": "È un vero otto nel spazio. Lasci la Terra, sali verso la Luna, la gravità della Luna piega il tuo percorso di 180 gradi, e cadi di nuovo verso la Terra, colpendo l'atmosfera al rimbalzo. Nessun motore richiesto. La Luna fa tutto il lavoro. La geometria deve solo essere giusta."
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "narrative_101.2",
-  "en": "Apollo 8 was the first crewed mission to fly one. Apollo 13 — the famous \"Houston, we have a problem\" mission — owes its survival to it. When their main engine became unusable, they rode the free-return home, firing only the lunar module's engine for course corrections — never the crippled main engine. Orrery's default /fly scenario does exactly this for Mars: Earth → Mars flyby → Earth, no mid-course burns required. The cheapest possible Mars trip you can fly with humans on board.",
-  "cur": "Apollo 8 è stata la prima missione con equipaggio a volare su una. Apollo 13 — la famosa missione \"Houston, abbiamo un problema\" — deve la sua sopravvivenza ad essa. Quando il loro motore principale divenne inutilizzabile, cavalcarono il ritorno libero verso casa, accendendo solo il motore del modulo lunare per le correzioni di rotta — mai il motore principale danneggiato. Lo scenario predefinito /fly di Orrery fa esattamente questo per Marte: Terra → passaggio ravvicinato di Marte → Terra, nessuna accensione di rotta richiesta. Il viaggio verso Marte più economico possibile che tu possa volare con umani a bordo."
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "body_paragraphs.0",
-  "en": "The headline trick: leave Earth, fly past the Moon (or Mars), and let the gravity of that body bend your path back toward Earth. If you got the geometry right, you re-enter Earth's atmosphere on the rebound. The crew never has to fire an engine to come home.",
-  "cur": "Il trucco principale: lascia la Terra, vola oltre la Luna (o Marte), e lascia che la gravità di quel corpo pieghi il tuo percorso verso la Terra. Se hai ottenuto la giusta geometria, rientri nell'atmosfera terrestre al rimbalzo. L'equipaggio non deve mai accendere un motore per tornare a casa."
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "body_paragraphs.1",
-  "en": "Apollo 8 was the first crewed free-return. Apollo 13 famously fell back on the technique when its service module crippled — riding the free-return home, firing only the lunar module's engine for course corrections, never the crippled main engine. For Mars the geometry is harder — you need a 500-day, two-pass loop — but the concept is the same: flyby geometry doing the work of the return burn.",
-  "cur": "Apollo 8 è stata la prima traiettoria di ritorno libero con equipaggio. Apollo 13 ha famosamente fatto affidamento sulla tecnica quando il suo modulo di servizio si è danneggiato — cavalcando il ritorno libero verso casa, accendendo solo il motore del modulo lunare per le correzioni di rotta, mai il motore principale danneggiato. Per Marte la geometria è più difficile — hai bisogno di un anello a due passaggi di 500 giorni — ma il concetto è lo stesso: la geometria del passaggio ravvicinato che fa il lavoro della spinta di ritorno."
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "body_paragraphs.2",
-  "en": "Orrery's default `/fly` scenario, ORRERY-1, is exactly this: Earth-Mars-Earth on a free-return arc, no mid-course corrections, no orbit-insertion burn at Mars. You watch the spacecraft loop the Sun once, swing past Mars, and come back. It's the cheapest crewed Mars flyby ever proposed.",
-  "cur": "Lo scenario predefinito `/fly` di Orrery, ORRERY-1, è esattamente questo: Terra-Marte-Terra su un arco di ritorno libero, nessuna correzione di rotta, nessuna accensione di inserimento in orbita a Marte. Guardi la navicella fare un giro intorno al Sole, passare rasente Marte, e tornare indietro. È il sorvolo di Marte con equipaggio più economico mai proposto."
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "diagram_caption",
-  "en": "Earth → Mars flyby → Earth. The Moon (or Mars's) gravity does the U-turn for free.",
-  "cur": "Terra → passaggio ravvicinato di Marte → Terra. La gravità della Luna (o di Marte) fa la virata a U gratuitamente."
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "title",
-  "en": "Gravity Assist",
-  "cur": "Assistenza gravitazionale"
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "intro_sentence",
-  "en": "Steal a planet's orbital momentum on a flyby — the closest thing in space to a free lunch.",
-  "cur": "Ruba il momento orbitale di un pianeta in un flyby — la cosa più vicina a un pranzo gratis nello spazio."
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "narrative_101.0",
-  "en": "Throw a tennis ball at a moving train. The ball bounces off the front and comes back at you faster than you threw it — because the train was moving toward it, and the train's speed got added to the bounce. That, basically, is a gravity assist. The spacecraft is the tennis ball, the planet is the train, and \"bouncing\" is replaced by \"falling past on a hyperbola.\"",
-  "cur": "Lancia una pallina da tennis contro un treno in movimento. La pallina rimbalza sul muso e torna verso di te più veloce di come l'hai lanciata — perché il treno le andava incontro e la sua velocità si è sommata al rimbalzo. Questa, in sostanza, è una fionda gravitazionale. Il veicolo spaziale è la pallina, il pianeta è il treno, e il «rimbalzo» è sostituito da una «caduta accanto al pianeta lungo un'iperbole»."
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "narrative_101.1",
-  "en": "From the planet's point of view, the spacecraft enters and leaves at exactly the same speed — gravity is conservative, no energy gained or lost. But from the Sun's point of view, the spacecraft inherits some of the planet's orbital motion on the way out and arrives somewhere new with extra (or less) speed. It's not a violation of physics; the planet pays for it by slowing down — by an amount way too tiny to detect.",
-  "cur": "Dal punto di vista del pianeta, il veicolo entra ed esce esattamente alla stessa velocità — la gravità è conservativa, nessuna energia guadagnata o persa. Ma dal punto di vista del Sole, il veicolo eredita parte del moto orbitale del pianeta in uscita e arriva da qualche altra parte con velocità in più (o in meno). Non è una violazione della fisica; il pianeta paga il conto rallentando — di una quantità troppo minuscola per essere misurata."
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "narrative_101.2",
-  "en": "This is the trick that built the Voyager grand tour. Without gravity assists, you can't reach Saturn, let alone Uranus or Neptune, with chemical rockets — the fuel cost is astronomical. Voyager 2 chained four assists in a row: Jupiter, Saturn, Uranus, Neptune, all in one trip. Cassini bounced off Venus twice and Earth once on the way to Saturn. The outer solar system is only accessible because of this trick.",
-  "cur": "È il trucco che ha costruito il grand tour delle Voyager. Senza fionde gravitazionali non puoi raggiungere Saturno, figuriamoci Urano o Nettuno, con razzi chimici — il costo in carburante è astronomico. Voyager 2 concatenò quattro fionde di fila: Giove, Saturno, Urano, Nettuno, tutto in un unico viaggio. Cassini rimbalzò due volte su Venere e una sulla Terra lungo la strada per Saturno. Il Sistema solare esterno è raggiungibile solo grazie a questo trucco."
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "body_paragraphs.0",
-  "en": "Approach a moving planet from behind on a hyperbolic trajectory. The planet's gravity bends your path, you swing past, and you leave with the same speed relative to the planet — but the planet was moving the whole time, and you carry that motion with you. Net result: you exit with more speed relative to the Sun than you arrived with. The planet, in exchange, slows by an immeasurably tiny amount.",
-  "cur": "Avvicinati a un pianeta in movimento da dietro su una traiettoria iperbolica. La gravità del pianeta piega il tuo percorso, tu passi accanto, e esci con la stessa velocità relativa al pianeta — ma il pianeta si stava muovendo tutto il tempo, e porti con te quel moto. Risultato netto: esci con una velocità maggiore relativa al Sole di quella con cui sei arrivato. Il pianeta, in cambio, si rallenta di una quantità immisurabilmente minuscola."
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "body_paragraphs.1",
-  "en": "Reverse the geometry — approach from in front — and you slow down. Pioneer 11 used Jupiter to push toward Saturn. Voyager 2 chained Jupiter, Saturn, Uranus, Neptune in one of the most exquisite gravity-assist tours ever flown. Cassini bounced off Venus twice and Earth once before reaching Saturn. New Horizons hit Jupiter to shave three years off the trip to Pluto.",
-  "cur": "Inverti la geometria — avvicinati da davanti — e rallenti. Pioneer 11 usò Giove per spingersi verso Saturno. Voyager 2 concatenò Giove, Saturno, Urano, Nettuno in uno dei più raffinati tour di fionda gravitazionale mai compiuti. Cassini rimbalzò su Venere due volte e sulla Terra una volta prima di raggiungere Saturno. New Horizons colpì Giove per risparmiare tre anni nel viaggio verso Plutone."
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "body_paragraphs.2",
-  "en": "Without gravity assists, half the missions in Orrery's catalogue couldn't have flown. The outer planets are simply too far for direct trajectories with chemical rockets — their costs in `∆v` would exceed what any rocket can deliver. Gravity assists turn that arithmetic from impossible into hard but doable.",
-  "cur": "Senza gravity assist, metà delle missioni nel catalogo di Orrery non avrebbero potuto volare. I pianeti esterni sono semplicemente troppo lontani per traiettorie dirette con razzi chimici — i loro costi in `∆v` supererebbero quello che qualsiasi razzo può fornire. I gravity assist trasformano quell'aritmetica da impossibile a difficile ma fattibile."
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "diagram_caption",
-  "en": "Spacecraft enters and exits the planet's frame at the same speed; the planet's motion adds heliocentric velocity.",
-  "cur": "Sonda entra ed esce dal sistema planetario alla stessa velocità."
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "title",
-  "en": "Hohmann Transfer",
-  "cur": "Trasferimento di Hohmann"
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "intro_sentence",
-  "en": "The cheapest two-burn trip between two coplanar circular orbits — and the baseline mission planners measure everything else against.",
-  "cur": "Il viaggio più economico con due accensioni tra due orbite circolari coplanari — il riferimento con cui i pianificatori di missioni misurano tutto il resto."
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "narrative_101.0",
-  "en": "You're in Earth's orbit. You want to be in Mars's orbit. Both orbits are roughly circles around the Sun. How do you get from one to the other with as little fuel as possible?",
-  "cur": "Sei nell'orbita della Terra. Vuoi essere nell'orbita di Marte. Entrambe le orbite sono all'incirca cerchi attorno al Sole. Come fai a passare da una all'altra consumando il minor carburante possibile?"
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "narrative_101.1",
-  "en": "The answer, worked out by Walter Hohmann in 1925, is shockingly elegant. Find an ellipse that just barely touches Earth's orbit on one side and just barely touches Mars's orbit on the other. Burn your engine briefly to leave Earth and join that ellipse. Coast for about 8.5 months without firing the engine at all — gravity does the work. When you arrive at the far end, burn again to settle into Mars's orbit. Two burns, total. Done.",
-  "cur": "La risposta, sviluppata da Walter Hohmann nel 1925, è sorprendentemente elegante. Trova un'ellisse che tocca appena l'orbita della Terra da un lato e appena l'orbita di Marte dall'altro. Accendi il motore brevemente per lasciare la Terra e unirti a quell'ellisse. Procedi in costa per circa 8,5 mesi senza accendere il motore — la gravità fa il lavoro. Quando arrivi all'estremità opposta, accendi di nuovo per stabilizzarti nell'orbita di Marte. Due accensioni, totale. Fatto."
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "narrative_101.2",
-  "en": "It's the cheapest possible trip — but it's also the slowest. The 8.5-month wait is non-negotiable; physics sets the timer. Want to go faster? You can, but you pay for it: a steeper ellipse, a faster crossing, a much bigger braking burn at the other end. This is the trade you'll see playing out across every porkchop plot in /plan.",
-  "cur": "È il viaggio più economico possibile — ma è anche il più lento. L'attesa di 8,5 mesi è non negoziabile; la fisica fissa il cronometro. Vuoi andare più veloce? Puoi, ma lo paghi: un'ellisse più ripida, un attraversamento più veloce, un'accensione di frenata molto più grande all'altra estremità. Questo è il compromesso che vedrai attuarsi in ogni porkchop plot in /plan."
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "body_paragraphs.0",
-  "en": "Imagine you're in a circular orbit around the Sun and you want to reach a higher one — say Earth-to-Mars. The cheapest way is a Hohmann transfer: an ellipse whose perihelion grazes your starting orbit and whose aphelion grazes the destination. Two engine burns get you there. One at perihelion to leave Earth's orbit and enter the ellipse. One at aphelion to circularise into the destination orbit.",
-  "cur": "Immagina di essere in un'orbita circolare attorno al Sole e di voler raggiungere una più alta — diciamo da Terra a Marte. Il modo più economico è un trasferimento di Hohmann: un'ellisse il cui perielio sfiora l'orbita di partenza e il cui afelio sfiora l'orbita di destinazione. Due accensioni del motore ti portano lì. Una al perielio per lasciare l'orbita della Terra e entrare nell'ellisse. Una all'afelio per circolarizzarsi nell'orbita di destinazione."
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "body_paragraphs.1",
-  "en": "It's the cheapest fixed-impulse path, but it's also the slowest. Earth-to-Mars takes about 259 days on a Hohmann. Want to go faster? Burn harder, fly a stretched ellipse with higher perihelion velocity. The arrival V∞ goes up, the entry burn at the destination is bigger, your total ∆v cost climbs steeply.",
-  "cur": "È il percorso a impulso fisso più economico, ma è anche il più lento. Da Terra a Marte richiede circa 259 giorni con un trasferimento di Hohmann. Vuoi andare più veloce? Accendi più forte, vola un'ellisse allungata con velocità al perielio più alta. La V∞ di arrivo aumenta, l'accensione di ingresso alla destinazione è più grande, il costo totale ∆v sale ripidamente."
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "body_paragraphs.2",
-  "en": "On Orrery's `/plan` porkchop you'll see this directly: there's a quiet basin of cool teal cells around the natural Hohmann window, every 26 months for Mars, and increasingly costly contours as you push toward shorter transit times.",
-  "cur": "Nel porkchop `/plan` di Orrery vedrai questo direttamente: c'è una tranquilla conca di celle blu teal intorno alla finestra naturale di Hohmann, ogni 26 mesi per Marte, e contorni sempre più costosi mentre spingi verso tempi di transito più brevi."
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "diagram_caption",
-  "en": "Earth orbit (inner) · Mars orbit (outer) · Hohmann transfer ellipse with perihelion at Earth, aphelion at Mars.",
-  "cur": "Orbita della Terra (interna) · Orbita di Marte (esterna) · Ellisse di trasferimento di Hohmann con perielio alla Terra, afelio a Marte."
- },
- {
-  "rel": "science/transfers/lambert-problem.json",
-  "at": "intro_sentence",
-  "en": "Given two positions and a transit time, find the orbit that connects them — the central problem of every interplanetary trajectory.",
-  "cur": "Date due posizioni e un tempo di transito, trova l'orbita che le connette."
- },
- {
-  "rel": "science/transfers/lambert-problem.json",
-  "at": "narrative_101.0",
-  "en": "The Hohmann transfer is the cheapest path from one orbit to another, but most missions don't actually fly Hohmanns. They want to leave on a specific date — say, when a particular rocket is ready, or when a particular launch pad is open — and they want to arrive on a specific date — say, in time for a Mars dust storm to subside. Hohmann doesn't let you pick. Lambert does.",
-  "cur": "Il trasferimento di Hohmann è il percorso più economico da un'orbita a un'altra, ma la maggior parte delle missioni non vola davvero un Hohmann. Vogliono partire in una data precisa — ad esempio quando un certo razzo è pronto, o quando una certa rampa è libera — e vogliono arrivare in una data precisa — ad esempio quando una tempesta di sabbia su Marte si è placata. Hohmann non ti lascia scegliere. Lambert sì."
- },
- {
-  "rel": "science/transfers/lambert-problem.json",
-  "at": "narrative_101.1",
-  "en": "Lambert's question is simpler-sounding than its math: I'm at point A, I want to be at point B, and I want to take exactly this many days getting there. What orbit should I fly? Lambert wrote down the answer in 1761 — there's exactly one ellipse (or sometimes two, depending on which way around you go) that connects two points in a given time.",
-  "cur": "La domanda di Lambert sembra più semplice della sua matematica: sono nel punto A, voglio essere nel punto B, e voglio impiegare esattamente questo numero di giorni. Quale orbita devo volare? Lambert scrisse la risposta nel 1761 — c'è esattamente un'ellisse (o a volte due, a seconda del verso in cui giri) che collega due punti in un tempo dato."
- },
- {
-  "rel": "science/transfers/lambert-problem.json",
-  "at": "narrative_101.2",
-  "en": "This is the heart of every porkchop plot you'll see. Each pixel on the porkchop in /plan is one Lambert problem: 'leave Earth on date X, reach Mars on date Y — what does it cost?' The colour is the answer. Solve it ten thousand times in parallel and you get the whole map at once. Orrery does this in a Web Worker so the UI doesn't freeze while it's thinking.",
-  "cur": "È il cuore di ogni grafico porkchop che vedrai. Ogni pixel del porkchop in /plan è un problema di Lambert: «parti dalla Terra il giorno X, arrivi su Marte il giorno Y — quanto costa?». Il colore è la risposta. Risolvilo diecimila volte in parallelo e ottieni l'intera mappa in un colpo. Orrery lo fa in un Web Worker, così l'interfaccia non si blocca mentre pensa."
- },
- {
-  "rel": "science/transfers/lambert-problem.json",
-  "at": "body_paragraphs.0",
-  "en": "Lambert's problem asks: I'm here, I want to be there, and I have this much time. What ellipse should I fly? Two position vectors and a time of flight, and the equation produces the unique transfer orbit (or two — there's a long way and a short way around the central body).",
-  "cur": "Il problema di Lambert chiede: sono qui, voglio essere là, e ho questo tempo a disposizione. Quale ellisse dovrei seguire? Due vettori di posizione e un tempo di volo, e l'equazione produce l'orbita di trasferimento unica (o due — c'è una strada lunga e una strada corta intorno al corpo centrale)."
- },
- {
-  "rel": "science/transfers/lambert-problem.json",
-  "at": "body_paragraphs.1",
-  "en": "The Hohmann transfer is one specific Lambert solution: positions at opposite apsides, time of flight equal to half the transfer ellipse's period. Pull either knob — different positions, different time — and you get a different ellipse. Tighter time, more eccentric ellipse, higher departure energy. The math doesn't change; only the boundary conditions.",
-  "cur": "Il trasferimento di Hohmann è una soluzione di Lambert specifica: posizioni agli apsidi opposti, tempo di volo pari a metà del periodo dell'ellisse di trasferimento. Sposta uno qualsiasi dei due parametri — posizioni diverse, tempo diverso — e ottieni un'ellisse diversa. Tempo più breve, ellisse più eccentrica, energia di partenza maggiore. La matematica non cambia; cambiano solo le condizioni al contorno."
- },
- {
-  "rel": "science/transfers/lambert-problem.json",
-  "at": "body_paragraphs.2",
-  "en": "Orrery solves Lambert's problem in a Web Worker every time you hover a porkchop cell on `/plan`. Each cell asks: 'leave Earth on date X, arrive at Mars on date Y — what's the ∆v cost?' The colour you see is the answer to that question, computed once per pixel.",
-  "cur": "Orrery risolve il problema di Lambert in un Web Worker ogni volta che passi il mouse su una cella porkchop in `/plan`. Ogni cella chiede: \"partire dalla Terra nella data X, arrivare su Marte nella data Y — qual è il costo in ∆v?\" Il colore che vedi è la risposta a quella domanda, calcolata una volta per pixel."
- },
- {
-  "rel": "science/transfers/lambert-problem.json",
-  "at": "diagram_caption",
-  "en": "Two position vectors r₁ and r₂; the Lambert solver finds the unique transfer ellipse joining them in time-of-flight.",
-  "cur": "Due vettori r₁ e r₂; il solver Lambert trova l'ellisse unica."
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "intro_sentence",
-  "en": "Pretend gravity is one body at a time — the approximation that turns the unsolvable three-body problem into a chain of two-body Kepler problems you can actually solve.",
-  "cur": "Fingi che la gravità sia un corpo alla volta — l'approssimazione che trasforma l'irrisolvibile problema dei tre corpi in una catena di problemi di Keplero a due corpi che si possono davvero risolvere."
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "narrative_101.0",
-  "en": "Here's a dirty secret of orbital mechanics: the actual full physics — every body in the solar system pulling on every other — is mathematically unsolvable in any clean way. We have NO closed-form solution to the three-body problem, let alone the dozens-of-bodies real version. So how do mission planners get anything done?",
-  "cur": "Ecco un piccolo segreto sporco della meccanica orbitale: la fisica completa — ogni corpo del Sistema solare che attira ogni altro — è matematicamente irrisolvibile in modo pulito. NON abbiamo una soluzione in forma chiusa per il problema dei tre corpi, figuriamoci per la versione reale con decine di corpi. Allora come fanno i progettisti di missioni a combinare qualcosa?"
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "narrative_101.1",
-  "en": "They cheat. They pretend that, at any moment, only ONE body's gravity matters. Near Earth, only Earth pulls. Out in the cruise, only the Sun. Near Mars, only Mars. Each of those regions is called a sphere of influence, and inside each one the spacecraft flies a clean Keplerian conic. When the spacecraft crosses a boundary, you switch coordinate systems and start a new conic. Patched together, they form the trajectory. That's patched conics.",
-  "cur": "Barano. Fingono che, in ogni momento, conti la gravità di UN SOLO corpo. Vicino alla Terra, tira solo la Terra. Durante la crociera, solo il Sole. Vicino a Marte, solo Marte. Ciascuna di queste regioni si chiama sfera d'influenza, e al suo interno il veicolo vola una conica di Keplero pulita. Quando il veicolo attraversa un confine, cambi sistema di coordinate e inizi una nuova conica. Cucite insieme, formano la traiettoria. Queste sono le coniche raccordate."
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "narrative_101.2",
-  "en": "The math comes out a few percent off the truth — small enough that real missions plan with it as their first cut, then numerically refine for the launch. It's also small enough that Orrery can run all of this in your browser, in a Web Worker, fast enough to redraw the whole porkchop when you scrub the launch year. The whole simulator is built on this trick.",
-  "cur": "La matematica si discosta dalla realtà di qualche punto percentuale — abbastanza poco perché le missioni reali la usino come prima approssimazione, per poi affinare numericamente in vista del lancio. Ed è abbastanza leggera perché Orrery possa farla girare nel tuo browser, in un Web Worker, così in fretta da ridisegnare l'intero porkchop quando scorri l'anno di lancio. L'intero simulatore è costruito su questo trucco."
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "body_paragraphs.0",
-  "en": "Real gravity is messy. A spacecraft cruising between Earth and Mars feels Earth's gravity, the Sun's gravity, Mars's gravity, plus everything else, all at once. The full math (the n-body problem) has no closed-form solution — only numerical integration. That's slow, fragile, hard to plan with.",
-  "cur": "La gravità reale è caotica. Un'astronave in trasferimento tra la Terra e Marte sente la gravità della Terra, la gravità del Sole, la gravità di Marte, più tutto il resto, tutto insieme. La matematica completa (il problema degli n-corpi) non ha alcuna soluzione in forma chiusa — soltanto integrazione numerica. Questo è lento, fragile, difficile da pianificare."
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "body_paragraphs.1",
-  "en": "Patched conics is the working compromise: declare a sphere of influence around each body. Inside Earth's sphere, only Earth's gravity matters; you fly a Keplerian arc around Earth. Cross the boundary into the heliocentric region, switch to a Sun-centred Kepler arc. Cross into Mars's sphere, switch again. Three Kepler problems, patched together at the boundaries.",
-  "cur": "Le coniche frammentate rappresentano il compromesso operativo: si dichiara una sfera di influenza intorno a ogni corpo celeste. Nella sfera di influenza terrestre, conta solo la gravità della Terra; si vola seguendo un arco Keplero intorno alla Terra. Oltrepassando il confine nella regione eliocentrica, si passa a un arco Keplero centrato sul Sole. Entrando nella sfera di Marte, si passa di nuovo. Tre problemi Keplero, raccordati insieme ai confini."
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "body_paragraphs.2",
-  "en": "It's wrong but useful. Errors at boundaries are small — a few percent of ∆v at most for cislunar work, less for heliocentric — and the math becomes tractable enough to fit in a Web Worker. Orrery's `/plan` porkchops are computed this way; so are the trajectories on `/fly`. Real flight planning at NASA uses the same approximation as the first cut, then refines numerically before launch.",
-  "cur": "È sbagliato ma utile. Gli errori ai confini sono piccoli — pochi punti percentuali di ∆v al massimo per il lavoro cislunar, ancora meno per l'eliocentric — e la matematica diventa sufficientemente trattabile da adattarsi in un Web Worker. I diagrammi di portata (`porkchops`) di Orrery sono calcolati in questo modo; lo sono anche le traiettorie su `/fly`. La pianificazione del volo reale alla NASA usa la stessa approssimazione come primo tentativo, poi la affina numericamente prima del lancio."
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "diagram_caption",
-  "en": "Three frames, three conics: Earth-centred → heliocentric → Mars-centred, patched at sphere-of-influence boundaries.",
-  "cur": "Tre frame, tre coniche, raccordate alle sfere d'influenza."
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "title",
-  "en": "Transfer Ellipse",
-  "cur": "Ellisse di trasferimento"
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "intro_sentence",
-  "en": "The Keplerian arc that carries a spacecraft from one orbit to another — Sun at one focus, just like every other orbit.",
-  "cur": "L'arco kepleriano che trasporta un'astronave da un'orbita all'altra — il Sole a uno dei fuochi, proprio come ogni altra orbita."
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "narrative_101.0",
-  "en": "Mission planning sounds like it's about engines and rockets. It's mostly about choosing an ellipse. Every interplanetary cruise — Apollo to the Moon, Voyager to Neptune, Perseverance to Mars — is just a spacecraft riding an elliptical orbit between where it started and where it's going. The fancy word for that ellipse is the transfer orbit.",
-  "cur": "La pianificazione di una missione sembra una questione di motori e razzi. Per lo più è una questione di scegliere un'ellisse. Ogni crociera interplanetaria — Apollo verso la Luna, Voyager verso Nettuno, Perseverance verso Marte — è solo un veicolo spaziale che percorre un'orbita ellittica tra il punto di partenza e quello di arrivo. Il nome tecnico di quell'ellisse è orbita di trasferimento."
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "narrative_101.1",
-  "en": "It plays by the same rules as every other Keplerian orbit. The Sun sits at one focus. The spacecraft moves slowly at the far end and quickly at the close end. Vis-viva still works to compute its speed. Kepler's third law still gives you the time-of-flight from the size. Nothing exotic.",
-  "cur": "Segue le stesse regole di ogni altra orbita di Keplero. Il Sole sta in un fuoco. Il veicolo è lento all'estremità lontana e veloce a quella vicina. Vis-viva continua a funzionare per calcolarne la velocità. La terza legge di Keplero continua a darti il tempo di volo a partire dalla dimensione. Niente di esotico."
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "narrative_101.2",
-  "en": "The only thing that makes a transfer ellipse different from a planet's orbit is that the spacecraft only flies HALF of it. It hops on at one end, rides to the other, and gets off. That's why the ∆v budget always has two big burns — one to enter the ellipse, one to leave it. The middle bit, the eight-month coast, costs absolutely nothing.",
-  "cur": "L'unica cosa che distingue un'ellisse di trasferimento dall'orbita di un pianeta è che il veicolo ne percorre solo METÀ. Sale a un capo, viaggia fino all'altro e scende. Per questo il budget di ∆v ha sempre due grandi accensioni — una per entrare nell'ellisse, una per lasciarla. La parte centrale, gli otto mesi di crociera, non costa assolutamente nulla."
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "body_paragraphs.0",
-  "en": "Once you've burned out of Earth's orbit, you're on an ellipse around the Sun. That ellipse is the transfer orbit, and it has all the same properties as any other: semi-major axis, eccentricity, perihelion, aphelion. The fact that you're going somewhere doesn't change the geometry — gravity doesn't care about your destination.",
-  "cur": "Una volta che sei uscito dall'orbita terrestre, sei su un'ellisse attorno al Sole. Questa ellisse è l'orbita di trasferimento e ha tutte le stesse proprietà di qualsiasi altra: semiasse maggiore, eccentricità, perielio, afelio. Il fatto che tu stia andando da qualche parte non cambia la geometria — la gravità non si cura della tua destinazione."
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "body_paragraphs.1",
-  "en": "Two anchors define a transfer ellipse: where you started (perihelion if you're going outward) and where you'll end up (aphelion). The semi-major axis is the average of those two radii. Tweak either anchor and the whole ellipse reshapes — go further out, the ellipse stretches, the trip gets longer.",
-  "cur": "Due punti di ancoraggio definiscono un'ellisse di trasferimento: il luogo da cui sei partito (perielio se stai andando verso l'esterno) e il luogo dove arriverai (afelio). Il semiasse maggiore è la media di quei due raggi. Modifica uno dei due ancoraggi e l'intera ellisse si rimodella — vai più lontano, l'ellisse si allunga, il viaggio diventa più lungo."
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "body_paragraphs.2",
-  "en": "On Orrery's `/fly` HUD you'll see the spacecraft trace this ellipse in real time. The transfer arc on screen is a visual rendering of the same conic that the math says it is — Sun at one focus, perihelion behind you, aphelion ahead.",
-  "cur": "Su Orrery nell'HUD `/fly` vedrai l'astronave tracciare questa ellisse in tempo reale. L'arco di trasferimento sullo schermo è una rappresentazione visiva della stessa sezione conica che la matematica dice che sia — il Sole a uno dei fuochi, il perielio dietro di te, l'afelio davanti a te."
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "diagram_caption",
-  "en": "Two coplanar orbits (departure inner, destination outer) connected by a transfer ellipse with Sun at one focus.",
-  "cur": "Due orbite coplanari connesse da ellisse con Sole al fuoco."
- }
+  {
+    "rel": "science/transfers/conic-sections.json",
+    "at": "body_paragraphs.1",
+    "en": "Every Keplerian orbit is one of these four. Bound orbits — planets, moons, satellites, anything that returns — are circles or ellipses. Unbound trajectories — flybys, escapes, hyperbolic captures — are parabolas or hyperbolas. The boundary is exact: at `e = 1` you're moving at exactly the local escape velocity.",
+    "cur": "Ogni orbita Keplerian è una di queste quattro. Le orbite legate — pianeti, lune, satelliti, qualsiasi cosa che ritorna — sono cerchi o ellissi. Le traiettorie non legate — flyby, fughe, catture iperboliche — sono parabole o iperbole. Il confine è esatto: a `e = 1` ti stai muovendo esattamente alla velocità di fuga locale."
+  },
+  {
+    "rel": "science/transfers/conic-sections.json",
+    "at": "body_paragraphs.2",
+    "en": "Mission designers exploit all four. Cruise on an ellipse, flyby a planet on a hyperbola (relative to that planet), insert into orbit on an ellipse again. The simulator's `/fly` route does this naturally — the same trajectory equation handles every case, the eccentricity tells you which conic you're flying.",
+    "cur": "I progettisti di missioni sfruttano tutti e quattro. Naviga su un'ellisse, effettua un flyby di un pianeta su un'iperbole (rispetto a quel pianeta), inserisciti in orbita di nuovo su un'ellisse. Il percorso `/fly` del simulatore fa questo naturalmente — la stessa equazione di traiettoria gestisce ogni caso, l'eccentricità ti dice quale conica stai volando."
+  },
+  {
+    "rel": "science/transfers/conic-sections.json",
+    "at": "diagram_caption",
+    "en": "Four conics from cutting a cone: circle, ellipse, parabola, hyperbola. Eccentricity sets which.",
+    "cur": "Quattro coniche dall'affettamento di un cono: cerchio, ellisse, parabola, iperbole. L'eccentricità determina quale."
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "title",
+    "en": "Why mission trajectories look flat",
+    "cur": "Perché le traiettorie di missione sembrano piatte"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "intro_sentence",
+    "en": "The solar system is a disk, and propellant is finite — so missions don't leave the disk unless they have to.",
+    "cur": "Il Sistema Solare è un disco, e il propellente è limitato — quindi le missioni non lasciano il disco a meno che non debbano."
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "narrative_101.0",
+    "en": "Stand at the centre of the solar system and look at the planets and you see a pancake, not a sphere. Mercury, Venus, Earth, Mars, Jupiter, Saturn — they all orbit within about 7° of the same flat plane (the ecliptic). The planets formed from a single rotating gas-and-dust cloud, and that rotation collapsed everything to a thin disk. Everything since has stayed in that disk.",
+    "cur": "Mettiti al centro del Sistema Solare e guarda i pianeti — vedrai una frittella, non una sfera. Mercurio, Venere, Terra, Marte, Giove, Saturno — tutti orbitano entro circa 7° dallo stesso piano piatto (l'eclittica). I pianeti si sono formati da una singola nube rotante di gas e polvere, e quella rotazione ha collassato tutto in un disco sottile. Tutto da allora è rimasto in quel disco."
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "narrative_101.1",
+    "en": "Now imagine planning a trip to Mars. The cheapest way to get there is a long curved arc that goes around the Sun and arrives at Mars's orbit at the same moment Mars is there. The cheapest arc lies in the same plane that Earth and Mars share — the ecliptic. Leaving the disk to take a 'detour out and over' costs propellant the spacecraft cannot afford.",
+    "cur": "Ora immagina di pianificare un viaggio su Marte. Il modo più economico per arrivarci è un lungo arco curvo che gira intorno al Sole e arriva all'orbita di Marte nello stesso momento in cui Marte è lì. L'arco più economico giace nello stesso piano condiviso da Terra e Marte — l'eclittica. Lasciare il disco per prendere una \"deviazione fuori e sopra\" costa propellente che il veicolo non può permettersi."
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "narrative_101.2",
+    "en": "So mission planners don't fight the disk. They wait for the orbital geometry to line up (that's what 'launch window' means), point the rocket along the ecliptic, and let the planets do the steering. The result, when you look at every spacecraft trajectory we have, is a pile of curves all hugging the same plane — like watching cars race on a flat track.",
+    "cur": "Quindi i pianificatori di missione non combattono il disco. Aspettano che la geometria orbitale si allinei (è ciò che significa \"finestra di lancio\"), puntano il razzo lungo l'eclittica e lasciano che i pianeti gestiscano lo sterzo. Il risultato, quando guardi ogni traiettoria di veicolo spaziale che abbiamo, è una pila di curve tutte abbracciate allo stesso piano — come guardare auto correre su una pista piatta."
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "body_paragraphs.0",
+    "en": "The price tag for leaving the plane is brutal. Changing a heliocentric trajectory's inclination by even 1° at Earth's orbital speed (~30 km/s) costs roughly 0.5 km/s of `∆v`. Doing the 80° plane change Ulysses needed — to fly over the Sun's poles — would have cost ~38 km/s if done with chemical thrust. No real rocket can deliver that. So engineers don't pay for plane changes; they design around them.",
+    "cur": "Il prezzo da pagare per lasciare il piano è brutale. Cambiare l'inclinazione di una traiettoria eliocentrica anche solo di 1° alla velocità orbitale terrestre (~30 km/s) costa circa 0,5 km/s di `∆v`. Fare il cambio di piano di 80° di cui Ulysses aveva bisogno — per sorvolare i poli solari — sarebbe costato ~38 km/s se fatto con spinta chimica. Nessun razzo reale può fornirlo. Quindi gli ingegneri non pagano per i cambi di piano; progettano attorno ad essi."
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "body_paragraphs.1",
+    "en": "Gravity assists obey the same constraint. When a spacecraft slingshots off Jupiter or Venus, the planet sits in the ecliptic, so the deflection vector — which always passes through the planet — keeps the trajectory near-ecliptic too. Cassini's six-year cruise looks like a 2D doodle in the /explore view because every assist body it visited was 2D-flat.",
+    "cur": "Le assistenze gravitazionali obbediscono allo stesso vincolo. Quando un veicolo spaziale fa una fionda attorno a Giove o Venere, il pianeta sta nell'eclittica, quindi il vettore di deflessione — che passa sempre attraverso il pianeta — mantiene anche la traiettoria vicina all'eclittica. La crociera di sei anni di Cassini sembra uno scarabocchio 2D nella vista /explore perché ogni corpo di assistenza che ha visitato era 2D piatto."
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "body_paragraphs.2",
+    "en": "Ulysses is the only spacecraft that ever broke the disk on purpose. Its science target was the Sun's poles, but reaching them required ~80° of inclination — chemically impossible. So the mission did the only thing that worked: launched outward to Jupiter, used Jupiter's gravity as a free 'rocket' to deflect the spacecraft out of the ecliptic, then orbited the Sun pole-to-pole for 18 years. The big detour was the cheapest path. Every other deep-space mission you see in /explore stayed in the disk because the disk is where the destinations are — and where the propellant lets you go.",
+    "cur": "Ulysses è l'unico veicolo spaziale che ha rotto il disco di proposito. Il suo obiettivo scientifico erano i poli del Sole, ma raggiungerli richiedeva ~80° di inclinazione — chimicamente impossibile. Quindi la missione ha fatto l'unica cosa che funzionava: lanciata verso l'esterno verso Giove, ha usato la gravità di Giove come \"razzo\" gratuito per deviare il veicolo fuori dall'eclittica, poi ha orbitato il Sole da polo a polo per 18 anni. La grande deviazione era il percorso più economico. Ogni altra missione di spazio profondo che vedi in /explore è rimasta nel disco perché il disco è dove sono le destinazioni — e dove il propellente ti permette di andare."
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "diagram_caption",
+    "en": "Solar system layouts collapse to the same plane because the planets formed from a single rotating disk. Departures stay in that plane because plane changes are propellant-prohibitive.",
+    "cur": "Il Sistema solare è quasi piatto perché i pianeti si sono formati da un unico disco in rotazione. Le partenze restano su quel piano perché i cambi di piano costano un propellente proibitivo."
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "title",
+    "en": "Free-Return Trajectory",
+    "cur": "Traiettoria di ritorno libero"
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "intro_sentence",
+    "en": "A trajectory that swings past the destination and bends gravity itself into a return ticket — no engine burn required.",
+    "cur": "Una traiettoria che vola oltre la destinazione e piega la gravità stessa in un biglietto di ritorno — nessun accensione del motore richiesta."
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "narrative_101.0",
+    "en": "Imagine you're flying to the Moon. You're worried — what if the engine fails on the way? You'd be stranded, drifting forever. Here's the genius answer: pick a path where, even if every engine on your spacecraft dies the moment you leave Earth orbit, gravity alone will swing you around the Moon and toss you back home automatically. That's a free-return trajectory.",
+    "cur": "Immagina di volare verso la Luna. Sei preoccupato — e se il motore si guasta durante il viaggio? Saresti bloccato, alla deriva per sempre. Ecco la risposta geniale: scegli un percorso dove, anche se ogni motore della tua navicella muore nel momento in cui lasci l'orbita terrestre, la sola gravità ti farà girare attorno alla Luna e ti getterà a casa automaticamente. Quella è una traiettoria di ritorno libero."
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "narrative_101.1",
+    "en": "It's an actual figure-8 in space. You leave Earth, climb out to the Moon, the Moon's gravity bends your path 180 degrees, and you fall back toward Earth, hitting the atmosphere on the rebound. No engine required. The Moon does all the work. The geometry just has to be right.",
+    "cur": "È un vero otto nel spazio. Lasci la Terra, sali verso la Luna, la gravità della Luna piega il tuo percorso di 180 gradi, e cadi di nuovo verso la Terra, colpendo l'atmosfera al rimbalzo. Nessun motore richiesto. La Luna fa tutto il lavoro. La geometria deve solo essere giusta."
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "narrative_101.2",
+    "en": "Apollo 8 was the first crewed mission to fly one. Apollo 13 — the famous \"Houston, we have a problem\" mission — owes its survival to it. When their main engine became unusable, they rode the free-return home, firing only the lunar module's engine for course corrections — never the crippled main engine. Orrery's default /fly scenario does exactly this for Mars: Earth → Mars flyby → Earth, no mid-course burns required. The cheapest possible Mars trip you can fly with humans on board.",
+    "cur": "Apollo 8 è stata la prima missione con equipaggio a volare su una. Apollo 13 — la famosa missione \"Houston, abbiamo un problema\" — deve la sua sopravvivenza ad essa. Quando il loro motore principale divenne inutilizzabile, cavalcarono il ritorno libero verso casa, accendendo solo il motore del modulo lunare per le correzioni di rotta — mai il motore principale danneggiato. Lo scenario predefinito /fly di Orrery fa esattamente questo per Marte: Terra → passaggio ravvicinato di Marte → Terra, nessuna accensione di rotta richiesta. Il viaggio verso Marte più economico possibile che tu possa volare con umani a bordo."
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "body_paragraphs.0",
+    "en": "The headline trick: leave Earth, fly past the Moon (or Mars), and let the gravity of that body bend your path back toward Earth. If you got the geometry right, you re-enter Earth's atmosphere on the rebound. The crew never has to fire an engine to come home.",
+    "cur": "Il trucco principale: lascia la Terra, vola oltre la Luna (o Marte), e lascia che la gravità di quel corpo pieghi il tuo percorso verso la Terra. Se hai ottenuto la giusta geometria, rientri nell'atmosfera terrestre al rimbalzo. L'equipaggio non deve mai accendere un motore per tornare a casa."
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "body_paragraphs.1",
+    "en": "Apollo 8 was the first crewed free-return. Apollo 13 famously fell back on the technique when its service module crippled — riding the free-return home, firing only the lunar module's engine for course corrections, never the crippled main engine. For Mars the geometry is harder — you need a 500-day, two-pass loop — but the concept is the same: flyby geometry doing the work of the return burn.",
+    "cur": "Apollo 8 è stata la prima traiettoria di ritorno libero con equipaggio. Apollo 13 ha famosamente fatto affidamento sulla tecnica quando il suo modulo di servizio si è danneggiato — cavalcando il ritorno libero verso casa, accendendo solo il motore del modulo lunare per le correzioni di rotta, mai il motore principale danneggiato. Per Marte la geometria è più difficile — hai bisogno di un anello a due passaggi di 500 giorni — ma il concetto è lo stesso: la geometria del passaggio ravvicinato che fa il lavoro della spinta di ritorno."
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "body_paragraphs.2",
+    "en": "Orrery's default `/fly` scenario, ORRERY-1, is exactly this: Earth-Mars-Earth on a free-return arc, no mid-course corrections, no orbit-insertion burn at Mars. You watch the spacecraft loop the Sun once, swing past Mars, and come back. It's the cheapest crewed Mars flyby ever proposed.",
+    "cur": "Lo scenario predefinito `/fly` di Orrery, ORRERY-1, è esattamente questo: Terra-Marte-Terra su un arco di ritorno libero, nessuna correzione di rotta, nessuna accensione di inserimento in orbita a Marte. Guardi la navicella fare un giro intorno al Sole, passare rasente Marte, e tornare indietro. È il sorvolo di Marte con equipaggio più economico mai proposto."
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "diagram_caption",
+    "en": "Earth → Mars flyby → Earth. The Moon (or Mars's) gravity does the U-turn for free.",
+    "cur": "Terra → passaggio ravvicinato di Marte → Terra. La gravità della Luna (o di Marte) fa la virata a U gratuitamente."
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "title",
+    "en": "Gravity Assist",
+    "cur": "Assistenza gravitazionale"
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "intro_sentence",
+    "en": "Steal a planet's orbital momentum on a flyby — the closest thing in space to a free lunch.",
+    "cur": "Ruba il momento orbitale di un pianeta in un flyby — la cosa più vicina a un pranzo gratis nello spazio."
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "narrative_101.0",
+    "en": "Throw a tennis ball at a moving train. The ball bounces off the front and comes back at you faster than you threw it — because the train was moving toward it, and the train's speed got added to the bounce. That, basically, is a gravity assist. The spacecraft is the tennis ball, the planet is the train, and \"bouncing\" is replaced by \"falling past on a hyperbola.\"",
+    "cur": "Lancia una pallina da tennis contro un treno in movimento. La pallina rimbalza sul muso e torna verso di te più veloce di come l'hai lanciata — perché il treno le andava incontro e la sua velocità si è sommata al rimbalzo. Questa, in sostanza, è una fionda gravitazionale. Il veicolo spaziale è la pallina, il pianeta è il treno, e il «rimbalzo» è sostituito da una «caduta accanto al pianeta lungo un'iperbole»."
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "narrative_101.1",
+    "en": "From the planet's point of view, the spacecraft enters and leaves at exactly the same speed — gravity is conservative, no energy gained or lost. But from the Sun's point of view, the spacecraft inherits some of the planet's orbital motion on the way out and arrives somewhere new with extra (or less) speed. It's not a violation of physics; the planet pays for it by slowing down — by an amount way too tiny to detect.",
+    "cur": "Dal punto di vista del pianeta, il veicolo entra ed esce esattamente alla stessa velocità — la gravità è conservativa, nessuna energia guadagnata o persa. Ma dal punto di vista del Sole, il veicolo eredita parte del moto orbitale del pianeta in uscita e arriva da qualche altra parte con velocità in più (o in meno). Non è una violazione della fisica; il pianeta paga il conto rallentando — di una quantità troppo minuscola per essere misurata."
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "narrative_101.2",
+    "en": "This is the trick that built the Voyager grand tour. Without gravity assists, you can't reach Saturn, let alone Uranus or Neptune, with chemical rockets — the fuel cost is astronomical. Voyager 2 chained four assists in a row: Jupiter, Saturn, Uranus, Neptune, all in one trip. Cassini bounced off Venus twice and Earth once on the way to Saturn. The outer solar system is only accessible because of this trick.",
+    "cur": "È il trucco che ha costruito il grand tour delle Voyager. Senza fionde gravitazionali non puoi raggiungere Saturno, figuriamoci Urano o Nettuno, con razzi chimici — il costo in carburante è astronomico. Voyager 2 concatenò quattro fionde di fila: Giove, Saturno, Urano, Nettuno, tutto in un unico viaggio. Cassini rimbalzò due volte su Venere e una sulla Terra lungo la strada per Saturno. Il Sistema solare esterno è raggiungibile solo grazie a questo trucco."
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "body_paragraphs.0",
+    "en": "Approach a moving planet from behind on a hyperbolic trajectory. The planet's gravity bends your path, you swing past, and you leave with the same speed relative to the planet — but the planet was moving the whole time, and you carry that motion with you. Net result: you exit with more speed relative to the Sun than you arrived with. The planet, in exchange, slows by an immeasurably tiny amount.",
+    "cur": "Avvicinati a un pianeta in movimento da dietro su una traiettoria iperbolica. La gravità del pianeta piega il tuo percorso, tu passi accanto, e esci con la stessa velocità relativa al pianeta — ma il pianeta si stava muovendo tutto il tempo, e porti con te quel moto. Risultato netto: esci con una velocità maggiore relativa al Sole di quella con cui sei arrivato. Il pianeta, in cambio, si rallenta di una quantità immisurabilmente minuscola."
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "body_paragraphs.1",
+    "en": "Reverse the geometry — approach from in front — and you slow down. Pioneer 11 used Jupiter to push toward Saturn. Voyager 2 chained Jupiter, Saturn, Uranus, Neptune in one of the most exquisite gravity-assist tours ever flown. Cassini bounced off Venus twice and Earth once before reaching Saturn. New Horizons hit Jupiter to shave three years off the trip to Pluto.",
+    "cur": "Inverti la geometria — avvicinati da davanti — e rallenti. Pioneer 11 usò Giove per spingersi verso Saturno. Voyager 2 concatenò Giove, Saturno, Urano, Nettuno in uno dei più raffinati tour di fionda gravitazionale mai compiuti. Cassini rimbalzò su Venere due volte e sulla Terra una volta prima di raggiungere Saturno. New Horizons colpì Giove per risparmiare tre anni nel viaggio verso Plutone."
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "body_paragraphs.2",
+    "en": "Without gravity assists, half the missions in Orrery's catalogue couldn't have flown. The outer planets are simply too far for direct trajectories with chemical rockets — their costs in `∆v` would exceed what any rocket can deliver. Gravity assists turn that arithmetic from impossible into hard but doable.",
+    "cur": "Senza gravity assist, metà delle missioni nel catalogo di Orrery non avrebbero potuto volare. I pianeti esterni sono semplicemente troppo lontani per traiettorie dirette con razzi chimici — i loro costi in `∆v` supererebbero quello che qualsiasi razzo può fornire. I gravity assist trasformano quell'aritmetica da impossibile a difficile ma fattibile."
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "diagram_caption",
+    "en": "Spacecraft enters and exits the planet's frame at the same speed; the planet's motion adds heliocentric velocity.",
+    "cur": "Sonda entra ed esce dal sistema planetario alla stessa velocità."
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "title",
+    "en": "Hohmann Transfer",
+    "cur": "Trasferimento di Hohmann"
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "intro_sentence",
+    "en": "The cheapest two-burn trip between two coplanar circular orbits — and the baseline mission planners measure everything else against.",
+    "cur": "Il viaggio più economico con due accensioni tra due orbite circolari coplanari — il riferimento con cui i pianificatori di missioni misurano tutto il resto."
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "narrative_101.0",
+    "en": "You're in Earth's orbit. You want to be in Mars's orbit. Both orbits are roughly circles around the Sun. How do you get from one to the other with as little fuel as possible?",
+    "cur": "Sei nell'orbita della Terra. Vuoi essere nell'orbita di Marte. Entrambe le orbite sono all'incirca cerchi attorno al Sole. Come fai a passare da una all'altra consumando il minor carburante possibile?"
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "narrative_101.1",
+    "en": "The answer, worked out by Walter Hohmann in 1925, is shockingly elegant. Find an ellipse that just barely touches Earth's orbit on one side and just barely touches Mars's orbit on the other. Burn your engine briefly to leave Earth and join that ellipse. Coast for about 8.5 months without firing the engine at all — gravity does the work. When you arrive at the far end, burn again to settle into Mars's orbit. Two burns, total. Done.",
+    "cur": "La risposta, sviluppata da Walter Hohmann nel 1925, è sorprendentemente elegante. Trova un'ellisse che tocca appena l'orbita della Terra da un lato e appena l'orbita di Marte dall'altro. Accendi il motore brevemente per lasciare la Terra e unirti a quell'ellisse. Procedi in costa per circa 8,5 mesi senza accendere il motore — la gravità fa il lavoro. Quando arrivi all'estremità opposta, accendi di nuovo per stabilizzarti nell'orbita di Marte. Due accensioni, totale. Fatto."
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "narrative_101.2",
+    "en": "It's the cheapest possible trip — but it's also the slowest. The 8.5-month wait is non-negotiable; physics sets the timer. Want to go faster? You can, but you pay for it: a steeper ellipse, a faster crossing, a much bigger braking burn at the other end. This is the trade you'll see playing out across every porkchop plot in /plan.",
+    "cur": "È il viaggio più economico possibile — ma è anche il più lento. L'attesa di 8,5 mesi è non negoziabile; la fisica fissa il cronometro. Vuoi andare più veloce? Puoi, ma lo paghi: un'ellisse più ripida, un attraversamento più veloce, un'accensione di frenata molto più grande all'altra estremità. Questo è il compromesso che vedrai attuarsi in ogni porkchop plot in /plan."
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "body_paragraphs.0",
+    "en": "Imagine you're in a circular orbit around the Sun and you want to reach a higher one — say Earth-to-Mars. The cheapest way is a Hohmann transfer: an ellipse whose perihelion grazes your starting orbit and whose aphelion grazes the destination. Two engine burns get you there. One at perihelion to leave Earth's orbit and enter the ellipse. One at aphelion to circularise into the destination orbit.",
+    "cur": "Immagina di essere in un'orbita circolare attorno al Sole e di voler raggiungere una più alta — diciamo da Terra a Marte. Il modo più economico è un trasferimento di Hohmann: un'ellisse il cui perielio sfiora l'orbita di partenza e il cui afelio sfiora l'orbita di destinazione. Due accensioni del motore ti portano lì. Una al perielio per lasciare l'orbita della Terra e entrare nell'ellisse. Una all'afelio per circolarizzarsi nell'orbita di destinazione."
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "body_paragraphs.1",
+    "en": "It's the cheapest fixed-impulse path, but it's also the slowest. Earth-to-Mars takes about 259 days on a Hohmann. Want to go faster? Burn harder, fly a stretched ellipse with higher perihelion velocity. The arrival V∞ goes up, the entry burn at the destination is bigger, your total ∆v cost climbs steeply.",
+    "cur": "È il percorso a impulso fisso più economico, ma è anche il più lento. Da Terra a Marte richiede circa 259 giorni con un trasferimento di Hohmann. Vuoi andare più veloce? Accendi più forte, vola un'ellisse allungata con velocità al perielio più alta. La V∞ di arrivo aumenta, l'accensione di ingresso alla destinazione è più grande, il costo totale ∆v sale ripidamente."
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "body_paragraphs.2",
+    "en": "On Orrery's `/plan` porkchop you'll see this directly: there's a quiet basin of cool teal cells around the natural Hohmann window, every 26 months for Mars, and increasingly costly contours as you push toward shorter transit times.",
+    "cur": "Nel porkchop `/plan` di Orrery vedrai questo direttamente: c'è una tranquilla conca di celle blu teal intorno alla finestra naturale di Hohmann, ogni 26 mesi per Marte, e contorni sempre più costosi mentre spingi verso tempi di transito più brevi."
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "diagram_caption",
+    "en": "Earth orbit (inner) · Mars orbit (outer) · Hohmann transfer ellipse with perihelion at Earth, aphelion at Mars.",
+    "cur": "Orbita della Terra (interna) · Orbita di Marte (esterna) · Ellisse di trasferimento di Hohmann con perielio alla Terra, afelio a Marte."
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "intro_sentence",
+    "en": "Given two positions and a transit time, find the orbit that connects them — the central problem of every interplanetary trajectory.",
+    "cur": "Date due posizioni e un tempo di transito, trova l'orbita che le connette."
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "narrative_101.0",
+    "en": "The Hohmann transfer is the cheapest path from one orbit to another, but most missions don't actually fly Hohmanns. They want to leave on a specific date — say, when a particular rocket is ready, or when a particular launch pad is open — and they want to arrive on a specific date — say, in time for a Mars dust storm to subside. Hohmann doesn't let you pick. Lambert does.",
+    "cur": "Il trasferimento di Hohmann è il percorso più economico da un'orbita a un'altra, ma la maggior parte delle missioni non vola davvero un Hohmann. Vogliono partire in una data precisa — ad esempio quando un certo razzo è pronto, o quando una certa rampa è libera — e vogliono arrivare in una data precisa — ad esempio quando una tempesta di sabbia su Marte si è placata. Hohmann non ti lascia scegliere. Lambert sì."
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "narrative_101.1",
+    "en": "Lambert's question is simpler-sounding than its math: I'm at point A, I want to be at point B, and I want to take exactly this many days getting there. What orbit should I fly? Lambert wrote down the answer in 1761 — there's exactly one ellipse (or sometimes two, depending on which way around you go) that connects two points in a given time.",
+    "cur": "La domanda di Lambert sembra più semplice della sua matematica: sono nel punto A, voglio essere nel punto B, e voglio impiegare esattamente questo numero di giorni. Quale orbita devo volare? Lambert scrisse la risposta nel 1761 — c'è esattamente un'ellisse (o a volte due, a seconda del verso in cui giri) che collega due punti in un tempo dato."
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "narrative_101.2",
+    "en": "This is the heart of every porkchop plot you'll see. Each pixel on the porkchop in /plan is one Lambert problem: 'leave Earth on date X, reach Mars on date Y — what does it cost?' The colour is the answer. Solve it ten thousand times in parallel and you get the whole map at once. Orrery does this in a Web Worker so the UI doesn't freeze while it's thinking.",
+    "cur": "È il cuore di ogni grafico porkchop che vedrai. Ogni pixel del porkchop in /plan è un problema di Lambert: «parti dalla Terra il giorno X, arrivi su Marte il giorno Y — quanto costa?». Il colore è la risposta. Risolvilo diecimila volte in parallelo e ottieni l'intera mappa in un colpo. Orrery lo fa in un Web Worker, così l'interfaccia non si blocca mentre pensa."
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "body_paragraphs.0",
+    "en": "Lambert's problem asks: I'm here, I want to be there, and I have this much time. What ellipse should I fly? Two position vectors and a time of flight, and the equation produces the unique transfer orbit (or two — there's a long way and a short way around the central body).",
+    "cur": "Il problema di Lambert chiede: sono qui, voglio essere là, e ho questo tempo a disposizione. Quale ellisse dovrei seguire? Due vettori di posizione e un tempo di volo, e l'equazione produce l'orbita di trasferimento unica (o due — c'è una strada lunga e una strada corta intorno al corpo centrale)."
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "body_paragraphs.1",
+    "en": "The Hohmann transfer is one specific Lambert solution: positions at opposite apsides, time of flight equal to half the transfer ellipse's period. Pull either knob — different positions, different time — and you get a different ellipse. Tighter time, more eccentric ellipse, higher departure energy. The math doesn't change; only the boundary conditions.",
+    "cur": "Il trasferimento di Hohmann è una soluzione di Lambert specifica: posizioni agli apsidi opposti, tempo di volo pari a metà del periodo dell'ellisse di trasferimento. Sposta uno qualsiasi dei due parametri — posizioni diverse, tempo diverso — e ottieni un'ellisse diversa. Tempo più breve, ellisse più eccentrica, energia di partenza maggiore. La matematica non cambia; cambiano solo le condizioni al contorno."
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "body_paragraphs.2",
+    "en": "Orrery solves Lambert's problem in a Web Worker every time you hover a porkchop cell on `/plan`. Each cell asks: 'leave Earth on date X, arrive at Mars on date Y — what's the ∆v cost?' The colour you see is the answer to that question, computed once per pixel.",
+    "cur": "Orrery risolve il problema di Lambert in un Web Worker ogni volta che passi il mouse su una cella porkchop in `/plan`. Ogni cella chiede: \"partire dalla Terra nella data X, arrivare su Marte nella data Y — qual è il costo in ∆v?\" Il colore che vedi è la risposta a quella domanda, calcolata una volta per pixel."
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "diagram_caption",
+    "en": "Two position vectors r₁ and r₂; the Lambert solver finds the unique transfer ellipse joining them in time-of-flight.",
+    "cur": "Due vettori r₁ e r₂; il solver Lambert trova l'ellisse unica."
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "intro_sentence",
+    "en": "Pretend gravity is one body at a time — the approximation that turns the unsolvable three-body problem into a chain of two-body Kepler problems you can actually solve.",
+    "cur": "Fingi che la gravità sia un corpo alla volta — l'approssimazione che trasforma l'irrisolvibile problema dei tre corpi in una catena di problemi di Keplero a due corpi che si possono davvero risolvere."
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "narrative_101.0",
+    "en": "Here's a dirty secret of orbital mechanics: the actual full physics — every body in the solar system pulling on every other — is mathematically unsolvable in any clean way. We have NO closed-form solution to the three-body problem, let alone the dozens-of-bodies real version. So how do mission planners get anything done?",
+    "cur": "Ecco un piccolo segreto sporco della meccanica orbitale: la fisica completa — ogni corpo del Sistema solare che attira ogni altro — è matematicamente irrisolvibile in modo pulito. NON abbiamo una soluzione in forma chiusa per il problema dei tre corpi, figuriamoci per la versione reale con decine di corpi. Allora come fanno i progettisti di missioni a combinare qualcosa?"
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "narrative_101.1",
+    "en": "They cheat. They pretend that, at any moment, only ONE body's gravity matters. Near Earth, only Earth pulls. Out in the cruise, only the Sun. Near Mars, only Mars. Each of those regions is called a sphere of influence, and inside each one the spacecraft flies a clean Keplerian conic. When the spacecraft crosses a boundary, you switch coordinate systems and start a new conic. Patched together, they form the trajectory. That's patched conics.",
+    "cur": "Barano. Fingono che, in ogni momento, conti la gravità di UN SOLO corpo. Vicino alla Terra, tira solo la Terra. Durante la crociera, solo il Sole. Vicino a Marte, solo Marte. Ciascuna di queste regioni si chiama sfera d'influenza, e al suo interno il veicolo vola una conica di Keplero pulita. Quando il veicolo attraversa un confine, cambi sistema di coordinate e inizi una nuova conica. Cucite insieme, formano la traiettoria. Queste sono le coniche raccordate."
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "narrative_101.2",
+    "en": "The math comes out a few percent off the truth — small enough that real missions plan with it as their first cut, then numerically refine for the launch. It's also small enough that Orrery can run all of this in your browser, in a Web Worker, fast enough to redraw the whole porkchop when you scrub the launch year. The whole simulator is built on this trick.",
+    "cur": "La matematica si discosta dalla realtà di qualche punto percentuale — abbastanza poco perché le missioni reali la usino come prima approssimazione, per poi affinare numericamente in vista del lancio. Ed è abbastanza leggera perché Orrery possa farla girare nel tuo browser, in un Web Worker, così in fretta da ridisegnare l'intero porkchop quando scorri l'anno di lancio. L'intero simulatore è costruito su questo trucco."
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "body_paragraphs.0",
+    "en": "Real gravity is messy. A spacecraft cruising between Earth and Mars feels Earth's gravity, the Sun's gravity, Mars's gravity, plus everything else, all at once. The full math (the n-body problem) has no closed-form solution — only numerical integration. That's slow, fragile, hard to plan with.",
+    "cur": "La gravità reale è caotica. Un'astronave in trasferimento tra la Terra e Marte sente la gravità della Terra, la gravità del Sole, la gravità di Marte, più tutto il resto, tutto insieme. La matematica completa (il problema degli n-corpi) non ha alcuna soluzione in forma chiusa — soltanto integrazione numerica. Questo è lento, fragile, difficile da pianificare."
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "body_paragraphs.1",
+    "en": "Patched conics is the working compromise: declare a sphere of influence around each body. Inside Earth's sphere, only Earth's gravity matters; you fly a Keplerian arc around Earth. Cross the boundary into the heliocentric region, switch to a Sun-centred Kepler arc. Cross into Mars's sphere, switch again. Three Kepler problems, patched together at the boundaries.",
+    "cur": "Le coniche frammentate rappresentano il compromesso operativo: si dichiara una sfera di influenza intorno a ogni corpo celeste. Nella sfera di influenza terrestre, conta solo la gravità della Terra; si vola seguendo un arco Keplero intorno alla Terra. Oltrepassando il confine nella regione eliocentrica, si passa a un arco Keplero centrato sul Sole. Entrando nella sfera di Marte, si passa di nuovo. Tre problemi Keplero, raccordati insieme ai confini."
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "body_paragraphs.2",
+    "en": "It's wrong but useful. Errors at boundaries are small — a few percent of ∆v at most for cislunar work, less for heliocentric — and the math becomes tractable enough to fit in a Web Worker. Orrery's `/plan` porkchops are computed this way; so are the trajectories on `/fly`. Real flight planning at NASA uses the same approximation as the first cut, then refines numerically before launch.",
+    "cur": "È sbagliato ma utile. Gli errori ai confini sono piccoli — pochi punti percentuali di ∆v al massimo per il lavoro cislunar, ancora meno per l'eliocentric — e la matematica diventa sufficientemente trattabile da adattarsi in un Web Worker. I diagrammi di portata (`porkchops`) di Orrery sono calcolati in questo modo; lo sono anche le traiettorie su `/fly`. La pianificazione del volo reale alla NASA usa la stessa approssimazione come primo tentativo, poi la affina numericamente prima del lancio."
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "diagram_caption",
+    "en": "Three frames, three conics: Earth-centred → heliocentric → Mars-centred, patched at sphere-of-influence boundaries.",
+    "cur": "Tre frame, tre coniche, raccordate alle sfere d'influenza."
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "title",
+    "en": "Transfer Ellipse",
+    "cur": "Ellisse di trasferimento"
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "intro_sentence",
+    "en": "The Keplerian arc that carries a spacecraft from one orbit to another — Sun at one focus, just like every other orbit.",
+    "cur": "L'arco kepleriano che trasporta un'astronave da un'orbita all'altra — il Sole a uno dei fuochi, proprio come ogni altra orbita."
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "narrative_101.0",
+    "en": "Mission planning sounds like it's about engines and rockets. It's mostly about choosing an ellipse. Every interplanetary cruise — Apollo to the Moon, Voyager to Neptune, Perseverance to Mars — is just a spacecraft riding an elliptical orbit between where it started and where it's going. The fancy word for that ellipse is the transfer orbit.",
+    "cur": "La pianificazione di una missione sembra una questione di motori e razzi. Per lo più è una questione di scegliere un'ellisse. Ogni crociera interplanetaria — Apollo verso la Luna, Voyager verso Nettuno, Perseverance verso Marte — è solo un veicolo spaziale che percorre un'orbita ellittica tra il punto di partenza e quello di arrivo. Il nome tecnico di quell'ellisse è orbita di trasferimento."
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "narrative_101.1",
+    "en": "It plays by the same rules as every other Keplerian orbit. The Sun sits at one focus. The spacecraft moves slowly at the far end and quickly at the close end. Vis-viva still works to compute its speed. Kepler's third law still gives you the time-of-flight from the size. Nothing exotic.",
+    "cur": "Segue le stesse regole di ogni altra orbita di Keplero. Il Sole sta in un fuoco. Il veicolo è lento all'estremità lontana e veloce a quella vicina. Vis-viva continua a funzionare per calcolarne la velocità. La terza legge di Keplero continua a darti il tempo di volo a partire dalla dimensione. Niente di esotico."
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "narrative_101.2",
+    "en": "The only thing that makes a transfer ellipse different from a planet's orbit is that the spacecraft only flies HALF of it. It hops on at one end, rides to the other, and gets off. That's why the ∆v budget always has two big burns — one to enter the ellipse, one to leave it. The middle bit, the eight-month coast, costs absolutely nothing.",
+    "cur": "L'unica cosa che distingue un'ellisse di trasferimento dall'orbita di un pianeta è che il veicolo ne percorre solo METÀ. Sale a un capo, viaggia fino all'altro e scende. Per questo il budget di ∆v ha sempre due grandi accensioni — una per entrare nell'ellisse, una per lasciarla. La parte centrale, gli otto mesi di crociera, non costa assolutamente nulla."
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "body_paragraphs.0",
+    "en": "Once you've burned out of Earth's orbit, you're on an ellipse around the Sun. That ellipse is the transfer orbit, and it has all the same properties as any other: semi-major axis, eccentricity, perihelion, aphelion. The fact that you're going somewhere doesn't change the geometry — gravity doesn't care about your destination.",
+    "cur": "Una volta che sei uscito dall'orbita terrestre, sei su un'ellisse attorno al Sole. Questa ellisse è l'orbita di trasferimento e ha tutte le stesse proprietà di qualsiasi altra: semiasse maggiore, eccentricità, perielio, afelio. Il fatto che tu stia andando da qualche parte non cambia la geometria — la gravità non si cura della tua destinazione."
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "body_paragraphs.1",
+    "en": "Two anchors define a transfer ellipse: where you started (perihelion if you're going outward) and where you'll end up (aphelion). The semi-major axis is the average of those two radii. Tweak either anchor and the whole ellipse reshapes — go further out, the ellipse stretches, the trip gets longer.",
+    "cur": "Due punti di ancoraggio definiscono un'ellisse di trasferimento: il luogo da cui sei partito (perielio se stai andando verso l'esterno) e il luogo dove arriverai (afelio). Il semiasse maggiore è la media di quei due raggi. Modifica uno dei due ancoraggi e l'intera ellisse si rimodella — vai più lontano, l'ellisse si allunga, il viaggio diventa più lungo."
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "body_paragraphs.2",
+    "en": "On Orrery's `/fly` HUD you'll see the spacecraft trace this ellipse in real time. The transfer arc on screen is a visual rendering of the same conic that the math says it is — Sun at one focus, perihelion behind you, aphelion ahead.",
+    "cur": "Su Orrery nell'HUD `/fly` vedrai l'astronave tracciare questa ellisse in tempo reale. L'arco di trasferimento sullo schermo è una rappresentazione visiva della stessa sezione conica che la matematica dice che sia — il Sole a uno dei fuochi, il perielio dietro di te, l'afelio davanti a te."
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "diagram_caption",
+    "en": "Two coplanar orbits (departure inner, destination outer) connected by a transfer ellipse with Sun at one focus.",
+    "cur": "Due orbite coplanari connesse da ellisse con Sole al fuoco."
+  }
 ]

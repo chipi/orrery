@@ -1,8 +1,8 @@
 [
- {
-  "rel": "sourcing/gaps.json",
-  "at": "gaps.1.resolution",
-  "old": "CNSA 기관 로고가 Tiangong 및 Shenzhou 카드와 페이지에 정직한 표시로 사용된다.",
-  "new": "Tiangong과 Shenzhou 카드와 페이지에는 로고 없이 CMSA 이름만 표시한다. CMSA 엠블럼은 자유 라이선스로 공개되지 않았고, CNSA 휘장은 다른 기관의 것이다."
- }
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.1.resolution",
+    "old": "CNSA 기관 로고가 Tiangong 및 Shenzhou 카드와 페이지에 정직한 표시로 사용된다.",
+    "new": "Tiangong과 Shenzhou 카드와 페이지에는 로고 없이 CMSA 이름만 표시한다. CMSA 엠블럼은 자유 라이선스로 공개되지 않았고, CNSA 휘장은 다른 기관의 것이다."
+  }
 ]

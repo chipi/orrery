@@ -1,236 +1,236 @@
 [
- {
-  "rel": "planets/saturn.json",
-  "at": "science_sections.2.why",
-  "old": "La campagna orbitale di 13 anni di Cassini è stata costruita intorno alle leggi di Kepler — ogni attraversamento degli anelli e sorvolo lunare era un arco kepleriano progettato anni in anticipo.",
-  "new": "La campagna orbitale di 13 anni di Cassini è stata costruita intorno alle leggi di Keplero — ogni attraversamento degli anelli e sorvolo lunare era un arco kepleriano progettato anni in anticipo."
- },
- {
-  "rel": "science/_landing.json",
-  "at": "chapters.0.paragraphs.1",
-  "old": "Un'orbita è un'ellisse. Ha una [dimensione](orbits/semi-major-axis), una [forma](orbits/eccentricity) (rotonda vs. allungata), un'[inclinazione](orbits/inclination), e una fase che ti dice dove sull'ellisse si trova il veicolo spaziale in questo momento ([anomalia vera](orbits/true-anomaly)). Cinque numeri e puoi predire la posizione di qualsiasi oggetto nel sistema solare, per sempre, senza alcun altro dato. Queste sono [le tre leggi di Kepler](orbits/keplers-laws), scritte nel 1609 — funzionano ancora.",
-  "new": "Un'orbita è un'ellisse. Ha una [dimensione](orbits/semi-major-axis), una [forma](orbits/eccentricity) (rotonda vs. allungata), un'[inclinazione](orbits/inclination), e una fase che ti dice dove sull'ellisse si trova il veicolo spaziale in questo momento ([anomalia vera](orbits/true-anomaly)). Cinque numeri e puoi predire la posizione di qualsiasi oggetto nel sistema solare, per sempre, senza alcun altro dato. Queste sono [le tre leggi di Keplero](orbits/keplers-laws), scritte nel 1609 — funzionano ancora."
- },
- {
-  "rel": "science/_landing.json",
-  "at": "tools.0.text",
-  "old": "Fai girare il sistema solare. Guarda le leggi di Kepler dal vivo. Clicca su qualsiasi pianeta per i suoi elementi orbitali.",
-  "new": "Fai girare il sistema solare. Guarda le leggi di Keplero dal vivo. Clicca su qualsiasi pianeta per i suoi elementi orbitali."
- },
- {
-  "rel": "science/history/_intro.json",
-  "at": "paragraphs.0",
-  "old": "Il volo spaziale non è apparso dal nulla. Si basa su una serie di scoperte — le ellissi di Kepler, la gravità di Newton, l'equazione dei razzi di Tsiolkovsky, il primo accensione a combustibile liquido di Goddard, l'R-7 di Korolëv — ognuna costruita sulla precedente. Questa scheda ripercorre le tappe fondamentali in ordine cronologico, nomina le persone che le hanno raggiunte, e rimanda al resto di [/science](tab/science) dove vive la matematica.",
-  "new": "Il volo spaziale non è apparso dal nulla. Si basa su una serie di scoperte — le ellissi di Keplero, la gravità di Newton, l'equazione dei razzi di Tsiolkovsky, il primo accensione a combustibile liquido di Goddard, l'R-7 di Korolëv — ognuna costruita sulla precedente. Questa scheda ripercorre le tappe fondamentali in ordine cronologico, nomina le persone che le hanno raggiunte, e rimanda al resto di [/science](tab/science) dove vive la matematica."
- },
- {
-  "rel": "science/history/_intro.json",
-  "at": "paragraphs.1",
-  "old": "Abbiamo selezionato sei momenti cruciali: le ellissi di Kepler, la gravità di Newton, l'equazione dei razzi di Tsiolkovsky, il primo accensione a combustibile liquido di Goddard, l'R-7 di Korolëv e l'Apollo 11. Centinaia di altri meriterebbero un posto; le revisioni future li inseriranno (i telescopi di Galileo, l'articolo sul trasferimento di Hohmann, la moglie di Goddard che ha scattato la maggior parte delle foto, gli ingegneri sovietici che Korolëv non poteva nominare in pubblico, la passeggiata spaziale di Ed White, la linea di altitudine di von Kármán). La storia non appartiene a una sola nazione — ogni capitolo ha persone di cui non hai mai sentito parlare che l'hanno resa possibile.",
-  "new": "Abbiamo selezionato sei momenti cruciali: le ellissi di Keplero, la gravità di Newton, l'equazione dei razzi di Tsiolkovsky, il primo accensione a combustibile liquido di Goddard, l'R-7 di Korolëv e l'Apollo 11. Centinaia di altri meriterebbero un posto; le revisioni future li inseriranno (i telescopi di Galileo, l'articolo sul trasferimento di Hohmann, la moglie di Goddard che ha scattato la maggior parte delle foto, gli ingegneri sovietici che Korolëv non poteva nominare in pubblico, la passeggiata spaziale di Ed White, la linea di altitudine di von Kármán). La storia non appartiene a una sola nazione — ogni capitolo ha persone di cui non hai mai sentito parlare che l'hanno resa possibile."
- },
- {
-  "rel": "science/history/keplers-laws-1609.json",
-  "at": "title",
-  "old": "Leggi di Kepler · 1609–1619",
-  "new": "Leggi di Keplero · 1609–1619"
- },
- {
-  "rel": "science/history/keplers-laws-1609.json",
-  "at": "intro_sentence",
-  "old": "I dati sulla posizione di Marte, raccolti da Tycho Brahe a occhio nudo in una vita intera e sintetizzati da Kepler nelle tre leggi che ogni orbita obbedisce.",
-  "new": "I dati sulla posizione di Marte, raccolti da Tycho Brahe a occhio nudo in una vita intera e sintetizzati da Keplero nelle tre leggi che ogni orbita obbedisce."
- },
- {
-  "rel": "science/history/keplers-laws-1609.json",
-  "at": "narrative_101.1",
-  "old": "Kepler ereditò i quaderni su Marte. Trascorse un altro decennio cercando di adattarli a cerchi e fallì. La svolta arrivò quando tentò un'ellisse — Marte corrispondere immediatamente. Da questo scaturirono tre leggi: le orbite sono ellissi con il Sole in uno dei fuochi; aree uguali sono percorse in tempi uguali; il quadrato del periodo è proporzionale al cubo del semiasse maggiore.",
-  "new": "Keplero ereditò i quaderni su Marte. Trascorse un altro decennio cercando di adattarli a cerchi e fallì. La svolta arrivò quando tentò un'ellisse — Marte corrispondere immediatamente. Da questo scaturirono tre leggi: le orbite sono ellissi con il Sole in uno dei fuochi; aree uguali sono percorse in tempi uguali; il quadrato del periodo è proporzionale al cubo del semiasse maggiore."
- },
- {
-  "rel": "science/history/keplers-laws-1609.json",
-  "at": "body_paragraphs.1",
-  "old": "Kepler non aveva alcuna giustificazione teorica — le leggi erano schemi empirici estratti dai dati. Newton avrebbe fornito la spiegazione 70 anni dopo (la gravità varia come 1/r²; le orbite vincolate sono sezioni coniche; la Legge 3 discende dalla conservazione dell'energia).",
-  "new": "Keplero non aveva alcuna giustificazione teorica — le leggi erano schemi empirici estratti dai dati. Newton avrebbe fornito la spiegazione 70 anni dopo (la gravità varia come 1/r²; le orbite vincolate sono sezioni coniche; la Legge 3 discende dalla conservazione dell'energia)."
- },
- {
-  "rel": "science/history/keplers-laws-1609.json",
-  "at": "body_paragraphs.3",
-  "old": "Rianalisi moderna: i residui di Marte di Kepler sono subarcminuto. Ha individuato un'ellisse con eccentricità 0,0934 da dati che avevano un'incertezza di misurazione irriducibile di ~1 arcminuto. L'adattamento era reale.",
-  "new": "Rianalisi moderna: i residui di Marte di Keplero sono subarcminuto. Ha individuato un'ellisse con eccentricità 0,0934 da dati che avevano un'incertezza di misurazione irriducibile di ~1 arcminuto. L'adattamento era reale."
- },
- {
-  "rel": "science/history/keplers-laws-1609.json",
-  "at": "diagram_caption",
-  "old": "Posizioni di Marte di Tycho (punti) rispetto all'adattamento ellittico di Kepler (curva). Sole in uno dei fuochi.",
-  "new": "Posizioni di Marte di Tycho (punti) rispetto all'adattamento ellittico di Keplero (curva). Sole in uno dei fuochi."
- },
- {
-  "rel": "science/history/newton-principia-1687.json",
-  "at": "narrative_101.2",
-  "old": "Da quelle equazioni: le tre leggi di Kepler derivano chiaramente. Le maree, il moto dei proiettili, la precessione degli equinozi, la forma della Terra — tutte conseguenze. Lo spaceflight 280 anni dopo è meccanica newtoniana diretta con motori aggiunti.",
-  "new": "Da quelle equazioni: le tre leggi di Keplero derivano chiaramente. Le maree, il moto dei proiettili, la precessione degli equinozi, la forma della Terra — tutte conseguenze. Lo spaceflight 280 anni dopo è meccanica newtoniana diretta con motori aggiunti."
- },
- {
-  "rel": "science/history/newton-principia-1687.json",
-  "at": "body_paragraphs.0",
-  "old": "Philosophiæ Naturalis Principia Mathematica fu pubblicato nel luglio 1687 in latino. Tre libri: il moto nel vuoto, il moto attraverso mezzi resistenti, il sistema del mondo. Il terzo libro applica le leggi al cosmo reale e riproduce tutti i dati di Kepler dai primi principi.",
-  "new": "Philosophiæ Naturalis Principia Mathematica fu pubblicato nel luglio 1687 in latino. Tre libri: il moto nel vuoto, il moto attraverso mezzi resistenti, il sistema del mondo. Il terzo libro applica le leggi al cosmo reale e riproduce tutti i dati di Keplero dai primi principi."
- },
- {
-  "rel": "science/observation/magellanic-clouds.json",
-  "at": "body_paragraphs.1",
-  "old": "Entrambe sono galassie irregolari anziché a spirale — caotiche, ricche di polvere, in formazione stellare attiva. La LMC ha circa 10 miliardi di masse solari (circa l'1% della Via Lattea), la SMC circa un decimo di questo. La LMC ospita la Nebulosa Tarantola (30 Doradus), una delle regioni di formazione stellare più prolifiche del Gruppo Locale e il sito della supernova 1987A — la supernova più brillante dalla supernova di Kepler del 1604 e la prima visibile a occhio nudo dalla SN 1885A in Andromeda, nonché la prima supernova i cui neutrini sono stati rilevati (i rivelatori Kamiokande, IMB e Baksan hanno catturato circa 25 neutrini entro pochi secondi l'uno dall'altro, ore prima dell'arrivo della luce ottica). L'ammasso stellare centrale della Tarantola, R136, contiene alcune delle stelle più massicce conosciute (R136a1 è attorno a 200 masse solari).",
-  "new": "Entrambe sono galassie irregolari anziché a spirale — caotiche, ricche di polvere, in formazione stellare attiva. La LMC ha circa 10 miliardi di masse solari (circa l'1% della Via Lattea), la SMC circa un decimo di questo. La LMC ospita la Nebulosa Tarantola (30 Doradus), una delle regioni di formazione stellare più prolifiche del Gruppo Locale e il sito della supernova 1987A — la supernova più brillante dalla supernova di Keplero del 1604 e la prima visibile a occhio nudo dalla SN 1885A in Andromeda, nonché la prima supernova i cui neutrini sono stati rilevati (i rivelatori Kamiokande, IMB e Baksan hanno catturato circa 25 neutrini entro pochi secondi l'uno dall'altro, ore prima dell'arrivo della luce ottica). L'ammasso stellare centrale della Tarantola, R136, contiene alcune delle stelle più massicce conosciute (R136a1 è attorno a 200 masse solari)."
- },
- {
-  "rel": "science/orbits/_intro.json",
-  "at": "paragraphs.2",
-  "old": "Scegli da dove vuoi iniziare. Se la fisica è nuova per te, inizia con l'orbita Kepleriana — è l'intero concetto in una sola sezione. Se vuoi l'equazione di lavoro più affidabile, salta a vis-viva. Se vuoi il dramma storico, vai alle tre leggi di Kepler — un astronomo tedesco nel 1609 ha scoperto tutto questo da dati osservativi grezzi.",
-  "new": "Scegli da dove vuoi iniziare. Se la fisica è nuova per te, inizia con l'orbita Kepleriana — è l'intero concetto in una sola sezione. Se vuoi l'equazione di lavoro più affidabile, salta a vis-viva. Se vuoi il dramma storico, vai alle tre leggi di Keplero — un astronomo tedesco nel 1609 ha scoperto tutto questo da dati osservativi grezzi."
- },
- {
-  "rel": "science/orbits/keplerian-orbit.json",
-  "at": "narrative_101.1",
-  "old": "Ciò che rende l'anello un'orbita di Kepler in particolare è che trattiamo la gravità come un'unica, pulita attrazione verso un corpo pesante — il Sole per i pianeti, la Terra per i satelliti, Marte per InSight. Due corpi, una forza, nessuna complicazione. Il risultato è sempre un'ellisse, e il corpo pesante sta sempre in uno dei due fuochi, mai al centro. Quell'unica immagine sta dietro ogni numero che vedrai in tutta questa enciclopedia.",
-  "new": "Ciò che rende l'anello un'orbita di Keplero in particolare è che trattiamo la gravità come un'unica, pulita attrazione verso un corpo pesante — il Sole per i pianeti, la Terra per i satelliti, Marte per InSight. Due corpi, una forza, nessuna complicazione. Il risultato è sempre un'ellisse, e il corpo pesante sta sempre in uno dei due fuochi, mai al centro. Quell'unica immagine sta dietro ogni numero che vedrai in tutta questa enciclopedia."
- },
- {
-  "rel": "science/orbits/keplerian-orbit.json",
-  "at": "narrative_101.2",
-  "old": "La realtà è più disordinata — le lune perturbano i pianeti, il rigonfiamento della Terra tira i satelliti, il Sole attira le traiettorie lunari — ma il disordine è per lo più una piccola correzione sopra un'orbita di Kepler. Quindi partiamo da qui. Azzecca l'ellisse e tutto il resto è decorazione.",
-  "new": "La realtà è più disordinata — le lune perturbano i pianeti, il rigonfiamento della Terra tira i satelliti, il Sole attira le traiettorie lunari — ma il disordine è per lo più una piccola correzione sopra un'orbita di Keplero. Quindi partiamo da qui. Azzecca l'ellisse e tutto il resto è decorazione."
- },
- {
-  "rel": "science/orbits/keplers-laws.json",
-  "at": "title",
-  "old": "Le tre leggi di Kepler",
-  "new": "Le tre leggi di Keplero"
- },
- {
-  "rel": "science/orbits/keplers-laws.json",
-  "at": "narrative_101.0",
-  "old": "Kepler non aveva il calcolo infinitesimale. Non aveva la gravità di Newton. Non aveva un computer. Aveva vent'anni di osservazioni di Marte del suo capo Tycho Brahe, fatte a occhio nudo con un quadrante con una cura meticolosa, e aveva pazienza. Da lì scrisse tre regole che sono ancora esattamente corrette oggi, quattrocento anni dopo.",
-  "new": "Keplero non aveva il calcolo infinitesimale. Non aveva la gravità di Newton. Non aveva un computer. Aveva vent'anni di osservazioni di Marte del suo capo Tycho Brahe, fatte a occhio nudo con un quadrante con una cura meticolosa, e aveva pazienza. Da lì scrisse tre regole che sono ancora esattamente corrette oggi, quattrocento anni dopo."
- },
- {
-  "rel": "science/orbits/keplers-laws.json",
-  "at": "narrative_101.2",
-  "old": "Newton arrivò settant'anni dopo e dimostrò che tutte e tre le leggi discendono da un'unica, semplice equazione della gravità. Ma Kepler ci arrivò per primo, senza teoria — solo fissando i numeri finché non confessarono. È il genere di mossa che puoi ancora fare nella scienza moderna, se hai la pazienza.",
-  "new": "Newton arrivò settant'anni dopo e dimostrò che tutte e tre le leggi discendono da un'unica, semplice equazione della gravità. Ma Keplero ci arrivò per primo, senza teoria — solo fissando i numeri finché non confessarono. È il genere di mossa che puoi ancora fare nella scienza moderna, se hai la pazienza."
- },
- {
-  "rel": "science/orbits/keplers-laws.json",
-  "at": "body_paragraphs.0",
-  "old": "Prima legge: i pianeti orbitano su ellissi con il Sole in uno dei fuochi. Prima di Kepler, ogni modello utilizzava cerchi — a volte annidati, a volte sfalsati, ma sempre circolari. Kepler utilizzò venti anni di osservazioni di Marte di Tycho Brahe e si arrese: i dati non si adattavano ai cerchi, e nulla di quello che potesse fare li avrebbe fatti adattare. Le ellissi si adattavano al primo tentativo.",
-  "new": "Prima legge: i pianeti orbitano su ellissi con il Sole in uno dei fuochi. Prima di Keplero, ogni modello utilizzava cerchi — a volte annidati, a volte sfalsati, ma sempre circolari. Keplero utilizzò venti anni di osservazioni di Marte di Tycho Brahe e si arrese: i dati non si adattavano ai cerchi, e nulla di quello che potesse fare li avrebbe fatti adattare. Le ellissi si adattavano al primo tentativo."
- },
- {
-  "rel": "science/orbits/keplers-laws.json",
-  "at": "body_paragraphs.2",
-  "old": "Terza legge: `T² ∝ a³`. Il quadrato del periodo orbitale è proporzionale al cubo del semiasse maggiore. Con la Terra posta a T = 1 anno e a = 1 UA, puoi leggere il periodo di qualsiasi pianeta dalla sua distanza — o la sua distanza dal suo periodo. Newton successivamente derivò questo dalla gravità; Kepler ci arrivò attraverso il puro riconoscimento di pattern nei dati di Tycho Brahe.",
-  "new": "Terza legge: `T² ∝ a³`. Il quadrato del periodo orbitale è proporzionale al cubo del semiasse maggiore. Con la Terra posta a T = 1 anno e a = 1 UA, puoi leggere il periodo di qualsiasi pianeta dalla sua distanza — o la sua distanza dal suo periodo. Newton successivamente derivò questo dalla gravità; Keplero ci arrivò attraverso il puro riconoscimento di pattern nei dati di Tycho Brahe."
- },
- {
-  "rel": "science/orbits/keplers-laws.json",
-  "at": "formula_caption",
-  "old": "Terza legge di Kepler in forma moderna: T² dipende solo da a (e dal μ del corpo centrale).",
-  "new": "Terza legge di Keplero in forma moderna: T² dipende solo da a (e dal μ del corpo centrale)."
- },
- {
-  "rel": "science/orbits/semi-major-axis.json",
-  "at": "narrative_101.1",
-  "old": "Ecco la parte magica: quell'unico numero ti dice quanto tempo impiega il pianeta a fare il giro del Sole. Non la forma dell'orbita, non la sua inclinazione, non dove si trova ora il pianeta. Solo la dimensione. Un'orbita sbilenca a forma di sigaro e una perfettamente rotonda con lo stesso semiasse maggiore impiegano lo stesso tempo per compiere un giro. Kepler lo capì quattrocento anni fa e gli rendiamo ancora omaggio nei libri di testo.",
-  "new": "Ecco la parte magica: quell'unico numero ti dice quanto tempo impiega il pianeta a fare il giro del Sole. Non la forma dell'orbita, non la sua inclinazione, non dove si trova ora il pianeta. Solo la dimensione. Un'orbita sbilenca a forma di sigaro e una perfettamente rotonda con lo stesso semiasse maggiore impiegano lo stesso tempo per compiere un giro. Keplero lo capì quattrocento anni fa e gli rendiamo ancora omaggio nei libri di testo."
- },
- {
-  "rel": "science/orbits/semi-major-axis.json",
-  "at": "body_paragraphs.1",
-  "old": "Perché importa? A causa della terza legge di Kepler: `T² ∝ a³`. Il periodo orbitale dipende solo dal semiasse maggiore. La forma non importa. L'inclinazione non importa. Deforma un'orbita così da farla diventare un sigaro e un'altra così da farla diventare un cerchio — se entrambe hanno lo stesso `a`, entrambe impiegano esattamente lo stesso tempo per tornare al punto di partenza.",
-  "new": "Perché importa? A causa della terza legge di Keplero: `T² ∝ a³`. Il periodo orbitale dipende solo dal semiasse maggiore. La forma non importa. L'inclinazione non importa. Deforma un'orbita così da farla diventare un sigaro e un'altra così da farla diventare un cerchio — se entrambe hanno lo stesso `a`, entrambe impiegano esattamente lo stesso tempo per tornare al punto di partenza."
- },
- {
-  "rel": "science/orbits/true-anomaly.json",
-  "at": "narrative_101.1",
-  "old": "Ma c'è un inghippo — ed è qui che si intrufola la seconda legge di Kepler. Il pianeta non spazza questo angolo a ritmo costante. Vicino al passaggio ravvicinato sfreccia. All'estremità lontana arranca. Quindi se chiedi «quanti gradi al giorno?», la risposta cambia di continuo lungo tutta l'orbita.",
-  "new": "Ma c'è un inghippo — ed è qui che si intrufola la seconda legge di Keplero. Il pianeta non spazza questo angolo a ritmo costante. Vicino al passaggio ravvicinato sfreccia. All'estremità lontana arranca. Quindi se chiedi «quanti gradi al giorno?», la risposta cambia di continuo lungo tutta l'orbita."
- },
- {
-  "rel": "science/orbits/true-anomaly.json",
-  "at": "body_paragraphs.1",
-  "old": "Va da 0 al perielio (avvicinamento più vicino) passando per 90° (un quarto del percorso) fino a 180° all'afelio (il più lontano), e poi ritorna. A differenza di un orologio, non scorre uniformemente — la seconda legge di Kepler ti dice che il corpo corre veloce vicino al perielio e striscia vicino all'afelio. Quindi l'anomalia vera al secondo cambia continuamente lungo l'orbita.",
-  "new": "Va da 0 al perielio (avvicinamento più vicino) passando per 90° (un quarto del percorso) fino a 180° all'afelio (il più lontano), e poi ritorna. A differenza di un orologio, non scorre uniformemente — la seconda legge di Keplero ti dice che il corpo corre veloce vicino al perielio e striscia vicino all'afelio. Quindi l'anomalia vera al secondo cambia continuamente lungo l'orbita."
- },
- {
-  "rel": "science/orbits/true-anomaly.json",
-  "at": "body_paragraphs.2",
-  "old": "Angoli sorella che incontrerai: l'anomalia media (`M`), che avanza uniformemente nel tempo ma è geometricamente priva di significato; e l'anomalia eccentrica (`E`), il ponte tra loro. `M` progredisce a velocità costante, risolvi l'equazione di Kepler `M = E - e·sin(E)` per ottenere `E`, poi converti a `ν`. La catena è il battito cardiaco di ogni simulatore orbitale, incluso Orrery's.",
-  "new": "Angoli sorella che incontrerai: l'anomalia media (`M`), che avanza uniformemente nel tempo ma è geometricamente priva di significato; e l'anomalia eccentrica (`E`), il ponte tra loro. `M` progredisce a velocità costante, risolvi l'equazione di Keplero `M = E - e·sin(E)` per ottenere `E`, poi converti a `ν`. La catena è il battito cardiaco di ogni simulatore orbitale, incluso Orrery's."
- },
- {
-  "rel": "science/scales-time/sidereal-synodic.json",
-  "at": "narrative_101.1",
-  "old": "Se vuoi sapere quanto impiega Marte a fare UN GIRO attorno al Sole, la risposta è 687 giorni terrestri. Quello è il periodo siderale — misurato rispetto alle stelle lontane e immobili. È la verità geometrica dell'orbita. Vis-viva e la terza legge di Kepler lavorano entrambe in tempo siderale.",
-  "new": "Se vuoi sapere quanto impiega Marte a fare UN GIRO attorno al Sole, la risposta è 687 giorni terrestri. Quello è il periodo siderale — misurato rispetto alle stelle lontane e immobili. È la verità geometrica dell'orbita. Vis-viva e la terza legge di Keplero lavorano entrambe in tempo siderale."
- },
- {
-  "rel": "science/transfers/conic-sections.json",
-  "at": "body_paragraphs.0",
-  "old": "Prendi un cono infinito e taglialo con un piano. Affetta orizzontalmente: un cerchio (`e = 0`). Inclina il taglio: un'ellisse (`0 < e < 1`). Inclina parallelo al bordo del cono: una parabola (`e = 1`, il caso esatto di fuga). Inclina oltre: un'iperbole (`e > 1`, fuga con energia di riserva). Duemila anni prima di Kepler, Apollonius di Perga catalogò queste curve. Due secoli prima di Newton, Kepler scoprì che i pianeti volano lungo di esse.",
-  "new": "Prendi un cono infinito e taglialo con un piano. Affetta orizzontalmente: un cerchio (`e = 0`). Inclina il taglio: un'ellisse (`0 < e < 1`). Inclina parallelo al bordo del cono: una parabola (`e = 1`, il caso esatto di fuga). Inclina oltre: un'iperbole (`e > 1`, fuga con energia di riserva). Duemila anni prima di Keplero, Apollonius di Perga catalogò queste curve. Due secoli prima di Newton, Keplero scoprì che i pianeti volano lungo di esse."
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "intro_sentence",
-  "old": "Fingi che la gravità sia un corpo alla volta — l'approssimazione che trasforma l'irrisolvibile problema dei tre corpi in una catena di problemi di Kepler a due corpi che si possono davvero risolvere.",
-  "new": "Fingi che la gravità sia un corpo alla volta — l'approssimazione che trasforma l'irrisolvibile problema dei tre corpi in una catena di problemi di Keplero a due corpi che si possono davvero risolvere."
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "narrative_101.1",
-  "old": "Barano. Fingono che, in ogni momento, conti la gravità di UN SOLO corpo. Vicino alla Terra, tira solo la Terra. Durante la crociera, solo il Sole. Vicino a Marte, solo Marte. Ciascuna di queste regioni si chiama sfera d'influenza, e al suo interno il veicolo vola una conica di Kepler pulita. Quando il veicolo attraversa un confine, cambi sistema di coordinate e inizi una nuova conica. Cucite insieme, formano la traiettoria. Queste sono le coniche raccordate.",
-  "new": "Barano. Fingono che, in ogni momento, conti la gravità di UN SOLO corpo. Vicino alla Terra, tira solo la Terra. Durante la crociera, solo il Sole. Vicino a Marte, solo Marte. Ciascuna di queste regioni si chiama sfera d'influenza, e al suo interno il veicolo vola una conica di Keplero pulita. Quando il veicolo attraversa un confine, cambi sistema di coordinate e inizi una nuova conica. Cucite insieme, formano la traiettoria. Queste sono le coniche raccordate."
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "body_paragraphs.1",
-  "old": "Le coniche frammentate rappresentano il compromesso operativo: si dichiara una sfera di influenza intorno a ogni corpo celeste. Nella sfera di influenza terrestre, conta solo la gravità della Terra; si vola seguendo un arco Kepler intorno alla Terra. Oltrepassando il confine nella regione eliocentrica, si passa a un arco Kepler centrato sul Sole. Entrando nella sfera di Marte, si passa di nuovo. Tre problemi Kepler, raccordati insieme ai confini.",
-  "new": "Le coniche frammentate rappresentano il compromesso operativo: si dichiara una sfera di influenza intorno a ogni corpo celeste. Nella sfera di influenza terrestre, conta solo la gravità della Terra; si vola seguendo un arco Keplero intorno alla Terra. Oltrepassando il confine nella regione eliocentrica, si passa a un arco Keplero centrato sul Sole. Entrando nella sfera di Marte, si passa di nuovo. Tre problemi Keplero, raccordati insieme ai confini."
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "narrative_101.1",
-  "old": "Segue le stesse regole di ogni altra orbita di Kepler. Il Sole sta in un fuoco. Il veicolo è lento all'estremità lontana e veloce a quella vicina. Vis-viva continua a funzionare per calcolarne la velocità. La terza legge di Kepler continua a darti il tempo di volo a partire dalla dimensione. Niente di esotico.",
-  "new": "Segue le stesse regole di ogni altra orbita di Keplero. Il Sole sta in un fuoco. Il veicolo è lento all'estremità lontana e veloce a quella vicina. Vis-viva continua a funzionare per calcolarne la velocità. La terza legge di Keplero continua a darti il tempo di volo a partire dalla dimensione. Niente di esotico."
- },
- {
-  "rel": "universe/named-stars/bellatrix.json",
-  "at": "bio",
-  "old": "Bellatrix (Gamma Orionis) è una calda gigante blu distante circa 250 anni luce, che segna la spalla sinistra di Orion il Cacciatore. È una delle stelle più calde e blu visibili ad occhio nudo nella costellazione.",
-  "new": "Bellatrix (Gamma Orionis) è una calda gigante blu distante circa 250 anni luce, che segna la spalla sinistra di Orione il Cacciatore. È una delle stelle più calde e blu visibili ad occhio nudo nella costellazione."
- },
- {
-  "rel": "messages",
-  "at": "why_station_period_body",
-  "old": "Terza legge di Kepler: a ~400 km il periodo è bloccato a circa 92 minuti. Sono 16 albe e 16 tramonti per giorno di equipaggio — il ritmo circadiano del corpo viene martellato, ed è per questo che gli equipaggi vivono su un Tempo Missione sintetico di 24 ore allineato all'UTC.",
-  "new": "Terza legge di Keplero: a ~400 km il periodo è bloccato a circa 92 minuti. Sono 16 albe e 16 tramonti per giorno di equipaggio — il ritmo circadiano del corpo viene martellato, ed è per questo che gli equipaggi vivono su un Tempo Missione sintetico di 24 ore allineato all'UTC."
- },
- {
-  "rel": "messages",
-  "at": "lab_assume_kepler_j2",
-  "old": "Propagazione Kepler + J2 secolare (non full SGP4)",
-  "new": "Propagazione Keplero + J2 secolare (non full SGP4)"
- },
- {
-  "rel": "messages",
-  "at": "lab_f_regime_glossary",
-  "old": "Un raggio, due numeri: v = √(μ/r) e T = 2π√(r³/μ) (velocità orbitale più terza legge di Kepler). L'orbita bassa compie un giro intorno alla Terra in 90 minuti; orbite più alte rallentano — l'intera mappa dei regimi in due formule.",
-  "new": "Un raggio, due numeri: v = √(μ/r) e T = 2π√(r³/μ) (velocità orbitale più terza legge di Keplero). L'orbita bassa compie un giro intorno alla Terra in 90 minuti; orbite più alte rallentano — l'intera mappa dei regimi in due formule."
- },
- {
-  "rel": "messages",
-  "at": "lab_f_geo_glossary",
-  "old": "Fissa il periodo T a un giorno sidereo e risolvi Kepler: a = ∛(μT²/4π²) — 35.786 km di altitudine, l'orbita resta al passo con la Terra che ruota. Staziona lì e rimani immobile nel cielo.",
-  "new": "Fissa il periodo T a un giorno sidereo e risolvi Keplero: a = ∛(μT²/4π²) — 35.786 km di altitudine, l'orbita resta al passo con la Terra che ruota. Staziona lì e rimani immobile nel cielo."
- }
+  {
+    "rel": "planets/saturn.json",
+    "at": "science_sections.2.why",
+    "old": "La campagna orbitale di 13 anni di Cassini è stata costruita intorno alle leggi di Kepler — ogni attraversamento degli anelli e sorvolo lunare era un arco kepleriano progettato anni in anticipo.",
+    "new": "La campagna orbitale di 13 anni di Cassini è stata costruita intorno alle leggi di Keplero — ogni attraversamento degli anelli e sorvolo lunare era un arco kepleriano progettato anni in anticipo."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.0.paragraphs.1",
+    "old": "Un'orbita è un'ellisse. Ha una [dimensione](orbits/semi-major-axis), una [forma](orbits/eccentricity) (rotonda vs. allungata), un'[inclinazione](orbits/inclination), e una fase che ti dice dove sull'ellisse si trova il veicolo spaziale in questo momento ([anomalia vera](orbits/true-anomaly)). Cinque numeri e puoi predire la posizione di qualsiasi oggetto nel sistema solare, per sempre, senza alcun altro dato. Queste sono [le tre leggi di Kepler](orbits/keplers-laws), scritte nel 1609 — funzionano ancora.",
+    "new": "Un'orbita è un'ellisse. Ha una [dimensione](orbits/semi-major-axis), una [forma](orbits/eccentricity) (rotonda vs. allungata), un'[inclinazione](orbits/inclination), e una fase che ti dice dove sull'ellisse si trova il veicolo spaziale in questo momento ([anomalia vera](orbits/true-anomaly)). Cinque numeri e puoi predire la posizione di qualsiasi oggetto nel sistema solare, per sempre, senza alcun altro dato. Queste sono [le tre leggi di Keplero](orbits/keplers-laws), scritte nel 1609 — funzionano ancora."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "tools.0.text",
+    "old": "Fai girare il sistema solare. Guarda le leggi di Kepler dal vivo. Clicca su qualsiasi pianeta per i suoi elementi orbitali.",
+    "new": "Fai girare il sistema solare. Guarda le leggi di Keplero dal vivo. Clicca su qualsiasi pianeta per i suoi elementi orbitali."
+  },
+  {
+    "rel": "science/history/_intro.json",
+    "at": "paragraphs.0",
+    "old": "Il volo spaziale non è apparso dal nulla. Si basa su una serie di scoperte — le ellissi di Kepler, la gravità di Newton, l'equazione dei razzi di Tsiolkovsky, il primo accensione a combustibile liquido di Goddard, l'R-7 di Korolëv — ognuna costruita sulla precedente. Questa scheda ripercorre le tappe fondamentali in ordine cronologico, nomina le persone che le hanno raggiunte, e rimanda al resto di [/science](tab/science) dove vive la matematica.",
+    "new": "Il volo spaziale non è apparso dal nulla. Si basa su una serie di scoperte — le ellissi di Keplero, la gravità di Newton, l'equazione dei razzi di Tsiolkovsky, il primo accensione a combustibile liquido di Goddard, l'R-7 di Korolëv — ognuna costruita sulla precedente. Questa scheda ripercorre le tappe fondamentali in ordine cronologico, nomina le persone che le hanno raggiunte, e rimanda al resto di [/science](tab/science) dove vive la matematica."
+  },
+  {
+    "rel": "science/history/_intro.json",
+    "at": "paragraphs.1",
+    "old": "Abbiamo selezionato sei momenti cruciali: le ellissi di Kepler, la gravità di Newton, l'equazione dei razzi di Tsiolkovsky, il primo accensione a combustibile liquido di Goddard, l'R-7 di Korolëv e l'Apollo 11. Centinaia di altri meriterebbero un posto; le revisioni future li inseriranno (i telescopi di Galileo, l'articolo sul trasferimento di Hohmann, la moglie di Goddard che ha scattato la maggior parte delle foto, gli ingegneri sovietici che Korolëv non poteva nominare in pubblico, la passeggiata spaziale di Ed White, la linea di altitudine di von Kármán). La storia non appartiene a una sola nazione — ogni capitolo ha persone di cui non hai mai sentito parlare che l'hanno resa possibile.",
+    "new": "Abbiamo selezionato sei momenti cruciali: le ellissi di Keplero, la gravità di Newton, l'equazione dei razzi di Tsiolkovsky, il primo accensione a combustibile liquido di Goddard, l'R-7 di Korolëv e l'Apollo 11. Centinaia di altri meriterebbero un posto; le revisioni future li inseriranno (i telescopi di Galileo, l'articolo sul trasferimento di Hohmann, la moglie di Goddard che ha scattato la maggior parte delle foto, gli ingegneri sovietici che Korolëv non poteva nominare in pubblico, la passeggiata spaziale di Ed White, la linea di altitudine di von Kármán). La storia non appartiene a una sola nazione — ogni capitolo ha persone di cui non hai mai sentito parlare che l'hanno resa possibile."
+  },
+  {
+    "rel": "science/history/keplers-laws-1609.json",
+    "at": "title",
+    "old": "Leggi di Kepler · 1609–1619",
+    "new": "Leggi di Keplero · 1609–1619"
+  },
+  {
+    "rel": "science/history/keplers-laws-1609.json",
+    "at": "intro_sentence",
+    "old": "I dati sulla posizione di Marte, raccolti da Tycho Brahe a occhio nudo in una vita intera e sintetizzati da Kepler nelle tre leggi che ogni orbita obbedisce.",
+    "new": "I dati sulla posizione di Marte, raccolti da Tycho Brahe a occhio nudo in una vita intera e sintetizzati da Keplero nelle tre leggi che ogni orbita obbedisce."
+  },
+  {
+    "rel": "science/history/keplers-laws-1609.json",
+    "at": "narrative_101.1",
+    "old": "Kepler ereditò i quaderni su Marte. Trascorse un altro decennio cercando di adattarli a cerchi e fallì. La svolta arrivò quando tentò un'ellisse — Marte corrispondere immediatamente. Da questo scaturirono tre leggi: le orbite sono ellissi con il Sole in uno dei fuochi; aree uguali sono percorse in tempi uguali; il quadrato del periodo è proporzionale al cubo del semiasse maggiore.",
+    "new": "Keplero ereditò i quaderni su Marte. Trascorse un altro decennio cercando di adattarli a cerchi e fallì. La svolta arrivò quando tentò un'ellisse — Marte corrispondere immediatamente. Da questo scaturirono tre leggi: le orbite sono ellissi con il Sole in uno dei fuochi; aree uguali sono percorse in tempi uguali; il quadrato del periodo è proporzionale al cubo del semiasse maggiore."
+  },
+  {
+    "rel": "science/history/keplers-laws-1609.json",
+    "at": "body_paragraphs.1",
+    "old": "Kepler non aveva alcuna giustificazione teorica — le leggi erano schemi empirici estratti dai dati. Newton avrebbe fornito la spiegazione 70 anni dopo (la gravità varia come 1/r²; le orbite vincolate sono sezioni coniche; la Legge 3 discende dalla conservazione dell'energia).",
+    "new": "Keplero non aveva alcuna giustificazione teorica — le leggi erano schemi empirici estratti dai dati. Newton avrebbe fornito la spiegazione 70 anni dopo (la gravità varia come 1/r²; le orbite vincolate sono sezioni coniche; la Legge 3 discende dalla conservazione dell'energia)."
+  },
+  {
+    "rel": "science/history/keplers-laws-1609.json",
+    "at": "body_paragraphs.3",
+    "old": "Rianalisi moderna: i residui di Marte di Kepler sono subarcminuto. Ha individuato un'ellisse con eccentricità 0,0934 da dati che avevano un'incertezza di misurazione irriducibile di ~1 arcminuto. L'adattamento era reale.",
+    "new": "Rianalisi moderna: i residui di Marte di Keplero sono subarcminuto. Ha individuato un'ellisse con eccentricità 0,0934 da dati che avevano un'incertezza di misurazione irriducibile di ~1 arcminuto. L'adattamento era reale."
+  },
+  {
+    "rel": "science/history/keplers-laws-1609.json",
+    "at": "diagram_caption",
+    "old": "Posizioni di Marte di Tycho (punti) rispetto all'adattamento ellittico di Kepler (curva). Sole in uno dei fuochi.",
+    "new": "Posizioni di Marte di Tycho (punti) rispetto all'adattamento ellittico di Keplero (curva). Sole in uno dei fuochi."
+  },
+  {
+    "rel": "science/history/newton-principia-1687.json",
+    "at": "narrative_101.2",
+    "old": "Da quelle equazioni: le tre leggi di Kepler derivano chiaramente. Le maree, il moto dei proiettili, la precessione degli equinozi, la forma della Terra — tutte conseguenze. Lo spaceflight 280 anni dopo è meccanica newtoniana diretta con motori aggiunti.",
+    "new": "Da quelle equazioni: le tre leggi di Keplero derivano chiaramente. Le maree, il moto dei proiettili, la precessione degli equinozi, la forma della Terra — tutte conseguenze. Lo spaceflight 280 anni dopo è meccanica newtoniana diretta con motori aggiunti."
+  },
+  {
+    "rel": "science/history/newton-principia-1687.json",
+    "at": "body_paragraphs.0",
+    "old": "Philosophiæ Naturalis Principia Mathematica fu pubblicato nel luglio 1687 in latino. Tre libri: il moto nel vuoto, il moto attraverso mezzi resistenti, il sistema del mondo. Il terzo libro applica le leggi al cosmo reale e riproduce tutti i dati di Kepler dai primi principi.",
+    "new": "Philosophiæ Naturalis Principia Mathematica fu pubblicato nel luglio 1687 in latino. Tre libri: il moto nel vuoto, il moto attraverso mezzi resistenti, il sistema del mondo. Il terzo libro applica le leggi al cosmo reale e riproduce tutti i dati di Keplero dai primi principi."
+  },
+  {
+    "rel": "science/observation/magellanic-clouds.json",
+    "at": "body_paragraphs.1",
+    "old": "Entrambe sono galassie irregolari anziché a spirale — caotiche, ricche di polvere, in formazione stellare attiva. La LMC ha circa 10 miliardi di masse solari (circa l'1% della Via Lattea), la SMC circa un decimo di questo. La LMC ospita la Nebulosa Tarantola (30 Doradus), una delle regioni di formazione stellare più prolifiche del Gruppo Locale e il sito della supernova 1987A — la supernova più brillante dalla supernova di Kepler del 1604 e la prima visibile a occhio nudo dalla SN 1885A in Andromeda, nonché la prima supernova i cui neutrini sono stati rilevati (i rivelatori Kamiokande, IMB e Baksan hanno catturato circa 25 neutrini entro pochi secondi l'uno dall'altro, ore prima dell'arrivo della luce ottica). L'ammasso stellare centrale della Tarantola, R136, contiene alcune delle stelle più massicce conosciute (R136a1 è attorno a 200 masse solari).",
+    "new": "Entrambe sono galassie irregolari anziché a spirale — caotiche, ricche di polvere, in formazione stellare attiva. La LMC ha circa 10 miliardi di masse solari (circa l'1% della Via Lattea), la SMC circa un decimo di questo. La LMC ospita la Nebulosa Tarantola (30 Doradus), una delle regioni di formazione stellare più prolifiche del Gruppo Locale e il sito della supernova 1987A — la supernova più brillante dalla supernova di Keplero del 1604 e la prima visibile a occhio nudo dalla SN 1885A in Andromeda, nonché la prima supernova i cui neutrini sono stati rilevati (i rivelatori Kamiokande, IMB e Baksan hanno catturato circa 25 neutrini entro pochi secondi l'uno dall'altro, ore prima dell'arrivo della luce ottica). L'ammasso stellare centrale della Tarantola, R136, contiene alcune delle stelle più massicce conosciute (R136a1 è attorno a 200 masse solari)."
+  },
+  {
+    "rel": "science/orbits/_intro.json",
+    "at": "paragraphs.2",
+    "old": "Scegli da dove vuoi iniziare. Se la fisica è nuova per te, inizia con l'orbita Kepleriana — è l'intero concetto in una sola sezione. Se vuoi l'equazione di lavoro più affidabile, salta a vis-viva. Se vuoi il dramma storico, vai alle tre leggi di Kepler — un astronomo tedesco nel 1609 ha scoperto tutto questo da dati osservativi grezzi.",
+    "new": "Scegli da dove vuoi iniziare. Se la fisica è nuova per te, inizia con l'orbita Kepleriana — è l'intero concetto in una sola sezione. Se vuoi l'equazione di lavoro più affidabile, salta a vis-viva. Se vuoi il dramma storico, vai alle tre leggi di Keplero — un astronomo tedesco nel 1609 ha scoperto tutto questo da dati osservativi grezzi."
+  },
+  {
+    "rel": "science/orbits/keplerian-orbit.json",
+    "at": "narrative_101.1",
+    "old": "Ciò che rende l'anello un'orbita di Kepler in particolare è che trattiamo la gravità come un'unica, pulita attrazione verso un corpo pesante — il Sole per i pianeti, la Terra per i satelliti, Marte per InSight. Due corpi, una forza, nessuna complicazione. Il risultato è sempre un'ellisse, e il corpo pesante sta sempre in uno dei due fuochi, mai al centro. Quell'unica immagine sta dietro ogni numero che vedrai in tutta questa enciclopedia.",
+    "new": "Ciò che rende l'anello un'orbita di Keplero in particolare è che trattiamo la gravità come un'unica, pulita attrazione verso un corpo pesante — il Sole per i pianeti, la Terra per i satelliti, Marte per InSight. Due corpi, una forza, nessuna complicazione. Il risultato è sempre un'ellisse, e il corpo pesante sta sempre in uno dei due fuochi, mai al centro. Quell'unica immagine sta dietro ogni numero che vedrai in tutta questa enciclopedia."
+  },
+  {
+    "rel": "science/orbits/keplerian-orbit.json",
+    "at": "narrative_101.2",
+    "old": "La realtà è più disordinata — le lune perturbano i pianeti, il rigonfiamento della Terra tira i satelliti, il Sole attira le traiettorie lunari — ma il disordine è per lo più una piccola correzione sopra un'orbita di Kepler. Quindi partiamo da qui. Azzecca l'ellisse e tutto il resto è decorazione.",
+    "new": "La realtà è più disordinata — le lune perturbano i pianeti, il rigonfiamento della Terra tira i satelliti, il Sole attira le traiettorie lunari — ma il disordine è per lo più una piccola correzione sopra un'orbita di Keplero. Quindi partiamo da qui. Azzecca l'ellisse e tutto il resto è decorazione."
+  },
+  {
+    "rel": "science/orbits/keplers-laws.json",
+    "at": "title",
+    "old": "Le tre leggi di Kepler",
+    "new": "Le tre leggi di Keplero"
+  },
+  {
+    "rel": "science/orbits/keplers-laws.json",
+    "at": "narrative_101.0",
+    "old": "Kepler non aveva il calcolo infinitesimale. Non aveva la gravità di Newton. Non aveva un computer. Aveva vent'anni di osservazioni di Marte del suo capo Tycho Brahe, fatte a occhio nudo con un quadrante con una cura meticolosa, e aveva pazienza. Da lì scrisse tre regole che sono ancora esattamente corrette oggi, quattrocento anni dopo.",
+    "new": "Keplero non aveva il calcolo infinitesimale. Non aveva la gravità di Newton. Non aveva un computer. Aveva vent'anni di osservazioni di Marte del suo capo Tycho Brahe, fatte a occhio nudo con un quadrante con una cura meticolosa, e aveva pazienza. Da lì scrisse tre regole che sono ancora esattamente corrette oggi, quattrocento anni dopo."
+  },
+  {
+    "rel": "science/orbits/keplers-laws.json",
+    "at": "narrative_101.2",
+    "old": "Newton arrivò settant'anni dopo e dimostrò che tutte e tre le leggi discendono da un'unica, semplice equazione della gravità. Ma Kepler ci arrivò per primo, senza teoria — solo fissando i numeri finché non confessarono. È il genere di mossa che puoi ancora fare nella scienza moderna, se hai la pazienza.",
+    "new": "Newton arrivò settant'anni dopo e dimostrò che tutte e tre le leggi discendono da un'unica, semplice equazione della gravità. Ma Keplero ci arrivò per primo, senza teoria — solo fissando i numeri finché non confessarono. È il genere di mossa che puoi ancora fare nella scienza moderna, se hai la pazienza."
+  },
+  {
+    "rel": "science/orbits/keplers-laws.json",
+    "at": "body_paragraphs.0",
+    "old": "Prima legge: i pianeti orbitano su ellissi con il Sole in uno dei fuochi. Prima di Kepler, ogni modello utilizzava cerchi — a volte annidati, a volte sfalsati, ma sempre circolari. Kepler utilizzò venti anni di osservazioni di Marte di Tycho Brahe e si arrese: i dati non si adattavano ai cerchi, e nulla di quello che potesse fare li avrebbe fatti adattare. Le ellissi si adattavano al primo tentativo.",
+    "new": "Prima legge: i pianeti orbitano su ellissi con il Sole in uno dei fuochi. Prima di Keplero, ogni modello utilizzava cerchi — a volte annidati, a volte sfalsati, ma sempre circolari. Keplero utilizzò venti anni di osservazioni di Marte di Tycho Brahe e si arrese: i dati non si adattavano ai cerchi, e nulla di quello che potesse fare li avrebbe fatti adattare. Le ellissi si adattavano al primo tentativo."
+  },
+  {
+    "rel": "science/orbits/keplers-laws.json",
+    "at": "body_paragraphs.2",
+    "old": "Terza legge: `T² ∝ a³`. Il quadrato del periodo orbitale è proporzionale al cubo del semiasse maggiore. Con la Terra posta a T = 1 anno e a = 1 UA, puoi leggere il periodo di qualsiasi pianeta dalla sua distanza — o la sua distanza dal suo periodo. Newton successivamente derivò questo dalla gravità; Kepler ci arrivò attraverso il puro riconoscimento di pattern nei dati di Tycho Brahe.",
+    "new": "Terza legge: `T² ∝ a³`. Il quadrato del periodo orbitale è proporzionale al cubo del semiasse maggiore. Con la Terra posta a T = 1 anno e a = 1 UA, puoi leggere il periodo di qualsiasi pianeta dalla sua distanza — o la sua distanza dal suo periodo. Newton successivamente derivò questo dalla gravità; Keplero ci arrivò attraverso il puro riconoscimento di pattern nei dati di Tycho Brahe."
+  },
+  {
+    "rel": "science/orbits/keplers-laws.json",
+    "at": "formula_caption",
+    "old": "Terza legge di Kepler in forma moderna: T² dipende solo da a (e dal μ del corpo centrale).",
+    "new": "Terza legge di Keplero in forma moderna: T² dipende solo da a (e dal μ del corpo centrale)."
+  },
+  {
+    "rel": "science/orbits/semi-major-axis.json",
+    "at": "narrative_101.1",
+    "old": "Ecco la parte magica: quell'unico numero ti dice quanto tempo impiega il pianeta a fare il giro del Sole. Non la forma dell'orbita, non la sua inclinazione, non dove si trova ora il pianeta. Solo la dimensione. Un'orbita sbilenca a forma di sigaro e una perfettamente rotonda con lo stesso semiasse maggiore impiegano lo stesso tempo per compiere un giro. Kepler lo capì quattrocento anni fa e gli rendiamo ancora omaggio nei libri di testo.",
+    "new": "Ecco la parte magica: quell'unico numero ti dice quanto tempo impiega il pianeta a fare il giro del Sole. Non la forma dell'orbita, non la sua inclinazione, non dove si trova ora il pianeta. Solo la dimensione. Un'orbita sbilenca a forma di sigaro e una perfettamente rotonda con lo stesso semiasse maggiore impiegano lo stesso tempo per compiere un giro. Keplero lo capì quattrocento anni fa e gli rendiamo ancora omaggio nei libri di testo."
+  },
+  {
+    "rel": "science/orbits/semi-major-axis.json",
+    "at": "body_paragraphs.1",
+    "old": "Perché importa? A causa della terza legge di Kepler: `T² ∝ a³`. Il periodo orbitale dipende solo dal semiasse maggiore. La forma non importa. L'inclinazione non importa. Deforma un'orbita così da farla diventare un sigaro e un'altra così da farla diventare un cerchio — se entrambe hanno lo stesso `a`, entrambe impiegano esattamente lo stesso tempo per tornare al punto di partenza.",
+    "new": "Perché importa? A causa della terza legge di Keplero: `T² ∝ a³`. Il periodo orbitale dipende solo dal semiasse maggiore. La forma non importa. L'inclinazione non importa. Deforma un'orbita così da farla diventare un sigaro e un'altra così da farla diventare un cerchio — se entrambe hanno lo stesso `a`, entrambe impiegano esattamente lo stesso tempo per tornare al punto di partenza."
+  },
+  {
+    "rel": "science/orbits/true-anomaly.json",
+    "at": "narrative_101.1",
+    "old": "Ma c'è un inghippo — ed è qui che si intrufola la seconda legge di Kepler. Il pianeta non spazza questo angolo a ritmo costante. Vicino al passaggio ravvicinato sfreccia. All'estremità lontana arranca. Quindi se chiedi «quanti gradi al giorno?», la risposta cambia di continuo lungo tutta l'orbita.",
+    "new": "Ma c'è un inghippo — ed è qui che si intrufola la seconda legge di Keplero. Il pianeta non spazza questo angolo a ritmo costante. Vicino al passaggio ravvicinato sfreccia. All'estremità lontana arranca. Quindi se chiedi «quanti gradi al giorno?», la risposta cambia di continuo lungo tutta l'orbita."
+  },
+  {
+    "rel": "science/orbits/true-anomaly.json",
+    "at": "body_paragraphs.1",
+    "old": "Va da 0 al perielio (avvicinamento più vicino) passando per 90° (un quarto del percorso) fino a 180° all'afelio (il più lontano), e poi ritorna. A differenza di un orologio, non scorre uniformemente — la seconda legge di Kepler ti dice che il corpo corre veloce vicino al perielio e striscia vicino all'afelio. Quindi l'anomalia vera al secondo cambia continuamente lungo l'orbita.",
+    "new": "Va da 0 al perielio (avvicinamento più vicino) passando per 90° (un quarto del percorso) fino a 180° all'afelio (il più lontano), e poi ritorna. A differenza di un orologio, non scorre uniformemente — la seconda legge di Keplero ti dice che il corpo corre veloce vicino al perielio e striscia vicino all'afelio. Quindi l'anomalia vera al secondo cambia continuamente lungo l'orbita."
+  },
+  {
+    "rel": "science/orbits/true-anomaly.json",
+    "at": "body_paragraphs.2",
+    "old": "Angoli sorella che incontrerai: l'anomalia media (`M`), che avanza uniformemente nel tempo ma è geometricamente priva di significato; e l'anomalia eccentrica (`E`), il ponte tra loro. `M` progredisce a velocità costante, risolvi l'equazione di Kepler `M = E - e·sin(E)` per ottenere `E`, poi converti a `ν`. La catena è il battito cardiaco di ogni simulatore orbitale, incluso Orrery's.",
+    "new": "Angoli sorella che incontrerai: l'anomalia media (`M`), che avanza uniformemente nel tempo ma è geometricamente priva di significato; e l'anomalia eccentrica (`E`), il ponte tra loro. `M` progredisce a velocità costante, risolvi l'equazione di Keplero `M = E - e·sin(E)` per ottenere `E`, poi converti a `ν`. La catena è il battito cardiaco di ogni simulatore orbitale, incluso Orrery's."
+  },
+  {
+    "rel": "science/scales-time/sidereal-synodic.json",
+    "at": "narrative_101.1",
+    "old": "Se vuoi sapere quanto impiega Marte a fare UN GIRO attorno al Sole, la risposta è 687 giorni terrestri. Quello è il periodo siderale — misurato rispetto alle stelle lontane e immobili. È la verità geometrica dell'orbita. Vis-viva e la terza legge di Kepler lavorano entrambe in tempo siderale.",
+    "new": "Se vuoi sapere quanto impiega Marte a fare UN GIRO attorno al Sole, la risposta è 687 giorni terrestri. Quello è il periodo siderale — misurato rispetto alle stelle lontane e immobili. È la verità geometrica dell'orbita. Vis-viva e la terza legge di Keplero lavorano entrambe in tempo siderale."
+  },
+  {
+    "rel": "science/transfers/conic-sections.json",
+    "at": "body_paragraphs.0",
+    "old": "Prendi un cono infinito e taglialo con un piano. Affetta orizzontalmente: un cerchio (`e = 0`). Inclina il taglio: un'ellisse (`0 < e < 1`). Inclina parallelo al bordo del cono: una parabola (`e = 1`, il caso esatto di fuga). Inclina oltre: un'iperbole (`e > 1`, fuga con energia di riserva). Duemila anni prima di Kepler, Apollonius di Perga catalogò queste curve. Due secoli prima di Newton, Kepler scoprì che i pianeti volano lungo di esse.",
+    "new": "Prendi un cono infinito e taglialo con un piano. Affetta orizzontalmente: un cerchio (`e = 0`). Inclina il taglio: un'ellisse (`0 < e < 1`). Inclina parallelo al bordo del cono: una parabola (`e = 1`, il caso esatto di fuga). Inclina oltre: un'iperbole (`e > 1`, fuga con energia di riserva). Duemila anni prima di Keplero, Apollonius di Perga catalogò queste curve. Due secoli prima di Newton, Keplero scoprì che i pianeti volano lungo di esse."
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "intro_sentence",
+    "old": "Fingi che la gravità sia un corpo alla volta — l'approssimazione che trasforma l'irrisolvibile problema dei tre corpi in una catena di problemi di Kepler a due corpi che si possono davvero risolvere.",
+    "new": "Fingi che la gravità sia un corpo alla volta — l'approssimazione che trasforma l'irrisolvibile problema dei tre corpi in una catena di problemi di Keplero a due corpi che si possono davvero risolvere."
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "narrative_101.1",
+    "old": "Barano. Fingono che, in ogni momento, conti la gravità di UN SOLO corpo. Vicino alla Terra, tira solo la Terra. Durante la crociera, solo il Sole. Vicino a Marte, solo Marte. Ciascuna di queste regioni si chiama sfera d'influenza, e al suo interno il veicolo vola una conica di Kepler pulita. Quando il veicolo attraversa un confine, cambi sistema di coordinate e inizi una nuova conica. Cucite insieme, formano la traiettoria. Queste sono le coniche raccordate.",
+    "new": "Barano. Fingono che, in ogni momento, conti la gravità di UN SOLO corpo. Vicino alla Terra, tira solo la Terra. Durante la crociera, solo il Sole. Vicino a Marte, solo Marte. Ciascuna di queste regioni si chiama sfera d'influenza, e al suo interno il veicolo vola una conica di Keplero pulita. Quando il veicolo attraversa un confine, cambi sistema di coordinate e inizi una nuova conica. Cucite insieme, formano la traiettoria. Queste sono le coniche raccordate."
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "body_paragraphs.1",
+    "old": "Le coniche frammentate rappresentano il compromesso operativo: si dichiara una sfera di influenza intorno a ogni corpo celeste. Nella sfera di influenza terrestre, conta solo la gravità della Terra; si vola seguendo un arco Kepler intorno alla Terra. Oltrepassando il confine nella regione eliocentrica, si passa a un arco Kepler centrato sul Sole. Entrando nella sfera di Marte, si passa di nuovo. Tre problemi Kepler, raccordati insieme ai confini.",
+    "new": "Le coniche frammentate rappresentano il compromesso operativo: si dichiara una sfera di influenza intorno a ogni corpo celeste. Nella sfera di influenza terrestre, conta solo la gravità della Terra; si vola seguendo un arco Keplero intorno alla Terra. Oltrepassando il confine nella regione eliocentrica, si passa a un arco Keplero centrato sul Sole. Entrando nella sfera di Marte, si passa di nuovo. Tre problemi Keplero, raccordati insieme ai confini."
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "narrative_101.1",
+    "old": "Segue le stesse regole di ogni altra orbita di Kepler. Il Sole sta in un fuoco. Il veicolo è lento all'estremità lontana e veloce a quella vicina. Vis-viva continua a funzionare per calcolarne la velocità. La terza legge di Kepler continua a darti il tempo di volo a partire dalla dimensione. Niente di esotico.",
+    "new": "Segue le stesse regole di ogni altra orbita di Keplero. Il Sole sta in un fuoco. Il veicolo è lento all'estremità lontana e veloce a quella vicina. Vis-viva continua a funzionare per calcolarne la velocità. La terza legge di Keplero continua a darti il tempo di volo a partire dalla dimensione. Niente di esotico."
+  },
+  {
+    "rel": "universe/named-stars/bellatrix.json",
+    "at": "bio",
+    "old": "Bellatrix (Gamma Orionis) è una calda gigante blu distante circa 250 anni luce, che segna la spalla sinistra di Orion il Cacciatore. È una delle stelle più calde e blu visibili ad occhio nudo nella costellazione.",
+    "new": "Bellatrix (Gamma Orionis) è una calda gigante blu distante circa 250 anni luce, che segna la spalla sinistra di Orione il Cacciatore. È una delle stelle più calde e blu visibili ad occhio nudo nella costellazione."
+  },
+  {
+    "rel": "messages",
+    "at": "why_station_period_body",
+    "old": "Terza legge di Kepler: a ~400 km il periodo è bloccato a circa 92 minuti. Sono 16 albe e 16 tramonti per giorno di equipaggio — il ritmo circadiano del corpo viene martellato, ed è per questo che gli equipaggi vivono su un Tempo Missione sintetico di 24 ore allineato all'UTC.",
+    "new": "Terza legge di Keplero: a ~400 km il periodo è bloccato a circa 92 minuti. Sono 16 albe e 16 tramonti per giorno di equipaggio — il ritmo circadiano del corpo viene martellato, ed è per questo che gli equipaggi vivono su un Tempo Missione sintetico di 24 ore allineato all'UTC."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_assume_kepler_j2",
+    "old": "Propagazione Kepler + J2 secolare (non full SGP4)",
+    "new": "Propagazione Keplero + J2 secolare (non full SGP4)"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_regime_glossary",
+    "old": "Un raggio, due numeri: v = √(μ/r) e T = 2π√(r³/μ) (velocità orbitale più terza legge di Kepler). L'orbita bassa compie un giro intorno alla Terra in 90 minuti; orbite più alte rallentano — l'intera mappa dei regimi in due formule.",
+    "new": "Un raggio, due numeri: v = √(μ/r) e T = 2π√(r³/μ) (velocità orbitale più terza legge di Keplero). L'orbita bassa compie un giro intorno alla Terra in 90 minuti; orbite più alte rallentano — l'intera mappa dei regimi in due formule."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_geo_glossary",
+    "old": "Fissa il periodo T a un giorno sidereo e risolvi Kepler: a = ∛(μT²/4π²) — 35.786 km di altitudine, l'orbita resta al passo con la Terra che ruota. Staziona lì e rimani immobile nel cielo.",
+    "new": "Fissa il periodo T a un giorno sidereo e risolvi Keplero: a = ∛(μT²/4π²) — 35.786 km di altitudine, l'orbita resta al passo con la Terra che ruota. Staziona lì e rimani immobile nel cielo."
+  }
 ]

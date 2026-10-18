@@ -1,56 +1,56 @@
 [
- {
-  "rel": "fleet/lander/hakuto-r.json",
-  "at": "tagline",
-  "old": "Prima lavanda lunare giapponese privata; M1 + M2 entrambi schiantati",
-  "new": "Primi tentativi privati giapponesi di allunaggio; le missioni 1 (2023) e 2 (2025) si sono schiantate"
- },
- {
-  "rel": "fleet/lander/hakuto-r.json",
-  "at": "best_known_for",
-  "old": "Prima lavanda lunare giapponese privata; M1 + M2 entrambi schiantati",
-  "new": "Primi tentativi privati giapponesi di allunaggio; le missioni 1 (2023) e 2 (2025) si sono schiantate"
- },
- {
-  "rel": "fleet/lander/hakuto-r.json",
-  "at": "description",
-  "old": "Il programma Hakuto-R è un lander planetario costruito da ispace in Giappone. Prima lavanda lunare giapponese privata; M1 + M2 entrambi si sono schiantati. Ha volato nel 2023 ma è fallito.",
-  "new": "Hakuto-R è un programma di lander lunari dell'azienda giapponese ispace. Il lander della missione 1, lanciato nel dicembre 2022, fu il primo tentativo privato giapponese di allunaggio e si schiantò nell'aprile 2023. Il lander della missione 2, Resilience, si schiantò nel giugno 2025."
- },
- {
-  "rel": "fleet/lander/vikram-cy2.json",
-  "at": "tagline",
-  "old": "Chandrayaan-2 lander; crash; orbiter vive su",
-  "new": "Lander della missione indiana Chandrayaan-2; si schiantò nel 2019, ma l'orbiter continuò a funzionare"
- },
- {
-  "rel": "fleet/lander/vikram-cy2.json",
-  "at": "best_known_for",
-  "old": "Chandrayaan-2 lander; crash; orbiter vive su",
-  "new": "Lander della missione indiana Chandrayaan-2; si schiantò nel 2019, ma l'orbiter continuò a funzionare"
- },
- {
-  "rel": "fleet/lander/vikram-cy2.json",
-  "at": "description",
-  "old": "Vikram (Chandrayaan-2) è un lander planetario costruito da ISRO in India. Chandrayaan-2 lander; crashed; orbiter vive. Ha volato nel 2019 ma è fallito.",
-  "new": "Vikram era il lander della missione indiana Chandrayaan-2, costruito dall'ISRO. Si schiantò durante il tentativo di atterraggio nel settembre 2019, ma l'orbiter di Chandrayaan-2 continuò a funzionare in orbita lunare."
- },
- {
-  "rel": "fleet/lander/mars-polar-lander.json",
-  "at": "tagline",
-  "old": "Perso sull'atterraggio; ha guidato più veloce-miglior-cheaper recensione",
-  "new": "Perso durante l'atterraggio nel 1999; il fallimento spinse la NASA a rivedere il suo approccio «più veloce, migliore, più economico»"
- },
- {
-  "rel": "fleet/lander/mars-polar-lander.json",
-  "at": "best_known_for",
-  "old": "Perso durante l'atterraggio; ha dato origine alla revisione sulla filosofia «più veloce, migliore, più economico»",
-  "new": "Perso durante l'atterraggio nel 1999; il fallimento spinse la NASA a rivedere il suo approccio «più veloce, migliore, più economico»"
- },
- {
-  "rel": "fleet/lander/mars-polar-lander.json",
-  "at": "description",
-  "old": "Mars Polar Lander è un lander planetario costruito da Lockheed Martin negli Stati Uniti. Perso all'atterraggio; ha guidato più veloce-migliore-cheaper recensione. Ha volato nel 1999 ma è fallito.",
-  "new": "Mars Polar Lander era un lander della NASA costruito da Lockheed Martin. Il contatto si perse durante la discesa verso la regione polare sud di Marte nel dicembre 1999. Giunto pochi mesi dopo la perdita del Mars Climate Orbiter, il fallimento spinse la NASA a rivedere il suo approccio «più veloce, migliore, più economico»."
- }
+  {
+    "rel": "fleet/lander/hakuto-r.json",
+    "at": "tagline",
+    "old": "Prima lavanda lunare giapponese privata; M1 + M2 entrambi schiantati",
+    "new": "Primi tentativi privati giapponesi di allunaggio; le missioni 1 (2023) e 2 (2025) si sono schiantate"
+  },
+  {
+    "rel": "fleet/lander/hakuto-r.json",
+    "at": "best_known_for",
+    "old": "Prima lavanda lunare giapponese privata; M1 + M2 entrambi schiantati",
+    "new": "Primi tentativi privati giapponesi di allunaggio; le missioni 1 (2023) e 2 (2025) si sono schiantate"
+  },
+  {
+    "rel": "fleet/lander/hakuto-r.json",
+    "at": "description",
+    "old": "Il programma Hakuto-R è un lander planetario costruito da ispace in Giappone. Prima lavanda lunare giapponese privata; M1 + M2 entrambi si sono schiantati. Ha volato nel 2023 ma è fallito.",
+    "new": "Hakuto-R è un programma di lander lunari dell'azienda giapponese ispace. Il lander della missione 1, lanciato nel dicembre 2022, fu il primo tentativo privato giapponese di allunaggio e si schiantò nell'aprile 2023. Il lander della missione 2, Resilience, si schiantò nel giugno 2025."
+  },
+  {
+    "rel": "fleet/lander/vikram-cy2.json",
+    "at": "tagline",
+    "old": "Chandrayaan-2 lander; crash; orbiter vive su",
+    "new": "Lander della missione indiana Chandrayaan-2; si schiantò nel 2019, ma l'orbiter continuò a funzionare"
+  },
+  {
+    "rel": "fleet/lander/vikram-cy2.json",
+    "at": "best_known_for",
+    "old": "Chandrayaan-2 lander; crash; orbiter vive su",
+    "new": "Lander della missione indiana Chandrayaan-2; si schiantò nel 2019, ma l'orbiter continuò a funzionare"
+  },
+  {
+    "rel": "fleet/lander/vikram-cy2.json",
+    "at": "description",
+    "old": "Vikram (Chandrayaan-2) è un lander planetario costruito da ISRO in India. Chandrayaan-2 lander; crashed; orbiter vive. Ha volato nel 2019 ma è fallito.",
+    "new": "Vikram era il lander della missione indiana Chandrayaan-2, costruito dall'ISRO. Si schiantò durante il tentativo di atterraggio nel settembre 2019, ma l'orbiter di Chandrayaan-2 continuò a funzionare in orbita lunare."
+  },
+  {
+    "rel": "fleet/lander/mars-polar-lander.json",
+    "at": "tagline",
+    "old": "Perso sull'atterraggio; ha guidato più veloce-miglior-cheaper recensione",
+    "new": "Perso durante l'atterraggio nel 1999; il fallimento spinse la NASA a rivedere il suo approccio «più veloce, migliore, più economico»"
+  },
+  {
+    "rel": "fleet/lander/mars-polar-lander.json",
+    "at": "best_known_for",
+    "old": "Perso durante l'atterraggio; ha dato origine alla revisione sulla filosofia «più veloce, migliore, più economico»",
+    "new": "Perso durante l'atterraggio nel 1999; il fallimento spinse la NASA a rivedere il suo approccio «più veloce, migliore, più economico»"
+  },
+  {
+    "rel": "fleet/lander/mars-polar-lander.json",
+    "at": "description",
+    "old": "Mars Polar Lander è un lander planetario costruito da Lockheed Martin negli Stati Uniti. Perso all'atterraggio; ha guidato più veloce-migliore-cheaper recensione. Ha volato nel 1999 ma è fallito.",
+    "new": "Mars Polar Lander era un lander della NASA costruito da Lockheed Martin. Il contatto si perse durante la discesa verso la regione polare sud di Marte nel dicembre 1999. Giunto pochi mesi dopo la perdita del Mars Climate Orbiter, il fallimento spinse la NASA a rivedere il suo approccio «più veloce, migliore, più economico»."
+  }
 ]

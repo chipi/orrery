@@ -1,14 +1,14 @@
 [
- {
-  "rel": "earth-objects/starlink.json",
-  "at": "scale_fact",
-  "old": "Starlink führte von Juni 2025 bis Mai 2026 über 355.000 autonome Ausweichmanöver in der gesamten Konstellation durch — mehr als alle anderen Betreiber zusammen.",
-  "new": "Starlink führte von Juni 2025 bis Mai 2026 über 355.000 autonome Ausweichmanöver in der gesamten Konstellation durch."
- },
- {
-  "rel": "fleet/constellation/starlink.json",
-  "at": "description",
-  "old": "Die LEO-Breitbandkonstellation von SpaceX — über 11.000 aktive Satelliten (Stand: Oktober 2026) in 550 km Höhe, verteilt auf mehrere Schalen (Bahnneigungen von 53°, 70°, 97,6°). Erster Betriebsdienst 2019; globale Abdeckung 2023 erreicht. Jeder Gen-2-Satellit hat Laserverbindungen zu anderen Satelliten, sodass die Konstellation Datenpakete zwischen den Satelliten weiterleiten kann, ohne Umweg über Bodenstationen. Ein autonomes Kollisionsvermeidungssystem führte von Juni 2025 bis Mai 2026 über 355.000 Manöver durch — mehr als alle anderen LEO-Betreiber zusammen.",
-  "new": "Die LEO-Breitbandkonstellation von SpaceX — über 11.000 aktive Satelliten (Stand: Oktober 2026) in 550 km Höhe, verteilt auf mehrere Schalen (Bahnneigungen von 53°, 70°, 97,6°). Erster Betriebsdienst 2019; globale Abdeckung 2023 erreicht. Jeder Gen-2-Satellit hat Laserverbindungen zu anderen Satelliten, sodass die Konstellation Datenpakete zwischen den Satelliten weiterleiten kann, ohne Umweg über Bodenstationen. Ein autonomes Kollisionsvermeidungssystem führte von Juni 2025 bis Mai 2026 über 355.000 Manöver durch."
- }
+  {
+    "rel": "earth-objects/starlink.json",
+    "at": "scale_fact",
+    "old": "Starlink führte von Juni 2025 bis Mai 2026 über 355.000 autonome Ausweichmanöver in der gesamten Konstellation durch — mehr als alle anderen Betreiber zusammen.",
+    "new": "Starlink führte von Juni 2025 bis Mai 2026 über 355.000 autonome Ausweichmanöver in der gesamten Konstellation durch."
+  },
+  {
+    "rel": "fleet/constellation/starlink.json",
+    "at": "description",
+    "old": "Die LEO-Breitbandkonstellation von SpaceX — über 11.000 aktive Satelliten (Stand: Oktober 2026) in 550 km Höhe, verteilt auf mehrere Schalen (Bahnneigungen von 53°, 70°, 97,6°). Erster Betriebsdienst 2019; globale Abdeckung 2023 erreicht. Jeder Gen-2-Satellit hat Laserverbindungen zu anderen Satelliten, sodass die Konstellation Datenpakete zwischen den Satelliten weiterleiten kann, ohne Umweg über Bodenstationen. Ein autonomes Kollisionsvermeidungssystem führte von Juni 2025 bis Mai 2026 über 355.000 Manöver durch — mehr als alle anderen LEO-Betreiber zusammen.",
+    "new": "Die LEO-Breitbandkonstellation von SpaceX — über 11.000 aktive Satelliten (Stand: Oktober 2026) in 550 km Höhe, verteilt auf mehrere Schalen (Bahnneigungen von 53°, 70°, 97,6°). Erster Betriebsdienst 2019; globale Abdeckung 2023 erreicht. Jeder Gen-2-Satellit hat Laserverbindungen zu anderen Satelliten, sodass die Konstellation Datenpakete zwischen den Satelliten weiterleiten kann, ohne Umweg über Bodenstationen. Ein autonomes Kollisionsvermeidungssystem führte von Juni 2025 bis Mai 2026 über 355.000 Manöver durch."
+  }
 ]

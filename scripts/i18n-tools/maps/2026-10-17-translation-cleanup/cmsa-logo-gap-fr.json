@@ -1,8 +1,8 @@
 [
- {
-  "rel": "sourcing/gaps.json",
-  "at": "gaps.1.resolution",
-  "old": "Le logo de l'agence CNSA sert de marque honnête sur les cartes et pages Tiangong et Shenzhou.",
-  "new": "Les cartes et pages Tiangong et Shenzhou affichent le nom CMSA sans logo : l'emblème de la CMSA n'est pas sous licence libre, et l'insigne de la CNSA appartient à une autre agence."
- }
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.1.resolution",
+    "old": "Le logo de l'agence CNSA sert de marque honnête sur les cartes et pages Tiangong et Shenzhou.",
+    "new": "Les cartes et pages Tiangong et Shenzhou affichent le nom CMSA sans logo : l'emblème de la CMSA n'est pas sous licence libre, et l'insigne de la CNSA appartient à une autre agence."
+  }
 ]

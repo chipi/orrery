@@ -1,68 +1,68 @@
 [
- {
-  "rel": "fleet/launcher/atlas-lv-3b.json",
-  "at": "description",
-  "old": "L'Atlas LV-3B était le lanceur orbital de Convair qui a propulsé les astronautes Mercury en orbite lors de six vols (Mercury-Atlas 6 à 10) entre février et mai 1963. Le moteur à peau mince — si léger qu'il nécessitait une pressurisation pour tenir debout — a prouvé qu'un missile balistique pouvait être certifié pour le vol habité. Retiré du service après le programme Mercury.",
-  "new": "L'Atlas LV-3B était le lanceur orbital de Convair qui a propulsé les astronautes Mercury en orbite lors de quatre vols (Mercury-Atlas 6 à 9) entre février 1962 et mai 1963. Le moteur à peau mince — si léger qu'il nécessitait une pressurisation pour tenir debout — a prouvé qu'un missile balistique pouvait être certifié pour le vol habité. Retiré du service après le programme Mercury."
- },
- {
-  "rel": "fleet/launch-site/lc-39a.json",
-  "at": "tagline",
-  "old": "A lancé Apollo 8, 9, 11-17 (toutes les missions lunaires habitées vers la Lune) ; aujourd'hui utilise Falcon 9, Falcon Heavy et Crew Dragon",
-  "new": "A lancé Apollo 8, 9, 11-17 (Apollo 9 en orbite terrestre ; Apollo 10 depuis 39B) ; lance aujourd'hui Falcon 9, Falcon Heavy et Crew Dragon"
- },
- {
-  "rel": "fleet/launch-site/lc-39a.json",
-  "at": "best_known_for",
-  "old": "A lancé Apollo 8, 9, 11-17 (toutes les missions lunaires habitées vers la Lune) ; aujourd'hui utilise Falcon 9, Falcon Heavy et Crew Dragon",
-  "new": "A lancé Apollo 8, 9, 11-17 (Apollo 9 en orbite terrestre ; Apollo 10 depuis 39B) ; lance aujourd'hui Falcon 9, Falcon Heavy et Crew Dragon"
- },
- {
-  "rel": "fleet/engine/le-7a.json",
-  "at": "description",
-  "old": "Le LE-7A est le moteur qui a donné au Japon une capacité de lancement lourd entièrement indigène. Développé par Mitsubishi Heavy Industries pour JAXA, il fonctionne selon un cycle de combustion étagée avec du LOX et du LH2 — l'approche thermodynamique qui extrait l'efficacité maximale du propergol hydrogène — et a volé pour la première fois sur H-IIA en août 2001 comme successeur affiné du LE-7 original. La refonte a résolu les problèmes de turbopompe qui avaient causé les défaillances précoces de H-II, et le LE-7A est devenu le moteur fondateur des carrières opérationnelles de H-IIA et H-IIB jusqu'en 2024, mettant en orbite les cargo HTV du Japon vers la Station spatiale internationale et les satellites radar ALOS de la série JAXA-ISRO.",
-  "new": "Le LE-7A est le moteur qui a donné au Japon une capacité de lancement lourd entièrement indigène. Développé par Mitsubishi Heavy Industries pour JAXA, il fonctionne selon un cycle de combustion étagée avec du LOX et du LH2 — l'approche thermodynamique qui extrait l'efficacité maximale du propergol hydrogène — et a volé pour la première fois sur H-IIA en août 2001 comme successeur affiné du LE-7 original. La refonte a résolu les problèmes de turbopompe qui avaient causé les défaillances précoces de H-II, et le LE-7A est devenu le moteur fondateur des carrières opérationnelles de H-IIA et H-IIB jusqu'en 2024, mettant en orbite les cargo HTV du Japon vers la Station spatiale internationale et les satellites d'observation de la Terre ALOS de la JAXA."
- },
- {
-  "rel": "fleet/lander/mars-polar-lander.json",
-  "at": "description",
-  "old": "Mars Polar Lander est un atterrisseur planétaire construit par Lockheed Martin aux États-Unis. Perdu à l'atterrissage; a conduit plus rapide-meilleur examen. A volé en 1999 mais a échoué; informe la couche rédemption-arc de l'époque de la navette et de Mir.",
-  "new": "Mars Polar Lander est un atterrisseur planétaire construit par Lockheed Martin aux États-Unis. Perdu à l'atterrissage; a conduit plus rapide-meilleur examen. A volé en 1999 mais a échoué."
- },
- {
-  "rel": "fleet/lander/hakuto-r.json",
-  "at": "description",
-  "old": "Le programme Hakuto-R est un atterrisseur planétaire construit par ispace au Japon. Premier atterrisseur lunaire japonais privé; M1 + M2 les deux s'est écrasé. Flew en 2023 mais échoué; informe la couche rédemption-arc de l'époque commerciale.",
-  "new": "Le programme Hakuto-R est un atterrisseur planétaire construit par ispace au Japon. Premier atterrisseur lunaire japonais privé; M1 + M2 les deux s'est écrasé. A volé en 2023 mais a échoué."
- },
- {
-  "rel": "fleet/lander/vikram-cy2.json",
-  "at": "description",
-  "old": "Vikram (Chandrayaan-2) est un atterrissage planétaire construit par l'ISRO en Inde. Chandrayaan-2 atterrisseur; écrasé; orbiteur vit. Flew en 2019 mais échoué; informe la couche rédemption-arc de l'époque commerciale.",
-  "new": "Vikram (Chandrayaan-2) est un atterrissage planétaire construit par l'ISRO en Inde. Chandrayaan-2 atterrisseur; écrasé; orbiteur vit. A volé en 2019 mais a échoué."
- },
- {
-  "rel": "science/planets/planetary-stats.json",
-  "at": "body_paragraphs.0",
-  "old": "Diamètres par rapport à la Terre : Mercure 0,38, Vénus 0,95 (presque de la taille de la Terre), Terre 1,0, Mars 0,53, Jupiter 10,97, Saturne 9,14, Uranus 3,98, Neptune 3,86, Pluton 0,19. Gravités de surface en g terrestre : Mercure 0,38, Vénus 0,91, Terre 1,00, Mars 0,38, Jupiter 2,53, Saturne 1,07, Uranus 0,89, Neptune 1,14, Pluton 0,06. Surprises notables : Mars et Mercure partagent la même gravité de surface (0,38 g) malgré des tailles très différentes, car le produit densité × rayon de chacune donne des valeurs proches. Uranus et Saturne présentent toutes deux une gravité inférieure à celle de la Terre malgré leur taille gigantesque — toutes deux sont dominées par H/He, bien moins dense que la Terre rocheuse.",
-  "new": "Diamètres par rapport à la Terre : Mercure 0,38, Vénus 0,95 (presque de la taille de la Terre), Terre 1,0, Mars 0,53, Jupiter 10,97, Saturne 9,14, Uranus 3,98, Neptune 3,86, Pluton 0,19. Gravités de surface en g terrestre : Mercure 0,38, Vénus 0,91, Terre 1,00, Mars 0,38, Jupiter 2,53, Saturne 1,07, Uranus 0,89, Neptune 1,14, Pluton 0,06. Surprises notables : Mars et Mercure partagent la même gravité de surface (0,38 g) malgré des tailles très différentes, car le produit densité × rayon de chacune donne des valeurs proches. Uranus présente une gravité inférieure à celle de la Terre et Saturne à peine supérieure, malgré leur taille gigantesque — toutes deux sont dominées par H/He, bien moins dense que la Terre rocheuse."
- },
- {
-  "rel": "science/planets/active-spacecraft-survey.json",
-  "at": "body_paragraphs.1",
-  "old": "Système de Jupiter : Juno (NASA, depuis 2016, orbite polaire de 53 jours). Conçu pour cartographier le champ magnétique, l'atmosphère et la structure interne de Jupiter. L'orbite polaire évite la ceinture de radiation équatoriale intense de Jupiter — la ceinture est si intense que d'autres orbiteurs de géantes gazeuses seraient endommagés de façon permanente en quelques mois sur une trajectoire équatoriale. La mission Juno a été prolongée plusieurs fois ; elle continuera jusqu'à son désorbitage dans Jupiter (conçu pour prévenir la contamination biologique d'Europe, que l'engin spatial approche près). La prochaine mission Jupiter est JUICE (Jupiter Icy moons Explorer) de l'ESA, arrivée prévue en 2031 ; Europa Clipper de la NASA se lance en 2024 et arrive en 2030.",
-  "new": "Système de Jupiter : Juno (NASA, depuis 2016, orbite polaire de 53 jours). Conçu pour cartographier le champ magnétique, l'atmosphère et la structure interne de Jupiter. L'orbite polaire évite la ceinture de radiation équatoriale intense de Jupiter — la ceinture est si intense que d'autres orbiteurs de géantes gazeuses seraient endommagés de façon permanente en quelques mois sur une trajectoire équatoriale. La mission Juno a été prolongée plusieurs fois ; elle continuera jusqu'à son désorbitage dans Jupiter (conçu pour prévenir la contamination biologique d'Europe, que l'engin spatial approche près). La prochaine mission Jupiter est JUICE (Jupiter Icy moons Explorer) de l'ESA, arrivée prévue en 2031 ; Europa Clipper de la NASA a été lancé en octobre 2024 et arrive en 2030."
- },
- {
-  "rel": "essays/interstellar-exploration.json",
-  "at": "body.4.md",
-  "old": "[Voyager 1](/missions?id=voyager-1) est l'objet humain qui s'éloigne le plus vite. Lancée en 1977, propulsée au passage de Jupiter et de Saturne sur une trajectoire qui a emprunté de l'énergie aux champs gravitationnels des deux planètes, elle file désormais à environ 17 kilomètres par seconde par rapport au Soleil — environ 61 000 kilomètres par heure, une vitesse qui vous mènerait de Londres à Sydney en moins d'une minute. À toute mesure terrestre, elle est inimaginablement rapide. À l'échelle interstellaire, elle est d'une lenteur glaciale. À 17 km/s, Voyager 1 mettrait de l'ordre de 73 000 ans pour parcourir la distance jusqu'à Proxima Centauri — et elle n'y est même pas dirigée. Elle va dans une tout autre direction, vers la constellation d'Ophiuchus, sur une trajectoire conçue pour explorer le système solaire externe, non pour atteindre les étoiles.",
-  "new": "[Voyager 1](/missions?id=voyager-1) est l'objet humain qui s'éloigne le plus vite. Lancée en 1977, propulsée au passage de Jupiter et de Saturne sur une trajectoire qui a emprunté de l'énergie aux champs gravitationnels des deux planètes, elle file désormais à environ 17 kilomètres par seconde par rapport au Soleil — environ 61 000 kilomètres par heure, une vitesse qui vous mènerait de Londres à Sydney en environ dix-sept minutes. À toute mesure terrestre, elle est inimaginablement rapide. À l'échelle interstellaire, elle est d'une lenteur glaciale. À 17 km/s, Voyager 1 mettrait de l'ordre de 73 000 ans pour parcourir la distance jusqu'à Proxima Centauri — et elle n'y est même pas dirigée. Elle va dans une tout autre direction, vers la constellation d'Ophiuchus, sur une trajectoire conçue pour explorer le système solaire externe, non pour atteindre les étoiles."
- },
- {
-  "rel": "essays/going-to-the-moon.json",
-  "at": "body.19.md",
-  "old": "L'intérêt renouvelé pour la Lune n'est pas un programme américain. C'est un authentique phénomène mondial, dont l'histoire précède Apollo de près d'une décennie. Le programme soviétique Luna a placé le premier objet fabriqué par l'homme sur la Lune — [Luna 2](/missions?id=luna9) s'est écrasée à sa surface en septembre 1959 — puis a rapporté les premières photographies de la face cachée avec Luna 3 la même année, avant d'accumuler pendant la décennie suivante des premières que l'on a moins bien retenues qu'elles ne le méritent. [Luna 9](/missions?id=luna9) a réalisé le premier atterrissage en douceur en 1966, tranchant une véritable controverse scientifique : la surface était-elle assez solide pour porter un engin ? (On soutenait sérieusement, auparavant, que la surface de la Lune pouvait n'être que de la poussière épaisse de plusieurs mètres, dans laquelle tout atterrisseur s'enfoncerait tout simplement.) Luna 16, en 1970, a rapporté sur Terre le premier échantillon prélevé par un robot — preuve qu'une mission habitée n'était pas nécessaire pour ramener de la matière lunaire. Luna 24, en 1976, a été le dernier retour d'échantillons lunaires soviétique, et il est resté le dernier de quiconque pendant 44 ans.",
-  "new": "L'intérêt renouvelé pour la Lune n'est pas un programme américain. C'est un authentique phénomène mondial, dont l'histoire précède Apollo de près d'une décennie. Le programme soviétique Luna a placé le premier objet fabriqué par l'homme sur la Lune — Luna 2 s'est écrasée à sa surface en septembre 1959 — puis a rapporté les premières photographies de la face cachée avec Luna 3 la même année, avant d'accumuler pendant la décennie suivante des premières que l'on a moins bien retenues qu'elles ne le méritent. [Luna 9](/missions?id=luna9) a réalisé le premier atterrissage en douceur en 1966, tranchant une véritable controverse scientifique : la surface était-elle assez solide pour porter un engin ? (On soutenait sérieusement, auparavant, que la surface de la Lune pouvait n'être que de la poussière épaisse de plusieurs mètres, dans laquelle tout atterrisseur s'enfoncerait tout simplement.) Luna 16, en 1970, a rapporté sur Terre le premier échantillon prélevé par un robot — preuve qu'une mission habitée n'était pas nécessaire pour ramener de la matière lunaire. Luna 24, en 1976, a été le dernier retour d'échantillons lunaires soviétique, et il est resté le dernier de quiconque pendant 44 ans."
- }
+  {
+    "rel": "fleet/launcher/atlas-lv-3b.json",
+    "at": "description",
+    "old": "L'Atlas LV-3B était le lanceur orbital de Convair qui a propulsé les astronautes Mercury en orbite lors de six vols (Mercury-Atlas 6 à 10) entre février et mai 1963. Le moteur à peau mince — si léger qu'il nécessitait une pressurisation pour tenir debout — a prouvé qu'un missile balistique pouvait être certifié pour le vol habité. Retiré du service après le programme Mercury.",
+    "new": "L'Atlas LV-3B était le lanceur orbital de Convair qui a propulsé les astronautes Mercury en orbite lors de quatre vols (Mercury-Atlas 6 à 9) entre février 1962 et mai 1963. Le moteur à peau mince — si léger qu'il nécessitait une pressurisation pour tenir debout — a prouvé qu'un missile balistique pouvait être certifié pour le vol habité. Retiré du service après le programme Mercury."
+  },
+  {
+    "rel": "fleet/launch-site/lc-39a.json",
+    "at": "tagline",
+    "old": "A lancé Apollo 8, 9, 11-17 (toutes les missions lunaires habitées vers la Lune) ; aujourd'hui utilise Falcon 9, Falcon Heavy et Crew Dragon",
+    "new": "A lancé Apollo 8, 9, 11-17 (Apollo 9 en orbite terrestre ; Apollo 10 depuis 39B) ; lance aujourd'hui Falcon 9, Falcon Heavy et Crew Dragon"
+  },
+  {
+    "rel": "fleet/launch-site/lc-39a.json",
+    "at": "best_known_for",
+    "old": "A lancé Apollo 8, 9, 11-17 (toutes les missions lunaires habitées vers la Lune) ; aujourd'hui utilise Falcon 9, Falcon Heavy et Crew Dragon",
+    "new": "A lancé Apollo 8, 9, 11-17 (Apollo 9 en orbite terrestre ; Apollo 10 depuis 39B) ; lance aujourd'hui Falcon 9, Falcon Heavy et Crew Dragon"
+  },
+  {
+    "rel": "fleet/engine/le-7a.json",
+    "at": "description",
+    "old": "Le LE-7A est le moteur qui a donné au Japon une capacité de lancement lourd entièrement indigène. Développé par Mitsubishi Heavy Industries pour JAXA, il fonctionne selon un cycle de combustion étagée avec du LOX et du LH2 — l'approche thermodynamique qui extrait l'efficacité maximale du propergol hydrogène — et a volé pour la première fois sur H-IIA en août 2001 comme successeur affiné du LE-7 original. La refonte a résolu les problèmes de turbopompe qui avaient causé les défaillances précoces de H-II, et le LE-7A est devenu le moteur fondateur des carrières opérationnelles de H-IIA et H-IIB jusqu'en 2024, mettant en orbite les cargo HTV du Japon vers la Station spatiale internationale et les satellites radar ALOS de la série JAXA-ISRO.",
+    "new": "Le LE-7A est le moteur qui a donné au Japon une capacité de lancement lourd entièrement indigène. Développé par Mitsubishi Heavy Industries pour JAXA, il fonctionne selon un cycle de combustion étagée avec du LOX et du LH2 — l'approche thermodynamique qui extrait l'efficacité maximale du propergol hydrogène — et a volé pour la première fois sur H-IIA en août 2001 comme successeur affiné du LE-7 original. La refonte a résolu les problèmes de turbopompe qui avaient causé les défaillances précoces de H-II, et le LE-7A est devenu le moteur fondateur des carrières opérationnelles de H-IIA et H-IIB jusqu'en 2024, mettant en orbite les cargo HTV du Japon vers la Station spatiale internationale et les satellites d'observation de la Terre ALOS de la JAXA."
+  },
+  {
+    "rel": "fleet/lander/mars-polar-lander.json",
+    "at": "description",
+    "old": "Mars Polar Lander est un atterrisseur planétaire construit par Lockheed Martin aux États-Unis. Perdu à l'atterrissage; a conduit plus rapide-meilleur examen. A volé en 1999 mais a échoué; informe la couche rédemption-arc de l'époque de la navette et de Mir.",
+    "new": "Mars Polar Lander est un atterrisseur planétaire construit par Lockheed Martin aux États-Unis. Perdu à l'atterrissage; a conduit plus rapide-meilleur examen. A volé en 1999 mais a échoué."
+  },
+  {
+    "rel": "fleet/lander/hakuto-r.json",
+    "at": "description",
+    "old": "Le programme Hakuto-R est un atterrisseur planétaire construit par ispace au Japon. Premier atterrisseur lunaire japonais privé; M1 + M2 les deux s'est écrasé. Flew en 2023 mais échoué; informe la couche rédemption-arc de l'époque commerciale.",
+    "new": "Le programme Hakuto-R est un atterrisseur planétaire construit par ispace au Japon. Premier atterrisseur lunaire japonais privé; M1 + M2 les deux s'est écrasé. A volé en 2023 mais a échoué."
+  },
+  {
+    "rel": "fleet/lander/vikram-cy2.json",
+    "at": "description",
+    "old": "Vikram (Chandrayaan-2) est un atterrissage planétaire construit par l'ISRO en Inde. Chandrayaan-2 atterrisseur; écrasé; orbiteur vit. Flew en 2019 mais échoué; informe la couche rédemption-arc de l'époque commerciale.",
+    "new": "Vikram (Chandrayaan-2) est un atterrissage planétaire construit par l'ISRO en Inde. Chandrayaan-2 atterrisseur; écrasé; orbiteur vit. A volé en 2019 mais a échoué."
+  },
+  {
+    "rel": "science/planets/planetary-stats.json",
+    "at": "body_paragraphs.0",
+    "old": "Diamètres par rapport à la Terre : Mercure 0,38, Vénus 0,95 (presque de la taille de la Terre), Terre 1,0, Mars 0,53, Jupiter 10,97, Saturne 9,14, Uranus 3,98, Neptune 3,86, Pluton 0,19. Gravités de surface en g terrestre : Mercure 0,38, Vénus 0,91, Terre 1,00, Mars 0,38, Jupiter 2,53, Saturne 1,07, Uranus 0,89, Neptune 1,14, Pluton 0,06. Surprises notables : Mars et Mercure partagent la même gravité de surface (0,38 g) malgré des tailles très différentes, car le produit densité × rayon de chacune donne des valeurs proches. Uranus et Saturne présentent toutes deux une gravité inférieure à celle de la Terre malgré leur taille gigantesque — toutes deux sont dominées par H/He, bien moins dense que la Terre rocheuse.",
+    "new": "Diamètres par rapport à la Terre : Mercure 0,38, Vénus 0,95 (presque de la taille de la Terre), Terre 1,0, Mars 0,53, Jupiter 10,97, Saturne 9,14, Uranus 3,98, Neptune 3,86, Pluton 0,19. Gravités de surface en g terrestre : Mercure 0,38, Vénus 0,91, Terre 1,00, Mars 0,38, Jupiter 2,53, Saturne 1,07, Uranus 0,89, Neptune 1,14, Pluton 0,06. Surprises notables : Mars et Mercure partagent la même gravité de surface (0,38 g) malgré des tailles très différentes, car le produit densité × rayon de chacune donne des valeurs proches. Uranus présente une gravité inférieure à celle de la Terre et Saturne à peine supérieure, malgré leur taille gigantesque — toutes deux sont dominées par H/He, bien moins dense que la Terre rocheuse."
+  },
+  {
+    "rel": "science/planets/active-spacecraft-survey.json",
+    "at": "body_paragraphs.1",
+    "old": "Système de Jupiter : Juno (NASA, depuis 2016, orbite polaire de 53 jours). Conçu pour cartographier le champ magnétique, l'atmosphère et la structure interne de Jupiter. L'orbite polaire évite la ceinture de radiation équatoriale intense de Jupiter — la ceinture est si intense que d'autres orbiteurs de géantes gazeuses seraient endommagés de façon permanente en quelques mois sur une trajectoire équatoriale. La mission Juno a été prolongée plusieurs fois ; elle continuera jusqu'à son désorbitage dans Jupiter (conçu pour prévenir la contamination biologique d'Europe, que l'engin spatial approche près). La prochaine mission Jupiter est JUICE (Jupiter Icy moons Explorer) de l'ESA, arrivée prévue en 2031 ; Europa Clipper de la NASA se lance en 2024 et arrive en 2030.",
+    "new": "Système de Jupiter : Juno (NASA, depuis 2016, orbite polaire de 53 jours). Conçu pour cartographier le champ magnétique, l'atmosphère et la structure interne de Jupiter. L'orbite polaire évite la ceinture de radiation équatoriale intense de Jupiter — la ceinture est si intense que d'autres orbiteurs de géantes gazeuses seraient endommagés de façon permanente en quelques mois sur une trajectoire équatoriale. La mission Juno a été prolongée plusieurs fois ; elle continuera jusqu'à son désorbitage dans Jupiter (conçu pour prévenir la contamination biologique d'Europe, que l'engin spatial approche près). La prochaine mission Jupiter est JUICE (Jupiter Icy moons Explorer) de l'ESA, arrivée prévue en 2031 ; Europa Clipper de la NASA a été lancé en octobre 2024 et arrive en 2030."
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.4.md",
+    "old": "[Voyager 1](/missions?id=voyager-1) est l'objet humain qui s'éloigne le plus vite. Lancée en 1977, propulsée au passage de Jupiter et de Saturne sur une trajectoire qui a emprunté de l'énergie aux champs gravitationnels des deux planètes, elle file désormais à environ 17 kilomètres par seconde par rapport au Soleil — environ 61 000 kilomètres par heure, une vitesse qui vous mènerait de Londres à Sydney en moins d'une minute. À toute mesure terrestre, elle est inimaginablement rapide. À l'échelle interstellaire, elle est d'une lenteur glaciale. À 17 km/s, Voyager 1 mettrait de l'ordre de 73 000 ans pour parcourir la distance jusqu'à Proxima Centauri — et elle n'y est même pas dirigée. Elle va dans une tout autre direction, vers la constellation d'Ophiuchus, sur une trajectoire conçue pour explorer le système solaire externe, non pour atteindre les étoiles.",
+    "new": "[Voyager 1](/missions?id=voyager-1) est l'objet humain qui s'éloigne le plus vite. Lancée en 1977, propulsée au passage de Jupiter et de Saturne sur une trajectoire qui a emprunté de l'énergie aux champs gravitationnels des deux planètes, elle file désormais à environ 17 kilomètres par seconde par rapport au Soleil — environ 61 000 kilomètres par heure, une vitesse qui vous mènerait de Londres à Sydney en environ dix-sept minutes. À toute mesure terrestre, elle est inimaginablement rapide. À l'échelle interstellaire, elle est d'une lenteur glaciale. À 17 km/s, Voyager 1 mettrait de l'ordre de 73 000 ans pour parcourir la distance jusqu'à Proxima Centauri — et elle n'y est même pas dirigée. Elle va dans une tout autre direction, vers la constellation d'Ophiuchus, sur une trajectoire conçue pour explorer le système solaire externe, non pour atteindre les étoiles."
+  },
+  {
+    "rel": "essays/going-to-the-moon.json",
+    "at": "body.19.md",
+    "old": "L'intérêt renouvelé pour la Lune n'est pas un programme américain. C'est un authentique phénomène mondial, dont l'histoire précède Apollo de près d'une décennie. Le programme soviétique Luna a placé le premier objet fabriqué par l'homme sur la Lune — [Luna 2](/missions?id=luna9) s'est écrasée à sa surface en septembre 1959 — puis a rapporté les premières photographies de la face cachée avec Luna 3 la même année, avant d'accumuler pendant la décennie suivante des premières que l'on a moins bien retenues qu'elles ne le méritent. [Luna 9](/missions?id=luna9) a réalisé le premier atterrissage en douceur en 1966, tranchant une véritable controverse scientifique : la surface était-elle assez solide pour porter un engin ? (On soutenait sérieusement, auparavant, que la surface de la Lune pouvait n'être que de la poussière épaisse de plusieurs mètres, dans laquelle tout atterrisseur s'enfoncerait tout simplement.) Luna 16, en 1970, a rapporté sur Terre le premier échantillon prélevé par un robot — preuve qu'une mission habitée n'était pas nécessaire pour ramener de la matière lunaire. Luna 24, en 1976, a été le dernier retour d'échantillons lunaires soviétique, et il est resté le dernier de quiconque pendant 44 ans.",
+    "new": "L'intérêt renouvelé pour la Lune n'est pas un programme américain. C'est un authentique phénomène mondial, dont l'histoire précède Apollo de près d'une décennie. Le programme soviétique Luna a placé le premier objet fabriqué par l'homme sur la Lune — Luna 2 s'est écrasée à sa surface en septembre 1959 — puis a rapporté les premières photographies de la face cachée avec Luna 3 la même année, avant d'accumuler pendant la décennie suivante des premières que l'on a moins bien retenues qu'elles ne le méritent. [Luna 9](/missions?id=luna9) a réalisé le premier atterrissage en douceur en 1966, tranchant une véritable controverse scientifique : la surface était-elle assez solide pour porter un engin ? (On soutenait sérieusement, auparavant, que la surface de la Lune pouvait n'être que de la poussière épaisse de plusieurs mètres, dans laquelle tout atterrisseur s'enfoncerait tout simplement.) Luna 16, en 1970, a rapporté sur Terre le premier échantillon prélevé par un robot — preuve qu'une mission habitée n'était pas nécessaire pour ramener de la matière lunaire. Luna 24, en 1976, a été le dernier retour d'échantillons lunaires soviétique, et il est resté le dernier de quiconque pendant 44 ans."
+  }
 ]

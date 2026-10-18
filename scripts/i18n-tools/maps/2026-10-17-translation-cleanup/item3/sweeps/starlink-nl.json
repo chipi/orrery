@@ -1,26 +1,26 @@
 [
- {
-  "rel": "earth-objects/starlink.json",
-  "at": "description",
-  "old": "~6.000 actieve satellieten op 550 km in 53° / 70° / 97,6° schillen — de grootste LEO-constellatie ooit gelanceerd. SpaceX breedbandinternet, operationeel sinds 2019. Autonome botsingspreventie + laser intersatellietverbindingen. Zichtbaar als een trein van heldere stippen die de hemel doorkruisen in de dagen na elke lancering.",
-  "new": "Meer dan 11.000 actieve satellieten (stand oktober 2026) op 550 km in 53° / 70° / 97,6° schillen — de grootste LEO-constellatie ooit gelanceerd. SpaceX breedbandinternet, operationeel sinds 2019. Autonome botsingspreventie + laser intersatellietverbindingen. Zichtbaar als een trein van heldere stippen die de hemel doorkruisen in de dagen na elke lancering."
- },
- {
-  "rel": "fleet/constellation/starlink.json",
-  "at": "tagline",
-  "old": "Grootste LEO-breedbandsatellietconstellation — meer dan 10.800 actieve satellieten",
-  "new": "Grootste LEO-breedbandsatellietconstellation — meer dan 11.000 actieve satellieten (stand oktober 2026)"
- },
- {
-  "rel": "fleet/constellation/starlink.json",
-  "at": "description",
-  "old": "SpaceX's breedband-LEO-constellatie — meer dan 10.800 actieve satellieten op 550 km hoogte verdeeld over meerdere lagen (53°, 70°, 97,6° inclinaties). Eerste operationele diensten in 2019; bereikt wereldwijd bereik in 2023. Elke Gen-2-satelliet is voorzien van laser-intersatelliet-verbindingen, waardoor de constellatie pakketten tussen satellieten kan routeren zonder grondstationhops. Het autonome botsingsvoorkomingssysteem voert tienduizenden manoeuvres per jaar uit — meer dan alle andere LEO-operators tezamen.",
-  "new": "SpaceX's breedband-LEO-constellatie — meer dan 11.000 actieve satellieten (stand oktober 2026) op 550 km hoogte verdeeld over meerdere lagen (53°, 70°, 97,6° inclinaties). Eerste operationele diensten in 2019; bereikt wereldwijd bereik in 2023. Elke Gen-2-satelliet is voorzien van laser-intersatelliet-verbindingen, waardoor de constellatie pakketten tussen satellieten kan routeren zonder grondstationhops. Het autonome botsingsvoorkomingssysteem voert tienduizenden manoeuvres per jaar uit — meer dan alle andere LEO-operators tezamen."
- },
- {
-  "rel": "fleet/constellation/starlink.json",
-  "at": "best_known_for",
-  "old": "Grootste LEO-breedbandsatellietconstellation — ~6.500–7.000 actieve satellieten",
-  "new": "Grootste LEO-breedbandsatellietconstellation — meer dan 11.000 actieve satellieten (stand oktober 2026)"
- }
+  {
+    "rel": "earth-objects/starlink.json",
+    "at": "description",
+    "old": "~6.000 actieve satellieten op 550 km in 53° / 70° / 97,6° schillen — de grootste LEO-constellatie ooit gelanceerd. SpaceX breedbandinternet, operationeel sinds 2019. Autonome botsingspreventie + laser intersatellietverbindingen. Zichtbaar als een trein van heldere stippen die de hemel doorkruisen in de dagen na elke lancering.",
+    "new": "Meer dan 11.000 actieve satellieten (stand oktober 2026) op 550 km in 53° / 70° / 97,6° schillen — de grootste LEO-constellatie ooit gelanceerd. SpaceX breedbandinternet, operationeel sinds 2019. Autonome botsingspreventie + laser intersatellietverbindingen. Zichtbaar als een trein van heldere stippen die de hemel doorkruisen in de dagen na elke lancering."
+  },
+  {
+    "rel": "fleet/constellation/starlink.json",
+    "at": "tagline",
+    "old": "Grootste LEO-breedbandsatellietconstellation — meer dan 10.800 actieve satellieten",
+    "new": "Grootste LEO-breedbandsatellietconstellation — meer dan 11.000 actieve satellieten (stand oktober 2026)"
+  },
+  {
+    "rel": "fleet/constellation/starlink.json",
+    "at": "description",
+    "old": "SpaceX's breedband-LEO-constellatie — meer dan 10.800 actieve satellieten op 550 km hoogte verdeeld over meerdere lagen (53°, 70°, 97,6° inclinaties). Eerste operationele diensten in 2019; bereikt wereldwijd bereik in 2023. Elke Gen-2-satelliet is voorzien van laser-intersatelliet-verbindingen, waardoor de constellatie pakketten tussen satellieten kan routeren zonder grondstationhops. Het autonome botsingsvoorkomingssysteem voert tienduizenden manoeuvres per jaar uit — meer dan alle andere LEO-operators tezamen.",
+    "new": "SpaceX's breedband-LEO-constellatie — meer dan 11.000 actieve satellieten (stand oktober 2026) op 550 km hoogte verdeeld over meerdere lagen (53°, 70°, 97,6° inclinaties). Eerste operationele diensten in 2019; bereikt wereldwijd bereik in 2023. Elke Gen-2-satelliet is voorzien van laser-intersatelliet-verbindingen, waardoor de constellatie pakketten tussen satellieten kan routeren zonder grondstationhops. Het autonome botsingsvoorkomingssysteem voert tienduizenden manoeuvres per jaar uit — meer dan alle andere LEO-operators tezamen."
+  },
+  {
+    "rel": "fleet/constellation/starlink.json",
+    "at": "best_known_for",
+    "old": "Grootste LEO-breedbandsatellietconstellation — ~6.500–7.000 actieve satellieten",
+    "new": "Grootste LEO-breedbandsatellietconstellation — meer dan 11.000 actieve satellieten (stand oktober 2026)"
+  }
 ]

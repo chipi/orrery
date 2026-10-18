@@ -1,1226 +1,1226 @@
 [
- {
-  "rel": "fleet/launcher/mercury-redstone.json",
-  "at": "description",
-  "en": "The Mercury-Redstone launch vehicle was a man-rated derivative of the U.S. Army's Redstone ballistic missile, modified at NASA Marshall Space Flight Center for the suborbital Mercury crewed missions. Single-stage liquid-propellant (LOX + alcohol), 25 metres tall with capsule and escape tower (~18 m booster alone), producing approximately 347 kN (~35 tonnes-force) of thrust. The first crewed flight was Mercury-Redstone 3 / Freedom 7 (1961-05-05, Alan Shepard) — the first American in space, 23 days after Gagarin. Mercury-Redstone 4 / Liberty Bell 7 followed (1961-07-21, Gus Grissom). After Liberty Bell 7's hatch malfunction, NASA moved the orbital Mercury flights to the more powerful Atlas LV-3B. Final flight 1961-07-21; total 6 Mercury-Redstone vehicles built, 2 crewed flights flown.",
-  "cur": "Mercury-Redstone打ち上げ機は、米国陸軍のRedstone弾道ミサイルの有人対応型派生機で、NASA Marshall Space Flight Centerで改造され、亜軌道Mercury有人ミッション用となりました。単段式液体燃料（LOX + アルコール）で、カプセルと脱出塔を含めた高さ25メートル（ブースターのみ約18 m）、約347 kN（約35トン重量）の推力を生成しました。最初の有人飛行はMercury-Redstone 3 / Freedom 7（1961-05-05、アラン・シェパード）でした。これはガガーリンから23日後のアメリカ人初の宇宙飛行でした。その後、Mercury-Redstone 4 / Liberty Bell 7が続きました（1961-07-21、ガス・グリソム）。Liberty Bell 7のハッチ不具合の後、NASAは軌道Mercury飛行をより強力なAtlas LV-3Bに移行しました。最終飛行は1961-07-21で、合計6機のMercury-Redstone機が製造され、2機の有人飛行が実施されました。"
- },
- {
-  "rel": "fleet/launcher/mercury-redstone.json",
-  "at": "best_known_for",
-  "en": "First US human-rated launcher — variant of the Army's Redstone IRBM. Launched Freedom 7 (1961-05-05) and Liberty Bell 7 (1961-07-21)",
-  "cur": "米国初の有人対応ロケット — 陸軍のRedstone IRBMの派生型。Freedom 7（1961-05-05）とLiberty Bell 7（1961-07-21）を打ち上げた"
- },
- {
-  "rel": "fleet/launcher/n1.json",
-  "at": "tagline",
-  "en": "Soviet Moon rocket; four launches all failed",
-  "cur": "ソビエト月面ロケット；4度の打ち上げはすべて失敗"
- },
- {
-  "rel": "fleet/launcher/n1.json",
-  "at": "dispatch",
-  "en": "The N1 was the Soviet Union's Saturn V — and the reason it never reached the Moon. Standing 105 metres tall, its first stage clustered thirty engines around its base, not by choice but by necessity: no single Soviet engine came close to the power of the American F-1, so Korolev's team ganged thirty smaller ones together and hoped they would fire in concert. They never did. With no test stand large enough to fire the assembled stage on the ground, every launch was the first full test of the propulsion system — and all four, between 1969 and 1972, failed. The second launch (N1-5L, 3 July 1969) fell back onto its pad in one of the largest non-nuclear explosions ever recorded. Its NK-33 engines, hidden away after the programme was cancelled, proved among the finest ever built and flew on American rockets a quarter-century later — a brilliant machine beaten by the one thing it was never allowed to do: be tested before it flew.",
-  "cur": "N1はソビエト連邦のSaturn Vであり、月に到達できなかった理由でもあった。高さ105メートルのN1は、第1段の基部に30基のエンジンを集中配置していた。選択ではなく必然だった。ソビエトの単一エンジンではアメリカの F-1 のパワーに遠く及ばなかったため、コロリョフのチームは30基の小型エンジンを集約し、それらが一斉に点火することを望んだ。しかし、それは起こらなかった。組立段階を地上で点火させるだけの大きなテストスタンドがなかったため、すべてのロケット打上げは推進システムの初めての完全試験であり、1969年から1972年の間の4回すべてが失敗に終わった。2番目の打上げ（N1-5L、1969年7月3日）はパッドに逆落下し、記録上最大規模の非核兵器爆発の一つとなった。そのNK-33エンジンはプログラムの終了後に隠匿されたが、これまで製造された中でも最高のエンジンの一つであり、四半世紀後にはアメリカのロケットで飛行した。テスト前に飛行することを決して許されなかった唯一のこと、つまり飛行前にテストされることを許されなかったため、この優れた機械は敗れた。"
- },
- {
-  "rel": "fleet/launcher/n1.json",
-  "at": "description",
-  "en": "The Soviet Union’s answer to Saturn V — a 105 m super-heavy rocket with thirty NK-15 engines on the first stage. All four launches between 1969 and 1972 failed; the program was cancelled when Apollo 17 ended any chance of a Soviet crewed lunar landing.",
-  "cur": "サターン Vへのソビエト連邦の回答——第1段に30個のNK-15エンジンを備えた105メートルの超重力ロケット。1969年から1972年の間の4度の打ち上げはすべて失敗した；Apollo 17がソビエトの有人月面着陸の可能性を終わらせたとき、プログラムはキャンセルされた。"
- },
- {
-  "rel": "fleet/launcher/n1.json",
-  "at": "best_known_for",
-  "en": "Soviet Moon rocket; four launches all failed",
-  "cur": "ソビエト月面ロケット；4度の打ち上げはすべて失敗"
- },
- {
-  "rel": "fleet/launcher/new-glenn.json",
-  "at": "tagline",
-  "en": "Blue Origin's two-stage reusable heavy-lift orbital launcher",
-  "cur": "Blue Origin の二段式再利用可能大型軌道打ち上げ機"
- },
- {
-  "rel": "fleet/launcher/new-glenn.json",
-  "at": "description",
-  "en": "Two-stage heavy-lift vehicle built around seven BE-4 methane engines on the first stage (the same engine Vulcan uses) and two hydrogen-burning BE-3U engines on the second. Designed for first-stage recovery via a downrange ship landing. Lifts ~45 t to LEO and is certified for NSSL Phase 3 + Project Kuiper deployments. Maiden flight NG-1 launched from Cape Canaveral LC-36 on 2025-01-16 and successfully delivered the Blue Ring pathfinder to orbit — the first-stage landing attempt was lost but the orbital insertion was clean.",
-  "cur": "一段目に 7 基のメタン燃焼 BE-4 エンジン（Vulcan と同型）、二段目に 2 基の液体水素 BE-3U エンジンを備える二段式大型ロケット。一段目はダウンレンジの回収船への着船によって回収する設計。約 45 t を低軌道に投入でき、NSSL Phase 3 や Project Kuiper の運用認定を受けている。初飛行 NG-1 は 2025 年 1 月 16 日にケープ・カナベラル LC-36 から打ち上げられ、Blue Ring パスファインダーを軌道に投入することに成功した。一段目の着船は失敗したが、軌道投入そのものはクリーンだった。"
- },
- {
-  "rel": "fleet/launcher/new-glenn.json",
-  "at": "best_known_for",
-  "en": "Blue Origin's two-stage reusable heavy-lift orbital launcher — BE-4 first stage + cryogenic second",
-  "cur": "Blue Origin の二段式再利用可能大型軌道打ち上げ機 — メタン BE-4 一段目 + 液水二段目"
- },
- {
-  "rel": "fleet/launcher/proton-k.json",
-  "at": "tagline",
-  "en": "The Soviet / Russian heavy-lift workhorse 1967-2012 — Salyut, Mir, Venera, Vega, Luna sample-return",
-  "cur": "ソビエト/ロシアの大型ロケット（1967-2012年）— Salyut、Mir、Venera、Vega、Luna試料採取ミッション"
- },
- {
-  "rel": "fleet/launcher/proton-k.json",
-  "at": "description",
-  "en": "Three-stage hypergolic (N2O4 / UDMH) heavy-lift vehicle with optional Blok-D / D-1 / D-2 high-energy upper stages. 311 launches between 1967-03-10 and 2012-03-30 — anchored every Salyut + Mir + ISS Russian-segment module, every Venera and Vega Venus probe, every Luna sample-return, and Soviet Mars-2/-3/-5/-7. The Blok-D upper stage was originally developed for the cancelled N1-L3 crewed lunar architecture; reusing it on Proton-K kept the heavy-energy Soviet planetary line viable into the 1980s. Replaced by Proton-M which still flies.",
-  "cur": "三段式ハイパーゴリック推進剤（N2O4/UDMH）大型ロケット、オプションとしてBlok-D/D-1/D-2高比エネルギー上段ロケット搭載可能。1967年3月10日から2012年3月30日までに311回の打ち上げを実施 — すべてのSalyut、Mir、ISS ロシア船体モジュール、すべてのVeneraおよびVega金星探査機、すべてのLunaサンプルリターン、ソビエトMars-2/-3/-5/-7を軌道投入した。Blok-D上段ロケットは当初、キャンセルされたN1-L3有人月面着陸計画のために開発されたが、Proton-Kに再利用することでソビエトの惑星探査ミッションを1980年代まで継続させた。後継のProton-Mが現在も飛行中。"
- },
- {
-  "rel": "fleet/launcher/proton-k.json",
-  "at": "best_known_for",
-  "en": "Soviet / Russian heavy-lift workhorse 1967-2012 — Salyut, Mir, every Venera + Vega Venus probe, every Luna sample-return, and every Soviet outer-planet attempt",
-  "cur": "ソビエト/ロシアの大型ロケット（1967-2012年）— Salyutすべて、Mirすべて、すべてのVenera + Vega金星探査機、すべてのLuna試料採取ミッション、およびソビエトのすべての外惑星ミッション"
- },
- {
-  "rel": "fleet/launcher/proton-m.json",
-  "at": "tagline",
-  "en": "Successor to Proton-K; modernised heavy lift",
-  "cur": "Proton-K の成功; 近代化された重い上昇"
- },
- {
-  "rel": "fleet/launcher/proton-m.json",
-  "at": "description",
-  "en": "Proton-M is a orbital launcher built by Khrunichev in Russia. Successor to Proton-K; modernised heavy lift. In service since 2001.",
-  "cur": "Proton-MはロシアでKhrunichevによって造られる軌道進水器です。 Proton-K の成功; 近代化した重い上昇。 2001年以来のサービス"
- },
- {
-  "rel": "fleet/launcher/proton-m.json",
-  "at": "best_known_for",
-  "en": "Successor to Proton-K; modernised heavy lift",
-  "cur": "Proton-K の成功; 近代化された重い上昇"
- },
- {
-  "rel": "fleet/launcher/pslv-xl.json",
-  "at": "tagline",
-  "en": "ISRO's heavy strap-on PSLV variant — Chandrayaan-1 + Mars Orbiter",
-  "cur": "ISROの重型固体ロケットブースター付きPSLV型— Chandrayaan-1 + Mars Orbiter"
- },
- {
-  "rel": "fleet/launcher/pslv-xl.json",
-  "at": "description",
-  "en": "Four-stage Polar Satellite Launch Vehicle in its extended (XL) configuration: six PS0M-XL strap-on solid boosters with ~50 % more propellant than the standard PSLV. Lifts ~3.8 t to LEO / ~1.8 t to SSO / ~1.4 t to GTO and has carried India's most significant interplanetary missions — Chandrayaan-1 (2008) and Mangalyaan / Mars Orbiter Mission (2013) — from Sriharikota's First Launch Pad. Still active for hyperspectral + radar Earth-observation deployments.",
-  "cur": "4段式極軌道衛星打ち上げロケット（拡張型XL構成）：標準PSLVより約50 %多い推進剤を搭載した6基のPS0M-XLストラップオン固体ブースター。LEOへ約3.8 t、SSOへ約1.8 t、GTOへ約1.4 tの打ち上げ能力を有し、インドの最重要惑星間探査ミッション — Chandrayaan-1（2008）およびMangalyaan / Mars Orbiter Mission（2013）— をシュリーハリコータの第1射場から打ち上げた。現在も分光観測・レーダー地球観測衛星の打ち上げに活用されている。"
- },
- {
-  "rel": "fleet/launcher/pslv-xl.json",
-  "at": "best_known_for",
-  "en": "ISRO's heavy-strap-on PSLV variant — launched Chandrayaan-1 + Mars Orbiter Mission",
-  "cur": "ISROの重型固体ロケットブースター付きPSLV型 — Chandrayaan-1およびMars Orbiter Missionを打ち上げ"
- },
- {
-  "rel": "fleet/launcher/r-7-vostok.json",
-  "at": "tagline",
-  "en": "Carried Sputnik and Gagarin to orbit",
-  "cur": "Sputnik とガガーリンを軌道に運ぶ"
- },
- {
-  "rel": "fleet/launcher/r-7-vostok.json",
-  "at": "description",
-  "en": "The launcher that put Sputnik in orbit in 1957 and Yuri Gagarin into space in 1961. A direct ancestor of every Soyuz rocket flown since — the longest production lineage in spaceflight, with thousands of flights across six decades.",
-  "cur": "1957年に軌道に Sputnik を入れたランチャーと1961年にユーリイ・ガガーリンが空間に。Soyuz ロケットの直進機は、宇宙飛行の最も長い生産ラインで、6年にわたる数千便のフライトです。"
- },
- {
-  "rel": "fleet/launcher/r-7-vostok.json",
-  "at": "best_known_for",
-  "en": "Carried Sputnik and Gagarin to orbit",
-  "cur": "Sputnik とガガーリンを軌道に運ぶ"
- },
- {
-  "rel": "fleet/launcher/saturn-ib.json",
-  "at": "tagline",
-  "en": "Lifted Apollo 7, Skylab crews, and ASTP",
-  "cur": "Apollo 7、Skylab の乗組員、ASTP を打ち上げた"
- },
- {
-  "rel": "fleet/launcher/saturn-ib.json",
-  "at": "dispatch",
-  "en": "Not every Apollo job needed the Moon rocket. The Saturn IB was the pragmatic option — a crew-rated lifter for the work that stayed in Earth orbit: Apollo 7's shakedown of the redesigned spacecraft, the ferry flights to Skylab, and the handshake-in-orbit of Apollo-Soyuz. Its first stage was famously a bundle of tanks borrowed from the earlier Redstone and Jupiter missiles, clustered together — proven parts doing a new job rather than a clean-sheet design. It's the least glamorous rocket in the program, and a quiet lesson in not overbuilding: match the machine to the mission.",
-  "cur": "すべてのアポロミッションが月到達ロケットを必要としたわけではない。Saturn IBは現実的な選択肢だった。地球軌道内にとどまる作業のための有人対応の打ち上げ機だ。再設計された宇宙船の試験運用だったApollo 7、Skylabへのシャトル便、そしてApollo-Soyuzの宇宙空間での握手。第1段は有名な逸話だが、初期のRedstoneと木星ミサイルから流用されたタンク群を束ねたものであり、ゼロから設計したものではなく、実績のある部品を新しい役割に充てたものだった。このプログラムの中で最も地味なロケットであり、また過度に設計しないという静かな教訓を示している。機械をミッションに合わせる、ということだ。"
- },
- {
-  "rel": "fleet/launcher/saturn-ib.json",
-  "at": "description",
-  "en": "Saturn IB is a orbital launcher built by Chrysler / Douglas / IBM in USA. Lifted Apollo 7, Skylab crews, and ASTP.",
-  "cur": "Saturn IBはアメリカの Chrysler / Douglas / IBM によって建造された軌道打ち上げ機である。Apollo 7、Skylabの乗員、および ASTP を打ち上げた。"
- },
- {
-  "rel": "fleet/launcher/saturn-ib.json",
-  "at": "best_known_for",
-  "en": "Lifted Apollo 7, Skylab crews, and ASTP",
-  "cur": "Apollo 7、Skylab の乗組員、ASTP を打ち上げたこと"
- },
- {
-  "rel": "fleet/launcher/saturn-v.json",
-  "at": "dispatch",
-  "en": "The Saturn V existed to solve one brutal piece of arithmetic: putting a crew on the Moon means throwing roughly 45 tonnes onto a path out of Earth's gravity, and in 1961 nothing on Earth could throw a fraction of that. So von Braun's Marshall team built the largest machine that had ever flown — five F-1 engines at its base, each the most powerful single-chamber rocket engine ever fired at the time, together burning some thirteen tonnes of propellant every second. Everything about it was sized by the destination, not by what looked reasonable. That it flew thirteen times and never once failed to reach space is the part that still doesn't quite seem possible.",
-  "cur": "Saturn V は、ひとつの冷徹な計算上の課題を解くために存在していた。人間を月面に送り込むということは、地球の重力圏を脱出する軌道に、およそ 45 トンを投入することを意味し、1961 年の時点では地球上のどの機体もそれを成し遂げることができなかったのだ。そこで von Braun の Marshall チームが、これまで飛行した機体のうち最大のマシンを建造した。その基部に 5 基の F-1 エンジンを搭載し、それぞれが当時最も強力な単一チャンバー型ロケットエンジンであり、これらが毎秒およそ 13 トンの推進剤を燃焼させていた。このロケットのあらゆる寸法は、見た目の合理性ではなく、目的地によって決定された。13 度の飛行でただの一度も宇宙到達に失敗しなかったというその事実が、今なお完全には信じられないような感覚を生じさせるのである。"
- },
- {
-  "rel": "fleet/launcher/saturn-v.json",
-  "at": "description",
-  "en": "The 110.6 m three-stage rocket that put 24 humans on a translunar trajectory and 12 of them on the lunar surface. Thirteen launches between 1967 and 1973, zero losses on ascent. The most powerful rocket to reach orbit for over five decades until Starship's Super Heavy surpassed it in 2024.",
-  "cur": "月への往路軌道に24人の人類を、月面に12人を送り届けた全長110.6 mの3段式ロケット。1967年から1973年にかけて13回の打ち上げを実施し、上昇段階での喪失ゼロ。2024年にStarshipのSuper Heavyに抜かれるまで、50年以上にわたって軌道到達に成功した最強力のロケットだった。"
- },
- {
-  "rel": "fleet/launcher/sls-block-1.json",
-  "at": "tagline",
-  "en": "Heavy lift for Artemis lunar program",
-  "cur": "Artemisの月面プログラムのための重い上昇"
- },
- {
-  "rel": "fleet/launcher/sls-block-1.json",
-  "at": "description",
-  "en": "NASA’s super-heavy successor to the Space Shuttle stack, sharing its RS-25 engines and SRB heritage. Carried Orion on Artemis I in 2022; planned to launch crewed lunar missions through Artemis IV.",
-  "cur": "NASAのSpace Shuttleのスタックに超重い成功を収め、RS-25エンジンとSRBの遺産を共有します。 2022年にArtemis IのOrionをCarried。Artemis IVによる乗組員のミッションを立ち上げる予定。"
- },
- {
-  "rel": "fleet/launcher/sls-block-1.json",
-  "at": "best_known_for",
-  "en": "Heavy lift for Artemis lunar program",
-  "cur": "Artemisの月面プログラムのための重い上昇"
- },
- {
-  "rel": "fleet/launcher/soyuz-2.json",
-  "at": "tagline",
-  "en": "Modern Soyuz workhorse — carries Soyuz MS crew + Progress MS cargo to the ISS",
-  "cur": "最新鋭のSoyuzの主力ロケット — Soyuz MSクルー輸送機とProgress MS補給機をISSへ運搬"
- },
- {
-  "rel": "fleet/launcher/soyuz-2.json",
-  "at": "description",
-  "en": "RKTs Progress's modernised Soyuz family, with digital flight controls replacing the analogue systems of Soyuz-FG / Soyuz-U. Variants 2.1a (RD-107A/RD-108A first stage + RD-0124 third stage), 2.1b (uprated third stage), and 2.1v (no boosters, single RD-110 stage). Carries every modern Russian crewed and cargo flight to the ISS plus Glonass, Resurs-P, and Lotos-S payloads.",
-  "cur": "RKTsのProgressによる最新化されたSoyuzファミリー。Soyuz-FGおよびSoyuz-Uのアナログシステムに替わってデジタル飛行制御を採用。バリアント2.1a（第1段階RD-107A/RD-108A、第3段階RD-0124）、2.1b（強化型第3段階）、2.1v（ブースターなし、単一RD-110段階）を備える。ISSへのロシアの全ての現代的有人飛行およびカーゴ飛行、並びにGlonass、Resurs-P、Lotos-Sペイロードを運搬する。"
- },
- {
-  "rel": "fleet/launcher/soyuz-2.json",
-  "at": "best_known_for",
-  "en": "Modern Soyuz workhorse for ISS crew + cargo",
-  "cur": "ISSクルー輸送とカーゴ輸送を担う最新鋭のSoyuzの主力ロケット"
- },
- {
-  "rel": "fleet/launcher/soyuz-fg.json",
-  "at": "tagline",
-  "en": "Crewed Soyuz launches 2001-2019",
-  "cur": "有人Soyuzの打ち上げ 2001～2019年"
- },
- {
-  "rel": "fleet/launcher/soyuz-fg.json",
-  "at": "description",
-  "en": "Soyuz-FG is a orbital launcher built by Progress Rocket Space Centre in Russia. Crewed Soyuz launches 2001-2019.",
-  "cur": "Soyuz-FGはロシアのProgress Rocket Space Centreによって開発された軌道打ち上げロケットです。有人Soyuzの打ち上げは2001～2019年に実施されました。"
- },
- {
-  "rel": "fleet/launcher/soyuz-fg.json",
-  "at": "best_known_for",
-  "en": "Crewed Soyuz launches 2001-2019",
-  "cur": "有人Soyuzの打ち上げ 2001～2019年"
- },
- {
-  "rel": "fleet/launcher/soyuz-u.json",
-  "at": "description",
-  "en": "Soyuz-U is a orbital launcher built by Progress Rocket Space Centre in USSR. Most-launched orbital rocket in history — 786 missions from 1973 to 2017.",
-  "cur": "Soyuz-Uは、ソビエト連邦のProgress Rocket Space Centreによって製造された軌道打ち上げロケットです。歴史上最も打ち上げられた軌道ロケット — 1973年から2017年にかけて786回の打ち上げミッション。"
- },
- {
-  "rel": "fleet/launcher/soyuz.json",
-  "at": "tagline",
-  "en": "R-7-derived launcher for the first-generation Soyuz spacecraft — flew Soyuz 1 (1967) and Soyuz 11 (1971)",
-  "cur": "Soyuz宇宙船第一世代を打ち上げたR-7派生ロケット — Soyuz 1号(1967年)とSoyuz 11号(1971年)を飛行"
- },
- {
-  "rel": "fleet/launcher/soyuz.json",
-  "at": "dispatch",
-  "en": "The launcher that opened the Soyuz era also carried its two tragedies. The 11A511 was the next step in Korolev's R-7 lineage — the same rocket family that lofted Sputnik and Gagarin, now uprated to carry the heavier, more capable Soyuz spacecraft that would become the workhorse of Soviet and Russian human spaceflight for the next half-century. Its first crewed flight, Soyuz 1 in 1967, ended when the descent module's parachutes fouled and Vladimir Komarov was lost. Four years later, Soyuz 11 returned its crew from the world's first space station — but a valve had opened at separation, and all three men died of depressurisation before touchdown. The rocket performed; the spacecraft's early margins did not. The R-7 lineage it belonged to still flies crews today.",
-  "cur": "Soyuz時代を開いたこのロケットは、その二つの悲劇をも担った。11A511は、コロリョフの R-7系譜における次の一歩だった。Sputnikとガガーリンを打ち上げた同じロケット一族が、今度はより重く高性能な Soyuz宇宙船を運ぶために強化され、その後半世紀にわたってソビエト・ロシアの有人宇宙飛行の主力となるはずの機体を支えた。最初の有人飛行である Soyuz 1号(1967年)は、降下モジュールのパラシュートが絡まってウラジーミル・コマロフが命を落とした。4年後、Soyuz 11号は世界初の宇宙ステーションから乗員を帰還させたが、分離時にバルブが開き、3名全員が着陸前に与圧喪失で命を失った。ロケットは正常に機能した。機能しなかったのは、宇宙船の初期安全余裕だった。その系譜を受け継ぐ R-7ファミリーは、今日もなお乗員を宇宙へ運び続けている。"
- },
- {
-  "rel": "fleet/launcher/soyuz.json",
-  "at": "description",
-  "en": "The Soyuz 11A511 was the R-7 derivative built to loft the first-generation Soyuz 7K-OK spacecraft, adding a more capable upper stage to the Vostok/Voskhod launcher lineage. Three-stage liquid-propellant (LOX + kerosene), ~50 metres tall, ~308 tonnes lift-off mass. It carried the crewed Soyuz programme's earliest flights, including its two fatal missions — Soyuz 1 (1967), lost when its recovery parachutes fouled, and Soyuz 11 (1971), whose crew died of depressurisation during descent. The 11A511 was succeeded by the Soyuz-U in 1973; the same R-7 lineage still flies crews as the Soyuz-2 today.",
-  "cur": "Soyuz 11A511は、第一世代のSoyuz 7K-OK宇宙船を打ち上げるために開発されたR-7の派生型で、Vostok/Voskhod系ロケットに上段を強化した3段式機体である。液体推進剤（液体酸素＋ケロシン）、全長約50メートル、離昇質量約308トン。有人Soyuzプログラムの初期飛行を担い、二つの致命的ミッション——回収パラシュートの絡まりで失われたSoyuz 1号(1967年)と、降下中の与圧喪失で乗員が全員死亡したSoyuz 11号(1971年)——を含む。11A511は1973年にSoyuz-Uに引き継がれた。同じR-7系譜は今日Soyuz-2として乗員を飛ばし続けている。"
- },
- {
-  "rel": "fleet/launcher/soyuz.json",
-  "at": "best_known_for",
-  "en": "R-7-derived launcher for the first-generation Soyuz spacecraft — flew Soyuz 1 (1967) and Soyuz 11 (1971)",
-  "cur": "Soyuz宇宙船第一世代を打ち上げたR-7派生ロケット — Soyuz 1号(1967年)とSoyuz 11号(1971年)を飛行"
- },
- {
-  "rel": "fleet/launcher/space-shuttle-stack.json",
-  "at": "tagline",
-  "en": "Orbiter + ET + SRBs; 135 missions",
-  "cur": "Orbiter + ET + SRB; 135ミッション"
- },
- {
-  "rel": "fleet/launcher/space-shuttle-stack.json",
-  "at": "description",
-  "en": "The reusable orbiter, external tank, and twin solid rocket boosters that flew 135 missions between 1981 and 2011. Built the ISS, deployed and serviced Hubble, and demonstrated the engineering trade-offs of a partially-reusable crewed launcher.",
-  "cur": "1981年から2011年にかけて135のミッションを実行した再利用可能なオービター、外部タンク、ツインの固体ロケット・ブースター。ISSを建設し、Hubbleを展開・サービスし、部分的に再利用可能な有人ロケットの工学的なトレードオフを実証した。"
- },
- {
-  "rel": "fleet/launcher/space-shuttle-stack.json",
-  "at": "best_known_for",
-  "en": "Orbiter + ET + SRBs; 135 missions",
-  "cur": "Orbiter + ET + SRB; 135ミッション"
- },
- {
-  "rel": "fleet/launcher/starship.json",
-  "at": "description",
-  "en": "Two-stage vehicle built around the methane-burning Raptor engine — Super Heavy first stage (33 Raptors) + Starship second stage (6 Raptors). Designed for full and rapid reuse via tower-catch recovery of both stages, targeting Mars transit timelines + Artemis Human Landing System. First integrated flight test (IFT-1) cleared the pad on 2023-04-20 but lost vehicle control before stage separation; demonstrated controlled recovery of both stages beginning with IFT-4 in June 2024.",
-  "cur": "メタンを燃料とするRaptorエンジンを中心に設計された2段式ロケット — 第1段Super Heavy（33基のRaptor）+ 第2段Starship（6基のRaptor）。両段をタワーキャッチで回収し、完全かつ迅速な再利用を実現する設計。火星への遠距離輸送とArtemis有人月面着陸システムを目標としている。初の統合飛行試験（IFT-1）は2023年4月20日にパッドをクリアしたが、段間分離前に機体制御を喪失。IFT-4以降（2024年6月）、両段の制御回収が実証されている。"
- },
- {
-  "rel": "fleet/launcher/starship.json",
-  "at": "best_known_for",
-  "en": "Fully reusable super-heavy launch vehicle in development for Artemis HLS + Mars",
-  "cur": "Artemis HLS + 火星向けに開発中の完全再利用可能超大型ロケット"
- },
- {
-  "rel": "fleet/launcher/titan-ii-glv.json",
-  "at": "tagline",
-  "en": "Workhorse for Project Gemini",
-  "cur": "Project Gemini のためのワークホース"
- },
- {
-  "rel": "fleet/launcher/titan-ii-glv.json",
-  "at": "dispatch",
-  "en": "The Titan II that launched Gemini was, like Mercury's rockets, a converted weapon — America's largest intercontinental missile, man-rated to carry a crew. Its defining trait was its fuel: where cryogenic propellants have to be loaded just before launch and can force a scrub, the Titan burned storable liquids that let it sit ready and lift off close to on time. That reliability of timing mattered more than it sounds, because Gemini's whole job was rendezvous, and catching another spacecraft in orbit depends on launching at an exact moment. The workhorse of the program, it flew all ten crewed Geminis without losing a crew.",
-  "cur": "Gemini を打ち上げた Titan II は、Mercury のロケットと同様に、改造された兵器であった。アメリカ最大の大陸間弾道ミサイルを、有人仕様に改修したものだ。その最大の特徴は燃料にあった。極低温推進剤は打ち上げ直前に充填する必要があり、中止を余儀なくされることもあるが、Titanは貯蔵可能な液体燃料を使用したため、待機状態を維持でき、ほぼ定刻通りに打ち上げることができた。このタイミングの信頼性は、聞こえる以上に重要だった。なぜなら、Gemini の全任務はランデブーであり、軌道上で別の宇宙船に接近するには、正確な瞬間に打ち上げる必要があったからだ。このプログラムの主力ロケットとして、10機すべての有人 Gemini を飛行させ、乗員を失うことはなかった。"
- },
- {
-  "rel": "fleet/launcher/titan-ii-glv.json",
-  "at": "description",
-  "en": "Titan II GLV is a orbital launcher built by Martin Marietta in USA. Workhorse for Project Gemini. Retired after first flight in 1964.",
-  "cur": "Titan II GLVは、アメリカで Martin Marietta によって建てられた軌道上発射装置です。プロジェクト Gemini のためのワークホース。1964年初飛行後退"
- },
- {
-  "rel": "fleet/launcher/titan-ii-glv.json",
-  "at": "best_known_for",
-  "en": "Workhorse for Project Gemini",
-  "cur": "Project Gemini のためのワークホース"
- },
- {
-  "rel": "fleet/launcher/voskhod-11a57.json",
-  "at": "tagline",
-  "en": "Vostok-K successor — more thrust for the heavier Voskhod capsule. Launched Voskhod 1 (1964) + Voskhod 2 (1965 Leonov EVA)",
-  "cur": "Vostok-Kの後継機 — より重いVoskhodカプセル用に推力増強。Voskhod 1(1964)+Voskhod 2(1965 レオーノフ EVA)を打上げ"
- },
- {
-  "rel": "fleet/launcher/voskhod-11a57.json",
-  "at": "dispatch",
-  "en": "The Voskhod 11A57 was the R-7 turned up a notch. The modified Vostok capsule was heavier than the original, so it needed more push than the Vostok-K could give — which the R-7 family, endlessly adaptable, duly provided with an uprated upper stage. It's a small chapter in a very long story: the same basic rocket that launched Sputnik and Gagarin, stretched again to loft the two Voskhod flights, and still being stretched, decades later, to fly Soyuz crews. Few designs have been asked to do so many different jobs for so long.",
-  "cur": "Voskhod 11A57は、R-7を一段階強化したものだった。改良型Vostokカプセルは元の機体より重く、Vostok-Kが提供できる以上の推力を必要としたが、無限に適応可能なR-7ファミリーは、改良された上段によってそれを確実に実現した。これは非常に長い物語の中の小さな一章である。Sputnikとガガーリンを打ち上げた同じ基本ロケットが、再び拡張されて2回のVoskhodフライトを打ち上げ、さらに数十年後にもまだ拡張されてSoyuzクルーを運んでいる。これほど長い期間にわたって、これほど多くの異なる任務を求められた設計はほとんどない。"
- },
- {
-  "rel": "fleet/launcher/voskhod-11a57.json",
-  "at": "description",
-  "en": "Voskhod (GRAU index 11A57) was the next iteration of the R-7 family after Vostok-K, with uprated Blok-I third-stage engines for the heavier Voskhod capsule. Three-stage LOX + kerosene, 44 metres tall, 298 tonnes lift-off mass. Launched both crewed Voskhod flights (Voskhod 1 first 3-person crew in 1964; Voskhod 2 with Leonov's first EVA in 1965). After the Voskhod programme ended the 11A57 continued in service for ~300 uncrewed military / civilian satellite launches through 1976, when it was superseded by the Soyuz 11A511 line.",
-  "cur": "Voskhod(GRAUインデックス11A57)は、Vostok-Kに続くR-7ファミリーの次世代機で、より重いVoskhodカプセル用にBlok-I第3段エンジンが強化されている。3段式液体酸素+ケロシン、全長44メートル、離昇質量298トン。有人Voskhod 2機(1964年のVoskhod 1は初の3人乗り;1965年のVoskhod 2はレオーノフによる初の宇宙遊泳)を打ち上げた。Voskhod計画終了後も11A57は約300回の無人軍事/民間衛星打上げに使用され、1976年にSoyuz 11A511系列に置き換えられた。"
- },
- {
-  "rel": "fleet/launcher/voskhod-11a57.json",
-  "at": "best_known_for",
-  "en": "Vostok-K successor — more thrust for the heavier Voskhod capsule. Launched Voskhod 1 (1964) + Voskhod 2 (1965 Leonov EVA)",
-  "cur": "Vostok-Kの後継機 — より重いVoskhodカプセル用に推力増強。Voskhod 1(1964)+Voskhod 2(1965 レオーノフ EVA)を打上げ"
- },
- {
-  "rel": "fleet/launcher/vostok-k.json",
-  "at": "tagline",
-  "en": "Soviet R-7-derived launcher that put Gagarin in space — Vostok 1 (1961-04-12) and 5 more Vostok flights through 1963",
-  "cur": "ガガーリンを宇宙へ送ったR-7派生のソ連製ロケット — Vostok 1(1961-04-12)と1963年までのVostok 5機を打ち上げ"
- },
- {
-  "rel": "fleet/launcher/vostok-k.json",
-  "at": "dispatch",
-  "en": "The rocket that launched Gagarin was a weapon that changed careers. The Vostok-K was a human-rated version of Korolev's R-7 — the world's first intercontinental ballistic missile, built to throw a warhead across the planet, now asked to lift a person into orbit. It was the same lineage that had lofted Sputnik, and it is, astonishingly, the same lineage still flying: the Soyuz rocket that carries crews to the Space Station today is a direct descendant, which makes the R-7 family by far the most-launched rocket in history. Few machines built for war have had so long or so peaceful a second life.",
-  "cur": "ガガーリンを打ち上げたロケットは、用途を変えた兵器だった。Vostok-Kは、コロリョフの R-7——世界初の大陸間弾道ミサイルで、弾頭を地球の裏側まで投射するために作られたが、今は人間を軌道に運ぶ役割を担った——の有人仕様版だった。これは Sputnik を打ち上げたのと同じ系譜であり、驚くべきことに、今も飛び続けている同じ系譜である。今日、宇宙ステーションに乗組員を運ぶ Soyuz ロケットは直系の子孫であり、R-7ファミリーは史上最も多く打ち上げられたロケットとなっている。戦争のために作られた機械で、これほど長く、これほど平和的な第二の人生を送ったものはほとんどない。"
- },
- {
-  "rel": "fleet/launcher/vostok-k.json",
-  "at": "description",
-  "en": "Vostok-K (GRAU index 8K72K) was the human-rated derivative of Korolev's R-7 ICBM, with a Blok-E upper stage and crew-rated parameters. Three-stage liquid-propellant (LOX + kerosene), 38 metres tall, 287 tonnes lift-off mass. Launched all six crewed Vostok flights (1-6, 1961-1963) plus a handful of uncrewed precursors. Reliability evolved from early R-7 teething problems (3 of 6 first-stage failures before Gagarin) to perfect record across the crewed series. The Vostok-K design lineage continues today as the Soyuz-2 launcher (the only crew-capable Russian launch vehicle of 2026).",
-  "cur": "Vostok-K（GRAU指数8K72K）はコロリョフのR-7 ICBM の有人対応派生型で、Blok-E 上段と乗員対応仕様を備えていました。3段式液体推進ロケット（LOX+ケロシン）、高さ38メートル、打ち上げ時総重量287トン。6機すべてのVostok 有人飛行（1～6号機、1961～1963年）および少数の無人先行試験機を打ち上げました。信頼性は初期のR-7の初期不具合（ガガーリン前に第1段故障6件中3件）から、有人飛行シリーズ全体での完璧な成功へと進化しました。Vostok-K 設計系統は今日もSoyuz-2ランチャーとして継続しており（2026年のロシアでの有人対応唯一の打ち上げロケット）、変わらず活躍しています。"
- },
- {
-  "rel": "fleet/launcher/vostok-k.json",
-  "at": "best_known_for",
-  "en": "Soviet R-7-derived launcher that put Gagarin in space — Vostok 1 (1961-04-12) and 5 more Vostok flights through 1963",
-  "cur": "ガガーリンを宇宙へ送ったR-7派生のソ連製ロケット — Vostok 1(1961-04-12)と1963年までのVostok 5機を打ち上げ"
- },
- {
-  "rel": "fleet/launcher/vulcan.json",
-  "at": "tagline",
-  "en": "Atlas V + Delta IV successor; certifies for NSSL Phase 3 + planned for Dream Chaser",
-  "cur": "Atlas V + Delta IVの後継機; NSSL Phase 3認定対象 + Dream Chaserの計画搭載機"
- },
- {
-  "rel": "fleet/launcher/vulcan.json",
-  "at": "description",
-  "en": "United Launch Alliance's two-stage successor to Atlas V and Delta IV. Powered by twin BE-4 methalox engines on the first stage and Centaur V (RL10) above. First flight 2024-01-08 carried Astrobotic Peregrine. Slated to certify for National Security Space Launch Phase 3 contracts and planned as the launch vehicle for Sierra Space's Dream Chaser cargo spaceplane.",
-  "cur": "United Launch AllianceによるAtlas VおよびDelta IVの後継2段式ロケット。第1段には双つのBE-4メタロックスエンジン、その上にCentaur V（RL10）を搭載。初飛行は2024-01-08でAstrobotic Peregrine搭載。National Security Space Launch Phase 3契約の認定取得が予定されており、Sierra SpaceのDream Chaserカーゴスペースプレーン用打上げロケットとして計画されている。"
- },
- {
-  "rel": "fleet/launcher/vulcan.json",
-  "at": "best_known_for",
-  "en": "Atlas V + Delta IV successor",
-  "cur": "Atlas V + Delta IVの後継機"
- },
- {
-  "rel": "fleet/observatory/chandra.json",
-  "at": "description",
-  "en": "NASA’s flagship X-ray observatory, in service since 1999. Resolution roughly 25× better than any previous X-ray telescope, allowing direct imaging of black-hole accretion disks, supernova remnants, and the hot gas threading galaxy clusters.",
-  "cur": "1999年以来、NASAの主力X線観測器。 従来のX線望遠鏡よりも約25倍の解像度で、ブラックホールのaccretionディスク、スーパーノバのremnantsの直接イメージングを可能にし、銀河クラスターをねじるホットガス。"
- },
- {
-  "rel": "fleet/observatory/compton-gro.json",
-  "at": "name",
-  "en": "Compton Gamma Ray Observatory",
-  "cur": "Compton Gamma Ray Observatory"
- },
- {
-  "rel": "fleet/observatory/compton-gro.json",
-  "at": "description",
-  "en": "One of NASA’s four \"Great Observatories\" alongside Hubble, Chandra, and Spitzer. In orbit 1991–2000, mapped the gamma-ray sky and discovered that gamma-ray bursts come from cosmological distances rather than nearby sources.",
-  "cur": "NASAの4つの「グレート・オブザーバトリー」の1つで、Hubble、Chandra、Spitzerと並んで位置づけられています。1991～2000年の間に軌道上にあり、ガンマ線天の図を作成し、ガンマ線バーストが近くの源からではなく宇宙論的距離からもたらされることを発見しました。"
- },
- {
-  "rel": "fleet/observatory/euclid.json",
-  "at": "tagline",
-  "en": "Dark-energy survey across one third of the sky",
-  "cur": "空の3分の1を対象とするダークエネルギー調査"
- },
- {
-  "rel": "fleet/observatory/euclid.json",
-  "at": "description",
-  "en": "Euclid surveys the sky in visible and near-infrared light to map the large-scale structure of the Universe and constrain dark energy. In service since 2023.",
-  "cur": "Euclidは可視光および近赤外線で天空を観測し、宇宙の大規模構造をマッピングしてダークエネルギーを制約します。2023年以来運用中です。"
- },
- {
-  "rel": "fleet/observatory/euclid.json",
-  "at": "best_known_for",
-  "en": "Dark-energy survey across one third of the sky",
-  "cur": "空の3分の1を対象とするダークエネルギー調査"
- },
- {
-  "rel": "fleet/observatory/gaia.json",
-  "at": "description",
-  "en": "ESA’s star-charting satellite, mapping the position, brightness, and motion of nearly two billion stars in the Milky Way at unprecedented precision. Operated 2013–2025; the resulting catalogue will underpin galactic astronomy for decades.",
-  "cur": "ESAのスターチャーティング衛星, 位置をマッピング, 明るさ, ミルキーウェイで約2億の星の動作は、前例のない精度で. 2013年～2025年 収蔵品は数十年にわたり銀河天文学を継承する。"
- },
- {
-  "rel": "fleet/observatory/hitomi.json",
-  "at": "tagline",
-  "en": "Spun apart in orbit; loss drove XRISM development",
-  "cur": "軌道上で分裂；その喪失はXRISM開発を推進した"
- },
- {
-  "rel": "fleet/observatory/hitomi.json",
-  "at": "description",
-  "en": "JAXA’s X-ray observatory, lost 37 days after launch in February 2016. A reaction-wheel saturation triggered a sequence of attitude-control errors that spun the spacecraft so fast it broke apart. Lessons drove the development of XRISM (launched 2023).",
-  "cur": "JAXAのX線天文台で、2016年2月の打上げから37日後に喪失した。リアクションホイールの飽和が姿勢制御エラーの連鎖を引き起こし、宇宙機を極度に高速で回転させて分裂させた。その教訓がXRISM（2023年打上げ）の開発を推進した。"
- },
- {
-  "rel": "fleet/observatory/hitomi.json",
-  "at": "best_known_for",
-  "en": "Spun apart in orbit; loss drove XRISM development",
-  "cur": "軌道上で分裂；その喪失はXRISM開発を推進した"
- },
- {
-  "rel": "fleet/observatory/hubble.json",
-  "at": "tagline",
-  "en": "Iconic visible/UV space telescope; 5 servicing missions",
-  "cur": "象徴的な可視紫外線宇宙望遠鏡；5回の保守ミッション"
- },
- {
-  "rel": "fleet/observatory/hubble.json",
-  "at": "description",
-  "en": "NASA’s and ESA’s shared visible/UV space telescope, in low Earth orbit since 1990 and serviced five times by Space Shuttle missions through 2009. Still in operation 35+ years later, with major instruments installed by spacewalking astronauts and a primary mirror flaw corrected in 1993 by COSTAR (later replaced by instruments with built-in corrective optics).",
-  "cur": "NASAとESAが共有する可視光・紫外線宇宙望遠鏡で、1990年から低地球軌道に位置し、2009年までSpace Shuttleのミッションによって5度保守されました。35年以上経った今も運用中で、主要な機器は宇宙遊泳する宇宙飛行士によって設置され、1993年には主鏡の欠陥がCOSTARによって補正されました（後に内蔵補正光学系を備えた機器に交換されました）。"
- },
- {
-  "rel": "fleet/observatory/hubble.json",
-  "at": "best_known_for",
-  "en": "Iconic visible/UV space telescope; 5 servicing missions",
-  "cur": "象徴的な可視紫外線宇宙望遠鏡；5回の保守ミッション"
- },
- {
-  "rel": "fleet/observatory/jwst.json",
-  "at": "description",
-  "en": "The largest infrared space telescope ever built. Stationed at Sun-Earth L2 since January 2022, with a 6.5 m segmented gold-coated beryllium primary mirror behind a tennis-court-sized sunshield. Sees back to the first galaxies after the Big Bang.",
-  "cur": "これまでに建造された最大の赤外線宇宙望遠鏡。2022年1月から太陽・地球ラグランジュポイント(L2)に配置されており、テニスコート規模のサンシールドの背後に、6.5 mの分割式金メッキベリリウム主鏡を備えています。ビッグバン直後の最初の銀河まで観測することができます。"
- },
- {
-  "rel": "fleet/observatory/jwst.json",
-  "at": "best_known_for",
-  "en": "Largest infrared space telescope; L2 orbit",
-  "cur": "最も大きい赤外線スペース望遠鏡;L2軌道"
- },
- {
-  "rel": "fleet/observatory/kepler.json",
-  "at": "description",
-  "en": "NASA’s exoplanet hunter (2009–2018). Stared at a single patch of sky and detected exoplanets via transit photometry — the brief dip in starlight when a planet passes in front of its star. Discovered more than 2,700 confirmed exoplanets and demonstrated that Earth-sized worlds are common.",
-  "cur": "NASAの系外惑星探索機（2009～2018年）。空の一部を見つめて、トランジット測光法により系外惑星を検出しました——惑星がその星の前を通過するときの恒星光の短い減光を利用します。2,700個以上の系外惑星を発見し、地球サイズの世界が一般的であることを実証しました。"
- },
- {
-  "rel": "fleet/observatory/spektr-rg.json",
-  "at": "description",
-  "en": "Spektr-RG is a space observatory built by NPO Lavochkin in Russia. Russian-German X-ray sky-mapping observatory. In service since 2019; its German eROSITA telescope entered safe mode in February 2022, while the Russian ART-XC instrument keeps observing.",
-  "cur": "Spektr-RGはロシアのNPO Lavochkinが建造した宇宙天文台である。ロシア・ドイツ共同開発のX線全天サーベイ天文台。2019年以来稼働中であり、ドイツ製eROSITAテレスコープは2022年2月にセーフモードに移行した一方、ロシア製ART-XC器器は観測を継続している。"
- },
- {
-  "rel": "fleet/observatory/spitzer.json",
-  "at": "tagline",
-  "en": "Infrared Great Observatory; 16 years of data",
-  "cur": "赤外線グレートオブザーバトリー；16年分のデータ"
- },
- {
-  "rel": "fleet/observatory/spitzer.json",
-  "at": "description",
-  "en": "NASA’s infrared Great Observatory, in service 2003–2020. Designed for a five-year cryogenic mission but operated for sixteen, including a \"warm mission\" phase after its liquid-helium coolant was exhausted in 2009.",
-  "cur": "2003年から2020年まで運用されたNASAの赤外線グレートオブザーバトリー。5年間の低温ミッションとして設計されたが、16年間運用され、2009年に液体ヘリウム冷却剤が枯渇した後の「ウォームミッション」フェーズを含む。"
- },
- {
-  "rel": "fleet/observatory/spitzer.json",
-  "at": "best_known_for",
-  "en": "Infrared Great Observatory; 16 years of data",
-  "cur": "赤外線グレートオブザーバトリー；16年分のデータ"
- },
- {
-  "rel": "fleet/observatory/tess.json",
-  "at": "description",
-  "en": "The Transiting Exoplanet Survey Satellite, in orbit since 2018. Surveys nearly the entire sky in 26 sectors per year, looking for short-period exoplanets around the brightest, closest stars to Earth — the targets that will be most amenable to follow-up atmospheric characterisation by JWST.",
-  "cur": "2018年から軌道上にある系外惑星探査衛星（Transiting Exoplanet Survey Satellite）。ほぼ全天を年間26セクタに分割して探査し、地球に最も近く最も明るい恒星の周りの短周期系外惑星を探す。これらは、JWSTによるその後の大気特性化観測に最も適した観測対象である。"
- },
- {
-  "rel": "fleet/observatory/xmm-newton.json",
-  "at": "description",
-  "en": "XMM-Newton is a space observatory built by Airbus Defence and Space in Multi (Europe). ESA's flagship X-ray observatory. In service since 1999.",
-  "cur": "XMM-Newtonは、Airbus Defence and SpaceがMulti（ヨーロッパ）で建造した宇宙天文台です。ESAのフラッグシップX線天文台。1999年からの運用です。"
- },
- {
-  "rel": "fleet/orbiter/akatsuki.json",
-  "at": "tagline",
-  "en": "Japan's first Venus orbiter; recovered from a 2010 orbit-insertion failure to study cloud-top dynamics",
-  "cur": "日本初の金星軌道衛星。2010年の軌道投入失敗から復帰し、雲頂部の動力学を研究"
- },
- {
-  "rel": "fleet/orbiter/akatsuki.json",
-  "at": "description",
-  "en": "JAXA's Venus Climate Orbiter, Japan's first spacecraft to successfully orbit Venus. Originally failed orbit insertion in 2010 but was recovered on a backup attempt five years later (2015) using less efficient thrusters. Studied cloud-top winds, lightning, and atmospheric dynamics of Venus's super-rotating atmosphere. Mission ended September 2025 after contact was lost.",
-  "cur": "JAXA の金星気候探査機、日本初の金星周回衛星。2010 年の軌道投入に失敗しましたが、5 年後の 2015 年にバックアップエンジンを使用してミッションを復帰させました。金星の超回転大気における雲頂部の風、稲妻、大気力学を研究しました。2025 年 9 月に通信が途絶え、ミッションは終了しました。"
- },
- {
-  "rel": "fleet/orbiter/akatsuki.json",
-  "at": "best_known_for",
-  "en": "Japan's first Venus orbiter; studied cloud-top winds and atmospheric dynamics. Recovered after a 2010 orbit-insertion failure",
-  "cur": "日本初の金星軌道衛星。雲頂部の風と大気力学を研究し、2010年の軌道投入失敗から復帰"
- },
- {
-  "rel": "fleet/orbiter/bepicolombo.json",
-  "at": "tagline",
-  "en": "Twin-orbiter joint ESA + JAXA Mercury mission — splits into MPO + Mio at Mercury arrival in 2026",
-  "cur": "ESA + JAXA共同水星双衛星ミッション——2026年の水星到着時にMPO + Mioに分離"
- },
- {
-  "rel": "fleet/orbiter/bepicolombo.json",
-  "at": "description",
-  "en": "Joint ESA + JAXA mission. Launched 2018-10-20 on an Ariane 5 ECA. Mercury Transfer Module carries the stack on a 7-year flyby cruise (1 Earth + 2 Venus + 6 Mercury gravity assists) before Mercury orbit insertion on 2026-11-21. At arrival the two science orbiters separate: ESA's Mercury Planetary Orbiter (MPO) flies a 480 × 1500 km polar orbit with 11 instruments for surface composition, topography, gravity, and exosphere; JAXA's Mio (Mercury Magnetospheric Orbiter) flies a 590 × 11 640 km polar orbit with 5 instruments for the magnetosphere and plasma. Together they are the first European + Japanese spacecraft ever in Mercury orbit.",
-  "cur": "ESA + JAXA共同ミッション。2018年10月20日にAriane 5 ECAで打上げ。Mercury Transfer Moduleが7年間の飛行(地球1回 + 金星2回 + 水星6回の重力アシスト)を経て、2026年11月21日に水星軌道投入される。到着時に2つの科学衛星が分離される:ESAのMercury Planetary Orbiter (MPO)は480 × 1500 kmの極軌道で飛行し、表面組成、地形、重力、および外圏を観測する11個の機器を搭載;JAXAのMioは590 × 11 640 kmの極軌道で飛行し、磁気圏とプラズマを観測する5個の機器を搭載。これらは水星軌道に到着した初めてのヨーロッパと日本の宇宙機である。"
- },
- {
-  "rel": "fleet/orbiter/bepicolombo.json",
-  "at": "best_known_for",
-  "en": "Joint ESA + JAXA twin-orbiter Mercury mission — MPO + Mio at Mercury, 2026 arrival",
-  "cur": "ESA + JAXA共同双衛星水星ミッション——2026年到着予定のMPO + Mio"
- },
- {
-  "rel": "fleet/orbiter/cassini.json",
-  "at": "tagline",
-  "en": "Saturn orbiter; Huygens landed on Titan",
-  "cur": "土星周回機；Huygens はタイタンに着陸"
- },
- {
-  "rel": "fleet/orbiter/cassini.json",
-  "at": "description",
-  "en": "The Saturn orbiter (2004–2017) that carried ESA’s Huygens lander to Titan — still the only landing on a moon of an outer planet. Discovered the active geyser plumes of Enceladus and the global ocean beneath its icy crust. Ended in a planned plunge into Saturn’s atmosphere.",
-  "cur": "土星周回機（2004～2017年）。ESA の Huygens ランダーをタイタンに運んだ。外惑星の衛星への着陸はいまなお唯一のミッション。エンケラドゥスの活動的なガイザー・プリュームと、その氷殻の下の全球オーシャンを発見。最後に土星の大気への計画的な突入で終了した。"
- },
- {
-  "rel": "fleet/orbiter/cassini.json",
-  "at": "best_known_for",
-  "en": "Saturn orbiter; Huygens landed on Titan",
-  "cur": "サターンオービター; Huygensはタイタンに上陸"
- },
- {
-  "rel": "fleet/orbiter/chandrayaan1.json",
-  "at": "tagline",
-  "en": "India's first Moon mission. Discovered widespread surface water on the Moon (M3 + MIP, 2009). Lost contact 2009-08-29 after only 312 days",
-  "cur": "インドの初月面探査機。月の広範な地表水を発見（M3 + MIP、2009年）。2009年8月29日に通信喪失、312日間の運用"
- },
- {
-  "rel": "fleet/orbiter/chandrayaan1.json",
-  "at": "description",
-  "en": "India's first mission beyond Earth orbit and its first to the Moon. Launched 2008-10-22 from Satish Dhawan Space Centre on a PSLV-XL, Chandrayaan-1 entered a 100-km polar lunar orbit on 2008-11-12. Carried 11 instruments from 6 countries (India, USA, UK, Germany, Sweden, Bulgaria) — most consequentially NASA's Moon Mineralogy Mapper (M3) which detected the absorption-band signature of OH/H₂O across vast swathes of the lunar surface, particularly at high latitudes (Pieters et al., 2009, Science 326). Its 35-kg Moon Impact Probe (MIP) was released 2008-11-14 and impacted near the rim of Shackleton Crater at the lunar south pole (Jawahar Sthal, ~89.5°S), becoming the first Indian artefact on the Moon and recording lunar atmospheric water vapour during descent. Spacecraft contact was lost 2009-08-29 after ~10 months / 3400 orbits — half of its planned 2-year mission, but the science return was already game-changing. Remains in lunar orbit, re-acquired by NASA Goldstone radar in 2017.",
-  "cur": "インドが地球周回軌道を超えて実施した最初のミッションであり、月への最初のミッション。2008年10月22日にサティシュ・ダワン宇宙センターからベンガル衛星打ち上げロケット(PSLV-XL)によって打ち上げられ、Chandrayaan-1は2008年11月12日に月の極軌道(高度100km)に到達した。6ヶ国(インド、アメリカ、イギリス、ドイツ、スウェーデン、ブルガリア)から計11個の観測機器を搭載していた。最も重要な成果は、NASAの月鉱物マッピッパー(M3)が月面全体、特に高緯度地域における水酸基/水(OH/H₂O)の吸収帯スペクトルを検出したことである(Pieters et al., 2009, Science 326)。35kgの月衝撃探査機(MIP)は2008年11月14日に放出され、月の南極にあるシャクルトン・クレーター付近の縁(Jawahar Sthal、南緯約89.5°)に衝突し、インド初の月上への物体となり、下降時に月の大気中の水蒸気を観測した。2009年8月29日に宇宙機との通信が失われ、約10ヶ月間/3400周回でミッションを終了した。これは計画されていた2年間のミッションの半分であったが、得られた科学的成果は既に革新的なものであった。月周回軌道に残存しており、2017年にNASA Goldstoneレーダーに再捕捉された。"
- },
- {
-  "rel": "fleet/orbiter/chandrayaan1.json",
-  "at": "best_known_for",
-  "en": "India's first Moon mission. Discovered widespread surface water on the Moon (M3 + MIP, 2009). Lost contact 2009-08-29 after only 312 days",
-  "cur": "インドの初月面探査機。月の広範な地表水を発見（M3 + MIP、2009年）。2009年8月29日に通信喪失、312日間の運用"
- },
- {
-  "rel": "fleet/orbiter/change-2.json",
-  "at": "tagline",
-  "en": "Second Chinese lunar orbiter; first to visit asteroid 4179 Toutatis",
-  "cur": "中国の第2号月周回衛星；小惑星4179 トータティスを訪れた最初の探査機"
- },
- {
-  "rel": "fleet/orbiter/change-2.json",
-  "at": "description",
-  "en": "China's second lunar orbiter, launched 2010-10-01. Chang'e 2 orbited the Moon from 2010 to 2011, then departed lunar orbit in June 2011 for an extended deep-space mission. It proceeded to the Sun-Earth L2 point (arriving August 2011), then departed L2 in April 2012 for a historic flyby of asteroid 4179 Toutatis, executing a close approach on 2012-12-13 at ~770 m distance — the first spacecraft to visit the asteroid. After the Toutatis encounter, Chang'e 2 continued into deep space on a heliocentric trajectory, becoming a drifting interplanetary object.",
-  "cur": "中国の2番目の月周回衛星で、2010年10月1日に打ち上げられた。Chang'e 2は2010年から2011年にかけて月を周回し、2011年6月に月周回軌道を離脱して長期深宇宙探査任務に向かった。太陽・地球L2ポイントに到達し(2011年8月到着)、その後2012年4月にL2を離脱して小惑星4179 トータティスの歴史的なフライバイを実行した。2012年12月13日に約770 m の距離で接近マヌーバを実行し、小惑星を訪問した初の宇宙機となった。トータティスとの遭遇後、Chang'e 2は深宇宙へ向けて太陽中心軌道を続け、漂流する星間物体となった。"
- },
- {
-  "rel": "fleet/orbiter/change-2.json",
-  "at": "best_known_for",
-  "en": "Second Chinese lunar orbiter; first spacecraft flyby of asteroid 4179 Toutatis (Dec 13, 2012, ~770 m closest approach)",
-  "cur": "中国の第2号月周回衛星；小惑星4179 トータティスへの最初の探査機フライバイ（2012年12月13日、最接近距離 ~770 m）"
- },
- {
-  "rel": "fleet/orbiter/change1.json",
-  "at": "tagline",
-  "en": "China's first lunar mission. 200-m global topo map; deliberate Mare Fecunditatis impact 2009-03-01 — first Chinese object on the Moon",
-  "cur": "中国初の月探査機。200m全球地形図、2009年3月1日に豊かの海への意図的衝突 — 月面到達初の中国製機体"
- },
- {
-  "rel": "fleet/orbiter/change1.json",
-  "at": "description",
-  "en": "The first phase of China's Lunar Exploration Program (CLEP), and CNSA's first mission beyond Earth. Launched 2007-10-24 from Xichang Satellite Launch Center on a Long March 3A, Chang'e 1 (named after the Moon goddess of Chinese folklore) entered a 200-km circular polar lunar orbit on 2007-11-07. Carried 8 instruments including a CCD stereo camera, laser altimeter, imaging spectrometer, gamma-ray and X-ray spectrometers, microwave radiometer, solar wind detector, and high-energy particle detector. Produced China's first full lunar global topographic map at 120-200 m resolution and elemental abundance maps of Th, K, U, O, Si, Mg, Al, Ca, Ti, Fe. Mission deliberately ended 2009-03-01 with a controlled impact at 1.50° S, 52.36° E in Mare Fecunditatis — China's first object on the lunar surface, paving the way for Chang'e 3 (2013 surface landing) and Chang'e 5 (2020 sample return). Operated 16 months — 4 months past nominal.",
-  "cur": "中国の月探査計画（CLEP）の最初のフェーズであり、CNSAの地球外初ミッション。2007年10月24日に西昌衛星発射センターからLong March 3Aで打ち上げられたChang'e 1（中国民話の月の女神にちなんで命名）は、2007年11月7日に月の200 km円形極軌道に突入した。CCDステレオカメラ、レーザ高度計、イメージング分光計、ガンマ線・X線分光計、マイクロ波放射計、太陽風検出器、高エネルギー粒子検出器を含む8つの機器を搭載していた。120～200 m分解能で中国初の月全球地形図を作成し、Th、K、U、O、Si、Mg、Al、Ca、Ti、Feの元素存在量マップを作成した。ミッションは2009年3月1日に南緯1.50°、東経52.36°の豊かの海での制御された衝突により意図的に終了した。中国初の月面物体であり、Chang'e 3（2013年月面着陸）とChang'e 5（2020年試料回収）への道を開いた。16ヶ月間運用され、計画期間を4ヶ月超過した。"
- },
- {
-  "rel": "fleet/orbiter/change1.json",
-  "at": "best_known_for",
-  "en": "China's first lunar mission. 200-m global topo map; deliberate Mare Fecunditatis impact 2009-03-01 — first Chinese object on the Moon",
-  "cur": "中国初の月探査機。200m全球地形図、2009年3月1日に豊かの海への意図的衝突 — 月面到達初の中国製機体"
- },
- {
-  "rel": "fleet/orbiter/clementine.json",
-  "at": "tagline",
-  "en": "Joint BMDO + NASA lunar orbiter — first global multispectral map and first bistatic-radar evidence for polar water ice",
-  "cur": "BMDO・NASA 共同の月周回機 — 月の世界初の完全マルチスペクトル地図と極水氷の最初のバイスタティックレーダー証拠"
- },
- {
-  "rel": "fleet/orbiter/clementine.json",
-  "at": "description",
-  "en": "Officially the Deep Space Program Science Experiment (DSPSE). Conceived by the Ballistic Missile Defense Organization to qualify lightweight sensors in deep-space conditions, with NASA collaborating on lunar + asteroid science. Launched 1994-01-25 on a Titan IIG, entered lunar polar orbit 1994-02-19 for 71 days of mapping. Imaged every square kilometre of the Moon at 100-300 m resolution across 11 wavelengths — the first complete global lunar map. The bistatic radar experiment using Clementine's transmitter and DSN ground antennas found enhanced echoes at south-polar Shackleton crater consistent with water ice, predating LCROSS by 15 years. A failed thruster firing aborted the planned Geographos asteroid flyby and ended the mission.",
-  "cur": "正式名称はDeep Space Program Science Experiment（DSPSE）。弾道弾防衛機構により軽量センサーの深宇宙環境での性能検証を目的として企画され、NASAが月および小惑星科学で協力しました。1994年1月25日にTitan IIGで打ち上げられ、1994年2月19日に月極軌道に投入され、71日間にわたるマッピングを実施。11の波長帯域で月の全表面を100～300 mの解像度で画像化し、初の完全な月全球地図を作成しました。Clementineの送信機とDSN地上アンテナを使用した双静態レーダー実験は、南極Shackleton隕石坑で水氷と一致する強化されたエコーを検出し、LCROSSより15年先行しました。スラスター火災制御の失敗により、計画されていたジオグラフォス小惑星フライバイは中止され、ミッションは終了しました。"
- },
- {
-  "rel": "fleet/orbiter/clementine.json",
-  "at": "best_known_for",
-  "en": "First complete global lunar multispectral map and first hint of polar water ice — 1994",
-  "cur": "月の世界初の完全マルチスペクトル地図と極水氷の初の手がかり — 1994"
- },
- {
-  "rel": "fleet/orbiter/dart.json",
-  "at": "tagline",
-  "en": "First planetary defense impactor (Dimorphos)",
-  "cur": "第一次惑星防衛インフルエンサー(ディモルフォス)"
- },
- {
-  "rel": "fleet/orbiter/dart.json",
-  "at": "description",
-  "en": "The first planetary defense impactor. Deliberately collided with the asteroid moonlet Dimorphos in September 2022, shortening its orbital period around its parent Didymos by 33 minutes — proving that kinetic deflection is a viable planet-protection technique.",
-  "cur": "初の惑星防衛インパクター。2022年9月に小惑星の衛星ディモルフォスに意図的に衝突し、親小惑星ディディモスの周回周期を33分短縮しました。これにより、運動量による偏向が実行可能な惑星保護技術であることが証明されました。"
- },
- {
-  "rel": "fleet/orbiter/dart.json",
-  "at": "best_known_for",
-  "en": "First planetary defense impactor (Dimorphos)",
-  "cur": "第一次惑星防衛インフルエンサー(ディモルフォス)"
- },
- {
-  "rel": "fleet/orbiter/dawn.json",
-  "at": "tagline",
-  "en": "Only spacecraft to orbit two extraterrestrial worlds — Vesta then Ceres via ion propulsion",
-  "cur": "二つの地球外世界を周回した唯一の探査機 — イオン推進でベスタ、続いてケレス"
- },
- {
-  "rel": "fleet/orbiter/dawn.json",
-  "at": "description",
-  "en": "NASA Discovery-class mission powered by three NSTAR xenon ion thrusters that produced the 11 km/s of total delta-v needed to enter orbit around Vesta, escape, cruise three years, and enter orbit around Ceres. Mapped both bodies in unprecedented detail — Vesta's southern Rheasilvia basin, Ceres' bright Cerealia Facula spots, ammoniated phyllosilicates, and cryovolcanism at Ahuna Mons. Mission ended 2018 when reaction-control hydrazine was exhausted; the spacecraft remains in a stable orbit around Ceres.",
-  "cur": "NASAのDiscovery計画ミッション。3基のNSTAR補助エンジン搭載で、ベスタ周回軌道への投入、脱出、3年間の航行、セレス周回軌道への投入に必要な合計11 km/sのデルタVを実現しました。両天体を前例のない詳細で撮像し、ベスタの南部にあるレアシルヴィア盆地、セレスの明るいCerealia Faculaスポット、アンモニア含有フィロケイ酸塩、およびアフナ山での氷火山活動を観測しました。2018年に反作用制御用ヒドラジンが枯渇してミッション終了。宇宙機はセレス周回の安定軌道に留まっています。"
- },
- {
-  "rel": "fleet/orbiter/dawn.json",
-  "at": "best_known_for",
-  "en": "Only spacecraft to orbit two extraterrestrial worlds — Vesta (2011-2012), Ceres (2015-2018)",
-  "cur": "二つの地球外世界を周回した唯一の探査機 — ベスタ、ケレス"
- },
- {
-  "rel": "fleet/orbiter/europa-clipper.json",
-  "at": "tagline",
-  "en": "First mission dedicated to characterising Europa's habitability",
-  "cur": "エウロパの居住可能性を特性化するための最初のミッション"
- },
- {
-  "rel": "fleet/orbiter/europa-clipper.json",
-  "at": "description",
-  "en": "NASA's mission to study the habitability of Jupiter's icy moon Europa — believed to harbour a global liquid-water ocean beneath a 15-25 km ice shell, possibly the most accessible potentially-habitable environment in the solar system. Largest planetary mission spacecraft ever launched (~6000 kg). ~102-m² solar arrays generate enough power at Jupiter's distance to drive nine instruments through 49 close Europa flybys, designed to map the entire moon while limiting the spacecraft's dose in Jupiter's brutal radiation belts.",
-  "cur": "NASAによる木星の氷の衛星エウロパの居住可能性を研究する任務。厚さ15～25 kmの氷殻の下に、太陽系全体でおそらく最もアクセス可能な潜在的に居住可能な環境と信じられている全球液体水海を有すると考えられている。これまでに打ち上げられた最大の惑星探査機宇宙船（~6000 kg）。~102 m²の太陽光電池アレイは、木星の距離での十分な電力を生成し、9つの計器をエウロパの49回の接近フライバイを通じて駆動でき、月全体をマッピングするとともに宇宙船の木星の激烈な放射線帯での被曝量を制限するよう設計されている。"
- },
- {
-  "rel": "fleet/orbiter/europa-clipper.json",
-  "at": "best_known_for",
-  "en": "First mission dedicated to Europa habitability",
-  "cur": "エウロパの居住可能性を研究する最初のミッション"
- },
- {
-  "rel": "fleet/orbiter/exomars-tgo.json",
-  "at": "tagline",
-  "en": "Trace-gas analysis + ESA/NASA surface relay",
-  "cur": "微量ガス分析 + ESA/NASA 火星表面リレー"
- },
- {
-  "rel": "fleet/orbiter/exomars-tgo.json",
-  "at": "description",
-  "en": "ESA's Trace Gas Orbiter, in orbit at Mars since 2016. Sniffs the atmosphere for methane and water vapor that could hint at biology or geology, and relays data for Mars surface missions via its UHF relay.",
-  "cur": "ESAの Trace Gas Orbiter。2016年から火星周回軌道で活動。メタンと水蒸気を大気から検出し、生物学的または地質学的な痕跡を探査。またUHFリレーを通じて火星表面ミッションのデータ中継も行う。"
- },
- {
-  "rel": "fleet/orbiter/exomars-tgo.json",
-  "at": "best_known_for",
-  "en": "Trace gas analysis at Mars; relay for ESA and NASA surface missions",
-  "cur": "火星での微量ガス分析、ESA・NASA表面ミッションへのリレー"
- },
- {
-  "rel": "fleet/orbiter/galileo.json",
-  "at": "tagline",
-  "en": "First Jupiter orbiter; 8 years of measurements",
-  "cur": "最初のジュピターオービター; 8 年間の測定"
- },
- {
-  "rel": "fleet/orbiter/galileo.json",
-  "at": "description",
-  "en": "The first Jupiter orbiter (1995–2003), and the only mission to drop a probe into Jupiter’s atmosphere. Also discovered evidence for a subsurface ocean on Europa — making it one of the most consequential planetary missions ever flown.",
-  "cur": "最初の木星軌道周回機（1995～2003年）であり、木星の大気中にプローブを投下した唯一のミッション。エウロパの地下海の存在を示す証拠も発見し、これまでに実施された最も重要な惑星探査ミッションの一つとなった。"
- },
- {
-  "rel": "fleet/orbiter/galileo.json",
-  "at": "best_known_for",
-  "en": "First Jupiter orbiter; 8 years of measurements",
-  "cur": "最初のジュピターオービター; 8 年間の測定"
- },
- {
-  "rel": "fleet/orbiter/giotto.json",
-  "at": "tagline",
-  "en": "First close-up images of a cometary nucleus — flew 596 km past Halley's Comet at 68 km/s in 1986",
-  "cur": "彗星核を初めて至近距離で撮影 — 1986 年、ハレー彗星 Comet から 596 km を秒速 68 km で通過"
- },
- {
-  "rel": "fleet/orbiter/giotto.json",
-  "at": "description",
-  "en": "ESA's first deep-space probe. Spin-stabilised drum-shaped bus protected by a Whipple-shield dust bumper, built around the Halley Multicolour Camera plus 9 other instruments contributed by 11 European countries, NASA, and Japan. Closest approach to comet 1P/Halley on 1986-03-14 at 596 km — the bumper survived, though a 100 mg dust strike 14 seconds before closest approach offset the spin axis and broke camera contact. Reactivated in 1990 for a 200 km flyby of comet Grigg-Skjellerup in 1992, the first time a spacecraft returned to a different cometary target.",
-  "cur": "ESAの初の深宇宙探査機。スピン安定化されたドラム形バスは、ハレー彗星 Multicolour Cameraと11の欧州各国、NASA、日本が提供した他の9つの機器を中心に、Whipple-shieldダストバンパーで保護されている。彗星1P/ハレー彗星への最接近は1986-03-14に596 km地点で実現し、バンパーは無傷だったが、最接近の14秒前に100 mgのダスト衝撃がスピン軸をずらし、カメラ接触を断った。1990年に再起動され、1992年にグリッグ・シェレルップ彗星への200 km接近飛行に使用され、宇宙機が異なる彗星ターゲットに復帰した初めての事例となった。"
- },
- {
-  "rel": "fleet/orbiter/giotto.json",
-  "at": "best_known_for",
-  "en": "First close-up images of a cometary nucleus — 596 km past Halley's Comet, 1986-03-14",
-  "cur": "彗星核の初の接近画像 — ハレー彗星彗星から596 km地点、1986-03-14"
- },
- {
-  "rel": "fleet/orbiter/hayabusa-2.json",
-  "at": "tagline",
-  "en": "Asteroid sample return from Ryugu",
-  "cur": "リュウグウからのアステロイドサンプルリターン"
- },
- {
-  "rel": "fleet/orbiter/hayabusa-2.json",
-  "at": "description",
-  "en": "Hayabusa2 is a deep-space orbiter built by NEC in Japan. Successfully returned ~5.4 grams of samples from asteroid 162173 Ryugu on December 6, 2020. After sample delivery, the spacecraft continued on an extended SHARP (Small Hazardous Asteroid Reconnaissance Probe) mission to other asteroids. It flew past asteroid Torifune on July 5, 2026, and is planned to rendezvous with asteroid 1998 KY26 in 2031.",
-  "cur": "はやぶさ2 は日本のNECが製造した深宇宙周回探査機です。2020年12月6日、小惑星162173 リュウグウから約5.4グラムのサンプルを地球に持ち帰ることに成功しました。サンプル回収後、探査機はSHARP（Small Hazardous Asteroid Reconnaissance Probe）ミッションの延長運用として他の小惑星へ向かいました。2026年7月5日に小惑星トリフネをフライバイし、2031年に小惑星1998 KY26とのランデブーが予定されています。"
- },
- {
-  "rel": "fleet/orbiter/hayabusa-2.json",
-  "at": "best_known_for",
-  "en": "First asteroid sample return to Earth from Ryugu (Dec 2020); continuing extended mission to Torifune and 1998 KY26",
-  "cur": "リュウグウからの初のアステロイドサンプルリターン（2020年12月）；トリフネおよび1998 KY26への継続拡張ミッション"
- },
- {
-  "rel": "fleet/orbiter/hayabusa.json",
-  "at": "description",
-  "en": "JAXA's pioneering asteroid sample-return mission. Launched 2003-05-09 to Itokawa carrying four μ10 microwave-discharge ion thrusters. Survived a hydrazine leak, three of four reaction wheels failing, an ion engine failure, and seven weeks of lost communications before engineers nursed it back to Earth with one working engine assembled from the surviving halves of two damaged ones. Sample capsule recovered at Woomera AUS 2010-06-13 with 1500 μg of Itokawa material — the first asteroid sample ever returned to Earth.",
-  "cur": "JAXAの先駆的な小惑星サンプルリターンミッション。2003-05-09に打ち上げられ、4基のμ10マイクロ波放電式イオンエンジンを搭載してイトカワへ向かった。ヒドラジン漏れ、4基中3基のリアクションホイールの故障、イオンエンジンの故障、7週間にわたる通信途絶を乗り越え、エンジニアたちは2基の損傷したエンジンの生き残った半分を組み合わせた1基のエンジンで地球へ帰還させた。サンプルカプセルは2010-06-13にウーメラで回収され、1500 μgのイトカワ物質を持ち帰った——地球に帰還した史上初の小惑星サンプルである。"
- },
- {
-  "rel": "fleet/orbiter/hayabusa.json",
-  "at": "best_known_for",
-  "en": "First asteroid sample-return mission",
-  "cur": "史上初の小惑星サンプルリターンミッション"
- },
- {
-  "rel": "fleet/orbiter/hope.json",
-  "at": "description",
-  "en": "The UAE's Hope orbiter — Emirates Mars Mission, known in Arabic as Al-Amal. Reached Mars in 2021 and provided the first holistic global view of the Martian atmosphere through a complete Martian year. Built in partnership with the University of Colorado LASP.",
-  "cur": "UAEのHope探査機 — Emirates 火星 Mission、アラビア語ではAl-Amalとして知られる。2021年に火星に到達し、火星の1年を通して火星大気の初の包括的な全球観測を提供した。University of Colorado LASPとの共同で開発。"
- },
- {
-  "rel": "fleet/orbiter/hope.json",
-  "at": "best_known_for",
-  "en": "First Arab interplanetary mission; first holistic global view of the Martian atmosphere through a Mars year",
-  "cur": "初のアラブ惑星間ミッション;火星の1年を通した火星大気の初の包括的全球観測"
- },
- {
-  "rel": "fleet/orbiter/juice.json",
-  "at": "tagline",
-  "en": "ESA flagship to Jupiter — first orbiter ever to settle around a Galilean moon (Ganymede, 2034)",
-  "cur": "木星へのESAフラッグシップ — ガリレイ衛星（ガニメデ、2034年）の周回軌道に初めて配置される周回機"
- },
- {
-  "rel": "fleet/orbiter/juice.json",
-  "at": "description",
-  "en": "Jupiter Icy Moons Explorer. Launched 2023-04-14 on an Ariane 5 ECA+ for an 8.5-year cruise via Earth-Venus-Earth-Earth gravity assists to Jupiter arrival in July 2031. Once in the Jovian system, JUICE flies ~35 times past Europa, Ganymede, and Callisto before entering Ganymede orbit in 2034 — the first spacecraft to orbit a moon other than Earth's. Ten-instrument payload includes ice-penetrating radar (RIME), spectrometers, magnetometer, and a laser altimeter, optimised to characterise the three icy moons as potentially habitable subsurface-ocean worlds.",
-  "cur": "Jupiter Icy Moons Explorer。2023年4月14日にAriane 5 ECA+で打ち上げられ、地球-金星-地球-地球の重力アシストを経由して8.5年間の巡航を行い、2031年7月に木星に到着する。木星系ではJUICEはエウロパ、ガニメデ、カリストの周りを約35回通過してから、2034年にガニメデ軌道に投入される — 地球以外の衛星を周回する初の宇宙機である。10種類の機器ペイロードには、氷貫通レーダー（RIME）、分光計、磁力計、およびレーザー高度計が含まれており、潜在的に生命を宿す可能性のある亜表面海洋世界として3つの氷衛星の特性を調べるために最適化されている。"
- },
- {
-  "rel": "fleet/orbiter/juice.json",
-  "at": "best_known_for",
-  "en": "ESA Jupiter flagship — first orbiter ever around a Galilean moon (Ganymede), arrival 2031-2034",
-  "cur": "ESA 木星フラッグシップ — ガリレオ衛星周回の史上初軌道探査機（ガニメデ）、2031〜2034年"
- },
- {
-  "rel": "fleet/orbiter/juno.json",
-  "at": "tagline",
-  "en": "Polar Jupiter orbiter; magnetosphere studies",
-  "cur": "ポーラージュピターオービター;磁気圏研究"
- },
- {
-  "rel": "fleet/orbiter/juno.json",
-  "at": "description",
-  "en": "NASA’s polar Jupiter orbiter, in orbit since 2016. Solar-powered (a first at Jupiter’s distance), spinning to maintain stability, and orbiting close enough to Jupiter’s cloud-tops to risk severe radiation damage with each pass.",
-  "cur": "2016年から木星を周回しているNASAの極軌道探査機。木星の距離では初となる太陽電池駆動で、機体を自転させて姿勢を安定させ、周回のたびに深刻な放射線被害を受けかねないほど木星の雲頂に近づいて飛行する。"
- },
- {
-  "rel": "fleet/orbiter/juno.json",
-  "at": "best_known_for",
-  "en": "Polar Jupiter orbiter; magnetosphere studies",
-  "cur": "ポーラージュピターオービター;磁気圏研究"
- },
- {
-  "rel": "fleet/orbiter/lro.json",
-  "at": "tagline",
-  "en": "NASA's active lunar recon orbiter. LROC's 0.5 m/pixel imagery is the source of every Apollo + Luna + Chang'e landing-site photo here",
-  "cur": "NASA の稼働中の月偵察周回機。LROC の 0.5 m/pixel の画像は、ここに掲載されているすべての Apollo、Luna、Chang'e の着陸地点写真のソースです"
- },
- {
-  "rel": "fleet/orbiter/lro.json",
-  "at": "description",
-  "en": "NASA's active flagship lunar orbiter — operating continuously since 2009-06-23. Launched 2009-06-18 with LCROSS on an Atlas V from Cape Canaveral, LRO's payload of 7 instruments has remapped every aspect of the Moon at unprecedented resolution. The Lunar Reconnaissance Orbiter Camera (LROC) NAC (Narrow-Angle Camera, 0.5 m/pixel at 50 km altitude) has imaged every Apollo, Luna, Surveyor, Chang'e, Vikram, Beresheet and Hakuto landing site — every \"tier-2 LROC\" image in this app's /moon hotspots came from LROC NAC. LOLA (Laser Altimeter) gave the most detailed topography of any solar-system body. Diviner mapped surface temperature 10 K precision; LAMP detected widespread surface H₂O down to lunar dawn; LEND mapped neutron flux at <10 km resolution. As of 2026 still operational on extended mission, with no planned end-of-life — propellant supports operations through ~2030+.",
-  "cur": "NASA の稼働中の主要月周回機 — 2009-06-23 以来継続的に運用中。2009-06-18 に LCROSS とともにケープ・カナベラルから Atlas V で打ち上げられ、LRO の 7 つの計器群からなるペイロードは月のあらゆる側面を前例のない解像度で再マップしました。月偵察周回機カメラ（LROC）NAC（狭角カメラ、高度 50 km で 0.5 m/pixel）は、すべての Apollo、Luna、Surveyor、Chang'e、Vikram、Beresheet、Hakuto の着陸地点を撮像しました — このアプリの /moon ホットスポット内のすべての「tier-2 LROC」画像は LROC NAC から取得されています。LOLA（レーザー高度計）は太陽系のどの天体よりも詳細な地形データを提供しました。Diviner は表面温度を 10 K の精度でマップし、LAMP は月の夜明けまで広がる表面 H₂O を検出、LEND は <10 km 解像度で中性子束をマップしました。2026 年時点でも拡張ミッションで稼働中であり、計画された任務終了日はなく — 推進剤は約 2030 年以降まで運用をサポートしています。"
- },
- {
-  "rel": "fleet/orbiter/lro.json",
-  "at": "best_known_for",
-  "en": "NASA's active lunar recon orbiter. LROC's 0.5 m/pixel imagery is the source of every Apollo + Luna + Chang'e landing-site photo here",
-  "cur": "NASA の稼働中の月偵察周回機。LROC の 0.5 m/pixel の画像は、ここに掲載されているすべての Apollo、Luna、Chang'e の着陸地点写真のソースです"
- },
- {
-  "rel": "fleet/orbiter/lucy.json",
-  "at": "description",
-  "en": "NASA's 12-year multi-flyby mission to 6 Jupiter Trojan asteroid systems and 2 main-belt asteroids (11 total encounters including satellites). Three Earth gravity assists shape a single trajectory visiting both the L4 and L5 Trojan clouds. Carries 1003 kg of hydrazine — more propellant than dry mass. Named for the 1974 Australopithecus afarensis fossil, in turn named for the Beatles song — the implication being that Trojans preserve early-solar-system material the way the fossil preserves early-human history.",
-  "cur": "NASAの12年間の多重フライバイ・ミッションで、6個の木星トロヤ群小惑星系と2個の主帯小惑星を訪れます（衛星を含めて全11回の接近遭遇）。3回の地球スイングバイによって形成された単一軌道により、L4とL5の両方のトロヤ群を訪問します。ヒドラジン1003 kgを搭載しており、これはドライマスを上回る推進剤量です。1974年の*Australopithecus afarensis*化石にちなんで命名されました。その化石自体はビートルズの楽曲にちなんで名付けられたもので、その含意するところは、トロヤ群が初期太陽系の物質を保存する方式が、化石が初期人類の歴史を保存する方式と同じであるということです。"
- },
- {
-  "rel": "fleet/orbiter/luna10.json",
-  "at": "tagline",
-  "en": "First spacecraft to orbit the Moon (or any body other than Earth) — entered lunar orbit 1966-04-03, three years before Apollo 8",
-  "cur": "月（地球以外の天体）を周回した最初の宇宙機 — 1966年4月3日に月周回軌道に投入、Apollo 8が月に到着する3年前"
- },
- {
-  "rel": "fleet/orbiter/luna10.json",
-  "at": "description",
-  "en": "First spacecraft to orbit the Moon — and the first artificial satellite of any body other than Earth. Launched 1966-03-31 from Baikonur on a Molniya rocket, Luna 10 entered lunar orbit 1966-04-03 with a 349 × 1015 km orbit at 71.9° inclination, three years before Apollo 8 reached the Moon with humans aboard. Measured the lunar magnetic field (~3 nT, essentially zero), micrometeoroid flux, gamma-ray emission, ionising radiation, and solar plasma — the gamma-ray data was the first compositional remote sensing of the Moon, suggesting basalt-like mare composition. Famously played the \"Internationale\" anthem during the 23rd Congress of the Soviet Communist Party (1966-04-04). Operated 56 days / 460 orbits before its NiCd batteries depleted. Remains in lunar orbit.",
-  "cur": "月を周回した最初の宇宙機であり、地球以外の天体の最初の人工衛星です。1966年3月31日にバイコヌールからMolniyaロケットで打ち上げられ、Luna 10は1966年4月3日に月周回軌道（349 × 1015 km、傾斜角71.9°）に投入されました。これは有人搭乗のApollo 8が月に到達するより3年前のことです。月の磁場（約3 nT、本質的にゼロ）、マイクロメテオロイド束密度、ガンマ線放射、電離放射線、太陽プラズマを測定しました。ガンマ線データは月の初の組成遠隔探査であり、玄武岩質の月面部分組成を示唆していました。1966年4月4日にソビエト連邦共産党第23回党大会で「Internationale」の国歌を演奏したことで有名です。56日間 / 460周回動作した後、NiCd電池が枯渇しました。現在も月周回軌道に存在しています。"
- },
- {
-  "rel": "fleet/orbiter/luna10.json",
-  "at": "best_known_for",
-  "en": "First spacecraft to orbit the Moon (or any body other than Earth) — entered lunar orbit 1966-04-03, three years before Apollo 8",
-  "cur": "月（地球以外の天体）を周回した最初の宇宙機 — 1966年4月3日に月周回軌道に投入、Apollo 8が月に到着する3年前"
- },
- {
-  "rel": "fleet/orbiter/lunar-orbiter-1.json",
-  "at": "tagline",
-  "en": "First US lunar orbiter (1966-08-14); mapped Apollo landing sites and took the first photo of Earth from lunar orbit (1966).",
-  "cur": "最初のアメリカの月周回衛星(1966年8月14日);Apollo着陸地点をマッピングし、月の軌道から地球の最初の写真を撮影(1966年)。"
- },
- {
-  "rel": "fleet/orbiter/lunar-orbiter-1.json",
-  "at": "description",
-  "en": "The first US spacecraft to orbit the Moon, four months after Luna 10. Launched 1966-08-10 from Cape Canaveral on an Atlas-Agena D, Lunar Orbiter 1 entered an elliptical lunar orbit on 1966-08-14. Its primary mission was to photograph candidate Apollo landing sites at sub-metre resolution — a 70 mm + 610 mm dual-lens camera system that developed film in-orbit (Bimat process) and scanned it for radio transmission to Earth. Captured the first photograph of Earth from lunar orbit (1966-08-23 — over two years before Apollo 8's more famous Earthrise) as a wide-angle shot taken during the 16th orbit. Returned 207 high-resolution + 207 medium-resolution frames mapping 4.1 million km² of the lunar surface. Deliberately crashed into the lunar far side on 1966-10-29 to clear the radio band for Lunar Orbiter 2.",
-  "cur": "月の周回軌道に到達した最初のアメリカ合衆国宇宙機で、Luna 10より4か月後のこと。1966年8月10日にケープ・カナベラルからAtlas-Agena D で打ち上げられ、Lunar Orbiter 1は1966年8月14日に楕円形の月周回軌道に投入された。主要任務はサブメートル解像度の候補となるアポロ着陸地点の撮影で、70 mm + 610 mm デュアルレンズカメラシステムを搭載し、軌道上でフィルムを現像（Bimat処理）して地球への電波送信用にスキャンした。月の軌道から地球の最初の写真を撮影（1966年8月23日 — Apollo 8の有名なEarthrise撮影の2年以上前）し、16番目の軌道中に広角で撮影。高解像度画像207枚 + 中解像度画像207枚を返却し、月表面の410万km²をマッピングした。1966年10月29日に月の裏側に意図的に衝突させ、Lunar Orbiter 2のための電波帯域をクリアした。"
- },
- {
-  "rel": "fleet/orbiter/lunar-orbiter-1.json",
-  "at": "best_known_for",
-  "en": "First US lunar orbiter (1966-08-14). Mapped potential Apollo landing sites; took the first photograph of Earth from lunar orbit — over two years before the famous Apollo 8 Earthrise",
-  "cur": "最初のアメリカ合衆国月周回衛星（1966年8月14日）。アポロの潜在的な着陸地点をマッピング。月の軌道からの初の地球写真を撮影 — 有名なApollo 8のEarthrise撮影の2年以上前"
- },
- {
-  "rel": "fleet/orbiter/lunar-orbiter-2.json",
-  "at": "tagline",
-  "en": "Second US lunar orbiter (1966-11-10). Took the 'Picture of the Century' — oblique view of Copernicus crater at ~45 km altitude",
-  "cur": "アメリカ2番目の月周回機（1966-11-10）。「世紀の写真」を撮影——Copernicus クレーターの斜視図、高度約45 km"
- },
- {
-  "rel": "fleet/orbiter/lunar-orbiter-2.json",
-  "at": "description",
-  "en": "Second of the five Lunar Orbiter spacecraft. Launched 1966-11-06 from Cape Canaveral, entered lunar orbit 1966-11-10. Mapped 13 sites in the equatorial Apollo zone. On 1966-11-24, Frame 162 captured an oblique view of the 93-km Copernicus crater from 45.8 km altitude looking north — a never-before-seen Earth-style mountain landscape on another world. Newspapers called it the 'Picture of the Century'. The photo's release became a turning point in public engagement with lunar exploration. Returned 422 frames total across 33 days of imaging. Deliberately impacted 1967-10-11 at 4° S, 98° E (lunar far side) to prevent radio-frequency interference with Lunar Orbiter 5.",
-  "cur": "5機のLunar Orbiter宇宙機の2番目のもの。1966年11月6日にケープ・カナベラルから打ち上げられ、1966年11月10日に月周回軌道に入った。赤道帯のApolloゾーン内の13か所を撮影した。1966年11月24日、Frame 162は45.8 km高度から北を向いて93 kmのCopernicus隕石坑の斜視を捉えた。これは他の世界で初めて見た地球型の山岳風景であった。新聞社はこれを「世紀の写真」と呼んだ。この写真の公開は月探査への公衆参加の転換点となった。33日間の撮影を通じて合計422フレームを送信した。1967年10月11日に南緯4°、東経98°（月の裏側）に意図的に落下させられ、Lunar Orbiter 5との電波干渉を防いだ。"
- },
- {
-  "rel": "fleet/orbiter/lunar-orbiter-2.json",
-  "at": "best_known_for",
-  "en": "Second US lunar orbiter (1966-11-10). Took the 'Picture of the Century' — oblique view of Copernicus crater at ~45 km altitude",
-  "cur": "アメリカ2番目の月周回機（1966-11-10）。「世紀の写真」を撮影——Copernicus クレーターの斜視図、高度約45 km"
- },
- {
-  "rel": "fleet/orbiter/lunar-orbiter-3.json",
-  "at": "tagline",
-  "en": "Third US lunar orbiter (1967-02-08). Photographed Surveyor 1 sitting on the lunar surface — first photo of a spacecraft on another world",
-  "cur": "米国3番目の月周回機（1967-02-08）。月面に着陸したSurveyor 1を撮影 — 他の世界の宇宙機を撮った最初の写真"
- },
- {
-  "rel": "fleet/orbiter/lunar-orbiter-3.json",
-  "at": "description",
-  "en": "Third of the five Lunar Orbiter spacecraft. Launched 1967-02-04 from Cape Canaveral, entered lunar orbit 1967-02-08. Continued the Apollo site-mapping campaign with 477 frames across 30 days, including a celebrated 1967-02-22 photograph that resolved the 3-metre Surveyor 1 lander sitting on the Oceanus Procellarum surface — the first photograph of one spacecraft taken by another at another world. Mid-mission failure of the camera's film-transport system curtailed the imaging campaign on 1967-03-04. Continued to operate as an Apollo-tracking beacon for navigation tests. Deliberately impacted 1967-10-09 at 14.6° N, 91.7° W.",
-  "cur": "5機のLunar Orbiterの3番目の宇宙機。1967年2月4日にケープ・カナベラルから打ち上げられ、1967年2月8日に月軌道に到達。Apollo着陸地点調査キャンペーンを継続し、30日間にわたって477フレームを撮影した。このうち1967年2月22日に撮影された画像は、嵐の大洋の表面に着陸しているSurveyor 1着陸機の3メートルサイズまで識別した——別の天体で他の宇宙機によって撮影された宇宙機の最初の写真である。ミッション途中のカメラフィルム送送機構の故障により、撮像キャンペーンは1967年3月4日に中断された。その後もApollo測位用ビーコンとして動作し、航法試験に使用された。1967年10月9日に北緯14.6°、西経91.7°の地点に意図的に衝突させられた。"
- },
- {
-  "rel": "fleet/orbiter/lunar-orbiter-3.json",
-  "at": "best_known_for",
-  "en": "Third US lunar orbiter (1967-02-08). Photographed Surveyor 1 sitting on the lunar surface — first photo of a spacecraft on another world",
-  "cur": "米国3番目の月周回機（1967-02-08）。月面に着陸したSurveyor 1を撮影 — 他の世界の宇宙機を撮った最初の写真"
- },
- {
-  "rel": "fleet/orbiter/lunar-orbiter-4.json",
-  "at": "tagline",
-  "en": "Fourth US lunar orbiter (1967-05-08). First polar lunar orbit; mapped 99 % of the near side at 60 m/pixel + far-side regions",
-  "cur": "米国4番目の月周回機（1967-05-08）。月初の極軌道；表側の99%を60m/画素で地図化＋裏側の重要領域"
- },
- {
-  "rel": "fleet/orbiter/lunar-orbiter-4.json",
-  "at": "description",
-  "en": "Fourth of the five Lunar Orbiter spacecraft, and the first to fly a high-inclination polar lunar orbit. Launched 1967-05-04 from Cape Canaveral, entered a 6111 × 2706 km polar orbit on 1967-05-08. Mission redirected from Apollo site-selection (the first three Orbiters had already done that job) to broad scientific mapping. Returned 419 frames covering 99 % of the lunar near side at 60 m/pixel resolution plus the first detailed imaging of significant far-side regions. The frames remain the highest-resolution coverage of the lunar near side at this scale until the modern LRO era. Impact in October 1967 at 22-30° W on the far side after the radio failed.",
-  "cur": "Lunar Orbiter探査機5機のうちの4番機で、高傾斜の月極軌道を飛行した最初の機体です。1967年5月4日にケープ・カナベラルから打ち上げられ、1967年5月8日に6111 × 2706 kmの極軌道に入りました。ミッションはApollo着陸地点の選定（最初の3機がすでに完了していた任務）から、広範な科学的マッピングへと切り替えられました。月の表側の99 %を解像度60 m/ピクセルでカバーする419フレームを撮影したほか、月の裏側の主要な領域を初めて詳細に撮影しました。これらのフレームは、現代のLROの時代まで、この縮尺での月の表側の最高解像度の撮影範囲であり続けました。無線が故障した後、1967年10月に裏側の西経22～30°に衝突しました。"
- },
- {
-  "rel": "fleet/orbiter/lunar-orbiter-4.json",
-  "at": "best_known_for",
-  "en": "Fourth US lunar orbiter (1967-05-08). First polar lunar orbit; mapped 99 % of the near side at 60 m/pixel + far-side regions",
-  "cur": "米国4番目の月周回機（1967-05-08）。月初の極軌道；表側の99%を60m/画素で地図化＋裏側の重要領域"
- },
- {
-  "rel": "fleet/orbiter/lunar-orbiter-5.json",
-  "at": "tagline",
-  "en": "Final US lunar orbiter (1967-08-05). Completed far-side mapping at 60 m/pixel; impacted 1968-01-31 ahead of Apollo lunar operations",
-  "cur": "米国最後の月周回機（1967-08-05）。裏側の60 m/画素地図化を完了；Apollo月運用前の1968-01-31に衝突"
- },
- {
-  "rel": "fleet/orbiter/lunar-orbiter-5.json",
-  "at": "description",
-  "en": "Fifth and final Lunar Orbiter spacecraft. Launched 1967-08-01 from Cape Canaveral, entered polar lunar orbit 1967-08-05. Returned 633 frames in 35 days — closing out the Lunar Orbiter programme's near-complete coverage of both lunar hemispheres at high resolution. Imaged 36 high-priority science targets selected from gaps in the earlier Orbiters' coverage and from Surveyor / Apollo landing-site needs. After the 1968-01 end-of-mission decision, deliberately crashed 1968-01-31 at 2.79° S, 83.04° W to clear lunar orbital space ahead of Apollo. The five Orbiters together photographed 99 % of the Moon at 60 m/pixel — until LRO began its 0.5 m/pixel LROC NAC programme in 2009, this was the highest-resolution global lunar map ever made.",
-  "cur": "5機目で最後のルナ・オービター宇宙機。1967-08-01にケープ・カナベラルから打ち上げられ、1967-08-05に月極軌道に入った。35日間で633フレームを返送し、ルナ・オービター計画による両半球の高分解能ほぼ完全カバレッジを締めくくった。先行オービターのカバレッジの隙間と、Surveyor/Apollo着陸地のニーズから選ばれた36の高優先科学目標を撮像した。1968-01の任務終了決定後、Apollo前に月軌道空間を空けるため1968-01-31に2.79°S、83.04°Wで意図的に衝突させた。5機のオービターは合計で月の99%を60 m/画素で撮影 — 2009年にLROがLROC NACの0.5 m/画素計画を開始するまで、これは史上最高分解能の全球月地図だった。"
- },
- {
-  "rel": "fleet/orbiter/lunar-orbiter-5.json",
-  "at": "best_known_for",
-  "en": "Final US lunar orbiter (1967-08-05). Completed far-side mapping at 60 m/pixel; impacted 1968-01-31 ahead of Apollo lunar operations",
-  "cur": "米国最後の月周回機（1967-08-05）。裏側の60 m/画素地図化を完了；Apollo月運用前の1968-01-31に衝突"
- },
- {
-  "rel": "fleet/orbiter/lunar-prospector.json",
-  "at": "tagline",
-  "en": "NASA Discovery polar orbiter — neutron-spectrometer hydrogen finding at both poles 1998; deliberate Shackleton impact ended mission 1999",
-  "cur": "NASA Discovery極軌道周回機 — 中性子分光計による両極での水素発見（1998年）; 意図的なShackleton衝突により1999年にミッション終了"
- },
- {
-  "rel": "fleet/orbiter/lunar-prospector.json",
-  "at": "description",
-  "en": "The third NASA Discovery-class mission (and the first competitively selected) and the first dedicated NASA science mission to the Moon since Explorer 49 (1973). Launched 1998-01-07 on an Athena II from Cape Canaveral, Lunar Prospector entered a 100-km circular polar orbit. Its neutron spectrometer detected sharp neutron-flux deficits over both lunar poles (Feldman et al., 1998 / 1999) — consistent with ~2 × 10⁹ tonnes of hydrogen-rich material (most plausibly water ice) in permanently shadowed polar craters. The gravimeter, magnetometer, gamma-ray and alpha-particle spectrometers also delivered global maps of crustal composition and remnant magnetism. End of mission 1999-07-31: deliberately impacted near Shackleton crater hoping to release a detectable water-vapour plume; none was seen (the lithium-7 fluorescence experiment that would have detected it was a long shot). The hydrogen finding stood until LCROSS (2009) and Chandrayaan-1 / M3 (2009) provided independent confirmation.",
-  "cur": "NASAのDiscovery計画の第3番目のミッション（そして最初の競争選抜方式で選定された）であり、1973年のExplorer 49以来、月への最初の専任NASA科学ミッションである。1998年1月7日にケープ・カナベラルからAthena IIで打ち上げられたLunar Prospectorは、100 km円形極軌道に投入された。その中性子分光計は、両方の月極域にわたって鋭い中性子束の欠損を検出した（Feldman et al., 1998 / 1999）— これは、永久に影の中にある極域のクレーター内の約2 × 10⁹トンの水素に富んだ物質（最も可能性の高い水氷）と一致している。重力計、磁力計、ガンマ線分光計およびアルファ粒子分光計はまた、地殻成分と残存磁性のグローバルマップも提供した。1999年7月31日のミッション終了：Shackleton クレーター付近への意図的な衝突により、検出可能な水蒸気プルームの放出を期待していたが、何も観測されなかった（それを検出できたはずのリチウム-7蛍光実験は成功の確率が低かった）。水素の発見は、LCROSS（2009）とChandrayaan-1 / M3（2009）が独立した確認を提供するまで確実だった。"
- },
- {
-  "rel": "fleet/orbiter/lunar-prospector.json",
-  "at": "best_known_for",
-  "en": "NASA Discovery polar orbiter — neutron-spectrometer hydrogen finding at both poles 1998; deliberate Shackleton impact ended mission 1999",
-  "cur": "NASA Discovery極軌道周回機 — 中性子分光計による両極での水素発見（1998年）; 意図的なShackleton衝突により1999年にミッション終了"
- },
- {
-  "rel": "fleet/orbiter/magellan.json",
-  "at": "description",
-  "en": "Magellan is a deep-space orbiter built by Martin Marietta in USA. Radar-mapped 98% of Venus's surface. Retired after first flight in 1989.",
-  "cur": "Magellan は、アメリカで Martin Marietta によって構築されたディープスペースのオービターです。 金星の表面のレーダーマップされた98%。 1989年初飛行後退。"
- },
- {
-  "rel": "fleet/orbiter/mangalyaan.json",
-  "at": "description",
-  "en": "India’s first interplanetary mission and the first successful Mars mission by an Asian space agency. Delivered an orbiter to Mars on its first attempt — a feat no other national space agency had managed (ESA, a multi-national organization, succeeded on its first Mars attempt with Mars Express in 2003). Operated for nearly eight years before contact was lost in 2022.",
-  "cur": "インドの初の惑星間ミッションであり、アジアの宇宙機関による初の成功した火星ミッションである。初回の試みで火星軌道器を到達させた — 他のどの国家宇宙機関も成し遂げていない成果である（ESA という多国間組織は 2003 年の Mars Express で初回の火星ミッションに成功している）。約 8 年間の運用を続けた後、2022 年に通信が途絶えた。"
- },
- {
-  "rel": "fleet/orbiter/mariner-4.json",
-  "at": "dispatch",
-  "en": "Mariner 4 did what no machine had done: it photographed another planet. Small and spare, built to fly past Mars once and send home whatever it could in the hours it had, it carried a camera and a tape recorder across the solar system and in July 1965 returned the first close-up pictures ever taken of another world — 22 grainy frames of a cratered, moon-like surface. Those images ended a century of speculation about Martian canals and civilisations in a single afternoon, and proved a spacecraft could cross interplanetary space and bring back a planet’s face. Every camera humanity has since sent to another world descends from this one.",
-  "cur": "Mariner 4は、それまでどの機械も成し遂げなかったことを成し遂げた——他の惑星を撮影したのだ。小型で簡素な設計で、火星を一度だけフライバイし、限られた時間内に可能な限りのデータを地球へ送信するよう作られたこの探査機は、カメラとテープレコーダーを太陽系の彼方まで運び、1965年7月、他の天体を至近距離から撮影した史上初の写真——クレーターだらけの月のような表面を写した粒子の粗い22フレーム——を送り返してきた。それらの画像は、火星の運河や文明についての一世紀にわたる憶測をたった一日の午後で終わらせ、宇宙船が惑星間空間を横断し、惑星の姿を持ち帰ることができると証明した。人類がそれ以降他の天体へ送ったすべてのカメラは、このカメラの系譜に連なっている。"
- },
- {
-  "rel": "fleet/orbiter/mariner-4.json",
-  "at": "description",
-  "en": "The first successful Mars flyby — July 1965. The 22 grainy black-and-white photos returned ended over a century of speculation about Martian canals and life by showing a cratered, Moon-like surface.",
-  "cur": "1965年7月、最初の成功したマーズフライビー。 22枚のグラミーな黒と白の写真は、火星の運河と人生の約1世紀に終わると、火星のような表面を示す。"
- },
- {
-  "rel": "fleet/orbiter/mariner-9.json",
-  "at": "dispatch",
-  "en": "Mariner 9 was the first machine to stop at another planet instead of flying past. Where the earlier Mariners glimpsed Mars in a few hours, it carried enough fuel to brake into orbit and stay — and it arrived to find the whole planet buried under a global dust storm. So it waited. When the dust settled it mapped all of Mars, and the survey revealed a world the flybys had missed entirely: the largest volcano in the solar system, a canyon a continent wide, and the dry channels of ancient rivers. It proved that an orbiter patient enough to watch a planet over time sees what no flyby ever can.",
-  "cur": "Mariner 9は、他の惑星を通過するのではなく留まった最初の機械だった。初期のMariner探査機が数時間でかいま見たのに対し、この探査機は軌道に入って減速し滞在するのに十分な燃料を搭載していた——そして到着すると、惑星全体が全球規模の砂嵐に覆われているのを発見した。そこで待機した。砂嵐が収まると火星全体を地図化し、その調査によってフライバイでは完全に見逃していた世界が明らかになった。太陽系最大の火山、大陸ほどの幅を持つ峡谷、そして古代の河川の干上がった水路である。時間をかけて惑星を観測できるだけの忍耐力を持つ軌道探査機は、フライバイでは決して見ることのできないものを見ることを証明したのだ。"
- },
- {
-  "rel": "fleet/orbiter/mariner-9.json",
-  "at": "description",
-  "en": "The first spacecraft to orbit another planet (Mars, November 1971). Mapped 100% of the Martian surface — including the global dust storm that hid everything for the first month and the first close-up of Olympus Mons.",
-  "cur": "別の惑星（火星、1971年11月）を周回した初めての宇宙機。火星の表面の100%をマッピングした。最初の1か月間すべてを隠した全球的なダストストームや、オリンポス山の初めての接近撮影を含む。"
- },
- {
-  "rel": "fleet/orbiter/mars-express.json",
-  "at": "tagline",
-  "en": "ESA's first and only Mars orbiter; Europe's first planetary mission",
-  "cur": "ESAの初で唯一の火星周回機；ヨーロッパ初の惑星探査機"
- },
- {
-  "rel": "fleet/orbiter/mars-express.json",
-  "at": "description",
-  "en": "Mars Express is a deep-space orbiter built by EADS Astrium in Multi (Europe). ESA's first and only Mars orbiter; Europe's first planetary mission. In service since 2003.",
-  "cur": "Mars Express は EADS Astrium によってヨーロッパで建造された深宇宙周回機です。ESA の初で唯一の火星周回機；ヨーロッパ初の惑星探査機。2003年から運用中です。"
- },
- {
-  "rel": "fleet/orbiter/mars-express.json",
-  "at": "best_known_for",
-  "en": "ESA's first and only Mars orbiter; Europe's first planetary mission",
-  "cur": "ESAの初で唯一の火星周回機；ヨーロッパ初の惑星探査機"
- },
- {
-  "rel": "fleet/orbiter/mars-odyssey.json",
-  "at": "tagline",
-  "en": "Longest-lived Mars asset ever — orbiting since 2001-10-24. Gamma-ray + neutron water-ice maps; UHF relay for the surface fleet",
-  "cur": "史上最長寿の火星探査機 — 2001-10-24 から周回中。ガンマ線+中性子による水氷マップ。地表艦隊向けの UHF 中継機"
- },
- {
-  "rel": "fleet/orbiter/mars-odyssey.json",
-  "at": "description",
-  "en": "The longest-lived spacecraft ever to operate at Mars — entered Mars orbit 2001-10-24 and is still active in 2026, surpassing every other Mars mission's lifetime. Launched 2001-04-07 on a Delta II from Cape Canaveral, named after Arthur C. Clarke's '2001: A Space Odyssey'. Carried THEMIS (Thermal Emission Imaging System, 100-m visible / 100-m infrared imaging that mapped global surface mineralogy) and the gamma-ray spectrometer suite GRS + HEND + NS — Boynton et al. (2002, Science 297) used HEND neutron spectroscopy to map global near-surface water ice, the discovery that drove every subsequent lander-mission target selection. Also serves as the primary UHF relay for Mars-surface assets (MERs, MSL, InSight, Perseverance) and a backup for Mars Reconnaissance Orbiter. Extended-mission fuel reserves expected to last to 2026-2027.",
-  "cur": "火星で運用された最長寿命の宇宙機——2001年10月24日に火星軌道に突入し、2026年現在もなお活動中であり、他のすべての火星ミッションの寿命を上回っている。2001年4月7日にケープ・カナベラルからDelta IIで打ち上げられ、アーサー・C・クラークの『2001: A Space Odyssey』にちなんで命名された。THEMIS（Thermal Emission Imaging System、100m可視/100m赤外線撮像で地球規模の表面鉱物学をマッピング）と、ガンマ線分光計スイートGRS + HEND + NSを搭載した——Boynton et al.（2002, Science 297）はHENDニュートロン分光法を用いて地球規模の近表面水氷をマッピングし、その後のすべてのランダーミッションのターゲット選定を推進した発見を行った。また、火星表面資産（MERs、MSL、InSight、Perseverance）の主要なUHF中継機として機能し、Mars Reconnaissance Orbiterのバックアップとしても機能している。長期ミッション用の燃料予備は2026～2027年まで持つと予想されている。"
- },
- {
-  "rel": "fleet/orbiter/mars-odyssey.json",
-  "at": "best_known_for",
-  "en": "Longest-lived Mars asset ever — orbiting since 2001-10-24. Gamma-ray + neutron water-ice maps; UHF relay for the surface fleet",
-  "cur": "史上最長寿の火星探査機 — 2001-10-24 から周回中。ガンマ線+中性子による水氷マップ。地表艦隊向けの UHF 中継機"
- },
- {
-  "rel": "fleet/orbiter/mars2-orbiter.json",
-  "at": "tagline",
-  "en": "Soviet companion orbiter to Mars 2 — second spacecraft ever in Mars orbit (after Mariner 9 by 13 days). Operated 1971-11-27 to 1972-08",
-  "cur": "Mars 2の相乗りソビエト軌道衛星——火星軌道に到達した2番目の宇宙機（Mariner 9より13日後）。1971-11-27から1972-08まで運用。"
- },
- {
-  "rel": "fleet/orbiter/mars2-orbiter.json",
-  "at": "description",
-  "en": "The orbital half of the Soviet Mars 2 mission. Launched 1971-05-19 on a Proton-K from Baikonur, Mars 2 reached Mars 1971-11-27 — just 13 days after Mariner 9 became the first Mars orbiter. Its lander attempted descent on 1971-11-27 but its parachute failed to deploy and the lander crashed (the first man-made object on Mars, but no telemetry). The orbiter half was much more successful, returning ~60 image frames + extensive measurements of the upper atmosphere, magnetic field, and surface temperatures during the same global dust storm that compromised Mariner 9's early imaging. Carried infrared and ultraviolet spectrometers, photometers, a Lyman-alpha sensor, magnetometer, plasma analyser, and cosmic-ray detectors — the same instrument suite as Mars 3 Orbiter. End of mission 1972-08-22 after 362 orbits.",
-  "cur": "ソビエトの Mars 2 ミッションの軌道部。1971-05-19にバイコヌールから Proton-K ロケットで打ち上げられ、Mars 2 は1971-11-27に火星に到達した — Mariner 9 が火星周回軌道初の宇宙機となってからわずか13日後のことである。ランダーは1971-11-27に降下を試みたがパラシュートが展開に失敗し、ランダーは墜落した（火星上で初の人工物だが、テレメトリーはなし）。軌道部は遥かに成功し、約60フレームの画像と、Mariner 9 初期画像撮影を損なった同じ全球的なダストストーム中の上層大気、磁場、および表面温度の広範な測定値を返信した。赤外線および紫外線分光計、光度計、Lyman-α センサー、磁力計、プラズマ分析計、および宇宙線検出器を搭載していた — Mars 3 周回機と同じ機器スイートである。ミッション終了は1972-08-22で362軌道の後"
- },
- {
-  "rel": "fleet/orbiter/mars2-orbiter.json",
-  "at": "best_known_for",
-  "en": "Soviet companion orbiter to Mars 2 — second spacecraft ever in Mars orbit (after Mariner 9 by 13 days). Operated 1971-11-27 to 1972-08",
-  "cur": "Mars 2の相乗りソビエト軌道衛星——火星軌道に到達した2番目の宇宙機（Mariner 9より13日後）。1971-11-27から1972-08まで運用。"
- },
- {
-  "rel": "fleet/orbiter/mars3-orbiter.json",
-  "at": "tagline",
-  "en": "Soviet companion orbiter to Mars 3 — orbited Mars from 1971-12-02 through 1972-08; first measurements of Mars upper atmosphere temperature",
-  "cur": "Mars 3の旅にともなったソビエト軌道船—1971年12月2日から1972年8月まで火星を周回。火星上層大気の温度を初めて測定した"
- },
- {
-  "rel": "fleet/orbiter/mars3-orbiter.json",
-  "at": "best_known_for",
-  "en": "Soviet companion orbiter to Mars 3 — orbited Mars from 1971-12-02 through 1972-08; first measurements of Mars upper atmosphere temperature",
-  "cur": "Mars 3の同伴軌道船で、ソビエト連邦によるもの — 1971年12月2日から1972年8月まで火星を周回；火星上層大気温度の最初の測定"
- },
- {
-  "rel": "fleet/orbiter/mars3-orbiter.json",
-  "at": "description",
-  "en": "The orbital half of the Soviet Mars 3 mission (its lander made the first soft landing on Mars 1971-12-02 but only transmitted for 14.5 seconds before signal loss in a global dust storm). The orbiter was much more successful — entered a highly elliptical 1500 × 211400 km Mars orbit on 1971-12-02, the third spacecraft ever to orbit Mars (after Mariner 9 on 1971-11-14 and Mars 2 Orbiter on 1971-11-27). Carried infrared and ultraviolet spectrometers, photometers, a Lyman-alpha sensor, magnetometer, plasma analyser, and cosmic-ray detectors. Returned the first measurements of the upper atmosphere temperature profile, mapped surface temperatures (peak +13 °C, lowest -93 °C), and confirmed atmospheric water vapour. Returned approximately 60 image-frames; image quality was compromised by Mars' global dust storm that was already in progress when the orbiter arrived. End of mission 1972-08-22.",
-  "cur": "ソビエト連邦の Mars 3 ミッションの軌道船部分（着陸船は1971年12月2日に火星への初の軟着陸を達成したが、地球規模のダストストーム中に信号喪失となるまでわずか14.5秒間しか伝送できませんでした）。軌道船ははるかに成功が大きく — 1971年12月2日に1500 × 211400 km の火星高楕円軌道に投入され、火星を周回した3番目の宇宙船となりました（Mariner 9 が1971年11月14日、Mars 2 Orbiter が1971年11月27日に先行）。赤外線・紫外線分光計、光度計、Lyman-alpha センサー、磁力計、プラズマ分析装置、および宇宙線検出器を搭載していました。上層大気の温度分布の最初の測定値を返却し、表面温度をマップ化し（最高+13 °C、最低-93 °C）、大気中の水蒸気を確認しました。約60コマの画像フレームを返却；軌道船が到着した時点で既に進行中だった火星の地球規模のダストストームのため、画像品質は低下していました。ミッション終了 1972年8月22日。"
- },
- {
-  "rel": "fleet/orbiter/maven.json",
-  "at": "description",
-  "en": "NASA's atmospheric orbiter at Mars — Mars Atmosphere and Volatile EvolutioN. In Mars orbit since 2014, studying how the planet lost its early thick atmosphere to solar wind erosion over billions of years.",
-  "cur": "NASAの火星大気探査機 — Mars Atmosphere and Volatile EvolutioN。2014年から火星周回軌道上にあり、数十億年にわたる太陽風侵食によって火星がかつての厚い大気をどのように失ったかを研究している。"
- },
- {
-  "rel": "fleet/orbiter/maven.json",
-  "at": "best_known_for",
-  "en": "Studying Mars atmospheric loss to solar wind; revealed Mars lost its atmosphere over billions of years",
-  "cur": "火星大気の太陽風への流出を研究; 火星が数十億年かけて大気を失ったことを解明"
- },
- {
-  "rel": "fleet/orbiter/messenger.json",
-  "at": "tagline",
-  "en": "First Mercury orbiter — 6 planetary gravity assists over 6.6 years to bleed energy before insertion in 2011",
-  "cur": "初の水星周回機 — 2011 年の周回投入までに 6.6 年で 6 回の惑星スイングバイ"
- },
- {
-  "rel": "fleet/orbiter/messenger.json",
-  "at": "description",
-  "en": "NASA Discovery-class MErcury Surface, Space ENvironment, GEochemistry, and Ranging mission. Launched 2004-08-03 on a Delta II 7925H-9.5. The 6.6-year cruise used 6 gravity assists (1 Earth, 2 Venus, 3 Mercury) to lose ~5 km/s of heliocentric energy — direct orbit insertion would have needed impossible delta-v. Mercury orbit insertion 2011-03-18; mapped the planet for 4 years. Discoveries: water ice in permanently shadowed polar craters, organic-rich dark material at the poles, exosphere composition, a magnetic field offset from the planet centre, abundant hollow-bottomed pits. Impacted Mercury 2015-04-30 after exhausting propellant — left a 16 m artificial crater near the north pole.",
-  "cur": "NASA ディスカバリー級 MErcury Surface, Space ENvironment, GEochemistry, and Ranging ミッション。2004 年 8 月 3 日に Delta II 7925H-9.5 で打ち上げ。6.6 年の航行で地球 1 回・金星 2 回・水星 3 回のスイングバイを使い ~5 km/s の太陽中心エネルギーを削減。2011 年 3 月 18 日に水星周回軌道に投入。永久影の極クレーターでの水氷、極部の有機物に富む暗黒物質、惑星中心からずれた磁場などを発見。2015 年 4 月 30 日に推進剤枯渇で水星表面に衝突。"
- },
- {
-  "rel": "fleet/orbiter/messenger.json",
-  "at": "best_known_for",
-  "en": "First Mercury orbiter — 4 years mapping the planet, ended in controlled impact 2015-04-30",
-  "cur": "初の水星周回機 — 4 年間の地図化、2015 年 4 月 30 日制御衝突で終了"
- },
- {
-  "rel": "fleet/orbiter/mro.json",
-  "at": "name",
-  "en": "Mars Reconnaissance Orbiter",
-  "cur": "Mars Reconnaissance Orbiter"
- },
- {
-  "rel": "fleet/orbiter/mro.json",
-  "at": "description",
-  "en": "Mars Reconnaissance Orbiter is a deep-space orbiter built by Lockheed Martin in USA. Highest-resolution Mars imaging from orbit. In service since 2005.",
-  "cur": "Mars Reconnaissance Orbiterはアメリカの Lockheed Martin によって建造された深宇宙衛星探査機です。軌道から火星を撮影する最高解像度の画像を取得します。2005年以来、運用中です。"
- },
- {
-  "rel": "fleet/orbiter/osiris-rex.json",
-  "at": "tagline",
-  "en": "Sample-returned Bennu (2023); now en route to Apophis",
-  "cur": "ベンヌからのサンプル回収完了（2023年）；現在アポフィスへ向かう途中"
- },
- {
-  "rel": "fleet/orbiter/osiris-rex.json",
-  "at": "description",
-  "en": "NASA’s asteroid sample-return mission. Approached asteroid Bennu in 2018, captured a sample with its TAGSAM arm in 2020, and returned the sample capsule to Utah in September 2023. Now redesignated OSIRIS-APEX, en route to asteroid Apophis for its 2029 close Earth flyby.",
-  "cur": "NASA の小惑星サンプル回収ミッション。2018年に小惑星ベンヌに接近し、2020年に TAGSAM アームでサンプルを採取し、2023年9月にサンプルカプセルをユタ州に帰還させた。現在は OSIRIS-APEX として改称され、2029年の地球最接近フライバイに向けて小惑星アポフィスへ向かっている。"
- },
- {
-  "rel": "fleet/orbiter/osiris-rex.json",
-  "at": "best_known_for",
-  "en": "Sample-returned Bennu (2023); now en route to Apophis",
-  "cur": "ベンヌからのサンプル回収完了（2023年）；現在アポフィスへ向かう途中"
- },
- {
-  "rel": "fleet/orbiter/parker-solar-probe.json",
-  "at": "description",
-  "en": "NASA's Sun-grazing mission. Launched 2018-08-12 on a Delta IV Heavy + Star 48BV stack at the highest C3 ever achieved for a science payload (154 km²/s²). Seven Venus gravity assists over six years walked perihelion in from 0.16 AU (P1) to 0.046 AU (P22, 2024-12-24) — 9.86 solar radii, 6.1 million km from the Sun's surface. At P8 (2021-04-28) Parker dipped below the Alfvén critical surface — the first spacecraft to enter the Sun's corona. Peak speed at perihelion: 192.22 km/s, the fastest human-made object ever.",
-  "cur": "NASAの太陽直掩ミッション。2018年8月12日にDelta IV Heavy + Star 48BVスタックで打ち上げられ、科学ペイロードとしては史上最高のC3（154 km²/s²）を達成した。6年間にわたり7回の金星重力アシストにより、近日点を0.16 AU（P1）から0.046 AU（P22、2024-12-24）へと段階的に低下させた — 太陽半径9.86個分、太陽表面から610万km。P8（2021-04-28）でParkerはアルヴェン臨界面の下に潜行し、太陽のコロナに突入した最初の宇宙機となった。近日点での最高速度：192.22 km/s、人類が製造した物体で最速。"
- },
- {
-  "rel": "fleet/orbiter/parker-solar-probe.json",
-  "at": "best_known_for",
-  "en": "Closest spacecraft to the Sun ever flown (9.86 R☉)",
-  "cur": "太陽に最も接近した宇宙機（太陽半径9.86個分）"
- },
- {
-  "rel": "fleet/orbiter/phobos-2.json",
-  "at": "tagline",
-  "en": "Last Soviet planetary mission; lost at Phobos approach",
-  "cur": "最後のソビエト惑星探査機；フォボス接近時に通信喪失"
- },
- {
-  "rel": "fleet/orbiter/phobos-2.json",
-  "at": "description",
-  "en": "The last Soviet planetary mission. Reached Mars orbit in January 1989 but lost contact with Earth on March 27, 1989, just before its planned encounter with the moon Phobos. Phobos 2 returned 37 images of Phobos before contact was lost. The loss was attributed to an on-board computer failure causing loss of attitude control and power, though the complete sequence was never fully reconstructed.",
-  "cur": "最後のソビエト惑星探査機。1989年1月に火星軌道に到達したが、衛星フォボスの計画された遭遇直前の1989年3月27日に地球との通信を喪失した。Phobos 2は通信喪失前にフォボスの37枚の画像を送信した。喪失の原因は、機上コンピュータの故障による姿勢制御と電力供給の喪失と推定されているが、完全な経過は決して完全には再構成されていない。"
- },
- {
-  "rel": "fleet/orbiter/phobos-2.json",
-  "at": "best_known_for",
-  "en": "Last Soviet planetary mission; lost at Phobos approach",
-  "cur": "最後のソビエト惑星探査機；フォボス接近時に通信喪失"
- },
- {
-  "rel": "fleet/orbiter/pioneer-10.json",
-  "at": "description",
-  "en": "The first spacecraft to traverse the asteroid belt and the first to fly past Jupiter (December 1973). Carried the Pioneer plaque — the etched gold-anodized aluminium drawing of human figures + solar system that Carl Sagan and Frank Drake designed in three weeks.",
-  "cur": "小惑星帯を最初に横断し、木星をフライバイした最初の宇宙機（1973年12月）。カール・セーガンとフランク・ドレイクが3週間で設計した、人間の姿と太陽系をエッチングした金メッキアルミニウムのパイオニアプラークを搭載していた。"
- },
- {
-  "rel": "fleet/orbiter/pioneer-11.json",
-  "at": "tagline",
-  "en": "First spacecraft to encounter Saturn — Jupiter flyby in 1974 then gravity-assist to Saturn in 1979",
-  "cur": "初めて土星に到達した探査機 — 1974 年木星フライバイ後、1979 年に木星重力で土星へ"
- },
- {
-  "rel": "fleet/orbiter/pioneer-11.json",
-  "at": "description",
-  "en": "Spin-stabilised RTG-powered probe (~259 kg), sibling of Pioneer 10 with the same bus and Pioneer Plaque message-to-the-stars. Launched 1973-04-06 on an Atlas SLV-3D Centaur D-1A + Star-37E from Cape Canaveral. Jupiter flyby 1974-12-03 at 43 000 km — the closest of any Pioneer encounter, returned the first polar-region images and the gravity assist needed to reach Saturn. Saturn encounter 1979-09-01 at 21 000 km from the cloud tops — first detailed images of the ring system, discovery of a new ring (F-ring) and a new moon, confirmation of Saturn's nearly-aligned magnetic field. Continued outbound observations until last contact 1995-11-24. Now ~93 AU from the Sun, headed toward Aquila.",
-  "cur": "RTG 電源・スピン安定の探査機（~259 kg）。同じバスと Pioneer Plaque を共有する Pioneer 10 の姉妹機。1973 年 4 月 6 日にケープ・カナベラル LC-36B から Atlas SLV-3D Centaur D-1A + Star-37E で打ち上げ。1974 年 12 月 3 日に木星を 43 000 km で通過 — Pioneer シリーズ最接近で、初の極域画像と土星到達に必要な重力支援を獲得。1979 年 9 月 1 日に土星を 21 000 km で接近 — 環システムの初詳細画像。1995 年 11 月 24 日の最終通信までヘリオスフィア観測を継続。現在は太陽から ~93 AU、わし座方向へ。"
- },
- {
-  "rel": "fleet/orbiter/pioneer-11.json",
-  "at": "best_known_for",
-  "en": "First spacecraft to encounter Saturn — 1979-09-01 flyby, sibling to Pioneer 10",
-  "cur": "初めて土星に到達した探査機 — 1979-09-01 フライバイ、Pioneer 10 の姉妹機"
- },
- {
-  "rel": "fleet/orbiter/psyche-spacecraft.json",
-  "at": "description",
-  "en": "NASA's mission to a ~230-km M-type asteroid believed to be the exposed metal core of a differentiated proto-planet. Launched 2023-10-13 on a Falcon Heavy from Kennedy LC-39A; uses four SPT-140 Hall-effect ion thrusters as the primary cruise propulsion and a 2026 Mars gravity assist en route to a 2029 Psyche rendezvous. Carries a magnetometer, multispectral imager, and gamma-ray + neutron spectrometer.",
-  "cur": "差別化された原始惑星の露出した金属核と考えられている約230 kmのM型小惑星を目指すNASAのミッション。2023年10月13日にKennedy LC-39AからFalcon Heavyで打ち上げられました。巡航推進の主要動力として4台のSPT-140ホール効果イオンスラスターを使用し、2026年に火星の重力アシストを利用して2029年のPsycheとのランデブーに向かいます。磁力計、マルチスペクトル撮像装置、ガンマ線・中性子分光計を搭載しています。"
- },
- {
-  "rel": "fleet/orbiter/rosetta.json",
-  "at": "description",
-  "en": "ESA’s comet rendezvous mission. Caught up to Comet 67P/Churyumov–Gerasimenko in August 2014, deployed the Philae lander (which bounced and fell into a crevasse), and accompanied the comet through its 2015 perihelion before crash-landing on the surface itself in September 2016.",
-  "cur": "ESAの彗星ランデブー・ミッション。2014年8月にComet 67P/Churyumov–Gerasimenkoに追いつき、Philae着陸機を展開（着陸機はバウンドしてクレバスに落ちました）し、彗星を2015年の近日点まで伴走してから、2016年9月に表面へ自らクラッシュ・ランディングしました。"
- },
- {
-  "rel": "fleet/orbiter/smart-1.json",
-  "at": "tagline",
-  "en": "First European Moon mission — solar-electric ion drive. Spiralled to the Moon over 13 months; deliberate impact 2006-09-03",
-  "cur": "欧州初の月探査 — 太陽電力イオン推進。13 か月かけて月へスパイラル軌道で接近、2006-09-03 に意図的衝突"
- },
- {
-  "rel": "fleet/orbiter/smart-1.json",
-  "at": "description",
-  "en": "ESA's first lunar mission and the first European spacecraft to reach the Moon. SMART = Small Missions for Advanced Research in Technology — and the technology that mattered was a Hall-effect solar-electric ion thruster (PPS-1350, the largest such thruster flown at the time). Launched 2003-09-27 as a shared payload on an Ariane 5 from Kourou, the 367-kg spacecraft used its 1.2-kW xenon ion drive over 13 months to slowly raise its Earth orbit, eventually captured by lunar gravity 2004-11-15. Operated for 16 months in a polar lunar orbit, returning high-resolution AMIE camera imagery, the first X-ray fluorescence elemental maps of the Moon (D-CIXS), and infrared mineral spectroscopy (SIR). Deliberately impacted Lacus Excellentiae (34.4° S, 46.2° W) on 2006-09-03 02:42 UTC — the impact flash was observed from the Canada-France-Hawaii Telescope.",
-  "cur": "ESA 初の月探査ミッションであり、月に到達した初の欧州宇宙機。SMART = Small Missions for Advanced Research in Technology — そして本命の技術はホール効果型の太陽電力イオンスラスター(PPS-1350)であった。2003-09-27 にクールーから Ariane 5 の相乗りペイロードとして打ち上げられた 367 kg の探査機は、1.2 kW のキセノンイオン推進を 13 か月使って地球軌道を徐々に上昇させ、最終的に 2004-11-15 に月重力に捕獲された。極月周回軌道で 16 か月運用し、AMIE カメラ画像、月初の X 線蛍光元素マップ(D-CIXS)、赤外鉱物分光(SIR)を取得。2006-09-03 02:42 UTC に卓越の湖に意図的に衝突 — 衝突閃光はカナダ・フランス・ハワイ望遠鏡から観測された。"
- },
- {
-  "rel": "fleet/orbiter/smart-1.json",
-  "at": "best_known_for",
-  "en": "First European Moon mission — solar-electric ion drive. Spiralled to the Moon over 13 months; deliberate impact 2006-09-03",
-  "cur": "欧州初の月探査 — 太陽電力イオン推進。13 か月かけて月へスパイラル軌道で接近、2006-09-03 に意図的衝突"
- },
- {
-  "rel": "fleet/orbiter/solar-orbiter.json",
-  "at": "description",
-  "en": "ESA-led Solar Orbiter is the first spacecraft designed to image the Sun's polar regions in close detail — using repeated Venus gravity assists over a decade to climb out of the ecliptic toward ~33° heliographic inclination. Carries ten instruments combining remote sensing (PHI magnetograph, EUI extreme-UV imager, SPICE spectrometer, STIX X-ray imager, METIS coronagraph, SoloHI heliospheric imager) with in-situ measurement (magnetometer, energetic particles, solar-wind plasma, radio + plasma waves). Launched 2020-02-10 from Cape Canaveral on a NASA Atlas V 411. First perihelion 2020-06-15 at 0.51 AU. Working perihelion 0.28 AU (~62 R☉), inside Mercury's perihelion distance.",
-  "cur": "ESA主導のSolar Orbiterは、太陽の極域を近距離で詳細に撮影するために設計された初の宇宙機——10年以上にわたる金星重力アシストを繰り返し利用して黄道面から離脱し、太陽緯度約33°の軌道傾斜角を目指す。リモートセンシング(PHI磁力計、EUI極端紫外線撮像装置、SPICE分光計、STIX X線撮像装置、METISコロナグラフ、SoloHI太陽圏撮像装置)とその場測定(磁力計、高エネルギー粒子、太陽風プラズマ、電波+プラズマ波)を組み合わせた10の観測機器を搭載。2020年2月10日にケープカナベラルからNASAのAtlas V 411で打ち上げ。初回近日点通過は2020年6月15日、0.51 AU。運用時近日点距離は0.28 AU(約62 R☉)で、水星の近日点距離より内側。"
- },
- {
-  "rel": "fleet/orbiter/tianwen-1.json",
-  "at": "tagline",
-  "en": "First Chinese Mars mission; delivered Zhurong",
-  "cur": "中国初の火星ミッション；Zhurongを送達"
- }
+  {
+    "rel": "fleet/launcher/mercury-redstone.json",
+    "at": "description",
+    "en": "The Mercury-Redstone launch vehicle was a man-rated derivative of the U.S. Army's Redstone ballistic missile, modified at NASA Marshall Space Flight Center for the suborbital Mercury crewed missions. Single-stage liquid-propellant (LOX + alcohol), 25 metres tall with capsule and escape tower (~18 m booster alone), producing approximately 347 kN (~35 tonnes-force) of thrust. The first crewed flight was Mercury-Redstone 3 / Freedom 7 (1961-05-05, Alan Shepard) — the first American in space, 23 days after Gagarin. Mercury-Redstone 4 / Liberty Bell 7 followed (1961-07-21, Gus Grissom). After Liberty Bell 7's hatch malfunction, NASA moved the orbital Mercury flights to the more powerful Atlas LV-3B. Final flight 1961-07-21; total 6 Mercury-Redstone vehicles built, 2 crewed flights flown.",
+    "cur": "Mercury-Redstone打ち上げ機は、米国陸軍のRedstone弾道ミサイルの有人対応型派生機で、NASA Marshall Space Flight Centerで改造され、亜軌道Mercury有人ミッション用となりました。単段式液体燃料（LOX + アルコール）で、カプセルと脱出塔を含めた高さ25メートル（ブースターのみ約18 m）、約347 kN（約35トン重量）の推力を生成しました。最初の有人飛行はMercury-Redstone 3 / Freedom 7（1961-05-05、アラン・シェパード）でした。これはガガーリンから23日後のアメリカ人初の宇宙飛行でした。その後、Mercury-Redstone 4 / Liberty Bell 7が続きました（1961-07-21、ガス・グリソム）。Liberty Bell 7のハッチ不具合の後、NASAは軌道Mercury飛行をより強力なAtlas LV-3Bに移行しました。最終飛行は1961-07-21で、合計6機のMercury-Redstone機が製造され、2機の有人飛行が実施されました。"
+  },
+  {
+    "rel": "fleet/launcher/mercury-redstone.json",
+    "at": "best_known_for",
+    "en": "First US human-rated launcher — variant of the Army's Redstone IRBM. Launched Freedom 7 (1961-05-05) and Liberty Bell 7 (1961-07-21)",
+    "cur": "米国初の有人対応ロケット — 陸軍のRedstone IRBMの派生型。Freedom 7（1961-05-05）とLiberty Bell 7（1961-07-21）を打ち上げた"
+  },
+  {
+    "rel": "fleet/launcher/n1.json",
+    "at": "tagline",
+    "en": "Soviet Moon rocket; four launches all failed",
+    "cur": "ソビエト月面ロケット；4度の打ち上げはすべて失敗"
+  },
+  {
+    "rel": "fleet/launcher/n1.json",
+    "at": "dispatch",
+    "en": "The N1 was the Soviet Union's Saturn V — and the reason it never reached the Moon. Standing 105 metres tall, its first stage clustered thirty engines around its base, not by choice but by necessity: no single Soviet engine came close to the power of the American F-1, so Korolev's team ganged thirty smaller ones together and hoped they would fire in concert. They never did. With no test stand large enough to fire the assembled stage on the ground, every launch was the first full test of the propulsion system — and all four, between 1969 and 1972, failed. The second launch (N1-5L, 3 July 1969) fell back onto its pad in one of the largest non-nuclear explosions ever recorded. Its NK-33 engines, hidden away after the programme was cancelled, proved among the finest ever built and flew on American rockets a quarter-century later — a brilliant machine beaten by the one thing it was never allowed to do: be tested before it flew.",
+    "cur": "N1はソビエト連邦のSaturn Vであり、月に到達できなかった理由でもあった。高さ105メートルのN1は、第1段の基部に30基のエンジンを集中配置していた。選択ではなく必然だった。ソビエトの単一エンジンではアメリカの F-1 のパワーに遠く及ばなかったため、コロリョフのチームは30基の小型エンジンを集約し、それらが一斉に点火することを望んだ。しかし、それは起こらなかった。組立段階を地上で点火させるだけの大きなテストスタンドがなかったため、すべてのロケット打上げは推進システムの初めての完全試験であり、1969年から1972年の間の4回すべてが失敗に終わった。2番目の打上げ（N1-5L、1969年7月3日）はパッドに逆落下し、記録上最大規模の非核兵器爆発の一つとなった。そのNK-33エンジンはプログラムの終了後に隠匿されたが、これまで製造された中でも最高のエンジンの一つであり、四半世紀後にはアメリカのロケットで飛行した。テスト前に飛行することを決して許されなかった唯一のこと、つまり飛行前にテストされることを許されなかったため、この優れた機械は敗れた。"
+  },
+  {
+    "rel": "fleet/launcher/n1.json",
+    "at": "description",
+    "en": "The Soviet Union’s answer to Saturn V — a 105 m super-heavy rocket with thirty NK-15 engines on the first stage. All four launches between 1969 and 1972 failed; the program was cancelled when Apollo 17 ended any chance of a Soviet crewed lunar landing.",
+    "cur": "サターン Vへのソビエト連邦の回答——第1段に30個のNK-15エンジンを備えた105メートルの超重力ロケット。1969年から1972年の間の4度の打ち上げはすべて失敗した；Apollo 17がソビエトの有人月面着陸の可能性を終わらせたとき、プログラムはキャンセルされた。"
+  },
+  {
+    "rel": "fleet/launcher/n1.json",
+    "at": "best_known_for",
+    "en": "Soviet Moon rocket; four launches all failed",
+    "cur": "ソビエト月面ロケット；4度の打ち上げはすべて失敗"
+  },
+  {
+    "rel": "fleet/launcher/new-glenn.json",
+    "at": "tagline",
+    "en": "Blue Origin's two-stage reusable heavy-lift orbital launcher",
+    "cur": "Blue Origin の二段式再利用可能大型軌道打ち上げ機"
+  },
+  {
+    "rel": "fleet/launcher/new-glenn.json",
+    "at": "description",
+    "en": "Two-stage heavy-lift vehicle built around seven BE-4 methane engines on the first stage (the same engine Vulcan uses) and two hydrogen-burning BE-3U engines on the second. Designed for first-stage recovery via a downrange ship landing. Lifts ~45 t to LEO and is certified for NSSL Phase 3 + Project Kuiper deployments. Maiden flight NG-1 launched from Cape Canaveral LC-36 on 2025-01-16 and successfully delivered the Blue Ring pathfinder to orbit — the first-stage landing attempt was lost but the orbital insertion was clean.",
+    "cur": "一段目に 7 基のメタン燃焼 BE-4 エンジン（Vulcan と同型）、二段目に 2 基の液体水素 BE-3U エンジンを備える二段式大型ロケット。一段目はダウンレンジの回収船への着船によって回収する設計。約 45 t を低軌道に投入でき、NSSL Phase 3 や Project Kuiper の運用認定を受けている。初飛行 NG-1 は 2025 年 1 月 16 日にケープ・カナベラル LC-36 から打ち上げられ、Blue Ring パスファインダーを軌道に投入することに成功した。一段目の着船は失敗したが、軌道投入そのものはクリーンだった。"
+  },
+  {
+    "rel": "fleet/launcher/new-glenn.json",
+    "at": "best_known_for",
+    "en": "Blue Origin's two-stage reusable heavy-lift orbital launcher — BE-4 first stage + cryogenic second",
+    "cur": "Blue Origin の二段式再利用可能大型軌道打ち上げ機 — メタン BE-4 一段目 + 液水二段目"
+  },
+  {
+    "rel": "fleet/launcher/proton-k.json",
+    "at": "tagline",
+    "en": "The Soviet / Russian heavy-lift workhorse 1967-2012 — Salyut, Mir, Venera, Vega, Luna sample-return",
+    "cur": "ソビエト/ロシアの大型ロケット（1967-2012年）— Salyut、Mir、Venera、Vega、Luna試料採取ミッション"
+  },
+  {
+    "rel": "fleet/launcher/proton-k.json",
+    "at": "description",
+    "en": "Three-stage hypergolic (N2O4 / UDMH) heavy-lift vehicle with optional Blok-D / D-1 / D-2 high-energy upper stages. 311 launches between 1967-03-10 and 2012-03-30 — anchored every Salyut + Mir + ISS Russian-segment module, every Venera and Vega Venus probe, every Luna sample-return, and Soviet Mars-2/-3/-5/-7. The Blok-D upper stage was originally developed for the cancelled N1-L3 crewed lunar architecture; reusing it on Proton-K kept the heavy-energy Soviet planetary line viable into the 1980s. Replaced by Proton-M which still flies.",
+    "cur": "三段式ハイパーゴリック推進剤（N2O4/UDMH）大型ロケット、オプションとしてBlok-D/D-1/D-2高比エネルギー上段ロケット搭載可能。1967年3月10日から2012年3月30日までに311回の打ち上げを実施 — すべてのSalyut、Mir、ISS ロシア船体モジュール、すべてのVeneraおよびVega金星探査機、すべてのLunaサンプルリターン、ソビエトMars-2/-3/-5/-7を軌道投入した。Blok-D上段ロケットは当初、キャンセルされたN1-L3有人月面着陸計画のために開発されたが、Proton-Kに再利用することでソビエトの惑星探査ミッションを1980年代まで継続させた。後継のProton-Mが現在も飛行中。"
+  },
+  {
+    "rel": "fleet/launcher/proton-k.json",
+    "at": "best_known_for",
+    "en": "Soviet / Russian heavy-lift workhorse 1967-2012 — Salyut, Mir, every Venera + Vega Venus probe, every Luna sample-return, and every Soviet outer-planet attempt",
+    "cur": "ソビエト/ロシアの大型ロケット（1967-2012年）— Salyutすべて、Mirすべて、すべてのVenera + Vega金星探査機、すべてのLuna試料採取ミッション、およびソビエトのすべての外惑星ミッション"
+  },
+  {
+    "rel": "fleet/launcher/proton-m.json",
+    "at": "tagline",
+    "en": "Successor to Proton-K; modernised heavy lift",
+    "cur": "Proton-K の成功; 近代化された重い上昇"
+  },
+  {
+    "rel": "fleet/launcher/proton-m.json",
+    "at": "description",
+    "en": "Proton-M is a orbital launcher built by Khrunichev in Russia. Successor to Proton-K; modernised heavy lift. In service since 2001.",
+    "cur": "Proton-MはロシアでKhrunichevによって造られる軌道進水器です。 Proton-K の成功; 近代化した重い上昇。 2001年以来のサービス"
+  },
+  {
+    "rel": "fleet/launcher/proton-m.json",
+    "at": "best_known_for",
+    "en": "Successor to Proton-K; modernised heavy lift",
+    "cur": "Proton-K の成功; 近代化された重い上昇"
+  },
+  {
+    "rel": "fleet/launcher/pslv-xl.json",
+    "at": "tagline",
+    "en": "ISRO's heavy strap-on PSLV variant — Chandrayaan-1 + Mars Orbiter",
+    "cur": "ISROの重型固体ロケットブースター付きPSLV型— Chandrayaan-1 + Mars Orbiter"
+  },
+  {
+    "rel": "fleet/launcher/pslv-xl.json",
+    "at": "description",
+    "en": "Four-stage Polar Satellite Launch Vehicle in its extended (XL) configuration: six PS0M-XL strap-on solid boosters with ~50 % more propellant than the standard PSLV. Lifts ~3.8 t to LEO / ~1.8 t to SSO / ~1.4 t to GTO and has carried India's most significant interplanetary missions — Chandrayaan-1 (2008) and Mangalyaan / Mars Orbiter Mission (2013) — from Sriharikota's First Launch Pad. Still active for hyperspectral + radar Earth-observation deployments.",
+    "cur": "4段式極軌道衛星打ち上げロケット（拡張型XL構成）：標準PSLVより約50 %多い推進剤を搭載した6基のPS0M-XLストラップオン固体ブースター。LEOへ約3.8 t、SSOへ約1.8 t、GTOへ約1.4 tの打ち上げ能力を有し、インドの最重要惑星間探査ミッション — Chandrayaan-1（2008）およびMangalyaan / Mars Orbiter Mission（2013）— をシュリーハリコータの第1射場から打ち上げた。現在も分光観測・レーダー地球観測衛星の打ち上げに活用されている。"
+  },
+  {
+    "rel": "fleet/launcher/pslv-xl.json",
+    "at": "best_known_for",
+    "en": "ISRO's heavy-strap-on PSLV variant — launched Chandrayaan-1 + Mars Orbiter Mission",
+    "cur": "ISROの重型固体ロケットブースター付きPSLV型 — Chandrayaan-1およびMars Orbiter Missionを打ち上げ"
+  },
+  {
+    "rel": "fleet/launcher/r-7-vostok.json",
+    "at": "tagline",
+    "en": "Carried Sputnik and Gagarin to orbit",
+    "cur": "Sputnik とガガーリンを軌道に運ぶ"
+  },
+  {
+    "rel": "fleet/launcher/r-7-vostok.json",
+    "at": "description",
+    "en": "The launcher that put Sputnik in orbit in 1957 and Yuri Gagarin into space in 1961. A direct ancestor of every Soyuz rocket flown since — the longest production lineage in spaceflight, with thousands of flights across six decades.",
+    "cur": "1957年に軌道に Sputnik を入れたランチャーと1961年にユーリイ・ガガーリンが空間に。Soyuz ロケットの直進機は、宇宙飛行の最も長い生産ラインで、6年にわたる数千便のフライトです。"
+  },
+  {
+    "rel": "fleet/launcher/r-7-vostok.json",
+    "at": "best_known_for",
+    "en": "Carried Sputnik and Gagarin to orbit",
+    "cur": "Sputnik とガガーリンを軌道に運ぶ"
+  },
+  {
+    "rel": "fleet/launcher/saturn-ib.json",
+    "at": "tagline",
+    "en": "Lifted Apollo 7, Skylab crews, and ASTP",
+    "cur": "Apollo 7、Skylab の乗組員、ASTP を打ち上げた"
+  },
+  {
+    "rel": "fleet/launcher/saturn-ib.json",
+    "at": "dispatch",
+    "en": "Not every Apollo job needed the Moon rocket. The Saturn IB was the pragmatic option — a crew-rated lifter for the work that stayed in Earth orbit: Apollo 7's shakedown of the redesigned spacecraft, the ferry flights to Skylab, and the handshake-in-orbit of Apollo-Soyuz. Its first stage was famously a bundle of tanks borrowed from the earlier Redstone and Jupiter missiles, clustered together — proven parts doing a new job rather than a clean-sheet design. It's the least glamorous rocket in the program, and a quiet lesson in not overbuilding: match the machine to the mission.",
+    "cur": "すべてのアポロミッションが月到達ロケットを必要としたわけではない。Saturn IBは現実的な選択肢だった。地球軌道内にとどまる作業のための有人対応の打ち上げ機だ。再設計された宇宙船の試験運用だったApollo 7、Skylabへのシャトル便、そしてApollo-Soyuzの宇宙空間での握手。第1段は有名な逸話だが、初期のRedstoneと木星ミサイルから流用されたタンク群を束ねたものであり、ゼロから設計したものではなく、実績のある部品を新しい役割に充てたものだった。このプログラムの中で最も地味なロケットであり、また過度に設計しないという静かな教訓を示している。機械をミッションに合わせる、ということだ。"
+  },
+  {
+    "rel": "fleet/launcher/saturn-ib.json",
+    "at": "description",
+    "en": "Saturn IB is a orbital launcher built by Chrysler / Douglas / IBM in USA. Lifted Apollo 7, Skylab crews, and ASTP.",
+    "cur": "Saturn IBはアメリカの Chrysler / Douglas / IBM によって建造された軌道打ち上げ機である。Apollo 7、Skylabの乗員、および ASTP を打ち上げた。"
+  },
+  {
+    "rel": "fleet/launcher/saturn-ib.json",
+    "at": "best_known_for",
+    "en": "Lifted Apollo 7, Skylab crews, and ASTP",
+    "cur": "Apollo 7、Skylab の乗組員、ASTP を打ち上げたこと"
+  },
+  {
+    "rel": "fleet/launcher/saturn-v.json",
+    "at": "dispatch",
+    "en": "The Saturn V existed to solve one brutal piece of arithmetic: putting a crew on the Moon means throwing roughly 45 tonnes onto a path out of Earth's gravity, and in 1961 nothing on Earth could throw a fraction of that. So von Braun's Marshall team built the largest machine that had ever flown — five F-1 engines at its base, each the most powerful single-chamber rocket engine ever fired at the time, together burning some thirteen tonnes of propellant every second. Everything about it was sized by the destination, not by what looked reasonable. That it flew thirteen times and never once failed to reach space is the part that still doesn't quite seem possible.",
+    "cur": "Saturn V は、ひとつの冷徹な計算上の課題を解くために存在していた。人間を月面に送り込むということは、地球の重力圏を脱出する軌道に、およそ 45 トンを投入することを意味し、1961 年の時点では地球上のどの機体もそれを成し遂げることができなかったのだ。そこで von Braun の Marshall チームが、これまで飛行した機体のうち最大のマシンを建造した。その基部に 5 基の F-1 エンジンを搭載し、それぞれが当時最も強力な単一チャンバー型ロケットエンジンであり、これらが毎秒およそ 13 トンの推進剤を燃焼させていた。このロケットのあらゆる寸法は、見た目の合理性ではなく、目的地によって決定された。13 度の飛行でただの一度も宇宙到達に失敗しなかったというその事実が、今なお完全には信じられないような感覚を生じさせるのである。"
+  },
+  {
+    "rel": "fleet/launcher/saturn-v.json",
+    "at": "description",
+    "en": "The 110.6 m three-stage rocket that put 24 humans on a translunar trajectory and 12 of them on the lunar surface. Thirteen launches between 1967 and 1973, zero losses on ascent. The most powerful rocket to reach orbit for over five decades until Starship's Super Heavy surpassed it in 2024.",
+    "cur": "月への往路軌道に24人の人類を、月面に12人を送り届けた全長110.6 mの3段式ロケット。1967年から1973年にかけて13回の打ち上げを実施し、上昇段階での喪失ゼロ。2024年にStarshipのSuper Heavyに抜かれるまで、50年以上にわたって軌道到達に成功した最強力のロケットだった。"
+  },
+  {
+    "rel": "fleet/launcher/sls-block-1.json",
+    "at": "tagline",
+    "en": "Heavy lift for Artemis lunar program",
+    "cur": "Artemisの月面プログラムのための重い上昇"
+  },
+  {
+    "rel": "fleet/launcher/sls-block-1.json",
+    "at": "description",
+    "en": "NASA’s super-heavy successor to the Space Shuttle stack, sharing its RS-25 engines and SRB heritage. Carried Orion on Artemis I in 2022; planned to launch crewed lunar missions through Artemis IV.",
+    "cur": "NASAのSpace Shuttleのスタックに超重い成功を収め、RS-25エンジンとSRBの遺産を共有します。 2022年にArtemis IのOrionをCarried。Artemis IVによる乗組員のミッションを立ち上げる予定。"
+  },
+  {
+    "rel": "fleet/launcher/sls-block-1.json",
+    "at": "best_known_for",
+    "en": "Heavy lift for Artemis lunar program",
+    "cur": "Artemisの月面プログラムのための重い上昇"
+  },
+  {
+    "rel": "fleet/launcher/soyuz-2.json",
+    "at": "tagline",
+    "en": "Modern Soyuz workhorse — carries Soyuz MS crew + Progress MS cargo to the ISS",
+    "cur": "最新鋭のSoyuzの主力ロケット — Soyuz MSクルー輸送機とProgress MS補給機をISSへ運搬"
+  },
+  {
+    "rel": "fleet/launcher/soyuz-2.json",
+    "at": "description",
+    "en": "RKTs Progress's modernised Soyuz family, with digital flight controls replacing the analogue systems of Soyuz-FG / Soyuz-U. Variants 2.1a (RD-107A/RD-108A first stage + RD-0124 third stage), 2.1b (uprated third stage), and 2.1v (no boosters, single RD-110 stage). Carries every modern Russian crewed and cargo flight to the ISS plus Glonass, Resurs-P, and Lotos-S payloads.",
+    "cur": "RKTsのProgressによる最新化されたSoyuzファミリー。Soyuz-FGおよびSoyuz-Uのアナログシステムに替わってデジタル飛行制御を採用。バリアント2.1a（第1段階RD-107A/RD-108A、第3段階RD-0124）、2.1b（強化型第3段階）、2.1v（ブースターなし、単一RD-110段階）を備える。ISSへのロシアの全ての現代的有人飛行およびカーゴ飛行、並びにGlonass、Resurs-P、Lotos-Sペイロードを運搬する。"
+  },
+  {
+    "rel": "fleet/launcher/soyuz-2.json",
+    "at": "best_known_for",
+    "en": "Modern Soyuz workhorse for ISS crew + cargo",
+    "cur": "ISSクルー輸送とカーゴ輸送を担う最新鋭のSoyuzの主力ロケット"
+  },
+  {
+    "rel": "fleet/launcher/soyuz-fg.json",
+    "at": "tagline",
+    "en": "Crewed Soyuz launches 2001-2019",
+    "cur": "有人Soyuzの打ち上げ 2001～2019年"
+  },
+  {
+    "rel": "fleet/launcher/soyuz-fg.json",
+    "at": "description",
+    "en": "Soyuz-FG is a orbital launcher built by Progress Rocket Space Centre in Russia. Crewed Soyuz launches 2001-2019.",
+    "cur": "Soyuz-FGはロシアのProgress Rocket Space Centreによって開発された軌道打ち上げロケットです。有人Soyuzの打ち上げは2001～2019年に実施されました。"
+  },
+  {
+    "rel": "fleet/launcher/soyuz-fg.json",
+    "at": "best_known_for",
+    "en": "Crewed Soyuz launches 2001-2019",
+    "cur": "有人Soyuzの打ち上げ 2001～2019年"
+  },
+  {
+    "rel": "fleet/launcher/soyuz-u.json",
+    "at": "description",
+    "en": "Soyuz-U is a orbital launcher built by Progress Rocket Space Centre in USSR. Most-launched orbital rocket in history — 786 missions from 1973 to 2017.",
+    "cur": "Soyuz-Uは、ソビエト連邦のProgress Rocket Space Centreによって製造された軌道打ち上げロケットです。歴史上最も打ち上げられた軌道ロケット — 1973年から2017年にかけて786回の打ち上げミッション。"
+  },
+  {
+    "rel": "fleet/launcher/soyuz.json",
+    "at": "tagline",
+    "en": "R-7-derived launcher for the first-generation Soyuz spacecraft — flew Soyuz 1 (1967) and Soyuz 11 (1971)",
+    "cur": "Soyuz宇宙船第一世代を打ち上げたR-7派生ロケット — Soyuz 1号(1967年)とSoyuz 11号(1971年)を飛行"
+  },
+  {
+    "rel": "fleet/launcher/soyuz.json",
+    "at": "dispatch",
+    "en": "The launcher that opened the Soyuz era also carried its two tragedies. The 11A511 was the next step in Korolev's R-7 lineage — the same rocket family that lofted Sputnik and Gagarin, now uprated to carry the heavier, more capable Soyuz spacecraft that would become the workhorse of Soviet and Russian human spaceflight for the next half-century. Its first crewed flight, Soyuz 1 in 1967, ended when the descent module's parachutes fouled and Vladimir Komarov was lost. Four years later, Soyuz 11 returned its crew from the world's first space station — but a valve had opened at separation, and all three men died of depressurisation before touchdown. The rocket performed; the spacecraft's early margins did not. The R-7 lineage it belonged to still flies crews today.",
+    "cur": "Soyuz時代を開いたこのロケットは、その二つの悲劇をも担った。11A511は、コロリョフの R-7系譜における次の一歩だった。Sputnikとガガーリンを打ち上げた同じロケット一族が、今度はより重く高性能な Soyuz宇宙船を運ぶために強化され、その後半世紀にわたってソビエト・ロシアの有人宇宙飛行の主力となるはずの機体を支えた。最初の有人飛行である Soyuz 1号(1967年)は、降下モジュールのパラシュートが絡まってウラジーミル・コマロフが命を落とした。4年後、Soyuz 11号は世界初の宇宙ステーションから乗員を帰還させたが、分離時にバルブが開き、3名全員が着陸前に与圧喪失で命を失った。ロケットは正常に機能した。機能しなかったのは、宇宙船の初期安全余裕だった。その系譜を受け継ぐ R-7ファミリーは、今日もなお乗員を宇宙へ運び続けている。"
+  },
+  {
+    "rel": "fleet/launcher/soyuz.json",
+    "at": "description",
+    "en": "The Soyuz 11A511 was the R-7 derivative built to loft the first-generation Soyuz 7K-OK spacecraft, adding a more capable upper stage to the Vostok/Voskhod launcher lineage. Three-stage liquid-propellant (LOX + kerosene), ~50 metres tall, ~308 tonnes lift-off mass. It carried the crewed Soyuz programme's earliest flights, including its two fatal missions — Soyuz 1 (1967), lost when its recovery parachutes fouled, and Soyuz 11 (1971), whose crew died of depressurisation during descent. The 11A511 was succeeded by the Soyuz-U in 1973; the same R-7 lineage still flies crews as the Soyuz-2 today.",
+    "cur": "Soyuz 11A511は、第一世代のSoyuz 7K-OK宇宙船を打ち上げるために開発されたR-7の派生型で、Vostok/Voskhod系ロケットに上段を強化した3段式機体である。液体推進剤（液体酸素＋ケロシン）、全長約50メートル、離昇質量約308トン。有人Soyuzプログラムの初期飛行を担い、二つの致命的ミッション——回収パラシュートの絡まりで失われたSoyuz 1号(1967年)と、降下中の与圧喪失で乗員が全員死亡したSoyuz 11号(1971年)——を含む。11A511は1973年にSoyuz-Uに引き継がれた。同じR-7系譜は今日Soyuz-2として乗員を飛ばし続けている。"
+  },
+  {
+    "rel": "fleet/launcher/soyuz.json",
+    "at": "best_known_for",
+    "en": "R-7-derived launcher for the first-generation Soyuz spacecraft — flew Soyuz 1 (1967) and Soyuz 11 (1971)",
+    "cur": "Soyuz宇宙船第一世代を打ち上げたR-7派生ロケット — Soyuz 1号(1967年)とSoyuz 11号(1971年)を飛行"
+  },
+  {
+    "rel": "fleet/launcher/space-shuttle-stack.json",
+    "at": "tagline",
+    "en": "Orbiter + ET + SRBs; 135 missions",
+    "cur": "Orbiter + ET + SRB; 135ミッション"
+  },
+  {
+    "rel": "fleet/launcher/space-shuttle-stack.json",
+    "at": "description",
+    "en": "The reusable orbiter, external tank, and twin solid rocket boosters that flew 135 missions between 1981 and 2011. Built the ISS, deployed and serviced Hubble, and demonstrated the engineering trade-offs of a partially-reusable crewed launcher.",
+    "cur": "1981年から2011年にかけて135のミッションを実行した再利用可能なオービター、外部タンク、ツインの固体ロケット・ブースター。ISSを建設し、Hubbleを展開・サービスし、部分的に再利用可能な有人ロケットの工学的なトレードオフを実証した。"
+  },
+  {
+    "rel": "fleet/launcher/space-shuttle-stack.json",
+    "at": "best_known_for",
+    "en": "Orbiter + ET + SRBs; 135 missions",
+    "cur": "Orbiter + ET + SRB; 135ミッション"
+  },
+  {
+    "rel": "fleet/launcher/starship.json",
+    "at": "description",
+    "en": "Two-stage vehicle built around the methane-burning Raptor engine — Super Heavy first stage (33 Raptors) + Starship second stage (6 Raptors). Designed for full and rapid reuse via tower-catch recovery of both stages, targeting Mars transit timelines + Artemis Human Landing System. First integrated flight test (IFT-1) cleared the pad on 2023-04-20 but lost vehicle control before stage separation; demonstrated controlled recovery of both stages beginning with IFT-4 in June 2024.",
+    "cur": "メタンを燃料とするRaptorエンジンを中心に設計された2段式ロケット — 第1段Super Heavy（33基のRaptor）+ 第2段Starship（6基のRaptor）。両段をタワーキャッチで回収し、完全かつ迅速な再利用を実現する設計。火星への遠距離輸送とArtemis有人月面着陸システムを目標としている。初の統合飛行試験（IFT-1）は2023年4月20日にパッドをクリアしたが、段間分離前に機体制御を喪失。IFT-4以降（2024年6月）、両段の制御回収が実証されている。"
+  },
+  {
+    "rel": "fleet/launcher/starship.json",
+    "at": "best_known_for",
+    "en": "Fully reusable super-heavy launch vehicle in development for Artemis HLS + Mars",
+    "cur": "Artemis HLS + 火星向けに開発中の完全再利用可能超大型ロケット"
+  },
+  {
+    "rel": "fleet/launcher/titan-ii-glv.json",
+    "at": "tagline",
+    "en": "Workhorse for Project Gemini",
+    "cur": "Project Gemini のためのワークホース"
+  },
+  {
+    "rel": "fleet/launcher/titan-ii-glv.json",
+    "at": "dispatch",
+    "en": "The Titan II that launched Gemini was, like Mercury's rockets, a converted weapon — America's largest intercontinental missile, man-rated to carry a crew. Its defining trait was its fuel: where cryogenic propellants have to be loaded just before launch and can force a scrub, the Titan burned storable liquids that let it sit ready and lift off close to on time. That reliability of timing mattered more than it sounds, because Gemini's whole job was rendezvous, and catching another spacecraft in orbit depends on launching at an exact moment. The workhorse of the program, it flew all ten crewed Geminis without losing a crew.",
+    "cur": "Gemini を打ち上げた Titan II は、Mercury のロケットと同様に、改造された兵器であった。アメリカ最大の大陸間弾道ミサイルを、有人仕様に改修したものだ。その最大の特徴は燃料にあった。極低温推進剤は打ち上げ直前に充填する必要があり、中止を余儀なくされることもあるが、Titanは貯蔵可能な液体燃料を使用したため、待機状態を維持でき、ほぼ定刻通りに打ち上げることができた。このタイミングの信頼性は、聞こえる以上に重要だった。なぜなら、Gemini の全任務はランデブーであり、軌道上で別の宇宙船に接近するには、正確な瞬間に打ち上げる必要があったからだ。このプログラムの主力ロケットとして、10機すべての有人 Gemini を飛行させ、乗員を失うことはなかった。"
+  },
+  {
+    "rel": "fleet/launcher/titan-ii-glv.json",
+    "at": "description",
+    "en": "Titan II GLV is a orbital launcher built by Martin Marietta in USA. Workhorse for Project Gemini. Retired after first flight in 1964.",
+    "cur": "Titan II GLVは、アメリカで Martin Marietta によって建てられた軌道上発射装置です。プロジェクト Gemini のためのワークホース。1964年初飛行後退"
+  },
+  {
+    "rel": "fleet/launcher/titan-ii-glv.json",
+    "at": "best_known_for",
+    "en": "Workhorse for Project Gemini",
+    "cur": "Project Gemini のためのワークホース"
+  },
+  {
+    "rel": "fleet/launcher/voskhod-11a57.json",
+    "at": "tagline",
+    "en": "Vostok-K successor — more thrust for the heavier Voskhod capsule. Launched Voskhod 1 (1964) + Voskhod 2 (1965 Leonov EVA)",
+    "cur": "Vostok-Kの後継機 — より重いVoskhodカプセル用に推力増強。Voskhod 1(1964)+Voskhod 2(1965 レオーノフ EVA)を打上げ"
+  },
+  {
+    "rel": "fleet/launcher/voskhod-11a57.json",
+    "at": "dispatch",
+    "en": "The Voskhod 11A57 was the R-7 turned up a notch. The modified Vostok capsule was heavier than the original, so it needed more push than the Vostok-K could give — which the R-7 family, endlessly adaptable, duly provided with an uprated upper stage. It's a small chapter in a very long story: the same basic rocket that launched Sputnik and Gagarin, stretched again to loft the two Voskhod flights, and still being stretched, decades later, to fly Soyuz crews. Few designs have been asked to do so many different jobs for so long.",
+    "cur": "Voskhod 11A57は、R-7を一段階強化したものだった。改良型Vostokカプセルは元の機体より重く、Vostok-Kが提供できる以上の推力を必要としたが、無限に適応可能なR-7ファミリーは、改良された上段によってそれを確実に実現した。これは非常に長い物語の中の小さな一章である。Sputnikとガガーリンを打ち上げた同じ基本ロケットが、再び拡張されて2回のVoskhodフライトを打ち上げ、さらに数十年後にもまだ拡張されてSoyuzクルーを運んでいる。これほど長い期間にわたって、これほど多くの異なる任務を求められた設計はほとんどない。"
+  },
+  {
+    "rel": "fleet/launcher/voskhod-11a57.json",
+    "at": "description",
+    "en": "Voskhod (GRAU index 11A57) was the next iteration of the R-7 family after Vostok-K, with uprated Blok-I third-stage engines for the heavier Voskhod capsule. Three-stage LOX + kerosene, 44 metres tall, 298 tonnes lift-off mass. Launched both crewed Voskhod flights (Voskhod 1 first 3-person crew in 1964; Voskhod 2 with Leonov's first EVA in 1965). After the Voskhod programme ended the 11A57 continued in service for ~300 uncrewed military / civilian satellite launches through 1976, when it was superseded by the Soyuz 11A511 line.",
+    "cur": "Voskhod(GRAUインデックス11A57)は、Vostok-Kに続くR-7ファミリーの次世代機で、より重いVoskhodカプセル用にBlok-I第3段エンジンが強化されている。3段式液体酸素+ケロシン、全長44メートル、離昇質量298トン。有人Voskhod 2機(1964年のVoskhod 1は初の3人乗り;1965年のVoskhod 2はレオーノフによる初の宇宙遊泳)を打ち上げた。Voskhod計画終了後も11A57は約300回の無人軍事/民間衛星打上げに使用され、1976年にSoyuz 11A511系列に置き換えられた。"
+  },
+  {
+    "rel": "fleet/launcher/voskhod-11a57.json",
+    "at": "best_known_for",
+    "en": "Vostok-K successor — more thrust for the heavier Voskhod capsule. Launched Voskhod 1 (1964) + Voskhod 2 (1965 Leonov EVA)",
+    "cur": "Vostok-Kの後継機 — より重いVoskhodカプセル用に推力増強。Voskhod 1(1964)+Voskhod 2(1965 レオーノフ EVA)を打上げ"
+  },
+  {
+    "rel": "fleet/launcher/vostok-k.json",
+    "at": "tagline",
+    "en": "Soviet R-7-derived launcher that put Gagarin in space — Vostok 1 (1961-04-12) and 5 more Vostok flights through 1963",
+    "cur": "ガガーリンを宇宙へ送ったR-7派生のソ連製ロケット — Vostok 1(1961-04-12)と1963年までのVostok 5機を打ち上げ"
+  },
+  {
+    "rel": "fleet/launcher/vostok-k.json",
+    "at": "dispatch",
+    "en": "The rocket that launched Gagarin was a weapon that changed careers. The Vostok-K was a human-rated version of Korolev's R-7 — the world's first intercontinental ballistic missile, built to throw a warhead across the planet, now asked to lift a person into orbit. It was the same lineage that had lofted Sputnik, and it is, astonishingly, the same lineage still flying: the Soyuz rocket that carries crews to the Space Station today is a direct descendant, which makes the R-7 family by far the most-launched rocket in history. Few machines built for war have had so long or so peaceful a second life.",
+    "cur": "ガガーリンを打ち上げたロケットは、用途を変えた兵器だった。Vostok-Kは、コロリョフの R-7——世界初の大陸間弾道ミサイルで、弾頭を地球の裏側まで投射するために作られたが、今は人間を軌道に運ぶ役割を担った——の有人仕様版だった。これは Sputnik を打ち上げたのと同じ系譜であり、驚くべきことに、今も飛び続けている同じ系譜である。今日、宇宙ステーションに乗組員を運ぶ Soyuz ロケットは直系の子孫であり、R-7ファミリーは史上最も多く打ち上げられたロケットとなっている。戦争のために作られた機械で、これほど長く、これほど平和的な第二の人生を送ったものはほとんどない。"
+  },
+  {
+    "rel": "fleet/launcher/vostok-k.json",
+    "at": "description",
+    "en": "Vostok-K (GRAU index 8K72K) was the human-rated derivative of Korolev's R-7 ICBM, with a Blok-E upper stage and crew-rated parameters. Three-stage liquid-propellant (LOX + kerosene), 38 metres tall, 287 tonnes lift-off mass. Launched all six crewed Vostok flights (1-6, 1961-1963) plus a handful of uncrewed precursors. Reliability evolved from early R-7 teething problems (3 of 6 first-stage failures before Gagarin) to perfect record across the crewed series. The Vostok-K design lineage continues today as the Soyuz-2 launcher (the only crew-capable Russian launch vehicle of 2026).",
+    "cur": "Vostok-K（GRAU指数8K72K）はコロリョフのR-7 ICBM の有人対応派生型で、Blok-E 上段と乗員対応仕様を備えていました。3段式液体推進ロケット（LOX+ケロシン）、高さ38メートル、打ち上げ時総重量287トン。6機すべてのVostok 有人飛行（1～6号機、1961～1963年）および少数の無人先行試験機を打ち上げました。信頼性は初期のR-7の初期不具合（ガガーリン前に第1段故障6件中3件）から、有人飛行シリーズ全体での完璧な成功へと進化しました。Vostok-K 設計系統は今日もSoyuz-2ランチャーとして継続しており（2026年のロシアでの有人対応唯一の打ち上げロケット）、変わらず活躍しています。"
+  },
+  {
+    "rel": "fleet/launcher/vostok-k.json",
+    "at": "best_known_for",
+    "en": "Soviet R-7-derived launcher that put Gagarin in space — Vostok 1 (1961-04-12) and 5 more Vostok flights through 1963",
+    "cur": "ガガーリンを宇宙へ送ったR-7派生のソ連製ロケット — Vostok 1(1961-04-12)と1963年までのVostok 5機を打ち上げ"
+  },
+  {
+    "rel": "fleet/launcher/vulcan.json",
+    "at": "tagline",
+    "en": "Atlas V + Delta IV successor; certifies for NSSL Phase 3 + planned for Dream Chaser",
+    "cur": "Atlas V + Delta IVの後継機; NSSL Phase 3認定対象 + Dream Chaserの計画搭載機"
+  },
+  {
+    "rel": "fleet/launcher/vulcan.json",
+    "at": "description",
+    "en": "United Launch Alliance's two-stage successor to Atlas V and Delta IV. Powered by twin BE-4 methalox engines on the first stage and Centaur V (RL10) above. First flight 2024-01-08 carried Astrobotic Peregrine. Slated to certify for National Security Space Launch Phase 3 contracts and planned as the launch vehicle for Sierra Space's Dream Chaser cargo spaceplane.",
+    "cur": "United Launch AllianceによるAtlas VおよびDelta IVの後継2段式ロケット。第1段には双つのBE-4メタロックスエンジン、その上にCentaur V（RL10）を搭載。初飛行は2024-01-08でAstrobotic Peregrine搭載。National Security Space Launch Phase 3契約の認定取得が予定されており、Sierra SpaceのDream Chaserカーゴスペースプレーン用打上げロケットとして計画されている。"
+  },
+  {
+    "rel": "fleet/launcher/vulcan.json",
+    "at": "best_known_for",
+    "en": "Atlas V + Delta IV successor",
+    "cur": "Atlas V + Delta IVの後継機"
+  },
+  {
+    "rel": "fleet/observatory/chandra.json",
+    "at": "description",
+    "en": "NASA’s flagship X-ray observatory, in service since 1999. Resolution roughly 25× better than any previous X-ray telescope, allowing direct imaging of black-hole accretion disks, supernova remnants, and the hot gas threading galaxy clusters.",
+    "cur": "1999年以来、NASAの主力X線観測器。 従来のX線望遠鏡よりも約25倍の解像度で、ブラックホールのaccretionディスク、スーパーノバのremnantsの直接イメージングを可能にし、銀河クラスターをねじるホットガス。"
+  },
+  {
+    "rel": "fleet/observatory/compton-gro.json",
+    "at": "name",
+    "en": "Compton Gamma Ray Observatory",
+    "cur": "Compton Gamma Ray Observatory"
+  },
+  {
+    "rel": "fleet/observatory/compton-gro.json",
+    "at": "description",
+    "en": "One of NASA’s four \"Great Observatories\" alongside Hubble, Chandra, and Spitzer. In orbit 1991–2000, mapped the gamma-ray sky and discovered that gamma-ray bursts come from cosmological distances rather than nearby sources.",
+    "cur": "NASAの4つの「グレート・オブザーバトリー」の1つで、Hubble、Chandra、Spitzerと並んで位置づけられています。1991～2000年の間に軌道上にあり、ガンマ線天の図を作成し、ガンマ線バーストが近くの源からではなく宇宙論的距離からもたらされることを発見しました。"
+  },
+  {
+    "rel": "fleet/observatory/euclid.json",
+    "at": "tagline",
+    "en": "Dark-energy survey across one third of the sky",
+    "cur": "空の3分の1を対象とするダークエネルギー調査"
+  },
+  {
+    "rel": "fleet/observatory/euclid.json",
+    "at": "description",
+    "en": "Euclid surveys the sky in visible and near-infrared light to map the large-scale structure of the Universe and constrain dark energy. In service since 2023.",
+    "cur": "Euclidは可視光および近赤外線で天空を観測し、宇宙の大規模構造をマッピングしてダークエネルギーを制約します。2023年以来運用中です。"
+  },
+  {
+    "rel": "fleet/observatory/euclid.json",
+    "at": "best_known_for",
+    "en": "Dark-energy survey across one third of the sky",
+    "cur": "空の3分の1を対象とするダークエネルギー調査"
+  },
+  {
+    "rel": "fleet/observatory/gaia.json",
+    "at": "description",
+    "en": "ESA’s star-charting satellite, mapping the position, brightness, and motion of nearly two billion stars in the Milky Way at unprecedented precision. Operated 2013–2025; the resulting catalogue will underpin galactic astronomy for decades.",
+    "cur": "ESAのスターチャーティング衛星, 位置をマッピング, 明るさ, ミルキーウェイで約2億の星の動作は、前例のない精度で. 2013年～2025年 収蔵品は数十年にわたり銀河天文学を継承する。"
+  },
+  {
+    "rel": "fleet/observatory/hitomi.json",
+    "at": "tagline",
+    "en": "Spun apart in orbit; loss drove XRISM development",
+    "cur": "軌道上で分裂；その喪失はXRISM開発を推進した"
+  },
+  {
+    "rel": "fleet/observatory/hitomi.json",
+    "at": "description",
+    "en": "JAXA’s X-ray observatory, lost 37 days after launch in February 2016. A reaction-wheel saturation triggered a sequence of attitude-control errors that spun the spacecraft so fast it broke apart. Lessons drove the development of XRISM (launched 2023).",
+    "cur": "JAXAのX線天文台で、2016年2月の打上げから37日後に喪失した。リアクションホイールの飽和が姿勢制御エラーの連鎖を引き起こし、宇宙機を極度に高速で回転させて分裂させた。その教訓がXRISM（2023年打上げ）の開発を推進した。"
+  },
+  {
+    "rel": "fleet/observatory/hitomi.json",
+    "at": "best_known_for",
+    "en": "Spun apart in orbit; loss drove XRISM development",
+    "cur": "軌道上で分裂；その喪失はXRISM開発を推進した"
+  },
+  {
+    "rel": "fleet/observatory/hubble.json",
+    "at": "tagline",
+    "en": "Iconic visible/UV space telescope; 5 servicing missions",
+    "cur": "象徴的な可視紫外線宇宙望遠鏡；5回の保守ミッション"
+  },
+  {
+    "rel": "fleet/observatory/hubble.json",
+    "at": "description",
+    "en": "NASA’s and ESA’s shared visible/UV space telescope, in low Earth orbit since 1990 and serviced five times by Space Shuttle missions through 2009. Still in operation 35+ years later, with major instruments installed by spacewalking astronauts and a primary mirror flaw corrected in 1993 by COSTAR (later replaced by instruments with built-in corrective optics).",
+    "cur": "NASAとESAが共有する可視光・紫外線宇宙望遠鏡で、1990年から低地球軌道に位置し、2009年までSpace Shuttleのミッションによって5度保守されました。35年以上経った今も運用中で、主要な機器は宇宙遊泳する宇宙飛行士によって設置され、1993年には主鏡の欠陥がCOSTARによって補正されました（後に内蔵補正光学系を備えた機器に交換されました）。"
+  },
+  {
+    "rel": "fleet/observatory/hubble.json",
+    "at": "best_known_for",
+    "en": "Iconic visible/UV space telescope; 5 servicing missions",
+    "cur": "象徴的な可視紫外線宇宙望遠鏡；5回の保守ミッション"
+  },
+  {
+    "rel": "fleet/observatory/jwst.json",
+    "at": "description",
+    "en": "The largest infrared space telescope ever built. Stationed at Sun-Earth L2 since January 2022, with a 6.5 m segmented gold-coated beryllium primary mirror behind a tennis-court-sized sunshield. Sees back to the first galaxies after the Big Bang.",
+    "cur": "これまでに建造された最大の赤外線宇宙望遠鏡。2022年1月から太陽・地球ラグランジュポイント(L2)に配置されており、テニスコート規模のサンシールドの背後に、6.5 mの分割式金メッキベリリウム主鏡を備えています。ビッグバン直後の最初の銀河まで観測することができます。"
+  },
+  {
+    "rel": "fleet/observatory/jwst.json",
+    "at": "best_known_for",
+    "en": "Largest infrared space telescope; L2 orbit",
+    "cur": "最も大きい赤外線スペース望遠鏡;L2軌道"
+  },
+  {
+    "rel": "fleet/observatory/kepler.json",
+    "at": "description",
+    "en": "NASA’s exoplanet hunter (2009–2018). Stared at a single patch of sky and detected exoplanets via transit photometry — the brief dip in starlight when a planet passes in front of its star. Discovered more than 2,700 confirmed exoplanets and demonstrated that Earth-sized worlds are common.",
+    "cur": "NASAの系外惑星探索機（2009～2018年）。空の一部を見つめて、トランジット測光法により系外惑星を検出しました——惑星がその星の前を通過するときの恒星光の短い減光を利用します。2,700個以上の系外惑星を発見し、地球サイズの世界が一般的であることを実証しました。"
+  },
+  {
+    "rel": "fleet/observatory/spektr-rg.json",
+    "at": "description",
+    "en": "Spektr-RG is a space observatory built by NPO Lavochkin in Russia. Russian-German X-ray sky-mapping observatory. In service since 2019; its German eROSITA telescope entered safe mode in February 2022, while the Russian ART-XC instrument keeps observing.",
+    "cur": "Spektr-RGはロシアのNPO Lavochkinが建造した宇宙天文台である。ロシア・ドイツ共同開発のX線全天サーベイ天文台。2019年以来稼働中であり、ドイツ製eROSITAテレスコープは2022年2月にセーフモードに移行した一方、ロシア製ART-XC器器は観測を継続している。"
+  },
+  {
+    "rel": "fleet/observatory/spitzer.json",
+    "at": "tagline",
+    "en": "Infrared Great Observatory; 16 years of data",
+    "cur": "赤外線グレートオブザーバトリー；16年分のデータ"
+  },
+  {
+    "rel": "fleet/observatory/spitzer.json",
+    "at": "description",
+    "en": "NASA’s infrared Great Observatory, in service 2003–2020. Designed for a five-year cryogenic mission but operated for sixteen, including a \"warm mission\" phase after its liquid-helium coolant was exhausted in 2009.",
+    "cur": "2003年から2020年まで運用されたNASAの赤外線グレートオブザーバトリー。5年間の低温ミッションとして設計されたが、16年間運用され、2009年に液体ヘリウム冷却剤が枯渇した後の「ウォームミッション」フェーズを含む。"
+  },
+  {
+    "rel": "fleet/observatory/spitzer.json",
+    "at": "best_known_for",
+    "en": "Infrared Great Observatory; 16 years of data",
+    "cur": "赤外線グレートオブザーバトリー；16年分のデータ"
+  },
+  {
+    "rel": "fleet/observatory/tess.json",
+    "at": "description",
+    "en": "The Transiting Exoplanet Survey Satellite, in orbit since 2018. Surveys nearly the entire sky in 26 sectors per year, looking for short-period exoplanets around the brightest, closest stars to Earth — the targets that will be most amenable to follow-up atmospheric characterisation by JWST.",
+    "cur": "2018年から軌道上にある系外惑星探査衛星（Transiting Exoplanet Survey Satellite）。ほぼ全天を年間26セクタに分割して探査し、地球に最も近く最も明るい恒星の周りの短周期系外惑星を探す。これらは、JWSTによるその後の大気特性化観測に最も適した観測対象である。"
+  },
+  {
+    "rel": "fleet/observatory/xmm-newton.json",
+    "at": "description",
+    "en": "XMM-Newton is a space observatory built by Airbus Defence and Space in Multi (Europe). ESA's flagship X-ray observatory. In service since 1999.",
+    "cur": "XMM-Newtonは、Airbus Defence and SpaceがMulti（ヨーロッパ）で建造した宇宙天文台です。ESAのフラッグシップX線天文台。1999年からの運用です。"
+  },
+  {
+    "rel": "fleet/orbiter/akatsuki.json",
+    "at": "tagline",
+    "en": "Japan's first Venus orbiter; recovered from a 2010 orbit-insertion failure to study cloud-top dynamics",
+    "cur": "日本初の金星軌道衛星。2010年の軌道投入失敗から復帰し、雲頂部の動力学を研究"
+  },
+  {
+    "rel": "fleet/orbiter/akatsuki.json",
+    "at": "description",
+    "en": "JAXA's Venus Climate Orbiter, Japan's first spacecraft to successfully orbit Venus. Originally failed orbit insertion in 2010 but was recovered on a backup attempt five years later (2015) using less efficient thrusters. Studied cloud-top winds, lightning, and atmospheric dynamics of Venus's super-rotating atmosphere. Mission ended September 2025 after contact was lost.",
+    "cur": "JAXA の金星気候探査機、日本初の金星周回衛星。2010 年の軌道投入に失敗しましたが、5 年後の 2015 年にバックアップエンジンを使用してミッションを復帰させました。金星の超回転大気における雲頂部の風、稲妻、大気力学を研究しました。2025 年 9 月に通信が途絶え、ミッションは終了しました。"
+  },
+  {
+    "rel": "fleet/orbiter/akatsuki.json",
+    "at": "best_known_for",
+    "en": "Japan's first Venus orbiter; studied cloud-top winds and atmospheric dynamics. Recovered after a 2010 orbit-insertion failure",
+    "cur": "日本初の金星軌道衛星。雲頂部の風と大気力学を研究し、2010年の軌道投入失敗から復帰"
+  },
+  {
+    "rel": "fleet/orbiter/bepicolombo.json",
+    "at": "tagline",
+    "en": "Twin-orbiter joint ESA + JAXA Mercury mission — splits into MPO + Mio at Mercury arrival in 2026",
+    "cur": "ESA + JAXA共同水星双衛星ミッション——2026年の水星到着時にMPO + Mioに分離"
+  },
+  {
+    "rel": "fleet/orbiter/bepicolombo.json",
+    "at": "description",
+    "en": "Joint ESA + JAXA mission. Launched 2018-10-20 on an Ariane 5 ECA. Mercury Transfer Module carries the stack on a 7-year flyby cruise (1 Earth + 2 Venus + 6 Mercury gravity assists) before Mercury orbit insertion on 2026-11-21. At arrival the two science orbiters separate: ESA's Mercury Planetary Orbiter (MPO) flies a 480 × 1500 km polar orbit with 11 instruments for surface composition, topography, gravity, and exosphere; JAXA's Mio (Mercury Magnetospheric Orbiter) flies a 590 × 11 640 km polar orbit with 5 instruments for the magnetosphere and plasma. Together they are the first European + Japanese spacecraft ever in Mercury orbit.",
+    "cur": "ESA + JAXA共同ミッション。2018年10月20日にAriane 5 ECAで打上げ。Mercury Transfer Moduleが7年間の飛行(地球1回 + 金星2回 + 水星6回の重力アシスト)を経て、2026年11月21日に水星軌道投入される。到着時に2つの科学衛星が分離される:ESAのMercury Planetary Orbiter (MPO)は480 × 1500 kmの極軌道で飛行し、表面組成、地形、重力、および外圏を観測する11個の機器を搭載;JAXAのMioは590 × 11 640 kmの極軌道で飛行し、磁気圏とプラズマを観測する5個の機器を搭載。これらは水星軌道に到着した初めてのヨーロッパと日本の宇宙機である。"
+  },
+  {
+    "rel": "fleet/orbiter/bepicolombo.json",
+    "at": "best_known_for",
+    "en": "Joint ESA + JAXA twin-orbiter Mercury mission — MPO + Mio at Mercury, 2026 arrival",
+    "cur": "ESA + JAXA共同双衛星水星ミッション——2026年到着予定のMPO + Mio"
+  },
+  {
+    "rel": "fleet/orbiter/cassini.json",
+    "at": "tagline",
+    "en": "Saturn orbiter; Huygens landed on Titan",
+    "cur": "土星周回機；Huygens はタイタンに着陸"
+  },
+  {
+    "rel": "fleet/orbiter/cassini.json",
+    "at": "description",
+    "en": "The Saturn orbiter (2004–2017) that carried ESA’s Huygens lander to Titan — still the only landing on a moon of an outer planet. Discovered the active geyser plumes of Enceladus and the global ocean beneath its icy crust. Ended in a planned plunge into Saturn’s atmosphere.",
+    "cur": "土星周回機（2004～2017年）。ESA の Huygens ランダーをタイタンに運んだ。外惑星の衛星への着陸はいまなお唯一のミッション。エンケラドゥスの活動的なガイザー・プリュームと、その氷殻の下の全球オーシャンを発見。最後に土星の大気への計画的な突入で終了した。"
+  },
+  {
+    "rel": "fleet/orbiter/cassini.json",
+    "at": "best_known_for",
+    "en": "Saturn orbiter; Huygens landed on Titan",
+    "cur": "サターンオービター; Huygensはタイタンに上陸"
+  },
+  {
+    "rel": "fleet/orbiter/chandrayaan1.json",
+    "at": "tagline",
+    "en": "India's first Moon mission. Discovered widespread surface water on the Moon (M3 + MIP, 2009). Lost contact 2009-08-29 after only 312 days",
+    "cur": "インドの初月面探査機。月の広範な地表水を発見（M3 + MIP、2009年）。2009年8月29日に通信喪失、312日間の運用"
+  },
+  {
+    "rel": "fleet/orbiter/chandrayaan1.json",
+    "at": "description",
+    "en": "India's first mission beyond Earth orbit and its first to the Moon. Launched 2008-10-22 from Satish Dhawan Space Centre on a PSLV-XL, Chandrayaan-1 entered a 100-km polar lunar orbit on 2008-11-12. Carried 11 instruments from 6 countries (India, USA, UK, Germany, Sweden, Bulgaria) — most consequentially NASA's Moon Mineralogy Mapper (M3) which detected the absorption-band signature of OH/H₂O across vast swathes of the lunar surface, particularly at high latitudes (Pieters et al., 2009, Science 326). Its 35-kg Moon Impact Probe (MIP) was released 2008-11-14 and impacted near the rim of Shackleton Crater at the lunar south pole (Jawahar Sthal, ~89.5°S), becoming the first Indian artefact on the Moon and recording lunar atmospheric water vapour during descent. Spacecraft contact was lost 2009-08-29 after ~10 months / 3400 orbits — half of its planned 2-year mission, but the science return was already game-changing. Remains in lunar orbit, re-acquired by NASA Goldstone radar in 2017.",
+    "cur": "インドが地球周回軌道を超えて実施した最初のミッションであり、月への最初のミッション。2008年10月22日にサティシュ・ダワン宇宙センターからベンガル衛星打ち上げロケット(PSLV-XL)によって打ち上げられ、Chandrayaan-1は2008年11月12日に月の極軌道(高度100km)に到達した。6ヶ国(インド、アメリカ、イギリス、ドイツ、スウェーデン、ブルガリア)から計11個の観測機器を搭載していた。最も重要な成果は、NASAの月鉱物マッピッパー(M3)が月面全体、特に高緯度地域における水酸基/水(OH/H₂O)の吸収帯スペクトルを検出したことである(Pieters et al., 2009, Science 326)。35kgの月衝撃探査機(MIP)は2008年11月14日に放出され、月の南極にあるシャクルトン・クレーター付近の縁(Jawahar Sthal、南緯約89.5°)に衝突し、インド初の月上への物体となり、下降時に月の大気中の水蒸気を観測した。2009年8月29日に宇宙機との通信が失われ、約10ヶ月間/3400周回でミッションを終了した。これは計画されていた2年間のミッションの半分であったが、得られた科学的成果は既に革新的なものであった。月周回軌道に残存しており、2017年にNASA Goldstoneレーダーに再捕捉された。"
+  },
+  {
+    "rel": "fleet/orbiter/chandrayaan1.json",
+    "at": "best_known_for",
+    "en": "India's first Moon mission. Discovered widespread surface water on the Moon (M3 + MIP, 2009). Lost contact 2009-08-29 after only 312 days",
+    "cur": "インドの初月面探査機。月の広範な地表水を発見（M3 + MIP、2009年）。2009年8月29日に通信喪失、312日間の運用"
+  },
+  {
+    "rel": "fleet/orbiter/change-2.json",
+    "at": "tagline",
+    "en": "Second Chinese lunar orbiter; first to visit asteroid 4179 Toutatis",
+    "cur": "中国の第2号月周回衛星；小惑星4179 トータティスを訪れた最初の探査機"
+  },
+  {
+    "rel": "fleet/orbiter/change-2.json",
+    "at": "description",
+    "en": "China's second lunar orbiter, launched 2010-10-01. Chang'e 2 orbited the Moon from 2010 to 2011, then departed lunar orbit in June 2011 for an extended deep-space mission. It proceeded to the Sun-Earth L2 point (arriving August 2011), then departed L2 in April 2012 for a historic flyby of asteroid 4179 Toutatis, executing a close approach on 2012-12-13 at ~770 m distance — the first spacecraft to visit the asteroid. After the Toutatis encounter, Chang'e 2 continued into deep space on a heliocentric trajectory, becoming a drifting interplanetary object.",
+    "cur": "中国の2番目の月周回衛星で、2010年10月1日に打ち上げられた。Chang'e 2は2010年から2011年にかけて月を周回し、2011年6月に月周回軌道を離脱して長期深宇宙探査任務に向かった。太陽・地球L2ポイントに到達し(2011年8月到着)、その後2012年4月にL2を離脱して小惑星4179 トータティスの歴史的なフライバイを実行した。2012年12月13日に約770 m の距離で接近マヌーバを実行し、小惑星を訪問した初の宇宙機となった。トータティスとの遭遇後、Chang'e 2は深宇宙へ向けて太陽中心軌道を続け、漂流する星間物体となった。"
+  },
+  {
+    "rel": "fleet/orbiter/change-2.json",
+    "at": "best_known_for",
+    "en": "Second Chinese lunar orbiter; first spacecraft flyby of asteroid 4179 Toutatis (Dec 13, 2012, ~770 m closest approach)",
+    "cur": "中国の第2号月周回衛星；小惑星4179 トータティスへの最初の探査機フライバイ（2012年12月13日、最接近距離 ~770 m）"
+  },
+  {
+    "rel": "fleet/orbiter/change1.json",
+    "at": "tagline",
+    "en": "China's first lunar mission. 200-m global topo map; deliberate Mare Fecunditatis impact 2009-03-01 — first Chinese object on the Moon",
+    "cur": "中国初の月探査機。200m全球地形図、2009年3月1日に豊かの海への意図的衝突 — 月面到達初の中国製機体"
+  },
+  {
+    "rel": "fleet/orbiter/change1.json",
+    "at": "description",
+    "en": "The first phase of China's Lunar Exploration Program (CLEP), and CNSA's first mission beyond Earth. Launched 2007-10-24 from Xichang Satellite Launch Center on a Long March 3A, Chang'e 1 (named after the Moon goddess of Chinese folklore) entered a 200-km circular polar lunar orbit on 2007-11-07. Carried 8 instruments including a CCD stereo camera, laser altimeter, imaging spectrometer, gamma-ray and X-ray spectrometers, microwave radiometer, solar wind detector, and high-energy particle detector. Produced China's first full lunar global topographic map at 120-200 m resolution and elemental abundance maps of Th, K, U, O, Si, Mg, Al, Ca, Ti, Fe. Mission deliberately ended 2009-03-01 with a controlled impact at 1.50° S, 52.36° E in Mare Fecunditatis — China's first object on the lunar surface, paving the way for Chang'e 3 (2013 surface landing) and Chang'e 5 (2020 sample return). Operated 16 months — 4 months past nominal.",
+    "cur": "中国の月探査計画（CLEP）の最初のフェーズであり、CNSAの地球外初ミッション。2007年10月24日に西昌衛星発射センターからLong March 3Aで打ち上げられたChang'e 1（中国民話の月の女神にちなんで命名）は、2007年11月7日に月の200 km円形極軌道に突入した。CCDステレオカメラ、レーザ高度計、イメージング分光計、ガンマ線・X線分光計、マイクロ波放射計、太陽風検出器、高エネルギー粒子検出器を含む8つの機器を搭載していた。120～200 m分解能で中国初の月全球地形図を作成し、Th、K、U、O、Si、Mg、Al、Ca、Ti、Feの元素存在量マップを作成した。ミッションは2009年3月1日に南緯1.50°、東経52.36°の豊かの海での制御された衝突により意図的に終了した。中国初の月面物体であり、Chang'e 3（2013年月面着陸）とChang'e 5（2020年試料回収）への道を開いた。16ヶ月間運用され、計画期間を4ヶ月超過した。"
+  },
+  {
+    "rel": "fleet/orbiter/change1.json",
+    "at": "best_known_for",
+    "en": "China's first lunar mission. 200-m global topo map; deliberate Mare Fecunditatis impact 2009-03-01 — first Chinese object on the Moon",
+    "cur": "中国初の月探査機。200m全球地形図、2009年3月1日に豊かの海への意図的衝突 — 月面到達初の中国製機体"
+  },
+  {
+    "rel": "fleet/orbiter/clementine.json",
+    "at": "tagline",
+    "en": "Joint BMDO + NASA lunar orbiter — first global multispectral map and first bistatic-radar evidence for polar water ice",
+    "cur": "BMDO・NASA 共同の月周回機 — 月の世界初の完全マルチスペクトル地図と極水氷の最初のバイスタティックレーダー証拠"
+  },
+  {
+    "rel": "fleet/orbiter/clementine.json",
+    "at": "description",
+    "en": "Officially the Deep Space Program Science Experiment (DSPSE). Conceived by the Ballistic Missile Defense Organization to qualify lightweight sensors in deep-space conditions, with NASA collaborating on lunar + asteroid science. Launched 1994-01-25 on a Titan IIG, entered lunar polar orbit 1994-02-19 for 71 days of mapping. Imaged every square kilometre of the Moon at 100-300 m resolution across 11 wavelengths — the first complete global lunar map. The bistatic radar experiment using Clementine's transmitter and DSN ground antennas found enhanced echoes at south-polar Shackleton crater consistent with water ice, predating LCROSS by 15 years. A failed thruster firing aborted the planned Geographos asteroid flyby and ended the mission.",
+    "cur": "正式名称はDeep Space Program Science Experiment（DSPSE）。弾道弾防衛機構により軽量センサーの深宇宙環境での性能検証を目的として企画され、NASAが月および小惑星科学で協力しました。1994年1月25日にTitan IIGで打ち上げられ、1994年2月19日に月極軌道に投入され、71日間にわたるマッピングを実施。11の波長帯域で月の全表面を100～300 mの解像度で画像化し、初の完全な月全球地図を作成しました。Clementineの送信機とDSN地上アンテナを使用した双静態レーダー実験は、南極Shackleton隕石坑で水氷と一致する強化されたエコーを検出し、LCROSSより15年先行しました。スラスター火災制御の失敗により、計画されていたジオグラフォス小惑星フライバイは中止され、ミッションは終了しました。"
+  },
+  {
+    "rel": "fleet/orbiter/clementine.json",
+    "at": "best_known_for",
+    "en": "First complete global lunar multispectral map and first hint of polar water ice — 1994",
+    "cur": "月の世界初の完全マルチスペクトル地図と極水氷の初の手がかり — 1994"
+  },
+  {
+    "rel": "fleet/orbiter/dart.json",
+    "at": "tagline",
+    "en": "First planetary defense impactor (Dimorphos)",
+    "cur": "第一次惑星防衛インフルエンサー(ディモルフォス)"
+  },
+  {
+    "rel": "fleet/orbiter/dart.json",
+    "at": "description",
+    "en": "The first planetary defense impactor. Deliberately collided with the asteroid moonlet Dimorphos in September 2022, shortening its orbital period around its parent Didymos by 33 minutes — proving that kinetic deflection is a viable planet-protection technique.",
+    "cur": "初の惑星防衛インパクター。2022年9月に小惑星の衛星ディモルフォスに意図的に衝突し、親小惑星ディディモスの周回周期を33分短縮しました。これにより、運動量による偏向が実行可能な惑星保護技術であることが証明されました。"
+  },
+  {
+    "rel": "fleet/orbiter/dart.json",
+    "at": "best_known_for",
+    "en": "First planetary defense impactor (Dimorphos)",
+    "cur": "第一次惑星防衛インフルエンサー(ディモルフォス)"
+  },
+  {
+    "rel": "fleet/orbiter/dawn.json",
+    "at": "tagline",
+    "en": "Only spacecraft to orbit two extraterrestrial worlds — Vesta then Ceres via ion propulsion",
+    "cur": "二つの地球外世界を周回した唯一の探査機 — イオン推進でベスタ、続いてケレス"
+  },
+  {
+    "rel": "fleet/orbiter/dawn.json",
+    "at": "description",
+    "en": "NASA Discovery-class mission powered by three NSTAR xenon ion thrusters that produced the 11 km/s of total delta-v needed to enter orbit around Vesta, escape, cruise three years, and enter orbit around Ceres. Mapped both bodies in unprecedented detail — Vesta's southern Rheasilvia basin, Ceres' bright Cerealia Facula spots, ammoniated phyllosilicates, and cryovolcanism at Ahuna Mons. Mission ended 2018 when reaction-control hydrazine was exhausted; the spacecraft remains in a stable orbit around Ceres.",
+    "cur": "NASAのDiscovery計画ミッション。3基のNSTAR補助エンジン搭載で、ベスタ周回軌道への投入、脱出、3年間の航行、セレス周回軌道への投入に必要な合計11 km/sのデルタVを実現しました。両天体を前例のない詳細で撮像し、ベスタの南部にあるレアシルヴィア盆地、セレスの明るいCerealia Faculaスポット、アンモニア含有フィロケイ酸塩、およびアフナ山での氷火山活動を観測しました。2018年に反作用制御用ヒドラジンが枯渇してミッション終了。宇宙機はセレス周回の安定軌道に留まっています。"
+  },
+  {
+    "rel": "fleet/orbiter/dawn.json",
+    "at": "best_known_for",
+    "en": "Only spacecraft to orbit two extraterrestrial worlds — Vesta (2011-2012), Ceres (2015-2018)",
+    "cur": "二つの地球外世界を周回した唯一の探査機 — ベスタ、ケレス"
+  },
+  {
+    "rel": "fleet/orbiter/europa-clipper.json",
+    "at": "tagline",
+    "en": "First mission dedicated to characterising Europa's habitability",
+    "cur": "エウロパの居住可能性を特性化するための最初のミッション"
+  },
+  {
+    "rel": "fleet/orbiter/europa-clipper.json",
+    "at": "description",
+    "en": "NASA's mission to study the habitability of Jupiter's icy moon Europa — believed to harbour a global liquid-water ocean beneath a 15-25 km ice shell, possibly the most accessible potentially-habitable environment in the solar system. Largest planetary mission spacecraft ever launched (~6000 kg). ~102-m² solar arrays generate enough power at Jupiter's distance to drive nine instruments through 49 close Europa flybys, designed to map the entire moon while limiting the spacecraft's dose in Jupiter's brutal radiation belts.",
+    "cur": "NASAによる木星の氷の衛星エウロパの居住可能性を研究する任務。厚さ15～25 kmの氷殻の下に、太陽系全体でおそらく最もアクセス可能な潜在的に居住可能な環境と信じられている全球液体水海を有すると考えられている。これまでに打ち上げられた最大の惑星探査機宇宙船（~6000 kg）。~102 m²の太陽光電池アレイは、木星の距離での十分な電力を生成し、9つの計器をエウロパの49回の接近フライバイを通じて駆動でき、月全体をマッピングするとともに宇宙船の木星の激烈な放射線帯での被曝量を制限するよう設計されている。"
+  },
+  {
+    "rel": "fleet/orbiter/europa-clipper.json",
+    "at": "best_known_for",
+    "en": "First mission dedicated to Europa habitability",
+    "cur": "エウロパの居住可能性を研究する最初のミッション"
+  },
+  {
+    "rel": "fleet/orbiter/exomars-tgo.json",
+    "at": "tagline",
+    "en": "Trace-gas analysis + ESA/NASA surface relay",
+    "cur": "微量ガス分析 + ESA/NASA 火星表面リレー"
+  },
+  {
+    "rel": "fleet/orbiter/exomars-tgo.json",
+    "at": "description",
+    "en": "ESA's Trace Gas Orbiter, in orbit at Mars since 2016. Sniffs the atmosphere for methane and water vapor that could hint at biology or geology, and relays data for Mars surface missions via its UHF relay.",
+    "cur": "ESAの Trace Gas Orbiter。2016年から火星周回軌道で活動。メタンと水蒸気を大気から検出し、生物学的または地質学的な痕跡を探査。またUHFリレーを通じて火星表面ミッションのデータ中継も行う。"
+  },
+  {
+    "rel": "fleet/orbiter/exomars-tgo.json",
+    "at": "best_known_for",
+    "en": "Trace gas analysis at Mars; relay for ESA and NASA surface missions",
+    "cur": "火星での微量ガス分析、ESA・NASA表面ミッションへのリレー"
+  },
+  {
+    "rel": "fleet/orbiter/galileo.json",
+    "at": "tagline",
+    "en": "First Jupiter orbiter; 8 years of measurements",
+    "cur": "最初のジュピターオービター; 8 年間の測定"
+  },
+  {
+    "rel": "fleet/orbiter/galileo.json",
+    "at": "description",
+    "en": "The first Jupiter orbiter (1995–2003), and the only mission to drop a probe into Jupiter’s atmosphere. Also discovered evidence for a subsurface ocean on Europa — making it one of the most consequential planetary missions ever flown.",
+    "cur": "最初の木星軌道周回機（1995～2003年）であり、木星の大気中にプローブを投下した唯一のミッション。エウロパの地下海の存在を示す証拠も発見し、これまでに実施された最も重要な惑星探査ミッションの一つとなった。"
+  },
+  {
+    "rel": "fleet/orbiter/galileo.json",
+    "at": "best_known_for",
+    "en": "First Jupiter orbiter; 8 years of measurements",
+    "cur": "最初のジュピターオービター; 8 年間の測定"
+  },
+  {
+    "rel": "fleet/orbiter/giotto.json",
+    "at": "tagline",
+    "en": "First close-up images of a cometary nucleus — flew 596 km past Halley's Comet at 68 km/s in 1986",
+    "cur": "彗星核を初めて至近距離で撮影 — 1986 年、ハレー彗星 Comet から 596 km を秒速 68 km で通過"
+  },
+  {
+    "rel": "fleet/orbiter/giotto.json",
+    "at": "description",
+    "en": "ESA's first deep-space probe. Spin-stabilised drum-shaped bus protected by a Whipple-shield dust bumper, built around the Halley Multicolour Camera plus 9 other instruments contributed by 11 European countries, NASA, and Japan. Closest approach to comet 1P/Halley on 1986-03-14 at 596 km — the bumper survived, though a 100 mg dust strike 14 seconds before closest approach offset the spin axis and broke camera contact. Reactivated in 1990 for a 200 km flyby of comet Grigg-Skjellerup in 1992, the first time a spacecraft returned to a different cometary target.",
+    "cur": "ESAの初の深宇宙探査機。スピン安定化されたドラム形バスは、ハレー彗星 Multicolour Cameraと11の欧州各国、NASA、日本が提供した他の9つの機器を中心に、Whipple-shieldダストバンパーで保護されている。彗星1P/ハレー彗星への最接近は1986-03-14に596 km地点で実現し、バンパーは無傷だったが、最接近の14秒前に100 mgのダスト衝撃がスピン軸をずらし、カメラ接触を断った。1990年に再起動され、1992年にグリッグ・シェレルップ彗星への200 km接近飛行に使用され、宇宙機が異なる彗星ターゲットに復帰した初めての事例となった。"
+  },
+  {
+    "rel": "fleet/orbiter/giotto.json",
+    "at": "best_known_for",
+    "en": "First close-up images of a cometary nucleus — 596 km past Halley's Comet, 1986-03-14",
+    "cur": "彗星核の初の接近画像 — ハレー彗星彗星から596 km地点、1986-03-14"
+  },
+  {
+    "rel": "fleet/orbiter/hayabusa-2.json",
+    "at": "tagline",
+    "en": "Asteroid sample return from Ryugu",
+    "cur": "リュウグウからのアステロイドサンプルリターン"
+  },
+  {
+    "rel": "fleet/orbiter/hayabusa-2.json",
+    "at": "description",
+    "en": "Hayabusa2 is a deep-space orbiter built by NEC in Japan. Successfully returned ~5.4 grams of samples from asteroid 162173 Ryugu on December 6, 2020. After sample delivery, the spacecraft continued on an extended SHARP (Small Hazardous Asteroid Reconnaissance Probe) mission to other asteroids. It flew past asteroid Torifune on July 5, 2026, and is planned to rendezvous with asteroid 1998 KY26 in 2031.",
+    "cur": "はやぶさ2 は日本のNECが製造した深宇宙周回探査機です。2020年12月6日、小惑星162173 リュウグウから約5.4グラムのサンプルを地球に持ち帰ることに成功しました。サンプル回収後、探査機はSHARP（Small Hazardous Asteroid Reconnaissance Probe）ミッションの延長運用として他の小惑星へ向かいました。2026年7月5日に小惑星トリフネをフライバイし、2031年に小惑星1998 KY26とのランデブーが予定されています。"
+  },
+  {
+    "rel": "fleet/orbiter/hayabusa-2.json",
+    "at": "best_known_for",
+    "en": "First asteroid sample return to Earth from Ryugu (Dec 2020); continuing extended mission to Torifune and 1998 KY26",
+    "cur": "リュウグウからの初のアステロイドサンプルリターン（2020年12月）；トリフネおよび1998 KY26への継続拡張ミッション"
+  },
+  {
+    "rel": "fleet/orbiter/hayabusa.json",
+    "at": "description",
+    "en": "JAXA's pioneering asteroid sample-return mission. Launched 2003-05-09 to Itokawa carrying four μ10 microwave-discharge ion thrusters. Survived a hydrazine leak, three of four reaction wheels failing, an ion engine failure, and seven weeks of lost communications before engineers nursed it back to Earth with one working engine assembled from the surviving halves of two damaged ones. Sample capsule recovered at Woomera AUS 2010-06-13 with 1500 μg of Itokawa material — the first asteroid sample ever returned to Earth.",
+    "cur": "JAXAの先駆的な小惑星サンプルリターンミッション。2003-05-09に打ち上げられ、4基のμ10マイクロ波放電式イオンエンジンを搭載してイトカワへ向かった。ヒドラジン漏れ、4基中3基のリアクションホイールの故障、イオンエンジンの故障、7週間にわたる通信途絶を乗り越え、エンジニアたちは2基の損傷したエンジンの生き残った半分を組み合わせた1基のエンジンで地球へ帰還させた。サンプルカプセルは2010-06-13にウーメラで回収され、1500 μgのイトカワ物質を持ち帰った——地球に帰還した史上初の小惑星サンプルである。"
+  },
+  {
+    "rel": "fleet/orbiter/hayabusa.json",
+    "at": "best_known_for",
+    "en": "First asteroid sample-return mission",
+    "cur": "史上初の小惑星サンプルリターンミッション"
+  },
+  {
+    "rel": "fleet/orbiter/hope.json",
+    "at": "description",
+    "en": "The UAE's Hope orbiter — Emirates Mars Mission, known in Arabic as Al-Amal. Reached Mars in 2021 and provided the first holistic global view of the Martian atmosphere through a complete Martian year. Built in partnership with the University of Colorado LASP.",
+    "cur": "UAEのHope探査機 — Emirates 火星 Mission、アラビア語ではAl-Amalとして知られる。2021年に火星に到達し、火星の1年を通して火星大気の初の包括的な全球観測を提供した。University of Colorado LASPとの共同で開発。"
+  },
+  {
+    "rel": "fleet/orbiter/hope.json",
+    "at": "best_known_for",
+    "en": "First Arab interplanetary mission; first holistic global view of the Martian atmosphere through a Mars year",
+    "cur": "初のアラブ惑星間ミッション;火星の1年を通した火星大気の初の包括的全球観測"
+  },
+  {
+    "rel": "fleet/orbiter/juice.json",
+    "at": "tagline",
+    "en": "ESA flagship to Jupiter — first orbiter ever to settle around a Galilean moon (Ganymede, 2034)",
+    "cur": "木星へのESAフラッグシップ — ガリレイ衛星（ガニメデ、2034年）の周回軌道に初めて配置される周回機"
+  },
+  {
+    "rel": "fleet/orbiter/juice.json",
+    "at": "description",
+    "en": "Jupiter Icy Moons Explorer. Launched 2023-04-14 on an Ariane 5 ECA+ for an 8.5-year cruise via Earth-Venus-Earth-Earth gravity assists to Jupiter arrival in July 2031. Once in the Jovian system, JUICE flies ~35 times past Europa, Ganymede, and Callisto before entering Ganymede orbit in 2034 — the first spacecraft to orbit a moon other than Earth's. Ten-instrument payload includes ice-penetrating radar (RIME), spectrometers, magnetometer, and a laser altimeter, optimised to characterise the three icy moons as potentially habitable subsurface-ocean worlds.",
+    "cur": "Jupiter Icy Moons Explorer。2023年4月14日にAriane 5 ECA+で打ち上げられ、地球-金星-地球-地球の重力アシストを経由して8.5年間の巡航を行い、2031年7月に木星に到着する。木星系ではJUICEはエウロパ、ガニメデ、カリストの周りを約35回通過してから、2034年にガニメデ軌道に投入される — 地球以外の衛星を周回する初の宇宙機である。10種類の機器ペイロードには、氷貫通レーダー（RIME）、分光計、磁力計、およびレーザー高度計が含まれており、潜在的に生命を宿す可能性のある亜表面海洋世界として3つの氷衛星の特性を調べるために最適化されている。"
+  },
+  {
+    "rel": "fleet/orbiter/juice.json",
+    "at": "best_known_for",
+    "en": "ESA Jupiter flagship — first orbiter ever around a Galilean moon (Ganymede), arrival 2031-2034",
+    "cur": "ESA 木星フラッグシップ — ガリレオ衛星周回の史上初軌道探査機（ガニメデ）、2031〜2034年"
+  },
+  {
+    "rel": "fleet/orbiter/juno.json",
+    "at": "tagline",
+    "en": "Polar Jupiter orbiter; magnetosphere studies",
+    "cur": "ポーラージュピターオービター;磁気圏研究"
+  },
+  {
+    "rel": "fleet/orbiter/juno.json",
+    "at": "description",
+    "en": "NASA’s polar Jupiter orbiter, in orbit since 2016. Solar-powered (a first at Jupiter’s distance), spinning to maintain stability, and orbiting close enough to Jupiter’s cloud-tops to risk severe radiation damage with each pass.",
+    "cur": "2016年から木星を周回しているNASAの極軌道探査機。木星の距離では初となる太陽電池駆動で、機体を自転させて姿勢を安定させ、周回のたびに深刻な放射線被害を受けかねないほど木星の雲頂に近づいて飛行する。"
+  },
+  {
+    "rel": "fleet/orbiter/juno.json",
+    "at": "best_known_for",
+    "en": "Polar Jupiter orbiter; magnetosphere studies",
+    "cur": "ポーラージュピターオービター;磁気圏研究"
+  },
+  {
+    "rel": "fleet/orbiter/lro.json",
+    "at": "tagline",
+    "en": "NASA's active lunar recon orbiter. LROC's 0.5 m/pixel imagery is the source of every Apollo + Luna + Chang'e landing-site photo here",
+    "cur": "NASA の稼働中の月偵察周回機。LROC の 0.5 m/pixel の画像は、ここに掲載されているすべての Apollo、Luna、Chang'e の着陸地点写真のソースです"
+  },
+  {
+    "rel": "fleet/orbiter/lro.json",
+    "at": "description",
+    "en": "NASA's active flagship lunar orbiter — operating continuously since 2009-06-23. Launched 2009-06-18 with LCROSS on an Atlas V from Cape Canaveral, LRO's payload of 7 instruments has remapped every aspect of the Moon at unprecedented resolution. The Lunar Reconnaissance Orbiter Camera (LROC) NAC (Narrow-Angle Camera, 0.5 m/pixel at 50 km altitude) has imaged every Apollo, Luna, Surveyor, Chang'e, Vikram, Beresheet and Hakuto landing site — every \"tier-2 LROC\" image in this app's /moon hotspots came from LROC NAC. LOLA (Laser Altimeter) gave the most detailed topography of any solar-system body. Diviner mapped surface temperature 10 K precision; LAMP detected widespread surface H₂O down to lunar dawn; LEND mapped neutron flux at <10 km resolution. As of 2026 still operational on extended mission, with no planned end-of-life — propellant supports operations through ~2030+.",
+    "cur": "NASA の稼働中の主要月周回機 — 2009-06-23 以来継続的に運用中。2009-06-18 に LCROSS とともにケープ・カナベラルから Atlas V で打ち上げられ、LRO の 7 つの計器群からなるペイロードは月のあらゆる側面を前例のない解像度で再マップしました。月偵察周回機カメラ（LROC）NAC（狭角カメラ、高度 50 km で 0.5 m/pixel）は、すべての Apollo、Luna、Surveyor、Chang'e、Vikram、Beresheet、Hakuto の着陸地点を撮像しました — このアプリの /moon ホットスポット内のすべての「tier-2 LROC」画像は LROC NAC から取得されています。LOLA（レーザー高度計）は太陽系のどの天体よりも詳細な地形データを提供しました。Diviner は表面温度を 10 K の精度でマップし、LAMP は月の夜明けまで広がる表面 H₂O を検出、LEND は <10 km 解像度で中性子束をマップしました。2026 年時点でも拡張ミッションで稼働中であり、計画された任務終了日はなく — 推進剤は約 2030 年以降まで運用をサポートしています。"
+  },
+  {
+    "rel": "fleet/orbiter/lro.json",
+    "at": "best_known_for",
+    "en": "NASA's active lunar recon orbiter. LROC's 0.5 m/pixel imagery is the source of every Apollo + Luna + Chang'e landing-site photo here",
+    "cur": "NASA の稼働中の月偵察周回機。LROC の 0.5 m/pixel の画像は、ここに掲載されているすべての Apollo、Luna、Chang'e の着陸地点写真のソースです"
+  },
+  {
+    "rel": "fleet/orbiter/lucy.json",
+    "at": "description",
+    "en": "NASA's 12-year multi-flyby mission to 6 Jupiter Trojan asteroid systems and 2 main-belt asteroids (11 total encounters including satellites). Three Earth gravity assists shape a single trajectory visiting both the L4 and L5 Trojan clouds. Carries 1003 kg of hydrazine — more propellant than dry mass. Named for the 1974 Australopithecus afarensis fossil, in turn named for the Beatles song — the implication being that Trojans preserve early-solar-system material the way the fossil preserves early-human history.",
+    "cur": "NASAの12年間の多重フライバイ・ミッションで、6個の木星トロヤ群小惑星系と2個の主帯小惑星を訪れます（衛星を含めて全11回の接近遭遇）。3回の地球スイングバイによって形成された単一軌道により、L4とL5の両方のトロヤ群を訪問します。ヒドラジン1003 kgを搭載しており、これはドライマスを上回る推進剤量です。1974年の*Australopithecus afarensis*化石にちなんで命名されました。その化石自体はビートルズの楽曲にちなんで名付けられたもので、その含意するところは、トロヤ群が初期太陽系の物質を保存する方式が、化石が初期人類の歴史を保存する方式と同じであるということです。"
+  },
+  {
+    "rel": "fleet/orbiter/luna10.json",
+    "at": "tagline",
+    "en": "First spacecraft to orbit the Moon (or any body other than Earth) — entered lunar orbit 1966-04-03, three years before Apollo 8",
+    "cur": "月（地球以外の天体）を周回した最初の宇宙機 — 1966年4月3日に月周回軌道に投入、Apollo 8が月に到着する3年前"
+  },
+  {
+    "rel": "fleet/orbiter/luna10.json",
+    "at": "description",
+    "en": "First spacecraft to orbit the Moon — and the first artificial satellite of any body other than Earth. Launched 1966-03-31 from Baikonur on a Molniya rocket, Luna 10 entered lunar orbit 1966-04-03 with a 349 × 1015 km orbit at 71.9° inclination, three years before Apollo 8 reached the Moon with humans aboard. Measured the lunar magnetic field (~3 nT, essentially zero), micrometeoroid flux, gamma-ray emission, ionising radiation, and solar plasma — the gamma-ray data was the first compositional remote sensing of the Moon, suggesting basalt-like mare composition. Famously played the \"Internationale\" anthem during the 23rd Congress of the Soviet Communist Party (1966-04-04). Operated 56 days / 460 orbits before its NiCd batteries depleted. Remains in lunar orbit.",
+    "cur": "月を周回した最初の宇宙機であり、地球以外の天体の最初の人工衛星です。1966年3月31日にバイコヌールからMolniyaロケットで打ち上げられ、Luna 10は1966年4月3日に月周回軌道（349 × 1015 km、傾斜角71.9°）に投入されました。これは有人搭乗のApollo 8が月に到達するより3年前のことです。月の磁場（約3 nT、本質的にゼロ）、マイクロメテオロイド束密度、ガンマ線放射、電離放射線、太陽プラズマを測定しました。ガンマ線データは月の初の組成遠隔探査であり、玄武岩質の月面部分組成を示唆していました。1966年4月4日にソビエト連邦共産党第23回党大会で「Internationale」の国歌を演奏したことで有名です。56日間 / 460周回動作した後、NiCd電池が枯渇しました。現在も月周回軌道に存在しています。"
+  },
+  {
+    "rel": "fleet/orbiter/luna10.json",
+    "at": "best_known_for",
+    "en": "First spacecraft to orbit the Moon (or any body other than Earth) — entered lunar orbit 1966-04-03, three years before Apollo 8",
+    "cur": "月（地球以外の天体）を周回した最初の宇宙機 — 1966年4月3日に月周回軌道に投入、Apollo 8が月に到着する3年前"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-1.json",
+    "at": "tagline",
+    "en": "First US lunar orbiter (1966-08-14); mapped Apollo landing sites and took the first photo of Earth from lunar orbit (1966).",
+    "cur": "最初のアメリカの月周回衛星(1966年8月14日);Apollo着陸地点をマッピングし、月の軌道から地球の最初の写真を撮影(1966年)。"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-1.json",
+    "at": "description",
+    "en": "The first US spacecraft to orbit the Moon, four months after Luna 10. Launched 1966-08-10 from Cape Canaveral on an Atlas-Agena D, Lunar Orbiter 1 entered an elliptical lunar orbit on 1966-08-14. Its primary mission was to photograph candidate Apollo landing sites at sub-metre resolution — a 70 mm + 610 mm dual-lens camera system that developed film in-orbit (Bimat process) and scanned it for radio transmission to Earth. Captured the first photograph of Earth from lunar orbit (1966-08-23 — over two years before Apollo 8's more famous Earthrise) as a wide-angle shot taken during the 16th orbit. Returned 207 high-resolution + 207 medium-resolution frames mapping 4.1 million km² of the lunar surface. Deliberately crashed into the lunar far side on 1966-10-29 to clear the radio band for Lunar Orbiter 2.",
+    "cur": "月の周回軌道に到達した最初のアメリカ合衆国宇宙機で、Luna 10より4か月後のこと。1966年8月10日にケープ・カナベラルからAtlas-Agena D で打ち上げられ、Lunar Orbiter 1は1966年8月14日に楕円形の月周回軌道に投入された。主要任務はサブメートル解像度の候補となるアポロ着陸地点の撮影で、70 mm + 610 mm デュアルレンズカメラシステムを搭載し、軌道上でフィルムを現像（Bimat処理）して地球への電波送信用にスキャンした。月の軌道から地球の最初の写真を撮影（1966年8月23日 — Apollo 8の有名なEarthrise撮影の2年以上前）し、16番目の軌道中に広角で撮影。高解像度画像207枚 + 中解像度画像207枚を返却し、月表面の410万km²をマッピングした。1966年10月29日に月の裏側に意図的に衝突させ、Lunar Orbiter 2のための電波帯域をクリアした。"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-1.json",
+    "at": "best_known_for",
+    "en": "First US lunar orbiter (1966-08-14). Mapped potential Apollo landing sites; took the first photograph of Earth from lunar orbit — over two years before the famous Apollo 8 Earthrise",
+    "cur": "最初のアメリカ合衆国月周回衛星（1966年8月14日）。アポロの潜在的な着陸地点をマッピング。月の軌道からの初の地球写真を撮影 — 有名なApollo 8のEarthrise撮影の2年以上前"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-2.json",
+    "at": "tagline",
+    "en": "Second US lunar orbiter (1966-11-10). Took the 'Picture of the Century' — oblique view of Copernicus crater at ~45 km altitude",
+    "cur": "アメリカ2番目の月周回機（1966-11-10）。「世紀の写真」を撮影——Copernicus クレーターの斜視図、高度約45 km"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-2.json",
+    "at": "description",
+    "en": "Second of the five Lunar Orbiter spacecraft. Launched 1966-11-06 from Cape Canaveral, entered lunar orbit 1966-11-10. Mapped 13 sites in the equatorial Apollo zone. On 1966-11-24, Frame 162 captured an oblique view of the 93-km Copernicus crater from 45.8 km altitude looking north — a never-before-seen Earth-style mountain landscape on another world. Newspapers called it the 'Picture of the Century'. The photo's release became a turning point in public engagement with lunar exploration. Returned 422 frames total across 33 days of imaging. Deliberately impacted 1967-10-11 at 4° S, 98° E (lunar far side) to prevent radio-frequency interference with Lunar Orbiter 5.",
+    "cur": "5機のLunar Orbiter宇宙機の2番目のもの。1966年11月6日にケープ・カナベラルから打ち上げられ、1966年11月10日に月周回軌道に入った。赤道帯のApolloゾーン内の13か所を撮影した。1966年11月24日、Frame 162は45.8 km高度から北を向いて93 kmのCopernicus隕石坑の斜視を捉えた。これは他の世界で初めて見た地球型の山岳風景であった。新聞社はこれを「世紀の写真」と呼んだ。この写真の公開は月探査への公衆参加の転換点となった。33日間の撮影を通じて合計422フレームを送信した。1967年10月11日に南緯4°、東経98°（月の裏側）に意図的に落下させられ、Lunar Orbiter 5との電波干渉を防いだ。"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-2.json",
+    "at": "best_known_for",
+    "en": "Second US lunar orbiter (1966-11-10). Took the 'Picture of the Century' — oblique view of Copernicus crater at ~45 km altitude",
+    "cur": "アメリカ2番目の月周回機（1966-11-10）。「世紀の写真」を撮影——Copernicus クレーターの斜視図、高度約45 km"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-3.json",
+    "at": "tagline",
+    "en": "Third US lunar orbiter (1967-02-08). Photographed Surveyor 1 sitting on the lunar surface — first photo of a spacecraft on another world",
+    "cur": "米国3番目の月周回機（1967-02-08）。月面に着陸したSurveyor 1を撮影 — 他の世界の宇宙機を撮った最初の写真"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-3.json",
+    "at": "description",
+    "en": "Third of the five Lunar Orbiter spacecraft. Launched 1967-02-04 from Cape Canaveral, entered lunar orbit 1967-02-08. Continued the Apollo site-mapping campaign with 477 frames across 30 days, including a celebrated 1967-02-22 photograph that resolved the 3-metre Surveyor 1 lander sitting on the Oceanus Procellarum surface — the first photograph of one spacecraft taken by another at another world. Mid-mission failure of the camera's film-transport system curtailed the imaging campaign on 1967-03-04. Continued to operate as an Apollo-tracking beacon for navigation tests. Deliberately impacted 1967-10-09 at 14.6° N, 91.7° W.",
+    "cur": "5機のLunar Orbiterの3番目の宇宙機。1967年2月4日にケープ・カナベラルから打ち上げられ、1967年2月8日に月軌道に到達。Apollo着陸地点調査キャンペーンを継続し、30日間にわたって477フレームを撮影した。このうち1967年2月22日に撮影された画像は、嵐の大洋の表面に着陸しているSurveyor 1着陸機の3メートルサイズまで識別した——別の天体で他の宇宙機によって撮影された宇宙機の最初の写真である。ミッション途中のカメラフィルム送送機構の故障により、撮像キャンペーンは1967年3月4日に中断された。その後もApollo測位用ビーコンとして動作し、航法試験に使用された。1967年10月9日に北緯14.6°、西経91.7°の地点に意図的に衝突させられた。"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-3.json",
+    "at": "best_known_for",
+    "en": "Third US lunar orbiter (1967-02-08). Photographed Surveyor 1 sitting on the lunar surface — first photo of a spacecraft on another world",
+    "cur": "米国3番目の月周回機（1967-02-08）。月面に着陸したSurveyor 1を撮影 — 他の世界の宇宙機を撮った最初の写真"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-4.json",
+    "at": "tagline",
+    "en": "Fourth US lunar orbiter (1967-05-08). First polar lunar orbit; mapped 99 % of the near side at 60 m/pixel + far-side regions",
+    "cur": "米国4番目の月周回機（1967-05-08）。月初の極軌道；表側の99%を60m/画素で地図化＋裏側の重要領域"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-4.json",
+    "at": "description",
+    "en": "Fourth of the five Lunar Orbiter spacecraft, and the first to fly a high-inclination polar lunar orbit. Launched 1967-05-04 from Cape Canaveral, entered a 6111 × 2706 km polar orbit on 1967-05-08. Mission redirected from Apollo site-selection (the first three Orbiters had already done that job) to broad scientific mapping. Returned 419 frames covering 99 % of the lunar near side at 60 m/pixel resolution plus the first detailed imaging of significant far-side regions. The frames remain the highest-resolution coverage of the lunar near side at this scale until the modern LRO era. Impact in October 1967 at 22-30° W on the far side after the radio failed.",
+    "cur": "Lunar Orbiter探査機5機のうちの4番機で、高傾斜の月極軌道を飛行した最初の機体です。1967年5月4日にケープ・カナベラルから打ち上げられ、1967年5月8日に6111 × 2706 kmの極軌道に入りました。ミッションはApollo着陸地点の選定（最初の3機がすでに完了していた任務）から、広範な科学的マッピングへと切り替えられました。月の表側の99 %を解像度60 m/ピクセルでカバーする419フレームを撮影したほか、月の裏側の主要な領域を初めて詳細に撮影しました。これらのフレームは、現代のLROの時代まで、この縮尺での月の表側の最高解像度の撮影範囲であり続けました。無線が故障した後、1967年10月に裏側の西経22～30°に衝突しました。"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-4.json",
+    "at": "best_known_for",
+    "en": "Fourth US lunar orbiter (1967-05-08). First polar lunar orbit; mapped 99 % of the near side at 60 m/pixel + far-side regions",
+    "cur": "米国4番目の月周回機（1967-05-08）。月初の極軌道；表側の99%を60m/画素で地図化＋裏側の重要領域"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-5.json",
+    "at": "tagline",
+    "en": "Final US lunar orbiter (1967-08-05). Completed far-side mapping at 60 m/pixel; impacted 1968-01-31 ahead of Apollo lunar operations",
+    "cur": "米国最後の月周回機（1967-08-05）。裏側の60 m/画素地図化を完了；Apollo月運用前の1968-01-31に衝突"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-5.json",
+    "at": "description",
+    "en": "Fifth and final Lunar Orbiter spacecraft. Launched 1967-08-01 from Cape Canaveral, entered polar lunar orbit 1967-08-05. Returned 633 frames in 35 days — closing out the Lunar Orbiter programme's near-complete coverage of both lunar hemispheres at high resolution. Imaged 36 high-priority science targets selected from gaps in the earlier Orbiters' coverage and from Surveyor / Apollo landing-site needs. After the 1968-01 end-of-mission decision, deliberately crashed 1968-01-31 at 2.79° S, 83.04° W to clear lunar orbital space ahead of Apollo. The five Orbiters together photographed 99 % of the Moon at 60 m/pixel — until LRO began its 0.5 m/pixel LROC NAC programme in 2009, this was the highest-resolution global lunar map ever made.",
+    "cur": "5機目で最後のルナ・オービター宇宙機。1967-08-01にケープ・カナベラルから打ち上げられ、1967-08-05に月極軌道に入った。35日間で633フレームを返送し、ルナ・オービター計画による両半球の高分解能ほぼ完全カバレッジを締めくくった。先行オービターのカバレッジの隙間と、Surveyor/Apollo着陸地のニーズから選ばれた36の高優先科学目標を撮像した。1968-01の任務終了決定後、Apollo前に月軌道空間を空けるため1968-01-31に2.79°S、83.04°Wで意図的に衝突させた。5機のオービターは合計で月の99%を60 m/画素で撮影 — 2009年にLROがLROC NACの0.5 m/画素計画を開始するまで、これは史上最高分解能の全球月地図だった。"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-5.json",
+    "at": "best_known_for",
+    "en": "Final US lunar orbiter (1967-08-05). Completed far-side mapping at 60 m/pixel; impacted 1968-01-31 ahead of Apollo lunar operations",
+    "cur": "米国最後の月周回機（1967-08-05）。裏側の60 m/画素地図化を完了；Apollo月運用前の1968-01-31に衝突"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-prospector.json",
+    "at": "tagline",
+    "en": "NASA Discovery polar orbiter — neutron-spectrometer hydrogen finding at both poles 1998; deliberate Shackleton impact ended mission 1999",
+    "cur": "NASA Discovery極軌道周回機 — 中性子分光計による両極での水素発見（1998年）; 意図的なShackleton衝突により1999年にミッション終了"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-prospector.json",
+    "at": "description",
+    "en": "The third NASA Discovery-class mission (and the first competitively selected) and the first dedicated NASA science mission to the Moon since Explorer 49 (1973). Launched 1998-01-07 on an Athena II from Cape Canaveral, Lunar Prospector entered a 100-km circular polar orbit. Its neutron spectrometer detected sharp neutron-flux deficits over both lunar poles (Feldman et al., 1998 / 1999) — consistent with ~2 × 10⁹ tonnes of hydrogen-rich material (most plausibly water ice) in permanently shadowed polar craters. The gravimeter, magnetometer, gamma-ray and alpha-particle spectrometers also delivered global maps of crustal composition and remnant magnetism. End of mission 1999-07-31: deliberately impacted near Shackleton crater hoping to release a detectable water-vapour plume; none was seen (the lithium-7 fluorescence experiment that would have detected it was a long shot). The hydrogen finding stood until LCROSS (2009) and Chandrayaan-1 / M3 (2009) provided independent confirmation.",
+    "cur": "NASAのDiscovery計画の第3番目のミッション（そして最初の競争選抜方式で選定された）であり、1973年のExplorer 49以来、月への最初の専任NASA科学ミッションである。1998年1月7日にケープ・カナベラルからAthena IIで打ち上げられたLunar Prospectorは、100 km円形極軌道に投入された。その中性子分光計は、両方の月極域にわたって鋭い中性子束の欠損を検出した（Feldman et al., 1998 / 1999）— これは、永久に影の中にある極域のクレーター内の約2 × 10⁹トンの水素に富んだ物質（最も可能性の高い水氷）と一致している。重力計、磁力計、ガンマ線分光計およびアルファ粒子分光計はまた、地殻成分と残存磁性のグローバルマップも提供した。1999年7月31日のミッション終了：Shackleton クレーター付近への意図的な衝突により、検出可能な水蒸気プルームの放出を期待していたが、何も観測されなかった（それを検出できたはずのリチウム-7蛍光実験は成功の確率が低かった）。水素の発見は、LCROSS（2009）とChandrayaan-1 / M3（2009）が独立した確認を提供するまで確実だった。"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-prospector.json",
+    "at": "best_known_for",
+    "en": "NASA Discovery polar orbiter — neutron-spectrometer hydrogen finding at both poles 1998; deliberate Shackleton impact ended mission 1999",
+    "cur": "NASA Discovery極軌道周回機 — 中性子分光計による両極での水素発見（1998年）; 意図的なShackleton衝突により1999年にミッション終了"
+  },
+  {
+    "rel": "fleet/orbiter/magellan.json",
+    "at": "description",
+    "en": "Magellan is a deep-space orbiter built by Martin Marietta in USA. Radar-mapped 98% of Venus's surface. Retired after first flight in 1989.",
+    "cur": "Magellan は、アメリカで Martin Marietta によって構築されたディープスペースのオービターです。 金星の表面のレーダーマップされた98%。 1989年初飛行後退。"
+  },
+  {
+    "rel": "fleet/orbiter/mangalyaan.json",
+    "at": "description",
+    "en": "India’s first interplanetary mission and the first successful Mars mission by an Asian space agency. Delivered an orbiter to Mars on its first attempt — a feat no other national space agency had managed (ESA, a multi-national organization, succeeded on its first Mars attempt with Mars Express in 2003). Operated for nearly eight years before contact was lost in 2022.",
+    "cur": "インドの初の惑星間ミッションであり、アジアの宇宙機関による初の成功した火星ミッションである。初回の試みで火星軌道器を到達させた — 他のどの国家宇宙機関も成し遂げていない成果である（ESA という多国間組織は 2003 年の Mars Express で初回の火星ミッションに成功している）。約 8 年間の運用を続けた後、2022 年に通信が途絶えた。"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-4.json",
+    "at": "dispatch",
+    "en": "Mariner 4 did what no machine had done: it photographed another planet. Small and spare, built to fly past Mars once and send home whatever it could in the hours it had, it carried a camera and a tape recorder across the solar system and in July 1965 returned the first close-up pictures ever taken of another world — 22 grainy frames of a cratered, moon-like surface. Those images ended a century of speculation about Martian canals and civilisations in a single afternoon, and proved a spacecraft could cross interplanetary space and bring back a planet’s face. Every camera humanity has since sent to another world descends from this one.",
+    "cur": "Mariner 4は、それまでどの機械も成し遂げなかったことを成し遂げた——他の惑星を撮影したのだ。小型で簡素な設計で、火星を一度だけフライバイし、限られた時間内に可能な限りのデータを地球へ送信するよう作られたこの探査機は、カメラとテープレコーダーを太陽系の彼方まで運び、1965年7月、他の天体を至近距離から撮影した史上初の写真——クレーターだらけの月のような表面を写した粒子の粗い22フレーム——を送り返してきた。それらの画像は、火星の運河や文明についての一世紀にわたる憶測をたった一日の午後で終わらせ、宇宙船が惑星間空間を横断し、惑星の姿を持ち帰ることができると証明した。人類がそれ以降他の天体へ送ったすべてのカメラは、このカメラの系譜に連なっている。"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-4.json",
+    "at": "description",
+    "en": "The first successful Mars flyby — July 1965. The 22 grainy black-and-white photos returned ended over a century of speculation about Martian canals and life by showing a cratered, Moon-like surface.",
+    "cur": "1965年7月、最初の成功したマーズフライビー。 22枚のグラミーな黒と白の写真は、火星の運河と人生の約1世紀に終わると、火星のような表面を示す。"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-9.json",
+    "at": "dispatch",
+    "en": "Mariner 9 was the first machine to stop at another planet instead of flying past. Where the earlier Mariners glimpsed Mars in a few hours, it carried enough fuel to brake into orbit and stay — and it arrived to find the whole planet buried under a global dust storm. So it waited. When the dust settled it mapped all of Mars, and the survey revealed a world the flybys had missed entirely: the largest volcano in the solar system, a canyon a continent wide, and the dry channels of ancient rivers. It proved that an orbiter patient enough to watch a planet over time sees what no flyby ever can.",
+    "cur": "Mariner 9は、他の惑星を通過するのではなく留まった最初の機械だった。初期のMariner探査機が数時間でかいま見たのに対し、この探査機は軌道に入って減速し滞在するのに十分な燃料を搭載していた——そして到着すると、惑星全体が全球規模の砂嵐に覆われているのを発見した。そこで待機した。砂嵐が収まると火星全体を地図化し、その調査によってフライバイでは完全に見逃していた世界が明らかになった。太陽系最大の火山、大陸ほどの幅を持つ峡谷、そして古代の河川の干上がった水路である。時間をかけて惑星を観測できるだけの忍耐力を持つ軌道探査機は、フライバイでは決して見ることのできないものを見ることを証明したのだ。"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-9.json",
+    "at": "description",
+    "en": "The first spacecraft to orbit another planet (Mars, November 1971). Mapped 100% of the Martian surface — including the global dust storm that hid everything for the first month and the first close-up of Olympus Mons.",
+    "cur": "別の惑星（火星、1971年11月）を周回した初めての宇宙機。火星の表面の100%をマッピングした。最初の1か月間すべてを隠した全球的なダストストームや、オリンポス山の初めての接近撮影を含む。"
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "tagline",
+    "en": "ESA's first and only Mars orbiter; Europe's first planetary mission",
+    "cur": "ESAの初で唯一の火星周回機；ヨーロッパ初の惑星探査機"
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "description",
+    "en": "Mars Express is a deep-space orbiter built by EADS Astrium in Multi (Europe). ESA's first and only Mars orbiter; Europe's first planetary mission. In service since 2003.",
+    "cur": "Mars Express は EADS Astrium によってヨーロッパで建造された深宇宙周回機です。ESA の初で唯一の火星周回機；ヨーロッパ初の惑星探査機。2003年から運用中です。"
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "best_known_for",
+    "en": "ESA's first and only Mars orbiter; Europe's first planetary mission",
+    "cur": "ESAの初で唯一の火星周回機；ヨーロッパ初の惑星探査機"
+  },
+  {
+    "rel": "fleet/orbiter/mars-odyssey.json",
+    "at": "tagline",
+    "en": "Longest-lived Mars asset ever — orbiting since 2001-10-24. Gamma-ray + neutron water-ice maps; UHF relay for the surface fleet",
+    "cur": "史上最長寿の火星探査機 — 2001-10-24 から周回中。ガンマ線+中性子による水氷マップ。地表艦隊向けの UHF 中継機"
+  },
+  {
+    "rel": "fleet/orbiter/mars-odyssey.json",
+    "at": "description",
+    "en": "The longest-lived spacecraft ever to operate at Mars — entered Mars orbit 2001-10-24 and is still active in 2026, surpassing every other Mars mission's lifetime. Launched 2001-04-07 on a Delta II from Cape Canaveral, named after Arthur C. Clarke's '2001: A Space Odyssey'. Carried THEMIS (Thermal Emission Imaging System, 100-m visible / 100-m infrared imaging that mapped global surface mineralogy) and the gamma-ray spectrometer suite GRS + HEND + NS — Boynton et al. (2002, Science 297) used HEND neutron spectroscopy to map global near-surface water ice, the discovery that drove every subsequent lander-mission target selection. Also serves as the primary UHF relay for Mars-surface assets (MERs, MSL, InSight, Perseverance) and a backup for Mars Reconnaissance Orbiter. Extended-mission fuel reserves expected to last to 2026-2027.",
+    "cur": "火星で運用された最長寿命の宇宙機——2001年10月24日に火星軌道に突入し、2026年現在もなお活動中であり、他のすべての火星ミッションの寿命を上回っている。2001年4月7日にケープ・カナベラルからDelta IIで打ち上げられ、アーサー・C・クラークの『2001: A Space Odyssey』にちなんで命名された。THEMIS（Thermal Emission Imaging System、100m可視/100m赤外線撮像で地球規模の表面鉱物学をマッピング）と、ガンマ線分光計スイートGRS + HEND + NSを搭載した——Boynton et al.（2002, Science 297）はHENDニュートロン分光法を用いて地球規模の近表面水氷をマッピングし、その後のすべてのランダーミッションのターゲット選定を推進した発見を行った。また、火星表面資産（MERs、MSL、InSight、Perseverance）の主要なUHF中継機として機能し、Mars Reconnaissance Orbiterのバックアップとしても機能している。長期ミッション用の燃料予備は2026～2027年まで持つと予想されている。"
+  },
+  {
+    "rel": "fleet/orbiter/mars-odyssey.json",
+    "at": "best_known_for",
+    "en": "Longest-lived Mars asset ever — orbiting since 2001-10-24. Gamma-ray + neutron water-ice maps; UHF relay for the surface fleet",
+    "cur": "史上最長寿の火星探査機 — 2001-10-24 から周回中。ガンマ線+中性子による水氷マップ。地表艦隊向けの UHF 中継機"
+  },
+  {
+    "rel": "fleet/orbiter/mars2-orbiter.json",
+    "at": "tagline",
+    "en": "Soviet companion orbiter to Mars 2 — second spacecraft ever in Mars orbit (after Mariner 9 by 13 days). Operated 1971-11-27 to 1972-08",
+    "cur": "Mars 2の相乗りソビエト軌道衛星——火星軌道に到達した2番目の宇宙機（Mariner 9より13日後）。1971-11-27から1972-08まで運用。"
+  },
+  {
+    "rel": "fleet/orbiter/mars2-orbiter.json",
+    "at": "description",
+    "en": "The orbital half of the Soviet Mars 2 mission. Launched 1971-05-19 on a Proton-K from Baikonur, Mars 2 reached Mars 1971-11-27 — just 13 days after Mariner 9 became the first Mars orbiter. Its lander attempted descent on 1971-11-27 but its parachute failed to deploy and the lander crashed (the first man-made object on Mars, but no telemetry). The orbiter half was much more successful, returning ~60 image frames + extensive measurements of the upper atmosphere, magnetic field, and surface temperatures during the same global dust storm that compromised Mariner 9's early imaging. Carried infrared and ultraviolet spectrometers, photometers, a Lyman-alpha sensor, magnetometer, plasma analyser, and cosmic-ray detectors — the same instrument suite as Mars 3 Orbiter. End of mission 1972-08-22 after 362 orbits.",
+    "cur": "ソビエトの Mars 2 ミッションの軌道部。1971-05-19にバイコヌールから Proton-K ロケットで打ち上げられ、Mars 2 は1971-11-27に火星に到達した — Mariner 9 が火星周回軌道初の宇宙機となってからわずか13日後のことである。ランダーは1971-11-27に降下を試みたがパラシュートが展開に失敗し、ランダーは墜落した（火星上で初の人工物だが、テレメトリーはなし）。軌道部は遥かに成功し、約60フレームの画像と、Mariner 9 初期画像撮影を損なった同じ全球的なダストストーム中の上層大気、磁場、および表面温度の広範な測定値を返信した。赤外線および紫外線分光計、光度計、Lyman-α センサー、磁力計、プラズマ分析計、および宇宙線検出器を搭載していた — Mars 3 周回機と同じ機器スイートである。ミッション終了は1972-08-22で362軌道の後"
+  },
+  {
+    "rel": "fleet/orbiter/mars2-orbiter.json",
+    "at": "best_known_for",
+    "en": "Soviet companion orbiter to Mars 2 — second spacecraft ever in Mars orbit (after Mariner 9 by 13 days). Operated 1971-11-27 to 1972-08",
+    "cur": "Mars 2の相乗りソビエト軌道衛星——火星軌道に到達した2番目の宇宙機（Mariner 9より13日後）。1971-11-27から1972-08まで運用。"
+  },
+  {
+    "rel": "fleet/orbiter/mars3-orbiter.json",
+    "at": "tagline",
+    "en": "Soviet companion orbiter to Mars 3 — orbited Mars from 1971-12-02 through 1972-08; first measurements of Mars upper atmosphere temperature",
+    "cur": "Mars 3の旅にともなったソビエト軌道船—1971年12月2日から1972年8月まで火星を周回。火星上層大気の温度を初めて測定した"
+  },
+  {
+    "rel": "fleet/orbiter/mars3-orbiter.json",
+    "at": "best_known_for",
+    "en": "Soviet companion orbiter to Mars 3 — orbited Mars from 1971-12-02 through 1972-08; first measurements of Mars upper atmosphere temperature",
+    "cur": "Mars 3の同伴軌道船で、ソビエト連邦によるもの — 1971年12月2日から1972年8月まで火星を周回；火星上層大気温度の最初の測定"
+  },
+  {
+    "rel": "fleet/orbiter/mars3-orbiter.json",
+    "at": "description",
+    "en": "The orbital half of the Soviet Mars 3 mission (its lander made the first soft landing on Mars 1971-12-02 but only transmitted for 14.5 seconds before signal loss in a global dust storm). The orbiter was much more successful — entered a highly elliptical 1500 × 211400 km Mars orbit on 1971-12-02, the third spacecraft ever to orbit Mars (after Mariner 9 on 1971-11-14 and Mars 2 Orbiter on 1971-11-27). Carried infrared and ultraviolet spectrometers, photometers, a Lyman-alpha sensor, magnetometer, plasma analyser, and cosmic-ray detectors. Returned the first measurements of the upper atmosphere temperature profile, mapped surface temperatures (peak +13 °C, lowest -93 °C), and confirmed atmospheric water vapour. Returned approximately 60 image-frames; image quality was compromised by Mars' global dust storm that was already in progress when the orbiter arrived. End of mission 1972-08-22.",
+    "cur": "ソビエト連邦の Mars 3 ミッションの軌道船部分（着陸船は1971年12月2日に火星への初の軟着陸を達成したが、地球規模のダストストーム中に信号喪失となるまでわずか14.5秒間しか伝送できませんでした）。軌道船ははるかに成功が大きく — 1971年12月2日に1500 × 211400 km の火星高楕円軌道に投入され、火星を周回した3番目の宇宙船となりました（Mariner 9 が1971年11月14日、Mars 2 Orbiter が1971年11月27日に先行）。赤外線・紫外線分光計、光度計、Lyman-alpha センサー、磁力計、プラズマ分析装置、および宇宙線検出器を搭載していました。上層大気の温度分布の最初の測定値を返却し、表面温度をマップ化し（最高+13 °C、最低-93 °C）、大気中の水蒸気を確認しました。約60コマの画像フレームを返却；軌道船が到着した時点で既に進行中だった火星の地球規模のダストストームのため、画像品質は低下していました。ミッション終了 1972年8月22日。"
+  },
+  {
+    "rel": "fleet/orbiter/maven.json",
+    "at": "description",
+    "en": "NASA's atmospheric orbiter at Mars — Mars Atmosphere and Volatile EvolutioN. In Mars orbit since 2014, studying how the planet lost its early thick atmosphere to solar wind erosion over billions of years.",
+    "cur": "NASAの火星大気探査機 — Mars Atmosphere and Volatile EvolutioN。2014年から火星周回軌道上にあり、数十億年にわたる太陽風侵食によって火星がかつての厚い大気をどのように失ったかを研究している。"
+  },
+  {
+    "rel": "fleet/orbiter/maven.json",
+    "at": "best_known_for",
+    "en": "Studying Mars atmospheric loss to solar wind; revealed Mars lost its atmosphere over billions of years",
+    "cur": "火星大気の太陽風への流出を研究; 火星が数十億年かけて大気を失ったことを解明"
+  },
+  {
+    "rel": "fleet/orbiter/messenger.json",
+    "at": "tagline",
+    "en": "First Mercury orbiter — 6 planetary gravity assists over 6.6 years to bleed energy before insertion in 2011",
+    "cur": "初の水星周回機 — 2011 年の周回投入までに 6.6 年で 6 回の惑星スイングバイ"
+  },
+  {
+    "rel": "fleet/orbiter/messenger.json",
+    "at": "description",
+    "en": "NASA Discovery-class MErcury Surface, Space ENvironment, GEochemistry, and Ranging mission. Launched 2004-08-03 on a Delta II 7925H-9.5. The 6.6-year cruise used 6 gravity assists (1 Earth, 2 Venus, 3 Mercury) to lose ~5 km/s of heliocentric energy — direct orbit insertion would have needed impossible delta-v. Mercury orbit insertion 2011-03-18; mapped the planet for 4 years. Discoveries: water ice in permanently shadowed polar craters, organic-rich dark material at the poles, exosphere composition, a magnetic field offset from the planet centre, abundant hollow-bottomed pits. Impacted Mercury 2015-04-30 after exhausting propellant — left a 16 m artificial crater near the north pole.",
+    "cur": "NASA ディスカバリー級 MErcury Surface, Space ENvironment, GEochemistry, and Ranging ミッション。2004 年 8 月 3 日に Delta II 7925H-9.5 で打ち上げ。6.6 年の航行で地球 1 回・金星 2 回・水星 3 回のスイングバイを使い ~5 km/s の太陽中心エネルギーを削減。2011 年 3 月 18 日に水星周回軌道に投入。永久影の極クレーターでの水氷、極部の有機物に富む暗黒物質、惑星中心からずれた磁場などを発見。2015 年 4 月 30 日に推進剤枯渇で水星表面に衝突。"
+  },
+  {
+    "rel": "fleet/orbiter/messenger.json",
+    "at": "best_known_for",
+    "en": "First Mercury orbiter — 4 years mapping the planet, ended in controlled impact 2015-04-30",
+    "cur": "初の水星周回機 — 4 年間の地図化、2015 年 4 月 30 日制御衝突で終了"
+  },
+  {
+    "rel": "fleet/orbiter/mro.json",
+    "at": "name",
+    "en": "Mars Reconnaissance Orbiter",
+    "cur": "Mars Reconnaissance Orbiter"
+  },
+  {
+    "rel": "fleet/orbiter/mro.json",
+    "at": "description",
+    "en": "Mars Reconnaissance Orbiter is a deep-space orbiter built by Lockheed Martin in USA. Highest-resolution Mars imaging from orbit. In service since 2005.",
+    "cur": "Mars Reconnaissance Orbiterはアメリカの Lockheed Martin によって建造された深宇宙衛星探査機です。軌道から火星を撮影する最高解像度の画像を取得します。2005年以来、運用中です。"
+  },
+  {
+    "rel": "fleet/orbiter/osiris-rex.json",
+    "at": "tagline",
+    "en": "Sample-returned Bennu (2023); now en route to Apophis",
+    "cur": "ベンヌからのサンプル回収完了（2023年）；現在アポフィスへ向かう途中"
+  },
+  {
+    "rel": "fleet/orbiter/osiris-rex.json",
+    "at": "description",
+    "en": "NASA’s asteroid sample-return mission. Approached asteroid Bennu in 2018, captured a sample with its TAGSAM arm in 2020, and returned the sample capsule to Utah in September 2023. Now redesignated OSIRIS-APEX, en route to asteroid Apophis for its 2029 close Earth flyby.",
+    "cur": "NASA の小惑星サンプル回収ミッション。2018年に小惑星ベンヌに接近し、2020年に TAGSAM アームでサンプルを採取し、2023年9月にサンプルカプセルをユタ州に帰還させた。現在は OSIRIS-APEX として改称され、2029年の地球最接近フライバイに向けて小惑星アポフィスへ向かっている。"
+  },
+  {
+    "rel": "fleet/orbiter/osiris-rex.json",
+    "at": "best_known_for",
+    "en": "Sample-returned Bennu (2023); now en route to Apophis",
+    "cur": "ベンヌからのサンプル回収完了（2023年）；現在アポフィスへ向かう途中"
+  },
+  {
+    "rel": "fleet/orbiter/parker-solar-probe.json",
+    "at": "description",
+    "en": "NASA's Sun-grazing mission. Launched 2018-08-12 on a Delta IV Heavy + Star 48BV stack at the highest C3 ever achieved for a science payload (154 km²/s²). Seven Venus gravity assists over six years walked perihelion in from 0.16 AU (P1) to 0.046 AU (P22, 2024-12-24) — 9.86 solar radii, 6.1 million km from the Sun's surface. At P8 (2021-04-28) Parker dipped below the Alfvén critical surface — the first spacecraft to enter the Sun's corona. Peak speed at perihelion: 192.22 km/s, the fastest human-made object ever.",
+    "cur": "NASAの太陽直掩ミッション。2018年8月12日にDelta IV Heavy + Star 48BVスタックで打ち上げられ、科学ペイロードとしては史上最高のC3（154 km²/s²）を達成した。6年間にわたり7回の金星重力アシストにより、近日点を0.16 AU（P1）から0.046 AU（P22、2024-12-24）へと段階的に低下させた — 太陽半径9.86個分、太陽表面から610万km。P8（2021-04-28）でParkerはアルヴェン臨界面の下に潜行し、太陽のコロナに突入した最初の宇宙機となった。近日点での最高速度：192.22 km/s、人類が製造した物体で最速。"
+  },
+  {
+    "rel": "fleet/orbiter/parker-solar-probe.json",
+    "at": "best_known_for",
+    "en": "Closest spacecraft to the Sun ever flown (9.86 R☉)",
+    "cur": "太陽に最も接近した宇宙機（太陽半径9.86個分）"
+  },
+  {
+    "rel": "fleet/orbiter/phobos-2.json",
+    "at": "tagline",
+    "en": "Last Soviet planetary mission; lost at Phobos approach",
+    "cur": "最後のソビエト惑星探査機；フォボス接近時に通信喪失"
+  },
+  {
+    "rel": "fleet/orbiter/phobos-2.json",
+    "at": "description",
+    "en": "The last Soviet planetary mission. Reached Mars orbit in January 1989 but lost contact with Earth on March 27, 1989, just before its planned encounter with the moon Phobos. Phobos 2 returned 37 images of Phobos before contact was lost. The loss was attributed to an on-board computer failure causing loss of attitude control and power, though the complete sequence was never fully reconstructed.",
+    "cur": "最後のソビエト惑星探査機。1989年1月に火星軌道に到達したが、衛星フォボスの計画された遭遇直前の1989年3月27日に地球との通信を喪失した。Phobos 2は通信喪失前にフォボスの37枚の画像を送信した。喪失の原因は、機上コンピュータの故障による姿勢制御と電力供給の喪失と推定されているが、完全な経過は決して完全には再構成されていない。"
+  },
+  {
+    "rel": "fleet/orbiter/phobos-2.json",
+    "at": "best_known_for",
+    "en": "Last Soviet planetary mission; lost at Phobos approach",
+    "cur": "最後のソビエト惑星探査機；フォボス接近時に通信喪失"
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-10.json",
+    "at": "description",
+    "en": "The first spacecraft to traverse the asteroid belt and the first to fly past Jupiter (December 1973). Carried the Pioneer plaque — the etched gold-anodized aluminium drawing of human figures + solar system that Carl Sagan and Frank Drake designed in three weeks.",
+    "cur": "小惑星帯を最初に横断し、木星をフライバイした最初の宇宙機（1973年12月）。カール・セーガンとフランク・ドレイクが3週間で設計した、人間の姿と太陽系をエッチングした金メッキアルミニウムのパイオニアプラークを搭載していた。"
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-11.json",
+    "at": "tagline",
+    "en": "First spacecraft to encounter Saturn — Jupiter flyby in 1974 then gravity-assist to Saturn in 1979",
+    "cur": "初めて土星に到達した探査機 — 1974 年木星フライバイ後、1979 年に木星重力で土星へ"
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-11.json",
+    "at": "description",
+    "en": "Spin-stabilised RTG-powered probe (~259 kg), sibling of Pioneer 10 with the same bus and Pioneer Plaque message-to-the-stars. Launched 1973-04-06 on an Atlas SLV-3D Centaur D-1A + Star-37E from Cape Canaveral. Jupiter flyby 1974-12-03 at 43 000 km — the closest of any Pioneer encounter, returned the first polar-region images and the gravity assist needed to reach Saturn. Saturn encounter 1979-09-01 at 21 000 km from the cloud tops — first detailed images of the ring system, discovery of a new ring (F-ring) and a new moon, confirmation of Saturn's nearly-aligned magnetic field. Continued outbound observations until last contact 1995-11-24. Now ~93 AU from the Sun, headed toward Aquila.",
+    "cur": "RTG 電源・スピン安定の探査機（~259 kg）。同じバスと Pioneer Plaque を共有する Pioneer 10 の姉妹機。1973 年 4 月 6 日にケープ・カナベラル LC-36B から Atlas SLV-3D Centaur D-1A + Star-37E で打ち上げ。1974 年 12 月 3 日に木星を 43 000 km で通過 — Pioneer シリーズ最接近で、初の極域画像と土星到達に必要な重力支援を獲得。1979 年 9 月 1 日に土星を 21 000 km で接近 — 環システムの初詳細画像。1995 年 11 月 24 日の最終通信までヘリオスフィア観測を継続。現在は太陽から ~93 AU、わし座方向へ。"
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-11.json",
+    "at": "best_known_for",
+    "en": "First spacecraft to encounter Saturn — 1979-09-01 flyby, sibling to Pioneer 10",
+    "cur": "初めて土星に到達した探査機 — 1979-09-01 フライバイ、Pioneer 10 の姉妹機"
+  },
+  {
+    "rel": "fleet/orbiter/psyche-spacecraft.json",
+    "at": "description",
+    "en": "NASA's mission to a ~230-km M-type asteroid believed to be the exposed metal core of a differentiated proto-planet. Launched 2023-10-13 on a Falcon Heavy from Kennedy LC-39A; uses four SPT-140 Hall-effect ion thrusters as the primary cruise propulsion and a 2026 Mars gravity assist en route to a 2029 Psyche rendezvous. Carries a magnetometer, multispectral imager, and gamma-ray + neutron spectrometer.",
+    "cur": "差別化された原始惑星の露出した金属核と考えられている約230 kmのM型小惑星を目指すNASAのミッション。2023年10月13日にKennedy LC-39AからFalcon Heavyで打ち上げられました。巡航推進の主要動力として4台のSPT-140ホール効果イオンスラスターを使用し、2026年に火星の重力アシストを利用して2029年のPsycheとのランデブーに向かいます。磁力計、マルチスペクトル撮像装置、ガンマ線・中性子分光計を搭載しています。"
+  },
+  {
+    "rel": "fleet/orbiter/rosetta.json",
+    "at": "description",
+    "en": "ESA’s comet rendezvous mission. Caught up to Comet 67P/Churyumov–Gerasimenko in August 2014, deployed the Philae lander (which bounced and fell into a crevasse), and accompanied the comet through its 2015 perihelion before crash-landing on the surface itself in September 2016.",
+    "cur": "ESAの彗星ランデブー・ミッション。2014年8月にComet 67P/Churyumov–Gerasimenkoに追いつき、Philae着陸機を展開（着陸機はバウンドしてクレバスに落ちました）し、彗星を2015年の近日点まで伴走してから、2016年9月に表面へ自らクラッシュ・ランディングしました。"
+  },
+  {
+    "rel": "fleet/orbiter/smart-1.json",
+    "at": "tagline",
+    "en": "First European Moon mission — solar-electric ion drive. Spiralled to the Moon over 13 months; deliberate impact 2006-09-03",
+    "cur": "欧州初の月探査 — 太陽電力イオン推進。13 か月かけて月へスパイラル軌道で接近、2006-09-03 に意図的衝突"
+  },
+  {
+    "rel": "fleet/orbiter/smart-1.json",
+    "at": "description",
+    "en": "ESA's first lunar mission and the first European spacecraft to reach the Moon. SMART = Small Missions for Advanced Research in Technology — and the technology that mattered was a Hall-effect solar-electric ion thruster (PPS-1350, the largest such thruster flown at the time). Launched 2003-09-27 as a shared payload on an Ariane 5 from Kourou, the 367-kg spacecraft used its 1.2-kW xenon ion drive over 13 months to slowly raise its Earth orbit, eventually captured by lunar gravity 2004-11-15. Operated for 16 months in a polar lunar orbit, returning high-resolution AMIE camera imagery, the first X-ray fluorescence elemental maps of the Moon (D-CIXS), and infrared mineral spectroscopy (SIR). Deliberately impacted Lacus Excellentiae (34.4° S, 46.2° W) on 2006-09-03 02:42 UTC — the impact flash was observed from the Canada-France-Hawaii Telescope.",
+    "cur": "ESA 初の月探査ミッションであり、月に到達した初の欧州宇宙機。SMART = Small Missions for Advanced Research in Technology — そして本命の技術はホール効果型の太陽電力イオンスラスター(PPS-1350)であった。2003-09-27 にクールーから Ariane 5 の相乗りペイロードとして打ち上げられた 367 kg の探査機は、1.2 kW のキセノンイオン推進を 13 か月使って地球軌道を徐々に上昇させ、最終的に 2004-11-15 に月重力に捕獲された。極月周回軌道で 16 か月運用し、AMIE カメラ画像、月初の X 線蛍光元素マップ(D-CIXS)、赤外鉱物分光(SIR)を取得。2006-09-03 02:42 UTC に卓越の湖に意図的に衝突 — 衝突閃光はカナダ・フランス・ハワイ望遠鏡から観測された。"
+  },
+  {
+    "rel": "fleet/orbiter/smart-1.json",
+    "at": "best_known_for",
+    "en": "First European Moon mission — solar-electric ion drive. Spiralled to the Moon over 13 months; deliberate impact 2006-09-03",
+    "cur": "欧州初の月探査 — 太陽電力イオン推進。13 か月かけて月へスパイラル軌道で接近、2006-09-03 に意図的衝突"
+  },
+  {
+    "rel": "fleet/orbiter/solar-orbiter.json",
+    "at": "description",
+    "en": "ESA-led Solar Orbiter is the first spacecraft designed to image the Sun's polar regions in close detail — using repeated Venus gravity assists over a decade to climb out of the ecliptic toward ~33° heliographic inclination. Carries ten instruments combining remote sensing (PHI magnetograph, EUI extreme-UV imager, SPICE spectrometer, STIX X-ray imager, METIS coronagraph, SoloHI heliospheric imager) with in-situ measurement (magnetometer, energetic particles, solar-wind plasma, radio + plasma waves). Launched 2020-02-10 from Cape Canaveral on a NASA Atlas V 411. First perihelion 2020-06-15 at 0.51 AU. Working perihelion 0.28 AU (~62 R☉), inside Mercury's perihelion distance.",
+    "cur": "ESA主導のSolar Orbiterは、太陽の極域を近距離で詳細に撮影するために設計された初の宇宙機——10年以上にわたる金星重力アシストを繰り返し利用して黄道面から離脱し、太陽緯度約33°の軌道傾斜角を目指す。リモートセンシング(PHI磁力計、EUI極端紫外線撮像装置、SPICE分光計、STIX X線撮像装置、METISコロナグラフ、SoloHI太陽圏撮像装置)とその場測定(磁力計、高エネルギー粒子、太陽風プラズマ、電波+プラズマ波)を組み合わせた10の観測機器を搭載。2020年2月10日にケープカナベラルからNASAのAtlas V 411で打ち上げ。初回近日点通過は2020年6月15日、0.51 AU。運用時近日点距離は0.28 AU(約62 R☉)で、水星の近日点距離より内側。"
+  },
+  {
+    "rel": "fleet/orbiter/tianwen-1.json",
+    "at": "tagline",
+    "en": "First Chinese Mars mission; delivered Zhurong",
+    "cur": "中国初の火星ミッション；Zhurongを送達"
+  }
 ]

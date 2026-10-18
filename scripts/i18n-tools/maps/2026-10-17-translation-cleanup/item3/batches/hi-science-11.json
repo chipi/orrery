@@ -1,356 +1,356 @@
 [
- {
-  "rel": "science/transfers/coplanar-trajectories.json",
-  "at": "narrative_101.0",
-  "en": "Stand at the centre of the solar system and look at the planets and you see a pancake, not a sphere. Mercury, Venus, Earth, Mars, Jupiter, Saturn — they all orbit within about 7° of the same flat plane (the ecliptic). The planets formed from a single rotating gas-and-dust cloud, and that rotation collapsed everything to a thin disk. Everything since has stayed in that disk.",
-  "cur": "सौर मंडल के केंद्र में खड़े हो जाओ और ग्रहों को देखो — तुम्हें एक पैनकेक दिखेगा, गोला नहीं। बुध, शुक्र, पृथ्वी, मंगल, बृहस्पति, शनि — सभी एक ही समतल विमान (क्रांतिवृत्त) के लगभग 7° के भीतर परिक्रमा करते हैं। ग्रह एक ही घूमते गैस-और-धूल बादल से बने थे, और उस घूर्णन ने सब कुछ एक पतली डिस्क में ढह दिया। तब से सब कुछ उस डिस्क में रहा है।"
- },
- {
-  "rel": "science/transfers/coplanar-trajectories.json",
-  "at": "narrative_101.1",
-  "en": "Now imagine planning a trip to Mars. The cheapest way to get there is a long curved arc that goes around the Sun and arrives at Mars's orbit at the same moment Mars is there. The cheapest arc lies in the same plane that Earth and Mars share — the ecliptic. Leaving the disk to take a 'detour out and over' costs propellant the spacecraft cannot afford.",
-  "cur": "अब मंगल की यात्रा की योजना बनाने की कल्पना करो। वहां जाने का सबसे सस्ता तरीका एक लंबा घुमावदार चाप है जो सूर्य के चारों ओर जाता है और मंगल की कक्षा में उसी क्षण पहुंचता है जब मंगल वहां है। सबसे सस्ता चाप उसी विमान में है जो पृथ्वी और मंगल साझा करते हैं — क्रांतिवृत्त। डिस्क छोड़कर \"बाहर और ऊपर मोड़\" लेना ईंधन खर्च करता है जो अंतरिक्षयान वहन नहीं कर सकता।"
- },
- {
-  "rel": "science/transfers/coplanar-trajectories.json",
-  "at": "narrative_101.2",
-  "en": "So mission planners don't fight the disk. They wait for the orbital geometry to line up (that's what 'launch window' means), point the rocket along the ecliptic, and let the planets do the steering. The result, when you look at every spacecraft trajectory we have, is a pile of curves all hugging the same plane — like watching cars race on a flat track.",
-  "cur": "इसलिए मिशन योजनाकार डिस्क से नहीं लड़ते। वे तब तक प्रतीक्षा करते हैं जब तक कि कक्षीय ज्यामिति संरेखित न हो जाए (इसका मतलब है \"लॉन्च विंडो\"), रॉकेट को क्रांतिवृत्त के साथ इंगित करते हैं, और ग्रहों को संचालन का प्रबंधन करने देते हैं। परिणाम, जब आप हमारे पास हर अंतरिक्षयान प्रक्षेपपथ को देखते हैं, एक ही विमान को गले लगाने वाले वक्रों का ढेर है — जैसे कारों को एक समतल ट्रैक पर दौड़ते देखना।"
- },
- {
-  "rel": "science/transfers/coplanar-trajectories.json",
-  "at": "body_paragraphs.0",
-  "en": "The price tag for leaving the plane is brutal. Changing a heliocentric trajectory's inclination by even 1° at Earth's orbital speed (~30 km/s) costs roughly 0.5 km/s of `∆v`. Doing the 80° plane change Ulysses needed — to fly over the Sun's poles — would have cost ~38 km/s if done with chemical thrust. No real rocket can deliver that. So engineers don't pay for plane changes; they design around them.",
-  "cur": "विमान छोड़ने की कीमत क्रूर है। पृथ्वी की कक्षीय गति (~30 किमी/से) पर सिर्फ 1° से सूर्यकेंद्रित प्रक्षेपपथ का झुकाव बदलने में लगभग 0.5 किमी/से `∆v` खर्च होता है। Ulysses को आवश्यक 80° विमान परिवर्तन — सूर्य के ध्रुवों पर उड़ने के लिए — रासायनिक रूप से किया जाता तो ~38 किमी/से खर्च होता। कोई वास्तविक रॉकेट यह वितरित नहीं कर सकता। इसलिए इंजीनियर विमान परिवर्तनों के लिए भुगतान नहीं करते; वे उनके आसपास डिज़ाइन करते हैं।"
- },
- {
-  "rel": "science/transfers/coplanar-trajectories.json",
-  "at": "body_paragraphs.1",
-  "en": "Gravity assists obey the same constraint. When a spacecraft slingshots off Jupiter or Venus, the planet sits in the ecliptic, so the deflection vector — which always passes through the planet — keeps the trajectory near-ecliptic too. Cassini's six-year cruise looks like a 2D doodle in the /explore view because every assist body it visited was 2D-flat.",
-  "cur": "गुरुत्व सहायताएं उसी बाधा का पालन करती हैं। जब एक अंतरिक्षयान बृहस्पति या शुक्र के पास घूमता है, ग्रह क्रांतिवृत्त में बैठता है, इसलिए विक्षेपण वेक्टर — जो हमेशा ग्रह से होकर गुजरता है — प्रक्षेपपथ को भी क्रांतिवृत्त के पास रखता है। कैसिनी की छह साल की यात्रा /explore दृश्य में 2D डूडल जैसी दिखती है क्योंकि हर सहायक निकाय जो उसने दौरा किया वह 2D-फ्लैट था।"
- },
- {
-  "rel": "science/transfers/coplanar-trajectories.json",
-  "at": "body_paragraphs.2",
-  "en": "Ulysses is the only spacecraft that ever broke the disk on purpose. Its science target was the Sun's poles, but reaching them required ~80° of inclination — chemically impossible. So the mission did the only thing that worked: launched outward to Jupiter, used Jupiter's gravity as a free 'rocket' to deflect the spacecraft out of the ecliptic, then orbited the Sun pole-to-pole for 18 years. The big detour was the cheapest path. Every other deep-space mission you see in /explore stayed in the disk because the disk is where the destinations are — and where the propellant lets you go.",
-  "cur": "Ulysses एकमात्र अंतरिक्षयान है जिसने जानबूझकर डिस्क तोड़ी। इसका विज्ञान लक्ष्य सूर्य के ध्रुव थे, लेकिन उन तक पहुंचने के लिए ~80° झुकाव की आवश्यकता थी — रासायनिक रूप से असंभव। इसलिए मिशन ने केवल वही किया जो काम किया: बृहस्पति की ओर बाहर लॉन्च किया, अंतरिक्षयान को क्रांतिवृत्त से बाहर मोड़ने के लिए बृहस्पति के गुरुत्वाकर्षण को मुफ्त \"रॉकेट\" के रूप में उपयोग किया, फिर 18 साल तक ध्रुव-से-ध्रुव सूर्य की परिक्रमा की। बड़ा चक्कर सबसे सस्ता रास्ता था। /explore में आप जो भी अन्य गहरे अंतरिक्ष मिशन देखते हैं वह डिस्क में रहा क्योंकि डिस्क वह जगह है जहां गंतव्य हैं — और जहां ईंधन आपको जाने देता है।"
- },
- {
-  "rel": "science/transfers/coplanar-trajectories.json",
-  "at": "diagram_caption",
-  "en": "Solar system layouts collapse to the same plane because the planets formed from a single rotating disk. Departures stay in that plane because plane changes are propellant-prohibitive.",
-  "cur": "सौर मंडल लगभग समतल है क्योंकि ग्रह एक ही घूमती डिस्क से बने। प्रस्थान उसी तल में रहते हैं क्योंकि तल बदलने में बेहद अधिक ईंधन लगता है।"
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "title",
-  "en": "Free-Return Trajectory",
-  "cur": "मुक्त-वापसी प्रक्षेपवक्र"
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "intro_sentence",
-  "en": "A trajectory that swings past the destination and bends gravity itself into a return ticket — no engine burn required.",
-  "cur": "एक प्रक्षेपवक्र जो गंतव्य के पास से गुजरता है और गुरुत्वाकर्षण को स्वयं में वापसी टिकट में मोड़ देता है — कोई इंजन जलना आवश्यक नहीं है।"
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "narrative_101.0",
-  "en": "Imagine you're flying to the Moon. You're worried — what if the engine fails on the way? You'd be stranded, drifting forever. Here's the genius answer: pick a path where, even if every engine on your spacecraft dies the moment you leave Earth orbit, gravity alone will swing you around the Moon and toss you back home automatically. That's a free-return trajectory.",
-  "cur": "कल्पना कीजिए कि आप चंद्रमा की ओर उड़ान भर रहे हैं। आप चिंतित हैं — क्या होगा यदि रास्ते में इंजन खराब हो जाए? आप फंस जाएँगे, हमेशा के लिए भटकते रहेंगे। यहाँ प्रतिभाशाली जवाब है: एक ऐसा पथ चुनिए जहाँ, भले ही पृथ्वी की कक्षा छोड़ने के तुरंत बाद आपके अंतरिक्ष यान पर हर इंजन बंद हो जाए, गुरुत्वाकर्षण अकेले ही आपको चंद्रमा के चारों ओर घुमाएगा और आपको स्वचालित रूप से घर वापस फेंक देगा। यह एक मुक्त-वापसी प्रक्षेपवक्र है।"
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "narrative_101.1",
-  "en": "It's an actual figure-8 in space. You leave Earth, climb out to the Moon, the Moon's gravity bends your path 180 degrees, and you fall back toward Earth, hitting the atmosphere on the rebound. No engine required. The Moon does all the work. The geometry just has to be right.",
-  "cur": "यह अंतरिक्ष में एक वास्तविक आकृति-8 है। आप पृथ्वी छोड़ते हैं, चंद्रमा तक पहुँचते हैं, चंद्रमा का गुरुत्वाकर्षण आपके पथ को 180 डिग्री मोड़ देता है, और आप पृथ्वी की ओर वापस गिरते हैं, वापसी पर वायुमंडल में प्रवेश करते हैं। कोई इंजन आवश्यक नहीं। चंद्रमा सारा काम करता है। ज्यामिति को बस सही होना चाहिए।"
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "narrative_101.2",
-  "en": "Apollo 8 was the first crewed mission to fly one. Apollo 13 — the famous \"Houston, we have a problem\" mission — owes its survival to it. When their main engine became unusable, they rode the free-return home, firing only the lunar module's engine for course corrections — never the crippled main engine. Orrery's default /fly scenario does exactly this for Mars: Earth → Mars flyby → Earth, no mid-course burns required. The cheapest possible Mars trip you can fly with humans on board.",
-  "cur": "Apollo 8 इसे उड़ाने वाला पहला क्रू मिशन था। Apollo 13 — प्रसिद्ध \"Houston, we have a problem\" मिशन — इसके अस्तित्व के कारण ऋणी है। जब उनका मुख्य इंजन अनुपयोगी हो गया, तो वे मुक्त-वापसी पर घर की ओर सवार हुए, केवल चंद्र मॉड्यूल के इंजन को पथ सुधार के लिए चलाया — कभी भी अपंग मुख्य इंजन को नहीं। Orrery के डिफ़ॉल्ट /fly परिदृश्य मंगल के लिए बिल्कुल यही करते हैं: पृथ्वी → मंगल flyby → पृथ्वी, कोई मध्य-पाठ्यक्रम जलना आवश्यक नहीं। सबसे सस्ता संभावित मंगल यात्रा जिसे आप इंसानों के साथ उड़ा सकते हैं।"
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "body_paragraphs.0",
-  "en": "The headline trick: leave Earth, fly past the Moon (or Mars), and let the gravity of that body bend your path back toward Earth. If you got the geometry right, you re-enter Earth's atmosphere on the rebound. The crew never has to fire an engine to come home.",
-  "cur": "मुख्य तरकीब: पृथ्वी छोड़ो, चंद्रमा (या मंगल) के पास से उड़ो, और उस पिंड के गुरुत्वाकर्षण को अपने पथ को पृथ्वी की ओर वापस मोड़ने दो। यदि आपको ज्यामिति सही मिली, तो आप वापसी पर पृथ्वी के वायुमंडल में पुनः प्रवेश करते हैं। दल को घर आने के लिए कभी भी इंजन चलाना नहीं पड़ता।"
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "body_paragraphs.1",
-  "en": "Apollo 8 was the first crewed free-return. Apollo 13 famously fell back on the technique when its service module crippled — riding the free-return home, firing only the lunar module's engine for course corrections, never the crippled main engine. For Mars the geometry is harder — you need a 500-day, two-pass loop — but the concept is the same: flyby geometry doing the work of the return burn.",
-  "cur": "Apollo 8 पहला क्रू मुक्त-वापसी था। Apollo 13 ने प्रसिद्ध रूप से इस तकनीक पर निर्भर किया जब इसका सेवा मॉड्यूल अपंग हो गया — मुक्त-वापसी पर घर की ओर सवार, केवल चंद्र मॉड्यूल के इंजन को पथ सुधार के लिए चलाया, कभी भी अपंग मुख्य इंजन को नहीं। मंगल के लिए ज्यामिति कठिन है — आपको 500-दिन, दो-पास लूप की आवश्यकता है — लेकिन अवधारणा वही है: वापसी जलने के काम को करने वाली flyby ज्यामिति।"
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "body_paragraphs.2",
-  "en": "Orrery's default `/fly` scenario, ORRERY-1, is exactly this: Earth-Mars-Earth on a free-return arc, no mid-course corrections, no orbit-insertion burn at Mars. You watch the spacecraft loop the Sun once, swing past Mars, and come back. It's the cheapest crewed Mars flyby ever proposed.",
-  "cur": "Orrery का डिफ़ॉल्ट `/fly` परिदृश्य, ORRERY-1, बिल्कुल यही है: पृथ्वी-मंगल-पृथ्वी एक मुक्त-वापसी चाप पर, कोई मध्य-पाठ्यक्रम सुधार नहीं, मंगल पर कोई कक्षा-प्रविष्टि जलना नहीं। आप अंतरिक्ष यान को सूर्य के चारों ओर एक बार लूप करते हुए देखते हैं, मंगल के पास स्विंग करते हैं, और वापस आते हैं। यह कभी प्रस्तावित सबसे सस्ता क्रू मंगल flyby है।"
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "diagram_caption",
-  "en": "Earth → Mars flyby → Earth. The Moon (or Mars's) gravity does the U-turn for free.",
-  "cur": "पृथ्वी → मंगल flyby → पृथ्वी. चंद्रमा (या मंगल का) गुरुत्वाकर्षण U-मोड़ को मुफ्त में करता है।"
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "title",
-  "en": "Gravity Assist",
-  "cur": "गुरुत्वाकर्षण सहायता"
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "intro_sentence",
-  "en": "Steal a planet's orbital momentum on a flyby — the closest thing in space to a free lunch.",
-  "cur": "फ्लाईबाई पर किसी ग्रह की कक्षीय गति को चुरा लें — अंतरिक्ष में मुफ्त भोजन के सबसे करीब की चीज़।"
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "narrative_101.0",
-  "en": "Throw a tennis ball at a moving train. The ball bounces off the front and comes back at you faster than you threw it — because the train was moving toward it, and the train's speed got added to the bounce. That, basically, is a gravity assist. The spacecraft is the tennis ball, the planet is the train, and \"bouncing\" is replaced by \"falling past on a hyperbola.\"",
-  "cur": "एक चलती हुई ट्रेन पर टेनिस बॉल फेंकें। बॉल आगे से टकराकर आपकी ओर वापस आती है, उससे भी तेज़ गति से जितनी आपने फेंकी थी — क्योंकि ट्रेन इसकी ओर बढ़ रही थी, और ट्रेन की गति उछाल में जुड़ गई। मूलतः, यही गुरुत्वाकर्षण सहायता है। अंतरिक्ष यान टेनिस बॉल है, ग्रह ट्रेन है, और \"उछलना\" को \"अतिपरवलय पर गिरते हुए गुज़रना\" से बदल दिया गया है।"
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "narrative_101.1",
-  "en": "From the planet's point of view, the spacecraft enters and leaves at exactly the same speed — gravity is conservative, no energy gained or lost. But from the Sun's point of view, the spacecraft inherits some of the planet's orbital motion on the way out and arrives somewhere new with extra (or less) speed. It's not a violation of physics; the planet pays for it by slowing down — by an amount way too tiny to detect.",
-  "cur": "ग्रह के दृष्टिकोण से, अंतरिक्ष यान बिल्कुल उसी गति से प्रवेश करता है और निकलता है — गुरुत्वाकर्षण संरक्षी है, कोई ऊर्जा प्राप्त या खोई नहीं जाती। लेकिन सूर्य के दृष्टिकोण से, अंतरिक्ष यान बाहर निकलते समय ग्रह की कक्षीय गति का कुछ हिस्सा विरासत में पाता है और अतिरिक्त (या कम) गति के साथ कहीं नई जगह पहुंचता है। यह भौतिकी का उल्लंघन नहीं है; ग्रह इसके लिए धीमा होकर भुगतान करता है — एक ऐसी मात्रा से जो पता लगाने के लिए बहुत छोटी है।"
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "narrative_101.2",
-  "en": "This is the trick that built the Voyager grand tour. Without gravity assists, you can't reach Saturn, let alone Uranus or Neptune, with chemical rockets — the fuel cost is astronomical. Voyager 2 chained four assists in a row: Jupiter, Saturn, Uranus, Neptune, all in one trip. Cassini bounced off Venus twice and Earth once on the way to Saturn. The outer solar system is only accessible because of this trick.",
-  "cur": "यही वह चाल है जिसने Voyager भव्य यात्रा का निर्माण किया। गुरुत्वाकर्षण सहायता के बिना, आप शनि तक नहीं पहुंच सकते, अरुण या वरुण की तो बात ही छोड़ दें, रासायनिक रॉकेटों के साथ — ईंधन की लागत खगोलीय है। Voyager 2 ने एक पंक्ति में चार सहायताओं को जंजीरबद्ध किया: बृहस्पति, शनि, अरुण, वरुण, सभी एक यात्रा में। Cassini ने शनि के रास्ते में दो बार शुक्र से और एक बार पृथ्वी से उछाल ली। बाहरी सौर मंडल केवल इस चाल की वजह से सुलभ है।"
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "body_paragraphs.0",
-  "en": "Approach a moving planet from behind on a hyperbolic trajectory. The planet's gravity bends your path, you swing past, and you leave with the same speed relative to the planet — but the planet was moving the whole time, and you carry that motion with you. Net result: you exit with more speed relative to the Sun than you arrived with. The planet, in exchange, slows by an immeasurably tiny amount.",
-  "cur": "एक चलते हुए ग्रह के पीछे से अतिपरवलय प्रक्षेपवक्र पर पहुंचें। ग्रह का गुरुत्वाकर्षण आपके पथ को मोड़ता है, आप झूलते हुए गुजरते हैं, और आप ग्रह के सापेक्ष उसी गति से निकलते हैं — लेकिन ग्रह पूरे समय चल रहा था, और आप उस गति को अपने साथ ले जाते हैं। शुद्ध परिणाम: आप सूर्य के सापेक्ष जितनी गति से आए थे उससे अधिक गति से बाहर निकलते हैं। बदले में, ग्रह एक अत्यंत सूक्ष्म मात्रा से धीमा हो जाता है।"
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "body_paragraphs.1",
-  "en": "Reverse the geometry — approach from in front — and you slow down. Pioneer 11 used Jupiter to push toward Saturn. Voyager 2 chained Jupiter, Saturn, Uranus, Neptune in one of the most exquisite gravity-assist tours ever flown. Cassini bounced off Venus twice and Earth once before reaching Saturn. New Horizons hit Jupiter to shave three years off the trip to Pluto.",
-  "cur": "ज्यामिति को उलट दें — आगे से पहुंचें — और आप धीमे हो जाते हैं। Pioneer 11 ने शनि की ओर धकेलने के लिए बृहस्पति का उपयोग किया। Voyager 2 ने अब तक की सबसे उत्कृष्ट गुरुत्वाकर्षण-सहायता यात्राओं में से एक में बृहस्पति, शनि, अरुण, वरुण को जंजीरबद्ध किया। Cassini ने शनि तक पहुंचने से पहले शुक्र से दो बार और पृथ्वी से एक बार उछाल ली। New Horizons ने यम की यात्रा से तीन साल कम करने के लिए बृहस्पति को मारा।"
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "body_paragraphs.2",
-  "en": "Without gravity assists, half the missions in Orrery's catalogue couldn't have flown. The outer planets are simply too far for direct trajectories with chemical rockets — their costs in `∆v` would exceed what any rocket can deliver. Gravity assists turn that arithmetic from impossible into hard but doable.",
-  "cur": "गुरुत्वाकर्षण सहायता के बिना, Orrery की सूची में आधे मिशन नहीं उड़ सकते थे। बाहरी ग्रह रासायनिक रॉकेटों के साथ सीधे प्रक्षेपवक्र के लिए बहुत दूर हैं — `∆v` में उनकी लागत उससे अधिक होगी जो कोई भी रॉकेट वितरित कर सकता है। गुरुत्वाकर्षण सहायता उस अंकगणित को असंभव से कठिन लेकिन करने योग्य में बदल देती है।"
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "diagram_caption",
-  "en": "Spacecraft enters and exits the planet's frame at the same speed; the planet's motion adds heliocentric velocity.",
-  "cur": "अंतरिक्ष यान ग्रह के फ्रेम में उसी गति से प्रवेश करता है और निकलता है; ग्रह की गति सूर्य-केंद्रित वेग जोड़ती है।"
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "intro_sentence",
-  "en": "The cheapest two-burn trip between two coplanar circular orbits — and the baseline mission planners measure everything else against.",
-  "cur": "दो समतलीय वृत्ताकार कक्षाओं के बीच सबसे सस्ती दो-जलन यात्रा — और वह आधारभूत लक्ष्य जिसके विरुद्ध मिशन योजनाकार सब कुछ मापते हैं।"
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "narrative_101.0",
-  "en": "You're in Earth's orbit. You want to be in Mars's orbit. Both orbits are roughly circles around the Sun. How do you get from one to the other with as little fuel as possible?",
-  "cur": "आप पृथ्वी की कक्षा में हैं। आप मंगल की कक्षा में जाना चाहते हैं। दोनों कक्षाएँ सूर्य के चारों ओर मोटे तौर पर वृत्त हैं। आप यथासंभव कम ईंधन के साथ एक से दूसरे तक कैसे पहुँचते हैं?"
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "narrative_101.1",
-  "en": "The answer, worked out by Walter Hohmann in 1925, is shockingly elegant. Find an ellipse that just barely touches Earth's orbit on one side and just barely touches Mars's orbit on the other. Burn your engine briefly to leave Earth and join that ellipse. Coast for about 8.5 months without firing the engine at all — gravity does the work. When you arrive at the far end, burn again to settle into Mars's orbit. Two burns, total. Done.",
-  "cur": "उत्तर, जिसे वाल्टर होमान ने 1925 में व्यावहारिक किया, आश्चर्यजनक रूप से सुरुचिपूर्ण है। एक दीर्घवृत्त खोजें जो एक तरफ़ पृथ्वी की कक्षा को मुश्किल से छूता है और दूसरी तरफ़ मंगल की कक्षा को मुश्किल से छूता है। पृथ्वी को छोड़ने और उस दीर्घवृत्त में शामिल होने के लिए संक्षेप में अपना इंजन जलाएँ। लगभग 8.5 महीने के लिए इंजन को बिल्कुल भी फायर किए बिना तटस्थ रहें — गुरुत्वाकर्षण काम करता है। जब आप दूर के छोर पर पहुँचते हैं, तो फिर से जलाएँ मंगल की कक्षा में बसने के लिए। कुल दो जलन। हो गया।"
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "narrative_101.2",
-  "en": "It's the cheapest possible trip — but it's also the slowest. The 8.5-month wait is non-negotiable; physics sets the timer. Want to go faster? You can, but you pay for it: a steeper ellipse, a faster crossing, a much bigger braking burn at the other end. This is the trade you'll see playing out across every porkchop plot in /plan.",
-  "cur": "यह सबसे सस्ती संभावित यात्रा है — लेकिन यह सबसे धीमी भी है। 8.5 महीने की प्रतीक्षा अनिवार्य है; भौतिकी समय निर्धारित करती है। तेज़ी से जाना चाहते हैं? आप कर सकते हैं, लेकिन आपको इसके लिए भुगतान करना पड़ेगा: एक तीव्रतर दीर्घवृत्त, तेज़ पार करना, दूसरे छोर पर एक बहुत बड़ी ब्रेकिंग जलन। यह वही व्यापार है जो आप /plan में प्रत्येक पोर्कचॉप प्लॉट में खेलता हुआ देखेंगे।"
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "body_paragraphs.0",
-  "en": "Imagine you're in a circular orbit around the Sun and you want to reach a higher one — say Earth-to-Mars. The cheapest way is a Hohmann transfer: an ellipse whose perihelion grazes your starting orbit and whose aphelion grazes the destination. Two engine burns get you there. One at perihelion to leave Earth's orbit and enter the ellipse. One at aphelion to circularise into the destination orbit.",
-  "cur": "कल्पना कीजिए कि आप सूर्य के चारों ओर एक वृत्ताकार कक्षा में हैं और आप एक उच्चतर कक्षा तक पहुँचना चाहते हैं — कहिए पृथ्वी से मंगल तक। सबसे सस्ता तरीका है Hohmann transfer: एक दीर्घवृत्त जिसका perihelion आपकी आरंभिक कक्षा को छूता है और जिसका aphelion गंतव्य को छूता है। दो इंजन जलाव से आप वहाँ पहुँच जाते हैं। एक perihelion पर पृथ्वी की कक्षा को छोड़ने और दीर्घवृत्त में प्रवेश करने के लिए। एक aphelion पर गंतव्य कक्षा में वृत्ताकार बनाने के लिए।"
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "body_paragraphs.1",
-  "en": "It's the cheapest fixed-impulse path, but it's also the slowest. Earth-to-Mars takes about 259 days on a Hohmann. Want to go faster? Burn harder, fly a stretched ellipse with higher perihelion velocity. The arrival V∞ goes up, the entry burn at the destination is bigger, your total ∆v cost climbs steeply.",
-  "cur": "यह सबसे सस्ता fixed-impulse पथ है, लेकिन यह सबसे धीमा भी है। पृथ्वी से मंगल तक Hohmann पर लगभग 259 दिन लगते हैं। और तेजी से जाना चाहते हैं? अधिक जोर से जलाव करें, एक खिंची हुई दीर्घवृत्त उड़ान भरें जिसका perihelion वेग अधिक हो। आने वाली V∞ बढ़ जाती है, गंतव्य पर प्रवेश जलाव बड़ी होती है, आपकी कुल ∆v लागत में तीव्रता से वृद्धि होती है।"
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "body_paragraphs.2",
-  "en": "On Orrery's `/plan` porkchop you'll see this directly: there's a quiet basin of cool teal cells around the natural Hohmann window, every 26 months for Mars, and increasingly costly contours as you push toward shorter transit times.",
-  "cur": "Orrery के `/plan` पोर्कचॉप पर आप इसे सीधे देखेंगे: प्राकृतिक Hohmann विंडो के चारों ओर शांत फ़िरोज़ी कक्षों का एक बेसिन है, मंगल के लिए हर 26 महीने, और छोटे पारगमन समय की ओर धकेलने के साथ-साथ तेज़ी से बढ़ती महंगे समोच्च।"
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "diagram_caption",
-  "en": "Earth orbit (inner) · Mars orbit (outer) · Hohmann transfer ellipse with perihelion at Earth, aphelion at Mars.",
-  "cur": "पृथ्वी की कक्षा (आंतरिक) · मंगल की कक्षा (बाहरी) · होमान स्थानांतरण दीर्घवृत्त पृथ्वी पर पेरिहेलियन के साथ, मंगल पर अपहेलियन के साथ।"
- },
- {
-  "rel": "science/transfers/lambert-problem.json",
-  "at": "intro_sentence",
-  "en": "Given two positions and a transit time, find the orbit that connects them — the central problem of every interplanetary trajectory.",
-  "cur": "दो स्थितियाँ और एक संक्रमण समय दिया गया है, वह कक्षा खोजें जो उन्हें जोड़ती है — हर अंतरग्रहीय प्रक्षेपवक्र की केंद्रीय समस्या।"
- },
- {
-  "rel": "science/transfers/lambert-problem.json",
-  "at": "narrative_101.0",
-  "en": "The Hohmann transfer is the cheapest path from one orbit to another, but most missions don't actually fly Hohmanns. They want to leave on a specific date — say, when a particular rocket is ready, or when a particular launch pad is open — and they want to arrive on a specific date — say, in time for a Mars dust storm to subside. Hohmann doesn't let you pick. Lambert does.",
-  "cur": "Hohmann स्थानांतरण एक कक्षा से दूसरी कक्षा तक का सबसे सस्ता मार्ग है, लेकिन अधिकांश मिशन वास्तव में Hohmann नहीं उड़ाते। वे एक विशिष्ट तारीख पर प्रस्थान करना चाहते हैं — मान लीजिए, जब कोई विशेष रॉकेट तैयार हो, या जब कोई विशेष लॉन्च पैड खुला हो — और वे एक विशिष्ट तारीख पर पहुंचना चाहते हैं — मान लीजिए, मंगल पर धूल के तूफान के शांत होने के समय में। Hohmann आपको चुनने नहीं देता। Lambert देता है।"
- },
- {
-  "rel": "science/transfers/lambert-problem.json",
-  "at": "narrative_101.1",
-  "en": "Lambert's question is simpler-sounding than its math: I'm at point A, I want to be at point B, and I want to take exactly this many days getting there. What orbit should I fly? Lambert wrote down the answer in 1761 — there's exactly one ellipse (or sometimes two, depending on which way around you go) that connects two points in a given time.",
-  "cur": "Lambert का प्रश्न इसके गणित से सरल-ध्वनि वाला है: मैं बिंदु A पर हूँ, मैं बिंदु B पर होना चाहता हूँ, और मैं वहाँ पहुंचने में बिल्कुल इतने दिन लेना चाहता हूँ। मुझे कौन सी कक्षा उड़ानी चाहिए? Lambert ने 1761 में उत्तर लिख दिया था — बिल्कुल एक दीर्घवृत्त (या कभी-कभी दो, इस पर निर्भर करता है कि आप किस तरफ से घूमते हैं) है जो दो बिंदुओं को एक निश्चित समय में जोड़ता है।"
- },
- {
-  "rel": "science/transfers/lambert-problem.json",
-  "at": "narrative_101.2",
-  "en": "This is the heart of every porkchop plot you'll see. Each pixel on the porkchop in /plan is one Lambert problem: 'leave Earth on date X, reach Mars on date Y — what does it cost?' The colour is the answer. Solve it ten thousand times in parallel and you get the whole map at once. Orrery does this in a Web Worker so the UI doesn't freeze while it's thinking.",
-  "cur": "यह हर porkchop प्लॉट का हृदय है जो आप देखेंगे। /plan में porkchop पर प्रत्येक पिक्सेल एक Lambert समस्या है: 'तारीख X पर पृथ्वी छोड़ें, तारीख Y पर मंगल पहुंचें — इसकी लागत क्या है?' रंग उत्तर है। इसे समानांतर में दस हजार बार हल करें और आपको पूरा मानचित्र एक बार में मिल जाता है। Orrery इसे Web Worker में करता है ताकि UI सोचते समय फ्रीज न हो।"
- },
- {
-  "rel": "science/transfers/lambert-problem.json",
-  "at": "body_paragraphs.0",
-  "en": "Lambert's problem asks: I'm here, I want to be there, and I have this much time. What ellipse should I fly? Two position vectors and a time of flight, and the equation produces the unique transfer orbit (or two — there's a long way and a short way around the central body).",
-  "cur": "Lambert की समस्या पूछती है: मैं यहाँ हूँ, मैं वहाँ होना चाहता हूँ, और मेरे पास इतना समय है। मुझे कौन सा दीर्घवृत्त उड़ाना चाहिए? दो स्थिति सदिश और एक उड़ान समय, और समीकरण अद्वितीय स्थानांतरण कक्षा उत्पन्न करता है (या दो — केंद्रीय पिंड के चारों ओर एक लंबा रास्ता और एक छोटा रास्ता है)।"
- },
- {
-  "rel": "science/transfers/lambert-problem.json",
-  "at": "body_paragraphs.1",
-  "en": "The Hohmann transfer is one specific Lambert solution: positions at opposite apsides, time of flight equal to half the transfer ellipse's period. Pull either knob — different positions, different time — and you get a different ellipse. Tighter time, more eccentric ellipse, higher departure energy. The math doesn't change; only the boundary conditions.",
-  "cur": "Hohmann स्थानांतरण एक विशिष्ट Lambert समाधान है: विपरीत apsides पर स्थितियाँ, उड़ान समय स्थानांतरण दीर्घवृत्त की अवधि के आधे के बराबर। किसी भी घुंडी को खींचें — भिन्न स्थितियाँ, भिन्न समय — और आपको एक अलग दीर्घवृत्त मिलता है। कम समय, अधिक उत्केंद्री दीर्घवृत्त, उच्च प्रस्थान ऊर्जा। गणित नहीं बदलता; केवल सीमा शर्तें बदलती हैं।"
- },
- {
-  "rel": "science/transfers/lambert-problem.json",
-  "at": "body_paragraphs.2",
-  "en": "Orrery solves Lambert's problem in a Web Worker every time you hover a porkchop cell on `/plan`. Each cell asks: 'leave Earth on date X, arrive at Mars on date Y — what's the ∆v cost?' The colour you see is the answer to that question, computed once per pixel.",
-  "cur": "Orrery हर बार Lambert की समस्या को Web Worker में हल करता है जब आप `/plan` पर एक porkchop सेल को होवर करते हैं। प्रत्येक सेल पूछता है: 'तारीख X पर पृथ्वी छोड़ें, तारीख Y पर मंगल पर पहुंचें — ∆v लागत क्या है?' जो रंग आप देखते हैं वह उस प्रश्न का उत्तर है, प्रति पिक्सेल एक बार गणना किया गया।"
- },
- {
-  "rel": "science/transfers/lambert-problem.json",
-  "at": "diagram_caption",
-  "en": "Two position vectors r₁ and r₂; the Lambert solver finds the unique transfer ellipse joining them in time-of-flight.",
-  "cur": "दो स्थिति सदिश r₁ और r₂; Lambert समाधानकर्ता उड़ान-समय में उन्हें जोड़ने वाला अद्वितीय स्थानांतरण दीर्घवृत्त खोजता है।"
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "title",
-  "en": "Patched Conics",
-  "cur": "जोड़े गए शंकु-परिच्छेद"
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "intro_sentence",
-  "en": "Pretend gravity is one body at a time — the approximation that turns the unsolvable three-body problem into a chain of two-body Kepler problems you can actually solve.",
-  "cur": "एक बार में एक पिंड का गुरुत्वाकर्षण मानिए — यह सन्निकटन अनसुलझी तीन-पिंड समस्या को दो-पिंड केप्लर समस्याओं की एक श्रृंखला में बदल देता है जिसे आप वास्तव में हल कर सकते हैं।"
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "narrative_101.0",
-  "en": "Here's a dirty secret of orbital mechanics: the actual full physics — every body in the solar system pulling on every other — is mathematically unsolvable in any clean way. We have NO closed-form solution to the three-body problem, let alone the dozens-of-bodies real version. So how do mission planners get anything done?",
-  "cur": "यहाँ कक्षीय यांत्रिकी का एक गंदा रहस्य है: वास्तविक पूर्ण भौतिकी — सौर मंडल का हर पिंड हर दूसरे पिंड को खींच रहा है — गणितीय रूप से किसी भी स्वच्छ तरीके से हल करने योग्य नहीं है। हमारे पास तीन-पिंड समस्या का कोई संवृत-रूप समाधान नहीं है, दर्जनों-पिंडों वाले वास्तविक संस्करण की तो बात ही छोड़ दें। तो मिशन योजनाकार कुछ भी कैसे करते हैं?"
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "narrative_101.1",
-  "en": "They cheat. They pretend that, at any moment, only ONE body's gravity matters. Near Earth, only Earth pulls. Out in the cruise, only the Sun. Near Mars, only Mars. Each of those regions is called a sphere of influence, and inside each one the spacecraft flies a clean Keplerian conic. When the spacecraft crosses a boundary, you switch coordinate systems and start a new conic. Patched together, they form the trajectory. That's patched conics.",
-  "cur": "वे धोखा देते हैं। वे यह दिखावा करते हैं कि किसी भी क्षण केवल एक पिंड का गुरुत्वाकर्षण मायने रखता है। पृथ्वी के पास, केवल पृथ्वी खींचती है। क्रूज़ में बाहर, केवल सूर्य। मंगल के पास, केवल मंगल। इनमें से प्रत्येक क्षेत्र को प्रभाव का गोला कहा जाता है, और प्रत्येक के अंदर अंतरिक्ष यान एक स्वच्छ Keplerian शंकु उड़ान भरता है। जब अंतरिक्ष यान एक सीमा पार करता है, तो आप निर्देशांक प्रणाली बदलते हैं और एक नया शंकु शुरू करते हैं। एक साथ जोड़े जाने पर, वे प्रक्षेपवक्र बनाते हैं। यही पैच्ड कोनिक्स है।"
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "narrative_101.2",
-  "en": "The math comes out a few percent off the truth — small enough that real missions plan with it as their first cut, then numerically refine for the launch. It's also small enough that Orrery can run all of this in your browser, in a Web Worker, fast enough to redraw the whole porkchop when you scrub the launch year. The whole simulator is built on this trick.",
-  "cur": "गणित सच्चाई से कुछ प्रतिशत दूर निकलती है — इतनी छोटी कि वास्तविक मिशन इसके साथ अपनी पहली कटौती के रूप में योजना बनाते हैं, फिर प्रक्षेपण के लिए संख्यात्मक रूप से परिष्कृत करते हैं। यह इतना छोटा भी है कि Orrery यह सब आपके ब्राउज़र में, एक Web Worker में चला सकता है, जब आप प्रक्षेपण वर्ष को स्क्रब करते हैं तो पूरे porkchop को फिर से खींचने के लिए पर्याप्त तेज़। पूरा सिम्युलेटर इसी ट्रिक पर बना है।"
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "body_paragraphs.0",
-  "en": "Real gravity is messy. A spacecraft cruising between Earth and Mars feels Earth's gravity, the Sun's gravity, Mars's gravity, plus everything else, all at once. The full math (the n-body problem) has no closed-form solution — only numerical integration. That's slow, fragile, hard to plan with.",
-  "cur": "वास्तविक गुरुत्वाकर्षण गड़बड़ है। पृथ्वी और मंगल के बीच यात्रा करने वाला एक अंतरिक्ष यान पृथ्वी के गुरुत्वाकर्षण, सूर्य के गुरुत्वाकर्षण, मंगल के गुरुत्वाकर्षण, साथ ही बाकी सब कुछ, सब एक साथ महसूस करता है। पूर्ण गणित (n-पिंड समस्या) का कोई संवृत-रूप समाधान नहीं है — केवल संख्यात्मक समाकलन। यह धीमा, नाज़ुक, योजना बनाने में कठिन है।"
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "body_paragraphs.1",
-  "en": "Patched conics is the working compromise: declare a sphere of influence around each body. Inside Earth's sphere, only Earth's gravity matters; you fly a Keplerian arc around Earth. Cross the boundary into the heliocentric region, switch to a Sun-centred Kepler arc. Cross into Mars's sphere, switch again. Three Kepler problems, patched together at the boundaries.",
-  "cur": "पैच्ड कोनिक्स कार्यशील समझौता है: प्रत्येक पिंड के चारों ओर प्रभाव का एक गोला घोषित करें। पृथ्वी के गोले के अंदर, केवल पृथ्वी का गुरुत्वाकर्षण मायने रखता है; आप पृथ्वी के चारों ओर एक Keplerian चाप उड़ान भरते हैं। सौर-केंद्रित क्षेत्र में सीमा पार करें, सूर्य-केंद्रित केप्लर चाप पर स्विच करें। मंगल के गोले में प्रवेश करें, फिर से स्विच करें। तीन केप्लर समस्याएं, सीमाओं पर एक साथ जोड़ी गई हैं।"
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "body_paragraphs.2",
-  "en": "It's wrong but useful. Errors at boundaries are small — a few percent of ∆v at most for cislunar work, less for heliocentric — and the math becomes tractable enough to fit in a Web Worker. Orrery's `/plan` porkchops are computed this way; so are the trajectories on `/fly`. Real flight planning at NASA uses the same approximation as the first cut, then refines numerically before launch.",
-  "cur": "यह गलत है लेकिन उपयोगी है। सीमाओं पर त्रुटियाँ छोटी हैं — चंद्र-पृथ्वी कार्य के लिए अधिकतम कुछ प्रतिशत ∆v, सौर-केंद्रित के लिए कम — और गणित एक Web Worker में फिट होने के लिए पर्याप्त सुगम हो जाती है। Orrery के `/plan` porkchops इस तरह से गणना किए जाते हैं; `/fly` पर प्रक्षेपवक्र भी। NASA में वास्तविक उड़ान योजना पहली कटौती के रूप में उसी सन्निकटन का उपयोग करती है, फिर प्रक्षेपण से पहले संख्यात्मक रूप से परिष्कृत करती है।"
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "diagram_caption",
-  "en": "Three frames, three conics: Earth-centred → heliocentric → Mars-centred, patched at sphere-of-influence boundaries.",
-  "cur": "तीन फ्रेम, तीन शंकु: पृथ्वी-केंद्रित → सौर-केंद्रित → मंगल-केंद्रित, प्रभाव के गोले की सीमाओं पर जोड़े गए।"
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "title",
-  "en": "Transfer Ellipse",
-  "cur": "स्थानांतरण दीर्घवृत्त"
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "intro_sentence",
-  "en": "The Keplerian arc that carries a spacecraft from one orbit to another — Sun at one focus, just like every other orbit.",
-  "cur": "Keplerian चाप जो अंतरिक्ष यान को एक कक्षा से दूसरी कक्षा तक ले जाता है — एक नाभि पर सूर्य, बिल्कुल हर दूसरी कक्षा की तरह।"
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "narrative_101.0",
-  "en": "Mission planning sounds like it's about engines and rockets. It's mostly about choosing an ellipse. Every interplanetary cruise — Apollo to the Moon, Voyager to Neptune, Perseverance to Mars — is just a spacecraft riding an elliptical orbit between where it started and where it's going. The fancy word for that ellipse is the transfer orbit.",
-  "cur": "मिशन योजना इंजन और रॉकेट के बारे में लगती है। यह ज्यादातर एक दीर्घवृत्त चुनने के बारे में है। हर अंतरग्रहीय यात्रा — Apollo से चंद्रमा तक, Voyager से वरुण तक, Perseverance से मंगल तक — बस एक अंतरिक्ष यान है जो दीर्घवृत्ताकार कक्षा पर सवार होकर जहाँ से शुरू हुआ और जहाँ जा रहा है, के बीच यात्रा कर रहा है। उस दीर्घवृत्त के लिए फैंसी शब्द स्थानांतरण कक्षा है।"
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "narrative_101.1",
-  "en": "It plays by the same rules as every other Keplerian orbit. The Sun sits at one focus. The spacecraft moves slowly at the far end and quickly at the close end. Vis-viva still works to compute its speed. Kepler's third law still gives you the time-of-flight from the size. Nothing exotic.",
-  "cur": "यह हर दूसरी Keplerian कक्षा के समान नियमों का पालन करता है। सूर्य एक नाभि पर बैठता है। अंतरिक्ष यान दूर के छोर पर धीरे और निकट के छोर पर तेजी से चलता है। Vis-viva अभी भी इसकी गति की गणना करने के लिए काम करता है। केप्लर का तीसरा नियम अभी भी आकार से उड़ान-समय देता है। कुछ भी अजीब नहीं।"
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "narrative_101.2",
-  "en": "The only thing that makes a transfer ellipse different from a planet's orbit is that the spacecraft only flies HALF of it. It hops on at one end, rides to the other, and gets off. That's why the ∆v budget always has two big burns — one to enter the ellipse, one to leave it. The middle bit, the eight-month coast, costs absolutely nothing.",
-  "cur": "एकमात्र चीज जो स्थानांतरण दीर्घवृत्त को किसी ग्रह की कक्षा से अलग बनाती है वह यह है कि अंतरिक्ष यान इसके केवल आधे हिस्से में उड़ता है। यह एक छोर पर चढ़ता है, दूसरे तक जाता है, और उतर जाता है। इसीलिए ∆v बजट में हमेशा दो बड़े बर्न होते हैं — एक दीर्घवृत्त में प्रवेश करने के लिए, एक इसे छोड़ने के लिए। बीच का हिस्सा, आठ महीने की तटस्थ उड़ान, बिल्कुल भी खर्च नहीं करती।"
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "body_paragraphs.0",
-  "en": "Once you've burned out of Earth's orbit, you're on an ellipse around the Sun. That ellipse is the transfer orbit, and it has all the same properties as any other: semi-major axis, eccentricity, perihelion, aphelion. The fact that you're going somewhere doesn't change the geometry — gravity doesn't care about your destination.",
-  "cur": "एक बार जब आप पृथ्वी की कक्षा से बाहर निकल जाते हैं, तो आप सूर्य के चारों ओर एक दीर्घवृत्त पर होते हैं। वह दीर्घवृत्त स्थानांतरण कक्षा है, और इसमें किसी अन्य कक्षा के समान सभी गुण हैं: अर्ध-दीर्घ अक्ष, उत्केंद्रता, उपसौर, अपसौर। यह तथ्य कि आप कहीं जा रहे हैं, ज्यामिति को नहीं बदलता — गुरुत्वाकर्षण को आपके गंतव्य की परवाह नहीं है।"
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "body_paragraphs.1",
-  "en": "Two anchors define a transfer ellipse: where you started (perihelion if you're going outward) and where you'll end up (aphelion). The semi-major axis is the average of those two radii. Tweak either anchor and the whole ellipse reshapes — go further out, the ellipse stretches, the trip gets longer.",
-  "cur": "दो एंकर स्थानांतरण दीर्घवृत्त को परिभाषित करते हैं: जहाँ से आपने शुरुआत की (उपसौर अगर आप बाहर की ओर जा रहे हैं) और जहाँ आप समाप्त होंगे (अपसौर)। अर्ध-दीर्घ अक्ष उन दोनों त्रिज्याओं का औसत है। किसी भी एंकर को ट्वीक करें और पूरा दीर्घवृत्त फिर से आकार लेता है — और बाहर जाएँ, दीर्घवृत्त खिंचता है, यात्रा लंबी हो जाती है।"
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "body_paragraphs.2",
-  "en": "On Orrery's `/fly` HUD you'll see the spacecraft trace this ellipse in real time. The transfer arc on screen is a visual rendering of the same conic that the math says it is — Sun at one focus, perihelion behind you, aphelion ahead.",
-  "cur": "Orrery के `/fly` HUD पर आप अंतरिक्ष यान को वास्तविक समय में इस दीर्घवृत्त का पता लगाते हुए देखेंगे। स्क्रीन पर स्थानांतरण चाप उसी शंकु का एक दृश्य प्रतिपादन है जो गणित कहता है कि यह है — एक नाभि पर सूर्य, आपके पीछे उपसौर, आगे अपसौर।"
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "diagram_caption",
-  "en": "Two coplanar orbits (departure inner, destination outer) connected by a transfer ellipse with Sun at one focus.",
-  "cur": "दो समतलीय कक्षाएँ (प्रस्थान आंतरिक, गंतव्य बाहरी) जो एक स्थानांतरण दीर्घवृत्त द्वारा जुड़ी हैं जिसकी एक नाभि पर सूर्य है।"
- }
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "narrative_101.0",
+    "en": "Stand at the centre of the solar system and look at the planets and you see a pancake, not a sphere. Mercury, Venus, Earth, Mars, Jupiter, Saturn — they all orbit within about 7° of the same flat plane (the ecliptic). The planets formed from a single rotating gas-and-dust cloud, and that rotation collapsed everything to a thin disk. Everything since has stayed in that disk.",
+    "cur": "सौर मंडल के केंद्र में खड़े हो जाओ और ग्रहों को देखो — तुम्हें एक पैनकेक दिखेगा, गोला नहीं। बुध, शुक्र, पृथ्वी, मंगल, बृहस्पति, शनि — सभी एक ही समतल विमान (क्रांतिवृत्त) के लगभग 7° के भीतर परिक्रमा करते हैं। ग्रह एक ही घूमते गैस-और-धूल बादल से बने थे, और उस घूर्णन ने सब कुछ एक पतली डिस्क में ढह दिया। तब से सब कुछ उस डिस्क में रहा है।"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "narrative_101.1",
+    "en": "Now imagine planning a trip to Mars. The cheapest way to get there is a long curved arc that goes around the Sun and arrives at Mars's orbit at the same moment Mars is there. The cheapest arc lies in the same plane that Earth and Mars share — the ecliptic. Leaving the disk to take a 'detour out and over' costs propellant the spacecraft cannot afford.",
+    "cur": "अब मंगल की यात्रा की योजना बनाने की कल्पना करो। वहां जाने का सबसे सस्ता तरीका एक लंबा घुमावदार चाप है जो सूर्य के चारों ओर जाता है और मंगल की कक्षा में उसी क्षण पहुंचता है जब मंगल वहां है। सबसे सस्ता चाप उसी विमान में है जो पृथ्वी और मंगल साझा करते हैं — क्रांतिवृत्त। डिस्क छोड़कर \"बाहर और ऊपर मोड़\" लेना ईंधन खर्च करता है जो अंतरिक्षयान वहन नहीं कर सकता।"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "narrative_101.2",
+    "en": "So mission planners don't fight the disk. They wait for the orbital geometry to line up (that's what 'launch window' means), point the rocket along the ecliptic, and let the planets do the steering. The result, when you look at every spacecraft trajectory we have, is a pile of curves all hugging the same plane — like watching cars race on a flat track.",
+    "cur": "इसलिए मिशन योजनाकार डिस्क से नहीं लड़ते। वे तब तक प्रतीक्षा करते हैं जब तक कि कक्षीय ज्यामिति संरेखित न हो जाए (इसका मतलब है \"लॉन्च विंडो\"), रॉकेट को क्रांतिवृत्त के साथ इंगित करते हैं, और ग्रहों को संचालन का प्रबंधन करने देते हैं। परिणाम, जब आप हमारे पास हर अंतरिक्षयान प्रक्षेपपथ को देखते हैं, एक ही विमान को गले लगाने वाले वक्रों का ढेर है — जैसे कारों को एक समतल ट्रैक पर दौड़ते देखना।"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "body_paragraphs.0",
+    "en": "The price tag for leaving the plane is brutal. Changing a heliocentric trajectory's inclination by even 1° at Earth's orbital speed (~30 km/s) costs roughly 0.5 km/s of `∆v`. Doing the 80° plane change Ulysses needed — to fly over the Sun's poles — would have cost ~38 km/s if done with chemical thrust. No real rocket can deliver that. So engineers don't pay for plane changes; they design around them.",
+    "cur": "विमान छोड़ने की कीमत क्रूर है। पृथ्वी की कक्षीय गति (~30 किमी/से) पर सिर्फ 1° से सूर्यकेंद्रित प्रक्षेपपथ का झुकाव बदलने में लगभग 0.5 किमी/से `∆v` खर्च होता है। Ulysses को आवश्यक 80° विमान परिवर्तन — सूर्य के ध्रुवों पर उड़ने के लिए — रासायनिक रूप से किया जाता तो ~38 किमी/से खर्च होता। कोई वास्तविक रॉकेट यह वितरित नहीं कर सकता। इसलिए इंजीनियर विमान परिवर्तनों के लिए भुगतान नहीं करते; वे उनके आसपास डिज़ाइन करते हैं।"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "body_paragraphs.1",
+    "en": "Gravity assists obey the same constraint. When a spacecraft slingshots off Jupiter or Venus, the planet sits in the ecliptic, so the deflection vector — which always passes through the planet — keeps the trajectory near-ecliptic too. Cassini's six-year cruise looks like a 2D doodle in the /explore view because every assist body it visited was 2D-flat.",
+    "cur": "गुरुत्व सहायताएं उसी बाधा का पालन करती हैं। जब एक अंतरिक्षयान बृहस्पति या शुक्र के पास घूमता है, ग्रह क्रांतिवृत्त में बैठता है, इसलिए विक्षेपण वेक्टर — जो हमेशा ग्रह से होकर गुजरता है — प्रक्षेपपथ को भी क्रांतिवृत्त के पास रखता है। कैसिनी की छह साल की यात्रा /explore दृश्य में 2D डूडल जैसी दिखती है क्योंकि हर सहायक निकाय जो उसने दौरा किया वह 2D-फ्लैट था।"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "body_paragraphs.2",
+    "en": "Ulysses is the only spacecraft that ever broke the disk on purpose. Its science target was the Sun's poles, but reaching them required ~80° of inclination — chemically impossible. So the mission did the only thing that worked: launched outward to Jupiter, used Jupiter's gravity as a free 'rocket' to deflect the spacecraft out of the ecliptic, then orbited the Sun pole-to-pole for 18 years. The big detour was the cheapest path. Every other deep-space mission you see in /explore stayed in the disk because the disk is where the destinations are — and where the propellant lets you go.",
+    "cur": "Ulysses एकमात्र अंतरिक्षयान है जिसने जानबूझकर डिस्क तोड़ी। इसका विज्ञान लक्ष्य सूर्य के ध्रुव थे, लेकिन उन तक पहुंचने के लिए ~80° झुकाव की आवश्यकता थी — रासायनिक रूप से असंभव। इसलिए मिशन ने केवल वही किया जो काम किया: बृहस्पति की ओर बाहर लॉन्च किया, अंतरिक्षयान को क्रांतिवृत्त से बाहर मोड़ने के लिए बृहस्पति के गुरुत्वाकर्षण को मुफ्त \"रॉकेट\" के रूप में उपयोग किया, फिर 18 साल तक ध्रुव-से-ध्रुव सूर्य की परिक्रमा की। बड़ा चक्कर सबसे सस्ता रास्ता था। /explore में आप जो भी अन्य गहरे अंतरिक्ष मिशन देखते हैं वह डिस्क में रहा क्योंकि डिस्क वह जगह है जहां गंतव्य हैं — और जहां ईंधन आपको जाने देता है।"
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "diagram_caption",
+    "en": "Solar system layouts collapse to the same plane because the planets formed from a single rotating disk. Departures stay in that plane because plane changes are propellant-prohibitive.",
+    "cur": "सौर मंडल लगभग समतल है क्योंकि ग्रह एक ही घूमती डिस्क से बने। प्रस्थान उसी तल में रहते हैं क्योंकि तल बदलने में बेहद अधिक ईंधन लगता है।"
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "title",
+    "en": "Free-Return Trajectory",
+    "cur": "मुक्त-वापसी प्रक्षेपवक्र"
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "intro_sentence",
+    "en": "A trajectory that swings past the destination and bends gravity itself into a return ticket — no engine burn required.",
+    "cur": "एक प्रक्षेपवक्र जो गंतव्य के पास से गुजरता है और गुरुत्वाकर्षण को स्वयं में वापसी टिकट में मोड़ देता है — कोई इंजन जलना आवश्यक नहीं है।"
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "narrative_101.0",
+    "en": "Imagine you're flying to the Moon. You're worried — what if the engine fails on the way? You'd be stranded, drifting forever. Here's the genius answer: pick a path where, even if every engine on your spacecraft dies the moment you leave Earth orbit, gravity alone will swing you around the Moon and toss you back home automatically. That's a free-return trajectory.",
+    "cur": "कल्पना कीजिए कि आप चंद्रमा की ओर उड़ान भर रहे हैं। आप चिंतित हैं — क्या होगा यदि रास्ते में इंजन खराब हो जाए? आप फंस जाएँगे, हमेशा के लिए भटकते रहेंगे। यहाँ प्रतिभाशाली जवाब है: एक ऐसा पथ चुनिए जहाँ, भले ही पृथ्वी की कक्षा छोड़ने के तुरंत बाद आपके अंतरिक्ष यान पर हर इंजन बंद हो जाए, गुरुत्वाकर्षण अकेले ही आपको चंद्रमा के चारों ओर घुमाएगा और आपको स्वचालित रूप से घर वापस फेंक देगा। यह एक मुक्त-वापसी प्रक्षेपवक्र है।"
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "narrative_101.1",
+    "en": "It's an actual figure-8 in space. You leave Earth, climb out to the Moon, the Moon's gravity bends your path 180 degrees, and you fall back toward Earth, hitting the atmosphere on the rebound. No engine required. The Moon does all the work. The geometry just has to be right.",
+    "cur": "यह अंतरिक्ष में एक वास्तविक आकृति-8 है। आप पृथ्वी छोड़ते हैं, चंद्रमा तक पहुँचते हैं, चंद्रमा का गुरुत्वाकर्षण आपके पथ को 180 डिग्री मोड़ देता है, और आप पृथ्वी की ओर वापस गिरते हैं, वापसी पर वायुमंडल में प्रवेश करते हैं। कोई इंजन आवश्यक नहीं। चंद्रमा सारा काम करता है। ज्यामिति को बस सही होना चाहिए।"
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "narrative_101.2",
+    "en": "Apollo 8 was the first crewed mission to fly one. Apollo 13 — the famous \"Houston, we have a problem\" mission — owes its survival to it. When their main engine became unusable, they rode the free-return home, firing only the lunar module's engine for course corrections — never the crippled main engine. Orrery's default /fly scenario does exactly this for Mars: Earth → Mars flyby → Earth, no mid-course burns required. The cheapest possible Mars trip you can fly with humans on board.",
+    "cur": "Apollo 8 इसे उड़ाने वाला पहला क्रू मिशन था। Apollo 13 — प्रसिद्ध \"Houston, we have a problem\" मिशन — इसके अस्तित्व के कारण ऋणी है। जब उनका मुख्य इंजन अनुपयोगी हो गया, तो वे मुक्त-वापसी पर घर की ओर सवार हुए, केवल चंद्र मॉड्यूल के इंजन को पथ सुधार के लिए चलाया — कभी भी अपंग मुख्य इंजन को नहीं। Orrery के डिफ़ॉल्ट /fly परिदृश्य मंगल के लिए बिल्कुल यही करते हैं: पृथ्वी → मंगल flyby → पृथ्वी, कोई मध्य-पाठ्यक्रम जलना आवश्यक नहीं। सबसे सस्ता संभावित मंगल यात्रा जिसे आप इंसानों के साथ उड़ा सकते हैं।"
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "body_paragraphs.0",
+    "en": "The headline trick: leave Earth, fly past the Moon (or Mars), and let the gravity of that body bend your path back toward Earth. If you got the geometry right, you re-enter Earth's atmosphere on the rebound. The crew never has to fire an engine to come home.",
+    "cur": "मुख्य तरकीब: पृथ्वी छोड़ो, चंद्रमा (या मंगल) के पास से उड़ो, और उस पिंड के गुरुत्वाकर्षण को अपने पथ को पृथ्वी की ओर वापस मोड़ने दो। यदि आपको ज्यामिति सही मिली, तो आप वापसी पर पृथ्वी के वायुमंडल में पुनः प्रवेश करते हैं। दल को घर आने के लिए कभी भी इंजन चलाना नहीं पड़ता।"
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "body_paragraphs.1",
+    "en": "Apollo 8 was the first crewed free-return. Apollo 13 famously fell back on the technique when its service module crippled — riding the free-return home, firing only the lunar module's engine for course corrections, never the crippled main engine. For Mars the geometry is harder — you need a 500-day, two-pass loop — but the concept is the same: flyby geometry doing the work of the return burn.",
+    "cur": "Apollo 8 पहला क्रू मुक्त-वापसी था। Apollo 13 ने प्रसिद्ध रूप से इस तकनीक पर निर्भर किया जब इसका सेवा मॉड्यूल अपंग हो गया — मुक्त-वापसी पर घर की ओर सवार, केवल चंद्र मॉड्यूल के इंजन को पथ सुधार के लिए चलाया, कभी भी अपंग मुख्य इंजन को नहीं। मंगल के लिए ज्यामिति कठिन है — आपको 500-दिन, दो-पास लूप की आवश्यकता है — लेकिन अवधारणा वही है: वापसी जलने के काम को करने वाली flyby ज्यामिति।"
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "body_paragraphs.2",
+    "en": "Orrery's default `/fly` scenario, ORRERY-1, is exactly this: Earth-Mars-Earth on a free-return arc, no mid-course corrections, no orbit-insertion burn at Mars. You watch the spacecraft loop the Sun once, swing past Mars, and come back. It's the cheapest crewed Mars flyby ever proposed.",
+    "cur": "Orrery का डिफ़ॉल्ट `/fly` परिदृश्य, ORRERY-1, बिल्कुल यही है: पृथ्वी-मंगल-पृथ्वी एक मुक्त-वापसी चाप पर, कोई मध्य-पाठ्यक्रम सुधार नहीं, मंगल पर कोई कक्षा-प्रविष्टि जलना नहीं। आप अंतरिक्ष यान को सूर्य के चारों ओर एक बार लूप करते हुए देखते हैं, मंगल के पास स्विंग करते हैं, और वापस आते हैं। यह कभी प्रस्तावित सबसे सस्ता क्रू मंगल flyby है।"
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "diagram_caption",
+    "en": "Earth → Mars flyby → Earth. The Moon (or Mars's) gravity does the U-turn for free.",
+    "cur": "पृथ्वी → मंगल flyby → पृथ्वी. चंद्रमा (या मंगल का) गुरुत्वाकर्षण U-मोड़ को मुफ्त में करता है।"
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "title",
+    "en": "Gravity Assist",
+    "cur": "गुरुत्वाकर्षण सहायता"
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "intro_sentence",
+    "en": "Steal a planet's orbital momentum on a flyby — the closest thing in space to a free lunch.",
+    "cur": "फ्लाईबाई पर किसी ग्रह की कक्षीय गति को चुरा लें — अंतरिक्ष में मुफ्त भोजन के सबसे करीब की चीज़।"
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "narrative_101.0",
+    "en": "Throw a tennis ball at a moving train. The ball bounces off the front and comes back at you faster than you threw it — because the train was moving toward it, and the train's speed got added to the bounce. That, basically, is a gravity assist. The spacecraft is the tennis ball, the planet is the train, and \"bouncing\" is replaced by \"falling past on a hyperbola.\"",
+    "cur": "एक चलती हुई ट्रेन पर टेनिस बॉल फेंकें। बॉल आगे से टकराकर आपकी ओर वापस आती है, उससे भी तेज़ गति से जितनी आपने फेंकी थी — क्योंकि ट्रेन इसकी ओर बढ़ रही थी, और ट्रेन की गति उछाल में जुड़ गई। मूलतः, यही गुरुत्वाकर्षण सहायता है। अंतरिक्ष यान टेनिस बॉल है, ग्रह ट्रेन है, और \"उछलना\" को \"अतिपरवलय पर गिरते हुए गुज़रना\" से बदल दिया गया है।"
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "narrative_101.1",
+    "en": "From the planet's point of view, the spacecraft enters and leaves at exactly the same speed — gravity is conservative, no energy gained or lost. But from the Sun's point of view, the spacecraft inherits some of the planet's orbital motion on the way out and arrives somewhere new with extra (or less) speed. It's not a violation of physics; the planet pays for it by slowing down — by an amount way too tiny to detect.",
+    "cur": "ग्रह के दृष्टिकोण से, अंतरिक्ष यान बिल्कुल उसी गति से प्रवेश करता है और निकलता है — गुरुत्वाकर्षण संरक्षी है, कोई ऊर्जा प्राप्त या खोई नहीं जाती। लेकिन सूर्य के दृष्टिकोण से, अंतरिक्ष यान बाहर निकलते समय ग्रह की कक्षीय गति का कुछ हिस्सा विरासत में पाता है और अतिरिक्त (या कम) गति के साथ कहीं नई जगह पहुंचता है। यह भौतिकी का उल्लंघन नहीं है; ग्रह इसके लिए धीमा होकर भुगतान करता है — एक ऐसी मात्रा से जो पता लगाने के लिए बहुत छोटी है।"
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "narrative_101.2",
+    "en": "This is the trick that built the Voyager grand tour. Without gravity assists, you can't reach Saturn, let alone Uranus or Neptune, with chemical rockets — the fuel cost is astronomical. Voyager 2 chained four assists in a row: Jupiter, Saturn, Uranus, Neptune, all in one trip. Cassini bounced off Venus twice and Earth once on the way to Saturn. The outer solar system is only accessible because of this trick.",
+    "cur": "यही वह चाल है जिसने Voyager भव्य यात्रा का निर्माण किया। गुरुत्वाकर्षण सहायता के बिना, आप शनि तक नहीं पहुंच सकते, अरुण या वरुण की तो बात ही छोड़ दें, रासायनिक रॉकेटों के साथ — ईंधन की लागत खगोलीय है। Voyager 2 ने एक पंक्ति में चार सहायताओं को जंजीरबद्ध किया: बृहस्पति, शनि, अरुण, वरुण, सभी एक यात्रा में। Cassini ने शनि के रास्ते में दो बार शुक्र से और एक बार पृथ्वी से उछाल ली। बाहरी सौर मंडल केवल इस चाल की वजह से सुलभ है।"
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "body_paragraphs.0",
+    "en": "Approach a moving planet from behind on a hyperbolic trajectory. The planet's gravity bends your path, you swing past, and you leave with the same speed relative to the planet — but the planet was moving the whole time, and you carry that motion with you. Net result: you exit with more speed relative to the Sun than you arrived with. The planet, in exchange, slows by an immeasurably tiny amount.",
+    "cur": "एक चलते हुए ग्रह के पीछे से अतिपरवलय प्रक्षेपवक्र पर पहुंचें। ग्रह का गुरुत्वाकर्षण आपके पथ को मोड़ता है, आप झूलते हुए गुजरते हैं, और आप ग्रह के सापेक्ष उसी गति से निकलते हैं — लेकिन ग्रह पूरे समय चल रहा था, और आप उस गति को अपने साथ ले जाते हैं। शुद्ध परिणाम: आप सूर्य के सापेक्ष जितनी गति से आए थे उससे अधिक गति से बाहर निकलते हैं। बदले में, ग्रह एक अत्यंत सूक्ष्म मात्रा से धीमा हो जाता है।"
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "body_paragraphs.1",
+    "en": "Reverse the geometry — approach from in front — and you slow down. Pioneer 11 used Jupiter to push toward Saturn. Voyager 2 chained Jupiter, Saturn, Uranus, Neptune in one of the most exquisite gravity-assist tours ever flown. Cassini bounced off Venus twice and Earth once before reaching Saturn. New Horizons hit Jupiter to shave three years off the trip to Pluto.",
+    "cur": "ज्यामिति को उलट दें — आगे से पहुंचें — और आप धीमे हो जाते हैं। Pioneer 11 ने शनि की ओर धकेलने के लिए बृहस्पति का उपयोग किया। Voyager 2 ने अब तक की सबसे उत्कृष्ट गुरुत्वाकर्षण-सहायता यात्राओं में से एक में बृहस्पति, शनि, अरुण, वरुण को जंजीरबद्ध किया। Cassini ने शनि तक पहुंचने से पहले शुक्र से दो बार और पृथ्वी से एक बार उछाल ली। New Horizons ने यम की यात्रा से तीन साल कम करने के लिए बृहस्पति को मारा।"
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "body_paragraphs.2",
+    "en": "Without gravity assists, half the missions in Orrery's catalogue couldn't have flown. The outer planets are simply too far for direct trajectories with chemical rockets — their costs in `∆v` would exceed what any rocket can deliver. Gravity assists turn that arithmetic from impossible into hard but doable.",
+    "cur": "गुरुत्वाकर्षण सहायता के बिना, Orrery की सूची में आधे मिशन नहीं उड़ सकते थे। बाहरी ग्रह रासायनिक रॉकेटों के साथ सीधे प्रक्षेपवक्र के लिए बहुत दूर हैं — `∆v` में उनकी लागत उससे अधिक होगी जो कोई भी रॉकेट वितरित कर सकता है। गुरुत्वाकर्षण सहायता उस अंकगणित को असंभव से कठिन लेकिन करने योग्य में बदल देती है।"
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "diagram_caption",
+    "en": "Spacecraft enters and exits the planet's frame at the same speed; the planet's motion adds heliocentric velocity.",
+    "cur": "अंतरिक्ष यान ग्रह के फ्रेम में उसी गति से प्रवेश करता है और निकलता है; ग्रह की गति सूर्य-केंद्रित वेग जोड़ती है।"
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "intro_sentence",
+    "en": "The cheapest two-burn trip between two coplanar circular orbits — and the baseline mission planners measure everything else against.",
+    "cur": "दो समतलीय वृत्ताकार कक्षाओं के बीच सबसे सस्ती दो-जलन यात्रा — और वह आधारभूत लक्ष्य जिसके विरुद्ध मिशन योजनाकार सब कुछ मापते हैं।"
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "narrative_101.0",
+    "en": "You're in Earth's orbit. You want to be in Mars's orbit. Both orbits are roughly circles around the Sun. How do you get from one to the other with as little fuel as possible?",
+    "cur": "आप पृथ्वी की कक्षा में हैं। आप मंगल की कक्षा में जाना चाहते हैं। दोनों कक्षाएँ सूर्य के चारों ओर मोटे तौर पर वृत्त हैं। आप यथासंभव कम ईंधन के साथ एक से दूसरे तक कैसे पहुँचते हैं?"
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "narrative_101.1",
+    "en": "The answer, worked out by Walter Hohmann in 1925, is shockingly elegant. Find an ellipse that just barely touches Earth's orbit on one side and just barely touches Mars's orbit on the other. Burn your engine briefly to leave Earth and join that ellipse. Coast for about 8.5 months without firing the engine at all — gravity does the work. When you arrive at the far end, burn again to settle into Mars's orbit. Two burns, total. Done.",
+    "cur": "उत्तर, जिसे वाल्टर होमान ने 1925 में व्यावहारिक किया, आश्चर्यजनक रूप से सुरुचिपूर्ण है। एक दीर्घवृत्त खोजें जो एक तरफ़ पृथ्वी की कक्षा को मुश्किल से छूता है और दूसरी तरफ़ मंगल की कक्षा को मुश्किल से छूता है। पृथ्वी को छोड़ने और उस दीर्घवृत्त में शामिल होने के लिए संक्षेप में अपना इंजन जलाएँ। लगभग 8.5 महीने के लिए इंजन को बिल्कुल भी फायर किए बिना तटस्थ रहें — गुरुत्वाकर्षण काम करता है। जब आप दूर के छोर पर पहुँचते हैं, तो फिर से जलाएँ मंगल की कक्षा में बसने के लिए। कुल दो जलन। हो गया।"
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "narrative_101.2",
+    "en": "It's the cheapest possible trip — but it's also the slowest. The 8.5-month wait is non-negotiable; physics sets the timer. Want to go faster? You can, but you pay for it: a steeper ellipse, a faster crossing, a much bigger braking burn at the other end. This is the trade you'll see playing out across every porkchop plot in /plan.",
+    "cur": "यह सबसे सस्ती संभावित यात्रा है — लेकिन यह सबसे धीमी भी है। 8.5 महीने की प्रतीक्षा अनिवार्य है; भौतिकी समय निर्धारित करती है। तेज़ी से जाना चाहते हैं? आप कर सकते हैं, लेकिन आपको इसके लिए भुगतान करना पड़ेगा: एक तीव्रतर दीर्घवृत्त, तेज़ पार करना, दूसरे छोर पर एक बहुत बड़ी ब्रेकिंग जलन। यह वही व्यापार है जो आप /plan में प्रत्येक पोर्कचॉप प्लॉट में खेलता हुआ देखेंगे।"
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "body_paragraphs.0",
+    "en": "Imagine you're in a circular orbit around the Sun and you want to reach a higher one — say Earth-to-Mars. The cheapest way is a Hohmann transfer: an ellipse whose perihelion grazes your starting orbit and whose aphelion grazes the destination. Two engine burns get you there. One at perihelion to leave Earth's orbit and enter the ellipse. One at aphelion to circularise into the destination orbit.",
+    "cur": "कल्पना कीजिए कि आप सूर्य के चारों ओर एक वृत्ताकार कक्षा में हैं और आप एक उच्चतर कक्षा तक पहुँचना चाहते हैं — कहिए पृथ्वी से मंगल तक। सबसे सस्ता तरीका है Hohmann transfer: एक दीर्घवृत्त जिसका perihelion आपकी आरंभिक कक्षा को छूता है और जिसका aphelion गंतव्य को छूता है। दो इंजन जलाव से आप वहाँ पहुँच जाते हैं। एक perihelion पर पृथ्वी की कक्षा को छोड़ने और दीर्घवृत्त में प्रवेश करने के लिए। एक aphelion पर गंतव्य कक्षा में वृत्ताकार बनाने के लिए।"
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "body_paragraphs.1",
+    "en": "It's the cheapest fixed-impulse path, but it's also the slowest. Earth-to-Mars takes about 259 days on a Hohmann. Want to go faster? Burn harder, fly a stretched ellipse with higher perihelion velocity. The arrival V∞ goes up, the entry burn at the destination is bigger, your total ∆v cost climbs steeply.",
+    "cur": "यह सबसे सस्ता fixed-impulse पथ है, लेकिन यह सबसे धीमा भी है। पृथ्वी से मंगल तक Hohmann पर लगभग 259 दिन लगते हैं। और तेजी से जाना चाहते हैं? अधिक जोर से जलाव करें, एक खिंची हुई दीर्घवृत्त उड़ान भरें जिसका perihelion वेग अधिक हो। आने वाली V∞ बढ़ जाती है, गंतव्य पर प्रवेश जलाव बड़ी होती है, आपकी कुल ∆v लागत में तीव्रता से वृद्धि होती है।"
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "body_paragraphs.2",
+    "en": "On Orrery's `/plan` porkchop you'll see this directly: there's a quiet basin of cool teal cells around the natural Hohmann window, every 26 months for Mars, and increasingly costly contours as you push toward shorter transit times.",
+    "cur": "Orrery के `/plan` पोर्कचॉप पर आप इसे सीधे देखेंगे: प्राकृतिक Hohmann विंडो के चारों ओर शांत फ़िरोज़ी कक्षों का एक बेसिन है, मंगल के लिए हर 26 महीने, और छोटे पारगमन समय की ओर धकेलने के साथ-साथ तेज़ी से बढ़ती महंगे समोच्च।"
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "diagram_caption",
+    "en": "Earth orbit (inner) · Mars orbit (outer) · Hohmann transfer ellipse with perihelion at Earth, aphelion at Mars.",
+    "cur": "पृथ्वी की कक्षा (आंतरिक) · मंगल की कक्षा (बाहरी) · होमान स्थानांतरण दीर्घवृत्त पृथ्वी पर पेरिहेलियन के साथ, मंगल पर अपहेलियन के साथ।"
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "intro_sentence",
+    "en": "Given two positions and a transit time, find the orbit that connects them — the central problem of every interplanetary trajectory.",
+    "cur": "दो स्थितियाँ और एक संक्रमण समय दिया गया है, वह कक्षा खोजें जो उन्हें जोड़ती है — हर अंतरग्रहीय प्रक्षेपवक्र की केंद्रीय समस्या।"
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "narrative_101.0",
+    "en": "The Hohmann transfer is the cheapest path from one orbit to another, but most missions don't actually fly Hohmanns. They want to leave on a specific date — say, when a particular rocket is ready, or when a particular launch pad is open — and they want to arrive on a specific date — say, in time for a Mars dust storm to subside. Hohmann doesn't let you pick. Lambert does.",
+    "cur": "Hohmann स्थानांतरण एक कक्षा से दूसरी कक्षा तक का सबसे सस्ता मार्ग है, लेकिन अधिकांश मिशन वास्तव में Hohmann नहीं उड़ाते। वे एक विशिष्ट तारीख पर प्रस्थान करना चाहते हैं — मान लीजिए, जब कोई विशेष रॉकेट तैयार हो, या जब कोई विशेष लॉन्च पैड खुला हो — और वे एक विशिष्ट तारीख पर पहुंचना चाहते हैं — मान लीजिए, मंगल पर धूल के तूफान के शांत होने के समय में। Hohmann आपको चुनने नहीं देता। Lambert देता है।"
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "narrative_101.1",
+    "en": "Lambert's question is simpler-sounding than its math: I'm at point A, I want to be at point B, and I want to take exactly this many days getting there. What orbit should I fly? Lambert wrote down the answer in 1761 — there's exactly one ellipse (or sometimes two, depending on which way around you go) that connects two points in a given time.",
+    "cur": "Lambert का प्रश्न इसके गणित से सरल-ध्वनि वाला है: मैं बिंदु A पर हूँ, मैं बिंदु B पर होना चाहता हूँ, और मैं वहाँ पहुंचने में बिल्कुल इतने दिन लेना चाहता हूँ। मुझे कौन सी कक्षा उड़ानी चाहिए? Lambert ने 1761 में उत्तर लिख दिया था — बिल्कुल एक दीर्घवृत्त (या कभी-कभी दो, इस पर निर्भर करता है कि आप किस तरफ से घूमते हैं) है जो दो बिंदुओं को एक निश्चित समय में जोड़ता है।"
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "narrative_101.2",
+    "en": "This is the heart of every porkchop plot you'll see. Each pixel on the porkchop in /plan is one Lambert problem: 'leave Earth on date X, reach Mars on date Y — what does it cost?' The colour is the answer. Solve it ten thousand times in parallel and you get the whole map at once. Orrery does this in a Web Worker so the UI doesn't freeze while it's thinking.",
+    "cur": "यह हर porkchop प्लॉट का हृदय है जो आप देखेंगे। /plan में porkchop पर प्रत्येक पिक्सेल एक Lambert समस्या है: 'तारीख X पर पृथ्वी छोड़ें, तारीख Y पर मंगल पहुंचें — इसकी लागत क्या है?' रंग उत्तर है। इसे समानांतर में दस हजार बार हल करें और आपको पूरा मानचित्र एक बार में मिल जाता है। Orrery इसे Web Worker में करता है ताकि UI सोचते समय फ्रीज न हो।"
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "body_paragraphs.0",
+    "en": "Lambert's problem asks: I'm here, I want to be there, and I have this much time. What ellipse should I fly? Two position vectors and a time of flight, and the equation produces the unique transfer orbit (or two — there's a long way and a short way around the central body).",
+    "cur": "Lambert की समस्या पूछती है: मैं यहाँ हूँ, मैं वहाँ होना चाहता हूँ, और मेरे पास इतना समय है। मुझे कौन सा दीर्घवृत्त उड़ाना चाहिए? दो स्थिति सदिश और एक उड़ान समय, और समीकरण अद्वितीय स्थानांतरण कक्षा उत्पन्न करता है (या दो — केंद्रीय पिंड के चारों ओर एक लंबा रास्ता और एक छोटा रास्ता है)।"
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "body_paragraphs.1",
+    "en": "The Hohmann transfer is one specific Lambert solution: positions at opposite apsides, time of flight equal to half the transfer ellipse's period. Pull either knob — different positions, different time — and you get a different ellipse. Tighter time, more eccentric ellipse, higher departure energy. The math doesn't change; only the boundary conditions.",
+    "cur": "Hohmann स्थानांतरण एक विशिष्ट Lambert समाधान है: विपरीत apsides पर स्थितियाँ, उड़ान समय स्थानांतरण दीर्घवृत्त की अवधि के आधे के बराबर। किसी भी घुंडी को खींचें — भिन्न स्थितियाँ, भिन्न समय — और आपको एक अलग दीर्घवृत्त मिलता है। कम समय, अधिक उत्केंद्री दीर्घवृत्त, उच्च प्रस्थान ऊर्जा। गणित नहीं बदलता; केवल सीमा शर्तें बदलती हैं।"
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "body_paragraphs.2",
+    "en": "Orrery solves Lambert's problem in a Web Worker every time you hover a porkchop cell on `/plan`. Each cell asks: 'leave Earth on date X, arrive at Mars on date Y — what's the ∆v cost?' The colour you see is the answer to that question, computed once per pixel.",
+    "cur": "Orrery हर बार Lambert की समस्या को Web Worker में हल करता है जब आप `/plan` पर एक porkchop सेल को होवर करते हैं। प्रत्येक सेल पूछता है: 'तारीख X पर पृथ्वी छोड़ें, तारीख Y पर मंगल पर पहुंचें — ∆v लागत क्या है?' जो रंग आप देखते हैं वह उस प्रश्न का उत्तर है, प्रति पिक्सेल एक बार गणना किया गया।"
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "diagram_caption",
+    "en": "Two position vectors r₁ and r₂; the Lambert solver finds the unique transfer ellipse joining them in time-of-flight.",
+    "cur": "दो स्थिति सदिश r₁ और r₂; Lambert समाधानकर्ता उड़ान-समय में उन्हें जोड़ने वाला अद्वितीय स्थानांतरण दीर्घवृत्त खोजता है।"
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "title",
+    "en": "Patched Conics",
+    "cur": "जोड़े गए शंकु-परिच्छेद"
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "intro_sentence",
+    "en": "Pretend gravity is one body at a time — the approximation that turns the unsolvable three-body problem into a chain of two-body Kepler problems you can actually solve.",
+    "cur": "एक बार में एक पिंड का गुरुत्वाकर्षण मानिए — यह सन्निकटन अनसुलझी तीन-पिंड समस्या को दो-पिंड केप्लर समस्याओं की एक श्रृंखला में बदल देता है जिसे आप वास्तव में हल कर सकते हैं।"
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "narrative_101.0",
+    "en": "Here's a dirty secret of orbital mechanics: the actual full physics — every body in the solar system pulling on every other — is mathematically unsolvable in any clean way. We have NO closed-form solution to the three-body problem, let alone the dozens-of-bodies real version. So how do mission planners get anything done?",
+    "cur": "यहाँ कक्षीय यांत्रिकी का एक गंदा रहस्य है: वास्तविक पूर्ण भौतिकी — सौर मंडल का हर पिंड हर दूसरे पिंड को खींच रहा है — गणितीय रूप से किसी भी स्वच्छ तरीके से हल करने योग्य नहीं है। हमारे पास तीन-पिंड समस्या का कोई संवृत-रूप समाधान नहीं है, दर्जनों-पिंडों वाले वास्तविक संस्करण की तो बात ही छोड़ दें। तो मिशन योजनाकार कुछ भी कैसे करते हैं?"
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "narrative_101.1",
+    "en": "They cheat. They pretend that, at any moment, only ONE body's gravity matters. Near Earth, only Earth pulls. Out in the cruise, only the Sun. Near Mars, only Mars. Each of those regions is called a sphere of influence, and inside each one the spacecraft flies a clean Keplerian conic. When the spacecraft crosses a boundary, you switch coordinate systems and start a new conic. Patched together, they form the trajectory. That's patched conics.",
+    "cur": "वे धोखा देते हैं। वे यह दिखावा करते हैं कि किसी भी क्षण केवल एक पिंड का गुरुत्वाकर्षण मायने रखता है। पृथ्वी के पास, केवल पृथ्वी खींचती है। क्रूज़ में बाहर, केवल सूर्य। मंगल के पास, केवल मंगल। इनमें से प्रत्येक क्षेत्र को प्रभाव का गोला कहा जाता है, और प्रत्येक के अंदर अंतरिक्ष यान एक स्वच्छ Keplerian शंकु उड़ान भरता है। जब अंतरिक्ष यान एक सीमा पार करता है, तो आप निर्देशांक प्रणाली बदलते हैं और एक नया शंकु शुरू करते हैं। एक साथ जोड़े जाने पर, वे प्रक्षेपवक्र बनाते हैं। यही पैच्ड कोनिक्स है।"
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "narrative_101.2",
+    "en": "The math comes out a few percent off the truth — small enough that real missions plan with it as their first cut, then numerically refine for the launch. It's also small enough that Orrery can run all of this in your browser, in a Web Worker, fast enough to redraw the whole porkchop when you scrub the launch year. The whole simulator is built on this trick.",
+    "cur": "गणित सच्चाई से कुछ प्रतिशत दूर निकलती है — इतनी छोटी कि वास्तविक मिशन इसके साथ अपनी पहली कटौती के रूप में योजना बनाते हैं, फिर प्रक्षेपण के लिए संख्यात्मक रूप से परिष्कृत करते हैं। यह इतना छोटा भी है कि Orrery यह सब आपके ब्राउज़र में, एक Web Worker में चला सकता है, जब आप प्रक्षेपण वर्ष को स्क्रब करते हैं तो पूरे porkchop को फिर से खींचने के लिए पर्याप्त तेज़। पूरा सिम्युलेटर इसी ट्रिक पर बना है।"
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "body_paragraphs.0",
+    "en": "Real gravity is messy. A spacecraft cruising between Earth and Mars feels Earth's gravity, the Sun's gravity, Mars's gravity, plus everything else, all at once. The full math (the n-body problem) has no closed-form solution — only numerical integration. That's slow, fragile, hard to plan with.",
+    "cur": "वास्तविक गुरुत्वाकर्षण गड़बड़ है। पृथ्वी और मंगल के बीच यात्रा करने वाला एक अंतरिक्ष यान पृथ्वी के गुरुत्वाकर्षण, सूर्य के गुरुत्वाकर्षण, मंगल के गुरुत्वाकर्षण, साथ ही बाकी सब कुछ, सब एक साथ महसूस करता है। पूर्ण गणित (n-पिंड समस्या) का कोई संवृत-रूप समाधान नहीं है — केवल संख्यात्मक समाकलन। यह धीमा, नाज़ुक, योजना बनाने में कठिन है।"
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "body_paragraphs.1",
+    "en": "Patched conics is the working compromise: declare a sphere of influence around each body. Inside Earth's sphere, only Earth's gravity matters; you fly a Keplerian arc around Earth. Cross the boundary into the heliocentric region, switch to a Sun-centred Kepler arc. Cross into Mars's sphere, switch again. Three Kepler problems, patched together at the boundaries.",
+    "cur": "पैच्ड कोनिक्स कार्यशील समझौता है: प्रत्येक पिंड के चारों ओर प्रभाव का एक गोला घोषित करें। पृथ्वी के गोले के अंदर, केवल पृथ्वी का गुरुत्वाकर्षण मायने रखता है; आप पृथ्वी के चारों ओर एक Keplerian चाप उड़ान भरते हैं। सौर-केंद्रित क्षेत्र में सीमा पार करें, सूर्य-केंद्रित केप्लर चाप पर स्विच करें। मंगल के गोले में प्रवेश करें, फिर से स्विच करें। तीन केप्लर समस्याएं, सीमाओं पर एक साथ जोड़ी गई हैं।"
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "body_paragraphs.2",
+    "en": "It's wrong but useful. Errors at boundaries are small — a few percent of ∆v at most for cislunar work, less for heliocentric — and the math becomes tractable enough to fit in a Web Worker. Orrery's `/plan` porkchops are computed this way; so are the trajectories on `/fly`. Real flight planning at NASA uses the same approximation as the first cut, then refines numerically before launch.",
+    "cur": "यह गलत है लेकिन उपयोगी है। सीमाओं पर त्रुटियाँ छोटी हैं — चंद्र-पृथ्वी कार्य के लिए अधिकतम कुछ प्रतिशत ∆v, सौर-केंद्रित के लिए कम — और गणित एक Web Worker में फिट होने के लिए पर्याप्त सुगम हो जाती है। Orrery के `/plan` porkchops इस तरह से गणना किए जाते हैं; `/fly` पर प्रक्षेपवक्र भी। NASA में वास्तविक उड़ान योजना पहली कटौती के रूप में उसी सन्निकटन का उपयोग करती है, फिर प्रक्षेपण से पहले संख्यात्मक रूप से परिष्कृत करती है।"
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "diagram_caption",
+    "en": "Three frames, three conics: Earth-centred → heliocentric → Mars-centred, patched at sphere-of-influence boundaries.",
+    "cur": "तीन फ्रेम, तीन शंकु: पृथ्वी-केंद्रित → सौर-केंद्रित → मंगल-केंद्रित, प्रभाव के गोले की सीमाओं पर जोड़े गए।"
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "title",
+    "en": "Transfer Ellipse",
+    "cur": "स्थानांतरण दीर्घवृत्त"
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "intro_sentence",
+    "en": "The Keplerian arc that carries a spacecraft from one orbit to another — Sun at one focus, just like every other orbit.",
+    "cur": "Keplerian चाप जो अंतरिक्ष यान को एक कक्षा से दूसरी कक्षा तक ले जाता है — एक नाभि पर सूर्य, बिल्कुल हर दूसरी कक्षा की तरह।"
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "narrative_101.0",
+    "en": "Mission planning sounds like it's about engines and rockets. It's mostly about choosing an ellipse. Every interplanetary cruise — Apollo to the Moon, Voyager to Neptune, Perseverance to Mars — is just a spacecraft riding an elliptical orbit between where it started and where it's going. The fancy word for that ellipse is the transfer orbit.",
+    "cur": "मिशन योजना इंजन और रॉकेट के बारे में लगती है। यह ज्यादातर एक दीर्घवृत्त चुनने के बारे में है। हर अंतरग्रहीय यात्रा — Apollo से चंद्रमा तक, Voyager से वरुण तक, Perseverance से मंगल तक — बस एक अंतरिक्ष यान है जो दीर्घवृत्ताकार कक्षा पर सवार होकर जहाँ से शुरू हुआ और जहाँ जा रहा है, के बीच यात्रा कर रहा है। उस दीर्घवृत्त के लिए फैंसी शब्द स्थानांतरण कक्षा है।"
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "narrative_101.1",
+    "en": "It plays by the same rules as every other Keplerian orbit. The Sun sits at one focus. The spacecraft moves slowly at the far end and quickly at the close end. Vis-viva still works to compute its speed. Kepler's third law still gives you the time-of-flight from the size. Nothing exotic.",
+    "cur": "यह हर दूसरी Keplerian कक्षा के समान नियमों का पालन करता है। सूर्य एक नाभि पर बैठता है। अंतरिक्ष यान दूर के छोर पर धीरे और निकट के छोर पर तेजी से चलता है। Vis-viva अभी भी इसकी गति की गणना करने के लिए काम करता है। केप्लर का तीसरा नियम अभी भी आकार से उड़ान-समय देता है। कुछ भी अजीब नहीं।"
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "narrative_101.2",
+    "en": "The only thing that makes a transfer ellipse different from a planet's orbit is that the spacecraft only flies HALF of it. It hops on at one end, rides to the other, and gets off. That's why the ∆v budget always has two big burns — one to enter the ellipse, one to leave it. The middle bit, the eight-month coast, costs absolutely nothing.",
+    "cur": "एकमात्र चीज जो स्थानांतरण दीर्घवृत्त को किसी ग्रह की कक्षा से अलग बनाती है वह यह है कि अंतरिक्ष यान इसके केवल आधे हिस्से में उड़ता है। यह एक छोर पर चढ़ता है, दूसरे तक जाता है, और उतर जाता है। इसीलिए ∆v बजट में हमेशा दो बड़े बर्न होते हैं — एक दीर्घवृत्त में प्रवेश करने के लिए, एक इसे छोड़ने के लिए। बीच का हिस्सा, आठ महीने की तटस्थ उड़ान, बिल्कुल भी खर्च नहीं करती।"
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "body_paragraphs.0",
+    "en": "Once you've burned out of Earth's orbit, you're on an ellipse around the Sun. That ellipse is the transfer orbit, and it has all the same properties as any other: semi-major axis, eccentricity, perihelion, aphelion. The fact that you're going somewhere doesn't change the geometry — gravity doesn't care about your destination.",
+    "cur": "एक बार जब आप पृथ्वी की कक्षा से बाहर निकल जाते हैं, तो आप सूर्य के चारों ओर एक दीर्घवृत्त पर होते हैं। वह दीर्घवृत्त स्थानांतरण कक्षा है, और इसमें किसी अन्य कक्षा के समान सभी गुण हैं: अर्ध-दीर्घ अक्ष, उत्केंद्रता, उपसौर, अपसौर। यह तथ्य कि आप कहीं जा रहे हैं, ज्यामिति को नहीं बदलता — गुरुत्वाकर्षण को आपके गंतव्य की परवाह नहीं है।"
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "body_paragraphs.1",
+    "en": "Two anchors define a transfer ellipse: where you started (perihelion if you're going outward) and where you'll end up (aphelion). The semi-major axis is the average of those two radii. Tweak either anchor and the whole ellipse reshapes — go further out, the ellipse stretches, the trip gets longer.",
+    "cur": "दो एंकर स्थानांतरण दीर्घवृत्त को परिभाषित करते हैं: जहाँ से आपने शुरुआत की (उपसौर अगर आप बाहर की ओर जा रहे हैं) और जहाँ आप समाप्त होंगे (अपसौर)। अर्ध-दीर्घ अक्ष उन दोनों त्रिज्याओं का औसत है। किसी भी एंकर को ट्वीक करें और पूरा दीर्घवृत्त फिर से आकार लेता है — और बाहर जाएँ, दीर्घवृत्त खिंचता है, यात्रा लंबी हो जाती है।"
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "body_paragraphs.2",
+    "en": "On Orrery's `/fly` HUD you'll see the spacecraft trace this ellipse in real time. The transfer arc on screen is a visual rendering of the same conic that the math says it is — Sun at one focus, perihelion behind you, aphelion ahead.",
+    "cur": "Orrery के `/fly` HUD पर आप अंतरिक्ष यान को वास्तविक समय में इस दीर्घवृत्त का पता लगाते हुए देखेंगे। स्क्रीन पर स्थानांतरण चाप उसी शंकु का एक दृश्य प्रतिपादन है जो गणित कहता है कि यह है — एक नाभि पर सूर्य, आपके पीछे उपसौर, आगे अपसौर।"
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "diagram_caption",
+    "en": "Two coplanar orbits (departure inner, destination outer) connected by a transfer ellipse with Sun at one focus.",
+    "cur": "दो समतलीय कक्षाएँ (प्रस्थान आंतरिक, गंतव्य बाहरी) जो एक स्थानांतरण दीर्घवृत्त द्वारा जुड़ी हैं जिसकी एक नाभि पर सूर्य है।"
+  }
 ]

@@ -1,716 +1,716 @@
 [
- {
-  "rel": "programs/apollo.json",
-  "at": "tagline",
-  "en": "The Cold-War sprint that put twelve people on the Moon — and then stopped.",
-  "cur": "将十二人送上月球的冷战冲刺——然后戛然而止。"
- },
- {
-  "rel": "programs/apollo.json",
-  "at": "the_land.0.md",
-  "en": "For ninety minutes at a stretch, in the autumn of 1957, a polished metal sphere the size of a beach ball crossed the sky over the United States — and it was beeping. Sputnik 1 belonged to the Soviet Union, and there was nothing the most powerful country on Earth could do but listen. Less than four years later, on 12 April 1961, the Soviets put up a person too: Yuri Gagarin, the first human to leave the planet. Washington heard none of it as science. It heard a syllogism it couldn't unhear — a rocket that can lift a satellite into orbit can drop a warhead onto any city you care to name. Almost overnight, spaceflight stopped being exploration and became the leading edge of the Cold War.",
-  "cur": "1957年秋天,一个沙滩球大小的抛光金属球体连续九十分钟划过美国上空——它还在发出哔哔声。Sputnik 1属于苏联,而地球上最强大的国家除了倾听别无他法。不到四年后,1961年4月12日,苏联人也送上去了一个人:尤里·加加林,第一个离开地球的人类。华盛顿听到的完全不是科学。它听到的是一个无法忽视的三段论——能将卫星送入轨道的火箭也能将弹头投放到任何你想得到的城市。几乎在一夜之间,太空飞行不再是探索,而成了冷战的最前沿。"
- },
- {
-  "rel": "programs/apollo.json",
-  "at": "the_land.1.md",
-  "en": "On 25 May 1961 — six weeks after Gagarin, and twenty days after Alan Shepard's fifteen-minute suborbital hop made America a spacefaring nation on a technicality — John F. Kennedy stood before Congress and bet the country on the Moon. Land a man there and return him safely, he said, \"before this decade is out.\" Strip away the rhetoric and it was a contest for prestige: a bid to beat the Soviets in the one arena where they were plainly ahead. The science would be real, and it would outlast the politics — but it rode behind them. Apollo was born of that choice, and it's worth saying so without flinching.",
-  "cur": "1961年5月25日——在加加林之后六周,在艾伦·谢泼德十五分钟的亚轨道飞行让美国在技术细节上成为航天国家二十天后——约翰·肯尼迪站在国会面前,将国家的赌注押在了月球上。他说,要让一个人登陆月球并安全返回,\"在这个十年结束之前\"。剥去修辞,这是一场争夺声望的竞赛:试图在苏联人明显领先的唯一领域击败他们。科学会是真实的,它会比政治更长久——但它跟在政治后面。Apollo诞生于那个选择,值得毫不退缩地说明这一点。"
- },
- {
-  "rel": "programs/apollo.json",
-  "at": "goals.0.caption",
-  "en": "The Saturn V — 111 metres tall, about 3,000 tonnes on the pad, and the most powerful rocket ever to carry humans — and, for over fifty years, the most powerful ever flown, until SpaceX's Super Heavy in 2023. It existed for exactly one reason: to beat a deadline.",
-  "cur": "Saturn V——高111米,发射台上重约3,000吨,是有史以来运载过人类的最强大火箭——并且在超过五十年的时间里一直是飞行过的最强大火箭,直到2023年SpaceX的Super Heavy出现。它存在的理由只有一个:赶在最后期限之前完成任务。"
- },
- {
-  "rel": "programs/apollo.json",
-  "at": "goals.1.md",
-  "en": "The goal was narrow and absolute: put American astronauts on the lunar surface and bring them home alive, ahead of the USSR, before 1970. Everything else was engineered backward from that one sentence — the Saturn rockets, a three-part spacecraft that had to fly in pieces a quarter-million miles from any help, pressure suits rated for hard vacuum, a worldwide tracking network, and a workforce that swelled to roughly 400,000 across NASA, its contractors, and the universities.",
-  "cur": "目标狭窄而绝对：在1970年之前、在苏联之前，将美国宇航员送上月球表面并让他们活着返回地球。其他一切都是从这一句话倒推设计出来的——Saturn火箭、一个必须在距离任何援助二十五万英里的地方分块飞行的三部分航天器、额定承受硬真空的压力服、一个全球跟踪网络，以及一支膨胀至约40万人的劳动力队伍，遍及NASA、其承包商和各大学。"
- },
- {
-  "rel": "programs/apollo.json",
-  "at": "goals.2.md",
-  "en": "There were genuine scientific goals too — sampling the Moon's geology, planting instruments that would keep working long after the crews left, finding out whether people could actually do useful work on another world. But in the program's own priority order they sat behind the landing, and everyone involved knew it. The race set the schedule. The science fit into the gaps it left.",
-  "cur": "当然也有真正的科学目标——采集月球的地质样本，部署在乘组离开后仍能长期工作的仪器，探明人类能否在另一个世界真正完成有用的工作。但在该计划自身的优先级排序中，这些目标排在登陆之后，所有参与者都心知肚明。竞赛决定了时间表。科学只能填补它留下的空隙。"
- },
- {
-  "rel": "programs/apollo.json",
-  "at": "outcome.0.caption",
-  "en": "Apollo 11 on the Sea of Tranquility, 20 July 1969 — the moment the race was decided.",
-  "cur": "Apollo 11 在Tranquility海，1969 年 7 月 20 日——太空竞赛决出胜负的时刻。"
- },
- {
-  "rel": "programs/apollo.json",
-  "at": "outcome.1.md",
-  "en": "It worked. On 20 July 1969 Neil Armstrong and Buzz Aldrin walked on the Sea of Tranquility while Michael Collins flew the Command Module alone overhead, losing radio contact every time his orbit carried him behind the Moon. Five more landings followed through December 1972. Twelve people in all walked on the Moon and came home, carrying 382 kilograms of rock and soil that still anchors lunar science more than half a century later.",
-  "cur": "成功了。1969 年 7 月 20 日，尼尔·阿姆斯特朗和巴兹·奥尔德林在宁静海漫步，而迈克尔·柯林斯独自在头顶驾驶指挥舱飞行，每当他的轨道绕向月球背面时就会失去无线电联系。之后又进行了五次登月任务，直到 1972 年 12 月。总共十二个人登上了月球并安全返回地球，带回了 382 千克的岩石和土壤，这些样本至今仍为月球科学奠定基础，已有半个多世纪之久。"
- },
- {
-  "rel": "programs/apollo.json",
-  "at": "outcome.2.md",
-  "en": "The bill came due in money and in lives. In January 1967 a cabin fire during a routine ground test killed Gus Grissom, Ed White, and Roger Chaffee in seconds, and grounded the program for twenty months. In April 1970 an oxygen tank ruptured on the way to the Moon and nearly killed the crew of Apollo 13, who came home cold and rationing water inside their own Lunar Module. And Apollo stopped at its technical peak: the last three planned landings, Apollo 18 through 20, were cancelled as budgets shrank and the public's attention drifted elsewhere. Did it succeed? It won the race it was built to win — and it was switched off while it was still getting better at the Moon. Pick your yardstick.",
-  "cur": "代价以金钱和生命的形式到来。1967年1月，一次例行地面测试中的座舱起火在数秒内夺去了格斯·格里森、埃德·怀特和罗杰·查菲的生命，并使该计划停滞了二十个月。1970年4月，一个氧气罐在前往月球途中破裂，几乎杀死Apollo 13的机组人员，他们在自己的登月舱内忍受严寒、配给饮水才得以返回家园。而Apollo在其技术巅峰时期戛然而止：最后三次计划中的登陆任务——Apollo 18至20——因预算缩减和公众注意力转向他处而被取消。它成功了吗？它赢得了它被建造来赢得的竞赛——而它在仍不断提升月球探索能力时就被关闭了。这取决于你的衡量标准。"
- },
- {
-  "rel": "programs/apollo.json",
-  "at": "narrative.0.md",
-  "en": "The arc is unusually clean for something this big. It opens on catastrophe: the 1967 fire forced a ground-up redesign of the spacecraft and of NASA's entire safety culture — the reckoning that made everything after it possible. Then the fixed hardware went to work. In 1968 Apollo 7 shook out the redesigned Command Module in Earth orbit; that December, Apollo 8 became the first crewed flight to leave Earth's gravity altogether and circle the Moon, its crew reading from Genesis on live television to the largest audience that had ever existed.",
-  "cur": "这条弧线对于如此庞大的项目而言异常清晰。它始于灾难：1967年的火灾迫使航天器和NASA整个安全文化进行彻底重新设计——正是这次清算使之后的一切成为可能。然后修复后的硬件开始运作。1968年，Apollo 7在地球轨道上测试了重新设计的指令舱；同年12月，Apollo 8成为首次完全脱离地球引力并环绕月球的载人飞行，其机组人员在电视直播中朗读《创世记》，面向有史以来最大规模的观众。"
- },
- {
-  "rel": "programs/apollo.json",
-  "at": "narrative.1.md",
-  "en": "Apollo 11 answered Kennedy. And then the program did something a Cold-War instrument was under no obligation to do: it turned toward science. Apollos 12 through 17 grew steadily more ambitious — longer stays, the battery-powered Lunar Roving Vehicle, and finally, on Apollo 17, a trained field geologist named Harrison Schmitt walking the surface he had spent years studying. Apollo 13, the near-disaster in the middle of that run, did something strange to NASA's reputation: by surviving it, the agency came off looking more capable than it would have by never failing at all.",
-  "cur": "Apollo 11回答了肯尼迪的期许。随后,这个计划做了一件冷战工具本无义务去做的事:它转向了科学。Apollo 12到Apollo 17的任务野心稳步增长——更长的停留时间、电池驱动的月球车,最终在Apollo 17上,一位名叫哈里森·施密特的训练有素的野外地质学家踏上了他研究多年的月球表面。Apollo 13——这次系列任务中途的险些灾难——对NASA的声誉产生了奇特的影响:通过幸存下来,这个机构反而显得比从未失败过更有能力。"
- },
- {
-  "rel": "programs/apollo.json",
-  "at": "narrative.2.md",
-  "en": "Apollo 17 lifted off the Moon on 14 December 1972. No human has been back since. But the program's hardware, its people, and its momentum ran straight into nearly everything American human spaceflight did next — Skylab, the Space Shuttle, and, fifty years on, Artemis, now reaching for the lunar south pole that Apollo never touched.",
-  "cur": "Apollo 17于1972年12月14日从月球升空。此后再无人类返回。但该计划的硬件、人员和势头直接延续到了美国载人航天此后的几乎所有项目——Skylab、Space Shuttle，以及五十年后的今天，正伸向Apollo从未触及的月球南极的Artemis。"
- },
- {
-  "rel": "programs/apollo.json",
-  "at": "legacy.0.caption",
-  "en": "Earthrise — Apollo 8, Christmas Eve 1968. An unplanned photograph that became one of the most reproduced images in history, and a founding picture of the environmental movement.",
-  "cur": "Earthrise — Apollo 8,1968年平安夜。一张未经计划的照片，成为历史上复制最多的图像之一，也是环保运动的奠基性图像。"
- },
- {
-  "rel": "programs/apollo.json",
-  "at": "legacy.1.md",
-  "en": "Apollo's return on investment is still argued over, but the shape of it is clear. The program cost about $25.8 billion in period dollars — comfortably north of $250 billion today — and at its peak it put some 400,000 people to work across NASA, its contractors, and the universities. That was a deliberate industrial and educational build-out, not just a rocket, and most of it outlived the Moon shots.",
-  "cur": "Apollo的投资回报至今仍有争议，但其轮廓是清晰的。该计划耗资约258亿美元（按当时币值计算）——换算到今天轻松超过2500亿美元——在高峰期雇用了约40万人，分布在NASA、其承包商和各大学。这是一次有意为之的工业和教育建设，而不仅仅是一枚火箭，其中大部分成果在登月计划结束后仍延续至今。"
- },
- {
-  "rel": "programs/apollo.json",
-  "at": "legacy.2.md",
-  "en": "The technological pull was real, and it compounded. Apollo pulled early integrated circuits into volume production, drove the young discipline of software engineering, and all but invented modern systems management — the art of keeping a million interdependent parts on schedule at once. Those techniques seeded whole later industries. And the 382 kilograms of returned rock rewrote the age and origin story of the Solar System; researchers are still pulling new results from sealed samples today.",
-  "cur": "技术拉动是真实存在的，而且会不断叠加。Apollo 将早期集成电路拉入批量生产，推动了软件工程这一年轻学科的发展，并且几乎发明了现代系统管理——同时让一百万个相互依赖的部件保持进度的艺术。这些技术为后来的整个产业播下了种子。而带回的 382 千克岩石改写了太阳系的年龄和起源故事；研究人员至今仍在从密封样本中获取新的研究成果。"
- },
- {
-  "rel": "programs/apollo.json",
-  "at": "legacy.3.md",
-  "en": "For the United States it was soft power at planetary scale — a demonstration, watched live around the world, of what an open society could organize and pull off. For everyone else, the most durable thing Apollo left behind may not be a technology at all but a photograph: the whole Earth, small and alone against the black, seen from another world for the first time. Whatever you make of the Cold-War motives that paid for it, that picture changed how people saw the ground under their own feet — worth holding onto as a louder, more crowded space age begins.",
-  "cur": "对美国而言,这是行星尺度的软实力——向全世界实况直播展示一个开放社会能够组织并完成什么。对其他所有人而言,Apollo留下的最持久之物或许根本不是某种技术,而是一张照片:完整的地球,渺小而孤独地悬浮在黑暗之中,首次从另一个世界被看见。无论你如何看待为此买单的冷战动机,那张照片改变了人们看待自己脚下土地的方式——在一个更喧闹、更拥挤的太空时代开始之际,这份遗产值得珍视。"
- },
- {
-  "rel": "programs/apollo.json",
-  "at": "lessons.0.md",
-  "en": "Apollo's most portable lesson has nothing to do with rocketry. It's about how you point a very large number of people at the same hard thing. Kennedy handed the program a goal that was specific, audacious, and time-boxed — land a crew on the Moon and return them safely, before the decade was out — and that single sentence did what no org chart could. It aligned 400,000 people who would never meet, and it made every decision legible: does this get us to the Moon by 1970, or not? A clear, dated, non-negotiable goal that anyone can check their own work against will out-coordinate any hierarchy.",
-  "cur": "Apollo最可移植的教训与火箭技术无关。它关乎如何让极其庞大的人群聚焦于同一件难事。Kennedy为该计划制定了一个具体、大胆且有时限的目标——在十年内将宇航员送上月球并安全返回——这一句话完成了任何组织架构图都做不到的事。它协调了40万名永远不会见面的人,并使每一个决策都变得清晰可辨:这能否让我们在1970年前登上月球?一个清晰、有截止日期、不容商榷的目标,任何人都可以据此检验自己的工作,其协调效果将超越任何层级制度。"
- },
- {
-  "rel": "programs/apollo.json",
-  "at": "lessons.1.md",
-  "en": "The second lesson lives in Mission Control. Apollo institutionalized a particular kind of teamwork under pressure: controllers trained to stay ahead of the vehicle, to speak up regardless of rank, and to solve problems as a room rather than a chain of command. When Apollo 13 crippled itself roughly 320,000 kilometres from home, no lone hero saved the crew — a room full of people worked the problem together, against the clock, and improvised a way back. \"Work the problem\" beat panic. Any team that ever hits a crisis can borrow the habit.",
-  "cur": "第二课存在于任务控制中心。Apollo 制度化了一种特殊的压力下的团队合作形式：控制员们受训能够超前于飞行器的状况，无论级别如何都敢于发言，并将问题作为一个整体来解决，而非按照指挥链处理。当 Apollo 13 在距离家园大约 320,000 公里处陷入困境时，没有单个英雄拯救了宇航员——一个房间里的许多人共同处理问题，与时间竞速，并想出了一条回家的路。\"处理问题\"战胜了恐慌。任何曾经经历过危机的团队都可以学习这个习惯。"
- },
- {
-  "rel": "programs/apollo.json",
-  "at": "lessons.2.md",
-  "en": "And the human note worth keeping: they did it in eight years, having never done it before, with onboard computers weaker than a modern doorbell. Apollo is a standing argument that a clear mission, the right people, and an honest deadline can still outrun the odds — a useful thing to remember the next time a goal looks impossible.",
-  "cur": "值得铭记的人性注脚是：他们在八年内完成了这一切，此前从未做过，使用的机载计算机还不如现代门铃强大。Apollo 是一个有力的证明：明确的任务、合适的人才和诚实的期限仍然可以战胜一切困难——这一点值得在下次目标看似不可能时记住。"
- },
- {
-  "rel": "programs/ariane.json",
-  "at": "tagline",
-  "en": "Europe's guarantee of its own way to space — born from being told no, grown into the world's dominant commercial launcher, and still flying the continent's independence into orbit.",
-  "cur": "欧洲通往太空之路的自主保障——诞生于一次被拒绝,成长为世界主导的商业发射服务商,至今仍将欧洲大陆的独立性送入轨道。"
- },
- {
-  "rel": "programs/ariane.json",
-  "at": "the_land.0.md",
-  "en": "In the early 1970s Europe did not control its own access to space, and it found out what that meant. When Europe wanted to launch the Franco-German Symphonie communications satellites, the only ride available was American — and the United States would only provide it on the condition that the satellites not be used for commercial telecommunications that might compete with the US-led Intelsat. It was a quiet, decisive humiliation: to fly on someone else's rocket is to let them decide what your spacecraft is allowed to do. Europe drew the obvious conclusion and resolved never to be in that position again.",
-  "cur": "1970年代初,欧洲无法自主掌控进入太空的通道,并切身体会到了这意味着什么。当欧洲想要发射法德合作的Symphonie通信卫星时,唯一可用的运载工具来自美国——而美国提供发射服务的条件是,这些卫星不得用于可能与美国主导的Intelsat竞争的商业电信业务。这是一次无声而决定性的羞辱:搭乘他人的火箭,就意味着让他人决定你的航天器被允许做什么。欧洲得出了显而易见的结论,决心不再陷入这种境地。"
- },
- {
-  "rel": "programs/ariane.json",
-  "at": "the_land.1.md",
-  "en": "The answer was Ariane — a European launcher, led by France and built under the newly-formed European Space Agency, flying from Kourou in French Guiana, close to the equator where the Earth's spin gives a rocket a free boost. Its first flight, in 1979, was the moment Europe secured guaranteed, independent access to orbit. Unlike almost every other program in this atlas, Ariane carried no crew and chased no records. It is infrastructure — the road, not the journey — and it turned out to be one of the most consequential roads of the space age.",
-  "cur": "答案就是Ariane——一款欧洲火箭,由法国主导,在新成立的欧洲空间局领导下建造,从法属圭亚那的库鲁发射,那里靠近赤道,地球自转能为火箭提供免费的速度增益。它的首次飞行是在1979年,标志着欧洲获得了有保障的、独立的入轨通道。与本图集中几乎所有其他项目不同,Ariane不搭载航天员,也不追求纪录。它是基础设施——是道路而非旅程——而它最终成为了太空时代最具深远影响的道路之一。"
- },
- {
-  "rel": "programs/ariane.json",
-  "at": "goals.0.caption",
-  "en": "Ariane 1, Europe's first independent orbital launcher, first flown in 1979. It existed to guarantee that Europe would never again need another power's permission to put its own spacecraft into space.",
-  "cur": "Ariane 1,欧洲首款独立轨道运载火箭,于1979年首飞。它的存在是为了确保欧洲再也不需要其他大国的许可就能将自己的航天器送入太空。"
- },
- {
-  "rel": "programs/ariane.json",
-  "at": "goals.1.md",
-  "en": "Ariane's first goal was strategic and simple: autonomy. Europe would build a launcher it fully controlled, so that its satellites, its science, and eventually its astronauts could reach orbit on European terms, answerable to no one. That goal alone would have justified the program. But a second goal emerged almost immediately and became just as important — to sell that capacity on the open market.",
-  "cur": "Ariane的首要目标是战略性的且简单明了:自主权。欧洲将建造一款完全由自己掌控的运载火箭,使其卫星、科学任务以及最终的航天员能够按照欧洲自己的条件进入轨道,无需对任何人负责。仅这一目标就足以证明该项目的合理性。但第二个目标几乎立即浮现,并变得同样重要——在公开市场上出售这一能力。"
- },
- {
-  "rel": "programs/ariane.json",
-  "at": "goals.2.md",
-  "en": "In 1980 Europe created Arianespace, the world's first commercial launch company, and turned a strategic asset into a business. The idea was that if Ariane launched not only European payloads but satellites for anyone willing to pay, the commercial revenue would help sustain the launcher and drive down its cost. It was a genuinely new model — treating access to space as a service to be sold rather than a capability each nation built only for itself — and for two decades it worked spectacularly well.",
-  "cur": "1980年,欧洲创建了Arianespace,这是世界上第一家商业发射公司,将战略资产转化为商业业务。其理念是,如果Ariane不仅发射欧洲的有效载荷,还为任何愿意付费的客户发射卫星,商业收入将有助于维持火箭运营并降低成本。这是一种真正创新的模式——将进入太空的能力作为一项可出售的服务,而不是每个国家仅为自己建造的能力——而且在二十年间它运作得极为成功。"
- },
- {
-  "rel": "programs/ariane.json",
-  "at": "outcome.0.caption",
-  "en": "Ariane 5 on its launch pad at Kourou. After a famous maiden-flight failure, it became one of the most reliable heavy-lift rockets ever flown — launching Rosetta, Galileo, the ATV freighters to the ISS, and the James Webb Space Telescope.",
-  "cur": "Ariane 5在库鲁的发射台上。在经历了著名的首飞失败后,它成为了有史以来最可靠的重型运载火箭之一——发射了Rosetta、Galileo、前往国际空间站的ATV货运飞船,以及James Webb Space Telescope。"
- },
- {
-  "rel": "programs/ariane.json",
-  "at": "outcome.1.md",
-  "en": "The outcome exceeded the ambition. Ariane 4, the reliable workhorse of the 1980s and 90s, captured roughly half of the entire global market for commercial satellite launches, making Arianespace the dominant launch provider on Earth and Europe a first-rank spacefaring power. Its successor, Ariane 5, had a notorious start — its 1996 maiden flight destroyed itself about thirty-seven seconds after ignition (thirty seconds after liftoff) when guidance software carried over from Ariane 4 overflowed at the new rocket's higher speed, a failure now taught in every software-engineering course — but recovered to become one of the most dependable heavy launchers ever built.",
-  "cur": "成果超越了预期。Ariane 4是1980年代和90年代可靠的主力火箭,占据了全球商业卫星发射市场大约一半的份额,使Arianespace成为地球上主导的发射服务商,也使欧洲成为一流的航天大国。它的后继者Ariane 5经历了臭名昭著的开局——其1996年首飞在点火后约三十七秒(升空后三十秒)时自毁,原因是从Ariane 4沿用的制导软件在新火箭更高的速度下溢出,这一失败现已成为每一门软件工程课程的教学案例——但随后恢复,成为迄今所造最可靠的重型运载火箭之一。"
- },
- {
-  "rel": "programs/ariane.json",
-  "at": "outcome.2.md",
-  "en": "Ariane 5's manifest is a roll-call of the era's science and infrastructure: the Rosetta comet mission, the Galileo navigation constellation, BepiColombo to Mercury, the ATV cargo freighters that resupplied the International Space Station, and — most celebrated of its late payloads — the James Webb Space Telescope (December 2021), launched so precisely that it saved years of the telescope's fuel. Ariane 5's true final flight came in July 2023, carrying the Heinrich Hertz and Syracuse 4B telecommunications satellites on VA261. Then the ground shifted. SpaceX's reusable rockets undercut Ariane's prices and ended its commercial dominance, and Ariane 6, flying from 2024, is Europe's answer: a cheaper, more flexible launcher built to keep the continent's independent access alive in a transformed market.",
-  "cur": "Ariane 5的发射清单是那个时代科学与基础设施的名录:Rosetta彗星任务、Galileo导航星座、BepiColombo水星探测器、为国际空间站补给的ATV货运飞船,以及——其晚期载荷中最著名的——James Webb Space Telescope(2021年12月),发射精度如此之高以至于为望远镜节省了数年的燃料。Ariane 5真正的最后一次飞行是在2023年7月,执行VA261任务,搭载Heinrich Hertz和Syracuse 4B通信卫星。然后形势发生了变化。SpaceX的可重复使用火箭在价格上击败了Ariane,终结了其商业主导地位,而从2024年开始飞行的Ariane 6是欧洲的应对之策:一款更便宜、更灵活的运载火箭,旨在让欧洲大陆在已经转变的市场中保持独立的太空进入能力。"
- },
- {
-  "rel": "programs/ariane.json",
-  "at": "narrative.0.md",
-  "en": "Ariane's through-line is that access to space is not a convenience but a form of sovereignty. The whole program grew from the recognition that depending on another power's rockets means depending on that power's permission — and everything Europe did afterwards, from building Ariane to sustaining it commercially to replacing it under pressure, followed from the decision that this dependence was unacceptable. In a domain usually told through crews and destinations, Ariane is the reminder that someone has to build and own the road, and that who owns it matters enormously.",
-  "cur": "Ariane的核心主线是,进入太空的能力不是便利而是主权的一种形式。整个项目源于这样的认识:依赖他国的火箭意味着依赖该国的许可——而欧洲此后所做的一切,从建造Ariane到通过商业手段维持它,再到在压力下更新换代,都源于一个决定:这种依赖是不可接受的。在一个通常以航天员和目的地来讲述的领域里,Ariane提醒我们,必须有人建造并拥有这条道路,而谁拥有它极其重要。"
- },
- {
-  "rel": "programs/ariane.json",
-  "at": "narrative.1.md",
-  "en": "The commercial pivot is the program's cleverest move and its central lesson. By founding Arianespace and selling launches worldwide, Europe made its strategic launcher pay for much of its own upkeep and honed it against real competition, rather than letting it become a subsidised national project that flew only occasionally. For twenty years this made Ariane both independent and dominant. It also made the program vulnerable in a way a purely strategic launcher would not have been: when a cheaper competitor appeared, Ariane lost the commercial market that had sustained it, and had to reinvent itself to survive.",
-  "cur": "商业化转型是该项目最巧妙的举措,也是其核心经验。通过创建Arianespace并在全球范围内销售发射服务,欧洲让其战略火箭在很大程度上自负盈亏,并在真实竞争中磨练它,而不是让它成为一个仅偶尔飞行的补贴性国家项目。二十年间,这使Ariane既独立又占据主导地位。这也使该项目以一种纯战略火箭不会有的方式变得脆弱:当更便宜的竞争对手出现时,Ariane失去了维持它的商业市场,不得不重塑自我以求生存。"
- },
- {
-  "rel": "programs/ariane.json",
-  "at": "narrative.2.md",
-  "en": "That competitor, of course, was reusability done right — the thing the Space Shuttle had promised and not delivered, and that a new generation achieved. Ariane, long built on the logic of the reliable expendable rocket, found that logic overturned almost overnight, and Ariane 6 is the response of an established power to a disruptive one. The outcome is still being written, but the stake is exactly what it was in 1979: whether Europe keeps its own guaranteed way to space.",
-  "cur": "当然,那个竞争对手就是真正实现的可重复使用——Space Shuttle曾经承诺过但未能实现的东西,而新一代实现了它。长期建立在可靠的一次性火箭逻辑之上的Ariane,发现这一逻辑几乎在一夜之间被推翻,而Ariane 6是一个老牌强国对颠覆性力量的回应。结果仍在书写,但赌注与1979年时完全相同:欧洲能否保持自己有保障的太空通道。"
- },
- {
-  "rel": "programs/ariane.json",
-  "at": "legacy.0.caption",
-  "en": "Ariane 6, flying from 2024 — Europe's answer to a market transformed by reusable rockets, and the continuation of the same mandate Ariane 1 was built for: independent European access to space.",
-  "cur": "Ariane 6,从2024年开始飞行——欧洲对被可重复使用火箭改变的市场的回应,也是Ariane 1建造时同一使命的延续:欧洲独立的太空进入能力。"
- },
- {
-  "rel": "programs/ariane.json",
-  "at": "legacy.1.md",
-  "en": "Ariane's legacy is that Europe has never again had to ask permission to reach space. For over four decades an unbroken line of European rockets has launched the continent's satellites, science missions, and contributions to the International Space Station — and for much of that time launched the world's, too. The commercial launch industry that is now so central to spaceflight was, in large part, invented by Arianespace; the model of selling access to orbit as a service began at Kourou.",
-  "cur": "Ariane的遗产是,欧洲再也不必请求许可才能进入太空。四十多年来,欧洲火箭的不间断序列发射了欧洲大陆的卫星、科学任务以及对国际空间站的贡献——而在这段时间的大部分时期,也发射了世界各国的载荷。如今对航天飞行如此重要的商业发射产业,在很大程度上是由Arianespace发明的;将进入轨道的能力作为服务出售的模式始于库鲁。"
- },
- {
-  "rel": "programs/ariane.json",
-  "at": "legacy.2.md",
-  "en": "It also stands as the clearest case study in the value — and the cost — of strategic autonomy. Ariane was more expensive than simply buying launches from whoever was cheapest, and in the reusable era that gap has grown. But the program's founders understood that the cheapest launch is worthless if the seller can dictate its terms, and Europe has spent four decades and considerable money to keep that from ever happening again. Whether to keep paying that premium, as reusable competitors reshape the market, is the live question Ariane 6 now embodies.",
-  "cur": "它也是战略自主权的价值——以及成本——最清晰的案例研究。Ariane比简单地从最便宜的供应商那里购买发射服务更昂贵,而在可重复使用时代,这一差距还在扩大。但该项目的创立者明白,如果卖方可以规定条件,那么最便宜的发射也毫无价值,欧洲已经花费了四十年时间和大量资金来防止这种情况再次发生。是否继续支付这一溢价,在可重复使用的竞争对手重塑市场的今天,正是Ariane 6所体现的现实问题。"
- },
- {
-  "rel": "programs/ariane.json",
-  "at": "lessons.0.md",
-  "en": "Ariane's first lesson is that independent access to critical infrastructure is worth paying for. Europe built its own launcher not because it was cheaper but because the alternative — depending on a rival or partner for something as fundamental as reaching orbit — meant surrendering control over its own space program, as the Symphonie affair had shown. The premium Europe has paid for Ariane is the price of never again being told what its satellites are allowed to do. For anything genuinely strategic, autonomy is a capability, not an extravagance.",
-  "cur": "Ariane的第一个教训是,对关键基础设施的独立掌控值得付出代价。欧洲建造自己的运载火箭不是因为它更便宜,而是因为替代方案——在进入轨道这样根本性的事情上依赖竞争对手或合作伙伴——意味着放弃对自己太空计划的控制,正如Symphonie事件所表明的那样。欧洲为Ariane支付的溢价,是再也不会被告知其卫星被允许做什么的代价。对于任何真正具有战略意义的事物,自主权是一种能力,而非奢侈。"
- },
- {
-  "rel": "programs/ariane.json",
-  "at": "lessons.1.md",
-  "en": "The second lesson is written in Flight 501: reused software is not automatically safe software. Ariane 5 was destroyed because guidance code proven on Ariane 4 was carried over untested into a rocket that flew faster, where an assumption baked into the old code no longer held. The components were sound; the failure was in assuming that what worked in one context would work unchanged in another. Every reused system must be re-validated against the new conditions it will actually face — a lesson that reaches far beyond rockets.",
-  "cur": "第二个教训写在Flight 501上:重用的软件不会自动成为安全的软件。Ariane 5被摧毁是因为在Ariane 4上得到验证的制导代码未经测试就被移植到一枚飞行速度更快的火箭上,而旧代码中内置的一个假设在新条件下不再成立。组件本身是可靠的;失败在于假设在一种情况下有效的东西会在另一种情况下不加改变地有效。每一个重用的系统都必须针对它将实际面对的新条件重新验证——这一教训远远超出了火箭的范畴。"
- },
- {
-  "rel": "programs/artemis.json",
-  "at": "tagline",
-  "en": "The return to the Moon — this time to stay, and this time with the world, not to beat it.",
-  "cur": "重返月球——这一次是为了留下来,这一次是与全世界一起,而不是为了击败它。"
- },
- {
-  "rel": "programs/artemis.json",
-  "at": "the_land.0.md",
-  "en": "Twelve people walked on the Moon between 1969 and 1972, and then no one did for more than fifty years. Apollo went, planted its flags, gathered its rocks, and stopped — because it had been built to win a race, and once the race was won there was no reason to keep paying for it. Artemis is NASA's attempt to go back and, this time, not stop. Named for Apollo's twin sister, it is designed around a different premise: not a sprint to arrive, but the slow construction of a permanent human foothold at the Moon.",
-  "cur": "从1969年到1972年,共有12人在月球上行走,此后五十多年再无人踏足。Apollo去了,插下旗帜,采集岩石,然后停止了——因为它是为赢得一场竞赛而建造的,一旦竞赛获胜,就没有理由继续为其买单。Artemis是NASA重返月球的尝试,这一次,不再停止。以Apollo的孪生姐妹命名,它围绕一个不同的前提设计:不是冲刺到达,而是缓慢建设人类在月球的永久立足点。"
- },
- {
-  "rel": "programs/artemis.json",
-  "at": "the_land.1.md",
-  "en": "The other difference is who goes. Apollo was a national project, a demonstration of American superiority over the Soviet Union, flown entirely by American astronauts on American hardware. Artemis is deliberately international and deliberately commercial — Europe builds the service module that powers Orion, Japan and Canada contribute to the lunar Gateway, SpaceX and others build the landers, and the crews will include astronauts from partner nations. Where Apollo was a race, Artemis is a coalition.",
-  "cur": "另一个不同之处是谁去。Apollo是一个国家项目,是美国对苏联优越性的展示,完全由美国宇航员乘坐美国硬件飞行。Artemis是刻意国际化和刻意商业化的——欧洲建造为Orion提供动力的服务舱,日本和加拿大为月球Gateway做出贡献,SpaceX等公司建造着陆器,机组人员将包括来自伙伴国家的宇航员。Apollo是一场竞赛,Artemis则是一个联盟。"
- },
- {
-  "rel": "programs/artemis.json",
-  "at": "goals.0.md",
-  "en": "The headline goal is a crewed landing near the lunar south pole — a region Apollo never visited, chosen because permanently-shadowed craters there hold water ice. Water is the prize: split into hydrogen and oxygen it becomes rocket propellant and breathable air, and a Moon that can supply its own water is a Moon you can stay on, and stage from, rather than merely visit.",
-  "cur": "标志性目标是在月球南极附近进行载人着陆——这是Apollo从未访问过的区域,之所以选择这里,是因为那里的永久阴影陨石坑中含有水冰。水是奖品:分解成氢气和氧气后,它就变成了火箭推进剂和可呼吸的空气,一个能够自给自足水的月球是你可以停留和作为前进基地的月球,而不仅仅是访问。"
- },
- {
-  "rel": "programs/artemis.json",
-  "at": "goals.1.caption",
-  "en": "Orion — the crew spacecraft, launched on the giant SLS rocket. Its service module, which supplies power and propulsion, is built by ESA in Europe: the vehicle that carries American astronauts to the Moon literally cannot fly without its international half.",
-  "cur": "Orion——载人航天器,由巨型SLS火箭发射。其提供动力和推进的服务舱由ESA在欧洲建造:运送美国宇航员前往月球的飞行器如果没有其国际部分就根本无法飞行。"
- },
- {
-  "rel": "programs/artemis.json",
-  "at": "goals.2.md",
-  "en": "The deeper goal is permanence and a stepping stone. Artemis aims to build the Gateway — a small station in lunar orbit — and eventually surface infrastructure, turning the Moon from a destination into a base. And it is explicitly framed as a rehearsal for Mars: the place to learn how to live and work on another world, close enough to Earth that mistakes are survivable, before attempting the same thing months away.",
-  "cur": "更深层的目标是永久性和跳板。Artemis旨在建造Gateway——一个月球轨道上的小型空间站——并最终建立表面基础设施,将月球从目的地变为基地。它被明确定位为火星的预演:在离地球足够近、错误尚可承受的地方学习如何在另一个世界生活和工作,然后再尝试在数月之外的地方做同样的事情。"
- },
- {
-  "rel": "programs/artemis.json",
-  "at": "goals.3.md",
-  "en": "There is also a goal no one states but everyone understands: to get there before China. China has its own crewed lunar plans for around 2030, and Artemis is, among other things, a race to establish presence, partners, and norms at the lunar south pole first. The coalition framing is genuine — and it is also how the United States intends to lead the return rather than follow it.",
-  "cur": "还有一个没人明说但人人都懂的目标:在中国之前到达。中国有自己在2030年左右的载人登月计划,而Artemis在其他方面之外,也是一场率先在月球南极建立存在、伙伴关系和规范的竞赛。联盟框架是真诚的——同时也是美国打算领导而非跟随这次重返的方式。"
- },
- {
-  "rel": "programs/artemis.json",
-  "at": "outcome.0.md",
-  "en": "Artemis is underway but not yet at the Moon's surface. Artemis I flew in 2022 — an uncrewed Orion looped around the Moon and returned, proving the SLS rocket and the spacecraft on their first flight. The crewed flyby (Artemis II) and the landing (Artemis III) follow, though both have slipped repeatedly as the enormous, multi-contractor program works through the hardest parts: the heat shield, the Starship lander, the new spacesuits, and the orbital refuelling the lander depends on.",
-  "cur": "Artemis正在进行中,但尚未到达月球表面。Artemis I于2022年飞行——一艘无人Orion绕月飞行并返回,在首次飞行中证明了SLS火箭和航天器。载人飞越(Artemis II)和着陆(Artemis III)紧随其后,尽管两者都因这个庞大的多承包商项目在最艰难的部分——隔热罩、Starship着陆器、新太空服以及着陆器所依赖的在轨加油——的攻关而反复推迟。"
- },
- {
-  "rel": "programs/artemis.json",
-  "at": "outcome.1.caption",
-  "en": "The Space Launch System — the most powerful rocket NASA has flown since the Saturn V, and, unlike Apollo's expendable machine, the launcher for a campaign meant to keep going rather than a handful of flights.",
-  "cur": "Space Launch System——自Saturn V以来NASA飞行过的最强大火箭,与Apollo的一次性机器不同,它是为一场旨在持续进行而非几次飞行的行动而设计的发射器。"
- },
- {
-  "rel": "programs/artemis.json",
-  "at": "outcome.2.md",
-  "en": "The program is also a study in how differently big space is done now. Apollo was a single agency directing contractors toward one deadline; Artemis is a web of international partners and commercial providers, with NASA buying a lunar lander as a service from SpaceX rather than owning it. That structure spreads cost and risk and builds a durable coalition — and it also means the schedule depends on many organizations, including a Starship that must first prove itself, so the timeline is genuinely uncertain in a way Apollo's brute-force sprint was not.",
-  "cur": "该计划也是对现在大型航天项目如何以不同方式进行的研究。Apollo是一个机构指挥承包商朝着一个截止日期努力;Artemis是一个由国际伙伴和商业供应商组成的网络,NASA从SpaceX购买月球着陆器作为服务,而不是拥有它。这种结构分散了成本和风险,并建立了一个持久的联盟——同时也意味着进度取决于许多组织,包括必须首先证明自己的Starship,因此时间表以一种Apollo的蛮力冲刺所没有的方式真正不确定。"
- },
- {
-  "rel": "programs/artemis.json",
-  "at": "narrative.0.md",
-  "en": "Artemis is the answer to a question Apollo left hanging: what is the Moon for, if not to win a race? Apollo proved humans could go and then revealed that going, by itself, was not a reason to keep going — the political engine that funded it switched off the moment the Soviets were beaten. Artemis is built to survive that problem by having a purpose beyond arrival: water, infrastructure, a base, a path to Mars, and a coalition of partners with their own reasons to sustain it. Whether that purpose is durable enough to outlast changing administrations is the open question the whole program is really testing.",
-  "cur": "Artemis是对Apollo留下的一个问题的回答:如果不是为了赢得竞赛,月球有什么用?Apollo证明了人类可以去,然后揭示了去本身并不是继续去的理由——资助它的政治引擎在苏联被击败的那一刻就关闭了。Artemis的建立是为了通过拥有超越到达的目的来避免这个问题:水、基础设施、基地、通往火星的路径,以及一个拥有自己理由维持它的伙伴联盟。这个目的是否足够持久以经受住政府更迭,是整个计划真正在测试的开放问题。"
- },
- {
-  "rel": "programs/artemis.json",
-  "at": "narrative.1.md",
-  "en": "It is also a deliberate inversion of Apollo's politics. Apollo's strength was singular national will; its weakness was that the same will could evaporate. Artemis trades some of that focus for resilience — spreading the program across nations and companies so that no single budget decision can cancel it outright, and so that partners who have invested their own hardware and astronauts have reasons to keep it alive. The coalition is slower and more complex than a race, and that is the point: it is built to endure, not to sprint.",
-  "cur": "它也是对Apollo政治的刻意颠倒。Apollo的优势是单一的国家意志;其弱点是同样的意志可能蒸发。Artemis用一些专注换取韧性——将计划分散到各国和公司,使得没有单一的预算决定可以直接取消它,使得投入了自己硬件和宇航员的伙伴有理由让它继续存活。联盟比竞赛更慢、更复杂,这正是重点:它是为了持久而建,而不是为了冲刺。"
- },
- {
-  "rel": "programs/artemis.json",
-  "at": "narrative.2.md",
-  "en": "And it inherits Apollo's hardware lineage even as it breaks from its politics. The SLS rocket descends from Space Shuttle engines and boosters; Orion is the spiritual heir of the Apollo command module; the whole program carries the DNA of the programs in this atlas that came before it. Artemis is not a fresh start but a continuation — the accumulated capability of sixty years of spaceflight pointed, once more, at the Moon.",
-  "cur": "它继承了Apollo的硬件血统,即使它打破了其政治模式。SLS火箭源自Space Shuttle发动机和助推器;Orion是Apollo指令舱的精神继承者;整个计划携带着这部图册中之前项目的DNA。Artemis不是一个全新的开始,而是一个延续——六十年航天飞行的累积能力再次指向月球。"
- },
- {
-  "rel": "programs/artemis.json",
-  "at": "legacy.0.md",
-  "en": "Artemis's legacy is still ahead of it, but its structure is already a template. By building the return to the Moon as an international coalition with commercial landers rather than a single-nation sprint, it has defined how large exploration programs are now assembled — cost and risk shared, capability bought as a service, partners bound in by their own contributions.",
-  "cur": "Artemis的遗产还在前方,但其结构已经是一个模板。通过将重返月球建设为一个拥有商业着陆器的国际联盟,而不是单一国家的冲刺,它定义了大型探索计划现在如何组装——成本和风险共担,能力作为服务购买,伙伴通过自己的贡献被绑定进来。"
- },
- {
-  "rel": "programs/artemis.json",
-  "at": "legacy.1.md",
-  "en": "If it succeeds, the legacy is a permanent human presence beyond low Earth orbit for the first time — a base at the lunar south pole, a station in lunar orbit, and the operational experience of living off another world that any Mars mission will require. The Moon becomes a place people work rather than a place twelve people once visited.",
-  "cur": "如果成功,其遗产将是首次在低地球轨道之外的永久人类存在——月球南极的基地、月球轨道上的空间站,以及在另一个世界生存的实际经验,这是任何火星任务都需要的。月球成为人们工作的地方,而不是12个人曾经访问过的地方。"
- },
- {
-  "rel": "programs/artemis.json",
-  "at": "legacy.2.md",
-  "en": "And it is the frame for a new era of lunar activity. Artemis, China's parallel program, and a fleet of robotic landers from many nations are converging on the same small region of the Moon at the same time — making the 2020s the busiest decade at the Moon since Apollo, and the south pole the most contested real estate in the solar system.",
-  "cur": "它也是月球活动新时代的框架。Artemis、中国的平行计划,以及来自许多国家的机器人着陆器队伍正同时汇聚到月球的同一小块区域——使2020年代成为自Apollo以来月球最繁忙的十年,南极成为太阳系中最具争议的地产。"
- },
- {
-  "rel": "programs/artemis.json",
-  "at": "lessons.0.md",
-  "en": "The lesson Artemis is built on is the one Apollo taught the hard way: arriving is not a purpose. A program that exists only to reach a destination ends the moment it arrives, because the reason to fund it arrives with it. Artemis's whole design — water, infrastructure, partners, a path to Mars — is an attempt to give the Moon a reason to keep going that outlives the excitement of getting there.",
-  "cur": "Artemis所基于的教训是Apollo艰难教给我们的:到达不是目的。一个仅仅为了到达目的地而存在的计划在到达的那一刻就结束了,因为资助它的理由随着它一起到达。Artemis的整个设计——水、基础设施、伙伴、通往火星的路径——是试图给月球一个理由,使其在到达的兴奋之后仍能继续。"
- },
- {
-  "rel": "programs/artemis.json",
-  "at": "lessons.1.md",
-  "en": "The deeper lesson is about resilience versus focus. Apollo's singular national will was its power and its fragility; Artemis trades focus for a coalition that no single budget can easily kill. It is slower, more complex, and harder to schedule — and it is betting that endurance, not speed, is what a return 'to stay' actually requires. Whether that bet pays off is the story the next decade will tell.",
-  "cur": "更深层的教训是关于韧性与专注。Apollo的单一国家意志既是它的力量也是它的脆弱性;Artemis用专注换取一个没有单一预算可以轻易扼杀的联盟。它更慢、更复杂、更难安排时间——它在赌耐力而非速度才是'留下来'的重返真正需要的。这个赌注能否成功,是未来十年将要讲述的故事。"
- },
- {
-  "rel": "programs/buran.json",
-  "at": "tagline",
-  "en": "The Soviet space shuttle that looked like America's, flew better in one respect — and flew exactly once, uncrewed and flawless, before the country that built it disappeared out from under it.",
-  "cur": "这架看起来像美国航天飞机的苏联航天飞机,在一个方面飞得更好——并且只飞行了一次,无人驾驶且完美无瑕,然后建造它的国家就在它脚下消失了。"
- },
- {
-  "rel": "programs/buran.json",
-  "at": "the_land.0.md",
-  "en": "By the mid-1970s the Soviet Union was watching the United States build the Space Shuttle and drawing an alarming conclusion. It could not quite believe the Americans would spend so much on a reusable spaceplane purely for the reasons stated, and feared a hidden military purpose — a vehicle that could dive into the atmosphere, snatch a Soviet satellite, and fly home, or drop weapons from orbit. Unwilling to be without an answer, the Politburo ordered one of its own. The result, Buran, was the largest and most expensive space project in Soviet history, and it began as a response to a threat that may never have been real.",
-  "cur": "到1970年代中期,苏联看着美国建造Space Shuttle,并得出了一个令人不安的结论。它无法完全相信美国人会纯粹出于所宣称的理由在可重复使用的空天飞机上投入如此巨资,并担心其隐藏的军事目的——一种能够俯冲进入大气层、抓取苏联卫星并飞回家,或从轨道投放武器的飞行器。不愿没有应对手段,政治局下令研制自己的航天飞机。其结果Buran是苏联历史上最大、最昂贵的太空项目,而它始于对一个可能从未真实存在的威胁的回应。"
- },
- {
-  "rel": "programs/buran.json",
-  "at": "the_land.1.md",
-  "en": "From the outside Buran looked almost identical to the American orbiter — the same delta wing, the same rough shape — because the same job and the same physics of hypersonic reentry drive a design toward the same answer. But underneath, the Soviet engineers made two decisions that set their machine apart, and both, arguably, improved on the original. Buran carried no main ascent engines of its own — it had orbital-manoeuvring engines for use in space, but the heavy lift to orbit was handled entirely by the rocket — and Buran could fly with no one aboard at all.",
-  "cur": "从外观上看,Buran与美国轨道器几乎一模一样——相同的三角翼,相同的大致形状——因为相同的任务和高超音速再入的相同物理原理将设计推向了相同的答案。但在内部,苏联工程师做出了两个使他们的机器与众不同的决定,而且可以说,这两个决定都改进了原型。Buran不携带自己的主上升发动机——它有用于太空中的轨道机动发动机,但通往轨道的重型提升完全由火箭处理——而且Buran可以在完全无人的情况下飞行。"
- },
- {
-  "rel": "programs/buran.json",
-  "at": "goals.0.caption",
-  "en": "The Energia super-heavy launcher, which lifted Buran. Unlike the American orbiter, Buran had no main ascent engines: all the lift came from Energia, a genuine heavy-lift rocket in its own right — one of the most powerful ever flown, and the most powerful the Soviet Union ever flew successfully.",
-  "cur": "提升Buran的Energia超重型运载火箭。与美国轨道器不同,Buran没有主上升发动机:所有提升力都来自Energia,这是一枚真正的重型运载火箭——有史以来最强大的火箭之一,也是苏联成功发射过的最强大火箭。"
- },
- {
-  "rel": "programs/buran.json",
-  "at": "goals.1.md",
-  "en": "The first decision was about the engines. The American Shuttle mounted its three big main engines on the orbiter itself, which meant hauling that heavy, expensive machinery to orbit and back every flight and throwing away only the external tank. The Soviets instead put all the lift into the rocket: Buran rode on Energia, a true super-heavy launcher that did the whole job of reaching orbit, leaving the orbiter to be a payload rather than part of the propulsion. This made Energia useful on its own — a powerful rocket that could launch other heavy payloads with no orbiter at all — and freed Buran of a burden its rival carried for thirty years.",
-  "cur": "第一个决定是关于发动机的。美国航天飞机把三台大型主发动机装在轨道器本身上，这意味着每次飞行都要把那些沉重、昂贵的机械拖到轨道再带回来，只抛弃外部燃料箱。苏联则把全部推力放在火箭上：Buran搭乘Energia，这是一枚真正的超重型运载火箭，完成了到达轨道的全部工作，让轨道器只是载荷，而不是推进系统的一部分。这使得Energia本身就很有用——一枚强大的火箭，可以在完全没有轨道器的情况下发射其他重型载荷——也使Buran摆脱了其竞争对手背负了三十年的负担。"
- },
- {
-  "rel": "programs/buran.json",
-  "at": "goals.2.md",
-  "en": "The second decision was automation. The American Shuttle always needed a crew to land it; it could not come home on its own. Buran was built to fly the entire mission — launch, orbit, reentry, and landing — with no one aboard, guided by its computers and the ground. In an era when full automatic landing of a winged spacecraft was at the frontier of what was possible, this was a genuine advance, and it set up the one moment when Buran got to prove what it could do.",
-  "cur": "第二个决定是自动化。美国航天飞机总是需要机组人员来着陆;它无法自己回家。Buran被设计为能够执行整个任务——发射、入轨、再入和着陆——无需任何人在机上,由其计算机和地面引导。在完全自动着陆一架有翼航天器处于可能性前沿的时代,这是一个真正的进步,并为Buran证明自己能力的唯一时刻奠定了基础。"
- },
- {
-  "rel": "programs/buran.json",
-  "at": "outcome.0.caption",
-  "en": "The Buran orbiter. It flew one perfect uncrewed mission in November 1988 and then never flew again — grounded by the collapse of the Soviet economy and, finally, of the Soviet Union itself.",
-  "cur": "Buran轨道器。它在1988年11月执行了一次完美的无人任务,然后再也没有飞行过——因苏联经济崩溃而停飞,最终是苏联本身的崩溃。"
- },
- {
-  "rel": "programs/buran.json",
-  "at": "outcome.1.md",
-  "en": "On 15 November 1988, Buran flew. It launched on Energia, circled the Earth twice, reentered, and — in a gusting crosswind that would have tested any pilot — brought itself down onto the runway at Baikonur fully automatically, touching down within metres of its target with no human aboard at any point. It was a flawless flight and a real technical triumph: no other winged spacecraft had flown an entire orbital mission and landed itself. And it was the only time Buran ever flew.",
-  "cur": "1988年11月15日，Buran飞行了。它由Energia发射，绕地球飞行两圈，再入大气层，然后——在足以考验任何飞行员的阵风侧风中——完全自动地降落在拜科努尔的跑道上，着陆点距目标仅几米，全程无人在机上。这是一次完美的飞行和真正的技术胜利：此前没有其他有翼航天器完成过整个轨道任务并自行着陆。而这是Buran唯一一次飞行。"
- },
- {
-  "rel": "programs/buran.json",
-  "at": "outcome.2.md",
-  "en": "The timing could not have been worse. Buran reached its triumph exactly as the Soviet Union began to come apart. Within three years the country was gone; the money vanished; and a hugely expensive spaceplane built to counter an American threat had no threat to counter, no budget to fly, and no mission anyone could afford to give it. The program limped on paper until 1993 and was then cancelled outright. The final indignity came in 2002, when the roof of the hangar housing the one orbiter that had actually flown collapsed, crushing the spacecraft and killing eight workers. Buran's single flight remains one of the most impressive — and most pointless — achievements in the history of spaceflight.",
-  "cur": "时机再糟糕不过了。Buran恰好在苏联开始分崩离析时达到了它的胜利。三年之内,国家消失了;资金枯竭了;一架为对抗美国威胁而建造的极其昂贵的空天飞机没有威胁可对抗,没有预算可飞行,也没有任何人能负担得起给它的任务。该计划在纸面上苟延残喘到1993年,然后被彻底取消。最后的屈辱发生在2002年,当时存放那架真正飞行过的轨道器的机库屋顶坍塌,压毁了航天器并造成八名工人死亡。Buran的单次飞行仍然是太空飞行史上最令人印象深刻——也是最毫无意义——的成就之一。"
- },
- {
-  "rel": "programs/buran.json",
-  "at": "narrative.0.md",
-  "en": "Buran is the story of a magnificent answer to a question that stopped being asked. Technically it was a success and in places an improvement on the vehicle it copied — the separate launcher, the automatic landing, real engineering advances. But it was built for strategic and political reasons that evaporated, at a cost the Soviet economy could not sustain, and it arrived at its moment of triumph just as the system that ordered it collapsed. No amount of engineering excellence could survive the disappearance of the reason for the program and the money to run it.",
-  "cur": "Buran是一个对不再被提出的问题给出宏伟答案的故事。从技术上讲,它是成功的,在某些方面还改进了它所模仿的飞行器——独立的运载火箭、自动着陆,真正的工程进步。但它是出于战略和政治原因建造的,这些原因蒸发了,成本是苏联经济无法承受的,而且它恰好在下令建造它的体制崩溃时到达了胜利时刻。任何工程卓越都无法在项目存在理由和运行资金消失的情况下存活。"
- },
- {
-  "rel": "programs/buran.json",
-  "at": "narrative.1.md",
-  "en": "There is an irony worth holding onto. In the two respects where Buran differed from the American Shuttle — putting the engines on the rocket rather than the orbiter, and flying automatically without a crew — it arguably had the better ideas, and both have echoes in later spaceflight. And yet the American Shuttle flew 135 times over thirty years and built a space station, while Buran flew once. The lesson is not that Buran's engineering was worse; it is that engineering is never the whole story. A program needs a purpose and a budget that outlast its first flight, and Buran had neither.",
-  "cur": "有一个值得记住的讽刺。在Buran与美国航天飞机不同的两个方面——将发动机装在火箭而非轨道器上,以及无需机组人员自动飞行——它可以说拥有更好的想法,而且两者都在后来的太空飞行中有所呼应。然而美国航天飞机在三十年间飞行了135次并建造了一座空间站,而Buran只飞行了一次。教训不是Buran的工程更差;而是工程从来不是全部故事。一个项目需要一个比其首飞更持久的目的和预算,而Buran两者都没有。"
- },
- {
-  "rel": "programs/buran.json",
-  "at": "legacy.0.caption",
-  "en": "OK-GLI, Buran's atmospheric test orbiter — fitted with jet engines to practise runway approaches, and now a museum exhibit in Germany. The surviving Buran hardware is scattered across museums; the one orbiter that reached space was destroyed in 2002.",
-  "cur": "OK-GLI,Buran的大气层测试轨道器——装有喷气发动机以练习跑道进场,现在是德国的博物馆展品。幸存的Buran硬件散布在各个博物馆;那架到达太空的轨道器在2002年被摧毁。"
- },
- {
-  "rel": "programs/buran.json",
-  "at": "legacy.1.md",
-  "en": "Buran's direct legacy is almost nothing — a cancelled program, a single flight, hardware in museums, and one orbiter lost under a fallen roof. But its indirect legacy is real. Energia proved that the Soviet Union could, at last, build a super-heavy rocket that actually worked, redeeming the failure of the N1 — even if it, too, was cancelled for want of anything to launch. And Buran's fully automated flight demonstrated a capability that would only become standard decades later, as uncrewed and autonomously-landing spacecraft became routine.",
-  "cur": "Buran的直接遗产几乎为零——一个被取消的项目、一次飞行、博物馆中的硬件,以及一架在倒塌屋顶下损失的轨道器。但它的间接遗产是真实的。Energia证明了苏联终于能够建造一枚真正有效的超重型火箭,挽回了N1的失败——即使它也因没有东西可发射而被取消。而Buran的完全自动飞行展示了一种只有在几十年后才成为标准的能力,因为无人驾驶和自主着陆的航天器变得常规化。"
- },
- {
-  "rel": "programs/buran.json",
-  "at": "legacy.2.md",
-  "en": "Mostly, though, Buran endures as a cautionary monument — the clearest case in the space age of a program that got the engineering right and everything else wrong. It stands beside the American Shuttle as the road not taken, and beside the N1 as the other great Soviet what-might-have-been: proof that in spaceflight, a brilliant machine with no purpose and no money is still a machine that does not fly.",
-  "cur": "不过，Buran最主要是作为一座警示纪念碑而得以传存——是太空时代最明确的案例，证明一个项目可能在工程上做对了一切，却在其他方面全都做错了。它与美国航天飞机并肩而立，代表着未曾走过的道路，也与N1一起成为苏联另一个伟大的\"可能会是\"——证明在太空飞行中，一台杰出的机器若没有目标，没有资金支持，就仍然是一台飞不起来的机器。"
- },
- {
-  "rel": "programs/buran.json",
-  "at": "lessons.0.md",
-  "en": "Buran's first lesson is that a program needs a reason that outlasts its origins. It was born from a strategic fear and a refusal to let the Americans hold a capability the Soviet Union lacked — and when the fear faded and the Cold War ended, nothing was left to justify the enormous cost. Building an expensive capability to match a rival, rather than to do a job you actually need done, leaves you with a magnificent machine and no reason to fly it the moment the rivalry cools.",
-  "cur": "Buran的第一个教训是,一个项目需要一个比其起源更持久的理由。它诞生于战略恐惧和拒绝让美国人拥有苏联缺乏的能力——而当恐惧消退、冷战结束时,没有什么能证明这巨大成本的合理性。为了匹配竞争对手而不是为了完成你实际需要完成的工作而建造昂贵的能力,会让你在竞争降温的那一刻拥有一台宏伟的机器却没有理由飞行它。"
- },
- {
-  "rel": "programs/buran.json",
-  "at": "lessons.1.md",
-  "en": "The second lesson is that engineering excellence cannot save a program from the loss of its purpose and its budget. Buran was, in real ways, a better design than the vehicle it answered — and it flew once. The American Shuttle, for all its flaws, flew for thirty years because it had missions to fly and money to fly them. A spacecraft is only as durable as the institutional will and funding behind it; without those, even a flawless flight is an ending rather than a beginning.",
-  "cur": "第二个教训是,工程卓越无法拯救一个失去目的和预算的项目。Buran在实际意义上是一个比它所回应的飞行器更好的设计——但它只飞行了一次。美国航天飞机尽管有种种缺陷,却飞行了三十年,因为它有任务要执行,有资金来执行。一架航天器的耐久性仅取决于其背后的制度意志和资金;没有这些,即使是完美的飞行也是结束而非开始。"
- },
- {
-  "rel": "programs/cassini.json",
-  "at": "tagline",
-  "en": "A bus-sized robot spent thirteen years orbiting Saturn — and found, on a moon nobody was watching, an ocean that could hold life.",
-  "cur": "一个巴士大小的机器人在土星轨道运行了十三年——并在一颗无人关注的卫星上发现了可能孕育生命的海洋。"
- },
- {
-  "rel": "programs/cassini.json",
-  "at": "the_land.0.md",
-  "en": "By the 1990s Saturn had been seen three times, and only in passing: Pioneer 11 and the two Voyagers had each swept through the system in a matter of hours, returning tantalising glimpses of a ringed world with dozens of moons and a giant, haze-shrouded moon, Titan, whose surface no camera could pierce. A flyby can photograph a place; it cannot live there. To understand Saturn — its rings, its weather, its improbable family of moons — a spacecraft would have to stop and stay.",
-  "cur": "到1990年代,土星已被观测过三次,但都只是匆匆掠过:Pioneer 11和两艘Voyager探测器都只在系统中停留了数小时,带回了这个拥有数十颗卫星和一颗巨大、被雾霾笼罩的卫星土卫六的环状世界的惊鸿一瞥,其表面无法被任何相机穿透。飞掠可以拍摄一个地方;却无法驻留其中。要理解土星——它的光环、它的天气、它那不可思议的卫星家族——航天器必须停留并驻扎。"
- },
- {
-  "rel": "programs/cassini.json",
-  "at": "the_land.1.md",
-  "en": "Cassini was built to do exactly that, and it was built by a coalition: NASA supplied the orbiter, the European Space Agency supplied a lander called Huygens to drop through Titan's haze, and Italy built its high-gain antenna. It launched in 1997 as one of the largest and most capable interplanetary craft ever flown — a seven-year, three-and-a-half-billion-kilometre cruise ahead of it just to reach the planet it was designed to study.",
-  "cur": "Cassini正是为此而建造,并由一个联盟建造:NASA提供了轨道器,欧洲空间局提供了一个名为Huygens的着陆器以穿过土卫六的雾霾降落,意大利建造了其高增益天线。它于1997年发射,是有史以来最大、性能最强的行星际探测器之一——仅到达它所设计研究的行星就需要七年、三十五亿公里的航程。"
- },
- {
-  "rel": "programs/cassini.json",
-  "at": "goals.0.md",
-  "en": "The primary goal was to become Saturn's first resident: to enter orbit and stay for years, studying the planet's atmosphere, its rings, its magnetic field, and its moons across the slow turn of the Saturnian seasons — the sustained, patient science that no flyby can do. Chief among the targets was Titan, the one moon large enough to hold a thick atmosphere, and the great mystery of the outer solar system.",
-  "cur": "首要目标是成为土星的第一个常驻者:进入轨道并停留数年,研究这颗行星的大气层、光环、磁场以及它的卫星,跨越土星季节的缓慢变化——这种持续、耐心的科学研究是任何飞掠都无法完成的。目标中最重要的是土卫六,这颗唯一大到足以保持厚重大气层的卫星,也是外太阳系的最大谜团。"
- },
- {
-  "rel": "programs/cassini.json",
-  "at": "goals.1.caption",
-  "en": "Cassini carried the European Huygens probe piggyback for seven years, then released it to parachute onto Titan. The orbiter itself would spend thirteen years circling Saturn, threading between the moons and, at the end, between the planet and its rings.",
-  "cur": "Cassini搭载欧洲的Huygens探测器七年,然后释放它降落伞降落到土卫六上。轨道器本身将花费十三年环绕土星,在卫星之间穿梭,最后在行星与其光环之间穿行。"
- },
- {
-  "rel": "programs/cassini.json",
-  "at": "goals.2.md",
-  "en": "The second goal belonged to Huygens: to descend through Titan's orange haze and land — or splash — on a surface no one had ever seen, and find out whether the moon really had the lakes and rivers of liquid methane that theory predicted. It was a single, one-way attempt at the most distant landing ever tried.",
-  "cur": "第二个目标属于Huygens:穿过土卫六的橙色雾霾下降并着陆——或溅落——在一个从未有人见过的表面上,找出这颗卫星是否真的拥有理论预测的液态甲烷湖泊和河流。这是一次单程尝试,是有史以来最遥远的着陆尝试。"
- },
- {
-  "rel": "programs/cassini.json",
-  "at": "outcome.0.md",
-  "en": "Cassini reached Saturn in 2004 and settled into orbit. Months later it released Huygens, which parachuted through Titan's haze in January 2005 and returned the first pictures from the surface of a moon in the outer solar system: a dim, orange plain scattered with rounded pebbles of water ice, shaped by rivers of liquid methane. It remains the only landing humanity has ever made beyond the asteroid belt.",
-  "cur": "Cassini于2004年抵达土星并进入轨道。数月后它释放了Huygens,后者于2005年1月降落伞穿过土卫六的雾霾,传回了外太阳系卫星表面的第一批照片:一片昏暗的橙色平原,散落着被液态甲烷河流塑造的圆润水冰卵石。这仍然是人类在小行星带之外进行的唯一一次着陆。"
- },
- {
-  "rel": "programs/cassini.json",
-  "at": "outcome.1.md",
-  "en": "The orbiter's own great discovery came from a moon almost no one had expected to matter. Passing tiny Enceladus, Cassini found towering jets of water ice and vapour erupting from cracks at its south pole — proof of a global ocean of liquid water beneath the ice, warm and salty and laced with organic molecules. A frozen speck five hundred kilometres across turned out to be one of the most promising places in the solar system to look for life.",
-  "cur": "轨道器自己的重大发现来自一颗几乎无人预料会重要的卫星。经过微小的土卫二时,Cassini发现从其南极裂缝中喷发出高耸的水冰和水蒸气喷流——证明冰层下方存在一个全球性的液态水海洋,温暖、含盐且富含有机分子。这颗直径五百公里的冰冻小点,结果成为太阳系中寻找生命最有希望的地方之一。"
- },
- {
-  "rel": "programs/cassini.json",
-  "at": "outcome.2.md",
-  "en": "Cassini worked for thirteen years, long past its planned mission, until it ran low on fuel. Rather than risk it eventually crashing into Enceladus or Titan and contaminating them with Earth microbes, mission planners chose a deliberate end: twenty-two dives through the unexplored gap between Saturn and its rings, returning data to the last, and then a final plunge into the planet's atmosphere in September 2017, transmitting until it burned up.",
-  "cur": "Cassini工作了十三年,远超其计划任务期,直到燃料即将耗尽。为了避免它最终坠入土卫二或土卫六并用地球微生物污染它们的风险,任务规划者选择了一个有意为之的结局:二十二次俯冲穿过土星与其光环之间未经探索的缝隙,传回数据直到最后,然后在2017年9月最终坠入这颗行星的大气层,持续发送信号直到燃烧殆尽。"
- },
- {
-  "rel": "programs/cassini.json",
-  "at": "narrative.0.md",
-  "en": "The story of Cassini is what patience buys. The Voyagers had shown Saturn in a day and moved on; Cassini stayed for over a decade, and almost everything it found that mattered came from being there long enough to watch — a storm wrap the whole planet, a season turn, a moon pass close enough on the four-hundredth orbit to reveal what the first flyby had missed. Its discoveries were not lucky glances but the reward of persistence.",
-  "cur": "Cassini的故事展示了耐心所带来的回报。Voyager探测器曾在一天内展示土星然后离去;Cassini驻留了十多年,几乎所有重要发现都源于在那里停留足够长的时间去观察——一场风暴席卷整颗行星,一个季节的转变,一颗卫星在第四百次轨道上经过得足够近,揭示了第一次飞掠所遗漏的内容。它的发现不是幸运的一瞥,而是坚持不懈的回报。"
- },
- {
-  "rel": "programs/cassini.json",
-  "at": "narrative.1.md",
-  "en": "Its most consequential find rewrote where we look for life. Before Cassini, the search for habitable places focused on Mars and the warm inner solar system. Enceladus — small, frozen, far from the Sun — should have been dead. Instead it was venting the ingredients of life into space, kept liquid by the flexing pull of Saturn's gravity. Cassini turned the outer solar system, long thought a frozen wasteland, into a plausible home for oceans, and for whatever oceans might hold.",
-  "cur": "它最具影响力的发现改写了我们寻找生命的方向。在Cassini之前,对宜居地的搜寻集中在火星和温暖的内太阳系。土卫二——小、冰冻、远离太阳——本应是死寂的。相反,它正在向太空喷发生命的成分,由土星引力的弯曲拉力保持液态。Cassini将长期被认为是冰冻荒原的外太阳系,转变为海洋的可能家园,以及海洋可能孕育的一切。"
- },
- {
-  "rel": "programs/cassini.json",
-  "at": "narrative.2.md",
-  "en": "And its ending was a moral choice as much as an engineering one. A spacecraft that had discovered two possibly habitable ocean worlds could not be allowed to become the thing that contaminated them. So its operators flew it into Saturn on purpose, sacrificing the machine to protect the very places it had found — planetary exploration taking responsibility for its own reach.",
-  "cur": "它的结局既是道德选择,也是工程选择。一个发现了两个可能宜居的海洋世界的航天器,不能被允许成为污染它们的东西。因此,操作者故意将它飞入土星,牺牲这台机器以保护它所发现的那些地方——行星探索为自己的触及范围承担责任。"
- },
- {
-  "rel": "programs/cassini.json",
-  "at": "legacy.0.md",
-  "en": "Cassini's first legacy is Saturn itself, transformed from a world seen in passing into the best-understood planet in the outer solar system — its rings, its weather, its magnetic field, and its dozens of moons mapped across thirteen years of continuous observation that no future mission is scheduled to repeat.",
-  "cur": "Cassini的第一项遗产是土星本身,从一个匆匆掠过的世界转变为外太阳系中被理解最透彻的行星——它的光环、天气、磁场以及数十颗卫星,在十三年的连续观测中被绘制成图,没有未来任务计划重复这一成就。"
- },
- {
-  "rel": "programs/cassini.json",
-  "at": "legacy.1.md",
-  "en": "Its second is Enceladus and Titan: two ocean worlds and one methane world moved, by Cassini's data, to the front rank of places worth returning to in the search for life. Every proposal to hunt for biology in the outer solar system now begins with what Cassini found.",
-  "cur": "第二项遗产是土卫二和土卫六:两个海洋世界和一个甲烷世界,凭借Cassini的数据,跃升至值得在寻找生命中再次探访的地点前列。如今每一个在外太阳系寻找生物的提案都始于Cassini的发现。"
- },
- {
-  "rel": "programs/cassini.json",
-  "at": "legacy.2.md",
-  "en": "Its third is the model of the mission itself — a genuinely international flagship, NASA and Europe flying one spacecraft for two decades, that demonstrated how much more a patient orbiter returns than a fast flyby, and set the template for the long-duration missions that followed.",
-  "cur": "第三项遗产是任务本身的模式——一个真正国际化的旗舰项目,NASA和欧洲共同操作一艘航天器二十年,展示了耐心的轨道器比快速飞掠带回多得多的成果,并为随后的长期任务树立了模板。"
- },
- {
-  "rel": "programs/cassini.json",
-  "at": "lessons.0.md",
-  "en": "The lesson of Cassini is that staying beats passing through. The same planet the Voyagers characterised in hours yielded its deepest secrets — the ocean of Enceladus, the methane cycle of Titan — only to a spacecraft willing to spend thirteen years in orbit. For the hardest questions, presence over time is worth more than any single brilliant glance.",
-  "cur": "Cassini的教训是驻留胜过路过。同样一颗行星,Voyager探测器用几小时描绘的特征,只有一艘愿意花费十三年在轨道上的航天器才能揭示其最深的秘密——土卫二的海洋、土卫六的甲烷循环。对于最艰难的问题,长期的存在比任何单次辉煌的一瞥都更有价值。"
- },
- {
-  "rel": "programs/cassini.json",
-  "at": "lessons.1.md",
-  "en": "The deeper lesson is that reach carries responsibility. Cassini ended by flying itself into Saturn to protect the ocean moons it had discovered — a recognition that the power to visit a possibly living world comes with a duty not to poison it. Capability without that restraint is not exploration; it is trespass.",
-  "cur": "更深层的教训是触及伴随责任。Cassini以飞入土星的方式结束,以保护它所发现的海洋卫星——认识到访问可能存在生命的世界的力量,伴随着不去毒害它的责任。没有这种克制的能力不是探索;而是侵犯。"
- },
- {
-  "rel": "programs/chandrayaan.json",
-  "at": "tagline",
-  "en": "India's Moon program — it found the water that changed how we see the Moon, then became the first nation ever to land near the south pole.",
-  "cur": "印度的月球计划——它发现了改变我们对月球认知的水,随后成为首个在南极附近着陆的国家。"
- },
- {
-  "rel": "programs/chandrayaan.json",
-  "at": "the_land.0.md",
-  "en": "For most of the space age, the Moon was thought to be bone dry — a dead, airless rock with nothing useful on its surface. That assumption was overturned by a spacecraft from a country that had never been to the Moon before. Chandrayaan-1, India's first lunar mission — launched in 2008 — carried NASA/JPL's Moon Mineralogy Mapper (M3) instrument, which detected water molecules bound into the lunar soil across broad, mostly higher-latitude regions of the surface; the findings were published in 2009. It was one of the most consequential discoveries in modern planetary science, and it came from an ISRO orbiter working on a fraction of NASA's or ESA's budget.",
-  "cur": "在太空时代的大部分时间里,月球被认为是完全干燥的——一颗死寂、无空气的岩石,表面没有任何有用的东西。这一假设被一个此前从未到达过月球的国家的航天器推翻了。Chandrayaan-1,印度的首次月球任务——于2008年发射——搭载了NASA/JPL的月球矿物绘图仪(M3)仪器,该仪器在月球表面广阔的、主要是高纬度地区检测到了与月球土壤结合的水分子;研究结果于2009年发表。这是现代行星科学中最具影响力的发现之一,而它来自一个仅使用NASA或ESA预算零头的ISRO轨道器。"
- },
- {
-  "rel": "programs/chandrayaan.json",
-  "at": "the_land.1.md",
-  "en": "Chandrayaan — Sanskrit for \"Moon craft\" — is the program that announced India as a genuine deep-space power, not a regional one. It is defined by two things: doing world-class science cheaply, and a refusal to be stopped by failure. Its second mission crashed a lander on the Moon in front of a watching nation; its third went back four years later and succeeded, landing where no one ever had — near the lunar south pole, the most sought-after real estate in the solar system.",
-  "cur": "Chandrayaan——梵语意为\"月球飞行器\"——是宣告印度成为真正的深空大国而非区域性国家的计划。它由两个特点定义:以低成本完成世界级科学研究,以及面对失败永不止步的决心。该计划的第二次任务让着陆器在全国人民的注视下坠毁于月球表面;第三次任务在四年后重返月球并取得成功,降落在无人曾至之地——月球南极附近,这是太阳系中最炙手可热的地带。"
- },
- {
-  "rel": "programs/chandrayaan.json",
-  "at": "goals.0.md",
-  "en": "The scientific goal from the start was the Moon's composition and, above all, its water. Chandrayaan-1 set out to map the surface and search for water and minerals; its success made the later goal obvious and urgent — reach the south pole, where permanently-shadowed craters are thought to hold water ice, the resource that could one day fuel and sustain a lunar base. India aimed its program directly at the most valuable question about the Moon.",
-  "cur": "从一开始，科学目标就是月球的成分，尤其是水。Chandrayaan-1 的任务是绘制月球表面地图并寻找水和矿物；它的成功使后续目标变得显而易见且紧迫——抵达南极，那里的永久阴影区陨石坑被认为蕴藏着水冰，这种资源有朝一日可以为月球基地提供燃料和维持运转。印度将其计划直接瞄准了关于月球最有价值的问题。"
- },
- {
-  "rel": "programs/chandrayaan.json",
-  "at": "goals.1.caption",
-  "en": "Chandrayaan-1 — India's first Moon mission, and the platform that carried NASA's M3 instrument, whose data revealed water bound into the lunar soil and overturned the long assumption that the Moon was dry.",
-  "cur": "Chandrayaan-1——印度的首次月球任务,也是搭载NASA的M3仪器的平台,该仪器的数据揭示了与月球土壤结合的水,推翻了月球干燥的长期假设。"
- },
- {
-  "rel": "programs/chandrayaan.json",
-  "at": "goals.2.md",
-  "en": "The engineering goal grew mission by mission: first to orbit the Moon and release an impactor (Chandrayaan-1), then to soft-land a rover (Chandrayaan-2 and -3). Soft-landing on the Moon is brutally difficult — most attempts by most nations have failed — and doing it at the rough, poorly-lit south pole is harder still. India's goal was to master that landing, and to do it on an ISRO budget that made every rupee count.",
-  "cur": "工程目标随着任务逐步提升：首先是绕月飞行并释放撞击器（Chandrayaan-1），然后是软着陆并部署月球车（Chandrayaan-2 和 -3）。在月球上软着陆极其困难——大多数国家的大多数尝试都以失败告终——而在地形崎岖、光照不足的南极着陆则更加艰难。印度的目标是掌握这项着陆技术，并且要在 ISRO 的预算下完成，每一卢比都要精打细算。"
- },
- {
-  "rel": "programs/chandrayaan.json",
-  "at": "outcome.0.md",
-  "en": "The outcomes bracket the whole arc of the program. Chandrayaan-1 (2008) carried NASA's M3 instrument, whose data — published in 2009 — revealed lunar water, a genuinely field-changing result. Chandrayaan-2 (2019) was a partial heartbreak: its orbiter reached the Moon and still operates, returning excellent data, but its Vikram lander lost control in the final moments and crashed, watched live by a nation that had dared to hope. Then Chandrayaan-3 (2023) returned and landed softly near the south pole — the first spacecraft ever to do so, and the achievement that made India the fourth country to land on the Moon, days after a Russian attempt at the same region failed.",
-  "cur": "这些结果涵盖了整个项目的全部历程。Chandrayaan-1（2008年）搭载了NASA的M3仪器，其数据于2009年发布，揭示了月球水的存在——这是一个真正改变领域的成果。Chandrayaan-2（2019年）则是部分遗憾：其轨道器抵达月球并仍在运行，返回了出色的数据，但其Vikram着陆器在最后时刻失控坠毁，被敢于怀抱希望的整个国家实时目睹。随后Chandrayaan-3（2023年）归来，在南极附近软着陆——这是有史以来第一个在该地着陆的航天器，这一成就使印度成为第四个在月球着陆的国家，而就在几天前，俄罗斯对同一区域的尝试失败了。"
- },
- {
-  "rel": "programs/chandrayaan.json",
-  "at": "outcome.1.md",
-  "en": "The contrast with the budgets involved is the part that stunned the world. India reached the Moon, found its water, and landed at its south pole for costs that were a small fraction of comparable Western missions — a demonstration that frontier lunar exploration is not the exclusive preserve of the richest agencies. ISRO turned constraint into a discipline, and delivered firsts that far larger programs had not.",
-  "cur": "与所涉预算的对比是震惊世界的部分。印度抵达月球、发现了月球上的水、并在月球南极着陆，成本仅为同类西方任务的一小部分——这证明了前沿月球探索并非最富裕航天机构的专属领地。ISRO将约束转化为一种准则，实现了规模大得多的项目都未能实现的第一次。"
- },
- {
-  "rel": "programs/chandrayaan.json",
-  "at": "outcome.2.md",
-  "en": "Chandrayaan-3's success also carried a weight beyond science. It landed at a moment when the south pole had become a contested goal — Russia's Luna-25 had crashed attempting the same thing that same month — and India's soft touchdown was a national triumph celebrated across the country, and a signal that the emerging space powers now reach places the old ones are still struggling toward.",
-  "cur": "Chandrayaan-3的成功也承载着超越科学的分量。它着陆的时刻，南极已成为一个竞相追逐的目标——俄罗斯的Luna-25在同月尝试同样任务时坠毁——而印度的软着陆是一次举国欢庆的胜利，也是一个信号：新兴航天国家如今已抵达老牌航天国家仍在努力企及的地方。"
- },
- {
-  "rel": "programs/chandrayaan.json",
-  "at": "narrative.0.md",
-  "en": "The story of Chandrayaan is a country teaching itself to land on another world in public, and refusing to quit when it went wrong. Chandrayaan-2's crash was not hidden or downplayed; it happened live, and the head of ISRO was shown grieving it on national television. Four years later the same program came back and succeeded — the same engineers, the same objective, the lessons of the failure engineered into the fix. It is the clearest recent example of a space agency turning a very visible defeat into a very visible victory.",
-  "cur": "Chandrayaan的故事，是一个国家在公众面前自学如何在另一个世界着陆，并在失败时拒绝放弃。Chandrayaan-2的坠毁没有被隐瞒或淡化；它发生在直播中，ISRO负责人在全国电视上展现了悲痛。四年后，同一个项目卷土重来并取得成功——同样的工程师，同样的目标，失败的教训被融入了改进方案。这是航天机构将极具公开性的失败转化为极具公开性的胜利的最清晰近例。"
- },
- {
-  "rel": "programs/chandrayaan.json",
-  "at": "narrative.1.md",
-  "en": "It is also a story about cost. ISRO's genius is doing profound things cheaply — reaching the Moon and Mars for budgets that would barely fund a study elsewhere. That frugality is partly necessity and partly philosophy: a deliberate engineering culture of simplicity, reuse of proven hardware, and ruthless prioritization. Chandrayaan proves that the price of admission to deep space has fallen far enough that a determined nation of modest means can hold genuine firsts.",
-  "cur": "这也是一个关于成本的故事。ISRO的天才之处在于以低廉的成本做出深远的成就——以在其他地方几乎只够资助一项研究的预算抵达月球和火星。这种节俭部分出于必要,部分出于理念:一种刻意追求的工程文化,强调简洁、复用经过验证的硬件以及无情的优先级排序。Chandrayaan证明,进入深空的门槛已经降低到足以让一个资源有限但意志坚定的国家取得真正的首创成就。"
- },
- {
-  "rel": "programs/chandrayaan.json",
-  "at": "narrative.2.md",
-  "en": "And it is a story about who the Moon belongs to now. For decades lunar exploration was a two-superpower affair, then a quiet scientific one. Chandrayaan, alongside China's program, Japan's SLIM, and a wave of others, marks the arrival of a genuinely multipolar Moon — where the first soft landing at the south pole was made not by the United States, Russia, or China, but by India.",
-  "cur": "而这也是一个关于月球如今属于谁的故事。数十年来，月球探索一直是两个超级大国之间的事务，后来变成了一项安静的科学事业。Chandrayaan与中国的计划、日本的SLIM以及其他一系列项目一起，标志着真正多极化月球时代的到来——南极的首次软着陆不是由美国、俄罗斯或中国完成的，而是由印度完成的。"
- },
- {
-  "rel": "programs/chandrayaan.json",
-  "at": "legacy.0.md",
-  "en": "Chandrayaan's first legacy is scientific and permanent: providing the platform from which NASA's M3 instrument detected water on the Moon — data published in 2009, which reframed the Moon from a dead rock into a place that might sustain a human presence and underlies every current plan to return, including Artemis and China's.",
-  "cur": "Chandrayaan的首要遗产是科学性的且长久的：它提供了平台，使NASA的M3仪器得以探测到月球上的水——这些数据发表于2009年，将月球从一颗死寂的岩石重新定义为一个可能维持人类存在的地方，并且是当前所有重返月球计划的基础，包括Artemis和中国的计划。"
- },
- {
-  "rel": "programs/chandrayaan.json",
-  "at": "legacy.1.md",
-  "en": "Its second legacy is the first soft landing near the lunar south pole, the region every future lunar program is aiming for. India got there first, giving it a genuine claim to leadership at the most important destination on the Moon and hard-won landing experience that later missions will build on.",
-  "cur": "它的第二项遗产是首次在月球南极附近实现软着陆，这一地区是未来所有月球项目的目标所在。印度率先抵达，使其对月球最重要目的地拥有了真正的领导地位主张，并获得了来之不易的着陆经验，后续任务将以此为基础。"
- },
- {
-  "rel": "programs/chandrayaan.json",
-  "at": "legacy.2.md",
-  "en": "And its third is a demonstration, watched worldwide, that frontier space is now affordable to more than the traditional powers. ISRO's costs reset expectations for what lunar exploration has to cost — an example the next generation of emerging space nations is already following.",
-  "cur": "它的第三个意义是一次面向全球的示范：前沿太空探索现在不再只有传统大国才能负担。ISRO 的成本重置了月球探测应有成本的预期——这一范例已经被下一代新兴航天国家所效仿。"
- },
- {
-  "rel": "programs/chandrayaan.json",
-  "at": "lessons.0.md",
-  "en": "The lesson of Chandrayaan is that a public failure, fully owned and learned from, can become the foundation of a greater success. Chandrayaan-2's crash could have ended the program's ambition; instead it became the data that made Chandrayaan-3's historic landing possible. The willingness to try again, in the same public eye that watched the failure, is the whole story.",
-  "cur": "Chandrayaan的教训在于，一次公开的失败，如果能完全承认并从中汲取教训，就能成为更大成功的基础。Chandrayaan-2的坠毁本可能终结该项目的雄心；但它反而成为使Chandrayaan-3历史性着陆成为可能的数据。在曾目睹失败的公众注视下再次尝试的意愿，正是整个故事的全部意义。"
- },
- {
-  "rel": "programs/chandrayaan.json",
-  "at": "lessons.1.md",
-  "en": "The deeper lesson is that cost is a form of capability. By doing profound exploration cheaply, ISRO did not merely save money — it made a class of missions possible for a nation that could never have afforded them at Western prices, and reset what the rest of the world believes deep-space exploration must cost. Frugality, pursued as engineering discipline, is itself a kind of power.",
-  "cur": "更深层的启示在于，成本本身就是一种能力。ISRO通过低成本实现深空探索，不仅仅是节省了资金——它让一个永远无法承受西方价格的国家得以开展一整类任务，并重塑了世界其他国家对深空探索成本的认知。作为工程纪律来追求的节俭，本身就是一种力量。"
- },
- {
-  "rel": "programs/change.json",
-  "at": "tagline",
-  "en": "The methodical conquest of the Moon: orbit, land, rove, return — including the first landing ever on the far side, and the first samples from it.",
-  "cur": "有条不紊地征服月球:环绕、着陆、巡视、返回——包括人类首次在月球背面着陆,以及首次从那里采集样品。"
- },
- {
-  "rel": "programs/change.json",
-  "at": "the_land.0.md",
-  "en": "While the United States was away from the Moon for fifty years and Russia's lunar program lay dormant, China quietly built the most sustained and successful campaign of robotic lunar exploration of the twenty-first century. Named for the Chinese goddess of the Moon, the Chang'e program has, step by deliberate step, done everything a robotic program can do at another world — orbited it, landed on it, driven across it, and brought pieces of it home — and then done the things no one had ever done at all.",
-  "cur": "当美国离开月球五十年之久，俄罗斯的月球计划陷入休眠之际，中国悄然建立了二十一世纪最持久、最成功的机器人月球探测活动。以中国月亮女神的名字命名，嫦娥计划循序渐进地完成了机器人计划在另一个世界能做的一切——绕行它、登陆它、在它的表面行驶、以及将它的岩石带回家——然后做成了从未有人在月球做过的事情。"
- },
- {
-  "rel": "programs/change.json",
-  "at": "the_land.1.md",
-  "en": "The program's signature is the same patient, incremental method that built the Tiangong stations: each mission is a rehearsal for the next, each capability proven before the next is attempted. Orbit first (Chang'e 1–2), then soft-land and rove (Chang'e 3), then reach the impossible far side (Chang'e 4), then return samples (Chang'e 5), then return samples from the far side (Chang'e 6). It is a ladder climbed rung by rung, and China has not missed a rung.",
-  "cur": "该计划的标志是同样耐心、循序渐进的方法，这种方法建造了天宫空间站：每次任务都是对下一次任务的演练，每项能力都经过验证后才尝试下一项。首先绕行（嫦娥一号–2），然后软着陆和漫游（嫦娥三号），然后到达不可能的月球背面（嫦娥四号），然后返回样本（嫦娥五号），然后从月球背面返回样本（嫦娥六号）。这是一架逐阶段攀爬的梯子，中国没有错过任何一阶。"
- },
- {
-  "rel": "programs/change.json",
-  "at": "goals.0.md",
-  "en": "The near-term goals are scientific and methodical: map the Moon, land softly, deploy rovers, and return samples — mastering each capability in turn. The far side of the Moon, which never faces Earth and so cannot communicate with it directly, was a specific and audacious target: reaching it required first placing a relay satellite beyond the Moon, and no nation had ever landed there before China did it in 2019.",
-  "cur": "近期目标是科学性和系统性的:绘制月球地图、软着陆、部署巡视器、采样返回——依次掌握每项能力。月球背面永远背对地球,因此无法与地球直接通信,这是一个明确而大胆的目标:抵达那里需要首先在月球之外放置一颗中继卫星,在中国于2019年实现之前,没有任何国家曾在那里着陆过。"
- },
- {
-  "rel": "programs/change.json",
-  "at": "goals.1.caption",
-  "en": "Chang'e-4 on the far side of the Moon — the first spacecraft ever to land on the hemisphere that never faces Earth, reached only after China placed a relay satellite in position to carry its signals home.",
-  "cur": "月球背面的嫦娥四号——人类首个在永远背对地球的半球着陆的航天器,只有在中国部署了中继卫星将其信号传回地球之后才得以实现。"
- },
- {
-  "rel": "programs/change.json",
-  "at": "goals.2.md",
-  "en": "The long-term goals are far larger: to land Chinese astronauts on the Moon by 2030, and to build the International Lunar Research Station — a robotic-then-crewed base near the lunar south pole, developed with international partners as an explicit alternative to the American-led Artemis coalition. The robotic Chang'e missions are the reconnaissance and the proof of capability; the crewed base is the destination the whole program is climbing toward.",
-  "cur": "长期目标要宏大得多:到2030年让中国航天员登陆月球,以及建设国际月球科研站——一个先机器人后载人的月球南极附近基地,与国际伙伴共同开发,作为美国主导的Artemis联盟的明确替代方案。机器人嫦娥任务是侦察和能力验证;载人基地是整个计划攀登的目标。"
- },
- {
-  "rel": "programs/change.json",
-  "at": "outcome.0.md",
-  "en": "The record is a near-unbroken string of firsts and successes. Chang'e 1 and 2 mapped the Moon. Chang'e 3 (2013) made the first soft landing since 1976, carrying the Yutu rover. Chang'e 4 (2019) achieved the first landing in history on the lunar far side. Chang'e 5 (2020) returned the first fresh lunar samples in 44 years. And Chang'e 6 (2024) returned the first samples ever collected from the far side — material that had never been held in human hands. No other lunar program of the era comes close to this run of achievement.",
-  "cur": "这一记录是近乎不断的首创和成功的集合。嫦娥一号和2绘制了月球地图。嫦娥三号（2013）完成了自1976年以来的首次软着陆，搭载了玉兔漫游车。嫦娥四号（2019）实现了人类历史上首次在月球背面的着陆。嫦娥五号（2020）返回了44年来首批新鲜的月球样本。嫦娥六号（2024）返回了有史以来首批从月球背面采集的样本——这些物质从未被人类手持过。这个时代没有其他月球计划能够接近这样的成就记录。"
- },
- {
-  "rel": "programs/change.json",
-  "at": "outcome.1.caption",
-  "en": "Chang'e-5's sample return — the first new Moon rocks brought to Earth since the Soviet Luna missions of the 1970s, and proof that China had mastered the full round trip to the lunar surface and back.",
-  "cur": "嫦娥五号的采样返回——自1970年代苏联Luna任务以来首批运抵地球的新月岩,证明中国已掌握了往返月球表面的完整能力。"
- },
- {
-  "rel": "programs/change.json",
-  "at": "outcome.2.md",
-  "en": "The samples alone have reshaped lunar science, revealing volcanic activity far more recent than models predicted and returning far-side material that may finally explain why the Moon's two hemispheres are so different. And the program's success has made China the pacing threat that reanimated the American lunar program: Artemis exists, in part, because China demonstrated it could and would go to the Moon — and stay.",
-  "cur": "仅样品本身就重塑了月球科学,揭示了比模型预测更晚近的火山活动,并带回了可能最终解释月球两个半球为何如此不同的背面物质。而该计划的成功使中国成为重新激活美国月球计划的领跑威胁:Artemis的存在,部分原因就是中国证明了它能够并且将会前往月球——并且留在那里。"
- },
- {
-  "rel": "programs/change.json",
-  "at": "narrative.0.md",
-  "en": "The story of Chang'e is a program that treated the Moon as a sequence of problems to be solved in order, and solved them. There was no rush to plant a flag, no single dramatic sprint — just a steady, published progression through orbiting, landing, roving, and returning, each mission building precisely on the last. The far-side landing is the purest expression of the method: reaching it required first solving the communication problem with a relay satellite, so China solved that first, then landed. The audacity is real, but it is always earned by preparation.",
-  "cur": "嫦娥的故事,是一个将月球视为一系列需要按顺序解决的问题的计划,并且解决了它们。没有急于插旗的冲动,没有单次戏剧性冲刺——只有稳步推进、公开计划的环绕、着陆、巡视和返回进程,每次任务都精确建立在上一次之上。月球背面着陆是这种方法的最纯粹体现:抵达那里需要首先用中继卫星解决通信问题,所以中国先解决了那个问题,然后着陆。这份大胆是真实的,但始终是通过准备赢得的。"
- },
- {
-  "rel": "programs/change.json",
-  "at": "narrative.1.md",
-  "en": "It is also the robotic vanguard of a larger ambition. The Chang'e missions are not an end in themselves; they are the reconnaissance for crewed landings and a permanent base. Every soft landing, every sample return, every far-side first is a capability China will need to put people on the Moon and keep them there — and the program is explicitly structured as the robotic first half of a plan whose second half is human.",
-  "cur": "它也是更大野心的机器人先锋。嫦娥任务不是目的本身；它们是对载人着陆和永久基地的侦察。每次软着陆、每次样本返回、每个背面首创都是中国需要的能力，以便将人类送上月球并让他们留在那里——而该计划的结构明确了这一点：作为一个计划的机器人前半段，其后半段是人类。"
- },
- {
-  "rel": "programs/change.json",
-  "at": "narrative.2.md",
-  "en": "And it is one half of a new race. For the first time since Apollo, two powers are driving hard for the Moon at once — China's Chang'e-and-crewed program and America's Artemis — both aiming for the same resource-rich south pole, both building coalitions, both on timelines that converge around 2030. Chang'e's quiet, methodical success is the reason that race exists, and China's steadiness makes it a formidable competitor in it.",
-  "cur": "而且它是新竞赛的一半。自Apollo以来首次，两个大国同时为月球而努力——中国的嫦娥-和载人计划以及美国的Artemis——两者都瞄准同样资源丰富的南极，两者都在建立联盟，两者的时间表都在2030年前后汇聚。嫦娥的安静、有条不紊的成功是那场竞赛存在的原因，而中国的稳健使它在竞赛中成为了一个强劲的竞争者。"
- },
- {
-  "rel": "programs/change.json",
-  "at": "legacy.0.md",
-  "en": "Chang'e's first legacy is scientific: fresh lunar samples from both near and far sides after a half-century gap, already rewriting the Moon's volcanic history and offering the first direct clues to why its two hemispheres differ so profoundly. These are among the most valuable planetary samples returned in a generation.",
-  "cur": "嫦娥的首要遗产是科学性的:在半个世纪的空白后,从月球近侧和背面获取的新鲜样品,已经在改写月球的火山历史,并提供了关于其两个半球为何如此不同的首批直接线索。这些是一代人以来返回的最有价值的行星样品之一。"
- },
- {
-  "rel": "programs/change.json",
-  "at": "legacy.1.md",
-  "en": "Its second legacy is the first human access to the lunar far side — a place that had been utterly unreachable, opened by the simple, clever step of a relay satellite. Chang'e turned the hidden half of the Moon from an abstraction into explored ground.",
-  "cur": "其第二项遗产是人类首次进入月球背面——一个曾经完全无法抵达的地方,通过中继卫星这一简单而巧妙的步骤得以开启。嫦娥将月球隐藏的那一半从抽象概念变成了被探索的土地。"
- },
- {
-  "rel": "programs/change.json",
-  "at": "legacy.2.md",
-  "en": "And its third is the reanimation of the Moon race itself. China's methodical success is a principal reason the United States committed to Artemis and to returning humans to the Moon on a deadline. Chang'e did not just explore the Moon; it changed the strategic calculus that governs who else goes, and when.",
-  "cur": "其第三项遗产是月球竞赛本身的重启。中国有条不紊的成功是美国承诺Artemis并在最后期限前让人类重返月球的主要原因。嫦娥不仅探索了月球;它改变了支配其他人何时前往以及谁会前往的战略考量。"
- }
+  {
+    "rel": "programs/apollo.json",
+    "at": "tagline",
+    "en": "The Cold-War sprint that put twelve people on the Moon — and then stopped.",
+    "cur": "将十二人送上月球的冷战冲刺——然后戛然而止。"
+  },
+  {
+    "rel": "programs/apollo.json",
+    "at": "the_land.0.md",
+    "en": "For ninety minutes at a stretch, in the autumn of 1957, a polished metal sphere the size of a beach ball crossed the sky over the United States — and it was beeping. Sputnik 1 belonged to the Soviet Union, and there was nothing the most powerful country on Earth could do but listen. Less than four years later, on 12 April 1961, the Soviets put up a person too: Yuri Gagarin, the first human to leave the planet. Washington heard none of it as science. It heard a syllogism it couldn't unhear — a rocket that can lift a satellite into orbit can drop a warhead onto any city you care to name. Almost overnight, spaceflight stopped being exploration and became the leading edge of the Cold War.",
+    "cur": "1957年秋天,一个沙滩球大小的抛光金属球体连续九十分钟划过美国上空——它还在发出哔哔声。Sputnik 1属于苏联,而地球上最强大的国家除了倾听别无他法。不到四年后,1961年4月12日,苏联人也送上去了一个人:尤里·加加林,第一个离开地球的人类。华盛顿听到的完全不是科学。它听到的是一个无法忽视的三段论——能将卫星送入轨道的火箭也能将弹头投放到任何你想得到的城市。几乎在一夜之间,太空飞行不再是探索,而成了冷战的最前沿。"
+  },
+  {
+    "rel": "programs/apollo.json",
+    "at": "the_land.1.md",
+    "en": "On 25 May 1961 — six weeks after Gagarin, and twenty days after Alan Shepard's fifteen-minute suborbital hop made America a spacefaring nation on a technicality — John F. Kennedy stood before Congress and bet the country on the Moon. Land a man there and return him safely, he said, \"before this decade is out.\" Strip away the rhetoric and it was a contest for prestige: a bid to beat the Soviets in the one arena where they were plainly ahead. The science would be real, and it would outlast the politics — but it rode behind them. Apollo was born of that choice, and it's worth saying so without flinching.",
+    "cur": "1961年5月25日——在加加林之后六周,在艾伦·谢泼德十五分钟的亚轨道飞行让美国在技术细节上成为航天国家二十天后——约翰·肯尼迪站在国会面前,将国家的赌注押在了月球上。他说,要让一个人登陆月球并安全返回,\"在这个十年结束之前\"。剥去修辞,这是一场争夺声望的竞赛:试图在苏联人明显领先的唯一领域击败他们。科学会是真实的,它会比政治更长久——但它跟在政治后面。Apollo诞生于那个选择,值得毫不退缩地说明这一点。"
+  },
+  {
+    "rel": "programs/apollo.json",
+    "at": "goals.0.caption",
+    "en": "The Saturn V — 111 metres tall, about 3,000 tonnes on the pad, and the most powerful rocket ever to carry humans — and, for over fifty years, the most powerful ever flown, until SpaceX's Super Heavy in 2023. It existed for exactly one reason: to beat a deadline.",
+    "cur": "Saturn V——高111米,发射台上重约3,000吨,是有史以来运载过人类的最强大火箭——并且在超过五十年的时间里一直是飞行过的最强大火箭,直到2023年SpaceX的Super Heavy出现。它存在的理由只有一个:赶在最后期限之前完成任务。"
+  },
+  {
+    "rel": "programs/apollo.json",
+    "at": "goals.1.md",
+    "en": "The goal was narrow and absolute: put American astronauts on the lunar surface and bring them home alive, ahead of the USSR, before 1970. Everything else was engineered backward from that one sentence — the Saturn rockets, a three-part spacecraft that had to fly in pieces a quarter-million miles from any help, pressure suits rated for hard vacuum, a worldwide tracking network, and a workforce that swelled to roughly 400,000 across NASA, its contractors, and the universities.",
+    "cur": "目标狭窄而绝对：在1970年之前、在苏联之前，将美国宇航员送上月球表面并让他们活着返回地球。其他一切都是从这一句话倒推设计出来的——Saturn火箭、一个必须在距离任何援助二十五万英里的地方分块飞行的三部分航天器、额定承受硬真空的压力服、一个全球跟踪网络，以及一支膨胀至约40万人的劳动力队伍，遍及NASA、其承包商和各大学。"
+  },
+  {
+    "rel": "programs/apollo.json",
+    "at": "goals.2.md",
+    "en": "There were genuine scientific goals too — sampling the Moon's geology, planting instruments that would keep working long after the crews left, finding out whether people could actually do useful work on another world. But in the program's own priority order they sat behind the landing, and everyone involved knew it. The race set the schedule. The science fit into the gaps it left.",
+    "cur": "当然也有真正的科学目标——采集月球的地质样本，部署在乘组离开后仍能长期工作的仪器，探明人类能否在另一个世界真正完成有用的工作。但在该计划自身的优先级排序中，这些目标排在登陆之后，所有参与者都心知肚明。竞赛决定了时间表。科学只能填补它留下的空隙。"
+  },
+  {
+    "rel": "programs/apollo.json",
+    "at": "outcome.0.caption",
+    "en": "Apollo 11 on the Sea of Tranquility, 20 July 1969 — the moment the race was decided.",
+    "cur": "Apollo 11 在Tranquility海，1969 年 7 月 20 日——太空竞赛决出胜负的时刻。"
+  },
+  {
+    "rel": "programs/apollo.json",
+    "at": "outcome.1.md",
+    "en": "It worked. On 20 July 1969 Neil Armstrong and Buzz Aldrin walked on the Sea of Tranquility while Michael Collins flew the Command Module alone overhead, losing radio contact every time his orbit carried him behind the Moon. Five more landings followed through December 1972. Twelve people in all walked on the Moon and came home, carrying 382 kilograms of rock and soil that still anchors lunar science more than half a century later.",
+    "cur": "成功了。1969 年 7 月 20 日，尼尔·阿姆斯特朗和巴兹·奥尔德林在宁静海漫步，而迈克尔·柯林斯独自在头顶驾驶指挥舱飞行，每当他的轨道绕向月球背面时就会失去无线电联系。之后又进行了五次登月任务，直到 1972 年 12 月。总共十二个人登上了月球并安全返回地球，带回了 382 千克的岩石和土壤，这些样本至今仍为月球科学奠定基础，已有半个多世纪之久。"
+  },
+  {
+    "rel": "programs/apollo.json",
+    "at": "outcome.2.md",
+    "en": "The bill came due in money and in lives. In January 1967 a cabin fire during a routine ground test killed Gus Grissom, Ed White, and Roger Chaffee in seconds, and grounded the program for twenty months. In April 1970 an oxygen tank ruptured on the way to the Moon and nearly killed the crew of Apollo 13, who came home cold and rationing water inside their own Lunar Module. And Apollo stopped at its technical peak: the last three planned landings, Apollo 18 through 20, were cancelled as budgets shrank and the public's attention drifted elsewhere. Did it succeed? It won the race it was built to win — and it was switched off while it was still getting better at the Moon. Pick your yardstick.",
+    "cur": "代价以金钱和生命的形式到来。1967年1月，一次例行地面测试中的座舱起火在数秒内夺去了格斯·格里森、埃德·怀特和罗杰·查菲的生命，并使该计划停滞了二十个月。1970年4月，一个氧气罐在前往月球途中破裂，几乎杀死Apollo 13的机组人员，他们在自己的登月舱内忍受严寒、配给饮水才得以返回家园。而Apollo在其技术巅峰时期戛然而止：最后三次计划中的登陆任务——Apollo 18至20——因预算缩减和公众注意力转向他处而被取消。它成功了吗？它赢得了它被建造来赢得的竞赛——而它在仍不断提升月球探索能力时就被关闭了。这取决于你的衡量标准。"
+  },
+  {
+    "rel": "programs/apollo.json",
+    "at": "narrative.0.md",
+    "en": "The arc is unusually clean for something this big. It opens on catastrophe: the 1967 fire forced a ground-up redesign of the spacecraft and of NASA's entire safety culture — the reckoning that made everything after it possible. Then the fixed hardware went to work. In 1968 Apollo 7 shook out the redesigned Command Module in Earth orbit; that December, Apollo 8 became the first crewed flight to leave Earth's gravity altogether and circle the Moon, its crew reading from Genesis on live television to the largest audience that had ever existed.",
+    "cur": "这条弧线对于如此庞大的项目而言异常清晰。它始于灾难：1967年的火灾迫使航天器和NASA整个安全文化进行彻底重新设计——正是这次清算使之后的一切成为可能。然后修复后的硬件开始运作。1968年，Apollo 7在地球轨道上测试了重新设计的指令舱；同年12月，Apollo 8成为首次完全脱离地球引力并环绕月球的载人飞行，其机组人员在电视直播中朗读《创世记》，面向有史以来最大规模的观众。"
+  },
+  {
+    "rel": "programs/apollo.json",
+    "at": "narrative.1.md",
+    "en": "Apollo 11 answered Kennedy. And then the program did something a Cold-War instrument was under no obligation to do: it turned toward science. Apollos 12 through 17 grew steadily more ambitious — longer stays, the battery-powered Lunar Roving Vehicle, and finally, on Apollo 17, a trained field geologist named Harrison Schmitt walking the surface he had spent years studying. Apollo 13, the near-disaster in the middle of that run, did something strange to NASA's reputation: by surviving it, the agency came off looking more capable than it would have by never failing at all.",
+    "cur": "Apollo 11回答了肯尼迪的期许。随后,这个计划做了一件冷战工具本无义务去做的事:它转向了科学。Apollo 12到Apollo 17的任务野心稳步增长——更长的停留时间、电池驱动的月球车,最终在Apollo 17上,一位名叫哈里森·施密特的训练有素的野外地质学家踏上了他研究多年的月球表面。Apollo 13——这次系列任务中途的险些灾难——对NASA的声誉产生了奇特的影响:通过幸存下来,这个机构反而显得比从未失败过更有能力。"
+  },
+  {
+    "rel": "programs/apollo.json",
+    "at": "narrative.2.md",
+    "en": "Apollo 17 lifted off the Moon on 14 December 1972. No human has been back since. But the program's hardware, its people, and its momentum ran straight into nearly everything American human spaceflight did next — Skylab, the Space Shuttle, and, fifty years on, Artemis, now reaching for the lunar south pole that Apollo never touched.",
+    "cur": "Apollo 17于1972年12月14日从月球升空。此后再无人类返回。但该计划的硬件、人员和势头直接延续到了美国载人航天此后的几乎所有项目——Skylab、Space Shuttle，以及五十年后的今天，正伸向Apollo从未触及的月球南极的Artemis。"
+  },
+  {
+    "rel": "programs/apollo.json",
+    "at": "legacy.0.caption",
+    "en": "Earthrise — Apollo 8, Christmas Eve 1968. An unplanned photograph that became one of the most reproduced images in history, and a founding picture of the environmental movement.",
+    "cur": "Earthrise — Apollo 8,1968年平安夜。一张未经计划的照片，成为历史上复制最多的图像之一，也是环保运动的奠基性图像。"
+  },
+  {
+    "rel": "programs/apollo.json",
+    "at": "legacy.1.md",
+    "en": "Apollo's return on investment is still argued over, but the shape of it is clear. The program cost about $25.8 billion in period dollars — comfortably north of $250 billion today — and at its peak it put some 400,000 people to work across NASA, its contractors, and the universities. That was a deliberate industrial and educational build-out, not just a rocket, and most of it outlived the Moon shots.",
+    "cur": "Apollo的投资回报至今仍有争议，但其轮廓是清晰的。该计划耗资约258亿美元（按当时币值计算）——换算到今天轻松超过2500亿美元——在高峰期雇用了约40万人，分布在NASA、其承包商和各大学。这是一次有意为之的工业和教育建设，而不仅仅是一枚火箭，其中大部分成果在登月计划结束后仍延续至今。"
+  },
+  {
+    "rel": "programs/apollo.json",
+    "at": "legacy.2.md",
+    "en": "The technological pull was real, and it compounded. Apollo pulled early integrated circuits into volume production, drove the young discipline of software engineering, and all but invented modern systems management — the art of keeping a million interdependent parts on schedule at once. Those techniques seeded whole later industries. And the 382 kilograms of returned rock rewrote the age and origin story of the Solar System; researchers are still pulling new results from sealed samples today.",
+    "cur": "技术拉动是真实存在的，而且会不断叠加。Apollo 将早期集成电路拉入批量生产，推动了软件工程这一年轻学科的发展，并且几乎发明了现代系统管理——同时让一百万个相互依赖的部件保持进度的艺术。这些技术为后来的整个产业播下了种子。而带回的 382 千克岩石改写了太阳系的年龄和起源故事；研究人员至今仍在从密封样本中获取新的研究成果。"
+  },
+  {
+    "rel": "programs/apollo.json",
+    "at": "legacy.3.md",
+    "en": "For the United States it was soft power at planetary scale — a demonstration, watched live around the world, of what an open society could organize and pull off. For everyone else, the most durable thing Apollo left behind may not be a technology at all but a photograph: the whole Earth, small and alone against the black, seen from another world for the first time. Whatever you make of the Cold-War motives that paid for it, that picture changed how people saw the ground under their own feet — worth holding onto as a louder, more crowded space age begins.",
+    "cur": "对美国而言,这是行星尺度的软实力——向全世界实况直播展示一个开放社会能够组织并完成什么。对其他所有人而言,Apollo留下的最持久之物或许根本不是某种技术,而是一张照片:完整的地球,渺小而孤独地悬浮在黑暗之中,首次从另一个世界被看见。无论你如何看待为此买单的冷战动机,那张照片改变了人们看待自己脚下土地的方式——在一个更喧闹、更拥挤的太空时代开始之际,这份遗产值得珍视。"
+  },
+  {
+    "rel": "programs/apollo.json",
+    "at": "lessons.0.md",
+    "en": "Apollo's most portable lesson has nothing to do with rocketry. It's about how you point a very large number of people at the same hard thing. Kennedy handed the program a goal that was specific, audacious, and time-boxed — land a crew on the Moon and return them safely, before the decade was out — and that single sentence did what no org chart could. It aligned 400,000 people who would never meet, and it made every decision legible: does this get us to the Moon by 1970, or not? A clear, dated, non-negotiable goal that anyone can check their own work against will out-coordinate any hierarchy.",
+    "cur": "Apollo最可移植的教训与火箭技术无关。它关乎如何让极其庞大的人群聚焦于同一件难事。Kennedy为该计划制定了一个具体、大胆且有时限的目标——在十年内将宇航员送上月球并安全返回——这一句话完成了任何组织架构图都做不到的事。它协调了40万名永远不会见面的人,并使每一个决策都变得清晰可辨:这能否让我们在1970年前登上月球?一个清晰、有截止日期、不容商榷的目标,任何人都可以据此检验自己的工作,其协调效果将超越任何层级制度。"
+  },
+  {
+    "rel": "programs/apollo.json",
+    "at": "lessons.1.md",
+    "en": "The second lesson lives in Mission Control. Apollo institutionalized a particular kind of teamwork under pressure: controllers trained to stay ahead of the vehicle, to speak up regardless of rank, and to solve problems as a room rather than a chain of command. When Apollo 13 crippled itself roughly 320,000 kilometres from home, no lone hero saved the crew — a room full of people worked the problem together, against the clock, and improvised a way back. \"Work the problem\" beat panic. Any team that ever hits a crisis can borrow the habit.",
+    "cur": "第二课存在于任务控制中心。Apollo 制度化了一种特殊的压力下的团队合作形式：控制员们受训能够超前于飞行器的状况，无论级别如何都敢于发言，并将问题作为一个整体来解决，而非按照指挥链处理。当 Apollo 13 在距离家园大约 320,000 公里处陷入困境时，没有单个英雄拯救了宇航员——一个房间里的许多人共同处理问题，与时间竞速，并想出了一条回家的路。\"处理问题\"战胜了恐慌。任何曾经经历过危机的团队都可以学习这个习惯。"
+  },
+  {
+    "rel": "programs/apollo.json",
+    "at": "lessons.2.md",
+    "en": "And the human note worth keeping: they did it in eight years, having never done it before, with onboard computers weaker than a modern doorbell. Apollo is a standing argument that a clear mission, the right people, and an honest deadline can still outrun the odds — a useful thing to remember the next time a goal looks impossible.",
+    "cur": "值得铭记的人性注脚是：他们在八年内完成了这一切，此前从未做过，使用的机载计算机还不如现代门铃强大。Apollo 是一个有力的证明：明确的任务、合适的人才和诚实的期限仍然可以战胜一切困难——这一点值得在下次目标看似不可能时记住。"
+  },
+  {
+    "rel": "programs/ariane.json",
+    "at": "tagline",
+    "en": "Europe's guarantee of its own way to space — born from being told no, grown into the world's dominant commercial launcher, and still flying the continent's independence into orbit.",
+    "cur": "欧洲通往太空之路的自主保障——诞生于一次被拒绝,成长为世界主导的商业发射服务商,至今仍将欧洲大陆的独立性送入轨道。"
+  },
+  {
+    "rel": "programs/ariane.json",
+    "at": "the_land.0.md",
+    "en": "In the early 1970s Europe did not control its own access to space, and it found out what that meant. When Europe wanted to launch the Franco-German Symphonie communications satellites, the only ride available was American — and the United States would only provide it on the condition that the satellites not be used for commercial telecommunications that might compete with the US-led Intelsat. It was a quiet, decisive humiliation: to fly on someone else's rocket is to let them decide what your spacecraft is allowed to do. Europe drew the obvious conclusion and resolved never to be in that position again.",
+    "cur": "1970年代初,欧洲无法自主掌控进入太空的通道,并切身体会到了这意味着什么。当欧洲想要发射法德合作的Symphonie通信卫星时,唯一可用的运载工具来自美国——而美国提供发射服务的条件是,这些卫星不得用于可能与美国主导的Intelsat竞争的商业电信业务。这是一次无声而决定性的羞辱:搭乘他人的火箭,就意味着让他人决定你的航天器被允许做什么。欧洲得出了显而易见的结论,决心不再陷入这种境地。"
+  },
+  {
+    "rel": "programs/ariane.json",
+    "at": "the_land.1.md",
+    "en": "The answer was Ariane — a European launcher, led by France and built under the newly-formed European Space Agency, flying from Kourou in French Guiana, close to the equator where the Earth's spin gives a rocket a free boost. Its first flight, in 1979, was the moment Europe secured guaranteed, independent access to orbit. Unlike almost every other program in this atlas, Ariane carried no crew and chased no records. It is infrastructure — the road, not the journey — and it turned out to be one of the most consequential roads of the space age.",
+    "cur": "答案就是Ariane——一款欧洲火箭,由法国主导,在新成立的欧洲空间局领导下建造,从法属圭亚那的库鲁发射,那里靠近赤道,地球自转能为火箭提供免费的速度增益。它的首次飞行是在1979年,标志着欧洲获得了有保障的、独立的入轨通道。与本图集中几乎所有其他项目不同,Ariane不搭载航天员,也不追求纪录。它是基础设施——是道路而非旅程——而它最终成为了太空时代最具深远影响的道路之一。"
+  },
+  {
+    "rel": "programs/ariane.json",
+    "at": "goals.0.caption",
+    "en": "Ariane 1, Europe's first independent orbital launcher, first flown in 1979. It existed to guarantee that Europe would never again need another power's permission to put its own spacecraft into space.",
+    "cur": "Ariane 1,欧洲首款独立轨道运载火箭,于1979年首飞。它的存在是为了确保欧洲再也不需要其他大国的许可就能将自己的航天器送入太空。"
+  },
+  {
+    "rel": "programs/ariane.json",
+    "at": "goals.1.md",
+    "en": "Ariane's first goal was strategic and simple: autonomy. Europe would build a launcher it fully controlled, so that its satellites, its science, and eventually its astronauts could reach orbit on European terms, answerable to no one. That goal alone would have justified the program. But a second goal emerged almost immediately and became just as important — to sell that capacity on the open market.",
+    "cur": "Ariane的首要目标是战略性的且简单明了:自主权。欧洲将建造一款完全由自己掌控的运载火箭,使其卫星、科学任务以及最终的航天员能够按照欧洲自己的条件进入轨道,无需对任何人负责。仅这一目标就足以证明该项目的合理性。但第二个目标几乎立即浮现,并变得同样重要——在公开市场上出售这一能力。"
+  },
+  {
+    "rel": "programs/ariane.json",
+    "at": "goals.2.md",
+    "en": "In 1980 Europe created Arianespace, the world's first commercial launch company, and turned a strategic asset into a business. The idea was that if Ariane launched not only European payloads but satellites for anyone willing to pay, the commercial revenue would help sustain the launcher and drive down its cost. It was a genuinely new model — treating access to space as a service to be sold rather than a capability each nation built only for itself — and for two decades it worked spectacularly well.",
+    "cur": "1980年,欧洲创建了Arianespace,这是世界上第一家商业发射公司,将战略资产转化为商业业务。其理念是,如果Ariane不仅发射欧洲的有效载荷,还为任何愿意付费的客户发射卫星,商业收入将有助于维持火箭运营并降低成本。这是一种真正创新的模式——将进入太空的能力作为一项可出售的服务,而不是每个国家仅为自己建造的能力——而且在二十年间它运作得极为成功。"
+  },
+  {
+    "rel": "programs/ariane.json",
+    "at": "outcome.0.caption",
+    "en": "Ariane 5 on its launch pad at Kourou. After a famous maiden-flight failure, it became one of the most reliable heavy-lift rockets ever flown — launching Rosetta, Galileo, the ATV freighters to the ISS, and the James Webb Space Telescope.",
+    "cur": "Ariane 5在库鲁的发射台上。在经历了著名的首飞失败后,它成为了有史以来最可靠的重型运载火箭之一——发射了Rosetta、Galileo、前往国际空间站的ATV货运飞船,以及James Webb Space Telescope。"
+  },
+  {
+    "rel": "programs/ariane.json",
+    "at": "outcome.1.md",
+    "en": "The outcome exceeded the ambition. Ariane 4, the reliable workhorse of the 1980s and 90s, captured roughly half of the entire global market for commercial satellite launches, making Arianespace the dominant launch provider on Earth and Europe a first-rank spacefaring power. Its successor, Ariane 5, had a notorious start — its 1996 maiden flight destroyed itself about thirty-seven seconds after ignition (thirty seconds after liftoff) when guidance software carried over from Ariane 4 overflowed at the new rocket's higher speed, a failure now taught in every software-engineering course — but recovered to become one of the most dependable heavy launchers ever built.",
+    "cur": "成果超越了预期。Ariane 4是1980年代和90年代可靠的主力火箭,占据了全球商业卫星发射市场大约一半的份额,使Arianespace成为地球上主导的发射服务商,也使欧洲成为一流的航天大国。它的后继者Ariane 5经历了臭名昭著的开局——其1996年首飞在点火后约三十七秒(升空后三十秒)时自毁,原因是从Ariane 4沿用的制导软件在新火箭更高的速度下溢出,这一失败现已成为每一门软件工程课程的教学案例——但随后恢复,成为迄今所造最可靠的重型运载火箭之一。"
+  },
+  {
+    "rel": "programs/ariane.json",
+    "at": "outcome.2.md",
+    "en": "Ariane 5's manifest is a roll-call of the era's science and infrastructure: the Rosetta comet mission, the Galileo navigation constellation, BepiColombo to Mercury, the ATV cargo freighters that resupplied the International Space Station, and — most celebrated of its late payloads — the James Webb Space Telescope (December 2021), launched so precisely that it saved years of the telescope's fuel. Ariane 5's true final flight came in July 2023, carrying the Heinrich Hertz and Syracuse 4B telecommunications satellites on VA261. Then the ground shifted. SpaceX's reusable rockets undercut Ariane's prices and ended its commercial dominance, and Ariane 6, flying from 2024, is Europe's answer: a cheaper, more flexible launcher built to keep the continent's independent access alive in a transformed market.",
+    "cur": "Ariane 5的发射清单是那个时代科学与基础设施的名录:Rosetta彗星任务、Galileo导航星座、BepiColombo水星探测器、为国际空间站补给的ATV货运飞船,以及——其晚期载荷中最著名的——James Webb Space Telescope(2021年12月),发射精度如此之高以至于为望远镜节省了数年的燃料。Ariane 5真正的最后一次飞行是在2023年7月,执行VA261任务,搭载Heinrich Hertz和Syracuse 4B通信卫星。然后形势发生了变化。SpaceX的可重复使用火箭在价格上击败了Ariane,终结了其商业主导地位,而从2024年开始飞行的Ariane 6是欧洲的应对之策:一款更便宜、更灵活的运载火箭,旨在让欧洲大陆在已经转变的市场中保持独立的太空进入能力。"
+  },
+  {
+    "rel": "programs/ariane.json",
+    "at": "narrative.0.md",
+    "en": "Ariane's through-line is that access to space is not a convenience but a form of sovereignty. The whole program grew from the recognition that depending on another power's rockets means depending on that power's permission — and everything Europe did afterwards, from building Ariane to sustaining it commercially to replacing it under pressure, followed from the decision that this dependence was unacceptable. In a domain usually told through crews and destinations, Ariane is the reminder that someone has to build and own the road, and that who owns it matters enormously.",
+    "cur": "Ariane的核心主线是,进入太空的能力不是便利而是主权的一种形式。整个项目源于这样的认识:依赖他国的火箭意味着依赖该国的许可——而欧洲此后所做的一切,从建造Ariane到通过商业手段维持它,再到在压力下更新换代,都源于一个决定:这种依赖是不可接受的。在一个通常以航天员和目的地来讲述的领域里,Ariane提醒我们,必须有人建造并拥有这条道路,而谁拥有它极其重要。"
+  },
+  {
+    "rel": "programs/ariane.json",
+    "at": "narrative.1.md",
+    "en": "The commercial pivot is the program's cleverest move and its central lesson. By founding Arianespace and selling launches worldwide, Europe made its strategic launcher pay for much of its own upkeep and honed it against real competition, rather than letting it become a subsidised national project that flew only occasionally. For twenty years this made Ariane both independent and dominant. It also made the program vulnerable in a way a purely strategic launcher would not have been: when a cheaper competitor appeared, Ariane lost the commercial market that had sustained it, and had to reinvent itself to survive.",
+    "cur": "商业化转型是该项目最巧妙的举措,也是其核心经验。通过创建Arianespace并在全球范围内销售发射服务,欧洲让其战略火箭在很大程度上自负盈亏,并在真实竞争中磨练它,而不是让它成为一个仅偶尔飞行的补贴性国家项目。二十年间,这使Ariane既独立又占据主导地位。这也使该项目以一种纯战略火箭不会有的方式变得脆弱:当更便宜的竞争对手出现时,Ariane失去了维持它的商业市场,不得不重塑自我以求生存。"
+  },
+  {
+    "rel": "programs/ariane.json",
+    "at": "narrative.2.md",
+    "en": "That competitor, of course, was reusability done right — the thing the Space Shuttle had promised and not delivered, and that a new generation achieved. Ariane, long built on the logic of the reliable expendable rocket, found that logic overturned almost overnight, and Ariane 6 is the response of an established power to a disruptive one. The outcome is still being written, but the stake is exactly what it was in 1979: whether Europe keeps its own guaranteed way to space.",
+    "cur": "当然,那个竞争对手就是真正实现的可重复使用——Space Shuttle曾经承诺过但未能实现的东西,而新一代实现了它。长期建立在可靠的一次性火箭逻辑之上的Ariane,发现这一逻辑几乎在一夜之间被推翻,而Ariane 6是一个老牌强国对颠覆性力量的回应。结果仍在书写,但赌注与1979年时完全相同:欧洲能否保持自己有保障的太空通道。"
+  },
+  {
+    "rel": "programs/ariane.json",
+    "at": "legacy.0.caption",
+    "en": "Ariane 6, flying from 2024 — Europe's answer to a market transformed by reusable rockets, and the continuation of the same mandate Ariane 1 was built for: independent European access to space.",
+    "cur": "Ariane 6,从2024年开始飞行——欧洲对被可重复使用火箭改变的市场的回应,也是Ariane 1建造时同一使命的延续:欧洲独立的太空进入能力。"
+  },
+  {
+    "rel": "programs/ariane.json",
+    "at": "legacy.1.md",
+    "en": "Ariane's legacy is that Europe has never again had to ask permission to reach space. For over four decades an unbroken line of European rockets has launched the continent's satellites, science missions, and contributions to the International Space Station — and for much of that time launched the world's, too. The commercial launch industry that is now so central to spaceflight was, in large part, invented by Arianespace; the model of selling access to orbit as a service began at Kourou.",
+    "cur": "Ariane的遗产是,欧洲再也不必请求许可才能进入太空。四十多年来,欧洲火箭的不间断序列发射了欧洲大陆的卫星、科学任务以及对国际空间站的贡献——而在这段时间的大部分时期,也发射了世界各国的载荷。如今对航天飞行如此重要的商业发射产业,在很大程度上是由Arianespace发明的;将进入轨道的能力作为服务出售的模式始于库鲁。"
+  },
+  {
+    "rel": "programs/ariane.json",
+    "at": "legacy.2.md",
+    "en": "It also stands as the clearest case study in the value — and the cost — of strategic autonomy. Ariane was more expensive than simply buying launches from whoever was cheapest, and in the reusable era that gap has grown. But the program's founders understood that the cheapest launch is worthless if the seller can dictate its terms, and Europe has spent four decades and considerable money to keep that from ever happening again. Whether to keep paying that premium, as reusable competitors reshape the market, is the live question Ariane 6 now embodies.",
+    "cur": "它也是战略自主权的价值——以及成本——最清晰的案例研究。Ariane比简单地从最便宜的供应商那里购买发射服务更昂贵,而在可重复使用时代,这一差距还在扩大。但该项目的创立者明白,如果卖方可以规定条件,那么最便宜的发射也毫无价值,欧洲已经花费了四十年时间和大量资金来防止这种情况再次发生。是否继续支付这一溢价,在可重复使用的竞争对手重塑市场的今天,正是Ariane 6所体现的现实问题。"
+  },
+  {
+    "rel": "programs/ariane.json",
+    "at": "lessons.0.md",
+    "en": "Ariane's first lesson is that independent access to critical infrastructure is worth paying for. Europe built its own launcher not because it was cheaper but because the alternative — depending on a rival or partner for something as fundamental as reaching orbit — meant surrendering control over its own space program, as the Symphonie affair had shown. The premium Europe has paid for Ariane is the price of never again being told what its satellites are allowed to do. For anything genuinely strategic, autonomy is a capability, not an extravagance.",
+    "cur": "Ariane的第一个教训是,对关键基础设施的独立掌控值得付出代价。欧洲建造自己的运载火箭不是因为它更便宜,而是因为替代方案——在进入轨道这样根本性的事情上依赖竞争对手或合作伙伴——意味着放弃对自己太空计划的控制,正如Symphonie事件所表明的那样。欧洲为Ariane支付的溢价,是再也不会被告知其卫星被允许做什么的代价。对于任何真正具有战略意义的事物,自主权是一种能力,而非奢侈。"
+  },
+  {
+    "rel": "programs/ariane.json",
+    "at": "lessons.1.md",
+    "en": "The second lesson is written in Flight 501: reused software is not automatically safe software. Ariane 5 was destroyed because guidance code proven on Ariane 4 was carried over untested into a rocket that flew faster, where an assumption baked into the old code no longer held. The components were sound; the failure was in assuming that what worked in one context would work unchanged in another. Every reused system must be re-validated against the new conditions it will actually face — a lesson that reaches far beyond rockets.",
+    "cur": "第二个教训写在Flight 501上:重用的软件不会自动成为安全的软件。Ariane 5被摧毁是因为在Ariane 4上得到验证的制导代码未经测试就被移植到一枚飞行速度更快的火箭上,而旧代码中内置的一个假设在新条件下不再成立。组件本身是可靠的;失败在于假设在一种情况下有效的东西会在另一种情况下不加改变地有效。每一个重用的系统都必须针对它将实际面对的新条件重新验证——这一教训远远超出了火箭的范畴。"
+  },
+  {
+    "rel": "programs/artemis.json",
+    "at": "tagline",
+    "en": "The return to the Moon — this time to stay, and this time with the world, not to beat it.",
+    "cur": "重返月球——这一次是为了留下来,这一次是与全世界一起,而不是为了击败它。"
+  },
+  {
+    "rel": "programs/artemis.json",
+    "at": "the_land.0.md",
+    "en": "Twelve people walked on the Moon between 1969 and 1972, and then no one did for more than fifty years. Apollo went, planted its flags, gathered its rocks, and stopped — because it had been built to win a race, and once the race was won there was no reason to keep paying for it. Artemis is NASA's attempt to go back and, this time, not stop. Named for Apollo's twin sister, it is designed around a different premise: not a sprint to arrive, but the slow construction of a permanent human foothold at the Moon.",
+    "cur": "从1969年到1972年,共有12人在月球上行走,此后五十多年再无人踏足。Apollo去了,插下旗帜,采集岩石,然后停止了——因为它是为赢得一场竞赛而建造的,一旦竞赛获胜,就没有理由继续为其买单。Artemis是NASA重返月球的尝试,这一次,不再停止。以Apollo的孪生姐妹命名,它围绕一个不同的前提设计:不是冲刺到达,而是缓慢建设人类在月球的永久立足点。"
+  },
+  {
+    "rel": "programs/artemis.json",
+    "at": "the_land.1.md",
+    "en": "The other difference is who goes. Apollo was a national project, a demonstration of American superiority over the Soviet Union, flown entirely by American astronauts on American hardware. Artemis is deliberately international and deliberately commercial — Europe builds the service module that powers Orion, Japan and Canada contribute to the lunar Gateway, SpaceX and others build the landers, and the crews will include astronauts from partner nations. Where Apollo was a race, Artemis is a coalition.",
+    "cur": "另一个不同之处是谁去。Apollo是一个国家项目,是美国对苏联优越性的展示,完全由美国宇航员乘坐美国硬件飞行。Artemis是刻意国际化和刻意商业化的——欧洲建造为Orion提供动力的服务舱,日本和加拿大为月球Gateway做出贡献,SpaceX等公司建造着陆器,机组人员将包括来自伙伴国家的宇航员。Apollo是一场竞赛,Artemis则是一个联盟。"
+  },
+  {
+    "rel": "programs/artemis.json",
+    "at": "goals.0.md",
+    "en": "The headline goal is a crewed landing near the lunar south pole — a region Apollo never visited, chosen because permanently-shadowed craters there hold water ice. Water is the prize: split into hydrogen and oxygen it becomes rocket propellant and breathable air, and a Moon that can supply its own water is a Moon you can stay on, and stage from, rather than merely visit.",
+    "cur": "标志性目标是在月球南极附近进行载人着陆——这是Apollo从未访问过的区域,之所以选择这里,是因为那里的永久阴影陨石坑中含有水冰。水是奖品:分解成氢气和氧气后,它就变成了火箭推进剂和可呼吸的空气,一个能够自给自足水的月球是你可以停留和作为前进基地的月球,而不仅仅是访问。"
+  },
+  {
+    "rel": "programs/artemis.json",
+    "at": "goals.1.caption",
+    "en": "Orion — the crew spacecraft, launched on the giant SLS rocket. Its service module, which supplies power and propulsion, is built by ESA in Europe: the vehicle that carries American astronauts to the Moon literally cannot fly without its international half.",
+    "cur": "Orion——载人航天器,由巨型SLS火箭发射。其提供动力和推进的服务舱由ESA在欧洲建造:运送美国宇航员前往月球的飞行器如果没有其国际部分就根本无法飞行。"
+  },
+  {
+    "rel": "programs/artemis.json",
+    "at": "goals.2.md",
+    "en": "The deeper goal is permanence and a stepping stone. Artemis aims to build the Gateway — a small station in lunar orbit — and eventually surface infrastructure, turning the Moon from a destination into a base. And it is explicitly framed as a rehearsal for Mars: the place to learn how to live and work on another world, close enough to Earth that mistakes are survivable, before attempting the same thing months away.",
+    "cur": "更深层的目标是永久性和跳板。Artemis旨在建造Gateway——一个月球轨道上的小型空间站——并最终建立表面基础设施,将月球从目的地变为基地。它被明确定位为火星的预演:在离地球足够近、错误尚可承受的地方学习如何在另一个世界生活和工作,然后再尝试在数月之外的地方做同样的事情。"
+  },
+  {
+    "rel": "programs/artemis.json",
+    "at": "goals.3.md",
+    "en": "There is also a goal no one states but everyone understands: to get there before China. China has its own crewed lunar plans for around 2030, and Artemis is, among other things, a race to establish presence, partners, and norms at the lunar south pole first. The coalition framing is genuine — and it is also how the United States intends to lead the return rather than follow it.",
+    "cur": "还有一个没人明说但人人都懂的目标:在中国之前到达。中国有自己在2030年左右的载人登月计划,而Artemis在其他方面之外,也是一场率先在月球南极建立存在、伙伴关系和规范的竞赛。联盟框架是真诚的——同时也是美国打算领导而非跟随这次重返的方式。"
+  },
+  {
+    "rel": "programs/artemis.json",
+    "at": "outcome.0.md",
+    "en": "Artemis is underway but not yet at the Moon's surface. Artemis I flew in 2022 — an uncrewed Orion looped around the Moon and returned, proving the SLS rocket and the spacecraft on their first flight. The crewed flyby (Artemis II) and the landing (Artemis III) follow, though both have slipped repeatedly as the enormous, multi-contractor program works through the hardest parts: the heat shield, the Starship lander, the new spacesuits, and the orbital refuelling the lander depends on.",
+    "cur": "Artemis正在进行中,但尚未到达月球表面。Artemis I于2022年飞行——一艘无人Orion绕月飞行并返回,在首次飞行中证明了SLS火箭和航天器。载人飞越(Artemis II)和着陆(Artemis III)紧随其后,尽管两者都因这个庞大的多承包商项目在最艰难的部分——隔热罩、Starship着陆器、新太空服以及着陆器所依赖的在轨加油——的攻关而反复推迟。"
+  },
+  {
+    "rel": "programs/artemis.json",
+    "at": "outcome.1.caption",
+    "en": "The Space Launch System — the most powerful rocket NASA has flown since the Saturn V, and, unlike Apollo's expendable machine, the launcher for a campaign meant to keep going rather than a handful of flights.",
+    "cur": "Space Launch System——自Saturn V以来NASA飞行过的最强大火箭,与Apollo的一次性机器不同,它是为一场旨在持续进行而非几次飞行的行动而设计的发射器。"
+  },
+  {
+    "rel": "programs/artemis.json",
+    "at": "outcome.2.md",
+    "en": "The program is also a study in how differently big space is done now. Apollo was a single agency directing contractors toward one deadline; Artemis is a web of international partners and commercial providers, with NASA buying a lunar lander as a service from SpaceX rather than owning it. That structure spreads cost and risk and builds a durable coalition — and it also means the schedule depends on many organizations, including a Starship that must first prove itself, so the timeline is genuinely uncertain in a way Apollo's brute-force sprint was not.",
+    "cur": "该计划也是对现在大型航天项目如何以不同方式进行的研究。Apollo是一个机构指挥承包商朝着一个截止日期努力;Artemis是一个由国际伙伴和商业供应商组成的网络,NASA从SpaceX购买月球着陆器作为服务,而不是拥有它。这种结构分散了成本和风险,并建立了一个持久的联盟——同时也意味着进度取决于许多组织,包括必须首先证明自己的Starship,因此时间表以一种Apollo的蛮力冲刺所没有的方式真正不确定。"
+  },
+  {
+    "rel": "programs/artemis.json",
+    "at": "narrative.0.md",
+    "en": "Artemis is the answer to a question Apollo left hanging: what is the Moon for, if not to win a race? Apollo proved humans could go and then revealed that going, by itself, was not a reason to keep going — the political engine that funded it switched off the moment the Soviets were beaten. Artemis is built to survive that problem by having a purpose beyond arrival: water, infrastructure, a base, a path to Mars, and a coalition of partners with their own reasons to sustain it. Whether that purpose is durable enough to outlast changing administrations is the open question the whole program is really testing.",
+    "cur": "Artemis是对Apollo留下的一个问题的回答:如果不是为了赢得竞赛,月球有什么用?Apollo证明了人类可以去,然后揭示了去本身并不是继续去的理由——资助它的政治引擎在苏联被击败的那一刻就关闭了。Artemis的建立是为了通过拥有超越到达的目的来避免这个问题:水、基础设施、基地、通往火星的路径,以及一个拥有自己理由维持它的伙伴联盟。这个目的是否足够持久以经受住政府更迭,是整个计划真正在测试的开放问题。"
+  },
+  {
+    "rel": "programs/artemis.json",
+    "at": "narrative.1.md",
+    "en": "It is also a deliberate inversion of Apollo's politics. Apollo's strength was singular national will; its weakness was that the same will could evaporate. Artemis trades some of that focus for resilience — spreading the program across nations and companies so that no single budget decision can cancel it outright, and so that partners who have invested their own hardware and astronauts have reasons to keep it alive. The coalition is slower and more complex than a race, and that is the point: it is built to endure, not to sprint.",
+    "cur": "它也是对Apollo政治的刻意颠倒。Apollo的优势是单一的国家意志;其弱点是同样的意志可能蒸发。Artemis用一些专注换取韧性——将计划分散到各国和公司,使得没有单一的预算决定可以直接取消它,使得投入了自己硬件和宇航员的伙伴有理由让它继续存活。联盟比竞赛更慢、更复杂,这正是重点:它是为了持久而建,而不是为了冲刺。"
+  },
+  {
+    "rel": "programs/artemis.json",
+    "at": "narrative.2.md",
+    "en": "And it inherits Apollo's hardware lineage even as it breaks from its politics. The SLS rocket descends from Space Shuttle engines and boosters; Orion is the spiritual heir of the Apollo command module; the whole program carries the DNA of the programs in this atlas that came before it. Artemis is not a fresh start but a continuation — the accumulated capability of sixty years of spaceflight pointed, once more, at the Moon.",
+    "cur": "它继承了Apollo的硬件血统,即使它打破了其政治模式。SLS火箭源自Space Shuttle发动机和助推器;Orion是Apollo指令舱的精神继承者;整个计划携带着这部图册中之前项目的DNA。Artemis不是一个全新的开始,而是一个延续——六十年航天飞行的累积能力再次指向月球。"
+  },
+  {
+    "rel": "programs/artemis.json",
+    "at": "legacy.0.md",
+    "en": "Artemis's legacy is still ahead of it, but its structure is already a template. By building the return to the Moon as an international coalition with commercial landers rather than a single-nation sprint, it has defined how large exploration programs are now assembled — cost and risk shared, capability bought as a service, partners bound in by their own contributions.",
+    "cur": "Artemis的遗产还在前方,但其结构已经是一个模板。通过将重返月球建设为一个拥有商业着陆器的国际联盟,而不是单一国家的冲刺,它定义了大型探索计划现在如何组装——成本和风险共担,能力作为服务购买,伙伴通过自己的贡献被绑定进来。"
+  },
+  {
+    "rel": "programs/artemis.json",
+    "at": "legacy.1.md",
+    "en": "If it succeeds, the legacy is a permanent human presence beyond low Earth orbit for the first time — a base at the lunar south pole, a station in lunar orbit, and the operational experience of living off another world that any Mars mission will require. The Moon becomes a place people work rather than a place twelve people once visited.",
+    "cur": "如果成功,其遗产将是首次在低地球轨道之外的永久人类存在——月球南极的基地、月球轨道上的空间站,以及在另一个世界生存的实际经验,这是任何火星任务都需要的。月球成为人们工作的地方,而不是12个人曾经访问过的地方。"
+  },
+  {
+    "rel": "programs/artemis.json",
+    "at": "legacy.2.md",
+    "en": "And it is the frame for a new era of lunar activity. Artemis, China's parallel program, and a fleet of robotic landers from many nations are converging on the same small region of the Moon at the same time — making the 2020s the busiest decade at the Moon since Apollo, and the south pole the most contested real estate in the solar system.",
+    "cur": "它也是月球活动新时代的框架。Artemis、中国的平行计划,以及来自许多国家的机器人着陆器队伍正同时汇聚到月球的同一小块区域——使2020年代成为自Apollo以来月球最繁忙的十年,南极成为太阳系中最具争议的地产。"
+  },
+  {
+    "rel": "programs/artemis.json",
+    "at": "lessons.0.md",
+    "en": "The lesson Artemis is built on is the one Apollo taught the hard way: arriving is not a purpose. A program that exists only to reach a destination ends the moment it arrives, because the reason to fund it arrives with it. Artemis's whole design — water, infrastructure, partners, a path to Mars — is an attempt to give the Moon a reason to keep going that outlives the excitement of getting there.",
+    "cur": "Artemis所基于的教训是Apollo艰难教给我们的:到达不是目的。一个仅仅为了到达目的地而存在的计划在到达的那一刻就结束了,因为资助它的理由随着它一起到达。Artemis的整个设计——水、基础设施、伙伴、通往火星的路径——是试图给月球一个理由,使其在到达的兴奋之后仍能继续。"
+  },
+  {
+    "rel": "programs/artemis.json",
+    "at": "lessons.1.md",
+    "en": "The deeper lesson is about resilience versus focus. Apollo's singular national will was its power and its fragility; Artemis trades focus for a coalition that no single budget can easily kill. It is slower, more complex, and harder to schedule — and it is betting that endurance, not speed, is what a return 'to stay' actually requires. Whether that bet pays off is the story the next decade will tell.",
+    "cur": "更深层的教训是关于韧性与专注。Apollo的单一国家意志既是它的力量也是它的脆弱性;Artemis用专注换取一个没有单一预算可以轻易扼杀的联盟。它更慢、更复杂、更难安排时间——它在赌耐力而非速度才是'留下来'的重返真正需要的。这个赌注能否成功,是未来十年将要讲述的故事。"
+  },
+  {
+    "rel": "programs/buran.json",
+    "at": "tagline",
+    "en": "The Soviet space shuttle that looked like America's, flew better in one respect — and flew exactly once, uncrewed and flawless, before the country that built it disappeared out from under it.",
+    "cur": "这架看起来像美国航天飞机的苏联航天飞机,在一个方面飞得更好——并且只飞行了一次,无人驾驶且完美无瑕,然后建造它的国家就在它脚下消失了。"
+  },
+  {
+    "rel": "programs/buran.json",
+    "at": "the_land.0.md",
+    "en": "By the mid-1970s the Soviet Union was watching the United States build the Space Shuttle and drawing an alarming conclusion. It could not quite believe the Americans would spend so much on a reusable spaceplane purely for the reasons stated, and feared a hidden military purpose — a vehicle that could dive into the atmosphere, snatch a Soviet satellite, and fly home, or drop weapons from orbit. Unwilling to be without an answer, the Politburo ordered one of its own. The result, Buran, was the largest and most expensive space project in Soviet history, and it began as a response to a threat that may never have been real.",
+    "cur": "到1970年代中期,苏联看着美国建造Space Shuttle,并得出了一个令人不安的结论。它无法完全相信美国人会纯粹出于所宣称的理由在可重复使用的空天飞机上投入如此巨资,并担心其隐藏的军事目的——一种能够俯冲进入大气层、抓取苏联卫星并飞回家,或从轨道投放武器的飞行器。不愿没有应对手段,政治局下令研制自己的航天飞机。其结果Buran是苏联历史上最大、最昂贵的太空项目,而它始于对一个可能从未真实存在的威胁的回应。"
+  },
+  {
+    "rel": "programs/buran.json",
+    "at": "the_land.1.md",
+    "en": "From the outside Buran looked almost identical to the American orbiter — the same delta wing, the same rough shape — because the same job and the same physics of hypersonic reentry drive a design toward the same answer. But underneath, the Soviet engineers made two decisions that set their machine apart, and both, arguably, improved on the original. Buran carried no main ascent engines of its own — it had orbital-manoeuvring engines for use in space, but the heavy lift to orbit was handled entirely by the rocket — and Buran could fly with no one aboard at all.",
+    "cur": "从外观上看,Buran与美国轨道器几乎一模一样——相同的三角翼,相同的大致形状——因为相同的任务和高超音速再入的相同物理原理将设计推向了相同的答案。但在内部,苏联工程师做出了两个使他们的机器与众不同的决定,而且可以说,这两个决定都改进了原型。Buran不携带自己的主上升发动机——它有用于太空中的轨道机动发动机,但通往轨道的重型提升完全由火箭处理——而且Buran可以在完全无人的情况下飞行。"
+  },
+  {
+    "rel": "programs/buran.json",
+    "at": "goals.0.caption",
+    "en": "The Energia super-heavy launcher, which lifted Buran. Unlike the American orbiter, Buran had no main ascent engines: all the lift came from Energia, a genuine heavy-lift rocket in its own right — one of the most powerful ever flown, and the most powerful the Soviet Union ever flew successfully.",
+    "cur": "提升Buran的Energia超重型运载火箭。与美国轨道器不同,Buran没有主上升发动机:所有提升力都来自Energia,这是一枚真正的重型运载火箭——有史以来最强大的火箭之一,也是苏联成功发射过的最强大火箭。"
+  },
+  {
+    "rel": "programs/buran.json",
+    "at": "goals.1.md",
+    "en": "The first decision was about the engines. The American Shuttle mounted its three big main engines on the orbiter itself, which meant hauling that heavy, expensive machinery to orbit and back every flight and throwing away only the external tank. The Soviets instead put all the lift into the rocket: Buran rode on Energia, a true super-heavy launcher that did the whole job of reaching orbit, leaving the orbiter to be a payload rather than part of the propulsion. This made Energia useful on its own — a powerful rocket that could launch other heavy payloads with no orbiter at all — and freed Buran of a burden its rival carried for thirty years.",
+    "cur": "第一个决定是关于发动机的。美国航天飞机把三台大型主发动机装在轨道器本身上，这意味着每次飞行都要把那些沉重、昂贵的机械拖到轨道再带回来，只抛弃外部燃料箱。苏联则把全部推力放在火箭上：Buran搭乘Energia，这是一枚真正的超重型运载火箭，完成了到达轨道的全部工作，让轨道器只是载荷，而不是推进系统的一部分。这使得Energia本身就很有用——一枚强大的火箭，可以在完全没有轨道器的情况下发射其他重型载荷——也使Buran摆脱了其竞争对手背负了三十年的负担。"
+  },
+  {
+    "rel": "programs/buran.json",
+    "at": "goals.2.md",
+    "en": "The second decision was automation. The American Shuttle always needed a crew to land it; it could not come home on its own. Buran was built to fly the entire mission — launch, orbit, reentry, and landing — with no one aboard, guided by its computers and the ground. In an era when full automatic landing of a winged spacecraft was at the frontier of what was possible, this was a genuine advance, and it set up the one moment when Buran got to prove what it could do.",
+    "cur": "第二个决定是自动化。美国航天飞机总是需要机组人员来着陆;它无法自己回家。Buran被设计为能够执行整个任务——发射、入轨、再入和着陆——无需任何人在机上,由其计算机和地面引导。在完全自动着陆一架有翼航天器处于可能性前沿的时代,这是一个真正的进步,并为Buran证明自己能力的唯一时刻奠定了基础。"
+  },
+  {
+    "rel": "programs/buran.json",
+    "at": "outcome.0.caption",
+    "en": "The Buran orbiter. It flew one perfect uncrewed mission in November 1988 and then never flew again — grounded by the collapse of the Soviet economy and, finally, of the Soviet Union itself.",
+    "cur": "Buran轨道器。它在1988年11月执行了一次完美的无人任务,然后再也没有飞行过——因苏联经济崩溃而停飞,最终是苏联本身的崩溃。"
+  },
+  {
+    "rel": "programs/buran.json",
+    "at": "outcome.1.md",
+    "en": "On 15 November 1988, Buran flew. It launched on Energia, circled the Earth twice, reentered, and — in a gusting crosswind that would have tested any pilot — brought itself down onto the runway at Baikonur fully automatically, touching down within metres of its target with no human aboard at any point. It was a flawless flight and a real technical triumph: no other winged spacecraft had flown an entire orbital mission and landed itself. And it was the only time Buran ever flew.",
+    "cur": "1988年11月15日，Buran飞行了。它由Energia发射，绕地球飞行两圈，再入大气层，然后——在足以考验任何飞行员的阵风侧风中——完全自动地降落在拜科努尔的跑道上，着陆点距目标仅几米，全程无人在机上。这是一次完美的飞行和真正的技术胜利：此前没有其他有翼航天器完成过整个轨道任务并自行着陆。而这是Buran唯一一次飞行。"
+  },
+  {
+    "rel": "programs/buran.json",
+    "at": "outcome.2.md",
+    "en": "The timing could not have been worse. Buran reached its triumph exactly as the Soviet Union began to come apart. Within three years the country was gone; the money vanished; and a hugely expensive spaceplane built to counter an American threat had no threat to counter, no budget to fly, and no mission anyone could afford to give it. The program limped on paper until 1993 and was then cancelled outright. The final indignity came in 2002, when the roof of the hangar housing the one orbiter that had actually flown collapsed, crushing the spacecraft and killing eight workers. Buran's single flight remains one of the most impressive — and most pointless — achievements in the history of spaceflight.",
+    "cur": "时机再糟糕不过了。Buran恰好在苏联开始分崩离析时达到了它的胜利。三年之内,国家消失了;资金枯竭了;一架为对抗美国威胁而建造的极其昂贵的空天飞机没有威胁可对抗,没有预算可飞行,也没有任何人能负担得起给它的任务。该计划在纸面上苟延残喘到1993年,然后被彻底取消。最后的屈辱发生在2002年,当时存放那架真正飞行过的轨道器的机库屋顶坍塌,压毁了航天器并造成八名工人死亡。Buran的单次飞行仍然是太空飞行史上最令人印象深刻——也是最毫无意义——的成就之一。"
+  },
+  {
+    "rel": "programs/buran.json",
+    "at": "narrative.0.md",
+    "en": "Buran is the story of a magnificent answer to a question that stopped being asked. Technically it was a success and in places an improvement on the vehicle it copied — the separate launcher, the automatic landing, real engineering advances. But it was built for strategic and political reasons that evaporated, at a cost the Soviet economy could not sustain, and it arrived at its moment of triumph just as the system that ordered it collapsed. No amount of engineering excellence could survive the disappearance of the reason for the program and the money to run it.",
+    "cur": "Buran是一个对不再被提出的问题给出宏伟答案的故事。从技术上讲,它是成功的,在某些方面还改进了它所模仿的飞行器——独立的运载火箭、自动着陆,真正的工程进步。但它是出于战略和政治原因建造的,这些原因蒸发了,成本是苏联经济无法承受的,而且它恰好在下令建造它的体制崩溃时到达了胜利时刻。任何工程卓越都无法在项目存在理由和运行资金消失的情况下存活。"
+  },
+  {
+    "rel": "programs/buran.json",
+    "at": "narrative.1.md",
+    "en": "There is an irony worth holding onto. In the two respects where Buran differed from the American Shuttle — putting the engines on the rocket rather than the orbiter, and flying automatically without a crew — it arguably had the better ideas, and both have echoes in later spaceflight. And yet the American Shuttle flew 135 times over thirty years and built a space station, while Buran flew once. The lesson is not that Buran's engineering was worse; it is that engineering is never the whole story. A program needs a purpose and a budget that outlast its first flight, and Buran had neither.",
+    "cur": "有一个值得记住的讽刺。在Buran与美国航天飞机不同的两个方面——将发动机装在火箭而非轨道器上,以及无需机组人员自动飞行——它可以说拥有更好的想法,而且两者都在后来的太空飞行中有所呼应。然而美国航天飞机在三十年间飞行了135次并建造了一座空间站,而Buran只飞行了一次。教训不是Buran的工程更差;而是工程从来不是全部故事。一个项目需要一个比其首飞更持久的目的和预算,而Buran两者都没有。"
+  },
+  {
+    "rel": "programs/buran.json",
+    "at": "legacy.0.caption",
+    "en": "OK-GLI, Buran's atmospheric test orbiter — fitted with jet engines to practise runway approaches, and now a museum exhibit in Germany. The surviving Buran hardware is scattered across museums; the one orbiter that reached space was destroyed in 2002.",
+    "cur": "OK-GLI,Buran的大气层测试轨道器——装有喷气发动机以练习跑道进场,现在是德国的博物馆展品。幸存的Buran硬件散布在各个博物馆;那架到达太空的轨道器在2002年被摧毁。"
+  },
+  {
+    "rel": "programs/buran.json",
+    "at": "legacy.1.md",
+    "en": "Buran's direct legacy is almost nothing — a cancelled program, a single flight, hardware in museums, and one orbiter lost under a fallen roof. But its indirect legacy is real. Energia proved that the Soviet Union could, at last, build a super-heavy rocket that actually worked, redeeming the failure of the N1 — even if it, too, was cancelled for want of anything to launch. And Buran's fully automated flight demonstrated a capability that would only become standard decades later, as uncrewed and autonomously-landing spacecraft became routine.",
+    "cur": "Buran的直接遗产几乎为零——一个被取消的项目、一次飞行、博物馆中的硬件,以及一架在倒塌屋顶下损失的轨道器。但它的间接遗产是真实的。Energia证明了苏联终于能够建造一枚真正有效的超重型火箭,挽回了N1的失败——即使它也因没有东西可发射而被取消。而Buran的完全自动飞行展示了一种只有在几十年后才成为标准的能力,因为无人驾驶和自主着陆的航天器变得常规化。"
+  },
+  {
+    "rel": "programs/buran.json",
+    "at": "legacy.2.md",
+    "en": "Mostly, though, Buran endures as a cautionary monument — the clearest case in the space age of a program that got the engineering right and everything else wrong. It stands beside the American Shuttle as the road not taken, and beside the N1 as the other great Soviet what-might-have-been: proof that in spaceflight, a brilliant machine with no purpose and no money is still a machine that does not fly.",
+    "cur": "不过，Buran最主要是作为一座警示纪念碑而得以传存——是太空时代最明确的案例，证明一个项目可能在工程上做对了一切，却在其他方面全都做错了。它与美国航天飞机并肩而立，代表着未曾走过的道路，也与N1一起成为苏联另一个伟大的\"可能会是\"——证明在太空飞行中，一台杰出的机器若没有目标，没有资金支持，就仍然是一台飞不起来的机器。"
+  },
+  {
+    "rel": "programs/buran.json",
+    "at": "lessons.0.md",
+    "en": "Buran's first lesson is that a program needs a reason that outlasts its origins. It was born from a strategic fear and a refusal to let the Americans hold a capability the Soviet Union lacked — and when the fear faded and the Cold War ended, nothing was left to justify the enormous cost. Building an expensive capability to match a rival, rather than to do a job you actually need done, leaves you with a magnificent machine and no reason to fly it the moment the rivalry cools.",
+    "cur": "Buran的第一个教训是,一个项目需要一个比其起源更持久的理由。它诞生于战略恐惧和拒绝让美国人拥有苏联缺乏的能力——而当恐惧消退、冷战结束时,没有什么能证明这巨大成本的合理性。为了匹配竞争对手而不是为了完成你实际需要完成的工作而建造昂贵的能力,会让你在竞争降温的那一刻拥有一台宏伟的机器却没有理由飞行它。"
+  },
+  {
+    "rel": "programs/buran.json",
+    "at": "lessons.1.md",
+    "en": "The second lesson is that engineering excellence cannot save a program from the loss of its purpose and its budget. Buran was, in real ways, a better design than the vehicle it answered — and it flew once. The American Shuttle, for all its flaws, flew for thirty years because it had missions to fly and money to fly them. A spacecraft is only as durable as the institutional will and funding behind it; without those, even a flawless flight is an ending rather than a beginning.",
+    "cur": "第二个教训是,工程卓越无法拯救一个失去目的和预算的项目。Buran在实际意义上是一个比它所回应的飞行器更好的设计——但它只飞行了一次。美国航天飞机尽管有种种缺陷,却飞行了三十年,因为它有任务要执行,有资金来执行。一架航天器的耐久性仅取决于其背后的制度意志和资金;没有这些,即使是完美的飞行也是结束而非开始。"
+  },
+  {
+    "rel": "programs/cassini.json",
+    "at": "tagline",
+    "en": "A bus-sized robot spent thirteen years orbiting Saturn — and found, on a moon nobody was watching, an ocean that could hold life.",
+    "cur": "一个巴士大小的机器人在土星轨道运行了十三年——并在一颗无人关注的卫星上发现了可能孕育生命的海洋。"
+  },
+  {
+    "rel": "programs/cassini.json",
+    "at": "the_land.0.md",
+    "en": "By the 1990s Saturn had been seen three times, and only in passing: Pioneer 11 and the two Voyagers had each swept through the system in a matter of hours, returning tantalising glimpses of a ringed world with dozens of moons and a giant, haze-shrouded moon, Titan, whose surface no camera could pierce. A flyby can photograph a place; it cannot live there. To understand Saturn — its rings, its weather, its improbable family of moons — a spacecraft would have to stop and stay.",
+    "cur": "到1990年代,土星已被观测过三次,但都只是匆匆掠过:Pioneer 11和两艘Voyager探测器都只在系统中停留了数小时,带回了这个拥有数十颗卫星和一颗巨大、被雾霾笼罩的卫星土卫六的环状世界的惊鸿一瞥,其表面无法被任何相机穿透。飞掠可以拍摄一个地方;却无法驻留其中。要理解土星——它的光环、它的天气、它那不可思议的卫星家族——航天器必须停留并驻扎。"
+  },
+  {
+    "rel": "programs/cassini.json",
+    "at": "the_land.1.md",
+    "en": "Cassini was built to do exactly that, and it was built by a coalition: NASA supplied the orbiter, the European Space Agency supplied a lander called Huygens to drop through Titan's haze, and Italy built its high-gain antenna. It launched in 1997 as one of the largest and most capable interplanetary craft ever flown — a seven-year, three-and-a-half-billion-kilometre cruise ahead of it just to reach the planet it was designed to study.",
+    "cur": "Cassini正是为此而建造,并由一个联盟建造:NASA提供了轨道器,欧洲空间局提供了一个名为Huygens的着陆器以穿过土卫六的雾霾降落,意大利建造了其高增益天线。它于1997年发射,是有史以来最大、性能最强的行星际探测器之一——仅到达它所设计研究的行星就需要七年、三十五亿公里的航程。"
+  },
+  {
+    "rel": "programs/cassini.json",
+    "at": "goals.0.md",
+    "en": "The primary goal was to become Saturn's first resident: to enter orbit and stay for years, studying the planet's atmosphere, its rings, its magnetic field, and its moons across the slow turn of the Saturnian seasons — the sustained, patient science that no flyby can do. Chief among the targets was Titan, the one moon large enough to hold a thick atmosphere, and the great mystery of the outer solar system.",
+    "cur": "首要目标是成为土星的第一个常驻者:进入轨道并停留数年,研究这颗行星的大气层、光环、磁场以及它的卫星,跨越土星季节的缓慢变化——这种持续、耐心的科学研究是任何飞掠都无法完成的。目标中最重要的是土卫六,这颗唯一大到足以保持厚重大气层的卫星,也是外太阳系的最大谜团。"
+  },
+  {
+    "rel": "programs/cassini.json",
+    "at": "goals.1.caption",
+    "en": "Cassini carried the European Huygens probe piggyback for seven years, then released it to parachute onto Titan. The orbiter itself would spend thirteen years circling Saturn, threading between the moons and, at the end, between the planet and its rings.",
+    "cur": "Cassini搭载欧洲的Huygens探测器七年,然后释放它降落伞降落到土卫六上。轨道器本身将花费十三年环绕土星,在卫星之间穿梭,最后在行星与其光环之间穿行。"
+  },
+  {
+    "rel": "programs/cassini.json",
+    "at": "goals.2.md",
+    "en": "The second goal belonged to Huygens: to descend through Titan's orange haze and land — or splash — on a surface no one had ever seen, and find out whether the moon really had the lakes and rivers of liquid methane that theory predicted. It was a single, one-way attempt at the most distant landing ever tried.",
+    "cur": "第二个目标属于Huygens:穿过土卫六的橙色雾霾下降并着陆——或溅落——在一个从未有人见过的表面上,找出这颗卫星是否真的拥有理论预测的液态甲烷湖泊和河流。这是一次单程尝试,是有史以来最遥远的着陆尝试。"
+  },
+  {
+    "rel": "programs/cassini.json",
+    "at": "outcome.0.md",
+    "en": "Cassini reached Saturn in 2004 and settled into orbit. Months later it released Huygens, which parachuted through Titan's haze in January 2005 and returned the first pictures from the surface of a moon in the outer solar system: a dim, orange plain scattered with rounded pebbles of water ice, shaped by rivers of liquid methane. It remains the only landing humanity has ever made beyond the asteroid belt.",
+    "cur": "Cassini于2004年抵达土星并进入轨道。数月后它释放了Huygens,后者于2005年1月降落伞穿过土卫六的雾霾,传回了外太阳系卫星表面的第一批照片:一片昏暗的橙色平原,散落着被液态甲烷河流塑造的圆润水冰卵石。这仍然是人类在小行星带之外进行的唯一一次着陆。"
+  },
+  {
+    "rel": "programs/cassini.json",
+    "at": "outcome.1.md",
+    "en": "The orbiter's own great discovery came from a moon almost no one had expected to matter. Passing tiny Enceladus, Cassini found towering jets of water ice and vapour erupting from cracks at its south pole — proof of a global ocean of liquid water beneath the ice, warm and salty and laced with organic molecules. A frozen speck five hundred kilometres across turned out to be one of the most promising places in the solar system to look for life.",
+    "cur": "轨道器自己的重大发现来自一颗几乎无人预料会重要的卫星。经过微小的土卫二时,Cassini发现从其南极裂缝中喷发出高耸的水冰和水蒸气喷流——证明冰层下方存在一个全球性的液态水海洋,温暖、含盐且富含有机分子。这颗直径五百公里的冰冻小点,结果成为太阳系中寻找生命最有希望的地方之一。"
+  },
+  {
+    "rel": "programs/cassini.json",
+    "at": "outcome.2.md",
+    "en": "Cassini worked for thirteen years, long past its planned mission, until it ran low on fuel. Rather than risk it eventually crashing into Enceladus or Titan and contaminating them with Earth microbes, mission planners chose a deliberate end: twenty-two dives through the unexplored gap between Saturn and its rings, returning data to the last, and then a final plunge into the planet's atmosphere in September 2017, transmitting until it burned up.",
+    "cur": "Cassini工作了十三年,远超其计划任务期,直到燃料即将耗尽。为了避免它最终坠入土卫二或土卫六并用地球微生物污染它们的风险,任务规划者选择了一个有意为之的结局:二十二次俯冲穿过土星与其光环之间未经探索的缝隙,传回数据直到最后,然后在2017年9月最终坠入这颗行星的大气层,持续发送信号直到燃烧殆尽。"
+  },
+  {
+    "rel": "programs/cassini.json",
+    "at": "narrative.0.md",
+    "en": "The story of Cassini is what patience buys. The Voyagers had shown Saturn in a day and moved on; Cassini stayed for over a decade, and almost everything it found that mattered came from being there long enough to watch — a storm wrap the whole planet, a season turn, a moon pass close enough on the four-hundredth orbit to reveal what the first flyby had missed. Its discoveries were not lucky glances but the reward of persistence.",
+    "cur": "Cassini的故事展示了耐心所带来的回报。Voyager探测器曾在一天内展示土星然后离去;Cassini驻留了十多年,几乎所有重要发现都源于在那里停留足够长的时间去观察——一场风暴席卷整颗行星,一个季节的转变,一颗卫星在第四百次轨道上经过得足够近,揭示了第一次飞掠所遗漏的内容。它的发现不是幸运的一瞥,而是坚持不懈的回报。"
+  },
+  {
+    "rel": "programs/cassini.json",
+    "at": "narrative.1.md",
+    "en": "Its most consequential find rewrote where we look for life. Before Cassini, the search for habitable places focused on Mars and the warm inner solar system. Enceladus — small, frozen, far from the Sun — should have been dead. Instead it was venting the ingredients of life into space, kept liquid by the flexing pull of Saturn's gravity. Cassini turned the outer solar system, long thought a frozen wasteland, into a plausible home for oceans, and for whatever oceans might hold.",
+    "cur": "它最具影响力的发现改写了我们寻找生命的方向。在Cassini之前,对宜居地的搜寻集中在火星和温暖的内太阳系。土卫二——小、冰冻、远离太阳——本应是死寂的。相反,它正在向太空喷发生命的成分,由土星引力的弯曲拉力保持液态。Cassini将长期被认为是冰冻荒原的外太阳系,转变为海洋的可能家园,以及海洋可能孕育的一切。"
+  },
+  {
+    "rel": "programs/cassini.json",
+    "at": "narrative.2.md",
+    "en": "And its ending was a moral choice as much as an engineering one. A spacecraft that had discovered two possibly habitable ocean worlds could not be allowed to become the thing that contaminated them. So its operators flew it into Saturn on purpose, sacrificing the machine to protect the very places it had found — planetary exploration taking responsibility for its own reach.",
+    "cur": "它的结局既是道德选择,也是工程选择。一个发现了两个可能宜居的海洋世界的航天器,不能被允许成为污染它们的东西。因此,操作者故意将它飞入土星,牺牲这台机器以保护它所发现的那些地方——行星探索为自己的触及范围承担责任。"
+  },
+  {
+    "rel": "programs/cassini.json",
+    "at": "legacy.0.md",
+    "en": "Cassini's first legacy is Saturn itself, transformed from a world seen in passing into the best-understood planet in the outer solar system — its rings, its weather, its magnetic field, and its dozens of moons mapped across thirteen years of continuous observation that no future mission is scheduled to repeat.",
+    "cur": "Cassini的第一项遗产是土星本身,从一个匆匆掠过的世界转变为外太阳系中被理解最透彻的行星——它的光环、天气、磁场以及数十颗卫星,在十三年的连续观测中被绘制成图,没有未来任务计划重复这一成就。"
+  },
+  {
+    "rel": "programs/cassini.json",
+    "at": "legacy.1.md",
+    "en": "Its second is Enceladus and Titan: two ocean worlds and one methane world moved, by Cassini's data, to the front rank of places worth returning to in the search for life. Every proposal to hunt for biology in the outer solar system now begins with what Cassini found.",
+    "cur": "第二项遗产是土卫二和土卫六:两个海洋世界和一个甲烷世界,凭借Cassini的数据,跃升至值得在寻找生命中再次探访的地点前列。如今每一个在外太阳系寻找生物的提案都始于Cassini的发现。"
+  },
+  {
+    "rel": "programs/cassini.json",
+    "at": "legacy.2.md",
+    "en": "Its third is the model of the mission itself — a genuinely international flagship, NASA and Europe flying one spacecraft for two decades, that demonstrated how much more a patient orbiter returns than a fast flyby, and set the template for the long-duration missions that followed.",
+    "cur": "第三项遗产是任务本身的模式——一个真正国际化的旗舰项目,NASA和欧洲共同操作一艘航天器二十年,展示了耐心的轨道器比快速飞掠带回多得多的成果,并为随后的长期任务树立了模板。"
+  },
+  {
+    "rel": "programs/cassini.json",
+    "at": "lessons.0.md",
+    "en": "The lesson of Cassini is that staying beats passing through. The same planet the Voyagers characterised in hours yielded its deepest secrets — the ocean of Enceladus, the methane cycle of Titan — only to a spacecraft willing to spend thirteen years in orbit. For the hardest questions, presence over time is worth more than any single brilliant glance.",
+    "cur": "Cassini的教训是驻留胜过路过。同样一颗行星,Voyager探测器用几小时描绘的特征,只有一艘愿意花费十三年在轨道上的航天器才能揭示其最深的秘密——土卫二的海洋、土卫六的甲烷循环。对于最艰难的问题,长期的存在比任何单次辉煌的一瞥都更有价值。"
+  },
+  {
+    "rel": "programs/cassini.json",
+    "at": "lessons.1.md",
+    "en": "The deeper lesson is that reach carries responsibility. Cassini ended by flying itself into Saturn to protect the ocean moons it had discovered — a recognition that the power to visit a possibly living world comes with a duty not to poison it. Capability without that restraint is not exploration; it is trespass.",
+    "cur": "更深层的教训是触及伴随责任。Cassini以飞入土星的方式结束,以保护它所发现的海洋卫星——认识到访问可能存在生命的世界的力量,伴随着不去毒害它的责任。没有这种克制的能力不是探索;而是侵犯。"
+  },
+  {
+    "rel": "programs/chandrayaan.json",
+    "at": "tagline",
+    "en": "India's Moon program — it found the water that changed how we see the Moon, then became the first nation ever to land near the south pole.",
+    "cur": "印度的月球计划——它发现了改变我们对月球认知的水,随后成为首个在南极附近着陆的国家。"
+  },
+  {
+    "rel": "programs/chandrayaan.json",
+    "at": "the_land.0.md",
+    "en": "For most of the space age, the Moon was thought to be bone dry — a dead, airless rock with nothing useful on its surface. That assumption was overturned by a spacecraft from a country that had never been to the Moon before. Chandrayaan-1, India's first lunar mission — launched in 2008 — carried NASA/JPL's Moon Mineralogy Mapper (M3) instrument, which detected water molecules bound into the lunar soil across broad, mostly higher-latitude regions of the surface; the findings were published in 2009. It was one of the most consequential discoveries in modern planetary science, and it came from an ISRO orbiter working on a fraction of NASA's or ESA's budget.",
+    "cur": "在太空时代的大部分时间里,月球被认为是完全干燥的——一颗死寂、无空气的岩石,表面没有任何有用的东西。这一假设被一个此前从未到达过月球的国家的航天器推翻了。Chandrayaan-1,印度的首次月球任务——于2008年发射——搭载了NASA/JPL的月球矿物绘图仪(M3)仪器,该仪器在月球表面广阔的、主要是高纬度地区检测到了与月球土壤结合的水分子;研究结果于2009年发表。这是现代行星科学中最具影响力的发现之一,而它来自一个仅使用NASA或ESA预算零头的ISRO轨道器。"
+  },
+  {
+    "rel": "programs/chandrayaan.json",
+    "at": "the_land.1.md",
+    "en": "Chandrayaan — Sanskrit for \"Moon craft\" — is the program that announced India as a genuine deep-space power, not a regional one. It is defined by two things: doing world-class science cheaply, and a refusal to be stopped by failure. Its second mission crashed a lander on the Moon in front of a watching nation; its third went back four years later and succeeded, landing where no one ever had — near the lunar south pole, the most sought-after real estate in the solar system.",
+    "cur": "Chandrayaan——梵语意为\"月球飞行器\"——是宣告印度成为真正的深空大国而非区域性国家的计划。它由两个特点定义:以低成本完成世界级科学研究,以及面对失败永不止步的决心。该计划的第二次任务让着陆器在全国人民的注视下坠毁于月球表面;第三次任务在四年后重返月球并取得成功,降落在无人曾至之地——月球南极附近,这是太阳系中最炙手可热的地带。"
+  },
+  {
+    "rel": "programs/chandrayaan.json",
+    "at": "goals.0.md",
+    "en": "The scientific goal from the start was the Moon's composition and, above all, its water. Chandrayaan-1 set out to map the surface and search for water and minerals; its success made the later goal obvious and urgent — reach the south pole, where permanently-shadowed craters are thought to hold water ice, the resource that could one day fuel and sustain a lunar base. India aimed its program directly at the most valuable question about the Moon.",
+    "cur": "从一开始，科学目标就是月球的成分，尤其是水。Chandrayaan-1 的任务是绘制月球表面地图并寻找水和矿物；它的成功使后续目标变得显而易见且紧迫——抵达南极，那里的永久阴影区陨石坑被认为蕴藏着水冰，这种资源有朝一日可以为月球基地提供燃料和维持运转。印度将其计划直接瞄准了关于月球最有价值的问题。"
+  },
+  {
+    "rel": "programs/chandrayaan.json",
+    "at": "goals.1.caption",
+    "en": "Chandrayaan-1 — India's first Moon mission, and the platform that carried NASA's M3 instrument, whose data revealed water bound into the lunar soil and overturned the long assumption that the Moon was dry.",
+    "cur": "Chandrayaan-1——印度的首次月球任务,也是搭载NASA的M3仪器的平台,该仪器的数据揭示了与月球土壤结合的水,推翻了月球干燥的长期假设。"
+  },
+  {
+    "rel": "programs/chandrayaan.json",
+    "at": "goals.2.md",
+    "en": "The engineering goal grew mission by mission: first to orbit the Moon and release an impactor (Chandrayaan-1), then to soft-land a rover (Chandrayaan-2 and -3). Soft-landing on the Moon is brutally difficult — most attempts by most nations have failed — and doing it at the rough, poorly-lit south pole is harder still. India's goal was to master that landing, and to do it on an ISRO budget that made every rupee count.",
+    "cur": "工程目标随着任务逐步提升：首先是绕月飞行并释放撞击器（Chandrayaan-1），然后是软着陆并部署月球车（Chandrayaan-2 和 -3）。在月球上软着陆极其困难——大多数国家的大多数尝试都以失败告终——而在地形崎岖、光照不足的南极着陆则更加艰难。印度的目标是掌握这项着陆技术，并且要在 ISRO 的预算下完成，每一卢比都要精打细算。"
+  },
+  {
+    "rel": "programs/chandrayaan.json",
+    "at": "outcome.0.md",
+    "en": "The outcomes bracket the whole arc of the program. Chandrayaan-1 (2008) carried NASA's M3 instrument, whose data — published in 2009 — revealed lunar water, a genuinely field-changing result. Chandrayaan-2 (2019) was a partial heartbreak: its orbiter reached the Moon and still operates, returning excellent data, but its Vikram lander lost control in the final moments and crashed, watched live by a nation that had dared to hope. Then Chandrayaan-3 (2023) returned and landed softly near the south pole — the first spacecraft ever to do so, and the achievement that made India the fourth country to land on the Moon, days after a Russian attempt at the same region failed.",
+    "cur": "这些结果涵盖了整个项目的全部历程。Chandrayaan-1（2008年）搭载了NASA的M3仪器，其数据于2009年发布，揭示了月球水的存在——这是一个真正改变领域的成果。Chandrayaan-2（2019年）则是部分遗憾：其轨道器抵达月球并仍在运行，返回了出色的数据，但其Vikram着陆器在最后时刻失控坠毁，被敢于怀抱希望的整个国家实时目睹。随后Chandrayaan-3（2023年）归来，在南极附近软着陆——这是有史以来第一个在该地着陆的航天器，这一成就使印度成为第四个在月球着陆的国家，而就在几天前，俄罗斯对同一区域的尝试失败了。"
+  },
+  {
+    "rel": "programs/chandrayaan.json",
+    "at": "outcome.1.md",
+    "en": "The contrast with the budgets involved is the part that stunned the world. India reached the Moon, found its water, and landed at its south pole for costs that were a small fraction of comparable Western missions — a demonstration that frontier lunar exploration is not the exclusive preserve of the richest agencies. ISRO turned constraint into a discipline, and delivered firsts that far larger programs had not.",
+    "cur": "与所涉预算的对比是震惊世界的部分。印度抵达月球、发现了月球上的水、并在月球南极着陆，成本仅为同类西方任务的一小部分——这证明了前沿月球探索并非最富裕航天机构的专属领地。ISRO将约束转化为一种准则，实现了规模大得多的项目都未能实现的第一次。"
+  },
+  {
+    "rel": "programs/chandrayaan.json",
+    "at": "outcome.2.md",
+    "en": "Chandrayaan-3's success also carried a weight beyond science. It landed at a moment when the south pole had become a contested goal — Russia's Luna-25 had crashed attempting the same thing that same month — and India's soft touchdown was a national triumph celebrated across the country, and a signal that the emerging space powers now reach places the old ones are still struggling toward.",
+    "cur": "Chandrayaan-3的成功也承载着超越科学的分量。它着陆的时刻，南极已成为一个竞相追逐的目标——俄罗斯的Luna-25在同月尝试同样任务时坠毁——而印度的软着陆是一次举国欢庆的胜利，也是一个信号：新兴航天国家如今已抵达老牌航天国家仍在努力企及的地方。"
+  },
+  {
+    "rel": "programs/chandrayaan.json",
+    "at": "narrative.0.md",
+    "en": "The story of Chandrayaan is a country teaching itself to land on another world in public, and refusing to quit when it went wrong. Chandrayaan-2's crash was not hidden or downplayed; it happened live, and the head of ISRO was shown grieving it on national television. Four years later the same program came back and succeeded — the same engineers, the same objective, the lessons of the failure engineered into the fix. It is the clearest recent example of a space agency turning a very visible defeat into a very visible victory.",
+    "cur": "Chandrayaan的故事，是一个国家在公众面前自学如何在另一个世界着陆，并在失败时拒绝放弃。Chandrayaan-2的坠毁没有被隐瞒或淡化；它发生在直播中，ISRO负责人在全国电视上展现了悲痛。四年后，同一个项目卷土重来并取得成功——同样的工程师，同样的目标，失败的教训被融入了改进方案。这是航天机构将极具公开性的失败转化为极具公开性的胜利的最清晰近例。"
+  },
+  {
+    "rel": "programs/chandrayaan.json",
+    "at": "narrative.1.md",
+    "en": "It is also a story about cost. ISRO's genius is doing profound things cheaply — reaching the Moon and Mars for budgets that would barely fund a study elsewhere. That frugality is partly necessity and partly philosophy: a deliberate engineering culture of simplicity, reuse of proven hardware, and ruthless prioritization. Chandrayaan proves that the price of admission to deep space has fallen far enough that a determined nation of modest means can hold genuine firsts.",
+    "cur": "这也是一个关于成本的故事。ISRO的天才之处在于以低廉的成本做出深远的成就——以在其他地方几乎只够资助一项研究的预算抵达月球和火星。这种节俭部分出于必要,部分出于理念:一种刻意追求的工程文化,强调简洁、复用经过验证的硬件以及无情的优先级排序。Chandrayaan证明,进入深空的门槛已经降低到足以让一个资源有限但意志坚定的国家取得真正的首创成就。"
+  },
+  {
+    "rel": "programs/chandrayaan.json",
+    "at": "narrative.2.md",
+    "en": "And it is a story about who the Moon belongs to now. For decades lunar exploration was a two-superpower affair, then a quiet scientific one. Chandrayaan, alongside China's program, Japan's SLIM, and a wave of others, marks the arrival of a genuinely multipolar Moon — where the first soft landing at the south pole was made not by the United States, Russia, or China, but by India.",
+    "cur": "而这也是一个关于月球如今属于谁的故事。数十年来，月球探索一直是两个超级大国之间的事务，后来变成了一项安静的科学事业。Chandrayaan与中国的计划、日本的SLIM以及其他一系列项目一起，标志着真正多极化月球时代的到来——南极的首次软着陆不是由美国、俄罗斯或中国完成的，而是由印度完成的。"
+  },
+  {
+    "rel": "programs/chandrayaan.json",
+    "at": "legacy.0.md",
+    "en": "Chandrayaan's first legacy is scientific and permanent: providing the platform from which NASA's M3 instrument detected water on the Moon — data published in 2009, which reframed the Moon from a dead rock into a place that might sustain a human presence and underlies every current plan to return, including Artemis and China's.",
+    "cur": "Chandrayaan的首要遗产是科学性的且长久的：它提供了平台，使NASA的M3仪器得以探测到月球上的水——这些数据发表于2009年，将月球从一颗死寂的岩石重新定义为一个可能维持人类存在的地方，并且是当前所有重返月球计划的基础，包括Artemis和中国的计划。"
+  },
+  {
+    "rel": "programs/chandrayaan.json",
+    "at": "legacy.1.md",
+    "en": "Its second legacy is the first soft landing near the lunar south pole, the region every future lunar program is aiming for. India got there first, giving it a genuine claim to leadership at the most important destination on the Moon and hard-won landing experience that later missions will build on.",
+    "cur": "它的第二项遗产是首次在月球南极附近实现软着陆，这一地区是未来所有月球项目的目标所在。印度率先抵达，使其对月球最重要目的地拥有了真正的领导地位主张，并获得了来之不易的着陆经验，后续任务将以此为基础。"
+  },
+  {
+    "rel": "programs/chandrayaan.json",
+    "at": "legacy.2.md",
+    "en": "And its third is a demonstration, watched worldwide, that frontier space is now affordable to more than the traditional powers. ISRO's costs reset expectations for what lunar exploration has to cost — an example the next generation of emerging space nations is already following.",
+    "cur": "它的第三个意义是一次面向全球的示范：前沿太空探索现在不再只有传统大国才能负担。ISRO 的成本重置了月球探测应有成本的预期——这一范例已经被下一代新兴航天国家所效仿。"
+  },
+  {
+    "rel": "programs/chandrayaan.json",
+    "at": "lessons.0.md",
+    "en": "The lesson of Chandrayaan is that a public failure, fully owned and learned from, can become the foundation of a greater success. Chandrayaan-2's crash could have ended the program's ambition; instead it became the data that made Chandrayaan-3's historic landing possible. The willingness to try again, in the same public eye that watched the failure, is the whole story.",
+    "cur": "Chandrayaan的教训在于，一次公开的失败，如果能完全承认并从中汲取教训，就能成为更大成功的基础。Chandrayaan-2的坠毁本可能终结该项目的雄心；但它反而成为使Chandrayaan-3历史性着陆成为可能的数据。在曾目睹失败的公众注视下再次尝试的意愿，正是整个故事的全部意义。"
+  },
+  {
+    "rel": "programs/chandrayaan.json",
+    "at": "lessons.1.md",
+    "en": "The deeper lesson is that cost is a form of capability. By doing profound exploration cheaply, ISRO did not merely save money — it made a class of missions possible for a nation that could never have afforded them at Western prices, and reset what the rest of the world believes deep-space exploration must cost. Frugality, pursued as engineering discipline, is itself a kind of power.",
+    "cur": "更深层的启示在于，成本本身就是一种能力。ISRO通过低成本实现深空探索，不仅仅是节省了资金——它让一个永远无法承受西方价格的国家得以开展一整类任务，并重塑了世界其他国家对深空探索成本的认知。作为工程纪律来追求的节俭，本身就是一种力量。"
+  },
+  {
+    "rel": "programs/change.json",
+    "at": "tagline",
+    "en": "The methodical conquest of the Moon: orbit, land, rove, return — including the first landing ever on the far side, and the first samples from it.",
+    "cur": "有条不紊地征服月球:环绕、着陆、巡视、返回——包括人类首次在月球背面着陆,以及首次从那里采集样品。"
+  },
+  {
+    "rel": "programs/change.json",
+    "at": "the_land.0.md",
+    "en": "While the United States was away from the Moon for fifty years and Russia's lunar program lay dormant, China quietly built the most sustained and successful campaign of robotic lunar exploration of the twenty-first century. Named for the Chinese goddess of the Moon, the Chang'e program has, step by deliberate step, done everything a robotic program can do at another world — orbited it, landed on it, driven across it, and brought pieces of it home — and then done the things no one had ever done at all.",
+    "cur": "当美国离开月球五十年之久，俄罗斯的月球计划陷入休眠之际，中国悄然建立了二十一世纪最持久、最成功的机器人月球探测活动。以中国月亮女神的名字命名，嫦娥计划循序渐进地完成了机器人计划在另一个世界能做的一切——绕行它、登陆它、在它的表面行驶、以及将它的岩石带回家——然后做成了从未有人在月球做过的事情。"
+  },
+  {
+    "rel": "programs/change.json",
+    "at": "the_land.1.md",
+    "en": "The program's signature is the same patient, incremental method that built the Tiangong stations: each mission is a rehearsal for the next, each capability proven before the next is attempted. Orbit first (Chang'e 1–2), then soft-land and rove (Chang'e 3), then reach the impossible far side (Chang'e 4), then return samples (Chang'e 5), then return samples from the far side (Chang'e 6). It is a ladder climbed rung by rung, and China has not missed a rung.",
+    "cur": "该计划的标志是同样耐心、循序渐进的方法，这种方法建造了天宫空间站：每次任务都是对下一次任务的演练，每项能力都经过验证后才尝试下一项。首先绕行（嫦娥一号–2），然后软着陆和漫游（嫦娥三号），然后到达不可能的月球背面（嫦娥四号），然后返回样本（嫦娥五号），然后从月球背面返回样本（嫦娥六号）。这是一架逐阶段攀爬的梯子，中国没有错过任何一阶。"
+  },
+  {
+    "rel": "programs/change.json",
+    "at": "goals.0.md",
+    "en": "The near-term goals are scientific and methodical: map the Moon, land softly, deploy rovers, and return samples — mastering each capability in turn. The far side of the Moon, which never faces Earth and so cannot communicate with it directly, was a specific and audacious target: reaching it required first placing a relay satellite beyond the Moon, and no nation had ever landed there before China did it in 2019.",
+    "cur": "近期目标是科学性和系统性的:绘制月球地图、软着陆、部署巡视器、采样返回——依次掌握每项能力。月球背面永远背对地球,因此无法与地球直接通信,这是一个明确而大胆的目标:抵达那里需要首先在月球之外放置一颗中继卫星,在中国于2019年实现之前,没有任何国家曾在那里着陆过。"
+  },
+  {
+    "rel": "programs/change.json",
+    "at": "goals.1.caption",
+    "en": "Chang'e-4 on the far side of the Moon — the first spacecraft ever to land on the hemisphere that never faces Earth, reached only after China placed a relay satellite in position to carry its signals home.",
+    "cur": "月球背面的嫦娥四号——人类首个在永远背对地球的半球着陆的航天器,只有在中国部署了中继卫星将其信号传回地球之后才得以实现。"
+  },
+  {
+    "rel": "programs/change.json",
+    "at": "goals.2.md",
+    "en": "The long-term goals are far larger: to land Chinese astronauts on the Moon by 2030, and to build the International Lunar Research Station — a robotic-then-crewed base near the lunar south pole, developed with international partners as an explicit alternative to the American-led Artemis coalition. The robotic Chang'e missions are the reconnaissance and the proof of capability; the crewed base is the destination the whole program is climbing toward.",
+    "cur": "长期目标要宏大得多:到2030年让中国航天员登陆月球,以及建设国际月球科研站——一个先机器人后载人的月球南极附近基地,与国际伙伴共同开发,作为美国主导的Artemis联盟的明确替代方案。机器人嫦娥任务是侦察和能力验证;载人基地是整个计划攀登的目标。"
+  },
+  {
+    "rel": "programs/change.json",
+    "at": "outcome.0.md",
+    "en": "The record is a near-unbroken string of firsts and successes. Chang'e 1 and 2 mapped the Moon. Chang'e 3 (2013) made the first soft landing since 1976, carrying the Yutu rover. Chang'e 4 (2019) achieved the first landing in history on the lunar far side. Chang'e 5 (2020) returned the first fresh lunar samples in 44 years. And Chang'e 6 (2024) returned the first samples ever collected from the far side — material that had never been held in human hands. No other lunar program of the era comes close to this run of achievement.",
+    "cur": "这一记录是近乎不断的首创和成功的集合。嫦娥一号和2绘制了月球地图。嫦娥三号（2013）完成了自1976年以来的首次软着陆，搭载了玉兔漫游车。嫦娥四号（2019）实现了人类历史上首次在月球背面的着陆。嫦娥五号（2020）返回了44年来首批新鲜的月球样本。嫦娥六号（2024）返回了有史以来首批从月球背面采集的样本——这些物质从未被人类手持过。这个时代没有其他月球计划能够接近这样的成就记录。"
+  },
+  {
+    "rel": "programs/change.json",
+    "at": "outcome.1.caption",
+    "en": "Chang'e-5's sample return — the first new Moon rocks brought to Earth since the Soviet Luna missions of the 1970s, and proof that China had mastered the full round trip to the lunar surface and back.",
+    "cur": "嫦娥五号的采样返回——自1970年代苏联Luna任务以来首批运抵地球的新月岩,证明中国已掌握了往返月球表面的完整能力。"
+  },
+  {
+    "rel": "programs/change.json",
+    "at": "outcome.2.md",
+    "en": "The samples alone have reshaped lunar science, revealing volcanic activity far more recent than models predicted and returning far-side material that may finally explain why the Moon's two hemispheres are so different. And the program's success has made China the pacing threat that reanimated the American lunar program: Artemis exists, in part, because China demonstrated it could and would go to the Moon — and stay.",
+    "cur": "仅样品本身就重塑了月球科学,揭示了比模型预测更晚近的火山活动,并带回了可能最终解释月球两个半球为何如此不同的背面物质。而该计划的成功使中国成为重新激活美国月球计划的领跑威胁:Artemis的存在,部分原因就是中国证明了它能够并且将会前往月球——并且留在那里。"
+  },
+  {
+    "rel": "programs/change.json",
+    "at": "narrative.0.md",
+    "en": "The story of Chang'e is a program that treated the Moon as a sequence of problems to be solved in order, and solved them. There was no rush to plant a flag, no single dramatic sprint — just a steady, published progression through orbiting, landing, roving, and returning, each mission building precisely on the last. The far-side landing is the purest expression of the method: reaching it required first solving the communication problem with a relay satellite, so China solved that first, then landed. The audacity is real, but it is always earned by preparation.",
+    "cur": "嫦娥的故事,是一个将月球视为一系列需要按顺序解决的问题的计划,并且解决了它们。没有急于插旗的冲动,没有单次戏剧性冲刺——只有稳步推进、公开计划的环绕、着陆、巡视和返回进程,每次任务都精确建立在上一次之上。月球背面着陆是这种方法的最纯粹体现:抵达那里需要首先用中继卫星解决通信问题,所以中国先解决了那个问题,然后着陆。这份大胆是真实的,但始终是通过准备赢得的。"
+  },
+  {
+    "rel": "programs/change.json",
+    "at": "narrative.1.md",
+    "en": "It is also the robotic vanguard of a larger ambition. The Chang'e missions are not an end in themselves; they are the reconnaissance for crewed landings and a permanent base. Every soft landing, every sample return, every far-side first is a capability China will need to put people on the Moon and keep them there — and the program is explicitly structured as the robotic first half of a plan whose second half is human.",
+    "cur": "它也是更大野心的机器人先锋。嫦娥任务不是目的本身；它们是对载人着陆和永久基地的侦察。每次软着陆、每次样本返回、每个背面首创都是中国需要的能力，以便将人类送上月球并让他们留在那里——而该计划的结构明确了这一点：作为一个计划的机器人前半段，其后半段是人类。"
+  },
+  {
+    "rel": "programs/change.json",
+    "at": "narrative.2.md",
+    "en": "And it is one half of a new race. For the first time since Apollo, two powers are driving hard for the Moon at once — China's Chang'e-and-crewed program and America's Artemis — both aiming for the same resource-rich south pole, both building coalitions, both on timelines that converge around 2030. Chang'e's quiet, methodical success is the reason that race exists, and China's steadiness makes it a formidable competitor in it.",
+    "cur": "而且它是新竞赛的一半。自Apollo以来首次，两个大国同时为月球而努力——中国的嫦娥-和载人计划以及美国的Artemis——两者都瞄准同样资源丰富的南极，两者都在建立联盟，两者的时间表都在2030年前后汇聚。嫦娥的安静、有条不紊的成功是那场竞赛存在的原因，而中国的稳健使它在竞赛中成为了一个强劲的竞争者。"
+  },
+  {
+    "rel": "programs/change.json",
+    "at": "legacy.0.md",
+    "en": "Chang'e's first legacy is scientific: fresh lunar samples from both near and far sides after a half-century gap, already rewriting the Moon's volcanic history and offering the first direct clues to why its two hemispheres differ so profoundly. These are among the most valuable planetary samples returned in a generation.",
+    "cur": "嫦娥的首要遗产是科学性的:在半个世纪的空白后,从月球近侧和背面获取的新鲜样品,已经在改写月球的火山历史,并提供了关于其两个半球为何如此不同的首批直接线索。这些是一代人以来返回的最有价值的行星样品之一。"
+  },
+  {
+    "rel": "programs/change.json",
+    "at": "legacy.1.md",
+    "en": "Its second legacy is the first human access to the lunar far side — a place that had been utterly unreachable, opened by the simple, clever step of a relay satellite. Chang'e turned the hidden half of the Moon from an abstraction into explored ground.",
+    "cur": "其第二项遗产是人类首次进入月球背面——一个曾经完全无法抵达的地方,通过中继卫星这一简单而巧妙的步骤得以开启。嫦娥将月球隐藏的那一半从抽象概念变成了被探索的土地。"
+  },
+  {
+    "rel": "programs/change.json",
+    "at": "legacy.2.md",
+    "en": "And its third is the reanimation of the Moon race itself. China's methodical success is a principal reason the United States committed to Artemis and to returning humans to the Moon on a deadline. Chang'e did not just explore the Moon; it changed the strategic calculus that governs who else goes, and when.",
+    "cur": "其第三项遗产是月球竞赛本身的重启。中国有条不紊的成功是美国承诺Artemis并在最后期限前让人类重返月球的主要原因。嫦娥不仅探索了月球;它改变了支配其他人何时前往以及谁会前往的战略考量。"
+  }
 ]

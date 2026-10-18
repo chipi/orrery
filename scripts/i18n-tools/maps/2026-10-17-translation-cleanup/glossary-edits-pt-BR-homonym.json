@@ -1,164 +1,164 @@
 [
- {
-  "rel": "deep-sky.json",
-  "at": "euclid-horsehead.caption",
-  "old": "A visão panorâmica da Euclid da icônica nuvem escura em Orion.",
-  "new": "A visão panorâmica da Euclid da icônica nuvem escura em Órion."
- },
- {
-  "rel": "deep-sky.json",
-  "at": "jwst-orion.title",
-  "old": "Nebulosa de Orion",
-  "new": "Nebulosa de Órion"
- },
- {
-  "rel": "deep-sky.json",
-  "at": "jwst-orion.caption",
-  "old": "A Nebulosa de Orion interna — um berço estelar a 1.350 anos-luz de distância, no NIRCam do Webb.",
-  "new": "A Nebulosa de Órion interna — um berço estelar a 1.350 anos-luz de distância, no NIRCam do Webb."
- },
- {
-  "rel": "deep-sky.json",
-  "at": "hst-orion.title",
-  "old": "Nebulosa de Orion",
-  "new": "Nebulosa de Órion"
- },
- {
-  "rel": "missions/moon/apollo15.json",
-  "at": "description",
-  "old": "A primeira \"J-mission\" — Apollo científica de permanência estendida com o novo Lunar Roving Vehicle. O Lunar Roving Vehicle deu a Scott e Irwin um alcance de travessia de 27,9 km (contra os 3,5 km de caminhada apenas do Apollo 14), abrindo o dramático sítio de Hadley-Apennine ao pé de uma cordilheira de 4,5 km e à beira do sinuoso sulco Hadley. Três EVAs totalizando 18 h 35 m, 77 kg de amostras retornadas, incluindo a famosa \"Genesis Rock\" (amostra 15415) — um anortosito de 4,1 bilhões de anos confirmando a origem de oceano de magma da crosta das terras altas lunares. O experimento do \"martelo-pena\" televisionado de Scott verificou a lei da gravitação de Galileo ao vivo. Worden em órbita lunar operou uma baía SIM repleta de instrumentos de sensoriamento remoto (câmaras de mapeamento, espectrômetros de raios gama, raios X e partículas alfa) e realizou a primeira EVA em espaço profundo no caminho de volta (~39 minutos de EVA a ~317 000 km da Terra para recuperar os carretilhas de filme). A recuperação do Apollo 15 foi prejudicada pela falha de um dos três paraquedas principais em abrir completamente — o CM caiu com força, mas a tripulação se manteve segura.",
-  "new": "A primeira \"J-mission\" — Apollo científica de permanência estendida com o novo Lunar Roving Vehicle. O Lunar Roving Vehicle deu a Scott e Irwin um alcance de travessia de 27,9 km (contra os 3,5 km de caminhada apenas do Apollo 14), abrindo o dramático sítio de Hadley-Apennine ao pé de uma cordilheira de 4,5 km e à beira do sinuoso sulco Hadley. Três EVAs totalizando 18 h 35 m, 77 kg de amostras retornadas, incluindo a famosa \"Genesis Rock\" (amostra 15415) — um anortosito de 4,1 bilhões de anos confirmando a origem de oceano de magma da crosta das terras altas lunares. O experimento do \"martelo-pena\" televisionado de Scott verificou a lei da gravitação de Galileu ao vivo. Worden em órbita lunar operou uma baía SIM repleta de instrumentos de sensoriamento remoto (câmaras de mapeamento, espectrômetros de raios gama, raios X e partículas alfa) e realizou a primeira EVA em espaço profundo no caminho de volta (~39 minutos de EVA a ~317 000 km da Terra para recuperar os carretilhas de filme). A recuperação do Apollo 15 foi prejudicada pela falha de um dos três paraquedas principais em abrir completamente — o CM caiu com força, mas a tripulação se manteve segura."
- },
- {
-  "rel": "missions/moon/apollo15.json",
-  "at": "events.6.note",
-  "old": "EVA-3 / pré-ascensão: Scott televisiona um martelo e uma pena soltos juntos; ambos atingem o regolito simultaneamente, verificando a previsão de Galileo de 1589 ao vivo.",
-  "new": "EVA-3 / pré-ascensão: Scott televisiona um martelo e uma pena soltos juntos; ambos atingem o regolito simultaneamente, verificando a previsão de Galileu de 1589 ao vivo."
- },
- {
-  "rel": "science/history/_intro.json",
-  "at": "paragraphs.1",
-  "old": "Escolhemos seis pivôs: as elipses de Kepler, a gravidade de Newton, a equação de foguete de Tsiolkovsky, o primeiro queimador de combustível líquido de Goddard, o R-7 de Korolev, e Apollo 11. Centenas mais merecem um lugar; revisões futuras as preencherão (os telescópios de Galileo, o artigo sobre transferência de Hohmann, a esposa de Goddard que tirou a maioria das fotos, os engenheiros soviéticos que Korolev não podia nomear em público, o passeio espacial de Ed White, a linha de altitude de von Kármán). A história não é propriedade de nenhuma nação — cada capítulo tem pessoas que você nunca ouviu falar que fizeram funcionar.",
-  "new": "Escolhemos seis pivôs: as elipses de Kepler, a gravidade de Newton, a equação de foguete de Tsiolkovsky, o primeiro queimador de combustível líquido de Goddard, o R-7 de Korolev, e Apollo 11. Centenas mais merecem um lugar; revisões futuras as preencherão (os telescópios de Galileu, o artigo sobre transferência de Hohmann, a esposa de Goddard que tirou a maioria das fotos, os engenheiros soviéticos que Korolev não podia nomear em público, o passeio espacial de Ed White, a linha de altitude de von Kármán). A história não é propriedade de nenhuma nação — cada capítulo tem pessoas que você nunca ouviu falar que fizeram funcionar."
- },
- {
-  "rel": "science/history/keplers-laws-1609.json",
-  "at": "body_paragraphs.2",
-  "old": "A contribuição de Brahe não era apenas dados: ele era um instrumentalista meticuloso que levou a medição a olho nu ao seu limite físico. Precisão em nível de telescópio chegou só depois do telescópio de Galileo em 1609 — tarde demais para se sobrepor à carreira de Brahe.",
-  "new": "A contribuição de Brahe não era apenas dados: ele era um instrumentalista meticuloso que levou a medição a olho nu ao seu limite físico. Precisão em nível de telescópio chegou só depois do telescópio de Galileu em 1609 — tarde demais para se sobrepor à carreira de Brahe."
- },
- {
-  "rel": "science/planets/moons-of-the-system.json",
-  "at": "intro_sentence",
-  "old": "A observação de cinco noites de Galileo em 1610 encerrou o geocentrismo. As luas do sistema continuam derrubando velhas suposições.",
-  "new": "A observação de cinco noites de Galileu em 1610 encerrou o geocentrismo. As luas do sistema continuam derrubando velhas suposições."
- },
- {
-  "rel": "science/planets/moons-of-the-system.json",
-  "at": "narrative_101.0",
-  "old": "Em janeiro de 1610, Galileo apontou seu telescópio de 20× para Júpiter e viu quatro pontos brilhantes dispostos em linha em ambos os lados do planeta. Ele os desenhou. Na noite seguinte, eles se moveram — e não em direção às estrelas atrás de Júpiter, mas como se estivessem orbitando o próprio Júpiter. Ao longo de cinco noites, ele os rastreou e concluiu: estas são luas de Júpiter. Corpos que orbitam algo diferente da Terra. O geocentrismo, que havia sido a cosmologia dominante por dois mil anos, havia acabado.",
-  "new": "Em janeiro de 1610, Galileu apontou seu telescópio de 20× para Júpiter e viu quatro pontos brilhantes dispostos em linha em ambos os lados do planeta. Ele os desenhou. Na noite seguinte, eles se moveram — e não em direção às estrelas atrás de Júpiter, mas como se estivessem orbitando o próprio Júpiter. Ao longo de cinco noites, ele os rastreou e concluiu: estas são luas de Júpiter. Corpos que orbitam algo diferente da Terra. O geocentrismo, que havia sido a cosmologia dominante por dois mil anos, havia acabado."
- },
- {
-  "rel": "science/planets/moons-of-the-system.json",
-  "at": "body_paragraphs.0",
-  "old": "As quatro luas Galilean de Júpiter são mundos selvagemente diferentes. Io: corpo vulcanicamente mais ativo do sistema solar, com erupções ativas visíveis de telescópios — impulsionado por aquecimento de maré dos outros. Europa: crosta de gelo sobre um oceano de água global, uma prioridade máxima em astrobiologia. Ganimedes: maior lua do sistema solar, maior do que Mercúrio, e a única lua com seu próprio campo magnético. Calisto: a mais externa das Galilean, superfície antiga e cratera, possivelmente também um oceano subsuperficial. Todas as quatro descobertas em 1610 por Galileo de um telhado em Pádua.",
-  "new": "As quatro luas Galilean de Júpiter são mundos selvagemente diferentes. Io: corpo vulcanicamente mais ativo do sistema solar, com erupções ativas visíveis de telescópios — impulsionado por aquecimento de maré dos outros. Europa: crosta de gelo sobre um oceano de água global, uma prioridade máxima em astrobiologia. Ganimedes: maior lua do sistema solar, maior do que Mercúrio, e a única lua com seu próprio campo magnético. Calisto: a mais externa das Galilean, superfície antiga e cratera, possivelmente também um oceano subsuperficial. Todas as quatro descobertas em 1610 por Galileu de um telhado em Pádua."
- },
- {
-  "rel": "site-stories/apollo15.json",
-  "at": "intro",
-  "old": "A Apollo 15 pousou junto ao sulco Hadley, nos montes Apeninos em 30 de julho de 1971 — a primeira missão \"classe J\", com permanência prolongada na superfície, o Lunar Roving Vehicle (LRV) e um piloto treinado como cientista (David Scott). Scott e Irwin percorreram 28 km no total ao longo de três EVAs, encontraram a Genesis Rock (anortosito de ~4,1 Ga, crosta primária) e, em transmissão ao vivo pela TV, soltaram uma pena e um martelo para demonstrar o teste de gravidade de Galileo.",
-  "new": "A Apollo 15 pousou junto ao sulco Hadley, nos montes Apeninos em 30 de julho de 1971 — a primeira missão \"classe J\", com permanência prolongada na superfície, o Lunar Roving Vehicle (LRV) e um piloto treinado como cientista (David Scott). Scott e Irwin percorreram 28 km no total ao longo de três EVAs, encontraram a Genesis Rock (anortosito de ~4,1 Ga, crosta primária) e, em transmissão ao vivo pela TV, soltaram uma pena e um martelo para demonstrar o teste de gravidade de Galileu."
- },
- {
-  "rel": "site-stories/apollo15.json",
-  "at": "chapters.2.subtitle",
-  "old": "Genesis Rock + experimento de Galileo",
-  "new": "Genesis Rock + experimento de Galileu"
- },
- {
-  "rel": "universe/named-stars/alnitak.json",
-  "at": "fact",
-  "old": "A estrela oriental da Cintura de Orion — uma supergigante azul ao lado da resplandecente Nebulosa da Chama.",
-  "new": "A estrela oriental da Cintura de Órion — uma supergigante azul ao lado da resplandecente Nebulosa da Chama."
- },
- {
-  "rel": "universe/named-stars/alnitak.json",
-  "at": "cultural",
-  "old": "O nome vem do árabe e significa 'o cinto' ou 'cinturão'. Como uma das três estrelas do Cinturão, compartilha o reconhecimento quase universal de Orion entre as culturas humanas.",
-  "new": "O nome vem do árabe e significa 'o cinto' ou 'cinturão'. Como uma das três estrelas do Cinturão, compartilha o reconhecimento quase universal de Órion entre as culturas humanas."
- },
- {
-  "rel": "universe/named-stars/bellatrix.json",
-  "at": "fact",
-  "old": "A 'guerreira' — a quente estrela azul no ombro de Orion.",
-  "new": "A 'guerreira' — a quente estrela azul no ombro de Órion."
- },
- {
-  "rel": "universe/named-stars/bellatrix.json",
-  "at": "bio",
-  "old": "Bellatrix (Gamma Orionis) é uma gigante azul quente a aproximadamente 250 anos-luz de distância, marcando o ombro esquerdo de Orion, o Caçador. É uma das estrelas azuis mais quentes visíveis a olho nu na constelação.",
-  "new": "Bellatrix (Gamma Orionis) é uma gigante azul quente a aproximadamente 250 anos-luz de distância, marcando o ombro esquerdo de Órion, o Caçador. É uma das estrelas azuis mais quentes visíveis a olho nu na constelação."
- },
- {
-  "rel": "universe/named-stars/bellatrix.json",
-  "at": "cultural",
-  "old": "O nome latino significa 'guerreira' ou 'estrela amazona'. Há muito tempo é um dos cantos reconhecíveis da figura de Orion usado para orientação no céu do inverno do hemisfério norte.",
-  "new": "O nome latino significa 'guerreira' ou 'estrela amazona'. Há muito tempo é um dos cantos reconhecíveis da figura de Órion usado para orientação no céu do inverno do hemisfério norte."
- },
- {
-  "rel": "universe/named-stars/betelgeuse.json",
-  "at": "fact",
-  "old": "Uma colossal supergigante vermelha que marca o ombro de Orion — tão grande que engoliria os planetas internos se estivesse no lugar do Sol.",
-  "new": "Uma colossal supergigante vermelha que marca o ombro de Órion — tão grande que engoliria os planetas internos se estivesse no lugar do Sol."
- },
- {
-  "rel": "universe/named-stars/mintaka.json",
-  "at": "fact",
-  "old": "A estrela mais ocidental do Cinturão de Orion — posicionada quase exatamente sobre o equador celeste.",
-  "new": "A estrela mais ocidental do Cinturão de Órion — posicionada quase exatamente sobre o equador celeste."
- },
- {
-  "rel": "universe/named-stars/mintaka.json",
-  "at": "bio",
-  "old": "Mintaka (Delta Orionis) é um sistema múltiplo quente e massivo a mais de mil anos-luz de distância, a estrela ocidental do Cinturão de Orion. Ela está tão próxima do equador celeste que nasce quase exatamente a leste e se põe quase exatamente a oeste para observadores em qualquer lugar da Terra.",
-  "new": "Mintaka (Delta Orionis) é um sistema múltiplo quente e massivo a mais de mil anos-luz de distância, a estrela ocidental do Cinturão de Órion. Ela está tão próxima do equador celeste que nasce quase exatamente a leste e se põe quase exatamente a oeste para observadores em qualquer lugar da Terra."
- },
- {
-  "rel": "universe/named-stars/mintaka.json",
-  "at": "cultural",
-  "old": "O nome vem do árabe e significa 'o cinturão'. Como uma das três estrelas do Cinturão, ela compartilha do reconhecimento quase universal de Orion, e sua posição sobre o equador fez dela um marco natural do leste e do oeste.",
-  "new": "O nome vem do árabe e significa 'o cinturão'. Como uma das três estrelas do Cinturão, ela compartilha do reconhecimento quase universal de Órion, e sua posição sobre o equador fez dela um marco natural do leste e do oeste."
- },
- {
-  "rel": "universe/named-stars/rigel.json",
-  "at": "fact",
-  "old": "Uma supergigante azul brilhante — o pé luminoso de Orion, dezenas de milhares de vezes mais brilhante que o Sol.",
-  "new": "Uma supergigante azul brilhante — o pé luminoso de Órion, dezenas de milhares de vezes mais brilhante que o Sol."
- },
- {
-  "rel": "universe/named-stars/rigel.json",
-  "at": "cultural",
-  "old": "O nome vem do árabe para 'pé'. A luz azul-branca metálica de Rígel é um contraste clássico com o vermelho de Betelgeuse na figura de Orion.",
-  "new": "O nome vem do árabe para 'pé'. A luz azul-branca metálica de Rígel é um contraste clássico com o vermelho de Betelgeuse na figura de Órion."
- },
- {
-  "rel": "universe/named-stars/saiph.json",
-  "at": "fact",
-  "old": "Uma supergigante azul no joelho de Orion — a gêmea mais quente e aparentemente mais fraca de Rígel.",
-  "new": "Uma supergigante azul no joelho de Órion — a gêmea mais quente e aparentemente mais fraca de Rígel."
- },
- {
-  "rel": "universe/named-stars/saiph.json",
-  "at": "bio",
-  "old": "Saiph (Kappa Orionis) é uma supergigante azul a aproximadamente 650 anos-luz de distância, marcando o canto inferior esquerdo de Orion, oposta a Rígel. É comparável a Rígel em tamanho e calor, mas aparece mais fraca para nós porque grande parte de sua intensa emissão se projeta como luz ultravioleta invisível.",
-  "new": "Saiph (Kappa Orionis) é uma supergigante azul a aproximadamente 650 anos-luz de distância, marcando o canto inferior esquerdo de Órion, oposta a Rígel. É comparável a Rígel em tamanho e calor, mas aparece mais fraca para nós porque grande parte de sua intensa emissão se projeta como luz ultravioleta invisível."
- },
- {
-  "rel": "universe/named-stars/wezen.json",
-  "at": "cultural",
-  "old": "O nome vem de uma palavra árabe que significa 'peso'. Ela está localizada em Canis Major, o Cão Maior que segue Orion através do céu atrás da brilhante Sirius.",
-  "new": "O nome vem de uma palavra árabe que significa 'peso'. Ela está localizada em Canis Major, o Cão Maior que segue Órion através do céu atrás da brilhante Sirius."
- }
+  {
+    "rel": "deep-sky.json",
+    "at": "euclid-horsehead.caption",
+    "old": "A visão panorâmica da Euclid da icônica nuvem escura em Orion.",
+    "new": "A visão panorâmica da Euclid da icônica nuvem escura em Órion."
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "jwst-orion.title",
+    "old": "Nebulosa de Orion",
+    "new": "Nebulosa de Órion"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "jwst-orion.caption",
+    "old": "A Nebulosa de Orion interna — um berço estelar a 1.350 anos-luz de distância, no NIRCam do Webb.",
+    "new": "A Nebulosa de Órion interna — um berço estelar a 1.350 anos-luz de distância, no NIRCam do Webb."
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "hst-orion.title",
+    "old": "Nebulosa de Orion",
+    "new": "Nebulosa de Órion"
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "description",
+    "old": "A primeira \"J-mission\" — Apollo científica de permanência estendida com o novo Lunar Roving Vehicle. O Lunar Roving Vehicle deu a Scott e Irwin um alcance de travessia de 27,9 km (contra os 3,5 km de caminhada apenas do Apollo 14), abrindo o dramático sítio de Hadley-Apennine ao pé de uma cordilheira de 4,5 km e à beira do sinuoso sulco Hadley. Três EVAs totalizando 18 h 35 m, 77 kg de amostras retornadas, incluindo a famosa \"Genesis Rock\" (amostra 15415) — um anortosito de 4,1 bilhões de anos confirmando a origem de oceano de magma da crosta das terras altas lunares. O experimento do \"martelo-pena\" televisionado de Scott verificou a lei da gravitação de Galileo ao vivo. Worden em órbita lunar operou uma baía SIM repleta de instrumentos de sensoriamento remoto (câmaras de mapeamento, espectrômetros de raios gama, raios X e partículas alfa) e realizou a primeira EVA em espaço profundo no caminho de volta (~39 minutos de EVA a ~317 000 km da Terra para recuperar os carretilhas de filme). A recuperação do Apollo 15 foi prejudicada pela falha de um dos três paraquedas principais em abrir completamente — o CM caiu com força, mas a tripulação se manteve segura.",
+    "new": "A primeira \"J-mission\" — Apollo científica de permanência estendida com o novo Lunar Roving Vehicle. O Lunar Roving Vehicle deu a Scott e Irwin um alcance de travessia de 27,9 km (contra os 3,5 km de caminhada apenas do Apollo 14), abrindo o dramático sítio de Hadley-Apennine ao pé de uma cordilheira de 4,5 km e à beira do sinuoso sulco Hadley. Três EVAs totalizando 18 h 35 m, 77 kg de amostras retornadas, incluindo a famosa \"Genesis Rock\" (amostra 15415) — um anortosito de 4,1 bilhões de anos confirmando a origem de oceano de magma da crosta das terras altas lunares. O experimento do \"martelo-pena\" televisionado de Scott verificou a lei da gravitação de Galileu ao vivo. Worden em órbita lunar operou uma baía SIM repleta de instrumentos de sensoriamento remoto (câmaras de mapeamento, espectrômetros de raios gama, raios X e partículas alfa) e realizou a primeira EVA em espaço profundo no caminho de volta (~39 minutos de EVA a ~317 000 km da Terra para recuperar os carretilhas de filme). A recuperação do Apollo 15 foi prejudicada pela falha de um dos três paraquedas principais em abrir completamente — o CM caiu com força, mas a tripulação se manteve segura."
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.6.note",
+    "old": "EVA-3 / pré-ascensão: Scott televisiona um martelo e uma pena soltos juntos; ambos atingem o regolito simultaneamente, verificando a previsão de Galileo de 1589 ao vivo.",
+    "new": "EVA-3 / pré-ascensão: Scott televisiona um martelo e uma pena soltos juntos; ambos atingem o regolito simultaneamente, verificando a previsão de Galileu de 1589 ao vivo."
+  },
+  {
+    "rel": "science/history/_intro.json",
+    "at": "paragraphs.1",
+    "old": "Escolhemos seis pivôs: as elipses de Kepler, a gravidade de Newton, a equação de foguete de Tsiolkovsky, o primeiro queimador de combustível líquido de Goddard, o R-7 de Korolev, e Apollo 11. Centenas mais merecem um lugar; revisões futuras as preencherão (os telescópios de Galileo, o artigo sobre transferência de Hohmann, a esposa de Goddard que tirou a maioria das fotos, os engenheiros soviéticos que Korolev não podia nomear em público, o passeio espacial de Ed White, a linha de altitude de von Kármán). A história não é propriedade de nenhuma nação — cada capítulo tem pessoas que você nunca ouviu falar que fizeram funcionar.",
+    "new": "Escolhemos seis pivôs: as elipses de Kepler, a gravidade de Newton, a equação de foguete de Tsiolkovsky, o primeiro queimador de combustível líquido de Goddard, o R-7 de Korolev, e Apollo 11. Centenas mais merecem um lugar; revisões futuras as preencherão (os telescópios de Galileu, o artigo sobre transferência de Hohmann, a esposa de Goddard que tirou a maioria das fotos, os engenheiros soviéticos que Korolev não podia nomear em público, o passeio espacial de Ed White, a linha de altitude de von Kármán). A história não é propriedade de nenhuma nação — cada capítulo tem pessoas que você nunca ouviu falar que fizeram funcionar."
+  },
+  {
+    "rel": "science/history/keplers-laws-1609.json",
+    "at": "body_paragraphs.2",
+    "old": "A contribuição de Brahe não era apenas dados: ele era um instrumentalista meticuloso que levou a medição a olho nu ao seu limite físico. Precisão em nível de telescópio chegou só depois do telescópio de Galileo em 1609 — tarde demais para se sobrepor à carreira de Brahe.",
+    "new": "A contribuição de Brahe não era apenas dados: ele era um instrumentalista meticuloso que levou a medição a olho nu ao seu limite físico. Precisão em nível de telescópio chegou só depois do telescópio de Galileu em 1609 — tarde demais para se sobrepor à carreira de Brahe."
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "intro_sentence",
+    "old": "A observação de cinco noites de Galileo em 1610 encerrou o geocentrismo. As luas do sistema continuam derrubando velhas suposições.",
+    "new": "A observação de cinco noites de Galileu em 1610 encerrou o geocentrismo. As luas do sistema continuam derrubando velhas suposições."
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "narrative_101.0",
+    "old": "Em janeiro de 1610, Galileo apontou seu telescópio de 20× para Júpiter e viu quatro pontos brilhantes dispostos em linha em ambos os lados do planeta. Ele os desenhou. Na noite seguinte, eles se moveram — e não em direção às estrelas atrás de Júpiter, mas como se estivessem orbitando o próprio Júpiter. Ao longo de cinco noites, ele os rastreou e concluiu: estas são luas de Júpiter. Corpos que orbitam algo diferente da Terra. O geocentrismo, que havia sido a cosmologia dominante por dois mil anos, havia acabado.",
+    "new": "Em janeiro de 1610, Galileu apontou seu telescópio de 20× para Júpiter e viu quatro pontos brilhantes dispostos em linha em ambos os lados do planeta. Ele os desenhou. Na noite seguinte, eles se moveram — e não em direção às estrelas atrás de Júpiter, mas como se estivessem orbitando o próprio Júpiter. Ao longo de cinco noites, ele os rastreou e concluiu: estas são luas de Júpiter. Corpos que orbitam algo diferente da Terra. O geocentrismo, que havia sido a cosmologia dominante por dois mil anos, havia acabado."
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "body_paragraphs.0",
+    "old": "As quatro luas Galilean de Júpiter são mundos selvagemente diferentes. Io: corpo vulcanicamente mais ativo do sistema solar, com erupções ativas visíveis de telescópios — impulsionado por aquecimento de maré dos outros. Europa: crosta de gelo sobre um oceano de água global, uma prioridade máxima em astrobiologia. Ganimedes: maior lua do sistema solar, maior do que Mercúrio, e a única lua com seu próprio campo magnético. Calisto: a mais externa das Galilean, superfície antiga e cratera, possivelmente também um oceano subsuperficial. Todas as quatro descobertas em 1610 por Galileo de um telhado em Pádua.",
+    "new": "As quatro luas Galilean de Júpiter são mundos selvagemente diferentes. Io: corpo vulcanicamente mais ativo do sistema solar, com erupções ativas visíveis de telescópios — impulsionado por aquecimento de maré dos outros. Europa: crosta de gelo sobre um oceano de água global, uma prioridade máxima em astrobiologia. Ganimedes: maior lua do sistema solar, maior do que Mercúrio, e a única lua com seu próprio campo magnético. Calisto: a mais externa das Galilean, superfície antiga e cratera, possivelmente também um oceano subsuperficial. Todas as quatro descobertas em 1610 por Galileu de um telhado em Pádua."
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "intro",
+    "old": "A Apollo 15 pousou junto ao sulco Hadley, nos montes Apeninos em 30 de julho de 1971 — a primeira missão \"classe J\", com permanência prolongada na superfície, o Lunar Roving Vehicle (LRV) e um piloto treinado como cientista (David Scott). Scott e Irwin percorreram 28 km no total ao longo de três EVAs, encontraram a Genesis Rock (anortosito de ~4,1 Ga, crosta primária) e, em transmissão ao vivo pela TV, soltaram uma pena e um martelo para demonstrar o teste de gravidade de Galileo.",
+    "new": "A Apollo 15 pousou junto ao sulco Hadley, nos montes Apeninos em 30 de julho de 1971 — a primeira missão \"classe J\", com permanência prolongada na superfície, o Lunar Roving Vehicle (LRV) e um piloto treinado como cientista (David Scott). Scott e Irwin percorreram 28 km no total ao longo de três EVAs, encontraram a Genesis Rock (anortosito de ~4,1 Ga, crosta primária) e, em transmissão ao vivo pela TV, soltaram uma pena e um martelo para demonstrar o teste de gravidade de Galileu."
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.2.subtitle",
+    "old": "Genesis Rock + experimento de Galileo",
+    "new": "Genesis Rock + experimento de Galileu"
+  },
+  {
+    "rel": "universe/named-stars/alnitak.json",
+    "at": "fact",
+    "old": "A estrela oriental da Cintura de Orion — uma supergigante azul ao lado da resplandecente Nebulosa da Chama.",
+    "new": "A estrela oriental da Cintura de Órion — uma supergigante azul ao lado da resplandecente Nebulosa da Chama."
+  },
+  {
+    "rel": "universe/named-stars/alnitak.json",
+    "at": "cultural",
+    "old": "O nome vem do árabe e significa 'o cinto' ou 'cinturão'. Como uma das três estrelas do Cinturão, compartilha o reconhecimento quase universal de Orion entre as culturas humanas.",
+    "new": "O nome vem do árabe e significa 'o cinto' ou 'cinturão'. Como uma das três estrelas do Cinturão, compartilha o reconhecimento quase universal de Órion entre as culturas humanas."
+  },
+  {
+    "rel": "universe/named-stars/bellatrix.json",
+    "at": "fact",
+    "old": "A 'guerreira' — a quente estrela azul no ombro de Orion.",
+    "new": "A 'guerreira' — a quente estrela azul no ombro de Órion."
+  },
+  {
+    "rel": "universe/named-stars/bellatrix.json",
+    "at": "bio",
+    "old": "Bellatrix (Gamma Orionis) é uma gigante azul quente a aproximadamente 250 anos-luz de distância, marcando o ombro esquerdo de Orion, o Caçador. É uma das estrelas azuis mais quentes visíveis a olho nu na constelação.",
+    "new": "Bellatrix (Gamma Orionis) é uma gigante azul quente a aproximadamente 250 anos-luz de distância, marcando o ombro esquerdo de Órion, o Caçador. É uma das estrelas azuis mais quentes visíveis a olho nu na constelação."
+  },
+  {
+    "rel": "universe/named-stars/bellatrix.json",
+    "at": "cultural",
+    "old": "O nome latino significa 'guerreira' ou 'estrela amazona'. Há muito tempo é um dos cantos reconhecíveis da figura de Orion usado para orientação no céu do inverno do hemisfério norte.",
+    "new": "O nome latino significa 'guerreira' ou 'estrela amazona'. Há muito tempo é um dos cantos reconhecíveis da figura de Órion usado para orientação no céu do inverno do hemisfério norte."
+  },
+  {
+    "rel": "universe/named-stars/betelgeuse.json",
+    "at": "fact",
+    "old": "Uma colossal supergigante vermelha que marca o ombro de Orion — tão grande que engoliria os planetas internos se estivesse no lugar do Sol.",
+    "new": "Uma colossal supergigante vermelha que marca o ombro de Órion — tão grande que engoliria os planetas internos se estivesse no lugar do Sol."
+  },
+  {
+    "rel": "universe/named-stars/mintaka.json",
+    "at": "fact",
+    "old": "A estrela mais ocidental do Cinturão de Orion — posicionada quase exatamente sobre o equador celeste.",
+    "new": "A estrela mais ocidental do Cinturão de Órion — posicionada quase exatamente sobre o equador celeste."
+  },
+  {
+    "rel": "universe/named-stars/mintaka.json",
+    "at": "bio",
+    "old": "Mintaka (Delta Orionis) é um sistema múltiplo quente e massivo a mais de mil anos-luz de distância, a estrela ocidental do Cinturão de Orion. Ela está tão próxima do equador celeste que nasce quase exatamente a leste e se põe quase exatamente a oeste para observadores em qualquer lugar da Terra.",
+    "new": "Mintaka (Delta Orionis) é um sistema múltiplo quente e massivo a mais de mil anos-luz de distância, a estrela ocidental do Cinturão de Órion. Ela está tão próxima do equador celeste que nasce quase exatamente a leste e se põe quase exatamente a oeste para observadores em qualquer lugar da Terra."
+  },
+  {
+    "rel": "universe/named-stars/mintaka.json",
+    "at": "cultural",
+    "old": "O nome vem do árabe e significa 'o cinturão'. Como uma das três estrelas do Cinturão, ela compartilha do reconhecimento quase universal de Orion, e sua posição sobre o equador fez dela um marco natural do leste e do oeste.",
+    "new": "O nome vem do árabe e significa 'o cinturão'. Como uma das três estrelas do Cinturão, ela compartilha do reconhecimento quase universal de Órion, e sua posição sobre o equador fez dela um marco natural do leste e do oeste."
+  },
+  {
+    "rel": "universe/named-stars/rigel.json",
+    "at": "fact",
+    "old": "Uma supergigante azul brilhante — o pé luminoso de Orion, dezenas de milhares de vezes mais brilhante que o Sol.",
+    "new": "Uma supergigante azul brilhante — o pé luminoso de Órion, dezenas de milhares de vezes mais brilhante que o Sol."
+  },
+  {
+    "rel": "universe/named-stars/rigel.json",
+    "at": "cultural",
+    "old": "O nome vem do árabe para 'pé'. A luz azul-branca metálica de Rígel é um contraste clássico com o vermelho de Betelgeuse na figura de Orion.",
+    "new": "O nome vem do árabe para 'pé'. A luz azul-branca metálica de Rígel é um contraste clássico com o vermelho de Betelgeuse na figura de Órion."
+  },
+  {
+    "rel": "universe/named-stars/saiph.json",
+    "at": "fact",
+    "old": "Uma supergigante azul no joelho de Orion — a gêmea mais quente e aparentemente mais fraca de Rígel.",
+    "new": "Uma supergigante azul no joelho de Órion — a gêmea mais quente e aparentemente mais fraca de Rígel."
+  },
+  {
+    "rel": "universe/named-stars/saiph.json",
+    "at": "bio",
+    "old": "Saiph (Kappa Orionis) é uma supergigante azul a aproximadamente 650 anos-luz de distância, marcando o canto inferior esquerdo de Orion, oposta a Rígel. É comparável a Rígel em tamanho e calor, mas aparece mais fraca para nós porque grande parte de sua intensa emissão se projeta como luz ultravioleta invisível.",
+    "new": "Saiph (Kappa Orionis) é uma supergigante azul a aproximadamente 650 anos-luz de distância, marcando o canto inferior esquerdo de Órion, oposta a Rígel. É comparável a Rígel em tamanho e calor, mas aparece mais fraca para nós porque grande parte de sua intensa emissão se projeta como luz ultravioleta invisível."
+  },
+  {
+    "rel": "universe/named-stars/wezen.json",
+    "at": "cultural",
+    "old": "O nome vem de uma palavra árabe que significa 'peso'. Ela está localizada em Canis Major, o Cão Maior que segue Orion através do céu atrás da brilhante Sirius.",
+    "new": "O nome vem de uma palavra árabe que significa 'peso'. Ela está localizada em Canis Major, o Cão Maior que segue Órion através do céu atrás da brilhante Sirius."
+  }
 ]

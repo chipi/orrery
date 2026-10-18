@@ -1,56 +1,56 @@
 [
- {
-  "rel": "fleet/lander/hakuto-r.json",
-  "at": "tagline",
-  "old": "일본 최초의 민간 달 착륙선; M1과 M2 모두 추락",
-  "new": "일본 최초의 민간 달 착륙 시도; 미션 1(2023년)과 미션 2(2025년) 모두 추락"
- },
- {
-  "rel": "fleet/lander/hakuto-r.json",
-  "at": "best_known_for",
-  "old": "일본 최초의 민간 달 착륙선; M1과 M2 모두 추락",
-  "new": "일본 최초의 민간 달 착륙 시도; 미션 1(2023년)과 미션 2(2025년) 모두 추락"
- },
- {
-  "rel": "fleet/lander/hakuto-r.json",
-  "at": "description",
-  "old": "Hakuto-R 프로그램은 일본의 ispace가 만든 행성 착륙선입니다. 일본 최초의 민간 달 착륙선이며, M1과 M2 모두 추락했습니다. 2023년에 비행했으나 실패했습니다.",
-  "new": "Hakuto-R는 일본 기업 ispace의 달 착륙선 프로그램입니다. 2022년 12월에 발사된 미션 1 착륙선은 일본 최초의 민간 달 착륙 시도였으며 2023년 4월에 추락했습니다. 미션 2 착륙선 Resilience도 2025년 6월에 추락했습니다."
- },
- {
-  "rel": "fleet/lander/vikram-cy2.json",
-  "at": "tagline",
-  "old": "Chandrayaan-2 착륙선; 추락했으나 궤도선은 계속 활동",
-  "new": "인도 Chandrayaan-2의 착륙선; 2019년에 추락했으나 궤도선은 계속 운용"
- },
- {
-  "rel": "fleet/lander/vikram-cy2.json",
-  "at": "best_known_for",
-  "old": "Chandrayaan-2 착륙선; 추락했으나 궤도선은 계속 활동",
-  "new": "인도 Chandrayaan-2의 착륙선; 2019년에 추락했으나 궤도선은 계속 운용"
- },
- {
-  "rel": "fleet/lander/vikram-cy2.json",
-  "at": "description",
-  "old": "Vikram (Chandrayaan-2)는 인도 ISRO가 만든 행성 착륙선입니다. Chandrayaan-2 착륙선으로, 추락했으나 궤도선은 계속 활동 중입니다. 2019년에 비행했으나 실패했습니다.",
-  "new": "Vikram은 ISRO가 만든 인도 Chandrayaan-2 임무의 착륙선입니다. 2019년 9월 착륙 시도 중 추락했지만, Chandrayaan-2 궤도선은 달 궤도에서 계속 운용되었습니다."
- },
- {
-  "rel": "fleet/lander/mars-polar-lander.json",
-  "at": "tagline",
-  "old": "착륙 중 소실; '빠르게·좋게·싸게' 방침 재검토",
-  "new": "1999년 착륙 중 소실; 이 실패로 NASA는 '더 빠르게, 더 좋게, 더 싸게' 방침을 재검토"
- },
- {
-  "rel": "fleet/lander/mars-polar-lander.json",
-  "at": "best_known_for",
-  "old": "착륙 중 소실; '빠르게·좋게·싸게' 방침 재검토",
-  "new": "1999년 착륙 중 소실; 이 실패로 NASA는 '더 빠르게, 더 좋게, 더 싸게' 방침을 재검토"
- },
- {
-  "rel": "fleet/lander/mars-polar-lander.json",
-  "at": "description",
-  "old": "Mars Polar Lander는 미국의 Lockheed Martin이 제작한 행성 착륙선입니다. 착륙 중 소실되었으며, '더 빠르게, 더 좋게, 더 싸게' 방침에 대한 검토를 촉발했습니다. 1999년에 비행했으나 실패했습니다.",
-  "new": "Mars Polar Lander는 Lockheed Martin이 제작한 NASA의 착륙선입니다. 1999년 12월 화성 남극 지역으로 하강하던 중 교신이 끊겼습니다. 몇 달 전 Mars Climate Orbiter를 잃은 데 이은 이 실패로 NASA는 '더 빠르게, 더 좋게, 더 싸게' 방침을 재검토했습니다."
- }
+  {
+    "rel": "fleet/lander/hakuto-r.json",
+    "at": "tagline",
+    "old": "일본 최초의 민간 달 착륙선; M1과 M2 모두 추락",
+    "new": "일본 최초의 민간 달 착륙 시도; 미션 1(2023년)과 미션 2(2025년) 모두 추락"
+  },
+  {
+    "rel": "fleet/lander/hakuto-r.json",
+    "at": "best_known_for",
+    "old": "일본 최초의 민간 달 착륙선; M1과 M2 모두 추락",
+    "new": "일본 최초의 민간 달 착륙 시도; 미션 1(2023년)과 미션 2(2025년) 모두 추락"
+  },
+  {
+    "rel": "fleet/lander/hakuto-r.json",
+    "at": "description",
+    "old": "Hakuto-R 프로그램은 일본의 ispace가 만든 행성 착륙선입니다. 일본 최초의 민간 달 착륙선이며, M1과 M2 모두 추락했습니다. 2023년에 비행했으나 실패했습니다.",
+    "new": "Hakuto-R는 일본 기업 ispace의 달 착륙선 프로그램입니다. 2022년 12월에 발사된 미션 1 착륙선은 일본 최초의 민간 달 착륙 시도였으며 2023년 4월에 추락했습니다. 미션 2 착륙선 Resilience도 2025년 6월에 추락했습니다."
+  },
+  {
+    "rel": "fleet/lander/vikram-cy2.json",
+    "at": "tagline",
+    "old": "Chandrayaan-2 착륙선; 추락했으나 궤도선은 계속 활동",
+    "new": "인도 Chandrayaan-2의 착륙선; 2019년에 추락했으나 궤도선은 계속 운용"
+  },
+  {
+    "rel": "fleet/lander/vikram-cy2.json",
+    "at": "best_known_for",
+    "old": "Chandrayaan-2 착륙선; 추락했으나 궤도선은 계속 활동",
+    "new": "인도 Chandrayaan-2의 착륙선; 2019년에 추락했으나 궤도선은 계속 운용"
+  },
+  {
+    "rel": "fleet/lander/vikram-cy2.json",
+    "at": "description",
+    "old": "Vikram (Chandrayaan-2)는 인도 ISRO가 만든 행성 착륙선입니다. Chandrayaan-2 착륙선으로, 추락했으나 궤도선은 계속 활동 중입니다. 2019년에 비행했으나 실패했습니다.",
+    "new": "Vikram은 ISRO가 만든 인도 Chandrayaan-2 임무의 착륙선입니다. 2019년 9월 착륙 시도 중 추락했지만, Chandrayaan-2 궤도선은 달 궤도에서 계속 운용되었습니다."
+  },
+  {
+    "rel": "fleet/lander/mars-polar-lander.json",
+    "at": "tagline",
+    "old": "착륙 중 소실; '빠르게·좋게·싸게' 방침 재검토",
+    "new": "1999년 착륙 중 소실; 이 실패로 NASA는 '더 빠르게, 더 좋게, 더 싸게' 방침을 재검토"
+  },
+  {
+    "rel": "fleet/lander/mars-polar-lander.json",
+    "at": "best_known_for",
+    "old": "착륙 중 소실; '빠르게·좋게·싸게' 방침 재검토",
+    "new": "1999년 착륙 중 소실; 이 실패로 NASA는 '더 빠르게, 더 좋게, 더 싸게' 방침을 재검토"
+  },
+  {
+    "rel": "fleet/lander/mars-polar-lander.json",
+    "at": "description",
+    "old": "Mars Polar Lander는 미국의 Lockheed Martin이 제작한 행성 착륙선입니다. 착륙 중 소실되었으며, '더 빠르게, 더 좋게, 더 싸게' 방침에 대한 검토를 촉발했습니다. 1999년에 비행했으나 실패했습니다.",
+    "new": "Mars Polar Lander는 Lockheed Martin이 제작한 NASA의 착륙선입니다. 1999년 12월 화성 남극 지역으로 하강하던 중 교신이 끊겼습니다. 몇 달 전 Mars Climate Orbiter를 잃은 데 이은 이 실패로 NASA는 '더 빠르게, 더 좋게, 더 싸게' 방침을 재검토했습니다."
+  }
 ]

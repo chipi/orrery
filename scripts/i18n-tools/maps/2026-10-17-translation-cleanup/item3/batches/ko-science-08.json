@@ -1,794 +1,794 @@
 [
- {
-  "rel": "science/planets/active-spacecraft-survey.json",
-  "at": "body_paragraphs.0",
-  "en": "Mars — orbital fleet as of 2026: MRO (NASA, since 2006, 300 km polar orbit, HiRISE camera + atmosphere observations + data relay). MAVEN (NASA, since 2014, 6200 km orbit, atmospheric escape rates). Mars Express (ESA, since 2003, 4200 km, mineralogy + atmosphere). ExoMars TGO (ESA, since 2016, 400 km, trace gases + Russian relay). Mangalyaan / MOM (ISRO, 2014–2022, methane + atmosphere — first Asian mission to successfully orbit Mars). Tianwen-1 (CNSA, since 2021, 4250 km, delivered Zhurong rover + global mapping). Hope / EMM (UAE Space Agency, since 2021, 30,000 km equatorial, atmospheric science). On the surface: Perseverance + Curiosity rovers (both NASA) and the now-grounded Ingenuity helicopter.",
-  "cur": "화성 — 2026년 현재 궤도 함대: MRO(NASA, 2006년부터, 300 km 극궤도, HiRISE 카메라 + 대기 관측 + 데이터 중계). MAVEN(NASA, 2014년부터, 6200 km 궤도, 대기 탈출 속도). Mars Express(ESA, 2003년부터, 4200 km, 광물학 + 대기). ExoMars TGO(ESA, 2016년부터, 400 km, 미량 가스 + 러시아 중계). Mangalyaan / MOM(ISRO, 2014–2022, 메탄 + 대기 — 화성 궤도에 성공한 첫 번째 아시아 임무). Tianwen-1(CNSA, 2021년부터, 4250 km, Zhurong 로버 투입 + 전역 지도 작성). Hope / EMM(UAE 우주국, 2021년부터, 30,000 km 적도 궤도, 대기 과학). 지표면에서: Perseverance + Curiosity 로버(둘 다 NASA)와 현재 운영 종료된 Ingenuity 헬리콥터."
- },
- {
-  "rel": "science/planets/active-spacecraft-survey.json",
-  "at": "body_paragraphs.1",
-  "en": "Jupiter system: Juno (NASA, since 2016, polar 53-day orbit). Designed to map Jupiter's magnetic field + atmosphere + interior structure. Polar orbit avoids Jupiter's intense equatorial radiation belt — the belt is so harsh that other gas-giant orbiters would be permanently damaged within months on an equatorial trajectory. Juno's mission has been extended multiple times; it will continue until it's deorbited into Jupiter (designed to prevent biological contamination of Europa, which the spacecraft passes near). The next Jupiter mission is ESA's JUICE (Jupiter Icy moons Explorer, arriving 2031); NASA's Europa Clipper launches 2024 and arrives 2030.",
-  "cur": "목성 시스템: Juno(NASA, 2016년부터, 극궤도 53일 주기). 목성의 자기장 + 대기 + 내부 구조를 매핑하도록 설계되었습니다. 극궤도는 목성의 강력한 적도 방사선 대를 피합니다 — 이 대는 너무 심해서 다른 가스 거대 행성 궤도선은 적도 궤적에서 몇 개월 내에 영구적으로 손상될 것입니다. Juno의 임무는 여러 번 연장되었으며, 목성에 자체 궤도 이탈할 때까지 계속됩니다(이는 우주선이 지나가는 유로파의 생물 오염을 방지하기 위해 설계됨). 다음 목성 임무는 ESA의 JUICE(Jupiter Icy moons Explorer, 2031년 도착)입니다. NASA의 Europa Clipper는 2024년에 발사되고 2030년에 도착합니다."
- },
- {
-  "rel": "science/planets/active-spacecraft-survey.json",
-  "at": "body_paragraphs.2",
-  "en": "Venus: Akatsuki / PLANET-C (JAXA, since 2015 after a 5-year recovery). Cloud-top circulation, super-rotation studies, lightning detection. The next Venus missions launch in the late 2020s — NASA's DAVINCI + VERITAS, ESA's EnVision, ISRO's Shukrayaan. After a 30-year hiatus in Venus exploration (Magellan ended in 1994), the late 2020s will see four new orbiters arrive within a few years of each other. Mercury currently has no active spacecraft (MESSENGER ended in 2015); ESA/JAXA's BepiColombo arrives 2026. Uranus + Neptune have only ever been visited by Voyager 2 (1986 + 1989); a dedicated Uranus mission is the top priority of the 2023 Planetary Decadal Survey.",
-  "cur": "금성: Akatsuki / PLANET-C(JAXA, 5년의 복구 후 2015년부터). 구름 꼭대기 순환, 초회전 연구, 번개 감지. 다음 금성 임무는 2020년대 후반에 발사됩니다 — NASA의 DAVINCI + VERITAS, ESA의 EnVision, ISRO의 Shukrayaan. 금성 탐사의 30년 공백(Magellan은 1994년에 종료) 후, 2020년대 후반에는 4개의 새로운 궤도선이 서로 몇 년 안에 도착할 것입니다. 수성은 현재 활성 우주선이 없습니다(MESSENGER는 2015년에 종료됨). ESA/JAXA의 BepiColombo는 2026년에 도착합니다. 천왕성 + 해왕성은 Voyager 2에 의해서만 방문했습니다(1986 + 1989). 전담 천왕성 임무는 2023년 행성 10년 조사의 최우선 과제입니다."
- },
- {
-  "rel": "science/planets/active-spacecraft-survey.json",
-  "at": "diagram_caption",
-  "en": "Active orbiters by planet, 2026. Mars: 6 (NASA, ESA, CNSA, UAESA). Jupiter: 1 (NASA Juno). Venus: 1 (JAXA Akatsuki). Saturn, Mercury, outer planets: none active.",
-  "cur": "행성별 활성 궤도선, 2026년. 화성: 6개(NASA, ESA, CNSA, UAESA). 목성: 1개(NASA Juno). 금성: 1개(JAXA Akatsuki). 토성, 수성, 외부 행성: 활성화된 것 없음."
- },
- {
-  "rel": "science/planets/asteroid-belt.json",
-  "at": "intro_sentence",
-  "en": "A planet that almost was — the rocky remnants between Mars and Jupiter that Jupiter's gravity wouldn't let coalesce.",
-  "cur": "거의 행성이 될 뻔했던 — 화성과 목성 사이에 있는 암석 파편들로, 목성의 중력이 합체되는 것을 허용하지 않았다."
- },
- {
-  "rel": "science/planets/asteroid-belt.json",
-  "at": "narrative_101.0",
-  "en": "When Bode's Law predicted a body at 2.8 AU between Mars and Jupiter in the late 18th century, astronomers went hunting. On New Year's Day 1801, Giuseppe Piazzi at the Palermo observatory found something. He called it Ceres after the patron goddess of Sicily, and at first the Royal Society classified it as the missing planet. Within four years a second body — Pallas — turned up in the same neighborhood. Then Juno (1804) and Vesta (1807). The realization dawned slowly: this wasn't a planet, it was a swarm.",
-  "cur": "18세기 후반 보데의 법칙이 화성과 목성 사이 2.8 AU에 천체가 있을 것이라고 예측했을 때, 천문학자들은 탐색에 나섰다. 1801년 신년 첫날, 팔레르모 천문대의 주세페 피아치가 무언가를 발견했다. 그는 이것을 시칠리아의 수호 여신의 이름을 따서 세레스라고 불렀고, 처음에 왕립학회는 이를 잃어버린 행성으로 분류했다. 4년 안에 두 번째 천체인 팔라스가 같은 지역에서 발견되었다. 그 다음 Juno(1804년)와 베스타(1807년)가 발견되었다. 깨달음은 천천히 찾아왔다: 이것은 행성이 아니라 떼였다."
- },
- {
-  "rel": "science/planets/asteroid-belt.json",
-  "at": "narrative_101.1",
-  "en": "Today catalogues list more than 1.3 million asteroids larger than 1 km, and dynamical models put the population of 100-metre-class bodies in the hundreds of millions. The total mass is a surprise: only about 4% of the Moon, and roughly a third of that sits in Ceres alone. The belt is mostly empty — the average separation between members is in the millions of kilometres. The dense rock-field of cinema is a Hollywood invention.",
-  "cur": "오늘날 목록에는 1 km보다 큰 소행성이 130만 개 이상 등재되어 있으며, 역학 모델에 따르면 100미터급 천체의 개체수는 수억 개에 달한다. 총 질량은 놀라운데: 달의 약 4%에 불과하며, 그 중 약 3분의 1이 세레스 하나에만 존재한다. 소행성대는 대부분 비어 있다 — 구성원들 사이의 평균 거리는 수백만 킬로미터이다. 영화에 나오는 밀집된 암석 지대는 Hollywood의 창작물이다."
- },
- {
-  "rel": "science/planets/asteroid-belt.json",
-  "at": "narrative_101.2",
-  "en": "Why no planet ever formed here is itself the story. Jupiter sits just outside the belt at 5.2 AU, and during the solar system's formation Jupiter's gravity stirred the inner-belt material too vigorously for accretion to win against fragmentation. Whatever was trying to grow into a planet got smashed back into fragments faster than it could re-accrete. The asteroid belt is the unfinished planet, frozen at an earlier stage of solar-system evolution.",
-  "cur": "여기서 행성이 형성되지 않은 이유 자체가 이야기이다. 목성은 5.2 AU에서 소행성대 바로 밖에 위치하고 있으며, 태양계 형성 동안 목성의 중력이 내부 소행성대 물질을 너무 격렬하게 휘저어서 부착이 파편화에 대항해 이길 수 없었다. 행성으로 성장하려던 것은 재부착할 수 있는 것보다 더 빠르게 파편으로 부서졌다. 소행성대는 미완성 행성이며, 태양계 진화의 초기 단계에 동결되어 있다."
- },
- {
-  "rel": "science/planets/asteroid-belt.json",
-  "at": "body_paragraphs.0",
-  "en": "The belt has internal structure. Spectroscopy divides it into three rough zones: the inner belt (2.1–2.5 AU) dominated by stony S-type bodies; the middle belt (2.5–3.2 AU) where carbonaceous C-types take over (Ceres + Hygiea live here); and the outer belt blending into the Trojan asteroids that share Jupiter's orbit at the L4 and L5 Lagrange points. Different parent populations, different formation temperatures, different histories — preserved in the same belt because Jupiter's resonances corralled them.",
-  "cur": "소행성대는 내부 구조를 가지고 있다. 분광학은 이를 대략 세 영역으로 나눈다: 암석질 S형 천체가 지배하는 내부 소행성대(2.1–2.5 AU); 탄소질 C형이 우세한 중간 소행성대(2.5–3.2 AU, 세레스와 히기에이아가 여기 있다); 그리고 L4와 L5 라그랑주 점에서 목성의 궤도를 공유하는 Trojan 소행성과 혼합되는 외부 소행성대. 서로 다른 모체 집단, 서로 다른 형성 온도, 서로 다른 역사 — 목성의 공명이 그들을 가두었기 때문에 같은 소행성대에 보존되어 있다."
- },
- {
-  "rel": "science/planets/asteroid-belt.json",
-  "at": "body_paragraphs.1",
-  "en": "Major missions have visited only a handful of belt members directly. NASA's Galileo flyby of Gaspra (1991) was the first close-up image of any asteroid. Dawn (2011 + 2015) orbited Vesta then Ceres — the only spacecraft to ever orbit two extra-terrestrial bodies. Ceres turned out to be a water-ice + brine world: bright sodium-carbonate deposits at Occator Crater are residue from cryovolcanic eruptions of subsurface salty water, and Dawn detected a thin transient atmosphere of water vapor. Vesta is the other extreme — a differentiated rocky proto-planet whose southern hemisphere is one giant 500-km-wide impact basin (Rheasilvia), and pieces blasted out of that impact are the HED meteorite class on Earth.",
-  "cur": "주요 임무들은 소행성대 구성원 중 소수만 직접 방문했다. NASA의 Galileo가 가스프라를 근접 비행한 것(1991년)이 소행성의 첫 근접 이미지였다. Dawn(2011년 + 2015년)은 베스타를 궤도 비행한 후 세레스를 궤도 비행했다 — 두 개의 외계 천체를 궤도 비행한 유일한 우주선이다. 세레스는 수빙과 염수 세계로 밝혀졌다: 오카토르 분화구의 밝은 탄산나트륨 퇴적물은 지하 염수의 극저온 화산 분출의 잔류물이며, Dawn은 수증기의 얇은 일시적 대기를 감지했다. 베스타는 다른 극단이다 — 분화된 암석질 원시 행성으로 남반구는 거대한 500 km 폭의 충돌 분지(레아실비아) 하나이며, 그 충돌로 튕겨나간 조각들이 지구의 HED 운석 등급이다."
- },
- {
-  "rel": "science/planets/asteroid-belt.json",
-  "at": "body_paragraphs.2",
-  "en": "Most meteorites that fall on Earth come from the asteroid belt. Yarkovsky drift — uneven thermal re-radiation slowly nudging a body's orbit over millennia — pushes asteroids out of resonance gaps inward to Earth-crossing orbits. Sample-return missions are starting to close the loop directly: JAXA's Hayabusa2 returned 5.4 grams of asteroid Ryugu in 2020, and NASA's OSIRIS-REx returned samples from Bennu in 2023. Both are near-Earth asteroids derived from belt parent bodies. NASA's Lucy mission (launched 2021) is the long game: visiting eight Trojan asteroids plus belt member Dinkinesh, the first multi-Trojan tour, exploring fragments of the outer-belt population that share Jupiter's orbit but stay 60° ahead or behind.",
-  "cur": "지구에 떨어지는 대부분의 운석은 소행성대에서 온다. Yarkovsky 표류 — 불균등한 열 재복사가 수천 년에 걸쳐 천체의 궤도를 천천히 밀어내는 것 — 는 소행성을 공명 간극에서 안쪽으로 밀어내어 지구 교차 궤도로 만든다. 시료 회수 임무들이 직접 고리를 닫기 시작하고 있다: JAXA의 Hayabusa2는 2020년에 소행성 류구의 5.4그램을 회수했고, NASA의 OSIRIS-REx는 2023년에 베누에서 시료를 회수했다. 둘 다 소행성대 모체로부터 유래한 지구 근접 소행성이다. NASA의 Lucy 임무(2021년 발사)는 장기 계획이다: 소행성대 구성원 Dinkinesh를 포함해 8개의 Trojan 소행성을 방문하는 최초의 다중 Trojan 탐사로, 목성의 궤도를 공유하지만 60° 앞이나 뒤에 머무는 외부 소행성대 집단의 파편들을 탐사한다."
- },
- {
-  "rel": "science/planets/asteroid-belt.json",
-  "at": "diagram_caption",
-  "en": "The asteroid belt sweep, 2.2–3.2 AU between Mars and Jupiter. Major members Ceres / Vesta / Pallas / Hygiea labelled. Arrows from Jupiter show its gravity stirring the inner belt — the reason no planet ever accreted here.",
-  "cur": "화성과 목성 사이 2.2–3.2 AU의 소행성대 범위. 주요 구성원 세레스 / 베스타 / 팔라스 / 히기에이아가 표시되어 있다. 목성에서 나온 화살표는 내부 소행성대를 휘젓는 목성의 중력을 보여준다 — 여기서 행성이 부착되지 못한 이유이다."
- },
- {
-  "rel": "science/planets/axial-tilt-and-seasons.json",
-  "at": "intro_sentence",
-  "en": "Why Earth has seasons, why Uranus rolled onto its side, and why Venus spins backward.",
-  "cur": "지구가 계절을 가지는 이유, 천왕성이 옆으로 누워 있는 이유, 그리고 금성이 역방향으로 회전하는 이유."
- },
- {
-  "rel": "science/planets/axial-tilt-and-seasons.json",
-  "at": "narrative_101.0",
-  "en": "If Earth's spin axis were perfectly perpendicular to its orbit, every day would have 12 hours of sunlight everywhere on the planet, year-round. There would be no seasons. The reason your hemisphere gets long summer days and short winter days is that Earth's spin axis is tilted — by 23.4° relative to the orbital plane. As Earth orbits the Sun, the north pole points first toward the Sun (June solstice — long northern days), then away from it six months later (December solstice — short northern days). Same planet, same orbit; just a slowly changing geometry.",
-  "cur": "지구의 자전축이 공전 궤도면에 정확히 수직이라면 지구상 모든 곳에서 연중 매일 12시간의 낮과 12시간의 밤이 될 것이고, 계절이 존재하지 않을 것이다. 당신의 반구가 여름에 긴 낮을 보내고 겨울에 짧은 낮을 보내는 이유는 지구의 자전축이 궤도면에 대해 23.4° 기울어져 있기 때문이다. 지구가 태양 주위를 공전하면서 북극은 먼저 태양을 향했다가(6월 지점 — 북반구의 긴 낮), 6개월 후 태양과 반대쪽을 향한다(12월 지점 — 북반구의 짧은 낮). 같은 행성, 같은 궤도; 단지 천천히 변하는 기하학일 뿐이다."
- },
- {
-  "rel": "science/planets/axial-tilt-and-seasons.json",
-  "at": "narrative_101.1",
-  "en": "Every planet has some axial tilt, but the solar system contains some wild outliers. Uranus is tilted 97.77° — its rotation axis lies almost in the orbital plane. Each pole gets 42 Earth-years of continuous sunlight followed by 42 years of continuous darkness. There's no real \"day-night cycle\" near Uranus's poles in the usual sense; just a slow forty-year sunrise. The leading hypothesis is that a giant impact early in Uranus's history tipped the planet over.",
-  "cur": "모든 행성은 어느 정도의 자전축 기울기를 가지고 있지만, 태양계에는 정말로 극단적인 예외들이 있다. 천왕성은 97.77° 기울어져 있으며, 자전축이 거의 궤도면 내에 있다. 각 극은 42년간의 연속적인 햇빛을 받은 후 42년간의 연속적인 어둠을 경험한다. 천왕성의 극 근처에는 통상적인 의미의 '낮-밤 사이클'이 없고, 단지 느린 40년짜리 일출이 있을 뿐이다. 주요 가설은 천왕성 역사 초기의 거대한 충돌이 행성을 뒤집어 놓았다는 것이다."
- },
- {
-  "rel": "science/planets/axial-tilt-and-seasons.json",
-  "at": "narrative_101.2",
-  "en": "Venus is even stranger: tilted 177.4°, which is effectively upside-down. The convention is that a planet's \"north pole\" is the one above the ecliptic in the same rotational sense as Earth's. By that convention Venus's rotation is retrograde — spinning the wrong way relative to its orbit. A solar day on Venus lasts 117 Earth days, despite a sidereal rotation of 243 Earth days, because the retrograde spin partially cancels with the orbital motion. Why Venus rotates this way is still unsettled — runaway atmospheric tides are one candidate.",
-  "cur": "금성은 훨씬 더 이상하다: 177.4° 기울어져 있으며, 실질적으로 뒤집혀 있다. 관례에 따르면 행성의 '북극'은 지구의 자전 방향과 같은 의미로 황도면 위에 있는 극이다. 이 관례에 따르면 금성의 자전은 역행성(retrograde)이며, 공전 궤도에 대해 역방향으로 회전한다. 금성의 태양일은 지구의 243일이라는 항성일에도 불구하고 지구의 117일 동안 지속된다. 역행 자전이 공전 운동을 부분적으로 상쇄하기 때문이다. 금성이 이렇게 회전하는 이유는 여전히 미결정 상태이며, 대기 조석 폭주(runaway atmospheric tides)가 하나의 후보 설명이다."
- },
- {
-  "rel": "science/planets/axial-tilt-and-seasons.json",
-  "at": "body_paragraphs.0",
-  "en": "Obliquity = the angle between a planet's rotation axis and the line perpendicular to its orbital plane. Values: Mercury 0.034°, Venus 177.36°, Earth 23.44°, Mars 25.19°, Jupiter 3.13°, Saturn 26.73°, Uranus 97.77°, Neptune 28.32°, Pluto 122.53°. The two clusters — small-tilt gas giants except Uranus, and 23-28° rocky bodies + Saturn + Neptune — likely reflect different formation histories. Uranus's 97° is the canonical \"giant impact\" signature; Venus's 177° and Pluto's 122° are still actively debated.",
-  "cur": "자전축 기울기(Obliquity) = 행성의 자전축과 궤도면에 수직인 직선 사이의 각도. 값: 수성 0.034°, 금성 177.36°, 지구 23.44°, 화성 25.19°, 목성 3.13°, 토성 26.73°, 천왕성 97.77°, 해왕성 28.32°, 명왕성 122.53°. 두 집단 — 천왕성을 제외한 작은 기울기의 가스 행성들, 그리고 23~28° 범위의 암석 행성들 + 토성 + 해왕성 — 은 아마도 다른 형성 역사를 반영한다. 천왕성의 97°는 정형적인 '거대 충돌' 서명이며; 금성의 177°와 명왕성의 122°는 여전히 활발히 논쟁 중이다."
- },
- {
-  "rel": "science/planets/axial-tilt-and-seasons.json",
-  "at": "body_paragraphs.1",
-  "en": "Seasons on a planet are driven by the changing angle between its rotation axis and the Sun-planet line as the planet orbits. The sub-solar latitude (where the Sun is directly overhead at noon) oscillates over the year — on Earth between 23.4°N (June solstice) and 23.4°S (December solstice). Hemispheres receive more solar flux when their pole tilts toward the Sun and less when it tilts away; that flux difference, integrated over months, drives surface and atmospheric temperature.",
-  "cur": "행성의 계절은 행성이 공전할 때 자전축과 태양-행성 직선 사이의 각도가 변함에 따라 주도된다. 아태양점(sub-solar latitude, 정오에 태양이 직접 머리 위에 있는 위도)은 연중 진동한다 — 지구에서는 23.4°N(6월 지점)과 23.4°S(12월 지점) 사이에서. 반구들은 극이 태양을 향할 때 더 많은 태양 복사선을 받고 멀어질 때는 더 적게 받는다; 이 복사선 차이는 몇 개월에 걸쳐 적분되어 지표면 및 대기 온도를 주도한다."
- },
- {
-  "rel": "science/planets/axial-tilt-and-seasons.json",
-  "at": "body_paragraphs.2",
-  "en": "Earth's tilt itself isn't constant — it oscillates between 22.1° and 24.5° (about ±1.2° around the mean) over ~41,000 years, one of the Milankovitch cycles that drive ice-age timing. Mars's tilt is much more variable: simulations show Mars's obliquity has chaotically wandered between 0° and 60° over geologic time, in part because Mars lacks a large moon (Earth's Moon stabilises our tilt). Without the Moon, Earth's tilt might also wander chaotically — a sobering point about how fragile a stable climate is.",
-  "cur": "지구의 기울기 자체는 상수가 아니며, 약 41,000년에 걸쳐 22.1°와 24.5° 사이(평균값에서 약 ±1.2°)에서 진동한다. 이는 빙하기 시기를 주도하는 Milankovitch 사이클 중 하나이다. 화성의 기울기는 훨씬 더 가변적이다: 시뮬레이션에 따르면 화성의 자전축 기울기는 지질학적 시간에 걸쳐 0°에서 60° 사이를 혼란스럽게 떠돌아다녔으며, 부분적으로는 화성이 큰 달을 가지지 않았기 때문이다(지구의 달은 우리의 기울기를 안정화시킨다). 달이 없었다면 지구의 기울기도 혼란스럽게 떠돌아다녔을 것이다 — 안정적인 기후가 얼마나 취약한지에 대한 소름끼치는 지점이다."
- },
- {
-  "rel": "science/planets/axial-tilt-and-seasons.json",
-  "at": "diagram_caption",
-  "en": "Obliquity = angle between rotation axis and the orbit normal. Earth at 23.4° drives seasons. Uranus at 97.8° lies on its side; each pole gets 42 years of darkness.",
-  "cur": "자전축 기울기(Obliquity) = 자전축과 궤도 법선 사이의 각도. 지구는 23.4°에서 계절을 주도한다. 천왕성은 97.8°로 옆으로 누워 있으며; 각 극은 42년의 어둠을 경험한다."
- },
- {
-  "rel": "science/planets/kuiper-belt.json",
-  "at": "intro_sentence",
-  "en": "A disc of icy bodies beyond Neptune — predicted in 1951, confirmed in 1992, and the source of every short-period comet that flies past Earth.",
-  "cur": "해왕성 너머의 얼음 천체 원판 — 1951년에 예측되었으며, 1992년에 확인되었고, 지구 근처를 지나는 모든 단주기 혜성의 근원입니다."
- },
- {
-  "rel": "science/planets/kuiper-belt.json",
-  "at": "narrative_101.0",
-  "en": "Gerard Kuiper proposed it in a 1951 paper: if the early solar system's planet-forming disc extended past Neptune, then somewhere out there a population of icy leftovers should still be orbiting the Sun. They wouldn't have made it into planets because nothing accreted at those distances, but the disc should still be there, dynamically intact. For four decades the prediction sat unconfirmed because the objects are small, cold, and tens of AU away — almost impossible to detect with mid-20th-century telescopes.",
-  "cur": "제러드 카이퍼가 1951년 논문에서 제안했습니다. 태양계 초기의 행성 형성 원판이 해왕성을 넘어 확장되었다면, 어딘가 그 먼 곳에서 얼음으로 된 잔재물들의 집단이 여전히 태양을 공전하고 있어야 한다는 것입니다. 그 거리에서는 아무것도 집적되지 않았기 때문에 행성이 되지 못했겠지만, 원판은 여전히 존재해야 하며 동역학적으로 온전해야 합니다. 4십 년 동안 이 예측은 미확인 상태로 남아 있었습니다. 왜냐하면 천체들이 작고, 차갑고, 수십 AU 떨어져 있어서 20세기 중반의 망원경으로는 거의 감지 불가능했기 때문입니다."
- },
- {
-  "rel": "science/planets/kuiper-belt.json",
-  "at": "narrative_101.1",
-  "en": "In 1992 David Jewitt and Jane Luu, observing from Mauna Kea with a then-novel CCD detector, found 1992 QB1 (later named Albion). A ~160 km icy body in a stable circular orbit at 44 AU. Within a year they had a second. Within five years there were dozens. Today catalogues hold more than 3,000 confirmed Kuiper-Belt objects and dynamical models predict over 100,000 bodies larger than 100 km — and on the order of a billion comet-sized objects. The total mass is small (~2% of Earth) but that's still ~50× the asteroid belt.",
-  "cur": "1992년 데이비드 주잇과 제인 르우는 Mauna Kea에서 당시 획기적이던 CCD 검출기를 사용하여 1992 QB1(나중에 Albion으로 명명됨)을 발견했습니다. 약 160km 크기의 얼음 천체로, 44 AU 거리의 안정적인 원형 궤도를 도는 물체였습니다. 1년 내에 두 번째 천체를 발견했고, 5년 내에는 수십 개가 있었습니다. 오늘날 천문학 목록에는 3,000개 이상의 확인된 카이퍼 대 천체가 수록되어 있으며, 역학 모델은 100km보다 큰 천체 100,000개 이상과 대략 10억 개의 혜성 크기 천체들을 예측하고 있습니다. 총 질량은 적지만(약 지구의 2%), 여전히 소행성대의 약 50배입니다."
- },
- {
-  "rel": "science/planets/kuiper-belt.json",
-  "at": "narrative_101.2",
-  "en": "Pluto, demoted in 2006, turned out to be the largest known member of the belt rather than the runt of the planets. Eris, discovered in 2005 and slightly more massive than Pluto, is what triggered the IAU's reclassification: if Eris is a planet, then so are Haumea, Makemake, Quaoar, Sedna, and dozens of likely candidates further out. The IAU drew the line at 'dwarf planet' instead, and the Kuiper Belt is the dwarf-planet reservoir.",
-  "cur": "2006년에 강등된 명왕성은 행성의 막내가 아니라 벨트의 알려진 가장 큰 멤버임이 밝혀졌습니다. 2005년에 발견된 에리스는 명왕성보다 약간 더 질량이 크며, 이것이 IAU의 재분류를 촉발했습니다. 에리스가 행성이라면 하우메아, 마케마케, 콰오아, 세드나, 그리고 더 먼 곳의 수십 개의 가능성 있는 후보들도 행성이어야 합니다. IAU는 대신 '왜소행성'으로 경계를 그었으며, 카이퍼 벨트는 왜소행성 저장소입니다."
- },
- {
-  "rel": "science/planets/kuiper-belt.json",
-  "at": "body_paragraphs.0",
-  "en": "Structurally the belt has three populations. The classical Kuiper Belt at 42–48 AU holds bodies on nearly circular, low-inclination orbits — the dynamically unperturbed remnant of the original disc, Albion and Quaoar live here. The resonant population is held in 2:3 mean-motion resonance with Neptune (Pluto is the archetype — for every two Pluto orbits, Neptune does three); these are called Plutinos. Then the scattered disc is the eccentric, high-inclination outer extension where Eris and Sedna roam, with perihelia near Neptune and aphelia hundreds of AU out. Each population is a fossil of a different chapter of the early solar system's gravitational history.",
-  "cur": "구조적으로 벨트는 세 개의 집단으로 이루어져 있습니다. 42~48 AU의 고전적 카이퍼 벨트는 거의 원형의 낮은 경사각 궤도에 있는 천체들을 포함합니다 — 원본 원판의 동역학적으로 교란되지 않은 잔재이며, Albion과 콰오아가 여기에 있습니다. 공명 집단은 해왕성과 2:3 평균 운동 공명 상태로 유지됩니다 (명왕성이 원형입니다 — 명왕성의 2번 공전마다 해왕성은 3번 공전합니다). 이들을 플루티노라고 부릅니다. 그리고 산란 원판은 높은 이심율과 높은 경사각의 외부 확장으로, 에리스와 세드나가 돌아다니며, 근일점이 해왕성 근처이고 원일점이 수백 AU 떨어진 곳입니다. 각 집단은 초기 태양계의 중력 역사의 다른 장에 대한 화석입니다."
- },
- {
-  "rel": "science/planets/kuiper-belt.json",
-  "at": "body_paragraphs.1",
-  "en": "The Kuiper Belt is the source reservoir for short-period comets — bodies like Halley, Hartley 2, and 67P/Churyumov–Gerasimenko whose orbits return to the inner solar system in less than 200 years. Gravitational nudges from Neptune occasionally fling members inward where solar heating sublimates surface ices into the visible coma and tail. Long-period comets come from much further out (the Oort Cloud at thousands of AU), but short-period comets are Kuiper kin. The European Rosetta mission orbited 67P from 2014 to 2016 and detected glycine + phosphorus + oxygen — the molecular building blocks of life — sublimating off the surface.",
-  "cur": "카이퍼 대는 단주기 혜성의 원천 저수지입니다. 핼리 혜성, 하틀리 2 혜성, 67P/Churyumov–Gerasimenko 같은 천체들은 궤도가 200년 미만의 주기로 내태양계로 돌아옵니다. 해왕성의 중력이 주는 약한 충격이 때때로 이들을 안쪽으로 던지면, 태양의 열이 표면의 얼음을 승화시켜 눈에 보이는 코마와 꼬리를 만듭니다. 장주기 혜성은 훨씬 더 먼 곳(수천 AU 거리의 오르트 구름)에서 나오지만, 단주기 혜성은 카이퍼 계의 천체입니다. European Rosetta 미션은 2014년부터 2016년까지 67P를 공전했으며, 표면에서 승화되고 있는 글리신 + 인 + 산소 — 생명의 분자 구성 요소들 —을 검출했습니다."
- },
- {
-  "rel": "science/planets/kuiper-belt.json",
-  "at": "body_paragraphs.2",
-  "en": "New Horizons remains the only spacecraft to have visited the belt directly. The Pluto + Charon flyby on July 14, 2015 returned the first close-up images of a classical Kuiper-Belt object, revealing Sputnik Planitia (a 1,000-km nitrogen-ice plain), water-ice mountains, and Charon's dark red polar tholin deposits. In January 2019 New Horizons reached its Kuiper-Belt extended-mission target Arrokoth — a 36-km bilobate object that looks like two pancakes pressed together, the most pristine planetesimal humans have ever imaged. Voyager 1 + 2 passed through the inner edge of the belt in the 1980s en route to interstellar space, but had no targeted encounters.",
-  "cur": "New Horizons는 벨트를 직접 방문한 유일한 우주선입니다. 2015년 7월 14일의 명왕성 + 카론 플라이바이는 고전적 카이퍼 벨트 천체의 첫 번째 근접 이미지를 반환했으며, 스푸트니크 평원 (1,000 km의 질소 얼음 평원), 물 얼음 산맥, 카론의 검은색 빨간 극지역 썰린 침전물을 드러냈습니다. 2019년 1월 New Horizons는 카이퍼 벨트 확장 임무 대상인 아로코스 — 팬케이크 두 개가 함께 눌려 있는 것처럼 보이는 36 km 쌍엽 천체에 도달했으며, 인류가 촬영한 가장 원시적인 미행성입니다. Voyager 1과 Voyager 2는 1980년대에 성간 우주로 향하면서 벨트의 내부 가장자리를 통과했지만, 목표 조우는 없었습니다."
- },
- {
-  "rel": "science/planets/kuiper-belt.json",
-  "at": "diagram_caption",
-  "en": "The Kuiper Belt's three populations. Classical KBOs at 42–48 AU on near-circular orbits; resonant Plutinos in 2:3 with Neptune (Pluto + Charon at 39 AU); the scattered disc extending eccentrically toward the inner Oort Cloud (Eris's aphelion is at 96 AU).",
-  "cur": "카이퍼 벨트의 세 집단. 42~48 AU의 거의 원형 궤도의 고전적 KBO; 해왕성과 2:3 공명의 공명 플루티노 (명왕성 + 카론 39 AU); 내부 오르트 구름을 향해 편심적으로 확장하는 산란 원판 (에리스의 원일점은 96 AU)."
- },
- {
-  "rel": "science/planets/lunar-ice.json",
-  "at": "title",
-  "en": "Lunar Ice — water in the permanent dark",
-  "cur": "달의 얼음 — 영구적인 어둠 속의 물"
- },
- {
-  "rel": "science/planets/lunar-ice.json",
-  "at": "intro_sentence",
-  "en": "Near the lunar poles, some crater floors have never seen sunlight — and in that perpetual cold, water ice delivered by comets and asteroids over billions of years has accumulated and been trapped.",
-  "cur": "달의 극지역 근처의 일부 크레이터 바닥은 한 번도 햇빛을 본 적이 없으며, 그 지속적인 추위 속에서 수십억 년에 걸쳐 혜성과 소행성이 전달한 수얼음이 쌓여 갇혀 있습니다."
- },
- {
-  "rel": "science/planets/lunar-ice.json",
-  "at": "body_paragraphs.0",
-  "en": "The Moon's axial tilt is only about 1.5 degrees, far less than Earth's 23.5 degrees. As a result, sunlight near the poles arrives almost horizontally, and the floors of deep polar craters fall permanently in shadow. These permanently shadowed regions (PSRs) are among the coldest places in the solar system: measured temperatures run below 100 K (−170°C), and some spots near the lunar south pole approach ~25 K. At those temperatures, water ice is stable for billions of years — it simply does not sublimate.",
-  "cur": "달의 자전축 기울임은 약 1.5도로, 지구의 23.5도보다 훨씬 작다. 따라서 극지 근처에 도달하는 태양광은 거의 수평에 가깝게 입사하며, 깊은 극지 크레이터의 바닥은 영구적으로 그림자에 가려진다. 이러한 영구 음영 지역(PSR)은 태양계에서 가장 추운 곳들 중 하나이다. 측정된 온도는 100 K(−170°C) 이하이며, 달의 남극 근처의 일부 지역은 약 25 K에 달한다. 이러한 온도에서 물의 얼음은 수십억 년 동안 안정적이다. 즉, 승화하지 않는다."
- },
- {
-  "rel": "science/planets/lunar-ice.json",
-  "at": "body_paragraphs.1",
-  "en": "Evidence for water in PSRs has been assembled by several missions. India's Chandrayaan-1 carried NASA's Moon Mineralogy Mapper (M3) instrument, which in 2009 detected the spectral signature of hydroxyl and water molecules at the surface across a range of latitudes — including sunlit terrain, where the solar wind may be creating water by implanting hydrogen into oxygen-bearing minerals. Most dramatically, NASA's LCROSS mission in 2009 deliberately crashed a spent rocket stage into a PSR near the south pole and observed the resulting plume with a following spacecraft; the plume contained water vapour and ice, directly confirming the presence of water in the cold trap.",
-  "cur": "PSR의 물에 대한 증거는 여러 임무에서 수집되었습니다. 인도의 Chandrayaan-1은 NASA의 달 Mineralogy Mapper (M3) 기기를 탑재했으며, 2009년 이 기기는 햇빛이 비치는 지형을 포함한 다양한 위도에서 표면의 수산화 라디칼과 물 분자의 분광 신호를 감지했습니다. 이곳에서 태양풍이 산소를 함유한 광물에 수소를 주입하여 물을 만들 수 있습니다. 가장 극적으로는, NASA의 LCROSS 임무가 2009년 사용한 로켓 단계를 남극 근처의 PSR에 의도적으로 충돌시켰고, 뒤따르는 우주선으로 그 결과 형성된 플루메를 관찰했습니다. 플루메에는 수증기와 얼음이 포함되어 있었으며, 이는 냉각 덫에 물이 존재함을 직접 확인했습니다."
- },
- {
-  "rel": "science/planets/lunar-ice.json",
-  "at": "body_paragraphs.2",
-  "en": "Estimates of total water ice in lunar PSRs vary — figures in the range of hundreds of millions to billions of tonnes have been published — but the exact amount, depth profile, concentration, and physical form (pure ice, ice mixed with regolith, or thin frost layers) remain uncertain. The ice appears to be heterogeneous: patchy, mixed with dirt, and not a uniform layer. ISRO's Chandrayaan-3 landing in 2023 targeted the south polar region partly to begin characterising this terrain at close range.",
-  "cur": "달의 PSRs의 총 수얼음 양 추정치는 다양합니다. 수억 톤에서 수십억 톤 범위의 수치가 발표되었으나, 정확한 양, 깊이 프로필, 농도, 물리적 형태(순수 얼음, 레골리스와 혼합된 얼음, 또는 얇은 서리층)는 여전히 불확실합니다. 얼음은 이질적인 것으로 보입니다. 흩어져 있고, 흙과 섞여 있으며, 균일한 층이 아닙니다. ISRO의 Chandrayaan-3이 2023년 남극 지역에 착륙했을 때, 부분적으로는 가까운 거리에서 이 지형을 특성화하기 시작하기 위해 목표했습니다."
- },
- {
-  "rel": "science/planets/lunar-ice.json",
-  "at": "body_paragraphs.3",
-  "en": "The strategic significance is straightforward. Water is H2O: split it and you have hydrogen and oxygen — the most energetic chemical rocket propellant combination known. You also have breathable air and drinking water. Lunar polar ice, if accessible and extractable at scale, would make the Moon a potential fuel depot for missions throughout cislunar space and beyond, dramatically reducing the mass that must be launched from Earth. That shift in economics is the central reason that NASA's Artemis program, ESA, ISRO, Roscosmos, and CNSA all target the south pole rather than the equatorial sites of Apollo.",
-  "cur": "전략적 중요성은 명확합니다. 물은 H2O입니다. 그것을 분해하면 수소와 산소를 얻습니다. 이는 알려진 가장 에너지가 높은 화학 로켓 추진제 조합입니다. 또한 호흡할 수 있는 공기와 음료수를 얻습니다. 달의 극지 얼음이 접근 가능하고 규모 있게 추출할 수 있다면, 달은 지구 궤도와 그 너머의 미션을 위한 잠재적 연료 저장소가 될 것이며, 지구에서 발사해야 하는 질량을 크게 줄일 것입니다. 이러한 경제학의 전환이 NASA의 Artemis 프로그램, ESA, ISRO, Roscosmos, CNSA가 모두 적도 지역의 Apollo 착륙지가 아닌 남극을 목표로 하는 중심적인 이유입니다."
- },
- {
-  "rel": "science/planets/lunar-ice.json",
-  "at": "body_paragraphs.4",
-  "en": "Access is the hard part. The coldest, darkest terrain on the Moon is also the most difficult to reach and operate in. Rover solar panels generate little power in near-permanent shadow. Equipment must survive extreme thermal cycling between the illuminated crater rim (needed for power) and the shadowed floor (where the ice is). Drilling or mining in low-gravity regolith without contaminating the ice is an unsolved engineering problem. The science is settled enough to motivate a race; the engineering is not.",
-  "cur": "접근이 어려운 부분입니다. 달에서 가장 추운, 가장 어두운 지형은 또한 도달하고 운영하기 가장 어려운 지역입니다. 로버 태양 전지판은 거의 영구적인 그림자에서 거의 전력을 생성하지 못합니다. 장비는 조명이 비치는 크레이터 능선(전력 필요)과 음영 바닥(얼음이 있는 곳) 사이의 극심한 열 주기를 견뎌야 합니다. 저중력 레골리스에서 얼음을 오염시키지 않으면서 시추 또는 채굴하는 것은 아직 해결되지 않은 공학 문제입니다. 과학은 경쟁을 동기부여할 만큼 충분히 해결되었지만, 공학은 아직입니다."
- },
- {
-  "rel": "science/planets/lunar-ice.json",
-  "at": "diagram_caption",
-  "en": "Cross-section of a lunar south-pole crater — sunlight skims the rim while the floor stays permanently shadowed, cold-trapping water ice delivered over geological time.",
-  "cur": "달 남극 크레이터의 단면 — 햇빛은 능선을 스치고 지나가는 한편 바닥은 영구적으로 그림자에 싸여 있으며, 지질학적 시간에 걸쳐 전달된 수얼음을 냉각 덫에 가두고 있습니다."
- },
- {
-  "rel": "science/planets/magnetic-fields.json",
-  "at": "intro_sentence",
-  "en": "Every planet's magnetosphere is different. Saturn's is uniquely aligned, Uranus's is chaotic, Venus and Mars don't have one at all.",
-  "cur": "모든 행성의 자기권은 서로 다르다. 토성의 자기권은 독특하게 정렬되어 있고, 천왕성의 자기권은 혼돈스러우며, 금성과 화성에는 자기권이 아예 없다."
- },
- {
-  "rel": "science/planets/magnetic-fields.json",
-  "at": "narrative_101.0",
-  "en": "Planets generate magnetic fields the same way an electromagnet does — by moving an electrically conducting fluid around. Inside Earth, that fluid is liquid iron in the outer core, sloshing as the planet rotates and as heat from the inner core convects it. The combined motion of a conducting fluid in a rotating frame is called a dynamo, and it spins up its own magnetic field for free. Without convection, or without rotation, or without a conductor, the field decays.",
-  "cur": "행성이 자기장을 만들어내는 원리는 전자석과 같다 — 전기를 전도하는 유체를 움직이는 것이다. 지구 내부에서는 외핵의 액체 철이 그 유체 역할을 하는데, 행성이 자전하고 내핵의 열이 대류를 일으키면서 출렁인다. 회전하는 계 안에서 전도성 유체가 복합적으로 운동하는 것을 다이나모라고 하며, 이 과정에서 자기장이 저절로 형성된다. 대류가 없거나, 자전이 없거나, 전도체가 없으면 자기장은 소멸한다."
- },
- {
-  "rel": "science/planets/magnetic-fields.json",
-  "at": "narrative_101.1",
-  "en": "That's why Mars doesn't have a global magnetic field today. Four billion years ago it did — we can see frozen-in magnetisation in southern-hemisphere crustal rocks where the dynamo's signature got locked in. But Mars is small, so its interior cooled faster than Earth's, the iron core froze, convection stopped, and the dynamo died. Solar wind has been stripping Mars's atmosphere ever since — there's no magnetic shield deflecting it. Venus is the opposite case: hot inside, no shortage of conductor, but its 243-day rotation is so slow that the dynamo never spins up properly.",
-  "cur": "화성에 오늘날 전 지구적 자기장이 없는 이유가 바로 그것이다. 40억 년 전에는 있었다 — 남반구 지각 암석에 다이나모의 흔적이 동결된 자화 형태로 남아 있다. 그러나 화성은 작기 때문에 내부가 지구보다 빨리 냉각되었고, 철 핵이 굳으면서 대류가 멈추고 다이나모가 소멸했다. 그 이후로 태양풍이 화성의 대기를 꾸준히 벗겨내고 있다 — 태양풍을 막아줄 자기 방패가 없기 때문이다. 금성은 반대의 경우다. 내부는 뜨겁고 전도체도 충분하지만, 243일에 달하는 자전 주기가 너무 느려서 다이나모가 제대로 작동하지 못한다."
- },
- {
-  "rel": "science/planets/magnetic-fields.json",
-  "at": "narrative_101.2",
-  "en": "Then there's Saturn — a gas giant with a dynamo so cleanly aligned with its rotation axis that the magnetic tilt is essentially zero. Every other dynamo we know has at least some offset (Earth 10.5°, Jupiter 9.6°), but Saturn's is < 1°. Nobody's sure why. The leading theory is that Saturn has an unusual layer structure that mechanically smooths the field's symmetry, but the mechanism is debated. Saturn's near-perfect alignment is one of the unsolved puzzles of planetary physics.",
-  "cur": "그런가 하면 토성은 — 자기 다이나모가 자전축과 너무나 깔끔하게 정렬되어 있어 자기 기울기가 사실상 0에 가까운 가스 거성이다. 우리가 알고 있는 다른 모든 다이나모는 최소한 어느 정도의 편차가 있지만(지구 10.5°, 목성 9.6°), 토성은 < 1°다. 왜 그런지는 아직 아무도 확실히 모른다. 유력한 이론은 토성에 비정상적인 층 구조가 있어 자기장의 대칭성을 기계적으로 평탄화한다는 것이지만, 그 메커니즘은 여전히 논쟁 중이다. 토성의 거의 완벽한 정렬은 행성 물리학의 미해결 난제 중 하나다."
- },
- {
-  "rel": "science/planets/magnetic-fields.json",
-  "at": "body_paragraphs.0",
-  "en": "Magnetic-axis tilt (angle between the dipole and the rotation axis) for each planet with a known dynamo: Mercury 0.7°, Earth 10.5°, Jupiter 9.6°, Saturn ~0°, Uranus 58.6°, Neptune 46.9°. Venus, Mars, and Pluto have no globally significant dipole today. Uranus and Neptune's wildly off-axis dipoles are also offset from the planet's centre — Uranus's by about 1/3 of the planet's radius. The conventional dynamo (iron core) can't easily produce that geometry; the favoured explanation is that Uranus and Neptune host their dynamos in an outer mantle layer of ionic water + ammonia + methane, not in a deep core.",
-  "cur": "다이나모가 알려진 각 행성의 자기축 기울기(쌍극자와 자전축 사이의 각도)는 다음과 같다: 수성 0.7°, 지구 10.5°, 목성 9.6°, 토성 ~0°, 천왕성 58.6°, 해왕성 46.9°. 금성, 화성, 명왕성은 현재 전 지구적으로 유의미한 쌍극자를 갖지 않는다. 천왕성과 해왕성의 자기 쌍극자는 축에서 크게 벗어나 있을 뿐 아니라 행성 중심에서도 치우쳐 있는데, 천왕성의 경우 행성 반지름의 약 1/3만큼 어긋나 있다. 통상적인 다이나모(철 핵)로는 이런 기하학적 구조를 쉽게 설명하기 어렵다. 유력한 설명은 천왕성과 해왕성의 다이나모가 깊은 핵이 아니라 이온화된 물·암모니아·메탄으로 이루어진 외부 맨틀 층에서 작동한다는 것이다."
- },
- {
-  "rel": "science/planets/magnetic-fields.json",
-  "at": "body_paragraphs.1",
-  "en": "Magnetospheres extend well beyond the planet itself. Earth's reaches about 65,000 km sunward (where it bows against the solar wind) and stretches into a long tail on the night side. Jupiter's magnetosphere is the largest physical structure inside the solar system that isn't the Sun's heliosphere: its magnetotail reaches Saturn's orbit, around 1.4 billion km long. The tail is shaped by the solar wind pushing the field downstream; the upstream nose gets compressed.",
-  "cur": "자기권은 행성 자체를 훨씬 넘어서까지 뻗어 있다. 지구의 자기권은 태양 방향으로 약 65,000 km까지 미치며(태양풍에 맞서 활처럼 휘는 곳), 야간 측으로는 긴 꼬리를 늘어뜨린다. 목성의 자기권은 태양의 태양권을 제외하면 태양계 내에서 가장 큰 물리적 구조물이다. 자기 꼬리는 약 14억 km에 달해 토성의 궤도까지 뻗는다. 꼬리는 태양풍이 자기장을 하류 방향으로 밀어냄으로써 형성되며, 상류 쪽 앞부분은 압축된다."
- },
- {
-  "rel": "science/planets/magnetic-fields.json",
-  "at": "body_paragraphs.2",
-  "en": "Particles trapped in the magnetic field create radiation belts — the Van Allen belts at Earth, the much more intense ones at Jupiter (one of the reasons missions like Juno fly polar orbits, avoiding the equatorial belt). Where field lines converge near the magnetic poles, charged particles spiral down and excite the atmosphere — that's the aurora. Every magnetised planet has aurorae; we've imaged them on Earth, Jupiter, Saturn, Uranus, and Neptune.",
-  "cur": "자기장에 갇힌 입자들은 방사선대를 형성한다 — 지구의 Van Allen 벨트, 그리고 훨씬 강렬한 목성의 방사선대가 그것이다(Juno 같은 탐사선이 적도 벨트를 피해 극궤도를 비행하는 이유 중 하나다). 자기 극 근처에서 자기력선이 수렴하는 곳에서는 하전 입자들이 나선형으로 하강하여 대기를 들뜨게 만드는데, 이것이 오로라다. 자기장을 가진 모든 행성에는 오로라가 있으며, 우리는 지구, 목성, 토성, 천왕성, 해왕성에서 오로라를 촬영한 바 있다."
- },
- {
-  "rel": "science/planets/magnetic-fields.json",
-  "at": "diagram_caption",
-  "en": "Dipole-axis tilts vs rotation axes across the planets. Saturn is uniquely aligned (<1°); Uranus + Neptune are chaotically off-axis, hinting at ionic-water mantle dynamos rather than deep iron cores.",
-  "cur": "행성들의 자전축 대비 쌍극자축 기울기. 토성은 독보적으로 정렬되어 있고(< 1°), 천왕성과 해왕성은 혼돈스럽게 축에서 벗어나 있어 깊은 철 핵이 아닌 이온성 수분 맨틀 다이나모의 존재를 시사한다."
- },
- {
-  "rel": "science/planets/moons-of-the-system.json",
-  "at": "intro_sentence",
-  "en": "Galileo's four-night observation in 1610 ended geocentrism. The system's moons are still ending old assumptions today.",
-  "cur": "1610년 갈릴레오의 4박간의 관찰이 지심설을 끝냈다. 이 계의 위성들은 오늘날도 여전히 기존 가정들을 뒤엎고 있다."
- },
- {
-  "rel": "science/planets/moons-of-the-system.json",
-  "at": "narrative_101.0",
-  "en": "In January 1610, Galileo pointed his 20× telescope at Jupiter and saw four bright dots arranged in a line on either side of the planet. He drew them. The next night, they'd moved — and not toward the stars behind Jupiter, but as if they were orbiting Jupiter itself. Over five nights he tracked them, and concluded: these are moons of Jupiter. Bodies that orbit something other than Earth. Geocentrism, which had been the dominant cosmology for two thousand years, was over.",
-  "cur": "1610년 1월, 갈릴레오는 20배 망원경을 목성에 겨누었고 행성의 양쪽에 일렬로 배열된 네 개의 밝은 점을 발견했다. 그는 이를 그렸다. 다음 날 밤, 그 점들이 움직였다 — 목성 뒤의 별들을 향해서가 아니라 마치 목성 주위를 공전하는 것처럼. 5박에 걸쳐 추적한 갈릴레오는 결론을 내렸다: 이것들은 목성의 위성이다. 지구 이외의 것을 공전하는 천체들이다. 2천 년 동안 지배적이던 우주관인 지심설은 끝이 났다."
- },
- {
-  "rel": "science/planets/moons-of-the-system.json",
-  "at": "narrative_101.1",
-  "en": "Four centuries later, the moons of the outer planets are where most modern astrobiology focuses. Europa, around Jupiter, has a subsurface ocean of liquid water under a thick ice shell — potentially 2-3× the volume of Earth's oceans. Enceladus, around Saturn, vents that same ocean through cracks at its south pole; the Cassini mission flew through the plumes and detected organic molecules. Titan, also Saturn's, has a thick nitrogen atmosphere (denser at the surface than Earth's), liquid methane lakes, and a probable underground water-ammonia ocean. Three independent ocean worlds, all in one outer-solar-system tour.",
-  "cur": "4세기 뒤, 외행성의 위성들은 현대 우주생물학이 가장 집중하는 곳입니다. 목성 주위의 유로파는 두꺼운 얼음 껍질 아래에 액체 물의 지하 바다를 가지고 있으며, 그 부피는 지구 해양의 2~3배에 달할 수 있습니다. 토성 주위의 엔켈라두스는 남극의 균열을 통해 같은 바다를 분출하고 있으며, Cassini 미션이 그 플루메를 통과하면서 유기 분자를 감지했습니다. 역시 토성의 위성인 타이탄은 두꺼운 질소 대기(지표면에서 지구보다 밀함), 액체 메탄 호수, 그리고 추정되는 지하 물-암모니아 바다를 가지고 있습니다. 세 개의 독립적인 바다 세계, 모두 하나의 외태양계 투어에 있습니다."
- },
- {
-  "rel": "science/planets/moons-of-the-system.json",
-  "at": "narrative_101.2",
-  "en": "Mars's two tiny moons — Phobos and Deimos — are almost certainly captured asteroids from the main belt. Phobos orbits faster than Mars rotates, so on Mars it rises in the west and sets in the east — the only moon in the system that does. Phobos is also on a slow death spiral toward Mars: tidal forces are pulling it down, and in roughly 50 million years it will either crash or tear apart into a brief Martian ring.",
-  "cur": "화성의 두 개 작은 위성 — 포보스와 데이모스 — 는 거의 확실하게 주요 소행성대로부터의 포획된 소행성들이다. 포보스는 화성의 자전보다 더 빠르게 공전하므로, 화성에서는 서쪽에서 뜨고 동쪽에서 진다 — 태양계에서 유일한 위성이다. 포보스는 또한 화성을 향한 느린 죽음의 나선 궤도 위에 있다: 조석력이 이를 끌어당기고 있으며, 약 5천만 년 안에 충돌하거나 분해되어 화성의 짧은 고리를 형성할 것이다."
- },
- {
-  "rel": "science/planets/moons-of-the-system.json",
-  "at": "body_paragraphs.0",
-  "en": "The four Galilean moons of Jupiter are wildly different worlds. Io: most volcanically active body in the solar system, with active eruptions visible from telescopes — driven by tidal heating from the others. Europa: ice shell over a global water ocean, a top astrobiology priority. Ganymede: largest moon in the solar system, bigger than Mercury, and the only moon with its own magnetic field. Callisto: outermost Galilean, ancient cratered surface, possibly a subsurface ocean too. All four discovered in 1610 by Galileo from a Padua rooftop.",
-  "cur": "목성의 네 Galilean 위성은 매우 다른 세계들이다. 이오: 태양계에서 가장 활발한 화산 활동을 하는 천체로, 활동적인 분화가 망원경으로 관찰 가능하다 — 다른 위성들로부터의 조석 가열로 인해 구동된다. 유로파: 전 지구적 물의 바다 위의 얼음 껍질로, 최고의 우주생물학 우선순위이다. 가니메데: 태양계에서 가장 큰 위성으로 수성보다 크며, 자신만의 자기장을 가진 유일한 위성이다. 칼리스토: 가장 바깥쪽 Galilean 위성으로 고대 분화구 표면, 그리고 아마도 지하 바다도 있을 것이다. 모두 1610년 갈릴레오가 Padua 옥상에서 발견했다."
- },
- {
-  "rel": "science/planets/moons-of-the-system.json",
-  "at": "body_paragraphs.1",
-  "en": "Saturn has the most moons of any planet — ~290 with confirmed orbits as of 2026. Two stand out: Titan, the second-largest moon in the solar system (after Ganymede), with a nitrogen atmosphere thicker than Earth's at the surface; Huygens probe landed there in 2005 and returned the first surface images. Enceladus, much smaller, has a young icy surface, ridged 'tiger stripes' at the south pole, and active cryovolcanic vents that spray water vapor and organics into space — sampled directly by Cassini flying through the plume. Enceladus's plumes are the source of Saturn's E ring — its cryovolcanic ice supplies the ring directly.",
-  "cur": "토성은 모든 행성 중 가장 많은 위성을 보유하고 있습니다 — 2026년 현재 확인된 궤도를 가진 약 290개의 위성. 두 위성이 특히 눈에 띕니다: 타이탄은 태양계에서 두 번째로 큰 위성(가니메데 다음)으로, 지표면에서 지구보다 두꺼운 질소 대기를 가지고 있으며, 2005년 Huygens 탐사선이 착륙하여 최초의 표면 이미지를 촬영했습니다. 훨씬 작은 엔켈라두스는 젊은 빙상, 남극의 '호랑이 줄무늬' 능선, 그리고 물 증기와 유기물을 우주로 분사하는 활발한 저온화산 분출구를 가지고 있으며 — Cassini가 분출 기둥을 통과하며 직접 샘플링했습니다. 엔켈라두스의 분출 기둥은 토성의 E 고리의 근원입니다 — 저온화산 얼음이 고리에 직접 공급됩니다."
- },
- {
-  "rel": "science/planets/moons-of-the-system.json",
-  "at": "body_paragraphs.2",
-  "en": "Pluto and Charon are unique: at radius 606 km vs Pluto's 1188 km, Charon is half Pluto's diameter — the largest moon-to-planet ratio in the system. The two bodies orbit a common centre of mass that lies outside Pluto's surface, so neither object is really orbiting the other; they're orbiting each other around a shared barycentre. The New Horizons flyby in 2015 imaged both for the first time, revealing red equatorial deposits on Charon (tholins from Pluto's atmosphere blown over) and a heart-shaped nitrogen-ice plain on Pluto. Neptune's Triton is similarly captured (retrograde orbit, geologically young — possibly captured from the Kuiper belt) — and like Charon, almost certainly hosts a subsurface ocean.",
-  "cur": "명왕성과 카론은 독특합니다. 카론의 반지름이 606km인 반면 명왕성은 1188km로, 카론은 명왕성의 지름의 절반입니다. 이는 태양계에서 가장 큰 위성-행성 비율입니다. 두 천체는 명왕성의 표면 바깥에 있는 공통 질량 중심 주위를 공전하므로, 어느 천체도 실제로 다른 천체를 공전하지 않습니다. 이들은 공유된 무게중심 주위에서 서로를 공전하고 있습니다. 2015년 New Horizons 근접 비행이 둘 다를 처음으로 영상화했으며, 카론의 적도 지역에 있는 붉은색 퇴적물(명왕성의 대기에서 불어온 톨린)과 명왕성의 심장 모양의 질소 얼음 평원을 드러냈습니다. 해왕성의 트리톤도 마찬가지로 포획된 것입니다(역행 궤도, 지질학적으로 젊음 — 카이퍼 벨트에서 포획되었을 가능성이 있음). 그리고 카론과 마찬가지로 거의 확실히 지하 바다를 가지고 있습니다."
- },
- {
-  "rel": "science/planets/moons-of-the-system.json",
-  "at": "diagram_caption",
-  "en": "Major moons of the giant planets at a comparison scale. Ganymede (Jupiter) is the largest at 2,634 km radius — bigger than Mercury. Charon is half of Pluto's diameter, the largest moon:planet ratio anywhere.",
-  "cur": "비교 스케일로 본 거대 행성들의 주요 위성들. 가니메데(목성)는 반지름 2,634 km로 가장 크다 — 수성보다 크다. 카론은 명왕성 지름의 절반으로, 어느 곳에서나 가장 큰 위성:행성 비율을 보인다."
- },
- {
-  "rel": "science/planets/planetary-stats.json",
-  "at": "intro_sentence",
-  "en": "How different is Jupiter from Earth, really? Eleven times the diameter. Two and a half times the surface gravity.",
-  "cur": "목성은 지구와 얼마나 다를까요? 지름은 열한 배, 표면 중력은 두 배 반입니다."
- },
- {
-  "rel": "science/planets/planetary-stats.json",
-  "at": "narrative_101.0",
-  "en": "When you hear \"Jupiter is the biggest planet\", that's roughly true — but \"big\" hides multiple separate facts. Jupiter is 11× Earth's diameter, 318× Earth's mass, but only 2.53× Earth's surface gravity. Why doesn't 318× mass mean 318× gravity? Because gravity at the surface depends on both mass and the distance from the centre — and Jupiter's surface is 11× farther out than Earth's. The two effects almost cancel. Jupiter is huge, but standing on its 1-bar level (the conventional \"surface\" for a gas giant) you'd weigh 2.5× what you weigh on Earth — not 300×.",
-  "cur": "\"목성은 가장 큰 행성\"이라는 말은 대체로 맞지만, '크다'는 표현 속에는 여러 가지 별개의 사실이 숨어 있습니다. 목성의 지름은 지구의 11배, 질량은 318배이지만, 표면 중력은 겨우 2.53배입니다. 318배의 질량이 왜 318배의 중력을 의미하지 않을까요? 표면에서의 중력은 질량과 중심까지의 거리 모두에 달려 있는데, 목성의 표면은 지구보다 11배나 멀리 떨어져 있기 때문입니다. 두 효과가 거의 상쇄되는 셈이죠. 목성은 거대하지만, 1-bar 수준(기체 행성의 관례적인 '표면')에 서 있다면 지구에서보다 2.5배 무겁게 느껴질 뿐입니다. 300배가 아니라요."
- },
- {
-  "rel": "science/planets/planetary-stats.json",
-  "at": "narrative_101.1",
-  "en": "Mars is the opposite trade-off. Mars has only 11% of Earth's mass, but it has 53% of Earth's diameter. That makes its surface gravity 38% of Earth's — much higher than the mass ratio alone would predict, because you're closer to a smaller centre. The relationship that makes both cases sensible: surface gravity scales as mass / radius². For a planet of average density, gravity scales linearly with radius. Saturn (9.14× Earth's diameter) has surface gravity almost equal to Earth's (1.07 g) because Saturn is much less dense than Earth — Saturn is mostly hydrogen-helium, less than 0.7× water's density.",
-  "cur": "화성은 반대의 절충점을 보여 줍니다. 화성의 질량은 지구의 11%에 불과하지만, 지름은 지구의 53%입니다. 덕분에 표면 중력은 지구의 38%인데, 이는 질량 비율만으로 예측하는 것보다 훨씬 높습니다. 더 작은 중심에 더 가까이 있기 때문이죠. 두 경우를 모두 납득할 수 있게 해 주는 관계식은 이렇습니다. 표면 중력은 질량 / 반지름²에 비례합니다. 평균 밀도의 행성이라면 중력은 반지름에 선형적으로 비례하죠. 토성(지구 지름의 9.14배)의 표면 중력이 지구와 거의 같은(1.07 g) 이유는 토성이 지구보다 훨씬 밀도가 낮기 때문입니다. 토성은 대부분 수소-헬륨으로 이루어져 있어 밀도가 물의 0.7배에도 미치지 못합니다."
- },
- {
-  "rel": "science/planets/planetary-stats.json",
-  "at": "narrative_101.2",
-  "en": "Atmospheric pressure: huge dynamic range. Mercury essentially zero. Mars 0.006 bar (a thin CO₂ wisp). Earth 1 bar. Venus 92 bar (about the pressure 900 m down in Earth's ocean — would crush you). Gas giants don't have a true \"surface pressure\" because there's no surface; the convention is to use the 1-bar level inside the atmosphere as the reference. Below that, pressures grow continuously into millions of bars deep in the interior.",
-  "cur": "대기압은 엄청난 동적 범위를 가집니다. 수성은 사실상 0에 가깝고, 화성은 0.006 bar(얇은 CO₂ 층), 지구는 1 bar, 금성은 92 bar(지구 해양 900 m 깊이의 압력과 비슷하며 사람을 으스러뜨릴 정도)입니다. 기체 행성에는 진정한 '표면 압력'이 없습니다. 표면 자체가 없기 때문이죠. 관례적으로 대기 내부의 1-bar 수준을 기준점으로 사용합니다. 그 아래로는 압력이 내부 깊은 곳까지 수백만 bar로 계속 높아집니다."
- },
- {
-  "rel": "science/planets/planetary-stats.json",
-  "at": "body_paragraphs.0",
-  "en": "Diameters relative to Earth: Mercury 0.38, Venus 0.95 (nearly Earth-sized), Earth 1.0, Mars 0.53, Jupiter 10.97, Saturn 9.14, Uranus 3.98, Neptune 3.86, Pluto 0.19. Surface gravities in Earth-g: Mercury 0.38, Venus 0.91, Earth 1.00, Mars 0.38, Jupiter 2.53, Saturn 1.07, Uranus 0.89, Neptune 1.14, Pluto 0.06. Notable surprises: Mars and Mercury share the same surface gravity (0.38 g) despite very different sizes, because their density × radius products land close. Uranus and Saturn both have lower-than-Earth gravity despite their giant sizes — both are dominated by H/He, much less dense than rocky Earth.",
-  "cur": "지구 대비 지름: 수성 0.38, 금성 0.95(지구에 근접), 지구 1.0, 화성 0.53, 목성 10.97, 토성 9.14, 천왕성 3.98, 해왕성 3.86, 명왕성 0.19. 지구-g 기준 표면 중력: 수성 0.38, 금성 0.91, 지구 1.00, 화성 0.38, 목성 2.53, 토성 1.07, 천왕성 0.89, 해왕성 1.14, 명왕성 0.06. 주목할 만한 의외의 사실: 화성과 수성은 크기가 매우 다름에도 표면 중력이 동일한 0.38 g인데, 이는 두 행성의 밀도 × 반지름 값이 비슷하게 맞아떨어지기 때문입니다. 천왕성과 토성은 거대한 크기에도 지구보다 낮은 중력을 가집니다. 두 행성 모두 H/He가 주성분으로 암석형인 지구보다 훨씬 밀도가 낮기 때문입니다."
- },
- {
-  "rel": "science/planets/planetary-stats.json",
-  "at": "body_paragraphs.1",
-  "en": "Rotation periods (sidereal, in hours): Mercury 1407.5 (essentially 58 Earth days for one full spin), Venus −5832.5 (retrograde, 243 days), Earth 23.93, Mars 24.62, Jupiter 9.93 (the fastest rotator — its day is under 10 hours despite its size, which is why Jupiter is visibly oblate; centrifugal forces flatten it), Saturn 10.66, Uranus −17.24 (retrograde), Neptune 16.11, Pluto −153.3 (retrograde). Solar days (sunrise to sunrise) differ from sidereal periods because the planet is also moving along its orbit — Venus's solar day is 117 Earth days even though its sidereal rotation is 243 days, because the retrograde spin partially cancels the orbital motion.",
-  "cur": "자전 주기(항성 기준, 시간 단위): 수성 1407.5(사실상 58 지구일 동안 한 바퀴), 금성 −5832.5(역행, 243일), 지구 23.93, 화성 24.62, 목성 9.93(가장 빠른 자전체 — 크기에도 불구하고 하루가 10시간 미만입니다. 이 때문에 목성은 눈에 띄게 편평하며, 원심력이 행성을 납작하게 만들죠), 토성 10.66, 천왕성 −17.24(역행), 해왕성 16.11, 명왕성 −153.3(역행). 태양일(일출에서 다음 일출까지)은 행성이 궤도를 따라 이동하기 때문에 항성 자전 주기와 다릅니다. 금성의 태양일은 117 지구일인데, 항성 자전은 243일이지만 역행 자전이 공전 운동을 부분적으로 상쇄하기 때문입니다."
- },
- {
-  "rel": "science/planets/planetary-stats.json",
-  "at": "body_paragraphs.2",
-  "en": "The Earth-comparison ghost on /explore lets you read these ratios at a glance: Jupiter's planet image looks 11× the apparent size of the Earth thumbnail, Mars's about half, Pluto's about 1/5. The tactical-scan overlay surfaces the harder-to-imagine numbers: the gravity you'd feel on the surface, the air pressure you'd breathe (or get crushed by, or have nothing to breathe in), the rotation period that sets the planet's day length. All four numbers come from the planetary fact sheet, hard-coded into the PLANET_STATS map in /explore (Slice E.4).",
-  "cur": "/explore의 지구 비교 유령 기능을 사용하면 이러한 비율을 한눈에 파악할 수 있습니다. Jupiter의 행성 이미지는 지구 썸네일의 약 11배, Mars는 절반 정도, Pluto는 약 1/5 크기로 보입니다. 전술 스캔 오버레이는 직관적으로 상상하기 어려운 수치들을 보여 줍니다. 표면에서 느끼는 중력, 호흡하게 될(혹은 으스러지게 될, 혹은 전혀 호흡할 수 없는) 대기압, 행성의 하루 길이를 결정하는 자전 주기가 그것입니다. 네 가지 수치 모두 행성 팩트 시트에서 가져온 것으로, /explore의 PLANET_STATS 맵(Slice E.4)에 하드코딩되어 있습니다."
- },
- {
-  "rel": "science/planets/planetary-stats.json",
-  "at": "diagram_caption",
-  "en": "Earth-relative diameters at scale. Jupiter and Saturn are the giants; Mercury, Mars, and Pluto sit below Earth. Surface gravity doesn't track size linearly — Saturn (9.1× Earth's diameter) has gravity essentially equal to Earth's because it's so much less dense.",
-  "cur": "실제 비율로 표현한 지구 대비 지름. 목성과 토성이 거대 행성이며, 수성, 화성, 명왕성은 지구보다 작습니다. 표면 중력은 크기에 선형적으로 비례하지 않습니다. 토성(지구 지름의 9.1배)의 중력이 지구와 거의 같은 이유는 밀도가 훨씬 낮기 때문입니다."
- },
- {
-  "rel": "science/planets/regolith.json",
-  "at": "intro_sentence",
-  "en": "Regolith is the loose blanket of fragmented rock and glass dust that covers the Moon, Mercury, and most asteroids — ground down by billions of years of micrometeorite bombardment, with no wind or water to round its edges.",
-  "cur": "레골리스는 달, 수성, 그리고 대부분의 소행성을 덮고 있는 미세한 암석과 유리 먼지의 느슨한 층으로, 수십억 년간의 미소운석 충돌로 갈려 내려온 것으로, 바람이나 물이 모서리를 다듬을 수 없는 환경에 있습니다."
- },
- {
-  "rel": "science/planets/regolith.json",
-  "at": "body_paragraphs.0",
-  "en": "On Earth, sediment grains are rounded and smoothed by water and wind over time. Airless bodies have neither, so their surfaces are abraded purely by impactors — from multi-kilometre asteroids down to interplanetary dust grains arriving at tens of kilometres per second. The result is a layer of angular, glassy shards called regolith, ranging from fine powder to house-sized boulders. On the Moon this layer runs from a few metres deep in the highlands to tens of metres in the maria.",
-  "cur": "지구에서는 시간이 지나면서 물과 바람에 의해 퇴적 입자들이 둥글고 매끄러워집니다. 대기 없는 천체에는 이 둘이 없으므로, 표면은 순전히 충돌체에 의해서만 마모됩니다 — 수 킬로미터 크기의 소행성부터 초당 수십 킬로미터 속도로 도달하는 행성간 먼지 입자까지. 그 결과는 레골리스라고 불리는 각이 진 유리 파편의 층이며, 미세한 가루부터 건물 크기의 바위까지 다양합니다. 달에서는 이 층이 고지대에서는 수 미터 깊이에서부터 마리아(월해)에서는 수십 미터까지 분포합니다."
- },
- {
-  "rel": "science/planets/regolith.json",
-  "at": "body_paragraphs.1",
-  "en": "Lunar regolith has a property that makes it actively dangerous: it is electrostatically charged. On the Moon’s dayside, ultraviolet sunlight knocks electrons off the grains by the photoelectric effect, leaving the sunlit surface positively charged; on the nightside, electrons from the solar wind charge it negatively. Either way the grains carry a persistent electrostatic charge. Dust sticks to everything — visors, suit joints, instrument optics, thermal radiators. Apollo astronauts found their suits grey-black within hours of their first moonwalks, and abrasion by sharp grains degraded suit seams over the course of a single EVA.",
-  "cur": "달의 레골리스는 적극적으로 위험한 특성을 가지고 있습니다: 정전기적으로 대전되어 있습니다. 달의 주간에는 자외선이 광전자 효과에 의해 입자에서 전자를 방출시켜 햇빛이 닿은 표면을 양전하로 만들고, 야간에는 태양풍의 전자가 음전하로 만듭니다. 어느 쪽이든 입자들은 지속적인 정전기 하전을 띱니다. 먼지는 모든 것에 달라붙습니다 — 헬멧 바이저, 우주복 관절, 기구 광학계, 열 방사기. Apollo 우주비행사들은 첫 월면활동으로부터 몇 시간 내에 우주복이 회백색으로 변해있었으며, 각진 입자의 마모로 인해 우주복 이음새가 한 번의 EVA 동안 손상되었습니다."
- },
- {
-  "rel": "science/planets/regolith.json",
-  "at": "body_paragraphs.2",
-  "en": "For future surface operations, regolith is both threat and resource. As a hazard it can clog mechanical joints, scratch optical surfaces, and if inhaled, sharp glassy particles lodge in lung tissue like asbestos fibres. As a resource it is available in essentially unlimited quantity: bulk regolith can shield habitats from cosmic radiation and micrometeorites without launching any material from Earth. Processed regolith can in principle yield oxygen, metals, and silicon — the basis of in-situ resource utilisation (ISRU).",
-  "cur": "향후 표면 운영을 위해 레골리스는 위협이자 자원입니다. 위협으로서는 기계 관절을 막을 수 있고, 광학면을 긁을 수 있으며, 흡입할 경우 각진 유리 입자가 석면 섬유처럼 폐 조직에 박힐 수 있습니다. 자원으로서는 본질적으로 무한한 량이 이용 가능합니다: 대량의 레골리스는 지구에서 어떤 물질도 발사하지 않고도 서식지를 우주 방사선과 미소운석으로부터 보호할 수 있습니다. 처리된 레골리스는 원칙적으로 산소, 금속, 그리고 규소를 얻을 수 있으며, 이는 현지 자원 활용(ISRU)의 기초입니다."
- },
- {
-  "rel": "science/planets/regolith.json",
-  "at": "body_paragraphs.3",
-  "en": "Asteroid regolith presents its own physics. On rubble-pile bodies like Bennu (sampled by NASA's OSIRIS-REx in 2020) and Ryugu (sampled by JAXA's Hayabusa2 in 2019), gravity is so weak — millionths of Earth's — that regolith barely coheres. OSIRIS-REx's sample arm sank unexpectedly deep into Bennu's surface, revealing a body less like a solid rock and more like a loosely packed bag of gravel. How material moves, consolidates, and behaves under such conditions is still an active area of research.",
-  "cur": "소행성 표토는 고유의 물리학을 나타낸다. 베누(베누)와 류구(류구) 같은 우석더미 천체에서는 중력이 지구의 백만분의 일 수준으로 극도로 약해서, 표토가 거의 응집되지 않는다. NASA의 오시리스-렉스(OSIRIS-REx)는 2020년 베누를 채취했고, JAXA의 하야부사2(Hayabusa2)는 2019년 류구를 채취했다. 오시리스-렉스의 샘플 암은 베누의 표면에 예상외로 깊게 침투했는데, 이는 이 천체가 단단한 암석보다는 느슨하게 채워진 자갈주머니에 더 가깝다는 것을 드러냈다. 이러한 조건 하에서 물질이 어떻게 움직이고, 응결되며, 거동하는지는 여전히 활발한 연구 분야이다."
- },
- {
-  "rel": "science/planets/regolith.json",
-  "at": "body_paragraphs.4",
-  "en": "The depth and composition of regolith also record planetary history. The rate of impact gardening — the churning of the surface by successive impacts — can be used to date surfaces: denser crater counts mean older, less-churned terrain. Trace elements delivered by comets and the solar wind are preserved in regolith grains in a way that eroded Earth rocks cannot preserve them, making returned samples irreplaceable archives of early solar system chemistry.",
-  "cur": "레골리스의 깊이와 조성은 또한 행성의 역사를 기록합니다. 영향 정원화(successive impacts에 의한 표면의 교대작용)의 비율은 표면을 연대 측정하는 데 사용될 수 있습니다: 더 높은 충돌구 밀도는 오래되고, 덜 교대된 지형을 의미합니다. 혜성과 태양풍에 의해 전달된 미량 원소는 침식된 지구 암석이 보존할 수 없는 방식으로 레골리스 입자에 보존되어 있어, 반환된 표본들은 초기 태양계 화학의 대체 불가능한 기록입니다."
- },
- {
-  "rel": "science/planets/regolith.json",
-  "at": "diagram_caption",
-  "en": "Scanning electron micrograph of lunar regolith grains — angular, glassy, and jagged, unlike the rounded grains of water-sorted sediment on Earth.",
-  "cur": "달의 레골리스 입자의 주사 전자 현미경 사진 — 각이 진, 유리질, 그리고 톱니 모양으로, 지구의 물로 분류된 퇴적 입자의 둥근 모양과는 다릅니다."
- },
- {
-  "rel": "science/planets/sub-solar-and-terminator.json",
-  "at": "intro_sentence",
-  "en": "Where it's noon on a planet at this instant, and the line dividing day from night.",
-  "cur": "현재 이 순간 행성에서 정오인 지점, 그리고 낮과 밤을 나누는 경계선."
- },
- {
-  "rel": "science/planets/sub-solar-and-terminator.json",
-  "at": "narrative_101.0",
-  "en": "Stand at the equator at solar noon. The Sun is directly overhead. Wherever you are at that moment defines the sub-solar point — the single longitude where the Sun's rays hit the surface perpendicularly. As the planet rotates eastward, the sub-solar point sweeps westward across the surface. As the planet orbits the Sun and its tilt swings the hemispheres into and out of sunlight, the sub-solar latitude also changes — on Earth it oscillates between 23.4°N and 23.4°S over the year (the tropics of Cancer and Capricorn).",
-  "cur": "태양이 정오일 때 적도에 서 있다고 상상해 보자. 태양이 바로 머리 위에 있다. 그 순간 당신이 서 있는 바로 그곳이 태양직하점이다 — 태양 광선이 지표면에 수직으로 닿는 단 하나의 경도. 행성이 동쪽으로 자전하면서, 태양직하점은 지표면을 가로질러 서쪽으로 이동한다. 행성이 태양 주위를 공전하고 그 기울기가 반구를 햇빛 속으로 들었다 놓았다 하면서, 태양직하점의 위도도 변한다 — 지구에서는 연중 23.4°N과 23.4°S 사이를 오간다(북회귀선과 남회귀선)."
- },
- {
-  "rel": "science/planets/sub-solar-and-terminator.json",
-  "at": "narrative_101.1",
-  "en": "Ninety degrees away from the sub-solar point — in every direction — sits the terminator: the great circle separating the lit hemisphere from the dark one. Stand on the terminator and the Sun is on the horizon. East of it (in the planet's rotation sense), it's morning everywhere; west of it, sunset, then night. The terminator moves at exactly the speed of planetary rotation at the equator (about 1670 km/h on Earth, about 16 km/h on the Moon).",
-  "cur": "아조점에서 90도 떨어진 곳 — 모든 방향에서 — 종주선이 위치합니다. 즉 밝은 반구와 어두운 반구를 가르는 대원입니다. 종주선 위에 서면 태양이 지평선 위에 있습니다. 이 선의 동쪽(행성의 자전 방향)에서는 어디든 아침이고, 서쪽에서는 해질녘이다가 밤이 됩니다. 종주선은 적도에서의 행성 자전 속도와 정확히 같은 속도로 움직입니다(지구에서는 약 1670 km/h, 달에서는 약 16 km/h)."
- },
- {
-  "rel": "science/planets/sub-solar-and-terminator.json",
-  "at": "narrative_101.2",
-  "en": "On an airless body like Mercury or the Moon, the terminator is razor-sharp — sunlight versus pitch black, no twilight. With an atmosphere, the terminator becomes a gradient: Earth's atmosphere scatters sunlight forward into the night side and back into the day side, giving you civil twilight, nautical twilight, astronomical twilight — about 30 minutes of usable light after sunset at mid-latitudes. Venus's much thicker atmosphere makes the day/night transition essentially indistinguishable from above; on the surface, sunlight is so diffused that the sky is uniformly bright.",
-  "cur": "수성이나 달처럼 대기가 없는 천체에서 명암경계선은 면도날처럼 선명하다 — 햇빛과 칠흑 같은 어둠, 황혼은 없다. 대기가 있으면 명암경계선은 점진적인 그러데이션이 된다: 지구의 대기는 햇빛을 야간 쪽으로 앞으로 산란시키고 낮 쪽으로 뒤로 산란시켜, 시민박명, 항해박명, 천문박명을 만들어낸다 — 중위도에서 일몰 후 약 30분간 사용 가능한 빛이 남는다. 훨씬 두꺼운 대기를 가진 금성은 위에서 보면 낮과 밤의 전환이 사실상 구분되지 않으며, 표면에서는 햇빛이 너무 확산되어 하늘이 균일하게 밝다."
- },
- {
-  "rel": "science/planets/sub-solar-and-terminator.json",
-  "at": "body_paragraphs.0",
-  "en": "The sub-solar point's instantaneous location is calculated from three angles: the planet's rotation phase (which longitude faces the Sun right now), its axial tilt (which seasonal latitude the Sun illuminates), and its orbital position (which hemisphere is angled sunward). On Earth, the sub-solar latitude oscillates between +23.4° and −23.4° in the cycle we call seasons. On Mars, the cycle is similar (25.19° tilt) but slower (687-day year) and more eccentric (Mars's orbit is more elliptical, so its seasons have unequal durations).",
-  "cur": "태양직하점의 순간 위치는 세 가지 각도로 계산된다: 행성의 자전 위상(지금 어느 경도가 태양을 향하고 있는가), 자전축 기울기(태양이 어느 계절적 위도를 비추는가), 그리고 궤도 위치(어느 반구가 태양 쪽으로 기울어져 있는가). 지구에서 태양직하점의 위도는 우리가 계절이라 부르는 주기 속에서 +23.4°와 −23.4° 사이를 오간다. 화성의 경우 이 주기는 비슷하지만(25.19° 기울기) 더 느리고(687일 주기) 더 이심적이다(화성의 궤도는 더 타원형이라 계절의 지속 시간이 불균등하다)."
- },
- {
-  "rel": "science/planets/sub-solar-and-terminator.json",
-  "at": "body_paragraphs.1",
-  "en": "The terminator has a long history as the scientifically richest place to observe surface detail. Shadows are longest there, exaggerating topography. Apollo-era lunar imagery for crater geology was almost always taken with the terminator nearby. Voyager 1 + 2's most striking outer-planet imagery (Saturn's ring structure, Neptune's Great Dark Spot) was taken near each body's terminator for the same reason: low Sun angle picks out features.",
-  "cur": "명암경계선은 표면 세부 지형을 관측하기에 과학적으로 가장 풍부한 장소로 오랜 역사를 지닌다. 그곳에서 그림자가 가장 길어 지형이 과장되어 드러난다. Apollo 시대의 크레이터 지질학을 위한 달 촬영은 거의 항상 명암경계선 근처에서 이루어졌다. Voyager 1과 Voyager 2의 가장 인상적인 외행성 촬영 이미지(토성의 고리 구조, 해왕성의 대암반)도 같은 이유로 각 천체의 명암경계선 근처에서 촬영되었다: 낮은 태양 각도가 지형을 드러낸다."
- },
- {
-  "rel": "science/planets/sub-solar-and-terminator.json",
-  "at": "body_paragraphs.2",
-  "en": "On airless bodies, the temperature swing across the terminator is brutal. Mercury's day side reaches 430 °C; its night side drops to −180 °C. The Moon swings from +127 °C to −173 °C every lunar day (29.5 Earth days). With an atmosphere, thermal inertia softens this swing dramatically — Earth's surface temperature varies maybe 15 °C between day and night at temperate latitudes, because the atmosphere holds and redistributes heat. Venus, with its dense CO₂ atmosphere, has essentially no day-night temperature variation despite its 117-day solar day — the atmosphere homogenises temperature across the planet.",
-  "cur": "대기가 없는 천체에서 명암경계선을 가로지르는 온도 변화는 극단적이다. 수성의 낮 쪽은 430 °C에 달하고, 밤 쪽은 −180 °C까지 떨어진다. 달은 태양일(지구 기준 29.5일)마다 +127 °C에서 −173 °C까지 변동한다. 대기가 있으면 열관성이 이 변동을 크게 완화시킨다 — 지구 표면 온도는 온대 위도에서 낮과 밤 사이에 약 15 °C 정도만 변하는데, 대기가 열을 저장하고 재분배하기 때문이다. 금성은 117일의 태양일에도 불구하고 조밀한 CO₂ 대기 덕분에 낮과 밤의 온도 차이가 사실상 없다 — 대기가 행성 전체의 온도를 균일하게 만든다."
- },
- {
-  "rel": "science/planets/sub-solar-and-terminator.json",
-  "at": "diagram_caption",
-  "en": "Sub-solar point (direct overhead) + terminator (90° great circle). On airless bodies the terminator is sharp; on Earth and Venus, scattered sunlight blurs it into twilight.",
-  "cur": "태양직하점(바로 머리 위) + 명암경계선(90° 대원). 대기가 없는 천체에서 명암경계선은 선명하고, 지구와 금성에서는 산란된 햇빛이 이를 황혼으로 흐리게 만든다."
- },
- {
-  "rel": "science/planets/tides.json",
-  "at": "intro_sentence",
-  "en": "The Moon's gravity pulls the oceans into two bulges — one beneath it, one on the far side — so most coasts get two high tides a day.",
-  "cur": "달의 중력이 바다를 두 개의 부풀음으로 당깁니다 — 하나는 달 아래에, 하나는 반대편에 — 따라서 대부분의 해안은 하루에 두 번의 만조를 경험합니다."
- },
- {
-  "rel": "science/planets/tides.json",
-  "at": "narrative_101.0",
-  "en": "Gravity weakens with distance, so the Moon tugs the near side of Earth harder than the centre, and the centre harder than the far side.",
-  "cur": "중력은 거리에 따라 약해지므로, 달은 지구의 가까운 쪽을 중심부보다 더 강하게 당기고, 중심부는 먼 쪽보다 더 강하게 당깁니다."
- },
- {
-  "rel": "science/planets/tides.json",
-  "at": "narrative_101.1",
-  "en": "Stretched between these unequal pulls, the oceans rise into a bulge facing the Moon and a matching bulge on the opposite side — and Earth rotates through both every day.",
-  "cur": "이러한 불균등한 당김 사이에서 늘어나면서, 바다는 달을 향한 부풀음과 반대편의 대응하는 부풀음으로 솟아오르며 — 지구는 매일 이 둘을 모두 통과하며 회전합니다."
- },
- {
-  "rel": "science/planets/tides.json",
-  "at": "body_paragraphs.0",
-  "en": "A tide is not the Moon lifting the water straight up — it is the difference in the Moon's pull across the width of the Earth. The near side is pulled toward the Moon more strongly than the planet's centre, and the far side less, so the water envelope is stretched into a prolate, two-bulge shape aligned with the Earth–Moon line.",
-  "cur": "조석은 달이 물을 곧장 위로 들어올리는 것이 아닙니다 — 그것은 지구의 폭에 걸친 달의 인력 차이입니다. 가까운 쪽은 행성의 중심부보다 더 강하게 달 쪽으로 당겨지고, 먼 쪽은 더 약하게 당겨지므로, 물의 외피는 지구-달 선을 따라 정렬된 긴 타원형의 두 부풀음 모양으로 늘어납니다."
- },
- {
-  "rel": "science/planets/tides.json",
-  "at": "body_paragraphs.1",
-  "en": "Because there are two bulges and the Earth turns once a day, a given coastline usually sweeps through two high tides and two low tides every ~24 h 50 min (the extra 50 minutes is the Moon moving on in its orbit). When the Sun lines up with the Moon at new and full moon their pulls add — the large spring tides; at the quarters they partly cancel into the smaller neap tides.",
-  "cur": "두 개의 부풀음이 있고 지구가 하루에 한 번 회전하기 때문에, 주어진 해안선은 보통 ~24 h 50 min마다 두 번의 만조와 두 번의 간조를 겪습니다 (추가 50분은 달이 궤도상에서 이동하는 것입니다). 삭과 망에서 태양이 달과 일직선으로 정렬되면 그들의 인력이 합쳐져 — 큰 사리 조석이 발생하고; 상현과 하현에서는 부분적으로 상쇄되어 더 작은 조금 조석이 됩니다."
- },
- {
-  "rel": "science/planets/tides.json",
-  "at": "body_paragraphs.2",
-  "en": "Tides are a two-way street. The bulge Earth raises sits slightly ahead of the Moon because Earth rotates faster than the Moon orbits; its gravity tugs the Moon forward, nudging it into a higher orbit (~3.8 cm/year), while the Moon drags back on the bulge and slowly lengthens Earth's day.",
-  "cur": "조석은 양방향입니다. 지구가 만드는 부풀음은 지구가 달의 공전보다 빠르게 자전하기 때문에 달보다 약간 앞에 위치하며; 그것의 중력이 달을 앞으로 당겨 더 높은 궤도로 밀어냅니다 (~3.8 cm/년), 동시에 달은 부풀음을 뒤로 끌어당겨 천천히 지구의 하루를 길게 만듭니다."
- },
- {
-  "rel": "science/planets/tides.json",
-  "at": "body_paragraphs.3",
-  "en": "The same effect already finished the job on the Moon: tidal friction braked its spin until its rotation matched its orbit, so it keeps one face toward Earth — tidal locking. The Tides lens on /earth draws the twin bulges; the Sub-Earth Point lens on /moon shows the locked near side they produced.",
-  "cur": "같은 효과가 이미 달에서는 완료되었습니다: 조석 마찰이 달의 자전을 제동하여 자전이 공전과 일치할 때까지 멈추게 했고, 그래서 달은 한쪽 면을 지구를 향하게 유지합니다 — 조석 고정입니다. /earth의 Tides 렌즈는 쌍둥이 부풀음을 그리고; /moon의 Sub-Earth Point 렌즈는 그것들이 만들어낸 고정된 가까운 면을 보여줍니다."
- },
- {
-  "rel": "science/planets/tides.json",
-  "at": "diagram_caption",
-  "en": "Twin tidal bulges stretched along the Earth–Moon line — the near bulge under the Moon, the far bulge thrown outward.",
-  "cur": "지구-달 선을 따라 늘어난 쌍둥이 조석 부풀음 — 가까운 부풀음은 달 아래에, 먼 부풀음은 바깥쪽으로 밀려났습니다."
- },
- {
-  "rel": "science/porkchop/_intro.json",
-  "at": "headline",
-  "en": "Porkchop Plots — when to launch, and why the windows are the windows.",
-  "cur": "돼지 갈비 플롯 — 언제 발사할 것인가, 그리고 왜 발사 윈도우는 윈도우인가"
- },
- {
-  "rel": "science/porkchop/_intro.json",
-  "at": "paragraphs.0",
-  "en": "Mission planners don't compute one trajectory to Mars — they compute millions, in a giant grid, and they paint a heatmap. Cheap trajectories show up as cool blue lobes. Expensive ones go red. The result, weirdly, looks like a pork chop. The cheap zone is the meat of the chop; the expensive ridge is the bone.",
-  "cur": "미션 플래너들은 화성으로 가는 궤도를 하나 계산하지 않습니다 — 거대한 그리드 안에서 수백만 개를 계산하고, 히트맵을 그립니다. 저렴한 궤도는 파란색 엽편으로 나타나고, 비싼 궤도는 빨간색입니다. 결과는 이상하게도 돼지 갈비처럼 보입니다. 저렴한 구간은 갈비의 살이고, 비싼 능선은 뼈입니다."
- },
- {
-  "rel": "science/porkchop/_intro.json",
-  "at": "paragraphs.1",
-  "en": "Why do we draw the whole map instead of just the optimum? Because real missions have constraints — a rocket that's only ready a particular year, a launch pad that's only available certain weeks, a landing site that needs a specific season at Mars. The porkchop lets you see ALL the trade-offs at once and pick the cheap-enough trajectory that fits your real-world calendar.",
-  "cur": "우리가 최적의 궤도만 계산하는 대신 전체 맵을 그리는 이유는 무엇일까요? 실제 미션에는 제약 조건이 있기 때문입니다 — 특정 연도에만 준비되는 로켓, 특정 주에만 사용 가능한 발사대, 화성의 특정 계절이 필요한 착륙지. 돼지 갈비 플롯을 통해 모든 트레이드오프를 한눈에 볼 수 있으며, 실제 일정에 맞는 저렴한 충분한 궤도를 선택할 수 있습니다."
- },
- {
-  "rel": "science/porkchop/_intro.json",
-  "at": "paragraphs.2",
-  "en": "Six sections here, in reading order. Start with \"What is a porkchop plot?\" and walk through the axes (departure, time-of-flight), the colour scale (∆v heatmap), how to read the lobe shape (contour reading), and how to map the porkchop onto a specific rocket (viability). A note on convention: standard porkchop plots contour characteristic energy C3 (km²/s²) at departure and arrival V∞ (km/s) — Orrery simplifies this onto a single ∆v-in-km/s colour scale for readability. By the end you'll be able to look at /plan's porkchop for any of nine destinations and read it like a flight dynamicist.",
-  "cur": "여기 6개의 섹션이 있으며, 읽는 순서대로 배열되어 있습니다. \"돼지 갈비 플롯이란 무엇인가?\"부터 시작해서 축선(출발, 비행 시간), 색상 척도(∆v 히트맵), 엽편 모양을 읽는 방법(등고선 읽기), 돼지 갈비 플롯을 특정 로켓에 매핑하는 방법(실행 가능성)을 살펴봅니다. 표준에 관한 주의: 표준 돼지 갈비 플롯은 출발 시 특성 에너지 C3(km²/s²)과 도착 시 V∞(km/s)를 등고선으로 그리지만 — Orrery는 가독성을 위해 이를 단일 ∆v-in-km/s 색상 척도로 단순화합니다. 끝내면 /plan의 9개 목적지 중 아무 목적지에 대한 돼지 갈비 플롯을 보고 비행 동역학자처럼 읽을 수 있게 됩니다."
- },
- {
-  "rel": "science/porkchop/contour-reading.json",
-  "at": "intro_sentence",
-  "en": "The shape of the cheap zone tells you the geometry of viable trajectories — and where the trade-offs live.",
-  "cur": "저렴 구역의 형태는 실행 가능한 궤도의 기하학적 구조와 트레이드오프가 어디에 있는지를 보여줍니다."
- },
- {
-  "rel": "science/porkchop/contour-reading.json",
-  "at": "narrative_101.0",
-  "en": "Now you know the axes and the colour scale. The next skill is reading the SHAPE of the cheap zone. The lobe of teal isn't just a generic blob — it's a literal map of which trajectories work and which don't.",
-  "cur": "이제 축과 색상 척도를 알았으니, 다음 기술은 저렴 구역의 형태를 읽는 것입니다. 청록색 엽은 단순한 일반적인 얼룩이 아니라 어떤 궤도가 작동하고 어떤 궤도가 작동하지 않는지를 나타내는 글자 그대로의 지도입니다."
- },
- {
-  "rel": "science/porkchop/contour-reading.json",
-  "at": "narrative_101.1",
-  "en": "The classic Mars porkchop has TWO cheap lobes per launch window, side by side. They're called the \"Type I\" and \"Type II\" trajectories — same window, two different ways around the Sun. Type I goes the short way (transfer angle below 180 degrees) and is faster. Type II goes the long way (transfer angle above 180 degrees) and is slower but sometimes cheaper. Both are real, both are flown.",
-  "cur": "고전적인 화성 포크찹은 발사 기간당 두 개의 저렴 엽을 나란히 가지고 있습니다. 이들은 '1형' 궤도와 '2형' 궤도라고 불립니다 — 같은 기간, 태양 주위를 도는 두 가지 다른 방식입니다. 1형은 짧은 방식으로 이동하며(전달 각도 180도 미만) 더 빠릅니다. 2형은 긴 방식으로 이동하며(전달 각도 180도 초과) 더 느리지만 때로는 더 저렴합니다. 둘 다 실제이며, 둘 다 비행했습니다."
- },
- {
-  "rel": "science/porkchop/contour-reading.json",
-  "at": "narrative_101.2",
-  "en": "Outside the lobes: red. Most of the porkchop is red, actually. That's the lesson. There are very few cheap moments to launch a spacecraft to another planet, and they're not negotiable. \"Just wait for the right window\" almost always beats \"invent a clever trajectory.\" Reading the shape of the lobe — where it widens, where it narrows, where the optima sit — is what flight dynamicists do for a living.",
-  "cur": "엽 밖: 빨강색. 실제로 포크찹의 대부분이 빨강색입니다. 그것이 교훈입니다. 우주선을 다른 행성에 발사할 수 있는 저렴한 시간은 매우 적으며, 협상의 여지가 없습니다. '올바른 기간을 기다리세요'는 거의 항상 '영리한 궤도를 발명하세요'보다 낫습니다. 엽의 형태를 읽기 — 어디서 넓어지고, 어디서 좁아지고, 최적이 어디에 있는지 — 이것이 비행 역학자들이 생업으로 하는 일입니다."
- },
- {
-  "rel": "science/porkchop/contour-reading.json",
-  "at": "body_paragraphs.0",
-  "en": "Look at a Mars porkchop. You'll see a roughly oval lobe of teal cells centred near a 250-day TOF, recurring every 26 months. That's the Hohmann opportunity. Inside the lobe, all combinations of (departure, TOF) deliver feasible Mars missions at acceptable ∆v.",
-  "cur": "화성 포크찹을 봅시다. 약 250일의 전달 시간(TOF) 근처에 중심을 둔 청록색 세포의 대략 타원형 엽이 보일 것이며, 26개월마다 반복됩니다. 그것이 Hohmann 기회입니다. 엽 내부에서 (출발, TOF)의 모든 조합이 수용 가능한 ∆v에서 실행 가능한 화성 미션을 제공합니다."
- },
- {
-  "rel": "science/porkchop/contour-reading.json",
-  "at": "body_paragraphs.1",
-  "en": "Two solutions per window. The 'short way' (transfer angle < 180°) and the 'long way' (transfer angle > 180°) both connect Earth to Mars but via different ellipses. They appear as two cheap lobes in the porkchop, separated by a high-∆v ridge at the ~180° transfer angle — this ridge is literally the 'bone' of the pork chop. Sometimes both lobes appear, sometimes only one, depending on geometry.",
-  "cur": "기간당 두 개의 해결책. '짧은 방식'(전달 각도 < 180°)과 '긴 방식'(전달 각도 > 180°) 모두 지구에서 화성으로 연결하지만 서로 다른 타원을 통합니다. 이들은 포크찹에서 두 개의 저렴 엽으로 나타나며, 높은 ∆v 능선으로 분리됩니다 (~180° 전달 각도) — 이 능선은 글자 그대로 포크찹의 '뼈'입니다. 때로는 두 엽이 모두 나타나고, 때로는 기하학에 따라 하나만 나타납니다."
- },
- {
-  "rel": "science/porkchop/contour-reading.json",
-  "at": "body_paragraphs.2",
-  "en": "Outside the cheap lobes: red. Far from any natural window, you'd need a custom high-energy trajectory (gravity assist, multi-burn) to make the math work. Real missions cluster in the cheap zones; design philosophy 'just wait for the right window' often beats 'invent a clever trajectory.'",
-  "cur": "저렴 엽 밖: 빨강색. 자연 기간에서 멀리 떨어져 있다면, 수학이 작동하도록 하기 위해 맞춤형 고에너지 궤도(중력 보조, 다중 연소)가 필요할 것입니다. 실제 미션은 저렴 구역에 집중됩니다; 설계 철학 '올바른 기간을 기다리세요'는 종종 '영리한 궤도를 발명하세요'를 이깁니다."
- },
- {
-  "rel": "science/porkchop/departure-axis.json",
-  "at": "intro_sentence",
-  "en": "When you launch — running across the X-axis, typically a four-year span sampled daily.",
-  "cur": "발사 시점 — X축을 따라 진행하며, 보통 4년 범위를 일일 단위로 샘플링합니다."
- },
- {
-  "rel": "science/porkchop/departure-axis.json",
-  "at": "narrative_101.0",
-  "en": "Read the porkchop like a calendar. The horizontal axis — left to right — is the date you leave Earth. Each pixel column is a different launch day. Orrery samples at one-day resolution across about four years; that's enough to capture two full synodic cycles for Mars (the ~26-month cycle fits roughly twice in four years), which is enough to see the launch-window pattern repeat.",
-  "cur": "돼지고기 모양 곡선을 달력처럼 읽으세요. 가로축 — 왼쪽에서 오른쪽으로 — 지구를 떠나는 날짜입니다. 각 픽셀 열은 다른 발사 날입니다. Orrery는 약 4년에 걸쳐 1일 단위로 샘플링합니다. 이는 화성의 두 개 완전한 시노드 주기(~26개월 주기가 4년에 대략 두 번 들어맞음)를 포착하기에 충분하므로, 발사 윈도우 패턴이 반복되는 것을 볼 수 있습니다."
- },
- {
-  "rel": "science/porkchop/departure-axis.json",
-  "at": "narrative_101.1",
-  "en": "Look across the row of cheap-cost cells (the cool teal lobe) and you can read off, on the calendar, exactly when the launch windows are. For Mars they're roughly every 26 months. For Venus every 19. For Jupiter every 13. Each cheap zone is one window — outside of those zones, the calendar is fighting you.",
-  "cur": "저비용 셀 행(시원한 청록색 엽)을 가로질러 보면 달력에서 발사 윈도우가 정확히 언제인지 읽을 수 있습니다. 화성의 경우 대략 26개월마다입니다. 금성은 19개월마다, 목성은 13개월마다입니다. 각 저비용 영역은 하나의 윈도우입니다 — 그 영역 밖에서는 달력이 당신에게 불리합니다."
- },
- {
-  "rel": "science/porkchop/departure-axis.json",
-  "at": "narrative_101.2",
-  "en": "When you scrub the launch-year selector in /plan, you're sliding the X-axis. Different year, different window placement, but the underlying physics is the same. This is why mission scheduling is calendar-driven: the cheap zones don't move just because we have a deadline.",
-  "cur": "\"/plan\"에서 발사 연도 선택기를 변경하면 X축을 움직이는 것입니다. 연도가 다르면 창의 위치도 달라지지만, 기본적인 물리학은 동일합니다. 이것이 미션 일정 계획이 달력 기반인 이유입니다. 저렴한 구간은 우리가 마감 시간을 맞춘다고 해서 움직이지 않기 때문입니다."
- },
- {
-  "rel": "science/porkchop/departure-axis.json",
-  "at": "body_paragraphs.0",
-  "en": "The X-axis tells you when you leave Earth. Each pixel column is a different launch date — for Orrery's plots, sampled at one-day resolution across roughly four years. Why a four-year span? Because the Earth-Mars synodic period is ~26 months; four years captures roughly two full Mars windows. For Venus (~19 months) or Jupiter (~13 months) the same span fits more windows — the four-year width is calibrated for Mars-class planning.",
-  "cur": "X축은 지구를 떠나는 시점을 나타냅니다. 각 픽셀 열은 다른 발사 날짜입니다 — Orrery의 플롯은 약 4년에 걸쳐 1일 단위로 샘플링합니다. 왜 4년 범위일까요? 지구-화성 시노드 주기가 ~26개월이기 때문입니다. 4년은 대략 화성 윈도우 두 개를 포착합니다. 금성(~19개월) 또는 목성(~13개월)의 경우 같은 범위가 더 많은 윈도우를 포함합니다 — 4년 너비는 화성급 계획을 위해 조정됩니다."
- },
- {
-  "rel": "science/porkchop/departure-axis.json",
-  "at": "body_paragraphs.1",
-  "en": "Read the X-axis like a calendar. The cheap-cost lobes (the porkchop's 'pork') sit at predictable intervals. For Mars: every ~26 months. For Venus: every ~19 months. For Jupiter: every ~13 months (Jupiter moves slowly enough that the synodic period is close to Earth's year).",
-  "cur": "X축을 달력처럼 읽으세요. 저비용 엽(돼지고기 모양 곡선의 '돼지')은 예측 가능한 간격에 위치합니다. 화성: 대략 26개월마다. 금성: 대략 19개월마다. 목성: 대략 13개월마다(목성은 충분히 느리게 움직여서 시노드 주기가 지구의 한 해에 가깝습니다)."
- },
- {
-  "rel": "science/porkchop/departure-axis.json",
-  "at": "body_paragraphs.2",
-  "en": "On `/plan` the X-axis label is `DEPARTURE WINDOW · 2026 — 2030`. The literal calendar dates appear in the tooltip when you hover.",
-  "cur": "\"/plan\"에서 X축 레이블은 `DEPARTURE WINDOW · 2026 — 2030`입니다. 마우스를 올리면 툴팁에 실제 달력 날짜가 나타납니다."
- },
- {
-  "rel": "science/porkchop/dv-heatmap.json",
-  "at": "intro_sentence",
-  "en": "The colour scale that turns ∆v numbers into a picture you can read at a glance.",
-  "cur": "∆v 수치를 한눈에 읽을 수 있는 그림으로 바꿔주는 색상 스케일입니다."
- },
- {
-  "rel": "science/porkchop/dv-heatmap.json",
-  "at": "narrative_101.0",
-  "en": "The whole point of a porkchop plot is the colours. Numbers in a giant grid would tell you the same thing, but you couldn't see the patterns. So we paint each cell — cool teal for cheap trajectories, yellow for borderline, orange and red for hopelessly expensive. Pattern recognition takes over from arithmetic.",
-  "cur": "포크척 플롯의 핵심은 색상입니다. 거대한 격자의 숫자들도 같은 정보를 전달하지만, 패턴을 볼 수 없습니다. 대신 각 셀을 칠합니다 — 저렴한 궤도는 시원한 청록색, 경계선적인 경우는 노랑색, 절망적으로 비싼 경우는 주황색과 빨강색입니다. 산술 계산 대신 패턴 인식이 작동합니다."
- },
- {
-  "rel": "science/porkchop/dv-heatmap.json",
-  "at": "narrative_101.1",
-  "en": "Cool teal sits at around 3 km/s of ∆v — the departure burn from LEO for a Hohmann-like transfer to Mars (trans-Mars injection). Blue around 5 km/s — affordable, slightly faster trips. Yellow around 7 km/s — getting expensive, you're paying for speed. Orange and red beyond 9 km/s — you've left the realm of what current rockets can practically deliver. The colour-to-cost mapping is consistent across all the porkchops in /plan.",
-  "cur": "시원한 청록색은 약 3 km/s의 ∆v에 해당합니다 — LEO에서 화성으로의 호만-유사 전이를 위한 출발 번(trans-Mars injection)입니다. 파란색은 약 5 km/s입니다 — 저렴하고 약간 더 빠른 여행입니다. 노랑색은 약 7 km/s입니다 — 비용이 올라가고 있으며, 속도를 위해 더 많은 비용을 내고 있습니다. 주황색과 빨강색은 9 km/s 이상입니다 — 현재의 로켓이 실질적으로 전달할 수 있는 범위를 벗어났습니다. 색상-비용 매핑은 /plan의 모든 포크척 플롯에서 일관됩니다."
- },
- {
-  "rel": "science/porkchop/dv-heatmap.json",
-  "at": "narrative_101.2",
-  "en": "Hovering any cell shows you the exact ∆v in km/s, but the visual story is the eye-trick that makes porkchops indispensable. You can scan the chart in one second and know whether a destination is reachable, when the windows are, and what the trade-offs cost. No formula does that.",
-  "cur": "어떤 셀 위에 마우스를 올리면 정확한 ∆v (km/s)를 볼 수 있지만, 시각적 이야기가 포크척을 필수 불가결하게 만드는 눈속임입니다. 1초 내에 차트를 훑어보고 목적지에 도달 가능한지, 윈도우는 언제인지, 그리고 거래의 비용은 무엇인지 알 수 있습니다. 어떤 공식도 그렇게 할 수 없습니다."
- },
- {
-  "rel": "science/porkchop/dv-heatmap.json",
-  "at": "body_paragraphs.0",
-  "en": "Cool teal sits at low ∆v (~3 km/s) — the departure-burn minimum for a Mars-like Hohmann (this is the trans-Mars injection ∆v from LEO, not the total mission ∆v). Blue at ~5 km/s. Yellow around 7 km/s — the threshold of expensive. Orange and red above 9 km/s — runaway-cost cells, where you'd need an SLS-class launch vehicle just to make the math close.",
-  "cur": "시원한 청록색은 낮은 ∆v (~3 km/s)에 해당합니다 — 화성과 유사한 Hohmann 전이를 위한 출발 번의 최솟값입니다(이것은 LEO에서의 trans-Mars injection ∆v이며, 전체 미션 ∆v는 아닙니다). 파란색은 약 5 km/s입니다. 노랑색은 약 7 km/s입니다 — 비싼 것으로 간주되는 임계값입니다. 주황색과 빨강색은 9 km/s 이상입니다 — 폭발적인 비용 증가 셀로, SLS급 발사체가 필요합니다."
- },
- {
-  "rel": "science/porkchop/dv-heatmap.json",
-  "at": "body_paragraphs.1",
-  "en": "Orrery's scale tops out around 11+ km/s. Anything beyond that is rendered as the deepest red because in practice no current launch vehicle can deliver the payload at those ∆v costs. Voyager 1 is an example of the far-red end: its departure from Earth required a characteristic energy C3 ≈ 100 km²/s² (note: C3 is V∞ squared, so C3 and ∆v sit on different scales — √100 km²/s² ≈ 10 km/s hyperbolic excess). Converting to a departure ∆v from LEO puts Voyager 1 above 7 km/s — already near the limit of what a Titan IIIE/Centaur could deliver in 1977.",
-  "cur": "Orrery의 스케일은 약 11+ km/s 정도에서 최고조입니다. 그 이상의 모든 것은 가장 짙은 빨강색으로 렌더링됩니다. 실제로 현재의 발사체는 그러한 ∆v 비용에서 페이로드를 전달할 수 없기 때문입니다. Voyager 1은 원점의 극단적인 예입니다: 지구에서의 출발은 특성 에너지 C3 ≈ 100 km²/s²가 필요했습니다(참고: C3는 V∞의 제곱이므로, C3와 ∆v는 다른 스케일에 있습니다 — √100 km²/s² ≈ 10 km/s 쌍곡선 초과 속도). LEO에서의 출발 ∆v로 변환하면 Voyager 1은 7 km/s 이상입니다 — 이미 1977년 Titan IIIE/Centaur가 전달할 수 있는 한계에 가깝습니다."
- },
- {
-  "rel": "science/porkchop/dv-heatmap.json",
-  "at": "body_paragraphs.2",
-  "en": "On `/plan` you can hover any cell to see the exact ∆v in km/s. The heatmap is a visualisation of the answer; the cell value is the answer itself.",
-  "cur": "`/plan`에서 어떤 셀 위에 마우스를 올리면 정확한 ∆v (km/s)를 볼 수 있습니다. 히트맵은 답의 시각화이며, 셀 값이 실제 답입니다."
- },
- {
-  "rel": "science/porkchop/tof-axis.json",
-  "at": "intro_sentence",
-  "en": "How long the trip takes — running up the Y-axis, in days for inner planets and years for the outer ones.",
-  "cur": "여행에 걸리는 시간 — Y축을 따라 나타내며, 내행성은 일(days) 단위로, 외행성은 년(years) 단위로 표시됩니다."
- },
- {
-  "rel": "science/porkchop/tof-axis.json",
-  "at": "narrative_101.0",
-  "en": "If the X-axis tells you WHEN you leave, the Y-axis tells you HOW LONG the trip takes. Bottom of the chart: fast, short trips. Top of the chart: slow, long trips. For Mars-class destinations the axis spans roughly 100 to 500 days. For Jupiter it's years.",
-  "cur": "X축이 언제 출발하는지를 알려준다면, Y축은 여행이 얼마나 오래 걸리는지를 알려줍니다. 차트 아래쪽: 빠르고 짧은 여행. 차트 위쪽: 느리고 긴 여행. 화성급 목적지의 경우 축은 대략 100일에서 500일까지 걸쳐 있습니다. 목성의 경우는 년 단위입니다."
- },
- {
-  "rel": "science/porkchop/tof-axis.json",
-  "at": "narrative_101.1",
-  "en": "Now you can read the entire trade-off in one glance. Walk straight up a column on the porkchop — that's the SAME launch date but different transit times. Near the bottom (fast trip) the cells turn red — fast trips are expensive because you're forcing a steep transfer ellipse. Higher up (slower trip) the cells go cool blue — that's the natural Hohmann band where the math wants the trip to take.",
-  "cur": "이제 전체 트레이드오프를 한눈에 읽을 수 있습니다. 포크촙에서 한 열을 수직으로 따라가보세요 — 그것은 동일한 발사 날짜이지만 서로 다른 비행 시간을 나타냅니다. 아래쪽 근처(빠른 여행)에서는 셀이 빨간색으로 변합니다 — 빠른 여행은 가파른 전이 타원을 강제하기 때문에 비용이 많이 듭니다. 위쪽으로 올라가면(느린 여행) 셀이 시원한 파란색으로 변합니다 — 그것이 수학적으로 여행이 자연스럽게 걸리기를 원하는 Hohmann 대역입니다."
- },
- {
-  "rel": "science/porkchop/tof-axis.json",
-  "at": "narrative_101.2",
-  "en": "This is why a Hohmann transfer to Mars is always around 8.5 months. Pull below that and you're paying steeply for the speed. Pull way above and you're loitering for no reason. The porkchop visualises that trade-off as a colour gradient up each column. Cargo missions can afford slow; crew missions usually can't, because every extra month is more food, water, oxygen, and radiation exposure.",
-  "cur": "이것이 화성으로의 Hohmann 전이가 항상 약 8.5개월이 걸리는 이유입니다. 그 아래로 내려가면 속도에 대해 큰 대가를 치르게 됩니다. 훨씬 위로 올라가면 이유 없이 배회하는 것입니다. 포크촙은 이러한 트레이드오프를 각 열을 따라 색상 그라데이션으로 시각화합니다. 화물 임무는 느린 속도를 감당할 수 있지만, 승무원 임무는 보통 그럴 수 없습니다. 왜냐하면 추가되는 매달마다 더 많은 식량, 물, 산소, 그리고 방사선 노출이 필요하기 때문입니다."
- },
- {
-  "rel": "science/porkchop/tof-axis.json",
-  "at": "body_paragraphs.0",
-  "en": "Y-axis is transit duration. For Mars-class targets the natural Hohmann transit is ~250 days, so Orrery's Y range runs roughly 100-500 days. For Jupiter or Saturn the Hohmann transit is years, so the axis is in years.",
-  "cur": "Y축은 비행 기간입니다. 화성급 목표의 경우 자연스러운 Hohmann 비행은 ~250일이므로, Orrery의 Y 범위는 대략 100-500일로 설정됩니다. 목성이나 토성의 경우 Hohmann 비행은 년 단위이므로, 축도 년 단위로 표시됩니다."
- },
- {
-  "rel": "science/porkchop/tof-axis.json",
-  "at": "body_paragraphs.1",
-  "en": "Different rows on the porkchop trade transit time against ∆v cost. The cheapest cells (Hohmann band) sit at the natural Hohmann transit time. Pull the transit time down (faster trip) and the ∆v cost climbs steeply. Pull it up (slower trip) and you get cheaper but slower options — sometimes worth it for cargo or non-time-sensitive payloads.",
-  "cur": "포크촙의 서로 다른 행은 비행 시간과 ∆v 비용을 맞바꿉니다. 가장 저렴한 셀(Hohmann 대역)은 자연스러운 Hohmann 비행 시간에 위치합니다. 비행 시간을 줄이면(더 빠른 여행) ∆v 비용이 급격히 증가합니다. 늘리면(더 느린 여행) 더 저렴하지만 느린 옵션을 얻게 됩니다 — 화물이나 시간에 민감하지 않은 탑재체의 경우 때때로 가치가 있습니다."
- },
- {
-  "rel": "science/porkchop/tof-axis.json",
-  "at": "body_paragraphs.2",
-  "en": "The shape of the cheap zone tells you about trade-offs. A narrow Hohmann band means the optimum is sharp; a wide cheap zone means you have flexibility. Mars's porkchop has a narrow optimum. Jupiter's wider — the gravity assist landscape spreads launch options across more dates.",
-  "cur": "저렴한 영역의 형태는 트레이드오프에 대해 알려줍니다. 좁은 Hohmann 대역은 최적값이 날카롭다는 것을 의미하고, 넓은 저렴한 영역은 유연성이 있다는 것을 의미합니다. 화성의 포크촙은 좁은 최적값을 가지고 있습니다. 목성은 더 넓습니다 — 중력 도움 환경이 발사 옵션을 더 많은 날짜에 걸쳐 분산시킵니다."
- },
- {
-  "rel": "science/porkchop/viability.json",
-  "at": "intro_sentence",
-  "en": "A cell is viable when your rocket's ∆v capability ≥ the cell's ∆v cost — and the porkchop turns that comparison into a yes/no map.",
-  "cur": "셀은 로켓의 ∆v 능력 ≥ 셀의 ∆v 비용일 때 가능하며, 포크촙은 그 비교를 예/아니오 지도로 변환합니다."
- },
- {
-  "rel": "science/porkchop/viability.json",
-  "at": "narrative_101.0",
-  "en": "Here's the question that turns a porkchop from a pretty heatmap into a real mission decision: can my rocket actually fly this? Each rocket — Falcon Heavy, SLS, Atlas V, you name it — has a published ∆v capability for a given payload mass. Compare that ceiling to the porkchop's per-cell costs and you have a yes/no map.",
-  "cur": "포크촙을 아름다운 히트맵에서 실제 미션 결정으로 바꾸는 질문이 여기 있습니다: 내 로켓이 정말 이것을 날 수 있을까? 각 로켓 — Falcon Heavy, SLS, Atlas V 등 — 주어진 페이로드 질량에 대해 공개된 ∆v 능력을 가지고 있습니다. 그 한계를 포크촙의 셀별 비용과 비교하면 예/아니오 지도를 얻습니다."
- },
- {
-  "rel": "science/porkchop/viability.json",
-  "at": "narrative_101.1",
-  "en": "Cells where the rocket's capability exceeds the cost are doable, with margin to spare. Cells where capability matches cost exactly are doable but tight — risky, no slack for things going wrong. Cells where the cost exceeds the capability? That trajectory is simply not flyable with that rocket. You can want it all you want; physics says no.",
-  "cur": "로켓의 능력이 비용을 초과하는 셀은 실행 가능하며 여유가 있습니다. 능력이 비용과 정확히 일치하는 셀은 실행 가능하지만 타이트합니다 — 위험하고 뭔가 잘못되었을 경우 여유가 없습니다. 비용이 능력을 초과하는 셀? 그 궤도는 단순히 그 로켓으로 비행할 수 없습니다. 아무리 원해도 물리학이 아니라고 합니다."
- },
- {
-  "rel": "science/porkchop/viability.json",
-  "at": "narrative_101.2",
-  "en": "Pick a rocket on /plan and the porkchop overlays a margin/deficit colour. The lobe shrinks for smaller rockets, expands for bigger ones. This is how mission planners actually work: try a vehicle, see what's feasible, see what isn't, swap vehicle, payload, or schedule until the cheap zone fits inside the rocket's capability. Real flight planning is exactly this iteration, just with more decimal places.",
-  "cur": "/plan에서 로켓을 선택하면 포크촙이 여유/부족 색상을 오버레이합니다. 작은 로켓의 경우 엽이 축소되고 더 큰 로켓의 경우 확장됩니다. 이것이 미션 플래너가 실제로 작동하는 방식입니다: 비행체를 시도하고, 가능한 것을 확인하고, 불가능한 것을 확인하고, 저렴한 영역이 로켓의 능력 내에 들어갈 때까지 비행체, 페이로드 또는 일정을 바꿉니다. 실제 비행 계획은 정확히 이 반복이며, 소수점 자리가 더 많을 뿐입니다."
- },
- {
-  "rel": "science/porkchop/viability.json",
-  "at": "body_paragraphs.0",
-  "en": "Pick a vehicle. Falcon Heavy, SLS Block 1, Atlas V N22, whatever. That vehicle has a published C3-vs-payload-mass performance curve — heavier payloads shrink the reachable lobe; lighter ones expand it. For a given payload mass you can read off the maximum C3 (or equivalent departure ∆v) the vehicle can deliver, then compare against the porkchop: every cell where ∆v_cost ≤ capability is a feasible launch opportunity. Every cell where it's greater is impossible without a different vehicle or a lighter spacecraft.",
-  "cur": "비행체를 선택하세요. Falcon Heavy, SLS Block 1, Atlas V N22, 무엇이든. 그 비행체는 공개된 C3 대 페이로드 질량 성능 곡선을 가지고 있습니다 — 더 무거운 페이로드는 도달 가능한 엽을 축소합니다; 더 가벼운 것은 확장합니다. 주어진 페이로드 질량의 경우 비행체가 전달할 수 있는 최대 C3(또는 동등한 출발 ∆v)을 읽을 수 있고, 포크촙과 비교할 수 있습니다: ∆v_cost ≤ capability인 모든 셀은 가능한 발사 기회입니다. 이것이 더 큰 경우는 다른 비행체 없이 또는 더 가벼운 우주선 없이 불가능합니다."
- },
- {
-  "rel": "science/porkchop/viability.json",
-  "at": "body_paragraphs.1",
-  "en": "On `/plan` you can pick a launch vehicle and Orrery overlays a margin/deficit indicator. Cool teal cells become 'doable, big margin.' Yellow cells become 'doable but tight.' Red cells become impossible-with-this-vehicle, and switch to a deficit display showing how much more capability you'd need.",
-  "cur": "`/plan`에서 발사 비행체를 선택할 수 있고 Orrery는 여유/부족 표시기를 오버레이합니다. 멋진 청록색 셀은 '실행 가능, 큰 여유'가 됩니다. 노란색 셀은 '실행 가능하지만 타이트'가 됩니다. 빨간색 셀은 이 비행체로 불가능하게 되고, 필요한 추가 능력이 얼마나 되는지 보여주는 부족 표시로 전환됩니다."
- },
- {
-  "rel": "science/porkchop/viability.json",
-  "at": "body_paragraphs.2",
-  "en": "This is mission feasibility analysis in one view. Real planners run it many times — for different vehicles, payload masses, trajectory variants — to find the cheapest combination that meets the science requirements. The porkchop is the visualisation; the underlying choice is always 'how much rocket do I need vs how much trip am I buying.'",
-  "cur": "이것은 한 보기에서의 미션 가능성 분석입니다. 실제 플래너는 여러 번 실행합니다 — 다양한 비행체, 페이로드 질량, 궤도 변형의 경우 — 과학 요구사항을 충족하는 가장 저렴한 조합을 찾기 위해. 포크촙은 시각화입니다; 기본적인 선택은 항상 '내가 필요로 하는 로켓이 얼마나 많은가 대 내가 사고 있는 여행이 얼마나 많은가'입니다."
- },
- {
-  "rel": "science/porkchop/what-is-a-porkchop.json",
-  "at": "intro_sentence",
-  "en": "A 2D heatmap showing trajectory cost across every (departure date, transit time) pair — the standard tool for finding launch windows. (Standard porkchops contour C3 and arrival V∞; Orrery uses a simplified ∆v-in-km/s colour scale.)",
-  "cur": "모든 (출발일, 비행시간) 조합에 대한 궤적 비용을 나타내는 2D 히트맵 — 발사 윈도우를 찾는 표준 도구. (표준 포크촉 도표는 C3와 도착 V∞를 표시하며, Orrery는 단순화된 ∆v(km/s) 색상 척도를 사용합니다.)"
- },
- {
-  "rel": "science/porkchop/what-is-a-porkchop.json",
-  "at": "narrative_101.0",
-  "en": "When mission planners want to know if a trip to Mars is feasible, they don't compute one trajectory. They compute MILLIONS — every possible departure date, every possible transit time, in a giant grid — and they paint a heatmap. Cheap trajectories show up as cool blue zones, expensive ones as red. The result, weirdly, looks like a pork chop. The cheap zone is the meat of the chop; the expensive ridge is the bone.",
-  "cur": "임무 계획자들이 화성 탐사가 가능한지 판단할 때, 단 하나의 궤적을 계산하지 않습니다. MILLIONS을 계산합니다 — 모든 가능한 출발일, 모든 가능한 비행시간을 거대한 격자로 — 그리고 히트맵을 그립니다. 저렴한 궤적은 차분한 파란색 영역으로, 비싼 궤적은 빨간색으로 표시됩니다. 결과는 웃기게도 포크촉처럼 보입니다. 저렴한 영역이 촉의 살이고, 비싼 능선이 뼈입니다."
- },
- {
-  "rel": "science/porkchop/what-is-a-porkchop.json",
-  "at": "narrative_101.1",
-  "en": "Why bother with a whole heatmap instead of just one optimal answer? Because real missions have constraints. Maybe a particular launch pad is only available in 2026. Maybe you need to land before a dust storm season ends. Maybe a particular rocket is only ready by a certain month. The porkchop lets you see ALL the trade-offs at once — pick the cheap-enough trajectory that fits your real-world calendar.",
-  "cur": "단순히 하나의 최적 답변 대신 전체 히트맵을 굳이 만드는 이유가 뭘까요? 실제 임무는 제약 조건이 있기 때문입니다. 특정 발사대가 2026년에만 이용 가능할 수도 있습니다. 먼지 폭풍 시즌이 끝나기 전에 착륙해야 할 수도 있습니다. 특정 로켓이 특정 월 이후에만 준비될 수도 있습니다. 포크촉 도표를 보면 모든 트레이드오프를 한눈에 볼 수 있습니다 — 실제 일정에 맞는 저렴한 궤적을 선택하세요."
- },
- {
-  "rel": "science/porkchop/what-is-a-porkchop.json",
-  "at": "narrative_101.2",
-  "en": "Open /plan in this simulator. Pick a destination. Pick a launch year. The thing you're looking at is a porkchop, computed live. Each pixel is one Lambert problem — \"leave Earth on day X, arrive on day Y, what does it cost?\" Hover any pixel and the simulator tells you the exact dates and ∆v. Click and the trajectory loads into /fly. The next four sections explain how to read it.",
-  "cur": "이 시뮬레이터에서 /plan을 열어보세요. 목적지를 선택하세요. 발사 연도를 선택하세요. 보고 있는 것이 포크촉이고, 실시간으로 계산됩니다. 각 픽셀은 하나의 Lambert 문제입니다 — \"지구를 X일에 떠나서 Y일에 도착하면 비용이 얼마인가?\" 어떤 픽셀에든 마우스를 올려놓으면 시뮬레이터가 정확한 날짜와 ∆v를 알려줍니다. 클릭하면 궤적이 /fly에 로드됩니다. 다음 네 섹션에서 읽는 방법을 설명합니다."
- },
- {
-  "rel": "science/porkchop/what-is-a-porkchop.json",
-  "at": "body_paragraphs.0",
-  "en": "Pick a departure date on the X axis. Pick a transit time on the Y axis. The colour of that cell tells you how much ∆v it would cost to fly that mission. Cool teal: cheap. Yellow: moderate. Red: very expensive. Repeat for every pixel and you get a porkchop plot — named for the way the cheap-zone contours form a pork-chop-shaped lobe.",
-  "cur": "X축에서 출발일을 선택합니다. Y축에서 비행시간을 선택합니다. 그 셀의 색상이 그 임무를 비행하는 데 필요한 ∆v를 나타냅니다. 차분한 청록색: 저렴. 노란색: 중간. 빨간색: 매우 비싼. 모든 픽셀에 대해 반복하면 포크촉 도표가 나옵니다 — 저렴한 영역의 등고선이 포크촉 모양의 엽을 이루는 방식 때문에 붙은 이름입니다."
- },
- {
-  "rel": "science/porkchop/what-is-a-porkchop.json",
-  "at": "body_paragraphs.1",
-  "en": "Each cell is the answer to a Lambert problem: 'leave Earth on date X, arrive at the destination on date X + Y, what's the ∆v required?' Solve Lambert millions of times across a date grid and the contours emerge naturally. The natural minima are launch windows — the cheap zones where Hohmann-like transfers exist.",
-  "cur": "각 셀은 Lambert 문제의 답입니다: '지구를 X일에 떠나서 목적지에 X + Y일에 도착하면 필요한 ∆v는?' Lambert를 날짜 격자 전체에서 수백만 번 풀면 등고선이 자연스럽게 나타납니다. 자연스러운 최솟값은 발사 윈도우입니다 — Hohmann 유사 전이가 존재하는 저렴한 영역입니다."
- },
- {
-  "rel": "science/porkchop/what-is-a-porkchop.json",
-  "at": "body_paragraphs.2",
-  "en": "Orrery's `/plan` route shows you the porkchop for any of nine destinations (Mars, Mercury, Venus, the gas giants, Pluto, Ceres). Hover any cell to see the exact dates and ∆v. Click to load that mission into `/fly`.",
-  "cur": "Orrery의 `/plan` 경로는 9개 목적지(화성, 수성, 금성, 목성형 행성, 명왕성, 세레스) 중 하나의 포크촉을 보여줍니다. 어떤 셀에든 마우스를 올려놓으면 정확한 날짜와 ∆v를 볼 수 있습니다. 클릭하면 그 임무가 `/fly`에 로드됩니다."
- },
- {
-  "rel": "science/porkchop/what-is-a-porkchop.json",
-  "at": "diagram_caption",
-  "en": "Porkchop plot: X = departure date, Y = transit time, colour = ∆v cost (Orrery's simplified scale; standard plots show C3 / arrival V∞). Cheap zones cluster around natural Hohmann windows.",
-  "cur": "포크촉 도표: X = 출발일, Y = 비행시간, 색상 = ∆v 비용(Orrery 단순화 척도; 표준 도표는 C3 / 도착 V∞를 표시함). 저렴한 영역이 자연스러운 Hohmann 윈도우 주변에 집중됩니다."
- },
- {
-  "rel": "science/propulsion/_intro.json",
-  "at": "headline",
-  "en": "Propulsion — the rocket equation is the boss fight.",
-  "cur": "추진 — 로켓 방정식은 최종 보스전입니다."
- },
- {
-  "rel": "science/propulsion/_intro.json",
-  "at": "paragraphs.0",
-  "en": "Spaceflight has one universal currency: ∆v, pronounced \"delta-v,\" measured in kilometres per second. Every burn costs you some. Every move on a trajectory has a price tag. The mission's ∆v budget — sum of everything you'll spend, end to end — is the single number that says whether the mission can fly.",
-  "cur": "우주비행에는 하나의 보편적 화폐가 있습니다: ∆v, \"델타-브이\"라고 읽으며, 초당 킬로미터로 측정됩니다. 모든 연소는 일정량을 소모합니다. 궤도상의 모든 이동에는 가격표가 붙어 있습니다. 미션의 ∆v 예산 — 처음부터 끝까지 소비할 모든 것의 합 — 은 미션이 실행 가능한지를 말해주는 단일 숫자입니다."
- }
+  {
+    "rel": "science/planets/active-spacecraft-survey.json",
+    "at": "body_paragraphs.0",
+    "en": "Mars — orbital fleet as of 2026: MRO (NASA, since 2006, 300 km polar orbit, HiRISE camera + atmosphere observations + data relay). MAVEN (NASA, since 2014, 6200 km orbit, atmospheric escape rates). Mars Express (ESA, since 2003, 4200 km, mineralogy + atmosphere). ExoMars TGO (ESA, since 2016, 400 km, trace gases + Russian relay). Mangalyaan / MOM (ISRO, 2014–2022, methane + atmosphere — first Asian mission to successfully orbit Mars). Tianwen-1 (CNSA, since 2021, 4250 km, delivered Zhurong rover + global mapping). Hope / EMM (UAE Space Agency, since 2021, 30,000 km equatorial, atmospheric science). On the surface: Perseverance + Curiosity rovers (both NASA) and the now-grounded Ingenuity helicopter.",
+    "cur": "화성 — 2026년 현재 궤도 함대: MRO(NASA, 2006년부터, 300 km 극궤도, HiRISE 카메라 + 대기 관측 + 데이터 중계). MAVEN(NASA, 2014년부터, 6200 km 궤도, 대기 탈출 속도). Mars Express(ESA, 2003년부터, 4200 km, 광물학 + 대기). ExoMars TGO(ESA, 2016년부터, 400 km, 미량 가스 + 러시아 중계). Mangalyaan / MOM(ISRO, 2014–2022, 메탄 + 대기 — 화성 궤도에 성공한 첫 번째 아시아 임무). Tianwen-1(CNSA, 2021년부터, 4250 km, Zhurong 로버 투입 + 전역 지도 작성). Hope / EMM(UAE 우주국, 2021년부터, 30,000 km 적도 궤도, 대기 과학). 지표면에서: Perseverance + Curiosity 로버(둘 다 NASA)와 현재 운영 종료된 Ingenuity 헬리콥터."
+  },
+  {
+    "rel": "science/planets/active-spacecraft-survey.json",
+    "at": "body_paragraphs.1",
+    "en": "Jupiter system: Juno (NASA, since 2016, polar 53-day orbit). Designed to map Jupiter's magnetic field + atmosphere + interior structure. Polar orbit avoids Jupiter's intense equatorial radiation belt — the belt is so harsh that other gas-giant orbiters would be permanently damaged within months on an equatorial trajectory. Juno's mission has been extended multiple times; it will continue until it's deorbited into Jupiter (designed to prevent biological contamination of Europa, which the spacecraft passes near). The next Jupiter mission is ESA's JUICE (Jupiter Icy moons Explorer, arriving 2031); NASA's Europa Clipper launches 2024 and arrives 2030.",
+    "cur": "목성 시스템: Juno(NASA, 2016년부터, 극궤도 53일 주기). 목성의 자기장 + 대기 + 내부 구조를 매핑하도록 설계되었습니다. 극궤도는 목성의 강력한 적도 방사선 대를 피합니다 — 이 대는 너무 심해서 다른 가스 거대 행성 궤도선은 적도 궤적에서 몇 개월 내에 영구적으로 손상될 것입니다. Juno의 임무는 여러 번 연장되었으며, 목성에 자체 궤도 이탈할 때까지 계속됩니다(이는 우주선이 지나가는 유로파의 생물 오염을 방지하기 위해 설계됨). 다음 목성 임무는 ESA의 JUICE(Jupiter Icy moons Explorer, 2031년 도착)입니다. NASA의 Europa Clipper는 2024년에 발사되고 2030년에 도착합니다."
+  },
+  {
+    "rel": "science/planets/active-spacecraft-survey.json",
+    "at": "body_paragraphs.2",
+    "en": "Venus: Akatsuki / PLANET-C (JAXA, since 2015 after a 5-year recovery). Cloud-top circulation, super-rotation studies, lightning detection. The next Venus missions launch in the late 2020s — NASA's DAVINCI + VERITAS, ESA's EnVision, ISRO's Shukrayaan. After a 30-year hiatus in Venus exploration (Magellan ended in 1994), the late 2020s will see four new orbiters arrive within a few years of each other. Mercury currently has no active spacecraft (MESSENGER ended in 2015); ESA/JAXA's BepiColombo arrives 2026. Uranus + Neptune have only ever been visited by Voyager 2 (1986 + 1989); a dedicated Uranus mission is the top priority of the 2023 Planetary Decadal Survey.",
+    "cur": "금성: Akatsuki / PLANET-C(JAXA, 5년의 복구 후 2015년부터). 구름 꼭대기 순환, 초회전 연구, 번개 감지. 다음 금성 임무는 2020년대 후반에 발사됩니다 — NASA의 DAVINCI + VERITAS, ESA의 EnVision, ISRO의 Shukrayaan. 금성 탐사의 30년 공백(Magellan은 1994년에 종료) 후, 2020년대 후반에는 4개의 새로운 궤도선이 서로 몇 년 안에 도착할 것입니다. 수성은 현재 활성 우주선이 없습니다(MESSENGER는 2015년에 종료됨). ESA/JAXA의 BepiColombo는 2026년에 도착합니다. 천왕성 + 해왕성은 Voyager 2에 의해서만 방문했습니다(1986 + 1989). 전담 천왕성 임무는 2023년 행성 10년 조사의 최우선 과제입니다."
+  },
+  {
+    "rel": "science/planets/active-spacecraft-survey.json",
+    "at": "diagram_caption",
+    "en": "Active orbiters by planet, 2026. Mars: 6 (NASA, ESA, CNSA, UAESA). Jupiter: 1 (NASA Juno). Venus: 1 (JAXA Akatsuki). Saturn, Mercury, outer planets: none active.",
+    "cur": "행성별 활성 궤도선, 2026년. 화성: 6개(NASA, ESA, CNSA, UAESA). 목성: 1개(NASA Juno). 금성: 1개(JAXA Akatsuki). 토성, 수성, 외부 행성: 활성화된 것 없음."
+  },
+  {
+    "rel": "science/planets/asteroid-belt.json",
+    "at": "intro_sentence",
+    "en": "A planet that almost was — the rocky remnants between Mars and Jupiter that Jupiter's gravity wouldn't let coalesce.",
+    "cur": "거의 행성이 될 뻔했던 — 화성과 목성 사이에 있는 암석 파편들로, 목성의 중력이 합체되는 것을 허용하지 않았다."
+  },
+  {
+    "rel": "science/planets/asteroid-belt.json",
+    "at": "narrative_101.0",
+    "en": "When Bode's Law predicted a body at 2.8 AU between Mars and Jupiter in the late 18th century, astronomers went hunting. On New Year's Day 1801, Giuseppe Piazzi at the Palermo observatory found something. He called it Ceres after the patron goddess of Sicily, and at first the Royal Society classified it as the missing planet. Within four years a second body — Pallas — turned up in the same neighborhood. Then Juno (1804) and Vesta (1807). The realization dawned slowly: this wasn't a planet, it was a swarm.",
+    "cur": "18세기 후반 보데의 법칙이 화성과 목성 사이 2.8 AU에 천체가 있을 것이라고 예측했을 때, 천문학자들은 탐색에 나섰다. 1801년 신년 첫날, 팔레르모 천문대의 주세페 피아치가 무언가를 발견했다. 그는 이것을 시칠리아의 수호 여신의 이름을 따서 세레스라고 불렀고, 처음에 왕립학회는 이를 잃어버린 행성으로 분류했다. 4년 안에 두 번째 천체인 팔라스가 같은 지역에서 발견되었다. 그 다음 Juno(1804년)와 베스타(1807년)가 발견되었다. 깨달음은 천천히 찾아왔다: 이것은 행성이 아니라 떼였다."
+  },
+  {
+    "rel": "science/planets/asteroid-belt.json",
+    "at": "narrative_101.1",
+    "en": "Today catalogues list more than 1.3 million asteroids larger than 1 km, and dynamical models put the population of 100-metre-class bodies in the hundreds of millions. The total mass is a surprise: only about 4% of the Moon, and roughly a third of that sits in Ceres alone. The belt is mostly empty — the average separation between members is in the millions of kilometres. The dense rock-field of cinema is a Hollywood invention.",
+    "cur": "오늘날 목록에는 1 km보다 큰 소행성이 130만 개 이상 등재되어 있으며, 역학 모델에 따르면 100미터급 천체의 개체수는 수억 개에 달한다. 총 질량은 놀라운데: 달의 약 4%에 불과하며, 그 중 약 3분의 1이 세레스 하나에만 존재한다. 소행성대는 대부분 비어 있다 — 구성원들 사이의 평균 거리는 수백만 킬로미터이다. 영화에 나오는 밀집된 암석 지대는 Hollywood의 창작물이다."
+  },
+  {
+    "rel": "science/planets/asteroid-belt.json",
+    "at": "narrative_101.2",
+    "en": "Why no planet ever formed here is itself the story. Jupiter sits just outside the belt at 5.2 AU, and during the solar system's formation Jupiter's gravity stirred the inner-belt material too vigorously for accretion to win against fragmentation. Whatever was trying to grow into a planet got smashed back into fragments faster than it could re-accrete. The asteroid belt is the unfinished planet, frozen at an earlier stage of solar-system evolution.",
+    "cur": "여기서 행성이 형성되지 않은 이유 자체가 이야기이다. 목성은 5.2 AU에서 소행성대 바로 밖에 위치하고 있으며, 태양계 형성 동안 목성의 중력이 내부 소행성대 물질을 너무 격렬하게 휘저어서 부착이 파편화에 대항해 이길 수 없었다. 행성으로 성장하려던 것은 재부착할 수 있는 것보다 더 빠르게 파편으로 부서졌다. 소행성대는 미완성 행성이며, 태양계 진화의 초기 단계에 동결되어 있다."
+  },
+  {
+    "rel": "science/planets/asteroid-belt.json",
+    "at": "body_paragraphs.0",
+    "en": "The belt has internal structure. Spectroscopy divides it into three rough zones: the inner belt (2.1–2.5 AU) dominated by stony S-type bodies; the middle belt (2.5–3.2 AU) where carbonaceous C-types take over (Ceres + Hygiea live here); and the outer belt blending into the Trojan asteroids that share Jupiter's orbit at the L4 and L5 Lagrange points. Different parent populations, different formation temperatures, different histories — preserved in the same belt because Jupiter's resonances corralled them.",
+    "cur": "소행성대는 내부 구조를 가지고 있다. 분광학은 이를 대략 세 영역으로 나눈다: 암석질 S형 천체가 지배하는 내부 소행성대(2.1–2.5 AU); 탄소질 C형이 우세한 중간 소행성대(2.5–3.2 AU, 세레스와 히기에이아가 여기 있다); 그리고 L4와 L5 라그랑주 점에서 목성의 궤도를 공유하는 Trojan 소행성과 혼합되는 외부 소행성대. 서로 다른 모체 집단, 서로 다른 형성 온도, 서로 다른 역사 — 목성의 공명이 그들을 가두었기 때문에 같은 소행성대에 보존되어 있다."
+  },
+  {
+    "rel": "science/planets/asteroid-belt.json",
+    "at": "body_paragraphs.1",
+    "en": "Major missions have visited only a handful of belt members directly. NASA's Galileo flyby of Gaspra (1991) was the first close-up image of any asteroid. Dawn (2011 + 2015) orbited Vesta then Ceres — the only spacecraft to ever orbit two extra-terrestrial bodies. Ceres turned out to be a water-ice + brine world: bright sodium-carbonate deposits at Occator Crater are residue from cryovolcanic eruptions of subsurface salty water, and Dawn detected a thin transient atmosphere of water vapor. Vesta is the other extreme — a differentiated rocky proto-planet whose southern hemisphere is one giant 500-km-wide impact basin (Rheasilvia), and pieces blasted out of that impact are the HED meteorite class on Earth.",
+    "cur": "주요 임무들은 소행성대 구성원 중 소수만 직접 방문했다. NASA의 Galileo가 가스프라를 근접 비행한 것(1991년)이 소행성의 첫 근접 이미지였다. Dawn(2011년 + 2015년)은 베스타를 궤도 비행한 후 세레스를 궤도 비행했다 — 두 개의 외계 천체를 궤도 비행한 유일한 우주선이다. 세레스는 수빙과 염수 세계로 밝혀졌다: 오카토르 분화구의 밝은 탄산나트륨 퇴적물은 지하 염수의 극저온 화산 분출의 잔류물이며, Dawn은 수증기의 얇은 일시적 대기를 감지했다. 베스타는 다른 극단이다 — 분화된 암석질 원시 행성으로 남반구는 거대한 500 km 폭의 충돌 분지(레아실비아) 하나이며, 그 충돌로 튕겨나간 조각들이 지구의 HED 운석 등급이다."
+  },
+  {
+    "rel": "science/planets/asteroid-belt.json",
+    "at": "body_paragraphs.2",
+    "en": "Most meteorites that fall on Earth come from the asteroid belt. Yarkovsky drift — uneven thermal re-radiation slowly nudging a body's orbit over millennia — pushes asteroids out of resonance gaps inward to Earth-crossing orbits. Sample-return missions are starting to close the loop directly: JAXA's Hayabusa2 returned 5.4 grams of asteroid Ryugu in 2020, and NASA's OSIRIS-REx returned samples from Bennu in 2023. Both are near-Earth asteroids derived from belt parent bodies. NASA's Lucy mission (launched 2021) is the long game: visiting eight Trojan asteroids plus belt member Dinkinesh, the first multi-Trojan tour, exploring fragments of the outer-belt population that share Jupiter's orbit but stay 60° ahead or behind.",
+    "cur": "지구에 떨어지는 대부분의 운석은 소행성대에서 온다. Yarkovsky 표류 — 불균등한 열 재복사가 수천 년에 걸쳐 천체의 궤도를 천천히 밀어내는 것 — 는 소행성을 공명 간극에서 안쪽으로 밀어내어 지구 교차 궤도로 만든다. 시료 회수 임무들이 직접 고리를 닫기 시작하고 있다: JAXA의 Hayabusa2는 2020년에 소행성 류구의 5.4그램을 회수했고, NASA의 OSIRIS-REx는 2023년에 베누에서 시료를 회수했다. 둘 다 소행성대 모체로부터 유래한 지구 근접 소행성이다. NASA의 Lucy 임무(2021년 발사)는 장기 계획이다: 소행성대 구성원 Dinkinesh를 포함해 8개의 Trojan 소행성을 방문하는 최초의 다중 Trojan 탐사로, 목성의 궤도를 공유하지만 60° 앞이나 뒤에 머무는 외부 소행성대 집단의 파편들을 탐사한다."
+  },
+  {
+    "rel": "science/planets/asteroid-belt.json",
+    "at": "diagram_caption",
+    "en": "The asteroid belt sweep, 2.2–3.2 AU between Mars and Jupiter. Major members Ceres / Vesta / Pallas / Hygiea labelled. Arrows from Jupiter show its gravity stirring the inner belt — the reason no planet ever accreted here.",
+    "cur": "화성과 목성 사이 2.2–3.2 AU의 소행성대 범위. 주요 구성원 세레스 / 베스타 / 팔라스 / 히기에이아가 표시되어 있다. 목성에서 나온 화살표는 내부 소행성대를 휘젓는 목성의 중력을 보여준다 — 여기서 행성이 부착되지 못한 이유이다."
+  },
+  {
+    "rel": "science/planets/axial-tilt-and-seasons.json",
+    "at": "intro_sentence",
+    "en": "Why Earth has seasons, why Uranus rolled onto its side, and why Venus spins backward.",
+    "cur": "지구가 계절을 가지는 이유, 천왕성이 옆으로 누워 있는 이유, 그리고 금성이 역방향으로 회전하는 이유."
+  },
+  {
+    "rel": "science/planets/axial-tilt-and-seasons.json",
+    "at": "narrative_101.0",
+    "en": "If Earth's spin axis were perfectly perpendicular to its orbit, every day would have 12 hours of sunlight everywhere on the planet, year-round. There would be no seasons. The reason your hemisphere gets long summer days and short winter days is that Earth's spin axis is tilted — by 23.4° relative to the orbital plane. As Earth orbits the Sun, the north pole points first toward the Sun (June solstice — long northern days), then away from it six months later (December solstice — short northern days). Same planet, same orbit; just a slowly changing geometry.",
+    "cur": "지구의 자전축이 공전 궤도면에 정확히 수직이라면 지구상 모든 곳에서 연중 매일 12시간의 낮과 12시간의 밤이 될 것이고, 계절이 존재하지 않을 것이다. 당신의 반구가 여름에 긴 낮을 보내고 겨울에 짧은 낮을 보내는 이유는 지구의 자전축이 궤도면에 대해 23.4° 기울어져 있기 때문이다. 지구가 태양 주위를 공전하면서 북극은 먼저 태양을 향했다가(6월 지점 — 북반구의 긴 낮), 6개월 후 태양과 반대쪽을 향한다(12월 지점 — 북반구의 짧은 낮). 같은 행성, 같은 궤도; 단지 천천히 변하는 기하학일 뿐이다."
+  },
+  {
+    "rel": "science/planets/axial-tilt-and-seasons.json",
+    "at": "narrative_101.1",
+    "en": "Every planet has some axial tilt, but the solar system contains some wild outliers. Uranus is tilted 97.77° — its rotation axis lies almost in the orbital plane. Each pole gets 42 Earth-years of continuous sunlight followed by 42 years of continuous darkness. There's no real \"day-night cycle\" near Uranus's poles in the usual sense; just a slow forty-year sunrise. The leading hypothesis is that a giant impact early in Uranus's history tipped the planet over.",
+    "cur": "모든 행성은 어느 정도의 자전축 기울기를 가지고 있지만, 태양계에는 정말로 극단적인 예외들이 있다. 천왕성은 97.77° 기울어져 있으며, 자전축이 거의 궤도면 내에 있다. 각 극은 42년간의 연속적인 햇빛을 받은 후 42년간의 연속적인 어둠을 경험한다. 천왕성의 극 근처에는 통상적인 의미의 '낮-밤 사이클'이 없고, 단지 느린 40년짜리 일출이 있을 뿐이다. 주요 가설은 천왕성 역사 초기의 거대한 충돌이 행성을 뒤집어 놓았다는 것이다."
+  },
+  {
+    "rel": "science/planets/axial-tilt-and-seasons.json",
+    "at": "narrative_101.2",
+    "en": "Venus is even stranger: tilted 177.4°, which is effectively upside-down. The convention is that a planet's \"north pole\" is the one above the ecliptic in the same rotational sense as Earth's. By that convention Venus's rotation is retrograde — spinning the wrong way relative to its orbit. A solar day on Venus lasts 117 Earth days, despite a sidereal rotation of 243 Earth days, because the retrograde spin partially cancels with the orbital motion. Why Venus rotates this way is still unsettled — runaway atmospheric tides are one candidate.",
+    "cur": "금성은 훨씬 더 이상하다: 177.4° 기울어져 있으며, 실질적으로 뒤집혀 있다. 관례에 따르면 행성의 '북극'은 지구의 자전 방향과 같은 의미로 황도면 위에 있는 극이다. 이 관례에 따르면 금성의 자전은 역행성(retrograde)이며, 공전 궤도에 대해 역방향으로 회전한다. 금성의 태양일은 지구의 243일이라는 항성일에도 불구하고 지구의 117일 동안 지속된다. 역행 자전이 공전 운동을 부분적으로 상쇄하기 때문이다. 금성이 이렇게 회전하는 이유는 여전히 미결정 상태이며, 대기 조석 폭주(runaway atmospheric tides)가 하나의 후보 설명이다."
+  },
+  {
+    "rel": "science/planets/axial-tilt-and-seasons.json",
+    "at": "body_paragraphs.0",
+    "en": "Obliquity = the angle between a planet's rotation axis and the line perpendicular to its orbital plane. Values: Mercury 0.034°, Venus 177.36°, Earth 23.44°, Mars 25.19°, Jupiter 3.13°, Saturn 26.73°, Uranus 97.77°, Neptune 28.32°, Pluto 122.53°. The two clusters — small-tilt gas giants except Uranus, and 23-28° rocky bodies + Saturn + Neptune — likely reflect different formation histories. Uranus's 97° is the canonical \"giant impact\" signature; Venus's 177° and Pluto's 122° are still actively debated.",
+    "cur": "자전축 기울기(Obliquity) = 행성의 자전축과 궤도면에 수직인 직선 사이의 각도. 값: 수성 0.034°, 금성 177.36°, 지구 23.44°, 화성 25.19°, 목성 3.13°, 토성 26.73°, 천왕성 97.77°, 해왕성 28.32°, 명왕성 122.53°. 두 집단 — 천왕성을 제외한 작은 기울기의 가스 행성들, 그리고 23~28° 범위의 암석 행성들 + 토성 + 해왕성 — 은 아마도 다른 형성 역사를 반영한다. 천왕성의 97°는 정형적인 '거대 충돌' 서명이며; 금성의 177°와 명왕성의 122°는 여전히 활발히 논쟁 중이다."
+  },
+  {
+    "rel": "science/planets/axial-tilt-and-seasons.json",
+    "at": "body_paragraphs.1",
+    "en": "Seasons on a planet are driven by the changing angle between its rotation axis and the Sun-planet line as the planet orbits. The sub-solar latitude (where the Sun is directly overhead at noon) oscillates over the year — on Earth between 23.4°N (June solstice) and 23.4°S (December solstice). Hemispheres receive more solar flux when their pole tilts toward the Sun and less when it tilts away; that flux difference, integrated over months, drives surface and atmospheric temperature.",
+    "cur": "행성의 계절은 행성이 공전할 때 자전축과 태양-행성 직선 사이의 각도가 변함에 따라 주도된다. 아태양점(sub-solar latitude, 정오에 태양이 직접 머리 위에 있는 위도)은 연중 진동한다 — 지구에서는 23.4°N(6월 지점)과 23.4°S(12월 지점) 사이에서. 반구들은 극이 태양을 향할 때 더 많은 태양 복사선을 받고 멀어질 때는 더 적게 받는다; 이 복사선 차이는 몇 개월에 걸쳐 적분되어 지표면 및 대기 온도를 주도한다."
+  },
+  {
+    "rel": "science/planets/axial-tilt-and-seasons.json",
+    "at": "body_paragraphs.2",
+    "en": "Earth's tilt itself isn't constant — it oscillates between 22.1° and 24.5° (about ±1.2° around the mean) over ~41,000 years, one of the Milankovitch cycles that drive ice-age timing. Mars's tilt is much more variable: simulations show Mars's obliquity has chaotically wandered between 0° and 60° over geologic time, in part because Mars lacks a large moon (Earth's Moon stabilises our tilt). Without the Moon, Earth's tilt might also wander chaotically — a sobering point about how fragile a stable climate is.",
+    "cur": "지구의 기울기 자체는 상수가 아니며, 약 41,000년에 걸쳐 22.1°와 24.5° 사이(평균값에서 약 ±1.2°)에서 진동한다. 이는 빙하기 시기를 주도하는 Milankovitch 사이클 중 하나이다. 화성의 기울기는 훨씬 더 가변적이다: 시뮬레이션에 따르면 화성의 자전축 기울기는 지질학적 시간에 걸쳐 0°에서 60° 사이를 혼란스럽게 떠돌아다녔으며, 부분적으로는 화성이 큰 달을 가지지 않았기 때문이다(지구의 달은 우리의 기울기를 안정화시킨다). 달이 없었다면 지구의 기울기도 혼란스럽게 떠돌아다녔을 것이다 — 안정적인 기후가 얼마나 취약한지에 대한 소름끼치는 지점이다."
+  },
+  {
+    "rel": "science/planets/axial-tilt-and-seasons.json",
+    "at": "diagram_caption",
+    "en": "Obliquity = angle between rotation axis and the orbit normal. Earth at 23.4° drives seasons. Uranus at 97.8° lies on its side; each pole gets 42 years of darkness.",
+    "cur": "자전축 기울기(Obliquity) = 자전축과 궤도 법선 사이의 각도. 지구는 23.4°에서 계절을 주도한다. 천왕성은 97.8°로 옆으로 누워 있으며; 각 극은 42년의 어둠을 경험한다."
+  },
+  {
+    "rel": "science/planets/kuiper-belt.json",
+    "at": "intro_sentence",
+    "en": "A disc of icy bodies beyond Neptune — predicted in 1951, confirmed in 1992, and the source of every short-period comet that flies past Earth.",
+    "cur": "해왕성 너머의 얼음 천체 원판 — 1951년에 예측되었으며, 1992년에 확인되었고, 지구 근처를 지나는 모든 단주기 혜성의 근원입니다."
+  },
+  {
+    "rel": "science/planets/kuiper-belt.json",
+    "at": "narrative_101.0",
+    "en": "Gerard Kuiper proposed it in a 1951 paper: if the early solar system's planet-forming disc extended past Neptune, then somewhere out there a population of icy leftovers should still be orbiting the Sun. They wouldn't have made it into planets because nothing accreted at those distances, but the disc should still be there, dynamically intact. For four decades the prediction sat unconfirmed because the objects are small, cold, and tens of AU away — almost impossible to detect with mid-20th-century telescopes.",
+    "cur": "제러드 카이퍼가 1951년 논문에서 제안했습니다. 태양계 초기의 행성 형성 원판이 해왕성을 넘어 확장되었다면, 어딘가 그 먼 곳에서 얼음으로 된 잔재물들의 집단이 여전히 태양을 공전하고 있어야 한다는 것입니다. 그 거리에서는 아무것도 집적되지 않았기 때문에 행성이 되지 못했겠지만, 원판은 여전히 존재해야 하며 동역학적으로 온전해야 합니다. 4십 년 동안 이 예측은 미확인 상태로 남아 있었습니다. 왜냐하면 천체들이 작고, 차갑고, 수십 AU 떨어져 있어서 20세기 중반의 망원경으로는 거의 감지 불가능했기 때문입니다."
+  },
+  {
+    "rel": "science/planets/kuiper-belt.json",
+    "at": "narrative_101.1",
+    "en": "In 1992 David Jewitt and Jane Luu, observing from Mauna Kea with a then-novel CCD detector, found 1992 QB1 (later named Albion). A ~160 km icy body in a stable circular orbit at 44 AU. Within a year they had a second. Within five years there were dozens. Today catalogues hold more than 3,000 confirmed Kuiper-Belt objects and dynamical models predict over 100,000 bodies larger than 100 km — and on the order of a billion comet-sized objects. The total mass is small (~2% of Earth) but that's still ~50× the asteroid belt.",
+    "cur": "1992년 데이비드 주잇과 제인 르우는 Mauna Kea에서 당시 획기적이던 CCD 검출기를 사용하여 1992 QB1(나중에 Albion으로 명명됨)을 발견했습니다. 약 160km 크기의 얼음 천체로, 44 AU 거리의 안정적인 원형 궤도를 도는 물체였습니다. 1년 내에 두 번째 천체를 발견했고, 5년 내에는 수십 개가 있었습니다. 오늘날 천문학 목록에는 3,000개 이상의 확인된 카이퍼 대 천체가 수록되어 있으며, 역학 모델은 100km보다 큰 천체 100,000개 이상과 대략 10억 개의 혜성 크기 천체들을 예측하고 있습니다. 총 질량은 적지만(약 지구의 2%), 여전히 소행성대의 약 50배입니다."
+  },
+  {
+    "rel": "science/planets/kuiper-belt.json",
+    "at": "narrative_101.2",
+    "en": "Pluto, demoted in 2006, turned out to be the largest known member of the belt rather than the runt of the planets. Eris, discovered in 2005 and slightly more massive than Pluto, is what triggered the IAU's reclassification: if Eris is a planet, then so are Haumea, Makemake, Quaoar, Sedna, and dozens of likely candidates further out. The IAU drew the line at 'dwarf planet' instead, and the Kuiper Belt is the dwarf-planet reservoir.",
+    "cur": "2006년에 강등된 명왕성은 행성의 막내가 아니라 벨트의 알려진 가장 큰 멤버임이 밝혀졌습니다. 2005년에 발견된 에리스는 명왕성보다 약간 더 질량이 크며, 이것이 IAU의 재분류를 촉발했습니다. 에리스가 행성이라면 하우메아, 마케마케, 콰오아, 세드나, 그리고 더 먼 곳의 수십 개의 가능성 있는 후보들도 행성이어야 합니다. IAU는 대신 '왜소행성'으로 경계를 그었으며, 카이퍼 벨트는 왜소행성 저장소입니다."
+  },
+  {
+    "rel": "science/planets/kuiper-belt.json",
+    "at": "body_paragraphs.0",
+    "en": "Structurally the belt has three populations. The classical Kuiper Belt at 42–48 AU holds bodies on nearly circular, low-inclination orbits — the dynamically unperturbed remnant of the original disc, Albion and Quaoar live here. The resonant population is held in 2:3 mean-motion resonance with Neptune (Pluto is the archetype — for every two Pluto orbits, Neptune does three); these are called Plutinos. Then the scattered disc is the eccentric, high-inclination outer extension where Eris and Sedna roam, with perihelia near Neptune and aphelia hundreds of AU out. Each population is a fossil of a different chapter of the early solar system's gravitational history.",
+    "cur": "구조적으로 벨트는 세 개의 집단으로 이루어져 있습니다. 42~48 AU의 고전적 카이퍼 벨트는 거의 원형의 낮은 경사각 궤도에 있는 천체들을 포함합니다 — 원본 원판의 동역학적으로 교란되지 않은 잔재이며, Albion과 콰오아가 여기에 있습니다. 공명 집단은 해왕성과 2:3 평균 운동 공명 상태로 유지됩니다 (명왕성이 원형입니다 — 명왕성의 2번 공전마다 해왕성은 3번 공전합니다). 이들을 플루티노라고 부릅니다. 그리고 산란 원판은 높은 이심율과 높은 경사각의 외부 확장으로, 에리스와 세드나가 돌아다니며, 근일점이 해왕성 근처이고 원일점이 수백 AU 떨어진 곳입니다. 각 집단은 초기 태양계의 중력 역사의 다른 장에 대한 화석입니다."
+  },
+  {
+    "rel": "science/planets/kuiper-belt.json",
+    "at": "body_paragraphs.1",
+    "en": "The Kuiper Belt is the source reservoir for short-period comets — bodies like Halley, Hartley 2, and 67P/Churyumov–Gerasimenko whose orbits return to the inner solar system in less than 200 years. Gravitational nudges from Neptune occasionally fling members inward where solar heating sublimates surface ices into the visible coma and tail. Long-period comets come from much further out (the Oort Cloud at thousands of AU), but short-period comets are Kuiper kin. The European Rosetta mission orbited 67P from 2014 to 2016 and detected glycine + phosphorus + oxygen — the molecular building blocks of life — sublimating off the surface.",
+    "cur": "카이퍼 대는 단주기 혜성의 원천 저수지입니다. 핼리 혜성, 하틀리 2 혜성, 67P/Churyumov–Gerasimenko 같은 천체들은 궤도가 200년 미만의 주기로 내태양계로 돌아옵니다. 해왕성의 중력이 주는 약한 충격이 때때로 이들을 안쪽으로 던지면, 태양의 열이 표면의 얼음을 승화시켜 눈에 보이는 코마와 꼬리를 만듭니다. 장주기 혜성은 훨씬 더 먼 곳(수천 AU 거리의 오르트 구름)에서 나오지만, 단주기 혜성은 카이퍼 계의 천체입니다. European Rosetta 미션은 2014년부터 2016년까지 67P를 공전했으며, 표면에서 승화되고 있는 글리신 + 인 + 산소 — 생명의 분자 구성 요소들 —을 검출했습니다."
+  },
+  {
+    "rel": "science/planets/kuiper-belt.json",
+    "at": "body_paragraphs.2",
+    "en": "New Horizons remains the only spacecraft to have visited the belt directly. The Pluto + Charon flyby on July 14, 2015 returned the first close-up images of a classical Kuiper-Belt object, revealing Sputnik Planitia (a 1,000-km nitrogen-ice plain), water-ice mountains, and Charon's dark red polar tholin deposits. In January 2019 New Horizons reached its Kuiper-Belt extended-mission target Arrokoth — a 36-km bilobate object that looks like two pancakes pressed together, the most pristine planetesimal humans have ever imaged. Voyager 1 + 2 passed through the inner edge of the belt in the 1980s en route to interstellar space, but had no targeted encounters.",
+    "cur": "New Horizons는 벨트를 직접 방문한 유일한 우주선입니다. 2015년 7월 14일의 명왕성 + 카론 플라이바이는 고전적 카이퍼 벨트 천체의 첫 번째 근접 이미지를 반환했으며, 스푸트니크 평원 (1,000 km의 질소 얼음 평원), 물 얼음 산맥, 카론의 검은색 빨간 극지역 썰린 침전물을 드러냈습니다. 2019년 1월 New Horizons는 카이퍼 벨트 확장 임무 대상인 아로코스 — 팬케이크 두 개가 함께 눌려 있는 것처럼 보이는 36 km 쌍엽 천체에 도달했으며, 인류가 촬영한 가장 원시적인 미행성입니다. Voyager 1과 Voyager 2는 1980년대에 성간 우주로 향하면서 벨트의 내부 가장자리를 통과했지만, 목표 조우는 없었습니다."
+  },
+  {
+    "rel": "science/planets/kuiper-belt.json",
+    "at": "diagram_caption",
+    "en": "The Kuiper Belt's three populations. Classical KBOs at 42–48 AU on near-circular orbits; resonant Plutinos in 2:3 with Neptune (Pluto + Charon at 39 AU); the scattered disc extending eccentrically toward the inner Oort Cloud (Eris's aphelion is at 96 AU).",
+    "cur": "카이퍼 벨트의 세 집단. 42~48 AU의 거의 원형 궤도의 고전적 KBO; 해왕성과 2:3 공명의 공명 플루티노 (명왕성 + 카론 39 AU); 내부 오르트 구름을 향해 편심적으로 확장하는 산란 원판 (에리스의 원일점은 96 AU)."
+  },
+  {
+    "rel": "science/planets/lunar-ice.json",
+    "at": "title",
+    "en": "Lunar Ice — water in the permanent dark",
+    "cur": "달의 얼음 — 영구적인 어둠 속의 물"
+  },
+  {
+    "rel": "science/planets/lunar-ice.json",
+    "at": "intro_sentence",
+    "en": "Near the lunar poles, some crater floors have never seen sunlight — and in that perpetual cold, water ice delivered by comets and asteroids over billions of years has accumulated and been trapped.",
+    "cur": "달의 극지역 근처의 일부 크레이터 바닥은 한 번도 햇빛을 본 적이 없으며, 그 지속적인 추위 속에서 수십억 년에 걸쳐 혜성과 소행성이 전달한 수얼음이 쌓여 갇혀 있습니다."
+  },
+  {
+    "rel": "science/planets/lunar-ice.json",
+    "at": "body_paragraphs.0",
+    "en": "The Moon's axial tilt is only about 1.5 degrees, far less than Earth's 23.5 degrees. As a result, sunlight near the poles arrives almost horizontally, and the floors of deep polar craters fall permanently in shadow. These permanently shadowed regions (PSRs) are among the coldest places in the solar system: measured temperatures run below 100 K (−170°C), and some spots near the lunar south pole approach ~25 K. At those temperatures, water ice is stable for billions of years — it simply does not sublimate.",
+    "cur": "달의 자전축 기울임은 약 1.5도로, 지구의 23.5도보다 훨씬 작다. 따라서 극지 근처에 도달하는 태양광은 거의 수평에 가깝게 입사하며, 깊은 극지 크레이터의 바닥은 영구적으로 그림자에 가려진다. 이러한 영구 음영 지역(PSR)은 태양계에서 가장 추운 곳들 중 하나이다. 측정된 온도는 100 K(−170°C) 이하이며, 달의 남극 근처의 일부 지역은 약 25 K에 달한다. 이러한 온도에서 물의 얼음은 수십억 년 동안 안정적이다. 즉, 승화하지 않는다."
+  },
+  {
+    "rel": "science/planets/lunar-ice.json",
+    "at": "body_paragraphs.1",
+    "en": "Evidence for water in PSRs has been assembled by several missions. India's Chandrayaan-1 carried NASA's Moon Mineralogy Mapper (M3) instrument, which in 2009 detected the spectral signature of hydroxyl and water molecules at the surface across a range of latitudes — including sunlit terrain, where the solar wind may be creating water by implanting hydrogen into oxygen-bearing minerals. Most dramatically, NASA's LCROSS mission in 2009 deliberately crashed a spent rocket stage into a PSR near the south pole and observed the resulting plume with a following spacecraft; the plume contained water vapour and ice, directly confirming the presence of water in the cold trap.",
+    "cur": "PSR의 물에 대한 증거는 여러 임무에서 수집되었습니다. 인도의 Chandrayaan-1은 NASA의 달 Mineralogy Mapper (M3) 기기를 탑재했으며, 2009년 이 기기는 햇빛이 비치는 지형을 포함한 다양한 위도에서 표면의 수산화 라디칼과 물 분자의 분광 신호를 감지했습니다. 이곳에서 태양풍이 산소를 함유한 광물에 수소를 주입하여 물을 만들 수 있습니다. 가장 극적으로는, NASA의 LCROSS 임무가 2009년 사용한 로켓 단계를 남극 근처의 PSR에 의도적으로 충돌시켰고, 뒤따르는 우주선으로 그 결과 형성된 플루메를 관찰했습니다. 플루메에는 수증기와 얼음이 포함되어 있었으며, 이는 냉각 덫에 물이 존재함을 직접 확인했습니다."
+  },
+  {
+    "rel": "science/planets/lunar-ice.json",
+    "at": "body_paragraphs.2",
+    "en": "Estimates of total water ice in lunar PSRs vary — figures in the range of hundreds of millions to billions of tonnes have been published — but the exact amount, depth profile, concentration, and physical form (pure ice, ice mixed with regolith, or thin frost layers) remain uncertain. The ice appears to be heterogeneous: patchy, mixed with dirt, and not a uniform layer. ISRO's Chandrayaan-3 landing in 2023 targeted the south polar region partly to begin characterising this terrain at close range.",
+    "cur": "달의 PSRs의 총 수얼음 양 추정치는 다양합니다. 수억 톤에서 수십억 톤 범위의 수치가 발표되었으나, 정확한 양, 깊이 프로필, 농도, 물리적 형태(순수 얼음, 레골리스와 혼합된 얼음, 또는 얇은 서리층)는 여전히 불확실합니다. 얼음은 이질적인 것으로 보입니다. 흩어져 있고, 흙과 섞여 있으며, 균일한 층이 아닙니다. ISRO의 Chandrayaan-3이 2023년 남극 지역에 착륙했을 때, 부분적으로는 가까운 거리에서 이 지형을 특성화하기 시작하기 위해 목표했습니다."
+  },
+  {
+    "rel": "science/planets/lunar-ice.json",
+    "at": "body_paragraphs.3",
+    "en": "The strategic significance is straightforward. Water is H2O: split it and you have hydrogen and oxygen — the most energetic chemical rocket propellant combination known. You also have breathable air and drinking water. Lunar polar ice, if accessible and extractable at scale, would make the Moon a potential fuel depot for missions throughout cislunar space and beyond, dramatically reducing the mass that must be launched from Earth. That shift in economics is the central reason that NASA's Artemis program, ESA, ISRO, Roscosmos, and CNSA all target the south pole rather than the equatorial sites of Apollo.",
+    "cur": "전략적 중요성은 명확합니다. 물은 H2O입니다. 그것을 분해하면 수소와 산소를 얻습니다. 이는 알려진 가장 에너지가 높은 화학 로켓 추진제 조합입니다. 또한 호흡할 수 있는 공기와 음료수를 얻습니다. 달의 극지 얼음이 접근 가능하고 규모 있게 추출할 수 있다면, 달은 지구 궤도와 그 너머의 미션을 위한 잠재적 연료 저장소가 될 것이며, 지구에서 발사해야 하는 질량을 크게 줄일 것입니다. 이러한 경제학의 전환이 NASA의 Artemis 프로그램, ESA, ISRO, Roscosmos, CNSA가 모두 적도 지역의 Apollo 착륙지가 아닌 남극을 목표로 하는 중심적인 이유입니다."
+  },
+  {
+    "rel": "science/planets/lunar-ice.json",
+    "at": "body_paragraphs.4",
+    "en": "Access is the hard part. The coldest, darkest terrain on the Moon is also the most difficult to reach and operate in. Rover solar panels generate little power in near-permanent shadow. Equipment must survive extreme thermal cycling between the illuminated crater rim (needed for power) and the shadowed floor (where the ice is). Drilling or mining in low-gravity regolith without contaminating the ice is an unsolved engineering problem. The science is settled enough to motivate a race; the engineering is not.",
+    "cur": "접근이 어려운 부분입니다. 달에서 가장 추운, 가장 어두운 지형은 또한 도달하고 운영하기 가장 어려운 지역입니다. 로버 태양 전지판은 거의 영구적인 그림자에서 거의 전력을 생성하지 못합니다. 장비는 조명이 비치는 크레이터 능선(전력 필요)과 음영 바닥(얼음이 있는 곳) 사이의 극심한 열 주기를 견뎌야 합니다. 저중력 레골리스에서 얼음을 오염시키지 않으면서 시추 또는 채굴하는 것은 아직 해결되지 않은 공학 문제입니다. 과학은 경쟁을 동기부여할 만큼 충분히 해결되었지만, 공학은 아직입니다."
+  },
+  {
+    "rel": "science/planets/lunar-ice.json",
+    "at": "diagram_caption",
+    "en": "Cross-section of a lunar south-pole crater — sunlight skims the rim while the floor stays permanently shadowed, cold-trapping water ice delivered over geological time.",
+    "cur": "달 남극 크레이터의 단면 — 햇빛은 능선을 스치고 지나가는 한편 바닥은 영구적으로 그림자에 싸여 있으며, 지질학적 시간에 걸쳐 전달된 수얼음을 냉각 덫에 가두고 있습니다."
+  },
+  {
+    "rel": "science/planets/magnetic-fields.json",
+    "at": "intro_sentence",
+    "en": "Every planet's magnetosphere is different. Saturn's is uniquely aligned, Uranus's is chaotic, Venus and Mars don't have one at all.",
+    "cur": "모든 행성의 자기권은 서로 다르다. 토성의 자기권은 독특하게 정렬되어 있고, 천왕성의 자기권은 혼돈스러우며, 금성과 화성에는 자기권이 아예 없다."
+  },
+  {
+    "rel": "science/planets/magnetic-fields.json",
+    "at": "narrative_101.0",
+    "en": "Planets generate magnetic fields the same way an electromagnet does — by moving an electrically conducting fluid around. Inside Earth, that fluid is liquid iron in the outer core, sloshing as the planet rotates and as heat from the inner core convects it. The combined motion of a conducting fluid in a rotating frame is called a dynamo, and it spins up its own magnetic field for free. Without convection, or without rotation, or without a conductor, the field decays.",
+    "cur": "행성이 자기장을 만들어내는 원리는 전자석과 같다 — 전기를 전도하는 유체를 움직이는 것이다. 지구 내부에서는 외핵의 액체 철이 그 유체 역할을 하는데, 행성이 자전하고 내핵의 열이 대류를 일으키면서 출렁인다. 회전하는 계 안에서 전도성 유체가 복합적으로 운동하는 것을 다이나모라고 하며, 이 과정에서 자기장이 저절로 형성된다. 대류가 없거나, 자전이 없거나, 전도체가 없으면 자기장은 소멸한다."
+  },
+  {
+    "rel": "science/planets/magnetic-fields.json",
+    "at": "narrative_101.1",
+    "en": "That's why Mars doesn't have a global magnetic field today. Four billion years ago it did — we can see frozen-in magnetisation in southern-hemisphere crustal rocks where the dynamo's signature got locked in. But Mars is small, so its interior cooled faster than Earth's, the iron core froze, convection stopped, and the dynamo died. Solar wind has been stripping Mars's atmosphere ever since — there's no magnetic shield deflecting it. Venus is the opposite case: hot inside, no shortage of conductor, but its 243-day rotation is so slow that the dynamo never spins up properly.",
+    "cur": "화성에 오늘날 전 지구적 자기장이 없는 이유가 바로 그것이다. 40억 년 전에는 있었다 — 남반구 지각 암석에 다이나모의 흔적이 동결된 자화 형태로 남아 있다. 그러나 화성은 작기 때문에 내부가 지구보다 빨리 냉각되었고, 철 핵이 굳으면서 대류가 멈추고 다이나모가 소멸했다. 그 이후로 태양풍이 화성의 대기를 꾸준히 벗겨내고 있다 — 태양풍을 막아줄 자기 방패가 없기 때문이다. 금성은 반대의 경우다. 내부는 뜨겁고 전도체도 충분하지만, 243일에 달하는 자전 주기가 너무 느려서 다이나모가 제대로 작동하지 못한다."
+  },
+  {
+    "rel": "science/planets/magnetic-fields.json",
+    "at": "narrative_101.2",
+    "en": "Then there's Saturn — a gas giant with a dynamo so cleanly aligned with its rotation axis that the magnetic tilt is essentially zero. Every other dynamo we know has at least some offset (Earth 10.5°, Jupiter 9.6°), but Saturn's is < 1°. Nobody's sure why. The leading theory is that Saturn has an unusual layer structure that mechanically smooths the field's symmetry, but the mechanism is debated. Saturn's near-perfect alignment is one of the unsolved puzzles of planetary physics.",
+    "cur": "그런가 하면 토성은 — 자기 다이나모가 자전축과 너무나 깔끔하게 정렬되어 있어 자기 기울기가 사실상 0에 가까운 가스 거성이다. 우리가 알고 있는 다른 모든 다이나모는 최소한 어느 정도의 편차가 있지만(지구 10.5°, 목성 9.6°), 토성은 < 1°다. 왜 그런지는 아직 아무도 확실히 모른다. 유력한 이론은 토성에 비정상적인 층 구조가 있어 자기장의 대칭성을 기계적으로 평탄화한다는 것이지만, 그 메커니즘은 여전히 논쟁 중이다. 토성의 거의 완벽한 정렬은 행성 물리학의 미해결 난제 중 하나다."
+  },
+  {
+    "rel": "science/planets/magnetic-fields.json",
+    "at": "body_paragraphs.0",
+    "en": "Magnetic-axis tilt (angle between the dipole and the rotation axis) for each planet with a known dynamo: Mercury 0.7°, Earth 10.5°, Jupiter 9.6°, Saturn ~0°, Uranus 58.6°, Neptune 46.9°. Venus, Mars, and Pluto have no globally significant dipole today. Uranus and Neptune's wildly off-axis dipoles are also offset from the planet's centre — Uranus's by about 1/3 of the planet's radius. The conventional dynamo (iron core) can't easily produce that geometry; the favoured explanation is that Uranus and Neptune host their dynamos in an outer mantle layer of ionic water + ammonia + methane, not in a deep core.",
+    "cur": "다이나모가 알려진 각 행성의 자기축 기울기(쌍극자와 자전축 사이의 각도)는 다음과 같다: 수성 0.7°, 지구 10.5°, 목성 9.6°, 토성 ~0°, 천왕성 58.6°, 해왕성 46.9°. 금성, 화성, 명왕성은 현재 전 지구적으로 유의미한 쌍극자를 갖지 않는다. 천왕성과 해왕성의 자기 쌍극자는 축에서 크게 벗어나 있을 뿐 아니라 행성 중심에서도 치우쳐 있는데, 천왕성의 경우 행성 반지름의 약 1/3만큼 어긋나 있다. 통상적인 다이나모(철 핵)로는 이런 기하학적 구조를 쉽게 설명하기 어렵다. 유력한 설명은 천왕성과 해왕성의 다이나모가 깊은 핵이 아니라 이온화된 물·암모니아·메탄으로 이루어진 외부 맨틀 층에서 작동한다는 것이다."
+  },
+  {
+    "rel": "science/planets/magnetic-fields.json",
+    "at": "body_paragraphs.1",
+    "en": "Magnetospheres extend well beyond the planet itself. Earth's reaches about 65,000 km sunward (where it bows against the solar wind) and stretches into a long tail on the night side. Jupiter's magnetosphere is the largest physical structure inside the solar system that isn't the Sun's heliosphere: its magnetotail reaches Saturn's orbit, around 1.4 billion km long. The tail is shaped by the solar wind pushing the field downstream; the upstream nose gets compressed.",
+    "cur": "자기권은 행성 자체를 훨씬 넘어서까지 뻗어 있다. 지구의 자기권은 태양 방향으로 약 65,000 km까지 미치며(태양풍에 맞서 활처럼 휘는 곳), 야간 측으로는 긴 꼬리를 늘어뜨린다. 목성의 자기권은 태양의 태양권을 제외하면 태양계 내에서 가장 큰 물리적 구조물이다. 자기 꼬리는 약 14억 km에 달해 토성의 궤도까지 뻗는다. 꼬리는 태양풍이 자기장을 하류 방향으로 밀어냄으로써 형성되며, 상류 쪽 앞부분은 압축된다."
+  },
+  {
+    "rel": "science/planets/magnetic-fields.json",
+    "at": "body_paragraphs.2",
+    "en": "Particles trapped in the magnetic field create radiation belts — the Van Allen belts at Earth, the much more intense ones at Jupiter (one of the reasons missions like Juno fly polar orbits, avoiding the equatorial belt). Where field lines converge near the magnetic poles, charged particles spiral down and excite the atmosphere — that's the aurora. Every magnetised planet has aurorae; we've imaged them on Earth, Jupiter, Saturn, Uranus, and Neptune.",
+    "cur": "자기장에 갇힌 입자들은 방사선대를 형성한다 — 지구의 Van Allen 벨트, 그리고 훨씬 강렬한 목성의 방사선대가 그것이다(Juno 같은 탐사선이 적도 벨트를 피해 극궤도를 비행하는 이유 중 하나다). 자기 극 근처에서 자기력선이 수렴하는 곳에서는 하전 입자들이 나선형으로 하강하여 대기를 들뜨게 만드는데, 이것이 오로라다. 자기장을 가진 모든 행성에는 오로라가 있으며, 우리는 지구, 목성, 토성, 천왕성, 해왕성에서 오로라를 촬영한 바 있다."
+  },
+  {
+    "rel": "science/planets/magnetic-fields.json",
+    "at": "diagram_caption",
+    "en": "Dipole-axis tilts vs rotation axes across the planets. Saturn is uniquely aligned (<1°); Uranus + Neptune are chaotically off-axis, hinting at ionic-water mantle dynamos rather than deep iron cores.",
+    "cur": "행성들의 자전축 대비 쌍극자축 기울기. 토성은 독보적으로 정렬되어 있고(< 1°), 천왕성과 해왕성은 혼돈스럽게 축에서 벗어나 있어 깊은 철 핵이 아닌 이온성 수분 맨틀 다이나모의 존재를 시사한다."
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "intro_sentence",
+    "en": "Galileo's four-night observation in 1610 ended geocentrism. The system's moons are still ending old assumptions today.",
+    "cur": "1610년 갈릴레오의 4박간의 관찰이 지심설을 끝냈다. 이 계의 위성들은 오늘날도 여전히 기존 가정들을 뒤엎고 있다."
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "narrative_101.0",
+    "en": "In January 1610, Galileo pointed his 20× telescope at Jupiter and saw four bright dots arranged in a line on either side of the planet. He drew them. The next night, they'd moved — and not toward the stars behind Jupiter, but as if they were orbiting Jupiter itself. Over five nights he tracked them, and concluded: these are moons of Jupiter. Bodies that orbit something other than Earth. Geocentrism, which had been the dominant cosmology for two thousand years, was over.",
+    "cur": "1610년 1월, 갈릴레오는 20배 망원경을 목성에 겨누었고 행성의 양쪽에 일렬로 배열된 네 개의 밝은 점을 발견했다. 그는 이를 그렸다. 다음 날 밤, 그 점들이 움직였다 — 목성 뒤의 별들을 향해서가 아니라 마치 목성 주위를 공전하는 것처럼. 5박에 걸쳐 추적한 갈릴레오는 결론을 내렸다: 이것들은 목성의 위성이다. 지구 이외의 것을 공전하는 천체들이다. 2천 년 동안 지배적이던 우주관인 지심설은 끝이 났다."
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "narrative_101.1",
+    "en": "Four centuries later, the moons of the outer planets are where most modern astrobiology focuses. Europa, around Jupiter, has a subsurface ocean of liquid water under a thick ice shell — potentially 2-3× the volume of Earth's oceans. Enceladus, around Saturn, vents that same ocean through cracks at its south pole; the Cassini mission flew through the plumes and detected organic molecules. Titan, also Saturn's, has a thick nitrogen atmosphere (denser at the surface than Earth's), liquid methane lakes, and a probable underground water-ammonia ocean. Three independent ocean worlds, all in one outer-solar-system tour.",
+    "cur": "4세기 뒤, 외행성의 위성들은 현대 우주생물학이 가장 집중하는 곳입니다. 목성 주위의 유로파는 두꺼운 얼음 껍질 아래에 액체 물의 지하 바다를 가지고 있으며, 그 부피는 지구 해양의 2~3배에 달할 수 있습니다. 토성 주위의 엔켈라두스는 남극의 균열을 통해 같은 바다를 분출하고 있으며, Cassini 미션이 그 플루메를 통과하면서 유기 분자를 감지했습니다. 역시 토성의 위성인 타이탄은 두꺼운 질소 대기(지표면에서 지구보다 밀함), 액체 메탄 호수, 그리고 추정되는 지하 물-암모니아 바다를 가지고 있습니다. 세 개의 독립적인 바다 세계, 모두 하나의 외태양계 투어에 있습니다."
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "narrative_101.2",
+    "en": "Mars's two tiny moons — Phobos and Deimos — are almost certainly captured asteroids from the main belt. Phobos orbits faster than Mars rotates, so on Mars it rises in the west and sets in the east — the only moon in the system that does. Phobos is also on a slow death spiral toward Mars: tidal forces are pulling it down, and in roughly 50 million years it will either crash or tear apart into a brief Martian ring.",
+    "cur": "화성의 두 개 작은 위성 — 포보스와 데이모스 — 는 거의 확실하게 주요 소행성대로부터의 포획된 소행성들이다. 포보스는 화성의 자전보다 더 빠르게 공전하므로, 화성에서는 서쪽에서 뜨고 동쪽에서 진다 — 태양계에서 유일한 위성이다. 포보스는 또한 화성을 향한 느린 죽음의 나선 궤도 위에 있다: 조석력이 이를 끌어당기고 있으며, 약 5천만 년 안에 충돌하거나 분해되어 화성의 짧은 고리를 형성할 것이다."
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "body_paragraphs.0",
+    "en": "The four Galilean moons of Jupiter are wildly different worlds. Io: most volcanically active body in the solar system, with active eruptions visible from telescopes — driven by tidal heating from the others. Europa: ice shell over a global water ocean, a top astrobiology priority. Ganymede: largest moon in the solar system, bigger than Mercury, and the only moon with its own magnetic field. Callisto: outermost Galilean, ancient cratered surface, possibly a subsurface ocean too. All four discovered in 1610 by Galileo from a Padua rooftop.",
+    "cur": "목성의 네 Galilean 위성은 매우 다른 세계들이다. 이오: 태양계에서 가장 활발한 화산 활동을 하는 천체로, 활동적인 분화가 망원경으로 관찰 가능하다 — 다른 위성들로부터의 조석 가열로 인해 구동된다. 유로파: 전 지구적 물의 바다 위의 얼음 껍질로, 최고의 우주생물학 우선순위이다. 가니메데: 태양계에서 가장 큰 위성으로 수성보다 크며, 자신만의 자기장을 가진 유일한 위성이다. 칼리스토: 가장 바깥쪽 Galilean 위성으로 고대 분화구 표면, 그리고 아마도 지하 바다도 있을 것이다. 모두 1610년 갈릴레오가 Padua 옥상에서 발견했다."
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "body_paragraphs.1",
+    "en": "Saturn has the most moons of any planet — ~290 with confirmed orbits as of 2026. Two stand out: Titan, the second-largest moon in the solar system (after Ganymede), with a nitrogen atmosphere thicker than Earth's at the surface; Huygens probe landed there in 2005 and returned the first surface images. Enceladus, much smaller, has a young icy surface, ridged 'tiger stripes' at the south pole, and active cryovolcanic vents that spray water vapor and organics into space — sampled directly by Cassini flying through the plume. Enceladus's plumes are the source of Saturn's E ring — its cryovolcanic ice supplies the ring directly.",
+    "cur": "토성은 모든 행성 중 가장 많은 위성을 보유하고 있습니다 — 2026년 현재 확인된 궤도를 가진 약 290개의 위성. 두 위성이 특히 눈에 띕니다: 타이탄은 태양계에서 두 번째로 큰 위성(가니메데 다음)으로, 지표면에서 지구보다 두꺼운 질소 대기를 가지고 있으며, 2005년 Huygens 탐사선이 착륙하여 최초의 표면 이미지를 촬영했습니다. 훨씬 작은 엔켈라두스는 젊은 빙상, 남극의 '호랑이 줄무늬' 능선, 그리고 물 증기와 유기물을 우주로 분사하는 활발한 저온화산 분출구를 가지고 있으며 — Cassini가 분출 기둥을 통과하며 직접 샘플링했습니다. 엔켈라두스의 분출 기둥은 토성의 E 고리의 근원입니다 — 저온화산 얼음이 고리에 직접 공급됩니다."
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "body_paragraphs.2",
+    "en": "Pluto and Charon are unique: at radius 606 km vs Pluto's 1188 km, Charon is half Pluto's diameter — the largest moon-to-planet ratio in the system. The two bodies orbit a common centre of mass that lies outside Pluto's surface, so neither object is really orbiting the other; they're orbiting each other around a shared barycentre. The New Horizons flyby in 2015 imaged both for the first time, revealing red equatorial deposits on Charon (tholins from Pluto's atmosphere blown over) and a heart-shaped nitrogen-ice plain on Pluto. Neptune's Triton is similarly captured (retrograde orbit, geologically young — possibly captured from the Kuiper belt) — and like Charon, almost certainly hosts a subsurface ocean.",
+    "cur": "명왕성과 카론은 독특합니다. 카론의 반지름이 606km인 반면 명왕성은 1188km로, 카론은 명왕성의 지름의 절반입니다. 이는 태양계에서 가장 큰 위성-행성 비율입니다. 두 천체는 명왕성의 표면 바깥에 있는 공통 질량 중심 주위를 공전하므로, 어느 천체도 실제로 다른 천체를 공전하지 않습니다. 이들은 공유된 무게중심 주위에서 서로를 공전하고 있습니다. 2015년 New Horizons 근접 비행이 둘 다를 처음으로 영상화했으며, 카론의 적도 지역에 있는 붉은색 퇴적물(명왕성의 대기에서 불어온 톨린)과 명왕성의 심장 모양의 질소 얼음 평원을 드러냈습니다. 해왕성의 트리톤도 마찬가지로 포획된 것입니다(역행 궤도, 지질학적으로 젊음 — 카이퍼 벨트에서 포획되었을 가능성이 있음). 그리고 카론과 마찬가지로 거의 확실히 지하 바다를 가지고 있습니다."
+  },
+  {
+    "rel": "science/planets/moons-of-the-system.json",
+    "at": "diagram_caption",
+    "en": "Major moons of the giant planets at a comparison scale. Ganymede (Jupiter) is the largest at 2,634 km radius — bigger than Mercury. Charon is half of Pluto's diameter, the largest moon:planet ratio anywhere.",
+    "cur": "비교 스케일로 본 거대 행성들의 주요 위성들. 가니메데(목성)는 반지름 2,634 km로 가장 크다 — 수성보다 크다. 카론은 명왕성 지름의 절반으로, 어느 곳에서나 가장 큰 위성:행성 비율을 보인다."
+  },
+  {
+    "rel": "science/planets/planetary-stats.json",
+    "at": "intro_sentence",
+    "en": "How different is Jupiter from Earth, really? Eleven times the diameter. Two and a half times the surface gravity.",
+    "cur": "목성은 지구와 얼마나 다를까요? 지름은 열한 배, 표면 중력은 두 배 반입니다."
+  },
+  {
+    "rel": "science/planets/planetary-stats.json",
+    "at": "narrative_101.0",
+    "en": "When you hear \"Jupiter is the biggest planet\", that's roughly true — but \"big\" hides multiple separate facts. Jupiter is 11× Earth's diameter, 318× Earth's mass, but only 2.53× Earth's surface gravity. Why doesn't 318× mass mean 318× gravity? Because gravity at the surface depends on both mass and the distance from the centre — and Jupiter's surface is 11× farther out than Earth's. The two effects almost cancel. Jupiter is huge, but standing on its 1-bar level (the conventional \"surface\" for a gas giant) you'd weigh 2.5× what you weigh on Earth — not 300×.",
+    "cur": "\"목성은 가장 큰 행성\"이라는 말은 대체로 맞지만, '크다'는 표현 속에는 여러 가지 별개의 사실이 숨어 있습니다. 목성의 지름은 지구의 11배, 질량은 318배이지만, 표면 중력은 겨우 2.53배입니다. 318배의 질량이 왜 318배의 중력을 의미하지 않을까요? 표면에서의 중력은 질량과 중심까지의 거리 모두에 달려 있는데, 목성의 표면은 지구보다 11배나 멀리 떨어져 있기 때문입니다. 두 효과가 거의 상쇄되는 셈이죠. 목성은 거대하지만, 1-bar 수준(기체 행성의 관례적인 '표면')에 서 있다면 지구에서보다 2.5배 무겁게 느껴질 뿐입니다. 300배가 아니라요."
+  },
+  {
+    "rel": "science/planets/planetary-stats.json",
+    "at": "narrative_101.1",
+    "en": "Mars is the opposite trade-off. Mars has only 11% of Earth's mass, but it has 53% of Earth's diameter. That makes its surface gravity 38% of Earth's — much higher than the mass ratio alone would predict, because you're closer to a smaller centre. The relationship that makes both cases sensible: surface gravity scales as mass / radius². For a planet of average density, gravity scales linearly with radius. Saturn (9.14× Earth's diameter) has surface gravity almost equal to Earth's (1.07 g) because Saturn is much less dense than Earth — Saturn is mostly hydrogen-helium, less than 0.7× water's density.",
+    "cur": "화성은 반대의 절충점을 보여 줍니다. 화성의 질량은 지구의 11%에 불과하지만, 지름은 지구의 53%입니다. 덕분에 표면 중력은 지구의 38%인데, 이는 질량 비율만으로 예측하는 것보다 훨씬 높습니다. 더 작은 중심에 더 가까이 있기 때문이죠. 두 경우를 모두 납득할 수 있게 해 주는 관계식은 이렇습니다. 표면 중력은 질량 / 반지름²에 비례합니다. 평균 밀도의 행성이라면 중력은 반지름에 선형적으로 비례하죠. 토성(지구 지름의 9.14배)의 표면 중력이 지구와 거의 같은(1.07 g) 이유는 토성이 지구보다 훨씬 밀도가 낮기 때문입니다. 토성은 대부분 수소-헬륨으로 이루어져 있어 밀도가 물의 0.7배에도 미치지 못합니다."
+  },
+  {
+    "rel": "science/planets/planetary-stats.json",
+    "at": "narrative_101.2",
+    "en": "Atmospheric pressure: huge dynamic range. Mercury essentially zero. Mars 0.006 bar (a thin CO₂ wisp). Earth 1 bar. Venus 92 bar (about the pressure 900 m down in Earth's ocean — would crush you). Gas giants don't have a true \"surface pressure\" because there's no surface; the convention is to use the 1-bar level inside the atmosphere as the reference. Below that, pressures grow continuously into millions of bars deep in the interior.",
+    "cur": "대기압은 엄청난 동적 범위를 가집니다. 수성은 사실상 0에 가깝고, 화성은 0.006 bar(얇은 CO₂ 층), 지구는 1 bar, 금성은 92 bar(지구 해양 900 m 깊이의 압력과 비슷하며 사람을 으스러뜨릴 정도)입니다. 기체 행성에는 진정한 '표면 압력'이 없습니다. 표면 자체가 없기 때문이죠. 관례적으로 대기 내부의 1-bar 수준을 기준점으로 사용합니다. 그 아래로는 압력이 내부 깊은 곳까지 수백만 bar로 계속 높아집니다."
+  },
+  {
+    "rel": "science/planets/planetary-stats.json",
+    "at": "body_paragraphs.0",
+    "en": "Diameters relative to Earth: Mercury 0.38, Venus 0.95 (nearly Earth-sized), Earth 1.0, Mars 0.53, Jupiter 10.97, Saturn 9.14, Uranus 3.98, Neptune 3.86, Pluto 0.19. Surface gravities in Earth-g: Mercury 0.38, Venus 0.91, Earth 1.00, Mars 0.38, Jupiter 2.53, Saturn 1.07, Uranus 0.89, Neptune 1.14, Pluto 0.06. Notable surprises: Mars and Mercury share the same surface gravity (0.38 g) despite very different sizes, because their density × radius products land close. Uranus and Saturn both have lower-than-Earth gravity despite their giant sizes — both are dominated by H/He, much less dense than rocky Earth.",
+    "cur": "지구 대비 지름: 수성 0.38, 금성 0.95(지구에 근접), 지구 1.0, 화성 0.53, 목성 10.97, 토성 9.14, 천왕성 3.98, 해왕성 3.86, 명왕성 0.19. 지구-g 기준 표면 중력: 수성 0.38, 금성 0.91, 지구 1.00, 화성 0.38, 목성 2.53, 토성 1.07, 천왕성 0.89, 해왕성 1.14, 명왕성 0.06. 주목할 만한 의외의 사실: 화성과 수성은 크기가 매우 다름에도 표면 중력이 동일한 0.38 g인데, 이는 두 행성의 밀도 × 반지름 값이 비슷하게 맞아떨어지기 때문입니다. 천왕성과 토성은 거대한 크기에도 지구보다 낮은 중력을 가집니다. 두 행성 모두 H/He가 주성분으로 암석형인 지구보다 훨씬 밀도가 낮기 때문입니다."
+  },
+  {
+    "rel": "science/planets/planetary-stats.json",
+    "at": "body_paragraphs.1",
+    "en": "Rotation periods (sidereal, in hours): Mercury 1407.5 (essentially 58 Earth days for one full spin), Venus −5832.5 (retrograde, 243 days), Earth 23.93, Mars 24.62, Jupiter 9.93 (the fastest rotator — its day is under 10 hours despite its size, which is why Jupiter is visibly oblate; centrifugal forces flatten it), Saturn 10.66, Uranus −17.24 (retrograde), Neptune 16.11, Pluto −153.3 (retrograde). Solar days (sunrise to sunrise) differ from sidereal periods because the planet is also moving along its orbit — Venus's solar day is 117 Earth days even though its sidereal rotation is 243 days, because the retrograde spin partially cancels the orbital motion.",
+    "cur": "자전 주기(항성 기준, 시간 단위): 수성 1407.5(사실상 58 지구일 동안 한 바퀴), 금성 −5832.5(역행, 243일), 지구 23.93, 화성 24.62, 목성 9.93(가장 빠른 자전체 — 크기에도 불구하고 하루가 10시간 미만입니다. 이 때문에 목성은 눈에 띄게 편평하며, 원심력이 행성을 납작하게 만들죠), 토성 10.66, 천왕성 −17.24(역행), 해왕성 16.11, 명왕성 −153.3(역행). 태양일(일출에서 다음 일출까지)은 행성이 궤도를 따라 이동하기 때문에 항성 자전 주기와 다릅니다. 금성의 태양일은 117 지구일인데, 항성 자전은 243일이지만 역행 자전이 공전 운동을 부분적으로 상쇄하기 때문입니다."
+  },
+  {
+    "rel": "science/planets/planetary-stats.json",
+    "at": "body_paragraphs.2",
+    "en": "The Earth-comparison ghost on /explore lets you read these ratios at a glance: Jupiter's planet image looks 11× the apparent size of the Earth thumbnail, Mars's about half, Pluto's about 1/5. The tactical-scan overlay surfaces the harder-to-imagine numbers: the gravity you'd feel on the surface, the air pressure you'd breathe (or get crushed by, or have nothing to breathe in), the rotation period that sets the planet's day length. All four numbers come from the planetary fact sheet, hard-coded into the PLANET_STATS map in /explore (Slice E.4).",
+    "cur": "/explore의 지구 비교 유령 기능을 사용하면 이러한 비율을 한눈에 파악할 수 있습니다. Jupiter의 행성 이미지는 지구 썸네일의 약 11배, Mars는 절반 정도, Pluto는 약 1/5 크기로 보입니다. 전술 스캔 오버레이는 직관적으로 상상하기 어려운 수치들을 보여 줍니다. 표면에서 느끼는 중력, 호흡하게 될(혹은 으스러지게 될, 혹은 전혀 호흡할 수 없는) 대기압, 행성의 하루 길이를 결정하는 자전 주기가 그것입니다. 네 가지 수치 모두 행성 팩트 시트에서 가져온 것으로, /explore의 PLANET_STATS 맵(Slice E.4)에 하드코딩되어 있습니다."
+  },
+  {
+    "rel": "science/planets/planetary-stats.json",
+    "at": "diagram_caption",
+    "en": "Earth-relative diameters at scale. Jupiter and Saturn are the giants; Mercury, Mars, and Pluto sit below Earth. Surface gravity doesn't track size linearly — Saturn (9.1× Earth's diameter) has gravity essentially equal to Earth's because it's so much less dense.",
+    "cur": "실제 비율로 표현한 지구 대비 지름. 목성과 토성이 거대 행성이며, 수성, 화성, 명왕성은 지구보다 작습니다. 표면 중력은 크기에 선형적으로 비례하지 않습니다. 토성(지구 지름의 9.1배)의 중력이 지구와 거의 같은 이유는 밀도가 훨씬 낮기 때문입니다."
+  },
+  {
+    "rel": "science/planets/regolith.json",
+    "at": "intro_sentence",
+    "en": "Regolith is the loose blanket of fragmented rock and glass dust that covers the Moon, Mercury, and most asteroids — ground down by billions of years of micrometeorite bombardment, with no wind or water to round its edges.",
+    "cur": "레골리스는 달, 수성, 그리고 대부분의 소행성을 덮고 있는 미세한 암석과 유리 먼지의 느슨한 층으로, 수십억 년간의 미소운석 충돌로 갈려 내려온 것으로, 바람이나 물이 모서리를 다듬을 수 없는 환경에 있습니다."
+  },
+  {
+    "rel": "science/planets/regolith.json",
+    "at": "body_paragraphs.0",
+    "en": "On Earth, sediment grains are rounded and smoothed by water and wind over time. Airless bodies have neither, so their surfaces are abraded purely by impactors — from multi-kilometre asteroids down to interplanetary dust grains arriving at tens of kilometres per second. The result is a layer of angular, glassy shards called regolith, ranging from fine powder to house-sized boulders. On the Moon this layer runs from a few metres deep in the highlands to tens of metres in the maria.",
+    "cur": "지구에서는 시간이 지나면서 물과 바람에 의해 퇴적 입자들이 둥글고 매끄러워집니다. 대기 없는 천체에는 이 둘이 없으므로, 표면은 순전히 충돌체에 의해서만 마모됩니다 — 수 킬로미터 크기의 소행성부터 초당 수십 킬로미터 속도로 도달하는 행성간 먼지 입자까지. 그 결과는 레골리스라고 불리는 각이 진 유리 파편의 층이며, 미세한 가루부터 건물 크기의 바위까지 다양합니다. 달에서는 이 층이 고지대에서는 수 미터 깊이에서부터 마리아(월해)에서는 수십 미터까지 분포합니다."
+  },
+  {
+    "rel": "science/planets/regolith.json",
+    "at": "body_paragraphs.1",
+    "en": "Lunar regolith has a property that makes it actively dangerous: it is electrostatically charged. On the Moon’s dayside, ultraviolet sunlight knocks electrons off the grains by the photoelectric effect, leaving the sunlit surface positively charged; on the nightside, electrons from the solar wind charge it negatively. Either way the grains carry a persistent electrostatic charge. Dust sticks to everything — visors, suit joints, instrument optics, thermal radiators. Apollo astronauts found their suits grey-black within hours of their first moonwalks, and abrasion by sharp grains degraded suit seams over the course of a single EVA.",
+    "cur": "달의 레골리스는 적극적으로 위험한 특성을 가지고 있습니다: 정전기적으로 대전되어 있습니다. 달의 주간에는 자외선이 광전자 효과에 의해 입자에서 전자를 방출시켜 햇빛이 닿은 표면을 양전하로 만들고, 야간에는 태양풍의 전자가 음전하로 만듭니다. 어느 쪽이든 입자들은 지속적인 정전기 하전을 띱니다. 먼지는 모든 것에 달라붙습니다 — 헬멧 바이저, 우주복 관절, 기구 광학계, 열 방사기. Apollo 우주비행사들은 첫 월면활동으로부터 몇 시간 내에 우주복이 회백색으로 변해있었으며, 각진 입자의 마모로 인해 우주복 이음새가 한 번의 EVA 동안 손상되었습니다."
+  },
+  {
+    "rel": "science/planets/regolith.json",
+    "at": "body_paragraphs.2",
+    "en": "For future surface operations, regolith is both threat and resource. As a hazard it can clog mechanical joints, scratch optical surfaces, and if inhaled, sharp glassy particles lodge in lung tissue like asbestos fibres. As a resource it is available in essentially unlimited quantity: bulk regolith can shield habitats from cosmic radiation and micrometeorites without launching any material from Earth. Processed regolith can in principle yield oxygen, metals, and silicon — the basis of in-situ resource utilisation (ISRU).",
+    "cur": "향후 표면 운영을 위해 레골리스는 위협이자 자원입니다. 위협으로서는 기계 관절을 막을 수 있고, 광학면을 긁을 수 있으며, 흡입할 경우 각진 유리 입자가 석면 섬유처럼 폐 조직에 박힐 수 있습니다. 자원으로서는 본질적으로 무한한 량이 이용 가능합니다: 대량의 레골리스는 지구에서 어떤 물질도 발사하지 않고도 서식지를 우주 방사선과 미소운석으로부터 보호할 수 있습니다. 처리된 레골리스는 원칙적으로 산소, 금속, 그리고 규소를 얻을 수 있으며, 이는 현지 자원 활용(ISRU)의 기초입니다."
+  },
+  {
+    "rel": "science/planets/regolith.json",
+    "at": "body_paragraphs.3",
+    "en": "Asteroid regolith presents its own physics. On rubble-pile bodies like Bennu (sampled by NASA's OSIRIS-REx in 2020) and Ryugu (sampled by JAXA's Hayabusa2 in 2019), gravity is so weak — millionths of Earth's — that regolith barely coheres. OSIRIS-REx's sample arm sank unexpectedly deep into Bennu's surface, revealing a body less like a solid rock and more like a loosely packed bag of gravel. How material moves, consolidates, and behaves under such conditions is still an active area of research.",
+    "cur": "소행성 표토는 고유의 물리학을 나타낸다. 베누(베누)와 류구(류구) 같은 우석더미 천체에서는 중력이 지구의 백만분의 일 수준으로 극도로 약해서, 표토가 거의 응집되지 않는다. NASA의 오시리스-렉스(OSIRIS-REx)는 2020년 베누를 채취했고, JAXA의 하야부사2(Hayabusa2)는 2019년 류구를 채취했다. 오시리스-렉스의 샘플 암은 베누의 표면에 예상외로 깊게 침투했는데, 이는 이 천체가 단단한 암석보다는 느슨하게 채워진 자갈주머니에 더 가깝다는 것을 드러냈다. 이러한 조건 하에서 물질이 어떻게 움직이고, 응결되며, 거동하는지는 여전히 활발한 연구 분야이다."
+  },
+  {
+    "rel": "science/planets/regolith.json",
+    "at": "body_paragraphs.4",
+    "en": "The depth and composition of regolith also record planetary history. The rate of impact gardening — the churning of the surface by successive impacts — can be used to date surfaces: denser crater counts mean older, less-churned terrain. Trace elements delivered by comets and the solar wind are preserved in regolith grains in a way that eroded Earth rocks cannot preserve them, making returned samples irreplaceable archives of early solar system chemistry.",
+    "cur": "레골리스의 깊이와 조성은 또한 행성의 역사를 기록합니다. 영향 정원화(successive impacts에 의한 표면의 교대작용)의 비율은 표면을 연대 측정하는 데 사용될 수 있습니다: 더 높은 충돌구 밀도는 오래되고, 덜 교대된 지형을 의미합니다. 혜성과 태양풍에 의해 전달된 미량 원소는 침식된 지구 암석이 보존할 수 없는 방식으로 레골리스 입자에 보존되어 있어, 반환된 표본들은 초기 태양계 화학의 대체 불가능한 기록입니다."
+  },
+  {
+    "rel": "science/planets/regolith.json",
+    "at": "diagram_caption",
+    "en": "Scanning electron micrograph of lunar regolith grains — angular, glassy, and jagged, unlike the rounded grains of water-sorted sediment on Earth.",
+    "cur": "달의 레골리스 입자의 주사 전자 현미경 사진 — 각이 진, 유리질, 그리고 톱니 모양으로, 지구의 물로 분류된 퇴적 입자의 둥근 모양과는 다릅니다."
+  },
+  {
+    "rel": "science/planets/sub-solar-and-terminator.json",
+    "at": "intro_sentence",
+    "en": "Where it's noon on a planet at this instant, and the line dividing day from night.",
+    "cur": "현재 이 순간 행성에서 정오인 지점, 그리고 낮과 밤을 나누는 경계선."
+  },
+  {
+    "rel": "science/planets/sub-solar-and-terminator.json",
+    "at": "narrative_101.0",
+    "en": "Stand at the equator at solar noon. The Sun is directly overhead. Wherever you are at that moment defines the sub-solar point — the single longitude where the Sun's rays hit the surface perpendicularly. As the planet rotates eastward, the sub-solar point sweeps westward across the surface. As the planet orbits the Sun and its tilt swings the hemispheres into and out of sunlight, the sub-solar latitude also changes — on Earth it oscillates between 23.4°N and 23.4°S over the year (the tropics of Cancer and Capricorn).",
+    "cur": "태양이 정오일 때 적도에 서 있다고 상상해 보자. 태양이 바로 머리 위에 있다. 그 순간 당신이 서 있는 바로 그곳이 태양직하점이다 — 태양 광선이 지표면에 수직으로 닿는 단 하나의 경도. 행성이 동쪽으로 자전하면서, 태양직하점은 지표면을 가로질러 서쪽으로 이동한다. 행성이 태양 주위를 공전하고 그 기울기가 반구를 햇빛 속으로 들었다 놓았다 하면서, 태양직하점의 위도도 변한다 — 지구에서는 연중 23.4°N과 23.4°S 사이를 오간다(북회귀선과 남회귀선)."
+  },
+  {
+    "rel": "science/planets/sub-solar-and-terminator.json",
+    "at": "narrative_101.1",
+    "en": "Ninety degrees away from the sub-solar point — in every direction — sits the terminator: the great circle separating the lit hemisphere from the dark one. Stand on the terminator and the Sun is on the horizon. East of it (in the planet's rotation sense), it's morning everywhere; west of it, sunset, then night. The terminator moves at exactly the speed of planetary rotation at the equator (about 1670 km/h on Earth, about 16 km/h on the Moon).",
+    "cur": "아조점에서 90도 떨어진 곳 — 모든 방향에서 — 종주선이 위치합니다. 즉 밝은 반구와 어두운 반구를 가르는 대원입니다. 종주선 위에 서면 태양이 지평선 위에 있습니다. 이 선의 동쪽(행성의 자전 방향)에서는 어디든 아침이고, 서쪽에서는 해질녘이다가 밤이 됩니다. 종주선은 적도에서의 행성 자전 속도와 정확히 같은 속도로 움직입니다(지구에서는 약 1670 km/h, 달에서는 약 16 km/h)."
+  },
+  {
+    "rel": "science/planets/sub-solar-and-terminator.json",
+    "at": "narrative_101.2",
+    "en": "On an airless body like Mercury or the Moon, the terminator is razor-sharp — sunlight versus pitch black, no twilight. With an atmosphere, the terminator becomes a gradient: Earth's atmosphere scatters sunlight forward into the night side and back into the day side, giving you civil twilight, nautical twilight, astronomical twilight — about 30 minutes of usable light after sunset at mid-latitudes. Venus's much thicker atmosphere makes the day/night transition essentially indistinguishable from above; on the surface, sunlight is so diffused that the sky is uniformly bright.",
+    "cur": "수성이나 달처럼 대기가 없는 천체에서 명암경계선은 면도날처럼 선명하다 — 햇빛과 칠흑 같은 어둠, 황혼은 없다. 대기가 있으면 명암경계선은 점진적인 그러데이션이 된다: 지구의 대기는 햇빛을 야간 쪽으로 앞으로 산란시키고 낮 쪽으로 뒤로 산란시켜, 시민박명, 항해박명, 천문박명을 만들어낸다 — 중위도에서 일몰 후 약 30분간 사용 가능한 빛이 남는다. 훨씬 두꺼운 대기를 가진 금성은 위에서 보면 낮과 밤의 전환이 사실상 구분되지 않으며, 표면에서는 햇빛이 너무 확산되어 하늘이 균일하게 밝다."
+  },
+  {
+    "rel": "science/planets/sub-solar-and-terminator.json",
+    "at": "body_paragraphs.0",
+    "en": "The sub-solar point's instantaneous location is calculated from three angles: the planet's rotation phase (which longitude faces the Sun right now), its axial tilt (which seasonal latitude the Sun illuminates), and its orbital position (which hemisphere is angled sunward). On Earth, the sub-solar latitude oscillates between +23.4° and −23.4° in the cycle we call seasons. On Mars, the cycle is similar (25.19° tilt) but slower (687-day year) and more eccentric (Mars's orbit is more elliptical, so its seasons have unequal durations).",
+    "cur": "태양직하점의 순간 위치는 세 가지 각도로 계산된다: 행성의 자전 위상(지금 어느 경도가 태양을 향하고 있는가), 자전축 기울기(태양이 어느 계절적 위도를 비추는가), 그리고 궤도 위치(어느 반구가 태양 쪽으로 기울어져 있는가). 지구에서 태양직하점의 위도는 우리가 계절이라 부르는 주기 속에서 +23.4°와 −23.4° 사이를 오간다. 화성의 경우 이 주기는 비슷하지만(25.19° 기울기) 더 느리고(687일 주기) 더 이심적이다(화성의 궤도는 더 타원형이라 계절의 지속 시간이 불균등하다)."
+  },
+  {
+    "rel": "science/planets/sub-solar-and-terminator.json",
+    "at": "body_paragraphs.1",
+    "en": "The terminator has a long history as the scientifically richest place to observe surface detail. Shadows are longest there, exaggerating topography. Apollo-era lunar imagery for crater geology was almost always taken with the terminator nearby. Voyager 1 + 2's most striking outer-planet imagery (Saturn's ring structure, Neptune's Great Dark Spot) was taken near each body's terminator for the same reason: low Sun angle picks out features.",
+    "cur": "명암경계선은 표면 세부 지형을 관측하기에 과학적으로 가장 풍부한 장소로 오랜 역사를 지닌다. 그곳에서 그림자가 가장 길어 지형이 과장되어 드러난다. Apollo 시대의 크레이터 지질학을 위한 달 촬영은 거의 항상 명암경계선 근처에서 이루어졌다. Voyager 1과 Voyager 2의 가장 인상적인 외행성 촬영 이미지(토성의 고리 구조, 해왕성의 대암반)도 같은 이유로 각 천체의 명암경계선 근처에서 촬영되었다: 낮은 태양 각도가 지형을 드러낸다."
+  },
+  {
+    "rel": "science/planets/sub-solar-and-terminator.json",
+    "at": "body_paragraphs.2",
+    "en": "On airless bodies, the temperature swing across the terminator is brutal. Mercury's day side reaches 430 °C; its night side drops to −180 °C. The Moon swings from +127 °C to −173 °C every lunar day (29.5 Earth days). With an atmosphere, thermal inertia softens this swing dramatically — Earth's surface temperature varies maybe 15 °C between day and night at temperate latitudes, because the atmosphere holds and redistributes heat. Venus, with its dense CO₂ atmosphere, has essentially no day-night temperature variation despite its 117-day solar day — the atmosphere homogenises temperature across the planet.",
+    "cur": "대기가 없는 천체에서 명암경계선을 가로지르는 온도 변화는 극단적이다. 수성의 낮 쪽은 430 °C에 달하고, 밤 쪽은 −180 °C까지 떨어진다. 달은 태양일(지구 기준 29.5일)마다 +127 °C에서 −173 °C까지 변동한다. 대기가 있으면 열관성이 이 변동을 크게 완화시킨다 — 지구 표면 온도는 온대 위도에서 낮과 밤 사이에 약 15 °C 정도만 변하는데, 대기가 열을 저장하고 재분배하기 때문이다. 금성은 117일의 태양일에도 불구하고 조밀한 CO₂ 대기 덕분에 낮과 밤의 온도 차이가 사실상 없다 — 대기가 행성 전체의 온도를 균일하게 만든다."
+  },
+  {
+    "rel": "science/planets/sub-solar-and-terminator.json",
+    "at": "diagram_caption",
+    "en": "Sub-solar point (direct overhead) + terminator (90° great circle). On airless bodies the terminator is sharp; on Earth and Venus, scattered sunlight blurs it into twilight.",
+    "cur": "태양직하점(바로 머리 위) + 명암경계선(90° 대원). 대기가 없는 천체에서 명암경계선은 선명하고, 지구와 금성에서는 산란된 햇빛이 이를 황혼으로 흐리게 만든다."
+  },
+  {
+    "rel": "science/planets/tides.json",
+    "at": "intro_sentence",
+    "en": "The Moon's gravity pulls the oceans into two bulges — one beneath it, one on the far side — so most coasts get two high tides a day.",
+    "cur": "달의 중력이 바다를 두 개의 부풀음으로 당깁니다 — 하나는 달 아래에, 하나는 반대편에 — 따라서 대부분의 해안은 하루에 두 번의 만조를 경험합니다."
+  },
+  {
+    "rel": "science/planets/tides.json",
+    "at": "narrative_101.0",
+    "en": "Gravity weakens with distance, so the Moon tugs the near side of Earth harder than the centre, and the centre harder than the far side.",
+    "cur": "중력은 거리에 따라 약해지므로, 달은 지구의 가까운 쪽을 중심부보다 더 강하게 당기고, 중심부는 먼 쪽보다 더 강하게 당깁니다."
+  },
+  {
+    "rel": "science/planets/tides.json",
+    "at": "narrative_101.1",
+    "en": "Stretched between these unequal pulls, the oceans rise into a bulge facing the Moon and a matching bulge on the opposite side — and Earth rotates through both every day.",
+    "cur": "이러한 불균등한 당김 사이에서 늘어나면서, 바다는 달을 향한 부풀음과 반대편의 대응하는 부풀음으로 솟아오르며 — 지구는 매일 이 둘을 모두 통과하며 회전합니다."
+  },
+  {
+    "rel": "science/planets/tides.json",
+    "at": "body_paragraphs.0",
+    "en": "A tide is not the Moon lifting the water straight up — it is the difference in the Moon's pull across the width of the Earth. The near side is pulled toward the Moon more strongly than the planet's centre, and the far side less, so the water envelope is stretched into a prolate, two-bulge shape aligned with the Earth–Moon line.",
+    "cur": "조석은 달이 물을 곧장 위로 들어올리는 것이 아닙니다 — 그것은 지구의 폭에 걸친 달의 인력 차이입니다. 가까운 쪽은 행성의 중심부보다 더 강하게 달 쪽으로 당겨지고, 먼 쪽은 더 약하게 당겨지므로, 물의 외피는 지구-달 선을 따라 정렬된 긴 타원형의 두 부풀음 모양으로 늘어납니다."
+  },
+  {
+    "rel": "science/planets/tides.json",
+    "at": "body_paragraphs.1",
+    "en": "Because there are two bulges and the Earth turns once a day, a given coastline usually sweeps through two high tides and two low tides every ~24 h 50 min (the extra 50 minutes is the Moon moving on in its orbit). When the Sun lines up with the Moon at new and full moon their pulls add — the large spring tides; at the quarters they partly cancel into the smaller neap tides.",
+    "cur": "두 개의 부풀음이 있고 지구가 하루에 한 번 회전하기 때문에, 주어진 해안선은 보통 ~24 h 50 min마다 두 번의 만조와 두 번의 간조를 겪습니다 (추가 50분은 달이 궤도상에서 이동하는 것입니다). 삭과 망에서 태양이 달과 일직선으로 정렬되면 그들의 인력이 합쳐져 — 큰 사리 조석이 발생하고; 상현과 하현에서는 부분적으로 상쇄되어 더 작은 조금 조석이 됩니다."
+  },
+  {
+    "rel": "science/planets/tides.json",
+    "at": "body_paragraphs.2",
+    "en": "Tides are a two-way street. The bulge Earth raises sits slightly ahead of the Moon because Earth rotates faster than the Moon orbits; its gravity tugs the Moon forward, nudging it into a higher orbit (~3.8 cm/year), while the Moon drags back on the bulge and slowly lengthens Earth's day.",
+    "cur": "조석은 양방향입니다. 지구가 만드는 부풀음은 지구가 달의 공전보다 빠르게 자전하기 때문에 달보다 약간 앞에 위치하며; 그것의 중력이 달을 앞으로 당겨 더 높은 궤도로 밀어냅니다 (~3.8 cm/년), 동시에 달은 부풀음을 뒤로 끌어당겨 천천히 지구의 하루를 길게 만듭니다."
+  },
+  {
+    "rel": "science/planets/tides.json",
+    "at": "body_paragraphs.3",
+    "en": "The same effect already finished the job on the Moon: tidal friction braked its spin until its rotation matched its orbit, so it keeps one face toward Earth — tidal locking. The Tides lens on /earth draws the twin bulges; the Sub-Earth Point lens on /moon shows the locked near side they produced.",
+    "cur": "같은 효과가 이미 달에서는 완료되었습니다: 조석 마찰이 달의 자전을 제동하여 자전이 공전과 일치할 때까지 멈추게 했고, 그래서 달은 한쪽 면을 지구를 향하게 유지합니다 — 조석 고정입니다. /earth의 Tides 렌즈는 쌍둥이 부풀음을 그리고; /moon의 Sub-Earth Point 렌즈는 그것들이 만들어낸 고정된 가까운 면을 보여줍니다."
+  },
+  {
+    "rel": "science/planets/tides.json",
+    "at": "diagram_caption",
+    "en": "Twin tidal bulges stretched along the Earth–Moon line — the near bulge under the Moon, the far bulge thrown outward.",
+    "cur": "지구-달 선을 따라 늘어난 쌍둥이 조석 부풀음 — 가까운 부풀음은 달 아래에, 먼 부풀음은 바깥쪽으로 밀려났습니다."
+  },
+  {
+    "rel": "science/porkchop/_intro.json",
+    "at": "headline",
+    "en": "Porkchop Plots — when to launch, and why the windows are the windows.",
+    "cur": "돼지 갈비 플롯 — 언제 발사할 것인가, 그리고 왜 발사 윈도우는 윈도우인가"
+  },
+  {
+    "rel": "science/porkchop/_intro.json",
+    "at": "paragraphs.0",
+    "en": "Mission planners don't compute one trajectory to Mars — they compute millions, in a giant grid, and they paint a heatmap. Cheap trajectories show up as cool blue lobes. Expensive ones go red. The result, weirdly, looks like a pork chop. The cheap zone is the meat of the chop; the expensive ridge is the bone.",
+    "cur": "미션 플래너들은 화성으로 가는 궤도를 하나 계산하지 않습니다 — 거대한 그리드 안에서 수백만 개를 계산하고, 히트맵을 그립니다. 저렴한 궤도는 파란색 엽편으로 나타나고, 비싼 궤도는 빨간색입니다. 결과는 이상하게도 돼지 갈비처럼 보입니다. 저렴한 구간은 갈비의 살이고, 비싼 능선은 뼈입니다."
+  },
+  {
+    "rel": "science/porkchop/_intro.json",
+    "at": "paragraphs.1",
+    "en": "Why do we draw the whole map instead of just the optimum? Because real missions have constraints — a rocket that's only ready a particular year, a launch pad that's only available certain weeks, a landing site that needs a specific season at Mars. The porkchop lets you see ALL the trade-offs at once and pick the cheap-enough trajectory that fits your real-world calendar.",
+    "cur": "우리가 최적의 궤도만 계산하는 대신 전체 맵을 그리는 이유는 무엇일까요? 실제 미션에는 제약 조건이 있기 때문입니다 — 특정 연도에만 준비되는 로켓, 특정 주에만 사용 가능한 발사대, 화성의 특정 계절이 필요한 착륙지. 돼지 갈비 플롯을 통해 모든 트레이드오프를 한눈에 볼 수 있으며, 실제 일정에 맞는 저렴한 충분한 궤도를 선택할 수 있습니다."
+  },
+  {
+    "rel": "science/porkchop/_intro.json",
+    "at": "paragraphs.2",
+    "en": "Six sections here, in reading order. Start with \"What is a porkchop plot?\" and walk through the axes (departure, time-of-flight), the colour scale (∆v heatmap), how to read the lobe shape (contour reading), and how to map the porkchop onto a specific rocket (viability). A note on convention: standard porkchop plots contour characteristic energy C3 (km²/s²) at departure and arrival V∞ (km/s) — Orrery simplifies this onto a single ∆v-in-km/s colour scale for readability. By the end you'll be able to look at /plan's porkchop for any of nine destinations and read it like a flight dynamicist.",
+    "cur": "여기 6개의 섹션이 있으며, 읽는 순서대로 배열되어 있습니다. \"돼지 갈비 플롯이란 무엇인가?\"부터 시작해서 축선(출발, 비행 시간), 색상 척도(∆v 히트맵), 엽편 모양을 읽는 방법(등고선 읽기), 돼지 갈비 플롯을 특정 로켓에 매핑하는 방법(실행 가능성)을 살펴봅니다. 표준에 관한 주의: 표준 돼지 갈비 플롯은 출발 시 특성 에너지 C3(km²/s²)과 도착 시 V∞(km/s)를 등고선으로 그리지만 — Orrery는 가독성을 위해 이를 단일 ∆v-in-km/s 색상 척도로 단순화합니다. 끝내면 /plan의 9개 목적지 중 아무 목적지에 대한 돼지 갈비 플롯을 보고 비행 동역학자처럼 읽을 수 있게 됩니다."
+  },
+  {
+    "rel": "science/porkchop/contour-reading.json",
+    "at": "intro_sentence",
+    "en": "The shape of the cheap zone tells you the geometry of viable trajectories — and where the trade-offs live.",
+    "cur": "저렴 구역의 형태는 실행 가능한 궤도의 기하학적 구조와 트레이드오프가 어디에 있는지를 보여줍니다."
+  },
+  {
+    "rel": "science/porkchop/contour-reading.json",
+    "at": "narrative_101.0",
+    "en": "Now you know the axes and the colour scale. The next skill is reading the SHAPE of the cheap zone. The lobe of teal isn't just a generic blob — it's a literal map of which trajectories work and which don't.",
+    "cur": "이제 축과 색상 척도를 알았으니, 다음 기술은 저렴 구역의 형태를 읽는 것입니다. 청록색 엽은 단순한 일반적인 얼룩이 아니라 어떤 궤도가 작동하고 어떤 궤도가 작동하지 않는지를 나타내는 글자 그대로의 지도입니다."
+  },
+  {
+    "rel": "science/porkchop/contour-reading.json",
+    "at": "narrative_101.1",
+    "en": "The classic Mars porkchop has TWO cheap lobes per launch window, side by side. They're called the \"Type I\" and \"Type II\" trajectories — same window, two different ways around the Sun. Type I goes the short way (transfer angle below 180 degrees) and is faster. Type II goes the long way (transfer angle above 180 degrees) and is slower but sometimes cheaper. Both are real, both are flown.",
+    "cur": "고전적인 화성 포크찹은 발사 기간당 두 개의 저렴 엽을 나란히 가지고 있습니다. 이들은 '1형' 궤도와 '2형' 궤도라고 불립니다 — 같은 기간, 태양 주위를 도는 두 가지 다른 방식입니다. 1형은 짧은 방식으로 이동하며(전달 각도 180도 미만) 더 빠릅니다. 2형은 긴 방식으로 이동하며(전달 각도 180도 초과) 더 느리지만 때로는 더 저렴합니다. 둘 다 실제이며, 둘 다 비행했습니다."
+  },
+  {
+    "rel": "science/porkchop/contour-reading.json",
+    "at": "narrative_101.2",
+    "en": "Outside the lobes: red. Most of the porkchop is red, actually. That's the lesson. There are very few cheap moments to launch a spacecraft to another planet, and they're not negotiable. \"Just wait for the right window\" almost always beats \"invent a clever trajectory.\" Reading the shape of the lobe — where it widens, where it narrows, where the optima sit — is what flight dynamicists do for a living.",
+    "cur": "엽 밖: 빨강색. 실제로 포크찹의 대부분이 빨강색입니다. 그것이 교훈입니다. 우주선을 다른 행성에 발사할 수 있는 저렴한 시간은 매우 적으며, 협상의 여지가 없습니다. '올바른 기간을 기다리세요'는 거의 항상 '영리한 궤도를 발명하세요'보다 낫습니다. 엽의 형태를 읽기 — 어디서 넓어지고, 어디서 좁아지고, 최적이 어디에 있는지 — 이것이 비행 역학자들이 생업으로 하는 일입니다."
+  },
+  {
+    "rel": "science/porkchop/contour-reading.json",
+    "at": "body_paragraphs.0",
+    "en": "Look at a Mars porkchop. You'll see a roughly oval lobe of teal cells centred near a 250-day TOF, recurring every 26 months. That's the Hohmann opportunity. Inside the lobe, all combinations of (departure, TOF) deliver feasible Mars missions at acceptable ∆v.",
+    "cur": "화성 포크찹을 봅시다. 약 250일의 전달 시간(TOF) 근처에 중심을 둔 청록색 세포의 대략 타원형 엽이 보일 것이며, 26개월마다 반복됩니다. 그것이 Hohmann 기회입니다. 엽 내부에서 (출발, TOF)의 모든 조합이 수용 가능한 ∆v에서 실행 가능한 화성 미션을 제공합니다."
+  },
+  {
+    "rel": "science/porkchop/contour-reading.json",
+    "at": "body_paragraphs.1",
+    "en": "Two solutions per window. The 'short way' (transfer angle < 180°) and the 'long way' (transfer angle > 180°) both connect Earth to Mars but via different ellipses. They appear as two cheap lobes in the porkchop, separated by a high-∆v ridge at the ~180° transfer angle — this ridge is literally the 'bone' of the pork chop. Sometimes both lobes appear, sometimes only one, depending on geometry.",
+    "cur": "기간당 두 개의 해결책. '짧은 방식'(전달 각도 < 180°)과 '긴 방식'(전달 각도 > 180°) 모두 지구에서 화성으로 연결하지만 서로 다른 타원을 통합니다. 이들은 포크찹에서 두 개의 저렴 엽으로 나타나며, 높은 ∆v 능선으로 분리됩니다 (~180° 전달 각도) — 이 능선은 글자 그대로 포크찹의 '뼈'입니다. 때로는 두 엽이 모두 나타나고, 때로는 기하학에 따라 하나만 나타납니다."
+  },
+  {
+    "rel": "science/porkchop/contour-reading.json",
+    "at": "body_paragraphs.2",
+    "en": "Outside the cheap lobes: red. Far from any natural window, you'd need a custom high-energy trajectory (gravity assist, multi-burn) to make the math work. Real missions cluster in the cheap zones; design philosophy 'just wait for the right window' often beats 'invent a clever trajectory.'",
+    "cur": "저렴 엽 밖: 빨강색. 자연 기간에서 멀리 떨어져 있다면, 수학이 작동하도록 하기 위해 맞춤형 고에너지 궤도(중력 보조, 다중 연소)가 필요할 것입니다. 실제 미션은 저렴 구역에 집중됩니다; 설계 철학 '올바른 기간을 기다리세요'는 종종 '영리한 궤도를 발명하세요'를 이깁니다."
+  },
+  {
+    "rel": "science/porkchop/departure-axis.json",
+    "at": "intro_sentence",
+    "en": "When you launch — running across the X-axis, typically a four-year span sampled daily.",
+    "cur": "발사 시점 — X축을 따라 진행하며, 보통 4년 범위를 일일 단위로 샘플링합니다."
+  },
+  {
+    "rel": "science/porkchop/departure-axis.json",
+    "at": "narrative_101.0",
+    "en": "Read the porkchop like a calendar. The horizontal axis — left to right — is the date you leave Earth. Each pixel column is a different launch day. Orrery samples at one-day resolution across about four years; that's enough to capture two full synodic cycles for Mars (the ~26-month cycle fits roughly twice in four years), which is enough to see the launch-window pattern repeat.",
+    "cur": "돼지고기 모양 곡선을 달력처럼 읽으세요. 가로축 — 왼쪽에서 오른쪽으로 — 지구를 떠나는 날짜입니다. 각 픽셀 열은 다른 발사 날입니다. Orrery는 약 4년에 걸쳐 1일 단위로 샘플링합니다. 이는 화성의 두 개 완전한 시노드 주기(~26개월 주기가 4년에 대략 두 번 들어맞음)를 포착하기에 충분하므로, 발사 윈도우 패턴이 반복되는 것을 볼 수 있습니다."
+  },
+  {
+    "rel": "science/porkchop/departure-axis.json",
+    "at": "narrative_101.1",
+    "en": "Look across the row of cheap-cost cells (the cool teal lobe) and you can read off, on the calendar, exactly when the launch windows are. For Mars they're roughly every 26 months. For Venus every 19. For Jupiter every 13. Each cheap zone is one window — outside of those zones, the calendar is fighting you.",
+    "cur": "저비용 셀 행(시원한 청록색 엽)을 가로질러 보면 달력에서 발사 윈도우가 정확히 언제인지 읽을 수 있습니다. 화성의 경우 대략 26개월마다입니다. 금성은 19개월마다, 목성은 13개월마다입니다. 각 저비용 영역은 하나의 윈도우입니다 — 그 영역 밖에서는 달력이 당신에게 불리합니다."
+  },
+  {
+    "rel": "science/porkchop/departure-axis.json",
+    "at": "narrative_101.2",
+    "en": "When you scrub the launch-year selector in /plan, you're sliding the X-axis. Different year, different window placement, but the underlying physics is the same. This is why mission scheduling is calendar-driven: the cheap zones don't move just because we have a deadline.",
+    "cur": "\"/plan\"에서 발사 연도 선택기를 변경하면 X축을 움직이는 것입니다. 연도가 다르면 창의 위치도 달라지지만, 기본적인 물리학은 동일합니다. 이것이 미션 일정 계획이 달력 기반인 이유입니다. 저렴한 구간은 우리가 마감 시간을 맞춘다고 해서 움직이지 않기 때문입니다."
+  },
+  {
+    "rel": "science/porkchop/departure-axis.json",
+    "at": "body_paragraphs.0",
+    "en": "The X-axis tells you when you leave Earth. Each pixel column is a different launch date — for Orrery's plots, sampled at one-day resolution across roughly four years. Why a four-year span? Because the Earth-Mars synodic period is ~26 months; four years captures roughly two full Mars windows. For Venus (~19 months) or Jupiter (~13 months) the same span fits more windows — the four-year width is calibrated for Mars-class planning.",
+    "cur": "X축은 지구를 떠나는 시점을 나타냅니다. 각 픽셀 열은 다른 발사 날짜입니다 — Orrery의 플롯은 약 4년에 걸쳐 1일 단위로 샘플링합니다. 왜 4년 범위일까요? 지구-화성 시노드 주기가 ~26개월이기 때문입니다. 4년은 대략 화성 윈도우 두 개를 포착합니다. 금성(~19개월) 또는 목성(~13개월)의 경우 같은 범위가 더 많은 윈도우를 포함합니다 — 4년 너비는 화성급 계획을 위해 조정됩니다."
+  },
+  {
+    "rel": "science/porkchop/departure-axis.json",
+    "at": "body_paragraphs.1",
+    "en": "Read the X-axis like a calendar. The cheap-cost lobes (the porkchop's 'pork') sit at predictable intervals. For Mars: every ~26 months. For Venus: every ~19 months. For Jupiter: every ~13 months (Jupiter moves slowly enough that the synodic period is close to Earth's year).",
+    "cur": "X축을 달력처럼 읽으세요. 저비용 엽(돼지고기 모양 곡선의 '돼지')은 예측 가능한 간격에 위치합니다. 화성: 대략 26개월마다. 금성: 대략 19개월마다. 목성: 대략 13개월마다(목성은 충분히 느리게 움직여서 시노드 주기가 지구의 한 해에 가깝습니다)."
+  },
+  {
+    "rel": "science/porkchop/departure-axis.json",
+    "at": "body_paragraphs.2",
+    "en": "On `/plan` the X-axis label is `DEPARTURE WINDOW · 2026 — 2030`. The literal calendar dates appear in the tooltip when you hover.",
+    "cur": "\"/plan\"에서 X축 레이블은 `DEPARTURE WINDOW · 2026 — 2030`입니다. 마우스를 올리면 툴팁에 실제 달력 날짜가 나타납니다."
+  },
+  {
+    "rel": "science/porkchop/dv-heatmap.json",
+    "at": "intro_sentence",
+    "en": "The colour scale that turns ∆v numbers into a picture you can read at a glance.",
+    "cur": "∆v 수치를 한눈에 읽을 수 있는 그림으로 바꿔주는 색상 스케일입니다."
+  },
+  {
+    "rel": "science/porkchop/dv-heatmap.json",
+    "at": "narrative_101.0",
+    "en": "The whole point of a porkchop plot is the colours. Numbers in a giant grid would tell you the same thing, but you couldn't see the patterns. So we paint each cell — cool teal for cheap trajectories, yellow for borderline, orange and red for hopelessly expensive. Pattern recognition takes over from arithmetic.",
+    "cur": "포크척 플롯의 핵심은 색상입니다. 거대한 격자의 숫자들도 같은 정보를 전달하지만, 패턴을 볼 수 없습니다. 대신 각 셀을 칠합니다 — 저렴한 궤도는 시원한 청록색, 경계선적인 경우는 노랑색, 절망적으로 비싼 경우는 주황색과 빨강색입니다. 산술 계산 대신 패턴 인식이 작동합니다."
+  },
+  {
+    "rel": "science/porkchop/dv-heatmap.json",
+    "at": "narrative_101.1",
+    "en": "Cool teal sits at around 3 km/s of ∆v — the departure burn from LEO for a Hohmann-like transfer to Mars (trans-Mars injection). Blue around 5 km/s — affordable, slightly faster trips. Yellow around 7 km/s — getting expensive, you're paying for speed. Orange and red beyond 9 km/s — you've left the realm of what current rockets can practically deliver. The colour-to-cost mapping is consistent across all the porkchops in /plan.",
+    "cur": "시원한 청록색은 약 3 km/s의 ∆v에 해당합니다 — LEO에서 화성으로의 호만-유사 전이를 위한 출발 번(trans-Mars injection)입니다. 파란색은 약 5 km/s입니다 — 저렴하고 약간 더 빠른 여행입니다. 노랑색은 약 7 km/s입니다 — 비용이 올라가고 있으며, 속도를 위해 더 많은 비용을 내고 있습니다. 주황색과 빨강색은 9 km/s 이상입니다 — 현재의 로켓이 실질적으로 전달할 수 있는 범위를 벗어났습니다. 색상-비용 매핑은 /plan의 모든 포크척 플롯에서 일관됩니다."
+  },
+  {
+    "rel": "science/porkchop/dv-heatmap.json",
+    "at": "narrative_101.2",
+    "en": "Hovering any cell shows you the exact ∆v in km/s, but the visual story is the eye-trick that makes porkchops indispensable. You can scan the chart in one second and know whether a destination is reachable, when the windows are, and what the trade-offs cost. No formula does that.",
+    "cur": "어떤 셀 위에 마우스를 올리면 정확한 ∆v (km/s)를 볼 수 있지만, 시각적 이야기가 포크척을 필수 불가결하게 만드는 눈속임입니다. 1초 내에 차트를 훑어보고 목적지에 도달 가능한지, 윈도우는 언제인지, 그리고 거래의 비용은 무엇인지 알 수 있습니다. 어떤 공식도 그렇게 할 수 없습니다."
+  },
+  {
+    "rel": "science/porkchop/dv-heatmap.json",
+    "at": "body_paragraphs.0",
+    "en": "Cool teal sits at low ∆v (~3 km/s) — the departure-burn minimum for a Mars-like Hohmann (this is the trans-Mars injection ∆v from LEO, not the total mission ∆v). Blue at ~5 km/s. Yellow around 7 km/s — the threshold of expensive. Orange and red above 9 km/s — runaway-cost cells, where you'd need an SLS-class launch vehicle just to make the math close.",
+    "cur": "시원한 청록색은 낮은 ∆v (~3 km/s)에 해당합니다 — 화성과 유사한 Hohmann 전이를 위한 출발 번의 최솟값입니다(이것은 LEO에서의 trans-Mars injection ∆v이며, 전체 미션 ∆v는 아닙니다). 파란색은 약 5 km/s입니다. 노랑색은 약 7 km/s입니다 — 비싼 것으로 간주되는 임계값입니다. 주황색과 빨강색은 9 km/s 이상입니다 — 폭발적인 비용 증가 셀로, SLS급 발사체가 필요합니다."
+  },
+  {
+    "rel": "science/porkchop/dv-heatmap.json",
+    "at": "body_paragraphs.1",
+    "en": "Orrery's scale tops out around 11+ km/s. Anything beyond that is rendered as the deepest red because in practice no current launch vehicle can deliver the payload at those ∆v costs. Voyager 1 is an example of the far-red end: its departure from Earth required a characteristic energy C3 ≈ 100 km²/s² (note: C3 is V∞ squared, so C3 and ∆v sit on different scales — √100 km²/s² ≈ 10 km/s hyperbolic excess). Converting to a departure ∆v from LEO puts Voyager 1 above 7 km/s — already near the limit of what a Titan IIIE/Centaur could deliver in 1977.",
+    "cur": "Orrery의 스케일은 약 11+ km/s 정도에서 최고조입니다. 그 이상의 모든 것은 가장 짙은 빨강색으로 렌더링됩니다. 실제로 현재의 발사체는 그러한 ∆v 비용에서 페이로드를 전달할 수 없기 때문입니다. Voyager 1은 원점의 극단적인 예입니다: 지구에서의 출발은 특성 에너지 C3 ≈ 100 km²/s²가 필요했습니다(참고: C3는 V∞의 제곱이므로, C3와 ∆v는 다른 스케일에 있습니다 — √100 km²/s² ≈ 10 km/s 쌍곡선 초과 속도). LEO에서의 출발 ∆v로 변환하면 Voyager 1은 7 km/s 이상입니다 — 이미 1977년 Titan IIIE/Centaur가 전달할 수 있는 한계에 가깝습니다."
+  },
+  {
+    "rel": "science/porkchop/dv-heatmap.json",
+    "at": "body_paragraphs.2",
+    "en": "On `/plan` you can hover any cell to see the exact ∆v in km/s. The heatmap is a visualisation of the answer; the cell value is the answer itself.",
+    "cur": "`/plan`에서 어떤 셀 위에 마우스를 올리면 정확한 ∆v (km/s)를 볼 수 있습니다. 히트맵은 답의 시각화이며, 셀 값이 실제 답입니다."
+  },
+  {
+    "rel": "science/porkchop/tof-axis.json",
+    "at": "intro_sentence",
+    "en": "How long the trip takes — running up the Y-axis, in days for inner planets and years for the outer ones.",
+    "cur": "여행에 걸리는 시간 — Y축을 따라 나타내며, 내행성은 일(days) 단위로, 외행성은 년(years) 단위로 표시됩니다."
+  },
+  {
+    "rel": "science/porkchop/tof-axis.json",
+    "at": "narrative_101.0",
+    "en": "If the X-axis tells you WHEN you leave, the Y-axis tells you HOW LONG the trip takes. Bottom of the chart: fast, short trips. Top of the chart: slow, long trips. For Mars-class destinations the axis spans roughly 100 to 500 days. For Jupiter it's years.",
+    "cur": "X축이 언제 출발하는지를 알려준다면, Y축은 여행이 얼마나 오래 걸리는지를 알려줍니다. 차트 아래쪽: 빠르고 짧은 여행. 차트 위쪽: 느리고 긴 여행. 화성급 목적지의 경우 축은 대략 100일에서 500일까지 걸쳐 있습니다. 목성의 경우는 년 단위입니다."
+  },
+  {
+    "rel": "science/porkchop/tof-axis.json",
+    "at": "narrative_101.1",
+    "en": "Now you can read the entire trade-off in one glance. Walk straight up a column on the porkchop — that's the SAME launch date but different transit times. Near the bottom (fast trip) the cells turn red — fast trips are expensive because you're forcing a steep transfer ellipse. Higher up (slower trip) the cells go cool blue — that's the natural Hohmann band where the math wants the trip to take.",
+    "cur": "이제 전체 트레이드오프를 한눈에 읽을 수 있습니다. 포크촙에서 한 열을 수직으로 따라가보세요 — 그것은 동일한 발사 날짜이지만 서로 다른 비행 시간을 나타냅니다. 아래쪽 근처(빠른 여행)에서는 셀이 빨간색으로 변합니다 — 빠른 여행은 가파른 전이 타원을 강제하기 때문에 비용이 많이 듭니다. 위쪽으로 올라가면(느린 여행) 셀이 시원한 파란색으로 변합니다 — 그것이 수학적으로 여행이 자연스럽게 걸리기를 원하는 Hohmann 대역입니다."
+  },
+  {
+    "rel": "science/porkchop/tof-axis.json",
+    "at": "narrative_101.2",
+    "en": "This is why a Hohmann transfer to Mars is always around 8.5 months. Pull below that and you're paying steeply for the speed. Pull way above and you're loitering for no reason. The porkchop visualises that trade-off as a colour gradient up each column. Cargo missions can afford slow; crew missions usually can't, because every extra month is more food, water, oxygen, and radiation exposure.",
+    "cur": "이것이 화성으로의 Hohmann 전이가 항상 약 8.5개월이 걸리는 이유입니다. 그 아래로 내려가면 속도에 대해 큰 대가를 치르게 됩니다. 훨씬 위로 올라가면 이유 없이 배회하는 것입니다. 포크촙은 이러한 트레이드오프를 각 열을 따라 색상 그라데이션으로 시각화합니다. 화물 임무는 느린 속도를 감당할 수 있지만, 승무원 임무는 보통 그럴 수 없습니다. 왜냐하면 추가되는 매달마다 더 많은 식량, 물, 산소, 그리고 방사선 노출이 필요하기 때문입니다."
+  },
+  {
+    "rel": "science/porkchop/tof-axis.json",
+    "at": "body_paragraphs.0",
+    "en": "Y-axis is transit duration. For Mars-class targets the natural Hohmann transit is ~250 days, so Orrery's Y range runs roughly 100-500 days. For Jupiter or Saturn the Hohmann transit is years, so the axis is in years.",
+    "cur": "Y축은 비행 기간입니다. 화성급 목표의 경우 자연스러운 Hohmann 비행은 ~250일이므로, Orrery의 Y 범위는 대략 100-500일로 설정됩니다. 목성이나 토성의 경우 Hohmann 비행은 년 단위이므로, 축도 년 단위로 표시됩니다."
+  },
+  {
+    "rel": "science/porkchop/tof-axis.json",
+    "at": "body_paragraphs.1",
+    "en": "Different rows on the porkchop trade transit time against ∆v cost. The cheapest cells (Hohmann band) sit at the natural Hohmann transit time. Pull the transit time down (faster trip) and the ∆v cost climbs steeply. Pull it up (slower trip) and you get cheaper but slower options — sometimes worth it for cargo or non-time-sensitive payloads.",
+    "cur": "포크촙의 서로 다른 행은 비행 시간과 ∆v 비용을 맞바꿉니다. 가장 저렴한 셀(Hohmann 대역)은 자연스러운 Hohmann 비행 시간에 위치합니다. 비행 시간을 줄이면(더 빠른 여행) ∆v 비용이 급격히 증가합니다. 늘리면(더 느린 여행) 더 저렴하지만 느린 옵션을 얻게 됩니다 — 화물이나 시간에 민감하지 않은 탑재체의 경우 때때로 가치가 있습니다."
+  },
+  {
+    "rel": "science/porkchop/tof-axis.json",
+    "at": "body_paragraphs.2",
+    "en": "The shape of the cheap zone tells you about trade-offs. A narrow Hohmann band means the optimum is sharp; a wide cheap zone means you have flexibility. Mars's porkchop has a narrow optimum. Jupiter's wider — the gravity assist landscape spreads launch options across more dates.",
+    "cur": "저렴한 영역의 형태는 트레이드오프에 대해 알려줍니다. 좁은 Hohmann 대역은 최적값이 날카롭다는 것을 의미하고, 넓은 저렴한 영역은 유연성이 있다는 것을 의미합니다. 화성의 포크촙은 좁은 최적값을 가지고 있습니다. 목성은 더 넓습니다 — 중력 도움 환경이 발사 옵션을 더 많은 날짜에 걸쳐 분산시킵니다."
+  },
+  {
+    "rel": "science/porkchop/viability.json",
+    "at": "intro_sentence",
+    "en": "A cell is viable when your rocket's ∆v capability ≥ the cell's ∆v cost — and the porkchop turns that comparison into a yes/no map.",
+    "cur": "셀은 로켓의 ∆v 능력 ≥ 셀의 ∆v 비용일 때 가능하며, 포크촙은 그 비교를 예/아니오 지도로 변환합니다."
+  },
+  {
+    "rel": "science/porkchop/viability.json",
+    "at": "narrative_101.0",
+    "en": "Here's the question that turns a porkchop from a pretty heatmap into a real mission decision: can my rocket actually fly this? Each rocket — Falcon Heavy, SLS, Atlas V, you name it — has a published ∆v capability for a given payload mass. Compare that ceiling to the porkchop's per-cell costs and you have a yes/no map.",
+    "cur": "포크촙을 아름다운 히트맵에서 실제 미션 결정으로 바꾸는 질문이 여기 있습니다: 내 로켓이 정말 이것을 날 수 있을까? 각 로켓 — Falcon Heavy, SLS, Atlas V 등 — 주어진 페이로드 질량에 대해 공개된 ∆v 능력을 가지고 있습니다. 그 한계를 포크촙의 셀별 비용과 비교하면 예/아니오 지도를 얻습니다."
+  },
+  {
+    "rel": "science/porkchop/viability.json",
+    "at": "narrative_101.1",
+    "en": "Cells where the rocket's capability exceeds the cost are doable, with margin to spare. Cells where capability matches cost exactly are doable but tight — risky, no slack for things going wrong. Cells where the cost exceeds the capability? That trajectory is simply not flyable with that rocket. You can want it all you want; physics says no.",
+    "cur": "로켓의 능력이 비용을 초과하는 셀은 실행 가능하며 여유가 있습니다. 능력이 비용과 정확히 일치하는 셀은 실행 가능하지만 타이트합니다 — 위험하고 뭔가 잘못되었을 경우 여유가 없습니다. 비용이 능력을 초과하는 셀? 그 궤도는 단순히 그 로켓으로 비행할 수 없습니다. 아무리 원해도 물리학이 아니라고 합니다."
+  },
+  {
+    "rel": "science/porkchop/viability.json",
+    "at": "narrative_101.2",
+    "en": "Pick a rocket on /plan and the porkchop overlays a margin/deficit colour. The lobe shrinks for smaller rockets, expands for bigger ones. This is how mission planners actually work: try a vehicle, see what's feasible, see what isn't, swap vehicle, payload, or schedule until the cheap zone fits inside the rocket's capability. Real flight planning is exactly this iteration, just with more decimal places.",
+    "cur": "/plan에서 로켓을 선택하면 포크촙이 여유/부족 색상을 오버레이합니다. 작은 로켓의 경우 엽이 축소되고 더 큰 로켓의 경우 확장됩니다. 이것이 미션 플래너가 실제로 작동하는 방식입니다: 비행체를 시도하고, 가능한 것을 확인하고, 불가능한 것을 확인하고, 저렴한 영역이 로켓의 능력 내에 들어갈 때까지 비행체, 페이로드 또는 일정을 바꿉니다. 실제 비행 계획은 정확히 이 반복이며, 소수점 자리가 더 많을 뿐입니다."
+  },
+  {
+    "rel": "science/porkchop/viability.json",
+    "at": "body_paragraphs.0",
+    "en": "Pick a vehicle. Falcon Heavy, SLS Block 1, Atlas V N22, whatever. That vehicle has a published C3-vs-payload-mass performance curve — heavier payloads shrink the reachable lobe; lighter ones expand it. For a given payload mass you can read off the maximum C3 (or equivalent departure ∆v) the vehicle can deliver, then compare against the porkchop: every cell where ∆v_cost ≤ capability is a feasible launch opportunity. Every cell where it's greater is impossible without a different vehicle or a lighter spacecraft.",
+    "cur": "비행체를 선택하세요. Falcon Heavy, SLS Block 1, Atlas V N22, 무엇이든. 그 비행체는 공개된 C3 대 페이로드 질량 성능 곡선을 가지고 있습니다 — 더 무거운 페이로드는 도달 가능한 엽을 축소합니다; 더 가벼운 것은 확장합니다. 주어진 페이로드 질량의 경우 비행체가 전달할 수 있는 최대 C3(또는 동등한 출발 ∆v)을 읽을 수 있고, 포크촙과 비교할 수 있습니다: ∆v_cost ≤ capability인 모든 셀은 가능한 발사 기회입니다. 이것이 더 큰 경우는 다른 비행체 없이 또는 더 가벼운 우주선 없이 불가능합니다."
+  },
+  {
+    "rel": "science/porkchop/viability.json",
+    "at": "body_paragraphs.1",
+    "en": "On `/plan` you can pick a launch vehicle and Orrery overlays a margin/deficit indicator. Cool teal cells become 'doable, big margin.' Yellow cells become 'doable but tight.' Red cells become impossible-with-this-vehicle, and switch to a deficit display showing how much more capability you'd need.",
+    "cur": "`/plan`에서 발사 비행체를 선택할 수 있고 Orrery는 여유/부족 표시기를 오버레이합니다. 멋진 청록색 셀은 '실행 가능, 큰 여유'가 됩니다. 노란색 셀은 '실행 가능하지만 타이트'가 됩니다. 빨간색 셀은 이 비행체로 불가능하게 되고, 필요한 추가 능력이 얼마나 되는지 보여주는 부족 표시로 전환됩니다."
+  },
+  {
+    "rel": "science/porkchop/viability.json",
+    "at": "body_paragraphs.2",
+    "en": "This is mission feasibility analysis in one view. Real planners run it many times — for different vehicles, payload masses, trajectory variants — to find the cheapest combination that meets the science requirements. The porkchop is the visualisation; the underlying choice is always 'how much rocket do I need vs how much trip am I buying.'",
+    "cur": "이것은 한 보기에서의 미션 가능성 분석입니다. 실제 플래너는 여러 번 실행합니다 — 다양한 비행체, 페이로드 질량, 궤도 변형의 경우 — 과학 요구사항을 충족하는 가장 저렴한 조합을 찾기 위해. 포크촙은 시각화입니다; 기본적인 선택은 항상 '내가 필요로 하는 로켓이 얼마나 많은가 대 내가 사고 있는 여행이 얼마나 많은가'입니다."
+  },
+  {
+    "rel": "science/porkchop/what-is-a-porkchop.json",
+    "at": "intro_sentence",
+    "en": "A 2D heatmap showing trajectory cost across every (departure date, transit time) pair — the standard tool for finding launch windows. (Standard porkchops contour C3 and arrival V∞; Orrery uses a simplified ∆v-in-km/s colour scale.)",
+    "cur": "모든 (출발일, 비행시간) 조합에 대한 궤적 비용을 나타내는 2D 히트맵 — 발사 윈도우를 찾는 표준 도구. (표준 포크촉 도표는 C3와 도착 V∞를 표시하며, Orrery는 단순화된 ∆v(km/s) 색상 척도를 사용합니다.)"
+  },
+  {
+    "rel": "science/porkchop/what-is-a-porkchop.json",
+    "at": "narrative_101.0",
+    "en": "When mission planners want to know if a trip to Mars is feasible, they don't compute one trajectory. They compute MILLIONS — every possible departure date, every possible transit time, in a giant grid — and they paint a heatmap. Cheap trajectories show up as cool blue zones, expensive ones as red. The result, weirdly, looks like a pork chop. The cheap zone is the meat of the chop; the expensive ridge is the bone.",
+    "cur": "임무 계획자들이 화성 탐사가 가능한지 판단할 때, 단 하나의 궤적을 계산하지 않습니다. MILLIONS을 계산합니다 — 모든 가능한 출발일, 모든 가능한 비행시간을 거대한 격자로 — 그리고 히트맵을 그립니다. 저렴한 궤적은 차분한 파란색 영역으로, 비싼 궤적은 빨간색으로 표시됩니다. 결과는 웃기게도 포크촉처럼 보입니다. 저렴한 영역이 촉의 살이고, 비싼 능선이 뼈입니다."
+  },
+  {
+    "rel": "science/porkchop/what-is-a-porkchop.json",
+    "at": "narrative_101.1",
+    "en": "Why bother with a whole heatmap instead of just one optimal answer? Because real missions have constraints. Maybe a particular launch pad is only available in 2026. Maybe you need to land before a dust storm season ends. Maybe a particular rocket is only ready by a certain month. The porkchop lets you see ALL the trade-offs at once — pick the cheap-enough trajectory that fits your real-world calendar.",
+    "cur": "단순히 하나의 최적 답변 대신 전체 히트맵을 굳이 만드는 이유가 뭘까요? 실제 임무는 제약 조건이 있기 때문입니다. 특정 발사대가 2026년에만 이용 가능할 수도 있습니다. 먼지 폭풍 시즌이 끝나기 전에 착륙해야 할 수도 있습니다. 특정 로켓이 특정 월 이후에만 준비될 수도 있습니다. 포크촉 도표를 보면 모든 트레이드오프를 한눈에 볼 수 있습니다 — 실제 일정에 맞는 저렴한 궤적을 선택하세요."
+  },
+  {
+    "rel": "science/porkchop/what-is-a-porkchop.json",
+    "at": "narrative_101.2",
+    "en": "Open /plan in this simulator. Pick a destination. Pick a launch year. The thing you're looking at is a porkchop, computed live. Each pixel is one Lambert problem — \"leave Earth on day X, arrive on day Y, what does it cost?\" Hover any pixel and the simulator tells you the exact dates and ∆v. Click and the trajectory loads into /fly. The next four sections explain how to read it.",
+    "cur": "이 시뮬레이터에서 /plan을 열어보세요. 목적지를 선택하세요. 발사 연도를 선택하세요. 보고 있는 것이 포크촉이고, 실시간으로 계산됩니다. 각 픽셀은 하나의 Lambert 문제입니다 — \"지구를 X일에 떠나서 Y일에 도착하면 비용이 얼마인가?\" 어떤 픽셀에든 마우스를 올려놓으면 시뮬레이터가 정확한 날짜와 ∆v를 알려줍니다. 클릭하면 궤적이 /fly에 로드됩니다. 다음 네 섹션에서 읽는 방법을 설명합니다."
+  },
+  {
+    "rel": "science/porkchop/what-is-a-porkchop.json",
+    "at": "body_paragraphs.0",
+    "en": "Pick a departure date on the X axis. Pick a transit time on the Y axis. The colour of that cell tells you how much ∆v it would cost to fly that mission. Cool teal: cheap. Yellow: moderate. Red: very expensive. Repeat for every pixel and you get a porkchop plot — named for the way the cheap-zone contours form a pork-chop-shaped lobe.",
+    "cur": "X축에서 출발일을 선택합니다. Y축에서 비행시간을 선택합니다. 그 셀의 색상이 그 임무를 비행하는 데 필요한 ∆v를 나타냅니다. 차분한 청록색: 저렴. 노란색: 중간. 빨간색: 매우 비싼. 모든 픽셀에 대해 반복하면 포크촉 도표가 나옵니다 — 저렴한 영역의 등고선이 포크촉 모양의 엽을 이루는 방식 때문에 붙은 이름입니다."
+  },
+  {
+    "rel": "science/porkchop/what-is-a-porkchop.json",
+    "at": "body_paragraphs.1",
+    "en": "Each cell is the answer to a Lambert problem: 'leave Earth on date X, arrive at the destination on date X + Y, what's the ∆v required?' Solve Lambert millions of times across a date grid and the contours emerge naturally. The natural minima are launch windows — the cheap zones where Hohmann-like transfers exist.",
+    "cur": "각 셀은 Lambert 문제의 답입니다: '지구를 X일에 떠나서 목적지에 X + Y일에 도착하면 필요한 ∆v는?' Lambert를 날짜 격자 전체에서 수백만 번 풀면 등고선이 자연스럽게 나타납니다. 자연스러운 최솟값은 발사 윈도우입니다 — Hohmann 유사 전이가 존재하는 저렴한 영역입니다."
+  },
+  {
+    "rel": "science/porkchop/what-is-a-porkchop.json",
+    "at": "body_paragraphs.2",
+    "en": "Orrery's `/plan` route shows you the porkchop for any of nine destinations (Mars, Mercury, Venus, the gas giants, Pluto, Ceres). Hover any cell to see the exact dates and ∆v. Click to load that mission into `/fly`.",
+    "cur": "Orrery의 `/plan` 경로는 9개 목적지(화성, 수성, 금성, 목성형 행성, 명왕성, 세레스) 중 하나의 포크촉을 보여줍니다. 어떤 셀에든 마우스를 올려놓으면 정확한 날짜와 ∆v를 볼 수 있습니다. 클릭하면 그 임무가 `/fly`에 로드됩니다."
+  },
+  {
+    "rel": "science/porkchop/what-is-a-porkchop.json",
+    "at": "diagram_caption",
+    "en": "Porkchop plot: X = departure date, Y = transit time, colour = ∆v cost (Orrery's simplified scale; standard plots show C3 / arrival V∞). Cheap zones cluster around natural Hohmann windows.",
+    "cur": "포크촉 도표: X = 출발일, Y = 비행시간, 색상 = ∆v 비용(Orrery 단순화 척도; 표준 도표는 C3 / 도착 V∞를 표시함). 저렴한 영역이 자연스러운 Hohmann 윈도우 주변에 집중됩니다."
+  },
+  {
+    "rel": "science/propulsion/_intro.json",
+    "at": "headline",
+    "en": "Propulsion — the rocket equation is the boss fight.",
+    "cur": "추진 — 로켓 방정식은 최종 보스전입니다."
+  },
+  {
+    "rel": "science/propulsion/_intro.json",
+    "at": "paragraphs.0",
+    "en": "Spaceflight has one universal currency: ∆v, pronounced \"delta-v,\" measured in kilometres per second. Every burn costs you some. Every move on a trajectory has a price tag. The mission's ∆v budget — sum of everything you'll spend, end to end — is the single number that says whether the mission can fly.",
+    "cur": "우주비행에는 하나의 보편적 화폐가 있습니다: ∆v, \"델타-브이\"라고 읽으며, 초당 킬로미터로 측정됩니다. 모든 연소는 일정량을 소모합니다. 궤도상의 모든 이동에는 가격표가 붙어 있습니다. 미션의 ∆v 예산 — 처음부터 끝까지 소비할 모든 것의 합 — 은 미션이 실행 가능한지를 말해주는 단일 숫자입니다."
+  }
 ]

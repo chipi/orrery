@@ -1,230 +1,230 @@
 [
- {
-  "rel": "belts/asteroid.json",
-  "at": "science_sections.1.why",
-  "old": "El cinturón ocupa el anillo de 2.2–3.2 AU. Las brechas de Kirkwood — zonas orbitales vacías en las resonancias de movimiento medio de Júpiter — estructuran la población.",
-  "new": "El cinturón ocupa el anillo de 2.2–3.2 UA. Las brechas de Kirkwood — zonas orbitales vacías en las resonancias de movimiento medio de Júpiter — estructuran la población."
- },
- {
-  "rel": "belts/kuiper.json",
-  "at": "science_sections.0.why",
-  "old": "El Cinturón de Kuiper es el remanente transneptuniano del disco protoplanetario — 30 a 50 AU, dominado por hielo. Plutón, Eris, Haumea y Makemake viven aquí.",
-  "new": "El Cinturón de Kuiper es el remanente transneptuniano del disco protoplanetario — 30 a 50 UA, dominado por hielo. Plutón, Eris, Haumea y Makemake viven aquí."
- },
- {
-  "rel": "belts/kuiper.json",
-  "at": "science_sections.1.why",
-  "old": "Los KBOs clásicos orbitan entre 42 y 48 AU en órbitas de baja excentricidad e baja inclinación — han permanecido mayormente sin perturbaciones desde el sistema temprano.",
-  "new": "Los KBOs clásicos orbitan entre 42 y 48 UA en órbitas de baja excentricidad e baja inclinación — han permanecido mayormente sin perturbaciones desde el sistema temprano."
- },
- {
-  "rel": "fleet/orbiter/pioneer-11.json",
-  "at": "description",
-  "old": "Sonda estabilizada por rotación y alimentada por generador termoeléctrico de radioisótopos (~259 kg), hermana gemela de Pioneer 10 con el mismo chasis y el mensaje Pioneer Plaque a las estrellas. Lanzada el 1973-04-06 en un Atlas SLV-3D Centaur D-1A + Star-37E desde Cabo Cañaveral. Sobrevuelo de Júpiter el 1974-12-03 a 43 000 km —el más cercano de cualquier encuentro de Pioneer, devolvió las primeras imágenes de las regiones polares y la asistencia gravitatoria necesaria para alcanzar Saturno. Encuentro con Saturno el 1979-09-01 a 21 000 km de la cima de las nubes — primeras imágenes detalladas del sistema de anillos, descubrimiento de un nuevo anillo (anillo F) y una nueva luna, confirmación del campo magnético de Saturno casi perfectamente alineado. Continuó las observaciones hacia el exterior hasta el último contacto el 1995-11-24. Ahora a ~93 AU del Sol, rumbo hacia Aquila.",
-  "new": "Sonda estabilizada por rotación y alimentada por generador termoeléctrico de radioisótopos (~259 kg), hermana gemela de Pioneer 10 con el mismo chasis y el mensaje Pioneer Plaque a las estrellas. Lanzada el 1973-04-06 en un Atlas SLV-3D Centaur D-1A + Star-37E desde Cabo Cañaveral. Sobrevuelo de Júpiter el 1974-12-03 a 43 000 km —el más cercano de cualquier encuentro de Pioneer, devolvió las primeras imágenes de las regiones polares y la asistencia gravitatoria necesaria para alcanzar Saturno. Encuentro con Saturno el 1979-09-01 a 21 000 km de la cima de las nubes — primeras imágenes detalladas del sistema de anillos, descubrimiento de un nuevo anillo (anillo F) y una nueva luna, confirmación del campo magnético de Saturno casi perfectamente alineado. Continuó las observaciones hacia el exterior hasta el último contacto el 1995-11-24. Ahora a ~93 UA del Sol, rumbo hacia Aquila."
- },
- {
-  "rel": "fleet/orbiter/solar-orbiter.json",
-  "at": "description",
-  "old": "Solar Orbiter, liderada por ESA, es la primera nave espacial diseñada para obtener imágenes detalladas de las regiones polares del Sol — utilizando asistencias gravitatorias repetidas de Venus durante una década para salir de la eclíptica hacia una inclinación heliográfica de ~33°. Porta diez instrumentos que combinan teledetección (PHI, EUI, SPICE, STIX, METIS, SoloHI) con medición in situ (magnetómetro, partículas energéticas, plasma del viento solar, ondas de radio + plasma). Lanzada el 10-02-2020 desde Cabo Cañaveral en un Atlas V 411 de NASA. Primer perihelio el 15-06-2020 a 0,51 AU. Perihelio de trabajo 0,28 AU (~62 R☉), dentro de la distancia del perihelio de Mercurio.",
-  "new": "Solar Orbiter, liderada por ESA, es la primera nave espacial diseñada para obtener imágenes detalladas de las regiones polares del Sol — utilizando asistencias gravitatorias repetidas de Venus durante una década para salir de la eclíptica hacia una inclinación heliográfica de ~33°. Porta diez instrumentos que combinan teledetección (PHI, EUI, SPICE, STIX, METIS, SoloHI) con medición in situ (magnetómetro, partículas energéticas, plasma del viento solar, ondas de radio + plasma). Lanzada el 10-02-2020 desde Cabo Cañaveral en un Atlas V 411 de NASA. Primer perihelio el 15-06-2020 a 0,51 UA. Perihelio de trabajo 0,28 UA (~62 R☉), dentro de la distancia del perihelio de Mercurio."
- },
- {
-  "rel": "missions/saturn/pioneer-11.json",
-  "at": "description",
-  "old": "Gemela de Pioneer 10, lanzada un año después. Pioneer 11 utilizó la gravedad de Júpiter para desviar su trayectoria hacia Saturno — la prueba canónica de la propulsión de asistencia gravitatoria, la técnica que posteriormente permitió la Gran Gira de Voyager. En Saturno descubrió el anillo F y una pequeña luna interior que posteriormente se resolvió en el par coorbital Jano/Epimeteo. Lleva la misma placa Pioneer que su gemela. Señal perdida el 1995-09-30 desde una distancia heliocéntrica de ~43 AU; la sonda se dirige ahora hacia la constelación Aquila.",
-  "new": "Gemela de Pioneer 10, lanzada un año después. Pioneer 11 utilizó la gravedad de Júpiter para desviar su trayectoria hacia Saturno — la prueba canónica de la propulsión de asistencia gravitatoria, la técnica que posteriormente permitió la Gran Gira de Voyager. En Saturno descubrió el anillo F y una pequeña luna interior que posteriormente se resolvió en el par coorbital Jano/Epimeteo. Lleva la misma placa Pioneer que su gemela. Señal perdida el 1995-09-30 desde una distancia heliocéntrica de ~43 UA; la sonda se dirige ahora hacia la constelación Aquila."
- },
- {
-  "rel": "orbit-regimes-explore/GIANTS.json",
-  "at": "story",
-  "old": "El reino planetario exterior — de 5 a 30 AU. Dos gigantes gaseosos (Júpiter, Saturno) con envolturas de hidrógeno-helio de miles de kilómetros de profundidad sobre pequeños núcleos rocosos; dos gigantes de hielo (Urano, Neptuno) con mantos de agua/amoníaco/metano bajo atmósferas gaseosas más delgadas. Juntos concentran el 99% de toda la masa planetaria del sistema solar. Cada uno tiene su propio sistema de lunas que funciona como un sistema solar en miniatura — solo Júpiter tiene 95 lunas conocidas, incluidas cuatro más grandes que Plutón.",
-  "new": "El reino planetario exterior — de 5 a 30 UA. Dos gigantes gaseosos (Júpiter, Saturno) con envolturas de hidrógeno-helio de miles de kilómetros de profundidad sobre pequeños núcleos rocosos; dos gigantes de hielo (Urano, Neptuno) con mantos de agua/amoníaco/metano bajo atmósferas gaseosas más delgadas. Juntos concentran el 99% de toda la masa planetaria del sistema solar. Cada uno tiene su propio sistema de lunas que funciona como un sistema solar en miniatura — solo Júpiter tiene 95 lunas conocidas, incluidas cuatro más grandes que Plutón."
- },
- {
-  "rel": "orbit-regimes-explore/GIANTS.json",
-  "at": "residents.0.label",
-  "old": "Júpiter — 5.20 AU",
-  "new": "Júpiter — 5.20 UA"
- },
- {
-  "rel": "orbit-regimes-explore/GIANTS.json",
-  "at": "residents.1.label",
-  "old": "Saturno — 9.58 AU, sistema de anillos",
-  "new": "Saturno — 9.58 UA, sistema de anillos"
- },
- {
-  "rel": "orbit-regimes-explore/GIANTS.json",
-  "at": "residents.2.label",
-  "old": "Urano — 19.18 AU, inclinado 97°",
-  "new": "Urano — 19.18 UA, inclinado 97°"
- },
- {
-  "rel": "orbit-regimes-explore/GIANTS.json",
-  "at": "residents.3.label",
-  "old": "Neptuno — 30.07 AU, vientos más rápidos del sistema",
-  "new": "Neptuno — 30.07 UA, vientos más rápidos del sistema"
- },
- {
-  "rel": "orbit-regimes-explore/HELIOPAUSE.json",
-  "at": "story",
-  "old": "La frontera donde el viento solar del Sol pierde su batalla contra el medio interestelar, a aproximadamente 120 AU de distancia. En su interior se encuentra la heliosfera, una burbuja de partículas solares cargadas que fluyen hacia el exterior a cientos de km/s. Más allá: el gas frío y denso y los rayos cósmicos de la propia galaxia. Las sondas Voyager son los únicos artefactos que la humanidad ha colocado jamás más allá de esta frontera: Voyager 1 la cruzó en 2012, Voyager 2 en 2018. Ambas siguen transmitiendo datos, débilmente, desde el espacio interestelar.",
-  "new": "La frontera donde el viento solar del Sol pierde su batalla contra el medio interestelar, a aproximadamente 120 UA de distancia. En su interior se encuentra la heliosfera, una burbuja de partículas solares cargadas que fluyen hacia el exterior a cientos de km/s. Más allá: el gas frío y denso y los rayos cósmicos de la propia galaxia. Las sondas Voyager son los únicos artefactos que la humanidad ha colocado jamás más allá de esta frontera: Voyager 1 la cruzó en 2012, Voyager 2 en 2018. Ambas siguen transmitiendo datos, débilmente, desde el espacio interestelar."
- },
- {
-  "rel": "orbit-regimes-explore/KUIPER.json",
-  "at": "story",
-  "old": "Un anillo de cuerpos helados más allá de Neptuno — de 30 a 50 AU. El análogo congelado del cinturón de asteroides: cientos de miles de cuerpos de los cuales solo los más grandes han sido resueltos. Compuestos de metano, amoníaco, hielo de agua + roca. Plutón fue el primer miembro identificado, en 1930, aunque el cinturón no fue reconocido como población hasta la década de 1990 cuando Jewitt + Luu encontraron el segundo miembro (1992 QB1). New Horizons brindó a la humanidad sus primeras vistas cercanas de DOS objetos de Kuiper — Plutón en 2015 y Arrokoth en 2019.",
-  "new": "Un anillo de cuerpos helados más allá de Neptuno — de 30 a 50 UA. El análogo congelado del cinturón de asteroides: cientos de miles de cuerpos de los cuales solo los más grandes han sido resueltos. Compuestos de metano, amoníaco, hielo de agua + roca. Plutón fue el primer miembro identificado, en 1930, aunque el cinturón no fue reconocido como población hasta la década de 1990 cuando Jewitt + Luu encontraron el segundo miembro (1992 QB1). New Horizons brindó a la humanidad sus primeras vistas cercanas de DOS objetos de Kuiper — Plutón en 2015 y Arrokoth en 2019."
- },
- {
-  "rel": "orbit-regimes-explore/KUIPER.json",
-  "at": "residents.0.label",
-  "old": "Plutón — 39,5 AU, el más grande conocido",
-  "new": "Plutón — 39,5 UA, el más grande conocido"
- },
- {
-  "rel": "orbit-regimes-explore/KUIPER.json",
-  "at": "residents.1.label",
-  "old": "Eris — 96,4 AU (disco disperso)",
-  "new": "Eris — 96,4 UA (disco disperso)"
- },
- {
-  "rel": "orbit-regimes-explore/KUIPER.json",
-  "at": "residents.2.label",
-  "old": "Makemake — 45,8 AU",
-  "new": "Makemake — 45,8 UA"
- },
- {
-  "rel": "orbit-regimes-explore/KUIPER.json",
-  "at": "residents.3.label",
-  "old": "Haumea — 43,3 AU, rotador rápido",
-  "new": "Haumea — 43,3 UA, rotador rápido"
- },
- {
-  "rel": "orbit-regimes-explore/KUIPER.json",
-  "at": "residents.4.label",
-  "old": "Quaoar — 43,4 AU, tiene anillos",
-  "new": "Quaoar — 43,4 UA, tiene anillos"
- },
- {
-  "rel": "orbit-regimes-explore/KUIPER.json",
-  "at": "residents.5.label",
-  "old": "Arrokoth — 44,6 AU, binario de contacto",
-  "new": "Arrokoth — 44,6 UA, binario de contacto"
- },
- {
-  "rel": "orbit-regimes-explore/TERRESTRIAL.json",
-  "at": "story",
-  "old": "El sistema solar interior rocoso — de 0,4 a 1,5 AU desde el Sol. Cuatro mundos pequeños con núcleos metálicos, mantos de silicato y atmósferas delgadas o inexistentes. Se formaron dentro de la línea de congelación, donde hacía demasiado calor para que se condensaran los hielos volátiles, por lo que solo los materiales refractarios (silicatos, hierro, níquel) permanecieron sólidos. Tres de los cuatro han sido objetivos de exploración tripulada (Tierra, Luna, rumbo a Marte).",
-  "new": "El sistema solar interior rocoso — de 0,4 a 1,5 UA desde el Sol. Cuatro mundos pequeños con núcleos metálicos, mantos de silicato y atmósferas delgadas o inexistentes. Se formaron dentro de la línea de congelación, donde hacía demasiado calor para que se condensaran los hielos volátiles, por lo que solo los materiales refractarios (silicatos, hierro, níquel) permanecieron sólidos. Tres de los cuatro han sido objetivos de exploración tripulada (Tierra, Luna, rumbo a Marte)."
- },
- {
-  "rel": "orbit-regimes-explore/TERRESTRIAL.json",
-  "at": "residents.0.label",
-  "old": "Mercurio — 0,39 AU",
-  "new": "Mercurio — 0,39 UA"
- },
- {
-  "rel": "orbit-regimes-explore/TERRESTRIAL.json",
-  "at": "residents.1.label",
-  "old": "Venus — 0,72 AU",
-  "new": "Venus — 0,72 UA"
- },
- {
-  "rel": "orbit-regimes-explore/TERRESTRIAL.json",
-  "at": "residents.2.label",
-  "old": "Tierra — 1,00 AU",
-  "new": "Tierra — 1,00 UA"
- },
- {
-  "rel": "orbit-regimes-explore/TERRESTRIAL.json",
-  "at": "residents.3.label",
-  "old": "Marte — 1,52 AU",
-  "new": "Marte — 1,52 UA"
- },
- {
-  "rel": "planets/neptune.json",
-  "at": "science_sections.0.why",
-  "old": "A 30.07 AU de distancia media, Neptuno está tan lejos que una señal de luz unidireccional tarda 4 horas en cada trayecto. Voyager 2 necesitó 12 años para alcanzarlo.",
-  "new": "A 30.07 UA de distancia media, Neptuno está tan lejos que una señal de luz unidireccional tarda 4 horas en cada trayecto. Voyager 2 necesitó 12 años para alcanzarlo."
- },
- {
-  "rel": "planets/neptune.json",
-  "at": "science_sections.2.why",
-  "old": "La excentricidad suave de Neptuno de 0.0086 produce una órbita tan circular que la variación perihelio–afelio es menor a 200 millones de km en un semieje mayor de 30 AU — una variación del 1.4 %.",
-  "new": "La excentricidad suave de Neptuno de 0.0086 produce una órbita tan circular que la variación perihelio–afelio es menor a 200 millones de km en un semieje mayor de 30 UA — una variación del 1.4 %."
- },
- {
-  "rel": "planets/saturn.json",
-  "at": "science_sections.3.why",
-  "old": "La órbita de Saturno es suave (excentricidad 0,054), pero su distancia media de 9,6 AU hace que el perihelio y el afelio difieran en 100 millones de km: Cassini sincronizó su llegada para aprovechar la velocidad de entrada.",
-  "new": "La órbita de Saturno es suave (excentricidad 0,054), pero su distancia media de 9,6 UA hace que el perihelio y el afelio difieran en 100 millones de km: Cassini sincronizó su llegada para aprovechar la velocidad de entrada."
- },
- {
-  "rel": "science/_landing.json",
-  "at": "chapters.5.diagram_caption",
-  "old": "Una AU = una distancia Tierra-Sol. Marte está a ~1,5 AU. Júpiter está a ~5,2.",
-  "new": "Una AU = una distancia Tierra-Sol. Marte está a ~1,5 UA. Júpiter está a ~5,2."
- },
- {
-  "rel": "small-bodies/arrokoth.json",
-  "at": "science_sections.1.why",
-  "old": "Arrokoth orbita a 44,6 AU — cinturón de Kuiper clásico, más allá de Plutón, en una región donde los cuerpos han permanecido prácticamente inalterados desde el sistema solar primitivo.",
-  "new": "Arrokoth orbita a 44,6 UA — cinturón de Kuiper clásico, más allá de Plutón, en una región donde los cuerpos han permanecido prácticamente inalterados desde el sistema solar primitivo."
- },
- {
-  "rel": "small-bodies/bennu.json",
-  "at": "science_sections.0.why",
-  "old": "Bennu es un asteroide cercano a la Tierra (semieje mayor 1,13 AU) — lo suficientemente próximo para que OSIRIS-REx pudiera encontrarse con él, tomar muestras y devolver material a la Tierra en 7 años.",
-  "new": "Bennu es un asteroide cercano a la Tierra (semieje mayor 1,13 UA) — lo suficientemente próximo para que OSIRIS-REx pudiera encontrarse con él, tomar muestras y devolver material a la Tierra en 7 años."
- },
- {
-  "rel": "small-bodies/ceres.json",
-  "at": "science_sections.1.why",
-  "old": "Ceres orbita a 2,77 AU — claramente dentro del cinturón de asteroides y utilizado como distancia de referencia canónica del \"centro del cinturón\".",
-  "new": "Ceres orbita a 2,77 UA — claramente dentro del cinturón de asteroides y utilizado como distancia de referencia canónica del \"centro del cinturón\"."
- },
- {
-  "rel": "small-bodies/halley.json",
-  "at": "science_sections.0.why",
-  "old": "La excentricidad de 0.967 del Halley es la órbita de cometa de período corto del libro de texto — casi parabólica, con perihelio 0.59 AU y afelio 35 AU.",
-  "new": "La excentricidad de 0.967 del Halley es la órbita de cometa de período corto del libro de texto — casi parabólica, con perihelio 0.59 UA y afelio 35 UA."
- },
- {
-  "rel": "small-bodies/halley.json",
-  "at": "science_sections.1.why",
-  "old": "El enorme rango perihelio-afelio del Halley (35 a 0.59 AU) impulsa los hielos superficiales a sublimarse violentamente cerca del perihelio, produciendo la coma y la cola. Próximo perihelio: 2061.",
-  "new": "El enorme rango perihelio-afelio del Halley (35 a 0.59 UA) impulsa los hielos superficiales a sublimarse violentamente cerca del perihelio, produciendo la coma y la cola. Próximo perihelio: 2061."
- },
- {
-  "rel": "small-bodies/itokawa.json",
-  "at": "science_sections.0.why",
-  "old": "Itokawa es un asteroide Apollo cercano a la Tierra — semieje mayor 1,32 AU. La cita de Hayabusa en 2005 + retorno de muestras en 2010 fue el primer viaje redondo a un NEA.",
-  "new": "Itokawa es un asteroide Apollo cercano a la Tierra — semieje mayor 1,32 UA. La cita de Hayabusa en 2005 + retorno de muestras en 2010 fue el primer viaje redondo a un NEA."
- },
- {
-  "rel": "small-bodies/vesta.json",
-  "at": "science_sections.1.why",
-  "old": "Vesta orbita a 2.36 AU — cinturón interno. Su proximidad determinó que Dawn visitara Vesta primero (2011), luego partiera hacia Ceres (2015).",
-  "new": "Vesta orbita a 2.36 UA — cinturón interno. Su proximidad determinó que Dawn visitara Vesta primero (2011), luego partiera hacia Ceres (2015)."
- },
- {
-  "rel": "trajectories/dawn.json",
-  "at": "current_distance_label",
-  "old": "2,8 AU · en órbita estable de Ceres desde fin de octubre de 2018 (~20 años de vida orbital)",
-  "new": "2,8 UA · en órbita estable de Ceres desde fin de octubre de 2018 (~20 años de vida orbital)"
- },
- {
-  "rel": "trajectories/ulysses.json",
-  "at": "current_distance_label",
-  "old": "5,2 AU · misión finalizada 2009-06-30 (las líneas del propulsor se congelaron) — hardware en órbita heliocéntrica polar",
-  "new": "5,2 UA · misión finalizada 2009-06-30 (las líneas del propulsor se congelaron) — hardware en órbita heliocéntrica polar"
- },
- {
-  "rel": "trajectories/voyager-2.json",
-  "at": "current_distance_label",
-  "old": "143 AU · ~19,8 horas luz desde el Sol",
-  "new": "143 UA · ~19,8 horas luz desde el Sol"
- }
+  {
+    "rel": "belts/asteroid.json",
+    "at": "science_sections.1.why",
+    "old": "El cinturón ocupa el anillo de 2.2–3.2 AU. Las brechas de Kirkwood — zonas orbitales vacías en las resonancias de movimiento medio de Júpiter — estructuran la población.",
+    "new": "El cinturón ocupa el anillo de 2.2–3.2 UA. Las brechas de Kirkwood — zonas orbitales vacías en las resonancias de movimiento medio de Júpiter — estructuran la población."
+  },
+  {
+    "rel": "belts/kuiper.json",
+    "at": "science_sections.0.why",
+    "old": "El Cinturón de Kuiper es el remanente transneptuniano del disco protoplanetario — 30 a 50 AU, dominado por hielo. Plutón, Eris, Haumea y Makemake viven aquí.",
+    "new": "El Cinturón de Kuiper es el remanente transneptuniano del disco protoplanetario — 30 a 50 UA, dominado por hielo. Plutón, Eris, Haumea y Makemake viven aquí."
+  },
+  {
+    "rel": "belts/kuiper.json",
+    "at": "science_sections.1.why",
+    "old": "Los KBOs clásicos orbitan entre 42 y 48 AU en órbitas de baja excentricidad e baja inclinación — han permanecido mayormente sin perturbaciones desde el sistema temprano.",
+    "new": "Los KBOs clásicos orbitan entre 42 y 48 UA en órbitas de baja excentricidad e baja inclinación — han permanecido mayormente sin perturbaciones desde el sistema temprano."
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-11.json",
+    "at": "description",
+    "old": "Sonda estabilizada por rotación y alimentada por generador termoeléctrico de radioisótopos (~259 kg), hermana gemela de Pioneer 10 con el mismo chasis y el mensaje Pioneer Plaque a las estrellas. Lanzada el 1973-04-06 en un Atlas SLV-3D Centaur D-1A + Star-37E desde Cabo Cañaveral. Sobrevuelo de Júpiter el 1974-12-03 a 43 000 km —el más cercano de cualquier encuentro de Pioneer, devolvió las primeras imágenes de las regiones polares y la asistencia gravitatoria necesaria para alcanzar Saturno. Encuentro con Saturno el 1979-09-01 a 21 000 km de la cima de las nubes — primeras imágenes detalladas del sistema de anillos, descubrimiento de un nuevo anillo (anillo F) y una nueva luna, confirmación del campo magnético de Saturno casi perfectamente alineado. Continuó las observaciones hacia el exterior hasta el último contacto el 1995-11-24. Ahora a ~93 AU del Sol, rumbo hacia Aquila.",
+    "new": "Sonda estabilizada por rotación y alimentada por generador termoeléctrico de radioisótopos (~259 kg), hermana gemela de Pioneer 10 con el mismo chasis y el mensaje Pioneer Plaque a las estrellas. Lanzada el 1973-04-06 en un Atlas SLV-3D Centaur D-1A + Star-37E desde Cabo Cañaveral. Sobrevuelo de Júpiter el 1974-12-03 a 43 000 km —el más cercano de cualquier encuentro de Pioneer, devolvió las primeras imágenes de las regiones polares y la asistencia gravitatoria necesaria para alcanzar Saturno. Encuentro con Saturno el 1979-09-01 a 21 000 km de la cima de las nubes — primeras imágenes detalladas del sistema de anillos, descubrimiento de un nuevo anillo (anillo F) y una nueva luna, confirmación del campo magnético de Saturno casi perfectamente alineado. Continuó las observaciones hacia el exterior hasta el último contacto el 1995-11-24. Ahora a ~93 UA del Sol, rumbo hacia Aquila."
+  },
+  {
+    "rel": "fleet/orbiter/solar-orbiter.json",
+    "at": "description",
+    "old": "Solar Orbiter, liderada por ESA, es la primera nave espacial diseñada para obtener imágenes detalladas de las regiones polares del Sol — utilizando asistencias gravitatorias repetidas de Venus durante una década para salir de la eclíptica hacia una inclinación heliográfica de ~33°. Porta diez instrumentos que combinan teledetección (PHI, EUI, SPICE, STIX, METIS, SoloHI) con medición in situ (magnetómetro, partículas energéticas, plasma del viento solar, ondas de radio + plasma). Lanzada el 10-02-2020 desde Cabo Cañaveral en un Atlas V 411 de NASA. Primer perihelio el 15-06-2020 a 0,51 AU. Perihelio de trabajo 0,28 AU (~62 R☉), dentro de la distancia del perihelio de Mercurio.",
+    "new": "Solar Orbiter, liderada por ESA, es la primera nave espacial diseñada para obtener imágenes detalladas de las regiones polares del Sol — utilizando asistencias gravitatorias repetidas de Venus durante una década para salir de la eclíptica hacia una inclinación heliográfica de ~33°. Porta diez instrumentos que combinan teledetección (PHI, EUI, SPICE, STIX, METIS, SoloHI) con medición in situ (magnetómetro, partículas energéticas, plasma del viento solar, ondas de radio + plasma). Lanzada el 10-02-2020 desde Cabo Cañaveral en un Atlas V 411 de NASA. Primer perihelio el 15-06-2020 a 0,51 UA. Perihelio de trabajo 0,28 UA (~62 R☉), dentro de la distancia del perihelio de Mercurio."
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "description",
+    "old": "Gemela de Pioneer 10, lanzada un año después. Pioneer 11 utilizó la gravedad de Júpiter para desviar su trayectoria hacia Saturno — la prueba canónica de la propulsión de asistencia gravitatoria, la técnica que posteriormente permitió la Gran Gira de Voyager. En Saturno descubrió el anillo F y una pequeña luna interior que posteriormente se resolvió en el par coorbital Jano/Epimeteo. Lleva la misma placa Pioneer que su gemela. Señal perdida el 1995-09-30 desde una distancia heliocéntrica de ~43 AU; la sonda se dirige ahora hacia la constelación Aquila.",
+    "new": "Gemela de Pioneer 10, lanzada un año después. Pioneer 11 utilizó la gravedad de Júpiter para desviar su trayectoria hacia Saturno — la prueba canónica de la propulsión de asistencia gravitatoria, la técnica que posteriormente permitió la Gran Gira de Voyager. En Saturno descubrió el anillo F y una pequeña luna interior que posteriormente se resolvió en el par coorbital Jano/Epimeteo. Lleva la misma placa Pioneer que su gemela. Señal perdida el 1995-09-30 desde una distancia heliocéntrica de ~43 UA; la sonda se dirige ahora hacia la constelación Aquila."
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "story",
+    "old": "El reino planetario exterior — de 5 a 30 AU. Dos gigantes gaseosos (Júpiter, Saturno) con envolturas de hidrógeno-helio de miles de kilómetros de profundidad sobre pequeños núcleos rocosos; dos gigantes de hielo (Urano, Neptuno) con mantos de agua/amoníaco/metano bajo atmósferas gaseosas más delgadas. Juntos concentran el 99% de toda la masa planetaria del sistema solar. Cada uno tiene su propio sistema de lunas que funciona como un sistema solar en miniatura — solo Júpiter tiene 95 lunas conocidas, incluidas cuatro más grandes que Plutón.",
+    "new": "El reino planetario exterior — de 5 a 30 UA. Dos gigantes gaseosos (Júpiter, Saturno) con envolturas de hidrógeno-helio de miles de kilómetros de profundidad sobre pequeños núcleos rocosos; dos gigantes de hielo (Urano, Neptuno) con mantos de agua/amoníaco/metano bajo atmósferas gaseosas más delgadas. Juntos concentran el 99% de toda la masa planetaria del sistema solar. Cada uno tiene su propio sistema de lunas que funciona como un sistema solar en miniatura — solo Júpiter tiene 95 lunas conocidas, incluidas cuatro más grandes que Plutón."
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "residents.0.label",
+    "old": "Júpiter — 5.20 AU",
+    "new": "Júpiter — 5.20 UA"
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "residents.1.label",
+    "old": "Saturno — 9.58 AU, sistema de anillos",
+    "new": "Saturno — 9.58 UA, sistema de anillos"
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "residents.2.label",
+    "old": "Urano — 19.18 AU, inclinado 97°",
+    "new": "Urano — 19.18 UA, inclinado 97°"
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "residents.3.label",
+    "old": "Neptuno — 30.07 AU, vientos más rápidos del sistema",
+    "new": "Neptuno — 30.07 UA, vientos más rápidos del sistema"
+  },
+  {
+    "rel": "orbit-regimes-explore/HELIOPAUSE.json",
+    "at": "story",
+    "old": "La frontera donde el viento solar del Sol pierde su batalla contra el medio interestelar, a aproximadamente 120 AU de distancia. En su interior se encuentra la heliosfera, una burbuja de partículas solares cargadas que fluyen hacia el exterior a cientos de km/s. Más allá: el gas frío y denso y los rayos cósmicos de la propia galaxia. Las sondas Voyager son los únicos artefactos que la humanidad ha colocado jamás más allá de esta frontera: Voyager 1 la cruzó en 2012, Voyager 2 en 2018. Ambas siguen transmitiendo datos, débilmente, desde el espacio interestelar.",
+    "new": "La frontera donde el viento solar del Sol pierde su batalla contra el medio interestelar, a aproximadamente 120 UA de distancia. En su interior se encuentra la heliosfera, una burbuja de partículas solares cargadas que fluyen hacia el exterior a cientos de km/s. Más allá: el gas frío y denso y los rayos cósmicos de la propia galaxia. Las sondas Voyager son los únicos artefactos que la humanidad ha colocado jamás más allá de esta frontera: Voyager 1 la cruzó en 2012, Voyager 2 en 2018. Ambas siguen transmitiendo datos, débilmente, desde el espacio interestelar."
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "story",
+    "old": "Un anillo de cuerpos helados más allá de Neptuno — de 30 a 50 AU. El análogo congelado del cinturón de asteroides: cientos de miles de cuerpos de los cuales solo los más grandes han sido resueltos. Compuestos de metano, amoníaco, hielo de agua + roca. Plutón fue el primer miembro identificado, en 1930, aunque el cinturón no fue reconocido como población hasta la década de 1990 cuando Jewitt + Luu encontraron el segundo miembro (1992 QB1). New Horizons brindó a la humanidad sus primeras vistas cercanas de DOS objetos de Kuiper — Plutón en 2015 y Arrokoth en 2019.",
+    "new": "Un anillo de cuerpos helados más allá de Neptuno — de 30 a 50 UA. El análogo congelado del cinturón de asteroides: cientos de miles de cuerpos de los cuales solo los más grandes han sido resueltos. Compuestos de metano, amoníaco, hielo de agua + roca. Plutón fue el primer miembro identificado, en 1930, aunque el cinturón no fue reconocido como población hasta la década de 1990 cuando Jewitt + Luu encontraron el segundo miembro (1992 QB1). New Horizons brindó a la humanidad sus primeras vistas cercanas de DOS objetos de Kuiper — Plutón en 2015 y Arrokoth en 2019."
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "residents.0.label",
+    "old": "Plutón — 39,5 AU, el más grande conocido",
+    "new": "Plutón — 39,5 UA, el más grande conocido"
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "residents.1.label",
+    "old": "Eris — 96,4 AU (disco disperso)",
+    "new": "Eris — 96,4 UA (disco disperso)"
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "residents.2.label",
+    "old": "Makemake — 45,8 AU",
+    "new": "Makemake — 45,8 UA"
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "residents.3.label",
+    "old": "Haumea — 43,3 AU, rotador rápido",
+    "new": "Haumea — 43,3 UA, rotador rápido"
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "residents.4.label",
+    "old": "Quaoar — 43,4 AU, tiene anillos",
+    "new": "Quaoar — 43,4 UA, tiene anillos"
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "residents.5.label",
+    "old": "Arrokoth — 44,6 AU, binario de contacto",
+    "new": "Arrokoth — 44,6 UA, binario de contacto"
+  },
+  {
+    "rel": "orbit-regimes-explore/TERRESTRIAL.json",
+    "at": "story",
+    "old": "El sistema solar interior rocoso — de 0,4 a 1,5 AU desde el Sol. Cuatro mundos pequeños con núcleos metálicos, mantos de silicato y atmósferas delgadas o inexistentes. Se formaron dentro de la línea de congelación, donde hacía demasiado calor para que se condensaran los hielos volátiles, por lo que solo los materiales refractarios (silicatos, hierro, níquel) permanecieron sólidos. Tres de los cuatro han sido objetivos de exploración tripulada (Tierra, Luna, rumbo a Marte).",
+    "new": "El sistema solar interior rocoso — de 0,4 a 1,5 UA desde el Sol. Cuatro mundos pequeños con núcleos metálicos, mantos de silicato y atmósferas delgadas o inexistentes. Se formaron dentro de la línea de congelación, donde hacía demasiado calor para que se condensaran los hielos volátiles, por lo que solo los materiales refractarios (silicatos, hierro, níquel) permanecieron sólidos. Tres de los cuatro han sido objetivos de exploración tripulada (Tierra, Luna, rumbo a Marte)."
+  },
+  {
+    "rel": "orbit-regimes-explore/TERRESTRIAL.json",
+    "at": "residents.0.label",
+    "old": "Mercurio — 0,39 AU",
+    "new": "Mercurio — 0,39 UA"
+  },
+  {
+    "rel": "orbit-regimes-explore/TERRESTRIAL.json",
+    "at": "residents.1.label",
+    "old": "Venus — 0,72 AU",
+    "new": "Venus — 0,72 UA"
+  },
+  {
+    "rel": "orbit-regimes-explore/TERRESTRIAL.json",
+    "at": "residents.2.label",
+    "old": "Tierra — 1,00 AU",
+    "new": "Tierra — 1,00 UA"
+  },
+  {
+    "rel": "orbit-regimes-explore/TERRESTRIAL.json",
+    "at": "residents.3.label",
+    "old": "Marte — 1,52 AU",
+    "new": "Marte — 1,52 UA"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "science_sections.0.why",
+    "old": "A 30.07 AU de distancia media, Neptuno está tan lejos que una señal de luz unidireccional tarda 4 horas en cada trayecto. Voyager 2 necesitó 12 años para alcanzarlo.",
+    "new": "A 30.07 UA de distancia media, Neptuno está tan lejos que una señal de luz unidireccional tarda 4 horas en cada trayecto. Voyager 2 necesitó 12 años para alcanzarlo."
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "science_sections.2.why",
+    "old": "La excentricidad suave de Neptuno de 0.0086 produce una órbita tan circular que la variación perihelio–afelio es menor a 200 millones de km en un semieje mayor de 30 AU — una variación del 1.4 %.",
+    "new": "La excentricidad suave de Neptuno de 0.0086 produce una órbita tan circular que la variación perihelio–afelio es menor a 200 millones de km en un semieje mayor de 30 UA — una variación del 1.4 %."
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "science_sections.3.why",
+    "old": "La órbita de Saturno es suave (excentricidad 0,054), pero su distancia media de 9,6 AU hace que el perihelio y el afelio difieran en 100 millones de km: Cassini sincronizó su llegada para aprovechar la velocidad de entrada.",
+    "new": "La órbita de Saturno es suave (excentricidad 0,054), pero su distancia media de 9,6 UA hace que el perihelio y el afelio difieran en 100 millones de km: Cassini sincronizó su llegada para aprovechar la velocidad de entrada."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.5.diagram_caption",
+    "old": "Una AU = una distancia Tierra-Sol. Marte está a ~1,5 AU. Júpiter está a ~5,2.",
+    "new": "Una AU = una distancia Tierra-Sol. Marte está a ~1,5 UA. Júpiter está a ~5,2."
+  },
+  {
+    "rel": "small-bodies/arrokoth.json",
+    "at": "science_sections.1.why",
+    "old": "Arrokoth orbita a 44,6 AU — cinturón de Kuiper clásico, más allá de Plutón, en una región donde los cuerpos han permanecido prácticamente inalterados desde el sistema solar primitivo.",
+    "new": "Arrokoth orbita a 44,6 UA — cinturón de Kuiper clásico, más allá de Plutón, en una región donde los cuerpos han permanecido prácticamente inalterados desde el sistema solar primitivo."
+  },
+  {
+    "rel": "small-bodies/bennu.json",
+    "at": "science_sections.0.why",
+    "old": "Bennu es un asteroide cercano a la Tierra (semieje mayor 1,13 AU) — lo suficientemente próximo para que OSIRIS-REx pudiera encontrarse con él, tomar muestras y devolver material a la Tierra en 7 años.",
+    "new": "Bennu es un asteroide cercano a la Tierra (semieje mayor 1,13 UA) — lo suficientemente próximo para que OSIRIS-REx pudiera encontrarse con él, tomar muestras y devolver material a la Tierra en 7 años."
+  },
+  {
+    "rel": "small-bodies/ceres.json",
+    "at": "science_sections.1.why",
+    "old": "Ceres orbita a 2,77 AU — claramente dentro del cinturón de asteroides y utilizado como distancia de referencia canónica del \"centro del cinturón\".",
+    "new": "Ceres orbita a 2,77 UA — claramente dentro del cinturón de asteroides y utilizado como distancia de referencia canónica del \"centro del cinturón\"."
+  },
+  {
+    "rel": "small-bodies/halley.json",
+    "at": "science_sections.0.why",
+    "old": "La excentricidad de 0.967 del Halley es la órbita de cometa de período corto del libro de texto — casi parabólica, con perihelio 0.59 AU y afelio 35 AU.",
+    "new": "La excentricidad de 0.967 del Halley es la órbita de cometa de período corto del libro de texto — casi parabólica, con perihelio 0.59 UA y afelio 35 UA."
+  },
+  {
+    "rel": "small-bodies/halley.json",
+    "at": "science_sections.1.why",
+    "old": "El enorme rango perihelio-afelio del Halley (35 a 0.59 AU) impulsa los hielos superficiales a sublimarse violentamente cerca del perihelio, produciendo la coma y la cola. Próximo perihelio: 2061.",
+    "new": "El enorme rango perihelio-afelio del Halley (35 a 0.59 UA) impulsa los hielos superficiales a sublimarse violentamente cerca del perihelio, produciendo la coma y la cola. Próximo perihelio: 2061."
+  },
+  {
+    "rel": "small-bodies/itokawa.json",
+    "at": "science_sections.0.why",
+    "old": "Itokawa es un asteroide Apollo cercano a la Tierra — semieje mayor 1,32 AU. La cita de Hayabusa en 2005 + retorno de muestras en 2010 fue el primer viaje redondo a un NEA.",
+    "new": "Itokawa es un asteroide Apollo cercano a la Tierra — semieje mayor 1,32 UA. La cita de Hayabusa en 2005 + retorno de muestras en 2010 fue el primer viaje redondo a un NEA."
+  },
+  {
+    "rel": "small-bodies/vesta.json",
+    "at": "science_sections.1.why",
+    "old": "Vesta orbita a 2.36 AU — cinturón interno. Su proximidad determinó que Dawn visitara Vesta primero (2011), luego partiera hacia Ceres (2015).",
+    "new": "Vesta orbita a 2.36 UA — cinturón interno. Su proximidad determinó que Dawn visitara Vesta primero (2011), luego partiera hacia Ceres (2015)."
+  },
+  {
+    "rel": "trajectories/dawn.json",
+    "at": "current_distance_label",
+    "old": "2,8 AU · en órbita estable de Ceres desde fin de octubre de 2018 (~20 años de vida orbital)",
+    "new": "2,8 UA · en órbita estable de Ceres desde fin de octubre de 2018 (~20 años de vida orbital)"
+  },
+  {
+    "rel": "trajectories/ulysses.json",
+    "at": "current_distance_label",
+    "old": "5,2 AU · misión finalizada 2009-06-30 (las líneas del propulsor se congelaron) — hardware en órbita heliocéntrica polar",
+    "new": "5,2 UA · misión finalizada 2009-06-30 (las líneas del propulsor se congelaron) — hardware en órbita heliocéntrica polar"
+  },
+  {
+    "rel": "trajectories/voyager-2.json",
+    "at": "current_distance_label",
+    "old": "143 AU · ~19,8 horas luz desde el Sol",
+    "new": "143 UA · ~19,8 horas luz desde el Sol"
+  }
 ]

@@ -1,644 +1,644 @@
 [
- {
-  "rel": "fleet/cargo-spacecraft/atv.json",
-  "at": "dispatch",
-  "old": "Automated Transfer Vehicle（ATV）是欧洲的国际空间站货运飞船，也是当时最先进的货运航天器——一艘二十吨重的航天器，它能自动导航与空间站进行完全自动对接，运送货物、水、空气和推进剂，并利用自身发动机对整个国际空间站进行轨道升轨。五艘飞行器在2008年至2015年间运行，每一艘都以欧洲思想家命名，从儒勒·凡尔纳到乔治·勒梅特。ATV 不仅仅是一辆补给车，它是欧洲赢得作为国际空间站完全伙伴地位的方式——它所证明的技术延续至今，成为了现在为NASA的Orion月球之行提供动力的欧洲服务舱。",
-  "new": "Automated Transfer Vehicle（ATV）是欧洲的国际空间站货运飞船，也是当时最先进的货运航天器——一艘重二十吨的航天器，能够自主导航并与空间站全自动对接，运送货物、水、空气和推进剂，还能用自身发动机为整个国际空间站提升轨道。2008年至2015年间共有五艘飞行，每一艘都以一位欧洲思想家命名，从儒勒·凡尔纳到乔治·勒梅特。ATV不只是一辆补给卡车，更是欧洲赢得国际空间站正式伙伴地位的途径——它验证过的技术延续至今，成为如今为NASA的Orion飞往月球提供动力的欧洲服务舱。"
- },
- {
-  "rel": "fleet/cargo-spacecraft/atv.json",
-  "at": "description",
-  "old": "ATV (Automated Transfer Vehicle) 是由Airbus在欧洲建造的机器人货运飞行器。ESA旗舰国际空间站货运飞船，从2008年至2015年执行了五次国际空间站飞行任务，运送货物、水、空气和推进剂，同时利用其引擎为Station进行增压。",
-  "new": "ATV（Automated Transfer Vehicle）是由Astrium / Airbus在欧洲（多国）建造的机器人货运航天器。它是ESA的旗舰国际空间站货运飞船，2008年至2015年共执行五次国际空间站飞行任务，运送货物、水、空气和推进剂，同时利用自身发动机为空间站提升轨道。"
- },
- {
-  "rel": "fleet/cargo-spacecraft/cargo-dragon-2.json",
-  "at": "tagline",
-  "old": "Cargo Dragon v1的继承者;后备车架PV",
-  "new": "Cargo Dragon v1的继任者；货舱段外装太阳能电池板"
- },
- {
-  "rel": "fleet/cargo-spacecraft/cargo-dragon-2.json",
-  "at": "description",
-  "old": "Crew Dragon的无机组变体,车厢上有相同的车身太阳能电池。与Cygnus(圆阵列)和Soyuz/Progress(矩形翼)的明显差异。返回时不受影响——在国际空间站货运承运人中独一无二。",
-  "new": "Crew Dragon的无人货运型，货舱段（trunk）上装有同样的贴体式太阳能电池。外观上与Cygnus（圆形阵列）和Soyuz/Progress（矩形翼）明显不同。可携带下行货物完好返回——在国际空间站货运飞船中独一无二。"
- },
- {
-  "rel": "fleet/cargo-spacecraft/cargo-dragon-2.json",
-  "at": "best_known_for",
-  "old": "Cargo Dragon v1 的后继者;后备车架 PV",
-  "new": "Cargo Dragon v1的继任者；货舱段外装太阳能电池板"
- },
- {
-  "rel": "fleet/cargo-spacecraft/cygnus-enhanced.json",
-  "at": "tagline",
-  "old": "伸展的Cygnus; UltraFlex圆阵",
-  "new": "加长版Cygnus；UltraFlex圆形阵列"
- },
- {
-  "rel": "fleet/cargo-spacecraft/cygnus-enhanced.json",
-  "at": "description",
-  "old": "Northrop Grumman 的增压货运载体，以其圆形 UltraFlex 太阳能阵列为特征，采用扇形折叠手风琴图案，这种设计在国际空间站访问器中独一无二。再入时燃烧殆尽；无回收货物。",
-  "new": "Northrop Grumman的增压货运飞船，以圆形UltraFlex太阳能阵列著称——这种扇形折叠的手风琴式结构，其他国际空间站访问飞行器都没有。再入大气层时烧毁，不带回货物。"
- },
- {
-  "rel": "fleet/cargo-spacecraft/cygnus-enhanced.json",
-  "at": "best_known_for",
-  "old": "伸展的Cygnus; UltraFlex圆阵列",
-  "new": "加长版Cygnus；UltraFlex圆形阵列"
- },
- {
-  "rel": "fleet/cargo-spacecraft/cygnus-standard.json",
-  "at": "description",
-  "old": "Cygnus Standard是美国Orbital ATK制造的机器人货运航天器。仅限国际空间站货运承运人。2013年首飞后退役。",
-  "new": "Cygnus Standard是Orbital ATK在美国制造的机器人货运航天器，是仅载增压货物的国际空间站货运飞船。2013年首飞后退役。"
- },
- {
-  "rel": "fleet/cargo-spacecraft/htv-x.json",
-  "at": "description",
-  "old": "HTV-X（白鹳-X）是日本宇宙航空研究开发机构（JAXA）的第二代货运飞船，是原始HTV的继任者。首架飞行器（HTV-X1）于2025年10月26日发射，于10月29日与国际空间站对接，并于2026年5月27日再入。HTV-X2已规划。",
-  "new": "HTV-X（Kounotori-X）是JAXA的第二代货运航天器，是初代HTV的继任者。首艘飞行器（HTV-X1）于2025年10月26日发射，10月29日与国际空间站对接，并于2026年5月27日再入大气层。HTV-X2已列入计划。"
- },
- {
-  "rel": "fleet/cargo-spacecraft/htv.json",
-  "at": "tagline",
-  "old": "日本的H-II Transfer Vehicle至国际空间站",
-  "new": "日本的H-II Transfer Vehicle，飞往国际空间站"
- },
- {
-  "rel": "fleet/cargo-spacecraft/htv.json",
-  "at": "description",
-  "old": "HTV (Kounotori) 是由日本三菱重工业公司制造的机器人货运航天器。日本的 H-II Transfer Vehicle 从 2009 年至 2020 年执行了九次国际空间站任务，其中 HTV-9（最后一次飞行）于 2020 年 5 月离站。",
-  "new": "HTV（Kounotori）是由Mitsubishi Heavy Industries在日本制造的机器人货运航天器。日本的H-II Transfer Vehicle在2009年至2020年间执行了九次国际空间站任务，其中HTV-9（最后一次飞行）于2020年5月离站。"
- },
- {
-  "rel": "fleet/cargo-spacecraft/htv.json",
-  "at": "best_known_for",
-  "old": "日本的H-II Transfer Vehicle至国际空间站",
-  "new": "日本的H-II Transfer Vehicle，飞往国际空间站"
- },
- {
-  "rel": "fleet/cargo-spacecraft/progress-7k-tg.json",
-  "at": "description",
-  "old": "最早的机器人货运飞船,衍生自Soyuz。1978年至1990年期间,有43次Progress航班飞往Salyut和早期Mir,建立了随后国际空间站补给系统。",
-  "new": "最早的机器人货运飞船，衍生自Soyuz。1978年至1990年间，43次Progress飞行前往Salyut和早期的Mir，确立了此后所有国际空间站补给任务沿用的架构。"
- },
- {
-  "rel": "fleet/cargo-spacecraft/progress-ms.json",
-  "at": "tagline",
-  "old": "当前Progress生成;国际空间站再补给",
-  "new": "现役Progress型号；国际空间站补给"
- },
- {
-  "rel": "fleet/cargo-spacecraft/progress-ms.json",
-  "at": "description",
-  "old": "Progress MS是俄罗斯RKK Energia制造的机器人货运飞船。当前Progress代系;国际空间站补给。2015年起服役。",
-  "new": "Progress MS是RKK Energia在俄罗斯制造的机器人货运航天器。现役Progress型号；国际空间站补给。2015年起服役。"
- },
- {
-  "rel": "fleet/cargo-spacecraft/progress-ms.json",
-  "at": "best_known_for",
-  "old": "当前Progress生成；国际空间站再补给",
-  "new": "现役Progress型号；国际空间站补给"
- },
- {
-  "rel": "fleet/cargo-spacecraft/tianzhou.json",
-  "at": "description",
-  "old": "中国为天宫空间站设计的货运飞船，继承了天宫一号的飞船总体设计。它为天宫补充推进剂并运送实验舱；首飞于2017年。",
-  "new": "中国为天宫空间站研制的货运飞船，与天宫一号共用飞船总体设计。它为天宫补加推进剂，并运送实验机柜；2017年首飞。"
- },
- {
-  "rel": "fleet/constellation/goes-noaa.json",
-  "at": "tagline",
-  "old": "NOAA地球静止天气卫星对——美洲连续覆盖",
-  "new": "NOAA地球静止气象卫星双星——持续覆盖美洲"
- },
- {
-  "rel": "fleet/constellation/goes-noaa.json",
-  "at": "description",
-  "old": "Geostationary Operational Environmental Satellite — NOAA的地球静止天气卫星对。截至2025年4月，GOES-19（位于西经75.2°的GOES-East）和GOES-18（位于西经137.0°的GOES-West）是运业卫星对，提供美洲的连续覆盖。GOES-16作为备用卫星存储；GOES-17于2023年1月停用。GOES-R系列搭载Advanced Baseline Imager，能够进行30秒间隔的中尺度扫描，用于飓风核心和强对流天气追踪。由Lockheed Martin制造；数据产品免费提供。",
-  "new": "Geostationary Operational Environmental Satellite——NOAA的地球静止气象卫星双星。截至2025年4月，GOES-19（位于西经75.2°的GOES-East）和GOES-18（位于西经137.0°的GOES-West）是在役的一对，持续覆盖美洲。GOES-16在轨备用；GOES-17已于2023年1月退役。GOES-R系列搭载Advanced Baseline Imager，可对飓风核心和强对流天气进行30秒间隔的中尺度扫描跟踪。由Lockheed Martin制造；数据产品免费提供。"
- },
- {
-  "rel": "fleet/constellation/goes-noaa.json",
-  "at": "best_known_for",
-  "old": "NOAA地球静止天气卫星对——美洲连续覆盖",
-  "new": "NOAA地球静止气象卫星双星——持续覆盖美洲"
- },
- {
-  "rel": "fleet/constellation/gps-gnss.json",
-  "at": "tagline",
-  "old": "最初的GNSS — 31颗卫星，自2000年起免费公共服务",
-  "new": "最初的GNSS——31颗卫星，自2000年起提供免费公共服务"
- },
- {
-  "rel": "fleet/constellation/gps-gnss.json",
-  "at": "best_known_for",
-  "old": "最初的GNSS — 31颗卫星，自2000年起免费公共服务",
-  "new": "最初的GNSS——31颗卫星，自2000年起提供免费公共服务"
- },
- {
-  "rel": "fleet/constellation/kuiper.json",
-  "at": "tagline",
-  "old": "Amazon LEO 宽带——计划 3,236 颗卫星，商业测试版 2026 年",
-  "new": "Amazon LEO 宽带——计划 3,236 颗卫星，2026 年商业测试"
- },
- {
-  "rel": "fleet/constellation/kuiper.json",
-  "at": "best_known_for",
-  "old": "Amazon Leo 宽带——计划 3,236 颗卫星，商业测试版 2026 年",
-  "new": "Amazon Leo 宽带——计划 3,236 颗卫星，2026 年商业测试"
- },
- {
-  "rel": "fleet/constellation/landsat.json",
-  "at": "description",
-  "old": "历史上最长的连续地球成像记录 — Landsat 1 于 1972 年发射(最初名为 ERTS-1),延续至 Landsat 9(2021 年)。当前运行的是 Landsat 8(2013 年)+ Landsat 9(2021 年)组合,位于 705 km 太阳同步轨道,倾角 98.2°。30 m 多光谱分辨率。NASA 负责建造和发射;USGS 负责运营和数据分发。自 2008 年免费公开访问以来,Landsat 成为气候变化、森林砍伐和城市增长的全球参考数据集。",
-  "new": "历史上最长的连续地球成像记录——Landsat 1 于 1972 年发射（最初名为 ERTS-1），延续至 Landsat 9（2021 年）。当前在役的是 Landsat 8（2013 年）和 Landsat 9（2021 年）一对，位于 705 km 太阳同步轨道，倾角 98.2°。30 m 多光谱分辨率。NASA 负责建造和发射；USGS 负责运营和数据分发。自 2008 年起免费公开获取，使 Landsat 成为气候变化、森林砍伐和城市扩张研究的全球参考数据集。"
- },
- {
-  "rel": "fleet/constellation/o3b-mpower.json",
-  "at": "description",
-  "old": "唯一运营的商业 MEO 宽带星座 — 初代 O3b 于 2013-2019 年部署,第二代 O3b mPOWER 自 2022 年起部署。20+ 颗卫星位于 8,063 km 赤道轨道。延迟介于 GEO 和 LEO 之间,客户群专注于电信回程、海事和远程企业。由 SES(卢森堡)运营。以\"另外 30 亿人\"命名 — 最初的使命是为地面宽带未覆盖的地区提供连接。",
-  "new": "唯一在役的商业MEO宽带星座——初代O3b于2013-2019年部署，第二代O3b mPOWER自2022年起部署。20+颗卫星位于8,063 km赤道轨道。延迟介于GEO和LEO之间，客户集中在电信回传、海事和偏远地区企业。由SES（卢森堡）运营。名称源自“另外30亿人”——最初的使命是为地面宽带未覆盖的地区提供连接。"
- },
- {
-  "rel": "fleet/constellation/oneweb.json",
-  "at": "description",
-  "old": "第一代 LEO 宽带星座,648 颗卫星位于 1,200 km 高度的 12 个极地平面上。极地轨道提供完整的极地到极地覆盖,这是 Starlink 中倾角星座无法达到的。2023 年被 Eutelsat 收购,组成 Eutelsat OneWeb;商业服务现与 Eutelsat GEO 资产捆绑提供。高度高于 Starlink 意味着延迟略高,但所需卫星数量更少。",
-  "new": "第一代LEO宽带星座，648颗卫星位于1,200 km高度的12个极地轨道面上。极地轨道可实现从极地到极地的完整覆盖，这是Starlink的中倾角轨道壳层无法做到的。2023年被Eutelsat收购，组成Eutelsat OneWeb；商业服务现与Eutelsat的GEO资产捆绑提供。高度高于Starlink，意味着延迟略高，但所需卫星数量更少。"
- },
- {
-  "rel": "fleet/constellation/planet-labs.json",
-  "at": "description",
-  "old": "来自两个卫星群的每日地球成像——约150颗PlanetScope 3U CubeSats（3-5米分辨率全球每日影像）和约21颗SkySats（50厘米分辨率任务型高分辨率）。全部在约475千米太阳同步轨道上。\"Doves\"理念是\"发射数百颗廉价小卫星，接受少数失败，每天获取地球每个地区的影像\"——这个方法确实奏效。Planet的影像档案库被非政府组织、政府部门和记者广泛查阅。",
-  "new": "来自两个卫星群的每日重访地球成像——约150颗PlanetScope 3U CubeSats（3-5米分辨率的全球每日影像）和约21颗SkySats（50厘米分辨率的按需高分辨率拍摄）。全部位于约475千米太阳同步轨道。“Doves”的理念是“发射数百颗廉价小卫星，接受少数失败，让每一片陆地每天都被拍到”——这个办法确实奏效。Planet的影像档案库被非政府组织、政府部门和记者广泛查阅。"
- },
- {
-  "rel": "fleet/constellation/sbirs-heo.json",
-  "at": "description",
-  "old": "美国天基红外系统(SBIRS)的HEO段——搭载于机密主星上的红外导弹预警传感器,运行于倾角63.4°的24小时Tundra轨道。通过在远地点停留于高纬度上空,SBIRS-HEO覆盖极地区域,而地球静止轨道的DSP / SBIRS-GEO传感器在该区域的观测仰角过低。SBIRS HEO-1于2006年作为搭载载荷随USA-184发射。",
-  "new": "美国天基红外系统（SBIRS）的HEO段——搭载于机密主星上的红外导弹预警传感器，运行于倾角63.4°临界倾角的24小时Tundra轨道。通过在远地点停留于高纬度上空，SBIRS-HEO覆盖极地区域，而地球静止轨道的DSP / SBIRS-GEO传感器在该区域的观测仰角过低。SBIRS HEO-1于2006年作为搭载载荷随USA-184发射。"
- },
- {
-  "rel": "fleet/constellation/sentinel-copernicus.json",
-  "at": "description",
-  "old": "欧洲旗舰地球观测计划,由ESA代表欧盟委员会Copernicus环境监测服务运营。Sentinel-1(C波段SAR雷达成像)、Sentinel-2(10-60米多光谱光学)、Sentinel-3(海洋+陆地)、Sentinel-5P(大气化学)、Sentinel-6(测高)。全部位于太阳同步LEO轨道。自由开放数据政策 — 所有Sentinel图像均可免费下载,无需许可费用。",
-  "new": "欧洲旗舰地球观测计划，由ESA代表欧盟委员会的Copernicus环境监测服务运营。Sentinel-1（C波段SAR雷达成像）、Sentinel-2（10-60米多光谱光学）、Sentinel-3（海洋+陆地）、Sentinel-5P（大气化学）、Sentinel-6（测高）。全部位于太阳同步LEO轨道。免费开放的数据政策——所有Sentinel图像均可免费下载，无需许可费用。"
- },
- {
-  "rel": "fleet/constellation/tundra-sirius.json",
-  "at": "description",
-  "old": "历史性卫星广播星座，运行于24小时Tundra轨道（~25,000 × 35,786 km），轨道倾角为63.4°临界倾角。三颗原始Sirius FM卫星（FM-1、FM-2、FM-3）各在CONUS上空停留约每个轨道周期的三分之二，为城市峡谷接收器提供了地静止卫星信号无法实现的仰角。Sirius FM-1于2000年从拜科努尔发射场由Proton-K火箭发射；FM-2和FM-3随后发射。该公司于2008年与XM Radio合并，成立Sirius XM。Tundra轨道星座于2016年停运，Sirius XM现运营约7颗地静止卫星星队。",
-  "new": "历史上的卫星广播星座，运行于24小时Tundra轨道（~25,000 × 35,786 km），倾角为63.4°临界倾角。最初的三颗Sirius FM卫星（FM-1、FM-2、FM-3）每个轨道周期约三分之二的时间停留在美国本土（CONUS）上空，为城市峡谷中的接收机提供了地球静止卫星信号无法实现的仰角。Sirius FM-1于2000年由Proton-K火箭从拜科努尔发射；FM-2和FM-3随后发射。该公司于2008年与XM Radio合并，成立Sirius XM。Tundra轨道星座于2016年停运，Sirius XM现运营约7颗地球静止卫星。"
- },
- {
-  "rel": "fleet/crewed-spacecraft/apollo-csm-block-i.json",
-  "at": "tagline",
-  "old": "原始Apollo CSM设计——从未载人飞行；1967年1月27日在发射台杀死了Apollo 1宇航员。重新设计的Block II于1968-1975年间飞行",
-  "new": "最初的Apollo CSM设计——从未载人飞行；1967年1月27日在发射台上致使Apollo 1机组遇难。重新设计后的Block II于1968-1975年间飞行"
- },
- {
-  "rel": "fleet/crewed-spacecraft/apollo-csm-block-i.json",
-  "at": "dispatch",
-  "old": "Block I是从未载人飞行的Apollo硬件，也是该计划其余部分得以存活的部分原因。它是指挥舱的首次尝试——仅用于无人飞行和早期地球轨道测试——它承载了一套在1966年看似合理的假设：纯氧舱在高于海平面的压力下密闭，舱门向内打开，内部材料的阻燃性能未经充分考虑。1967年1月27日，发射台上的一道火花在几秒内将这些假设变成了致命的——Apollo 1机组人员在一次每个人都视为日常的测试中丧生。Block I随之退役，成为这次教训；最终登月的Block II在很大程度上，就是Block I犯错的完整清单。",
-  "new": "Block I是从未载人飞行的Apollo硬件，也是该计划其余部分得以延续的部分原因。它是指挥舱的第一版设计——只用于无人飞行和早期地球轨道试验——承载着一套在1966年看似合理的假设：纯氧座舱的压力高于海平面气压，舱门向内开启，内饰材料的选择几乎没有考虑防火。1967年1月27日，发射台上的一点火花在几秒内让这些假设变得致命，Apollo 1机组在一次所有人都视为例行的测试中丧生。Block I就此在这一教训中退役；最终抵达月球的Block II，很大程度上就是Block I全部错误的清单。"
- },
- {
-  "rel": "fleet/crewed-spacecraft/apollo-csm-block-i.json",
-  "at": "description",
-  "old": "Block I是Apollo指挥与服务舱的首次设计迭代——原本作为纯地球轨道试验飞行器，用于验证月球能力级的Block II。纯氧增压舱在发射前为16.7 psi压力（飞行中为5 psi）；向内打开的舱门由大气压力差密闭。CSM-009和CSM-011在AS-201（1966年2月26日）和AS-202（1966年8月25日）无人亚轨道测试中飞行。CSM-017和CSM-020分别在Apollo 4（1967年11月9日）和Apollo 6（1968年4月4日）无人飞行中搭载——Block I指挥舱在前两次土星五号飞行中。CSM-012——Apollo 1飞船——在1967年1月27日被密闭进行Plugs-Out测试时，下部设备舱发生闪火，在数秒内杀死了机组人员；舱内无法通风，因为舱门向内打开，导致压力激增至29 psi。Apollo 204事故调查委员会主导了Block II的重新设计：向外打开的统一舱门、不易燃的舱内材料、发射前充氮富化大气、重新设计的线束。没有任何Block I CSM进行过载人飞行；Block II从Apollo 7（1968年）飞到ASTP（1975年）。",
-  "new": "Block I是Apollo指挥与服务舱的第一代设计——定位为纯地球轨道试飞器，先于具备登月能力的Block II。纯氧增压座舱，发射前压力16.7 psi（飞行中为5 psi）；向内开启的舱门靠内外气压差密封。CSM-009和CSM-011进行了无人亚轨道试验（AS-201，1966年2月26日；AS-202，1966年8月25日）。CSM-017和CSM-020分别在Apollo 4（1967年11月9日）和Apollo 6（1968年4月4日）上无人飞行——即前两次Saturn V飞行搭载的Block I指挥舱。CSM-012——Apollo 1飞船——于1967年1月27日封舱进行Plugs-Out测试时，下部设备舱发生闪燃，机组数秒内遇难；舱门向内开启，而舱压已飙升至29 psi，座舱无法泄压。Apollo 204事故调查委员会促成了Block II的重新设计：向外开启的一体式舱门、不可燃的座舱材料、发射前富氮的座舱大气、重新设计的线束。没有任何Block I CSM载人飞行过；Block II从Apollo 7（1968年）一直飞到ASTP（1975年）。"
- },
- {
-  "rel": "fleet/crewed-spacecraft/apollo-csm-block-i.json",
-  "at": "best_known_for",
-  "old": "原始Apollo CSM设计——从未载人飞行；1967年1月27日在发射台杀死了Apollo 1宇航员。重新设计的Block II于1968-1975年间飞行",
-  "new": "最初的Apollo CSM设计——从未载人飞行；1967年1月27日在发射台上致使Apollo 1机组遇难。重新设计后的Block II于1968-1975年间飞行"
- },
- {
-  "rel": "fleet/crewed-spacecraft/apollo-csm-block-ii.json",
-  "at": "tagline",
-  "old": "月球级 Command + Service Module",
-  "new": "具备登月能力的指挥舱+服务舱"
- },
- {
-  "rel": "fleet/crewed-spacecraft/apollo-csm-block-ii.json",
-  "at": "dispatch",
-  "old": "指挥舱是 Apollo 任务中唯一返回地球的部分——其他所有组件都在返程中被消耗和抛弃。这使指挥舱成为在大气再入时绝对不能失败的部件，而从月球返回的再入速度是最严苛的工况：太空舱以接近每秒11公里的速度进入大气层——这个速度比从地球轨道返回快50%——整个舱体被足以融化钢铁的火焰包裹。解决方案是采用烧蚀式热防护盾，其设计使其能够以受控的方式炭化和脱落，从而将热量散走。Block II 是执行载人任务的版本——这是 Apollo 1 号火灾后进行的地毯式重新设计——它将每一名打算探月的宇航员都安全送了回来。",
-  "new": "指挥舱是Apollo中唯一返回地球的部分——其余一切都在途中用尽并被抛弃。这使它成为再入时绝不能失败的部分，而从月球返回的再入是这一难题中最严苛的版本：太空舱以接近每秒11公里的速度进入大气层，比从地球轨道返回快了一半，被足以让钢铁沸腾的火球包裹。它的解决方案是烧蚀式热防护罩，其设计让它以受控方式炭化、剥落，把热量一并带走。Block II是执行载人飞行的版本——这是Apollo 1火灾后被迫从头开始的重新设计——它把每一位启程前往月球的宇航员都平安带了回来。"
- },
- {
-  "rel": "fleet/crewed-spacecraft/apollo-csm-block-ii.json",
-  "at": "description",
-  "old": "月球级的指挥舱和服务舱，在1968年至1972年间将Apollo航天员运送至月球轨道。共进行了十五次载人飞行：Apollo 7–17（其中十一次是月球目标任务）、三次Skylab乘组轮换飞行（1973–1974年），以及1975年的Apollo-Soyuz Test Project——包括Apollo 13的应急生命保障舱配置。",
-  "new": "具备登月能力的指挥与服务舱，1968年至1972年间将Apollo宇航员送入月球轨道。共进行十五次载人飞行：Apollo 7–17（其中十一次飞往月球）、三次Skylab乘组轮换（1973–1974年），以及1975年的Apollo-Soyuz Test Project——包括Apollo 13临时改作救生艇的构型。"
- },
- {
-  "rel": "fleet/crewed-spacecraft/apollo-csm-block-ii.json",
-  "at": "best_known_for",
-  "old": "月球级 Command + Service Module",
-  "new": "具备登月能力的指挥舱+服务舱"
- },
- {
-  "rel": "fleet/crewed-spacecraft/apollo-lm.json",
-  "at": "dispatch",
-  "old": "Lunar Module 是第一个真正的航天器——第一个专为真空飞行而建造的载人飞行器,无需穿越大气层,因此它可以抛开流线型和隔热屏蔽,完全成为它本来的样子:一台专用机器。Grumman 将其分为两部分——下降级将乘员送至月面,然后充当发射台,由独立的上升级将他们送回——因为只有这种分级方式才能平衡登月的质量预算。它靠蛛网般的支腿飞行,外壳有些地方薄如几层箔纸。在它之前从未有任何飞行器将人类送上另一个世界,而它那笨拙的、为目的而生的外形,正是航天器在无需承受返航考验时的真实模样。",
-  "new": "Lunar Module是第一艘真正的航天器——第一件专为在真空中飞行而造的载人飞行器，从不穿越大气层，因此可以舍弃流线外形和隔热防护，成为它本来的样子：只做一件事的机器。Grumman把它分成两部分——下降级载着乘员落到月面，随后充当独立上升级的发射台，由上升级把乘员送回——因为只有这样分级，才能让登月的质量预算收支平衡。它靠纤细的支腿落地，外壳有些地方薄得像几层箔纸。在它之前，没有任何飞行器把人送上另一个世界；它那笨拙、专为任务而生的外形，正是航天器不必承受返回地球时的模样。"
- },
- {
-  "rel": "fleet/crewed-spacecraft/apollo-lm.json",
-  "at": "description",
-  "old": "迄今唯一建造过的载人月球着陆器。1969 年至 1972 年间成功着陆六次——Eagle、Intrepid、Antares、Falcon、Orion、Challenger——以及曾充当 Apollo 13 生命舱的 Aquarius。下降级留在月球上；上升级在月球轨道上与 CSM 重新对接。",
-  "new": "迄今唯一建造过的载人月球着陆器。1969年至1972年间成功着陆六次——Eagle、Intrepid、Antares、Falcon、Orion、Challenger——另有曾充当Apollo 13救生艇的Aquarius。下降级留在月球上；上升级在月球轨道上与CSM重新对接。"
- },
- {
-  "rel": "fleet/crewed-spacecraft/atlantis.json",
-  "at": "dispatch",
-  "old": "Atlantis，OV-104，飞行了航天飞机最伟大伙伴关系的首尾两端。它与俄罗斯空间站Mir完成了最多次对接，开启了美俄合作的时代，并执行了STS-125任务，即最后一次大胆的维护任务，使Hubble Space Telescope能够再运行十年。2011年7月，Atlantis执行了STS-135任务，这是第135次也是最后一次航天飞机任务——这次飞行结束了三十年的可重复使用美国载人航天，并将它曾帮助建造的Space Station留在了轨道上。",
-  "new": "Atlantis，OV-104，见证了航天飞机最重要的几段合作。它与俄罗斯Mir空间站对接次数最多，开启了美俄合作的时代；它还执行了STS-125，那次大胆的最后一次维护任务让Hubble Space Telescope又能工作十年。2011年7月，Atlantis执行STS-135，即第135次、也是最后一次航天飞机任务——这次飞行为三十年的美国可重复使用载人航天画上句号，并把它曾参与建造的空间站留在了头顶的轨道上。"
- },
- {
-  "rel": "fleet/crewed-spacecraft/buran-ok-gli.json",
-  "at": "dispatch",
-  "old": "OK-GLI 是 Buran 的大气层测试轨道器——相当于 NASA 的 Enterprise，建造它是为了在任何飞行器进入轨道之前证明这种空天飞机能够滑翔和着陆。它配备了四台喷气发动机，在大气层中自主完成跑道进场和着陆，验证了 Buran 的空气动力学和自动着陆系统。它从未进入太空，也从来没有这个打算，而且它比那架真正飞行过的轨道器活得更久:当飞行过的 Buran 在 2002 年被摧毁时，OK-GLI 作为博物馆展品在德国保存了下来，成为苏联有史以来最大规模航天计划仅存的少数实物遗迹之一。",
-  "new": "OK-GLI是Buran的大气层试验轨道器——相当于NASA的Enterprise，建造它是为了在任何飞行器进入轨道之前证明这架空天飞机能够滑翔和着陆。它装有四台喷气发动机，在大气层中自行完成跑道进场和着陆，验证了Buran的空气动力学和自动着陆系统。它从未进入太空，也从未打算进入太空，却比真正飞上太空的轨道器活得更久：飞过太空的Buran在2002年被毁，OK-GLI则作为博物馆展品保存在德国，成为苏联有史以来最大规模航天计划仅存的少数实物遗迹之一。"
- },
- {
-  "rel": "fleet/crewed-spacecraft/buran-ok-gli.json",
-  "at": "description",
-  "old": "官方编号 BTS-002，昵称 OK-GLI。Buran 空间计划的全尺寸大气层试验飞行器——与轨道飞行器 Buran 1.01 具有相同的外轮廓，但配备四台 AL-31 涡喷发动机，可以在常规跑道上独立起飞。在 Zhukovsky Flight Research Institute 飞行场进行了 24 次大气层飞行，时间跨度为 1985-11-10 至 1988-04-15，验证了 Buran 的自动着陆系统和飞行控制软件，为 1988-11-15 的轨道飞行做准备。Buran 计划取消后，OK-GLI 在 LII 停放多年；1999 年被售予澳大利亚一家博物馆，随后转至巴林，最终进入德国的 Technik Museum Speyer / Sinsheim，至今仍在展出——是 Buran 对应 NASA 的 Enterprise 的等价物。",
-  "new": "官方编号BTS-002，昵称OK-GLI。Buran轨道飞行器计划的全尺寸大气层试验机——外形轮廓与飞行型Buran 1.01相同，但装有四台AL-31涡喷发动机，可在常规跑道上自力起飞。1985-11-10至1988-04-15间在Zhukovsky Flight Research Institute机场进行了24次大气层飞行，验证了Buran的自动着陆系统和飞控软件，为1988-11-15的轨道飞行做准备。Buran计划取消后，OK-GLI在LII停放多年；1999年售予澳大利亚一家博物馆，随后转到巴林，最终落户德国的Technik Museum Speyer / Sinsheim，至今在那里展出——相当于Buran版的NASA Enterprise。"
- },
- {
-  "rel": "fleet/crewed-spacecraft/buran.json",
-  "at": "tagline",
-  "old": "苏联航天飞机;一次无人驾驶飞行,从未乘员",
-  "new": "苏联航天飞机；一次无人飞行，从未载人"
- },
- {
-  "rel": "fleet/crewed-spacecraft/buran.json",
-  "at": "dispatch",
-  "old": "Buran 是苏联对 Space Shuttle 的回应——外观几乎完全相同,但有两个可以说是超越原型的决定:它不携带主发动机(所有推力来自独立的 Energia 火箭),并且可以无人飞行。1988年11月15日,它证明了第二点,完成了一次完整的无人轨道任务,并在侧风中自主降落在跑道上,这是有翼航天器从未做到过的。这是一次完美的飞行,也是它唯一的一次飞行。苏联解体,资金和任务都消失了,Buran 被取消——这架飞行过的轨道器后来在2002年因机库屋顶坍塌而被压毁。这是航天史上最令人印象深刻却又最毫无意义的成就之一。",
-  "new": "Buran是苏联对航天飞机的回应——外观几乎一模一样，但有两项可以说胜过原版的决定：它不带主发动机（全部推力来自独立的Energia火箭），而且可以无人飞行。1988年11月15日，它证明了第二点：完成了一次完整的无人轨道飞行，并在侧风中自行降落在跑道上，这是有翼航天器从未做到过的。这是一次完美的飞行，也是它唯一的一次。苏联解体，资金和任务都不复存在，Buran被取消——这架飞过太空的轨道器后来在2002年因机库屋顶坍塌而被压毁。这是航天史上最令人印象深刻、也最没有意义的成就之一。"
- },
- {
-  "rel": "fleet/crewed-spacecraft/buran.json",
-  "at": "description",
-  "old": "苏联的航天飞机,对外类似于美国轨道飞行器,但没有主发动机(Energia承载). 弗莱夫在1988年恰好有一次完全自主和无人驾驶——在程序结束前唯一到达轨道的苏联航天飞机.",
-  "new": "苏联的航天飞机，外观与美国轨道器相似，但没有主发动机（由Energia火箭承载升空）。1988年仅飞行一次，完全自主、无人驾驶——是该计划终止前苏联唯一进入轨道的航天飞机。"
- },
- {
-  "rel": "fleet/crewed-spacecraft/buran.json",
-  "at": "best_known_for",
-  "old": "苏联航天飞机;一次无人驾驶飞行,从未乘员",
-  "new": "苏联航天飞机；一次无人飞行，从未载人"
- },
- {
-  "rel": "fleet/crewed-spacecraft/challenger.json",
-  "at": "tagline",
-  "old": "OV-099 — 第二架可运行航天飞机。1986年1月28日STS-51-L任务发射后73秒丧失，机上7名航天员（包括教师克里斯塔·麦考利夫）全部遇难",
-  "new": "OV-099——第二架投入运营的航天飞机。1986年1月28日STS-51-L任务发射73秒后失事，机上7名航天员（包括教师克里斯塔·麦考利夫）全部遇难"
- },
- {
-  "rel": "fleet/crewed-spacecraft/challenger.json",
-  "at": "dispatch",
-  "old": "Challenger（OV-099）是舰队的早期主力机，也是第一次灾难的发生地。它执行了该计划首次太空行走任务，并将美国第一位女宇航员萨莉·莱德送入轨道。1986年1月28日，在异常寒冷的天气中发射升空，其一台固体火箭助推器中的橡胶密封圈因寒冷而变脆——这是工程师早已警告过的失效模式——最终破裂，航天器在升空73秒后解体。机上7人全部遇难。这场灾难使舰队停飞了近三年，并暴露了一种无视已知且有标记的风险的管理文化。",
-  "new": "Challenger（OV-099）是机队的早期主力，也是第一场灾难的发生地。它执行了该计划的首次太空行走任务，并将美国第一位女性宇航员萨莉·莱德送入轨道。1986年1月28日，在异常寒冷的天气中发射，其一台固体火箭助推器上的橡胶密封圈因低温变硬——工程师们早已警告过这种失效模式——最终失效，航天器在升空73秒后解体。机上7人全部遇难。这场灾难使机队停飞近三年，并暴露出一种对已知且已被指出的风险视而不见的管理文化。"
- },
- {
-  "rel": "fleet/crewed-spacecraft/challenger.json",
-  "at": "description",
-  "old": "由结构测试件（STA-099）改装而来，因Enterprise升级成本过高而被改为飞行航天器。首次飞行为STS-6任务（1983年4月4日），执行了航天飞机首次舱外活动。共执行10次任务：STS-6、STS-7、STS-8、STS-41-B、STS-41-C、STS-41-G、STS-51-B、STS-51-F、STS-61-A和最后一次任务STS-51-L。1986年1月28日，STS-51-L在史无前例的低温环境下（−1 °C）发射——右侧固体火箭推进器的O形圈密封失效，高温气体烧穿了固体火箭推进器与外储箱之间的支柱，航天器在最大动压点（T+73s）14 km高度处解体。机上7名航天员全部遇难，其中包括教师克里斯塔·麦考利夫。Rogers Commission将航天飞机停飞了32个月，并改写了NASA的安全文化。",
-  "new": "由结构试验件（STA-099）改装而来，因Enterprise的升级成本过高而改为飞行用。首飞为STS-6（1983年4月4日），执行了航天飞机的首次舱外活动。共飞行10次：STS-6、STS-7、STS-8、STS-41-B、STS-41-C、STS-41-G、STS-51-B、STS-51-F、STS-61-A，以及最后一次飞行STS-51-L。1986年1月28日，STS-51-L在前所未有的低温（−1 °C）下发射——右侧固体火箭助推器的O形圈未能密封，高温气体烧穿了连接助推器与外挂燃料箱的支柱，轨道器在最大动压点（T+73s）、14 km高度解体。机上7名航天员全部遇难，其中包括教师克里斯塔·麦考利夫。罗杰斯委员会使航天飞机停飞32个月，并重塑了NASA的安全文化。"
- },
- {
-  "rel": "fleet/crewed-spacecraft/challenger.json",
-  "at": "best_known_for",
-  "old": "第二架航天飞机；1986年1月28日STS-51-L任务发射后73秒丧失，机上7名航天员",
-  "new": "第二架航天飞机；1986年1月28日STS-51-L任务发射73秒后失事，机上7名航天员"
- },
- {
-  "rel": "fleet/crewed-spacecraft/columbia.json",
-  "at": "dispatch",
-  "old": "Columbia是首创之作——OV-102，这架轨道器开创了航天飞机的时代。1981年4月的STS-1任务中，它完成了迄今无人做过的壮举：两名宇航员搭乘尚未经过真实测试的可重复使用飞行器，首次航天飞行就飞入轨道，然后在跑道上安全着陆。它是整支舰队中最重的，执行了该计划大部分科学任务，包括Spacelab实验室的多次任务。2003年，在STS-107任务中，发射时碎片击穿的机翼一个洞眼让再入大气的热量进入了结构内部，Columbia在距德克萨斯州仅几分钟航程时四分五裂——这次灾难终结了该计划对碎片撞击危险的侥幸心理。",
-  "new": "Columbia是第一架——OV-102，开启航天飞机时代的轨道器。1981年4月的STS-1上，它做到了此前此后的载人航天器都没做到的事：处女航就飞入轨道，由两名宇航员驾驶一架未经试飞的可重复使用飞行器，再像滑翔机一样降落在跑道上。它是机队中最重的一架，承担了该计划的大部分科学任务，包括Spacelab实验室。2003年的STS-107中，发射时的碎片在机翼上打出一个洞，再入时的高温由此进入机体结构，Columbia在距离回家只剩几分钟时于得克萨斯州上空解体——这次损失终结了该计划对碎片撞击的麻痹大意。"
- },
- {
-  "rel": "fleet/crewed-spacecraft/columbia.json",
-  "at": "description",
-  "old": "首架投入运营的Space Shuttle轨道器。在22年间执行了28次任务，包括STS-1（美国首架也是唯一一架在首次航天飞行时搭载宇航员的有人航天器）、1990年的Astro-1紫外天文学任务、1993年的SLS-2生命科学任务，以及参议员约翰·格伦在1998年STS-95任务中重返太空。在STS-107任务中再入大气时失事（2003-02-01）——发射时的泡沫撞击破坏了左机翼的RCC前缘，飞行器在德克萨斯州上空以18倍音速解体，7名机组成员全部遇难。该事故导致航天飞机舰队停飞29个月，引发了太空探索愿景。",
-  "new": "首架投入运营的Space Shuttle轨道器。22年间执行了28次任务，包括STS-1（美国首架也是唯一一架在处女航时就载有乘员的载人航天器）、1990年的Astro-1紫外天文学任务、1993年的SLS-2生命科学任务，以及参议员约翰·格伦在1998年STS-95任务中重返太空。在STS-107任务（2003-02-01）再入时失事——发射时的泡沫撞击击穿了左翼的RCC前缘，飞行器在得克萨斯州上空以18倍音速解体，7名机组成员全部遇难。该事故使航天飞机机队停飞29个月，并促成了太空探索愿景。"
- },
- {
-  "rel": "fleet/crewed-spacecraft/columbia.json",
-  "at": "best_known_for",
-  "old": "首架飞往太空的航天飞机轨道器（STS-1，1981）；在STS-107再入任务中失事，2003",
-  "new": "首架飞往太空的航天飞机轨道器（STS-1，1981）；在STS-107再入时失事，2003"
- },
- {
-  "rel": "fleet/crewed-spacecraft/crew-dragon.json",
-  "at": "description",
-  "old": "SpaceX 的载人航天器，也是首个由私营企业开发和运营的将人类送入轨道的航天器（Demo-2，2020-05-30）。船体尾部配备两个太阳能电池板，在整流罩分离后部署，为在轨运行期间提供动力。",
-  "new": "SpaceX的载人航天器，也是首个由私营企业开发和运营、将人类送入轨道的航天器（Demo-2，2020-05-30）。货舱段配有两块太阳能电池板，在整流罩分离后展开，为在轨运行期间供电。"
- },
- {
-  "rel": "fleet/crewed-spacecraft/discovery.json",
-  "at": "dispatch",
-  "old": "Discovery OV-103 是机队中飞行次数最多、最受信赖的轨道器,在27年间执行了39次任务。它是NASA在两次灾难后选择让航天飞机重返飞行的首选——当项目最需要证明自身安全性时被率先送上太空的飞行器。在其众多飞行任务中,最重要的可能是STS-31,它将Hubble Space Telescope送入轨道并释放,开启了天文学史上最富成果的篇章。",
-  "new": "Discovery（OV-103）是机队中飞行次数最多、最受信赖的轨道器，27年间执行了39次任务。在两次灾难之后，NASA都选它让航天飞机重返飞行——当计划最需要重新证明自身安全时，率先送上太空的就是它。在它众多的飞行中，最重要的也许是STS-31：它把Hubble Space Telescope送入轨道并释放，开启了天文学史上最富成果的篇章。"
- },
- {
-  "rel": "fleet/crewed-spacecraft/endeavour.json",
-  "at": "description",
-  "old": "第五架也是最后一架可运行的航天飞机，采用Challenger之后的结构备件组装，当时NASA仅有三架评定可飞行的航天飞机。通过全国学校竞赛以库克船长的HMS Endeavour命名。首次飞行STS-49（1992-05-07）包括首次三人舱外活动（捕获被困的Intelsat VI卫星）。主要任务：STS-61（1993-12）进行首次Hubble维修，恢复了Hubble的光学系统；STS-88（1998-12-04）首次国际空间站装配飞行，交付第一节仓段Unity；STS-100（2001-04）安装Canadarm2；STS-130（2010-02）安装Tranquility与Cupola；STS-134（2011-05）安装AMS-02宇宙射线探测器——航天飞机计划最后一次舱外活动任务。现展示于位于洛杉矶的加州科学中心。",
-  "new": "第五架也是最后一架投入运营的轨道器，在Challenger事故后用结构备件组装而成，当时NASA仅剩三架可飞行的轨道器。通过全国学校竞赛，以库克船长的HMS Endeavour命名。首飞STS-49（1992-05-07）包括首次三人舱外活动（捕获失控的Intelsat VI卫星）。主要任务：STS-61（1993-12）首次Hubble维修，恢复了Hubble的光学系统；STS-88（1998-12-04）首次国际空间站组装飞行，交付1号节点舱Unity；STS-100（2001-04）安装Canadarm2；STS-130（2010-02）安装Tranquility与Cupola；STS-134（2011-05）安装AMS-02宇宙射线探测器——这也是航天飞机计划最后一批舱外活动乘组。现展示于洛杉矶的加州科学中心。"
- },
- {
-  "rel": "fleet/crewed-spacecraft/enterprise.json",
-  "at": "tagline",
-  "old": "OV-101 — 航天飞机原型机。因《星际迷航》粉丝活动从\"宪法号\"改名。1977年进行大气层测试飞行；从未进入轨道",
-  "new": "OV-101——航天飞机原型机。在《星际迷航》粉丝的请愿活动后由Constitution改名。1977年进行大气层测试飞行；从未进入轨道"
- },
- {
-  "rel": "fleet/crewed-spacecraft/enterprise.json",
-  "at": "description",
-  "old": "原名Constitution，1976 年在《星际迷航》粉丝组织的请愿活动后更名为Enterprise。作为接近与着陆测试（ALT）的原型机建造——1977 年在Edwards Air Force Base从航天飞机运输机进行 8 次携带飞行和 5 次自由飞行。首次自由飞行于 1977-08-12，由弗莱德·海斯和戈尔登·福勒顿驾驶，证明了轨道飞行器可以滑翔和着陆。不配备推进系统或防热瓷片；将Enterprise改装为可飞行状态估计比用结构备件重新制造新的轨道飞行器更加沉重，因此改为建造Challenger。现陈列于纽约Intrepid Sea, Air & Space Museum。",
-  "new": "原名Constitution，1976年航天飞机命名时，在《星际迷航》粉丝发起的来信请愿活动后改名为Enterprise。它作为进场与着陆试验（ALT）的原型机建造——1977年在Edwards Air Force Base上空从航天飞机运载机上进行了8次载机飞行和5次自由飞行。1977-08-12的首次自由飞行由弗莱德·海斯和戈尔登·福勒顿驾驶，证明了轨道器能够滑翔和着陆。不含推进系统或有效的防热瓦；据估计，把Enterprise改装成可飞行状态比用结构备件新造一架轨道器更重，因此改为建造Challenger。现陈列于纽约的Intrepid Sea, Air & Space Museum。"
- },
- {
-  "rel": "fleet/crewed-spacecraft/gemini.json",
-  "at": "dispatch",
-  "old": "Gemini宇宙飞船是美国人真正能够驾驶的第一艘飞船。水星号的宇航员主要是乘坐一个由地面控制的太空舱;Gemini的双人乘员配备了姿态控制推进器、飞行计算机,以及改变自身轨道的能力——能够追逐并与另一艘航天器对接。这就是它存在的全部原因:不是去任何新的地方,而是成为一台用于练习Apollo任务所需机动的机器。比水星号更宽敞但仍然拥挤,分为乘员舱和设备舱,就像后来的Apollo一样,在十次飞行中,它将交会对接、对接和两周耐久性从未知数变成了乘员可以简单完成的事情。",
-  "new": "Gemini飞船是美国人真正能够驾驶的第一艘飞船。Mercury的宇航员大多乘坐由地面控制的舱体；而Gemini的双人乘组配备了推进器和飞行计算机，能够自行改变轨道——追上另一艘航天器并与之对接。这正是它存在的全部意义：不是去往新的地方，而是成为练习Apollo所需机动的机器。它比Mercury宽敞，但仍然局促，和后来的Apollo一样分为乘员舱和设备段，在十次飞行中，把交会、对接和为期两周的耐久飞行从悬而未决的问题变成了乘组可以直接完成的事。"
- },
- {
-  "rel": "fleet/crewed-spacecraft/gemini.json",
-  "at": "description",
-  "old": "这艘双人宇宙飞船教会了NASA如何进行交会对接和舱外行走——这些使Apollo任务成为可能的技术。两次无人试飞(Gemini 1和2)在1964–1965年进行,随后是十次载人任务(Gemini 3–12)在1965–1966年进行,每一次都是向月球迈出的一步。",
-  "new": "这艘双人飞船教会了NASA如何交会、对接和太空行走——正是这些技术使Apollo成为可能。1964–1965年先进行了两次无人试飞（Gemini 1和2），随后在1965–1966年进行了十次载人任务（Gemini 3–12），每一次都是向月球迈出的一步。"
- },
- {
-  "rel": "fleet/crewed-spacecraft/mercury-capsule.json",
-  "at": "dispatch",
-  "old": "水星舱设计得极其精小，只需能让一个人在太空中存活——这一点从它的样子就能看出。舱内几乎没有空间做任何事，只能坐着；宇航员穿着宇宙飞船，与其说是乘坐它。但它的形状解决了那个时代最难的未解问题——如何返回地球。钝圆端部覆盖着一层护罩，这层护罩能烧蚀并将热量带走，将再入从必然的灾难转变为可以存活的事件，而它的圆锥形是美国首次回答\"载人宇宙飞船究竟什么样子\"这个问题的答案。此后的每一个舱——Gemini、Apollo舱、Dragon——都是这个狭窄小圆锥的后代。",
-  "new": "Mercury舱被设计成能让一个人在太空中存活的最小装置——看得出来。里面几乎没有活动空间，只能坐着；宇航员与其说是乘坐飞船，不如说是把它穿在身上。但它的外形解决了那个时代最难的未解难题——如何返回。钝圆的一端覆盖着会炭化并带走热量的防热罩，把再入从必死无疑变成了可以生还，而它的锥形，是美国对“载人航天器究竟该是什么样子”这个问题的第一个回答。此后的每一种舱——Gemini、Apollo、Dragon——都是这个局促小圆锥的后代。"
- },
- {
-  "rel": "fleet/crewed-spacecraft/mercury-capsule.json",
-  "at": "description",
-  "old": "圆锥形舱体，在1961年至1963年期间搭载了六名美国宇航员执行水星计划。舱体之小，以至于约翰·格伦曾戏称自己被装在罐头里的午餐肉——但它证明了轨道飞行对美国来说是可以实现的。",
-  "new": "圆锥形舱体，1961年至1963年间在Mercury计划中搭载了六名美国宇航员。它小到约翰·格伦曾有名地形容自己像“罐头里的午餐肉”——但它证明了美国能够实现轨道飞行。"
- },
- {
-  "rel": "fleet/crewed-spacecraft/orion.json",
-  "at": "description",
-  "old": "NASA Artemis项目的载人航天器，与ESA联合研制（欧洲服务舱由Airbus提供）。设计用于在多周的载人任务中支持最多四名宇航员飞往月球轨道。于2022年以无人方式执行Artemis I任务。于2026年4月执行首次载人任务（Artemis II），四人乘组完成绕月飞行轨迹。",
-  "new": "NASA Artemis计划的载人飞行器，与ESA联合研制（欧洲服务舱由Airbus提供）。设计可在为期数周的任务中支持最多四名宇航员飞往月球轨道。2022年在Artemis I上无人飞行。2026年4月执行首次载人任务（Artemis II），四人乘组沿绕月飞越轨迹飞行。"
- },
- {
-  "rel": "fleet/crewed-spacecraft/shenzhou.json",
-  "at": "description",
-  "old": "中国的载人飞船,外部来自Soyuz,但有所扩大。2003年首次乘员飞行(神舟五号,杨利伟);现为标准渡轮至天宫,每六个月轮乘一次。",
-  "new": "中国的载人飞船，外形源自Soyuz，但尺寸更大。2003年首次载人飞行（神舟五号，杨利伟）；现为往返天宫的标准交通工具，乘组每六个月轮换一次。"
- },
- {
-  "rel": "fleet/crewed-spacecraft/soyuz-7k-ok.json",
-  "at": "dispatch",
-  "old": "Soyuz 7K-OK是该系列的首款型号——这艘航天器的原始版本最终比所有其他型号都更长寿。它引入了此后每艘Soyuz都保留的三舱布局:一个球形轨道舱用于生活和工作,一个紧凑的下降舱用于返回,以及一个服务舱用于供电和推进。它也是在首次载人飞行中导致弗拉基米尔·科马罗夫丧生的版本,并且在改进形式下,又导致Soyuz 11的三名宇航员遇难——这些惨痛的早期教训将一个仓促的设计转变为可靠的设计。虽然在开始时粗糙而危险,但其基本架构被证明是如此可靠,经过数十年的改进,至今仍在将乘组送入轨道。",
-  "new": "Soyuz 7K-OK是该系列的第一款——这一航天器的最初版本，却比后来所有型号都长寿。它引入了此后每一艘Soyuz都沿用的三舱布局：供生活和工作的球形轨道舱，供返回的紧凑下降舱，以及提供电力和推进的服务舱。它也是在首次载人飞行中夺去弗拉基米尔·科马罗夫生命的版本，并且在改进形态下，又夺去了Soyuz 11三名宇航员的生命——这段惨痛的早期教训，把一个仓促的设计变成了可靠的设计。起初粗糙而危险，但其基本架构被证明如此扎实，经过数十年的改进，至今仍在把乘组送入轨道。"
- },
- {
-  "rel": "fleet/crewed-spacecraft/soyuz-t.json",
-  "at": "description",
-  "old": "1979–1986年间的礼炮纪元Soyuz飞船，具有三名宇航员的乘员容量，在Soyuz 11致命失压事故后恢复此配置。配备现代化航电系统和肼基推进；是原始的7K-OK与长期运行的TM/TMA/MS系列之间的过渡方案。",
-  "new": "1979–1986年Salyut时代的Soyuz，在Soyuz 11失压致命事故后恢复了三名宇航员的载员能力。配备现代化航电系统和自燃推进剂推进；是最初的7K-OK与长期服役的TM/TMA/MS系列之间的桥梁。"
- },
- {
-  "rel": "fleet/crewed-spacecraft/soyuz-tma.json",
-  "at": "tagline",
-  "old": "国际空间站时代Soyuz;扩建机组高度信封",
-  "new": "国际空间站时代的Soyuz；放宽乘员身高范围"
- },
- {
-  "rel": "fleet/crewed-spacecraft/soyuz-tma.json",
-  "at": "best_known_for",
-  "old": "国际空间站时代Soyuz;扩建机组高度信封",
-  "new": "国际空间站时代的Soyuz；放宽乘员身高范围"
- },
- {
-  "rel": "fleet/crewed-spacecraft/space-shuttle-orbiter.json",
-  "at": "description",
-  "old": "1981年至2011年间飞行135次任务的可重复使用的翼式飞船——唯一一个像滑翔机一样着陆的乘员飞行器。建造了5架飞行轨道飞行器(Columbia,Challenger,Discovery,Atlantis,Endeavour);Columbia与Challenger随其船员一同丢失。",
-  "new": "可重复使用的有翼航天器，1981年至2011年间飞行135次——唯一一种像滑翔机一样着陆的载人飞行器。共建造五架飞行用轨道器（Columbia、Challenger、Discovery、Atlantis、Endeavour）；Columbia和Challenger连同机组一起损失。"
- },
- {
-  "rel": "fleet/crewed-spacecraft/starliner.json",
-  "at": "description",
-  "old": "波音公司的商业载人飞行器，采用利用其自身服务舱推进器的推进式发射中止系统。Crew Flight Test（2024年6月）遭遇推进器故障和氦泄漏；NASA于2024年9月无人返回舱体。威尔莫尔和Williams通过SpaceX Crew-9返回（2025年2月）。待重新认证期间，载人飞行暂停。",
-  "new": "Boeing的商业载人飞行器，采用利用自身服务舱推进器的推进式发射中止系统。Crew Flight Test（2024年6月）出现推进器故障和氦泄漏；NASA于2024年9月让舱体无人返回。威尔莫尔和苏妮·威廉斯搭乘SpaceX Crew-9返回（2025年2月）。待重新认证期间，载人飞行暂停。"
- },
- {
-  "rel": "fleet/crewed-spacecraft/vostok.json",
-  "at": "dispatch",
-  "old": "Vostok飞船是第一台将人类送入太空并将其带回的机器,其设计是对做到最低限度可行性的研究。再入是返回过程中最困难的部分,因此Vostok采用了一种能够从任何角度存活下来的形状——球体——这意味着自动系统永远不必精确指向飞船;它会翻滚着进入大气层,仍然会以热盾朝下的姿态降落。问题在于球体着陆时对人来说太猛烈,因此宇航员会在接近地面时弹射出去并单独降落伞着陆,这一事实被隐瞒了多年以保护记录。粗糙、隐秘且完全有效,它将六人送入轨道且无一损失——而其返回舱加服务舱的布局成为了Soyuz的模式,至今仍在飞行。",
-  "new": "Vostok飞船是第一台把人送入太空并带回来的机器，其设计是“只做最低限度够用之事”的范本。再入是返回途中最难的部分，所以Vostok采用了无论从哪个角度都能挺过再入的形状——球体——这意味着自动系统无需精确调整飞船姿态；它翻滚着进入大气层，仍然会以防热罩一侧朝下的姿态落下。问题在于球体着陆时冲击对人来说太猛，所以宇航员在接近地面时弹射出舱，单独乘降落伞着陆，这一事实为保护纪录被隐瞒多年。它粗糙、保密，却完全有效，把六个人送入轨道，一个也没有损失——它的返回舱加服务舱布局成为Soyuz的模板，至今仍在飞行。"
- },
- {
-  "rel": "fleet/crewed-spacecraft/vostok.json",
-  "at": "description",
-  "old": "1961-04-12从轨道返回尤里·加加林的球形下降舱——第一次载人航天飞行。1961年至1963年间共有6次乘员飞行，包括瓦莲京娜·捷列什科娃的独奏轨道任务，成为太空中第一位女性。",
-  "new": "1961-04-12把尤里·加加林从轨道带回的球形下降舱——第一次载人航天飞行。1961年至1963年间共进行6次载人飞行，包括瓦莲京娜·捷列什科娃作为第一位进入太空的女性所完成的单人轨道任务。"
- },
- {
-  "rel": "fleet/crewed-spacecraft/x37b.json",
-  "at": "description",
-  "old": "机器人迷你空天飞机（8.9 m，约 5 t）— Boeing Phantom Works 为美国空军建造了 2 架飞行器（2019 年移交 USSF）。垂直发射（最初 Atlas V 501；OTV-5 起 SpaceX Falcon 9；OTV-7 起 Falcon Heavy），在 Kennedy 航天中心原航天飞机跑道水平着陆。多数载荷和轨道参数属机密 — 已知任务持续时长从 224 天（OTV-1，2010）到创纪录的 908 天（OTV-6，2020-2022）。公开的解密载荷包括霍尔效应推进器技术验证、AFRL 射频通信实验、1 W 太阳能-微波传输实验（PRAM，OTV-6）。截至 2026 年已飞行七次任务。",
-  "new": "机器人迷你空天飞机（长8.9 m，约5 t），由Boeing Phantom Works为美国空军建造，2019年移交USSF。垂直发射（最初为Atlas V 501；OTV-5起使用SpaceX Falcon 9；OTV-7起使用Falcon Heavy），在肯尼迪航天中心原航天飞机跑道上水平着陆。多数载荷和轨道参数属机密——已知任务持续时间从224天（OTV-1，2010）到创纪录的908天（OTV-6，2020-2022）。已解密的实验包括霍尔效应推进器技术验证、AFRL射频通信测试，以及1 W太阳能转微波传输实验（PRAM，OTV-6）。截至2026年已飞行七次任务。"
- },
- {
-  "rel": "fleet/engine/ce-20.json",
-  "at": "tagline",
-  "old": "印度首个自主研制的低温发动机，源于技术需求",
-  "new": "印度首个自主研制的低温发动机，因形势所迫而诞生"
- },
- {
-  "rel": "fleet/engine/ce-20.json",
-  "at": "description",
-  "old": "20世纪90年代初，技术转让限制阻止了印度获得低温发动机技术。ISRO液体推进系统中心因此决定从零开始自主研制。CE-20发动机由此诞生：采用气体发生器循环，燃烧LOX和LH2，为印度最重的在役运载火箭LVM3的上面级提供动力。它于2017年6月5日首次飞行，搭乘GSLV Mk III D1发展型飞行任务升空，这标志着耗时二十年的研制计划圆满落幕——一道地缘政治的壁垒被转化为独立自主的能力。CE-20发动机将承载印度首次载人航天任务Gaganyaan进入轨道。",
-  "new": "20世纪90年代初，技术转让限制使印度无法获得低温发动机技术，ISRO的Liquid Propulsion Systems Centre因此从零开始自主研制。CE-20就是成果：采用燃气发生器循环，燃烧LOX和LH2，为印度最重的在役运载火箭LVM3的上面级提供动力。它于2017年6月5日在GSLV Mk III D1发展型飞行中首次升空，为历时二十年的研制计划画上句号——一道地缘政治的壁垒由此化为独立自主的能力。CE-20将把印度首次载人任务Gaganyaan送入轨道。"
- },
- {
-  "rel": "fleet/engine/f-1.json",
-  "at": "description",
-  "old": "Saturn V第一级上的五台F-1s产生的合力推力是此前和之后任何单枚火箭在海平面上都未能达到的。Rocketdyne的燃气发生器循环燃烧LOX和RP-1，燃烧速率需要体积相当于汽车发动机的涡轮泵和一个燃烧室，工程师们不得不通过试验、爆炸和重新设计来解决燃烧室内的燃烧不稳定性。它于1967年11月9日首次飞行，在计划结束前将Apollo送往月球六次。",
-  "new": "Saturn V第一级上的五台F-1产生的合力推力，是此前和此后任何单枚火箭在海平面上都未能企及的。Rocketdyne的燃气发生器循环以极高的流量燃烧LOX和RP-1，需要大小堪比汽车发动机的涡轮泵；燃烧室中的燃烧不稳定问题，工程师们只能靠试验、爆炸和重新设计来解决。它于1967年11月9日首次飞行，在计划结束前六次把Apollo送上奔月之路。"
- },
- {
-  "rel": "fleet/engine/f-1.json",
-  "at": "best_known_for",
-  "old": "迄今飞行过的最强力单室液体发动机——五台推动土星五号",
-  "new": "迄今飞行过的最强大的单燃烧室液体发动机——五台推动Saturn V"
- },
- {
-  "rel": "fleet/engine/h-1.json",
-  "at": "tagline",
-  "old": "八台引擎，八次任务——土星一号的主力引擎",
-  "new": "八台发动机，八次任务——Saturn I的主力发动机"
- },
- {
-  "rel": "fleet/engine/h-1.json",
-  "at": "description",
-  "old": "H-1 是 Rocketdyne 研制的发动机，用来架起早期弹道导弹动力装置与随后面世的 F-1 之间的鸿沟。H-1 采用燃气发生器循环，以液氧和 RP-1 为推进剂，八个 H-1s 聚束在一起构成了 Saturn I 第一级——以及后来的 Saturn IB 第一级——执行了所有无人 Apollo 硬件测试和有人 Apollo 7 任务。它首次飞行于 1961 年 10 月 27 日；从那时起持续运行到 1975 年 Saturn IB 项目结束。",
-  "new": "H-1是Rocketdyne研制的发动机，用来弥合早期弹道导弹动力装置与随后问世的F-1之间的差距。H-1采用燃气发生器循环，以LOX和RP-1为推进剂，八台H-1并联构成Saturn I的第一级——后来也是Saturn IB的第一级——执行了所有无人Apollo硬件测试和载人的Apollo 7任务。它首飞于1961年10月27日；一直持续使用到1975年Saturn IB计划结束。"
- },
- {
-  "rel": "fleet/engine/h-1.json",
-  "at": "best_known_for",
-  "old": "八引擎聚集土星I/IB助推器引擎——F-1的试验场",
-  "new": "八机并联的Saturn I/IB助推器发动机——F-1的预演"
- },
- {
-  "rel": "fleet/engine/hm7b.json",
-  "at": "description",
-  "old": "HM7B 是以液氢为燃料的上面级发动机，为Ariane火箭在芯级关闭后提供高能加速。该发动机采用燃气发生器循环，使用 LOX 和 LH2，首次于 1986 年 5 月在Ariane 2上飞行，并继续服役至 2023 年 7 月Ariane 5运营生涯的结束。虽然体积小巧，但其高比冲性能使其成为地球同步转移轨道注入的主力发动机，在超过三十年的时间里，为包括Rosetta、Mars Express和金星快车等商业卫星和科学有效载荷送入离轨轨道。",
-  "new": "HM7B是以液氢为燃料的上面级发动机，在芯级关机后为Ariane火箭提供高能推进。该发动机采用燃气发生器循环，使用LOX和LH2，1986年5月首次在Ariane 2上飞行，一直服役到2023年7月Ariane 5运营结束。它体积小巧，却有很高的比冲，成为地球同步转移轨道入轨的主力发动机，三十多年间把商业卫星和科学有效载荷——包括Rosetta、Mars Express和Venus Express——送上出发轨道。"
- },
- {
-  "rel": "fleet/engine/hm7b.json",
-  "at": "best_known_for",
-  "old": "欧洲低温上面级发动机——阿丽亚娜的远月任务主力",
-  "new": "欧洲低温上面级发动机——Ariane的地月转移主力"
- },
- {
-  "rel": "fleet/engine/j-2.json",
-  "at": "description",
-  "old": "J-2 燃烧液氢和液氧,并能在太空真空中重新启动——这一能力使土星五号的跨月球注入燃烧成为可能。Rocketdyne的燃气发生器设计应用于土星五号的第二、三级和Saturn IB 火箭上,结合了高性能和在空间内重新启动的能力,使发射运载火箭成为真正的离开级。它首次飞行于 1966 年 2 月,最后一次飞行于 1975 年 7 月的Apollo-Soyuz Test Project中。",
-  "new": "J-2燃烧液氢和液氧，并能在太空真空中重新点火——这一能力使Saturn V的地月转移入轨点火成为可能。Rocketdyne的燃气发生器设计用于Saturn V的第二级和第三级以及Saturn IB，兼具高性能与在太空中重启的能力，让运载火箭的末级成为真正的出发级。它于1966年2月首次飞行，最后一次飞行是在1975年7月的Apollo-Soyuz Test Project上。"
- },
- {
-  "rel": "fleet/engine/j-2.json",
-  "at": "best_known_for",
-  "old": "可重新启动的液氢上面级引擎,将Apollo送上跨月球轨道",
-  "new": "可重新点火的液氢上面级发动机，将Apollo送上奔月轨道"
- },
- {
-  "rel": "fleet/engine/le-5b.json",
-  "at": "description",
-  "old": "LE-5B是日本两代运载火箭之间的桥梁——一台深冷上面级发动机。采用膨胀循环LOX和LH2动力系统，具备飞行中多次启动能力，这对于在助推阶段后将载荷精确投入轨道至关重要。它首次在2001年8月搭乘H-IIA升空，之后升级为LE-5B-3型号以继续服役于H3运载火箭，确保日本的上面级技术从国际空间站建设时代延续至今。其可重启特性与膨胀循环设计的简洁高效相结合，使其自然成为LE-7A和LE-9的理想上面级搭档。",
-  "new": "LE-5B是连接日本两代运载火箭的低温上面级发动机。采用以LOX和LH2为推进剂的膨胀放气循环，可在飞行中重新点火——这是经过滑行段后将载荷精确送入轨道的必要条件。它于2001年8月首次搭乘H-IIA升空，之后升级为LE-5B-3，继续服役于H3，使日本的上面级从国际空间站建设时代到今天从未间断。可重启能力加上膨胀放气循环简洁清爽的特点，使它自然成为LE-7A和LE-9的上面级搭档。"
- },
- {
-  "rel": "fleet/engine/le-7a.json",
-  "at": "tagline",
-  "old": "日本的分级燃烧氢心，二十年的H-II运载服务",
-  "new": "日本的分级燃烧氢发动机，在H-II上服役二十年"
- },
- {
-  "rel": "fleet/engine/le-7a.json",
-  "at": "description",
-  "old": "LE-7A发动机赋予日本完全自主的重型运载能力。由Mitsubishi Heavy Industries为JAXA开发，采用分级燃烧循环，以LOX和LH2为推进剂——这种热力学方案可从氢燃料中提取最大效率——并于2001年8月首次搭载H-IIA飞行，是原始LE-7的改进继承者。重新设计解决了曾导致早期H-II失败的涡轮泵问题，LE-7A随后成为H-IIA和H-IIB运营生涯的中坚力量，服役至2024年，为国际空间站发射了日本的HTV货运飞船，并搭载了JAXA-ISRO雷达卫星ALOS系列。",
-  "new": "LE-7A赋予日本完全自主的重型运载能力。它由Mitsubishi Heavy Industries为JAXA研制，采用以LOX和LH2为推进剂的分级燃烧循环——这种热力学方案能从氢推进剂中榨取最高效率——并于2001年8月首次在H-IIA上飞行，是初代LE-7的改进型。重新设计解决了曾导致早期H-II失败的涡轮泵问题，此后LE-7A成为H-IIA和H-IIB服役生涯的支柱，一直用到2024年，发射了日本的HTV货运飞船前往国际空间站，也发射了JAXA-ISRO雷达卫星ALOS系列。"
- },
- {
-  "rel": "fleet/engine/lr87.json",
-  "at": "tagline",
-  "old": "双燃烧室高能推进第一级，为所有Gemini载人任务提供动力",
-  "new": "双燃烧室自燃推进剂第一级发动机，送出了每一个Gemini乘组"
- },
- {
-  "rel": "fleet/engine/lr87.json",
-  "at": "description",
-  "old": "LR87是在土星二号火箭上推动全部十次Gemini载人任务升空的发动机。Aerojet公司的设计在单个涡轮泵组件上安装了两个燃烧室，燃烧Aerozine-50和四氧化二氮，采用燃气发生器循环——这种高能推进组合是那个时代美国洲际弹道导弹的标准配置。推进剂选择对航天员安全有着直接影响：与RP-1或氢气不同，Aerozine-50和N2O4接触即燃，这种高能推进特性使Gemini计划能够在全部十次载人任务中采用弹射座椅，而不是发射逃逸塔。LR87随后被开发成更大的型号，在土星三号和土星四号火箭上飞行执行商业和军事任务，直到2005年10月。",
-  "new": "LR87是在Titan II上发射全部十次Gemini载人任务的发动机。Aerojet的设计把两个燃烧室装在同一套涡轮泵组件上，以燃气发生器循环燃烧Aerozine-50和四氧化二氮——这种自燃推进剂组合是当时美国洲际弹道导弹的标准配置。推进剂的选择对乘员安全有直接影响：与RP-1或氢不同，Aerozine-50和N2O4一接触就点燃，这种自燃的可靠性使Gemini在全部十次载人任务中都采用弹射座椅，而不是发射逃逸塔。LR87后来发展成更大的型号，在Titan III和Titan IV上执行商业和军事任务，一直飞到2005年10月。"
- },
- {
-  "rel": "fleet/engine/lr87.json",
-  "at": "best_known_for",
-  "old": "为Titan II运载Gemini宇航员而发射的双室第一级火箭",
-  "new": "在Titan II上发射Gemini乘组的双室第一级发动机"
- },
- {
-  "rel": "fleet/engine/merlin-1d.json",
-  "at": "description",
-  "old": "SpaceX的Merlin 1D引擎是使可复用Falcon 9成为可能的动力心脏。九台该引擎集群安装在Falcon 9第一级上，采用燃气发生器循环，推进剂为LOX和RP-1，其中中心引擎还用于返回和着陆燃烧。该引擎首次飞行于2013年9月，Merlin 1D逐步发展成为高频率的工作马：单台引擎已累计飞行超过二十次，这一重复使用纪录改变了整个行业对经济可行性的认知。真空变体Merlin 1D Vacuum采用更大喷嘴优化设计以适应近真空环境，为Falcon 9上面级提供动力。",
-  "new": "SpaceX的Merlin 1D是使可复用Falcon 9成为可能的发动机。九台Merlin 1D集束安装在Falcon 9第一级上，采用燃气发生器循环，推进剂为LOX和RP-1，其中中心发动机还用于返回和着陆点火。它于2013年9月首次飞行，逐步成长为高频次发射的主力：单台发动机已累计飞行二十多次，这一复用纪录改变了整个行业对经济上可行之事的认知。真空型Merlin 1D Vacuum采用更大的喷管，针对近真空环境优化，为Falcon 9上面级提供动力。"
- },
- {
-  "rel": "fleet/engine/merlin-1d.json",
-  "at": "best_known_for",
-  "old": "可复用的工作马——九台引擎驱动Falcon 9，飞行并重复使用数十次",
-  "new": "可复用的主力——九台推动Falcon 9，飞行并重复使用数十次"
- },
- {
-  "rel": "fleet/engine/raptor.json",
-  "at": "tagline",
-  "old": "全流全阶燃烧循环——最困难的循环，终于飞行",
-  "new": "全流量分级燃烧——最难的循环，终于升空"
- },
- {
-  "rel": "fleet/engine/raptor.json",
-  "at": "description",
-  "old": "Raptor是首台达到运行飞行的全流全阶燃烧发动机。在这个热力学循环中，两种推进剂——LOX和液态甲烷——都要经过预燃烧室，然后进入主燃烧室，以提取最大的能量，并使几乎没有未燃烧的推进剂。工程师们研究这个概念已有数十年，得出结论认为它复杂度过高；但SpaceX还是造出来了。Super Heavy一级火箭上有33台Raptor同时点火，一个真空优化版本为Starship上面级提供动力。首次搭载Raptor的一体化Starship飞行于2023年4月20日升空。",
-  "new": "Raptor是首台进入实际飞行的全流量分级燃烧发动机。在这一热力学循环中，两种推进剂——LOX和液态甲烷——都先经过预燃室再进入主燃烧室，从而榨取最大能量，几乎不留未燃烧的推进剂。工程师们研究这一概念已有数十年，结论是它复杂得不可行；SpaceX还是造出来了。Super Heavy第一级上有33台Raptor同时点火，真空优化型则为Starship上面级提供动力。首次搭载Raptor的Starship整体飞行于2023年4月20日升空。"
- },
- {
-  "rel": "fleet/engine/raptor.json",
-  "at": "best_known_for",
-  "old": "首台飞行的全流全阶燃烧发动机——33台推动Super Heavy升空",
-  "new": "首台飞行的全流量分级燃烧发动机——33台推动Super Heavy"
- },
- {
-  "rel": "fleet/engine/rd-107-108.json",
-  "at": "tagline",
-  "old": "斯普特尼克的引擎——65年后仍在运送航天员",
-  "new": "Sputnik的发动机——65年后仍在运送航天员"
- },
- {
-  "rel": "fleet/engine/rd-107-108.json",
-  "at": "description",
-  "old": "RD-107和RD-108是R-7火箭的主动力，R-7是世界上第一枚洲际弹道导弹，由谢尔盖·科罗廖夫的团队改造为运载火箭。RD-107为R-7的四个并联助推器提供动力，RD-108驱动芯级。两款引擎都采用液氧和煤油的燃气发生器循环，都在1957年8月21日首飞——早于Sputnik数月。升级后的RD-107A和RD-108A继续为运送航天员前往国际空间站的Soyuz火箭提供动力，使其成为有史以来运行时间最长的人员运输推进系统。",
-  "new": "RD-107和RD-108是R-7的发动机；R-7是世界上第一种洲际弹道导弹，被谢尔盖·科罗廖夫的团队改造为运载火箭。RD-107为R-7的四个并联助推器提供动力，RD-108驱动芯级。两款发动机都采用以LOX和煤油为推进剂的燃气发生器循环，都在1957年8月21日首飞——比Sputnik早数月。升级为RD-107A和RD-108A后，它们继续为运送航天员前往国际空间站的Soyuz火箭提供动力，成为有史以来服役时间最长的载人级推进系统。"
- },
- {
-  "rel": "fleet/engine/rd-180.json",
-  "at": "best_known_for",
-  "old": "富氧分级燃烧技术——美国无法比肩，搭载Atlas V运载火箭",
-  "new": "美国无法匹敌的富氧分级燃烧——曾用于Atlas V"
- },
- {
-  "rel": "fleet/engine/rd-253.json",
-  "at": "tagline",
-  "old": "质子运载火箭每次任务配备的六台双液火箭发动机",
-  "new": "六台自燃推进剂发动机，驱动每一次Proton任务"
- },
- {
-  "rel": "fleet/engine/rd-253.json",
-  "at": "description",
-  "old": "RD-253 是苏联时代使 Proton 成为最强大重型运载工具之一的发动机。六台 RD-253 排列在 Proton 火箭第一级周围，每台都采用富氧分级燃烧循环，使用四氧化二氮和不对称二甲基肼作为推进剂——这对双液推进剂接触即自燃，无需点火系统。虽然推进剂具有毒性和腐蚀性，但在室温下储存稳定，提供了 Proton 在数十年商业和行星探测任务中保持的可靠性。RD-253 首次飞行于 1965 年 7 月 16 日，为 Proton 火箭退役前的每一个第一级飞行任务提供动力。",
-  "new": "RD-253是使Proton成为苏联时代最强大的重型运载火箭之一的发动机。六台RD-253排列在Proton第一级周围，每台都采用以四氧化二氮和偏二甲肼为推进剂的富氧分级燃烧循环——这对自燃推进剂接触即点燃，无需点火系统。这种推进剂有毒且具腐蚀性，但可在室温下储存，赋予Proton在数十年商业和行星探测任务中保持的可靠性。RD-253于1965年7月16日首次飞行，直到Proton退役，每一级Proton第一级都由它提供动力。"
- },
- {
-  "rel": "fleet/engine/rd-253.json",
-  "at": "best_known_for",
-  "old": "质子运载火箭的双液发动机主力——六台推动每个Proton第一级",
-  "new": "Proton的自燃推进剂主力发动机——六台推动每一级Proton第一级"
- },
- {
-  "rel": "fleet/engine/rocketdyne-a7.json",
-  "at": "description",
-  "old": "1961年5月5日，艾伦·谢泼德乘坐水星-红石火箭升至187公里的高度后返回——使他成为首位进入太空的美国人——而把他送上太空的引擎正是Rocketdyne A-7。A-7源自为红石弹道导弹提供动力的A-6，采用以LOX和乙醇为推进剂的燃气发生器循环：这对推进剂组合可以追溯到红石导弹和德国V-2火箭。谢泼德的Freedom 7飞行任务持续了十五分钟，改变了太空竞赛的政治格局。A-7仅在水星-红石任务中使用，于1963年5月停役。",
-  "new": "1961年5月5日，艾伦·谢泼德乘Mercury-Redstone火箭升至187公里高度后返回——成为首位进入太空的美国人——把他送上去的发动机就是Rocketdyne A-7。A-7源自为Redstone弹道导弹提供动力的A-6，采用以LOX和乙醇为推进剂的燃气发生器循环：这一推进剂组合可以经Redstone追溯到德国的V-2。谢泼德的Freedom 7飞行持续十五分钟，改变了太空竞赛的政治格局。A-7只用于Mercury-Redstone任务，1963年5月退役。"
- },
- {
-  "rel": "fleet/engine/rocketdyne-a7.json",
-  "at": "best_known_for",
-  "old": "发射第一艘美国载人飞船 Freedom 7 的发动机",
-  "new": "把第一位美国人送入太空的发动机——Freedom 7"
- },
- {
-  "rel": "fleet/engine/rs-25.json",
-  "at": "description",
-  "old": "RS-25是Space Shuttle Main Engine项目花了十年时间完善的发动机：采用分级燃烧循环方式，以LOX和LH2为推进剂，能够调节推力、重新启动，并可在下一次飞行前进行翻修。从1981年4月起，它在超过135次航天飞机任务中积累了近乎完美的运行记录。这些发动机被回收、检查，并重新飞行——这是此功率等级下任何早期火箭发动机都未曾实现的壮举。航天飞机退役后，这些库存发动机经过重新鉴定和改用，成为NASA的Space Launch System的一部分，目前RS-25s在SLS的芯级中提供动力。",
-  "new": "RS-25是Space Shuttle Main Engine计划花了十年打磨的发动机：以LOX和LH2为推进剂的分级燃烧循环，可调节推力、重新启动，并能在下次飞行前翻修。从1981年4月起，它在135次航天飞机任务中积累了近乎完美的运行记录。这些发动机被回收、检查并再次飞行——在这一功率等级上，此前没有任何火箭发动机做到过。航天飞机退役后，库存发动机经重新鉴定，改用于NASA的Space Launch System，RS-25现在为SLS的芯级提供动力。"
- }
+  {
+    "rel": "fleet/cargo-spacecraft/atv.json",
+    "at": "dispatch",
+    "old": "Automated Transfer Vehicle（ATV）是欧洲的国际空间站货运飞船，也是当时最先进的货运航天器——一艘二十吨重的航天器，它能自动导航与空间站进行完全自动对接，运送货物、水、空气和推进剂，并利用自身发动机对整个国际空间站进行轨道升轨。五艘飞行器在2008年至2015年间运行，每一艘都以欧洲思想家命名，从儒勒·凡尔纳到乔治·勒梅特。ATV 不仅仅是一辆补给车，它是欧洲赢得作为国际空间站完全伙伴地位的方式——它所证明的技术延续至今，成为了现在为NASA的Orion月球之行提供动力的欧洲服务舱。",
+    "new": "Automated Transfer Vehicle（ATV）是欧洲的国际空间站货运飞船，也是当时最先进的货运航天器——一艘重二十吨的航天器，能够自主导航并与空间站全自动对接，运送货物、水、空气和推进剂，还能用自身发动机为整个国际空间站提升轨道。2008年至2015年间共有五艘飞行，每一艘都以一位欧洲思想家命名，从儒勒·凡尔纳到乔治·勒梅特。ATV不只是一辆补给卡车，更是欧洲赢得国际空间站正式伙伴地位的途径——它验证过的技术延续至今，成为如今为NASA的Orion飞往月球提供动力的欧洲服务舱。"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/atv.json",
+    "at": "description",
+    "old": "ATV (Automated Transfer Vehicle) 是由Airbus在欧洲建造的机器人货运飞行器。ESA旗舰国际空间站货运飞船，从2008年至2015年执行了五次国际空间站飞行任务，运送货物、水、空气和推进剂，同时利用其引擎为Station进行增压。",
+    "new": "ATV（Automated Transfer Vehicle）是由Astrium / Airbus在欧洲（多国）建造的机器人货运航天器。它是ESA的旗舰国际空间站货运飞船，2008年至2015年共执行五次国际空间站飞行任务，运送货物、水、空气和推进剂，同时利用自身发动机为空间站提升轨道。"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/cargo-dragon-2.json",
+    "at": "tagline",
+    "old": "Cargo Dragon v1的继承者;后备车架PV",
+    "new": "Cargo Dragon v1的继任者；货舱段外装太阳能电池板"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/cargo-dragon-2.json",
+    "at": "description",
+    "old": "Crew Dragon的无机组变体,车厢上有相同的车身太阳能电池。与Cygnus(圆阵列)和Soyuz/Progress(矩形翼)的明显差异。返回时不受影响——在国际空间站货运承运人中独一无二。",
+    "new": "Crew Dragon的无人货运型，货舱段（trunk）上装有同样的贴体式太阳能电池。外观上与Cygnus（圆形阵列）和Soyuz/Progress（矩形翼）明显不同。可携带下行货物完好返回——在国际空间站货运飞船中独一无二。"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/cargo-dragon-2.json",
+    "at": "best_known_for",
+    "old": "Cargo Dragon v1 的后继者;后备车架 PV",
+    "new": "Cargo Dragon v1的继任者；货舱段外装太阳能电池板"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/cygnus-enhanced.json",
+    "at": "tagline",
+    "old": "伸展的Cygnus; UltraFlex圆阵",
+    "new": "加长版Cygnus；UltraFlex圆形阵列"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/cygnus-enhanced.json",
+    "at": "description",
+    "old": "Northrop Grumman 的增压货运载体，以其圆形 UltraFlex 太阳能阵列为特征，采用扇形折叠手风琴图案，这种设计在国际空间站访问器中独一无二。再入时燃烧殆尽；无回收货物。",
+    "new": "Northrop Grumman的增压货运飞船，以圆形UltraFlex太阳能阵列著称——这种扇形折叠的手风琴式结构，其他国际空间站访问飞行器都没有。再入大气层时烧毁，不带回货物。"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/cygnus-enhanced.json",
+    "at": "best_known_for",
+    "old": "伸展的Cygnus; UltraFlex圆阵列",
+    "new": "加长版Cygnus；UltraFlex圆形阵列"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/cygnus-standard.json",
+    "at": "description",
+    "old": "Cygnus Standard是美国Orbital ATK制造的机器人货运航天器。仅限国际空间站货运承运人。2013年首飞后退役。",
+    "new": "Cygnus Standard是Orbital ATK在美国制造的机器人货运航天器，是仅载增压货物的国际空间站货运飞船。2013年首飞后退役。"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/htv-x.json",
+    "at": "description",
+    "old": "HTV-X（白鹳-X）是日本宇宙航空研究开发机构（JAXA）的第二代货运飞船，是原始HTV的继任者。首架飞行器（HTV-X1）于2025年10月26日发射，于10月29日与国际空间站对接，并于2026年5月27日再入。HTV-X2已规划。",
+    "new": "HTV-X（Kounotori-X）是JAXA的第二代货运航天器，是初代HTV的继任者。首艘飞行器（HTV-X1）于2025年10月26日发射，10月29日与国际空间站对接，并于2026年5月27日再入大气层。HTV-X2已列入计划。"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/htv.json",
+    "at": "tagline",
+    "old": "日本的H-II Transfer Vehicle至国际空间站",
+    "new": "日本的H-II Transfer Vehicle，飞往国际空间站"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/htv.json",
+    "at": "description",
+    "old": "HTV (Kounotori) 是由日本三菱重工业公司制造的机器人货运航天器。日本的 H-II Transfer Vehicle 从 2009 年至 2020 年执行了九次国际空间站任务，其中 HTV-9（最后一次飞行）于 2020 年 5 月离站。",
+    "new": "HTV（Kounotori）是由Mitsubishi Heavy Industries在日本制造的机器人货运航天器。日本的H-II Transfer Vehicle在2009年至2020年间执行了九次国际空间站任务，其中HTV-9（最后一次飞行）于2020年5月离站。"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/htv.json",
+    "at": "best_known_for",
+    "old": "日本的H-II Transfer Vehicle至国际空间站",
+    "new": "日本的H-II Transfer Vehicle，飞往国际空间站"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/progress-7k-tg.json",
+    "at": "description",
+    "old": "最早的机器人货运飞船,衍生自Soyuz。1978年至1990年期间,有43次Progress航班飞往Salyut和早期Mir,建立了随后国际空间站补给系统。",
+    "new": "最早的机器人货运飞船，衍生自Soyuz。1978年至1990年间，43次Progress飞行前往Salyut和早期的Mir，确立了此后所有国际空间站补给任务沿用的架构。"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/progress-ms.json",
+    "at": "tagline",
+    "old": "当前Progress生成;国际空间站再补给",
+    "new": "现役Progress型号；国际空间站补给"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/progress-ms.json",
+    "at": "description",
+    "old": "Progress MS是俄罗斯RKK Energia制造的机器人货运飞船。当前Progress代系;国际空间站补给。2015年起服役。",
+    "new": "Progress MS是RKK Energia在俄罗斯制造的机器人货运航天器。现役Progress型号；国际空间站补给。2015年起服役。"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/progress-ms.json",
+    "at": "best_known_for",
+    "old": "当前Progress生成；国际空间站再补给",
+    "new": "现役Progress型号；国际空间站补给"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/tianzhou.json",
+    "at": "description",
+    "old": "中国为天宫空间站设计的货运飞船，继承了天宫一号的飞船总体设计。它为天宫补充推进剂并运送实验舱；首飞于2017年。",
+    "new": "中国为天宫空间站研制的货运飞船，与天宫一号共用飞船总体设计。它为天宫补加推进剂，并运送实验机柜；2017年首飞。"
+  },
+  {
+    "rel": "fleet/constellation/goes-noaa.json",
+    "at": "tagline",
+    "old": "NOAA地球静止天气卫星对——美洲连续覆盖",
+    "new": "NOAA地球静止气象卫星双星——持续覆盖美洲"
+  },
+  {
+    "rel": "fleet/constellation/goes-noaa.json",
+    "at": "description",
+    "old": "Geostationary Operational Environmental Satellite — NOAA的地球静止天气卫星对。截至2025年4月，GOES-19（位于西经75.2°的GOES-East）和GOES-18（位于西经137.0°的GOES-West）是运业卫星对，提供美洲的连续覆盖。GOES-16作为备用卫星存储；GOES-17于2023年1月停用。GOES-R系列搭载Advanced Baseline Imager，能够进行30秒间隔的中尺度扫描，用于飓风核心和强对流天气追踪。由Lockheed Martin制造；数据产品免费提供。",
+    "new": "Geostationary Operational Environmental Satellite——NOAA的地球静止气象卫星双星。截至2025年4月，GOES-19（位于西经75.2°的GOES-East）和GOES-18（位于西经137.0°的GOES-West）是在役的一对，持续覆盖美洲。GOES-16在轨备用；GOES-17已于2023年1月退役。GOES-R系列搭载Advanced Baseline Imager，可对飓风核心和强对流天气进行30秒间隔的中尺度扫描跟踪。由Lockheed Martin制造；数据产品免费提供。"
+  },
+  {
+    "rel": "fleet/constellation/goes-noaa.json",
+    "at": "best_known_for",
+    "old": "NOAA地球静止天气卫星对——美洲连续覆盖",
+    "new": "NOAA地球静止气象卫星双星——持续覆盖美洲"
+  },
+  {
+    "rel": "fleet/constellation/gps-gnss.json",
+    "at": "tagline",
+    "old": "最初的GNSS — 31颗卫星，自2000年起免费公共服务",
+    "new": "最初的GNSS——31颗卫星，自2000年起提供免费公共服务"
+  },
+  {
+    "rel": "fleet/constellation/gps-gnss.json",
+    "at": "best_known_for",
+    "old": "最初的GNSS — 31颗卫星，自2000年起免费公共服务",
+    "new": "最初的GNSS——31颗卫星，自2000年起提供免费公共服务"
+  },
+  {
+    "rel": "fleet/constellation/kuiper.json",
+    "at": "tagline",
+    "old": "Amazon LEO 宽带——计划 3,236 颗卫星，商业测试版 2026 年",
+    "new": "Amazon LEO 宽带——计划 3,236 颗卫星，2026 年商业测试"
+  },
+  {
+    "rel": "fleet/constellation/kuiper.json",
+    "at": "best_known_for",
+    "old": "Amazon Leo 宽带——计划 3,236 颗卫星，商业测试版 2026 年",
+    "new": "Amazon Leo 宽带——计划 3,236 颗卫星，2026 年商业测试"
+  },
+  {
+    "rel": "fleet/constellation/landsat.json",
+    "at": "description",
+    "old": "历史上最长的连续地球成像记录 — Landsat 1 于 1972 年发射(最初名为 ERTS-1),延续至 Landsat 9(2021 年)。当前运行的是 Landsat 8(2013 年)+ Landsat 9(2021 年)组合,位于 705 km 太阳同步轨道,倾角 98.2°。30 m 多光谱分辨率。NASA 负责建造和发射;USGS 负责运营和数据分发。自 2008 年免费公开访问以来,Landsat 成为气候变化、森林砍伐和城市增长的全球参考数据集。",
+    "new": "历史上最长的连续地球成像记录——Landsat 1 于 1972 年发射（最初名为 ERTS-1），延续至 Landsat 9（2021 年）。当前在役的是 Landsat 8（2013 年）和 Landsat 9（2021 年）一对，位于 705 km 太阳同步轨道，倾角 98.2°。30 m 多光谱分辨率。NASA 负责建造和发射；USGS 负责运营和数据分发。自 2008 年起免费公开获取，使 Landsat 成为气候变化、森林砍伐和城市扩张研究的全球参考数据集。"
+  },
+  {
+    "rel": "fleet/constellation/o3b-mpower.json",
+    "at": "description",
+    "old": "唯一运营的商业 MEO 宽带星座 — 初代 O3b 于 2013-2019 年部署,第二代 O3b mPOWER 自 2022 年起部署。20+ 颗卫星位于 8,063 km 赤道轨道。延迟介于 GEO 和 LEO 之间,客户群专注于电信回程、海事和远程企业。由 SES(卢森堡)运营。以\"另外 30 亿人\"命名 — 最初的使命是为地面宽带未覆盖的地区提供连接。",
+    "new": "唯一在役的商业MEO宽带星座——初代O3b于2013-2019年部署，第二代O3b mPOWER自2022年起部署。20+颗卫星位于8,063 km赤道轨道。延迟介于GEO和LEO之间，客户集中在电信回传、海事和偏远地区企业。由SES（卢森堡）运营。名称源自“另外30亿人”——最初的使命是为地面宽带未覆盖的地区提供连接。"
+  },
+  {
+    "rel": "fleet/constellation/oneweb.json",
+    "at": "description",
+    "old": "第一代 LEO 宽带星座,648 颗卫星位于 1,200 km 高度的 12 个极地平面上。极地轨道提供完整的极地到极地覆盖,这是 Starlink 中倾角星座无法达到的。2023 年被 Eutelsat 收购,组成 Eutelsat OneWeb;商业服务现与 Eutelsat GEO 资产捆绑提供。高度高于 Starlink 意味着延迟略高,但所需卫星数量更少。",
+    "new": "第一代LEO宽带星座，648颗卫星位于1,200 km高度的12个极地轨道面上。极地轨道可实现从极地到极地的完整覆盖，这是Starlink的中倾角轨道壳层无法做到的。2023年被Eutelsat收购，组成Eutelsat OneWeb；商业服务现与Eutelsat的GEO资产捆绑提供。高度高于Starlink，意味着延迟略高，但所需卫星数量更少。"
+  },
+  {
+    "rel": "fleet/constellation/planet-labs.json",
+    "at": "description",
+    "old": "来自两个卫星群的每日地球成像——约150颗PlanetScope 3U CubeSats（3-5米分辨率全球每日影像）和约21颗SkySats（50厘米分辨率任务型高分辨率）。全部在约475千米太阳同步轨道上。\"Doves\"理念是\"发射数百颗廉价小卫星，接受少数失败，每天获取地球每个地区的影像\"——这个方法确实奏效。Planet的影像档案库被非政府组织、政府部门和记者广泛查阅。",
+    "new": "来自两个卫星群的每日重访地球成像——约150颗PlanetScope 3U CubeSats（3-5米分辨率的全球每日影像）和约21颗SkySats（50厘米分辨率的按需高分辨率拍摄）。全部位于约475千米太阳同步轨道。“Doves”的理念是“发射数百颗廉价小卫星，接受少数失败，让每一片陆地每天都被拍到”——这个办法确实奏效。Planet的影像档案库被非政府组织、政府部门和记者广泛查阅。"
+  },
+  {
+    "rel": "fleet/constellation/sbirs-heo.json",
+    "at": "description",
+    "old": "美国天基红外系统(SBIRS)的HEO段——搭载于机密主星上的红外导弹预警传感器,运行于倾角63.4°的24小时Tundra轨道。通过在远地点停留于高纬度上空,SBIRS-HEO覆盖极地区域,而地球静止轨道的DSP / SBIRS-GEO传感器在该区域的观测仰角过低。SBIRS HEO-1于2006年作为搭载载荷随USA-184发射。",
+    "new": "美国天基红外系统（SBIRS）的HEO段——搭载于机密主星上的红外导弹预警传感器，运行于倾角63.4°临界倾角的24小时Tundra轨道。通过在远地点停留于高纬度上空，SBIRS-HEO覆盖极地区域，而地球静止轨道的DSP / SBIRS-GEO传感器在该区域的观测仰角过低。SBIRS HEO-1于2006年作为搭载载荷随USA-184发射。"
+  },
+  {
+    "rel": "fleet/constellation/sentinel-copernicus.json",
+    "at": "description",
+    "old": "欧洲旗舰地球观测计划,由ESA代表欧盟委员会Copernicus环境监测服务运营。Sentinel-1(C波段SAR雷达成像)、Sentinel-2(10-60米多光谱光学)、Sentinel-3(海洋+陆地)、Sentinel-5P(大气化学)、Sentinel-6(测高)。全部位于太阳同步LEO轨道。自由开放数据政策 — 所有Sentinel图像均可免费下载,无需许可费用。",
+    "new": "欧洲旗舰地球观测计划，由ESA代表欧盟委员会的Copernicus环境监测服务运营。Sentinel-1（C波段SAR雷达成像）、Sentinel-2（10-60米多光谱光学）、Sentinel-3（海洋+陆地）、Sentinel-5P（大气化学）、Sentinel-6（测高）。全部位于太阳同步LEO轨道。免费开放的数据政策——所有Sentinel图像均可免费下载，无需许可费用。"
+  },
+  {
+    "rel": "fleet/constellation/tundra-sirius.json",
+    "at": "description",
+    "old": "历史性卫星广播星座，运行于24小时Tundra轨道（~25,000 × 35,786 km），轨道倾角为63.4°临界倾角。三颗原始Sirius FM卫星（FM-1、FM-2、FM-3）各在CONUS上空停留约每个轨道周期的三分之二，为城市峡谷接收器提供了地静止卫星信号无法实现的仰角。Sirius FM-1于2000年从拜科努尔发射场由Proton-K火箭发射；FM-2和FM-3随后发射。该公司于2008年与XM Radio合并，成立Sirius XM。Tundra轨道星座于2016年停运，Sirius XM现运营约7颗地静止卫星星队。",
+    "new": "历史上的卫星广播星座，运行于24小时Tundra轨道（~25,000 × 35,786 km），倾角为63.4°临界倾角。最初的三颗Sirius FM卫星（FM-1、FM-2、FM-3）每个轨道周期约三分之二的时间停留在美国本土（CONUS）上空，为城市峡谷中的接收机提供了地球静止卫星信号无法实现的仰角。Sirius FM-1于2000年由Proton-K火箭从拜科努尔发射；FM-2和FM-3随后发射。该公司于2008年与XM Radio合并，成立Sirius XM。Tundra轨道星座于2016年停运，Sirius XM现运营约7颗地球静止卫星。"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-csm-block-i.json",
+    "at": "tagline",
+    "old": "原始Apollo CSM设计——从未载人飞行；1967年1月27日在发射台杀死了Apollo 1宇航员。重新设计的Block II于1968-1975年间飞行",
+    "new": "最初的Apollo CSM设计——从未载人飞行；1967年1月27日在发射台上致使Apollo 1机组遇难。重新设计后的Block II于1968-1975年间飞行"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-csm-block-i.json",
+    "at": "dispatch",
+    "old": "Block I是从未载人飞行的Apollo硬件，也是该计划其余部分得以存活的部分原因。它是指挥舱的首次尝试——仅用于无人飞行和早期地球轨道测试——它承载了一套在1966年看似合理的假设：纯氧舱在高于海平面的压力下密闭，舱门向内打开，内部材料的阻燃性能未经充分考虑。1967年1月27日，发射台上的一道火花在几秒内将这些假设变成了致命的——Apollo 1机组人员在一次每个人都视为日常的测试中丧生。Block I随之退役，成为这次教训；最终登月的Block II在很大程度上，就是Block I犯错的完整清单。",
+    "new": "Block I是从未载人飞行的Apollo硬件，也是该计划其余部分得以延续的部分原因。它是指挥舱的第一版设计——只用于无人飞行和早期地球轨道试验——承载着一套在1966年看似合理的假设：纯氧座舱的压力高于海平面气压，舱门向内开启，内饰材料的选择几乎没有考虑防火。1967年1月27日，发射台上的一点火花在几秒内让这些假设变得致命，Apollo 1机组在一次所有人都视为例行的测试中丧生。Block I就此在这一教训中退役；最终抵达月球的Block II，很大程度上就是Block I全部错误的清单。"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-csm-block-i.json",
+    "at": "description",
+    "old": "Block I是Apollo指挥与服务舱的首次设计迭代——原本作为纯地球轨道试验飞行器，用于验证月球能力级的Block II。纯氧增压舱在发射前为16.7 psi压力（飞行中为5 psi）；向内打开的舱门由大气压力差密闭。CSM-009和CSM-011在AS-201（1966年2月26日）和AS-202（1966年8月25日）无人亚轨道测试中飞行。CSM-017和CSM-020分别在Apollo 4（1967年11月9日）和Apollo 6（1968年4月4日）无人飞行中搭载——Block I指挥舱在前两次土星五号飞行中。CSM-012——Apollo 1飞船——在1967年1月27日被密闭进行Plugs-Out测试时，下部设备舱发生闪火，在数秒内杀死了机组人员；舱内无法通风，因为舱门向内打开，导致压力激增至29 psi。Apollo 204事故调查委员会主导了Block II的重新设计：向外打开的统一舱门、不易燃的舱内材料、发射前充氮富化大气、重新设计的线束。没有任何Block I CSM进行过载人飞行；Block II从Apollo 7（1968年）飞到ASTP（1975年）。",
+    "new": "Block I是Apollo指挥与服务舱的第一代设计——定位为纯地球轨道试飞器，先于具备登月能力的Block II。纯氧增压座舱，发射前压力16.7 psi（飞行中为5 psi）；向内开启的舱门靠内外气压差密封。CSM-009和CSM-011进行了无人亚轨道试验（AS-201，1966年2月26日；AS-202，1966年8月25日）。CSM-017和CSM-020分别在Apollo 4（1967年11月9日）和Apollo 6（1968年4月4日）上无人飞行——即前两次Saturn V飞行搭载的Block I指挥舱。CSM-012——Apollo 1飞船——于1967年1月27日封舱进行Plugs-Out测试时，下部设备舱发生闪燃，机组数秒内遇难；舱门向内开启，而舱压已飙升至29 psi，座舱无法泄压。Apollo 204事故调查委员会促成了Block II的重新设计：向外开启的一体式舱门、不可燃的座舱材料、发射前富氮的座舱大气、重新设计的线束。没有任何Block I CSM载人飞行过；Block II从Apollo 7（1968年）一直飞到ASTP（1975年）。"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-csm-block-i.json",
+    "at": "best_known_for",
+    "old": "原始Apollo CSM设计——从未载人飞行；1967年1月27日在发射台杀死了Apollo 1宇航员。重新设计的Block II于1968-1975年间飞行",
+    "new": "最初的Apollo CSM设计——从未载人飞行；1967年1月27日在发射台上致使Apollo 1机组遇难。重新设计后的Block II于1968-1975年间飞行"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-csm-block-ii.json",
+    "at": "tagline",
+    "old": "月球级 Command + Service Module",
+    "new": "具备登月能力的指挥舱+服务舱"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-csm-block-ii.json",
+    "at": "dispatch",
+    "old": "指挥舱是 Apollo 任务中唯一返回地球的部分——其他所有组件都在返程中被消耗和抛弃。这使指挥舱成为在大气再入时绝对不能失败的部件，而从月球返回的再入速度是最严苛的工况：太空舱以接近每秒11公里的速度进入大气层——这个速度比从地球轨道返回快50%——整个舱体被足以融化钢铁的火焰包裹。解决方案是采用烧蚀式热防护盾，其设计使其能够以受控的方式炭化和脱落，从而将热量散走。Block II 是执行载人任务的版本——这是 Apollo 1 号火灾后进行的地毯式重新设计——它将每一名打算探月的宇航员都安全送了回来。",
+    "new": "指挥舱是Apollo中唯一返回地球的部分——其余一切都在途中用尽并被抛弃。这使它成为再入时绝不能失败的部分，而从月球返回的再入是这一难题中最严苛的版本：太空舱以接近每秒11公里的速度进入大气层，比从地球轨道返回快了一半，被足以让钢铁沸腾的火球包裹。它的解决方案是烧蚀式热防护罩，其设计让它以受控方式炭化、剥落，把热量一并带走。Block II是执行载人飞行的版本——这是Apollo 1火灾后被迫从头开始的重新设计——它把每一位启程前往月球的宇航员都平安带了回来。"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-csm-block-ii.json",
+    "at": "description",
+    "old": "月球级的指挥舱和服务舱，在1968年至1972年间将Apollo航天员运送至月球轨道。共进行了十五次载人飞行：Apollo 7–17（其中十一次是月球目标任务）、三次Skylab乘组轮换飞行（1973–1974年），以及1975年的Apollo-Soyuz Test Project——包括Apollo 13的应急生命保障舱配置。",
+    "new": "具备登月能力的指挥与服务舱，1968年至1972年间将Apollo宇航员送入月球轨道。共进行十五次载人飞行：Apollo 7–17（其中十一次飞往月球）、三次Skylab乘组轮换（1973–1974年），以及1975年的Apollo-Soyuz Test Project——包括Apollo 13临时改作救生艇的构型。"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-csm-block-ii.json",
+    "at": "best_known_for",
+    "old": "月球级 Command + Service Module",
+    "new": "具备登月能力的指挥舱+服务舱"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-lm.json",
+    "at": "dispatch",
+    "old": "Lunar Module 是第一个真正的航天器——第一个专为真空飞行而建造的载人飞行器,无需穿越大气层,因此它可以抛开流线型和隔热屏蔽,完全成为它本来的样子:一台专用机器。Grumman 将其分为两部分——下降级将乘员送至月面,然后充当发射台,由独立的上升级将他们送回——因为只有这种分级方式才能平衡登月的质量预算。它靠蛛网般的支腿飞行,外壳有些地方薄如几层箔纸。在它之前从未有任何飞行器将人类送上另一个世界,而它那笨拙的、为目的而生的外形,正是航天器在无需承受返航考验时的真实模样。",
+    "new": "Lunar Module是第一艘真正的航天器——第一件专为在真空中飞行而造的载人飞行器，从不穿越大气层，因此可以舍弃流线外形和隔热防护，成为它本来的样子：只做一件事的机器。Grumman把它分成两部分——下降级载着乘员落到月面，随后充当独立上升级的发射台，由上升级把乘员送回——因为只有这样分级，才能让登月的质量预算收支平衡。它靠纤细的支腿落地，外壳有些地方薄得像几层箔纸。在它之前，没有任何飞行器把人送上另一个世界；它那笨拙、专为任务而生的外形，正是航天器不必承受返回地球时的模样。"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-lm.json",
+    "at": "description",
+    "old": "迄今唯一建造过的载人月球着陆器。1969 年至 1972 年间成功着陆六次——Eagle、Intrepid、Antares、Falcon、Orion、Challenger——以及曾充当 Apollo 13 生命舱的 Aquarius。下降级留在月球上；上升级在月球轨道上与 CSM 重新对接。",
+    "new": "迄今唯一建造过的载人月球着陆器。1969年至1972年间成功着陆六次——Eagle、Intrepid、Antares、Falcon、Orion、Challenger——另有曾充当Apollo 13救生艇的Aquarius。下降级留在月球上；上升级在月球轨道上与CSM重新对接。"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/atlantis.json",
+    "at": "dispatch",
+    "old": "Atlantis，OV-104，飞行了航天飞机最伟大伙伴关系的首尾两端。它与俄罗斯空间站Mir完成了最多次对接，开启了美俄合作的时代，并执行了STS-125任务，即最后一次大胆的维护任务，使Hubble Space Telescope能够再运行十年。2011年7月，Atlantis执行了STS-135任务，这是第135次也是最后一次航天飞机任务——这次飞行结束了三十年的可重复使用美国载人航天，并将它曾帮助建造的Space Station留在了轨道上。",
+    "new": "Atlantis，OV-104，见证了航天飞机最重要的几段合作。它与俄罗斯Mir空间站对接次数最多，开启了美俄合作的时代；它还执行了STS-125，那次大胆的最后一次维护任务让Hubble Space Telescope又能工作十年。2011年7月，Atlantis执行STS-135，即第135次、也是最后一次航天飞机任务——这次飞行为三十年的美国可重复使用载人航天画上句号，并把它曾参与建造的空间站留在了头顶的轨道上。"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran-ok-gli.json",
+    "at": "dispatch",
+    "old": "OK-GLI 是 Buran 的大气层测试轨道器——相当于 NASA 的 Enterprise，建造它是为了在任何飞行器进入轨道之前证明这种空天飞机能够滑翔和着陆。它配备了四台喷气发动机，在大气层中自主完成跑道进场和着陆，验证了 Buran 的空气动力学和自动着陆系统。它从未进入太空，也从来没有这个打算，而且它比那架真正飞行过的轨道器活得更久:当飞行过的 Buran 在 2002 年被摧毁时，OK-GLI 作为博物馆展品在德国保存了下来，成为苏联有史以来最大规模航天计划仅存的少数实物遗迹之一。",
+    "new": "OK-GLI是Buran的大气层试验轨道器——相当于NASA的Enterprise，建造它是为了在任何飞行器进入轨道之前证明这架空天飞机能够滑翔和着陆。它装有四台喷气发动机，在大气层中自行完成跑道进场和着陆，验证了Buran的空气动力学和自动着陆系统。它从未进入太空，也从未打算进入太空，却比真正飞上太空的轨道器活得更久：飞过太空的Buran在2002年被毁，OK-GLI则作为博物馆展品保存在德国，成为苏联有史以来最大规模航天计划仅存的少数实物遗迹之一。"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran-ok-gli.json",
+    "at": "description",
+    "old": "官方编号 BTS-002，昵称 OK-GLI。Buran 空间计划的全尺寸大气层试验飞行器——与轨道飞行器 Buran 1.01 具有相同的外轮廓，但配备四台 AL-31 涡喷发动机，可以在常规跑道上独立起飞。在 Zhukovsky Flight Research Institute 飞行场进行了 24 次大气层飞行，时间跨度为 1985-11-10 至 1988-04-15，验证了 Buran 的自动着陆系统和飞行控制软件，为 1988-11-15 的轨道飞行做准备。Buran 计划取消后，OK-GLI 在 LII 停放多年；1999 年被售予澳大利亚一家博物馆，随后转至巴林，最终进入德国的 Technik Museum Speyer / Sinsheim，至今仍在展出——是 Buran 对应 NASA 的 Enterprise 的等价物。",
+    "new": "官方编号BTS-002，昵称OK-GLI。Buran轨道飞行器计划的全尺寸大气层试验机——外形轮廓与飞行型Buran 1.01相同，但装有四台AL-31涡喷发动机，可在常规跑道上自力起飞。1985-11-10至1988-04-15间在Zhukovsky Flight Research Institute机场进行了24次大气层飞行，验证了Buran的自动着陆系统和飞控软件，为1988-11-15的轨道飞行做准备。Buran计划取消后，OK-GLI在LII停放多年；1999年售予澳大利亚一家博物馆，随后转到巴林，最终落户德国的Technik Museum Speyer / Sinsheim，至今在那里展出——相当于Buran版的NASA Enterprise。"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran.json",
+    "at": "tagline",
+    "old": "苏联航天飞机;一次无人驾驶飞行,从未乘员",
+    "new": "苏联航天飞机；一次无人飞行，从未载人"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran.json",
+    "at": "dispatch",
+    "old": "Buran 是苏联对 Space Shuttle 的回应——外观几乎完全相同,但有两个可以说是超越原型的决定:它不携带主发动机(所有推力来自独立的 Energia 火箭),并且可以无人飞行。1988年11月15日,它证明了第二点,完成了一次完整的无人轨道任务,并在侧风中自主降落在跑道上,这是有翼航天器从未做到过的。这是一次完美的飞行,也是它唯一的一次飞行。苏联解体,资金和任务都消失了,Buran 被取消——这架飞行过的轨道器后来在2002年因机库屋顶坍塌而被压毁。这是航天史上最令人印象深刻却又最毫无意义的成就之一。",
+    "new": "Buran是苏联对航天飞机的回应——外观几乎一模一样，但有两项可以说胜过原版的决定：它不带主发动机（全部推力来自独立的Energia火箭），而且可以无人飞行。1988年11月15日，它证明了第二点：完成了一次完整的无人轨道飞行，并在侧风中自行降落在跑道上，这是有翼航天器从未做到过的。这是一次完美的飞行，也是它唯一的一次。苏联解体，资金和任务都不复存在，Buran被取消——这架飞过太空的轨道器后来在2002年因机库屋顶坍塌而被压毁。这是航天史上最令人印象深刻、也最没有意义的成就之一。"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran.json",
+    "at": "description",
+    "old": "苏联的航天飞机,对外类似于美国轨道飞行器,但没有主发动机(Energia承载). 弗莱夫在1988年恰好有一次完全自主和无人驾驶——在程序结束前唯一到达轨道的苏联航天飞机.",
+    "new": "苏联的航天飞机，外观与美国轨道器相似，但没有主发动机（由Energia火箭承载升空）。1988年仅飞行一次，完全自主、无人驾驶——是该计划终止前苏联唯一进入轨道的航天飞机。"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran.json",
+    "at": "best_known_for",
+    "old": "苏联航天飞机;一次无人驾驶飞行,从未乘员",
+    "new": "苏联航天飞机；一次无人飞行，从未载人"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/challenger.json",
+    "at": "tagline",
+    "old": "OV-099 — 第二架可运行航天飞机。1986年1月28日STS-51-L任务发射后73秒丧失，机上7名航天员（包括教师克里斯塔·麦考利夫）全部遇难",
+    "new": "OV-099——第二架投入运营的航天飞机。1986年1月28日STS-51-L任务发射73秒后失事，机上7名航天员（包括教师克里斯塔·麦考利夫）全部遇难"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/challenger.json",
+    "at": "dispatch",
+    "old": "Challenger（OV-099）是舰队的早期主力机，也是第一次灾难的发生地。它执行了该计划首次太空行走任务，并将美国第一位女宇航员萨莉·莱德送入轨道。1986年1月28日，在异常寒冷的天气中发射升空，其一台固体火箭助推器中的橡胶密封圈因寒冷而变脆——这是工程师早已警告过的失效模式——最终破裂，航天器在升空73秒后解体。机上7人全部遇难。这场灾难使舰队停飞了近三年，并暴露了一种无视已知且有标记的风险的管理文化。",
+    "new": "Challenger（OV-099）是机队的早期主力，也是第一场灾难的发生地。它执行了该计划的首次太空行走任务，并将美国第一位女性宇航员萨莉·莱德送入轨道。1986年1月28日，在异常寒冷的天气中发射，其一台固体火箭助推器上的橡胶密封圈因低温变硬——工程师们早已警告过这种失效模式——最终失效，航天器在升空73秒后解体。机上7人全部遇难。这场灾难使机队停飞近三年，并暴露出一种对已知且已被指出的风险视而不见的管理文化。"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/challenger.json",
+    "at": "description",
+    "old": "由结构测试件（STA-099）改装而来，因Enterprise升级成本过高而被改为飞行航天器。首次飞行为STS-6任务（1983年4月4日），执行了航天飞机首次舱外活动。共执行10次任务：STS-6、STS-7、STS-8、STS-41-B、STS-41-C、STS-41-G、STS-51-B、STS-51-F、STS-61-A和最后一次任务STS-51-L。1986年1月28日，STS-51-L在史无前例的低温环境下（−1 °C）发射——右侧固体火箭推进器的O形圈密封失效，高温气体烧穿了固体火箭推进器与外储箱之间的支柱，航天器在最大动压点（T+73s）14 km高度处解体。机上7名航天员全部遇难，其中包括教师克里斯塔·麦考利夫。Rogers Commission将航天飞机停飞了32个月，并改写了NASA的安全文化。",
+    "new": "由结构试验件（STA-099）改装而来，因Enterprise的升级成本过高而改为飞行用。首飞为STS-6（1983年4月4日），执行了航天飞机的首次舱外活动。共飞行10次：STS-6、STS-7、STS-8、STS-41-B、STS-41-C、STS-41-G、STS-51-B、STS-51-F、STS-61-A，以及最后一次飞行STS-51-L。1986年1月28日，STS-51-L在前所未有的低温（−1 °C）下发射——右侧固体火箭助推器的O形圈未能密封，高温气体烧穿了连接助推器与外挂燃料箱的支柱，轨道器在最大动压点（T+73s）、14 km高度解体。机上7名航天员全部遇难，其中包括教师克里斯塔·麦考利夫。罗杰斯委员会使航天飞机停飞32个月，并重塑了NASA的安全文化。"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/challenger.json",
+    "at": "best_known_for",
+    "old": "第二架航天飞机；1986年1月28日STS-51-L任务发射后73秒丧失，机上7名航天员",
+    "new": "第二架航天飞机；1986年1月28日STS-51-L任务发射73秒后失事，机上7名航天员"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/columbia.json",
+    "at": "dispatch",
+    "old": "Columbia是首创之作——OV-102，这架轨道器开创了航天飞机的时代。1981年4月的STS-1任务中，它完成了迄今无人做过的壮举：两名宇航员搭乘尚未经过真实测试的可重复使用飞行器，首次航天飞行就飞入轨道，然后在跑道上安全着陆。它是整支舰队中最重的，执行了该计划大部分科学任务，包括Spacelab实验室的多次任务。2003年，在STS-107任务中，发射时碎片击穿的机翼一个洞眼让再入大气的热量进入了结构内部，Columbia在距德克萨斯州仅几分钟航程时四分五裂——这次灾难终结了该计划对碎片撞击危险的侥幸心理。",
+    "new": "Columbia是第一架——OV-102，开启航天飞机时代的轨道器。1981年4月的STS-1上，它做到了此前此后的载人航天器都没做到的事：处女航就飞入轨道，由两名宇航员驾驶一架未经试飞的可重复使用飞行器，再像滑翔机一样降落在跑道上。它是机队中最重的一架，承担了该计划的大部分科学任务，包括Spacelab实验室。2003年的STS-107中，发射时的碎片在机翼上打出一个洞，再入时的高温由此进入机体结构，Columbia在距离回家只剩几分钟时于得克萨斯州上空解体——这次损失终结了该计划对碎片撞击的麻痹大意。"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/columbia.json",
+    "at": "description",
+    "old": "首架投入运营的Space Shuttle轨道器。在22年间执行了28次任务，包括STS-1（美国首架也是唯一一架在首次航天飞行时搭载宇航员的有人航天器）、1990年的Astro-1紫外天文学任务、1993年的SLS-2生命科学任务，以及参议员约翰·格伦在1998年STS-95任务中重返太空。在STS-107任务中再入大气时失事（2003-02-01）——发射时的泡沫撞击破坏了左机翼的RCC前缘，飞行器在德克萨斯州上空以18倍音速解体，7名机组成员全部遇难。该事故导致航天飞机舰队停飞29个月，引发了太空探索愿景。",
+    "new": "首架投入运营的Space Shuttle轨道器。22年间执行了28次任务，包括STS-1（美国首架也是唯一一架在处女航时就载有乘员的载人航天器）、1990年的Astro-1紫外天文学任务、1993年的SLS-2生命科学任务，以及参议员约翰·格伦在1998年STS-95任务中重返太空。在STS-107任务（2003-02-01）再入时失事——发射时的泡沫撞击击穿了左翼的RCC前缘，飞行器在得克萨斯州上空以18倍音速解体，7名机组成员全部遇难。该事故使航天飞机机队停飞29个月，并促成了太空探索愿景。"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/columbia.json",
+    "at": "best_known_for",
+    "old": "首架飞往太空的航天飞机轨道器（STS-1，1981）；在STS-107再入任务中失事，2003",
+    "new": "首架飞往太空的航天飞机轨道器（STS-1，1981）；在STS-107再入时失事，2003"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/crew-dragon.json",
+    "at": "description",
+    "old": "SpaceX 的载人航天器，也是首个由私营企业开发和运营的将人类送入轨道的航天器（Demo-2，2020-05-30）。船体尾部配备两个太阳能电池板，在整流罩分离后部署，为在轨运行期间提供动力。",
+    "new": "SpaceX的载人航天器，也是首个由私营企业开发和运营、将人类送入轨道的航天器（Demo-2，2020-05-30）。货舱段配有两块太阳能电池板，在整流罩分离后展开，为在轨运行期间供电。"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/discovery.json",
+    "at": "dispatch",
+    "old": "Discovery OV-103 是机队中飞行次数最多、最受信赖的轨道器,在27年间执行了39次任务。它是NASA在两次灾难后选择让航天飞机重返飞行的首选——当项目最需要证明自身安全性时被率先送上太空的飞行器。在其众多飞行任务中,最重要的可能是STS-31,它将Hubble Space Telescope送入轨道并释放,开启了天文学史上最富成果的篇章。",
+    "new": "Discovery（OV-103）是机队中飞行次数最多、最受信赖的轨道器，27年间执行了39次任务。在两次灾难之后，NASA都选它让航天飞机重返飞行——当计划最需要重新证明自身安全时，率先送上太空的就是它。在它众多的飞行中，最重要的也许是STS-31：它把Hubble Space Telescope送入轨道并释放，开启了天文学史上最富成果的篇章。"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/endeavour.json",
+    "at": "description",
+    "old": "第五架也是最后一架可运行的航天飞机，采用Challenger之后的结构备件组装，当时NASA仅有三架评定可飞行的航天飞机。通过全国学校竞赛以库克船长的HMS Endeavour命名。首次飞行STS-49（1992-05-07）包括首次三人舱外活动（捕获被困的Intelsat VI卫星）。主要任务：STS-61（1993-12）进行首次Hubble维修，恢复了Hubble的光学系统；STS-88（1998-12-04）首次国际空间站装配飞行，交付第一节仓段Unity；STS-100（2001-04）安装Canadarm2；STS-130（2010-02）安装Tranquility与Cupola；STS-134（2011-05）安装AMS-02宇宙射线探测器——航天飞机计划最后一次舱外活动任务。现展示于位于洛杉矶的加州科学中心。",
+    "new": "第五架也是最后一架投入运营的轨道器，在Challenger事故后用结构备件组装而成，当时NASA仅剩三架可飞行的轨道器。通过全国学校竞赛，以库克船长的HMS Endeavour命名。首飞STS-49（1992-05-07）包括首次三人舱外活动（捕获失控的Intelsat VI卫星）。主要任务：STS-61（1993-12）首次Hubble维修，恢复了Hubble的光学系统；STS-88（1998-12-04）首次国际空间站组装飞行，交付1号节点舱Unity；STS-100（2001-04）安装Canadarm2；STS-130（2010-02）安装Tranquility与Cupola；STS-134（2011-05）安装AMS-02宇宙射线探测器——这也是航天飞机计划最后一批舱外活动乘组。现展示于洛杉矶的加州科学中心。"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/enterprise.json",
+    "at": "tagline",
+    "old": "OV-101 — 航天飞机原型机。因《星际迷航》粉丝活动从\"宪法号\"改名。1977年进行大气层测试飞行；从未进入轨道",
+    "new": "OV-101——航天飞机原型机。在《星际迷航》粉丝的请愿活动后由Constitution改名。1977年进行大气层测试飞行；从未进入轨道"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/enterprise.json",
+    "at": "description",
+    "old": "原名Constitution，1976 年在《星际迷航》粉丝组织的请愿活动后更名为Enterprise。作为接近与着陆测试（ALT）的原型机建造——1977 年在Edwards Air Force Base从航天飞机运输机进行 8 次携带飞行和 5 次自由飞行。首次自由飞行于 1977-08-12，由弗莱德·海斯和戈尔登·福勒顿驾驶，证明了轨道飞行器可以滑翔和着陆。不配备推进系统或防热瓷片；将Enterprise改装为可飞行状态估计比用结构备件重新制造新的轨道飞行器更加沉重，因此改为建造Challenger。现陈列于纽约Intrepid Sea, Air & Space Museum。",
+    "new": "原名Constitution，1976年航天飞机命名时，在《星际迷航》粉丝发起的来信请愿活动后改名为Enterprise。它作为进场与着陆试验（ALT）的原型机建造——1977年在Edwards Air Force Base上空从航天飞机运载机上进行了8次载机飞行和5次自由飞行。1977-08-12的首次自由飞行由弗莱德·海斯和戈尔登·福勒顿驾驶，证明了轨道器能够滑翔和着陆。不含推进系统或有效的防热瓦；据估计，把Enterprise改装成可飞行状态比用结构备件新造一架轨道器更重，因此改为建造Challenger。现陈列于纽约的Intrepid Sea, Air & Space Museum。"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/gemini.json",
+    "at": "dispatch",
+    "old": "Gemini宇宙飞船是美国人真正能够驾驶的第一艘飞船。水星号的宇航员主要是乘坐一个由地面控制的太空舱;Gemini的双人乘员配备了姿态控制推进器、飞行计算机,以及改变自身轨道的能力——能够追逐并与另一艘航天器对接。这就是它存在的全部原因:不是去任何新的地方,而是成为一台用于练习Apollo任务所需机动的机器。比水星号更宽敞但仍然拥挤,分为乘员舱和设备舱,就像后来的Apollo一样,在十次飞行中,它将交会对接、对接和两周耐久性从未知数变成了乘员可以简单完成的事情。",
+    "new": "Gemini飞船是美国人真正能够驾驶的第一艘飞船。Mercury的宇航员大多乘坐由地面控制的舱体；而Gemini的双人乘组配备了推进器和飞行计算机，能够自行改变轨道——追上另一艘航天器并与之对接。这正是它存在的全部意义：不是去往新的地方，而是成为练习Apollo所需机动的机器。它比Mercury宽敞，但仍然局促，和后来的Apollo一样分为乘员舱和设备段，在十次飞行中，把交会、对接和为期两周的耐久飞行从悬而未决的问题变成了乘组可以直接完成的事。"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/gemini.json",
+    "at": "description",
+    "old": "这艘双人宇宙飞船教会了NASA如何进行交会对接和舱外行走——这些使Apollo任务成为可能的技术。两次无人试飞(Gemini 1和2)在1964–1965年进行,随后是十次载人任务(Gemini 3–12)在1965–1966年进行,每一次都是向月球迈出的一步。",
+    "new": "这艘双人飞船教会了NASA如何交会、对接和太空行走——正是这些技术使Apollo成为可能。1964–1965年先进行了两次无人试飞（Gemini 1和2），随后在1965–1966年进行了十次载人任务（Gemini 3–12），每一次都是向月球迈出的一步。"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/mercury-capsule.json",
+    "at": "dispatch",
+    "old": "水星舱设计得极其精小，只需能让一个人在太空中存活——这一点从它的样子就能看出。舱内几乎没有空间做任何事，只能坐着；宇航员穿着宇宙飞船，与其说是乘坐它。但它的形状解决了那个时代最难的未解问题——如何返回地球。钝圆端部覆盖着一层护罩，这层护罩能烧蚀并将热量带走，将再入从必然的灾难转变为可以存活的事件，而它的圆锥形是美国首次回答\"载人宇宙飞船究竟什么样子\"这个问题的答案。此后的每一个舱——Gemini、Apollo舱、Dragon——都是这个狭窄小圆锥的后代。",
+    "new": "Mercury舱被设计成能让一个人在太空中存活的最小装置——看得出来。里面几乎没有活动空间，只能坐着；宇航员与其说是乘坐飞船，不如说是把它穿在身上。但它的外形解决了那个时代最难的未解难题——如何返回。钝圆的一端覆盖着会炭化并带走热量的防热罩，把再入从必死无疑变成了可以生还，而它的锥形，是美国对“载人航天器究竟该是什么样子”这个问题的第一个回答。此后的每一种舱——Gemini、Apollo、Dragon——都是这个局促小圆锥的后代。"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/mercury-capsule.json",
+    "at": "description",
+    "old": "圆锥形舱体，在1961年至1963年期间搭载了六名美国宇航员执行水星计划。舱体之小，以至于约翰·格伦曾戏称自己被装在罐头里的午餐肉——但它证明了轨道飞行对美国来说是可以实现的。",
+    "new": "圆锥形舱体，1961年至1963年间在Mercury计划中搭载了六名美国宇航员。它小到约翰·格伦曾有名地形容自己像“罐头里的午餐肉”——但它证明了美国能够实现轨道飞行。"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/orion.json",
+    "at": "description",
+    "old": "NASA Artemis项目的载人航天器，与ESA联合研制（欧洲服务舱由Airbus提供）。设计用于在多周的载人任务中支持最多四名宇航员飞往月球轨道。于2022年以无人方式执行Artemis I任务。于2026年4月执行首次载人任务（Artemis II），四人乘组完成绕月飞行轨迹。",
+    "new": "NASA Artemis计划的载人飞行器，与ESA联合研制（欧洲服务舱由Airbus提供）。设计可在为期数周的任务中支持最多四名宇航员飞往月球轨道。2022年在Artemis I上无人飞行。2026年4月执行首次载人任务（Artemis II），四人乘组沿绕月飞越轨迹飞行。"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/shenzhou.json",
+    "at": "description",
+    "old": "中国的载人飞船,外部来自Soyuz,但有所扩大。2003年首次乘员飞行(神舟五号,杨利伟);现为标准渡轮至天宫,每六个月轮乘一次。",
+    "new": "中国的载人飞船，外形源自Soyuz，但尺寸更大。2003年首次载人飞行（神舟五号，杨利伟）；现为往返天宫的标准交通工具，乘组每六个月轮换一次。"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-7k-ok.json",
+    "at": "dispatch",
+    "old": "Soyuz 7K-OK是该系列的首款型号——这艘航天器的原始版本最终比所有其他型号都更长寿。它引入了此后每艘Soyuz都保留的三舱布局:一个球形轨道舱用于生活和工作,一个紧凑的下降舱用于返回,以及一个服务舱用于供电和推进。它也是在首次载人飞行中导致弗拉基米尔·科马罗夫丧生的版本,并且在改进形式下,又导致Soyuz 11的三名宇航员遇难——这些惨痛的早期教训将一个仓促的设计转变为可靠的设计。虽然在开始时粗糙而危险,但其基本架构被证明是如此可靠,经过数十年的改进,至今仍在将乘组送入轨道。",
+    "new": "Soyuz 7K-OK是该系列的第一款——这一航天器的最初版本，却比后来所有型号都长寿。它引入了此后每一艘Soyuz都沿用的三舱布局：供生活和工作的球形轨道舱，供返回的紧凑下降舱，以及提供电力和推进的服务舱。它也是在首次载人飞行中夺去弗拉基米尔·科马罗夫生命的版本，并且在改进形态下，又夺去了Soyuz 11三名宇航员的生命——这段惨痛的早期教训，把一个仓促的设计变成了可靠的设计。起初粗糙而危险，但其基本架构被证明如此扎实，经过数十年的改进，至今仍在把乘组送入轨道。"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-t.json",
+    "at": "description",
+    "old": "1979–1986年间的礼炮纪元Soyuz飞船，具有三名宇航员的乘员容量，在Soyuz 11致命失压事故后恢复此配置。配备现代化航电系统和肼基推进；是原始的7K-OK与长期运行的TM/TMA/MS系列之间的过渡方案。",
+    "new": "1979–1986年Salyut时代的Soyuz，在Soyuz 11失压致命事故后恢复了三名宇航员的载员能力。配备现代化航电系统和自燃推进剂推进；是最初的7K-OK与长期服役的TM/TMA/MS系列之间的桥梁。"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-tma.json",
+    "at": "tagline",
+    "old": "国际空间站时代Soyuz;扩建机组高度信封",
+    "new": "国际空间站时代的Soyuz；放宽乘员身高范围"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-tma.json",
+    "at": "best_known_for",
+    "old": "国际空间站时代Soyuz;扩建机组高度信封",
+    "new": "国际空间站时代的Soyuz；放宽乘员身高范围"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/space-shuttle-orbiter.json",
+    "at": "description",
+    "old": "1981年至2011年间飞行135次任务的可重复使用的翼式飞船——唯一一个像滑翔机一样着陆的乘员飞行器。建造了5架飞行轨道飞行器(Columbia,Challenger,Discovery,Atlantis,Endeavour);Columbia与Challenger随其船员一同丢失。",
+    "new": "可重复使用的有翼航天器，1981年至2011年间飞行135次——唯一一种像滑翔机一样着陆的载人飞行器。共建造五架飞行用轨道器（Columbia、Challenger、Discovery、Atlantis、Endeavour）；Columbia和Challenger连同机组一起损失。"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/starliner.json",
+    "at": "description",
+    "old": "波音公司的商业载人飞行器，采用利用其自身服务舱推进器的推进式发射中止系统。Crew Flight Test（2024年6月）遭遇推进器故障和氦泄漏；NASA于2024年9月无人返回舱体。威尔莫尔和Williams通过SpaceX Crew-9返回（2025年2月）。待重新认证期间，载人飞行暂停。",
+    "new": "Boeing的商业载人飞行器，采用利用自身服务舱推进器的推进式发射中止系统。Crew Flight Test（2024年6月）出现推进器故障和氦泄漏；NASA于2024年9月让舱体无人返回。威尔莫尔和苏妮·威廉斯搭乘SpaceX Crew-9返回（2025年2月）。待重新认证期间，载人飞行暂停。"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/vostok.json",
+    "at": "dispatch",
+    "old": "Vostok飞船是第一台将人类送入太空并将其带回的机器,其设计是对做到最低限度可行性的研究。再入是返回过程中最困难的部分,因此Vostok采用了一种能够从任何角度存活下来的形状——球体——这意味着自动系统永远不必精确指向飞船;它会翻滚着进入大气层,仍然会以热盾朝下的姿态降落。问题在于球体着陆时对人来说太猛烈,因此宇航员会在接近地面时弹射出去并单独降落伞着陆,这一事实被隐瞒了多年以保护记录。粗糙、隐秘且完全有效,它将六人送入轨道且无一损失——而其返回舱加服务舱的布局成为了Soyuz的模式,至今仍在飞行。",
+    "new": "Vostok飞船是第一台把人送入太空并带回来的机器，其设计是“只做最低限度够用之事”的范本。再入是返回途中最难的部分，所以Vostok采用了无论从哪个角度都能挺过再入的形状——球体——这意味着自动系统无需精确调整飞船姿态；它翻滚着进入大气层，仍然会以防热罩一侧朝下的姿态落下。问题在于球体着陆时冲击对人来说太猛，所以宇航员在接近地面时弹射出舱，单独乘降落伞着陆，这一事实为保护纪录被隐瞒多年。它粗糙、保密，却完全有效，把六个人送入轨道，一个也没有损失——它的返回舱加服务舱布局成为Soyuz的模板，至今仍在飞行。"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/vostok.json",
+    "at": "description",
+    "old": "1961-04-12从轨道返回尤里·加加林的球形下降舱——第一次载人航天飞行。1961年至1963年间共有6次乘员飞行，包括瓦莲京娜·捷列什科娃的独奏轨道任务，成为太空中第一位女性。",
+    "new": "1961-04-12把尤里·加加林从轨道带回的球形下降舱——第一次载人航天飞行。1961年至1963年间共进行6次载人飞行，包括瓦莲京娜·捷列什科娃作为第一位进入太空的女性所完成的单人轨道任务。"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/x37b.json",
+    "at": "description",
+    "old": "机器人迷你空天飞机（8.9 m，约 5 t）— Boeing Phantom Works 为美国空军建造了 2 架飞行器（2019 年移交 USSF）。垂直发射（最初 Atlas V 501；OTV-5 起 SpaceX Falcon 9；OTV-7 起 Falcon Heavy），在 Kennedy 航天中心原航天飞机跑道水平着陆。多数载荷和轨道参数属机密 — 已知任务持续时长从 224 天（OTV-1，2010）到创纪录的 908 天（OTV-6，2020-2022）。公开的解密载荷包括霍尔效应推进器技术验证、AFRL 射频通信实验、1 W 太阳能-微波传输实验（PRAM，OTV-6）。截至 2026 年已飞行七次任务。",
+    "new": "机器人迷你空天飞机（长8.9 m，约5 t），由Boeing Phantom Works为美国空军建造，2019年移交USSF。垂直发射（最初为Atlas V 501；OTV-5起使用SpaceX Falcon 9；OTV-7起使用Falcon Heavy），在肯尼迪航天中心原航天飞机跑道上水平着陆。多数载荷和轨道参数属机密——已知任务持续时间从224天（OTV-1，2010）到创纪录的908天（OTV-6，2020-2022）。已解密的实验包括霍尔效应推进器技术验证、AFRL射频通信测试，以及1 W太阳能转微波传输实验（PRAM，OTV-6）。截至2026年已飞行七次任务。"
+  },
+  {
+    "rel": "fleet/engine/ce-20.json",
+    "at": "tagline",
+    "old": "印度首个自主研制的低温发动机，源于技术需求",
+    "new": "印度首个自主研制的低温发动机，因形势所迫而诞生"
+  },
+  {
+    "rel": "fleet/engine/ce-20.json",
+    "at": "description",
+    "old": "20世纪90年代初，技术转让限制阻止了印度获得低温发动机技术。ISRO液体推进系统中心因此决定从零开始自主研制。CE-20发动机由此诞生：采用气体发生器循环，燃烧LOX和LH2，为印度最重的在役运载火箭LVM3的上面级提供动力。它于2017年6月5日首次飞行，搭乘GSLV Mk III D1发展型飞行任务升空，这标志着耗时二十年的研制计划圆满落幕——一道地缘政治的壁垒被转化为独立自主的能力。CE-20发动机将承载印度首次载人航天任务Gaganyaan进入轨道。",
+    "new": "20世纪90年代初，技术转让限制使印度无法获得低温发动机技术，ISRO的Liquid Propulsion Systems Centre因此从零开始自主研制。CE-20就是成果：采用燃气发生器循环，燃烧LOX和LH2，为印度最重的在役运载火箭LVM3的上面级提供动力。它于2017年6月5日在GSLV Mk III D1发展型飞行中首次升空，为历时二十年的研制计划画上句号——一道地缘政治的壁垒由此化为独立自主的能力。CE-20将把印度首次载人任务Gaganyaan送入轨道。"
+  },
+  {
+    "rel": "fleet/engine/f-1.json",
+    "at": "description",
+    "old": "Saturn V第一级上的五台F-1s产生的合力推力是此前和之后任何单枚火箭在海平面上都未能达到的。Rocketdyne的燃气发生器循环燃烧LOX和RP-1，燃烧速率需要体积相当于汽车发动机的涡轮泵和一个燃烧室，工程师们不得不通过试验、爆炸和重新设计来解决燃烧室内的燃烧不稳定性。它于1967年11月9日首次飞行，在计划结束前将Apollo送往月球六次。",
+    "new": "Saturn V第一级上的五台F-1产生的合力推力，是此前和此后任何单枚火箭在海平面上都未能企及的。Rocketdyne的燃气发生器循环以极高的流量燃烧LOX和RP-1，需要大小堪比汽车发动机的涡轮泵；燃烧室中的燃烧不稳定问题，工程师们只能靠试验、爆炸和重新设计来解决。它于1967年11月9日首次飞行，在计划结束前六次把Apollo送上奔月之路。"
+  },
+  {
+    "rel": "fleet/engine/f-1.json",
+    "at": "best_known_for",
+    "old": "迄今飞行过的最强力单室液体发动机——五台推动土星五号",
+    "new": "迄今飞行过的最强大的单燃烧室液体发动机——五台推动Saturn V"
+  },
+  {
+    "rel": "fleet/engine/h-1.json",
+    "at": "tagline",
+    "old": "八台引擎，八次任务——土星一号的主力引擎",
+    "new": "八台发动机，八次任务——Saturn I的主力发动机"
+  },
+  {
+    "rel": "fleet/engine/h-1.json",
+    "at": "description",
+    "old": "H-1 是 Rocketdyne 研制的发动机，用来架起早期弹道导弹动力装置与随后面世的 F-1 之间的鸿沟。H-1 采用燃气发生器循环，以液氧和 RP-1 为推进剂，八个 H-1s 聚束在一起构成了 Saturn I 第一级——以及后来的 Saturn IB 第一级——执行了所有无人 Apollo 硬件测试和有人 Apollo 7 任务。它首次飞行于 1961 年 10 月 27 日；从那时起持续运行到 1975 年 Saturn IB 项目结束。",
+    "new": "H-1是Rocketdyne研制的发动机，用来弥合早期弹道导弹动力装置与随后问世的F-1之间的差距。H-1采用燃气发生器循环，以LOX和RP-1为推进剂，八台H-1并联构成Saturn I的第一级——后来也是Saturn IB的第一级——执行了所有无人Apollo硬件测试和载人的Apollo 7任务。它首飞于1961年10月27日；一直持续使用到1975年Saturn IB计划结束。"
+  },
+  {
+    "rel": "fleet/engine/h-1.json",
+    "at": "best_known_for",
+    "old": "八引擎聚集土星I/IB助推器引擎——F-1的试验场",
+    "new": "八机并联的Saturn I/IB助推器发动机——F-1的预演"
+  },
+  {
+    "rel": "fleet/engine/hm7b.json",
+    "at": "description",
+    "old": "HM7B 是以液氢为燃料的上面级发动机，为Ariane火箭在芯级关闭后提供高能加速。该发动机采用燃气发生器循环，使用 LOX 和 LH2，首次于 1986 年 5 月在Ariane 2上飞行，并继续服役至 2023 年 7 月Ariane 5运营生涯的结束。虽然体积小巧，但其高比冲性能使其成为地球同步转移轨道注入的主力发动机，在超过三十年的时间里，为包括Rosetta、Mars Express和金星快车等商业卫星和科学有效载荷送入离轨轨道。",
+    "new": "HM7B是以液氢为燃料的上面级发动机，在芯级关机后为Ariane火箭提供高能推进。该发动机采用燃气发生器循环，使用LOX和LH2，1986年5月首次在Ariane 2上飞行，一直服役到2023年7月Ariane 5运营结束。它体积小巧，却有很高的比冲，成为地球同步转移轨道入轨的主力发动机，三十多年间把商业卫星和科学有效载荷——包括Rosetta、Mars Express和Venus Express——送上出发轨道。"
+  },
+  {
+    "rel": "fleet/engine/hm7b.json",
+    "at": "best_known_for",
+    "old": "欧洲低温上面级发动机——阿丽亚娜的远月任务主力",
+    "new": "欧洲低温上面级发动机——Ariane的地月转移主力"
+  },
+  {
+    "rel": "fleet/engine/j-2.json",
+    "at": "description",
+    "old": "J-2 燃烧液氢和液氧,并能在太空真空中重新启动——这一能力使土星五号的跨月球注入燃烧成为可能。Rocketdyne的燃气发生器设计应用于土星五号的第二、三级和Saturn IB 火箭上,结合了高性能和在空间内重新启动的能力,使发射运载火箭成为真正的离开级。它首次飞行于 1966 年 2 月,最后一次飞行于 1975 年 7 月的Apollo-Soyuz Test Project中。",
+    "new": "J-2燃烧液氢和液氧，并能在太空真空中重新点火——这一能力使Saturn V的地月转移入轨点火成为可能。Rocketdyne的燃气发生器设计用于Saturn V的第二级和第三级以及Saturn IB，兼具高性能与在太空中重启的能力，让运载火箭的末级成为真正的出发级。它于1966年2月首次飞行，最后一次飞行是在1975年7月的Apollo-Soyuz Test Project上。"
+  },
+  {
+    "rel": "fleet/engine/j-2.json",
+    "at": "best_known_for",
+    "old": "可重新启动的液氢上面级引擎,将Apollo送上跨月球轨道",
+    "new": "可重新点火的液氢上面级发动机，将Apollo送上奔月轨道"
+  },
+  {
+    "rel": "fleet/engine/le-5b.json",
+    "at": "description",
+    "old": "LE-5B是日本两代运载火箭之间的桥梁——一台深冷上面级发动机。采用膨胀循环LOX和LH2动力系统，具备飞行中多次启动能力，这对于在助推阶段后将载荷精确投入轨道至关重要。它首次在2001年8月搭乘H-IIA升空，之后升级为LE-5B-3型号以继续服役于H3运载火箭，确保日本的上面级技术从国际空间站建设时代延续至今。其可重启特性与膨胀循环设计的简洁高效相结合，使其自然成为LE-7A和LE-9的理想上面级搭档。",
+    "new": "LE-5B是连接日本两代运载火箭的低温上面级发动机。采用以LOX和LH2为推进剂的膨胀放气循环，可在飞行中重新点火——这是经过滑行段后将载荷精确送入轨道的必要条件。它于2001年8月首次搭乘H-IIA升空，之后升级为LE-5B-3，继续服役于H3，使日本的上面级从国际空间站建设时代到今天从未间断。可重启能力加上膨胀放气循环简洁清爽的特点，使它自然成为LE-7A和LE-9的上面级搭档。"
+  },
+  {
+    "rel": "fleet/engine/le-7a.json",
+    "at": "tagline",
+    "old": "日本的分级燃烧氢心，二十年的H-II运载服务",
+    "new": "日本的分级燃烧氢发动机，在H-II上服役二十年"
+  },
+  {
+    "rel": "fleet/engine/le-7a.json",
+    "at": "description",
+    "old": "LE-7A发动机赋予日本完全自主的重型运载能力。由Mitsubishi Heavy Industries为JAXA开发，采用分级燃烧循环，以LOX和LH2为推进剂——这种热力学方案可从氢燃料中提取最大效率——并于2001年8月首次搭载H-IIA飞行，是原始LE-7的改进继承者。重新设计解决了曾导致早期H-II失败的涡轮泵问题，LE-7A随后成为H-IIA和H-IIB运营生涯的中坚力量，服役至2024年，为国际空间站发射了日本的HTV货运飞船，并搭载了JAXA-ISRO雷达卫星ALOS系列。",
+    "new": "LE-7A赋予日本完全自主的重型运载能力。它由Mitsubishi Heavy Industries为JAXA研制，采用以LOX和LH2为推进剂的分级燃烧循环——这种热力学方案能从氢推进剂中榨取最高效率——并于2001年8月首次在H-IIA上飞行，是初代LE-7的改进型。重新设计解决了曾导致早期H-II失败的涡轮泵问题，此后LE-7A成为H-IIA和H-IIB服役生涯的支柱，一直用到2024年，发射了日本的HTV货运飞船前往国际空间站，也发射了JAXA-ISRO雷达卫星ALOS系列。"
+  },
+  {
+    "rel": "fleet/engine/lr87.json",
+    "at": "tagline",
+    "old": "双燃烧室高能推进第一级，为所有Gemini载人任务提供动力",
+    "new": "双燃烧室自燃推进剂第一级发动机，送出了每一个Gemini乘组"
+  },
+  {
+    "rel": "fleet/engine/lr87.json",
+    "at": "description",
+    "old": "LR87是在土星二号火箭上推动全部十次Gemini载人任务升空的发动机。Aerojet公司的设计在单个涡轮泵组件上安装了两个燃烧室，燃烧Aerozine-50和四氧化二氮，采用燃气发生器循环——这种高能推进组合是那个时代美国洲际弹道导弹的标准配置。推进剂选择对航天员安全有着直接影响：与RP-1或氢气不同，Aerozine-50和N2O4接触即燃，这种高能推进特性使Gemini计划能够在全部十次载人任务中采用弹射座椅，而不是发射逃逸塔。LR87随后被开发成更大的型号，在土星三号和土星四号火箭上飞行执行商业和军事任务，直到2005年10月。",
+    "new": "LR87是在Titan II上发射全部十次Gemini载人任务的发动机。Aerojet的设计把两个燃烧室装在同一套涡轮泵组件上，以燃气发生器循环燃烧Aerozine-50和四氧化二氮——这种自燃推进剂组合是当时美国洲际弹道导弹的标准配置。推进剂的选择对乘员安全有直接影响：与RP-1或氢不同，Aerozine-50和N2O4一接触就点燃，这种自燃的可靠性使Gemini在全部十次载人任务中都采用弹射座椅，而不是发射逃逸塔。LR87后来发展成更大的型号，在Titan III和Titan IV上执行商业和军事任务，一直飞到2005年10月。"
+  },
+  {
+    "rel": "fleet/engine/lr87.json",
+    "at": "best_known_for",
+    "old": "为Titan II运载Gemini宇航员而发射的双室第一级火箭",
+    "new": "在Titan II上发射Gemini乘组的双室第一级发动机"
+  },
+  {
+    "rel": "fleet/engine/merlin-1d.json",
+    "at": "description",
+    "old": "SpaceX的Merlin 1D引擎是使可复用Falcon 9成为可能的动力心脏。九台该引擎集群安装在Falcon 9第一级上，采用燃气发生器循环，推进剂为LOX和RP-1，其中中心引擎还用于返回和着陆燃烧。该引擎首次飞行于2013年9月，Merlin 1D逐步发展成为高频率的工作马：单台引擎已累计飞行超过二十次，这一重复使用纪录改变了整个行业对经济可行性的认知。真空变体Merlin 1D Vacuum采用更大喷嘴优化设计以适应近真空环境，为Falcon 9上面级提供动力。",
+    "new": "SpaceX的Merlin 1D是使可复用Falcon 9成为可能的发动机。九台Merlin 1D集束安装在Falcon 9第一级上，采用燃气发生器循环，推进剂为LOX和RP-1，其中中心发动机还用于返回和着陆点火。它于2013年9月首次飞行，逐步成长为高频次发射的主力：单台发动机已累计飞行二十多次，这一复用纪录改变了整个行业对经济上可行之事的认知。真空型Merlin 1D Vacuum采用更大的喷管，针对近真空环境优化，为Falcon 9上面级提供动力。"
+  },
+  {
+    "rel": "fleet/engine/merlin-1d.json",
+    "at": "best_known_for",
+    "old": "可复用的工作马——九台引擎驱动Falcon 9，飞行并重复使用数十次",
+    "new": "可复用的主力——九台推动Falcon 9，飞行并重复使用数十次"
+  },
+  {
+    "rel": "fleet/engine/raptor.json",
+    "at": "tagline",
+    "old": "全流全阶燃烧循环——最困难的循环，终于飞行",
+    "new": "全流量分级燃烧——最难的循环，终于升空"
+  },
+  {
+    "rel": "fleet/engine/raptor.json",
+    "at": "description",
+    "old": "Raptor是首台达到运行飞行的全流全阶燃烧发动机。在这个热力学循环中，两种推进剂——LOX和液态甲烷——都要经过预燃烧室，然后进入主燃烧室，以提取最大的能量，并使几乎没有未燃烧的推进剂。工程师们研究这个概念已有数十年，得出结论认为它复杂度过高；但SpaceX还是造出来了。Super Heavy一级火箭上有33台Raptor同时点火，一个真空优化版本为Starship上面级提供动力。首次搭载Raptor的一体化Starship飞行于2023年4月20日升空。",
+    "new": "Raptor是首台进入实际飞行的全流量分级燃烧发动机。在这一热力学循环中，两种推进剂——LOX和液态甲烷——都先经过预燃室再进入主燃烧室，从而榨取最大能量，几乎不留未燃烧的推进剂。工程师们研究这一概念已有数十年，结论是它复杂得不可行；SpaceX还是造出来了。Super Heavy第一级上有33台Raptor同时点火，真空优化型则为Starship上面级提供动力。首次搭载Raptor的Starship整体飞行于2023年4月20日升空。"
+  },
+  {
+    "rel": "fleet/engine/raptor.json",
+    "at": "best_known_for",
+    "old": "首台飞行的全流全阶燃烧发动机——33台推动Super Heavy升空",
+    "new": "首台飞行的全流量分级燃烧发动机——33台推动Super Heavy"
+  },
+  {
+    "rel": "fleet/engine/rd-107-108.json",
+    "at": "tagline",
+    "old": "斯普特尼克的引擎——65年后仍在运送航天员",
+    "new": "Sputnik的发动机——65年后仍在运送航天员"
+  },
+  {
+    "rel": "fleet/engine/rd-107-108.json",
+    "at": "description",
+    "old": "RD-107和RD-108是R-7火箭的主动力，R-7是世界上第一枚洲际弹道导弹，由谢尔盖·科罗廖夫的团队改造为运载火箭。RD-107为R-7的四个并联助推器提供动力，RD-108驱动芯级。两款引擎都采用液氧和煤油的燃气发生器循环，都在1957年8月21日首飞——早于Sputnik数月。升级后的RD-107A和RD-108A继续为运送航天员前往国际空间站的Soyuz火箭提供动力，使其成为有史以来运行时间最长的人员运输推进系统。",
+    "new": "RD-107和RD-108是R-7的发动机；R-7是世界上第一种洲际弹道导弹，被谢尔盖·科罗廖夫的团队改造为运载火箭。RD-107为R-7的四个并联助推器提供动力，RD-108驱动芯级。两款发动机都采用以LOX和煤油为推进剂的燃气发生器循环，都在1957年8月21日首飞——比Sputnik早数月。升级为RD-107A和RD-108A后，它们继续为运送航天员前往国际空间站的Soyuz火箭提供动力，成为有史以来服役时间最长的载人级推进系统。"
+  },
+  {
+    "rel": "fleet/engine/rd-180.json",
+    "at": "best_known_for",
+    "old": "富氧分级燃烧技术——美国无法比肩，搭载Atlas V运载火箭",
+    "new": "美国无法匹敌的富氧分级燃烧——曾用于Atlas V"
+  },
+  {
+    "rel": "fleet/engine/rd-253.json",
+    "at": "tagline",
+    "old": "质子运载火箭每次任务配备的六台双液火箭发动机",
+    "new": "六台自燃推进剂发动机，驱动每一次Proton任务"
+  },
+  {
+    "rel": "fleet/engine/rd-253.json",
+    "at": "description",
+    "old": "RD-253 是苏联时代使 Proton 成为最强大重型运载工具之一的发动机。六台 RD-253 排列在 Proton 火箭第一级周围，每台都采用富氧分级燃烧循环，使用四氧化二氮和不对称二甲基肼作为推进剂——这对双液推进剂接触即自燃，无需点火系统。虽然推进剂具有毒性和腐蚀性，但在室温下储存稳定，提供了 Proton 在数十年商业和行星探测任务中保持的可靠性。RD-253 首次飞行于 1965 年 7 月 16 日，为 Proton 火箭退役前的每一个第一级飞行任务提供动力。",
+    "new": "RD-253是使Proton成为苏联时代最强大的重型运载火箭之一的发动机。六台RD-253排列在Proton第一级周围，每台都采用以四氧化二氮和偏二甲肼为推进剂的富氧分级燃烧循环——这对自燃推进剂接触即点燃，无需点火系统。这种推进剂有毒且具腐蚀性，但可在室温下储存，赋予Proton在数十年商业和行星探测任务中保持的可靠性。RD-253于1965年7月16日首次飞行，直到Proton退役，每一级Proton第一级都由它提供动力。"
+  },
+  {
+    "rel": "fleet/engine/rd-253.json",
+    "at": "best_known_for",
+    "old": "质子运载火箭的双液发动机主力——六台推动每个Proton第一级",
+    "new": "Proton的自燃推进剂主力发动机——六台推动每一级Proton第一级"
+  },
+  {
+    "rel": "fleet/engine/rocketdyne-a7.json",
+    "at": "description",
+    "old": "1961年5月5日，艾伦·谢泼德乘坐水星-红石火箭升至187公里的高度后返回——使他成为首位进入太空的美国人——而把他送上太空的引擎正是Rocketdyne A-7。A-7源自为红石弹道导弹提供动力的A-6，采用以LOX和乙醇为推进剂的燃气发生器循环：这对推进剂组合可以追溯到红石导弹和德国V-2火箭。谢泼德的Freedom 7飞行任务持续了十五分钟，改变了太空竞赛的政治格局。A-7仅在水星-红石任务中使用，于1963年5月停役。",
+    "new": "1961年5月5日，艾伦·谢泼德乘Mercury-Redstone火箭升至187公里高度后返回——成为首位进入太空的美国人——把他送上去的发动机就是Rocketdyne A-7。A-7源自为Redstone弹道导弹提供动力的A-6，采用以LOX和乙醇为推进剂的燃气发生器循环：这一推进剂组合可以经Redstone追溯到德国的V-2。谢泼德的Freedom 7飞行持续十五分钟，改变了太空竞赛的政治格局。A-7只用于Mercury-Redstone任务，1963年5月退役。"
+  },
+  {
+    "rel": "fleet/engine/rocketdyne-a7.json",
+    "at": "best_known_for",
+    "old": "发射第一艘美国载人飞船 Freedom 7 的发动机",
+    "new": "把第一位美国人送入太空的发动机——Freedom 7"
+  },
+  {
+    "rel": "fleet/engine/rs-25.json",
+    "at": "description",
+    "old": "RS-25是Space Shuttle Main Engine项目花了十年时间完善的发动机：采用分级燃烧循环方式，以LOX和LH2为推进剂，能够调节推力、重新启动，并可在下一次飞行前进行翻修。从1981年4月起，它在超过135次航天飞机任务中积累了近乎完美的运行记录。这些发动机被回收、检查，并重新飞行——这是此功率等级下任何早期火箭发动机都未曾实现的壮举。航天飞机退役后，这些库存发动机经过重新鉴定和改用，成为NASA的Space Launch System的一部分，目前RS-25s在SLS的芯级中提供动力。",
+    "new": "RS-25是Space Shuttle Main Engine计划花了十年打磨的发动机：以LOX和LH2为推进剂的分级燃烧循环，可调节推力、重新启动，并能在下次飞行前翻修。从1981年4月起，它在135次航天飞机任务中积累了近乎完美的运行记录。这些发动机被回收、检查并再次飞行——在这一功率等级上，此前没有任何火箭发动机做到过。航天飞机退役后，库存发动机经重新鉴定，改用于NASA的Space Launch System，RS-25现在为SLS的芯级提供动力。"
+  }
 ]

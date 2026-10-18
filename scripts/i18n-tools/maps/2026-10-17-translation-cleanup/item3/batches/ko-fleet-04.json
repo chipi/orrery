@@ -1,830 +1,830 @@
 [
- {
-  "rel": "fleet/orbiter/solar-orbiter.json",
-  "at": "description",
-  "en": "ESA-led Solar Orbiter is the first spacecraft designed to image the Sun's polar regions in close detail — using repeated Venus gravity assists over a decade to climb out of the ecliptic toward ~33° heliographic inclination. Carries ten instruments combining remote sensing (PHI magnetograph, EUI extreme-UV imager, SPICE spectrometer, STIX X-ray imager, METIS coronagraph, SoloHI heliospheric imager) with in-situ measurement (magnetometer, energetic particles, solar-wind plasma, radio + plasma waves). Launched 2020-02-10 from Cape Canaveral on a NASA Atlas V 411. First perihelion 2020-06-15 at 0.51 AU. Working perihelion 0.28 AU (~62 R☉), inside Mercury's perihelion distance.",
-  "cur": "ESA 주도의 Solar Orbiter는 태양의 극지방을 근접하여 상세하게 촬영하도록 설계된 최초의 우주선으로, 10년에 걸쳐 반복적인 금성 중력 도움을 이용해 황도면을 벗어나 ~33° 태양 중심 경사각까지 상승한다. 원격 탐사(PHI 자기장 측정기, EUI 극자외선 촬영기, SPICE 분광계, STIX X선 촬영기, METIS 코로나그래프, SoloHI 태양권 촬영기)와 현장 측정(자기장계, 고에너지 입자, 태양풍 플라스마, 전파 + 플라스마파) 장비를 결합한 10개의 과학기기를 탑재하고 있다. 2020-02-10 케이프 커내버럴에서 NASA Atlas V 411로 발사되었다. 첫 근일점은 2020-06-15, 0.51 AU였다. 작동 근일점은 0.28 AU (~62 R☉)로, Mercury의 근일점 거리보다 안쪽이다."
- },
- {
-  "rel": "fleet/orbiter/tianwen-1.json",
-  "at": "tagline",
-  "en": "First Chinese Mars mission; delivered Zhurong",
-  "cur": "중국 최초의 화성 탐사 임무; Zhurong 착륙"
- },
- {
-  "rel": "fleet/orbiter/tianwen-1.json",
-  "at": "description",
-  "en": "CNSA's first Mars mission — an orbiter that carried the Zhurong rover to the Martian surface in May 2021. After releasing Zhurong, the orbiter continued solo science operations including high-resolution imaging and surface mapping.",
-  "cur": "CNSA의 첫 화성 탐사 임무 — 2021년 5월 Zhurong 로버를 화성 표면에 전달한 궤도선. Zhurong을 분리한 후 궤도선은 고해상도 이미징 및 표면 매핑을 포함한 단독 과학 임무를 계속 수행했다."
- },
- {
-  "rel": "fleet/orbiter/tianwen-1.json",
-  "at": "best_known_for",
-  "en": "First Chinese Mars mission; orbiter delivered the Zhurong rover in May 2021",
-  "cur": "중국 최초의 화성 탐사 임무; 2021년 5월 Zhurong 로버 착륙 성공"
- },
- {
-  "rel": "fleet/orbiter/ulysses.json",
-  "at": "tagline",
-  "en": "First spacecraft to observe the Sun's poles from above + below the ecliptic — Jupiter gravity assist 1992",
-  "cur": "황도면 위아래에서 태양 극을 관측한 최초의 탐사선 — 1992년 목성 중력보조"
- },
- {
-  "rel": "fleet/orbiter/ulysses.json",
-  "at": "description",
-  "en": "Joint ESA + NASA solar / heliospheric mission, built by Dornier with US scientific contribution. Launched 1990-10-06 from STS-41 Discovery on a high-energy trajectory direct to Jupiter — the only way to fling a spacecraft out of the ecliptic plane without prohibitive delta-v. Jupiter flyby 1992-02-08 deflected the spacecraft into an 80°-inclination heliocentric orbit (1.3 × 5.4 AU, 6.2-year period) — the first and still only spacecraft to fly over the Sun's poles. Three complete polar orbits gave us the heliospheric current sheet 3D structure, the faster polar / slower equatorial solar wind, and the only multi-decade record of polar coronal hole behaviour over a complete solar cycle. Mission ended 2009.",
-  "cur": "ESA와 NASA의 공동 태양/헬리오스피어 탐사 임무로, Dornier가 미국의 과학적 기여와 함께 제작했습니다. 1990년 10월 6일 STS-41 Discovery에서 발사되어 목성으로 향하는 고에너지 궤적을 따랐습니다. 이는 과도한 델타-v 없이 우주선을 황도면에서 벗어나도록 던져내는 유일한 방법이었습니다. 1992년 2월 8일 목성 근처를 통과하면서 우주선은 80° 경사의 태양중심 궤도(1.3 × 5.4 AU, 6.2년 주기)로 편향되었습니다. 태양의 극지 위를 날아간 유일하고 현재까지도 유일한 우주선입니다. 3번의 완전한 극지 궤도를 통해 헬리오스피어 전류판 3차원 구조, 더 빠른 극지 태양풍과 더 느린 적도 태양풍, 그리고 완전한 태양 사이클에 걸친 유일한 수십 년 규모의 극지 코로나 홀 거동 기록을 얻었습니다. 임무는 2009년에 종료되었습니다."
- },
- {
-  "rel": "fleet/orbiter/ulysses.json",
-  "at": "best_known_for",
-  "en": "Only spacecraft to fly over the Sun's poles — joint ESA / NASA, 1990-2009",
-  "cur": "태양 극을 비행한 유일한 탐사선 — ESA/NASA 공동, 1990-2009"
- },
- {
-  "rel": "fleet/orbiter/vega-1.json",
-  "at": "tagline",
-  "en": "Soviet Venus + Halley's Comet double mission — Venera lander, first interplanetary balloon, then Halley flyby",
-  "cur": "소비에트 금성 + 핼리 혜성 이중 임무 — Venera 착륙선, 최초 행성간 풍선, 그 후 핼리 근접비행"
- },
- {
-  "rel": "fleet/orbiter/vega-1.json",
-  "at": "description",
-  "en": "First spacecraft of the international Halley armada. Launched 1984-12-15 on a Proton-K / D-1. The 4920 kg flyby bus carried a ~1500 kg descent module that separated for Venus arrival 1985-06-11 — the lander touched down at 7.5°N, 177.8°E for 56 minutes of surface science, while a first-of-kind helium-filled balloon aerostat floated in the cloud deck at 54 km altitude for 46 hours tracking wind speeds and atmospheric structure. The flyby bus continued on its 9-month cruise and encountered comet 1P/Halley 1986-03-06 at 8889 km — the first Halley encounter of the armada, providing the targeting data ESA's Giotto used 8 days later for its much closer 596 km approach.",
-  "cur": "국제 핼리 함대의 첫 우주선. 1984년 12월 15일 Proton-K / D-1로 바이코누르에서 발사. 4920 kg 비행 모선은 ~1500 kg 강하 모듈을 탑재하여 1985년 6월 11일 금성 도착 시 분리 — 착륙선은 7.5°N, 177.8°E에 착륙해 56분간 표면 과학을 수행했고, 동시에 헬륨 풍선 에어로스탯이 고도 54 km 구름층에서 46시간 동안 표류하며 풍속·대기 구조를 추적했다. 비행 모선은 9개월 항해를 계속해 1986년 3월 6일 8889 km에서 핼리 혜성 1P/핼리 혜성과 조우 — 함대 최초의 핼리 만남으로, 8일 뒤 ESA Giotto의 근접 비행을 위한 조준 데이터를 제공했다."
- },
- {
-  "rel": "fleet/orbiter/vega-1.json",
-  "at": "best_known_for",
-  "en": "Soviet Venus + Halley double mission — first interplanetary balloon, first Halley flyby",
-  "cur": "소비에트 금성 + 핼리 혜성 이중 임무 — 행성간 최초의 풍선, 함대 최초의 핼리 혜성 비행"
- },
- {
-  "rel": "fleet/orbiter/vega-2.json",
-  "at": "tagline",
-  "en": "Sibling of Vega 1 — second Soviet Venus + Halley double mission, lander + balloon then Halley flyby",
-  "cur": "Vega 1의 자매기 — 소비에트 두 번째 금성 + 핼리 혜성 이중 임무, Vega 1보다 3일 뒤 핼리 혜성 비행"
- },
- {
-  "rel": "fleet/orbiter/vega-2.json",
-  "at": "description",
-  "en": "Identical twin of Vega 1, launched 1984-12-21 (6 days after Vega 1). 4920 kg flyby bus + ~1500 kg descent module with second Venera-style lander + helium aerostat. Venus arrival 1985-06-15: lander touched down at 8.5°S, 164.5°E (Aphrodite Terra), returned 57 minutes of surface science; balloon floated in the cloud deck for 46 hours alongside Vega 1's. The flyby bus continued and encountered comet 1P/Halley 1986-03-09 at 8030 km — the second Halley encounter of the armada, 3 days after Vega 1 and 5 days before Giotto. Vega 1 + Vega 2 tracking refined the Halley nucleus position to within 50 km for Giotto's much closer approach.",
-  "cur": "Vega 1의 정확한 쌍둥이로, 1984년 12월 21일에 발사됨 (Vega 1보다 6일 후). 4920 kg의 플라이바이 버스 + 두 번째 베네라식 착륙선이 포함된 약 1500 kg의 하강 모듈 + 헬륨 기구. 금성 도착 1985년 6월 15일: 착륙선은 남위 8.5°, 동경 164.5° (아프로디테 테라)에 착륙하여 57분간 지표면 과학 데이터를 반환함. 기구는 Vega 1의 기구와 함께 구름층에서 46시간 동안 부유함. 플라이바이 버스는 계속 진행하여 1986년 3월 9일에 혜성 1P/핼리 혜성을 8030 km 거리에서 만남 — 함대의 두 번째 핼리 조우로, Vega 1으로부터 3일 후이며 Giotto보다 5일 전. Vega 1과 Vega 2의 추적은 Giotto의 훨씬 더 가까운 접근을 위해 핼리 핵의 위치를 50 km 이내로 정밀화함."
- },
- {
-  "rel": "fleet/orbiter/vega-2.json",
-  "at": "best_known_for",
-  "en": "Sibling of Vega 1 — second Soviet Venus + Halley double mission, 1986-03-09 Halley flyby",
-  "cur": "Vega 1의 자매기 — 소비에트 금성 + 핼리 혜성 이중 임무, 1986-03-09 핼리 혜성 비행"
- },
- {
-  "rel": "fleet/orbiter/viking1-orbiter.json",
-  "at": "tagline",
-  "en": "Companion orbiter to Viking-1 lander — relay + 50000 surface images at 150-300 m/pixel, the first global Mars map. Operated 1976-1980",
-  "cur": "Viking-1 착륙선의 동반 궤도선 — 중계 + 150-300 m/픽셀로 50000장 표면 이미지, 최초의 화성 전 지구 지도. 1976-1980 운용"
- },
- {
-  "rel": "fleet/orbiter/viking1-orbiter.json",
-  "at": "description",
-  "en": "The orbital half of NASA's Viking 1 mission — the first US Mars orbiter and one of two near-identical Viking orbiters that returned ~50,000 surface images at 150-300 m/pixel between 1976 and 1980. Launched 1975-08-20 from Cape Canaveral on a Titan IIIE-Centaur, Viking 1 entered Mars orbit 1976-06-19; the orbiter spent a month surveying candidate landing sites before releasing the Viking 1 lander 1976-07-20 to the first successful US Mars landing at Chryse Planitia. The orbiter then continued as a science platform for nearly four more years, building the first global topographic + thermal map of Mars, surveying Phobos + Deimos, and acting as a UHF relay for the lander. Out of attitude-control gas 1980-08-07. Deliberately raised to a 357 × 33614 km park orbit that's expected to remain stable through ~2024 (decayed ~2025 per Aerospace Corp re-entry forecast).",
-  "cur": "NASA의 Viking 1 임무의 궤도선 부분 — 첫 번째 미국 화성 궤도선이자 1976년부터 1980년 사이 약 50,000장의 표면 이미지를 150~300 m/pixel로 반환한 거의 동일한 두 Viking 궤도선 중 하나입니다. 케이프 커내버럴에서 1975-08-20에 Titan IIIE-Centaur로 발사되었으며, Viking 1은 1976-06-19에 화성 궤도에 진입했습니다. 궤도선은 Viking 1 착륙선을 1976-07-20에 크리세 평원의 첫 번째 성공적인 미국 화성 착륙지로 방출하기 전에 1개월간 후보 착륙지를 조사했습니다. 그 후 궤도선은 약 4년을 더 과학 플랫폼으로 계속 운영되었으며, 화성의 첫 번째 전지구 지형+열 지도를 작성하고, 포보스와 데이모스를 조사했으며, 착륙선의 UHF 중계국으로 역할했습니다. 1980-08-07에 자세 제어 가스 소진. 의도적으로 357 × 33614 km 주차 궤도로 올려졌으며, 이는 약 2024년까지 안정적으로 유지될 것으로 예상됩니다(Aerospace Corp 재진입 예측에 따르면 약 2025년에 붕괴)."
- },
- {
-  "rel": "fleet/orbiter/viking1-orbiter.json",
-  "at": "best_known_for",
-  "en": "Companion orbiter to Viking-1 lander — relay + 50000 surface images at 150-300 m/pixel, the first global Mars map. Operated 1976-1980",
-  "cur": "Viking-1 착륙선의 동반 궤도선 — 중계 + 150-300 m/픽셀로 50000장 표면 이미지, 최초의 화성 전 지구 지도. 1976-1980 운용"
- },
- {
-  "rel": "fleet/orbiter/voyager-1.json",
-  "at": "description",
-  "en": "The most distant human-made object — over 25 billion kilometers from the Sun and growing. Crossed the heliopause into interstellar space on August 25, 2012. Carries the Golden Record. Still transmitting on its 470 W RTG.",
-  "cur": "가장 먼 인간이 만든 물체 — 태양으로부터 250억 킬로미터가 넘는 거리에 있으며 계속 멀어지고 있습니다. 2012년 8월 25일 헬리오스페어를 넘어 성간 우주로 진입했습니다. 골든 레코드를 탑재하고 있습니다. 여전히 470 W RTG로 신호를 전송하고 있습니다."
- },
- {
-  "rel": "fleet/orbiter/voyager-2.json",
-  "at": "tagline",
-  "en": "Only spacecraft to visit all four giant planets",
-  "cur": "4개의 거대한 행성을 방문하는 우주선만"
- },
- {
-  "rel": "fleet/orbiter/voyager-2.json",
-  "at": "description",
-  "en": "The only spacecraft to visit all four giant planets — Jupiter (1979), Saturn (1981), Uranus (1986), Neptune (1989). Followed its twin Voyager 1 into interstellar space in November 2018. Carries an identical Golden Record.",
-  "cur": "네 개의 거대 행성을 모두 방문한 유일한 우주선 — 목성(1979), 토성(1981), 천왕성(1986), 해왕성(1989). 쌍둥이 우주선인 Voyager 1을 따라 2018년 11월 성간 공간으로 진입했습니다. 동일한 골든 레코드를 탑재하고 있습니다."
- },
- {
-  "rel": "fleet/orbiter/voyager-2.json",
-  "at": "best_known_for",
-  "en": "Only spacecraft to visit all four giant planets",
-  "cur": "4개의 거대한 행성을 방문하는 우주선만"
- },
- {
-  "rel": "fleet/rover/curiosity.json",
-  "at": "tagline",
-  "en": "Nuclear-powered Mars Science Laboratory rover",
-  "cur": "원자력 Mars Science Laboratory 로버"
- },
- {
-  "rel": "fleet/rover/curiosity.json",
-  "at": "description",
-  "en": "NASA’s nuclear-powered Mars Science Laboratory rover, on Mars since August 2012. Discovered organic molecules, ancient stream-bed environments, and evidence that Mars’ Gale Crater was habitable in the past. Still operational over a decade later.",
-  "cur": "NASA의 원자력 동력 Mars Science Laboratory 로버로, 2012년 8월부터 화성에 있습니다. 유기 분자, 고대 하천상 환경, 그리고 화성의 게일 분화구가 과거에 거주 가능했다는 증거를 발견했습니다. 10년 이상이 지난 후에도 여전히 작동 중입니다."
- },
- {
-  "rel": "fleet/rover/curiosity.json",
-  "at": "best_known_for",
-  "en": "Nuclear-powered Mars Science Laboratory rover",
-  "cur": "원자력 Mars Science Laboratory 로버"
- },
- {
-  "rel": "fleet/rover/exomars-rosalind-franklin.json",
-  "at": "tagline",
-  "en": "ESA's 2028 Mars rover — 2-m drill to search for biosignatures at Oxia Planum. Paused by Roscosmos pull-out 2022, retargeted to NASA launch",
-  "cur": "ESA의 2028년 화성 로버 — 옥시아 평원에서 생체신호 탐색용 2 m 드릴. 2022년 Roscosmos 철수로 보류, NASA 발사체로 전환"
- },
- {
-  "rel": "fleet/rover/exomars-rosalind-franklin.json",
-  "at": "description",
-  "en": "ESA's first Mars rover, named after the DNA pioneer Rosalind Franklin. Designed to land at Oxia Planum (an ancient clay-bearing Mars region selected for high biosignature-preservation potential) and use a 2-metre subsurface drill — deeper than any prior Mars mission — to acquire samples from depths protected from the cosmic-ray and UV radiation that destroys surface organics. The Analytical Laboratory Drawer holds three life-detection instruments: MOMA (Mars Organic Molecule Analyser, a gas chromatograph + dual-source mass spectrometer), MicrOmega (infrared imaging spectroscopy), and the Raman Laser Spectrometer. Originally targeted for 2022 launch on a Russian Proton with a Russian-built landing platform (Kazachok); after Russia invaded Ukraine in 2022, ESA suspended cooperation, and Rosalind Franklin's launch was deferred. Currently scheduled for 2028 on a NASA-provided launch vehicle with an ESA / Airbus-rebuilt landing platform.",
-  "cur": "ESA의 첫 화성 로버로, DNA 연구의 선구자 Rosalind Franklin의 이름을 따서 명명되었습니다. 옥시아 평원(생물 신호 보존 가능성이 높아 선정된 고대 점토 지역)에 착륙하도록 설계되었으며, 2미터 깊이의 지하 드릴 — 이전의 어떤 화성 임무보다 깊다 — 로 표면 유기물을 파괴하는 우주 방사선과 자외선으로부터 보호되는 깊이의 시료를 채취합니다. 분석 실험실 서랍(Analytical Laboratory Drawer)에는 세 가지 생명 탐지 기기가 들어 있습니다: MOMA(Mars Organic Molecule Analyser, 가스 크로마토그래프 + 이중 이온원 질량분석기), MicrOmega(적외선 영상 분광기), 그리고 라만 레이저 분광기(Raman Laser Spectrometer). 원래는 러시아 Proton 로켓에 러시아가 제작한 착륙 플랫폼(Kazachok)을 실어 2022년에 발사할 계획이었으나, 2022년 러시아의 우크라이나 침공 이후 ESA가 협력을 중단하면서 Rosalind Franklin의 발사가 연기되었습니다. 현재 NASA가 제공하는 발사체와 ESA / Airbus가 다시 만든 착륙 플랫폼으로 2028년 발사를 예정하고 있습니다."
- },
- {
-  "rel": "fleet/rover/exomars-rosalind-franklin.json",
-  "at": "best_known_for",
-  "en": "ESA's 2028 Mars rover — 2-m drill to search for biosignatures at Oxia Planum. Paused by Roscosmos pull-out 2022, retargeted to NASA launch",
-  "cur": "ESA의 2028년 화성 로버 — 옥시아 평원에서 생체신호 탐색용 2 m 드릴. 2022년 Roscosmos 철수로 보류, NASA 발사체로 전환"
- },
- {
-  "rel": "fleet/rover/lrv-apollo.json",
-  "at": "tagline",
-  "en": "First crewed rover; Apollo 15, 16, 17",
-  "cur": "첫 유인 로버; Apollo 15, 16, 17"
- },
- {
-  "rel": "fleet/rover/lrv-apollo.json",
-  "at": "dispatch",
-  "en": "The Lunar Rover was the first car on another world, and its entire reason to exist was reach. On foot, an astronaut can't stray far from the lander — walk too far out and you can't walk back if the suit starts to fail. Wheels rewrote that math: Apollo 15 through 17 ranged kilometres from home, turning a single landing spot into a proper field area and letting geologists actually choose where to look. Building it was its own puzzle — it had to fold flat into a wedge on the side of the Lunar Module, unfold on the surface, then drive through abrasive dust and hundreds of degrees of temperature swing on wire-mesh wheels and battery power. It never went fast. It went far, and that was the whole point.",
-  "cur": "Lunar Rover는 다른 천체에 착륙한 최초의 자동차였으며, 존재하는 유일한 이유는 도달 거리였습니다. 우주인은 도보로는 착륙선에서 멀리 떨어질 수 없습니다. 너무 멀리 가면 우주복이 고장날 경우 돌아올 수 없으니까요. 바퀴가 그 계산식을 다시 썼습니다. Apollo 15부터 17까지는 집으로부터 수 킬로미터 떨어진 곳까지 갈 수 있었고, 하나의 착륙 지점을 제대로 된 야외 탐사 지역으로 바꾸어 지질학자들이 실제로 어디를 살펴볼지 선택할 수 있게 했습니다. 이것을 만드는 것 자체가 하나의 난제였습니다. Lunar Module의 옆면에 쐐기 모양으로 평탄하게 접혀 있어야 하고, 표면에서 펼쳐져야 하며, 연마성 먼지와 수백 도의 온도 변화를 통과해서 망상 바퀴와 배터리 전원으로 주행해야 했으니까요. 속도는 빠르지 않았습니다. 멀리 갈 수 있었고, 그것이 전부였습니다."
- },
- {
-  "rel": "fleet/rover/lrv-apollo.json",
-  "at": "description",
-  "en": "The Lunar Roving Vehicle — the first crewed rover. Three Apollos (15, 16, 17) used it to extend their surface exploration, covering up to 35.9 km per mission (Apollo 17 record). Built by Boeing and Delco; folded into the LM’s descent stage.",
-  "cur": "Lunar Roving Vehicle — 최초의 유인 로버입니다. Apollo 15, 16, 17이 이를 사용하여 표면 탐사를 확장했으며, 임무당 최대 35.9 km를 커버했습니다 (Apollo 17 기록). Boeing과 Delco가 제작했으며, LM의 강하단계에 접혀 있었습니다."
- },
- {
-  "rel": "fleet/rover/lrv-apollo.json",
-  "at": "best_known_for",
-  "en": "First crewed rover; Apollo 15, 16, 17",
-  "cur": "첫 유인 로버; Apollo 15, 16, 17"
- },
- {
-  "rel": "fleet/rover/lunokhod-1.json",
-  "at": "description",
-  "en": "The first wheeled vehicle to roam another world. Operated for ten months on the Moon’s Mare Imbrium between November 1970 and September 1971, driven via radio link by a five-person team in Crimea. A pressurised \"tub\" warmed by a polonium heater overnight.",
-  "cur": "다른 세계로 비행하는 최초의 차량. 1970년 11월과 1971년 9월 사이에 달의 비의 바다에서 운영, Crimea의 다섯 사람 팀에 의해 라디오 링크를 통해 구동. 압착 \"tub\"는 밤새 polonium 히이터에 의해 데웁니다."
- },
- {
-  "rel": "fleet/rover/lunokhod-2.json",
-  "at": "tagline",
-  "en": "Roamed 39 km on the Moon — record till 2014",
-  "cur": "달에 39km 돌진 - 2014년까지 기록"
- },
- {
-  "rel": "fleet/rover/lunokhod-2.json",
-  "at": "description",
-  "en": "Lunokhod 2 is a planetary rover built by NPO Lavochkin in USSR. Roamed 39 km on the Moon — record till 2014. Retired after first flight in 1973.",
-  "cur": "Lunokhod 2는 소련의 NPO Lavochkin에 의해 지어진 행성 회귀입니다. 달에 39km 돌진 - 2014년까지 기록. 1973년 첫 비행 후 은퇴."
- },
- {
-  "rel": "fleet/rover/lunokhod-2.json",
-  "at": "best_known_for",
-  "en": "Roamed 39 km on the Moon — record till 2014",
-  "cur": "달에 39km 돌진 - 2014년까지 기록"
- },
- {
-  "rel": "fleet/rover/opportunity.json",
-  "at": "tagline",
-  "en": "Twin to Spirit; 14-year Mars operation",
-  "cur": "Spirit의 쌍둥이; 화성에서 14년 운영"
- },
- {
-  "rel": "fleet/rover/opportunity.json",
-  "at": "description",
-  "en": "Opportunity (MER-B) is a planetary rover built by NASA JPL in USA. Twin to Spirit; operated for nearly 15 years on Mars. Set the off-world driving record at 45.16 km and discovered hematite 'blueberries' indicating past water. Retired 2019.",
-  "cur": "Opportunity(MER-B)는 미국 NASA JPL에서 제작한 행성 탐사로봇입니다. Spirit의 쌍둥이이며 화성에서 약 15년간 운영되었습니다. 행성 외 주행 거리 기록 45.16 km를 수립했으며, 과거 물의 존재를 나타내는 적철광 '블루베리'를 발견했습니다. 2019년에 운영을 종료했습니다."
- },
- {
-  "rel": "fleet/rover/opportunity.json",
-  "at": "best_known_for",
-  "en": "Twin to Spirit; ~15-year, 45 km Mars operation",
-  "cur": "Spirit의 쌍둥이; ~15년, 화성에서 45 km 작동"
- },
- {
-  "rel": "fleet/rover/perseverance.json",
-  "at": "name",
-  "en": "Perseverance (Mars 2020)",
-  "cur": "Perseverance (화성 2020)"
- },
- {
-  "rel": "fleet/rover/perseverance.json",
-  "at": "tagline",
-  "en": "Carried Ingenuity; Mars sample caching",
-  "cur": "Ingenuity 운반; 화성 샘플 캐싱"
- },
- {
-  "rel": "fleet/rover/perseverance.json",
-  "at": "description",
-  "en": "NASA’s sample-caching rover, on Mars since February 2021. Carried Ingenuity, the first off-Earth helicopter; has collected 33 of 43 sample tubes for eventual return to Earth. Looking for biosignatures in Jezero Crater’s ancient delta.",
-  "cur": "2021년 2월부터 화성에 있는 NASA의 샘플 캐싱 로버. 지구 밖 최초의 헬리콥터 Ingenuity를 운반했으며, 지구로 반송될 43개의 샘플 튜브 중 33개를 수집했음. Jezero 분화구의 고대 삼각주에서 생명의 흔적을 찾고 있음."
- },
- {
-  "rel": "fleet/rover/perseverance.json",
-  "at": "best_known_for",
-  "en": "Carried Ingenuity; Mars sample caching",
-  "cur": "Ingenuity 운반; 화성 샘플 캐싱"
- },
- {
-  "rel": "fleet/rover/pragyan.json",
-  "at": "tagline",
-  "en": "First lunar south-pole rover; Chandrayaan-3",
-  "cur": "첫 달 남쪽 극 rover; Chandrayaan-3"
- },
- {
-  "rel": "fleet/rover/pragyan.json",
-  "at": "description",
-  "en": "Pragyan is a planetary rover built by ISRO in India. First lunar south-pole rover; Chandrayaan-3. Retired after first flight in 2023.",
-  "cur": "Pragyan은 인도의 ISRO에 의해 지어진 행성의 로버입니다. 첫 달 남쪽 극 rover; Chandrayaan-3. 은퇴 후 첫 비행 2023."
- },
- {
-  "rel": "fleet/rover/pragyan.json",
-  "at": "best_known_for",
-  "en": "First lunar south-pole rover; Chandrayaan-3",
-  "cur": "첫 달 남쪽 극 rover; Chandrayaan-3"
- },
- {
-  "rel": "fleet/rover/sojourner.json",
-  "at": "tagline",
-  "en": "First Mars rover; Pathfinder mission",
-  "cur": "첫 번째 화성 rover; Pathfinder 임무"
- },
- {
-  "rel": "fleet/rover/sojourner.json",
-  "at": "description",
-  "en": "Sojourner is a planetary rover built by NASA JPL in USA. First Mars rover; Pathfinder mission. Retired after first flight in 1997.",
-  "cur": "Sojourner는 미국의 NASA JPL에 의해 구축 된 행성의 로버입니다. 첫 번째 화성 rover; Pathfinder 임무. 1997 년 첫 비행 후 은퇴."
- },
- {
-  "rel": "fleet/rover/sojourner.json",
-  "at": "best_known_for",
-  "en": "First Mars rover; Pathfinder mission",
-  "cur": "첫 번째 화성 rover; Pathfinder 임무"
- },
- {
-  "rel": "fleet/rover/spirit.json",
-  "at": "tagline",
-  "en": "Mars Exploration Rover; 6-year operation",
-  "cur": "Mars Exploration Rover; 6년 가동"
- },
- {
-  "rel": "fleet/rover/spirit.json",
-  "at": "description",
-  "en": "Spirit (MER-A) is a planetary rover built by NASA JPL in USA. Mars Exploration Rover; 6-year operation. Retired after first flight in 2004.",
-  "cur": "Spirit (MER-A)는 미국 NASA JPL이 제작한 행성 탐사 로버입니다. Mars Exploration Rover 계획의 일부로 6년간 가동되었습니다. 2004년 첫 비행 후 은퇴했습니다."
- },
- {
-  "rel": "fleet/rover/spirit.json",
-  "at": "best_known_for",
-  "en": "Mars Exploration Rover; 6-year operation",
-  "cur": "Mars Exploration Rover; 6년 가동"
- },
- {
-  "rel": "fleet/rover/yutu-2.json",
-  "at": "tagline",
-  "en": "First rover on the lunar far side; Chang'e-4",
-  "cur": "달의 뒷면에 착륙한 첫 번째 로버; Chang'e-4"
- },
- {
-  "rel": "fleet/rover/yutu-2.json",
-  "at": "description",
-  "en": "China’s Chang’e-4 rover, the first rover to operate on the lunar far side. Landed in Von Kármán crater in January 2019 and operated for over six years, far exceeding its three-month design lifetime; largely stationary since early 2024.",
-  "cur": "중국의 Chang'e-4 로버로, 달의 뒷면에서 운영된 첫 번째 로버입니다. 2019년 1월 Von Kármán 분화구에 착륙했으며 6년 이상 운영되어 3개월의 설계 수명을 훨씬 초과했습니다. 2024년 초부터 대부분 정지 상태입니다."
- },
- {
-  "rel": "fleet/rover/yutu-2.json",
-  "at": "best_known_for",
-  "en": "First rover on the lunar far side; Chang'e-4",
-  "cur": "달의 뒷면에 착륙한 첫 번째 로버; Chang'e-4"
- },
- {
-  "rel": "fleet/rover/yutu.json",
-  "at": "tagline",
-  "en": "First Chinese lunar rover; Chang'e-3",
-  "cur": "첫 번째 중국 lunar rover; Chang'e-3"
- },
- {
-  "rel": "fleet/rover/yutu.json",
-  "at": "description",
-  "en": "Yutu is a planetary rover built by CAST in China. First Chinese lunar rover; Chang'e-3. Retired after first flight in 2013.",
-  "cur": "Yutu는 중국에 있는 CAST에 의해 건축된 행성 rover입니다. 첫 번째 중국 lunar rover; Chang'e-3. 2013 년 첫 비행 후 은퇴."
- },
- {
-  "rel": "fleet/rover/yutu.json",
-  "at": "best_known_for",
-  "en": "First Chinese lunar rover; Chang'e-3",
-  "cur": "첫 번째 중국 lunar rover; Chang'e-3"
- },
- {
-  "rel": "fleet/rover/zhurong.json",
-  "at": "tagline",
-  "en": "First Chinese Mars rover; Tianwen-1",
-  "cur": "첫 번째 중국 화성 rover; Tianwen-1"
- },
- {
-  "rel": "fleet/rover/zhurong.json",
-  "at": "description",
-  "en": "Zhurong is a planetary rover built by CAST in China. First Chinese Mars rover; Tianwen-1. Retired after first flight in 2021.",
-  "cur": "Zhurong는 중국에 있는 CAST에 의해 건축된 행성 rover입니다. 첫 번째 중국 화성 rover; Tianwen-1. 2021 년 첫 비행 후 은퇴."
- },
- {
-  "rel": "fleet/rover/zhurong.json",
-  "at": "best_known_for",
-  "en": "First Chinese Mars rover; Tianwen-1",
-  "cur": "첫 번째 중국 화성 rover; Tianwen-1"
- },
- {
-  "rel": "fleet/space-suit/a7l.json",
-  "at": "tagline",
-  "en": "The first operational lunar surface suit — Apollo 11 through 14",
-  "cur": "첫 번째 작동 루어 표면 정장 - Apollo 11 통해 14"
- },
- {
-  "rel": "fleet/space-suit/a7l.json",
-  "at": "dispatch",
-  "en": "A pressure suit on the Moon is really a spacecraft you wear — the smallest crewed vehicle Apollo built, sized for one. The A7L had to do everything a capsule does — hold pressure, supply oxygen, carry away heat and exhaled carbon dioxide, shield against a temperature swing of hundreds of degrees between sunlight and shadow — while still letting a person kneel, walk, and pick up a rock. Those two demands fight each other, because anything holding pressure wants to go stiff as a balloon. Its answer was twenty-one layers built around a rubber-coated bladder, with the backpack making the whole thing self-contained for hours. It was the first suit rated to walk on another world, and for its missions it was the only thing between a human being and vacuum.",
-  "cur": "달 위의 압력복은 사실상 입는 우주선이다 — Apollo가 제작한 가장 작은 유인 비행체로, 한 사람을 위한 크기다. A7L은 캡슐이 하는 모든 일을 해야 했다 — 압력 유지, 산소 공급, 열과 호기된 이산화탄소 배출, 햇빛과 그늘 사이 수백 도의 온도 변화로부터 보호 — 동시에 사람이 무릎을 꿇고, 걷고, 돌을 집을 수 있어야 했다. 이 두 가지 요구 사항은 서로 충돌한다. 압력을 유지하는 것은 풍선처럼 뻣뻣해지려는 속성이 있기 때문이다. 그 해결책은 고무 코팅된 기낭을 중심으로 21개 층을 구성하는 것이었으며, 백팩이 전체 시스템을 몇 시간 동안 자급자족할 수 있게 만들었다. 이것은 다른 세계를 걸을 수 있도록 인증된 최초의 우주복이었으며, 임무 수행 중 인간과 진공 사이의 유일한 보호막이었다."
- },
- {
-  "rel": "fleet/space-suit/a7l.json",
-  "at": "description",
-  "en": "First operational lunar surface suit. Hard upper torso, soft-fabric arms and legs, integrated lunar overboots, PLSS backpack with sublimator cooling and LiOH CO₂ scrubber, OPS emergency O₂ cylinder above the PLSS. Operating pressure 3.7 psi pure O₂ — lowest of any flown suit, to maximise mobility for walking in 1/6 g. Flew on Apollo 11 (the first Moonwalk), Apollo 12, and Apollo 13–14. Worn by Buzz Aldrin in the iconic gold-visor lunar surface photo.",
-  "cur": "최초의 운용 월면 활동복. 단단한 상반신, 부드러운 직물의 팔과 다리, 일체형 월면 오버부츠, 승화식 냉각 및 LiOH CO₂ 제거 장치가 있는 PLSS 백팩, PLSS 위의 OPS 응급 O₂ 실린더. 작동 압력 3.7 psi 순수 O₂ — 비행한 어떤 우주복보다도 가장 낮으며, 1/6 g에서 걷기 위한 이동성을 극대화하기 위함. Apollo 11 (최초의 월면 활동), Apollo 12, Apollo 13–14에서 비행. 버즈 올드린이 상징적인 금색 바이저 월면 활동 사진에서 착용."
- },
- {
-  "rel": "fleet/space-suit/a7l.json",
-  "at": "best_known_for",
-  "en": "The suit worn on Apollo 11–14 — the first to support EVA on another world",
-  "cur": "Apollo 11–14에 착용 한 소송 - 다른 세계에 EVA를 지원하는 첫 번째"
- },
- {
-  "rel": "fleet/space-suit/a7lb.json",
-  "at": "tagline",
-  "en": "The J-mission suit — added a waist joint so astronauts could sit in the Lunar Rover",
-  "cur": "J-미션 우주복 — 우주인이 달 로버에 앉을 수 있도록 허리 관절을 추가"
- },
- {
-  "rel": "fleet/space-suit/a7lb.json",
-  "at": "dispatch",
-  "en": "Sometimes a whole era of exploration turns on one joint. The A7LB was the A7L with a flexible convolution added at the waist — a small-sounding change that let an astronaut bend at the middle and sit down. That is the difference between walking a couple of kilometres from the lander and driving a rover across tens of them; between a two-hour moonwalk and a three-day field campaign. The last three Apollo landings — the long-stay science missions with the rover and, finally, a trained geologist — were only possible because the suit at last let people sit, reach, and work for hours at a stretch. The engineering headline is a waist joint; the result was the most productive science of the entire program.",
-  "cur": "때로는 탐사의 전 시대가 하나의 관절에 달려 있다. A7LB는 A7L에 허리에 유연한 컨볼루션을 추가한 것이었다 — 작은 변화처럼 들리지만 우주인이 몸을 굽혀 앉을 수 있게 해주었다. 이것이 착륙선에서 몇 킬로미터만 걷는 것과 로버로 수십 킬로미터를 운전하는 것의 차이이며, 2시간의 월워크와 3일간의 현지 조사 캠페인의 차이다. 마지막 세 번의 Apollo 착륙 — 로버를 갖춘 장기 체류 과학 미션과 마침내 훈련받은 지질학자를 포함한 미션 — 은 우주복이 마침내 사람들이 앉고, 손을 뻗고, 오랜 시간 작업할 수 있게 해준 덕분에 가능했다. 엔지니어링 관점에서는 허리 관절이 핵심이지만, 그 결과는 전체 프로그램의 가장 생산적인 과학이었다."
- },
- {
-  "rel": "fleet/space-suit/a7lb.json",
-  "at": "description",
-  "en": "A7L derivative for the extended J-class lunar missions. The signature change was a waist-joint convolution that allowed astronauts to bend forward and sit in the Lunar Roving Vehicle — without it, the J-mission EVAs of Apollo 15, 16, and 17 would not have been possible. Same PLSS, OPS, and 3.7 psi pressure as A7L; same gold visor. Also used on Skylab 2, 3, and 4 (1973–1974) in a modified configuration, with final EVA on February 3, 1974.",
-  "cur": "확장된 J급 달 미션용 A7L 파생형. 특징적인 변화는 우주인이 Lunar Roving Vehicle에서 앞으로 몸을 굽혀 앉을 수 있게 해주는 허리 관절 컨볼루션이었다 — 이것이 없었다면 Apollo 15, 16, 17의 J-미션 EVA는 불가능했을 것이다. PLSS, OPS, 3.7 psi 압력은 A7L과 동일하며, 금색 바이저도 동일하다. 또한 1973–1974년 Skylab 2, 3, 4에서 수정된 구성으로 사용되었으며, 마지막 EVA는 1974년 2월 3일에 수행되었다."
- },
- {
-  "rel": "fleet/space-suit/a7lb.json",
-  "at": "best_known_for",
-  "en": "The J-mission suit (Apollo 15, 16, 17) — added a waist convolution that let astronauts sit in the Lunar Roving Vehicle",
-  "cur": "J 미션 우주복(Apollo 15, 16, 17) — 우주비행사가 Lunar Roving Vehicle에 앉을 수 있도록 허리 부분에 동체 절곡부를 추가했습니다"
- },
- {
-  "rel": "fleet/space-suit/aces.json",
-  "at": "tagline",
-  "en": "The orange Shuttle pressure suit worn after Challenger made shirtsleeve ascent unacceptable",
-  "cur": "Challenger 이후 긴팔 우주복 착용이 더 이상 허용되지 않아 입게 된 주황색 셔틀 감압복"
- },
- {
-  "rel": "fleet/space-suit/aces.json",
-  "at": "description",
-  "en": "Full-pressure launch-entry suit developed by David Clark Company. Replaced the earlier Launch Entry Suit (LES) starting in 1994. Detachable gloves, parachute harness integrated, distinctive international-orange colour for water-recovery visibility. Worn on every Space Shuttle ascent and re-entry through STS-135 in 2011.",
-  "cur": "David Clark Company에서 개발한 완전 감압 발사-진입복. 1994년부터 초기의 Launch Entry Suit (LES)를 대체했다. 탈착식 장갑, 통합된 낙하산 하네스, 수상 회수 시인성을 위한 distinctive international-orange 색상. Space Shuttle STS-135(2011)까지 모든 우주왕복선 상승 및 재진입에서 착용됐다."
- },
- {
-  "rel": "fleet/space-suit/aces.json",
-  "at": "best_known_for",
-  "en": "The orange \"pumpkin\" suit worn for every Space Shuttle launch and re-entry after Challenger",
-  "cur": "Challenger 이후 모든 Space Shuttle 발사 및 재진입에서 착용한 주황색 \"호박\" 우주복"
- },
- {
-  "rel": "fleet/space-suit/axemu.json",
-  "at": "tagline",
-  "en": "Next-gen US EVA suit, qualifying for Artemis III",
-  "cur": "Next-gen 미국 EVA 소송, Artemis III 자격"
- },
- {
-  "rel": "fleet/space-suit/axemu.json",
-  "at": "description",
-  "en": "Axiom Space's contracted EVA suit for NASA's Artemis lunar return. Heritage from the EMU but with mobility joints comparable to Apollo's A7LB, a regenerable amine CO₂ scrubber, HD video in the helmet, and dust-resistant joints for lunar surface use. Outer-layer styling by Prada. Currently in qualification testing for Artemis III in the late 2020s.",
-  "cur": "Axiom Space가 NASA의 Artemis 달 귀환을 위해 계약한 EVA 우주복. EMU의 유산이지만 Apollo의 A7LB에 필적하는 이동성 조인트, 재생 가능한 아민 CO₂ 스크러버, 헬멧의 HD 비디오, 그리고 달 표면 사용을 위한 방진 조인트를 갖추고 있다. 외층 스타일링은 Prada에서 담당했다. 현재 2020년대 후반의 Artemis III을 위한 적격성 테스트를 진행 중이다."
- },
- {
-  "rel": "fleet/space-suit/axemu.json",
-  "at": "best_known_for",
-  "en": "Next-generation US EVA suit being qualified for the Artemis III lunar landing",
-  "cur": "차세대 미국 EVA 소송은 Artemis III lunar 착륙에 대한 자격이"
- },
- {
-  "rel": "fleet/space-suit/crew-dragon-iva.json",
-  "at": "tagline",
-  "en": "The white slim-fit Crew Dragon IVA suit, flown since Demo-2",
-  "cur": "Demo-2 이후 운용되고 있는 흰색 슬림핏 Crew Dragon IVA 슈트"
- },
- {
-  "rel": "fleet/space-suit/crew-dragon-iva.json",
-  "at": "description",
-  "en": "SpaceX-designed launch-entry pressure suit. Single-piece front-entry, touchscreen-capable gloves to operate Crew Dragon's tablet console, custom-3D-printed helmets fitted to each crew member. Worn for ascent and re-entry on Crew Dragon. Distinctive minimalist white-and-black aesthetic.",
-  "cur": "SpaceX가 설계한 발사-귀환용 압력복. 단일 전면 진입식으로, Crew Dragon의 태블릿 콘솔을 조작할 수 있는 터치스크린 글러브, 각 승무원에게 맞춤 제작된 3D 프린팅 헬멧을 갖추고 있습니다. Crew Dragon 상승 및 재진입 시 착용합니다. 독특한 미니멀리스트 흰색과 검은색 미학이 특징입니다."
- },
- {
-  "rel": "fleet/space-suit/crew-dragon-iva.json",
-  "at": "best_known_for",
-  "en": "The white slim-fit IVA suit worn on every NASA ISS Crew Dragon flight since Demo-2",
-  "cur": "Demo-2 이후 모든 NASA ISS Crew Dragon 비행에 착용된 흰색 슬림핏 IVA 슈트"
- },
- {
-  "rel": "fleet/space-suit/emu.json",
-  "at": "tagline",
-  "en": "The white US spacewalk suit — every American EVA from the Shuttle to the ISS",
-  "cur": "흰색 미국 우주유영복 — Shuttle부터 ISS까지 모든 미국 EVA 비행"
- },
- {
-  "rel": "fleet/space-suit/emu.json",
-  "at": "description",
-  "en": "Extravehicular Mobility Unit — modular EVA suit with a hard upper torso, soft fabric arms and legs, and a Primary Life Support System backpack. Operates at 4.3 psi pure O₂. First EVA flown on STS-6 (April 1983) and still in service on the ISS more than 40 years later. SAFER mini-thruster pack added in 1994 for tether-loss rescue (1.4 kg N₂, ~3 m/s Δv).",
-  "cur": "Extravehicular Mobility Unit — 딱딱한 상체, 부드러운 팔다리, Primary Life Support System 백팩으로 구성된 모듈식 EVA 우주복입니다. 4.3 psi 순산소에서 작동합니다. STS-6(1983년 4월)에서 처음 비행했으며 40년이 넘은 현재까지 ISS에서 운영 중입니다. 1994년에는 테더 손실 구조를 위해 SAFER 미니 추진기 팩(1.4 kg N₂, ~3 m/s Δv)이 추가되었습니다."
- },
- {
-  "rel": "fleet/space-suit/emu.json",
-  "at": "best_known_for",
-  "en": "The white US spacewalk suit that has flown every American EVA from the Shuttle through the ISS",
-  "cur": "우주왕복선부터 ISS까지 모든 미국 우주유영을 비행한 흰색 미국 우주복"
- },
- {
-  "rel": "fleet/space-suit/feitian.json",
-  "at": "tagline",
-  "en": "China's EVA suit — derived from the Orlan, first flown on Shenzhou 7 in 2008",
-  "cur": "중국의 EVA 우주복 — 소련의 Orlan에서 파생되었으며 2008년 Shenzhou 7에서 처음 비행"
- },
- {
-  "rel": "fleet/space-suit/feitian.json",
-  "at": "description",
-  "en": "Chinese rear-entry EVA suit with architectural similarities to the Soviet Orlan design. First flown on Shenzhou 7 in 2008 when Zhai Zhigang became the first Chinese taikonaut to spacewalk. Now in operational use on the Tiangong space station's Wentian airlock. The name means \"flying heaven\" — a reference to the celestial flying spirits (feitian) from Buddhist cave art at Dunhuang, depicted on the suit's arm badge.",
-  "cur": "소련 Orlan 설계와 건축학적 유사성을 가진 중국의 후방 진입식 EVA 우주복. 2008년 Shenzhou 7에서 처음 비행했으며, 이때 자이지강이 중국 최초의 우주유영 타이콘아우트가 되었다. 현재 Tiangong 우주정거장의 Wentian 에어록에서 운용 중이다. 이름은 \"하늘을 나는 것\"을 의미하며 — 이는 Dunhuang의 불교 동굴 미술에서 묘사된 천상의 비행 정령(feitian)을 참조한 것이며, 우주복의 팔 배지에 그려져 있다."
- },
- {
-  "rel": "fleet/space-suit/feitian.json",
-  "at": "best_known_for",
-  "en": "China's EVA suit — used by Zhai Zhigang on the country's first spacewalk during Shenzhou 7",
-  "cur": "중국의 EVA 우주복 — Shenzhou 7에서 국가 최초의 우주유영 중 자이지강이 사용"
- },
- {
-  "rel": "fleet/space-suit/krechet-94.json",
-  "at": "tagline",
-  "en": "The Soviet lunar suit that never flew — its DNA lives in every Orlan and Feitian",
-  "cur": "달에 가지 않은 소비에트 우주복 — 그 DNA는 모든 Orlan과 Feitian에 살아있다"
- },
- {
-  "rel": "fleet/space-suit/krechet-94.json",
-  "at": "description",
-  "en": "Soviet lunar surface suit developed for the cancelled N1/L3 crewed lunar program. Single-piece rear-entry design with the PLSS built into the back hatch — the architectural pattern shared with the Orlan (both developed concurrently in 1967–1969) and later adopted by the Feitian. Krechet hardware survived the program's cancellation and lives in museum collections (notably the Memorial Museum of Cosmonautics, Moscow). Name means \"gyrfalcon\" — the largest of the Falcon birds.",
-  "cur": "N1/L3 유인 달 착륙 계획이 취소되면서 개발이 중단된 소비에트 달 표면 우주복. 후면 진입식 단일 구조로 PLSS가 뒷면 해치에 내장되어 있으며, 이는 Orlan과 공유되는 설계 패턴(둘 다 1967~1969년에 동시에 개발됨)으로, 나중에 Feitian에 의해 채택되었습니다. Krechet 하드웨어는 프로그램 취소 후에도 살아남아 박물관 컬렉션에 보관되어 있습니다(특히 모스크바의 Memorial Museum of Cosmonautics). 이름의 의미는 \"매의 왕\"이라는 뜻의 \"gyrfalcon\"입니다."
- },
- {
-  "rel": "fleet/space-suit/krechet-94.json",
-  "at": "best_known_for",
-  "en": "The Soviet lunar suit that never reached the Moon — its rear-entry architecture became the DNA of every Russian and Chinese EVA suit since",
-  "cur": "달에 도달하지 못한 소비에트 우주복 — 그 등판부 침입 아키텍처는 이후 모든 러시아 및 중국 EVA 우주복의 DNA가 되었다"
- },
- {
-  "rel": "fleet/space-suit/orlan-mks.json",
-  "at": "tagline",
-  "en": "The latest of a 50-year line of Russian rear-entry EVA suits",
-  "cur": "러시아 50년 역입식 EVA 우주복 계보의 최신 모델"
- },
- {
-  "rel": "fleet/space-suit/orlan-mks.json",
-  "at": "description",
-  "en": "Latest variant of the Orlan family — Russian rear-entry EVA suit that has flown continuously since Salyut 6 in 1977. The cosmonaut steps in through a backpack-mounted hatch that locks shut in one motion, eliminating the airlock pre-breathe required by lower-pressure US suits. Operating pressure 5.8 psi (400 hPa) pure O₂. Used on the ISS Russian segment. Earlier Orlan variants served on Salyut and Mir stations.",
-  "cur": "Orlan 계열의 최신 변형 모델 — 1977년 Salyut 6부터 계속 사용되어온 러시아식 역입식 EVA 우주복. 우주인이 등에 장착된 해치를 통해 들어가며, 한 번의 동작으로 잠금되어 저압 미국식 우주복에 필요한 에어록 사전호흡을 제거했습니다. 작동 압력 5.8 psi (400 hPa) 순수 O₂. ISS 러시아 구간에서 사용되고 있습니다. 이전 Orlan 변형 모델들은 Salyut과 Mir 우주정거장에서 사용되었습니다."
- },
- {
-  "rel": "fleet/space-suit/orlan-mks.json",
-  "at": "best_known_for",
-  "en": "The latest variant of the Orlan family — Russian rear-entry EVA suit, in service since the 1977 Salyut program",
-  "cur": "Orlan 계열의 최신 변형 모델 — 1977년 Salyut 프로그램 이후 사용 중인 러시아식 역입식 EVA 우주복"
- },
- {
-  "rel": "fleet/space-suit/shenzhou-iva.json",
-  "at": "tagline",
-  "en": "China's launch-entry suit, worn on every Shenzhou flight since 2003",
-  "cur": "2003년부터 모든 Shenzhou 비행에 착용한 중국의 발사 점화 한 벌"
- },
- {
-  "rel": "fleet/space-suit/shenzhou-iva.json",
-  "at": "description",
-  "en": "Chinese launch-entry pressure suit derived from the Soviet Sokol family. Used on Shenzhou 5 in 2003 when Yang Liwei became China's first taikonaut, and on every subsequent Shenzhou mission. Back-entry seam, fixed helmet, umbilical-fed; the architectural similarity to Sokol reflects China's early space-program technology transfer from Russia.",
-  "cur": "소련의 Sokol 계열에서 파생된 중국의 발사-귀환 기압복. 양리웨이가 중국 최초의 우주비행사가 된 2003년 Shenzhou 5에서 사용되었으며, 그 이후의 모든 Shenzhou 미션에서도 사용되었다. 후방 진입 솔기, 고정식 헬멧, 탯줄 공급식이며, Sokol과의 구조적 유사성은 러시아로부터의 중국 초기 우주 프로그램 기술 이전을 반영한다."
- },
- {
-  "rel": "fleet/space-suit/shenzhou-iva.json",
-  "at": "best_known_for",
-  "en": "Worn by every Chinese taikonaut on every Shenzhou flight since 2003",
-  "cur": "2003년부터 모든 Shenzhou 비행에 있는 모든 중국 taikonaut에 의해 착용해"
- },
- {
-  "rel": "fleet/space-suit/sokol-kv-2.json",
-  "at": "tagline",
-  "en": "The Soyuz launch-entry suit, mandatory since the 1971 Soyuz 11 decompression deaths",
-  "cur": "소유즈 발사-귀환 우주복. 1971년 Soyuz 11 감압 사망 사건 이후 필수 장비"
- },
- {
-  "rel": "fleet/space-suit/sokol-kv-2.json",
-  "at": "description",
-  "en": "Soft pressure suit worn inside the Soyuz descent module on every launch and re-entry since Soyuz T-2 in 1980, replacing the original Sokol-K. Back-entry seam (laced shut), fixed helmet with flip-up visor, umbilical for O₂ + comms + cooling water. Not designed for spacewalking — it is the backup that keeps the crew alive long enough to land if cabin pressure fails.",
-  "cur": "1980년 Soyuz T-2부터 모든 발사와 귀환 때마다 소유즈 하강 모듈 내부에서 착용하는 연질 압력복으로, 원래의 Sokol-K를 대체했다. 등부 시임(끈으로 꽉 묶음), 상하 이동식 바이저가 달린 고정 헬멧, O₂ + 통신 + 냉각수용 탯줄. 우주행 목적으로 설계되지 않았으며 객실 기압이 상실되어도 승무원이 착륙까지 생존할 수 있도록 하는 백업 시스템이다."
- },
- {
-  "rel": "fleet/space-suit/sokol-kv-2.json",
-  "at": "best_known_for",
-  "en": "The only suit worn on Soyuz — created after the Soyuz 11 decompression deaths in 1971",
-  "cur": "소유즈에서만 착용하는 우주복 — 1971년 Soyuz 11 감압 사망 사건 이후 개발됨"
- },
- {
-  "rel": "fleet/space-suit/sokol-m.json",
-  "at": "tagline",
-  "en": "Russia's next-generation Soyuz/PTK launch-entry suit",
-  "cur": "러시아의 차세대 Soyuz/PTK 런칭"
- },
- {
-  "rel": "fleet/space-suit/sokol-m.json",
-  "at": "description",
-  "en": "Replacement for Sokol KV-2 — incorporates lessons learned over 50 years of Soyuz launch-entry operations. Slated for Russia's PTK / Orel crewed spacecraft. Same general architecture (back-entry, umbilical-fed) with modernised materials and ergonomics.",
-  "cur": "Sokol KV-2에 대한 교체 - Soyuz 발사 기반 작업 50 년 이상의 교훈을 통합. 러시아 PTK / Orel 승무원 우주선에 대한 슬레이트. 현대화 된 재료와 인체 공학적과 같은 일반 건축 (back-entry, umbilical-fed)."
- },
- {
-  "rel": "fleet/space-suit/sokol-m.json",
-  "at": "best_known_for",
-  "en": "Russia's next-generation Soyuz/PTK launch-entry suit",
-  "cur": "러시아의 차세대 Soyuz/PTK 런칭"
- },
- {
-  "rel": "fleet/space-suit/starliner-suit.json",
-  "at": "name",
-  "en": "Boeing Blue (Starliner IVA)",
-  "cur": "Boeing Blue (Starliner IVA)"
- },
- {
-  "rel": "fleet/space-suit/starliner-suit.json",
-  "at": "tagline",
-  "en": "Boeing's blue Starliner launch-entry suit",
-  "cur": "보잉의 파란색 Starliner 발사-재진입 복합복"
- },
- {
-  "rel": "fleet/space-suit/starliner-suit.json",
-  "at": "description",
-  "en": "Lightweight launch-entry pressure suit built by David Clark Company for Boeing's CST-100 Starliner commercial-crew vehicle. Touch-screen-compatible gloves, integrated communications cap, vented helmet. Debuted on the Crew Flight Test mission (June 2024) flown by Butch Wilmore and Suni Williams, who returned via Crew-9 in February 2025 after Starliner returned uncrewed.",
-  "cur": "보잉의 CST-100 Starliner 상업용 승무원 우주선을 위해 David Clark Company에서 제작한 경량 발사-재진입 압력복. 터치스크린 호환 장갑, 통합 통신 캡, 환기 헬멧. 2024년 6월 Crew Flight Test 임무에 처음 선보였으며, 부치 윌모어와 수니 윌리엄스가 탔고, Starliner가 무인으로 귀환한 후 2025년 2월 Crew-9을 통해 귀환했다."
- },
- {
-  "rel": "fleet/space-suit/starliner-suit.json",
-  "at": "best_known_for",
-  "en": "Boeing's blue IVA suit for the CST-100 Starliner, debuted on the Crew Flight Test 2024",
-  "cur": "2024년 Crew Flight Test에서 선보인 CST-100 Starliner의 보잉 파란색 IVA 복합복"
- },
- {
-  "rel": "fleet/station/iss.json",
-  "at": "dispatch",
-  "en": "The International Space Station is the largest structure humanity has ever built in space and the place every thread of the space age converges. Its Russian core descends directly from Salyut and Mir; its American segment from Skylab; it was assembled by the Space Shuttle, is crewed by Soyuz, resupplied by the descendants of the Progress freighter, and carries laboratories built by Europe and Japan — nearly every earlier program present in it as heritage. Assembled from 1998 and continuously crewed since November 2000, it is the longest unbroken human presence off Earth in history, and the clearest proof of a single idea: that the greatest things in space are built not by winning a race but by former rivals choosing, decade after decade, to build them together.",
-  "cur": "국제우주정거장은 인류가 우주에 건설한 가장 큰 구조물이자 우주 시대의 모든 흐름이 수렴하는 장소이다. 러시아 핵심부는 Salyut과 Mir로부터 직접 계승되었고, 미국 구역은 Skylab으로부터 유래했으며, Space Shuttle에 의해 조립되고 Soyuz로 승무원이 운송되며 Progress 화물선의 후속 우주선들로 보급되고 유럽과 일본이 건설한 실험실을 탑재하고 있다 — 거의 모든 초기 프로그램이 유산으로 그 안에 존재한다. 1998년부터 조립되어 2000년 11월 이후 지속적으로 승무원이 상주하면서, 역사상 가장 긴 지구 밖 인류의 끊임없는 존재이며, 하나의 아이디어에 대한 가장 명확한 증거이다: 우주에서 가장 위대한 것들은 경쟁에서 승리함으로써가 아니라 과거의 경쟁자들이 수십 년에 걸쳐 함께 건설하기로 선택함으로써 만들어진다는 것."
- },
- {
-  "rel": "fleet/station/iss.json",
-  "at": "description",
-  "en": "The International Space Station — humanity’s longest continuously crewed habitat, occupied since November 2000. Assembled across more than 40 launches by NASA, Roscosmos, ESA, JAXA, and CSA. Currently scheduled for deorbit around 2031.",
-  "cur": "국제우주정거장 — 인류의 가장 긴 지속적으로 승무원 서식지, 2000년 11월 이후 점령. NASA, Roscosmos, ESA, JAXA 및 CSA에 의해 40 개 이상의 출시를 통해 조립. 현재 2031 주위에 직불 예정."
- },
- {
-  "rel": "fleet/station/mir.json",
-  "at": "tagline",
-  "en": "First modular space station; 15-year service",
-  "cur": "첫 모듈식 우주 정거장; 15년 운영"
- },
- {
-  "rel": "fleet/station/mir.json",
-  "at": "dispatch",
-  "en": "Mir was the first modular space station — and the bridge between two eras of spaceflight. Where every station before it was launched whole, Mir was assembled in orbit over a decade, module by module, growing into a sprawling complex that stayed aloft for fifteen years. It set the endurance record that still stands (Valeri Polyakov's 437 unbroken days, proof a crew could survive a Mars-length flight), outlived the Soviet Union that built it by a decade, and survived a fire and a depressurising collision in 1997 that its crew fought off by hand. In its final years American Shuttles docked with it and US astronauts lived aboard — the rehearsal, in hardware and in trust, for the International Space Station that inherited nearly everything Mir worked out.",
-  "cur": "Mir는 최초의 모듈식 우주 정거장이었으며, 우주비행의 두 시대 사이의 다리였다. 그 이전의 모든 정거장이 통째로 발사되었던 반면, Mir는 10년에 걸쳐 궤도상에서 모듈 하나씩 조립되어 15년 동안 우주에 떠 있는 거대한 복합체로 성장했다. 현재까지도 깨지지 않은 내구력 기록을 세웠고(발레리 폴랴코프의 437일 연속 우주 체류 — 승무원이 화성 길이의 비행을 견딜 수 있음을 증명), 그것을 건설한 소련보다 10년 더 오래 존속했으며, 1997년 화재와 감압 충돌을 견뎌냈다. 최후의 몇 년간에는 미국의 셔틀이 도킹했고 미국 우주인들이 탑승했는데, 이는 Mir가 개척한 거의 모든 것을 상속받은 국제우주정거장을 위한 하드웨어와 신뢰 측면의 리허설이었다."
- },
- {
-  "rel": "fleet/station/mir.json",
-  "at": "description",
-  "en": "The first modular space station, assembled in orbit between 1986 and 1996 and continuously occupied for almost 10 years (1989–1999), with a final crew visit in April–June 2000. Hosted American astronauts during the Shuttle-Mir program (1995–1998) — the partnership that made ISS possible.",
-  "cur": "1986년부터 1996년 사이에 궤도상에서 조립되었고 거의 10년 동안 계속 점유되었으며(1989–1999), 2000년 4월–6월에 마지막 승무원이 방문한 최초의 모듈식 우주 정거장. Shuttle-Mir 프로그램(1995–1998) 동안 미국 우주인들을 수용했으며, 이 협력은 ISS를 가능하게 했다."
- },
- {
-  "rel": "fleet/station/mir.json",
-  "at": "best_known_for",
-  "en": "First modular space station; 15-year service",
-  "cur": "첫 모듈식 우주 정거장; 15년 운영"
- },
- {
-  "rel": "fleet/station/salyut-1.json",
-  "at": "dispatch",
-  "en": "Salyut 1 was the first space station in history — launched in April 1971, two years ahead of America's Skylab, and the moment the Soviet Union turned its lead in endurance into a permanent presence in orbit. Its triumph was also its tragedy: the first crew to live aboard it, Soyuz 11, died during their return when a valve vented their cabin to vacuum, and the station was never occupied again. It proved a station could be built and reached — and, at the highest cost, taught the lesson that reshaped every crewed spacecraft after it.",
-  "cur": "Salyut 1은 역사상 최초의 우주 정거장으로, 1971년 4월에 발사되어 미국의 Skylab보다 2년 앞섰으며, 소련이 장기 체류 분야의 우위를 궤도상 영구 거점으로 전환한 순간이었다. 그 승리는 동시에 비극이기도 했다. 정거장에 처음 체류한 Soyuz 11 승무원들은 귀환 중 밸브가 열리면서 캡슐 내부가 진공에 노출되어 사망했고, 정거장은 다시는 사용되지 않았다. 이는 정거장을 건설하고 도달할 수 있음을 증명했지만, 가장 큰 대가를 치르며 이후 모든 유인 우주선을 재설계하게 만든 교훈을 남겼다."
- },
- {
-  "rel": "fleet/station/salyut-1.json",
-  "at": "description",
-  "en": "The world’s first space station — launched 1971, occupied for 23 days by the Soyuz 11 crew (Dobrovolski, Volkov, Patsayev), all of whom died on return when their capsule depressurised. Salyut 1 was deorbited later that year.",
-  "cur": "세계 최초의 우주정거장 — 1971년에 발사되었으며, Soyuz 11 승무원(Dobrovolski, 볼코프, 파차예프)이 23일간 점유했고, 그들 모두 귀환 시 캡슐의 감압으로 인해 사망했습니다. Salyut 1은 같은 해 후반에 궤도이탈되었습니다."
- },
- {
-  "rel": "fleet/station/salyut-2.json",
-  "at": "tagline",
-  "en": "First Almaz military station — depressurised on orbit before any crew arrived; reentered 1973-05-28 after 54 days",
-  "cur": "첫 번째 Almaz 군사 우주정거장 — 승무원 도착 전 궤도에서 감압; 1973-05-28 54일 후 대기권 재진입"
- },
- {
-  "rel": "fleet/station/salyut-2.json",
-  "at": "dispatch",
-  "en": "Salyut 2 was not really a Salyut at all — it was the first Almaz, a secret military reconnaissance station flown under the civilian name to hide its purpose. It never carried a crew. Days after reaching orbit it lost pressure and began to tumble, its systems failing, and it re-entered without ever being occupied. A rough, hidden start to the military half of the programme, and a reminder of how unforgiving the early station-building years were.",
-  "cur": "Salyut 2는 사실 진정한 Salyut가 아니었다 — 그 목적을 숨기기 위해 민간 이름으로 비행한 첫 번째 Almaz, 비밀 군사 정찰 우주정거장이었다. 승무원을 탑승시킨 적이 없었다. 궤도에 도달한 지 며칠 후 기압이 떨어지기 시작했고 우주정거장은 회전하기 시작했으며 시스템들이 고장 났고, 점유된 적 없이 대기권으로 재진입했다. 프로그램의 군사 부분을 시작한 거친, 숨겨진 출발이었으며, 초기 우주정거장 건설 시대가 얼마나 가혹했는지를 상기시켜주는 일이었다."
- },
- {
-  "rel": "fleet/station/salyut-2.json",
-  "at": "description",
-  "en": "The first of the three Soviet military Almaz space stations — publicly called Salyut 2 to disguise its real purpose (DoD-style reconnaissance, with a 6.4-m focal-length panoramic camera and a film-return capsule). Launched 1973-04-03 on a Proton-K from Baikonur, Salyut 2 reached orbit successfully but debris from the Proton's spent third stage — which exploded three days after launch — struck the station ~10 days later, tearing off both solar panels and puncturing the hull. The resulting power loss caused depressurisation on the 13th day (1973-04-14), rendering the station unusable before any crew could be sent. The planned crew (Pavel Popovich + Yury Artyukhin) instead flew on Salyut 3 the following year. Salyut 2 reentered the atmosphere 1973-05-28 — the shortest-lived station program in history at that point. Its existence as a military station was only declassified after the Soviet Union's collapse.",
-  "cur": "세 개의 소비에트 군사용 Almaz 우주정거장 중 첫 번째로, 실제 목적을 숨기기 위해 공식적으로는 Salyut 2라고 불렸습니다(국방부 스타일의 정찰로, 초점거리 6.4m인 파노라마 카메라와 필름 귀환 캡슐을 탑재). 1973년 4월 3일 바이코누르에서 Proton-K로 발사되어 Salyut 2는 성공적으로 궤도에 진입했으나, 발사 3일 후 폭발한 Proton의 사용한 3단계에서 나온 우주 잔해가 약 10일 후 우주정거장에 충돌하여 태양전지판 양쪽을 찢어내고 선체에 구멍을 뚫었습니다. 그 결과 생긴 전력 손실로 인해 13일째(1973년 4월 14일) 감압이 발생하여 승무원이 파견되기 전에 우주정거장을 사용 불가능하게 만들었습니다. 예정되었던 승무원(파벨 포포비치 + Yury Artyukhin)은 대신 다음 해 Salyut 3에 탑승했습니다. Salyut 2는 1973년 5월 28일 대기권으로 재진입했습니다. 당시로서는 역사상 가장 단명한 우주정거장 프로그램이었습니다. 군사용 우주정거장으로서의 그 존재는 소비에트 연방이 붕괴된 이후에야 기밀해제되었습니다."
- },
- {
-  "rel": "fleet/station/salyut-2.json",
-  "at": "best_known_for",
-  "en": "First Almaz military station — depressurised on orbit before any crew arrived; reentered 1973-05-28 after 54 days",
-  "cur": "첫 번째 Almaz 군사 우주정거장 — 승무원 도착 전 궤도에서 감압; 1973-05-28 54일 후 대기권 재진입"
- },
- {
-  "rel": "fleet/station/salyut-3.json",
-  "at": "tagline",
-  "en": "Second Almaz military station — Soyuz 14 crew Jul 1974; Soyuz 15 failed automatic docking; reportedly tested an onboard cannon 1975-01-24",
-  "cur": "두 번째 Almaz 군사 우주정거장 — Soyuz 14 승무원 1974년 7월; Soyuz 15 자동 도킹 실패; 1975-01-24 탑재 캐논 시험 보도"
- },
- {
-  "rel": "fleet/station/salyut-3.json",
-  "at": "dispatch",
-  "en": "Salyut 3 was Almaz — a crewed military reconnaissance station, its true purpose buried under the civilian name. Its single crew, Soyuz 14, spent about two weeks aboard operating long-focus cameras to photograph targets below, in the era before automated spy satellites made human eyes unnecessary. Most famously, before it was deorbited, Salyut 3 test-fired a rapid-fire cannon in orbit — the only known instance of a weapon being fired from a crewed spacecraft.",
-  "cur": "Salyut 3는 알마즈(Almaz)였다 — 승무원이 탑승하는 군사 정찰 우주정거장으로, 그 진정한 목적은 민간용 이름 아래 감춰져 있었다. 단독 승무원인 Soyuz 14는 약 2주간 탑승하여 아래 목표를 촬영하기 위해 장초점 카메라를 운용했다. 자동화된 첩보위성이 인간의 눈을 불필요하게 만들기 이전의 시대였다. 가장 유명한 것은 대기권 재진입 전에 Salyut 3이 궤도상에서 빠른 속사 캐논을 시험 발사했다는 점이다 — 승무원이 탑승한 우주선에서 무기가 발사된 유일하게 알려진 사례이다."
- },
- {
-  "rel": "fleet/station/salyut-3.json",
-  "at": "description",
-  "en": "The second Soviet military Almaz station — again publicly called Salyut 3 to mask its surveillance role. Launched 1974-06-25 on a Proton-K, Salyut 3 hosted one short crew mission (Soyuz 14, Popovich + Artyukhin, 15 days, 1974-07-03 to 1974-07-19) which exercised the station's 6.4-m Agat camera + film-return capsule. A second crew attempt (Soyuz 15, Sarafanov + Demin, 1974-08-26) failed the automatic Igla rendezvous and returned the same day. Just before deorbit on 1975-01-24, Salyut 3 reportedly test-fired its onboard Nudelman cannon (sources cite either 23-mm or 30-mm calibre) — the only known instance of a weapon firing in space (recoil was absorbed by the station's attitude-control thrusters; the round disintegrated in the atmosphere). Reentered the atmosphere 1975-01-24.",
-  "cur": "두 번째 소비에트 군사 Almaz 우주정거장 — 역시 감시 역할을 감추기 위해 공식적으로 Salyut 3이라고 불렸다. 1974-06-25에 Proton-K에 탑재되어 발사되었으며, Salyut 3은 한 번의 단기 승무원 임무(Soyuz 14, 포포비치 + Artyukhin, 15일, 1974-07-03 ~ 1974-07-19)를 호스트했다. 이 임무는 우주정거장의 6.4 m Agat 카메라 및 필름 회수 캡슐을 운용했다. 두 번째 승무원 시도(Soyuz 15, Sarafanov + Demin, 1974-08-26)는 자동 Igla 랑데부에 실패했으며 같은 날에 귀환했다. 대기권 재진입 직전인 1975-01-24에 Salyut 3은 탑재된 Nudelman 캐논(구경은 23-mm 또는 30-mm로 인용됨)을 시험 발사한 것으로 보도되었다 — 우주에서 무기가 발사된 유일하게 알려진 사례이다(반동은 우주정거장의 자세 제어 스러스터에 의해 흡수되었으며, 탄환은 대기권에서 분해되었다). 1975-01-24에 대기권으로 재진입했다."
- },
- {
-  "rel": "fleet/station/salyut-3.json",
-  "at": "best_known_for",
-  "en": "Second Almaz military station — Soyuz 14 crew Jul 1974; Soyuz 15 failed automatic docking; reportedly tested an onboard cannon 1975-01-24",
-  "cur": "두 번째 Almaz 군사 우주정거장 — Soyuz 14 승무원 1974년 7월; Soyuz 15 자동 도킹 실패; 1975-01-24 탑재 캐논 시험 보도"
- },
- {
-  "rel": "fleet/station/salyut-4.json",
-  "at": "tagline",
-  "en": "Civilian DOS-4 station — hosted Soyuz 17 (29 days) + Soyuz 18 (63 days, then-longest spaceflight) crews; deorbited 1977-02-03",
-  "cur": "민간인 DOS-4 우주정거장 — Soyuz 17 (30일) 및 Soyuz 18 (63일, 당시 최장 유인 우주비행) 승무원 탑승; 1977-02-03 재진입"
- },
- {
-  "rel": "fleet/station/salyut-4.json",
-  "at": "dispatch",
-  "en": "Salyut 4 was where the civilian station line finally found its feet. A DOS science station, it worked reliably where earlier stations had failed — hosting two crews, one for 29 days and one for 63, and carrying a solar telescope and a full science program. After the deadly start of Salyut 1 and the on-orbit failures that followed, Salyut 4 was the quiet proof that the Soviet Union could now keep a station and its crews healthy and productive for weeks at a time.",
-  "cur": "Salyut 4는 민간인 우주정거장 계획이 마침내 궤도에 오르는 데 성공한 곳이었다. DOS 과학 우주정거장으로서, 이전 우주정거장들이 실패한 곳에서 안정적으로 작동했다 — 두 승무원, 한 팀은 29일간, 다른 팀은 63일간 탑승했으며 태양 망원경과 완전한 과학 프로그램을 탑재했다. Salyut 1의 비극적인 시작과 그 이후의 궤도상 고장들 다음에, Salyut 4는 소련이 이제 우주정거장과 그 승무원들을 몇 주간 건강하고 생산적으로 유지할 수 있다는 조용한 증거였다."
- },
- {
-  "rel": "fleet/station/salyut-4.json",
-  "at": "description",
-  "en": "The fourth civilian Salyut (DOS-4), built by the Korolev bureau and operated by the Soviet civilian space programme rather than the military Almaz line. Launched 1974-12-26 on a Proton-K, Salyut 4 carried a 25-cm OST-1 solar telescope, an X-ray telescope, and a complement of life-sciences experiments. Hosted two long-duration crews: Soyuz 17 (Gubarev + Grechko, 29 days, 1975-01-11 to 1975-02-09) and Soyuz 18 (Klimuk + Sevastyanov, 63 days, 1975-05-24 to 1975-07-26, then the longest crewed spaceflight in history). A third attempt — Soyuz 18a (Lazarev + Makarov, 1975-04-05) — suffered a 21-g booster failure during launch, returning the crew safely after the highest-ever landing g-load survived by humans. Salyut 4 hosted Soyuz 20, an automated dog/biological-experiment 3-month visit, before re-entering on 1977-02-03 after 26 months.",
-  "cur": "네 번째 민간인 Salyut (DOS-4)로, 코롤료프 설계국에서 제작했으며 군용 Almaz 계획이 아닌 소련 민간 우주 프로그램에서 운영했다. 1974-12-26에 Proton-K로 발사되었으며, Salyut 4는 25 cm OST-1 태양 망원경, X선 망원경 및 생명과학 실험 장비를 탑재했다. 두 장기 체류 승무원을 탑승시켰다: Soyuz 17 (Gubarev + Grechko, 29일, 1975-01-11 ~ 1975-02-09) 및 Soyuz 18 (Klimuk + Sevastyanov, 63일, 1975-05-24 ~ 1975-07-26, 당시 최장 유인 우주비행). 세 번째 시도 — Soyuz 18a (Lazarev + Makarov, 1975-04-05) — 발사 중 21 g 부스터 고장을 겪었지만, 인류가 견딘 최고의 착륙 g 부하 이후 승무원을 안전하게 회수했다. Salyut 4는 자동화된 개/생물 실험 3개월 체류인 Soyuz 20을 탑승시킨 후, 26개월 운영 이후 1977-02-03에 재진입했다."
- },
- {
-  "rel": "fleet/station/salyut-4.json",
-  "at": "best_known_for",
-  "en": "Civilian DOS-4 station — hosted Soyuz 17 (29 days) + Soyuz 18 (63 days, then-longest spaceflight) crews; deorbited 1977-02-03",
-  "cur": "민간인 DOS-4 우주정거장 — Soyuz 17 (30일) 및 Soyuz 18 (63일, 당시 최장 유인 우주비행) 승무원 탑승; 1977-02-03 재진입"
- },
- {
-  "rel": "fleet/station/salyut-5.json",
-  "at": "tagline",
-  "en": "Last Almaz military station — Soyuz 21 + Soyuz 24 crews; Soyuz 23 failed approach; reentered 1977-08-08 after 412 days",
-  "cur": "마지막 Almaz 군사 정거장 — Soyuz 21 + Soyuz 24 승무원; Soyuz 23 도킹 실패; 1977-08-08에 412일 후 재진입"
- },
- {
-  "rel": "fleet/station/salyut-5.json",
-  "at": "dispatch",
-  "en": "Salyut 5 was the last of the Almaz military stations, flown in 1976 under the usual civilian disguise. Two crews were sent: the first, Soyuz 21, was evacuated early amid reports of a foul odour and a stressed crew; the second, Soyuz 24, completed a normal stay. Soon after, automated reconnaissance satellites had improved to the point that cosmonauts with cameras were no longer worth the risk, and the military Almaz line was quietly retired — leaving the future to the civilian stations.",
-  "cur": "Salyut 5는 마지막 Almaz 군사 정거장으로, 1976년 통상적인 민간용 위장 하에서 운영되었습니다. 두 개의 승무원이 파견되었습니다. 첫 번째 Soyuz 21은 불쾌한 냄새와 스트레스 상태의 승무원 보고로 인해 조기 귀환했으며, 두 번째 Soyuz 24는 정상적인 체류를 완료했습니다. 그 직후, 자동화된 정찰 위성이 카메라를 들고 있는 우주비행사가 더 이상 위험한 가치가 없을 정도로 발전했고, 군사용 Almaz 프로그램은 조용히 폐기되었으며 — 미래는 민간용 정거장에 남겨졌습니다."
- },
- {
-  "rel": "fleet/station/salyut-5.json",
-  "at": "description",
-  "en": "The third and last Soviet military Almaz station. Launched 1976-06-22 on a Proton-K, Salyut 5 hosted two crews: Soyuz 21 (Volynov + Zholobov, 49 days, 1976-07-06 to 1976-08-24 — cut short by acrid odours the crew traced to a corroded film-return capsule seal) and Soyuz 24 (Gorbatko + Glazkov, 17 days, 1977-02-07 to 1977-02-25 — first cosmonauts to swap a station's atmosphere through vent + recharge). Soyuz 23 (Zudov + Rozhdestvensky, 1976-10-14) failed to dock after the Igla rendezvous system malfunctioned; the crew survived a high-water splashdown in Lake Tengiz, the only Soviet water landing. Salyut 5 was the last Almaz mission flown — the program was cancelled after the station deorbited on 1977-08-08.",
-  "cur": "세 번째이자 마지막 소비에트 군사 Almaz 정거장입니다. 1976-06-22에 Proton-K로 발사된 Salyut 5는 두 개의 승무원을 호스팅했습니다: Soyuz 21 (볼리노프 + Zholobov, 49일, 1976-07-06부터 1976-08-24 — 승무원이 부식된 필름 반환 캡슐 밀봉으로 추적한 자극적인 냄새로 인해 단축됨) 및 Soyuz 24 (고르밧코 + Glazkov, 17일, 1977-02-07부터 1977-02-25 — 통풍구 + 재충전을 통해 정거장의 대기를 교체한 첫 우주비행사). Soyuz 23 (Zudov + Rozhdestvensky, 1976-10-14)은 Igla 랑데부 시스템이 오작동한 후 도킹에 실패했습니다. 승무원은 Tengiz 호수에서의 고수위 불시착을 생존했으며, 이는 유일한 소비에트 수상 착륙입니다. Salyut 5는 운영된 마지막 Almaz 미션이었습니다 — 정거장이 1977-08-08에 궤도이탈한 후 프로그램이 취소되었습니다."
- },
- {
-  "rel": "fleet/station/salyut-5.json",
-  "at": "best_known_for",
-  "en": "Last Almaz military station — Soyuz 21 + Soyuz 24 crews; Soyuz 23 failed approach; reentered 1977-08-08 after 412 days",
-  "cur": "마지막 Almaz 군사 정거장 — Soyuz 21 + Soyuz 24 승무원; Soyuz 23 도킹 실패; 1977-08-08에 412일 후 재진입"
- },
- {
-  "rel": "fleet/station/salyut-6.json",
-  "at": "dispatch",
-  "en": "Salyut 6 was the breakthrough — the station where the Soviet programme cracked permanence. Its second docking port meant an uncrewed Progress freighter could dock and pump in propellant, air, water, and supplies while a crewed Soyuz stayed attached at the other end, so the station no longer had an expiry date. It hosted crew after crew in continuous relay, set endurance records past half a year, and welcomed the first Interkosmos guests — the first people in space who were neither American nor Soviet. Every operational pattern of Mir and the ISS was rehearsed here.",
-  "cur": "Salyut 6는 돌파구였다 — 소련 프로그램이 영구성을 확보한 우주정거장이었다. 두 번째 도킹 포트 덕분에 무인 Progress 화물선이 도킹하여 추진제, 공기, 물, 그리고 보급품을 주입하는 동안 유인 Soyuz가 반대편에 부착된 채로 있을 수 있었고, 따라서 우주정거장은 더 이상 만료일이 없었다. 연속적인 교대로 승무원을 계속 수용했고, 6개월을 넘기는 체류 기록을 세웠으며, 최초의 Interkosmos 손님들 — 미국인도 소련인도 아닌 최초의 우주인들 — 을 맞이했다. Mir와 ISS의 모든 운영 패턴이 여기서 예행연습되었다."
- },
- {
-  "rel": "fleet/station/salyut-6.json",
-  "at": "description",
-  "en": "The first multi-port Salyut, capable of receiving Progress resupply ships and rotating long-duration crews. Continuously occupied (with breaks) for nearly five years between 1977 and 1982 — the model for every modular station that followed.",
-  "cur": "우선 멀티 포트 Salyut, Progress resupply 선박 및 회전 장거리 승무원을받을 수 있습니다. 1977년과 1982년 사이에 거의 5년 동안 지속적으로 점유된 (틈에) — 뒤에 오는 각 모듈 역을 위한 모형."
- },
- {
-  "rel": "fleet/station/salyut-7.json",
-  "at": "dispatch",
-  "en": "Salyut 7 was the last Salyut and the bridge to Mir — and the setting for the hardest repair job ever attempted in orbit. In 1985, after the abandoned station fell silent, frozen, and slowly tumbling, two cosmonauts flew up, manually docked with the dead and unpowered hulk, and brought it back to life by hand, thawing it out and restarting its systems one by one. Salyut 7 carried the two-port, Progress-resupplied architecture to full maturity and handed it, essentially complete, to the modular station that would replace it.",
-  "cur": "Salyut 7은 마지막 Salyut이자 Mir로 가는 가교였으며, 궤도상에서 시도된 가장 어려운 수리 작업의 무대였다. 1985년, 버려진 정거장이 침묵에 빠지고 얼어붙은 채 천천히 회전하게 되자, 두 명의 우주비행사가 날아올라 죽어있고 전력이 없는 선체에 수동으로 도킹하여 시스템을 하나씩 해동하고 재시작하면서 손수 되살려냈다. Salyut 7은 두 개의 포트를 가진 Progress 재보급 구조를 완전히 성숙시켜, 이를 대체할 모듈식 정거장에 본질적으로 완성된 형태로 전달했다."
- },
- {
-  "rel": "fleet/station/salyut-7.json",
-  "at": "description",
-  "en": "The last Salyut, in service 1982–1991. Famously revived by Vladimir Dzhanibekov and Viktor Savinykh in 1985 after losing power and tumbling — the first orbital salvage mission. Reentered uncontrolled in 1991 over Argentina.",
-  "cur": "마지막 Salyut로, 1982년부터 1991년까지 운영되었습니다. 블라디미르 자니베코프와 빅토르 사비니흐가 1985년에 전력을 잃고 회전하던 이 우주정거장을 부활시킨 것으로 유명합니다. 최초의 우주 위성 구조 임무였습니다. 1991년에 아르헨티나 상공에서 통제 불능 상태로 대기권에 재진입했습니다."
- },
- {
-  "rel": "fleet/station/skylab.json",
-  "at": "dispatch",
-  "en": "Skylab was America's first space station, and one of history's great acts of improvisation — an entire orbital workshop built inside the empty hydrogen tank of a spent Saturn V upper stage. Rather than design a station from scratch, NASA converted the hardware the cancelled Moon landings had left over into a house-sized laboratory with crew quarters, a shower, and a crewed solar observatory. Nearly destroyed at launch when its sun shield tore away, it was saved by the first crew's improvised repairs and went on to prove the thing every later station assumed: that people can live and work in orbit for months, and fix their spacecraft when it breaks.",
-  "cur": "Skylab는 미국 최초의 우주정거장이자 역사상 가장 위대한 즉흥적 성과 중 하나였다 — 사용한 Saturn V 상단부의 빈 수소 탱크 내부에 건설된 완전한 궤도 작업실이었다. NASA는 정거장을 처음부터 설계하는 대신, 취소된 달 착륙 임무에서 남은 하드웨어를 승무원 거주 구역, 샤워 시설, 유인 태양 관측소를 갖춘 집 크기의 실험실로 개조했다. 발사 시 차양막이 찢어져 거의 파괴될 뻔했으나, 첫 번째 승무원의 즉흥적인 수리로 구조되었고, 이후 모든 우주정거장이 전제로 삼은 사실을 증명했다: 사람들은 궤도에서 수개월 동안 생활하고 작업할 수 있으며, 우주선이 고장 나면 수리할 수 있다는 것을."
- },
- {
-  "rel": "fleet/station/skylab.json",
-  "at": "description",
-  "en": "America’s first space station, built from a Saturn V S-IVB upper stage. Three crews of three each lived aboard between 1973 and 1974, conducting solar observations and zero-g experiments. Reentered uncontrolled over Australia in 1979.",
-  "cur": "미국의 첫 번째 우주 역, 토성 V S-IVB 상부 단계에서 내장. 세 명의 승무원은 1973 년과 1974 년 사이에, 태양 관측 및 제로g 실험을 수행했습니다. 1979년에 호주에 통제되지 않는."
- },
- {
-  "rel": "fleet/station/tiangong-1.json",
-  "at": "tagline",
-  "en": "First Chinese space station; single-module testbed",
-  "cur": "중국 최초의 우주 정거장; 단일 모듈 시험 시설"
- },
- {
-  "rel": "fleet/station/tiangong-1.json",
-  "at": "description",
-  "en": "Tiangong-1 is a space station built by CAST in China. First Chinese space station; single-module testbed. Launched in 2011, hosted two crewed visits (Shenzhou 9 in 2012 and Shenzhou 10 in 2013); contact lost March 2016 and reentered uncontrolled April 2, 2018.",
-  "cur": "Tiangong-1은 중국의 CAST가 건설한 우주 정거장입니다. 중국 최초의 우주 정거장이자 단일 모듈 시험 시설입니다. 2011년 발사되었으며, 두 번의 유인 방문(2012년 Shenzhou 9, 2013년 Shenzhou 10)을 호스팅했습니다. 2016년 3월 통신이 끊겼고, 2018년 4월 2일 통제되지 않은 상태로 대기권 재진입했습니다."
- },
- {
-  "rel": "fleet/station/tiangong-1.json",
-  "at": "best_known_for",
-  "en": "First Chinese space station; single-module testbed",
-  "cur": "중국 최초의 우주 정거장; 단일 모듈 시험 시설"
- },
- {
-  "rel": "fleet/station/tiangong-2.json",
-  "at": "tagline",
-  "en": "Second Chinese station testbed",
-  "cur": "중국의 두 번째 우주 스테이션 시험 시설"
- },
- {
-  "rel": "fleet/station/tiangong-2.json",
-  "at": "description",
-  "en": "Tiangong-2 is a space station built by CAST in China. Second Chinese station testbed. Launched in September 2016, hosted Shenzhou 11 (30-day mission, October–November 2016, China's longest crewed mission at the time) and Tianzhou-1 cargo ship (2017); deorbited July 19, 2019.",
-  "cur": "Tiangong-2는 중국 CAST가 건설한 우주 스테이션입니다. 중국의 두 번째 우주 스테이션 시험 시설입니다. 2016년 9월 발사되었으며, Shenzhou 11(30일 임무, 2016년 10월–11월, 당시 중국 최장 유인 임무)과 Tianzhou-1 화물선(2017)을 탑승시켰습니다. 2019년 7월 19일 대기권 재진입하였습니다."
- },
- {
-  "rel": "fleet/station/tiangong-2.json",
-  "at": "best_known_for",
-  "en": "Second Chinese station testbed",
-  "cur": "중국의 두 번째 우주 스테이션 시험 시설"
- },
- {
-  "rel": "fleet/station/tiangong.json",
-  "at": "description",
-  "en": "China’s modular space station — Tianhe core plus Wentian and Mengtian science labs, fully assembled in October 2022 and continuously crewed since June 2022. With a mass of ~66 t and pressurised volume of ~110 m³, Tiangong is smaller than Mir (130 t) but represents China’s permanent station capability; the only currently-operational space station outside ISS.",
-  "cur": "중국의 모듈식 우주정거장 — Tianhe 핵심 모듈과 Wentian, Mengtian 과학 실험실로 구성되며, 2022년 10월에 완전히 조립되었고 2022년 6월부터 계속 유인 운영 중. Tiangong은 질량 약 66 t, 기밀 용적 약 110 m³로 Mir(130 t)보다 작지만 중국의 영구 우주정거장 능력을 대표합니다. ISS 외에 현재 운영 중인 유일한 우주정거장입니다."
- }
+  {
+    "rel": "fleet/orbiter/solar-orbiter.json",
+    "at": "description",
+    "en": "ESA-led Solar Orbiter is the first spacecraft designed to image the Sun's polar regions in close detail — using repeated Venus gravity assists over a decade to climb out of the ecliptic toward ~33° heliographic inclination. Carries ten instruments combining remote sensing (PHI magnetograph, EUI extreme-UV imager, SPICE spectrometer, STIX X-ray imager, METIS coronagraph, SoloHI heliospheric imager) with in-situ measurement (magnetometer, energetic particles, solar-wind plasma, radio + plasma waves). Launched 2020-02-10 from Cape Canaveral on a NASA Atlas V 411. First perihelion 2020-06-15 at 0.51 AU. Working perihelion 0.28 AU (~62 R☉), inside Mercury's perihelion distance.",
+    "cur": "ESA 주도의 Solar Orbiter는 태양의 극지방을 근접하여 상세하게 촬영하도록 설계된 최초의 우주선으로, 10년에 걸쳐 반복적인 금성 중력 도움을 이용해 황도면을 벗어나 ~33° 태양 중심 경사각까지 상승한다. 원격 탐사(PHI 자기장 측정기, EUI 극자외선 촬영기, SPICE 분광계, STIX X선 촬영기, METIS 코로나그래프, SoloHI 태양권 촬영기)와 현장 측정(자기장계, 고에너지 입자, 태양풍 플라스마, 전파 + 플라스마파) 장비를 결합한 10개의 과학기기를 탑재하고 있다. 2020-02-10 케이프 커내버럴에서 NASA Atlas V 411로 발사되었다. 첫 근일점은 2020-06-15, 0.51 AU였다. 작동 근일점은 0.28 AU (~62 R☉)로, Mercury의 근일점 거리보다 안쪽이다."
+  },
+  {
+    "rel": "fleet/orbiter/tianwen-1.json",
+    "at": "tagline",
+    "en": "First Chinese Mars mission; delivered Zhurong",
+    "cur": "중국 최초의 화성 탐사 임무; Zhurong 착륙"
+  },
+  {
+    "rel": "fleet/orbiter/tianwen-1.json",
+    "at": "description",
+    "en": "CNSA's first Mars mission — an orbiter that carried the Zhurong rover to the Martian surface in May 2021. After releasing Zhurong, the orbiter continued solo science operations including high-resolution imaging and surface mapping.",
+    "cur": "CNSA의 첫 화성 탐사 임무 — 2021년 5월 Zhurong 로버를 화성 표면에 전달한 궤도선. Zhurong을 분리한 후 궤도선은 고해상도 이미징 및 표면 매핑을 포함한 단독 과학 임무를 계속 수행했다."
+  },
+  {
+    "rel": "fleet/orbiter/tianwen-1.json",
+    "at": "best_known_for",
+    "en": "First Chinese Mars mission; orbiter delivered the Zhurong rover in May 2021",
+    "cur": "중국 최초의 화성 탐사 임무; 2021년 5월 Zhurong 로버 착륙 성공"
+  },
+  {
+    "rel": "fleet/orbiter/ulysses.json",
+    "at": "tagline",
+    "en": "First spacecraft to observe the Sun's poles from above + below the ecliptic — Jupiter gravity assist 1992",
+    "cur": "황도면 위아래에서 태양 극을 관측한 최초의 탐사선 — 1992년 목성 중력보조"
+  },
+  {
+    "rel": "fleet/orbiter/ulysses.json",
+    "at": "description",
+    "en": "Joint ESA + NASA solar / heliospheric mission, built by Dornier with US scientific contribution. Launched 1990-10-06 from STS-41 Discovery on a high-energy trajectory direct to Jupiter — the only way to fling a spacecraft out of the ecliptic plane without prohibitive delta-v. Jupiter flyby 1992-02-08 deflected the spacecraft into an 80°-inclination heliocentric orbit (1.3 × 5.4 AU, 6.2-year period) — the first and still only spacecraft to fly over the Sun's poles. Three complete polar orbits gave us the heliospheric current sheet 3D structure, the faster polar / slower equatorial solar wind, and the only multi-decade record of polar coronal hole behaviour over a complete solar cycle. Mission ended 2009.",
+    "cur": "ESA와 NASA의 공동 태양/헬리오스피어 탐사 임무로, Dornier가 미국의 과학적 기여와 함께 제작했습니다. 1990년 10월 6일 STS-41 Discovery에서 발사되어 목성으로 향하는 고에너지 궤적을 따랐습니다. 이는 과도한 델타-v 없이 우주선을 황도면에서 벗어나도록 던져내는 유일한 방법이었습니다. 1992년 2월 8일 목성 근처를 통과하면서 우주선은 80° 경사의 태양중심 궤도(1.3 × 5.4 AU, 6.2년 주기)로 편향되었습니다. 태양의 극지 위를 날아간 유일하고 현재까지도 유일한 우주선입니다. 3번의 완전한 극지 궤도를 통해 헬리오스피어 전류판 3차원 구조, 더 빠른 극지 태양풍과 더 느린 적도 태양풍, 그리고 완전한 태양 사이클에 걸친 유일한 수십 년 규모의 극지 코로나 홀 거동 기록을 얻었습니다. 임무는 2009년에 종료되었습니다."
+  },
+  {
+    "rel": "fleet/orbiter/ulysses.json",
+    "at": "best_known_for",
+    "en": "Only spacecraft to fly over the Sun's poles — joint ESA / NASA, 1990-2009",
+    "cur": "태양 극을 비행한 유일한 탐사선 — ESA/NASA 공동, 1990-2009"
+  },
+  {
+    "rel": "fleet/orbiter/vega-1.json",
+    "at": "tagline",
+    "en": "Soviet Venus + Halley's Comet double mission — Venera lander, first interplanetary balloon, then Halley flyby",
+    "cur": "소비에트 금성 + 핼리 혜성 이중 임무 — Venera 착륙선, 최초 행성간 풍선, 그 후 핼리 근접비행"
+  },
+  {
+    "rel": "fleet/orbiter/vega-1.json",
+    "at": "description",
+    "en": "First spacecraft of the international Halley armada. Launched 1984-12-15 on a Proton-K / D-1. The 4920 kg flyby bus carried a ~1500 kg descent module that separated for Venus arrival 1985-06-11 — the lander touched down at 7.5°N, 177.8°E for 56 minutes of surface science, while a first-of-kind helium-filled balloon aerostat floated in the cloud deck at 54 km altitude for 46 hours tracking wind speeds and atmospheric structure. The flyby bus continued on its 9-month cruise and encountered comet 1P/Halley 1986-03-06 at 8889 km — the first Halley encounter of the armada, providing the targeting data ESA's Giotto used 8 days later for its much closer 596 km approach.",
+    "cur": "국제 핼리 함대의 첫 우주선. 1984년 12월 15일 Proton-K / D-1로 바이코누르에서 발사. 4920 kg 비행 모선은 ~1500 kg 강하 모듈을 탑재하여 1985년 6월 11일 금성 도착 시 분리 — 착륙선은 7.5°N, 177.8°E에 착륙해 56분간 표면 과학을 수행했고, 동시에 헬륨 풍선 에어로스탯이 고도 54 km 구름층에서 46시간 동안 표류하며 풍속·대기 구조를 추적했다. 비행 모선은 9개월 항해를 계속해 1986년 3월 6일 8889 km에서 핼리 혜성 1P/핼리 혜성과 조우 — 함대 최초의 핼리 만남으로, 8일 뒤 ESA Giotto의 근접 비행을 위한 조준 데이터를 제공했다."
+  },
+  {
+    "rel": "fleet/orbiter/vega-1.json",
+    "at": "best_known_for",
+    "en": "Soviet Venus + Halley double mission — first interplanetary balloon, first Halley flyby",
+    "cur": "소비에트 금성 + 핼리 혜성 이중 임무 — 행성간 최초의 풍선, 함대 최초의 핼리 혜성 비행"
+  },
+  {
+    "rel": "fleet/orbiter/vega-2.json",
+    "at": "tagline",
+    "en": "Sibling of Vega 1 — second Soviet Venus + Halley double mission, lander + balloon then Halley flyby",
+    "cur": "Vega 1의 자매기 — 소비에트 두 번째 금성 + 핼리 혜성 이중 임무, Vega 1보다 3일 뒤 핼리 혜성 비행"
+  },
+  {
+    "rel": "fleet/orbiter/vega-2.json",
+    "at": "description",
+    "en": "Identical twin of Vega 1, launched 1984-12-21 (6 days after Vega 1). 4920 kg flyby bus + ~1500 kg descent module with second Venera-style lander + helium aerostat. Venus arrival 1985-06-15: lander touched down at 8.5°S, 164.5°E (Aphrodite Terra), returned 57 minutes of surface science; balloon floated in the cloud deck for 46 hours alongside Vega 1's. The flyby bus continued and encountered comet 1P/Halley 1986-03-09 at 8030 km — the second Halley encounter of the armada, 3 days after Vega 1 and 5 days before Giotto. Vega 1 + Vega 2 tracking refined the Halley nucleus position to within 50 km for Giotto's much closer approach.",
+    "cur": "Vega 1의 정확한 쌍둥이로, 1984년 12월 21일에 발사됨 (Vega 1보다 6일 후). 4920 kg의 플라이바이 버스 + 두 번째 베네라식 착륙선이 포함된 약 1500 kg의 하강 모듈 + 헬륨 기구. 금성 도착 1985년 6월 15일: 착륙선은 남위 8.5°, 동경 164.5° (아프로디테 테라)에 착륙하여 57분간 지표면 과학 데이터를 반환함. 기구는 Vega 1의 기구와 함께 구름층에서 46시간 동안 부유함. 플라이바이 버스는 계속 진행하여 1986년 3월 9일에 혜성 1P/핼리 혜성을 8030 km 거리에서 만남 — 함대의 두 번째 핼리 조우로, Vega 1으로부터 3일 후이며 Giotto보다 5일 전. Vega 1과 Vega 2의 추적은 Giotto의 훨씬 더 가까운 접근을 위해 핼리 핵의 위치를 50 km 이내로 정밀화함."
+  },
+  {
+    "rel": "fleet/orbiter/vega-2.json",
+    "at": "best_known_for",
+    "en": "Sibling of Vega 1 — second Soviet Venus + Halley double mission, 1986-03-09 Halley flyby",
+    "cur": "Vega 1의 자매기 — 소비에트 금성 + 핼리 혜성 이중 임무, 1986-03-09 핼리 혜성 비행"
+  },
+  {
+    "rel": "fleet/orbiter/viking1-orbiter.json",
+    "at": "tagline",
+    "en": "Companion orbiter to Viking-1 lander — relay + 50000 surface images at 150-300 m/pixel, the first global Mars map. Operated 1976-1980",
+    "cur": "Viking-1 착륙선의 동반 궤도선 — 중계 + 150-300 m/픽셀로 50000장 표면 이미지, 최초의 화성 전 지구 지도. 1976-1980 운용"
+  },
+  {
+    "rel": "fleet/orbiter/viking1-orbiter.json",
+    "at": "description",
+    "en": "The orbital half of NASA's Viking 1 mission — the first US Mars orbiter and one of two near-identical Viking orbiters that returned ~50,000 surface images at 150-300 m/pixel between 1976 and 1980. Launched 1975-08-20 from Cape Canaveral on a Titan IIIE-Centaur, Viking 1 entered Mars orbit 1976-06-19; the orbiter spent a month surveying candidate landing sites before releasing the Viking 1 lander 1976-07-20 to the first successful US Mars landing at Chryse Planitia. The orbiter then continued as a science platform for nearly four more years, building the first global topographic + thermal map of Mars, surveying Phobos + Deimos, and acting as a UHF relay for the lander. Out of attitude-control gas 1980-08-07. Deliberately raised to a 357 × 33614 km park orbit that's expected to remain stable through ~2024 (decayed ~2025 per Aerospace Corp re-entry forecast).",
+    "cur": "NASA의 Viking 1 임무의 궤도선 부분 — 첫 번째 미국 화성 궤도선이자 1976년부터 1980년 사이 약 50,000장의 표면 이미지를 150~300 m/pixel로 반환한 거의 동일한 두 Viking 궤도선 중 하나입니다. 케이프 커내버럴에서 1975-08-20에 Titan IIIE-Centaur로 발사되었으며, Viking 1은 1976-06-19에 화성 궤도에 진입했습니다. 궤도선은 Viking 1 착륙선을 1976-07-20에 크리세 평원의 첫 번째 성공적인 미국 화성 착륙지로 방출하기 전에 1개월간 후보 착륙지를 조사했습니다. 그 후 궤도선은 약 4년을 더 과학 플랫폼으로 계속 운영되었으며, 화성의 첫 번째 전지구 지형+열 지도를 작성하고, 포보스와 데이모스를 조사했으며, 착륙선의 UHF 중계국으로 역할했습니다. 1980-08-07에 자세 제어 가스 소진. 의도적으로 357 × 33614 km 주차 궤도로 올려졌으며, 이는 약 2024년까지 안정적으로 유지될 것으로 예상됩니다(Aerospace Corp 재진입 예측에 따르면 약 2025년에 붕괴)."
+  },
+  {
+    "rel": "fleet/orbiter/viking1-orbiter.json",
+    "at": "best_known_for",
+    "en": "Companion orbiter to Viking-1 lander — relay + 50000 surface images at 150-300 m/pixel, the first global Mars map. Operated 1976-1980",
+    "cur": "Viking-1 착륙선의 동반 궤도선 — 중계 + 150-300 m/픽셀로 50000장 표면 이미지, 최초의 화성 전 지구 지도. 1976-1980 운용"
+  },
+  {
+    "rel": "fleet/orbiter/voyager-1.json",
+    "at": "description",
+    "en": "The most distant human-made object — over 25 billion kilometers from the Sun and growing. Crossed the heliopause into interstellar space on August 25, 2012. Carries the Golden Record. Still transmitting on its 470 W RTG.",
+    "cur": "가장 먼 인간이 만든 물체 — 태양으로부터 250억 킬로미터가 넘는 거리에 있으며 계속 멀어지고 있습니다. 2012년 8월 25일 헬리오스페어를 넘어 성간 우주로 진입했습니다. 골든 레코드를 탑재하고 있습니다. 여전히 470 W RTG로 신호를 전송하고 있습니다."
+  },
+  {
+    "rel": "fleet/orbiter/voyager-2.json",
+    "at": "tagline",
+    "en": "Only spacecraft to visit all four giant planets",
+    "cur": "4개의 거대한 행성을 방문하는 우주선만"
+  },
+  {
+    "rel": "fleet/orbiter/voyager-2.json",
+    "at": "description",
+    "en": "The only spacecraft to visit all four giant planets — Jupiter (1979), Saturn (1981), Uranus (1986), Neptune (1989). Followed its twin Voyager 1 into interstellar space in November 2018. Carries an identical Golden Record.",
+    "cur": "네 개의 거대 행성을 모두 방문한 유일한 우주선 — 목성(1979), 토성(1981), 천왕성(1986), 해왕성(1989). 쌍둥이 우주선인 Voyager 1을 따라 2018년 11월 성간 공간으로 진입했습니다. 동일한 골든 레코드를 탑재하고 있습니다."
+  },
+  {
+    "rel": "fleet/orbiter/voyager-2.json",
+    "at": "best_known_for",
+    "en": "Only spacecraft to visit all four giant planets",
+    "cur": "4개의 거대한 행성을 방문하는 우주선만"
+  },
+  {
+    "rel": "fleet/rover/curiosity.json",
+    "at": "tagline",
+    "en": "Nuclear-powered Mars Science Laboratory rover",
+    "cur": "원자력 Mars Science Laboratory 로버"
+  },
+  {
+    "rel": "fleet/rover/curiosity.json",
+    "at": "description",
+    "en": "NASA’s nuclear-powered Mars Science Laboratory rover, on Mars since August 2012. Discovered organic molecules, ancient stream-bed environments, and evidence that Mars’ Gale Crater was habitable in the past. Still operational over a decade later.",
+    "cur": "NASA의 원자력 동력 Mars Science Laboratory 로버로, 2012년 8월부터 화성에 있습니다. 유기 분자, 고대 하천상 환경, 그리고 화성의 게일 분화구가 과거에 거주 가능했다는 증거를 발견했습니다. 10년 이상이 지난 후에도 여전히 작동 중입니다."
+  },
+  {
+    "rel": "fleet/rover/curiosity.json",
+    "at": "best_known_for",
+    "en": "Nuclear-powered Mars Science Laboratory rover",
+    "cur": "원자력 Mars Science Laboratory 로버"
+  },
+  {
+    "rel": "fleet/rover/exomars-rosalind-franklin.json",
+    "at": "tagline",
+    "en": "ESA's 2028 Mars rover — 2-m drill to search for biosignatures at Oxia Planum. Paused by Roscosmos pull-out 2022, retargeted to NASA launch",
+    "cur": "ESA의 2028년 화성 로버 — 옥시아 평원에서 생체신호 탐색용 2 m 드릴. 2022년 Roscosmos 철수로 보류, NASA 발사체로 전환"
+  },
+  {
+    "rel": "fleet/rover/exomars-rosalind-franklin.json",
+    "at": "description",
+    "en": "ESA's first Mars rover, named after the DNA pioneer Rosalind Franklin. Designed to land at Oxia Planum (an ancient clay-bearing Mars region selected for high biosignature-preservation potential) and use a 2-metre subsurface drill — deeper than any prior Mars mission — to acquire samples from depths protected from the cosmic-ray and UV radiation that destroys surface organics. The Analytical Laboratory Drawer holds three life-detection instruments: MOMA (Mars Organic Molecule Analyser, a gas chromatograph + dual-source mass spectrometer), MicrOmega (infrared imaging spectroscopy), and the Raman Laser Spectrometer. Originally targeted for 2022 launch on a Russian Proton with a Russian-built landing platform (Kazachok); after Russia invaded Ukraine in 2022, ESA suspended cooperation, and Rosalind Franklin's launch was deferred. Currently scheduled for 2028 on a NASA-provided launch vehicle with an ESA / Airbus-rebuilt landing platform.",
+    "cur": "ESA의 첫 화성 로버로, DNA 연구의 선구자 Rosalind Franklin의 이름을 따서 명명되었습니다. 옥시아 평원(생물 신호 보존 가능성이 높아 선정된 고대 점토 지역)에 착륙하도록 설계되었으며, 2미터 깊이의 지하 드릴 — 이전의 어떤 화성 임무보다 깊다 — 로 표면 유기물을 파괴하는 우주 방사선과 자외선으로부터 보호되는 깊이의 시료를 채취합니다. 분석 실험실 서랍(Analytical Laboratory Drawer)에는 세 가지 생명 탐지 기기가 들어 있습니다: MOMA(Mars Organic Molecule Analyser, 가스 크로마토그래프 + 이중 이온원 질량분석기), MicrOmega(적외선 영상 분광기), 그리고 라만 레이저 분광기(Raman Laser Spectrometer). 원래는 러시아 Proton 로켓에 러시아가 제작한 착륙 플랫폼(Kazachok)을 실어 2022년에 발사할 계획이었으나, 2022년 러시아의 우크라이나 침공 이후 ESA가 협력을 중단하면서 Rosalind Franklin의 발사가 연기되었습니다. 현재 NASA가 제공하는 발사체와 ESA / Airbus가 다시 만든 착륙 플랫폼으로 2028년 발사를 예정하고 있습니다."
+  },
+  {
+    "rel": "fleet/rover/exomars-rosalind-franklin.json",
+    "at": "best_known_for",
+    "en": "ESA's 2028 Mars rover — 2-m drill to search for biosignatures at Oxia Planum. Paused by Roscosmos pull-out 2022, retargeted to NASA launch",
+    "cur": "ESA의 2028년 화성 로버 — 옥시아 평원에서 생체신호 탐색용 2 m 드릴. 2022년 Roscosmos 철수로 보류, NASA 발사체로 전환"
+  },
+  {
+    "rel": "fleet/rover/lrv-apollo.json",
+    "at": "tagline",
+    "en": "First crewed rover; Apollo 15, 16, 17",
+    "cur": "첫 유인 로버; Apollo 15, 16, 17"
+  },
+  {
+    "rel": "fleet/rover/lrv-apollo.json",
+    "at": "dispatch",
+    "en": "The Lunar Rover was the first car on another world, and its entire reason to exist was reach. On foot, an astronaut can't stray far from the lander — walk too far out and you can't walk back if the suit starts to fail. Wheels rewrote that math: Apollo 15 through 17 ranged kilometres from home, turning a single landing spot into a proper field area and letting geologists actually choose where to look. Building it was its own puzzle — it had to fold flat into a wedge on the side of the Lunar Module, unfold on the surface, then drive through abrasive dust and hundreds of degrees of temperature swing on wire-mesh wheels and battery power. It never went fast. It went far, and that was the whole point.",
+    "cur": "Lunar Rover는 다른 천체에 착륙한 최초의 자동차였으며, 존재하는 유일한 이유는 도달 거리였습니다. 우주인은 도보로는 착륙선에서 멀리 떨어질 수 없습니다. 너무 멀리 가면 우주복이 고장날 경우 돌아올 수 없으니까요. 바퀴가 그 계산식을 다시 썼습니다. Apollo 15부터 17까지는 집으로부터 수 킬로미터 떨어진 곳까지 갈 수 있었고, 하나의 착륙 지점을 제대로 된 야외 탐사 지역으로 바꾸어 지질학자들이 실제로 어디를 살펴볼지 선택할 수 있게 했습니다. 이것을 만드는 것 자체가 하나의 난제였습니다. Lunar Module의 옆면에 쐐기 모양으로 평탄하게 접혀 있어야 하고, 표면에서 펼쳐져야 하며, 연마성 먼지와 수백 도의 온도 변화를 통과해서 망상 바퀴와 배터리 전원으로 주행해야 했으니까요. 속도는 빠르지 않았습니다. 멀리 갈 수 있었고, 그것이 전부였습니다."
+  },
+  {
+    "rel": "fleet/rover/lrv-apollo.json",
+    "at": "description",
+    "en": "The Lunar Roving Vehicle — the first crewed rover. Three Apollos (15, 16, 17) used it to extend their surface exploration, covering up to 35.9 km per mission (Apollo 17 record). Built by Boeing and Delco; folded into the LM’s descent stage.",
+    "cur": "Lunar Roving Vehicle — 최초의 유인 로버입니다. Apollo 15, 16, 17이 이를 사용하여 표면 탐사를 확장했으며, 임무당 최대 35.9 km를 커버했습니다 (Apollo 17 기록). Boeing과 Delco가 제작했으며, LM의 강하단계에 접혀 있었습니다."
+  },
+  {
+    "rel": "fleet/rover/lrv-apollo.json",
+    "at": "best_known_for",
+    "en": "First crewed rover; Apollo 15, 16, 17",
+    "cur": "첫 유인 로버; Apollo 15, 16, 17"
+  },
+  {
+    "rel": "fleet/rover/lunokhod-1.json",
+    "at": "description",
+    "en": "The first wheeled vehicle to roam another world. Operated for ten months on the Moon’s Mare Imbrium between November 1970 and September 1971, driven via radio link by a five-person team in Crimea. A pressurised \"tub\" warmed by a polonium heater overnight.",
+    "cur": "다른 세계로 비행하는 최초의 차량. 1970년 11월과 1971년 9월 사이에 달의 비의 바다에서 운영, Crimea의 다섯 사람 팀에 의해 라디오 링크를 통해 구동. 압착 \"tub\"는 밤새 polonium 히이터에 의해 데웁니다."
+  },
+  {
+    "rel": "fleet/rover/lunokhod-2.json",
+    "at": "tagline",
+    "en": "Roamed 39 km on the Moon — record till 2014",
+    "cur": "달에 39km 돌진 - 2014년까지 기록"
+  },
+  {
+    "rel": "fleet/rover/lunokhod-2.json",
+    "at": "description",
+    "en": "Lunokhod 2 is a planetary rover built by NPO Lavochkin in USSR. Roamed 39 km on the Moon — record till 2014. Retired after first flight in 1973.",
+    "cur": "Lunokhod 2는 소련의 NPO Lavochkin에 의해 지어진 행성 회귀입니다. 달에 39km 돌진 - 2014년까지 기록. 1973년 첫 비행 후 은퇴."
+  },
+  {
+    "rel": "fleet/rover/lunokhod-2.json",
+    "at": "best_known_for",
+    "en": "Roamed 39 km on the Moon — record till 2014",
+    "cur": "달에 39km 돌진 - 2014년까지 기록"
+  },
+  {
+    "rel": "fleet/rover/opportunity.json",
+    "at": "tagline",
+    "en": "Twin to Spirit; 14-year Mars operation",
+    "cur": "Spirit의 쌍둥이; 화성에서 14년 운영"
+  },
+  {
+    "rel": "fleet/rover/opportunity.json",
+    "at": "description",
+    "en": "Opportunity (MER-B) is a planetary rover built by NASA JPL in USA. Twin to Spirit; operated for nearly 15 years on Mars. Set the off-world driving record at 45.16 km and discovered hematite 'blueberries' indicating past water. Retired 2019.",
+    "cur": "Opportunity(MER-B)는 미국 NASA JPL에서 제작한 행성 탐사로봇입니다. Spirit의 쌍둥이이며 화성에서 약 15년간 운영되었습니다. 행성 외 주행 거리 기록 45.16 km를 수립했으며, 과거 물의 존재를 나타내는 적철광 '블루베리'를 발견했습니다. 2019년에 운영을 종료했습니다."
+  },
+  {
+    "rel": "fleet/rover/opportunity.json",
+    "at": "best_known_for",
+    "en": "Twin to Spirit; ~15-year, 45 km Mars operation",
+    "cur": "Spirit의 쌍둥이; ~15년, 화성에서 45 km 작동"
+  },
+  {
+    "rel": "fleet/rover/perseverance.json",
+    "at": "name",
+    "en": "Perseverance (Mars 2020)",
+    "cur": "Perseverance (화성 2020)"
+  },
+  {
+    "rel": "fleet/rover/perseverance.json",
+    "at": "tagline",
+    "en": "Carried Ingenuity; Mars sample caching",
+    "cur": "Ingenuity 운반; 화성 샘플 캐싱"
+  },
+  {
+    "rel": "fleet/rover/perseverance.json",
+    "at": "description",
+    "en": "NASA’s sample-caching rover, on Mars since February 2021. Carried Ingenuity, the first off-Earth helicopter; has collected 33 of 43 sample tubes for eventual return to Earth. Looking for biosignatures in Jezero Crater’s ancient delta.",
+    "cur": "2021년 2월부터 화성에 있는 NASA의 샘플 캐싱 로버. 지구 밖 최초의 헬리콥터 Ingenuity를 운반했으며, 지구로 반송될 43개의 샘플 튜브 중 33개를 수집했음. Jezero 분화구의 고대 삼각주에서 생명의 흔적을 찾고 있음."
+  },
+  {
+    "rel": "fleet/rover/perseverance.json",
+    "at": "best_known_for",
+    "en": "Carried Ingenuity; Mars sample caching",
+    "cur": "Ingenuity 운반; 화성 샘플 캐싱"
+  },
+  {
+    "rel": "fleet/rover/pragyan.json",
+    "at": "tagline",
+    "en": "First lunar south-pole rover; Chandrayaan-3",
+    "cur": "첫 달 남쪽 극 rover; Chandrayaan-3"
+  },
+  {
+    "rel": "fleet/rover/pragyan.json",
+    "at": "description",
+    "en": "Pragyan is a planetary rover built by ISRO in India. First lunar south-pole rover; Chandrayaan-3. Retired after first flight in 2023.",
+    "cur": "Pragyan은 인도의 ISRO에 의해 지어진 행성의 로버입니다. 첫 달 남쪽 극 rover; Chandrayaan-3. 은퇴 후 첫 비행 2023."
+  },
+  {
+    "rel": "fleet/rover/pragyan.json",
+    "at": "best_known_for",
+    "en": "First lunar south-pole rover; Chandrayaan-3",
+    "cur": "첫 달 남쪽 극 rover; Chandrayaan-3"
+  },
+  {
+    "rel": "fleet/rover/sojourner.json",
+    "at": "tagline",
+    "en": "First Mars rover; Pathfinder mission",
+    "cur": "첫 번째 화성 rover; Pathfinder 임무"
+  },
+  {
+    "rel": "fleet/rover/sojourner.json",
+    "at": "description",
+    "en": "Sojourner is a planetary rover built by NASA JPL in USA. First Mars rover; Pathfinder mission. Retired after first flight in 1997.",
+    "cur": "Sojourner는 미국의 NASA JPL에 의해 구축 된 행성의 로버입니다. 첫 번째 화성 rover; Pathfinder 임무. 1997 년 첫 비행 후 은퇴."
+  },
+  {
+    "rel": "fleet/rover/sojourner.json",
+    "at": "best_known_for",
+    "en": "First Mars rover; Pathfinder mission",
+    "cur": "첫 번째 화성 rover; Pathfinder 임무"
+  },
+  {
+    "rel": "fleet/rover/spirit.json",
+    "at": "tagline",
+    "en": "Mars Exploration Rover; 6-year operation",
+    "cur": "Mars Exploration Rover; 6년 가동"
+  },
+  {
+    "rel": "fleet/rover/spirit.json",
+    "at": "description",
+    "en": "Spirit (MER-A) is a planetary rover built by NASA JPL in USA. Mars Exploration Rover; 6-year operation. Retired after first flight in 2004.",
+    "cur": "Spirit (MER-A)는 미국 NASA JPL이 제작한 행성 탐사 로버입니다. Mars Exploration Rover 계획의 일부로 6년간 가동되었습니다. 2004년 첫 비행 후 은퇴했습니다."
+  },
+  {
+    "rel": "fleet/rover/spirit.json",
+    "at": "best_known_for",
+    "en": "Mars Exploration Rover; 6-year operation",
+    "cur": "Mars Exploration Rover; 6년 가동"
+  },
+  {
+    "rel": "fleet/rover/yutu-2.json",
+    "at": "tagline",
+    "en": "First rover on the lunar far side; Chang'e-4",
+    "cur": "달의 뒷면에 착륙한 첫 번째 로버; Chang'e-4"
+  },
+  {
+    "rel": "fleet/rover/yutu-2.json",
+    "at": "description",
+    "en": "China’s Chang’e-4 rover, the first rover to operate on the lunar far side. Landed in Von Kármán crater in January 2019 and operated for over six years, far exceeding its three-month design lifetime; largely stationary since early 2024.",
+    "cur": "중국의 Chang'e-4 로버로, 달의 뒷면에서 운영된 첫 번째 로버입니다. 2019년 1월 Von Kármán 분화구에 착륙했으며 6년 이상 운영되어 3개월의 설계 수명을 훨씬 초과했습니다. 2024년 초부터 대부분 정지 상태입니다."
+  },
+  {
+    "rel": "fleet/rover/yutu-2.json",
+    "at": "best_known_for",
+    "en": "First rover on the lunar far side; Chang'e-4",
+    "cur": "달의 뒷면에 착륙한 첫 번째 로버; Chang'e-4"
+  },
+  {
+    "rel": "fleet/rover/yutu.json",
+    "at": "tagline",
+    "en": "First Chinese lunar rover; Chang'e-3",
+    "cur": "첫 번째 중국 lunar rover; Chang'e-3"
+  },
+  {
+    "rel": "fleet/rover/yutu.json",
+    "at": "description",
+    "en": "Yutu is a planetary rover built by CAST in China. First Chinese lunar rover; Chang'e-3. Retired after first flight in 2013.",
+    "cur": "Yutu는 중국에 있는 CAST에 의해 건축된 행성 rover입니다. 첫 번째 중국 lunar rover; Chang'e-3. 2013 년 첫 비행 후 은퇴."
+  },
+  {
+    "rel": "fleet/rover/yutu.json",
+    "at": "best_known_for",
+    "en": "First Chinese lunar rover; Chang'e-3",
+    "cur": "첫 번째 중국 lunar rover; Chang'e-3"
+  },
+  {
+    "rel": "fleet/rover/zhurong.json",
+    "at": "tagline",
+    "en": "First Chinese Mars rover; Tianwen-1",
+    "cur": "첫 번째 중국 화성 rover; Tianwen-1"
+  },
+  {
+    "rel": "fleet/rover/zhurong.json",
+    "at": "description",
+    "en": "Zhurong is a planetary rover built by CAST in China. First Chinese Mars rover; Tianwen-1. Retired after first flight in 2021.",
+    "cur": "Zhurong는 중국에 있는 CAST에 의해 건축된 행성 rover입니다. 첫 번째 중국 화성 rover; Tianwen-1. 2021 년 첫 비행 후 은퇴."
+  },
+  {
+    "rel": "fleet/rover/zhurong.json",
+    "at": "best_known_for",
+    "en": "First Chinese Mars rover; Tianwen-1",
+    "cur": "첫 번째 중국 화성 rover; Tianwen-1"
+  },
+  {
+    "rel": "fleet/space-suit/a7l.json",
+    "at": "tagline",
+    "en": "The first operational lunar surface suit — Apollo 11 through 14",
+    "cur": "첫 번째 작동 루어 표면 정장 - Apollo 11 통해 14"
+  },
+  {
+    "rel": "fleet/space-suit/a7l.json",
+    "at": "dispatch",
+    "en": "A pressure suit on the Moon is really a spacecraft you wear — the smallest crewed vehicle Apollo built, sized for one. The A7L had to do everything a capsule does — hold pressure, supply oxygen, carry away heat and exhaled carbon dioxide, shield against a temperature swing of hundreds of degrees between sunlight and shadow — while still letting a person kneel, walk, and pick up a rock. Those two demands fight each other, because anything holding pressure wants to go stiff as a balloon. Its answer was twenty-one layers built around a rubber-coated bladder, with the backpack making the whole thing self-contained for hours. It was the first suit rated to walk on another world, and for its missions it was the only thing between a human being and vacuum.",
+    "cur": "달 위의 압력복은 사실상 입는 우주선이다 — Apollo가 제작한 가장 작은 유인 비행체로, 한 사람을 위한 크기다. A7L은 캡슐이 하는 모든 일을 해야 했다 — 압력 유지, 산소 공급, 열과 호기된 이산화탄소 배출, 햇빛과 그늘 사이 수백 도의 온도 변화로부터 보호 — 동시에 사람이 무릎을 꿇고, 걷고, 돌을 집을 수 있어야 했다. 이 두 가지 요구 사항은 서로 충돌한다. 압력을 유지하는 것은 풍선처럼 뻣뻣해지려는 속성이 있기 때문이다. 그 해결책은 고무 코팅된 기낭을 중심으로 21개 층을 구성하는 것이었으며, 백팩이 전체 시스템을 몇 시간 동안 자급자족할 수 있게 만들었다. 이것은 다른 세계를 걸을 수 있도록 인증된 최초의 우주복이었으며, 임무 수행 중 인간과 진공 사이의 유일한 보호막이었다."
+  },
+  {
+    "rel": "fleet/space-suit/a7l.json",
+    "at": "description",
+    "en": "First operational lunar surface suit. Hard upper torso, soft-fabric arms and legs, integrated lunar overboots, PLSS backpack with sublimator cooling and LiOH CO₂ scrubber, OPS emergency O₂ cylinder above the PLSS. Operating pressure 3.7 psi pure O₂ — lowest of any flown suit, to maximise mobility for walking in 1/6 g. Flew on Apollo 11 (the first Moonwalk), Apollo 12, and Apollo 13–14. Worn by Buzz Aldrin in the iconic gold-visor lunar surface photo.",
+    "cur": "최초의 운용 월면 활동복. 단단한 상반신, 부드러운 직물의 팔과 다리, 일체형 월면 오버부츠, 승화식 냉각 및 LiOH CO₂ 제거 장치가 있는 PLSS 백팩, PLSS 위의 OPS 응급 O₂ 실린더. 작동 압력 3.7 psi 순수 O₂ — 비행한 어떤 우주복보다도 가장 낮으며, 1/6 g에서 걷기 위한 이동성을 극대화하기 위함. Apollo 11 (최초의 월면 활동), Apollo 12, Apollo 13–14에서 비행. 버즈 올드린이 상징적인 금색 바이저 월면 활동 사진에서 착용."
+  },
+  {
+    "rel": "fleet/space-suit/a7l.json",
+    "at": "best_known_for",
+    "en": "The suit worn on Apollo 11–14 — the first to support EVA on another world",
+    "cur": "Apollo 11–14에 착용 한 소송 - 다른 세계에 EVA를 지원하는 첫 번째"
+  },
+  {
+    "rel": "fleet/space-suit/a7lb.json",
+    "at": "tagline",
+    "en": "The J-mission suit — added a waist joint so astronauts could sit in the Lunar Rover",
+    "cur": "J-미션 우주복 — 우주인이 달 로버에 앉을 수 있도록 허리 관절을 추가"
+  },
+  {
+    "rel": "fleet/space-suit/a7lb.json",
+    "at": "dispatch",
+    "en": "Sometimes a whole era of exploration turns on one joint. The A7LB was the A7L with a flexible convolution added at the waist — a small-sounding change that let an astronaut bend at the middle and sit down. That is the difference between walking a couple of kilometres from the lander and driving a rover across tens of them; between a two-hour moonwalk and a three-day field campaign. The last three Apollo landings — the long-stay science missions with the rover and, finally, a trained geologist — were only possible because the suit at last let people sit, reach, and work for hours at a stretch. The engineering headline is a waist joint; the result was the most productive science of the entire program.",
+    "cur": "때로는 탐사의 전 시대가 하나의 관절에 달려 있다. A7LB는 A7L에 허리에 유연한 컨볼루션을 추가한 것이었다 — 작은 변화처럼 들리지만 우주인이 몸을 굽혀 앉을 수 있게 해주었다. 이것이 착륙선에서 몇 킬로미터만 걷는 것과 로버로 수십 킬로미터를 운전하는 것의 차이이며, 2시간의 월워크와 3일간의 현지 조사 캠페인의 차이다. 마지막 세 번의 Apollo 착륙 — 로버를 갖춘 장기 체류 과학 미션과 마침내 훈련받은 지질학자를 포함한 미션 — 은 우주복이 마침내 사람들이 앉고, 손을 뻗고, 오랜 시간 작업할 수 있게 해준 덕분에 가능했다. 엔지니어링 관점에서는 허리 관절이 핵심이지만, 그 결과는 전체 프로그램의 가장 생산적인 과학이었다."
+  },
+  {
+    "rel": "fleet/space-suit/a7lb.json",
+    "at": "description",
+    "en": "A7L derivative for the extended J-class lunar missions. The signature change was a waist-joint convolution that allowed astronauts to bend forward and sit in the Lunar Roving Vehicle — without it, the J-mission EVAs of Apollo 15, 16, and 17 would not have been possible. Same PLSS, OPS, and 3.7 psi pressure as A7L; same gold visor. Also used on Skylab 2, 3, and 4 (1973–1974) in a modified configuration, with final EVA on February 3, 1974.",
+    "cur": "확장된 J급 달 미션용 A7L 파생형. 특징적인 변화는 우주인이 Lunar Roving Vehicle에서 앞으로 몸을 굽혀 앉을 수 있게 해주는 허리 관절 컨볼루션이었다 — 이것이 없었다면 Apollo 15, 16, 17의 J-미션 EVA는 불가능했을 것이다. PLSS, OPS, 3.7 psi 압력은 A7L과 동일하며, 금색 바이저도 동일하다. 또한 1973–1974년 Skylab 2, 3, 4에서 수정된 구성으로 사용되었으며, 마지막 EVA는 1974년 2월 3일에 수행되었다."
+  },
+  {
+    "rel": "fleet/space-suit/a7lb.json",
+    "at": "best_known_for",
+    "en": "The J-mission suit (Apollo 15, 16, 17) — added a waist convolution that let astronauts sit in the Lunar Roving Vehicle",
+    "cur": "J 미션 우주복(Apollo 15, 16, 17) — 우주비행사가 Lunar Roving Vehicle에 앉을 수 있도록 허리 부분에 동체 절곡부를 추가했습니다"
+  },
+  {
+    "rel": "fleet/space-suit/aces.json",
+    "at": "tagline",
+    "en": "The orange Shuttle pressure suit worn after Challenger made shirtsleeve ascent unacceptable",
+    "cur": "Challenger 이후 긴팔 우주복 착용이 더 이상 허용되지 않아 입게 된 주황색 셔틀 감압복"
+  },
+  {
+    "rel": "fleet/space-suit/aces.json",
+    "at": "description",
+    "en": "Full-pressure launch-entry suit developed by David Clark Company. Replaced the earlier Launch Entry Suit (LES) starting in 1994. Detachable gloves, parachute harness integrated, distinctive international-orange colour for water-recovery visibility. Worn on every Space Shuttle ascent and re-entry through STS-135 in 2011.",
+    "cur": "David Clark Company에서 개발한 완전 감압 발사-진입복. 1994년부터 초기의 Launch Entry Suit (LES)를 대체했다. 탈착식 장갑, 통합된 낙하산 하네스, 수상 회수 시인성을 위한 distinctive international-orange 색상. Space Shuttle STS-135(2011)까지 모든 우주왕복선 상승 및 재진입에서 착용됐다."
+  },
+  {
+    "rel": "fleet/space-suit/aces.json",
+    "at": "best_known_for",
+    "en": "The orange \"pumpkin\" suit worn for every Space Shuttle launch and re-entry after Challenger",
+    "cur": "Challenger 이후 모든 Space Shuttle 발사 및 재진입에서 착용한 주황색 \"호박\" 우주복"
+  },
+  {
+    "rel": "fleet/space-suit/axemu.json",
+    "at": "tagline",
+    "en": "Next-gen US EVA suit, qualifying for Artemis III",
+    "cur": "Next-gen 미국 EVA 소송, Artemis III 자격"
+  },
+  {
+    "rel": "fleet/space-suit/axemu.json",
+    "at": "description",
+    "en": "Axiom Space's contracted EVA suit for NASA's Artemis lunar return. Heritage from the EMU but with mobility joints comparable to Apollo's A7LB, a regenerable amine CO₂ scrubber, HD video in the helmet, and dust-resistant joints for lunar surface use. Outer-layer styling by Prada. Currently in qualification testing for Artemis III in the late 2020s.",
+    "cur": "Axiom Space가 NASA의 Artemis 달 귀환을 위해 계약한 EVA 우주복. EMU의 유산이지만 Apollo의 A7LB에 필적하는 이동성 조인트, 재생 가능한 아민 CO₂ 스크러버, 헬멧의 HD 비디오, 그리고 달 표면 사용을 위한 방진 조인트를 갖추고 있다. 외층 스타일링은 Prada에서 담당했다. 현재 2020년대 후반의 Artemis III을 위한 적격성 테스트를 진행 중이다."
+  },
+  {
+    "rel": "fleet/space-suit/axemu.json",
+    "at": "best_known_for",
+    "en": "Next-generation US EVA suit being qualified for the Artemis III lunar landing",
+    "cur": "차세대 미국 EVA 소송은 Artemis III lunar 착륙에 대한 자격이"
+  },
+  {
+    "rel": "fleet/space-suit/crew-dragon-iva.json",
+    "at": "tagline",
+    "en": "The white slim-fit Crew Dragon IVA suit, flown since Demo-2",
+    "cur": "Demo-2 이후 운용되고 있는 흰색 슬림핏 Crew Dragon IVA 슈트"
+  },
+  {
+    "rel": "fleet/space-suit/crew-dragon-iva.json",
+    "at": "description",
+    "en": "SpaceX-designed launch-entry pressure suit. Single-piece front-entry, touchscreen-capable gloves to operate Crew Dragon's tablet console, custom-3D-printed helmets fitted to each crew member. Worn for ascent and re-entry on Crew Dragon. Distinctive minimalist white-and-black aesthetic.",
+    "cur": "SpaceX가 설계한 발사-귀환용 압력복. 단일 전면 진입식으로, Crew Dragon의 태블릿 콘솔을 조작할 수 있는 터치스크린 글러브, 각 승무원에게 맞춤 제작된 3D 프린팅 헬멧을 갖추고 있습니다. Crew Dragon 상승 및 재진입 시 착용합니다. 독특한 미니멀리스트 흰색과 검은색 미학이 특징입니다."
+  },
+  {
+    "rel": "fleet/space-suit/crew-dragon-iva.json",
+    "at": "best_known_for",
+    "en": "The white slim-fit IVA suit worn on every NASA ISS Crew Dragon flight since Demo-2",
+    "cur": "Demo-2 이후 모든 NASA ISS Crew Dragon 비행에 착용된 흰색 슬림핏 IVA 슈트"
+  },
+  {
+    "rel": "fleet/space-suit/emu.json",
+    "at": "tagline",
+    "en": "The white US spacewalk suit — every American EVA from the Shuttle to the ISS",
+    "cur": "흰색 미국 우주유영복 — Shuttle부터 ISS까지 모든 미국 EVA 비행"
+  },
+  {
+    "rel": "fleet/space-suit/emu.json",
+    "at": "description",
+    "en": "Extravehicular Mobility Unit — modular EVA suit with a hard upper torso, soft fabric arms and legs, and a Primary Life Support System backpack. Operates at 4.3 psi pure O₂. First EVA flown on STS-6 (April 1983) and still in service on the ISS more than 40 years later. SAFER mini-thruster pack added in 1994 for tether-loss rescue (1.4 kg N₂, ~3 m/s Δv).",
+    "cur": "Extravehicular Mobility Unit — 딱딱한 상체, 부드러운 팔다리, Primary Life Support System 백팩으로 구성된 모듈식 EVA 우주복입니다. 4.3 psi 순산소에서 작동합니다. STS-6(1983년 4월)에서 처음 비행했으며 40년이 넘은 현재까지 ISS에서 운영 중입니다. 1994년에는 테더 손실 구조를 위해 SAFER 미니 추진기 팩(1.4 kg N₂, ~3 m/s Δv)이 추가되었습니다."
+  },
+  {
+    "rel": "fleet/space-suit/emu.json",
+    "at": "best_known_for",
+    "en": "The white US spacewalk suit that has flown every American EVA from the Shuttle through the ISS",
+    "cur": "우주왕복선부터 ISS까지 모든 미국 우주유영을 비행한 흰색 미국 우주복"
+  },
+  {
+    "rel": "fleet/space-suit/feitian.json",
+    "at": "tagline",
+    "en": "China's EVA suit — derived from the Orlan, first flown on Shenzhou 7 in 2008",
+    "cur": "중국의 EVA 우주복 — 소련의 Orlan에서 파생되었으며 2008년 Shenzhou 7에서 처음 비행"
+  },
+  {
+    "rel": "fleet/space-suit/feitian.json",
+    "at": "description",
+    "en": "Chinese rear-entry EVA suit with architectural similarities to the Soviet Orlan design. First flown on Shenzhou 7 in 2008 when Zhai Zhigang became the first Chinese taikonaut to spacewalk. Now in operational use on the Tiangong space station's Wentian airlock. The name means \"flying heaven\" — a reference to the celestial flying spirits (feitian) from Buddhist cave art at Dunhuang, depicted on the suit's arm badge.",
+    "cur": "소련 Orlan 설계와 건축학적 유사성을 가진 중국의 후방 진입식 EVA 우주복. 2008년 Shenzhou 7에서 처음 비행했으며, 이때 자이지강이 중국 최초의 우주유영 타이콘아우트가 되었다. 현재 Tiangong 우주정거장의 Wentian 에어록에서 운용 중이다. 이름은 \"하늘을 나는 것\"을 의미하며 — 이는 Dunhuang의 불교 동굴 미술에서 묘사된 천상의 비행 정령(feitian)을 참조한 것이며, 우주복의 팔 배지에 그려져 있다."
+  },
+  {
+    "rel": "fleet/space-suit/feitian.json",
+    "at": "best_known_for",
+    "en": "China's EVA suit — used by Zhai Zhigang on the country's first spacewalk during Shenzhou 7",
+    "cur": "중국의 EVA 우주복 — Shenzhou 7에서 국가 최초의 우주유영 중 자이지강이 사용"
+  },
+  {
+    "rel": "fleet/space-suit/krechet-94.json",
+    "at": "tagline",
+    "en": "The Soviet lunar suit that never flew — its DNA lives in every Orlan and Feitian",
+    "cur": "달에 가지 않은 소비에트 우주복 — 그 DNA는 모든 Orlan과 Feitian에 살아있다"
+  },
+  {
+    "rel": "fleet/space-suit/krechet-94.json",
+    "at": "description",
+    "en": "Soviet lunar surface suit developed for the cancelled N1/L3 crewed lunar program. Single-piece rear-entry design with the PLSS built into the back hatch — the architectural pattern shared with the Orlan (both developed concurrently in 1967–1969) and later adopted by the Feitian. Krechet hardware survived the program's cancellation and lives in museum collections (notably the Memorial Museum of Cosmonautics, Moscow). Name means \"gyrfalcon\" — the largest of the Falcon birds.",
+    "cur": "N1/L3 유인 달 착륙 계획이 취소되면서 개발이 중단된 소비에트 달 표면 우주복. 후면 진입식 단일 구조로 PLSS가 뒷면 해치에 내장되어 있으며, 이는 Orlan과 공유되는 설계 패턴(둘 다 1967~1969년에 동시에 개발됨)으로, 나중에 Feitian에 의해 채택되었습니다. Krechet 하드웨어는 프로그램 취소 후에도 살아남아 박물관 컬렉션에 보관되어 있습니다(특히 모스크바의 Memorial Museum of Cosmonautics). 이름의 의미는 \"매의 왕\"이라는 뜻의 \"gyrfalcon\"입니다."
+  },
+  {
+    "rel": "fleet/space-suit/krechet-94.json",
+    "at": "best_known_for",
+    "en": "The Soviet lunar suit that never reached the Moon — its rear-entry architecture became the DNA of every Russian and Chinese EVA suit since",
+    "cur": "달에 도달하지 못한 소비에트 우주복 — 그 등판부 침입 아키텍처는 이후 모든 러시아 및 중국 EVA 우주복의 DNA가 되었다"
+  },
+  {
+    "rel": "fleet/space-suit/orlan-mks.json",
+    "at": "tagline",
+    "en": "The latest of a 50-year line of Russian rear-entry EVA suits",
+    "cur": "러시아 50년 역입식 EVA 우주복 계보의 최신 모델"
+  },
+  {
+    "rel": "fleet/space-suit/orlan-mks.json",
+    "at": "description",
+    "en": "Latest variant of the Orlan family — Russian rear-entry EVA suit that has flown continuously since Salyut 6 in 1977. The cosmonaut steps in through a backpack-mounted hatch that locks shut in one motion, eliminating the airlock pre-breathe required by lower-pressure US suits. Operating pressure 5.8 psi (400 hPa) pure O₂. Used on the ISS Russian segment. Earlier Orlan variants served on Salyut and Mir stations.",
+    "cur": "Orlan 계열의 최신 변형 모델 — 1977년 Salyut 6부터 계속 사용되어온 러시아식 역입식 EVA 우주복. 우주인이 등에 장착된 해치를 통해 들어가며, 한 번의 동작으로 잠금되어 저압 미국식 우주복에 필요한 에어록 사전호흡을 제거했습니다. 작동 압력 5.8 psi (400 hPa) 순수 O₂. ISS 러시아 구간에서 사용되고 있습니다. 이전 Orlan 변형 모델들은 Salyut과 Mir 우주정거장에서 사용되었습니다."
+  },
+  {
+    "rel": "fleet/space-suit/orlan-mks.json",
+    "at": "best_known_for",
+    "en": "The latest variant of the Orlan family — Russian rear-entry EVA suit, in service since the 1977 Salyut program",
+    "cur": "Orlan 계열의 최신 변형 모델 — 1977년 Salyut 프로그램 이후 사용 중인 러시아식 역입식 EVA 우주복"
+  },
+  {
+    "rel": "fleet/space-suit/shenzhou-iva.json",
+    "at": "tagline",
+    "en": "China's launch-entry suit, worn on every Shenzhou flight since 2003",
+    "cur": "2003년부터 모든 Shenzhou 비행에 착용한 중국의 발사 점화 한 벌"
+  },
+  {
+    "rel": "fleet/space-suit/shenzhou-iva.json",
+    "at": "description",
+    "en": "Chinese launch-entry pressure suit derived from the Soviet Sokol family. Used on Shenzhou 5 in 2003 when Yang Liwei became China's first taikonaut, and on every subsequent Shenzhou mission. Back-entry seam, fixed helmet, umbilical-fed; the architectural similarity to Sokol reflects China's early space-program technology transfer from Russia.",
+    "cur": "소련의 Sokol 계열에서 파생된 중국의 발사-귀환 기압복. 양리웨이가 중국 최초의 우주비행사가 된 2003년 Shenzhou 5에서 사용되었으며, 그 이후의 모든 Shenzhou 미션에서도 사용되었다. 후방 진입 솔기, 고정식 헬멧, 탯줄 공급식이며, Sokol과의 구조적 유사성은 러시아로부터의 중국 초기 우주 프로그램 기술 이전을 반영한다."
+  },
+  {
+    "rel": "fleet/space-suit/shenzhou-iva.json",
+    "at": "best_known_for",
+    "en": "Worn by every Chinese taikonaut on every Shenzhou flight since 2003",
+    "cur": "2003년부터 모든 Shenzhou 비행에 있는 모든 중국 taikonaut에 의해 착용해"
+  },
+  {
+    "rel": "fleet/space-suit/sokol-kv-2.json",
+    "at": "tagline",
+    "en": "The Soyuz launch-entry suit, mandatory since the 1971 Soyuz 11 decompression deaths",
+    "cur": "소유즈 발사-귀환 우주복. 1971년 Soyuz 11 감압 사망 사건 이후 필수 장비"
+  },
+  {
+    "rel": "fleet/space-suit/sokol-kv-2.json",
+    "at": "description",
+    "en": "Soft pressure suit worn inside the Soyuz descent module on every launch and re-entry since Soyuz T-2 in 1980, replacing the original Sokol-K. Back-entry seam (laced shut), fixed helmet with flip-up visor, umbilical for O₂ + comms + cooling water. Not designed for spacewalking — it is the backup that keeps the crew alive long enough to land if cabin pressure fails.",
+    "cur": "1980년 Soyuz T-2부터 모든 발사와 귀환 때마다 소유즈 하강 모듈 내부에서 착용하는 연질 압력복으로, 원래의 Sokol-K를 대체했다. 등부 시임(끈으로 꽉 묶음), 상하 이동식 바이저가 달린 고정 헬멧, O₂ + 통신 + 냉각수용 탯줄. 우주행 목적으로 설계되지 않았으며 객실 기압이 상실되어도 승무원이 착륙까지 생존할 수 있도록 하는 백업 시스템이다."
+  },
+  {
+    "rel": "fleet/space-suit/sokol-kv-2.json",
+    "at": "best_known_for",
+    "en": "The only suit worn on Soyuz — created after the Soyuz 11 decompression deaths in 1971",
+    "cur": "소유즈에서만 착용하는 우주복 — 1971년 Soyuz 11 감압 사망 사건 이후 개발됨"
+  },
+  {
+    "rel": "fleet/space-suit/sokol-m.json",
+    "at": "tagline",
+    "en": "Russia's next-generation Soyuz/PTK launch-entry suit",
+    "cur": "러시아의 차세대 Soyuz/PTK 런칭"
+  },
+  {
+    "rel": "fleet/space-suit/sokol-m.json",
+    "at": "description",
+    "en": "Replacement for Sokol KV-2 — incorporates lessons learned over 50 years of Soyuz launch-entry operations. Slated for Russia's PTK / Orel crewed spacecraft. Same general architecture (back-entry, umbilical-fed) with modernised materials and ergonomics.",
+    "cur": "Sokol KV-2에 대한 교체 - Soyuz 발사 기반 작업 50 년 이상의 교훈을 통합. 러시아 PTK / Orel 승무원 우주선에 대한 슬레이트. 현대화 된 재료와 인체 공학적과 같은 일반 건축 (back-entry, umbilical-fed)."
+  },
+  {
+    "rel": "fleet/space-suit/sokol-m.json",
+    "at": "best_known_for",
+    "en": "Russia's next-generation Soyuz/PTK launch-entry suit",
+    "cur": "러시아의 차세대 Soyuz/PTK 런칭"
+  },
+  {
+    "rel": "fleet/space-suit/starliner-suit.json",
+    "at": "name",
+    "en": "Boeing Blue (Starliner IVA)",
+    "cur": "Boeing Blue (Starliner IVA)"
+  },
+  {
+    "rel": "fleet/space-suit/starliner-suit.json",
+    "at": "tagline",
+    "en": "Boeing's blue Starliner launch-entry suit",
+    "cur": "보잉의 파란색 Starliner 발사-재진입 복합복"
+  },
+  {
+    "rel": "fleet/space-suit/starliner-suit.json",
+    "at": "description",
+    "en": "Lightweight launch-entry pressure suit built by David Clark Company for Boeing's CST-100 Starliner commercial-crew vehicle. Touch-screen-compatible gloves, integrated communications cap, vented helmet. Debuted on the Crew Flight Test mission (June 2024) flown by Butch Wilmore and Suni Williams, who returned via Crew-9 in February 2025 after Starliner returned uncrewed.",
+    "cur": "보잉의 CST-100 Starliner 상업용 승무원 우주선을 위해 David Clark Company에서 제작한 경량 발사-재진입 압력복. 터치스크린 호환 장갑, 통합 통신 캡, 환기 헬멧. 2024년 6월 Crew Flight Test 임무에 처음 선보였으며, 부치 윌모어와 수니 윌리엄스가 탔고, Starliner가 무인으로 귀환한 후 2025년 2월 Crew-9을 통해 귀환했다."
+  },
+  {
+    "rel": "fleet/space-suit/starliner-suit.json",
+    "at": "best_known_for",
+    "en": "Boeing's blue IVA suit for the CST-100 Starliner, debuted on the Crew Flight Test 2024",
+    "cur": "2024년 Crew Flight Test에서 선보인 CST-100 Starliner의 보잉 파란색 IVA 복합복"
+  },
+  {
+    "rel": "fleet/station/iss.json",
+    "at": "dispatch",
+    "en": "The International Space Station is the largest structure humanity has ever built in space and the place every thread of the space age converges. Its Russian core descends directly from Salyut and Mir; its American segment from Skylab; it was assembled by the Space Shuttle, is crewed by Soyuz, resupplied by the descendants of the Progress freighter, and carries laboratories built by Europe and Japan — nearly every earlier program present in it as heritage. Assembled from 1998 and continuously crewed since November 2000, it is the longest unbroken human presence off Earth in history, and the clearest proof of a single idea: that the greatest things in space are built not by winning a race but by former rivals choosing, decade after decade, to build them together.",
+    "cur": "국제우주정거장은 인류가 우주에 건설한 가장 큰 구조물이자 우주 시대의 모든 흐름이 수렴하는 장소이다. 러시아 핵심부는 Salyut과 Mir로부터 직접 계승되었고, 미국 구역은 Skylab으로부터 유래했으며, Space Shuttle에 의해 조립되고 Soyuz로 승무원이 운송되며 Progress 화물선의 후속 우주선들로 보급되고 유럽과 일본이 건설한 실험실을 탑재하고 있다 — 거의 모든 초기 프로그램이 유산으로 그 안에 존재한다. 1998년부터 조립되어 2000년 11월 이후 지속적으로 승무원이 상주하면서, 역사상 가장 긴 지구 밖 인류의 끊임없는 존재이며, 하나의 아이디어에 대한 가장 명확한 증거이다: 우주에서 가장 위대한 것들은 경쟁에서 승리함으로써가 아니라 과거의 경쟁자들이 수십 년에 걸쳐 함께 건설하기로 선택함으로써 만들어진다는 것."
+  },
+  {
+    "rel": "fleet/station/iss.json",
+    "at": "description",
+    "en": "The International Space Station — humanity’s longest continuously crewed habitat, occupied since November 2000. Assembled across more than 40 launches by NASA, Roscosmos, ESA, JAXA, and CSA. Currently scheduled for deorbit around 2031.",
+    "cur": "국제우주정거장 — 인류의 가장 긴 지속적으로 승무원 서식지, 2000년 11월 이후 점령. NASA, Roscosmos, ESA, JAXA 및 CSA에 의해 40 개 이상의 출시를 통해 조립. 현재 2031 주위에 직불 예정."
+  },
+  {
+    "rel": "fleet/station/mir.json",
+    "at": "tagline",
+    "en": "First modular space station; 15-year service",
+    "cur": "첫 모듈식 우주 정거장; 15년 운영"
+  },
+  {
+    "rel": "fleet/station/mir.json",
+    "at": "dispatch",
+    "en": "Mir was the first modular space station — and the bridge between two eras of spaceflight. Where every station before it was launched whole, Mir was assembled in orbit over a decade, module by module, growing into a sprawling complex that stayed aloft for fifteen years. It set the endurance record that still stands (Valeri Polyakov's 437 unbroken days, proof a crew could survive a Mars-length flight), outlived the Soviet Union that built it by a decade, and survived a fire and a depressurising collision in 1997 that its crew fought off by hand. In its final years American Shuttles docked with it and US astronauts lived aboard — the rehearsal, in hardware and in trust, for the International Space Station that inherited nearly everything Mir worked out.",
+    "cur": "Mir는 최초의 모듈식 우주 정거장이었으며, 우주비행의 두 시대 사이의 다리였다. 그 이전의 모든 정거장이 통째로 발사되었던 반면, Mir는 10년에 걸쳐 궤도상에서 모듈 하나씩 조립되어 15년 동안 우주에 떠 있는 거대한 복합체로 성장했다. 현재까지도 깨지지 않은 내구력 기록을 세웠고(발레리 폴랴코프의 437일 연속 우주 체류 — 승무원이 화성 길이의 비행을 견딜 수 있음을 증명), 그것을 건설한 소련보다 10년 더 오래 존속했으며, 1997년 화재와 감압 충돌을 견뎌냈다. 최후의 몇 년간에는 미국의 셔틀이 도킹했고 미국 우주인들이 탑승했는데, 이는 Mir가 개척한 거의 모든 것을 상속받은 국제우주정거장을 위한 하드웨어와 신뢰 측면의 리허설이었다."
+  },
+  {
+    "rel": "fleet/station/mir.json",
+    "at": "description",
+    "en": "The first modular space station, assembled in orbit between 1986 and 1996 and continuously occupied for almost 10 years (1989–1999), with a final crew visit in April–June 2000. Hosted American astronauts during the Shuttle-Mir program (1995–1998) — the partnership that made ISS possible.",
+    "cur": "1986년부터 1996년 사이에 궤도상에서 조립되었고 거의 10년 동안 계속 점유되었으며(1989–1999), 2000년 4월–6월에 마지막 승무원이 방문한 최초의 모듈식 우주 정거장. Shuttle-Mir 프로그램(1995–1998) 동안 미국 우주인들을 수용했으며, 이 협력은 ISS를 가능하게 했다."
+  },
+  {
+    "rel": "fleet/station/mir.json",
+    "at": "best_known_for",
+    "en": "First modular space station; 15-year service",
+    "cur": "첫 모듈식 우주 정거장; 15년 운영"
+  },
+  {
+    "rel": "fleet/station/salyut-1.json",
+    "at": "dispatch",
+    "en": "Salyut 1 was the first space station in history — launched in April 1971, two years ahead of America's Skylab, and the moment the Soviet Union turned its lead in endurance into a permanent presence in orbit. Its triumph was also its tragedy: the first crew to live aboard it, Soyuz 11, died during their return when a valve vented their cabin to vacuum, and the station was never occupied again. It proved a station could be built and reached — and, at the highest cost, taught the lesson that reshaped every crewed spacecraft after it.",
+    "cur": "Salyut 1은 역사상 최초의 우주 정거장으로, 1971년 4월에 발사되어 미국의 Skylab보다 2년 앞섰으며, 소련이 장기 체류 분야의 우위를 궤도상 영구 거점으로 전환한 순간이었다. 그 승리는 동시에 비극이기도 했다. 정거장에 처음 체류한 Soyuz 11 승무원들은 귀환 중 밸브가 열리면서 캡슐 내부가 진공에 노출되어 사망했고, 정거장은 다시는 사용되지 않았다. 이는 정거장을 건설하고 도달할 수 있음을 증명했지만, 가장 큰 대가를 치르며 이후 모든 유인 우주선을 재설계하게 만든 교훈을 남겼다."
+  },
+  {
+    "rel": "fleet/station/salyut-1.json",
+    "at": "description",
+    "en": "The world’s first space station — launched 1971, occupied for 23 days by the Soyuz 11 crew (Dobrovolski, Volkov, Patsayev), all of whom died on return when their capsule depressurised. Salyut 1 was deorbited later that year.",
+    "cur": "세계 최초의 우주정거장 — 1971년에 발사되었으며, Soyuz 11 승무원(Dobrovolski, 볼코프, 파차예프)이 23일간 점유했고, 그들 모두 귀환 시 캡슐의 감압으로 인해 사망했습니다. Salyut 1은 같은 해 후반에 궤도이탈되었습니다."
+  },
+  {
+    "rel": "fleet/station/salyut-2.json",
+    "at": "tagline",
+    "en": "First Almaz military station — depressurised on orbit before any crew arrived; reentered 1973-05-28 after 54 days",
+    "cur": "첫 번째 Almaz 군사 우주정거장 — 승무원 도착 전 궤도에서 감압; 1973-05-28 54일 후 대기권 재진입"
+  },
+  {
+    "rel": "fleet/station/salyut-2.json",
+    "at": "dispatch",
+    "en": "Salyut 2 was not really a Salyut at all — it was the first Almaz, a secret military reconnaissance station flown under the civilian name to hide its purpose. It never carried a crew. Days after reaching orbit it lost pressure and began to tumble, its systems failing, and it re-entered without ever being occupied. A rough, hidden start to the military half of the programme, and a reminder of how unforgiving the early station-building years were.",
+    "cur": "Salyut 2는 사실 진정한 Salyut가 아니었다 — 그 목적을 숨기기 위해 민간 이름으로 비행한 첫 번째 Almaz, 비밀 군사 정찰 우주정거장이었다. 승무원을 탑승시킨 적이 없었다. 궤도에 도달한 지 며칠 후 기압이 떨어지기 시작했고 우주정거장은 회전하기 시작했으며 시스템들이 고장 났고, 점유된 적 없이 대기권으로 재진입했다. 프로그램의 군사 부분을 시작한 거친, 숨겨진 출발이었으며, 초기 우주정거장 건설 시대가 얼마나 가혹했는지를 상기시켜주는 일이었다."
+  },
+  {
+    "rel": "fleet/station/salyut-2.json",
+    "at": "description",
+    "en": "The first of the three Soviet military Almaz space stations — publicly called Salyut 2 to disguise its real purpose (DoD-style reconnaissance, with a 6.4-m focal-length panoramic camera and a film-return capsule). Launched 1973-04-03 on a Proton-K from Baikonur, Salyut 2 reached orbit successfully but debris from the Proton's spent third stage — which exploded three days after launch — struck the station ~10 days later, tearing off both solar panels and puncturing the hull. The resulting power loss caused depressurisation on the 13th day (1973-04-14), rendering the station unusable before any crew could be sent. The planned crew (Pavel Popovich + Yury Artyukhin) instead flew on Salyut 3 the following year. Salyut 2 reentered the atmosphere 1973-05-28 — the shortest-lived station program in history at that point. Its existence as a military station was only declassified after the Soviet Union's collapse.",
+    "cur": "세 개의 소비에트 군사용 Almaz 우주정거장 중 첫 번째로, 실제 목적을 숨기기 위해 공식적으로는 Salyut 2라고 불렸습니다(국방부 스타일의 정찰로, 초점거리 6.4m인 파노라마 카메라와 필름 귀환 캡슐을 탑재). 1973년 4월 3일 바이코누르에서 Proton-K로 발사되어 Salyut 2는 성공적으로 궤도에 진입했으나, 발사 3일 후 폭발한 Proton의 사용한 3단계에서 나온 우주 잔해가 약 10일 후 우주정거장에 충돌하여 태양전지판 양쪽을 찢어내고 선체에 구멍을 뚫었습니다. 그 결과 생긴 전력 손실로 인해 13일째(1973년 4월 14일) 감압이 발생하여 승무원이 파견되기 전에 우주정거장을 사용 불가능하게 만들었습니다. 예정되었던 승무원(파벨 포포비치 + Yury Artyukhin)은 대신 다음 해 Salyut 3에 탑승했습니다. Salyut 2는 1973년 5월 28일 대기권으로 재진입했습니다. 당시로서는 역사상 가장 단명한 우주정거장 프로그램이었습니다. 군사용 우주정거장으로서의 그 존재는 소비에트 연방이 붕괴된 이후에야 기밀해제되었습니다."
+  },
+  {
+    "rel": "fleet/station/salyut-2.json",
+    "at": "best_known_for",
+    "en": "First Almaz military station — depressurised on orbit before any crew arrived; reentered 1973-05-28 after 54 days",
+    "cur": "첫 번째 Almaz 군사 우주정거장 — 승무원 도착 전 궤도에서 감압; 1973-05-28 54일 후 대기권 재진입"
+  },
+  {
+    "rel": "fleet/station/salyut-3.json",
+    "at": "tagline",
+    "en": "Second Almaz military station — Soyuz 14 crew Jul 1974; Soyuz 15 failed automatic docking; reportedly tested an onboard cannon 1975-01-24",
+    "cur": "두 번째 Almaz 군사 우주정거장 — Soyuz 14 승무원 1974년 7월; Soyuz 15 자동 도킹 실패; 1975-01-24 탑재 캐논 시험 보도"
+  },
+  {
+    "rel": "fleet/station/salyut-3.json",
+    "at": "dispatch",
+    "en": "Salyut 3 was Almaz — a crewed military reconnaissance station, its true purpose buried under the civilian name. Its single crew, Soyuz 14, spent about two weeks aboard operating long-focus cameras to photograph targets below, in the era before automated spy satellites made human eyes unnecessary. Most famously, before it was deorbited, Salyut 3 test-fired a rapid-fire cannon in orbit — the only known instance of a weapon being fired from a crewed spacecraft.",
+    "cur": "Salyut 3는 알마즈(Almaz)였다 — 승무원이 탑승하는 군사 정찰 우주정거장으로, 그 진정한 목적은 민간용 이름 아래 감춰져 있었다. 단독 승무원인 Soyuz 14는 약 2주간 탑승하여 아래 목표를 촬영하기 위해 장초점 카메라를 운용했다. 자동화된 첩보위성이 인간의 눈을 불필요하게 만들기 이전의 시대였다. 가장 유명한 것은 대기권 재진입 전에 Salyut 3이 궤도상에서 빠른 속사 캐논을 시험 발사했다는 점이다 — 승무원이 탑승한 우주선에서 무기가 발사된 유일하게 알려진 사례이다."
+  },
+  {
+    "rel": "fleet/station/salyut-3.json",
+    "at": "description",
+    "en": "The second Soviet military Almaz station — again publicly called Salyut 3 to mask its surveillance role. Launched 1974-06-25 on a Proton-K, Salyut 3 hosted one short crew mission (Soyuz 14, Popovich + Artyukhin, 15 days, 1974-07-03 to 1974-07-19) which exercised the station's 6.4-m Agat camera + film-return capsule. A second crew attempt (Soyuz 15, Sarafanov + Demin, 1974-08-26) failed the automatic Igla rendezvous and returned the same day. Just before deorbit on 1975-01-24, Salyut 3 reportedly test-fired its onboard Nudelman cannon (sources cite either 23-mm or 30-mm calibre) — the only known instance of a weapon firing in space (recoil was absorbed by the station's attitude-control thrusters; the round disintegrated in the atmosphere). Reentered the atmosphere 1975-01-24.",
+    "cur": "두 번째 소비에트 군사 Almaz 우주정거장 — 역시 감시 역할을 감추기 위해 공식적으로 Salyut 3이라고 불렸다. 1974-06-25에 Proton-K에 탑재되어 발사되었으며, Salyut 3은 한 번의 단기 승무원 임무(Soyuz 14, 포포비치 + Artyukhin, 15일, 1974-07-03 ~ 1974-07-19)를 호스트했다. 이 임무는 우주정거장의 6.4 m Agat 카메라 및 필름 회수 캡슐을 운용했다. 두 번째 승무원 시도(Soyuz 15, Sarafanov + Demin, 1974-08-26)는 자동 Igla 랑데부에 실패했으며 같은 날에 귀환했다. 대기권 재진입 직전인 1975-01-24에 Salyut 3은 탑재된 Nudelman 캐논(구경은 23-mm 또는 30-mm로 인용됨)을 시험 발사한 것으로 보도되었다 — 우주에서 무기가 발사된 유일하게 알려진 사례이다(반동은 우주정거장의 자세 제어 스러스터에 의해 흡수되었으며, 탄환은 대기권에서 분해되었다). 1975-01-24에 대기권으로 재진입했다."
+  },
+  {
+    "rel": "fleet/station/salyut-3.json",
+    "at": "best_known_for",
+    "en": "Second Almaz military station — Soyuz 14 crew Jul 1974; Soyuz 15 failed automatic docking; reportedly tested an onboard cannon 1975-01-24",
+    "cur": "두 번째 Almaz 군사 우주정거장 — Soyuz 14 승무원 1974년 7월; Soyuz 15 자동 도킹 실패; 1975-01-24 탑재 캐논 시험 보도"
+  },
+  {
+    "rel": "fleet/station/salyut-4.json",
+    "at": "tagline",
+    "en": "Civilian DOS-4 station — hosted Soyuz 17 (29 days) + Soyuz 18 (63 days, then-longest spaceflight) crews; deorbited 1977-02-03",
+    "cur": "민간인 DOS-4 우주정거장 — Soyuz 17 (30일) 및 Soyuz 18 (63일, 당시 최장 유인 우주비행) 승무원 탑승; 1977-02-03 재진입"
+  },
+  {
+    "rel": "fleet/station/salyut-4.json",
+    "at": "dispatch",
+    "en": "Salyut 4 was where the civilian station line finally found its feet. A DOS science station, it worked reliably where earlier stations had failed — hosting two crews, one for 29 days and one for 63, and carrying a solar telescope and a full science program. After the deadly start of Salyut 1 and the on-orbit failures that followed, Salyut 4 was the quiet proof that the Soviet Union could now keep a station and its crews healthy and productive for weeks at a time.",
+    "cur": "Salyut 4는 민간인 우주정거장 계획이 마침내 궤도에 오르는 데 성공한 곳이었다. DOS 과학 우주정거장으로서, 이전 우주정거장들이 실패한 곳에서 안정적으로 작동했다 — 두 승무원, 한 팀은 29일간, 다른 팀은 63일간 탑승했으며 태양 망원경과 완전한 과학 프로그램을 탑재했다. Salyut 1의 비극적인 시작과 그 이후의 궤도상 고장들 다음에, Salyut 4는 소련이 이제 우주정거장과 그 승무원들을 몇 주간 건강하고 생산적으로 유지할 수 있다는 조용한 증거였다."
+  },
+  {
+    "rel": "fleet/station/salyut-4.json",
+    "at": "description",
+    "en": "The fourth civilian Salyut (DOS-4), built by the Korolev bureau and operated by the Soviet civilian space programme rather than the military Almaz line. Launched 1974-12-26 on a Proton-K, Salyut 4 carried a 25-cm OST-1 solar telescope, an X-ray telescope, and a complement of life-sciences experiments. Hosted two long-duration crews: Soyuz 17 (Gubarev + Grechko, 29 days, 1975-01-11 to 1975-02-09) and Soyuz 18 (Klimuk + Sevastyanov, 63 days, 1975-05-24 to 1975-07-26, then the longest crewed spaceflight in history). A third attempt — Soyuz 18a (Lazarev + Makarov, 1975-04-05) — suffered a 21-g booster failure during launch, returning the crew safely after the highest-ever landing g-load survived by humans. Salyut 4 hosted Soyuz 20, an automated dog/biological-experiment 3-month visit, before re-entering on 1977-02-03 after 26 months.",
+    "cur": "네 번째 민간인 Salyut (DOS-4)로, 코롤료프 설계국에서 제작했으며 군용 Almaz 계획이 아닌 소련 민간 우주 프로그램에서 운영했다. 1974-12-26에 Proton-K로 발사되었으며, Salyut 4는 25 cm OST-1 태양 망원경, X선 망원경 및 생명과학 실험 장비를 탑재했다. 두 장기 체류 승무원을 탑승시켰다: Soyuz 17 (Gubarev + Grechko, 29일, 1975-01-11 ~ 1975-02-09) 및 Soyuz 18 (Klimuk + Sevastyanov, 63일, 1975-05-24 ~ 1975-07-26, 당시 최장 유인 우주비행). 세 번째 시도 — Soyuz 18a (Lazarev + Makarov, 1975-04-05) — 발사 중 21 g 부스터 고장을 겪었지만, 인류가 견딘 최고의 착륙 g 부하 이후 승무원을 안전하게 회수했다. Salyut 4는 자동화된 개/생물 실험 3개월 체류인 Soyuz 20을 탑승시킨 후, 26개월 운영 이후 1977-02-03에 재진입했다."
+  },
+  {
+    "rel": "fleet/station/salyut-4.json",
+    "at": "best_known_for",
+    "en": "Civilian DOS-4 station — hosted Soyuz 17 (29 days) + Soyuz 18 (63 days, then-longest spaceflight) crews; deorbited 1977-02-03",
+    "cur": "민간인 DOS-4 우주정거장 — Soyuz 17 (30일) 및 Soyuz 18 (63일, 당시 최장 유인 우주비행) 승무원 탑승; 1977-02-03 재진입"
+  },
+  {
+    "rel": "fleet/station/salyut-5.json",
+    "at": "tagline",
+    "en": "Last Almaz military station — Soyuz 21 + Soyuz 24 crews; Soyuz 23 failed approach; reentered 1977-08-08 after 412 days",
+    "cur": "마지막 Almaz 군사 정거장 — Soyuz 21 + Soyuz 24 승무원; Soyuz 23 도킹 실패; 1977-08-08에 412일 후 재진입"
+  },
+  {
+    "rel": "fleet/station/salyut-5.json",
+    "at": "dispatch",
+    "en": "Salyut 5 was the last of the Almaz military stations, flown in 1976 under the usual civilian disguise. Two crews were sent: the first, Soyuz 21, was evacuated early amid reports of a foul odour and a stressed crew; the second, Soyuz 24, completed a normal stay. Soon after, automated reconnaissance satellites had improved to the point that cosmonauts with cameras were no longer worth the risk, and the military Almaz line was quietly retired — leaving the future to the civilian stations.",
+    "cur": "Salyut 5는 마지막 Almaz 군사 정거장으로, 1976년 통상적인 민간용 위장 하에서 운영되었습니다. 두 개의 승무원이 파견되었습니다. 첫 번째 Soyuz 21은 불쾌한 냄새와 스트레스 상태의 승무원 보고로 인해 조기 귀환했으며, 두 번째 Soyuz 24는 정상적인 체류를 완료했습니다. 그 직후, 자동화된 정찰 위성이 카메라를 들고 있는 우주비행사가 더 이상 위험한 가치가 없을 정도로 발전했고, 군사용 Almaz 프로그램은 조용히 폐기되었으며 — 미래는 민간용 정거장에 남겨졌습니다."
+  },
+  {
+    "rel": "fleet/station/salyut-5.json",
+    "at": "description",
+    "en": "The third and last Soviet military Almaz station. Launched 1976-06-22 on a Proton-K, Salyut 5 hosted two crews: Soyuz 21 (Volynov + Zholobov, 49 days, 1976-07-06 to 1976-08-24 — cut short by acrid odours the crew traced to a corroded film-return capsule seal) and Soyuz 24 (Gorbatko + Glazkov, 17 days, 1977-02-07 to 1977-02-25 — first cosmonauts to swap a station's atmosphere through vent + recharge). Soyuz 23 (Zudov + Rozhdestvensky, 1976-10-14) failed to dock after the Igla rendezvous system malfunctioned; the crew survived a high-water splashdown in Lake Tengiz, the only Soviet water landing. Salyut 5 was the last Almaz mission flown — the program was cancelled after the station deorbited on 1977-08-08.",
+    "cur": "세 번째이자 마지막 소비에트 군사 Almaz 정거장입니다. 1976-06-22에 Proton-K로 발사된 Salyut 5는 두 개의 승무원을 호스팅했습니다: Soyuz 21 (볼리노프 + Zholobov, 49일, 1976-07-06부터 1976-08-24 — 승무원이 부식된 필름 반환 캡슐 밀봉으로 추적한 자극적인 냄새로 인해 단축됨) 및 Soyuz 24 (고르밧코 + Glazkov, 17일, 1977-02-07부터 1977-02-25 — 통풍구 + 재충전을 통해 정거장의 대기를 교체한 첫 우주비행사). Soyuz 23 (Zudov + Rozhdestvensky, 1976-10-14)은 Igla 랑데부 시스템이 오작동한 후 도킹에 실패했습니다. 승무원은 Tengiz 호수에서의 고수위 불시착을 생존했으며, 이는 유일한 소비에트 수상 착륙입니다. Salyut 5는 운영된 마지막 Almaz 미션이었습니다 — 정거장이 1977-08-08에 궤도이탈한 후 프로그램이 취소되었습니다."
+  },
+  {
+    "rel": "fleet/station/salyut-5.json",
+    "at": "best_known_for",
+    "en": "Last Almaz military station — Soyuz 21 + Soyuz 24 crews; Soyuz 23 failed approach; reentered 1977-08-08 after 412 days",
+    "cur": "마지막 Almaz 군사 정거장 — Soyuz 21 + Soyuz 24 승무원; Soyuz 23 도킹 실패; 1977-08-08에 412일 후 재진입"
+  },
+  {
+    "rel": "fleet/station/salyut-6.json",
+    "at": "dispatch",
+    "en": "Salyut 6 was the breakthrough — the station where the Soviet programme cracked permanence. Its second docking port meant an uncrewed Progress freighter could dock and pump in propellant, air, water, and supplies while a crewed Soyuz stayed attached at the other end, so the station no longer had an expiry date. It hosted crew after crew in continuous relay, set endurance records past half a year, and welcomed the first Interkosmos guests — the first people in space who were neither American nor Soviet. Every operational pattern of Mir and the ISS was rehearsed here.",
+    "cur": "Salyut 6는 돌파구였다 — 소련 프로그램이 영구성을 확보한 우주정거장이었다. 두 번째 도킹 포트 덕분에 무인 Progress 화물선이 도킹하여 추진제, 공기, 물, 그리고 보급품을 주입하는 동안 유인 Soyuz가 반대편에 부착된 채로 있을 수 있었고, 따라서 우주정거장은 더 이상 만료일이 없었다. 연속적인 교대로 승무원을 계속 수용했고, 6개월을 넘기는 체류 기록을 세웠으며, 최초의 Interkosmos 손님들 — 미국인도 소련인도 아닌 최초의 우주인들 — 을 맞이했다. Mir와 ISS의 모든 운영 패턴이 여기서 예행연습되었다."
+  },
+  {
+    "rel": "fleet/station/salyut-6.json",
+    "at": "description",
+    "en": "The first multi-port Salyut, capable of receiving Progress resupply ships and rotating long-duration crews. Continuously occupied (with breaks) for nearly five years between 1977 and 1982 — the model for every modular station that followed.",
+    "cur": "우선 멀티 포트 Salyut, Progress resupply 선박 및 회전 장거리 승무원을받을 수 있습니다. 1977년과 1982년 사이에 거의 5년 동안 지속적으로 점유된 (틈에) — 뒤에 오는 각 모듈 역을 위한 모형."
+  },
+  {
+    "rel": "fleet/station/salyut-7.json",
+    "at": "dispatch",
+    "en": "Salyut 7 was the last Salyut and the bridge to Mir — and the setting for the hardest repair job ever attempted in orbit. In 1985, after the abandoned station fell silent, frozen, and slowly tumbling, two cosmonauts flew up, manually docked with the dead and unpowered hulk, and brought it back to life by hand, thawing it out and restarting its systems one by one. Salyut 7 carried the two-port, Progress-resupplied architecture to full maturity and handed it, essentially complete, to the modular station that would replace it.",
+    "cur": "Salyut 7은 마지막 Salyut이자 Mir로 가는 가교였으며, 궤도상에서 시도된 가장 어려운 수리 작업의 무대였다. 1985년, 버려진 정거장이 침묵에 빠지고 얼어붙은 채 천천히 회전하게 되자, 두 명의 우주비행사가 날아올라 죽어있고 전력이 없는 선체에 수동으로 도킹하여 시스템을 하나씩 해동하고 재시작하면서 손수 되살려냈다. Salyut 7은 두 개의 포트를 가진 Progress 재보급 구조를 완전히 성숙시켜, 이를 대체할 모듈식 정거장에 본질적으로 완성된 형태로 전달했다."
+  },
+  {
+    "rel": "fleet/station/salyut-7.json",
+    "at": "description",
+    "en": "The last Salyut, in service 1982–1991. Famously revived by Vladimir Dzhanibekov and Viktor Savinykh in 1985 after losing power and tumbling — the first orbital salvage mission. Reentered uncontrolled in 1991 over Argentina.",
+    "cur": "마지막 Salyut로, 1982년부터 1991년까지 운영되었습니다. 블라디미르 자니베코프와 빅토르 사비니흐가 1985년에 전력을 잃고 회전하던 이 우주정거장을 부활시킨 것으로 유명합니다. 최초의 우주 위성 구조 임무였습니다. 1991년에 아르헨티나 상공에서 통제 불능 상태로 대기권에 재진입했습니다."
+  },
+  {
+    "rel": "fleet/station/skylab.json",
+    "at": "dispatch",
+    "en": "Skylab was America's first space station, and one of history's great acts of improvisation — an entire orbital workshop built inside the empty hydrogen tank of a spent Saturn V upper stage. Rather than design a station from scratch, NASA converted the hardware the cancelled Moon landings had left over into a house-sized laboratory with crew quarters, a shower, and a crewed solar observatory. Nearly destroyed at launch when its sun shield tore away, it was saved by the first crew's improvised repairs and went on to prove the thing every later station assumed: that people can live and work in orbit for months, and fix their spacecraft when it breaks.",
+    "cur": "Skylab는 미국 최초의 우주정거장이자 역사상 가장 위대한 즉흥적 성과 중 하나였다 — 사용한 Saturn V 상단부의 빈 수소 탱크 내부에 건설된 완전한 궤도 작업실이었다. NASA는 정거장을 처음부터 설계하는 대신, 취소된 달 착륙 임무에서 남은 하드웨어를 승무원 거주 구역, 샤워 시설, 유인 태양 관측소를 갖춘 집 크기의 실험실로 개조했다. 발사 시 차양막이 찢어져 거의 파괴될 뻔했으나, 첫 번째 승무원의 즉흥적인 수리로 구조되었고, 이후 모든 우주정거장이 전제로 삼은 사실을 증명했다: 사람들은 궤도에서 수개월 동안 생활하고 작업할 수 있으며, 우주선이 고장 나면 수리할 수 있다는 것을."
+  },
+  {
+    "rel": "fleet/station/skylab.json",
+    "at": "description",
+    "en": "America’s first space station, built from a Saturn V S-IVB upper stage. Three crews of three each lived aboard between 1973 and 1974, conducting solar observations and zero-g experiments. Reentered uncontrolled over Australia in 1979.",
+    "cur": "미국의 첫 번째 우주 역, 토성 V S-IVB 상부 단계에서 내장. 세 명의 승무원은 1973 년과 1974 년 사이에, 태양 관측 및 제로g 실험을 수행했습니다. 1979년에 호주에 통제되지 않는."
+  },
+  {
+    "rel": "fleet/station/tiangong-1.json",
+    "at": "tagline",
+    "en": "First Chinese space station; single-module testbed",
+    "cur": "중국 최초의 우주 정거장; 단일 모듈 시험 시설"
+  },
+  {
+    "rel": "fleet/station/tiangong-1.json",
+    "at": "description",
+    "en": "Tiangong-1 is a space station built by CAST in China. First Chinese space station; single-module testbed. Launched in 2011, hosted two crewed visits (Shenzhou 9 in 2012 and Shenzhou 10 in 2013); contact lost March 2016 and reentered uncontrolled April 2, 2018.",
+    "cur": "Tiangong-1은 중국의 CAST가 건설한 우주 정거장입니다. 중국 최초의 우주 정거장이자 단일 모듈 시험 시설입니다. 2011년 발사되었으며, 두 번의 유인 방문(2012년 Shenzhou 9, 2013년 Shenzhou 10)을 호스팅했습니다. 2016년 3월 통신이 끊겼고, 2018년 4월 2일 통제되지 않은 상태로 대기권 재진입했습니다."
+  },
+  {
+    "rel": "fleet/station/tiangong-1.json",
+    "at": "best_known_for",
+    "en": "First Chinese space station; single-module testbed",
+    "cur": "중국 최초의 우주 정거장; 단일 모듈 시험 시설"
+  },
+  {
+    "rel": "fleet/station/tiangong-2.json",
+    "at": "tagline",
+    "en": "Second Chinese station testbed",
+    "cur": "중국의 두 번째 우주 스테이션 시험 시설"
+  },
+  {
+    "rel": "fleet/station/tiangong-2.json",
+    "at": "description",
+    "en": "Tiangong-2 is a space station built by CAST in China. Second Chinese station testbed. Launched in September 2016, hosted Shenzhou 11 (30-day mission, October–November 2016, China's longest crewed mission at the time) and Tianzhou-1 cargo ship (2017); deorbited July 19, 2019.",
+    "cur": "Tiangong-2는 중국 CAST가 건설한 우주 스테이션입니다. 중국의 두 번째 우주 스테이션 시험 시설입니다. 2016년 9월 발사되었으며, Shenzhou 11(30일 임무, 2016년 10월–11월, 당시 중국 최장 유인 임무)과 Tianzhou-1 화물선(2017)을 탑승시켰습니다. 2019년 7월 19일 대기권 재진입하였습니다."
+  },
+  {
+    "rel": "fleet/station/tiangong-2.json",
+    "at": "best_known_for",
+    "en": "Second Chinese station testbed",
+    "cur": "중국의 두 번째 우주 스테이션 시험 시설"
+  },
+  {
+    "rel": "fleet/station/tiangong.json",
+    "at": "description",
+    "en": "China’s modular space station — Tianhe core plus Wentian and Mengtian science labs, fully assembled in October 2022 and continuously crewed since June 2022. With a mass of ~66 t and pressurised volume of ~110 m³, Tiangong is smaller than Mir (130 t) but represents China’s permanent station capability; the only currently-operational space station outside ISS.",
+    "cur": "중국의 모듈식 우주정거장 — Tianhe 핵심 모듈과 Wentian, Mengtian 과학 실험실로 구성되며, 2022년 10월에 완전히 조립되었고 2022년 6월부터 계속 유인 운영 중. Tiangong은 질량 약 66 t, 기밀 용적 약 110 m³로 Mir(130 t)보다 작지만 중국의 영구 우주정거장 능력을 대표합니다. ISS 외에 현재 운영 중인 유일한 우주정거장입니다."
+  }
 ]

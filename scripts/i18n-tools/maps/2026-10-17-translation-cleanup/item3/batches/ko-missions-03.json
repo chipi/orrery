@@ -1,326 +1,326 @@
 [
- {
-  "rel": "missions/moon/luna10.json",
-  "at": "description",
-  "en": "Launched 1966-03-31 from Baikonur, Luna 10 became the first spacecraft to orbit the Moon — and the first artificial satellite of any body other than Earth — when it inserted into a 350 × 1017 km lunar orbit at 71.9° inclination on 1966-04-03. Two and a half years before Apollo 8 reached the Moon with humans aboard. Carried a magnetometer, gamma-ray spectrometer, infrared radiometer, micrometeoroid detectors, plasma sensors, and a radio probe of the lunar gravity field. The gamma-ray data was the first compositional remote sensing of the Moon, suggesting basalt-like mare composition. Famously broadcast the Internationale anthem during the 23rd Congress of the Soviet Communist Party on 1966-04-04 — a propaganda flourish more than science. Operated 56 days / 460 orbits before its NiCd batteries depleted on 1966-05-30; remains in lunar orbit.",
-  "cur": "1966년 3월 31일 바이코누르에서 발사된 Luna 10은 1966년 4월 3일 경사각 71.9°의 350 × 1017 km 달 궤도에 진입하여 달을 공전하는 최초의 우주선이 되었으며, 지구 이외의 천체를 도는 최초의 인공위성이 되었다. Apollo 8이 승무원을 태우고 달에 도달하기 2년 반 전의 일이었다. 자기계, 감마선 분광계, 적외선 복사계, 미유성체 탐지기, 플라즈마 센서, 그리고 달 중력장을 조사하는 라디오 프로브를 탑재했다. 감마선 데이터는 달의 최초의 조성 원격 감지였으며, 현무암과 같은 달의 바다 조성을 시사했다. 1966년 4월 4일 소비에트 공산당 제23차 대회에서 인터내셔널가를 방송한 것으로 유명한데, 이는 과학보다는 선전의 목적이 더 컸다. 56일간 / 460개 궤도를 운영했다가 1966년 5월 30일 NiCd 배터리가 소진되어 운영을 중단했으며, 현재도 달 궤도상에 있다."
- },
- {
-  "rel": "missions/moon/luna16.json",
-  "at": "first",
-  "en": "First robotic lunar sample return; first non-American lunar samples",
-  "cur": "최초의 로봇 달 샘플 귀환; 최초의 미국이 아닌 국가의 달 샘플"
- },
- {
-  "rel": "missions/moon/luna16.json",
-  "at": "description",
-  "en": "Luna 16 was the Soviet Union's first successful robotic sample-return mission and the first non-crewed lunar return of any kind. After Apollo 11 brought home 22 kg of crewed samples in 1969, Luna 16 returned 101 grams of regolith from Mare Fecunditatis a year later — a fraction of Apollo's payload, but a profound proof-of-concept for the alternative architecture. The mission used a Proton-K booster and a direct return profile: descent to the surface, drill core, ascent stage launch, ballistic return capsule to Kazakhstan. The technique was reused for Luna 20 and Luna 24, and decades later by Chang'e 5 and Chang'e 6.",
-  "cur": "Luna 16은 소련 최초의 성공적인 로봇 시료 귀환 임무이자, 어떤 형태로든 최초의 무인 달 귀환이었습니다. 1969년 Apollo 11이 유인 시료 22 kg을 가져온 지 1년 뒤, Luna 16은 풍요의 바다에서 레골리스 101 g을 가져왔습니다 — Apollo 탑재량의 일부에 불과했지만, 대안 구조에 대한 심오한 개념 증명이었습니다. 임무는 Proton-K 부스터와 직접 귀환 방식을 사용했습니다: 표면으로 하강, 드릴 코어 채취, 상승단 발사, 카자흐스탄으로의 탄도 귀환 캡슐. 이 기술은 Luna 20과 Luna 24에 다시 쓰였고, 수십 년 뒤 Chang'e 5와 Chang'e 6에서도 쓰였습니다."
- },
- {
-  "rel": "missions/moon/luna17.json",
-  "at": "name",
-  "en": "Luna 17 / Lunokhod 1",
-  "cur": "Luna 17 / Lunokhod 1"
- },
- {
-  "rel": "missions/moon/luna17.json",
-  "at": "description",
-  "en": "The first wheels on the Moon — driven from a control room in Crimea. Lunokhod 1 was a 322 kg pressurised tub mounted on eight independently-driven wheels, controlled by a five-person team in real time across the 2.5-second light-speed delay. It drove 10.5 km over 11 lunar days (322 Earth days), photographed 20,000+ scenes, and operated long past its 90-day design lifetime. Lost to history in the 1970s, located again in 2010 when NASA's Lunar Reconnaissance Orbiter spotted it sitting where it stopped.",
-  "cur": "달 최초 바퀴 — 크림 반도 통제실에서 광속 지연 2.5초를 두고 조종했다. Lunokhod 1은 322 kg 밀폐 통에 여덟 개 독립 구동 바퀴를 달았고, 다섯 명 팀이 실시간으로 조종했다. 11개 달 낮(지구 322일)에 10.5 km 주행, 2만 장 넘는 장면 촬영, 설계 수명 90일을 훨씬 넘겼다. 1970년대에 행방이 불명했었다가 2010년 NASA의 달 정찰 궤도선이 멈춘 자리를 재발견했다."
- },
- {
-  "rel": "missions/moon/luna21.json",
-  "at": "name",
-  "en": "Luna 21 / Lunokhod 2",
-  "cur": "Luna 21 / Lunokhod 2"
- },
- {
-  "rel": "missions/moon/luna21.json",
-  "at": "first",
-  "en": "Second Soviet lunar rover; longest off-world drive (~39 km) for over 40 years",
-  "cur": "두 번째 소비에트 달 탐사 로버; 40년 이상 동안 행성 밖에서 가장 긴 주행 거리(~39 km)"
- },
- {
-  "rel": "missions/moon/luna21.json",
-  "at": "description",
-  "en": "Luna 21 delivered Lunokhod 2, the Soviet Union's second crewed-controlled lunar rover, to Le Monnier crater on the southern edge of Mare Serenitatis in January 1973. The rover was driven from a control room in Crimea by a five-person team and traversed approximately 39 km over four lunar days — a record off-world distance that held until NASA's Opportunity rover passed it on Mars in 2014. Lunokhod 2 returned 80,000 television frames and 86 panoramas before dust contamination of its solar arrays ended operations.",
-  "cur": "Luna 21은 1973년 1월 세레니타티스 해의 남쪽 가장자리에 있는 르 모니에 분화구에 소비에트 연방의 두 번째 유인 조종 달 탐사 로버인 Lunokhod 2를 전달했습니다. 로버는 크림반도의 통제실에서 5명의 팀에 의해 조종되었으며 4개의 달의 날 동안 약 39 km를 주행했습니다. 이는 2014년 NASA의 Opportunity 로버가 화성에서 이를 능가할 때까지 40년 이상 동안 유지된 행성 밖에서의 주행 거리 기록입니다. Lunokhod 2는 80,000개의 텔레비전 프레임과 86개의 파노라마를 반환했으며, 태양전지판의 먼지 오염으로 운영이 종료되었습니다."
- },
- {
-  "rel": "missions/moon/luna24.json",
-  "at": "first",
-  "en": "Last Soviet lunar mission; last uncrewed lunar landing for 37 years",
-  "cur": "소련의 마지막 달 탐사선; 37년간 마지막 무인 달 착륙"
- },
- {
-  "rel": "missions/moon/luna24.json",
-  "at": "description",
-  "en": "The Soviet Union's final lunar mission and the last uncrewed lunar landing until China's Chang'e 3 in 2013 — a gap of 37 years. The drilled core extracted regolith from 2 m depth and returned 170 g to Earth. A 1978 Soviet analysis reported ~0.1% water by mass in the core — an unconfirmed, still-debated result — foreshadowing later confirmed detections of lunar water. Luna 24 also marked the closure of the Soviet lunar programme; resources shifted to Mars and Venus.",
-  "cur": "소비에트 연방의 마지막 달 탐사 임무이자 중국의 Chang'e 3이 2013년에 착륙할 때까지 마지막 무인 달 착륙 — 37년의 공백. 드릴로 추출한 코어는 2 m 깊이의 레골리스를 추출했으며 170 g을 지구로 반환했다. 1978년 소비에트 분석은 코어에서 약 0.1%의 물의 질량 분율을 보고했다 — 미확인되고 여전히 논쟁이 계속되는 결과 — 이는 나중의 확인된 달의 물 탐지를 예고했다. Luna 24는 또한 소비에트 달 탐사 프로그램의 종료를 알렸다. 자원이 화성과 금성으로 옮겨졌다."
- },
- {
-  "rel": "missions/moon/luna9.json",
-  "at": "first",
-  "en": "First soft-landing on the Moon; first photographs from the lunar surface",
-  "cur": "달 최초 연착륙; 달 표면 최초 촬영 사진"
- },
- {
-  "rel": "missions/moon/luna9.json",
-  "at": "description",
-  "en": "After 11 Soviet failures and 5 American Ranger missions designed only to crash, Luna 9 became the first spacecraft to soft-land on another world. Nine images — including five panoramas — returned across three sessions over three days settled a long-running scientific debate: the Moon's surface was solid, not a sea of dust deep enough to swallow a lander. The mission lasted 3 days before battery depletion. Within months, every Moon-bound mission afterwards used soft-landing as the baseline.",
-  "cur": "소련의 11번의 실패와 충돌만을 위해 설계된 5개의 미국 Ranger 임무에 이어, Luna 9는 다른 천체에 최초로 연착륙한 우주선이 되었다. 9개의 이미지 — 5개의 파노라마를 포함하여 — 3일에 걸쳐 3번의 전송 세션을 통해 반환되었고, 오랫동안 계속되던 과학적 논쟁을 해결했다: 달 표면은 고체였으며, 착륙선을 삼킬 수 있을 정도로 깊은 먼지의 바다가 아니었다. 이 임무는 배터리 고갈 전까지 3일간 지속되었다. 몇 개월 후, 그 이후의 모든 달 탐사 임무는 연착륙을 표준으로 사용했다."
- },
- {
-  "rel": "missions/moon/lunar-prospector.json",
-  "at": "first",
-  "en": "Neutron-spectrometer hydrogen finding at both lunar poles",
-  "cur": "달의 양 극점에서 중성자 분광계를 이용한 수소 발견"
- },
- {
-  "rel": "missions/moon/lunar-prospector.json",
-  "at": "description",
-  "en": "The third NASA Discovery-class mission and the first NASA-managed dedicated lunar orbiter of the post-Apollo era. Launched 1998-01-07 on an Athena II from Cape Canaveral, Lunar Prospector entered a 100-km circular polar lunar orbit on 1998-01-11. The 296-kg spinning spacecraft carried five instruments: a gamma-ray spectrometer for global crustal composition, a neutron spectrometer for hydrogen / water-ice detection at the poles, an alpha-particle spectrometer for radon gas (indirect volcanism detection), a magnetometer + electron reflectometer for crustal magnetism, and a Doppler gravity experiment. Boynton-team analysis of the neutron data (Feldman et al., Science 281 + 284) found sharp neutron-flux deficits over both lunar poles — consistent with ~2 × 10⁹ tonnes of hydrogen-rich material (probably water ice) in permanently shadowed polar craters. Mission ended 1999-07-31 with deliberate impact near Shackleton crater hoping to release a detectable water-vapour plume; none was seen. The hydrogen finding stood until LCROSS and Chandrayaan-1 / M3 (2009) provided independent confirmation.",
-  "cur": "NASA Discovery급 세 번째 임무이자 Apollo 이후 시대에 NASA가 관리한 최초의 전용 달 궤도선. 1998년 1월 7일 케이프 커내버럴에서 Athena II로 발사된 Lunar Prospector는 1998년 1월 11일 달의 100 km 원형 극궤도에 진입했다. 296 kg의 자전 우주선은 다섯 가지 기기를 실었다: 지각 전체 조성을 위한 감마선 분광계, 극지방의 수소/물얼음 탐지를 위한 중성자 분광계, 라돈 가스(간접적인 화산 활동 탐지)를 위한 알파 입자 분광계, 지각 자기를 위한 자기계 + 전자 반사계, 그리고 도플러 중력 실험. Boynton 팀의 중성자 자료 분석(Feldman et al., Science 281 + 284)은 달의 양극 모두에서 중성자 플럭스가 뚜렷하게 부족함을 발견했다 — 영구 음영 극지 크레이터에 수소가 풍부한 물질(아마도 물얼음) 약 2 × 10⁹ 톤이 있다는 것과 부합한다. 임무는 1999년 7월 31일 섀클턴 분화구 근처에 의도적으로 충돌하며 끝났는데, 탐지 가능한 수증기 기둥이 나오기를 기대했으나 관측되지 않았다. 이 수소 발견은 LCROSS와 Chandrayaan-1 / M3(2009)가 독립적으로 확인해 줄 때까지 유지되었다."
- },
- {
-  "rel": "missions/moon/slim.json",
-  "at": "first",
-  "en": "First precision landing within 100 m of target on another world",
-  "cur": "다른 세계에서 목표 100 m 이내 정밀 착륙 최초"
- },
- {
-  "rel": "missions/moon/slim.json",
-  "at": "description",
-  "en": "Until SLIM, lunar landings had a kilometre-scale targeting accuracy. JAXA's Smart Lander demonstrated 100 m accuracy — the precision required for crewed missions to dock with pre-positioned cargo, for sample-return ascent vehicles to find their orbital partners, and for any future architecture that depends on landing at specific scientifically valuable sites. SLIM also pioneered low-energy ballistic transfer to the Moon, taking 135 days to arrive but using less propellant than direct trajectories. A demonstration of the patience interplanetary missions can afford when timeline isn't the binding constraint.",
-  "cur": "SLIM이 등장하기 전까지 달 착륙은 킬로미터 규모의 목표 정확도에 머물러 있었습니다. JAXA의 Smart Lander는 100 m의 정확도를 달성했습니다. 이는 유인 우주선이 사전 배치된 화물과 도킹하는 데, 표본 반환 상승 비행체가 궤도상 파트너를 찾는 데, 그리고 과학적으로 가치 있는 특정 장소에 착륙해야 하는 미래의 모든 아키텍처에 필요한 정밀도입니다. SLIM은 또한 달로의 저에너지 탄도 전이를 개척했으며, 도착까지 135일이 걸렸지만 직접 궤도보다 더 적은 추진제를 사용했습니다. 이는 시간이 제약 조건이 아닐 때 행성간 임무가 감당할 수 있는 인내심을 보여 주는 사례입니다."
- },
- {
-  "rel": "missions/moon/smart-1.json",
-  "at": "first",
-  "en": "First European spacecraft to reach the Moon; first mission to reach the Moon under ion propulsion",
-  "cur": "달에 도달한 첫 유럽 우주선; 이온 추진으로 달에 도달한 첫 미션"
- },
- {
-  "rel": "missions/moon/smart-1.json",
-  "at": "description",
-  "en": "ESA's first lunar mission and the first European spacecraft to reach the Moon. SMART = Small Missions for Advanced Research in Technology — and the key technology was a Hall-effect solar-electric ion thruster (PPS-1350-G), at the time the largest such thruster ever flown. Launched 2003-09-27 as a shared payload on an Ariane 5 from Kourou, the 367-kg spacecraft used its 1.2-kW xenon ion drive over 13 months to slowly raise its Earth orbit, eventually captured by lunar gravity on 2004-11-15 — a 13-month low-thrust spiral rather than the days-long chemical transfer of every prior lunar mission. Operated for 16 months in a polar lunar orbit returning AMIE camera imagery, the first X-ray fluorescence elemental maps of the Moon (D-CIXS), and infrared mineral spectroscopy (SIR). Deliberately impacted Lacus Excellentiae (34.4° S, 46.2° W) on 2006-09-03 05:42 UTC — the impact flash was observed live from the Canada-France-Hawaii Telescope.",
-  "cur": "ESA의 첫 달 탐사 임무이자 달에 도달한 최초의 유럽 우주선입니다. SMART = Small Missions for Advanced Research in Technology(첨단 기술 연구용 소형 미션) — 핵심 기술은 Hall-effect 태양광-전기 이온 추진기(PPS-1350-G)로, 당시 비행한 이 종류의 추진기 중 가장 큰 것이었습니다. 2003-09-27에 쿠루에서 Ariane 5의 탑재량으로 발사된 367kg 우주선은 1.2-kW 크세논 이온 추진기를 13개월 동안 사용하여 지구 궤도를 천천히 상승시켰으며, 2004-11-15에 달의 중력에 포획되었습니다 — 이전의 모든 달 탐사 임무의 며칠 길이의 화학 추진 전이가 아닌 13개월의 저추력 선회입니다. 극궤도에서 16개월 동안 운영되면서 AMIE 카메라 영상, 달의 최초 엑스선 형광 원소 지도(D-CIXS), 그리고 적외선 광물 분광 분석(SIR)을 반환했습니다. 2006-09-03 05:42 UTC에 탁월의 호수(34.4° S, 46.2° W)에 의도적으로 충돌했습니다 — 충돌 플래시는 Canada-France-Hawaii Telescope에서 실시간으로 관찰되었습니다."
- },
- {
-  "rel": "missions/neptune/voyager-2.json",
-  "at": "first",
-  "en": "Only spacecraft to visit Uranus and Neptune; Grand Tour of four giant planets",
-  "cur": "천왕성·해왕성을 방문한 유일 우주선; 거대 행성 네 개 Grand Tour"
- },
- {
-  "rel": "missions/neptune/voyager-2.json",
-  "at": "dispatch",
-  "en": "Voyager 2 flew the tour that may never be flown again. Launched sixteen days before its twin on a slower, longer arc, it is the only spacecraft ever to visit Uranus and Neptune — two worlds that remain, decades later, known to us almost entirely from the few hours it spent racing past each one. It found a planet tipped on its side, the fastest winds in the solar system, and a frozen moon venting geysers into space, and then it too crossed into interstellar space, in 2018. Every serious plan to return to the ice giants still rests on what this single spacecraft saw on its way out.",
-  "cur": "Voyager 2는 다시는 비행하지 못할 수도 있는 투어를 날았다. 쌍둥이보다 16일 앞서 더 느리고 긴 궤도로 발사된 Voyager 2는 천왕성과 해왕성을 방문한 유일한 우주선이다. 이 두 행성은 수십 년이 지난 지금도 우리에게는 이 우주선이 각각을 지나쳐 가며 보낸 몇 시간으로부터 얻은 정보로만 거의 전부가 알려져 있다. Voyager 2는 한쪽으로 기울어진 행성, 태양계의 가장 빠른 바람, 그리고 얼어붙은 위성에서 우주로 분출하는 간헐천을 발견했고, 2018년에는 그것도 성간 우주로 건너갔다. 얼음 거성으로 돌아가려는 모든 본격적인 계획은 여전히 이 단 하나의 우주선이 떠나가는 길에 본 것에 기초하고 있다."
- },
- {
-  "rel": "missions/neptune/voyager-2.json",
-  "at": "description",
-  "en": "The twin that kept going when budgets tightened, Voyager 2 carried the Grand Tour from Jupiter and Saturn out to Uranus and Neptune — still the only close-up images we have of the ice giants. Its Neptune encounter in 1989 revealed the Great Dark Spot and Triton's geysers. Today both Voyagers sail in interstellar space with a golden record as humanity's calling card. Orrery lists Neptune as the catalogue destination; the real path relied on multiple gravity assists.",
-  "cur": "예산이 줄었을 때도 계속 간 쌍둥이로 Voyager 2는 목성·토성에서 천왕성·해왕성까지 Grand Tour를 이었다 — 얼음 거성 근접 영상은 여전히 이것뿐이다. 1989년 해왕성 접근은 Great Dark Spot과 트리톤 간헐천을 드러냈다. 오늘 두 Voyager는 인간의 명함인 골든 레코드와 함께 성간 공간을 항해한다. Orrery는 해왕성을 카탈로그 목적지로 두지만 실제 경로는 여러 중력 보조에 의존했다."
- },
- {
-  "rel": "missions/pluto/new-horizons.json",
-  "at": "first",
-  "en": "First flyby of Pluto and its moons; sharpest images of a Kuiper belt world",
-  "cur": "명왕성과 위성 근접 비행 최초; 카이퍼 벨트 천체 최선명 영상"
- },
- {
-  "rel": "missions/pluto/new-horizons.json",
-  "at": "dispatch",
-  "en": "New Horizons had exactly one chance and took it. There was no orbit and no way to slow down — nine and a half years of travel, the fastest launch in history, all converging on a few hours at Pluto, executed by a machine so far away that each command took hours to arrive. It nailed the flyby on 14 July 2015 and overturned the expectation of a dead world: Pluto turned out to have mountains of water ice, a vast heart-shaped glacier of frozen nitrogen still slowly churning, and a young, active surface no one thought a body that small and cold could keep. Then it flew on to Arrokoth, a billion kilometres past Pluto — the most distant world ever seen up close — and it is still going.",
-  "cur": "New Horizons호는 단 한 번의 기회를 갖고 있었고 그 기회를 잡았다. 궤도 진입도 없었고 감속할 방법도 없었다 — 9년 반의 여행, 역사상 가장 빠른 발사 속도, 그 모든 것이 명왕성에서의 몇 시간으로 수렴되었고, 각 명령이 도착하는 데 몇 시간씩 걸릴 만큼 멀리 떨어진 기계에 의해 실행되었다. 탐사선은 2015년 7월 14일 근접 비행을 완벽하게 수행했고 죽은 세계라는 예상을 뒤집었다 — 명왕성은 물 얼음으로 된 산들, 여전히 천천히 움직이고 있는 얼어붙은 질소로 이루어진 거대한 하트 모양의 빙하, 그리고 그렇게 작고 차가운 천체가 유지할 수 있으리라고 아무도 생각하지 못했던 젊고 활동적인 표면을 가지고 있는 것으로 밝혀졌다. 그런 다음 탐사선은 명왕성을 10억 킬로미터 지나 아로코스로 날아갔다 — 가까이서 관측된 천체 중 가장 먼 곳에 있는 세계 — 그리고 여전히 계속 나아가고 있다."
- },
- {
-  "rel": "missions/pluto/new-horizons.json",
-  "at": "description",
-  "en": "A nine-year sprint after the fastest launch to date, New Horizons compressed decades of anticipation into one July 2015 day — a world turned from a pixelated blur into mountains of water ice and nitrogen glaciers on Pluto's heart-shaped Tombaugh Regio. The spacecraft later flew Arrokoth, linking the mission to the primordial solar system. Flight arcs in Orrery are direct-transfer teaching models, not the actual Jupiter gravity assist.",
-  "cur": "지금까지 최고속 발사 뒤 아홉 년의 질주 끝에 New Horizons는 2015년 7월 하루에 수십 년의 기대를 압축했다 — 픽셀 덩어리였던 세계가 물 얼음 산과 질소 빙하의 하트형 톰보 지역으로 바뀌었다. 이후 아로코스를 비행해 원시 태양계와 연결했다. Orrery 비행 호선은 교육용 직접 이행 모델이며 실제 경로의 목성 중력 보조와 같지 않다."
- },
- {
-  "rel": "missions/psyche/psyche-mission.json",
-  "at": "first",
-  "en": "First mission to a metal-rich M-class asteroid; first use of Hall-effect ion thrusters as the primary cruise propulsion",
-  "cur": "금속 성분이 풍부한 M급 소행성으로의 첫 번째 임무; 주 항행 추진으로 홀 효과 이온 추진기의 첫 번째 사용"
- },
- {
-  "rel": "missions/psyche/psyche-mission.json",
-  "at": "description",
-  "en": "Psyche reaches for the exposed nickel-iron core of a differentiated proto-planet — a 226-km metal body that may be the closest analogue to Earth's own core anywhere accessible. Launched 2023-10-13 on a Falcon Heavy from Kennedy LC-39A. Four SPT-140 Hall-effect ion thrusters spiral the trajectory outward; a Mars gravity assist in May 2026 (4,609 km closest approach) added the energy ion thrust alone couldn't deliver in time. Arrival planned 2029-08, followed by a 26-month four-orbit-phase descent (A → B → C → D) mapping the asteroid's gravity, magnetism, topography, and composition. If the metal-core hypothesis is right, Psyche will look unlike anything else we've visited — bare metal surface, iron-sulphide deposits, none of the rubble-pile chaos of typical asteroids.",
-  "cur": "Psyche는 분화된 원시 행성의 노출된 니켈-철 핵(226 km 금속 천체)에 도달하는데, 이는 지구의 핵과 유사한 가장 가까운 유사체일 수 있다. 2023년 10월 13일 Kennedy LC-39A에서 Falcon Heavy로 발사됨. 4개의 SPT-140 홀 효과 이온 추진기가 궤적을 나선형으로 확대함; 2026년 5월 화성 중력 보조(최근접 거리 4,609 km)가 이온 추진만으로는 제시간에 전달할 수 없었던 에너지를 추가함. 2029년 8월 도착 예정이며, 이후 26개월의 4단계 궤도 강하(A → B → C → D)로 소행성의 중력, 자기장, 지형, 조성을 매핑함. 금속 핵 가설이 맞다면, Psyche는 우리가 방문한 다른 어떤 것과도 다를 것으로 보임 — 노출된 금속 표면, 황화 철 광상, 일반적인 소행성의 잔해 더미 혼돈이 없음."
- },
- {
-  "rel": "missions/saturn/cassini.json",
-  "at": "first",
-  "en": "13 years in orbit around Saturn — Huygens landed on Titan 2005-01-14 (first outer-solar-system soft landing)",
-  "cur": "토성 궤도 13년 — Huygens는 2005-01-14 타이탄에 착륙(외태양계 최초의 연착륙)"
- },
- {
-  "rel": "missions/saturn/cassini.json",
-  "at": "dispatch",
-  "en": "Cassini did what no spacecraft had done at any giant planet: it stopped. For thirteen years it lived at Saturn, and the discoveries that mattered most came from staying — the geysers of Enceladus, caught because the orbiter flew close enough, often enough, to see a tiny moon venting its hidden ocean into space. It dropped Europe’s Huygens probe onto Titan, the only landing ever made in the outer solar system, and charted a world of methane rivers and lakes. At the end, out of fuel, it was flown deliberately into Saturn so it could never fall onto the ocean moons it had found and contaminate them — a mission that closed by protecting the places it discovered.",
-  "cur": "카시니는 어떤 거대 행성에서도 우주선이 해본 적 없는 일을 해냈다 — 멈춘 것이다. 13년 동안 토성에 머물렀고, 가장 중요한 발견들은 머무름에서 나왔다 — 엔켈라두스의 간헐천은 탐사선이 충분히 가까이, 충분히 자주 비행해서 작은 위성이 숨겨진 바다를 우주로 분출하는 모습을 포착할 수 있었기에 발견되었다. 유럽의 Huygens 탐사선을 타이탄에 투하했는데, 이는 외태양계에서 이루어진 유일한 착륙이었으며, 메탄 강과 호수로 이루어진 세계를 도면화했다. 마지막에, 연료가 떨어지자, 자신이 발견한 바다 위성들로 추락해 오염시키는 일이 절대 없도록 의도적으로 토성 안으로 비행해 들어갔다 — 자신이 발견한 장소들을 보호하며 막을 내린 임무였다."
- },
- {
-  "rel": "missions/saturn/cassini.json",
-  "at": "description",
-  "en": "Joint NASA-ESA-ASI mission. After a 7-year cruise using gravity assists at Venus, Earth, and Jupiter, Cassini entered Saturn orbit 2004-07-01 and operated for 13 years, completing 294 orbits and 162 close moon flybys. It discovered Enceladus’s south-polar plumes (active water-ice geysers), mapped Titan’s methane lakes via radar, and resolved Saturn’s hexagonal polar storm. The Grand Finale (April–September 2017) wove 22 orbits through the gap between the rings and the cloud tops, ending with a controlled atmospheric entry to prevent any chance of contaminating Enceladus or Titan with terrestrial microbes.",
-  "cur": "NASA·ESA·ASI 공동 임무. 금성, 지구, 목성에서의 중력 도움을 포함한 7년 항해 끝에 Cassini는 2004-07-01 토성 궤도에 진입해 13년 동안 운용되며 294회의 공전과 162회의 근접 위성 비행을 수행했다. 엔켈라두스 남극의 수증기-얼음 분출(활동성 간헐천)을 발견했고, 레이더로 타이탄의 메탄 호수를 지도화했으며, 토성의 육각형 극지 폭풍을 분해했다. 그랜드 피날레(2017년 4–9월)는 고리와 구름 상층부 사이의 틈을 22번 누비고, 엔켈라두스나 타이탄을 지구 미생물로 오염시키지 않기 위해 통제된 대기권 재진입으로 막을 내렸다."
- },
- {
-  "rel": "missions/saturn/huygens.json",
-  "at": "first",
-  "en": "First and only soft landing in the outer solar system — parachuted through Titan's atmosphere on 2005-01-14",
-  "cur": "외부 태양계에서 처음이자 유일한 부드러운 착륙 — 2005년 1월 14일 타이탄의 대기를 낙하산으로 내려감"
- },
- {
-  "rel": "missions/saturn/huygens.json",
-  "at": "dispatch",
-  "en": "Huygens was sent not to orbit but to fall. Strapped to Cassini for seven years, it detached on Christmas Day 2004 and coasted alone toward Titan for twenty days. When it hit Titan's atmosphere at six kilometres per second, a heat shield bought the time it needed; then three parachute stages slowed it for two and a half hours through an orange haze no instrument had ever crossed. It photographed river valleys, measured wind speeds, smelled the atmosphere — and touched down on a floodplain of rounded water-ice pebbles. It was the first landing ever made in the outer solar system, and no spacecraft has landed there since.",
-  "cur": "Huygens는 궤도를 돌기 위해 보내진 것이 아니라 떨어지기 위해 보내졌습니다. 7년간 Cassini에 부착되어 있던 그것은 2004년 크리스마스에 분리되어 20일 동안 타이탄을 향해 혼자 항해했습니다. 초속 6킬로미터의 속도로 타이탄의 대기에 충돌했을 때, 열 차폐막이 필요한 시간을 벌어주었습니다. 그런 다음 3단계의 낙하산이 어떤 기기도 전에 통과한 적 없는 주황색 안개를 통해 2시간 반 동안 이를 감속시켰습니다. 강 계곡을 촬영하고, 바람 속도를 측정하고, 대기를 '냄새 맡았으며' 둥근 물-얼음 자갈의 평원에 착륙했습니다. 이것은 외부 태양계에서 이루어진 첫 번째 착륙이었으며, 그 이후로 어떤 우주선도 그곳에 착륙하지 않았습니다."
- },
- {
-  "rel": "missions/saturn/huygens.json",
-  "at": "description",
-  "en": "ESA's Huygens probe rode aboard NASA's Cassini spacecraft on a 7-year interplanetary cruise to the Saturn system, arriving at Saturn in July 2004. Released on 2004-12-25, it coasted for 20 days before entering Titan's nitrogen–methane atmosphere on 2005-01-14 at 6 km/s. An aeroshell slowed the probe to subsonic speed; three successive parachute stages then guided it through 2 hours 27 minutes of descent, collecting the first direct measurements of Titan's atmosphere — temperature, pressure, wind, and chemical composition at all altitudes. The probe transmitted 350 images during descent and continued transmitting from the surface for 72 minutes, revealing a floodplain of rounded water-ice pebbles beneath a thin veneer of liquid methane at 10.3°S, 192.3°W.",
-  "cur": "ESA의 Huygens 탐사선은 NASA의 Cassini 우주선에 탑재되어 토성계로의 7년 행성간 항해를 했으며 2004년 7월 토성에 도착했습니다. 2004년 12월 25일에 방출되어 2005년 1월 14일 초속 6km의 속도로 타이탄의 질소-메탄 대기에 진입하기 전에 20일간 항해했습니다. 공력 외형이 탐사선을 음속 이하로 감속시켰습니다. 3단계의 연속 낙하산이 이를 2시간 27분의 강하 동안 안내하여 타이탄의 대기를 직접 처음 측정 — 모든 고도에서의 온도, 압력, 바람 및 화학 성분을 수집했습니다. 탐사선은 강하 중에 350개의 이미지를 전송했고 표면에서 72분 동안 전송을 계속하여 10.3°S, 192.3°W의 액체 메탄의 얇은 베니어 아래의 둥근 물-얼음 자갈의 평원을 드러냈습니다."
- },
- {
-  "rel": "missions/saturn/pioneer-11.json",
-  "at": "first",
-  "en": "First spacecraft to fly past Saturn (1979-09-01); demonstrated the gravity-assist that sent Voyager 2 onward",
-  "cur": "토성을 처음 통과한 우주선(1979-09-01); Voyager 2를 보낸 중력 보조 궤도전환을 입증"
- },
- {
-  "rel": "missions/saturn/pioneer-11.json",
-  "at": "dispatch",
-  "en": "Pioneer 11 was the second scout, and it went further than its twin. After its own pass by Jupiter it used the planet’s gravity to cross the solar system and reach Saturn in 1979 — the first spacecraft ever to do so — deliberately flying through the ring plane to test whether the region was safe. It found the gap the Voyagers would thread a year later. Much of what made the Grand Tour possible was this: a small, cheap probe sent ahead to take the risks and map the hazards, so the flagships behind it could fly with confidence instead of fear.",
-  "cur": "Pioneer 11은 두 번째 탐사선이었고, 그 쌍둥이보다 더 먼 곳으로 나아갔다. 목성을 지난 후, 이 행성의 중력을 이용하여 태양계를 횡단하고 1979년 토성에 도달했다 — 처음으로 그곳에 도달한 우주선이었다 — 그 지역이 안전한지 시험하기 위해 의도적으로 고리 평면을 통과했다. Voyagers가 1년 뒤 헤쳐나갈 틈을 발견했다. Grand Tour를 가능하게 만든 것의 대부분은 이것이었다: 위험을 무릅쓰고 장애물을 지도화하기 위해 미리 보낸 작고 저렴한 탐사선, 그래서 뒤따르는 기함들이 두려움 대신 자신감을 가지고 비행할 수 있도록."
- },
- {
-  "rel": "missions/saturn/pioneer-11.json",
-  "at": "description",
-  "en": "Twin of Pioneer 10, launched a year later. Pioneer 11 used Jupiter’s gravity to bend its trajectory toward Saturn — the canonical proof of gravity-assist propulsion, the technique that later enabled the Voyager Grand Tour. At Saturn it discovered the F ring and a small inner moon later resolved into the co-orbital pair Janus/Epimetheus. Carries the same Pioneer plaque as its twin. Signal lost 1995-09-30 from a heliocentric distance of ~43 AU; the spacecraft is now heading toward the constellation Aquila.",
-  "cur": "Pioneer 10의 쌍둥이로, 1년 뒤에 발사되었다. Pioneer 11은 목성의 중력을 이용하여 궤도를 토성 방향으로 굽혀 — 중력 보조 궤도전환의 정석적 증명, 나중에 Voyager Grand Tour를 가능하게 한 기술. 토성에서 F 고리와 나중에 공궤도 쌍인 야누스/에피메테우스로 밝혀진 작은 내부 위성을 발견했다. 쌍둥이와 같은 Pioneer 명판을 탑재하고 있다. 약 43 AU의 태양중심 거리에서 1995-09-30에 신호 손실; 우주선은 현재 독수리자리를 향해 나아가고 있다."
- },
- {
-  "rel": "missions/saturn/voyager-1.json",
-  "at": "first",
-  "en": "Most distant human-made object — currently ~170 AU from the Sun in interstellar space",
-  "cur": "인류가 만든 가장 먼 물체 — 현재 태양으로부터 약 170 AU 떨어진 성간 우주에 위치"
- },
- {
-  "rel": "missions/saturn/voyager-1.json",
-  "at": "dispatch",
-  "en": "Voyager 1 is the farthest thing humanity has ever made, and it got there almost by an accident of geometry. A close pass by Saturn’s giant moon Titan — chosen for the science — bent its path up and out of the plane of the planets and aimed it at the edge of the solar system, and it has been climbing ever since. Along the way it found active volcanoes on Io, the first ever seen off Earth, and in 1990 it turned back to take the Pale Blue Dot. In 2012 it became the first machine to cross into interstellar space. It is still transmitting, on fading nuclear power, from more than a hundred times the Earth’s distance from the Sun.",
-  "cur": "Voyager 1은 인류가 만든 가장 먼 물체이며, 거의 우연의 기하학적 배치 덕분에 그곳에 도달했다. 토성의 거대한 달 타이탄에 근접 비행 — 과학 목적으로 선택됨 — 을 통해 행성 평면 위로 경로가 굽혀져 태양계의 가장자리를 향하도록 조정되었고, 그 이후로 계속 우주 밖으로 나아가고 있다. 그 과정에서 이오의 활화산을 발견했으며, 이는 지구 밖에서 관찰된 최초의 화산이다. 1990년에는 회전하여 Pale Blue Dot 사진을 촬영했다. 2012년에는 성간 우주로 진입한 최초의 인공 물체가 되었다. 현재도 희미해진 핵동력을 통해 태양으로부터 지구 거리의 백 배 이상 떨어진 곳에서 전송을 계속하고 있다."
- },
- {
-  "rel": "missions/saturn/voyager-1.json",
-  "at": "description",
-  "en": "Launched 16 days after Voyager 2, Voyager 1 flew faster and arrived at Jupiter first (1979) and Saturn first (1980). Its Titan flyby bent the trajectory upward out of the ecliptic plane, ending the planetary tour but sending it on the most direct path to the heliopause — which it crossed on 2012-08-25, the first human-made object to enter interstellar space. From a heliocentric distance of ~6 billion km it took the Pale Blue Dot family portrait (1990-02-14), the photograph Carl Sagan wrote about. Both Voyagers carry the Golden Record as humanity’s calling card.",
-  "cur": "Voyager 2호보다 16일 뒤에 발사된 Voyager 1은 더 빠르게 비행하여 목성(1979년)과 토성(1980년)에 먼저 도달했다. 타이탄 근접 비행으로 인해 궤적이 황도면 위로 구부러져 행성 탐사가 끝났지만, 태양권계 경계까지의 가장 직선적인 경로로 나아갈 수 있게 되었다 — 2012-08-25에 태양권계를 통과하여 성간 우주로 진입한 최초의 인공 물체가 되었다. 약 60억 km의 태양 중심 거리에서 Pale Blue Dot 가족 초상 사진(1990-02-14)을 촬영했으며, 이는 칼 세이건이 저술한 사진이다. 두 Voyager 탐사선 모두 인류의 메시지판으로서 Golden Record를 탑재하고 있다."
- },
- {
-  "rel": "missions/sun/parker-solar-probe.json",
-  "at": "first",
-  "en": "Closest spacecraft to the Sun ever flown (6.1 M km, 9.86 R☉); first spacecraft to enter the solar corona (2021-04-28); fastest human-made object (~191 km/s)",
-  "cur": "태양에 가장 근접한 우주선(6.1 M km, 9.86 R☉); 태양 코로나에 처음 진입한 우주선(2021-04-28); 가장 빠른 인공물체(~191 km/s)"
- },
- {
-  "rel": "missions/sun/parker-solar-probe.json",
-  "at": "description",
-  "en": "Parker Solar Probe ran the highest-energy launch ever flown for a science mission — C3 of 154 km²/s², requiring a custom Star 48BV solid third stage atop a Delta IV Heavy just to escape Earth into a Sun-falling trajectory. Seven Venus gravity assists over six years progressively lowered perihelion from 0.16 AU (P1, 2018-11-05) to 0.046 AU (P22, 2024-12-24 — 9.86 solar radii, 6.1 million km from the surface). At P8 in 2021-04-28 Parker dipped below the Alfvén critical surface — the first spacecraft ever to enter the Sun's corona. At P22 it reached ~191 km/s, becoming the fastest human-made object ever. The 11.43-cm carbon-carbon heat shield sustained 1,377 °C while the spacecraft bus 1 metre behind it remained at room temperature.",
-  "cur": "Parker Solar Probe는 과학 임무로 발사된 가장 높은 에너지 궤도를 기록했으며, C3 값 154 km²/s²로 지구를 탈출하여 태양으로 낙하하는 궤도에 진입하기 위해 Delta IV Heavy의 최상단에 맞춤형 Star 48BV 고체 3단 로켓이 필요했습니다. 6년에 걸친 금성의 중력 보조를 7차례 받으면서 근일점이 0.16 AU(P1, 2018-11-05)에서 0.046 AU(P22, 2024-12-24 — 태양 반경 9.86개, 태양 표면으로부터 610만 km)로 점진적으로 낮아졌습니다. 2021-04-28의 P8에서 Parker는 Alfvén 임계면 아래로 내려갔으며, 태양의 코로나에 진입한 첫 번째 우주선이 되었습니다. P22에서 약 191 km/s에 도달하여 인류가 만든 가장 빠른 물체가 되었습니다. 11.43 cm의 탄소-탄소 열 보호막은 1,377 °C를 견디었고, 그로부터 1미터 뒤에 있는 우주선 본체는 실온으로 유지되었습니다."
- },
- {
-  "rel": "missions/sun/solar-orbiter.json",
-  "at": "first",
-  "en": "First mission designed to image the Sun's polar regions in detail; complements Parker Solar Probe's in-corona measurements with high-latitude remote sensing",
-  "cur": "태양의 극지방을 상세히 촬영하도록 설계된 최초의 임무; Parker Solar Probe의 코로나 내부 측정을 고위도 원격 관측으로 보완"
- },
- {
-  "rel": "missions/sun/solar-orbiter.json",
-  "at": "description",
-  "en": "ESA-led mission with a NASA launch and one instrument contribution. Where Parker Solar Probe goes closer than anyone has ever been, Solar Orbiter goes higher — using repeated Venus gravity assists over a decade to climb out of the ecliptic toward ~33° heliographic inclination. From that vantage point its instrument suite (PHI, EUI, SPICE, STIX, METIS, SoloHI + four in-situ packages) images the Sun's polar magnetic fields, traces solar-wind acceleration in real time, and links remote and in-situ measurements simultaneously. First perihelion 2020-06-15 at 0.51 AU. Closest perihelion to date 2022-10-12 at 0.29 AU (inside Mercury's perihelion).",
-  "cur": "ESA 주도 임무로 NASA가 발사 및 하나의 기기를 기여. Parker Solar Probe가 그 누구보다 가까이 접근한다면, Solar Orbiter는 더 높이 올라간다 — 10년에 걸친 반복적인 금성 중력 보조를 사용하여 황도면에서 벗어나 약 33° 태양권 경사각을 향해 상승. 그 유리한 위치에서 기기 세트(PHI, EUI, SPICE, STIX, METIS, SoloHI + 4개의 현장 측정 패키지)는 태양의 극지 자기장을 촬영하고, 태양풍 가속을 실시간으로 추적하며, 원격 측정과 현장 측정을 동시에 연결한다. 첫 번째 근일점은 2020-06-15에 0.51 AU. 현재까지 가장 가까운 근일점은 2022-10-12에 0.29 AU (수성의 근일점 내부)."
- },
- {
-  "rel": "missions/sun/ulysses.json",
-  "at": "first",
-  "en": "Only spacecraft ever to enter a high-inclination heliocentric orbit; only direct measurements of the solar wind at all heliographic latitudes",
-  "cur": "높은 경사의 태양 중심 궤도에 진입한 유일한 우주선; 모든 헬리오그래픽 위도에서의 태양풍 유일한 직접 측정"
- },
- {
-  "rel": "missions/sun/ulysses.json",
-  "at": "description",
-  "en": "Joint ESA / NASA mission. Launched 1990-10-06 from STS-41 Discovery + IUS + PAM-S upper stages, Ulysses used a Jupiter gravity assist on 1992-02-08 to deflect itself ~80° out of the ecliptic — the only way to reach a near-polar Sun-relative orbit from Earth's near-equatorial orbital plane. Three full polar orbits of the Sun over 18.5 years mapped the solar wind, heliospheric magnetic field, and energetic particles at all heliographic latitudes — direct measurements that revealed how solar-wind structure varies between equatorial slow-wind regions and high-latitude fast-wind streams from coronal holes. Mission terminated 2009-06-30 when thruster hydrazine froze in the lines. Hardware remains in heliocentric polar orbit.",
-  "cur": "ESA/NASA 공동 미션. 1990년 10월 6일에 STS-41 Discovery 우주왕복선과 IUS, PAM-S 상단 단계로 발사되었으며, Ulysses는 1992년 2월 8일에 목성 중력 보조를 이용하여 자신을 황도면 밖으로 약 80도 방향으로 편향시켰습니다. 이는 지구의 거의 적도 궤도면에서 태양을 기준으로 한 거의 극궤도에 도달하는 유일한 방법입니다. 18.5년에 걸친 태양의 3번의 완전한 극궤도는 태양풍, 태양권 자기장, 그리고 모든 태양 위도에서의 고에너지 입자를 매핑했습니다. 이러한 직접 측정은 태양풍 구조가 적도의 느린 풍 영역과 코로나 구멍으로부터의 고위도 빠른 풍 흐름 사이에서 어떻게 변하는지를 보여주었습니다. 추진제 하이드라진이 배관에서 동결되자 2009년 6월 30일에 미션이 종료되었습니다. 장비는 태양중심 극궤도에 남아 있습니다."
- },
- {
-  "rel": "missions/venus/akatsuki.json",
-  "at": "first",
-  "en": "Recovered from a 5-year solar-orbit hold to achieve Venus orbit on a backup attempt; the only Venus orbiter active in its final years of operation",
-  "cur": "5년간의 태양궤도 상태에서 복구되어 백업 시도로 금성 궤도 진입을 성공했으며, 임무 말년에 운영 중이던 유일한 금성 궤도선"
- },
- {
-  "rel": "missions/venus/akatsuki.json",
-  "at": "description",
-  "en": "Akatsuki — \"dawn\" — was Japan's first Venus mission. Launched 2010-05-20 from Tanegashima on an H-IIA 202, paired with the IKAROS solar-sail demonstrator. The planned Venus orbit insertion 2010-12-07 failed when salt crystal buildup in an oxidiser check valve threw the main engine off-axis 152 seconds into the burn. JAXA kept the spacecraft alive in solar orbit for five years, twelve correction maneuvers, until the next Venus encounter window. On 2015-12-07 a 1228-second burn using four attitude-control thrusters — never designed for orbital insertion — placed Akatsuki into a highly elliptical 400 × 440,000 km, 3°-inclination orbit. One of the most dramatic mission-saves in spaceflight history. Contact was lost in 2024; JAXA declared operations complete on 2025-09-18.",
-  "cur": "Akatsuki — \"새벽\"이라는 뜻 — 는 일본의 첫 금성 탐사선이었다. 2010-05-20에 다네가시마에서 H-IIA 202로 발사되었으며, IKAROS 태양범선 시연 위성과 함께 발사되었다. 계획된 2010-12-07의 금성 궤도 진입이 실패했는데, 산화제 확인 밸브의 소금 결정 축적으로 인해 메인 엔진이 연소 152초 시점에서 축이 맞지 않게 되었다. JAXA는 우주선을 태양궤도에서 5년 동안 살린 후, 12번의 궤도 보정 기동을 수행하여 다음 금성 접근 시기를 기다렸다. 2015-12-07에 1228초 동안의 연소를 통해 네 개의 자세 제어 추진기 — 원래 궤도 진입용으로 설계되지 않음 — 를 사용하여 Akatsuki를 400 × 440,000 km, 경사각 3°의 고타원 궤도에 진입시켰다. 우주비행 역사상 가장 극적인 임무 구난 사례 중 하나이다. 2024년에 통신이 두절되었으며, JAXA는 2025-09-18에 운영 완료를 선언했다."
- },
- {
-  "rel": "missions/venus/magellan.json",
-  "at": "first",
-  "en": "Most complete radar map of Venus — 98% of the surface at ~120-m resolution; first planetary spacecraft launched from the Space Shuttle",
-  "cur": "금성의 가장 완전한 레이더 지도 — 표면의 98%를 ~120m 해상도로 촬영; Space Shuttle에서 발사된 첫 번째 행성 우주선"
- },
- {
-  "rel": "missions/venus/magellan.json",
-  "at": "description",
-  "en": "Magellan turned Venus from a featureless cloud-veiled disc into a mapped planet. Launched from Shuttle Atlantis's payload bay 1989-05-04 — the first planetary spacecraft to ride a Shuttle — and arrived at Venus 1990-08-10 via a long Type-IV trajectory (1.5 solar revolutions). Over four mapping cycles the synthetic-aperture radar imaged 98% of Venus's surface at ~120-m resolution, revealing tessera highlands, coronae, pancake domes, and a young, volcanically-resurfaced surface. Mission ended 1994-10-13 in the Termination Experiment — the first planned controlled atmospheric entry of a planetary spacecraft.",
-  "cur": "Magellan은 금성을 구름으로 뒤덮인 특징 없는 원판에서 지도화된 행성으로 변모시켰다. 1989-05-04 Shuttle Atlantis의 페이로드 베이에서 발사되었으며 — 우주왕복선을 탄 첫 번째 행성 우주선 — 긴 Type-IV 궤적(1.5 태양 공전)을 통해 1990-08-10 금성에 도착했다. 4개의 지도 작성 사이클에 걸쳐 합성 개구 레이더는 금성 표면의 98%를 ~120m 해상도로 촬영하여 테세라 고지, 코로나, 팬케이크 돔, 그리고 젊고 화산으로 재가공된 표면을 드러냈다. 임무는 1994-10-13 Termination Experiment에서 종료되었으며 — 행성 우주선의 첫 번째 계획된 제어된 대기권 진입이었다."
- },
- {
-  "rel": "missions/venus/vega-1.json",
-  "at": "first",
-  "en": "First-ever balloon aerostat deployed in another planet's atmosphere (Venus, 1985); first spacecraft to carry science to two distinct solar-system targets",
-  "cur": "다른 행성의 대기권에 배포된 최초의 풍선 에어로스탯(금성, 1985년); 태양계의 두 개의 서로 다른 천체에 과학을 전달한 최초의 우주선"
- },
- {
-  "rel": "missions/venus/vega-1.json",
-  "at": "description",
-  "en": "Soviet–ESA flagship of the Halley armada. Vega 1 launched 1984-12-15 with a Venera-lineage lander plus a first-of-kind ESA/CNES-built helium balloon that drifted in Venus's cloud deck at 54 km altitude for 46.5 hours, transmitting wind + temperature data via a 20-station global radio net. After dropping its descent module the bus used Venus gravity assist to redirect to comet 1P/Halley, achieving a 8890 km closest approach on 1986-03-06 — the first cometary nucleus encounter, and the position fix that ESA's Giotto used to navigate its own much closer Halley flyby a week later.",
-  "cur": "핼리 탐사 함대의 소련-ESA 주력 탐사선. Vega 1은 1984-12-15에 Venera 계열 착륙선과 ESA/CNES가 제작한 최초의 헬륨 풍선을 싣고 발사되었다. 이 풍선은 금성 구름층 54 km 고도에서 46.5시간 동안 떠다니며 20개 지상국으로 이루어진 전 지구 라디오망을 통해 바람과 온도 데이터를 전송했다. 강하 모듈을 떼어낸 뒤 본체는 금성 중력 도움으로 방향을 바꿔 혜성 1P/핼리로 향했고, 1986-03-06에 8890 km까지 접근했다 — 최초의 혜성핵 조우이자, 일주일 뒤 ESA의 Giotto가 훨씬 더 가까운 핼리 근접 비행을 위해 항법에 사용한 위치 측정이었다."
- },
- {
-  "rel": "missions/venus/vega-2.json",
-  "at": "first",
-  "en": "First chemical analysis of Venusian highland-type soil (Aphrodite Terra, 1985); paired Halley encounter with Vega 1 fed Giotto's targeting solution",
-  "cur": "금성 고지대 토양의 최초 화학 분석(아프로디테 대륙, 1985); Vega 1과의 쌍 핼리 혜성 조우가 Giotto의 목표 결정 해법 제공"
- },
- {
-  "rel": "missions/venus/vega-2.json",
-  "at": "description",
-  "en": "Twin of Vega 1, launched 6 days later (1984-12-21) for redundancy + a paired Halley armada solution. Vega 2's descent module landed 1985-06-15 in Rusalka Planitia, on the northern flank of Aphrodite Terra, and used XRF spectrometry to find anorthosite-norite-troctolite material — the first chemical analysis of highland-type Venusian crust (the composition resembles lunar highlands, though the landing site itself is a plain). Its balloon performed identically to Vega 1's, drifting in the opposite hemisphere at ~240 km/h. The bus flew past comet 1P/Halley at 8030 km on 1986-03-09. Together the two Vega buses returned the first close-up cometary-nucleus images and refined the position fix that allowed Giotto to attempt a 596 km flyby five days later.",
-  "cur": "6일 뒤에 발사된(1984-12-21) Vega 1의 쌍둥이로, 중복성 및 쌍을 이룬 핼리 혜성 함대 해법을 위해 발사됨. Vega 2의 강하선은 1985-06-15에 아프로디테 대륙의 북쪽 측면인 루살카 평원에 착륙했으며, XRF 분광법을 사용하여 정장석-노라이트-트럭톨라이트 물질을 발견했다 — 고지대형 금성 지각의 최초 화학 분석(구성 성분이 달의 고지대와 유사하지만, 착륙지 자체는 평원). 그 기구는 Vega 1의 기구와 동일하게 작동하여 반대편 반구에서 약 240 km/h 속도로 표류함. 모선은 1986-03-09에 혜성 1P/핼리 혜성을 8030 km 거리에서 지나갔음. 두 Vega 모선은 함께 최초의 근접 혜성 핵 이미지를 반환했으며 5일 뒤 Giotto가 596 km 플라이바이를 시도할 수 있게 한 위치 수정을 정밀화했다."
- },
- {
-  "rel": "missions/venus/venera-13.json",
-  "at": "first",
-  "en": "Longest surface survival of any Venus mission (127 min); first colour panoramic images and first audio from another planet's surface",
-  "cur": "모든 금성 임무 중 최장 표면 생존(127분); 다른 행성 표면의 첫 컬러 파노라마 영상 및 첫 음성"
- },
- {
-  "rel": "missions/venus/venera-13.json",
-  "at": "description",
-  "en": "The peak of the Soviet Venera program. Venera 13 launched 1981-10-30 and landed 1982-03-01 at 7.5°S 303°E in the Phoebe Regio highlands. Surface conditions at touchdown: 457 °C, 89 bar, sulfuric-acid haze. The lander survived 127 minutes — nearly an hour beyond its design target — returning the first colour panoramas from another planet's surface, recording wind microphone audio, and using its drill + onboard X-ray fluorescence spectrometer to determine that the basalt at the landing site was a weakly differentiated leucite alkaline composition. Twin spacecraft Venera 14 performed identical operations at a separate site five days later. The Venera series (1967–1983) remains the only successful surface program at Venus to date.",
-  "cur": "소비에트 베네라 계획의 정점. Venera 13은 1981-10-30에 발사되었고 1982-03-01에 포이베 레지오 고지대의 7.5°S 303°E 지점에 착륙했습니다. 착륙 시 표면 조건: 457 °C, 89 bar, 황산 안개. 착륙선은 127분 동안 생존했습니다 — 설계 목표보다 거의 1시간 더 — 다른 행성 표면에서 처음으로 컬러 파노라마를 촬영하고, 바람 마이크로폰 오디오를 기록했으며, 드릴과 탑재 X선 형광 분광계를 사용하여 착륙지의 현무암이 약하게 분화된 류사이트 알칼리 조성임을 결정했습니다. 쌍둥이 우주선 Venera 14는 5일 후 별개의 지점에서 동일한 작업을 수행했습니다. Venera 시리즈(1967–1983)는 현재까지 금성에서의 유일한 성공적인 표면 탐사 계획입니다."
- }
+  {
+    "rel": "missions/moon/luna10.json",
+    "at": "description",
+    "en": "Launched 1966-03-31 from Baikonur, Luna 10 became the first spacecraft to orbit the Moon — and the first artificial satellite of any body other than Earth — when it inserted into a 350 × 1017 km lunar orbit at 71.9° inclination on 1966-04-03. Two and a half years before Apollo 8 reached the Moon with humans aboard. Carried a magnetometer, gamma-ray spectrometer, infrared radiometer, micrometeoroid detectors, plasma sensors, and a radio probe of the lunar gravity field. The gamma-ray data was the first compositional remote sensing of the Moon, suggesting basalt-like mare composition. Famously broadcast the Internationale anthem during the 23rd Congress of the Soviet Communist Party on 1966-04-04 — a propaganda flourish more than science. Operated 56 days / 460 orbits before its NiCd batteries depleted on 1966-05-30; remains in lunar orbit.",
+    "cur": "1966년 3월 31일 바이코누르에서 발사된 Luna 10은 1966년 4월 3일 경사각 71.9°의 350 × 1017 km 달 궤도에 진입하여 달을 공전하는 최초의 우주선이 되었으며, 지구 이외의 천체를 도는 최초의 인공위성이 되었다. Apollo 8이 승무원을 태우고 달에 도달하기 2년 반 전의 일이었다. 자기계, 감마선 분광계, 적외선 복사계, 미유성체 탐지기, 플라즈마 센서, 그리고 달 중력장을 조사하는 라디오 프로브를 탑재했다. 감마선 데이터는 달의 최초의 조성 원격 감지였으며, 현무암과 같은 달의 바다 조성을 시사했다. 1966년 4월 4일 소비에트 공산당 제23차 대회에서 인터내셔널가를 방송한 것으로 유명한데, 이는 과학보다는 선전의 목적이 더 컸다. 56일간 / 460개 궤도를 운영했다가 1966년 5월 30일 NiCd 배터리가 소진되어 운영을 중단했으며, 현재도 달 궤도상에 있다."
+  },
+  {
+    "rel": "missions/moon/luna16.json",
+    "at": "first",
+    "en": "First robotic lunar sample return; first non-American lunar samples",
+    "cur": "최초의 로봇 달 샘플 귀환; 최초의 미국이 아닌 국가의 달 샘플"
+  },
+  {
+    "rel": "missions/moon/luna16.json",
+    "at": "description",
+    "en": "Luna 16 was the Soviet Union's first successful robotic sample-return mission and the first non-crewed lunar return of any kind. After Apollo 11 brought home 22 kg of crewed samples in 1969, Luna 16 returned 101 grams of regolith from Mare Fecunditatis a year later — a fraction of Apollo's payload, but a profound proof-of-concept for the alternative architecture. The mission used a Proton-K booster and a direct return profile: descent to the surface, drill core, ascent stage launch, ballistic return capsule to Kazakhstan. The technique was reused for Luna 20 and Luna 24, and decades later by Chang'e 5 and Chang'e 6.",
+    "cur": "Luna 16은 소련 최초의 성공적인 로봇 시료 귀환 임무이자, 어떤 형태로든 최초의 무인 달 귀환이었습니다. 1969년 Apollo 11이 유인 시료 22 kg을 가져온 지 1년 뒤, Luna 16은 풍요의 바다에서 레골리스 101 g을 가져왔습니다 — Apollo 탑재량의 일부에 불과했지만, 대안 구조에 대한 심오한 개념 증명이었습니다. 임무는 Proton-K 부스터와 직접 귀환 방식을 사용했습니다: 표면으로 하강, 드릴 코어 채취, 상승단 발사, 카자흐스탄으로의 탄도 귀환 캡슐. 이 기술은 Luna 20과 Luna 24에 다시 쓰였고, 수십 년 뒤 Chang'e 5와 Chang'e 6에서도 쓰였습니다."
+  },
+  {
+    "rel": "missions/moon/luna17.json",
+    "at": "name",
+    "en": "Luna 17 / Lunokhod 1",
+    "cur": "Luna 17 / Lunokhod 1"
+  },
+  {
+    "rel": "missions/moon/luna17.json",
+    "at": "description",
+    "en": "The first wheels on the Moon — driven from a control room in Crimea. Lunokhod 1 was a 322 kg pressurised tub mounted on eight independently-driven wheels, controlled by a five-person team in real time across the 2.5-second light-speed delay. It drove 10.5 km over 11 lunar days (322 Earth days), photographed 20,000+ scenes, and operated long past its 90-day design lifetime. Lost to history in the 1970s, located again in 2010 when NASA's Lunar Reconnaissance Orbiter spotted it sitting where it stopped.",
+    "cur": "달 최초 바퀴 — 크림 반도 통제실에서 광속 지연 2.5초를 두고 조종했다. Lunokhod 1은 322 kg 밀폐 통에 여덟 개 독립 구동 바퀴를 달았고, 다섯 명 팀이 실시간으로 조종했다. 11개 달 낮(지구 322일)에 10.5 km 주행, 2만 장 넘는 장면 촬영, 설계 수명 90일을 훨씬 넘겼다. 1970년대에 행방이 불명했었다가 2010년 NASA의 달 정찰 궤도선이 멈춘 자리를 재발견했다."
+  },
+  {
+    "rel": "missions/moon/luna21.json",
+    "at": "name",
+    "en": "Luna 21 / Lunokhod 2",
+    "cur": "Luna 21 / Lunokhod 2"
+  },
+  {
+    "rel": "missions/moon/luna21.json",
+    "at": "first",
+    "en": "Second Soviet lunar rover; longest off-world drive (~39 km) for over 40 years",
+    "cur": "두 번째 소비에트 달 탐사 로버; 40년 이상 동안 행성 밖에서 가장 긴 주행 거리(~39 km)"
+  },
+  {
+    "rel": "missions/moon/luna21.json",
+    "at": "description",
+    "en": "Luna 21 delivered Lunokhod 2, the Soviet Union's second crewed-controlled lunar rover, to Le Monnier crater on the southern edge of Mare Serenitatis in January 1973. The rover was driven from a control room in Crimea by a five-person team and traversed approximately 39 km over four lunar days — a record off-world distance that held until NASA's Opportunity rover passed it on Mars in 2014. Lunokhod 2 returned 80,000 television frames and 86 panoramas before dust contamination of its solar arrays ended operations.",
+    "cur": "Luna 21은 1973년 1월 세레니타티스 해의 남쪽 가장자리에 있는 르 모니에 분화구에 소비에트 연방의 두 번째 유인 조종 달 탐사 로버인 Lunokhod 2를 전달했습니다. 로버는 크림반도의 통제실에서 5명의 팀에 의해 조종되었으며 4개의 달의 날 동안 약 39 km를 주행했습니다. 이는 2014년 NASA의 Opportunity 로버가 화성에서 이를 능가할 때까지 40년 이상 동안 유지된 행성 밖에서의 주행 거리 기록입니다. Lunokhod 2는 80,000개의 텔레비전 프레임과 86개의 파노라마를 반환했으며, 태양전지판의 먼지 오염으로 운영이 종료되었습니다."
+  },
+  {
+    "rel": "missions/moon/luna24.json",
+    "at": "first",
+    "en": "Last Soviet lunar mission; last uncrewed lunar landing for 37 years",
+    "cur": "소련의 마지막 달 탐사선; 37년간 마지막 무인 달 착륙"
+  },
+  {
+    "rel": "missions/moon/luna24.json",
+    "at": "description",
+    "en": "The Soviet Union's final lunar mission and the last uncrewed lunar landing until China's Chang'e 3 in 2013 — a gap of 37 years. The drilled core extracted regolith from 2 m depth and returned 170 g to Earth. A 1978 Soviet analysis reported ~0.1% water by mass in the core — an unconfirmed, still-debated result — foreshadowing later confirmed detections of lunar water. Luna 24 also marked the closure of the Soviet lunar programme; resources shifted to Mars and Venus.",
+    "cur": "소비에트 연방의 마지막 달 탐사 임무이자 중국의 Chang'e 3이 2013년에 착륙할 때까지 마지막 무인 달 착륙 — 37년의 공백. 드릴로 추출한 코어는 2 m 깊이의 레골리스를 추출했으며 170 g을 지구로 반환했다. 1978년 소비에트 분석은 코어에서 약 0.1%의 물의 질량 분율을 보고했다 — 미확인되고 여전히 논쟁이 계속되는 결과 — 이는 나중의 확인된 달의 물 탐지를 예고했다. Luna 24는 또한 소비에트 달 탐사 프로그램의 종료를 알렸다. 자원이 화성과 금성으로 옮겨졌다."
+  },
+  {
+    "rel": "missions/moon/luna9.json",
+    "at": "first",
+    "en": "First soft-landing on the Moon; first photographs from the lunar surface",
+    "cur": "달 최초 연착륙; 달 표면 최초 촬영 사진"
+  },
+  {
+    "rel": "missions/moon/luna9.json",
+    "at": "description",
+    "en": "After 11 Soviet failures and 5 American Ranger missions designed only to crash, Luna 9 became the first spacecraft to soft-land on another world. Nine images — including five panoramas — returned across three sessions over three days settled a long-running scientific debate: the Moon's surface was solid, not a sea of dust deep enough to swallow a lander. The mission lasted 3 days before battery depletion. Within months, every Moon-bound mission afterwards used soft-landing as the baseline.",
+    "cur": "소련의 11번의 실패와 충돌만을 위해 설계된 5개의 미국 Ranger 임무에 이어, Luna 9는 다른 천체에 최초로 연착륙한 우주선이 되었다. 9개의 이미지 — 5개의 파노라마를 포함하여 — 3일에 걸쳐 3번의 전송 세션을 통해 반환되었고, 오랫동안 계속되던 과학적 논쟁을 해결했다: 달 표면은 고체였으며, 착륙선을 삼킬 수 있을 정도로 깊은 먼지의 바다가 아니었다. 이 임무는 배터리 고갈 전까지 3일간 지속되었다. 몇 개월 후, 그 이후의 모든 달 탐사 임무는 연착륙을 표준으로 사용했다."
+  },
+  {
+    "rel": "missions/moon/lunar-prospector.json",
+    "at": "first",
+    "en": "Neutron-spectrometer hydrogen finding at both lunar poles",
+    "cur": "달의 양 극점에서 중성자 분광계를 이용한 수소 발견"
+  },
+  {
+    "rel": "missions/moon/lunar-prospector.json",
+    "at": "description",
+    "en": "The third NASA Discovery-class mission and the first NASA-managed dedicated lunar orbiter of the post-Apollo era. Launched 1998-01-07 on an Athena II from Cape Canaveral, Lunar Prospector entered a 100-km circular polar lunar orbit on 1998-01-11. The 296-kg spinning spacecraft carried five instruments: a gamma-ray spectrometer for global crustal composition, a neutron spectrometer for hydrogen / water-ice detection at the poles, an alpha-particle spectrometer for radon gas (indirect volcanism detection), a magnetometer + electron reflectometer for crustal magnetism, and a Doppler gravity experiment. Boynton-team analysis of the neutron data (Feldman et al., Science 281 + 284) found sharp neutron-flux deficits over both lunar poles — consistent with ~2 × 10⁹ tonnes of hydrogen-rich material (probably water ice) in permanently shadowed polar craters. Mission ended 1999-07-31 with deliberate impact near Shackleton crater hoping to release a detectable water-vapour plume; none was seen. The hydrogen finding stood until LCROSS and Chandrayaan-1 / M3 (2009) provided independent confirmation.",
+    "cur": "NASA Discovery급 세 번째 임무이자 Apollo 이후 시대에 NASA가 관리한 최초의 전용 달 궤도선. 1998년 1월 7일 케이프 커내버럴에서 Athena II로 발사된 Lunar Prospector는 1998년 1월 11일 달의 100 km 원형 극궤도에 진입했다. 296 kg의 자전 우주선은 다섯 가지 기기를 실었다: 지각 전체 조성을 위한 감마선 분광계, 극지방의 수소/물얼음 탐지를 위한 중성자 분광계, 라돈 가스(간접적인 화산 활동 탐지)를 위한 알파 입자 분광계, 지각 자기를 위한 자기계 + 전자 반사계, 그리고 도플러 중력 실험. Boynton 팀의 중성자 자료 분석(Feldman et al., Science 281 + 284)은 달의 양극 모두에서 중성자 플럭스가 뚜렷하게 부족함을 발견했다 — 영구 음영 극지 크레이터에 수소가 풍부한 물질(아마도 물얼음) 약 2 × 10⁹ 톤이 있다는 것과 부합한다. 임무는 1999년 7월 31일 섀클턴 분화구 근처에 의도적으로 충돌하며 끝났는데, 탐지 가능한 수증기 기둥이 나오기를 기대했으나 관측되지 않았다. 이 수소 발견은 LCROSS와 Chandrayaan-1 / M3(2009)가 독립적으로 확인해 줄 때까지 유지되었다."
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "first",
+    "en": "First precision landing within 100 m of target on another world",
+    "cur": "다른 세계에서 목표 100 m 이내 정밀 착륙 최초"
+  },
+  {
+    "rel": "missions/moon/slim.json",
+    "at": "description",
+    "en": "Until SLIM, lunar landings had a kilometre-scale targeting accuracy. JAXA's Smart Lander demonstrated 100 m accuracy — the precision required for crewed missions to dock with pre-positioned cargo, for sample-return ascent vehicles to find their orbital partners, and for any future architecture that depends on landing at specific scientifically valuable sites. SLIM also pioneered low-energy ballistic transfer to the Moon, taking 135 days to arrive but using less propellant than direct trajectories. A demonstration of the patience interplanetary missions can afford when timeline isn't the binding constraint.",
+    "cur": "SLIM이 등장하기 전까지 달 착륙은 킬로미터 규모의 목표 정확도에 머물러 있었습니다. JAXA의 Smart Lander는 100 m의 정확도를 달성했습니다. 이는 유인 우주선이 사전 배치된 화물과 도킹하는 데, 표본 반환 상승 비행체가 궤도상 파트너를 찾는 데, 그리고 과학적으로 가치 있는 특정 장소에 착륙해야 하는 미래의 모든 아키텍처에 필요한 정밀도입니다. SLIM은 또한 달로의 저에너지 탄도 전이를 개척했으며, 도착까지 135일이 걸렸지만 직접 궤도보다 더 적은 추진제를 사용했습니다. 이는 시간이 제약 조건이 아닐 때 행성간 임무가 감당할 수 있는 인내심을 보여 주는 사례입니다."
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "first",
+    "en": "First European spacecraft to reach the Moon; first mission to reach the Moon under ion propulsion",
+    "cur": "달에 도달한 첫 유럽 우주선; 이온 추진으로 달에 도달한 첫 미션"
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "description",
+    "en": "ESA's first lunar mission and the first European spacecraft to reach the Moon. SMART = Small Missions for Advanced Research in Technology — and the key technology was a Hall-effect solar-electric ion thruster (PPS-1350-G), at the time the largest such thruster ever flown. Launched 2003-09-27 as a shared payload on an Ariane 5 from Kourou, the 367-kg spacecraft used its 1.2-kW xenon ion drive over 13 months to slowly raise its Earth orbit, eventually captured by lunar gravity on 2004-11-15 — a 13-month low-thrust spiral rather than the days-long chemical transfer of every prior lunar mission. Operated for 16 months in a polar lunar orbit returning AMIE camera imagery, the first X-ray fluorescence elemental maps of the Moon (D-CIXS), and infrared mineral spectroscopy (SIR). Deliberately impacted Lacus Excellentiae (34.4° S, 46.2° W) on 2006-09-03 05:42 UTC — the impact flash was observed live from the Canada-France-Hawaii Telescope.",
+    "cur": "ESA의 첫 달 탐사 임무이자 달에 도달한 최초의 유럽 우주선입니다. SMART = Small Missions for Advanced Research in Technology(첨단 기술 연구용 소형 미션) — 핵심 기술은 Hall-effect 태양광-전기 이온 추진기(PPS-1350-G)로, 당시 비행한 이 종류의 추진기 중 가장 큰 것이었습니다. 2003-09-27에 쿠루에서 Ariane 5의 탑재량으로 발사된 367kg 우주선은 1.2-kW 크세논 이온 추진기를 13개월 동안 사용하여 지구 궤도를 천천히 상승시켰으며, 2004-11-15에 달의 중력에 포획되었습니다 — 이전의 모든 달 탐사 임무의 며칠 길이의 화학 추진 전이가 아닌 13개월의 저추력 선회입니다. 극궤도에서 16개월 동안 운영되면서 AMIE 카메라 영상, 달의 최초 엑스선 형광 원소 지도(D-CIXS), 그리고 적외선 광물 분광 분석(SIR)을 반환했습니다. 2006-09-03 05:42 UTC에 탁월의 호수(34.4° S, 46.2° W)에 의도적으로 충돌했습니다 — 충돌 플래시는 Canada-France-Hawaii Telescope에서 실시간으로 관찰되었습니다."
+  },
+  {
+    "rel": "missions/neptune/voyager-2.json",
+    "at": "first",
+    "en": "Only spacecraft to visit Uranus and Neptune; Grand Tour of four giant planets",
+    "cur": "천왕성·해왕성을 방문한 유일 우주선; 거대 행성 네 개 Grand Tour"
+  },
+  {
+    "rel": "missions/neptune/voyager-2.json",
+    "at": "dispatch",
+    "en": "Voyager 2 flew the tour that may never be flown again. Launched sixteen days before its twin on a slower, longer arc, it is the only spacecraft ever to visit Uranus and Neptune — two worlds that remain, decades later, known to us almost entirely from the few hours it spent racing past each one. It found a planet tipped on its side, the fastest winds in the solar system, and a frozen moon venting geysers into space, and then it too crossed into interstellar space, in 2018. Every serious plan to return to the ice giants still rests on what this single spacecraft saw on its way out.",
+    "cur": "Voyager 2는 다시는 비행하지 못할 수도 있는 투어를 날았다. 쌍둥이보다 16일 앞서 더 느리고 긴 궤도로 발사된 Voyager 2는 천왕성과 해왕성을 방문한 유일한 우주선이다. 이 두 행성은 수십 년이 지난 지금도 우리에게는 이 우주선이 각각을 지나쳐 가며 보낸 몇 시간으로부터 얻은 정보로만 거의 전부가 알려져 있다. Voyager 2는 한쪽으로 기울어진 행성, 태양계의 가장 빠른 바람, 그리고 얼어붙은 위성에서 우주로 분출하는 간헐천을 발견했고, 2018년에는 그것도 성간 우주로 건너갔다. 얼음 거성으로 돌아가려는 모든 본격적인 계획은 여전히 이 단 하나의 우주선이 떠나가는 길에 본 것에 기초하고 있다."
+  },
+  {
+    "rel": "missions/neptune/voyager-2.json",
+    "at": "description",
+    "en": "The twin that kept going when budgets tightened, Voyager 2 carried the Grand Tour from Jupiter and Saturn out to Uranus and Neptune — still the only close-up images we have of the ice giants. Its Neptune encounter in 1989 revealed the Great Dark Spot and Triton's geysers. Today both Voyagers sail in interstellar space with a golden record as humanity's calling card. Orrery lists Neptune as the catalogue destination; the real path relied on multiple gravity assists.",
+    "cur": "예산이 줄었을 때도 계속 간 쌍둥이로 Voyager 2는 목성·토성에서 천왕성·해왕성까지 Grand Tour를 이었다 — 얼음 거성 근접 영상은 여전히 이것뿐이다. 1989년 해왕성 접근은 Great Dark Spot과 트리톤 간헐천을 드러냈다. 오늘 두 Voyager는 인간의 명함인 골든 레코드와 함께 성간 공간을 항해한다. Orrery는 해왕성을 카탈로그 목적지로 두지만 실제 경로는 여러 중력 보조에 의존했다."
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "first",
+    "en": "First flyby of Pluto and its moons; sharpest images of a Kuiper belt world",
+    "cur": "명왕성과 위성 근접 비행 최초; 카이퍼 벨트 천체 최선명 영상"
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "dispatch",
+    "en": "New Horizons had exactly one chance and took it. There was no orbit and no way to slow down — nine and a half years of travel, the fastest launch in history, all converging on a few hours at Pluto, executed by a machine so far away that each command took hours to arrive. It nailed the flyby on 14 July 2015 and overturned the expectation of a dead world: Pluto turned out to have mountains of water ice, a vast heart-shaped glacier of frozen nitrogen still slowly churning, and a young, active surface no one thought a body that small and cold could keep. Then it flew on to Arrokoth, a billion kilometres past Pluto — the most distant world ever seen up close — and it is still going.",
+    "cur": "New Horizons호는 단 한 번의 기회를 갖고 있었고 그 기회를 잡았다. 궤도 진입도 없었고 감속할 방법도 없었다 — 9년 반의 여행, 역사상 가장 빠른 발사 속도, 그 모든 것이 명왕성에서의 몇 시간으로 수렴되었고, 각 명령이 도착하는 데 몇 시간씩 걸릴 만큼 멀리 떨어진 기계에 의해 실행되었다. 탐사선은 2015년 7월 14일 근접 비행을 완벽하게 수행했고 죽은 세계라는 예상을 뒤집었다 — 명왕성은 물 얼음으로 된 산들, 여전히 천천히 움직이고 있는 얼어붙은 질소로 이루어진 거대한 하트 모양의 빙하, 그리고 그렇게 작고 차가운 천체가 유지할 수 있으리라고 아무도 생각하지 못했던 젊고 활동적인 표면을 가지고 있는 것으로 밝혀졌다. 그런 다음 탐사선은 명왕성을 10억 킬로미터 지나 아로코스로 날아갔다 — 가까이서 관측된 천체 중 가장 먼 곳에 있는 세계 — 그리고 여전히 계속 나아가고 있다."
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "description",
+    "en": "A nine-year sprint after the fastest launch to date, New Horizons compressed decades of anticipation into one July 2015 day — a world turned from a pixelated blur into mountains of water ice and nitrogen glaciers on Pluto's heart-shaped Tombaugh Regio. The spacecraft later flew Arrokoth, linking the mission to the primordial solar system. Flight arcs in Orrery are direct-transfer teaching models, not the actual Jupiter gravity assist.",
+    "cur": "지금까지 최고속 발사 뒤 아홉 년의 질주 끝에 New Horizons는 2015년 7월 하루에 수십 년의 기대를 압축했다 — 픽셀 덩어리였던 세계가 물 얼음 산과 질소 빙하의 하트형 톰보 지역으로 바뀌었다. 이후 아로코스를 비행해 원시 태양계와 연결했다. Orrery 비행 호선은 교육용 직접 이행 모델이며 실제 경로의 목성 중력 보조와 같지 않다."
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "first",
+    "en": "First mission to a metal-rich M-class asteroid; first use of Hall-effect ion thrusters as the primary cruise propulsion",
+    "cur": "금속 성분이 풍부한 M급 소행성으로의 첫 번째 임무; 주 항행 추진으로 홀 효과 이온 추진기의 첫 번째 사용"
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "description",
+    "en": "Psyche reaches for the exposed nickel-iron core of a differentiated proto-planet — a 226-km metal body that may be the closest analogue to Earth's own core anywhere accessible. Launched 2023-10-13 on a Falcon Heavy from Kennedy LC-39A. Four SPT-140 Hall-effect ion thrusters spiral the trajectory outward; a Mars gravity assist in May 2026 (4,609 km closest approach) added the energy ion thrust alone couldn't deliver in time. Arrival planned 2029-08, followed by a 26-month four-orbit-phase descent (A → B → C → D) mapping the asteroid's gravity, magnetism, topography, and composition. If the metal-core hypothesis is right, Psyche will look unlike anything else we've visited — bare metal surface, iron-sulphide deposits, none of the rubble-pile chaos of typical asteroids.",
+    "cur": "Psyche는 분화된 원시 행성의 노출된 니켈-철 핵(226 km 금속 천체)에 도달하는데, 이는 지구의 핵과 유사한 가장 가까운 유사체일 수 있다. 2023년 10월 13일 Kennedy LC-39A에서 Falcon Heavy로 발사됨. 4개의 SPT-140 홀 효과 이온 추진기가 궤적을 나선형으로 확대함; 2026년 5월 화성 중력 보조(최근접 거리 4,609 km)가 이온 추진만으로는 제시간에 전달할 수 없었던 에너지를 추가함. 2029년 8월 도착 예정이며, 이후 26개월의 4단계 궤도 강하(A → B → C → D)로 소행성의 중력, 자기장, 지형, 조성을 매핑함. 금속 핵 가설이 맞다면, Psyche는 우리가 방문한 다른 어떤 것과도 다를 것으로 보임 — 노출된 금속 표면, 황화 철 광상, 일반적인 소행성의 잔해 더미 혼돈이 없음."
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "first",
+    "en": "13 years in orbit around Saturn — Huygens landed on Titan 2005-01-14 (first outer-solar-system soft landing)",
+    "cur": "토성 궤도 13년 — Huygens는 2005-01-14 타이탄에 착륙(외태양계 최초의 연착륙)"
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "dispatch",
+    "en": "Cassini did what no spacecraft had done at any giant planet: it stopped. For thirteen years it lived at Saturn, and the discoveries that mattered most came from staying — the geysers of Enceladus, caught because the orbiter flew close enough, often enough, to see a tiny moon venting its hidden ocean into space. It dropped Europe’s Huygens probe onto Titan, the only landing ever made in the outer solar system, and charted a world of methane rivers and lakes. At the end, out of fuel, it was flown deliberately into Saturn so it could never fall onto the ocean moons it had found and contaminate them — a mission that closed by protecting the places it discovered.",
+    "cur": "카시니는 어떤 거대 행성에서도 우주선이 해본 적 없는 일을 해냈다 — 멈춘 것이다. 13년 동안 토성에 머물렀고, 가장 중요한 발견들은 머무름에서 나왔다 — 엔켈라두스의 간헐천은 탐사선이 충분히 가까이, 충분히 자주 비행해서 작은 위성이 숨겨진 바다를 우주로 분출하는 모습을 포착할 수 있었기에 발견되었다. 유럽의 Huygens 탐사선을 타이탄에 투하했는데, 이는 외태양계에서 이루어진 유일한 착륙이었으며, 메탄 강과 호수로 이루어진 세계를 도면화했다. 마지막에, 연료가 떨어지자, 자신이 발견한 바다 위성들로 추락해 오염시키는 일이 절대 없도록 의도적으로 토성 안으로 비행해 들어갔다 — 자신이 발견한 장소들을 보호하며 막을 내린 임무였다."
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "description",
+    "en": "Joint NASA-ESA-ASI mission. After a 7-year cruise using gravity assists at Venus, Earth, and Jupiter, Cassini entered Saturn orbit 2004-07-01 and operated for 13 years, completing 294 orbits and 162 close moon flybys. It discovered Enceladus’s south-polar plumes (active water-ice geysers), mapped Titan’s methane lakes via radar, and resolved Saturn’s hexagonal polar storm. The Grand Finale (April–September 2017) wove 22 orbits through the gap between the rings and the cloud tops, ending with a controlled atmospheric entry to prevent any chance of contaminating Enceladus or Titan with terrestrial microbes.",
+    "cur": "NASA·ESA·ASI 공동 임무. 금성, 지구, 목성에서의 중력 도움을 포함한 7년 항해 끝에 Cassini는 2004-07-01 토성 궤도에 진입해 13년 동안 운용되며 294회의 공전과 162회의 근접 위성 비행을 수행했다. 엔켈라두스 남극의 수증기-얼음 분출(활동성 간헐천)을 발견했고, 레이더로 타이탄의 메탄 호수를 지도화했으며, 토성의 육각형 극지 폭풍을 분해했다. 그랜드 피날레(2017년 4–9월)는 고리와 구름 상층부 사이의 틈을 22번 누비고, 엔켈라두스나 타이탄을 지구 미생물로 오염시키지 않기 위해 통제된 대기권 재진입으로 막을 내렸다."
+  },
+  {
+    "rel": "missions/saturn/huygens.json",
+    "at": "first",
+    "en": "First and only soft landing in the outer solar system — parachuted through Titan's atmosphere on 2005-01-14",
+    "cur": "외부 태양계에서 처음이자 유일한 부드러운 착륙 — 2005년 1월 14일 타이탄의 대기를 낙하산으로 내려감"
+  },
+  {
+    "rel": "missions/saturn/huygens.json",
+    "at": "dispatch",
+    "en": "Huygens was sent not to orbit but to fall. Strapped to Cassini for seven years, it detached on Christmas Day 2004 and coasted alone toward Titan for twenty days. When it hit Titan's atmosphere at six kilometres per second, a heat shield bought the time it needed; then three parachute stages slowed it for two and a half hours through an orange haze no instrument had ever crossed. It photographed river valleys, measured wind speeds, smelled the atmosphere — and touched down on a floodplain of rounded water-ice pebbles. It was the first landing ever made in the outer solar system, and no spacecraft has landed there since.",
+    "cur": "Huygens는 궤도를 돌기 위해 보내진 것이 아니라 떨어지기 위해 보내졌습니다. 7년간 Cassini에 부착되어 있던 그것은 2004년 크리스마스에 분리되어 20일 동안 타이탄을 향해 혼자 항해했습니다. 초속 6킬로미터의 속도로 타이탄의 대기에 충돌했을 때, 열 차폐막이 필요한 시간을 벌어주었습니다. 그런 다음 3단계의 낙하산이 어떤 기기도 전에 통과한 적 없는 주황색 안개를 통해 2시간 반 동안 이를 감속시켰습니다. 강 계곡을 촬영하고, 바람 속도를 측정하고, 대기를 '냄새 맡았으며' 둥근 물-얼음 자갈의 평원에 착륙했습니다. 이것은 외부 태양계에서 이루어진 첫 번째 착륙이었으며, 그 이후로 어떤 우주선도 그곳에 착륙하지 않았습니다."
+  },
+  {
+    "rel": "missions/saturn/huygens.json",
+    "at": "description",
+    "en": "ESA's Huygens probe rode aboard NASA's Cassini spacecraft on a 7-year interplanetary cruise to the Saturn system, arriving at Saturn in July 2004. Released on 2004-12-25, it coasted for 20 days before entering Titan's nitrogen–methane atmosphere on 2005-01-14 at 6 km/s. An aeroshell slowed the probe to subsonic speed; three successive parachute stages then guided it through 2 hours 27 minutes of descent, collecting the first direct measurements of Titan's atmosphere — temperature, pressure, wind, and chemical composition at all altitudes. The probe transmitted 350 images during descent and continued transmitting from the surface for 72 minutes, revealing a floodplain of rounded water-ice pebbles beneath a thin veneer of liquid methane at 10.3°S, 192.3°W.",
+    "cur": "ESA의 Huygens 탐사선은 NASA의 Cassini 우주선에 탑재되어 토성계로의 7년 행성간 항해를 했으며 2004년 7월 토성에 도착했습니다. 2004년 12월 25일에 방출되어 2005년 1월 14일 초속 6km의 속도로 타이탄의 질소-메탄 대기에 진입하기 전에 20일간 항해했습니다. 공력 외형이 탐사선을 음속 이하로 감속시켰습니다. 3단계의 연속 낙하산이 이를 2시간 27분의 강하 동안 안내하여 타이탄의 대기를 직접 처음 측정 — 모든 고도에서의 온도, 압력, 바람 및 화학 성분을 수집했습니다. 탐사선은 강하 중에 350개의 이미지를 전송했고 표면에서 72분 동안 전송을 계속하여 10.3°S, 192.3°W의 액체 메탄의 얇은 베니어 아래의 둥근 물-얼음 자갈의 평원을 드러냈습니다."
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "first",
+    "en": "First spacecraft to fly past Saturn (1979-09-01); demonstrated the gravity-assist that sent Voyager 2 onward",
+    "cur": "토성을 처음 통과한 우주선(1979-09-01); Voyager 2를 보낸 중력 보조 궤도전환을 입증"
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "dispatch",
+    "en": "Pioneer 11 was the second scout, and it went further than its twin. After its own pass by Jupiter it used the planet’s gravity to cross the solar system and reach Saturn in 1979 — the first spacecraft ever to do so — deliberately flying through the ring plane to test whether the region was safe. It found the gap the Voyagers would thread a year later. Much of what made the Grand Tour possible was this: a small, cheap probe sent ahead to take the risks and map the hazards, so the flagships behind it could fly with confidence instead of fear.",
+    "cur": "Pioneer 11은 두 번째 탐사선이었고, 그 쌍둥이보다 더 먼 곳으로 나아갔다. 목성을 지난 후, 이 행성의 중력을 이용하여 태양계를 횡단하고 1979년 토성에 도달했다 — 처음으로 그곳에 도달한 우주선이었다 — 그 지역이 안전한지 시험하기 위해 의도적으로 고리 평면을 통과했다. Voyagers가 1년 뒤 헤쳐나갈 틈을 발견했다. Grand Tour를 가능하게 만든 것의 대부분은 이것이었다: 위험을 무릅쓰고 장애물을 지도화하기 위해 미리 보낸 작고 저렴한 탐사선, 그래서 뒤따르는 기함들이 두려움 대신 자신감을 가지고 비행할 수 있도록."
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "description",
+    "en": "Twin of Pioneer 10, launched a year later. Pioneer 11 used Jupiter’s gravity to bend its trajectory toward Saturn — the canonical proof of gravity-assist propulsion, the technique that later enabled the Voyager Grand Tour. At Saturn it discovered the F ring and a small inner moon later resolved into the co-orbital pair Janus/Epimetheus. Carries the same Pioneer plaque as its twin. Signal lost 1995-09-30 from a heliocentric distance of ~43 AU; the spacecraft is now heading toward the constellation Aquila.",
+    "cur": "Pioneer 10의 쌍둥이로, 1년 뒤에 발사되었다. Pioneer 11은 목성의 중력을 이용하여 궤도를 토성 방향으로 굽혀 — 중력 보조 궤도전환의 정석적 증명, 나중에 Voyager Grand Tour를 가능하게 한 기술. 토성에서 F 고리와 나중에 공궤도 쌍인 야누스/에피메테우스로 밝혀진 작은 내부 위성을 발견했다. 쌍둥이와 같은 Pioneer 명판을 탑재하고 있다. 약 43 AU의 태양중심 거리에서 1995-09-30에 신호 손실; 우주선은 현재 독수리자리를 향해 나아가고 있다."
+  },
+  {
+    "rel": "missions/saturn/voyager-1.json",
+    "at": "first",
+    "en": "Most distant human-made object — currently ~170 AU from the Sun in interstellar space",
+    "cur": "인류가 만든 가장 먼 물체 — 현재 태양으로부터 약 170 AU 떨어진 성간 우주에 위치"
+  },
+  {
+    "rel": "missions/saturn/voyager-1.json",
+    "at": "dispatch",
+    "en": "Voyager 1 is the farthest thing humanity has ever made, and it got there almost by an accident of geometry. A close pass by Saturn’s giant moon Titan — chosen for the science — bent its path up and out of the plane of the planets and aimed it at the edge of the solar system, and it has been climbing ever since. Along the way it found active volcanoes on Io, the first ever seen off Earth, and in 1990 it turned back to take the Pale Blue Dot. In 2012 it became the first machine to cross into interstellar space. It is still transmitting, on fading nuclear power, from more than a hundred times the Earth’s distance from the Sun.",
+    "cur": "Voyager 1은 인류가 만든 가장 먼 물체이며, 거의 우연의 기하학적 배치 덕분에 그곳에 도달했다. 토성의 거대한 달 타이탄에 근접 비행 — 과학 목적으로 선택됨 — 을 통해 행성 평면 위로 경로가 굽혀져 태양계의 가장자리를 향하도록 조정되었고, 그 이후로 계속 우주 밖으로 나아가고 있다. 그 과정에서 이오의 활화산을 발견했으며, 이는 지구 밖에서 관찰된 최초의 화산이다. 1990년에는 회전하여 Pale Blue Dot 사진을 촬영했다. 2012년에는 성간 우주로 진입한 최초의 인공 물체가 되었다. 현재도 희미해진 핵동력을 통해 태양으로부터 지구 거리의 백 배 이상 떨어진 곳에서 전송을 계속하고 있다."
+  },
+  {
+    "rel": "missions/saturn/voyager-1.json",
+    "at": "description",
+    "en": "Launched 16 days after Voyager 2, Voyager 1 flew faster and arrived at Jupiter first (1979) and Saturn first (1980). Its Titan flyby bent the trajectory upward out of the ecliptic plane, ending the planetary tour but sending it on the most direct path to the heliopause — which it crossed on 2012-08-25, the first human-made object to enter interstellar space. From a heliocentric distance of ~6 billion km it took the Pale Blue Dot family portrait (1990-02-14), the photograph Carl Sagan wrote about. Both Voyagers carry the Golden Record as humanity’s calling card.",
+    "cur": "Voyager 2호보다 16일 뒤에 발사된 Voyager 1은 더 빠르게 비행하여 목성(1979년)과 토성(1980년)에 먼저 도달했다. 타이탄 근접 비행으로 인해 궤적이 황도면 위로 구부러져 행성 탐사가 끝났지만, 태양권계 경계까지의 가장 직선적인 경로로 나아갈 수 있게 되었다 — 2012-08-25에 태양권계를 통과하여 성간 우주로 진입한 최초의 인공 물체가 되었다. 약 60억 km의 태양 중심 거리에서 Pale Blue Dot 가족 초상 사진(1990-02-14)을 촬영했으며, 이는 칼 세이건이 저술한 사진이다. 두 Voyager 탐사선 모두 인류의 메시지판으로서 Golden Record를 탑재하고 있다."
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "first",
+    "en": "Closest spacecraft to the Sun ever flown (6.1 M km, 9.86 R☉); first spacecraft to enter the solar corona (2021-04-28); fastest human-made object (~191 km/s)",
+    "cur": "태양에 가장 근접한 우주선(6.1 M km, 9.86 R☉); 태양 코로나에 처음 진입한 우주선(2021-04-28); 가장 빠른 인공물체(~191 km/s)"
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "description",
+    "en": "Parker Solar Probe ran the highest-energy launch ever flown for a science mission — C3 of 154 km²/s², requiring a custom Star 48BV solid third stage atop a Delta IV Heavy just to escape Earth into a Sun-falling trajectory. Seven Venus gravity assists over six years progressively lowered perihelion from 0.16 AU (P1, 2018-11-05) to 0.046 AU (P22, 2024-12-24 — 9.86 solar radii, 6.1 million km from the surface). At P8 in 2021-04-28 Parker dipped below the Alfvén critical surface — the first spacecraft ever to enter the Sun's corona. At P22 it reached ~191 km/s, becoming the fastest human-made object ever. The 11.43-cm carbon-carbon heat shield sustained 1,377 °C while the spacecraft bus 1 metre behind it remained at room temperature.",
+    "cur": "Parker Solar Probe는 과학 임무로 발사된 가장 높은 에너지 궤도를 기록했으며, C3 값 154 km²/s²로 지구를 탈출하여 태양으로 낙하하는 궤도에 진입하기 위해 Delta IV Heavy의 최상단에 맞춤형 Star 48BV 고체 3단 로켓이 필요했습니다. 6년에 걸친 금성의 중력 보조를 7차례 받으면서 근일점이 0.16 AU(P1, 2018-11-05)에서 0.046 AU(P22, 2024-12-24 — 태양 반경 9.86개, 태양 표면으로부터 610만 km)로 점진적으로 낮아졌습니다. 2021-04-28의 P8에서 Parker는 Alfvén 임계면 아래로 내려갔으며, 태양의 코로나에 진입한 첫 번째 우주선이 되었습니다. P22에서 약 191 km/s에 도달하여 인류가 만든 가장 빠른 물체가 되었습니다. 11.43 cm의 탄소-탄소 열 보호막은 1,377 °C를 견디었고, 그로부터 1미터 뒤에 있는 우주선 본체는 실온으로 유지되었습니다."
+  },
+  {
+    "rel": "missions/sun/solar-orbiter.json",
+    "at": "first",
+    "en": "First mission designed to image the Sun's polar regions in detail; complements Parker Solar Probe's in-corona measurements with high-latitude remote sensing",
+    "cur": "태양의 극지방을 상세히 촬영하도록 설계된 최초의 임무; Parker Solar Probe의 코로나 내부 측정을 고위도 원격 관측으로 보완"
+  },
+  {
+    "rel": "missions/sun/solar-orbiter.json",
+    "at": "description",
+    "en": "ESA-led mission with a NASA launch and one instrument contribution. Where Parker Solar Probe goes closer than anyone has ever been, Solar Orbiter goes higher — using repeated Venus gravity assists over a decade to climb out of the ecliptic toward ~33° heliographic inclination. From that vantage point its instrument suite (PHI, EUI, SPICE, STIX, METIS, SoloHI + four in-situ packages) images the Sun's polar magnetic fields, traces solar-wind acceleration in real time, and links remote and in-situ measurements simultaneously. First perihelion 2020-06-15 at 0.51 AU. Closest perihelion to date 2022-10-12 at 0.29 AU (inside Mercury's perihelion).",
+    "cur": "ESA 주도 임무로 NASA가 발사 및 하나의 기기를 기여. Parker Solar Probe가 그 누구보다 가까이 접근한다면, Solar Orbiter는 더 높이 올라간다 — 10년에 걸친 반복적인 금성 중력 보조를 사용하여 황도면에서 벗어나 약 33° 태양권 경사각을 향해 상승. 그 유리한 위치에서 기기 세트(PHI, EUI, SPICE, STIX, METIS, SoloHI + 4개의 현장 측정 패키지)는 태양의 극지 자기장을 촬영하고, 태양풍 가속을 실시간으로 추적하며, 원격 측정과 현장 측정을 동시에 연결한다. 첫 번째 근일점은 2020-06-15에 0.51 AU. 현재까지 가장 가까운 근일점은 2022-10-12에 0.29 AU (수성의 근일점 내부)."
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "first",
+    "en": "Only spacecraft ever to enter a high-inclination heliocentric orbit; only direct measurements of the solar wind at all heliographic latitudes",
+    "cur": "높은 경사의 태양 중심 궤도에 진입한 유일한 우주선; 모든 헬리오그래픽 위도에서의 태양풍 유일한 직접 측정"
+  },
+  {
+    "rel": "missions/sun/ulysses.json",
+    "at": "description",
+    "en": "Joint ESA / NASA mission. Launched 1990-10-06 from STS-41 Discovery + IUS + PAM-S upper stages, Ulysses used a Jupiter gravity assist on 1992-02-08 to deflect itself ~80° out of the ecliptic — the only way to reach a near-polar Sun-relative orbit from Earth's near-equatorial orbital plane. Three full polar orbits of the Sun over 18.5 years mapped the solar wind, heliospheric magnetic field, and energetic particles at all heliographic latitudes — direct measurements that revealed how solar-wind structure varies between equatorial slow-wind regions and high-latitude fast-wind streams from coronal holes. Mission terminated 2009-06-30 when thruster hydrazine froze in the lines. Hardware remains in heliocentric polar orbit.",
+    "cur": "ESA/NASA 공동 미션. 1990년 10월 6일에 STS-41 Discovery 우주왕복선과 IUS, PAM-S 상단 단계로 발사되었으며, Ulysses는 1992년 2월 8일에 목성 중력 보조를 이용하여 자신을 황도면 밖으로 약 80도 방향으로 편향시켰습니다. 이는 지구의 거의 적도 궤도면에서 태양을 기준으로 한 거의 극궤도에 도달하는 유일한 방법입니다. 18.5년에 걸친 태양의 3번의 완전한 극궤도는 태양풍, 태양권 자기장, 그리고 모든 태양 위도에서의 고에너지 입자를 매핑했습니다. 이러한 직접 측정은 태양풍 구조가 적도의 느린 풍 영역과 코로나 구멍으로부터의 고위도 빠른 풍 흐름 사이에서 어떻게 변하는지를 보여주었습니다. 추진제 하이드라진이 배관에서 동결되자 2009년 6월 30일에 미션이 종료되었습니다. 장비는 태양중심 극궤도에 남아 있습니다."
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "first",
+    "en": "Recovered from a 5-year solar-orbit hold to achieve Venus orbit on a backup attempt; the only Venus orbiter active in its final years of operation",
+    "cur": "5년간의 태양궤도 상태에서 복구되어 백업 시도로 금성 궤도 진입을 성공했으며, 임무 말년에 운영 중이던 유일한 금성 궤도선"
+  },
+  {
+    "rel": "missions/venus/akatsuki.json",
+    "at": "description",
+    "en": "Akatsuki — \"dawn\" — was Japan's first Venus mission. Launched 2010-05-20 from Tanegashima on an H-IIA 202, paired with the IKAROS solar-sail demonstrator. The planned Venus orbit insertion 2010-12-07 failed when salt crystal buildup in an oxidiser check valve threw the main engine off-axis 152 seconds into the burn. JAXA kept the spacecraft alive in solar orbit for five years, twelve correction maneuvers, until the next Venus encounter window. On 2015-12-07 a 1228-second burn using four attitude-control thrusters — never designed for orbital insertion — placed Akatsuki into a highly elliptical 400 × 440,000 km, 3°-inclination orbit. One of the most dramatic mission-saves in spaceflight history. Contact was lost in 2024; JAXA declared operations complete on 2025-09-18.",
+    "cur": "Akatsuki — \"새벽\"이라는 뜻 — 는 일본의 첫 금성 탐사선이었다. 2010-05-20에 다네가시마에서 H-IIA 202로 발사되었으며, IKAROS 태양범선 시연 위성과 함께 발사되었다. 계획된 2010-12-07의 금성 궤도 진입이 실패했는데, 산화제 확인 밸브의 소금 결정 축적으로 인해 메인 엔진이 연소 152초 시점에서 축이 맞지 않게 되었다. JAXA는 우주선을 태양궤도에서 5년 동안 살린 후, 12번의 궤도 보정 기동을 수행하여 다음 금성 접근 시기를 기다렸다. 2015-12-07에 1228초 동안의 연소를 통해 네 개의 자세 제어 추진기 — 원래 궤도 진입용으로 설계되지 않음 — 를 사용하여 Akatsuki를 400 × 440,000 km, 경사각 3°의 고타원 궤도에 진입시켰다. 우주비행 역사상 가장 극적인 임무 구난 사례 중 하나이다. 2024년에 통신이 두절되었으며, JAXA는 2025-09-18에 운영 완료를 선언했다."
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "first",
+    "en": "Most complete radar map of Venus — 98% of the surface at ~120-m resolution; first planetary spacecraft launched from the Space Shuttle",
+    "cur": "금성의 가장 완전한 레이더 지도 — 표면의 98%를 ~120m 해상도로 촬영; Space Shuttle에서 발사된 첫 번째 행성 우주선"
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "description",
+    "en": "Magellan turned Venus from a featureless cloud-veiled disc into a mapped planet. Launched from Shuttle Atlantis's payload bay 1989-05-04 — the first planetary spacecraft to ride a Shuttle — and arrived at Venus 1990-08-10 via a long Type-IV trajectory (1.5 solar revolutions). Over four mapping cycles the synthetic-aperture radar imaged 98% of Venus's surface at ~120-m resolution, revealing tessera highlands, coronae, pancake domes, and a young, volcanically-resurfaced surface. Mission ended 1994-10-13 in the Termination Experiment — the first planned controlled atmospheric entry of a planetary spacecraft.",
+    "cur": "Magellan은 금성을 구름으로 뒤덮인 특징 없는 원판에서 지도화된 행성으로 변모시켰다. 1989-05-04 Shuttle Atlantis의 페이로드 베이에서 발사되었으며 — 우주왕복선을 탄 첫 번째 행성 우주선 — 긴 Type-IV 궤적(1.5 태양 공전)을 통해 1990-08-10 금성에 도착했다. 4개의 지도 작성 사이클에 걸쳐 합성 개구 레이더는 금성 표면의 98%를 ~120m 해상도로 촬영하여 테세라 고지, 코로나, 팬케이크 돔, 그리고 젊고 화산으로 재가공된 표면을 드러냈다. 임무는 1994-10-13 Termination Experiment에서 종료되었으며 — 행성 우주선의 첫 번째 계획된 제어된 대기권 진입이었다."
+  },
+  {
+    "rel": "missions/venus/vega-1.json",
+    "at": "first",
+    "en": "First-ever balloon aerostat deployed in another planet's atmosphere (Venus, 1985); first spacecraft to carry science to two distinct solar-system targets",
+    "cur": "다른 행성의 대기권에 배포된 최초의 풍선 에어로스탯(금성, 1985년); 태양계의 두 개의 서로 다른 천체에 과학을 전달한 최초의 우주선"
+  },
+  {
+    "rel": "missions/venus/vega-1.json",
+    "at": "description",
+    "en": "Soviet–ESA flagship of the Halley armada. Vega 1 launched 1984-12-15 with a Venera-lineage lander plus a first-of-kind ESA/CNES-built helium balloon that drifted in Venus's cloud deck at 54 km altitude for 46.5 hours, transmitting wind + temperature data via a 20-station global radio net. After dropping its descent module the bus used Venus gravity assist to redirect to comet 1P/Halley, achieving a 8890 km closest approach on 1986-03-06 — the first cometary nucleus encounter, and the position fix that ESA's Giotto used to navigate its own much closer Halley flyby a week later.",
+    "cur": "핼리 탐사 함대의 소련-ESA 주력 탐사선. Vega 1은 1984-12-15에 Venera 계열 착륙선과 ESA/CNES가 제작한 최초의 헬륨 풍선을 싣고 발사되었다. 이 풍선은 금성 구름층 54 km 고도에서 46.5시간 동안 떠다니며 20개 지상국으로 이루어진 전 지구 라디오망을 통해 바람과 온도 데이터를 전송했다. 강하 모듈을 떼어낸 뒤 본체는 금성 중력 도움으로 방향을 바꿔 혜성 1P/핼리로 향했고, 1986-03-06에 8890 km까지 접근했다 — 최초의 혜성핵 조우이자, 일주일 뒤 ESA의 Giotto가 훨씬 더 가까운 핼리 근접 비행을 위해 항법에 사용한 위치 측정이었다."
+  },
+  {
+    "rel": "missions/venus/vega-2.json",
+    "at": "first",
+    "en": "First chemical analysis of Venusian highland-type soil (Aphrodite Terra, 1985); paired Halley encounter with Vega 1 fed Giotto's targeting solution",
+    "cur": "금성 고지대 토양의 최초 화학 분석(아프로디테 대륙, 1985); Vega 1과의 쌍 핼리 혜성 조우가 Giotto의 목표 결정 해법 제공"
+  },
+  {
+    "rel": "missions/venus/vega-2.json",
+    "at": "description",
+    "en": "Twin of Vega 1, launched 6 days later (1984-12-21) for redundancy + a paired Halley armada solution. Vega 2's descent module landed 1985-06-15 in Rusalka Planitia, on the northern flank of Aphrodite Terra, and used XRF spectrometry to find anorthosite-norite-troctolite material — the first chemical analysis of highland-type Venusian crust (the composition resembles lunar highlands, though the landing site itself is a plain). Its balloon performed identically to Vega 1's, drifting in the opposite hemisphere at ~240 km/h. The bus flew past comet 1P/Halley at 8030 km on 1986-03-09. Together the two Vega buses returned the first close-up cometary-nucleus images and refined the position fix that allowed Giotto to attempt a 596 km flyby five days later.",
+    "cur": "6일 뒤에 발사된(1984-12-21) Vega 1의 쌍둥이로, 중복성 및 쌍을 이룬 핼리 혜성 함대 해법을 위해 발사됨. Vega 2의 강하선은 1985-06-15에 아프로디테 대륙의 북쪽 측면인 루살카 평원에 착륙했으며, XRF 분광법을 사용하여 정장석-노라이트-트럭톨라이트 물질을 발견했다 — 고지대형 금성 지각의 최초 화학 분석(구성 성분이 달의 고지대와 유사하지만, 착륙지 자체는 평원). 그 기구는 Vega 1의 기구와 동일하게 작동하여 반대편 반구에서 약 240 km/h 속도로 표류함. 모선은 1986-03-09에 혜성 1P/핼리 혜성을 8030 km 거리에서 지나갔음. 두 Vega 모선은 함께 최초의 근접 혜성 핵 이미지를 반환했으며 5일 뒤 Giotto가 596 km 플라이바이를 시도할 수 있게 한 위치 수정을 정밀화했다."
+  },
+  {
+    "rel": "missions/venus/venera-13.json",
+    "at": "first",
+    "en": "Longest surface survival of any Venus mission (127 min); first colour panoramic images and first audio from another planet's surface",
+    "cur": "모든 금성 임무 중 최장 표면 생존(127분); 다른 행성 표면의 첫 컬러 파노라마 영상 및 첫 음성"
+  },
+  {
+    "rel": "missions/venus/venera-13.json",
+    "at": "description",
+    "en": "The peak of the Soviet Venera program. Venera 13 launched 1981-10-30 and landed 1982-03-01 at 7.5°S 303°E in the Phoebe Regio highlands. Surface conditions at touchdown: 457 °C, 89 bar, sulfuric-acid haze. The lander survived 127 minutes — nearly an hour beyond its design target — returning the first colour panoramas from another planet's surface, recording wind microphone audio, and using its drill + onboard X-ray fluorescence spectrometer to determine that the basalt at the landing site was a weakly differentiated leucite alkaline composition. Twin spacecraft Venera 14 performed identical operations at a separate site five days later. The Venera series (1967–1983) remains the only successful surface program at Venus to date.",
+    "cur": "소비에트 베네라 계획의 정점. Venera 13은 1981-10-30에 발사되었고 1982-03-01에 포이베 레지오 고지대의 7.5°S 303°E 지점에 착륙했습니다. 착륙 시 표면 조건: 457 °C, 89 bar, 황산 안개. 착륙선은 127분 동안 생존했습니다 — 설계 목표보다 거의 1시간 더 — 다른 행성 표면에서 처음으로 컬러 파노라마를 촬영하고, 바람 마이크로폰 오디오를 기록했으며, 드릴과 탑재 X선 형광 분광계를 사용하여 착륙지의 현무암이 약하게 분화된 류사이트 알칼리 조성임을 결정했습니다. 쌍둥이 우주선 Venera 14는 5일 후 별개의 지점에서 동일한 작업을 수행했습니다. Venera 시리즈(1967–1983)는 현재까지 금성에서의 유일한 성공적인 표면 탐사 계획입니다."
+  }
 ]

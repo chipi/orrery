@@ -1,8 +1,8 @@
 [
- {
-  "rel": "sourcing/gaps.json",
-  "at": "gaps.1.resolution",
-  "old": "Das CNSA-Agenturlogo steht als ehrliche Kennzeichnung auf den Tiangong- und Shenzhou-Karten und -Seiten.",
-  "new": "Die Tiangong- und Shenzhou-Karten und -Seiten zeigen den Namen CMSA ohne Logo: Das CMSA-Emblem ist nicht frei lizenziert, und das CNSA-Abzeichen gehört einer anderen Behörde."
- }
+  {
+    "rel": "sourcing/gaps.json",
+    "at": "gaps.1.resolution",
+    "old": "Das CNSA-Agenturlogo steht als ehrliche Kennzeichnung auf den Tiangong- und Shenzhou-Karten und -Seiten.",
+    "new": "Die Tiangong- und Shenzhou-Karten und -Seiten zeigen den Namen CMSA ohne Logo: Das CMSA-Emblem ist nicht frei lizenziert, und das CNSA-Abzeichen gehört einer anderen Behörde."
+  }
 ]

@@ -1,8 +1,8 @@
 [
- {
-  "rel": "fleet/orbiter/clementine.json",
-  "at": "description",
-  "old": "官方名称为Deep Space Program Science Experiment (DSPSE)。由Ballistic Missile Defense Organization构想，目的是在深空条件下验证轻型传感器，NASA在月球和小行星科学方面进行协作。1994年1月25日由 Titan IIG 火箭发射，1994年2月19日进入月球极地轨道，进行了71天的测绘工作。以100-300米的分辨率对月球的每一平方公里进行了成像，覆盖11个波长——这是第一份完整的全球月球地图。使用Clementine的发射器和DSN地面天线进行的双基地雷达实验在月球南极沙克尔顿撞击坑发现了增强回波，与水冰的存在相符，比LCROSS的发现早15年。推进器点火失败导致计划中的Geographos 小行星飞掠任务被中止，最终结束了该任务。",
-  "new": "官方名称为Deep Space Program Science Experiment (DSPSE)。由Ballistic Missile Defense Organization构想，目的是在深空条件下验证轻型传感器，NASA在月球和小行星科学方面进行协作。1994年1月25日由 Titan IIG 火箭发射，1994年2月19日进入月球极地轨道，进行了71天的测绘工作。以100-300米的分辨率对月球的每一平方公里进行了成像，覆盖11个波长——这是第一份完整的全球月球地图。使用Clementine的发射器和DSN地面天线进行的双基地雷达实验在月球南极沙克尔顿撞击坑发现了增强回波，与水冰的存在相符，比LCROSS的发现早15年。推进器点火失败导致计划中的地理星小行星飞掠任务被中止，最终结束了该任务。"
- }
+  {
+    "rel": "fleet/orbiter/clementine.json",
+    "at": "description",
+    "old": "官方名称为Deep Space Program Science Experiment (DSPSE)。由Ballistic Missile Defense Organization构想，目的是在深空条件下验证轻型传感器，NASA在月球和小行星科学方面进行协作。1994年1月25日由 Titan IIG 火箭发射，1994年2月19日进入月球极地轨道，进行了71天的测绘工作。以100-300米的分辨率对月球的每一平方公里进行了成像，覆盖11个波长——这是第一份完整的全球月球地图。使用Clementine的发射器和DSN地面天线进行的双基地雷达实验在月球南极沙克尔顿撞击坑发现了增强回波，与水冰的存在相符，比LCROSS的发现早15年。推进器点火失败导致计划中的Geographos 小行星飞掠任务被中止，最终结束了该任务。",
+    "new": "官方名称为Deep Space Program Science Experiment (DSPSE)。由Ballistic Missile Defense Organization构想，目的是在深空条件下验证轻型传感器，NASA在月球和小行星科学方面进行协作。1994年1月25日由 Titan IIG 火箭发射，1994年2月19日进入月球极地轨道，进行了71天的测绘工作。以100-300米的分辨率对月球的每一平方公里进行了成像，覆盖11个波长——这是第一份完整的全球月球地图。使用Clementine的发射器和DSN地面天线进行的双基地雷达实验在月球南极沙克尔顿撞击坑发现了增强回波，与水冰的存在相符，比LCROSS的发现早15年。推进器点火失败导致计划中的地理星小行星飞掠任务被中止，最终结束了该任务。"
+  }
 ]

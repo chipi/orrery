@@ -1,404 +1,404 @@
 [
- {
-  "rel": "essays/generational-starships.json",
-  "at": "dek",
-  "en": "If we cannot go fast, the only alternative is to go slow — to trade speed for time and let the crew become a lineage. The generation ship is not a plan anyone is building. It is a mirror held up to everything we already are.",
-  "cur": "如果我们不能走得快，唯一的选择就是走得慢——用时间换取速度，让船员成为一个世系。世代飞船不是任何人正在建造的计划。它是一面镜子，照出我们已然是什么。"
- },
- {
-  "rel": "essays/generational-starships.json",
-  "at": "body.0.md",
-  "en": "The [interstellar-exploration essay](/essays/interstellar-exploration) does the arithmetic honestly, and the arithmetic is unkind. The nearest star system, Alpha Centauri, sits 4.37 light-years away. [Voyager 1](/missions?id=voyager-1), the fastest object humanity has ever launched on an escape trajectory from the solar system, left Earth in 1977 and is now — after nearly five decades of flight — less than 0.003 light-years out. At that pace, a ship aimed at Alpha Centauri would arrive in roughly 75,000 years. The [propulsion essay](/essays/new-propulsion) catalogues the exits: ion drives, solar sails, nuclear-thermal engines. They help at the margins of the solar system. Against interstellar distances, even the most ambitious of them buys perhaps a factor of ten in speed. Ten times faster than Voyager still means 7,500 years. No technology we can point to, and no physics we understand, closes that gap to a human lifetime.",
-  "cur": "这篇[星际探索论文](/essays/interstellar-exploration)诚实地进行了算术运算，而这个算术是无情的。最近的星系——半人马座α——距离我们4.37光年。[Voyager 1](/missions?id=voyager-1)是人类发射的速度最快的逃逸轨道物体，它于1977年离开地球，在近五十年的飞行后——现在距离地球还不到0.003光年。按照这个速度，一艘以半人马座α为目标的飞船需要约75,000年才能到达。[推进论文](/essays/new-propulsion)列举了各种途径：离子驱动、太阳帆、核热引擎。它们在太阳系边缘有帮助。但对于星际距离，即使是最雄心勃勃的技术也只能增加十倍的速度。比Voyager 1快十倍仍然需要7,500年。我们能指出的任何技术，以及我们理解的任何物理学，都无法缩小这个差距到人类的生命周期。"
- },
- {
-  "rel": "essays/generational-starships.json",
-  "at": "body.1.md",
-  "en": "There is one response to this that is not a fantasy: accept the timescale. Don't compress the journey — accommodate it. Build a vessel large enough and self-sufficient enough to sustain human life not for years but for centuries, and send it knowing that the people who step off at the destination will be the great-grandchildren, perhaps the great-great-grandchildren, of the people who stepped on. The generation ship. It is not, to be clear, a plan anyone is currently executing, or close to executing. No government has budgeted for it. No engineering programme is working toward it. It belongs to the category of ideas that are taken seriously by physicists and demographers and ethicists precisely because they are not constrained by near-term practicality — thought experiments with real teeth, where the thinking reveals things that more modest ambitions obscure. The value of imagining a generation ship is not the ship. It is what the ship requires, and what those requirements say about us.",
-  "cur": "有一种应对方式不是幻想：接受这个时间尺度。不要压缩旅程——适应它。建造一艘足够大、足够自给自足的船，能够维持人类生命不是数年，而是数百年，然后发射它，知道踏上目的地的人将是踏上船的人的曾孙辈，也许是曾曾孙辈。世代飞船。需要明确的是，这不是任何人目前正在执行或接近执行的计划。没有政府为它编制了预算。没有工程项目朝它前进。它属于那类被物理学家、人口统计学家和伦理学家认真对待的想法，正是因为它们不受近期实用性的限制——真正具有实际意义的思想实验，其中思考揭示了更谦逊的雄心掩盖的东西。想象世代飞船的价值不在飞船本身。而在飞船需要什么，以及这些要求说明了什么。"
- },
- {
-  "rel": "essays/generational-starships.json",
-  "at": "body.2.md",
-  "en": "Because what they say, mostly, is that we do not yet understand the problem we think we understand. We imagine the engineering — the hull, the drives, the reactor — and we underestimate everything else. A generation ship is not a big spacecraft. It is a civilisation in a bottle, hurled into the dark, with no resupply, no rescue, and a communication lag that grows, over the decades of flight, from hours to days to weeks, until the [comms essay's](/essays/comms) \"letters between people who have both already moved on\" becomes not a metaphor but a literal description of the relationship between ship and home. The hard problems are not the ones in the engineering textbooks. They are the ones in the ecology and genetics and governance and philosophy textbooks, and those disciplines have been thinking about them, in their own terms, for a long time.",
-  "cur": "因为他们说的大多是，我们还没有理解我们认为自己理解的问题。我们想象工程——船体、驱动、反应堆——而我们低估了一切其他的东西。世代飞船不是一艘大型航天器。它是一个装在瓶子里的文明，被抛向黑暗，没有补给，没有救援，通信延迟在飞行的几十年里从几小时增长到几天、几周，直到[通信论文](/essays/comms)中的\"两个已经各自前行的人之间的信件\"不再是隐喻，而是字面上的船与家之间的关系描述。困难的问题不是工程教科书里的。它们是生态学、遗传学、治理和哲学教科书里的问题，而这些学科在它们自己的术语中思考这些问题已经有很长时间了。"
- },
- {
-  "rel": "essays/generational-starships.json",
-  "at": "body.4.md",
-  "en": "The trade is brutal but coherent: substitute time for speed, and carry a civilisation instead of a crew. Any crewed mission to another star must either travel at a meaningful fraction of the speed of light, sustain the crew across many centuries at slower speeds, or do something we do not yet know how to do. The first requires propulsion that remains speculative even in principle — accelerating a crewed vessel to ten percent of the speed of light demands energy that dwarfs the total output of human civilisation. The third is science fiction in the precise sense: we don't have the physics. The second option is generation ships, and the reason they persist in serious discussion is that they require nothing we do not already know how to think about. No exotic physics. Only the willingness to accept that the voyage is the work of a lineage, not a crew.",
-  "cur": "交易是残酷但连贯的：用时间换取速度，携带一个文明而不是一个船员。任何载人前往另一颗星的任务必须要么以光速的有意义的百分比旅行，要么在较慢的速度下在许多世纪中维持船员，要么做我们尚不知道如何做的事情。第一种需要推进，即使从原则上讲也仍然是推测性的——将载人飞船加速到光速的百分之十需要的能量远超人类文明的总产出。第三种是精确意义上的科幻——我们没有这样的物理学。第二个选择是世代飞船，它们之所以在严肃讨论中持续出现，是因为它们不需要任何我们还不知道如何思考的东西。没有奇异的物理学。只有接受航程是一个世系的工作，而不是船员的工作的意愿。"
- },
- {
-  "rel": "essays/generational-starships.json",
-  "at": "body.5.md",
-  "en": "A ship aimed at Proxima Centauri at one percent of the speed of light — an order of magnitude faster than anything we have built, but not physically inconceivable — would arrive in about 430 years. Roughly the time that separates us from Shakespeare. The people who departed would not live to see the destination; neither would their children, nor their grandchildren, nor several generations after them. The ship would need to sustain a functioning, reproducing human society across that entire span, with no external input and no possibility of resupply, and a communication delay to Earth that would, within decades of departure, grow long enough that no real-time guidance from home would be possible. [Voyager 1's](/missions?id=voyager-1) current one-way light-travel time to Earth is about 23 hours. A ship one light-year out would wait a year for any reply. Three light-years out: three years. The isolation is not metaphorical. It is absolute.",
-  "cur": "一艘以百分之一光速飞向比邻星的飞船——比我们建造过的任何东西快一个数量级，但物理上不是不可能的——将在约430年后到达。大约是把我们与莎士比亚分开的时间。离开的人不会活着看到目的地；他们的孩子也不会，他们的孙子孙女也不会，他们之后的几代人也不会。这艘船需要在整个这个跨度内维持一个运作的、能够生殖的人类社会，没有外部输入，没有补给的可能性，以及到地球的通信延迟，在离开后的几十年内，会增长到足够长，使得来自家乡的实时指导将不再可能。[Voyager 1](/missions?id=voyager-1)目前到地球的单程光程旅行时间约为23小时。一艘距离一光年的飞船需要等待一年才能得到任何回复。三光年外：三年。这种隔离不是隐喻。它是绝对的。"
- },
- {
-  "rel": "essays/generational-starships.json",
-  "at": "body.7.md",
-  "en": "The first engineering problem is the most fundamental: nothing arrives, and nothing leaves. Every atom of oxygen, water, nitrogen, carbon, and trace mineral that the crew needs for the entire voyage must either be launched with the ship or regenerated aboard it, indefinitely, without failure. The [ECLSS life support](/science/life-in-space/eclss-life-support) system aboard the International Space Station is the most sophisticated closed-loop life-support system humanity has operated — it recovers water from humidity, urine, and cabin air; it generates oxygen by electrolysing water; it scrubs carbon dioxide from the atmosphere. It is resupplied by cargo vehicles several times a year. Remove the resupply, and every inefficiency in the loop accumulates: every kilogram of water not recovered, every molecule of gas not recycled, is a kilogram or a molecule permanently lost from the ship's total inventory. Over a four-century voyage, the compounding of small losses becomes existential. A system that is 99.9 percent efficient loses, over 430 years, the equivalent of its entire working stock many times over. The loop must be, in practice, complete.",
-  "cur": "最基本的第一个工程问题是：什么都不到达，什么都不离开。船员在整个航程中需要的每一个原子的氧气、水、氮气、碳和微量矿物，必须要么与船一起发射，要么在船上无限地再生，没有失败。[国际空间站](/science/life-in-space/eclss-life-support)上的ECLSS生命保障系统是人类运作过的最复杂的闭合循环生命保障系统——它从湿度、尿液和舱空气中回收水；它通过电解水产生氧气；它清除大气中的二氧化碳。它每年被货运飞船补给多次。移除补给，循环中的每一个低效率都会积累：每一公斤没有回收的水，每一个分子的气体没有被回收，都是永久地从船的总存量中丧失的一公斤或一个分子。在四个世纪的航程中，小损失的复合变成了生存问题。一个99.9%有效的系统在430年内失去的，相当于其整个工作储备多次。循环必须，实际上，完整。"
- },
- {
-  "rel": "essays/generational-starships.json",
-  "at": "body.8.md",
-  "en": "The only existence proof for a closed ecology at scale is Earth itself, which has been running its loops for 4.5 billion years on a planet-sized substrate with input only from sunlight. Everything smaller has been attempted and has struggled. The most instructive attempt — because it was serious, well-funded, and failed in a way that taught precise lessons — was Biosphere 2, the 1.27-hectare sealed glass and steel structure built in the Arizona desert and inhabited by eight people from September 1991 to September 1993. The designers intended it as a demonstration of a self-sustaining closed ecology: five biomes, a farm, an ocean, a marsh, a rainforest, a desert, all sealed within a shell through which only sunlight and electricity passed. The crew was to breathe air regenerated by the plants, drink water cycled through the system, and eat food they grew themselves.",
-  "cur": "规模上闭合生态的唯一存在证明是地球本身，它在一个行星大小的基质上运行了45亿年，仅从阳光获得输入。所有更小的尝试都被尝试过，都曾挣扎。最有启发意义的尝试——因为它是严肃的、资金充足的，并以传授精确教训的方式失败了——是Biosphere 2，这是一个1.27公顷的密封玻璃钢结构，建造在亚利桑那州沙漠中，从1991年9月到1993年9月由八个人居住。设计师打算将其作为一个自给自足的闭合生态的演示：五个生物群落、一个农场、一个海洋、一个沼泽、一个热带雨林、一个沙漠，都密封在一个只有阳光和电力通过的壳层内。船员应该呼吸植物再生的空气，喝通过系统循环的水，吃他们自己种植的食物。"
- },
- {
-  "rel": "essays/generational-starships.json",
-  "at": "body.9.md",
-  "en": "What happened instead was instructive. Within months, oxygen levels began falling — from the Earth-normal 21 percent to 14.5 percent over about sixteen months, the equivalent of living at an altitude of 4,000 metres. The culprit turned out to be the concrete in the structure itself: it was absorbing carbon dioxide faster than the biology was producing oxygen, an effect the designers had not modelled. Morning glories, introduced as a food crop, escaped into the rainforest biome and crowded out other plants. Nineteen of the twenty-five vertebrate species introduced died out. The crew lost body weight on the farm's output and had to supplement from emergency stores. Oxygen had to be injected twice to keep the crew functional. Two years, in a 1.27-hectare structure with eight people, with active intervention possible from outside at any moment: Biosphere 2's lessons for a four-century sealed voyage are not encouraging. They are, however, exact.",
-  "cur": "结果却很有启发意义。在几个月内，氧气水平开始下降——从地球正常的21%下降到14.5%，历时约十六个月，相当于生活在海拔4,000米的高度。罪魁祸首是结构本身的混凝土：它吸收二氧化碳的速度超过生物产生氧气的速度，这是设计者未曾模拟的效应。作为粮食作物引入的牵牛花逃逸到雨林生物群落中，挤出了其他植物。引入的二十五种脊椎动物中有十九种灭绝了。船员靠农场的产出损失了体重，不得不从应急储备中补充。为了保持船员的正常功能，氧气必须注入两次。两年时间，在1.27公顷的结构中住着八个人，任何时刻都可能受到外部的主动干预：Biosphere 2号对于一次持续四个世纪的密闭航行的教训并不令人乐观。然而，它们是精确的。"
- },
- {
-  "rel": "essays/generational-starships.json",
-  "at": "body.10.md",
-  "en": "A generation ship would need to be an ecology, not merely a life-support system. The soil microbiome, the decomposition cycles, the nutrient flows that keep farmland from exhausting itself are all biological processes that require their own populations of organisms, their own balances, their own space. Agriculture alone cannot close these loops; the loops that close them are the ones Biosphere 2 discovered it could not maintain. The failure modes of a closed ecology are not dramatic. They are subtle — slow accumulations, unexpected sinks, one species thriving at the expense of the system's balance — and they operate on timescales that dwarf any experiment we have run. After Biosphere 2, the ecological questions remain substantially unanswered. For a four-century voyage, they are the first questions, not the last.",
-  "cur": "一个世代飞船需要是一个生态，而不仅仅是一个生命保障系统。土壤微生物群，分解循环，保持农田不枯竭的营养流都是需要自己的生物体种群、自己的平衡、自己的空间的生物学过程。仅农业不能闭合这些循环；闭合它们的循环是Biosphere 2发现它无法维持的循环。闭合生态的失败模式不是戏剧性的。它们是微妙的——缓慢的积累、意外的汇、一个物种以系统平衡的代价繁荣——它们在远超我们进行过的任何实验的时间尺度上运作。Biosphere 2之后，生态问题基本上仍未解决。对于四个世纪的航程，它们是第一个问题，而不是最后一个问题。"
- },
- {
-  "rel": "essays/generational-starships.json",
-  "at": "body.11.caption",
-  "en": "Nothing arrives and nothing leaves. The ecology has to run unbroken for centuries — air, water, and food cycled endlessly, with no resupply and no ground control to call. Biosphere 2, a sealed three-acre ecosystem, could not hold its own oxygen steady for even two years.",
-  "cur": "什么都不到达，什么都不离开。生态必须在数个世纪内不间断地运行——空气、水和食物无尽地循环，没有补给，没有地面控制可以呼救。生物圈2号，一个密封的三英亩生态系统，甚至无法在两年内保持其氧气的稳定。"
- },
- {
-  "rel": "essays/generational-starships.json",
-  "at": "body.12.caption",
-  "en": "The International Space Station is the closest thing we have built to a closed world — and it is resupplied from Earth every few weeks. A ship that must close the loop completely, for a thousand years, is a different order of problem entirely.",
-  "cur": "国际空间站是我们建造过的最接近闭合世界的东西——它每隔几周就从地球获得补给。一艘必须完全闭合循环、历时一千年的飞船是完全不同的问题。"
- },
- {
-  "rel": "essays/generational-starships.json",
-  "at": "body.14.md",
-  "en": "The second problem is genetic, and it has a name: minimum viable population. A species that reproduces sexually needs a certain number of breeding individuals to maintain genetic diversity over generations — to avoid inbreeding depression, to retain the reservoir of variation that allows adaptation to disease, stress, and environmental change. The question for a generation ship is: how many people do you need aboard to arrive at the destination with a population that is genetically healthy, i.e., not so inbred as to have lost the variation that long-term survival requires?",
-  "cur": "第二个问题是遗传学问题，它有一个名称：最小可行人口。一个进行有性生殖的物种需要一定数量的育种个体来维持几代人的遗传多样性——避免近亲繁殖抑郁，保留允许对疾病、压力和环保变化适应的变异库。对于世代飞船，问题是：你需要多少人上船才能到达目的地时，人口在遗传上是健康的，即不那么近亲繁殖以至于失去了长期生存所需的变异？"
- },
- {
-  "rel": "essays/generational-starships.json",
-  "at": "body.15.md",
-  "en": "The estimates are not reassuring. A 2014 study by anthropologist Cameron Smith at Portland State University, working from population genetics models and the specific conditions of a multigenerational interstellar voyage, concluded that a minimum founder population of around 14,000 people would be needed to sustain genetic health over a 150-year, multigenerational voyage, accounting for disease, accidents, and the natural variance in reproductive success. Earlier and more optimistic estimates — some suggesting a few hundred, others a few thousand — typically assumed ideal reproductive behaviour, no bottleneck events, and conditions of genetic management (essentially, controlled breeding) that most ethicists would find troubling. Even the most conservative analyses converge on a number that is not a crew in any conventional sense. It is a town.",
-  "cur": "估计并不令人放心。2014年波特兰州立大学的人类学家Cameron Smith进行的一项研究，从人口遗传学模型和多代星际航程的具体条件出发，得出结论，大约需要14,000人的最小创始人口来在150年、多代星际航程中维持遗传健康，考虑到疾病、事故和生殖成功的自然差异。早期的、更乐观的估计——一些建议几百人，其他建议几千人——通常假设理想的生殖行为、没有瓶颈事件，以及大多数伦理学家会觉得麻烦的遗传管理条件（本质上是控制繁殖）。即使是最保守的分析也汇聚在一个数字上，这不是任何常规意义上的船员。它是一个城镇。"
- },
- {
-  "rel": "essays/generational-starships.json",
-  "at": "body.16.md",
-  "en": "Beyond genetics, the population problem is cultural. Human societies across dozens of generations do not remain static. Languages drift; religions evolve or die; governance systems that seem stable over decades fracture over centuries; the institutional memory of why rules exist erodes and the rules either calcify into dogma or dissolve into anomie. A four-century voyage from departure to arrival spans roughly the same time as the entirety of the Scientific Revolution — from Copernicus through Newton through Darwin to Einstein. The society that arrives at the destination will not be the society that departed, in any cultural sense that matters. Whether it will still understand the mission, still have the technical knowledge to execute the landing and the establishment of a colony, still carry forward the skills and the social structures needed to survive in an alien environment — these are not engineering questions. They are questions about how knowledge is transmitted across generations, how institutions persist or fail, how identity holds together under conditions of radical confinement and radical isolation. History is not optimistic on any of them.",
-  "cur": "除了遗传学之外，人口问题是文化性的。跨越几十代的人类社会不会保持静止。语言漂移；宗教进化或消亡；在几十年内看起来稳定的治理系统在几个世纪内破裂；为什么规则存在的机制记忆侵蚀，规则要么僵化成教条，要么溶解成无政府状态。四个世纪的从出发到到达的航程跨越了大约与科学革命的全部——从Copernicus到Newton到Darwin到Einstein。到达目的地的社会在任何重要的文化意义上将不是离开的社会。它是否仍然理解使命，是否仍然拥有执行登陆和建立殖民地所需的技术知识，是否仍然传承在异星环境中生存所需的技能和社会结构——这些不是工程问题。它们是关于如何跨代传递知识、机构如何持续或失败、在激进的禁闭和激进的隔离条件下身份如何凝聚在一起的问题。历史在这些上面都不乐观。"
- },
- {
-  "rel": "essays/generational-starships.json",
-  "at": "body.17.md",
-  "en": "The [long-duration spaceflight research](/science/life-in-space/long-duration-effects) we have done — from the [Skylab](/missions?id=skylab-2) crews of the 1970s through the [Mir](/programs/mir) years and the continuous human presence aboard the [ISS program](/programs/iss) since 2000 — addresses [crew dynamics](/science/life-in-space/crew-dynamics-psychology) over months, not decades. The longest continuous human spaceflight on record is about 437 days. We know a great deal about what happens to a body in [microgravity](/science/life-in-space/microgravity-physiology) over a year. We know almost nothing about what happens to a society over a century, in confinement, under the specific pressures of a sealed world with no outside. The [body-in-the-dark essay](/essays/the-body-in-the-dark) covers the physiological arc. The sociological and psychological arcs are longer, less studied, and in some ways more alarming.",
-  "cur": "我们进行的[长期太空飞行研究](/science/life-in-space/long-duration-effects)——从1970年代的[Skylab](/missions?id=skylab-2)船员，通过[Mir](/programs/mir)的岁月，到自2000年以来[国际空间站](/programs/iss)的持续人类存在——涉及[船员动态](/science/life-in-space/crew-dynamics-psychology)跨越数月，而不是数十年。连续太空飞行时间最长的记录约为437天。我们对一个身体在[微重力](/science/life-in-space/microgravity-physiology)中一年内会发生什么知道很多。我们对一个社会在一个世纪内、在禁闭中、在密闭世界的具体压力下——没有外部接触——会发生什么几乎一无所知。[身体在黑暗中的论文](/essays/the-body-in-the-dark)涵盖了生理学的弧线。社会学和心理学的弧线更长、研究更少，在某些方面更令人担忧。"
- },
- {
-  "rel": "essays/generational-starships.json",
-  "at": "body.18.caption",
-  "en": "The passengers are not a crew but a population, and it has to stay genetically healthy across dozens of generations. One study puts the minimum near 14,000 people for a 150-year voyage — not a crew you train, but a society you launch, with its own governance, culture, and drift.",
-  "cur": "乘客不是一个船员而是一个人口，它必须在几十代中保持遗传健康。一项研究把150年航程的最小值放在接近14,000人——不是你训练的船员，而是你发射的社会，有它自己的治理、文化和漂移。"
- },
- {
-  "rel": "essays/generational-starships.json",
-  "at": "body.20.md",
-  "en": "Here is the question that most discussion of generation ships eventually arrives at and then tends to move past quickly, because it does not have a comfortable answer. The people who board the ship consent to the voyage. They are adults who have chosen, knowingly, to give their lives to a project whose completion they will not live to see — a choice that has precedent in human history, from the builders of cathedrals to the planters of orchards that their grandchildren would harvest. The choice is unusual but it is, at least, a choice.",
-  "cur": "这是大多数关于世代飞船的讨论最终到达的问题，然后往往迅速跳过，因为它没有一个舒适的答案。登上飞船的人同意这个航程。他们是成年人，有意识地选择了给一个他们不会活着看到完成的项目献出生命——这个选择在人类历史中有先例，从大教堂的建造者到种植果园的农民，他们的孙子孙女会收获。这个选择是不寻常的，但它至少是一个选择。"
- },
- {
-  "rel": "essays/generational-starships.json",
-  "at": "body.21.md",
-  "en": "The people born on the ship did not make that choice. They inherit a sealed world and a task — arrive at a star, establish a colony — that was decided by people who died before them, in a time and a context they can only know from records. They cannot leave. They cannot refuse the mission without threatening the survival of everyone aboard. The ship is their entire world: its politics are the only politics, its social norms the only norms they have ever known, its mission the framing condition of every life they have ever observed. In what sense are they free? In what sense is it ethical for the founders to make, on their behalf, a choice this total?",
-  "cur": "在飞船上出生的人没有做出那个选择。他们继承了一个密闭的世界和一个任务——到达一颗星，建立一个殖民地——这是在他们之前死去的人在他们只能从记录中了解的时间和背景中决定的。他们无法离开。他们无法拒绝使命而不威胁船上每个人的生存。这艘船是他们的整个世界：其政治是唯一的政治，其社会规范是他们曾经了解的唯一规范，其使命是他们曾经观察过的每一生命的框架条件。他们在什么意义上是自由的？创始人代表他们做出这样的总体选择在伦理上是什么意思？"
- },
- {
-  "rel": "essays/generational-starships.json",
-  "at": "body.22.md",
-  "en": "The philosopher S. Matthew Liao and others working in reproductive ethics have engaged this question directly, and their conclusions are not simple. The standard argument for generation ships — that the descendants will be glad to exist, and that existing in a ship is better than not existing at all — runs into the well-known non-identity problem: you cannot wrong someone by bringing them into existence, because non-existence is not a harm that can be compared to existence. But this cuts awkwardly in both directions. If you cannot wrong the unborn descendants by launching them into a sealed multi-century voyage, you also cannot, by the same logic, make the voyage a gift to them. They are not being given a choice. They are being given a world, and then being told the world has a task, and that the task is non-negotiable, and that there is no exit. The founders of a generation ship would be making the most consequential irreversible decision in human history: committing not just themselves but every descendant of theirs, for centuries, to a project they cannot withdraw from. The ethics of that decision have not been resolved, and the honest position is that they may not be resolvable — that the generation ship sits at the intersection of two genuine moral imperatives (expanding the reach of life versus the freedom of individuals to determine their own conditions) that cannot both be fully satisfied.",
-  "cur": "从事生殖伦理学工作的哲学家S. Matthew Liao和其他人直接参与了这个问题，他们的结论并不简单。对世代飞船的标准论证——后代将很高兴存在，在飞船中存在比根本不存在要好——遇到了众所周知的非同一性问题：你不能通过把某人带入存在来伤害他，因为不存在不是一个可以与存在相比的伤害。但这在两个方向上都不适当地切割。如果你不能通过将他们发射到一个密闭的多世纪航程中来伤害未出生的后代，你也不能，用同样的逻辑，使这次航程成为对他们的礼物。他们没有被给予选择。他们被给予一个世界，然后被告知这个世界有一个任务，这个任务是不可协商的，没有出口。世代飞船的创始人将做出人类历史上最重要的不可逆转的决定：不仅仅承诺他们自己，而是承诺他们的每一个后代，在几个世纪内，致力于一个他们无法退出的项目。那个决定的伦理还没有得到解决，诚实的立场是它们可能无法解决——世代飞船位于两个真正的道德命令的交叉口（扩展生命的范围对比个人决定自己条件的自由）无法都完全满足。"
- },
- {
-  "rel": "essays/generational-starships.json",
-  "at": "body.24.md",
-  "en": "Even granting all of the above — the ecology, the genetics, the governance, the ethics — there is one more problem, and it is the strangest. It was articulated clearly by the mathematician Andrew Kennedy in a 2006 paper in the Journal of the British Interplanetary Society, and it goes by the name the \"wait calculation\". The argument is this: if you launch a slow ship now, toward Alpha Centauri, and human technology continues to improve — if, decades or centuries into the future, we develop propulsion systems that allow travel at ten or twenty or fifty percent of the speed of light — then a faster ship launched later might depart after your slow ship but arrive before it, or at the same time. In that case, was it rational to depart early? The people who left in the slow ship would spend centuries in transit; the people who left in the fast ship might spend decades or years; they might arrive to find the colony already established by the descendants of the slow ship, or they might — if the slow ship had not yet arrived — be the first ones there, despite having left later.",
-  "cur": "即使承认以上所有——生态、遗传学、治理、伦理——还有一个更奇怪的问题。它由数学家Andrew Kennedy在2006年发表在《英国星际学会期刊》上的一篇论文中清楚地阐述，它以\"等候计算\"的名字而闻名。论证是这样的：如果你现在发射一艘缓慢的船前往半人马座α，而人类技术继续进步——如果在数十年或几个世纪后，我们开发了允许以十分之一、二十分之一或五十分之一光速旅行的推进系统——那么一艘更快的船可能在你的缓慢船之后发射但在它之前到达，或同时到达。在这种情况下，早出发在理性上是否明智？在缓慢船中留下的人将在运输中花费几个世纪；在快速船中留下的人可能花费几十年或几年；他们可能到达时发现殖民地已经由缓慢船的后代建立，或者他们可能——如果缓慢船还没有到达——成为第一个到达那里的人，尽管他们出发得更晚。"
- },
- {
-  "rel": "essays/generational-starships.json",
-  "at": "body.25.md",
-  "en": "Kennedy worked out the mathematics for this. Given reasonable assumptions about the pace of technological improvement in propulsion (based on historical rates), the optimal departure time for any given destination is not \"as soon as possible\" but \"when the technology is good enough that waiting any longer produces diminishing returns\". For Alpha Centauri, the wait calculation suggests that a ship launched before a certain threshold of propulsion capability would be irrational — that waiting for better technology would always be worth doing, up to a point. The paradox is that this reasoning can keep updating indefinitely: the ship you are about to launch is always in danger of being overtaken by a better ship launched later, so the rational choice always appears to be to wait. It is a genuine dilemma, and it has not been resolved. The only coherent answers involve either accepting that some pioneer voyages will be overtaken and that this is acceptable, or positing a scenario in which technological progress plateaus and waiting genuinely stops being rational. Neither answer is fully satisfying.",
-  "cur": "肯尼迪为此计算了数学。给定关于推进技术改进步伐的合理假设（基于历史速率），任何给定目的地的最优出发时间不是\"尽快\"而是\"当技术足够好以至于再等待会产生收益递减的时候\"。对于半人马座α，等候计算表明，在某个推进能力的阈值之前发射的船将是非理性的——等待更好的技术总是值得的，直到某个点。悖论是这个推理可以无限期地不断更新：你即将发射的船总是处于被更好的船以后发射而超越的危险中，所以理性选择似乎总是等待。这是一个真正的困境，还没有得到解决。唯一连贯的答案涉及要么接受一些先驱航程将被超越这在可以接受的范围内，要么假设一个技术进步平台化并且等待真正停止理性的情景。都不是完全令人满意。"
- },
- {
-  "rel": "essays/generational-starships.json",
-  "at": "body.26.caption",
-  "en": "And there is a paradox in even leaving. A ship launched slowly now might be overtaken by a faster one built centuries later — arriving to find the destination already settled. If waiting can always beat you there, when, if ever, is it rational to go?",
-  "cur": "而且就连出发本身也有悖论。现在缓慢发射的船可能被数个世纪后建造的更快的船超越——到达时发现目的地已经定居。如果等待总能抢先到达你，那什么时候，如果有的话，出发在理性上才是智慧的？"
- },
- {
-  "rel": "essays/generational-starships.json",
-  "at": "body.28.md",
-  "en": "Here, at the end of this collection, is the thing the generation ship is really for. Not the destination — there is no mission and no star. The thought experiment is a mirror, and what it reflects is the world we already inhabit.",
-  "cur": "这里，在这个集合的末尾，是世代飞船真正的目的。不是目的地——没有使命也没有星。思想实验是一面镜子，它反映的是我们已经居住的世界。"
- },
- {
-  "rel": "essays/generational-starships.json",
-  "at": "body.29.md",
-  "en": "Consider what a generation ship actually is. A sealed, finite world. A fully closed ecology that cannot be allowed to fail. A population of humans who did not choose the conditions of their birth and who are committed, by circumstances they did not create, to the maintenance of systems they did not build. A set of resources that cannot be replenished from outside. A governance problem spanning generations, with decisions made today binding people centuries hence. A communication lag — not from a distant ground control, but from every preceding generation to every subsequent one — that means the people running the system now are always working with instructions written by people who could not have anticipated the present situation, and leaving instructions for people who will face circumstances impossible to foresee.",
-  "cur": "考虑世代飞船真正是什么。一个密闭的有限世界。一个完全闭合的生态，不能被允许失败。一群人口中的人类，他们没有选择自己出生的条件，被他们没有创造的环境条件承诺，维持他们没有建造的系统。一套无法从外部补充的资源。一个跨代治理问题，今天做出的决定制约未来几个世纪的人。一个通信延迟——不是来自远处地面控制，而是来自每一个前一代到每一个后一代——意味着现在运行系统的人总是使用由无法预料现在情况的人写下的指令工作，并为将面临不可预见情况的人留下指令。"
- },
- {
-  "rel": "essays/generational-starships.json",
-  "at": "body.30.md",
-  "en": "This is not a description of a hypothetical ship. It is a description of Earth. The closed ecology is the biosphere — the same loops of carbon and nitrogen and water that Biosphere 2 tried to miniaturise and found it could not hold for two years. The [radiation exposure](/science/life-in-space/radiation-exposure), the [bone loss](/science/life-in-space/bone-density-loss), the [vestibular drift](/science/life-in-space/vestibular-adaptation) that the body essay traces in individual astronauts are the sharp-focus version of a slower, civilisational version of the same problem: humans evolved for conditions that are changing around them, and the timescale of adaptation is not the timescale of the change. The [food production challenge](/science/life-in-space/food-production-off-world) that a ship's designers must solve — how to feed thousands indefinitely on a finite substrate with no imports — is the same challenge that global agriculture faces, at planetary scale, with a population that is still growing. The governance question — who decides, for how long, on behalf of people not yet born — is the exact question that climate policy, nuclear waste storage, pension systems, and debt management all try and largely fail to answer.",
-  "cur": "这不是一个假设船的描述。这是地球的描述。闭合的生态是生物圈——Biosphere 2试图缩小并发现它无法在两年内保持的相同的碳、氮、水循环。[辐射暴露](/science/life-in-space/radiation-exposure)、[骨质流失](/science/life-in-space/bone-density-loss)、[前庭漂移](/science/life-in-space/vestibular-adaptation)身体论文在单个宇航员身上追踪的是相同问题的较缓慢的、文明版本的清晰焦点：人类进化到的条件正在他们周围变化，适应的时间尺度不是变化的时间尺度。飞船设计师必须解决的[食物生产挑战](/science/life-in-space/food-production-off-world)——如何在一个有限的基质上无限期地养活数千人，没有进口——是全球农业在行星规模上面临的相同挑战，人口仍在增长。治理问题——谁决定，多长时间，代表还未出生的人——正是气候政策、核废料储存、养老金系统和债务管理都试图并基本上无法回答的确切问题。"
- },
- {
-  "rel": "essays/generational-starships.json",
-  "at": "body.31.md",
-  "en": "None of this is comfortable. The generation ship thought experiment is not comforting — it is clarifying, which is a different thing. It strips away the assumption that we are temporary passengers on this world, that the systems we depend on are someone else's problem, that the decisions we make about the atmosphere and the oceans and the soil are reversible or deferrable in ways that the decisions a ship's founders make are not. They are not. We have been launched. The ship — this one, the actual one, the only one we have ever inhabited — is already underway. The people who arrive at whatever destination this civilisation reaches will be the descendants of the people who made, or failed to make, the choices that the long view has been circling for the length of this collection.",
-  "cur": "这都不是舒适的。世代飞船思想实验不是舒适的——它是澄清的，这是一个不同的东西。它剥离了这样的假设，即我们是这个世界的临时乘客，我们依赖的系统是别人的问题，我们对大气、海洋和土壤做出的决定是可逆或可推迟的，船的创始人做出的决定不是这样。它们不是。我们已经被发射了。这艘船——这个，真实的，唯一一艘我们曾经居住过的——已经在途中了。无论这个文明到达什么目的地，到达那里的人将是做出了、或者未能做出的，这个长期观点在整个这个集合的长度上一直在兜圈子的选择的后代。"
- },
- {
-  "rel": "essays/generational-starships.json",
-  "at": "body.32.md",
-  "en": "The [Voyagers](/missions?id=voyager-1) will keep flying. [Pioneer 10](/missions?id=pioneer-10) is still outbound, silent now, its transmitter long since dead, coasting through interstellar space on the momentum of a 1972 launch. [Pioneer 11](/missions?id=pioneer-11) the same. They are the furthest physical extensions of this civilisation, and they will outlast it — outlast the Sun, probably, coasting through the galaxy for billions of years after every human structure has dissolved. They carry plaques, because the people who built them thought, correctly, about the long view: not just what these spacecraft would do, but what they would mean to anyone who found them after we were gone. That instinct — to build for recipients you will never meet, to send something forward into a time you cannot see — is the generation ship impulse in miniature. It is also, in the most honest reading of where we are, the only impulse that might matter. We are the crew. We are already in flight. The question the generation ship poses — can a civilisation maintain, across generations, the systems and the intentions and the care that survival requires? — is not a question about a ship that does not exist. It is the question of this century, asked in the language of the stars.",
-  "cur": "[Voyagers](/missions?id=voyager-1)将继续飞行。[Pioneer 10](/missions?id=pioneer-10)仍在向外，现在沉默了，其发射器早已死亡，以1972年发射的动量在星际空间中滑行。[Pioneer 11](/missions?id=pioneer-11)也一样。他们是这个文明最远的物理延伸，他们将比它活得长——可能比太阳活得长，在我们消失后的数十亿年中在银河系中滑行。他们携带铭牌，因为建造他们的人正确地思考了长期观点：不仅仅是这些航天器将做什么，而是它们对任何在我们消失后发现它们的人将意味着什么。那种本能——为你永远不会见面的接收者建造，向你看不见的时代发送东西——是最小形式的世代飞船冲动。它也是，在最诚实的关于我们现在位置的阅读中，唯一可能重要的冲动。我们是船员。我们已经在飞行中。世代飞船提出的问题——一个文明能够维持，跨越时代，生存所需的系统、意图和关怀吗？——不是关于一艘不存在的船的问题。它是这个世纪的问题，用星星的语言提出。"
- },
- {
-  "rel": "essays/generational-starships.json",
-  "at": "body.33.caption",
-  "en": "Earthrise, photographed from Apollo 8 in 1968 — the whole of the only closed, finite world we have ever known, carrying its lineage through the dark with no resupply and no ground control. The generation ship is a thought experiment about this one: we are already the crew of one.",
-  "cur": "Earthrise，从1968年Apollo 8拍摄——整个我们曾经了解的唯一封闭的有限世界，在黑暗中携带它的世系，没有补给也没有地面控制。世代飞船是一个关于这一个的思想实验：我们已经是其中一艘的船员。"
- },
- {
-  "rel": "essays/going-to-mars.json",
-  "at": "dek",
-  "en": "Every human spaceflight plan eventually runs into Mars, and Mars breaks every one of them on the same three things at once: time, mass, and the body. It is not Apollo but further. It is a categorically different problem — and understanding why those confident departure dates keep sliding is the beginning of understanding it honestly.",
-  "cur": "每项人类太空飞行计划最终都会遭遇火星,而火星在同样三个方面同时摧毁它们:时间、质量和身体。这不只是比Apollo更远。这是一个根本不同的问题——理解那些充满信心的发射日期为何不断推迟,是诚实地理解它的开端。"
- },
- {
-  "rel": "essays/going-to-mars.json",
-  "at": "body.0.md",
-  "en": "There is a date that keeps moving. In 1969, Wernher von Braun told a Senate committee that humans could stand on Mars by 1982. In 1986, the National Commission on Space proposed 2010. In 2010, a presidential policy speech aimed at the mid-2030s. Each decade has produced a plan with specific hardware, specific timelines, and a specific decade in which the thing would happen — and each plan has, in one form or another, dissolved. The hardware changes, the agency changes, the rationale changes, but the date reliably recedes by roughly the same distance it was promised to close. Something structural is at work.",
-  "cur": "有一个日期不断推移。1969年，韦恩赫尔·冯·布劳恩向参议院委员会表示，人类可以在1982年前登陆火星。1986年，美国国家航天委员会提议2010年。2010年，一份总统政策演讲将目标定在本世纪30年代中期。每个十年都产生了一个计划，包括具体的硬件、具体的时间表，以及事情将发生的具体年代——而每个计划都以某种形式瓦解了。硬件改变了，机构改变了，理由改变了，但那个日期以大致相同的距离可靠地向后推移，就像它原本承诺的那样。某种结构性的力量在起作用。"
- },
- {
-  "rel": "essays/going-to-mars.json",
-  "at": "body.1.md",
-  "en": "The structural thing is not money, though money is always a constraint. It is not political will, though that evaporates too. It is that Mars presents, simultaneously, three problems that human spaceflight has not yet solved together — time, mass, and the body — and solving them separately, one at a time, gives a misleading sense of progress. Together they reinforce each other in ways that make the sum considerably harder than the parts. Mars has been reached robotically by the United States, Russia, the European Space Agency, India, China, and the United Arab Emirates. The vanguard is already multinational, and any honest account of who is trying to go there has to start from that fact.",
-  "cur": "结构性的问题不是金钱,尽管金钱总是一种制约。它不是政治意愿,尽管那也会蒸发。问题在于,火星同时呈现了三个人类太空飞行尚未一起解决的问题——时间、质量和身体——而逐一分开解决它们会产生一种误导性的进度感。它们相互强化,使得整体难度远大于部分之和。火星已经被美国、俄罗斯、欧洲航天局、印度、中国和阿联酋以机器人身份抵达。先锋部队已经是多国的,任何关于谁在试图去那里的诚实叙述都必须从这个事实开始。"
- },
- {
-  "rel": "essays/going-to-mars.json",
-  "at": "body.3.md",
-  "en": "The comparison to Apollo is almost always the first move in a Mars argument, and it is almost always misleading. What made Apollo work was a specific convergence: a single defined objective, a national emergency framing, essentially unlimited budget growth in the 1960s, and a light-lag of 1.3 seconds that kept crews in real-time contact with the ground. None of that exists for Mars, and none of it can be replicated by wanting it to.",
-  "cur": "与Apollo的比较几乎总是火星争论中的第一步,也几乎总是具有误导性的。使Apollo成功的是一种特定的汇聚:单一明确的目标、国家紧急情况框架、1960年代本质上无限的预算增长,以及保持机组人员与地面实时联系的1.3秒光延迟。这些条件对火星都不存在,也不能通过渴望而复制。"
- },
- {
-  "rel": "essays/going-to-mars.json",
-  "at": "body.4.md",
-  "en": "The Moon is, as [the going-to-the-moon essay](/essays/going-to-the-moon) frames it, a practice ground: three days out, abort available, radio real-time, catastrophic failures survivable. Mars is none of those things. At closest approach it is roughly 54 million kilometres away; at farthest, over 400 million. A radio signal takes three to twenty-two minutes one way. The fastest plausible transfer runs six to nine months of coast. Once the trans-Mars injection burn fires, there is no trajectory home on demand. The crew that leaves for Mars is committed.",
-  "cur": "月球,正如[关于登月的文章](/essays/going-to-the-moon)所述,是一个练习场:三天的路程,可以中止,无线电实时通信,灾难性故障可存活。火星都不是这些。在最近距离,它大约540万公里外;在最远距离,超过4亿公里。无线电信号单向需要三到二十二分钟。最快的可行转移需要六到九个月的巡航。一旦跨火星注入燃烧启动,就没有按需返回地球的轨道。前往火星的机组已经承诺了。"
- },
- {
-  "rel": "essays/going-to-mars.json",
-  "at": "body.6.md",
-  "en": "The first wall is time, and it begins before the mission does. Earth and Mars orbit the sun at different speeds — Earth in about 365 days, Mars in about 687 — which means the geometry between them is constantly shifting. A [Hohmann transfer orbit](/science/transfers/hohmann-transfer), the minimum-energy arc from one planet to another, only works when the planets are in the right relative positions: departure must be timed so that the transfer ellipse's far end intersects Mars's orbit at precisely the moment Mars arrives there. That window opens roughly every 26 months. Miss it and you wait more than two years for the next one.",
-  "cur": "第一堵墙是时间,它在任务开始前就已开始。地球和火星以不同的速度围绕太阳运行——地球约365天,火星约687天——这意味着它们之间的几何关系不断变化。[霍曼转移轨道](/science/transfers/hohmann-transfer),从一个行星到另一个行星的最小能量弧,只在两个行星处于合适相对位置时才有效:出发时间必须精确选择,使得转移椭圆的远端在火星到达那里的那一刻与火星轨道相交。这个窗口大约每26个月开一次。错过它,你需要等待两年多才能获得下一个。"
- },
- {
-  "rel": "essays/going-to-mars.json",
-  "at": "body.7.md",
-  "en": "The alignment affects not just the outbound leg but the return. A crew arriving at Mars will wait at least 14 to 18 months for the planets to cycle back into a return window — which is why a minimum-duration Mars mission, with a six-to-nine month outbound coast, a surface stay of 14 to 18 months, and a six-to-nine month return, runs to roughly 900 days total. Three years, round trip, as a floor. Engineers call the plots that map launch windows and transit times \"porkchop plots\" — contour maps of [delta-v](/essays/delta-v) cost against departure and arrival date that look, with some imagination, like the cut they are named for. The cheap valleys in those plots are the windows. The expensive ridges between them are the months when no reasonable mission can fly. The window runs the mission, not the other way around.",
-  "cur": "这种对齐不仅影响往程，也影响返程。到达火星的航组将至少等待14到18个月，直到行星循环回到返程窗口——这就是为什么最短时间火星任务包括六到九个月的往程滑行、14到18个月的地表停留和六到九个月的返程，总共运行约900天。往返总计三年，这是最低限度。工程师们把绘制发射窗口和航行时间的图表称为\"猪排图\"——这是一种等高线图，显示[delta-v](/essays/delta-v)成本相对于发射日期和到达日期的变化，用些想象力看起来就像它们被命名后的切割面。这些图中的廉价谷地是窗口。它们之间昂贵的山脊是不能进行任何合理任务的月份。窗口决定任务，而不是相反。"
- },
- {
-  "rel": "essays/going-to-mars.json",
-  "at": "body.8.md",
-  "en": "The commitment consequence of the window is absolute. Unlike an Apollo lunar mission — where a [free-return trajectory](/science/transfers/free-return) kept abort-to-Earth available for much of the outbound cruise — a Mars mission on a Hohmann arc has no such option once the trans-Mars injection burn fires. There is no trajectory that brings the crew home fast if something goes wrong on the way. There are higher-energy abort trajectories, but they require enormous propellant reserves that no mission has yet proposed carrying, precisely because propellant is the second wall.",
-  "cur": "窗口承诺的后果是绝对的。不同于Apollo月球任务——那里的[自由返回轨迹](/science/transfers/free-return)使得在大部分外出航程中都能选择中止并返回地球——火星任务采用Hohmann轨道后,一旦过火星注入燃烧发动就没有这样的选择。没有轨迹能在出航过程中出现问题时将机组迅速送回家。虽然存在更高能量的中止轨迹,但它们需要巨大的推进剂储备,还没有任何任务提议携带这样的储备,正是因为推进剂是第二道难关。"
- },
- {
-  "rel": "essays/going-to-mars.json",
-  "at": "body.9.caption",
-  "en": "You do not leave for Mars when you are ready; you leave when the two planets line up, which happens for a few weeks about every twenty-six months. Miss it and you wait two years. And once the transfer burn commits you to the six-to-nine-month coast, there is no abort back to Earth.",
-  "cur": "你不是在准备好时启程前往火星，而是在两颗行星排成一线时启程——这种机会每二十六个月左右出现数周。错过了，你就要等待两年。一旦转移燃烧提交了你为期六至九个月的巡航，就再无返回地球的中止选项。"
- },
- {
-  "rel": "essays/going-to-mars.json",
-  "at": "body.11.md",
-  "en": "The second wall is mass — and specifically, the relationship between mass and distance in a mission from which no resupply is possible. On the International Space Station, a Progress cargo vehicle arrives every few months with food, water, equipment, and spare parts. The station's life-support systems are closed-loop in some respects but leaky in others; water is recycled, but consumables are topped up regularly from Earth. A Mars crew gets no such resupply. Whatever leaves with them is what they have. Every kilogram of food, every litre of water, every spare component for every critical system must either be carried from Earth — at extraordinary launch cost — or produced on Mars itself.",
-  "cur": "第二堵墙是质量——更确切地说，是质量与距离之间的关系，而这一任务没有补给的可能。在国际空间站上，Progress货运飞船每几个月到达一次，运送食物、水、设备和备件。空间站的生命保障系统在某些方面是闭环的，但在其他方面是有漏洞的；水被回收利用，但消耗品定期从地球补充。火星任务小组无法获得这样的补给。随他们出发的东西就是他们拥有的全部。食物的每一公斤、水的每一升、每个关键系统的每一个备用部件，要么必须从地球运送——代价异常高昂的发射成本——要么在火星上自己生产。"
- },
- {
-  "rel": "essays/going-to-mars.json",
-  "at": "body.12.md",
-  "en": "The return-propellant problem is the sharpest version of this. A crewed lander descending to the Martian surface must also carry the propellant to ascend from it, rendezvous with a waiting ship in orbit, and burn for the return. The mass of that propellant, added to the lander, raises the lander's mass, which requires more propellant to land it, which raises the mass further — a spiral that has been studied carefully and comes out to tens of tonnes of propellant that must reach the Martian surface. Carrying it from Earth on a single launch stack is extraordinarily expensive. The escape from this spiral is [in-situ resource utilisation](/science/life-in-space/isru-resource-utilization): manufacturing propellant on Mars, from Martian resources, rather than hauling it from Earth.",
-  "cur": "返回推进剂问题是这一困境最尖锐的版本。降落到火星表面的有人着陆器还必须携带从火星表面上升、与轨道上等待的飞船交会，以及进行返程燃烧所需的推进剂。这些推进剂的质量加到着陆器上，增加了着陆器的质量，而这又需要更多推进剂来将其送达火星表面，从而进一步增加质量——这是一个已被仔细研究过的螺旋式问题，结果表明有数十吨的推进剂必须到达火星表面。通过单次发射堆栈从地球运送它的成本高得离谱。逃脱这一螺旋的出路在于[原位资源利用](/science/life-in-space/isru-resource-utilization)：利用火星资源在火星上制造推进剂，而非从地球运送。"
- },
- {
-  "rel": "essays/going-to-mars.json",
-  "at": "body.13.md",
-  "en": "The escape from the propellant spiral is [in-situ resource utilisation](/science/life-in-space/isru-resource-utilization): manufacturing propellant on Mars from Martian resources. Mars's atmosphere is 95% carbon dioxide; split CO₂ electrochemically and you have oxygen, or process it with hydrogen from water ice to produce methane fuel. [Perseverance](/missions?id=perseverance) carried MOXIE — the Mars Oxygen In-Situ Resource Utilization Experiment — which made oxygen from Martian CO₂ at small scale from 2021 to 2023, at rates of up to twelve grams per hour. It is the only proof-of-concept of resource production on another planet. Scaling that to the tonnes of propellant a crewed ascent vehicle needs, alongside a closed-loop [life-support system](/science/life-in-space/eclss-life-support) that recycles water and air for three years without resupply, is an unsolved engineering challenge of the first order. The path from ten grams per hour to a full propellant plant exists on paper. It has never been built.",
-  "cur": "逃脱推进剂怪圈的办法是[原位资源利用](/science/life-in-space/isru-resource-utilization)：从火星资源中制造火星用推进剂。火星大气中95%是二氧化碳；用电化学方法分解CO₂就能得到氧气，或者将其与来自水冰的氢气反应生成甲烷燃料。[Perseverance](/missions?id=perseverance)搭载了MOXIE——火星原位资源利用制氧实验——在2021年至2023年期间以小规模从火星CO₂中制造氧气，最高产率达每小时十二克。这是人类在另一个星球上进行资源生产的唯一概念验证。将其扩展至载人上升飞行器所需的数吨推进剂，再加上一套能在三年内不补给的情况下循环利用水和空气的闭环[生命保障系统](/science/life-in-space/eclss-life-support)，这是一项最高级别的未解工程难题。从每小时十克到完整推进剂生产厂的方案在纸面上存在。但从未被建造过。"
- },
- {
-  "rel": "essays/going-to-mars.json",
-  "at": "body.14.caption",
-  "en": "Hauling enough propellant from Earth to lift a crew back off Mars is close to impossible, so the plan is to make it on arrival. Perseverance’s MOXIE experiment pulled oxygen from the CO₂ atmosphere — a few grams an hour, but the first time a factory has ever run on another world.",
-  "cur": "从地球运送足够的推进剂来将宇航员从火星送回去几乎是不可能的，所以计划是到达后在当地制造。Perseverance的MOXIE实验从CO₂大气中提取了氧气——虽然每小时只有几克，但这是有史以来第一次有工厂在另一颗行星上运作。"
- },
- {
-  "rel": "essays/going-to-mars.json",
-  "at": "body.16.md",
-  "en": "The third wall's opening act is well documented. [Entry, descent, and landing at Mars](/science/mission-phases/edl) — the sequence the [seven-minutes essay](/essays/seven-minutes) traces in detail — is the hardest landing in the solar system for a specific and unforgiving reason: Mars has just enough atmosphere to generate lethal heat on entry, and not nearly enough to slow you to a landing speed on a parachute alone. Every Mars lander in history has required a bespoke combination of heat shield, supersonic parachute, rockets, and sometimes elaborate mechanical ingenuity — the airbags of [Mars Pathfinder](/missions?id=mars-pathfinder), the sky crane of [Curiosity](/missions?id=curiosity) and [Perseverance](/missions?id=perseverance) — just to get hardware the size of a car onto the surface. The sky crane is, at roughly one tonne of rover, near the outer limit of what the current EDL toolkit can deliver. A crewed Mars lander would mass on the order of twenty to forty tonnes.",
-  "cur": "第三堵墙的开场表现有详细的记录。[进入、下降和登陆火星](/science/mission-phases/edl)——[七分钟论文](/essays/seven-minutes)详细追踪的序列——是太阳系中最困难的登陆，原因特定而无情：火星的大气只够产生进入时的致命热量，但远不足以通过降落伞单独将你减速到登陆速度。历史上每一个火星登陆器都需要精心设计的热防护罩、超音速降落伞、火箭以及有时复杂的机械装置的组合——[Mars Pathfinder](/missions?id=mars-pathfinder)的气囊、[Curiosity](/missions?id=curiosity)和[Perseverance](/missions?id=perseverance)的空中起重机——仅仅为了在表面放下一辆汽车大小的硬件。空中起重机在大约一吨漫游车的情况下，接近当前进入下降登陆工具包能够投送的外部极限。一个载人火星登陆器的质量将在二十到四十吨的量级。"
- },
- {
-  "rel": "essays/going-to-mars.json",
-  "at": "body.17.md",
-  "en": "That gap — between what has been landed and what a crewed mission requires — is called the EDL gap, and it is not a small engineering extension of existing work. It is a regime change. The physics that governs parachute drag scales poorly with mass: a parachute large enough to meaningfully slow a forty-tonne vehicle in Mars's thin atmosphere would need to be so large that it becomes structurally impractical at supersonic speeds. Alternate approaches — supersonic retropropulsion, inflatable aeroshells, combinations thereof — have been studied and demonstrated at small scale. SpaceX's Starship, if it ever reaches Mars with a functioning propulsive-landing capability, would represent the first attempt at crewed-scale Mars EDL. As of this writing, Starship has not completed a fully successful orbital demonstration on Earth. Its Mars performance is a projection from an unproven system. Every credible analysis of crewed Mars architectures lists EDL as one of the most significant unresolved technical risks. This is not pessimism. It is the engineering record as it stands.",
-  "cur": "这一差距——现有着陆能力与载人任务需求之间的差距——被称为EDL间隙,这绝非现有工作的一个小型工程延伸。这是一个体制的转变。控制降落伞阻力的物理学规律随质量缩放效果很差:一个大到足以有意义地减缓四十吨车辆在火星稀薄大气中速度的降落伞,在超音速下会大到结构上难以实现。替代方案——超音速反推进、充气气动外壳、两者的组合——已在小规模下被研究和演示。如果SpaceX的Starship最终抵达火星且具备可用的推进着陆能力,将代表首次尝试载人规模的火星EDL。截至本文写作之时,Starship尚未在地球上完成一次完全成功的轨道演示。其火星性能是从一个未经验证的系统推导的预测。每一份有可信度的载人火星构架分析都将EDL列为最重大的未解决技术风险之一。这不是悲观主义。这是工程记录如实呈现的样子。"
- },
- {
-  "rel": "essays/going-to-mars.json",
-  "at": "body.18.md",
-  "en": "The signal lag applies regardless of EDL architecture. By the time Earth hears that a craft has entered the Martian atmosphere, the seven-minute sequence is already resolved — success or crater — which is why [Perseverance](/missions?id=perseverance) selected its own landing spot autonomously using terrain-relative navigation. For a crewed lander the same constraint holds: every descent decision is the crew's alone, and every emergency on the surface is answered by people eleven to twenty-two light-minutes from the nearest help.",
-  "cur": "无论EDL构架如何,信号延迟都存在。地球听到航天器进入火星大气时,七分钟的序列早已解决——成功或坠毁——这就是为什么[Perseverance](/missions?id=perseverance)使用地形相对导航自主选择着陆点。对于载人着陆器,同样的约束成立:每一个下降决策都完全由机组人员做出,表面上的每一个紧急情况都由距离最近的帮助十一到二十二光分钟外的人来应对。"
- },
- {
-  "rel": "essays/going-to-mars.json",
-  "at": "body.19.caption",
-  "en": "Perseverance in the last seconds of its own landing, lowered on cables from the sky crane over Jezero — the hardest arrival in the solar system, flown entirely by the spacecraft. A crewed lander would mass tens of times more, and no one yet knows how to set that down.",
-  "cur": "Perseverance在自身着陆的最后时刻,从天空起重机通过缆绳悬挂在Jezero上方——太阳系中最艰难的到达,由航天器完全自主飞行。一个载人着陆器的质量会超过数十倍,目前还没有人知道如何将其放下。"
- },
- {
-  "rel": "essays/going-to-mars.json",
-  "at": "body.21.md",
-  "en": "The third wall is the human body, and it is the one the mission architecture cannot engineer around. Mars has no global magnetic field — its core long since solidified, ending the dynamo that once generated the shield. Earth's magnetosphere deflects the bulk of galactic cosmic rays and solar energetic particles; Mars offers no equivalent. A six-month transit through interplanetary space delivers a measured dose of roughly 300 millisieverts — well over a hundred times a typical year of natural background radiation on Earth, absorbed in six months. On the Martian surface, without a magnetosphere, dose accumulates further from secondary radiation. A three-year round trip has been estimated at 600 to 1,200 millisieverts total, depending on solar-cycle phase and shielding — numbers measured in flight by instruments aboard [Curiosity](/missions?id=curiosity).",
-  "cur": "第三道墙是人体，而这是任务架构无法通过工程手段绕开的一道墙。火星没有全球磁场——其内核早已冷却凝固，曾经产生屏障的发电机效应就此终结。地球的磁层偏转了大部分银河宇宙射线和太阳高能粒子；火星没有任何等效的屏障。穿越星际空间的六个月航程，实测剂量约为300毫西弗——是地球上一年典型天然本底辐射的一百多倍，而这是在六个月内吸收的。在火星表面，由于没有磁层，次级辐射使剂量进一步累积。三年往返行程的总剂量估计为600至1,200毫西弗，取决于太阳周期阶段和屏蔽——这些数字是由[Curiosity](/missions?id=curiosity)上的仪器在飞行中实测得到的。"
- },
- {
-  "rel": "essays/going-to-mars.json",
-  "at": "body.22.md",
-  "en": "Current NASA occupational dose limits are designed to cap lifetime excess cancer risk to 3%. A Mars round trip, under most architecture assumptions, exceeds those limits. The [radiation exposure](/science/life-in-space/radiation-exposure) is a quantified, documented risk that existing shielding technology does not adequately mitigate; any limit revision permitting the mission would be a policy decision made against acknowledged uncertainty, not a technical problem solved. Beyond radiation, [bone density loss](/science/life-in-space/bone-density-loss) and [muscle atrophy](/science/life-in-space/muscle-atrophy) in [microgravity](/science/life-in-space/microgravity-physiology) can be slowed by countermeasures but not stopped. ISS crews on six-month tours return needing months of rehabilitation; a Mars crew would spend six to nine months in transit microgravity outbound, more than a year in Mars's one-third gravity — a regime with no long-duration human data — then six to nine months in microgravity again on return. Whether the body can sustain that sequence without permanent damage to bone, cardiovascular function, or vision is an open question that cannot be answered from current data. It can only be answered by going. And then there is the three-year social isolation — a crew in a volume comparable to a large recreational vehicle, beyond real-time communication with Earth, with no rescue available — a psychological experiment for which Antarctic winter-overs and submarine deployments are partial models at best.",
-  "cur": "NASA目前的职业剂量限制设定为将终身超额癌症风险限制在3%。在大多数构架假设下,火星往返会超过这些限制。[辐射暴露](/science/life-in-space/radiation-exposure)是一个量化、有案可查的风险,现有屏障技术无法充分缓解;任何允许任务进行的限制修订都将是针对已知不确定性做出的政策决定,而非解决的技术问题。除了辐射,[微重力](/science/life-in-space/microgravity-physiology)下的[骨密度丧失](/science/life-in-space/bone-density-loss)和[肌肉萎缩](/science/life-in-space/muscle-atrophy)可以通过对抗措施减缓但无法阻止。国际空间站的六个月任务宇航员返回后需要数月的康复;火星机组将在往程中花费六到九个月的微重力,在火星的三分之一重力下停留超过一年——一个没有长期人类数据的环境——然后在返回时再度经历六到九个月的微重力。人体能否在不对骨骼、心血管功能或视力造成永久伤害的情况下承受这一序列是一个开放问题,无法从现有数据中回答。只能通过亲身前往来获得答案。更有三年的社会隔离——机组在与大型休闲车相当大小的空间内,超出与地球实时通信范围,没有可用的救援——这是一个心理学实验,南极越冬和潜艇部署充其量只是不完美的部分模型。"
- },
- {
-  "rel": "essays/going-to-mars.json",
-  "at": "body.23.caption",
-  "en": "Mars lost its global magnetic field when its core cooled, so it has no shield against galactic cosmic rays or solar storms. A crew takes roughly 300 millisieverts on the six-month transit alone — and across a three-year round trip, a dose no shielding light enough to fly can stop.",
-  "cur": "火星在其内核冷却时失去了全球磁场,因此它对银河宇宙射线或太阳风暴没有屏障。机组在仅仅六个月的过渡中就要承受约三百毫西弗——而在三年往返过程中,没有足够轻到能飞行的屏障可以阻止这样的剂量。"
- },
- {
-  "rel": "essays/going-to-mars.json",
-  "at": "body.25.md",
-  "en": "The robotic record at Mars is, if you step back far enough, extraordinary. [Viking 1](/missions?id=viking1) touched down on Chryse Planitia on 20 July 1976 — the first spacecraft to operate successfully on the Martian surface — and ran for more than six years. [Spirit](/missions?id=spirit) and [Opportunity](/missions?id=opportunity) drove across terrain that no human has touched; [Curiosity](/missions?id=curiosity) has been reading the geological history of Gale Crater since August 2012; [Perseverance](/missions?id=perseverance) is in Jezero Crater right now, caching rock cores that a future sample-return mission may one day bring to Earth.",
-  "cur": "火星上的机器人记录从足够远的距离看来是非凡的。[Viking 1](/missions?id=viking1)于1976年7月20日在克律塞平原着陆——第一个在火星表面成功运作的航天器——并运行了超过六年。[Spirit](/missions?id=spirit)和[Opportunity](/missions?id=opportunity)在没有人类触及的地形上行驶;[Curiosity](/missions?id=curiosity)自2012年8月以来一直在读取盖尔撞击坑的地质历史;[Perseverance](/missions?id=perseverance)此刻正在耶泽罗撞击坑,缓存岩石芯样本,未来的样本返回任务有朝一日可能将其带回地球。"
- },
- {
-  "rel": "essays/going-to-mars.json",
-  "at": "body.26.md",
-  "en": "The global dimension of this vanguard is underappreciated. [Mangalyaan](/missions?id=mangalyaan) — the Mars Orbiter Mission of the Indian Space Research Organisation — arrived at Mars on 24 September 2014 on its first attempt, making India the fourth space agency to reach Mars and the first Asian nation to do so, at a total mission cost of approximately $74 million, less than the production budget of the film *Gravity*. It operated for nearly eight years, far beyond its six-month design life. [Tianwen-1](/missions?id=tianwen1), launched by China in July 2020, performed a feat that no space agency had managed on a first Mars attempt: it orbited, landed, and deployed a rover — Zhurong — all in a single mission. Zhurong drove across Utopia Planitia beginning in May 2021 and returned geological and atmospheric data for more than a year. That achievement, on the first try, from a national Mars programme that did not exist before the 21st century, reshapes the geopolitical map of where the capability to go to Mars currently resides.",
-  "cur": "这一先锋队的全球维度被低估了。[Mangalyaan](/missions?id=mangalyaan)——印度空间研究组织的火星轨道器任务——于2014年9月24日在首次尝试中抵达火星,使印度成为第四个到达火星的航天机构和第一个这样做的亚洲国家,总任务成本约为七千四百万美元,少于电影《地心引力》的制作预算。它的运行时间近八年,远超其六个月的设计寿命。中国在2020年7月发射的[天问一号](/missions?id=tianwen1)完成了没有任何航天机构在首次火星任务中管理过的壮举:它进行了环绕、着陆和部署漫游车——祝融——所有这一切都在单一任务中进行。祝融从2021年5月开始在乌托邦平原行驶,并返回了超过一年的地质和大气数据。这一成就,在首次尝试中,来自一个在21世纪之前不存在的国家火星计划,重塑了去火星能力当前所在地的地缘政治地图。"
- },
- {
-  "rel": "essays/going-to-mars.json",
-  "at": "body.27.md",
-  "en": "Against this robotic foundation, Starship stands as the current centrepiece of crewed Mars planning. SpaceX has described architectures in which fully reusable, fully refuelled vehicles carry large crews on six-month transits, landing propulsively and producing return propellant on the surface via ISRU. The ambition is real; a fully reusable vehicle at Starship's scale would change the mass equation substantially. But as of this writing, Starship has not completed a fully successful orbital demonstration on Earth. It has not demonstrated in-space propellant transfer at scale, propulsive landing at crewed-lander mass, or any of the life-support and radiation mitigations that the walls above require. Starship may eventually address those things. It is, right now, an enormous and seriously funded wager — and a wager is not a solution.",
-  "cur": "在这个机器人基础之上,Starship矗立为载人火星规划的当前中心。SpaceX已经描述了完全可重复使用、完全补充燃料的车辆在六个月过渡中携带大量机组的构架,推进着陆并通过原位资源利用在表面生产返回推进剂。雄心是真实的;完全可重复使用的Starship规模的车辆会实质性地改变质量方程。但截至本文写作之时,Starship尚未在地球上完成一次完全成功的轨道演示。它未曾在规模上演示过舱内推进剂转移、以载人着陆器质量进行推进着陆,或上述各道墙所需的任何生命保障和辐射缓解。Starship最终可能会处理那些事情。现在它是一个巨大的、获得严肃资金的赌注——而赌注不是解决方案。"
- },
- {
-  "rel": "essays/going-to-mars.json",
-  "at": "body.28.md",
-  "en": "What makes Mars the wall is not that it is impossible. The orbital mechanics are solved; the [transfer trajectories](/science/transfers/hohmann-transfer) are mapped; the [porkchop plots](/science/transfers/lambert-problem) exist for every window through the end of the century. What makes it the wall is that it requires solving time, mass, and the body simultaneously, at a remove where every failure is final and no help is coming. [The going-to-the-moon essay](/essays/going-to-the-moon) frames the lunar return as a rehearsal precisely because getting it wrong there is survivable. Mars does not offer that. The first crewed mission will be the first time every system runs together in the actual environment, with actual people inside, on an actual three-year commitment — and there is no second attempt built into the schedule.",
-  "cur": "使火星成为难题的，并不是因为它不可能到达。轨道力学已经解决了；[转移轨迹](/science/transfers/hohmann-transfer)已经绘制出来；每个世纪末前的每个机会窗口的[弐重线图](/science/transfers/lambert-problem)都存在。使它成为难题的是，它要求同时解决时间、质量和身体的问题，而且在极其遥远的地方，每一次失败都是最终的，没有帮助会到来。[登月论文](/essays/going-to-the-moon)之所以将月球返回任务框架为演练，正是因为在那里出错是可以活下来的。火星不提供这种可能。第一次载人任务将是第一次所有系统在实际环境中共同运行，实际的人在里面，在一个真实的三年承诺上——而且时间表中没有内置第二次尝试。"
- },
- {
-  "rel": "essays/going-to-mars.json",
-  "at": "body.29.md",
-  "en": "The date keeps moving because the work is real and the work is hard. The honest answer to \"when will humans land on Mars\" is: when the three walls have been addressed — not when confidence is high, not when a schedule says so, not when a founder's ambition demands it, but when the EDL architecture has been demonstrated at crewed scale, when a closed-loop life-support system has been proven for three years of operation, when the radiation picture is either mitigated or accepted on known terms, and when a return-propellant supply exists at Mars before the crew leaves Earth. Some of that work is underway. None of it is done. The wall is still there, and the measure of every plan is whether it faces the wall squarely or papers over the hardest parts with optimism. The former is how you eventually get through. The latter is how you move the date.",
-  "cur": "日期不断推移是因为工作是真实的,工作是艰难的。对'人类何时登陆火星'这个问题的诚实回答是:当三道墙都被解决时——不是信心高的时候,不是日程表说的时候,不是创始人的雄心要求的时候,而是当EDL构架已在载人规模上演示,当闭环生命保障系统已被证明能运行三年,当辐射情况要么被缓解要么在已知条款下被接受,以及当返回推进剂供应在机组离开地球前已存在于火星时。其中一些工作正在进行。没有任何工作完成。墙仍然存在,每一个计划的衡量标准是它是否正面对待这道墙,还是用乐观主义粉饰最艰难的部分。前者是你最终突破的方式。后者是你推动日期的方式。"
- },
- {
-  "rel": "essays/going-to-mars.json",
-  "at": "body.30.caption",
-  "en": "China’s Tianwen-1 delivered an orbiter, a lander, and the Zhurong rover to Mars on its very first attempt in 2021 — a sequence no other nation has managed in a single mission. Mars is the wall precisely because so many have broken on it, and a few, from more and more of the world, have not.",
-  "cur": "中国的天问一号在其2021年的首次尝试中向火星交付了一个轨道飞行器、一个着陆器和祝融漫游车——一个没有其他国家在单一任务中管理过的序列。火星是墙恰恰因为那么多的人已经在它上面破裂,少数来自越来越多的世界的国家没有这样做。"
- },
- {
-  "rel": "essays/going-to-the-moon.json",
-  "at": "dek",
-  "en": "We went to the Moon once, at extraordinary cost, then stopped for half a century and let the institutional memory die. Now we are relearning it — and this time, the reason we are going has changed.",
-  "cur": "我们曾到过月球一次，付出了非凡的代价，随后停了半个世纪，让机构记忆消亡。现在我们在重新学习它——这一次，我们去的原因已经改变了。"
- },
- {
-  "rel": "essays/going-to-the-moon.json",
-  "at": "body.0.md",
-  "en": "There is a fact about the Moon that ought to be more unsettling than it usually is. We went there, conclusively, between 1969 and 1972. Twelve people walked on it. We brought back 382 kilograms of rock, took thousands of photographs, drove a rover across the highlands, and left behind retroreflectors that astronomers still bounce lasers off today. And then, for reasons that were never fully technical, we stopped — and the six decades that followed were long enough that almost everything we learned about how to do it was lost. Not forgotten in the sense that the records vanished; lost in the deeper sense that the people who held the knowledge in their hands retired and died, the tooling was scrapped, the supply chains dissolved, and the organisations rebuilt themselves around other priorities. The Saturn V production line, the most capable launch system humanity has ever built, was shut down before [Apollo 17](/missions?id=apollo17) even flew. We did this once. That is a different sentence from: we can do this now.",
-  "cur": "关于月球有一个事实，应该令人比通常更感到不安。我们在1969年至1972年间明确地到过那里。十二个人在上面行走过。我们带回了382公斤的岩石，拍摄了数千张照片，驾驶漫游车穿越高地，留下了天文学家至今仍在用激光反射的角反射镜。然后，出于从未完全是技术性的原因，我们停了下来——接下来的六十年足够长，以至于我们学到的几乎所有关于如何做这件事的知识都丧失了。不是记录消失意义上的遗忘，而是更深层意义上的丧失：持有这些知识的人退休了、死了，工具被报废了，供应链瓦解了，组织围绕其他优先事项重建了自身。土星五号生产线——人类建造过的最强大的运载系统——在[Apollo 17](/missions?id=apollo17)飞行之前就关闭了。我们曾经做过这个。这与我们现在能做这个是两个不同的句子。"
- },
- {
-  "rel": "essays/going-to-the-moon.json",
-  "at": "body.1.md",
-  "en": "That fact — returning, relearning, rebuilding — sits at the centre of everything happening at the Moon right now. The world is busy there in a way it hasn't been since the 1970s: Chinese landers on the farside, Indian and Japanese spacecraft touching down near the south pole, a wave of commercial American landers, a NASA programme aimed at returning crews. But before any of that can be understood clearly, two things need to be held in mind at once. First: the Moon is the natural first rung of deep-space ambition precisely because it is close enough to be forgiving and real enough to teach the genuine lessons. Second: we already climbed that rung, at staggering expense, then climbed back down and let the rung corrode. The return to the Moon is not a continuation of Apollo. It is a second attempt at what Apollo started, fifty years later, for different reasons, by a different cast — and in some respects starting from further back.",
-  "cur": "这个事实——返回、重新学习、重建——处于现在月球上发生的一切的中心。世界在那里忙碌得像自1970年代以来从未有过的样子：中国着陆器在远侧、印度和日本航天器在南极附近着陆、一波商业美国着陆器、一项旨在返回载人crew的NASA计划。但在任何这些都能被清楚理解之前，有两件事需要同时记住。首先：月球之所以是深空野心的自然第一阶，正是因为它足够近以至于宽容，又足够真实以至于教授真正的课程。其次：我们已经以巨大的代价爬过了那阶梯，然后爬了回来，让那阶梯生了锈。回归月球不是Apollo的延续。这是Apollo开启的事业的第二次尝试，五十年后，为了不同的原因，由不同的参与者进行——在某些方面从更远的地方开始。"
- },
- {
-  "rel": "essays/going-to-the-moon.json",
-  "at": "body.4.md",
-  "en": "The Moon is approximately 384,400 kilometres away. Light covers that distance in about 1.3 seconds, which means that a signal sent from Earth arrives before you have finished the thought that prompted it. At Mars, the equivalent figure is somewhere between three and twenty-two minutes one way, and at the peak of the [seven-minute terror of entry, descent, and landing](/essays/seven-minutes), the craft is entirely alone. At the Moon, a human crew can still talk to the ground in something approaching real time. Controllers can issue warnings, ask questions, and receive answers before a developing problem becomes an irreversible one. That margin — 1.3 seconds versus twenty-two minutes — is the difference between a place where people can be kept in the loop and a place where they cannot. It is not an incidental detail. It is the structural reason the Moon comes first.",
-  "cur": "月球大约距离地球384,400公里。光覆盖这个距离大约需要1.3秒，这意味着从地球发送的信号在你完成促使它的想法之前就到达了。在火星，相应的数字大约是片程三到二十二分钟，在[进入、下降和着陆的七分钟恐怖](/essays/seven-minutes)的顶峰，航天器完全孤独。在月球上，人类crew仍然可以以接近实时的方式与地面交谈。控制人员可以发出警告、提出问题，并在发展中的问题变成不可逆转的问题之前收到答案。这个差距——1.3秒对二十二分钟——是一个可以让人保持在控制回路中的地方和一个不能的地方之间的区别。这不是一个附带细节。这是月球首先到来的结构性原因。"
- },
- {
-  "rel": "essays/going-to-the-moon.json",
-  "at": "body.5.md",
-  "en": "But close does not mean easy. The Moon has no atmosphere whatsoever — not a wisp, not a trace thick enough to slow a descending spacecraft by a single metre per second. Everything the [seven-minutes essay](/essays/seven-minutes) describes about the cruelty of Mars — heat shields, supersonic parachutes, the brutal compression of entry — is actually the relatively easy case, because at least Mars gives you something to work with. On the Moon you arrive fast, with only rockets to kill your speed, so you must carry every kilogram of propellant you will ever need from the moment you leave the launch pad. The Apollo Lunar Module's descent engine burned for twelve minutes against a gravity well that, though only one-sixth of Earth's, is a real gravity well — genuine, demanding fuel to fight, unforgiving of errors in the burn timing. And underneath the lander, when you touch, is [regolith](/science/planets/regolith): a fine, angular, glass-edged powder ground by billions of years of micrometeorite impacts into something that behaves like flour, clings like burrs, and abrades like sandpaper. The suits the Apollo astronauts wore were visibly darkened by it within hours. Dust is not a detail. Dust is a design problem.",
-  "cur": "但接近并不意味着容易。月球没有大气层——没有一丝一毫，没有任何足以使下降的航天器减速哪怕一米每秒的痕迹。[七分钟论文](/essays/seven-minutes)中描述的关于火星的残酷性——隔热盾、超音速降落伞、猛烈的再入压缩——实际上是相对容易的情况，因为至少火星能给你一些可以利用的东西。在月球上，你以很快的速度到达，只能靠火箭来减速，所以你必须从离开发射台的那一刻起就携带你将来需要的每一克推进剂。Apollo 月球舱的下降引擎燃烧了十二分钟，与一个重力场对抗——尽管仅为地球的六分之一，但它是一个真实的重力场——真实存在、需要燃料来对抗、对燃烧时序的误差毫不宽容。登陆器下面，当你接触时，是[月壤](/science/planets/regolith)：一种细微的、棱角尖锐的、玻璃边缘的粉末，被数十亿年的微陨石撞击磨成了像面粉一样的物质，像刺一样粘附，像砂纸一样磨蚀。Apollo 宇航员穿着的宇航服在几小时内就明显被它变黑了。灰尘不是细节问题。灰尘是一个设计难题。"
- },
- {
-  "rel": "essays/going-to-the-moon.json",
-  "at": "body.6.md",
-  "en": "Then there is the night. The lunar day lasts about fourteen Earth days, and so does the night, during which temperatures plunge to around −170°C. Solar panels generate nothing. Batteries that power survival systems drain against a cold that would kill most commercial electronics. Every system aboard a lunar lander has to either hibernate through the darkness and survive it, or be designed to work without sunlight for two weeks. The Soviet [Luna 9](/missions?id=luna9) — which in February 1966 became the first spacecraft in history to make a soft landing on the Moon and transmit photographs from the surface — operated for roughly three Earth days before its batteries died. The lesson was immediate: the Moon is close enough to reach but real enough to make you work for every hour you spend there.",
-  "cur": "然后是夜晚。月球的白天大约持续十四个地球日，夜晚也是，期间温度骤降到约−170°C。太阳能板什么都发电不了。为生存系统供电的电池在会杀死大多数商用电子设备的寒冷中耗尽。月球着陆器上的每个系统都必须要么在黑暗中冬眠并存活下来，要么被设计为在两周内没有阳光的情况下工作。苏联的[Luna 9](/missions?id=luna9)——在1966年2月成为历史上第一个在月球上软着陆并从表面传输照片的航天器——在其电池耗尽之前运行了大约三个地球日。教训是立即的：月球距离足够近以至于可以到达，但足够真实以至于让你为在那里花费的每一小时努力。"
- },
- {
-  "rel": "essays/going-to-the-moon.json",
-  "at": "body.8.md",
-  "en": "Apollo is simultaneously the greatest engineering achievement in the history of spaceflight and one of the strangest stories in the history of institutions. It was built in a decade at a cost — in 2025 dollars — of somewhere north of 250 billion. It employed, at its peak, some 400,000 people directly or through contractors. It required the invention of new metallurgy, new computer science, new manufacturing techniques, new disciplines of systems engineering that didn't exist when Kennedy made his speech. And it worked. [Apollo 11](/missions?id=apollo11) landed on the Sea of Tranquility on 20 July 1969, and by [Apollo 17](/missions?id=apollo17) in December 1972, the programme had refined its techniques to the point where crews were doing genuine field geology at high latitudes with a rover and a suite of scientific instruments. Then it stopped, and the stopping was permanent in ways no one quite admitted at the time.",
-  "cur": "Apollo同时是航天飞行历史上最伟大的工程成就和机构历史上最奇怪的故事之一。它在十年内以大约2500亿美元（以2025年美元计）的成本建造。它在其高峰时期直接或通过承包商雇用了约400,000人。它需要发明新的冶金、新的计算机科学、新的制造技术、当肯尼迪发表演讲时不存在的系统工程新学科。而且它成功了。[Apollo 11](/missions?id=apollo11)在1969年7月20日登陆了Tranquility海，到了1972年12月的[Apollo 17](/missions?id=apollo17)，该计划已经改进其技术到了机组正在用漫游车和一套科学仪器在高纬度进行真正的田间地质工作的程度。然后它停了，停止在当时没有人真正承认的方式上是永久的。"
- },
- {
-  "rel": "essays/going-to-the-moon.json",
-  "at": "body.9.md",
-  "en": "The Saturn V — the rocket that did it — was 111 metres tall, generated 34.5 million newtons of thrust at liftoff, and has never been equalled for payload to low Earth orbit. The last one flew in May 1973, carrying Skylab. The tooling, the jigs, the vendor relationships, the hands that machined the parts — all of it was wound down. Within a generation, NASA could no longer build a Saturn V even if it wanted to. The knowledge was gone not from the libraries but from the people, and from the infrastructure that gave the knowledge its practical meaning. When engineers began working on what would become the Space Launch System in the 2010s, they could not simply reopen the Saturn V drawings; the manufacturing processes those drawings assumed no longer existed. They had to redevelop them. The gap between Apollo 17 in 1972 and the [uncrewed Artemis I flight in 2022](/programs/artemis) — fifty years — was not a pause. It was an erasure.",
-  "cur": "Saturn V — 完成这一壮举的火箭 — 高111米，在起飞时产生3450万牛的推力，在有效载荷运送到近地轨道方面从未被超越。最后一枚于1973年5月升空，运载Skylab。工装、夹具、供应商关系、加工零件的工人们 — 这一切都逐渐消失了。一代人之内，NASA即使想要也无法再制造Saturn V。知识不是从图书馆消失，而是从人员身上消失，也从赋予知识实际意义的基础设施消失了。当工程师在2010年代开始研究后来成为Space Launch System的项目时，他们不能简单地重新打开Saturn V的设计图；那些设计图所假设的制造工艺已不复存在。他们不得不重新开发这些工艺。1972年Apollo 17与[2022年无人Artemis I飞行](/programs/artemis)之间相隔五十年，不是停顿。这是一种消逝。"
- },
- {
-  "rel": "essays/going-to-the-moon.json",
-  "at": "body.10.md",
-  "en": "This is the sobering context for everything that follows. \"We did this before\" is true in the narrow sense that the feat was accomplished, the footprints are there, the retroreflectors still work. It is misleading in the practical sense that the organisations, tools, and people who did it are gone, and what has been rebuilt since is being rebuilt from records rather than from living knowledge. Institutional memory is a real, perishable asset. The Moon is teaching that lesson a second time.",
-  "cur": "这是随后一切的清醒语境。\"我们之前做过这个\"在狭义上是真的，即这个壮举被完成了，足迹在那里，角反射镜仍然有效。在实际意义上是误导的，因为进行这一工作的组织、工具和人已经消失了，自那以后重建的东西是从记录而非活记忆中重建的。机构记忆是一种真实的、易损耗的资产。月球在第二次教授这个教训。"
- },
- {
-  "rel": "essays/going-to-the-moon.json",
-  "at": "body.11.caption",
-  "en": "Apollo was the anomaly, not the start of a trend. The Saturn V line was shut down before the last crew even flew; over the fifty years that followed, the tooling was scrapped and the people who held the knowledge in their hands retired and died. We are climbing the first rung again — from records, not from living memory.",
-  "cur": "Apollo是异常，而不是趋势的开始。土星五号生产线在最后的crew甚至飞行前就关闭了；在接下来的五十年里，工具被报废，持有知识的人退休并死亡了。我们在攀爬第一阶——从记录中，而不是从活记忆中。"
- },
- {
-  "rel": "essays/going-to-the-moon.json",
-  "at": "body.13.md",
-  "en": "Apollo went to the equator. Six of the seven landings (the seventh, [Apollo 13](/missions?id=apollo13), did not land) touched down within roughly 26 degrees of the lunar equator, in broadly flat terrain with acceptable lighting conditions for the surface stay and a predictable thermal environment. That made sense for a programme whose primary goal was to get there and back safely, prove the technology, and collect samples. The equatorial Moon is the easiest version of the Moon to reach, to land on, and to operate in. It is not, it turns out, the most interesting.",
-  "cur": "Apollo去了赤道。七次着陆中的六次（第七次，[Apollo 13](/missions?id=apollo13)，没有着陆）在赤道周围大约26度以内着陆，位于地形广阔平坦、表面停留期间照明条件可接受且热环境可预测的地方。这对于一个主要目标是安全到达并返回、证明技术和收集样本的计划来说是有意义的。赤道月球是最容易到达、最容易着陆和最容易操作的月球版本。事实证明，这不是最有趣的。"
- },
- {
-  "rel": "essays/going-to-the-moon.json",
-  "at": "body.14.md",
-  "en": "In 2008 and 2009, the Chandrayaan-1 mission and NASA's Lunar Reconnaissance Orbiter produced what amounts to a revolution in lunar science: evidence that the permanently shadowed craters near the south pole contain [water ice](/science/planets/lunar-ice). Not trace amounts — substantial deposits, likely hundreds of millions of tonnes, accumulated over billions of years from cometary impacts and the solar wind, preserved by temperatures that never rise above −160°C because the sun never reaches those crater floors. Water ice, in the context of a deep-space programme, is not just something to drink. It is hydrogen and oxygen: rocket propellant, breathable air, radiation shielding. The south pole of the Moon holds, potentially, the fuel depot and life-support consumables for everything that comes after it. This is what the phrase \"in-situ resource utilisation\" means in practice, and it changes the reason for going entirely. Apollo was about visiting. The south pole is about staying.",
-  "cur": "在2008年和2009年，Chandrayaan-1任务和NASA的月球勘测轨道器产生了相当于月球科学革命的东西：南极附近永久阴暗陨石坑中含有[水冰](/science/planets/lunar-ice)的证据。不是微量——大量沉积物，可能有数亿吨，从数十亿年前积累而来，来自彗星撞击和太阳风，由于太阳永远照不到那些陨石坑底部而温度从未升高到−160°C以上而被保存。在深空计划的背景下，水冰不仅仅是喝的东西。它是氢和氧：火箭推进剂、可呼吸空气、辐射防护。月球的南极潜在地拥有燃料库和随后一切的生命支持消耗品。这就是\"原位资源利用\"这个短语在实践中的含义，它彻底改变了去的原因。Apollo是关于访问的。南极是关于停留的。"
- }
+  {
+    "rel": "essays/generational-starships.json",
+    "at": "dek",
+    "en": "If we cannot go fast, the only alternative is to go slow — to trade speed for time and let the crew become a lineage. The generation ship is not a plan anyone is building. It is a mirror held up to everything we already are.",
+    "cur": "如果我们不能走得快，唯一的选择就是走得慢——用时间换取速度，让船员成为一个世系。世代飞船不是任何人正在建造的计划。它是一面镜子，照出我们已然是什么。"
+  },
+  {
+    "rel": "essays/generational-starships.json",
+    "at": "body.0.md",
+    "en": "The [interstellar-exploration essay](/essays/interstellar-exploration) does the arithmetic honestly, and the arithmetic is unkind. The nearest star system, Alpha Centauri, sits 4.37 light-years away. [Voyager 1](/missions?id=voyager-1), the fastest object humanity has ever launched on an escape trajectory from the solar system, left Earth in 1977 and is now — after nearly five decades of flight — less than 0.003 light-years out. At that pace, a ship aimed at Alpha Centauri would arrive in roughly 75,000 years. The [propulsion essay](/essays/new-propulsion) catalogues the exits: ion drives, solar sails, nuclear-thermal engines. They help at the margins of the solar system. Against interstellar distances, even the most ambitious of them buys perhaps a factor of ten in speed. Ten times faster than Voyager still means 7,500 years. No technology we can point to, and no physics we understand, closes that gap to a human lifetime.",
+    "cur": "这篇[星际探索论文](/essays/interstellar-exploration)诚实地进行了算术运算，而这个算术是无情的。最近的星系——半人马座α——距离我们4.37光年。[Voyager 1](/missions?id=voyager-1)是人类发射的速度最快的逃逸轨道物体，它于1977年离开地球，在近五十年的飞行后——现在距离地球还不到0.003光年。按照这个速度，一艘以半人马座α为目标的飞船需要约75,000年才能到达。[推进论文](/essays/new-propulsion)列举了各种途径：离子驱动、太阳帆、核热引擎。它们在太阳系边缘有帮助。但对于星际距离，即使是最雄心勃勃的技术也只能增加十倍的速度。比Voyager 1快十倍仍然需要7,500年。我们能指出的任何技术，以及我们理解的任何物理学，都无法缩小这个差距到人类的生命周期。"
+  },
+  {
+    "rel": "essays/generational-starships.json",
+    "at": "body.1.md",
+    "en": "There is one response to this that is not a fantasy: accept the timescale. Don't compress the journey — accommodate it. Build a vessel large enough and self-sufficient enough to sustain human life not for years but for centuries, and send it knowing that the people who step off at the destination will be the great-grandchildren, perhaps the great-great-grandchildren, of the people who stepped on. The generation ship. It is not, to be clear, a plan anyone is currently executing, or close to executing. No government has budgeted for it. No engineering programme is working toward it. It belongs to the category of ideas that are taken seriously by physicists and demographers and ethicists precisely because they are not constrained by near-term practicality — thought experiments with real teeth, where the thinking reveals things that more modest ambitions obscure. The value of imagining a generation ship is not the ship. It is what the ship requires, and what those requirements say about us.",
+    "cur": "有一种应对方式不是幻想：接受这个时间尺度。不要压缩旅程——适应它。建造一艘足够大、足够自给自足的船，能够维持人类生命不是数年，而是数百年，然后发射它，知道踏上目的地的人将是踏上船的人的曾孙辈，也许是曾曾孙辈。世代飞船。需要明确的是，这不是任何人目前正在执行或接近执行的计划。没有政府为它编制了预算。没有工程项目朝它前进。它属于那类被物理学家、人口统计学家和伦理学家认真对待的想法，正是因为它们不受近期实用性的限制——真正具有实际意义的思想实验，其中思考揭示了更谦逊的雄心掩盖的东西。想象世代飞船的价值不在飞船本身。而在飞船需要什么，以及这些要求说明了什么。"
+  },
+  {
+    "rel": "essays/generational-starships.json",
+    "at": "body.2.md",
+    "en": "Because what they say, mostly, is that we do not yet understand the problem we think we understand. We imagine the engineering — the hull, the drives, the reactor — and we underestimate everything else. A generation ship is not a big spacecraft. It is a civilisation in a bottle, hurled into the dark, with no resupply, no rescue, and a communication lag that grows, over the decades of flight, from hours to days to weeks, until the [comms essay's](/essays/comms) \"letters between people who have both already moved on\" becomes not a metaphor but a literal description of the relationship between ship and home. The hard problems are not the ones in the engineering textbooks. They are the ones in the ecology and genetics and governance and philosophy textbooks, and those disciplines have been thinking about them, in their own terms, for a long time.",
+    "cur": "因为他们说的大多是，我们还没有理解我们认为自己理解的问题。我们想象工程——船体、驱动、反应堆——而我们低估了一切其他的东西。世代飞船不是一艘大型航天器。它是一个装在瓶子里的文明，被抛向黑暗，没有补给，没有救援，通信延迟在飞行的几十年里从几小时增长到几天、几周，直到[通信论文](/essays/comms)中的\"两个已经各自前行的人之间的信件\"不再是隐喻，而是字面上的船与家之间的关系描述。困难的问题不是工程教科书里的。它们是生态学、遗传学、治理和哲学教科书里的问题，而这些学科在它们自己的术语中思考这些问题已经有很长时间了。"
+  },
+  {
+    "rel": "essays/generational-starships.json",
+    "at": "body.4.md",
+    "en": "The trade is brutal but coherent: substitute time for speed, and carry a civilisation instead of a crew. Any crewed mission to another star must either travel at a meaningful fraction of the speed of light, sustain the crew across many centuries at slower speeds, or do something we do not yet know how to do. The first requires propulsion that remains speculative even in principle — accelerating a crewed vessel to ten percent of the speed of light demands energy that dwarfs the total output of human civilisation. The third is science fiction in the precise sense: we don't have the physics. The second option is generation ships, and the reason they persist in serious discussion is that they require nothing we do not already know how to think about. No exotic physics. Only the willingness to accept that the voyage is the work of a lineage, not a crew.",
+    "cur": "交易是残酷但连贯的：用时间换取速度，携带一个文明而不是一个船员。任何载人前往另一颗星的任务必须要么以光速的有意义的百分比旅行，要么在较慢的速度下在许多世纪中维持船员，要么做我们尚不知道如何做的事情。第一种需要推进，即使从原则上讲也仍然是推测性的——将载人飞船加速到光速的百分之十需要的能量远超人类文明的总产出。第三种是精确意义上的科幻——我们没有这样的物理学。第二个选择是世代飞船，它们之所以在严肃讨论中持续出现，是因为它们不需要任何我们还不知道如何思考的东西。没有奇异的物理学。只有接受航程是一个世系的工作，而不是船员的工作的意愿。"
+  },
+  {
+    "rel": "essays/generational-starships.json",
+    "at": "body.5.md",
+    "en": "A ship aimed at Proxima Centauri at one percent of the speed of light — an order of magnitude faster than anything we have built, but not physically inconceivable — would arrive in about 430 years. Roughly the time that separates us from Shakespeare. The people who departed would not live to see the destination; neither would their children, nor their grandchildren, nor several generations after them. The ship would need to sustain a functioning, reproducing human society across that entire span, with no external input and no possibility of resupply, and a communication delay to Earth that would, within decades of departure, grow long enough that no real-time guidance from home would be possible. [Voyager 1's](/missions?id=voyager-1) current one-way light-travel time to Earth is about 23 hours. A ship one light-year out would wait a year for any reply. Three light-years out: three years. The isolation is not metaphorical. It is absolute.",
+    "cur": "一艘以百分之一光速飞向比邻星的飞船——比我们建造过的任何东西快一个数量级，但物理上不是不可能的——将在约430年后到达。大约是把我们与莎士比亚分开的时间。离开的人不会活着看到目的地；他们的孩子也不会，他们的孙子孙女也不会，他们之后的几代人也不会。这艘船需要在整个这个跨度内维持一个运作的、能够生殖的人类社会，没有外部输入，没有补给的可能性，以及到地球的通信延迟，在离开后的几十年内，会增长到足够长，使得来自家乡的实时指导将不再可能。[Voyager 1](/missions?id=voyager-1)目前到地球的单程光程旅行时间约为23小时。一艘距离一光年的飞船需要等待一年才能得到任何回复。三光年外：三年。这种隔离不是隐喻。它是绝对的。"
+  },
+  {
+    "rel": "essays/generational-starships.json",
+    "at": "body.7.md",
+    "en": "The first engineering problem is the most fundamental: nothing arrives, and nothing leaves. Every atom of oxygen, water, nitrogen, carbon, and trace mineral that the crew needs for the entire voyage must either be launched with the ship or regenerated aboard it, indefinitely, without failure. The [ECLSS life support](/science/life-in-space/eclss-life-support) system aboard the International Space Station is the most sophisticated closed-loop life-support system humanity has operated — it recovers water from humidity, urine, and cabin air; it generates oxygen by electrolysing water; it scrubs carbon dioxide from the atmosphere. It is resupplied by cargo vehicles several times a year. Remove the resupply, and every inefficiency in the loop accumulates: every kilogram of water not recovered, every molecule of gas not recycled, is a kilogram or a molecule permanently lost from the ship's total inventory. Over a four-century voyage, the compounding of small losses becomes existential. A system that is 99.9 percent efficient loses, over 430 years, the equivalent of its entire working stock many times over. The loop must be, in practice, complete.",
+    "cur": "最基本的第一个工程问题是：什么都不到达，什么都不离开。船员在整个航程中需要的每一个原子的氧气、水、氮气、碳和微量矿物，必须要么与船一起发射，要么在船上无限地再生，没有失败。[国际空间站](/science/life-in-space/eclss-life-support)上的ECLSS生命保障系统是人类运作过的最复杂的闭合循环生命保障系统——它从湿度、尿液和舱空气中回收水；它通过电解水产生氧气；它清除大气中的二氧化碳。它每年被货运飞船补给多次。移除补给，循环中的每一个低效率都会积累：每一公斤没有回收的水，每一个分子的气体没有被回收，都是永久地从船的总存量中丧失的一公斤或一个分子。在四个世纪的航程中，小损失的复合变成了生存问题。一个99.9%有效的系统在430年内失去的，相当于其整个工作储备多次。循环必须，实际上，完整。"
+  },
+  {
+    "rel": "essays/generational-starships.json",
+    "at": "body.8.md",
+    "en": "The only existence proof for a closed ecology at scale is Earth itself, which has been running its loops for 4.5 billion years on a planet-sized substrate with input only from sunlight. Everything smaller has been attempted and has struggled. The most instructive attempt — because it was serious, well-funded, and failed in a way that taught precise lessons — was Biosphere 2, the 1.27-hectare sealed glass and steel structure built in the Arizona desert and inhabited by eight people from September 1991 to September 1993. The designers intended it as a demonstration of a self-sustaining closed ecology: five biomes, a farm, an ocean, a marsh, a rainforest, a desert, all sealed within a shell through which only sunlight and electricity passed. The crew was to breathe air regenerated by the plants, drink water cycled through the system, and eat food they grew themselves.",
+    "cur": "规模上闭合生态的唯一存在证明是地球本身，它在一个行星大小的基质上运行了45亿年，仅从阳光获得输入。所有更小的尝试都被尝试过，都曾挣扎。最有启发意义的尝试——因为它是严肃的、资金充足的，并以传授精确教训的方式失败了——是Biosphere 2，这是一个1.27公顷的密封玻璃钢结构，建造在亚利桑那州沙漠中，从1991年9月到1993年9月由八个人居住。设计师打算将其作为一个自给自足的闭合生态的演示：五个生物群落、一个农场、一个海洋、一个沼泽、一个热带雨林、一个沙漠，都密封在一个只有阳光和电力通过的壳层内。船员应该呼吸植物再生的空气，喝通过系统循环的水，吃他们自己种植的食物。"
+  },
+  {
+    "rel": "essays/generational-starships.json",
+    "at": "body.9.md",
+    "en": "What happened instead was instructive. Within months, oxygen levels began falling — from the Earth-normal 21 percent to 14.5 percent over about sixteen months, the equivalent of living at an altitude of 4,000 metres. The culprit turned out to be the concrete in the structure itself: it was absorbing carbon dioxide faster than the biology was producing oxygen, an effect the designers had not modelled. Morning glories, introduced as a food crop, escaped into the rainforest biome and crowded out other plants. Nineteen of the twenty-five vertebrate species introduced died out. The crew lost body weight on the farm's output and had to supplement from emergency stores. Oxygen had to be injected twice to keep the crew functional. Two years, in a 1.27-hectare structure with eight people, with active intervention possible from outside at any moment: Biosphere 2's lessons for a four-century sealed voyage are not encouraging. They are, however, exact.",
+    "cur": "结果却很有启发意义。在几个月内，氧气水平开始下降——从地球正常的21%下降到14.5%，历时约十六个月，相当于生活在海拔4,000米的高度。罪魁祸首是结构本身的混凝土：它吸收二氧化碳的速度超过生物产生氧气的速度，这是设计者未曾模拟的效应。作为粮食作物引入的牵牛花逃逸到雨林生物群落中，挤出了其他植物。引入的二十五种脊椎动物中有十九种灭绝了。船员靠农场的产出损失了体重，不得不从应急储备中补充。为了保持船员的正常功能，氧气必须注入两次。两年时间，在1.27公顷的结构中住着八个人，任何时刻都可能受到外部的主动干预：Biosphere 2号对于一次持续四个世纪的密闭航行的教训并不令人乐观。然而，它们是精确的。"
+  },
+  {
+    "rel": "essays/generational-starships.json",
+    "at": "body.10.md",
+    "en": "A generation ship would need to be an ecology, not merely a life-support system. The soil microbiome, the decomposition cycles, the nutrient flows that keep farmland from exhausting itself are all biological processes that require their own populations of organisms, their own balances, their own space. Agriculture alone cannot close these loops; the loops that close them are the ones Biosphere 2 discovered it could not maintain. The failure modes of a closed ecology are not dramatic. They are subtle — slow accumulations, unexpected sinks, one species thriving at the expense of the system's balance — and they operate on timescales that dwarf any experiment we have run. After Biosphere 2, the ecological questions remain substantially unanswered. For a four-century voyage, they are the first questions, not the last.",
+    "cur": "一个世代飞船需要是一个生态，而不仅仅是一个生命保障系统。土壤微生物群，分解循环，保持农田不枯竭的营养流都是需要自己的生物体种群、自己的平衡、自己的空间的生物学过程。仅农业不能闭合这些循环；闭合它们的循环是Biosphere 2发现它无法维持的循环。闭合生态的失败模式不是戏剧性的。它们是微妙的——缓慢的积累、意外的汇、一个物种以系统平衡的代价繁荣——它们在远超我们进行过的任何实验的时间尺度上运作。Biosphere 2之后，生态问题基本上仍未解决。对于四个世纪的航程，它们是第一个问题，而不是最后一个问题。"
+  },
+  {
+    "rel": "essays/generational-starships.json",
+    "at": "body.11.caption",
+    "en": "Nothing arrives and nothing leaves. The ecology has to run unbroken for centuries — air, water, and food cycled endlessly, with no resupply and no ground control to call. Biosphere 2, a sealed three-acre ecosystem, could not hold its own oxygen steady for even two years.",
+    "cur": "什么都不到达，什么都不离开。生态必须在数个世纪内不间断地运行——空气、水和食物无尽地循环，没有补给，没有地面控制可以呼救。生物圈2号，一个密封的三英亩生态系统，甚至无法在两年内保持其氧气的稳定。"
+  },
+  {
+    "rel": "essays/generational-starships.json",
+    "at": "body.12.caption",
+    "en": "The International Space Station is the closest thing we have built to a closed world — and it is resupplied from Earth every few weeks. A ship that must close the loop completely, for a thousand years, is a different order of problem entirely.",
+    "cur": "国际空间站是我们建造过的最接近闭合世界的东西——它每隔几周就从地球获得补给。一艘必须完全闭合循环、历时一千年的飞船是完全不同的问题。"
+  },
+  {
+    "rel": "essays/generational-starships.json",
+    "at": "body.14.md",
+    "en": "The second problem is genetic, and it has a name: minimum viable population. A species that reproduces sexually needs a certain number of breeding individuals to maintain genetic diversity over generations — to avoid inbreeding depression, to retain the reservoir of variation that allows adaptation to disease, stress, and environmental change. The question for a generation ship is: how many people do you need aboard to arrive at the destination with a population that is genetically healthy, i.e., not so inbred as to have lost the variation that long-term survival requires?",
+    "cur": "第二个问题是遗传学问题，它有一个名称：最小可行人口。一个进行有性生殖的物种需要一定数量的育种个体来维持几代人的遗传多样性——避免近亲繁殖抑郁，保留允许对疾病、压力和环保变化适应的变异库。对于世代飞船，问题是：你需要多少人上船才能到达目的地时，人口在遗传上是健康的，即不那么近亲繁殖以至于失去了长期生存所需的变异？"
+  },
+  {
+    "rel": "essays/generational-starships.json",
+    "at": "body.15.md",
+    "en": "The estimates are not reassuring. A 2014 study by anthropologist Cameron Smith at Portland State University, working from population genetics models and the specific conditions of a multigenerational interstellar voyage, concluded that a minimum founder population of around 14,000 people would be needed to sustain genetic health over a 150-year, multigenerational voyage, accounting for disease, accidents, and the natural variance in reproductive success. Earlier and more optimistic estimates — some suggesting a few hundred, others a few thousand — typically assumed ideal reproductive behaviour, no bottleneck events, and conditions of genetic management (essentially, controlled breeding) that most ethicists would find troubling. Even the most conservative analyses converge on a number that is not a crew in any conventional sense. It is a town.",
+    "cur": "估计并不令人放心。2014年波特兰州立大学的人类学家Cameron Smith进行的一项研究，从人口遗传学模型和多代星际航程的具体条件出发，得出结论，大约需要14,000人的最小创始人口来在150年、多代星际航程中维持遗传健康，考虑到疾病、事故和生殖成功的自然差异。早期的、更乐观的估计——一些建议几百人，其他建议几千人——通常假设理想的生殖行为、没有瓶颈事件，以及大多数伦理学家会觉得麻烦的遗传管理条件（本质上是控制繁殖）。即使是最保守的分析也汇聚在一个数字上，这不是任何常规意义上的船员。它是一个城镇。"
+  },
+  {
+    "rel": "essays/generational-starships.json",
+    "at": "body.16.md",
+    "en": "Beyond genetics, the population problem is cultural. Human societies across dozens of generations do not remain static. Languages drift; religions evolve or die; governance systems that seem stable over decades fracture over centuries; the institutional memory of why rules exist erodes and the rules either calcify into dogma or dissolve into anomie. A four-century voyage from departure to arrival spans roughly the same time as the entirety of the Scientific Revolution — from Copernicus through Newton through Darwin to Einstein. The society that arrives at the destination will not be the society that departed, in any cultural sense that matters. Whether it will still understand the mission, still have the technical knowledge to execute the landing and the establishment of a colony, still carry forward the skills and the social structures needed to survive in an alien environment — these are not engineering questions. They are questions about how knowledge is transmitted across generations, how institutions persist or fail, how identity holds together under conditions of radical confinement and radical isolation. History is not optimistic on any of them.",
+    "cur": "除了遗传学之外，人口问题是文化性的。跨越几十代的人类社会不会保持静止。语言漂移；宗教进化或消亡；在几十年内看起来稳定的治理系统在几个世纪内破裂；为什么规则存在的机制记忆侵蚀，规则要么僵化成教条，要么溶解成无政府状态。四个世纪的从出发到到达的航程跨越了大约与科学革命的全部——从Copernicus到Newton到Darwin到Einstein。到达目的地的社会在任何重要的文化意义上将不是离开的社会。它是否仍然理解使命，是否仍然拥有执行登陆和建立殖民地所需的技术知识，是否仍然传承在异星环境中生存所需的技能和社会结构——这些不是工程问题。它们是关于如何跨代传递知识、机构如何持续或失败、在激进的禁闭和激进的隔离条件下身份如何凝聚在一起的问题。历史在这些上面都不乐观。"
+  },
+  {
+    "rel": "essays/generational-starships.json",
+    "at": "body.17.md",
+    "en": "The [long-duration spaceflight research](/science/life-in-space/long-duration-effects) we have done — from the [Skylab](/missions?id=skylab-2) crews of the 1970s through the [Mir](/programs/mir) years and the continuous human presence aboard the [ISS program](/programs/iss) since 2000 — addresses [crew dynamics](/science/life-in-space/crew-dynamics-psychology) over months, not decades. The longest continuous human spaceflight on record is about 437 days. We know a great deal about what happens to a body in [microgravity](/science/life-in-space/microgravity-physiology) over a year. We know almost nothing about what happens to a society over a century, in confinement, under the specific pressures of a sealed world with no outside. The [body-in-the-dark essay](/essays/the-body-in-the-dark) covers the physiological arc. The sociological and psychological arcs are longer, less studied, and in some ways more alarming.",
+    "cur": "我们进行的[长期太空飞行研究](/science/life-in-space/long-duration-effects)——从1970年代的[Skylab](/missions?id=skylab-2)船员，通过[Mir](/programs/mir)的岁月，到自2000年以来[国际空间站](/programs/iss)的持续人类存在——涉及[船员动态](/science/life-in-space/crew-dynamics-psychology)跨越数月，而不是数十年。连续太空飞行时间最长的记录约为437天。我们对一个身体在[微重力](/science/life-in-space/microgravity-physiology)中一年内会发生什么知道很多。我们对一个社会在一个世纪内、在禁闭中、在密闭世界的具体压力下——没有外部接触——会发生什么几乎一无所知。[身体在黑暗中的论文](/essays/the-body-in-the-dark)涵盖了生理学的弧线。社会学和心理学的弧线更长、研究更少，在某些方面更令人担忧。"
+  },
+  {
+    "rel": "essays/generational-starships.json",
+    "at": "body.18.caption",
+    "en": "The passengers are not a crew but a population, and it has to stay genetically healthy across dozens of generations. One study puts the minimum near 14,000 people for a 150-year voyage — not a crew you train, but a society you launch, with its own governance, culture, and drift.",
+    "cur": "乘客不是一个船员而是一个人口，它必须在几十代中保持遗传健康。一项研究把150年航程的最小值放在接近14,000人——不是你训练的船员，而是你发射的社会，有它自己的治理、文化和漂移。"
+  },
+  {
+    "rel": "essays/generational-starships.json",
+    "at": "body.20.md",
+    "en": "Here is the question that most discussion of generation ships eventually arrives at and then tends to move past quickly, because it does not have a comfortable answer. The people who board the ship consent to the voyage. They are adults who have chosen, knowingly, to give their lives to a project whose completion they will not live to see — a choice that has precedent in human history, from the builders of cathedrals to the planters of orchards that their grandchildren would harvest. The choice is unusual but it is, at least, a choice.",
+    "cur": "这是大多数关于世代飞船的讨论最终到达的问题，然后往往迅速跳过，因为它没有一个舒适的答案。登上飞船的人同意这个航程。他们是成年人，有意识地选择了给一个他们不会活着看到完成的项目献出生命——这个选择在人类历史中有先例，从大教堂的建造者到种植果园的农民，他们的孙子孙女会收获。这个选择是不寻常的，但它至少是一个选择。"
+  },
+  {
+    "rel": "essays/generational-starships.json",
+    "at": "body.21.md",
+    "en": "The people born on the ship did not make that choice. They inherit a sealed world and a task — arrive at a star, establish a colony — that was decided by people who died before them, in a time and a context they can only know from records. They cannot leave. They cannot refuse the mission without threatening the survival of everyone aboard. The ship is their entire world: its politics are the only politics, its social norms the only norms they have ever known, its mission the framing condition of every life they have ever observed. In what sense are they free? In what sense is it ethical for the founders to make, on their behalf, a choice this total?",
+    "cur": "在飞船上出生的人没有做出那个选择。他们继承了一个密闭的世界和一个任务——到达一颗星，建立一个殖民地——这是在他们之前死去的人在他们只能从记录中了解的时间和背景中决定的。他们无法离开。他们无法拒绝使命而不威胁船上每个人的生存。这艘船是他们的整个世界：其政治是唯一的政治，其社会规范是他们曾经了解的唯一规范，其使命是他们曾经观察过的每一生命的框架条件。他们在什么意义上是自由的？创始人代表他们做出这样的总体选择在伦理上是什么意思？"
+  },
+  {
+    "rel": "essays/generational-starships.json",
+    "at": "body.22.md",
+    "en": "The philosopher S. Matthew Liao and others working in reproductive ethics have engaged this question directly, and their conclusions are not simple. The standard argument for generation ships — that the descendants will be glad to exist, and that existing in a ship is better than not existing at all — runs into the well-known non-identity problem: you cannot wrong someone by bringing them into existence, because non-existence is not a harm that can be compared to existence. But this cuts awkwardly in both directions. If you cannot wrong the unborn descendants by launching them into a sealed multi-century voyage, you also cannot, by the same logic, make the voyage a gift to them. They are not being given a choice. They are being given a world, and then being told the world has a task, and that the task is non-negotiable, and that there is no exit. The founders of a generation ship would be making the most consequential irreversible decision in human history: committing not just themselves but every descendant of theirs, for centuries, to a project they cannot withdraw from. The ethics of that decision have not been resolved, and the honest position is that they may not be resolvable — that the generation ship sits at the intersection of two genuine moral imperatives (expanding the reach of life versus the freedom of individuals to determine their own conditions) that cannot both be fully satisfied.",
+    "cur": "从事生殖伦理学工作的哲学家S. Matthew Liao和其他人直接参与了这个问题，他们的结论并不简单。对世代飞船的标准论证——后代将很高兴存在，在飞船中存在比根本不存在要好——遇到了众所周知的非同一性问题：你不能通过把某人带入存在来伤害他，因为不存在不是一个可以与存在相比的伤害。但这在两个方向上都不适当地切割。如果你不能通过将他们发射到一个密闭的多世纪航程中来伤害未出生的后代，你也不能，用同样的逻辑，使这次航程成为对他们的礼物。他们没有被给予选择。他们被给予一个世界，然后被告知这个世界有一个任务，这个任务是不可协商的，没有出口。世代飞船的创始人将做出人类历史上最重要的不可逆转的决定：不仅仅承诺他们自己，而是承诺他们的每一个后代，在几个世纪内，致力于一个他们无法退出的项目。那个决定的伦理还没有得到解决，诚实的立场是它们可能无法解决——世代飞船位于两个真正的道德命令的交叉口（扩展生命的范围对比个人决定自己条件的自由）无法都完全满足。"
+  },
+  {
+    "rel": "essays/generational-starships.json",
+    "at": "body.24.md",
+    "en": "Even granting all of the above — the ecology, the genetics, the governance, the ethics — there is one more problem, and it is the strangest. It was articulated clearly by the mathematician Andrew Kennedy in a 2006 paper in the Journal of the British Interplanetary Society, and it goes by the name the \"wait calculation\". The argument is this: if you launch a slow ship now, toward Alpha Centauri, and human technology continues to improve — if, decades or centuries into the future, we develop propulsion systems that allow travel at ten or twenty or fifty percent of the speed of light — then a faster ship launched later might depart after your slow ship but arrive before it, or at the same time. In that case, was it rational to depart early? The people who left in the slow ship would spend centuries in transit; the people who left in the fast ship might spend decades or years; they might arrive to find the colony already established by the descendants of the slow ship, or they might — if the slow ship had not yet arrived — be the first ones there, despite having left later.",
+    "cur": "即使承认以上所有——生态、遗传学、治理、伦理——还有一个更奇怪的问题。它由数学家Andrew Kennedy在2006年发表在《英国星际学会期刊》上的一篇论文中清楚地阐述，它以\"等候计算\"的名字而闻名。论证是这样的：如果你现在发射一艘缓慢的船前往半人马座α，而人类技术继续进步——如果在数十年或几个世纪后，我们开发了允许以十分之一、二十分之一或五十分之一光速旅行的推进系统——那么一艘更快的船可能在你的缓慢船之后发射但在它之前到达，或同时到达。在这种情况下，早出发在理性上是否明智？在缓慢船中留下的人将在运输中花费几个世纪；在快速船中留下的人可能花费几十年或几年；他们可能到达时发现殖民地已经由缓慢船的后代建立，或者他们可能——如果缓慢船还没有到达——成为第一个到达那里的人，尽管他们出发得更晚。"
+  },
+  {
+    "rel": "essays/generational-starships.json",
+    "at": "body.25.md",
+    "en": "Kennedy worked out the mathematics for this. Given reasonable assumptions about the pace of technological improvement in propulsion (based on historical rates), the optimal departure time for any given destination is not \"as soon as possible\" but \"when the technology is good enough that waiting any longer produces diminishing returns\". For Alpha Centauri, the wait calculation suggests that a ship launched before a certain threshold of propulsion capability would be irrational — that waiting for better technology would always be worth doing, up to a point. The paradox is that this reasoning can keep updating indefinitely: the ship you are about to launch is always in danger of being overtaken by a better ship launched later, so the rational choice always appears to be to wait. It is a genuine dilemma, and it has not been resolved. The only coherent answers involve either accepting that some pioneer voyages will be overtaken and that this is acceptable, or positing a scenario in which technological progress plateaus and waiting genuinely stops being rational. Neither answer is fully satisfying.",
+    "cur": "肯尼迪为此计算了数学。给定关于推进技术改进步伐的合理假设（基于历史速率），任何给定目的地的最优出发时间不是\"尽快\"而是\"当技术足够好以至于再等待会产生收益递减的时候\"。对于半人马座α，等候计算表明，在某个推进能力的阈值之前发射的船将是非理性的——等待更好的技术总是值得的，直到某个点。悖论是这个推理可以无限期地不断更新：你即将发射的船总是处于被更好的船以后发射而超越的危险中，所以理性选择似乎总是等待。这是一个真正的困境，还没有得到解决。唯一连贯的答案涉及要么接受一些先驱航程将被超越这在可以接受的范围内，要么假设一个技术进步平台化并且等待真正停止理性的情景。都不是完全令人满意。"
+  },
+  {
+    "rel": "essays/generational-starships.json",
+    "at": "body.26.caption",
+    "en": "And there is a paradox in even leaving. A ship launched slowly now might be overtaken by a faster one built centuries later — arriving to find the destination already settled. If waiting can always beat you there, when, if ever, is it rational to go?",
+    "cur": "而且就连出发本身也有悖论。现在缓慢发射的船可能被数个世纪后建造的更快的船超越——到达时发现目的地已经定居。如果等待总能抢先到达你，那什么时候，如果有的话，出发在理性上才是智慧的？"
+  },
+  {
+    "rel": "essays/generational-starships.json",
+    "at": "body.28.md",
+    "en": "Here, at the end of this collection, is the thing the generation ship is really for. Not the destination — there is no mission and no star. The thought experiment is a mirror, and what it reflects is the world we already inhabit.",
+    "cur": "这里，在这个集合的末尾，是世代飞船真正的目的。不是目的地——没有使命也没有星。思想实验是一面镜子，它反映的是我们已经居住的世界。"
+  },
+  {
+    "rel": "essays/generational-starships.json",
+    "at": "body.29.md",
+    "en": "Consider what a generation ship actually is. A sealed, finite world. A fully closed ecology that cannot be allowed to fail. A population of humans who did not choose the conditions of their birth and who are committed, by circumstances they did not create, to the maintenance of systems they did not build. A set of resources that cannot be replenished from outside. A governance problem spanning generations, with decisions made today binding people centuries hence. A communication lag — not from a distant ground control, but from every preceding generation to every subsequent one — that means the people running the system now are always working with instructions written by people who could not have anticipated the present situation, and leaving instructions for people who will face circumstances impossible to foresee.",
+    "cur": "考虑世代飞船真正是什么。一个密闭的有限世界。一个完全闭合的生态，不能被允许失败。一群人口中的人类，他们没有选择自己出生的条件，被他们没有创造的环境条件承诺，维持他们没有建造的系统。一套无法从外部补充的资源。一个跨代治理问题，今天做出的决定制约未来几个世纪的人。一个通信延迟——不是来自远处地面控制，而是来自每一个前一代到每一个后一代——意味着现在运行系统的人总是使用由无法预料现在情况的人写下的指令工作，并为将面临不可预见情况的人留下指令。"
+  },
+  {
+    "rel": "essays/generational-starships.json",
+    "at": "body.30.md",
+    "en": "This is not a description of a hypothetical ship. It is a description of Earth. The closed ecology is the biosphere — the same loops of carbon and nitrogen and water that Biosphere 2 tried to miniaturise and found it could not hold for two years. The [radiation exposure](/science/life-in-space/radiation-exposure), the [bone loss](/science/life-in-space/bone-density-loss), the [vestibular drift](/science/life-in-space/vestibular-adaptation) that the body essay traces in individual astronauts are the sharp-focus version of a slower, civilisational version of the same problem: humans evolved for conditions that are changing around them, and the timescale of adaptation is not the timescale of the change. The [food production challenge](/science/life-in-space/food-production-off-world) that a ship's designers must solve — how to feed thousands indefinitely on a finite substrate with no imports — is the same challenge that global agriculture faces, at planetary scale, with a population that is still growing. The governance question — who decides, for how long, on behalf of people not yet born — is the exact question that climate policy, nuclear waste storage, pension systems, and debt management all try and largely fail to answer.",
+    "cur": "这不是一个假设船的描述。这是地球的描述。闭合的生态是生物圈——Biosphere 2试图缩小并发现它无法在两年内保持的相同的碳、氮、水循环。[辐射暴露](/science/life-in-space/radiation-exposure)、[骨质流失](/science/life-in-space/bone-density-loss)、[前庭漂移](/science/life-in-space/vestibular-adaptation)身体论文在单个宇航员身上追踪的是相同问题的较缓慢的、文明版本的清晰焦点：人类进化到的条件正在他们周围变化，适应的时间尺度不是变化的时间尺度。飞船设计师必须解决的[食物生产挑战](/science/life-in-space/food-production-off-world)——如何在一个有限的基质上无限期地养活数千人，没有进口——是全球农业在行星规模上面临的相同挑战，人口仍在增长。治理问题——谁决定，多长时间，代表还未出生的人——正是气候政策、核废料储存、养老金系统和债务管理都试图并基本上无法回答的确切问题。"
+  },
+  {
+    "rel": "essays/generational-starships.json",
+    "at": "body.31.md",
+    "en": "None of this is comfortable. The generation ship thought experiment is not comforting — it is clarifying, which is a different thing. It strips away the assumption that we are temporary passengers on this world, that the systems we depend on are someone else's problem, that the decisions we make about the atmosphere and the oceans and the soil are reversible or deferrable in ways that the decisions a ship's founders make are not. They are not. We have been launched. The ship — this one, the actual one, the only one we have ever inhabited — is already underway. The people who arrive at whatever destination this civilisation reaches will be the descendants of the people who made, or failed to make, the choices that the long view has been circling for the length of this collection.",
+    "cur": "这都不是舒适的。世代飞船思想实验不是舒适的——它是澄清的，这是一个不同的东西。它剥离了这样的假设，即我们是这个世界的临时乘客，我们依赖的系统是别人的问题，我们对大气、海洋和土壤做出的决定是可逆或可推迟的，船的创始人做出的决定不是这样。它们不是。我们已经被发射了。这艘船——这个，真实的，唯一一艘我们曾经居住过的——已经在途中了。无论这个文明到达什么目的地，到达那里的人将是做出了、或者未能做出的，这个长期观点在整个这个集合的长度上一直在兜圈子的选择的后代。"
+  },
+  {
+    "rel": "essays/generational-starships.json",
+    "at": "body.32.md",
+    "en": "The [Voyagers](/missions?id=voyager-1) will keep flying. [Pioneer 10](/missions?id=pioneer-10) is still outbound, silent now, its transmitter long since dead, coasting through interstellar space on the momentum of a 1972 launch. [Pioneer 11](/missions?id=pioneer-11) the same. They are the furthest physical extensions of this civilisation, and they will outlast it — outlast the Sun, probably, coasting through the galaxy for billions of years after every human structure has dissolved. They carry plaques, because the people who built them thought, correctly, about the long view: not just what these spacecraft would do, but what they would mean to anyone who found them after we were gone. That instinct — to build for recipients you will never meet, to send something forward into a time you cannot see — is the generation ship impulse in miniature. It is also, in the most honest reading of where we are, the only impulse that might matter. We are the crew. We are already in flight. The question the generation ship poses — can a civilisation maintain, across generations, the systems and the intentions and the care that survival requires? — is not a question about a ship that does not exist. It is the question of this century, asked in the language of the stars.",
+    "cur": "[Voyagers](/missions?id=voyager-1)将继续飞行。[Pioneer 10](/missions?id=pioneer-10)仍在向外，现在沉默了，其发射器早已死亡，以1972年发射的动量在星际空间中滑行。[Pioneer 11](/missions?id=pioneer-11)也一样。他们是这个文明最远的物理延伸，他们将比它活得长——可能比太阳活得长，在我们消失后的数十亿年中在银河系中滑行。他们携带铭牌，因为建造他们的人正确地思考了长期观点：不仅仅是这些航天器将做什么，而是它们对任何在我们消失后发现它们的人将意味着什么。那种本能——为你永远不会见面的接收者建造，向你看不见的时代发送东西——是最小形式的世代飞船冲动。它也是，在最诚实的关于我们现在位置的阅读中，唯一可能重要的冲动。我们是船员。我们已经在飞行中。世代飞船提出的问题——一个文明能够维持，跨越时代，生存所需的系统、意图和关怀吗？——不是关于一艘不存在的船的问题。它是这个世纪的问题，用星星的语言提出。"
+  },
+  {
+    "rel": "essays/generational-starships.json",
+    "at": "body.33.caption",
+    "en": "Earthrise, photographed from Apollo 8 in 1968 — the whole of the only closed, finite world we have ever known, carrying its lineage through the dark with no resupply and no ground control. The generation ship is a thought experiment about this one: we are already the crew of one.",
+    "cur": "Earthrise，从1968年Apollo 8拍摄——整个我们曾经了解的唯一封闭的有限世界，在黑暗中携带它的世系，没有补给也没有地面控制。世代飞船是一个关于这一个的思想实验：我们已经是其中一艘的船员。"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "dek",
+    "en": "Every human spaceflight plan eventually runs into Mars, and Mars breaks every one of them on the same three things at once: time, mass, and the body. It is not Apollo but further. It is a categorically different problem — and understanding why those confident departure dates keep sliding is the beginning of understanding it honestly.",
+    "cur": "每项人类太空飞行计划最终都会遭遇火星,而火星在同样三个方面同时摧毁它们:时间、质量和身体。这不只是比Apollo更远。这是一个根本不同的问题——理解那些充满信心的发射日期为何不断推迟,是诚实地理解它的开端。"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.0.md",
+    "en": "There is a date that keeps moving. In 1969, Wernher von Braun told a Senate committee that humans could stand on Mars by 1982. In 1986, the National Commission on Space proposed 2010. In 2010, a presidential policy speech aimed at the mid-2030s. Each decade has produced a plan with specific hardware, specific timelines, and a specific decade in which the thing would happen — and each plan has, in one form or another, dissolved. The hardware changes, the agency changes, the rationale changes, but the date reliably recedes by roughly the same distance it was promised to close. Something structural is at work.",
+    "cur": "有一个日期不断推移。1969年，韦恩赫尔·冯·布劳恩向参议院委员会表示，人类可以在1982年前登陆火星。1986年，美国国家航天委员会提议2010年。2010年，一份总统政策演讲将目标定在本世纪30年代中期。每个十年都产生了一个计划，包括具体的硬件、具体的时间表，以及事情将发生的具体年代——而每个计划都以某种形式瓦解了。硬件改变了，机构改变了，理由改变了，但那个日期以大致相同的距离可靠地向后推移，就像它原本承诺的那样。某种结构性的力量在起作用。"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.1.md",
+    "en": "The structural thing is not money, though money is always a constraint. It is not political will, though that evaporates too. It is that Mars presents, simultaneously, three problems that human spaceflight has not yet solved together — time, mass, and the body — and solving them separately, one at a time, gives a misleading sense of progress. Together they reinforce each other in ways that make the sum considerably harder than the parts. Mars has been reached robotically by the United States, Russia, the European Space Agency, India, China, and the United Arab Emirates. The vanguard is already multinational, and any honest account of who is trying to go there has to start from that fact.",
+    "cur": "结构性的问题不是金钱,尽管金钱总是一种制约。它不是政治意愿,尽管那也会蒸发。问题在于,火星同时呈现了三个人类太空飞行尚未一起解决的问题——时间、质量和身体——而逐一分开解决它们会产生一种误导性的进度感。它们相互强化,使得整体难度远大于部分之和。火星已经被美国、俄罗斯、欧洲航天局、印度、中国和阿联酋以机器人身份抵达。先锋部队已经是多国的,任何关于谁在试图去那里的诚实叙述都必须从这个事实开始。"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.3.md",
+    "en": "The comparison to Apollo is almost always the first move in a Mars argument, and it is almost always misleading. What made Apollo work was a specific convergence: a single defined objective, a national emergency framing, essentially unlimited budget growth in the 1960s, and a light-lag of 1.3 seconds that kept crews in real-time contact with the ground. None of that exists for Mars, and none of it can be replicated by wanting it to.",
+    "cur": "与Apollo的比较几乎总是火星争论中的第一步,也几乎总是具有误导性的。使Apollo成功的是一种特定的汇聚:单一明确的目标、国家紧急情况框架、1960年代本质上无限的预算增长,以及保持机组人员与地面实时联系的1.3秒光延迟。这些条件对火星都不存在,也不能通过渴望而复制。"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.4.md",
+    "en": "The Moon is, as [the going-to-the-moon essay](/essays/going-to-the-moon) frames it, a practice ground: three days out, abort available, radio real-time, catastrophic failures survivable. Mars is none of those things. At closest approach it is roughly 54 million kilometres away; at farthest, over 400 million. A radio signal takes three to twenty-two minutes one way. The fastest plausible transfer runs six to nine months of coast. Once the trans-Mars injection burn fires, there is no trajectory home on demand. The crew that leaves for Mars is committed.",
+    "cur": "月球,正如[关于登月的文章](/essays/going-to-the-moon)所述,是一个练习场:三天的路程,可以中止,无线电实时通信,灾难性故障可存活。火星都不是这些。在最近距离,它大约540万公里外;在最远距离,超过4亿公里。无线电信号单向需要三到二十二分钟。最快的可行转移需要六到九个月的巡航。一旦跨火星注入燃烧启动,就没有按需返回地球的轨道。前往火星的机组已经承诺了。"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.6.md",
+    "en": "The first wall is time, and it begins before the mission does. Earth and Mars orbit the sun at different speeds — Earth in about 365 days, Mars in about 687 — which means the geometry between them is constantly shifting. A [Hohmann transfer orbit](/science/transfers/hohmann-transfer), the minimum-energy arc from one planet to another, only works when the planets are in the right relative positions: departure must be timed so that the transfer ellipse's far end intersects Mars's orbit at precisely the moment Mars arrives there. That window opens roughly every 26 months. Miss it and you wait more than two years for the next one.",
+    "cur": "第一堵墙是时间,它在任务开始前就已开始。地球和火星以不同的速度围绕太阳运行——地球约365天,火星约687天——这意味着它们之间的几何关系不断变化。[霍曼转移轨道](/science/transfers/hohmann-transfer),从一个行星到另一个行星的最小能量弧,只在两个行星处于合适相对位置时才有效:出发时间必须精确选择,使得转移椭圆的远端在火星到达那里的那一刻与火星轨道相交。这个窗口大约每26个月开一次。错过它,你需要等待两年多才能获得下一个。"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.7.md",
+    "en": "The alignment affects not just the outbound leg but the return. A crew arriving at Mars will wait at least 14 to 18 months for the planets to cycle back into a return window — which is why a minimum-duration Mars mission, with a six-to-nine month outbound coast, a surface stay of 14 to 18 months, and a six-to-nine month return, runs to roughly 900 days total. Three years, round trip, as a floor. Engineers call the plots that map launch windows and transit times \"porkchop plots\" — contour maps of [delta-v](/essays/delta-v) cost against departure and arrival date that look, with some imagination, like the cut they are named for. The cheap valleys in those plots are the windows. The expensive ridges between them are the months when no reasonable mission can fly. The window runs the mission, not the other way around.",
+    "cur": "这种对齐不仅影响往程，也影响返程。到达火星的航组将至少等待14到18个月，直到行星循环回到返程窗口——这就是为什么最短时间火星任务包括六到九个月的往程滑行、14到18个月的地表停留和六到九个月的返程，总共运行约900天。往返总计三年，这是最低限度。工程师们把绘制发射窗口和航行时间的图表称为\"猪排图\"——这是一种等高线图，显示[delta-v](/essays/delta-v)成本相对于发射日期和到达日期的变化，用些想象力看起来就像它们被命名后的切割面。这些图中的廉价谷地是窗口。它们之间昂贵的山脊是不能进行任何合理任务的月份。窗口决定任务，而不是相反。"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.8.md",
+    "en": "The commitment consequence of the window is absolute. Unlike an Apollo lunar mission — where a [free-return trajectory](/science/transfers/free-return) kept abort-to-Earth available for much of the outbound cruise — a Mars mission on a Hohmann arc has no such option once the trans-Mars injection burn fires. There is no trajectory that brings the crew home fast if something goes wrong on the way. There are higher-energy abort trajectories, but they require enormous propellant reserves that no mission has yet proposed carrying, precisely because propellant is the second wall.",
+    "cur": "窗口承诺的后果是绝对的。不同于Apollo月球任务——那里的[自由返回轨迹](/science/transfers/free-return)使得在大部分外出航程中都能选择中止并返回地球——火星任务采用Hohmann轨道后,一旦过火星注入燃烧发动就没有这样的选择。没有轨迹能在出航过程中出现问题时将机组迅速送回家。虽然存在更高能量的中止轨迹,但它们需要巨大的推进剂储备,还没有任何任务提议携带这样的储备,正是因为推进剂是第二道难关。"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.9.caption",
+    "en": "You do not leave for Mars when you are ready; you leave when the two planets line up, which happens for a few weeks about every twenty-six months. Miss it and you wait two years. And once the transfer burn commits you to the six-to-nine-month coast, there is no abort back to Earth.",
+    "cur": "你不是在准备好时启程前往火星，而是在两颗行星排成一线时启程——这种机会每二十六个月左右出现数周。错过了，你就要等待两年。一旦转移燃烧提交了你为期六至九个月的巡航，就再无返回地球的中止选项。"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.11.md",
+    "en": "The second wall is mass — and specifically, the relationship between mass and distance in a mission from which no resupply is possible. On the International Space Station, a Progress cargo vehicle arrives every few months with food, water, equipment, and spare parts. The station's life-support systems are closed-loop in some respects but leaky in others; water is recycled, but consumables are topped up regularly from Earth. A Mars crew gets no such resupply. Whatever leaves with them is what they have. Every kilogram of food, every litre of water, every spare component for every critical system must either be carried from Earth — at extraordinary launch cost — or produced on Mars itself.",
+    "cur": "第二堵墙是质量——更确切地说，是质量与距离之间的关系，而这一任务没有补给的可能。在国际空间站上，Progress货运飞船每几个月到达一次，运送食物、水、设备和备件。空间站的生命保障系统在某些方面是闭环的，但在其他方面是有漏洞的；水被回收利用，但消耗品定期从地球补充。火星任务小组无法获得这样的补给。随他们出发的东西就是他们拥有的全部。食物的每一公斤、水的每一升、每个关键系统的每一个备用部件，要么必须从地球运送——代价异常高昂的发射成本——要么在火星上自己生产。"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.12.md",
+    "en": "The return-propellant problem is the sharpest version of this. A crewed lander descending to the Martian surface must also carry the propellant to ascend from it, rendezvous with a waiting ship in orbit, and burn for the return. The mass of that propellant, added to the lander, raises the lander's mass, which requires more propellant to land it, which raises the mass further — a spiral that has been studied carefully and comes out to tens of tonnes of propellant that must reach the Martian surface. Carrying it from Earth on a single launch stack is extraordinarily expensive. The escape from this spiral is [in-situ resource utilisation](/science/life-in-space/isru-resource-utilization): manufacturing propellant on Mars, from Martian resources, rather than hauling it from Earth.",
+    "cur": "返回推进剂问题是这一困境最尖锐的版本。降落到火星表面的有人着陆器还必须携带从火星表面上升、与轨道上等待的飞船交会，以及进行返程燃烧所需的推进剂。这些推进剂的质量加到着陆器上，增加了着陆器的质量，而这又需要更多推进剂来将其送达火星表面，从而进一步增加质量——这是一个已被仔细研究过的螺旋式问题，结果表明有数十吨的推进剂必须到达火星表面。通过单次发射堆栈从地球运送它的成本高得离谱。逃脱这一螺旋的出路在于[原位资源利用](/science/life-in-space/isru-resource-utilization)：利用火星资源在火星上制造推进剂，而非从地球运送。"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.13.md",
+    "en": "The escape from the propellant spiral is [in-situ resource utilisation](/science/life-in-space/isru-resource-utilization): manufacturing propellant on Mars from Martian resources. Mars's atmosphere is 95% carbon dioxide; split CO₂ electrochemically and you have oxygen, or process it with hydrogen from water ice to produce methane fuel. [Perseverance](/missions?id=perseverance) carried MOXIE — the Mars Oxygen In-Situ Resource Utilization Experiment — which made oxygen from Martian CO₂ at small scale from 2021 to 2023, at rates of up to twelve grams per hour. It is the only proof-of-concept of resource production on another planet. Scaling that to the tonnes of propellant a crewed ascent vehicle needs, alongside a closed-loop [life-support system](/science/life-in-space/eclss-life-support) that recycles water and air for three years without resupply, is an unsolved engineering challenge of the first order. The path from ten grams per hour to a full propellant plant exists on paper. It has never been built.",
+    "cur": "逃脱推进剂怪圈的办法是[原位资源利用](/science/life-in-space/isru-resource-utilization)：从火星资源中制造火星用推进剂。火星大气中95%是二氧化碳；用电化学方法分解CO₂就能得到氧气，或者将其与来自水冰的氢气反应生成甲烷燃料。[Perseverance](/missions?id=perseverance)搭载了MOXIE——火星原位资源利用制氧实验——在2021年至2023年期间以小规模从火星CO₂中制造氧气，最高产率达每小时十二克。这是人类在另一个星球上进行资源生产的唯一概念验证。将其扩展至载人上升飞行器所需的数吨推进剂，再加上一套能在三年内不补给的情况下循环利用水和空气的闭环[生命保障系统](/science/life-in-space/eclss-life-support)，这是一项最高级别的未解工程难题。从每小时十克到完整推进剂生产厂的方案在纸面上存在。但从未被建造过。"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.14.caption",
+    "en": "Hauling enough propellant from Earth to lift a crew back off Mars is close to impossible, so the plan is to make it on arrival. Perseverance’s MOXIE experiment pulled oxygen from the CO₂ atmosphere — a few grams an hour, but the first time a factory has ever run on another world.",
+    "cur": "从地球运送足够的推进剂来将宇航员从火星送回去几乎是不可能的，所以计划是到达后在当地制造。Perseverance的MOXIE实验从CO₂大气中提取了氧气——虽然每小时只有几克，但这是有史以来第一次有工厂在另一颗行星上运作。"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.16.md",
+    "en": "The third wall's opening act is well documented. [Entry, descent, and landing at Mars](/science/mission-phases/edl) — the sequence the [seven-minutes essay](/essays/seven-minutes) traces in detail — is the hardest landing in the solar system for a specific and unforgiving reason: Mars has just enough atmosphere to generate lethal heat on entry, and not nearly enough to slow you to a landing speed on a parachute alone. Every Mars lander in history has required a bespoke combination of heat shield, supersonic parachute, rockets, and sometimes elaborate mechanical ingenuity — the airbags of [Mars Pathfinder](/missions?id=mars-pathfinder), the sky crane of [Curiosity](/missions?id=curiosity) and [Perseverance](/missions?id=perseverance) — just to get hardware the size of a car onto the surface. The sky crane is, at roughly one tonne of rover, near the outer limit of what the current EDL toolkit can deliver. A crewed Mars lander would mass on the order of twenty to forty tonnes.",
+    "cur": "第三堵墙的开场表现有详细的记录。[进入、下降和登陆火星](/science/mission-phases/edl)——[七分钟论文](/essays/seven-minutes)详细追踪的序列——是太阳系中最困难的登陆，原因特定而无情：火星的大气只够产生进入时的致命热量，但远不足以通过降落伞单独将你减速到登陆速度。历史上每一个火星登陆器都需要精心设计的热防护罩、超音速降落伞、火箭以及有时复杂的机械装置的组合——[Mars Pathfinder](/missions?id=mars-pathfinder)的气囊、[Curiosity](/missions?id=curiosity)和[Perseverance](/missions?id=perseverance)的空中起重机——仅仅为了在表面放下一辆汽车大小的硬件。空中起重机在大约一吨漫游车的情况下，接近当前进入下降登陆工具包能够投送的外部极限。一个载人火星登陆器的质量将在二十到四十吨的量级。"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.17.md",
+    "en": "That gap — between what has been landed and what a crewed mission requires — is called the EDL gap, and it is not a small engineering extension of existing work. It is a regime change. The physics that governs parachute drag scales poorly with mass: a parachute large enough to meaningfully slow a forty-tonne vehicle in Mars's thin atmosphere would need to be so large that it becomes structurally impractical at supersonic speeds. Alternate approaches — supersonic retropropulsion, inflatable aeroshells, combinations thereof — have been studied and demonstrated at small scale. SpaceX's Starship, if it ever reaches Mars with a functioning propulsive-landing capability, would represent the first attempt at crewed-scale Mars EDL. As of this writing, Starship has not completed a fully successful orbital demonstration on Earth. Its Mars performance is a projection from an unproven system. Every credible analysis of crewed Mars architectures lists EDL as one of the most significant unresolved technical risks. This is not pessimism. It is the engineering record as it stands.",
+    "cur": "这一差距——现有着陆能力与载人任务需求之间的差距——被称为EDL间隙,这绝非现有工作的一个小型工程延伸。这是一个体制的转变。控制降落伞阻力的物理学规律随质量缩放效果很差:一个大到足以有意义地减缓四十吨车辆在火星稀薄大气中速度的降落伞,在超音速下会大到结构上难以实现。替代方案——超音速反推进、充气气动外壳、两者的组合——已在小规模下被研究和演示。如果SpaceX的Starship最终抵达火星且具备可用的推进着陆能力,将代表首次尝试载人规模的火星EDL。截至本文写作之时,Starship尚未在地球上完成一次完全成功的轨道演示。其火星性能是从一个未经验证的系统推导的预测。每一份有可信度的载人火星构架分析都将EDL列为最重大的未解决技术风险之一。这不是悲观主义。这是工程记录如实呈现的样子。"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.18.md",
+    "en": "The signal lag applies regardless of EDL architecture. By the time Earth hears that a craft has entered the Martian atmosphere, the seven-minute sequence is already resolved — success or crater — which is why [Perseverance](/missions?id=perseverance) selected its own landing spot autonomously using terrain-relative navigation. For a crewed lander the same constraint holds: every descent decision is the crew's alone, and every emergency on the surface is answered by people eleven to twenty-two light-minutes from the nearest help.",
+    "cur": "无论EDL构架如何,信号延迟都存在。地球听到航天器进入火星大气时,七分钟的序列早已解决——成功或坠毁——这就是为什么[Perseverance](/missions?id=perseverance)使用地形相对导航自主选择着陆点。对于载人着陆器,同样的约束成立:每一个下降决策都完全由机组人员做出,表面上的每一个紧急情况都由距离最近的帮助十一到二十二光分钟外的人来应对。"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.19.caption",
+    "en": "Perseverance in the last seconds of its own landing, lowered on cables from the sky crane over Jezero — the hardest arrival in the solar system, flown entirely by the spacecraft. A crewed lander would mass tens of times more, and no one yet knows how to set that down.",
+    "cur": "Perseverance在自身着陆的最后时刻,从天空起重机通过缆绳悬挂在Jezero上方——太阳系中最艰难的到达,由航天器完全自主飞行。一个载人着陆器的质量会超过数十倍,目前还没有人知道如何将其放下。"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.21.md",
+    "en": "The third wall is the human body, and it is the one the mission architecture cannot engineer around. Mars has no global magnetic field — its core long since solidified, ending the dynamo that once generated the shield. Earth's magnetosphere deflects the bulk of galactic cosmic rays and solar energetic particles; Mars offers no equivalent. A six-month transit through interplanetary space delivers a measured dose of roughly 300 millisieverts — well over a hundred times a typical year of natural background radiation on Earth, absorbed in six months. On the Martian surface, without a magnetosphere, dose accumulates further from secondary radiation. A three-year round trip has been estimated at 600 to 1,200 millisieverts total, depending on solar-cycle phase and shielding — numbers measured in flight by instruments aboard [Curiosity](/missions?id=curiosity).",
+    "cur": "第三道墙是人体，而这是任务架构无法通过工程手段绕开的一道墙。火星没有全球磁场——其内核早已冷却凝固，曾经产生屏障的发电机效应就此终结。地球的磁层偏转了大部分银河宇宙射线和太阳高能粒子；火星没有任何等效的屏障。穿越星际空间的六个月航程，实测剂量约为300毫西弗——是地球上一年典型天然本底辐射的一百多倍，而这是在六个月内吸收的。在火星表面，由于没有磁层，次级辐射使剂量进一步累积。三年往返行程的总剂量估计为600至1,200毫西弗，取决于太阳周期阶段和屏蔽——这些数字是由[Curiosity](/missions?id=curiosity)上的仪器在飞行中实测得到的。"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.22.md",
+    "en": "Current NASA occupational dose limits are designed to cap lifetime excess cancer risk to 3%. A Mars round trip, under most architecture assumptions, exceeds those limits. The [radiation exposure](/science/life-in-space/radiation-exposure) is a quantified, documented risk that existing shielding technology does not adequately mitigate; any limit revision permitting the mission would be a policy decision made against acknowledged uncertainty, not a technical problem solved. Beyond radiation, [bone density loss](/science/life-in-space/bone-density-loss) and [muscle atrophy](/science/life-in-space/muscle-atrophy) in [microgravity](/science/life-in-space/microgravity-physiology) can be slowed by countermeasures but not stopped. ISS crews on six-month tours return needing months of rehabilitation; a Mars crew would spend six to nine months in transit microgravity outbound, more than a year in Mars's one-third gravity — a regime with no long-duration human data — then six to nine months in microgravity again on return. Whether the body can sustain that sequence without permanent damage to bone, cardiovascular function, or vision is an open question that cannot be answered from current data. It can only be answered by going. And then there is the three-year social isolation — a crew in a volume comparable to a large recreational vehicle, beyond real-time communication with Earth, with no rescue available — a psychological experiment for which Antarctic winter-overs and submarine deployments are partial models at best.",
+    "cur": "NASA目前的职业剂量限制设定为将终身超额癌症风险限制在3%。在大多数构架假设下,火星往返会超过这些限制。[辐射暴露](/science/life-in-space/radiation-exposure)是一个量化、有案可查的风险,现有屏障技术无法充分缓解;任何允许任务进行的限制修订都将是针对已知不确定性做出的政策决定,而非解决的技术问题。除了辐射,[微重力](/science/life-in-space/microgravity-physiology)下的[骨密度丧失](/science/life-in-space/bone-density-loss)和[肌肉萎缩](/science/life-in-space/muscle-atrophy)可以通过对抗措施减缓但无法阻止。国际空间站的六个月任务宇航员返回后需要数月的康复;火星机组将在往程中花费六到九个月的微重力,在火星的三分之一重力下停留超过一年——一个没有长期人类数据的环境——然后在返回时再度经历六到九个月的微重力。人体能否在不对骨骼、心血管功能或视力造成永久伤害的情况下承受这一序列是一个开放问题,无法从现有数据中回答。只能通过亲身前往来获得答案。更有三年的社会隔离——机组在与大型休闲车相当大小的空间内,超出与地球实时通信范围,没有可用的救援——这是一个心理学实验,南极越冬和潜艇部署充其量只是不完美的部分模型。"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.23.caption",
+    "en": "Mars lost its global magnetic field when its core cooled, so it has no shield against galactic cosmic rays or solar storms. A crew takes roughly 300 millisieverts on the six-month transit alone — and across a three-year round trip, a dose no shielding light enough to fly can stop.",
+    "cur": "火星在其内核冷却时失去了全球磁场,因此它对银河宇宙射线或太阳风暴没有屏障。机组在仅仅六个月的过渡中就要承受约三百毫西弗——而在三年往返过程中,没有足够轻到能飞行的屏障可以阻止这样的剂量。"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.25.md",
+    "en": "The robotic record at Mars is, if you step back far enough, extraordinary. [Viking 1](/missions?id=viking1) touched down on Chryse Planitia on 20 July 1976 — the first spacecraft to operate successfully on the Martian surface — and ran for more than six years. [Spirit](/missions?id=spirit) and [Opportunity](/missions?id=opportunity) drove across terrain that no human has touched; [Curiosity](/missions?id=curiosity) has been reading the geological history of Gale Crater since August 2012; [Perseverance](/missions?id=perseverance) is in Jezero Crater right now, caching rock cores that a future sample-return mission may one day bring to Earth.",
+    "cur": "火星上的机器人记录从足够远的距离看来是非凡的。[Viking 1](/missions?id=viking1)于1976年7月20日在克律塞平原着陆——第一个在火星表面成功运作的航天器——并运行了超过六年。[Spirit](/missions?id=spirit)和[Opportunity](/missions?id=opportunity)在没有人类触及的地形上行驶;[Curiosity](/missions?id=curiosity)自2012年8月以来一直在读取盖尔撞击坑的地质历史;[Perseverance](/missions?id=perseverance)此刻正在耶泽罗撞击坑,缓存岩石芯样本,未来的样本返回任务有朝一日可能将其带回地球。"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.26.md",
+    "en": "The global dimension of this vanguard is underappreciated. [Mangalyaan](/missions?id=mangalyaan) — the Mars Orbiter Mission of the Indian Space Research Organisation — arrived at Mars on 24 September 2014 on its first attempt, making India the fourth space agency to reach Mars and the first Asian nation to do so, at a total mission cost of approximately $74 million, less than the production budget of the film *Gravity*. It operated for nearly eight years, far beyond its six-month design life. [Tianwen-1](/missions?id=tianwen1), launched by China in July 2020, performed a feat that no space agency had managed on a first Mars attempt: it orbited, landed, and deployed a rover — Zhurong — all in a single mission. Zhurong drove across Utopia Planitia beginning in May 2021 and returned geological and atmospheric data for more than a year. That achievement, on the first try, from a national Mars programme that did not exist before the 21st century, reshapes the geopolitical map of where the capability to go to Mars currently resides.",
+    "cur": "这一先锋队的全球维度被低估了。[Mangalyaan](/missions?id=mangalyaan)——印度空间研究组织的火星轨道器任务——于2014年9月24日在首次尝试中抵达火星,使印度成为第四个到达火星的航天机构和第一个这样做的亚洲国家,总任务成本约为七千四百万美元,少于电影《地心引力》的制作预算。它的运行时间近八年,远超其六个月的设计寿命。中国在2020年7月发射的[天问一号](/missions?id=tianwen1)完成了没有任何航天机构在首次火星任务中管理过的壮举:它进行了环绕、着陆和部署漫游车——祝融——所有这一切都在单一任务中进行。祝融从2021年5月开始在乌托邦平原行驶,并返回了超过一年的地质和大气数据。这一成就,在首次尝试中,来自一个在21世纪之前不存在的国家火星计划,重塑了去火星能力当前所在地的地缘政治地图。"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.27.md",
+    "en": "Against this robotic foundation, Starship stands as the current centrepiece of crewed Mars planning. SpaceX has described architectures in which fully reusable, fully refuelled vehicles carry large crews on six-month transits, landing propulsively and producing return propellant on the surface via ISRU. The ambition is real; a fully reusable vehicle at Starship's scale would change the mass equation substantially. But as of this writing, Starship has not completed a fully successful orbital demonstration on Earth. It has not demonstrated in-space propellant transfer at scale, propulsive landing at crewed-lander mass, or any of the life-support and radiation mitigations that the walls above require. Starship may eventually address those things. It is, right now, an enormous and seriously funded wager — and a wager is not a solution.",
+    "cur": "在这个机器人基础之上,Starship矗立为载人火星规划的当前中心。SpaceX已经描述了完全可重复使用、完全补充燃料的车辆在六个月过渡中携带大量机组的构架,推进着陆并通过原位资源利用在表面生产返回推进剂。雄心是真实的;完全可重复使用的Starship规模的车辆会实质性地改变质量方程。但截至本文写作之时,Starship尚未在地球上完成一次完全成功的轨道演示。它未曾在规模上演示过舱内推进剂转移、以载人着陆器质量进行推进着陆,或上述各道墙所需的任何生命保障和辐射缓解。Starship最终可能会处理那些事情。现在它是一个巨大的、获得严肃资金的赌注——而赌注不是解决方案。"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.28.md",
+    "en": "What makes Mars the wall is not that it is impossible. The orbital mechanics are solved; the [transfer trajectories](/science/transfers/hohmann-transfer) are mapped; the [porkchop plots](/science/transfers/lambert-problem) exist for every window through the end of the century. What makes it the wall is that it requires solving time, mass, and the body simultaneously, at a remove where every failure is final and no help is coming. [The going-to-the-moon essay](/essays/going-to-the-moon) frames the lunar return as a rehearsal precisely because getting it wrong there is survivable. Mars does not offer that. The first crewed mission will be the first time every system runs together in the actual environment, with actual people inside, on an actual three-year commitment — and there is no second attempt built into the schedule.",
+    "cur": "使火星成为难题的，并不是因为它不可能到达。轨道力学已经解决了；[转移轨迹](/science/transfers/hohmann-transfer)已经绘制出来；每个世纪末前的每个机会窗口的[弐重线图](/science/transfers/lambert-problem)都存在。使它成为难题的是，它要求同时解决时间、质量和身体的问题，而且在极其遥远的地方，每一次失败都是最终的，没有帮助会到来。[登月论文](/essays/going-to-the-moon)之所以将月球返回任务框架为演练，正是因为在那里出错是可以活下来的。火星不提供这种可能。第一次载人任务将是第一次所有系统在实际环境中共同运行，实际的人在里面，在一个真实的三年承诺上——而且时间表中没有内置第二次尝试。"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.29.md",
+    "en": "The date keeps moving because the work is real and the work is hard. The honest answer to \"when will humans land on Mars\" is: when the three walls have been addressed — not when confidence is high, not when a schedule says so, not when a founder's ambition demands it, but when the EDL architecture has been demonstrated at crewed scale, when a closed-loop life-support system has been proven for three years of operation, when the radiation picture is either mitigated or accepted on known terms, and when a return-propellant supply exists at Mars before the crew leaves Earth. Some of that work is underway. None of it is done. The wall is still there, and the measure of every plan is whether it faces the wall squarely or papers over the hardest parts with optimism. The former is how you eventually get through. The latter is how you move the date.",
+    "cur": "日期不断推移是因为工作是真实的,工作是艰难的。对'人类何时登陆火星'这个问题的诚实回答是:当三道墙都被解决时——不是信心高的时候,不是日程表说的时候,不是创始人的雄心要求的时候,而是当EDL构架已在载人规模上演示,当闭环生命保障系统已被证明能运行三年,当辐射情况要么被缓解要么在已知条款下被接受,以及当返回推进剂供应在机组离开地球前已存在于火星时。其中一些工作正在进行。没有任何工作完成。墙仍然存在,每一个计划的衡量标准是它是否正面对待这道墙,还是用乐观主义粉饰最艰难的部分。前者是你最终突破的方式。后者是你推动日期的方式。"
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.30.caption",
+    "en": "China’s Tianwen-1 delivered an orbiter, a lander, and the Zhurong rover to Mars on its very first attempt in 2021 — a sequence no other nation has managed in a single mission. Mars is the wall precisely because so many have broken on it, and a few, from more and more of the world, have not.",
+    "cur": "中国的天问一号在其2021年的首次尝试中向火星交付了一个轨道飞行器、一个着陆器和祝融漫游车——一个没有其他国家在单一任务中管理过的序列。火星是墙恰恰因为那么多的人已经在它上面破裂,少数来自越来越多的世界的国家没有这样做。"
+  },
+  {
+    "rel": "essays/going-to-the-moon.json",
+    "at": "dek",
+    "en": "We went to the Moon once, at extraordinary cost, then stopped for half a century and let the institutional memory die. Now we are relearning it — and this time, the reason we are going has changed.",
+    "cur": "我们曾到过月球一次，付出了非凡的代价，随后停了半个世纪，让机构记忆消亡。现在我们在重新学习它——这一次，我们去的原因已经改变了。"
+  },
+  {
+    "rel": "essays/going-to-the-moon.json",
+    "at": "body.0.md",
+    "en": "There is a fact about the Moon that ought to be more unsettling than it usually is. We went there, conclusively, between 1969 and 1972. Twelve people walked on it. We brought back 382 kilograms of rock, took thousands of photographs, drove a rover across the highlands, and left behind retroreflectors that astronomers still bounce lasers off today. And then, for reasons that were never fully technical, we stopped — and the six decades that followed were long enough that almost everything we learned about how to do it was lost. Not forgotten in the sense that the records vanished; lost in the deeper sense that the people who held the knowledge in their hands retired and died, the tooling was scrapped, the supply chains dissolved, and the organisations rebuilt themselves around other priorities. The Saturn V production line, the most capable launch system humanity has ever built, was shut down before [Apollo 17](/missions?id=apollo17) even flew. We did this once. That is a different sentence from: we can do this now.",
+    "cur": "关于月球有一个事实，应该令人比通常更感到不安。我们在1969年至1972年间明确地到过那里。十二个人在上面行走过。我们带回了382公斤的岩石，拍摄了数千张照片，驾驶漫游车穿越高地，留下了天文学家至今仍在用激光反射的角反射镜。然后，出于从未完全是技术性的原因，我们停了下来——接下来的六十年足够长，以至于我们学到的几乎所有关于如何做这件事的知识都丧失了。不是记录消失意义上的遗忘，而是更深层意义上的丧失：持有这些知识的人退休了、死了，工具被报废了，供应链瓦解了，组织围绕其他优先事项重建了自身。土星五号生产线——人类建造过的最强大的运载系统——在[Apollo 17](/missions?id=apollo17)飞行之前就关闭了。我们曾经做过这个。这与我们现在能做这个是两个不同的句子。"
+  },
+  {
+    "rel": "essays/going-to-the-moon.json",
+    "at": "body.1.md",
+    "en": "That fact — returning, relearning, rebuilding — sits at the centre of everything happening at the Moon right now. The world is busy there in a way it hasn't been since the 1970s: Chinese landers on the farside, Indian and Japanese spacecraft touching down near the south pole, a wave of commercial American landers, a NASA programme aimed at returning crews. But before any of that can be understood clearly, two things need to be held in mind at once. First: the Moon is the natural first rung of deep-space ambition precisely because it is close enough to be forgiving and real enough to teach the genuine lessons. Second: we already climbed that rung, at staggering expense, then climbed back down and let the rung corrode. The return to the Moon is not a continuation of Apollo. It is a second attempt at what Apollo started, fifty years later, for different reasons, by a different cast — and in some respects starting from further back.",
+    "cur": "这个事实——返回、重新学习、重建——处于现在月球上发生的一切的中心。世界在那里忙碌得像自1970年代以来从未有过的样子：中国着陆器在远侧、印度和日本航天器在南极附近着陆、一波商业美国着陆器、一项旨在返回载人crew的NASA计划。但在任何这些都能被清楚理解之前，有两件事需要同时记住。首先：月球之所以是深空野心的自然第一阶，正是因为它足够近以至于宽容，又足够真实以至于教授真正的课程。其次：我们已经以巨大的代价爬过了那阶梯，然后爬了回来，让那阶梯生了锈。回归月球不是Apollo的延续。这是Apollo开启的事业的第二次尝试，五十年后，为了不同的原因，由不同的参与者进行——在某些方面从更远的地方开始。"
+  },
+  {
+    "rel": "essays/going-to-the-moon.json",
+    "at": "body.4.md",
+    "en": "The Moon is approximately 384,400 kilometres away. Light covers that distance in about 1.3 seconds, which means that a signal sent from Earth arrives before you have finished the thought that prompted it. At Mars, the equivalent figure is somewhere between three and twenty-two minutes one way, and at the peak of the [seven-minute terror of entry, descent, and landing](/essays/seven-minutes), the craft is entirely alone. At the Moon, a human crew can still talk to the ground in something approaching real time. Controllers can issue warnings, ask questions, and receive answers before a developing problem becomes an irreversible one. That margin — 1.3 seconds versus twenty-two minutes — is the difference between a place where people can be kept in the loop and a place where they cannot. It is not an incidental detail. It is the structural reason the Moon comes first.",
+    "cur": "月球大约距离地球384,400公里。光覆盖这个距离大约需要1.3秒，这意味着从地球发送的信号在你完成促使它的想法之前就到达了。在火星，相应的数字大约是片程三到二十二分钟，在[进入、下降和着陆的七分钟恐怖](/essays/seven-minutes)的顶峰，航天器完全孤独。在月球上，人类crew仍然可以以接近实时的方式与地面交谈。控制人员可以发出警告、提出问题，并在发展中的问题变成不可逆转的问题之前收到答案。这个差距——1.3秒对二十二分钟——是一个可以让人保持在控制回路中的地方和一个不能的地方之间的区别。这不是一个附带细节。这是月球首先到来的结构性原因。"
+  },
+  {
+    "rel": "essays/going-to-the-moon.json",
+    "at": "body.5.md",
+    "en": "But close does not mean easy. The Moon has no atmosphere whatsoever — not a wisp, not a trace thick enough to slow a descending spacecraft by a single metre per second. Everything the [seven-minutes essay](/essays/seven-minutes) describes about the cruelty of Mars — heat shields, supersonic parachutes, the brutal compression of entry — is actually the relatively easy case, because at least Mars gives you something to work with. On the Moon you arrive fast, with only rockets to kill your speed, so you must carry every kilogram of propellant you will ever need from the moment you leave the launch pad. The Apollo Lunar Module's descent engine burned for twelve minutes against a gravity well that, though only one-sixth of Earth's, is a real gravity well — genuine, demanding fuel to fight, unforgiving of errors in the burn timing. And underneath the lander, when you touch, is [regolith](/science/planets/regolith): a fine, angular, glass-edged powder ground by billions of years of micrometeorite impacts into something that behaves like flour, clings like burrs, and abrades like sandpaper. The suits the Apollo astronauts wore were visibly darkened by it within hours. Dust is not a detail. Dust is a design problem.",
+    "cur": "但接近并不意味着容易。月球没有大气层——没有一丝一毫，没有任何足以使下降的航天器减速哪怕一米每秒的痕迹。[七分钟论文](/essays/seven-minutes)中描述的关于火星的残酷性——隔热盾、超音速降落伞、猛烈的再入压缩——实际上是相对容易的情况，因为至少火星能给你一些可以利用的东西。在月球上，你以很快的速度到达，只能靠火箭来减速，所以你必须从离开发射台的那一刻起就携带你将来需要的每一克推进剂。Apollo 月球舱的下降引擎燃烧了十二分钟，与一个重力场对抗——尽管仅为地球的六分之一，但它是一个真实的重力场——真实存在、需要燃料来对抗、对燃烧时序的误差毫不宽容。登陆器下面，当你接触时，是[月壤](/science/planets/regolith)：一种细微的、棱角尖锐的、玻璃边缘的粉末，被数十亿年的微陨石撞击磨成了像面粉一样的物质，像刺一样粘附，像砂纸一样磨蚀。Apollo 宇航员穿着的宇航服在几小时内就明显被它变黑了。灰尘不是细节问题。灰尘是一个设计难题。"
+  },
+  {
+    "rel": "essays/going-to-the-moon.json",
+    "at": "body.6.md",
+    "en": "Then there is the night. The lunar day lasts about fourteen Earth days, and so does the night, during which temperatures plunge to around −170°C. Solar panels generate nothing. Batteries that power survival systems drain against a cold that would kill most commercial electronics. Every system aboard a lunar lander has to either hibernate through the darkness and survive it, or be designed to work without sunlight for two weeks. The Soviet [Luna 9](/missions?id=luna9) — which in February 1966 became the first spacecraft in history to make a soft landing on the Moon and transmit photographs from the surface — operated for roughly three Earth days before its batteries died. The lesson was immediate: the Moon is close enough to reach but real enough to make you work for every hour you spend there.",
+    "cur": "然后是夜晚。月球的白天大约持续十四个地球日，夜晚也是，期间温度骤降到约−170°C。太阳能板什么都发电不了。为生存系统供电的电池在会杀死大多数商用电子设备的寒冷中耗尽。月球着陆器上的每个系统都必须要么在黑暗中冬眠并存活下来，要么被设计为在两周内没有阳光的情况下工作。苏联的[Luna 9](/missions?id=luna9)——在1966年2月成为历史上第一个在月球上软着陆并从表面传输照片的航天器——在其电池耗尽之前运行了大约三个地球日。教训是立即的：月球距离足够近以至于可以到达，但足够真实以至于让你为在那里花费的每一小时努力。"
+  },
+  {
+    "rel": "essays/going-to-the-moon.json",
+    "at": "body.8.md",
+    "en": "Apollo is simultaneously the greatest engineering achievement in the history of spaceflight and one of the strangest stories in the history of institutions. It was built in a decade at a cost — in 2025 dollars — of somewhere north of 250 billion. It employed, at its peak, some 400,000 people directly or through contractors. It required the invention of new metallurgy, new computer science, new manufacturing techniques, new disciplines of systems engineering that didn't exist when Kennedy made his speech. And it worked. [Apollo 11](/missions?id=apollo11) landed on the Sea of Tranquility on 20 July 1969, and by [Apollo 17](/missions?id=apollo17) in December 1972, the programme had refined its techniques to the point where crews were doing genuine field geology at high latitudes with a rover and a suite of scientific instruments. Then it stopped, and the stopping was permanent in ways no one quite admitted at the time.",
+    "cur": "Apollo同时是航天飞行历史上最伟大的工程成就和机构历史上最奇怪的故事之一。它在十年内以大约2500亿美元（以2025年美元计）的成本建造。它在其高峰时期直接或通过承包商雇用了约400,000人。它需要发明新的冶金、新的计算机科学、新的制造技术、当肯尼迪发表演讲时不存在的系统工程新学科。而且它成功了。[Apollo 11](/missions?id=apollo11)在1969年7月20日登陆了Tranquility海，到了1972年12月的[Apollo 17](/missions?id=apollo17)，该计划已经改进其技术到了机组正在用漫游车和一套科学仪器在高纬度进行真正的田间地质工作的程度。然后它停了，停止在当时没有人真正承认的方式上是永久的。"
+  },
+  {
+    "rel": "essays/going-to-the-moon.json",
+    "at": "body.9.md",
+    "en": "The Saturn V — the rocket that did it — was 111 metres tall, generated 34.5 million newtons of thrust at liftoff, and has never been equalled for payload to low Earth orbit. The last one flew in May 1973, carrying Skylab. The tooling, the jigs, the vendor relationships, the hands that machined the parts — all of it was wound down. Within a generation, NASA could no longer build a Saturn V even if it wanted to. The knowledge was gone not from the libraries but from the people, and from the infrastructure that gave the knowledge its practical meaning. When engineers began working on what would become the Space Launch System in the 2010s, they could not simply reopen the Saturn V drawings; the manufacturing processes those drawings assumed no longer existed. They had to redevelop them. The gap between Apollo 17 in 1972 and the [uncrewed Artemis I flight in 2022](/programs/artemis) — fifty years — was not a pause. It was an erasure.",
+    "cur": "Saturn V — 完成这一壮举的火箭 — 高111米，在起飞时产生3450万牛的推力，在有效载荷运送到近地轨道方面从未被超越。最后一枚于1973年5月升空，运载Skylab。工装、夹具、供应商关系、加工零件的工人们 — 这一切都逐渐消失了。一代人之内，NASA即使想要也无法再制造Saturn V。知识不是从图书馆消失，而是从人员身上消失，也从赋予知识实际意义的基础设施消失了。当工程师在2010年代开始研究后来成为Space Launch System的项目时，他们不能简单地重新打开Saturn V的设计图；那些设计图所假设的制造工艺已不复存在。他们不得不重新开发这些工艺。1972年Apollo 17与[2022年无人Artemis I飞行](/programs/artemis)之间相隔五十年，不是停顿。这是一种消逝。"
+  },
+  {
+    "rel": "essays/going-to-the-moon.json",
+    "at": "body.10.md",
+    "en": "This is the sobering context for everything that follows. \"We did this before\" is true in the narrow sense that the feat was accomplished, the footprints are there, the retroreflectors still work. It is misleading in the practical sense that the organisations, tools, and people who did it are gone, and what has been rebuilt since is being rebuilt from records rather than from living knowledge. Institutional memory is a real, perishable asset. The Moon is teaching that lesson a second time.",
+    "cur": "这是随后一切的清醒语境。\"我们之前做过这个\"在狭义上是真的，即这个壮举被完成了，足迹在那里，角反射镜仍然有效。在实际意义上是误导的，因为进行这一工作的组织、工具和人已经消失了，自那以后重建的东西是从记录而非活记忆中重建的。机构记忆是一种真实的、易损耗的资产。月球在第二次教授这个教训。"
+  },
+  {
+    "rel": "essays/going-to-the-moon.json",
+    "at": "body.11.caption",
+    "en": "Apollo was the anomaly, not the start of a trend. The Saturn V line was shut down before the last crew even flew; over the fifty years that followed, the tooling was scrapped and the people who held the knowledge in their hands retired and died. We are climbing the first rung again — from records, not from living memory.",
+    "cur": "Apollo是异常，而不是趋势的开始。土星五号生产线在最后的crew甚至飞行前就关闭了；在接下来的五十年里，工具被报废，持有知识的人退休并死亡了。我们在攀爬第一阶——从记录中，而不是从活记忆中。"
+  },
+  {
+    "rel": "essays/going-to-the-moon.json",
+    "at": "body.13.md",
+    "en": "Apollo went to the equator. Six of the seven landings (the seventh, [Apollo 13](/missions?id=apollo13), did not land) touched down within roughly 26 degrees of the lunar equator, in broadly flat terrain with acceptable lighting conditions for the surface stay and a predictable thermal environment. That made sense for a programme whose primary goal was to get there and back safely, prove the technology, and collect samples. The equatorial Moon is the easiest version of the Moon to reach, to land on, and to operate in. It is not, it turns out, the most interesting.",
+    "cur": "Apollo去了赤道。七次着陆中的六次（第七次，[Apollo 13](/missions?id=apollo13)，没有着陆）在赤道周围大约26度以内着陆，位于地形广阔平坦、表面停留期间照明条件可接受且热环境可预测的地方。这对于一个主要目标是安全到达并返回、证明技术和收集样本的计划来说是有意义的。赤道月球是最容易到达、最容易着陆和最容易操作的月球版本。事实证明，这不是最有趣的。"
+  },
+  {
+    "rel": "essays/going-to-the-moon.json",
+    "at": "body.14.md",
+    "en": "In 2008 and 2009, the Chandrayaan-1 mission and NASA's Lunar Reconnaissance Orbiter produced what amounts to a revolution in lunar science: evidence that the permanently shadowed craters near the south pole contain [water ice](/science/planets/lunar-ice). Not trace amounts — substantial deposits, likely hundreds of millions of tonnes, accumulated over billions of years from cometary impacts and the solar wind, preserved by temperatures that never rise above −160°C because the sun never reaches those crater floors. Water ice, in the context of a deep-space programme, is not just something to drink. It is hydrogen and oxygen: rocket propellant, breathable air, radiation shielding. The south pole of the Moon holds, potentially, the fuel depot and life-support consumables for everything that comes after it. This is what the phrase \"in-situ resource utilisation\" means in practice, and it changes the reason for going entirely. Apollo was about visiting. The south pole is about staying.",
+    "cur": "在2008年和2009年，Chandrayaan-1任务和NASA的月球勘测轨道器产生了相当于月球科学革命的东西：南极附近永久阴暗陨石坑中含有[水冰](/science/planets/lunar-ice)的证据。不是微量——大量沉积物，可能有数亿吨，从数十亿年前积累而来，来自彗星撞击和太阳风，由于太阳永远照不到那些陨石坑底部而温度从未升高到−160°C以上而被保存。在深空计划的背景下，水冰不仅仅是喝的东西。它是氢和氧：火箭推进剂、可呼吸空气、辐射防护。月球的南极潜在地拥有燃料库和随后一切的生命支持消耗品。这就是\"原位资源利用\"这个短语在实践中的含义，它彻底改变了去的原因。Apollo是关于访问的。南极是关于停留的。"
+  }
 ]

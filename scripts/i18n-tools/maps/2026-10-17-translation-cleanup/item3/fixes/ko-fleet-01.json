@@ -1,974 +1,974 @@
 [
- {
-  "rel": "fleet/cargo-spacecraft/atv.json",
-  "at": "tagline",
-  "old": "ESA의 기함급 ISS 화물 운반선; 5번의 비행",
-  "new": "ESA의 주력 ISS 화물 운반선; 비행 5회"
- },
- {
-  "rel": "fleet/cargo-spacecraft/atv.json",
-  "at": "dispatch",
-  "old": "Automated Transfer Vehicle는 유럽의 ISS 화물 운반선이자 당대 가장 정교한 화물 우주선이었다 — 20톤급 우주선으로 자동 조종 기능으로 우주정거장과 완전 자동 도킹하여 화물, 물, 공기, 추진제를 전달했으며 자체 엔진으로 전체 ISS를 궤도에서 부스팅했다. 2008년부터 2015년 사이에 5대가 비행했으며, 각각 쥘 베른에서 조르주 르메트르까지 유럽의 사상가들의 이름을 따서 명명되었다. 단순한 보급 우주선을 넘어, ATV는 유럽이 완전한 ISS 파트너로서의 위치를 확보하는 방법이었으며 — 이것이 입증한 기술은 현재 NASA의 Orion이 달로 향하는 길에 동력을 제공하는 유럽 서비스 모듈로 살아있다.",
-  "new": "Automated Transfer Vehicle은 유럽의 ISS 화물선이자 당대에 가장 정교했던 화물 우주선이었다 — 스스로 항법을 수행해 우주정거장과 완전 자동으로 도킹하는 20톤급 우주선으로, 화물과 물, 공기, 추진제를 전달했고 자체 엔진으로 ISS 전체의 궤도를 끌어올렸다. 2008년부터 2015년까지 5기가 비행했으며, 각각 쥘 베른에서 조르주 르메트르에 이르는 유럽 사상가의 이름을 땄다. 단순한 보급선을 넘어, ATV는 유럽이 ISS의 온전한 파트너 자리를 얻은 방법이었다. 이 우주선이 입증한 기술은 지금 NASA의 Orion을 달로 보내는 동력이 되는 유럽 서비스 모듈로 이어지고 있다."
- },
- {
-  "rel": "fleet/cargo-spacecraft/atv.json",
-  "at": "description",
-  "old": "Automated Transfer Vehicle(ATV)는 Astrium / Airbus가 유럽에서 건조한 로봇식 화물 우주선이다. ESA의 기함급 ISS 화물 운반선으로 2008년부터 2015년까지 ISS로 5번의 임무를 비행하였으며, 화물, 물, 공기, 추진제를 전달하면서 자체 엔진으로 우주정거장을 부스팅했다.",
-  "new": "Automated Transfer Vehicle(ATV)는 Astrium / Airbus가 유럽에서 제작한 무인 화물 우주선이다. ESA의 주력 ISS 화물 운반선으로 2008년부터 2015년까지 ISS로 다섯 차례 임무를 수행했으며, 화물, 물, 공기, 추진제를 전달하는 한편 자체 엔진으로 우주정거장의 궤도를 끌어올렸다."
- },
- {
-  "rel": "fleet/cargo-spacecraft/atv.json",
-  "at": "best_known_for",
-  "old": "ESA의 기함급 ISS 화물 운반선; 5번의 비행",
-  "new": "ESA의 주력 ISS 화물 운반선; 비행 5회"
- },
- {
-  "rel": "fleet/cargo-spacecraft/cargo-dragon-2.json",
-  "at": "description",
-  "old": "Crew Dragon의 승무원 변형은 트렁크에 동일한 본체 장착 태양 전지와 함께. Cygnus (round arrays) 및 Soyuz / Progress (rectangular wings)에서 눈에 띄는 Differs. downmass와 intact 반환 — ISS 화물 캐리어의 독특한.",
-  "new": "Crew Dragon의 무인 화물 버전으로, 트렁크에 같은 방식의 동체 부착형 태양전지가 달려 있다. 둥근 날개의 Cygnus, 직사각형 날개의 Soyuz / Progress와 외관상 뚜렷하게 구별된다. 기체가 온전히 지구로 귀환하며 귀환 화물을 실어 나른다 — ISS 화물선 중 유일하다."
- },
- {
-  "rel": "fleet/cargo-spacecraft/cygnus-enhanced.json",
-  "at": "tagline",
-  "old": "Stretched Cygnus; UltraFlex 둥근 배열",
-  "new": "동체를 늘린 Cygnus; 둥근 UltraFlex 전지판"
- },
- {
-  "rel": "fleet/cargo-spacecraft/cygnus-enhanced.json",
-  "at": "description",
-  "old": "Northrop Grumman의 pressurised-cargo 캐리어, 그것의 둥근 UltraFlex 태양 배열에 의해 인식 - 다른 ISS 방문자와 공유 팬 폴드 협정 패턴. reentry에 점화; downmass 없음.",
-  "new": "Northrop Grumman의 가압 화물선으로, 둥근 UltraFlex 태양전지판으로 알아볼 수 있다 — 부채처럼 접히는 아코디언 형태는 다른 어떤 ISS 방문 우주선에도 없다. 재진입 때 대기권에서 불타 소멸하며, 지구로 가져오는 화물은 없다."
- },
- {
-  "rel": "fleet/cargo-spacecraft/cygnus-enhanced.json",
-  "at": "best_known_for",
-  "old": "Stretched Cygnus; UltraFlex 둥근 배열",
-  "new": "동체를 늘린 Cygnus; 둥근 UltraFlex 전지판"
- },
- {
-  "rel": "fleet/cargo-spacecraft/cygnus-standard.json",
-  "at": "description",
-  "old": "Cygnus Standard는 미국 Orbital ATK에 의해 지어진 로봇화물 우주선입니다. Pressurised-only ISS 화물 캐리어. 2013 년 첫 비행 후 은퇴.",
-  "new": "Cygnus Standard는 미국 Orbital ATK가 제작한 무인 화물 우주선입니다. 가압 화물만 운반하는 ISS 화물선이며, 2013년 첫 비행 후 퇴역했습니다."
- },
- {
-  "rel": "fleet/cargo-spacecraft/htv.json",
-  "at": "tagline",
-  "old": "일본의 H-II Transfer Vehicle ISS로",
-  "new": "ISS로 향하는 일본의 H-II Transfer Vehicle"
- },
- {
-  "rel": "fleet/cargo-spacecraft/htv.json",
-  "at": "description",
-  "old": "HTV (Kounotori)는 일본 Mitsubishi Heavy Industries가 제작한 로봇식 화물 우주선입니다. 일본의 H-II Transfer Vehicle은 2009년부터 2020년까지 ISS로 9차례 임무를 수행했으며, HTV-9(마지막 비행)는 2020년 5월에 귀환했습니다.",
-  "new": "HTV (Kounotori)는 일본 Mitsubishi Heavy Industries가 제작한 로봇식 화물 우주선입니다. 일본의 H-II Transfer Vehicle은 2009년부터 2020년까지 ISS로 9차례 임무를 수행했으며, HTV-9(마지막 비행)는 2020년 5월에 ISS를 떠났습니다."
- },
- {
-  "rel": "fleet/cargo-spacecraft/htv.json",
-  "at": "best_known_for",
-  "old": "일본의 H-II Transfer Vehicle ISS",
-  "new": "ISS로 향하는 일본의 H-II Transfer Vehicle"
- },
- {
-  "rel": "fleet/cargo-spacecraft/progress-m.json",
-  "at": "description",
-  "old": "Progress M은 러시아의 RKK Energia에서 제조한 로봇 화물 우주선입니다. 현대화된 Progress-M은 1989년부터 2021년까지 97개의 미션에 걸쳐 Mir과 ISS에 서비스를 제공했으며, 이후 Progress-MS에 의해 대체되었습니다.",
-  "new": "Progress M은 러시아의 RKK Energia에서 제조한 로봇 화물 우주선입니다. 현대화된 Progress-M은 1989년부터 2021년까지 97회의 임무로 Mir과 ISS에 물자를 보급했으며, 이후 Progress-MS로 대체되었습니다."
- },
- {
-  "rel": "fleet/cargo-spacecraft/progress-ms.json",
-  "at": "tagline",
-  "old": "현재 Progress 세대; ISS resupply",
-  "new": "현행 Progress 세대; ISS 보급"
- },
- {
-  "rel": "fleet/cargo-spacecraft/progress-ms.json",
-  "at": "description",
-  "old": "Progress MS는 러시아 RKK Energia에 의해 지어진 로봇화물 우주선입니다. 현재 진행 세대; ISS resupply. 2015년부터 서비스.",
-  "new": "Progress MS는 러시아 RKK Energia가 제작한 로봇 화물 우주선입니다. 현행 Progress 세대로 ISS 보급을 맡고 있으며, 2015년부터 운용 중입니다."
- },
- {
-  "rel": "fleet/cargo-spacecraft/progress-ms.json",
-  "at": "best_known_for",
-  "old": "현재 Progress 세대; ISS resupply",
-  "new": "현행 Progress 세대; ISS 보급"
- },
- {
-  "rel": "fleet/cargo-spacecraft/tianzhou.json",
-  "at": "description",
-  "old": "Tiangong 우주정거장용 중국 화물 우주선으로, Tiangong-1과 우주선 버스 설계 유산을 공유합니다. Tiangong의 추진제 탱크에 연료를 공급하고 실험 랙을 운반하며, 2017년 첫 비행을 했습니다.",
-  "new": "Tiangong 우주정거장용 중국 화물 우주선으로, Tiangong-1과 우주선 버스 구조를 공유합니다. Tiangong의 추진제 탱크에 연료를 공급하고 실험 랙을 운반하며, 2017년 첫 비행을 했습니다."
- },
- {
-  "rel": "fleet/constellation/galileo-gnss.json",
-  "at": "description",
-  "old": "유럽의 민간용 GNSS — 34개 위성이 발사되었음(4개 IOV + 30개 FOC); 2026년 5월 현재 27개 운용 중 + 1개 조정 중; 56° 기울기의 3개 궤도면에서 23,222 km MEO에 30개 위성 배치를 목표. 첫 운용 서비스 2016년; 완전 운용 능력 선언은 ESA/EUSPA 공식 발표 대기 중. GPS(군사 운영) 및 GLONASS(군사 운영)와 달리 Galileo는 EU 민간기관인 EUSPA가 관리. 개방형 + 상용 + 공공 규제 서비스 계층을 통해 1미터 이하 정위치 결정으로 설계. 긴급신호 탐지를 위한 수색 및 구조 탑재체 통합.",
-  "new": "유럽의 민간용 GNSS — 34개 위성이 발사되었음(4개 IOV + 30개 FOC); 2026년 5월 현재 27개 운용 중 + 1개 시운전 중; 56° 기울기의 3개 궤도면에서 23,222 km MEO에 30개 위성 배치를 목표. 첫 운용 서비스 2016년; 완전 운용 능력 선언은 ESA/EUSPA 공식 발표 대기 중. GPS(군사 운영) 및 GLONASS(군사 운영)와 달리 Galileo는 EU 민간기관인 EUSPA가 관리. 개방형 + 상용 + 공공 규제 서비스 계층을 통해 1미터 이하 정위치 결정으로 설계. 긴급신호 탐지를 위한 수색 및 구조 탑재체 통합."
- },
- {
-  "rel": "fleet/constellation/glonass.json",
-  "at": "description",
-  "old": "러시아의 GNSS — 19,130 km 고궤도(MEO)에서 64.8° 경사각으로 3개 평면에 배치된 24개의 활성 위성(높은 경사각은 GPS 대비 고위도 지역의 커버리지를 개선하기 위해 의도적으로 설계됨). 1982년 처음 발사되었고, 1995년에 전체 별자리 구성을 달성했으나 소련 자금이 중단되면서 1990년대 후반과 2000년대 초반에 붕괴됨. 자금이 다시 확보되면서 약 2010~2011년경에 24개 위성의 완전한 운영 상태로 복구됨. 2026년에도 계속 운영 중. Roscosmos가 러시아 국방부와 협력하여 운영하고 있음.",
-  "new": "러시아의 GNSS — 19,130 km 중궤도(MEO)에서 64.8° 경사각으로 3개 평면에 배치된 24개의 활성 위성(높은 경사각은 GPS 대비 고위도 지역의 커버리지를 개선하기 위해 의도적으로 설계됨). 1982년 처음 발사되었고, 1995년에 전체 위성군 구성을 달성했으나 소련 자금이 중단되면서 1990년대 후반과 2000년대 초반에 붕괴됨. 자금이 다시 확보되면서 약 2010~2011년경에 24개 위성의 완전한 운영 상태로 복구됨. 2026년에도 계속 운영 중. Roscosmos가 러시아 국방부와 협력하여 운영하고 있음."
- },
- {
-  "rel": "fleet/constellation/goes-noaa.json",
-  "at": "tagline",
-  "old": "NOAA 정지궤도 기상 쌍둥이 — 아메리카 대륙 연속 커버리지",
-  "new": "NOAA 정지궤도 기상위성 2기 — 아메리카 대륙 연속 관측"
- },
- {
-  "rel": "fleet/constellation/goes-noaa.json",
-  "at": "description",
-  "old": "Geostationary Operational Environmental Satellite — NOAA의 정지궤도 기상 쌍둥이. GOES-19 (GOES-East at 75.2° W)와 GOES-18 (GOES-West at 137.0° W)은 2025년 4월 기준 운영 중인 쌍둥이로서, 아메리카 대륙의 연속 커버리지를 제공한다. GOES-16은 백업으로 보관 중이며, GOES-17은 2023년 1월에 운영 중단되었다. GOES-R 시리즈는 허리케인 중심부와 심각한 폭풍 추적을 위한 30초 중규모 스캔이 가능한 Advanced Baseline Imager를 탑재하고 있다. Lockheed Martin에서 제조했으며, 데이터 제품은 무료로 제공된다.",
-  "new": "Geostationary Operational Environmental Satellite — NOAA의 정지궤도 기상위성 한 쌍. GOES-19(GOES-East, 75.2° W)와 GOES-18(GOES-West, 137.0° W)이 2025년 4월 기준 운용 중인 한 쌍으로, 아메리카 대륙 전역을 끊김 없이 관측한다. GOES-16은 예비로 보관 중이며, GOES-17은 2023년 1월에 운용을 종료했다. GOES-R 시리즈는 허리케인 중심부와 심한 폭풍의 추적을 위해 30초 간격 중규모 스캔이 가능한 Advanced Baseline Imager를 탑재한다. Lockheed Martin이 제작했으며, 데이터 제품은 무료로 제공된다."
- },
- {
-  "rel": "fleet/constellation/gps-gnss.json",
-  "at": "tagline",
-  "old": "원래의 GNSS — 31개 위성, 2000년부터 무료 공중 서비스",
-  "new": "원래의 GNSS — 31개 위성, 2000년부터 무료 공공 서비스"
- },
- {
-  "rel": "fleet/constellation/gps-gnss.json",
-  "at": "best_known_for",
-  "old": "원래의 GNSS — 31개 위성, 2000년부터 무료 공중 서비스",
-  "new": "원래의 GNSS — 31개 위성, 2000년부터 무료 공공 서비스"
- },
- {
-  "rel": "fleet/constellation/inmarsat.json",
-  "at": "description",
-  "old": "정지궤도 이동위성통신 — GEO에 14개 이상의 위성을 운용하며 해양, 항공 및 원격 지역 음성·데이터 서비스를 제공한다. 1979년 선박 대 육상 통신(GMDSS의 전신)을 위한 정부간 조약 기구인 국제해사위성기구(International Maritime Satellite Organization)로 설립되었다. 1999년 민영화. 2023년 Viasat에 인수되어 Viasat의 Ka-band 함대와 통합되었다.",
-  "new": "정지궤도 이동위성통신 — GEO에 14개 이상의 위성을 운용하며 해양, 항공 및 원격 지역 음성·데이터 서비스를 제공한다. 1979년 선박 대 육상 통신(GMDSS의 전신)을 위한 정부간 조약 기구인 국제해사위성기구(International Maritime Satellite Organization)로 설립되었다. 1999년 민영화. 2023년 Viasat에 인수되어 Viasat의 Ka 대역 위성군과 통합되었다."
- },
- {
-  "rel": "fleet/constellation/iridium-next.json",
-  "at": "tagline",
-  "old": "극궤도 저궤도 통신 — 운영 위성 66기 + 예비 9기, GMDSS 파트너, 글로벌 음성/데이터",
-  "new": "극궤도 LEO 통신 — 운영 위성 66기 + 예비 9기, GMDSS 파트너, 전 지구 음성/데이터"
- },
- {
-  "rel": "fleet/constellation/iridium-next.json",
-  "at": "description",
-  "old": "2세대 Iridium 성좌(constellation) — 780 km 고도의 6개 극지 궤도 평면(평면당 11개)에 배치된 66개의 운영 위성과 9개의 궤도상 예비 위성으로 구성되며, 1998년 원본 Iridium 함대를 교체하기 위해 2017-2019년에 배포됨. 총 75개의 위성이 발사되었으며, 5개의 추가 지상 예비 위성은 2023년 5월에 발사됨. 음성 + 데이터 + 기계-기계 + 위성전화 서비스를 제공함. 두 개의 GMDSS(국제해상인명안전조약) 위성 공급자 중 하나(Inmarsat과 함께) — 원양 선박은 Iridium 또는 Inmarsat을 통해 GMDSS 요구 사항을 충족할 수 있음. 2009년 원본 Iridium 33호와 폐기된 Cosmos 2251호의 충돌은 역사상 최초의 위성 간 충돌임.",
-  "new": "2세대 Iridium 위성군 — 고도 780 km의 6개 극궤도면(궤도면당 11기)에 배치된 운용 위성 66기와 궤도상 예비 위성 9기로 구성되며, 1998년의 초대 Iridium 위성군을 대체하기 위해 2017-2019년에 배치되었다. 총 75기가 발사되었고, 지상 예비 위성 5기가 2023년 5월에 추가로 발사되었다. 음성, 데이터, 사물 간(M2M) 통신과 위성전화 서비스를 제공한다. GMDSS(세계해상조난안전제도) 위성 공급자 두 곳 중 하나로(다른 하나는 Inmarsat), 원양 선박은 Iridium 또는 Inmarsat을 통해 GMDSS 요건을 충족할 수 있다. 2009년 초대 Iridium 33과 수명이 다한 Cosmos 2251의 충돌은 역사상 최초로 알려진 위성 간 충돌이었다."
- },
- {
-  "rel": "fleet/constellation/iridium-next.json",
-  "at": "best_known_for",
-  "old": "극궤도 LEO 통신 — 66개 운영 중인 위성 +9개 예비기, GMDSS 파트너, 전역 음성/데이터",
-  "new": "극궤도 LEO 통신 — 운영 위성 66기 + 예비 9기, GMDSS 파트너, 전 지구 음성/데이터"
- },
- {
-  "rel": "fleet/constellation/kuiper.json",
-  "at": "description",
-  "old": "Starlink에 대한 Amazon의 답변 — 590-630 km 고도에서 98개 궤도면에 배치된 3,236개 위성. 2023년 10월 첫 시제품 발사(KuiperSat-1 및 -2 시험 발사); 2025년 4월 Atlas V에 탑재된 첫 27개 운영 위성 발사. 2026년 중반 현재 ~230개 이상의 운영 위성이 가동 중. FCC 허가는 2026년 7월까지 50% 배치(1,618개 위성), 2029년 7월까지 100% 배치 필요; Amazon은 현재 부족분으로 인해 2년 연장을 요청했음. 이 성좌가 완전히 배치될 경우 LEO 활성 위성 인구를 대략 두 배로 늘릴 것으로 예상됨.",
-  "new": "Starlink에 맞선 Amazon의 대응 — 고도 590-630 km, 98개 궤도면에 배치된 3,236개 위성. 2023년 10월 첫 시제품 발사(KuiperSat-1 및 -2 시험 발사); 2025년 4월 Atlas V에 실려 양산형 위성 27기가 처음 발사됨. 2026년 중반 현재 ~230개 이상의 양산형 위성이 운용 중. FCC 허가는 2026년 7월까지 50% 배치(1,618개 위성), 2029년 7월까지 100% 배치를 요구하며, Amazon은 현재의 부족분 때문에 2년 연장을 요청함. 이 위성군이 완전히 배치되면 LEO 활성 위성 수가 대략 두 배로 늘어날 것으로 예상됨."
- },
- {
-  "rel": "fleet/constellation/molniya.json",
-  "at": "description",
-  "old": "러시아 고이심률 궤도 군집. 63.4° 임계 궤도 경사각의 12시간 Molniya 궤도(~600 × 40,000 km)는 지구의 J2 섭동을 이용하여 원점선을 고정 — 원지점이 북반구 상공에 머물러 있어, 정지궤도 위성으로는 결코 제공할 수 없는 높은 앙각을 고위도 사용자에게 제공한다. Molniya-1은 1965년에 발사되었으며, Molniya-1/2/3, Oko 조기경보 위성, 그리고 현재 운용 중인 Meridian 통신 후속 위성으로 이어진다.",
-  "new": "러시아의 고이심률 궤도 위성군. 63.4° 임계 경사각의 12시간 Molniya 궤도(~600 × 40,000 km)는 지구의 J2 섭동을 이용해 장축선을 고정한다 — 원지점이 북반구 상공에 머물러 있어, 정지궤도 위성으로는 결코 제공할 수 없는 높은 앙각을 고위도 사용자에게 제공한다. Molniya-1은 1965년에 발사되었으며, Molniya-1/2/3, Oko 조기경보 위성, 그리고 현재 운용 중인 Meridian 통신 후속 위성으로 이어진다."
- },
- {
-  "rel": "fleet/constellation/o3b-mpower.json",
-  "at": "tagline",
-  "old": "유일한 운용 중인 MEO 상업용 광대역 — 20기 이상의 위성",
-  "new": "유일하게 운용 중인 상업용 MEO 광대역 — 위성 20기 이상"
- },
- {
-  "rel": "fleet/constellation/o3b-mpower.json",
-  "at": "description",
-  "old": "유일하게 운용 중인 상업용 MEO 광대역 위성군 — 초대 O3b는 2013-2019년에 배치되었고, 2세대 O3b mPOWER는 2022년부터 배치 중. 적도 궤도 8,063 km에 20기 이상의 위성 운용. 지연시간은 GEO와 LEO 사이이며, 고객층은 통신 백홀, 해상, 원격지 기업에 집중. SES(룩셈부르크)가 운영. '나머지 30억(other 3 billion)'의 이름을 따서 명명 — 원래 미션은 지상 광대역으로 서비스받지 못하는 지역에 연결성을 제공하는 것.",
-  "new": "유일하게 운용 중인 상업용 MEO 광대역 위성군 — 초대 O3b는 2013-2019년에 배치되었고, 2세대 O3b mPOWER는 2022년부터 배치 중. 적도 궤도 8,063 km에 20기 이상의 위성 운용. 지연시간은 GEO와 LEO 사이이며, 고객층은 통신 백홀, 해상, 원격지 기업에 집중. SES(룩셈부르크)가 운영. '나머지 30억'에서 이름을 따옴 — 원래 임무는 지상 광대역이 닿지 않는 지역에 연결을 제공하는 것."
- },
- {
-  "rel": "fleet/constellation/o3b-mpower.json",
-  "at": "best_known_for",
-  "old": "유일한 운용 중인 MEO 상업용 광대역 — 20기 이상의 위성",
-  "new": "유일하게 운용 중인 상업용 MEO 광대역 — 위성 20기 이상"
- },
- {
-  "rel": "fleet/constellation/oneweb.json",
-  "at": "description",
-  "old": "1세대 LEO 광대역 위성군, 12개 극궤도면에 1,200 km 고도로 648개 위성 배치. 극궤도는 중간 경사각 Starlink 셸이 도달할 수 없는 극지방 간 완전한 커버리지를 제공. 2023년 Eutelsat에 인수되어 Eutelsat OneWeb 형성; 상용 서비스는 현재 Eutelsat GEO 자산과 번들 제공. Starlink보다 높은 고도로 인해 지연 시간이 약간 더 길지만 필요한 위성 수는 적음.",
-  "new": "1세대 LEO 광대역 위성군, 12개 극궤도면에 1,200 km 고도로 648개 위성 배치. 극궤도는 중간 경사각의 Starlink 셸이 닿지 못하는 극에서 극까지의 전 지역을 덮는다. 2023년 Eutelsat에 인수되어 Eutelsat OneWeb이 되었으며, 상용 서비스는 현재 Eutelsat의 GEO 자산과 묶여 제공된다. Starlink보다 고도가 높아 지연 시간이 약간 더 길지만 필요한 위성 수는 적다."
- },
- {
-  "rel": "fleet/constellation/planet-labs.json",
-  "at": "tagline",
-  "old": "일일 지구 촬영 — ~150개의 CubeSats + 21개의 SkySats",
-  "new": "매일 지구 촬영 — CubeSat 약 150기 + SkySat 21기"
- },
- {
-  "rel": "fleet/constellation/planet-labs.json",
-  "at": "description",
-  "old": "두 개의 위성단으로부터의 일일 지구 관측 — 약 150개의 PlanetScope 3U CubeSats (3-5m 해상도의 전 지구 일일 영상) 및 약 21개의 SkySats (50cm 지정 고해상도). 모두 약 475km 태양동기궤도에 운영 중. 'Doves' 철학은 '저렴한 소형 위성 수백 개를 발사하고 일부 실패를 감수하며 매일 지구의 모든 지역을 촬영한다'는 것이었고 — 이것이 작동합니다. Planet의 영상 아카이브는 비정부기구, 정부, 기자들이 참고합니다.",
-  "new": "두 위성군에 의한 매일 재방문 지구 관측 — PlanetScope 3U CubeSat 약 150기(3-5m 해상도의 전 지구 일일 영상)와 SkySat 약 21기(50cm 주문 촬영 고해상도). 모두 약 475km 태양동기궤도에 있습니다. 'Doves' 철학은 '값싼 소형 위성 수백 기를 쏘아 올리고, 몇 번의 실패는 감수하며, 모든 땅을 매일 촬영한다'는 것이었고 — 실제로 효과가 있습니다. Planet의 영상 아카이브는 NGO, 정부, 언론인이 활용합니다."
- },
- {
-  "rel": "fleet/constellation/planet-labs.json",
-  "at": "best_known_for",
-  "old": "일일 지구 촬영 — ~150개의 CubeSats + 21개의 SkySats",
-  "new": "매일 지구 촬영 — CubeSat 약 150기 + SkySat 21기"
- },
- {
-  "rel": "fleet/constellation/sbirs-heo.json",
-  "at": "tagline",
-  "old": "분류된 Tundra 궤도 플랫폼에 탑재된 미국 조기경보 적외선 센서",
-  "new": "기밀 툰드라 궤도 플랫폼에 탑재된 미국 조기경보 적외선 센서"
- },
- {
-  "rel": "fleet/constellation/sbirs-heo.json",
-  "at": "description",
-  "old": "미국 Space-Based Infrared System(SBIRS)의 HEO 부문 — 63.4° 임계 경사각의 24시간 Tundra 궤도에서 분류된 호스트 위성에 탑재된 적외선 미사일 경보 센서. 원지점에서 고위도 상공에 머물러 정지궤도 DSP / SBIRS-GEO 센서가 너무 낮은 각도로 관측하는 극지방을 SBIRS-HEO가 커버한다. SBIRS HEO-1은 2006년 USA-184에 탑재 페이로드로 발사되었다.",
-  "new": "미국 Space-Based Infrared System(SBIRS)의 HEO 부문 — 63.4° 임계 경사각의 24시간 툰드라 궤도에서 기밀 호스트 위성에 탑재된 적외선 미사일 경보 센서. 원지점에서 고위도 상공에 머물러 정지궤도 DSP / SBIRS-GEO 센서가 너무 낮은 각도로 관측하는 극지방을 SBIRS-HEO가 커버한다. SBIRS HEO-1은 2006년 USA-184에 호스트 탑재체로 발사되었다."
- },
- {
-  "rel": "fleet/constellation/sbirs-heo.json",
-  "at": "best_known_for",
-  "old": "HEO 구간 적외선 조기경보 — GEO 센서가 감지할 수 없는 극지 위도 지역 커버",
-  "new": "HEO 구간 적외선 조기경보 — GEO 센서가 보지 못하는 극지방 위도까지 감시"
- },
- {
-  "rel": "fleet/constellation/starlink.json",
-  "at": "tagline",
-  "old": "가장 큰 LEO 광대역 성군 — 1만 800개 이상의 활성 위성",
-  "new": "가장 큰 LEO 광대역 위성군 — 활성 위성 10,800개 이상"
- },
- {
-  "rel": "fleet/constellation/starlink.json",
-  "at": "description",
-  "old": "SpaceX의 광대역 저궤도 위성군 — 고도 550 km에 배치된 10,800개 이상의 활성 위성이 다중 궤도층(53°, 70°, 97.6° 경사각)에 걸쳐 배포됨. 2019년 첫 운영 서비스 개시; 2023년 전 지구적 커버리지 달성. 각 Gen-2 위성은 레이저 위성간 통신 링크를 탑재하고 있어, 위성군이 지상국 경유 없이 위성 간 패킷을 라우팅할 수 있음. 자동 충돌회피 시스템은 연간 수만 번의 기동을 수행하며, 이는 다른 모든 저궤도 사업자의 합계를 초과함.",
-  "new": "SpaceX의 광대역 저궤도 위성군 — 고도 550 km에 있는 10,800개 이상의 활성 위성이 여러 궤도 셸(경사각 53°, 70°, 97.6°)에 나뉘어 배치되어 있음. 2019년 첫 운영 서비스 개시; 2023년 전 지구적 커버리지 달성. 각 Gen-2 위성은 레이저 위성간 통신 링크를 탑재하고 있어, 위성군이 지상국 경유 없이 위성 간 패킷을 라우팅할 수 있음. 자동 충돌회피 시스템은 연간 수만 번의 기동을 수행하며, 이는 다른 모든 저궤도 사업자의 합계를 초과함."
- },
- {
-  "rel": "fleet/constellation/starlink.json",
-  "at": "best_known_for",
-  "old": "가장 큰 LEO 광대역 성좌 — ~6,500~7,000개 활성 위성",
-  "new": "가장 큰 LEO 광대역 위성군 — 활성 위성 ~6,500~7,000개"
- },
- {
-  "rel": "fleet/constellation/tundra-sirius.json",
-  "at": "tagline",
-  "old": "역사적인 상업용 Tundra 궤도 성좌 — 2016년 운영 중단",
-  "new": "과거의 상업용 툰드라 궤도 위성군 — 2016년 운용 중단"
- },
- {
-  "rel": "fleet/constellation/tundra-sirius.json",
-  "at": "description",
-  "old": "24시간 Tundra 궤도(~25,000 × 35,786 km)의 63.4° 임계 경사각에서 운영된 역사적인 위성 라디오 성좌. 원래의 세 개 Sirius FM 위성(FM-1, FM-2, FM-3)은 각각 매 궤도마다 약 2/3 시간 동안 CONUS 상공에 위치하여 도시 협곡 수신기에 정지 궤도 신호에서는 얻을 수 없는 고도각을 제공했습니다. Sirius FM-1은 2000년 바이코누르에서 Proton-K로 발사되었으며, FM-2와 FM-3이 뒤를 이었습니다. 회사는 2008년 XM Radio와 합병하여 Sirius XM을 설립했습니다. Tundra 궤도 성좌는 2016년 운영이 중단되었으며, Sirius XM은 현재 약 7개의 정지 궤도 위성으로 구성된 함대를 운영하고 있습니다.",
-  "new": "24시간 툰드라 궤도(~25,000 × 35,786 km)의 63.4° 임계 경사각에서 운용된 과거의 위성 라디오 위성군. 원래의 Sirius FM 위성 3기(FM-1, FM-2, FM-3)는 각각 매 궤도의 약 3분의 2 동안 미국 본토(CONUS) 상공에 머물며, 도심 빌딩 숲의 수신기에 정지궤도 신호로는 얻을 수 없는 앙각을 제공했습니다. Sirius FM-1은 2000년 바이코누르에서 Proton-K로 발사되었고, FM-2와 FM-3이 뒤를 이었습니다. 회사는 2008년 XM Radio와 합병해 Sirius XM이 되었습니다. 툰드라 궤도 위성군은 2016년 운용이 중단되었으며, Sirius XM은 현재 정지궤도 위성 약 7기를 운용하고 있습니다."
- },
- {
-  "rel": "fleet/constellation/tundra-sirius.json",
-  "at": "best_known_for",
-  "old": "역사적인 24시간 Tundra 궤도 성좌(2000-2016)",
-  "new": "역사적인 24시간 툰드라 궤도 위성군(2000-2016)"
- },
- {
-  "rel": "fleet/crewed-spacecraft/apollo-csm-block-i.json",
-  "at": "tagline",
-  "old": "원본 Apollo CSM 설계 — 유인비행을 하지 않음; 1967-01-27 발사대에서 Apollo 1 승무원 사망. 재설계된 Block II가 1968-1975년에 비행함",
-  "new": "초기 Apollo CSM 설계 — 유인 비행 없이 끝남; 1967-01-27 발사대에서 Apollo 1 승무원 사망. 재설계되어 1968-1975년 비행한 Block II가 됨"
- },
- {
-  "rel": "fleet/crewed-spacecraft/apollo-csm-block-i.json",
-  "at": "dispatch",
-  "old": "Block I은 유인 승무원을 태우고 비행하지 않은 Apollo 하드웨어이자, 프로그램의 나머지 부분이 생존할 수 있었던 부분적 이유다. 이는 사령관 모듈의 첫 번째 설계 — 오직 무인 및 초기 지구 궤도 테스트만을 목적으로 했음 — 이었고, 1966년에는 합리적으로 보였던 일련의 가정을 담고 있었다: 해수면 기압 이상으로 유지되는 순산소 캐빈, 안쪽으로 열리는 해치, 그리고 화재 위험성에 대한 깊은 사려 없이 선택된 내부 재료들. 1967년 1월 27일 발사대의 작은 스파크가 수 초 만에 그런 가정들을 치명적으로 만들었고, Apollo 1 승무원들이 모두가 일상적인 테스트로 취급했던 시험에서 사망했다. Block I은 그 교훈으로 폐기되었다; 달에 도달한 Block II는 대부분 Block I이 잘못한 것들의 목록이었다.",
-  "new": "Block I은 승무원을 태우고 비행한 적이 없는 Apollo 하드웨어이며, 프로그램의 나머지가 살아남을 수 있었던 이유의 일부이기도 하다. 사령선의 첫 설계안으로, 무인 시험과 초기 지구 궤도 시험만을 위한 것이었고, 1966년에는 합리적으로 보였던 가정들을 담고 있었다. 해수면 기압보다 높게 유지되는 순수 산소 캐빈, 안쪽으로 열리는 해치, 화재에 대한 고려 없이 고른 내장재. 1967년 1월 27일 발사대의 불꽃 하나가 이 가정들을 몇 초 만에 치명적인 것으로 만들었고, 모두가 일상적이라고 여긴 시험에서 Apollo 1 승무원이 숨졌다. Block I은 그 교훈 속에 퇴역했으며, 달에 도달한 Block II는 상당 부분 Block I이 잘못한 모든 것의 목록이었다."
- },
- {
-  "rel": "fleet/crewed-spacecraft/apollo-csm-block-i.json",
-  "at": "description",
-  "old": "Block I은 Apollo 사령관 및 서비스 모듈의 첫 번째 설계 반복이었다 — 달 도달이 가능한 Block II 이전의 순수 지구 궤도 성능 검증 기체로 의도됨. 발사 전 16.7 psi(비행 중 5 psi)의 순산소 가압 캐빈; 대기압 차이로 밀폐되는 안쪽으로 열리는 해치. CSM-009와 CSM-011은 무인 아열궤도 테스트 AS-201(1966-02-26)과 AS-202(1966-08-25)를 비행함. CSM-017과 CSM-020은 각각 Apollo 4호(1967-11-09)와 Apollo 6호(1968-04-04)에서 무인 비행을 함 — 첫 번째와 두 번째 Saturn V 비행의 Block I 사령관 모듈. CSM-012 — Apollo 1 우주선 — 은 1967-01-27 Plugs-Out 테스트를 위해 밀폐되었을 때 하부 장비실에서 섬광 화재가 발생하여 승무원을 수 초 만에 사망하게 했다; 해치가 안쪽으로 열려 29 psi의 스파이크에 대항하므로 캐빈을 배기할 수 없었다. Apollo 204 Accident Review Board는 Block II 재설계로 이어졌다: 바깥쪽으로 열리는 통합 해치, 불연소성 캐빈 재료, 발사 전 질소 풍부한 대기, 재설계된 배선 번들. Block I CSM 중 어느 것도 유인비행을 하지 않았고; Block II는 Apollo 7호(1968)부터 ASTP(1975)까지 비행함.",
-  "new": "Block I은 Apollo 사령선·서비스 모듈의 첫 설계안으로, 달 착륙이 가능한 Block II에 앞선 순수 지구 궤도 시험 기체로 의도되었다. 발사 전 16.7 psi(비행 중 5 psi)의 순수 산소 가압 캐빈; 기압 차로 밀폐되는 안쪽 개방식 해치. CSM-009와 CSM-011은 무인 준궤도 시험 AS-201(1966-02-26)과 AS-202(1966-08-25)를 비행했다. CSM-017과 CSM-020은 각각 Apollo 4(1967-11-09)와 Apollo 6(1968-04-04)에서 무인으로 비행했다 — 첫 두 번의 Saturn V 비행에 실린 Block I 사령선. Apollo 1의 우주선인 CSM-012는 1967-01-27 Plugs-Out 시험을 위해 밀폐된 상태에서 하부 장비실에 순간 화재가 일어나 승무원이 몇 초 만에 숨졌다; 해치가 안쪽으로 열리는 구조라 29 psi까지 치솟은 압력을 이기지 못해 캐빈의 압력을 빼낼 수 없었다. Apollo 204 사고조사위원회(Accident Review Board)의 결과 Block II 재설계가 이루어졌다: 바깥쪽으로 열리는 일체형 해치, 불연성 캐빈 재료, 발사 전 질소 비중이 높은 대기, 재설계된 배선 다발. Block I CSM 가운데 유인으로 비행한 기체는 없으며, Block II는 Apollo 7(1968)부터 ASTP(1975)까지 비행했다."
- },
- {
-  "rel": "fleet/crewed-spacecraft/apollo-csm-block-i.json",
-  "at": "best_known_for",
-  "old": "원본 Apollo CSM 설계 — 유인비행을 하지 않음; 1967-01-27 발사대에서 Apollo 1 승무원 사망. 재설계된 Block II가 1968-1975년에 비행함",
-  "new": "초기 Apollo CSM 설계 — 유인 비행 없이 끝남; 1967-01-27 발사대에서 Apollo 1 승무원 사망. 재설계되어 1968-1975년 비행한 Block II가 됨"
- },
- {
-  "rel": "fleet/crewed-spacecraft/apollo-csm-block-ii.json",
-  "at": "tagline",
-  "old": "달 도달 가능한 Command + Service Module",
-  "new": "달 임무가 가능한 사령선 + 서비스 모듈"
- },
- {
-  "rel": "fleet/crewed-spacecraft/apollo-csm-block-ii.json",
-  "at": "dispatch",
-  "old": "사령선은 아폴로 미션 중 지구로 돌아온 유일한 부분이었다 — 다른 모든 것은 소진되어 경로를 따라 버려졌다. 그것이 재진입 시에 실패할 수 없는 부분이었으며, 달에서의 재진입은 이 문제의 가장 어려운 형태였다: 캡슐은 거의 초속 11킬로미터로 대기에 진입했으니, 지구 궤도에서 돌아오는 것의 약 1.5배 빠르고, 강철도 끓일 수 있을 정도로 뜨거운 화염구에 싸여 있었다. 그 해결책은 통제된 방식으로 탄화되고 벗겨지도록 설계된 절제식 열차폐였으며, 그것이 열을 함께 운반했다. Block II는 승무원을 태운 버전이었다 — Apollo 1호 화재로 인해 강제된 완전한 재설계 — 그리고 그것은 달을 향해 출발한 모든 우주비행사를 살아서 돌아오게 했다.",
-  "new": "사령선은 Apollo에서 지구로 돌아온 유일한 부분이었다 — 나머지는 모두 임무를 다하면 도중에 버려졌다. 그래서 재진입에서 절대 실패해서는 안 되는 부품이었고, 달에서 돌아오는 재진입은 그 문제의 가장 어려운 형태였다. 캡슐은 거의 초속 11킬로미터로 대기에 부딪혔는데, 지구 궤도에서 돌아오는 어떤 것보다 1.5배 빠른 속도였고, 강철도 끓일 만큼 뜨거운 불덩이에 휩싸였다. 그 해답은 통제된 방식으로 탄화되며 벗겨져 나가도록 설계된 삭마식 열차폐였고, 벗겨지는 재료가 열을 함께 실어 갔다. Block II는 승무원이 탑승한 버전으로 — Apollo 1 화재 때문에 처음부터 다시 설계된 것이었다 — 달로 떠난 모든 우주비행사를 살려서 데려왔다."
- },
- {
-  "rel": "fleet/crewed-spacecraft/apollo-csm-block-ii.json",
-  "at": "description",
-  "old": "1968년부터 1972년 사이에 아폴로 우주비행사들을 달 궤도로 옮긴 달 도달 가능한 사령선 및 서비스 모듈. 총 15차 유인 비행: Apollo 7–17(달 목표 미션 11개), Skylab 승무원 교대 3회(1973–1974), 1975년 Apollo-Soyuz Test Project — Apollo 13의 즉흥적인 구명보트 구성 포함.",
-  "new": "1968년부터 1972년 사이에 Apollo 우주비행사를 달 궤도로 실어 나른, 달 임무가 가능한 사령선 및 서비스 모듈. 유인 비행은 총 15회: Apollo 7–17(달을 목표로 한 임무 11회), Skylab 승무원 교대 3회(1973–1974), 1975년 Apollo-Soyuz Test Project — 즉석에서 구명정 구성으로 바꾼 Apollo 13 포함."
- },
- {
-  "rel": "fleet/crewed-spacecraft/apollo-csm-block-ii.json",
-  "at": "best_known_for",
-  "old": "달 도달 가능한 Command + Service Module",
-  "new": "달 임무가 가능한 사령선 + 서비스 모듈"
- },
- {
-  "rel": "fleet/crewed-spacecraft/apollo-lm.json",
-  "at": "dispatch",
-  "old": "Lunar Module은 최초의 진정한 우주선이었다 — 대기가 아닌 진공에서만 비행하도록 제작된 최초의 유인 비행체로, 유선형과 열 차폐를 버리고 정확히 그 자체가 될 수 있었다: 하나의 임무를 위한 기계. Grumman은 이를 두 부분으로 분리했다 — 승무원을 하강시킨 후 별도의 상승 단계를 위한 발사대 역할을 하는 하강 단계와, 승무원을 다시 위로 올려보내는 상승 단계로 — 이러한 단계 분리만이 달 착륙의 질량 예산을 맞출 수 있는 유일한 방법이었기 때문이다. 거미 다리 같은 착륙 장치로 비행했으며, 외피는 곳곳이 몇 겹의 호일만큼 얇았다. 그 이전에는 인류를 다른 세계에 착륙시킨 것이 없었고, 그 투박하고 목적에 맞게 제작된 형태는 귀환을 견뎌낼 필요가 없는 우주선이 어떤 모습인지를 단순히 보여준다.",
-  "new": "Lunar Module은 최초의 진정한 우주선이었다 — 대기권을 통과하지 않고 오로지 진공에서만 비행하도록 만든 최초의 유인 비행체였기에, 유선형 외형과 열차폐를 버리고 본래 모습 그대로, 단 하나의 일을 위한 기계가 될 수 있었다. Grumman은 이를 둘로 나눴다 — 승무원을 내려 보낸 뒤 별도의 상승단이 이륙하는 발사대 역할을 하는 하강단과, 승무원을 다시 올려 보내는 상승단이다. 달 착륙의 질량 예산을 맞추려면 이런 단 분리가 유일한 방법이었기 때문이다. 거미 다리 같은 착륙 다리로 내려앉았고, 외피는 곳에 따라 호일 몇 장 정도로 얇았다. 이전에는 어떤 것도 사람을 다른 세계에 내려놓은 적이 없었고, 이 투박하고 용도에 맞춰 만들어진 모양은 귀환을 견딜 필요가 없는 우주선이 어떻게 생기는지를 그대로 보여 준다."
- },
- {
-  "rel": "fleet/crewed-spacecraft/apollo-lm.json",
-  "at": "description",
-  "old": "이제는 유일한 승무원 lunar 착륙장. 1969년과 1972년 사이에 6개의 성공적인 착륙 — 독수리, Intrepid, Antares, Falcon, Orion, Challenger — plus Aquarius, 이는 Apollo 13의 구명 보트로 봉사했습니다. Descent stage stays 에 the 달; ascent 단계 rejoined the CSM 에 lunar 궤도.",
-  "new": "인류가 만든 유일한 유인 달 착륙선. 1969년부터 1972년 사이에 여섯 차례 착륙에 성공했다 — Eagle, Intrepid, Antares, Falcon, Orion, Challenger — 그리고 Apollo 13의 구명정 역할을 한 Aquarius. 하강단은 달에 남고, 상승단은 달 궤도에서 CSM과 다시 만났다."
- },
- {
-  "rel": "fleet/crewed-spacecraft/atlantis.json",
-  "at": "tagline",
-  "old": "OV-104 — 네 번째 셔틀. 마지막 셔틀 임무 STS-135(2011) 수행; 마지막 Hubble 정비 STS-125(2009); Galileo + Magellan 배치",
-  "new": "OV-104 — 네 번째 Shuttle 궤도선. 마지막 Shuttle 임무 STS-135(2011), 마지막 Hubble 정비 STS-125(2009) 수행; Galileo + Magellan 배치"
- },
- {
-  "rel": "fleet/crewed-spacecraft/atlantis.json",
-  "at": "dispatch",
-  "old": "Atlantis, OV-104는 Shuttle의 가장 위대한 협력관계의 양 끝을 비행했다. 러시아 우주정거장 Mir와 가장 많은 도킹을 수행하여 미-러 협력 시대를 열었고, STS-125를 비행하여 Hubble Space Telescope를 향후 10년간 사용할 수 있도록 남긴 최후의 대담한 정비 임무를 완수했다. 2011년 7월 Atlantis는 STS-135, 즉 135번째이자 마지막 Shuttle 임무를 비행했다 — 30년간의 재사용 가능한 미국 우주비행을 마감하고, 건설을 도왔던 Space Station을 궤도 위에 남긴 비행이었다.",
-  "new": "Atlantis, OV-104는 Shuttle의 가장 위대한 협력의 양 끝에서 비행했다. 러시아 우주정거장 Mir와 가장 많은 도킹을 수행하여 미-러 협력 시대를 열었고, STS-125를 비행하여 Hubble Space Telescope를 향후 10년간 쓸 수 있게 만든 마지막이자 대담한 정비 임무를 완수했다. 2011년 7월 Atlantis는 STS-135, 즉 135번째이자 마지막 Shuttle 임무를 비행했다 — 30년에 걸친 미국의 재사용 우주비행을 마감하고, 건설을 도운 우주정거장을 궤도 위에 남겨 둔 비행이었다."
- },
- {
-  "rel": "fleet/crewed-spacecraft/atlantis.json",
-  "at": "description",
-  "old": "네 번째 운용 궤도선; 첫 비행 STS-51-J(1985-10-03)는 기밀 DoD 임무. 하이라이트: Magellan(STS-30, 1989)과 Galileo(STS-34, 1989) 배치 — 금성과 목성을 장기 관측에 개방한 두 행성 탐사선; 1995-1997년 9회의 Shuttle-Mir 도킹 임무 중 7회 수행; 마지막 Hubble 정비 임무 STS-125(2009-05) — Columbia 사고 이후 유일한 비 ISS 랑데부 임무; STS-135(2011-07) — 셔틀 역사상 마지막 비행. 2013년부터 케네디 우주 센터 Visitor Complex에 전시.",
-  "new": "네 번째 운용 궤도선; 첫 비행 STS-51-J(1985-10-03)는 국방부(DoD) 기밀 임무. 주요 이력: Magellan(STS-30, 1989)과 Galileo(STS-34, 1989) 배치 — 금성과 목성을 장기 관측에 개방한 두 행성 탐사선; 1995-1997년 9회의 Shuttle-Mir 도킹 임무 중 7회 수행; 마지막 Hubble 정비 임무 STS-125(2009-05) — Columbia 사고 이후 승인된 유일한 비 ISS 랑데부 임무; STS-135(2011-07) — Shuttle 역사상 마지막 비행. 2013년부터 케네디 우주 센터 Visitor Complex에 전시."
- },
- {
-  "rel": "fleet/crewed-spacecraft/atlantis.json",
-  "at": "best_known_for",
-  "old": "마지막 셔틀 임무 STS-135(2011); Galileo + Magellan 배치; 마지막 Hubble 정비 STS-125",
-  "new": "마지막 Shuttle 임무 STS-135(2011) 수행; Galileo + Magellan 배치; 마지막 Hubble 정비 STS-125"
- },
- {
-  "rel": "fleet/crewed-spacecraft/buran-ok-gli.json",
-  "at": "tagline",
-  "old": "Buran의 대기권 아날로그 — NASA Enterprise의 대응 기체. 4기의 제트 엔진, 1985-88년 24회 대기권 시험 비행. 우주에는 가지 못함",
-  "new": "Buran의 대기권 시험기 — NASA Enterprise에 해당. 제트 엔진 4기, 1985-88년 대기권 시험 24회, 궤도에는 오르지 못함"
- },
- {
-  "rel": "fleet/crewed-spacecraft/buran-ok-gli.json",
-  "at": "description",
-  "old": "공식 명칭은 BTS-002이며 OK-GLI로 불림. Buran 우주 프로그램을 위한 실물 크기의 대기 시험 항공기 — 비행 운영체 Buran 1.01과 동일한 외부 형상이지만 4개의 AL-31 터보젯 엔진을 탑재하여 일반 활주로에서 자력으로 이륙할 수 있었음. 1985-11-10부터 1988-04-15까지 Zhukovsky Flight Research Institute 비행장에서 24회의 대기 비행을 실시하여 1988-11-15 우주 비행을 대비한 Buran의 자동 착륙 시스템 및 비행 제어 소프트웨어를 검증함. Buran 프로그램 취소 후 OK-GLI는 LII에서 수년간 보관되었다가 1999년 호주 박물관에 판매되었고, 이후 바레인을 거쳐 독일의 Technik Museum Speyer / Sinsheim로 가서 오늘날 전시되고 있음 — NASA의 Enterprise에 상응하는 Buran의 항공기.",
-  "new": "공식 명칭은 BTS-002이며 OK-GLI로 불림. Buran 우주 프로그램을 위한 실물 크기의 대기 시험 항공기 — 비행용 기체 Buran 1.01과 동일한 외부 형상이지만 4개의 AL-31 터보젯 엔진을 탑재하여 일반 활주로에서 자력으로 이륙할 수 있었음. 1985-11-10부터 1988-04-15까지 Zhukovsky Flight Research Institute 비행장에서 24회의 대기 비행을 실시하여 1988-11-15 우주 비행에 대비한 Buran의 자동 착륙 시스템 및 비행 제어 소프트웨어를 검증함. Buran 프로그램 취소 후 OK-GLI는 LII에서 수년간 보관되었다가 1999년 호주 박물관에 판매되었고, 이후 바레인을 거쳐 독일의 Technik Museum Speyer / Sinsheim으로 가서 오늘날 전시되고 있음 — NASA의 Enterprise에 상응하는 Buran의 항공기."
- },
- {
-  "rel": "fleet/crewed-spacecraft/buran-ok-gli.json",
-  "at": "best_known_for",
-  "old": "Buran의 대기권 아날로그; Zhukovsky에서 1985-88년 24회 제트 비행; 궤도 도달 안 함",
-  "new": "Buran의 대기권 시험기; Zhukovsky에서 1985-88년 제트 동력 비행 24회; 궤도에는 오르지 못함"
- },
- {
-  "rel": "fleet/crewed-spacecraft/buran.json",
-  "at": "tagline",
-  "old": "소련 셔틀; 하나의 무인 비행, 결코 승무원",
-  "new": "소련 Shuttle; 무인 1회 비행, 유인 없음"
- },
- {
-  "rel": "fleet/crewed-spacecraft/buran.json",
-  "at": "dispatch",
-  "old": "Buran은 소련의 Space Shuttle에 대한 답안이었다 — 외관상으로는 거의 동일했지만, 원본을 개선했다고 볼 수 있는 두 가지 결정이 있었다: 주 엔진을 탑재하지 않았고(모든 추력은 별도의 Energia 로켓에서 나왔다), 사람 없이도 비행할 수 있었다. 1988년 11월 15일, Buran은 두 번째 특징을 증명하며 무인 궤도 임무를 완수하고 측풍 속에서 활주로에 스스로 착륙했다 — 날개 달린 우주선이 해낸 적 없는 일이었다. 완벽한 비행이었고 유일한 비행이었다. 소련이 붕괴하고 자금과 임무가 사라지면서 Buran은 취소되었다 — 비행했던 궤도선은 나중에 2002년 격납고 지붕이 무너지면서 파괴되었다. 우주 비행 역사상 가장 인상적이면서도 가장 무의미한 성취 중 하나다.",
-  "new": "Buran은 Space Shuttle에 대한 소련의 대답이었다 — 겉모습은 거의 같았지만, 원조보다 낫다고 할 만한 결정이 둘 있었다. 주 엔진이 없었고(모든 추력은 별도의 Energia 로켓에서 나왔다), 사람이 타지 않고도 비행할 수 있었다. 1988년 11월 15일 Buran은 두 번째 특징을 증명했다. 완전한 무인 궤도 비행을 마치고 옆바람이 부는 활주로에 스스로 착륙했는데, 날개 달린 우주선으로는 처음 있는 일이었다. 흠잡을 데 없는 비행이었고, 유일한 비행이었다. 소련이 무너지면서 예산도 임무도 사라졌고 Buran은 취소되었다 — 실제로 비행한 궤도선은 2002년 격납고 지붕이 무너지면서 깔려 부서졌다. 우주 비행 역사에서 가장 인상적이면서도 가장 부질없는 성취 중 하나다."
- },
- {
-  "rel": "fleet/crewed-spacecraft/buran.json",
-  "at": "description",
-  "old": "소련 셔틀, 외면적으로 미국의 궤도와 유사하지만 주요 엔진 (Energia는 그것을 수행). 정확히 한 번, 1988, 완전히 자율적이고 무인 - 프로그램이 종료되기 전에 궤도에 도달하는 유일한 소련 셔틀.",
-  "new": "소련의 Shuttle로, 겉모습은 미국 궤도선과 비슷하지만 주 엔진이 없다(Energia가 쏘아 올렸다). 1988년 단 한 번, 완전 자율 무인으로 비행했다 — 계획이 끝나기 전에 궤도에 오른 유일한 소련 Shuttle."
- },
- {
-  "rel": "fleet/crewed-spacecraft/buran.json",
-  "at": "best_known_for",
-  "old": "소련 셔틀; 하나의 무인 비행, 결코 승무원",
-  "new": "소련 Shuttle; 무인 1회 비행, 유인 없음"
- },
- {
-  "rel": "fleet/crewed-spacecraft/challenger.json",
-  "at": "tagline",
-  "old": "OV-099 — 두 번째 운영 우주왕복선. 1986-01-28 STS-51-L 발사 73초 후 교사 크리스타 매콜리프를 포함한 7명의 승무원 전원과 함께 손실",
-  "new": "OV-099 — 두 번째 운용 Shuttle 궤도선. 1986-01-28 STS-51-L 발사 73초 후 교사 크리스타 매콜리프를 포함한 승무원 7명 전원과 함께 상실"
- },
- {
-  "rel": "fleet/crewed-spacecraft/challenger.json",
-  "at": "dispatch",
-  "old": "Challenger, OV-099는 초기 주력 우주왕복선이었으며 프로그램의 첫 번째 재앙의 현장이었다. 우주 유영 프로그램의 첫 임무를 비행했으며 첫 미국 여성 우주인 샐리 라이드를 궤도로 운반했다. 1986년 1월 28일, 이례적으로 추운 날씨에 발사된 Challenger는 고체 부스터의 고무 밀봉부가 — 냉기로 경화되어 엔지니어들이 경고했던 고장 모드 — 파열되어 발사 73초 후 기체가 분해되었다. 탑승 인원 7명 전원이 사망했다. 이 재앙은 함대를 거의 3년간 운항 정지시켰으며 알려진, 표시된 위험을 간과한 경영 문화를 드러냈다.",
-  "new": "Challenger, OV-099는 초기 주력 기체였고 Shuttle 계획 최초의 참사가 일어난 곳이었다. 계획 최초의 우주 유영을 수행했고 미국 최초의 여성 우주인 샐리 라이드를 궤도에 실어 날랐다. 1986년 1월 28일, 이례적으로 추운 날씨에 발사된 Challenger는 고체 부스터의 고무 실이 — 추위로 굳어 버렸고, 엔지니어들이 경고했던 고장 양상이었다 — 파손되어 이륙 73초 후 기체가 공중분해되었다. 탑승자 7명 전원이 숨졌다. 이 참사로 Shuttle 전 기체가 거의 3년간 비행하지 못했고, 이미 알려져 경고까지 나온 위험을 무시하고 비행해 온 관리 문화가 드러났다."
- },
- {
-  "rel": "fleet/crewed-spacecraft/challenger.json",
-  "at": "description",
-  "old": "구조 시험 물체(STA-099)에서 개조되어 Enterprise가 업그레이드 비용이 지나치다고 판단된 후 비행용으로 전환되었다. 첫 우주왕복선 선외 활동(EVA)을 수행한 STS-6(1983-04-04)에서 첫 비행했다. 총 10개 임무 비행: STS-6, STS-7, STS-8, STS-41-B, STS-41-C, STS-41-G, STS-51-B, STS-51-F, STS-61-A, 최종 비행 STS-51-L. 1986-01-28에 STS-51-L은 전례 없는 추위(−1 °C)에서 발사되었다 — 우측 SRB의 O-링이 밀봉에 실패하여, 고온 가스가 외부 탱크에 SRB를 부착하는 지지대를 관통하였으며, 우주왕복선은 Max-Q(T+73s) 고도 14 km에서 분해되었다. 교사 크리스타 매콜리프를 포함한 7명의 승무원 전원이 사망했다. Rogers Commission은 우주왕복선을 32개월간 운항 정지시켰으며 NASA의 안전 문화를 재정립했다.",
-  "new": "구조 시험체(STA-099)를 비행용으로 개조해 만들었으며, Enterprise는 개조 비용이 너무 크다고 판단된 뒤의 선택이었다. STS-6(1983-04-04)으로 첫 비행을 했고, 이때 Shuttle 최초의 선외 활동(EVA)을 수행했다. 총 10회 비행: STS-6, STS-7, STS-8, STS-41-B, STS-41-C, STS-41-G, STS-51-B, STS-51-F, STS-61-A, 최종 비행 STS-51-L. 1986-01-28에 STS-51-L은 전례 없는 추위(−1 °C)에서 발사되었다 — 오른쪽 SRB의 O-링이 밀봉에 실패했고, 뜨거운 가스가 SRB를 외부 탱크에 연결하는 지지대를 태워 끊었으며, 궤도선은 Max-Q(T+73s) 고도 14 km에서 분해되었다. 교사 크리스타 매콜리프를 포함한 승무원 7명 전원이 사망했다. Rogers Commission의 조사 결과 Shuttle 비행은 32개월간 중단되었고 NASA의 안전 문화가 새로 쓰였다."
- },
- {
-  "rel": "fleet/crewed-spacecraft/challenger.json",
-  "at": "best_known_for",
-  "old": "두 번째 우주왕복선; 1986-01-28 STS-51-L 발사 73초 후 7명의 승무원과 함께 손실",
-  "new": "두 번째 Shuttle; 1986-01-28 STS-51-L 발사 73초 후 승무원 7명과 함께 상실"
- },
- {
-  "rel": "fleet/crewed-spacecraft/columbia.json",
-  "at": "tagline",
-  "old": "OV-102 — 우주비행에 처음 간 셔틀 궤도선(STS-1, 1981-04-12); STS-107 재진입 시 소실 2003-02-01",
-  "new": "OV-102 — 우주에 처음 비행한 Shuttle 궤도선(STS-1, 1981-04-12); STS-107 재진입 중 상실 2003-02-01"
- },
- {
-  "rel": "fleet/crewed-spacecraft/columbia.json",
-  "at": "dispatch",
-  "old": "Columbia는 처음이었다 — OV-102, 셔틀 시대를 열어젖힌 궤도선. 1981년 4월 STS-1에서 그것은 크루가 탑승한 우주선이 이전에 또는 이후로 해본 적 없는 일을 해냈다: 처녀 발사에서 궤도에 올랐고, 두 명의 우주인이 미검증 재사용 우주선에 탑승한 상태로, 활주로에 활강했다. 그것은 함대 중 가장 무거웠으며 Spacelab 우주실험실을 포함한 프로그램의 과학 임무 대부분을 수행했다. 2003년 STS-107에서 발사 시 파편이 날개에 뚫어놓은 구멍이 재진입의 열을 구조물 내부로 유입시켰고, Columbia는 귀로에서 몇 분 남지 않은 텍사스 상공에서 산산조각 났다 — 프로그램의 파편 충격에 대한 안일함을 끝낸 손실.",
-  "new": "Columbia는 최초였다 — OV-102, Shuttle 시대를 연 궤도선이다. 1981년 4월 STS-1에서 이전에도 이후에도 어떤 유인 우주선도 해 보지 못한 일을 해냈다. 시험된 적 없는 재사용 우주선에 우주비행사 두 명을 태우고 첫 발사에서 곧바로 궤도에 올랐고, 활주로에 활공해 귀환했다. Shuttle 기체 중 가장 무거웠으며 Spacelab 실험실을 포함해 계획의 과학 임무 상당수를 수행했다. 2003년 STS-107에서는 발사 중 떨어져 나온 파편이 날개에 낸 구멍으로 재진입 열이 구조 안으로 들어갔고, Columbia는 귀환을 몇 분 앞두고 텍사스 상공에서 분해되었다 — 파편 충돌에 대한 계획의 안일함을 끝낸 상실이었다."
- },
- {
-  "rel": "fleet/crewed-spacecraft/columbia.json",
-  "at": "description",
-  "old": "첫 번째 운영 Space Shuttle 궤도선. 22년에 걸쳐 28개 임무를 비행했으며, 여기에는 STS-1(크루가 탑승한 상태로 처녀항해를 한 유일한 미국 유인우주선), 1990년 Astro-1 자외선 천문 임무, 1993년 SLS-2 생명과학 비행, 그리고 존 글렌 상원의원의 1998년 STS-95 우주복귀 등이 포함된다. STS-107(2003-02-01) 재진입 시 소실 — 발사 시 폼 충격이 좌측 날개의 RCC 선행 가장자리를 관통하였고, 우주선이 마하 18에서 텍사스 상공에서 분해되었으며 7명의 승무원 모두가 소실되었다. 이 사고는 셔틀 함대를 29개월간 운항 중단시켰고 우주 탐사 비전을 촉발했다.",
-  "new": "첫 번째 운용 Space Shuttle 궤도선. 22년에 걸쳐 28회 비행했으며, 여기에는 STS-1(첫 항해에 승무원이 탑승한 유일한 미국 유인 우주선), 1990년 Astro-1 자외선 천문 임무, 1993년 SLS-2 생명과학 비행, 1998년 존 글렌 상원의원의 STS-95 우주 복귀 비행이 포함된다. STS-107(2003-02-01) 재진입 중 상실 — 발사 중 단열재 폼 충돌이 좌측 날개의 RCC 앞전을 뚫었고, 기체가 마하 18로 텍사스 상공을 날던 중 분해되어 승무원 7명 전원을 잃었다. 이 사고로 Shuttle 비행이 29개월간 중단되었고 우주 탐사 비전(Vision for Space Exploration)이 촉발되었다."
- },
- {
-  "rel": "fleet/crewed-spacecraft/columbia.json",
-  "at": "best_known_for",
-  "old": "우주비행에 처음 간 셔틀 궤도선(STS-1, 1981); STS-107 재진입 시 소실 2003",
-  "new": "우주에 처음 비행한 Shuttle 궤도선(STS-1, 1981); STS-107 재진입 중 상실 2003"
- },
- {
-  "rel": "fleet/crewed-spacecraft/crew-dragon.json",
-  "at": "tagline",
-  "old": "최초의 상업용 인간 탑재 궤도 우주선",
-  "new": "최초의 상업용 유인 궤도 우주선"
- },
- {
-  "rel": "fleet/crewed-spacecraft/crew-dragon.json",
-  "at": "description",
-  "old": "인간을 궤도에 운송한 최초의 민간 개발·운영 우주선인 SpaceX의 인간 탑재 우주선(Demo-2, 2020-05-30). 트렁크에는 페어링 분리 후 전개되어 궤도 운영 중 전력을 공급하는 두 개의 태양 어레이 패널이 장착되어 있다.",
-  "new": "SpaceX의 유인 우주선으로, 인간을 궤도에 보낸 최초의 민간 개발·운영 우주선이다(Demo-2, 2020-05-30). 트렁크에는 페어링 분리 뒤 펼쳐져 궤도 운용 중 전력을 공급하는 태양전지판 두 장이 달려 있다."
- },
- {
-  "rel": "fleet/crewed-spacecraft/crew-dragon.json",
-  "at": "best_known_for",
-  "old": "최초의 상업용 인간 탑재 궤도 우주선",
-  "new": "최초의 상업용 유인 궤도 우주선"
- },
- {
-  "rel": "fleet/crewed-spacecraft/discovery.json",
-  "at": "tagline",
-  "old": "OV-103 — 세 번째 셔틀. Hubble 배치(STS-31, 1990); 두 차례의 비행 복귀 임무 수행. 39회 비행 — 최다",
-  "new": "OV-103 — 세 번째 Shuttle. Hubble 배치(STS-31, 1990); 비행 재개 임무 두 차례 모두 수행. 39회 비행 — 궤도선 중 최다"
- },
- {
-  "rel": "fleet/crewed-spacecraft/discovery.json",
-  "at": "dispatch",
-  "old": "Discovery, OV-103은 27년에 걸쳐 39회의 임무를 수행한 우주왕복선 함대에서 가장 많이 비행하고 가장 신뢰받은 궤도선이었다. 두 차례의 재난 이후 우주왕복선을 비행에 복귀시키기 위해 NASA가 선택한 기체였으며, 프로그램이 다시 안전함을 증명해야 할 때 가장 먼저 발사된 우주선이었다. 그 비행 중에서 가장 중요할 수 있는 것은 STS-31로, Hubble Space Telescope를 궤도로 운반하여 방출했으며, 이는 천문학 역사상 가장 생산적인 장을 여는 계기가 되었다.",
-  "new": "Discovery, OV-103은 27년 동안 39회 비행한, Shuttle 기체 중 가장 많이 비행하고 가장 신뢰받은 궤도선이었다. 두 차례의 참사 뒤 Shuttle을 비행에 복귀시키기 위해 NASA가 택한 기체이기도 했다 — 프로그램이 다시 안전함을 증명해야 할 때 가장 먼저 올려 보낸 기체였다. 그 비행 가운데 가장 중요한 것은 아마 STS-31일 것이다. Hubble Space Telescope를 궤도로 실어 가 방출했고, 천문학 역사상 가장 성과 많은 장이 이로써 열렸다."
- },
- {
-  "rel": "fleet/crewed-spacecraft/discovery.json",
-  "at": "description",
-  "old": "세 번째 운용 궤도선; 첫 비행 STS-41-D(1984-08-30). 가장 많이 비행한 셔틀 — 27년간 39회 임무. 하이라이트: STS-31(1990-04-24)에서 Hubble Space Telescope 배치; STS-26(1988-09-29) Challenger 사고 후 비행 복귀; STS-114(2005-07-26) Columbia 사고 후 비행 복귀; STS-95(1998)에서 77세의 존 글렌을 다시 궤도로; 여러 ISS 조립 비행(STS-92, 120, 124, 128, 131, 133). 최종 비행 STS-133(2011-02-24)에서 Leonardo Permanent Multipurpose Module을 전달. 2012년부터 Udvar-Hazy에 전시.",
-  "new": "세 번째 운용 궤도선; 첫 비행 STS-41-D(1984-08-30). 가장 많이 비행한 Shuttle — 27년간 39회 임무. 주요 이력: STS-31(1990-04-24)에서 Hubble Space Telescope 배치; STS-26(1988-09-29)은 Challenger 사고 후 비행 재개; STS-114(2005-07-26)는 Columbia 사고 후 비행 재개; STS-95(1998)에서 77세의 존 글렌을 다시 궤도로 올림; 여러 차례의 ISS 조립 비행(STS-92, 120, 124, 128, 131, 133). 마지막 비행 STS-133(2011-02-24)에서 Leonardo Permanent Multipurpose Module을 운반. 2012년부터 Udvar-Hazy에 전시."
- },
- {
-  "rel": "fleet/crewed-spacecraft/discovery.json",
-  "at": "best_known_for",
-  "old": "가장 많이 비행한 셔틀(39회); Hubble 배치 + 두 차례 비행 복귀 임무",
-  "new": "가장 많이 비행한 Shuttle(39회); Hubble 배치 + 비행 재개 임무 두 차례 모두 수행"
- },
- {
-  "rel": "fleet/crewed-spacecraft/endeavour.json",
-  "at": "tagline",
-  "old": "OV-105 — 다섯 번째이자 가장 젊은 셔틀. 최초 Hubble 정비 STS-61(1993); Unity + Canadarm2 전달",
-  "new": "OV-105 — 다섯 번째 Shuttle, Challenger 대체. 최초 Hubble 정비 STS-61(1993); Unity + Canadarm2 전달"
- },
- {
-  "rel": "fleet/crewed-spacecraft/endeavour.json",
-  "at": "dispatch",
-  "old": "Endeavour, OV-105는 마지막으로 건조된 오비터였다 — Challenger를 대체하기 위해 구조 예비 부품으로 조립되었으며, 그리하여 함대의 최신 기체조차 최악의 날에 대한 기억을 지니게 되었다. 최초의 Hubble 정비 임무인 STS-61을 수행했는데, 이는 망원경의 결함 있는 거울을 수정하고 관측소의 명성을 회복시킨 비행이었으며, 국제우주정거장 조립에서 중요한 역할을 수행했다. 함대에서 가장 어렸고 가장 바쁜 기체 중 하나로, 프로그램의 마지막 해까지 비행했다.",
-  "new": "Endeavour, OV-105는 마지막으로 제작된 궤도선이었다 — Challenger를 대체하기 위해 구조 예비 부품으로 조립되어, Shuttle 기체 중 가장 새것조차 그 최악의 날의 기억을 안고 있었다. 최초의 Hubble 정비 임무 STS-61을 수행했는데, 망원경의 결함 있는 거울을 바로잡아 관측소의 명성을 구한 비행이었고, 국제우주정거장 조립에서도 무거운 짐을 도맡았다. 가장 어린 기체이면서 가장 바쁜 기체 중 하나로, 프로그램의 마지막 해까지 비행했다."
- },
- {
-  "rel": "fleet/crewed-spacecraft/endeavour.json",
-  "at": "description",
-  "old": "다섯 번째이자 마지막 운용 궤도선. Challenger 사고로 NASA에 운용 가능한 궤도선이 3대만 남게 된 후 구조 예비 부품으로 제작. Captain Cook의 HMS Endeavour를 따라 전국 학교 공모전을 통해 명명. 첫 비행 STS-49(1992-05-07)에서 표류 중이던 Intelsat VI 위성을 회수하는 최초의 3인 EVA 수행. 하이라이트: STS-61(1993-12) 최초 Hubble 정비; STS-88(1998-12-04) 최초 ISS 조립 비행, Unity 전달; STS-100(2001-04) Canadarm2 설치; STS-130(2010-02) Tranquility + Cupola 설치; STS-134(2011-05) AMS-02 우주선 검출기 설치. California Science Center(Los Angeles)에 전시.",
-  "new": "다섯 번째이자 마지막 운용 궤도선. Challenger 사고로 NASA에 비행 가능 인증을 받은 궤도선이 3대만 남게 된 후 구조 예비 부품으로 제작. Captain Cook의 HMS Endeavour를 따라 전국 학교 공모전을 통해 명명. 첫 비행 STS-49(1992-05-07)에서 표류 중이던 Intelsat VI 위성을 붙잡는 최초의 3인 EVA 수행. 주요 이력: STS-61(1993-12) 최초 Hubble 정비로 Hubble의 광학계 복구; STS-88(1998-12-04) 최초 ISS 조립 비행, Node 1 Unity 전달; STS-100(2001-04) Canadarm2 설치; STS-130(2010-02) Tranquility + Cupola 설치; STS-134(2011-05) AMS-02 우주선(宇宙線) 검출기 설치 — Shuttle 계획의 마지막 EVA 승무원. California Science Center(Los Angeles)에 전시."
- },
- {
-  "rel": "fleet/crewed-spacecraft/endeavour.json",
-  "at": "best_known_for",
-  "old": "가장 젊은 셔틀; 최초 Hubble 정비 STS-61(1993); Unity + Canadarm2 + Tranquility/Cupola 전달",
-  "new": "가장 나중에 제작된 Shuttle; 최초 Hubble 정비 STS-61(1993); Unity + Canadarm2 + Tranquility/Cupola 전달"
- },
- {
-  "rel": "fleet/crewed-spacecraft/enterprise.json",
-  "at": "tagline",
-  "old": "OV-101 — 프로토타입 셔틀. Star Trek 팬들의 캠페인 이후 Constitution에서 이름 변경. 1977년 대기권 비행 시험 수행; 궤도에 도달하지 못함",
-  "new": "OV-101 — 시제기 Shuttle. Star Trek 팬들의 캠페인 끝에 Constitution에서 개명. 1977년 대기권 비행 시험 수행; 궤도에는 도달하지 못함"
- },
- {
-  "rel": "fleet/crewed-spacecraft/enterprise.json",
-  "at": "description",
-  "old": "Constitution이라고 불렸던 것을 1976년 Star Trek 팬들이 조직한 팬레터 캠페인 이후 셔틀에 이름을 붙일 때 Enterprise로 이름 변경. 접근 및 착륙 시험(ALT)의 프로토타입으로 건설됨 — 1977년 Edwards Air Force Base 상공에서 Shuttle Carrier Aircraft를 이용한 8회의 포획 비행과 5회의 자유 비행 수행. 첫 자유 비행은 1977년 8월 12일로 Fred Haise와 Gordon Fullerton이 조종했으며 궤도선이 활강하여 착륙할 수 있음을 입증. 추진 장치나 활성 TPS 타일을 포함하지 않음; Enterprise를 비행 인정 수준으로 개조하는 것이 구조 부품으로 새 궤도선을 건설하는 것보다 더 무겁다고 예상되어 대신 Challenger를 건설함. 현재 NYC의 Intrepid Sea, Air & Space Museum에 전시 중.",
-  "new": "원래 이름은 Constitution이었으나, 1976년 Shuttle의 이름을 정하던 중 Star Trek 팬들이 벌인 편지 캠페인 끝에 Enterprise로 개명되었다. 접근 및 착륙 시험(ALT)용 시제기로 제작되어, 1977년 Edwards Air Force Base 상공에서 Shuttle Carrier Aircraft에 실린 채 모기 탑재 비행 8회와 자유 비행 5회를 수행했다. 1977-08-12 첫 자유 비행은 Fred Haise와 Gordon Fullerton이 조종했고, 궤도선이 활공해 착륙할 수 있음을 입증했다. 추진 장치와 실제 열방어(TPS) 타일은 갖추지 않았다. Enterprise를 비행 가능 사양으로 개조하는 것이 구조 예비 부품으로 새 궤도선을 만드는 것보다 부담이 큰 일로 추산되어, 대신 Challenger가 제작되었다. 현재 NYC의 Intrepid Sea, Air & Space Museum에 전시 중."
- },
- {
-  "rel": "fleet/crewed-spacecraft/enterprise.json",
-  "at": "best_known_for",
-  "old": "프로토타입 셔틀; 1977년 대기권 낙하 시험; 궤도 비행을 수행하지 않음",
-  "new": "시제기 Shuttle; 1977년 대기권 투하 시험; 궤도에는 오르지 않음"
- },
- {
-  "rel": "fleet/crewed-spacecraft/gaganyaan.json",
-  "at": "description",
-  "old": "인도의 첫 유인 우주선으로, LVM3(구 GSLV Mk III)을 통한 2027년 유인 비행을 목표로 하고 있습니다. 3명의 우주비행사가 약 7일 동안 저궤도 미션에 참여할 예정이며, 이는 인도 유인 우주 비행 프로그램의 시작이 됩니다. ISRO는 승무원 모듈 적격성 시험을 완료했으며 우주비행사 후보자들을 훈련시켰습니다.",
-  "new": "인도 최초의 유인 우주선으로, LVM3(구 GSLV Mk III)에 실어 2027년 유인 비행을 하는 것을 목표로 합니다. 우주비행사 3명이 약 7일간 지구 저궤도 임무를 수행할 예정이며, 인도 유인 우주비행 프로그램의 시작이 됩니다. ISRO는 승무원 모듈 인증 시험을 마쳤고 우주비행사 후보들을 훈련시켰습니다."
- },
- {
-  "rel": "fleet/crewed-spacecraft/gemini.json",
-  "at": "dispatch",
-  "old": "Gemini 우주선은 미국인이 실제로 조종할 수 있는 첫 우주선이었습니다. 머큐리의 우주인들은 대부분 지상에서 제어하는 캡슐을 타고만 갔지만, Gemini의 2인 승무원은 추진기, 비행 컴퓨터, 그리고 궤도를 스스로 변경하여 다른 우주선을 추격하고 도킹할 수 있는 능력을 갖추었습니다. 그것이 Gemini의 존재 이유 전부였습니다 — 새로운 곳으로 가는 것이 아니라 Apollo가 필요로 할 기동을 연습하기 위한 기계가 되는 것입니다. 머큐리보다 넓지만 여전히 답답했으며, 그 이후의 Apollo처럼 승무원 모듈과 장비 구간으로 나뉘어, 10번의 비행 동안 랑데부, 도킹, 2주간의 체류를 미지의 영역에서 승무원이 단순히 수행할 수 있는 것으로 바꾸어 놓았습니다.",
-  "new": "Gemini 우주선은 미국인이 실제로 조종할 수 있었던 첫 우주선이었습니다. Mercury의 우주비행사는 대부분 지상에서 제어하는 캡슐에 탄 승객이었지만, Gemini의 2인 승무원은 추력기와 비행 컴퓨터를 얻었고 스스로 궤도를 바꿔 다른 우주선을 쫓아가 도킹할 수 있었습니다. 그것이 존재 이유의 전부였습니다 — 어딘가 새로운 곳에 가는 것이 아니라, Apollo가 필요로 할 기동을 연습하는 기계가 되는 것이었습니다. Mercury보다 넓었지만 여전히 비좁았고, 뒤의 Apollo처럼 승무원 모듈과 장비 구간으로 나뉜 이 우주선은 10번의 비행을 거치며 랑데부와 도킹, 2주간의 장기 체류를 열린 질문에서 승무원이 그저 해낼 수 있는 일로 바꿔 놓았습니다."
- },
- {
-  "rel": "fleet/crewed-spacecraft/gemini.json",
-  "at": "description",
-  "old": "NASA에 우주 회합, 도킹, 우주유영의 기법을 가르친 2인승 우주선으로, 이 기법들이 Apollo 계획을 가능하게 했습니다. 1964–1965년의 두 번의 무인 시험비행(Gemini 1과 2)에 이어 1965–1966년의 10개 유인 미션(Gemini 3–12)이 이루어졌으며, 모두 달을 향한 한 걸음씩이었습니다.",
-  "new": "NASA에 우주에서 랑데부하고 도킹하고 걷는 법을 가르친 2인승 우주선으로, 이 기술들이 Apollo를 가능하게 했습니다. 1964–1965년의 무인 시험비행 두 번(Gemini 1과 2)에 이어 1965–1966년에 유인 임무 열 번(Gemini 3–12)이 이루어졌고, 하나하나가 달을 향한 한 걸음이었습니다."
- },
- {
-  "rel": "fleet/crewed-spacecraft/mercury-capsule.json",
-  "at": "dispatch",
-  "old": "Mercury 캡슐은 우주에서 한 사람이 살아있을 수 있는 가장 작은 물체가 되도록 설계되었습니다. 그리고 그것이 드러납니다. 앉아있는 것 외에 할 수 있는 일이 거의 없었습니다. 우주비행사는 우주선을 타는 것만큼이나 우주선을 입고 있었습니다. 하지만 그 형태는 그 시대의 가장 어려운 미해결 문제 — 돌아오는 방법 — 를 해결했습니다. 열을 소모하고 열을 멀리 옮기도록 설계된 실드로 코팅된 둔탁한 끝부분은 재진입을 치명적인 확실성에서 생존 가능한 것으로 바꾸었고, 그 원뿔은 유인 우주선이 어떤 모습이든 해야 한다는 질문에 대한 첫 번째 미국식 답변이었습니다. 그 이후의 모든 캡슐 — Gemini, Apollo, Dragon — 은 이 비좁은 작은 원뿔의 후손입니다.",
-  "new": "Mercury 캡슐은 우주에서 사람이 살아 있을 수 있는 가장 작은 물체가 되도록 설계되었고, 그 흔적이 역력합니다. 앉아 있는 것 말고는 할 수 있는 일이 거의 없었고, 우주비행사는 우주선을 탄다기보다 입고 있는 것에 가까웠습니다. 하지만 이 형태는 당대에 가장 어려웠던 미해결 문제, 곧 돌아오는 방법을 풀어냈습니다. 탄화하면서 열을 실어 내도록 만든 열차폐를 입힌 뭉툭한 끝부분은 재진입을 확실한 죽음에서 살아남을 수 있는 일로 바꿔 놓았고, 그 원뿔은 유인 우주선이 대체 어떻게 생겨야 하느냐는 물음에 대한 미국의 첫 대답이었습니다. 이후의 모든 캡슐 — Gemini, Apollo, Dragon — 은 이 비좁은 작은 원뿔의 후손입니다."
- },
- {
-  "rel": "fleet/crewed-spacecraft/mercury-capsule.json",
-  "at": "description",
-  "old": "1961년부터 1963년 사이에 머큐리 프로젝트에서 6명의 미국 우주비행사를 태워간 원뿔 모양의 캡슐. 존 글렌이 \"깡통 속의 스팸\"이라고 유명하게 표현할 정도로 작았지만 — 미국이 궤도 비행을 성취할 수 있다는 것을 증명했다.",
-  "new": "1961년부터 1963년 사이 Project Mercury에서 미국 우주비행사 6명을 태운 원뿔형 캡슐. 존 글렌이 \"깡통 속의 스팸\"이라고 표현해 유명해질 만큼 작았지만 — 미국도 궤도 비행을 해낼 수 있음을 증명했다."
- },
- {
-  "rel": "fleet/crewed-spacecraft/new-shepard.json",
-  "at": "description",
-  "old": "Blue Origin의 하위 항공 승무원 우주선, 앨런 셰퍼드의 이름을. 재사용 가능한 부스터 + 캡슐 아키텍처, parachutes 아래 캡슐 착륙. 2021 년부터 승무원; 제프 베이조스, 윌리엄 샤트너 및 간단한 하위 항공 항공편에 다른 사람.",
-  "new": "Blue Origin의 준궤도 유인 우주선으로, 앨런 셰퍼드의 이름을 땄다. 재사용 부스터 + 캡슐 구조이며, 캡슐은 낙하산으로 착륙한다. 2021년부터 승무원을 태웠고, 제프 베이조스, 윌리엄 샤트너 등을 짧은 준궤도 비행에 실어 날랐다."
- },
- {
-  "rel": "fleet/crewed-spacecraft/orion.json",
-  "at": "tagline",
-  "old": "Artemis 달 탐사 프로그램을 위한 승무원 탑승 우주선",
-  "new": "Artemis 달 탐사 프로그램의 유인 우주선"
- },
- {
-  "rel": "fleet/crewed-spacecraft/orion.json",
-  "at": "description",
-  "old": "NASA의 Artemis 프로그램을 위한 승무원 탑승 우주선으로, ESA와 공동으로 제작되었습니다(European Service Module은 Airbus에서 제공). 달 궤도에 대한 수 주간의 미션에 최대 4명의 우주비행사를 지원하도록 설계되었습니다. Artemis I에서 무인 비행을 수행했습니다(2022년). Artemis II에서 첫 번째 유인 미션을 수행했습니다(2026년 4월, 달 근접 비행 궤적의 4명 승무원).",
-  "new": "NASA의 Artemis 프로그램을 위한 유인 우주선으로, ESA와 공동으로 제작되었습니다(유럽 서비스 모듈은 Airbus가 제공). 달 궤도로 향하는 수 주간의 임무에서 최대 4명의 우주비행사를 지원하도록 설계되었습니다. 2022년 Artemis I에서 무인 비행을 했고, 2026년 4월 Artemis II에서 달 근접 비행 궤적으로 4명의 승무원을 태우고 첫 유인 임무를 수행했습니다."
- },
- {
-  "rel": "fleet/crewed-spacecraft/orion.json",
-  "at": "best_known_for",
-  "old": "Artemis 달 탐사 프로그램을 위한 승무원 탑승 우주선",
-  "new": "Artemis 달 탐사 프로그램의 유인 우주선"
- },
- {
-  "rel": "fleet/crewed-spacecraft/shenzhou.json",
-  "at": "description",
-  "old": "중국의 승무원 우주선, 외부 Soyuz-derived하지만 확대. 2003 년 최초의 승무원 비행 (Shenzhou 5, 양리웨이); 이제 6 개월마다 승무원 교체와 Tiangong에 표준 페리.",
-  "new": "중국의 유인 우주선으로, 외관은 Soyuz에서 파생되었지만 더 크다. 2003년 첫 유인 비행(Shenzhou 5, 양리웨이); 현재는 Tiangong으로 가는 표준 수송선으로, 6개월마다 승무원이 교대한다."
- },
- {
-  "rel": "fleet/crewed-spacecraft/soyuz-7k-ok.json",
-  "at": "tagline",
-  "old": "최초의 Soyuz 세대; 코마로프의 운명 비행",
-  "new": "초대 Soyuz 세대; 코마로프가 숨진 비행"
- },
- {
-  "rel": "fleet/crewed-spacecraft/soyuz-7k-ok.json",
-  "at": "dispatch",
-  "old": "Soyuz 7K-OK는 이 계열의 첫 번째 버전이자 모든 우주선을 뛰어넘어 살아남을 최초의 버전이었다. 이후 모든 Soyuz가 유지해온 3개 모듈 구조를 도입했다. 생활과 작업을 위한 구형 궤도 모듈, 귀환을 위한 소형 하강 모듈, 그리고 전력과 추진을 위한 서비스 모듈이다. 또한 첫 유인 비행에서 블라디미르 코마로프를 사망하게 한 버전이자, 개선된 형태로 Soyuz 11의 세 우주비행사를 사망하게 한 버전이기도 하다. 급하게 만들어진 설계를 신뢰할 수 있는 것으로 만든 초기의 혹독한 교훈이었다. 초기에는 조잡하고 위험했지만, 기본 구조가 매우 견고함이 입증되어 수십 년에 걸쳐 개선된 결과 오늘날에도 여전히 승무원을 궤도로 운반하고 있다.",
-  "new": "Soyuz 7K-OK는 이 계열의 첫 번째 버전이자, 훗날 모든 형제 기체보다 오래 살아남을 우주선의 원형이었다. 이후 모든 Soyuz가 이어 온 3모듈 구조를 도입했다. 생활과 작업을 위한 구형 궤도 모듈, 귀환용 소형 하강 모듈, 전력과 추진을 맡는 서비스 모듈이다. 첫 유인 비행에서 블라디미르 코마로프의 목숨을 앗아간 버전이자, 개량형으로 Soyuz 11의 우주비행사 세 명을 숨지게 한 버전이기도 했다 — 서둘러 만든 설계를 믿을 수 있는 설계로 바꾼, 혹독한 초기 수업이었다. 처음에는 조잡하고 위험했지만 기본 구조가 워낙 견고해, 수십 년 동안 다듬어지며 오늘날에도 여전히 승무원을 궤도로 실어 나르고 있다."
- },
- {
-  "rel": "fleet/crewed-spacecraft/soyuz-7k-ok.json",
-  "at": "description",
-  "old": "Soyuz의 첫 번째 세대, 6 년 동안 끝낸 모든 건축 선택: 궤도 단위 구체, descent 단위, 배포 가능한 태양 배열과 서비스 모듈. Soyuz 1 (코마로프의 치명적 비행, 1967)에 의해 소개 된 Tragically.",
-  "new": "60년 동안 이어진 구조적 선택을 모두 갖춘 Soyuz의 첫 세대: 구형 궤도 모듈, 하강 모듈, 전개식 태양전지판을 단 서비스 모듈. Soyuz 1(코마로프가 숨진 1967년의 비행)으로 비극적으로 첫선을 보였다."
- },
- {
-  "rel": "fleet/crewed-spacecraft/soyuz-7k-ok.json",
-  "at": "best_known_for",
-  "old": "최초의 Soyuz 세대; 코마로프의 운명 비행",
-  "new": "초대 Soyuz 세대; 코마로프가 숨진 비행"
- },
- {
-  "rel": "fleet/crewed-spacecraft/soyuz-ms.json",
-  "at": "tagline",
-  "old": "현재 Soyuz 세대; ISS 수명 보트",
-  "new": "현재 Soyuz 세대; ISS 구명정"
- },
- {
-  "rel": "fleet/crewed-spacecraft/soyuz-ms.json",
-  "at": "description",
-  "old": "2016년부터 운용 중인 현재의 Soyuz 세대. 새로운 소프트웨어와 GLONASS/GPS 지원 랑데부 기술로 ISS 도킹이 3시간 이내에 가능해졌습니다. 우주 역사상 가장 많이 비행한 유인 우주선 계통인 Soyuz 계열의 일부입니다.",
-  "new": "2016년부터 운용 중인 현재의 Soyuz 세대. 새로운 소프트웨어와 GLONASS/GPS 지원 랑데부 기술로 ISS 도킹이 최단 3시간 만에 가능합니다. 우주 역사상 가장 많이 비행한 유인 우주선 계통인 Soyuz 계열의 일부입니다."
- },
- {
-  "rel": "fleet/crewed-spacecraft/soyuz-ms.json",
-  "at": "best_known_for",
-  "old": "현재 Soyuz 세대; ISS 수명 보트",
-  "new": "현재 Soyuz 세대; ISS 구명정"
- },
- {
-  "rel": "fleet/crewed-spacecraft/soyuz-t.json",
-  "at": "tagline",
-  "old": "세 cosmonaut Salyut-era 변형",
-  "new": "우주비행사 3명이 탑승하는 Salyut 시대 변형"
- },
- {
-  "rel": "fleet/crewed-spacecraft/soyuz-t.json",
-  "at": "description",
-  "old": "1979년부터 1986년까지의 Salyut 시대 우주선으로, Soyuz 11 치명적 감압사고 이후 복구된 3명 우주인 탑재 능력을 갖춘 Soyuz입니다. 현대화된 항공전자공학과 쌍추진제 엔진을 탑재했으며, 원래의 7K-OK와 장기간 운용된 TM/TMA/MS 계열 사이의 연결고리입니다.",
-  "new": "1979년부터 1986년까지 Salyut 시대에 쓰인 Soyuz로, Soyuz 11의 감압 사고 이후 3인 탑승 능력을 되찾았습니다. 현대화된 항공전자 장비와 자발 점화(하이퍼골릭) 추진 방식을 갖췄으며, 최초의 7K-OK와 오래 운용된 TM/TMA/MS 계열 사이를 잇는 다리입니다."
- },
- {
-  "rel": "fleet/crewed-spacecraft/soyuz-t.json",
-  "at": "best_known_for",
-  "old": "세 cosmonaut Salyut-era 변형",
-  "new": "우주비행사 3명이 탑승하는 Salyut 시대 변형"
- },
- {
-  "rel": "fleet/crewed-spacecraft/soyuz-tm.json",
-  "at": "tagline",
-  "old": "Mir-era Soyuz; 현대 avionics",
-  "new": "Mir 시대 Soyuz; 현대화된 항공전자 장비"
- },
- {
-  "rel": "fleet/crewed-spacecraft/soyuz-tm.json",
-  "at": "description",
-  "old": "Mir-era Soyuz (1986-2002), 재설계된 avionics 및 새로운 Kurs 자동화된 도킹 시스템. Flew 소련, 러시아, 그리고 파트너 국가 cosmonauts에 대한 Mir 15 년.",
-  "new": "Mir 시대 Soyuz(1986–2002)로, 항공전자 장비를 재설계하고 새로운 Kurs 자동 도킹 시스템을 도입했다. 15년 동안 소련, 러시아, 파트너 국가의 우주비행사를 Mir로 실어 날랐다."
- },
- {
-  "rel": "fleet/crewed-spacecraft/soyuz-tm.json",
-  "at": "best_known_for",
-  "old": "Mir-era Soyuz; 현대 avionics",
-  "new": "Mir 시대 Soyuz; 현대화된 항공전자 장비"
- },
- {
-  "rel": "fleet/crewed-spacecraft/soyuz-tma.json",
-  "at": "tagline",
-  "old": "ISS-era Soyuz; 확장 승무원 높이 봉투",
-  "new": "ISS 시대 Soyuz; 탑승 가능 신장 범위 확대"
- },
- {
-  "rel": "fleet/crewed-spacecraft/soyuz-tma.json",
-  "at": "description",
-  "old": "ISS-era Soyuz (2002–2012), 디지털 비행 컴퓨터와 더 넓은 승무원 고도 봉투 국제 파트너 astronaut corps를 수용. 전문 승무원과 함께 첫 번째 공간 관광을 훈련.",
-  "new": "ISS 시대 Soyuz(2002–2012)로, 디지털 비행 컴퓨터와 더 넓은 탑승 신장 범위를 갖춰 국제 파트너 우주비행사단을 수용했다. 전문 승무원과 함께 최초의 우주 관광객을 실어 날랐다."
- },
- {
-  "rel": "fleet/crewed-spacecraft/soyuz-tma.json",
-  "at": "best_known_for",
-  "old": "ISS-era Soyuz; 확장 승무원 높이 봉투",
-  "new": "ISS 시대 Soyuz; 탑승 가능 신장 범위 확대"
- },
- {
-  "rel": "fleet/crewed-spacecraft/space-shuttle-orbiter.json",
-  "at": "tagline",
-  "old": "재사용 가능한 날개 궤도 승무원 차량",
-  "new": "재사용 가능한 날개 달린 궤도 유인 우주선"
- },
- {
-  "rel": "fleet/crewed-spacecraft/space-shuttle-orbiter.json",
-  "at": "description",
-  "old": "재사용 가능한 날개 달린 우주선은 1981년부터 2011년까지 135개의 임무를 펼치고 있습니다. 다섯 개의 비행 궤도가 내장되었습니다 (Columbia, Challenger, Discovery, Atlantis, Endeavour); 컬럼비아 및 도전자는 승무원과 잃었습니다.",
-  "new": "재사용 가능한 날개 달린 우주선으로, 1981년부터 2011년까지 135회 임무를 수행했으며, 글라이더처럼 착륙한 유일한 유인 우주선이다. 비행용 궤도선은 다섯 대가 제작되었고(Columbia, Challenger, Discovery, Atlantis, Endeavour), 이 중 Columbia와 Challenger는 승무원과 함께 상실되었다."
- },
- {
-  "rel": "fleet/crewed-spacecraft/space-shuttle-orbiter.json",
-  "at": "best_known_for",
-  "old": "재사용 가능한 날개 궤도 승무원 차량",
-  "new": "재사용 가능한 날개 달린 궤도 유인 우주선"
- },
- {
-  "rel": "fleet/crewed-spacecraft/starliner.json",
-  "at": "description",
-  "old": "Boeing의 Commercial Crew 운송선으로, 서비스 모듈의 추진기를 이용한 푸셔식 발사 중단 시스템을 갖춘다. Crew Flight Test(2024년 6월)에서 추진기 고장과 헬륨 누출이 발생했으며, NASA는 캡슐을 무인 상태로 복귀시켰다(2024년 9월). 윌모어와 Williams는 SpaceX Crew-9을 통해 귀환했다(2025년 2월). 재인증 대기 중이므로 승무원 비행이 중단된 상태이다.",
-  "new": "Boeing의 Commercial Crew 우주선으로, 서비스 모듈의 추진기를 이용한 푸셔식 발사 중단 시스템을 갖춘다. Crew Flight Test(2024년 6월)에서 추진기 고장과 헬륨 누출이 발생했으며, NASA는 캡슐을 무인 상태로 복귀시켰다(2024년 9월). 윌모어와 윌리엄스는 SpaceX Crew-9를 통해 귀환했다(2025년 2월). 재인증 대기 중이므로 승무원 비행이 중단된 상태이다."
- },
- {
-  "rel": "fleet/crewed-spacecraft/voskhod.json",
-  "at": "tagline",
-  "old": "첫 번째 멀티 스크류 비행; 첫 번째 우주선",
-  "new": "최초의 다인승 비행; 최초의 우주 유영"
- },
- {
-  "rel": "fleet/crewed-spacecraft/voskhod.json",
-  "at": "description",
-  "old": "수정된 Vostok는 3개의 cosmonauts까지 나르기 위하여 refitted. 두 승무원 비행 - Voskhod 1 (첫 번째 멀티 스크류) 및 Voskhod 2 (알렉세이 레오노프의 첫 우주선 1965). 디자인 마진을 넘어 Soyuz의 호평을 은퇴했다.",
-  "new": "최대 3명의 우주비행사를 태우도록 개조한 Vostok. 유인 비행 두 차례 — Voskhod 1(최초의 다인승 비행)과 Voskhod 2(1965년 알렉세이 레오노프의 최초 우주 유영). 설계 여유를 넘어서까지 밀어붙인 끝에 Soyuz에 자리를 내주고 퇴역했다."
- },
- {
-  "rel": "fleet/crewed-spacecraft/voskhod.json",
-  "at": "best_known_for",
-  "old": "첫 번째 멀티 스크류 비행; 첫 번째 우주선",
-  "new": "최초의 다인승 비행; 최초의 우주 유영"
- },
- {
-  "rel": "fleet/crewed-spacecraft/vostok.json",
-  "at": "description",
-  "old": "1961-04-12의 궤도에서 유리 가가린을 반환 한 둥근 descent 단위 — 첫번째 인간적인 spaceflight. 발렌티나 테레시코바의 솔로 궤도 임무를 포함하여 1961 년과 1963 년 사이에 6 승무원 비행.",
-  "new": "1961-04-12 유리 가가린을 궤도에서 귀환시킨 구형 하강 모듈 — 최초의 유인 우주비행. 1961년부터 1963년 사이 유인 비행 여섯 차례, 여기에는 최초의 여성 우주인으로서 발렌티나 테레시코바가 수행한 단독 궤도 임무가 포함된다."
- },
- {
-  "rel": "fleet/crewed-spacecraft/x37b.json",
-  "at": "tagline",
-  "old": "USSF의 재사용 로봇 우주 비행기 — 기밀 다년간 궤도 임무, Shuttle 퇴역 후 유일한 미국 우주 비행기",
-  "new": "USSF의 재사용 무인 우주비행기 — 수년에 걸친 기밀 궤도 임무, Shuttle 퇴역 후 유일하게 운용 중인 미국 우주비행기"
- },
- {
-  "rel": "fleet/crewed-spacecraft/x37b.json",
-  "at": "description",
-  "old": "Boeing Phantom Works가 USAF를 위해 제작하고 2019년 USSF로 이관한 로봇식 소형 우주비행기(길이 8.9 m, 무게 약 5 t). Atlas V 501(원래), SpaceX Falcon 9(OTV-5부터), Falcon Heavy(OTV-7부터)로 수직 발사하며 Kennedy의 전 Shuttle 활주로에 수평 착륙한다. 대부분의 탑재물과 궤도 매개변수는 기밀이지만, 알려진 임무 지속 기간은 224일(OTV-1, 2010)에서 908일(OTV-6, 2020-2022)의 기록까지 이른다. 공개된 실험에는 Hall-effect 추진기 기술 시연, AFRL 무선주파수 통신 시험, 1 W 태양광-마이크로파 빔 변환 실험(PRAM, OTV-6)이 포함된다. 2026년 기준으로 7개 임무를 비행했다.",
-  "new": "Boeing Phantom Works가 USAF를 위해 제작하고 2019년 USSF로 이관한 로봇식 소형 우주비행기(길이 8.9 m, 무게 약 5 t). Atlas V 501(원래), SpaceX Falcon 9(OTV-5부터), Falcon Heavy(OTV-7부터)로 수직 발사하며 케네디 우주 센터의 옛 Shuttle 활주로에 수평 착륙한다. 대부분의 탑재물과 궤도 매개변수는 기밀이지만, 알려진 임무 지속 기간은 224일(OTV-1, 2010)에서 908일(OTV-6, 2020-2022)의 기록까지 이른다. 공개된 실험에는 홀 효과 추진기 기술 시연, AFRL 무선주파수 통신 시험, 1 W 태양광-마이크로파 빔 변환 실험(PRAM, OTV-6)이 포함된다. 2026년 기준으로 7개 임무를 비행했다."
- },
- {
-  "rel": "fleet/crewed-spacecraft/x37b.json",
-  "at": "best_known_for",
-  "old": "USSF 재사용 로봇 우주 비행기 — 기밀 다년 궤도 임무, Shuttle 퇴역 후 미국 우주 비행기",
-  "new": "USSF의 재사용 무인 우주비행기 — 수년에 걸친 기밀 궤도 임무, Shuttle 이후의 미국 우주비행기"
- },
- {
-  "rel": "fleet/engine/ce-20.json",
-  "at": "tagline",
-  "old": "인도 최초의 자체 개발 극저온 엔진, 필요에서 비롯된 도전",
-  "new": "인도 최초의 자체 개발 극저온 엔진, 필요에서 태어나다"
- },
- {
-  "rel": "fleet/engine/ce-20.json",
-  "at": "description",
-  "old": "1990년대 초 기술 이전 제한으로 인해 인도가 극저온 엔진 기술 획득이 봉쇄되자, ISRO의 액체 추진 시스템 센터(Liquid Propulsion Systems Centre)는 이를 백지에서부터 개발했다. CE-20이 그 결과물이다. LOX와 LH2를 연소하는 가스 생성기 사이클 방식의 이 엔진은 인도의 가장 강력한 운용 로켓 LVM3의 상단 스테이지를 구동한다. 2017년 6월 5일 GSLV Mk III D1 개발 비행에서 처음 비행했으며, 이는 지정학적 장벽을 독립적 역량으로 전환시킨 20년에 걸친 개발 프로그램의 완성을 의미한다. CE-20은 인도의 첫 유인 우주 비행 미션인 가간얀(Gaganyaan)을 궤도에 실어 날릴 엔진이다.",
-  "new": "1990년대 초 기술 이전 제한으로 인도가 극저온 엔진 기술을 들여오지 못하게 되자, ISRO의 액체 추진 시스템 센터(Liquid Propulsion Systems Centre)는 이를 처음부터 직접 개발했다. CE-20이 그 결과물이다. LOX와 LH2를 연소하는 가스 발생기 사이클 엔진으로, 인도의 가장 무거운 현역 로켓 LVM3의 상단을 구동한다. 2017년 6월 5일 GSLV Mk III D1 개발 비행에서 처음 비행했으며, 지정학적 장벽을 독자적 역량으로 바꿔 놓은 20년 개발 프로그램의 마침표를 찍었다. CE-20은 인도 최초의 유인 임무인 Gaganyaan을 궤도에 올려 보낼 엔진이다."
- },
- {
-  "rel": "fleet/engine/ce-20.json",
-  "at": "best_known_for",
-  "old": "인도 최초의 자체 개발 극저온 엔진 — LVM3 상단 스테이지",
-  "new": "인도 최초의 자체 개발 극저온 엔진 — LVM3의 상단"
- },
- {
-  "rel": "fleet/engine/f-1.json",
-  "at": "description",
-  "old": "Saturn V 첫 단계의 5개 F-1 엔진은 해수면에서 그 이전이나 이후 어떤 로켓도 달성하지 못한 합성 추력을 생성했다. Rocketdyne의 가스 발생기 사이클은 LOX와 RP-1을 자동차 엔진 크기의 터보펌프와 엔지니어들이 시행착오와 폭발, 재설계를 통해 연소 불안정성을 해결해야 했던 연소실이 필요할 정도의 속도로 연소했다. 1967년 11월 9일 처음 비행했으며 프로그램이 종료되기 전에 Apollo를 달로 가는 길에 6번 올려보냈다.",
-  "new": "Saturn V 1단의 F-1 다섯 기는 해수면에서 그 이전에도 이후에도 어떤 로켓도 따라오지 못한 합산 추력을 냈다. Rocketdyne의 가스 발생기 사이클은 LOX와 RP-1을 엄청난 속도로 태웠는데, 이를 감당하려면 자동차 엔진만 한 터보펌프가 필요했고, 연소실의 연소 불안정은 엔지니어들이 시행착오와 폭발, 재설계를 거듭하며 해결해야 했다. 1967년 11월 9일 처음 비행했으며 프로그램이 끝나기 전까지 Apollo를 달로 가는 길에 여섯 번 올려 보냈다."
- },
- {
-  "rel": "fleet/engine/h-1.json",
-  "at": "tagline",
-  "old": "8개 엔진, 8개 임무 — 새턴 I의 주력 엔진",
-  "new": "8기의 엔진, 8번의 임무 — Saturn I의 주력 엔진"
- },
- {
-  "rel": "fleet/engine/h-1.json",
-  "at": "description",
-  "old": "H-1은 Rocketdyne이 초기 탄도미사일 엔진과 그 뒤를 따를 F-1 사이의 간극을 메우기 위해 개발한 엔진이었습니다. LOX와 RP-1에서 가스 발생기 사이클을 작동시키면서, 8개의 H-1을 함께 묶으면 Saturn I의 첫 단계를 형성했으며, 나중에는 Saturn IB의 첫 단계도 형성했습니다. 이는 모든 무인 Apollo 하드웨어 시험과 승무원이 탑승한 Apollo 7을 날렸습니다. 첫 비행은 1961년 10월 27일이었으며, Saturn IB 프로그램이 1975년에 끝날 때까지 계속 운용되었습니다.",
-  "new": "H-1은 Rocketdyne이 초기 탄도미사일 엔진과 뒤이을 F-1 사이의 간극을 메우려고 만든 엔진이었습니다. LOX와 RP-1을 쓰는 가스 발생기 사이클로 작동하는 H-1 8기를 묶어 Saturn I의 1단을 이루었고, 나중에는 Saturn IB의 1단도 이루어, 무인 Apollo 하드웨어 시험 전체와 유인 Apollo 7을 쏘아 올렸습니다. 첫 비행은 1961년 10월 27일이었고, 1975년 Saturn IB 프로그램이 끝날 때까지 줄곧 운용되었습니다."
- },
- {
-  "rel": "fleet/engine/h-1.json",
-  "at": "best_known_for",
-  "old": "8개 클러스터 새턴 I/IB 부스터 엔진 — F-1의 전신",
-  "new": "8기 클러스터 Saturn I/IB 부스터 엔진 — F-1의 리허설"
- },
- {
-  "rel": "fleet/engine/hm7b.json",
-  "at": "tagline",
-  "old": "아리안의 극저온 상단 스테이지, 30년의 운영 기록",
-  "new": "Ariane의 극저온 상단 엔진, 30년의 운용 기록"
- },
- {
-  "rel": "fleet/engine/hm7b.json",
-  "at": "description",
-  "old": "HM7B는 코어 스테이지가 종료된 후 Ariane 로켓에 고에너지 추력을 제공한 수소 연료 상단부 엔진입니다. LOX와 LH2에서 가스 발생기 사이클을 구동하며, 1986년 5월 Ariane 2에서 처음 비행했고 2023년 7월 Ariane 5의 운용 종료까지 계속되었습니다. 작은 크기에도 불구하고 높은 비추력을 갖춘 이 엔진은 정지궤도 천이 주입의 핵심 엔진으로서 30년 이상 동안 Rosetta, Mars Express, Venus Express를 포함한 상업용 위성과 과학 탑재체를 우주선 이탈 궤도까지 운반했습니다.",
-  "new": "HM7B는 코어 단이 꺼진 뒤 Ariane 로켓에 고에너지 추진력을 더해 준 수소 연료 상단 엔진입니다. LOX와 LH2를 쓰는 가스 발생기 사이클로 구동되며, 1986년 5월 Ariane 2에서 처음 비행해 2023년 7월 Ariane 5의 운용이 끝날 때까지 이어졌습니다. 크기는 작지만 비추력이 높아 정지 천이 궤도 투입의 주력 엔진이 되었고, 30년 넘게 상업용 위성과 과학 탑재체 — Rosetta, Mars Express, Venus Express 포함 — 를 출발 궤도까지 실어 날랐습니다."
- },
- {
-  "rel": "fleet/engine/hm7b.json",
-  "at": "best_known_for",
-  "old": "유럽의 극저온 상단 스테이지 엔진 — 아리안의 달 너머 운송 주력기",
-  "new": "유럽의 극저온 상단 엔진 — Ariane의 달 전이 궤도 주력 엔진"
- },
- {
-  "rel": "fleet/engine/j-2.json",
-  "at": "description",
-  "old": "J-2는 수소와 산소를 연소했으며, 우주의 진공에서 재시동할 수 있었다. 이러한 능력 덕분에 Saturn V의 지구-달 이동 궤도 진입 연소가 가능했다. Rocketdyne의 가스 발생기 설계는 Saturn V의 2단계와 3단계, 그리고 Saturn IB에 탑재되어 뛰어난 성능과 우주에서의 재시동 능력을 결합하여 발사체를 진정한 출발 단계로 만들었다. 1966년 2월에 처음 비행했으며, 1975년 7월 Apollo-Soyuz Test Project에서 마지막으로 비행했다.",
-  "new": "J-2는 수소와 산소를 연소했으며, 우주의 진공에서 재시동할 수 있었다. 이러한 능력 덕분에 Saturn V의 달 전이 궤도 진입(TLI) 연소가 가능했다. Rocketdyne의 가스 발생기 설계는 Saturn V의 2단과 3단, 그리고 Saturn IB에 탑재되어 뛰어난 성능과 우주에서의 재시동 능력을 결합하여 발사체를 진정한 출발 단계로 만들었다. 1966년 2월에 처음 비행했으며, 1975년 7월 Apollo-Soyuz Test Project에서 마지막으로 비행했다."
- },
- {
-  "rel": "fleet/engine/le-5b.json",
-  "at": "description",
-  "old": "LE-5B는 일본 발사체의 두 세대를 잇는 극저온 상단 엔진입니다. LOX와 LH2를 사용하는 팽창-방출 사이클을 운영하며, 비행 중 재점화가 가능합니다. 이는 코스트 페이즈 후 위성을 정밀한 궤도에 배치하기 위한 필수 기능입니다. H-IIA에서 2001년 8월 처음 비행했으며, 이후 H3에서 계속 운용하기 위해 LE-5B-3로 성능이 향상되어 일본에 ISS 조립 시대부터 현재까지 끊김 없는 상단 엔진의 연속성을 제공했습니다. 재점화 가능성과 팽창-방출 사이클의 깔끔한 단순성의 조합으로 인해 이는 LE-7A와 LE-9 모두의 자연스러운 상단 엔진 보완재가 되었습니다.",
-  "new": "LE-5B는 일본 발사체 두 세대를 이어 온 극저온 상단 엔진입니다. LOX와 LH2를 쓰는 익스팬더 블리드 사이클로 작동하며, 비행 중 재점화가 가능합니다. 이는 관성 비행 구간을 거친 뒤 탑재체를 정밀한 궤도에 올려놓는 데 필수적인 기능입니다. 2001년 8월 H-IIA에서 처음 비행했고, 이후 LE-5B-3으로 성능을 높여 H3에서도 계속 쓰이며, 일본에 ISS 조립 시대부터 지금까지 끊김 없는 상단 엔진의 연속성을 제공했습니다. 재점화 능력과 익스팬더 블리드 사이클의 깔끔한 단순함 덕분에 LE-7A와 LE-9 양쪽 모두에 어울리는 상단 엔진이 되었습니다."
- },
- {
-  "rel": "fleet/engine/le-7a.json",
-  "at": "description",
-  "old": "LE-7A는 일본에 완전히 독립적인 중형 발사 능력을 부여한 엔진이다. Mitsubishi Heavy Industries에서 JAXA를 위해 개발한 이 엔진은 LOX와 LH2에 대한 단계 연소 사이클을 실행한다. 수소 추진제에서 최대 효율을 끌어내는 열역학적 방식이며, 2001년 8월 원래의 LE-7에서 개선된 후속 엔진으로 H-IIA에 처음 비행했다. 개설계는 초기 H-II 실패를 초래했던 터보펌프 문제를 해결했으며, LE-7A는 2024년까지 H-IIA와 H-IIB의 운용 경력을 주도했다. 일본의 HTV 화물선을 국제우주정거장으로 발사했으며, JAXA-ISRO 레이다 위성 ALOS 계열을 발사했다.",
-  "new": "LE-7A는 일본에 완전한 자국산 대형 발사 능력을 안겨 준 엔진이다. Mitsubishi Heavy Industries가 JAXA를 위해 개발했으며, LOX와 LH2를 쓰는 단계 연소 사이클로 작동한다 — 수소 추진제에서 최대 효율을 끌어내는 열역학적 방식이다. 원래의 LE-7을 다듬은 후속 엔진으로 2001년 8월 H-IIA에서 처음 비행했다. 재설계로 초기 H-II 실패의 원인이었던 터보펌프 문제가 해결되었고, LE-7A는 2024년까지 H-IIA와 H-IIB의 운용 이력을 떠받치며 일본의 HTV 화물선을 국제우주정거장으로, JAXA-ISRO 레이더 위성 ALOS 계열을 궤도로 쏘아 올렸다."
- },
- {
-  "rel": "fleet/engine/le-9.json",
-  "at": "description",
-  "old": "LE-9는 복잡함보다 우아함을 선택한 결과물이다. 단계 연소식의 터보펌프-전연소실 구조 대신, 익스팬더 블리드 사이클을 사용한다: 수소가 챔버와 노즐 벽에서 가열되고, 그 가스의 일부가 터보펌프를 구동한 후 외부로 배출되기 전에 분출된다. 이 사이클은 본질적으로 더 낮은 챔버 압력과 더 단순한 고온부 설계를 가지고 있으며, 초기 일본 엔진들을 괴롭혔던 기계적 고장 모드를 줄이기 위해 일부 성능을 맞바꾼다. Mitsubishi가 JAXA의 H3 로켓을 위해 개발했으며, LE-9는 2023년 3월에 처음 비행했고 실제 운용에 도달한 이 유형의 가장 큰 엔진이다.",
-  "new": "LE-9는 복잡함보다 우아함을 선택한 결과물이다. 단계 연소식의 터보펌프-전연소실 구조 대신, 익스팬더 블리드 사이클을 사용한다: 수소가 챔버와 노즐 벽에서 가열되고, 그 가스의 일부가 빼내어져 터보펌프를 구동한 뒤 선외로 배출된다. 이 사이클은 본질적으로 더 낮은 챔버 압력과 더 단순한 고온부 설계를 가지고 있으며, 초기 일본 엔진들을 괴롭혔던 기계적 고장 모드를 줄이기 위해 일부 성능을 맞바꾼다. Mitsubishi가 JAXA의 H3 로켓을 위해 개발했으며, LE-9는 2023년 3월에 처음 비행했고 실제 운용에 도달한 이 유형의 가장 큰 엔진이다."
- },
- {
-  "rel": "fleet/engine/lr87.json",
-  "at": "tagline",
-  "old": "쌍실 쌍추진 액체엔진이 모든 Gemini 유인 미션을 비행했다",
-  "new": "쌍연소실 자발 점화 1단 엔진, 모든 Gemini 승무원을 쏘아 올림"
- },
- {
-  "rel": "fleet/engine/lr87.json",
-  "at": "description",
-  "old": "LR87은 Titan II에 탑재되어 10개의 Gemini 유인 미션을 모두 발사한 엔진입니다. Aerojet의 설계는 단일 터보펌프 어셈블리에 두 개의 연소실을 배치하며, Aerozine-50과 질소 사산화물을 기체-발생기 사이클로 연소시킵니다 — 당시 미국 ICBM의 표준 장비였던 자발점화 조합입니다. 추진제 선택은 승무원 안전에 직접적인 영향을 미쳤습니다: RP-1이나 수소와 달리, Aerozine-50과 N₂O₄는 접촉 시 점화되어 10개의 유인 미션 모두에서 발사 탈출 타워 대신 사출석을 장착한 Gemini의 비행을 가능하게 한 자발점화 신뢰성을 제공했습니다. LR87은 나중에 2005년 10월까지 Titan III 및 Titan IV 상용 및 군사 미션에서 비행한 더 큰 변형으로 발전되었습니다.",
-  "new": "LR87은 Titan II에 실려 유인 Gemini 임무 10회를 모두 발사한 엔진입니다. Aerojet의 설계는 하나의 터보펌프 어셈블리에 연소실 두 개를 두고, Aerozine-50과 사산화이질소를 가스 발생기 사이클로 연소시킵니다 — 당시 미국 ICBM의 표준 장비였던 자발 점화(하이퍼골릭) 조합입니다. 추진제 선택은 승무원 안전에 직접 영향을 미쳤습니다: RP-1이나 수소와 달리 Aerozine-50과 N₂O₄는 접촉하면 바로 점화되어 자발 점화의 신뢰성을 제공했고, 덕분에 Gemini는 유인 임무 10회 모두에서 발사 탈출 타워 대신 사출석을 장착하고 비행할 수 있었습니다. LR87은 이후 더 큰 변형으로 발전해 2005년 10월까지 Titan III와 Titan IV의 상업 및 군사 임무에 쓰였습니다."
- },
- {
-  "rel": "fleet/engine/lr87.json",
-  "at": "best_known_for",
-  "old": "Titan II에서 Gemini 승무원을 발사한 쌍실 1단계 엔진",
-  "new": "Titan II에서 Gemini 승무원을 쏘아 올린 쌍연소실 1단 엔진"
- },
- {
-  "rel": "fleet/engine/merlin-1d.json",
-  "at": "tagline",
-  "old": "9개의 엔진, 1개의 부스터, 수십 번 비행 및 재비행됨",
-  "new": "엔진 9기, 부스터 1기, 수십 번 비행하고 다시 비행"
- },
- {
-  "rel": "fleet/engine/merlin-1d.json",
-  "at": "description",
-  "old": "SpaceX의 Merlin 1D는 재사용 가능한 Falcon 9를 가능하게 한 엔진입니다. 9개의 엔진이 Falcon 9의 1단에 클러스터를 이루며 LOX와 RP-1로 가스 발생기 사이클을 운영하며, 중앙 엔진은 진입 및 착륙 번(burn)에도 사용됩니다. 2013년 9월에 처음 비행한 Merlin 1D는 고속 작동이 가능한 주력 엔진으로 성숙했습니다: 개별 엔진들은 각각 20회 이상의 비행을 누적했으며, 이러한 재사용 기록은 업계가 경제적으로 달성 가능하다고 믿었던 것을 바꾸었습니다. 진공 변형인 Merlin 1D Vacuum은 근진공 환경에 최적화된 더 큰 노즐로 Falcon 9의 상단부를 구동합니다.",
-  "new": "SpaceX의 Merlin 1D는 재사용 가능한 Falcon 9를 가능하게 한 엔진입니다. 9개의 엔진이 Falcon 9의 1단에 모여 있으며 LOX와 RP-1로 가스 발생기 사이클을 운용하고, 중앙 엔진은 재진입 및 착륙 연소에도 쓰입니다. 2013년 9월에 처음 비행한 Merlin 1D는 높은 운용 빈도의 주력 엔진으로 자리 잡았습니다: 개별 엔진이 각각 20회가 넘는 비행을 누적했는데, 이 재사용 기록은 업계가 경제적으로 달성 가능하다고 믿던 수준을 바꿔 놓았습니다. 진공 변형인 Merlin 1D Vacuum은 거의 진공인 환경에 맞춰 최적화된 더 큰 노즐로 Falcon 9의 상단을 구동합니다."
- },
- {
-  "rel": "fleet/engine/merlin-1d.json",
-  "at": "best_known_for",
-  "old": "재사용 가능한 주력 엔진 — 9개가 Falcon 9를 추력을 제공하며, 수십 번 비행 및 재비행됨",
-  "new": "재사용 주력 엔진 — 9기가 Falcon 9를 띄우며, 수십 번 비행하고 다시 비행"
- },
- {
-  "rel": "fleet/engine/raptor.json",
-  "at": "tagline",
-  "old": "전체 흐름 단계 연소 — 가장 어려운 사이클, 드디어 비행 중",
-  "new": "전유량 단계 연소 — 가장 어려운 사이클, 마침내 비행 중"
- },
- {
-  "rel": "fleet/engine/raptor.json",
-  "at": "description",
-  "old": "Raptor는 운영 비행에 도달한 최초의 전체 흐름 단계 연소 엔진입니다. 이 열역학 사이클에서 두 추진제(LOX와 액체 메탄)는 주 연소실에 진입하기 전에 예연소실을 통과하여 최대 에너지를 추출하고 거의 모든 미연소 추진제를 남기지 않습니다. 엔지니어들은 수십 년 동안 이 개념을 연구했고 엄청나게 복잡하다고 결론지었습니다. SpaceX는 어쨌든 이를 만들었습니다. 33개의 Raptor가 Super Heavy의 1단에서 동시에 점화되며, 진공 최적화 변형 엔진이 Starship의 상단을 추진합니다. Raptor를 탑재한 최초의 통합 Starship 비행은 2023년 4월 20일에 발사되었습니다.",
-  "new": "Raptor는 실제 운용 비행에 도달한 최초의 전유량 단계 연소 엔진입니다. 이 열역학 사이클에서는 두 추진제 — LOX와 액체 메탄 — 가 모두 주 연소실에 들어가기 전에 예연소기를 거치며, 최대한의 에너지를 뽑아내고 미연소 추진제가 사실상 남지 않습니다. 엔지니어들은 수십 년 동안 이 개념을 연구했고 엄두를 못 낼 만큼 복잡하다고 결론지었지만, SpaceX는 기어이 만들어 냈습니다. Super Heavy의 1단에서는 Raptor 33기가 동시에 점화되고, 진공에 최적화한 변형이 Starship의 상단을 추진합니다. Raptor를 단 최초의 통합 Starship 비행은 2023년 4월 20일에 이륙했습니다."
- },
- {
-  "rel": "fleet/engine/raptor.json",
-  "at": "best_known_for",
-  "old": "전체 흐름 단계 연소 엔진 최초 비행 — 33개가 Super Heavy를 이륙시킴",
-  "new": "전유량 단계 연소 엔진으로는 최초로 비행 — 33기가 Super Heavy를 띄움"
- },
- {
-  "rel": "fleet/engine/rd-107-108.json",
-  "at": "tagline",
-  "old": "스푸트니크의 엔진 — 여전히 65년 후 인간을 실어 나르다",
-  "new": "Sputnik의 엔진 — 65년이 지난 지금도 사람을 실어 나르다"
- },
- {
-  "rel": "fleet/engine/rd-107-108.json",
-  "at": "description",
-  "old": "RD-107과 RD-108은 세계 최초의 대륙간탄도미사일인 R-7의 엔진으로, 세르게이 코롤료프의 팀이 발사체로 개조했습니다. RD-107은 R-7의 4개 부스터 로켓을 추진하고, RD-108은 중심 부분을 구동합니다. 둘 다 LOX와 케로신으로 가스 생성 사이클을 운영하며, 둘 다 1957년 8월 21일에 처음 비행했습니다 — Sputnik보다 몇 개월 앞서. RD-107A와 RD-108A로 업그레이드되어 국제우주정거장으로 승무원을 수송하는 Soyuz 로켓을 계속 추진하고 있으며, 이는 역사상 가장 오래 운용되는 인간용 추진 시스템입니다.",
-  "new": "RD-107과 RD-108은 세계 최초의 대륙간탄도미사일인 R-7의 엔진으로, 세르게이 코롤료프의 팀이 이 미사일을 발사체로 개조했습니다. RD-107은 R-7의 측면 부스터 4기를 추진하고, RD-108은 중앙 코어를 구동합니다. 둘 다 LOX와 케로신을 쓰는 가스 발생기 사이클로 작동하며, 둘 다 1957년 8월 21일 — Sputnik보다 몇 달 앞서 — 처음 비행했습니다. RD-107A와 RD-108A로 개량되어 국제우주정거장으로 승무원을 실어 나르는 Soyuz 로켓을 지금도 추진하고 있으며, 역사상 가장 오래 운용되고 있는 유인 등급 추진 시스템입니다."
- },
- {
-  "rel": "fleet/engine/rd-107-108.json",
-  "at": "best_known_for",
-  "old": "R-7 엔진 — 65년 이상 Soyuz에서 여전히 인간을 실어 나르다",
-  "new": "R-7 엔진 — 65년 넘게 지금도 Soyuz에서 사람을 실어 나르다"
- },
- {
-  "rel": "fleet/engine/rd-180.json",
-  "at": "description",
-  "old": "RD-180은 냉전 시기 미국이 사실상 소련에 양보했던 추진 기술의 한 갈래를 대표한다. 산소 과잉 단계 연소 방식 — 예연소실에서 과잉의 산화제를 연소시켜 터보펌프를 구동하는 방식 — 은 미국 산업계가 마스터하지 못했던 재료와 제조 공차 기준을 요구한다. NPO Energomash의 2실 단일 터보펌프 설계는 2000년 5월부터 Atlas V에 탑재되어 비행했으며, 그 시대의 미국산 케로신-액체산소 엔진 어떤 것도 따라잡을 수 없는 수준의 추력과 효율성을 1단계에 제공했다. 2023년 Atlas V의 퇴역과 함께 역사의 뒤안길로 사라졌다.",
-  "new": "RD-180은 냉전 시기 미국이 사실상 소련에 넘겨준 추진 기술의 한 갈래를 보여 준다. 산소 과잉 단계 연소 — 예연소실에서 과잉의 산화제를 태워 터보펌프를 구동하는 방식 — 은 미국 산업계가 숙달하지 못한 재료와 제조 공차를 요구한다. NPO Energomash의 연소실 2개, 터보펌프 1개 설계는 2000년 5월부터 Atlas V에 실려 비행했으며, 당시 미국산 케로신-액체산소 엔진으로는 어느 것도 따라올 수 없는 추력과 효율의 조합을 1단에 제공했다. 2023년 Atlas V와 함께 퇴역했다."
- },
- {
-  "rel": "fleet/engine/rd-253.json",
-  "at": "tagline",
-  "old": "Proton 모든 발사마다 제작되는 6개의 쌍추진 엔진",
-  "new": "Proton 발사 때마다 쓰인 자발 점화 엔진 6기"
- },
- {
-  "rel": "fleet/engine/rd-253.json",
-  "at": "description",
-  "old": "RD-253은 Proton을 소비에트 시대 가장 강력한 중형 발사체 중 하나로 만든 엔진이다. Proton의 1단에 6개가 장착되며, 각 엔진은 사산화질소와 비대칭 디메틸히드라진의 쌍추진제를 사용한 산소 과잉 단계연소 방식으로 작동한다 — 접촉 시 자동점화되며 점화 장치가 필요 없는 쌍추진제 쌍이다. 추진제는 독성과 부식성이 있지만 상온에서 저장되며 Proton이 수십 년에 걸친 상업 및 행성 탐사 임무 전반에서 유지한 신뢰성을 제공한다. RD-253은 1965년 7월 16일 처음 비행했으며 Proton의 퇴역까지 모든 Proton 1단에 동력을 공급했다.",
-  "new": "RD-253은 Proton을 소련 시대에서 손꼽히는 대형 발사체로 만든 엔진이다. Proton의 1단을 6기가 둘러싸고 있으며, 각 엔진은 사산화이질소와 비대칭 디메틸히드라진으로 산소 과잉 단계 연소를 한다 — 접촉하면 저절로 점화되어 점화 장치가 필요 없는 자발 점화(하이퍼골릭) 조합이다. 이 추진제는 독성과 부식성이 있지만 상온에서 보관할 수 있고, Proton이 수십 년에 걸친 상업 및 행성 탐사 임무에서 이어 간 신뢰성을 뒷받침했다. RD-253은 1965년 7월 16일 처음 비행했으며 퇴역할 때까지 모든 Proton 1단을 구동했다."
- },
- {
-  "rel": "fleet/engine/rd-253.json",
-  "at": "best_known_for",
-  "old": "Proton의 쌍추진 주력 엔진 — 매 Proton 1단마다 6개 탑재",
-  "new": "Proton의 자발 점화 주력 엔진 — 6기가 모든 Proton 1단을 밀어 올림"
- },
- {
-  "rel": "fleet/engine/rl10.json",
-  "at": "tagline",
-  "old": "수소 상단 단계, 60년을 넘어 계속 운영 중",
-  "new": "수소 상단 엔진, 60년을 넘어 현재진행형"
- },
- {
-  "rel": "fleet/engine/rl10.json",
-  "at": "description",
-  "old": "RL10은 우주 비행에 확장기 사이클을 도입했습니다. 추진제가 노즐과 연소실 벽을 통과하면서 열을 흡수하고 연소실에 도달하기 전에 터보펌프를 구동합니다 — 별도의 가스 발생기가 필요하지 않습니다. 1963년 11월 Centaur 상단 단계에서 처음 비행한 RL10은 이후 Atlas, Delta, Vulcan 임무의 상단 단계에 전력을 공급해 왔습니다. 그 수명은 기록적입니다. 다른 로켓 엔진 계열 중 이렇게 오랫동안 연속 생산 및 비행 상태를 유지하면서 핵심 열역학적 개념은 유지한 채 블록 업그레이드를 통해 진화해온 것이 없습니다.",
-  "new": "RL10은 우주 비행에 익스팬더 사이클을 도입했습니다. 추진제가 노즐과 연소실 벽을 흐르며 열을 흡수하고, 연소실에 닿기 전에 터보펌프를 구동합니다 — 별도의 가스 발생기가 필요 없습니다. 1963년 11월 Centaur 상단에서 처음 비행한 RL10 계열은 이후 Atlas, Delta, Vulcan 임무의 상단을 추진해 왔습니다. 그 수명 자체가 기록입니다. 다른 어떤 로켓 엔진 계열도 이만큼 오래 연속 생산과 비행을 이어 오지 못했고, 핵심 열역학 개념은 그대로 둔 채 블록 개량을 거치며 진화해 왔습니다."
- },
- {
-  "rel": "fleet/engine/rl10.json",
-  "at": "best_known_for",
-  "old": "우주 비행에서 가장 오래 운영된 엔진 — 최초의 수소 상단 단계",
-  "new": "우주 비행에서 가장 오래 운용된 엔진 — 최초의 수소 상단 엔진"
- },
- {
-  "rel": "fleet/engine/rocketdyne-a7.json",
-  "at": "description",
-  "old": "1961년 5월 5일, 앨런 셰퍼드는 Mercury-Redstone 로켓을 타고 187킬로미터 고도까지 올라갔다가 돌아왔습니다. 그는 우주에 간 첫 번째 미국인이 되었고, 그를 하늘로 올려보낸 엔진이 바로 Rocketdyne A-7이었습니다. Redstone 탄도미사일을 추진했던 A-6에서 파생된 A-7은 LOX와 에틸 알코올을 연료로 하는 가스발생기 사이클로 작동했습니다. 이는 Redstone을 거쳐 독일의 V-2로까지 거슬러 올라가는 같은 추진제 조합이었습니다. 셰퍼드의 Freedom 7 비행은 15분간 지속되었고 우주경쟁의 정치적 역학관계를 바꾸어 놓았습니다. A-7은 Mercury-Redstone 미션에서만 비행했으며, 1963년 5월에 은퇴했습니다.",
-  "new": "1961년 5월 5일, 앨런 셰퍼드는 Mercury-Redstone 로켓을 타고 187킬로미터 고도까지 올라갔다가 돌아왔습니다. 그는 우주에 간 첫 번째 미국인이 되었고, 그를 하늘로 올려보낸 엔진이 바로 Rocketdyne A-7이었습니다. Redstone 탄도미사일을 추진했던 A-6에서 파생된 A-7은 LOX와 에틸 알코올을 연료로 하는 가스 발생기 사이클로 작동했습니다. 이는 Redstone을 거쳐 독일의 V-2로까지 거슬러 올라가는 같은 추진제 조합이었습니다. 셰퍼드의 Freedom 7 비행은 15분간 지속되었고 우주경쟁의 정치적 역학관계를 바꾸어 놓았습니다. A-7은 Mercury-Redstone 임무에만 쓰였고, 1963년 5월에 퇴역했습니다."
- },
- {
-  "rel": "fleet/engine/rs-25.json",
-  "at": "description",
-  "old": "RS-25는 Space Shuttle Main Engine 프로그램이 10년에 걸쳐 완성한 엔진입니다. LOX와 LH2를 사용하는 단계 연소 사이클로 스로틀 조절, 재시동, 다음 비행을 위한 정비가 가능했습니다. 1981년 4월부터 135개 이상의 Shuttle 미션에서 거의 완벽한 운용 기록을 쌓았습니다. 엔진들은 회수되어 검사되고 재비행되었는데 — 이는 이 전력 수준에서 이전 로켓 엔진이 달성한 적 없는 성과입니다. Shuttle이 퇴역한 후 재고는 재인증되어 NASA의 Space Launch System을 위해 용도가 변경되었으며, 현재 RS-25는 SLS의 코어 스테이지에 동력을 제공합니다.",
-  "new": "RS-25는 Space Shuttle Main Engine 프로그램이 10년에 걸쳐 완성한 엔진입니다. LOX와 LH2를 쓰는 단계 연소 사이클로, 추력 조절과 재시동이 가능하고 다음 비행을 위해 정비해 다시 쓸 수 있었습니다. 1981년 4월부터 135회가 넘는 Shuttle 임무에서 거의 완벽한 운용 기록을 쌓았습니다. 엔진은 회수·점검되어 다시 비행했는데 — 이 정도 출력 수준에서는 이전의 어떤 로켓 엔진도 이루지 못한 일입니다. Shuttle이 퇴역한 뒤 남은 엔진은 재인증을 거쳐 NASA의 Space Launch System용으로 전용되었고, 지금은 RS-25가 SLS의 코어 단을 추진합니다."
- },
- {
-  "rel": "fleet/engine/rs-25.json",
-  "at": "best_known_for",
-  "old": "재사용 가능한 단계 연소 엔진 — 135개 Shuttle 비행, 현재 SLS에서 비행",
-  "new": "재사용 가능한 단계 연소 엔진 — Shuttle 135회 비행, 현재 SLS에서 비행"
- },
- {
-  "rel": "fleet/engine/vikas.json",
-  "at": "tagline",
-  "old": "인도의 라이선스 Viking — 30년간 PSLV와 GSLV를 견인하다",
-  "new": "인도가 면허 생산한 Viking — 30년간 PSLV와 GSLV를 추진"
- }
+  {
+    "rel": "fleet/cargo-spacecraft/atv.json",
+    "at": "tagline",
+    "old": "ESA의 기함급 ISS 화물 운반선; 5번의 비행",
+    "new": "ESA의 주력 ISS 화물 운반선; 비행 5회"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/atv.json",
+    "at": "dispatch",
+    "old": "Automated Transfer Vehicle는 유럽의 ISS 화물 운반선이자 당대 가장 정교한 화물 우주선이었다 — 20톤급 우주선으로 자동 조종 기능으로 우주정거장과 완전 자동 도킹하여 화물, 물, 공기, 추진제를 전달했으며 자체 엔진으로 전체 ISS를 궤도에서 부스팅했다. 2008년부터 2015년 사이에 5대가 비행했으며, 각각 쥘 베른에서 조르주 르메트르까지 유럽의 사상가들의 이름을 따서 명명되었다. 단순한 보급 우주선을 넘어, ATV는 유럽이 완전한 ISS 파트너로서의 위치를 확보하는 방법이었으며 — 이것이 입증한 기술은 현재 NASA의 Orion이 달로 향하는 길에 동력을 제공하는 유럽 서비스 모듈로 살아있다.",
+    "new": "Automated Transfer Vehicle은 유럽의 ISS 화물선이자 당대에 가장 정교했던 화물 우주선이었다 — 스스로 항법을 수행해 우주정거장과 완전 자동으로 도킹하는 20톤급 우주선으로, 화물과 물, 공기, 추진제를 전달했고 자체 엔진으로 ISS 전체의 궤도를 끌어올렸다. 2008년부터 2015년까지 5기가 비행했으며, 각각 쥘 베른에서 조르주 르메트르에 이르는 유럽 사상가의 이름을 땄다. 단순한 보급선을 넘어, ATV는 유럽이 ISS의 온전한 파트너 자리를 얻은 방법이었다. 이 우주선이 입증한 기술은 지금 NASA의 Orion을 달로 보내는 동력이 되는 유럽 서비스 모듈로 이어지고 있다."
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/atv.json",
+    "at": "description",
+    "old": "Automated Transfer Vehicle(ATV)는 Astrium / Airbus가 유럽에서 건조한 로봇식 화물 우주선이다. ESA의 기함급 ISS 화물 운반선으로 2008년부터 2015년까지 ISS로 5번의 임무를 비행하였으며, 화물, 물, 공기, 추진제를 전달하면서 자체 엔진으로 우주정거장을 부스팅했다.",
+    "new": "Automated Transfer Vehicle(ATV)는 Astrium / Airbus가 유럽에서 제작한 무인 화물 우주선이다. ESA의 주력 ISS 화물 운반선으로 2008년부터 2015년까지 ISS로 다섯 차례 임무를 수행했으며, 화물, 물, 공기, 추진제를 전달하는 한편 자체 엔진으로 우주정거장의 궤도를 끌어올렸다."
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/atv.json",
+    "at": "best_known_for",
+    "old": "ESA의 기함급 ISS 화물 운반선; 5번의 비행",
+    "new": "ESA의 주력 ISS 화물 운반선; 비행 5회"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/cargo-dragon-2.json",
+    "at": "description",
+    "old": "Crew Dragon의 승무원 변형은 트렁크에 동일한 본체 장착 태양 전지와 함께. Cygnus (round arrays) 및 Soyuz / Progress (rectangular wings)에서 눈에 띄는 Differs. downmass와 intact 반환 — ISS 화물 캐리어의 독특한.",
+    "new": "Crew Dragon의 무인 화물 버전으로, 트렁크에 같은 방식의 동체 부착형 태양전지가 달려 있다. 둥근 날개의 Cygnus, 직사각형 날개의 Soyuz / Progress와 외관상 뚜렷하게 구별된다. 기체가 온전히 지구로 귀환하며 귀환 화물을 실어 나른다 — ISS 화물선 중 유일하다."
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/cygnus-enhanced.json",
+    "at": "tagline",
+    "old": "Stretched Cygnus; UltraFlex 둥근 배열",
+    "new": "동체를 늘린 Cygnus; 둥근 UltraFlex 전지판"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/cygnus-enhanced.json",
+    "at": "description",
+    "old": "Northrop Grumman의 pressurised-cargo 캐리어, 그것의 둥근 UltraFlex 태양 배열에 의해 인식 - 다른 ISS 방문자와 공유 팬 폴드 협정 패턴. reentry에 점화; downmass 없음.",
+    "new": "Northrop Grumman의 가압 화물선으로, 둥근 UltraFlex 태양전지판으로 알아볼 수 있다 — 부채처럼 접히는 아코디언 형태는 다른 어떤 ISS 방문 우주선에도 없다. 재진입 때 대기권에서 불타 소멸하며, 지구로 가져오는 화물은 없다."
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/cygnus-enhanced.json",
+    "at": "best_known_for",
+    "old": "Stretched Cygnus; UltraFlex 둥근 배열",
+    "new": "동체를 늘린 Cygnus; 둥근 UltraFlex 전지판"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/cygnus-standard.json",
+    "at": "description",
+    "old": "Cygnus Standard는 미국 Orbital ATK에 의해 지어진 로봇화물 우주선입니다. Pressurised-only ISS 화물 캐리어. 2013 년 첫 비행 후 은퇴.",
+    "new": "Cygnus Standard는 미국 Orbital ATK가 제작한 무인 화물 우주선입니다. 가압 화물만 운반하는 ISS 화물선이며, 2013년 첫 비행 후 퇴역했습니다."
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/htv.json",
+    "at": "tagline",
+    "old": "일본의 H-II Transfer Vehicle ISS로",
+    "new": "ISS로 향하는 일본의 H-II Transfer Vehicle"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/htv.json",
+    "at": "description",
+    "old": "HTV (Kounotori)는 일본 Mitsubishi Heavy Industries가 제작한 로봇식 화물 우주선입니다. 일본의 H-II Transfer Vehicle은 2009년부터 2020년까지 ISS로 9차례 임무를 수행했으며, HTV-9(마지막 비행)는 2020년 5월에 귀환했습니다.",
+    "new": "HTV (Kounotori)는 일본 Mitsubishi Heavy Industries가 제작한 로봇식 화물 우주선입니다. 일본의 H-II Transfer Vehicle은 2009년부터 2020년까지 ISS로 9차례 임무를 수행했으며, HTV-9(마지막 비행)는 2020년 5월에 ISS를 떠났습니다."
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/htv.json",
+    "at": "best_known_for",
+    "old": "일본의 H-II Transfer Vehicle ISS",
+    "new": "ISS로 향하는 일본의 H-II Transfer Vehicle"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/progress-m.json",
+    "at": "description",
+    "old": "Progress M은 러시아의 RKK Energia에서 제조한 로봇 화물 우주선입니다. 현대화된 Progress-M은 1989년부터 2021년까지 97개의 미션에 걸쳐 Mir과 ISS에 서비스를 제공했으며, 이후 Progress-MS에 의해 대체되었습니다.",
+    "new": "Progress M은 러시아의 RKK Energia에서 제조한 로봇 화물 우주선입니다. 현대화된 Progress-M은 1989년부터 2021년까지 97회의 임무로 Mir과 ISS에 물자를 보급했으며, 이후 Progress-MS로 대체되었습니다."
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/progress-ms.json",
+    "at": "tagline",
+    "old": "현재 Progress 세대; ISS resupply",
+    "new": "현행 Progress 세대; ISS 보급"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/progress-ms.json",
+    "at": "description",
+    "old": "Progress MS는 러시아 RKK Energia에 의해 지어진 로봇화물 우주선입니다. 현재 진행 세대; ISS resupply. 2015년부터 서비스.",
+    "new": "Progress MS는 러시아 RKK Energia가 제작한 로봇 화물 우주선입니다. 현행 Progress 세대로 ISS 보급을 맡고 있으며, 2015년부터 운용 중입니다."
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/progress-ms.json",
+    "at": "best_known_for",
+    "old": "현재 Progress 세대; ISS resupply",
+    "new": "현행 Progress 세대; ISS 보급"
+  },
+  {
+    "rel": "fleet/cargo-spacecraft/tianzhou.json",
+    "at": "description",
+    "old": "Tiangong 우주정거장용 중국 화물 우주선으로, Tiangong-1과 우주선 버스 설계 유산을 공유합니다. Tiangong의 추진제 탱크에 연료를 공급하고 실험 랙을 운반하며, 2017년 첫 비행을 했습니다.",
+    "new": "Tiangong 우주정거장용 중국 화물 우주선으로, Tiangong-1과 우주선 버스 구조를 공유합니다. Tiangong의 추진제 탱크에 연료를 공급하고 실험 랙을 운반하며, 2017년 첫 비행을 했습니다."
+  },
+  {
+    "rel": "fleet/constellation/galileo-gnss.json",
+    "at": "description",
+    "old": "유럽의 민간용 GNSS — 34개 위성이 발사되었음(4개 IOV + 30개 FOC); 2026년 5월 현재 27개 운용 중 + 1개 조정 중; 56° 기울기의 3개 궤도면에서 23,222 km MEO에 30개 위성 배치를 목표. 첫 운용 서비스 2016년; 완전 운용 능력 선언은 ESA/EUSPA 공식 발표 대기 중. GPS(군사 운영) 및 GLONASS(군사 운영)와 달리 Galileo는 EU 민간기관인 EUSPA가 관리. 개방형 + 상용 + 공공 규제 서비스 계층을 통해 1미터 이하 정위치 결정으로 설계. 긴급신호 탐지를 위한 수색 및 구조 탑재체 통합.",
+    "new": "유럽의 민간용 GNSS — 34개 위성이 발사되었음(4개 IOV + 30개 FOC); 2026년 5월 현재 27개 운용 중 + 1개 시운전 중; 56° 기울기의 3개 궤도면에서 23,222 km MEO에 30개 위성 배치를 목표. 첫 운용 서비스 2016년; 완전 운용 능력 선언은 ESA/EUSPA 공식 발표 대기 중. GPS(군사 운영) 및 GLONASS(군사 운영)와 달리 Galileo는 EU 민간기관인 EUSPA가 관리. 개방형 + 상용 + 공공 규제 서비스 계층을 통해 1미터 이하 정위치 결정으로 설계. 긴급신호 탐지를 위한 수색 및 구조 탑재체 통합."
+  },
+  {
+    "rel": "fleet/constellation/glonass.json",
+    "at": "description",
+    "old": "러시아의 GNSS — 19,130 km 고궤도(MEO)에서 64.8° 경사각으로 3개 평면에 배치된 24개의 활성 위성(높은 경사각은 GPS 대비 고위도 지역의 커버리지를 개선하기 위해 의도적으로 설계됨). 1982년 처음 발사되었고, 1995년에 전체 별자리 구성을 달성했으나 소련 자금이 중단되면서 1990년대 후반과 2000년대 초반에 붕괴됨. 자금이 다시 확보되면서 약 2010~2011년경에 24개 위성의 완전한 운영 상태로 복구됨. 2026년에도 계속 운영 중. Roscosmos가 러시아 국방부와 협력하여 운영하고 있음.",
+    "new": "러시아의 GNSS — 19,130 km 중궤도(MEO)에서 64.8° 경사각으로 3개 평면에 배치된 24개의 활성 위성(높은 경사각은 GPS 대비 고위도 지역의 커버리지를 개선하기 위해 의도적으로 설계됨). 1982년 처음 발사되었고, 1995년에 전체 위성군 구성을 달성했으나 소련 자금이 중단되면서 1990년대 후반과 2000년대 초반에 붕괴됨. 자금이 다시 확보되면서 약 2010~2011년경에 24개 위성의 완전한 운영 상태로 복구됨. 2026년에도 계속 운영 중. Roscosmos가 러시아 국방부와 협력하여 운영하고 있음."
+  },
+  {
+    "rel": "fleet/constellation/goes-noaa.json",
+    "at": "tagline",
+    "old": "NOAA 정지궤도 기상 쌍둥이 — 아메리카 대륙 연속 커버리지",
+    "new": "NOAA 정지궤도 기상위성 2기 — 아메리카 대륙 연속 관측"
+  },
+  {
+    "rel": "fleet/constellation/goes-noaa.json",
+    "at": "description",
+    "old": "Geostationary Operational Environmental Satellite — NOAA의 정지궤도 기상 쌍둥이. GOES-19 (GOES-East at 75.2° W)와 GOES-18 (GOES-West at 137.0° W)은 2025년 4월 기준 운영 중인 쌍둥이로서, 아메리카 대륙의 연속 커버리지를 제공한다. GOES-16은 백업으로 보관 중이며, GOES-17은 2023년 1월에 운영 중단되었다. GOES-R 시리즈는 허리케인 중심부와 심각한 폭풍 추적을 위한 30초 중규모 스캔이 가능한 Advanced Baseline Imager를 탑재하고 있다. Lockheed Martin에서 제조했으며, 데이터 제품은 무료로 제공된다.",
+    "new": "Geostationary Operational Environmental Satellite — NOAA의 정지궤도 기상위성 한 쌍. GOES-19(GOES-East, 75.2° W)와 GOES-18(GOES-West, 137.0° W)이 2025년 4월 기준 운용 중인 한 쌍으로, 아메리카 대륙 전역을 끊김 없이 관측한다. GOES-16은 예비로 보관 중이며, GOES-17은 2023년 1월에 운용을 종료했다. GOES-R 시리즈는 허리케인 중심부와 심한 폭풍의 추적을 위해 30초 간격 중규모 스캔이 가능한 Advanced Baseline Imager를 탑재한다. Lockheed Martin이 제작했으며, 데이터 제품은 무료로 제공된다."
+  },
+  {
+    "rel": "fleet/constellation/gps-gnss.json",
+    "at": "tagline",
+    "old": "원래의 GNSS — 31개 위성, 2000년부터 무료 공중 서비스",
+    "new": "원래의 GNSS — 31개 위성, 2000년부터 무료 공공 서비스"
+  },
+  {
+    "rel": "fleet/constellation/gps-gnss.json",
+    "at": "best_known_for",
+    "old": "원래의 GNSS — 31개 위성, 2000년부터 무료 공중 서비스",
+    "new": "원래의 GNSS — 31개 위성, 2000년부터 무료 공공 서비스"
+  },
+  {
+    "rel": "fleet/constellation/inmarsat.json",
+    "at": "description",
+    "old": "정지궤도 이동위성통신 — GEO에 14개 이상의 위성을 운용하며 해양, 항공 및 원격 지역 음성·데이터 서비스를 제공한다. 1979년 선박 대 육상 통신(GMDSS의 전신)을 위한 정부간 조약 기구인 국제해사위성기구(International Maritime Satellite Organization)로 설립되었다. 1999년 민영화. 2023년 Viasat에 인수되어 Viasat의 Ka-band 함대와 통합되었다.",
+    "new": "정지궤도 이동위성통신 — GEO에 14개 이상의 위성을 운용하며 해양, 항공 및 원격 지역 음성·데이터 서비스를 제공한다. 1979년 선박 대 육상 통신(GMDSS의 전신)을 위한 정부간 조약 기구인 국제해사위성기구(International Maritime Satellite Organization)로 설립되었다. 1999년 민영화. 2023년 Viasat에 인수되어 Viasat의 Ka 대역 위성군과 통합되었다."
+  },
+  {
+    "rel": "fleet/constellation/iridium-next.json",
+    "at": "tagline",
+    "old": "극궤도 저궤도 통신 — 운영 위성 66기 + 예비 9기, GMDSS 파트너, 글로벌 음성/데이터",
+    "new": "극궤도 LEO 통신 — 운영 위성 66기 + 예비 9기, GMDSS 파트너, 전 지구 음성/데이터"
+  },
+  {
+    "rel": "fleet/constellation/iridium-next.json",
+    "at": "description",
+    "old": "2세대 Iridium 성좌(constellation) — 780 km 고도의 6개 극지 궤도 평면(평면당 11개)에 배치된 66개의 운영 위성과 9개의 궤도상 예비 위성으로 구성되며, 1998년 원본 Iridium 함대를 교체하기 위해 2017-2019년에 배포됨. 총 75개의 위성이 발사되었으며, 5개의 추가 지상 예비 위성은 2023년 5월에 발사됨. 음성 + 데이터 + 기계-기계 + 위성전화 서비스를 제공함. 두 개의 GMDSS(국제해상인명안전조약) 위성 공급자 중 하나(Inmarsat과 함께) — 원양 선박은 Iridium 또는 Inmarsat을 통해 GMDSS 요구 사항을 충족할 수 있음. 2009년 원본 Iridium 33호와 폐기된 Cosmos 2251호의 충돌은 역사상 최초의 위성 간 충돌임.",
+    "new": "2세대 Iridium 위성군 — 고도 780 km의 6개 극궤도면(궤도면당 11기)에 배치된 운용 위성 66기와 궤도상 예비 위성 9기로 구성되며, 1998년의 초대 Iridium 위성군을 대체하기 위해 2017-2019년에 배치되었다. 총 75기가 발사되었고, 지상 예비 위성 5기가 2023년 5월에 추가로 발사되었다. 음성, 데이터, 사물 간(M2M) 통신과 위성전화 서비스를 제공한다. GMDSS(세계해상조난안전제도) 위성 공급자 두 곳 중 하나로(다른 하나는 Inmarsat), 원양 선박은 Iridium 또는 Inmarsat을 통해 GMDSS 요건을 충족할 수 있다. 2009년 초대 Iridium 33과 수명이 다한 Cosmos 2251의 충돌은 역사상 최초로 알려진 위성 간 충돌이었다."
+  },
+  {
+    "rel": "fleet/constellation/iridium-next.json",
+    "at": "best_known_for",
+    "old": "극궤도 LEO 통신 — 66개 운영 중인 위성 +9개 예비기, GMDSS 파트너, 전역 음성/데이터",
+    "new": "극궤도 LEO 통신 — 운영 위성 66기 + 예비 9기, GMDSS 파트너, 전 지구 음성/데이터"
+  },
+  {
+    "rel": "fleet/constellation/kuiper.json",
+    "at": "description",
+    "old": "Starlink에 대한 Amazon의 답변 — 590-630 km 고도에서 98개 궤도면에 배치된 3,236개 위성. 2023년 10월 첫 시제품 발사(KuiperSat-1 및 -2 시험 발사); 2025년 4월 Atlas V에 탑재된 첫 27개 운영 위성 발사. 2026년 중반 현재 ~230개 이상의 운영 위성이 가동 중. FCC 허가는 2026년 7월까지 50% 배치(1,618개 위성), 2029년 7월까지 100% 배치 필요; Amazon은 현재 부족분으로 인해 2년 연장을 요청했음. 이 성좌가 완전히 배치될 경우 LEO 활성 위성 인구를 대략 두 배로 늘릴 것으로 예상됨.",
+    "new": "Starlink에 맞선 Amazon의 대응 — 고도 590-630 km, 98개 궤도면에 배치된 3,236개 위성. 2023년 10월 첫 시제품 발사(KuiperSat-1 및 -2 시험 발사); 2025년 4월 Atlas V에 실려 양산형 위성 27기가 처음 발사됨. 2026년 중반 현재 ~230개 이상의 양산형 위성이 운용 중. FCC 허가는 2026년 7월까지 50% 배치(1,618개 위성), 2029년 7월까지 100% 배치를 요구하며, Amazon은 현재의 부족분 때문에 2년 연장을 요청함. 이 위성군이 완전히 배치되면 LEO 활성 위성 수가 대략 두 배로 늘어날 것으로 예상됨."
+  },
+  {
+    "rel": "fleet/constellation/molniya.json",
+    "at": "description",
+    "old": "러시아 고이심률 궤도 군집. 63.4° 임계 궤도 경사각의 12시간 Molniya 궤도(~600 × 40,000 km)는 지구의 J2 섭동을 이용하여 원점선을 고정 — 원지점이 북반구 상공에 머물러 있어, 정지궤도 위성으로는 결코 제공할 수 없는 높은 앙각을 고위도 사용자에게 제공한다. Molniya-1은 1965년에 발사되었으며, Molniya-1/2/3, Oko 조기경보 위성, 그리고 현재 운용 중인 Meridian 통신 후속 위성으로 이어진다.",
+    "new": "러시아의 고이심률 궤도 위성군. 63.4° 임계 경사각의 12시간 Molniya 궤도(~600 × 40,000 km)는 지구의 J2 섭동을 이용해 장축선을 고정한다 — 원지점이 북반구 상공에 머물러 있어, 정지궤도 위성으로는 결코 제공할 수 없는 높은 앙각을 고위도 사용자에게 제공한다. Molniya-1은 1965년에 발사되었으며, Molniya-1/2/3, Oko 조기경보 위성, 그리고 현재 운용 중인 Meridian 통신 후속 위성으로 이어진다."
+  },
+  {
+    "rel": "fleet/constellation/o3b-mpower.json",
+    "at": "tagline",
+    "old": "유일한 운용 중인 MEO 상업용 광대역 — 20기 이상의 위성",
+    "new": "유일하게 운용 중인 상업용 MEO 광대역 — 위성 20기 이상"
+  },
+  {
+    "rel": "fleet/constellation/o3b-mpower.json",
+    "at": "description",
+    "old": "유일하게 운용 중인 상업용 MEO 광대역 위성군 — 초대 O3b는 2013-2019년에 배치되었고, 2세대 O3b mPOWER는 2022년부터 배치 중. 적도 궤도 8,063 km에 20기 이상의 위성 운용. 지연시간은 GEO와 LEO 사이이며, 고객층은 통신 백홀, 해상, 원격지 기업에 집중. SES(룩셈부르크)가 운영. '나머지 30억(other 3 billion)'의 이름을 따서 명명 — 원래 미션은 지상 광대역으로 서비스받지 못하는 지역에 연결성을 제공하는 것.",
+    "new": "유일하게 운용 중인 상업용 MEO 광대역 위성군 — 초대 O3b는 2013-2019년에 배치되었고, 2세대 O3b mPOWER는 2022년부터 배치 중. 적도 궤도 8,063 km에 20기 이상의 위성 운용. 지연시간은 GEO와 LEO 사이이며, 고객층은 통신 백홀, 해상, 원격지 기업에 집중. SES(룩셈부르크)가 운영. '나머지 30억'에서 이름을 따옴 — 원래 임무는 지상 광대역이 닿지 않는 지역에 연결을 제공하는 것."
+  },
+  {
+    "rel": "fleet/constellation/o3b-mpower.json",
+    "at": "best_known_for",
+    "old": "유일한 운용 중인 MEO 상업용 광대역 — 20기 이상의 위성",
+    "new": "유일하게 운용 중인 상업용 MEO 광대역 — 위성 20기 이상"
+  },
+  {
+    "rel": "fleet/constellation/oneweb.json",
+    "at": "description",
+    "old": "1세대 LEO 광대역 위성군, 12개 극궤도면에 1,200 km 고도로 648개 위성 배치. 극궤도는 중간 경사각 Starlink 셸이 도달할 수 없는 극지방 간 완전한 커버리지를 제공. 2023년 Eutelsat에 인수되어 Eutelsat OneWeb 형성; 상용 서비스는 현재 Eutelsat GEO 자산과 번들 제공. Starlink보다 높은 고도로 인해 지연 시간이 약간 더 길지만 필요한 위성 수는 적음.",
+    "new": "1세대 LEO 광대역 위성군, 12개 극궤도면에 1,200 km 고도로 648개 위성 배치. 극궤도는 중간 경사각의 Starlink 셸이 닿지 못하는 극에서 극까지의 전 지역을 덮는다. 2023년 Eutelsat에 인수되어 Eutelsat OneWeb이 되었으며, 상용 서비스는 현재 Eutelsat의 GEO 자산과 묶여 제공된다. Starlink보다 고도가 높아 지연 시간이 약간 더 길지만 필요한 위성 수는 적다."
+  },
+  {
+    "rel": "fleet/constellation/planet-labs.json",
+    "at": "tagline",
+    "old": "일일 지구 촬영 — ~150개의 CubeSats + 21개의 SkySats",
+    "new": "매일 지구 촬영 — CubeSat 약 150기 + SkySat 21기"
+  },
+  {
+    "rel": "fleet/constellation/planet-labs.json",
+    "at": "description",
+    "old": "두 개의 위성단으로부터의 일일 지구 관측 — 약 150개의 PlanetScope 3U CubeSats (3-5m 해상도의 전 지구 일일 영상) 및 약 21개의 SkySats (50cm 지정 고해상도). 모두 약 475km 태양동기궤도에 운영 중. 'Doves' 철학은 '저렴한 소형 위성 수백 개를 발사하고 일부 실패를 감수하며 매일 지구의 모든 지역을 촬영한다'는 것이었고 — 이것이 작동합니다. Planet의 영상 아카이브는 비정부기구, 정부, 기자들이 참고합니다.",
+    "new": "두 위성군에 의한 매일 재방문 지구 관측 — PlanetScope 3U CubeSat 약 150기(3-5m 해상도의 전 지구 일일 영상)와 SkySat 약 21기(50cm 주문 촬영 고해상도). 모두 약 475km 태양동기궤도에 있습니다. 'Doves' 철학은 '값싼 소형 위성 수백 기를 쏘아 올리고, 몇 번의 실패는 감수하며, 모든 땅을 매일 촬영한다'는 것이었고 — 실제로 효과가 있습니다. Planet의 영상 아카이브는 NGO, 정부, 언론인이 활용합니다."
+  },
+  {
+    "rel": "fleet/constellation/planet-labs.json",
+    "at": "best_known_for",
+    "old": "일일 지구 촬영 — ~150개의 CubeSats + 21개의 SkySats",
+    "new": "매일 지구 촬영 — CubeSat 약 150기 + SkySat 21기"
+  },
+  {
+    "rel": "fleet/constellation/sbirs-heo.json",
+    "at": "tagline",
+    "old": "분류된 Tundra 궤도 플랫폼에 탑재된 미국 조기경보 적외선 센서",
+    "new": "기밀 툰드라 궤도 플랫폼에 탑재된 미국 조기경보 적외선 센서"
+  },
+  {
+    "rel": "fleet/constellation/sbirs-heo.json",
+    "at": "description",
+    "old": "미국 Space-Based Infrared System(SBIRS)의 HEO 부문 — 63.4° 임계 경사각의 24시간 Tundra 궤도에서 분류된 호스트 위성에 탑재된 적외선 미사일 경보 센서. 원지점에서 고위도 상공에 머물러 정지궤도 DSP / SBIRS-GEO 센서가 너무 낮은 각도로 관측하는 극지방을 SBIRS-HEO가 커버한다. SBIRS HEO-1은 2006년 USA-184에 탑재 페이로드로 발사되었다.",
+    "new": "미국 Space-Based Infrared System(SBIRS)의 HEO 부문 — 63.4° 임계 경사각의 24시간 툰드라 궤도에서 기밀 호스트 위성에 탑재된 적외선 미사일 경보 센서. 원지점에서 고위도 상공에 머물러 정지궤도 DSP / SBIRS-GEO 센서가 너무 낮은 각도로 관측하는 극지방을 SBIRS-HEO가 커버한다. SBIRS HEO-1은 2006년 USA-184에 호스트 탑재체로 발사되었다."
+  },
+  {
+    "rel": "fleet/constellation/sbirs-heo.json",
+    "at": "best_known_for",
+    "old": "HEO 구간 적외선 조기경보 — GEO 센서가 감지할 수 없는 극지 위도 지역 커버",
+    "new": "HEO 구간 적외선 조기경보 — GEO 센서가 보지 못하는 극지방 위도까지 감시"
+  },
+  {
+    "rel": "fleet/constellation/starlink.json",
+    "at": "tagline",
+    "old": "가장 큰 LEO 광대역 성군 — 1만 800개 이상의 활성 위성",
+    "new": "가장 큰 LEO 광대역 위성군 — 활성 위성 10,800개 이상"
+  },
+  {
+    "rel": "fleet/constellation/starlink.json",
+    "at": "description",
+    "old": "SpaceX의 광대역 저궤도 위성군 — 고도 550 km에 배치된 10,800개 이상의 활성 위성이 다중 궤도층(53°, 70°, 97.6° 경사각)에 걸쳐 배포됨. 2019년 첫 운영 서비스 개시; 2023년 전 지구적 커버리지 달성. 각 Gen-2 위성은 레이저 위성간 통신 링크를 탑재하고 있어, 위성군이 지상국 경유 없이 위성 간 패킷을 라우팅할 수 있음. 자동 충돌회피 시스템은 연간 수만 번의 기동을 수행하며, 이는 다른 모든 저궤도 사업자의 합계를 초과함.",
+    "new": "SpaceX의 광대역 저궤도 위성군 — 고도 550 km에 있는 10,800개 이상의 활성 위성이 여러 궤도 셸(경사각 53°, 70°, 97.6°)에 나뉘어 배치되어 있음. 2019년 첫 운영 서비스 개시; 2023년 전 지구적 커버리지 달성. 각 Gen-2 위성은 레이저 위성간 통신 링크를 탑재하고 있어, 위성군이 지상국 경유 없이 위성 간 패킷을 라우팅할 수 있음. 자동 충돌회피 시스템은 연간 수만 번의 기동을 수행하며, 이는 다른 모든 저궤도 사업자의 합계를 초과함."
+  },
+  {
+    "rel": "fleet/constellation/starlink.json",
+    "at": "best_known_for",
+    "old": "가장 큰 LEO 광대역 성좌 — ~6,500~7,000개 활성 위성",
+    "new": "가장 큰 LEO 광대역 위성군 — 활성 위성 ~6,500~7,000개"
+  },
+  {
+    "rel": "fleet/constellation/tundra-sirius.json",
+    "at": "tagline",
+    "old": "역사적인 상업용 Tundra 궤도 성좌 — 2016년 운영 중단",
+    "new": "과거의 상업용 툰드라 궤도 위성군 — 2016년 운용 중단"
+  },
+  {
+    "rel": "fleet/constellation/tundra-sirius.json",
+    "at": "description",
+    "old": "24시간 Tundra 궤도(~25,000 × 35,786 km)의 63.4° 임계 경사각에서 운영된 역사적인 위성 라디오 성좌. 원래의 세 개 Sirius FM 위성(FM-1, FM-2, FM-3)은 각각 매 궤도마다 약 2/3 시간 동안 CONUS 상공에 위치하여 도시 협곡 수신기에 정지 궤도 신호에서는 얻을 수 없는 고도각을 제공했습니다. Sirius FM-1은 2000년 바이코누르에서 Proton-K로 발사되었으며, FM-2와 FM-3이 뒤를 이었습니다. 회사는 2008년 XM Radio와 합병하여 Sirius XM을 설립했습니다. Tundra 궤도 성좌는 2016년 운영이 중단되었으며, Sirius XM은 현재 약 7개의 정지 궤도 위성으로 구성된 함대를 운영하고 있습니다.",
+    "new": "24시간 툰드라 궤도(~25,000 × 35,786 km)의 63.4° 임계 경사각에서 운용된 과거의 위성 라디오 위성군. 원래의 Sirius FM 위성 3기(FM-1, FM-2, FM-3)는 각각 매 궤도의 약 3분의 2 동안 미국 본토(CONUS) 상공에 머물며, 도심 빌딩 숲의 수신기에 정지궤도 신호로는 얻을 수 없는 앙각을 제공했습니다. Sirius FM-1은 2000년 바이코누르에서 Proton-K로 발사되었고, FM-2와 FM-3이 뒤를 이었습니다. 회사는 2008년 XM Radio와 합병해 Sirius XM이 되었습니다. 툰드라 궤도 위성군은 2016년 운용이 중단되었으며, Sirius XM은 현재 정지궤도 위성 약 7기를 운용하고 있습니다."
+  },
+  {
+    "rel": "fleet/constellation/tundra-sirius.json",
+    "at": "best_known_for",
+    "old": "역사적인 24시간 Tundra 궤도 성좌(2000-2016)",
+    "new": "역사적인 24시간 툰드라 궤도 위성군(2000-2016)"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-csm-block-i.json",
+    "at": "tagline",
+    "old": "원본 Apollo CSM 설계 — 유인비행을 하지 않음; 1967-01-27 발사대에서 Apollo 1 승무원 사망. 재설계된 Block II가 1968-1975년에 비행함",
+    "new": "초기 Apollo CSM 설계 — 유인 비행 없이 끝남; 1967-01-27 발사대에서 Apollo 1 승무원 사망. 재설계되어 1968-1975년 비행한 Block II가 됨"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-csm-block-i.json",
+    "at": "dispatch",
+    "old": "Block I은 유인 승무원을 태우고 비행하지 않은 Apollo 하드웨어이자, 프로그램의 나머지 부분이 생존할 수 있었던 부분적 이유다. 이는 사령관 모듈의 첫 번째 설계 — 오직 무인 및 초기 지구 궤도 테스트만을 목적으로 했음 — 이었고, 1966년에는 합리적으로 보였던 일련의 가정을 담고 있었다: 해수면 기압 이상으로 유지되는 순산소 캐빈, 안쪽으로 열리는 해치, 그리고 화재 위험성에 대한 깊은 사려 없이 선택된 내부 재료들. 1967년 1월 27일 발사대의 작은 스파크가 수 초 만에 그런 가정들을 치명적으로 만들었고, Apollo 1 승무원들이 모두가 일상적인 테스트로 취급했던 시험에서 사망했다. Block I은 그 교훈으로 폐기되었다; 달에 도달한 Block II는 대부분 Block I이 잘못한 것들의 목록이었다.",
+    "new": "Block I은 승무원을 태우고 비행한 적이 없는 Apollo 하드웨어이며, 프로그램의 나머지가 살아남을 수 있었던 이유의 일부이기도 하다. 사령선의 첫 설계안으로, 무인 시험과 초기 지구 궤도 시험만을 위한 것이었고, 1966년에는 합리적으로 보였던 가정들을 담고 있었다. 해수면 기압보다 높게 유지되는 순수 산소 캐빈, 안쪽으로 열리는 해치, 화재에 대한 고려 없이 고른 내장재. 1967년 1월 27일 발사대의 불꽃 하나가 이 가정들을 몇 초 만에 치명적인 것으로 만들었고, 모두가 일상적이라고 여긴 시험에서 Apollo 1 승무원이 숨졌다. Block I은 그 교훈 속에 퇴역했으며, 달에 도달한 Block II는 상당 부분 Block I이 잘못한 모든 것의 목록이었다."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-csm-block-i.json",
+    "at": "description",
+    "old": "Block I은 Apollo 사령관 및 서비스 모듈의 첫 번째 설계 반복이었다 — 달 도달이 가능한 Block II 이전의 순수 지구 궤도 성능 검증 기체로 의도됨. 발사 전 16.7 psi(비행 중 5 psi)의 순산소 가압 캐빈; 대기압 차이로 밀폐되는 안쪽으로 열리는 해치. CSM-009와 CSM-011은 무인 아열궤도 테스트 AS-201(1966-02-26)과 AS-202(1966-08-25)를 비행함. CSM-017과 CSM-020은 각각 Apollo 4호(1967-11-09)와 Apollo 6호(1968-04-04)에서 무인 비행을 함 — 첫 번째와 두 번째 Saturn V 비행의 Block I 사령관 모듈. CSM-012 — Apollo 1 우주선 — 은 1967-01-27 Plugs-Out 테스트를 위해 밀폐되었을 때 하부 장비실에서 섬광 화재가 발생하여 승무원을 수 초 만에 사망하게 했다; 해치가 안쪽으로 열려 29 psi의 스파이크에 대항하므로 캐빈을 배기할 수 없었다. Apollo 204 Accident Review Board는 Block II 재설계로 이어졌다: 바깥쪽으로 열리는 통합 해치, 불연소성 캐빈 재료, 발사 전 질소 풍부한 대기, 재설계된 배선 번들. Block I CSM 중 어느 것도 유인비행을 하지 않았고; Block II는 Apollo 7호(1968)부터 ASTP(1975)까지 비행함.",
+    "new": "Block I은 Apollo 사령선·서비스 모듈의 첫 설계안으로, 달 착륙이 가능한 Block II에 앞선 순수 지구 궤도 시험 기체로 의도되었다. 발사 전 16.7 psi(비행 중 5 psi)의 순수 산소 가압 캐빈; 기압 차로 밀폐되는 안쪽 개방식 해치. CSM-009와 CSM-011은 무인 준궤도 시험 AS-201(1966-02-26)과 AS-202(1966-08-25)를 비행했다. CSM-017과 CSM-020은 각각 Apollo 4(1967-11-09)와 Apollo 6(1968-04-04)에서 무인으로 비행했다 — 첫 두 번의 Saturn V 비행에 실린 Block I 사령선. Apollo 1의 우주선인 CSM-012는 1967-01-27 Plugs-Out 시험을 위해 밀폐된 상태에서 하부 장비실에 순간 화재가 일어나 승무원이 몇 초 만에 숨졌다; 해치가 안쪽으로 열리는 구조라 29 psi까지 치솟은 압력을 이기지 못해 캐빈의 압력을 빼낼 수 없었다. Apollo 204 사고조사위원회(Accident Review Board)의 결과 Block II 재설계가 이루어졌다: 바깥쪽으로 열리는 일체형 해치, 불연성 캐빈 재료, 발사 전 질소 비중이 높은 대기, 재설계된 배선 다발. Block I CSM 가운데 유인으로 비행한 기체는 없으며, Block II는 Apollo 7(1968)부터 ASTP(1975)까지 비행했다."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-csm-block-i.json",
+    "at": "best_known_for",
+    "old": "원본 Apollo CSM 설계 — 유인비행을 하지 않음; 1967-01-27 발사대에서 Apollo 1 승무원 사망. 재설계된 Block II가 1968-1975년에 비행함",
+    "new": "초기 Apollo CSM 설계 — 유인 비행 없이 끝남; 1967-01-27 발사대에서 Apollo 1 승무원 사망. 재설계되어 1968-1975년 비행한 Block II가 됨"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-csm-block-ii.json",
+    "at": "tagline",
+    "old": "달 도달 가능한 Command + Service Module",
+    "new": "달 임무가 가능한 사령선 + 서비스 모듈"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-csm-block-ii.json",
+    "at": "dispatch",
+    "old": "사령선은 아폴로 미션 중 지구로 돌아온 유일한 부분이었다 — 다른 모든 것은 소진되어 경로를 따라 버려졌다. 그것이 재진입 시에 실패할 수 없는 부분이었으며, 달에서의 재진입은 이 문제의 가장 어려운 형태였다: 캡슐은 거의 초속 11킬로미터로 대기에 진입했으니, 지구 궤도에서 돌아오는 것의 약 1.5배 빠르고, 강철도 끓일 수 있을 정도로 뜨거운 화염구에 싸여 있었다. 그 해결책은 통제된 방식으로 탄화되고 벗겨지도록 설계된 절제식 열차폐였으며, 그것이 열을 함께 운반했다. Block II는 승무원을 태운 버전이었다 — Apollo 1호 화재로 인해 강제된 완전한 재설계 — 그리고 그것은 달을 향해 출발한 모든 우주비행사를 살아서 돌아오게 했다.",
+    "new": "사령선은 Apollo에서 지구로 돌아온 유일한 부분이었다 — 나머지는 모두 임무를 다하면 도중에 버려졌다. 그래서 재진입에서 절대 실패해서는 안 되는 부품이었고, 달에서 돌아오는 재진입은 그 문제의 가장 어려운 형태였다. 캡슐은 거의 초속 11킬로미터로 대기에 부딪혔는데, 지구 궤도에서 돌아오는 어떤 것보다 1.5배 빠른 속도였고, 강철도 끓일 만큼 뜨거운 불덩이에 휩싸였다. 그 해답은 통제된 방식으로 탄화되며 벗겨져 나가도록 설계된 삭마식 열차폐였고, 벗겨지는 재료가 열을 함께 실어 갔다. Block II는 승무원이 탑승한 버전으로 — Apollo 1 화재 때문에 처음부터 다시 설계된 것이었다 — 달로 떠난 모든 우주비행사를 살려서 데려왔다."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-csm-block-ii.json",
+    "at": "description",
+    "old": "1968년부터 1972년 사이에 아폴로 우주비행사들을 달 궤도로 옮긴 달 도달 가능한 사령선 및 서비스 모듈. 총 15차 유인 비행: Apollo 7–17(달 목표 미션 11개), Skylab 승무원 교대 3회(1973–1974), 1975년 Apollo-Soyuz Test Project — Apollo 13의 즉흥적인 구명보트 구성 포함.",
+    "new": "1968년부터 1972년 사이에 Apollo 우주비행사를 달 궤도로 실어 나른, 달 임무가 가능한 사령선 및 서비스 모듈. 유인 비행은 총 15회: Apollo 7–17(달을 목표로 한 임무 11회), Skylab 승무원 교대 3회(1973–1974), 1975년 Apollo-Soyuz Test Project — 즉석에서 구명정 구성으로 바꾼 Apollo 13 포함."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-csm-block-ii.json",
+    "at": "best_known_for",
+    "old": "달 도달 가능한 Command + Service Module",
+    "new": "달 임무가 가능한 사령선 + 서비스 모듈"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-lm.json",
+    "at": "dispatch",
+    "old": "Lunar Module은 최초의 진정한 우주선이었다 — 대기가 아닌 진공에서만 비행하도록 제작된 최초의 유인 비행체로, 유선형과 열 차폐를 버리고 정확히 그 자체가 될 수 있었다: 하나의 임무를 위한 기계. Grumman은 이를 두 부분으로 분리했다 — 승무원을 하강시킨 후 별도의 상승 단계를 위한 발사대 역할을 하는 하강 단계와, 승무원을 다시 위로 올려보내는 상승 단계로 — 이러한 단계 분리만이 달 착륙의 질량 예산을 맞출 수 있는 유일한 방법이었기 때문이다. 거미 다리 같은 착륙 장치로 비행했으며, 외피는 곳곳이 몇 겹의 호일만큼 얇았다. 그 이전에는 인류를 다른 세계에 착륙시킨 것이 없었고, 그 투박하고 목적에 맞게 제작된 형태는 귀환을 견뎌낼 필요가 없는 우주선이 어떤 모습인지를 단순히 보여준다.",
+    "new": "Lunar Module은 최초의 진정한 우주선이었다 — 대기권을 통과하지 않고 오로지 진공에서만 비행하도록 만든 최초의 유인 비행체였기에, 유선형 외형과 열차폐를 버리고 본래 모습 그대로, 단 하나의 일을 위한 기계가 될 수 있었다. Grumman은 이를 둘로 나눴다 — 승무원을 내려 보낸 뒤 별도의 상승단이 이륙하는 발사대 역할을 하는 하강단과, 승무원을 다시 올려 보내는 상승단이다. 달 착륙의 질량 예산을 맞추려면 이런 단 분리가 유일한 방법이었기 때문이다. 거미 다리 같은 착륙 다리로 내려앉았고, 외피는 곳에 따라 호일 몇 장 정도로 얇았다. 이전에는 어떤 것도 사람을 다른 세계에 내려놓은 적이 없었고, 이 투박하고 용도에 맞춰 만들어진 모양은 귀환을 견딜 필요가 없는 우주선이 어떻게 생기는지를 그대로 보여 준다."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/apollo-lm.json",
+    "at": "description",
+    "old": "이제는 유일한 승무원 lunar 착륙장. 1969년과 1972년 사이에 6개의 성공적인 착륙 — 독수리, Intrepid, Antares, Falcon, Orion, Challenger — plus Aquarius, 이는 Apollo 13의 구명 보트로 봉사했습니다. Descent stage stays 에 the 달; ascent 단계 rejoined the CSM 에 lunar 궤도.",
+    "new": "인류가 만든 유일한 유인 달 착륙선. 1969년부터 1972년 사이에 여섯 차례 착륙에 성공했다 — Eagle, Intrepid, Antares, Falcon, Orion, Challenger — 그리고 Apollo 13의 구명정 역할을 한 Aquarius. 하강단은 달에 남고, 상승단은 달 궤도에서 CSM과 다시 만났다."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/atlantis.json",
+    "at": "tagline",
+    "old": "OV-104 — 네 번째 셔틀. 마지막 셔틀 임무 STS-135(2011) 수행; 마지막 Hubble 정비 STS-125(2009); Galileo + Magellan 배치",
+    "new": "OV-104 — 네 번째 Shuttle 궤도선. 마지막 Shuttle 임무 STS-135(2011), 마지막 Hubble 정비 STS-125(2009) 수행; Galileo + Magellan 배치"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/atlantis.json",
+    "at": "dispatch",
+    "old": "Atlantis, OV-104는 Shuttle의 가장 위대한 협력관계의 양 끝을 비행했다. 러시아 우주정거장 Mir와 가장 많은 도킹을 수행하여 미-러 협력 시대를 열었고, STS-125를 비행하여 Hubble Space Telescope를 향후 10년간 사용할 수 있도록 남긴 최후의 대담한 정비 임무를 완수했다. 2011년 7월 Atlantis는 STS-135, 즉 135번째이자 마지막 Shuttle 임무를 비행했다 — 30년간의 재사용 가능한 미국 우주비행을 마감하고, 건설을 도왔던 Space Station을 궤도 위에 남긴 비행이었다.",
+    "new": "Atlantis, OV-104는 Shuttle의 가장 위대한 협력의 양 끝에서 비행했다. 러시아 우주정거장 Mir와 가장 많은 도킹을 수행하여 미-러 협력 시대를 열었고, STS-125를 비행하여 Hubble Space Telescope를 향후 10년간 쓸 수 있게 만든 마지막이자 대담한 정비 임무를 완수했다. 2011년 7월 Atlantis는 STS-135, 즉 135번째이자 마지막 Shuttle 임무를 비행했다 — 30년에 걸친 미국의 재사용 우주비행을 마감하고, 건설을 도운 우주정거장을 궤도 위에 남겨 둔 비행이었다."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/atlantis.json",
+    "at": "description",
+    "old": "네 번째 운용 궤도선; 첫 비행 STS-51-J(1985-10-03)는 기밀 DoD 임무. 하이라이트: Magellan(STS-30, 1989)과 Galileo(STS-34, 1989) 배치 — 금성과 목성을 장기 관측에 개방한 두 행성 탐사선; 1995-1997년 9회의 Shuttle-Mir 도킹 임무 중 7회 수행; 마지막 Hubble 정비 임무 STS-125(2009-05) — Columbia 사고 이후 유일한 비 ISS 랑데부 임무; STS-135(2011-07) — 셔틀 역사상 마지막 비행. 2013년부터 케네디 우주 센터 Visitor Complex에 전시.",
+    "new": "네 번째 운용 궤도선; 첫 비행 STS-51-J(1985-10-03)는 국방부(DoD) 기밀 임무. 주요 이력: Magellan(STS-30, 1989)과 Galileo(STS-34, 1989) 배치 — 금성과 목성을 장기 관측에 개방한 두 행성 탐사선; 1995-1997년 9회의 Shuttle-Mir 도킹 임무 중 7회 수행; 마지막 Hubble 정비 임무 STS-125(2009-05) — Columbia 사고 이후 승인된 유일한 비 ISS 랑데부 임무; STS-135(2011-07) — Shuttle 역사상 마지막 비행. 2013년부터 케네디 우주 센터 Visitor Complex에 전시."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/atlantis.json",
+    "at": "best_known_for",
+    "old": "마지막 셔틀 임무 STS-135(2011); Galileo + Magellan 배치; 마지막 Hubble 정비 STS-125",
+    "new": "마지막 Shuttle 임무 STS-135(2011) 수행; Galileo + Magellan 배치; 마지막 Hubble 정비 STS-125"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran-ok-gli.json",
+    "at": "tagline",
+    "old": "Buran의 대기권 아날로그 — NASA Enterprise의 대응 기체. 4기의 제트 엔진, 1985-88년 24회 대기권 시험 비행. 우주에는 가지 못함",
+    "new": "Buran의 대기권 시험기 — NASA Enterprise에 해당. 제트 엔진 4기, 1985-88년 대기권 시험 24회, 궤도에는 오르지 못함"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran-ok-gli.json",
+    "at": "description",
+    "old": "공식 명칭은 BTS-002이며 OK-GLI로 불림. Buran 우주 프로그램을 위한 실물 크기의 대기 시험 항공기 — 비행 운영체 Buran 1.01과 동일한 외부 형상이지만 4개의 AL-31 터보젯 엔진을 탑재하여 일반 활주로에서 자력으로 이륙할 수 있었음. 1985-11-10부터 1988-04-15까지 Zhukovsky Flight Research Institute 비행장에서 24회의 대기 비행을 실시하여 1988-11-15 우주 비행을 대비한 Buran의 자동 착륙 시스템 및 비행 제어 소프트웨어를 검증함. Buran 프로그램 취소 후 OK-GLI는 LII에서 수년간 보관되었다가 1999년 호주 박물관에 판매되었고, 이후 바레인을 거쳐 독일의 Technik Museum Speyer / Sinsheim로 가서 오늘날 전시되고 있음 — NASA의 Enterprise에 상응하는 Buran의 항공기.",
+    "new": "공식 명칭은 BTS-002이며 OK-GLI로 불림. Buran 우주 프로그램을 위한 실물 크기의 대기 시험 항공기 — 비행용 기체 Buran 1.01과 동일한 외부 형상이지만 4개의 AL-31 터보젯 엔진을 탑재하여 일반 활주로에서 자력으로 이륙할 수 있었음. 1985-11-10부터 1988-04-15까지 Zhukovsky Flight Research Institute 비행장에서 24회의 대기 비행을 실시하여 1988-11-15 우주 비행에 대비한 Buran의 자동 착륙 시스템 및 비행 제어 소프트웨어를 검증함. Buran 프로그램 취소 후 OK-GLI는 LII에서 수년간 보관되었다가 1999년 호주 박물관에 판매되었고, 이후 바레인을 거쳐 독일의 Technik Museum Speyer / Sinsheim으로 가서 오늘날 전시되고 있음 — NASA의 Enterprise에 상응하는 Buran의 항공기."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran-ok-gli.json",
+    "at": "best_known_for",
+    "old": "Buran의 대기권 아날로그; Zhukovsky에서 1985-88년 24회 제트 비행; 궤도 도달 안 함",
+    "new": "Buran의 대기권 시험기; Zhukovsky에서 1985-88년 제트 동력 비행 24회; 궤도에는 오르지 못함"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran.json",
+    "at": "tagline",
+    "old": "소련 셔틀; 하나의 무인 비행, 결코 승무원",
+    "new": "소련 Shuttle; 무인 1회 비행, 유인 없음"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran.json",
+    "at": "dispatch",
+    "old": "Buran은 소련의 Space Shuttle에 대한 답안이었다 — 외관상으로는 거의 동일했지만, 원본을 개선했다고 볼 수 있는 두 가지 결정이 있었다: 주 엔진을 탑재하지 않았고(모든 추력은 별도의 Energia 로켓에서 나왔다), 사람 없이도 비행할 수 있었다. 1988년 11월 15일, Buran은 두 번째 특징을 증명하며 무인 궤도 임무를 완수하고 측풍 속에서 활주로에 스스로 착륙했다 — 날개 달린 우주선이 해낸 적 없는 일이었다. 완벽한 비행이었고 유일한 비행이었다. 소련이 붕괴하고 자금과 임무가 사라지면서 Buran은 취소되었다 — 비행했던 궤도선은 나중에 2002년 격납고 지붕이 무너지면서 파괴되었다. 우주 비행 역사상 가장 인상적이면서도 가장 무의미한 성취 중 하나다.",
+    "new": "Buran은 Space Shuttle에 대한 소련의 대답이었다 — 겉모습은 거의 같았지만, 원조보다 낫다고 할 만한 결정이 둘 있었다. 주 엔진이 없었고(모든 추력은 별도의 Energia 로켓에서 나왔다), 사람이 타지 않고도 비행할 수 있었다. 1988년 11월 15일 Buran은 두 번째 특징을 증명했다. 완전한 무인 궤도 비행을 마치고 옆바람이 부는 활주로에 스스로 착륙했는데, 날개 달린 우주선으로는 처음 있는 일이었다. 흠잡을 데 없는 비행이었고, 유일한 비행이었다. 소련이 무너지면서 예산도 임무도 사라졌고 Buran은 취소되었다 — 실제로 비행한 궤도선은 2002년 격납고 지붕이 무너지면서 깔려 부서졌다. 우주 비행 역사에서 가장 인상적이면서도 가장 부질없는 성취 중 하나다."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran.json",
+    "at": "description",
+    "old": "소련 셔틀, 외면적으로 미국의 궤도와 유사하지만 주요 엔진 (Energia는 그것을 수행). 정확히 한 번, 1988, 완전히 자율적이고 무인 - 프로그램이 종료되기 전에 궤도에 도달하는 유일한 소련 셔틀.",
+    "new": "소련의 Shuttle로, 겉모습은 미국 궤도선과 비슷하지만 주 엔진이 없다(Energia가 쏘아 올렸다). 1988년 단 한 번, 완전 자율 무인으로 비행했다 — 계획이 끝나기 전에 궤도에 오른 유일한 소련 Shuttle."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/buran.json",
+    "at": "best_known_for",
+    "old": "소련 셔틀; 하나의 무인 비행, 결코 승무원",
+    "new": "소련 Shuttle; 무인 1회 비행, 유인 없음"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/challenger.json",
+    "at": "tagline",
+    "old": "OV-099 — 두 번째 운영 우주왕복선. 1986-01-28 STS-51-L 발사 73초 후 교사 크리스타 매콜리프를 포함한 7명의 승무원 전원과 함께 손실",
+    "new": "OV-099 — 두 번째 운용 Shuttle 궤도선. 1986-01-28 STS-51-L 발사 73초 후 교사 크리스타 매콜리프를 포함한 승무원 7명 전원과 함께 상실"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/challenger.json",
+    "at": "dispatch",
+    "old": "Challenger, OV-099는 초기 주력 우주왕복선이었으며 프로그램의 첫 번째 재앙의 현장이었다. 우주 유영 프로그램의 첫 임무를 비행했으며 첫 미국 여성 우주인 샐리 라이드를 궤도로 운반했다. 1986년 1월 28일, 이례적으로 추운 날씨에 발사된 Challenger는 고체 부스터의 고무 밀봉부가 — 냉기로 경화되어 엔지니어들이 경고했던 고장 모드 — 파열되어 발사 73초 후 기체가 분해되었다. 탑승 인원 7명 전원이 사망했다. 이 재앙은 함대를 거의 3년간 운항 정지시켰으며 알려진, 표시된 위험을 간과한 경영 문화를 드러냈다.",
+    "new": "Challenger, OV-099는 초기 주력 기체였고 Shuttle 계획 최초의 참사가 일어난 곳이었다. 계획 최초의 우주 유영을 수행했고 미국 최초의 여성 우주인 샐리 라이드를 궤도에 실어 날랐다. 1986년 1월 28일, 이례적으로 추운 날씨에 발사된 Challenger는 고체 부스터의 고무 실이 — 추위로 굳어 버렸고, 엔지니어들이 경고했던 고장 양상이었다 — 파손되어 이륙 73초 후 기체가 공중분해되었다. 탑승자 7명 전원이 숨졌다. 이 참사로 Shuttle 전 기체가 거의 3년간 비행하지 못했고, 이미 알려져 경고까지 나온 위험을 무시하고 비행해 온 관리 문화가 드러났다."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/challenger.json",
+    "at": "description",
+    "old": "구조 시험 물체(STA-099)에서 개조되어 Enterprise가 업그레이드 비용이 지나치다고 판단된 후 비행용으로 전환되었다. 첫 우주왕복선 선외 활동(EVA)을 수행한 STS-6(1983-04-04)에서 첫 비행했다. 총 10개 임무 비행: STS-6, STS-7, STS-8, STS-41-B, STS-41-C, STS-41-G, STS-51-B, STS-51-F, STS-61-A, 최종 비행 STS-51-L. 1986-01-28에 STS-51-L은 전례 없는 추위(−1 °C)에서 발사되었다 — 우측 SRB의 O-링이 밀봉에 실패하여, 고온 가스가 외부 탱크에 SRB를 부착하는 지지대를 관통하였으며, 우주왕복선은 Max-Q(T+73s) 고도 14 km에서 분해되었다. 교사 크리스타 매콜리프를 포함한 7명의 승무원 전원이 사망했다. Rogers Commission은 우주왕복선을 32개월간 운항 정지시켰으며 NASA의 안전 문화를 재정립했다.",
+    "new": "구조 시험체(STA-099)를 비행용으로 개조해 만들었으며, Enterprise는 개조 비용이 너무 크다고 판단된 뒤의 선택이었다. STS-6(1983-04-04)으로 첫 비행을 했고, 이때 Shuttle 최초의 선외 활동(EVA)을 수행했다. 총 10회 비행: STS-6, STS-7, STS-8, STS-41-B, STS-41-C, STS-41-G, STS-51-B, STS-51-F, STS-61-A, 최종 비행 STS-51-L. 1986-01-28에 STS-51-L은 전례 없는 추위(−1 °C)에서 발사되었다 — 오른쪽 SRB의 O-링이 밀봉에 실패했고, 뜨거운 가스가 SRB를 외부 탱크에 연결하는 지지대를 태워 끊었으며, 궤도선은 Max-Q(T+73s) 고도 14 km에서 분해되었다. 교사 크리스타 매콜리프를 포함한 승무원 7명 전원이 사망했다. Rogers Commission의 조사 결과 Shuttle 비행은 32개월간 중단되었고 NASA의 안전 문화가 새로 쓰였다."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/challenger.json",
+    "at": "best_known_for",
+    "old": "두 번째 우주왕복선; 1986-01-28 STS-51-L 발사 73초 후 7명의 승무원과 함께 손실",
+    "new": "두 번째 Shuttle; 1986-01-28 STS-51-L 발사 73초 후 승무원 7명과 함께 상실"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/columbia.json",
+    "at": "tagline",
+    "old": "OV-102 — 우주비행에 처음 간 셔틀 궤도선(STS-1, 1981-04-12); STS-107 재진입 시 소실 2003-02-01",
+    "new": "OV-102 — 우주에 처음 비행한 Shuttle 궤도선(STS-1, 1981-04-12); STS-107 재진입 중 상실 2003-02-01"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/columbia.json",
+    "at": "dispatch",
+    "old": "Columbia는 처음이었다 — OV-102, 셔틀 시대를 열어젖힌 궤도선. 1981년 4월 STS-1에서 그것은 크루가 탑승한 우주선이 이전에 또는 이후로 해본 적 없는 일을 해냈다: 처녀 발사에서 궤도에 올랐고, 두 명의 우주인이 미검증 재사용 우주선에 탑승한 상태로, 활주로에 활강했다. 그것은 함대 중 가장 무거웠으며 Spacelab 우주실험실을 포함한 프로그램의 과학 임무 대부분을 수행했다. 2003년 STS-107에서 발사 시 파편이 날개에 뚫어놓은 구멍이 재진입의 열을 구조물 내부로 유입시켰고, Columbia는 귀로에서 몇 분 남지 않은 텍사스 상공에서 산산조각 났다 — 프로그램의 파편 충격에 대한 안일함을 끝낸 손실.",
+    "new": "Columbia는 최초였다 — OV-102, Shuttle 시대를 연 궤도선이다. 1981년 4월 STS-1에서 이전에도 이후에도 어떤 유인 우주선도 해 보지 못한 일을 해냈다. 시험된 적 없는 재사용 우주선에 우주비행사 두 명을 태우고 첫 발사에서 곧바로 궤도에 올랐고, 활주로에 활공해 귀환했다. Shuttle 기체 중 가장 무거웠으며 Spacelab 실험실을 포함해 계획의 과학 임무 상당수를 수행했다. 2003년 STS-107에서는 발사 중 떨어져 나온 파편이 날개에 낸 구멍으로 재진입 열이 구조 안으로 들어갔고, Columbia는 귀환을 몇 분 앞두고 텍사스 상공에서 분해되었다 — 파편 충돌에 대한 계획의 안일함을 끝낸 상실이었다."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/columbia.json",
+    "at": "description",
+    "old": "첫 번째 운영 Space Shuttle 궤도선. 22년에 걸쳐 28개 임무를 비행했으며, 여기에는 STS-1(크루가 탑승한 상태로 처녀항해를 한 유일한 미국 유인우주선), 1990년 Astro-1 자외선 천문 임무, 1993년 SLS-2 생명과학 비행, 그리고 존 글렌 상원의원의 1998년 STS-95 우주복귀 등이 포함된다. STS-107(2003-02-01) 재진입 시 소실 — 발사 시 폼 충격이 좌측 날개의 RCC 선행 가장자리를 관통하였고, 우주선이 마하 18에서 텍사스 상공에서 분해되었으며 7명의 승무원 모두가 소실되었다. 이 사고는 셔틀 함대를 29개월간 운항 중단시켰고 우주 탐사 비전을 촉발했다.",
+    "new": "첫 번째 운용 Space Shuttle 궤도선. 22년에 걸쳐 28회 비행했으며, 여기에는 STS-1(첫 항해에 승무원이 탑승한 유일한 미국 유인 우주선), 1990년 Astro-1 자외선 천문 임무, 1993년 SLS-2 생명과학 비행, 1998년 존 글렌 상원의원의 STS-95 우주 복귀 비행이 포함된다. STS-107(2003-02-01) 재진입 중 상실 — 발사 중 단열재 폼 충돌이 좌측 날개의 RCC 앞전을 뚫었고, 기체가 마하 18로 텍사스 상공을 날던 중 분해되어 승무원 7명 전원을 잃었다. 이 사고로 Shuttle 비행이 29개월간 중단되었고 우주 탐사 비전(Vision for Space Exploration)이 촉발되었다."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/columbia.json",
+    "at": "best_known_for",
+    "old": "우주비행에 처음 간 셔틀 궤도선(STS-1, 1981); STS-107 재진입 시 소실 2003",
+    "new": "우주에 처음 비행한 Shuttle 궤도선(STS-1, 1981); STS-107 재진입 중 상실 2003"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/crew-dragon.json",
+    "at": "tagline",
+    "old": "최초의 상업용 인간 탑재 궤도 우주선",
+    "new": "최초의 상업용 유인 궤도 우주선"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/crew-dragon.json",
+    "at": "description",
+    "old": "인간을 궤도에 운송한 최초의 민간 개발·운영 우주선인 SpaceX의 인간 탑재 우주선(Demo-2, 2020-05-30). 트렁크에는 페어링 분리 후 전개되어 궤도 운영 중 전력을 공급하는 두 개의 태양 어레이 패널이 장착되어 있다.",
+    "new": "SpaceX의 유인 우주선으로, 인간을 궤도에 보낸 최초의 민간 개발·운영 우주선이다(Demo-2, 2020-05-30). 트렁크에는 페어링 분리 뒤 펼쳐져 궤도 운용 중 전력을 공급하는 태양전지판 두 장이 달려 있다."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/crew-dragon.json",
+    "at": "best_known_for",
+    "old": "최초의 상업용 인간 탑재 궤도 우주선",
+    "new": "최초의 상업용 유인 궤도 우주선"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/discovery.json",
+    "at": "tagline",
+    "old": "OV-103 — 세 번째 셔틀. Hubble 배치(STS-31, 1990); 두 차례의 비행 복귀 임무 수행. 39회 비행 — 최다",
+    "new": "OV-103 — 세 번째 Shuttle. Hubble 배치(STS-31, 1990); 비행 재개 임무 두 차례 모두 수행. 39회 비행 — 궤도선 중 최다"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/discovery.json",
+    "at": "dispatch",
+    "old": "Discovery, OV-103은 27년에 걸쳐 39회의 임무를 수행한 우주왕복선 함대에서 가장 많이 비행하고 가장 신뢰받은 궤도선이었다. 두 차례의 재난 이후 우주왕복선을 비행에 복귀시키기 위해 NASA가 선택한 기체였으며, 프로그램이 다시 안전함을 증명해야 할 때 가장 먼저 발사된 우주선이었다. 그 비행 중에서 가장 중요할 수 있는 것은 STS-31로, Hubble Space Telescope를 궤도로 운반하여 방출했으며, 이는 천문학 역사상 가장 생산적인 장을 여는 계기가 되었다.",
+    "new": "Discovery, OV-103은 27년 동안 39회 비행한, Shuttle 기체 중 가장 많이 비행하고 가장 신뢰받은 궤도선이었다. 두 차례의 참사 뒤 Shuttle을 비행에 복귀시키기 위해 NASA가 택한 기체이기도 했다 — 프로그램이 다시 안전함을 증명해야 할 때 가장 먼저 올려 보낸 기체였다. 그 비행 가운데 가장 중요한 것은 아마 STS-31일 것이다. Hubble Space Telescope를 궤도로 실어 가 방출했고, 천문학 역사상 가장 성과 많은 장이 이로써 열렸다."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/discovery.json",
+    "at": "description",
+    "old": "세 번째 운용 궤도선; 첫 비행 STS-41-D(1984-08-30). 가장 많이 비행한 셔틀 — 27년간 39회 임무. 하이라이트: STS-31(1990-04-24)에서 Hubble Space Telescope 배치; STS-26(1988-09-29) Challenger 사고 후 비행 복귀; STS-114(2005-07-26) Columbia 사고 후 비행 복귀; STS-95(1998)에서 77세의 존 글렌을 다시 궤도로; 여러 ISS 조립 비행(STS-92, 120, 124, 128, 131, 133). 최종 비행 STS-133(2011-02-24)에서 Leonardo Permanent Multipurpose Module을 전달. 2012년부터 Udvar-Hazy에 전시.",
+    "new": "세 번째 운용 궤도선; 첫 비행 STS-41-D(1984-08-30). 가장 많이 비행한 Shuttle — 27년간 39회 임무. 주요 이력: STS-31(1990-04-24)에서 Hubble Space Telescope 배치; STS-26(1988-09-29)은 Challenger 사고 후 비행 재개; STS-114(2005-07-26)는 Columbia 사고 후 비행 재개; STS-95(1998)에서 77세의 존 글렌을 다시 궤도로 올림; 여러 차례의 ISS 조립 비행(STS-92, 120, 124, 128, 131, 133). 마지막 비행 STS-133(2011-02-24)에서 Leonardo Permanent Multipurpose Module을 운반. 2012년부터 Udvar-Hazy에 전시."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/discovery.json",
+    "at": "best_known_for",
+    "old": "가장 많이 비행한 셔틀(39회); Hubble 배치 + 두 차례 비행 복귀 임무",
+    "new": "가장 많이 비행한 Shuttle(39회); Hubble 배치 + 비행 재개 임무 두 차례 모두 수행"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/endeavour.json",
+    "at": "tagline",
+    "old": "OV-105 — 다섯 번째이자 가장 젊은 셔틀. 최초 Hubble 정비 STS-61(1993); Unity + Canadarm2 전달",
+    "new": "OV-105 — 다섯 번째 Shuttle, Challenger 대체. 최초 Hubble 정비 STS-61(1993); Unity + Canadarm2 전달"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/endeavour.json",
+    "at": "dispatch",
+    "old": "Endeavour, OV-105는 마지막으로 건조된 오비터였다 — Challenger를 대체하기 위해 구조 예비 부품으로 조립되었으며, 그리하여 함대의 최신 기체조차 최악의 날에 대한 기억을 지니게 되었다. 최초의 Hubble 정비 임무인 STS-61을 수행했는데, 이는 망원경의 결함 있는 거울을 수정하고 관측소의 명성을 회복시킨 비행이었으며, 국제우주정거장 조립에서 중요한 역할을 수행했다. 함대에서 가장 어렸고 가장 바쁜 기체 중 하나로, 프로그램의 마지막 해까지 비행했다.",
+    "new": "Endeavour, OV-105는 마지막으로 제작된 궤도선이었다 — Challenger를 대체하기 위해 구조 예비 부품으로 조립되어, Shuttle 기체 중 가장 새것조차 그 최악의 날의 기억을 안고 있었다. 최초의 Hubble 정비 임무 STS-61을 수행했는데, 망원경의 결함 있는 거울을 바로잡아 관측소의 명성을 구한 비행이었고, 국제우주정거장 조립에서도 무거운 짐을 도맡았다. 가장 어린 기체이면서 가장 바쁜 기체 중 하나로, 프로그램의 마지막 해까지 비행했다."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/endeavour.json",
+    "at": "description",
+    "old": "다섯 번째이자 마지막 운용 궤도선. Challenger 사고로 NASA에 운용 가능한 궤도선이 3대만 남게 된 후 구조 예비 부품으로 제작. Captain Cook의 HMS Endeavour를 따라 전국 학교 공모전을 통해 명명. 첫 비행 STS-49(1992-05-07)에서 표류 중이던 Intelsat VI 위성을 회수하는 최초의 3인 EVA 수행. 하이라이트: STS-61(1993-12) 최초 Hubble 정비; STS-88(1998-12-04) 최초 ISS 조립 비행, Unity 전달; STS-100(2001-04) Canadarm2 설치; STS-130(2010-02) Tranquility + Cupola 설치; STS-134(2011-05) AMS-02 우주선 검출기 설치. California Science Center(Los Angeles)에 전시.",
+    "new": "다섯 번째이자 마지막 운용 궤도선. Challenger 사고로 NASA에 비행 가능 인증을 받은 궤도선이 3대만 남게 된 후 구조 예비 부품으로 제작. Captain Cook의 HMS Endeavour를 따라 전국 학교 공모전을 통해 명명. 첫 비행 STS-49(1992-05-07)에서 표류 중이던 Intelsat VI 위성을 붙잡는 최초의 3인 EVA 수행. 주요 이력: STS-61(1993-12) 최초 Hubble 정비로 Hubble의 광학계 복구; STS-88(1998-12-04) 최초 ISS 조립 비행, Node 1 Unity 전달; STS-100(2001-04) Canadarm2 설치; STS-130(2010-02) Tranquility + Cupola 설치; STS-134(2011-05) AMS-02 우주선(宇宙線) 검출기 설치 — Shuttle 계획의 마지막 EVA 승무원. California Science Center(Los Angeles)에 전시."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/endeavour.json",
+    "at": "best_known_for",
+    "old": "가장 젊은 셔틀; 최초 Hubble 정비 STS-61(1993); Unity + Canadarm2 + Tranquility/Cupola 전달",
+    "new": "가장 나중에 제작된 Shuttle; 최초 Hubble 정비 STS-61(1993); Unity + Canadarm2 + Tranquility/Cupola 전달"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/enterprise.json",
+    "at": "tagline",
+    "old": "OV-101 — 프로토타입 셔틀. Star Trek 팬들의 캠페인 이후 Constitution에서 이름 변경. 1977년 대기권 비행 시험 수행; 궤도에 도달하지 못함",
+    "new": "OV-101 — 시제기 Shuttle. Star Trek 팬들의 캠페인 끝에 Constitution에서 개명. 1977년 대기권 비행 시험 수행; 궤도에는 도달하지 못함"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/enterprise.json",
+    "at": "description",
+    "old": "Constitution이라고 불렸던 것을 1976년 Star Trek 팬들이 조직한 팬레터 캠페인 이후 셔틀에 이름을 붙일 때 Enterprise로 이름 변경. 접근 및 착륙 시험(ALT)의 프로토타입으로 건설됨 — 1977년 Edwards Air Force Base 상공에서 Shuttle Carrier Aircraft를 이용한 8회의 포획 비행과 5회의 자유 비행 수행. 첫 자유 비행은 1977년 8월 12일로 Fred Haise와 Gordon Fullerton이 조종했으며 궤도선이 활강하여 착륙할 수 있음을 입증. 추진 장치나 활성 TPS 타일을 포함하지 않음; Enterprise를 비행 인정 수준으로 개조하는 것이 구조 부품으로 새 궤도선을 건설하는 것보다 더 무겁다고 예상되어 대신 Challenger를 건설함. 현재 NYC의 Intrepid Sea, Air & Space Museum에 전시 중.",
+    "new": "원래 이름은 Constitution이었으나, 1976년 Shuttle의 이름을 정하던 중 Star Trek 팬들이 벌인 편지 캠페인 끝에 Enterprise로 개명되었다. 접근 및 착륙 시험(ALT)용 시제기로 제작되어, 1977년 Edwards Air Force Base 상공에서 Shuttle Carrier Aircraft에 실린 채 모기 탑재 비행 8회와 자유 비행 5회를 수행했다. 1977-08-12 첫 자유 비행은 Fred Haise와 Gordon Fullerton이 조종했고, 궤도선이 활공해 착륙할 수 있음을 입증했다. 추진 장치와 실제 열방어(TPS) 타일은 갖추지 않았다. Enterprise를 비행 가능 사양으로 개조하는 것이 구조 예비 부품으로 새 궤도선을 만드는 것보다 부담이 큰 일로 추산되어, 대신 Challenger가 제작되었다. 현재 NYC의 Intrepid Sea, Air & Space Museum에 전시 중."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/enterprise.json",
+    "at": "best_known_for",
+    "old": "프로토타입 셔틀; 1977년 대기권 낙하 시험; 궤도 비행을 수행하지 않음",
+    "new": "시제기 Shuttle; 1977년 대기권 투하 시험; 궤도에는 오르지 않음"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/gaganyaan.json",
+    "at": "description",
+    "old": "인도의 첫 유인 우주선으로, LVM3(구 GSLV Mk III)을 통한 2027년 유인 비행을 목표로 하고 있습니다. 3명의 우주비행사가 약 7일 동안 저궤도 미션에 참여할 예정이며, 이는 인도 유인 우주 비행 프로그램의 시작이 됩니다. ISRO는 승무원 모듈 적격성 시험을 완료했으며 우주비행사 후보자들을 훈련시켰습니다.",
+    "new": "인도 최초의 유인 우주선으로, LVM3(구 GSLV Mk III)에 실어 2027년 유인 비행을 하는 것을 목표로 합니다. 우주비행사 3명이 약 7일간 지구 저궤도 임무를 수행할 예정이며, 인도 유인 우주비행 프로그램의 시작이 됩니다. ISRO는 승무원 모듈 인증 시험을 마쳤고 우주비행사 후보들을 훈련시켰습니다."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/gemini.json",
+    "at": "dispatch",
+    "old": "Gemini 우주선은 미국인이 실제로 조종할 수 있는 첫 우주선이었습니다. 머큐리의 우주인들은 대부분 지상에서 제어하는 캡슐을 타고만 갔지만, Gemini의 2인 승무원은 추진기, 비행 컴퓨터, 그리고 궤도를 스스로 변경하여 다른 우주선을 추격하고 도킹할 수 있는 능력을 갖추었습니다. 그것이 Gemini의 존재 이유 전부였습니다 — 새로운 곳으로 가는 것이 아니라 Apollo가 필요로 할 기동을 연습하기 위한 기계가 되는 것입니다. 머큐리보다 넓지만 여전히 답답했으며, 그 이후의 Apollo처럼 승무원 모듈과 장비 구간으로 나뉘어, 10번의 비행 동안 랑데부, 도킹, 2주간의 체류를 미지의 영역에서 승무원이 단순히 수행할 수 있는 것으로 바꾸어 놓았습니다.",
+    "new": "Gemini 우주선은 미국인이 실제로 조종할 수 있었던 첫 우주선이었습니다. Mercury의 우주비행사는 대부분 지상에서 제어하는 캡슐에 탄 승객이었지만, Gemini의 2인 승무원은 추력기와 비행 컴퓨터를 얻었고 스스로 궤도를 바꿔 다른 우주선을 쫓아가 도킹할 수 있었습니다. 그것이 존재 이유의 전부였습니다 — 어딘가 새로운 곳에 가는 것이 아니라, Apollo가 필요로 할 기동을 연습하는 기계가 되는 것이었습니다. Mercury보다 넓었지만 여전히 비좁았고, 뒤의 Apollo처럼 승무원 모듈과 장비 구간으로 나뉜 이 우주선은 10번의 비행을 거치며 랑데부와 도킹, 2주간의 장기 체류를 열린 질문에서 승무원이 그저 해낼 수 있는 일로 바꿔 놓았습니다."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/gemini.json",
+    "at": "description",
+    "old": "NASA에 우주 회합, 도킹, 우주유영의 기법을 가르친 2인승 우주선으로, 이 기법들이 Apollo 계획을 가능하게 했습니다. 1964–1965년의 두 번의 무인 시험비행(Gemini 1과 2)에 이어 1965–1966년의 10개 유인 미션(Gemini 3–12)이 이루어졌으며, 모두 달을 향한 한 걸음씩이었습니다.",
+    "new": "NASA에 우주에서 랑데부하고 도킹하고 걷는 법을 가르친 2인승 우주선으로, 이 기술들이 Apollo를 가능하게 했습니다. 1964–1965년의 무인 시험비행 두 번(Gemini 1과 2)에 이어 1965–1966년에 유인 임무 열 번(Gemini 3–12)이 이루어졌고, 하나하나가 달을 향한 한 걸음이었습니다."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/mercury-capsule.json",
+    "at": "dispatch",
+    "old": "Mercury 캡슐은 우주에서 한 사람이 살아있을 수 있는 가장 작은 물체가 되도록 설계되었습니다. 그리고 그것이 드러납니다. 앉아있는 것 외에 할 수 있는 일이 거의 없었습니다. 우주비행사는 우주선을 타는 것만큼이나 우주선을 입고 있었습니다. 하지만 그 형태는 그 시대의 가장 어려운 미해결 문제 — 돌아오는 방법 — 를 해결했습니다. 열을 소모하고 열을 멀리 옮기도록 설계된 실드로 코팅된 둔탁한 끝부분은 재진입을 치명적인 확실성에서 생존 가능한 것으로 바꾸었고, 그 원뿔은 유인 우주선이 어떤 모습이든 해야 한다는 질문에 대한 첫 번째 미국식 답변이었습니다. 그 이후의 모든 캡슐 — Gemini, Apollo, Dragon — 은 이 비좁은 작은 원뿔의 후손입니다.",
+    "new": "Mercury 캡슐은 우주에서 사람이 살아 있을 수 있는 가장 작은 물체가 되도록 설계되었고, 그 흔적이 역력합니다. 앉아 있는 것 말고는 할 수 있는 일이 거의 없었고, 우주비행사는 우주선을 탄다기보다 입고 있는 것에 가까웠습니다. 하지만 이 형태는 당대에 가장 어려웠던 미해결 문제, 곧 돌아오는 방법을 풀어냈습니다. 탄화하면서 열을 실어 내도록 만든 열차폐를 입힌 뭉툭한 끝부분은 재진입을 확실한 죽음에서 살아남을 수 있는 일로 바꿔 놓았고, 그 원뿔은 유인 우주선이 대체 어떻게 생겨야 하느냐는 물음에 대한 미국의 첫 대답이었습니다. 이후의 모든 캡슐 — Gemini, Apollo, Dragon — 은 이 비좁은 작은 원뿔의 후손입니다."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/mercury-capsule.json",
+    "at": "description",
+    "old": "1961년부터 1963년 사이에 머큐리 프로젝트에서 6명의 미국 우주비행사를 태워간 원뿔 모양의 캡슐. 존 글렌이 \"깡통 속의 스팸\"이라고 유명하게 표현할 정도로 작았지만 — 미국이 궤도 비행을 성취할 수 있다는 것을 증명했다.",
+    "new": "1961년부터 1963년 사이 Project Mercury에서 미국 우주비행사 6명을 태운 원뿔형 캡슐. 존 글렌이 \"깡통 속의 스팸\"이라고 표현해 유명해질 만큼 작았지만 — 미국도 궤도 비행을 해낼 수 있음을 증명했다."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/new-shepard.json",
+    "at": "description",
+    "old": "Blue Origin의 하위 항공 승무원 우주선, 앨런 셰퍼드의 이름을. 재사용 가능한 부스터 + 캡슐 아키텍처, parachutes 아래 캡슐 착륙. 2021 년부터 승무원; 제프 베이조스, 윌리엄 샤트너 및 간단한 하위 항공 항공편에 다른 사람.",
+    "new": "Blue Origin의 준궤도 유인 우주선으로, 앨런 셰퍼드의 이름을 땄다. 재사용 부스터 + 캡슐 구조이며, 캡슐은 낙하산으로 착륙한다. 2021년부터 승무원을 태웠고, 제프 베이조스, 윌리엄 샤트너 등을 짧은 준궤도 비행에 실어 날랐다."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/orion.json",
+    "at": "tagline",
+    "old": "Artemis 달 탐사 프로그램을 위한 승무원 탑승 우주선",
+    "new": "Artemis 달 탐사 프로그램의 유인 우주선"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/orion.json",
+    "at": "description",
+    "old": "NASA의 Artemis 프로그램을 위한 승무원 탑승 우주선으로, ESA와 공동으로 제작되었습니다(European Service Module은 Airbus에서 제공). 달 궤도에 대한 수 주간의 미션에 최대 4명의 우주비행사를 지원하도록 설계되었습니다. Artemis I에서 무인 비행을 수행했습니다(2022년). Artemis II에서 첫 번째 유인 미션을 수행했습니다(2026년 4월, 달 근접 비행 궤적의 4명 승무원).",
+    "new": "NASA의 Artemis 프로그램을 위한 유인 우주선으로, ESA와 공동으로 제작되었습니다(유럽 서비스 모듈은 Airbus가 제공). 달 궤도로 향하는 수 주간의 임무에서 최대 4명의 우주비행사를 지원하도록 설계되었습니다. 2022년 Artemis I에서 무인 비행을 했고, 2026년 4월 Artemis II에서 달 근접 비행 궤적으로 4명의 승무원을 태우고 첫 유인 임무를 수행했습니다."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/orion.json",
+    "at": "best_known_for",
+    "old": "Artemis 달 탐사 프로그램을 위한 승무원 탑승 우주선",
+    "new": "Artemis 달 탐사 프로그램의 유인 우주선"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/shenzhou.json",
+    "at": "description",
+    "old": "중국의 승무원 우주선, 외부 Soyuz-derived하지만 확대. 2003 년 최초의 승무원 비행 (Shenzhou 5, 양리웨이); 이제 6 개월마다 승무원 교체와 Tiangong에 표준 페리.",
+    "new": "중국의 유인 우주선으로, 외관은 Soyuz에서 파생되었지만 더 크다. 2003년 첫 유인 비행(Shenzhou 5, 양리웨이); 현재는 Tiangong으로 가는 표준 수송선으로, 6개월마다 승무원이 교대한다."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-7k-ok.json",
+    "at": "tagline",
+    "old": "최초의 Soyuz 세대; 코마로프의 운명 비행",
+    "new": "초대 Soyuz 세대; 코마로프가 숨진 비행"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-7k-ok.json",
+    "at": "dispatch",
+    "old": "Soyuz 7K-OK는 이 계열의 첫 번째 버전이자 모든 우주선을 뛰어넘어 살아남을 최초의 버전이었다. 이후 모든 Soyuz가 유지해온 3개 모듈 구조를 도입했다. 생활과 작업을 위한 구형 궤도 모듈, 귀환을 위한 소형 하강 모듈, 그리고 전력과 추진을 위한 서비스 모듈이다. 또한 첫 유인 비행에서 블라디미르 코마로프를 사망하게 한 버전이자, 개선된 형태로 Soyuz 11의 세 우주비행사를 사망하게 한 버전이기도 하다. 급하게 만들어진 설계를 신뢰할 수 있는 것으로 만든 초기의 혹독한 교훈이었다. 초기에는 조잡하고 위험했지만, 기본 구조가 매우 견고함이 입증되어 수십 년에 걸쳐 개선된 결과 오늘날에도 여전히 승무원을 궤도로 운반하고 있다.",
+    "new": "Soyuz 7K-OK는 이 계열의 첫 번째 버전이자, 훗날 모든 형제 기체보다 오래 살아남을 우주선의 원형이었다. 이후 모든 Soyuz가 이어 온 3모듈 구조를 도입했다. 생활과 작업을 위한 구형 궤도 모듈, 귀환용 소형 하강 모듈, 전력과 추진을 맡는 서비스 모듈이다. 첫 유인 비행에서 블라디미르 코마로프의 목숨을 앗아간 버전이자, 개량형으로 Soyuz 11의 우주비행사 세 명을 숨지게 한 버전이기도 했다 — 서둘러 만든 설계를 믿을 수 있는 설계로 바꾼, 혹독한 초기 수업이었다. 처음에는 조잡하고 위험했지만 기본 구조가 워낙 견고해, 수십 년 동안 다듬어지며 오늘날에도 여전히 승무원을 궤도로 실어 나르고 있다."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-7k-ok.json",
+    "at": "description",
+    "old": "Soyuz의 첫 번째 세대, 6 년 동안 끝낸 모든 건축 선택: 궤도 단위 구체, descent 단위, 배포 가능한 태양 배열과 서비스 모듈. Soyuz 1 (코마로프의 치명적 비행, 1967)에 의해 소개 된 Tragically.",
+    "new": "60년 동안 이어진 구조적 선택을 모두 갖춘 Soyuz의 첫 세대: 구형 궤도 모듈, 하강 모듈, 전개식 태양전지판을 단 서비스 모듈. Soyuz 1(코마로프가 숨진 1967년의 비행)으로 비극적으로 첫선을 보였다."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-7k-ok.json",
+    "at": "best_known_for",
+    "old": "최초의 Soyuz 세대; 코마로프의 운명 비행",
+    "new": "초대 Soyuz 세대; 코마로프가 숨진 비행"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-ms.json",
+    "at": "tagline",
+    "old": "현재 Soyuz 세대; ISS 수명 보트",
+    "new": "현재 Soyuz 세대; ISS 구명정"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-ms.json",
+    "at": "description",
+    "old": "2016년부터 운용 중인 현재의 Soyuz 세대. 새로운 소프트웨어와 GLONASS/GPS 지원 랑데부 기술로 ISS 도킹이 3시간 이내에 가능해졌습니다. 우주 역사상 가장 많이 비행한 유인 우주선 계통인 Soyuz 계열의 일부입니다.",
+    "new": "2016년부터 운용 중인 현재의 Soyuz 세대. 새로운 소프트웨어와 GLONASS/GPS 지원 랑데부 기술로 ISS 도킹이 최단 3시간 만에 가능합니다. 우주 역사상 가장 많이 비행한 유인 우주선 계통인 Soyuz 계열의 일부입니다."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-ms.json",
+    "at": "best_known_for",
+    "old": "현재 Soyuz 세대; ISS 수명 보트",
+    "new": "현재 Soyuz 세대; ISS 구명정"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-t.json",
+    "at": "tagline",
+    "old": "세 cosmonaut Salyut-era 변형",
+    "new": "우주비행사 3명이 탑승하는 Salyut 시대 변형"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-t.json",
+    "at": "description",
+    "old": "1979년부터 1986년까지의 Salyut 시대 우주선으로, Soyuz 11 치명적 감압사고 이후 복구된 3명 우주인 탑재 능력을 갖춘 Soyuz입니다. 현대화된 항공전자공학과 쌍추진제 엔진을 탑재했으며, 원래의 7K-OK와 장기간 운용된 TM/TMA/MS 계열 사이의 연결고리입니다.",
+    "new": "1979년부터 1986년까지 Salyut 시대에 쓰인 Soyuz로, Soyuz 11의 감압 사고 이후 3인 탑승 능력을 되찾았습니다. 현대화된 항공전자 장비와 자발 점화(하이퍼골릭) 추진 방식을 갖췄으며, 최초의 7K-OK와 오래 운용된 TM/TMA/MS 계열 사이를 잇는 다리입니다."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-t.json",
+    "at": "best_known_for",
+    "old": "세 cosmonaut Salyut-era 변형",
+    "new": "우주비행사 3명이 탑승하는 Salyut 시대 변형"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-tm.json",
+    "at": "tagline",
+    "old": "Mir-era Soyuz; 현대 avionics",
+    "new": "Mir 시대 Soyuz; 현대화된 항공전자 장비"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-tm.json",
+    "at": "description",
+    "old": "Mir-era Soyuz (1986-2002), 재설계된 avionics 및 새로운 Kurs 자동화된 도킹 시스템. Flew 소련, 러시아, 그리고 파트너 국가 cosmonauts에 대한 Mir 15 년.",
+    "new": "Mir 시대 Soyuz(1986–2002)로, 항공전자 장비를 재설계하고 새로운 Kurs 자동 도킹 시스템을 도입했다. 15년 동안 소련, 러시아, 파트너 국가의 우주비행사를 Mir로 실어 날랐다."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-tm.json",
+    "at": "best_known_for",
+    "old": "Mir-era Soyuz; 현대 avionics",
+    "new": "Mir 시대 Soyuz; 현대화된 항공전자 장비"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-tma.json",
+    "at": "tagline",
+    "old": "ISS-era Soyuz; 확장 승무원 높이 봉투",
+    "new": "ISS 시대 Soyuz; 탑승 가능 신장 범위 확대"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-tma.json",
+    "at": "description",
+    "old": "ISS-era Soyuz (2002–2012), 디지털 비행 컴퓨터와 더 넓은 승무원 고도 봉투 국제 파트너 astronaut corps를 수용. 전문 승무원과 함께 첫 번째 공간 관광을 훈련.",
+    "new": "ISS 시대 Soyuz(2002–2012)로, 디지털 비행 컴퓨터와 더 넓은 탑승 신장 범위를 갖춰 국제 파트너 우주비행사단을 수용했다. 전문 승무원과 함께 최초의 우주 관광객을 실어 날랐다."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/soyuz-tma.json",
+    "at": "best_known_for",
+    "old": "ISS-era Soyuz; 확장 승무원 높이 봉투",
+    "new": "ISS 시대 Soyuz; 탑승 가능 신장 범위 확대"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/space-shuttle-orbiter.json",
+    "at": "tagline",
+    "old": "재사용 가능한 날개 궤도 승무원 차량",
+    "new": "재사용 가능한 날개 달린 궤도 유인 우주선"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/space-shuttle-orbiter.json",
+    "at": "description",
+    "old": "재사용 가능한 날개 달린 우주선은 1981년부터 2011년까지 135개의 임무를 펼치고 있습니다. 다섯 개의 비행 궤도가 내장되었습니다 (Columbia, Challenger, Discovery, Atlantis, Endeavour); 컬럼비아 및 도전자는 승무원과 잃었습니다.",
+    "new": "재사용 가능한 날개 달린 우주선으로, 1981년부터 2011년까지 135회 임무를 수행했으며, 글라이더처럼 착륙한 유일한 유인 우주선이다. 비행용 궤도선은 다섯 대가 제작되었고(Columbia, Challenger, Discovery, Atlantis, Endeavour), 이 중 Columbia와 Challenger는 승무원과 함께 상실되었다."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/space-shuttle-orbiter.json",
+    "at": "best_known_for",
+    "old": "재사용 가능한 날개 궤도 승무원 차량",
+    "new": "재사용 가능한 날개 달린 궤도 유인 우주선"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/starliner.json",
+    "at": "description",
+    "old": "Boeing의 Commercial Crew 운송선으로, 서비스 모듈의 추진기를 이용한 푸셔식 발사 중단 시스템을 갖춘다. Crew Flight Test(2024년 6월)에서 추진기 고장과 헬륨 누출이 발생했으며, NASA는 캡슐을 무인 상태로 복귀시켰다(2024년 9월). 윌모어와 Williams는 SpaceX Crew-9을 통해 귀환했다(2025년 2월). 재인증 대기 중이므로 승무원 비행이 중단된 상태이다.",
+    "new": "Boeing의 Commercial Crew 우주선으로, 서비스 모듈의 추진기를 이용한 푸셔식 발사 중단 시스템을 갖춘다. Crew Flight Test(2024년 6월)에서 추진기 고장과 헬륨 누출이 발생했으며, NASA는 캡슐을 무인 상태로 복귀시켰다(2024년 9월). 윌모어와 윌리엄스는 SpaceX Crew-9를 통해 귀환했다(2025년 2월). 재인증 대기 중이므로 승무원 비행이 중단된 상태이다."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/voskhod.json",
+    "at": "tagline",
+    "old": "첫 번째 멀티 스크류 비행; 첫 번째 우주선",
+    "new": "최초의 다인승 비행; 최초의 우주 유영"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/voskhod.json",
+    "at": "description",
+    "old": "수정된 Vostok는 3개의 cosmonauts까지 나르기 위하여 refitted. 두 승무원 비행 - Voskhod 1 (첫 번째 멀티 스크류) 및 Voskhod 2 (알렉세이 레오노프의 첫 우주선 1965). 디자인 마진을 넘어 Soyuz의 호평을 은퇴했다.",
+    "new": "최대 3명의 우주비행사를 태우도록 개조한 Vostok. 유인 비행 두 차례 — Voskhod 1(최초의 다인승 비행)과 Voskhod 2(1965년 알렉세이 레오노프의 최초 우주 유영). 설계 여유를 넘어서까지 밀어붙인 끝에 Soyuz에 자리를 내주고 퇴역했다."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/voskhod.json",
+    "at": "best_known_for",
+    "old": "첫 번째 멀티 스크류 비행; 첫 번째 우주선",
+    "new": "최초의 다인승 비행; 최초의 우주 유영"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/vostok.json",
+    "at": "description",
+    "old": "1961-04-12의 궤도에서 유리 가가린을 반환 한 둥근 descent 단위 — 첫번째 인간적인 spaceflight. 발렌티나 테레시코바의 솔로 궤도 임무를 포함하여 1961 년과 1963 년 사이에 6 승무원 비행.",
+    "new": "1961-04-12 유리 가가린을 궤도에서 귀환시킨 구형 하강 모듈 — 최초의 유인 우주비행. 1961년부터 1963년 사이 유인 비행 여섯 차례, 여기에는 최초의 여성 우주인으로서 발렌티나 테레시코바가 수행한 단독 궤도 임무가 포함된다."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/x37b.json",
+    "at": "tagline",
+    "old": "USSF의 재사용 로봇 우주 비행기 — 기밀 다년간 궤도 임무, Shuttle 퇴역 후 유일한 미국 우주 비행기",
+    "new": "USSF의 재사용 무인 우주비행기 — 수년에 걸친 기밀 궤도 임무, Shuttle 퇴역 후 유일하게 운용 중인 미국 우주비행기"
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/x37b.json",
+    "at": "description",
+    "old": "Boeing Phantom Works가 USAF를 위해 제작하고 2019년 USSF로 이관한 로봇식 소형 우주비행기(길이 8.9 m, 무게 약 5 t). Atlas V 501(원래), SpaceX Falcon 9(OTV-5부터), Falcon Heavy(OTV-7부터)로 수직 발사하며 Kennedy의 전 Shuttle 활주로에 수평 착륙한다. 대부분의 탑재물과 궤도 매개변수는 기밀이지만, 알려진 임무 지속 기간은 224일(OTV-1, 2010)에서 908일(OTV-6, 2020-2022)의 기록까지 이른다. 공개된 실험에는 Hall-effect 추진기 기술 시연, AFRL 무선주파수 통신 시험, 1 W 태양광-마이크로파 빔 변환 실험(PRAM, OTV-6)이 포함된다. 2026년 기준으로 7개 임무를 비행했다.",
+    "new": "Boeing Phantom Works가 USAF를 위해 제작하고 2019년 USSF로 이관한 로봇식 소형 우주비행기(길이 8.9 m, 무게 약 5 t). Atlas V 501(원래), SpaceX Falcon 9(OTV-5부터), Falcon Heavy(OTV-7부터)로 수직 발사하며 케네디 우주 센터의 옛 Shuttle 활주로에 수평 착륙한다. 대부분의 탑재물과 궤도 매개변수는 기밀이지만, 알려진 임무 지속 기간은 224일(OTV-1, 2010)에서 908일(OTV-6, 2020-2022)의 기록까지 이른다. 공개된 실험에는 홀 효과 추진기 기술 시연, AFRL 무선주파수 통신 시험, 1 W 태양광-마이크로파 빔 변환 실험(PRAM, OTV-6)이 포함된다. 2026년 기준으로 7개 임무를 비행했다."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/x37b.json",
+    "at": "best_known_for",
+    "old": "USSF 재사용 로봇 우주 비행기 — 기밀 다년 궤도 임무, Shuttle 퇴역 후 미국 우주 비행기",
+    "new": "USSF의 재사용 무인 우주비행기 — 수년에 걸친 기밀 궤도 임무, Shuttle 이후의 미국 우주비행기"
+  },
+  {
+    "rel": "fleet/engine/ce-20.json",
+    "at": "tagline",
+    "old": "인도 최초의 자체 개발 극저온 엔진, 필요에서 비롯된 도전",
+    "new": "인도 최초의 자체 개발 극저온 엔진, 필요에서 태어나다"
+  },
+  {
+    "rel": "fleet/engine/ce-20.json",
+    "at": "description",
+    "old": "1990년대 초 기술 이전 제한으로 인해 인도가 극저온 엔진 기술 획득이 봉쇄되자, ISRO의 액체 추진 시스템 센터(Liquid Propulsion Systems Centre)는 이를 백지에서부터 개발했다. CE-20이 그 결과물이다. LOX와 LH2를 연소하는 가스 생성기 사이클 방식의 이 엔진은 인도의 가장 강력한 운용 로켓 LVM3의 상단 스테이지를 구동한다. 2017년 6월 5일 GSLV Mk III D1 개발 비행에서 처음 비행했으며, 이는 지정학적 장벽을 독립적 역량으로 전환시킨 20년에 걸친 개발 프로그램의 완성을 의미한다. CE-20은 인도의 첫 유인 우주 비행 미션인 가간얀(Gaganyaan)을 궤도에 실어 날릴 엔진이다.",
+    "new": "1990년대 초 기술 이전 제한으로 인도가 극저온 엔진 기술을 들여오지 못하게 되자, ISRO의 액체 추진 시스템 센터(Liquid Propulsion Systems Centre)는 이를 처음부터 직접 개발했다. CE-20이 그 결과물이다. LOX와 LH2를 연소하는 가스 발생기 사이클 엔진으로, 인도의 가장 무거운 현역 로켓 LVM3의 상단을 구동한다. 2017년 6월 5일 GSLV Mk III D1 개발 비행에서 처음 비행했으며, 지정학적 장벽을 독자적 역량으로 바꿔 놓은 20년 개발 프로그램의 마침표를 찍었다. CE-20은 인도 최초의 유인 임무인 Gaganyaan을 궤도에 올려 보낼 엔진이다."
+  },
+  {
+    "rel": "fleet/engine/ce-20.json",
+    "at": "best_known_for",
+    "old": "인도 최초의 자체 개발 극저온 엔진 — LVM3 상단 스테이지",
+    "new": "인도 최초의 자체 개발 극저온 엔진 — LVM3의 상단"
+  },
+  {
+    "rel": "fleet/engine/f-1.json",
+    "at": "description",
+    "old": "Saturn V 첫 단계의 5개 F-1 엔진은 해수면에서 그 이전이나 이후 어떤 로켓도 달성하지 못한 합성 추력을 생성했다. Rocketdyne의 가스 발생기 사이클은 LOX와 RP-1을 자동차 엔진 크기의 터보펌프와 엔지니어들이 시행착오와 폭발, 재설계를 통해 연소 불안정성을 해결해야 했던 연소실이 필요할 정도의 속도로 연소했다. 1967년 11월 9일 처음 비행했으며 프로그램이 종료되기 전에 Apollo를 달로 가는 길에 6번 올려보냈다.",
+    "new": "Saturn V 1단의 F-1 다섯 기는 해수면에서 그 이전에도 이후에도 어떤 로켓도 따라오지 못한 합산 추력을 냈다. Rocketdyne의 가스 발생기 사이클은 LOX와 RP-1을 엄청난 속도로 태웠는데, 이를 감당하려면 자동차 엔진만 한 터보펌프가 필요했고, 연소실의 연소 불안정은 엔지니어들이 시행착오와 폭발, 재설계를 거듭하며 해결해야 했다. 1967년 11월 9일 처음 비행했으며 프로그램이 끝나기 전까지 Apollo를 달로 가는 길에 여섯 번 올려 보냈다."
+  },
+  {
+    "rel": "fleet/engine/h-1.json",
+    "at": "tagline",
+    "old": "8개 엔진, 8개 임무 — 새턴 I의 주력 엔진",
+    "new": "8기의 엔진, 8번의 임무 — Saturn I의 주력 엔진"
+  },
+  {
+    "rel": "fleet/engine/h-1.json",
+    "at": "description",
+    "old": "H-1은 Rocketdyne이 초기 탄도미사일 엔진과 그 뒤를 따를 F-1 사이의 간극을 메우기 위해 개발한 엔진이었습니다. LOX와 RP-1에서 가스 발생기 사이클을 작동시키면서, 8개의 H-1을 함께 묶으면 Saturn I의 첫 단계를 형성했으며, 나중에는 Saturn IB의 첫 단계도 형성했습니다. 이는 모든 무인 Apollo 하드웨어 시험과 승무원이 탑승한 Apollo 7을 날렸습니다. 첫 비행은 1961년 10월 27일이었으며, Saturn IB 프로그램이 1975년에 끝날 때까지 계속 운용되었습니다.",
+    "new": "H-1은 Rocketdyne이 초기 탄도미사일 엔진과 뒤이을 F-1 사이의 간극을 메우려고 만든 엔진이었습니다. LOX와 RP-1을 쓰는 가스 발생기 사이클로 작동하는 H-1 8기를 묶어 Saturn I의 1단을 이루었고, 나중에는 Saturn IB의 1단도 이루어, 무인 Apollo 하드웨어 시험 전체와 유인 Apollo 7을 쏘아 올렸습니다. 첫 비행은 1961년 10월 27일이었고, 1975년 Saturn IB 프로그램이 끝날 때까지 줄곧 운용되었습니다."
+  },
+  {
+    "rel": "fleet/engine/h-1.json",
+    "at": "best_known_for",
+    "old": "8개 클러스터 새턴 I/IB 부스터 엔진 — F-1의 전신",
+    "new": "8기 클러스터 Saturn I/IB 부스터 엔진 — F-1의 리허설"
+  },
+  {
+    "rel": "fleet/engine/hm7b.json",
+    "at": "tagline",
+    "old": "아리안의 극저온 상단 스테이지, 30년의 운영 기록",
+    "new": "Ariane의 극저온 상단 엔진, 30년의 운용 기록"
+  },
+  {
+    "rel": "fleet/engine/hm7b.json",
+    "at": "description",
+    "old": "HM7B는 코어 스테이지가 종료된 후 Ariane 로켓에 고에너지 추력을 제공한 수소 연료 상단부 엔진입니다. LOX와 LH2에서 가스 발생기 사이클을 구동하며, 1986년 5월 Ariane 2에서 처음 비행했고 2023년 7월 Ariane 5의 운용 종료까지 계속되었습니다. 작은 크기에도 불구하고 높은 비추력을 갖춘 이 엔진은 정지궤도 천이 주입의 핵심 엔진으로서 30년 이상 동안 Rosetta, Mars Express, Venus Express를 포함한 상업용 위성과 과학 탑재체를 우주선 이탈 궤도까지 운반했습니다.",
+    "new": "HM7B는 코어 단이 꺼진 뒤 Ariane 로켓에 고에너지 추진력을 더해 준 수소 연료 상단 엔진입니다. LOX와 LH2를 쓰는 가스 발생기 사이클로 구동되며, 1986년 5월 Ariane 2에서 처음 비행해 2023년 7월 Ariane 5의 운용이 끝날 때까지 이어졌습니다. 크기는 작지만 비추력이 높아 정지 천이 궤도 투입의 주력 엔진이 되었고, 30년 넘게 상업용 위성과 과학 탑재체 — Rosetta, Mars Express, Venus Express 포함 — 를 출발 궤도까지 실어 날랐습니다."
+  },
+  {
+    "rel": "fleet/engine/hm7b.json",
+    "at": "best_known_for",
+    "old": "유럽의 극저온 상단 스테이지 엔진 — 아리안의 달 너머 운송 주력기",
+    "new": "유럽의 극저온 상단 엔진 — Ariane의 달 전이 궤도 주력 엔진"
+  },
+  {
+    "rel": "fleet/engine/j-2.json",
+    "at": "description",
+    "old": "J-2는 수소와 산소를 연소했으며, 우주의 진공에서 재시동할 수 있었다. 이러한 능력 덕분에 Saturn V의 지구-달 이동 궤도 진입 연소가 가능했다. Rocketdyne의 가스 발생기 설계는 Saturn V의 2단계와 3단계, 그리고 Saturn IB에 탑재되어 뛰어난 성능과 우주에서의 재시동 능력을 결합하여 발사체를 진정한 출발 단계로 만들었다. 1966년 2월에 처음 비행했으며, 1975년 7월 Apollo-Soyuz Test Project에서 마지막으로 비행했다.",
+    "new": "J-2는 수소와 산소를 연소했으며, 우주의 진공에서 재시동할 수 있었다. 이러한 능력 덕분에 Saturn V의 달 전이 궤도 진입(TLI) 연소가 가능했다. Rocketdyne의 가스 발생기 설계는 Saturn V의 2단과 3단, 그리고 Saturn IB에 탑재되어 뛰어난 성능과 우주에서의 재시동 능력을 결합하여 발사체를 진정한 출발 단계로 만들었다. 1966년 2월에 처음 비행했으며, 1975년 7월 Apollo-Soyuz Test Project에서 마지막으로 비행했다."
+  },
+  {
+    "rel": "fleet/engine/le-5b.json",
+    "at": "description",
+    "old": "LE-5B는 일본 발사체의 두 세대를 잇는 극저온 상단 엔진입니다. LOX와 LH2를 사용하는 팽창-방출 사이클을 운영하며, 비행 중 재점화가 가능합니다. 이는 코스트 페이즈 후 위성을 정밀한 궤도에 배치하기 위한 필수 기능입니다. H-IIA에서 2001년 8월 처음 비행했으며, 이후 H3에서 계속 운용하기 위해 LE-5B-3로 성능이 향상되어 일본에 ISS 조립 시대부터 현재까지 끊김 없는 상단 엔진의 연속성을 제공했습니다. 재점화 가능성과 팽창-방출 사이클의 깔끔한 단순성의 조합으로 인해 이는 LE-7A와 LE-9 모두의 자연스러운 상단 엔진 보완재가 되었습니다.",
+    "new": "LE-5B는 일본 발사체 두 세대를 이어 온 극저온 상단 엔진입니다. LOX와 LH2를 쓰는 익스팬더 블리드 사이클로 작동하며, 비행 중 재점화가 가능합니다. 이는 관성 비행 구간을 거친 뒤 탑재체를 정밀한 궤도에 올려놓는 데 필수적인 기능입니다. 2001년 8월 H-IIA에서 처음 비행했고, 이후 LE-5B-3으로 성능을 높여 H3에서도 계속 쓰이며, 일본에 ISS 조립 시대부터 지금까지 끊김 없는 상단 엔진의 연속성을 제공했습니다. 재점화 능력과 익스팬더 블리드 사이클의 깔끔한 단순함 덕분에 LE-7A와 LE-9 양쪽 모두에 어울리는 상단 엔진이 되었습니다."
+  },
+  {
+    "rel": "fleet/engine/le-7a.json",
+    "at": "description",
+    "old": "LE-7A는 일본에 완전히 독립적인 중형 발사 능력을 부여한 엔진이다. Mitsubishi Heavy Industries에서 JAXA를 위해 개발한 이 엔진은 LOX와 LH2에 대한 단계 연소 사이클을 실행한다. 수소 추진제에서 최대 효율을 끌어내는 열역학적 방식이며, 2001년 8월 원래의 LE-7에서 개선된 후속 엔진으로 H-IIA에 처음 비행했다. 개설계는 초기 H-II 실패를 초래했던 터보펌프 문제를 해결했으며, LE-7A는 2024년까지 H-IIA와 H-IIB의 운용 경력을 주도했다. 일본의 HTV 화물선을 국제우주정거장으로 발사했으며, JAXA-ISRO 레이다 위성 ALOS 계열을 발사했다.",
+    "new": "LE-7A는 일본에 완전한 자국산 대형 발사 능력을 안겨 준 엔진이다. Mitsubishi Heavy Industries가 JAXA를 위해 개발했으며, LOX와 LH2를 쓰는 단계 연소 사이클로 작동한다 — 수소 추진제에서 최대 효율을 끌어내는 열역학적 방식이다. 원래의 LE-7을 다듬은 후속 엔진으로 2001년 8월 H-IIA에서 처음 비행했다. 재설계로 초기 H-II 실패의 원인이었던 터보펌프 문제가 해결되었고, LE-7A는 2024년까지 H-IIA와 H-IIB의 운용 이력을 떠받치며 일본의 HTV 화물선을 국제우주정거장으로, JAXA-ISRO 레이더 위성 ALOS 계열을 궤도로 쏘아 올렸다."
+  },
+  {
+    "rel": "fleet/engine/le-9.json",
+    "at": "description",
+    "old": "LE-9는 복잡함보다 우아함을 선택한 결과물이다. 단계 연소식의 터보펌프-전연소실 구조 대신, 익스팬더 블리드 사이클을 사용한다: 수소가 챔버와 노즐 벽에서 가열되고, 그 가스의 일부가 터보펌프를 구동한 후 외부로 배출되기 전에 분출된다. 이 사이클은 본질적으로 더 낮은 챔버 압력과 더 단순한 고온부 설계를 가지고 있으며, 초기 일본 엔진들을 괴롭혔던 기계적 고장 모드를 줄이기 위해 일부 성능을 맞바꾼다. Mitsubishi가 JAXA의 H3 로켓을 위해 개발했으며, LE-9는 2023년 3월에 처음 비행했고 실제 운용에 도달한 이 유형의 가장 큰 엔진이다.",
+    "new": "LE-9는 복잡함보다 우아함을 선택한 결과물이다. 단계 연소식의 터보펌프-전연소실 구조 대신, 익스팬더 블리드 사이클을 사용한다: 수소가 챔버와 노즐 벽에서 가열되고, 그 가스의 일부가 빼내어져 터보펌프를 구동한 뒤 선외로 배출된다. 이 사이클은 본질적으로 더 낮은 챔버 압력과 더 단순한 고온부 설계를 가지고 있으며, 초기 일본 엔진들을 괴롭혔던 기계적 고장 모드를 줄이기 위해 일부 성능을 맞바꾼다. Mitsubishi가 JAXA의 H3 로켓을 위해 개발했으며, LE-9는 2023년 3월에 처음 비행했고 실제 운용에 도달한 이 유형의 가장 큰 엔진이다."
+  },
+  {
+    "rel": "fleet/engine/lr87.json",
+    "at": "tagline",
+    "old": "쌍실 쌍추진 액체엔진이 모든 Gemini 유인 미션을 비행했다",
+    "new": "쌍연소실 자발 점화 1단 엔진, 모든 Gemini 승무원을 쏘아 올림"
+  },
+  {
+    "rel": "fleet/engine/lr87.json",
+    "at": "description",
+    "old": "LR87은 Titan II에 탑재되어 10개의 Gemini 유인 미션을 모두 발사한 엔진입니다. Aerojet의 설계는 단일 터보펌프 어셈블리에 두 개의 연소실을 배치하며, Aerozine-50과 질소 사산화물을 기체-발생기 사이클로 연소시킵니다 — 당시 미국 ICBM의 표준 장비였던 자발점화 조합입니다. 추진제 선택은 승무원 안전에 직접적인 영향을 미쳤습니다: RP-1이나 수소와 달리, Aerozine-50과 N₂O₄는 접촉 시 점화되어 10개의 유인 미션 모두에서 발사 탈출 타워 대신 사출석을 장착한 Gemini의 비행을 가능하게 한 자발점화 신뢰성을 제공했습니다. LR87은 나중에 2005년 10월까지 Titan III 및 Titan IV 상용 및 군사 미션에서 비행한 더 큰 변형으로 발전되었습니다.",
+    "new": "LR87은 Titan II에 실려 유인 Gemini 임무 10회를 모두 발사한 엔진입니다. Aerojet의 설계는 하나의 터보펌프 어셈블리에 연소실 두 개를 두고, Aerozine-50과 사산화이질소를 가스 발생기 사이클로 연소시킵니다 — 당시 미국 ICBM의 표준 장비였던 자발 점화(하이퍼골릭) 조합입니다. 추진제 선택은 승무원 안전에 직접 영향을 미쳤습니다: RP-1이나 수소와 달리 Aerozine-50과 N₂O₄는 접촉하면 바로 점화되어 자발 점화의 신뢰성을 제공했고, 덕분에 Gemini는 유인 임무 10회 모두에서 발사 탈출 타워 대신 사출석을 장착하고 비행할 수 있었습니다. LR87은 이후 더 큰 변형으로 발전해 2005년 10월까지 Titan III와 Titan IV의 상업 및 군사 임무에 쓰였습니다."
+  },
+  {
+    "rel": "fleet/engine/lr87.json",
+    "at": "best_known_for",
+    "old": "Titan II에서 Gemini 승무원을 발사한 쌍실 1단계 엔진",
+    "new": "Titan II에서 Gemini 승무원을 쏘아 올린 쌍연소실 1단 엔진"
+  },
+  {
+    "rel": "fleet/engine/merlin-1d.json",
+    "at": "tagline",
+    "old": "9개의 엔진, 1개의 부스터, 수십 번 비행 및 재비행됨",
+    "new": "엔진 9기, 부스터 1기, 수십 번 비행하고 다시 비행"
+  },
+  {
+    "rel": "fleet/engine/merlin-1d.json",
+    "at": "description",
+    "old": "SpaceX의 Merlin 1D는 재사용 가능한 Falcon 9를 가능하게 한 엔진입니다. 9개의 엔진이 Falcon 9의 1단에 클러스터를 이루며 LOX와 RP-1로 가스 발생기 사이클을 운영하며, 중앙 엔진은 진입 및 착륙 번(burn)에도 사용됩니다. 2013년 9월에 처음 비행한 Merlin 1D는 고속 작동이 가능한 주력 엔진으로 성숙했습니다: 개별 엔진들은 각각 20회 이상의 비행을 누적했으며, 이러한 재사용 기록은 업계가 경제적으로 달성 가능하다고 믿었던 것을 바꾸었습니다. 진공 변형인 Merlin 1D Vacuum은 근진공 환경에 최적화된 더 큰 노즐로 Falcon 9의 상단부를 구동합니다.",
+    "new": "SpaceX의 Merlin 1D는 재사용 가능한 Falcon 9를 가능하게 한 엔진입니다. 9개의 엔진이 Falcon 9의 1단에 모여 있으며 LOX와 RP-1로 가스 발생기 사이클을 운용하고, 중앙 엔진은 재진입 및 착륙 연소에도 쓰입니다. 2013년 9월에 처음 비행한 Merlin 1D는 높은 운용 빈도의 주력 엔진으로 자리 잡았습니다: 개별 엔진이 각각 20회가 넘는 비행을 누적했는데, 이 재사용 기록은 업계가 경제적으로 달성 가능하다고 믿던 수준을 바꿔 놓았습니다. 진공 변형인 Merlin 1D Vacuum은 거의 진공인 환경에 맞춰 최적화된 더 큰 노즐로 Falcon 9의 상단을 구동합니다."
+  },
+  {
+    "rel": "fleet/engine/merlin-1d.json",
+    "at": "best_known_for",
+    "old": "재사용 가능한 주력 엔진 — 9개가 Falcon 9를 추력을 제공하며, 수십 번 비행 및 재비행됨",
+    "new": "재사용 주력 엔진 — 9기가 Falcon 9를 띄우며, 수십 번 비행하고 다시 비행"
+  },
+  {
+    "rel": "fleet/engine/raptor.json",
+    "at": "tagline",
+    "old": "전체 흐름 단계 연소 — 가장 어려운 사이클, 드디어 비행 중",
+    "new": "전유량 단계 연소 — 가장 어려운 사이클, 마침내 비행 중"
+  },
+  {
+    "rel": "fleet/engine/raptor.json",
+    "at": "description",
+    "old": "Raptor는 운영 비행에 도달한 최초의 전체 흐름 단계 연소 엔진입니다. 이 열역학 사이클에서 두 추진제(LOX와 액체 메탄)는 주 연소실에 진입하기 전에 예연소실을 통과하여 최대 에너지를 추출하고 거의 모든 미연소 추진제를 남기지 않습니다. 엔지니어들은 수십 년 동안 이 개념을 연구했고 엄청나게 복잡하다고 결론지었습니다. SpaceX는 어쨌든 이를 만들었습니다. 33개의 Raptor가 Super Heavy의 1단에서 동시에 점화되며, 진공 최적화 변형 엔진이 Starship의 상단을 추진합니다. Raptor를 탑재한 최초의 통합 Starship 비행은 2023년 4월 20일에 발사되었습니다.",
+    "new": "Raptor는 실제 운용 비행에 도달한 최초의 전유량 단계 연소 엔진입니다. 이 열역학 사이클에서는 두 추진제 — LOX와 액체 메탄 — 가 모두 주 연소실에 들어가기 전에 예연소기를 거치며, 최대한의 에너지를 뽑아내고 미연소 추진제가 사실상 남지 않습니다. 엔지니어들은 수십 년 동안 이 개념을 연구했고 엄두를 못 낼 만큼 복잡하다고 결론지었지만, SpaceX는 기어이 만들어 냈습니다. Super Heavy의 1단에서는 Raptor 33기가 동시에 점화되고, 진공에 최적화한 변형이 Starship의 상단을 추진합니다. Raptor를 단 최초의 통합 Starship 비행은 2023년 4월 20일에 이륙했습니다."
+  },
+  {
+    "rel": "fleet/engine/raptor.json",
+    "at": "best_known_for",
+    "old": "전체 흐름 단계 연소 엔진 최초 비행 — 33개가 Super Heavy를 이륙시킴",
+    "new": "전유량 단계 연소 엔진으로는 최초로 비행 — 33기가 Super Heavy를 띄움"
+  },
+  {
+    "rel": "fleet/engine/rd-107-108.json",
+    "at": "tagline",
+    "old": "스푸트니크의 엔진 — 여전히 65년 후 인간을 실어 나르다",
+    "new": "Sputnik의 엔진 — 65년이 지난 지금도 사람을 실어 나르다"
+  },
+  {
+    "rel": "fleet/engine/rd-107-108.json",
+    "at": "description",
+    "old": "RD-107과 RD-108은 세계 최초의 대륙간탄도미사일인 R-7의 엔진으로, 세르게이 코롤료프의 팀이 발사체로 개조했습니다. RD-107은 R-7의 4개 부스터 로켓을 추진하고, RD-108은 중심 부분을 구동합니다. 둘 다 LOX와 케로신으로 가스 생성 사이클을 운영하며, 둘 다 1957년 8월 21일에 처음 비행했습니다 — Sputnik보다 몇 개월 앞서. RD-107A와 RD-108A로 업그레이드되어 국제우주정거장으로 승무원을 수송하는 Soyuz 로켓을 계속 추진하고 있으며, 이는 역사상 가장 오래 운용되는 인간용 추진 시스템입니다.",
+    "new": "RD-107과 RD-108은 세계 최초의 대륙간탄도미사일인 R-7의 엔진으로, 세르게이 코롤료프의 팀이 이 미사일을 발사체로 개조했습니다. RD-107은 R-7의 측면 부스터 4기를 추진하고, RD-108은 중앙 코어를 구동합니다. 둘 다 LOX와 케로신을 쓰는 가스 발생기 사이클로 작동하며, 둘 다 1957년 8월 21일 — Sputnik보다 몇 달 앞서 — 처음 비행했습니다. RD-107A와 RD-108A로 개량되어 국제우주정거장으로 승무원을 실어 나르는 Soyuz 로켓을 지금도 추진하고 있으며, 역사상 가장 오래 운용되고 있는 유인 등급 추진 시스템입니다."
+  },
+  {
+    "rel": "fleet/engine/rd-107-108.json",
+    "at": "best_known_for",
+    "old": "R-7 엔진 — 65년 이상 Soyuz에서 여전히 인간을 실어 나르다",
+    "new": "R-7 엔진 — 65년 넘게 지금도 Soyuz에서 사람을 실어 나르다"
+  },
+  {
+    "rel": "fleet/engine/rd-180.json",
+    "at": "description",
+    "old": "RD-180은 냉전 시기 미국이 사실상 소련에 양보했던 추진 기술의 한 갈래를 대표한다. 산소 과잉 단계 연소 방식 — 예연소실에서 과잉의 산화제를 연소시켜 터보펌프를 구동하는 방식 — 은 미국 산업계가 마스터하지 못했던 재료와 제조 공차 기준을 요구한다. NPO Energomash의 2실 단일 터보펌프 설계는 2000년 5월부터 Atlas V에 탑재되어 비행했으며, 그 시대의 미국산 케로신-액체산소 엔진 어떤 것도 따라잡을 수 없는 수준의 추력과 효율성을 1단계에 제공했다. 2023년 Atlas V의 퇴역과 함께 역사의 뒤안길로 사라졌다.",
+    "new": "RD-180은 냉전 시기 미국이 사실상 소련에 넘겨준 추진 기술의 한 갈래를 보여 준다. 산소 과잉 단계 연소 — 예연소실에서 과잉의 산화제를 태워 터보펌프를 구동하는 방식 — 은 미국 산업계가 숙달하지 못한 재료와 제조 공차를 요구한다. NPO Energomash의 연소실 2개, 터보펌프 1개 설계는 2000년 5월부터 Atlas V에 실려 비행했으며, 당시 미국산 케로신-액체산소 엔진으로는 어느 것도 따라올 수 없는 추력과 효율의 조합을 1단에 제공했다. 2023년 Atlas V와 함께 퇴역했다."
+  },
+  {
+    "rel": "fleet/engine/rd-253.json",
+    "at": "tagline",
+    "old": "Proton 모든 발사마다 제작되는 6개의 쌍추진 엔진",
+    "new": "Proton 발사 때마다 쓰인 자발 점화 엔진 6기"
+  },
+  {
+    "rel": "fleet/engine/rd-253.json",
+    "at": "description",
+    "old": "RD-253은 Proton을 소비에트 시대 가장 강력한 중형 발사체 중 하나로 만든 엔진이다. Proton의 1단에 6개가 장착되며, 각 엔진은 사산화질소와 비대칭 디메틸히드라진의 쌍추진제를 사용한 산소 과잉 단계연소 방식으로 작동한다 — 접촉 시 자동점화되며 점화 장치가 필요 없는 쌍추진제 쌍이다. 추진제는 독성과 부식성이 있지만 상온에서 저장되며 Proton이 수십 년에 걸친 상업 및 행성 탐사 임무 전반에서 유지한 신뢰성을 제공한다. RD-253은 1965년 7월 16일 처음 비행했으며 Proton의 퇴역까지 모든 Proton 1단에 동력을 공급했다.",
+    "new": "RD-253은 Proton을 소련 시대에서 손꼽히는 대형 발사체로 만든 엔진이다. Proton의 1단을 6기가 둘러싸고 있으며, 각 엔진은 사산화이질소와 비대칭 디메틸히드라진으로 산소 과잉 단계 연소를 한다 — 접촉하면 저절로 점화되어 점화 장치가 필요 없는 자발 점화(하이퍼골릭) 조합이다. 이 추진제는 독성과 부식성이 있지만 상온에서 보관할 수 있고, Proton이 수십 년에 걸친 상업 및 행성 탐사 임무에서 이어 간 신뢰성을 뒷받침했다. RD-253은 1965년 7월 16일 처음 비행했으며 퇴역할 때까지 모든 Proton 1단을 구동했다."
+  },
+  {
+    "rel": "fleet/engine/rd-253.json",
+    "at": "best_known_for",
+    "old": "Proton의 쌍추진 주력 엔진 — 매 Proton 1단마다 6개 탑재",
+    "new": "Proton의 자발 점화 주력 엔진 — 6기가 모든 Proton 1단을 밀어 올림"
+  },
+  {
+    "rel": "fleet/engine/rl10.json",
+    "at": "tagline",
+    "old": "수소 상단 단계, 60년을 넘어 계속 운영 중",
+    "new": "수소 상단 엔진, 60년을 넘어 현재진행형"
+  },
+  {
+    "rel": "fleet/engine/rl10.json",
+    "at": "description",
+    "old": "RL10은 우주 비행에 확장기 사이클을 도입했습니다. 추진제가 노즐과 연소실 벽을 통과하면서 열을 흡수하고 연소실에 도달하기 전에 터보펌프를 구동합니다 — 별도의 가스 발생기가 필요하지 않습니다. 1963년 11월 Centaur 상단 단계에서 처음 비행한 RL10은 이후 Atlas, Delta, Vulcan 임무의 상단 단계에 전력을 공급해 왔습니다. 그 수명은 기록적입니다. 다른 로켓 엔진 계열 중 이렇게 오랫동안 연속 생산 및 비행 상태를 유지하면서 핵심 열역학적 개념은 유지한 채 블록 업그레이드를 통해 진화해온 것이 없습니다.",
+    "new": "RL10은 우주 비행에 익스팬더 사이클을 도입했습니다. 추진제가 노즐과 연소실 벽을 흐르며 열을 흡수하고, 연소실에 닿기 전에 터보펌프를 구동합니다 — 별도의 가스 발생기가 필요 없습니다. 1963년 11월 Centaur 상단에서 처음 비행한 RL10 계열은 이후 Atlas, Delta, Vulcan 임무의 상단을 추진해 왔습니다. 그 수명 자체가 기록입니다. 다른 어떤 로켓 엔진 계열도 이만큼 오래 연속 생산과 비행을 이어 오지 못했고, 핵심 열역학 개념은 그대로 둔 채 블록 개량을 거치며 진화해 왔습니다."
+  },
+  {
+    "rel": "fleet/engine/rl10.json",
+    "at": "best_known_for",
+    "old": "우주 비행에서 가장 오래 운영된 엔진 — 최초의 수소 상단 단계",
+    "new": "우주 비행에서 가장 오래 운용된 엔진 — 최초의 수소 상단 엔진"
+  },
+  {
+    "rel": "fleet/engine/rocketdyne-a7.json",
+    "at": "description",
+    "old": "1961년 5월 5일, 앨런 셰퍼드는 Mercury-Redstone 로켓을 타고 187킬로미터 고도까지 올라갔다가 돌아왔습니다. 그는 우주에 간 첫 번째 미국인이 되었고, 그를 하늘로 올려보낸 엔진이 바로 Rocketdyne A-7이었습니다. Redstone 탄도미사일을 추진했던 A-6에서 파생된 A-7은 LOX와 에틸 알코올을 연료로 하는 가스발생기 사이클로 작동했습니다. 이는 Redstone을 거쳐 독일의 V-2로까지 거슬러 올라가는 같은 추진제 조합이었습니다. 셰퍼드의 Freedom 7 비행은 15분간 지속되었고 우주경쟁의 정치적 역학관계를 바꾸어 놓았습니다. A-7은 Mercury-Redstone 미션에서만 비행했으며, 1963년 5월에 은퇴했습니다.",
+    "new": "1961년 5월 5일, 앨런 셰퍼드는 Mercury-Redstone 로켓을 타고 187킬로미터 고도까지 올라갔다가 돌아왔습니다. 그는 우주에 간 첫 번째 미국인이 되었고, 그를 하늘로 올려보낸 엔진이 바로 Rocketdyne A-7이었습니다. Redstone 탄도미사일을 추진했던 A-6에서 파생된 A-7은 LOX와 에틸 알코올을 연료로 하는 가스 발생기 사이클로 작동했습니다. 이는 Redstone을 거쳐 독일의 V-2로까지 거슬러 올라가는 같은 추진제 조합이었습니다. 셰퍼드의 Freedom 7 비행은 15분간 지속되었고 우주경쟁의 정치적 역학관계를 바꾸어 놓았습니다. A-7은 Mercury-Redstone 임무에만 쓰였고, 1963년 5월에 퇴역했습니다."
+  },
+  {
+    "rel": "fleet/engine/rs-25.json",
+    "at": "description",
+    "old": "RS-25는 Space Shuttle Main Engine 프로그램이 10년에 걸쳐 완성한 엔진입니다. LOX와 LH2를 사용하는 단계 연소 사이클로 스로틀 조절, 재시동, 다음 비행을 위한 정비가 가능했습니다. 1981년 4월부터 135개 이상의 Shuttle 미션에서 거의 완벽한 운용 기록을 쌓았습니다. 엔진들은 회수되어 검사되고 재비행되었는데 — 이는 이 전력 수준에서 이전 로켓 엔진이 달성한 적 없는 성과입니다. Shuttle이 퇴역한 후 재고는 재인증되어 NASA의 Space Launch System을 위해 용도가 변경되었으며, 현재 RS-25는 SLS의 코어 스테이지에 동력을 제공합니다.",
+    "new": "RS-25는 Space Shuttle Main Engine 프로그램이 10년에 걸쳐 완성한 엔진입니다. LOX와 LH2를 쓰는 단계 연소 사이클로, 추력 조절과 재시동이 가능하고 다음 비행을 위해 정비해 다시 쓸 수 있었습니다. 1981년 4월부터 135회가 넘는 Shuttle 임무에서 거의 완벽한 운용 기록을 쌓았습니다. 엔진은 회수·점검되어 다시 비행했는데 — 이 정도 출력 수준에서는 이전의 어떤 로켓 엔진도 이루지 못한 일입니다. Shuttle이 퇴역한 뒤 남은 엔진은 재인증을 거쳐 NASA의 Space Launch System용으로 전용되었고, 지금은 RS-25가 SLS의 코어 단을 추진합니다."
+  },
+  {
+    "rel": "fleet/engine/rs-25.json",
+    "at": "best_known_for",
+    "old": "재사용 가능한 단계 연소 엔진 — 135개 Shuttle 비행, 현재 SLS에서 비행",
+    "new": "재사용 가능한 단계 연소 엔진 — Shuttle 135회 비행, 현재 SLS에서 비행"
+  },
+  {
+    "rel": "fleet/engine/vikas.json",
+    "at": "tagline",
+    "old": "인도의 라이선스 Viking — 30년간 PSLV와 GSLV를 견인하다",
+    "new": "인도가 면허 생산한 Viking — 30년간 PSLV와 GSLV를 추진"
+  }
 ]

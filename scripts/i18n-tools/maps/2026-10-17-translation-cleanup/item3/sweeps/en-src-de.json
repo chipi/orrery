@@ -1,68 +1,68 @@
 [
- {
-  "rel": "fleet/launcher/atlas-lv-3b.json",
-  "at": "description",
-  "old": "Die Atlas LV-3B war Convairs Orbitalträger, der Mercury-Astronauten auf sechs Flügen (Mercury-Atlas 6 bis 10) zwischen Februar und Mai 1963 in den Orbit brachte. Die dünnwandige Antriebsstufe — so leicht, dass sie unter Druck stehen musste, um aufrecht zu stehen — bewies, dass eine ballistische Rakete bemannbar gemacht werden konnte. Nach dem Mercury-Programm außer Dienst gestellt.",
-  "new": "Die Atlas LV-3B war Convairs Orbitalträger, der Mercury-Astronauten auf vier Flügen (Mercury-Atlas 6 bis 9) zwischen Februar 1962 und Mai 1963 in den Orbit brachte. Die dünnwandige Antriebsstufe — so leicht, dass sie unter Druck stehen musste, um aufrecht zu stehen — bewies, dass eine ballistische Rakete bemannbar gemacht werden konnte. Nach dem Mercury-Programm außer Dienst gestellt."
- },
- {
-  "rel": "fleet/launch-site/lc-39a.json",
-  "at": "tagline",
-  "old": "Startete Apollo 8, 9, 11–17 (alle bemannten Mondmissionen); heute starten dort Falcon 9, Falcon Heavy und Crew Dragon",
-  "new": "Startete Apollo 8, 9, 11–17 (Apollo 9 im Erdorbit; Apollo 10 startete von 39B); heute starten dort Falcon 9, Falcon Heavy und Crew Dragon"
- },
- {
-  "rel": "fleet/launch-site/lc-39a.json",
-  "at": "best_known_for",
-  "old": "Startete Apollo 8, 9, 11–17 (alle bemannten Mondmissionen); heute starten dort Falcon 9, Falcon Heavy und Crew Dragon",
-  "new": "Startete Apollo 8, 9, 11–17 (Apollo 9 im Erdorbit; Apollo 10 startete von 39B); heute starten dort Falcon 9, Falcon Heavy und Crew Dragon"
- },
- {
-  "rel": "fleet/engine/le-7a.json",
-  "at": "description",
-  "old": "Das LE-7A ist das Triebwerk, das Japan eine vollständig eigenständige Schwerlastfähigkeit verschaffte. Von Mitsubishi Heavy Industries für JAXA entwickelt, arbeitet es im Stufenverbrennungs-Zyklus mit LOX und LH2 — dem thermodynamischen Ansatz, der aus Wasserstofftreibstoff die höchste Effizienz herausholt — und flog erstmals im August 2001 auf der H-IIA als verfeinerter Nachfolger des ursprünglichen LE-7. Die Neukonstruktion beseitigte Turbopumpenprobleme, die frühe Ausfälle der H-II verursacht hatten, und das LE-7A trug danach bis 2024 die Einsatzlaufbahn der H-IIA und H-IIB, wobei es Japans HTV-Frachter zur Internationalen Raumstation und die JAXA-ISRO-Radarsatelliten der ALOS-Serie startete.",
-  "new": "Das LE-7A ist das Triebwerk, das Japan eine vollständig eigenständige Schwerlastfähigkeit verschaffte. Von Mitsubishi Heavy Industries für JAXA entwickelt, arbeitet es im Stufenverbrennungs-Zyklus mit LOX und LH2 — dem thermodynamischen Ansatz, der aus Wasserstofftreibstoff die höchste Effizienz herausholt — und flog erstmals im August 2001 auf der H-IIA als verfeinerter Nachfolger des ursprünglichen LE-7. Die Neukonstruktion beseitigte Turbopumpenprobleme, die frühe Ausfälle der H-II verursacht hatten, und das LE-7A trug danach bis 2024 die Einsatzlaufbahn der H-IIA und H-IIB, wobei es Japans HTV-Frachter zur Internationalen Raumstation und die ALOS-Erdbeobachtungssatelliten der JAXA startete."
- },
- {
-  "rel": "fleet/lander/mars-polar-lander.json",
-  "at": "description",
-  "old": "Mars Polar Lander ist ein planetarer Lander, gebaut von Lockheed Martin in den USA. Bei der Landung verloren; löste die Überprüfung des Ansatzes „schneller, besser, billiger“ aus. Flog 1999, scheiterte aber; fließt in die Erlösungsbogen-Ebene der Epoche von Shuttle und Mir ein.",
-  "new": "Mars Polar Lander ist ein planetarer Lander, gebaut von Lockheed Martin in den USA. Bei der Landung verloren; löste die Überprüfung des Ansatzes „schneller, besser, billiger“ aus. Flog 1999, scheiterte aber."
- },
- {
-  "rel": "fleet/lander/hakuto-r.json",
-  "at": "description",
-  "old": "Das Hakuto-R-Programm ist ein planetarer Lander, gebaut von ispace in Japan. Erster privater japanischer Mondlander; M1 und M2 stürzten beide ab. Flog 2023, scheiterte aber; fließt in die Erlösungsbogen-Ebene der Epoche der kommerziellen Ära ein.",
-  "new": "Das Hakuto-R-Programm ist ein planetarer Lander, gebaut von ispace in Japan. Erster privater japanischer Mondlander; M1 und M2 stürzten beide ab. Flog 2023, scheiterte aber."
- },
- {
-  "rel": "fleet/lander/vikram-cy2.json",
-  "at": "description",
-  "old": "Vikram (Chandrayaan-2) ist ein planetarer Lander, gebaut von ISRO in Indien. Lander von Chandrayaan-2; abgestürzt; der Orbiter arbeitet weiter. Flog 2019, scheiterte aber; fließt in die Erlösungsbogen-Ebene der Epoche der kommerziellen Ära ein.",
-  "new": "Vikram (Chandrayaan-2) ist ein planetarer Lander, gebaut von ISRO in Indien. Lander von Chandrayaan-2; abgestürzt; der Orbiter arbeitet weiter. Flog 2019, scheiterte aber."
- },
- {
-  "rel": "science/planets/planetary-stats.json",
-  "at": "body_paragraphs.0",
-  "old": "Durchmesser relativ zur Erde: Merkur 0,38, Venus 0,95 (nahezu erdgroß), Erde 1,0, Mars 0,53, Jupiter 10,97, Saturn 9,14, Uranus 3,98, Neptun 3,86, Pluto 0,19. Oberflächengravitationen in Erd-g: Merkur 0,38, Venus 0,91, Erde 1,00, Mars 0,38, Jupiter 2,53, Saturn 1,07, Uranus 0,89, Neptun 1,14, Pluto 0,06. Bemerkenswerte Überraschungen: Mars und Merkur haben die gleiche Oberflächengravitation (0,38 g), trotz sehr unterschiedlicher Größen, weil ihre Dichte × Radius-Produkte nahe beieinander liegen. Uranus und Saturn haben beide eine geringere Gravitation als die Erde, trotz ihrer gigantischen Größen – beide werden von H/He dominiert, viel weniger dicht als die felsige Erde.",
-  "new": "Durchmesser relativ zur Erde: Merkur 0,38, Venus 0,95 (nahezu erdgroß), Erde 1,0, Mars 0,53, Jupiter 10,97, Saturn 9,14, Uranus 3,98, Neptun 3,86, Pluto 0,19. Oberflächengravitationen in Erd-g: Merkur 0,38, Venus 0,91, Erde 1,00, Mars 0,38, Jupiter 2,53, Saturn 1,07, Uranus 0,89, Neptun 1,14, Pluto 0,06. Bemerkenswerte Überraschungen: Mars und Merkur haben die gleiche Oberflächengravitation (0,38 g), trotz sehr unterschiedlicher Größen, weil ihre Dichte × Radius-Produkte nahe beieinander liegen. Uranus hat eine geringere Gravitation als die Erde und Saturn kaum mehr, trotz ihrer gigantischen Größen – beide werden von H/He dominiert, viel weniger dicht als die felsige Erde."
- },
- {
-  "rel": "science/planets/active-spacecraft-survey.json",
-  "at": "body_paragraphs.1",
-  "old": "Jupiter-System: Juno (NASA, seit 2016, polare 53-Tage-Bahn). Sie soll Jupiters Magnetfeld + Atmosphäre + inneren Aufbau kartieren. Die polare Bahn umgeht Jupiters intensiven äquatorialen Strahlungsgürtel — der Gürtel ist so hart, dass andere Orbiter an Gasriesen auf einer äquatorialen Bahn binnen Monaten dauerhaft beschädigt würden. Junos Mission wurde mehrfach verlängert; sie läuft weiter, bis die Sonde kontrolliert in den Jupiter gelenkt wird (um eine biologische Kontamination des Mondes Europa zu verhindern, an dem die Sonde nahe vorbeiführt). Die nächste Jupiter-Mission ist ESAs JUICE (Jupiter Icy Moons Explorer, Ankunft 2031); NASAs Europa Clipper startet 2024 und kommt 2030 an.",
-  "new": "Jupiter-System: Juno (NASA, seit 2016, polare 53-Tage-Bahn). Sie soll Jupiters Magnetfeld + Atmosphäre + inneren Aufbau kartieren. Die polare Bahn umgeht Jupiters intensiven äquatorialen Strahlungsgürtel — der Gürtel ist so hart, dass andere Orbiter an Gasriesen auf einer äquatorialen Bahn binnen Monaten dauerhaft beschädigt würden. Junos Mission wurde mehrfach verlängert; sie läuft weiter, bis die Sonde kontrolliert in den Jupiter gelenkt wird (um eine biologische Kontamination des Mondes Europa zu verhindern, an dem die Sonde nahe vorbeiführt). Die nächste Jupiter-Mission ist ESAs JUICE (Jupiter Icy Moons Explorer, Ankunft 2031); NASAs Europa Clipper startete im Oktober 2024 und kommt 2030 an."
- },
- {
-  "rel": "essays/interstellar-exploration.json",
-  "at": "body.4.md",
-  "old": "[Voyager 1](/missions?id=voyager-1) ist das sich am schnellsten entfernende Objekt menschlichen Ursprungs. 1977 gestartet und an Jupiter und Saturn vorbeigeschleudert, auf einer Bahn, die beiden Planeten durch ihre Gravitationsfelder Energie entlieh, bewegt sie sich heute mit etwa 17 Kilometern pro Sekunde relativ zur Sonne – rund 61.000 Kilometer pro Stunde, eine Geschwindigkeit, die einen in weniger als einer Minute von London nach Sydney brächte. Nach irdischen Maßstäben ist das unvorstellbar schnell. Nach interstellaren Maßstäben ist es gletscherhaft langsam. Mit 17 km/s würde Voyager 1 in der Größenordnung von 73.000 Jahren brauchen, um die Entfernung bis Proxima Centauri zurückzulegen – und sie ist nicht einmal darauf ausgerichtet. Sie fliegt in eine ganz andere Richtung, auf das Sternbild Schlangenträger zu, auf einer Bahn, die dafür ausgelegt war, das äußere Sonnensystem zu erkunden, nicht dafür, die Sterne zu erreichen.",
-  "new": "[Voyager 1](/missions?id=voyager-1) ist das sich am schnellsten entfernende Objekt menschlichen Ursprungs. 1977 gestartet und an Jupiter und Saturn vorbeigeschleudert, auf einer Bahn, die beiden Planeten durch ihre Gravitationsfelder Energie entlieh, bewegt sie sich heute mit etwa 17 Kilometern pro Sekunde relativ zur Sonne – rund 61.000 Kilometer pro Stunde, eine Geschwindigkeit, die einen in etwa siebzehn Minuten von London nach Sydney brächte. Nach irdischen Maßstäben ist das unvorstellbar schnell. Nach interstellaren Maßstäben ist es gletscherhaft langsam. Mit 17 km/s würde Voyager 1 in der Größenordnung von 73.000 Jahren brauchen, um die Entfernung bis Proxima Centauri zurückzulegen – und sie ist nicht einmal darauf ausgerichtet. Sie fliegt in eine ganz andere Richtung, auf das Sternbild Schlangenträger zu, auf einer Bahn, die dafür ausgelegt war, das äußere Sonnensystem zu erkunden, nicht dafür, die Sterne zu erreichen."
- },
- {
-  "rel": "essays/going-to-the-moon.json",
-  "at": "body.19.md",
-  "old": "Das neu erwachte Interesse am Mond ist kein amerikanisches Programm. Es ist ein echtes globales Phänomen, und seine Geschichte reicht fast ein Jahrzehnt vor Apollo zurück. Das sowjetische Luna-Programm brachte das erste von Menschen gebaute Objekt auf den Mond – [Luna 2](/missions?id=luna9) schlug im September 1959 auf der Oberfläche auf –, lieferte im selben Jahr mit Luna 3 die ersten Fotografien der Mondrückseite und sammelte im folgenden Jahrzehnt eine Reihe von Premieren an, die weniger im Gedächtnis geblieben sind, als sie es verdient hätten. [Luna 9](/missions?id=luna9) gelang 1966 die erste weiche Landung und beendete damit eine ernsthafte wissenschaftliche Kontroverse darüber, ob die Oberfläche fest genug sei, ein Raumfahrzeug zu tragen (zuvor wurde ernsthaft die Ansicht vertreten, die Mondoberfläche könne aus metertiefem Staub bestehen, in dem jeder Lander einfach versinken würde). Luna 16 brachte 1970 die erste robotisch gewonnene Probe zur Erde zurück – und bewies damit, dass man keine bemannte Mission brauchte, um Mondmaterial heimzubringen. Luna 24 war 1976 die letzte sowjetische Probenrückführung vom Mond, und sie blieb 44 Jahre lang die letzte Probenrückführung vom Mond überhaupt.",
-  "new": "Das neu erwachte Interesse am Mond ist kein amerikanisches Programm. Es ist ein echtes globales Phänomen, und seine Geschichte reicht fast ein Jahrzehnt vor Apollo zurück. Das sowjetische Luna-Programm brachte das erste von Menschen gebaute Objekt auf den Mond – Luna 2 schlug im September 1959 auf der Oberfläche auf –, lieferte im selben Jahr mit Luna 3 die ersten Fotografien der Mondrückseite und sammelte im folgenden Jahrzehnt eine Reihe von Premieren an, die weniger im Gedächtnis geblieben sind, als sie es verdient hätten. [Luna 9](/missions?id=luna9) gelang 1966 die erste weiche Landung und beendete damit eine ernsthafte wissenschaftliche Kontroverse darüber, ob die Oberfläche fest genug sei, ein Raumfahrzeug zu tragen (zuvor wurde ernsthaft die Ansicht vertreten, die Mondoberfläche könne aus metertiefem Staub bestehen, in dem jeder Lander einfach versinken würde). Luna 16 brachte 1970 die erste robotisch gewonnene Probe zur Erde zurück – und bewies damit, dass man keine bemannte Mission brauchte, um Mondmaterial heimzubringen. Luna 24 war 1976 die letzte sowjetische Probenrückführung vom Mond, und sie blieb 44 Jahre lang die letzte Probenrückführung vom Mond überhaupt."
- }
+  {
+    "rel": "fleet/launcher/atlas-lv-3b.json",
+    "at": "description",
+    "old": "Die Atlas LV-3B war Convairs Orbitalträger, der Mercury-Astronauten auf sechs Flügen (Mercury-Atlas 6 bis 10) zwischen Februar und Mai 1963 in den Orbit brachte. Die dünnwandige Antriebsstufe — so leicht, dass sie unter Druck stehen musste, um aufrecht zu stehen — bewies, dass eine ballistische Rakete bemannbar gemacht werden konnte. Nach dem Mercury-Programm außer Dienst gestellt.",
+    "new": "Die Atlas LV-3B war Convairs Orbitalträger, der Mercury-Astronauten auf vier Flügen (Mercury-Atlas 6 bis 9) zwischen Februar 1962 und Mai 1963 in den Orbit brachte. Die dünnwandige Antriebsstufe — so leicht, dass sie unter Druck stehen musste, um aufrecht zu stehen — bewies, dass eine ballistische Rakete bemannbar gemacht werden konnte. Nach dem Mercury-Programm außer Dienst gestellt."
+  },
+  {
+    "rel": "fleet/launch-site/lc-39a.json",
+    "at": "tagline",
+    "old": "Startete Apollo 8, 9, 11–17 (alle bemannten Mondmissionen); heute starten dort Falcon 9, Falcon Heavy und Crew Dragon",
+    "new": "Startete Apollo 8, 9, 11–17 (Apollo 9 im Erdorbit; Apollo 10 startete von 39B); heute starten dort Falcon 9, Falcon Heavy und Crew Dragon"
+  },
+  {
+    "rel": "fleet/launch-site/lc-39a.json",
+    "at": "best_known_for",
+    "old": "Startete Apollo 8, 9, 11–17 (alle bemannten Mondmissionen); heute starten dort Falcon 9, Falcon Heavy und Crew Dragon",
+    "new": "Startete Apollo 8, 9, 11–17 (Apollo 9 im Erdorbit; Apollo 10 startete von 39B); heute starten dort Falcon 9, Falcon Heavy und Crew Dragon"
+  },
+  {
+    "rel": "fleet/engine/le-7a.json",
+    "at": "description",
+    "old": "Das LE-7A ist das Triebwerk, das Japan eine vollständig eigenständige Schwerlastfähigkeit verschaffte. Von Mitsubishi Heavy Industries für JAXA entwickelt, arbeitet es im Stufenverbrennungs-Zyklus mit LOX und LH2 — dem thermodynamischen Ansatz, der aus Wasserstofftreibstoff die höchste Effizienz herausholt — und flog erstmals im August 2001 auf der H-IIA als verfeinerter Nachfolger des ursprünglichen LE-7. Die Neukonstruktion beseitigte Turbopumpenprobleme, die frühe Ausfälle der H-II verursacht hatten, und das LE-7A trug danach bis 2024 die Einsatzlaufbahn der H-IIA und H-IIB, wobei es Japans HTV-Frachter zur Internationalen Raumstation und die JAXA-ISRO-Radarsatelliten der ALOS-Serie startete.",
+    "new": "Das LE-7A ist das Triebwerk, das Japan eine vollständig eigenständige Schwerlastfähigkeit verschaffte. Von Mitsubishi Heavy Industries für JAXA entwickelt, arbeitet es im Stufenverbrennungs-Zyklus mit LOX und LH2 — dem thermodynamischen Ansatz, der aus Wasserstofftreibstoff die höchste Effizienz herausholt — und flog erstmals im August 2001 auf der H-IIA als verfeinerter Nachfolger des ursprünglichen LE-7. Die Neukonstruktion beseitigte Turbopumpenprobleme, die frühe Ausfälle der H-II verursacht hatten, und das LE-7A trug danach bis 2024 die Einsatzlaufbahn der H-IIA und H-IIB, wobei es Japans HTV-Frachter zur Internationalen Raumstation und die ALOS-Erdbeobachtungssatelliten der JAXA startete."
+  },
+  {
+    "rel": "fleet/lander/mars-polar-lander.json",
+    "at": "description",
+    "old": "Mars Polar Lander ist ein planetarer Lander, gebaut von Lockheed Martin in den USA. Bei der Landung verloren; löste die Überprüfung des Ansatzes „schneller, besser, billiger“ aus. Flog 1999, scheiterte aber; fließt in die Erlösungsbogen-Ebene der Epoche von Shuttle und Mir ein.",
+    "new": "Mars Polar Lander ist ein planetarer Lander, gebaut von Lockheed Martin in den USA. Bei der Landung verloren; löste die Überprüfung des Ansatzes „schneller, besser, billiger“ aus. Flog 1999, scheiterte aber."
+  },
+  {
+    "rel": "fleet/lander/hakuto-r.json",
+    "at": "description",
+    "old": "Das Hakuto-R-Programm ist ein planetarer Lander, gebaut von ispace in Japan. Erster privater japanischer Mondlander; M1 und M2 stürzten beide ab. Flog 2023, scheiterte aber; fließt in die Erlösungsbogen-Ebene der Epoche der kommerziellen Ära ein.",
+    "new": "Das Hakuto-R-Programm ist ein planetarer Lander, gebaut von ispace in Japan. Erster privater japanischer Mondlander; M1 und M2 stürzten beide ab. Flog 2023, scheiterte aber."
+  },
+  {
+    "rel": "fleet/lander/vikram-cy2.json",
+    "at": "description",
+    "old": "Vikram (Chandrayaan-2) ist ein planetarer Lander, gebaut von ISRO in Indien. Lander von Chandrayaan-2; abgestürzt; der Orbiter arbeitet weiter. Flog 2019, scheiterte aber; fließt in die Erlösungsbogen-Ebene der Epoche der kommerziellen Ära ein.",
+    "new": "Vikram (Chandrayaan-2) ist ein planetarer Lander, gebaut von ISRO in Indien. Lander von Chandrayaan-2; abgestürzt; der Orbiter arbeitet weiter. Flog 2019, scheiterte aber."
+  },
+  {
+    "rel": "science/planets/planetary-stats.json",
+    "at": "body_paragraphs.0",
+    "old": "Durchmesser relativ zur Erde: Merkur 0,38, Venus 0,95 (nahezu erdgroß), Erde 1,0, Mars 0,53, Jupiter 10,97, Saturn 9,14, Uranus 3,98, Neptun 3,86, Pluto 0,19. Oberflächengravitationen in Erd-g: Merkur 0,38, Venus 0,91, Erde 1,00, Mars 0,38, Jupiter 2,53, Saturn 1,07, Uranus 0,89, Neptun 1,14, Pluto 0,06. Bemerkenswerte Überraschungen: Mars und Merkur haben die gleiche Oberflächengravitation (0,38 g), trotz sehr unterschiedlicher Größen, weil ihre Dichte × Radius-Produkte nahe beieinander liegen. Uranus und Saturn haben beide eine geringere Gravitation als die Erde, trotz ihrer gigantischen Größen – beide werden von H/He dominiert, viel weniger dicht als die felsige Erde.",
+    "new": "Durchmesser relativ zur Erde: Merkur 0,38, Venus 0,95 (nahezu erdgroß), Erde 1,0, Mars 0,53, Jupiter 10,97, Saturn 9,14, Uranus 3,98, Neptun 3,86, Pluto 0,19. Oberflächengravitationen in Erd-g: Merkur 0,38, Venus 0,91, Erde 1,00, Mars 0,38, Jupiter 2,53, Saturn 1,07, Uranus 0,89, Neptun 1,14, Pluto 0,06. Bemerkenswerte Überraschungen: Mars und Merkur haben die gleiche Oberflächengravitation (0,38 g), trotz sehr unterschiedlicher Größen, weil ihre Dichte × Radius-Produkte nahe beieinander liegen. Uranus hat eine geringere Gravitation als die Erde und Saturn kaum mehr, trotz ihrer gigantischen Größen – beide werden von H/He dominiert, viel weniger dicht als die felsige Erde."
+  },
+  {
+    "rel": "science/planets/active-spacecraft-survey.json",
+    "at": "body_paragraphs.1",
+    "old": "Jupiter-System: Juno (NASA, seit 2016, polare 53-Tage-Bahn). Sie soll Jupiters Magnetfeld + Atmosphäre + inneren Aufbau kartieren. Die polare Bahn umgeht Jupiters intensiven äquatorialen Strahlungsgürtel — der Gürtel ist so hart, dass andere Orbiter an Gasriesen auf einer äquatorialen Bahn binnen Monaten dauerhaft beschädigt würden. Junos Mission wurde mehrfach verlängert; sie läuft weiter, bis die Sonde kontrolliert in den Jupiter gelenkt wird (um eine biologische Kontamination des Mondes Europa zu verhindern, an dem die Sonde nahe vorbeiführt). Die nächste Jupiter-Mission ist ESAs JUICE (Jupiter Icy Moons Explorer, Ankunft 2031); NASAs Europa Clipper startet 2024 und kommt 2030 an.",
+    "new": "Jupiter-System: Juno (NASA, seit 2016, polare 53-Tage-Bahn). Sie soll Jupiters Magnetfeld + Atmosphäre + inneren Aufbau kartieren. Die polare Bahn umgeht Jupiters intensiven äquatorialen Strahlungsgürtel — der Gürtel ist so hart, dass andere Orbiter an Gasriesen auf einer äquatorialen Bahn binnen Monaten dauerhaft beschädigt würden. Junos Mission wurde mehrfach verlängert; sie läuft weiter, bis die Sonde kontrolliert in den Jupiter gelenkt wird (um eine biologische Kontamination des Mondes Europa zu verhindern, an dem die Sonde nahe vorbeiführt). Die nächste Jupiter-Mission ist ESAs JUICE (Jupiter Icy Moons Explorer, Ankunft 2031); NASAs Europa Clipper startete im Oktober 2024 und kommt 2030 an."
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.4.md",
+    "old": "[Voyager 1](/missions?id=voyager-1) ist das sich am schnellsten entfernende Objekt menschlichen Ursprungs. 1977 gestartet und an Jupiter und Saturn vorbeigeschleudert, auf einer Bahn, die beiden Planeten durch ihre Gravitationsfelder Energie entlieh, bewegt sie sich heute mit etwa 17 Kilometern pro Sekunde relativ zur Sonne – rund 61.000 Kilometer pro Stunde, eine Geschwindigkeit, die einen in weniger als einer Minute von London nach Sydney brächte. Nach irdischen Maßstäben ist das unvorstellbar schnell. Nach interstellaren Maßstäben ist es gletscherhaft langsam. Mit 17 km/s würde Voyager 1 in der Größenordnung von 73.000 Jahren brauchen, um die Entfernung bis Proxima Centauri zurückzulegen – und sie ist nicht einmal darauf ausgerichtet. Sie fliegt in eine ganz andere Richtung, auf das Sternbild Schlangenträger zu, auf einer Bahn, die dafür ausgelegt war, das äußere Sonnensystem zu erkunden, nicht dafür, die Sterne zu erreichen.",
+    "new": "[Voyager 1](/missions?id=voyager-1) ist das sich am schnellsten entfernende Objekt menschlichen Ursprungs. 1977 gestartet und an Jupiter und Saturn vorbeigeschleudert, auf einer Bahn, die beiden Planeten durch ihre Gravitationsfelder Energie entlieh, bewegt sie sich heute mit etwa 17 Kilometern pro Sekunde relativ zur Sonne – rund 61.000 Kilometer pro Stunde, eine Geschwindigkeit, die einen in etwa siebzehn Minuten von London nach Sydney brächte. Nach irdischen Maßstäben ist das unvorstellbar schnell. Nach interstellaren Maßstäben ist es gletscherhaft langsam. Mit 17 km/s würde Voyager 1 in der Größenordnung von 73.000 Jahren brauchen, um die Entfernung bis Proxima Centauri zurückzulegen – und sie ist nicht einmal darauf ausgerichtet. Sie fliegt in eine ganz andere Richtung, auf das Sternbild Schlangenträger zu, auf einer Bahn, die dafür ausgelegt war, das äußere Sonnensystem zu erkunden, nicht dafür, die Sterne zu erreichen."
+  },
+  {
+    "rel": "essays/going-to-the-moon.json",
+    "at": "body.19.md",
+    "old": "Das neu erwachte Interesse am Mond ist kein amerikanisches Programm. Es ist ein echtes globales Phänomen, und seine Geschichte reicht fast ein Jahrzehnt vor Apollo zurück. Das sowjetische Luna-Programm brachte das erste von Menschen gebaute Objekt auf den Mond – [Luna 2](/missions?id=luna9) schlug im September 1959 auf der Oberfläche auf –, lieferte im selben Jahr mit Luna 3 die ersten Fotografien der Mondrückseite und sammelte im folgenden Jahrzehnt eine Reihe von Premieren an, die weniger im Gedächtnis geblieben sind, als sie es verdient hätten. [Luna 9](/missions?id=luna9) gelang 1966 die erste weiche Landung und beendete damit eine ernsthafte wissenschaftliche Kontroverse darüber, ob die Oberfläche fest genug sei, ein Raumfahrzeug zu tragen (zuvor wurde ernsthaft die Ansicht vertreten, die Mondoberfläche könne aus metertiefem Staub bestehen, in dem jeder Lander einfach versinken würde). Luna 16 brachte 1970 die erste robotisch gewonnene Probe zur Erde zurück – und bewies damit, dass man keine bemannte Mission brauchte, um Mondmaterial heimzubringen. Luna 24 war 1976 die letzte sowjetische Probenrückführung vom Mond, und sie blieb 44 Jahre lang die letzte Probenrückführung vom Mond überhaupt.",
+    "new": "Das neu erwachte Interesse am Mond ist kein amerikanisches Programm. Es ist ein echtes globales Phänomen, und seine Geschichte reicht fast ein Jahrzehnt vor Apollo zurück. Das sowjetische Luna-Programm brachte das erste von Menschen gebaute Objekt auf den Mond – Luna 2 schlug im September 1959 auf der Oberfläche auf –, lieferte im selben Jahr mit Luna 3 die ersten Fotografien der Mondrückseite und sammelte im folgenden Jahrzehnt eine Reihe von Premieren an, die weniger im Gedächtnis geblieben sind, als sie es verdient hätten. [Luna 9](/missions?id=luna9) gelang 1966 die erste weiche Landung und beendete damit eine ernsthafte wissenschaftliche Kontroverse darüber, ob die Oberfläche fest genug sei, ein Raumfahrzeug zu tragen (zuvor wurde ernsthaft die Ansicht vertreten, die Mondoberfläche könne aus metertiefem Staub bestehen, in dem jeder Lander einfach versinken würde). Luna 16 brachte 1970 die erste robotisch gewonnene Probe zur Erde zurück – und bewies damit, dass man keine bemannte Mission brauchte, um Mondmaterial heimzubringen. Luna 24 war 1976 die letzte sowjetische Probenrückführung vom Mond, und sie blieb 44 Jahre lang die letzte Probenrückführung vom Mond überhaupt."
+  }
 ]

@@ -1,8 +1,8 @@
 [
- {
-  "rel": "fleet/lander/mars-polar-lander.json",
-  "at": "description",
-  "old": "Mars Polar Lander é um módulo planetário construído pela Lockheed Martin nos EUA. Perdido na aterrissagem; dirigiu mais rápido-melhor-revisão barato. Voou em 1999, mas falhou; informa a camada do arco de redenção do vaivém e da época do mir.",
-  "new": "Mars Polar Lander é um módulo planetário construído pela Lockheed Martin nos EUA. Perdido na aterrissagem; dirigiu mais rápido-melhor-revisão barato. Voou em 1999, mas falhou; informa a camada do arco de redenção do vaivém e da época da Mir."
- }
+  {
+    "rel": "fleet/lander/mars-polar-lander.json",
+    "at": "description",
+    "old": "Mars Polar Lander é um módulo planetário construído pela Lockheed Martin nos EUA. Perdido na aterrissagem; dirigiu mais rápido-melhor-revisão barato. Voou em 1999, mas falhou; informa a camada do arco de redenção do vaivém e da época do mir.",
+    "new": "Mars Polar Lander é um módulo planetário construído pela Lockheed Martin nos EUA. Perdido na aterrissagem; dirigiu mais rápido-melhor-revisão barato. Voou em 1999, mas falhou; informa a camada do arco de redenção do vaivém e da época da Mir."
+  }
 ]

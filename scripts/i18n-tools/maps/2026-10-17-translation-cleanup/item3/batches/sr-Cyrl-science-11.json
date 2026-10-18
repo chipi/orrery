@@ -1,338 +1,338 @@
 [
- {
-  "rel": "science/transfers/coplanar-trajectories.json",
-  "at": "narrative_101.0",
-  "en": "Stand at the centre of the solar system and look at the planets and you see a pancake, not a sphere. Mercury, Venus, Earth, Mars, Jupiter, Saturn — they all orbit within about 7° of the same flat plane (the ecliptic). The planets formed from a single rotating gas-and-dust cloud, and that rotation collapsed everything to a thin disk. Everything since has stayed in that disk.",
-  "cur": "Станите у средиште Сунчевог система и погледајте планете — видећете палачинку, а не лопту. Меркур, Венера, Земља, Марс, Јупитер, Сатурн — сви они круже унутар отприлике 7° од исте равни (еклиптике). Планете су настале из јединственог облака гаса и прашине који се окретао, а то окретање је све сабило у танак диск. Све од тада остало је у том диску."
- },
- {
-  "rel": "science/transfers/coplanar-trajectories.json",
-  "at": "narrative_101.1",
-  "en": "Now imagine planning a trip to Mars. The cheapest way to get there is a long curved arc that goes around the Sun and arrives at Mars's orbit at the same moment Mars is there. The cheapest arc lies in the same plane that Earth and Mars share — the ecliptic. Leaving the disk to take a 'detour out and over' costs propellant the spacecraft cannot afford.",
-  "cur": "Замислите сада да планирате путовање до Марса. Најјефтинији начин да се тамо стигне јесте дуг закривљен лук који обилази Сунце и стиже до Марсове орбите у тренутку када је и Марс на том месту. Најјефтинији лук лежи у истој равни коју деле Земља и Марс — еклиптици. Напуштање диска ради „заобилазног пута горе и преко“ кошта погонско гориво које летелица не може да приушти."
- },
- {
-  "rel": "science/transfers/coplanar-trajectories.json",
-  "at": "narrative_101.2",
-  "en": "So mission planners don't fight the disk. They wait for the orbital geometry to line up (that's what 'launch window' means), point the rocket along the ecliptic, and let the planets do the steering. The result, when you look at every spacecraft trajectory we have, is a pile of curves all hugging the same plane — like watching cars race on a flat track.",
-  "cur": "Зато планери мисија не воде борбу са диском. Они чекају да се орбитална геометрија поклопи (то и значи „лансирни прозор“), усмере ракету дуж еклиптике и препусте планетама да управљају. Када погледамо путање свих свемирских летелица које имамо, резултат је гомила кривих које належу на исту раван — као да гледате аутомобиле како јуре по равној стази."
- },
- {
-  "rel": "science/transfers/coplanar-trajectories.json",
-  "at": "body_paragraphs.0",
-  "en": "The price tag for leaving the plane is brutal. Changing a heliocentric trajectory's inclination by even 1° at Earth's orbital speed (~30 km/s) costs roughly 0.5 km/s of `∆v`. Doing the 80° plane change Ulysses needed — to fly over the Sun's poles — would have cost ~38 km/s if done with chemical thrust. No real rocket can deliver that. So engineers don't pay for plane changes; they design around them.",
-  "cur": "Цена напуштања равни је огромна. Промена нагиба хелиоцентричне путање чак и за 1° при Земљиној орбиталној брзини (~30 km/s) кошта отприлике 0,5 km/s `∆v`. Промена равни од 80°, какву је захтевао Ulysses — да би прелетео преко Сунчевих полова — коштала би ~38 km/s када би се изводила хемијским потиском. Ниједна стварна ракета не може то да пружи. Зато инжењери не плаћају промене равни; они пројектују мисије тако да их заобиђу."
- },
- {
-  "rel": "science/transfers/coplanar-trajectories.json",
-  "at": "body_paragraphs.1",
-  "en": "Gravity assists obey the same constraint. When a spacecraft slingshots off Jupiter or Venus, the planet sits in the ecliptic, so the deflection vector — which always passes through the planet — keeps the trajectory near-ecliptic too. Cassini's six-year cruise looks like a 2D doodle in the /explore view because every assist body it visited was 2D-flat.",
-  "cur": "Гравитациони маневри подлежу истом ограничењу. Када свемирска летелица користи Јупитер или Венеру као праћку, планета се налази у еклиптици, па отклонски вектор — који увек пролази кроз планету — и путању држи близу еклиптике. Cassini-јево шестогодишње крстарење у приказу /explore изгледа као дводимензионални шкработ зато што је свако небеско тело чију је гравитацију користио било равно у две димензије."
- },
- {
-  "rel": "science/transfers/coplanar-trajectories.json",
-  "at": "body_paragraphs.2",
-  "en": "Ulysses is the only spacecraft that ever broke the disk on purpose. Its science target was the Sun's poles, but reaching them required ~80° of inclination — chemically impossible. So the mission did the only thing that worked: launched outward to Jupiter, used Jupiter's gravity as a free 'rocket' to deflect the spacecraft out of the ecliptic, then orbited the Sun pole-to-pole for 18 years. The big detour was the cheapest path. Every other deep-space mission you see in /explore stayed in the disk because the disk is where the destinations are — and where the propellant lets you go.",
-  "cur": "Ulysses је једина свемирска летелица која је икада намерно напустила раван диска. Њен научни циљ били су Сунчеви полови, али да би се до њих стигло био је потребан нагиб од ~80° — хемијски немогућ подухват. Зато је мисија учинила једино што је функционисало: лансирана је према споља, ка Јупитеру, чију је гравитацију искористила као бесплатну „ракету“ да отклони летелицу из еклиптике, а затим је 18 година кружила око Сунца од пола до пола. Велики заобилазни пут био је најјефтинији пут. Свака друга мисија у далеки свемир коју видите у приказу /explore остала је у диску, јер се у диску налазе одредишта — и јер вам погонско гориво само дотле допушта да стигнете."
- },
- {
-  "rel": "science/transfers/coplanar-trajectories.json",
-  "at": "diagram_caption",
-  "en": "Solar system layouts collapse to the same plane because the planets formed from a single rotating disk. Departures stay in that plane because plane changes are propellant-prohibitive.",
-  "cur": "Сунчев систем је готово раван јер су планете настале из једног ротирајућег диска. Поласци остају у тој равни јер промена равни кошта превише горива."
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "title",
-  "en": "Free-Return Trajectory",
-  "cur": "Путања слободног повратка"
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "intro_sentence",
-  "en": "A trajectory that swings past the destination and bends gravity itself into a return ticket — no engine burn required.",
-  "cur": "Путања која обилази одредиште и саму гравитацију преображава у повратну карту — без паљења мотора."
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "narrative_101.0",
-  "en": "Imagine you're flying to the Moon. You're worried — what if the engine fails on the way? You'd be stranded, drifting forever. Here's the genius answer: pick a path where, even if every engine on your spacecraft dies the moment you leave Earth orbit, gravity alone will swing you around the Moon and toss you back home automatically. That's a free-return trajectory.",
-  "cur": "Замислите да летите ка Месецу. Брине вас једно — шта ако мотор откаже на пола пута? Остали бисте насукани и заувек лебдели у празнини. Ево генијалног одговора: изаберите путању на којој ће вас, чак и ако сви мотори на вашој летелици умукну чим напустите орбиту око Земље, сама гравитација обићи око Месеца и аутоматски вам вратити пут куће. То је путања слободног повратка."
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "narrative_101.1",
-  "en": "It's an actual figure-8 in space. You leave Earth, climb out to the Moon, the Moon's gravity bends your path 180 degrees, and you fall back toward Earth, hitting the atmosphere on the rebound. No engine required. The Moon does all the work. The geometry just has to be right.",
-  "cur": "То је права осмица у свемиру. Напуштате Земљу, пењете се ка Месецу, његова гравитација савија вашу путању за 180 степени, а ви падате назад ка Земљи и на повратку погађате атмосферу. Мотор није потребан. Сав посао обавља Месец. Геометрија једноставно мора бити исправна."
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "narrative_101.2",
-  "en": "Apollo 8 was the first crewed mission to fly one. Apollo 13 — the famous \"Houston, we have a problem\" mission — owes its survival to it. When their main engine became unusable, they rode the free-return home, firing only the lunar module's engine for course corrections — never the crippled main engine. Orrery's default /fly scenario does exactly this for Mars: Earth → Mars flyby → Earth, no mid-course burns required. The cheapest possible Mars trip you can fly with humans on board.",
-  "cur": "Apollo 8 је била прва мисија са посадом која је извела такав лет. Apollo 13 — чувена мисија „Хјустоне, имамо проблем“ — своје преживљавање дугује управо њему. Када је главни мотор постао неупотребљив, посада се вратила кући путањом слободног повратка, палећи само мотор лунарног модула за корекције курса — никада оштећени главни мотор. Подразумевани сценарио /fly у програму Orrery управо то ради за Марс: Земља → прелет Марса → Земља, без корекционих паљења на средини пута. Најјефтинији могући пут до Марса којим можете летети с људима на броду."
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "body_paragraphs.0",
-  "en": "The headline trick: leave Earth, fly past the Moon (or Mars), and let the gravity of that body bend your path back toward Earth. If you got the geometry right, you re-enter Earth's atmosphere on the rebound. The crew never has to fire an engine to come home.",
-  "cur": "Главни трик: напустите Земљу, прелетите поред Месеца (или Марса) и пустите да гравитација тог тела савије вашу путању назад ка Земљи. Ако сте геометрију погодили како треба, на повратку поново улазите у Земљину атмосферу. Посада никада не мора да упали мотор да би се вратила кући."
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "body_paragraphs.1",
-  "en": "Apollo 8 was the first crewed free-return. Apollo 13 famously fell back on the technique when its service module crippled — riding the free-return home, firing only the lunar module's engine for course corrections, never the crippled main engine. For Mars the geometry is harder — you need a 500-day, two-pass loop — but the concept is the same: flyby geometry doing the work of the return burn.",
-  "cur": "Apollo 8 је био први лет по путањи слободног повратка са посадом. Apollo 13 се, као што је познато, ослонио на ту технику када је његов сервисни модул оштећен — вратио се кући путањом слободног повратка, палећи само мотор лунарног модула за корекције курса, никада оштећени главни мотор. За Марс је геометрија тежа — потребна је петља од 500 дана са два проласка — али је концепт исти: геометрија прелета обавља посао повратног паљења."
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "body_paragraphs.2",
-  "en": "Orrery's default `/fly` scenario, ORRERY-1, is exactly this: Earth-Mars-Earth on a free-return arc, no mid-course corrections, no orbit-insertion burn at Mars. You watch the spacecraft loop the Sun once, swing past Mars, and come back. It's the cheapest crewed Mars flyby ever proposed.",
-  "cur": "Подразумевани сценарио апликације Orrery, `/fly`, ORRERY-1, управо је такав: Земља–Марс–Земља по луку слободног повратка, без корекција курса на средини пута и без паљења за убацивање у орбиту око Марса. Гледате како летелица једном обиђе Сунце, прелети поред Марса и врати се. То је најјефтинији прелет Марса са посадом који је икада предложен."
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "diagram_caption",
-  "en": "Earth → Mars flyby → Earth. The Moon (or Mars's) gravity does the U-turn for free.",
-  "cur": "Земља → прелет Марса → Земља. Гравитација Месеца (или Марса) бесплатно обавља окрет за 180 степени."
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "intro_sentence",
-  "en": "Steal a planet's orbital momentum on a flyby — the closest thing in space to a free lunch.",
-  "cur": "Украдите орбитални моменат неке планете приликом прелета — најближе што у свемиру постоји бесплатном ручку."
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "narrative_101.0",
-  "en": "Throw a tennis ball at a moving train. The ball bounces off the front and comes back at you faster than you threw it — because the train was moving toward it, and the train's speed got added to the bounce. That, basically, is a gravity assist. The spacecraft is the tennis ball, the planet is the train, and \"bouncing\" is replaced by \"falling past on a hyperbola.\"",
-  "cur": "Баците тениску лоптицу на воз у покрету. Лоптица се одбије од предњег дела и врати вам се брже него што сте је бацили — јер је воз ишао према њој, па се његова брзина додала одскоку. То је, у суштини, гравитациона помоћ. Летелица је тениска лоптица, планета је воз, а „одскок“ је замењен „падом поред планете по хиперболи“."
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "narrative_101.1",
-  "en": "From the planet's point of view, the spacecraft enters and leaves at exactly the same speed — gravity is conservative, no energy gained or lost. But from the Sun's point of view, the spacecraft inherits some of the planet's orbital motion on the way out and arrives somewhere new with extra (or less) speed. It's not a violation of physics; the planet pays for it by slowing down — by an amount way too tiny to detect.",
-  "cur": "Из угла планете, летелица улази и излази тачно истом брзином — гравитација је конзервативна, енергија се не добија нити губи. Али из угла Сунца, летелица на изласку наслеђује део орбиталног кретања планете и стиже негде другде са више (или мање) брзине. То није кршење физике; планета то плаћа успоравањем — за износ сувише мали да би се измерио."
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "narrative_101.2",
-  "en": "This is the trick that built the Voyager grand tour. Without gravity assists, you can't reach Saturn, let alone Uranus or Neptune, with chemical rockets — the fuel cost is astronomical. Voyager 2 chained four assists in a row: Jupiter, Saturn, Uranus, Neptune, all in one trip. Cassini bounced off Venus twice and Earth once on the way to Saturn. The outer solar system is only accessible because of this trick.",
-  "cur": "Ово је трик на коме је изграђена велика тура Voyager-а. Без гравитационих помоћи не можете хемијским ракетама стићи до Сатурна, а камоли до Урана или Нептуна — цена у гориву је астрономска. Voyager 2 је надовезао четири помоћи заредом: Јупитер, Сатурн, Уран, Нептун, све на једном путовању. Cassini се два пута одбио од Венере и једном од Земље на путу до Сатурна. Спољни Сунчев систем доступан је само захваљујући овом трику."
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "body_paragraphs.0",
-  "en": "Approach a moving planet from behind on a hyperbolic trajectory. The planet's gravity bends your path, you swing past, and you leave with the same speed relative to the planet — but the planet was moving the whole time, and you carry that motion with you. Net result: you exit with more speed relative to the Sun than you arrived with. The planet, in exchange, slows by an immeasurably tiny amount.",
-  "cur": "Приђите планети у покрету с леђа, по хиперболичкој путањи. Гравитација планете савија вашу путању, ви јој прођете поред и одлазите са истом брзином у односу на планету — али планета се све време кретала, а ви то кретање односите са собом. Крајњи резултат: из сусрета излазите са већом брзином у односу на Сунце него што сте имали при доласку. Планета се заузврат успори за неухватљиво малу вредност."
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "body_paragraphs.1",
-  "en": "Reverse the geometry — approach from in front — and you slow down. Pioneer 11 used Jupiter to push toward Saturn. Voyager 2 chained Jupiter, Saturn, Uranus, Neptune in one of the most exquisite gravity-assist tours ever flown. Cassini bounced off Venus twice and Earth once before reaching Saturn. New Horizons hit Jupiter to shave three years off the trip to Pluto.",
-  "cur": "Обрните геометрију — приближите се са предње стране — и успорићете. Pioneer 11 је искористио Јупитер да се одгурне ка Сатурну. Voyager 2 је ланчано повезао Јупитер, Сатурн, Уран и Нептун у једној од најпрефињенијих турнеја гравитационом праћком икада изведених. Cassini се двапут одбио од Венере и једном од Земље пре него што је стигао до Сатурна. New Horizons је искористио Јупитер да путовање до Плутона скрати за три године."
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "body_paragraphs.2",
-  "en": "Without gravity assists, half the missions in Orrery's catalogue couldn't have flown. The outer planets are simply too far for direct trajectories with chemical rockets — their costs in `∆v` would exceed what any rocket can deliver. Gravity assists turn that arithmetic from impossible into hard but doable.",
-  "cur": "Без гравитационих праћки половина мисија из каталога Orrery не би никада полетела. Спољне планете су једноставно предалеко за директне путање хемијским ракетама — њихова цена у `∆v` премашила би оно што било која ракета може да пружи. Гравитационе праћке претварају тај рачун из немогућег у тежак, али изводљив."
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "diagram_caption",
-  "en": "Spacecraft enters and exits the planet's frame at the same speed; the planet's motion adds heliocentric velocity.",
-  "cur": "Летелица улази у систем референције планете и излази из њега истом брзином; кретање планете додаје хелиоцентричну брзину."
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "intro_sentence",
-  "en": "The cheapest two-burn trip between two coplanar circular orbits — and the baseline mission planners measure everything else against.",
-  "cur": "Најјефтинији пут са два паљења мотора између две кружне орбите које леже у истој равни — и мерило с којим планери мисија упоређују све остало."
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "narrative_101.0",
-  "en": "You're in Earth's orbit. You want to be in Mars's orbit. Both orbits are roughly circles around the Sun. How do you get from one to the other with as little fuel as possible?",
-  "cur": "Налазите се у Земљиној орбити. Желите да доспете у орбиту Марса. Обе орбите су отприлике кругови око Сунца. Како стићи из једне у другу уз што мању потрошњу горива?"
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "narrative_101.1",
-  "en": "The answer, worked out by Walter Hohmann in 1925, is shockingly elegant. Find an ellipse that just barely touches Earth's orbit on one side and just barely touches Mars's orbit on the other. Burn your engine briefly to leave Earth and join that ellipse. Coast for about 8.5 months without firing the engine at all — gravity does the work. When you arrive at the far end, burn again to settle into Mars's orbit. Two burns, total. Done.",
-  "cur": "Одговор, који је 1925. извео Walter Hohmann, запањујуће је елегантан. Пронађите елипсу која једва додирује Земљину орбиту с једне стране, а орбиту Марса с друге. Накратко упалите мотор да напустите Земљу и придружите се тој елипси. Затим око 8,5 месеци летите по инерцији, без иједног паљења мотора — посао обавља гравитација. Када стигнете до њеног удаљеног краја, поново упалите мотор да бисте се сместили у орбиту Марса. Укупно два паљења. Готово."
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "narrative_101.2",
-  "en": "It's the cheapest possible trip — but it's also the slowest. The 8.5-month wait is non-negotiable; physics sets the timer. Want to go faster? You can, but you pay for it: a steeper ellipse, a faster crossing, a much bigger braking burn at the other end. This is the trade you'll see playing out across every porkchop plot in /plan.",
-  "cur": "То је најјефтинији могући пут — али и најспорији. Чекање од 8,5 месеци није предмет преговора; тајмер поставља физика. Желите да стигнете брже? Можете, али то се плаћа: стрмија елипса, бржи прелаз, знатно јаче кочно паљење на другом крају. То је компромис који ћете видети у сваком дијаграму „свињског котлета“ у /plan."
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "body_paragraphs.0",
-  "en": "Imagine you're in a circular orbit around the Sun and you want to reach a higher one — say Earth-to-Mars. The cheapest way is a Hohmann transfer: an ellipse whose perihelion grazes your starting orbit and whose aphelion grazes the destination. Two engine burns get you there. One at perihelion to leave Earth's orbit and enter the ellipse. One at aphelion to circularise into the destination orbit.",
-  "cur": "Замислите да се налазите у кружној орбити око Сунца и желите да доспете у вишу — рецимо, од Земље до Марса. Најјефтинији начин је Hohmann-ов трансфер: елипса чији перихел додирује вашу полазну орбиту, а афел одредишну. До циља вас воде два паљења мотора. Прво у перихелу, да напустите Земљину орбиту и уђете у елипсу. Друго у афелу, да циркуларизујете путању и уђете у одредишну орбиту."
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "body_paragraphs.1",
-  "en": "It's the cheapest fixed-impulse path, but it's also the slowest. Earth-to-Mars takes about 259 days on a Hohmann. Want to go faster? Burn harder, fly a stretched ellipse with higher perihelion velocity. The arrival V∞ goes up, the entry burn at the destination is bigger, your total ∆v cost climbs steeply.",
-  "cur": "То је најјефтинија путања са фиксним импулсом, али и најспорија. Од Земље до Марса Hohmann-овим трансфером се путује око 259 дана. Желите да стигнете брже? Паљење мора бити јаче, а лет треба да води по издуженијој елипси са већом брзином у перихелу. Долазно V∞ расте, кочно паљење на одредишту постаје веће, а укупни трошак ∆v нагло се пење."
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "body_paragraphs.2",
-  "en": "On Orrery's `/plan` porkchop you'll see this directly: there's a quiet basin of cool teal cells around the natural Hohmann window, every 26 months for Mars, and increasingly costly contours as you push toward shorter transit times.",
-  "cur": "На Orrery-евом „свињском котлету“ на `/plan` видећете то право пред собом: око природног Hohmann-овог прозора, који се за Марс отвара сваких 26 месеци, налази се тиха удолина хладних тиркизних ћелија, а што више журите ка краћем времену путовања, то су изолиније све скупље."
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "diagram_caption",
-  "en": "Earth orbit (inner) · Mars orbit (outer) · Hohmann transfer ellipse with perihelion at Earth, aphelion at Mars.",
-  "cur": "Земљина орбита (унутрашња) · орбита Марса (спољашња) · Hohmann-ова трансферна елипса са перихелом на Земљи и афелом на Марсу."
- },
- {
-  "rel": "science/transfers/lambert-problem.json",
-  "at": "intro_sentence",
-  "en": "Given two positions and a transit time, find the orbit that connects them — the central problem of every interplanetary trajectory.",
-  "cur": "Када су дати два положаја и време прелета, треба пронаћи орбиту која их повезује — централни проблем сваке међупланетарне путање."
- },
- {
-  "rel": "science/transfers/lambert-problem.json",
-  "at": "narrative_101.0",
-  "en": "The Hohmann transfer is the cheapest path from one orbit to another, but most missions don't actually fly Hohmanns. They want to leave on a specific date — say, when a particular rocket is ready, or when a particular launch pad is open — and they want to arrive on a specific date — say, in time for a Mars dust storm to subside. Hohmann doesn't let you pick. Lambert does.",
-  "cur": "Hohmann-ов трансфер је најјефтинији пут из једне орбите у другу, али већина мисија заправо не лети по Hohmann-у. Оне желе да полете тачно одређеног датума — рецимо, када је одређена ракета спремна или када је одређена лансирна рампа слободна — и желе да стигну тачно одређеног датума — рецимо, на време да се прашинска олуја на Марсу смири. Hohmann вам не допушта да бирате. Lambert допушта."
- },
- {
-  "rel": "science/transfers/lambert-problem.json",
-  "at": "narrative_101.1",
-  "en": "Lambert's question is simpler-sounding than its math: I'm at point A, I want to be at point B, and I want to take exactly this many days getting there. What orbit should I fly? Lambert wrote down the answer in 1761 — there's exactly one ellipse (or sometimes two, depending on which way around you go) that connects two points in a given time.",
-  "cur": "Lambert-ово питање звучи једноставније него што је његова математика: налазим се у тачки A, желим да будем у тачки B и желим да на путу дотле утрошим тачно толико и толико дана. Којом орбитом треба да летим? Lambert је одговор записао 1761. године — постоји тачно једна елипса (а понекад две, зависно од тога на коју страну обилазите) која повезује две тачке за дато време."
- },
- {
-  "rel": "science/transfers/lambert-problem.json",
-  "at": "narrative_101.2",
-  "en": "This is the heart of every porkchop plot you'll see. Each pixel on the porkchop in /plan is one Lambert problem: 'leave Earth on date X, reach Mars on date Y — what does it cost?' The colour is the answer. Solve it ten thousand times in parallel and you get the whole map at once. Orrery does this in a Web Worker so the UI doesn't freeze while it's thinking.",
-  "cur": "Ово је срж сваког porkchop дијаграма који ћете видети. Сваки пиксел на porkchop дијаграму у /plan представља један Lambert-ов проблем: „напусти Земљу датума X, стигни до Марса датума Y — колико то кошта?“ Боја је одговор. Решите га десет хиљада пута паралелно и добићете целу мапу одједном. Orrery ово ради у Web Worker-у, како се кориснички интерфејс не би замрзнуо док размишља."
- },
- {
-  "rel": "science/transfers/lambert-problem.json",
-  "at": "body_paragraphs.0",
-  "en": "Lambert's problem asks: I'm here, I want to be there, and I have this much time. What ellipse should I fly? Two position vectors and a time of flight, and the equation produces the unique transfer orbit (or two — there's a long way and a short way around the central body).",
-  "cur": "Lambert-ов проблем гласи: ја сам овде, желим да стигнем тамо и на располагању имам толико и толико времена. Којом елипсом треба да летим? Два вектора положаја и време лета — и једначина даје јединствену трансферну орбиту (или две — постоји дужи и краћи пут око централног тела)."
- },
- {
-  "rel": "science/transfers/lambert-problem.json",
-  "at": "body_paragraphs.1",
-  "en": "The Hohmann transfer is one specific Lambert solution: positions at opposite apsides, time of flight equal to half the transfer ellipse's period. Pull either knob — different positions, different time — and you get a different ellipse. Tighter time, more eccentric ellipse, higher departure energy. The math doesn't change; only the boundary conditions.",
-  "cur": "Hohmann-ов трансфер је једно посебно Lambert-ово решење: положаји у наспрамним апсидама, а време лета једнако половини периода трансферне елипсе. Повуците било који од та два регулатора — другачије положаје или друго време — и добићете другачију елипсу. Краће време значи ексцентричнију елипсу и већу енергију поласка. Математика се не мења; мењају се само гранични услови."
- },
- {
-  "rel": "science/transfers/lambert-problem.json",
-  "at": "body_paragraphs.2",
-  "en": "Orrery solves Lambert's problem in a Web Worker every time you hover a porkchop cell on `/plan`. Each cell asks: 'leave Earth on date X, arrive at Mars on date Y — what's the ∆v cost?' The colour you see is the answer to that question, computed once per pixel.",
-  "cur": "Orrery решава Lambert-ов проблем у Web Worker-у сваки пут када пређете курсором преко porkchop ћелије на `/plan`. Свака ћелија поставља питање: „напусти Земљу датума X, стигни до Марса датума Y — колики је трошак ∆v?“ Боја коју видите јесте одговор на то питање, израчунат једном по пикселу."
- },
- {
-  "rel": "science/transfers/lambert-problem.json",
-  "at": "diagram_caption",
-  "en": "Two position vectors r₁ and r₂; the Lambert solver finds the unique transfer ellipse joining them in time-of-flight.",
-  "cur": "Два вектора положаја r₁ и r₂; Lambert-ов решавач налази јединствену трансферну елипсу која их повезује за дато време лета."
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "intro_sentence",
-  "en": "Pretend gravity is one body at a time — the approximation that turns the unsolvable three-body problem into a chain of two-body Kepler problems you can actually solve.",
-  "cur": "Претварајте се да гравитацију у сваком тренутку изазива само једно тело — апроксимација која нерешиви проблем три тела претвара у низ проблема два тела по Кеплеру, које заиста можете да решите."
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "narrative_101.0",
-  "en": "Here's a dirty secret of orbital mechanics: the actual full physics — every body in the solar system pulling on every other — is mathematically unsolvable in any clean way. We have NO closed-form solution to the three-body problem, let alone the dozens-of-bodies real version. So how do mission planners get anything done?",
-  "cur": "Ево једне прљаве тајне орбиталне механике: права, потпуна физика — свако тело у Сунчевом систему које вуче свако друго — математички је нерешива на било који чист начин. НЕМАМО решење у затвореном облику за проблем три тела, а камоли за стварну верзију са десетинама тела. Како онда планери мисија уопште долазе до резултата?"
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "narrative_101.1",
-  "en": "They cheat. They pretend that, at any moment, only ONE body's gravity matters. Near Earth, only Earth pulls. Out in the cruise, only the Sun. Near Mars, only Mars. Each of those regions is called a sphere of influence, and inside each one the spacecraft flies a clean Keplerian conic. When the spacecraft crosses a boundary, you switch coordinate systems and start a new conic. Patched together, they form the trajectory. That's patched conics.",
-  "cur": "Они варају. Праве се да у сваком тренутку важи гравитација само ЈЕДНОГ тела. У близини Земље вуче само Земља. Негде на крстарењу, само Сунце. У близини Марса, само Марс. Свака од тих области зове се сфера утицаја, а унутар сваке од њих свемирска летелица лети по чистој кеплеровској коници. Када летелица пређе границу, мењате координатни систем и започињете нову конику. Спојене заједно, оне чине путању. То су спојене конике."
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "narrative_101.2",
-  "en": "The math comes out a few percent off the truth — small enough that real missions plan with it as their first cut, then numerically refine for the launch. It's also small enough that Orrery can run all of this in your browser, in a Web Worker, fast enough to redraw the whole porkchop when you scrub the launch year. The whole simulator is built on this trick.",
-  "cur": "Математика излази са одступањем од неколико процената од истине — довољно малим да стварне мисије њоме планирају као првим кораком, а затим је нумерички дорађују за лансирање. Одступање је такође довољно мало да Orrery све ово може да покреће у вашем прегледачу, у Web Worker-у, довољно брзо да поново исцрта цео porkchop када превлачите годину лансирања. Цео симулатор изграђен је на овом трику."
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "body_paragraphs.0",
-  "en": "Real gravity is messy. A spacecraft cruising between Earth and Mars feels Earth's gravity, the Sun's gravity, Mars's gravity, plus everything else, all at once. The full math (the n-body problem) has no closed-form solution — only numerical integration. That's slow, fragile, hard to plan with.",
-  "cur": "Права гравитација је замршена. Свемирска летелица која крстари између Земље и Марса истовремено осећа гравитацију Земље, гравитацију Сунца, гравитацију Марса и свега осталог. Цела математика (проблем n тела) нема решење у затвореном облику — постоји само нумеричка интеграција. То је споро, осетљиво и тешко за планирање."
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "body_paragraphs.1",
-  "en": "Patched conics is the working compromise: declare a sphere of influence around each body. Inside Earth's sphere, only Earth's gravity matters; you fly a Keplerian arc around Earth. Cross the boundary into the heliocentric region, switch to a Sun-centred Kepler arc. Cross into Mars's sphere, switch again. Three Kepler problems, patched together at the boundaries.",
-  "cur": "Спојене конике су радни компромис: одредите сферу утицаја око сваког тела. Унутар Земљине сфере важи само Земљина гравитација; летите по кеплеровском луку око Земље. Пређите границу у хелиоцентричну област и пређите на лук по Кеплеру са центром у Сунцу. Уђите у Марсову сферу и поново пређите на други лук. Три проблема по Кеплеру, спојена на границама."
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "body_paragraphs.2",
-  "en": "It's wrong but useful. Errors at boundaries are small — a few percent of ∆v at most for cislunar work, less for heliocentric — and the math becomes tractable enough to fit in a Web Worker. Orrery's `/plan` porkchops are computed this way; so are the trajectories on `/fly`. Real flight planning at NASA uses the same approximation as the first cut, then refines numerically before launch.",
-  "cur": "Погрешно је, али корисно. Грешке на границама су мале — највише неколико процената ∆v за циселенски рад, а мање за хелиоцентрични — а математика постаје довољно прихватљива да стане у Web Worker. Orrery-јеви porkchop дијаграми на `/plan` рачунају се на овај начин; такве су и путање на `/fly`. Право планирање лета у NASA користи исту апроксимацију као први корак, а затим је пре лансирања нумерички дорађује."
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "diagram_caption",
-  "en": "Three frames, three conics: Earth-centred → heliocentric → Mars-centred, patched at sphere-of-influence boundaries.",
-  "cur": "Три система референце, три конике: са центром у Земљи → хелиоцентрични → са центром у Марсу, спојени на границама сфера утицаја."
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "intro_sentence",
-  "en": "The Keplerian arc that carries a spacecraft from one orbit to another — Sun at one focus, just like every other orbit.",
-  "cur": "Кеплеров лук који носи свемирску летелицу из једне орбите у другу — са Сунцем у једној жижи, баш као и свака друга орбита."
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "narrative_101.0",
-  "en": "Mission planning sounds like it's about engines and rockets. It's mostly about choosing an ellipse. Every interplanetary cruise — Apollo to the Moon, Voyager to Neptune, Perseverance to Mars — is just a spacecraft riding an elliptical orbit between where it started and where it's going. The fancy word for that ellipse is the transfer orbit.",
-  "cur": "Планирање мисија звучи као да се највише тиче мотора и ракета. У суштини, оно је углавном избор елипсе. Свако међупланетарно путовање — Apollo до Месеца, Voyager до Нептуна, Perseverance до Марса — није ништа друго до свемирска летелица која јаше елиптичну орбиту између места где је кренула и места куда иде. Отмена реч за ту елипсу је трансферна орбита."
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "narrative_101.1",
-  "en": "It plays by the same rules as every other Keplerian orbit. The Sun sits at one focus. The spacecraft moves slowly at the far end and quickly at the close end. Vis-viva still works to compute its speed. Kepler's third law still gives you the time-of-flight from the size. Nothing exotic.",
-  "cur": "Она се повинује истим правилима као и свака друга Кеплерова орбита. Сунце се налази у једној жижи. Свемирска летелица се креће споро на удаљеном крају, а брзо на ближем. Vis-viva и даље служи за израчунавање њене брзине. Kepler-ов трећи закон и даље из величине даје време лета. Ништа егзотично."
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "narrative_101.2",
-  "en": "The only thing that makes a transfer ellipse different from a planet's orbit is that the spacecraft only flies HALF of it. It hops on at one end, rides to the other, and gets off. That's why the ∆v budget always has two big burns — one to enter the ellipse, one to leave it. The middle bit, the eight-month coast, costs absolutely nothing.",
-  "cur": "Једина разлика између трансферне елипсе и планетине орбите јесте у томе што свемирска летелица прелети само ЊЕНУ ПОЛОВИНУ. Укрца се на једном крају, вози се до другог и сиђе. Зато у буџету ∆v увек постоје два велика паљења — једно да се уђе у елипсу, друго да се из ње изађе. Средишњи део, осмомесечни лет по инерцији, не кошта апсолутно ништа."
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "body_paragraphs.0",
-  "en": "Once you've burned out of Earth's orbit, you're on an ellipse around the Sun. That ellipse is the transfer orbit, and it has all the same properties as any other: semi-major axis, eccentricity, perihelion, aphelion. The fact that you're going somewhere doesn't change the geometry — gravity doesn't care about your destination.",
-  "cur": "Када једном паљењем напустите Земљину орбиту, налазите се на елипси око Сунца. Та елипса је трансферна орбита и има иста својства као и свака друга: велику полуосу, ексцентричност, перихел, афел. Чињеница да негде идете не мења геометрију — гравитацију није брига за ваше одредиште."
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "body_paragraphs.1",
-  "en": "Two anchors define a transfer ellipse: where you started (perihelion if you're going outward) and where you'll end up (aphelion). The semi-major axis is the average of those two radii. Tweak either anchor and the whole ellipse reshapes — go further out, the ellipse stretches, the trip gets longer.",
-  "cur": "Две сидришне тачке одређују трансферну елипсу: место одакле сте кренули (перихел ако идете ка споља) и место на коме ћете завршити (афел). Велика полуоса је просек та два радијуса. Померите било коју од тих тачака и цела елипса мења облик — ако идете даље, елипса се развлачи, а пут постаје дужи."
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "body_paragraphs.2",
-  "en": "On Orrery's `/fly` HUD you'll see the spacecraft trace this ellipse in real time. The transfer arc on screen is a visual rendering of the same conic that the math says it is — Sun at one focus, perihelion behind you, aphelion ahead.",
-  "cur": "На HUD-у Orrery-ја на путањи `/fly` видећете како свемирска летелица у реалном времену исцртава ову елипсу. Трансферни лук на екрану јесте визуелни приказ исте конусне линије коју математика описује — са Сунцем у једној жижи, перихелом иза вас и афелом пред вама."
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "diagram_caption",
-  "en": "Two coplanar orbits (departure inner, destination outer) connected by a transfer ellipse with Sun at one focus.",
-  "cur": "Две копланарне орбите (полазна унутрашња, одредишна спољашња) повезане трансферном елипсом са Сунцем у једној жижи."
- }
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "narrative_101.0",
+    "en": "Stand at the centre of the solar system and look at the planets and you see a pancake, not a sphere. Mercury, Venus, Earth, Mars, Jupiter, Saturn — they all orbit within about 7° of the same flat plane (the ecliptic). The planets formed from a single rotating gas-and-dust cloud, and that rotation collapsed everything to a thin disk. Everything since has stayed in that disk.",
+    "cur": "Станите у средиште Сунчевог система и погледајте планете — видећете палачинку, а не лопту. Меркур, Венера, Земља, Марс, Јупитер, Сатурн — сви они круже унутар отприлике 7° од исте равни (еклиптике). Планете су настале из јединственог облака гаса и прашине који се окретао, а то окретање је све сабило у танак диск. Све од тада остало је у том диску."
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "narrative_101.1",
+    "en": "Now imagine planning a trip to Mars. The cheapest way to get there is a long curved arc that goes around the Sun and arrives at Mars's orbit at the same moment Mars is there. The cheapest arc lies in the same plane that Earth and Mars share — the ecliptic. Leaving the disk to take a 'detour out and over' costs propellant the spacecraft cannot afford.",
+    "cur": "Замислите сада да планирате путовање до Марса. Најјефтинији начин да се тамо стигне јесте дуг закривљен лук који обилази Сунце и стиже до Марсове орбите у тренутку када је и Марс на том месту. Најјефтинији лук лежи у истој равни коју деле Земља и Марс — еклиптици. Напуштање диска ради „заобилазног пута горе и преко“ кошта погонско гориво које летелица не може да приушти."
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "narrative_101.2",
+    "en": "So mission planners don't fight the disk. They wait for the orbital geometry to line up (that's what 'launch window' means), point the rocket along the ecliptic, and let the planets do the steering. The result, when you look at every spacecraft trajectory we have, is a pile of curves all hugging the same plane — like watching cars race on a flat track.",
+    "cur": "Зато планери мисија не воде борбу са диском. Они чекају да се орбитална геометрија поклопи (то и значи „лансирни прозор“), усмере ракету дуж еклиптике и препусте планетама да управљају. Када погледамо путање свих свемирских летелица које имамо, резултат је гомила кривих које належу на исту раван — као да гледате аутомобиле како јуре по равној стази."
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "body_paragraphs.0",
+    "en": "The price tag for leaving the plane is brutal. Changing a heliocentric trajectory's inclination by even 1° at Earth's orbital speed (~30 km/s) costs roughly 0.5 km/s of `∆v`. Doing the 80° plane change Ulysses needed — to fly over the Sun's poles — would have cost ~38 km/s if done with chemical thrust. No real rocket can deliver that. So engineers don't pay for plane changes; they design around them.",
+    "cur": "Цена напуштања равни је огромна. Промена нагиба хелиоцентричне путање чак и за 1° при Земљиној орбиталној брзини (~30 km/s) кошта отприлике 0,5 km/s `∆v`. Промена равни од 80°, какву је захтевао Ulysses — да би прелетео преко Сунчевих полова — коштала би ~38 km/s када би се изводила хемијским потиском. Ниједна стварна ракета не може то да пружи. Зато инжењери не плаћају промене равни; они пројектују мисије тако да их заобиђу."
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "body_paragraphs.1",
+    "en": "Gravity assists obey the same constraint. When a spacecraft slingshots off Jupiter or Venus, the planet sits in the ecliptic, so the deflection vector — which always passes through the planet — keeps the trajectory near-ecliptic too. Cassini's six-year cruise looks like a 2D doodle in the /explore view because every assist body it visited was 2D-flat.",
+    "cur": "Гравитациони маневри подлежу истом ограничењу. Када свемирска летелица користи Јупитер или Венеру као праћку, планета се налази у еклиптици, па отклонски вектор — који увек пролази кроз планету — и путању држи близу еклиптике. Cassini-јево шестогодишње крстарење у приказу /explore изгледа као дводимензионални шкработ зато што је свако небеско тело чију је гравитацију користио било равно у две димензије."
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "body_paragraphs.2",
+    "en": "Ulysses is the only spacecraft that ever broke the disk on purpose. Its science target was the Sun's poles, but reaching them required ~80° of inclination — chemically impossible. So the mission did the only thing that worked: launched outward to Jupiter, used Jupiter's gravity as a free 'rocket' to deflect the spacecraft out of the ecliptic, then orbited the Sun pole-to-pole for 18 years. The big detour was the cheapest path. Every other deep-space mission you see in /explore stayed in the disk because the disk is where the destinations are — and where the propellant lets you go.",
+    "cur": "Ulysses је једина свемирска летелица која је икада намерно напустила раван диска. Њен научни циљ били су Сунчеви полови, али да би се до њих стигло био је потребан нагиб од ~80° — хемијски немогућ подухват. Зато је мисија учинила једино што је функционисало: лансирана је према споља, ка Јупитеру, чију је гравитацију искористила као бесплатну „ракету“ да отклони летелицу из еклиптике, а затим је 18 година кружила око Сунца од пола до пола. Велики заобилазни пут био је најјефтинији пут. Свака друга мисија у далеки свемир коју видите у приказу /explore остала је у диску, јер се у диску налазе одредишта — и јер вам погонско гориво само дотле допушта да стигнете."
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "diagram_caption",
+    "en": "Solar system layouts collapse to the same plane because the planets formed from a single rotating disk. Departures stay in that plane because plane changes are propellant-prohibitive.",
+    "cur": "Сунчев систем је готово раван јер су планете настале из једног ротирајућег диска. Поласци остају у тој равни јер промена равни кошта превише горива."
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "title",
+    "en": "Free-Return Trajectory",
+    "cur": "Путања слободног повратка"
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "intro_sentence",
+    "en": "A trajectory that swings past the destination and bends gravity itself into a return ticket — no engine burn required.",
+    "cur": "Путања која обилази одредиште и саму гравитацију преображава у повратну карту — без паљења мотора."
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "narrative_101.0",
+    "en": "Imagine you're flying to the Moon. You're worried — what if the engine fails on the way? You'd be stranded, drifting forever. Here's the genius answer: pick a path where, even if every engine on your spacecraft dies the moment you leave Earth orbit, gravity alone will swing you around the Moon and toss you back home automatically. That's a free-return trajectory.",
+    "cur": "Замислите да летите ка Месецу. Брине вас једно — шта ако мотор откаже на пола пута? Остали бисте насукани и заувек лебдели у празнини. Ево генијалног одговора: изаберите путању на којој ће вас, чак и ако сви мотори на вашој летелици умукну чим напустите орбиту око Земље, сама гравитација обићи око Месеца и аутоматски вам вратити пут куће. То је путања слободног повратка."
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "narrative_101.1",
+    "en": "It's an actual figure-8 in space. You leave Earth, climb out to the Moon, the Moon's gravity bends your path 180 degrees, and you fall back toward Earth, hitting the atmosphere on the rebound. No engine required. The Moon does all the work. The geometry just has to be right.",
+    "cur": "То је права осмица у свемиру. Напуштате Земљу, пењете се ка Месецу, његова гравитација савија вашу путању за 180 степени, а ви падате назад ка Земљи и на повратку погађате атмосферу. Мотор није потребан. Сав посао обавља Месец. Геометрија једноставно мора бити исправна."
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "narrative_101.2",
+    "en": "Apollo 8 was the first crewed mission to fly one. Apollo 13 — the famous \"Houston, we have a problem\" mission — owes its survival to it. When their main engine became unusable, they rode the free-return home, firing only the lunar module's engine for course corrections — never the crippled main engine. Orrery's default /fly scenario does exactly this for Mars: Earth → Mars flyby → Earth, no mid-course burns required. The cheapest possible Mars trip you can fly with humans on board.",
+    "cur": "Apollo 8 је била прва мисија са посадом која је извела такав лет. Apollo 13 — чувена мисија „Хјустоне, имамо проблем“ — своје преживљавање дугује управо њему. Када је главни мотор постао неупотребљив, посада се вратила кући путањом слободног повратка, палећи само мотор лунарног модула за корекције курса — никада оштећени главни мотор. Подразумевани сценарио /fly у програму Orrery управо то ради за Марс: Земља → прелет Марса → Земља, без корекционих паљења на средини пута. Најјефтинији могући пут до Марса којим можете летети с људима на броду."
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "body_paragraphs.0",
+    "en": "The headline trick: leave Earth, fly past the Moon (or Mars), and let the gravity of that body bend your path back toward Earth. If you got the geometry right, you re-enter Earth's atmosphere on the rebound. The crew never has to fire an engine to come home.",
+    "cur": "Главни трик: напустите Земљу, прелетите поред Месеца (или Марса) и пустите да гравитација тог тела савије вашу путању назад ка Земљи. Ако сте геометрију погодили како треба, на повратку поново улазите у Земљину атмосферу. Посада никада не мора да упали мотор да би се вратила кући."
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "body_paragraphs.1",
+    "en": "Apollo 8 was the first crewed free-return. Apollo 13 famously fell back on the technique when its service module crippled — riding the free-return home, firing only the lunar module's engine for course corrections, never the crippled main engine. For Mars the geometry is harder — you need a 500-day, two-pass loop — but the concept is the same: flyby geometry doing the work of the return burn.",
+    "cur": "Apollo 8 је био први лет по путањи слободног повратка са посадом. Apollo 13 се, као што је познато, ослонио на ту технику када је његов сервисни модул оштећен — вратио се кући путањом слободног повратка, палећи само мотор лунарног модула за корекције курса, никада оштећени главни мотор. За Марс је геометрија тежа — потребна је петља од 500 дана са два проласка — али је концепт исти: геометрија прелета обавља посао повратног паљења."
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "body_paragraphs.2",
+    "en": "Orrery's default `/fly` scenario, ORRERY-1, is exactly this: Earth-Mars-Earth on a free-return arc, no mid-course corrections, no orbit-insertion burn at Mars. You watch the spacecraft loop the Sun once, swing past Mars, and come back. It's the cheapest crewed Mars flyby ever proposed.",
+    "cur": "Подразумевани сценарио апликације Orrery, `/fly`, ORRERY-1, управо је такав: Земља–Марс–Земља по луку слободног повратка, без корекција курса на средини пута и без паљења за убацивање у орбиту око Марса. Гледате како летелица једном обиђе Сунце, прелети поред Марса и врати се. То је најјефтинији прелет Марса са посадом који је икада предложен."
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "diagram_caption",
+    "en": "Earth → Mars flyby → Earth. The Moon (or Mars's) gravity does the U-turn for free.",
+    "cur": "Земља → прелет Марса → Земља. Гравитација Месеца (или Марса) бесплатно обавља окрет за 180 степени."
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "intro_sentence",
+    "en": "Steal a planet's orbital momentum on a flyby — the closest thing in space to a free lunch.",
+    "cur": "Украдите орбитални моменат неке планете приликом прелета — најближе што у свемиру постоји бесплатном ручку."
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "narrative_101.0",
+    "en": "Throw a tennis ball at a moving train. The ball bounces off the front and comes back at you faster than you threw it — because the train was moving toward it, and the train's speed got added to the bounce. That, basically, is a gravity assist. The spacecraft is the tennis ball, the planet is the train, and \"bouncing\" is replaced by \"falling past on a hyperbola.\"",
+    "cur": "Баците тениску лоптицу на воз у покрету. Лоптица се одбије од предњег дела и врати вам се брже него што сте је бацили — јер је воз ишао према њој, па се његова брзина додала одскоку. То је, у суштини, гравитациона помоћ. Летелица је тениска лоптица, планета је воз, а „одскок“ је замењен „падом поред планете по хиперболи“."
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "narrative_101.1",
+    "en": "From the planet's point of view, the spacecraft enters and leaves at exactly the same speed — gravity is conservative, no energy gained or lost. But from the Sun's point of view, the spacecraft inherits some of the planet's orbital motion on the way out and arrives somewhere new with extra (or less) speed. It's not a violation of physics; the planet pays for it by slowing down — by an amount way too tiny to detect.",
+    "cur": "Из угла планете, летелица улази и излази тачно истом брзином — гравитација је конзервативна, енергија се не добија нити губи. Али из угла Сунца, летелица на изласку наслеђује део орбиталног кретања планете и стиже негде другде са више (или мање) брзине. То није кршење физике; планета то плаћа успоравањем — за износ сувише мали да би се измерио."
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "narrative_101.2",
+    "en": "This is the trick that built the Voyager grand tour. Without gravity assists, you can't reach Saturn, let alone Uranus or Neptune, with chemical rockets — the fuel cost is astronomical. Voyager 2 chained four assists in a row: Jupiter, Saturn, Uranus, Neptune, all in one trip. Cassini bounced off Venus twice and Earth once on the way to Saturn. The outer solar system is only accessible because of this trick.",
+    "cur": "Ово је трик на коме је изграђена велика тура Voyager-а. Без гравитационих помоћи не можете хемијским ракетама стићи до Сатурна, а камоли до Урана или Нептуна — цена у гориву је астрономска. Voyager 2 је надовезао четири помоћи заредом: Јупитер, Сатурн, Уран, Нептун, све на једном путовању. Cassini се два пута одбио од Венере и једном од Земље на путу до Сатурна. Спољни Сунчев систем доступан је само захваљујући овом трику."
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "body_paragraphs.0",
+    "en": "Approach a moving planet from behind on a hyperbolic trajectory. The planet's gravity bends your path, you swing past, and you leave with the same speed relative to the planet — but the planet was moving the whole time, and you carry that motion with you. Net result: you exit with more speed relative to the Sun than you arrived with. The planet, in exchange, slows by an immeasurably tiny amount.",
+    "cur": "Приђите планети у покрету с леђа, по хиперболичкој путањи. Гравитација планете савија вашу путању, ви јој прођете поред и одлазите са истом брзином у односу на планету — али планета се све време кретала, а ви то кретање односите са собом. Крајњи резултат: из сусрета излазите са већом брзином у односу на Сунце него што сте имали при доласку. Планета се заузврат успори за неухватљиво малу вредност."
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "body_paragraphs.1",
+    "en": "Reverse the geometry — approach from in front — and you slow down. Pioneer 11 used Jupiter to push toward Saturn. Voyager 2 chained Jupiter, Saturn, Uranus, Neptune in one of the most exquisite gravity-assist tours ever flown. Cassini bounced off Venus twice and Earth once before reaching Saturn. New Horizons hit Jupiter to shave three years off the trip to Pluto.",
+    "cur": "Обрните геометрију — приближите се са предње стране — и успорићете. Pioneer 11 је искористио Јупитер да се одгурне ка Сатурну. Voyager 2 је ланчано повезао Јупитер, Сатурн, Уран и Нептун у једној од најпрефињенијих турнеја гравитационом праћком икада изведених. Cassini се двапут одбио од Венере и једном од Земље пре него што је стигао до Сатурна. New Horizons је искористио Јупитер да путовање до Плутона скрати за три године."
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "body_paragraphs.2",
+    "en": "Without gravity assists, half the missions in Orrery's catalogue couldn't have flown. The outer planets are simply too far for direct trajectories with chemical rockets — their costs in `∆v` would exceed what any rocket can deliver. Gravity assists turn that arithmetic from impossible into hard but doable.",
+    "cur": "Без гравитационих праћки половина мисија из каталога Orrery не би никада полетела. Спољне планете су једноставно предалеко за директне путање хемијским ракетама — њихова цена у `∆v` премашила би оно што било која ракета може да пружи. Гравитационе праћке претварају тај рачун из немогућег у тежак, али изводљив."
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "diagram_caption",
+    "en": "Spacecraft enters and exits the planet's frame at the same speed; the planet's motion adds heliocentric velocity.",
+    "cur": "Летелица улази у систем референције планете и излази из њега истом брзином; кретање планете додаје хелиоцентричну брзину."
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "intro_sentence",
+    "en": "The cheapest two-burn trip between two coplanar circular orbits — and the baseline mission planners measure everything else against.",
+    "cur": "Најјефтинији пут са два паљења мотора између две кружне орбите које леже у истој равни — и мерило с којим планери мисија упоређују све остало."
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "narrative_101.0",
+    "en": "You're in Earth's orbit. You want to be in Mars's orbit. Both orbits are roughly circles around the Sun. How do you get from one to the other with as little fuel as possible?",
+    "cur": "Налазите се у Земљиној орбити. Желите да доспете у орбиту Марса. Обе орбите су отприлике кругови око Сунца. Како стићи из једне у другу уз што мању потрошњу горива?"
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "narrative_101.1",
+    "en": "The answer, worked out by Walter Hohmann in 1925, is shockingly elegant. Find an ellipse that just barely touches Earth's orbit on one side and just barely touches Mars's orbit on the other. Burn your engine briefly to leave Earth and join that ellipse. Coast for about 8.5 months without firing the engine at all — gravity does the work. When you arrive at the far end, burn again to settle into Mars's orbit. Two burns, total. Done.",
+    "cur": "Одговор, који је 1925. извео Walter Hohmann, запањујуће је елегантан. Пронађите елипсу која једва додирује Земљину орбиту с једне стране, а орбиту Марса с друге. Накратко упалите мотор да напустите Земљу и придружите се тој елипси. Затим око 8,5 месеци летите по инерцији, без иједног паљења мотора — посао обавља гравитација. Када стигнете до њеног удаљеног краја, поново упалите мотор да бисте се сместили у орбиту Марса. Укупно два паљења. Готово."
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "narrative_101.2",
+    "en": "It's the cheapest possible trip — but it's also the slowest. The 8.5-month wait is non-negotiable; physics sets the timer. Want to go faster? You can, but you pay for it: a steeper ellipse, a faster crossing, a much bigger braking burn at the other end. This is the trade you'll see playing out across every porkchop plot in /plan.",
+    "cur": "То је најјефтинији могући пут — али и најспорији. Чекање од 8,5 месеци није предмет преговора; тајмер поставља физика. Желите да стигнете брже? Можете, али то се плаћа: стрмија елипса, бржи прелаз, знатно јаче кочно паљење на другом крају. То је компромис који ћете видети у сваком дијаграму „свињског котлета“ у /plan."
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "body_paragraphs.0",
+    "en": "Imagine you're in a circular orbit around the Sun and you want to reach a higher one — say Earth-to-Mars. The cheapest way is a Hohmann transfer: an ellipse whose perihelion grazes your starting orbit and whose aphelion grazes the destination. Two engine burns get you there. One at perihelion to leave Earth's orbit and enter the ellipse. One at aphelion to circularise into the destination orbit.",
+    "cur": "Замислите да се налазите у кружној орбити око Сунца и желите да доспете у вишу — рецимо, од Земље до Марса. Најјефтинији начин је Hohmann-ов трансфер: елипса чији перихел додирује вашу полазну орбиту, а афел одредишну. До циља вас воде два паљења мотора. Прво у перихелу, да напустите Земљину орбиту и уђете у елипсу. Друго у афелу, да циркуларизујете путању и уђете у одредишну орбиту."
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "body_paragraphs.1",
+    "en": "It's the cheapest fixed-impulse path, but it's also the slowest. Earth-to-Mars takes about 259 days on a Hohmann. Want to go faster? Burn harder, fly a stretched ellipse with higher perihelion velocity. The arrival V∞ goes up, the entry burn at the destination is bigger, your total ∆v cost climbs steeply.",
+    "cur": "То је најјефтинија путања са фиксним импулсом, али и најспорија. Од Земље до Марса Hohmann-овим трансфером се путује око 259 дана. Желите да стигнете брже? Паљење мора бити јаче, а лет треба да води по издуженијој елипси са већом брзином у перихелу. Долазно V∞ расте, кочно паљење на одредишту постаје веће, а укупни трошак ∆v нагло се пење."
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "body_paragraphs.2",
+    "en": "On Orrery's `/plan` porkchop you'll see this directly: there's a quiet basin of cool teal cells around the natural Hohmann window, every 26 months for Mars, and increasingly costly contours as you push toward shorter transit times.",
+    "cur": "На Orrery-евом „свињском котлету“ на `/plan` видећете то право пред собом: око природног Hohmann-овог прозора, који се за Марс отвара сваких 26 месеци, налази се тиха удолина хладних тиркизних ћелија, а што више журите ка краћем времену путовања, то су изолиније све скупље."
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "diagram_caption",
+    "en": "Earth orbit (inner) · Mars orbit (outer) · Hohmann transfer ellipse with perihelion at Earth, aphelion at Mars.",
+    "cur": "Земљина орбита (унутрашња) · орбита Марса (спољашња) · Hohmann-ова трансферна елипса са перихелом на Земљи и афелом на Марсу."
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "intro_sentence",
+    "en": "Given two positions and a transit time, find the orbit that connects them — the central problem of every interplanetary trajectory.",
+    "cur": "Када су дати два положаја и време прелета, треба пронаћи орбиту која их повезује — централни проблем сваке међупланетарне путање."
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "narrative_101.0",
+    "en": "The Hohmann transfer is the cheapest path from one orbit to another, but most missions don't actually fly Hohmanns. They want to leave on a specific date — say, when a particular rocket is ready, or when a particular launch pad is open — and they want to arrive on a specific date — say, in time for a Mars dust storm to subside. Hohmann doesn't let you pick. Lambert does.",
+    "cur": "Hohmann-ов трансфер је најјефтинији пут из једне орбите у другу, али већина мисија заправо не лети по Hohmann-у. Оне желе да полете тачно одређеног датума — рецимо, када је одређена ракета спремна или када је одређена лансирна рампа слободна — и желе да стигну тачно одређеног датума — рецимо, на време да се прашинска олуја на Марсу смири. Hohmann вам не допушта да бирате. Lambert допушта."
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "narrative_101.1",
+    "en": "Lambert's question is simpler-sounding than its math: I'm at point A, I want to be at point B, and I want to take exactly this many days getting there. What orbit should I fly? Lambert wrote down the answer in 1761 — there's exactly one ellipse (or sometimes two, depending on which way around you go) that connects two points in a given time.",
+    "cur": "Lambert-ово питање звучи једноставније него што је његова математика: налазим се у тачки A, желим да будем у тачки B и желим да на путу дотле утрошим тачно толико и толико дана. Којом орбитом треба да летим? Lambert је одговор записао 1761. године — постоји тачно једна елипса (а понекад две, зависно од тога на коју страну обилазите) која повезује две тачке за дато време."
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "narrative_101.2",
+    "en": "This is the heart of every porkchop plot you'll see. Each pixel on the porkchop in /plan is one Lambert problem: 'leave Earth on date X, reach Mars on date Y — what does it cost?' The colour is the answer. Solve it ten thousand times in parallel and you get the whole map at once. Orrery does this in a Web Worker so the UI doesn't freeze while it's thinking.",
+    "cur": "Ово је срж сваког porkchop дијаграма који ћете видети. Сваки пиксел на porkchop дијаграму у /plan представља један Lambert-ов проблем: „напусти Земљу датума X, стигни до Марса датума Y — колико то кошта?“ Боја је одговор. Решите га десет хиљада пута паралелно и добићете целу мапу одједном. Orrery ово ради у Web Worker-у, како се кориснички интерфејс не би замрзнуо док размишља."
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "body_paragraphs.0",
+    "en": "Lambert's problem asks: I'm here, I want to be there, and I have this much time. What ellipse should I fly? Two position vectors and a time of flight, and the equation produces the unique transfer orbit (or two — there's a long way and a short way around the central body).",
+    "cur": "Lambert-ов проблем гласи: ја сам овде, желим да стигнем тамо и на располагању имам толико и толико времена. Којом елипсом треба да летим? Два вектора положаја и време лета — и једначина даје јединствену трансферну орбиту (или две — постоји дужи и краћи пут око централног тела)."
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "body_paragraphs.1",
+    "en": "The Hohmann transfer is one specific Lambert solution: positions at opposite apsides, time of flight equal to half the transfer ellipse's period. Pull either knob — different positions, different time — and you get a different ellipse. Tighter time, more eccentric ellipse, higher departure energy. The math doesn't change; only the boundary conditions.",
+    "cur": "Hohmann-ов трансфер је једно посебно Lambert-ово решење: положаји у наспрамним апсидама, а време лета једнако половини периода трансферне елипсе. Повуците било који од та два регулатора — другачије положаје или друго време — и добићете другачију елипсу. Краће време значи ексцентричнију елипсу и већу енергију поласка. Математика се не мења; мењају се само гранични услови."
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "body_paragraphs.2",
+    "en": "Orrery solves Lambert's problem in a Web Worker every time you hover a porkchop cell on `/plan`. Each cell asks: 'leave Earth on date X, arrive at Mars on date Y — what's the ∆v cost?' The colour you see is the answer to that question, computed once per pixel.",
+    "cur": "Orrery решава Lambert-ов проблем у Web Worker-у сваки пут када пређете курсором преко porkchop ћелије на `/plan`. Свака ћелија поставља питање: „напусти Земљу датума X, стигни до Марса датума Y — колики је трошак ∆v?“ Боја коју видите јесте одговор на то питање, израчунат једном по пикселу."
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "diagram_caption",
+    "en": "Two position vectors r₁ and r₂; the Lambert solver finds the unique transfer ellipse joining them in time-of-flight.",
+    "cur": "Два вектора положаја r₁ и r₂; Lambert-ов решавач налази јединствену трансферну елипсу која их повезује за дато време лета."
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "intro_sentence",
+    "en": "Pretend gravity is one body at a time — the approximation that turns the unsolvable three-body problem into a chain of two-body Kepler problems you can actually solve.",
+    "cur": "Претварајте се да гравитацију у сваком тренутку изазива само једно тело — апроксимација која нерешиви проблем три тела претвара у низ проблема два тела по Кеплеру, које заиста можете да решите."
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "narrative_101.0",
+    "en": "Here's a dirty secret of orbital mechanics: the actual full physics — every body in the solar system pulling on every other — is mathematically unsolvable in any clean way. We have NO closed-form solution to the three-body problem, let alone the dozens-of-bodies real version. So how do mission planners get anything done?",
+    "cur": "Ево једне прљаве тајне орбиталне механике: права, потпуна физика — свако тело у Сунчевом систему које вуче свако друго — математички је нерешива на било који чист начин. НЕМАМО решење у затвореном облику за проблем три тела, а камоли за стварну верзију са десетинама тела. Како онда планери мисија уопште долазе до резултата?"
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "narrative_101.1",
+    "en": "They cheat. They pretend that, at any moment, only ONE body's gravity matters. Near Earth, only Earth pulls. Out in the cruise, only the Sun. Near Mars, only Mars. Each of those regions is called a sphere of influence, and inside each one the spacecraft flies a clean Keplerian conic. When the spacecraft crosses a boundary, you switch coordinate systems and start a new conic. Patched together, they form the trajectory. That's patched conics.",
+    "cur": "Они варају. Праве се да у сваком тренутку важи гравитација само ЈЕДНОГ тела. У близини Земље вуче само Земља. Негде на крстарењу, само Сунце. У близини Марса, само Марс. Свака од тих области зове се сфера утицаја, а унутар сваке од њих свемирска летелица лети по чистој кеплеровској коници. Када летелица пређе границу, мењате координатни систем и започињете нову конику. Спојене заједно, оне чине путању. То су спојене конике."
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "narrative_101.2",
+    "en": "The math comes out a few percent off the truth — small enough that real missions plan with it as their first cut, then numerically refine for the launch. It's also small enough that Orrery can run all of this in your browser, in a Web Worker, fast enough to redraw the whole porkchop when you scrub the launch year. The whole simulator is built on this trick.",
+    "cur": "Математика излази са одступањем од неколико процената од истине — довољно малим да стварне мисије њоме планирају као првим кораком, а затим је нумерички дорађују за лансирање. Одступање је такође довољно мало да Orrery све ово може да покреће у вашем прегледачу, у Web Worker-у, довољно брзо да поново исцрта цео porkchop када превлачите годину лансирања. Цео симулатор изграђен је на овом трику."
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "body_paragraphs.0",
+    "en": "Real gravity is messy. A spacecraft cruising between Earth and Mars feels Earth's gravity, the Sun's gravity, Mars's gravity, plus everything else, all at once. The full math (the n-body problem) has no closed-form solution — only numerical integration. That's slow, fragile, hard to plan with.",
+    "cur": "Права гравитација је замршена. Свемирска летелица која крстари између Земље и Марса истовремено осећа гравитацију Земље, гравитацију Сунца, гравитацију Марса и свега осталог. Цела математика (проблем n тела) нема решење у затвореном облику — постоји само нумеричка интеграција. То је споро, осетљиво и тешко за планирање."
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "body_paragraphs.1",
+    "en": "Patched conics is the working compromise: declare a sphere of influence around each body. Inside Earth's sphere, only Earth's gravity matters; you fly a Keplerian arc around Earth. Cross the boundary into the heliocentric region, switch to a Sun-centred Kepler arc. Cross into Mars's sphere, switch again. Three Kepler problems, patched together at the boundaries.",
+    "cur": "Спојене конике су радни компромис: одредите сферу утицаја око сваког тела. Унутар Земљине сфере важи само Земљина гравитација; летите по кеплеровском луку око Земље. Пређите границу у хелиоцентричну област и пређите на лук по Кеплеру са центром у Сунцу. Уђите у Марсову сферу и поново пређите на други лук. Три проблема по Кеплеру, спојена на границама."
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "body_paragraphs.2",
+    "en": "It's wrong but useful. Errors at boundaries are small — a few percent of ∆v at most for cislunar work, less for heliocentric — and the math becomes tractable enough to fit in a Web Worker. Orrery's `/plan` porkchops are computed this way; so are the trajectories on `/fly`. Real flight planning at NASA uses the same approximation as the first cut, then refines numerically before launch.",
+    "cur": "Погрешно је, али корисно. Грешке на границама су мале — највише неколико процената ∆v за циселенски рад, а мање за хелиоцентрични — а математика постаје довољно прихватљива да стане у Web Worker. Orrery-јеви porkchop дијаграми на `/plan` рачунају се на овај начин; такве су и путање на `/fly`. Право планирање лета у NASA користи исту апроксимацију као први корак, а затим је пре лансирања нумерички дорађује."
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "diagram_caption",
+    "en": "Three frames, three conics: Earth-centred → heliocentric → Mars-centred, patched at sphere-of-influence boundaries.",
+    "cur": "Три система референце, три конике: са центром у Земљи → хелиоцентрични → са центром у Марсу, спојени на границама сфера утицаја."
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "intro_sentence",
+    "en": "The Keplerian arc that carries a spacecraft from one orbit to another — Sun at one focus, just like every other orbit.",
+    "cur": "Кеплеров лук који носи свемирску летелицу из једне орбите у другу — са Сунцем у једној жижи, баш као и свака друга орбита."
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "narrative_101.0",
+    "en": "Mission planning sounds like it's about engines and rockets. It's mostly about choosing an ellipse. Every interplanetary cruise — Apollo to the Moon, Voyager to Neptune, Perseverance to Mars — is just a spacecraft riding an elliptical orbit between where it started and where it's going. The fancy word for that ellipse is the transfer orbit.",
+    "cur": "Планирање мисија звучи као да се највише тиче мотора и ракета. У суштини, оно је углавном избор елипсе. Свако међупланетарно путовање — Apollo до Месеца, Voyager до Нептуна, Perseverance до Марса — није ништа друго до свемирска летелица која јаше елиптичну орбиту између места где је кренула и места куда иде. Отмена реч за ту елипсу је трансферна орбита."
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "narrative_101.1",
+    "en": "It plays by the same rules as every other Keplerian orbit. The Sun sits at one focus. The spacecraft moves slowly at the far end and quickly at the close end. Vis-viva still works to compute its speed. Kepler's third law still gives you the time-of-flight from the size. Nothing exotic.",
+    "cur": "Она се повинује истим правилима као и свака друга Кеплерова орбита. Сунце се налази у једној жижи. Свемирска летелица се креће споро на удаљеном крају, а брзо на ближем. Vis-viva и даље служи за израчунавање њене брзине. Kepler-ов трећи закон и даље из величине даје време лета. Ништа егзотично."
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "narrative_101.2",
+    "en": "The only thing that makes a transfer ellipse different from a planet's orbit is that the spacecraft only flies HALF of it. It hops on at one end, rides to the other, and gets off. That's why the ∆v budget always has two big burns — one to enter the ellipse, one to leave it. The middle bit, the eight-month coast, costs absolutely nothing.",
+    "cur": "Једина разлика између трансферне елипсе и планетине орбите јесте у томе што свемирска летелица прелети само ЊЕНУ ПОЛОВИНУ. Укрца се на једном крају, вози се до другог и сиђе. Зато у буџету ∆v увек постоје два велика паљења — једно да се уђе у елипсу, друго да се из ње изађе. Средишњи део, осмомесечни лет по инерцији, не кошта апсолутно ништа."
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "body_paragraphs.0",
+    "en": "Once you've burned out of Earth's orbit, you're on an ellipse around the Sun. That ellipse is the transfer orbit, and it has all the same properties as any other: semi-major axis, eccentricity, perihelion, aphelion. The fact that you're going somewhere doesn't change the geometry — gravity doesn't care about your destination.",
+    "cur": "Када једном паљењем напустите Земљину орбиту, налазите се на елипси око Сунца. Та елипса је трансферна орбита и има иста својства као и свака друга: велику полуосу, ексцентричност, перихел, афел. Чињеница да негде идете не мења геометрију — гравитацију није брига за ваше одредиште."
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "body_paragraphs.1",
+    "en": "Two anchors define a transfer ellipse: where you started (perihelion if you're going outward) and where you'll end up (aphelion). The semi-major axis is the average of those two radii. Tweak either anchor and the whole ellipse reshapes — go further out, the ellipse stretches, the trip gets longer.",
+    "cur": "Две сидришне тачке одређују трансферну елипсу: место одакле сте кренули (перихел ако идете ка споља) и место на коме ћете завршити (афел). Велика полуоса је просек та два радијуса. Померите било коју од тих тачака и цела елипса мења облик — ако идете даље, елипса се развлачи, а пут постаје дужи."
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "body_paragraphs.2",
+    "en": "On Orrery's `/fly` HUD you'll see the spacecraft trace this ellipse in real time. The transfer arc on screen is a visual rendering of the same conic that the math says it is — Sun at one focus, perihelion behind you, aphelion ahead.",
+    "cur": "На HUD-у Orrery-ја на путањи `/fly` видећете како свемирска летелица у реалном времену исцртава ову елипсу. Трансферни лук на екрану јесте визуелни приказ исте конусне линије коју математика описује — са Сунцем у једној жижи, перихелом иза вас и афелом пред вама."
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "diagram_caption",
+    "en": "Two coplanar orbits (departure inner, destination outer) connected by a transfer ellipse with Sun at one focus.",
+    "cur": "Две копланарне орбите (полазна унутрашња, одредишна спољашња) повезане трансферном елипсом са Сунцем у једној жижи."
+  }
 ]

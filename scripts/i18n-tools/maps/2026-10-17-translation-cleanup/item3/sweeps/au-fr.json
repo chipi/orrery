@@ -1,182 +1,182 @@
 [
- {
-  "rel": "belts/asteroid.json",
-  "at": "location",
-  "old": "Entre Mars et Jupiter · 2,2–3,2 AU du Soleil",
-  "new": "Entre Mars et Jupiter · 2,2–3,2 UA du Soleil"
- },
- {
-  "rel": "belts/asteroid.json",
-  "at": "science_sections.1.why",
-  "old": "La ceinture occupe l'anneau 2,2–3,2 AU. Les lacunes de Kirkwood — zones orbitales vides aux résonances de moyen mouvement de Jupiter — structurent la population.",
-  "new": "La ceinture occupe l'anneau 2,2–3,2 UA. Les lacunes de Kirkwood — zones orbitales vides aux résonances de moyen mouvement de Jupiter — structurent la population."
- },
- {
-  "rel": "belts/kuiper.json",
-  "at": "location",
-  "old": "Au-delà de Neptune · 30–50 AU du Soleil",
-  "new": "Au-delà de Neptune · 30–50 UA du Soleil"
- },
- {
-  "rel": "fleet/orbiter/solar-orbiter.json",
-  "at": "description",
-  "old": "Solar Orbiter, dirigée par l'ESA, est la première sonde spatiale conçue pour imager en détail les régions polaires du Soleil — utilisant des assistances gravitationnelles répétées de Vénus sur une décennie pour sortir de l'écliptique vers une inclinaison héliographique de ~33°. Embarque dix instruments combinant télédétection (magnétographe PHI, imageur ultraviolet extrême EUI, spectromètre SPICE, imageur rayons X STIX, coronographe METIS, imageur héliosphérique SoloHI) et mesure in-situ (magnétomètre, particules énergétiques, plasma du vent solaire, ondes radio + plasma). Lancée le 2020-02-10 depuis Cap Canaveral sur une fusée Atlas V 411 de la NASA. Premier périhélie le 2020-06-15 à 0,51 AU. Périhélie de travail 0,28 AU (~62 R☉), à l'intérieur de la distance au périhélie de Mercure.",
-  "new": "Solar Orbiter, dirigée par l'ESA, est la première sonde spatiale conçue pour imager en détail les régions polaires du Soleil — utilisant des assistances gravitationnelles répétées de Vénus sur une décennie pour sortir de l'écliptique vers une inclinaison héliographique de ~33°. Embarque dix instruments combinant télédétection (magnétographe PHI, imageur ultraviolet extrême EUI, spectromètre SPICE, imageur rayons X STIX, coronographe METIS, imageur héliosphérique SoloHI) et mesure in-situ (magnétomètre, particules énergétiques, plasma du vent solaire, ondes radio + plasma). Lancée le 2020-02-10 depuis Cap Canaveral sur une fusée Atlas V 411 de la NASA. Premier périhélie le 2020-06-15 à 0,51 UA. Périhélie de travail 0,28 UA (~62 R☉), à l'intérieur de la distance au périhélie de Mercure."
- },
- {
-  "rel": "orbit-regimes-explore/BELT.json",
-  "at": "story",
-  "old": "Un anneau de débris rocheux entre Mars et Jupiter — 2,2 à 3,2 AU. Des centaines de milliers de corps catalogués ; masse totale estimée inférieure à 4 % de celle de la Lune. Ce n'est pas le champ d'astéroïdes densément peuplé de la science-fiction : l'espacement typique entre les objets est d'environ 1 million de kilomètres. La ceinture ne s'est jamais agglomérée en planète car la gravité de Jupiter n'a cessé de perturber les orbites, empêchant les collisions de fusionner. Trois lacunes de Kirkwood marquent des résonances avec Jupiter où les astéroïdes sont éliminés.",
-  "new": "Un anneau de débris rocheux entre Mars et Jupiter — 2,2 à 3,2 UA. Des centaines de milliers de corps catalogués ; masse totale estimée inférieure à 4 % de celle de la Lune. Ce n'est pas le champ d'astéroïdes densément peuplé de la science-fiction : l'espacement typique entre les objets est d'environ 1 million de kilomètres. La ceinture ne s'est jamais agglomérée en planète car la gravité de Jupiter n'a cessé de perturber les orbites, empêchant les collisions de fusionner. Trois lacunes de Kirkwood marquent des résonances avec Jupiter où les astéroïdes sont éliminés."
- },
- {
-  "rel": "orbit-regimes-explore/GIANTS.json",
-  "at": "story",
-  "old": "Le royaume planétaire extérieur — de 5 à 30 AU. Deux géantes gazeuses (Jupiter, Saturne) avec des enveloppes d'hydrogène-hélium de plusieurs milliers de kilomètres d'épaisseur au-dessus de petits noyaux rocheux ; deux géantes glacées (Uranus, Neptune) avec des manteaux d'eau/ammoniac/méthane sous une atmosphère gazeuse plus fine. Ensemble, elles concentrent 99 % de toute la masse planétaire du système solaire. Chacune possède son propre système de lunes qui s'apparente à un système solaire miniature — Jupiter seule compte 95 lunes connues, dont quatre plus grandes que Pluton.",
-  "new": "Le royaume planétaire extérieur — de 5 à 30 UA. Deux géantes gazeuses (Jupiter, Saturne) avec des enveloppes d'hydrogène-hélium de plusieurs milliers de kilomètres d'épaisseur au-dessus de petits noyaux rocheux ; deux géantes glacées (Uranus, Neptune) avec des manteaux d'eau/ammoniac/méthane sous une atmosphère gazeuse plus fine. Ensemble, elles concentrent 99 % de toute la masse planétaire du système solaire. Chacune possède son propre système de lunes qui s'apparente à un système solaire miniature — Jupiter seule compte 95 lunes connues, dont quatre plus grandes que Pluton."
- },
- {
-  "rel": "orbit-regimes-explore/GIANTS.json",
-  "at": "residents.0.label",
-  "old": "Jupiter — 5,20 AU",
-  "new": "Jupiter — 5,20 UA"
- },
- {
-  "rel": "orbit-regimes-explore/GIANTS.json",
-  "at": "residents.1.label",
-  "old": "Saturne — 9,58 AU, système d'anneaux",
-  "new": "Saturne — 9,58 UA, système d'anneaux"
- },
- {
-  "rel": "orbit-regimes-explore/GIANTS.json",
-  "at": "residents.2.label",
-  "old": "Uranus — 19,18 AU, incliné de 97°",
-  "new": "Uranus — 19,18 UA, incliné de 97°"
- },
- {
-  "rel": "orbit-regimes-explore/GIANTS.json",
-  "at": "residents.3.label",
-  "old": "Neptune — 30,07 AU, vents les plus rapides du système",
-  "new": "Neptune — 30,07 UA, vents les plus rapides du système"
- },
- {
-  "rel": "orbit-regimes-explore/HELIOPAUSE.json",
-  "at": "story",
-  "old": "La frontière où le vent solaire du Soleil perd sa bataille contre le milieu interstellaire — environ 120 AU de distance. À l'intérieur se trouve l'héliosphère, une bulle de particules solaires chargées qui s'écoulent vers l'extérieur à des centaines de km/s. Au-delà : le gaz froid et dense et les rayons cosmiques de la galaxie elle-même. Les sondes Voyager sont les seuls artefacts que l'humanité ait jamais placés au-delà de cette frontière — Voyager 1 l'a franchie en 2012, Voyager 2 en 2018. Toutes deux transmettent encore des données, faiblement, depuis l'espace interstellaire.",
-  "new": "La frontière où le vent solaire du Soleil perd sa bataille contre le milieu interstellaire — environ 120 UA de distance. À l'intérieur se trouve l'héliosphère, une bulle de particules solaires chargées qui s'écoulent vers l'extérieur à des centaines de km/s. Au-delà : le gaz froid et dense et les rayons cosmiques de la galaxie elle-même. Les sondes Voyager sont les seuls artefacts que l'humanité ait jamais placés au-delà de cette frontière — Voyager 1 l'a franchie en 2012, Voyager 2 en 2018. Toutes deux transmettent encore des données, faiblement, depuis l'espace interstellaire."
- },
- {
-  "rel": "orbit-regimes-explore/KUIPER.json",
-  "at": "residents.0.label",
-  "old": "Pluton — 39,5 AU, le plus grand connu",
-  "new": "Pluton — 39,5 UA, le plus grand connu"
- },
- {
-  "rel": "orbit-regimes-explore/KUIPER.json",
-  "at": "residents.1.label",
-  "old": "Éris — 96,4 AU (disque dispersé)",
-  "new": "Éris — 96,4 UA (disque dispersé)"
- },
- {
-  "rel": "orbit-regimes-explore/KUIPER.json",
-  "at": "residents.2.label",
-  "old": "Makémaké — 45,8 AU",
-  "new": "Makémaké — 45,8 UA"
- },
- {
-  "rel": "orbit-regimes-explore/KUIPER.json",
-  "at": "residents.3.label",
-  "old": "Hauméa — 43,3 AU, rotateur rapide",
-  "new": "Hauméa — 43,3 UA, rotateur rapide"
- },
- {
-  "rel": "orbit-regimes-explore/KUIPER.json",
-  "at": "residents.4.label",
-  "old": "Quaoar — 43,4 AU, possède des anneaux",
-  "new": "Quaoar — 43,4 UA, possède des anneaux"
- },
- {
-  "rel": "orbit-regimes-explore/KUIPER.json",
-  "at": "residents.5.label",
-  "old": "Arrokoth — 44,6 AU, binaire de contact",
-  "new": "Arrokoth — 44,6 UA, binaire de contact"
- },
- {
-  "rel": "orbit-regimes-explore/OORT.json",
-  "at": "story",
-  "old": "Une coquille sphérique hypothétique de corps glacés entourant l'ensemble du système solaire — s'étendant d'environ 2 000 à 100 000 AU. Jamais observé directement, seulement déduit : les comètes à longue période que nous observons ont des orbites si larges qu'elles doivent provenir d'ici. Population estimée : des billions de corps. Le nuage d'Oort représente les restes du nuage de naissance du système solaire, dynamiquement stable depuis des milliards d'années à cette distance du Soleil. Les étoiles de passage peuvent perturber des objets individuels vers l'intérieur, devenant les comètes que nous observons.",
-  "new": "Une coquille sphérique hypothétique de corps glacés entourant l'ensemble du système solaire — s'étendant d'environ 2 000 à 100 000 UA. Jamais observé directement, seulement déduit : les comètes à longue période que nous observons ont des orbites si larges qu'elles doivent provenir d'ici. Population estimée : des billions de corps. Le nuage d'Oort représente les restes du nuage de naissance du système solaire, dynamiquement stable depuis des milliards d'années à cette distance du Soleil. Les étoiles de passage peuvent perturber des objets individuels vers l'intérieur, devenant les comètes que nous observons."
- },
- {
-  "rel": "planets/neptune.json",
-  "at": "science_sections.0.why",
-  "old": "À une distance moyenne de 30,07 AU, Neptune est si lointaine qu'un signal lumineux aller-retour prend 4 heures. Voyager 2 a nécessité 12 ans pour l'atteindre.",
-  "new": "À une distance moyenne de 30,07 UA, Neptune est si lointaine qu'un signal lumineux aller-retour prend 4 heures. Voyager 2 a nécessité 12 ans pour l'atteindre."
- },
- {
-  "rel": "planets/neptune.json",
-  "at": "science_sections.2.why",
-  "old": "L'excentricité douce de Neptune de 0,0086 donne une orbite si circulaire que l'oscillation périhélie–aphélie est inférieure à 200 millions de km sur un demi-grand axe de 30 AU — une variation de 1,4 %.",
-  "new": "L'excentricité douce de Neptune de 0,0086 donne une orbite si circulaire que l'oscillation périhélie–aphélie est inférieure à 200 millions de km sur un demi-grand axe de 30 UA — une variation de 1,4 %."
- },
- {
-  "rel": "science/scales-time/au.json",
-  "at": "body_paragraphs.1",
-  "old": "Distances du système solaire en AU : Mercure 0,39, Vénus 0,72, Terre 1,0, Mars 1,52, Jupiter 5,20, Saturne 9,58, Uranus 19,22, Neptune 30,05, Pluton 39,5 (moyennes — l'excentricité les fait varier). Les Voyagers ont dépassé les 150 AU et continuent leur route. Le nuage d'Oort s'étend sur des dizaines de milliers d'AU.",
-  "new": "Distances du système solaire en AU : Mercure 0,39, Vénus 0,72, Terre 1,0, Mars 1,52, Jupiter 5,20, Saturne 9,58, Uranus 19,22, Neptune 30,05, Pluton 39,5 (moyennes — l'excentricité les fait varier). Les Voyagers ont dépassé les 150 UA et continuent leur route. Le nuage d'Oort s'étend sur des dizaines de milliers d'AU."
- },
- {
-  "rel": "science/scales-time/au.json",
-  "at": "body_paragraphs.2",
-  "old": "Pourquoi AU plutôt que les mètres ? Parce que les chiffres en mètres sont ingérables à l'échelle du système solaire. Les 1,4 milliard de km de Saturne sont illisibles. 9,58 AU est un nombre qu'on peut tenir dans sa tête. Les panneaux et l'affichage tête-haute d'Orrery utilisent tous AU pour les positions du système solaire — convertis en km, lumière-minutes et autres unités seulement quand le public a besoin de la conversion.",
-  "new": "Pourquoi AU plutôt que les mètres ? Parce que les chiffres en mètres sont ingérables à l'échelle du système solaire. Les 1,4 milliard de km de Saturne sont illisibles. 9,58 UA est un nombre qu'on peut tenir dans sa tête. Les panneaux et l'affichage tête-haute d'Orrery utilisent tous AU pour les positions du système solaire — convertis en km, lumière-minutes et autres unités seulement quand le public a besoin de la conversion."
- },
- {
-  "rel": "science/scales-time/au.json",
-  "at": "diagram_caption",
-  "old": "1 AU ≈ distance Terre-Soleil. Demi-grands axes planétaires en AU, échelle logarithmique pour gérer les planètes externes.",
-  "new": "1 UA ≈ distance Terre-Soleil. Demi-grands axes planétaires en AU, échelle logarithmique pour gérer les planètes externes."
- },
- {
-  "rel": "small-bodies/ceres.json",
-  "at": "science_sections.1.why",
-  "old": "Cérès orbite à 2,77 AU — bien à l'intérieur de la ceinture d'astéroïdes et utilisée comme distance de référence canonique du « centre de la ceinture ».",
-  "new": "Cérès orbite à 2,77 UA — bien à l'intérieur de la ceinture d'astéroïdes et utilisée comme distance de référence canonique du « centre de la ceinture »."
- },
- {
-  "rel": "small-bodies/didymos.json",
-  "at": "science_sections.0.why",
-  "old": "Didymos est un astéroïde binaire proche de la Terre (demi-grand axe 1,64 AU). DART (NASA, 2022) a percuté son petit compagnon Dimorphos pour tester la physique de la déviation d'astéroïdes.",
-  "new": "Didymos est un astéroïde binaire proche de la Terre (demi-grand axe 1,64 UA). DART (NASA, 2022) a percuté son petit compagnon Dimorphos pour tester la physique de la déviation d'astéroïdes."
- },
- {
-  "rel": "small-bodies/halley.json",
-  "at": "science_sections.1.why",
-  "old": "L'énorme oscillation périhélie-aphélie de Halley (35 à 0.59 AU) force les glaces de surface à sublimer violemment près du périhélie, produisant la chevelure et la queue. Prochain périhélie : 2061.",
-  "new": "L'énorme oscillation périhélie-aphélie de Halley (35 à 0.59 UA) force les glaces de surface à sublimer violemment près du périhélie, produisant la chevelure et la queue. Prochain périhélie : 2061."
- },
- {
-  "rel": "small-bodies/itokawa.json",
-  "at": "science_sections.0.why",
-  "old": "Itokawa est un astéroïde Apollo proche de la Terre — demi-grand axe 1,32 AU. Le rendez-vous de Hayabusa en 2005 et le retour d'échantillons en 2010 constituaient le premier aller-retour vers un NEA.",
-  "new": "Itokawa est un astéroïde Apollo proche de la Terre — demi-grand axe 1,32 UA. Le rendez-vous de Hayabusa en 2005 et le retour d'échantillons en 2010 constituaient le premier aller-retour vers un NEA."
- },
- {
-  "rel": "small-bodies/vesta.json",
-  "at": "science_sections.1.why",
-  "old": "Vesta orbite à 2,36 AU — ceinture interne. Sa proximité a motivé Dawn à visiter Vesta en premier (2011), puis à partir pour Cérès (2015).",
-  "new": "Vesta orbite à 2,36 UA — ceinture interne. Sa proximité a motivé Dawn à visiter Vesta en premier (2011), puis à partir pour Cérès (2015)."
- },
- {
-  "rel": "sun.json",
-  "at": "bio",
-  "old": "Une étoile de la séquence principale de type G âgée de 4,6 milliards d'années, à mi-chemin de sa vie de 10 milliards d'années. Le Soleil tourne différemment : son équateur prend 25 jours, ses pôles 35. Dans environ 5 milliards d’années, il épuisera son noyau d’hydrogène, se transformera en une géante rouge et engloutira les planètes intérieures. L'influence gravitationnelle du Soleil définit l'héliosphère jusqu'à environ 120 AU.",
-  "new": "Une étoile de la séquence principale de type G âgée de 4,6 milliards d'années, à mi-chemin de sa vie de 10 milliards d'années. Le Soleil tourne différemment : son équateur prend 25 jours, ses pôles 35. Dans environ 5 milliards d’années, il épuisera son noyau d’hydrogène, se transformera en une géante rouge et engloutira les planètes intérieures. L'influence gravitationnelle du Soleil définit l'héliosphère jusqu'à environ 120 UA."
- },
- {
-  "rel": "messages",
-  "at": "lab_goal_lss_escape",
-  "old": "Pour quitter le Soleil définitivement, vous devez atteindre sa vitesse de libération. À la distance de la Terre — 1 AU — elle est d'environ 42 km/s. Déplacez la distance vers l'extérieur et regardez-la diminuer : l'échappement est plus facile plus loin du Soleil.",
-  "new": "Pour quitter le Soleil définitivement, vous devez atteindre sa vitesse de libération. À la distance de la Terre — 1 UA — elle est d'environ 42 km/s. Déplacez la distance vers l'extérieur et regardez-la diminuer : l'échappement est plus facile plus loin du Soleil."
- }
+  {
+    "rel": "belts/asteroid.json",
+    "at": "location",
+    "old": "Entre Mars et Jupiter · 2,2–3,2 AU du Soleil",
+    "new": "Entre Mars et Jupiter · 2,2–3,2 UA du Soleil"
+  },
+  {
+    "rel": "belts/asteroid.json",
+    "at": "science_sections.1.why",
+    "old": "La ceinture occupe l'anneau 2,2–3,2 AU. Les lacunes de Kirkwood — zones orbitales vides aux résonances de moyen mouvement de Jupiter — structurent la population.",
+    "new": "La ceinture occupe l'anneau 2,2–3,2 UA. Les lacunes de Kirkwood — zones orbitales vides aux résonances de moyen mouvement de Jupiter — structurent la population."
+  },
+  {
+    "rel": "belts/kuiper.json",
+    "at": "location",
+    "old": "Au-delà de Neptune · 30–50 AU du Soleil",
+    "new": "Au-delà de Neptune · 30–50 UA du Soleil"
+  },
+  {
+    "rel": "fleet/orbiter/solar-orbiter.json",
+    "at": "description",
+    "old": "Solar Orbiter, dirigée par l'ESA, est la première sonde spatiale conçue pour imager en détail les régions polaires du Soleil — utilisant des assistances gravitationnelles répétées de Vénus sur une décennie pour sortir de l'écliptique vers une inclinaison héliographique de ~33°. Embarque dix instruments combinant télédétection (magnétographe PHI, imageur ultraviolet extrême EUI, spectromètre SPICE, imageur rayons X STIX, coronographe METIS, imageur héliosphérique SoloHI) et mesure in-situ (magnétomètre, particules énergétiques, plasma du vent solaire, ondes radio + plasma). Lancée le 2020-02-10 depuis Cap Canaveral sur une fusée Atlas V 411 de la NASA. Premier périhélie le 2020-06-15 à 0,51 AU. Périhélie de travail 0,28 AU (~62 R☉), à l'intérieur de la distance au périhélie de Mercure.",
+    "new": "Solar Orbiter, dirigée par l'ESA, est la première sonde spatiale conçue pour imager en détail les régions polaires du Soleil — utilisant des assistances gravitationnelles répétées de Vénus sur une décennie pour sortir de l'écliptique vers une inclinaison héliographique de ~33°. Embarque dix instruments combinant télédétection (magnétographe PHI, imageur ultraviolet extrême EUI, spectromètre SPICE, imageur rayons X STIX, coronographe METIS, imageur héliosphérique SoloHI) et mesure in-situ (magnétomètre, particules énergétiques, plasma du vent solaire, ondes radio + plasma). Lancée le 2020-02-10 depuis Cap Canaveral sur une fusée Atlas V 411 de la NASA. Premier périhélie le 2020-06-15 à 0,51 UA. Périhélie de travail 0,28 UA (~62 R☉), à l'intérieur de la distance au périhélie de Mercure."
+  },
+  {
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "story",
+    "old": "Un anneau de débris rocheux entre Mars et Jupiter — 2,2 à 3,2 AU. Des centaines de milliers de corps catalogués ; masse totale estimée inférieure à 4 % de celle de la Lune. Ce n'est pas le champ d'astéroïdes densément peuplé de la science-fiction : l'espacement typique entre les objets est d'environ 1 million de kilomètres. La ceinture ne s'est jamais agglomérée en planète car la gravité de Jupiter n'a cessé de perturber les orbites, empêchant les collisions de fusionner. Trois lacunes de Kirkwood marquent des résonances avec Jupiter où les astéroïdes sont éliminés.",
+    "new": "Un anneau de débris rocheux entre Mars et Jupiter — 2,2 à 3,2 UA. Des centaines de milliers de corps catalogués ; masse totale estimée inférieure à 4 % de celle de la Lune. Ce n'est pas le champ d'astéroïdes densément peuplé de la science-fiction : l'espacement typique entre les objets est d'environ 1 million de kilomètres. La ceinture ne s'est jamais agglomérée en planète car la gravité de Jupiter n'a cessé de perturber les orbites, empêchant les collisions de fusionner. Trois lacunes de Kirkwood marquent des résonances avec Jupiter où les astéroïdes sont éliminés."
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "story",
+    "old": "Le royaume planétaire extérieur — de 5 à 30 AU. Deux géantes gazeuses (Jupiter, Saturne) avec des enveloppes d'hydrogène-hélium de plusieurs milliers de kilomètres d'épaisseur au-dessus de petits noyaux rocheux ; deux géantes glacées (Uranus, Neptune) avec des manteaux d'eau/ammoniac/méthane sous une atmosphère gazeuse plus fine. Ensemble, elles concentrent 99 % de toute la masse planétaire du système solaire. Chacune possède son propre système de lunes qui s'apparente à un système solaire miniature — Jupiter seule compte 95 lunes connues, dont quatre plus grandes que Pluton.",
+    "new": "Le royaume planétaire extérieur — de 5 à 30 UA. Deux géantes gazeuses (Jupiter, Saturne) avec des enveloppes d'hydrogène-hélium de plusieurs milliers de kilomètres d'épaisseur au-dessus de petits noyaux rocheux ; deux géantes glacées (Uranus, Neptune) avec des manteaux d'eau/ammoniac/méthane sous une atmosphère gazeuse plus fine. Ensemble, elles concentrent 99 % de toute la masse planétaire du système solaire. Chacune possède son propre système de lunes qui s'apparente à un système solaire miniature — Jupiter seule compte 95 lunes connues, dont quatre plus grandes que Pluton."
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "residents.0.label",
+    "old": "Jupiter — 5,20 AU",
+    "new": "Jupiter — 5,20 UA"
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "residents.1.label",
+    "old": "Saturne — 9,58 AU, système d'anneaux",
+    "new": "Saturne — 9,58 UA, système d'anneaux"
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "residents.2.label",
+    "old": "Uranus — 19,18 AU, incliné de 97°",
+    "new": "Uranus — 19,18 UA, incliné de 97°"
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "residents.3.label",
+    "old": "Neptune — 30,07 AU, vents les plus rapides du système",
+    "new": "Neptune — 30,07 UA, vents les plus rapides du système"
+  },
+  {
+    "rel": "orbit-regimes-explore/HELIOPAUSE.json",
+    "at": "story",
+    "old": "La frontière où le vent solaire du Soleil perd sa bataille contre le milieu interstellaire — environ 120 AU de distance. À l'intérieur se trouve l'héliosphère, une bulle de particules solaires chargées qui s'écoulent vers l'extérieur à des centaines de km/s. Au-delà : le gaz froid et dense et les rayons cosmiques de la galaxie elle-même. Les sondes Voyager sont les seuls artefacts que l'humanité ait jamais placés au-delà de cette frontière — Voyager 1 l'a franchie en 2012, Voyager 2 en 2018. Toutes deux transmettent encore des données, faiblement, depuis l'espace interstellaire.",
+    "new": "La frontière où le vent solaire du Soleil perd sa bataille contre le milieu interstellaire — environ 120 UA de distance. À l'intérieur se trouve l'héliosphère, une bulle de particules solaires chargées qui s'écoulent vers l'extérieur à des centaines de km/s. Au-delà : le gaz froid et dense et les rayons cosmiques de la galaxie elle-même. Les sondes Voyager sont les seuls artefacts que l'humanité ait jamais placés au-delà de cette frontière — Voyager 1 l'a franchie en 2012, Voyager 2 en 2018. Toutes deux transmettent encore des données, faiblement, depuis l'espace interstellaire."
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "residents.0.label",
+    "old": "Pluton — 39,5 AU, le plus grand connu",
+    "new": "Pluton — 39,5 UA, le plus grand connu"
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "residents.1.label",
+    "old": "Éris — 96,4 AU (disque dispersé)",
+    "new": "Éris — 96,4 UA (disque dispersé)"
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "residents.2.label",
+    "old": "Makémaké — 45,8 AU",
+    "new": "Makémaké — 45,8 UA"
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "residents.3.label",
+    "old": "Hauméa — 43,3 AU, rotateur rapide",
+    "new": "Hauméa — 43,3 UA, rotateur rapide"
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "residents.4.label",
+    "old": "Quaoar — 43,4 AU, possède des anneaux",
+    "new": "Quaoar — 43,4 UA, possède des anneaux"
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "residents.5.label",
+    "old": "Arrokoth — 44,6 AU, binaire de contact",
+    "new": "Arrokoth — 44,6 UA, binaire de contact"
+  },
+  {
+    "rel": "orbit-regimes-explore/OORT.json",
+    "at": "story",
+    "old": "Une coquille sphérique hypothétique de corps glacés entourant l'ensemble du système solaire — s'étendant d'environ 2 000 à 100 000 AU. Jamais observé directement, seulement déduit : les comètes à longue période que nous observons ont des orbites si larges qu'elles doivent provenir d'ici. Population estimée : des billions de corps. Le nuage d'Oort représente les restes du nuage de naissance du système solaire, dynamiquement stable depuis des milliards d'années à cette distance du Soleil. Les étoiles de passage peuvent perturber des objets individuels vers l'intérieur, devenant les comètes que nous observons.",
+    "new": "Une coquille sphérique hypothétique de corps glacés entourant l'ensemble du système solaire — s'étendant d'environ 2 000 à 100 000 UA. Jamais observé directement, seulement déduit : les comètes à longue période que nous observons ont des orbites si larges qu'elles doivent provenir d'ici. Population estimée : des billions de corps. Le nuage d'Oort représente les restes du nuage de naissance du système solaire, dynamiquement stable depuis des milliards d'années à cette distance du Soleil. Les étoiles de passage peuvent perturber des objets individuels vers l'intérieur, devenant les comètes que nous observons."
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "science_sections.0.why",
+    "old": "À une distance moyenne de 30,07 AU, Neptune est si lointaine qu'un signal lumineux aller-retour prend 4 heures. Voyager 2 a nécessité 12 ans pour l'atteindre.",
+    "new": "À une distance moyenne de 30,07 UA, Neptune est si lointaine qu'un signal lumineux aller-retour prend 4 heures. Voyager 2 a nécessité 12 ans pour l'atteindre."
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "science_sections.2.why",
+    "old": "L'excentricité douce de Neptune de 0,0086 donne une orbite si circulaire que l'oscillation périhélie–aphélie est inférieure à 200 millions de km sur un demi-grand axe de 30 AU — une variation de 1,4 %.",
+    "new": "L'excentricité douce de Neptune de 0,0086 donne une orbite si circulaire que l'oscillation périhélie–aphélie est inférieure à 200 millions de km sur un demi-grand axe de 30 UA — une variation de 1,4 %."
+  },
+  {
+    "rel": "science/scales-time/au.json",
+    "at": "body_paragraphs.1",
+    "old": "Distances du système solaire en AU : Mercure 0,39, Vénus 0,72, Terre 1,0, Mars 1,52, Jupiter 5,20, Saturne 9,58, Uranus 19,22, Neptune 30,05, Pluton 39,5 (moyennes — l'excentricité les fait varier). Les Voyagers ont dépassé les 150 AU et continuent leur route. Le nuage d'Oort s'étend sur des dizaines de milliers d'AU.",
+    "new": "Distances du système solaire en AU : Mercure 0,39, Vénus 0,72, Terre 1,0, Mars 1,52, Jupiter 5,20, Saturne 9,58, Uranus 19,22, Neptune 30,05, Pluton 39,5 (moyennes — l'excentricité les fait varier). Les Voyagers ont dépassé les 150 UA et continuent leur route. Le nuage d'Oort s'étend sur des dizaines de milliers d'AU."
+  },
+  {
+    "rel": "science/scales-time/au.json",
+    "at": "body_paragraphs.2",
+    "old": "Pourquoi AU plutôt que les mètres ? Parce que les chiffres en mètres sont ingérables à l'échelle du système solaire. Les 1,4 milliard de km de Saturne sont illisibles. 9,58 AU est un nombre qu'on peut tenir dans sa tête. Les panneaux et l'affichage tête-haute d'Orrery utilisent tous AU pour les positions du système solaire — convertis en km, lumière-minutes et autres unités seulement quand le public a besoin de la conversion.",
+    "new": "Pourquoi AU plutôt que les mètres ? Parce que les chiffres en mètres sont ingérables à l'échelle du système solaire. Les 1,4 milliard de km de Saturne sont illisibles. 9,58 UA est un nombre qu'on peut tenir dans sa tête. Les panneaux et l'affichage tête-haute d'Orrery utilisent tous AU pour les positions du système solaire — convertis en km, lumière-minutes et autres unités seulement quand le public a besoin de la conversion."
+  },
+  {
+    "rel": "science/scales-time/au.json",
+    "at": "diagram_caption",
+    "old": "1 AU ≈ distance Terre-Soleil. Demi-grands axes planétaires en AU, échelle logarithmique pour gérer les planètes externes.",
+    "new": "1 UA ≈ distance Terre-Soleil. Demi-grands axes planétaires en AU, échelle logarithmique pour gérer les planètes externes."
+  },
+  {
+    "rel": "small-bodies/ceres.json",
+    "at": "science_sections.1.why",
+    "old": "Cérès orbite à 2,77 AU — bien à l'intérieur de la ceinture d'astéroïdes et utilisée comme distance de référence canonique du « centre de la ceinture ».",
+    "new": "Cérès orbite à 2,77 UA — bien à l'intérieur de la ceinture d'astéroïdes et utilisée comme distance de référence canonique du « centre de la ceinture »."
+  },
+  {
+    "rel": "small-bodies/didymos.json",
+    "at": "science_sections.0.why",
+    "old": "Didymos est un astéroïde binaire proche de la Terre (demi-grand axe 1,64 AU). DART (NASA, 2022) a percuté son petit compagnon Dimorphos pour tester la physique de la déviation d'astéroïdes.",
+    "new": "Didymos est un astéroïde binaire proche de la Terre (demi-grand axe 1,64 UA). DART (NASA, 2022) a percuté son petit compagnon Dimorphos pour tester la physique de la déviation d'astéroïdes."
+  },
+  {
+    "rel": "small-bodies/halley.json",
+    "at": "science_sections.1.why",
+    "old": "L'énorme oscillation périhélie-aphélie de Halley (35 à 0.59 AU) force les glaces de surface à sublimer violemment près du périhélie, produisant la chevelure et la queue. Prochain périhélie : 2061.",
+    "new": "L'énorme oscillation périhélie-aphélie de Halley (35 à 0.59 UA) force les glaces de surface à sublimer violemment près du périhélie, produisant la chevelure et la queue. Prochain périhélie : 2061."
+  },
+  {
+    "rel": "small-bodies/itokawa.json",
+    "at": "science_sections.0.why",
+    "old": "Itokawa est un astéroïde Apollo proche de la Terre — demi-grand axe 1,32 AU. Le rendez-vous de Hayabusa en 2005 et le retour d'échantillons en 2010 constituaient le premier aller-retour vers un NEA.",
+    "new": "Itokawa est un astéroïde Apollo proche de la Terre — demi-grand axe 1,32 UA. Le rendez-vous de Hayabusa en 2005 et le retour d'échantillons en 2010 constituaient le premier aller-retour vers un NEA."
+  },
+  {
+    "rel": "small-bodies/vesta.json",
+    "at": "science_sections.1.why",
+    "old": "Vesta orbite à 2,36 AU — ceinture interne. Sa proximité a motivé Dawn à visiter Vesta en premier (2011), puis à partir pour Cérès (2015).",
+    "new": "Vesta orbite à 2,36 UA — ceinture interne. Sa proximité a motivé Dawn à visiter Vesta en premier (2011), puis à partir pour Cérès (2015)."
+  },
+  {
+    "rel": "sun.json",
+    "at": "bio",
+    "old": "Une étoile de la séquence principale de type G âgée de 4,6 milliards d'années, à mi-chemin de sa vie de 10 milliards d'années. Le Soleil tourne différemment : son équateur prend 25 jours, ses pôles 35. Dans environ 5 milliards d’années, il épuisera son noyau d’hydrogène, se transformera en une géante rouge et engloutira les planètes intérieures. L'influence gravitationnelle du Soleil définit l'héliosphère jusqu'à environ 120 AU.",
+    "new": "Une étoile de la séquence principale de type G âgée de 4,6 milliards d'années, à mi-chemin de sa vie de 10 milliards d'années. Le Soleil tourne différemment : son équateur prend 25 jours, ses pôles 35. Dans environ 5 milliards d’années, il épuisera son noyau d’hydrogène, se transformera en une géante rouge et engloutira les planètes intérieures. L'influence gravitationnelle du Soleil définit l'héliosphère jusqu'à environ 120 UA."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_lss_escape",
+    "old": "Pour quitter le Soleil définitivement, vous devez atteindre sa vitesse de libération. À la distance de la Terre — 1 AU — elle est d'environ 42 km/s. Déplacez la distance vers l'extérieur et regardez-la diminuer : l'échappement est plus facile plus loin du Soleil.",
+    "new": "Pour quitter le Soleil définitivement, vous devez atteindre sa vitesse de libération. À la distance de la Terre — 1 UA — elle est d'environ 42 km/s. Déplacez la distance vers l'extérieur et regardez-la diminuer : l'échappement est plus facile plus loin du Soleil."
+  }
 ]

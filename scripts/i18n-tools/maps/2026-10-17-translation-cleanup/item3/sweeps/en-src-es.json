@@ -1,68 +1,68 @@
 [
- {
-  "rel": "fleet/launcher/atlas-lv-3b.json",
-  "at": "description",
-  "old": "El Atlas LV-3B fue el lanzador orbital de Convair que llevó astronautas de Mercury a órbita en seis vuelos (Mercury-Atlas 6 a 10) entre febrero y mayo de 1963. El propulsor de piel fina — tan ligero que requería presurización para mantenerse en pie — demostró que un misil balístico podía certificarse para uso humano. Retirado después del programa Mercury.",
-  "new": "El Atlas LV-3B fue el lanzador orbital de Convair que llevó astronautas de Mercury a órbita en cuatro vuelos (Mercury-Atlas 6 a 9) entre febrero de 1962 y mayo de 1963. El propulsor de piel fina — tan ligero que requería presurización para mantenerse en pie — demostró que un misil balístico podía certificarse para uso humano. Retirado después del programa Mercury."
- },
- {
-  "rel": "fleet/launch-site/lc-39a.json",
-  "at": "tagline",
-  "old": "Lanzó Apollo 8, 9, 11-17 (todas las misiones lunares tripuladas a la Luna); hoy vuela Falcon 9, Falcon Heavy y Crew Dragon",
-  "new": "Lanzó Apollo 8, 9, 11-17 (Apollo 9 en órbita terrestre; Apollo 10 despegó desde el 39B); hoy vuela Falcon 9, Falcon Heavy y Crew Dragon"
- },
- {
-  "rel": "fleet/launch-site/lc-39a.json",
-  "at": "best_known_for",
-  "old": "Lanzó Apollo 8, 9, 11-17 (todas las misiones lunares tripuladas a la Luna); hoy vuela Falcon 9, Falcon Heavy y Crew Dragon",
-  "new": "Lanzó Apollo 8, 9, 11-17 (Apollo 9 en órbita terrestre; Apollo 10 despegó desde el 39B); hoy vuela Falcon 9, Falcon Heavy y Crew Dragon"
- },
- {
-  "rel": "fleet/engine/le-7a.json",
-  "at": "description",
-  "old": "El LE-7A es el motor que dotó a Japón de una capacidad de lanzamiento pesado completamente autóctona. Desarrollado por Mitsubishi Heavy Industries para JAXA, funciona con un ciclo de combustión escalonada de LOX y LH2 —el enfoque termodinámico que extrae la máxima eficiencia del propelente de hidrógeno— y realizó su primer vuelo en el H-IIA en agosto de 2001 como sucesor mejorado del LE-7 original. El rediseño abordó los problemas de turbobomba que habían causado los primeros fracasos del H-II, y el LE-7A pasó a ser el elemento central en las carreras operacionales del H-IIA y del H-IIB hasta 2024, lanzando los buques de carga HTV de Japón a la Estación Espacial Internacional y los satélites de radar de la serie ALOS de JAXA-ISRO.",
-  "new": "El LE-7A es el motor que dotó a Japón de una capacidad de lanzamiento pesado completamente autóctona. Desarrollado por Mitsubishi Heavy Industries para JAXA, funciona con un ciclo de combustión escalonada de LOX y LH2 —el enfoque termodinámico que extrae la máxima eficiencia del propelente de hidrógeno— y realizó su primer vuelo en el H-IIA en agosto de 2001 como sucesor mejorado del LE-7 original. El rediseño abordó los problemas de turbobomba que habían causado los primeros fracasos del H-II, y el LE-7A pasó a ser el elemento central en las carreras operacionales del H-IIA y del H-IIB hasta 2024, lanzando los buques de carga HTV de Japón a la Estación Espacial Internacional y los satélites de observación de la Tierra ALOS de la JAXA."
- },
- {
-  "rel": "fleet/lander/mars-polar-lander.json",
-  "at": "description",
-  "old": "Mars Polar Lander es un aterrizador planetario construido por Lockheed Martin en EE. UU. Perdido en el aterrizaje; impulsó la revisión \"más rápido, mejor, más barato\". Voló en 1999 pero falló; informa la capa de arco de redención de la era del transbordador y Mir.",
-  "new": "Mars Polar Lander es un aterrizador planetario construido por Lockheed Martin en EE. UU. Perdido en el aterrizaje; impulsó la revisión \"más rápido, mejor, más barato\". Voló en 1999 pero falló."
- },
- {
-  "rel": "fleet/lander/hakuto-r.json",
-  "at": "description",
-  "old": "El programa Hakuto-R es un aterrizador planetario construido por ispace en Japón. Primer aterrizador lunar privado japonés; M1 + M2 ambos se estrellaron. Voló en 2023 pero falló; informa la capa de arco de redención de la era comercial.",
-  "new": "El programa Hakuto-R es un aterrizador planetario construido por ispace en Japón. Primer aterrizador lunar privado japonés; M1 + M2 ambos se estrellaron. Voló en 2023 pero falló."
- },
- {
-  "rel": "fleet/lander/vikram-cy2.json",
-  "at": "description",
-  "old": "Vikram (Chandrayaan-2) es un aterrizador planetario construido por ISRO en India. Aterrizador Chandrayaan-2; se estrelló; el orbitador sigue activo. Voló en 2019 pero falló; informa la capa de arco de redención de la era comercial.",
-  "new": "Vikram (Chandrayaan-2) es un aterrizador planetario construido por ISRO en India. Aterrizador Chandrayaan-2; se estrelló; el orbitador sigue activo. Voló en 2019 pero falló."
- },
- {
-  "rel": "science/planets/planetary-stats.json",
-  "at": "body_paragraphs.0",
-  "old": "Diámetros relativos a la Tierra: Mercurio 0,38; Venus 0,95 (casi del tamaño de la Tierra); Tierra 1,0; Marte 0,53; Júpiter 10,97; Saturno 9,14; Urano 3,98; Neptuno 3,86; Plutón 0,19. Gravedades superficiales en g terrestre: Mercurio 0,38; Venus 0,91; Tierra 1,00; Marte 0,38; Júpiter 2,53; Saturno 1,07; Urano 0,89; Neptuno 1,14; Plutón 0,06. Sorpresas destacadas: Marte y Mercurio comparten la misma gravedad superficial (0,38 g) pese a tener tamaños muy distintos, porque sus productos densidad × radio resultan similares. Urano y Saturno tienen una gravedad inferior a la terrestre pese a su enorme tamaño: ambos están dominados por H/He, mucho menos densos que la Tierra rocosa.",
-  "new": "Diámetros relativos a la Tierra: Mercurio 0,38; Venus 0,95 (casi del tamaño de la Tierra); Tierra 1,0; Marte 0,53; Júpiter 10,97; Saturno 9,14; Urano 3,98; Neptuno 3,86; Plutón 0,19. Gravedades superficiales en g terrestre: Mercurio 0,38; Venus 0,91; Tierra 1,00; Marte 0,38; Júpiter 2,53; Saturno 1,07; Urano 0,89; Neptuno 1,14; Plutón 0,06. Sorpresas destacadas: Marte y Mercurio comparten la misma gravedad superficial (0,38 g) pese a tener tamaños muy distintos, porque sus productos densidad × radio resultan similares. Urano tiene una gravedad inferior a la terrestre y Saturno apenas superior, pese a su enorme tamaño: ambos están dominados por H/He, mucho menos densos que la Tierra rocosa."
- },
- {
-  "rel": "science/planets/active-spacecraft-survey.json",
-  "at": "body_paragraphs.1",
-  "old": "Sistema de Júpiter: Juno (NASA, desde 2016, órbita polar de 53 días). Diseñada para mapear el campo magnético + atmósfera + estructura interna de Júpiter. La órbita polar evita el intenso cinturón de radiación ecuatorial de Júpiter — el cinturón es tan hostil que otros orbitadores de gigantes gaseosos se dañarían de forma permanente en pocos meses en una trayectoria ecuatorial. La misión de Juno se ha extendido varias veces; continuará hasta que se la haga caer sobre Júpiter (para evitar la contaminación biológica de Europa, cerca de la cual pasa la nave). La próxima misión a Júpiter es JUICE de la ESA (Jupiter Icy moons Explorer, llegada en 2031); Europa Clipper de la NASA se lanza en 2024 y llega en 2030.",
-  "new": "Sistema de Júpiter: Juno (NASA, desde 2016, órbita polar de 53 días). Diseñada para mapear el campo magnético + atmósfera + estructura interna de Júpiter. La órbita polar evita el intenso cinturón de radiación ecuatorial de Júpiter — el cinturón es tan hostil que otros orbitadores de gigantes gaseosos se dañarían de forma permanente en pocos meses en una trayectoria ecuatorial. La misión de Juno se ha extendido varias veces; continuará hasta que se la haga caer sobre Júpiter (para evitar la contaminación biológica de Europa, cerca de la cual pasa la nave). La próxima misión a Júpiter es JUICE de la ESA (Jupiter Icy moons Explorer, llegada en 2031); Europa Clipper de la NASA se lanzó en octubre de 2024 y llega en 2030."
- },
- {
-  "rel": "essays/interstellar-exploration.json",
-  "at": "body.4.md",
-  "old": "[Voyager 1](/missions?id=voyager-1) es el objeto humano que más rápido se aleja de cuantos existen. Lanzada en 1977 y catapultada más allá de Júpiter y Saturno por una trayectoria que tomó prestada energía de los campos gravitatorios de ambos planetas, viaja ahora a unos 17 kilómetros por segundo respecto al Sol—unos 61 000 kilómetros por hora, una velocidad que te llevaría de Londres a Sídney en menos de un minuto. Con cualquier criterio terrestre es increíblemente rápida. Con criterio interestelar, es glacial. A 17 km/s, Voyager 1 tardaría del orden de 73 000 años en recorrer la distancia hasta Próxima Centauri—y ni siquiera apunta hacia allí. Se dirige en una dirección completamente distinta, hacia la constelación de Ofiuco, en una trayectoria diseñada para explorar el sistema solar exterior, no para alcanzar las estrellas.",
-  "new": "[Voyager 1](/missions?id=voyager-1) es el objeto humano que más rápido se aleja de cuantos existen. Lanzada en 1977 y catapultada más allá de Júpiter y Saturno por una trayectoria que tomó prestada energía de los campos gravitatorios de ambos planetas, viaja ahora a unos 17 kilómetros por segundo respecto al Sol—unos 61 000 kilómetros por hora, una velocidad que te llevaría de Londres a Sídney en unos diecisiete minutos. Con cualquier criterio terrestre es increíblemente rápida. Con criterio interestelar, es glacial. A 17 km/s, Voyager 1 tardaría del orden de 73 000 años en recorrer la distancia hasta Próxima Centauri—y ni siquiera apunta hacia allí. Se dirige en una dirección completamente distinta, hacia la constelación de Ofiuco, en una trayectoria diseñada para explorar el sistema solar exterior, no para alcanzar las estrellas."
- },
- {
-  "rel": "essays/going-to-the-moon.json",
-  "at": "body.19.md",
-  "old": "El renovado interés por la Luna no es un programa estadounidense. Es un fenómeno genuinamente global, con una historia que antecede al Apollo en casi una década. El programa soviético Luna puso en la Luna el primer objeto fabricado por seres humanos (el [Luna 2](/missions?id=luna9) impactó contra la superficie en septiembre de 1959), luego obtuvo las primeras fotografías de la cara oculta con el Luna 3 ese mismo año, y pasó la década siguiente acumulando hitos que no se recuerdan tanto como deberían. El [Luna 9](/missions?id=luna9) logró el primer aterrizaje suave en 1966 y zanjó una controversia científica genuina sobre si la superficie era lo bastante sólida para sostener una nave (antes se defendía con seriedad que la superficie lunar podía ser un polvo de metros de espesor en el que cualquier módulo de aterrizaje se hundiría sin más). El Luna 16, en 1970, trajo a la Tierra la primera muestra recogida por un robot, y demostró que no hacía falta una misión tripulada para devolver material lunar. El Luna 24, en 1976, fue el último retorno de muestras lunares soviético, y siguió siendo el último de cualquier país durante 44 años.",
-  "new": "El renovado interés por la Luna no es un programa estadounidense. Es un fenómeno genuinamente global, con una historia que antecede al Apollo en casi una década. El programa soviético Luna puso en la Luna el primer objeto fabricado por seres humanos (el Luna 2 impactó contra la superficie en septiembre de 1959), luego obtuvo las primeras fotografías de la cara oculta con el Luna 3 ese mismo año, y pasó la década siguiente acumulando hitos que no se recuerdan tanto como deberían. El [Luna 9](/missions?id=luna9) logró el primer aterrizaje suave en 1966 y zanjó una controversia científica genuina sobre si la superficie era lo bastante sólida para sostener una nave (antes se defendía con seriedad que la superficie lunar podía ser un polvo de metros de espesor en el que cualquier módulo de aterrizaje se hundiría sin más). El Luna 16, en 1970, trajo a la Tierra la primera muestra recogida por un robot, y demostró que no hacía falta una misión tripulada para devolver material lunar. El Luna 24, en 1976, fue el último retorno de muestras lunares soviético, y siguió siendo el último de cualquier país durante 44 años."
- }
+  {
+    "rel": "fleet/launcher/atlas-lv-3b.json",
+    "at": "description",
+    "old": "El Atlas LV-3B fue el lanzador orbital de Convair que llevó astronautas de Mercury a órbita en seis vuelos (Mercury-Atlas 6 a 10) entre febrero y mayo de 1963. El propulsor de piel fina — tan ligero que requería presurización para mantenerse en pie — demostró que un misil balístico podía certificarse para uso humano. Retirado después del programa Mercury.",
+    "new": "El Atlas LV-3B fue el lanzador orbital de Convair que llevó astronautas de Mercury a órbita en cuatro vuelos (Mercury-Atlas 6 a 9) entre febrero de 1962 y mayo de 1963. El propulsor de piel fina — tan ligero que requería presurización para mantenerse en pie — demostró que un misil balístico podía certificarse para uso humano. Retirado después del programa Mercury."
+  },
+  {
+    "rel": "fleet/launch-site/lc-39a.json",
+    "at": "tagline",
+    "old": "Lanzó Apollo 8, 9, 11-17 (todas las misiones lunares tripuladas a la Luna); hoy vuela Falcon 9, Falcon Heavy y Crew Dragon",
+    "new": "Lanzó Apollo 8, 9, 11-17 (Apollo 9 en órbita terrestre; Apollo 10 despegó desde el 39B); hoy vuela Falcon 9, Falcon Heavy y Crew Dragon"
+  },
+  {
+    "rel": "fleet/launch-site/lc-39a.json",
+    "at": "best_known_for",
+    "old": "Lanzó Apollo 8, 9, 11-17 (todas las misiones lunares tripuladas a la Luna); hoy vuela Falcon 9, Falcon Heavy y Crew Dragon",
+    "new": "Lanzó Apollo 8, 9, 11-17 (Apollo 9 en órbita terrestre; Apollo 10 despegó desde el 39B); hoy vuela Falcon 9, Falcon Heavy y Crew Dragon"
+  },
+  {
+    "rel": "fleet/engine/le-7a.json",
+    "at": "description",
+    "old": "El LE-7A es el motor que dotó a Japón de una capacidad de lanzamiento pesado completamente autóctona. Desarrollado por Mitsubishi Heavy Industries para JAXA, funciona con un ciclo de combustión escalonada de LOX y LH2 —el enfoque termodinámico que extrae la máxima eficiencia del propelente de hidrógeno— y realizó su primer vuelo en el H-IIA en agosto de 2001 como sucesor mejorado del LE-7 original. El rediseño abordó los problemas de turbobomba que habían causado los primeros fracasos del H-II, y el LE-7A pasó a ser el elemento central en las carreras operacionales del H-IIA y del H-IIB hasta 2024, lanzando los buques de carga HTV de Japón a la Estación Espacial Internacional y los satélites de radar de la serie ALOS de JAXA-ISRO.",
+    "new": "El LE-7A es el motor que dotó a Japón de una capacidad de lanzamiento pesado completamente autóctona. Desarrollado por Mitsubishi Heavy Industries para JAXA, funciona con un ciclo de combustión escalonada de LOX y LH2 —el enfoque termodinámico que extrae la máxima eficiencia del propelente de hidrógeno— y realizó su primer vuelo en el H-IIA en agosto de 2001 como sucesor mejorado del LE-7 original. El rediseño abordó los problemas de turbobomba que habían causado los primeros fracasos del H-II, y el LE-7A pasó a ser el elemento central en las carreras operacionales del H-IIA y del H-IIB hasta 2024, lanzando los buques de carga HTV de Japón a la Estación Espacial Internacional y los satélites de observación de la Tierra ALOS de la JAXA."
+  },
+  {
+    "rel": "fleet/lander/mars-polar-lander.json",
+    "at": "description",
+    "old": "Mars Polar Lander es un aterrizador planetario construido por Lockheed Martin en EE. UU. Perdido en el aterrizaje; impulsó la revisión \"más rápido, mejor, más barato\". Voló en 1999 pero falló; informa la capa de arco de redención de la era del transbordador y Mir.",
+    "new": "Mars Polar Lander es un aterrizador planetario construido por Lockheed Martin en EE. UU. Perdido en el aterrizaje; impulsó la revisión \"más rápido, mejor, más barato\". Voló en 1999 pero falló."
+  },
+  {
+    "rel": "fleet/lander/hakuto-r.json",
+    "at": "description",
+    "old": "El programa Hakuto-R es un aterrizador planetario construido por ispace en Japón. Primer aterrizador lunar privado japonés; M1 + M2 ambos se estrellaron. Voló en 2023 pero falló; informa la capa de arco de redención de la era comercial.",
+    "new": "El programa Hakuto-R es un aterrizador planetario construido por ispace en Japón. Primer aterrizador lunar privado japonés; M1 + M2 ambos se estrellaron. Voló en 2023 pero falló."
+  },
+  {
+    "rel": "fleet/lander/vikram-cy2.json",
+    "at": "description",
+    "old": "Vikram (Chandrayaan-2) es un aterrizador planetario construido por ISRO en India. Aterrizador Chandrayaan-2; se estrelló; el orbitador sigue activo. Voló en 2019 pero falló; informa la capa de arco de redención de la era comercial.",
+    "new": "Vikram (Chandrayaan-2) es un aterrizador planetario construido por ISRO en India. Aterrizador Chandrayaan-2; se estrelló; el orbitador sigue activo. Voló en 2019 pero falló."
+  },
+  {
+    "rel": "science/planets/planetary-stats.json",
+    "at": "body_paragraphs.0",
+    "old": "Diámetros relativos a la Tierra: Mercurio 0,38; Venus 0,95 (casi del tamaño de la Tierra); Tierra 1,0; Marte 0,53; Júpiter 10,97; Saturno 9,14; Urano 3,98; Neptuno 3,86; Plutón 0,19. Gravedades superficiales en g terrestre: Mercurio 0,38; Venus 0,91; Tierra 1,00; Marte 0,38; Júpiter 2,53; Saturno 1,07; Urano 0,89; Neptuno 1,14; Plutón 0,06. Sorpresas destacadas: Marte y Mercurio comparten la misma gravedad superficial (0,38 g) pese a tener tamaños muy distintos, porque sus productos densidad × radio resultan similares. Urano y Saturno tienen una gravedad inferior a la terrestre pese a su enorme tamaño: ambos están dominados por H/He, mucho menos densos que la Tierra rocosa.",
+    "new": "Diámetros relativos a la Tierra: Mercurio 0,38; Venus 0,95 (casi del tamaño de la Tierra); Tierra 1,0; Marte 0,53; Júpiter 10,97; Saturno 9,14; Urano 3,98; Neptuno 3,86; Plutón 0,19. Gravedades superficiales en g terrestre: Mercurio 0,38; Venus 0,91; Tierra 1,00; Marte 0,38; Júpiter 2,53; Saturno 1,07; Urano 0,89; Neptuno 1,14; Plutón 0,06. Sorpresas destacadas: Marte y Mercurio comparten la misma gravedad superficial (0,38 g) pese a tener tamaños muy distintos, porque sus productos densidad × radio resultan similares. Urano tiene una gravedad inferior a la terrestre y Saturno apenas superior, pese a su enorme tamaño: ambos están dominados por H/He, mucho menos densos que la Tierra rocosa."
+  },
+  {
+    "rel": "science/planets/active-spacecraft-survey.json",
+    "at": "body_paragraphs.1",
+    "old": "Sistema de Júpiter: Juno (NASA, desde 2016, órbita polar de 53 días). Diseñada para mapear el campo magnético + atmósfera + estructura interna de Júpiter. La órbita polar evita el intenso cinturón de radiación ecuatorial de Júpiter — el cinturón es tan hostil que otros orbitadores de gigantes gaseosos se dañarían de forma permanente en pocos meses en una trayectoria ecuatorial. La misión de Juno se ha extendido varias veces; continuará hasta que se la haga caer sobre Júpiter (para evitar la contaminación biológica de Europa, cerca de la cual pasa la nave). La próxima misión a Júpiter es JUICE de la ESA (Jupiter Icy moons Explorer, llegada en 2031); Europa Clipper de la NASA se lanza en 2024 y llega en 2030.",
+    "new": "Sistema de Júpiter: Juno (NASA, desde 2016, órbita polar de 53 días). Diseñada para mapear el campo magnético + atmósfera + estructura interna de Júpiter. La órbita polar evita el intenso cinturón de radiación ecuatorial de Júpiter — el cinturón es tan hostil que otros orbitadores de gigantes gaseosos se dañarían de forma permanente en pocos meses en una trayectoria ecuatorial. La misión de Juno se ha extendido varias veces; continuará hasta que se la haga caer sobre Júpiter (para evitar la contaminación biológica de Europa, cerca de la cual pasa la nave). La próxima misión a Júpiter es JUICE de la ESA (Jupiter Icy moons Explorer, llegada en 2031); Europa Clipper de la NASA se lanzó en octubre de 2024 y llega en 2030."
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.4.md",
+    "old": "[Voyager 1](/missions?id=voyager-1) es el objeto humano que más rápido se aleja de cuantos existen. Lanzada en 1977 y catapultada más allá de Júpiter y Saturno por una trayectoria que tomó prestada energía de los campos gravitatorios de ambos planetas, viaja ahora a unos 17 kilómetros por segundo respecto al Sol—unos 61 000 kilómetros por hora, una velocidad que te llevaría de Londres a Sídney en menos de un minuto. Con cualquier criterio terrestre es increíblemente rápida. Con criterio interestelar, es glacial. A 17 km/s, Voyager 1 tardaría del orden de 73 000 años en recorrer la distancia hasta Próxima Centauri—y ni siquiera apunta hacia allí. Se dirige en una dirección completamente distinta, hacia la constelación de Ofiuco, en una trayectoria diseñada para explorar el sistema solar exterior, no para alcanzar las estrellas.",
+    "new": "[Voyager 1](/missions?id=voyager-1) es el objeto humano que más rápido se aleja de cuantos existen. Lanzada en 1977 y catapultada más allá de Júpiter y Saturno por una trayectoria que tomó prestada energía de los campos gravitatorios de ambos planetas, viaja ahora a unos 17 kilómetros por segundo respecto al Sol—unos 61 000 kilómetros por hora, una velocidad que te llevaría de Londres a Sídney en unos diecisiete minutos. Con cualquier criterio terrestre es increíblemente rápida. Con criterio interestelar, es glacial. A 17 km/s, Voyager 1 tardaría del orden de 73 000 años en recorrer la distancia hasta Próxima Centauri—y ni siquiera apunta hacia allí. Se dirige en una dirección completamente distinta, hacia la constelación de Ofiuco, en una trayectoria diseñada para explorar el sistema solar exterior, no para alcanzar las estrellas."
+  },
+  {
+    "rel": "essays/going-to-the-moon.json",
+    "at": "body.19.md",
+    "old": "El renovado interés por la Luna no es un programa estadounidense. Es un fenómeno genuinamente global, con una historia que antecede al Apollo en casi una década. El programa soviético Luna puso en la Luna el primer objeto fabricado por seres humanos (el [Luna 2](/missions?id=luna9) impactó contra la superficie en septiembre de 1959), luego obtuvo las primeras fotografías de la cara oculta con el Luna 3 ese mismo año, y pasó la década siguiente acumulando hitos que no se recuerdan tanto como deberían. El [Luna 9](/missions?id=luna9) logró el primer aterrizaje suave en 1966 y zanjó una controversia científica genuina sobre si la superficie era lo bastante sólida para sostener una nave (antes se defendía con seriedad que la superficie lunar podía ser un polvo de metros de espesor en el que cualquier módulo de aterrizaje se hundiría sin más). El Luna 16, en 1970, trajo a la Tierra la primera muestra recogida por un robot, y demostró que no hacía falta una misión tripulada para devolver material lunar. El Luna 24, en 1976, fue el último retorno de muestras lunares soviético, y siguió siendo el último de cualquier país durante 44 años.",
+    "new": "El renovado interés por la Luna no es un programa estadounidense. Es un fenómeno genuinamente global, con una historia que antecede al Apollo en casi una década. El programa soviético Luna puso en la Luna el primer objeto fabricado por seres humanos (el Luna 2 impactó contra la superficie en septiembre de 1959), luego obtuvo las primeras fotografías de la cara oculta con el Luna 3 ese mismo año, y pasó la década siguiente acumulando hitos que no se recuerdan tanto como deberían. El [Luna 9](/missions?id=luna9) logró el primer aterrizaje suave en 1966 y zanjó una controversia científica genuina sobre si la superficie era lo bastante sólida para sostener una nave (antes se defendía con seriedad que la superficie lunar podía ser un polvo de metros de espesor en el que cualquier módulo de aterrizaje se hundiría sin más). El Luna 16, en 1970, trajo a la Tierra la primera muestra recogida por un robot, y demostró que no hacía falta una misión tripulada para devolver material lunar. El Luna 24, en 1976, fue el último retorno de muestras lunares soviético, y siguió siendo el último de cualquier país durante 44 años."
+  }
 ]

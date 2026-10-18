@@ -1,26 +1,26 @@
 [
- {
-  "rel": "earth-objects/starlink.json",
-  "at": "description",
-  "old": "~6000 satélites activos a 550 km en capas de 53° / 70° / 97,6° — la mayor constelación LEO jamás desplegada. Internet de banda ancha de SpaceX, operativa desde 2019. Evitación autónoma de colisiones + enlaces láser entre satélites. Visibles como un tren de puntos brillantes cruzando el cielo en los días posteriores a cada lanzamiento.",
-  "new": "Más de 11 000 satélites activos (a octubre de 2026) a 550 km en capas de 53° / 70° / 97,6° — la mayor constelación LEO jamás desplegada. Internet de banda ancha de SpaceX, operativa desde 2019. Evitación autónoma de colisiones + enlaces láser entre satélites. Visibles como un tren de puntos brillantes cruzando el cielo en los días posteriores a cada lanzamiento."
- },
- {
-  "rel": "fleet/constellation/starlink.json",
-  "at": "tagline",
-  "old": "Constelación de banda ancha en órbita terrestre baja más grande — más de 10 800 satélites activos",
-  "new": "Constelación de banda ancha en órbita terrestre baja más grande — más de 11 000 satélites activos (a octubre de 2026)"
- },
- {
-  "rel": "fleet/constellation/starlink.json",
-  "at": "description",
-  "old": "Constelación de banda ancha LEO de SpaceX — más de 10 800 satélites activos a 550 km de altitud distribuidos en múltiples capas (inclinaciones de 53°, 70° y 97,6°). Primer servicio operativo en 2019; cobertura global alcanzada en 2023. Cada satélite Gen-2 lleva enlaces láser intersatélites, permitiendo que la constelación encamine paquetes entre satélites sin saltos por estaciones terrenas. El sistema autónomo de evitación de colisiones realiza decenas de miles de maniobras anuales — más que todos los demás operadores LEO combinados.",
-  "new": "Constelación de banda ancha LEO de SpaceX — más de 11 000 satélites activos (a octubre de 2026) a 550 km de altitud distribuidos en múltiples capas (inclinaciones de 53°, 70° y 97,6°). Primer servicio operativo en 2019; cobertura global alcanzada en 2023. Cada satélite Gen-2 lleva enlaces láser intersatélites, permitiendo que la constelación encamine paquetes entre satélites sin saltos por estaciones terrenas. El sistema autónomo de evitación de colisiones realiza decenas de miles de maniobras anuales — más que todos los demás operadores LEO combinados."
- },
- {
-  "rel": "fleet/constellation/starlink.json",
-  "at": "best_known_for",
-  "old": "Mayor constelación LEO de banda ancha — ~6500–7000 satélites activos",
-  "new": "Mayor constelación LEO de banda ancha — más de 11 000 satélites activos (a octubre de 2026)"
- }
+  {
+    "rel": "earth-objects/starlink.json",
+    "at": "description",
+    "old": "~6000 satélites activos a 550 km en capas de 53° / 70° / 97,6° — la mayor constelación LEO jamás desplegada. Internet de banda ancha de SpaceX, operativa desde 2019. Evitación autónoma de colisiones + enlaces láser entre satélites. Visibles como un tren de puntos brillantes cruzando el cielo en los días posteriores a cada lanzamiento.",
+    "new": "Más de 11 000 satélites activos (a octubre de 2026) a 550 km en capas de 53° / 70° / 97,6° — la mayor constelación LEO jamás desplegada. Internet de banda ancha de SpaceX, operativa desde 2019. Evitación autónoma de colisiones + enlaces láser entre satélites. Visibles como un tren de puntos brillantes cruzando el cielo en los días posteriores a cada lanzamiento."
+  },
+  {
+    "rel": "fleet/constellation/starlink.json",
+    "at": "tagline",
+    "old": "Constelación de banda ancha en órbita terrestre baja más grande — más de 10 800 satélites activos",
+    "new": "Constelación de banda ancha en órbita terrestre baja más grande — más de 11 000 satélites activos (a octubre de 2026)"
+  },
+  {
+    "rel": "fleet/constellation/starlink.json",
+    "at": "description",
+    "old": "Constelación de banda ancha LEO de SpaceX — más de 10 800 satélites activos a 550 km de altitud distribuidos en múltiples capas (inclinaciones de 53°, 70° y 97,6°). Primer servicio operativo en 2019; cobertura global alcanzada en 2023. Cada satélite Gen-2 lleva enlaces láser intersatélites, permitiendo que la constelación encamine paquetes entre satélites sin saltos por estaciones terrenas. El sistema autónomo de evitación de colisiones realiza decenas de miles de maniobras anuales — más que todos los demás operadores LEO combinados.",
+    "new": "Constelación de banda ancha LEO de SpaceX — más de 11 000 satélites activos (a octubre de 2026) a 550 km de altitud distribuidos en múltiples capas (inclinaciones de 53°, 70° y 97,6°). Primer servicio operativo en 2019; cobertura global alcanzada en 2023. Cada satélite Gen-2 lleva enlaces láser intersatélites, permitiendo que la constelación encamine paquetes entre satélites sin saltos por estaciones terrenas. El sistema autónomo de evitación de colisiones realiza decenas de miles de maniobras anuales — más que todos los demás operadores LEO combinados."
+  },
+  {
+    "rel": "fleet/constellation/starlink.json",
+    "at": "best_known_for",
+    "old": "Mayor constelación LEO de banda ancha — ~6500–7000 satélites activos",
+    "new": "Mayor constelación LEO de banda ancha — más de 11 000 satélites activos (a octubre de 2026)"
+  }
 ]

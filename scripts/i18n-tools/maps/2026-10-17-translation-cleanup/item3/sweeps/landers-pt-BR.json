@@ -1,56 +1,56 @@
 [
- {
-  "rel": "fleet/lander/hakuto-r.json",
-  "at": "tagline",
-  "old": "Primeiro módulo de pouso lunar privado do Japão; M1 e M2 caíram",
-  "new": "Primeiras tentativas privadas japonesas de pouso na Lua; as missões 1 (2023) e 2 (2025) caíram"
- },
- {
-  "rel": "fleet/lander/hakuto-r.json",
-  "at": "best_known_for",
-  "old": "Primeiro módulo de pouso lunar privado do Japão; M1 e M2 caíram",
-  "new": "Primeiras tentativas privadas japonesas de pouso na Lua; as missões 1 (2023) e 2 (2025) caíram"
- },
- {
-  "rel": "fleet/lander/hakuto-r.json",
-  "at": "description",
-  "old": "O programa Hakuto-R é um módulo de pouso planetário construído pela ispace, no Japão. Primeiro módulo de pouso lunar privado do Japão; M1 e M2 caíram. Voou em 2023, mas fracassou.",
-  "new": "Hakuto-R é um programa de módulos de pouso lunar da empresa japonesa ispace. O módulo da missão 1, lançado em dezembro de 2022, foi a primeira tentativa privada japonesa de pouso na Lua e caiu em abril de 2023. O módulo da missão 2, Resilience, caiu em junho de 2025."
- },
- {
-  "rel": "fleet/lander/vikram-cy2.json",
-  "at": "tagline",
-  "old": "Módulo de pouso da Chandrayaan-2 caiu; orbitador vive",
-  "new": "Módulo de pouso da missão indiana Chandrayaan-2; caiu em 2019, mas o orbitador continuou funcionando"
- },
- {
-  "rel": "fleet/lander/vikram-cy2.json",
-  "at": "best_known_for",
-  "old": "Módulo de pouso da Chandrayaan-2 caiu; orbitador vive",
-  "new": "Módulo de pouso da missão indiana Chandrayaan-2; caiu em 2019, mas o orbitador continuou funcionando"
- },
- {
-  "rel": "fleet/lander/vikram-cy2.json",
-  "at": "description",
-  "old": "Vikram (Chandrayaan-2) é um módulo de pouso planetário construído pela ISRO, na Índia. Módulo de pouso da Chandrayaan-2; caiu; o orbitador segue funcionando. Voou em 2019, mas fracassou.",
-  "new": "Vikram foi o módulo de pouso da missão indiana Chandrayaan-2, construído pela ISRO. Caiu durante a tentativa de pouso em setembro de 2019, mas o orbitador da Chandrayaan-2 continuou funcionando em órbita lunar."
- },
- {
-  "rel": "fleet/lander/mars-polar-lander.json",
-  "at": "tagline",
-  "old": "Perdido no pouso; motivou a revisão do “mais rápido, melhor, mais barato”",
-  "new": "Perdido durante o pouso em 1999; o fracasso levou a NASA a revisar sua abordagem “mais rápido, melhor, mais barato”"
- },
- {
-  "rel": "fleet/lander/mars-polar-lander.json",
-  "at": "best_known_for",
-  "old": "Perdido no pouso; motivou a revisão do “mais rápido, melhor, mais barato”",
-  "new": "Perdido durante o pouso em 1999; o fracasso levou a NASA a revisar sua abordagem “mais rápido, melhor, mais barato”"
- },
- {
-  "rel": "fleet/lander/mars-polar-lander.json",
-  "at": "description",
-  "old": "A Mars Polar Lander é um módulo de pouso planetário construído pela Lockheed Martin nos EUA. Perdida no pouso; levou à revisão do “mais rápido, melhor, mais barato”. Voou em 1999, mas fracassou.",
-  "new": "A Mars Polar Lander foi um módulo de pouso da NASA construído pela Lockheed Martin. O contato foi perdido durante a descida rumo à região polar sul de Marte em dezembro de 1999. Ocorrida meses depois da perda da Mars Climate Orbiter, a falha levou a NASA a revisar sua abordagem “mais rápido, melhor, mais barato”."
- }
+  {
+    "rel": "fleet/lander/hakuto-r.json",
+    "at": "tagline",
+    "old": "Primeiro módulo de pouso lunar privado do Japão; M1 e M2 caíram",
+    "new": "Primeiras tentativas privadas japonesas de pouso na Lua; as missões 1 (2023) e 2 (2025) caíram"
+  },
+  {
+    "rel": "fleet/lander/hakuto-r.json",
+    "at": "best_known_for",
+    "old": "Primeiro módulo de pouso lunar privado do Japão; M1 e M2 caíram",
+    "new": "Primeiras tentativas privadas japonesas de pouso na Lua; as missões 1 (2023) e 2 (2025) caíram"
+  },
+  {
+    "rel": "fleet/lander/hakuto-r.json",
+    "at": "description",
+    "old": "O programa Hakuto-R é um módulo de pouso planetário construído pela ispace, no Japão. Primeiro módulo de pouso lunar privado do Japão; M1 e M2 caíram. Voou em 2023, mas fracassou.",
+    "new": "Hakuto-R é um programa de módulos de pouso lunar da empresa japonesa ispace. O módulo da missão 1, lançado em dezembro de 2022, foi a primeira tentativa privada japonesa de pouso na Lua e caiu em abril de 2023. O módulo da missão 2, Resilience, caiu em junho de 2025."
+  },
+  {
+    "rel": "fleet/lander/vikram-cy2.json",
+    "at": "tagline",
+    "old": "Módulo de pouso da Chandrayaan-2 caiu; orbitador vive",
+    "new": "Módulo de pouso da missão indiana Chandrayaan-2; caiu em 2019, mas o orbitador continuou funcionando"
+  },
+  {
+    "rel": "fleet/lander/vikram-cy2.json",
+    "at": "best_known_for",
+    "old": "Módulo de pouso da Chandrayaan-2 caiu; orbitador vive",
+    "new": "Módulo de pouso da missão indiana Chandrayaan-2; caiu em 2019, mas o orbitador continuou funcionando"
+  },
+  {
+    "rel": "fleet/lander/vikram-cy2.json",
+    "at": "description",
+    "old": "Vikram (Chandrayaan-2) é um módulo de pouso planetário construído pela ISRO, na Índia. Módulo de pouso da Chandrayaan-2; caiu; o orbitador segue funcionando. Voou em 2019, mas fracassou.",
+    "new": "Vikram foi o módulo de pouso da missão indiana Chandrayaan-2, construído pela ISRO. Caiu durante a tentativa de pouso em setembro de 2019, mas o orbitador da Chandrayaan-2 continuou funcionando em órbita lunar."
+  },
+  {
+    "rel": "fleet/lander/mars-polar-lander.json",
+    "at": "tagline",
+    "old": "Perdido no pouso; motivou a revisão do “mais rápido, melhor, mais barato”",
+    "new": "Perdido durante o pouso em 1999; o fracasso levou a NASA a revisar sua abordagem “mais rápido, melhor, mais barato”"
+  },
+  {
+    "rel": "fleet/lander/mars-polar-lander.json",
+    "at": "best_known_for",
+    "old": "Perdido no pouso; motivou a revisão do “mais rápido, melhor, mais barato”",
+    "new": "Perdido durante o pouso em 1999; o fracasso levou a NASA a revisar sua abordagem “mais rápido, melhor, mais barato”"
+  },
+  {
+    "rel": "fleet/lander/mars-polar-lander.json",
+    "at": "description",
+    "old": "A Mars Polar Lander é um módulo de pouso planetário construído pela Lockheed Martin nos EUA. Perdida no pouso; levou à revisão do “mais rápido, melhor, mais barato”. Voou em 1999, mas fracassou.",
+    "new": "A Mars Polar Lander foi um módulo de pouso da NASA construído pela Lockheed Martin. O contato foi perdido durante a descida rumo à região polar sul de Marte em dezembro de 1999. Ocorrida meses depois da perda da Mars Climate Orbiter, a falha levou a NASA a revisar sua abordagem “mais rápido, melhor, mais barato”."
+  }
 ]

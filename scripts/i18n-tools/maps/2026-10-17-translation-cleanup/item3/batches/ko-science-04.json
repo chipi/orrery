@@ -1,740 +1,740 @@
 [
- {
-  "rel": "science/life-in-space/sleep-nutrition-circadian.json",
-  "at": "body_paragraphs.2",
-  "en": "Food engineering is a stranger problem than it sounds. Microgravity changes swallowing (the bolus has to be actively pushed; crew members chew more times per bite than on Earth), changes taste (the fluid shift toward the head causes ~30% reduction in odour perception, which means taste is also reduced — astronauts describe everything as bland for the first 2 weeks), changes appetite (most crew lose 5-10% body weight in the first month of an expedition; the body is in a different metabolic state than at 1 g), and changes choking risk (no gravity to pull a misdirected swallow down the right pipe). The ISS Food System engineering response is foods that don't crumble (no bread; crews eat tortillas), foods that bind to themselves (a lot of sauces and gravies — they hold the meal together), strong flavours (hot sauce is iconically over-consumed on ISS), and absolutely no carbonated drinks (the bubbles don't separate from the liquid in microgravity, which makes drinking carbonated water in zero-g a uniquely unpleasant experience).",
-  "cur": "음식 공학은 생각보다 이상한 문제다. 미세중력은 삼키는 방식을 바꾸고(음식 덩어리를 능동적으로 밀어 넘겨야 해서 승무원은 지구에서보다 한 입을 더 여러 번 씹는다), 맛을 바꾸고(체액이 머리 쪽으로 쏠려 후각이 약 30% 떨어지고 미각도 함께 떨어진다 — 우주비행사들은 처음 2주 동안 모든 것이 밍밍하다고 말한다), 식욕을 바꾸고(대부분 장기 체류 첫 달에 체중의 5-10%를 잃는다. 몸이 1 g에서와는 다른 대사 상태에 있기 때문이다), 질식 위험도 바꾼다(잘못 넘어간 한 입을 제 길로 끌어내려 줄 중력이 없다). ISS Food System의 공학적 해법은 부스러지지 않는 음식(빵은 없고, 승무원은 토르티야를 먹는다), 서로 뭉치는 음식(식사를 한데 붙잡아 주는 소스와 그레이비를 많이 쓴다), 강한 맛(ISS에서 핫소스는 전설적으로 과소비된다), 그리고 탄산음료 완전 금지(미세중력에서는 기포가 액체와 분리되지 않아, 무중력에서 탄산수를 마시는 것은 유례없이 불쾌한 경험이 된다)다."
- },
- {
-  "rel": "science/life-in-space/sleep-nutrition-circadian.json",
-  "at": "body_paragraphs.3",
-  "en": "Caloric needs are higher in space than on Earth — typically 2800-3000 kcal/day for a male astronaut on ISS, vs 2400-2600 at 1 g. Part of that is exercise (2 hours/day of resistance + cardio, more on that in the bone-density-loss article), part is the elevated metabolic demand of constant micro-corrections against drift. NASA's Space Food Systems Laboratory at Johnson runs through about 200 menu items per crew rotation; Roscosmos has a parallel menu programme; China’s CMSA has built up its own Chinese-cuisine-oriented menu (yuxiang shredded pork, kung pao chicken, all engineered for microgravity). International missions cross-pollinate: ISS crew members of any nationality can request food from any of the partner agencies. The Apollo programme used spoon-bowl pouches + freeze-dried rehydration; Shuttle moved to thermostabilised pouches; ISS uses a mix; Mars-class transit menus are still being designed — the longest food-supply storage problem in the project.",
-  "cur": "필요 열량은 지구보다 우주에서 더 많다 — ISS의 남성 우주비행사는 보통 하루 2800-3000 kcal로, 1 g에서의 2400-2600 kcal보다 많다. 일부는 운동(하루 2시간의 근력·유산소 운동, 자세한 내용은 골밀도 손실 문서 참고) 때문이고, 일부는 표류에 맞선 끊임없는 미세 보정으로 대사 요구가 높아지기 때문이다. Johnson에 있는 NASA의 Space Food Systems Laboratory는 승무원 교대마다 약 200가지 메뉴를 다룬다. Roscosmos에도 병행 메뉴 프로그램이 있고, 중국의 CMSA는 중국 요리 중심의 자체 메뉴(어향육사, 궁보계정 — 모두 미세중력에 맞게 설계)를 만들었다. 국제 임무는 서로 섞인다. 어느 국적의 ISS 승무원이든 어느 협력 기관의 음식이든 요청할 수 있다. Apollo 프로그램은 숟가락으로 떠먹는 파우치와 동결 건조 식품의 수분 복원을 썼고, Shuttle은 열 안정화 파우치로 옮겨 갔으며, ISS는 이를 섞어 쓴다. 화성급 이동용 메뉴는 아직 설계 중으로, 이 사업 전체에서 가장 긴 식량 보관 문제다."
- },
- {
-  "rel": "science/life-in-space/sleep-nutrition-circadian.json",
-  "at": "body_paragraphs.4",
-  "en": "Water is the other thermal-rebalancing variable. ISS crew drink 2.0-2.5 L/day, all of it from the Water Recovery System (see the ECLSS article — most of it is recycled urine + condensate + EVA suit water). Hydration tracks closely with bone-density and renal-stone risk, so the data is monitored daily. Russian-segment water is from a parallel Roscosmos system that doesn't process urine (the source is humidity condensate + resupply); the two halves can share but typically don't. Tiangong runs its own closed-loop system on Tianhe. The Mars-class architecture being studied at JSC + EAC + IKI explicitly assumes >98% closed-loop water — anything less than that requires more launch mass than chemical-rocket Mars architectures can plausibly deliver.",
-  "cur": "물은 열 수지를 맞추는 또 다른 변수다. ISS 승무원은 하루 2.0-2.5 L를 마시며, 그 전부가 Water Recovery System에서 나온다(ECLSS 문서 참고 — 대부분 재활용한 소변, 응축수, 우주유영복의 물이다). 수분 섭취는 골밀도 및 신장 결석 위험과 밀접하게 연관되어 있어 데이터를 매일 감시한다. 러시아 구역의 물은 소변을 처리하지 않는 Roscosmos의 병행 시스템에서 나온다(수원은 습기 응축수와 보급품이다). 두 절반은 물을 나눌 수 있지만 대개는 그러지 않는다. Tiangong은 Tianhe에서 자체 폐쇄 순환 시스템을 운용한다. JSC, EAC, IKI에서 연구 중인 화성급 아키텍처는 명시적으로 98%가 넘는 물의 폐쇄 순환을 전제로 한다 — 그보다 낮으면 화학 로켓 기반 화성 아키텍처가 현실적으로 실어 나를 수 있는 것보다 많은 발사 질량이 필요해진다."
- },
- {
-  "rel": "science/life-in-space/sleep-nutrition-circadian.json",
-  "at": "diagram_caption",
-  "en": "Body wants: single sunrise, gravity to swallow, gravity to settle bubbles, 7-8 hrs sleep. ISS gives: 16 sunrises/day, 0 g, no fizz, ~6 hrs sleep. Countermeasures: hard schedule on GMT + circadian lighting + sealed sleep booths + engineered food + recycled water.",
-  "cur": "몸은 원한다: 한 번의 일출, 삼킴을 위한 중력, 거품을 분리할 중력, 7–8시간 수면. ISS는 준다: 하루 16번의 일출, 0 g, 탄산 없음, ~6시간 수면. 대책: 엄격한 GMT 일정+일주기 조명+밀폐된 부스+엔지니어링된 음식+재활용된 물."
- },
- {
-  "rel": "science/life-in-space/suit-lineage.json",
-  "at": "title",
-  "en": "Suit lineage — Sokol to Orlan to Feitian, A7L to AxEMU",
-  "cur": "우주복 계보 — Sokol에서 Orlan으로, Feitian으로, A7L에서 AxEMU로"
- },
- {
-  "rel": "science/life-in-space/suit-lineage.json",
-  "at": "intro_sentence",
-  "en": "Every modern spacesuit traces to one of three families: American Apollo-derived, Soviet/Russian Sokol + Orlan, and Chinese Feitian (itself derived from Orlan). Six decades, three lineages, lots of cross-pollination.",
-  "cur": "모든 현대 우주복은 세 가지 계열 중 하나로 거슬러 올라간다: 미국의 Apollo 파생형, 소비에트/러시아의 Sokol + Orlan, 그리고 중국의 Feitian (자체적으로 Orlan에서 파생). 60년, 세 계열, 수많은 상호 영향."
- },
- {
-  "rel": "science/life-in-space/suit-lineage.json",
-  "at": "body_paragraphs.0",
-  "en": "The original IVA suit problem was simple and terrible: keep the crew alive if the spacecraft loses pressure. Vostok and Voskhod cosmonauts wore SK-1 / Berkut suits. Mercury used a modified Navy Mark IV. Gemini used the G3C / G4C. None of these were tested as full-decompression life-savers because no flight had ever lost cabin pressure. Then in June 1971 Soyuz 11 returned with the crew dead from rapid decompression during separation — Dobrovolsky, Volkov, Patsayev were in shirtsleeves because the Soyuz cabin couldn't fit three suited cosmonauts. The Soviet response was the Sokol K-V (1973), a lightweight rubberised-fabric pressure suit designed specifically to fit inside the Soyuz couch and inflate in seconds if the cabin failed. Every Soyuz crew since wears a descendant of Sokol — the current Sokol-M is its latest modernised variant.",
-  "cur": "원래 선외활동 우주복의 문제는 단순하면서도 심각했다. 우주선의 기압이 떨어졌을 때 승무원을 살려야 한다는 것이었다. Vostok와 Voskhod 우주인들은 SK-1/Berkut 우주복을 입었다. 머큐리는 개조된 해군 Mark IV를 사용했다. Gemini는 G3C/G4C를 사용했다. 이들 중 어느 것도 완전한 감압 구조복으로서 시험되지 않았는데, 왜냐하면 실제 비행에서 기실의 기압이 떨어진 일이 없었기 때문이다. 그러다 1971년 6월 Soyuz 11이 분리 중 급속 감압으로 인해 승무원이 죽은 채로 귀환했다. 도브로볼스키, 볼코프, 파차예프는 Soyuz 기실이 우주복을 입은 우주인 세 명을 수용할 수 없었기 때문에 셔츠 차림이었다. 소련의 대응은 Sokol K-V(1973)였다. 가볍고 고무 처리된 직물로 만든 가압 우주복으로 Soyuz 시트 내부에 딱 맞게 설계되었으며 기실에 문제가 생기면 수 초 안에 팽창하도록 했다. 그 이후 모든 Soyuz 승무원이 Sokol의 자손을 입고 있다. 현재의 Sokol-M은 그 최신 현대화 변형이다."
- },
- {
-  "rel": "science/life-in-space/suit-lineage.json",
-  "at": "body_paragraphs.1",
-  "en": "The American IVA lineage went through more iterations. Apollo used pressure-tight Block I (which killed Grissom-White-Chaffee in the 1967 fire) then Block II (post-fire redesign). Shuttle used the Launch Entry Suit (orange LES, 1988-94) then the ACES — Advanced Crew Escape Suit (1994-2011). When the Shuttle retired and US-side flights resumed in 2020, both SpaceX and Boeing produced their own clean-sheet IVA suits — the SpaceX Crew Dragon IVA (custom-fitted, single-piece zipper-entry, designed by Jose Fernandez of Hollywood costume background) and the Boeing Starliner IVA (more conventional NASA-design lineage). Neither is rated for EVA. Both inherit the Sokol functional contract — protect against rapid decompression, single-occupant fit, integrated with the seat — but neither shares Sokol's parts list.",
-  "cur": "미국의 IVA 계열은 더 많은 반복을 거쳤다. Apollo는 기압밀폐형 Block I (1967년 화재에서 그리섬-화이트-채피를 살해함)을 사용했고, 그 다음 Block II (화재 이후 재설계)를 사용했다. Shuttle은 Launch Entry Suit (주황색 LES, 1988-94)를 사용했고, 그 다음 ACES — Advanced Crew Escape Suit (1994-2011)를 사용했다. Shuttle이 은퇴하고 2020년 미국 측 비행이 재개되었을 때, SpaceX와 Boeing은 모두 자신들의 독자적인 IVA 우주복을 생산했다 — SpaceX Crew Dragon IVA (맞춤 제작, 단일 피스 지퍼 진입, Hollywood 의상 배경의 Jose Fernandez가 설계)와 Boeing Starliner IVA (더 기존의 NASA 설계 계열). 둘 다 EVA 등급이 아니다. 둘 다 Sokol의 기능적 계약을 상속한다 — 급속 감압으로부터 보호, 단일 승무원 적합성, 좌석과의 통합 — 하지만 둘 다 Sokol의 부품 목록을 공유하지 않는다."
- },
- {
-  "rel": "science/life-in-space/suit-lineage.json",
-  "at": "body_paragraphs.2",
-  "en": "The American EVA lineage starts with A7L (Apollo, 1969-72) and A7LB (later Apollo, 1971-72), then the EMU (Extravehicular Mobility Unit, 1981-present), which is the iconic white modular suit used for every US-side EVA on Skylab, Shuttle, and ISS. The EMU is now in its 40+ year of service — newer than most aircraft, older than most operational hardware on station. Its components include the HUT (Hard Upper Torso, the white shell), the LCVG (Liquid Cooling and Ventilation Garment — water tubes against the skin), the LTA (Lower Torso Assembly), the PLSS (Portable Life Support System, the backpack — CO₂ scrubbing + water cooling + oxygen + radio), and the MAG (Maximum Absorbency Garment — astronaut's diaper, a Lockheed-Martin acquisition from the 1980s). EMU production stopped after the Shuttle programme; the suits currently flying are refurbs of the 1980s-1990s build, with parts cannibalised from retired units. The AxEMU (Axiom Space EMU, for Artemis III lunar EVA) is the first new American EVA suit since the original; it inherits the modular philosophy but rebuilds every subsystem.",
-  "cur": "미국의 EVA 계열은 A7L (Apollo, 1969-72)과 A7LB (나중의 Apollo, 1971-72)로 시작되고, 그 다음 EMU (Extravehicular Mobility Unit, 1981-현재)이니, 이것이 Skylab, Shuttle, ISS에서 모든 미국 측 EVA에 사용되는 유명한 흰색 모듈형 우주복이다. EMU는 이제 40년 이상 서비스 중이다 — 대부분의 항공기보다 새롭지만 우주정거장의 대부분의 운영 하드웨어보다는 오래되었다. 그 구성요소는 HUT (Hard Upper Torso, 흰색 껍질), LCVG (Liquid Cooling and Ventilation Garment — 피부 위의 수관), LTA (Lower Torso Assembly), PLSS (Portable Life Support System, 배낭 — CO₂ 제거 + 수냉식 + 산소 + 라디오), 그리고 MAG (Maximum Absorbency Garment — 우주인 기저귀, 1980년대 Lockheed-Martin 인수)를 포함한다. EMU 생산은 Shuttle 프로그램 이후 중단되었다; 현재 비행 중인 우주복은 1980년대-1990년대 제조의 재정비 제품이며, 퇴역한 장비에서 부품을 간식했다. AxEMU (Axiom Space EMU, Artemis III 달 EVA용)는 원본 이후 첫 번째의 새로운 미국 EVA 우주복이다; 이것은 모듈형 철학을 상속하지만 모든 하위 시스템을 재구축한다."
- },
- {
-  "rel": "science/life-in-space/suit-lineage.json",
-  "at": "body_paragraphs.3",
-  "en": "The Russian EVA lineage is Orlan (Орлан, 'sea eagle'), continuous since 1977. Unlike the American semi-modular EMU, Orlan is a rear-entry one-piece suit — the astronaut climbs in through a hatch in the back, closes the hatch, and is suited. Five-minute prep vs the EMU's 30-minute layered suit-up. Orlan also runs at higher pressure (5.8 psi vs EMU's 4.3 psi) which gives shorter prebreathe windows in exchange for more rigidity. The current Orlan-MKS (introduced 2017) is the seventh generation; flown on every Russian EVA since 2017 and on Tiangong's first crewed EVAs in 2021-22 before China's own Feitian became available.",
-  "cur": "러시아 선외활동 우주복의 계보는 Orlan ('흰꼬리수리')으로, 1977년 이래 계속 사용되어 왔다. 미국의 반모듈식 EMU와 달리 Orlan은 후방 진입 일체형 우주복이다. 우주인이 뒤쪽의 해치를 통해 들어가서 해치를 닫으면 착용이 완료된다. 준비 시간이 5분으로, EMU의 30분 다층 착용 시간보다 훨씬 짧다. Orlan은 또한 더 높은 기압(5.8 psi 대 EMU의 4.3 psi)에서 작동하는데, 이는 더 짧은 사전호흡 시간을 제공하는 대신 더 큰 강성을 제공한다. 현재의 Orlan-MKS(2017년 도입)는 일곱 번째 세대이며, 2017년 이후 모든 러시아 선외활동에서 비행했고, 중국의 Feitian이 이용 가능해지기 전인 2021-22년 Tiangong의 첫 유인 선외활동에서 비행했다."
- },
- {
-  "rel": "science/life-in-space/suit-lineage.json",
-  "at": "body_paragraphs.4",
-  "en": "Feitian (飞天, 'flying sky') is China's EVA suit, debuted on Shenzhou 7 (2008) for the country's first EVA, and now in its second-generation Feitian-2 variant on Tiangong. Feitian is derived from Orlan — rear-entry one-piece, similar internal geometry, similar operating pressure — but built domestically with Chinese-sourced materials and Chinese-developed thermal control. The lineage is admitted openly: ACC (China's Astronaut Centre) had Roscosmos-trained engineers as consultants on the first Feitian, and the second-gen suit further customised the design for Tiangong's Wentian airlock. The geopolitical irony is that Feitian — a Russian-lineage suit — represents the only currently-operational EVA capability outside of the US-Russian ISS partnership. AxEMU (American, lunar-targeted) is in development. Beyond those three, there is no other operational EVA suit in the world today; the IVA market is more diverse (Sokol-M, Crew Dragon IVA, Starliner IVA, Shenzhou IVA, India's planned Gaganyaan IVA), but EVA remains a three-suit world.",
-  "cur": "Feitian은 중국의 EVA 우주복이며, Shenzhou 7 (2008)에서 우주복이 나라의 첫 번째 EVA 미션에서 데뷔했으며, 이제 Tiangong의 제2세대 Feitian-2 변형이다. Feitian은 Orlan에서 파생되었다 — 뒤쪽 진입 원피스, 유사한 내부 기하학, 유사한 운영 압력 — 하지만 중국 소재로 제작되고 중국이 개발한 열 제어를 가지고 있다. 계보는 공개적으로 인정되었다: ACC (중국 우주인 센터)는 첫 번째 Feitian에 대한 컨설턴트로 Roscosmos 훈련 엔지니어를 두었으며, 제2세대 우주복은 추가로 Tiangong의 Wentian 에어락에 대한 설계를 맞춤화했다. 지정학적 아이러니는 Feitian — 러시아 계열 우주복 — 이 미국-러시아 ISS 파트너십 외부의 유일하게 현재 작동 중인 EVA 능력을 나타낸다는 것이다. AxEMU (미국, 달 목표)는 개발 중이다. 그 세 가지 이외에, 세상에 현재 작동 중인 다른 EVA 우주복은 없다; IVA 시장은 더 다양하다 (Sokol-M, Crew Dragon IVA, Starliner IVA, Shenzhou IVA, 인도의 계획된 Gaganyaan IVA), 하지만 EVA는 여전히 세 우주복의 세계이다."
- },
- {
-  "rel": "science/life-in-space/suit-lineage.json",
-  "at": "diagram_caption",
-  "en": "Three lineages: American IVA (Mercury Mark IV → ACES → SpaceX / Starliner) + American EVA (A7L/A7LB → EMU → AxEMU). Russian IVA (Sokol K → Sokol-M) + Russian EVA (Orlan → Orlan-MKS). Chinese EVA (Feitian, derived from Orlan, second-gen on Tiangong). Cross-pollination is the rule, not the exception — every modern suit borrows from at least one ancestor in another lineage.",
-  "cur": "세 가지 계열: 미국 IVA (Mercury Mark IV → ACES → SpaceX / Starliner) + 미국 EVA (A7L/A7LB → EMU → AxEMU). 러시아 IVA (Sokol K → Sokol-M) + 러시아 EVA (Orlan → Orlan-MKS). 중국 EVA (Feitian, Orlan에서 파생, Tiangong의 제2세대). 상호 영향은 예외가 아닌 규칙이다 — 모든 현대 우주복은 다른 계열의 최소한 하나의 조상으로부터 빌려온다."
- },
- {
-  "rel": "science/life-in-space/surface-dust-mitigation.json",
-  "at": "title",
-  "en": "Surface dust — the lunar + Mars hazard everyone underestimated",
-  "cur": "표면 먼지 — 모두가 과소평가한 달 + 화성의 위험"
- },
- {
-  "rel": "science/life-in-space/surface-dust-mitigation.json",
-  "at": "intro_sentence",
-  "en": "Apollo crews returned with suits abraded after 10 EVAs and airlocks jamming on dust. Mars regolith is chemically toxic. Every long-stay architecture is built around dust protocols — they are the operational hazard nothing makes go away.",
-  "cur": "Apollo 승무원은 10 EVA 후 우주복이 마모되고 에어록이 먼지로 막힌 상태로 돌아왔다. 화성 레골리스는 화학적으로 독성이 있다. 모든 장기 체류 아키텍처는 먼지 프로토콜을 중심으로 구축된다 — 그것은 그 어떤 것도 사라지게 하지 못하는 운영상의 위험이다."
- },
- {
-  "rel": "science/life-in-space/surface-dust-mitigation.json",
-  "at": "body_paragraphs.0",
-  "en": "Lunar dust is mechanically dangerous in a way no terrestrial dust prepares you for. The surface is a fine regolith — particle sizes from sub-micron up to coarse sand, with a median of 70 µm — that was created by 4 billion years of micrometeorite impacts. Each impact is a tiny explosion that fragments existing rock; the fragments cool in vacuum without water to round their edges. The result is a powder of angular glass shards, sharper than ground glass. Adding to the hazard: lunar regolith is electrostatically charged by UV photoionisation on the day side and by plasma exposure in the lunar terminator zone. Charged dust clings to everything — sticks to suit fabric via electrostatic adhesion at a level that brushing alone cannot remove. Apollo crews reported that lunar dust degraded EVA suit joint seals after about 10 EVAs (Apollo 17 was the only mission to make three back-to-back EVAs, and Cernan's suit zipper was showing wear by the third).",
-  "cur": "달 먼지는 지구의 어떤 먼지도 준비시켜주지 않는 방식으로 기계적으로 위험하다. 표면은 미세한 레골리스다 — 입자 크기는 서브 미크론에서 굵은 모래까지, 중앙값 70 µm — 40억 년의 미세 운석 충돌에 의해 만들어졌다. 각 충돌은 기존 암석을 파쇄하는 작은 폭발이다; 파편은 가장자리를 둥글게 하는 물 없이 진공에서 식는다. 결과는 분쇄된 유리보다 더 날카로운 각진 유리 파편의 가루다. 위험에 더해: 달 레골리스는 낮 측의 UV 광이온화와 달 종결자 지대의 플라즈마 노출에 의해 정전기를 띤다. 충전된 먼지는 모든 것에 달라붙는다 — 솔질만으로는 제거할 수 없는 수준의 정전 부착에 의해 우주복 직물에 달라붙는다. Apollo 승무원은 약 10 EVA 후 달 먼지가 EVA 우주복 관절 실링을 열화시켰다고 보고했다(Apollo 17은 세 번의 EVA를 연속으로 한 유일한 임무였고, 서넌의 우주복 지퍼는 세 번째에 마모를 보였다)."
- },
- {
-  "rel": "science/life-in-space/surface-dust-mitigation.json",
-  "at": "body_paragraphs.1",
-  "en": "Operational impacts on Apollo: airlock seals jammed when dust contaminated the gasket interfaces; coolant lines on the LM PLSS (Portable Life Support System) clogged with dust ingressed through the suit umbilical; cameras and instruments needed constant brush-down; sample-return containers couldn't seal properly against the dust intrusion; and the LM cabin atmosphere after the third EVA had a smell that all 12 moonwalking astronauts described as 'gunpowder' or 'spent fireworks' (the actual cause is still debated — possibly nano-iron particles re-oxidising on contact with cabin O₂). Several Apollo crew members reported hay-fever-like symptoms in the LM cabin during the rest periods between EVAs. None of these were show-stoppers for missions lasting 12-72 hours; all of them would become show-stoppers for sustained presence.",
-  "cur": "Apollo에 대한 운영적 영향: 먼지가 개스킷 인터페이스를 오염시키면 에어록 실링이 막혔다; 우주복 탯줄을 통해 들어온 먼지로 LM PLSS(Portable Life Support System)의 냉각수 라인이 막혔다; 카메라와 기기는 지속적인 솔질이 필요했다; 샘플 반환 컨테이너는 먼지 침입에 대해 적절히 밀봉할 수 없었다; 세 번째 EVA 후 LM 캐빈 대기는 12명의 달 보행자 모두가 '화약' 또는 '소진된 폭죽'이라고 묘사한 냄새가 났다(실제 원인은 여전히 논의 중이다 — 캐빈 O₂와의 접촉으로 재산화되는 나노 철 입자일 수 있다). 여러 Apollo 승무원이 EVA 사이의 휴식 기간 동안 LM 캐빈에서 건초열 같은 증상을 보고했다. 이들 중 어느 것도 12-72시간 지속 임무에 대한 결정적 장애물이 아니었다; 모두 지속적 존재에 대한 결정적 장애물이 될 것이다."
- },
- {
-  "rel": "science/life-in-space/surface-dust-mitigation.json",
-  "at": "body_paragraphs.2",
-  "en": "Mars dust is chemically dangerous in a way the Moon is not. Phoenix lander (2008) confirmed by wet chemistry that Martian regolith contains 0.5-1% by mass of perchlorate (ClO₄⁻) salts, plus chlorate and chlorite. Perchlorates are thyroid endocrine disruptors at concentrations above ~25 ppb; ingesting Mars dust unfiltered would deliver doses orders of magnitude above the OSHA workplace limit within minutes. Curiosity and Perseverance have confirmed perchlorate distribution across both equatorial and high-latitude sites — it is global. Mars dust is also significantly more weathered than lunar dust (water has acted on it during the planet's wetter past), with rounder particle shapes and lower electrostatic charging, so the mechanical hazard is smaller. But the chemical hazard means Mars dust ingress into the habitat is a medical emergency, not just an operational nuisance.",
-  "cur": "화성 먼지는 달이 그렇지 않은 방식으로 화학적으로 위험하다. Phoenix 착륙선(2008)은 습식 화학으로 화성 레골리스가 질량 기준 0.5-1%의 과염소산염(ClO₄⁻) 염, 추가로 염소산염과 아염소산염을 포함한다고 확인했다. 과염소산염은 ~25 ppb 이상의 농도에서 갑상선 내분비 교란 물질이다; 여과되지 않은 화성 먼지를 섭취하는 것은 몇 분 내에 OSHA 작업장 한계보다 몇 자릿수 위의 선량을 전달할 것이다. Curiosity와 Perseverance는 적도 및 고위도 지역 모두에서 과염소산염 분포를 확인했다 — 그것은 전 지구적이다. 화성 먼지는 또한 달 먼지보다 상당히 더 풍화되어 있다(물이 행성의 더 습한 과거에 그것에 작용했다), 더 둥근 입자 형태와 더 낮은 정전 충전을 가지므로 기계적 위험은 더 작다. 그러나 화학적 위험은 화성 먼지의 거주지 침입이 단순한 운영적 골칫거리가 아니라 의료 응급 상황이라는 것을 의미한다."
- },
- {
-  "rel": "science/life-in-space/surface-dust-mitigation.json",
-  "at": "body_paragraphs.3",
-  "en": "The mitigation architecture that has emerged is the suitlock airlock. Instead of cycling suits through a pressurised airlock (Apollo, Shuttle, ISS approach), the suitlock keeps the suit permanently outside, attached to the habitat's outer hull via a backpack-port. Crew climb into the suit from inside the habitat without bringing dust into the pressurised volume. The Mars Z-2 prototype, the Boeing-Collins Aerospace Artemis EVA suit, the Russian Orlan-derived ILRS suit, and the Chinese Feitian-derived lunar EVA suit are all designed around suitlock attachment. Supplementary tech: Electrostatic Dust Shield (ESD), a NASA Kennedy invention that puts AC voltages across surface coatings to lift charged dust off via electrohydrodynamic forces, demonstrated at lab + small-flight scale (CubeSat experiments). Internal HEPA filtration on every airlock cycle. Decontamination shower (water rinse) before re-entering deeper habitat zones. All of these are necessary; none of them alone is sufficient. Dust will be the most-managed daily operational risk of any surface stay longer than 30 days.",
-  "cur": "등장한 완화 아키텍처는 suitlock 에어록이다. 우주복을 가압 에어록을 통해 순환시키는 대신(Apollo, Shuttle, ISS 접근법), suitlock은 백팩 포트를 통해 거주지 외부 선체에 부착된 채로 우주복을 영구적으로 외부에 유지한다. 승무원은 가압 부피로 먼지를 가져오지 않고 거주지 내부에서 우주복으로 올라간다. Mars Z-2 프로토타입, Boeing-Collins Aerospace Artemis EVA 우주복, 러시아 Orlan 파생 ILRS 우주복, 중국 Feitian 파생 달 EVA 우주복은 모두 suitlock 부착을 중심으로 설계되었다. 보충 기술: Electrostatic Dust Shield(ESD), 표면 코팅에 AC 전압을 가해 전기 유체역학적 힘으로 충전된 먼지를 들어 올리는 NASA 케네디 발명품으로, 실험실 + 소규모 비행 규모(CubeSat 실험)에서 입증되었다. 각 에어록 사이클에서의 내부 HEPA 여과. 더 깊은 거주지 영역에 재진입하기 전의 오염 제거 샤워(물 헹굼). 이 모든 것은 필요하다; 어느 것도 단독으로는 충분하지 않다. 먼지는 30일을 초과하는 모든 표면 체류의 가장 많이 관리되는 일상 운영 위험이 될 것이다."
- },
- {
-  "rel": "science/life-in-space/surface-dust-mitigation.json",
-  "at": "diagram_caption",
-  "en": "Lunar dust: glass-shard angular, electrostatically charged, mechanically destructive (Apollo suit-seal wear at 10 EVAs). Mars dust: chemically toxic (0.5-1% perchlorate by mass, thyroid endocrine disruptor). Mitigation: suitlock airlocks (suit lives outside, no dust ingress), Electrostatic Dust Shield, HEPA filtration, decontamination showers. All four are necessary together.",
-  "cur": "달 먼지: 유리 파편 각진, 정전 충전, 기계적으로 파괴적(10 EVA에서 Apollo 우주복 실링 마모). 화성 먼지: 화학적으로 독성(질량 기준 0.5-1% 과염소산염, 갑상선 내분비 교란 물질). 완화: suitlock 에어록(우주복은 외부에 거주, 먼지 침입 없음), Electrostatic Dust Shield, HEPA 여과, 오염 제거 샤워. 네 가지 모두 함께 필요하다."
- },
- {
-  "rel": "science/life-in-space/surface-mobility-rovers.json",
-  "at": "title",
-  "en": "Surface mobility — from Apollo's LRV to pressurised rovers for Moon and Mars",
-  "cur": "표면 이동성 — Apollo의 LRV에서 달과 화성용 가압 로버까지"
- },
- {
-  "rel": "science/life-in-space/surface-mobility-rovers.json",
-  "at": "intro_sentence",
-  "en": "Crewed surface stays live and die by how far the crew can travel. Apollo's LRV pushed traverse range from 1 km to 35.7 km. The next generation — pressurised rovers — pushes it to multi-week, multi-hundred-km expeditions.",
-  "cur": "유인 표면 활동의 성공 여부는 승무원이 얼마나 멀리 이동할 수 있는지에 달려 있다. Apollo의 LRV는 활동 반경을 1 km에서 35.7 km로 확대했다. 다음 세대 기술인 가압 로버는 이를 수주에서 수백 km의 탐사로 확장한다."
- },
- {
-  "rel": "science/life-in-space/surface-mobility-rovers.json",
-  "at": "body_paragraphs.0",
-  "en": "Apollo's Lunar Roving Vehicle (LRV) flew on the last three Apollo missions (15, 16, 17, 1971-72). Before the LRV, surface traverses were limited by suit consumables to about 1 km radius from the LM — and EVA fatigue from walking in 1/6-g while carrying a pressurised suit made even that distance limit a stretch. The LRV was deliberately scoped to fit folded into the LM Quad-1 storage bay (a 0.7 × 0.7 m envelope), weighed only 210 kg unloaded, and ran on two 36-V silver-zinc batteries (no recharge — the LRV was a single-mission asset). Top speed: 18 km/h. Total range on those batteries: ~92 km (57 mi), with a hard walk-back limit of half the consumables remaining (so practical traverses were 5-10 km out + 5-10 km back). Apollo 17 logged 35.7 km total over three EVAs, the all-time human surface-driving record. The LRV's design template — open-frame, unpressurised, suit-only, single-mission disposable — is what Artemis is rebuilding now as the LTV.",
-  "cur": "Apollo의 Lunar Roving Vehicle(LRV)은 마지막 세 Apollo 미션(15, 16, 17, 1971-72)에 탑재되었다. LRV 이전에는 우주복 소모품으로 인해 표면 이동이 LM으로부터 약 1 km 반경으로 제한되었으며, 1/6-g 환경에서 가압 우주복을 입고 걷는 것으로 인한 EVA 피로가 심각했다. LRV는 LM Quad-1 보관실(0.7 × 0.7 m 크기)에 접힌 상태로 장착되도록 설계되었으며, 적재 중량은 210 kg에 불과했고, 36-V 은-아연 배터리 두 개로 구동되었다(충전 불가능 — LRV는 일회용 자산). 최고 속도: 18 km/h. 해당 배터리의 총 주행거리: 약 92 km(57 mi), 귀환용 연료의 절반을 남겨두는 하드 제약 조건(따라서 실질적인 이동은 왕로 5-10 km + 복로 5-10 km). Apollo 17은 세 번의 EVA에서 총 35.7 km를 기록했으며, 이는 인류의 표면 주행 기록이다. LRV의 설계 원칙 — 개방형 프레임, 비가압, 우주복 전용, 일회용 소모품 — 은 현재 Artemis가 LTV로 재현하고 있는 것이다."
- },
- {
-  "rel": "science/life-in-space/surface-mobility-rovers.json",
-  "at": "body_paragraphs.1",
-  "en": "Artemis Lunar Terrain Vehicle (LTV) is the direct LRV descendant: open-frame, unpressurised, designed for two suited crew, ~20 km traverse radius. Three contracts were issued by NASA in April 2024 — Intuitive Machines, Lunar Outpost, and Astrolab — for design + delivery, with a single down-select expected for the production order. Differences from LRV: rechargeable batteries with solar trickle-charge (the LTV stays at the site between Artemis missions, supporting subsequent crews and operating as a tele-driven rover during the lunar nights and intervals when no crew is present), partial autonomy for self-positioning and obstacle avoidance, designed for ~10-year deployed lifetime instead of single-use. Target IOC: Artemis V (currently scheduled mid-2030).",
-  "cur": "Artemis Lunar Terrain Vehicle(LTV)은 LRV의 직계 후속 모델이다: 개방형 프레임, 비가압, 2명의 우주복 착용자를 위해 설계되었으며, 약 20 km 이동 반경을 목표로 한다. NASA는 2024년 4월에 Intuitive Machines, Lunar Outpost, Astrolab 3개 회사에 설계 및 납품 계약을 발주했으며, 생산 주문을 위한 최종 선정이 예상된다. LRV와의 차이점: 태양광 저전력 충전 기능이 있는 충전식 배터리(LTV는 Artemis 미션 사이에 현장에 배치되어 이후 승무원을 지원하고 달이 밤 상태일 때 또는 승무원이 없는 기간에 원격 조종 로버로 운영됨), 자체 위치 결정 및 장애물 회피를 위한 부분 자율 기능, 일회용 대신 약 10년의 배치 수명으로 설계됨. 목표 IOC: Artemis V(현재 2030년 중반으로 예정됨)."
- },
- {
-  "rel": "science/life-in-space/surface-mobility-rovers.json",
-  "at": "body_paragraphs.2",
-  "en": "Pressurised rovers are the qualitatively different next step. The Toyota / JAXA Lunar Cruiser concept (the project name for what JAXA calls the Manned Pressurised Rover) is a 6-tonne, 6 × 5 × 4 m vehicle with internal pressurised volume of ~13 m³ — about the size of a small bus or a Winnebago RV. Two crew live inside in shirtsleeves for up to 30 days at a time, exiting in suits through suitlock airlocks. The fuel cell + regenerative cycle gives 1000-km range. The Chinese ILRS programme has a similar pressurised rover under development. Practical implications: a pair of pressurised rovers can support multi-month expeditions far from the base camp, transforming surface ops from 'a few days outdoor activity from home' to 'expedition-style traverses of hundreds of km' — closer to Antarctic field-camp logistics than to Apollo. NASA's plan uses the Toyota Lunar Cruiser as the agency-baseline pressurised rover starting around Artemis VII.",
-  "cur": "가압 로버는 질적으로 다른 다음 단계다. Toyota/JAXA Lunar Cruiser 컨셉(JAXA가 Manned Pressurised Rover라고 부르는 프로젝트의 공식명)은 6톤 규모의 6 × 5 × 4 m 차량이며, 내부 가압 용적은 약 13 m³로 소형 버스 또는 Winnebago RV 정도의 크기다. 2명의 승무원이 에어락 우주복실을 통해 우주복을 입고 외출하면서 최대 30일 동안 셔츠 소매 상태로 내부에서 생활한다. 연료 전지 + 재생 사이클은 1000 km의 주행 거리를 제공한다. 중국의 ILRS 프로그램도 유사한 가압 로버를 개발 중이다. 실질적 함의: 한 쌍의 가압 로버는 기지 캠프에서 수백 km 떨어진 곳까지의 수개월 원정을 지원할 수 있으며, 표면 작업을 '집에서 야외 활동 며칠'에서 '수백 km의 원정 스타일 이동'으로 변환할 수 있다 — Apollo보다는 남극 야외 캠프 로지스틱에 가깝다. NASA의 계획은 Artemis VII부터 시작하여 Toyota Lunar Cruiser를 기관 기본 가압 로버로 사용한다."
- },
- {
-  "rel": "science/life-in-space/surface-mobility-rovers.json",
-  "at": "body_paragraphs.3",
-  "en": "Mars rover heritage is purely robotic so far — Sojourner (1997), Spirit + Opportunity (2004-2010 and 2004-2018), Curiosity (2012-present), Perseverance (2021-present), Zhurong (2021-2022), Pragyan (2023). All four-wheel or six-wheel, all unpressurised, all autonomous-with-Earth-supervision. Crewed Mars architectures lean heavily on this heritage: Perseverance's autonomous-navigation software (AutoNav 2.0, which can drive 200+ m per Sol without intervention) is being matured into the navigation stack for crewed pressurised rovers. The pressurised rover for Mars is qualitatively the same machine as the lunar one, but with two extra demands: it has to handle dust storms (typhoon-class scenarios that can last weeks), and it has to handle the perchlorate / dust contamination problem on every airlock cycle. Both are unsolved at the engineering level today; both are the kind of problem that gets solved by 5-10 years of lunar pressurised-rover field-testing before Mars.",
-  "cur": "화성 로버의 유산은 지금까지 순전히 로봇식이다 — Sojourner(1997), Spirit + Opportunity(2004-2010 및 2004-2018), Curiosity(2012-현재), Perseverance(2021-현재), Zhurong(2021-2022), Pragyan(2023). 모두 4륜 또는 6륜, 모두 비가압, 모두 지구 감시 자율 주행식이다. 유인 화성 구조는 이 유산을 크게 활용한다: Perseverance의 자율 항법 소프트웨어(AutoNav 2.0은 개입 없이 Sol당 200 m 이상을 주행할 수 있음)는 유인 가압 로버의 항법 스택으로 발전하고 있다. 화성용 가압 로버는 달 것과 질적으로 동일한 기계지만 두 가지 추가 요구사항이 있다: 먼지 폭풍(태풍 수준의 시나리오로 수주 지속 가능)을 처리해야 하고, 모든 에어락 사이클에서 과염소산염/먼지 오염 문제를 처리해야 한다. 둘 다 현재 엔지니어링 수준에서 미해결 상태며, 둘 다 화성에 가기 전에 5-10년간의 달 가압 로버 현장 시험으로 해결되는 종류의 문제다."
- },
- {
-  "rel": "science/life-in-space/surface-mobility-rovers.json",
-  "at": "diagram_caption",
-  "en": "Apollo LRV (1971-72): 210 kg, unpressurised, single-mission, 35.7 km record (Apollo 17). Artemis LTV (~2030): unpressurised, rechargeable, deployed-asset, ~20 km radius. Pressurised rovers (Toyota Lunar Cruiser, ILRS equivalent, late 2030s+): 6 t, 13 m³ pressurised, 30-day endurance, 1000-km range — qualitatively different mobility envelope.",
-  "cur": "Apollo LRV(1971-72): 210 kg, 비가압, 일회용, 35.7 km 기록(Apollo 17). Artemis LTV(약 2030): 비가압, 충전식, 배치형 자산, 약 20 km 반경. 가압 로버(Toyota Lunar Cruiser, ILRS 동등품, 2030년대 후반 이상): 6톤, 13 m³ 가압, 30일 내구성, 1000 km 범위 — 질적으로 다른 이동성 범위."
- },
- {
-  "rel": "science/life-in-space/vestibular-adaptation.json",
-  "at": "intro_sentence",
-  "en": "The inner ear's gravity sensor goes silent in orbit — roughly 60–80% of astronauts spend their first 2–4 days nauseous while the brain re-weights vestibular vs visual cues.",
-  "cur": "궤도에서 내이의 중력 센서가 무음이 된다 — 우주비행사의 약 60~80%가 첫 2~4일 동안 뇌가 전정 신호와 시각 신호를 재가중치할 동안 메스꺼움을 경험한다."
- },
- {
-  "rel": "science/life-in-space/vestibular-adaptation.json",
-  "at": "body_paragraphs.0",
-  "en": "The vestibular system in your inner ear is built around three semicircular canals (rotation) and two otolith organs (linear acceleration + gravity). On Earth those otoliths sit in a one-g field; their hair cells are constantly bent by the calcium-carbonate crystals (otoconia) pressing downward. The brain reads that bend as \"down\". In microgravity the otoconia float free. The signal goes ambiguous.",
-  "cur": "당신의 내이 전정계는 세 개의 반고리관(회전)과 두 개의 이석기관(선형 가속도 + 중력)으로 이루어져 있다. 지구에서 이석은 1g 중력장에 앉아 있으며, 그들의 감각 모세포는 아래로 누르는 탄산칼슘 결정(이석)에 의해 지속적으로 휘어진다. 뇌는 그 휘어짐을 \"아래\"로 해석한다. 미중력 환경에서 이석은 자유롭게 떠다닌다. 신호가 모호해진다."
- },
- {
-  "rel": "science/life-in-space/vestibular-adaptation.json",
-  "at": "body_paragraphs.1",
-  "en": "Roughly 60–80% of astronauts develop Space Adaptation Syndrome in the first 24–72 hours: nausea, vomiting, sweating, headaches. It's not the body's only sensory conflict (eyes still report up/down via the visual horizon of the cabin, proprioception still reports limb position) but it's the most striking, and it usually resolves within 2–4 days as the brain learns to down-weight the now-unreliable vestibular channel.",
-  "cur": "우주비행사의 약 60~80%가 처음 24~72시간 동안 Space Adaptation Syndrome을 경험한다: 메스꺼움, 구토, 발한, 두통. 그것이 신체의 유일한 감각 충돌은 아니다(눈은 여전히 선실의 시각 수평선을 통해 상/하를 보고하고, 고유감각은 여전히 팔다리 위치를 보고한다). 하지만 가장 두드러지며, 보통 뇌가 이제 신뢰할 수 없는 전정 신호의 가중치를 낮추는 것을 배우면서 2~4일 내에 해결된다."
- },
- {
-  "rel": "science/life-in-space/vestibular-adaptation.json",
-  "at": "body_paragraphs.2",
-  "en": "The down-weighting doesn't reverse instantly on return. Post-flight, astronauts walk into a 1-g world with a brain that's spent months ignoring vestibular input — and the results are gait disturbances, balance deficits, and head-movement-triggered nausea that take days to weeks to clear. Long-duration crew show measurable changes in eye-tracking and posture testing for months after landing.",
-  "cur": "가중치 감소는 귀환 시 즉시 역전되지 않는다. 비행 후, 우주비행사들은 수개월 동안 전정 신호를 무시해온 뇌를 가지고 1g 세계로 걸어가며 — 그 결과는 걸음걸이 장애, 균형 결손, 그리고 머리 움직임으로 유발되는 메스꺼움으로, 이들을 해결하는 데 며칠에서 수주일이 걸린다. 장기 비행 승무원들은 착륙 후 수개월 동안 눈 추적 및 자세 검사에서 측정 가능한 변화를 보인다."
- },
- {
-  "rel": "science/life-in-space/vestibular-adaptation.json",
-  "at": "body_paragraphs.3",
-  "en": "For a Mars mission, the open question is whether the surface vestibular environment (0.38 g) is enough to re-anchor the system on arrival, or whether crew step out of the lander into a hybrid balance state — partially adapted to space, partially relearning gravity. Centrifuge research on the ISS and human-rotation studies on Earth suggest the answer is somewhere in between; planning assumes a few days of reduced surface mobility immediately post-landing.",
-  "cur": "화성 임무를 위해 미결의 질문은 표면 전정 환경(0.38g)이 도착 시 시스템을 재고정하기에 충분한지, 아니면 승무원이 착륙선에서 나가면서 부분적으로 우주에 적응하고 부분적으로 중력을 다시 학습하는 하이브리드 균형 상태로 나가는지이다. ISS의 원심분리기 연구 및 지구의 인간 회전 연구는 답이 그 중간 어딘가에 있음을 시사한다; 계획은 착륙 직후 며칠간의 감소된 표면 이동성을 가정한다."
- },
- {
-  "rel": "science/life-in-space/vestibular-adaptation.json",
-  "at": "diagram_caption",
-  "en": "Otolith crystals float in microgravity → ambiguous \"down\" signal → brain down-weights vestibular cues → re-entry into 1 g requires days-to-weeks of re-weighting.",
-  "cur": "미중력에서 이석 결정 부유 → 모호한 \\\"아래\\\" 신호 → 뇌가 전정 신호의 가중치를 낮춤 → 1g으로의 재진입은 며칠에서 수주일의 재가중치 필요"
- },
- {
-  "rel": "science/mission-phases/_intro.json",
-  "at": "headline",
-  "en": "Mission Phases — the flight is just five phases on repeat.",
-  "cur": "임무 단계 — 비행은 단지 5개 단계의 반복입니다."
- },
- {
-  "rel": "science/mission-phases/_intro.json",
-  "at": "paragraphs.0",
-  "en": "Pretty much every interplanetary mission, from Voyager to Perseverance, follows the same script. Launch out of Earth's atmosphere into low orbit. Trans-X injection — the big single burn that flings you onto the transfer ellipse to the Moon (TLI), Mars (TMI), Venus, Jupiter, whatever. Coast for months, with a few small Trajectory Correction Maneuvers along the way. Orbit insertion — the braking burn at the destination. EDL — entry, descent, and landing — for landers.",
-  "cur": "거의 모든 행성간 미션, Voyager부터 Perseverance까지, 동일한 절차를 따릅니다. 지구 대기권에서 벗어나 저궤도로 진입합니다. Trans-X 분사 — 당신을 달(TLI), 화성(TMI), 금성, 목성 등의 전이 타원 궤도로 던지는 대규모 단일 분사입니다. 경로 수정 기동을 몇 번 수행하며 수개월간 비행합니다. 궤도 삽입 — 목적지에서의 제동 분사입니다. EDL — 진입, 강하, 착륙 — 착륙선의 경우입니다."
- },
- {
-  "rel": "science/mission-phases/_intro.json",
-  "at": "paragraphs.1",
-  "en": "Apollo flew this script to the Moon in three days. Curiosity flew it to Mars in eight months. Voyager flew it three times — once to leave Earth, then twice more for gravity-assist hops past Jupiter and Saturn. The phases scale; the phase sequence doesn't.",
-  "cur": "Apollo는 이 계획을 따라 3일 만에 달에 도착했습니다. Curiosity는 8개월에 걸쳐 화성으로 날아갔습니다. Voyager는 이를 세 번 실행했습니다. 지구를 떠나기 위해 한 번, 그리고 목성과 토성을 지나는 중력 보조 기동을 위해 두 번 더입니다. 각 단계의 규모는 달라지지만, 단계의 순서는 변하지 않습니다."
- },
- {
-  "rel": "science/mission-phases/_intro.json",
-  "at": "paragraphs.2",
-  "en": "Seven sections here cover all of it, plus two specialised phases — MET (Mission Elapsed Time, the universal stopwatch) and NRHO (the orbit NASA's Lunar Gateway will live in). Read them as a flight log: launch first, EDL last.",
-  "cur": "여기 일곱 개 섹션에서 모두를 다루며, 전문화된 두 단계 — MET(Mission Elapsed Time, 우주 공용 스톱워치)와 NRHO(NASA의 Lunar Gateway가 위치할 궤도) — 도 포함합니다. 비행 기록으로 읽으십시오: 먼저 발사, 마지막에 EDL입니다."
- },
- {
-  "rel": "science/mission-phases/aerobraking.json",
-  "at": "intro_sentence",
-  "en": "Trimming a wide capture orbit down to a working one for almost no fuel — by dipping into the very top of a planet's atmosphere a little on every pass.",
-  "cur": "행성의 대기 최상층을 매 회전마다 살짝 통과하며 거의 연료를 소비하지 않고 넓은 포획 궤도를 실용적인 궤도로 축소하는 방식."
- },
- {
-  "rel": "science/mission-phases/aerobraking.json",
-  "at": "narrative_101.0",
-  "en": "When an orbiter arrives at a planet it fires a capture burn to drop into orbit — but stopping fully into a tight, useful orbit would cost a huge amount of fuel. So mission planners cheat physics with the atmosphere: they capture into a big, loose ellipse, then let the spacecraft skim the very top of the air at the low point of each orbit. Each brush of thin air steals a little speed, and the far side of the orbit sinks a bit lower.",
-  "cur": "궤도선이 행성에 도착하면 포획 감속을 수행하여 궤도에 진입하는데, 좁고 실용적인 궤도로 완전히 정착하려면 엄청난 양의 연료가 필요하다. 따라서 임무 계획자들은 대기를 이용해 물리학을 우회한다: 넓고 느슨한 타원 궤도로 포획한 후, 각 궤도의 저점에서 우주선이 공기의 최상층을 스쳐 지나가도록 한다. 얇은 공기와의 각 접촉은 조금의 속도를 빼앗으며, 궤도의 원지점이 조금씩 낮아진다."
- },
- {
-  "rel": "science/mission-phases/aerobraking.json",
-  "at": "narrative_101.1",
-  "en": "Do this a few hundred times over weeks or months and the wide capture ellipse shrinks into the near-circular science orbit the mission actually wants — all for the price of the small capture burn, not the enormous one full propulsive insertion would need. It is one of the great fuel bargains in spaceflight.",
-  "cur": "이를 수주 또는 수개월에 걸쳐 수백 번 반복하면 넓은 포획 타원은 임무가 실제로 원하는 거의 원형의 과학 궤도로 축소된다 — 모두 작은 포획 감속의 대가로, 완전 추진식 삽입에 필요한 엄청난 에너지 대신. 이는 우주 비행에서 가장 훌륭한 연료 절감 방법 중 하나다."
- },
- {
-  "rel": "science/mission-phases/aerobraking.json",
-  "at": "narrative_101.2",
-  "en": "The catch is that it is slow and delicate. Dip too shallow and nothing happens; dip too deep and the heating or the aerodynamic forces can damage or tumble the spacecraft. Controllers nudge the low point up and down pass by pass, riding a narrow corridor between 'too little' and 'too much' for months on end.",
-  "cur": "문제는 느리고 섬세하다는 것이다. 너무 얕게 침투하면 아무 일도 일어나지 않고, 너무 깊게 침투하면 가열이나 공기역학적 힘이 우주선을 손상시키거나 회전시킬 수 있다. 통제사들은 저점을 매 회전마다 위아래로 조정하여 수개월 동안 '너무 적음'과 '너무 많음' 사이의 좁은 통로를 유지한다."
- },
- {
-  "rel": "science/mission-phases/aerobraking.json",
-  "at": "body_paragraphs.0",
-  "en": "Aerobraking trades propellant for time and patience. Mars Global Surveyor, Mars Odyssey, Mars Reconnaissance Orbiter, MAVEN, and Venus's Magellan all used it to reach their final orbits, saving hundreds of kilograms of fuel that would otherwise have had to be launched from Earth — often more than the spacecraft's own dry mass.",
-  "cur": "대기제동은 추진제를 시간과 인내로 거래한다. 화성 글로벌 서베이어(Mars Global Surveyor), 화성 오디세이(Mars Odyssey), 화성 정찰 궤도선(Mars Reconnaissance Orbiter), MAVEN, 그리고 금성의 마젤란(Magellan)은 모두 이를 이용해 최종 궤도에 도달했으며, 지구에서 발사되어야 했을 수백 킬로그램의 연료를 절감했다 — 종종 우주선 자체 건조 질량보다 더 많은 양이다."
- },
- {
-  "rel": "science/mission-phases/aerobraking.json",
-  "at": "body_paragraphs.1",
-  "en": "The physics is the same drag that lands a probe, applied in tiny, repeated doses at orbital speed instead of one fierce entry. Because the spacecraft only grazes the outermost, thinnest air, each pass sheds just a few metres per second — but orbits repeat, and the effect compounds. Solar panels, turned edge-on or used as brake surfaces, often take the load.",
-  "cur": "물리는 탐사선을 착륙시키는 같은 항력인데, 한 번의 격렬한 진입 대신 궤도 속도에서 작고 반복되는 용량으로 적용된다. 우주선이 가장 바깥쪽, 가장 얇은 공기만 스쳐가므로, 각 회전마다 단 몇 초 속도만 감소한다 — 그러나 궤도는 반복되고 효과는 누적된다. 태양전지판은 모서리 방향으로 향하거나 제동 표면으로 사용되어 하중을 견딘다."
- },
- {
-  "rel": "science/mission-phases/aerobraking.json",
-  "at": "body_paragraphs.2",
-  "en": "Aerocapture is the bolder cousin: braking enough on a SINGLE deep pass to go straight from arrival into a captured orbit, no capture burn at all. It would save even more fuel, but it demands a heat shield and split-second guidance, and no mission has yet flown it — aerobraking's patient, low-risk version remains the workhorse.",
-  "cur": "Aerocapture는 더 대담한 사촌이다: 포획 감속 없이 도착에서 곧바로 포획 궤도로 이동하기에 충분한 양의 제동을 단 하나의 깊은 통과에서 수행한다. 훨씬 더 많은 연료를 절감하겠지만, 열차폐와 분초 단위의 유도를 요구하며, 아직 어떤 임무도 이를 수행하지 못했다 — 대기제동의 인내심 있고 저위험 버전이 주력으로 남아 있다."
- },
- {
-  "rel": "science/mission-phases/aerobraking.json",
-  "at": "diagram_caption",
-  "en": "Aerobraking: capture into a wide ellipse, then skim the upper atmosphere at periapsis pass after pass; each dip lowers apoapsis until the orbit is circular.",
-  "cur": "대기제동: 넓은 타원으로 포획한 후, 근지점 통과마다 반복적으로 상층 대기를 스쳐 지나가며, 각 침투가 원지점을 낮추어 궤도가 원형이 될 때까지."
- },
- {
-  "rel": "science/mission-phases/antenna-arrays.json",
-  "at": "title",
-  "en": "Arraying — many small ears instead of one giant one",
-  "cur": "배열화 — 하나의 거대한 안테나 대신 많은 작은 수신기"
- },
- {
-  "rel": "science/mission-phases/antenna-arrays.json",
-  "at": "intro_sentence",
-  "en": "Combining the signals from multiple antennas in real time creates a single virtual aperture larger than any individual dish, capturing fainter spacecraft signals without building ever-bigger structures.",
-  "cur": "여러 안테나의 신호를 실시간으로 결합하면 단일 접시보다 큰 가상 개구부를 만들어 더 큰 구조를 지을 필요 없이 미세한 우주선 신호를 포착할 수 있습니다."
- },
- {
-  "rel": "science/mission-phases/antenna-arrays.json",
-  "at": "body_paragraphs.0",
-  "en": "A single large antenna is the obvious way to hear a faint spacecraft signal from billions of kilometres away. The DSN's 70 m dishes — at Goldstone, Madrid, and Canberra — are near the practical limit for fully steerable, ground-based reflectors. Building something appreciably larger would require a fixed structure (limiting sky coverage) or engineering that doesn't yet exist. The alternative is to combine many smaller antennas: arraying.",
-  "cur": "수십억 킬로미터 떨어진 미세한 우주선 신호를 수신하는 가장 직관적인 방법은 하나의 대형 안테나를 사용하는 것입니다. DSN의 70 m 접시들 — Goldstone, Madrid, Canberra — 은 완전히 조향 가능한 지상 반사체의 실질적 한계에 근접해 있습니다. 이보다 훨씬 더 큰 구조를 건설하려면 고정된 구조(하늘 관측 범위 제한)나 아직 존재하지 않는 기술이 필요합니다. 대안은 많은 작은 안테나를 결합하는 것입니다: 배열화."
- },
- {
-  "rel": "science/mission-phases/antenna-arrays.json",
-  "at": "body_paragraphs.1",
-  "en": "When multiple antennas observe the same spacecraft simultaneously and their signals are combined with the correct phase and time offsets, the result is coherent addition. The noise from each antenna adds incoherently (it scales with the square root of the number of antennas) while the signal adds coherently (it scales with the number of antennas). The effective collecting area of an array of N identical dishes is N times that of a single dish. This is not an approximation — it is the same principle behind radio telescope arrays like the Very Large Array and ALMA.",
-  "cur": "여러 안테나가 동시에 같은 우주선을 관측하고 그들의 신호가 올바른 위상과 시간 오프셋으로 결합되면, 그 결과는 간섭 덧셈입니다. 각 안테나의 노이즈는 비간섭적으로 더해지고(안테나 개수의 제곱근에 비례) 신호는 간섭적으로 더해집니다(안테나 개수에 비례). N개의 동일한 접시로 이루어진 배열의 유효 수집 면적은 단일 접시의 N배입니다. 이는 근사값이 아니며 — Very Large Array와 ALMA 같은 전파 망원경 배열의 기초가 되는 같은 원리입니다."
- },
- {
-  "rel": "science/mission-phases/antenna-arrays.json",
-  "at": "body_paragraphs.2",
-  "en": "The most famous demonstration in deep-space operations came during Voyager 2's Neptune flyby in August 1989. At 4.4 billion kilometres, Voyager's signal was so faint that capturing it at full science data rate required arraying dishes across four continents at once — the Goldstone 70 m and the Very Large Array in the United States, the 64 m Canberra DSN antenna and the Parkes 64 m radio telescope in Australia, and Japan’s 64 m Usuda dish. NASA's arraying agreement with non-NASA facilities like Parkes (operated by CSIRO) established that the deep-space communication network can be augmented internationally at critical mission moments.",
-  "cur": "심우주 운영에서 가장 유명한 사례는 1989년 8월 Voyager 2의 해왕성 근접 통과입니다. 44억 킬로미터 거리에서 Voyager의 신호는 너무 미세했기 때문에 전체 과학 데이터 전송률로 포착하려면 한 번에 네 대륙에 걸친 안테나 배열이 필요했습니다 — 미국의 Goldstone 70 m과 Very Large Array, 호주의 Canberra DSN 64 m 안테나와 Parkes 64 m 전파 망원경, 그리고 일본의 Usuda 64 m 접시입니다. NASA와 Parkes(CSIRO 운영) 같은 비-NASA 시설 간의 배열화 협약은 심우주 통신 네트워크가 중요한 임무 시점에 국제적으로 증강될 수 있음을 확립했습니다."
- },
- {
-  "rel": "science/mission-phases/antenna-arrays.json",
-  "at": "body_paragraphs.3",
-  "en": "Arraying has real costs and limits. Downlink arraying (receiving from a spacecraft) is tractable because each antenna independently captures the signal and the combination happens in post-processing or in real time with precise timing. Uplink arraying (transmitting to a spacecraft) is harder: the signals from multiple dishes must combine coherently at the spacecraft's location, far away, requiring extremely precise phase synchronisation across sites. NASA's DSN Aperture Enhancement Program is investing in more distributed arrays specifically because it is cheaper to add 34 m dishes than to build new 70 m ones — and an array of smaller dishes is also more fault-tolerant: losing one antenna degrades performance gracefully rather than losing a unique irreplaceable asset.",
-  "cur": "배열화는 실제 비용과 한계가 있습니다. 다운링크 배열화(우주선으로부터 수신)는 각 안테나가 독립적으로 신호를 포착하고 결합이 사후 처리 또는 정확한 시간 조정을 통한 실시간 처리로 진행되므로 수행 가능합니다. 업링크 배열화(우주선으로 전송)는 더 어렵습니다: 여러 접시의 신호가 우주선 위치에서 멀리 떨어져 있는 장소에서 간섭적으로 결합되어야 하며, 사이트 전체에 걸쳐 극도로 정확한 위상 동기화가 필요합니다. NASA의 DSN Aperture Enhancement Program은 새로운 70 m 접시를 건설하는 것보다 34 m 접시를 추가하는 것이 더 싸기 때문에 더 분산된 배열에 투자하고 있으며 — 작은 접시의 배열은 또한 더 내결함성입니다: 하나의 안테나를 잃어도 성능이 우아하게 저하되며 고유하고 대체 불가능한 자산을 잃지 않습니다."
- },
- {
-  "rel": "science/mission-phases/antenna-arrays.json",
-  "at": "diagram_caption",
-  "en": "N dishes observe same spacecraft → signals phase-aligned and coherently summed → effective area = N × single-dish area → weaker signal threshold reachable, or same threshold with smaller individual dishes.",
-  "cur": "N개의 접시가 같은 우주선을 관측 → 신호 위상 정렬 및 간섭 덧셈 → 유효 면적 = N × 단일 접시 면적 → 더 약한 신호 임계값 도달 가능, 또는 더 작은 개별 접시로 같은 임계값 달성."
- },
- {
-  "rel": "science/mission-phases/ascent-guidance.json",
-  "at": "title",
-  "en": "Ascent guidance — the computer that flies a rocket to orbit",
-  "cur": "상승 유도 — 로켓을 궤도로 날려보내는 컴퓨터"
- },
- {
-  "rel": "science/mission-phases/ascent-guidance.json",
-  "at": "intro_sentence",
-  "en": "Getting to orbit is not a fixed script you can write in advance — it is a boundary-value problem solved anew every second, which is why spaceflight had to wait for the digital computer.",
-  "cur": "궤도 진입은 미리 작성할 수 있는 고정된 스크립트가 아니다. 매초마다 새로 풀어야 하는 경계값 문제이며, 이것이 우주비행이 디지털 컴퓨터를 기다려야 했던 이유다."
- },
- {
-  "rel": "science/mission-phases/ascent-guidance.json",
-  "at": "narrative_101.0",
-  "en": "A rocket climbing to orbit has to satisfy an exact end condition: at engine cutoff it must be at the right altitude, moving horizontally, at precisely orbital speed. Miss the speed by a little and the orbit is wrong or the vehicle falls back. But the rocket is getting lighter every second as it burns propellant, the air thins, gravity pulls, winds shove — so the \"right\" way to point the engine is different at every instant and depends on everything that has happened so far. No fixed pitch schedule can hit the target exactly.",
-  "cur": "궤도로 상승하는 로켓은 정확한 최종 조건을 만족해야 한다: 엔진 차단 시점에 올바른 고도에 있고, 수평으로 움직이며, 정확히 궤도 속도로 움직여야 한다. 속도를 조금만 놓쳐도 궤도가 잘못되거나 우주선이 떨어진다. 하지만 로켓은 연료를 태우면서 매초마다 가벼워지고, 공기는 얇아지며, 중력은 당기고, 바람은 밀어낸다. 따라서 엔진을 가리켜야 할 \"올바른\" 방향은 매 순간마다 다르며 지금까지 일어난 모든 것에 달려 있다. 고정된 피치 프로그램은 목표를 정확히 맞힐 수 없다."
- },
- {
-  "rel": "science/mission-phases/ascent-guidance.json",
-  "at": "narrative_101.1",
-  "en": "Early in flight, low in the atmosphere, the rocket does follow a pre-planned open-loop program: a gentle pitch-over just after liftoff starts a gravity turn, and the vehicle holds a smooth pre-computed attitude to keep aerodynamic loads low through the dense air. But once it is above the atmosphere the guidance switches to closed loop — it measures where it actually is and how fast, computes the steering that will thread the exact cutoff condition, and updates that answer many times a second all the way to orbit.",
-  "cur": "비행 초기, 대기권 하단에서 로켓은 사전 계획된 개루프 프로그램을 따른다: 발사 직후 부드러운 피치 오버는 중력 선회를 시작하고, 우주선은 미리 계산된 자세를 유지하여 밀집한 공기를 통해 공기역학적 하중을 낮게 유지한다. 하지만 대기권을 벗어나면 유도는 폐루프로 전환된다. 실제 위치와 속도를 측정하고, 정확한 차단 조건을 통과시킬 조종을 계산한 후, 궤도에 도달할 때까지 매초 여러 번 그 답을 업데이트한다."
- },
- {
-  "rel": "science/mission-phases/ascent-guidance.json",
-  "at": "narrative_101.2",
-  "en": "That closed-loop scheme has a name — Powered Explicit Guidance (PEG) — and a predecessor on the Saturn V, the Iterative Guidance Mode (IGM) — and it is the reason a low-thrust upper stage can loft its trajectory below the horizon and still arrive at orbital velocity on time. It is, quite literally, why spaceflight needed onboard computers: a human cannot re-solve the problem every second, but the flight computer does.",
-  "cur": "그 폐루프 방식의 이름은 Powered Explicit Guidance (PEG)이고, 토성V의 선례는 Iterative Guidance Mode (IGM)이다. 이것이 저추력 상단 단계가 궤도 속도에 정시에 도달하면서도 궤적을 지평선 아래로 쏠릴 수 있는 이유다. 이것은 정말로 우주비행이 탑재 컴퓨터를 필요로 한 이유다: 인간은 매초마다 이 문제를 다시 풀 수 없지만, 비행 컴퓨터는 할 수 있다."
- },
- {
-  "rel": "science/mission-phases/ascent-guidance.json",
-  "at": "body_paragraphs.0",
-  "en": "Ascent guidance is a two-phase affair. In the atmospheric first phase the vehicle flies open-loop: a small pitch-over kick just after tower clear initiates a gravity turn, and thereafter it holds a pre-computed pitch program that keeps the angle of attack near zero so aerodynamic and structural loads stay bounded through max-Q. There is little freedom here — the air dictates the path.",
-  "cur": "상승 유도는 2단계로 이루어진다. 대기권 첫 단계에서 우주선은 개루프로 비행한다: 타워 이탈 직후 작은 피치 오버 킥이 중력 선회를 시작하고, 그 이후로는 미리 계산된 피치 프로그램을 유지하여 받음각을 거의 0에 가깝게 유지함으로써 최대 동압 구간을 통해 공기역학적 하중과 구조적 하중을 제한한다. 여기서는 자유도가 거의 없다. 공기가 경로를 결정한다."
- },
- {
-  "rel": "science/mission-phases/ascent-guidance.json",
-  "at": "body_paragraphs.1",
-  "en": "Above the atmosphere the guidance goes closed-loop and explicit. Powered Explicit Guidance treats the remaining burn as a boundary-value problem: given the current state (position, velocity, mass, thrust) and the desired cutoff state (target altitude, flight-path angle, orbital speed), it computes the optimal steering — essentially a linear-tangent pitch law — and the time-to-go, then re-solves the whole thing every guidance cycle. As the burn proceeds the solution converges and the commands smooth out; the stage can even loft (pitch above the local horizontal) early to bank altitude, then pitch down to trade it for speed.",
-  "cur": "대기권 위에서 유도는 폐루프이고 명시적이다. Powered Explicit Guidance는 남은 연소를 경계값 문제로 취급한다: 현재 상태(위치, 속도, 질량, 추력)와 원하는 차단 상태(목표 고도, 비행경로각, 궤도 속도)가 주어졌을 때, 최적 조종(본질적으로 선형 접선 피치 법칙)과 남은 시간을 계산한 후, 유도 사이클마다 전체를 다시 푼다. 연소가 진행되면서 해가 수렴되고 명령이 부드러워진다. 단계는 초기에 상승(지표면 수평선 위로 피치)하여 고도를 얻은 후, 아래로 피치하여 고도를 속도로 교환할 수도 있다."
- },
- {
-  "rel": "science/mission-phases/ascent-guidance.json",
-  "at": "body_paragraphs.2",
-  "en": "This is the flight computer’s job, and it is unforgiving of a low thrust-to-weight upper stage, where the burn is long and the boundary condition is a moving target the whole way. The Saturn V flew IGM; the Space Shuttle and SLS fly PEG, and most modern upper stages use PEG-class guidance (SpaceX has not published Falcon 9’s exact algorithm). The Physics Lab’s \"flying computer\" lesson runs exactly this — an open-loop program handing over to closed-loop PEG lofting the arc to orbit.",
-  "cur": "이것은 비행 컴퓨터의 역할이며, 저추력중량비 상단 단계에는 용납할 수 없다. 그러한 단계에서는 연소가 길고 경계 조건은 내내 움직이는 목표다. 토성V는 IGM을 썼다. Space Shuttle과 SLS는 PEG를 쓰고, 대부분의 현대식 상단 단계는 PEG 계열 유도를 사용한다(SpaceX는 Falcon 9의 정확한 알고리즘을 공개하지 않았다). Physics Lab의 \"비행 컴퓨터\" 레슨은 정확히 이것이다: 개루프 프로그램이 폐루프 PEG로 넘겨져 궤도로의 호를 상승시킨다."
- },
- {
-  "rel": "science/mission-phases/ascent-guidance.json",
-  "at": "diagram_caption",
-  "en": "Ascent guidance: an open-loop pitch program through the atmosphere hands over to closed-loop PEG, which re-solves the steering to the exact orbital cutoff every second.",
-  "cur": "상승 유도: 대기권을 통한 개루프 피치 프로그램이 폐루프 PEG로 넘겨지며, PEG는 매초마다 정확한 궤도 차단까지의 조종을 다시 푼다."
- },
- {
-  "rel": "science/mission-phases/ballistic-coefficient.json",
-  "at": "intro_sentence",
-  "en": "The single number — mass divided by drag area — that decides how fast a spacecraft falls through an atmosphere, and whether it can stop in time.",
-  "cur": "질량을 항력 면적으로 나눈 하나의 숫자로, 우주선이 대기를 얼마나 빠르게 낙하하는지, 그리고 시간 내에 멈출 수 있는지를 결정합니다."
- },
- {
-  "rel": "science/mission-phases/ballistic-coefficient.json",
-  "at": "narrative_101.0",
-  "en": "Drop a feather and a hammer in air and the feather drifts down while the hammer plummets. The difference is the ballistic coefficient: how much mass each carries behind how much drag area. A low ballistic coefficient (lots of drag, little mass) falls slowly; a high one (compact and heavy) falls fast. It is the one number that most shapes how a spacecraft comes down.",
-  "cur": "공기 중에 깃털과 망치를 떨어뜨리면 깃털은 천천히 내려가고 망치는 급락합니다. 그 차이가 바로 탄도 계수입니다: 각각이 지니고 있는 질량과 항력 면적의 비율입니다. 낮은 탄도 계수(큰 항력, 작은 질량)는 천천히 떨어지고, 높은 탄도 계수(조밀하고 무거움)는 빠르게 떨어집니다. 이것이 우주선이 어떻게 낙하하는지를 결정하는 가장 중요한 하나의 숫자입니다."
- },
- {
-  "rel": "science/mission-phases/ballistic-coefficient.json",
-  "at": "narrative_101.1",
-  "en": "Landing engineers spend enormous effort keeping the ballistic coefficient low. A blunt heat shield, a huge parachute, an inflatable decelerator — all are ways to add drag area without adding much mass, so the vehicle sheds speed higher up where there is more air-column left to work with. The bigger and heavier the payload, the harder this fight becomes.",
-  "cur": "착륙 엔지니어들은 탄도 계수를 낮게 유지하기 위해 엄청난 노력을 합니다. 둔한 열차폐막, 거대한 낙하산, 팽창식 감속기 — 모두 질량을 많이 더하지 않으면서 항력 면적을 증가시키는 방법입니다. 이렇게 하면 항공 기둥이 더 많이 남아 있는 상층부에서 속도를 잃습니다. 탑재체가 크고 무거울수록 이 싸움은 더 어려워집니다."
- },
- {
-  "rel": "science/mission-phases/ballistic-coefficient.json",
-  "at": "narrative_101.2",
-  "en": "This is the quiet reason Mars is so hard. Its air is thin, so even a large parachute on a modest lander only bleeds the speed so far — the ballistic coefficient is too high to stop on drag alone. Every Mars lander needs a second act (retro-rockets, airbags, a sky-crane), while a light probe at Venus, in dense air, can drift down on drag alone.",
-  "cur": "이것이 화성 착륙이 어려운 조용한 이유입니다. 화성의 대기는 희박하므로, 작은 착륙선 위의 큰 낙하산조차 속도를 충분히 줄이지 못합니다 — 탄도 계수가 너무 높아서 항력만으로는 멈출 수 없습니다. 모든 화성 착륙선은 두 번째 대안(역추력 로켓, 에어백, 스카이크레인)이 필요하지만, 밀도 높은 공기의 금성에서는 가벼운 탐사선이 항력만으로 천천히 내려올 수 있습니다."
- },
- {
-  "rel": "science/mission-phases/ballistic-coefficient.json",
-  "at": "body_paragraphs.0",
-  "en": "Formally the ballistic coefficient is mass ÷ (drag coefficient × reference area). Terminal velocity scales with its square root, so halving the ballistic coefficient slows the fall by about 30%. Peak deceleration and peak heating both rise with it too — a heavier, more compact entry hits the atmosphere harder and hotter, which is why big vehicles face the worst of both.",
-  "cur": "형식적으로 탄도 계수는 질량 ÷ (항력 계수 × 참조 면적)입니다. 종말 속도는 그 제곱근에 비례하므로, 탄도 계수를 절반으로 줄이면 낙하 속도는 약 30% 느려집니다. 최대 감속도와 최대 가열도 모두 탄도 계수에 따라 증가합니다 — 더 무겁고 조밀한 진입체는 대기에 더 강하고 뜨겁게 충돌하므로, 큰 우주선은 양쪽 다 가장 심한 조건에 맞닥뜨립니다."
- },
- {
-  "rel": "science/mission-phases/ballistic-coefficient.json",
-  "at": "body_paragraphs.1",
-  "en": "It also sets WHERE in the descent the action happens. A low-ballistic-coefficient vehicle decelerates high up, in thin air, giving more time and altitude for the terminal phases. A high one carries its speed deep into the atmosphere before drag catches up, compressing the whole sequence into the last few kilometres — exactly the squeeze that makes a heavy Mars landing a race against the ground.",
-  "cur": "또한 강하 중 어디에서 주요 현상이 발생하는지를 결정합니다. 낮은 탄도 계수의 우주선은 상층부의 희박한 공기에서 감속되어, 최종 단계를 위한 더 많은 시간과 고도를 제공합니다. 높은 탄도 계수의 우주선은 항력이 따라잡을 때까지 속도를 깊이 있게 유지하므로, 전체 과정이 마지막 몇 킬로미터로 압축됩니다 — 이것이 화성 착륙이 지면과의 경쟁이 되게 하는 정확한 압박입니다."
- },
- {
-  "rel": "science/mission-phases/ballistic-coefficient.json",
-  "at": "body_paragraphs.2",
-  "en": "On `/fly`, the contrast is visible across bodies in `?descent=1`. A light Mars lander under a big parachute (low ballistic coefficient) settles gently; a 100-tonne Starship (very high) must brake propulsively; a Venus probe in thick air drifts down on a small drag plate. Same physics, three ballistic coefficients, three very different descents.",
-  "cur": "상공에서, 이 대비는 `?descent=1`을 통해 다양한 천체에 걸쳐 보입니다. 큰 낙하산 아래의 가벼운 화성 착륙선(낮은 탄도 계수)은 부드럽게 착륙합니다; 100톤 Starship(매우 높은 탄도 계수)은 추진력으로 제동해야 합니다; 두꺼운 공기의 금성 탐사선은 작은 항력판으로 천천히 내려옵니다. 같은 물리학, 세 가지 탄도 계수, 세 가지 매우 다른 강하입니다."
- },
- {
-  "rel": "science/mission-phases/ballistic-coefficient.json",
-  "at": "diagram_caption",
-  "en": "Ballistic coefficient = mass ÷ drag area. Low (big chute, light payload) → slow, high-altitude deceleration; high (heavy, compact) → fast, deep, hot entry.",
-  "cur": "탄도 계수 = 질량 ÷ 항력 면적. 낮음(큰 낙하산, 가벼운 탑재체) → 느린 상층부 감속; 높음(무겁고 조밀) → 빠르고 깊고 뜨거운 진입."
- },
- {
-  "rel": "science/mission-phases/comms-blackout.json",
-  "at": "intro_sentence",
-  "en": "For a few minutes at the hottest part of re-entry, the air itself turns to plasma and swallows every radio signal — the capsule goes silent, and everyone on the ground can only wait.",
-  "cur": "대기권 재진입의 가장 뜨거운 구간에서 수 분 동안 공기 자체가 플라즈마로 변해 모든 무선 신호를 삼켜 버린다 — 캡슐은 침묵하고 지상의 모든 사람은 그저 기다릴 뿐이다."
- },
- {
-  "rel": "science/mission-phases/comms-blackout.json",
-  "at": "narrative_101.0",
-  "en": "When a capsule slams into the atmosphere at orbital speed, it doesn't push the air aside — it can't, there isn't time. The air piles up in front of the heat shield, gets crushed and heated to thousands of degrees, and glows. That glowing sheath is the fireball you see streaking across the sky. But it isn't just hot: it's ionised. The heat rips electrons loose from the air molecules, and a cloud of free electrons is exactly what a radio wave cannot pass through.",
-  "cur": "캡슐이 궤도 속도로 대기권에 충돌할 때 공기를 밀어낼 수가 없다 — 시간이 없다. 공기는 열 차폐막 앞에 쌓이고 압축되어 수천 도로 가열되며 빛을 낸다. 그 빛나는 외피가 하늘을 가로질러 보이는 화염구다. 그런데 그것은 단순히 뜨거운 것이 아니라 이온화되어 있다. 열이 공기 분자에서 전자를 떼어 내고, 자유 전자 구름이 생성된다 — 그리고 그것이 바로 전파가 통과할 수 없는 것이다."
- },
- {
-  "rel": "science/mission-phases/comms-blackout.json",
-  "at": "narrative_101.1",
-  "en": "So the capsule wraps itself in a mirror it can't see out of. Radio signals coming up from the ground bounce off the plasma; signals going down from the capsule can't get through it either. For the few minutes the heating is fiercest, the spacecraft is cut off — no voice, no telemetry, nothing. Mission Control watches a clock and a predicted track, and waits for the capsule to slow enough that the plasma fades and the crew's voice comes back. Glenn, Apollo, every Soyuz crew rode through that silence.",
-  "cur": "캡슐은 이렇게 자신이 내다볼 수 없는 거울에 싸인다. 지상에서 올라오는 전파는 플라즈마에 반사되고, 캡슐에서 내려가는 신호도 통과하지 못한다. 가열이 가장 심한 수 분 동안 우주선은 완전히 단절된다 — 음성도, 원격 측정도, 아무것도. Mission Control은 시계와 예측 궤도를 바라보며 캡슐이 충분히 감속해 플라즈마가 사라지고 승무원의 목소리가 돌아오기를 기다린다. 글렌, Apollo, 모든 Soyuz 승무원이 그 침묵을 견뎌 냈다."
- },
- {
-  "rel": "science/mission-phases/comms-blackout.json",
-  "at": "narrative_101.2",
-  "en": "The blackout ends on its own: as the capsule decelerates and drops into thicker, cooler air lower down, the shock layer stops ionising, the electron cloud thins, and the radio link snaps back. The Space Shuttle cheated the problem — it talked upward through the thinner plasma on its top side to relay satellites in orbit, keeping a link when a downward signal to the ground would have been blocked.",
-  "cur": "통신 두절은 저절로 끝난다 — 캡슐이 감속하고 더 낮은 고도의 짙고 차가운 공기로 들어가면 충격층의 이온화가 멈추고 전자 구름이 얇아지며 무선 링크가 되살아난다. Space Shuttle은 이 문제를 영리하게 피해 갔다 — 지상국을 향해 아래로 신호를 보내는 대신, 위쪽의 얇은 플라즈마를 통해 궤도 중계 위성에 상향 전송해 신호가 차단될 상황에서도 링크를 유지했다."
- },
- {
-  "rel": "science/mission-phases/comms-blackout.json",
-  "at": "body_paragraphs.0",
-  "en": "The blackout is caused by the plasma sheath: the bow shock ahead of a blunt entry body compresses and heats the gas enough to ionise it, producing a layer of free electrons around the vehicle. A radio wave can only propagate through plasma above the local plasma frequency, which scales with electron density; during peak heating the electron density is high enough that this cutoff rises above the spacecraft's communication frequencies, and the signal is reflected and attenuated rather than transmitted. The link is lost in both directions.",
-  "cur": "통신 두절의 원인은 플라즈마 초층이다 — 무딘 진입체 앞의 활 충격파가 가스를 압축하고 가열하여 우주선 주변에 자유 전자 층을 형성할 만큼 이온화시킨다. 전파는 국소 플라즈마 주파수 이상에서만 플라즈마를 통해 전파될 수 있으며, 그 주파수는 전자 밀도에 따라 달라진다. 최대 가열 시에는 전자 밀도가 충분히 높아 이 차단 주파수가 우주선의 통신 주파수를 넘어서고 신호는 투과되지 않고 반사·감쇠된다. 링크는 양방향으로 차단된다."
- },
- {
-  "rel": "science/mission-phases/comms-blackout.json",
-  "at": "body_paragraphs.1",
-  "en": "For Earth-return capsules the blackout typically spans the altitude band from roughly 90 km down to about 40 km, lasting on the order of three to four minutes and coinciding with peak heating and near-peak deceleration. Its duration and severity depend on entry velocity, vehicle shape and the radio frequency in use — higher frequencies penetrate a given plasma density better, and the wake behind the vehicle is less ionised than the stagnation region ahead of the shield. Faster lunar-return entries produced longer, more complete blackouts than shallow LEO returns.",
-  "cur": "지구 귀환 캡슐의 경우 통신 두절은 대략 고도 90 km에서 약 40 km까지의 고도 구간에 걸쳐 있으며, 3~4분 지속되고 최대 가열 및 최대 감속 근처와 겹친다. 지속 시간과 심각도는 진입 속도, 우주선 형상, 사용하는 무선 주파수에 따라 달라진다 — 주파수가 높을수록 같은 플라즈마 밀도를 더 잘 투과하며, 방패 전방의 정체 영역보다 우주선 후방의 항적이 전리화가 덜 심하다. 빠른 월귀환 진입은 얕은 LEO 귀환보다 더 길고 완전한 통신 두절을 만들어 냈다."
- },
- {
-  "rel": "science/mission-phases/comms-blackout.json",
-  "at": "body_paragraphs.2",
-  "en": "The classic mitigation is geometry: the Space Shuttle relayed through TDRS satellites overhead, transmitting through the thinner plasma over its upper surface rather than down through the dense sheath to a ground station. On `/fly`, the re-entry HUD marks the blackout window explicitly — the plasma indicator lamp lights through the peak-heating phase, the one stretch of the descent where the telemetry you're watching would, in a real mission, have gone dark.",
-  "cur": "고전적인 대응책은 기하학적이다 — Space Shuttle은 TDRS 위성을 통해 위를 향해 중계하며, 고밀도 플라즈마 외피를 아래로 뚫는 대신 상면의 얇은 플라즈마를 통해 전송했다. `/fly`에서 대기권 재진입 HUD는 통신 두절 구간을 명시적으로 표시한다 — 플라즈마 표시등이 최대 가열 구간 내내 켜진다. 실제 임무였다면 당신이 보고 있는 원격 측정이 차단되었을 유일한 하강 구간이다."
- },
- {
-  "rel": "science/mission-phases/comms-blackout.json",
-  "at": "diagram_caption",
-  "en": "Communications blackout: the ionised plasma sheath around the heat shield reflects radio signals in both directions during peak heating, cutting the link for several minutes until the capsule slows and the plasma thins.",
-  "cur": "통신 두절: 열 차폐막 주변의 이온화된 플라즈마 외피가 최대 가열 중 양방향 전파를 반사해 캡슐이 감속하고 플라즈마가 얇아질 때까지 수 분간 링크를 차단한다."
- },
- {
-  "rel": "science/mission-phases/dead-reckoning.json",
-  "at": "intro_sentence",
-  "en": "Integrate the accelerometers to get velocity, integrate again to get position — works for hours, drifts noticeably over days, and is exactly why every cruise needs periodic ground-based fixes.",
-  "cur": "단축키를 얻기 위해 accelerometers를 통합하고, 위치를 얻기 위하여 다시 통합하십시오 — 일 동안 일, 몹시 주의깊게 일하고, 모든 cruise 필요 주기적인 지상 근거한 고침을 정확하게 이유입니다."
- },
- {
-  "rel": "science/mission-phases/dead-reckoning.json",
-  "at": "body_paragraphs.0",
-  "en": "Between burns and outside the range of useful celestial landmarks, a spacecraft tracks its own state by integrating the output of its inertial measurement unit (IMU): three accelerometers measuring linear acceleration, three gyroscopes measuring rotation rate. Integrate acceleration once → velocity. Integrate again → position. Combined with the orientation from [star trackers](mission-phases/star-trackers), the spacecraft can propagate its full state vector forward in time without any external help.",
-  "cur": "연소 구간 사이와 유용한 천체 기준점의 범위 밖에서 우주선은 관성 측정 장치(IMU)의 출력을 적분하여 자신의 상태를 추적합니다. IMU는 선형 가속도를 측정하는 3개의 가속도계와 회전 속도를 측정하는 3개의 자이로스코프로 구성됩니다. 가속도를 한 번 적분하면 속도를 얻고, 다시 적분하면 위치를 얻습니다. [별 추적기](mission-phases/star-trackers)로부터 얻은 방향 정보와 결합하면, 우주선은 외부 지원 없이 전체 상태 벡터를 시간에 따라 전파할 수 있습니다."
- },
- {
-  "rel": "science/mission-phases/dead-reckoning.json",
-  "at": "body_paragraphs.1",
-  "en": "The fundamental problem is **drift**. Every accelerometer has a small bias (~10⁻⁵ m/s² on a navigation-grade IMU); over 1 day that bias integrated twice contributes ~3.7 km of position error. Over a 6-month cruise to Mars, dead-reckoning error builds up to thousands of km even with the best space-rated IMUs (which are far better than the consumer-grade ones in your phone). This is why every interplanetary mission carries [trajectory correction maneuvers](mission-phases/tcm) on its budget: the cruise dispersion has to be measured against ground tracking and the spacecraft has to physically adjust its course.",
-  "cur": "근본적인 문제는 **표류**입니다. 모든 가속도계는 작은 오차를 가지고 있으며(항법급 IMU에서 ~10⁻⁵ m/s²), 이 오차를 1일에 걸쳐 두 번 적분하면 위치 오차로 ~3.7 km이 누적됩니다. 화성으로의 6개월 항행 동안 추측 항법 오차는 최고급 우주용 IMU(휴대폰의 소비자용 제품보다 훨씬 우수함)를 사용해도 수천 km까지 쌓입니다. 이것이 모든 행성 간 임무가 예산에 [궤도 보정 기동](mission-phases/tcm)을 포함하는 이유입니다. 항행 분산을 지상 추적으로 측정해야 하고 우주선이 물리적으로 진로를 조정해야 하기 때문입니다."
- },
- {
-  "rel": "science/mission-phases/dead-reckoning.json",
-  "at": "body_paragraphs.2",
-  "en": "Modern best practice combines dead-reckoning with periodic Deep Space Network ranging (see [DSN](mission-phases/dsn)): the ground measures position to ~1 km accuracy via round-trip light time and Doppler, uplinks a corrected state, and the spacecraft restarts its propagation from a known-good fix. The combined system is far more accurate than either component alone. Star trackers tell the spacecraft which way it's pointing; the IMU tells it what's happening between fixes; the DSN tells it where it actually is.",
-  "cur": "현대의 모범 사례는 주기적 딥 스페이스 네트워크([DSN](mission-phases/dsn) 참조)와 함께 치명적인 딥 스페이스 네트워크(Deep Space Network)를 결합합니다. 지상 측정 위치는 라운드 트립 라이트 타임과 도플러(Doppler)을 통해 1km의 정확도를 측정하며, 정확한 상태와 우주선은 알려진 좋은 수정에서 전파를 시작합니다. 결합된 체계는 혼자 성분 보다는 훨씬 정확합니다. 스타 트래커는 우주선을 말합니다. 즉, IMU는 수정 사이에 무슨 일이 일어나는지 말해줍니다. DSN은 실제로 어디에 있는지 알려줍니다."
- },
- {
-  "rel": "science/mission-phases/dead-reckoning.json",
-  "at": "body_paragraphs.3",
-  "en": "Dead-reckoning matters most when the DSN isn't available — during a Mars-EDL communications blackout, during the ~22 minute one-way light delay to Jupiter and beyond, or during an attitude-control crisis. Every spacecraft autonomy system is essentially a state-vector propagator running on dead-reckoning while ground operations work on the recovery.",
-  "cur": "DSN이 사용할 수 없을 때 가장 Dead-reckoning 문제 — 화성-EDL 커뮤니케이션 정전 도중, ~22 분 도중 목성과 저쪽에 가벼운 지연, 또는 태도 통제 위기 도중. 모든 우주선 자율성 시스템은 복구에 대한 지상 작업 작업 동안 죽은 reckoning에서 실행되는 최첨단 추진기입니다."
- },
- {
-  "rel": "science/mission-phases/dead-reckoning.json",
-  "at": "diagram_caption",
-  "en": "Accelerometer + gyro → integrate → state vector → drifts over days without external fix → why TCMs exist. DSN ranging + Doppler resets the drift.",
-  "cur": "Accelerometer + gyro → 통합 → 상태 벡터 → 외부 수정없이 일 이상 무후 → 왜 TCMs 존재. DSN ranging + 도플러 리셋 드리프트."
- },
- {
-  "rel": "science/mission-phases/deorbit-corridor.json",
-  "at": "title",
-  "en": "Deorbit & the Re-entry Corridor",
-  "cur": "이탈 궤도 기동과 대기권 재진입 회랑"
- },
- {
-  "rel": "science/mission-phases/deorbit-corridor.json",
-  "at": "intro_sentence",
-  "en": "A capsule doesn't fall out of orbit — it's nudged into a corridor barely a degree wide, where too steep burns the crew up and too shallow skips them back into space.",
-  "cur": "캡슐은 궤도에서 그냥 떨어지지 않는다 — 겨우 1도 남짓의 폭을 가진 회랑으로 정밀하게 유도되며, 너무 얕으면 우주로 튕겨 나가고 너무 가파르면 승무원이 불타 버린다."
- },
- {
-  "rel": "science/mission-phases/deorbit-corridor.json",
-  "at": "narrative_101.0",
-  "en": "Being in orbit means going sideways fast enough that you keep missing the ground. To come home you don't point down and dive — you slow down. A short retrograde burn, firing the engine against the direction of travel, shaves off only about a hundred metres per second. That's all it takes: the low point of the orbit now dips into the top of the atmosphere, and from there the air does the rest of the braking.",
-  "cur": "궤도에 있다는 것은 항상 지면을 비껴 나갈 만큼 빠른 수평 속도로 이동하고 있다는 뜻이다. 귀환하려면 아래를 향해 급강하하는 게 아니라 감속해야 한다. 진행 방향 반대로 엔진을 짧게 분사하는 역행 연소로 초속 약 백 미터 정도를 줄인다. 그것으로 충분하다 — 궤도의 최저점이 대기권 상부 안으로 내려가고, 이후는 대기가 나머지 제동을 맡는다."
- },
- {
-  "rel": "science/mission-phases/deorbit-corridor.json",
-  "at": "narrative_101.1",
-  "en": "The catch is the angle you arrive at. Come in too shallow and the capsule grazes the atmosphere like a stone skipped across a pond — it bounces back out into space, and the crew loops around for another lap they may not have air or power for. Come in too steep and the air brakes them so violently that the deceleration crushes the crew and the heat shield can't shed the heat fast enough. Between those two failures is a safe band — the re-entry corridor — and for a capsule returning from the Moon it was famously less than two degrees wide.",
-  "cur": "문제는 도달 각도다. 너무 얕으면 캡슐이 연못 위를 튀어가는 돌멩이처럼 대기를 스치고 우주로 튕겨 나간다. 승무원은 한 바퀴를 더 돌아야 하는데 산소와 전력이 남아 있지 않을 수 있다. 너무 가파르면 대기가 너무 격렬하게 제동을 걸어 감속이 승무원을 짓누르고 열 차폐막이 열을 충분히 빨리 방출하지 못한다. 이 두 가지 실패 사이의 안전한 띠가 재진입 회랑이며, 달에서 귀환하는 캡슐의 경우 폭이 2도 미만으로 알려져 있다."
- },
- {
-  "rel": "science/mission-phases/deorbit-corridor.json",
-  "at": "narrative_101.2",
-  "en": "So the whole return is a targeting problem solved before the burn ever happens. Get the deorbit burn's size and timing right and the capsule threads the corridor: steep enough not to skip, shallow enough to survive. Everything after entry interface — the fireball, the blackout, the parachutes — is just physics playing out along a path that was locked in the moment the engine shut down.",
-  "cur": "결국 귀환 전체는 연소가 시작되기 전에 풀어야 하는 표적 문제다. 이탈 궤도 연소의 크기와 타이밍을 올바르게 잡으면 캡슐은 회랑을 꿰뚫는다 — 튕겨 나가지 않을 만큼 가파르고, 살아남을 수 있을 만큼 얕게. 진입 인터페이스 이후의 모든 것 — 화염구, 통신 두절, 낙하산 — 은 엔진이 꺼진 순간 고정된 경로를 따라 펼쳐지는 물리법칙일 뿐이다."
- },
- {
-  "rel": "science/mission-phases/deorbit-corridor.json",
-  "at": "body_paragraphs.0",
-  "en": "Deorbit is a retrograde impulse that lowers perigee from orbital altitude to inside the sensible atmosphere — for a low-Earth-orbit capsule, dropping perigee to roughly 40–60 km with a burn of only ~100 m/s. The vehicle then coasts, unpowered, down to entry interface at about 122 km, where aerodynamic forces take over. The single number that decides its fate is the entry flight-path angle: how far below the local horizontal the velocity vector points as it crosses that interface.",
-  "cur": "이탈 궤도는 근지점을 궤도 고도에서 감지 가능한 대기권 안으로 낮추는 역방향 충격량이다 — 저지구궤도 캡슐의 경우 ~100 m/s의 연소만으로 근지점을 약 40〜60 km까지 낮춘다. 우주선은 이후 무동력 상태로 대기권에 진입하며 약 122 km의 진입 인터페이스까지 활강하고, 거기서 공기역학 힘이 주도권을 가져간다. 운명을 결정하는 단 하나의 숫자는 진입 비행 경로각 — 그 인터페이스를 통과할 때 속도 벡터가 국소 수평면에서 얼마나 아래를 향하는가이다."
- },
- {
-  "rel": "science/mission-phases/deorbit-corridor.json",
-  "at": "body_paragraphs.1",
-  "en": "The corridor is bounded on both sides. The overshoot (shallow) boundary is set by skip-out: too little atmosphere is intercepted, drag can't capture the vehicle, and it returns to space. The undershoot (steep) boundary is set by the survivable limits — peak deceleration and peak heating rate both climb sharply with entry angle. A ballistic capsule entering from LEO at a few degrees pulls around 8 g; a purely ballistic lunar-return entry would exceed 20 g, which is why Apollo flew a lifting entry, using the capsule's offset centre of mass to generate a little lift and stretch the corridor to a survivable ~6–7 g. Steeper is shorter and hotter; shallower is longer and gentler but risks the skip.",
-  "cur": "회랑의 양쪽에 경계가 있다. 오버슈트(얕은 쪽) 경계는 스킵아웃에 의해 결정된다 — 대기를 충분히 포착하지 못해 항력이 우주선을 붙잡지 못하고 우주로 되돌아간다. 언더슈트(가파른 쪽) 경계는 생존 가능한 한계에 의해 결정된다 — 최대 감속과 최대 가열율 모두 진입각과 함께 급격히 증가한다. LEO에서 수 도 각도로 진입하는 탄도 캡슐은 약 8 g를 받는다. 순수한 탄도 월귀환 진입은 20 g를 초과하므로 Apollo는 캡슐의 편심 질량 중심을 이용해 약간의 양력을 생성하는 리프팅 진입을 수행하여 회랑을 생존 가능한 ~6〜7 g로 넓혔다. 가파를수록 짧고 뜨겁고, 얕을수록 길고 부드럽지만 스킵 위험이 있다."
- },
- {
-  "rel": "science/mission-phases/deorbit-corridor.json",
-  "at": "body_paragraphs.2",
-  "en": "On `/fly`, the re-entry act plays this out: the entry flight-path angle is baked into each mission's profile, and the Science-Lens drag layer shows the deceleration spike growing and fading as the capsule crosses peak-heating and peak-g. Compare a shallow, lifting entry against a steep ballistic one and the corridor logic is visible in the g-load trace — the same trade every returning crew has ridden since Gagarin.",
-  "cur": "`/fly`에서 대기권 재진입 장면이 이를 실연한다 — 진입 비행 경로각은 각 임무의 프로파일에 내장되어 있으며, Science-Lens 항력 레이어는 캡슐이 최대 가열과 최대 g를 통과하는 동안 감속 스파이크가 커지고 사라지는 것을 보여준다. 얕은 리프팅 진입과 가파른 탄도 진입을 비교하면 회랑 논리가 g 하중 추적에서 가시화된다 — 가가린 이후 귀환한 모든 승무원이 경험한 것과 동일한 상충 관계다."
- },
- {
-  "rel": "science/mission-phases/deorbit-corridor.json",
-  "at": "diagram_caption",
-  "en": "The re-entry corridor: a retrograde deorbit burn drops perigee into the atmosphere; too shallow skips back to space, too steep exceeds the g-load and heating limits, and a narrow band between them is survivable.",
-  "cur": "재진입 회랑: 역행 이탈 궤도 연소가 근지점을 대기권 안으로 낮춘다. 너무 얕으면 우주로 튕겨 나가고, 너무 가파르면 g 하중과 가열 한계를 초과하며, 그 사이의 좁은 띠만 생존 가능하다."
- },
- {
-  "rel": "science/mission-phases/dsn.json",
-  "at": "title",
-  "en": "DSN — Deep Space Network",
-  "cur": "DSN — Deep Space Network"
- },
- {
-  "rel": "science/mission-phases/dsn.json",
-  "at": "intro_sentence",
-  "en": "Three giant antenna complexes spaced 120° around Earth — Goldstone, Madrid, Canberra — providing continuous coverage of any spacecraft beyond low Earth orbit.",
-  "cur": "3 개의 거대한 안테나 단지 지구 주변 120° 우주 비행 — Goldstone, Madrid, Canberra — 낮은 지구 궤도를 넘어 어떤 우주선의 지속적인 적용을 제공."
- },
- {
-  "rel": "science/mission-phases/dsn.json",
-  "at": "body_paragraphs.0",
-  "en": "The Deep Space Network is what makes interplanetary spaceflight legible. Without it the spacecraft would still fly (dead-reckoning + autonomous nav can hold a mission together for weeks) but nobody on Earth would know where it was, what it was doing, or what it was learning. The DSN is the umbilical for every NASA mission past the Moon and a contracted partner for ESA, JAXA, and ISRO deep-space missions.",
-  "cur": "Deep Space Network는 행성 간 우주비행을 이해 가능하게 만드는 것입니다. 없다면 우주선은 여전히 비행할 수 있지만(정계산과 자율 항법으로 수 주간 임무를 유지할 수 있음) 지구의 누구도 그것이 어디에 있는지, 무엇을 하고 있는지, 무엇을 배우고 있는지 알 수 없습니다. DSN은 달을 넘어선 모든 NASA 임무를 위한 탯줄이며 ESA, JAXA, ISRO의 심우주 임무를 위한 계약 파트너입니다."
- },
- {
-  "rel": "science/mission-phases/dsn.json",
-  "at": "body_paragraphs.1",
-  "en": "Three antenna complexes spaced 120° around the globe — Goldstone (California), Madrid (Spain), Canberra (Australia) — ensure that any spacecraft beyond GEO is in line-of-sight of at least one complex at all times as Earth rotates. Each complex has multiple antennas, the marquee being the 70 m \"big dishes\" (DSS-14, DSS-43, DSS-63). Smaller 34 m antennas handle most modern traffic.",
-  "cur": "세 가지 안테나는 전 세계 120°의 우주 비행 - Goldstone (캘리포니아), Madrid (스페인), Canberra (호주) - GEO를 넘어 우주선이 지구가 회전으로 적어도 하나의 단지의 선의 통찰력에 있다는 것을 보장합니다. 각 복합체에는 여러 개의 안테나가 있으며, 마케는 70m \"큰 접시\"(DSS-14, DSS-43, DSS-63)입니다. 소형 34m 안테나는 대부분의 현대 교통을 취급합니다."
- },
- {
-  "rel": "science/mission-phases/dsn.json",
-  "at": "body_paragraphs.2",
-  "en": "Three operations matter. **Telemetry**: receive science + housekeeping data from the spacecraft (the slow link, megabits to a few hundred Mbits from Mars; tens of bits/s from Voyager at 24 billion km). **Commands**: uplink instructions to the spacecraft (encoded for radiation hardness; signed for security). **Tracking**: measure the round-trip light time and the Doppler shift on the carrier signal — these together reveal the spacecraft's range and range-rate to a precision of ~1 m and ~0.1 mm/s. That's where the spacecraft is, with kilometres-class accuracy across hundreds of millions of km of empty space.",
-  "cur": "3개의 가동 문제. **Telemetry**: 우주선의 과학 + 세무 데이터를 수신 (저렴한 링크, 메가 비트는 화성에서 몇 백 메가 비트에; 24 억 km의 Voyager에서 비트 / s의 10). **Commands**: 우주선에 대한 업 링크 지침 (방사 경도에 인코딩; 보안에 서명). **Tracking**: 운반대 신호에 둥근 지구 가벼운 시간 및 도플러 교대를 측정합니다. 이들은 우주선의 범위와 범위 비율을 ~1 m 및 ~0.1 mm/s의 정밀도로 나타냅니다. 그것은 우주선이 어디, 빈 공간의 수백에 걸쳐 킬로미터 급 정확도와."
- },
- {
-  "rel": "science/mission-phases/dsn.json",
-  "at": "body_paragraphs.3",
-  "en": "Advanced techniques layer on top. **Delta-DOR** (Delta-Differential One-way Range) uses two antennas viewing the same spacecraft + a nearby quasar simultaneously; the differential timing gives angular position to nanoradians. Mars EDL navigation now routinely hits ~100 m landing-ellipse accuracy on what is essentially a multi-month coast at 30,000 km/h. The DSN is the reason.",
-  "cur": "상단에 고급 기술 층. **Delta-DOR** (Delta-Differential One-way Range)는 두 개의 안테나를 사용하여 동일한 우주선 + 주변의 쿼드를 동시에 볼 수 있습니다; 차동은 nanoradians에 각도 위치를 제공합니다. 화성 EDL 내비게이션은 이제 일상적으로 ~100m의 랜딩 엘리스 정확도로 30,000km/h의 멀티 개월 해안입니다. DSN은 이유입니다."
- },
- {
-  "rel": "science/mission-phases/dsn.json",
-  "at": "diagram_caption",
-  "en": "Goldstone + Madrid + Canberra at 120° intervals → continuous coverage as Earth rotates → ranging + Doppler + delta-DOR → kilometre-class spacecraft position across the solar system.",
-  "cur": "골드스톤 + 마드리드 + 캔버라에서 120° 간격 → 지속적 적용으로 지구가 회전 → ranging + 도플러 + 델타-DOR → 태양계를 가로 질러 클래스 우주선 위치."
- },
- {
-  "rel": "science/mission-phases/edl.json",
-  "at": "intro_sentence",
-  "en": "Seven minutes from the top of the atmosphere to wheels-down — the most automated, lowest-margin phase of any planetary mission.",
-  "cur": "대기권 상층부에서 착륙까지 7분 — 모든 행성 탐사 임무에서 가장 자동화되고 오차 허용 범위가 가장 작은 단계입니다."
- },
- {
-  "rel": "science/mission-phases/edl.json",
-  "at": "narrative_101.0",
-  "en": "Mars is fourteen light-minutes away. By the time a signal from the rover reaches Mission Control, the rover has been on the ground for fourteen minutes — alive or dead. Nobody on Earth flies a Mars landing. The spacecraft does it itself, autonomously, in about seven minutes, with hundreds of moving parts and zero second chances.",
-  "cur": "화성은 14광분 거리에 있습니다. 탐사 로버의 신호가 Mission Control에 도달할 때쯤, 로버는 이미 14분 전에 지상에 착륙해 있습니다 — 성공했거나 실패했거나. 지구에서는 아무도 화성 착륙을 조종하지 않습니다. 우주선은 스스로, 자율적으로, 약 7분 안에, 수백 개의 움직이는 부품으로, 단 한 번의 재시도 기회도 없이 착륙을 수행합니다."
- },
- {
-  "rel": "science/mission-phases/edl.json",
-  "at": "narrative_101.1",
-  "en": "Step one: hit the atmosphere at ~5.8 km/s. The heat shield handles temperatures hot enough to glow. Step two: deploy a supersonic parachute at Mach 2 — yes, a parachute, while still going faster than sound. Step three: drop the heat shield, drop the parachute, fire retrorockets to slow the rest of the way. Step four: touchdown.",
-  "cur": "1단계: 약 5.8 km/s의 속도로 대기권에 진입합니다. 열 차폐막은 빛을 낼 정도로 뜨거운 온도를 견딥니다. 2단계: 마하 2에서 초음속 낙하산을 전개합니다 — 맞습니다, 낙하산을, 여전히 음속보다 빠르게 이동하면서. 3단계: 열 차폐막을 분리하고, 낙하산을 분리하고, 역추진 로켓을 점화하여 나머지 속도를 줄입니다. 4단계: 착륙."
- },
- {
-  "rel": "science/mission-phases/edl.json",
-  "at": "narrative_101.2",
-  "en": "Different missions, different tricks. Apollo just fired its descent engine all the way down. Curiosity and Perseverance used the genuinely insane Sky Crane: a rocket-powered platform that hovered 20 metres above the ground and lowered the rover on three cables, then flew itself away. China's Zhurong did a hybrid. The seven minutes are called \"the seven minutes of terror\" inside JPL because there's nothing anyone can do during them. The simulator has done the math; you trust the simulator.",
-  "cur": "임무마다 다른 기법을 사용합니다. Apollo는 하강 엔진만으로 끝까지 내려갔습니다. Curiosity와 Perseverance는 정말로 미친 듯한 Sky Crane을 사용했습니다: 지상 20미터 위에서 호버링하는 로켓 추진 플랫폼이 세 개의 케이블로 로버를 내려주고, 그 후 스스로 날아가 버립니다. 중국의 Zhurong은 하이브리드 방식을 사용했습니다. JPL 내부에서 이 7분을 \"공포의 7분\"이라고 부르는 이유는 그 시간 동안 누구도 할 수 있는 일이 없기 때문입니다. 시뮬레이터가 계산을 끝냈고, 당신은 시뮬레이터를 믿습니다."
- },
- {
-  "rel": "science/mission-phases/edl.json",
-  "at": "body_paragraphs.0",
-  "en": "Entry begins when the spacecraft hits sensible atmosphere — about 125 km up at Mars, 100 km at Earth. From that moment, atmospheric drag is doing your braking; engines stay quiet. The heat shield handles thousands of degrees, the aeroshell holds shape, and the trajectory is essentially ballistic.",
-  "cur": "진입은 우주선이 감지 가능한 대기권에 도달할 때 시작됩니다 — 화성에서는 약 125 km 상공, 지구에서는 100 km입니다. 그 순간부터 대기 저항이 제동을 담당하며, 엔진은 조용히 있습니다. 열 차폐막은 수천 도를 견디고, 공기역학 외피는 형태를 유지하며, 궤적은 본질적으로 탄도 비행입니다."
- },
- {
-  "rel": "science/mission-phases/edl.json",
-  "at": "body_paragraphs.1",
-  "en": "Descent picks up when supersonic parachutes deploy, around Mach 1.5-2. They strip another huge chunk of velocity — but parachutes alone can't get you to a soft landing on a thin atmosphere. Mars goes from supersonic to subsonic on parachute, then transitions to powered descent: heat shield drops, retro-rockets fire, the lander falls the last few hundred metres on engine plumes alone.",
-  "cur": "하강은 마하 1.5-2 부근에서 초음속 낙하산이 전개될 때 시작됩니다. 낙하산은 속도의 또 다른 큰 부분을 제거합니다 — 하지만 희박한 대기에서는 낙하산만으로 연착륙할 수 없습니다. 화성에서는 낙하산으로 초음속에서 아음속으로 감속한 다음, 동력 하강으로 전환합니다: 열 차폐막이 떨어지고, 역추진 로켓이 점화되고, 착륙선은 마지막 수백 미터를 엔진 분사만으로 낙하합니다."
- },
- {
-  "rel": "science/mission-phases/edl.json",
-  "at": "body_paragraphs.2",
-  "en": "Curiosity and Perseverance used the sky-crane: hover at ~20m, lower the rover on cables to wheels-down, fly the descent stage away. Apollo used a direct rocket-burn to surface. China's Zhurong used a hybrid hover/lower scheme. Different planets, different atmospheres, different schemes — same seven minutes.",
-  "cur": "Curiosity와 Perseverance는 스카이 크레인을 사용했습니다: 약 20m에서 호버링하고, 케이블로 로버를 내려 착륙시킨 후, 하강 단을 날려 보냅니다. Apollo는 표면까지 직접 로켓 연소 방식을 사용했습니다. 중국의 Zhurong은 하이브리드 호버링/하강 방식을 사용했습니다. 행성마다, 대기마다, 방식은 다르지만 — 똑같은 7분입니다."
- },
- {
-  "rel": "science/mission-phases/edl.json",
-  "at": "diagram_caption",
-  "en": "EDL sequence: entry (heat shield) → parachute → powered descent → touchdown.",
-  "cur": "EDL 순서: 진입 (열 차폐막) → 낙하산 → 동력 하강 → 착륙."
- },
- {
-  "rel": "science/mission-phases/entry-footprint.json",
-  "at": "title",
-  "en": "The landing footprint — where a capsule’s lift can take it",
-  "cur": "착륙 발자국 — 캡슐의 양력이 도달할 수 있는 곳"
- },
- {
-  "rel": "science/mission-phases/entry-footprint.json",
-  "at": "intro_sentence",
-  "en": "A re-entering capsule is not aimed like a dart at one point — its lift gives it a whole reachable area on the ground, the \"footprint\", and the guidance computer picks a landing site inside it by deciding how to spend that lift.",
-  "cur": "재진입하는 캡슐은 다트처럼 한 지점에 겨냥되지 않습니다 — 그것의 양력은 지면에 도달 가능한 전체 영역인 \"발자국\"을 제공하며, 유도 컴퓨터는 그 양력을 어떻게 사용할지 결정함으로써 발자국 내의 착륙 지점을 선택합니다."
- },
- {
-  "rel": "science/mission-phases/entry-footprint.json",
-  "at": "narrative_101.0",
-  "en": "Once a capsule commits to re-entry it cannot add energy — no engines, no go-around. But it is not helpless about WHERE it comes down. By rolling to point its lift up it stretches the glide and flies far; by rolling lift-down it dives and lands short; by banking left or right it moves sideways. The set of all the places it could reach, given its speed and its lift, is a patch on the ground shaped like a stretched teardrop — the landing footprint.",
-  "cur": "캡슐이 재진입에 들어가면 에너지를 추가할 수 없습니다 — 엔진이 없고, 회항도 없습니다. 하지만 어디에 착륙할지에 대해서는 무력하지 않습니다. 양력을 위로 향하게 하기 위해 회전하면 활공을 늘리고 멀리 날 수 있으며, 양력을 아래로 향하게 하면 급강하하고 가까이 착륙하고, 좌우로 뱅킹하면 옆으로 이동합니다. 속도와 양력이 주어졌을 때 도달할 수 있는 모든 지점의 집합은 늘어난 물방울 모양인 지면 위의 패치 — 착륙 발자국입니다."
- },
- {
-  "rel": "science/mission-phases/entry-footprint.json",
-  "at": "narrative_101.1",
-  "en": "Reaching the far edge of that footprint costs something: flying lift-up to go long means a shallower, gentler descent and a lower peak-g, while diving short means a steeper, harsher one. So there is a trade written into the footprint — the farther targets are the low-g ones, the near targets the high-g ones — and the guidance has to find a bank schedule that lands on the chosen spot without ever breaking the g or heating limits along the way.",
-  "cur": "발자국의 먼 끝에 도달하는 것은 대가가 있습니다: 길게 가기 위해 양력을 위로 날리는 것은 더 얕고 부드러운 강하와 더 낮은 피크 g를 의미하는 반면, 짧게 급강하하는 것은 더 가파르고 거친 강하를 의미합니다. 따라서 발자국에는 무역이 있습니다 — 먼 목표는 저 g 목표이고 가까운 목표는 고 g 목표입니다 — 유도 시스템은 선택한 지점에 착륙하는 뱅킹 스케줄을 찾아야 하며, 이동 중 g 또는 가열 제한을 초과하지 않아야 합니다."
- },
- {
-  "rel": "science/mission-phases/entry-footprint.json",
-  "at": "narrative_101.2",
-  "en": "This is exactly why Apollo could splash down near its recovery carrier and why Perseverance could hit a landing ellipse under 8 kilometres across (about 7.7 by 6.6 km) on Mars from millions of kilometres away. The computer is not steering to a point so much as choosing a point inside the footprint and then flying the lift to reach it.",
-  "cur": "이것이 정확히 Apollo가 복구 함선 근처에 물에 착륙할 수 있었던 이유이고, Perseverance가 수백만 킬로미터 떨어진 화성에서 8 킬로미터 미만(약 7.7 × 6.6 km)의 착륙 타원을 타격할 수 있었던 이유입니다. 컴퓨터는 한 지점으로 조종하는 것이 아니라 발자국 내의 한 지점을 선택한 후 그곳에 도달하기 위해 양력을 날립니다."
- },
- {
-  "rel": "science/mission-phases/entry-footprint.json",
-  "at": "body_paragraphs.0",
-  "en": "The footprint is the reachable set in downrange–crossrange space. Downrange is set mostly by how the vehicle spends vertical lift: full lift-up maximises range (the capsule \"floats\", decelerating slowly and travelling far), full lift-down minimises it (a steep, fast arrival). Crossrange comes from banking the lift sideways, and its extent grows with L/D. For a low-L/D capsule the footprint is modest; for a lifting body or a winged vehicle it is huge.",
-  "cur": "도달 영역(footprint)은 다운레인지–크로스레인지 공간에서 도달 가능한 집합입니다. 다운레인지는 주로 기체가 수직 양력을 어떻게 쓰는지로 정해집니다: 양력을 위로 완전히 향하면 사거리가 최대가 되고(캡슐이 '떠서' 천천히 감속하며 멀리 이동), 아래로 완전히 향하면 최소가 됩니다(가파르고 빠른 도착). 크로스레인지는 양력을 옆으로 기울여(뱅크) 얻으며, 그 폭은 L/D와 함께 커집니다. L/D가 낮은 캡슐은 도달 영역이 작고, 양력체나 날개 달린 기체는 매우 큽니다."
- },
- {
-  "rel": "science/mission-phases/entry-footprint.json",
-  "at": "body_paragraphs.1",
-  "en": "The trade between range and g-load is the load-bearing fact. Because a long, lift-up trajectory sheds speed high in thin air over a long time, its peak deceleration is low; a short, lift-down trajectory concentrates the braking and peaks higher. A footprint diagram therefore doubles as a menu: each reachable range comes with the peak-g it costs, and the target must sit inside both the range band and the g limit.",
-  "cur": "범위와 g 하중 간의 무역은 부하를 지탱하는 사실입니다. 길고 양력을 위로 날리는 궤적이 얇은 공기에서 오랜 시간에 걸쳐 속도를 감속시키기 때문에, 그 피크 감속은 낮습니다; 짧고 양력을 아래로 향하는 궤적은 제동을 집중시키고 더 높게 피크합니다. 따라서 발자국 다이어그램은 메뉴로도 기능합니다: 각 도달 가능한 범위는 그것이 비용을 드는 피크 g를 가지고 있으며, 목표는 범위 대역과 g 제한 내에 있어야 합니다."
- },
- {
-  "rel": "science/mission-phases/entry-footprint.json",
-  "at": "body_paragraphs.2",
-  "en": "A range-control guidance loop closes this. Given a target range it solves for the bank angle (really a bank schedule) that lands there, then flies it, reversing bank left/right to cancel crossrange error. If the target lies outside the footprint the honest answer is that it cannot be reached — the guidance clamps to the nearest edge — which is why mission design chooses entry conditions that keep the target comfortably inside the footprint.",
-  "cur": "범위 제어 유도 루프는 이를 폐쇄합니다. 목표 범위가 주어지면, 그곳에 착륙하는 뱅킹 각도(실제로는 뱅킹 스케줄)를 계산한 다음 이를 날리며, 크로스레인지 오차를 상쇄하기 위해 좌우로 뱅킹을 역전시킵니다. 목표가 발자국 외부에 있으면 솔직한 대답은 그것을 도달할 수 없다는 것입니다 — 유도 시스템은 가장 가까운 모서리로 고정됩니다 — 미션 설계가 목표를 발자국 내에 편안하게 유지하는 재진입 조건을 선택하는 이유입니다."
- },
- {
-  "rel": "science/mission-phases/entry-footprint.json",
-  "at": "diagram_caption",
-  "en": "The reachable landing footprint: lift-up reaches far at low peak-g, lift-down lands short at high g; the guidance solves a bank schedule to a target inside the band.",
-  "cur": "도달 가능한 착륙 발자국: 양력을 위로 올리면 낮은 피크 g에서 멀리 도달하고, 양력을 아래로 올리면 높은 g에서 가까이 착륙합니다; 유도 시스템은 대역 내의 목표에 대한 뱅킹 스케줄을 계산합니다."
- },
- {
-  "rel": "science/mission-phases/entry-heating.json",
-  "at": "intro_sentence",
-  "en": "Why hitting an atmosphere at kilometres per second heats a spacecraft to thousands of degrees — and how a heat shield takes the punishment.",
-  "cur": "초당 수 킬로미터의 속도로 대기권에 진입할 때 우주선이 수천 도까지 가열되는 이유 — 그리고 열 차폐막이 어떻게 이 충격을 견디는가."
- },
- {
-  "rel": "science/mission-phases/entry-heating.json",
-  "at": "narrative_101.0",
-  "en": "A spacecraft arriving at a planet is moving fast — 5 to 6 km/s at Mars, nearly 11 km/s at Venus. When it slams into the top of the atmosphere it does not so much rub against the air as crush it. The gas piling up in front of the vehicle is compressed so violently that it heats to thousands of degrees and glows — the fireball you see around any returning capsule.",
-  "cur": "행성에 도착하는 우주선은 매우 빠르게 움직인다 — 화성에서 초당 5~6 km, 금성에서 거의 초당 11 km. 대기권 상층부에 충돌할 때 우주선은 공기와 마찰하기보다는 압축한다. 우주선 앞에 쌓이는 가스가 너무 격렬하게 압축되어 수천 도로 가열되고 빛나므로 — 귀환하는 모든 캡슐 주위에서 볼 수 있는 화염구이다."
- },
- {
-  "rel": "science/mission-phases/entry-heating.json",
-  "at": "narrative_101.1",
-  "en": "It is a common myth that this heat comes from friction. Almost all of it comes from compression: the spacecraft cannot push the air out of the way fast enough, so a shock wave forms just ahead of it and the trapped gas superheats. The faster the entry, the hotter the shock — which is why Venus, with the fastest entries and the thickest air, is the harshest entry environment in the solar system.",
-  "cur": "이 열이 마찰에서 나온다는 것은 흔한 오해이다. 거의 모든 열이 압축에서 나온다: 우주선이 공기를 충분히 빠르게 밀어낼 수 없으므로 바로 앞에 충격파가 형성되고 갇힌 가스가 과열된다. 진입 속도가 빠를수록 충격파가 더워진다 — 이것이 가장 빠른 진입 속도와 가장 두꺼운 대기를 가진 금성이 태양계에서 가장 가혹한 진입 환경인 이유이다."
- },
- {
-  "rel": "science/mission-phases/entry-heating.json",
-  "at": "narrative_101.2",
-  "en": "The vehicle survives behind a heat shield — a blunt, ablative shell that faces the flow. Blunt is deliberate: a sharp nose would concentrate the heat, while a broad shield holds the shock wave out at a distance and spreads the load. The shield's surface chars and flakes away on purpose, carrying the heat off with it, so the spacecraft tucked behind stays cool.",
-  "cur": "우주선은 열 차폐막 — 흐름을 향한 둔탁한, 소모성 껍질 뒤에서 생존한다. 둔탁한 형태는 의도적이다: 뾰족한 코는 열을 집중시키는 반면, 넓은 차폐막은 충격파를 거리를 두고 유지하고 하중을 분산한다. 차폐막의 표면은 의도적으로 숯이 되고 벗겨져 나가며, 열을 함께 가져가므로 뒤에 숨어 있는 우주선은 시원하게 유지된다."
- },
- {
-  "rel": "science/mission-phases/entry-heating.json",
-  "at": "body_paragraphs.0",
-  "en": "Two peaks matter during entry and they do not coincide. Peak heating happens high up, where the vehicle is still fast and the heating rate (which scales roughly with velocity cubed) is enormous even in thin air. Peak deceleration happens lower down, in denser air, where the force on the vehicle is greatest — Mars entries peak around 8–15 g, Venus entries at 100–350 g. A lander's structure is sized for the g-peak; its heat shield is sized for the heat-peak.",
-  "cur": "진입 중 두 가지 피크가 중요하며 서로 일치하지 않는다. 최대 가열은 높은 곳에서 발생하는데, 우주선이 아직 빠르고 가열 속도(대략 속도의 세제곱에 비례함)가 희박한 공기에서도 엄청나다. 최대 감속은 더 낮은 곳, 더 진한 공기에서 발생하며, 우주선에 작용하는 힘이 가장 크다 — 화성 진입은 약 8~15 g에서 피크를 이루고, 금성 진입은 100~350 g에서 피크를 이룬다. 착륙선의 구조는 g-피크를 위해 크기가 결정되고, 열 차폐막은 열-피크를 위해 크기가 결정된다."
- },
- {
-  "rel": "science/mission-phases/entry-heating.json",
-  "at": "body_paragraphs.1",
-  "en": "The plasma sheath that glows around the vehicle also blocks radio: for a minute or two at peak heating, ionised gas wraps the spacecraft and cuts communications — the famous entry blackout. Controllers simply wait it out; the vehicle is flying a pre-loaded sequence, on its own, through the hottest part of the trajectory.",
-  "cur": "우주선 주위에서 빛나는 플라즈마 초층은 또한 라디오를 차단한다: 최대 가열 시간에 1~2분 동안 이온화된 가스가 우주선을 감싸고 통신을 끊는다 — 유명한 진입 블랙아웃이다. 통제자들은 단순히 기다린다; 우주선은 미리 로드된 수열을 비행하고 있으며, 궤도의 가장 뜨거운 부분을 혼자서 통과한다."
- },
- {
-  "rel": "science/mission-phases/entry-heating.json",
-  "at": "body_paragraphs.2",
-  "en": "On `/fly`, the descent HUD's aero-heating gauge is a relative proxy for this — it climbs as the vehicle bites into the atmosphere and peaks well before touchdown, then falls away as the vehicle slows. Turn on the drag Science-Lens layer during any `?descent=1` Mars or Venus entry to see the deceleration build as the air thickens.",
-  "cur": "`/fly`에서 강하 HUD의 공력 가열 게이지는 이것의 상대적 프록시이다 — 우주선이 대기권에 물어뜯힐 때 올라가고 착지 훨씬 전에 피크를 이루며, 그다음 우주선이 속도를 잃으면서 떨어진다. 모든 `?descent=1` 화성 또는 금성 진입 중에 드래그 Science-Lens 레이어를 켜서 공기가 짙어지면서 감속이 증가하는 것을 볼 수 있다."
- },
- {
-  "rel": "science/mission-phases/entry-heating.json",
-  "at": "diagram_caption",
-  "en": "Entry heating: a blunt heat shield holds a bow shock ahead of the vehicle; the compressed gas superheats and glows while the shield ablates the heat away.",
-  "cur": "진입 가열: 둔탁한 열 차폐막이 우주선 앞에 활 충격파를 유지한다; 압축된 가스가 과열되고 빛나는 동안 차폐막이 열을 소모한다."
- }
+  {
+    "rel": "science/life-in-space/sleep-nutrition-circadian.json",
+    "at": "body_paragraphs.2",
+    "en": "Food engineering is a stranger problem than it sounds. Microgravity changes swallowing (the bolus has to be actively pushed; crew members chew more times per bite than on Earth), changes taste (the fluid shift toward the head causes ~30% reduction in odour perception, which means taste is also reduced — astronauts describe everything as bland for the first 2 weeks), changes appetite (most crew lose 5-10% body weight in the first month of an expedition; the body is in a different metabolic state than at 1 g), and changes choking risk (no gravity to pull a misdirected swallow down the right pipe). The ISS Food System engineering response is foods that don't crumble (no bread; crews eat tortillas), foods that bind to themselves (a lot of sauces and gravies — they hold the meal together), strong flavours (hot sauce is iconically over-consumed on ISS), and absolutely no carbonated drinks (the bubbles don't separate from the liquid in microgravity, which makes drinking carbonated water in zero-g a uniquely unpleasant experience).",
+    "cur": "음식 공학은 생각보다 이상한 문제다. 미세중력은 삼키는 방식을 바꾸고(음식 덩어리를 능동적으로 밀어 넘겨야 해서 승무원은 지구에서보다 한 입을 더 여러 번 씹는다), 맛을 바꾸고(체액이 머리 쪽으로 쏠려 후각이 약 30% 떨어지고 미각도 함께 떨어진다 — 우주비행사들은 처음 2주 동안 모든 것이 밍밍하다고 말한다), 식욕을 바꾸고(대부분 장기 체류 첫 달에 체중의 5-10%를 잃는다. 몸이 1 g에서와는 다른 대사 상태에 있기 때문이다), 질식 위험도 바꾼다(잘못 넘어간 한 입을 제 길로 끌어내려 줄 중력이 없다). ISS Food System의 공학적 해법은 부스러지지 않는 음식(빵은 없고, 승무원은 토르티야를 먹는다), 서로 뭉치는 음식(식사를 한데 붙잡아 주는 소스와 그레이비를 많이 쓴다), 강한 맛(ISS에서 핫소스는 전설적으로 과소비된다), 그리고 탄산음료 완전 금지(미세중력에서는 기포가 액체와 분리되지 않아, 무중력에서 탄산수를 마시는 것은 유례없이 불쾌한 경험이 된다)다."
+  },
+  {
+    "rel": "science/life-in-space/sleep-nutrition-circadian.json",
+    "at": "body_paragraphs.3",
+    "en": "Caloric needs are higher in space than on Earth — typically 2800-3000 kcal/day for a male astronaut on ISS, vs 2400-2600 at 1 g. Part of that is exercise (2 hours/day of resistance + cardio, more on that in the bone-density-loss article), part is the elevated metabolic demand of constant micro-corrections against drift. NASA's Space Food Systems Laboratory at Johnson runs through about 200 menu items per crew rotation; Roscosmos has a parallel menu programme; China’s CMSA has built up its own Chinese-cuisine-oriented menu (yuxiang shredded pork, kung pao chicken, all engineered for microgravity). International missions cross-pollinate: ISS crew members of any nationality can request food from any of the partner agencies. The Apollo programme used spoon-bowl pouches + freeze-dried rehydration; Shuttle moved to thermostabilised pouches; ISS uses a mix; Mars-class transit menus are still being designed — the longest food-supply storage problem in the project.",
+    "cur": "필요 열량은 지구보다 우주에서 더 많다 — ISS의 남성 우주비행사는 보통 하루 2800-3000 kcal로, 1 g에서의 2400-2600 kcal보다 많다. 일부는 운동(하루 2시간의 근력·유산소 운동, 자세한 내용은 골밀도 손실 문서 참고) 때문이고, 일부는 표류에 맞선 끊임없는 미세 보정으로 대사 요구가 높아지기 때문이다. Johnson에 있는 NASA의 Space Food Systems Laboratory는 승무원 교대마다 약 200가지 메뉴를 다룬다. Roscosmos에도 병행 메뉴 프로그램이 있고, 중국의 CMSA는 중국 요리 중심의 자체 메뉴(어향육사, 궁보계정 — 모두 미세중력에 맞게 설계)를 만들었다. 국제 임무는 서로 섞인다. 어느 국적의 ISS 승무원이든 어느 협력 기관의 음식이든 요청할 수 있다. Apollo 프로그램은 숟가락으로 떠먹는 파우치와 동결 건조 식품의 수분 복원을 썼고, Shuttle은 열 안정화 파우치로 옮겨 갔으며, ISS는 이를 섞어 쓴다. 화성급 이동용 메뉴는 아직 설계 중으로, 이 사업 전체에서 가장 긴 식량 보관 문제다."
+  },
+  {
+    "rel": "science/life-in-space/sleep-nutrition-circadian.json",
+    "at": "body_paragraphs.4",
+    "en": "Water is the other thermal-rebalancing variable. ISS crew drink 2.0-2.5 L/day, all of it from the Water Recovery System (see the ECLSS article — most of it is recycled urine + condensate + EVA suit water). Hydration tracks closely with bone-density and renal-stone risk, so the data is monitored daily. Russian-segment water is from a parallel Roscosmos system that doesn't process urine (the source is humidity condensate + resupply); the two halves can share but typically don't. Tiangong runs its own closed-loop system on Tianhe. The Mars-class architecture being studied at JSC + EAC + IKI explicitly assumes >98% closed-loop water — anything less than that requires more launch mass than chemical-rocket Mars architectures can plausibly deliver.",
+    "cur": "물은 열 수지를 맞추는 또 다른 변수다. ISS 승무원은 하루 2.0-2.5 L를 마시며, 그 전부가 Water Recovery System에서 나온다(ECLSS 문서 참고 — 대부분 재활용한 소변, 응축수, 우주유영복의 물이다). 수분 섭취는 골밀도 및 신장 결석 위험과 밀접하게 연관되어 있어 데이터를 매일 감시한다. 러시아 구역의 물은 소변을 처리하지 않는 Roscosmos의 병행 시스템에서 나온다(수원은 습기 응축수와 보급품이다). 두 절반은 물을 나눌 수 있지만 대개는 그러지 않는다. Tiangong은 Tianhe에서 자체 폐쇄 순환 시스템을 운용한다. JSC, EAC, IKI에서 연구 중인 화성급 아키텍처는 명시적으로 98%가 넘는 물의 폐쇄 순환을 전제로 한다 — 그보다 낮으면 화학 로켓 기반 화성 아키텍처가 현실적으로 실어 나를 수 있는 것보다 많은 발사 질량이 필요해진다."
+  },
+  {
+    "rel": "science/life-in-space/sleep-nutrition-circadian.json",
+    "at": "diagram_caption",
+    "en": "Body wants: single sunrise, gravity to swallow, gravity to settle bubbles, 7-8 hrs sleep. ISS gives: 16 sunrises/day, 0 g, no fizz, ~6 hrs sleep. Countermeasures: hard schedule on GMT + circadian lighting + sealed sleep booths + engineered food + recycled water.",
+    "cur": "몸은 원한다: 한 번의 일출, 삼킴을 위한 중력, 거품을 분리할 중력, 7–8시간 수면. ISS는 준다: 하루 16번의 일출, 0 g, 탄산 없음, ~6시간 수면. 대책: 엄격한 GMT 일정+일주기 조명+밀폐된 부스+엔지니어링된 음식+재활용된 물."
+  },
+  {
+    "rel": "science/life-in-space/suit-lineage.json",
+    "at": "title",
+    "en": "Suit lineage — Sokol to Orlan to Feitian, A7L to AxEMU",
+    "cur": "우주복 계보 — Sokol에서 Orlan으로, Feitian으로, A7L에서 AxEMU로"
+  },
+  {
+    "rel": "science/life-in-space/suit-lineage.json",
+    "at": "intro_sentence",
+    "en": "Every modern spacesuit traces to one of three families: American Apollo-derived, Soviet/Russian Sokol + Orlan, and Chinese Feitian (itself derived from Orlan). Six decades, three lineages, lots of cross-pollination.",
+    "cur": "모든 현대 우주복은 세 가지 계열 중 하나로 거슬러 올라간다: 미국의 Apollo 파생형, 소비에트/러시아의 Sokol + Orlan, 그리고 중국의 Feitian (자체적으로 Orlan에서 파생). 60년, 세 계열, 수많은 상호 영향."
+  },
+  {
+    "rel": "science/life-in-space/suit-lineage.json",
+    "at": "body_paragraphs.0",
+    "en": "The original IVA suit problem was simple and terrible: keep the crew alive if the spacecraft loses pressure. Vostok and Voskhod cosmonauts wore SK-1 / Berkut suits. Mercury used a modified Navy Mark IV. Gemini used the G3C / G4C. None of these were tested as full-decompression life-savers because no flight had ever lost cabin pressure. Then in June 1971 Soyuz 11 returned with the crew dead from rapid decompression during separation — Dobrovolsky, Volkov, Patsayev were in shirtsleeves because the Soyuz cabin couldn't fit three suited cosmonauts. The Soviet response was the Sokol K-V (1973), a lightweight rubberised-fabric pressure suit designed specifically to fit inside the Soyuz couch and inflate in seconds if the cabin failed. Every Soyuz crew since wears a descendant of Sokol — the current Sokol-M is its latest modernised variant.",
+    "cur": "원래 선외활동 우주복의 문제는 단순하면서도 심각했다. 우주선의 기압이 떨어졌을 때 승무원을 살려야 한다는 것이었다. Vostok와 Voskhod 우주인들은 SK-1/Berkut 우주복을 입었다. 머큐리는 개조된 해군 Mark IV를 사용했다. Gemini는 G3C/G4C를 사용했다. 이들 중 어느 것도 완전한 감압 구조복으로서 시험되지 않았는데, 왜냐하면 실제 비행에서 기실의 기압이 떨어진 일이 없었기 때문이다. 그러다 1971년 6월 Soyuz 11이 분리 중 급속 감압으로 인해 승무원이 죽은 채로 귀환했다. 도브로볼스키, 볼코프, 파차예프는 Soyuz 기실이 우주복을 입은 우주인 세 명을 수용할 수 없었기 때문에 셔츠 차림이었다. 소련의 대응은 Sokol K-V(1973)였다. 가볍고 고무 처리된 직물로 만든 가압 우주복으로 Soyuz 시트 내부에 딱 맞게 설계되었으며 기실에 문제가 생기면 수 초 안에 팽창하도록 했다. 그 이후 모든 Soyuz 승무원이 Sokol의 자손을 입고 있다. 현재의 Sokol-M은 그 최신 현대화 변형이다."
+  },
+  {
+    "rel": "science/life-in-space/suit-lineage.json",
+    "at": "body_paragraphs.1",
+    "en": "The American IVA lineage went through more iterations. Apollo used pressure-tight Block I (which killed Grissom-White-Chaffee in the 1967 fire) then Block II (post-fire redesign). Shuttle used the Launch Entry Suit (orange LES, 1988-94) then the ACES — Advanced Crew Escape Suit (1994-2011). When the Shuttle retired and US-side flights resumed in 2020, both SpaceX and Boeing produced their own clean-sheet IVA suits — the SpaceX Crew Dragon IVA (custom-fitted, single-piece zipper-entry, designed by Jose Fernandez of Hollywood costume background) and the Boeing Starliner IVA (more conventional NASA-design lineage). Neither is rated for EVA. Both inherit the Sokol functional contract — protect against rapid decompression, single-occupant fit, integrated with the seat — but neither shares Sokol's parts list.",
+    "cur": "미국의 IVA 계열은 더 많은 반복을 거쳤다. Apollo는 기압밀폐형 Block I (1967년 화재에서 그리섬-화이트-채피를 살해함)을 사용했고, 그 다음 Block II (화재 이후 재설계)를 사용했다. Shuttle은 Launch Entry Suit (주황색 LES, 1988-94)를 사용했고, 그 다음 ACES — Advanced Crew Escape Suit (1994-2011)를 사용했다. Shuttle이 은퇴하고 2020년 미국 측 비행이 재개되었을 때, SpaceX와 Boeing은 모두 자신들의 독자적인 IVA 우주복을 생산했다 — SpaceX Crew Dragon IVA (맞춤 제작, 단일 피스 지퍼 진입, Hollywood 의상 배경의 Jose Fernandez가 설계)와 Boeing Starliner IVA (더 기존의 NASA 설계 계열). 둘 다 EVA 등급이 아니다. 둘 다 Sokol의 기능적 계약을 상속한다 — 급속 감압으로부터 보호, 단일 승무원 적합성, 좌석과의 통합 — 하지만 둘 다 Sokol의 부품 목록을 공유하지 않는다."
+  },
+  {
+    "rel": "science/life-in-space/suit-lineage.json",
+    "at": "body_paragraphs.2",
+    "en": "The American EVA lineage starts with A7L (Apollo, 1969-72) and A7LB (later Apollo, 1971-72), then the EMU (Extravehicular Mobility Unit, 1981-present), which is the iconic white modular suit used for every US-side EVA on Skylab, Shuttle, and ISS. The EMU is now in its 40+ year of service — newer than most aircraft, older than most operational hardware on station. Its components include the HUT (Hard Upper Torso, the white shell), the LCVG (Liquid Cooling and Ventilation Garment — water tubes against the skin), the LTA (Lower Torso Assembly), the PLSS (Portable Life Support System, the backpack — CO₂ scrubbing + water cooling + oxygen + radio), and the MAG (Maximum Absorbency Garment — astronaut's diaper, a Lockheed-Martin acquisition from the 1980s). EMU production stopped after the Shuttle programme; the suits currently flying are refurbs of the 1980s-1990s build, with parts cannibalised from retired units. The AxEMU (Axiom Space EMU, for Artemis III lunar EVA) is the first new American EVA suit since the original; it inherits the modular philosophy but rebuilds every subsystem.",
+    "cur": "미국의 EVA 계열은 A7L (Apollo, 1969-72)과 A7LB (나중의 Apollo, 1971-72)로 시작되고, 그 다음 EMU (Extravehicular Mobility Unit, 1981-현재)이니, 이것이 Skylab, Shuttle, ISS에서 모든 미국 측 EVA에 사용되는 유명한 흰색 모듈형 우주복이다. EMU는 이제 40년 이상 서비스 중이다 — 대부분의 항공기보다 새롭지만 우주정거장의 대부분의 운영 하드웨어보다는 오래되었다. 그 구성요소는 HUT (Hard Upper Torso, 흰색 껍질), LCVG (Liquid Cooling and Ventilation Garment — 피부 위의 수관), LTA (Lower Torso Assembly), PLSS (Portable Life Support System, 배낭 — CO₂ 제거 + 수냉식 + 산소 + 라디오), 그리고 MAG (Maximum Absorbency Garment — 우주인 기저귀, 1980년대 Lockheed-Martin 인수)를 포함한다. EMU 생산은 Shuttle 프로그램 이후 중단되었다; 현재 비행 중인 우주복은 1980년대-1990년대 제조의 재정비 제품이며, 퇴역한 장비에서 부품을 간식했다. AxEMU (Axiom Space EMU, Artemis III 달 EVA용)는 원본 이후 첫 번째의 새로운 미국 EVA 우주복이다; 이것은 모듈형 철학을 상속하지만 모든 하위 시스템을 재구축한다."
+  },
+  {
+    "rel": "science/life-in-space/suit-lineage.json",
+    "at": "body_paragraphs.3",
+    "en": "The Russian EVA lineage is Orlan (Орлан, 'sea eagle'), continuous since 1977. Unlike the American semi-modular EMU, Orlan is a rear-entry one-piece suit — the astronaut climbs in through a hatch in the back, closes the hatch, and is suited. Five-minute prep vs the EMU's 30-minute layered suit-up. Orlan also runs at higher pressure (5.8 psi vs EMU's 4.3 psi) which gives shorter prebreathe windows in exchange for more rigidity. The current Orlan-MKS (introduced 2017) is the seventh generation; flown on every Russian EVA since 2017 and on Tiangong's first crewed EVAs in 2021-22 before China's own Feitian became available.",
+    "cur": "러시아 선외활동 우주복의 계보는 Orlan ('흰꼬리수리')으로, 1977년 이래 계속 사용되어 왔다. 미국의 반모듈식 EMU와 달리 Orlan은 후방 진입 일체형 우주복이다. 우주인이 뒤쪽의 해치를 통해 들어가서 해치를 닫으면 착용이 완료된다. 준비 시간이 5분으로, EMU의 30분 다층 착용 시간보다 훨씬 짧다. Orlan은 또한 더 높은 기압(5.8 psi 대 EMU의 4.3 psi)에서 작동하는데, 이는 더 짧은 사전호흡 시간을 제공하는 대신 더 큰 강성을 제공한다. 현재의 Orlan-MKS(2017년 도입)는 일곱 번째 세대이며, 2017년 이후 모든 러시아 선외활동에서 비행했고, 중국의 Feitian이 이용 가능해지기 전인 2021-22년 Tiangong의 첫 유인 선외활동에서 비행했다."
+  },
+  {
+    "rel": "science/life-in-space/suit-lineage.json",
+    "at": "body_paragraphs.4",
+    "en": "Feitian (飞天, 'flying sky') is China's EVA suit, debuted on Shenzhou 7 (2008) for the country's first EVA, and now in its second-generation Feitian-2 variant on Tiangong. Feitian is derived from Orlan — rear-entry one-piece, similar internal geometry, similar operating pressure — but built domestically with Chinese-sourced materials and Chinese-developed thermal control. The lineage is admitted openly: ACC (China's Astronaut Centre) had Roscosmos-trained engineers as consultants on the first Feitian, and the second-gen suit further customised the design for Tiangong's Wentian airlock. The geopolitical irony is that Feitian — a Russian-lineage suit — represents the only currently-operational EVA capability outside of the US-Russian ISS partnership. AxEMU (American, lunar-targeted) is in development. Beyond those three, there is no other operational EVA suit in the world today; the IVA market is more diverse (Sokol-M, Crew Dragon IVA, Starliner IVA, Shenzhou IVA, India's planned Gaganyaan IVA), but EVA remains a three-suit world.",
+    "cur": "Feitian은 중국의 EVA 우주복이며, Shenzhou 7 (2008)에서 우주복이 나라의 첫 번째 EVA 미션에서 데뷔했으며, 이제 Tiangong의 제2세대 Feitian-2 변형이다. Feitian은 Orlan에서 파생되었다 — 뒤쪽 진입 원피스, 유사한 내부 기하학, 유사한 운영 압력 — 하지만 중국 소재로 제작되고 중국이 개발한 열 제어를 가지고 있다. 계보는 공개적으로 인정되었다: ACC (중국 우주인 센터)는 첫 번째 Feitian에 대한 컨설턴트로 Roscosmos 훈련 엔지니어를 두었으며, 제2세대 우주복은 추가로 Tiangong의 Wentian 에어락에 대한 설계를 맞춤화했다. 지정학적 아이러니는 Feitian — 러시아 계열 우주복 — 이 미국-러시아 ISS 파트너십 외부의 유일하게 현재 작동 중인 EVA 능력을 나타낸다는 것이다. AxEMU (미국, 달 목표)는 개발 중이다. 그 세 가지 이외에, 세상에 현재 작동 중인 다른 EVA 우주복은 없다; IVA 시장은 더 다양하다 (Sokol-M, Crew Dragon IVA, Starliner IVA, Shenzhou IVA, 인도의 계획된 Gaganyaan IVA), 하지만 EVA는 여전히 세 우주복의 세계이다."
+  },
+  {
+    "rel": "science/life-in-space/suit-lineage.json",
+    "at": "diagram_caption",
+    "en": "Three lineages: American IVA (Mercury Mark IV → ACES → SpaceX / Starliner) + American EVA (A7L/A7LB → EMU → AxEMU). Russian IVA (Sokol K → Sokol-M) + Russian EVA (Orlan → Orlan-MKS). Chinese EVA (Feitian, derived from Orlan, second-gen on Tiangong). Cross-pollination is the rule, not the exception — every modern suit borrows from at least one ancestor in another lineage.",
+    "cur": "세 가지 계열: 미국 IVA (Mercury Mark IV → ACES → SpaceX / Starliner) + 미국 EVA (A7L/A7LB → EMU → AxEMU). 러시아 IVA (Sokol K → Sokol-M) + 러시아 EVA (Orlan → Orlan-MKS). 중국 EVA (Feitian, Orlan에서 파생, Tiangong의 제2세대). 상호 영향은 예외가 아닌 규칙이다 — 모든 현대 우주복은 다른 계열의 최소한 하나의 조상으로부터 빌려온다."
+  },
+  {
+    "rel": "science/life-in-space/surface-dust-mitigation.json",
+    "at": "title",
+    "en": "Surface dust — the lunar + Mars hazard everyone underestimated",
+    "cur": "표면 먼지 — 모두가 과소평가한 달 + 화성의 위험"
+  },
+  {
+    "rel": "science/life-in-space/surface-dust-mitigation.json",
+    "at": "intro_sentence",
+    "en": "Apollo crews returned with suits abraded after 10 EVAs and airlocks jamming on dust. Mars regolith is chemically toxic. Every long-stay architecture is built around dust protocols — they are the operational hazard nothing makes go away.",
+    "cur": "Apollo 승무원은 10 EVA 후 우주복이 마모되고 에어록이 먼지로 막힌 상태로 돌아왔다. 화성 레골리스는 화학적으로 독성이 있다. 모든 장기 체류 아키텍처는 먼지 프로토콜을 중심으로 구축된다 — 그것은 그 어떤 것도 사라지게 하지 못하는 운영상의 위험이다."
+  },
+  {
+    "rel": "science/life-in-space/surface-dust-mitigation.json",
+    "at": "body_paragraphs.0",
+    "en": "Lunar dust is mechanically dangerous in a way no terrestrial dust prepares you for. The surface is a fine regolith — particle sizes from sub-micron up to coarse sand, with a median of 70 µm — that was created by 4 billion years of micrometeorite impacts. Each impact is a tiny explosion that fragments existing rock; the fragments cool in vacuum without water to round their edges. The result is a powder of angular glass shards, sharper than ground glass. Adding to the hazard: lunar regolith is electrostatically charged by UV photoionisation on the day side and by plasma exposure in the lunar terminator zone. Charged dust clings to everything — sticks to suit fabric via electrostatic adhesion at a level that brushing alone cannot remove. Apollo crews reported that lunar dust degraded EVA suit joint seals after about 10 EVAs (Apollo 17 was the only mission to make three back-to-back EVAs, and Cernan's suit zipper was showing wear by the third).",
+    "cur": "달 먼지는 지구의 어떤 먼지도 준비시켜주지 않는 방식으로 기계적으로 위험하다. 표면은 미세한 레골리스다 — 입자 크기는 서브 미크론에서 굵은 모래까지, 중앙값 70 µm — 40억 년의 미세 운석 충돌에 의해 만들어졌다. 각 충돌은 기존 암석을 파쇄하는 작은 폭발이다; 파편은 가장자리를 둥글게 하는 물 없이 진공에서 식는다. 결과는 분쇄된 유리보다 더 날카로운 각진 유리 파편의 가루다. 위험에 더해: 달 레골리스는 낮 측의 UV 광이온화와 달 종결자 지대의 플라즈마 노출에 의해 정전기를 띤다. 충전된 먼지는 모든 것에 달라붙는다 — 솔질만으로는 제거할 수 없는 수준의 정전 부착에 의해 우주복 직물에 달라붙는다. Apollo 승무원은 약 10 EVA 후 달 먼지가 EVA 우주복 관절 실링을 열화시켰다고 보고했다(Apollo 17은 세 번의 EVA를 연속으로 한 유일한 임무였고, 서넌의 우주복 지퍼는 세 번째에 마모를 보였다)."
+  },
+  {
+    "rel": "science/life-in-space/surface-dust-mitigation.json",
+    "at": "body_paragraphs.1",
+    "en": "Operational impacts on Apollo: airlock seals jammed when dust contaminated the gasket interfaces; coolant lines on the LM PLSS (Portable Life Support System) clogged with dust ingressed through the suit umbilical; cameras and instruments needed constant brush-down; sample-return containers couldn't seal properly against the dust intrusion; and the LM cabin atmosphere after the third EVA had a smell that all 12 moonwalking astronauts described as 'gunpowder' or 'spent fireworks' (the actual cause is still debated — possibly nano-iron particles re-oxidising on contact with cabin O₂). Several Apollo crew members reported hay-fever-like symptoms in the LM cabin during the rest periods between EVAs. None of these were show-stoppers for missions lasting 12-72 hours; all of them would become show-stoppers for sustained presence.",
+    "cur": "Apollo에 대한 운영적 영향: 먼지가 개스킷 인터페이스를 오염시키면 에어록 실링이 막혔다; 우주복 탯줄을 통해 들어온 먼지로 LM PLSS(Portable Life Support System)의 냉각수 라인이 막혔다; 카메라와 기기는 지속적인 솔질이 필요했다; 샘플 반환 컨테이너는 먼지 침입에 대해 적절히 밀봉할 수 없었다; 세 번째 EVA 후 LM 캐빈 대기는 12명의 달 보행자 모두가 '화약' 또는 '소진된 폭죽'이라고 묘사한 냄새가 났다(실제 원인은 여전히 논의 중이다 — 캐빈 O₂와의 접촉으로 재산화되는 나노 철 입자일 수 있다). 여러 Apollo 승무원이 EVA 사이의 휴식 기간 동안 LM 캐빈에서 건초열 같은 증상을 보고했다. 이들 중 어느 것도 12-72시간 지속 임무에 대한 결정적 장애물이 아니었다; 모두 지속적 존재에 대한 결정적 장애물이 될 것이다."
+  },
+  {
+    "rel": "science/life-in-space/surface-dust-mitigation.json",
+    "at": "body_paragraphs.2",
+    "en": "Mars dust is chemically dangerous in a way the Moon is not. Phoenix lander (2008) confirmed by wet chemistry that Martian regolith contains 0.5-1% by mass of perchlorate (ClO₄⁻) salts, plus chlorate and chlorite. Perchlorates are thyroid endocrine disruptors at concentrations above ~25 ppb; ingesting Mars dust unfiltered would deliver doses orders of magnitude above the OSHA workplace limit within minutes. Curiosity and Perseverance have confirmed perchlorate distribution across both equatorial and high-latitude sites — it is global. Mars dust is also significantly more weathered than lunar dust (water has acted on it during the planet's wetter past), with rounder particle shapes and lower electrostatic charging, so the mechanical hazard is smaller. But the chemical hazard means Mars dust ingress into the habitat is a medical emergency, not just an operational nuisance.",
+    "cur": "화성 먼지는 달이 그렇지 않은 방식으로 화학적으로 위험하다. Phoenix 착륙선(2008)은 습식 화학으로 화성 레골리스가 질량 기준 0.5-1%의 과염소산염(ClO₄⁻) 염, 추가로 염소산염과 아염소산염을 포함한다고 확인했다. 과염소산염은 ~25 ppb 이상의 농도에서 갑상선 내분비 교란 물질이다; 여과되지 않은 화성 먼지를 섭취하는 것은 몇 분 내에 OSHA 작업장 한계보다 몇 자릿수 위의 선량을 전달할 것이다. Curiosity와 Perseverance는 적도 및 고위도 지역 모두에서 과염소산염 분포를 확인했다 — 그것은 전 지구적이다. 화성 먼지는 또한 달 먼지보다 상당히 더 풍화되어 있다(물이 행성의 더 습한 과거에 그것에 작용했다), 더 둥근 입자 형태와 더 낮은 정전 충전을 가지므로 기계적 위험은 더 작다. 그러나 화학적 위험은 화성 먼지의 거주지 침입이 단순한 운영적 골칫거리가 아니라 의료 응급 상황이라는 것을 의미한다."
+  },
+  {
+    "rel": "science/life-in-space/surface-dust-mitigation.json",
+    "at": "body_paragraphs.3",
+    "en": "The mitigation architecture that has emerged is the suitlock airlock. Instead of cycling suits through a pressurised airlock (Apollo, Shuttle, ISS approach), the suitlock keeps the suit permanently outside, attached to the habitat's outer hull via a backpack-port. Crew climb into the suit from inside the habitat without bringing dust into the pressurised volume. The Mars Z-2 prototype, the Boeing-Collins Aerospace Artemis EVA suit, the Russian Orlan-derived ILRS suit, and the Chinese Feitian-derived lunar EVA suit are all designed around suitlock attachment. Supplementary tech: Electrostatic Dust Shield (ESD), a NASA Kennedy invention that puts AC voltages across surface coatings to lift charged dust off via electrohydrodynamic forces, demonstrated at lab + small-flight scale (CubeSat experiments). Internal HEPA filtration on every airlock cycle. Decontamination shower (water rinse) before re-entering deeper habitat zones. All of these are necessary; none of them alone is sufficient. Dust will be the most-managed daily operational risk of any surface stay longer than 30 days.",
+    "cur": "등장한 완화 아키텍처는 suitlock 에어록이다. 우주복을 가압 에어록을 통해 순환시키는 대신(Apollo, Shuttle, ISS 접근법), suitlock은 백팩 포트를 통해 거주지 외부 선체에 부착된 채로 우주복을 영구적으로 외부에 유지한다. 승무원은 가압 부피로 먼지를 가져오지 않고 거주지 내부에서 우주복으로 올라간다. Mars Z-2 프로토타입, Boeing-Collins Aerospace Artemis EVA 우주복, 러시아 Orlan 파생 ILRS 우주복, 중국 Feitian 파생 달 EVA 우주복은 모두 suitlock 부착을 중심으로 설계되었다. 보충 기술: Electrostatic Dust Shield(ESD), 표면 코팅에 AC 전압을 가해 전기 유체역학적 힘으로 충전된 먼지를 들어 올리는 NASA 케네디 발명품으로, 실험실 + 소규모 비행 규모(CubeSat 실험)에서 입증되었다. 각 에어록 사이클에서의 내부 HEPA 여과. 더 깊은 거주지 영역에 재진입하기 전의 오염 제거 샤워(물 헹굼). 이 모든 것은 필요하다; 어느 것도 단독으로는 충분하지 않다. 먼지는 30일을 초과하는 모든 표면 체류의 가장 많이 관리되는 일상 운영 위험이 될 것이다."
+  },
+  {
+    "rel": "science/life-in-space/surface-dust-mitigation.json",
+    "at": "diagram_caption",
+    "en": "Lunar dust: glass-shard angular, electrostatically charged, mechanically destructive (Apollo suit-seal wear at 10 EVAs). Mars dust: chemically toxic (0.5-1% perchlorate by mass, thyroid endocrine disruptor). Mitigation: suitlock airlocks (suit lives outside, no dust ingress), Electrostatic Dust Shield, HEPA filtration, decontamination showers. All four are necessary together.",
+    "cur": "달 먼지: 유리 파편 각진, 정전 충전, 기계적으로 파괴적(10 EVA에서 Apollo 우주복 실링 마모). 화성 먼지: 화학적으로 독성(질량 기준 0.5-1% 과염소산염, 갑상선 내분비 교란 물질). 완화: suitlock 에어록(우주복은 외부에 거주, 먼지 침입 없음), Electrostatic Dust Shield, HEPA 여과, 오염 제거 샤워. 네 가지 모두 함께 필요하다."
+  },
+  {
+    "rel": "science/life-in-space/surface-mobility-rovers.json",
+    "at": "title",
+    "en": "Surface mobility — from Apollo's LRV to pressurised rovers for Moon and Mars",
+    "cur": "표면 이동성 — Apollo의 LRV에서 달과 화성용 가압 로버까지"
+  },
+  {
+    "rel": "science/life-in-space/surface-mobility-rovers.json",
+    "at": "intro_sentence",
+    "en": "Crewed surface stays live and die by how far the crew can travel. Apollo's LRV pushed traverse range from 1 km to 35.7 km. The next generation — pressurised rovers — pushes it to multi-week, multi-hundred-km expeditions.",
+    "cur": "유인 표면 활동의 성공 여부는 승무원이 얼마나 멀리 이동할 수 있는지에 달려 있다. Apollo의 LRV는 활동 반경을 1 km에서 35.7 km로 확대했다. 다음 세대 기술인 가압 로버는 이를 수주에서 수백 km의 탐사로 확장한다."
+  },
+  {
+    "rel": "science/life-in-space/surface-mobility-rovers.json",
+    "at": "body_paragraphs.0",
+    "en": "Apollo's Lunar Roving Vehicle (LRV) flew on the last three Apollo missions (15, 16, 17, 1971-72). Before the LRV, surface traverses were limited by suit consumables to about 1 km radius from the LM — and EVA fatigue from walking in 1/6-g while carrying a pressurised suit made even that distance limit a stretch. The LRV was deliberately scoped to fit folded into the LM Quad-1 storage bay (a 0.7 × 0.7 m envelope), weighed only 210 kg unloaded, and ran on two 36-V silver-zinc batteries (no recharge — the LRV was a single-mission asset). Top speed: 18 km/h. Total range on those batteries: ~92 km (57 mi), with a hard walk-back limit of half the consumables remaining (so practical traverses were 5-10 km out + 5-10 km back). Apollo 17 logged 35.7 km total over three EVAs, the all-time human surface-driving record. The LRV's design template — open-frame, unpressurised, suit-only, single-mission disposable — is what Artemis is rebuilding now as the LTV.",
+    "cur": "Apollo의 Lunar Roving Vehicle(LRV)은 마지막 세 Apollo 미션(15, 16, 17, 1971-72)에 탑재되었다. LRV 이전에는 우주복 소모품으로 인해 표면 이동이 LM으로부터 약 1 km 반경으로 제한되었으며, 1/6-g 환경에서 가압 우주복을 입고 걷는 것으로 인한 EVA 피로가 심각했다. LRV는 LM Quad-1 보관실(0.7 × 0.7 m 크기)에 접힌 상태로 장착되도록 설계되었으며, 적재 중량은 210 kg에 불과했고, 36-V 은-아연 배터리 두 개로 구동되었다(충전 불가능 — LRV는 일회용 자산). 최고 속도: 18 km/h. 해당 배터리의 총 주행거리: 약 92 km(57 mi), 귀환용 연료의 절반을 남겨두는 하드 제약 조건(따라서 실질적인 이동은 왕로 5-10 km + 복로 5-10 km). Apollo 17은 세 번의 EVA에서 총 35.7 km를 기록했으며, 이는 인류의 표면 주행 기록이다. LRV의 설계 원칙 — 개방형 프레임, 비가압, 우주복 전용, 일회용 소모품 — 은 현재 Artemis가 LTV로 재현하고 있는 것이다."
+  },
+  {
+    "rel": "science/life-in-space/surface-mobility-rovers.json",
+    "at": "body_paragraphs.1",
+    "en": "Artemis Lunar Terrain Vehicle (LTV) is the direct LRV descendant: open-frame, unpressurised, designed for two suited crew, ~20 km traverse radius. Three contracts were issued by NASA in April 2024 — Intuitive Machines, Lunar Outpost, and Astrolab — for design + delivery, with a single down-select expected for the production order. Differences from LRV: rechargeable batteries with solar trickle-charge (the LTV stays at the site between Artemis missions, supporting subsequent crews and operating as a tele-driven rover during the lunar nights and intervals when no crew is present), partial autonomy for self-positioning and obstacle avoidance, designed for ~10-year deployed lifetime instead of single-use. Target IOC: Artemis V (currently scheduled mid-2030).",
+    "cur": "Artemis Lunar Terrain Vehicle(LTV)은 LRV의 직계 후속 모델이다: 개방형 프레임, 비가압, 2명의 우주복 착용자를 위해 설계되었으며, 약 20 km 이동 반경을 목표로 한다. NASA는 2024년 4월에 Intuitive Machines, Lunar Outpost, Astrolab 3개 회사에 설계 및 납품 계약을 발주했으며, 생산 주문을 위한 최종 선정이 예상된다. LRV와의 차이점: 태양광 저전력 충전 기능이 있는 충전식 배터리(LTV는 Artemis 미션 사이에 현장에 배치되어 이후 승무원을 지원하고 달이 밤 상태일 때 또는 승무원이 없는 기간에 원격 조종 로버로 운영됨), 자체 위치 결정 및 장애물 회피를 위한 부분 자율 기능, 일회용 대신 약 10년의 배치 수명으로 설계됨. 목표 IOC: Artemis V(현재 2030년 중반으로 예정됨)."
+  },
+  {
+    "rel": "science/life-in-space/surface-mobility-rovers.json",
+    "at": "body_paragraphs.2",
+    "en": "Pressurised rovers are the qualitatively different next step. The Toyota / JAXA Lunar Cruiser concept (the project name for what JAXA calls the Manned Pressurised Rover) is a 6-tonne, 6 × 5 × 4 m vehicle with internal pressurised volume of ~13 m³ — about the size of a small bus or a Winnebago RV. Two crew live inside in shirtsleeves for up to 30 days at a time, exiting in suits through suitlock airlocks. The fuel cell + regenerative cycle gives 1000-km range. The Chinese ILRS programme has a similar pressurised rover under development. Practical implications: a pair of pressurised rovers can support multi-month expeditions far from the base camp, transforming surface ops from 'a few days outdoor activity from home' to 'expedition-style traverses of hundreds of km' — closer to Antarctic field-camp logistics than to Apollo. NASA's plan uses the Toyota Lunar Cruiser as the agency-baseline pressurised rover starting around Artemis VII.",
+    "cur": "가압 로버는 질적으로 다른 다음 단계다. Toyota/JAXA Lunar Cruiser 컨셉(JAXA가 Manned Pressurised Rover라고 부르는 프로젝트의 공식명)은 6톤 규모의 6 × 5 × 4 m 차량이며, 내부 가압 용적은 약 13 m³로 소형 버스 또는 Winnebago RV 정도의 크기다. 2명의 승무원이 에어락 우주복실을 통해 우주복을 입고 외출하면서 최대 30일 동안 셔츠 소매 상태로 내부에서 생활한다. 연료 전지 + 재생 사이클은 1000 km의 주행 거리를 제공한다. 중국의 ILRS 프로그램도 유사한 가압 로버를 개발 중이다. 실질적 함의: 한 쌍의 가압 로버는 기지 캠프에서 수백 km 떨어진 곳까지의 수개월 원정을 지원할 수 있으며, 표면 작업을 '집에서 야외 활동 며칠'에서 '수백 km의 원정 스타일 이동'으로 변환할 수 있다 — Apollo보다는 남극 야외 캠프 로지스틱에 가깝다. NASA의 계획은 Artemis VII부터 시작하여 Toyota Lunar Cruiser를 기관 기본 가압 로버로 사용한다."
+  },
+  {
+    "rel": "science/life-in-space/surface-mobility-rovers.json",
+    "at": "body_paragraphs.3",
+    "en": "Mars rover heritage is purely robotic so far — Sojourner (1997), Spirit + Opportunity (2004-2010 and 2004-2018), Curiosity (2012-present), Perseverance (2021-present), Zhurong (2021-2022), Pragyan (2023). All four-wheel or six-wheel, all unpressurised, all autonomous-with-Earth-supervision. Crewed Mars architectures lean heavily on this heritage: Perseverance's autonomous-navigation software (AutoNav 2.0, which can drive 200+ m per Sol without intervention) is being matured into the navigation stack for crewed pressurised rovers. The pressurised rover for Mars is qualitatively the same machine as the lunar one, but with two extra demands: it has to handle dust storms (typhoon-class scenarios that can last weeks), and it has to handle the perchlorate / dust contamination problem on every airlock cycle. Both are unsolved at the engineering level today; both are the kind of problem that gets solved by 5-10 years of lunar pressurised-rover field-testing before Mars.",
+    "cur": "화성 로버의 유산은 지금까지 순전히 로봇식이다 — Sojourner(1997), Spirit + Opportunity(2004-2010 및 2004-2018), Curiosity(2012-현재), Perseverance(2021-현재), Zhurong(2021-2022), Pragyan(2023). 모두 4륜 또는 6륜, 모두 비가압, 모두 지구 감시 자율 주행식이다. 유인 화성 구조는 이 유산을 크게 활용한다: Perseverance의 자율 항법 소프트웨어(AutoNav 2.0은 개입 없이 Sol당 200 m 이상을 주행할 수 있음)는 유인 가압 로버의 항법 스택으로 발전하고 있다. 화성용 가압 로버는 달 것과 질적으로 동일한 기계지만 두 가지 추가 요구사항이 있다: 먼지 폭풍(태풍 수준의 시나리오로 수주 지속 가능)을 처리해야 하고, 모든 에어락 사이클에서 과염소산염/먼지 오염 문제를 처리해야 한다. 둘 다 현재 엔지니어링 수준에서 미해결 상태며, 둘 다 화성에 가기 전에 5-10년간의 달 가압 로버 현장 시험으로 해결되는 종류의 문제다."
+  },
+  {
+    "rel": "science/life-in-space/surface-mobility-rovers.json",
+    "at": "diagram_caption",
+    "en": "Apollo LRV (1971-72): 210 kg, unpressurised, single-mission, 35.7 km record (Apollo 17). Artemis LTV (~2030): unpressurised, rechargeable, deployed-asset, ~20 km radius. Pressurised rovers (Toyota Lunar Cruiser, ILRS equivalent, late 2030s+): 6 t, 13 m³ pressurised, 30-day endurance, 1000-km range — qualitatively different mobility envelope.",
+    "cur": "Apollo LRV(1971-72): 210 kg, 비가압, 일회용, 35.7 km 기록(Apollo 17). Artemis LTV(약 2030): 비가압, 충전식, 배치형 자산, 약 20 km 반경. 가압 로버(Toyota Lunar Cruiser, ILRS 동등품, 2030년대 후반 이상): 6톤, 13 m³ 가압, 30일 내구성, 1000 km 범위 — 질적으로 다른 이동성 범위."
+  },
+  {
+    "rel": "science/life-in-space/vestibular-adaptation.json",
+    "at": "intro_sentence",
+    "en": "The inner ear's gravity sensor goes silent in orbit — roughly 60–80% of astronauts spend their first 2–4 days nauseous while the brain re-weights vestibular vs visual cues.",
+    "cur": "궤도에서 내이의 중력 센서가 무음이 된다 — 우주비행사의 약 60~80%가 첫 2~4일 동안 뇌가 전정 신호와 시각 신호를 재가중치할 동안 메스꺼움을 경험한다."
+  },
+  {
+    "rel": "science/life-in-space/vestibular-adaptation.json",
+    "at": "body_paragraphs.0",
+    "en": "The vestibular system in your inner ear is built around three semicircular canals (rotation) and two otolith organs (linear acceleration + gravity). On Earth those otoliths sit in a one-g field; their hair cells are constantly bent by the calcium-carbonate crystals (otoconia) pressing downward. The brain reads that bend as \"down\". In microgravity the otoconia float free. The signal goes ambiguous.",
+    "cur": "당신의 내이 전정계는 세 개의 반고리관(회전)과 두 개의 이석기관(선형 가속도 + 중력)으로 이루어져 있다. 지구에서 이석은 1g 중력장에 앉아 있으며, 그들의 감각 모세포는 아래로 누르는 탄산칼슘 결정(이석)에 의해 지속적으로 휘어진다. 뇌는 그 휘어짐을 \"아래\"로 해석한다. 미중력 환경에서 이석은 자유롭게 떠다닌다. 신호가 모호해진다."
+  },
+  {
+    "rel": "science/life-in-space/vestibular-adaptation.json",
+    "at": "body_paragraphs.1",
+    "en": "Roughly 60–80% of astronauts develop Space Adaptation Syndrome in the first 24–72 hours: nausea, vomiting, sweating, headaches. It's not the body's only sensory conflict (eyes still report up/down via the visual horizon of the cabin, proprioception still reports limb position) but it's the most striking, and it usually resolves within 2–4 days as the brain learns to down-weight the now-unreliable vestibular channel.",
+    "cur": "우주비행사의 약 60~80%가 처음 24~72시간 동안 Space Adaptation Syndrome을 경험한다: 메스꺼움, 구토, 발한, 두통. 그것이 신체의 유일한 감각 충돌은 아니다(눈은 여전히 선실의 시각 수평선을 통해 상/하를 보고하고, 고유감각은 여전히 팔다리 위치를 보고한다). 하지만 가장 두드러지며, 보통 뇌가 이제 신뢰할 수 없는 전정 신호의 가중치를 낮추는 것을 배우면서 2~4일 내에 해결된다."
+  },
+  {
+    "rel": "science/life-in-space/vestibular-adaptation.json",
+    "at": "body_paragraphs.2",
+    "en": "The down-weighting doesn't reverse instantly on return. Post-flight, astronauts walk into a 1-g world with a brain that's spent months ignoring vestibular input — and the results are gait disturbances, balance deficits, and head-movement-triggered nausea that take days to weeks to clear. Long-duration crew show measurable changes in eye-tracking and posture testing for months after landing.",
+    "cur": "가중치 감소는 귀환 시 즉시 역전되지 않는다. 비행 후, 우주비행사들은 수개월 동안 전정 신호를 무시해온 뇌를 가지고 1g 세계로 걸어가며 — 그 결과는 걸음걸이 장애, 균형 결손, 그리고 머리 움직임으로 유발되는 메스꺼움으로, 이들을 해결하는 데 며칠에서 수주일이 걸린다. 장기 비행 승무원들은 착륙 후 수개월 동안 눈 추적 및 자세 검사에서 측정 가능한 변화를 보인다."
+  },
+  {
+    "rel": "science/life-in-space/vestibular-adaptation.json",
+    "at": "body_paragraphs.3",
+    "en": "For a Mars mission, the open question is whether the surface vestibular environment (0.38 g) is enough to re-anchor the system on arrival, or whether crew step out of the lander into a hybrid balance state — partially adapted to space, partially relearning gravity. Centrifuge research on the ISS and human-rotation studies on Earth suggest the answer is somewhere in between; planning assumes a few days of reduced surface mobility immediately post-landing.",
+    "cur": "화성 임무를 위해 미결의 질문은 표면 전정 환경(0.38g)이 도착 시 시스템을 재고정하기에 충분한지, 아니면 승무원이 착륙선에서 나가면서 부분적으로 우주에 적응하고 부분적으로 중력을 다시 학습하는 하이브리드 균형 상태로 나가는지이다. ISS의 원심분리기 연구 및 지구의 인간 회전 연구는 답이 그 중간 어딘가에 있음을 시사한다; 계획은 착륙 직후 며칠간의 감소된 표면 이동성을 가정한다."
+  },
+  {
+    "rel": "science/life-in-space/vestibular-adaptation.json",
+    "at": "diagram_caption",
+    "en": "Otolith crystals float in microgravity → ambiguous \"down\" signal → brain down-weights vestibular cues → re-entry into 1 g requires days-to-weeks of re-weighting.",
+    "cur": "미중력에서 이석 결정 부유 → 모호한 \\\"아래\\\" 신호 → 뇌가 전정 신호의 가중치를 낮춤 → 1g으로의 재진입은 며칠에서 수주일의 재가중치 필요"
+  },
+  {
+    "rel": "science/mission-phases/_intro.json",
+    "at": "headline",
+    "en": "Mission Phases — the flight is just five phases on repeat.",
+    "cur": "임무 단계 — 비행은 단지 5개 단계의 반복입니다."
+  },
+  {
+    "rel": "science/mission-phases/_intro.json",
+    "at": "paragraphs.0",
+    "en": "Pretty much every interplanetary mission, from Voyager to Perseverance, follows the same script. Launch out of Earth's atmosphere into low orbit. Trans-X injection — the big single burn that flings you onto the transfer ellipse to the Moon (TLI), Mars (TMI), Venus, Jupiter, whatever. Coast for months, with a few small Trajectory Correction Maneuvers along the way. Orbit insertion — the braking burn at the destination. EDL — entry, descent, and landing — for landers.",
+    "cur": "거의 모든 행성간 미션, Voyager부터 Perseverance까지, 동일한 절차를 따릅니다. 지구 대기권에서 벗어나 저궤도로 진입합니다. Trans-X 분사 — 당신을 달(TLI), 화성(TMI), 금성, 목성 등의 전이 타원 궤도로 던지는 대규모 단일 분사입니다. 경로 수정 기동을 몇 번 수행하며 수개월간 비행합니다. 궤도 삽입 — 목적지에서의 제동 분사입니다. EDL — 진입, 강하, 착륙 — 착륙선의 경우입니다."
+  },
+  {
+    "rel": "science/mission-phases/_intro.json",
+    "at": "paragraphs.1",
+    "en": "Apollo flew this script to the Moon in three days. Curiosity flew it to Mars in eight months. Voyager flew it three times — once to leave Earth, then twice more for gravity-assist hops past Jupiter and Saturn. The phases scale; the phase sequence doesn't.",
+    "cur": "Apollo는 이 계획을 따라 3일 만에 달에 도착했습니다. Curiosity는 8개월에 걸쳐 화성으로 날아갔습니다. Voyager는 이를 세 번 실행했습니다. 지구를 떠나기 위해 한 번, 그리고 목성과 토성을 지나는 중력 보조 기동을 위해 두 번 더입니다. 각 단계의 규모는 달라지지만, 단계의 순서는 변하지 않습니다."
+  },
+  {
+    "rel": "science/mission-phases/_intro.json",
+    "at": "paragraphs.2",
+    "en": "Seven sections here cover all of it, plus two specialised phases — MET (Mission Elapsed Time, the universal stopwatch) and NRHO (the orbit NASA's Lunar Gateway will live in). Read them as a flight log: launch first, EDL last.",
+    "cur": "여기 일곱 개 섹션에서 모두를 다루며, 전문화된 두 단계 — MET(Mission Elapsed Time, 우주 공용 스톱워치)와 NRHO(NASA의 Lunar Gateway가 위치할 궤도) — 도 포함합니다. 비행 기록으로 읽으십시오: 먼저 발사, 마지막에 EDL입니다."
+  },
+  {
+    "rel": "science/mission-phases/aerobraking.json",
+    "at": "intro_sentence",
+    "en": "Trimming a wide capture orbit down to a working one for almost no fuel — by dipping into the very top of a planet's atmosphere a little on every pass.",
+    "cur": "행성의 대기 최상층을 매 회전마다 살짝 통과하며 거의 연료를 소비하지 않고 넓은 포획 궤도를 실용적인 궤도로 축소하는 방식."
+  },
+  {
+    "rel": "science/mission-phases/aerobraking.json",
+    "at": "narrative_101.0",
+    "en": "When an orbiter arrives at a planet it fires a capture burn to drop into orbit — but stopping fully into a tight, useful orbit would cost a huge amount of fuel. So mission planners cheat physics with the atmosphere: they capture into a big, loose ellipse, then let the spacecraft skim the very top of the air at the low point of each orbit. Each brush of thin air steals a little speed, and the far side of the orbit sinks a bit lower.",
+    "cur": "궤도선이 행성에 도착하면 포획 감속을 수행하여 궤도에 진입하는데, 좁고 실용적인 궤도로 완전히 정착하려면 엄청난 양의 연료가 필요하다. 따라서 임무 계획자들은 대기를 이용해 물리학을 우회한다: 넓고 느슨한 타원 궤도로 포획한 후, 각 궤도의 저점에서 우주선이 공기의 최상층을 스쳐 지나가도록 한다. 얇은 공기와의 각 접촉은 조금의 속도를 빼앗으며, 궤도의 원지점이 조금씩 낮아진다."
+  },
+  {
+    "rel": "science/mission-phases/aerobraking.json",
+    "at": "narrative_101.1",
+    "en": "Do this a few hundred times over weeks or months and the wide capture ellipse shrinks into the near-circular science orbit the mission actually wants — all for the price of the small capture burn, not the enormous one full propulsive insertion would need. It is one of the great fuel bargains in spaceflight.",
+    "cur": "이를 수주 또는 수개월에 걸쳐 수백 번 반복하면 넓은 포획 타원은 임무가 실제로 원하는 거의 원형의 과학 궤도로 축소된다 — 모두 작은 포획 감속의 대가로, 완전 추진식 삽입에 필요한 엄청난 에너지 대신. 이는 우주 비행에서 가장 훌륭한 연료 절감 방법 중 하나다."
+  },
+  {
+    "rel": "science/mission-phases/aerobraking.json",
+    "at": "narrative_101.2",
+    "en": "The catch is that it is slow and delicate. Dip too shallow and nothing happens; dip too deep and the heating or the aerodynamic forces can damage or tumble the spacecraft. Controllers nudge the low point up and down pass by pass, riding a narrow corridor between 'too little' and 'too much' for months on end.",
+    "cur": "문제는 느리고 섬세하다는 것이다. 너무 얕게 침투하면 아무 일도 일어나지 않고, 너무 깊게 침투하면 가열이나 공기역학적 힘이 우주선을 손상시키거나 회전시킬 수 있다. 통제사들은 저점을 매 회전마다 위아래로 조정하여 수개월 동안 '너무 적음'과 '너무 많음' 사이의 좁은 통로를 유지한다."
+  },
+  {
+    "rel": "science/mission-phases/aerobraking.json",
+    "at": "body_paragraphs.0",
+    "en": "Aerobraking trades propellant for time and patience. Mars Global Surveyor, Mars Odyssey, Mars Reconnaissance Orbiter, MAVEN, and Venus's Magellan all used it to reach their final orbits, saving hundreds of kilograms of fuel that would otherwise have had to be launched from Earth — often more than the spacecraft's own dry mass.",
+    "cur": "대기제동은 추진제를 시간과 인내로 거래한다. 화성 글로벌 서베이어(Mars Global Surveyor), 화성 오디세이(Mars Odyssey), 화성 정찰 궤도선(Mars Reconnaissance Orbiter), MAVEN, 그리고 금성의 마젤란(Magellan)은 모두 이를 이용해 최종 궤도에 도달했으며, 지구에서 발사되어야 했을 수백 킬로그램의 연료를 절감했다 — 종종 우주선 자체 건조 질량보다 더 많은 양이다."
+  },
+  {
+    "rel": "science/mission-phases/aerobraking.json",
+    "at": "body_paragraphs.1",
+    "en": "The physics is the same drag that lands a probe, applied in tiny, repeated doses at orbital speed instead of one fierce entry. Because the spacecraft only grazes the outermost, thinnest air, each pass sheds just a few metres per second — but orbits repeat, and the effect compounds. Solar panels, turned edge-on or used as brake surfaces, often take the load.",
+    "cur": "물리는 탐사선을 착륙시키는 같은 항력인데, 한 번의 격렬한 진입 대신 궤도 속도에서 작고 반복되는 용량으로 적용된다. 우주선이 가장 바깥쪽, 가장 얇은 공기만 스쳐가므로, 각 회전마다 단 몇 초 속도만 감소한다 — 그러나 궤도는 반복되고 효과는 누적된다. 태양전지판은 모서리 방향으로 향하거나 제동 표면으로 사용되어 하중을 견딘다."
+  },
+  {
+    "rel": "science/mission-phases/aerobraking.json",
+    "at": "body_paragraphs.2",
+    "en": "Aerocapture is the bolder cousin: braking enough on a SINGLE deep pass to go straight from arrival into a captured orbit, no capture burn at all. It would save even more fuel, but it demands a heat shield and split-second guidance, and no mission has yet flown it — aerobraking's patient, low-risk version remains the workhorse.",
+    "cur": "Aerocapture는 더 대담한 사촌이다: 포획 감속 없이 도착에서 곧바로 포획 궤도로 이동하기에 충분한 양의 제동을 단 하나의 깊은 통과에서 수행한다. 훨씬 더 많은 연료를 절감하겠지만, 열차폐와 분초 단위의 유도를 요구하며, 아직 어떤 임무도 이를 수행하지 못했다 — 대기제동의 인내심 있고 저위험 버전이 주력으로 남아 있다."
+  },
+  {
+    "rel": "science/mission-phases/aerobraking.json",
+    "at": "diagram_caption",
+    "en": "Aerobraking: capture into a wide ellipse, then skim the upper atmosphere at periapsis pass after pass; each dip lowers apoapsis until the orbit is circular.",
+    "cur": "대기제동: 넓은 타원으로 포획한 후, 근지점 통과마다 반복적으로 상층 대기를 스쳐 지나가며, 각 침투가 원지점을 낮추어 궤도가 원형이 될 때까지."
+  },
+  {
+    "rel": "science/mission-phases/antenna-arrays.json",
+    "at": "title",
+    "en": "Arraying — many small ears instead of one giant one",
+    "cur": "배열화 — 하나의 거대한 안테나 대신 많은 작은 수신기"
+  },
+  {
+    "rel": "science/mission-phases/antenna-arrays.json",
+    "at": "intro_sentence",
+    "en": "Combining the signals from multiple antennas in real time creates a single virtual aperture larger than any individual dish, capturing fainter spacecraft signals without building ever-bigger structures.",
+    "cur": "여러 안테나의 신호를 실시간으로 결합하면 단일 접시보다 큰 가상 개구부를 만들어 더 큰 구조를 지을 필요 없이 미세한 우주선 신호를 포착할 수 있습니다."
+  },
+  {
+    "rel": "science/mission-phases/antenna-arrays.json",
+    "at": "body_paragraphs.0",
+    "en": "A single large antenna is the obvious way to hear a faint spacecraft signal from billions of kilometres away. The DSN's 70 m dishes — at Goldstone, Madrid, and Canberra — are near the practical limit for fully steerable, ground-based reflectors. Building something appreciably larger would require a fixed structure (limiting sky coverage) or engineering that doesn't yet exist. The alternative is to combine many smaller antennas: arraying.",
+    "cur": "수십억 킬로미터 떨어진 미세한 우주선 신호를 수신하는 가장 직관적인 방법은 하나의 대형 안테나를 사용하는 것입니다. DSN의 70 m 접시들 — Goldstone, Madrid, Canberra — 은 완전히 조향 가능한 지상 반사체의 실질적 한계에 근접해 있습니다. 이보다 훨씬 더 큰 구조를 건설하려면 고정된 구조(하늘 관측 범위 제한)나 아직 존재하지 않는 기술이 필요합니다. 대안은 많은 작은 안테나를 결합하는 것입니다: 배열화."
+  },
+  {
+    "rel": "science/mission-phases/antenna-arrays.json",
+    "at": "body_paragraphs.1",
+    "en": "When multiple antennas observe the same spacecraft simultaneously and their signals are combined with the correct phase and time offsets, the result is coherent addition. The noise from each antenna adds incoherently (it scales with the square root of the number of antennas) while the signal adds coherently (it scales with the number of antennas). The effective collecting area of an array of N identical dishes is N times that of a single dish. This is not an approximation — it is the same principle behind radio telescope arrays like the Very Large Array and ALMA.",
+    "cur": "여러 안테나가 동시에 같은 우주선을 관측하고 그들의 신호가 올바른 위상과 시간 오프셋으로 결합되면, 그 결과는 간섭 덧셈입니다. 각 안테나의 노이즈는 비간섭적으로 더해지고(안테나 개수의 제곱근에 비례) 신호는 간섭적으로 더해집니다(안테나 개수에 비례). N개의 동일한 접시로 이루어진 배열의 유효 수집 면적은 단일 접시의 N배입니다. 이는 근사값이 아니며 — Very Large Array와 ALMA 같은 전파 망원경 배열의 기초가 되는 같은 원리입니다."
+  },
+  {
+    "rel": "science/mission-phases/antenna-arrays.json",
+    "at": "body_paragraphs.2",
+    "en": "The most famous demonstration in deep-space operations came during Voyager 2's Neptune flyby in August 1989. At 4.4 billion kilometres, Voyager's signal was so faint that capturing it at full science data rate required arraying dishes across four continents at once — the Goldstone 70 m and the Very Large Array in the United States, the 64 m Canberra DSN antenna and the Parkes 64 m radio telescope in Australia, and Japan’s 64 m Usuda dish. NASA's arraying agreement with non-NASA facilities like Parkes (operated by CSIRO) established that the deep-space communication network can be augmented internationally at critical mission moments.",
+    "cur": "심우주 운영에서 가장 유명한 사례는 1989년 8월 Voyager 2의 해왕성 근접 통과입니다. 44억 킬로미터 거리에서 Voyager의 신호는 너무 미세했기 때문에 전체 과학 데이터 전송률로 포착하려면 한 번에 네 대륙에 걸친 안테나 배열이 필요했습니다 — 미국의 Goldstone 70 m과 Very Large Array, 호주의 Canberra DSN 64 m 안테나와 Parkes 64 m 전파 망원경, 그리고 일본의 Usuda 64 m 접시입니다. NASA와 Parkes(CSIRO 운영) 같은 비-NASA 시설 간의 배열화 협약은 심우주 통신 네트워크가 중요한 임무 시점에 국제적으로 증강될 수 있음을 확립했습니다."
+  },
+  {
+    "rel": "science/mission-phases/antenna-arrays.json",
+    "at": "body_paragraphs.3",
+    "en": "Arraying has real costs and limits. Downlink arraying (receiving from a spacecraft) is tractable because each antenna independently captures the signal and the combination happens in post-processing or in real time with precise timing. Uplink arraying (transmitting to a spacecraft) is harder: the signals from multiple dishes must combine coherently at the spacecraft's location, far away, requiring extremely precise phase synchronisation across sites. NASA's DSN Aperture Enhancement Program is investing in more distributed arrays specifically because it is cheaper to add 34 m dishes than to build new 70 m ones — and an array of smaller dishes is also more fault-tolerant: losing one antenna degrades performance gracefully rather than losing a unique irreplaceable asset.",
+    "cur": "배열화는 실제 비용과 한계가 있습니다. 다운링크 배열화(우주선으로부터 수신)는 각 안테나가 독립적으로 신호를 포착하고 결합이 사후 처리 또는 정확한 시간 조정을 통한 실시간 처리로 진행되므로 수행 가능합니다. 업링크 배열화(우주선으로 전송)는 더 어렵습니다: 여러 접시의 신호가 우주선 위치에서 멀리 떨어져 있는 장소에서 간섭적으로 결합되어야 하며, 사이트 전체에 걸쳐 극도로 정확한 위상 동기화가 필요합니다. NASA의 DSN Aperture Enhancement Program은 새로운 70 m 접시를 건설하는 것보다 34 m 접시를 추가하는 것이 더 싸기 때문에 더 분산된 배열에 투자하고 있으며 — 작은 접시의 배열은 또한 더 내결함성입니다: 하나의 안테나를 잃어도 성능이 우아하게 저하되며 고유하고 대체 불가능한 자산을 잃지 않습니다."
+  },
+  {
+    "rel": "science/mission-phases/antenna-arrays.json",
+    "at": "diagram_caption",
+    "en": "N dishes observe same spacecraft → signals phase-aligned and coherently summed → effective area = N × single-dish area → weaker signal threshold reachable, or same threshold with smaller individual dishes.",
+    "cur": "N개의 접시가 같은 우주선을 관측 → 신호 위상 정렬 및 간섭 덧셈 → 유효 면적 = N × 단일 접시 면적 → 더 약한 신호 임계값 도달 가능, 또는 더 작은 개별 접시로 같은 임계값 달성."
+  },
+  {
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "title",
+    "en": "Ascent guidance — the computer that flies a rocket to orbit",
+    "cur": "상승 유도 — 로켓을 궤도로 날려보내는 컴퓨터"
+  },
+  {
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "intro_sentence",
+    "en": "Getting to orbit is not a fixed script you can write in advance — it is a boundary-value problem solved anew every second, which is why spaceflight had to wait for the digital computer.",
+    "cur": "궤도 진입은 미리 작성할 수 있는 고정된 스크립트가 아니다. 매초마다 새로 풀어야 하는 경계값 문제이며, 이것이 우주비행이 디지털 컴퓨터를 기다려야 했던 이유다."
+  },
+  {
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "narrative_101.0",
+    "en": "A rocket climbing to orbit has to satisfy an exact end condition: at engine cutoff it must be at the right altitude, moving horizontally, at precisely orbital speed. Miss the speed by a little and the orbit is wrong or the vehicle falls back. But the rocket is getting lighter every second as it burns propellant, the air thins, gravity pulls, winds shove — so the \"right\" way to point the engine is different at every instant and depends on everything that has happened so far. No fixed pitch schedule can hit the target exactly.",
+    "cur": "궤도로 상승하는 로켓은 정확한 최종 조건을 만족해야 한다: 엔진 차단 시점에 올바른 고도에 있고, 수평으로 움직이며, 정확히 궤도 속도로 움직여야 한다. 속도를 조금만 놓쳐도 궤도가 잘못되거나 우주선이 떨어진다. 하지만 로켓은 연료를 태우면서 매초마다 가벼워지고, 공기는 얇아지며, 중력은 당기고, 바람은 밀어낸다. 따라서 엔진을 가리켜야 할 \"올바른\" 방향은 매 순간마다 다르며 지금까지 일어난 모든 것에 달려 있다. 고정된 피치 프로그램은 목표를 정확히 맞힐 수 없다."
+  },
+  {
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "narrative_101.1",
+    "en": "Early in flight, low in the atmosphere, the rocket does follow a pre-planned open-loop program: a gentle pitch-over just after liftoff starts a gravity turn, and the vehicle holds a smooth pre-computed attitude to keep aerodynamic loads low through the dense air. But once it is above the atmosphere the guidance switches to closed loop — it measures where it actually is and how fast, computes the steering that will thread the exact cutoff condition, and updates that answer many times a second all the way to orbit.",
+    "cur": "비행 초기, 대기권 하단에서 로켓은 사전 계획된 개루프 프로그램을 따른다: 발사 직후 부드러운 피치 오버는 중력 선회를 시작하고, 우주선은 미리 계산된 자세를 유지하여 밀집한 공기를 통해 공기역학적 하중을 낮게 유지한다. 하지만 대기권을 벗어나면 유도는 폐루프로 전환된다. 실제 위치와 속도를 측정하고, 정확한 차단 조건을 통과시킬 조종을 계산한 후, 궤도에 도달할 때까지 매초 여러 번 그 답을 업데이트한다."
+  },
+  {
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "narrative_101.2",
+    "en": "That closed-loop scheme has a name — Powered Explicit Guidance (PEG) — and a predecessor on the Saturn V, the Iterative Guidance Mode (IGM) — and it is the reason a low-thrust upper stage can loft its trajectory below the horizon and still arrive at orbital velocity on time. It is, quite literally, why spaceflight needed onboard computers: a human cannot re-solve the problem every second, but the flight computer does.",
+    "cur": "그 폐루프 방식의 이름은 Powered Explicit Guidance (PEG)이고, 토성V의 선례는 Iterative Guidance Mode (IGM)이다. 이것이 저추력 상단 단계가 궤도 속도에 정시에 도달하면서도 궤적을 지평선 아래로 쏠릴 수 있는 이유다. 이것은 정말로 우주비행이 탑재 컴퓨터를 필요로 한 이유다: 인간은 매초마다 이 문제를 다시 풀 수 없지만, 비행 컴퓨터는 할 수 있다."
+  },
+  {
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "body_paragraphs.0",
+    "en": "Ascent guidance is a two-phase affair. In the atmospheric first phase the vehicle flies open-loop: a small pitch-over kick just after tower clear initiates a gravity turn, and thereafter it holds a pre-computed pitch program that keeps the angle of attack near zero so aerodynamic and structural loads stay bounded through max-Q. There is little freedom here — the air dictates the path.",
+    "cur": "상승 유도는 2단계로 이루어진다. 대기권 첫 단계에서 우주선은 개루프로 비행한다: 타워 이탈 직후 작은 피치 오버 킥이 중력 선회를 시작하고, 그 이후로는 미리 계산된 피치 프로그램을 유지하여 받음각을 거의 0에 가깝게 유지함으로써 최대 동압 구간을 통해 공기역학적 하중과 구조적 하중을 제한한다. 여기서는 자유도가 거의 없다. 공기가 경로를 결정한다."
+  },
+  {
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "body_paragraphs.1",
+    "en": "Above the atmosphere the guidance goes closed-loop and explicit. Powered Explicit Guidance treats the remaining burn as a boundary-value problem: given the current state (position, velocity, mass, thrust) and the desired cutoff state (target altitude, flight-path angle, orbital speed), it computes the optimal steering — essentially a linear-tangent pitch law — and the time-to-go, then re-solves the whole thing every guidance cycle. As the burn proceeds the solution converges and the commands smooth out; the stage can even loft (pitch above the local horizontal) early to bank altitude, then pitch down to trade it for speed.",
+    "cur": "대기권 위에서 유도는 폐루프이고 명시적이다. Powered Explicit Guidance는 남은 연소를 경계값 문제로 취급한다: 현재 상태(위치, 속도, 질량, 추력)와 원하는 차단 상태(목표 고도, 비행경로각, 궤도 속도)가 주어졌을 때, 최적 조종(본질적으로 선형 접선 피치 법칙)과 남은 시간을 계산한 후, 유도 사이클마다 전체를 다시 푼다. 연소가 진행되면서 해가 수렴되고 명령이 부드러워진다. 단계는 초기에 상승(지표면 수평선 위로 피치)하여 고도를 얻은 후, 아래로 피치하여 고도를 속도로 교환할 수도 있다."
+  },
+  {
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "body_paragraphs.2",
+    "en": "This is the flight computer’s job, and it is unforgiving of a low thrust-to-weight upper stage, where the burn is long and the boundary condition is a moving target the whole way. The Saturn V flew IGM; the Space Shuttle and SLS fly PEG, and most modern upper stages use PEG-class guidance (SpaceX has not published Falcon 9’s exact algorithm). The Physics Lab’s \"flying computer\" lesson runs exactly this — an open-loop program handing over to closed-loop PEG lofting the arc to orbit.",
+    "cur": "이것은 비행 컴퓨터의 역할이며, 저추력중량비 상단 단계에는 용납할 수 없다. 그러한 단계에서는 연소가 길고 경계 조건은 내내 움직이는 목표다. 토성V는 IGM을 썼다. Space Shuttle과 SLS는 PEG를 쓰고, 대부분의 현대식 상단 단계는 PEG 계열 유도를 사용한다(SpaceX는 Falcon 9의 정확한 알고리즘을 공개하지 않았다). Physics Lab의 \"비행 컴퓨터\" 레슨은 정확히 이것이다: 개루프 프로그램이 폐루프 PEG로 넘겨져 궤도로의 호를 상승시킨다."
+  },
+  {
+    "rel": "science/mission-phases/ascent-guidance.json",
+    "at": "diagram_caption",
+    "en": "Ascent guidance: an open-loop pitch program through the atmosphere hands over to closed-loop PEG, which re-solves the steering to the exact orbital cutoff every second.",
+    "cur": "상승 유도: 대기권을 통한 개루프 피치 프로그램이 폐루프 PEG로 넘겨지며, PEG는 매초마다 정확한 궤도 차단까지의 조종을 다시 푼다."
+  },
+  {
+    "rel": "science/mission-phases/ballistic-coefficient.json",
+    "at": "intro_sentence",
+    "en": "The single number — mass divided by drag area — that decides how fast a spacecraft falls through an atmosphere, and whether it can stop in time.",
+    "cur": "질량을 항력 면적으로 나눈 하나의 숫자로, 우주선이 대기를 얼마나 빠르게 낙하하는지, 그리고 시간 내에 멈출 수 있는지를 결정합니다."
+  },
+  {
+    "rel": "science/mission-phases/ballistic-coefficient.json",
+    "at": "narrative_101.0",
+    "en": "Drop a feather and a hammer in air and the feather drifts down while the hammer plummets. The difference is the ballistic coefficient: how much mass each carries behind how much drag area. A low ballistic coefficient (lots of drag, little mass) falls slowly; a high one (compact and heavy) falls fast. It is the one number that most shapes how a spacecraft comes down.",
+    "cur": "공기 중에 깃털과 망치를 떨어뜨리면 깃털은 천천히 내려가고 망치는 급락합니다. 그 차이가 바로 탄도 계수입니다: 각각이 지니고 있는 질량과 항력 면적의 비율입니다. 낮은 탄도 계수(큰 항력, 작은 질량)는 천천히 떨어지고, 높은 탄도 계수(조밀하고 무거움)는 빠르게 떨어집니다. 이것이 우주선이 어떻게 낙하하는지를 결정하는 가장 중요한 하나의 숫자입니다."
+  },
+  {
+    "rel": "science/mission-phases/ballistic-coefficient.json",
+    "at": "narrative_101.1",
+    "en": "Landing engineers spend enormous effort keeping the ballistic coefficient low. A blunt heat shield, a huge parachute, an inflatable decelerator — all are ways to add drag area without adding much mass, so the vehicle sheds speed higher up where there is more air-column left to work with. The bigger and heavier the payload, the harder this fight becomes.",
+    "cur": "착륙 엔지니어들은 탄도 계수를 낮게 유지하기 위해 엄청난 노력을 합니다. 둔한 열차폐막, 거대한 낙하산, 팽창식 감속기 — 모두 질량을 많이 더하지 않으면서 항력 면적을 증가시키는 방법입니다. 이렇게 하면 항공 기둥이 더 많이 남아 있는 상층부에서 속도를 잃습니다. 탑재체가 크고 무거울수록 이 싸움은 더 어려워집니다."
+  },
+  {
+    "rel": "science/mission-phases/ballistic-coefficient.json",
+    "at": "narrative_101.2",
+    "en": "This is the quiet reason Mars is so hard. Its air is thin, so even a large parachute on a modest lander only bleeds the speed so far — the ballistic coefficient is too high to stop on drag alone. Every Mars lander needs a second act (retro-rockets, airbags, a sky-crane), while a light probe at Venus, in dense air, can drift down on drag alone.",
+    "cur": "이것이 화성 착륙이 어려운 조용한 이유입니다. 화성의 대기는 희박하므로, 작은 착륙선 위의 큰 낙하산조차 속도를 충분히 줄이지 못합니다 — 탄도 계수가 너무 높아서 항력만으로는 멈출 수 없습니다. 모든 화성 착륙선은 두 번째 대안(역추력 로켓, 에어백, 스카이크레인)이 필요하지만, 밀도 높은 공기의 금성에서는 가벼운 탐사선이 항력만으로 천천히 내려올 수 있습니다."
+  },
+  {
+    "rel": "science/mission-phases/ballistic-coefficient.json",
+    "at": "body_paragraphs.0",
+    "en": "Formally the ballistic coefficient is mass ÷ (drag coefficient × reference area). Terminal velocity scales with its square root, so halving the ballistic coefficient slows the fall by about 30%. Peak deceleration and peak heating both rise with it too — a heavier, more compact entry hits the atmosphere harder and hotter, which is why big vehicles face the worst of both.",
+    "cur": "형식적으로 탄도 계수는 질량 ÷ (항력 계수 × 참조 면적)입니다. 종말 속도는 그 제곱근에 비례하므로, 탄도 계수를 절반으로 줄이면 낙하 속도는 약 30% 느려집니다. 최대 감속도와 최대 가열도 모두 탄도 계수에 따라 증가합니다 — 더 무겁고 조밀한 진입체는 대기에 더 강하고 뜨겁게 충돌하므로, 큰 우주선은 양쪽 다 가장 심한 조건에 맞닥뜨립니다."
+  },
+  {
+    "rel": "science/mission-phases/ballistic-coefficient.json",
+    "at": "body_paragraphs.1",
+    "en": "It also sets WHERE in the descent the action happens. A low-ballistic-coefficient vehicle decelerates high up, in thin air, giving more time and altitude for the terminal phases. A high one carries its speed deep into the atmosphere before drag catches up, compressing the whole sequence into the last few kilometres — exactly the squeeze that makes a heavy Mars landing a race against the ground.",
+    "cur": "또한 강하 중 어디에서 주요 현상이 발생하는지를 결정합니다. 낮은 탄도 계수의 우주선은 상층부의 희박한 공기에서 감속되어, 최종 단계를 위한 더 많은 시간과 고도를 제공합니다. 높은 탄도 계수의 우주선은 항력이 따라잡을 때까지 속도를 깊이 있게 유지하므로, 전체 과정이 마지막 몇 킬로미터로 압축됩니다 — 이것이 화성 착륙이 지면과의 경쟁이 되게 하는 정확한 압박입니다."
+  },
+  {
+    "rel": "science/mission-phases/ballistic-coefficient.json",
+    "at": "body_paragraphs.2",
+    "en": "On `/fly`, the contrast is visible across bodies in `?descent=1`. A light Mars lander under a big parachute (low ballistic coefficient) settles gently; a 100-tonne Starship (very high) must brake propulsively; a Venus probe in thick air drifts down on a small drag plate. Same physics, three ballistic coefficients, three very different descents.",
+    "cur": "상공에서, 이 대비는 `?descent=1`을 통해 다양한 천체에 걸쳐 보입니다. 큰 낙하산 아래의 가벼운 화성 착륙선(낮은 탄도 계수)은 부드럽게 착륙합니다; 100톤 Starship(매우 높은 탄도 계수)은 추진력으로 제동해야 합니다; 두꺼운 공기의 금성 탐사선은 작은 항력판으로 천천히 내려옵니다. 같은 물리학, 세 가지 탄도 계수, 세 가지 매우 다른 강하입니다."
+  },
+  {
+    "rel": "science/mission-phases/ballistic-coefficient.json",
+    "at": "diagram_caption",
+    "en": "Ballistic coefficient = mass ÷ drag area. Low (big chute, light payload) → slow, high-altitude deceleration; high (heavy, compact) → fast, deep, hot entry.",
+    "cur": "탄도 계수 = 질량 ÷ 항력 면적. 낮음(큰 낙하산, 가벼운 탑재체) → 느린 상층부 감속; 높음(무겁고 조밀) → 빠르고 깊고 뜨거운 진입."
+  },
+  {
+    "rel": "science/mission-phases/comms-blackout.json",
+    "at": "intro_sentence",
+    "en": "For a few minutes at the hottest part of re-entry, the air itself turns to plasma and swallows every radio signal — the capsule goes silent, and everyone on the ground can only wait.",
+    "cur": "대기권 재진입의 가장 뜨거운 구간에서 수 분 동안 공기 자체가 플라즈마로 변해 모든 무선 신호를 삼켜 버린다 — 캡슐은 침묵하고 지상의 모든 사람은 그저 기다릴 뿐이다."
+  },
+  {
+    "rel": "science/mission-phases/comms-blackout.json",
+    "at": "narrative_101.0",
+    "en": "When a capsule slams into the atmosphere at orbital speed, it doesn't push the air aside — it can't, there isn't time. The air piles up in front of the heat shield, gets crushed and heated to thousands of degrees, and glows. That glowing sheath is the fireball you see streaking across the sky. But it isn't just hot: it's ionised. The heat rips electrons loose from the air molecules, and a cloud of free electrons is exactly what a radio wave cannot pass through.",
+    "cur": "캡슐이 궤도 속도로 대기권에 충돌할 때 공기를 밀어낼 수가 없다 — 시간이 없다. 공기는 열 차폐막 앞에 쌓이고 압축되어 수천 도로 가열되며 빛을 낸다. 그 빛나는 외피가 하늘을 가로질러 보이는 화염구다. 그런데 그것은 단순히 뜨거운 것이 아니라 이온화되어 있다. 열이 공기 분자에서 전자를 떼어 내고, 자유 전자 구름이 생성된다 — 그리고 그것이 바로 전파가 통과할 수 없는 것이다."
+  },
+  {
+    "rel": "science/mission-phases/comms-blackout.json",
+    "at": "narrative_101.1",
+    "en": "So the capsule wraps itself in a mirror it can't see out of. Radio signals coming up from the ground bounce off the plasma; signals going down from the capsule can't get through it either. For the few minutes the heating is fiercest, the spacecraft is cut off — no voice, no telemetry, nothing. Mission Control watches a clock and a predicted track, and waits for the capsule to slow enough that the plasma fades and the crew's voice comes back. Glenn, Apollo, every Soyuz crew rode through that silence.",
+    "cur": "캡슐은 이렇게 자신이 내다볼 수 없는 거울에 싸인다. 지상에서 올라오는 전파는 플라즈마에 반사되고, 캡슐에서 내려가는 신호도 통과하지 못한다. 가열이 가장 심한 수 분 동안 우주선은 완전히 단절된다 — 음성도, 원격 측정도, 아무것도. Mission Control은 시계와 예측 궤도를 바라보며 캡슐이 충분히 감속해 플라즈마가 사라지고 승무원의 목소리가 돌아오기를 기다린다. 글렌, Apollo, 모든 Soyuz 승무원이 그 침묵을 견뎌 냈다."
+  },
+  {
+    "rel": "science/mission-phases/comms-blackout.json",
+    "at": "narrative_101.2",
+    "en": "The blackout ends on its own: as the capsule decelerates and drops into thicker, cooler air lower down, the shock layer stops ionising, the electron cloud thins, and the radio link snaps back. The Space Shuttle cheated the problem — it talked upward through the thinner plasma on its top side to relay satellites in orbit, keeping a link when a downward signal to the ground would have been blocked.",
+    "cur": "통신 두절은 저절로 끝난다 — 캡슐이 감속하고 더 낮은 고도의 짙고 차가운 공기로 들어가면 충격층의 이온화가 멈추고 전자 구름이 얇아지며 무선 링크가 되살아난다. Space Shuttle은 이 문제를 영리하게 피해 갔다 — 지상국을 향해 아래로 신호를 보내는 대신, 위쪽의 얇은 플라즈마를 통해 궤도 중계 위성에 상향 전송해 신호가 차단될 상황에서도 링크를 유지했다."
+  },
+  {
+    "rel": "science/mission-phases/comms-blackout.json",
+    "at": "body_paragraphs.0",
+    "en": "The blackout is caused by the plasma sheath: the bow shock ahead of a blunt entry body compresses and heats the gas enough to ionise it, producing a layer of free electrons around the vehicle. A radio wave can only propagate through plasma above the local plasma frequency, which scales with electron density; during peak heating the electron density is high enough that this cutoff rises above the spacecraft's communication frequencies, and the signal is reflected and attenuated rather than transmitted. The link is lost in both directions.",
+    "cur": "통신 두절의 원인은 플라즈마 초층이다 — 무딘 진입체 앞의 활 충격파가 가스를 압축하고 가열하여 우주선 주변에 자유 전자 층을 형성할 만큼 이온화시킨다. 전파는 국소 플라즈마 주파수 이상에서만 플라즈마를 통해 전파될 수 있으며, 그 주파수는 전자 밀도에 따라 달라진다. 최대 가열 시에는 전자 밀도가 충분히 높아 이 차단 주파수가 우주선의 통신 주파수를 넘어서고 신호는 투과되지 않고 반사·감쇠된다. 링크는 양방향으로 차단된다."
+  },
+  {
+    "rel": "science/mission-phases/comms-blackout.json",
+    "at": "body_paragraphs.1",
+    "en": "For Earth-return capsules the blackout typically spans the altitude band from roughly 90 km down to about 40 km, lasting on the order of three to four minutes and coinciding with peak heating and near-peak deceleration. Its duration and severity depend on entry velocity, vehicle shape and the radio frequency in use — higher frequencies penetrate a given plasma density better, and the wake behind the vehicle is less ionised than the stagnation region ahead of the shield. Faster lunar-return entries produced longer, more complete blackouts than shallow LEO returns.",
+    "cur": "지구 귀환 캡슐의 경우 통신 두절은 대략 고도 90 km에서 약 40 km까지의 고도 구간에 걸쳐 있으며, 3~4분 지속되고 최대 가열 및 최대 감속 근처와 겹친다. 지속 시간과 심각도는 진입 속도, 우주선 형상, 사용하는 무선 주파수에 따라 달라진다 — 주파수가 높을수록 같은 플라즈마 밀도를 더 잘 투과하며, 방패 전방의 정체 영역보다 우주선 후방의 항적이 전리화가 덜 심하다. 빠른 월귀환 진입은 얕은 LEO 귀환보다 더 길고 완전한 통신 두절을 만들어 냈다."
+  },
+  {
+    "rel": "science/mission-phases/comms-blackout.json",
+    "at": "body_paragraphs.2",
+    "en": "The classic mitigation is geometry: the Space Shuttle relayed through TDRS satellites overhead, transmitting through the thinner plasma over its upper surface rather than down through the dense sheath to a ground station. On `/fly`, the re-entry HUD marks the blackout window explicitly — the plasma indicator lamp lights through the peak-heating phase, the one stretch of the descent where the telemetry you're watching would, in a real mission, have gone dark.",
+    "cur": "고전적인 대응책은 기하학적이다 — Space Shuttle은 TDRS 위성을 통해 위를 향해 중계하며, 고밀도 플라즈마 외피를 아래로 뚫는 대신 상면의 얇은 플라즈마를 통해 전송했다. `/fly`에서 대기권 재진입 HUD는 통신 두절 구간을 명시적으로 표시한다 — 플라즈마 표시등이 최대 가열 구간 내내 켜진다. 실제 임무였다면 당신이 보고 있는 원격 측정이 차단되었을 유일한 하강 구간이다."
+  },
+  {
+    "rel": "science/mission-phases/comms-blackout.json",
+    "at": "diagram_caption",
+    "en": "Communications blackout: the ionised plasma sheath around the heat shield reflects radio signals in both directions during peak heating, cutting the link for several minutes until the capsule slows and the plasma thins.",
+    "cur": "통신 두절: 열 차폐막 주변의 이온화된 플라즈마 외피가 최대 가열 중 양방향 전파를 반사해 캡슐이 감속하고 플라즈마가 얇아질 때까지 수 분간 링크를 차단한다."
+  },
+  {
+    "rel": "science/mission-phases/dead-reckoning.json",
+    "at": "intro_sentence",
+    "en": "Integrate the accelerometers to get velocity, integrate again to get position — works for hours, drifts noticeably over days, and is exactly why every cruise needs periodic ground-based fixes.",
+    "cur": "단축키를 얻기 위해 accelerometers를 통합하고, 위치를 얻기 위하여 다시 통합하십시오 — 일 동안 일, 몹시 주의깊게 일하고, 모든 cruise 필요 주기적인 지상 근거한 고침을 정확하게 이유입니다."
+  },
+  {
+    "rel": "science/mission-phases/dead-reckoning.json",
+    "at": "body_paragraphs.0",
+    "en": "Between burns and outside the range of useful celestial landmarks, a spacecraft tracks its own state by integrating the output of its inertial measurement unit (IMU): three accelerometers measuring linear acceleration, three gyroscopes measuring rotation rate. Integrate acceleration once → velocity. Integrate again → position. Combined with the orientation from [star trackers](mission-phases/star-trackers), the spacecraft can propagate its full state vector forward in time without any external help.",
+    "cur": "연소 구간 사이와 유용한 천체 기준점의 범위 밖에서 우주선은 관성 측정 장치(IMU)의 출력을 적분하여 자신의 상태를 추적합니다. IMU는 선형 가속도를 측정하는 3개의 가속도계와 회전 속도를 측정하는 3개의 자이로스코프로 구성됩니다. 가속도를 한 번 적분하면 속도를 얻고, 다시 적분하면 위치를 얻습니다. [별 추적기](mission-phases/star-trackers)로부터 얻은 방향 정보와 결합하면, 우주선은 외부 지원 없이 전체 상태 벡터를 시간에 따라 전파할 수 있습니다."
+  },
+  {
+    "rel": "science/mission-phases/dead-reckoning.json",
+    "at": "body_paragraphs.1",
+    "en": "The fundamental problem is **drift**. Every accelerometer has a small bias (~10⁻⁵ m/s² on a navigation-grade IMU); over 1 day that bias integrated twice contributes ~3.7 km of position error. Over a 6-month cruise to Mars, dead-reckoning error builds up to thousands of km even with the best space-rated IMUs (which are far better than the consumer-grade ones in your phone). This is why every interplanetary mission carries [trajectory correction maneuvers](mission-phases/tcm) on its budget: the cruise dispersion has to be measured against ground tracking and the spacecraft has to physically adjust its course.",
+    "cur": "근본적인 문제는 **표류**입니다. 모든 가속도계는 작은 오차를 가지고 있으며(항법급 IMU에서 ~10⁻⁵ m/s²), 이 오차를 1일에 걸쳐 두 번 적분하면 위치 오차로 ~3.7 km이 누적됩니다. 화성으로의 6개월 항행 동안 추측 항법 오차는 최고급 우주용 IMU(휴대폰의 소비자용 제품보다 훨씬 우수함)를 사용해도 수천 km까지 쌓입니다. 이것이 모든 행성 간 임무가 예산에 [궤도 보정 기동](mission-phases/tcm)을 포함하는 이유입니다. 항행 분산을 지상 추적으로 측정해야 하고 우주선이 물리적으로 진로를 조정해야 하기 때문입니다."
+  },
+  {
+    "rel": "science/mission-phases/dead-reckoning.json",
+    "at": "body_paragraphs.2",
+    "en": "Modern best practice combines dead-reckoning with periodic Deep Space Network ranging (see [DSN](mission-phases/dsn)): the ground measures position to ~1 km accuracy via round-trip light time and Doppler, uplinks a corrected state, and the spacecraft restarts its propagation from a known-good fix. The combined system is far more accurate than either component alone. Star trackers tell the spacecraft which way it's pointing; the IMU tells it what's happening between fixes; the DSN tells it where it actually is.",
+    "cur": "현대의 모범 사례는 주기적 딥 스페이스 네트워크([DSN](mission-phases/dsn) 참조)와 함께 치명적인 딥 스페이스 네트워크(Deep Space Network)를 결합합니다. 지상 측정 위치는 라운드 트립 라이트 타임과 도플러(Doppler)을 통해 1km의 정확도를 측정하며, 정확한 상태와 우주선은 알려진 좋은 수정에서 전파를 시작합니다. 결합된 체계는 혼자 성분 보다는 훨씬 정확합니다. 스타 트래커는 우주선을 말합니다. 즉, IMU는 수정 사이에 무슨 일이 일어나는지 말해줍니다. DSN은 실제로 어디에 있는지 알려줍니다."
+  },
+  {
+    "rel": "science/mission-phases/dead-reckoning.json",
+    "at": "body_paragraphs.3",
+    "en": "Dead-reckoning matters most when the DSN isn't available — during a Mars-EDL communications blackout, during the ~22 minute one-way light delay to Jupiter and beyond, or during an attitude-control crisis. Every spacecraft autonomy system is essentially a state-vector propagator running on dead-reckoning while ground operations work on the recovery.",
+    "cur": "DSN이 사용할 수 없을 때 가장 Dead-reckoning 문제 — 화성-EDL 커뮤니케이션 정전 도중, ~22 분 도중 목성과 저쪽에 가벼운 지연, 또는 태도 통제 위기 도중. 모든 우주선 자율성 시스템은 복구에 대한 지상 작업 작업 동안 죽은 reckoning에서 실행되는 최첨단 추진기입니다."
+  },
+  {
+    "rel": "science/mission-phases/dead-reckoning.json",
+    "at": "diagram_caption",
+    "en": "Accelerometer + gyro → integrate → state vector → drifts over days without external fix → why TCMs exist. DSN ranging + Doppler resets the drift.",
+    "cur": "Accelerometer + gyro → 통합 → 상태 벡터 → 외부 수정없이 일 이상 무후 → 왜 TCMs 존재. DSN ranging + 도플러 리셋 드리프트."
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "title",
+    "en": "Deorbit & the Re-entry Corridor",
+    "cur": "이탈 궤도 기동과 대기권 재진입 회랑"
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "intro_sentence",
+    "en": "A capsule doesn't fall out of orbit — it's nudged into a corridor barely a degree wide, where too steep burns the crew up and too shallow skips them back into space.",
+    "cur": "캡슐은 궤도에서 그냥 떨어지지 않는다 — 겨우 1도 남짓의 폭을 가진 회랑으로 정밀하게 유도되며, 너무 얕으면 우주로 튕겨 나가고 너무 가파르면 승무원이 불타 버린다."
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "narrative_101.0",
+    "en": "Being in orbit means going sideways fast enough that you keep missing the ground. To come home you don't point down and dive — you slow down. A short retrograde burn, firing the engine against the direction of travel, shaves off only about a hundred metres per second. That's all it takes: the low point of the orbit now dips into the top of the atmosphere, and from there the air does the rest of the braking.",
+    "cur": "궤도에 있다는 것은 항상 지면을 비껴 나갈 만큼 빠른 수평 속도로 이동하고 있다는 뜻이다. 귀환하려면 아래를 향해 급강하하는 게 아니라 감속해야 한다. 진행 방향 반대로 엔진을 짧게 분사하는 역행 연소로 초속 약 백 미터 정도를 줄인다. 그것으로 충분하다 — 궤도의 최저점이 대기권 상부 안으로 내려가고, 이후는 대기가 나머지 제동을 맡는다."
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "narrative_101.1",
+    "en": "The catch is the angle you arrive at. Come in too shallow and the capsule grazes the atmosphere like a stone skipped across a pond — it bounces back out into space, and the crew loops around for another lap they may not have air or power for. Come in too steep and the air brakes them so violently that the deceleration crushes the crew and the heat shield can't shed the heat fast enough. Between those two failures is a safe band — the re-entry corridor — and for a capsule returning from the Moon it was famously less than two degrees wide.",
+    "cur": "문제는 도달 각도다. 너무 얕으면 캡슐이 연못 위를 튀어가는 돌멩이처럼 대기를 스치고 우주로 튕겨 나간다. 승무원은 한 바퀴를 더 돌아야 하는데 산소와 전력이 남아 있지 않을 수 있다. 너무 가파르면 대기가 너무 격렬하게 제동을 걸어 감속이 승무원을 짓누르고 열 차폐막이 열을 충분히 빨리 방출하지 못한다. 이 두 가지 실패 사이의 안전한 띠가 재진입 회랑이며, 달에서 귀환하는 캡슐의 경우 폭이 2도 미만으로 알려져 있다."
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "narrative_101.2",
+    "en": "So the whole return is a targeting problem solved before the burn ever happens. Get the deorbit burn's size and timing right and the capsule threads the corridor: steep enough not to skip, shallow enough to survive. Everything after entry interface — the fireball, the blackout, the parachutes — is just physics playing out along a path that was locked in the moment the engine shut down.",
+    "cur": "결국 귀환 전체는 연소가 시작되기 전에 풀어야 하는 표적 문제다. 이탈 궤도 연소의 크기와 타이밍을 올바르게 잡으면 캡슐은 회랑을 꿰뚫는다 — 튕겨 나가지 않을 만큼 가파르고, 살아남을 수 있을 만큼 얕게. 진입 인터페이스 이후의 모든 것 — 화염구, 통신 두절, 낙하산 — 은 엔진이 꺼진 순간 고정된 경로를 따라 펼쳐지는 물리법칙일 뿐이다."
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "body_paragraphs.0",
+    "en": "Deorbit is a retrograde impulse that lowers perigee from orbital altitude to inside the sensible atmosphere — for a low-Earth-orbit capsule, dropping perigee to roughly 40–60 km with a burn of only ~100 m/s. The vehicle then coasts, unpowered, down to entry interface at about 122 km, where aerodynamic forces take over. The single number that decides its fate is the entry flight-path angle: how far below the local horizontal the velocity vector points as it crosses that interface.",
+    "cur": "이탈 궤도는 근지점을 궤도 고도에서 감지 가능한 대기권 안으로 낮추는 역방향 충격량이다 — 저지구궤도 캡슐의 경우 ~100 m/s의 연소만으로 근지점을 약 40〜60 km까지 낮춘다. 우주선은 이후 무동력 상태로 대기권에 진입하며 약 122 km의 진입 인터페이스까지 활강하고, 거기서 공기역학 힘이 주도권을 가져간다. 운명을 결정하는 단 하나의 숫자는 진입 비행 경로각 — 그 인터페이스를 통과할 때 속도 벡터가 국소 수평면에서 얼마나 아래를 향하는가이다."
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "body_paragraphs.1",
+    "en": "The corridor is bounded on both sides. The overshoot (shallow) boundary is set by skip-out: too little atmosphere is intercepted, drag can't capture the vehicle, and it returns to space. The undershoot (steep) boundary is set by the survivable limits — peak deceleration and peak heating rate both climb sharply with entry angle. A ballistic capsule entering from LEO at a few degrees pulls around 8 g; a purely ballistic lunar-return entry would exceed 20 g, which is why Apollo flew a lifting entry, using the capsule's offset centre of mass to generate a little lift and stretch the corridor to a survivable ~6–7 g. Steeper is shorter and hotter; shallower is longer and gentler but risks the skip.",
+    "cur": "회랑의 양쪽에 경계가 있다. 오버슈트(얕은 쪽) 경계는 스킵아웃에 의해 결정된다 — 대기를 충분히 포착하지 못해 항력이 우주선을 붙잡지 못하고 우주로 되돌아간다. 언더슈트(가파른 쪽) 경계는 생존 가능한 한계에 의해 결정된다 — 최대 감속과 최대 가열율 모두 진입각과 함께 급격히 증가한다. LEO에서 수 도 각도로 진입하는 탄도 캡슐은 약 8 g를 받는다. 순수한 탄도 월귀환 진입은 20 g를 초과하므로 Apollo는 캡슐의 편심 질량 중심을 이용해 약간의 양력을 생성하는 리프팅 진입을 수행하여 회랑을 생존 가능한 ~6〜7 g로 넓혔다. 가파를수록 짧고 뜨겁고, 얕을수록 길고 부드럽지만 스킵 위험이 있다."
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "body_paragraphs.2",
+    "en": "On `/fly`, the re-entry act plays this out: the entry flight-path angle is baked into each mission's profile, and the Science-Lens drag layer shows the deceleration spike growing and fading as the capsule crosses peak-heating and peak-g. Compare a shallow, lifting entry against a steep ballistic one and the corridor logic is visible in the g-load trace — the same trade every returning crew has ridden since Gagarin.",
+    "cur": "`/fly`에서 대기권 재진입 장면이 이를 실연한다 — 진입 비행 경로각은 각 임무의 프로파일에 내장되어 있으며, Science-Lens 항력 레이어는 캡슐이 최대 가열과 최대 g를 통과하는 동안 감속 스파이크가 커지고 사라지는 것을 보여준다. 얕은 리프팅 진입과 가파른 탄도 진입을 비교하면 회랑 논리가 g 하중 추적에서 가시화된다 — 가가린 이후 귀환한 모든 승무원이 경험한 것과 동일한 상충 관계다."
+  },
+  {
+    "rel": "science/mission-phases/deorbit-corridor.json",
+    "at": "diagram_caption",
+    "en": "The re-entry corridor: a retrograde deorbit burn drops perigee into the atmosphere; too shallow skips back to space, too steep exceeds the g-load and heating limits, and a narrow band between them is survivable.",
+    "cur": "재진입 회랑: 역행 이탈 궤도 연소가 근지점을 대기권 안으로 낮춘다. 너무 얕으면 우주로 튕겨 나가고, 너무 가파르면 g 하중과 가열 한계를 초과하며, 그 사이의 좁은 띠만 생존 가능하다."
+  },
+  {
+    "rel": "science/mission-phases/dsn.json",
+    "at": "title",
+    "en": "DSN — Deep Space Network",
+    "cur": "DSN — Deep Space Network"
+  },
+  {
+    "rel": "science/mission-phases/dsn.json",
+    "at": "intro_sentence",
+    "en": "Three giant antenna complexes spaced 120° around Earth — Goldstone, Madrid, Canberra — providing continuous coverage of any spacecraft beyond low Earth orbit.",
+    "cur": "3 개의 거대한 안테나 단지 지구 주변 120° 우주 비행 — Goldstone, Madrid, Canberra — 낮은 지구 궤도를 넘어 어떤 우주선의 지속적인 적용을 제공."
+  },
+  {
+    "rel": "science/mission-phases/dsn.json",
+    "at": "body_paragraphs.0",
+    "en": "The Deep Space Network is what makes interplanetary spaceflight legible. Without it the spacecraft would still fly (dead-reckoning + autonomous nav can hold a mission together for weeks) but nobody on Earth would know where it was, what it was doing, or what it was learning. The DSN is the umbilical for every NASA mission past the Moon and a contracted partner for ESA, JAXA, and ISRO deep-space missions.",
+    "cur": "Deep Space Network는 행성 간 우주비행을 이해 가능하게 만드는 것입니다. 없다면 우주선은 여전히 비행할 수 있지만(정계산과 자율 항법으로 수 주간 임무를 유지할 수 있음) 지구의 누구도 그것이 어디에 있는지, 무엇을 하고 있는지, 무엇을 배우고 있는지 알 수 없습니다. DSN은 달을 넘어선 모든 NASA 임무를 위한 탯줄이며 ESA, JAXA, ISRO의 심우주 임무를 위한 계약 파트너입니다."
+  },
+  {
+    "rel": "science/mission-phases/dsn.json",
+    "at": "body_paragraphs.1",
+    "en": "Three antenna complexes spaced 120° around the globe — Goldstone (California), Madrid (Spain), Canberra (Australia) — ensure that any spacecraft beyond GEO is in line-of-sight of at least one complex at all times as Earth rotates. Each complex has multiple antennas, the marquee being the 70 m \"big dishes\" (DSS-14, DSS-43, DSS-63). Smaller 34 m antennas handle most modern traffic.",
+    "cur": "세 가지 안테나는 전 세계 120°의 우주 비행 - Goldstone (캘리포니아), Madrid (스페인), Canberra (호주) - GEO를 넘어 우주선이 지구가 회전으로 적어도 하나의 단지의 선의 통찰력에 있다는 것을 보장합니다. 각 복합체에는 여러 개의 안테나가 있으며, 마케는 70m \"큰 접시\"(DSS-14, DSS-43, DSS-63)입니다. 소형 34m 안테나는 대부분의 현대 교통을 취급합니다."
+  },
+  {
+    "rel": "science/mission-phases/dsn.json",
+    "at": "body_paragraphs.2",
+    "en": "Three operations matter. **Telemetry**: receive science + housekeeping data from the spacecraft (the slow link, megabits to a few hundred Mbits from Mars; tens of bits/s from Voyager at 24 billion km). **Commands**: uplink instructions to the spacecraft (encoded for radiation hardness; signed for security). **Tracking**: measure the round-trip light time and the Doppler shift on the carrier signal — these together reveal the spacecraft's range and range-rate to a precision of ~1 m and ~0.1 mm/s. That's where the spacecraft is, with kilometres-class accuracy across hundreds of millions of km of empty space.",
+    "cur": "3개의 가동 문제. **Telemetry**: 우주선의 과학 + 세무 데이터를 수신 (저렴한 링크, 메가 비트는 화성에서 몇 백 메가 비트에; 24 억 km의 Voyager에서 비트 / s의 10). **Commands**: 우주선에 대한 업 링크 지침 (방사 경도에 인코딩; 보안에 서명). **Tracking**: 운반대 신호에 둥근 지구 가벼운 시간 및 도플러 교대를 측정합니다. 이들은 우주선의 범위와 범위 비율을 ~1 m 및 ~0.1 mm/s의 정밀도로 나타냅니다. 그것은 우주선이 어디, 빈 공간의 수백에 걸쳐 킬로미터 급 정확도와."
+  },
+  {
+    "rel": "science/mission-phases/dsn.json",
+    "at": "body_paragraphs.3",
+    "en": "Advanced techniques layer on top. **Delta-DOR** (Delta-Differential One-way Range) uses two antennas viewing the same spacecraft + a nearby quasar simultaneously; the differential timing gives angular position to nanoradians. Mars EDL navigation now routinely hits ~100 m landing-ellipse accuracy on what is essentially a multi-month coast at 30,000 km/h. The DSN is the reason.",
+    "cur": "상단에 고급 기술 층. **Delta-DOR** (Delta-Differential One-way Range)는 두 개의 안테나를 사용하여 동일한 우주선 + 주변의 쿼드를 동시에 볼 수 있습니다; 차동은 nanoradians에 각도 위치를 제공합니다. 화성 EDL 내비게이션은 이제 일상적으로 ~100m의 랜딩 엘리스 정확도로 30,000km/h의 멀티 개월 해안입니다. DSN은 이유입니다."
+  },
+  {
+    "rel": "science/mission-phases/dsn.json",
+    "at": "diagram_caption",
+    "en": "Goldstone + Madrid + Canberra at 120° intervals → continuous coverage as Earth rotates → ranging + Doppler + delta-DOR → kilometre-class spacecraft position across the solar system.",
+    "cur": "골드스톤 + 마드리드 + 캔버라에서 120° 간격 → 지속적 적용으로 지구가 회전 → ranging + 도플러 + 델타-DOR → 태양계를 가로 질러 클래스 우주선 위치."
+  },
+  {
+    "rel": "science/mission-phases/edl.json",
+    "at": "intro_sentence",
+    "en": "Seven minutes from the top of the atmosphere to wheels-down — the most automated, lowest-margin phase of any planetary mission.",
+    "cur": "대기권 상층부에서 착륙까지 7분 — 모든 행성 탐사 임무에서 가장 자동화되고 오차 허용 범위가 가장 작은 단계입니다."
+  },
+  {
+    "rel": "science/mission-phases/edl.json",
+    "at": "narrative_101.0",
+    "en": "Mars is fourteen light-minutes away. By the time a signal from the rover reaches Mission Control, the rover has been on the ground for fourteen minutes — alive or dead. Nobody on Earth flies a Mars landing. The spacecraft does it itself, autonomously, in about seven minutes, with hundreds of moving parts and zero second chances.",
+    "cur": "화성은 14광분 거리에 있습니다. 탐사 로버의 신호가 Mission Control에 도달할 때쯤, 로버는 이미 14분 전에 지상에 착륙해 있습니다 — 성공했거나 실패했거나. 지구에서는 아무도 화성 착륙을 조종하지 않습니다. 우주선은 스스로, 자율적으로, 약 7분 안에, 수백 개의 움직이는 부품으로, 단 한 번의 재시도 기회도 없이 착륙을 수행합니다."
+  },
+  {
+    "rel": "science/mission-phases/edl.json",
+    "at": "narrative_101.1",
+    "en": "Step one: hit the atmosphere at ~5.8 km/s. The heat shield handles temperatures hot enough to glow. Step two: deploy a supersonic parachute at Mach 2 — yes, a parachute, while still going faster than sound. Step three: drop the heat shield, drop the parachute, fire retrorockets to slow the rest of the way. Step four: touchdown.",
+    "cur": "1단계: 약 5.8 km/s의 속도로 대기권에 진입합니다. 열 차폐막은 빛을 낼 정도로 뜨거운 온도를 견딥니다. 2단계: 마하 2에서 초음속 낙하산을 전개합니다 — 맞습니다, 낙하산을, 여전히 음속보다 빠르게 이동하면서. 3단계: 열 차폐막을 분리하고, 낙하산을 분리하고, 역추진 로켓을 점화하여 나머지 속도를 줄입니다. 4단계: 착륙."
+  },
+  {
+    "rel": "science/mission-phases/edl.json",
+    "at": "narrative_101.2",
+    "en": "Different missions, different tricks. Apollo just fired its descent engine all the way down. Curiosity and Perseverance used the genuinely insane Sky Crane: a rocket-powered platform that hovered 20 metres above the ground and lowered the rover on three cables, then flew itself away. China's Zhurong did a hybrid. The seven minutes are called \"the seven minutes of terror\" inside JPL because there's nothing anyone can do during them. The simulator has done the math; you trust the simulator.",
+    "cur": "임무마다 다른 기법을 사용합니다. Apollo는 하강 엔진만으로 끝까지 내려갔습니다. Curiosity와 Perseverance는 정말로 미친 듯한 Sky Crane을 사용했습니다: 지상 20미터 위에서 호버링하는 로켓 추진 플랫폼이 세 개의 케이블로 로버를 내려주고, 그 후 스스로 날아가 버립니다. 중국의 Zhurong은 하이브리드 방식을 사용했습니다. JPL 내부에서 이 7분을 \"공포의 7분\"이라고 부르는 이유는 그 시간 동안 누구도 할 수 있는 일이 없기 때문입니다. 시뮬레이터가 계산을 끝냈고, 당신은 시뮬레이터를 믿습니다."
+  },
+  {
+    "rel": "science/mission-phases/edl.json",
+    "at": "body_paragraphs.0",
+    "en": "Entry begins when the spacecraft hits sensible atmosphere — about 125 km up at Mars, 100 km at Earth. From that moment, atmospheric drag is doing your braking; engines stay quiet. The heat shield handles thousands of degrees, the aeroshell holds shape, and the trajectory is essentially ballistic.",
+    "cur": "진입은 우주선이 감지 가능한 대기권에 도달할 때 시작됩니다 — 화성에서는 약 125 km 상공, 지구에서는 100 km입니다. 그 순간부터 대기 저항이 제동을 담당하며, 엔진은 조용히 있습니다. 열 차폐막은 수천 도를 견디고, 공기역학 외피는 형태를 유지하며, 궤적은 본질적으로 탄도 비행입니다."
+  },
+  {
+    "rel": "science/mission-phases/edl.json",
+    "at": "body_paragraphs.1",
+    "en": "Descent picks up when supersonic parachutes deploy, around Mach 1.5-2. They strip another huge chunk of velocity — but parachutes alone can't get you to a soft landing on a thin atmosphere. Mars goes from supersonic to subsonic on parachute, then transitions to powered descent: heat shield drops, retro-rockets fire, the lander falls the last few hundred metres on engine plumes alone.",
+    "cur": "하강은 마하 1.5-2 부근에서 초음속 낙하산이 전개될 때 시작됩니다. 낙하산은 속도의 또 다른 큰 부분을 제거합니다 — 하지만 희박한 대기에서는 낙하산만으로 연착륙할 수 없습니다. 화성에서는 낙하산으로 초음속에서 아음속으로 감속한 다음, 동력 하강으로 전환합니다: 열 차폐막이 떨어지고, 역추진 로켓이 점화되고, 착륙선은 마지막 수백 미터를 엔진 분사만으로 낙하합니다."
+  },
+  {
+    "rel": "science/mission-phases/edl.json",
+    "at": "body_paragraphs.2",
+    "en": "Curiosity and Perseverance used the sky-crane: hover at ~20m, lower the rover on cables to wheels-down, fly the descent stage away. Apollo used a direct rocket-burn to surface. China's Zhurong used a hybrid hover/lower scheme. Different planets, different atmospheres, different schemes — same seven minutes.",
+    "cur": "Curiosity와 Perseverance는 스카이 크레인을 사용했습니다: 약 20m에서 호버링하고, 케이블로 로버를 내려 착륙시킨 후, 하강 단을 날려 보냅니다. Apollo는 표면까지 직접 로켓 연소 방식을 사용했습니다. 중국의 Zhurong은 하이브리드 호버링/하강 방식을 사용했습니다. 행성마다, 대기마다, 방식은 다르지만 — 똑같은 7분입니다."
+  },
+  {
+    "rel": "science/mission-phases/edl.json",
+    "at": "diagram_caption",
+    "en": "EDL sequence: entry (heat shield) → parachute → powered descent → touchdown.",
+    "cur": "EDL 순서: 진입 (열 차폐막) → 낙하산 → 동력 하강 → 착륙."
+  },
+  {
+    "rel": "science/mission-phases/entry-footprint.json",
+    "at": "title",
+    "en": "The landing footprint — where a capsule’s lift can take it",
+    "cur": "착륙 발자국 — 캡슐의 양력이 도달할 수 있는 곳"
+  },
+  {
+    "rel": "science/mission-phases/entry-footprint.json",
+    "at": "intro_sentence",
+    "en": "A re-entering capsule is not aimed like a dart at one point — its lift gives it a whole reachable area on the ground, the \"footprint\", and the guidance computer picks a landing site inside it by deciding how to spend that lift.",
+    "cur": "재진입하는 캡슐은 다트처럼 한 지점에 겨냥되지 않습니다 — 그것의 양력은 지면에 도달 가능한 전체 영역인 \"발자국\"을 제공하며, 유도 컴퓨터는 그 양력을 어떻게 사용할지 결정함으로써 발자국 내의 착륙 지점을 선택합니다."
+  },
+  {
+    "rel": "science/mission-phases/entry-footprint.json",
+    "at": "narrative_101.0",
+    "en": "Once a capsule commits to re-entry it cannot add energy — no engines, no go-around. But it is not helpless about WHERE it comes down. By rolling to point its lift up it stretches the glide and flies far; by rolling lift-down it dives and lands short; by banking left or right it moves sideways. The set of all the places it could reach, given its speed and its lift, is a patch on the ground shaped like a stretched teardrop — the landing footprint.",
+    "cur": "캡슐이 재진입에 들어가면 에너지를 추가할 수 없습니다 — 엔진이 없고, 회항도 없습니다. 하지만 어디에 착륙할지에 대해서는 무력하지 않습니다. 양력을 위로 향하게 하기 위해 회전하면 활공을 늘리고 멀리 날 수 있으며, 양력을 아래로 향하게 하면 급강하하고 가까이 착륙하고, 좌우로 뱅킹하면 옆으로 이동합니다. 속도와 양력이 주어졌을 때 도달할 수 있는 모든 지점의 집합은 늘어난 물방울 모양인 지면 위의 패치 — 착륙 발자국입니다."
+  },
+  {
+    "rel": "science/mission-phases/entry-footprint.json",
+    "at": "narrative_101.1",
+    "en": "Reaching the far edge of that footprint costs something: flying lift-up to go long means a shallower, gentler descent and a lower peak-g, while diving short means a steeper, harsher one. So there is a trade written into the footprint — the farther targets are the low-g ones, the near targets the high-g ones — and the guidance has to find a bank schedule that lands on the chosen spot without ever breaking the g or heating limits along the way.",
+    "cur": "발자국의 먼 끝에 도달하는 것은 대가가 있습니다: 길게 가기 위해 양력을 위로 날리는 것은 더 얕고 부드러운 강하와 더 낮은 피크 g를 의미하는 반면, 짧게 급강하하는 것은 더 가파르고 거친 강하를 의미합니다. 따라서 발자국에는 무역이 있습니다 — 먼 목표는 저 g 목표이고 가까운 목표는 고 g 목표입니다 — 유도 시스템은 선택한 지점에 착륙하는 뱅킹 스케줄을 찾아야 하며, 이동 중 g 또는 가열 제한을 초과하지 않아야 합니다."
+  },
+  {
+    "rel": "science/mission-phases/entry-footprint.json",
+    "at": "narrative_101.2",
+    "en": "This is exactly why Apollo could splash down near its recovery carrier and why Perseverance could hit a landing ellipse under 8 kilometres across (about 7.7 by 6.6 km) on Mars from millions of kilometres away. The computer is not steering to a point so much as choosing a point inside the footprint and then flying the lift to reach it.",
+    "cur": "이것이 정확히 Apollo가 복구 함선 근처에 물에 착륙할 수 있었던 이유이고, Perseverance가 수백만 킬로미터 떨어진 화성에서 8 킬로미터 미만(약 7.7 × 6.6 km)의 착륙 타원을 타격할 수 있었던 이유입니다. 컴퓨터는 한 지점으로 조종하는 것이 아니라 발자국 내의 한 지점을 선택한 후 그곳에 도달하기 위해 양력을 날립니다."
+  },
+  {
+    "rel": "science/mission-phases/entry-footprint.json",
+    "at": "body_paragraphs.0",
+    "en": "The footprint is the reachable set in downrange–crossrange space. Downrange is set mostly by how the vehicle spends vertical lift: full lift-up maximises range (the capsule \"floats\", decelerating slowly and travelling far), full lift-down minimises it (a steep, fast arrival). Crossrange comes from banking the lift sideways, and its extent grows with L/D. For a low-L/D capsule the footprint is modest; for a lifting body or a winged vehicle it is huge.",
+    "cur": "도달 영역(footprint)은 다운레인지–크로스레인지 공간에서 도달 가능한 집합입니다. 다운레인지는 주로 기체가 수직 양력을 어떻게 쓰는지로 정해집니다: 양력을 위로 완전히 향하면 사거리가 최대가 되고(캡슐이 '떠서' 천천히 감속하며 멀리 이동), 아래로 완전히 향하면 최소가 됩니다(가파르고 빠른 도착). 크로스레인지는 양력을 옆으로 기울여(뱅크) 얻으며, 그 폭은 L/D와 함께 커집니다. L/D가 낮은 캡슐은 도달 영역이 작고, 양력체나 날개 달린 기체는 매우 큽니다."
+  },
+  {
+    "rel": "science/mission-phases/entry-footprint.json",
+    "at": "body_paragraphs.1",
+    "en": "The trade between range and g-load is the load-bearing fact. Because a long, lift-up trajectory sheds speed high in thin air over a long time, its peak deceleration is low; a short, lift-down trajectory concentrates the braking and peaks higher. A footprint diagram therefore doubles as a menu: each reachable range comes with the peak-g it costs, and the target must sit inside both the range band and the g limit.",
+    "cur": "범위와 g 하중 간의 무역은 부하를 지탱하는 사실입니다. 길고 양력을 위로 날리는 궤적이 얇은 공기에서 오랜 시간에 걸쳐 속도를 감속시키기 때문에, 그 피크 감속은 낮습니다; 짧고 양력을 아래로 향하는 궤적은 제동을 집중시키고 더 높게 피크합니다. 따라서 발자국 다이어그램은 메뉴로도 기능합니다: 각 도달 가능한 범위는 그것이 비용을 드는 피크 g를 가지고 있으며, 목표는 범위 대역과 g 제한 내에 있어야 합니다."
+  },
+  {
+    "rel": "science/mission-phases/entry-footprint.json",
+    "at": "body_paragraphs.2",
+    "en": "A range-control guidance loop closes this. Given a target range it solves for the bank angle (really a bank schedule) that lands there, then flies it, reversing bank left/right to cancel crossrange error. If the target lies outside the footprint the honest answer is that it cannot be reached — the guidance clamps to the nearest edge — which is why mission design chooses entry conditions that keep the target comfortably inside the footprint.",
+    "cur": "범위 제어 유도 루프는 이를 폐쇄합니다. 목표 범위가 주어지면, 그곳에 착륙하는 뱅킹 각도(실제로는 뱅킹 스케줄)를 계산한 다음 이를 날리며, 크로스레인지 오차를 상쇄하기 위해 좌우로 뱅킹을 역전시킵니다. 목표가 발자국 외부에 있으면 솔직한 대답은 그것을 도달할 수 없다는 것입니다 — 유도 시스템은 가장 가까운 모서리로 고정됩니다 — 미션 설계가 목표를 발자국 내에 편안하게 유지하는 재진입 조건을 선택하는 이유입니다."
+  },
+  {
+    "rel": "science/mission-phases/entry-footprint.json",
+    "at": "diagram_caption",
+    "en": "The reachable landing footprint: lift-up reaches far at low peak-g, lift-down lands short at high g; the guidance solves a bank schedule to a target inside the band.",
+    "cur": "도달 가능한 착륙 발자국: 양력을 위로 올리면 낮은 피크 g에서 멀리 도달하고, 양력을 아래로 올리면 높은 g에서 가까이 착륙합니다; 유도 시스템은 대역 내의 목표에 대한 뱅킹 스케줄을 계산합니다."
+  },
+  {
+    "rel": "science/mission-phases/entry-heating.json",
+    "at": "intro_sentence",
+    "en": "Why hitting an atmosphere at kilometres per second heats a spacecraft to thousands of degrees — and how a heat shield takes the punishment.",
+    "cur": "초당 수 킬로미터의 속도로 대기권에 진입할 때 우주선이 수천 도까지 가열되는 이유 — 그리고 열 차폐막이 어떻게 이 충격을 견디는가."
+  },
+  {
+    "rel": "science/mission-phases/entry-heating.json",
+    "at": "narrative_101.0",
+    "en": "A spacecraft arriving at a planet is moving fast — 5 to 6 km/s at Mars, nearly 11 km/s at Venus. When it slams into the top of the atmosphere it does not so much rub against the air as crush it. The gas piling up in front of the vehicle is compressed so violently that it heats to thousands of degrees and glows — the fireball you see around any returning capsule.",
+    "cur": "행성에 도착하는 우주선은 매우 빠르게 움직인다 — 화성에서 초당 5~6 km, 금성에서 거의 초당 11 km. 대기권 상층부에 충돌할 때 우주선은 공기와 마찰하기보다는 압축한다. 우주선 앞에 쌓이는 가스가 너무 격렬하게 압축되어 수천 도로 가열되고 빛나므로 — 귀환하는 모든 캡슐 주위에서 볼 수 있는 화염구이다."
+  },
+  {
+    "rel": "science/mission-phases/entry-heating.json",
+    "at": "narrative_101.1",
+    "en": "It is a common myth that this heat comes from friction. Almost all of it comes from compression: the spacecraft cannot push the air out of the way fast enough, so a shock wave forms just ahead of it and the trapped gas superheats. The faster the entry, the hotter the shock — which is why Venus, with the fastest entries and the thickest air, is the harshest entry environment in the solar system.",
+    "cur": "이 열이 마찰에서 나온다는 것은 흔한 오해이다. 거의 모든 열이 압축에서 나온다: 우주선이 공기를 충분히 빠르게 밀어낼 수 없으므로 바로 앞에 충격파가 형성되고 갇힌 가스가 과열된다. 진입 속도가 빠를수록 충격파가 더워진다 — 이것이 가장 빠른 진입 속도와 가장 두꺼운 대기를 가진 금성이 태양계에서 가장 가혹한 진입 환경인 이유이다."
+  },
+  {
+    "rel": "science/mission-phases/entry-heating.json",
+    "at": "narrative_101.2",
+    "en": "The vehicle survives behind a heat shield — a blunt, ablative shell that faces the flow. Blunt is deliberate: a sharp nose would concentrate the heat, while a broad shield holds the shock wave out at a distance and spreads the load. The shield's surface chars and flakes away on purpose, carrying the heat off with it, so the spacecraft tucked behind stays cool.",
+    "cur": "우주선은 열 차폐막 — 흐름을 향한 둔탁한, 소모성 껍질 뒤에서 생존한다. 둔탁한 형태는 의도적이다: 뾰족한 코는 열을 집중시키는 반면, 넓은 차폐막은 충격파를 거리를 두고 유지하고 하중을 분산한다. 차폐막의 표면은 의도적으로 숯이 되고 벗겨져 나가며, 열을 함께 가져가므로 뒤에 숨어 있는 우주선은 시원하게 유지된다."
+  },
+  {
+    "rel": "science/mission-phases/entry-heating.json",
+    "at": "body_paragraphs.0",
+    "en": "Two peaks matter during entry and they do not coincide. Peak heating happens high up, where the vehicle is still fast and the heating rate (which scales roughly with velocity cubed) is enormous even in thin air. Peak deceleration happens lower down, in denser air, where the force on the vehicle is greatest — Mars entries peak around 8–15 g, Venus entries at 100–350 g. A lander's structure is sized for the g-peak; its heat shield is sized for the heat-peak.",
+    "cur": "진입 중 두 가지 피크가 중요하며 서로 일치하지 않는다. 최대 가열은 높은 곳에서 발생하는데, 우주선이 아직 빠르고 가열 속도(대략 속도의 세제곱에 비례함)가 희박한 공기에서도 엄청나다. 최대 감속은 더 낮은 곳, 더 진한 공기에서 발생하며, 우주선에 작용하는 힘이 가장 크다 — 화성 진입은 약 8~15 g에서 피크를 이루고, 금성 진입은 100~350 g에서 피크를 이룬다. 착륙선의 구조는 g-피크를 위해 크기가 결정되고, 열 차폐막은 열-피크를 위해 크기가 결정된다."
+  },
+  {
+    "rel": "science/mission-phases/entry-heating.json",
+    "at": "body_paragraphs.1",
+    "en": "The plasma sheath that glows around the vehicle also blocks radio: for a minute or two at peak heating, ionised gas wraps the spacecraft and cuts communications — the famous entry blackout. Controllers simply wait it out; the vehicle is flying a pre-loaded sequence, on its own, through the hottest part of the trajectory.",
+    "cur": "우주선 주위에서 빛나는 플라즈마 초층은 또한 라디오를 차단한다: 최대 가열 시간에 1~2분 동안 이온화된 가스가 우주선을 감싸고 통신을 끊는다 — 유명한 진입 블랙아웃이다. 통제자들은 단순히 기다린다; 우주선은 미리 로드된 수열을 비행하고 있으며, 궤도의 가장 뜨거운 부분을 혼자서 통과한다."
+  },
+  {
+    "rel": "science/mission-phases/entry-heating.json",
+    "at": "body_paragraphs.2",
+    "en": "On `/fly`, the descent HUD's aero-heating gauge is a relative proxy for this — it climbs as the vehicle bites into the atmosphere and peaks well before touchdown, then falls away as the vehicle slows. Turn on the drag Science-Lens layer during any `?descent=1` Mars or Venus entry to see the deceleration build as the air thickens.",
+    "cur": "`/fly`에서 강하 HUD의 공력 가열 게이지는 이것의 상대적 프록시이다 — 우주선이 대기권에 물어뜯힐 때 올라가고 착지 훨씬 전에 피크를 이루며, 그다음 우주선이 속도를 잃으면서 떨어진다. 모든 `?descent=1` 화성 또는 금성 진입 중에 드래그 Science-Lens 레이어를 켜서 공기가 짙어지면서 감속이 증가하는 것을 볼 수 있다."
+  },
+  {
+    "rel": "science/mission-phases/entry-heating.json",
+    "at": "diagram_caption",
+    "en": "Entry heating: a blunt heat shield holds a bow shock ahead of the vehicle; the compressed gas superheats and glows while the shield ablates the heat away.",
+    "cur": "진입 가열: 둔탁한 열 차폐막이 우주선 앞에 활 충격파를 유지한다; 압축된 가스가 과열되고 빛나는 동안 차폐막이 열을 소모한다."
+  }
 ]

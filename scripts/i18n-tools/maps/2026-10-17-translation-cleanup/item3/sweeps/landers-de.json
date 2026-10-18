@@ -1,62 +1,62 @@
 [
- {
-  "rel": "fleet/lander/hakuto-r.json",
-  "at": "tagline",
-  "old": "Erster privater japanischer Mondlander; M1 und M2 beide abgestürzt",
-  "new": "Japans erste private Mondlandeversuche; Mission 1 (2023) und Mission 2 (2025) stürzten beide ab"
- },
- {
-  "rel": "fleet/lander/hakuto-r.json",
-  "at": "best_known_for",
-  "old": "Erster privater japanischer Mondlander; M1 und M2 beide abgestürzt",
-  "new": "Japans erste private Mondlandeversuche; Mission 1 (2023) und Mission 2 (2025) stürzten beide ab"
- },
- {
-  "rel": "fleet/lander/hakuto-r.json",
-  "at": "description",
-  "old": "Das Hakuto-R-Programm ist ein planetarer Lander, gebaut von ispace in Japan. Erster privater japanischer Mondlander; M1 und M2 stürzten beide ab. Flog 2023, scheiterte aber.",
-  "new": "Hakuto-R ist ein Mondlander-Programm des japanischen Unternehmens ispace. Der Lander der Mission 1, im Dezember 2022 gestartet, war Japans erster privater Versuch einer Mondlandung und stürzte im April 2023 ab. Der Lander der Mission 2, Resilience, stürzte im Juni 2025 ab."
- },
- {
-  "rel": "fleet/lander/hakuto-r.json",
-  "at": "name",
-  "old": "Hakuto-R Programm",
-  "new": "Hakuto-R-Programm"
- },
- {
-  "rel": "fleet/lander/vikram-cy2.json",
-  "at": "tagline",
-  "old": "Lander von Chandrayaan-2; abgestürzt; der Orbiter arbeitet weiter",
-  "new": "Lander der indischen Mission Chandrayaan-2; 2019 abgestürzt, der Orbiter arbeitete weiter"
- },
- {
-  "rel": "fleet/lander/vikram-cy2.json",
-  "at": "best_known_for",
-  "old": "Lander von Chandrayaan-2; abgestürzt; der Orbiter arbeitet weiter",
-  "new": "Lander der indischen Mission Chandrayaan-2; 2019 abgestürzt, der Orbiter arbeitete weiter"
- },
- {
-  "rel": "fleet/lander/vikram-cy2.json",
-  "at": "description",
-  "old": "Vikram (Chandrayaan-2) ist ein planetarer Lander, gebaut von ISRO in Indien. Lander von Chandrayaan-2; abgestürzt; der Orbiter arbeitet weiter. Flog 2019, scheiterte aber.",
-  "new": "Vikram war der Lander der indischen Mission Chandrayaan-2, gebaut von der ISRO. Er stürzte im September 2019 beim Landeversuch ab, doch der Orbiter von Chandrayaan-2 arbeitete im Mondorbit weiter."
- },
- {
-  "rel": "fleet/lander/mars-polar-lander.json",
-  "at": "tagline",
-  "old": "Bei Landung verloren; löste „schneller, besser, billiger“-Überprüfung aus",
-  "new": "1999 bei der Landung verloren; der Fehlschlag veranlasste die NASA, ihren Ansatz „schneller, besser, billiger“ zu überprüfen"
- },
- {
-  "rel": "fleet/lander/mars-polar-lander.json",
-  "at": "best_known_for",
-  "old": "Bei Landung verloren; löste „schneller, besser, billiger“-Überprüfung aus",
-  "new": "1999 bei der Landung verloren; der Fehlschlag veranlasste die NASA, ihren Ansatz „schneller, besser, billiger“ zu überprüfen"
- },
- {
-  "rel": "fleet/lander/mars-polar-lander.json",
-  "at": "description",
-  "old": "Mars Polar Lander ist ein planetarer Lander, gebaut von Lockheed Martin in den USA. Bei der Landung verloren; löste die Überprüfung des Ansatzes „schneller, besser, billiger“ aus. Flog 1999, scheiterte aber.",
-  "new": "Mars Polar Lander war ein Lander der NASA, gebaut von Lockheed Martin. Im Dezember 1999 brach beim Abstieg zur Südpolarregion des Mars der Kontakt ab. Der Fehlschlag, nur Monate nach dem Verlust des Mars Climate Orbiter, veranlasste die NASA, ihren Ansatz „schneller, besser, billiger“ zu überprüfen."
- }
+  {
+    "rel": "fleet/lander/hakuto-r.json",
+    "at": "tagline",
+    "old": "Erster privater japanischer Mondlander; M1 und M2 beide abgestürzt",
+    "new": "Japans erste private Mondlandeversuche; Mission 1 (2023) und Mission 2 (2025) stürzten beide ab"
+  },
+  {
+    "rel": "fleet/lander/hakuto-r.json",
+    "at": "best_known_for",
+    "old": "Erster privater japanischer Mondlander; M1 und M2 beide abgestürzt",
+    "new": "Japans erste private Mondlandeversuche; Mission 1 (2023) und Mission 2 (2025) stürzten beide ab"
+  },
+  {
+    "rel": "fleet/lander/hakuto-r.json",
+    "at": "description",
+    "old": "Das Hakuto-R-Programm ist ein planetarer Lander, gebaut von ispace in Japan. Erster privater japanischer Mondlander; M1 und M2 stürzten beide ab. Flog 2023, scheiterte aber.",
+    "new": "Hakuto-R ist ein Mondlander-Programm des japanischen Unternehmens ispace. Der Lander der Mission 1, im Dezember 2022 gestartet, war Japans erster privater Versuch einer Mondlandung und stürzte im April 2023 ab. Der Lander der Mission 2, Resilience, stürzte im Juni 2025 ab."
+  },
+  {
+    "rel": "fleet/lander/hakuto-r.json",
+    "at": "name",
+    "old": "Hakuto-R Programm",
+    "new": "Hakuto-R-Programm"
+  },
+  {
+    "rel": "fleet/lander/vikram-cy2.json",
+    "at": "tagline",
+    "old": "Lander von Chandrayaan-2; abgestürzt; der Orbiter arbeitet weiter",
+    "new": "Lander der indischen Mission Chandrayaan-2; 2019 abgestürzt, der Orbiter arbeitete weiter"
+  },
+  {
+    "rel": "fleet/lander/vikram-cy2.json",
+    "at": "best_known_for",
+    "old": "Lander von Chandrayaan-2; abgestürzt; der Orbiter arbeitet weiter",
+    "new": "Lander der indischen Mission Chandrayaan-2; 2019 abgestürzt, der Orbiter arbeitete weiter"
+  },
+  {
+    "rel": "fleet/lander/vikram-cy2.json",
+    "at": "description",
+    "old": "Vikram (Chandrayaan-2) ist ein planetarer Lander, gebaut von ISRO in Indien. Lander von Chandrayaan-2; abgestürzt; der Orbiter arbeitet weiter. Flog 2019, scheiterte aber.",
+    "new": "Vikram war der Lander der indischen Mission Chandrayaan-2, gebaut von der ISRO. Er stürzte im September 2019 beim Landeversuch ab, doch der Orbiter von Chandrayaan-2 arbeitete im Mondorbit weiter."
+  },
+  {
+    "rel": "fleet/lander/mars-polar-lander.json",
+    "at": "tagline",
+    "old": "Bei Landung verloren; löste „schneller, besser, billiger“-Überprüfung aus",
+    "new": "1999 bei der Landung verloren; der Fehlschlag veranlasste die NASA, ihren Ansatz „schneller, besser, billiger“ zu überprüfen"
+  },
+  {
+    "rel": "fleet/lander/mars-polar-lander.json",
+    "at": "best_known_for",
+    "old": "Bei Landung verloren; löste „schneller, besser, billiger“-Überprüfung aus",
+    "new": "1999 bei der Landung verloren; der Fehlschlag veranlasste die NASA, ihren Ansatz „schneller, besser, billiger“ zu überprüfen"
+  },
+  {
+    "rel": "fleet/lander/mars-polar-lander.json",
+    "at": "description",
+    "old": "Mars Polar Lander ist ein planetarer Lander, gebaut von Lockheed Martin in den USA. Bei der Landung verloren; löste die Überprüfung des Ansatzes „schneller, besser, billiger“ aus. Flog 1999, scheiterte aber.",
+    "new": "Mars Polar Lander war ein Lander der NASA, gebaut von Lockheed Martin. Im Dezember 1999 brach beim Abstieg zur Südpolarregion des Mars der Kontakt ab. Der Fehlschlag, nur Monate nach dem Verlust des Mars Climate Orbiter, veranlasste die NASA, ihren Ansatz „schneller, besser, billiger“ zu überprüfen."
+  }
 ]

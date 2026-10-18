@@ -1,20 +1,20 @@
 [
- {
-  "rel": "universe/named-stars/alhena.json",
-  "at": "bio",
-  "old": "Alhena (Gamma Geminorum) ist ein blauweißer Unterriese etwa 109 Lichtjahre entfernt, der dritthellste Stern in Gemini und liegt am Fuß der Twins nahe dem Rand der Milchstraße.",
-  "new": "Alhena (Gamma Geminorum) ist ein blauweißer Unterriese etwa 109 Lichtjahre entfernt, der dritthellste Stern in Zwillinge und liegt am Fuß der Twins nahe dem Rand der Milchstraße."
- },
- {
-  "rel": "universe/named-stars/deneb.json",
-  "at": "cultural",
-  "old": "Der Name stammt aus dem Arabischen und bedeutet ‚Schwanz', er bezeichnet den Schwanz von Cygnus, dem Schwan. Deneb bildet zusammen mit Wega und Altair das Sommerdreieck und zieht sich entlang des nördlichen Stroms der Milchstraße.",
-  "new": "Der Name stammt aus dem Arabischen und bedeutet ‚Schwanz', er bezeichnet den Schwanz von Schwan, dem Schwan. Deneb bildet zusammen mit Wega und Altair das Sommerdreieck und zieht sich entlang des nördlichen Stroms der Milchstraße."
- },
- {
-  "rel": "universe/named-stars/sadr.json",
-  "at": "bio",
-  "old": "Sadr (Gamma Cygni) ist ein gelbweißer Überriese in etwa 1.800 Lichtjahren Entfernung, der am Schnittpunkt des Nordkreuzes liegt, wo die Flügel des Cygnus auf den Körper treffen. Er ist eingebettet in einen ausgedehnten Komplex aus leuchtendem Wasserstoff, bekannt als die Sadr-Region.",
-  "new": "Sadr (Gamma Cygni) ist ein gelbweißer Überriese in etwa 1.800 Lichtjahren Entfernung, der am Schnittpunkt des Nordkreuzes liegt, wo die Flügel des Schwan auf den Körper treffen. Er ist eingebettet in einen ausgedehnten Komplex aus leuchtendem Wasserstoff, bekannt als die Sadr-Region."
- }
+  {
+    "rel": "universe/named-stars/alhena.json",
+    "at": "bio",
+    "old": "Alhena (Gamma Geminorum) ist ein blauweißer Unterriese etwa 109 Lichtjahre entfernt, der dritthellste Stern in Gemini und liegt am Fuß der Twins nahe dem Rand der Milchstraße.",
+    "new": "Alhena (Gamma Geminorum) ist ein blauweißer Unterriese etwa 109 Lichtjahre entfernt, der dritthellste Stern in Zwillinge und liegt am Fuß der Twins nahe dem Rand der Milchstraße."
+  },
+  {
+    "rel": "universe/named-stars/deneb.json",
+    "at": "cultural",
+    "old": "Der Name stammt aus dem Arabischen und bedeutet ‚Schwanz', er bezeichnet den Schwanz von Cygnus, dem Schwan. Deneb bildet zusammen mit Wega und Altair das Sommerdreieck und zieht sich entlang des nördlichen Stroms der Milchstraße.",
+    "new": "Der Name stammt aus dem Arabischen und bedeutet ‚Schwanz', er bezeichnet den Schwanz von Schwan, dem Schwan. Deneb bildet zusammen mit Wega und Altair das Sommerdreieck und zieht sich entlang des nördlichen Stroms der Milchstraße."
+  },
+  {
+    "rel": "universe/named-stars/sadr.json",
+    "at": "bio",
+    "old": "Sadr (Gamma Cygni) ist ein gelbweißer Überriese in etwa 1.800 Lichtjahren Entfernung, der am Schnittpunkt des Nordkreuzes liegt, wo die Flügel des Cygnus auf den Körper treffen. Er ist eingebettet in einen ausgedehnten Komplex aus leuchtendem Wasserstoff, bekannt als die Sadr-Region.",
+    "new": "Sadr (Gamma Cygni) ist ein gelbweißer Überriese in etwa 1.800 Lichtjahren Entfernung, der am Schnittpunkt des Nordkreuzes liegt, wo die Flügel des Schwan auf den Körper treffen. Er ist eingebettet in einen ausgedehnten Komplex aus leuchtendem Wasserstoff, bekannt als die Sadr-Region."
+  }
 ]

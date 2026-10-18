@@ -1,56 +1,56 @@
 [
- {
-  "rel": "fleet/lander/hakuto-r.json",
-  "at": "tagline",
-  "old": "Primer aterrizador lunar privado japonés; M1 + M2 ambos se estrellaron",
-  "new": "Primeros intentos privados japoneses de alunizaje; las misiones 1 (2023) y 2 (2025) se estrellaron"
- },
- {
-  "rel": "fleet/lander/hakuto-r.json",
-  "at": "best_known_for",
-  "old": "Primer aterrizador lunar privado japonés; M1 + M2 ambos se estrellaron",
-  "new": "Primeros intentos privados japoneses de alunizaje; las misiones 1 (2023) y 2 (2025) se estrellaron"
- },
- {
-  "rel": "fleet/lander/hakuto-r.json",
-  "at": "description",
-  "old": "El programa Hakuto-R es un aterrizador planetario construido por ispace en Japón. Primer aterrizador lunar privado japonés; M1 + M2 ambos se estrellaron. Voló en 2023 pero falló.",
-  "new": "Hakuto-R es un programa de aterrizadores lunares de la empresa japonesa ispace. El aterrizador de la misión 1, lanzado en diciembre de 2022, fue el primer intento privado japonés de alunizaje y se estrelló en abril de 2023. El aterrizador de la misión 2, Resilience, se estrelló en junio de 2025."
- },
- {
-  "rel": "fleet/lander/vikram-cy2.json",
-  "at": "tagline",
-  "old": "Aterrizador Chandrayaan-2; se estrelló; el orbitador sigue activo",
-  "new": "Aterrizador de la misión india Chandrayaan-2; se estrelló en 2019, pero el orbitador siguió funcionando"
- },
- {
-  "rel": "fleet/lander/vikram-cy2.json",
-  "at": "best_known_for",
-  "old": "Aterrizador Chandrayaan-2; se estrelló; el orbitador sigue activo",
-  "new": "Aterrizador de la misión india Chandrayaan-2; se estrelló en 2019, pero el orbitador siguió funcionando"
- },
- {
-  "rel": "fleet/lander/vikram-cy2.json",
-  "at": "description",
-  "old": "Vikram (Chandrayaan-2) es un aterrizador planetario construido por ISRO en India. Aterrizador Chandrayaan-2; se estrelló; el orbitador sigue activo. Voló en 2019 pero falló.",
-  "new": "Vikram fue el aterrizador de la misión india Chandrayaan-2, construido por la ISRO. Se estrelló durante su intento de aterrizaje en septiembre de 2019, pero el orbitador de Chandrayaan-2 siguió funcionando en órbita lunar."
- },
- {
-  "rel": "fleet/lander/mars-polar-lander.json",
-  "at": "tagline",
-  "old": "Perdido en el aterrizaje; impulsó la revisión \"más rápido, mejor, más barato\"",
-  "new": "Perdido durante el aterrizaje en 1999; el fracaso llevó a la NASA a revisar su enfoque «más rápido, mejor, más barato»"
- },
- {
-  "rel": "fleet/lander/mars-polar-lander.json",
-  "at": "best_known_for",
-  "old": "Perdido en el aterrizaje; impulsó la revisión \"más rápido, mejor, más barato\"",
-  "new": "Perdido durante el aterrizaje en 1999; el fracaso llevó a la NASA a revisar su enfoque «más rápido, mejor, más barato»"
- },
- {
-  "rel": "fleet/lander/mars-polar-lander.json",
-  "at": "description",
-  "old": "Mars Polar Lander es un aterrizador planetario construido por Lockheed Martin en EE. UU. Perdido en el aterrizaje; impulsó la revisión \"más rápido, mejor, más barato\". Voló en 1999 pero falló.",
-  "new": "Mars Polar Lander fue un aterrizador de la NASA construido por Lockheed Martin. Se perdió el contacto durante su descenso hacia la región polar sur de Marte en diciembre de 1999. Ocurrido meses después de la pérdida del Mars Climate Orbiter, el fracaso llevó a la NASA a revisar su enfoque «más rápido, mejor, más barato»."
- }
+  {
+    "rel": "fleet/lander/hakuto-r.json",
+    "at": "tagline",
+    "old": "Primer aterrizador lunar privado japonés; M1 + M2 ambos se estrellaron",
+    "new": "Primeros intentos privados japoneses de alunizaje; las misiones 1 (2023) y 2 (2025) se estrellaron"
+  },
+  {
+    "rel": "fleet/lander/hakuto-r.json",
+    "at": "best_known_for",
+    "old": "Primer aterrizador lunar privado japonés; M1 + M2 ambos se estrellaron",
+    "new": "Primeros intentos privados japoneses de alunizaje; las misiones 1 (2023) y 2 (2025) se estrellaron"
+  },
+  {
+    "rel": "fleet/lander/hakuto-r.json",
+    "at": "description",
+    "old": "El programa Hakuto-R es un aterrizador planetario construido por ispace en Japón. Primer aterrizador lunar privado japonés; M1 + M2 ambos se estrellaron. Voló en 2023 pero falló.",
+    "new": "Hakuto-R es un programa de aterrizadores lunares de la empresa japonesa ispace. El aterrizador de la misión 1, lanzado en diciembre de 2022, fue el primer intento privado japonés de alunizaje y se estrelló en abril de 2023. El aterrizador de la misión 2, Resilience, se estrelló en junio de 2025."
+  },
+  {
+    "rel": "fleet/lander/vikram-cy2.json",
+    "at": "tagline",
+    "old": "Aterrizador Chandrayaan-2; se estrelló; el orbitador sigue activo",
+    "new": "Aterrizador de la misión india Chandrayaan-2; se estrelló en 2019, pero el orbitador siguió funcionando"
+  },
+  {
+    "rel": "fleet/lander/vikram-cy2.json",
+    "at": "best_known_for",
+    "old": "Aterrizador Chandrayaan-2; se estrelló; el orbitador sigue activo",
+    "new": "Aterrizador de la misión india Chandrayaan-2; se estrelló en 2019, pero el orbitador siguió funcionando"
+  },
+  {
+    "rel": "fleet/lander/vikram-cy2.json",
+    "at": "description",
+    "old": "Vikram (Chandrayaan-2) es un aterrizador planetario construido por ISRO en India. Aterrizador Chandrayaan-2; se estrelló; el orbitador sigue activo. Voló en 2019 pero falló.",
+    "new": "Vikram fue el aterrizador de la misión india Chandrayaan-2, construido por la ISRO. Se estrelló durante su intento de aterrizaje en septiembre de 2019, pero el orbitador de Chandrayaan-2 siguió funcionando en órbita lunar."
+  },
+  {
+    "rel": "fleet/lander/mars-polar-lander.json",
+    "at": "tagline",
+    "old": "Perdido en el aterrizaje; impulsó la revisión \"más rápido, mejor, más barato\"",
+    "new": "Perdido durante el aterrizaje en 1999; el fracaso llevó a la NASA a revisar su enfoque «más rápido, mejor, más barato»"
+  },
+  {
+    "rel": "fleet/lander/mars-polar-lander.json",
+    "at": "best_known_for",
+    "old": "Perdido en el aterrizaje; impulsó la revisión \"más rápido, mejor, más barato\"",
+    "new": "Perdido durante el aterrizaje en 1999; el fracaso llevó a la NASA a revisar su enfoque «más rápido, mejor, más barato»"
+  },
+  {
+    "rel": "fleet/lander/mars-polar-lander.json",
+    "at": "description",
+    "old": "Mars Polar Lander es un aterrizador planetario construido por Lockheed Martin en EE. UU. Perdido en el aterrizaje; impulsó la revisión \"más rápido, mejor, más barato\". Voló en 1999 pero falló.",
+    "new": "Mars Polar Lander fue un aterrizador de la NASA construido por Lockheed Martin. Se perdió el contacto durante su descenso hacia la región polar sur de Marte en diciembre de 1999. Ocurrido meses después de la pérdida del Mars Climate Orbiter, el fracaso llevó a la NASA a revisar su enfoque «más rápido, mejor, más barato»."
+  }
 ]

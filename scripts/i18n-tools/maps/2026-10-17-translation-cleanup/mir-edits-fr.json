@@ -1,8 +1,8 @@
 [
- {
-  "rel": "fleet/lander/mars-polar-lander.json",
-  "at": "description",
-  "old": "Mars Polar Lander est un atterrisseur planétaire construit par Lockheed Martin aux États-Unis. Perdu à l'atterrissage; a conduit plus rapide-meilleur examen. Flew en 1999 mais a échoué; informe la couche rédemption-arc de la navette et mir époque.",
-  "new": "Mars Polar Lander est un atterrisseur planétaire construit par Lockheed Martin aux États-Unis. Perdu à l'atterrissage; a conduit plus rapide-meilleur examen. A volé en 1999 mais a échoué; informe la couche rédemption-arc de l'époque de la navette et de Mir."
- }
+  {
+    "rel": "fleet/lander/mars-polar-lander.json",
+    "at": "description",
+    "old": "Mars Polar Lander est un atterrisseur planétaire construit par Lockheed Martin aux États-Unis. Perdu à l'atterrissage; a conduit plus rapide-meilleur examen. Flew en 1999 mais a échoué; informe la couche rédemption-arc de la navette et mir époque.",
+    "new": "Mars Polar Lander est un atterrisseur planétaire construit par Lockheed Martin aux États-Unis. Perdu à l'atterrissage; a conduit plus rapide-meilleur examen. A volé en 1999 mais a échoué; informe la couche rédemption-arc de l'époque de la navette et de Mir."
+  }
 ]

@@ -1,110 +1,110 @@
 [
- {
-  "rel": "messages",
-  "at": "lab_goal_g10_coverage",
-  "cur": "Дакле, колико је сателита потребно? Виша орбита види већу површину Земље, па их треба мање: са геостационарне, само ТРИ покривају цео насељени свет — идеја коју је Артур Ц. Кларк објавио 1945. Спустите се на љуску од 550 km и сваки види тако мало да вам треба цео прстен само да премости хоризонт, и хиљаде њих у многим прстеновима за глобалну покривеност. То је математика мегаконстелације иза Starlink-а и OneWeb-а.",
-  "en": "So how many satellites does it take? A higher orbit sees a bigger patch of Earth, so it needs fewer of them: from geostationary, just THREE cover the whole populated globe — the idea Arthur C. Clarke published in 1945. Drop to a 550 km shell and each sees so little that you need a full ring just to bridge the horizon, and thousands of them in many rings for global coverage. That is the megaconstellation math behind Starlink and OneWeb."
- },
- {
-  "rel": "messages",
-  "at": "lab_conn_fc_hook",
-  "cur": "Гери Фландро је 1965. године, као дипломски студент са Калтеха који је радио у JPL-у, приметио да ће се спољашње планете поравнати крајем 1970-их тако да једна летелица може да обиђе све — случајност која се неће поновити до 2153. То запажање је постало Voyager.",
-  "en": "In 1965 Gary Flandro, a Caltech graduate student working at JPL, noticed the outer planets would line up in the late 1970s so a single craft could tour them all — a coincidence that would not repeat until 2153. That observation became Voyager."
- },
- {
-  "rel": "messages",
-  "at": "lab_conn_sysasc_hook",
-  "cur": "Лабораторија Draper при MIT-у уложила је Месец као опкладу: Apollo Guidance Computer био је прва машина која је носила људе у лету, а управљао је тако што је много пута у секунди изнова решавао сопствене једначине навођења — предак сваког електронског система управљања летом („fly-by-wire“) од тада.",
-  "en": "Draper's MIT lab bet the Moon on it: the Apollo Guidance Computer was the first machine to fly humans, steering by re-solving its own guidance equations many times a second — the ancestor of every fly-by-wire system since."
- },
- {
-  "rel": "messages",
-  "at": "lab_goal_sysland_descent",
-  "cur": "Меко слетање је трка између висине и брзине. Контролер прати РАСПОРЕД брзине спуштања — циљна брзина је пропорционална висини на којој сте још увек (v = појачање·висина), па вас доводи до пузања како вам се тло приближава — и подешава потисак мотора у сваком кораку да прати ту линију, ограничен по брзини тако да g никад не скочи. Летите: са пар километара висине, гледајте како компјутер поништава вашу брзину до нежног додира. Затим стигните брже, или ограничите кочење ниже, и гледајте како истом компјутеру понестане простора — брзина остаје изнад распореда све до дна и тврдо ударите. Ово је петља коју лете Apollo-ов лунарни модул, марсовска небеска дизалица и свака Falcon 9 повратна ракета.",
-  "en": "A soft landing is a race between altitude and speed. The controller runs a descent-rate SCHEDULE — the target speed is proportional to how high you still are (v = gain·altitude), so it eases you toward a crawl as the ground rises to meet you — and it throttles the engine every step to track that line, rate-limited so the g never spikes. Fly it: from a couple of kilometres up, watch the computer null your speed to a gentle touchdown. Then arrive faster, or cap the braking lower, and watch the same computer run out of room — the speed stays above the schedule all the way down and you hit hard. This is the loop Apollo's lunar module, the Mars sky-crane, and every Falcon 9 booster landing flies."
- },
- {
-  "rel": "messages",
-  "at": "lab_goal_sysentry_steer",
-  "cur": "Присетите се балистичког коридора: прострм и бићете смрвљени, преплитак и одбијате се назад у свемир — а за повратак са Месеца капсула у слободном паду има готово нимало размака између та два. Узгон је излаз. Капсула са мало узгона може да се НАГИЊЕ ради управљања: закрене се тако да узгон показује нагоре и извлачи се из стрмог пада (ограничавајући g); закрене се тако да показује надоле и урања у плитак (заустављајући одбијање). Ова лекција управља стварним уласком са узгоном уз контролер нагиба који одржава успорење, затим пролази кроз све углове уласка да измери преживљиви коридор. Балистичка капсула има оштрицу ножа; чак и Apollo-ов скроман однос узгона и отпора од 0,3 га отприлике УДВОСТРУЧУЈЕ. Повећајте однос узгона и отпора и гледајте како се коридор шири — маргина која је учинила посадне повратке са Месеца преживљивим.",
-  "en": "Recall the ballistic corridor: too steep and you are crushed, too shallow and you skip back into space — and for a lunar return a plummeting capsule has almost no gap between the two. Lift is the way out. A capsule with a little lift can BANK to steer: roll so the lift points up and it pulls out of a steep dive (capping the g); roll so it points down and it digs into a shallow one (stopping the skip). This lesson flies a real lifting entry with a bank controller holding the deceleration, then sweeps every entry angle to measure the survivable corridor. A ballistic capsule's is a knife-edge; even Apollo's modest lift-to-drag of 0.3 roughly DOUBLES it. Turn up the lift-to-drag and watch the corridor widen — the margin that made crewed Moon returns survivable."
- },
- {
-  "rel": "messages",
-  "at": "lab_conn_sysentry_hook",
-  "cur": "Apollo-ов рачунар је водио поновни улазак као програм нагиба: командовао је обртима нагиба — узгон прво лево, па десно — да управља по домету одржавајући успорење, провлачећи се кроз коридор широк око два степена при 40.000 km/h. Погрешан нагиб и одбијате се у усамљену орбиту или изгарате.",
-  "en": "Apollo's computer flew re-entry as a bank program: it commanded roll reversals — flip the lift left, then right — to steer downrange while holding the deceleration, threading a corridor about two degrees wide at 40,000 km/h. Bank wrong and you skip off into a lonely orbit or burn."
- },
- {
-  "rel": "messages",
-  "at": "lab_conn_gtm_odyssey",
-  "cur": "Mars Odyssey — NASA-ин најдуготрајнији марсовски орбитер",
-  "en": "Mars Odyssey — NASA's longest-serving Mars orbiter"
- },
- {
-  "rel": "messages",
-  "at": "lab_goal_lot_main_chute",
-  "cur": "Отвориш паду паде пуне величине овде и паду брзином хода — што звучи савршено и заправо је фатално. Титанов ваздух је толико гусц а његова гравитација толико слаба да би под Huygens-овом главном паду од 8,3 метра сонда дрифтовала много сати, а батерије су имале мање од три. На Титану парадокс пауре делује другачије: превише отпора те споро убија.",
-  "en": "Pop a full-sized parachute here and you fall at walking pace — which sounds perfect and is actually fatal. Titan's air is so thick and its gravity so weak that under Huygens' 8.3-metre main chute the probe would drift for many hours, and its batteries had less than three in them. On Titan the parachute paradox cuts the other way: too much drag kills you slowly."
- },
- {
-  "rel": "messages",
-  "at": "lab_conn_pj_why",
-  "cur": "Galileo-ва атмосферска сонда је једина сонда за уласк која је икада летела у атмосферу џиновског планете и пријавила назад. Њених 57,6 минута трансмисије преписало је уџбенике о Јупитеровим ветровима, води и хелијуму — и њен уласк остаје екстремни еталон атмосферског лета: ниједан објекат никад није ударио атмосферу брже и преживео да говори.",
-  "en": "Galileo's atmospheric probe is the only entry probe ever to fly into a giant planet's atmosphere and report back. Its 57.6 minutes of transmission rewrote the textbooks on Jupiter's winds, water and helium — and its entry remains the extreme benchmark of atmospheric flight: no object has ever hit an atmosphere faster and survived to speak."
- },
- {
-  "rel": "messages",
-  "at": "lab_conn_tsw_why",
-  "cur": "Пет светова, пет премијера, три космичке агенције: ESA-ина Philae је направила прво слетање на комету (три додира пре него што се смирила), JAXA-ине Hayabusa мисије су вратиле прве узорке астероида и прекрчиле су прве ровере преко једног, NASA-ина NEAR је направила прво слетање на астероид и OSIRIS-REx је узела највећи узорак астероида. Између њих су написали приручник за рад на месту где гравитација скоро не постоји — физика коју ће следити свака будућа мисија рударења астероида и одбране од планетарне опасности.",
-  "en": "Five worlds, five firsts, three space agencies: ESA's Philae made the first comet landing (three touchdowns before it settled), JAXA's Hayabusa missions returned the first asteroid samples and hopped the first rovers across one, NASA's NEAR made the first asteroid landing and OSIRIS-REx the largest asteroid sample grab. Between them they wrote the manual for operating where gravity barely exists — the same physics every future asteroid miner and planetary-defence mission will live by."
- },
- {
-  "rel": "messages",
-  "at": "lab_conn_lmc_hook",
-  "cur": "Када је MESSENGER-у гориво готово 2015. године, ударио је Меркур око 3,9 километара у секунди — додајући нови кратер планети коју је пресликао. Чак је и његов крај био демонстрација проблема: без горива, Меркур познаје само један начин да слети.",
-  "en": "When MESSENGER's fuel ran out in 2015, it hit Mercury at about 3.9 kilometres per second — adding a fresh crater to the planet it had mapped. Even its ending was a demonstration of the problem: without propellant, Mercury only knows one way down."
- },
- {
-  "rel": "messages",
-  "at": "lab_goal_land_titan_desc",
-  "cur": "Густ хладан ваздух и блага гравитација чине Титан најлакшим великим светом за слетање — може и сам падобран. Изведи Huygens-ов дрифт кроз наранџасту измаглицу.",
-  "en": "Thick cold air and gentle gravity make Titan the easiest big world to land on — a parachute alone can do it. Fly Huygens' drift through the orange haze."
- },
- {
-  "rel": "messages",
-  "at": "lab_f_bounce_glossary",
-  "cur": "Додирните тло брзином v_td и површина враћа v_b = e·v_td (коефицијент реституције e). У микрогравитацији (прва картица овог циља) такво одбијање може да направи лук висок километрима — двоструко одбијање Philae-а, записано као једначина.",
-  "en": "Touch down at v_td and the surface gives back v_b = e·v_td (restitution e). In micro-gravity (this goal's opening card) that bounce can arc kilometres high — Philae's double bounce, as an equation."
- },
- {
-  "rel": "messages",
-  "at": "lab_f_engine_perf_glossary",
-  "cur": "vₑ = Iₛₚ·g₀: специфични импулс се директно претвара у брзину издувних гасова. То је регулатор ефикасности унутар Tsiolkovsky-јеве једначине — удвостручите Iₛₚ и сваки килограм погонског горива даје дупло већи Δv.",
-  "en": "vₑ = Iₛₚ·g₀: specific impulse converts straight into exhaust speed. It is the efficiency knob inside Tsiolkovsky — double the Iₛₚ and every kilogram of propellant buys twice the Δv."
- },
- {
-  "rel": "messages",
-  "at": "lab_f_escverd_glossary",
-  "cur": "margin = v_cap + v_assist − v_req: буџет ракете плус оно што прелети поклањају (картица гравитационог assist-а), наспрам цене напуштања Сунца. Voyager-ова књига рачуна у једном реду.",
-  "en": "margin = v_cap + v_assist − v_req: the rocket's budget plus what flybys donate (gravity-assist card), against the price of leaving the Sun. Voyager's ledger in one line."
- },
- {
-  "rel": "messages",
-  "at": "lab_f_frozen_glossary",
-  "cur": "Избочина такође замахује најнижу тачку орбите око орбите. На 5cos²i − 1 = 0 — i = 63,4° — замах се зауставља и елипса се замрзава у оријентацији: Molniya-ин трик за задржавање његовог спорог, високог АПОГЕЈА над далеким севером.",
-  "en": "The bulge also swings an orbit's low point around the orbit. At 5cos²i − 1 = 0 — i = 63.4° — the swing stops and the ellipse freezes in orientation: Molniya's trick for keeping its slow, high APOGEE dwelling over the far north."
- },
- {
-  "rel": "messages",
-  "at": "privacy_cookies_body",
-  "cur": "Umami не поставља ниједан колачић. Orrery користи три функционална колачића — ваш избор језика, вашу позицију Curator Tour-а и искључивање аналитике испод — сваки је наведен у потпуности на страни заслуга. Неколико локалних подешавања у прегледачу (квалитет графике, режим отклањања грешака, офлајн преузимања) такође се чувају на вашој уређају; никад не напуштају га и нису део аналитике.",
-  "en": "Umami sets no cookie at all. Orrery uses three functional cookies — your language pick, your Curator Tour position, and the analytics opt-out below — each listed in full on the credits page. A few browser-local settings (graphics quality, debug mode, offline downloads) are also stored on your device; they never leave it and are not part of any analytics."
- },
- {
-  "rel": "messages",
-  "at": "error_debug_tip",
-  "cur": "Додајте {flag} било којем URL-у маршруте да отворите панел за отклањање грешака (нпр. {example}).",
-  "en": "Append {flag} to any route URL to open the debug panel (e.g. {example})."
- }
+  {
+    "rel": "messages",
+    "at": "lab_goal_g10_coverage",
+    "cur": "Дакле, колико је сателита потребно? Виша орбита види већу површину Земље, па их треба мање: са геостационарне, само ТРИ покривају цео насељени свет — идеја коју је Артур Ц. Кларк објавио 1945. Спустите се на љуску од 550 km и сваки види тако мало да вам треба цео прстен само да премости хоризонт, и хиљаде њих у многим прстеновима за глобалну покривеност. То је математика мегаконстелације иза Starlink-а и OneWeb-а.",
+    "en": "So how many satellites does it take? A higher orbit sees a bigger patch of Earth, so it needs fewer of them: from geostationary, just THREE cover the whole populated globe — the idea Arthur C. Clarke published in 1945. Drop to a 550 km shell and each sees so little that you need a full ring just to bridge the horizon, and thousands of them in many rings for global coverage. That is the megaconstellation math behind Starlink and OneWeb."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_fc_hook",
+    "cur": "Гери Фландро је 1965. године, као дипломски студент са Калтеха који је радио у JPL-у, приметио да ће се спољашње планете поравнати крајем 1970-их тако да једна летелица може да обиђе све — случајност која се неће поновити до 2153. То запажање је постало Voyager.",
+    "en": "In 1965 Gary Flandro, a Caltech graduate student working at JPL, noticed the outer planets would line up in the late 1970s so a single craft could tour them all — a coincidence that would not repeat until 2153. That observation became Voyager."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_sysasc_hook",
+    "cur": "Лабораторија Draper при MIT-у уложила је Месец као опкладу: Apollo Guidance Computer био је прва машина која је носила људе у лету, а управљао је тако што је много пута у секунди изнова решавао сопствене једначине навођења — предак сваког електронског система управљања летом („fly-by-wire“) од тада.",
+    "en": "Draper's MIT lab bet the Moon on it: the Apollo Guidance Computer was the first machine to fly humans, steering by re-solving its own guidance equations many times a second — the ancestor of every fly-by-wire system since."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_sysland_descent",
+    "cur": "Меко слетање је трка између висине и брзине. Контролер прати РАСПОРЕД брзине спуштања — циљна брзина је пропорционална висини на којој сте још увек (v = појачање·висина), па вас доводи до пузања како вам се тло приближава — и подешава потисак мотора у сваком кораку да прати ту линију, ограничен по брзини тако да g никад не скочи. Летите: са пар километара висине, гледајте како компјутер поништава вашу брзину до нежног додира. Затим стигните брже, или ограничите кочење ниже, и гледајте како истом компјутеру понестане простора — брзина остаје изнад распореда све до дна и тврдо ударите. Ово је петља коју лете Apollo-ов лунарни модул, марсовска небеска дизалица и свака Falcon 9 повратна ракета.",
+    "en": "A soft landing is a race between altitude and speed. The controller runs a descent-rate SCHEDULE — the target speed is proportional to how high you still are (v = gain·altitude), so it eases you toward a crawl as the ground rises to meet you — and it throttles the engine every step to track that line, rate-limited so the g never spikes. Fly it: from a couple of kilometres up, watch the computer null your speed to a gentle touchdown. Then arrive faster, or cap the braking lower, and watch the same computer run out of room — the speed stays above the schedule all the way down and you hit hard. This is the loop Apollo's lunar module, the Mars sky-crane, and every Falcon 9 booster landing flies."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_sysentry_steer",
+    "cur": "Присетите се балистичког коридора: прострм и бићете смрвљени, преплитак и одбијате се назад у свемир — а за повратак са Месеца капсула у слободном паду има готово нимало размака између та два. Узгон је излаз. Капсула са мало узгона може да се НАГИЊЕ ради управљања: закрене се тако да узгон показује нагоре и извлачи се из стрмог пада (ограничавајући g); закрене се тако да показује надоле и урања у плитак (заустављајући одбијање). Ова лекција управља стварним уласком са узгоном уз контролер нагиба који одржава успорење, затим пролази кроз све углове уласка да измери преживљиви коридор. Балистичка капсула има оштрицу ножа; чак и Apollo-ов скроман однос узгона и отпора од 0,3 га отприлике УДВОСТРУЧУЈЕ. Повећајте однос узгона и отпора и гледајте како се коридор шири — маргина која је учинила посадне повратке са Месеца преживљивим.",
+    "en": "Recall the ballistic corridor: too steep and you are crushed, too shallow and you skip back into space — and for a lunar return a plummeting capsule has almost no gap between the two. Lift is the way out. A capsule with a little lift can BANK to steer: roll so the lift points up and it pulls out of a steep dive (capping the g); roll so it points down and it digs into a shallow one (stopping the skip). This lesson flies a real lifting entry with a bank controller holding the deceleration, then sweeps every entry angle to measure the survivable corridor. A ballistic capsule's is a knife-edge; even Apollo's modest lift-to-drag of 0.3 roughly DOUBLES it. Turn up the lift-to-drag and watch the corridor widen — the margin that made crewed Moon returns survivable."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_sysentry_hook",
+    "cur": "Apollo-ов рачунар је водио поновни улазак као програм нагиба: командовао је обртима нагиба — узгон прво лево, па десно — да управља по домету одржавајући успорење, провлачећи се кроз коридор широк око два степена при 40.000 km/h. Погрешан нагиб и одбијате се у усамљену орбиту или изгарате.",
+    "en": "Apollo's computer flew re-entry as a bank program: it commanded roll reversals — flip the lift left, then right — to steer downrange while holding the deceleration, threading a corridor about two degrees wide at 40,000 km/h. Bank wrong and you skip off into a lonely orbit or burn."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_gtm_odyssey",
+    "cur": "Mars Odyssey — NASA-ин најдуготрајнији марсовски орбитер",
+    "en": "Mars Odyssey — NASA's longest-serving Mars orbiter"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_lot_main_chute",
+    "cur": "Отвориш паду паде пуне величине овде и паду брзином хода — што звучи савршено и заправо је фатално. Титанов ваздух је толико гусц а његова гравитација толико слаба да би под Huygens-овом главном паду од 8,3 метра сонда дрифтовала много сати, а батерије су имале мање од три. На Титану парадокс пауре делује другачије: превише отпора те споро убија.",
+    "en": "Pop a full-sized parachute here and you fall at walking pace — which sounds perfect and is actually fatal. Titan's air is so thick and its gravity so weak that under Huygens' 8.3-metre main chute the probe would drift for many hours, and its batteries had less than three in them. On Titan the parachute paradox cuts the other way: too much drag kills you slowly."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_pj_why",
+    "cur": "Galileo-ва атмосферска сонда је једина сонда за уласк која је икада летела у атмосферу џиновског планете и пријавила назад. Њених 57,6 минута трансмисије преписало је уџбенике о Јупитеровим ветровима, води и хелијуму — и њен уласк остаје екстремни еталон атмосферског лета: ниједан објекат никад није ударио атмосферу брже и преживео да говори.",
+    "en": "Galileo's atmospheric probe is the only entry probe ever to fly into a giant planet's atmosphere and report back. Its 57.6 minutes of transmission rewrote the textbooks on Jupiter's winds, water and helium — and its entry remains the extreme benchmark of atmospheric flight: no object has ever hit an atmosphere faster and survived to speak."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_tsw_why",
+    "cur": "Пет светова, пет премијера, три космичке агенције: ESA-ина Philae је направила прво слетање на комету (три додира пре него што се смирила), JAXA-ине Hayabusa мисије су вратиле прве узорке астероида и прекрчиле су прве ровере преко једног, NASA-ина NEAR је направила прво слетање на астероид и OSIRIS-REx је узела највећи узорак астероида. Између њих су написали приручник за рад на месту где гравитација скоро не постоји — физика коју ће следити свака будућа мисија рударења астероида и одбране од планетарне опасности.",
+    "en": "Five worlds, five firsts, three space agencies: ESA's Philae made the first comet landing (three touchdowns before it settled), JAXA's Hayabusa missions returned the first asteroid samples and hopped the first rovers across one, NASA's NEAR made the first asteroid landing and OSIRIS-REx the largest asteroid sample grab. Between them they wrote the manual for operating where gravity barely exists — the same physics every future asteroid miner and planetary-defence mission will live by."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_lmc_hook",
+    "cur": "Када је MESSENGER-у гориво готово 2015. године, ударио је Меркур око 3,9 километара у секунди — додајући нови кратер планети коју је пресликао. Чак је и његов крај био демонстрација проблема: без горива, Меркур познаје само један начин да слети.",
+    "en": "When MESSENGER's fuel ran out in 2015, it hit Mercury at about 3.9 kilometres per second — adding a fresh crater to the planet it had mapped. Even its ending was a demonstration of the problem: without propellant, Mercury only knows one way down."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_land_titan_desc",
+    "cur": "Густ хладан ваздух и блага гравитација чине Титан најлакшим великим светом за слетање — може и сам падобран. Изведи Huygens-ов дрифт кроз наранџасту измаглицу.",
+    "en": "Thick cold air and gentle gravity make Titan the easiest big world to land on — a parachute alone can do it. Fly Huygens' drift through the orange haze."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_bounce_glossary",
+    "cur": "Додирните тло брзином v_td и површина враћа v_b = e·v_td (коефицијент реституције e). У микрогравитацији (прва картица овог циља) такво одбијање може да направи лук висок километрима — двоструко одбијање Philae-а, записано као једначина.",
+    "en": "Touch down at v_td and the surface gives back v_b = e·v_td (restitution e). In micro-gravity (this goal's opening card) that bounce can arc kilometres high — Philae's double bounce, as an equation."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_engine_perf_glossary",
+    "cur": "vₑ = Iₛₚ·g₀: специфични импулс се директно претвара у брзину издувних гасова. То је регулатор ефикасности унутар Tsiolkovsky-јеве једначине — удвостручите Iₛₚ и сваки килограм погонског горива даје дупло већи Δv.",
+    "en": "vₑ = Iₛₚ·g₀: specific impulse converts straight into exhaust speed. It is the efficiency knob inside Tsiolkovsky — double the Iₛₚ and every kilogram of propellant buys twice the Δv."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_escverd_glossary",
+    "cur": "margin = v_cap + v_assist − v_req: буџет ракете плус оно што прелети поклањају (картица гравитационог assist-а), наспрам цене напуштања Сунца. Voyager-ова књига рачуна у једном реду.",
+    "en": "margin = v_cap + v_assist − v_req: the rocket's budget plus what flybys donate (gravity-assist card), against the price of leaving the Sun. Voyager's ledger in one line."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_frozen_glossary",
+    "cur": "Избочина такође замахује најнижу тачку орбите око орбите. На 5cos²i − 1 = 0 — i = 63,4° — замах се зауставља и елипса се замрзава у оријентацији: Molniya-ин трик за задржавање његовог спорог, високог АПОГЕЈА над далеким севером.",
+    "en": "The bulge also swings an orbit's low point around the orbit. At 5cos²i − 1 = 0 — i = 63.4° — the swing stops and the ellipse freezes in orientation: Molniya's trick for keeping its slow, high APOGEE dwelling over the far north."
+  },
+  {
+    "rel": "messages",
+    "at": "privacy_cookies_body",
+    "cur": "Umami не поставља ниједан колачић. Orrery користи три функционална колачића — ваш избор језика, вашу позицију Curator Tour-а и искључивање аналитике испод — сваки је наведен у потпуности на страни заслуга. Неколико локалних подешавања у прегледачу (квалитет графике, режим отклањања грешака, офлајн преузимања) такође се чувају на вашој уређају; никад не напуштају га и нису део аналитике.",
+    "en": "Umami sets no cookie at all. Orrery uses three functional cookies — your language pick, your Curator Tour position, and the analytics opt-out below — each listed in full on the credits page. A few browser-local settings (graphics quality, debug mode, offline downloads) are also stored on your device; they never leave it and are not part of any analytics."
+  },
+  {
+    "rel": "messages",
+    "at": "error_debug_tip",
+    "cur": "Додајте {flag} било којем URL-у маршруте да отворите панел за отклањање грешака (нпр. {example}).",
+    "en": "Append {flag} to any route URL to open the debug panel (e.g. {example})."
+  }
 ]

@@ -1,758 +1,758 @@
 [
- {
-  "rel": "science/_landing.json",
-  "at": "intro_paragraphs.0",
-  "old": "Willkommen. Dies ist der Teil von Orrery, in dem die Knöpfe aufhören, magisch zu sein. Jede Beschriftung im HUD, jede farbige Kontur im Porkchop, jeder Brennmarker auf der Flugbahn – dieser Abschnitt erklärt, woher sie kommen. Lesen Sie es wie einen Comic: Die Diagramme erledigen den Großteil der Arbeit, und jeder kursivierte Begriff ist ein Link, dem Sie so weit folgen können, wie Sie möchten.",
-  "new": "Willkommen. Dies ist der Teil von Orrery, in dem die Knöpfe aufhören, Magie zu sein. Jede Beschriftung im HUD, jede farbige Kontur im Porkchop, jede Manövermarkierung auf der Flugbahn – dieser Abschnitt erklärt, woher sie kommen. Lesen Sie ihn wie einen Comic: Die Diagramme leisten den Großteil der Arbeit, und jeder kursiv gesetzte Begriff ist ein Link, dem Sie so tief folgen können, wie Sie möchten."
- },
- {
-  "rel": "science/_landing.json",
-  "at": "intro_paragraphs.1",
-  "old": "Wir werden zusammen eine Rakete bauen. Keine echte – Orrery ist ein Simulator –, aber dieselbe Kette von Entscheidungen, die ein echtes Flugteam trifft, in der Reihenfolge, in der es sie treffen würde. Am Ende werden Sie wissen, warum Startfenster alle 26 Monate für den Mars und jeden Monat für den Mond auftreten, warum es eine Free-Return-Flugbahn gibt und warum Schub der billigste Teil einer Mission ist und Treibstoff der gesamte Kampf.",
-  "new": "Wir bauen gemeinsam eine Rakete. Keine echte – Orrery ist ein Simulator –, aber mit derselben Kette von Entscheidungen, die ein echtes Flugteam trifft, und in derselben Reihenfolge. Am Ende wissen Sie, warum Startfenster zum Mars nur alle 26 Monate und zum Mond jeden Monat auftreten, warum es eine Free-Return-Flugbahn gibt und warum der Schub der billigste Teil einer Mission ist, während der Treibstoff der eigentliche Kampf ist."
- },
- {
-  "rel": "science/_landing.json",
-  "at": "chapters.0.paragraphs.0",
-  "old": "Vergessen Sie Raketen für eine Sekunde. Stehen Sie auf der Erde, werfen Sie einen Baseball so hart Sie können. Er kommt zurück. Werfen Sie ihn härter, er landet weiter weg. Werfen Sie ihn so hart, dass sich der Boden schneller wegkrümmt als der Ball fällt, und der Ball verfehlt den Planeten – für immer. Das ist eine [Umlaufbahn](orbits/keplerian-orbit). Jedes Raumfahrzeug, jeder Planet, jeder Felsen im Asteroidengürtel führt diesen Trick um etwas Schwereres herum aus.",
-  "new": "Vergessen Sie für einen Moment die Raketen. Stellen Sie sich auf die Erde und werfen Sie einen Baseball, so fest Sie können. Er fällt wieder herunter. Werfen Sie ihn fester, landet er weiter weg. Werfen Sie ihn so fest, dass sich der Boden schneller wegkrümmt, als der Ball fällt, und der Ball verfehlt den Planeten – für immer. Das ist eine [Umlaufbahn](orbits/keplerian-orbit). Jedes Raumfahrzeug, jeder Planet, jeder Felsbrocken im Asteroidengürtel vollführt diesen Trick um etwas Schwereres."
- },
- {
-  "rel": "science/_landing.json",
-  "at": "chapters.0.paragraphs.1",
-  "old": "Eine Umlaufbahn ist eine Ellipse. Sie hat eine [Größe](orbits/semi-major-axis), eine [Form](orbits/eccentricity) (rund vs. gestreckt), eine [Neigung](orbits/inclination) und eine Phase, die Ihnen sagt, wo auf der Ellipse sich das Raumfahrzeug gerade befindet ([wahre Anomalie](orbits/true-anomaly)). Fünf Zahlen, und Sie können die Position jedes Objekts im Sonnensystem vorhersagen, für immer, ohne weitere Daten. Das sind [Keplers drei Gesetze](orbits/keplers-laws), niedergeschrieben 1609 – sie funktionieren immer noch.",
-  "new": "Eine Umlaufbahn ist eine Ellipse. Sie hat eine [Größe](orbits/semi-major-axis), eine [Form](orbits/eccentricity) (rund oder gestreckt), eine [Neigung](orbits/inclination) und eine Phase, die Ihnen sagt, wo auf der Ellipse sich das Raumfahrzeug gerade befindet ([wahre Anomalie](orbits/true-anomaly)). Fünf Zahlen, und Sie können die Position jedes Objekts im Sonnensystem für alle Zeit vorhersagen, ohne weitere Daten. Das sind [Keplers drei Gesetze](orbits/keplers-laws), 1609 niedergeschrieben – und sie funktionieren bis heute."
- },
- {
-  "rel": "science/_landing.json",
-  "at": "chapters.0.paragraphs.2",
-  "old": "Die einzelne nützlichste Gleichung, die Sie hier treffen werden, ist [Vis-Viva](orbits/vis-viva). Geben Sie Ihren Radius und die Größe Ihrer Umlaufbahn ein, und heraus kommt Ihre Geschwindigkeit. Das ist alles. Erde im Perihel: 30,3 km/s. Erde im Aphel: 29,3 km/s. Dieselbe Umlaufbahn, dieselbe Energie, unterschiedliche Geschwindigkeit.",
-  "new": "Die nützlichste Gleichung, der Sie hier begegnen werden, ist [Vis-Viva](orbits/vis-viva). Geben Sie Ihren Radius und die Größe Ihrer Umlaufbahn ein, und heraus kommt Ihre Geschwindigkeit. Das ist alles. Die Erde im Perihel: 30,3 km/s. Die Erde im Aphel: 29,3 km/s. Dieselbe Umlaufbahn, dieselbe Energie, unterschiedliche Geschwindigkeit."
- },
- {
-  "rel": "science/_landing.json",
-  "at": "chapters.1.diagram_caption",
-  "old": "Die grausame Wahrheit: Das Verdoppeln Ihres ∆v bedeutet, viel mehr als das 2-fache an Treibstoff zu verbrennen.",
-  "new": "Die grausame Wahrheit: Wer sein ∆v verdoppeln will, muss weit mehr als 2× so viel Treibstoff verbrennen."
- },
- {
-  "rel": "science/_landing.json",
-  "at": "chapters.1.paragraphs.0",
-  "old": "Nun: Wie ändert man Umlaufbahnen? Man verbrennt Treibstoff. [∆v](propulsion/dv-budget) (\"Delta-v\") ist die universelle Währung der Raumfahrt – die gesamte Geschwindigkeitsänderung, die eine Mission benötigt. Jede Bewegung, die Sie auf einer Flugbahn machen, hat einen Preis in km/s.",
-  "new": "Nun: Wie wechselt man die Umlaufbahn? Man verbrennt Treibstoff. [∆v](propulsion/dv-budget) („Delta-v“) ist die universelle Währung der Raumfahrt – die gesamte Geschwindigkeitsänderung, die eine Mission benötigt. Jedes Manöver auf einer Flugbahn hat einen Preis in km/s."
- },
- {
-  "rel": "science/_landing.json",
-  "at": "chapters.1.paragraphs.1",
-  "old": "Und dieser Preis ist brutal. Die [Tsiolkovsky-Raketengleichung](propulsion/tsiolkovsky) besagt, dass ∆v mit dem Logarithmus skaliert, wie viel von Ihrer Rakete Treibstoff ist. Wollen Sie das doppelte ∆v? Sie tragen nicht das Doppelte an Treibstoff – Sie tragen exponentiell mehr. Deshalb bestand eine Saturn V zu 90 % aus Treibstoff. Der Großteil der Rakete ist der Treibstoff, der den Treibstoff hebt, der den Treibstoff hebt, der das Raumfahrzeug hebt.",
-  "new": "Und dieser Preis ist brutal. Die [Tsiolkovsky-Raketengleichung](propulsion/tsiolkovsky) besagt, dass ∆v mit dem Logarithmus des Treibstoffanteils Ihrer Rakete wächst. Wollen Sie ein doppelt so großes ∆v? Dann tragen Sie nicht doppelt so viel Treibstoff mit – sondern exponentiell mehr. Deshalb bestand eine Saturn V zu 90 % aus Treibstoff. Der Großteil der Rakete ist der Treibstoff, der den Treibstoff hebt, der den Treibstoff hebt, der das Raumfahrzeug hebt."
- },
- {
-  "rel": "science/_landing.json",
-  "at": "chapters.1.paragraphs.2",
-  "old": "Zwei Zahlen bekämpfen diese Gravitationssteuer. Der Schub sagt Ihnen, wie stark das Triebwerk drückt – das ist die Zahl, die nach dem Start wirklich niemanden interessiert. Der [spezifische Impuls](propulsion/specific-impulse) sagt Ihnen, wie effizient das Triebwerk schiebt – und das ist die Zahl, die zählt. Eine chemische Rakete erreicht ~450 Sekunden. Ein Ionentriebwerk erreicht 4.000+ – nippt monatelang am Treibstoff und übertrifft alles Chemische für Tiefraumflüge.",
-  "new": "Zwei Zahlen bekämpfen diese Gravitationssteuer. Der Schub sagt Ihnen, wie kräftig das Triebwerk schiebt – diese Zahl interessiert nach dem Start eigentlich niemanden mehr. Der [spezifische Impuls](propulsion/specific-impulse) sagt Ihnen, wie effizient das Triebwerk schiebt – und er ist es, der zählt. Eine chemische Rakete erreicht ~450 Sekunden. Ein Ionentriebwerk erreicht 4.000+ – es nippt monatelang am Treibstoff und schlägt bei Flügen durch den Tiefraum alles Chemische."
- },
- {
-  "rel": "science/_landing.json",
-  "at": "chapters.1.paragraphs.3",
-  "old": "Der beste Zaubertrick von allen: der [Oberth-Effekt](propulsion/oberth-effect). Das Zünden Ihres Triebwerks, wenn Sie bereits schnell unterwegs sind (tief und nah an einem Planeten), gibt Ihnen viel mehr für denselben Treibstoff. Deshalb führt jede interplanetare Mission ihr großes Abflugmanöver im Perigäum durch, nah an der Erde, so schnell wie die Physik erlaubt. Freie Energie aus Geometrie.",
-  "new": "Der beste Zaubertrick von allen: der [Oberth-Effekt](propulsion/oberth-effect). Zündet man das Triebwerk, wenn man bereits schnell unterwegs ist (tief und nah an einem Planeten), bringt dieselbe Treibstoffmenge viel mehr. Deshalb führt jede interplanetare Mission ihr großes Abflugmanöver im Perigäum durch, dicht über der Erde, so schnell, wie die Physik es erlaubt. Freie Energie aus Geometrie."
- },
- {
-  "rel": "science/_landing.json",
-  "at": "chapters.2.diagram_caption",
-  "old": "Zwei Brennmanöver, eine Ellipse. Der billigste Weg, Umlaufbahnen zu wechseln.",
-  "new": "Zwei Zündungen, eine Ellipse. Der billigste Weg, die Umlaufbahn zu wechseln."
- },
- {
-  "rel": "science/_landing.json",
-  "at": "chapters.2.paragraphs.0",
-  "old": "Robert Heinlein schrieb es: \"Sobald Sie im Orbit sind, sind Sie auf halbem Weg zu überall im Sonnensystem.\" Er scherzte nicht. Den niedrigen Erdorbit zu erreichen kostet ~9,4 km/s an ∆v. Von dort zum Mars zu gelangen kostet weitere ~3,6 km/s. Der schwierigste Teil liegt bereits hinter Ihnen.",
-  "new": "Robert Heinlein hat es so formuliert: „Sobald Sie im Orbit sind, sind Sie auf halbem Weg zu überall im Sonnensystem.“ Er scherzte nicht. Den niedrigen Erdorbit zu erreichen kostet ~9,4 km/s an ∆v. Von dort zum Mars zu gelangen kostet weitere ~3,6 km/s. Der schwierigste Teil liegt bereits hinter Ihnen."
- },
- {
-  "rel": "science/_landing.json",
-  "at": "chapters.2.paragraphs.1",
-  "old": "Die billigste interplanetare Route ist ein [Hohmann-Transfer](transfers/hohmann-transfer): eine Ellipse, die gerade eben die Erdumlaufbahn an einem Ende und die Umlaufbahn des Ziels am anderen Ende küsst. Zwei Brennmanöver, kein verschwendeter Treibstoff. Zum Mars dauert es ~8,5 Monate. Langsam, aber optimal.",
-  "new": "Die billigste interplanetare Route ist ein [Hohmann-Transfer](transfers/hohmann-transfer): eine Ellipse, die an einem Ende die Erdumlaufbahn und am anderen die Umlaufbahn des Ziels gerade eben berührt. Zwei Zündungen, kein verschwendeter Treibstoff. Bis zum Mars dauert sie ~8,5 Monate. Langsam, aber optimal."
- },
- {
-  "rel": "science/_landing.json",
-  "at": "chapters.2.paragraphs.2",
-  "old": "Wollen Sie schneller sein? Lösen Sie ein [Lambert-Problem](transfers/lambert-problem) – wählen Sie Ihr Abflugdatum und Ihre Transferzeit, und Lambert sagt Ihnen die eindeutige [Transferellipse](transfers/transfer-ellipse), die sie verbindet. Genau das macht Orrery's [/plan](app:/plan)-Bildschirm, zehntausend Mal parallel, um einen Porkchop-Plot zu zeichnen.",
-  "new": "Wollen Sie schneller sein? Lösen Sie ein [Lambert-Problem](transfers/lambert-problem) – wählen Sie Ihr Abflugdatum und Ihre Transferzeit, und Lambert liefert Ihnen die eindeutige [Transferellipse](transfers/transfer-ellipse), die beide verbindet. Genau das erledigt die [/plan](app:/plan)-Ansicht von Orrery zehntausendmal parallel, um einen Porkchop-Plot zu zeichnen."
- },
- {
-  "rel": "science/_landing.json",
-  "at": "chapters.2.paragraphs.3",
-  "old": "Müssen Sie noch weiter gehen? Stehlen Sie Geschwindigkeit von einem Planeten. Ein [Gravity-Assist](transfers/gravity-assist) nutzt einen Vorbeiflug, um Ihre Flugbahn ohne Treibstoffkosten zu ändern – Voyager 2 nutzte vier davon, um Neptun zu erreichen. Das gesamte Sonnensystem fügt sich zu [Patched Conics](transfers/patched-conics) zusammen: eine Reihe von [Kegelschnitt](transfers/conic-sections)-Bögen, die zwischen Gravitationsnachbarschaften wie Staffelstäbe in einem Staffellauf übergeben werden.",
-  "new": "Sie wollen noch weiter hinaus? Dann stehlen Sie einem Planeten Geschwindigkeit. Ein [Swing-by](transfers/gravity-assist) nutzt einen Vorbeiflug, um Ihre Flugbahn ohne Treibstoffkosten zu ändern – Voyager 2 nutzte vier davon, um Neptun zu erreichen. Das gesamte Sonnensystem fügt sich zu [Patched Conics](transfers/patched-conics) zusammen: einer Reihe von [Kegelschnitt](transfers/conic-sections)-Bögen, die zwischen den Gravitationsbereichen wie Staffelstäbe in einem Staffellauf weitergereicht werden."
- },
- {
-  "rel": "science/_landing.json",
-  "at": "chapters.3.diagram_caption",
-  "old": "Ein Porkchop. Jede Kontur ist konstantes ∆v; der Lappen ist, wenn die Natur Mars günstig macht.",
-  "new": "Ein Porkchop. Jede Kontur markiert ein konstantes ∆v; im Lappen macht die Natur den Mars günstig."
- },
- {
-  "rel": "science/_landing.json",
-  "at": "chapters.3.paragraphs.0",
-  "old": "Erde und Mars stehen nicht still. Die Erde rast alle 365 Tage um die Sonne, der Mars alle 687. Ihre relative Geometrie wiederholt sich nur alle ~26 Monate – und die meisten dieser Monate sind die Planeten zu weit auseinander, auf den falschen Seiten der Sonne, um günstig erreicht zu werden. Missionsdesign beginnt mit einem Kalender, nicht mit einer Rakete.",
-  "new": "Erde und Mars stehen nicht still. Die Erde rast alle 365 Tage um die Sonne, der Mars alle 687. Ihre relative Geometrie wiederholt sich nur alle ~26 Monate – und in den meisten dieser Monate stehen die Planeten zu weit auseinander, auf den falschen Seiten der Sonne, um sie günstig zu erreichen. Die Missionsplanung beginnt mit einem Kalender, nicht mit einer Rakete."
- },
- {
-  "rel": "science/_landing.json",
-  "at": "chapters.3.paragraphs.1",
-  "old": "Der [Porkchop-Plot](porkchop/what-is-a-porkchop) ist, wie Ingenieure dies sehen. Abflugdatum entlang [einer Achse](porkchop/departure-axis), [Flugzeit](porkchop/tof-axis) entlang der anderen, ∆v als [Farb-Heatmap](porkchop/dv-heatmap). Günstige Zonen erscheinen als ovale Lappen – die Startfenster. Außerhalb des Lappens: rot, teuer, unmöglich mit aktuellen Raketen. [Das Lesen der Konturen](porkchop/contour-reading) ist die halbe Arbeit eines Flugdynamikers.",
-  "new": "Im [Porkchop-Plot](porkchop/what-is-a-porkchop) sehen Ingenieure das. Das Abflugdatum liegt auf [einer Achse](porkchop/departure-axis), die [Flugzeit](porkchop/tof-axis) auf der anderen, ∆v als [Farb-Heatmap](porkchop/dv-heatmap). Günstige Zonen erscheinen als ovale Lappen – die Startfenster. Außerhalb des Lappens: rot, teuer, mit heutigen Raketen unmöglich. [Das Lesen der Konturen](porkchop/contour-reading) ist die halbe Arbeit eines Flugdynamikers."
- },
- {
-  "rel": "science/_landing.json",
-  "at": "chapters.3.paragraphs.2",
-  "old": "Zwei Fachbegriffe, die Sie überall sehen werden: [C3](propulsion/c3) ist die Startenergie, die Ihre Rakete benötigt, um dem Gravitationsfeld der Erde zu entkommen. [V∞](propulsion/v-infinity) (\"v-unendlich\") ist Ihre Geschwindigkeit relativ zum Ziel in dem Moment, in dem Sie ankommen. Beide stammen direkt aus der Porkchop-Mathematik.",
-  "new": "Zwei Fachbegriffe, die Ihnen überall begegnen werden: [C3](propulsion/c3) ist die Startenergie, die Ihre Rakete benötigt, um dem Gravitationsfeld der Erde zu entkommen. [V∞](propulsion/v-infinity) („V-unendlich“) ist Ihre Geschwindigkeit relativ zum Ziel in dem Moment, in dem Sie ankommen. Beide ergeben sich direkt aus der Porkchop-Mathematik."
- },
- {
-  "rel": "science/_landing.json",
-  "at": "chapters.4.heading",
-  "old": "5 – Der Flug besteht nur aus fünf Phasen in Wiederholung.",
-  "new": "5 – Ein Flug besteht nur aus fünf Phasen, die sich immer wiederholen."
- },
- {
-  "rel": "science/_landing.json",
-  "at": "chapters.4.diagram_alt",
-  "old": "Atmosphärischer Eintritt, Fallschirm-Entfaltung, Retroantrieb, Landung.",
-  "new": "Atmosphärischer Eintritt, Fallschirmöffnung, Bremsantrieb, Landung."
- },
- {
-  "rel": "science/_landing.json",
-  "at": "chapters.4.paragraphs.1",
-  "old": "[Start](mission-phases/launch) — aus der Atmosphäre hinaus und in die niedrige Erdumlaufbahn. [Trans-X-Injektion](mission-phases/trans-x-injection) — ein kraftvoller Manöverschub im Perigäum, der dich auf die Transferellipse zum Mond (TLI), zum Mars (TMI), zur Venus (TVI) oder zum Jupiter (TJI) schleudert. [Bahnkorrekturen](mission-phases/tcm) — kleine Schübe während der Reiseflugphase, um Streuungsfehler zu korrigieren. Normalerweise 1–3 davon. [Umlaufbahneinschuss](mission-phases/orbit-insertion) — ein Bremsmanöver am Ziel, um dich in eine Einfangbahn zu lenken. [EDL](mission-phases/edl) — Eintritt, Abstieg, Landung — für den Lander. Sechs Minuten überschallschnelles atmosphärisches Chaos.",
-  "new": "[Start](mission-phases/launch) — aus der Atmosphäre hinaus und in die niedrige Erdumlaufbahn. [Trans-X-Injektion](mission-phases/trans-x-injection) — eine einzige kräftige Zündung im Perigäum, die Sie auf die Transferellipse zum Mond (TLI), zum Mars (TMI), zur Venus (TVI) oder zum Jupiter (TJI) schleudert. [Bahnkorrekturmanöver](mission-phases/tcm) — winzige Zündungen im Reiseflug, um Streuungsfehler zu beheben. Meist 1–3 davon. [Einschwenken in die Umlaufbahn](mission-phases/orbit-insertion) — ein Bremsmanöver am Ziel, das Sie in eine Einfangbahn lenkt. [EDL](mission-phases/edl) — Eintritt, Abstieg, Landung — für den Lander. Sechs Minuten überschallschnelles atmosphärisches Chaos."
- },
- {
-  "rel": "science/_landing.json",
-  "at": "chapters.4.paragraphs.2",
-  "old": "Mondmissionen machen manchmal einen Umweg durch eine [Near-Rectilinear Halo Orbit](mission-phases/nrho) (Gateway wird in einer solchen leben), und bemannte Apollo-Flüge flogen [Free-Return-Flugbahnen](transfers/free-return) – Achter-Pfade, die Sie automatisch zur Erde zurückbringen, wenn jedes Triebwerk am Raumfahrzeug ausfällt. Apollo 13 verdankt dieser Geometrie sein Leben.",
-  "new": "Mondmissionen nehmen manchmal einen Umweg über eine [nahezu geradlinige Halo-Bahn](mission-phases/nrho) (NRHO; Gateway wird auf einer solchen kreisen), und bemannte Apollo-Flüge folgten [Free-Return-Flugbahnen](transfers/free-return) – achtförmigen Bahnen, die Sie automatisch zur Erde zurückbringen, wenn jedes Triebwerk des Raumfahrzeugs ausfällt. Apollo 13 verdankt dieser Geometrie sein Leben."
- },
- {
-  "rel": "science/_landing.json",
-  "at": "chapters.5.paragraphs.1",
-  "old": "Die [J2000-Epoche](scales-time/j2000) ist die Kalender-Null, die jeder Astrodynamiker verwendet. [Siderische vs. synodische Perioden](scales-time/sidereal-synodic) erklären, warum sich Mars-Fenster alle 26 Monate wiederholen statt alle 23. Die [Ekliptikebene](scales-time/ecliptic-plane) ist die flache Scheibe, auf der die Planeten alle (meistens) liegen. [Bezugssysteme](scales-time/frames) sind die Koordinatensysteme, zwischen denen die Missionskontrolle jongliert: erdzentriert, sonnenzentriert und körperzentriert.",
-  "new": "Die [J2000-Epoche](scales-time/j2000) ist der Kalendernullpunkt, den jeder Astrodynamiker verwendet. [Siderische und synodische Umlaufzeiten](scales-time/sidereal-synodic) erklären, warum sich die Marsfenster alle 26 Monate wiederholen statt alle 23. Die [Ekliptikebene](scales-time/ecliptic-plane) ist die flache Scheibe, in der (meistens) alle Planeten liegen. [Bezugssysteme](scales-time/frames) sind die Koordinatensysteme, zwischen denen die Missionskontrolle wechselt: erdzentriert, sonnenzentriert und körperzentriert."
- },
- {
-  "rel": "science/_landing.json",
-  "at": "chapters.6.diagram_alt",
-  "old": "Ein stilisierter Astronaut, der in Mikrogravitation schwebt, mit Knochen-/Muskel-/Gegenmaßnahmen-Indikatorbalken.",
-  "new": "Ein stilisierter Astronaut, der in Mikrogravitation schwebt, mit Anzeigebalken für Knochen, Muskeln und Gegenmaßnahmen."
- },
- {
-  "rel": "science/_landing.json",
-  "at": "chapters.6.diagram_caption",
-  "old": "Knochen, Muskeln, Sehvermögen, Gleichgewicht, Immunsystem – alles verdrahtet sich in Mikrogravitation neu, und nicht in Richtung Erde.",
-  "new": "Knochen, Muskeln, Sehvermögen, Gleichgewichtssinn, Immunsystem – in der Mikrogravitation stellt sich alles um, und zwar nicht in Richtung Erde."
- },
- {
-  "rel": "science/_landing.json",
-  "at": "chapters.6.paragraphs.0",
-  "old": "Verbringen Sie sechs Monate im Orbit und Sie kommen kleiner, leichter und kürzer zurück, als Sie gegangen sind. [Mikrogravitation](life-in-space/microgravity-physiology) ist die Grundursache: Flüssigkeiten verteilen sich kopfwärts um, die Haltemuskeln werden entlastet, die [Knochen](life-in-space/bone-density-loss) verlieren 1–2 % ihrer Mineralien pro Monat, das [vestibuläre System](life-in-space/vestibular-adaptation) gibt auf, \"unten\" zu finden. Die [Gegenmaßnahmen](life-in-space/muscle-atrophy) – zwei Stunden Widerstands- und Ausdauertraining pro Tag auf ARED + dem Laufband – verlangsamen es, ohne es zu lösen.",
-  "new": "Verbringen Sie sechs Monate im Orbit, und Sie kommen kleiner, leichter und kürzer zurück, als Sie aufgebrochen sind. [Mikrogravitation](life-in-space/microgravity-physiology) ist die Grundursache: Flüssigkeiten verlagern sich kopfwärts, die Haltemuskeln werden entlastet, die [Knochen](life-in-space/bone-density-loss) verlieren pro Monat 1–2 % ihrer Mineralsubstanz, das [Gleichgewichtsorgan](life-in-space/vestibular-adaptation) gibt es auf, ein „Unten“ zu finden. Die [Gegenmaßnahmen](life-in-space/muscle-atrophy) – täglich zwei Stunden Kraft- und Ausdauertraining am ARED und auf dem Laufband – bremsen den Abbau, lösen das Problem aber nicht."
- },
- {
-  "rel": "science/_landing.json",
-  "at": "chapters.6.paragraphs.1",
-  "old": "[Strahlung](life-in-space/radiation-exposure) ist das schwierigere Problem. Die ISS bekommt ~200 mSv/Jahr (vs. 3 mSv Hintergrundstrahlung auf der Erde); der Tiefraum außerhalb der Magnetosphäre ist 600+ mSv/Jahr, ohne bisher gute Abschirmungsstrategie. Eine Mars-Reise würde ein Besatzungsmitglied bei einer einzigen Hin- und Rückreise nahe an die Karriere-Grenze des Krebsrisikos bringen.",
-  "new": "[Strahlung](life-in-space/radiation-exposure) ist das schwierigere Problem. Auf der ISS kommen ~200 mSv/Jahr zusammen (gegenüber 3 mSv natürlicher Hintergrundstrahlung auf der Erde); im Tiefraum außerhalb der Magnetosphäre sind es 600+ mSv/Jahr, und eine gute Abschirmungsstrategie gibt es bisher nicht. Eine Reise in der Größenordnung einer Marsmission würde ein Besatzungsmitglied schon bei einer einzigen Hin- und Rückreise nahe an die Grenze des Krebsrisikos für ein ganzes Berufsleben bringen."
- },
- {
-  "rel": "science/_landing.json",
-  "at": "chapters.6.paragraphs.2",
-  "old": "Dann gibt es [EVA](life-in-space/eva-physiology) (ein 6-Stunden-Ausdauerereignis in einem 4,3 psi Reinsauerstoff-Anzug) und [Langzeiteffekte](life-in-space/long-duration-effects) wie SANS – Space-Associated Neuro-ocular Syndrome –, bei dem 60 % der Langzeitbesatzung messbare Augenveränderungen entwickeln, die sich nicht vollständig umkehren. Dies sind die ungelösten Probleme, die zwischen der Menschheit und dem Mars stehen.",
-  "new": "Dazu kommen [EVA](life-in-space/eva-physiology) (ein sechsstündiger Ausdauereinsatz in einem Reinsauerstoff-Anzug mit 4,3 psi) und [Langzeiteffekte](life-in-space/long-duration-effects) wie SANS – Space-Associated Neuro-ocular Syndrome –, bei dem 60 % der Besatzungsmitglieder auf Langzeitflügen messbare Augenveränderungen entwickeln, die sich nicht vollständig zurückbilden. Das sind die ungelösten Probleme, die zwischen der Menschheit und dem Mars stehen."
- },
- {
-  "rel": "science/_landing.json",
-  "at": "chapters.7.paragraphs.0",
-  "old": "[Weltraumfotografie](observation/space-photography) ist nicht das, was die Leute denken. Es gibt kein Klicken des Verschlusses; jedes Observatoriumsbild, das Sie gesehen haben, ist ein Stapel von Langzeitbelichtungen durch Schmalbandfilter, kalibriert, registriert, mit Falschfarben versehen. Die Hardware ist ein CCD- oder CMOS-Sensor – ein Raster von Photonenzählern – und die Daten sind die Zählung, nicht das Bild. Das Bild ist das, was Menschen aus der Zählung machen.",
-  "new": "[Weltraumfotografie](observation/space-photography) ist nicht das, was die Leute denken. Kein Verschluss klickt; jede Observatoriumsaufnahme, die Sie je gesehen haben, ist ein Stapel von Langzeitbelichtungen durch Schmalbandfilter – kalibriert, ausgerichtet, mit Falschfarben versehen. Die Hardware ist ein CCD- oder CMOS-Sensor, ein Raster aus Photonenzählern, und die Daten sind die Zählwerte, nicht das Bild. Das Bild ist das, was Menschen aus den Zählwerten machen."
- },
- {
-  "rel": "science/_landing.json",
-  "at": "chapters.7.paragraphs.2",
-  "old": "Und die seltsamsten Objekte, die diese Methoden gefunden haben: [Schwarze Löcher](observation/black-holes) (real, kartiert, Schatten im Zentrum zweier Galaxien abgebildet) und [Wurmlöcher](observation/wormholes) (reine Mathematik, enthalten, damit Sie wissen, was Sie damit tun sollen, wenn Sie eines in einem Film sehen). Die Kategorie /fleet ↦ Observatory hat die tatsächlichen Maschinen – Hubble, JWST, Chandra, Spitzer, Kepler, TESS – jede mit ihrer eigenen Galerie dessen, was sie gesehen hat.",
-  "new": "Und die seltsamsten Objekte, die diese Methoden gefunden haben: [Schwarze Löcher](observation/black-holes) (real, kartiert, ihr Schatten im Zentrum zweier Galaxien abgebildet) und [Wurmlöcher](observation/wormholes) (reine Mathematik, aufgenommen, damit Sie wissen, was davon zu halten ist, wenn Sie eines in einem Film sehen). Die Kategorie /fleet ↦ Observatory enthält die echten Maschinen – Hubble, JWST, Chandra, Spitzer, Kepler, TESS –, jede mit einer eigenen Galerie dessen, was sie gesehen hat."
- },
- {
-  "rel": "science/_landing.json",
-  "at": "tools.3.text",
-  "old": "36 echte Raumfahrzeuge, von Luna 9 bis Artemis II. Der FLIGHT-Tab jedes einzelnen zerlegt sein tatsächliches ∆v-Budget über die oben genannten Phasen.",
-  "new": "36 echte Raumfahrzeuge, von Luna 9 bis Artemis II. Der FLIGHT-Tab jedes einzelnen schlüsselt das tatsächliche ∆v-Budget auf die oben genannten Phasen auf."
- },
- {
-  "rel": "science/_landing.json",
-  "at": "tools.4.text",
-  "old": "Grundwahrheit. Wo jeder Apollo, jeder Rover, jeder aktive Satellit tatsächlich sitzt.",
-  "new": "Die Wirklichkeit. Wo jede Apollo-Mission, jeder Rover und jeder aktive Satellit tatsächlich steht."
- },
- {
-  "rel": "science/cosmology/_intro.json",
-  "at": "headline",
-  "old": "Kosmologie – das Universum im Großen und wie wir seine Größe kennen.",
-  "new": "Kosmologie – das Universum im Großen und woher wir seine Größe kennen."
- },
- {
-  "rel": "science/cosmology/_intro.json",
-  "at": "paragraphs.0",
-  "old": "Zoomt man weit genug hinaus, spielt die einzelne Galaxie keine Rolle mehr. Sichtbar wird stattdessen Struktur: Galaxien, die sich zu Gruppen zusammenschließen, Gruppen zu Haufen, Haufen, die sich entlang von Filamenten und Schichten aneinanderreihen, welche beinahe leere Leerräume umspannen – das kosmische Netz. In diesem Tab geht es um diese größte Skala und um die Messkette, mit der wir ihr ehrliche Entfernungen zuordnen können.",
-  "new": "Zoomt man weit genug hinaus, spielt die einzelne Galaxie keine Rolle mehr. Sichtbar wird stattdessen Struktur: Galaxien, die sich zu Gruppen zusammenschließen, Gruppen zu Haufen, Haufen, die sich entlang von Filamenten und Schichten aneinanderreihen und beinahe leere Voids umspannen – das kosmische Netz. In diesem Tab geht es um diese größte Skala und um die Messkette, mit der wir ihr verlässliche Entfernungen zuordnen können."
- },
- {
-  "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
-  "at": "intro_sentence",
-  "old": "2014 zeichneten Astronomen unsere kosmische Adresse neu — nicht durch Kartierung von Galaxienpositionen, sondern durch Verfolgung ihrer Strömungen. Das Ergebnis war Laniakea, ein Supercluster weit größer als der Virgo-Superhaufen.",
-  "new": "2014 zeichneten Astronomen unsere kosmische Adresse neu — nicht durch Kartierung der Galaxienorte, sondern ihrer Strömungen. Ergebnis: Laniakea, ein Superhaufen, weit größer als der Virgo-Superhaufen, den wir für unsere Heimat hielten."
- },
- {
-  "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
-  "at": "body_paragraphs.0",
-  "old": "Die Idee ist grundlegend. Auf der Erde wird ein Einzugsgebiet nicht durch einen Zaun, sondern dadurch definiert, wie das Wasser fließt: jeder Tropfen, der zum selben Flussmündung fließt, gehört zum selben Becken. Brent Tullys Team wandte dieselbe Logik auf Galaxien an. Mit der Cosmicflows-Vermessung von Galaxiengeschwindigkeiten kartierten sie, wie jede Galaxie driftet, wenn die allgemeine Ausdehnung des Universums abgezogen wird, und zogen die Grenze, wo die Strömungen auseinander gehen.",
-  "new": "Der Gedanke ist der einer Wasserscheide. Auf der Erde wird ein Einzugsgebiet nicht durch einen Zaun bestimmt, sondern dadurch, wohin der Regen fließt: Jeder Tropfen, der in dieselbe Flussmündung strömt, gehört zum selben Einzugsgebiet. Das Team um Brent Tully wandte dieselbe Logik auf Galaxien an. Anhand der Cosmicflows-Vermessung von Galaxiengeschwindigkeiten kartierten sie, in welche Richtung jede Galaxie driftet, nachdem die allgemeine Expansion des Universums abgezogen ist, und zogen die Grenze dort, wo die Strömungen auseinanderlaufen."
- },
- {
-  "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
-  "at": "body_paragraphs.1",
-  "old": "Das Ergebnis ist Laniakea — hawaiianisch für »immenser Himmel« — etwa 160 Megaparsec (500 Millionen Lichtjahre) breit und Heimat von rund 100.000 Galaxien. Unser Virgo-Superhaufen, einst für die ganze Nachbarschaft befunden, ist nur ein einzelner äußerer Lappen davon. Alles in Laniakea strömt langsam zu einem gravitativen Tiefpunkt hin.",
-  "new": "Das Ergebnis ist Laniakea — hawaiianisch für „unermesslicher Himmel“ — mit etwa 160 Megaparsec (500 Millionen Lichtjahren) Durchmesser und rund 100.000 Galaxien. Unser Virgo-Superhaufen, den man einst für die ganze Nachbarschaft hielt, erweist sich als nur ein einzelner äußerer Ausläufer davon. Alles in Laniakea strömt langsam auf einen gemeinsamen Tiefpunkt der Gravitation zu."
- },
- {
-  "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
-  "at": "body_paragraphs.2",
-  "old": "Dieser Fokus ist der Große Attraktor, eine Massenkonzentration um den Norma-Galaxienhaufen (Abell 3627), etwa 65 Megaparsec entfernt. Er ist schwierig zu untersuchen, da er hinter den dichten Sternenwolken und Staub der eigenen Scheibe der Milchstraße liegt — der »Zone of Avoidance« — daher stammt vieles von unserem Wissen aus Radio- und Infrarotsuveys, die durch die Verdeckung sehen, und von den Galaxienbewegungen selbst.",
-  "new": "Dieser Brennpunkt ist der Große Attraktor, eine Massenkonzentration um den Norma-Galaxienhaufen (Abell 3627), etwa 65 Megaparsec entfernt. Er lässt sich schwer untersuchen, weil er hinter den dichten Sternwolken und dem Staub der Milchstraßenscheibe selbst liegt — der „Zone of Avoidance“ —, sodass vieles von unserem Wissen aus Radio- und Infrarot-Durchmusterungen stammt, die durch die Verdeckung hindurchsehen, und aus den Bewegungen der Galaxien selbst."
- },
- {
-  "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
-  "at": "body_paragraphs.3",
-  "old": "Es endet dort nicht. Laniakea selbst ist nicht in Ruhe: der ganze Supercluster, zusammen mit seinen Nachbarn, wird in eine breitere Strömung zu einer noch größeren Massenkonzentration jenseits seiner Grenze gezogen — der Shapley-Superhaufen, die dichteste bekannte Ansammlung von Galaxienhaufen im nahegelegenen Universum. Ein Becken auf einer Neigung.",
-  "new": "Damit endet es nicht. Laniakea selbst ruht nicht: Der ganze Superhaufen wird zusammen mit seinen Nachbarn in eine großräumigere Strömung hineingezogen, die auf eine noch größere Massenkonzentration jenseits seiner Grenze zuläuft — den Shapley-Superhaufen, die dichteste bekannte Ansammlung von Galaxienhaufen im lokalen Universum. Ein Einzugsgebiet an einem Hang."
- },
- {
-  "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
-  "at": "body_paragraphs.4",
-  "old": "Und es gibt eine überraschende Wendung. Diese Strömungen bauten sich über Milliarden Jahre auf, aber dunkle Energie treibt jetzt die Ausdehnung des Universums zu beschleunigen. Über kosmische Zeit hinweg gewinnt diese Beschleunigung: Laniakea ist gravitativ nicht gebunden und wird nicht zu einem einzelnen Objekt zusammenbrechen. Es ist ein Schnappschuss einer Strömung, keine Struktur, die bestehen wird — ein nützlicher Weg, unseren Platz zu benennen, nicht ein permanentes Zuhause.",
-  "new": "Und am Ende wartet eine Wendung. Diese Strömungen haben sich über Milliarden Jahre aufgebaut, doch die Dunkle Energie lässt die Expansion des Universums inzwischen immer schneller werden. Über kosmische Zeiträume gewinnt diese Beschleunigung: Laniakea ist gravitativ nicht gebunden und wird nicht zu einem einzelnen Objekt kollabieren. Es ist die Momentaufnahme einer Strömung, keine Struktur von Dauer — eine nützliche Art, unseren Platz zu benennen, kein dauerhaftes Zuhause."
- },
- {
-  "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
-  "at": "diagram_caption",
-  "old": "Laniakea als Einzugsgebiet von Galaxienströmungen: Stromlinien konvergieren zum Großen Attraktor nahe dem Norma-Galaxienhaufen, mit dem Virgo-Superhaufen (unser Lappen und unsere Position) auf dem Rand. Die /explore Laniakea-Shell rendert diese Mitglieder schematisch — echte Entfernungen, illustratives Layout.",
-  "new": "Laniakea als Wasserscheide der Galaxienströme: Stromlinien laufen auf den Großen Attraktor nahe dem Norma-Galaxienhaufen zu, während der Virgo-Superhaufen (unser Ausläufer und unsere Position) am Rand liegt. Die Laniakea-Schale unter /explore stellt diese Mitglieder schematisch dar — reale Entfernungen, illustrative Anordnung."
- },
- {
-  "rel": "science/cosmology/large-scale-structure.json",
-  "at": "intro_sentence",
-  "old": "Auf den größten Skalen sind Galaxien nicht zufällig verteilt. Sie sammeln sich in Gruppen und Haufen, entlang von Filamenten und Wänden um riesige, fast leere Voids — ein Muster, das Astronomen das kosmische Netz nennen.",
-  "new": "Auf den größten Skalen sind Galaxien nicht zufällig verteilt. Sie bilden Gruppen und Haufen entlang von Filamenten und Wänden, die riesige, fast leere Voids umschließen — ein schaumartiges Muster, das Astronomen das kosmische Netz nennen."
- },
- {
-  "rel": "science/cosmology/large-scale-structure.json",
-  "at": "body_paragraphs.0",
-  "old": "Die Hierarchie verschachtelt sich. Sterne sammeln sich zu Galaxien; Galaxien stürzen gemeinsam in Gruppen (wie unsere Lokale Gruppe) und reiche Haufen (wie den Virgo-Galaxienhaufen, über tausend Galaxien in einem Gravitationspotential gebunden). Gruppen und Haufen werden selbst in Superhaufen gezogen — lockere, ausgedehnte Konzentrationen von Dutzenden Megaparsec Durchmesser. Unsere Lokale Gruppe liegt am Rand des Virgo-Superhaufen, ~33 Megaparsec (etwa 110 Millionen Lichtjahre) breit und auf den Virgo-Galaxienhaufen zentriert.",
-  "new": "Die Hierarchie ist verschachtelt. Sterne sammeln sich zu Galaxien; Galaxien fallen zu Gruppen zusammen (wie unsere Lokale Gruppe) und zu reichen Haufen (wie dem Virgo-Galaxienhaufen, in dem über tausend Galaxien in einer gemeinsamen Gravitationsmulde gebunden sind). Gruppen und Haufen werden ihrerseits in Superhaufen gezogen — lockere, weitläufige Konzentrationen von Dutzenden Megaparsec Durchmesser. Unsere Lokale Gruppe liegt am Rand des Virgo-Superhaufens, der ~33 Megaparsec (etwa 110 Millionen Lichtjahre) breit und auf den Virgo-Galaxienhaufen zentriert ist."
- },
- {
-  "rel": "science/cosmology/large-scale-structure.json",
-  "at": "body_paragraphs.1",
-  "old": "Superhaufen sind nicht die Spitze. Kartiert man die Bewegungen von Galaxien statt nur ihre Positionen, zeigt sich, dass der Virgo-Superhaufen ein Lappen eines weit größeren Einzugsgebiets ist — Laniakea, etwa 160 Megaparsec groß, 2014 definiert als die Region, in der Galaxienströme alle zu einem gemeinsamen Gravitationsfokus nahe dem Großer Attraktor fließen. Laniakea grenzt wiederum an benachbarte Superhaufen am Himmel.",
-  "new": "Superhaufen sind nicht die oberste Ebene. Kartiert man die Bewegungen der Galaxien statt nur ihrer Positionen, zeigt sich, dass der Virgo-Superhaufen ein Ausläufer eines weit größeren Einzugsgebiets ist — Laniakea, etwa 160 Megaparsec groß, 2014 definiert als die Region, in der alle Galaxienströme auf ein gemeinsames Gravitationszentrum nahe dem Großen Attraktor zulaufen. Laniakea grenzt seinerseits am Himmel an benachbarte Superhaufen."
- },
- {
-  "rel": "science/cosmology/large-scale-structure.json",
-  "at": "body_paragraphs.2",
-  "old": "Zwischen den hellen Filamenten liegen die Voids — gewaltige, ungefähr kugelförmige Regionen von Dutzenden Megaparsec Durchmesser, die fast leer von Galaxien sind. Das meiste Volumen des Universums ist Void; die meisten Galaxien leben in den dünnen Wänden und Fäden zwischen ihnen. In der größten Skala betrachtet, sieht die Verteilung wie ein Schwamm aus, oder ein Netz aus leuchtenden Fäden um dunkle Blasen.",
-  "new": "Zwischen den hellen Filamenten liegen die Voids — gewaltige, ungefähr kugelförmige Regionen von Dutzenden Megaparsec Durchmesser, die fast frei von Galaxien sind. Der größte Teil des Volumens des Universums besteht aus Voids; die meisten Galaxien leben in den dünnen Wänden und Fäden dazwischen. Im größten Maßstab betrachtet, gleicht die Verteilung einem Schwamm oder einem Netz aus leuchtenden Fäden um dunkle Blasen."
- },
- {
-  "rel": "science/cosmology/large-scale-structure.json",
-  "at": "body_paragraphs.3",
-  "old": "Dieses Muster ist nicht dekorativ — es ist das Fossil des frühen Universums. Winzige Dichtefluktuationen, die vorhanden waren, als das Universum 380.000 Jahre alt war, eingeprägt im kosmischen Mikrowellenhintergrund, wurden über Milliarden von Jahren durch Gravitation verstärkt: Dichte Regionen zogen mehr Materie an und wuchsen, leere Regionen leerten sich weiter. Dunkle Materie, die gewöhnliche Materie etwa fünf zu eins überwiegt, leistete das meiste Ziehen und legte das Gerüst an, das die sichtbaren Galaxien später beleuchteten.",
-  "new": "Dieses Muster ist nicht dekorativ — es ist das Fossil des frühen Universums. Winzige Dichteschwankungen, die vorhanden waren, als das Universum 380.000 Jahre alt war, und sich dem kosmischen Mikrowellenhintergrund eingeprägt haben, wurden über Milliarden von Jahren durch die Gravitation verstärkt: Dichte Regionen zogen mehr Materie an und wuchsen, leere Regionen leerten sich weiter. Dunkle Materie, die gewöhnliche Materie etwa im Verhältnis fünf zu eins überwiegt, übernahm den Großteil des Anziehens und legte das Gerüst an, das die sichtbaren Galaxien später zum Leuchten brachten."
- },
- {
-  "rel": "science/cosmology/large-scale-structure.json",
-  "at": "body_paragraphs.4",
-  "old": "Das kosmische Netz ist auch die Grenze der ehrlichen Karte. In diesen Entfernungen stammen Positionen aus der Rotverschiebung, nicht von einem Maßband, und die feinste Struktur ist modellabhängig — weshalb Orrery die äußeren Skalenschalen als explizite Schemata rendert, reale Entfernungen in einer illustrativen Anordnung, statt eine Präzision vorzutäuschen, die noch keine Durchmusterung hat.",
-  "new": "Das kosmische Netz ist auch die Grenze der ehrlichen Karte. In diesen Entfernungen stammen Positionen aus der Rotverschiebung, nicht von einem Maßband, und die feinste Struktur ist modellabhängig — weshalb Orrery die äußeren Skalenschalen ausdrücklich als Schemata darstellt, mit realen Entfernungen in einer illustrativen Anordnung, statt eine Präzision vorzutäuschen, die noch keine Durchmusterung erreicht."
- },
- {
-  "rel": "science/cosmology/large-scale-structure.json",
-  "at": "diagram_caption",
-  "old": "Die verschachtelte Hierarchie, die die /explore-Skalenleiter erklimmt: Lokale Gruppe → Local Sheet → Virgo-Superhaufen → Laniakea → das kosmische Netz aus Filamenten und Voids. Jede Schale ist ein Schema — reale Katalogentfernungen in einer illustrativen Anordnung, kein Foto einer Struktur, die kein Teleskop erfassen kann.",
-  "new": "Die verschachtelte Hierarchie, die die /explore-Skalenleiter erklimmt: Lokale Gruppe → Lokale Schicht → Virgo-Superhaufen → Laniakea → das kosmische Netz aus Filamenten und Voids. Jede Schale ist ein Schema — reale Katalogentfernungen in einer illustrativen Anordnung, kein Foto einer Struktur, die kein Teleskop erfassen kann."
- },
- {
-  "rel": "science/exoplanets/_intro.json",
-  "at": "paragraphs.1",
-  "old": "In diesem Tab geht es darum, wie wir sie finden: Die meisten Exoplaneten lassen sich nicht fotografieren, also spüren wir sie über ihre Fingerabdrücke auf – das Taumeln eines Sterns, eine periodische Verdunkelung, einen Gravitationsblitz. Danach wenden wir uns dem zu, was wir gelernt haben: habitable Zonen, Hot Jupiters, die sieben klingenden Welten von TRAPPIST-1 und der ehrliche Stand der Frage, die jeder stellt – sind wir allein?",
-  "new": "In diesem Tab geht es darum, wie wir sie finden: Die meisten Exoplaneten lassen sich nicht fotografieren, also spüren wir sie über ihre Fingerabdrücke auf – das Taumeln eines Sterns, eine periodische Verdunkelung, einen Gravitationsblitz. Danach wenden wir uns dem zu, was wir gelernt haben: habitable Zonen, heiße Jupiter, die sieben klingenden Welten von TRAPPIST-1 und der ehrliche Stand der Frage, die jeder stellt – sind wir allein?"
- },
- {
-  "rel": "science/exoplanets/are-we-alone.json",
-  "at": "intro_sentence",
-  "old": "Tausende Welten später ist die älteste Frage näher an einem Test als je zuvor — aber Ehrlichkeit darüber, was wir wissen und was nicht, ist die ganze Disziplin.",
-  "new": "Tausende Welten später ist die älteste Frage einem Test näher als je zuvor — doch Ehrlichkeit darüber, was wir wissen und was nicht, macht die ganze Disziplin aus."
- },
- {
-  "rel": "science/exoplanets/are-we-alone.json",
-  "at": "narrative_101.0",
-  "old": "Die Anzahl der Exoplaneten geht inzwischen in die Tausende, und Statistiken besagen, dass grob jeder Stern Planeten beherbergt, wobei kleine felsige Welten in habitablen Zonen in die Milliarden in der Galaxie gehen. Die Bühne für Leben ist zumindest gewaltig.",
-  "new": "Die Zahl der Exoplaneten geht inzwischen in die Tausende, und der Statistik zufolge besitzt etwa jeder Stern Planeten; kleine Gesteinsplaneten in habitablen Zonen gibt es in der Galaxie zu Milliarden. Die Bühne für Leben ist zumindest gewaltig."
- },
- {
-  "rel": "science/exoplanets/are-we-alone.json",
-  "at": "narrative_101.1",
-  "old": "Das ist es, was die Stille laut macht. Wenn habitables Territorium überall ist, wo sind alle? — die Frage, die Enrico Fermi beim Mittagessen formulierte, noch immer unbeantwortet.",
-  "new": "Das macht die Stille so laut. Wenn bewohnbarer Lebensraum überall zu haben ist, wo sind dann alle? — die Frage, die Enrico Fermi beim Mittagessen stellte und die bis heute unbeantwortet ist."
- },
- {
-  "rel": "science/exoplanets/are-we-alone.json",
-  "at": "narrative_101.2",
-  "old": "Wir sind von 'gibt es andere Welten?' — geklärt, ja — zu 'ist auf irgendeiner Leben?' übergegangen, eine Frage, die wir endlich anfangen können zu testen, statt nur darüber zu streiten.",
-  "new": "Wir sind von der Frage „Gibt es andere Welten?“ — geklärt, ja — zu „Lebt auf irgendeiner von ihnen etwas?“ gelangt, einer Frage, die wir endlich zu testen beginnen können, statt nur über sie zu streiten."
- },
- {
-  "rel": "science/exoplanets/are-we-alone.json",
-  "at": "body_paragraphs.0",
-  "old": "Die Drake-Gleichung rahmt die Chancen als eine Kette von Faktoren — wie viele Sterne, wie viele mit Planeten, wie viele habitabel, wie viele die Leben entwickeln, und so weiter. Die Exoplanetenforschung hat nun die ersten Faktoren beobachtend festgenagelt: Planeten sind häufig, und felsige Welten in habitablen Zonen reichlich vorhanden. Die späteren Faktoren bleiben unbekannt.",
-  "new": "Die Drake-Gleichung fasst die Chancen als Kette von Faktoren zusammen — wie viele Sterne, wie viele mit Planeten, wie viele habitabel, wie viele, auf denen Leben entsteht, und so weiter. Die Exoplanetenforschung hat die ersten Faktoren nun durch Beobachtung festgelegt: Planeten sind häufig, und Gesteinswelten in habitablen Zonen gibt es reichlich. Die späteren Faktoren bleiben unbekannt."
- },
- {
-  "rel": "science/exoplanets/are-we-alone.json",
-  "at": "body_paragraphs.1",
-  "old": "Der nächste Schritt ist empirisch, nicht philosophisch. Das Ablesen der Atmosphären gemäßigter felsiger Welten nach Biosignaturen — geduldig, mit Instrumenten und Standards, die gebaut wurden, um Überprüfung zu überstehen — ist, wie die Frage von den Vermutungen der Drake-Gleichung zu einer Messung übergeht.",
-  "new": "Der nächste Schritt ist empirisch, nicht philosophisch. Die Atmosphären gemäßigter Gesteinswelten auf Biosignaturen hin auszulesen — geduldig, mit Instrumenten und Standards, die darauf ausgelegt sind, kritischer Prüfung standzuhalten — ist der Weg, auf dem die Frage von den Mutmaßungen der Drake-Gleichung zu einer Messung gelangt."
- },
- {
-  "rel": "science/exoplanets/are-we-alone.json",
-  "at": "body_paragraphs.2",
-  "old": "Der ehrliche Stand der Technik: Kein Leben jenseits der Erde wurde entdeckt, keine Biosignatur bestätigt. Aber zum ersten Mal sind die Werkzeuge zum Suchen real — und das ist die stille Revolution, die die Exoplanetenära geliefert hat.",
-  "new": "Der ehrliche Stand der Dinge: Bisher wurde kein Leben jenseits der Erde entdeckt und keine Biosignatur bestätigt. Aber zum ersten Mal sind die Werkzeuge für die Suche real — und das ist die stille Revolution, die das Zeitalter der Exoplaneten gebracht hat."
- },
- {
-  "rel": "science/exoplanets/are-we-alone.json",
-  "at": "body_paragraphs.3",
-  "old": "Wir haben nicht nur zugehört, sondern auch gesprochen. 1974 strahlte das Radioteleskop Arecibo ein dreiminütiges Piktogramm in Richtung des Kugelsternhaufens M13 aus, 25.000 Lichtjahre entfernt, und 1977 verließen beide Voyager-Raumsonden die Erde mit der Golden Record an Bord — Grüße, Musik und Bilder, an eine Sonde geschraubt, die nun zwischen den Sternen driftet. Beides sind eher Gesten als Gespräche, aber sie sind die ersten bewussten Botschaften der Menschheit an wer auch immer da draußen sein mag.",
-  "new": "Wir haben nicht nur zugehört, sondern auch gesprochen. 1974 strahlte das Arecibo-Radioteleskop ein dreiminütiges Piktogramm in Richtung des Kugelsternhaufens M13 aus, 25.000 Lichtjahre entfernt, und 1977 verließen beide Voyager-Raumsonden die Erde mit der Golden Record an Bord — Grüße, Musik und Bilder, an eine Sonde geschraubt, die nun zwischen den Sternen driftet. Beides sind eher Gesten als Gespräche, aber es sind die ersten bewussten Botschaften der Menschheit an wen auch immer da draußen."
- },
- {
-  "rel": "science/exoplanets/astrometry.json",
-  "at": "narrative_101.1",
-  "old": "Die Schleife, die der Stern beschreibt, ist fantastisch klein und wird in Millionstel Grad gemessen, weshalb die Astrometrie lange Zeit der große Beinahe-Erfolg der Planetenjagd war: über Jahrzehnte versprochen, wenig geliefert, weil die Präzision einfach nicht vorhanden war.",
-  "new": "Die Schleife, die der Stern beschreibt, ist unglaublich klein und wird in Millionstel Grad gemessen. Deshalb war die Astrometrie lange der große Beinahe-Erfolg der Planetenjagd: jahrzehntelang versprochen, kaum etwas geliefert, weil die Präzision schlicht nicht vorhanden war."
- },
- {
-  "rel": "science/exoplanets/astrometry.json",
-  "at": "body_paragraphs.1",
-  "old": "Historisch führte es zu mehr Widerrufen als zu Planeten – Barnards Pfeilstern ist die klassische Warnung, seine berühmten „Planeten\" aus der Astrometrie der 1960er-Jahre alle falsch. Das Signal ist einfach winzig, und instrumentelle Abweichungen können es leicht vortäuschen.",
-  "new": "Historisch brachte sie mehr Widerrufe als Planeten hervor – Barnards Pfeilstern ist das klassische Warnbeispiel: Seine berühmten „Planeten“ aus der Astrometrie der 1960er-Jahre waren allesamt Scheinsignale. Das Signal ist einfach winzig, und instrumentelle Drift kann es leicht vortäuschen."
- },
- {
-  "rel": "science/exoplanets/astrometry.json",
-  "at": "body_paragraphs.2",
-  "old": "Gaias Ganzhimmel-Hochpräzisions-Astrometrie liefert nun echte Entdeckungen und, entscheidend, echte Massen für Planeten, die durch andere Methoden gefunden wurden — und schließt damit ein Kapitel, das fast ein Jahrhundert lang offen blieb.",
-  "new": "Die hochpräzise Astrometrie des gesamten Himmels durch Gaia liefert nun echte Entdeckungen und – entscheidend – echte Massen für Planeten, die mit anderen Methoden gefunden wurden. Damit schließt sich ein Kapitel, das fast ein Jahrhundert lang offen war."
- },
- {
-  "rel": "science/exoplanets/biosignatures.json",
-  "at": "intro_sentence",
-  "old": "Die Gase oder Merkmale im Licht eines Planeten, die Leben verraten könnten — und warum kein einzelnes jemals allein als Beweis ausreicht.",
-  "new": "Die Gase oder Merkmale im Licht eines Planeten, die Leben verraten könnten — und warum keines davon für sich allein je ein Beweis ist."
- },
- {
-  "rel": "science/exoplanets/biosignatures.json",
-  "at": "narrative_101.0",
-  "old": "Wenn eine ferne Welt Leben beherbergt, könnte es eine chemische Spur in ihrer Atmosphäre hinterlassen — ein Gas, das ohne etwas, das es produziert, nicht da sein sollte. Sauerstoff auf der Erde ist das klassische Beispiel: Er würde innerhalb weniger Millionen Jahre verschwinden, wenn die Photosynthese ihn nicht ständig nachliefern würde.",
-  "new": "Wenn eine ferne Welt Leben beherbergt, könnte es eine chemische Spur in ihrer Atmosphäre hinterlassen — ein Gas, das ohne eine Quelle, die es erzeugt, nicht dort sein dürfte. Sauerstoff auf der Erde ist das klassische Beispiel: Er würde innerhalb weniger Millionen Jahre verschwinden, wenn die Photosynthese ihn nicht ständig nachliefern würde."
- },
- {
-  "rel": "science/exoplanets/biosignatures.json",
-  "at": "narrative_101.1",
-  "old": "Das Problem ist, dass die Natur es vortäuschen kann. Sauerstoff, Methan und andere potenzielle ‚Biosignaturen' haben alle nichtlebende Wege zur Akkumulation, daher ist jeder einzelne Nachweis ein Hinweis, kein Urteil.",
-  "new": "Das Problem ist, dass die Natur es vortäuschen kann. Sauerstoff, Methan und andere mögliche „Biosignaturen“ können sich alle auch auf nichtbiologischem Weg anreichern; daher ist jeder einzelne Nachweis ein Hinweis, kein Urteil."
- },
- {
-  "rel": "science/exoplanets/biosignatures.json",
-  "at": "narrative_101.2",
-  "old": "Der ehrliche Test ist Kontext und Kombination: die richtigen Gase zusammen, außerhalb des chemischen Gleichgewichts, auf einer Welt, wo Geologie und Sternenlicht sie nicht leicht erklären können. Das ist eine hohe Messlatte, und sie zu erreichen ist der Sinn der Sache.",
-  "new": "Der ehrliche Test ist Kontext und Kombination: die richtigen Gase zusammen, außerhalb des chemischen Gleichgewichts, auf einer Welt, auf der Geologie und Sternenlicht sie nicht ohne Weiteres erklären können. Das ist eine hohe Messlatte, und sie zu erreichen ist der Sinn der Sache."
- },
- {
-  "rel": "science/exoplanets/biosignatures.json",
-  "at": "body_paragraphs.1",
-  "old": "Jede vorgeschlagene Biosignatur hat bekannte falsch-positive Ergebnisse. Sauerstoff kann sich auf manchen Welten durch Wasserphotolyse anreichern; Methan hat reichlich geologische Quellen. Daher betont das Forschungsfeld mehrere, sich gegenseitig verstärkende Beweislinien und sorgfältige Modellierung des Planeten und seines Sterns, bevor irgendeine Behauptung aufgestellt wird.",
-  "new": "Jede vorgeschlagene Biosignatur hat bekannte Fehlalarme. Sauerstoff kann sich auf manchen Welten durch Photolyse von Wasser anreichern; Methan hat zahlreiche geologische Quellen. Daher betont das Forschungsfeld mehrere, einander stützende Beweislinien und eine sorgfältige Modellierung von Planet und Stern, bevor irgendeine Behauptung aufgestellt wird."
- },
- {
-  "rel": "science/exoplanets/direct-imaging.json",
-  "at": "intro_sentence",
-  "old": "Blende das überwältigende Licht des Sterns aus, und bei einigen wenigen glücklichen Planeten kannst du den schwachen Lichtpunkt daneben fotografieren.",
-  "new": "Blendet man das überwältigende Licht des Sterns aus, lässt sich bei einigen wenigen glücklichen Planeten der schwache Lichtpunkt daneben fotografieren."
- },
- {
-  "rel": "science/exoplanets/direct-imaging.json",
-  "at": "narrative_101.1",
-  "old": "Das Problem ist der Kontrast. Ein Planet kann eine Milliarde Mal lichtschwächer sein als sein Stern und befindet sich direkt daneben, wie ein Glühwürmchen neben einem Leuchtturm zu entdecken. Daher verbirgt die Technik den Stern hinter einer Maske — einem Koronografen im Teleskop oder einem entfernten, frei fliegenden Starshade — und lässt das Licht des Planeten durch.",
-  "new": "Das Problem ist der Kontrast. Ein Planet kann eine Milliarde Mal lichtschwächer sein als sein Stern und steht unmittelbar neben ihm – so, als wollte man ein Glühwürmchen neben einem Leuchtturm erspähen. Deshalb verbirgt die Technik den Stern hinter einer Maske — einem Koronografen im Teleskop oder einer entfernten, frei fliegenden Sternblende (Starshade) — und lässt das Licht des Planeten durch."
- },
- {
-  "rel": "science/exoplanets/direct-imaging.json",
-  "at": "body_paragraphs.0",
-  "old": "Die direkte Abbildung blockiert oder nullt das Sternenlicht (mit einem Koronografen oder Interferometer), um Planeten und Scheiben sichtbar zu machen, die sonst im Glanz verloren gingen. Da sie das eigene Licht des Planeten erfasst, ermöglicht sie einzigartig die Spektroskopie der Welt in Isolation — eine direkte Aussage über ihre Temperatur und Atmosphäre.",
-  "new": "Die direkte Abbildung blendet das Sternenlicht aus oder löscht es aus (mit einem Koronografen oder Interferometer), um Planeten und Scheiben sichtbar zu machen, die sonst im gleißenden Licht untergingen. Da sie das eigene Licht des Planeten erfasst, erlaubt sie als einzige Methode die Spektroskopie der Welt für sich allein — eine direkte Aussage über ihre Temperatur und Atmosphäre."
- },
- {
-  "rel": "science/exoplanets/direct-imaging.json",
-  "at": "body_paragraphs.1",
-  "old": "Ihre Verzerrung ist das Spiegelbild der anderen: Sie bevorzugt große, selbstleuchtende Planeten weit von ihren Sternen entfernt (weite Umlaufbahnen erleichtern das Kontrastproblem, und Jugend hält den Planeten heiß und hell). Systeme wie HR 8799 — vier Riesenplaneten auf einmal abgebildet — und der skulptierte Trümmerring von Fomalhaut sind Vorzeigeobjekte.",
-  "new": "Ihr Auswahleffekt ist das Spiegelbild der anderen Methoden: Sie bevorzugt große, selbstleuchtende Planeten weit entfernt von ihren Sternen (weite Umlaufbahnen entschärfen das Kontrastproblem, und Jugend hält den Planeten heiß und hell). Systeme wie HR 8799 — vier Riesenplaneten auf einmal abgebildet — und der geformte Trümmerring von Fomalhaut sind Vorzeigeobjekte."
- },
- {
-  "rel": "science/exoplanets/exoplanet-atmospheres.json",
-  "at": "body_paragraphs.1",
-  "old": "JWST hat das Feld von heißen Riesen bis an die Grenze felsiger Weltatmosphären vorangebracht: klare Kohlendioxid-Nachweise auf Gasplaneten und empfindliche Suchen um TRAPPIST-1, die bisher darauf hindeuten, dass seine innersten Planeten weitgehend luftlos sind. Ausbrüche Roter Zwerge erschweren das Halten einer Atmosphäre, und genau dieses Urteil ist es, was diese Beobachtungen testen.",
-  "new": "JWST hat das Feld von heißen Riesen bis an die Schwelle der Atmosphären felsiger Welten vorangebracht: klare Kohlendioxid-Nachweise auf Gasplaneten und empfindliche Messungen um TRAPPIST-1, die bisher darauf hindeuten, dass seine innersten Planeten weitgehend luftlos sind. Ausbrüche Roter Zwerge erschweren das Halten einer Atmosphäre, und genau dieses Urteil prüfen diese Beobachtungen."
- },
- {
-  "rel": "science/exoplanets/fifty-one-pegasi.json",
-  "at": "intro_sentence",
-  "old": "1995 wurde ein Riesenplanet entdeckt, der alle vier Tage einen sonnenähnlichen Stern umkreist — die Entdeckung, die die Exoplaneten-Ära eröffnete und einen Nobelpreis gewann.",
-  "new": "1995 wurde ein Riesenplanet entdeckt, der alle vier Tage einen sonnenähnlichen Stern umkreist — die Entdeckung, die das Zeitalter der Exoplaneten eröffnete und einen Nobelpreis einbrachte."
- },
- {
-  "rel": "science/exoplanets/fifty-one-pegasi.json",
-  "at": "narrative_101.1",
-  "old": "Der Planet — 51 Pegasi b, informell Dimidium — war ein Schock: eine Welt von Jupitermasse, die ihren Stern in nur 4,2 Tagen umkreist, weit näher als man dachte, dass sich ein Riesenplanet bilden könnte. Der erste Exoplanet um einen normalen Stern war nichts, was irgendjemand vorhergesagt hatte.",
-  "new": "Der Planet — 51 Pegasi b, informell Dimidium — war ein Schock: eine Welt von Jupitermasse, die ihren Stern in nur 4,2 Tagen umkreist, weit näher, als sich nach damaliger Auffassung ein Riesenplanet überhaupt bilden konnte. Der erste Exoplanet um einen normalen Stern war etwas, das niemand vorhergesagt hatte."
- },
- {
-  "rel": "science/exoplanets/fifty-one-pegasi.json",
-  "at": "narrative_101.2",
-  "old": "Es öffnete die Schleusen. Innerhalb von Jahren tauchten Dutzende weitere ‚heiße Jupiter' auf, die Planetenentstehungstheorie erhielt ein Kapitel über Migration, und 2019 teilten sich Mayor und Queloz den Nobelpreis für Physik.",
-  "new": "Es öffnete die Schleusen. Innerhalb weniger Jahre tauchten Dutzende weitere „heiße Jupiter“ auf, die Theorie der Planetenentstehung bekam ein Kapitel über Migration, und 2019 teilten sich Mayor und Queloz den Nobelpreis für Physik."
- },
- {
-  "rel": "science/exoplanets/fifty-one-pegasi.json",
-  "at": "body_paragraphs.0",
-  "old": "51 Pegasi b wurde durch Radialgeschwindigkeit gefunden: ein klares ~4,2-Tage-Doppler-Wackeln enthüllte einen Planeten von mindestens der halben Jupitermasse, der gefährlich nahe an seinem Stern kreist. Es war der erste bestätigte Planet um einen Hauptreihenstern außer der Sonne.",
-  "new": "51 Pegasi b wurde mit der Radialgeschwindigkeitsmethode gefunden: Ein deutliches Doppler-Wackeln mit einer Periode von ~4,2 Tagen enthüllte einen Planeten von mindestens der halben Jupitermasse, der gefährlich nah um seinen Stern kreist. Es war der erste bestätigte Planet um einen Hauptreihenstern außer der Sonne."
- },
- {
-  "rel": "science/exoplanets/fifty-one-pegasi.json",
-  "at": "body_paragraphs.1",
-  "old": "Die Entdeckung war doppelt wichtig — sie bewies, dass die Radialgeschwindigkeitsmethode funktionierte, und sie enthüllte einen Planetentyp (den heißen Jupiter), der orbitale Migration erforderte und die Entstehungstheorie neu schrieb. Sein informeller Name, Dimidium, bedeutet ‚halb', wegen seiner Minimalmasse.",
-  "new": "Die Entdeckung war doppelt wichtig — sie bewies, dass die Radialgeschwindigkeitsmethode funktionierte, und sie enthüllte einen Planetentyp (den heißen Jupiter), der Bahnmigration erforderte und die Entstehungstheorie neu schrieb. Sein informeller Name, Dimidium, bedeutet „halb“ — wegen seiner Mindestmasse."
- },
- {
-  "rel": "science/exoplanets/fifty-one-pegasi.json",
-  "at": "body_paragraphs.2",
-  "old": "Der Nobelpreis für Physik 2019 würdigte Mayor und Queloz für die Entdeckung — der Moment, in dem sich das Studium anderer Welten von Philosophie in beobachtende Wissenschaft verwandelte.",
-  "new": "Der Nobelpreis für Physik 2019 würdigte Mayor und Queloz für die Entdeckung — der Moment, in dem sich das Studium anderer Welten von der Philosophie zu einer Beobachtungswissenschaft wandelte."
- },
- {
-  "rel": "science/exoplanets/habitable-zone.json",
-  "at": "narrative_101.0",
-  "old": "Wasser ist nur in einem engen Temperaturbereich flüssig, und die Temperatur nimmt mit der Entfernung von einem Stern ab. Daher gibt es um jeden Stern herum einen Ring von Umlaufbahnen – die habitable Zone –, in dem ein erdähnlicher Planet Ozeane halten könnte, anstatt sie zu verkochen oder zu gefrieren.",
-  "new": "Wasser ist nur in einem engen Temperaturbereich flüssig, und die Temperatur nimmt mit der Entfernung von einem Stern ab. Daher gibt es um jeden Stern herum einen Ring von Umlaufbahnen – die habitable Zone –, in dem ein erdähnlicher Planet Ozeane behalten könnte, statt dass sie verkochen oder gefrieren."
- },
- {
-  "rel": "science/exoplanets/habitable-zone.json",
-  "at": "narrative_101.1",
-  "old": "Die Zone ist nicht fest: Ein heißer, heller Stern schiebt sie weit hinaus; ein schwacher roter Zwerg zieht sie nah heran. Deshalb umkreisen Planeten in der habitablen Zone um rote Zwerge diese in Tagen, dicht an ihre Sterne geschmiegt.",
-  "new": "Die Zone ist nicht fest: Ein heißer, heller Stern schiebt sie weit hinaus; ein lichtschwacher Roter Zwerg zieht sie nah heran. Deshalb umkreisen Planeten in der habitablen Zone Roter Zwerge ihre Sterne in nur wenigen Tagen, dicht an sie geschmiegt."
- },
- {
-  "rel": "science/exoplanets/habitable-zone.json",
-  "at": "narrative_101.2",
-  "old": "‚Habitable Zone' ist eine hoffnungsvolle Abkürzung, kein Versprechen. Eine Welt dort könnte dennoch ein luftloser Fels oder ein galoppierendes Treibhaus sein – die Lage ist notwendig, aber nicht hinreichend.",
-  "new": "„Habitable Zone“ ist eine hoffnungsvolle Abkürzung, kein Versprechen. Eine Welt dort könnte dennoch ein luftloser Fels oder ein galoppierendes Treibhaus sein – die Lage ist notwendig, aber nicht hinreichend."
- },
- {
-  "rel": "science/exoplanets/habitable-zone.json",
-  "at": "body_paragraphs.0",
-  "old": "Die zirkumstellare habitable Zone wird durch den stellaren Strahlungsfluss definiert: Die innere Grenze liegt dort, wo ein galoppierendes Treibhaus die Ozeane verkochen würde (das Schicksal der Venus), die äußere Grenze dort, wo selbst ein starkes Kohlendioxid-Treibhaus das globale Einfrieren nicht verhindern kann (jenseits des Mars). Ihre Entfernung skaliert mit der Quadratwurzel der Sternenleuchtkraft, daher liegt sie weit von hellen Sternen und nahe bei lichtschwachen.",
-  "new": "Die zirkumstellare habitable Zone wird durch den stellaren Strahlungsfluss definiert: Die innere Grenze liegt dort, wo ein galoppierendes Treibhaus die Ozeane verkochen würde (das Schicksal der Venus), die äußere Grenze dort, wo selbst ein starkes Kohlendioxid-Treibhaus das globale Einfrieren nicht verhindern kann (jenseits des Mars). Ihr Abstand wächst mit der Quadratwurzel der Leuchtkraft des Sterns, sie liegt also weit von hellen Sternen entfernt und nahe an lichtschwachen."
- },
- {
-  "rel": "science/exoplanets/habitable-zone.json",
-  "at": "body_paragraphs.1",
-  "old": "Weil kleine rote Zwerge mit Abstand die häufigsten Sterne sind, umkreisen die meisten bekannten Planeten in der habitablen Zone diese – Welten wie TOI-700 d und mehrere der TRAPPIST-1-Planeten. Ihre engen Umlaufbahnen bringen Komplikationen mit sich: Gezeitenbindung und Exposition gegenüber stellaren Flares, die eine Atmosphäre abtragen können.",
-  "new": "Da kleine Rote Zwerge mit Abstand die häufigsten Sterne sind, umkreisen die meisten bekannten Planeten in der habitablen Zone solche Sterne – Welten wie TOI-700 d und mehrere der TRAPPIST-1-Planeten. Ihre engen Umlaufbahnen bringen Komplikationen mit sich: Gezeitenbindung und Flares des Sterns, die eine Atmosphäre abtragen können."
- },
- {
-  "rel": "science/exoplanets/habitable-zone.json",
-  "at": "body_paragraphs.2",
-  "old": "Die habitable Zone ist ein erster Filter, kein Urteil. Ob eine dieser Welten tatsächlich bewohnbar ist, hängt von Dingen ab, die uns die Zone nicht verraten kann – eine Atmosphäre, Wasser, ein Magnetfeld –, weshalb die Grenze sich verlagert hat zum Auslesen ihrer Luft.",
-  "new": "Die habitable Zone ist ein erster Filter, kein Urteil. Ob eine dieser Welten tatsächlich bewohnbar ist, hängt von Dingen ab, die uns die Zone nicht verraten kann – eine Atmosphäre, Wasser, ein Magnetfeld –, weshalb sich die Forschung inzwischen dem Auslesen ihrer Atmosphären zugewandt hat."
- },
- {
-  "rel": "science/exoplanets/hot-jupiters.json",
-  "at": "narrative_101.1",
-  "old": "Niemand hatte sie erwartet. Gasriesen sollten weit draußen entstehen, jenseits der ‚Schneegrenze', wo Eis kondensieren kann. Ein Riesenplanet, der seinen Stern streift, verstieß gegen das Lehrbuch – und erzwang eine neue Idee: Planeten können nach ihrer Entstehung nach innen wandern.",
-  "new": "Niemand hatte sie erwartet. Gasriesen sollten weit draußen entstehen, jenseits der „Schneegrenze“, wo Eis kondensieren kann. Ein Riesenplanet, der seinen Stern streift, verstieß gegen das Lehrbuch – und erzwang eine neue Idee: Planeten können nach ihrer Entstehung nach innen wandern."
- },
- {
-  "rel": "science/exoplanets/hot-jupiters.json",
-  "at": "body_paragraphs.0",
-  "old": "Heiße Jupiter sind Gasriesen auf Umlaufbahnen von nur wenigen Tagen, deren Tagseiten oft Temperaturen von über 1.000 Grad erreichen. Ihre Existenz deutet auf großräumige Bahnwanderung hin: Sie entstanden wahrscheinlich jenseits der Schneegrenze und spiralten durch Wechselwirkungen mit der protoplanetaren Scheibe oder mit anderen Körpern nach innen, wo sie an einem Ort endeten, an dem kein Riesenplanet vor Ort hätte entstehen können.",
-  "new": "Heiße Jupiter sind Gasriesen auf Umlaufbahnen von nur wenigen Tagen, deren Tagseiten oft Temperaturen von über 1.000 Grad erreichen. Ihre Existenz deutet auf großräumige Bahnwanderung hin: Sie entstanden wahrscheinlich jenseits der Schneegrenze und spiralten durch Wechselwirkungen mit der protoplanetaren Scheibe oder mit anderen Körpern nach innen und landeten dort, wo sich kein Riesenplanet an Ort und Stelle hätte bilden können."
- },
- {
-  "rel": "science/exoplanets/microlensing.json",
-  "at": "intro_sentence",
-  "old": "Wenn ein Stern genau vor einem anderen vorbeizieht, vergrößert seine Schwerkraft den Hintergrundstern — und ein Planet fügt einen kurzen zusätzlichen Lichtblitz hinzu.",
-  "new": "Wenn ein Stern genau vor einem anderen vorbeizieht, verstärkt seine Schwerkraft das Licht des Hintergrundsterns — und ein Planet sorgt für einen zusätzlichen kurzen Lichtblitz."
- },
- {
-  "rel": "science/exoplanets/microlensing.json",
-  "at": "narrative_101.0",
-  "old": "Schwerkraft beugt Licht. Wenn ein Vordergrundstern fast exakt vor einem sehr viel weiter entfernten vorbeizieht, wirkt er wie eine Linse und erhellt den Hintergrundstern kurzzeitig über Tage oder Wochen.",
-  "new": "Schwerkraft beugt Licht. Wenn ein Vordergrundstern fast exakt vor einem sehr viel weiter entfernten vorbeizieht, wirkt er wie eine Linse und lässt den Hintergrundstern über Tage oder Wochen kurzzeitig heller erscheinen."
- },
- {
-  "rel": "science/exoplanets/microlensing.json",
-  "at": "narrative_101.1",
-  "old": "Hat der Vordergrundstern einen Planeten, fügt die eigene Schwerkraft des Planeten dieser sanften Aufhellung eine kurze, scharfe Spitze hinzu — ein Ausschlag von Stunden bis zu einem Tag, der eine Welt verrät, die man niemals direkt sehen wird.",
-  "new": "Hat der Vordergrundstern einen Planeten, fügt dessen eigene Schwerkraft dieser sanften Aufhellung eine kurze, scharfe Spitze hinzu — ein Ausschlag, der Stunden bis zu einem Tag dauert und eine Welt verrät, die man niemals direkt sehen wird."
- },
- {
-  "rel": "science/exoplanets/microlensing.json",
-  "at": "body_paragraphs.0",
-  "old": "Mikrolinsen-Effekte entdecken Planeten durch die vorübergehende gravitative Vergrößerung, die sie einer zufälligen Ausrichtung zweier Sterne hinzufügen. Die Methode ist einzigartig empfindlich für massearme Planeten auf weiten, kühlen Umlaufbahnen — der Region jenseits der Schneelinie, die Transiten und Radialgeschwindigkeitsmessungen nur schwer erreichen — sowie für vagabundierende Planeten, die allein durch die Galaxis treiben.",
-  "new": "Mikrolinsen-Beobachtungen entdecken Planeten anhand der vorübergehenden gravitativen Verstärkung, die sie zu einer zufälligen Ausrichtung zweier Sterne beisteuern. Die Methode ist besonders empfindlich für massearme Planeten auf weiten, kühlen Umlaufbahnen — der Region jenseits der Schneegrenze, die Transitmethode und Radialgeschwindigkeit nur schwer erreichen — sowie für vagabundierende Planeten, die allein durch die Galaxis treiben."
- },
- {
-  "rel": "science/exoplanets/microlensing.json",
-  "at": "body_paragraphs.1",
-  "old": "Der Nachteil ist, dass die Ereignisse einmalig und nicht wiederholbar sind, dass Stern und Planet oft zu weit entfernt sind, um weiter untersucht zu werden, und dass Masse und Abstand etwas entartet herauskommen. Es ist ein statistisches Werkzeug: Es misst, wie häufig kalte und frei schwebende Planeten sind, mehr als dass es einzelne Welten katalogisiert.",
-  "new": "Der Preis dafür: Die Ereignisse sind einmalig und nicht wiederholbar, Stern und Planet sind oft zu weit entfernt, um sie weiter zu untersuchen, und Masse und Abstand lassen sich nur mit gewisser Entartung bestimmen. Es ist ein statistisches Werkzeug: Es misst eher, wie häufig kalte und frei schwebende Planeten sind, als dass es einzelne Welten katalogisiert."
- },
- {
-  "rel": "science/exoplanets/microlensing.json",
-  "at": "body_paragraphs.2",
-  "old": "Das Nancy Grace Roman Space Telescope der NASA wird eine weitreichende Mikrolinsen-Durchmusterung durchführen, von der erwartet wird, dass sie Tausende dieser sonst unsichtbaren Planeten findet und damit die kalten äußeren Bereiche der Exoplaneten-Zählung ausfüllt.",
-  "new": "Das Nancy Grace Roman Space Telescope der NASA wird eine großangelegte Mikrolinsen-Durchmusterung durchführen, von der erwartet wird, dass sie Tausende dieser sonst unsichtbaren Planeten findet und so die kalten Außenbereiche der Exoplanetenstatistik auffüllt."
- },
- {
-  "rel": "science/exoplanets/microlensing.json",
-  "at": "diagram_caption",
-  "old": "Ein Vordergrundstern bündelt das Licht eines Hintergrundsterns; ein umlaufender Planet fügt der Lichtkurve eine kurze sekundäre Spitze hinzu.",
-  "new": "Ein Vordergrundstern wirkt als Linse für einen Hintergrundstern; ein umlaufender Planet fügt der Lichtkurve eine kurze zweite Spitze hinzu."
- },
- {
-  "rel": "science/exoplanets/orbital-resonance.json",
-  "at": "narrative_101.1",
-  "old": "TRAPPIST-1 ist das Paradebeispiel: seine sieben Planeten sitzen in einer nahezu ununterbrochenen Kette von Resonanzen, jede Periode ein ordentliches Vielfaches der nächsten. Beschleunigt man das System, würden die Ausrichtungen tatsächlich eine musikalische Tonleiter erklingen lassen.",
-  "new": "TRAPPIST-1 ist das Paradebeispiel: Seine sieben Planeten sitzen in einer nahezu lückenlosen Resonanzkette, jede Umlaufzeit steht in einem schlichten Verhältnis zur nächsten. Beschleunigt man das System, würden die Ausrichtungen tatsächlich eine musikalische Tonleiter erklingen lassen."
- },
- {
-  "rel": "science/exoplanets/orbital-resonance.json",
-  "at": "narrative_101.2",
-  "old": "Resonanzen sind Fußabdrücke davon, wie sich ein System gebildet hat — sie entstehen, wenn Planeten gemeinsam durch die Entstehungsscheibe nach innen wandern und sich gegenseitig im Gleichschritt einfangen.",
-  "new": "Resonanzen sind Spuren dafür, wie ein System entstanden ist — sie entstehen, wenn Planeten gemeinsam durch die Entstehungsscheibe nach innen wandern und sich gegenseitig im Gleichschritt einfangen."
- },
- {
-  "rel": "science/exoplanets/orbital-resonance.json",
-  "at": "body_paragraphs.0",
-  "old": "Eine Bahnresonanz tritt auf, wenn umlaufende Körper regelmäßigen, periodischen gravitativen Einfluss aufeinander ausüben, üblicherweise weil ihre Perioden im Verhältnis kleiner ganzer Zahlen stehen. Resonanzen können ein dicht gepacktes System stabilisieren, indem sie Planeten in einem verriegelten Muster halten, oder es destabilisieren, indem sie Exzentrizitäten hochtreiben.",
-  "new": "Eine Bahnresonanz tritt auf, wenn umlaufende Körper regelmäßigen, periodischen gravitativen Einfluss aufeinander ausüben, üblicherweise weil ihre Umlaufzeiten im Verhältnis kleiner ganzer Zahlen stehen. Resonanzen können ein dicht gepacktes System stabilisieren, indem sie Planeten in einem verriegelten Muster halten, oder es destabilisieren, indem sie Exzentrizitäten hochtreiben."
- },
- {
-  "rel": "science/exoplanets/orbital-resonance.json",
-  "at": "body_paragraphs.1",
-  "old": "Ketten von Resonanzen, wie die von TRAPPIST-1, sind starke Belege für konvergente Migration: Planeten, die weiter außen entstehen und durch die Gasscheibe nach innen driften, werden nacheinander in Resonanzen gefangen, während sie wandern. Die empfindliche Anordnung macht auch die gegenseitigen Zerrungen der Planeten als Transit-Timing-Variationen messbar, und so wurden ihre Massen bestimmt.",
-  "new": "Ketten von Resonanzen, wie die von TRAPPIST-1, sind starke Belege für konvergente Migration: Planeten, die weiter außen entstehen und durch die Gasscheibe nach innen driften, werden nacheinander in Resonanzen gefangen, während sie wandern. Die empfindliche Anordnung macht auch die gegenseitigen Zugkräfte der Planeten als Transit-Timing-Variationen messbar, und so wurden ihre Massen bestimmt."
- },
- {
-  "rel": "science/exoplanets/planet-formation.json",
-  "at": "narrative_101.1",
-  "old": "Wo ein Planet entsteht, hängt von der Temperatur ab: Gestein und Metall kondensieren in der Nähe, Eis erst jenseits der ‚Schneegrenze'. Deshalb hat das Sonnensystem kleine felsige Welten innen und Riesen außen.",
-  "new": "Wo ein Planet entsteht, hängt von der Temperatur ab: Gestein und Metall kondensieren in der Nähe, Eis erst jenseits der „Schneegrenze“. Deshalb hat das Sonnensystem kleine felsige Welten innen und Riesen außen."
- },
- {
-  "rel": "science/exoplanets/proxima-system.json",
-  "at": "narrative_101.0",
-  "old": "Der sonnennächste Stern, Proxima Centauri, ist ein kleiner roter Zwerg nur 4,24 Lichtjahre entfernt — und 2016 entdeckten Astronomen einen Planeten mit etwa Erdmasse, Proxima b, der ihn in seiner habitablen Zone umkreist.",
-  "new": "Der sonnennächste Stern, Proxima Centauri, ist ein kleiner Roter Zwerg, nur 4,24 Lichtjahre entfernt — und 2016 entdeckten Astronomen einen Planeten mit etwa Erdmasse, Proxima b, der ihn in seiner habitablen Zone umkreist."
- },
- {
-  "rel": "science/exoplanets/proxima-system.json",
-  "at": "narrative_101.1",
-  "old": "Es ist die nächstgelegene potenziell bewohnbare Welt, die wir kennen, was sie zum natürlichen ersten Ziel für jeden Traum macht, einen anderen Stern zu erreichen. Das Breakthrough Starshot-Projekt stellt sich grammleichte Lichtsegel-Sonden vor, die ihn innerhalb eines Menschenlebens erreichen könnten.",
-  "new": "Es ist die nächstgelegene potenziell bewohnbare Welt, die wir kennen, was sie zum natürlichen ersten Ziel für jeden Traum macht, einen anderen Stern zu erreichen. Das Projekt Breakthrough Starshot stellt sich grammleichte Lichtsegel-Sonden vor, die ihn innerhalb eines Menschenlebens erreichen könnten."
- },
- {
-  "rel": "science/exoplanets/proxima-system.json",
-  "at": "narrative_101.2",
-  "old": "Der Haken ist der Stern selbst: Proxima zeigt heftige Flares, und sein Planet in der habitablen Zone — wahrscheinlich gebunden rotierend — sitzt nah genug, um die volle Wucht abzubekommen, eine ernsthafte Bedrohung für jede Atmosphäre oder Leben.",
-  "new": "Der Haken ist der Stern selbst: Proxima zeigt heftige Flares, und sein Planet in der habitablen Zone — wahrscheinlich gezeitengebunden — liegt nah genug, um die volle Wucht abzubekommen, eine ernsthafte Bedrohung für jede Atmosphäre und jedes Leben."
- },
- {
-  "rel": "science/exoplanets/proxima-system.json",
-  "at": "body_paragraphs.0",
-  "old": "Proxima Centauri b wurde durch Radialgeschwindigkeit entdeckt: ein ~11-Tage-Signal, das auf einen Planeten von mindestens etwa 1,1 Erdmassen in der temperierten Zone des M5.5-Zwergs hindeutet. Ein zweiter, weit leichterer Planet, Proxima d, wurde in den frühen 2020er Jahren auf einer engeren Umlaufbahn bestätigt — einer der Planeten mit der geringsten bekannten Masse.",
-  "new": "Proxima Centauri b wurde mit der Radialgeschwindigkeitsmethode entdeckt: ein ~11-Tage-Signal, das auf einen Planeten von mindestens etwa 1,1 Erdmassen in der gemäßigten Zone des M5.5-Zwergs hindeutet. Ein zweiter, weit leichterer Planet, Proxima d, wurde in den frühen 2020er Jahren auf einer engeren Umlaufbahn bestätigt — einer der Planeten mit der geringsten bekannten Masse."
- },
- {
-  "rel": "science/exoplanets/proxima-system.json",
-  "at": "body_paragraphs.1",
-  "old": "Die Nähe ist die ganze Geschichte. Bei 4,24 Lichtjahren ist das System der Ankerpunkt interstellarer Gedankenexperimente, von Breakthrough Starshots Lichtsegeln bis zu Generationen von Science-Fiction, und ein vorrangiges Ziel für zukünftige Direktabbildungs-Suchprogramme.",
-  "new": "Die Nähe ist die ganze Geschichte. Mit 4,24 Lichtjahren ist das System der Ankerpunkt interstellarer Gedankenexperimente, von den Lichtsegeln von Breakthrough Starshot bis zu Generationen von Science-Fiction, und ein vorrangiges Ziel für künftige Suchen mit direkter Abbildung."
- },
- {
-  "rel": "science/exoplanets/proxima-system.json",
-  "at": "body_paragraphs.2",
-  "old": "Die Bewohnbarkeit ist wirklich ungewiss. Flares roter Zwerge, gebundene Rotation und die Schwierigkeit, eine Atmosphäre von der Erde aus zu bestätigen, halten Proxima b alle in der verlockend-aber-unbewiesenen Spalte — der nächstgelegene Testfall dafür, ob Welten roter Zwerge lebendig sein können.",
-  "new": "Die Bewohnbarkeit ist wirklich ungewiss. Flares Roter Zwerge, gebundene Rotation und die Schwierigkeit, eine Atmosphäre von der Erde aus zu bestätigen, lassen Proxima b alle in der Kategorie „verlockend, aber unbewiesen“ — der nächstgelegene Testfall dafür, ob Welten um Rote Zwerge belebt sein können."
- },
- {
-  "rel": "science/exoplanets/radial-velocity.json",
-  "at": "body_paragraphs.0",
-  "old": "Die Radialgeschwindigkeit war die erste Methode, die Ergebnisse lieferte: Sie bestätigte 51 Pegasi b im Jahr 1995 und dominierte die frühe Exoplanetenanzahl. Sie misst die Sichtliniengeschwindigkeit des Sterns aus Dopplerverschiebungen in seinem Spektrum; die Amplitude dieser Geschwindigkeit (K) skaliert mit der Masse des Planeten und nimmt mit dem Orbitalabstand ab, sodass sie massereiche Planeten auf kurzen Umlaufbahnen begünstigt – der Grund, warum die ersten Funde ›heiße Jupiter‹ waren.",
-  "new": "Die Radialgeschwindigkeit war die erste Methode, die Ergebnisse lieferte: Sie bestätigte 51 Pegasi b im Jahr 1995 und dominierte die frühe Zahl bekannter Exoplaneten. Sie misst die Sichtliniengeschwindigkeit des Sterns aus Dopplerverschiebungen in seinem Spektrum; die Amplitude dieser Geschwindigkeit (K) wächst mit der Masse des Planeten und nimmt mit dem Bahnabstand ab, sodass sie massereiche Planeten auf kurzen Umlaufbahnen begünstigt – der Grund, warum die ersten Funde „heiße Jupiter“ waren."
- },
- {
-  "rel": "science/exoplanets/radial-velocity.json",
-  "at": "body_paragraphs.1",
-  "old": "Ihre große Stärke ist die Masse: Die Radialgeschwindigkeit liefert die Minimalmasse des Planeten (m·sin i), die Größe, die verrät, ob eine Welt felsig, eisig oder gasförmig ist. Ihre Grenzen sind die unbekannte Bahnneigung (nur eine untere Massengrenze ohne Transit) und die Mauer, die das Brodeln der Sternoberfläche selbst setzt, das ein Taumeln imitiert und derzeit echte Erdanaloga-Signale verbirgt.",
-  "new": "Ihre große Stärke ist die Masse: Die Radialgeschwindigkeit liefert die Mindestmasse des Planeten (m·sin i), die Größe, die verrät, ob eine Welt felsig, eisig oder gasförmig ist. Ihre Grenzen sind die unbekannte Bahnneigung (ohne Transit nur eine untere Massengrenze) und die Mauer, die das Brodeln der Sternoberfläche selbst errichtet: Es ahmt ein Taumeln nach und verbirgt derzeit die Signale echter Erdanaloga."
- },
- {
-  "rel": "science/exoplanets/radial-velocity.json",
-  "at": "body_paragraphs.2",
-  "old": "Moderne Spektrografen wie ESPRESSO erreichen eine Präzision unter einem Meter pro Sekunde, genug um die Sub-Erd-Welten zu entdecken, die kürzlich um Barnards Pfeilstern gefunden wurden. Kombiniert mit einem Transit verwandelt die Radialgeschwindigkeit eine Größe in eine Dichte – und eine Dichte in eine Vermutung darüber, woraus ein Planet besteht.",
-  "new": "Moderne Spektrografen wie ESPRESSO erreichen eine Präzision unter einem Meter pro Sekunde, genug, um die Sub-Erden nachzuweisen, die kürzlich um Barnards Pfeilstern gefunden wurden. Kombiniert mit einem Transit macht die Radialgeschwindigkeit aus einer Größe eine Dichte – und aus einer Dichte eine Vermutung darüber, woraus ein Planet besteht."
- },
- {
-  "rel": "science/exoplanets/radial-velocity.json",
-  "at": "formula_caption",
-  "old": "Die Geschwindigkeitssemiamplitude K wächst mit der Planetenmasse und nimmt mit der Umlaufperiode ab.",
-  "new": "Die Halbamplitude K der Geschwindigkeit wächst mit der Planetenmasse und nimmt mit der Umlaufperiode ab."
- },
- {
-  "rel": "science/exoplanets/super-earths-sub-neptunes.json",
-  "at": "title",
-  "old": "Supererden & Sub-Neptun",
-  "new": "Supererden & Sub-Neptune"
- },
- {
-  "rel": "science/exoplanets/super-earths-sub-neptunes.json",
-  "at": "narrative_101.0",
-  "old": "Unser eigenes System hat eine Lücke: nichts zwischen Erde und Neptun, ein Größenunterschied von fast Faktor vier ohne jegliche Mitglieder. Die Galaxie, wie sich herausstellt, liebt diese Lücke — Planeten darin sind die mit Abstand häufigste Art, die wir gefunden haben.",
-  "new": "Unser eigenes System hat eine Lücke: nichts zwischen Erde und Neptun, ein Größenfaktor von fast vier ohne ein einziges Mitglied. Die Galaxie, wie sich herausstellt, liebt diese Lücke — Planeten darin sind die mit Abstand häufigste Art, die wir gefunden haben."
- },
- {
-  "rel": "science/exoplanets/super-earths-sub-neptunes.json",
-  "at": "narrative_101.1",
-  "old": "Sie kommen in zwei Varianten vor, die ineinander übergehen: felsige ‚Supererden' bis etwa 1,5-facher Erdgröße und gasumhüllte ‚Sub-Neptun' oberhalb von etwa dem Doppelten der Erdgröße. Dazwischen liegt eine echte Seltenheit — das ‚Radiustal' — das darauf hindeutet, wie diese Welten ihre Atmosphären verlieren oder behalten.",
-  "new": "Sie kommen in zwei Varianten vor, die ineinander übergehen: felsige „Supererden“ bis etwa zum 1,5-Fachen der Erdgröße und gasumhüllte „Sub-Neptune“ ab etwa der doppelten Erdgröße. Dazwischen liegt eine echte Seltenheit — das „Radiustal“ —, das darauf hindeutet, wie diese Welten ihre Atmosphären verlieren oder behalten."
- },
- {
-  "rel": "science/exoplanets/super-earths-sub-neptunes.json",
-  "at": "body_paragraphs.0",
-  "old": "Statistisch gesehen sind Supererden und Sub-Neptun die häufigsten Planeten der Galaxie, doch das Sonnensystem enthält keine. Das ‚Radiustal' — ein Rückgang in der Anzahl der Planeten um 1,5–2 Erdradien — scheint nackte Gesteinskerne von Welten zu trennen, die eine dicke Wasserstoff-Helium- oder Dampfhülle behalten haben.",
-  "new": "Statistisch gesehen sind Supererden und Sub-Neptune die häufigsten Planeten der Galaxie, doch das Sonnensystem enthält keinen davon. Das „Radiustal“ — ein Einbruch in der Planetenzahl bei etwa 1,5–2 Erdradien — scheint nackte Gesteinskerne von Welten zu trennen, die eine dicke Hülle aus Wasserstoff und Helium oder Wasserdampf behalten haben."
- },
- {
-  "rel": "science/exoplanets/super-earths-sub-neptunes.json",
-  "at": "body_paragraphs.1",
-  "old": "Die Trennlinie wird wahrscheinlich durch atmosphärischen Verlust bestimmt: Planeten in Sternnähe können ihre leichten Hüllen durch Sternstrahlung abgetragen bekommen, wodurch eine felsige Supererde übrig bleibt, während jene, die die Hülle behalten, als größere Sub-Neptun mit geringerer Dichte erscheinen.",
-  "new": "Die Trennlinie wird wahrscheinlich durch das Entweichen der Atmosphäre bestimmt: Planeten in Sternnähe können ihre leichten Hüllen durch Sternstrahlung abgetragen bekommen, wodurch eine felsige Supererde übrig bleibt, während jene, die die Hülle behalten, als größere Sub-Neptune mit geringerer Dichte erscheinen."
- },
- {
-  "rel": "science/exoplanets/tidal-locking.json",
-  "at": "narrative_101.0",
-  "old": "Der Mond tut es mit der Erde: Er hält uns stets eine Seite zugewandt, weil Gezeitenkräfte seine Rotation mit seinem Umlauf synchronisiert haben. Das Gleiche geschieht mit Planeten, die ihre Sterne eng umkreisen.",
-  "new": "Der Mond macht es vor: Er kehrt uns stets dieselbe Seite zu, weil Gezeitenkräfte seine Rotation mit seinem Umlauf synchronisiert haben. Dasselbe geschieht mit Planeten, die dicht an ihren Sternen kleben."
- },
- {
-  "rel": "science/exoplanets/tidal-locking.json",
-  "at": "narrative_101.1",
-  "old": "Für eine Gesteinswelt in der habitablen Zone eines Roten Zwergs — die in Tagen umläuft, dicht herangezogen — ist gebundene Rotation nahezu unvermeidlich. Eine Hemisphäre backt in endlosem Tageslicht; die andere gefriert in endloser Nacht; ein Ring ewiger Dämmerung verläuft dazwischen.",
-  "new": "Für eine Gesteinswelt in der habitablen Zone eines Roten Zwergs — die in Tagen umläuft, dicht an den Stern geschmiegt — ist gebundene Rotation nahezu unvermeidlich. Eine Hemisphäre backt in endlosem Tageslicht; die andere gefriert in endloser Nacht; ein Ring ewiger Dämmerung verläuft dazwischen."
- },
- {
-  "rel": "science/exoplanets/tidal-locking.json",
-  "at": "narrative_101.2",
-  "old": "Es klingt lebensfeindlich, ist aber nicht notwendigerweise tödlich für Leben. Eine dicke Atmosphäre oder ein Ozean kann Wärme um den Planeten tragen und die Extreme ausgleichen — eine der großen offenen Fragen für die Habitabilität von Roten Zwergen.",
-  "new": "Es klingt lebensfeindlich, ist für Leben aber nicht zwangsläufig tödlich. Eine dicke Atmosphäre oder ein Ozean kann Wärme um den Planeten tragen und die Extreme ausgleichen — eine der großen offenen Fragen für die Bewohnbarkeit von Planeten Roter Zwerge."
- },
- {
-  "rel": "science/exoplanets/tidal-locking.json",
-  "at": "body_paragraphs.1",
-  "old": "Die Folge ist ein extremer, permanenter Temperaturkontrast zwischen dem substellaren ‚Auge' und der antistellaren Nachtseite. Ob das bewohnbar ist, hängt vom Wärmetransport ab: Klimamodelle zeigen, dass eine ausreichend dicke Atmosphäre oder ein globaler Ozean Wärme umverteilen und den Terminator — oder sogar große Teile der Nachtseite — gemäßigt halten können.",
-  "new": "Die Folge ist ein extremer, permanenter Temperaturkontrast zwischen dem substellaren „Auge“ und der antistellaren Nachtseite. Ob das bewohnbar ist, hängt vom Wärmetransport ab: Klimamodelle zeigen, dass eine ausreichend dicke Atmosphäre oder ein globaler Ozean Wärme umverteilen und den Terminator — oder sogar große Teile der Nachtseite — gemäßigt halten können."
- },
- {
-  "rel": "science/exoplanets/tidal-locking.json",
-  "at": "body_paragraphs.2",
-  "old": "Da Rote Zwerge den Großteil der Immobilien in habitablen Zonen der Galaxie beherbergen, ist das Schicksal gebundener Welten wie Proxima b zentral dafür, ob die häufigsten habitablen Zonen tatsächlich bewohnbar sind.",
-  "new": "Da Rote Zwerge den größten Teil der habitablen Zonen der Galaxie beherbergen, entscheidet das Schicksal gebundener Welten wie Proxima b darüber, ob die häufigsten habitablen Zonen tatsächlich bewohnbar sind."
- },
- {
-  "rel": "science/exoplanets/transit-timing.json",
-  "at": "title",
-  "old": "Transitzeitvariationen",
-  "new": "Transit-Timing-Variationen"
- },
- {
-  "rel": "science/exoplanets/transit-timing.json",
-  "at": "narrative_101.0",
-  "old": "Ein einzelner transitierender Planet trifft ein wie ein Uhrwerk — gleicher Abstand, jede Umlaufbahn. Aber setze mehrere Planeten in ein System und ihre gegenseitige Gravitation schubst sie, sodass Transite ein wenig früher oder ein wenig später in einem sich wiederholenden Muster eintreffen.",
-  "new": "Ein einzelner transitierender Planet trifft ein wie ein Uhrwerk — gleicher Abstand, jeder Umlauf. Bringt man aber mehrere Planeten in einem System unter, stupsen sie einander durch ihre gegenseitige Gravitation an, sodass die Transite in einem sich wiederholenden Muster ein wenig früher oder ein wenig später eintreffen."
- },
- {
-  "rel": "science/exoplanets/transit-timing.json",
-  "at": "narrative_101.1",
-  "old": "Diese wenigen Minuten Drift sind eine Gravitationssignatur. Modelliere sie und du kannst die Planeten allein durch ihre Anziehung wiegen — kein Spektrograph nötig — und manchmal auf einen Planeten schließen, der niemals transitiert, sondern nur durch seinen Zug an den anderen spürbar ist.",
-  "new": "Diese wenigen Minuten Drift sind eine Gravitationssignatur. Modelliert man sie, lassen sich die Planeten allein anhand ihrer Anziehung wiegen — ohne Spektrografen — und manchmal lässt sich auf einen Planeten schließen, der nie transitiert und nur durch seinen Zug an den anderen spürbar ist."
- },
- {
-  "rel": "science/exoplanets/transit-timing.json",
-  "at": "narrative_101.2",
-  "old": "So wurden die sieben kleinen Welten von TRAPPIST-1 gewogen: zu lichtschwach für Radialgeschwindigkeit, kamen ihre Massen aus der Art, wie sie einander über den Stern hinweg beschleunigen und verzögern.",
-  "new": "So wurden die sieben kleinen Welten von TRAPPIST-1 gewogen: Für die Radialgeschwindigkeit zu lichtschwach, verrieten sie ihre Massen dadurch, wie sie einander beim Zug über den Stern hinweg beschleunigen und verzögern."
- },
- {
-  "rel": "science/exoplanets/transit-timing.json",
-  "at": "body_paragraphs.1",
-  "old": "TTVs glänzen genau dort, wo Radialgeschwindigkeit kämpft — um lichtschwache, kleine Sterne, deren Doppler-Wobble im Rauschen vergraben ist — und sie können nicht-transitierende Planeten allein durch ihren Einfluss enthüllen. Sie sind am empfindlichsten nahe Bahnresonanzen, wo wiederholte nahe Begegnungen die Anziehungen verstärken.",
-  "new": "TTVs spielen ihre Stärke genau dort aus, wo die Radialgeschwindigkeit an Grenzen stößt — bei lichtschwachen, kleinen Sternen, deren Doppler-Taumeln im Rauschen untergeht — und sie können nicht transitierende Planeten allein durch ihren Einfluss enthüllen. Am empfindlichsten sind sie nahe Bahnresonanzen, wo wiederholte nahe Begegnungen die Anziehungen verstärken."
- },
- {
-  "rel": "science/exoplanets/transit-timing.json",
-  "at": "body_paragraphs.2",
-  "old": "Die Massen der Methode ergänzen Transitradien, um Dichten zu erhalten, weshalb kompakte resonante Systeme wie TRAPPIST-1 und Keplers Multiplanetenketten so gut charakterisiert sind, obwohl sie dunkle Sterne umkreisen.",
-  "new": "Die Massen aus dieser Methode ergänzen die Transitradien zu Dichten. Deshalb sind kompakte resonante Systeme wie TRAPPIST-1 und die Mehrplanetenketten von Kepler so gut charakterisiert, obwohl sie lichtschwache Sterne umkreisen."
- },
- {
-  "rel": "science/exoplanets/transit.json",
-  "at": "narrative_101.0",
-  "old": "Wenn die Umlaufbahn eines Planeten zufällig von der Kante zu uns ausgerichtet ist, passiert er einmal pro Umlauf direkt zwischen uns und seinem Stern — ein Transit — und der Stern wird um einen winzigen, präzisen Bruchteil dunkler, während der Planet davor steht.",
-  "new": "Wenn wir zufällig genau auf die Kante der Umlaufbahn eines Planeten blicken, passiert er einmal pro Umlauf direkt zwischen uns und seinem Stern — ein Transit — und der Stern wird um einen winzigen, präzisen Bruchteil dunkler, solange der Planet davor steht."
- },
- {
-  "rel": "science/exoplanets/transit.json",
-  "at": "narrative_101.1",
-  "old": "Die Tiefe dieses Abfalls ist einfach das Verhältnis der Flächen: Ein größerer Planet blockiert mehr Licht. Eine Erde, die die Sonne kreuzt, verdunkelt sie um etwa einen Teil von zehntausend; ein Jupiter um ein Prozent. Wenn man die sich wiederholenden Abfälle nach der Uhr erfasst, hat man die Größe und Umlaufperiode eines Planeten.",
-  "new": "Die Tiefe dieses Abfalls ist schlicht das Verhältnis der Flächen: Ein größerer Planet blockiert mehr Licht. Eine Erde, die vor der Sonne vorbeizieht, verdunkelt sie um etwa ein Zehntausendstel; ein Jupiter um ein Prozent. Sieht man die Abfälle im Uhrentakt wiederkehren, hat man Größe und Umlaufperiode eines Planeten."
- },
- {
-  "rel": "science/exoplanets/transit.json",
-  "at": "body_paragraphs.0",
-  "old": "Die Transitphotometrie ist bei weitem die produktivste Methode und für die große Mehrheit der bekannten Exoplaneten verantwortlich. Sie misst den Radius eines Planeten direkt (aus dem fraktionalen Abfall des Sternenlichts) und seine Umlaufperiode (aus dem Abstand der Abfälle); kombiniert mit einer Radialgeschwindigkeitsmasse ergibt dies eine mittlere Dichte.",
-  "new": "Die Transitphotometrie ist mit Abstand die produktivste Methode und für die große Mehrheit der bekannten Exoplaneten verantwortlich. Sie misst den Radius eines Planeten direkt (aus dem relativen Abfall des Sternenlichts) und seine Umlaufperiode (aus dem Abstand der Abfälle); kombiniert mit einer per Radialgeschwindigkeit bestimmten Masse ergibt dies eine mittlere Dichte."
- }
+  {
+    "rel": "science/_landing.json",
+    "at": "intro_paragraphs.0",
+    "old": "Willkommen. Dies ist der Teil von Orrery, in dem die Knöpfe aufhören, magisch zu sein. Jede Beschriftung im HUD, jede farbige Kontur im Porkchop, jeder Brennmarker auf der Flugbahn – dieser Abschnitt erklärt, woher sie kommen. Lesen Sie es wie einen Comic: Die Diagramme erledigen den Großteil der Arbeit, und jeder kursivierte Begriff ist ein Link, dem Sie so weit folgen können, wie Sie möchten.",
+    "new": "Willkommen. Dies ist der Teil von Orrery, in dem die Knöpfe aufhören, Magie zu sein. Jede Beschriftung im HUD, jede farbige Kontur im Porkchop, jede Manövermarkierung auf der Flugbahn – dieser Abschnitt erklärt, woher sie kommen. Lesen Sie ihn wie einen Comic: Die Diagramme leisten den Großteil der Arbeit, und jeder kursiv gesetzte Begriff ist ein Link, dem Sie so tief folgen können, wie Sie möchten."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "intro_paragraphs.1",
+    "old": "Wir werden zusammen eine Rakete bauen. Keine echte – Orrery ist ein Simulator –, aber dieselbe Kette von Entscheidungen, die ein echtes Flugteam trifft, in der Reihenfolge, in der es sie treffen würde. Am Ende werden Sie wissen, warum Startfenster alle 26 Monate für den Mars und jeden Monat für den Mond auftreten, warum es eine Free-Return-Flugbahn gibt und warum Schub der billigste Teil einer Mission ist und Treibstoff der gesamte Kampf.",
+    "new": "Wir bauen gemeinsam eine Rakete. Keine echte – Orrery ist ein Simulator –, aber mit derselben Kette von Entscheidungen, die ein echtes Flugteam trifft, und in derselben Reihenfolge. Am Ende wissen Sie, warum Startfenster zum Mars nur alle 26 Monate und zum Mond jeden Monat auftreten, warum es eine Free-Return-Flugbahn gibt und warum der Schub der billigste Teil einer Mission ist, während der Treibstoff der eigentliche Kampf ist."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.0.paragraphs.0",
+    "old": "Vergessen Sie Raketen für eine Sekunde. Stehen Sie auf der Erde, werfen Sie einen Baseball so hart Sie können. Er kommt zurück. Werfen Sie ihn härter, er landet weiter weg. Werfen Sie ihn so hart, dass sich der Boden schneller wegkrümmt als der Ball fällt, und der Ball verfehlt den Planeten – für immer. Das ist eine [Umlaufbahn](orbits/keplerian-orbit). Jedes Raumfahrzeug, jeder Planet, jeder Felsen im Asteroidengürtel führt diesen Trick um etwas Schwereres herum aus.",
+    "new": "Vergessen Sie für einen Moment die Raketen. Stellen Sie sich auf die Erde und werfen Sie einen Baseball, so fest Sie können. Er fällt wieder herunter. Werfen Sie ihn fester, landet er weiter weg. Werfen Sie ihn so fest, dass sich der Boden schneller wegkrümmt, als der Ball fällt, und der Ball verfehlt den Planeten – für immer. Das ist eine [Umlaufbahn](orbits/keplerian-orbit). Jedes Raumfahrzeug, jeder Planet, jeder Felsbrocken im Asteroidengürtel vollführt diesen Trick um etwas Schwereres."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.0.paragraphs.1",
+    "old": "Eine Umlaufbahn ist eine Ellipse. Sie hat eine [Größe](orbits/semi-major-axis), eine [Form](orbits/eccentricity) (rund vs. gestreckt), eine [Neigung](orbits/inclination) und eine Phase, die Ihnen sagt, wo auf der Ellipse sich das Raumfahrzeug gerade befindet ([wahre Anomalie](orbits/true-anomaly)). Fünf Zahlen, und Sie können die Position jedes Objekts im Sonnensystem vorhersagen, für immer, ohne weitere Daten. Das sind [Keplers drei Gesetze](orbits/keplers-laws), niedergeschrieben 1609 – sie funktionieren immer noch.",
+    "new": "Eine Umlaufbahn ist eine Ellipse. Sie hat eine [Größe](orbits/semi-major-axis), eine [Form](orbits/eccentricity) (rund oder gestreckt), eine [Neigung](orbits/inclination) und eine Phase, die Ihnen sagt, wo auf der Ellipse sich das Raumfahrzeug gerade befindet ([wahre Anomalie](orbits/true-anomaly)). Fünf Zahlen, und Sie können die Position jedes Objekts im Sonnensystem für alle Zeit vorhersagen, ohne weitere Daten. Das sind [Keplers drei Gesetze](orbits/keplers-laws), 1609 niedergeschrieben – und sie funktionieren bis heute."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.0.paragraphs.2",
+    "old": "Die einzelne nützlichste Gleichung, die Sie hier treffen werden, ist [Vis-Viva](orbits/vis-viva). Geben Sie Ihren Radius und die Größe Ihrer Umlaufbahn ein, und heraus kommt Ihre Geschwindigkeit. Das ist alles. Erde im Perihel: 30,3 km/s. Erde im Aphel: 29,3 km/s. Dieselbe Umlaufbahn, dieselbe Energie, unterschiedliche Geschwindigkeit.",
+    "new": "Die nützlichste Gleichung, der Sie hier begegnen werden, ist [Vis-Viva](orbits/vis-viva). Geben Sie Ihren Radius und die Größe Ihrer Umlaufbahn ein, und heraus kommt Ihre Geschwindigkeit. Das ist alles. Die Erde im Perihel: 30,3 km/s. Die Erde im Aphel: 29,3 km/s. Dieselbe Umlaufbahn, dieselbe Energie, unterschiedliche Geschwindigkeit."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.1.diagram_caption",
+    "old": "Die grausame Wahrheit: Das Verdoppeln Ihres ∆v bedeutet, viel mehr als das 2-fache an Treibstoff zu verbrennen.",
+    "new": "Die grausame Wahrheit: Wer sein ∆v verdoppeln will, muss weit mehr als 2× so viel Treibstoff verbrennen."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.1.paragraphs.0",
+    "old": "Nun: Wie ändert man Umlaufbahnen? Man verbrennt Treibstoff. [∆v](propulsion/dv-budget) (\"Delta-v\") ist die universelle Währung der Raumfahrt – die gesamte Geschwindigkeitsänderung, die eine Mission benötigt. Jede Bewegung, die Sie auf einer Flugbahn machen, hat einen Preis in km/s.",
+    "new": "Nun: Wie wechselt man die Umlaufbahn? Man verbrennt Treibstoff. [∆v](propulsion/dv-budget) („Delta-v“) ist die universelle Währung der Raumfahrt – die gesamte Geschwindigkeitsänderung, die eine Mission benötigt. Jedes Manöver auf einer Flugbahn hat einen Preis in km/s."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.1.paragraphs.1",
+    "old": "Und dieser Preis ist brutal. Die [Tsiolkovsky-Raketengleichung](propulsion/tsiolkovsky) besagt, dass ∆v mit dem Logarithmus skaliert, wie viel von Ihrer Rakete Treibstoff ist. Wollen Sie das doppelte ∆v? Sie tragen nicht das Doppelte an Treibstoff – Sie tragen exponentiell mehr. Deshalb bestand eine Saturn V zu 90 % aus Treibstoff. Der Großteil der Rakete ist der Treibstoff, der den Treibstoff hebt, der den Treibstoff hebt, der das Raumfahrzeug hebt.",
+    "new": "Und dieser Preis ist brutal. Die [Tsiolkovsky-Raketengleichung](propulsion/tsiolkovsky) besagt, dass ∆v mit dem Logarithmus des Treibstoffanteils Ihrer Rakete wächst. Wollen Sie ein doppelt so großes ∆v? Dann tragen Sie nicht doppelt so viel Treibstoff mit – sondern exponentiell mehr. Deshalb bestand eine Saturn V zu 90 % aus Treibstoff. Der Großteil der Rakete ist der Treibstoff, der den Treibstoff hebt, der den Treibstoff hebt, der das Raumfahrzeug hebt."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.1.paragraphs.2",
+    "old": "Zwei Zahlen bekämpfen diese Gravitationssteuer. Der Schub sagt Ihnen, wie stark das Triebwerk drückt – das ist die Zahl, die nach dem Start wirklich niemanden interessiert. Der [spezifische Impuls](propulsion/specific-impulse) sagt Ihnen, wie effizient das Triebwerk schiebt – und das ist die Zahl, die zählt. Eine chemische Rakete erreicht ~450 Sekunden. Ein Ionentriebwerk erreicht 4.000+ – nippt monatelang am Treibstoff und übertrifft alles Chemische für Tiefraumflüge.",
+    "new": "Zwei Zahlen bekämpfen diese Gravitationssteuer. Der Schub sagt Ihnen, wie kräftig das Triebwerk schiebt – diese Zahl interessiert nach dem Start eigentlich niemanden mehr. Der [spezifische Impuls](propulsion/specific-impulse) sagt Ihnen, wie effizient das Triebwerk schiebt – und er ist es, der zählt. Eine chemische Rakete erreicht ~450 Sekunden. Ein Ionentriebwerk erreicht 4.000+ – es nippt monatelang am Treibstoff und schlägt bei Flügen durch den Tiefraum alles Chemische."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.1.paragraphs.3",
+    "old": "Der beste Zaubertrick von allen: der [Oberth-Effekt](propulsion/oberth-effect). Das Zünden Ihres Triebwerks, wenn Sie bereits schnell unterwegs sind (tief und nah an einem Planeten), gibt Ihnen viel mehr für denselben Treibstoff. Deshalb führt jede interplanetare Mission ihr großes Abflugmanöver im Perigäum durch, nah an der Erde, so schnell wie die Physik erlaubt. Freie Energie aus Geometrie.",
+    "new": "Der beste Zaubertrick von allen: der [Oberth-Effekt](propulsion/oberth-effect). Zündet man das Triebwerk, wenn man bereits schnell unterwegs ist (tief und nah an einem Planeten), bringt dieselbe Treibstoffmenge viel mehr. Deshalb führt jede interplanetare Mission ihr großes Abflugmanöver im Perigäum durch, dicht über der Erde, so schnell, wie die Physik es erlaubt. Freie Energie aus Geometrie."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.2.diagram_caption",
+    "old": "Zwei Brennmanöver, eine Ellipse. Der billigste Weg, Umlaufbahnen zu wechseln.",
+    "new": "Zwei Zündungen, eine Ellipse. Der billigste Weg, die Umlaufbahn zu wechseln."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.2.paragraphs.0",
+    "old": "Robert Heinlein schrieb es: \"Sobald Sie im Orbit sind, sind Sie auf halbem Weg zu überall im Sonnensystem.\" Er scherzte nicht. Den niedrigen Erdorbit zu erreichen kostet ~9,4 km/s an ∆v. Von dort zum Mars zu gelangen kostet weitere ~3,6 km/s. Der schwierigste Teil liegt bereits hinter Ihnen.",
+    "new": "Robert Heinlein hat es so formuliert: „Sobald Sie im Orbit sind, sind Sie auf halbem Weg zu überall im Sonnensystem.“ Er scherzte nicht. Den niedrigen Erdorbit zu erreichen kostet ~9,4 km/s an ∆v. Von dort zum Mars zu gelangen kostet weitere ~3,6 km/s. Der schwierigste Teil liegt bereits hinter Ihnen."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.2.paragraphs.1",
+    "old": "Die billigste interplanetare Route ist ein [Hohmann-Transfer](transfers/hohmann-transfer): eine Ellipse, die gerade eben die Erdumlaufbahn an einem Ende und die Umlaufbahn des Ziels am anderen Ende küsst. Zwei Brennmanöver, kein verschwendeter Treibstoff. Zum Mars dauert es ~8,5 Monate. Langsam, aber optimal.",
+    "new": "Die billigste interplanetare Route ist ein [Hohmann-Transfer](transfers/hohmann-transfer): eine Ellipse, die an einem Ende die Erdumlaufbahn und am anderen die Umlaufbahn des Ziels gerade eben berührt. Zwei Zündungen, kein verschwendeter Treibstoff. Bis zum Mars dauert sie ~8,5 Monate. Langsam, aber optimal."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.2.paragraphs.2",
+    "old": "Wollen Sie schneller sein? Lösen Sie ein [Lambert-Problem](transfers/lambert-problem) – wählen Sie Ihr Abflugdatum und Ihre Transferzeit, und Lambert sagt Ihnen die eindeutige [Transferellipse](transfers/transfer-ellipse), die sie verbindet. Genau das macht Orrery's [/plan](app:/plan)-Bildschirm, zehntausend Mal parallel, um einen Porkchop-Plot zu zeichnen.",
+    "new": "Wollen Sie schneller sein? Lösen Sie ein [Lambert-Problem](transfers/lambert-problem) – wählen Sie Ihr Abflugdatum und Ihre Transferzeit, und Lambert liefert Ihnen die eindeutige [Transferellipse](transfers/transfer-ellipse), die beide verbindet. Genau das erledigt die [/plan](app:/plan)-Ansicht von Orrery zehntausendmal parallel, um einen Porkchop-Plot zu zeichnen."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.2.paragraphs.3",
+    "old": "Müssen Sie noch weiter gehen? Stehlen Sie Geschwindigkeit von einem Planeten. Ein [Gravity-Assist](transfers/gravity-assist) nutzt einen Vorbeiflug, um Ihre Flugbahn ohne Treibstoffkosten zu ändern – Voyager 2 nutzte vier davon, um Neptun zu erreichen. Das gesamte Sonnensystem fügt sich zu [Patched Conics](transfers/patched-conics) zusammen: eine Reihe von [Kegelschnitt](transfers/conic-sections)-Bögen, die zwischen Gravitationsnachbarschaften wie Staffelstäbe in einem Staffellauf übergeben werden.",
+    "new": "Sie wollen noch weiter hinaus? Dann stehlen Sie einem Planeten Geschwindigkeit. Ein [Swing-by](transfers/gravity-assist) nutzt einen Vorbeiflug, um Ihre Flugbahn ohne Treibstoffkosten zu ändern – Voyager 2 nutzte vier davon, um Neptun zu erreichen. Das gesamte Sonnensystem fügt sich zu [Patched Conics](transfers/patched-conics) zusammen: einer Reihe von [Kegelschnitt](transfers/conic-sections)-Bögen, die zwischen den Gravitationsbereichen wie Staffelstäbe in einem Staffellauf weitergereicht werden."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.3.diagram_caption",
+    "old": "Ein Porkchop. Jede Kontur ist konstantes ∆v; der Lappen ist, wenn die Natur Mars günstig macht.",
+    "new": "Ein Porkchop. Jede Kontur markiert ein konstantes ∆v; im Lappen macht die Natur den Mars günstig."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.3.paragraphs.0",
+    "old": "Erde und Mars stehen nicht still. Die Erde rast alle 365 Tage um die Sonne, der Mars alle 687. Ihre relative Geometrie wiederholt sich nur alle ~26 Monate – und die meisten dieser Monate sind die Planeten zu weit auseinander, auf den falschen Seiten der Sonne, um günstig erreicht zu werden. Missionsdesign beginnt mit einem Kalender, nicht mit einer Rakete.",
+    "new": "Erde und Mars stehen nicht still. Die Erde rast alle 365 Tage um die Sonne, der Mars alle 687. Ihre relative Geometrie wiederholt sich nur alle ~26 Monate – und in den meisten dieser Monate stehen die Planeten zu weit auseinander, auf den falschen Seiten der Sonne, um sie günstig zu erreichen. Die Missionsplanung beginnt mit einem Kalender, nicht mit einer Rakete."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.3.paragraphs.1",
+    "old": "Der [Porkchop-Plot](porkchop/what-is-a-porkchop) ist, wie Ingenieure dies sehen. Abflugdatum entlang [einer Achse](porkchop/departure-axis), [Flugzeit](porkchop/tof-axis) entlang der anderen, ∆v als [Farb-Heatmap](porkchop/dv-heatmap). Günstige Zonen erscheinen als ovale Lappen – die Startfenster. Außerhalb des Lappens: rot, teuer, unmöglich mit aktuellen Raketen. [Das Lesen der Konturen](porkchop/contour-reading) ist die halbe Arbeit eines Flugdynamikers.",
+    "new": "Im [Porkchop-Plot](porkchop/what-is-a-porkchop) sehen Ingenieure das. Das Abflugdatum liegt auf [einer Achse](porkchop/departure-axis), die [Flugzeit](porkchop/tof-axis) auf der anderen, ∆v als [Farb-Heatmap](porkchop/dv-heatmap). Günstige Zonen erscheinen als ovale Lappen – die Startfenster. Außerhalb des Lappens: rot, teuer, mit heutigen Raketen unmöglich. [Das Lesen der Konturen](porkchop/contour-reading) ist die halbe Arbeit eines Flugdynamikers."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.3.paragraphs.2",
+    "old": "Zwei Fachbegriffe, die Sie überall sehen werden: [C3](propulsion/c3) ist die Startenergie, die Ihre Rakete benötigt, um dem Gravitationsfeld der Erde zu entkommen. [V∞](propulsion/v-infinity) (\"v-unendlich\") ist Ihre Geschwindigkeit relativ zum Ziel in dem Moment, in dem Sie ankommen. Beide stammen direkt aus der Porkchop-Mathematik.",
+    "new": "Zwei Fachbegriffe, die Ihnen überall begegnen werden: [C3](propulsion/c3) ist die Startenergie, die Ihre Rakete benötigt, um dem Gravitationsfeld der Erde zu entkommen. [V∞](propulsion/v-infinity) („V-unendlich“) ist Ihre Geschwindigkeit relativ zum Ziel in dem Moment, in dem Sie ankommen. Beide ergeben sich direkt aus der Porkchop-Mathematik."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.4.heading",
+    "old": "5 – Der Flug besteht nur aus fünf Phasen in Wiederholung.",
+    "new": "5 – Ein Flug besteht nur aus fünf Phasen, die sich immer wiederholen."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.4.diagram_alt",
+    "old": "Atmosphärischer Eintritt, Fallschirm-Entfaltung, Retroantrieb, Landung.",
+    "new": "Atmosphärischer Eintritt, Fallschirmöffnung, Bremsantrieb, Landung."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.4.paragraphs.1",
+    "old": "[Start](mission-phases/launch) — aus der Atmosphäre hinaus und in die niedrige Erdumlaufbahn. [Trans-X-Injektion](mission-phases/trans-x-injection) — ein kraftvoller Manöverschub im Perigäum, der dich auf die Transferellipse zum Mond (TLI), zum Mars (TMI), zur Venus (TVI) oder zum Jupiter (TJI) schleudert. [Bahnkorrekturen](mission-phases/tcm) — kleine Schübe während der Reiseflugphase, um Streuungsfehler zu korrigieren. Normalerweise 1–3 davon. [Umlaufbahneinschuss](mission-phases/orbit-insertion) — ein Bremsmanöver am Ziel, um dich in eine Einfangbahn zu lenken. [EDL](mission-phases/edl) — Eintritt, Abstieg, Landung — für den Lander. Sechs Minuten überschallschnelles atmosphärisches Chaos.",
+    "new": "[Start](mission-phases/launch) — aus der Atmosphäre hinaus und in die niedrige Erdumlaufbahn. [Trans-X-Injektion](mission-phases/trans-x-injection) — eine einzige kräftige Zündung im Perigäum, die Sie auf die Transferellipse zum Mond (TLI), zum Mars (TMI), zur Venus (TVI) oder zum Jupiter (TJI) schleudert. [Bahnkorrekturmanöver](mission-phases/tcm) — winzige Zündungen im Reiseflug, um Streuungsfehler zu beheben. Meist 1–3 davon. [Einschwenken in die Umlaufbahn](mission-phases/orbit-insertion) — ein Bremsmanöver am Ziel, das Sie in eine Einfangbahn lenkt. [EDL](mission-phases/edl) — Eintritt, Abstieg, Landung — für den Lander. Sechs Minuten überschallschnelles atmosphärisches Chaos."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.4.paragraphs.2",
+    "old": "Mondmissionen machen manchmal einen Umweg durch eine [Near-Rectilinear Halo Orbit](mission-phases/nrho) (Gateway wird in einer solchen leben), und bemannte Apollo-Flüge flogen [Free-Return-Flugbahnen](transfers/free-return) – Achter-Pfade, die Sie automatisch zur Erde zurückbringen, wenn jedes Triebwerk am Raumfahrzeug ausfällt. Apollo 13 verdankt dieser Geometrie sein Leben.",
+    "new": "Mondmissionen nehmen manchmal einen Umweg über eine [nahezu geradlinige Halo-Bahn](mission-phases/nrho) (NRHO; Gateway wird auf einer solchen kreisen), und bemannte Apollo-Flüge folgten [Free-Return-Flugbahnen](transfers/free-return) – achtförmigen Bahnen, die Sie automatisch zur Erde zurückbringen, wenn jedes Triebwerk des Raumfahrzeugs ausfällt. Apollo 13 verdankt dieser Geometrie sein Leben."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.5.paragraphs.1",
+    "old": "Die [J2000-Epoche](scales-time/j2000) ist die Kalender-Null, die jeder Astrodynamiker verwendet. [Siderische vs. synodische Perioden](scales-time/sidereal-synodic) erklären, warum sich Mars-Fenster alle 26 Monate wiederholen statt alle 23. Die [Ekliptikebene](scales-time/ecliptic-plane) ist die flache Scheibe, auf der die Planeten alle (meistens) liegen. [Bezugssysteme](scales-time/frames) sind die Koordinatensysteme, zwischen denen die Missionskontrolle jongliert: erdzentriert, sonnenzentriert und körperzentriert.",
+    "new": "Die [J2000-Epoche](scales-time/j2000) ist der Kalendernullpunkt, den jeder Astrodynamiker verwendet. [Siderische und synodische Umlaufzeiten](scales-time/sidereal-synodic) erklären, warum sich die Marsfenster alle 26 Monate wiederholen statt alle 23. Die [Ekliptikebene](scales-time/ecliptic-plane) ist die flache Scheibe, in der (meistens) alle Planeten liegen. [Bezugssysteme](scales-time/frames) sind die Koordinatensysteme, zwischen denen die Missionskontrolle wechselt: erdzentriert, sonnenzentriert und körperzentriert."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.6.diagram_alt",
+    "old": "Ein stilisierter Astronaut, der in Mikrogravitation schwebt, mit Knochen-/Muskel-/Gegenmaßnahmen-Indikatorbalken.",
+    "new": "Ein stilisierter Astronaut, der in Mikrogravitation schwebt, mit Anzeigebalken für Knochen, Muskeln und Gegenmaßnahmen."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.6.diagram_caption",
+    "old": "Knochen, Muskeln, Sehvermögen, Gleichgewicht, Immunsystem – alles verdrahtet sich in Mikrogravitation neu, und nicht in Richtung Erde.",
+    "new": "Knochen, Muskeln, Sehvermögen, Gleichgewichtssinn, Immunsystem – in der Mikrogravitation stellt sich alles um, und zwar nicht in Richtung Erde."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.6.paragraphs.0",
+    "old": "Verbringen Sie sechs Monate im Orbit und Sie kommen kleiner, leichter und kürzer zurück, als Sie gegangen sind. [Mikrogravitation](life-in-space/microgravity-physiology) ist die Grundursache: Flüssigkeiten verteilen sich kopfwärts um, die Haltemuskeln werden entlastet, die [Knochen](life-in-space/bone-density-loss) verlieren 1–2 % ihrer Mineralien pro Monat, das [vestibuläre System](life-in-space/vestibular-adaptation) gibt auf, \"unten\" zu finden. Die [Gegenmaßnahmen](life-in-space/muscle-atrophy) – zwei Stunden Widerstands- und Ausdauertraining pro Tag auf ARED + dem Laufband – verlangsamen es, ohne es zu lösen.",
+    "new": "Verbringen Sie sechs Monate im Orbit, und Sie kommen kleiner, leichter und kürzer zurück, als Sie aufgebrochen sind. [Mikrogravitation](life-in-space/microgravity-physiology) ist die Grundursache: Flüssigkeiten verlagern sich kopfwärts, die Haltemuskeln werden entlastet, die [Knochen](life-in-space/bone-density-loss) verlieren pro Monat 1–2 % ihrer Mineralsubstanz, das [Gleichgewichtsorgan](life-in-space/vestibular-adaptation) gibt es auf, ein „Unten“ zu finden. Die [Gegenmaßnahmen](life-in-space/muscle-atrophy) – täglich zwei Stunden Kraft- und Ausdauertraining am ARED und auf dem Laufband – bremsen den Abbau, lösen das Problem aber nicht."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.6.paragraphs.1",
+    "old": "[Strahlung](life-in-space/radiation-exposure) ist das schwierigere Problem. Die ISS bekommt ~200 mSv/Jahr (vs. 3 mSv Hintergrundstrahlung auf der Erde); der Tiefraum außerhalb der Magnetosphäre ist 600+ mSv/Jahr, ohne bisher gute Abschirmungsstrategie. Eine Mars-Reise würde ein Besatzungsmitglied bei einer einzigen Hin- und Rückreise nahe an die Karriere-Grenze des Krebsrisikos bringen.",
+    "new": "[Strahlung](life-in-space/radiation-exposure) ist das schwierigere Problem. Auf der ISS kommen ~200 mSv/Jahr zusammen (gegenüber 3 mSv natürlicher Hintergrundstrahlung auf der Erde); im Tiefraum außerhalb der Magnetosphäre sind es 600+ mSv/Jahr, und eine gute Abschirmungsstrategie gibt es bisher nicht. Eine Reise in der Größenordnung einer Marsmission würde ein Besatzungsmitglied schon bei einer einzigen Hin- und Rückreise nahe an die Grenze des Krebsrisikos für ein ganzes Berufsleben bringen."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.6.paragraphs.2",
+    "old": "Dann gibt es [EVA](life-in-space/eva-physiology) (ein 6-Stunden-Ausdauerereignis in einem 4,3 psi Reinsauerstoff-Anzug) und [Langzeiteffekte](life-in-space/long-duration-effects) wie SANS – Space-Associated Neuro-ocular Syndrome –, bei dem 60 % der Langzeitbesatzung messbare Augenveränderungen entwickeln, die sich nicht vollständig umkehren. Dies sind die ungelösten Probleme, die zwischen der Menschheit und dem Mars stehen.",
+    "new": "Dazu kommen [EVA](life-in-space/eva-physiology) (ein sechsstündiger Ausdauereinsatz in einem Reinsauerstoff-Anzug mit 4,3 psi) und [Langzeiteffekte](life-in-space/long-duration-effects) wie SANS – Space-Associated Neuro-ocular Syndrome –, bei dem 60 % der Besatzungsmitglieder auf Langzeitflügen messbare Augenveränderungen entwickeln, die sich nicht vollständig zurückbilden. Das sind die ungelösten Probleme, die zwischen der Menschheit und dem Mars stehen."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.7.paragraphs.0",
+    "old": "[Weltraumfotografie](observation/space-photography) ist nicht das, was die Leute denken. Es gibt kein Klicken des Verschlusses; jedes Observatoriumsbild, das Sie gesehen haben, ist ein Stapel von Langzeitbelichtungen durch Schmalbandfilter, kalibriert, registriert, mit Falschfarben versehen. Die Hardware ist ein CCD- oder CMOS-Sensor – ein Raster von Photonenzählern – und die Daten sind die Zählung, nicht das Bild. Das Bild ist das, was Menschen aus der Zählung machen.",
+    "new": "[Weltraumfotografie](observation/space-photography) ist nicht das, was die Leute denken. Kein Verschluss klickt; jede Observatoriumsaufnahme, die Sie je gesehen haben, ist ein Stapel von Langzeitbelichtungen durch Schmalbandfilter – kalibriert, ausgerichtet, mit Falschfarben versehen. Die Hardware ist ein CCD- oder CMOS-Sensor, ein Raster aus Photonenzählern, und die Daten sind die Zählwerte, nicht das Bild. Das Bild ist das, was Menschen aus den Zählwerten machen."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.7.paragraphs.2",
+    "old": "Und die seltsamsten Objekte, die diese Methoden gefunden haben: [Schwarze Löcher](observation/black-holes) (real, kartiert, Schatten im Zentrum zweier Galaxien abgebildet) und [Wurmlöcher](observation/wormholes) (reine Mathematik, enthalten, damit Sie wissen, was Sie damit tun sollen, wenn Sie eines in einem Film sehen). Die Kategorie /fleet ↦ Observatory hat die tatsächlichen Maschinen – Hubble, JWST, Chandra, Spitzer, Kepler, TESS – jede mit ihrer eigenen Galerie dessen, was sie gesehen hat.",
+    "new": "Und die seltsamsten Objekte, die diese Methoden gefunden haben: [Schwarze Löcher](observation/black-holes) (real, kartiert, ihr Schatten im Zentrum zweier Galaxien abgebildet) und [Wurmlöcher](observation/wormholes) (reine Mathematik, aufgenommen, damit Sie wissen, was davon zu halten ist, wenn Sie eines in einem Film sehen). Die Kategorie /fleet ↦ Observatory enthält die echten Maschinen – Hubble, JWST, Chandra, Spitzer, Kepler, TESS –, jede mit einer eigenen Galerie dessen, was sie gesehen hat."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "tools.3.text",
+    "old": "36 echte Raumfahrzeuge, von Luna 9 bis Artemis II. Der FLIGHT-Tab jedes einzelnen zerlegt sein tatsächliches ∆v-Budget über die oben genannten Phasen.",
+    "new": "36 echte Raumfahrzeuge, von Luna 9 bis Artemis II. Der FLIGHT-Tab jedes einzelnen schlüsselt das tatsächliche ∆v-Budget auf die oben genannten Phasen auf."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "tools.4.text",
+    "old": "Grundwahrheit. Wo jeder Apollo, jeder Rover, jeder aktive Satellit tatsächlich sitzt.",
+    "new": "Die Wirklichkeit. Wo jede Apollo-Mission, jeder Rover und jeder aktive Satellit tatsächlich steht."
+  },
+  {
+    "rel": "science/cosmology/_intro.json",
+    "at": "headline",
+    "old": "Kosmologie – das Universum im Großen und wie wir seine Größe kennen.",
+    "new": "Kosmologie – das Universum im Großen und woher wir seine Größe kennen."
+  },
+  {
+    "rel": "science/cosmology/_intro.json",
+    "at": "paragraphs.0",
+    "old": "Zoomt man weit genug hinaus, spielt die einzelne Galaxie keine Rolle mehr. Sichtbar wird stattdessen Struktur: Galaxien, die sich zu Gruppen zusammenschließen, Gruppen zu Haufen, Haufen, die sich entlang von Filamenten und Schichten aneinanderreihen, welche beinahe leere Leerräume umspannen – das kosmische Netz. In diesem Tab geht es um diese größte Skala und um die Messkette, mit der wir ihr ehrliche Entfernungen zuordnen können.",
+    "new": "Zoomt man weit genug hinaus, spielt die einzelne Galaxie keine Rolle mehr. Sichtbar wird stattdessen Struktur: Galaxien, die sich zu Gruppen zusammenschließen, Gruppen zu Haufen, Haufen, die sich entlang von Filamenten und Schichten aneinanderreihen und beinahe leere Voids umspannen – das kosmische Netz. In diesem Tab geht es um diese größte Skala und um die Messkette, mit der wir ihr verlässliche Entfernungen zuordnen können."
+  },
+  {
+    "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+    "at": "intro_sentence",
+    "old": "2014 zeichneten Astronomen unsere kosmische Adresse neu — nicht durch Kartierung von Galaxienpositionen, sondern durch Verfolgung ihrer Strömungen. Das Ergebnis war Laniakea, ein Supercluster weit größer als der Virgo-Superhaufen.",
+    "new": "2014 zeichneten Astronomen unsere kosmische Adresse neu — nicht durch Kartierung der Galaxienorte, sondern ihrer Strömungen. Ergebnis: Laniakea, ein Superhaufen, weit größer als der Virgo-Superhaufen, den wir für unsere Heimat hielten."
+  },
+  {
+    "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+    "at": "body_paragraphs.0",
+    "old": "Die Idee ist grundlegend. Auf der Erde wird ein Einzugsgebiet nicht durch einen Zaun, sondern dadurch definiert, wie das Wasser fließt: jeder Tropfen, der zum selben Flussmündung fließt, gehört zum selben Becken. Brent Tullys Team wandte dieselbe Logik auf Galaxien an. Mit der Cosmicflows-Vermessung von Galaxiengeschwindigkeiten kartierten sie, wie jede Galaxie driftet, wenn die allgemeine Ausdehnung des Universums abgezogen wird, und zogen die Grenze, wo die Strömungen auseinander gehen.",
+    "new": "Der Gedanke ist der einer Wasserscheide. Auf der Erde wird ein Einzugsgebiet nicht durch einen Zaun bestimmt, sondern dadurch, wohin der Regen fließt: Jeder Tropfen, der in dieselbe Flussmündung strömt, gehört zum selben Einzugsgebiet. Das Team um Brent Tully wandte dieselbe Logik auf Galaxien an. Anhand der Cosmicflows-Vermessung von Galaxiengeschwindigkeiten kartierten sie, in welche Richtung jede Galaxie driftet, nachdem die allgemeine Expansion des Universums abgezogen ist, und zogen die Grenze dort, wo die Strömungen auseinanderlaufen."
+  },
+  {
+    "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+    "at": "body_paragraphs.1",
+    "old": "Das Ergebnis ist Laniakea — hawaiianisch für »immenser Himmel« — etwa 160 Megaparsec (500 Millionen Lichtjahre) breit und Heimat von rund 100.000 Galaxien. Unser Virgo-Superhaufen, einst für die ganze Nachbarschaft befunden, ist nur ein einzelner äußerer Lappen davon. Alles in Laniakea strömt langsam zu einem gravitativen Tiefpunkt hin.",
+    "new": "Das Ergebnis ist Laniakea — hawaiianisch für „unermesslicher Himmel“ — mit etwa 160 Megaparsec (500 Millionen Lichtjahren) Durchmesser und rund 100.000 Galaxien. Unser Virgo-Superhaufen, den man einst für die ganze Nachbarschaft hielt, erweist sich als nur ein einzelner äußerer Ausläufer davon. Alles in Laniakea strömt langsam auf einen gemeinsamen Tiefpunkt der Gravitation zu."
+  },
+  {
+    "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+    "at": "body_paragraphs.2",
+    "old": "Dieser Fokus ist der Große Attraktor, eine Massenkonzentration um den Norma-Galaxienhaufen (Abell 3627), etwa 65 Megaparsec entfernt. Er ist schwierig zu untersuchen, da er hinter den dichten Sternenwolken und Staub der eigenen Scheibe der Milchstraße liegt — der »Zone of Avoidance« — daher stammt vieles von unserem Wissen aus Radio- und Infrarotsuveys, die durch die Verdeckung sehen, und von den Galaxienbewegungen selbst.",
+    "new": "Dieser Brennpunkt ist der Große Attraktor, eine Massenkonzentration um den Norma-Galaxienhaufen (Abell 3627), etwa 65 Megaparsec entfernt. Er lässt sich schwer untersuchen, weil er hinter den dichten Sternwolken und dem Staub der Milchstraßenscheibe selbst liegt — der „Zone of Avoidance“ —, sodass vieles von unserem Wissen aus Radio- und Infrarot-Durchmusterungen stammt, die durch die Verdeckung hindurchsehen, und aus den Bewegungen der Galaxien selbst."
+  },
+  {
+    "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+    "at": "body_paragraphs.3",
+    "old": "Es endet dort nicht. Laniakea selbst ist nicht in Ruhe: der ganze Supercluster, zusammen mit seinen Nachbarn, wird in eine breitere Strömung zu einer noch größeren Massenkonzentration jenseits seiner Grenze gezogen — der Shapley-Superhaufen, die dichteste bekannte Ansammlung von Galaxienhaufen im nahegelegenen Universum. Ein Becken auf einer Neigung.",
+    "new": "Damit endet es nicht. Laniakea selbst ruht nicht: Der ganze Superhaufen wird zusammen mit seinen Nachbarn in eine großräumigere Strömung hineingezogen, die auf eine noch größere Massenkonzentration jenseits seiner Grenze zuläuft — den Shapley-Superhaufen, die dichteste bekannte Ansammlung von Galaxienhaufen im lokalen Universum. Ein Einzugsgebiet an einem Hang."
+  },
+  {
+    "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+    "at": "body_paragraphs.4",
+    "old": "Und es gibt eine überraschende Wendung. Diese Strömungen bauten sich über Milliarden Jahre auf, aber dunkle Energie treibt jetzt die Ausdehnung des Universums zu beschleunigen. Über kosmische Zeit hinweg gewinnt diese Beschleunigung: Laniakea ist gravitativ nicht gebunden und wird nicht zu einem einzelnen Objekt zusammenbrechen. Es ist ein Schnappschuss einer Strömung, keine Struktur, die bestehen wird — ein nützlicher Weg, unseren Platz zu benennen, nicht ein permanentes Zuhause.",
+    "new": "Und am Ende wartet eine Wendung. Diese Strömungen haben sich über Milliarden Jahre aufgebaut, doch die Dunkle Energie lässt die Expansion des Universums inzwischen immer schneller werden. Über kosmische Zeiträume gewinnt diese Beschleunigung: Laniakea ist gravitativ nicht gebunden und wird nicht zu einem einzelnen Objekt kollabieren. Es ist die Momentaufnahme einer Strömung, keine Struktur von Dauer — eine nützliche Art, unseren Platz zu benennen, kein dauerhaftes Zuhause."
+  },
+  {
+    "rel": "science/cosmology/laniakea-and-the-great-attractor.json",
+    "at": "diagram_caption",
+    "old": "Laniakea als Einzugsgebiet von Galaxienströmungen: Stromlinien konvergieren zum Großen Attraktor nahe dem Norma-Galaxienhaufen, mit dem Virgo-Superhaufen (unser Lappen und unsere Position) auf dem Rand. Die /explore Laniakea-Shell rendert diese Mitglieder schematisch — echte Entfernungen, illustratives Layout.",
+    "new": "Laniakea als Wasserscheide der Galaxienströme: Stromlinien laufen auf den Großen Attraktor nahe dem Norma-Galaxienhaufen zu, während der Virgo-Superhaufen (unser Ausläufer und unsere Position) am Rand liegt. Die Laniakea-Schale unter /explore stellt diese Mitglieder schematisch dar — reale Entfernungen, illustrative Anordnung."
+  },
+  {
+    "rel": "science/cosmology/large-scale-structure.json",
+    "at": "intro_sentence",
+    "old": "Auf den größten Skalen sind Galaxien nicht zufällig verteilt. Sie sammeln sich in Gruppen und Haufen, entlang von Filamenten und Wänden um riesige, fast leere Voids — ein Muster, das Astronomen das kosmische Netz nennen.",
+    "new": "Auf den größten Skalen sind Galaxien nicht zufällig verteilt. Sie bilden Gruppen und Haufen entlang von Filamenten und Wänden, die riesige, fast leere Voids umschließen — ein schaumartiges Muster, das Astronomen das kosmische Netz nennen."
+  },
+  {
+    "rel": "science/cosmology/large-scale-structure.json",
+    "at": "body_paragraphs.0",
+    "old": "Die Hierarchie verschachtelt sich. Sterne sammeln sich zu Galaxien; Galaxien stürzen gemeinsam in Gruppen (wie unsere Lokale Gruppe) und reiche Haufen (wie den Virgo-Galaxienhaufen, über tausend Galaxien in einem Gravitationspotential gebunden). Gruppen und Haufen werden selbst in Superhaufen gezogen — lockere, ausgedehnte Konzentrationen von Dutzenden Megaparsec Durchmesser. Unsere Lokale Gruppe liegt am Rand des Virgo-Superhaufen, ~33 Megaparsec (etwa 110 Millionen Lichtjahre) breit und auf den Virgo-Galaxienhaufen zentriert.",
+    "new": "Die Hierarchie ist verschachtelt. Sterne sammeln sich zu Galaxien; Galaxien fallen zu Gruppen zusammen (wie unsere Lokale Gruppe) und zu reichen Haufen (wie dem Virgo-Galaxienhaufen, in dem über tausend Galaxien in einer gemeinsamen Gravitationsmulde gebunden sind). Gruppen und Haufen werden ihrerseits in Superhaufen gezogen — lockere, weitläufige Konzentrationen von Dutzenden Megaparsec Durchmesser. Unsere Lokale Gruppe liegt am Rand des Virgo-Superhaufens, der ~33 Megaparsec (etwa 110 Millionen Lichtjahre) breit und auf den Virgo-Galaxienhaufen zentriert ist."
+  },
+  {
+    "rel": "science/cosmology/large-scale-structure.json",
+    "at": "body_paragraphs.1",
+    "old": "Superhaufen sind nicht die Spitze. Kartiert man die Bewegungen von Galaxien statt nur ihre Positionen, zeigt sich, dass der Virgo-Superhaufen ein Lappen eines weit größeren Einzugsgebiets ist — Laniakea, etwa 160 Megaparsec groß, 2014 definiert als die Region, in der Galaxienströme alle zu einem gemeinsamen Gravitationsfokus nahe dem Großer Attraktor fließen. Laniakea grenzt wiederum an benachbarte Superhaufen am Himmel.",
+    "new": "Superhaufen sind nicht die oberste Ebene. Kartiert man die Bewegungen der Galaxien statt nur ihrer Positionen, zeigt sich, dass der Virgo-Superhaufen ein Ausläufer eines weit größeren Einzugsgebiets ist — Laniakea, etwa 160 Megaparsec groß, 2014 definiert als die Region, in der alle Galaxienströme auf ein gemeinsames Gravitationszentrum nahe dem Großen Attraktor zulaufen. Laniakea grenzt seinerseits am Himmel an benachbarte Superhaufen."
+  },
+  {
+    "rel": "science/cosmology/large-scale-structure.json",
+    "at": "body_paragraphs.2",
+    "old": "Zwischen den hellen Filamenten liegen die Voids — gewaltige, ungefähr kugelförmige Regionen von Dutzenden Megaparsec Durchmesser, die fast leer von Galaxien sind. Das meiste Volumen des Universums ist Void; die meisten Galaxien leben in den dünnen Wänden und Fäden zwischen ihnen. In der größten Skala betrachtet, sieht die Verteilung wie ein Schwamm aus, oder ein Netz aus leuchtenden Fäden um dunkle Blasen.",
+    "new": "Zwischen den hellen Filamenten liegen die Voids — gewaltige, ungefähr kugelförmige Regionen von Dutzenden Megaparsec Durchmesser, die fast frei von Galaxien sind. Der größte Teil des Volumens des Universums besteht aus Voids; die meisten Galaxien leben in den dünnen Wänden und Fäden dazwischen. Im größten Maßstab betrachtet, gleicht die Verteilung einem Schwamm oder einem Netz aus leuchtenden Fäden um dunkle Blasen."
+  },
+  {
+    "rel": "science/cosmology/large-scale-structure.json",
+    "at": "body_paragraphs.3",
+    "old": "Dieses Muster ist nicht dekorativ — es ist das Fossil des frühen Universums. Winzige Dichtefluktuationen, die vorhanden waren, als das Universum 380.000 Jahre alt war, eingeprägt im kosmischen Mikrowellenhintergrund, wurden über Milliarden von Jahren durch Gravitation verstärkt: Dichte Regionen zogen mehr Materie an und wuchsen, leere Regionen leerten sich weiter. Dunkle Materie, die gewöhnliche Materie etwa fünf zu eins überwiegt, leistete das meiste Ziehen und legte das Gerüst an, das die sichtbaren Galaxien später beleuchteten.",
+    "new": "Dieses Muster ist nicht dekorativ — es ist das Fossil des frühen Universums. Winzige Dichteschwankungen, die vorhanden waren, als das Universum 380.000 Jahre alt war, und sich dem kosmischen Mikrowellenhintergrund eingeprägt haben, wurden über Milliarden von Jahren durch die Gravitation verstärkt: Dichte Regionen zogen mehr Materie an und wuchsen, leere Regionen leerten sich weiter. Dunkle Materie, die gewöhnliche Materie etwa im Verhältnis fünf zu eins überwiegt, übernahm den Großteil des Anziehens und legte das Gerüst an, das die sichtbaren Galaxien später zum Leuchten brachten."
+  },
+  {
+    "rel": "science/cosmology/large-scale-structure.json",
+    "at": "body_paragraphs.4",
+    "old": "Das kosmische Netz ist auch die Grenze der ehrlichen Karte. In diesen Entfernungen stammen Positionen aus der Rotverschiebung, nicht von einem Maßband, und die feinste Struktur ist modellabhängig — weshalb Orrery die äußeren Skalenschalen als explizite Schemata rendert, reale Entfernungen in einer illustrativen Anordnung, statt eine Präzision vorzutäuschen, die noch keine Durchmusterung hat.",
+    "new": "Das kosmische Netz ist auch die Grenze der ehrlichen Karte. In diesen Entfernungen stammen Positionen aus der Rotverschiebung, nicht von einem Maßband, und die feinste Struktur ist modellabhängig — weshalb Orrery die äußeren Skalenschalen ausdrücklich als Schemata darstellt, mit realen Entfernungen in einer illustrativen Anordnung, statt eine Präzision vorzutäuschen, die noch keine Durchmusterung erreicht."
+  },
+  {
+    "rel": "science/cosmology/large-scale-structure.json",
+    "at": "diagram_caption",
+    "old": "Die verschachtelte Hierarchie, die die /explore-Skalenleiter erklimmt: Lokale Gruppe → Local Sheet → Virgo-Superhaufen → Laniakea → das kosmische Netz aus Filamenten und Voids. Jede Schale ist ein Schema — reale Katalogentfernungen in einer illustrativen Anordnung, kein Foto einer Struktur, die kein Teleskop erfassen kann.",
+    "new": "Die verschachtelte Hierarchie, die die /explore-Skalenleiter erklimmt: Lokale Gruppe → Lokale Schicht → Virgo-Superhaufen → Laniakea → das kosmische Netz aus Filamenten und Voids. Jede Schale ist ein Schema — reale Katalogentfernungen in einer illustrativen Anordnung, kein Foto einer Struktur, die kein Teleskop erfassen kann."
+  },
+  {
+    "rel": "science/exoplanets/_intro.json",
+    "at": "paragraphs.1",
+    "old": "In diesem Tab geht es darum, wie wir sie finden: Die meisten Exoplaneten lassen sich nicht fotografieren, also spüren wir sie über ihre Fingerabdrücke auf – das Taumeln eines Sterns, eine periodische Verdunkelung, einen Gravitationsblitz. Danach wenden wir uns dem zu, was wir gelernt haben: habitable Zonen, Hot Jupiters, die sieben klingenden Welten von TRAPPIST-1 und der ehrliche Stand der Frage, die jeder stellt – sind wir allein?",
+    "new": "In diesem Tab geht es darum, wie wir sie finden: Die meisten Exoplaneten lassen sich nicht fotografieren, also spüren wir sie über ihre Fingerabdrücke auf – das Taumeln eines Sterns, eine periodische Verdunkelung, einen Gravitationsblitz. Danach wenden wir uns dem zu, was wir gelernt haben: habitable Zonen, heiße Jupiter, die sieben klingenden Welten von TRAPPIST-1 und der ehrliche Stand der Frage, die jeder stellt – sind wir allein?"
+  },
+  {
+    "rel": "science/exoplanets/are-we-alone.json",
+    "at": "intro_sentence",
+    "old": "Tausende Welten später ist die älteste Frage näher an einem Test als je zuvor — aber Ehrlichkeit darüber, was wir wissen und was nicht, ist die ganze Disziplin.",
+    "new": "Tausende Welten später ist die älteste Frage einem Test näher als je zuvor — doch Ehrlichkeit darüber, was wir wissen und was nicht, macht die ganze Disziplin aus."
+  },
+  {
+    "rel": "science/exoplanets/are-we-alone.json",
+    "at": "narrative_101.0",
+    "old": "Die Anzahl der Exoplaneten geht inzwischen in die Tausende, und Statistiken besagen, dass grob jeder Stern Planeten beherbergt, wobei kleine felsige Welten in habitablen Zonen in die Milliarden in der Galaxie gehen. Die Bühne für Leben ist zumindest gewaltig.",
+    "new": "Die Zahl der Exoplaneten geht inzwischen in die Tausende, und der Statistik zufolge besitzt etwa jeder Stern Planeten; kleine Gesteinsplaneten in habitablen Zonen gibt es in der Galaxie zu Milliarden. Die Bühne für Leben ist zumindest gewaltig."
+  },
+  {
+    "rel": "science/exoplanets/are-we-alone.json",
+    "at": "narrative_101.1",
+    "old": "Das ist es, was die Stille laut macht. Wenn habitables Territorium überall ist, wo sind alle? — die Frage, die Enrico Fermi beim Mittagessen formulierte, noch immer unbeantwortet.",
+    "new": "Das macht die Stille so laut. Wenn bewohnbarer Lebensraum überall zu haben ist, wo sind dann alle? — die Frage, die Enrico Fermi beim Mittagessen stellte und die bis heute unbeantwortet ist."
+  },
+  {
+    "rel": "science/exoplanets/are-we-alone.json",
+    "at": "narrative_101.2",
+    "old": "Wir sind von 'gibt es andere Welten?' — geklärt, ja — zu 'ist auf irgendeiner Leben?' übergegangen, eine Frage, die wir endlich anfangen können zu testen, statt nur darüber zu streiten.",
+    "new": "Wir sind von der Frage „Gibt es andere Welten?“ — geklärt, ja — zu „Lebt auf irgendeiner von ihnen etwas?“ gelangt, einer Frage, die wir endlich zu testen beginnen können, statt nur über sie zu streiten."
+  },
+  {
+    "rel": "science/exoplanets/are-we-alone.json",
+    "at": "body_paragraphs.0",
+    "old": "Die Drake-Gleichung rahmt die Chancen als eine Kette von Faktoren — wie viele Sterne, wie viele mit Planeten, wie viele habitabel, wie viele die Leben entwickeln, und so weiter. Die Exoplanetenforschung hat nun die ersten Faktoren beobachtend festgenagelt: Planeten sind häufig, und felsige Welten in habitablen Zonen reichlich vorhanden. Die späteren Faktoren bleiben unbekannt.",
+    "new": "Die Drake-Gleichung fasst die Chancen als Kette von Faktoren zusammen — wie viele Sterne, wie viele mit Planeten, wie viele habitabel, wie viele, auf denen Leben entsteht, und so weiter. Die Exoplanetenforschung hat die ersten Faktoren nun durch Beobachtung festgelegt: Planeten sind häufig, und Gesteinswelten in habitablen Zonen gibt es reichlich. Die späteren Faktoren bleiben unbekannt."
+  },
+  {
+    "rel": "science/exoplanets/are-we-alone.json",
+    "at": "body_paragraphs.1",
+    "old": "Der nächste Schritt ist empirisch, nicht philosophisch. Das Ablesen der Atmosphären gemäßigter felsiger Welten nach Biosignaturen — geduldig, mit Instrumenten und Standards, die gebaut wurden, um Überprüfung zu überstehen — ist, wie die Frage von den Vermutungen der Drake-Gleichung zu einer Messung übergeht.",
+    "new": "Der nächste Schritt ist empirisch, nicht philosophisch. Die Atmosphären gemäßigter Gesteinswelten auf Biosignaturen hin auszulesen — geduldig, mit Instrumenten und Standards, die darauf ausgelegt sind, kritischer Prüfung standzuhalten — ist der Weg, auf dem die Frage von den Mutmaßungen der Drake-Gleichung zu einer Messung gelangt."
+  },
+  {
+    "rel": "science/exoplanets/are-we-alone.json",
+    "at": "body_paragraphs.2",
+    "old": "Der ehrliche Stand der Technik: Kein Leben jenseits der Erde wurde entdeckt, keine Biosignatur bestätigt. Aber zum ersten Mal sind die Werkzeuge zum Suchen real — und das ist die stille Revolution, die die Exoplanetenära geliefert hat.",
+    "new": "Der ehrliche Stand der Dinge: Bisher wurde kein Leben jenseits der Erde entdeckt und keine Biosignatur bestätigt. Aber zum ersten Mal sind die Werkzeuge für die Suche real — und das ist die stille Revolution, die das Zeitalter der Exoplaneten gebracht hat."
+  },
+  {
+    "rel": "science/exoplanets/are-we-alone.json",
+    "at": "body_paragraphs.3",
+    "old": "Wir haben nicht nur zugehört, sondern auch gesprochen. 1974 strahlte das Radioteleskop Arecibo ein dreiminütiges Piktogramm in Richtung des Kugelsternhaufens M13 aus, 25.000 Lichtjahre entfernt, und 1977 verließen beide Voyager-Raumsonden die Erde mit der Golden Record an Bord — Grüße, Musik und Bilder, an eine Sonde geschraubt, die nun zwischen den Sternen driftet. Beides sind eher Gesten als Gespräche, aber sie sind die ersten bewussten Botschaften der Menschheit an wer auch immer da draußen sein mag.",
+    "new": "Wir haben nicht nur zugehört, sondern auch gesprochen. 1974 strahlte das Arecibo-Radioteleskop ein dreiminütiges Piktogramm in Richtung des Kugelsternhaufens M13 aus, 25.000 Lichtjahre entfernt, und 1977 verließen beide Voyager-Raumsonden die Erde mit der Golden Record an Bord — Grüße, Musik und Bilder, an eine Sonde geschraubt, die nun zwischen den Sternen driftet. Beides sind eher Gesten als Gespräche, aber es sind die ersten bewussten Botschaften der Menschheit an wen auch immer da draußen."
+  },
+  {
+    "rel": "science/exoplanets/astrometry.json",
+    "at": "narrative_101.1",
+    "old": "Die Schleife, die der Stern beschreibt, ist fantastisch klein und wird in Millionstel Grad gemessen, weshalb die Astrometrie lange Zeit der große Beinahe-Erfolg der Planetenjagd war: über Jahrzehnte versprochen, wenig geliefert, weil die Präzision einfach nicht vorhanden war.",
+    "new": "Die Schleife, die der Stern beschreibt, ist unglaublich klein und wird in Millionstel Grad gemessen. Deshalb war die Astrometrie lange der große Beinahe-Erfolg der Planetenjagd: jahrzehntelang versprochen, kaum etwas geliefert, weil die Präzision schlicht nicht vorhanden war."
+  },
+  {
+    "rel": "science/exoplanets/astrometry.json",
+    "at": "body_paragraphs.1",
+    "old": "Historisch führte es zu mehr Widerrufen als zu Planeten – Barnards Pfeilstern ist die klassische Warnung, seine berühmten „Planeten\" aus der Astrometrie der 1960er-Jahre alle falsch. Das Signal ist einfach winzig, und instrumentelle Abweichungen können es leicht vortäuschen.",
+    "new": "Historisch brachte sie mehr Widerrufe als Planeten hervor – Barnards Pfeilstern ist das klassische Warnbeispiel: Seine berühmten „Planeten“ aus der Astrometrie der 1960er-Jahre waren allesamt Scheinsignale. Das Signal ist einfach winzig, und instrumentelle Drift kann es leicht vortäuschen."
+  },
+  {
+    "rel": "science/exoplanets/astrometry.json",
+    "at": "body_paragraphs.2",
+    "old": "Gaias Ganzhimmel-Hochpräzisions-Astrometrie liefert nun echte Entdeckungen und, entscheidend, echte Massen für Planeten, die durch andere Methoden gefunden wurden — und schließt damit ein Kapitel, das fast ein Jahrhundert lang offen blieb.",
+    "new": "Die hochpräzise Astrometrie des gesamten Himmels durch Gaia liefert nun echte Entdeckungen und – entscheidend – echte Massen für Planeten, die mit anderen Methoden gefunden wurden. Damit schließt sich ein Kapitel, das fast ein Jahrhundert lang offen war."
+  },
+  {
+    "rel": "science/exoplanets/biosignatures.json",
+    "at": "intro_sentence",
+    "old": "Die Gase oder Merkmale im Licht eines Planeten, die Leben verraten könnten — und warum kein einzelnes jemals allein als Beweis ausreicht.",
+    "new": "Die Gase oder Merkmale im Licht eines Planeten, die Leben verraten könnten — und warum keines davon für sich allein je ein Beweis ist."
+  },
+  {
+    "rel": "science/exoplanets/biosignatures.json",
+    "at": "narrative_101.0",
+    "old": "Wenn eine ferne Welt Leben beherbergt, könnte es eine chemische Spur in ihrer Atmosphäre hinterlassen — ein Gas, das ohne etwas, das es produziert, nicht da sein sollte. Sauerstoff auf der Erde ist das klassische Beispiel: Er würde innerhalb weniger Millionen Jahre verschwinden, wenn die Photosynthese ihn nicht ständig nachliefern würde.",
+    "new": "Wenn eine ferne Welt Leben beherbergt, könnte es eine chemische Spur in ihrer Atmosphäre hinterlassen — ein Gas, das ohne eine Quelle, die es erzeugt, nicht dort sein dürfte. Sauerstoff auf der Erde ist das klassische Beispiel: Er würde innerhalb weniger Millionen Jahre verschwinden, wenn die Photosynthese ihn nicht ständig nachliefern würde."
+  },
+  {
+    "rel": "science/exoplanets/biosignatures.json",
+    "at": "narrative_101.1",
+    "old": "Das Problem ist, dass die Natur es vortäuschen kann. Sauerstoff, Methan und andere potenzielle ‚Biosignaturen' haben alle nichtlebende Wege zur Akkumulation, daher ist jeder einzelne Nachweis ein Hinweis, kein Urteil.",
+    "new": "Das Problem ist, dass die Natur es vortäuschen kann. Sauerstoff, Methan und andere mögliche „Biosignaturen“ können sich alle auch auf nichtbiologischem Weg anreichern; daher ist jeder einzelne Nachweis ein Hinweis, kein Urteil."
+  },
+  {
+    "rel": "science/exoplanets/biosignatures.json",
+    "at": "narrative_101.2",
+    "old": "Der ehrliche Test ist Kontext und Kombination: die richtigen Gase zusammen, außerhalb des chemischen Gleichgewichts, auf einer Welt, wo Geologie und Sternenlicht sie nicht leicht erklären können. Das ist eine hohe Messlatte, und sie zu erreichen ist der Sinn der Sache.",
+    "new": "Der ehrliche Test ist Kontext und Kombination: die richtigen Gase zusammen, außerhalb des chemischen Gleichgewichts, auf einer Welt, auf der Geologie und Sternenlicht sie nicht ohne Weiteres erklären können. Das ist eine hohe Messlatte, und sie zu erreichen ist der Sinn der Sache."
+  },
+  {
+    "rel": "science/exoplanets/biosignatures.json",
+    "at": "body_paragraphs.1",
+    "old": "Jede vorgeschlagene Biosignatur hat bekannte falsch-positive Ergebnisse. Sauerstoff kann sich auf manchen Welten durch Wasserphotolyse anreichern; Methan hat reichlich geologische Quellen. Daher betont das Forschungsfeld mehrere, sich gegenseitig verstärkende Beweislinien und sorgfältige Modellierung des Planeten und seines Sterns, bevor irgendeine Behauptung aufgestellt wird.",
+    "new": "Jede vorgeschlagene Biosignatur hat bekannte Fehlalarme. Sauerstoff kann sich auf manchen Welten durch Photolyse von Wasser anreichern; Methan hat zahlreiche geologische Quellen. Daher betont das Forschungsfeld mehrere, einander stützende Beweislinien und eine sorgfältige Modellierung von Planet und Stern, bevor irgendeine Behauptung aufgestellt wird."
+  },
+  {
+    "rel": "science/exoplanets/direct-imaging.json",
+    "at": "intro_sentence",
+    "old": "Blende das überwältigende Licht des Sterns aus, und bei einigen wenigen glücklichen Planeten kannst du den schwachen Lichtpunkt daneben fotografieren.",
+    "new": "Blendet man das überwältigende Licht des Sterns aus, lässt sich bei einigen wenigen glücklichen Planeten der schwache Lichtpunkt daneben fotografieren."
+  },
+  {
+    "rel": "science/exoplanets/direct-imaging.json",
+    "at": "narrative_101.1",
+    "old": "Das Problem ist der Kontrast. Ein Planet kann eine Milliarde Mal lichtschwächer sein als sein Stern und befindet sich direkt daneben, wie ein Glühwürmchen neben einem Leuchtturm zu entdecken. Daher verbirgt die Technik den Stern hinter einer Maske — einem Koronografen im Teleskop oder einem entfernten, frei fliegenden Starshade — und lässt das Licht des Planeten durch.",
+    "new": "Das Problem ist der Kontrast. Ein Planet kann eine Milliarde Mal lichtschwächer sein als sein Stern und steht unmittelbar neben ihm – so, als wollte man ein Glühwürmchen neben einem Leuchtturm erspähen. Deshalb verbirgt die Technik den Stern hinter einer Maske — einem Koronografen im Teleskop oder einer entfernten, frei fliegenden Sternblende (Starshade) — und lässt das Licht des Planeten durch."
+  },
+  {
+    "rel": "science/exoplanets/direct-imaging.json",
+    "at": "body_paragraphs.0",
+    "old": "Die direkte Abbildung blockiert oder nullt das Sternenlicht (mit einem Koronografen oder Interferometer), um Planeten und Scheiben sichtbar zu machen, die sonst im Glanz verloren gingen. Da sie das eigene Licht des Planeten erfasst, ermöglicht sie einzigartig die Spektroskopie der Welt in Isolation — eine direkte Aussage über ihre Temperatur und Atmosphäre.",
+    "new": "Die direkte Abbildung blendet das Sternenlicht aus oder löscht es aus (mit einem Koronografen oder Interferometer), um Planeten und Scheiben sichtbar zu machen, die sonst im gleißenden Licht untergingen. Da sie das eigene Licht des Planeten erfasst, erlaubt sie als einzige Methode die Spektroskopie der Welt für sich allein — eine direkte Aussage über ihre Temperatur und Atmosphäre."
+  },
+  {
+    "rel": "science/exoplanets/direct-imaging.json",
+    "at": "body_paragraphs.1",
+    "old": "Ihre Verzerrung ist das Spiegelbild der anderen: Sie bevorzugt große, selbstleuchtende Planeten weit von ihren Sternen entfernt (weite Umlaufbahnen erleichtern das Kontrastproblem, und Jugend hält den Planeten heiß und hell). Systeme wie HR 8799 — vier Riesenplaneten auf einmal abgebildet — und der skulptierte Trümmerring von Fomalhaut sind Vorzeigeobjekte.",
+    "new": "Ihr Auswahleffekt ist das Spiegelbild der anderen Methoden: Sie bevorzugt große, selbstleuchtende Planeten weit entfernt von ihren Sternen (weite Umlaufbahnen entschärfen das Kontrastproblem, und Jugend hält den Planeten heiß und hell). Systeme wie HR 8799 — vier Riesenplaneten auf einmal abgebildet — und der geformte Trümmerring von Fomalhaut sind Vorzeigeobjekte."
+  },
+  {
+    "rel": "science/exoplanets/exoplanet-atmospheres.json",
+    "at": "body_paragraphs.1",
+    "old": "JWST hat das Feld von heißen Riesen bis an die Grenze felsiger Weltatmosphären vorangebracht: klare Kohlendioxid-Nachweise auf Gasplaneten und empfindliche Suchen um TRAPPIST-1, die bisher darauf hindeuten, dass seine innersten Planeten weitgehend luftlos sind. Ausbrüche Roter Zwerge erschweren das Halten einer Atmosphäre, und genau dieses Urteil ist es, was diese Beobachtungen testen.",
+    "new": "JWST hat das Feld von heißen Riesen bis an die Schwelle der Atmosphären felsiger Welten vorangebracht: klare Kohlendioxid-Nachweise auf Gasplaneten und empfindliche Messungen um TRAPPIST-1, die bisher darauf hindeuten, dass seine innersten Planeten weitgehend luftlos sind. Ausbrüche Roter Zwerge erschweren das Halten einer Atmosphäre, und genau dieses Urteil prüfen diese Beobachtungen."
+  },
+  {
+    "rel": "science/exoplanets/fifty-one-pegasi.json",
+    "at": "intro_sentence",
+    "old": "1995 wurde ein Riesenplanet entdeckt, der alle vier Tage einen sonnenähnlichen Stern umkreist — die Entdeckung, die die Exoplaneten-Ära eröffnete und einen Nobelpreis gewann.",
+    "new": "1995 wurde ein Riesenplanet entdeckt, der alle vier Tage einen sonnenähnlichen Stern umkreist — die Entdeckung, die das Zeitalter der Exoplaneten eröffnete und einen Nobelpreis einbrachte."
+  },
+  {
+    "rel": "science/exoplanets/fifty-one-pegasi.json",
+    "at": "narrative_101.1",
+    "old": "Der Planet — 51 Pegasi b, informell Dimidium — war ein Schock: eine Welt von Jupitermasse, die ihren Stern in nur 4,2 Tagen umkreist, weit näher als man dachte, dass sich ein Riesenplanet bilden könnte. Der erste Exoplanet um einen normalen Stern war nichts, was irgendjemand vorhergesagt hatte.",
+    "new": "Der Planet — 51 Pegasi b, informell Dimidium — war ein Schock: eine Welt von Jupitermasse, die ihren Stern in nur 4,2 Tagen umkreist, weit näher, als sich nach damaliger Auffassung ein Riesenplanet überhaupt bilden konnte. Der erste Exoplanet um einen normalen Stern war etwas, das niemand vorhergesagt hatte."
+  },
+  {
+    "rel": "science/exoplanets/fifty-one-pegasi.json",
+    "at": "narrative_101.2",
+    "old": "Es öffnete die Schleusen. Innerhalb von Jahren tauchten Dutzende weitere ‚heiße Jupiter' auf, die Planetenentstehungstheorie erhielt ein Kapitel über Migration, und 2019 teilten sich Mayor und Queloz den Nobelpreis für Physik.",
+    "new": "Es öffnete die Schleusen. Innerhalb weniger Jahre tauchten Dutzende weitere „heiße Jupiter“ auf, die Theorie der Planetenentstehung bekam ein Kapitel über Migration, und 2019 teilten sich Mayor und Queloz den Nobelpreis für Physik."
+  },
+  {
+    "rel": "science/exoplanets/fifty-one-pegasi.json",
+    "at": "body_paragraphs.0",
+    "old": "51 Pegasi b wurde durch Radialgeschwindigkeit gefunden: ein klares ~4,2-Tage-Doppler-Wackeln enthüllte einen Planeten von mindestens der halben Jupitermasse, der gefährlich nahe an seinem Stern kreist. Es war der erste bestätigte Planet um einen Hauptreihenstern außer der Sonne.",
+    "new": "51 Pegasi b wurde mit der Radialgeschwindigkeitsmethode gefunden: Ein deutliches Doppler-Wackeln mit einer Periode von ~4,2 Tagen enthüllte einen Planeten von mindestens der halben Jupitermasse, der gefährlich nah um seinen Stern kreist. Es war der erste bestätigte Planet um einen Hauptreihenstern außer der Sonne."
+  },
+  {
+    "rel": "science/exoplanets/fifty-one-pegasi.json",
+    "at": "body_paragraphs.1",
+    "old": "Die Entdeckung war doppelt wichtig — sie bewies, dass die Radialgeschwindigkeitsmethode funktionierte, und sie enthüllte einen Planetentyp (den heißen Jupiter), der orbitale Migration erforderte und die Entstehungstheorie neu schrieb. Sein informeller Name, Dimidium, bedeutet ‚halb', wegen seiner Minimalmasse.",
+    "new": "Die Entdeckung war doppelt wichtig — sie bewies, dass die Radialgeschwindigkeitsmethode funktionierte, und sie enthüllte einen Planetentyp (den heißen Jupiter), der Bahnmigration erforderte und die Entstehungstheorie neu schrieb. Sein informeller Name, Dimidium, bedeutet „halb“ — wegen seiner Mindestmasse."
+  },
+  {
+    "rel": "science/exoplanets/fifty-one-pegasi.json",
+    "at": "body_paragraphs.2",
+    "old": "Der Nobelpreis für Physik 2019 würdigte Mayor und Queloz für die Entdeckung — der Moment, in dem sich das Studium anderer Welten von Philosophie in beobachtende Wissenschaft verwandelte.",
+    "new": "Der Nobelpreis für Physik 2019 würdigte Mayor und Queloz für die Entdeckung — der Moment, in dem sich das Studium anderer Welten von der Philosophie zu einer Beobachtungswissenschaft wandelte."
+  },
+  {
+    "rel": "science/exoplanets/habitable-zone.json",
+    "at": "narrative_101.0",
+    "old": "Wasser ist nur in einem engen Temperaturbereich flüssig, und die Temperatur nimmt mit der Entfernung von einem Stern ab. Daher gibt es um jeden Stern herum einen Ring von Umlaufbahnen – die habitable Zone –, in dem ein erdähnlicher Planet Ozeane halten könnte, anstatt sie zu verkochen oder zu gefrieren.",
+    "new": "Wasser ist nur in einem engen Temperaturbereich flüssig, und die Temperatur nimmt mit der Entfernung von einem Stern ab. Daher gibt es um jeden Stern herum einen Ring von Umlaufbahnen – die habitable Zone –, in dem ein erdähnlicher Planet Ozeane behalten könnte, statt dass sie verkochen oder gefrieren."
+  },
+  {
+    "rel": "science/exoplanets/habitable-zone.json",
+    "at": "narrative_101.1",
+    "old": "Die Zone ist nicht fest: Ein heißer, heller Stern schiebt sie weit hinaus; ein schwacher roter Zwerg zieht sie nah heran. Deshalb umkreisen Planeten in der habitablen Zone um rote Zwerge diese in Tagen, dicht an ihre Sterne geschmiegt.",
+    "new": "Die Zone ist nicht fest: Ein heißer, heller Stern schiebt sie weit hinaus; ein lichtschwacher Roter Zwerg zieht sie nah heran. Deshalb umkreisen Planeten in der habitablen Zone Roter Zwerge ihre Sterne in nur wenigen Tagen, dicht an sie geschmiegt."
+  },
+  {
+    "rel": "science/exoplanets/habitable-zone.json",
+    "at": "narrative_101.2",
+    "old": "‚Habitable Zone' ist eine hoffnungsvolle Abkürzung, kein Versprechen. Eine Welt dort könnte dennoch ein luftloser Fels oder ein galoppierendes Treibhaus sein – die Lage ist notwendig, aber nicht hinreichend.",
+    "new": "„Habitable Zone“ ist eine hoffnungsvolle Abkürzung, kein Versprechen. Eine Welt dort könnte dennoch ein luftloser Fels oder ein galoppierendes Treibhaus sein – die Lage ist notwendig, aber nicht hinreichend."
+  },
+  {
+    "rel": "science/exoplanets/habitable-zone.json",
+    "at": "body_paragraphs.0",
+    "old": "Die zirkumstellare habitable Zone wird durch den stellaren Strahlungsfluss definiert: Die innere Grenze liegt dort, wo ein galoppierendes Treibhaus die Ozeane verkochen würde (das Schicksal der Venus), die äußere Grenze dort, wo selbst ein starkes Kohlendioxid-Treibhaus das globale Einfrieren nicht verhindern kann (jenseits des Mars). Ihre Entfernung skaliert mit der Quadratwurzel der Sternenleuchtkraft, daher liegt sie weit von hellen Sternen und nahe bei lichtschwachen.",
+    "new": "Die zirkumstellare habitable Zone wird durch den stellaren Strahlungsfluss definiert: Die innere Grenze liegt dort, wo ein galoppierendes Treibhaus die Ozeane verkochen würde (das Schicksal der Venus), die äußere Grenze dort, wo selbst ein starkes Kohlendioxid-Treibhaus das globale Einfrieren nicht verhindern kann (jenseits des Mars). Ihr Abstand wächst mit der Quadratwurzel der Leuchtkraft des Sterns, sie liegt also weit von hellen Sternen entfernt und nahe an lichtschwachen."
+  },
+  {
+    "rel": "science/exoplanets/habitable-zone.json",
+    "at": "body_paragraphs.1",
+    "old": "Weil kleine rote Zwerge mit Abstand die häufigsten Sterne sind, umkreisen die meisten bekannten Planeten in der habitablen Zone diese – Welten wie TOI-700 d und mehrere der TRAPPIST-1-Planeten. Ihre engen Umlaufbahnen bringen Komplikationen mit sich: Gezeitenbindung und Exposition gegenüber stellaren Flares, die eine Atmosphäre abtragen können.",
+    "new": "Da kleine Rote Zwerge mit Abstand die häufigsten Sterne sind, umkreisen die meisten bekannten Planeten in der habitablen Zone solche Sterne – Welten wie TOI-700 d und mehrere der TRAPPIST-1-Planeten. Ihre engen Umlaufbahnen bringen Komplikationen mit sich: Gezeitenbindung und Flares des Sterns, die eine Atmosphäre abtragen können."
+  },
+  {
+    "rel": "science/exoplanets/habitable-zone.json",
+    "at": "body_paragraphs.2",
+    "old": "Die habitable Zone ist ein erster Filter, kein Urteil. Ob eine dieser Welten tatsächlich bewohnbar ist, hängt von Dingen ab, die uns die Zone nicht verraten kann – eine Atmosphäre, Wasser, ein Magnetfeld –, weshalb die Grenze sich verlagert hat zum Auslesen ihrer Luft.",
+    "new": "Die habitable Zone ist ein erster Filter, kein Urteil. Ob eine dieser Welten tatsächlich bewohnbar ist, hängt von Dingen ab, die uns die Zone nicht verraten kann – eine Atmosphäre, Wasser, ein Magnetfeld –, weshalb sich die Forschung inzwischen dem Auslesen ihrer Atmosphären zugewandt hat."
+  },
+  {
+    "rel": "science/exoplanets/hot-jupiters.json",
+    "at": "narrative_101.1",
+    "old": "Niemand hatte sie erwartet. Gasriesen sollten weit draußen entstehen, jenseits der ‚Schneegrenze', wo Eis kondensieren kann. Ein Riesenplanet, der seinen Stern streift, verstieß gegen das Lehrbuch – und erzwang eine neue Idee: Planeten können nach ihrer Entstehung nach innen wandern.",
+    "new": "Niemand hatte sie erwartet. Gasriesen sollten weit draußen entstehen, jenseits der „Schneegrenze“, wo Eis kondensieren kann. Ein Riesenplanet, der seinen Stern streift, verstieß gegen das Lehrbuch – und erzwang eine neue Idee: Planeten können nach ihrer Entstehung nach innen wandern."
+  },
+  {
+    "rel": "science/exoplanets/hot-jupiters.json",
+    "at": "body_paragraphs.0",
+    "old": "Heiße Jupiter sind Gasriesen auf Umlaufbahnen von nur wenigen Tagen, deren Tagseiten oft Temperaturen von über 1.000 Grad erreichen. Ihre Existenz deutet auf großräumige Bahnwanderung hin: Sie entstanden wahrscheinlich jenseits der Schneegrenze und spiralten durch Wechselwirkungen mit der protoplanetaren Scheibe oder mit anderen Körpern nach innen, wo sie an einem Ort endeten, an dem kein Riesenplanet vor Ort hätte entstehen können.",
+    "new": "Heiße Jupiter sind Gasriesen auf Umlaufbahnen von nur wenigen Tagen, deren Tagseiten oft Temperaturen von über 1.000 Grad erreichen. Ihre Existenz deutet auf großräumige Bahnwanderung hin: Sie entstanden wahrscheinlich jenseits der Schneegrenze und spiralten durch Wechselwirkungen mit der protoplanetaren Scheibe oder mit anderen Körpern nach innen und landeten dort, wo sich kein Riesenplanet an Ort und Stelle hätte bilden können."
+  },
+  {
+    "rel": "science/exoplanets/microlensing.json",
+    "at": "intro_sentence",
+    "old": "Wenn ein Stern genau vor einem anderen vorbeizieht, vergrößert seine Schwerkraft den Hintergrundstern — und ein Planet fügt einen kurzen zusätzlichen Lichtblitz hinzu.",
+    "new": "Wenn ein Stern genau vor einem anderen vorbeizieht, verstärkt seine Schwerkraft das Licht des Hintergrundsterns — und ein Planet sorgt für einen zusätzlichen kurzen Lichtblitz."
+  },
+  {
+    "rel": "science/exoplanets/microlensing.json",
+    "at": "narrative_101.0",
+    "old": "Schwerkraft beugt Licht. Wenn ein Vordergrundstern fast exakt vor einem sehr viel weiter entfernten vorbeizieht, wirkt er wie eine Linse und erhellt den Hintergrundstern kurzzeitig über Tage oder Wochen.",
+    "new": "Schwerkraft beugt Licht. Wenn ein Vordergrundstern fast exakt vor einem sehr viel weiter entfernten vorbeizieht, wirkt er wie eine Linse und lässt den Hintergrundstern über Tage oder Wochen kurzzeitig heller erscheinen."
+  },
+  {
+    "rel": "science/exoplanets/microlensing.json",
+    "at": "narrative_101.1",
+    "old": "Hat der Vordergrundstern einen Planeten, fügt die eigene Schwerkraft des Planeten dieser sanften Aufhellung eine kurze, scharfe Spitze hinzu — ein Ausschlag von Stunden bis zu einem Tag, der eine Welt verrät, die man niemals direkt sehen wird.",
+    "new": "Hat der Vordergrundstern einen Planeten, fügt dessen eigene Schwerkraft dieser sanften Aufhellung eine kurze, scharfe Spitze hinzu — ein Ausschlag, der Stunden bis zu einem Tag dauert und eine Welt verrät, die man niemals direkt sehen wird."
+  },
+  {
+    "rel": "science/exoplanets/microlensing.json",
+    "at": "body_paragraphs.0",
+    "old": "Mikrolinsen-Effekte entdecken Planeten durch die vorübergehende gravitative Vergrößerung, die sie einer zufälligen Ausrichtung zweier Sterne hinzufügen. Die Methode ist einzigartig empfindlich für massearme Planeten auf weiten, kühlen Umlaufbahnen — der Region jenseits der Schneelinie, die Transiten und Radialgeschwindigkeitsmessungen nur schwer erreichen — sowie für vagabundierende Planeten, die allein durch die Galaxis treiben.",
+    "new": "Mikrolinsen-Beobachtungen entdecken Planeten anhand der vorübergehenden gravitativen Verstärkung, die sie zu einer zufälligen Ausrichtung zweier Sterne beisteuern. Die Methode ist besonders empfindlich für massearme Planeten auf weiten, kühlen Umlaufbahnen — der Region jenseits der Schneegrenze, die Transitmethode und Radialgeschwindigkeit nur schwer erreichen — sowie für vagabundierende Planeten, die allein durch die Galaxis treiben."
+  },
+  {
+    "rel": "science/exoplanets/microlensing.json",
+    "at": "body_paragraphs.1",
+    "old": "Der Nachteil ist, dass die Ereignisse einmalig und nicht wiederholbar sind, dass Stern und Planet oft zu weit entfernt sind, um weiter untersucht zu werden, und dass Masse und Abstand etwas entartet herauskommen. Es ist ein statistisches Werkzeug: Es misst, wie häufig kalte und frei schwebende Planeten sind, mehr als dass es einzelne Welten katalogisiert.",
+    "new": "Der Preis dafür: Die Ereignisse sind einmalig und nicht wiederholbar, Stern und Planet sind oft zu weit entfernt, um sie weiter zu untersuchen, und Masse und Abstand lassen sich nur mit gewisser Entartung bestimmen. Es ist ein statistisches Werkzeug: Es misst eher, wie häufig kalte und frei schwebende Planeten sind, als dass es einzelne Welten katalogisiert."
+  },
+  {
+    "rel": "science/exoplanets/microlensing.json",
+    "at": "body_paragraphs.2",
+    "old": "Das Nancy Grace Roman Space Telescope der NASA wird eine weitreichende Mikrolinsen-Durchmusterung durchführen, von der erwartet wird, dass sie Tausende dieser sonst unsichtbaren Planeten findet und damit die kalten äußeren Bereiche der Exoplaneten-Zählung ausfüllt.",
+    "new": "Das Nancy Grace Roman Space Telescope der NASA wird eine großangelegte Mikrolinsen-Durchmusterung durchführen, von der erwartet wird, dass sie Tausende dieser sonst unsichtbaren Planeten findet und so die kalten Außenbereiche der Exoplanetenstatistik auffüllt."
+  },
+  {
+    "rel": "science/exoplanets/microlensing.json",
+    "at": "diagram_caption",
+    "old": "Ein Vordergrundstern bündelt das Licht eines Hintergrundsterns; ein umlaufender Planet fügt der Lichtkurve eine kurze sekundäre Spitze hinzu.",
+    "new": "Ein Vordergrundstern wirkt als Linse für einen Hintergrundstern; ein umlaufender Planet fügt der Lichtkurve eine kurze zweite Spitze hinzu."
+  },
+  {
+    "rel": "science/exoplanets/orbital-resonance.json",
+    "at": "narrative_101.1",
+    "old": "TRAPPIST-1 ist das Paradebeispiel: seine sieben Planeten sitzen in einer nahezu ununterbrochenen Kette von Resonanzen, jede Periode ein ordentliches Vielfaches der nächsten. Beschleunigt man das System, würden die Ausrichtungen tatsächlich eine musikalische Tonleiter erklingen lassen.",
+    "new": "TRAPPIST-1 ist das Paradebeispiel: Seine sieben Planeten sitzen in einer nahezu lückenlosen Resonanzkette, jede Umlaufzeit steht in einem schlichten Verhältnis zur nächsten. Beschleunigt man das System, würden die Ausrichtungen tatsächlich eine musikalische Tonleiter erklingen lassen."
+  },
+  {
+    "rel": "science/exoplanets/orbital-resonance.json",
+    "at": "narrative_101.2",
+    "old": "Resonanzen sind Fußabdrücke davon, wie sich ein System gebildet hat — sie entstehen, wenn Planeten gemeinsam durch die Entstehungsscheibe nach innen wandern und sich gegenseitig im Gleichschritt einfangen.",
+    "new": "Resonanzen sind Spuren dafür, wie ein System entstanden ist — sie entstehen, wenn Planeten gemeinsam durch die Entstehungsscheibe nach innen wandern und sich gegenseitig im Gleichschritt einfangen."
+  },
+  {
+    "rel": "science/exoplanets/orbital-resonance.json",
+    "at": "body_paragraphs.0",
+    "old": "Eine Bahnresonanz tritt auf, wenn umlaufende Körper regelmäßigen, periodischen gravitativen Einfluss aufeinander ausüben, üblicherweise weil ihre Perioden im Verhältnis kleiner ganzer Zahlen stehen. Resonanzen können ein dicht gepacktes System stabilisieren, indem sie Planeten in einem verriegelten Muster halten, oder es destabilisieren, indem sie Exzentrizitäten hochtreiben.",
+    "new": "Eine Bahnresonanz tritt auf, wenn umlaufende Körper regelmäßigen, periodischen gravitativen Einfluss aufeinander ausüben, üblicherweise weil ihre Umlaufzeiten im Verhältnis kleiner ganzer Zahlen stehen. Resonanzen können ein dicht gepacktes System stabilisieren, indem sie Planeten in einem verriegelten Muster halten, oder es destabilisieren, indem sie Exzentrizitäten hochtreiben."
+  },
+  {
+    "rel": "science/exoplanets/orbital-resonance.json",
+    "at": "body_paragraphs.1",
+    "old": "Ketten von Resonanzen, wie die von TRAPPIST-1, sind starke Belege für konvergente Migration: Planeten, die weiter außen entstehen und durch die Gasscheibe nach innen driften, werden nacheinander in Resonanzen gefangen, während sie wandern. Die empfindliche Anordnung macht auch die gegenseitigen Zerrungen der Planeten als Transit-Timing-Variationen messbar, und so wurden ihre Massen bestimmt.",
+    "new": "Ketten von Resonanzen, wie die von TRAPPIST-1, sind starke Belege für konvergente Migration: Planeten, die weiter außen entstehen und durch die Gasscheibe nach innen driften, werden nacheinander in Resonanzen gefangen, während sie wandern. Die empfindliche Anordnung macht auch die gegenseitigen Zugkräfte der Planeten als Transit-Timing-Variationen messbar, und so wurden ihre Massen bestimmt."
+  },
+  {
+    "rel": "science/exoplanets/planet-formation.json",
+    "at": "narrative_101.1",
+    "old": "Wo ein Planet entsteht, hängt von der Temperatur ab: Gestein und Metall kondensieren in der Nähe, Eis erst jenseits der ‚Schneegrenze'. Deshalb hat das Sonnensystem kleine felsige Welten innen und Riesen außen.",
+    "new": "Wo ein Planet entsteht, hängt von der Temperatur ab: Gestein und Metall kondensieren in der Nähe, Eis erst jenseits der „Schneegrenze“. Deshalb hat das Sonnensystem kleine felsige Welten innen und Riesen außen."
+  },
+  {
+    "rel": "science/exoplanets/proxima-system.json",
+    "at": "narrative_101.0",
+    "old": "Der sonnennächste Stern, Proxima Centauri, ist ein kleiner roter Zwerg nur 4,24 Lichtjahre entfernt — und 2016 entdeckten Astronomen einen Planeten mit etwa Erdmasse, Proxima b, der ihn in seiner habitablen Zone umkreist.",
+    "new": "Der sonnennächste Stern, Proxima Centauri, ist ein kleiner Roter Zwerg, nur 4,24 Lichtjahre entfernt — und 2016 entdeckten Astronomen einen Planeten mit etwa Erdmasse, Proxima b, der ihn in seiner habitablen Zone umkreist."
+  },
+  {
+    "rel": "science/exoplanets/proxima-system.json",
+    "at": "narrative_101.1",
+    "old": "Es ist die nächstgelegene potenziell bewohnbare Welt, die wir kennen, was sie zum natürlichen ersten Ziel für jeden Traum macht, einen anderen Stern zu erreichen. Das Breakthrough Starshot-Projekt stellt sich grammleichte Lichtsegel-Sonden vor, die ihn innerhalb eines Menschenlebens erreichen könnten.",
+    "new": "Es ist die nächstgelegene potenziell bewohnbare Welt, die wir kennen, was sie zum natürlichen ersten Ziel für jeden Traum macht, einen anderen Stern zu erreichen. Das Projekt Breakthrough Starshot stellt sich grammleichte Lichtsegel-Sonden vor, die ihn innerhalb eines Menschenlebens erreichen könnten."
+  },
+  {
+    "rel": "science/exoplanets/proxima-system.json",
+    "at": "narrative_101.2",
+    "old": "Der Haken ist der Stern selbst: Proxima zeigt heftige Flares, und sein Planet in der habitablen Zone — wahrscheinlich gebunden rotierend — sitzt nah genug, um die volle Wucht abzubekommen, eine ernsthafte Bedrohung für jede Atmosphäre oder Leben.",
+    "new": "Der Haken ist der Stern selbst: Proxima zeigt heftige Flares, und sein Planet in der habitablen Zone — wahrscheinlich gezeitengebunden — liegt nah genug, um die volle Wucht abzubekommen, eine ernsthafte Bedrohung für jede Atmosphäre und jedes Leben."
+  },
+  {
+    "rel": "science/exoplanets/proxima-system.json",
+    "at": "body_paragraphs.0",
+    "old": "Proxima Centauri b wurde durch Radialgeschwindigkeit entdeckt: ein ~11-Tage-Signal, das auf einen Planeten von mindestens etwa 1,1 Erdmassen in der temperierten Zone des M5.5-Zwergs hindeutet. Ein zweiter, weit leichterer Planet, Proxima d, wurde in den frühen 2020er Jahren auf einer engeren Umlaufbahn bestätigt — einer der Planeten mit der geringsten bekannten Masse.",
+    "new": "Proxima Centauri b wurde mit der Radialgeschwindigkeitsmethode entdeckt: ein ~11-Tage-Signal, das auf einen Planeten von mindestens etwa 1,1 Erdmassen in der gemäßigten Zone des M5.5-Zwergs hindeutet. Ein zweiter, weit leichterer Planet, Proxima d, wurde in den frühen 2020er Jahren auf einer engeren Umlaufbahn bestätigt — einer der Planeten mit der geringsten bekannten Masse."
+  },
+  {
+    "rel": "science/exoplanets/proxima-system.json",
+    "at": "body_paragraphs.1",
+    "old": "Die Nähe ist die ganze Geschichte. Bei 4,24 Lichtjahren ist das System der Ankerpunkt interstellarer Gedankenexperimente, von Breakthrough Starshots Lichtsegeln bis zu Generationen von Science-Fiction, und ein vorrangiges Ziel für zukünftige Direktabbildungs-Suchprogramme.",
+    "new": "Die Nähe ist die ganze Geschichte. Mit 4,24 Lichtjahren ist das System der Ankerpunkt interstellarer Gedankenexperimente, von den Lichtsegeln von Breakthrough Starshot bis zu Generationen von Science-Fiction, und ein vorrangiges Ziel für künftige Suchen mit direkter Abbildung."
+  },
+  {
+    "rel": "science/exoplanets/proxima-system.json",
+    "at": "body_paragraphs.2",
+    "old": "Die Bewohnbarkeit ist wirklich ungewiss. Flares roter Zwerge, gebundene Rotation und die Schwierigkeit, eine Atmosphäre von der Erde aus zu bestätigen, halten Proxima b alle in der verlockend-aber-unbewiesenen Spalte — der nächstgelegene Testfall dafür, ob Welten roter Zwerge lebendig sein können.",
+    "new": "Die Bewohnbarkeit ist wirklich ungewiss. Flares Roter Zwerge, gebundene Rotation und die Schwierigkeit, eine Atmosphäre von der Erde aus zu bestätigen, lassen Proxima b alle in der Kategorie „verlockend, aber unbewiesen“ — der nächstgelegene Testfall dafür, ob Welten um Rote Zwerge belebt sein können."
+  },
+  {
+    "rel": "science/exoplanets/radial-velocity.json",
+    "at": "body_paragraphs.0",
+    "old": "Die Radialgeschwindigkeit war die erste Methode, die Ergebnisse lieferte: Sie bestätigte 51 Pegasi b im Jahr 1995 und dominierte die frühe Exoplanetenanzahl. Sie misst die Sichtliniengeschwindigkeit des Sterns aus Dopplerverschiebungen in seinem Spektrum; die Amplitude dieser Geschwindigkeit (K) skaliert mit der Masse des Planeten und nimmt mit dem Orbitalabstand ab, sodass sie massereiche Planeten auf kurzen Umlaufbahnen begünstigt – der Grund, warum die ersten Funde ›heiße Jupiter‹ waren.",
+    "new": "Die Radialgeschwindigkeit war die erste Methode, die Ergebnisse lieferte: Sie bestätigte 51 Pegasi b im Jahr 1995 und dominierte die frühe Zahl bekannter Exoplaneten. Sie misst die Sichtliniengeschwindigkeit des Sterns aus Dopplerverschiebungen in seinem Spektrum; die Amplitude dieser Geschwindigkeit (K) wächst mit der Masse des Planeten und nimmt mit dem Bahnabstand ab, sodass sie massereiche Planeten auf kurzen Umlaufbahnen begünstigt – der Grund, warum die ersten Funde „heiße Jupiter“ waren."
+  },
+  {
+    "rel": "science/exoplanets/radial-velocity.json",
+    "at": "body_paragraphs.1",
+    "old": "Ihre große Stärke ist die Masse: Die Radialgeschwindigkeit liefert die Minimalmasse des Planeten (m·sin i), die Größe, die verrät, ob eine Welt felsig, eisig oder gasförmig ist. Ihre Grenzen sind die unbekannte Bahnneigung (nur eine untere Massengrenze ohne Transit) und die Mauer, die das Brodeln der Sternoberfläche selbst setzt, das ein Taumeln imitiert und derzeit echte Erdanaloga-Signale verbirgt.",
+    "new": "Ihre große Stärke ist die Masse: Die Radialgeschwindigkeit liefert die Mindestmasse des Planeten (m·sin i), die Größe, die verrät, ob eine Welt felsig, eisig oder gasförmig ist. Ihre Grenzen sind die unbekannte Bahnneigung (ohne Transit nur eine untere Massengrenze) und die Mauer, die das Brodeln der Sternoberfläche selbst errichtet: Es ahmt ein Taumeln nach und verbirgt derzeit die Signale echter Erdanaloga."
+  },
+  {
+    "rel": "science/exoplanets/radial-velocity.json",
+    "at": "body_paragraphs.2",
+    "old": "Moderne Spektrografen wie ESPRESSO erreichen eine Präzision unter einem Meter pro Sekunde, genug um die Sub-Erd-Welten zu entdecken, die kürzlich um Barnards Pfeilstern gefunden wurden. Kombiniert mit einem Transit verwandelt die Radialgeschwindigkeit eine Größe in eine Dichte – und eine Dichte in eine Vermutung darüber, woraus ein Planet besteht.",
+    "new": "Moderne Spektrografen wie ESPRESSO erreichen eine Präzision unter einem Meter pro Sekunde, genug, um die Sub-Erden nachzuweisen, die kürzlich um Barnards Pfeilstern gefunden wurden. Kombiniert mit einem Transit macht die Radialgeschwindigkeit aus einer Größe eine Dichte – und aus einer Dichte eine Vermutung darüber, woraus ein Planet besteht."
+  },
+  {
+    "rel": "science/exoplanets/radial-velocity.json",
+    "at": "formula_caption",
+    "old": "Die Geschwindigkeitssemiamplitude K wächst mit der Planetenmasse und nimmt mit der Umlaufperiode ab.",
+    "new": "Die Halbamplitude K der Geschwindigkeit wächst mit der Planetenmasse und nimmt mit der Umlaufperiode ab."
+  },
+  {
+    "rel": "science/exoplanets/super-earths-sub-neptunes.json",
+    "at": "title",
+    "old": "Supererden & Sub-Neptun",
+    "new": "Supererden & Sub-Neptune"
+  },
+  {
+    "rel": "science/exoplanets/super-earths-sub-neptunes.json",
+    "at": "narrative_101.0",
+    "old": "Unser eigenes System hat eine Lücke: nichts zwischen Erde und Neptun, ein Größenunterschied von fast Faktor vier ohne jegliche Mitglieder. Die Galaxie, wie sich herausstellt, liebt diese Lücke — Planeten darin sind die mit Abstand häufigste Art, die wir gefunden haben.",
+    "new": "Unser eigenes System hat eine Lücke: nichts zwischen Erde und Neptun, ein Größenfaktor von fast vier ohne ein einziges Mitglied. Die Galaxie, wie sich herausstellt, liebt diese Lücke — Planeten darin sind die mit Abstand häufigste Art, die wir gefunden haben."
+  },
+  {
+    "rel": "science/exoplanets/super-earths-sub-neptunes.json",
+    "at": "narrative_101.1",
+    "old": "Sie kommen in zwei Varianten vor, die ineinander übergehen: felsige ‚Supererden' bis etwa 1,5-facher Erdgröße und gasumhüllte ‚Sub-Neptun' oberhalb von etwa dem Doppelten der Erdgröße. Dazwischen liegt eine echte Seltenheit — das ‚Radiustal' — das darauf hindeutet, wie diese Welten ihre Atmosphären verlieren oder behalten.",
+    "new": "Sie kommen in zwei Varianten vor, die ineinander übergehen: felsige „Supererden“ bis etwa zum 1,5-Fachen der Erdgröße und gasumhüllte „Sub-Neptune“ ab etwa der doppelten Erdgröße. Dazwischen liegt eine echte Seltenheit — das „Radiustal“ —, das darauf hindeutet, wie diese Welten ihre Atmosphären verlieren oder behalten."
+  },
+  {
+    "rel": "science/exoplanets/super-earths-sub-neptunes.json",
+    "at": "body_paragraphs.0",
+    "old": "Statistisch gesehen sind Supererden und Sub-Neptun die häufigsten Planeten der Galaxie, doch das Sonnensystem enthält keine. Das ‚Radiustal' — ein Rückgang in der Anzahl der Planeten um 1,5–2 Erdradien — scheint nackte Gesteinskerne von Welten zu trennen, die eine dicke Wasserstoff-Helium- oder Dampfhülle behalten haben.",
+    "new": "Statistisch gesehen sind Supererden und Sub-Neptune die häufigsten Planeten der Galaxie, doch das Sonnensystem enthält keinen davon. Das „Radiustal“ — ein Einbruch in der Planetenzahl bei etwa 1,5–2 Erdradien — scheint nackte Gesteinskerne von Welten zu trennen, die eine dicke Hülle aus Wasserstoff und Helium oder Wasserdampf behalten haben."
+  },
+  {
+    "rel": "science/exoplanets/super-earths-sub-neptunes.json",
+    "at": "body_paragraphs.1",
+    "old": "Die Trennlinie wird wahrscheinlich durch atmosphärischen Verlust bestimmt: Planeten in Sternnähe können ihre leichten Hüllen durch Sternstrahlung abgetragen bekommen, wodurch eine felsige Supererde übrig bleibt, während jene, die die Hülle behalten, als größere Sub-Neptun mit geringerer Dichte erscheinen.",
+    "new": "Die Trennlinie wird wahrscheinlich durch das Entweichen der Atmosphäre bestimmt: Planeten in Sternnähe können ihre leichten Hüllen durch Sternstrahlung abgetragen bekommen, wodurch eine felsige Supererde übrig bleibt, während jene, die die Hülle behalten, als größere Sub-Neptune mit geringerer Dichte erscheinen."
+  },
+  {
+    "rel": "science/exoplanets/tidal-locking.json",
+    "at": "narrative_101.0",
+    "old": "Der Mond tut es mit der Erde: Er hält uns stets eine Seite zugewandt, weil Gezeitenkräfte seine Rotation mit seinem Umlauf synchronisiert haben. Das Gleiche geschieht mit Planeten, die ihre Sterne eng umkreisen.",
+    "new": "Der Mond macht es vor: Er kehrt uns stets dieselbe Seite zu, weil Gezeitenkräfte seine Rotation mit seinem Umlauf synchronisiert haben. Dasselbe geschieht mit Planeten, die dicht an ihren Sternen kleben."
+  },
+  {
+    "rel": "science/exoplanets/tidal-locking.json",
+    "at": "narrative_101.1",
+    "old": "Für eine Gesteinswelt in der habitablen Zone eines Roten Zwergs — die in Tagen umläuft, dicht herangezogen — ist gebundene Rotation nahezu unvermeidlich. Eine Hemisphäre backt in endlosem Tageslicht; die andere gefriert in endloser Nacht; ein Ring ewiger Dämmerung verläuft dazwischen.",
+    "new": "Für eine Gesteinswelt in der habitablen Zone eines Roten Zwergs — die in Tagen umläuft, dicht an den Stern geschmiegt — ist gebundene Rotation nahezu unvermeidlich. Eine Hemisphäre backt in endlosem Tageslicht; die andere gefriert in endloser Nacht; ein Ring ewiger Dämmerung verläuft dazwischen."
+  },
+  {
+    "rel": "science/exoplanets/tidal-locking.json",
+    "at": "narrative_101.2",
+    "old": "Es klingt lebensfeindlich, ist aber nicht notwendigerweise tödlich für Leben. Eine dicke Atmosphäre oder ein Ozean kann Wärme um den Planeten tragen und die Extreme ausgleichen — eine der großen offenen Fragen für die Habitabilität von Roten Zwergen.",
+    "new": "Es klingt lebensfeindlich, ist für Leben aber nicht zwangsläufig tödlich. Eine dicke Atmosphäre oder ein Ozean kann Wärme um den Planeten tragen und die Extreme ausgleichen — eine der großen offenen Fragen für die Bewohnbarkeit von Planeten Roter Zwerge."
+  },
+  {
+    "rel": "science/exoplanets/tidal-locking.json",
+    "at": "body_paragraphs.1",
+    "old": "Die Folge ist ein extremer, permanenter Temperaturkontrast zwischen dem substellaren ‚Auge' und der antistellaren Nachtseite. Ob das bewohnbar ist, hängt vom Wärmetransport ab: Klimamodelle zeigen, dass eine ausreichend dicke Atmosphäre oder ein globaler Ozean Wärme umverteilen und den Terminator — oder sogar große Teile der Nachtseite — gemäßigt halten können.",
+    "new": "Die Folge ist ein extremer, permanenter Temperaturkontrast zwischen dem substellaren „Auge“ und der antistellaren Nachtseite. Ob das bewohnbar ist, hängt vom Wärmetransport ab: Klimamodelle zeigen, dass eine ausreichend dicke Atmosphäre oder ein globaler Ozean Wärme umverteilen und den Terminator — oder sogar große Teile der Nachtseite — gemäßigt halten können."
+  },
+  {
+    "rel": "science/exoplanets/tidal-locking.json",
+    "at": "body_paragraphs.2",
+    "old": "Da Rote Zwerge den Großteil der Immobilien in habitablen Zonen der Galaxie beherbergen, ist das Schicksal gebundener Welten wie Proxima b zentral dafür, ob die häufigsten habitablen Zonen tatsächlich bewohnbar sind.",
+    "new": "Da Rote Zwerge den größten Teil der habitablen Zonen der Galaxie beherbergen, entscheidet das Schicksal gebundener Welten wie Proxima b darüber, ob die häufigsten habitablen Zonen tatsächlich bewohnbar sind."
+  },
+  {
+    "rel": "science/exoplanets/transit-timing.json",
+    "at": "title",
+    "old": "Transitzeitvariationen",
+    "new": "Transit-Timing-Variationen"
+  },
+  {
+    "rel": "science/exoplanets/transit-timing.json",
+    "at": "narrative_101.0",
+    "old": "Ein einzelner transitierender Planet trifft ein wie ein Uhrwerk — gleicher Abstand, jede Umlaufbahn. Aber setze mehrere Planeten in ein System und ihre gegenseitige Gravitation schubst sie, sodass Transite ein wenig früher oder ein wenig später in einem sich wiederholenden Muster eintreffen.",
+    "new": "Ein einzelner transitierender Planet trifft ein wie ein Uhrwerk — gleicher Abstand, jeder Umlauf. Bringt man aber mehrere Planeten in einem System unter, stupsen sie einander durch ihre gegenseitige Gravitation an, sodass die Transite in einem sich wiederholenden Muster ein wenig früher oder ein wenig später eintreffen."
+  },
+  {
+    "rel": "science/exoplanets/transit-timing.json",
+    "at": "narrative_101.1",
+    "old": "Diese wenigen Minuten Drift sind eine Gravitationssignatur. Modelliere sie und du kannst die Planeten allein durch ihre Anziehung wiegen — kein Spektrograph nötig — und manchmal auf einen Planeten schließen, der niemals transitiert, sondern nur durch seinen Zug an den anderen spürbar ist.",
+    "new": "Diese wenigen Minuten Drift sind eine Gravitationssignatur. Modelliert man sie, lassen sich die Planeten allein anhand ihrer Anziehung wiegen — ohne Spektrografen — und manchmal lässt sich auf einen Planeten schließen, der nie transitiert und nur durch seinen Zug an den anderen spürbar ist."
+  },
+  {
+    "rel": "science/exoplanets/transit-timing.json",
+    "at": "narrative_101.2",
+    "old": "So wurden die sieben kleinen Welten von TRAPPIST-1 gewogen: zu lichtschwach für Radialgeschwindigkeit, kamen ihre Massen aus der Art, wie sie einander über den Stern hinweg beschleunigen und verzögern.",
+    "new": "So wurden die sieben kleinen Welten von TRAPPIST-1 gewogen: Für die Radialgeschwindigkeit zu lichtschwach, verrieten sie ihre Massen dadurch, wie sie einander beim Zug über den Stern hinweg beschleunigen und verzögern."
+  },
+  {
+    "rel": "science/exoplanets/transit-timing.json",
+    "at": "body_paragraphs.1",
+    "old": "TTVs glänzen genau dort, wo Radialgeschwindigkeit kämpft — um lichtschwache, kleine Sterne, deren Doppler-Wobble im Rauschen vergraben ist — und sie können nicht-transitierende Planeten allein durch ihren Einfluss enthüllen. Sie sind am empfindlichsten nahe Bahnresonanzen, wo wiederholte nahe Begegnungen die Anziehungen verstärken.",
+    "new": "TTVs spielen ihre Stärke genau dort aus, wo die Radialgeschwindigkeit an Grenzen stößt — bei lichtschwachen, kleinen Sternen, deren Doppler-Taumeln im Rauschen untergeht — und sie können nicht transitierende Planeten allein durch ihren Einfluss enthüllen. Am empfindlichsten sind sie nahe Bahnresonanzen, wo wiederholte nahe Begegnungen die Anziehungen verstärken."
+  },
+  {
+    "rel": "science/exoplanets/transit-timing.json",
+    "at": "body_paragraphs.2",
+    "old": "Die Massen der Methode ergänzen Transitradien, um Dichten zu erhalten, weshalb kompakte resonante Systeme wie TRAPPIST-1 und Keplers Multiplanetenketten so gut charakterisiert sind, obwohl sie dunkle Sterne umkreisen.",
+    "new": "Die Massen aus dieser Methode ergänzen die Transitradien zu Dichten. Deshalb sind kompakte resonante Systeme wie TRAPPIST-1 und die Mehrplanetenketten von Kepler so gut charakterisiert, obwohl sie lichtschwache Sterne umkreisen."
+  },
+  {
+    "rel": "science/exoplanets/transit.json",
+    "at": "narrative_101.0",
+    "old": "Wenn die Umlaufbahn eines Planeten zufällig von der Kante zu uns ausgerichtet ist, passiert er einmal pro Umlauf direkt zwischen uns und seinem Stern — ein Transit — und der Stern wird um einen winzigen, präzisen Bruchteil dunkler, während der Planet davor steht.",
+    "new": "Wenn wir zufällig genau auf die Kante der Umlaufbahn eines Planeten blicken, passiert er einmal pro Umlauf direkt zwischen uns und seinem Stern — ein Transit — und der Stern wird um einen winzigen, präzisen Bruchteil dunkler, solange der Planet davor steht."
+  },
+  {
+    "rel": "science/exoplanets/transit.json",
+    "at": "narrative_101.1",
+    "old": "Die Tiefe dieses Abfalls ist einfach das Verhältnis der Flächen: Ein größerer Planet blockiert mehr Licht. Eine Erde, die die Sonne kreuzt, verdunkelt sie um etwa einen Teil von zehntausend; ein Jupiter um ein Prozent. Wenn man die sich wiederholenden Abfälle nach der Uhr erfasst, hat man die Größe und Umlaufperiode eines Planeten.",
+    "new": "Die Tiefe dieses Abfalls ist schlicht das Verhältnis der Flächen: Ein größerer Planet blockiert mehr Licht. Eine Erde, die vor der Sonne vorbeizieht, verdunkelt sie um etwa ein Zehntausendstel; ein Jupiter um ein Prozent. Sieht man die Abfälle im Uhrentakt wiederkehren, hat man Größe und Umlaufperiode eines Planeten."
+  },
+  {
+    "rel": "science/exoplanets/transit.json",
+    "at": "body_paragraphs.0",
+    "old": "Die Transitphotometrie ist bei weitem die produktivste Methode und für die große Mehrheit der bekannten Exoplaneten verantwortlich. Sie misst den Radius eines Planeten direkt (aus dem fraktionalen Abfall des Sternenlichts) und seine Umlaufperiode (aus dem Abstand der Abfälle); kombiniert mit einer Radialgeschwindigkeitsmasse ergibt dies eine mittlere Dichte.",
+    "new": "Die Transitphotometrie ist mit Abstand die produktivste Methode und für die große Mehrheit der bekannten Exoplaneten verantwortlich. Sie misst den Radius eines Planeten direkt (aus dem relativen Abfall des Sternenlichts) und seine Umlaufperiode (aus dem Abstand der Abfälle); kombiniert mit einer per Radialgeschwindigkeit bestimmten Masse ergibt dies eine mittlere Dichte."
+  }
 ]

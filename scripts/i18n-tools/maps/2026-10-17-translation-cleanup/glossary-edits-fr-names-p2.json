@@ -1,32 +1,32 @@
 [
- {
-  "rel": "essays/generational-starships.json",
-  "at": "body.16.md",
-  "old": "Au-delà de la génétique, le problème de la population est culturel. Les sociétés humaines, sur des dizaines de générations, ne restent pas figées. Les langues dérivent ; les religions évoluent ou meurent ; les systèmes de gouvernance qui paraissent stables pendant des décennies se fracturent en quelques siècles ; la mémoire institutionnelle des raisons d'être des règles s'érode, et les règles se figent en dogme ou se dissolvent dans l'anomie. Un voyage de quatre siècles, du départ à l'arrivée, couvre à peu près la durée de toute la Révolution scientifique — de Copernicus à Newton, puis Darwin, jusqu'à Einstein. La société qui arrivera à destination ne sera pas celle qui est partie, en aucun sens culturel qui compte. Comprendra-t-elle encore la mission, aura-t-elle encore le savoir technique pour réussir l'atterrissage et fonder une colonie, portera-t-elle encore les compétences et les structures sociales nécessaires pour survivre dans un environnement étranger — ce ne sont pas des questions d'ingénierie. Ce sont des questions sur la façon dont le savoir se transmet d'une génération à l'autre, dont les institutions durent ou échouent, dont l'identité tient sous un confinement et un isolement radicaux. L'histoire n'incite à l'optimisme sur aucune d'elles.",
-  "new": "Au-delà de la génétique, le problème de la population est culturel. Les sociétés humaines, sur des dizaines de générations, ne restent pas figées. Les langues dérivent ; les religions évoluent ou meurent ; les systèmes de gouvernance qui paraissent stables pendant des décennies se fracturent en quelques siècles ; la mémoire institutionnelle des raisons d'être des règles s'érode, et les règles se figent en dogme ou se dissolvent dans l'anomie. Un voyage de quatre siècles, du départ à l'arrivée, couvre à peu près la durée de toute la Révolution scientifique — de Copernic à Newton, puis Darwin, jusqu'à Einstein. La société qui arrivera à destination ne sera pas celle qui est partie, en aucun sens culturel qui compte. Comprendra-t-elle encore la mission, aura-t-elle encore le savoir technique pour réussir l'atterrissage et fonder une colonie, portera-t-elle encore les compétences et les structures sociales nécessaires pour survivre dans un environnement étranger — ce ne sont pas des questions d'ingénierie. Ce sont des questions sur la façon dont le savoir se transmet d'une génération à l'autre, dont les institutions durent ou échouent, dont l'identité tient sous un confinement et un isolement radicaux. L'histoire n'incite à l'optimisme sur aucune d'elles."
- },
- {
-  "rel": "fleet/orbiter/lunar-orbiter-2.json",
-  "at": "tagline",
-  "old": "Deuxième orbiteur lunaire américain (1966-11-10). A capturé la « Photo du Siècle » — vue oblique du cratère Copernicus à ~45 km d'altitude",
-  "new": "Deuxième orbiteur lunaire américain (1966-11-10). A capturé la « Photo du Siècle » — vue oblique du cratère Copernic à ~45 km d'altitude"
- },
- {
-  "rel": "fleet/orbiter/lunar-orbiter-2.json",
-  "at": "description",
-  "old": "Deuxième des cinq engins spatiaux Lunar Orbiter. Lancé le 1966-11-06 depuis Cap Canaveral, entré en orbite lunaire le 1966-11-10. A cartographié 13 sites dans la zone Apollo équatoriale. Le 1966-11-24, l'image 162 a capturé une vue oblique du cratère Copernicus de 93 km d'altitude à partir de 45,8 km — un paysage de montagne de style terrestre jamais vu auparavant sur un autre monde. Les journaux l'ont appelée la « Photo du Siècle ». La diffusion de cette photo a marqué un tournant dans l'engagement public envers l'exploration lunaire. A transmis 422 images au total sur 33 jours d'imagerie. Impacté intentionnellement le 1967-10-11 à 4° S, 98° E (face lointaine de la Lune) pour prévenir les interférences radioélectriques avec Lunar Orbiter 5.",
-  "new": "Deuxième des cinq engins spatiaux Lunar Orbiter. Lancé le 1966-11-06 depuis Cap Canaveral, entré en orbite lunaire le 1966-11-10. A cartographié 13 sites dans la zone Apollo équatoriale. Le 1966-11-24, l'image 162 a capturé une vue oblique du cratère Copernic de 93 km d'altitude à partir de 45,8 km — un paysage de montagne de style terrestre jamais vu auparavant sur un autre monde. Les journaux l'ont appelée la « Photo du Siècle ». La diffusion de cette photo a marqué un tournant dans l'engagement public envers l'exploration lunaire. A transmis 422 images au total sur 33 jours d'imagerie. Impacté intentionnellement le 1967-10-11 à 4° S, 98° E (face lointaine de la Lune) pour prévenir les interférences radioélectriques avec Lunar Orbiter 5."
- },
- {
-  "rel": "fleet/orbiter/lunar-orbiter-2.json",
-  "at": "best_known_for",
-  "old": "Deuxième orbiteur lunaire américain (1966-11-10). A capturé la « Photo du Siècle » — vue oblique du cratère Copernicus à ~45 km d'altitude",
-  "new": "Deuxième orbiteur lunaire américain (1966-11-10). A capturé la « Photo du Siècle » — vue oblique du cratère Copernic à ~45 km d'altitude"
- },
- {
-  "rel": "universe/named-stars/regulus.json",
-  "at": "cultural",
-  "old": "Nommée « petit roi » par Copernicus et connue dans l'Antiquité comme le Cœur du Lion (Cor Leonis), Régulus fut l'une des quatre « Étoiles Royales » de Perse qui marquaient le passage des saisons.",
-  "new": "Nommée « petit roi » par Copernic et connue dans l'Antiquité comme le Cœur du Lion (Cor Leonis), Régulus fut l'une des quatre « Étoiles Royales » de Perse qui marquaient le passage des saisons."
- }
+  {
+    "rel": "essays/generational-starships.json",
+    "at": "body.16.md",
+    "old": "Au-delà de la génétique, le problème de la population est culturel. Les sociétés humaines, sur des dizaines de générations, ne restent pas figées. Les langues dérivent ; les religions évoluent ou meurent ; les systèmes de gouvernance qui paraissent stables pendant des décennies se fracturent en quelques siècles ; la mémoire institutionnelle des raisons d'être des règles s'érode, et les règles se figent en dogme ou se dissolvent dans l'anomie. Un voyage de quatre siècles, du départ à l'arrivée, couvre à peu près la durée de toute la Révolution scientifique — de Copernicus à Newton, puis Darwin, jusqu'à Einstein. La société qui arrivera à destination ne sera pas celle qui est partie, en aucun sens culturel qui compte. Comprendra-t-elle encore la mission, aura-t-elle encore le savoir technique pour réussir l'atterrissage et fonder une colonie, portera-t-elle encore les compétences et les structures sociales nécessaires pour survivre dans un environnement étranger — ce ne sont pas des questions d'ingénierie. Ce sont des questions sur la façon dont le savoir se transmet d'une génération à l'autre, dont les institutions durent ou échouent, dont l'identité tient sous un confinement et un isolement radicaux. L'histoire n'incite à l'optimisme sur aucune d'elles.",
+    "new": "Au-delà de la génétique, le problème de la population est culturel. Les sociétés humaines, sur des dizaines de générations, ne restent pas figées. Les langues dérivent ; les religions évoluent ou meurent ; les systèmes de gouvernance qui paraissent stables pendant des décennies se fracturent en quelques siècles ; la mémoire institutionnelle des raisons d'être des règles s'érode, et les règles se figent en dogme ou se dissolvent dans l'anomie. Un voyage de quatre siècles, du départ à l'arrivée, couvre à peu près la durée de toute la Révolution scientifique — de Copernic à Newton, puis Darwin, jusqu'à Einstein. La société qui arrivera à destination ne sera pas celle qui est partie, en aucun sens culturel qui compte. Comprendra-t-elle encore la mission, aura-t-elle encore le savoir technique pour réussir l'atterrissage et fonder une colonie, portera-t-elle encore les compétences et les structures sociales nécessaires pour survivre dans un environnement étranger — ce ne sont pas des questions d'ingénierie. Ce sont des questions sur la façon dont le savoir se transmet d'une génération à l'autre, dont les institutions durent ou échouent, dont l'identité tient sous un confinement et un isolement radicaux. L'histoire n'incite à l'optimisme sur aucune d'elles."
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-2.json",
+    "at": "tagline",
+    "old": "Deuxième orbiteur lunaire américain (1966-11-10). A capturé la « Photo du Siècle » — vue oblique du cratère Copernicus à ~45 km d'altitude",
+    "new": "Deuxième orbiteur lunaire américain (1966-11-10). A capturé la « Photo du Siècle » — vue oblique du cratère Copernic à ~45 km d'altitude"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-2.json",
+    "at": "description",
+    "old": "Deuxième des cinq engins spatiaux Lunar Orbiter. Lancé le 1966-11-06 depuis Cap Canaveral, entré en orbite lunaire le 1966-11-10. A cartographié 13 sites dans la zone Apollo équatoriale. Le 1966-11-24, l'image 162 a capturé une vue oblique du cratère Copernicus de 93 km d'altitude à partir de 45,8 km — un paysage de montagne de style terrestre jamais vu auparavant sur un autre monde. Les journaux l'ont appelée la « Photo du Siècle ». La diffusion de cette photo a marqué un tournant dans l'engagement public envers l'exploration lunaire. A transmis 422 images au total sur 33 jours d'imagerie. Impacté intentionnellement le 1967-10-11 à 4° S, 98° E (face lointaine de la Lune) pour prévenir les interférences radioélectriques avec Lunar Orbiter 5.",
+    "new": "Deuxième des cinq engins spatiaux Lunar Orbiter. Lancé le 1966-11-06 depuis Cap Canaveral, entré en orbite lunaire le 1966-11-10. A cartographié 13 sites dans la zone Apollo équatoriale. Le 1966-11-24, l'image 162 a capturé une vue oblique du cratère Copernic de 93 km d'altitude à partir de 45,8 km — un paysage de montagne de style terrestre jamais vu auparavant sur un autre monde. Les journaux l'ont appelée la « Photo du Siècle ». La diffusion de cette photo a marqué un tournant dans l'engagement public envers l'exploration lunaire. A transmis 422 images au total sur 33 jours d'imagerie. Impacté intentionnellement le 1967-10-11 à 4° S, 98° E (face lointaine de la Lune) pour prévenir les interférences radioélectriques avec Lunar Orbiter 5."
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-2.json",
+    "at": "best_known_for",
+    "old": "Deuxième orbiteur lunaire américain (1966-11-10). A capturé la « Photo du Siècle » — vue oblique du cratère Copernicus à ~45 km d'altitude",
+    "new": "Deuxième orbiteur lunaire américain (1966-11-10). A capturé la « Photo du Siècle » — vue oblique du cratère Copernic à ~45 km d'altitude"
+  },
+  {
+    "rel": "universe/named-stars/regulus.json",
+    "at": "cultural",
+    "old": "Nommée « petit roi » par Copernicus et connue dans l'Antiquité comme le Cœur du Lion (Cor Leonis), Régulus fut l'une des quatre « Étoiles Royales » de Perse qui marquaient le passage des saisons.",
+    "new": "Nommée « petit roi » par Copernic et connue dans l'Antiquité comme le Cœur du Lion (Cor Leonis), Régulus fut l'une des quatre « Étoiles Royales » de Perse qui marquaient le passage des saisons."
+  }
 ]

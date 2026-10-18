@@ -1,356 +1,356 @@
 [
- {
-  "rel": "belts/asteroid.json",
-  "at": "location",
-  "old": "Tra Marte e Giove · 2,2–3,2 AU dal Sole",
-  "new": "Tra Marte e Giove · 2,2–3,2 UA dal Sole"
- },
- {
-  "rel": "belts/asteroid.json",
-  "at": "science_sections.1.why",
-  "old": "La fascia occupa l'anello 2.2–3.2 AU. I vuoti di Kirkwood — zone orbitali vuote alle risonanze di mean-motion di Giove — caratterizzano la popolazione.",
-  "new": "La fascia occupa l'anello 2.2–3.2 UA. I vuoti di Kirkwood — zone orbitali vuote alle risonanze di mean-motion di Giove — caratterizzano la popolazione."
- },
- {
-  "rel": "belts/kuiper.json",
-  "at": "location",
-  "old": "Oltre Nettuno · 30–50 AU dal Sole",
-  "new": "Oltre Nettuno · 30–50 UA dal Sole"
- },
- {
-  "rel": "belts/kuiper.json",
-  "at": "science_sections.0.why",
-  "old": "La Fascia di Kuiper è il residuo transnettuniano del disco protoplanetario — 30-50 AU, dominato dal ghiaccio. Plutone, Eris, Haumea, Makemake vi risiedono.",
-  "new": "La Fascia di Kuiper è il residuo transnettuniano del disco protoplanetario — 30-50 UA, dominato dal ghiaccio. Plutone, Eris, Haumea, Makemake vi risiedono."
- },
- {
-  "rel": "belts/kuiper.json",
-  "at": "science_sections.1.why",
-  "old": "I KBO classici orbitano tra 42 e 48 AU su orbite a bassa eccentricità e bassa inclinazione — sono rimasti sostanzialmente indisturbati dalla fase iniziale del sistema.",
-  "new": "I KBO classici orbitano tra 42 e 48 UA su orbite a bassa eccentricità e bassa inclinazione — sono rimasti sostanzialmente indisturbati dalla fase iniziale del sistema."
- },
- {
-  "rel": "deep-sky.json",
-  "at": "pale-blue-dot.distance",
-  "old": "~40,5 AU (6 miliardi di km)",
-  "new": "~40,5 UA (6 miliardi di km)"
- },
- {
-  "rel": "deep-sky.json",
-  "at": "pluto-nh.distance",
-  "old": "~34 AU (5 miliardi di km)",
-  "new": "~34 UA (5 miliardi di km)"
- },
- {
-  "rel": "deep-sky.json",
-  "at": "sun-sdo.distance",
-  "old": "1 AU",
-  "new": "1 UA"
- },
- {
-  "rel": "fleet/orbiter/pioneer-11.json",
-  "at": "description",
-  "old": "Sonda stabilizzata dalla rotazione e alimentata da RTG (~259 kg), gemella di Pioneer 10 con lo stesso bus e il messaggio Pioneer Plaque diretto alle stelle. Lanciata il 1973-04-06 su un Atlas SLV-3D Centaur D-1A + Star-37E da Cape Canaveral. Sorvolo di Giove il 1974-12-03 a 43 000 km — il più ravvicinato di qualsiasi incontro Pioneer, ha restituito le prime immagini delle regioni polari e l'assistenza gravitazionale necessaria per raggiungere Saturno. Incontro con Saturno il 1979-09-01 a 21 000 km dalle nuvole superficiali — prime immagini dettagliate del sistema di anelli, scoperta di un nuovo anello (anello F) e di una nuova luna, conferma del campo magnetico quasi perfettamente allineato di Saturno. Ha continuato le osservazioni verso l'esterno fino all'ultimo contatto il 1995-11-24. Ora si trova a ~93 AU dal Sole, diretta verso Aquila.",
-  "new": "Sonda stabilizzata dalla rotazione e alimentata da RTG (~259 kg), gemella di Pioneer 10 con lo stesso bus e il messaggio Pioneer Plaque diretto alle stelle. Lanciata il 1973-04-06 su un Atlas SLV-3D Centaur D-1A + Star-37E da Cape Canaveral. Sorvolo di Giove il 1974-12-03 a 43 000 km — il più ravvicinato di qualsiasi incontro Pioneer, ha restituito le prime immagini delle regioni polari e l'assistenza gravitazionale necessaria per raggiungere Saturno. Incontro con Saturno il 1979-09-01 a 21 000 km dalle nuvole superficiali — prime immagini dettagliate del sistema di anelli, scoperta di un nuovo anello (anello F) e di una nuova luna, conferma del campo magnetico quasi perfettamente allineato di Saturno. Ha continuato le osservazioni verso l'esterno fino all'ultimo contatto il 1995-11-24. Ora si trova a ~93 UA dal Sole, diretta verso Aquila."
- },
- {
-  "rel": "fleet/orbiter/solar-orbiter.json",
-  "at": "description",
-  "old": "Solar Orbiter, guidata da ESA, è la prima sonda progettata per fotografare in dettaglio le regioni polari del Sole — utilizzando ripetuti assist gravitazionali di Venere nell'arco di un decennio per salire fuori dall'eclittica verso un'inclinazione eliografica di ~33°. Trasporta dieci strumenti che combinano remote sensing (magnetografo PHI, fotografo EUV estremo EUI, spettrometro SPICE, fotografo a raggi X STIX, coronografo METIS, fotografo eliosferico SoloHI) con misurazioni in-situ (magnetometro, particelle energetiche, plasma del vento solare, onde radio + plasma). Lanciata il 2020-02-10 da Cape Canaveral su un NASA Atlas V 411. Primo perielio il 2020-06-15 a 0,51 AU. Perielio operativo 0,28 AU (~62 R☉), all'interno della distanza di perielio di Mercurio.",
-  "new": "Solar Orbiter, guidata da ESA, è la prima sonda progettata per fotografare in dettaglio le regioni polari del Sole — utilizzando ripetuti assist gravitazionali di Venere nell'arco di un decennio per salire fuori dall'eclittica verso un'inclinazione eliografica di ~33°. Trasporta dieci strumenti che combinano remote sensing (magnetografo PHI, fotografo EUV estremo EUI, spettrometro SPICE, fotografo a raggi X STIX, coronografo METIS, fotografo eliosferico SoloHI) con misurazioni in-situ (magnetometro, particelle energetiche, plasma del vento solare, onde radio + plasma). Lanciata il 2020-02-10 da Cape Canaveral su un NASA Atlas V 411. Primo perielio il 2020-06-15 a 0,51 UA. Perielio operativo 0,28 UA (~62 R☉), all'interno della distanza di perielio di Mercurio."
- },
- {
-  "rel": "fleet/orbiter/ulysses.json",
-  "at": "description",
-  "old": "Missione congiunta ESA + NASA di osservazione solare e eliosferica, costruita da Dornier con contributo scientifico statunitense. Lanciata il 6 ottobre 1990 dallo STS-41 Discovery su una traiettoria ad alta energia diretta a Giove — l'unico modo per scagliare un'astronave fuori dal piano eclittico senza un delta-v proibitivo. Il sorvolo di Giove dell'8 febbraio 1992 deflesse l'astronave in un'orbita eliocentrica con inclinazione di 80° (1,3 × 5,4 AU, periodo di 6,2 anni) — il primo e ancora unico veicolo spaziale a volare sui poli del Sole. Tre orbite polari complete ci hanno fornito la struttura tridimensionale della superficie di corrente eliosferica, il vento solare più veloce ai poli e più lento all'equatore, e l'unico registro di più decenni del comportamento della corona polare nel corso di un ciclo solare completo. La missione è terminata nel 2009.",
-  "new": "Missione congiunta ESA + NASA di osservazione solare e eliosferica, costruita da Dornier con contributo scientifico statunitense. Lanciata il 6 ottobre 1990 dallo STS-41 Discovery su una traiettoria ad alta energia diretta a Giove — l'unico modo per scagliare un'astronave fuori dal piano eclittico senza un delta-v proibitivo. Il sorvolo di Giove dell'8 febbraio 1992 deflesse l'astronave in un'orbita eliocentrica con inclinazione di 80° (1,3 × 5,4 UA, periodo di 6,2 anni) — il primo e ancora unico veicolo spaziale a volare sui poli del Sole. Tre orbite polari complete ci hanno fornito la struttura tridimensionale della superficie di corrente eliosferica, il vento solare più veloce ai poli e più lento all'equatore, e l'unico registro di più decenni del comportamento della corona polare nel corso di un ciclo solare completo. La missione è terminata nel 2009."
- },
- {
-  "rel": "missions/saturn/voyager-1.json",
-  "at": "first",
-  "old": "Oggetto più lontano creato dall'uomo — attualmente a ~170 AU dal Sole nello spazio interstellare",
-  "new": "Oggetto più lontano creato dall'uomo — attualmente a ~170 UA dal Sole nello spazio interstellare"
- },
- {
-  "rel": "missions/sun/parker-solar-probe.json",
-  "at": "description",
-  "old": "Parker Solar Probe ha eseguito il lancio a più alta energia mai realizzato per una missione scientifica — C3 di 154 km²/s², richiedendo uno stadio solido Star 48BV personalizzato sopra un Delta IV Heavy soltanto per sfuggire alla Terra in una traiettoria di caduta verso il Sole. Sette assistenze gravitazionali di Venere nel corso di sei anni hanno progressivamente abbassato il perielio da 0,16 AU (P1, 2018-11-05) a 0,046 AU (P22, 2024-12-24 — 9,86 raggi solari, 6,1 milioni di km dalla superficie). Al P8 il 2021-04-28 Parker è scesa al di sotto della superficie critica di Alfvén — il primo veicolo spaziale mai entrato nella corona solare. Al P22 ha raggiunto ~191 km/s, diventando l'oggetto fatto dall'uomo più veloce mai costruito. Lo scudo termico in carbonio-carbonio di 11,43 cm ha sostenuto 1.377 °C mentre il corpo del veicolo spaziale 1 metro dietro di esso è rimasto a temperatura ambiente.",
-  "new": "Parker Solar Probe ha eseguito il lancio a più alta energia mai realizzato per una missione scientifica — C3 di 154 km²/s², richiedendo uno stadio solido Star 48BV personalizzato sopra un Delta IV Heavy soltanto per sfuggire alla Terra in una traiettoria di caduta verso il Sole. Sette assistenze gravitazionali di Venere nel corso di sei anni hanno progressivamente abbassato il perielio da 0,16 UA (P1, 2018-11-05) a 0,046 UA (P22, 2024-12-24 — 9,86 raggi solari, 6,1 milioni di km dalla superficie). Al P8 il 2021-04-28 Parker è scesa al di sotto della superficie critica di Alfvén — il primo veicolo spaziale mai entrato nella corona solare. Al P22 ha raggiunto ~191 km/s, diventando l'oggetto fatto dall'uomo più veloce mai costruito. Lo scudo termico in carbonio-carbonio di 11,43 cm ha sostenuto 1.377 °C mentre il corpo del veicolo spaziale 1 metro dietro di esso è rimasto a temperatura ambiente."
- },
- {
-  "rel": "missions/sun/parker-solar-probe.json",
-  "at": "events.2.note",
-  "old": "2018-11-05, 0,16 AU. Più vicino al Sole mai raggiunto, superando Helios 2.",
-  "new": "2018-11-05, 0,16 UA. Più vicino al Sole mai raggiunto, superando Helios 2."
- },
- {
-  "rel": "missions/sun/solar-orbiter.json",
-  "at": "description",
-  "old": "Missione guidata dall'ESA con lancio NASA e il contributo di uno strumento. Dove la Parker Solar Probe si avvicina più di chiunque altro sia mai stato, Solar Orbiter va più in alto — utilizzando ripetuti assist gravitazionali di Venere nell'arco di un decennio per salire fuori dall'eclittica verso un'inclinazione eliografica di ~33°. Da quel punto di osservazione la sua suite di strumenti (PHI, EUI, SPICE, STIX, METIS, SoloHI + quattro pacchetti in-situ) acquisisce immagini dei campi magnetici polari del Sole, traccia l'accelerazione del vento solare in tempo reale e collega misurazioni remote e in-situ simultaneamente. Primo perielio 2020-06-15 a 0,51 AU. Perielio più vicino fino ad oggi 2022-10-12 a 0,29 AU (all'interno del perielio di Mercurio).",
-  "new": "Missione guidata dall'ESA con lancio NASA e il contributo di uno strumento. Dove la Parker Solar Probe si avvicina più di chiunque altro sia mai stato, Solar Orbiter va più in alto — utilizzando ripetuti assist gravitazionali di Venere nell'arco di un decennio per salire fuori dall'eclittica verso un'inclinazione eliografica di ~33°. Da quel punto di osservazione la sua suite di strumenti (PHI, EUI, SPICE, STIX, METIS, SoloHI + quattro pacchetti in-situ) acquisisce immagini dei campi magnetici polari del Sole, traccia l'accelerazione del vento solare in tempo reale e collega misurazioni remote e in-situ simultaneamente. Primo perielio 2020-06-15 a 0,51 UA. Perielio più vicino fino ad oggi 2022-10-12 a 0,29 UA (all'interno del perielio di Mercurio)."
- },
- {
-  "rel": "missions/sun/solar-orbiter.json",
-  "at": "events.2.note",
-  "old": "2020-06-15, 0,51 AU. Inizia la scienza iniziale.",
-  "new": "2020-06-15, 0,51 UA. Inizia la scienza iniziale."
- },
- {
-  "rel": "missions/sun/solar-orbiter.json",
-  "at": "events.4.note",
-  "old": "2022-10-12, 0,29 AU. All'interno del perielio di Mercurio.",
-  "new": "2022-10-12, 0,29 UA. All'interno del perielio di Mercurio."
- },
- {
-  "rel": "orbit-regimes-explore/BELT.json",
-  "at": "story",
-  "old": "Un anello di residui rocciosi tra Marte e Giove — da 2,2 a 3,2 AU. Centinaia di migliaia di corpi catalogati; massa totale stimata inferiore al 4% della Luna. Non è il campo di asteroidi densamente popolato della fantascienza: la distanza tipica tra gli oggetti è di circa 1 milione di chilometri. La fascia non si è mai aggregata in un pianeta perché la gravità di Giove ha continuato a disturbare le orbite, impedendo alle collisioni di consolidarsi. Tre lacune di Kirkwood segnano risonanze con Giove dove gli asteroidi vengono spazzati via.",
-  "new": "Un anello di residui rocciosi tra Marte e Giove — da 2,2 a 3,2 UA. Centinaia di migliaia di corpi catalogati; massa totale stimata inferiore al 4% della Luna. Non è il campo di asteroidi densamente popolato della fantascienza: la distanza tipica tra gli oggetti è di circa 1 milione di chilometri. La fascia non si è mai aggregata in un pianeta perché la gravità di Giove ha continuato a disturbare le orbite, impedendo alle collisioni di consolidarsi. Tre lacune di Kirkwood segnano risonanze con Giove dove gli asteroidi vengono spazzati via."
- },
- {
-  "rel": "orbit-regimes-explore/GIANTS.json",
-  "at": "residents.0.label",
-  "old": "Giove — 5,20 AU",
-  "new": "Giove — 5,20 UA"
- },
- {
-  "rel": "orbit-regimes-explore/GIANTS.json",
-  "at": "residents.1.label",
-  "old": "Saturno — 9,58 AU, sistema di anelli",
-  "new": "Saturno — 9,58 UA, sistema di anelli"
- },
- {
-  "rel": "orbit-regimes-explore/GIANTS.json",
-  "at": "residents.2.label",
-  "old": "Urano — 19,18 AU, inclinato 97°",
-  "new": "Urano — 19,18 UA, inclinato 97°"
- },
- {
-  "rel": "orbit-regimes-explore/GIANTS.json",
-  "at": "residents.3.label",
-  "old": "Nettuno — 30,07 AU, i venti più veloci del sistema",
-  "new": "Nettuno — 30,07 UA, i venti più veloci del sistema"
- },
- {
-  "rel": "orbit-regimes-explore/HELIOPAUSE.json",
-  "at": "story",
-  "old": "Il confine dove il vento solare del Sole perde la sua battaglia contro il mezzo interstellare — approssimativamente a 120 AU di distanza. All'interno si trova l'eliosfera, una bolla di particelle solari cariche che fluiscono verso l'esterno a centinaia di km/s. Oltre di essa: il gas freddo e denso e i raggi cosmici della galassia stessa. Le sonde Voyager sono gli unici artefatti che l'umanità abbia mai posto oltre questo confine — Voyager 1 lo ha attraversato nel 2012, Voyager 2 nel 2018. Entrambe trasmettono ancora dati, debolmente, dallo spazio interstellare.",
-  "new": "Il confine dove il vento solare del Sole perde la sua battaglia contro il mezzo interstellare — approssimativamente a 120 UA di distanza. All'interno si trova l'eliosfera, una bolla di particelle solari cariche che fluiscono verso l'esterno a centinaia di km/s. Oltre di essa: il gas freddo e denso e i raggi cosmici della galassia stessa. Le sonde Voyager sono gli unici artefatti che l'umanità abbia mai posto oltre questo confine — Voyager 1 lo ha attraversato nel 2012, Voyager 2 nel 2018. Entrambe trasmettono ancora dati, debolmente, dallo spazio interstellare."
- },
- {
-  "rel": "orbit-regimes-explore/KUIPER.json",
-  "at": "story",
-  "old": "Un anello di corpi ghiacciati oltre Nettuno — da 30 a 50 AU. L'analogo congelato della fascia degli asteroidi: centinaia di migliaia di corpi di cui solo i più grandi sono stati risolti. Composti di metano, ammoniaca, ghiaccio d'acqua + roccia. Plutone fu il primo membro identificato, nel 1930, sebbene la fascia non fosse riconosciuta come popolazione fino agli anni '90, quando Jewitt + Luu trovarono il secondo membro (1992 QB1). New Horizons ha regalato all'umanità i suoi primi sguardi ravvicinati a DUE oggetti Kuiper — Plutone nel 2015 e Arrokoth nel 2019.",
-  "new": "Un anello di corpi ghiacciati oltre Nettuno — da 30 a 50 UA. L'analogo congelato della fascia degli asteroidi: centinaia di migliaia di corpi di cui solo i più grandi sono stati risolti. Composti di metano, ammoniaca, ghiaccio d'acqua + roccia. Plutone fu il primo membro identificato, nel 1930, sebbene la fascia non fosse riconosciuta come popolazione fino agli anni '90, quando Jewitt + Luu trovarono il secondo membro (1992 QB1). New Horizons ha regalato all'umanità i suoi primi sguardi ravvicinati a DUE oggetti Kuiper — Plutone nel 2015 e Arrokoth nel 2019."
- },
- {
-  "rel": "orbit-regimes-explore/KUIPER.json",
-  "at": "residents.0.label",
-  "old": "Plutone — 39,5 AU, il più grande conosciuto",
-  "new": "Plutone — 39,5 UA, il più grande conosciuto"
- },
- {
-  "rel": "orbit-regimes-explore/KUIPER.json",
-  "at": "residents.1.label",
-  "old": "Eris — 96,4 AU (disco diffuso)",
-  "new": "Eris — 96,4 UA (disco diffuso)"
- },
- {
-  "rel": "orbit-regimes-explore/KUIPER.json",
-  "at": "residents.2.label",
-  "old": "Makemake — 45,8 AU",
-  "new": "Makemake — 45,8 UA"
- },
- {
-  "rel": "orbit-regimes-explore/KUIPER.json",
-  "at": "residents.3.label",
-  "old": "Haumea — 43,3 AU, rotatore rapido",
-  "new": "Haumea — 43,3 UA, rotatore rapido"
- },
- {
-  "rel": "orbit-regimes-explore/KUIPER.json",
-  "at": "residents.4.label",
-  "old": "Quaoar — 43,4 AU, ha anelli",
-  "new": "Quaoar — 43,4 UA, ha anelli"
- },
- {
-  "rel": "orbit-regimes-explore/KUIPER.json",
-  "at": "residents.5.label",
-  "old": "Arrokoth — 44,6 AU, binario a contatto",
-  "new": "Arrokoth — 44,6 UA, binario a contatto"
- },
- {
-  "rel": "orbit-regimes-explore/OORT.json",
-  "at": "story",
-  "old": "Un ipotetico guscio sferico di corpi ghiacciati che circonda l'intero sistema solare — estendendosi da circa 2.000 a 100.000 AU. Mai osservata direttamente, solo dedotta: le comete a lungo periodo che vediamo hanno orbite così ampie che devono provenire da qui. Popolazione stimata: trilioni di corpi. La nube di Oort rappresenta i resti della nube primordiale del sistema solare, dinamicamente stabile per miliardi di anni a questa distanza dal Sole. Stelle di passaggio possono perturbare singoli oggetti verso l'interno, trasformandoli nelle comete che osserviamo.",
-  "new": "Un ipotetico guscio sferico di corpi ghiacciati che circonda l'intero sistema solare — estendendosi da circa 2.000 a 100.000 UA. Mai osservata direttamente, solo dedotta: le comete a lungo periodo che vediamo hanno orbite così ampie che devono provenire da qui. Popolazione stimata: trilioni di corpi. La nube di Oort rappresenta i resti della nube primordiale del sistema solare, dinamicamente stabile per miliardi di anni a questa distanza dal Sole. Stelle di passaggio possono perturbare singoli oggetti verso l'interno, trasformandoli nelle comete che osserviamo."
- },
- {
-  "rel": "orbit-regimes-explore/SCATTERED.json",
-  "at": "story",
-  "old": "Corpi su orbite altamente ellittiche oltre la Fascia di Kuiper — da 50 a 1.000 AU. Probabilmente sono stati dispersi qui da interazioni gravitazionali con Nettuno molto tempo fa. Sedna è il prototipo dei Sednoidi: 76 AU al perielio, 937 AU all'afelio, un'orbita di 11.400 anni. Le loro orbite sono troppo lontane perché Nettuno possa averli posizionati attualmente, suggerendo influenze da stelle di passaggio, un ipotetico Pianeta Nove, o i fratelli perduti del Sole dal suo ammasso di nascita. Nessuna sonda spaziale li ha mai visitati.",
-  "new": "Corpi su orbite altamente ellittiche oltre la Fascia di Kuiper — da 50 a 1.000 UA. Probabilmente sono stati dispersi qui da interazioni gravitazionali con Nettuno molto tempo fa. Sedna è il prototipo dei Sednoidi: 76 UA al perielio, 937 UA all'afelio, un'orbita di 11.400 anni. Le loro orbite sono troppo lontane perché Nettuno possa averli posizionati attualmente, suggerendo influenze da stelle di passaggio, un ipotetico Pianeta Nove, o i fratelli perduti del Sole dal suo ammasso di nascita. Nessuna sonda spaziale li ha mai visitati."
- },
- {
-  "rel": "orbit-regimes-explore/SCATTERED.json",
-  "at": "residents.0.label",
-  "old": "Sedna — orbita di 76-937 AU, 11.400 anni",
-  "new": "Sedna — orbita di 76-937 UA, 11.400 anni"
- },
- {
-  "rel": "orbit-regimes-explore/TERRESTRIAL.json",
-  "at": "story",
-  "old": "Il sistema solare interno roccioso — da 0,4 a 1,5 AU dal Sole. Quattro piccoli mondi con nuclei metallici, mantelli di silicati e atmosfere sottili o assenti. Si sono formati all'interno della linea del gelo, dove faceva troppo caldo perché i ghiacci volatili si condensassero, così solo i materiali refrattari (silicati, ferro, nichel) rimanevano solidi. Tre dei quattro sono stati obiettivi dell'esplorazione umana (Terra, Luna, destinazione Marte).",
-  "new": "Il sistema solare interno roccioso — da 0,4 a 1,5 UA dal Sole. Quattro piccoli mondi con nuclei metallici, mantelli di silicati e atmosfere sottili o assenti. Si sono formati all'interno della linea del gelo, dove faceva troppo caldo perché i ghiacci volatili si condensassero, così solo i materiali refrattari (silicati, ferro, nichel) rimanevano solidi. Tre dei quattro sono stati obiettivi dell'esplorazione umana (Terra, Luna, destinazione Marte)."
- },
- {
-  "rel": "orbit-regimes-explore/TERRESTRIAL.json",
-  "at": "residents.0.label",
-  "old": "Mercurio — 0,39 AU",
-  "new": "Mercurio — 0,39 UA"
- },
- {
-  "rel": "orbit-regimes-explore/TERRESTRIAL.json",
-  "at": "residents.1.label",
-  "old": "Venere — 0,72 AU",
-  "new": "Venere — 0,72 UA"
- },
- {
-  "rel": "orbit-regimes-explore/TERRESTRIAL.json",
-  "at": "residents.2.label",
-  "old": "Terra — 1,00 AU",
-  "new": "Terra — 1,00 UA"
- },
- {
-  "rel": "orbit-regimes-explore/TERRESTRIAL.json",
-  "at": "residents.3.label",
-  "old": "Marte — 1,52 AU",
-  "new": "Marte — 1,52 UA"
- },
- {
-  "rel": "planets/neptune.json",
-  "at": "science_sections.0.why",
-  "old": "A 30.07 AU di distanza media, Nettuno è così lontano che un singolo segnale luminoso in una direzione impiega 4 ore per percorso. Il Voyager 2 ha impiegato 12 anni per raggiungerlo.",
-  "new": "A 30.07 UA di distanza media, Nettuno è così lontano che un singolo segnale luminoso in una direzione impiega 4 ore per percorso. Il Voyager 2 ha impiegato 12 anni per raggiungerlo."
- },
- {
-  "rel": "planets/neptune.json",
-  "at": "science_sections.2.why",
-  "old": "La debole eccentricità di Nettuno di 0.0086 produce un'orbita così circolare che l'oscillazione perielio-afelio è inferiore a 200 milioni di km su un semiasse maggiore di 30 AU — una variazione dell'1.4 %.",
-  "new": "La debole eccentricità di Nettuno di 0.0086 produce un'orbita così circolare che l'oscillazione perielio-afelio è inferiore a 200 milioni di km su un semiasse maggiore di 30 UA — una variazione dell'1.4 %."
- },
- {
-  "rel": "small-bodies/arrokoth.json",
-  "at": "science_sections.1.why",
-  "old": "Arrokoth orbita a 44,6 AU — nella Fascia di Kuiper classica, oltre Plutone, in una regione dove i corpi sono rimasti perlopiù indisturbati sin dai primi tempi del sistema solare.",
-  "new": "Arrokoth orbita a 44,6 UA — nella Fascia di Kuiper classica, oltre Plutone, in una regione dove i corpi sono rimasti perlopiù indisturbati sin dai primi tempi del sistema solare."
- },
- {
-  "rel": "small-bodies/bennu.json",
-  "at": "science_sections.0.why",
-  "old": "Bennu è un asteroide near-Earth (semiasse maggiore 1,13 AU) — sufficientemente vicino perché OSIRIS-REx potesse raggiungerlo, campionarlo e restituire materiale sulla Terra in 7 anni.",
-  "new": "Bennu è un asteroide near-Earth (semiasse maggiore 1,13 UA) — sufficientemente vicino perché OSIRIS-REx potesse raggiungerlo, campionarlo e restituire materiale sulla Terra in 7 anni."
- },
- {
-  "rel": "small-bodies/ceres.json",
-  "at": "science_sections.1.why",
-  "old": "Cerere orbita a 2,77 AU — ben all'interno della fascia degli asteroidi e usata come distanza di riferimento canonica della \"parte centrale della fascia\".",
-  "new": "Cerere orbita a 2,77 UA — ben all'interno della fascia degli asteroidi e usata come distanza di riferimento canonica della \"parte centrale della fascia\"."
- },
- {
-  "rel": "small-bodies/didymos.json",
-  "at": "science_sections.0.why",
-  "old": "Didymos è un asteroide binario near-Earth (semiasse maggiore 1,64 AU). DART (NASA, 2022) ha colpito il suo piccolo companion Dimorphos per testare la fisica della deflessione di asteroidi.",
-  "new": "Didymos è un asteroide binario near-Earth (semiasse maggiore 1,64 UA). DART (NASA, 2022) ha colpito il suo piccolo companion Dimorphos per testare la fisica della deflessione di asteroidi."
- },
- {
-  "rel": "small-bodies/eris.json",
-  "at": "science_sections.1.why",
-  "old": "Eris oscilla da 38 AU al perielio a 97 AU all'afelio — un'orbita di media ~68 AU (semiasse maggiore). Ha raggiunto l'afelio attorno al 1977 e ora si sta lentamente spostando nuovamente verso il Sole.",
-  "new": "Eris oscilla da 38 UA al perielio a 97 UA all'afelio — un'orbita di media ~68 UA (semiasse maggiore). Ha raggiunto l'afelio attorno al 1977 e ora si sta lentamente spostando nuovamente verso il Sole."
- },
- {
-  "rel": "small-bodies/halley.json",
-  "at": "science_sections.0.why",
-  "old": "L'eccentricità di 0.967 della Cometa di Halley è l'orbita della cometa periodica da manuale — quasi parabolica, con perielio a 0.59 AU e afelio a 35 AU.",
-  "new": "L'eccentricità di 0.967 della Cometa di Halley è l'orbita della cometa periodica da manuale — quasi parabolica, con perielio a 0.59 UA e afelio a 35 UA."
- },
- {
-  "rel": "small-bodies/halley.json",
-  "at": "science_sections.1.why",
-  "old": "L'enorme oscillazione perielio-afelio della Cometa di Halley (da 35 a 0.59 AU) spinge i ghiacci superficiali a sublimare violentemente presso il perielio, producendo la chioma e la coda. Prossimo perielio: 2061.",
-  "new": "L'enorme oscillazione perielio-afelio della Cometa di Halley (da 35 a 0.59 UA) spinge i ghiacci superficiali a sublimare violentemente presso il perielio, producendo la chioma e la coda. Prossimo perielio: 2061."
- },
- {
-  "rel": "small-bodies/itokawa.json",
-  "at": "science_sections.0.why",
-  "old": "Itokawa è un asteroide Apollo near-Earth — semiasse maggiore 1,32 AU. Il rendez-vous del Hayabusa nel 2005 e il ritorno del campione nel 2010 è stato il primo viaggio di andata e ritorno verso un NEA.",
-  "new": "Itokawa è un asteroide Apollo near-Earth — semiasse maggiore 1,32 UA. Il rendez-vous del Hayabusa nel 2005 e il ritorno del campione nel 2010 è stato il primo viaggio di andata e ritorno verso un NEA."
- },
- {
-  "rel": "small-bodies/makemake.json",
-  "at": "science_sections.0.why",
-  "old": "L'asse semimaggiore di Makemake pari a 45,7 AU lo colloca nella fascia di Kuiper classica — abbastanza lontano perché il metano superficiale persista come ghiaccio dominante.",
-  "new": "L'asse semimaggiore di Makemake pari a 45,7 UA lo colloca nella fascia di Kuiper classica — abbastanza lontano perché il metano superficiale persista come ghiaccio dominante."
- },
- {
-  "rel": "small-bodies/vesta.json",
-  "at": "science_sections.1.why",
-  "old": "Vesta orbita a 2,36 AU — fascia interna. La sua prossimità ha determinato la scelta di Dawn di visitare Vesta per primo (2011), poi partire verso Cerere (2015).",
-  "new": "Vesta orbita a 2,36 UA — fascia interna. La sua prossimità ha determinato la scelta di Dawn di visitare Vesta per primo (2011), poi partire verso Cerere (2015)."
- },
- {
-  "rel": "sun.json",
-  "at": "bio",
-  "old": "Una stella della sequenza principale di tipo G di 4,6 miliardi di anni, a metà dei suoi 10 miliardi di anni di vita. Il Sole ruota in modo differenziale: il suo equatore impiega 25 giorni, i suoi poli 35. In circa 5 miliardi di anni esaurirà l'idrogeno del suo nucleo, si espanderà in una gigante rossa e inghiottirà i pianeti interni. L'influenza gravitazionale del Sole definisce l'eliosfera fino a circa 120 AU.",
-  "new": "Una stella della sequenza principale di tipo G di 4,6 miliardi di anni, a metà dei suoi 10 miliardi di anni di vita. Il Sole ruota in modo differenziale: il suo equatore impiega 25 giorni, i suoi poli 35. In circa 5 miliardi di anni esaurirà l'idrogeno del suo nucleo, si espanderà in una gigante rossa e inghiottirà i pianeti interni. L'influenza gravitazionale del Sole definisce l'eliosfera fino a circa 120 UA."
- },
- {
-  "rel": "trajectories/bepicolombo.json",
-  "at": "current_distance_label",
-  "old": "0,48 AU · in rotta verso l'inserimento in orbita attorno a Mercurio il 2026-12-05",
-  "new": "0,48 UA · in rotta verso l'inserimento in orbita attorno a Mercurio il 2026-12-05"
- },
- {
-  "rel": "trajectories/dawn.json",
-  "at": "current_distance_label",
-  "old": "2,8 AU · in orbita stabile intorno a Cerere dal fine di ottobre 2018 (~durata orbitale di 20 anni)",
-  "new": "2,8 UA · in orbita stabile intorno a Cerere dal fine di ottobre 2018 (~durata orbitale di 20 anni)"
- },
- {
-  "rel": "trajectories/galileo.json",
-  "at": "current_distance_label",
-  "old": "5,4 AU · smaltito in Giove il 2003-09-21 (protezione di Europa)",
-  "new": "5,4 UA · smaltito in Giove il 2003-09-21 (protezione di Europa)"
- },
- {
-  "rel": "trajectories/new-horizons.json",
-  "at": "current_distance_label",
-  "old": "66 AU · in missione estesa — in rotta verso la regione di stagnazione dell'eliosfera",
-  "new": "66 UA · in missione estesa — in rotta verso la regione di stagnazione dell'eliosfera"
- },
- {
-  "rel": "trajectories/venera-13.json",
-  "at": "current_distance_label",
-  "old": "0,74 AU · atterrata su Venere il 1° marzo 1982 (127 min di sopravvivenza in superficie)",
-  "new": "0,74 UA · atterrata su Venere il 1° marzo 1982 (127 min di sopravvivenza in superficie)"
- },
- {
-  "rel": "trajectories/voyager-1.json",
-  "at": "current_distance_label",
-  "old": "172 AU · ~23,8 ore luce dal Sole",
-  "new": "172 UA · ~23,8 ore luce dal Sole"
- },
- {
-  "rel": "trajectories/voyager-2.json",
-  "at": "current_distance_label",
-  "old": "143 AU · ~19,8 ore-luce dal Sole",
-  "new": "143 UA · ~19,8 ore-luce dal Sole"
- },
- {
-  "rel": "messages",
-  "at": "lab_goal_lss_escape",
-  "old": "Per abbandonare il Sole definitivamente devi raggiungere la sua velocità di fuga. Alla distanza della Terra — 1 AU — è circa 42 km/s. Trascina la distanza verso l'esterno e osserva come diminuisce: la fuga è più facile quanto più lontano sei già.",
-  "new": "Per abbandonare il Sole definitivamente devi raggiungere la sua velocità di fuga. Alla distanza della Terra — 1 UA — è circa 42 km/s. Trascina la distanza verso l'esterno e osserva come diminuisce: la fuga è più facile quanto più lontano sei già."
- }
+  {
+    "rel": "belts/asteroid.json",
+    "at": "location",
+    "old": "Tra Marte e Giove · 2,2–3,2 AU dal Sole",
+    "new": "Tra Marte e Giove · 2,2–3,2 UA dal Sole"
+  },
+  {
+    "rel": "belts/asteroid.json",
+    "at": "science_sections.1.why",
+    "old": "La fascia occupa l'anello 2.2–3.2 AU. I vuoti di Kirkwood — zone orbitali vuote alle risonanze di mean-motion di Giove — caratterizzano la popolazione.",
+    "new": "La fascia occupa l'anello 2.2–3.2 UA. I vuoti di Kirkwood — zone orbitali vuote alle risonanze di mean-motion di Giove — caratterizzano la popolazione."
+  },
+  {
+    "rel": "belts/kuiper.json",
+    "at": "location",
+    "old": "Oltre Nettuno · 30–50 AU dal Sole",
+    "new": "Oltre Nettuno · 30–50 UA dal Sole"
+  },
+  {
+    "rel": "belts/kuiper.json",
+    "at": "science_sections.0.why",
+    "old": "La Fascia di Kuiper è il residuo transnettuniano del disco protoplanetario — 30-50 AU, dominato dal ghiaccio. Plutone, Eris, Haumea, Makemake vi risiedono.",
+    "new": "La Fascia di Kuiper è il residuo transnettuniano del disco protoplanetario — 30-50 UA, dominato dal ghiaccio. Plutone, Eris, Haumea, Makemake vi risiedono."
+  },
+  {
+    "rel": "belts/kuiper.json",
+    "at": "science_sections.1.why",
+    "old": "I KBO classici orbitano tra 42 e 48 AU su orbite a bassa eccentricità e bassa inclinazione — sono rimasti sostanzialmente indisturbati dalla fase iniziale del sistema.",
+    "new": "I KBO classici orbitano tra 42 e 48 UA su orbite a bassa eccentricità e bassa inclinazione — sono rimasti sostanzialmente indisturbati dalla fase iniziale del sistema."
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "pale-blue-dot.distance",
+    "old": "~40,5 AU (6 miliardi di km)",
+    "new": "~40,5 UA (6 miliardi di km)"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "pluto-nh.distance",
+    "old": "~34 AU (5 miliardi di km)",
+    "new": "~34 UA (5 miliardi di km)"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "sun-sdo.distance",
+    "old": "1 AU",
+    "new": "1 UA"
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-11.json",
+    "at": "description",
+    "old": "Sonda stabilizzata dalla rotazione e alimentata da RTG (~259 kg), gemella di Pioneer 10 con lo stesso bus e il messaggio Pioneer Plaque diretto alle stelle. Lanciata il 1973-04-06 su un Atlas SLV-3D Centaur D-1A + Star-37E da Cape Canaveral. Sorvolo di Giove il 1974-12-03 a 43 000 km — il più ravvicinato di qualsiasi incontro Pioneer, ha restituito le prime immagini delle regioni polari e l'assistenza gravitazionale necessaria per raggiungere Saturno. Incontro con Saturno il 1979-09-01 a 21 000 km dalle nuvole superficiali — prime immagini dettagliate del sistema di anelli, scoperta di un nuovo anello (anello F) e di una nuova luna, conferma del campo magnetico quasi perfettamente allineato di Saturno. Ha continuato le osservazioni verso l'esterno fino all'ultimo contatto il 1995-11-24. Ora si trova a ~93 AU dal Sole, diretta verso Aquila.",
+    "new": "Sonda stabilizzata dalla rotazione e alimentata da RTG (~259 kg), gemella di Pioneer 10 con lo stesso bus e il messaggio Pioneer Plaque diretto alle stelle. Lanciata il 1973-04-06 su un Atlas SLV-3D Centaur D-1A + Star-37E da Cape Canaveral. Sorvolo di Giove il 1974-12-03 a 43 000 km — il più ravvicinato di qualsiasi incontro Pioneer, ha restituito le prime immagini delle regioni polari e l'assistenza gravitazionale necessaria per raggiungere Saturno. Incontro con Saturno il 1979-09-01 a 21 000 km dalle nuvole superficiali — prime immagini dettagliate del sistema di anelli, scoperta di un nuovo anello (anello F) e di una nuova luna, conferma del campo magnetico quasi perfettamente allineato di Saturno. Ha continuato le osservazioni verso l'esterno fino all'ultimo contatto il 1995-11-24. Ora si trova a ~93 UA dal Sole, diretta verso Aquila."
+  },
+  {
+    "rel": "fleet/orbiter/solar-orbiter.json",
+    "at": "description",
+    "old": "Solar Orbiter, guidata da ESA, è la prima sonda progettata per fotografare in dettaglio le regioni polari del Sole — utilizzando ripetuti assist gravitazionali di Venere nell'arco di un decennio per salire fuori dall'eclittica verso un'inclinazione eliografica di ~33°. Trasporta dieci strumenti che combinano remote sensing (magnetografo PHI, fotografo EUV estremo EUI, spettrometro SPICE, fotografo a raggi X STIX, coronografo METIS, fotografo eliosferico SoloHI) con misurazioni in-situ (magnetometro, particelle energetiche, plasma del vento solare, onde radio + plasma). Lanciata il 2020-02-10 da Cape Canaveral su un NASA Atlas V 411. Primo perielio il 2020-06-15 a 0,51 AU. Perielio operativo 0,28 AU (~62 R☉), all'interno della distanza di perielio di Mercurio.",
+    "new": "Solar Orbiter, guidata da ESA, è la prima sonda progettata per fotografare in dettaglio le regioni polari del Sole — utilizzando ripetuti assist gravitazionali di Venere nell'arco di un decennio per salire fuori dall'eclittica verso un'inclinazione eliografica di ~33°. Trasporta dieci strumenti che combinano remote sensing (magnetografo PHI, fotografo EUV estremo EUI, spettrometro SPICE, fotografo a raggi X STIX, coronografo METIS, fotografo eliosferico SoloHI) con misurazioni in-situ (magnetometro, particelle energetiche, plasma del vento solare, onde radio + plasma). Lanciata il 2020-02-10 da Cape Canaveral su un NASA Atlas V 411. Primo perielio il 2020-06-15 a 0,51 UA. Perielio operativo 0,28 UA (~62 R☉), all'interno della distanza di perielio di Mercurio."
+  },
+  {
+    "rel": "fleet/orbiter/ulysses.json",
+    "at": "description",
+    "old": "Missione congiunta ESA + NASA di osservazione solare e eliosferica, costruita da Dornier con contributo scientifico statunitense. Lanciata il 6 ottobre 1990 dallo STS-41 Discovery su una traiettoria ad alta energia diretta a Giove — l'unico modo per scagliare un'astronave fuori dal piano eclittico senza un delta-v proibitivo. Il sorvolo di Giove dell'8 febbraio 1992 deflesse l'astronave in un'orbita eliocentrica con inclinazione di 80° (1,3 × 5,4 AU, periodo di 6,2 anni) — il primo e ancora unico veicolo spaziale a volare sui poli del Sole. Tre orbite polari complete ci hanno fornito la struttura tridimensionale della superficie di corrente eliosferica, il vento solare più veloce ai poli e più lento all'equatore, e l'unico registro di più decenni del comportamento della corona polare nel corso di un ciclo solare completo. La missione è terminata nel 2009.",
+    "new": "Missione congiunta ESA + NASA di osservazione solare e eliosferica, costruita da Dornier con contributo scientifico statunitense. Lanciata il 6 ottobre 1990 dallo STS-41 Discovery su una traiettoria ad alta energia diretta a Giove — l'unico modo per scagliare un'astronave fuori dal piano eclittico senza un delta-v proibitivo. Il sorvolo di Giove dell'8 febbraio 1992 deflesse l'astronave in un'orbita eliocentrica con inclinazione di 80° (1,3 × 5,4 UA, periodo di 6,2 anni) — il primo e ancora unico veicolo spaziale a volare sui poli del Sole. Tre orbite polari complete ci hanno fornito la struttura tridimensionale della superficie di corrente eliosferica, il vento solare più veloce ai poli e più lento all'equatore, e l'unico registro di più decenni del comportamento della corona polare nel corso di un ciclo solare completo. La missione è terminata nel 2009."
+  },
+  {
+    "rel": "missions/saturn/voyager-1.json",
+    "at": "first",
+    "old": "Oggetto più lontano creato dall'uomo — attualmente a ~170 AU dal Sole nello spazio interstellare",
+    "new": "Oggetto più lontano creato dall'uomo — attualmente a ~170 UA dal Sole nello spazio interstellare"
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "description",
+    "old": "Parker Solar Probe ha eseguito il lancio a più alta energia mai realizzato per una missione scientifica — C3 di 154 km²/s², richiedendo uno stadio solido Star 48BV personalizzato sopra un Delta IV Heavy soltanto per sfuggire alla Terra in una traiettoria di caduta verso il Sole. Sette assistenze gravitazionali di Venere nel corso di sei anni hanno progressivamente abbassato il perielio da 0,16 AU (P1, 2018-11-05) a 0,046 AU (P22, 2024-12-24 — 9,86 raggi solari, 6,1 milioni di km dalla superficie). Al P8 il 2021-04-28 Parker è scesa al di sotto della superficie critica di Alfvén — il primo veicolo spaziale mai entrato nella corona solare. Al P22 ha raggiunto ~191 km/s, diventando l'oggetto fatto dall'uomo più veloce mai costruito. Lo scudo termico in carbonio-carbonio di 11,43 cm ha sostenuto 1.377 °C mentre il corpo del veicolo spaziale 1 metro dietro di esso è rimasto a temperatura ambiente.",
+    "new": "Parker Solar Probe ha eseguito il lancio a più alta energia mai realizzato per una missione scientifica — C3 di 154 km²/s², richiedendo uno stadio solido Star 48BV personalizzato sopra un Delta IV Heavy soltanto per sfuggire alla Terra in una traiettoria di caduta verso il Sole. Sette assistenze gravitazionali di Venere nel corso di sei anni hanno progressivamente abbassato il perielio da 0,16 UA (P1, 2018-11-05) a 0,046 UA (P22, 2024-12-24 — 9,86 raggi solari, 6,1 milioni di km dalla superficie). Al P8 il 2021-04-28 Parker è scesa al di sotto della superficie critica di Alfvén — il primo veicolo spaziale mai entrato nella corona solare. Al P22 ha raggiunto ~191 km/s, diventando l'oggetto fatto dall'uomo più veloce mai costruito. Lo scudo termico in carbonio-carbonio di 11,43 cm ha sostenuto 1.377 °C mentre il corpo del veicolo spaziale 1 metro dietro di esso è rimasto a temperatura ambiente."
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "events.2.note",
+    "old": "2018-11-05, 0,16 AU. Più vicino al Sole mai raggiunto, superando Helios 2.",
+    "new": "2018-11-05, 0,16 UA. Più vicino al Sole mai raggiunto, superando Helios 2."
+  },
+  {
+    "rel": "missions/sun/solar-orbiter.json",
+    "at": "description",
+    "old": "Missione guidata dall'ESA con lancio NASA e il contributo di uno strumento. Dove la Parker Solar Probe si avvicina più di chiunque altro sia mai stato, Solar Orbiter va più in alto — utilizzando ripetuti assist gravitazionali di Venere nell'arco di un decennio per salire fuori dall'eclittica verso un'inclinazione eliografica di ~33°. Da quel punto di osservazione la sua suite di strumenti (PHI, EUI, SPICE, STIX, METIS, SoloHI + quattro pacchetti in-situ) acquisisce immagini dei campi magnetici polari del Sole, traccia l'accelerazione del vento solare in tempo reale e collega misurazioni remote e in-situ simultaneamente. Primo perielio 2020-06-15 a 0,51 AU. Perielio più vicino fino ad oggi 2022-10-12 a 0,29 AU (all'interno del perielio di Mercurio).",
+    "new": "Missione guidata dall'ESA con lancio NASA e il contributo di uno strumento. Dove la Parker Solar Probe si avvicina più di chiunque altro sia mai stato, Solar Orbiter va più in alto — utilizzando ripetuti assist gravitazionali di Venere nell'arco di un decennio per salire fuori dall'eclittica verso un'inclinazione eliografica di ~33°. Da quel punto di osservazione la sua suite di strumenti (PHI, EUI, SPICE, STIX, METIS, SoloHI + quattro pacchetti in-situ) acquisisce immagini dei campi magnetici polari del Sole, traccia l'accelerazione del vento solare in tempo reale e collega misurazioni remote e in-situ simultaneamente. Primo perielio 2020-06-15 a 0,51 UA. Perielio più vicino fino ad oggi 2022-10-12 a 0,29 UA (all'interno del perielio di Mercurio)."
+  },
+  {
+    "rel": "missions/sun/solar-orbiter.json",
+    "at": "events.2.note",
+    "old": "2020-06-15, 0,51 AU. Inizia la scienza iniziale.",
+    "new": "2020-06-15, 0,51 UA. Inizia la scienza iniziale."
+  },
+  {
+    "rel": "missions/sun/solar-orbiter.json",
+    "at": "events.4.note",
+    "old": "2022-10-12, 0,29 AU. All'interno del perielio di Mercurio.",
+    "new": "2022-10-12, 0,29 UA. All'interno del perielio di Mercurio."
+  },
+  {
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "story",
+    "old": "Un anello di residui rocciosi tra Marte e Giove — da 2,2 a 3,2 AU. Centinaia di migliaia di corpi catalogati; massa totale stimata inferiore al 4% della Luna. Non è il campo di asteroidi densamente popolato della fantascienza: la distanza tipica tra gli oggetti è di circa 1 milione di chilometri. La fascia non si è mai aggregata in un pianeta perché la gravità di Giove ha continuato a disturbare le orbite, impedendo alle collisioni di consolidarsi. Tre lacune di Kirkwood segnano risonanze con Giove dove gli asteroidi vengono spazzati via.",
+    "new": "Un anello di residui rocciosi tra Marte e Giove — da 2,2 a 3,2 UA. Centinaia di migliaia di corpi catalogati; massa totale stimata inferiore al 4% della Luna. Non è il campo di asteroidi densamente popolato della fantascienza: la distanza tipica tra gli oggetti è di circa 1 milione di chilometri. La fascia non si è mai aggregata in un pianeta perché la gravità di Giove ha continuato a disturbare le orbite, impedendo alle collisioni di consolidarsi. Tre lacune di Kirkwood segnano risonanze con Giove dove gli asteroidi vengono spazzati via."
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "residents.0.label",
+    "old": "Giove — 5,20 AU",
+    "new": "Giove — 5,20 UA"
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "residents.1.label",
+    "old": "Saturno — 9,58 AU, sistema di anelli",
+    "new": "Saturno — 9,58 UA, sistema di anelli"
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "residents.2.label",
+    "old": "Urano — 19,18 AU, inclinato 97°",
+    "new": "Urano — 19,18 UA, inclinato 97°"
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "residents.3.label",
+    "old": "Nettuno — 30,07 AU, i venti più veloci del sistema",
+    "new": "Nettuno — 30,07 UA, i venti più veloci del sistema"
+  },
+  {
+    "rel": "orbit-regimes-explore/HELIOPAUSE.json",
+    "at": "story",
+    "old": "Il confine dove il vento solare del Sole perde la sua battaglia contro il mezzo interstellare — approssimativamente a 120 AU di distanza. All'interno si trova l'eliosfera, una bolla di particelle solari cariche che fluiscono verso l'esterno a centinaia di km/s. Oltre di essa: il gas freddo e denso e i raggi cosmici della galassia stessa. Le sonde Voyager sono gli unici artefatti che l'umanità abbia mai posto oltre questo confine — Voyager 1 lo ha attraversato nel 2012, Voyager 2 nel 2018. Entrambe trasmettono ancora dati, debolmente, dallo spazio interstellare.",
+    "new": "Il confine dove il vento solare del Sole perde la sua battaglia contro il mezzo interstellare — approssimativamente a 120 UA di distanza. All'interno si trova l'eliosfera, una bolla di particelle solari cariche che fluiscono verso l'esterno a centinaia di km/s. Oltre di essa: il gas freddo e denso e i raggi cosmici della galassia stessa. Le sonde Voyager sono gli unici artefatti che l'umanità abbia mai posto oltre questo confine — Voyager 1 lo ha attraversato nel 2012, Voyager 2 nel 2018. Entrambe trasmettono ancora dati, debolmente, dallo spazio interstellare."
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "story",
+    "old": "Un anello di corpi ghiacciati oltre Nettuno — da 30 a 50 AU. L'analogo congelato della fascia degli asteroidi: centinaia di migliaia di corpi di cui solo i più grandi sono stati risolti. Composti di metano, ammoniaca, ghiaccio d'acqua + roccia. Plutone fu il primo membro identificato, nel 1930, sebbene la fascia non fosse riconosciuta come popolazione fino agli anni '90, quando Jewitt + Luu trovarono il secondo membro (1992 QB1). New Horizons ha regalato all'umanità i suoi primi sguardi ravvicinati a DUE oggetti Kuiper — Plutone nel 2015 e Arrokoth nel 2019.",
+    "new": "Un anello di corpi ghiacciati oltre Nettuno — da 30 a 50 UA. L'analogo congelato della fascia degli asteroidi: centinaia di migliaia di corpi di cui solo i più grandi sono stati risolti. Composti di metano, ammoniaca, ghiaccio d'acqua + roccia. Plutone fu il primo membro identificato, nel 1930, sebbene la fascia non fosse riconosciuta come popolazione fino agli anni '90, quando Jewitt + Luu trovarono il secondo membro (1992 QB1). New Horizons ha regalato all'umanità i suoi primi sguardi ravvicinati a DUE oggetti Kuiper — Plutone nel 2015 e Arrokoth nel 2019."
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "residents.0.label",
+    "old": "Plutone — 39,5 AU, il più grande conosciuto",
+    "new": "Plutone — 39,5 UA, il più grande conosciuto"
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "residents.1.label",
+    "old": "Eris — 96,4 AU (disco diffuso)",
+    "new": "Eris — 96,4 UA (disco diffuso)"
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "residents.2.label",
+    "old": "Makemake — 45,8 AU",
+    "new": "Makemake — 45,8 UA"
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "residents.3.label",
+    "old": "Haumea — 43,3 AU, rotatore rapido",
+    "new": "Haumea — 43,3 UA, rotatore rapido"
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "residents.4.label",
+    "old": "Quaoar — 43,4 AU, ha anelli",
+    "new": "Quaoar — 43,4 UA, ha anelli"
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "residents.5.label",
+    "old": "Arrokoth — 44,6 AU, binario a contatto",
+    "new": "Arrokoth — 44,6 UA, binario a contatto"
+  },
+  {
+    "rel": "orbit-regimes-explore/OORT.json",
+    "at": "story",
+    "old": "Un ipotetico guscio sferico di corpi ghiacciati che circonda l'intero sistema solare — estendendosi da circa 2.000 a 100.000 AU. Mai osservata direttamente, solo dedotta: le comete a lungo periodo che vediamo hanno orbite così ampie che devono provenire da qui. Popolazione stimata: trilioni di corpi. La nube di Oort rappresenta i resti della nube primordiale del sistema solare, dinamicamente stabile per miliardi di anni a questa distanza dal Sole. Stelle di passaggio possono perturbare singoli oggetti verso l'interno, trasformandoli nelle comete che osserviamo.",
+    "new": "Un ipotetico guscio sferico di corpi ghiacciati che circonda l'intero sistema solare — estendendosi da circa 2.000 a 100.000 UA. Mai osservata direttamente, solo dedotta: le comete a lungo periodo che vediamo hanno orbite così ampie che devono provenire da qui. Popolazione stimata: trilioni di corpi. La nube di Oort rappresenta i resti della nube primordiale del sistema solare, dinamicamente stabile per miliardi di anni a questa distanza dal Sole. Stelle di passaggio possono perturbare singoli oggetti verso l'interno, trasformandoli nelle comete che osserviamo."
+  },
+  {
+    "rel": "orbit-regimes-explore/SCATTERED.json",
+    "at": "story",
+    "old": "Corpi su orbite altamente ellittiche oltre la Fascia di Kuiper — da 50 a 1.000 AU. Probabilmente sono stati dispersi qui da interazioni gravitazionali con Nettuno molto tempo fa. Sedna è il prototipo dei Sednoidi: 76 AU al perielio, 937 AU all'afelio, un'orbita di 11.400 anni. Le loro orbite sono troppo lontane perché Nettuno possa averli posizionati attualmente, suggerendo influenze da stelle di passaggio, un ipotetico Pianeta Nove, o i fratelli perduti del Sole dal suo ammasso di nascita. Nessuna sonda spaziale li ha mai visitati.",
+    "new": "Corpi su orbite altamente ellittiche oltre la Fascia di Kuiper — da 50 a 1.000 UA. Probabilmente sono stati dispersi qui da interazioni gravitazionali con Nettuno molto tempo fa. Sedna è il prototipo dei Sednoidi: 76 UA al perielio, 937 UA all'afelio, un'orbita di 11.400 anni. Le loro orbite sono troppo lontane perché Nettuno possa averli posizionati attualmente, suggerendo influenze da stelle di passaggio, un ipotetico Pianeta Nove, o i fratelli perduti del Sole dal suo ammasso di nascita. Nessuna sonda spaziale li ha mai visitati."
+  },
+  {
+    "rel": "orbit-regimes-explore/SCATTERED.json",
+    "at": "residents.0.label",
+    "old": "Sedna — orbita di 76-937 AU, 11.400 anni",
+    "new": "Sedna — orbita di 76-937 UA, 11.400 anni"
+  },
+  {
+    "rel": "orbit-regimes-explore/TERRESTRIAL.json",
+    "at": "story",
+    "old": "Il sistema solare interno roccioso — da 0,4 a 1,5 AU dal Sole. Quattro piccoli mondi con nuclei metallici, mantelli di silicati e atmosfere sottili o assenti. Si sono formati all'interno della linea del gelo, dove faceva troppo caldo perché i ghiacci volatili si condensassero, così solo i materiali refrattari (silicati, ferro, nichel) rimanevano solidi. Tre dei quattro sono stati obiettivi dell'esplorazione umana (Terra, Luna, destinazione Marte).",
+    "new": "Il sistema solare interno roccioso — da 0,4 a 1,5 UA dal Sole. Quattro piccoli mondi con nuclei metallici, mantelli di silicati e atmosfere sottili o assenti. Si sono formati all'interno della linea del gelo, dove faceva troppo caldo perché i ghiacci volatili si condensassero, così solo i materiali refrattari (silicati, ferro, nichel) rimanevano solidi. Tre dei quattro sono stati obiettivi dell'esplorazione umana (Terra, Luna, destinazione Marte)."
+  },
+  {
+    "rel": "orbit-regimes-explore/TERRESTRIAL.json",
+    "at": "residents.0.label",
+    "old": "Mercurio — 0,39 AU",
+    "new": "Mercurio — 0,39 UA"
+  },
+  {
+    "rel": "orbit-regimes-explore/TERRESTRIAL.json",
+    "at": "residents.1.label",
+    "old": "Venere — 0,72 AU",
+    "new": "Venere — 0,72 UA"
+  },
+  {
+    "rel": "orbit-regimes-explore/TERRESTRIAL.json",
+    "at": "residents.2.label",
+    "old": "Terra — 1,00 AU",
+    "new": "Terra — 1,00 UA"
+  },
+  {
+    "rel": "orbit-regimes-explore/TERRESTRIAL.json",
+    "at": "residents.3.label",
+    "old": "Marte — 1,52 AU",
+    "new": "Marte — 1,52 UA"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "science_sections.0.why",
+    "old": "A 30.07 AU di distanza media, Nettuno è così lontano che un singolo segnale luminoso in una direzione impiega 4 ore per percorso. Il Voyager 2 ha impiegato 12 anni per raggiungerlo.",
+    "new": "A 30.07 UA di distanza media, Nettuno è così lontano che un singolo segnale luminoso in una direzione impiega 4 ore per percorso. Il Voyager 2 ha impiegato 12 anni per raggiungerlo."
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "science_sections.2.why",
+    "old": "La debole eccentricità di Nettuno di 0.0086 produce un'orbita così circolare che l'oscillazione perielio-afelio è inferiore a 200 milioni di km su un semiasse maggiore di 30 AU — una variazione dell'1.4 %.",
+    "new": "La debole eccentricità di Nettuno di 0.0086 produce un'orbita così circolare che l'oscillazione perielio-afelio è inferiore a 200 milioni di km su un semiasse maggiore di 30 UA — una variazione dell'1.4 %."
+  },
+  {
+    "rel": "small-bodies/arrokoth.json",
+    "at": "science_sections.1.why",
+    "old": "Arrokoth orbita a 44,6 AU — nella Fascia di Kuiper classica, oltre Plutone, in una regione dove i corpi sono rimasti perlopiù indisturbati sin dai primi tempi del sistema solare.",
+    "new": "Arrokoth orbita a 44,6 UA — nella Fascia di Kuiper classica, oltre Plutone, in una regione dove i corpi sono rimasti perlopiù indisturbati sin dai primi tempi del sistema solare."
+  },
+  {
+    "rel": "small-bodies/bennu.json",
+    "at": "science_sections.0.why",
+    "old": "Bennu è un asteroide near-Earth (semiasse maggiore 1,13 AU) — sufficientemente vicino perché OSIRIS-REx potesse raggiungerlo, campionarlo e restituire materiale sulla Terra in 7 anni.",
+    "new": "Bennu è un asteroide near-Earth (semiasse maggiore 1,13 UA) — sufficientemente vicino perché OSIRIS-REx potesse raggiungerlo, campionarlo e restituire materiale sulla Terra in 7 anni."
+  },
+  {
+    "rel": "small-bodies/ceres.json",
+    "at": "science_sections.1.why",
+    "old": "Cerere orbita a 2,77 AU — ben all'interno della fascia degli asteroidi e usata come distanza di riferimento canonica della \"parte centrale della fascia\".",
+    "new": "Cerere orbita a 2,77 UA — ben all'interno della fascia degli asteroidi e usata come distanza di riferimento canonica della \"parte centrale della fascia\"."
+  },
+  {
+    "rel": "small-bodies/didymos.json",
+    "at": "science_sections.0.why",
+    "old": "Didymos è un asteroide binario near-Earth (semiasse maggiore 1,64 AU). DART (NASA, 2022) ha colpito il suo piccolo companion Dimorphos per testare la fisica della deflessione di asteroidi.",
+    "new": "Didymos è un asteroide binario near-Earth (semiasse maggiore 1,64 UA). DART (NASA, 2022) ha colpito il suo piccolo companion Dimorphos per testare la fisica della deflessione di asteroidi."
+  },
+  {
+    "rel": "small-bodies/eris.json",
+    "at": "science_sections.1.why",
+    "old": "Eris oscilla da 38 AU al perielio a 97 AU all'afelio — un'orbita di media ~68 AU (semiasse maggiore). Ha raggiunto l'afelio attorno al 1977 e ora si sta lentamente spostando nuovamente verso il Sole.",
+    "new": "Eris oscilla da 38 UA al perielio a 97 UA all'afelio — un'orbita di media ~68 UA (semiasse maggiore). Ha raggiunto l'afelio attorno al 1977 e ora si sta lentamente spostando nuovamente verso il Sole."
+  },
+  {
+    "rel": "small-bodies/halley.json",
+    "at": "science_sections.0.why",
+    "old": "L'eccentricità di 0.967 della Cometa di Halley è l'orbita della cometa periodica da manuale — quasi parabolica, con perielio a 0.59 AU e afelio a 35 AU.",
+    "new": "L'eccentricità di 0.967 della Cometa di Halley è l'orbita della cometa periodica da manuale — quasi parabolica, con perielio a 0.59 UA e afelio a 35 UA."
+  },
+  {
+    "rel": "small-bodies/halley.json",
+    "at": "science_sections.1.why",
+    "old": "L'enorme oscillazione perielio-afelio della Cometa di Halley (da 35 a 0.59 AU) spinge i ghiacci superficiali a sublimare violentemente presso il perielio, producendo la chioma e la coda. Prossimo perielio: 2061.",
+    "new": "L'enorme oscillazione perielio-afelio della Cometa di Halley (da 35 a 0.59 UA) spinge i ghiacci superficiali a sublimare violentemente presso il perielio, producendo la chioma e la coda. Prossimo perielio: 2061."
+  },
+  {
+    "rel": "small-bodies/itokawa.json",
+    "at": "science_sections.0.why",
+    "old": "Itokawa è un asteroide Apollo near-Earth — semiasse maggiore 1,32 AU. Il rendez-vous del Hayabusa nel 2005 e il ritorno del campione nel 2010 è stato il primo viaggio di andata e ritorno verso un NEA.",
+    "new": "Itokawa è un asteroide Apollo near-Earth — semiasse maggiore 1,32 UA. Il rendez-vous del Hayabusa nel 2005 e il ritorno del campione nel 2010 è stato il primo viaggio di andata e ritorno verso un NEA."
+  },
+  {
+    "rel": "small-bodies/makemake.json",
+    "at": "science_sections.0.why",
+    "old": "L'asse semimaggiore di Makemake pari a 45,7 AU lo colloca nella fascia di Kuiper classica — abbastanza lontano perché il metano superficiale persista come ghiaccio dominante.",
+    "new": "L'asse semimaggiore di Makemake pari a 45,7 UA lo colloca nella fascia di Kuiper classica — abbastanza lontano perché il metano superficiale persista come ghiaccio dominante."
+  },
+  {
+    "rel": "small-bodies/vesta.json",
+    "at": "science_sections.1.why",
+    "old": "Vesta orbita a 2,36 AU — fascia interna. La sua prossimità ha determinato la scelta di Dawn di visitare Vesta per primo (2011), poi partire verso Cerere (2015).",
+    "new": "Vesta orbita a 2,36 UA — fascia interna. La sua prossimità ha determinato la scelta di Dawn di visitare Vesta per primo (2011), poi partire verso Cerere (2015)."
+  },
+  {
+    "rel": "sun.json",
+    "at": "bio",
+    "old": "Una stella della sequenza principale di tipo G di 4,6 miliardi di anni, a metà dei suoi 10 miliardi di anni di vita. Il Sole ruota in modo differenziale: il suo equatore impiega 25 giorni, i suoi poli 35. In circa 5 miliardi di anni esaurirà l'idrogeno del suo nucleo, si espanderà in una gigante rossa e inghiottirà i pianeti interni. L'influenza gravitazionale del Sole definisce l'eliosfera fino a circa 120 AU.",
+    "new": "Una stella della sequenza principale di tipo G di 4,6 miliardi di anni, a metà dei suoi 10 miliardi di anni di vita. Il Sole ruota in modo differenziale: il suo equatore impiega 25 giorni, i suoi poli 35. In circa 5 miliardi di anni esaurirà l'idrogeno del suo nucleo, si espanderà in una gigante rossa e inghiottirà i pianeti interni. L'influenza gravitazionale del Sole definisce l'eliosfera fino a circa 120 UA."
+  },
+  {
+    "rel": "trajectories/bepicolombo.json",
+    "at": "current_distance_label",
+    "old": "0,48 AU · in rotta verso l'inserimento in orbita attorno a Mercurio il 2026-12-05",
+    "new": "0,48 UA · in rotta verso l'inserimento in orbita attorno a Mercurio il 2026-12-05"
+  },
+  {
+    "rel": "trajectories/dawn.json",
+    "at": "current_distance_label",
+    "old": "2,8 AU · in orbita stabile intorno a Cerere dal fine di ottobre 2018 (~durata orbitale di 20 anni)",
+    "new": "2,8 UA · in orbita stabile intorno a Cerere dal fine di ottobre 2018 (~durata orbitale di 20 anni)"
+  },
+  {
+    "rel": "trajectories/galileo.json",
+    "at": "current_distance_label",
+    "old": "5,4 AU · smaltito in Giove il 2003-09-21 (protezione di Europa)",
+    "new": "5,4 UA · smaltito in Giove il 2003-09-21 (protezione di Europa)"
+  },
+  {
+    "rel": "trajectories/new-horizons.json",
+    "at": "current_distance_label",
+    "old": "66 AU · in missione estesa — in rotta verso la regione di stagnazione dell'eliosfera",
+    "new": "66 UA · in missione estesa — in rotta verso la regione di stagnazione dell'eliosfera"
+  },
+  {
+    "rel": "trajectories/venera-13.json",
+    "at": "current_distance_label",
+    "old": "0,74 AU · atterrata su Venere il 1° marzo 1982 (127 min di sopravvivenza in superficie)",
+    "new": "0,74 UA · atterrata su Venere il 1° marzo 1982 (127 min di sopravvivenza in superficie)"
+  },
+  {
+    "rel": "trajectories/voyager-1.json",
+    "at": "current_distance_label",
+    "old": "172 AU · ~23,8 ore luce dal Sole",
+    "new": "172 UA · ~23,8 ore luce dal Sole"
+  },
+  {
+    "rel": "trajectories/voyager-2.json",
+    "at": "current_distance_label",
+    "old": "143 AU · ~19,8 ore-luce dal Sole",
+    "new": "143 UA · ~19,8 ore-luce dal Sole"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_lss_escape",
+    "old": "Per abbandonare il Sole definitivamente devi raggiungere la sua velocità di fuga. Alla distanza della Terra — 1 AU — è circa 42 km/s. Trascina la distanza verso l'esterno e osserva come diminuisce: la fuga è più facile quanto più lontano sei già.",
+    "new": "Per abbandonare il Sole definitivamente devi raggiungere la sua velocità di fuga. Alla distanza della Terra — 1 UA — è circa 42 km/s. Trascina la distanza verso l'esterno e osserva come diminuisce: la fuga è più facile quanto più lontano sei già."
+  }
 ]

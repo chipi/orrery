@@ -1,494 +1,494 @@
 [
- {
-  "rel": "essays/asteroid-mining.json",
-  "at": "dek",
-  "en": "The headline says asteroids contain quadrillions of dollars of gold and platinum. The headline is wrong — not about the metal, but about the money. The real argument for asteroid resources runs in the opposite direction entirely.",
-  "cur": "이 헤드라인은 소행성이 금과 백금으로 이루어진 수천조 달러 규모의 자산을 포함하고 있다고 말한다. 이 헤드라인은 틀렸다—금속 때문이 아니라 돈 때문이다. 소행성 자원에 대한 진정한 논거는 정반대 방향으로 흐른다."
- },
- {
-  "rel": "essays/asteroid-mining.json",
-  "at": "body.0.md",
-  "en": "Every few years, someone does the arithmetic on asteroid 16 Psyche and announces, in a breathless press release, that the metal-rich body orbiting in the [asteroid belt](/science/planets/asteroid-belt) contains iron, nickel, and precious metals worth something in the range of ten quintillion dollars. The figure is always staggering. It is also, in any meaningful economic sense, meaningless — and understanding why it is meaningless leads directly to what the genuine argument for asteroid resources actually is, which is almost the opposite of the headline version.",
-  "cur": "수 년마다 누군군가는 소행성 16 Psyche에 대한 산술 계산을 하고, 숨을 헐떡거리며 보도자료를 통해, [소행성 띠](/science/planets/asteroid-belt)에 공전하는 금속이 풍부한 천체가 철, 니켈, 그리고 약 10 오십조 달러 규모의 귀금속을 포함하고 있다고 발표한다. 그 숫자는 항상 놀라울 정도다. 그것은 또한 의미 있는 경제학적 의미에서는 무의미하다—그리고 그것이 왜 무의미한지 이해하는 것은 소행성 자원에 대한 진정한 논거가 실제로는 무엇인지로 직접 이어지는데, 그것은 헤드라인 버전과 거의 정반대다."
- },
- {
-  "rel": "essays/asteroid-mining.json",
-  "at": "body.1.md",
-  "en": "Start with the number itself. The global platinum market is worth, in a given year, roughly $5 billion. If you could deliver the platinum-group-metal content of even a modest metallic asteroid to Earth and sell it tomorrow, you would not make a fortune. You would collapse the market. The price of platinum derives entirely from its scarcity; remove the scarcity, and you remove the price. Value, for a commodity, is set at the margin — by the last unit sold, not the total volume in existence. The $10-quintillion asteroid, successfully mined and delivered to Earth's surface, would be worth roughly what iron ore is worth: not much per kilogram. But this market-collapse argument is almost beside the point, because it assumes delivery to Earth — and delivery to Earth is where the arithmetic goes wrong long before the market enters the picture. This is where the [rocket equation](/science/propulsion/tsiolkovsky) closes the discussion.",
-  "cur": "그 숫자 자체부터 시작해보자. 세계 백금 시장은 주어진 연도에 대략 50억 달러의 가치가 있다. 만약 당신이 소행성 하나를 채광해 백금족 금속 함유량을 내일 지구로 가져와 팔 수 있다면, 당신은 재산을 벌지 못할 것이다. 당신은 시장을 붕괴시킬 것이다. 백금의 가격은 전적으로 그 희귀성에서 비롯된다; 희귀성을 제거하면, 가격도 제거된다. 상품의 가치는 한계에서 설정된다—판매된 총량이 아니라 마지막으로 판매된 단위에 의해. 성공적으로 채광되어 지구 표면으로 배달된 10 오십조 달러 소행성은 철광석이 가치 있는 정도로 가치가 있을 것이다: 킬로그램당 많지 않다. 하지만 이러한 시장 붕괴 논거는 거의 관점이 벗어나 있는데, 왜냐하면 그것은 지구로의 배달을 가정하기 때문이다—그리고 지구로의 배달이 바로 산술이 시장이 들어오기 훨씬 전에 잘못되는 곳이다. 여기가 [로켓 방정식](/science/propulsion/tsiolkovsky)이 논의를 종료하는 곳이다."
- },
- {
-  "rel": "essays/asteroid-mining.json",
-  "at": "body.3.md",
-  "en": "The [delta-v budget](/science/propulsion/dv-budget) for a mission from Earth to a near-Earth asteroid is, for a favourable target, somewhere around 6 km/s — comparable to reaching Mars. Getting material back from that asteroid to Earth orbit costs more still, and getting it from Earth orbit to Earth's surface requires surviving the atmosphere. This is all before you have done any mining. The [rocket equation](/science/propulsion/tsiolkovsky) does not grade on a curve: every kilogram of payload you want to return home from deep space must be matched, at launch, by enough propellant to carry it back, which must itself be matched by propellant to carry that propellant, and so on down the regress the equation describes. The [Tsiolkovsky constraint](/science/propulsion/tsiolkovsky), which has not been repealed since 1903, makes the numbers brutal.",
-  "cur": "지구에서 근지구 소행성으로의 임무를 위한 [델타-v 예산](/science/propulsion/dv-budget)은 유리한 목표의 경우 대략 6 km/s 부근이다—화성에 도달하는 것과 비슷하다. 그 소행성에서 재료를 지구 궤도로 돌려보내는 데는 더 많은 비용이 들고, 지구 궤도에서 지구 표면까지 가져가는 것은 대기권 통과를 견뎌야 한다. 이 모든 것은 채광을 하기 전이다. [로켓 방정식](/science/propulsion/tsiolkovsky)은 곡선의 등급을 매기지 않는다: 심우주에서 집으로 돌려보내고 싶은 모든 킬로그램의 탑재량은 발사 시점에서 그것을 다시 나르기에 충분한 추진제와 맞아떨어져야 하고, 그것 자체도 그 추진제를 나르기 위한 추진제와 맞아떨어져야 하며, 이런 식으로 방정식이 설명하는 회귀를 따라 계속 진행된다. 1903년 이래로 반복되지 않은 [치올콥스키 제약](/science/propulsion/tsiolkovsky)은 그 숫자들을 야만적으로 만든다."
- },
- {
-  "rel": "essays/asteroid-mining.json",
-  "at": "body.4.md",
-  "en": "Put plainly: you are pulling material out of a gravity well — not Earth's, but the solar system's. The asteroid is, admittedly, tiny, with a surface gravity a thousandth of Earth's. Getting off it costs almost nothing in [delta-v](/essays/delta-v). But you are then in interplanetary space, and Earth is at the bottom of a very large gravity well, and arriving there with any significant velocity means spending fuel to slow down, or accepting the violence of aerobraking, or both. The economic cost of transporting mass across interplanetary distances and then decelerating it safely is, at current and foreseeable propulsion technologies, so far above the market value of any commodity that the business case for returning bulk materials to Earth cannot close. This is not a pessimistic reading. It is what the [specific impulse](/science/propulsion/specific-impulse) numbers say when you run them honestly.",
-  "cur": "명확히 말하자면: 당신은 중력 우물에서 재료를 끌어올리고 있다—지구의 것은 아니지만, 태양계의 것이다. 소행성은 물론 작으며, 표면 중력은 지구의 천분의 일이다. 그것을 벗어나는 것은 [델타-v](/essays/delta-v)에서 거의 비용이 들지 않는다. 하지만 당신은 그 후 행성 간 공간에 있으며, 지구는 매우 큰 중력 우물의 바닥에 있고, 상당한 속도로 도착하는 것은 연료를 써서 속력을 낮춰야 하거나, 기동을 통한 대기 제동의 폭력성을 받아들이거나, 둘 다 해야 한다는 뜻이다. 행성 간 거리에 걸쳐 질량을 수송하고 안전하게 감속시키는 경제적 비용은 현재 및 예상 가능한 추진 기술에서 어떤 상품의 시장 가치보다 훨씬 높아서, 지구로 대량의 재료를 돌려보내는 사업 사례는 성립할 수 없다. 이것은 비관적인 해석이 아니다. 이것은 당신이 정직하게 [비충동량](/science/propulsion/specific-impulse) 숫자들을 실행할 때 그들이 말하는 것이다."
- },
- {
-  "rel": "essays/asteroid-mining.json",
-  "at": "body.5.md",
-  "en": "This is also why the first generation of commercial asteroid ventures — Planetary Resources, founded in 2012, and Deep Space Industries, founded in 2013 — failed within a decade, not because the asteroids aren't there, but because the market for Earth-delivered asteroid platinum does not exist at any price that the [delta-v economics](/essays/delta-v) can support. The logic of hauling wealth down to Earth's surface was broken from the start.",
-  "cur": "이것은 또한 첫 번째 세대의 상업 소행성 벤처들—2012년에 설립된 Planetary Resources와 2013년에 설립된 Deep Space Industries—이 소행성이 있지 않아서가 아니라 지구로 배달되는 소행성 백금에 대한 시장이 [델타-v 경제학](/essays/delta-v)이 뒷받침할 수 있는 어떤 가격에서도 존재하지 않기 때문에 십 년 이내에 실패한 이유이다. 부를 지구 표면으로 끌어내려오는 논리는 처음부터 깨져 있었다."
- },
- {
-  "rel": "essays/asteroid-mining.json",
-  "at": "body.7.md",
-  "en": "Now invert the question. Instead of asking what it costs to bring material from space to Earth, ask what it costs to bring material from Earth to space. The answer is the same rocket equation, running the other direction, and it is just as brutal. Getting one kilogram to low Earth orbit on a [reusable launcher](/essays/reusable-launchers) costs, at best, a few thousand dollars today — down dramatically from the tens of thousands it cost a decade ago. Getting that kilogram further, to a lunar transfer orbit or to a Mars-bound trajectory, costs more still, because you are climbing higher out of Earth's gravity well and the [Oberth arithmetic](/science/propulsion/oberth-effect) that makes deep burns efficient cannot fix the fundamental mass-ratio problem.",
-  "cur": "이제 질문을 뒤집어보자. 우주에서 지구로 재료를 가져오는 데 얼마나 드는지 묻는 대신, 지구에서 우주로 재료를 가져오는 데 얼마나 드는지 묻자. 답은 같은 로켓 방정식이고, 반대 방향으로 흐르며, 똑같이 야만적이다. 한 킬로그램을 저지구궤도에 [재사용 가능한 발사체](/essays/reusable-launchers)로 가져가는 데는 오늘날 최선의 경우 수천 달러가 든다—십 년 전 수만 달러가 들던 것에서 급격히 내려갔다. 그 킬로그램을 더 멀리, 달 이동 궤도나 화성 행 궤적으로 가져가는 데는 더 많이 든다. 왜냐하면 당신은 지구 중력 우물에서 더 높이 올라가고 있고 깊은 연소를 효율적으로 만드는 [오베르트 산술](/science/propulsion/oberth-effect)이 근본적인 질량 비 문제를 해결할 수 없기 때문이다."
- },
- {
-  "rel": "essays/asteroid-mining.json",
-  "at": "body.8.md",
-  "en": "This is what the gravity-well framing clarifies. Earth's surface sits at the bottom of a well that costs roughly 9.4 km/s of delta-v to escape entirely. Every kilogram of food, fuel, water, air, structural material, or radiation shielding that a crewed spacecraft carries above low Earth orbit has paid that toll. The toll is not a surcharge that clever engineering can avoid; it is a physical consequence of being on Earth, which is a large planet with a deep gravitational field. If you want to build and operate spacecraft above low Earth orbit — for a lunar base, for Mars transit, for anything sustained in deep space — the dominant cost is not your hardware. It is the propellant burned to lift your hardware and its consumables out of the well every single time.",
-  "cur": "이것이 중력 우물 프레이밍이 명확히 해주는 것이다. 지구 표면은 완전히 탈출하기 위해 대략 9.4 km/s의 델타-v가 드는 우물의 바닥에 앉아 있다. 유인 우주선이 저지구궤도 위에 나르는 모든 음식, 연료, 물, 공기, 구조 재료, 또는 방사선 차폐제의 킬로그램은 그 대가를 지불했다. 그 대가는 정교한 엔지니어링이 피할 수 있는 추가 요금이 아니다; 그것은 지구에 있다는 것의 물리적 결과이고, 지구는 깊은 중력장을 가진 큰 행성이다. 만약 당신이 저지구궤도 위에 우주선을 건설하고 운영하고 싶다면—달 기지, 화성 여행, 심우주의 그 어떤 지속적인 활동을 위해—지배적인 비용은 당신의 하드웨어가 아니다. 그것은 하드웨어와 그것의 소비재를 우물에서 끌어올리기 위해 매번 연소되는 추진제다."
- },
- {
-  "rel": "essays/asteroid-mining.json",
-  "at": "body.9.md",
-  "en": "The genuine economic argument for asteroid resources begins exactly here, and it runs in the direction opposite to the headline. Instead of bringing material from asteroids to Earth, the question is: can we use material that is *already* above Earth's gravity well to avoid lifting it from the surface? Can we, in effect, find a fuel depot and a hardware store already in orbit — or close enough that the delivery cost is measured in fractions of a km/s rather than ten km/s — and stop paying the launch toll on every kilogram of material a deep-space economy needs? The answer, if the recon missions are to be believed, is yes. But not for gold. For water.",
-  "cur": "소행성 자원에 대한 진정한 경제적 논거는 정확히 여기서 시작되고, 헤드라인의 반대 방향으로 흐른다. 소행성에서 지구로 재료를 가져오는 대신, 질문은 이렇다: 우리는 *이미* 지구 중력 우물 위에 있는 재료를 사용해서 표면에서 끌어올리는 것을 피할 수 있을까? 우리는 사실상 행성 궤도에 이미 있거나—또는 배달 비용이 10 km/s이 아닌 분수 km/s 단위로 측정되는 정도로 충분히 가까운—연료 저장소와 하드웨어 상점을 찾을 수 있고, 심우주 경제가 필요한 모든 재료의 킬로그램마다 발사 대가를 지불하는 것을 멈출 수 있을까? 정찰 임무들이 믿을만하다면, 답은 그렇다이다. 하지만 금 때문은 아니다. 물 때문이다."
- },
- {
-  "rel": "essays/asteroid-mining.json",
-  "at": "body.10.caption",
-  "en": "Every kilogram launched from Earth pays a brutal toll in delta-v just to climb out of the planet’s gravity well. Anything already in space — an asteroid drifting above the rim — has that price paid. Which is why a litre of water parked in orbit is worth more than a litre of gold sitting on the ground.",
-  "cur": "지구에서 발사된 모든 킬로그램은 행성의 중력 우물에서 벗어나기 위해 델타-v에서 야만적인 대가를 지불한다. 우주에 이미 있는 것—가장자리 위의 소행성 표류물—은 그 가격을 이미 지불했다. 이것이 궤도에 주차된 물 1리터가 지면에 앉아 있는 금 1리터보다 더 가치 있는 이유다."
- },
- {
-  "rel": "essays/asteroid-mining.json",
-  "at": "body.12.md",
-  "en": "Carbonaceous chondrite asteroids — the C-type and related classes that represent the majority of near-Earth objects — contain significant quantities of hydrated minerals: clays and phyllosilicates that hold water molecules in their crystal structure at levels ranging from a few percent to more than twenty percent by mass. Some also contain organics. The water is not sitting in puddles; it is chemically bound, and extracting it requires heating the material to drive off the water vapour and then condensing it. But the energy to do that can, in principle, come from solar concentrators in space. The result is water — and water, in the context of a deep-space programme, is not primarily a thing to drink.",
-  "cur": "탄소질 콘드라이트 소행성들—거의 모든 근지구 천체들을 나타내는 C-형 및 관련 분류들—은 함수 광물의 상당한 양을 포함한다: 물 분자를 그 결정 구조 내에 여러 퍼센트에서 20퍼센트 이상의 질량으로 보유하는 점토와 엽규산염. 일부는 유기물도 포함한다. 물은 웅덩이에 앉아 있지 않다; 그것은 화학적으로 결합되어 있고, 그것을 추출하는 것은 물 증기를 몰아내기 위해 재료를 가열한 다음 그것을 응축시키는 것을 요구한다. 하지만 그렇게 하기 위한 에너지는 원칙적으로 우주의 태양 집중기에서 나올 수 있다. 그 결과는 물이다—그리고 심우주 프로그램의 맥락에서 물은 주로 마실 것이 아니다."
- },
- {
-  "rel": "essays/asteroid-mining.json",
-  "at": "body.13.md",
-  "en": "Electrolysis splits water into hydrogen and oxygen: the most energetic chemical propellant combination ever flown. Hydrogen and oxygen, liquefied and stored, are rocket propellant. The [delta-v](/essays/delta-v) budget for a Mars transfer is approximately 3.6 km/s from low Earth orbit; a propellant depot at a convenient [Lagrange point](/science/transfers/hohmann-transfer) or in a near-Earth orbit, stocked from asteroid-derived water, would dramatically change the mass that needs to be launched from Earth for any beyond-LEO mission. The fuel is the dominant mass fraction of any spacecraft — the Saturn V that carried Apollo astronauts to the Moon was [85% propellant by mass](/essays/delta-v). A depot that supplies propellant without requiring it to be lifted from Earth's surface is not a logistical convenience. It restructures the entire economics of deep space.",
-  "cur": "전기분해는 물을 수소와 산소로 분해한다: 지금까지 비행한 가장 에너지적으로 강력한 화학 추진제 조합. 액화되고 저장된 수소와 산소는 로켓 추진제이다. 저지구궤도에서 화성 이동을 위한 [델타-v](/essays/delta-v) 예산은 대략 3.6 km/s이다; 편리한 [라그랑주 점](/science/transfers/hohmann-transfer)에서 또는 근지구 궤도에서 추진제 저장소가 소행성 유래 물로 채워져 있으면, 지구에서 발사해야 하는 모든 초-저지구궤도 임무에 대한 질량이 극적으로 변할 것이다. 연료는 모든 우주선의 지배적인 질량 분수이다—Apollo 우주비행사를 달로 옮긴 새턴 V는 [질량에서 85% 추진제](/essays/delta-v)였다. 지구 표면에서 끌어올려야 할 필요 없이 추진제를 공급하는 저장소는 물류상의 편의가 아니다. 그것은 심우주의 전체 경제학을 재구성한다."
- },
- {
-  "rel": "essays/asteroid-mining.json",
-  "at": "body.14.md",
-  "en": "Beyond propellant, water provides oxygen for breathing. The same carbonaceous material provides carbon and nitrogen. The bulk mass — rock, in most cases, not metal — provides radiation shielding: a spacecraft transiting to Mars is outside Earth's magnetosphere for six to nine months, and lifting enough mass to shield a crew from cosmic rays costs enormously if every kilogram has to be launched from Earth's surface. None of this has the glamour of platinum. All of it is more valuable to a space-based economy than platinum is. The argument is not about treasure. It is about [in-situ resource utilisation](/science/life-in-space/isru-resource-utilization) — the only approach that makes sustained human presence beyond Earth physically feasible — and the resource that matters most is not the rarest or most expensive one, but the one that is most expensive to launch from Earth: propellant mass. The [going-to-the-moon essay](/essays/going-to-the-moon) makes the same case at the lunar south pole, for the same reasons. The Moon and carbonaceous near-Earth asteroids are the same argument in two different places.",
-  "cur": "추진제를 넘어서, 물은 호흡을 위한 산소를 제공한다. 같은 탄소질 재료는 탄소와 질소를 제공한다. 대량의 질량—대부분의 경우 금속이 아니라 바위—는 방사선 차폐를 제공한다: 화성으로 이동하는 우주선은 6개월에서 9개월 동안 지구 자기권 밖에 있고, 우주선이 우주 방사선으로부터 승무원을 차폐하기 충분한 질량을 올리는 데 드는 비용은 모든 킬로그램이 지구 표면에서 발사되어야 한다면 어마어마하다. 이 중 어느 것도 백금의 멋진 광채를 가지지 않는다. 모든 것이 심우주 경제에서 백금보다 더 가치 있다. 그 논거는 보물에 관한 것이 아니다. 그것은 [현지 자원 이용](/science/life-in-space/isru-resource-utilization)에 관한 것이다—지구 너머의 지속적인 인류의 존재를 물리적으로 가능하게 만드는 유일한 접근법—그리고 가장 중요한 자원은 가장 드물거나 가장 비싼 것이 아니라, 지구에서 발사하는 데 가장 비싼 것이다: 추진제 질량. [달로 가는 에세이](/essays/going-to-the-moon)는 같은 이유로 달 남극에서 같은 경우를 만든다. 달과 탄소질 근지구 소행성들은 두 개의 다른 장소에서 같은 논거이다."
- },
- {
-  "rel": "essays/asteroid-mining.json",
-  "at": "body.15.caption",
-  "en": "Split asteroid water and you have hydrogen and oxygen — rocket propellant — plus air to breathe, water to drink, and bulk rock for radiation shielding. The prize was never metal to sell back home; it is a fuel depot that is already in the sky.",
-  "cur": "소행성 물을 분해하면 당신은 수소와 산소—로켓 추진제—를 가진다. 그리고 호흡할 공기, 마실 물, 방사선 차폐를 위한 대량의 바위를 가진다. 그 상은 집으로 다시 팔 금속이 아니었다; 그것은 이미 하늘에 있는 연료 저장소이다."
- },
- {
-  "rel": "essays/asteroid-mining.json",
-  "at": "body.17.md",
-  "en": "The recon that would support any of this is not theoretical. It has been done, twice, by Japan, and once by the United States — and what it found was both more interesting and more humbling than the headline version suggested.",
-  "cur": "이를 뒷받침할 탐사는 순전히 이론적이지 않다. 일본이 두 번, 미국이 한 번 실행했으며, 그것이 발견한 것은 헤드라인 버전이 시사한 것보다 훨씬 흥미롭고 겸허하게 만드는 것이었다."
- },
- {
-  "rel": "essays/asteroid-mining.json",
-  "at": "body.18.md",
-  "en": "Japan's [Hayabusa](/missions?id=hayabusa1) reached the S-type asteroid Itokawa in September 2005. Its sample collection mechanism had malfunctioned, but the spacecraft returned to Earth in June 2010 carrying approximately 1,500 sub-millimetre particles — the first samples ever returned from an asteroid. The analysis confirmed ordinary LL chondrite mineralogy: not the water-rich carbonaceous target the ISRU argument needs, but proof of concept that you can reach an asteroid, touch it, and bring pieces back.",
-  "cur": "일본의 [Hayabusa](/missions?id=hayabusa1)는 2005년 9월에 S형 소행성 이토카와에 도달했습니다. 표본 채집 장치는 오작동했지만, 우주선은 2010년 6월에 지구로 돌아왔으며 약 1,500개의 아(sub-)밀리미터 입자를 가지고 있었습니다 — 소행성에서 반환된 첫 번째 표본이었습니다. 분석 결과 평범한 LL 천드라이트 광물 성분을 확인했습니다: ISRU 주장이 필요로 하는 수가 풍부한 탄소질 목표가 아니었지만, 소행성에 도달하고 접촉한 후 조각을 가져올 수 있다는 개념 증명이었습니다."
- },
- {
-  "rel": "essays/asteroid-mining.json",
-  "at": "body.19.md",
-  "en": "[Hayabusa2](/missions?id=hayabusa2), launched in December 2014, was designed to go further. Its target was Ryugu, a C-type near-Earth asteroid — the carbonaceous variety that hydration models predicted should contain water-bearing minerals. The spacecraft arrived at Ryugu in June 2018 and spent a year and a half studying it before performing sample collection in February and July 2019. In July 2019, it also deployed a small impactor that blasted a crater in Ryugu's surface, then collected material from the exposed subsurface — material that had not been altered by space weathering. The capsule returned to Earth in December 2020. The analysis confirmed what the models predicted: Ryugu's material is rich in hydrated minerals, contains organics including amino acid precursors, and in chemical composition is closely related to CI chondrites — the most primitive and water-rich class of carbonaceous chondrites. The ore that the ISRU argument needs is there. Ryugu is not a unique body; C-type asteroids represent roughly 75% of all asteroids in the main belt and a significant fraction of near-Earth objects.",
-  "cur": "[Hayabusa2](/missions?id=hayabusa2)는 2014년 12월에 발사되었으며, 더 나아가기 위해 설계되었습니다. 목표는 류구, C형 근지구 소행성이었습니다 — 수화 모델이 물을 함유한 광물을 포함해야 한다고 예측한 탄소질 종류였습니다. 우주선은 2018년 6월에 류구에 도달했으며 2019년 2월과 7월에 표본 채집을 수행하기 전에 1년 반 동안 연구했습니다. 2019년 7월에는 류구의 표면에 분화구를 폭발시킨 작은 충격체를 배치한 후 우주 풍화로 인해 변형되지 않은 노출된 심부층 물질을 채집했습니다. 캡슐은 2020년 12월에 지구로 돌아왔습니다. 분석은 모델이 예측한 것을 확인했습니다: 류구의 물질은 수화 광물이 풍부하며, 아미노산 전구체를 포함한 유기물을 포함하고, 화학 조성상 CI 콘드라이트 — 탄소질 콘드라이트 중 가장 원시적이고 물이 풍부한 종류와 밀접한 관계가 있습니다. ISRU 주장이 필요로 하는 광석이 있습니다. 류구는 독특한 천체가 아닙니다; C형 소행성은 주 소행대의 모든 소행성의 대략 75%를 나타내며 근지구 천체의 상당한 비율을 나타냅니다."
- },
- {
-  "rel": "essays/asteroid-mining.json",
-  "at": "body.20.md",
-  "en": "NASA's [OSIRIS-REx](/missions?id=osiris-rex) reached the carbonaceous asteroid Bennu in December 2018 and spent almost two years mapping it before performing its Touch-And-Go sample collection in October 2020. The capsule returned to Earth in September 2023 with approximately 120 grams of material — the largest sample ever returned from an asteroid. Analysis confirmed hydrated clay minerals and carbon-rich compounds: the same ingredients the Hayabusa2 team found at Ryugu, on a different body, reached by a different nation, via a different trajectory. The result was the same. This is not a coincidence. It is confirmation that the C-type carbonaceous composition — water-bearing, organic-rich — is the rule for these bodies, not the exception.",
-  "cur": "NASA의 [OSIRIS-REx](/missions?id=osiris-rex)는 2018년 12월에 탄소질 소행성 베누에 도달했으며 2020년 10월에 터치-앤-고 표본 채집을 수행하기 전에 거의 2년간 그것을 매핑했습니다. 캡슐은 2023년 9월에 지구로 돌아왔으며 약 120그램의 물질을 가지고 있었습니다 — 소행성에서 반환된 가장 큰 표본이었습니다. 분석 결과 수화된 점토 광물과 탄소가 풍부한 화합물을 확인했습니다: Hayabusa2 팀이 다른 천체 류구에서 발견했으며, 다른 국가가 도달했으며, 다른 궤도를 통해 도달한 동일한 성분이었습니다. 결과는 동일했습니다. 이것은 우연이 아닙니다. 이것은 C형 탄소질 구성 — 물을 함유한, 유기물이 풍부한 — 이 이 천체들의 규칙이지, 예외가 아니라는 확인입니다."
- },
- {
-  "rel": "essays/asteroid-mining.json",
-  "at": "body.21.caption",
-  "en": "Three robotic missions have already touched and sampled asteroids: Japan’s Hayabusa (Itokawa, 2010, the first ever), Hayabusa2 (Ryugu, 2020), and NASA’s OSIRIS-REx (Bennu, 2023). What came back was water-bearing clay and organics — from loose rubble, not solid metal.",
-  "cur": "세 개의 로봇 우주선이 이미 소행성을 건드리고 샘플링했다: 일본의 Hayabusa (이토카와, 2010, 역사상 처음), Hayabusa2 (류구, 2020), 그리고 NASA의 OSIRIS-REx (베누, 2023). 돌아온 것은 물을 함유한 점토와 유기물이었다 — 고체 금속이 아니라 느슨한 암석 더미에서."
- },
- {
-  "rel": "essays/asteroid-mining.json",
-  "at": "body.22.caption",
-  "en": "Hayabusa2 at Ryugu — JAXA’s second asteroid sample return, and the mission bold enough to fire a copper impactor into the surface to blast open a fresh crater before scooping up what it exposed.",
-  "cur": "류구의 Hayabusa2 — JAXA의 두 번째 소행성 샘플 반환 미션이며, 표면에 구리 충격기를 발사해 신선한 분화구를 터뜨린 후 노출된 것을 퍼 올릴 만큼 대담한 미션이다."
- },
- {
-  "rel": "essays/asteroid-mining.json",
-  "at": "body.24.md",
-  "en": "Here is what the missions also found, and what the headlines about asteroid mining consistently understate: Bennu and Ryugu are not solid bodies. They are rubble piles.",
-  "cur": "여기에 미션들이 또한 발견한 것이 있으며, 소행성 채굴에 관한 헤드라인이 일관되게 과소평가하는 것이 있다: 베누와 류구는 고체 천체가 아니다. 그들은 암석 더미다."
- },
- {
-  "rel": "essays/asteroid-mining.json",
-  "at": "body.25.md",
-  "en": "A rubble pile is an aggregate of loosely consolidated material — boulders, pebbles, dust — held together by gravity so weak that walking on the surface would require careful consideration of whether you might bounce off entirely. Bennu's surface gravity is approximately 6 micronewtons per kilogram. An astronaut standing on its equator would weigh less than a milligram in Earth terms. Trying to anchor a mining system — to drill, to excavate, to push against the surface with any force — generates a reaction that could push the mining equipment off the asteroid. The TAG (Touch-and-Go) event that OSIRIS-REx used to collect its sample lasted approximately six seconds of surface contact; during those six seconds, the spacecraft's sample head sank deeper into the surface than expected, because Bennu's material is less consolidated than a sandcastle. The mission team later said the spacecraft would have sunk entirely if the thrusters hadn't fired to pull it back. This is not a hostile environment in the way that Mars is hostile. It is a hostile environment in the way that a bag of loose sand floating in zero gravity is hostile: fundamentally different from every assumption that terrestrial mining engineering makes.",
-  "cur": "암석 더미는 느슨하게 응고된 물질의 집합체다 — 바위, 자갈, 먼지 — 표면을 걷는 것이 완전히 튈 수도 있는지를 신중하게 고려할 필요가 있을 정도로 약한 중력으로 함께 묶여 있다. 베누의 표면 중력은 대략 킬로그램당 6 마이크로뉴턴이다. 적도 위에 서 있는 우주비행사는 지구 기준으로 밀리그램 미만의 무게를 가질 것이다. 채굴 시스템을 고정하려는 시도 — 천공하기, 굴착하기, 표면에 어떤 힘으로든 밀어붙이기 — 채굴 장비를 소행성에서 밀어낼 수 있는 반력을 생성한다. OSIRIS-REx가 시료를 수집하는 데 사용한 TAG (터치-앤드-고) 사건은 약 6초의 표면 접촉을 지속했다; 그 6초 동안 우주선의 샘플 헤드는 예상보다 더 깊이 표면에 침강했는데, 베누의 물질이 모래성보다 덜 응고되어 있기 때문이다. 미션 팀은 나중에 추진기가 발사되어 그것을 다시 끌어내지 않았다면 우주선이 완전히 침강했을 것이라고 말했다. 이것은 화성이 적대적인 방식의 적대적인 환경이 아니다. 이것은 무중력으로 떠다니는 헐거운 모래 주머니가 적대적인 방식의 적대적인 환경이다: 지상 채굴 공학이 하는 모든 가정과 근본적으로 다르다."
- },
- {
-  "rel": "essays/asteroid-mining.json",
-  "at": "body.26.md",
-  "en": "Hayabusa2's impactor experiment confirmed the same picture from a different angle. Its 2-kg copper impactor created a crater roughly 14 metres in diameter and 2 metres deep — larger than predicted, because the surface was more porous than expected. The [DART](/missions?id=dart) mission, which in September 2022 redirected the asteroid Dimorphos by deliberately crashing a spacecraft into it, produced an ejecta plume and an orbital period change both larger than solid-body models predicted — consistent, again, with a loosely bound aggregate. Working in that environment is not a matter of scaling up terrestrial mining and adding vacuum suits. Anchoring against a surface you cannot push against, excavating material that floats away at centimetres per second, containing ejecta in microgravity — these are unsolved engineering problems unlike anything in the history of extraction industry. The science is confirmed. The engineering has not yet begun in earnest.",
-  "cur": "Hayabusa2의 충돌기 실험은 다른 각도에서 동일한 상황을 확인해주었다. 2kg의 구리 충돌기는 직경 약 14미터, 깊이 2미터의 분화구를 만들었는데, 이는 예측보다 더 컸다. 표면이 예상보다 더 다공질이었기 때문이다. 2022년 9월 우주선을 의도적으로 소행성 디모르포스에 충돌시켜 궤도를 변화시킨 [DART](/missions?id=dart) 미션은 고체 물체 모델이 예측한 것보다 더 큰 분출물 플룸과 궤도 주기 변화를 생성했다. 이는 다시 한 번 느슨하게 결합된 집합체와 일치한다. 이러한 환경에서 작업하는 것은 지구상의 채광을 확대하고 진공 우주복을 더하는 문제가 아니다. 밀어낼 수 없는 표면에 고정하기, 초당 수 센티미터의 속도로 떠다니는 재료를 채굴하기, 미소중력에서 분출물을 포함하기 — 이들은 채광 산업의 역사에서 무엇과도 다른 미해결 공학 문제들이다. 과학은 확인되었다. 공학은 아직 본격적으로 시작되지 않았다."
- },
- {
-  "rel": "essays/asteroid-mining.json",
-  "at": "body.27.caption",
-  "en": "OSIRIS-REx reaching down to touch Bennu — and finding not solid ground but a rubble pile so loosely bound that the sampling head sank straight in, nearly swallowing the arm. “Mining” a body like this is unlike anything ever done on Earth.",
-  "cur": "OSIRIS-REx가 베누에 닿기 위해 내려가며 — 고체 지표면이 아니라 암석 더미를 발견했고, 느슨하게 묶인 것이 샘플링 헤드가 곧바로 침강하고, 거의 팔을 삼키려 할 정도다. 이것 같은 천체를 \"채굴\"하기는 지구에서 지금까지 한 어떤 것과도 다르다."
- },
- {
-  "rel": "essays/asteroid-mining.json",
-  "at": "body.29.md",
-  "en": "The question the long view has to answer is: where does this go? The ISRU argument is logically sound. The recon confirms the resources exist. The engineering challenges are real but not in principle insoluble. The economics, however, require something that does not yet exist: demand for resources in space.",
-  "cur": "장기적 관점이 답해야 할 질문은: 이것이 어디로 가는가? ISRU 논의는 논리적으로 건전하다. 탐사는 자원이 존재함을 확인한다. 공학 도전은 실제적이지만 원칙적으로 해결 불가능한 것은 아니다. 그러나 경제는 아직 존재하지 않는 것을 필요로 한다: 우주에서의 자원에 대한 수요."
- },
- {
-  "rel": "essays/asteroid-mining.json",
-  "at": "body.30.md",
-  "en": "This is the timing problem that killed the first commercial wave. Planetary Resources and Deep Space Industries were building supply chains for a customer base that didn't exist yet — specifically, for the propellant-hungry beyond-LEO economy that a sustained lunar programme and eventual Mars operations would create. In 2012, when Planetary Resources was founded, the [reusable launcher revolution](/essays/reusable-launchers) was not yet proven, the Artemis programme did not exist, no commercial space stations were under development, and the idea of regular human Mars missions was firmly in the speculative future. The companies were, in infrastructure terms, building fuel stations before the highway. Infrastructure almost always has to wait for the traffic before it becomes viable, and space resource extraction is no different.",
-  "cur": "이것은 첫 번째 상용 물결을 죽인 타이밍 문제다. Planetary Resources와 Deep Space Industries는 아직 존재하지 않는 고객 기반 — 특히, 지속된 달 프로그램과 결국의 화성 작업이 생성할 추진제에 목말라 하는 LEO 너머 경제에 대한 공급망을 구축하고 있었다. 2012년, Planetary Resources가 설립되었을 때, [재사용 가능한 발사체 혁명](/essays/reusable-launchers)은 아직 증명되지 않았고, Artemis 프로그램은 존재하지 않았으며, 상용 우주 정거장이 개발 중이 아니었고, 정기적인 인간 화성 미션의 개념은 확실히 추측적인 미래에 있었다. 회사들은 인프라 관점에서 고속도로 전에 연료 정거장을 건설하고 있었다. 인프라는 거의 항상 그것이 생존 가능해지기 전에 교통을 기다려야 하며, 우주 자원 추출도 다르지 않다."
- },
- {
-  "rel": "essays/asteroid-mining.json",
-  "at": "body.31.md",
-  "en": "The situation in the mid-2020s is different in one respect: the traffic is closer. [Reusable launch vehicles](/essays/reusable-launchers) have changed the economics of reaching orbit. Commercial station programmes are under development. The Artemis programme, however delayed, has placed crewed lunar operations back on planning horizons. NASA's [Psyche mission](/missions?id=psyche-mission), launched in October 2023 and en route to the metallic asteroid 16 Psyche, will deliver the most thorough remote characterisation of a metallic asteroid ever attempted. The supply chain's potential customers are no longer purely hypothetical. But closer is not here. A propellant depot servicing Mars-bound spacecraft is, at minimum, a decade away from operational reality — and that estimate is optimistic, contingent on a pace of lunar development that has consistently slipped. The honest reading: asteroid resources become economically viable when, and only when, there is sustained human activity beyond low Earth orbit at a scale that makes fuel, air, and shielding the binding constraint. That constraint is approaching. The gap between approaching and here has swallowed businesses before.",
-  "cur": "2020년대 중반의 상황은 한 가지 측면에서 다르다: 교통이 더 가까워졌다. [재사용 가능한 발사 수단](/essays/reusable-launchers)이 궤도에 도달하는 경제학을 변경했다. 상용 정거장 프로그램이 개발 중이다. Artemis 프로그램은 어떻게 지연되었든, 유인 달 작업을 계획 지평선 위에 다시 놓았다. NASA의 [Psyche 미션](/missions?id=psyche-mission)은 2023년 10월에 발사되었고 금속 소행성 16 Psyche로 향하고 있으며, 지금까지 시도된 금속 소행성의 가장 철저한 원격 특성화를 제공할 것이다. 공급망의 잠재적 고객들은 더 이상 순수하게 가설적이지 않다. 하지만 더 가까운 것은 여기가 아니다. 화성 향 우주선을 서비스하는 추진제 보관소는 최소한 작동 현실로부터 10년 떨어져 있다 — 그리고 그 추정치는 낙관적이며, 일관되게 미끄러졌던 달 개발의 속도에 조건부다. 솔직한 읽음: 소행성 자원은 경제적으로 생존 가능해지는 시점에서, 그리고 오직 그때만, 지구 저궤도 너머에 연료, 공기, 차폐가 구속 제약이 되는 규모의 지속된 인간 활동이 있을 때다. 그 제약은 접근하고 있다. 접근하는 것과 여기 사이의 간격은 과거 사업을 삼켰다."
- },
- {
-  "rel": "essays/asteroid-mining.json",
-  "at": "body.32.md",
-  "en": "What remains, after the hype has been deflated and the market-collapse fallacy disposed of, is something more durable and less exciting to press release: a structural argument that the long-term economics of human presence beyond Earth cannot be made to work without drawing on resources that are already above the gravity well. The solar system contains more water, more carbon, more structural material than the entirety of human civilisation has ever consumed, distributed across millions of bodies whose surface gravity costs almost nothing to overcome, sitting above the one thing that makes spaceflight expensive. The argument is not about quintillions of dollars. It is about the [rocket equation](/science/propulsion/tsiolkovsky) and the direction it is pointing.",
-  "cur": "과장이 수축되고 시장 붕괴 오류가 제거된 후 남아 있는 것은 더 견고하고 보도 자료에서 덜 흥미로운 것이다: 지구 너머의 인간 존재의 장기 경제학이 이미 중력 우물 위에 있는 자원을 도출하지 않고는 작동하도록 만들어질 수 없다는 구조적 논의. 태양계는 인간 문명이 지금까지 소비한 것의 전부보다 더 많은 물, 더 많은 탄소, 더 많은 구조 물질을 포함하고 있으며, 표면 중력 비용을 극복하기 위해 거의 아무것도 들이지 않는 수백만 개의 천체에 걸쳐 분포하고 있으며, 우주 비행을 비싸게 만드는 한 가지 위에 앉아 있다. 논의는 수십억 달러에 관한 것이 아니다. 이것은 [로켓 방정식](/science/propulsion/tsiolkovsky)과 그것이 가리키는 방향에 관한 것이다."
- },
- {
-  "rel": "essays/asteroid-mining.json",
-  "at": "body.33.md",
-  "en": "Tsiolkovsky's constraint has an escape. It is not clever chemistry or radical new propulsion — though [new propulsion](/essays/new-propulsion) helps at the margins. The escape is not launching the consumables in the first place. It is finding them already above the well and using them there. [Hayabusa2](/missions?id=hayabusa2) brought 5.4 grams of Ryugu back to Earth. [OSIRIS-REx](/missions?id=osiris-rex) brought 120 grams of Bennu. The next missions in this sequence won't be bringing material home. They will be learning how to leave it where it is — and use it there. That is the point the headline never reaches. [Explore the small bodies in the atlas](/explore) and what you are looking at is not a storehouse of Earth-deliverable treasure. It is the hardware store for a civilization that hasn't arrived yet.",
-  "cur": "Tsiolkovsky의 제약에는 탈출구가 있습니다. 그것은 영리한 화학이나 급진적인 새로운 추진력이 아닙니다 — [새로운 추진력](/essays/new-propulsion)이 여백에서 도움이 되지만. 탈출구는 소비물자를 처음부터 발사하지 않는 것입니다. 이미 우물 위에 있는 것들을 찾아내서 그곳에서 사용하는 것입니다. [Hayabusa2](/missions?id=hayabusa2)는 류구의 5.4그램을 지구로 가져왔습니다. [OSIRIS-REx](/missions?id=osiris-rex)는 베누의 120그램을 가져왔습니다. 이 일련의 다음 임무들은 물질을 집으로 가져오지 않을 것입니다. 그들은 그것을 제자리에 남겨두고 그곳에서 사용하는 방법을 배워야 합니다. 그것이 헤드라인이 절대 도달하지 못하는 요점입니다. [소행성 지도책에서 소천체를 탐사해 보세요](/explore), 그리고 당신이 보고 있는 것은 지구에 배달할 수 있는 보물의 창고가 아닙니다. 아직 도착하지 않은 문명을 위한 하드웨어 가게입니다."
- },
- {
-  "rel": "essays/comms.json",
-  "at": "dek",
-  "en": "Three dish complexes on Earth carry on every conversation humanity has ever had with anything beyond the Moon. A 22-watt radio signal, a light-hour of patience, and the most oversubscribed network in the solar system — this is how the whole enterprise holds together.",
-  "cur": "지구 위의 세 접시 복합체가 인류가 달 너머의 모든 것과 나눈 모든 대화를 계속 전하고 있다. 22와트의 무선 신호, 빛이 한 시간 걸리는 거리의 인내심, 그리고 태양계에서 가장 수요가 많은 네트워크 — 이것이 바로 전체 사업이 유지되는 방식이다."
- },
- {
-  "rel": "essays/comms.json",
-  "at": "body.0.md",
-  "en": "In the navigation essay we named the problem and then mostly set it aside: the speed of light imposes a lag on every instruction, every correction, every answer, and the further out you go the worse it gets. The navigation essay could afford to set it aside because, for most of what it describes, the lag is inconvenient but manageable. A twenty-minute round trip to Mars is long enough to be annoying and short enough to work around. The spacecraft coasts; the ground catches up. But that arithmetic doesn't hold forever. Push it another order of magnitude — to Saturn, to Pluto, to the place where [Voyager 1](/missions?id=voyager-1) is right now, almost a full light-day from the Earth — and \"hold on, we're thinking\" stops being a workable answer. The problem that navigation named but deferred is the one this essay is about.",
-  "cur": "항법 에세이에서 우리는 문제를 명명했고 그 다음 대부분 그것을 옆에 제쳐두었다: 빛의 속도는 모든 지시, 모든 수정, 모든 답변에 지연을 부과하며, 더 멀리 나갈수록 더 악화된다. 항법 에세이는 그것을 제쳐둘 수 있었는데, 왜냐하면 그것이 설명하는 대부분의 것에 대해 그 지연은 불편하지만 관리할 수 있기 때문이다. 화성까지의 왕복 시간이 20분이라는 것은 충분히 짜증나지만 충분히 대처할 수 있을 정도이다. 우주선이 해를 따라 미끄러지고 지구가 따라잡는다. 하지만 이 계산은 영원히 유지되지 않는다. 크기를 한 단계 더 밀어붙여서 — 토성, 명왕성, [Voyager 1](/missions?id=voyager-1)이 지금 바로 있는 곳, 지구에서 거의 꼬박 빛의 하루 거리로 밀어붙이면 — \"기다려, 우리가 생각하고 있어\"는 더 이상 작동하는 답변이 아니다. 항법이 명명했지만 미루어둔 문제가 바로 이 에세이가 다루는 주제이다."
- },
- {
-  "rel": "essays/comms.json",
-  "at": "body.1.md",
-  "en": "Before we get to the lag, though, there's a more fundamental strangeness to absorb. Every probe, every rover, every lander in this atlas maintains exactly one thread of connection to Earth: a radio link through a handful of large dishes on the ground. Not a constellation of relay satellites. Not a mesh network. Not a pair of backups standing by in case the primary goes down. One link, through one of roughly forty antennas spread across three sites, and the whole solar system runs on it. Everything we've learned about Mars, Saturn, Jupiter, Uranus, Neptune, Pluto, the asteroid belt, and interstellar space beyond the heliosphere has traveled down that single thread. The miracle isn't that we've lost spacecraft. The miracle is how few.",
-  "cur": "지연에 들어가기 전에, 더 근본적인 기묘함이 있다. 이 지도책의 모든 탐사선, 모든 로버, 모든 착륙선은 지구와의 정확히 하나의 연결 스레드를 유지한다: 지표면의 몇 개의 큰 접시를 통한 무선 링크. 릴레이 위성의 별자리가 아니다. 메시 네트워크가 아니다. 주 신호가 끊어질 경우 대기하고 있을 예비 쌍이 아니다. 세 개 사이트에 퍼져 있는 대략 40개의 안테나 중 하나를 통한 하나의 링크, 그리고 전체 태양계가 그것 위에서 운영된다. 화성, 토성, 목성, 천왕성, 해왕성, 명왕성, 소행성대, 그리고 태양권 너머의 성간 공간에 대해 우리가 배운 모든 것이 그 하나의 스레드를 통해 전해졌다. 기적은 우리가 우주선을 잃었다는 것이 아니다. 기적은 우리가 잃은 것이 얼마나 적다는 것이다."
- },
- {
-  "rel": "essays/comms.json",
-  "at": "body.3.md",
-  "en": "The [Deep Space Network](/science/mission-phases/dsn) is a creation of the early 1960s, built when the first probes were heading for Venus and Mars and the question of how to talk to them as they receded became urgently practical. The answer JPL arrived at was elegant in its simplicity: place antenna complexes roughly 120 degrees of longitude apart around the planet, so that as the Earth rotates, at least one of them always faces the part of the sky where the mission is. Three sites: Goldstone in the California desert, Madrid in Spain, and Canberra in Australia. They have been the ears and mouth of the solar system ever since.",
-  "cur": "[Deep Space Network](/science/mission-phases/dsn)은 1960년대 초에 만들어진 창작물로, 첫 탐사선들이 금성과 화성을 향해 출발하던 시절에 건설되었습니다. 탐사선들이 멀어져가면서 어떻게 그들과 통신할 것인가 하는 문제가 급박한 현실적 과제가 되었습니다. JPL이 도출한 해답은 단순함 속에 우아했습니다. 지구 주위에 경도 약 120도씩 떨어진 지점에 안테나 단지를 배치하는 것이었습니다. 이렇게 하면 지구가 자전할 때 적어도 하나의 안테나가 항상 임무 위성이 있는 하늘 부분을 향하게 됩니다. 캘리포니아 사막의 Goldstone, 스페인의 Madrid, 호주의 Canberra 세 곳입니다. 이들은 그 이래로 태양계의 귀와 입이 되어왔습니다."
- },
- {
-  "rel": "essays/comms.json",
-  "at": "body.4.md",
-  "en": "The crown of each complex is its 70-metre dish — a structure about the size and weight of a naval destroyer balanced on a bearing that lets it track a point in the sky to within a fraction of a degree, hour after hour, as the Earth turns beneath it. The three 70-metre antennas (DSS-14 at Goldstone, DSS-43 at Canberra, DSS-63 at Madrid) were built as 64-metre dishes and then, between 1982 and 1988, expanded specifically to support Voyager 2's approaching encounter with Neptune — a civilisational upgrade to a global network, for one flyby, of one planet. Canberra's DSS-43 carries a distinction the other two don't: because Voyager 2's trajectory took it south of the solar plane, it is the only antenna on Earth with a line of sight to it. One dish, on one continent, is the reason [Voyager 2](/missions?id=voyager-2) is still in the conversation.",
-  "cur": "각 복합체의 왕관은 그것의 70미터 접시이다 — 대략 해군 구축함의 크기와 무게 정도로, 지구가 그 아래 회전할 때 시간마다 수도 없이 하늘의 한 점을 반도(度)의 분수 이내로 추적할 수 있게 하는 베어링 위에 균형을 이루고 있는 구조이다. 세 개의 70미터 안테나 (Goldstone의 DSS-14, Canberra의 DSS-43, Madrid의 DSS-63)는 64미터 접시로 지어졌다가, 1982년과 1988년 사이에 Voyager 2가 해왕성과의 만남에 접근하기 위해 구체적으로 확장되었다 — 하나의 행성의 하나의 근접 통과를 위한 지구 규모 네트워크의 문명적 업그레이드. Canberra의 DSS-43은 다른 두 개가 갖지 않은 구별을 가지고 있다: Voyager 2의 궤적이 태양계 평면 남쪽으로 가 있기 때문에, 그것에 대한 가시선을 가진 지구 위의 유일한 안테나이다. 하나의 접시, 하나의 대륙이 [Voyager 2](/missions?id=voyager-2)가 여전히 대화에 남아 있는 이유이다."
- },
- {
-  "rel": "essays/comms.json",
-  "at": "body.5.md",
-  "en": "Arrayed around the 70-metre giants at each site are a family of 34-metre dishes — some with high-efficiency beam waveguide feeds, some optimised for different frequency bands, all contributing to a schedule that is, even in good years, relentlessly oversubscribed. Demand on the DSN has been running roughly 40 percent above capacity; by the early 2030s NASA projects it will grow by a factor of ten, driven by Artemis lunar missions, a surge in science probes, and commercial operators who want their own slice. The upgrade program meant to address it is running nearly five years late and has roughly doubled in cost. The network that carries every word we speak to the outer planets is doing so on a timetable that leaves almost no margin. Missions negotiate for antenna time the way airlines negotiate for takeoff slots, and the answer is sometimes no.",
-  "cur": "각 사이트의 70미터 거인 주변에 배열되어 있는 것은 34미터 접시의 가족이다 — 높은 효율의 빔 도파관 급전장치를 가진 것도 있고, 다른 주파수 대역에 최적화된 것도 있으며, 모두가 좋은 해에도 끊임없이 수요 초과 상태인 일정에 기여한다. DSN에 대한 수요가 대략 40퍼센트 용량 초과로 실행 중이며, 2030년대 초까지 NASA는 Artemis 달 임무, 과학 탐사선의 급증, 그리고 자신들의 몫을 원하는 상업 운영자들에 의해 10배 증가할 것으로 예상한다. 그것을 해결하기 위한 업그레이드 프로그램은 거의 5년 늦어져 있으며 비용이 대략 두 배로 늘었다. 우리가 외행성에 말하는 모든 말을 전하는 네트워크가 그렇게 하고 있는 일정은 거의 여유가 없다. 임무는 항공사가 이착륙 슬롯을 협상하는 방식으로 안테나 시간을 협상하며, 대답이 때로는 아니다."
- },
- {
-  "rel": "essays/comms.json",
-  "at": "body.7.md",
-  "en": "Stand next to a DSN dish while it is locked onto [Voyager 1](/missions?id=voyager-1) and try to hold in your head what it is listening for. The spacecraft's transmitter puts out 22.4 watts — roughly the output of a refrigerator's interior bulb, or a dimmer-switch lamp set to half. That signal leaves a 3.7-metre dish on Voyager 1 and begins to spread. Radio waves obey an inverse-square law: double the distance, quarter the power. By the time the beam crosses the distance to Earth — currently about 23 and a half light-hours, a number that grows by roughly 520 million kilometres per year — the power arriving at a 70-metre dish is less than a femtowatt. A femtowatt is 10⁻¹⁵ watts. The number often quoted for Voyager is closer to 10⁻²¹ watts — a single zeptowatt, unimaginably faint. The dish has to fish that out of a sky full of everything else.",
-  "cur": "DSN 접시가 [Voyager 1](/missions?id=voyager-1)에 잠겨 있는 동안 그 옆에 서서 그것이 청취하고 있는 것을 당신의 머리에 담아두려고 노력해보라. 우주선의 송신기는 22.4와트를 출력한다 — 대략 냉장고 내부 전구의 출력, 또는 절반으로 설정된 딤 스위치 전등이다. 그 신호는 Voyager 1의 3.7미터 접시를 떠나고 퍼지기 시작한다. 무선파는 역제곱 법칙을 따른다: 거리를 두 배로 늘리면 전력은 1/4로 줄어든다. 지구까지의 거리를 횡단할 때 — 현재 약 23시간 반의 빛이 소요되는 거리, 매년 대략 5억 2천만 킬로미터 증가하는 숫자 — 70미터 접시에 도달하는 전력은 펨토와트보다 작다. 펨토와트는 10⁻¹⁵와트이다. Voyager에 대해 자주 인용되는 숫자는 10⁻²¹와트에 더 가깝다 — 하나의 젭토와트, 상상할 수 없을 정도로 희미하다. 그 접시는 다른 모든 것으로 가득 찬 하늘에서 그것을 낚아채야 한다."
- },
- {
-  "rel": "essays/comms.json",
-  "at": "body.8.md",
-  "en": "That it can do this at all is a feat of engineering in three parts. First, the geometry: a 70-metre dish has roughly 3,600 square metres of collecting area, and every square metre counts. Second, the cold: the receivers sit cooled to within a few degrees of absolute zero, because thermal noise from a room-temperature amplifier would drown the signal entirely — the receiver has to be colder than interstellar space to hear something weaker than starlight. Third, the coding. Voyager's engineers, like every subsequent mission team, knew that individual bits would be corrupted by noise over distances like these, so they encoded the data with far more mathematical redundancy than the information itself requires. A single real bit of science travels inside a protective shell of check bits; the ground-side computer strips the shell away and recovers the original, even from a stream where a significant fraction of the received symbols are wrong. [New Horizons](/missions?id=new-horizons) used the same principle to send back Pluto's face: each image arrived corrupted and was reconstructed, the way a librarian might reassemble a burned manuscript from a set of redundant copies.",
-  "cur": "이것을 모두 해낼 수 있다는 것은 세 부분으로 이루어진 공학적 성과입니다. 첫째, 기하학: 70미터 접시는 대략 3,600제곱미터의 수집 면적을 가지고 있으며, 모든 제곱미터가 중요합니다. 둘째, 극저온: 수신기는 절대영도에서 몇 도 이내로 냉각되어 있습니다. 실온 증폭기의 열 잡음이 신호를 완전히 묻어버리기 때문입니다. 수신기는 별빛보다 약한 것을 감지하려면 성간 우주보다 더 차가워야 합니다. 셋째, 부호화: Voyager의 엔지니어들은 그 이후의 모든 임무팀처럼 이러한 거리에서 개별 비트가 잡음으로 인해 손상될 것임을 알았습니다. 따라서 정보 자체가 필요로 하는 것보다 훨씬 더 많은 수학적 중복성을 갖도록 데이터를 부호화했습니다. 과학의 단 하나의 실제 비트가 검사 비트의 보호막 내부를 여행합니다. 지상측 컴퓨터는 이 보호막을 벗겨내고 수신된 기호의 상당한 부분이 잘못되어 있더라도 원본을 복원합니다. [New Horizons](/missions?id=new-horizons)는 같은 원리를 사용하여 명왕성의 모습을 송신했습니다. 각 이미지는 손상된 상태로 도착했고 복원되었으며, 마치 도서관 사서가 중복 사본 세트에서 타버린 원고를 다시 조립하는 것과 같은 방식이었습니다."
- },
- {
-  "rel": "essays/comms.json",
-  "at": "body.9.md",
-  "en": "The practical ceiling on data rates is real. Voyager 1 peaked at 115,200 bits per second during its planetary encounters, when the distances were shorter and the dishes could be pointed tighter. At its current remove it manages a few tens of bits per second for engineering telemetry, a trickle that would have been embarrassingly slow on a 1970s modem. Everything we know about what lies beyond the heliosphere — the plasma density, the magnetic field, the particle flux in interstellar space, the data that no other instrument in existence could ever gather — arrives at the DSN at a rate slower than a fax machine. We are grateful for every bit.",
-  "cur": "데이터 전송률에 대한 실질적 상한은 실제 존재한다. Voyager 1은 거리가 더 짧았고 접시가 더 좁게 지향될 수 있었을 때인 행성 근접 통과 동안 초당 115,200비트에서 최고조에 달했다. 현재의 거리에서 그것은 공학 텔레메트리를 위해 초당 수십 비트를 관리하며, 1970년대 팩스 모뎀에서는 부끄러웠을 정도로 느린 흐름이다. 태양권 너머에 무엇이 있는지 우리가 아는 모든 것 — 플라즈마 밀도, 자기장, 성간 공간의 입자 유량, 존재하는 다른 어떤 기기도 수집할 수 없는 데이터 — DSN에 도달하는 것은 팩스 기계보다 느린 속도에서이다. 우리는 모든 비트에 감사한다."
- },
- {
-  "rel": "essays/comms.json",
-  "at": "body.10.caption",
-  "en": "A spacecraft answers on roughly twenty watts — less than the bulb in a refrigerator. Spread across a billion kilometres by nothing but the inverse-square law, what reaches the dish is around a millionth of a billionth of a watt. The genius of deep-space comms is not the shout; it is the listening.",
-  "cur": "우주선은 대략 20와트로 응답한다 — 냉장고의 전구보다 작다. 역제곱 법칙만을 통해 10억 킬로미터에 걸쳐 퍼진, 접시에 도달하는 것은 약 10억분의 백만 와트이다. 심우주 통신의 천재성은 외침에 있지 않다; 그것은 청취에 있다."
- },
- {
-  "rel": "essays/comms.json",
-  "at": "body.12.md",
-  "en": "The lag compounds everything. At [Mars](/missions?id=perseverance), a signal takes between 3 and 22 minutes one way, depending on where the two planets are in their orbits. That means a round-trip question and answer — \"are you receiving?\" … \"yes\" — can take anywhere from six minutes to nearly three-quarters of an hour. Rover drivers at JPL developed an entire philosophy around this: you can't joystick [Perseverance](/missions?id=perseverance) the way you'd drive a car. You plan the day's work in the Martian morning, uplink a command sequence, and watch the outcome arrive hours later. The rover moves autonomously between waypoints; you correct its course tomorrow. The planet is close enough that a human can still be meaningfully in the loop, if the human is willing to think in Martian sol-lengths rather than real-time.",
-  "cur": "[화성](/missions?id=perseverance)에서, 신호는 두 행성이 궤도에서 어디에 있는지에 따라 한 방향으로 3분에서 22분 사이가 걸린다. 이는 왕복 질문과 답변 — \"당신이 수신하고 있나요?\" … \"네\" — 이 6분에서 거의 45분까지 걸릴 수 있음을 의미한다. JPL의 로버 운전자들은 이 주변에 전체 철학을 개발했다: 당신은 자동차를 운전하는 방식으로 [Perseverance](/missions?id=perseverance)를 조이스틱으로 조종할 수 없다. 당신은 화성 아침에 하루의 작업을 계획하고, 명령 수열을 업로드하고, 몇 시간 뒤에 결과가 도착하는 것을 본다. 로버는 웨이포인트 사이에서 자율적으로 이동한다; 당신은 내일 그 과정을 수정한다. 행성은 인간이 여전히 유의미하게 루프 안에 있을 수 있을 정도로 가까우며, 만약 인간이 실시간이 아닌 화성의 sol 길이로 생각하려는 의지가 있다면."
- },
- {
-  "rel": "essays/comms.json",
-  "at": "body.13.md",
-  "en": "At [Cassini](/missions?id=cassini), orbiting Saturn, the one-way lag ran between 68 and 85 minutes. At [New Horizons](/missions?id=new-horizons) during the Pluto flyby it was four and a half hours. Every command sent to New Horizons on its closest approach day had been uplinked — and confirmed received — well in advance, because there was no time to react. The flyby sequence ran entirely on stored instructions while the ground held its breath. The spacecraft would either do what it was told or not, and no one on Earth would know for hours. It did.",
-  "cur": "[Cassini](/missions?id=cassini)는 토성 궤도를 도는 동안 편도 신호 지연이 68분에서 85분 사이였습니다. [New Horizons](/missions?id=new-horizons)는 명왕성 근접 통과 중에 4시간 반이었습니다. New Horizons의 최근접 접근 당일에 전송된 모든 명령은 미리 업링크되었고 수신 확인도 미리 받았습니다. 반응할 시간이 없었기 때문입니다. 근접 통과 관찰 프로그램은 저장된 명령어만으로 실행되었고 지구의 관제팀은 숨을 죽이고 지켜봤습니다. 우주선은 지시한 대로 할 수도 있고 하지 않을 수도 있었으며, 지구상의 누구도 몇 시간 동안 알 수 없었습니다. 하지만 그것은 성공했습니다."
- },
- {
-  "rel": "essays/comms.json",
-  "at": "body.14.md",
-  "en": "Now consider [Voyager 1](/missions?id=voyager-1), which in July 2026 is approximately 23 hours and 32 minutes of light-travel time from Earth — and which, on a specific day in November 2026, will cross a threshold no human-made object has ever crossed: one full light-day from the planet that built it. Send a command Monday morning at eight; the acknowledgement arrives Wednesday morning. A round trip between Earth and Voyager 1 takes nearly two days. In that span, whatever the spacecraft does, it does alone. It has been alone, in this sense, since the day it launched. The ground is not flying it anymore. The ground is listening to it.",
-  "cur": "이제 [Voyager 1](/missions?id=voyager-1)을 생각해보자. 2026년 7월 기준으로 Voyager 1은 지구로부터 약 23시간 32분의 광행시간(light-travel time)에 위치해 있다. 그리고 2026년 11월의 어느 날, Voyager 1은 인간이 만든 물체가 지금까지 경계한 적 없는 지점을 넘게 될 것이다. 즉, 그것을 만든 행성으로부터 정확히 1광일(light-day) 떨어진 곳이다. 월요일 아침 8시에 명령을 보내면, 그 승인은 수요일 아침에 도착한다. 지구와 Voyager 1 사이의 왕복 통신에는 거의 이틀이 걸린다. 그 시간 동안 우주선이 하는 모든 일은 홀로 하는 것이다. 발사한 날부터 지금까지 그렇게 홀로였다. 지상팀은 더 이상 우주선을 조종하지 않는다. 지상팀은 우주선의 신호만 청취할 뿐이다."
- },
- {
-  "rel": "essays/comms.json",
-  "at": "body.15.caption",
-  "en": "The whole enterprise runs on delay. A word to the Moon is answered in under three seconds; to Mars, in minutes to the better part of an hour; to Voyager, in nearly two days. You cannot fly these craft in real time — you write ahead, and wait for the echo.",
-  "cur": "이 전체 사업은 지연 위에서 작동한다. 달에 보낸 신호는 3초도 안 되어 응답이 오고, 화성으로는 수분에서 1시간 정도 걸리며, Voyager로는 거의 이틀이 걸린다. 이런 우주선들을 실시간으로 조종할 수 없다 — 미리 명령을 작성하고 메아리가 돌아오기를 기다려야 한다."
- },
- {
-  "rel": "essays/comms.json",
-  "at": "body.17.md",
-  "en": "That patience has shaped every mission in ways the public almost never sees. Trajectory corrections for outer-planet probes are planned weeks in advance and uplinked as timed sequences; if the spacecraft's position turns out to be slightly different from the prediction — which it always is, by some small amount — the navigators have to wait for the next DSN track, reconstruct the actual position, plan a correcting burn, and uplink it, all before the window closes. For a spacecraft approaching its target at several kilometres per second, that timing can be the difference between threading the gap and missing. The navigation essay described the [Deep Space Network](/science/mission-phases/dsn) as the instrument that lets the ground fly the spacecraft. What it didn't dwell on is that the ground can only respond to what the spacecraft reported minutes or hours ago, and can only correct what it predicted minutes or hours from now. Navigation is perfect in principle, patient in practice, and always slightly behind.",
-  "cur": "이러한 인내심은 공중이 거의 볼 수 없는 방식으로 모든 임무를 형성해왔습니다. 외행성 탐사선의 궤도 수정은 몇 주 전에 계획되고 시간이 정해진 명령 열로 업링크됩니다. 우주선의 위치가 예측과 약간 다르게 나타나면 — 항상 어느 정도의 작은 편차가 생기곤 합니다 — 항법사들은 다음 DSN 추적을 기다려야 하고, 실제 위치를 재구성하고, 수정 조종을 계획한 뒤 업링크해야 하는데, 이 모든 것이 관측 기간이 끝나기 전에 이루어져야 합니다. 초속 몇 킬로미터의 속도로 목표물에 접근하는 우주선의 경우, 그러한 타이밍이 좁은 틈을 통과하는 것과 빗나가는 것의 차이가 될 수 있습니다. 항법 논문은 [Deep Space Network](/science/mission-phases/dsn)를 지구가 우주선을 조종할 수 있게 해주는 도구로 설명했습니다. 하지만 간과한 점은 지구가 우주선이 몇 분 또는 몇 시간 전에 보고한 것에만 대응할 수 있고, 지금부터 몇 분 또는 몇 시간 뒤에 일어날 일만 수정할 수 있다는 것입니다. 항법은 원칙상으로는 완벽하지만, 실제로는 인내심이 있고, 항상 조금 뒤처져 있습니다."
- },
- {
-  "rel": "essays/comms.json",
-  "at": "body.18.md",
-  "en": "There is a related cost that rarely makes mission descriptions: the sheer cognitive weight of maintaining these conversations over years. [Cassini](/missions?id=cassini) operated at Saturn for thirteen years. Teams at JPL developed what amounted to a working relationship with a machine they could not see, could not touch, and could never respond to in less than an hour. Procedures existed for every contingency — a failed reaction wheel, a software fault, an unexpected safe-mode entry — and those procedures had to be rehearsed on the ground before they could be uplinked, because there was no room to improvise at the speed of a crisis when every reply took longer than a lunch break. The people who ran Cassini built a kind of institutional memory for a spacecraft: knowing its habits, its quirks, its patterns of health, better than some operators know their own machinery. They had to, because the spacecraft couldn't ask for help.",
-  "cur": "이러한 대화를 몇 년에 걸쳐 유지하는 순수한 인지적 부담이라는 관련된 비용이 있는데, 이는 거의 임무 설명에 나타나지 않습니다. [Cassini](/missions?id=cassini)는 토성에서 13년간 운영되었습니다. JPL의 팀들은 볼 수 없고, 만질 수 없으며, 한 시간 이내에 응답할 수 없는 기계와의 업무 관계라고 할 수 있는 것을 발전시켰습니다. 모든 비상 상황을 위한 절차가 존재했습니다 — 반응 휠의 고장, 소프트웨어 결함, 예상치 못한 안전 모드 진입 — 그리고 이러한 절차들은 업링크되기 전에 지상에서 연습되어야 했습니다. 왜냐하면 모든 응답이 점심 시간보다 더 오래 걸릴 때 위기의 속도에서 즉흥적으로 대응할 여지가 없었기 때문입니다. Cassini를 운영한 사람들은 우주선을 위한 일종의 제도적 기억을 구축했습니다. 우주선의 습관, 그 특성, 건강 상태의 패턴을 알고 있었으며, 어떤 운영자들이 자신의 기계를 아는 것보다 더 잘 알고 있었습니다. 그들은 반드시 그렇게 해야 했습니다. 왜냐하면 우주선은 도움을 요청할 수 없었기 때문입니다."
- },
- {
-  "rel": "essays/comms.json",
-  "at": "body.19.caption",
-  "en": "Voyager 1, more than twenty-four billion kilometres out, still answers — but a question sent today waits some forty-five hours for its reply. You do not converse with it so much as leave a letter and come back for the answer.",
-  "cur": "Voyager 1은 240억 킬로미터 이상 떨어져 있지만, 여전히 응답한다 — 하지만 오늘 보낸 질문은 그 응답을 받기까지 약 45시간을 기다려야 한다. 당신은 그것과 대화한다기보다 편지를 남기고 나중에 답장을 받으러 간다."
- },
- {
-  "rel": "essays/comms.json",
-  "at": "body.21.md",
-  "en": "Radio has carried every conversation we've had with the solar system for sixty years. It is mature, well-understood, and operates at the edge of physics — the DSN dishes are close to the thermal noise floor; the coding schemes approach the Shannon limit for the signal-to-noise ratios involved. There isn't a factor of ten left to find in radio. But there is in optics.",
-  "cur": "무선통신은 지난 60년간 우리가 태양계와 나눈 모든 대화를 전달해왔다. 무선통신은 성숙하고 잘 이해되며, 물리학의 경계에서 작동한다 — DSN 접시는 열잡음 임계값(thermal noise floor)에 근접해 있고, 부호화 체계는 관련된 신호 대 잡음비에 대한 Shannon 한계에 접근한다. 무선통신에서 10배의 개선을 찾을 여지는 없다. 하지만 광학에는 있다."
- },
- {
-  "rel": "essays/comms.json",
-  "at": "body.22.md",
-  "en": "In October 2023, a small laser terminal bolted to the side of the Psyche spacecraft launched toward the asteroid belt carrying an experiment called DSOC — Deep Space Optical Communications. The concept is straightforward: an infrared laser, tightly focused, can concentrate far more power into a far narrower beam than a radio transmitter of the same mass and electrical draw. The beam spreads less with distance, which means more of it arrives. By April 2024, DSOC had transmitted engineering data from 140 million miles at 25 megabits per second — faster than most household broadband connections, from a distance greater than the Earth-Sun separation. By December 2024 it had set a distance record: downlinking Psyche mission data from 307 million miles, 494 million kilometres out. The project demonstrated 10 to 100 times the throughput of radio at equivalent power.",
-  "cur": "2023년 10월, Psyche 우주선의 옆에 부착된 소형 레이저 터미널이 소행성대를 향해 발사되었으며, DSOC(Deep Space Optical Communications)이라는 실험을 탑재했다. 개념은 단순하다. 동일한 질량과 전력 소비량을 가진 무선 송신기보다 적외선 레이저는 훨씬 더 많은 전력을 훨씬 더 좁은 빔으로 집중시킬 수 있다. 빔은 거리가 증가해도 덜 퍼지므로 도착하는 신호가 더 많다. 2024년 4월까지 DSOC는 1억 4,000만 마일 거리에서 시속 25메가비트의 엔지니어링 데이터를 전송했다 — 대부분의 가정용 광대역 연결보다 빠르며, 지구-태양 거리보다 큰 거리에서이다. 2024년 12월에는 거리 기록을 수립했다. 3억 700만 마일, 즉 4억 9,400만 킬로미터 거리에서 Psyche 임무 데이터를 다운링크했다. 이 프로젝트는 동등한 전력에서 무선통신의 10배에서 100배의 처리량을 시연했다."
- },
- {
-  "rel": "essays/comms.json",
-  "at": "body.23.md",
-  "en": "This is not a small step. The bandwidth bottleneck is one of the binding constraints on what deep-space science can do: the more data you can return per watt, the more instruments you can fly, the higher the camera resolution, the denser the scientific haul from each mission. DSOC's laser link, scaled up and deployed on future spacecraft, would transform the economics of talking to the outer planets. The catch — there is always a catch — is that optical links require exceptional pointing precision (the beam is narrow enough that a pointing error of a fraction of a milliradian spills it off target) and are blocked by cloud cover at the ground station. The DSN's radio dishes work through weather. Optical ground terminals don't. The architecture for a reliable optical deep-space network will need multiple geographically spread receive sites, clear-sky redundancy, and decades of operational experience to mature. It will come. The question is whether it comes before the radio architecture buckles under the weight of demand.",
-  "cur": "이것은 작은 도약이 아니다. 대역폭 병목 현상은 심우주 과학이 할 수 있는 일을 제한하는 주요 제약 중 하나이다. 와트 당 반환할 수 있는 데이터가 많을수록, 탑재할 수 있는 기기가 많아지고, 카메라의 해상도가 높아지며, 각 임무에서 얻는 과학적 수확도 더 풍부해진다. DSOC의 레이저 링크를 확장하여 미래 우주선에 배치하면, 외행성과의 통신 경제 구조를 완전히 바꿀 것이다. 하지만 — 항상 문제는 있다 — 광학 링크는 뛰어난 지향 정밀도가 필요하고(빔이 좁아서 밀리라디안의 일부만큼의 지향 오차가 목표를 벗어남), 지상국의 구름으로 가로막힌다. DSN의 무선 접시는 날씨를 뚫고 작동한다. 광학 지상국은 그렇지 않다. 신뢰할 수 있는 광학 심우주 통신망의 아키텍처는 지리적으로 분산된 여러 수신 위치, 맑은 하늘 중복성, 그리고 성숙하기까지 수십 년의 운영 경험이 필요할 것이다. 그것은 올 것이다. 문제는 그것이 수요의 무게로 무선 아키텍처가 흔들리기 전에 오느냐이다."
- },
- {
-  "rel": "essays/comms.json",
-  "at": "body.24.caption",
-  "en": "The next turn is toward light. A laser’s pencil-thin beam carries ten to a hundred times the data of a radio’s wide cone: Psyche’s demonstration streamed high-definition video from thirty million kilometres away, on a beam you could have blocked with a coin.",
-  "cur": "다음 전환은 빛을 향한 것이다. 레이저의 연필처럼 가는 빔은 무선의 넓은 원뿔보다 10배에서 100배의 데이터를 전송한다. Psyche의 시연은 3,000만 킬로미터 거리에서 고화질 영상을 스트리밍했으며, 그 빔은 동전으로도 차단할 수 있을 정도로 좁았다."
- },
- {
-  "rel": "essays/comms.json",
-  "at": "body.26.md",
-  "en": "Here is what the whole apparatus actually amounts to. Three patches of desert and scrubland on three continents. Roughly forty antenna mounts, of which the big work falls on three 70-metre bowls that have been pointing at things no one can see with the naked eye since the first one locked onto a Mariner in 1963. A budget that, in real terms, has been shrinking. An upgrade programme running years behind. A schedule so overbooked that some missions go without their allocated tracks, and the people who run them learn to live on less contact than they planned.",
-  "cur": "전체 장치가 실제로 의미하는 바는 다음과 같다. 세 대륙의 세 개의 사막 및 관목지대 지역. 대략 40개의 안테나 마운트, 이 중 주요 업무는 1963년 최초로 Mariner에 고정된 이후 육안으로 볼 수 없는 것들을 가리키고 있는 70미터 크기의 세 개의 큰 접시가 처리한다. 실질적 가치로는 계속 감소해온 예산. 수년 지연된 업그레이드 프로그램. 어떤 임무들은 할당받은 추적 기회를 받지 못하고, 그것들을 운영하는 사람들이 계획했던 것보다 적은 통신 접촉으로 살아가는 극도로 과포화된 일정."
- },
- {
-  "rel": "essays/comms.json",
-  "at": "body.27.md",
-  "en": "And through this: everything. The Voyager images of Neptune that no spacecraft has repeated in the thirty-seven years since. The Cassini portraits of Saturn — the hexagonal storm at the pole, the geysers of Enceladus, the braided F ring — delivered one compressed frame at a time across more than an hour of silence. The [Perseverance](/missions?id=perseverance) samples staged for eventual return, their GPS coordinates known to the centimetre because every transmission of the rover's position came back through a dish in California or Spain or Australia, was checked against the orbital mechanics, and became a number the whole atlas stands on. Everything in this atlas that came from beyond the Moon arrived here through a 22-watt whisper and a room full of people patient enough to wait for the reply.",
-  "cur": "그리고 이 모든 것을 통해: 모든 것이 있습니다. 37년 동안 어떤 우주선도 반복하지 않은 Voyager의 해왕성 영상들. Cassini가 제공한 토성의 초상화들 — 극점의 육각형 폭풍, 엔셀라두스의 간헐천들, 땋은 F 고리 — 한 시간이 넘는 침묵 속에서 압축된 한 프레임씩 전송되어 왔습니다. [Perseverance](/missions?id=perseverance)의 샘플들은 결국 반환될 때를 대비해 준비되어 있으며, GPS 좌표는 센티미터 단위로 알려져 있습니다. 왜냐하면 로버의 위치를 나타내는 모든 신호 전송이 캘리포니아나 스페인 또는 오스트레일리아의 안테나를 통해 돌아왔고, 궤도 역학과 대조되었으며, 이 전체 지도책이 기초하고 있는 숫자가 되었기 때문입니다. 이 지도책에서 달 너머로부터 온 모든 것은 22와트의 속삭임과 응답을 기다릴 수 있을 만큼 인내심 있는 사람들로 가득 찬 방을 통해 여기에 도착했습니다."
- },
- {
-  "rel": "essays/comms.json",
-  "at": "body.28.md",
-  "en": "The lag never goes away. Light travels at the fastest speed physics allows, and it is not fast enough. As we push further — human crews to Mars whose round-trip communication delay will be measured in tens of minutes on a good day; robotic probes to the ice giants; whatever comes next in the generations after those — the distance will keep growing and the patience required will keep compounding. What changes is only who bears it: the ground team waiting for a reply, or the spacecraft itself, making decisions faster than any signal can carry permission. The DSN isn't becoming obsolete. It is becoming one layer of a deeper architecture, the radio backbone of a solar system where more and more of the thinking happens out there, in the dark, on craft that have learned — because they had to — to manage without asking. We built the network so we could stay in the conversation. We're slowly discovering that the conversation, at these distances, looks less like a dialogue and more like letters sent between people who have both already moved on by the time any answer arrives.",
-  "cur": "지연은 절대 사라지지 않는다. 빛은 물리학이 허용하는 가장 빠른 속도로 이동하며, 그것도 충분하지 않다. 우리가 더 멀리 나아가면서 — 왕복 통신 지연이 좋은 날씨에도 수십 분으로 측정될 화성으로의 인간 승무원, 얼음 거성으로의 로봇 탐사선, 그 이후 세대에서 나올 무엇이든 — 거리는 계속 증가할 것이고 필요한 인내심도 계속 복합될 것이다. 변하는 것은 오직 누가 그것을 견디느냐뿐이다. 답변을 기다리는 지상팀, 또는 어떤 신호보다 빠르게 결정을 내리는 우주선 자신. DSN은 구식이 되지 않고 있다. 그것은 더 깊은 아키텍처의 한 층이 되고 있다. 점점 더 많은 사고(thinking)가 거기서, 어둠 속에서, 이를 해야 했기 때문에 허락을 구하지 않고 관리하는 법을 배운 우주선들에서 이루어지는 태양계의 무선 백본이다. 우리는 그 대화 속에 머물 수 있도록 네트워크를 구축했다. 우리는 이 거리에서 그 대화는 대화라기보다 이미 떠나 버린 사람들 사이에 보내진 편지처럼 보인다는 것을 천천히 발견하고 있다."
- },
- {
-  "rel": "essays/comms.json",
-  "at": "body.29.caption",
-  "en": "Pioneer 10 was the first craft tracked into the outer dark. Its final faint signal reached the Deep Space Network in 2003, from beyond the orbit of Pluto — a whisper that at last fell below hearing, still outbound.",
-  "cur": "Pioneer 10은 외부 암흑으로 추적된 최초의 우주선이었다. 그것의 마지막 희미한 신호는 2003년 Deep Space Network에 도달했으며, 명왕성의 궤도 너머에서 나온 — 마침내 청취 범위 아래로 떨어진 속삭임이었으나, 여전히 외향으로 향하고 있었다."
- },
- {
-  "rel": "essays/delta-v.json",
-  "at": "dek",
-  "en": "Every spacecraft that has ever left Earth carried one thing above all else: a budget. Not money — velocity. The rocket equation meted it out in kilometres per second, gravity was the only free refill, and every engineer who ever planned a mission has been living inside that constraint since 1903.",
-  "cur": "지구를 떠난 모든 우주선이 다른 무엇보다도 가지고 나간 것이 하나 있다: 예산이다. 돈이 아니라 속도다. 로켓 방정식은 이를 초당 킬로미터 단위로 배분했고, 중력만이 유일한 무료 충전이었으며, 1903년 이후로 미션을 계획한 모든 엔지니어는 이 제약 안에서 살아왔다."
- },
- {
-  "rel": "essays/delta-v.json",
-  "at": "body.0.md",
-  "en": "Imagine you are handed a chequebook with a fixed balance. You can spend it however you like — but every purchase is final, there are no deposits, and when the balance reaches zero you are done. That is the situation every spacecraft faces from the moment it clears the launch tower. The currency is not fuel. It is not thrust. It is **velocity** — more precisely, the *change* in velocity, measured in kilometres per second, that the spacecraft can accumulate over its entire mission. Engineers call it delta-v, and the account opens, once, at launch.",
-  "cur": "고정된 잔액으로 수표책을 받았다고 상상해보라. 원하는 대로 지출할 수 있지만 모든 거래는 최종이고, 입금이 없으며, 잔액이 0에 도달하면 끝난다. 이것이 발사탑을 벗어난 순간부터 모든 우주선이 직면한 상황이다. 통화는 연료가 아니다. 추력도 아니다. 그것은 **속도**이다 — 더 정확히는, 초당 킬로미터 단위로 측정한 속도의 *변화*이며, 우주선이 전체 미션 동안 축적할 수 있는 것이다. 엔지니어들은 이를 델타-v라 부르며, 계좌는 발사 시점에 한 번 열린다."
- },
- {
-  "rel": "essays/delta-v.json",
-  "at": "body.1.md",
-  "en": "The rule that wrote this constraint was published in 1903, by a self-taught Russian schoolteacher named Konstantin Tsiolkovsky, working alone in a small provincial town. His [rocket equation](/science/propulsion/tsiolkovsky) has not been repealed since: **∆v = Isp · g₀ · ln(m₀/mf)**. Read it in English: the velocity you can buy equals the efficiency of your engine — measured in seconds of [specific impulse](/science/propulsion/specific-impulse) and multiplied by a gravitational constant of 9.807 m/s² — times the natural logarithm of how much heavier the rocket was at the start than at the end. That logarithm is the villain. Because *ln* is the slowest-growing function in mathematics, it means that every extra kilometre per second you want to add costs you an exponentially larger bite of propellant mass — and propellant has to be lifted too, which means it needs its own propellant, which has to be lifted too, and so on down a regress that has no floor.",
-  "cur": "이 제약을 명시한 규칙은 1903년 작은 지방 도시에서 혼자 일하던 러시아의 자학 교사 콘스탄틴 치올콥스키가 발표했다. 그의 [로켓 방정식](/science/propulsion/tsiolkovsky)은 지금까지 폐기되지 않았다: **∆v = Isp · g₀ · ln(m₀/mf)**. 영어로 읽으면: 얻을 수 있는 속도는 엔진의 효율성과 같다 — [비추력](/science/propulsion/specific-impulse)의 초 단위로 측정하고 9.807 m/s²의 중력 상수를 곱함 — 로켓이 시작할 때 끝날 때보다 얼마나 더 무거웠는지의 자연로그를 곱한 값이다. 그 로그가 악당이다. *ln*이 수학에서 가장 느리게 증가하는 함수이기 때문에, 추가로 원하는 모든 초당 킬로미터는 지수적으로 더 큰 추진제 질량을 요구한다 — 그리고 추진제도 올려야 하므로, 자체 추진제가 필요하고, 이를 올려야 하고, 끝이 없는 체인이 계속된다."
- },
- {
-  "rel": "essays/delta-v.json",
-  "at": "body.2.md",
-  "en": "Astronaut Don Pettit called this *the tyranny of the rocket equation* in a 2012 essay written aboard the ISS, and the word tyranny is exactly right. The Saturn V that carried Apollo astronauts to the Moon stood thirty stories tall on the pad and was **85% propellant by mass**; its payload — everything that actually went anywhere — never exceeded about 4% of that wet mass. The rest was a controlled explosion in slow motion, consumed step by step just to get the remainder a little faster, a little higher. Everything else in spaceflight — the missions, the trajectories, the waiting for launch windows, the obsessive trimming of instrument mass — flows from that single, merciless denominator.",
-  "cur": "우주비행사 돈 페팃은 ISS에서 작성한 2012년 에세이에서 이를 *로켓 방정식의 폭정*이라고 불렀으며, 폭정이라는 단어가 정확히 맞는 표현이다. Apollo 우주비행사들을 달로 운반했던 Saturn V는 발사대에서 삼십 층 높이로 솟아 있었고 **질량의 85%가 추진제**였다. 그것의 페이로드 — 실제로 어디든 갈 수 있는 모든 것 — 는 그 습윤 질량의 약 4%를 절대 초과하지 않았다. 나머지는 통제된 폭발이 느린 동작으로 진행되었으며, 남은 것을 조금 더 빠르게, 조금 더 높이 올리기 위해 단계별로 소비되었다. 우주비행의 다른 모든 것 — 임무, 궤적, 발사 창 대기, 기구의 질량을 집요하게 줄이는 것 — 은 그 유일하고도 무자비한 분모에서 흘러나온다."
- },
- {
-  "rel": "essays/delta-v.json",
-  "at": "body.3.caption",
-  "en": "The rocket equation’s exponential wall: at chemical efficiency, each extra kilometre per second demands a wildly larger propellant fraction — and the closer you push toward a real destination, the steeper the price climbs.",
-  "cur": "로켓 방정식의 지수 벽: 화학 효율에서 추가 초당 킬로미터마다 훨씬 더 큰 추진제 분획을 요구한다 — 그리고 실제 목적지에 가까워질수록 가격은 더 가파르게 올라간다."
- },
- {
-  "rel": "essays/delta-v.json",
-  "at": "body.5.md",
-  "en": "A [delta-v budget](/science/propulsion/dv-budget) is what mission planners call the spreadsheet that accounts for every velocity change a mission must perform, from Earth parking orbit to final destination. It is the most consequential document in mission design: it decides whether the mission is possible at all. Getting a spacecraft from a low Earth orbit to, say, a Hohmann transfer toward Mars and into Martian orbit costs roughly **5.6 km/s** total — a figure that sounds modest until you remember that every decimal place is paid for in tonnes of propellant, and the rocket equation means the exchange rate gets worse the more you spend.",
-  "cur": "미션 플래너들이 [델타-v 예산](/science/propulsion/dv-budget)이라고 부르는 것은 미션이 수행해야 하는 모든 속도 변화를 계산하는 스프레드시트이다, 지구 주차 궤도부터 최종 목적지까지. 이것은 미션 설계에서 가장 중요한 문서이다: 미션이 가능한지를 결정한다. 우주선을 저지구 궤도에서, 예를 들어 화성으로의 Hohmann 전이 궤적과 화성 궤도로 가져가는 데는 대략 **5.6 km/s** 총량이 필요하다 — 소박해 보이는 수치지만, 모든 소수점이 추진제의 톤으로 지불되며, 로켓 방정식은 더 많이 쓸수록 환율이 악화된다는 것을 기억하면 된다."
- },
- {
-  "rel": "essays/delta-v.json",
-  "at": "body.6.md",
-  "en": "A [Hohmann transfer](/science/transfers/hohmann-transfer) is the minimum-energy arc between two orbits — the path that costs the least delta-v to get from A to B. It is not straight; it is an ellipse that brushes the inner orbit at one end and the outer at the other, coasting the entire way on nothing but inertia. The trick is that you fire the engine twice: once to leave the departure orbit, once to match the arrival orbit. Between those two burns — typically 259 days in the Earth-to-Mars case — you spend nothing. The solar system's gravity does the carrying for free, as long as you had the sense to aim the right way at the start.",
-  "cur": "[호만 전이](/science/transfers/hohmann-transfer)는 두 궤도 사이의 최소 에너지 호다 — A에서 B로 가는 데 가장 적은 델타-v를 요구하는 경로다. 직선이 아니다; 하나의 끝에서는 내부 궤도에, 다른 끝에서는 외부 궤도에 접하는 타원이며, 전체 경로를 관성만으로 해안 항해한다. 요령은 엔진을 두 번 점화하는 것이다: 한 번은 출발 궤도를 떠날 때, 한 번은 도착 궤도에 맞출 때. 그 두 번의 점화 사이 — 지구-화성의 경우 보통 259일 — 아무것도 소비하지 않는다. 태양계의 중력이 시작할 때 올바른 방향으로 겨냥하는 감각이 있는 한 무료로 운반한다."
- },
- {
-  "rel": "essays/delta-v.json",
-  "at": "body.7.caption",
-  "en": "The cheapest path between two orbits is never the straight line — a Hohmann transfer coasts along an ellipse that just grazes each orbit, firing the engine only twice: once to leave, once to arrive.",
-  "cur": "두 궤도 사이의 가장 저렴한 경로는 직선이 아니다 — Hohmann transfer는 각 궤도에 단지 접하는 타원을 따라 해석하며, 엔진을 두 번만 가동한다: 한 번은 떠날 때, 한 번은 도착할 때이다."
- },
- {
-  "rel": "essays/delta-v.json",
-  "at": "body.8.md",
-  "en": "This is what *navigation* hands off to delta-v planning. The [navigation essay](/essays/navigation) opened with the problem of aiming at a moving planet — the Lambert problem, the long arc, the correction burns that close the gap between plan and reality. But choosing that arc in the first place was a budget decision. The Hohmann minimum-energy path was chosen because it spends the least; a faster trajectory exists, but it costs more delta-v than most missions can afford, and delta-v is the one thing you cannot borrow.",
-  "cur": "이것이 *항법*이 델타-v 계획에 넘겨주는 것이다. [항법 에세이](/essays/navigation)는 움직이는 행성을 겨냥하는 문제로 열렸다 — Lambert 문제, 긴 호, 계획과 현실 사이의 차이를 메우는 보정 점화들. 하지만 처음부터 그 호를 선택하는 것은 예산 결정이었다. 호만 최소 에너지 경로는 가장 적게 지출하기 때문에 선택되었다; 더 빠른 궤적이 존재하지만, 대부분의 미션이 감당할 수 없는 것보다 더 많은 델타-v를 요구하며, 델타-v는 빌릴 수 없는 유일한 것이다."
- },
- {
-  "rel": "essays/delta-v.json",
-  "at": "body.10.md",
-  "en": "Given the equation's tyranny, any trick that adds delta-v for free is not merely useful — it is transformative. There is exactly one: **gravity**.",
-  "cur": "방정식의 폭정을 감안하면, 추가 비용 없이 델타-v를 더하는 어떤 트릭도 단순히 유용한 것이 아니라 — 변혁적이다. 정확히 하나가 있다: **중력**."
- },
- {
-  "rel": "essays/delta-v.json",
-  "at": "body.11.md",
-  "en": "A spacecraft that swings close past a planet enters the planet's gravitational field fast, curves around it, and leaves faster than it arrived — because the planet is itself moving, and the craft has stolen a whisper of that motion. The [gravity assist](/science/transfers/gravity-assist) costs no propellant at all. The planet loses an unmeasurably tiny amount of its own orbital velocity; the spacecraft gains a great deal. For most interplanetary probes, this is not a bonus — it is the entire business model.",
-  "cur": "행성에 가깝게 스윙하는 우주선은 행성의 중력장에 빠르게 들어가, 그 주위를 돌고, 도착했을 때보다 더 빠르게 떠난다 — 행성 자체가 움직이고 있고, 그 우주선이 그 운동의 속삭임을 훔쳤기 때문이다. [중력 보조](/science/transfers/gravity-assist)는 추진제를 전혀 소비하지 않는다. 행성은 자신의 궤도 속도의 측정 불가능하게 작은 양을 잃는다; 우주선은 많은 양을 얻는다. 대부분의 행성 간 탐사선에게, 이것은 보너스가 아니다 — 전체 사업 모델이다."
- },
- {
-  "rel": "essays/delta-v.json",
-  "at": "body.12.md",
-  "en": "In the mid-1960s, a JPL mathematician named Gary Flandro was doing summer calculations when he noticed something. The outer planets — Jupiter, Saturn, Uranus, Neptune — were drifting toward a once-in-175-years alignment. A probe launched in 1977 and aimed right could use Jupiter's gravity to reach Saturn, Saturn's to reach Uranus, Uranus's to reach Neptune: a four-planet bank shot, each flyby adding delta-v for free and redirecting the trajectory to the next target. The flight time to Neptune would fall from thirty years to twelve. That observation became the Grand Tour — and [Voyager 2](/missions?id=voyager-2) made it real, gaining roughly **10 km/s** from the Jupiter flyby alone, enough to reach the outer system in the time originally budgeted for a Saturn-only mission. Neptune, today, has been visited once. The reason is that the window closed in the 1980s and won't open again until the 2150s.",
-  "cur": "1960년대 중반, JPL 수학자 Gary Flandro는 여름 계산을 하다가 뭔가를 발견했다. 외행성들 — 목성, 토성, 천왕성, 해왕성 — 175년에 한 번씩의 일직선 배열을 향해 드리프트하고 있었다. 1977년에 발사되고 올바르게 겨냥된 탐사선은 목성의 중력을 사용해 토성에 도달하고, 토성의 것으로 천왕성에, 천왕성의 것으로 해왕성에 도달할 수 있었다: 4개 행성의 뱅크샷, 각 플라이바이가 무료로 델타-v를 추가하고 궤적을 다음 목표로 리다이렉트한다. 해왕성까지의 비행 시간은 30년에서 12년으로 떨어질 것이다. 그 관찰은 Grand Tour가 되었다 — 그리고 [Voyager 2](/missions?id=voyager-2)가 이를 현실로 만들었으며, 목성 플라이바이만으로 대략 **10 km/s**를 얻어, 토성 전용 미션으로 원래 예산된 시간에 외계 시스템에 도달할 수 있었다. 오늘날 해왕성은 한 번만 방문했다. 이유는 창이 1980년대에 닫혔고 2150년대까지 다시 열리지 않을 것이기 때문이다."
- },
- {
-  "rel": "essays/delta-v.json",
-  "at": "body.13.caption",
-  "en": "Voyager 2 took the free refill four times over — Jupiter to Saturn to Uranus to Neptune — banking each planet’s motion into the next, on a route that will not line up again for 175 years.",
-  "cur": "Voyager 2는 무료 충전을 4번 받았다 — 목성에서 토성으로, 토성에서 천왕성으로, 천왕성에서 해왕성으로 — 각 행성의 운동을 다음 행성으로 배킹하면서, 175년 동안 다시 일직선상으로 정렬되지 않을 경로로 간다."
- },
- {
-  "rel": "essays/delta-v.json",
-  "at": "body.14.md",
-  "en": "The same arithmetic is why [Cassini](/missions?id=cassini) looped through Venus — twice — and past Earth and past Jupiter before heading outward to Saturn: not the scenic route, but the cheap one. And why [Mangalyaan](/missions?id=mangalyaan), India's first interplanetary mission, reached Mars in 2014 on a budget of roughly US$74 million — a fraction of what comparable missions have cost — in part because its trajectory was designed to extract maximum value from every kilogram of its 852-kilogram propellant load, the largest single component of a spacecraft that weighed 1,340 kg on the pad. The delta-v budget was 1,350 m/s for the entire mission after escape. Every gram was accounted for.",
-  "cur": "[카시니](/missions?id=cassini)가 금성을 — 두 번 — 거쳐 지구를 거쳐 목성을 거쳐 토성으로 향했던 동일한 산술이 있다: 경관 경로가 아니라, 저렴한 경로다. 그리고 [Mangalyaan](/missions?id=mangalyaan), 인도의 첫 행성 간 미션이, 대략 미화 7,400만 달러의 예산으로 2014년에 화성에 도달한 이유는 — 비교 가능한 미션들이 비용을 들인 것의 일부인 — 부분적으로 그 궤적이 852킬로그램의 추진제 하중의 모든 킬로그램에서 최대 가치를 추출하도록 설계되었기 때문이다, 발사대에서 무게 1,340 kg인 우주선의 가장 큰 단일 구성 요소다. 탈출 후 전체 미션의 델타-v 예산은 1,350 m/s였다. 모든 그램이 계산되었다."
- },
- {
-  "rel": "essays/delta-v.json",
-  "at": "body.15.caption",
-  "en": "Cassini reached Saturn on borrowed speed, swinging past Venus twice, Earth, and Jupiter along the way — a seven-year detour that cost less fuel than aiming straight at it ever could.",
-  "cur": "카시니는 금성을 두 번, 지구, 목성을 거쳐 스윙하며 빌린 속도로 토성에 도달했다 — 직접 겨냥하는 것보다 덜 연료를 들이는 7년의 우회였다."
- },
- {
-  "rel": "essays/delta-v.json",
-  "at": "body.17.md",
-  "en": "Gravity offers a second trick, subtler than the first. It was described in 1929 by Hermann Oberth, and it turns on a fact about kinetic energy that is not obvious until you write it out: energy grows as the *square* of velocity. A burn that adds 1 km/s at 10 km/s adds far more kinetic energy than the same burn at 1 km/s — because the work done equals force times distance, and a rocket moving fast covers more distance during the burn.",
-  "cur": "중력은 두 번째 트릭을 제공한다, 첫 번째보다 더 미묘한. 이는 1929년 헤르만 오베르트에 의해 설명되었으며, 그것은 당신이 그것을 써 낼 때까지 명백하지 않은 운동 에너지에 대한 사실에 좌우된다: 에너지는 속도의 *제곱*으로 증가한다. 10 km/s에서 1 km/s를 추가하는 점화는 1 km/s에서의 동일한 점화보다 훨씬 더 많은 운동 에너지를 추가한다 — 왜냐하면 한 일은 힘에 거리를 곱한 것과 같고, 빠르게 움직이는 로켓은 점화 중에 더 큰 거리를 커버하기 때문이다."
- },
- {
-  "rel": "essays/delta-v.json",
-  "at": "body.18.md",
-  "en": "The consequence, called the [Oberth effect](/science/propulsion/oberth-effect), is that burns deep in a gravity well — at the lowest point of an orbit, *periapsis*, where a spacecraft is moving fastest — are drastically more efficient than burns performed at altitude. The same delta-v, spent at the right moment in the right place, delivers more final energy to the craft. Missions that can arrange to fire their engines at periapsis — arriving planets, close passes, deliberately engineered low-point maneuvers — get, in effect, a multiplier on whatever delta-v they spend. [New Horizons](/missions?id=new-horizons) used a Jupiter flyby not just for the gravity-assist velocity boost but timed its burn to coincide with closest approach, stacking the Oberth dividend on top of the assist. The combination shaved three years from its flight to Pluto.",
-  "cur": "이를 [Oberth 효과](/science/propulsion/oberth-effect)라고 부르는 결과는, 중력 우물 깊숙한 곳에서의 버너 — 즉 우주선이 가장 빠르게 움직이는 궤도의 최저점인 *근점(periapsis)*에서의 버너 — 가 고도에서 수행되는 버너보다 극도로 효율적이라는 것이다. 올바른 순간에 올바른 장소에서 소비된 동일한 델타-v는 우주선에 더 많은 최종 에너지를 전달한다. 근점에서 엔진을 가동할 수 있도록 배열할 수 있는 미션들 — 행성 도착, 근접 통과, 의도적으로 설계된 최저점 기동 — 은 그들이 소비하는 델타-v에 대해 실제로 승수를 얻는다. [New Horizons](/missions?id=new-horizons)는 목성 스윙바이를 중력 보조 속도 부스트뿐만 아니라 근접 통과와 일치하도록 버너를 시간을 맞춰서 사용했으며, 보조에 Oberth 배당을 쌓아올렸다. 이 조합은 명왕성으로의 비행에서 3년을 단축했다."
- },
- {
-  "rel": "essays/delta-v.json",
-  "at": "body.19.caption",
-  "en": "Burn low, gain more: deep in a gravity well a spacecraft is moving fastest, and the same engine burn there buys far more energy than it would out at the slow, distant top of the orbit.",
-  "cur": "낮게 점화하고, 더 많이 얻다: 중력 우물 깊숙한 곳에서 우주선이 가장 빠르게 움직이고, 동일한 엔진 점화가 궤도의 느리고, 먼 최고점에서 할 수 있는 것보다 훨씬 더 많은 에너지를 산다."
- },
- {
-  "rel": "essays/delta-v.json",
-  "at": "body.20.md",
-  "en": "These are not hacks or loopholes. They are the mathematics of moving through a gravitational landscape that, if you read it right, is not hostile to motion but is in fact riddled with chutes and ramps. The budget does not disappear — but the skilled reader of that landscape can stretch it, sometimes enormously.",
-  "cur": "이것들은 해킹이나 허점이 아니다. 그들은 중력적 경관을 움직이는 수학이며, 올바르게 읽으면, 운동에 적대적이지 않지만 실제로 함정과 경사로로 가득 차 있다. 예산은 사라지지 않는다 — 하지만 그 경관의 숙련된 읽는 사람은 그것을 펼칠 수 있고, 때때로 엄청나게."
- },
- {
-  "rel": "essays/delta-v.json",
-  "at": "body.22.md",
-  "en": "The delta-v budget is ruthlessly indifferent to almost everything that feels important about a mission — the science, the prestige, the geopolitics. It does not care who built the spacecraft or what flag is painted on it. It cares only about mass, exhaust velocity, and the logarithm.",
-  "cur": "델타-v 예산은 미션에 관해 중요하게 느껴지는 거의 모든 것에 무자비하게 무관심하다 — 과학, 위신, 지정학. 우주선을 누가 지었거나 어떤 깃발이 그려져 있는지 신경 쓰지 않는다. 오직 질량, 배기 속도, 그리고 로그만 신경 쓴다."
- },
- {
-  "rel": "essays/delta-v.json",
-  "at": "body.23.md",
-  "en": "This creates a discipline unlike any other in engineering. The camera added to a Mars rover, the extra redundancy in a computer, the additional science instrument a team lobbied years for — every one of them comes with a delta-v price. If the instrument is heavier than the margin allows, either something else is removed or the entire mission becomes infeasible. Mission planning is an exercise in continuous, painful arbitrage between what you want and what you can carry, and the equation is the judge of every dispute.",
-  "cur": "이는 공학의 다른 어떤 것과도 다른 규율을 만든다. 화성 로버에 추가된 카메라, 컴퓨터의 추가 중복성, 팀이 수년 동안 로비한 추가 과학 기기 — 그들 각각은 델타-v 가격을 가진다. 기기가 허용 마진보다 무거우면, 다른 뭔가가 제거되거나 전체 미션이 불가능해진다. 미션 계획은 원하는 것과 운반할 수 있는 것 사이의 지속적이고 고통스러운 중재의 연습이며, 방정식은 모든 분쟁의 판사다."
- },
- {
-  "rel": "essays/delta-v.json",
-  "at": "body.24.md",
-  "en": "The budget also erases the margin for error in a way that land-based engineering rarely does. A bridge that is slightly overloaded still stands. A spacecraft that runs out of delta-v before completing orbital insertion becomes a piece of uncontrolled debris. There is no partial credit. Every mission in this atlas that succeeded did so because someone, somewhere, kept an honest accounting and never spent more than was there. The anonymous room of people who did that math — who watched the budget, checked the astrodynamics, ran the correction-burn sequences — carried every mission that ever arrived.",
-  "cur": "예산은 또한 육지 기반 공학이 거의 하지 않는 방식으로 오류의 여유를 지운다. 약간 과부하된 다리는 여전히 선다. 궤도 삽입을 완료하기 전에 델타-v가 부족해지는 우주선은 통제 불가능한 조각이 된다. 부분 신용이 없다. 이 지도에서 성공한 모든 미션은 누군가, 어딘가에서 정직한 회계를 지키고 있던 것보다 더 많이 지출하지 않았기 때문에 성공했다. 그 수학을 한 익명의 방 사람들 — 예산을 지켰던 사람, 항법역학을 확인했던 사람, 보정 점화 수열을 실행했던 사람 — 도착한 모든 미션을 실어 나갔다."
- },
- {
-  "rel": "essays/delta-v.json",
-  "at": "body.26.md",
-  "en": "For sixty years, the tyranny of the rocket equation produced a particular answer to the problem of getting to orbit: build a machine optimized for the task, burn it on the way up, throw it away. The structural mass savings from designing a single-use first stage were real, and the delta-v was real, and the math closed. The problem was that you were throwing away an engine worth tens of millions of dollars after using it once.",
-  "cur": "60년 동안, 로켓 방정식의 폭정은 궤도에 도달하는 문제에 특정한 답을 생산했다: 작업에 최적화된 기계를 만들고, 올라가는 길에 태우고, 버리자. 단일 사용 1단계 설계에서의 구조 질량 절감은 실제였고, 델타-v는 실제였으며, 수학은 닫혔다. 문제는 한 번 사용한 후 수천만 달러 가치의 엔진을 버리고 있었다는 것이었다."
- },
- {
-  "rel": "essays/delta-v.json",
-  "at": "body.27.md",
-  "en": "Landing a rocket stage and flying it again changes the denominator, but not in the way the equation predicts. Structurally, a reusable stage is slightly heavier — it needs landing legs, grid fins, thermal protection, residual propellant reserves for the return burn — which means the [specific impulse](/science/propulsion/specific-impulse) advantage narrows and the mass ratio shrinks. The equation, strictly read, says reuse costs you delta-v. What the equation doesn't model is that you can fly the stage again next week, at a fraction of the cost of building a new one, which means you can afford to fly more missions, which means the budget that matters — dollars per kilogram to orbit — collapses. The delta-v logic didn't change. The economic logic that runs alongside it did.",
-  "cur": "로켓 단계를 착륙시키고 다시 비행시키는 것은 분모를 바꾸지만, 방정식이 예측하는 방식은 아니다. 구조적으로, 재사용 가능한 단계는 약간 더 무겁다 — 착륙 다리, 그리드 핀, 열 보호, 귀환 점화를 위한 잔존 추진제 준비금이 필요하다 — 이는 [비추력](/science/propulsion/specific-impulse) 이점이 좁혀지고 질량 비율이 축소된다는 것을 의미한다. 방정식을 엄격하게 읽으면, 재사용이 델타-v를 소비한다고 말한다. 방정식이 모델링하지 않는 것은 다음 주에 단계를 다시 비행시킬 수 있다는 것이며, 새로운 것을 만드는 비용의 분수로, 더 많은 미션을 비행할 수 있다는 것을 의미하며, 중요한 예산 — 궤도당 달러당 킬로그램 — 이 붕괴된다는 것을 의미한다. 델타-v 논리는 바뀌지 않았다. 그것과 함께 실행되는 경제 논리가 그랬다."
- },
- {
-  "rel": "essays/delta-v.json",
-  "at": "body.28.md",
-  "en": "This is the tension that has defined the last decade of launch vehicle development, and it is not yet resolved. The rocket equation still sets the hard physical floor. What changes is how much it costs to stand on it. [Fly a trajectory in the atlas](/fly) and watch what happens to the delta-v budget as each stage separates — the mass ratio snapshots at each cut are what the equation is actually enforcing, invisibly, on every flight.",
-  "cur": "이것은 발사 차량 개발의 지난 10년을 정의한 긴장이며, 아직 해결되지 않았다. 로켓 방정식은 여전히 어려운 물리적 바닥을 설정한다. 변하는 것은 그것을 서있는 데 드는 비용이다. [지도에서 궤적을 비행](/fly)하고 각 단계가 분리될 때 델타-v 예산에 무엇이 일어나는지 보자 — 각 절단에서의 질량 비율 스냅샷은 방정식이 모든 비행에서 보이지 않게 시행하는 것이다."
- },
- {
-  "rel": "essays/delta-v.json",
-  "at": "body.30.md",
-  "en": "There is something clarifying about a constraint with no exceptions. The rocket equation does not yield for political reasons or budget increases or engineering heroics. Every mission that has ever left this planet — [Voyager](/missions?id=voyager-2), [Cassini](/missions?id=cassini), [New Horizons](/missions?id=new-horizons), [Mangalyaan](/missions?id=mangalyaan) — did so because someone reconciled a column of delta-v requirements against a column of what the propellant could provide, and the second number was at least as large as the first. Every mission that never left — and there have been many, killed quietly in planning — failed that test.",
-  "cur": "예외 없는 제약에는 명확함이 있다. 로켓 방정식은 정치적 이유나 예산 증액, 또는 엔지니어링의 영웅적 노력 때문에 양보하지 않는다. 이 행성을 떠난 모든 미션 — [Voyager](/missions?id=voyager-2), [Cassini](/missions?id=cassini), [New Horizons](/missions?id=new-horizons), [Mangalyaan](/missions?id=mangalyaan) — 은 누군가가 델타-v 요구사항의 칼럼을 추진제가 제공할 수 있는 것의 칼럼에 대해 조정했고, 두 번째 숫자가 첫 번째 숫자 이상이었기 때문에 떠났다. 떠나지 못한 모든 미션 — 계획 단계에서 조용히 폐기된 많은 미션들이 있었다 — 은 그 테스트에 실패했다."
- },
- {
-  "rel": "essays/delta-v.json",
-  "at": "body.31.md",
-  "en": "What the equation also does, less obviously, is make gravity precious. Not as a hazard to overcome — every rocket is burning upward against it — but as a free account. A planet's gravity well, threaded correctly, is a source. Jupiter's gravity gave Voyager 2 a velocity it could never have bought with propellant. The Oberth effect makes deep periapsis passes worth engineering deliberately. The solar system's entire orbital architecture is, from a delta-v perspective, a landscape of free refills scattered across a mostly empty map — and every [trajectory you can explore here](/science/transfers/hohmann-transfer) is a record of someone finding one.",
-  "cur": "방정식이 또한 하는 것은, 덜 명백하게, 중력을 소중하게 한다. 극복할 위험으로서가 아니라 — 모든 로켓은 그것을 향해 위로 태우고 있다 — 하지만 무료 계좌로서. 행성의 중력 우물, 올바르게 스레드되면, 출처다. 목성의 중력은 Voyager 2에 추진제로 사올 수 없었던 속도를 주었다. Oberth 효과는 깊은 근점 통과를 의도적으로 엔지니어할 가치가 있게 한다. 태양계의 전체 궤도 구조는, 델타-v 관점에서, 거의 비어있는 지도 전체에 흩어져 있는 무료 충전 풍경이다 — 그리고 [여기서 탐색할 수 있는 모든 궤적](/science/transfers/hohmann-transfer)은 누군가가 하나를 찾은 기록이다."
- },
- {
-  "rel": "essays/delta-v.json",
-  "at": "body.32.md",
-  "en": "Tsiolkovsky died in 1935, nine years before the first ballistic missile flew and a generation before the first spacecraft left Earth. He never saw a rocket in orbit. What he did was write down, in 1903, the grammar that every mission since has spoken — the one rule that turns the aspiration of going somewhere into the arithmetic of whether you can. Everything else is a sentence in that language. The question the atlas keeps answering, mission by mission, is how much you can say within it.",
-  "cur": "치올콥스키는 1935년에 사망했으며, 첫 탄도 미사일이 날기 9년 전이고 첫 우주선이 지구를 떠나기 세대 전이었다. 그는 절대 궤도에서 로켓을 보지 못했다. 그가 한 것은 1903년에 그 이후 모든 미션이 말해온 문법을 적어내는 것이었다 — 어딘가에 가는 열망을 가능한지 여부의 산술로 바꾸는 하나의 규칙. 다른 모든 것은 그 언어의 문장이다. 지도가 미션별로 미션별로 계속 답하는 질문은 그 안에서 얼마나 많이 말할 수 있는가이다."
- }
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "dek",
+    "en": "The headline says asteroids contain quadrillions of dollars of gold and platinum. The headline is wrong — not about the metal, but about the money. The real argument for asteroid resources runs in the opposite direction entirely.",
+    "cur": "이 헤드라인은 소행성이 금과 백금으로 이루어진 수천조 달러 규모의 자산을 포함하고 있다고 말한다. 이 헤드라인은 틀렸다—금속 때문이 아니라 돈 때문이다. 소행성 자원에 대한 진정한 논거는 정반대 방향으로 흐른다."
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.0.md",
+    "en": "Every few years, someone does the arithmetic on asteroid 16 Psyche and announces, in a breathless press release, that the metal-rich body orbiting in the [asteroid belt](/science/planets/asteroid-belt) contains iron, nickel, and precious metals worth something in the range of ten quintillion dollars. The figure is always staggering. It is also, in any meaningful economic sense, meaningless — and understanding why it is meaningless leads directly to what the genuine argument for asteroid resources actually is, which is almost the opposite of the headline version.",
+    "cur": "수 년마다 누군군가는 소행성 16 Psyche에 대한 산술 계산을 하고, 숨을 헐떡거리며 보도자료를 통해, [소행성 띠](/science/planets/asteroid-belt)에 공전하는 금속이 풍부한 천체가 철, 니켈, 그리고 약 10 오십조 달러 규모의 귀금속을 포함하고 있다고 발표한다. 그 숫자는 항상 놀라울 정도다. 그것은 또한 의미 있는 경제학적 의미에서는 무의미하다—그리고 그것이 왜 무의미한지 이해하는 것은 소행성 자원에 대한 진정한 논거가 실제로는 무엇인지로 직접 이어지는데, 그것은 헤드라인 버전과 거의 정반대다."
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.1.md",
+    "en": "Start with the number itself. The global platinum market is worth, in a given year, roughly $5 billion. If you could deliver the platinum-group-metal content of even a modest metallic asteroid to Earth and sell it tomorrow, you would not make a fortune. You would collapse the market. The price of platinum derives entirely from its scarcity; remove the scarcity, and you remove the price. Value, for a commodity, is set at the margin — by the last unit sold, not the total volume in existence. The $10-quintillion asteroid, successfully mined and delivered to Earth's surface, would be worth roughly what iron ore is worth: not much per kilogram. But this market-collapse argument is almost beside the point, because it assumes delivery to Earth — and delivery to Earth is where the arithmetic goes wrong long before the market enters the picture. This is where the [rocket equation](/science/propulsion/tsiolkovsky) closes the discussion.",
+    "cur": "그 숫자 자체부터 시작해보자. 세계 백금 시장은 주어진 연도에 대략 50억 달러의 가치가 있다. 만약 당신이 소행성 하나를 채광해 백금족 금속 함유량을 내일 지구로 가져와 팔 수 있다면, 당신은 재산을 벌지 못할 것이다. 당신은 시장을 붕괴시킬 것이다. 백금의 가격은 전적으로 그 희귀성에서 비롯된다; 희귀성을 제거하면, 가격도 제거된다. 상품의 가치는 한계에서 설정된다—판매된 총량이 아니라 마지막으로 판매된 단위에 의해. 성공적으로 채광되어 지구 표면으로 배달된 10 오십조 달러 소행성은 철광석이 가치 있는 정도로 가치가 있을 것이다: 킬로그램당 많지 않다. 하지만 이러한 시장 붕괴 논거는 거의 관점이 벗어나 있는데, 왜냐하면 그것은 지구로의 배달을 가정하기 때문이다—그리고 지구로의 배달이 바로 산술이 시장이 들어오기 훨씬 전에 잘못되는 곳이다. 여기가 [로켓 방정식](/science/propulsion/tsiolkovsky)이 논의를 종료하는 곳이다."
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.3.md",
+    "en": "The [delta-v budget](/science/propulsion/dv-budget) for a mission from Earth to a near-Earth asteroid is, for a favourable target, somewhere around 6 km/s — comparable to reaching Mars. Getting material back from that asteroid to Earth orbit costs more still, and getting it from Earth orbit to Earth's surface requires surviving the atmosphere. This is all before you have done any mining. The [rocket equation](/science/propulsion/tsiolkovsky) does not grade on a curve: every kilogram of payload you want to return home from deep space must be matched, at launch, by enough propellant to carry it back, which must itself be matched by propellant to carry that propellant, and so on down the regress the equation describes. The [Tsiolkovsky constraint](/science/propulsion/tsiolkovsky), which has not been repealed since 1903, makes the numbers brutal.",
+    "cur": "지구에서 근지구 소행성으로의 임무를 위한 [델타-v 예산](/science/propulsion/dv-budget)은 유리한 목표의 경우 대략 6 km/s 부근이다—화성에 도달하는 것과 비슷하다. 그 소행성에서 재료를 지구 궤도로 돌려보내는 데는 더 많은 비용이 들고, 지구 궤도에서 지구 표면까지 가져가는 것은 대기권 통과를 견뎌야 한다. 이 모든 것은 채광을 하기 전이다. [로켓 방정식](/science/propulsion/tsiolkovsky)은 곡선의 등급을 매기지 않는다: 심우주에서 집으로 돌려보내고 싶은 모든 킬로그램의 탑재량은 발사 시점에서 그것을 다시 나르기에 충분한 추진제와 맞아떨어져야 하고, 그것 자체도 그 추진제를 나르기 위한 추진제와 맞아떨어져야 하며, 이런 식으로 방정식이 설명하는 회귀를 따라 계속 진행된다. 1903년 이래로 반복되지 않은 [치올콥스키 제약](/science/propulsion/tsiolkovsky)은 그 숫자들을 야만적으로 만든다."
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.4.md",
+    "en": "Put plainly: you are pulling material out of a gravity well — not Earth's, but the solar system's. The asteroid is, admittedly, tiny, with a surface gravity a thousandth of Earth's. Getting off it costs almost nothing in [delta-v](/essays/delta-v). But you are then in interplanetary space, and Earth is at the bottom of a very large gravity well, and arriving there with any significant velocity means spending fuel to slow down, or accepting the violence of aerobraking, or both. The economic cost of transporting mass across interplanetary distances and then decelerating it safely is, at current and foreseeable propulsion technologies, so far above the market value of any commodity that the business case for returning bulk materials to Earth cannot close. This is not a pessimistic reading. It is what the [specific impulse](/science/propulsion/specific-impulse) numbers say when you run them honestly.",
+    "cur": "명확히 말하자면: 당신은 중력 우물에서 재료를 끌어올리고 있다—지구의 것은 아니지만, 태양계의 것이다. 소행성은 물론 작으며, 표면 중력은 지구의 천분의 일이다. 그것을 벗어나는 것은 [델타-v](/essays/delta-v)에서 거의 비용이 들지 않는다. 하지만 당신은 그 후 행성 간 공간에 있으며, 지구는 매우 큰 중력 우물의 바닥에 있고, 상당한 속도로 도착하는 것은 연료를 써서 속력을 낮춰야 하거나, 기동을 통한 대기 제동의 폭력성을 받아들이거나, 둘 다 해야 한다는 뜻이다. 행성 간 거리에 걸쳐 질량을 수송하고 안전하게 감속시키는 경제적 비용은 현재 및 예상 가능한 추진 기술에서 어떤 상품의 시장 가치보다 훨씬 높아서, 지구로 대량의 재료를 돌려보내는 사업 사례는 성립할 수 없다. 이것은 비관적인 해석이 아니다. 이것은 당신이 정직하게 [비충동량](/science/propulsion/specific-impulse) 숫자들을 실행할 때 그들이 말하는 것이다."
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.5.md",
+    "en": "This is also why the first generation of commercial asteroid ventures — Planetary Resources, founded in 2012, and Deep Space Industries, founded in 2013 — failed within a decade, not because the asteroids aren't there, but because the market for Earth-delivered asteroid platinum does not exist at any price that the [delta-v economics](/essays/delta-v) can support. The logic of hauling wealth down to Earth's surface was broken from the start.",
+    "cur": "이것은 또한 첫 번째 세대의 상업 소행성 벤처들—2012년에 설립된 Planetary Resources와 2013년에 설립된 Deep Space Industries—이 소행성이 있지 않아서가 아니라 지구로 배달되는 소행성 백금에 대한 시장이 [델타-v 경제학](/essays/delta-v)이 뒷받침할 수 있는 어떤 가격에서도 존재하지 않기 때문에 십 년 이내에 실패한 이유이다. 부를 지구 표면으로 끌어내려오는 논리는 처음부터 깨져 있었다."
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.7.md",
+    "en": "Now invert the question. Instead of asking what it costs to bring material from space to Earth, ask what it costs to bring material from Earth to space. The answer is the same rocket equation, running the other direction, and it is just as brutal. Getting one kilogram to low Earth orbit on a [reusable launcher](/essays/reusable-launchers) costs, at best, a few thousand dollars today — down dramatically from the tens of thousands it cost a decade ago. Getting that kilogram further, to a lunar transfer orbit or to a Mars-bound trajectory, costs more still, because you are climbing higher out of Earth's gravity well and the [Oberth arithmetic](/science/propulsion/oberth-effect) that makes deep burns efficient cannot fix the fundamental mass-ratio problem.",
+    "cur": "이제 질문을 뒤집어보자. 우주에서 지구로 재료를 가져오는 데 얼마나 드는지 묻는 대신, 지구에서 우주로 재료를 가져오는 데 얼마나 드는지 묻자. 답은 같은 로켓 방정식이고, 반대 방향으로 흐르며, 똑같이 야만적이다. 한 킬로그램을 저지구궤도에 [재사용 가능한 발사체](/essays/reusable-launchers)로 가져가는 데는 오늘날 최선의 경우 수천 달러가 든다—십 년 전 수만 달러가 들던 것에서 급격히 내려갔다. 그 킬로그램을 더 멀리, 달 이동 궤도나 화성 행 궤적으로 가져가는 데는 더 많이 든다. 왜냐하면 당신은 지구 중력 우물에서 더 높이 올라가고 있고 깊은 연소를 효율적으로 만드는 [오베르트 산술](/science/propulsion/oberth-effect)이 근본적인 질량 비 문제를 해결할 수 없기 때문이다."
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.8.md",
+    "en": "This is what the gravity-well framing clarifies. Earth's surface sits at the bottom of a well that costs roughly 9.4 km/s of delta-v to escape entirely. Every kilogram of food, fuel, water, air, structural material, or radiation shielding that a crewed spacecraft carries above low Earth orbit has paid that toll. The toll is not a surcharge that clever engineering can avoid; it is a physical consequence of being on Earth, which is a large planet with a deep gravitational field. If you want to build and operate spacecraft above low Earth orbit — for a lunar base, for Mars transit, for anything sustained in deep space — the dominant cost is not your hardware. It is the propellant burned to lift your hardware and its consumables out of the well every single time.",
+    "cur": "이것이 중력 우물 프레이밍이 명확히 해주는 것이다. 지구 표면은 완전히 탈출하기 위해 대략 9.4 km/s의 델타-v가 드는 우물의 바닥에 앉아 있다. 유인 우주선이 저지구궤도 위에 나르는 모든 음식, 연료, 물, 공기, 구조 재료, 또는 방사선 차폐제의 킬로그램은 그 대가를 지불했다. 그 대가는 정교한 엔지니어링이 피할 수 있는 추가 요금이 아니다; 그것은 지구에 있다는 것의 물리적 결과이고, 지구는 깊은 중력장을 가진 큰 행성이다. 만약 당신이 저지구궤도 위에 우주선을 건설하고 운영하고 싶다면—달 기지, 화성 여행, 심우주의 그 어떤 지속적인 활동을 위해—지배적인 비용은 당신의 하드웨어가 아니다. 그것은 하드웨어와 그것의 소비재를 우물에서 끌어올리기 위해 매번 연소되는 추진제다."
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.9.md",
+    "en": "The genuine economic argument for asteroid resources begins exactly here, and it runs in the direction opposite to the headline. Instead of bringing material from asteroids to Earth, the question is: can we use material that is *already* above Earth's gravity well to avoid lifting it from the surface? Can we, in effect, find a fuel depot and a hardware store already in orbit — or close enough that the delivery cost is measured in fractions of a km/s rather than ten km/s — and stop paying the launch toll on every kilogram of material a deep-space economy needs? The answer, if the recon missions are to be believed, is yes. But not for gold. For water.",
+    "cur": "소행성 자원에 대한 진정한 경제적 논거는 정확히 여기서 시작되고, 헤드라인의 반대 방향으로 흐른다. 소행성에서 지구로 재료를 가져오는 대신, 질문은 이렇다: 우리는 *이미* 지구 중력 우물 위에 있는 재료를 사용해서 표면에서 끌어올리는 것을 피할 수 있을까? 우리는 사실상 행성 궤도에 이미 있거나—또는 배달 비용이 10 km/s이 아닌 분수 km/s 단위로 측정되는 정도로 충분히 가까운—연료 저장소와 하드웨어 상점을 찾을 수 있고, 심우주 경제가 필요한 모든 재료의 킬로그램마다 발사 대가를 지불하는 것을 멈출 수 있을까? 정찰 임무들이 믿을만하다면, 답은 그렇다이다. 하지만 금 때문은 아니다. 물 때문이다."
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.10.caption",
+    "en": "Every kilogram launched from Earth pays a brutal toll in delta-v just to climb out of the planet’s gravity well. Anything already in space — an asteroid drifting above the rim — has that price paid. Which is why a litre of water parked in orbit is worth more than a litre of gold sitting on the ground.",
+    "cur": "지구에서 발사된 모든 킬로그램은 행성의 중력 우물에서 벗어나기 위해 델타-v에서 야만적인 대가를 지불한다. 우주에 이미 있는 것—가장자리 위의 소행성 표류물—은 그 가격을 이미 지불했다. 이것이 궤도에 주차된 물 1리터가 지면에 앉아 있는 금 1리터보다 더 가치 있는 이유다."
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.12.md",
+    "en": "Carbonaceous chondrite asteroids — the C-type and related classes that represent the majority of near-Earth objects — contain significant quantities of hydrated minerals: clays and phyllosilicates that hold water molecules in their crystal structure at levels ranging from a few percent to more than twenty percent by mass. Some also contain organics. The water is not sitting in puddles; it is chemically bound, and extracting it requires heating the material to drive off the water vapour and then condensing it. But the energy to do that can, in principle, come from solar concentrators in space. The result is water — and water, in the context of a deep-space programme, is not primarily a thing to drink.",
+    "cur": "탄소질 콘드라이트 소행성들—거의 모든 근지구 천체들을 나타내는 C-형 및 관련 분류들—은 함수 광물의 상당한 양을 포함한다: 물 분자를 그 결정 구조 내에 여러 퍼센트에서 20퍼센트 이상의 질량으로 보유하는 점토와 엽규산염. 일부는 유기물도 포함한다. 물은 웅덩이에 앉아 있지 않다; 그것은 화학적으로 결합되어 있고, 그것을 추출하는 것은 물 증기를 몰아내기 위해 재료를 가열한 다음 그것을 응축시키는 것을 요구한다. 하지만 그렇게 하기 위한 에너지는 원칙적으로 우주의 태양 집중기에서 나올 수 있다. 그 결과는 물이다—그리고 심우주 프로그램의 맥락에서 물은 주로 마실 것이 아니다."
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.13.md",
+    "en": "Electrolysis splits water into hydrogen and oxygen: the most energetic chemical propellant combination ever flown. Hydrogen and oxygen, liquefied and stored, are rocket propellant. The [delta-v](/essays/delta-v) budget for a Mars transfer is approximately 3.6 km/s from low Earth orbit; a propellant depot at a convenient [Lagrange point](/science/transfers/hohmann-transfer) or in a near-Earth orbit, stocked from asteroid-derived water, would dramatically change the mass that needs to be launched from Earth for any beyond-LEO mission. The fuel is the dominant mass fraction of any spacecraft — the Saturn V that carried Apollo astronauts to the Moon was [85% propellant by mass](/essays/delta-v). A depot that supplies propellant without requiring it to be lifted from Earth's surface is not a logistical convenience. It restructures the entire economics of deep space.",
+    "cur": "전기분해는 물을 수소와 산소로 분해한다: 지금까지 비행한 가장 에너지적으로 강력한 화학 추진제 조합. 액화되고 저장된 수소와 산소는 로켓 추진제이다. 저지구궤도에서 화성 이동을 위한 [델타-v](/essays/delta-v) 예산은 대략 3.6 km/s이다; 편리한 [라그랑주 점](/science/transfers/hohmann-transfer)에서 또는 근지구 궤도에서 추진제 저장소가 소행성 유래 물로 채워져 있으면, 지구에서 발사해야 하는 모든 초-저지구궤도 임무에 대한 질량이 극적으로 변할 것이다. 연료는 모든 우주선의 지배적인 질량 분수이다—Apollo 우주비행사를 달로 옮긴 새턴 V는 [질량에서 85% 추진제](/essays/delta-v)였다. 지구 표면에서 끌어올려야 할 필요 없이 추진제를 공급하는 저장소는 물류상의 편의가 아니다. 그것은 심우주의 전체 경제학을 재구성한다."
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.14.md",
+    "en": "Beyond propellant, water provides oxygen for breathing. The same carbonaceous material provides carbon and nitrogen. The bulk mass — rock, in most cases, not metal — provides radiation shielding: a spacecraft transiting to Mars is outside Earth's magnetosphere for six to nine months, and lifting enough mass to shield a crew from cosmic rays costs enormously if every kilogram has to be launched from Earth's surface. None of this has the glamour of platinum. All of it is more valuable to a space-based economy than platinum is. The argument is not about treasure. It is about [in-situ resource utilisation](/science/life-in-space/isru-resource-utilization) — the only approach that makes sustained human presence beyond Earth physically feasible — and the resource that matters most is not the rarest or most expensive one, but the one that is most expensive to launch from Earth: propellant mass. The [going-to-the-moon essay](/essays/going-to-the-moon) makes the same case at the lunar south pole, for the same reasons. The Moon and carbonaceous near-Earth asteroids are the same argument in two different places.",
+    "cur": "추진제를 넘어서, 물은 호흡을 위한 산소를 제공한다. 같은 탄소질 재료는 탄소와 질소를 제공한다. 대량의 질량—대부분의 경우 금속이 아니라 바위—는 방사선 차폐를 제공한다: 화성으로 이동하는 우주선은 6개월에서 9개월 동안 지구 자기권 밖에 있고, 우주선이 우주 방사선으로부터 승무원을 차폐하기 충분한 질량을 올리는 데 드는 비용은 모든 킬로그램이 지구 표면에서 발사되어야 한다면 어마어마하다. 이 중 어느 것도 백금의 멋진 광채를 가지지 않는다. 모든 것이 심우주 경제에서 백금보다 더 가치 있다. 그 논거는 보물에 관한 것이 아니다. 그것은 [현지 자원 이용](/science/life-in-space/isru-resource-utilization)에 관한 것이다—지구 너머의 지속적인 인류의 존재를 물리적으로 가능하게 만드는 유일한 접근법—그리고 가장 중요한 자원은 가장 드물거나 가장 비싼 것이 아니라, 지구에서 발사하는 데 가장 비싼 것이다: 추진제 질량. [달로 가는 에세이](/essays/going-to-the-moon)는 같은 이유로 달 남극에서 같은 경우를 만든다. 달과 탄소질 근지구 소행성들은 두 개의 다른 장소에서 같은 논거이다."
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.15.caption",
+    "en": "Split asteroid water and you have hydrogen and oxygen — rocket propellant — plus air to breathe, water to drink, and bulk rock for radiation shielding. The prize was never metal to sell back home; it is a fuel depot that is already in the sky.",
+    "cur": "소행성 물을 분해하면 당신은 수소와 산소—로켓 추진제—를 가진다. 그리고 호흡할 공기, 마실 물, 방사선 차폐를 위한 대량의 바위를 가진다. 그 상은 집으로 다시 팔 금속이 아니었다; 그것은 이미 하늘에 있는 연료 저장소이다."
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.17.md",
+    "en": "The recon that would support any of this is not theoretical. It has been done, twice, by Japan, and once by the United States — and what it found was both more interesting and more humbling than the headline version suggested.",
+    "cur": "이를 뒷받침할 탐사는 순전히 이론적이지 않다. 일본이 두 번, 미국이 한 번 실행했으며, 그것이 발견한 것은 헤드라인 버전이 시사한 것보다 훨씬 흥미롭고 겸허하게 만드는 것이었다."
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.18.md",
+    "en": "Japan's [Hayabusa](/missions?id=hayabusa1) reached the S-type asteroid Itokawa in September 2005. Its sample collection mechanism had malfunctioned, but the spacecraft returned to Earth in June 2010 carrying approximately 1,500 sub-millimetre particles — the first samples ever returned from an asteroid. The analysis confirmed ordinary LL chondrite mineralogy: not the water-rich carbonaceous target the ISRU argument needs, but proof of concept that you can reach an asteroid, touch it, and bring pieces back.",
+    "cur": "일본의 [Hayabusa](/missions?id=hayabusa1)는 2005년 9월에 S형 소행성 이토카와에 도달했습니다. 표본 채집 장치는 오작동했지만, 우주선은 2010년 6월에 지구로 돌아왔으며 약 1,500개의 아(sub-)밀리미터 입자를 가지고 있었습니다 — 소행성에서 반환된 첫 번째 표본이었습니다. 분석 결과 평범한 LL 천드라이트 광물 성분을 확인했습니다: ISRU 주장이 필요로 하는 수가 풍부한 탄소질 목표가 아니었지만, 소행성에 도달하고 접촉한 후 조각을 가져올 수 있다는 개념 증명이었습니다."
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.19.md",
+    "en": "[Hayabusa2](/missions?id=hayabusa2), launched in December 2014, was designed to go further. Its target was Ryugu, a C-type near-Earth asteroid — the carbonaceous variety that hydration models predicted should contain water-bearing minerals. The spacecraft arrived at Ryugu in June 2018 and spent a year and a half studying it before performing sample collection in February and July 2019. In July 2019, it also deployed a small impactor that blasted a crater in Ryugu's surface, then collected material from the exposed subsurface — material that had not been altered by space weathering. The capsule returned to Earth in December 2020. The analysis confirmed what the models predicted: Ryugu's material is rich in hydrated minerals, contains organics including amino acid precursors, and in chemical composition is closely related to CI chondrites — the most primitive and water-rich class of carbonaceous chondrites. The ore that the ISRU argument needs is there. Ryugu is not a unique body; C-type asteroids represent roughly 75% of all asteroids in the main belt and a significant fraction of near-Earth objects.",
+    "cur": "[Hayabusa2](/missions?id=hayabusa2)는 2014년 12월에 발사되었으며, 더 나아가기 위해 설계되었습니다. 목표는 류구, C형 근지구 소행성이었습니다 — 수화 모델이 물을 함유한 광물을 포함해야 한다고 예측한 탄소질 종류였습니다. 우주선은 2018년 6월에 류구에 도달했으며 2019년 2월과 7월에 표본 채집을 수행하기 전에 1년 반 동안 연구했습니다. 2019년 7월에는 류구의 표면에 분화구를 폭발시킨 작은 충격체를 배치한 후 우주 풍화로 인해 변형되지 않은 노출된 심부층 물질을 채집했습니다. 캡슐은 2020년 12월에 지구로 돌아왔습니다. 분석은 모델이 예측한 것을 확인했습니다: 류구의 물질은 수화 광물이 풍부하며, 아미노산 전구체를 포함한 유기물을 포함하고, 화학 조성상 CI 콘드라이트 — 탄소질 콘드라이트 중 가장 원시적이고 물이 풍부한 종류와 밀접한 관계가 있습니다. ISRU 주장이 필요로 하는 광석이 있습니다. 류구는 독특한 천체가 아닙니다; C형 소행성은 주 소행대의 모든 소행성의 대략 75%를 나타내며 근지구 천체의 상당한 비율을 나타냅니다."
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.20.md",
+    "en": "NASA's [OSIRIS-REx](/missions?id=osiris-rex) reached the carbonaceous asteroid Bennu in December 2018 and spent almost two years mapping it before performing its Touch-And-Go sample collection in October 2020. The capsule returned to Earth in September 2023 with approximately 120 grams of material — the largest sample ever returned from an asteroid. Analysis confirmed hydrated clay minerals and carbon-rich compounds: the same ingredients the Hayabusa2 team found at Ryugu, on a different body, reached by a different nation, via a different trajectory. The result was the same. This is not a coincidence. It is confirmation that the C-type carbonaceous composition — water-bearing, organic-rich — is the rule for these bodies, not the exception.",
+    "cur": "NASA의 [OSIRIS-REx](/missions?id=osiris-rex)는 2018년 12월에 탄소질 소행성 베누에 도달했으며 2020년 10월에 터치-앤-고 표본 채집을 수행하기 전에 거의 2년간 그것을 매핑했습니다. 캡슐은 2023년 9월에 지구로 돌아왔으며 약 120그램의 물질을 가지고 있었습니다 — 소행성에서 반환된 가장 큰 표본이었습니다. 분석 결과 수화된 점토 광물과 탄소가 풍부한 화합물을 확인했습니다: Hayabusa2 팀이 다른 천체 류구에서 발견했으며, 다른 국가가 도달했으며, 다른 궤도를 통해 도달한 동일한 성분이었습니다. 결과는 동일했습니다. 이것은 우연이 아닙니다. 이것은 C형 탄소질 구성 — 물을 함유한, 유기물이 풍부한 — 이 이 천체들의 규칙이지, 예외가 아니라는 확인입니다."
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.21.caption",
+    "en": "Three robotic missions have already touched and sampled asteroids: Japan’s Hayabusa (Itokawa, 2010, the first ever), Hayabusa2 (Ryugu, 2020), and NASA’s OSIRIS-REx (Bennu, 2023). What came back was water-bearing clay and organics — from loose rubble, not solid metal.",
+    "cur": "세 개의 로봇 우주선이 이미 소행성을 건드리고 샘플링했다: 일본의 Hayabusa (이토카와, 2010, 역사상 처음), Hayabusa2 (류구, 2020), 그리고 NASA의 OSIRIS-REx (베누, 2023). 돌아온 것은 물을 함유한 점토와 유기물이었다 — 고체 금속이 아니라 느슨한 암석 더미에서."
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.22.caption",
+    "en": "Hayabusa2 at Ryugu — JAXA’s second asteroid sample return, and the mission bold enough to fire a copper impactor into the surface to blast open a fresh crater before scooping up what it exposed.",
+    "cur": "류구의 Hayabusa2 — JAXA의 두 번째 소행성 샘플 반환 미션이며, 표면에 구리 충격기를 발사해 신선한 분화구를 터뜨린 후 노출된 것을 퍼 올릴 만큼 대담한 미션이다."
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.24.md",
+    "en": "Here is what the missions also found, and what the headlines about asteroid mining consistently understate: Bennu and Ryugu are not solid bodies. They are rubble piles.",
+    "cur": "여기에 미션들이 또한 발견한 것이 있으며, 소행성 채굴에 관한 헤드라인이 일관되게 과소평가하는 것이 있다: 베누와 류구는 고체 천체가 아니다. 그들은 암석 더미다."
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.25.md",
+    "en": "A rubble pile is an aggregate of loosely consolidated material — boulders, pebbles, dust — held together by gravity so weak that walking on the surface would require careful consideration of whether you might bounce off entirely. Bennu's surface gravity is approximately 6 micronewtons per kilogram. An astronaut standing on its equator would weigh less than a milligram in Earth terms. Trying to anchor a mining system — to drill, to excavate, to push against the surface with any force — generates a reaction that could push the mining equipment off the asteroid. The TAG (Touch-and-Go) event that OSIRIS-REx used to collect its sample lasted approximately six seconds of surface contact; during those six seconds, the spacecraft's sample head sank deeper into the surface than expected, because Bennu's material is less consolidated than a sandcastle. The mission team later said the spacecraft would have sunk entirely if the thrusters hadn't fired to pull it back. This is not a hostile environment in the way that Mars is hostile. It is a hostile environment in the way that a bag of loose sand floating in zero gravity is hostile: fundamentally different from every assumption that terrestrial mining engineering makes.",
+    "cur": "암석 더미는 느슨하게 응고된 물질의 집합체다 — 바위, 자갈, 먼지 — 표면을 걷는 것이 완전히 튈 수도 있는지를 신중하게 고려할 필요가 있을 정도로 약한 중력으로 함께 묶여 있다. 베누의 표면 중력은 대략 킬로그램당 6 마이크로뉴턴이다. 적도 위에 서 있는 우주비행사는 지구 기준으로 밀리그램 미만의 무게를 가질 것이다. 채굴 시스템을 고정하려는 시도 — 천공하기, 굴착하기, 표면에 어떤 힘으로든 밀어붙이기 — 채굴 장비를 소행성에서 밀어낼 수 있는 반력을 생성한다. OSIRIS-REx가 시료를 수집하는 데 사용한 TAG (터치-앤드-고) 사건은 약 6초의 표면 접촉을 지속했다; 그 6초 동안 우주선의 샘플 헤드는 예상보다 더 깊이 표면에 침강했는데, 베누의 물질이 모래성보다 덜 응고되어 있기 때문이다. 미션 팀은 나중에 추진기가 발사되어 그것을 다시 끌어내지 않았다면 우주선이 완전히 침강했을 것이라고 말했다. 이것은 화성이 적대적인 방식의 적대적인 환경이 아니다. 이것은 무중력으로 떠다니는 헐거운 모래 주머니가 적대적인 방식의 적대적인 환경이다: 지상 채굴 공학이 하는 모든 가정과 근본적으로 다르다."
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.26.md",
+    "en": "Hayabusa2's impactor experiment confirmed the same picture from a different angle. Its 2-kg copper impactor created a crater roughly 14 metres in diameter and 2 metres deep — larger than predicted, because the surface was more porous than expected. The [DART](/missions?id=dart) mission, which in September 2022 redirected the asteroid Dimorphos by deliberately crashing a spacecraft into it, produced an ejecta plume and an orbital period change both larger than solid-body models predicted — consistent, again, with a loosely bound aggregate. Working in that environment is not a matter of scaling up terrestrial mining and adding vacuum suits. Anchoring against a surface you cannot push against, excavating material that floats away at centimetres per second, containing ejecta in microgravity — these are unsolved engineering problems unlike anything in the history of extraction industry. The science is confirmed. The engineering has not yet begun in earnest.",
+    "cur": "Hayabusa2의 충돌기 실험은 다른 각도에서 동일한 상황을 확인해주었다. 2kg의 구리 충돌기는 직경 약 14미터, 깊이 2미터의 분화구를 만들었는데, 이는 예측보다 더 컸다. 표면이 예상보다 더 다공질이었기 때문이다. 2022년 9월 우주선을 의도적으로 소행성 디모르포스에 충돌시켜 궤도를 변화시킨 [DART](/missions?id=dart) 미션은 고체 물체 모델이 예측한 것보다 더 큰 분출물 플룸과 궤도 주기 변화를 생성했다. 이는 다시 한 번 느슨하게 결합된 집합체와 일치한다. 이러한 환경에서 작업하는 것은 지구상의 채광을 확대하고 진공 우주복을 더하는 문제가 아니다. 밀어낼 수 없는 표면에 고정하기, 초당 수 센티미터의 속도로 떠다니는 재료를 채굴하기, 미소중력에서 분출물을 포함하기 — 이들은 채광 산업의 역사에서 무엇과도 다른 미해결 공학 문제들이다. 과학은 확인되었다. 공학은 아직 본격적으로 시작되지 않았다."
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.27.caption",
+    "en": "OSIRIS-REx reaching down to touch Bennu — and finding not solid ground but a rubble pile so loosely bound that the sampling head sank straight in, nearly swallowing the arm. “Mining” a body like this is unlike anything ever done on Earth.",
+    "cur": "OSIRIS-REx가 베누에 닿기 위해 내려가며 — 고체 지표면이 아니라 암석 더미를 발견했고, 느슨하게 묶인 것이 샘플링 헤드가 곧바로 침강하고, 거의 팔을 삼키려 할 정도다. 이것 같은 천체를 \"채굴\"하기는 지구에서 지금까지 한 어떤 것과도 다르다."
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.29.md",
+    "en": "The question the long view has to answer is: where does this go? The ISRU argument is logically sound. The recon confirms the resources exist. The engineering challenges are real but not in principle insoluble. The economics, however, require something that does not yet exist: demand for resources in space.",
+    "cur": "장기적 관점이 답해야 할 질문은: 이것이 어디로 가는가? ISRU 논의는 논리적으로 건전하다. 탐사는 자원이 존재함을 확인한다. 공학 도전은 실제적이지만 원칙적으로 해결 불가능한 것은 아니다. 그러나 경제는 아직 존재하지 않는 것을 필요로 한다: 우주에서의 자원에 대한 수요."
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.30.md",
+    "en": "This is the timing problem that killed the first commercial wave. Planetary Resources and Deep Space Industries were building supply chains for a customer base that didn't exist yet — specifically, for the propellant-hungry beyond-LEO economy that a sustained lunar programme and eventual Mars operations would create. In 2012, when Planetary Resources was founded, the [reusable launcher revolution](/essays/reusable-launchers) was not yet proven, the Artemis programme did not exist, no commercial space stations were under development, and the idea of regular human Mars missions was firmly in the speculative future. The companies were, in infrastructure terms, building fuel stations before the highway. Infrastructure almost always has to wait for the traffic before it becomes viable, and space resource extraction is no different.",
+    "cur": "이것은 첫 번째 상용 물결을 죽인 타이밍 문제다. Planetary Resources와 Deep Space Industries는 아직 존재하지 않는 고객 기반 — 특히, 지속된 달 프로그램과 결국의 화성 작업이 생성할 추진제에 목말라 하는 LEO 너머 경제에 대한 공급망을 구축하고 있었다. 2012년, Planetary Resources가 설립되었을 때, [재사용 가능한 발사체 혁명](/essays/reusable-launchers)은 아직 증명되지 않았고, Artemis 프로그램은 존재하지 않았으며, 상용 우주 정거장이 개발 중이 아니었고, 정기적인 인간 화성 미션의 개념은 확실히 추측적인 미래에 있었다. 회사들은 인프라 관점에서 고속도로 전에 연료 정거장을 건설하고 있었다. 인프라는 거의 항상 그것이 생존 가능해지기 전에 교통을 기다려야 하며, 우주 자원 추출도 다르지 않다."
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.31.md",
+    "en": "The situation in the mid-2020s is different in one respect: the traffic is closer. [Reusable launch vehicles](/essays/reusable-launchers) have changed the economics of reaching orbit. Commercial station programmes are under development. The Artemis programme, however delayed, has placed crewed lunar operations back on planning horizons. NASA's [Psyche mission](/missions?id=psyche-mission), launched in October 2023 and en route to the metallic asteroid 16 Psyche, will deliver the most thorough remote characterisation of a metallic asteroid ever attempted. The supply chain's potential customers are no longer purely hypothetical. But closer is not here. A propellant depot servicing Mars-bound spacecraft is, at minimum, a decade away from operational reality — and that estimate is optimistic, contingent on a pace of lunar development that has consistently slipped. The honest reading: asteroid resources become economically viable when, and only when, there is sustained human activity beyond low Earth orbit at a scale that makes fuel, air, and shielding the binding constraint. That constraint is approaching. The gap between approaching and here has swallowed businesses before.",
+    "cur": "2020년대 중반의 상황은 한 가지 측면에서 다르다: 교통이 더 가까워졌다. [재사용 가능한 발사 수단](/essays/reusable-launchers)이 궤도에 도달하는 경제학을 변경했다. 상용 정거장 프로그램이 개발 중이다. Artemis 프로그램은 어떻게 지연되었든, 유인 달 작업을 계획 지평선 위에 다시 놓았다. NASA의 [Psyche 미션](/missions?id=psyche-mission)은 2023년 10월에 발사되었고 금속 소행성 16 Psyche로 향하고 있으며, 지금까지 시도된 금속 소행성의 가장 철저한 원격 특성화를 제공할 것이다. 공급망의 잠재적 고객들은 더 이상 순수하게 가설적이지 않다. 하지만 더 가까운 것은 여기가 아니다. 화성 향 우주선을 서비스하는 추진제 보관소는 최소한 작동 현실로부터 10년 떨어져 있다 — 그리고 그 추정치는 낙관적이며, 일관되게 미끄러졌던 달 개발의 속도에 조건부다. 솔직한 읽음: 소행성 자원은 경제적으로 생존 가능해지는 시점에서, 그리고 오직 그때만, 지구 저궤도 너머에 연료, 공기, 차폐가 구속 제약이 되는 규모의 지속된 인간 활동이 있을 때다. 그 제약은 접근하고 있다. 접근하는 것과 여기 사이의 간격은 과거 사업을 삼켰다."
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.32.md",
+    "en": "What remains, after the hype has been deflated and the market-collapse fallacy disposed of, is something more durable and less exciting to press release: a structural argument that the long-term economics of human presence beyond Earth cannot be made to work without drawing on resources that are already above the gravity well. The solar system contains more water, more carbon, more structural material than the entirety of human civilisation has ever consumed, distributed across millions of bodies whose surface gravity costs almost nothing to overcome, sitting above the one thing that makes spaceflight expensive. The argument is not about quintillions of dollars. It is about the [rocket equation](/science/propulsion/tsiolkovsky) and the direction it is pointing.",
+    "cur": "과장이 수축되고 시장 붕괴 오류가 제거된 후 남아 있는 것은 더 견고하고 보도 자료에서 덜 흥미로운 것이다: 지구 너머의 인간 존재의 장기 경제학이 이미 중력 우물 위에 있는 자원을 도출하지 않고는 작동하도록 만들어질 수 없다는 구조적 논의. 태양계는 인간 문명이 지금까지 소비한 것의 전부보다 더 많은 물, 더 많은 탄소, 더 많은 구조 물질을 포함하고 있으며, 표면 중력 비용을 극복하기 위해 거의 아무것도 들이지 않는 수백만 개의 천체에 걸쳐 분포하고 있으며, 우주 비행을 비싸게 만드는 한 가지 위에 앉아 있다. 논의는 수십억 달러에 관한 것이 아니다. 이것은 [로켓 방정식](/science/propulsion/tsiolkovsky)과 그것이 가리키는 방향에 관한 것이다."
+  },
+  {
+    "rel": "essays/asteroid-mining.json",
+    "at": "body.33.md",
+    "en": "Tsiolkovsky's constraint has an escape. It is not clever chemistry or radical new propulsion — though [new propulsion](/essays/new-propulsion) helps at the margins. The escape is not launching the consumables in the first place. It is finding them already above the well and using them there. [Hayabusa2](/missions?id=hayabusa2) brought 5.4 grams of Ryugu back to Earth. [OSIRIS-REx](/missions?id=osiris-rex) brought 120 grams of Bennu. The next missions in this sequence won't be bringing material home. They will be learning how to leave it where it is — and use it there. That is the point the headline never reaches. [Explore the small bodies in the atlas](/explore) and what you are looking at is not a storehouse of Earth-deliverable treasure. It is the hardware store for a civilization that hasn't arrived yet.",
+    "cur": "Tsiolkovsky의 제약에는 탈출구가 있습니다. 그것은 영리한 화학이나 급진적인 새로운 추진력이 아닙니다 — [새로운 추진력](/essays/new-propulsion)이 여백에서 도움이 되지만. 탈출구는 소비물자를 처음부터 발사하지 않는 것입니다. 이미 우물 위에 있는 것들을 찾아내서 그곳에서 사용하는 것입니다. [Hayabusa2](/missions?id=hayabusa2)는 류구의 5.4그램을 지구로 가져왔습니다. [OSIRIS-REx](/missions?id=osiris-rex)는 베누의 120그램을 가져왔습니다. 이 일련의 다음 임무들은 물질을 집으로 가져오지 않을 것입니다. 그들은 그것을 제자리에 남겨두고 그곳에서 사용하는 방법을 배워야 합니다. 그것이 헤드라인이 절대 도달하지 못하는 요점입니다. [소행성 지도책에서 소천체를 탐사해 보세요](/explore), 그리고 당신이 보고 있는 것은 지구에 배달할 수 있는 보물의 창고가 아닙니다. 아직 도착하지 않은 문명을 위한 하드웨어 가게입니다."
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "dek",
+    "en": "Three dish complexes on Earth carry on every conversation humanity has ever had with anything beyond the Moon. A 22-watt radio signal, a light-hour of patience, and the most oversubscribed network in the solar system — this is how the whole enterprise holds together.",
+    "cur": "지구 위의 세 접시 복합체가 인류가 달 너머의 모든 것과 나눈 모든 대화를 계속 전하고 있다. 22와트의 무선 신호, 빛이 한 시간 걸리는 거리의 인내심, 그리고 태양계에서 가장 수요가 많은 네트워크 — 이것이 바로 전체 사업이 유지되는 방식이다."
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.0.md",
+    "en": "In the navigation essay we named the problem and then mostly set it aside: the speed of light imposes a lag on every instruction, every correction, every answer, and the further out you go the worse it gets. The navigation essay could afford to set it aside because, for most of what it describes, the lag is inconvenient but manageable. A twenty-minute round trip to Mars is long enough to be annoying and short enough to work around. The spacecraft coasts; the ground catches up. But that arithmetic doesn't hold forever. Push it another order of magnitude — to Saturn, to Pluto, to the place where [Voyager 1](/missions?id=voyager-1) is right now, almost a full light-day from the Earth — and \"hold on, we're thinking\" stops being a workable answer. The problem that navigation named but deferred is the one this essay is about.",
+    "cur": "항법 에세이에서 우리는 문제를 명명했고 그 다음 대부분 그것을 옆에 제쳐두었다: 빛의 속도는 모든 지시, 모든 수정, 모든 답변에 지연을 부과하며, 더 멀리 나갈수록 더 악화된다. 항법 에세이는 그것을 제쳐둘 수 있었는데, 왜냐하면 그것이 설명하는 대부분의 것에 대해 그 지연은 불편하지만 관리할 수 있기 때문이다. 화성까지의 왕복 시간이 20분이라는 것은 충분히 짜증나지만 충분히 대처할 수 있을 정도이다. 우주선이 해를 따라 미끄러지고 지구가 따라잡는다. 하지만 이 계산은 영원히 유지되지 않는다. 크기를 한 단계 더 밀어붙여서 — 토성, 명왕성, [Voyager 1](/missions?id=voyager-1)이 지금 바로 있는 곳, 지구에서 거의 꼬박 빛의 하루 거리로 밀어붙이면 — \"기다려, 우리가 생각하고 있어\"는 더 이상 작동하는 답변이 아니다. 항법이 명명했지만 미루어둔 문제가 바로 이 에세이가 다루는 주제이다."
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.1.md",
+    "en": "Before we get to the lag, though, there's a more fundamental strangeness to absorb. Every probe, every rover, every lander in this atlas maintains exactly one thread of connection to Earth: a radio link through a handful of large dishes on the ground. Not a constellation of relay satellites. Not a mesh network. Not a pair of backups standing by in case the primary goes down. One link, through one of roughly forty antennas spread across three sites, and the whole solar system runs on it. Everything we've learned about Mars, Saturn, Jupiter, Uranus, Neptune, Pluto, the asteroid belt, and interstellar space beyond the heliosphere has traveled down that single thread. The miracle isn't that we've lost spacecraft. The miracle is how few.",
+    "cur": "지연에 들어가기 전에, 더 근본적인 기묘함이 있다. 이 지도책의 모든 탐사선, 모든 로버, 모든 착륙선은 지구와의 정확히 하나의 연결 스레드를 유지한다: 지표면의 몇 개의 큰 접시를 통한 무선 링크. 릴레이 위성의 별자리가 아니다. 메시 네트워크가 아니다. 주 신호가 끊어질 경우 대기하고 있을 예비 쌍이 아니다. 세 개 사이트에 퍼져 있는 대략 40개의 안테나 중 하나를 통한 하나의 링크, 그리고 전체 태양계가 그것 위에서 운영된다. 화성, 토성, 목성, 천왕성, 해왕성, 명왕성, 소행성대, 그리고 태양권 너머의 성간 공간에 대해 우리가 배운 모든 것이 그 하나의 스레드를 통해 전해졌다. 기적은 우리가 우주선을 잃었다는 것이 아니다. 기적은 우리가 잃은 것이 얼마나 적다는 것이다."
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.3.md",
+    "en": "The [Deep Space Network](/science/mission-phases/dsn) is a creation of the early 1960s, built when the first probes were heading for Venus and Mars and the question of how to talk to them as they receded became urgently practical. The answer JPL arrived at was elegant in its simplicity: place antenna complexes roughly 120 degrees of longitude apart around the planet, so that as the Earth rotates, at least one of them always faces the part of the sky where the mission is. Three sites: Goldstone in the California desert, Madrid in Spain, and Canberra in Australia. They have been the ears and mouth of the solar system ever since.",
+    "cur": "[Deep Space Network](/science/mission-phases/dsn)은 1960년대 초에 만들어진 창작물로, 첫 탐사선들이 금성과 화성을 향해 출발하던 시절에 건설되었습니다. 탐사선들이 멀어져가면서 어떻게 그들과 통신할 것인가 하는 문제가 급박한 현실적 과제가 되었습니다. JPL이 도출한 해답은 단순함 속에 우아했습니다. 지구 주위에 경도 약 120도씩 떨어진 지점에 안테나 단지를 배치하는 것이었습니다. 이렇게 하면 지구가 자전할 때 적어도 하나의 안테나가 항상 임무 위성이 있는 하늘 부분을 향하게 됩니다. 캘리포니아 사막의 Goldstone, 스페인의 Madrid, 호주의 Canberra 세 곳입니다. 이들은 그 이래로 태양계의 귀와 입이 되어왔습니다."
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.4.md",
+    "en": "The crown of each complex is its 70-metre dish — a structure about the size and weight of a naval destroyer balanced on a bearing that lets it track a point in the sky to within a fraction of a degree, hour after hour, as the Earth turns beneath it. The three 70-metre antennas (DSS-14 at Goldstone, DSS-43 at Canberra, DSS-63 at Madrid) were built as 64-metre dishes and then, between 1982 and 1988, expanded specifically to support Voyager 2's approaching encounter with Neptune — a civilisational upgrade to a global network, for one flyby, of one planet. Canberra's DSS-43 carries a distinction the other two don't: because Voyager 2's trajectory took it south of the solar plane, it is the only antenna on Earth with a line of sight to it. One dish, on one continent, is the reason [Voyager 2](/missions?id=voyager-2) is still in the conversation.",
+    "cur": "각 복합체의 왕관은 그것의 70미터 접시이다 — 대략 해군 구축함의 크기와 무게 정도로, 지구가 그 아래 회전할 때 시간마다 수도 없이 하늘의 한 점을 반도(度)의 분수 이내로 추적할 수 있게 하는 베어링 위에 균형을 이루고 있는 구조이다. 세 개의 70미터 안테나 (Goldstone의 DSS-14, Canberra의 DSS-43, Madrid의 DSS-63)는 64미터 접시로 지어졌다가, 1982년과 1988년 사이에 Voyager 2가 해왕성과의 만남에 접근하기 위해 구체적으로 확장되었다 — 하나의 행성의 하나의 근접 통과를 위한 지구 규모 네트워크의 문명적 업그레이드. Canberra의 DSS-43은 다른 두 개가 갖지 않은 구별을 가지고 있다: Voyager 2의 궤적이 태양계 평면 남쪽으로 가 있기 때문에, 그것에 대한 가시선을 가진 지구 위의 유일한 안테나이다. 하나의 접시, 하나의 대륙이 [Voyager 2](/missions?id=voyager-2)가 여전히 대화에 남아 있는 이유이다."
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.5.md",
+    "en": "Arrayed around the 70-metre giants at each site are a family of 34-metre dishes — some with high-efficiency beam waveguide feeds, some optimised for different frequency bands, all contributing to a schedule that is, even in good years, relentlessly oversubscribed. Demand on the DSN has been running roughly 40 percent above capacity; by the early 2030s NASA projects it will grow by a factor of ten, driven by Artemis lunar missions, a surge in science probes, and commercial operators who want their own slice. The upgrade program meant to address it is running nearly five years late and has roughly doubled in cost. The network that carries every word we speak to the outer planets is doing so on a timetable that leaves almost no margin. Missions negotiate for antenna time the way airlines negotiate for takeoff slots, and the answer is sometimes no.",
+    "cur": "각 사이트의 70미터 거인 주변에 배열되어 있는 것은 34미터 접시의 가족이다 — 높은 효율의 빔 도파관 급전장치를 가진 것도 있고, 다른 주파수 대역에 최적화된 것도 있으며, 모두가 좋은 해에도 끊임없이 수요 초과 상태인 일정에 기여한다. DSN에 대한 수요가 대략 40퍼센트 용량 초과로 실행 중이며, 2030년대 초까지 NASA는 Artemis 달 임무, 과학 탐사선의 급증, 그리고 자신들의 몫을 원하는 상업 운영자들에 의해 10배 증가할 것으로 예상한다. 그것을 해결하기 위한 업그레이드 프로그램은 거의 5년 늦어져 있으며 비용이 대략 두 배로 늘었다. 우리가 외행성에 말하는 모든 말을 전하는 네트워크가 그렇게 하고 있는 일정은 거의 여유가 없다. 임무는 항공사가 이착륙 슬롯을 협상하는 방식으로 안테나 시간을 협상하며, 대답이 때로는 아니다."
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.7.md",
+    "en": "Stand next to a DSN dish while it is locked onto [Voyager 1](/missions?id=voyager-1) and try to hold in your head what it is listening for. The spacecraft's transmitter puts out 22.4 watts — roughly the output of a refrigerator's interior bulb, or a dimmer-switch lamp set to half. That signal leaves a 3.7-metre dish on Voyager 1 and begins to spread. Radio waves obey an inverse-square law: double the distance, quarter the power. By the time the beam crosses the distance to Earth — currently about 23 and a half light-hours, a number that grows by roughly 520 million kilometres per year — the power arriving at a 70-metre dish is less than a femtowatt. A femtowatt is 10⁻¹⁵ watts. The number often quoted for Voyager is closer to 10⁻²¹ watts — a single zeptowatt, unimaginably faint. The dish has to fish that out of a sky full of everything else.",
+    "cur": "DSN 접시가 [Voyager 1](/missions?id=voyager-1)에 잠겨 있는 동안 그 옆에 서서 그것이 청취하고 있는 것을 당신의 머리에 담아두려고 노력해보라. 우주선의 송신기는 22.4와트를 출력한다 — 대략 냉장고 내부 전구의 출력, 또는 절반으로 설정된 딤 스위치 전등이다. 그 신호는 Voyager 1의 3.7미터 접시를 떠나고 퍼지기 시작한다. 무선파는 역제곱 법칙을 따른다: 거리를 두 배로 늘리면 전력은 1/4로 줄어든다. 지구까지의 거리를 횡단할 때 — 현재 약 23시간 반의 빛이 소요되는 거리, 매년 대략 5억 2천만 킬로미터 증가하는 숫자 — 70미터 접시에 도달하는 전력은 펨토와트보다 작다. 펨토와트는 10⁻¹⁵와트이다. Voyager에 대해 자주 인용되는 숫자는 10⁻²¹와트에 더 가깝다 — 하나의 젭토와트, 상상할 수 없을 정도로 희미하다. 그 접시는 다른 모든 것으로 가득 찬 하늘에서 그것을 낚아채야 한다."
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.8.md",
+    "en": "That it can do this at all is a feat of engineering in three parts. First, the geometry: a 70-metre dish has roughly 3,600 square metres of collecting area, and every square metre counts. Second, the cold: the receivers sit cooled to within a few degrees of absolute zero, because thermal noise from a room-temperature amplifier would drown the signal entirely — the receiver has to be colder than interstellar space to hear something weaker than starlight. Third, the coding. Voyager's engineers, like every subsequent mission team, knew that individual bits would be corrupted by noise over distances like these, so they encoded the data with far more mathematical redundancy than the information itself requires. A single real bit of science travels inside a protective shell of check bits; the ground-side computer strips the shell away and recovers the original, even from a stream where a significant fraction of the received symbols are wrong. [New Horizons](/missions?id=new-horizons) used the same principle to send back Pluto's face: each image arrived corrupted and was reconstructed, the way a librarian might reassemble a burned manuscript from a set of redundant copies.",
+    "cur": "이것을 모두 해낼 수 있다는 것은 세 부분으로 이루어진 공학적 성과입니다. 첫째, 기하학: 70미터 접시는 대략 3,600제곱미터의 수집 면적을 가지고 있으며, 모든 제곱미터가 중요합니다. 둘째, 극저온: 수신기는 절대영도에서 몇 도 이내로 냉각되어 있습니다. 실온 증폭기의 열 잡음이 신호를 완전히 묻어버리기 때문입니다. 수신기는 별빛보다 약한 것을 감지하려면 성간 우주보다 더 차가워야 합니다. 셋째, 부호화: Voyager의 엔지니어들은 그 이후의 모든 임무팀처럼 이러한 거리에서 개별 비트가 잡음으로 인해 손상될 것임을 알았습니다. 따라서 정보 자체가 필요로 하는 것보다 훨씬 더 많은 수학적 중복성을 갖도록 데이터를 부호화했습니다. 과학의 단 하나의 실제 비트가 검사 비트의 보호막 내부를 여행합니다. 지상측 컴퓨터는 이 보호막을 벗겨내고 수신된 기호의 상당한 부분이 잘못되어 있더라도 원본을 복원합니다. [New Horizons](/missions?id=new-horizons)는 같은 원리를 사용하여 명왕성의 모습을 송신했습니다. 각 이미지는 손상된 상태로 도착했고 복원되었으며, 마치 도서관 사서가 중복 사본 세트에서 타버린 원고를 다시 조립하는 것과 같은 방식이었습니다."
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.9.md",
+    "en": "The practical ceiling on data rates is real. Voyager 1 peaked at 115,200 bits per second during its planetary encounters, when the distances were shorter and the dishes could be pointed tighter. At its current remove it manages a few tens of bits per second for engineering telemetry, a trickle that would have been embarrassingly slow on a 1970s modem. Everything we know about what lies beyond the heliosphere — the plasma density, the magnetic field, the particle flux in interstellar space, the data that no other instrument in existence could ever gather — arrives at the DSN at a rate slower than a fax machine. We are grateful for every bit.",
+    "cur": "데이터 전송률에 대한 실질적 상한은 실제 존재한다. Voyager 1은 거리가 더 짧았고 접시가 더 좁게 지향될 수 있었을 때인 행성 근접 통과 동안 초당 115,200비트에서 최고조에 달했다. 현재의 거리에서 그것은 공학 텔레메트리를 위해 초당 수십 비트를 관리하며, 1970년대 팩스 모뎀에서는 부끄러웠을 정도로 느린 흐름이다. 태양권 너머에 무엇이 있는지 우리가 아는 모든 것 — 플라즈마 밀도, 자기장, 성간 공간의 입자 유량, 존재하는 다른 어떤 기기도 수집할 수 없는 데이터 — DSN에 도달하는 것은 팩스 기계보다 느린 속도에서이다. 우리는 모든 비트에 감사한다."
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.10.caption",
+    "en": "A spacecraft answers on roughly twenty watts — less than the bulb in a refrigerator. Spread across a billion kilometres by nothing but the inverse-square law, what reaches the dish is around a millionth of a billionth of a watt. The genius of deep-space comms is not the shout; it is the listening.",
+    "cur": "우주선은 대략 20와트로 응답한다 — 냉장고의 전구보다 작다. 역제곱 법칙만을 통해 10억 킬로미터에 걸쳐 퍼진, 접시에 도달하는 것은 약 10억분의 백만 와트이다. 심우주 통신의 천재성은 외침에 있지 않다; 그것은 청취에 있다."
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.12.md",
+    "en": "The lag compounds everything. At [Mars](/missions?id=perseverance), a signal takes between 3 and 22 minutes one way, depending on where the two planets are in their orbits. That means a round-trip question and answer — \"are you receiving?\" … \"yes\" — can take anywhere from six minutes to nearly three-quarters of an hour. Rover drivers at JPL developed an entire philosophy around this: you can't joystick [Perseverance](/missions?id=perseverance) the way you'd drive a car. You plan the day's work in the Martian morning, uplink a command sequence, and watch the outcome arrive hours later. The rover moves autonomously between waypoints; you correct its course tomorrow. The planet is close enough that a human can still be meaningfully in the loop, if the human is willing to think in Martian sol-lengths rather than real-time.",
+    "cur": "[화성](/missions?id=perseverance)에서, 신호는 두 행성이 궤도에서 어디에 있는지에 따라 한 방향으로 3분에서 22분 사이가 걸린다. 이는 왕복 질문과 답변 — \"당신이 수신하고 있나요?\" … \"네\" — 이 6분에서 거의 45분까지 걸릴 수 있음을 의미한다. JPL의 로버 운전자들은 이 주변에 전체 철학을 개발했다: 당신은 자동차를 운전하는 방식으로 [Perseverance](/missions?id=perseverance)를 조이스틱으로 조종할 수 없다. 당신은 화성 아침에 하루의 작업을 계획하고, 명령 수열을 업로드하고, 몇 시간 뒤에 결과가 도착하는 것을 본다. 로버는 웨이포인트 사이에서 자율적으로 이동한다; 당신은 내일 그 과정을 수정한다. 행성은 인간이 여전히 유의미하게 루프 안에 있을 수 있을 정도로 가까우며, 만약 인간이 실시간이 아닌 화성의 sol 길이로 생각하려는 의지가 있다면."
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.13.md",
+    "en": "At [Cassini](/missions?id=cassini), orbiting Saturn, the one-way lag ran between 68 and 85 minutes. At [New Horizons](/missions?id=new-horizons) during the Pluto flyby it was four and a half hours. Every command sent to New Horizons on its closest approach day had been uplinked — and confirmed received — well in advance, because there was no time to react. The flyby sequence ran entirely on stored instructions while the ground held its breath. The spacecraft would either do what it was told or not, and no one on Earth would know for hours. It did.",
+    "cur": "[Cassini](/missions?id=cassini)는 토성 궤도를 도는 동안 편도 신호 지연이 68분에서 85분 사이였습니다. [New Horizons](/missions?id=new-horizons)는 명왕성 근접 통과 중에 4시간 반이었습니다. New Horizons의 최근접 접근 당일에 전송된 모든 명령은 미리 업링크되었고 수신 확인도 미리 받았습니다. 반응할 시간이 없었기 때문입니다. 근접 통과 관찰 프로그램은 저장된 명령어만으로 실행되었고 지구의 관제팀은 숨을 죽이고 지켜봤습니다. 우주선은 지시한 대로 할 수도 있고 하지 않을 수도 있었으며, 지구상의 누구도 몇 시간 동안 알 수 없었습니다. 하지만 그것은 성공했습니다."
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.14.md",
+    "en": "Now consider [Voyager 1](/missions?id=voyager-1), which in July 2026 is approximately 23 hours and 32 minutes of light-travel time from Earth — and which, on a specific day in November 2026, will cross a threshold no human-made object has ever crossed: one full light-day from the planet that built it. Send a command Monday morning at eight; the acknowledgement arrives Wednesday morning. A round trip between Earth and Voyager 1 takes nearly two days. In that span, whatever the spacecraft does, it does alone. It has been alone, in this sense, since the day it launched. The ground is not flying it anymore. The ground is listening to it.",
+    "cur": "이제 [Voyager 1](/missions?id=voyager-1)을 생각해보자. 2026년 7월 기준으로 Voyager 1은 지구로부터 약 23시간 32분의 광행시간(light-travel time)에 위치해 있다. 그리고 2026년 11월의 어느 날, Voyager 1은 인간이 만든 물체가 지금까지 경계한 적 없는 지점을 넘게 될 것이다. 즉, 그것을 만든 행성으로부터 정확히 1광일(light-day) 떨어진 곳이다. 월요일 아침 8시에 명령을 보내면, 그 승인은 수요일 아침에 도착한다. 지구와 Voyager 1 사이의 왕복 통신에는 거의 이틀이 걸린다. 그 시간 동안 우주선이 하는 모든 일은 홀로 하는 것이다. 발사한 날부터 지금까지 그렇게 홀로였다. 지상팀은 더 이상 우주선을 조종하지 않는다. 지상팀은 우주선의 신호만 청취할 뿐이다."
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.15.caption",
+    "en": "The whole enterprise runs on delay. A word to the Moon is answered in under three seconds; to Mars, in minutes to the better part of an hour; to Voyager, in nearly two days. You cannot fly these craft in real time — you write ahead, and wait for the echo.",
+    "cur": "이 전체 사업은 지연 위에서 작동한다. 달에 보낸 신호는 3초도 안 되어 응답이 오고, 화성으로는 수분에서 1시간 정도 걸리며, Voyager로는 거의 이틀이 걸린다. 이런 우주선들을 실시간으로 조종할 수 없다 — 미리 명령을 작성하고 메아리가 돌아오기를 기다려야 한다."
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.17.md",
+    "en": "That patience has shaped every mission in ways the public almost never sees. Trajectory corrections for outer-planet probes are planned weeks in advance and uplinked as timed sequences; if the spacecraft's position turns out to be slightly different from the prediction — which it always is, by some small amount — the navigators have to wait for the next DSN track, reconstruct the actual position, plan a correcting burn, and uplink it, all before the window closes. For a spacecraft approaching its target at several kilometres per second, that timing can be the difference between threading the gap and missing. The navigation essay described the [Deep Space Network](/science/mission-phases/dsn) as the instrument that lets the ground fly the spacecraft. What it didn't dwell on is that the ground can only respond to what the spacecraft reported minutes or hours ago, and can only correct what it predicted minutes or hours from now. Navigation is perfect in principle, patient in practice, and always slightly behind.",
+    "cur": "이러한 인내심은 공중이 거의 볼 수 없는 방식으로 모든 임무를 형성해왔습니다. 외행성 탐사선의 궤도 수정은 몇 주 전에 계획되고 시간이 정해진 명령 열로 업링크됩니다. 우주선의 위치가 예측과 약간 다르게 나타나면 — 항상 어느 정도의 작은 편차가 생기곤 합니다 — 항법사들은 다음 DSN 추적을 기다려야 하고, 실제 위치를 재구성하고, 수정 조종을 계획한 뒤 업링크해야 하는데, 이 모든 것이 관측 기간이 끝나기 전에 이루어져야 합니다. 초속 몇 킬로미터의 속도로 목표물에 접근하는 우주선의 경우, 그러한 타이밍이 좁은 틈을 통과하는 것과 빗나가는 것의 차이가 될 수 있습니다. 항법 논문은 [Deep Space Network](/science/mission-phases/dsn)를 지구가 우주선을 조종할 수 있게 해주는 도구로 설명했습니다. 하지만 간과한 점은 지구가 우주선이 몇 분 또는 몇 시간 전에 보고한 것에만 대응할 수 있고, 지금부터 몇 분 또는 몇 시간 뒤에 일어날 일만 수정할 수 있다는 것입니다. 항법은 원칙상으로는 완벽하지만, 실제로는 인내심이 있고, 항상 조금 뒤처져 있습니다."
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.18.md",
+    "en": "There is a related cost that rarely makes mission descriptions: the sheer cognitive weight of maintaining these conversations over years. [Cassini](/missions?id=cassini) operated at Saturn for thirteen years. Teams at JPL developed what amounted to a working relationship with a machine they could not see, could not touch, and could never respond to in less than an hour. Procedures existed for every contingency — a failed reaction wheel, a software fault, an unexpected safe-mode entry — and those procedures had to be rehearsed on the ground before they could be uplinked, because there was no room to improvise at the speed of a crisis when every reply took longer than a lunch break. The people who ran Cassini built a kind of institutional memory for a spacecraft: knowing its habits, its quirks, its patterns of health, better than some operators know their own machinery. They had to, because the spacecraft couldn't ask for help.",
+    "cur": "이러한 대화를 몇 년에 걸쳐 유지하는 순수한 인지적 부담이라는 관련된 비용이 있는데, 이는 거의 임무 설명에 나타나지 않습니다. [Cassini](/missions?id=cassini)는 토성에서 13년간 운영되었습니다. JPL의 팀들은 볼 수 없고, 만질 수 없으며, 한 시간 이내에 응답할 수 없는 기계와의 업무 관계라고 할 수 있는 것을 발전시켰습니다. 모든 비상 상황을 위한 절차가 존재했습니다 — 반응 휠의 고장, 소프트웨어 결함, 예상치 못한 안전 모드 진입 — 그리고 이러한 절차들은 업링크되기 전에 지상에서 연습되어야 했습니다. 왜냐하면 모든 응답이 점심 시간보다 더 오래 걸릴 때 위기의 속도에서 즉흥적으로 대응할 여지가 없었기 때문입니다. Cassini를 운영한 사람들은 우주선을 위한 일종의 제도적 기억을 구축했습니다. 우주선의 습관, 그 특성, 건강 상태의 패턴을 알고 있었으며, 어떤 운영자들이 자신의 기계를 아는 것보다 더 잘 알고 있었습니다. 그들은 반드시 그렇게 해야 했습니다. 왜냐하면 우주선은 도움을 요청할 수 없었기 때문입니다."
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.19.caption",
+    "en": "Voyager 1, more than twenty-four billion kilometres out, still answers — but a question sent today waits some forty-five hours for its reply. You do not converse with it so much as leave a letter and come back for the answer.",
+    "cur": "Voyager 1은 240억 킬로미터 이상 떨어져 있지만, 여전히 응답한다 — 하지만 오늘 보낸 질문은 그 응답을 받기까지 약 45시간을 기다려야 한다. 당신은 그것과 대화한다기보다 편지를 남기고 나중에 답장을 받으러 간다."
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.21.md",
+    "en": "Radio has carried every conversation we've had with the solar system for sixty years. It is mature, well-understood, and operates at the edge of physics — the DSN dishes are close to the thermal noise floor; the coding schemes approach the Shannon limit for the signal-to-noise ratios involved. There isn't a factor of ten left to find in radio. But there is in optics.",
+    "cur": "무선통신은 지난 60년간 우리가 태양계와 나눈 모든 대화를 전달해왔다. 무선통신은 성숙하고 잘 이해되며, 물리학의 경계에서 작동한다 — DSN 접시는 열잡음 임계값(thermal noise floor)에 근접해 있고, 부호화 체계는 관련된 신호 대 잡음비에 대한 Shannon 한계에 접근한다. 무선통신에서 10배의 개선을 찾을 여지는 없다. 하지만 광학에는 있다."
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.22.md",
+    "en": "In October 2023, a small laser terminal bolted to the side of the Psyche spacecraft launched toward the asteroid belt carrying an experiment called DSOC — Deep Space Optical Communications. The concept is straightforward: an infrared laser, tightly focused, can concentrate far more power into a far narrower beam than a radio transmitter of the same mass and electrical draw. The beam spreads less with distance, which means more of it arrives. By April 2024, DSOC had transmitted engineering data from 140 million miles at 25 megabits per second — faster than most household broadband connections, from a distance greater than the Earth-Sun separation. By December 2024 it had set a distance record: downlinking Psyche mission data from 307 million miles, 494 million kilometres out. The project demonstrated 10 to 100 times the throughput of radio at equivalent power.",
+    "cur": "2023년 10월, Psyche 우주선의 옆에 부착된 소형 레이저 터미널이 소행성대를 향해 발사되었으며, DSOC(Deep Space Optical Communications)이라는 실험을 탑재했다. 개념은 단순하다. 동일한 질량과 전력 소비량을 가진 무선 송신기보다 적외선 레이저는 훨씬 더 많은 전력을 훨씬 더 좁은 빔으로 집중시킬 수 있다. 빔은 거리가 증가해도 덜 퍼지므로 도착하는 신호가 더 많다. 2024년 4월까지 DSOC는 1억 4,000만 마일 거리에서 시속 25메가비트의 엔지니어링 데이터를 전송했다 — 대부분의 가정용 광대역 연결보다 빠르며, 지구-태양 거리보다 큰 거리에서이다. 2024년 12월에는 거리 기록을 수립했다. 3억 700만 마일, 즉 4억 9,400만 킬로미터 거리에서 Psyche 임무 데이터를 다운링크했다. 이 프로젝트는 동등한 전력에서 무선통신의 10배에서 100배의 처리량을 시연했다."
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.23.md",
+    "en": "This is not a small step. The bandwidth bottleneck is one of the binding constraints on what deep-space science can do: the more data you can return per watt, the more instruments you can fly, the higher the camera resolution, the denser the scientific haul from each mission. DSOC's laser link, scaled up and deployed on future spacecraft, would transform the economics of talking to the outer planets. The catch — there is always a catch — is that optical links require exceptional pointing precision (the beam is narrow enough that a pointing error of a fraction of a milliradian spills it off target) and are blocked by cloud cover at the ground station. The DSN's radio dishes work through weather. Optical ground terminals don't. The architecture for a reliable optical deep-space network will need multiple geographically spread receive sites, clear-sky redundancy, and decades of operational experience to mature. It will come. The question is whether it comes before the radio architecture buckles under the weight of demand.",
+    "cur": "이것은 작은 도약이 아니다. 대역폭 병목 현상은 심우주 과학이 할 수 있는 일을 제한하는 주요 제약 중 하나이다. 와트 당 반환할 수 있는 데이터가 많을수록, 탑재할 수 있는 기기가 많아지고, 카메라의 해상도가 높아지며, 각 임무에서 얻는 과학적 수확도 더 풍부해진다. DSOC의 레이저 링크를 확장하여 미래 우주선에 배치하면, 외행성과의 통신 경제 구조를 완전히 바꿀 것이다. 하지만 — 항상 문제는 있다 — 광학 링크는 뛰어난 지향 정밀도가 필요하고(빔이 좁아서 밀리라디안의 일부만큼의 지향 오차가 목표를 벗어남), 지상국의 구름으로 가로막힌다. DSN의 무선 접시는 날씨를 뚫고 작동한다. 광학 지상국은 그렇지 않다. 신뢰할 수 있는 광학 심우주 통신망의 아키텍처는 지리적으로 분산된 여러 수신 위치, 맑은 하늘 중복성, 그리고 성숙하기까지 수십 년의 운영 경험이 필요할 것이다. 그것은 올 것이다. 문제는 그것이 수요의 무게로 무선 아키텍처가 흔들리기 전에 오느냐이다."
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.24.caption",
+    "en": "The next turn is toward light. A laser’s pencil-thin beam carries ten to a hundred times the data of a radio’s wide cone: Psyche’s demonstration streamed high-definition video from thirty million kilometres away, on a beam you could have blocked with a coin.",
+    "cur": "다음 전환은 빛을 향한 것이다. 레이저의 연필처럼 가는 빔은 무선의 넓은 원뿔보다 10배에서 100배의 데이터를 전송한다. Psyche의 시연은 3,000만 킬로미터 거리에서 고화질 영상을 스트리밍했으며, 그 빔은 동전으로도 차단할 수 있을 정도로 좁았다."
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.26.md",
+    "en": "Here is what the whole apparatus actually amounts to. Three patches of desert and scrubland on three continents. Roughly forty antenna mounts, of which the big work falls on three 70-metre bowls that have been pointing at things no one can see with the naked eye since the first one locked onto a Mariner in 1963. A budget that, in real terms, has been shrinking. An upgrade programme running years behind. A schedule so overbooked that some missions go without their allocated tracks, and the people who run them learn to live on less contact than they planned.",
+    "cur": "전체 장치가 실제로 의미하는 바는 다음과 같다. 세 대륙의 세 개의 사막 및 관목지대 지역. 대략 40개의 안테나 마운트, 이 중 주요 업무는 1963년 최초로 Mariner에 고정된 이후 육안으로 볼 수 없는 것들을 가리키고 있는 70미터 크기의 세 개의 큰 접시가 처리한다. 실질적 가치로는 계속 감소해온 예산. 수년 지연된 업그레이드 프로그램. 어떤 임무들은 할당받은 추적 기회를 받지 못하고, 그것들을 운영하는 사람들이 계획했던 것보다 적은 통신 접촉으로 살아가는 극도로 과포화된 일정."
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.27.md",
+    "en": "And through this: everything. The Voyager images of Neptune that no spacecraft has repeated in the thirty-seven years since. The Cassini portraits of Saturn — the hexagonal storm at the pole, the geysers of Enceladus, the braided F ring — delivered one compressed frame at a time across more than an hour of silence. The [Perseverance](/missions?id=perseverance) samples staged for eventual return, their GPS coordinates known to the centimetre because every transmission of the rover's position came back through a dish in California or Spain or Australia, was checked against the orbital mechanics, and became a number the whole atlas stands on. Everything in this atlas that came from beyond the Moon arrived here through a 22-watt whisper and a room full of people patient enough to wait for the reply.",
+    "cur": "그리고 이 모든 것을 통해: 모든 것이 있습니다. 37년 동안 어떤 우주선도 반복하지 않은 Voyager의 해왕성 영상들. Cassini가 제공한 토성의 초상화들 — 극점의 육각형 폭풍, 엔셀라두스의 간헐천들, 땋은 F 고리 — 한 시간이 넘는 침묵 속에서 압축된 한 프레임씩 전송되어 왔습니다. [Perseverance](/missions?id=perseverance)의 샘플들은 결국 반환될 때를 대비해 준비되어 있으며, GPS 좌표는 센티미터 단위로 알려져 있습니다. 왜냐하면 로버의 위치를 나타내는 모든 신호 전송이 캘리포니아나 스페인 또는 오스트레일리아의 안테나를 통해 돌아왔고, 궤도 역학과 대조되었으며, 이 전체 지도책이 기초하고 있는 숫자가 되었기 때문입니다. 이 지도책에서 달 너머로부터 온 모든 것은 22와트의 속삭임과 응답을 기다릴 수 있을 만큼 인내심 있는 사람들로 가득 찬 방을 통해 여기에 도착했습니다."
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.28.md",
+    "en": "The lag never goes away. Light travels at the fastest speed physics allows, and it is not fast enough. As we push further — human crews to Mars whose round-trip communication delay will be measured in tens of minutes on a good day; robotic probes to the ice giants; whatever comes next in the generations after those — the distance will keep growing and the patience required will keep compounding. What changes is only who bears it: the ground team waiting for a reply, or the spacecraft itself, making decisions faster than any signal can carry permission. The DSN isn't becoming obsolete. It is becoming one layer of a deeper architecture, the radio backbone of a solar system where more and more of the thinking happens out there, in the dark, on craft that have learned — because they had to — to manage without asking. We built the network so we could stay in the conversation. We're slowly discovering that the conversation, at these distances, looks less like a dialogue and more like letters sent between people who have both already moved on by the time any answer arrives.",
+    "cur": "지연은 절대 사라지지 않는다. 빛은 물리학이 허용하는 가장 빠른 속도로 이동하며, 그것도 충분하지 않다. 우리가 더 멀리 나아가면서 — 왕복 통신 지연이 좋은 날씨에도 수십 분으로 측정될 화성으로의 인간 승무원, 얼음 거성으로의 로봇 탐사선, 그 이후 세대에서 나올 무엇이든 — 거리는 계속 증가할 것이고 필요한 인내심도 계속 복합될 것이다. 변하는 것은 오직 누가 그것을 견디느냐뿐이다. 답변을 기다리는 지상팀, 또는 어떤 신호보다 빠르게 결정을 내리는 우주선 자신. DSN은 구식이 되지 않고 있다. 그것은 더 깊은 아키텍처의 한 층이 되고 있다. 점점 더 많은 사고(thinking)가 거기서, 어둠 속에서, 이를 해야 했기 때문에 허락을 구하지 않고 관리하는 법을 배운 우주선들에서 이루어지는 태양계의 무선 백본이다. 우리는 그 대화 속에 머물 수 있도록 네트워크를 구축했다. 우리는 이 거리에서 그 대화는 대화라기보다 이미 떠나 버린 사람들 사이에 보내진 편지처럼 보인다는 것을 천천히 발견하고 있다."
+  },
+  {
+    "rel": "essays/comms.json",
+    "at": "body.29.caption",
+    "en": "Pioneer 10 was the first craft tracked into the outer dark. Its final faint signal reached the Deep Space Network in 2003, from beyond the orbit of Pluto — a whisper that at last fell below hearing, still outbound.",
+    "cur": "Pioneer 10은 외부 암흑으로 추적된 최초의 우주선이었다. 그것의 마지막 희미한 신호는 2003년 Deep Space Network에 도달했으며, 명왕성의 궤도 너머에서 나온 — 마침내 청취 범위 아래로 떨어진 속삭임이었으나, 여전히 외향으로 향하고 있었다."
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "dek",
+    "en": "Every spacecraft that has ever left Earth carried one thing above all else: a budget. Not money — velocity. The rocket equation meted it out in kilometres per second, gravity was the only free refill, and every engineer who ever planned a mission has been living inside that constraint since 1903.",
+    "cur": "지구를 떠난 모든 우주선이 다른 무엇보다도 가지고 나간 것이 하나 있다: 예산이다. 돈이 아니라 속도다. 로켓 방정식은 이를 초당 킬로미터 단위로 배분했고, 중력만이 유일한 무료 충전이었으며, 1903년 이후로 미션을 계획한 모든 엔지니어는 이 제약 안에서 살아왔다."
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.0.md",
+    "en": "Imagine you are handed a chequebook with a fixed balance. You can spend it however you like — but every purchase is final, there are no deposits, and when the balance reaches zero you are done. That is the situation every spacecraft faces from the moment it clears the launch tower. The currency is not fuel. It is not thrust. It is **velocity** — more precisely, the *change* in velocity, measured in kilometres per second, that the spacecraft can accumulate over its entire mission. Engineers call it delta-v, and the account opens, once, at launch.",
+    "cur": "고정된 잔액으로 수표책을 받았다고 상상해보라. 원하는 대로 지출할 수 있지만 모든 거래는 최종이고, 입금이 없으며, 잔액이 0에 도달하면 끝난다. 이것이 발사탑을 벗어난 순간부터 모든 우주선이 직면한 상황이다. 통화는 연료가 아니다. 추력도 아니다. 그것은 **속도**이다 — 더 정확히는, 초당 킬로미터 단위로 측정한 속도의 *변화*이며, 우주선이 전체 미션 동안 축적할 수 있는 것이다. 엔지니어들은 이를 델타-v라 부르며, 계좌는 발사 시점에 한 번 열린다."
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.1.md",
+    "en": "The rule that wrote this constraint was published in 1903, by a self-taught Russian schoolteacher named Konstantin Tsiolkovsky, working alone in a small provincial town. His [rocket equation](/science/propulsion/tsiolkovsky) has not been repealed since: **∆v = Isp · g₀ · ln(m₀/mf)**. Read it in English: the velocity you can buy equals the efficiency of your engine — measured in seconds of [specific impulse](/science/propulsion/specific-impulse) and multiplied by a gravitational constant of 9.807 m/s² — times the natural logarithm of how much heavier the rocket was at the start than at the end. That logarithm is the villain. Because *ln* is the slowest-growing function in mathematics, it means that every extra kilometre per second you want to add costs you an exponentially larger bite of propellant mass — and propellant has to be lifted too, which means it needs its own propellant, which has to be lifted too, and so on down a regress that has no floor.",
+    "cur": "이 제약을 명시한 규칙은 1903년 작은 지방 도시에서 혼자 일하던 러시아의 자학 교사 콘스탄틴 치올콥스키가 발표했다. 그의 [로켓 방정식](/science/propulsion/tsiolkovsky)은 지금까지 폐기되지 않았다: **∆v = Isp · g₀ · ln(m₀/mf)**. 영어로 읽으면: 얻을 수 있는 속도는 엔진의 효율성과 같다 — [비추력](/science/propulsion/specific-impulse)의 초 단위로 측정하고 9.807 m/s²의 중력 상수를 곱함 — 로켓이 시작할 때 끝날 때보다 얼마나 더 무거웠는지의 자연로그를 곱한 값이다. 그 로그가 악당이다. *ln*이 수학에서 가장 느리게 증가하는 함수이기 때문에, 추가로 원하는 모든 초당 킬로미터는 지수적으로 더 큰 추진제 질량을 요구한다 — 그리고 추진제도 올려야 하므로, 자체 추진제가 필요하고, 이를 올려야 하고, 끝이 없는 체인이 계속된다."
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.2.md",
+    "en": "Astronaut Don Pettit called this *the tyranny of the rocket equation* in a 2012 essay written aboard the ISS, and the word tyranny is exactly right. The Saturn V that carried Apollo astronauts to the Moon stood thirty stories tall on the pad and was **85% propellant by mass**; its payload — everything that actually went anywhere — never exceeded about 4% of that wet mass. The rest was a controlled explosion in slow motion, consumed step by step just to get the remainder a little faster, a little higher. Everything else in spaceflight — the missions, the trajectories, the waiting for launch windows, the obsessive trimming of instrument mass — flows from that single, merciless denominator.",
+    "cur": "우주비행사 돈 페팃은 ISS에서 작성한 2012년 에세이에서 이를 *로켓 방정식의 폭정*이라고 불렀으며, 폭정이라는 단어가 정확히 맞는 표현이다. Apollo 우주비행사들을 달로 운반했던 Saturn V는 발사대에서 삼십 층 높이로 솟아 있었고 **질량의 85%가 추진제**였다. 그것의 페이로드 — 실제로 어디든 갈 수 있는 모든 것 — 는 그 습윤 질량의 약 4%를 절대 초과하지 않았다. 나머지는 통제된 폭발이 느린 동작으로 진행되었으며, 남은 것을 조금 더 빠르게, 조금 더 높이 올리기 위해 단계별로 소비되었다. 우주비행의 다른 모든 것 — 임무, 궤적, 발사 창 대기, 기구의 질량을 집요하게 줄이는 것 — 은 그 유일하고도 무자비한 분모에서 흘러나온다."
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.3.caption",
+    "en": "The rocket equation’s exponential wall: at chemical efficiency, each extra kilometre per second demands a wildly larger propellant fraction — and the closer you push toward a real destination, the steeper the price climbs.",
+    "cur": "로켓 방정식의 지수 벽: 화학 효율에서 추가 초당 킬로미터마다 훨씬 더 큰 추진제 분획을 요구한다 — 그리고 실제 목적지에 가까워질수록 가격은 더 가파르게 올라간다."
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.5.md",
+    "en": "A [delta-v budget](/science/propulsion/dv-budget) is what mission planners call the spreadsheet that accounts for every velocity change a mission must perform, from Earth parking orbit to final destination. It is the most consequential document in mission design: it decides whether the mission is possible at all. Getting a spacecraft from a low Earth orbit to, say, a Hohmann transfer toward Mars and into Martian orbit costs roughly **5.6 km/s** total — a figure that sounds modest until you remember that every decimal place is paid for in tonnes of propellant, and the rocket equation means the exchange rate gets worse the more you spend.",
+    "cur": "미션 플래너들이 [델타-v 예산](/science/propulsion/dv-budget)이라고 부르는 것은 미션이 수행해야 하는 모든 속도 변화를 계산하는 스프레드시트이다, 지구 주차 궤도부터 최종 목적지까지. 이것은 미션 설계에서 가장 중요한 문서이다: 미션이 가능한지를 결정한다. 우주선을 저지구 궤도에서, 예를 들어 화성으로의 Hohmann 전이 궤적과 화성 궤도로 가져가는 데는 대략 **5.6 km/s** 총량이 필요하다 — 소박해 보이는 수치지만, 모든 소수점이 추진제의 톤으로 지불되며, 로켓 방정식은 더 많이 쓸수록 환율이 악화된다는 것을 기억하면 된다."
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.6.md",
+    "en": "A [Hohmann transfer](/science/transfers/hohmann-transfer) is the minimum-energy arc between two orbits — the path that costs the least delta-v to get from A to B. It is not straight; it is an ellipse that brushes the inner orbit at one end and the outer at the other, coasting the entire way on nothing but inertia. The trick is that you fire the engine twice: once to leave the departure orbit, once to match the arrival orbit. Between those two burns — typically 259 days in the Earth-to-Mars case — you spend nothing. The solar system's gravity does the carrying for free, as long as you had the sense to aim the right way at the start.",
+    "cur": "[호만 전이](/science/transfers/hohmann-transfer)는 두 궤도 사이의 최소 에너지 호다 — A에서 B로 가는 데 가장 적은 델타-v를 요구하는 경로다. 직선이 아니다; 하나의 끝에서는 내부 궤도에, 다른 끝에서는 외부 궤도에 접하는 타원이며, 전체 경로를 관성만으로 해안 항해한다. 요령은 엔진을 두 번 점화하는 것이다: 한 번은 출발 궤도를 떠날 때, 한 번은 도착 궤도에 맞출 때. 그 두 번의 점화 사이 — 지구-화성의 경우 보통 259일 — 아무것도 소비하지 않는다. 태양계의 중력이 시작할 때 올바른 방향으로 겨냥하는 감각이 있는 한 무료로 운반한다."
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.7.caption",
+    "en": "The cheapest path between two orbits is never the straight line — a Hohmann transfer coasts along an ellipse that just grazes each orbit, firing the engine only twice: once to leave, once to arrive.",
+    "cur": "두 궤도 사이의 가장 저렴한 경로는 직선이 아니다 — Hohmann transfer는 각 궤도에 단지 접하는 타원을 따라 해석하며, 엔진을 두 번만 가동한다: 한 번은 떠날 때, 한 번은 도착할 때이다."
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.8.md",
+    "en": "This is what *navigation* hands off to delta-v planning. The [navigation essay](/essays/navigation) opened with the problem of aiming at a moving planet — the Lambert problem, the long arc, the correction burns that close the gap between plan and reality. But choosing that arc in the first place was a budget decision. The Hohmann minimum-energy path was chosen because it spends the least; a faster trajectory exists, but it costs more delta-v than most missions can afford, and delta-v is the one thing you cannot borrow.",
+    "cur": "이것이 *항법*이 델타-v 계획에 넘겨주는 것이다. [항법 에세이](/essays/navigation)는 움직이는 행성을 겨냥하는 문제로 열렸다 — Lambert 문제, 긴 호, 계획과 현실 사이의 차이를 메우는 보정 점화들. 하지만 처음부터 그 호를 선택하는 것은 예산 결정이었다. 호만 최소 에너지 경로는 가장 적게 지출하기 때문에 선택되었다; 더 빠른 궤적이 존재하지만, 대부분의 미션이 감당할 수 없는 것보다 더 많은 델타-v를 요구하며, 델타-v는 빌릴 수 없는 유일한 것이다."
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.10.md",
+    "en": "Given the equation's tyranny, any trick that adds delta-v for free is not merely useful — it is transformative. There is exactly one: **gravity**.",
+    "cur": "방정식의 폭정을 감안하면, 추가 비용 없이 델타-v를 더하는 어떤 트릭도 단순히 유용한 것이 아니라 — 변혁적이다. 정확히 하나가 있다: **중력**."
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.11.md",
+    "en": "A spacecraft that swings close past a planet enters the planet's gravitational field fast, curves around it, and leaves faster than it arrived — because the planet is itself moving, and the craft has stolen a whisper of that motion. The [gravity assist](/science/transfers/gravity-assist) costs no propellant at all. The planet loses an unmeasurably tiny amount of its own orbital velocity; the spacecraft gains a great deal. For most interplanetary probes, this is not a bonus — it is the entire business model.",
+    "cur": "행성에 가깝게 스윙하는 우주선은 행성의 중력장에 빠르게 들어가, 그 주위를 돌고, 도착했을 때보다 더 빠르게 떠난다 — 행성 자체가 움직이고 있고, 그 우주선이 그 운동의 속삭임을 훔쳤기 때문이다. [중력 보조](/science/transfers/gravity-assist)는 추진제를 전혀 소비하지 않는다. 행성은 자신의 궤도 속도의 측정 불가능하게 작은 양을 잃는다; 우주선은 많은 양을 얻는다. 대부분의 행성 간 탐사선에게, 이것은 보너스가 아니다 — 전체 사업 모델이다."
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.12.md",
+    "en": "In the mid-1960s, a JPL mathematician named Gary Flandro was doing summer calculations when he noticed something. The outer planets — Jupiter, Saturn, Uranus, Neptune — were drifting toward a once-in-175-years alignment. A probe launched in 1977 and aimed right could use Jupiter's gravity to reach Saturn, Saturn's to reach Uranus, Uranus's to reach Neptune: a four-planet bank shot, each flyby adding delta-v for free and redirecting the trajectory to the next target. The flight time to Neptune would fall from thirty years to twelve. That observation became the Grand Tour — and [Voyager 2](/missions?id=voyager-2) made it real, gaining roughly **10 km/s** from the Jupiter flyby alone, enough to reach the outer system in the time originally budgeted for a Saturn-only mission. Neptune, today, has been visited once. The reason is that the window closed in the 1980s and won't open again until the 2150s.",
+    "cur": "1960년대 중반, JPL 수학자 Gary Flandro는 여름 계산을 하다가 뭔가를 발견했다. 외행성들 — 목성, 토성, 천왕성, 해왕성 — 175년에 한 번씩의 일직선 배열을 향해 드리프트하고 있었다. 1977년에 발사되고 올바르게 겨냥된 탐사선은 목성의 중력을 사용해 토성에 도달하고, 토성의 것으로 천왕성에, 천왕성의 것으로 해왕성에 도달할 수 있었다: 4개 행성의 뱅크샷, 각 플라이바이가 무료로 델타-v를 추가하고 궤적을 다음 목표로 리다이렉트한다. 해왕성까지의 비행 시간은 30년에서 12년으로 떨어질 것이다. 그 관찰은 Grand Tour가 되었다 — 그리고 [Voyager 2](/missions?id=voyager-2)가 이를 현실로 만들었으며, 목성 플라이바이만으로 대략 **10 km/s**를 얻어, 토성 전용 미션으로 원래 예산된 시간에 외계 시스템에 도달할 수 있었다. 오늘날 해왕성은 한 번만 방문했다. 이유는 창이 1980년대에 닫혔고 2150년대까지 다시 열리지 않을 것이기 때문이다."
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.13.caption",
+    "en": "Voyager 2 took the free refill four times over — Jupiter to Saturn to Uranus to Neptune — banking each planet’s motion into the next, on a route that will not line up again for 175 years.",
+    "cur": "Voyager 2는 무료 충전을 4번 받았다 — 목성에서 토성으로, 토성에서 천왕성으로, 천왕성에서 해왕성으로 — 각 행성의 운동을 다음 행성으로 배킹하면서, 175년 동안 다시 일직선상으로 정렬되지 않을 경로로 간다."
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.14.md",
+    "en": "The same arithmetic is why [Cassini](/missions?id=cassini) looped through Venus — twice — and past Earth and past Jupiter before heading outward to Saturn: not the scenic route, but the cheap one. And why [Mangalyaan](/missions?id=mangalyaan), India's first interplanetary mission, reached Mars in 2014 on a budget of roughly US$74 million — a fraction of what comparable missions have cost — in part because its trajectory was designed to extract maximum value from every kilogram of its 852-kilogram propellant load, the largest single component of a spacecraft that weighed 1,340 kg on the pad. The delta-v budget was 1,350 m/s for the entire mission after escape. Every gram was accounted for.",
+    "cur": "[카시니](/missions?id=cassini)가 금성을 — 두 번 — 거쳐 지구를 거쳐 목성을 거쳐 토성으로 향했던 동일한 산술이 있다: 경관 경로가 아니라, 저렴한 경로다. 그리고 [Mangalyaan](/missions?id=mangalyaan), 인도의 첫 행성 간 미션이, 대략 미화 7,400만 달러의 예산으로 2014년에 화성에 도달한 이유는 — 비교 가능한 미션들이 비용을 들인 것의 일부인 — 부분적으로 그 궤적이 852킬로그램의 추진제 하중의 모든 킬로그램에서 최대 가치를 추출하도록 설계되었기 때문이다, 발사대에서 무게 1,340 kg인 우주선의 가장 큰 단일 구성 요소다. 탈출 후 전체 미션의 델타-v 예산은 1,350 m/s였다. 모든 그램이 계산되었다."
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.15.caption",
+    "en": "Cassini reached Saturn on borrowed speed, swinging past Venus twice, Earth, and Jupiter along the way — a seven-year detour that cost less fuel than aiming straight at it ever could.",
+    "cur": "카시니는 금성을 두 번, 지구, 목성을 거쳐 스윙하며 빌린 속도로 토성에 도달했다 — 직접 겨냥하는 것보다 덜 연료를 들이는 7년의 우회였다."
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.17.md",
+    "en": "Gravity offers a second trick, subtler than the first. It was described in 1929 by Hermann Oberth, and it turns on a fact about kinetic energy that is not obvious until you write it out: energy grows as the *square* of velocity. A burn that adds 1 km/s at 10 km/s adds far more kinetic energy than the same burn at 1 km/s — because the work done equals force times distance, and a rocket moving fast covers more distance during the burn.",
+    "cur": "중력은 두 번째 트릭을 제공한다, 첫 번째보다 더 미묘한. 이는 1929년 헤르만 오베르트에 의해 설명되었으며, 그것은 당신이 그것을 써 낼 때까지 명백하지 않은 운동 에너지에 대한 사실에 좌우된다: 에너지는 속도의 *제곱*으로 증가한다. 10 km/s에서 1 km/s를 추가하는 점화는 1 km/s에서의 동일한 점화보다 훨씬 더 많은 운동 에너지를 추가한다 — 왜냐하면 한 일은 힘에 거리를 곱한 것과 같고, 빠르게 움직이는 로켓은 점화 중에 더 큰 거리를 커버하기 때문이다."
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.18.md",
+    "en": "The consequence, called the [Oberth effect](/science/propulsion/oberth-effect), is that burns deep in a gravity well — at the lowest point of an orbit, *periapsis*, where a spacecraft is moving fastest — are drastically more efficient than burns performed at altitude. The same delta-v, spent at the right moment in the right place, delivers more final energy to the craft. Missions that can arrange to fire their engines at periapsis — arriving planets, close passes, deliberately engineered low-point maneuvers — get, in effect, a multiplier on whatever delta-v they spend. [New Horizons](/missions?id=new-horizons) used a Jupiter flyby not just for the gravity-assist velocity boost but timed its burn to coincide with closest approach, stacking the Oberth dividend on top of the assist. The combination shaved three years from its flight to Pluto.",
+    "cur": "이를 [Oberth 효과](/science/propulsion/oberth-effect)라고 부르는 결과는, 중력 우물 깊숙한 곳에서의 버너 — 즉 우주선이 가장 빠르게 움직이는 궤도의 최저점인 *근점(periapsis)*에서의 버너 — 가 고도에서 수행되는 버너보다 극도로 효율적이라는 것이다. 올바른 순간에 올바른 장소에서 소비된 동일한 델타-v는 우주선에 더 많은 최종 에너지를 전달한다. 근점에서 엔진을 가동할 수 있도록 배열할 수 있는 미션들 — 행성 도착, 근접 통과, 의도적으로 설계된 최저점 기동 — 은 그들이 소비하는 델타-v에 대해 실제로 승수를 얻는다. [New Horizons](/missions?id=new-horizons)는 목성 스윙바이를 중력 보조 속도 부스트뿐만 아니라 근접 통과와 일치하도록 버너를 시간을 맞춰서 사용했으며, 보조에 Oberth 배당을 쌓아올렸다. 이 조합은 명왕성으로의 비행에서 3년을 단축했다."
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.19.caption",
+    "en": "Burn low, gain more: deep in a gravity well a spacecraft is moving fastest, and the same engine burn there buys far more energy than it would out at the slow, distant top of the orbit.",
+    "cur": "낮게 점화하고, 더 많이 얻다: 중력 우물 깊숙한 곳에서 우주선이 가장 빠르게 움직이고, 동일한 엔진 점화가 궤도의 느리고, 먼 최고점에서 할 수 있는 것보다 훨씬 더 많은 에너지를 산다."
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.20.md",
+    "en": "These are not hacks or loopholes. They are the mathematics of moving through a gravitational landscape that, if you read it right, is not hostile to motion but is in fact riddled with chutes and ramps. The budget does not disappear — but the skilled reader of that landscape can stretch it, sometimes enormously.",
+    "cur": "이것들은 해킹이나 허점이 아니다. 그들은 중력적 경관을 움직이는 수학이며, 올바르게 읽으면, 운동에 적대적이지 않지만 실제로 함정과 경사로로 가득 차 있다. 예산은 사라지지 않는다 — 하지만 그 경관의 숙련된 읽는 사람은 그것을 펼칠 수 있고, 때때로 엄청나게."
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.22.md",
+    "en": "The delta-v budget is ruthlessly indifferent to almost everything that feels important about a mission — the science, the prestige, the geopolitics. It does not care who built the spacecraft or what flag is painted on it. It cares only about mass, exhaust velocity, and the logarithm.",
+    "cur": "델타-v 예산은 미션에 관해 중요하게 느껴지는 거의 모든 것에 무자비하게 무관심하다 — 과학, 위신, 지정학. 우주선을 누가 지었거나 어떤 깃발이 그려져 있는지 신경 쓰지 않는다. 오직 질량, 배기 속도, 그리고 로그만 신경 쓴다."
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.23.md",
+    "en": "This creates a discipline unlike any other in engineering. The camera added to a Mars rover, the extra redundancy in a computer, the additional science instrument a team lobbied years for — every one of them comes with a delta-v price. If the instrument is heavier than the margin allows, either something else is removed or the entire mission becomes infeasible. Mission planning is an exercise in continuous, painful arbitrage between what you want and what you can carry, and the equation is the judge of every dispute.",
+    "cur": "이는 공학의 다른 어떤 것과도 다른 규율을 만든다. 화성 로버에 추가된 카메라, 컴퓨터의 추가 중복성, 팀이 수년 동안 로비한 추가 과학 기기 — 그들 각각은 델타-v 가격을 가진다. 기기가 허용 마진보다 무거우면, 다른 뭔가가 제거되거나 전체 미션이 불가능해진다. 미션 계획은 원하는 것과 운반할 수 있는 것 사이의 지속적이고 고통스러운 중재의 연습이며, 방정식은 모든 분쟁의 판사다."
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.24.md",
+    "en": "The budget also erases the margin for error in a way that land-based engineering rarely does. A bridge that is slightly overloaded still stands. A spacecraft that runs out of delta-v before completing orbital insertion becomes a piece of uncontrolled debris. There is no partial credit. Every mission in this atlas that succeeded did so because someone, somewhere, kept an honest accounting and never spent more than was there. The anonymous room of people who did that math — who watched the budget, checked the astrodynamics, ran the correction-burn sequences — carried every mission that ever arrived.",
+    "cur": "예산은 또한 육지 기반 공학이 거의 하지 않는 방식으로 오류의 여유를 지운다. 약간 과부하된 다리는 여전히 선다. 궤도 삽입을 완료하기 전에 델타-v가 부족해지는 우주선은 통제 불가능한 조각이 된다. 부분 신용이 없다. 이 지도에서 성공한 모든 미션은 누군가, 어딘가에서 정직한 회계를 지키고 있던 것보다 더 많이 지출하지 않았기 때문에 성공했다. 그 수학을 한 익명의 방 사람들 — 예산을 지켰던 사람, 항법역학을 확인했던 사람, 보정 점화 수열을 실행했던 사람 — 도착한 모든 미션을 실어 나갔다."
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.26.md",
+    "en": "For sixty years, the tyranny of the rocket equation produced a particular answer to the problem of getting to orbit: build a machine optimized for the task, burn it on the way up, throw it away. The structural mass savings from designing a single-use first stage were real, and the delta-v was real, and the math closed. The problem was that you were throwing away an engine worth tens of millions of dollars after using it once.",
+    "cur": "60년 동안, 로켓 방정식의 폭정은 궤도에 도달하는 문제에 특정한 답을 생산했다: 작업에 최적화된 기계를 만들고, 올라가는 길에 태우고, 버리자. 단일 사용 1단계 설계에서의 구조 질량 절감은 실제였고, 델타-v는 실제였으며, 수학은 닫혔다. 문제는 한 번 사용한 후 수천만 달러 가치의 엔진을 버리고 있었다는 것이었다."
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.27.md",
+    "en": "Landing a rocket stage and flying it again changes the denominator, but not in the way the equation predicts. Structurally, a reusable stage is slightly heavier — it needs landing legs, grid fins, thermal protection, residual propellant reserves for the return burn — which means the [specific impulse](/science/propulsion/specific-impulse) advantage narrows and the mass ratio shrinks. The equation, strictly read, says reuse costs you delta-v. What the equation doesn't model is that you can fly the stage again next week, at a fraction of the cost of building a new one, which means you can afford to fly more missions, which means the budget that matters — dollars per kilogram to orbit — collapses. The delta-v logic didn't change. The economic logic that runs alongside it did.",
+    "cur": "로켓 단계를 착륙시키고 다시 비행시키는 것은 분모를 바꾸지만, 방정식이 예측하는 방식은 아니다. 구조적으로, 재사용 가능한 단계는 약간 더 무겁다 — 착륙 다리, 그리드 핀, 열 보호, 귀환 점화를 위한 잔존 추진제 준비금이 필요하다 — 이는 [비추력](/science/propulsion/specific-impulse) 이점이 좁혀지고 질량 비율이 축소된다는 것을 의미한다. 방정식을 엄격하게 읽으면, 재사용이 델타-v를 소비한다고 말한다. 방정식이 모델링하지 않는 것은 다음 주에 단계를 다시 비행시킬 수 있다는 것이며, 새로운 것을 만드는 비용의 분수로, 더 많은 미션을 비행할 수 있다는 것을 의미하며, 중요한 예산 — 궤도당 달러당 킬로그램 — 이 붕괴된다는 것을 의미한다. 델타-v 논리는 바뀌지 않았다. 그것과 함께 실행되는 경제 논리가 그랬다."
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.28.md",
+    "en": "This is the tension that has defined the last decade of launch vehicle development, and it is not yet resolved. The rocket equation still sets the hard physical floor. What changes is how much it costs to stand on it. [Fly a trajectory in the atlas](/fly) and watch what happens to the delta-v budget as each stage separates — the mass ratio snapshots at each cut are what the equation is actually enforcing, invisibly, on every flight.",
+    "cur": "이것은 발사 차량 개발의 지난 10년을 정의한 긴장이며, 아직 해결되지 않았다. 로켓 방정식은 여전히 어려운 물리적 바닥을 설정한다. 변하는 것은 그것을 서있는 데 드는 비용이다. [지도에서 궤적을 비행](/fly)하고 각 단계가 분리될 때 델타-v 예산에 무엇이 일어나는지 보자 — 각 절단에서의 질량 비율 스냅샷은 방정식이 모든 비행에서 보이지 않게 시행하는 것이다."
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.30.md",
+    "en": "There is something clarifying about a constraint with no exceptions. The rocket equation does not yield for political reasons or budget increases or engineering heroics. Every mission that has ever left this planet — [Voyager](/missions?id=voyager-2), [Cassini](/missions?id=cassini), [New Horizons](/missions?id=new-horizons), [Mangalyaan](/missions?id=mangalyaan) — did so because someone reconciled a column of delta-v requirements against a column of what the propellant could provide, and the second number was at least as large as the first. Every mission that never left — and there have been many, killed quietly in planning — failed that test.",
+    "cur": "예외 없는 제약에는 명확함이 있다. 로켓 방정식은 정치적 이유나 예산 증액, 또는 엔지니어링의 영웅적 노력 때문에 양보하지 않는다. 이 행성을 떠난 모든 미션 — [Voyager](/missions?id=voyager-2), [Cassini](/missions?id=cassini), [New Horizons](/missions?id=new-horizons), [Mangalyaan](/missions?id=mangalyaan) — 은 누군가가 델타-v 요구사항의 칼럼을 추진제가 제공할 수 있는 것의 칼럼에 대해 조정했고, 두 번째 숫자가 첫 번째 숫자 이상이었기 때문에 떠났다. 떠나지 못한 모든 미션 — 계획 단계에서 조용히 폐기된 많은 미션들이 있었다 — 은 그 테스트에 실패했다."
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.31.md",
+    "en": "What the equation also does, less obviously, is make gravity precious. Not as a hazard to overcome — every rocket is burning upward against it — but as a free account. A planet's gravity well, threaded correctly, is a source. Jupiter's gravity gave Voyager 2 a velocity it could never have bought with propellant. The Oberth effect makes deep periapsis passes worth engineering deliberately. The solar system's entire orbital architecture is, from a delta-v perspective, a landscape of free refills scattered across a mostly empty map — and every [trajectory you can explore here](/science/transfers/hohmann-transfer) is a record of someone finding one.",
+    "cur": "방정식이 또한 하는 것은, 덜 명백하게, 중력을 소중하게 한다. 극복할 위험으로서가 아니라 — 모든 로켓은 그것을 향해 위로 태우고 있다 — 하지만 무료 계좌로서. 행성의 중력 우물, 올바르게 스레드되면, 출처다. 목성의 중력은 Voyager 2에 추진제로 사올 수 없었던 속도를 주었다. Oberth 효과는 깊은 근점 통과를 의도적으로 엔지니어할 가치가 있게 한다. 태양계의 전체 궤도 구조는, 델타-v 관점에서, 거의 비어있는 지도 전체에 흩어져 있는 무료 충전 풍경이다 — 그리고 [여기서 탐색할 수 있는 모든 궤적](/science/transfers/hohmann-transfer)은 누군가가 하나를 찾은 기록이다."
+  },
+  {
+    "rel": "essays/delta-v.json",
+    "at": "body.32.md",
+    "en": "Tsiolkovsky died in 1935, nine years before the first ballistic missile flew and a generation before the first spacecraft left Earth. He never saw a rocket in orbit. What he did was write down, in 1903, the grammar that every mission since has spoken — the one rule that turns the aspiration of going somewhere into the arithmetic of whether you can. Everything else is a sentence in that language. The question the atlas keeps answering, mission by mission, is how much you can say within it.",
+    "cur": "치올콥스키는 1935년에 사망했으며, 첫 탄도 미사일이 날기 9년 전이고 첫 우주선이 지구를 떠나기 세대 전이었다. 그는 절대 궤도에서 로켓을 보지 못했다. 그가 한 것은 1903년에 그 이후 모든 미션이 말해온 문법을 적어내는 것이었다 — 어딘가에 가는 열망을 가능한지 여부의 산술로 바꾸는 하나의 규칙. 다른 모든 것은 그 언어의 문장이다. 지도가 미션별로 미션별로 계속 답하는 질문은 그 안에서 얼마나 많이 말할 수 있는가이다."
+  }
 ]

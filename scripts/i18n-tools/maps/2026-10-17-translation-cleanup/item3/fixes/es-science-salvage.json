@@ -1,8 +1,8 @@
 [
- {
-  "rel": "science/scales-time/light-minute.json",
-  "at": "narrative_101.2",
-  "old": "A la distancia de Voyager-1 (alrededor de 170 UA ahora), el retraso de luz unidireccional es de unos 23,5 horas — alcanzará un día de luz completo (24 horas) a finales de 2026. Envía un comando hoy, descubres mañana por la tarde si funcionó. Los años de luz existen para la siguiente escala — la distancia a otras estrellas. La más cercana, Próxima Centauri, está a 4,2 años de luz. A la velocidad de Voyager tardaría 70 000 años en llegar allí. El universo es grande y lento.",
-  "new": "A la distancia de Voyager-1 (alrededor de 170 UA ahora), el retraso de la luz en un solo sentido es de unas 23,5 horas — alcanzará un día luz completo (24 horas) a finales de 2026. Envías un comando hoy y mañana por la tarde descubres si funcionó. Los años luz existen para la siguiente escala — la distancia a otras estrellas. La más cercana, Próxima Centauri, está a 4,2 años luz. A la velocidad de Voyager tardaría 70 000 años en llegar. El universo es grande y lento."
- }
+  {
+    "rel": "science/scales-time/light-minute.json",
+    "at": "narrative_101.2",
+    "old": "A la distancia de Voyager-1 (alrededor de 170 UA ahora), el retraso de luz unidireccional es de unos 23,5 horas — alcanzará un día de luz completo (24 horas) a finales de 2026. Envía un comando hoy, descubres mañana por la tarde si funcionó. Los años de luz existen para la siguiente escala — la distancia a otras estrellas. La más cercana, Próxima Centauri, está a 4,2 años de luz. A la velocidad de Voyager tardaría 70 000 años en llegar allí. El universo es grande y lento.",
+    "new": "A la distancia de Voyager-1 (alrededor de 170 UA ahora), el retraso de la luz en un solo sentido es de unas 23,5 horas — alcanzará un día luz completo (24 horas) a finales de 2026. Envías un comando hoy y mañana por la tarde descubres si funcionó. Los años luz existen para la siguiente escala — la distancia a otras estrellas. La más cercana, Próxima Centauri, está a 4,2 años luz. A la velocidad de Voyager tardaría 70 000 años en llegar. El universo es grande y lento."
+  }
 ]

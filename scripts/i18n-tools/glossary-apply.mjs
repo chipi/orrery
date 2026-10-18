@@ -382,7 +382,8 @@ const ART = {
     [
       /\b(dans|sur|vers|depuis|sous|par) (cratère|Terre|Lune)\b/g,
       // 'sur Terre' (on/back on Earth) is the idiom and takes no article
-      (m, p, w) => (p === 'sur' && w === 'Terre' ? m : `${p} ${w === 'cratère' ? 'le' : 'la'} ${w}`),
+      (m, p, w) =>
+        p === 'sur' && w === 'Terre' ? m : `${p} ${w === 'cratère' ? 'le' : 'la'} ${w}`,
     ],
     [/\bde (cratère|Soleil)\b/g, 'du $1'],
     [/\bà (cratère|Soleil)\b/g, 'au $1'],

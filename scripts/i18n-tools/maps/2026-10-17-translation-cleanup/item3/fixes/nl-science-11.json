@@ -1,308 +1,308 @@
 [
- {
-  "rel": "science/transfers/coplanar-trajectories.json",
-  "at": "narrative_101.0",
-  "old": "Sta in het centrum van het zonnestelsel en kijk naar de planeten — je ziet een pannenkoek, geen bol. Mercurius, Venus, Aarde, Mars, Jupiter, Saturnus — ze cirkelen allemaal binnen ongeveer 7° van hetzelfde vlakke vlak (de ecliptica). De planeten ontstonden uit één draaiende gas- en stofwolk, en die rotatie deed alles instorten tot een dunne schijf. Alles sindsdien is in die schijf gebleven.",
-  "new": "Ga in het centrum van het zonnestelsel staan en kijk naar de planeten — je ziet een pannenkoek, geen bol. Mercurius, Venus, Aarde, Mars, Jupiter, Saturnus — ze draaien allemaal binnen ongeveer 7° van hetzelfde platte vlak (de ecliptica). De planeten ontstonden uit één draaiende gas- en stofwolk, en die rotatie plette alles tot een dunne schijf. Sindsdien is alles in die schijf gebleven."
- },
- {
-  "rel": "science/transfers/coplanar-trajectories.json",
-  "at": "narrative_101.1",
-  "old": "Stel je nu voor dat je een reis naar Mars plant. De goedkoopste manier om er te komen is een lange gebogen boog rond de Zon die op het Marsbaanaankomstmoment aankomt wanneer Mars er ook is. De goedkoopste boog ligt in hetzelfde vlak dat Aarde en Mars delen — de ecliptica. De schijf verlaten om een \"omweg naar buiten en boven\" te nemen kost stuwstof die het ruimtevaartuig zich niet kan veroorloven.",
-  "new": "Stel je nu voor dat je een reis naar Mars plant. De goedkoopste route is een lange gebogen baan om de Zon die de baan van Mars bereikt op het moment dat Mars daar zelf ook is. De goedkoopste boog ligt in hetzelfde vlak dat Aarde en Mars delen — de ecliptica. De schijf verlaten voor een \"omweg naar buiten en boven\" kost stuwstof die het ruimtevaartuig zich niet kan veroorloven."
- },
- {
-  "rel": "science/transfers/coplanar-trajectories.json",
-  "at": "narrative_101.2",
-  "old": "Dus missieplanners vechten niet tegen de schijf. Ze wachten tot de baangeometrie uitlijnt (dat is wat \"lanceervenster\" betekent), richten de raket langs de ecliptica en laten de planeten de besturing afhandelen. Het resultaat, wanneer je naar elk ruimtevaartuigtraject kijkt dat we hebben, is een hoop bogen die allemaal hetzelfde vlak omhelzen — als auto's die racen op een vlakke baan.",
-  "new": "Missieplanners vechten dus niet tegen de schijf. Ze wachten tot de baangeometrie goed staat (dat bedoelen we met \"lanceervenster\"), richten de raket langs de ecliptica en laten de planeten het sturen doen. Het resultaat, als je naar alle ruimtevaarttrajecten kijkt die we hebben, is een bundel bogen die allemaal dicht tegen hetzelfde vlak aan blijven — alsof je auto's ziet racen op een vlakke baan."
- },
- {
-  "rel": "science/transfers/coplanar-trajectories.json",
-  "at": "body_paragraphs.0",
-  "old": "De prijs voor het verlaten van het vlak is brutaal. De inclinatie van een heliocentrisch traject met slechts 1° wijzigen bij de baansnelheid van de Aarde (~30 km/s) kost ongeveer 0,5 km/s `∆v`. De 80°-baanwijziging die Ulysses nodig had — om over de zonpolen te vliegen — zou ~38 km/s hebben gekost als het met chemische stuwkracht was gedaan. Geen echte raket kan dat leveren. Dus ingenieurs betalen niet voor baanwijzigingen; ze ontwerpen eromheen.",
-  "new": "De prijs voor het verlaten van het vlak is meedogenloos. De inclinatie van een heliocentrisch traject met slechts 1° wijzigen bij de baansnelheid van de Aarde (~30 km/s) kost ongeveer 0,5 km/s `∆v`. De baanvlakwijziging van 80° die Ulysses nodig had — om over de polen van de Zon te vliegen — zou met chemische voortstuwing ~38 km/s hebben gekost. Geen enkele echte raket kan dat leveren. Ingenieurs betalen dus niet voor baanvlakwijzigingen; ze ontwerpen eromheen."
- },
- {
-  "rel": "science/transfers/coplanar-trajectories.json",
-  "at": "body_paragraphs.1",
-  "old": "Zwaartekrachtassistenties gehoorzamen dezelfde beperking. Wanneer een ruimtevaartuig rond Jupiter of Venus zwaait, zit de planeet in de ecliptica, dus de afbuigingsvector — die altijd door de planeet gaat — houdt het traject ook dicht bij de ecliptica. Cassini's zesjarige reis ziet eruit als een 2D-krabbel in de /explore-weergave omdat elk assistentielichaam dat het bezocht 2D-vlak was.",
-  "new": "Zwaartekrachtslingers gehoorzamen aan dezelfde beperking. Wanneer een ruimtevaartuig langs Jupiter of Venus slingert, ligt de planeet in de ecliptica, dus de afbuigingsvector — die altijd door de planeet gaat — houdt het traject ook dicht bij de ecliptica. De zesjarige reis van Cassini ziet er in de /explore-weergave uit als een 2D-krabbel, omdat elk hemellichaam waarlangs het slingerde in hetzelfde platte vlak ligt."
- },
- {
-  "rel": "science/transfers/coplanar-trajectories.json",
-  "at": "body_paragraphs.2",
-  "old": "Ulysses is het enige ruimtevaartuig dat de schijf opzettelijk heeft gebroken. Zijn wetenschappelijke doel waren de Zonpolen, maar om die te bereiken was ~80° inclinatie nodig — chemisch onmogelijk. Dus deed de missie het enige dat werkte: gelanceerd naar buiten naar Jupiter, gebruikte Jupiters zwaartekracht als een gratis \"raket\" om het ruimtevaartuig uit de ecliptica te buigen, en omcirkelde toen de Zon pool-tot-pool gedurende 18 jaar. De grote omweg was de goedkoopste route. Elke andere diepruimtemissie die je in /explore ziet, bleef in de schijf omdat de schijf is waar de bestemmingen zijn — en waar de stuwstof je laat gaan.",
-  "new": "Ulysses is het enige ruimtevaartuig dat de schijf ooit met opzet heeft doorbroken. Het wetenschappelijke doel waren de polen van de Zon, maar om die te bereiken was ~80° inclinatie nodig — met chemische voortstuwing onmogelijk. Dus deed de missie het enige wat werkte: ze vertrok naar Jupiter, gebruikte de zwaartekracht van Jupiter als een gratis \"raket\" om het ruimtevaartuig uit de ecliptica te buigen en cirkelde daarna 18 jaar van pool tot pool om de Zon. De grote omweg was de goedkoopste route. Elke andere diepruimtemissie die je in /explore ziet, bleef in de schijf, omdat daar de bestemmingen liggen — en omdat je stuwstof je alleen daar brengt."
- },
- {
-  "rel": "science/transfers/coplanar-trajectories.json",
-  "at": "diagram_caption",
-  "old": "Het zonnestelsel is vrijwel plat omdat de planeten uit één draaiende schijf zijn ontstaan. Vertrekken blijven in dat vlak omdat vlakwisselingen onbetaalbaar veel brandstof kosten.",
-  "new": "Het zonnestelsel is vrijwel plat omdat de planeten uit één draaiende schijf zijn ontstaan. Vertrekbanen blijven in dat vlak omdat baanvlakwijzigingen te veel stuwstof kosten."
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "intro_sentence",
-  "old": "Een baan die langs de bestemming slingert en de zwaartekracht zelf in een retourkaartje verandert — geen motorstuwing nodig.",
-  "new": "Een baan die langs de bestemming slingert en de zwaartekracht zelf in een retourkaartje verandert — zonder dat de motor hoeft te branden."
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "narrative_101.0",
-  "old": "Stel je voor dat je naar de Maan vliegt. Je bent bezorgd — wat gebeurt er als de motor onderweg uitvalt? Je zou vast komen te zitten, voorgoed drijvend. Hier is het geniale antwoord: kies een pad waarop, zelfs als elke motor op je ruimtevaartuig uitvalt op het moment dat je de aardbaan verlaat, de zwaartekracht je rond de Maan zwaait en je automatisch naar huis gooit. Dat is een free-return trajectory.",
-  "new": "Stel je voor dat je naar de Maan vliegt. Je maakt je zorgen: wat als de motor onderweg uitvalt? Dan zou je vastzitten, voor altijd ronddobberend. Het geniale antwoord is een route kiezen waarop de zwaartekracht je, zelfs als alle motoren van je ruimtevaartuig uitvallen zodra je de baan om de Aarde verlaat, vanzelf om de Maan heen zwaait en terug naar huis werpt. Dat is een free-return-traject."
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "narrative_101.1",
-  "old": "Het is eigenlijk een figuur-8 in de ruimte. Je verlaat de Aarde, je klimt naar de Maan, de zwaartekracht van de Maan buigt je pad 180 graden, en je valt terug naar de Aarde, waarbij je de atmosfeer raakt bij de terugkomst. Geen motor nodig. De Maan doet al het werk. De geometrie hoeft maar goed te zijn.",
-  "new": "Het is echt een acht in de ruimte. Je verlaat de Aarde, klimt naar de Maan, de zwaartekracht van de Maan buigt je pad 180 graden om, en je valt terug naar de Aarde, waar je op de terugweg de atmosfeer binnenkomt. Geen motor nodig. De Maan doet al het werk. De geometrie moet alleen kloppen."
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "narrative_101.2",
-  "old": "Apollo 8 was de eerste bemande missie die er een vloog. Apollo 13 — de beroemde 'Houston, we have a problem'-missie — dankt zijn overleven eraan. Toen hun hoofdmotor onbruikbaar werd, reden ze de free-return naar huis, waarbij alleen de maanmodule gebruikt werd voor koerscorrecties — nooit de beschadigde hoofdmotor. Orrery's standaard /fly-scenario doet precies dit voor Mars: Aarde → Mars voorbijvlucht → Aarde, geen mid-course burns nodig. De goedkoopste mogelijke Marsmissie die je met bemanning kunt vliegen.",
-  "new": "Apollo 8 was de eerste bemande missie die zo'n traject vloog. Apollo 13 — de beroemde 'Houston, we have a problem'-missie — dankt er zijn redding aan. Toen de hoofdmotor onbruikbaar werd, reed de bemanning via het free-return-traject naar huis en gebruikte alleen de motor van de maanmodule voor koerscorrecties — nooit de beschadigde hoofdmotor. Het standaard /fly-scenario van Orrery doet precies dit voor Mars: Aarde → voorbijvlucht langs Mars → Aarde, zonder koerscorrecties onderweg. De goedkoopste Marsreis die je met mensen aan boord kunt vliegen."
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "body_paragraphs.1",
-  "old": "Apollo 8 was de eerste bemande free-return. Apollo 13 gebruikte de techniek beroemd toen zijn service module uitviel — met alleen de maanmodulemotor voor koerscorrecties, nooit de beschadigde hoofdmotor. Voor Mars is de geometrie moeilijker — je hebt een 500-daagse, twee-passusloop nodig — maar het concept is hetzelfde: voorbijvluchtgeometrie doet het werk van de returnutstuwing.",
-  "new": "Apollo 8 was het eerste bemande free-return-traject. Apollo 13 viel beroemd genoeg op de techniek terug toen de servicemodule beschadigd raakte — de bemanning vloog via het traject naar huis en gebruikte alleen de motor van de maanmodule voor koerscorrecties, nooit de beschadigde hoofdmotor. Voor Mars is de geometrie moeilijker — je hebt een lus van 500 dagen met twee passages nodig — maar het principe blijft: de voorbijvlucht doet het werk van de terugkeermotor."
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "body_paragraphs.2",
-  "old": "Orrery's standaard `/fly`-scenario, ORRERY-1, is precies dit: Aarde-Mars-Aarde op een free-return-boog, geen mid-course correcies, geen orbit-insertion-brand bij Mars. Je ziet het ruimtevaartuig eenmaal rond de Zon lopen, langs Mars slingeren en terugkomen. Het is de goedkoopste bemande Marsvliegveld die ooit is voorgesteld.",
-  "new": "Het standaard `/fly`-scenario van Orrery, ORRERY-1, is precies dit: Aarde-Mars-Aarde op een free-return-boog, zonder koerscorrecties onderweg en zonder motorontsteking voor baaninsertie bij Mars. Je ziet het ruimtevaartuig één keer rond de Zon lopen, langs Mars slingeren en terugkomen. Het is de goedkoopste bemande voorbijvlucht langs Mars die ooit is voorgesteld."
- },
- {
-  "rel": "science/transfers/free-return.json",
-  "at": "diagram_caption",
-  "old": "Aarde → Mars voorbijvlucht → Aarde. De zwaartekracht van de Maan (of Mars) doet de U-bocht gratis.",
-  "new": "Aarde → voorbijvlucht langs Mars → Aarde. De zwaartekracht van de Maan (of van Mars) maakt de U-bocht gratis."
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "intro_sentence",
-  "old": "Steel het orbitale momentum van een planeet tijdens een voorbijvlucht — het dichtst bij een gratis lunch dat je in de ruimte kunt krijgen.",
-  "new": "Steel tijdens een voorbijvlucht een deel van de baanbeweging van een planeet — het dichtste wat de ruimte biedt bij een gratis lunch."
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "narrative_101.0",
-  "old": "Gooi een tennisbal naar een rijdende trein. De bal kaatst af op de voorkant en komt sneller terug dan je hem gooide — omdat de trein erop af bewoog en de snelheid van de trein bij de terugkaats werd opgeteld. Dat is in wezen een gravity assist. Het ruimtevaartuig is de tennisbal, de planeet is de trein, en \"terugkaatsen\" wordt vervangen door \"langs vallen in een hyperbool.\"",
-  "new": "Gooi een tennisbal naar een rijdende trein. De bal kaatst af op de voorkant en komt sneller terug dan je hem gooide — omdat de trein erop af bewoog en de snelheid van de trein bij het terugkaatsen werd opgeteld. Dat is in wezen een zwaartekrachtslinger. Het ruimtevaartuig is de tennisbal, de planeet is de trein, en \"terugkaatsen\" wordt vervangen door \"in een hyperbool langs de planeet vallen.\""
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "narrative_101.1",
-  "old": "Vanuit het gezichtspunt van de planeet komt het ruimtevaartuig binnen en vertrekt het met precies dezelfde snelheid — zwaartekracht is conservatief, geen energie gewonnen of verloren. Maar vanuit het gezichtspunt van de Zon erft het ruimtevaartuig onderweg naar buiten een deel van de orbitale beweging van de planeet en komt het ergens nieuw aan met extra (of minder) snelheid. Het is geen schending van de natuurkunde; de planeet betaalt ervoor door te vertragen — met een hoeveelheid die veel te klein is om te detecteren.",
-  "new": "Vanuit het standpunt van de planeet komt het ruimtevaartuig met precies dezelfde snelheid binnen als waarmee het vertrekt — de zwaartekracht is conservatief, er gaat geen energie verloren en er komt geen bij. Maar vanuit het standpunt van de Zon neemt het ruimtevaartuig onderweg naar buiten een deel van de baanbeweging van de planeet mee en komt het elders aan met extra (of minder) snelheid. Het is geen schending van de natuurkunde; de planeet betaalt ervoor door te vertragen — met een hoeveelheid die veel te klein is om te meten."
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "narrative_101.2",
-  "old": "Dit is de truc die de Voyager grand tour mogelijk maakte. Zonder gravity assists kun je Saturnus niet bereiken, laat staan Uranus of Neptunus, met chemische raketten — de brandstofkosten zijn astronomisch. Voyager 2 schakelde vier assists achter elkaar: Jupiter, Saturnus, Uranus, Neptunus, allemaal in één reis. Cassini kaatste twee keer af op Venus en één keer op de Aarde op weg naar Saturnus. Het buitenste zonnestelsel is alleen toegankelijk dankzij deze truc.",
-  "new": "Dit is de truc die de Grand Tour van de Voyagers mogelijk maakte. Zonder zwaartekrachtslingers kun je Saturnus niet bereiken, laat staan Uranus of Neptunus, met chemische raketten — de brandstofkosten zijn astronomisch. Voyager 2 koppelde vier slingers achter elkaar: Jupiter, Saturnus, Uranus, Neptunus, allemaal in één reis. Cassini kaatste twee keer af op Venus en één keer op de Aarde op weg naar Saturnus. Het buitenste zonnestelsel is alleen bereikbaar dankzij deze truc."
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "body_paragraphs.0",
-  "old": "Nader een bewegende planeet van achteren op een hyperbolisch traject. De zwaartekracht van de planeet buigt je pad, je zwaait erlangs en je vertrekt met dezelfde snelheid ten opzichte van de planeet — maar de planeet bewoog de hele tijd, en je draagt die beweging met je mee. Netto resultaat: je verlaat met meer snelheid ten opzichte van de Zon dan waarmee je aankwam. De planeet vertraagt in ruil daarvoor met een onmeetbaar kleine hoeveelheid.",
-  "new": "Nader een bewegende planeet van achteren op een hyperbolisch traject. De zwaartekracht van de planeet buigt je pad, je zwaait erlangs en je vertrekt met dezelfde snelheid ten opzichte van de planeet — maar de planeet bewoog de hele tijd, en je draagt die beweging met je mee. Netto resultaat: je vertrekt met meer snelheid ten opzichte van de Zon dan waarmee je aankwam. De planeet vertraagt in ruil daarvoor met een onmeetbaar kleine hoeveelheid."
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "body_paragraphs.1",
-  "old": "Keer de geometrie om — nader van voren — en je vertraagt. Pioneer 11 gebruikte Jupiter om richting Saturnus te duwen. Voyager 2 schakelde Jupiter, Saturnus, Uranus, Neptunus achter elkaar in een van de meest uitmuntende gravity-assist-tours die ooit gevlogen zijn. Cassini kaatste twee keer af op Venus en één keer op de Aarde voordat het Saturnus bereikte. New Horizons raakte Jupiter om drie jaar van de reis naar Pluto af te halen.",
-  "new": "Keer de geometrie om — nader van voren — en je vertraagt. Pioneer 11 gebruikte Jupiter als zetje richting Saturnus. Voyager 2 koppelde Jupiter, Saturnus, Uranus en Neptunus aan elkaar in een van de fraaiste slingertochten die ooit zijn gevlogen. Cassini kaatste twee keer af op Venus en één keer op de Aarde voordat het Saturnus bereikte. New Horizons slingerde langs Jupiter en sneed daarmee drie jaar van de reis naar Pluto af."
- },
- {
-  "rel": "science/transfers/gravity-assist.json",
-  "at": "body_paragraphs.2",
-  "old": "Zonder gravity assists had de helft van de missies in de catalogus van Orrery niet kunnen vliegen. De buitenplaneten zijn simpelweg te ver voor directe trajecten met chemische raketten — hun kosten in `∆v` zouden overschrijden wat elke raket kan leveren. Gravity assists veranderen die rekenkunde van onmogelijk in moeilijk maar haalbaar.",
-  "new": "Zonder zwaartekrachtslingers had de helft van de missies in de catalogus van Orrery niet kunnen vliegen. De buitenplaneten zijn simpelweg te ver voor directe trajecten met chemische raketten — hun kosten in `∆v` zouden overschrijden wat elke raket kan leveren. Zwaartekrachtslingers veranderen die rekensom van onmogelijk in moeilijk maar haalbaar."
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "intro_sentence",
-  "old": "De goedkoopste tweeëngine-reis tussen twee coplanaire cirkelbanen — en de maatstaf waaraan missieplanners al het andere meten.",
-  "new": "De goedkoopste reis met twee motorontstekingen tussen twee coplanaire cirkelbanen — en de maatstaf waaraan missieplanners al het andere afmeten."
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "narrative_101.0",
-  "old": "Je bent in de baan rond de Aarde. Je wilt in de baan rond Mars zijn. Beide banen zijn min of meer cirkels rond de Zon. Hoe kom je van de een naar de ander met zo weinig brandstof mogelijk?",
-  "new": "Je bevindt je in de baan van de Aarde. Je wilt in de baan van Mars komen. Beide banen zijn bij benadering cirkels om de Zon. Hoe kom je van de ene naar de andere met zo min mogelijk brandstof?"
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "narrative_101.1",
-  "old": "Het antwoord, uitgewerkt door Walter Hohmann in 1925, is verbluffend elegant. Vind een ellips die de baan van de Aarde aan de ene kant net raakt en de baan van Mars aan de andere kant net raakt. Zet je motor even aan om de Aarde te verlaten en die ellips in te stappen. Kost ongeveer 8,5 maanden zonder de motor aan te zetten — zwaartekracht doet het werk. Als je aan het andere eind aankomt, zet je opnieuw aan om in de baan van Mars in te gaan. Twee brandstoflozingen, totaal. Klaar.",
-  "new": "Het antwoord, in 1925 uitgewerkt door Walter Hohmann, is verbluffend elegant. Zoek een ellips die de baan van de Aarde aan de ene kant net raakt en de baan van Mars aan de andere kant net raakt. Zet je motor even aan om de Aarde te verlaten en op die ellips over te stappen. Vlieg dan ongeveer 8,5 maanden door zonder de motor ook maar één keer te gebruiken — de zwaartekracht doet het werk. Aan het andere uiteinde zet je de motor opnieuw aan om in de baan van Mars te komen. In totaal twee motorontstekingen. Klaar."
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "narrative_101.2",
-  "old": "Het is de goedkoopste mogelijke reis — maar ook de langzaamste. De 8,5 maanden durende wacht is niet te onderhandelen; natuurkunde stelt de timer in. Wil je sneller gaan? Dat kan, maar je betaalt daarvoor: een steilere ellips, een sneller crossing, een veel grotere remmotor aan het andere eind. Dit is de afweging die je in elke porkchop-plot in /plan kunt zien.",
-  "new": "Het is de goedkoopste mogelijke reis — maar ook de langzaamste. Die 8,5 maanden zijn niet onderhandelbaar; de natuurkunde bepaalt de timer. Sneller willen? Dat kan, maar je betaalt ervoor: een steilere ellips, een snellere oversteek, een veel zwaardere remming aan het andere uiteinde. Dit is de afweging die je terugziet in elke porkchop-plot in /plan."
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "body_paragraphs.0",
-  "old": "Stel je voor dat je in een cirkelbaan rond de Zon bent en je wilt een hogere bereiken — zeg van Aarde naar Mars. De goedkoopste manier is een Hohmann-overdracht: een ellips waarvan het perihelium je startbaan raakt en waarvan het aphelium de doelbaan raakt. Twee motorbranden brengen je daar. Eén bij het perihelium om de baan van de Aarde te verlaten en de ellips in te gaan. Eén bij het aphelium om in de doelbaan cirkelvormig in te gaan.",
-  "new": "Stel je voor dat je in een cirkelbaan om de Zon zit en een hogere baan wilt bereiken — zeg van Aarde naar Mars. De goedkoopste manier is een Hohmann-overdracht: een ellips waarvan het perihelium je startbaan raakt en waarvan het aphelium de doelbaan raakt. Twee motorontstekingen brengen je daar. Eén in het perihelium om de baan van de Aarde te verlaten en de ellips op te gaan. Eén in het aphelium om in de doelbaan weer een cirkelbaan te krijgen."
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "body_paragraphs.1",
-  "old": "Het is het goedkoopste vaste-impuls pad, maar ook het langzaamste. Aarde-naar-Mars duurt ongeveer 259 dagen met een Hohmann. Wil je sneller gaan? Brand harder, vliegen een uitgerekte ellips met hoger perihelium-snelheid. De aankomst V∞ stijgt, de invoerbrand bij de bestemming is groter, je totale ∆v-kosten stijgen steil.",
-  "new": "Het is het goedkoopste pad met impulsmanoeuvres, maar ook het langzaamste. Aarde-naar-Mars duurt met een Hohmann-overdracht ongeveer 259 dagen. Sneller willen? Geef harder gas en vlieg een uitgerekte ellips met een hogere snelheid in het perihelium. De aankomst-V∞ stijgt, de remming bij de bestemming wordt groter en je totale ∆v-kosten lopen steil op."
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "body_paragraphs.2",
-  "old": "Op Orrery's `/plan` porkchop zie je dit direct: er is een rustige bassin van koele cyaan cellen rond het natuurlijke Hohmann-raam, elke 26 maanden voor Mars, en steeds durdere contouren als je naar kortere transitietijden gaat.",
-  "new": "Op de porkchop-plot van Orrery op `/plan` zie je dit direct: rond het natuurlijke Hohmann-venster, voor Mars elke 26 maanden, ligt een rustig dal van koele blauwgroene cellen, met steeds duurdere contouren naarmate je naar kortere reistijden gaat."
- },
- {
-  "rel": "science/transfers/hohmann-transfer.json",
-  "at": "diagram_caption",
-  "old": "Aardbaan (binnenste) · Marsbaan (buitenste) · Hohmann-overdracht ellips met perihelium bij Aarde, aphelium bij Mars.",
-  "new": "Baan van de Aarde (binnen) · baan van Mars (buiten) · Hohmann-overdrachtsellips met het perihelium bij de Aarde en het aphelium bij Mars."
- },
- {
-  "rel": "science/transfers/lambert-problem.json",
-  "at": "intro_sentence",
-  "old": "Gegeven twee posities en een reistijd, vind de baan die ze verbindt — het centrale probleem van elk interplanetair traject.",
-  "new": "Zoek bij twee gegeven posities en een reistijd de baan die ze verbindt — het centrale probleem van elk interplanetair traject."
- },
- {
-  "rel": "science/transfers/lambert-problem.json",
-  "at": "narrative_101.0",
-  "old": "De Hohmann-overgang is het goedkoopste pad van de ene baan naar de andere, maar de meeste missies vliegen niet echt Hohmanns. Ze willen vertrekken op een specifieke datum — bijvoorbeeld wanneer een bepaalde raket klaar is, of wanneer een bepaald lanceerplatform beschikbaar is — en ze willen aankomen op een specifieke datum — bijvoorbeeld voordat een stofstorm op Mars gaat liggen. Hohmann laat je niet kiezen. Lambert wel.",
-  "new": "De Hohmann-overdracht is het goedkoopste pad van de ene baan naar de andere, maar de meeste missies vliegen er in de praktijk geen. Ze willen vertrekken op een specifieke datum — bijvoorbeeld wanneer een bepaalde raket klaar is, of wanneer een bepaald lanceerplatform beschikbaar is — en ze willen aankomen op een specifieke datum — bijvoorbeeld zodra een stofstorm op Mars is gaan liggen. Een Hohmann-overdracht laat je niet kiezen. Lambert wel."
- },
- {
-  "rel": "science/transfers/lambert-problem.json",
-  "at": "narrative_101.2",
-  "old": "Dit is de kern van elke porkchop plot die je zult zien. Elke pixel op de porkchop in /plan is één Lambert-probleem: 'vertrek van de Aarde op datum X, bereik Mars op datum Y — wat kost het?' De kleur is het antwoord. Los het tienduizend keer parallel op en je krijgt de hele kaart in één keer. Orrery doet dit in een Web Worker zodat de UI niet vastloopt terwijl het aan het denken is.",
-  "new": "Dit is de kern van elke porkchop-plot die je tegenkomt. Elke pixel op de porkchop in /plan is één Lambert-probleem: 'vertrek van de Aarde op datum X, bereik Mars op datum Y — wat kost het?' De kleur is het antwoord. Los het tienduizend keer parallel op en je krijgt de hele kaart in één keer. Orrery doet dit in een Web Worker, zodat de interface niet vastloopt terwijl hij rekent."
- },
- {
-  "rel": "science/transfers/lambert-problem.json",
-  "at": "body_paragraphs.0",
-  "old": "Lamberts probleem vraagt: ik ben hier, ik wil daar zijn, en ik heb zoveel tijd. Welke ellips moet ik vliegen? Twee positievectoren en een vluchttijd, en de vergelijking produceert de unieke overgangsbaan (of twee — er is een lange weg en een korte weg rond het centrale hemellichaam).",
-  "new": "Het probleem van Lambert vraagt: ik ben hier, ik wil daar zijn, en ik heb zoveel tijd. Welke ellips moet ik vliegen? Uit twee positievectoren en een vluchttijd levert de vergelijking de unieke overdrachtsbaan op (of twee — er is een lange en een korte weg om het centrale hemellichaam heen)."
- },
- {
-  "rel": "science/transfers/lambert-problem.json",
-  "at": "body_paragraphs.1",
-  "old": "De Hohmann-overgang is één specifieke Lambert-oplossing: posities bij tegenovergestelde apsiden, vluchttijd gelijk aan de helft van de periode van de overgangsellips. Draai aan een van beide knoppen — andere posities, andere tijd — en je krijgt een andere ellips. Kortere tijd, meer excentrische ellips, hogere vertrekenergie. De wiskunde verandert niet; alleen de randvoorwaarden.",
-  "new": "De Hohmann-overdracht is één specifieke Lambert-oplossing: posities bij tegenovergestelde apsiden, vluchttijd gelijk aan de helft van de periode van de overdrachtsellips. Draai aan een van beide knoppen — andere posities, andere tijd — en je krijgt een andere ellips. Kortere tijd, meer excentrische ellips, hogere vertrekenergie. De wiskunde verandert niet; alleen de randvoorwaarden."
- },
- {
-  "rel": "science/transfers/lambert-problem.json",
-  "at": "diagram_caption",
-  "old": "Twee positievectoren r₁ en r₂; de Lambert-oplosser vindt de unieke overgangsellips die ze verbindt in de vluchttijd.",
-  "new": "Twee positievectoren r₁ en r₂; de Lambert-oplosser vindt de unieke overdrachtsellips die ze in de vluchttijd verbindt."
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "intro_sentence",
-  "old": "Doe alsof de zwaartekracht van één lichaam tegelijk werkt — de benadering die het onoplosbare drielichamenprobleem omzet in een keten van twelichamen Kepler-problemen die je daadwerkelijk kunt oplossen.",
-  "new": "Doe alsof de zwaartekracht steeds van één lichaam komt — de benadering die het onoplosbare drielichamenprobleem omzet in een reeks tweelichamenproblemen van Kepler die je wél kunt oplossen."
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "narrative_101.0",
-  "old": "Hier is een vuil geheim van de orbitale mechanica: de volledige echte fysica — elk lichaam in het zonnestelsel dat aan elk ander lichaam trekt — is wiskundig onoplosbaar op een nette manier. We hebben GEEN gesloten oplossing voor het drielichamenprobleem, laat staan de echte versie met tientallen lichamen. Dus hoe krijgen missieplanners dan iets voor elkaar?",
-  "new": "Hier is een vies geheimpje van de baanmechanica: de volledige echte natuurkunde — elk lichaam in het zonnestelsel dat aan elk ander lichaam trekt — is wiskundig niet netjes op te lossen. Voor het drielichamenprobleem bestaat GEEN gesloten oplossing, laat staan voor de echte versie met tientallen lichamen. Hoe krijgen missieplanners dan toch iets voor elkaar?"
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "narrative_101.1",
-  "old": "Ze vals spelen. Ze doen alsof op elk moment slechts ÉÉN lichaam met zijn zwaartekracht ertoe doet. Nabij de Aarde trekt alleen de Aarde. Tijdens de cruise alleen de Zon. Nabij Mars alleen Mars. Elk van die gebieden wordt een invloedssfeer genoemd, en binnen elk daarvan vliegt het ruimtevaartuig een nette Kepleriaanse kegelsnede. Wanneer het ruimtevaartuig een grens oversteekt, wissel je van coördinatenstelsel en begin je een nieuwe kegelsnede. Aan elkaar geplakt vormen ze het traject. Dat zijn patched conics.",
-  "new": "Ze spelen vals. Ze doen alsof op elk moment maar ÉÉN lichaam met zijn zwaartekracht meetelt. Vlak bij de Aarde trekt alleen de Aarde. Onderweg alleen de Zon. Vlak bij Mars alleen Mars. Elk van die gebieden heet een invloedssfeer, en binnen elk gebied vliegt het ruimtevaartuig langs een nette Kepler-kegelsnede. Steekt het ruimtevaartuig een grens over, dan wissel je van coördinatenstelsel en begin je een nieuwe kegelsnede. Aan elkaar geplakt vormen ze het traject. Dat zijn aaneengeschakelde kegelsneden (patched conics)."
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "narrative_101.2",
-  "old": "De berekening wijkt een paar procent af van de waarheid — klein genoeg dat echte missies ermee plannen als hun eerste benadering, en vervolgens numeriek verfijnen voor de lancering. Het is ook klein genoeg dat Orrery dit allemaal in je browser kan draaien, in een Web Worker, snel genoeg om de hele porkchop opnieuw te tekenen wanneer je het lanceringsjaar versleept. De hele simulator is op deze truc gebouwd.",
-  "new": "De berekening wijkt een paar procent van de waarheid af — klein genoeg dat echte missies er eerst mee plannen en daarna numeriek verfijnen voor de lancering. Het is ook klein genoeg dat Orrery dit allemaal in je browser kan draaien, in een Web Worker, snel genoeg om de hele porkchop opnieuw te tekenen wanneer je het lanceerjaar versleept. De hele simulator is op deze truc gebouwd."
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "body_paragraphs.0",
-  "old": "Echte zwaartekracht is rommelig. Een ruimtevaartuig dat tussen de Aarde en Mars reist, voelt de zwaartekracht van de Aarde, de zwaartekracht van de Zon, de zwaartekracht van Mars, plus alles andere, allemaal tegelijk. De volledige wiskunde (het n-lichamenprobleem) heeft geen gesloten oplossing — alleen numerieke integratie. Dat is traag, kwetsbaar, moeilijk om mee te plannen.",
-  "new": "Echte zwaartekracht is rommelig. Een ruimtevaartuig dat tussen de Aarde en Mars reist, voelt de zwaartekracht van de Aarde, de Zon en Mars, plus al het andere, allemaal tegelijk. De volledige wiskunde (het n-lichamenprobleem) heeft geen gesloten oplossing — alleen numerieke integratie. Dat is traag, kwetsbaar en moeilijk om mee te plannen."
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "body_paragraphs.1",
-  "old": "Patched conics is het werkbare compromis: verklaar een invloedssfeer rond elk lichaam. Binnen de invloedssfeer van de Aarde doet alleen de zwaartekracht van de Aarde ertoe; je vliegt een Kepleriaanse boog rond de Aarde. Steek je de grens over naar het heliocentrische gebied, dan schakel je over naar een zongerichte Kepler-boog. Steek je over naar de invloedssfeer van Mars, dan schakel je weer over. Drie Kepler-problemen, aan elkaar geplakt bij de grenzen.",
-  "new": "Aaneengeschakelde kegelsneden (patched conics) zijn het werkbare compromis: leg rond elk lichaam een invloedssfeer vast. Binnen de invloedssfeer van de Aarde doet alleen de zwaartekracht van de Aarde ertoe; je vliegt een Kepler-boog rond de Aarde. Steek je de grens over naar het heliocentrische gebied, dan schakel je over naar een Kepler-boog met de Zon als middelpunt. Steek je over naar de invloedssfeer van Mars, dan schakel je weer over. Drie Kepler-problemen, aan elkaar geplakt bij de grenzen."
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "body_paragraphs.2",
-  "old": "Het klopt niet maar is nuttig. Fouten bij grenzen zijn klein — hooguit een paar procent van ∆v voor cislunair werk, minder voor heliocentrisch — en de wiskunde wordt hanteerbaar genoeg om in een Web Worker te passen. De `/plan` porkchops van Orrery worden op deze manier berekend; net als de trajecten op `/fly`. Echte vluchtplanning bij NASA gebruikt dezelfde benadering als eerste benadering, en verfijnt vervolgens numeriek voor de lancering.",
-  "new": "Het is fout, maar nuttig. De fouten bij de grenzen zijn klein — hooguit een paar procent van ∆v voor cislunair werk, minder voor heliocentrisch — en de wiskunde wordt hanteerbaar genoeg om in een Web Worker te passen. De porkchop-plots van Orrery op `/plan` worden op deze manier berekend; de trajecten op `/fly` ook. Echte vluchtplanning bij NASA gebruikt dezelfde benadering voor de eerste ruwe berekening en verfijnt die voor de lancering numeriek."
- },
- {
-  "rel": "science/transfers/patched-conics.json",
-  "at": "diagram_caption",
-  "old": "Drie referentiekaders, drie kegelsneden: Aarde-gecentreerd → heliocentrisch → Mars-gecentreerd, aan elkaar geplakt bij de grenzen van de invloedssferen.",
-  "new": "Drie referentiekaders, drie kegelsneden: met de Aarde als middelpunt → heliocentrisch → met Mars als middelpunt, aan elkaar geplakt bij de grenzen van de invloedssferen."
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "intro_sentence",
-  "old": "De Kepleriaanse boog die een ruimtevaartuig van de ene baan naar de andere brengt — de zon in één brandpunt, net als elke andere baan.",
-  "new": "De Kepler-boog die een ruimtevaartuig van de ene baan naar de andere brengt — met de Zon in één brandpunt, net als bij elke andere baan."
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "narrative_101.0",
-  "old": "Missieplannen klinkt alsof het om motoren en raketten gaat. Het gaat vooral om het kiezen van een ellips. Elke interplanetaire reis — Apollo naar de maan, Voyager naar Neptunus, Perseverance naar Mars — is gewoon een ruimtevaartuig dat een elliptische baan volgt tussen waar het begon en waar het naartoe gaat. Het mooie woord voor die ellips is de transferbaan.",
-  "new": "Missieplanning klinkt alsof het om motoren en raketten draait. Het draait vooral om het kiezen van een ellips. Elke interplanetaire reis — Apollo naar de Maan, Voyager naar Neptunus, Perseverance naar Mars — is gewoon een ruimtevaartuig dat een elliptische baan volgt tussen waar het begon en waar het naartoe gaat. De vakterm voor die ellips is overdrachtsbaan."
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "narrative_101.1",
-  "old": "Het volgt dezelfde regels als elke andere Kepleriaanse baan. De zon zit in één brandpunt. Het ruimtevaartuig beweegt langzaam aan het verre uiteinde en snel aan het dichtbije uiteinde. Vis-viva werkt nog steeds om de snelheid te berekenen. De derde wet van Kepler geeft je nog steeds de vliegtijd op basis van de grootte. Niets exotisch.",
-  "new": "Het volgt dezelfde regels als elke andere Kepler-baan. De Zon staat in één brandpunt. Het ruimtevaartuig beweegt langzaam aan het verre uiteinde en snel aan het dichtbije uiteinde. De vis-viva-vergelijking werkt nog steeds om de snelheid uit te rekenen. De derde wet van Kepler geeft je nog steeds de vliegtijd uit de afmetingen. Niets exotisch."
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "narrative_101.2",
-  "old": "Het enige dat een transfer ellips anders maakt dan de baan van een planeet is dat het ruimtevaartuig er maar de HELFT van aflegt. Het stapt op aan het ene uiteinde, rijdt naar het andere en stapt af. Daarom heeft het ∆v budget altijd twee grote branding — één om de ellips binnen te gaan, één om eruit te gaan. Het stuk in het midden, de acht maanden durende vrije vlucht, kost helemaal niets.",
-  "new": "Het enige wat een overdrachtsellips anders maakt dan de baan van een planeet, is dat het ruimtevaartuig er maar de HELFT van aflegt. Het stapt op aan het ene uiteinde, rijdt naar het andere en stapt af. Daarom bevat het ∆v-budget altijd twee grote motorontstekingen — één om de ellips op te gaan, één om hem te verlaten. Het stuk in het midden, de vrije vlucht van acht maanden, kost helemaal niets."
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "body_paragraphs.0",
-  "old": "Zodra je uit de baan van de aarde bent gebrand, zit je op een ellips om de zon. Die ellips is de transferbaan, en heeft dezelfde eigenschappen als elke andere: halve lange as, excentriciteit, perihelium, aphelium. Het feit dat je ergens naartoe gaat verandert de geometrie niet — zwaartekracht geeft niets om je bestemming.",
-  "new": "Zodra je met een motorontsteking de baan van de Aarde hebt verlaten, zit je op een ellips om de Zon. Die ellips is de overdrachtsbaan, en hij heeft dezelfde eigenschappen als elke andere: halve lange as, excentriciteit, perihelium, aphelium. Het feit dat je ergens naartoe gaat verandert de geometrie niet — de zwaartekracht trekt zich niets van je bestemming aan."
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "body_paragraphs.1",
-  "old": "Twee ankerpunten definiëren een transfer ellips: waar je begon (perihelium als je naar buiten gaat) en waar je zult eindigen (aphelium). De halve lange as is het gemiddelde van die twee stralen. Pas een van beide ankerpunten aan en de hele ellips verandert van vorm — ga verder naar buiten, de ellips rekt uit, de reis duurt langer.",
-  "new": "Twee ankerpunten leggen een overdrachtsellips vast: waar je begon (het perihelium als je naar buiten gaat) en waar je zult eindigen (het aphelium). De halve lange as is het gemiddelde van die twee stralen. Pas een van beide ankerpunten aan en de hele ellips verandert van vorm — ga je verder naar buiten, dan rekt de ellips uit en duurt de reis langer."
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "body_paragraphs.2",
-  "old": "Op de `/fly` HUD van Orrery zie je het ruimtevaartuig deze ellips in real time volgen. De transferboog op het scherm is een visuele weergave van dezelfde kegelsnede die de wiskunde zegt dat het is — de zon in één brandpunt, perihelium achter je, aphelium voor je.",
-  "new": "Op de `/fly`-HUD van Orrery zie je het ruimtevaartuig deze ellips in realtime volgen. De overdrachtsboog op het scherm is de weergave van precies de kegelsnede die de wiskunde voorschrijft — de Zon in één brandpunt, het perihelium achter je, het aphelium voor je."
- },
- {
-  "rel": "science/transfers/transfer-ellipse.json",
-  "at": "diagram_caption",
-  "old": "Twee coplanaire banen (vertrek binnen, bestemming buiten) verbonden door een transfer ellips met de zon in één brandpunt.",
-  "new": "Twee coplanaire banen (vertrek binnen, bestemming buiten) verbonden door een overdrachtsellips met de Zon in één brandpunt."
- }
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "narrative_101.0",
+    "old": "Sta in het centrum van het zonnestelsel en kijk naar de planeten — je ziet een pannenkoek, geen bol. Mercurius, Venus, Aarde, Mars, Jupiter, Saturnus — ze cirkelen allemaal binnen ongeveer 7° van hetzelfde vlakke vlak (de ecliptica). De planeten ontstonden uit één draaiende gas- en stofwolk, en die rotatie deed alles instorten tot een dunne schijf. Alles sindsdien is in die schijf gebleven.",
+    "new": "Ga in het centrum van het zonnestelsel staan en kijk naar de planeten — je ziet een pannenkoek, geen bol. Mercurius, Venus, Aarde, Mars, Jupiter, Saturnus — ze draaien allemaal binnen ongeveer 7° van hetzelfde platte vlak (de ecliptica). De planeten ontstonden uit één draaiende gas- en stofwolk, en die rotatie plette alles tot een dunne schijf. Sindsdien is alles in die schijf gebleven."
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "narrative_101.1",
+    "old": "Stel je nu voor dat je een reis naar Mars plant. De goedkoopste manier om er te komen is een lange gebogen boog rond de Zon die op het Marsbaanaankomstmoment aankomt wanneer Mars er ook is. De goedkoopste boog ligt in hetzelfde vlak dat Aarde en Mars delen — de ecliptica. De schijf verlaten om een \"omweg naar buiten en boven\" te nemen kost stuwstof die het ruimtevaartuig zich niet kan veroorloven.",
+    "new": "Stel je nu voor dat je een reis naar Mars plant. De goedkoopste route is een lange gebogen baan om de Zon die de baan van Mars bereikt op het moment dat Mars daar zelf ook is. De goedkoopste boog ligt in hetzelfde vlak dat Aarde en Mars delen — de ecliptica. De schijf verlaten voor een \"omweg naar buiten en boven\" kost stuwstof die het ruimtevaartuig zich niet kan veroorloven."
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "narrative_101.2",
+    "old": "Dus missieplanners vechten niet tegen de schijf. Ze wachten tot de baangeometrie uitlijnt (dat is wat \"lanceervenster\" betekent), richten de raket langs de ecliptica en laten de planeten de besturing afhandelen. Het resultaat, wanneer je naar elk ruimtevaartuigtraject kijkt dat we hebben, is een hoop bogen die allemaal hetzelfde vlak omhelzen — als auto's die racen op een vlakke baan.",
+    "new": "Missieplanners vechten dus niet tegen de schijf. Ze wachten tot de baangeometrie goed staat (dat bedoelen we met \"lanceervenster\"), richten de raket langs de ecliptica en laten de planeten het sturen doen. Het resultaat, als je naar alle ruimtevaarttrajecten kijkt die we hebben, is een bundel bogen die allemaal dicht tegen hetzelfde vlak aan blijven — alsof je auto's ziet racen op een vlakke baan."
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "body_paragraphs.0",
+    "old": "De prijs voor het verlaten van het vlak is brutaal. De inclinatie van een heliocentrisch traject met slechts 1° wijzigen bij de baansnelheid van de Aarde (~30 km/s) kost ongeveer 0,5 km/s `∆v`. De 80°-baanwijziging die Ulysses nodig had — om over de zonpolen te vliegen — zou ~38 km/s hebben gekost als het met chemische stuwkracht was gedaan. Geen echte raket kan dat leveren. Dus ingenieurs betalen niet voor baanwijzigingen; ze ontwerpen eromheen.",
+    "new": "De prijs voor het verlaten van het vlak is meedogenloos. De inclinatie van een heliocentrisch traject met slechts 1° wijzigen bij de baansnelheid van de Aarde (~30 km/s) kost ongeveer 0,5 km/s `∆v`. De baanvlakwijziging van 80° die Ulysses nodig had — om over de polen van de Zon te vliegen — zou met chemische voortstuwing ~38 km/s hebben gekost. Geen enkele echte raket kan dat leveren. Ingenieurs betalen dus niet voor baanvlakwijzigingen; ze ontwerpen eromheen."
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "body_paragraphs.1",
+    "old": "Zwaartekrachtassistenties gehoorzamen dezelfde beperking. Wanneer een ruimtevaartuig rond Jupiter of Venus zwaait, zit de planeet in de ecliptica, dus de afbuigingsvector — die altijd door de planeet gaat — houdt het traject ook dicht bij de ecliptica. Cassini's zesjarige reis ziet eruit als een 2D-krabbel in de /explore-weergave omdat elk assistentielichaam dat het bezocht 2D-vlak was.",
+    "new": "Zwaartekrachtslingers gehoorzamen aan dezelfde beperking. Wanneer een ruimtevaartuig langs Jupiter of Venus slingert, ligt de planeet in de ecliptica, dus de afbuigingsvector — die altijd door de planeet gaat — houdt het traject ook dicht bij de ecliptica. De zesjarige reis van Cassini ziet er in de /explore-weergave uit als een 2D-krabbel, omdat elk hemellichaam waarlangs het slingerde in hetzelfde platte vlak ligt."
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "body_paragraphs.2",
+    "old": "Ulysses is het enige ruimtevaartuig dat de schijf opzettelijk heeft gebroken. Zijn wetenschappelijke doel waren de Zonpolen, maar om die te bereiken was ~80° inclinatie nodig — chemisch onmogelijk. Dus deed de missie het enige dat werkte: gelanceerd naar buiten naar Jupiter, gebruikte Jupiters zwaartekracht als een gratis \"raket\" om het ruimtevaartuig uit de ecliptica te buigen, en omcirkelde toen de Zon pool-tot-pool gedurende 18 jaar. De grote omweg was de goedkoopste route. Elke andere diepruimtemissie die je in /explore ziet, bleef in de schijf omdat de schijf is waar de bestemmingen zijn — en waar de stuwstof je laat gaan.",
+    "new": "Ulysses is het enige ruimtevaartuig dat de schijf ooit met opzet heeft doorbroken. Het wetenschappelijke doel waren de polen van de Zon, maar om die te bereiken was ~80° inclinatie nodig — met chemische voortstuwing onmogelijk. Dus deed de missie het enige wat werkte: ze vertrok naar Jupiter, gebruikte de zwaartekracht van Jupiter als een gratis \"raket\" om het ruimtevaartuig uit de ecliptica te buigen en cirkelde daarna 18 jaar van pool tot pool om de Zon. De grote omweg was de goedkoopste route. Elke andere diepruimtemissie die je in /explore ziet, bleef in de schijf, omdat daar de bestemmingen liggen — en omdat je stuwstof je alleen daar brengt."
+  },
+  {
+    "rel": "science/transfers/coplanar-trajectories.json",
+    "at": "diagram_caption",
+    "old": "Het zonnestelsel is vrijwel plat omdat de planeten uit één draaiende schijf zijn ontstaan. Vertrekken blijven in dat vlak omdat vlakwisselingen onbetaalbaar veel brandstof kosten.",
+    "new": "Het zonnestelsel is vrijwel plat omdat de planeten uit één draaiende schijf zijn ontstaan. Vertrekbanen blijven in dat vlak omdat baanvlakwijzigingen te veel stuwstof kosten."
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "intro_sentence",
+    "old": "Een baan die langs de bestemming slingert en de zwaartekracht zelf in een retourkaartje verandert — geen motorstuwing nodig.",
+    "new": "Een baan die langs de bestemming slingert en de zwaartekracht zelf in een retourkaartje verandert — zonder dat de motor hoeft te branden."
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "narrative_101.0",
+    "old": "Stel je voor dat je naar de Maan vliegt. Je bent bezorgd — wat gebeurt er als de motor onderweg uitvalt? Je zou vast komen te zitten, voorgoed drijvend. Hier is het geniale antwoord: kies een pad waarop, zelfs als elke motor op je ruimtevaartuig uitvalt op het moment dat je de aardbaan verlaat, de zwaartekracht je rond de Maan zwaait en je automatisch naar huis gooit. Dat is een free-return trajectory.",
+    "new": "Stel je voor dat je naar de Maan vliegt. Je maakt je zorgen: wat als de motor onderweg uitvalt? Dan zou je vastzitten, voor altijd ronddobberend. Het geniale antwoord is een route kiezen waarop de zwaartekracht je, zelfs als alle motoren van je ruimtevaartuig uitvallen zodra je de baan om de Aarde verlaat, vanzelf om de Maan heen zwaait en terug naar huis werpt. Dat is een free-return-traject."
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "narrative_101.1",
+    "old": "Het is eigenlijk een figuur-8 in de ruimte. Je verlaat de Aarde, je klimt naar de Maan, de zwaartekracht van de Maan buigt je pad 180 graden, en je valt terug naar de Aarde, waarbij je de atmosfeer raakt bij de terugkomst. Geen motor nodig. De Maan doet al het werk. De geometrie hoeft maar goed te zijn.",
+    "new": "Het is echt een acht in de ruimte. Je verlaat de Aarde, klimt naar de Maan, de zwaartekracht van de Maan buigt je pad 180 graden om, en je valt terug naar de Aarde, waar je op de terugweg de atmosfeer binnenkomt. Geen motor nodig. De Maan doet al het werk. De geometrie moet alleen kloppen."
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "narrative_101.2",
+    "old": "Apollo 8 was de eerste bemande missie die er een vloog. Apollo 13 — de beroemde 'Houston, we have a problem'-missie — dankt zijn overleven eraan. Toen hun hoofdmotor onbruikbaar werd, reden ze de free-return naar huis, waarbij alleen de maanmodule gebruikt werd voor koerscorrecties — nooit de beschadigde hoofdmotor. Orrery's standaard /fly-scenario doet precies dit voor Mars: Aarde → Mars voorbijvlucht → Aarde, geen mid-course burns nodig. De goedkoopste mogelijke Marsmissie die je met bemanning kunt vliegen.",
+    "new": "Apollo 8 was de eerste bemande missie die zo'n traject vloog. Apollo 13 — de beroemde 'Houston, we have a problem'-missie — dankt er zijn redding aan. Toen de hoofdmotor onbruikbaar werd, reed de bemanning via het free-return-traject naar huis en gebruikte alleen de motor van de maanmodule voor koerscorrecties — nooit de beschadigde hoofdmotor. Het standaard /fly-scenario van Orrery doet precies dit voor Mars: Aarde → voorbijvlucht langs Mars → Aarde, zonder koerscorrecties onderweg. De goedkoopste Marsreis die je met mensen aan boord kunt vliegen."
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "body_paragraphs.1",
+    "old": "Apollo 8 was de eerste bemande free-return. Apollo 13 gebruikte de techniek beroemd toen zijn service module uitviel — met alleen de maanmodulemotor voor koerscorrecties, nooit de beschadigde hoofdmotor. Voor Mars is de geometrie moeilijker — je hebt een 500-daagse, twee-passusloop nodig — maar het concept is hetzelfde: voorbijvluchtgeometrie doet het werk van de returnutstuwing.",
+    "new": "Apollo 8 was het eerste bemande free-return-traject. Apollo 13 viel beroemd genoeg op de techniek terug toen de servicemodule beschadigd raakte — de bemanning vloog via het traject naar huis en gebruikte alleen de motor van de maanmodule voor koerscorrecties, nooit de beschadigde hoofdmotor. Voor Mars is de geometrie moeilijker — je hebt een lus van 500 dagen met twee passages nodig — maar het principe blijft: de voorbijvlucht doet het werk van de terugkeermotor."
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "body_paragraphs.2",
+    "old": "Orrery's standaard `/fly`-scenario, ORRERY-1, is precies dit: Aarde-Mars-Aarde op een free-return-boog, geen mid-course correcies, geen orbit-insertion-brand bij Mars. Je ziet het ruimtevaartuig eenmaal rond de Zon lopen, langs Mars slingeren en terugkomen. Het is de goedkoopste bemande Marsvliegveld die ooit is voorgesteld.",
+    "new": "Het standaard `/fly`-scenario van Orrery, ORRERY-1, is precies dit: Aarde-Mars-Aarde op een free-return-boog, zonder koerscorrecties onderweg en zonder motorontsteking voor baaninsertie bij Mars. Je ziet het ruimtevaartuig één keer rond de Zon lopen, langs Mars slingeren en terugkomen. Het is de goedkoopste bemande voorbijvlucht langs Mars die ooit is voorgesteld."
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "diagram_caption",
+    "old": "Aarde → Mars voorbijvlucht → Aarde. De zwaartekracht van de Maan (of Mars) doet de U-bocht gratis.",
+    "new": "Aarde → voorbijvlucht langs Mars → Aarde. De zwaartekracht van de Maan (of van Mars) maakt de U-bocht gratis."
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "intro_sentence",
+    "old": "Steel het orbitale momentum van een planeet tijdens een voorbijvlucht — het dichtst bij een gratis lunch dat je in de ruimte kunt krijgen.",
+    "new": "Steel tijdens een voorbijvlucht een deel van de baanbeweging van een planeet — het dichtste wat de ruimte biedt bij een gratis lunch."
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "narrative_101.0",
+    "old": "Gooi een tennisbal naar een rijdende trein. De bal kaatst af op de voorkant en komt sneller terug dan je hem gooide — omdat de trein erop af bewoog en de snelheid van de trein bij de terugkaats werd opgeteld. Dat is in wezen een gravity assist. Het ruimtevaartuig is de tennisbal, de planeet is de trein, en \"terugkaatsen\" wordt vervangen door \"langs vallen in een hyperbool.\"",
+    "new": "Gooi een tennisbal naar een rijdende trein. De bal kaatst af op de voorkant en komt sneller terug dan je hem gooide — omdat de trein erop af bewoog en de snelheid van de trein bij het terugkaatsen werd opgeteld. Dat is in wezen een zwaartekrachtslinger. Het ruimtevaartuig is de tennisbal, de planeet is de trein, en \"terugkaatsen\" wordt vervangen door \"in een hyperbool langs de planeet vallen.\""
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "narrative_101.1",
+    "old": "Vanuit het gezichtspunt van de planeet komt het ruimtevaartuig binnen en vertrekt het met precies dezelfde snelheid — zwaartekracht is conservatief, geen energie gewonnen of verloren. Maar vanuit het gezichtspunt van de Zon erft het ruimtevaartuig onderweg naar buiten een deel van de orbitale beweging van de planeet en komt het ergens nieuw aan met extra (of minder) snelheid. Het is geen schending van de natuurkunde; de planeet betaalt ervoor door te vertragen — met een hoeveelheid die veel te klein is om te detecteren.",
+    "new": "Vanuit het standpunt van de planeet komt het ruimtevaartuig met precies dezelfde snelheid binnen als waarmee het vertrekt — de zwaartekracht is conservatief, er gaat geen energie verloren en er komt geen bij. Maar vanuit het standpunt van de Zon neemt het ruimtevaartuig onderweg naar buiten een deel van de baanbeweging van de planeet mee en komt het elders aan met extra (of minder) snelheid. Het is geen schending van de natuurkunde; de planeet betaalt ervoor door te vertragen — met een hoeveelheid die veel te klein is om te meten."
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "narrative_101.2",
+    "old": "Dit is de truc die de Voyager grand tour mogelijk maakte. Zonder gravity assists kun je Saturnus niet bereiken, laat staan Uranus of Neptunus, met chemische raketten — de brandstofkosten zijn astronomisch. Voyager 2 schakelde vier assists achter elkaar: Jupiter, Saturnus, Uranus, Neptunus, allemaal in één reis. Cassini kaatste twee keer af op Venus en één keer op de Aarde op weg naar Saturnus. Het buitenste zonnestelsel is alleen toegankelijk dankzij deze truc.",
+    "new": "Dit is de truc die de Grand Tour van de Voyagers mogelijk maakte. Zonder zwaartekrachtslingers kun je Saturnus niet bereiken, laat staan Uranus of Neptunus, met chemische raketten — de brandstofkosten zijn astronomisch. Voyager 2 koppelde vier slingers achter elkaar: Jupiter, Saturnus, Uranus, Neptunus, allemaal in één reis. Cassini kaatste twee keer af op Venus en één keer op de Aarde op weg naar Saturnus. Het buitenste zonnestelsel is alleen bereikbaar dankzij deze truc."
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "body_paragraphs.0",
+    "old": "Nader een bewegende planeet van achteren op een hyperbolisch traject. De zwaartekracht van de planeet buigt je pad, je zwaait erlangs en je vertrekt met dezelfde snelheid ten opzichte van de planeet — maar de planeet bewoog de hele tijd, en je draagt die beweging met je mee. Netto resultaat: je verlaat met meer snelheid ten opzichte van de Zon dan waarmee je aankwam. De planeet vertraagt in ruil daarvoor met een onmeetbaar kleine hoeveelheid.",
+    "new": "Nader een bewegende planeet van achteren op een hyperbolisch traject. De zwaartekracht van de planeet buigt je pad, je zwaait erlangs en je vertrekt met dezelfde snelheid ten opzichte van de planeet — maar de planeet bewoog de hele tijd, en je draagt die beweging met je mee. Netto resultaat: je vertrekt met meer snelheid ten opzichte van de Zon dan waarmee je aankwam. De planeet vertraagt in ruil daarvoor met een onmeetbaar kleine hoeveelheid."
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "body_paragraphs.1",
+    "old": "Keer de geometrie om — nader van voren — en je vertraagt. Pioneer 11 gebruikte Jupiter om richting Saturnus te duwen. Voyager 2 schakelde Jupiter, Saturnus, Uranus, Neptunus achter elkaar in een van de meest uitmuntende gravity-assist-tours die ooit gevlogen zijn. Cassini kaatste twee keer af op Venus en één keer op de Aarde voordat het Saturnus bereikte. New Horizons raakte Jupiter om drie jaar van de reis naar Pluto af te halen.",
+    "new": "Keer de geometrie om — nader van voren — en je vertraagt. Pioneer 11 gebruikte Jupiter als zetje richting Saturnus. Voyager 2 koppelde Jupiter, Saturnus, Uranus en Neptunus aan elkaar in een van de fraaiste slingertochten die ooit zijn gevlogen. Cassini kaatste twee keer af op Venus en één keer op de Aarde voordat het Saturnus bereikte. New Horizons slingerde langs Jupiter en sneed daarmee drie jaar van de reis naar Pluto af."
+  },
+  {
+    "rel": "science/transfers/gravity-assist.json",
+    "at": "body_paragraphs.2",
+    "old": "Zonder gravity assists had de helft van de missies in de catalogus van Orrery niet kunnen vliegen. De buitenplaneten zijn simpelweg te ver voor directe trajecten met chemische raketten — hun kosten in `∆v` zouden overschrijden wat elke raket kan leveren. Gravity assists veranderen die rekenkunde van onmogelijk in moeilijk maar haalbaar.",
+    "new": "Zonder zwaartekrachtslingers had de helft van de missies in de catalogus van Orrery niet kunnen vliegen. De buitenplaneten zijn simpelweg te ver voor directe trajecten met chemische raketten — hun kosten in `∆v` zouden overschrijden wat elke raket kan leveren. Zwaartekrachtslingers veranderen die rekensom van onmogelijk in moeilijk maar haalbaar."
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "intro_sentence",
+    "old": "De goedkoopste tweeëngine-reis tussen twee coplanaire cirkelbanen — en de maatstaf waaraan missieplanners al het andere meten.",
+    "new": "De goedkoopste reis met twee motorontstekingen tussen twee coplanaire cirkelbanen — en de maatstaf waaraan missieplanners al het andere afmeten."
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "narrative_101.0",
+    "old": "Je bent in de baan rond de Aarde. Je wilt in de baan rond Mars zijn. Beide banen zijn min of meer cirkels rond de Zon. Hoe kom je van de een naar de ander met zo weinig brandstof mogelijk?",
+    "new": "Je bevindt je in de baan van de Aarde. Je wilt in de baan van Mars komen. Beide banen zijn bij benadering cirkels om de Zon. Hoe kom je van de ene naar de andere met zo min mogelijk brandstof?"
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "narrative_101.1",
+    "old": "Het antwoord, uitgewerkt door Walter Hohmann in 1925, is verbluffend elegant. Vind een ellips die de baan van de Aarde aan de ene kant net raakt en de baan van Mars aan de andere kant net raakt. Zet je motor even aan om de Aarde te verlaten en die ellips in te stappen. Kost ongeveer 8,5 maanden zonder de motor aan te zetten — zwaartekracht doet het werk. Als je aan het andere eind aankomt, zet je opnieuw aan om in de baan van Mars in te gaan. Twee brandstoflozingen, totaal. Klaar.",
+    "new": "Het antwoord, in 1925 uitgewerkt door Walter Hohmann, is verbluffend elegant. Zoek een ellips die de baan van de Aarde aan de ene kant net raakt en de baan van Mars aan de andere kant net raakt. Zet je motor even aan om de Aarde te verlaten en op die ellips over te stappen. Vlieg dan ongeveer 8,5 maanden door zonder de motor ook maar één keer te gebruiken — de zwaartekracht doet het werk. Aan het andere uiteinde zet je de motor opnieuw aan om in de baan van Mars te komen. In totaal twee motorontstekingen. Klaar."
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "narrative_101.2",
+    "old": "Het is de goedkoopste mogelijke reis — maar ook de langzaamste. De 8,5 maanden durende wacht is niet te onderhandelen; natuurkunde stelt de timer in. Wil je sneller gaan? Dat kan, maar je betaalt daarvoor: een steilere ellips, een sneller crossing, een veel grotere remmotor aan het andere eind. Dit is de afweging die je in elke porkchop-plot in /plan kunt zien.",
+    "new": "Het is de goedkoopste mogelijke reis — maar ook de langzaamste. Die 8,5 maanden zijn niet onderhandelbaar; de natuurkunde bepaalt de timer. Sneller willen? Dat kan, maar je betaalt ervoor: een steilere ellips, een snellere oversteek, een veel zwaardere remming aan het andere uiteinde. Dit is de afweging die je terugziet in elke porkchop-plot in /plan."
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "body_paragraphs.0",
+    "old": "Stel je voor dat je in een cirkelbaan rond de Zon bent en je wilt een hogere bereiken — zeg van Aarde naar Mars. De goedkoopste manier is een Hohmann-overdracht: een ellips waarvan het perihelium je startbaan raakt en waarvan het aphelium de doelbaan raakt. Twee motorbranden brengen je daar. Eén bij het perihelium om de baan van de Aarde te verlaten en de ellips in te gaan. Eén bij het aphelium om in de doelbaan cirkelvormig in te gaan.",
+    "new": "Stel je voor dat je in een cirkelbaan om de Zon zit en een hogere baan wilt bereiken — zeg van Aarde naar Mars. De goedkoopste manier is een Hohmann-overdracht: een ellips waarvan het perihelium je startbaan raakt en waarvan het aphelium de doelbaan raakt. Twee motorontstekingen brengen je daar. Eén in het perihelium om de baan van de Aarde te verlaten en de ellips op te gaan. Eén in het aphelium om in de doelbaan weer een cirkelbaan te krijgen."
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "body_paragraphs.1",
+    "old": "Het is het goedkoopste vaste-impuls pad, maar ook het langzaamste. Aarde-naar-Mars duurt ongeveer 259 dagen met een Hohmann. Wil je sneller gaan? Brand harder, vliegen een uitgerekte ellips met hoger perihelium-snelheid. De aankomst V∞ stijgt, de invoerbrand bij de bestemming is groter, je totale ∆v-kosten stijgen steil.",
+    "new": "Het is het goedkoopste pad met impulsmanoeuvres, maar ook het langzaamste. Aarde-naar-Mars duurt met een Hohmann-overdracht ongeveer 259 dagen. Sneller willen? Geef harder gas en vlieg een uitgerekte ellips met een hogere snelheid in het perihelium. De aankomst-V∞ stijgt, de remming bij de bestemming wordt groter en je totale ∆v-kosten lopen steil op."
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "body_paragraphs.2",
+    "old": "Op Orrery's `/plan` porkchop zie je dit direct: er is een rustige bassin van koele cyaan cellen rond het natuurlijke Hohmann-raam, elke 26 maanden voor Mars, en steeds durdere contouren als je naar kortere transitietijden gaat.",
+    "new": "Op de porkchop-plot van Orrery op `/plan` zie je dit direct: rond het natuurlijke Hohmann-venster, voor Mars elke 26 maanden, ligt een rustig dal van koele blauwgroene cellen, met steeds duurdere contouren naarmate je naar kortere reistijden gaat."
+  },
+  {
+    "rel": "science/transfers/hohmann-transfer.json",
+    "at": "diagram_caption",
+    "old": "Aardbaan (binnenste) · Marsbaan (buitenste) · Hohmann-overdracht ellips met perihelium bij Aarde, aphelium bij Mars.",
+    "new": "Baan van de Aarde (binnen) · baan van Mars (buiten) · Hohmann-overdrachtsellips met het perihelium bij de Aarde en het aphelium bij Mars."
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "intro_sentence",
+    "old": "Gegeven twee posities en een reistijd, vind de baan die ze verbindt — het centrale probleem van elk interplanetair traject.",
+    "new": "Zoek bij twee gegeven posities en een reistijd de baan die ze verbindt — het centrale probleem van elk interplanetair traject."
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "narrative_101.0",
+    "old": "De Hohmann-overgang is het goedkoopste pad van de ene baan naar de andere, maar de meeste missies vliegen niet echt Hohmanns. Ze willen vertrekken op een specifieke datum — bijvoorbeeld wanneer een bepaalde raket klaar is, of wanneer een bepaald lanceerplatform beschikbaar is — en ze willen aankomen op een specifieke datum — bijvoorbeeld voordat een stofstorm op Mars gaat liggen. Hohmann laat je niet kiezen. Lambert wel.",
+    "new": "De Hohmann-overdracht is het goedkoopste pad van de ene baan naar de andere, maar de meeste missies vliegen er in de praktijk geen. Ze willen vertrekken op een specifieke datum — bijvoorbeeld wanneer een bepaalde raket klaar is, of wanneer een bepaald lanceerplatform beschikbaar is — en ze willen aankomen op een specifieke datum — bijvoorbeeld zodra een stofstorm op Mars is gaan liggen. Een Hohmann-overdracht laat je niet kiezen. Lambert wel."
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "narrative_101.2",
+    "old": "Dit is de kern van elke porkchop plot die je zult zien. Elke pixel op de porkchop in /plan is één Lambert-probleem: 'vertrek van de Aarde op datum X, bereik Mars op datum Y — wat kost het?' De kleur is het antwoord. Los het tienduizend keer parallel op en je krijgt de hele kaart in één keer. Orrery doet dit in een Web Worker zodat de UI niet vastloopt terwijl het aan het denken is.",
+    "new": "Dit is de kern van elke porkchop-plot die je tegenkomt. Elke pixel op de porkchop in /plan is één Lambert-probleem: 'vertrek van de Aarde op datum X, bereik Mars op datum Y — wat kost het?' De kleur is het antwoord. Los het tienduizend keer parallel op en je krijgt de hele kaart in één keer. Orrery doet dit in een Web Worker, zodat de interface niet vastloopt terwijl hij rekent."
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "body_paragraphs.0",
+    "old": "Lamberts probleem vraagt: ik ben hier, ik wil daar zijn, en ik heb zoveel tijd. Welke ellips moet ik vliegen? Twee positievectoren en een vluchttijd, en de vergelijking produceert de unieke overgangsbaan (of twee — er is een lange weg en een korte weg rond het centrale hemellichaam).",
+    "new": "Het probleem van Lambert vraagt: ik ben hier, ik wil daar zijn, en ik heb zoveel tijd. Welke ellips moet ik vliegen? Uit twee positievectoren en een vluchttijd levert de vergelijking de unieke overdrachtsbaan op (of twee — er is een lange en een korte weg om het centrale hemellichaam heen)."
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "body_paragraphs.1",
+    "old": "De Hohmann-overgang is één specifieke Lambert-oplossing: posities bij tegenovergestelde apsiden, vluchttijd gelijk aan de helft van de periode van de overgangsellips. Draai aan een van beide knoppen — andere posities, andere tijd — en je krijgt een andere ellips. Kortere tijd, meer excentrische ellips, hogere vertrekenergie. De wiskunde verandert niet; alleen de randvoorwaarden.",
+    "new": "De Hohmann-overdracht is één specifieke Lambert-oplossing: posities bij tegenovergestelde apsiden, vluchttijd gelijk aan de helft van de periode van de overdrachtsellips. Draai aan een van beide knoppen — andere posities, andere tijd — en je krijgt een andere ellips. Kortere tijd, meer excentrische ellips, hogere vertrekenergie. De wiskunde verandert niet; alleen de randvoorwaarden."
+  },
+  {
+    "rel": "science/transfers/lambert-problem.json",
+    "at": "diagram_caption",
+    "old": "Twee positievectoren r₁ en r₂; de Lambert-oplosser vindt de unieke overgangsellips die ze verbindt in de vluchttijd.",
+    "new": "Twee positievectoren r₁ en r₂; de Lambert-oplosser vindt de unieke overdrachtsellips die ze in de vluchttijd verbindt."
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "intro_sentence",
+    "old": "Doe alsof de zwaartekracht van één lichaam tegelijk werkt — de benadering die het onoplosbare drielichamenprobleem omzet in een keten van twelichamen Kepler-problemen die je daadwerkelijk kunt oplossen.",
+    "new": "Doe alsof de zwaartekracht steeds van één lichaam komt — de benadering die het onoplosbare drielichamenprobleem omzet in een reeks tweelichamenproblemen van Kepler die je wél kunt oplossen."
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "narrative_101.0",
+    "old": "Hier is een vuil geheim van de orbitale mechanica: de volledige echte fysica — elk lichaam in het zonnestelsel dat aan elk ander lichaam trekt — is wiskundig onoplosbaar op een nette manier. We hebben GEEN gesloten oplossing voor het drielichamenprobleem, laat staan de echte versie met tientallen lichamen. Dus hoe krijgen missieplanners dan iets voor elkaar?",
+    "new": "Hier is een vies geheimpje van de baanmechanica: de volledige echte natuurkunde — elk lichaam in het zonnestelsel dat aan elk ander lichaam trekt — is wiskundig niet netjes op te lossen. Voor het drielichamenprobleem bestaat GEEN gesloten oplossing, laat staan voor de echte versie met tientallen lichamen. Hoe krijgen missieplanners dan toch iets voor elkaar?"
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "narrative_101.1",
+    "old": "Ze vals spelen. Ze doen alsof op elk moment slechts ÉÉN lichaam met zijn zwaartekracht ertoe doet. Nabij de Aarde trekt alleen de Aarde. Tijdens de cruise alleen de Zon. Nabij Mars alleen Mars. Elk van die gebieden wordt een invloedssfeer genoemd, en binnen elk daarvan vliegt het ruimtevaartuig een nette Kepleriaanse kegelsnede. Wanneer het ruimtevaartuig een grens oversteekt, wissel je van coördinatenstelsel en begin je een nieuwe kegelsnede. Aan elkaar geplakt vormen ze het traject. Dat zijn patched conics.",
+    "new": "Ze spelen vals. Ze doen alsof op elk moment maar ÉÉN lichaam met zijn zwaartekracht meetelt. Vlak bij de Aarde trekt alleen de Aarde. Onderweg alleen de Zon. Vlak bij Mars alleen Mars. Elk van die gebieden heet een invloedssfeer, en binnen elk gebied vliegt het ruimtevaartuig langs een nette Kepler-kegelsnede. Steekt het ruimtevaartuig een grens over, dan wissel je van coördinatenstelsel en begin je een nieuwe kegelsnede. Aan elkaar geplakt vormen ze het traject. Dat zijn aaneengeschakelde kegelsneden (patched conics)."
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "narrative_101.2",
+    "old": "De berekening wijkt een paar procent af van de waarheid — klein genoeg dat echte missies ermee plannen als hun eerste benadering, en vervolgens numeriek verfijnen voor de lancering. Het is ook klein genoeg dat Orrery dit allemaal in je browser kan draaien, in een Web Worker, snel genoeg om de hele porkchop opnieuw te tekenen wanneer je het lanceringsjaar versleept. De hele simulator is op deze truc gebouwd.",
+    "new": "De berekening wijkt een paar procent van de waarheid af — klein genoeg dat echte missies er eerst mee plannen en daarna numeriek verfijnen voor de lancering. Het is ook klein genoeg dat Orrery dit allemaal in je browser kan draaien, in een Web Worker, snel genoeg om de hele porkchop opnieuw te tekenen wanneer je het lanceerjaar versleept. De hele simulator is op deze truc gebouwd."
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "body_paragraphs.0",
+    "old": "Echte zwaartekracht is rommelig. Een ruimtevaartuig dat tussen de Aarde en Mars reist, voelt de zwaartekracht van de Aarde, de zwaartekracht van de Zon, de zwaartekracht van Mars, plus alles andere, allemaal tegelijk. De volledige wiskunde (het n-lichamenprobleem) heeft geen gesloten oplossing — alleen numerieke integratie. Dat is traag, kwetsbaar, moeilijk om mee te plannen.",
+    "new": "Echte zwaartekracht is rommelig. Een ruimtevaartuig dat tussen de Aarde en Mars reist, voelt de zwaartekracht van de Aarde, de Zon en Mars, plus al het andere, allemaal tegelijk. De volledige wiskunde (het n-lichamenprobleem) heeft geen gesloten oplossing — alleen numerieke integratie. Dat is traag, kwetsbaar en moeilijk om mee te plannen."
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "body_paragraphs.1",
+    "old": "Patched conics is het werkbare compromis: verklaar een invloedssfeer rond elk lichaam. Binnen de invloedssfeer van de Aarde doet alleen de zwaartekracht van de Aarde ertoe; je vliegt een Kepleriaanse boog rond de Aarde. Steek je de grens over naar het heliocentrische gebied, dan schakel je over naar een zongerichte Kepler-boog. Steek je over naar de invloedssfeer van Mars, dan schakel je weer over. Drie Kepler-problemen, aan elkaar geplakt bij de grenzen.",
+    "new": "Aaneengeschakelde kegelsneden (patched conics) zijn het werkbare compromis: leg rond elk lichaam een invloedssfeer vast. Binnen de invloedssfeer van de Aarde doet alleen de zwaartekracht van de Aarde ertoe; je vliegt een Kepler-boog rond de Aarde. Steek je de grens over naar het heliocentrische gebied, dan schakel je over naar een Kepler-boog met de Zon als middelpunt. Steek je over naar de invloedssfeer van Mars, dan schakel je weer over. Drie Kepler-problemen, aan elkaar geplakt bij de grenzen."
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "body_paragraphs.2",
+    "old": "Het klopt niet maar is nuttig. Fouten bij grenzen zijn klein — hooguit een paar procent van ∆v voor cislunair werk, minder voor heliocentrisch — en de wiskunde wordt hanteerbaar genoeg om in een Web Worker te passen. De `/plan` porkchops van Orrery worden op deze manier berekend; net als de trajecten op `/fly`. Echte vluchtplanning bij NASA gebruikt dezelfde benadering als eerste benadering, en verfijnt vervolgens numeriek voor de lancering.",
+    "new": "Het is fout, maar nuttig. De fouten bij de grenzen zijn klein — hooguit een paar procent van ∆v voor cislunair werk, minder voor heliocentrisch — en de wiskunde wordt hanteerbaar genoeg om in een Web Worker te passen. De porkchop-plots van Orrery op `/plan` worden op deze manier berekend; de trajecten op `/fly` ook. Echte vluchtplanning bij NASA gebruikt dezelfde benadering voor de eerste ruwe berekening en verfijnt die voor de lancering numeriek."
+  },
+  {
+    "rel": "science/transfers/patched-conics.json",
+    "at": "diagram_caption",
+    "old": "Drie referentiekaders, drie kegelsneden: Aarde-gecentreerd → heliocentrisch → Mars-gecentreerd, aan elkaar geplakt bij de grenzen van de invloedssferen.",
+    "new": "Drie referentiekaders, drie kegelsneden: met de Aarde als middelpunt → heliocentrisch → met Mars als middelpunt, aan elkaar geplakt bij de grenzen van de invloedssferen."
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "intro_sentence",
+    "old": "De Kepleriaanse boog die een ruimtevaartuig van de ene baan naar de andere brengt — de zon in één brandpunt, net als elke andere baan.",
+    "new": "De Kepler-boog die een ruimtevaartuig van de ene baan naar de andere brengt — met de Zon in één brandpunt, net als bij elke andere baan."
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "narrative_101.0",
+    "old": "Missieplannen klinkt alsof het om motoren en raketten gaat. Het gaat vooral om het kiezen van een ellips. Elke interplanetaire reis — Apollo naar de maan, Voyager naar Neptunus, Perseverance naar Mars — is gewoon een ruimtevaartuig dat een elliptische baan volgt tussen waar het begon en waar het naartoe gaat. Het mooie woord voor die ellips is de transferbaan.",
+    "new": "Missieplanning klinkt alsof het om motoren en raketten draait. Het draait vooral om het kiezen van een ellips. Elke interplanetaire reis — Apollo naar de Maan, Voyager naar Neptunus, Perseverance naar Mars — is gewoon een ruimtevaartuig dat een elliptische baan volgt tussen waar het begon en waar het naartoe gaat. De vakterm voor die ellips is overdrachtsbaan."
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "narrative_101.1",
+    "old": "Het volgt dezelfde regels als elke andere Kepleriaanse baan. De zon zit in één brandpunt. Het ruimtevaartuig beweegt langzaam aan het verre uiteinde en snel aan het dichtbije uiteinde. Vis-viva werkt nog steeds om de snelheid te berekenen. De derde wet van Kepler geeft je nog steeds de vliegtijd op basis van de grootte. Niets exotisch.",
+    "new": "Het volgt dezelfde regels als elke andere Kepler-baan. De Zon staat in één brandpunt. Het ruimtevaartuig beweegt langzaam aan het verre uiteinde en snel aan het dichtbije uiteinde. De vis-viva-vergelijking werkt nog steeds om de snelheid uit te rekenen. De derde wet van Kepler geeft je nog steeds de vliegtijd uit de afmetingen. Niets exotisch."
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "narrative_101.2",
+    "old": "Het enige dat een transfer ellips anders maakt dan de baan van een planeet is dat het ruimtevaartuig er maar de HELFT van aflegt. Het stapt op aan het ene uiteinde, rijdt naar het andere en stapt af. Daarom heeft het ∆v budget altijd twee grote branding — één om de ellips binnen te gaan, één om eruit te gaan. Het stuk in het midden, de acht maanden durende vrije vlucht, kost helemaal niets.",
+    "new": "Het enige wat een overdrachtsellips anders maakt dan de baan van een planeet, is dat het ruimtevaartuig er maar de HELFT van aflegt. Het stapt op aan het ene uiteinde, rijdt naar het andere en stapt af. Daarom bevat het ∆v-budget altijd twee grote motorontstekingen — één om de ellips op te gaan, één om hem te verlaten. Het stuk in het midden, de vrije vlucht van acht maanden, kost helemaal niets."
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "body_paragraphs.0",
+    "old": "Zodra je uit de baan van de aarde bent gebrand, zit je op een ellips om de zon. Die ellips is de transferbaan, en heeft dezelfde eigenschappen als elke andere: halve lange as, excentriciteit, perihelium, aphelium. Het feit dat je ergens naartoe gaat verandert de geometrie niet — zwaartekracht geeft niets om je bestemming.",
+    "new": "Zodra je met een motorontsteking de baan van de Aarde hebt verlaten, zit je op een ellips om de Zon. Die ellips is de overdrachtsbaan, en hij heeft dezelfde eigenschappen als elke andere: halve lange as, excentriciteit, perihelium, aphelium. Het feit dat je ergens naartoe gaat verandert de geometrie niet — de zwaartekracht trekt zich niets van je bestemming aan."
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "body_paragraphs.1",
+    "old": "Twee ankerpunten definiëren een transfer ellips: waar je begon (perihelium als je naar buiten gaat) en waar je zult eindigen (aphelium). De halve lange as is het gemiddelde van die twee stralen. Pas een van beide ankerpunten aan en de hele ellips verandert van vorm — ga verder naar buiten, de ellips rekt uit, de reis duurt langer.",
+    "new": "Twee ankerpunten leggen een overdrachtsellips vast: waar je begon (het perihelium als je naar buiten gaat) en waar je zult eindigen (het aphelium). De halve lange as is het gemiddelde van die twee stralen. Pas een van beide ankerpunten aan en de hele ellips verandert van vorm — ga je verder naar buiten, dan rekt de ellips uit en duurt de reis langer."
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "body_paragraphs.2",
+    "old": "Op de `/fly` HUD van Orrery zie je het ruimtevaartuig deze ellips in real time volgen. De transferboog op het scherm is een visuele weergave van dezelfde kegelsnede die de wiskunde zegt dat het is — de zon in één brandpunt, perihelium achter je, aphelium voor je.",
+    "new": "Op de `/fly`-HUD van Orrery zie je het ruimtevaartuig deze ellips in realtime volgen. De overdrachtsboog op het scherm is de weergave van precies de kegelsnede die de wiskunde voorschrijft — de Zon in één brandpunt, het perihelium achter je, het aphelium voor je."
+  },
+  {
+    "rel": "science/transfers/transfer-ellipse.json",
+    "at": "diagram_caption",
+    "old": "Twee coplanaire banen (vertrek binnen, bestemming buiten) verbonden door een transfer ellips met de zon in één brandpunt.",
+    "new": "Twee coplanaire banen (vertrek binnen, bestemming buiten) verbonden door een overdrachtsellips met de Zon in één brandpunt."
+  }
 ]

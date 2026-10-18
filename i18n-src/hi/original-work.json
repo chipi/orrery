@@ -367,7 +367,7 @@
       "title": "Space Shuttle Orbiter"
     },
     "/images/anatomy/space-shuttle-stack_webp": {
-      "title": "Space Shuttle stack"
+      "title": "Space Shuttle स्टैक"
     },
     "/images/anatomy/spektr-rg_webp": {
       "title": "Spektr-RG"
@@ -1094,7 +1094,7 @@
     },
     "/images/colophon/model-launcher-titan-ii-glv_webp": {
       "title": "Titan II GLV",
-      "what": "सुदृढ़ एकसमान दो-चरणीय जो crewed Gemini कैप्सूल को प्रक्षेपित किया।",
+      "what": "क्रू वाले Gemini कैप्सूलों को प्रक्षेपित करने वाला पतला, एकसमान दो-चरणीय रॉकेट।",
       "where": "उड़ान · प्रक्षेपण/आरोहण"
     },
     "/images/colophon/model-launcher-atlas-lv-3b_webp": {
@@ -1109,22 +1109,22 @@
     },
     "/images/colophon/model-launcher-long-march-2f_webp": {
       "title": "Long March 2F",
-      "what": "चीन का crewed लॉन्चर — कोर, चार तरल strap-ons, और एक लॉन्च-एस्केप टावर (Shenzhou)।",
+      "what": "चीन का क्रू वाला प्रक्षेपण यान — कोर, चार तरल स्ट्रैप-ऑन, और प्रक्षेपण-पलायन टावर (Shenzhou)।",
       "where": "उड़ान · प्रक्षेपण/आरोहण"
     },
     "/images/colophon/model-launcher-long-march-3b_webp": {
       "title": "Long March 3B",
-      "what": "चीनी GTO कार्यहरण — एक कोर चार तरल strap-ons के साथ (Chang'e चंद्र मिशन)।",
+      "what": "चीन का GTO कार्यघोड़ा — चार तरल स्ट्रैप-ऑन वाला कोर (Chang'e चंद्र मिशन)।",
       "where": "उड़ान · प्रक्षेपण/आरोहण"
     },
     "/images/colophon/model-launcher-long-march-5_webp": {
       "title": "Long March 5",
-      "what": "चीन का भारी \"Fat Five\" — एक चौड़ा cryogenic कोर चार बड़े बूस्टरों के साथ।",
+      "what": "चीन का भारी \"Fat Five\" — चार बड़े बूस्टरों वाला चौड़ा क्रायोजेनिक कोर।",
       "where": "उड़ान · प्रक्षेपण/आरोहण"
     },
     "/images/colophon/model-launcher-pslv_webp": {
       "title": "PSLV",
-      "what": "इसरो का कार्यहरण — एक सुंदर कोर छह ठोस strap-on बूस्टरों से घिरा हुआ।",
+      "what": "इसरो का कार्यघोड़ा — छह ठोस स्ट्रैप-ऑन बूस्टरों से घिरा पतला कोर।",
       "where": "उड़ान · प्रक्षेपण/आरोहण"
     },
     "/images/colophon/model-launcher-lvm3_webp": {
@@ -1139,7 +1139,7 @@
     },
     "/images/colophon/model-launcher-h3_webp": {
       "title": "H3",
-      "what": "JAXA का नया cryogenic कोर ठोस strap-on बूस्टरों के साथ।",
+      "what": "JAXA का नया क्रायोजेनिक कोर, ठोस स्ट्रैप-ऑन बूस्टरों के साथ।",
       "where": "उड़ान · प्रक्षेपण/आरोहण"
     },
     "/images/colophon/model-launcher-ariane-1_webp": {
@@ -1289,12 +1289,12 @@
     },
     "/images/colophon/model-descent-comet-lander_webp": {
       "title": "धूमकेतु हार्पून लैंडर",
-      "what": "तीन-पैर सूक्ष्म गुरुत्वाकर्षण लैंडर जिसमें एंकरिंग हार्पून हैं (Philae at comet 67P)।",
+      "what": "तीन पैरों वाला सूक्ष्म-गुरुत्व लैंडर, जिसमें लंगर डालने वाले हार्पून हैं (धूमकेतु 67P पर Philae)।",
       "where": "उड़ान · अवतरण/लैंडिंग"
     },
     "/images/colophon/model-descent-jupiter-probe_webp": {
       "title": "बृहस्पति वायुमंडलीय प्रोब",
-      "what": "गोलाकार-शंकु एरोशेल और गहरे वायुमंडल प्रवेश के लिए पैराशूट (Galileo probe)।",
+      "what": "गहरे वायुमंडल में प्रवेश के लिए गोला-शंकु एरोशेल और पैराशूट (Galileo प्रोब)।",
       "where": "उड़ान · अवतरण/लैंडिंग"
     },
     "/images/colophon/model-descent-titan-parachute_webp": {

@@ -1,0 +1,206 @@
+[
+  {
+    "rel": "fleet/lander/luna-16.json",
+    "at": "tagline",
+    "old": "첫 번째 로봇 lunar 샘플 반환",
+    "new": "최초의 로봇 달 시료 귀환"
+  },
+  {
+    "rel": "fleet/lander/luna-16.json",
+    "at": "best_known_for",
+    "old": "첫 번째 로봇 lunar 샘플 반환",
+    "new": "최초의 로봇 달 시료 귀환"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-4.json",
+    "at": "tagline",
+    "old": "첫 성공적인 화성 flyby",
+    "new": "최초의 화성 근접 비행 성공"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-4.json",
+    "at": "best_known_for",
+    "old": "첫 성공적인 화성 flyby",
+    "new": "최초의 화성 근접 비행 성공"
+  },
+  {
+    "rel": "fleet/space-suit/krechet-94.json",
+    "at": "description",
+    "old": "N1/L3 유인 달 착륙 계획이 취소되면서 개발이 중단된 소비에트 달 표면 우주복. 후면 진입식 단일 구조로 PLSS가 뒷면 해치에 내장되어 있으며, 이는 Orlan과 공유되는 설계 패턴(둘 다 1967~1969년에 동시에 개발됨)으로, 나중에 Feitian이 채택했습니다. Krechet 하드웨어는 프로그램 취소 후에도 살아남아 박물관 컬렉션에 보관되어 있습니다(특히 모스크바의 Memorial Museum of Cosmonautics). 이름은 \"gyrfalcon\"을 뜻하며, 매 종류 중 가장 큰 새입니다.",
+    "new": "N1/L3 유인 달 착륙 계획이 취소되면서 개발이 중단된 소비에트 달 표면 우주복. 후면 진입식 단일 구조로 PLSS가 뒷면 해치에 내장되어 있으며, 이는 Orlan과 공유되는 설계 패턴(둘 다 1967~1969년에 동시에 개발됨)으로, 나중에 Feitian이 채택했습니다. Krechet 하드웨어는 프로그램 취소 후에도 살아남아 박물관 컬렉션에 보관되어 있습니다(특히 모스크바의 Memorial Museum of Cosmonautics). 이름은 '흰매'를 뜻하며, 매 종류 중 가장 큰 새입니다."
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.3.note",
+    "old": "SM 극저온 교반(cryo-stir) 명령이 단락 화재 및 탱크 파열을 초래함. \"Houston, we've had a problem.\" 전력 및 물이 감소; LM Aquarius가 구명정이 됨.",
+    "new": "SM 극저온 교반(cryo-stir) 명령이 단락 화재 및 탱크 파열을 초래함. \"휴스턴, 문제가 생겼다.\" 전력 및 물이 감소; LM Aquarius가 구명정이 됨."
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "events.6.note",
+    "old": "EVA-3 / 상승 전: 스콧이 함께 떨어진 망치와 깃털을 텔레시하며 둘 다 동시에 regolith에 충돌하여 갈릴레오의 1589년 예측을 생방송으로 검증.",
+    "new": "EVA-3 / 상승 전: 스콧이 망치와 깃털을 함께 떨어뜨리는 장면을 중계했고, 둘은 동시에 레골리스에 닿아 갈릴레오의 1589년 예측을 생방송으로 검증했다."
+  },
+  {
+    "rel": "missions/moon/apollo16.json",
+    "at": "description",
+    "old": "다섯 번째 유인 달 착륙이자 비마(非mare) 고지대 지역으로의 첫 착륙. 지질학자들은 데스카르테스가 화산성이라고 예상했지만, Apollo 16이 이를 부정했다. 귀환한 모든 암석이 각력(충돌로 부서진 잔해)이었으므로, 달의 고지대에 대한 이해가 고대 화산 활동의 산물이 아닌 재앙적 충돌의 산물로 재형성되었다. 영과 듀크는 LRV의 지원을 받아 총 20시간 14분의 EVA 3회를 완료했고, 26.7 km를 횡단했으며, 95.7 kg의 표본을 회수했다(당시까지 가장 많은 Apollo 수집량). 영의 \"달의 그랑프리\"는 LRV의 텔레비전 방송 속력 테스트로 최고 약 17 km/h에 도달했다. 듀크의 11초 홉 시도는 장거리 점프 기록 도전 중에 PLSS 배낭 손상의 위험에 빠지게 하여 중단되었다. 찰리 듀크의 가족 사진과 \"Far-UV Camera/Spectrograph\" — 다른 세계의 표면에서 운영된 첫 번째 천문 관측소 — 두 가지 모두 착륙 지점에 남겨졌다. Mattingly는 원래 Apollo 13에 배정되었으나(홍역 우려로 발사 전에 교체됨) 마침내 달로의 비행을 감행했다.",
+    "new": "다섯 번째 유인 달 착륙이자 바다(mare)가 아닌 고지대 지역으로의 첫 착륙. 지질학자들은 데스카르테스가 화산성이라고 예상했지만, Apollo 16이 이를 부정했다. 귀환한 모든 암석이 각력(충돌로 부서진 잔해)이었으므로, 달의 고지대에 대한 이해가 고대 화산 활동의 산물이 아닌 재앙적 충돌의 산물로 재형성되었다. 영과 듀크는 LRV의 지원을 받아 총 20시간 14분의 EVA 3회를 완료했고, 26.7 km를 횡단했으며, 95.7 kg의 표본을 회수했다(당시까지 가장 많은 Apollo 수집량). 영의 \"달의 그랑프리\"는 LRV의 텔레비전 방송 속력 테스트로 최고 약 17 km/h에 도달했다. 듀크의 11초 홉 시도는 장거리 점프 기록 도전 중에 PLSS 배낭 손상의 위험에 빠지게 하여 중단되었다. 찰리 듀크의 가족 사진과 \"Far-UV Camera/Spectrograph\" — 다른 세계의 표면에서 운영된 첫 번째 천문 관측소 — 두 가지 모두 착륙 지점에 남겨졌다. Mattingly는 원래 Apollo 13에 배정되었으나(홍역 우려로 발사 전에 교체됨) 마침내 달로의 비행을 감행했다."
+  },
+  {
+    "rel": "moon-sites/beresheet.json",
+    "at": "fact",
+    "old": "최초의 민간 자금 달 착륙 시도 — 이스라엘 비영리단체 SpaceIL의 585kg 착륙선. 달 궤도에 도달했으나 하강 중 자이로스코프 고장으로 인해 엔진이 정지되었고 시속 약 950m/s(거의 1km/s)의 속도로 충돌했다. 니켈 디스크에 새겨진 '달 도서관'과 인류의 지식, 그리고 극한 생물로 암호생물증(cryptobiosis) 능력이 있는 거대곰(tardigrades)의 샘플을 싣고 있었으며, 이들이 충돌 시 생존했는지는 알 수 없다. Beresheet 2(계획 중) 프로젝트에 영감을 주었다.",
+    "new": "최초의 민간 자금 달 착륙 시도 — 이스라엘 비영리단체 SpaceIL의 585kg 착륙선. 달 궤도에 도달했으나 하강 중 자이로스코프 고장으로 인해 엔진이 정지되었고 시속 약 950m/s(거의 1km/s)의 속도로 충돌했다. 니켈 디스크에 새겨진 '달 도서관'과 인류의 지식, 그리고 극한 생물로 암호생물증(cryptobiosis) 능력이 있는 완보동물(tardigrades)의 샘플을 싣고 있었으며, 이들이 충돌 시 생존했는지는 알 수 없다. Beresheet 2(계획 중) 프로젝트에 영감을 주었다."
+  },
+  {
+    "rel": "original-work.json",
+    "at": "anatomy_art./images/anatomy/space-shuttle-stack_webp.title",
+    "old": "Space Shuttle stack",
+    "new": "Space Shuttle 발사 구성"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-descent-comet-lander_webp.what",
+    "old": "앵커링 작살을 갖춘 세다리 미소 중력 착륙선 (Philae at comet 67P).",
+    "new": "앵커링 작살을 갖춘 세다리 미소 중력 착륙선 (67P 혜성의 Philae)."
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-descent-jupiter-probe_webp.what",
+    "old": "심층 대기 진입용 구-원뿔형 에어로셸 및 낙하산 (Galileo probe).",
+    "new": "심층 대기 진입용 구-원뿔형 에어로셸 및 낙하산 (Galileo 탐사체)."
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.Landing-site stories.where",
+    "old": "달 + 화성 sites",
+    "new": "달 + 화성 착륙지"
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.Surface + panorama captions.where",
+    "old": "달 + 화성 panoramas",
+    "new": "달 + 화성 파노라마"
+  },
+  {
+    "rel": "programs/apollo.json",
+    "at": "legacy.1.md",
+    "old": "Apollo의 투자 수익은 여전히 논쟁 중이지만, 그 윤곽은 명확하다. 프로그램은 당시 가치로 약 $25.8 billion — 오늘날 $250 billion을 훨씬 넘는다 — 비용이 들었고, 전성기에는 NASA, 계약업체, 대학들을 통틀어 약 400,000명을 고용했다. 이것은 의도적인 산업 및 교육 확장이었지, 단순히 로켓만이 아니었고, 대부분은 달 탐사보다 오래 살아남았다.",
+    "new": "Apollo의 투자 수익은 여전히 논쟁 중이지만, 그 윤곽은 명확하다. 프로그램은 당시 가치로 약 258억 달러 — 오늘날 가치로 2,500억 달러를 훨씬 넘는다 — 비용이 들었고, 전성기에는 NASA, 계약업체, 대학들을 통틀어 약 400,000명을 고용했다. 이것은 의도적인 산업 및 교육 확장이었지, 단순히 로켓만이 아니었고, 대부분은 달 탐사보다 오래 살아남았다."
+  },
+  {
+    "rel": "programs/galileo.json",
+    "at": "legacy.1.md",
+    "old": "두 번째는 목성계 전체다. 거대 행성에 대한 최초의 지속적 연구, 내부에서 샘플링된 대기, 지도화된 자기장, 그리고 거의 8년간의 궤도 비행을 통해 Voyager의 glimpses에서 이해된 세계로 변모한 네 개의 큰 위성들.",
+    "new": "두 번째는 목성계 전체다. 거대 행성에 대한 최초의 지속적 연구, 내부에서 샘플링된 대기, 지도화된 자기장, 그리고 거의 8년간의 궤도 비행을 통해 Voyager가 잠깐 엿본 모습에서 이해된 세계로 변모한 네 개의 큰 위성들."
+  },
+  {
+    "rel": "rockets/soyuz-fregat.json",
+    "at": "description",
+    "old": "Soyuz-FG (현재 퇴역함) 및 Fregat 상단 스테이지 — 중형 행성간 임무의 표준 ESA-Roscosmos 조합. 극저온 프리(cryogenic-free) 설계는 하단 스테이지에 등유-LOX를 사용하고 Fregat의 재점화 가능한 쌍추진제(hypergolic propellants)를 정밀한 주입을 위해 사용합니다. ESA의 Mars Express(2003), Cluster 자기권 4중 위성(quartet), 그리고 대부분의 Soyuz-2 이전 ISS 보급 비행을 발사했습니다.",
+    "new": "Soyuz-FG (현재 퇴역함) 및 Fregat 상단 스테이지 — 중형 행성간 임무의 표준 ESA-Roscosmos 조합. 극저온 추진제를 쓰지 않는 설계는 하단 스테이지에 등유-LOX를 사용하고 Fregat의 재점화 가능한 자연 발화성 추진제를 정밀한 주입을 위해 사용합니다. ESA의 Mars Express(2003), Cluster 자기권 위성 4기, 그리고 대부분의 Soyuz-2 이전 ISS 보급 비행을 발사했습니다."
+  },
+  {
+    "rel": "satellites/deimos.json",
+    "at": "mission_visits.0",
+    "old": "Viking 2 orbiter — 미국, 1977년 (2000년 이전의 가장 고해상도 화상)",
+    "new": "Viking 2 궤도선 — 미국, 1977년 (2000년 이전의 가장 고해상도 화상)"
+  },
+  {
+    "rel": "satellites/io.json",
+    "at": "mission_visits.1",
+    "old": "Galileo orbiter — 미국, 1995–2003 (여러 번의 근접 비행)",
+    "new": "Galileo 궤도선 — 미국, 1995–2003 (여러 번의 근접 비행)"
+  },
+  {
+    "rel": "satellites/phobos.json",
+    "at": "mission_visits.0",
+    "old": "Viking 1 orbiter — 미국, 1977년 (첫 근거리 영상)",
+    "new": "Viking 1 궤도선 — 미국, 1977년 (첫 근거리 영상)"
+  },
+  {
+    "rel": "science/life-in-space/surface-dust-mitigation.json",
+    "at": "body_paragraphs.3",
+    "old": "등장한 완화 아키텍처는 suitlock 에어록이다. 우주복을 가압 에어록을 통해 순환시키는 대신(Apollo, Shuttle, ISS 접근법), suitlock은 백팩 포트를 통해 거주지 외부 선체에 부착된 채로 우주복을 영구적으로 외부에 유지한다. 승무원은 가압 부피로 먼지를 가져오지 않고 거주지 내부에서 우주복으로 올라간다. Mars Z-2 프로토타입, Boeing-Collins Aerospace Artemis EVA 우주복, 러시아 Orlan 파생 ILRS 우주복, 중국 Feitian 파생 달 EVA 우주복은 모두 suitlock 부착을 중심으로 설계되었다. 보충 기술: Electrostatic Dust Shield(ESD), 표면 코팅에 AC 전압을 가해 전기 유체역학적 힘으로 충전된 먼지를 들어 올리는 NASA Kennedy 발명품으로, 실험실 + 소규모 비행 규모(CubeSat 실험)에서 입증되었다. 각 에어록 사이클에서의 내부 HEPA 여과. 더 깊은 거주지 영역에 재진입하기 전의 오염 제거 샤워(물 헹굼). 이 모든 것은 필요하다; 어느 것도 단독으로는 충분하지 않다. 먼지는 30일을 초과하는 모든 표면 체류의 가장 많이 관리되는 일상 운영 위험이 될 것이다.",
+    "new": "등장한 완화 아키텍처는 슈트록(suitlock)이다. 우주복을 가압 에어록을 통해 순환시키는 대신(Apollo, Shuttle, ISS 접근법), suitlock은 백팩 포트를 통해 거주지 외부 선체에 부착된 채로 우주복을 영구적으로 외부에 유지한다. 승무원은 가압 부피로 먼지를 가져오지 않고 거주지 내부에서 우주복으로 올라간다. Mars Z-2 프로토타입, Boeing-Collins Aerospace Artemis EVA 우주복, 러시아 Orlan 파생 ILRS 우주복, 중국 Feitian 파생 달 EVA 우주복은 모두 suitlock 부착을 중심으로 설계되었다. 보충 기술: Electrostatic Dust Shield(ESD), 표면 코팅에 AC 전압을 가해 전기 유체역학적 힘으로 충전된 먼지를 들어 올리는 NASA Kennedy 발명품으로, 실험실 + 소규모 비행 규모(CubeSat 실험)에서 입증되었다. 각 에어록 사이클에서의 내부 HEPA 여과. 더 깊은 거주지 영역에 재진입하기 전의 오염 제거 샤워(물 헹굼). 이 모든 것은 필요하다; 어느 것도 단독으로는 충분하지 않다. 먼지는 30일을 초과하는 모든 표면 체류의 가장 많이 관리되는 일상 운영 위험이 될 것이다."
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "narrative_101.2",
+    "old": "/missions의 모든 행성 간 임무 카드에서 이 숫자를 볼 수 있다. ∆v_TLI 또는 ∆v_TMI다. 임무 설계에서 가장 큰 단일 결정이다 — 너무 작으면 지구를 벗어나지 못하고, 너무 크면 탑재체를 싣고 갈 수 있었던 연료를 낭비한다. Apollo의 TLI는 3.05 km/s였다. Curiosity의 TMI는 3.7 km/s였다. Voyager 2의 trans-Jupiter 투입은 약 7 km/s로, 예산 대부분을 차지했다.",
+    "new": "/missions의 모든 행성 간 임무 카드에서 이 숫자를 볼 수 있다. ∆v_TLI 또는 ∆v_TMI다. 임무 설계에서 가장 큰 단일 결정이다 — 너무 작으면 지구를 벗어나지 못하고, 너무 크면 탑재체를 싣고 갈 수 있었던 연료를 낭비한다. Apollo의 TLI는 3.05 km/s였다. Curiosity의 TMI는 3.7 km/s였다. Voyager 2의 목성 전이 투입은 약 7 km/s로, 예산 대부분을 차지했다."
+  },
+  {
+    "rel": "science/mission-phases/trans-x-injection.json",
+    "at": "body_paragraphs.1",
+    "old": "연소는 주차 궤도의 근지점에서 이루어지며, 오베르트 효과 덕분에 추진제 킬로그램당 가장 많은 에너지를 얻는다. 화성으로 가는 호만 전이의 경우 TMI에 약 3.6 km/s가 든다 — LEO에 도달하는 데 든 약 9.4 km/s 상승 ∆v의 대략 3분의 1이다. Voyager 2의 trans-Jupiter 투입은 약 7 km/s로 가장 큰 단일 연소였고, 토성, 천왕성, 해왕성은 그 뒤 추가 출발 연소가 아니라 중력 도움으로 도달했다.",
+    "new": "연소는 주차 궤도의 근지점에서 이루어지며, 오베르트 효과 덕분에 추진제 킬로그램당 가장 많은 에너지를 얻는다. 화성으로 가는 호만 전이의 경우 TMI에 약 3.6 km/s가 든다 — LEO에 도달하는 데 든 약 9.4 km/s 상승 ∆v의 대략 3분의 1이다. Voyager 2의 목성 전이 투입은 약 7 km/s로 가장 큰 단일 연소였고, 토성, 천왕성, 해왕성은 그 뒤 추가 출발 연소가 아니라 중력 도움으로 도달했다."
+  },
+  {
+    "rel": "science/orbits/apsides.json",
+    "at": "narrative_101.0",
+    "old": "모든 타원 궤도에는 가장 높은 지점과 가장 낮은 지점이 있습니다. apsis란 바로 이 두 극단 중 하나를 가리킵니다. 공전하는 천체에 가장 가까워지는 지점이거나 가장 멀어지는 지점입니다. 우주선 담당자들이 이 두 지점에 집착하는 것은 거의 모든 중요한 엔진 분사가 둘 중 한 곳에서 일어나기 때문입니다.",
+    "new": "모든 타원 궤도에는 가장 높은 지점과 가장 낮은 지점이 있습니다. 장축단(apsis)이란 바로 이 두 극단 중 하나를 가리킵니다. 공전하는 천체에 가장 가까워지는 지점이거나 가장 멀어지는 지점입니다. 우주선 담당자들이 이 두 지점에 집착하는 것은 거의 모든 중요한 엔진 분사가 둘 중 한 곳에서 일어나기 때문입니다."
+  },
+  {
+    "rel": "science/orbits/apsides.json",
+    "at": "body_paragraphs.0",
+    "old": "apsis는 천체가 초점으로부터 최소 거리 또는 최대 거리에 있는 타원 궤도 위의 두 지점 중 하나입니다. 두 초점을 모두 지나며 이 두 지점을 잇는 선이 apsis선(line of apsides)입니다. 모든 케플러 궤도에는 정확히 두 개가 있습니다. 가장 가까운 지점과 가장 먼 지점입니다.",
+    "new": "장축단(apsis)은 천체가 초점으로부터 최소 거리 또는 최대 거리에 있는 타원 궤도 위의 두 지점 중 하나입니다. 두 초점을 모두 지나며 이 두 지점을 잇는 선이 apsis선(line of apsides)입니다. 모든 케플러 궤도에는 정확히 두 개가 있습니다. 가장 가까운 지점과 가장 먼 지점입니다."
+  },
+  {
+    "rel": "messages",
+    "at": "plan_sandbox_cheaper",
+    "old": "pinned 보다는 더 싼",
+    "new": "고정값보다 저렴"
+  },
+  {
+    "rel": "messages",
+    "at": "plan_sandbox_costlier",
+    "old": "pinned 보다는 costlier",
+    "new": "고정값보다 비쌈"
+  },
+  {
+    "rel": "messages",
+    "at": "credits_used_route_rockets",
+    "old": "미션 카탈로그 (rockets)",
+    "new": "미션 카탈로그 (로켓)"
+  },
+  {
+    "rel": "messages",
+    "at": "why_inclination_title",
+    "old": "왜 inclination?",
+    "new": "왜 궤도 경사각인가?"
+  },
+  {
+    "rel": "messages",
+    "at": "why_aphelion_title",
+    "old": "왜 aphelion?",
+    "new": "왜 원일점인가?"
+  },
+  {
+    "rel": "messages",
+    "at": "why_peak_speed_title",
+    "old": "왜 최고봉 heliocentric 속도?",
+    "new": "왜 태양 중심 최고 속도인가?"
+  },
+  {
+    "rel": "messages",
+    "at": "station_banner_long_duration_link",
+    "old": "→ 인간적인 spaceflight 내구시간",
+    "new": "→ 유인 우주 비행의 지구력"
+  },
+  {
+    "rel": "messages",
+    "at": "science_layer_apsides_label",
+    "old": "Apsides + 진실한 anomaly",
+    "new": "장축단 + 진근점 이각"
+  },
+  {
+    "rel": "messages",
+    "at": "mars_map_aria",
+    "old": "Mars 2D equirectangular 지도",
+    "new": "화성 2D 정거원통도법 지도"
+  }
+]

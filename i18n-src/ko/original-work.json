@@ -367,7 +367,7 @@
       "title": "Space Shuttle Orbiter"
     },
     "/images/anatomy/space-shuttle-stack_webp": {
-      "title": "Space Shuttle stack"
+      "title": "Space Shuttle 발사 구성"
     },
     "/images/anatomy/spektr-rg_webp": {
       "title": "Spektr-RG"
@@ -1289,12 +1289,12 @@
     },
     "/images/colophon/model-descent-comet-lander_webp": {
       "title": "혜성 작살 착륙선",
-      "what": "앵커링 작살을 갖춘 세다리 미소 중력 착륙선 (Philae at comet 67P).",
+      "what": "앵커링 작살을 갖춘 세다리 미소 중력 착륙선 (67P 혜성의 Philae).",
       "where": "비행 · 하강/착륙"
     },
     "/images/colophon/model-descent-jupiter-probe_webp": {
       "title": "목성 대기 프로브",
-      "what": "심층 대기 진입용 구-원뿔형 에어로셸 및 낙하산 (Galileo probe).",
+      "what": "심층 대기 진입용 구-원뿔형 에어로셸 및 낙하산 (Galileo 탐사체).",
       "where": "비행 · 하강/착륙"
     },
     "/images/colophon/model-descent-titan-parachute_webp": {
@@ -1618,7 +1618,7 @@
     "Landing-site stories": {
       "title": "착륙지 이야기",
       "what": "달과 화성의 착륙지에 대한 55개 다중 장 서사 역사. 모든 사진에 원본 캡션 포함.",
-      "where": "달 + 화성 sites"
+      "where": "달 + 화성 착륙지"
     },
     "Science encyclopedia": {
       "title": "과학 백과사전",
@@ -1638,7 +1638,7 @@
     "Surface + panorama captions": {
       "title": "표면 + 파노라마 캡션",
       "what": "각 달과 화성 장면에서 무엇을 보고 있는지 이름 지은 핫스팟 레이블과 주석이 달린 파노라마 캡션.",
-      "where": "달 + 화성 panoramas"
+      "where": "달 + 화성 파노라마"
     },
     "Audio tour scripts": {
       "title": "오디오 투어 스크립트",

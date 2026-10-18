@@ -175,6 +175,8 @@ export const ORIGIN_NAMES = {
     CAST: '中国空间技术研究院',
     CASC: '中国航天科技集团',
     CALT: '中国运载火箭技术研究院',
+    'International Lunar Research Station': '国际月球科研站',
+    'Chinese Space Station': '中国空间站',
     Apstar: '亚太卫星',
     AsiaSat: '亚洲卫星',
     Asiasat: '亚洲卫星',

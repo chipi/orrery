@@ -82,11 +82,13 @@ export const AGENCIES: AgencyInfo[] = [
     aliases: ['cnsa', 'china national space administration'],
   },
   {
-    // China Manned Space Agency — operates the Tiangong programme under
-    // the CNSA umbrella. Reuses CNSA's mark per existing agency-logo.ts.
+    // China Manned Space Agency — runs China's crewed programme (Shenzhou,
+    // Tiangong, Tianzhou), separate from CNSA, so CNSA's insignia is not its
+    // mark. No free emblem exists (Commons has only a text wordmark, unreadable
+    // at badge size): the badge shows the name alone.
     short: 'CMSA',
     full: 'China Manned Space Agency',
-    logo: 'cnsa.svg',
+    logo: null,
     color: '#DE2910',
     aliases: ['cmsa', 'china manned space agency'],
   },

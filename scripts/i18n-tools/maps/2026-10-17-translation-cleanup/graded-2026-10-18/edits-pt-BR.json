@@ -1,0 +1,514 @@
+[
+  {
+    "rel": "messages",
+    "at": "audio_action_tour_driving",
+    "old": "O tour está conduzindo — pare-o para navegar livremente.",
+    "new": "O tour está no comando — interrompa-o para navegar livremente.",
+    "grade": "MINOR",
+    "issue": "'conduzindo' is a literal calque of 'driving' and 'pare-o' is stiff."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_illustration_alt_landing_computer",
+    "old": "Um módulo de pouso flutuando em motor estrangulado acima da superfície, sua curva de taxa de descida fantasmagórica amenizando até zero.",
+    "new": "Um módulo de pouso pairando acima da superfície com o motor em potência controlada; a curva da taxa de descida, esmaecida ao lado, vai suavizando até zero.",
+    "grade": "MINOR",
+    "issue": "Awkward, machine-like phrasing ('motor estrangulado', 'curva fantasmagórica amenizando')."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_lss_hook",
+    "old": "As Voyagers pegaram um alinhamento raro a cada 176 anos de Júpiter, Saturno, Urano e Netuno — o 'Grand Tour' — permitindo que uma única sonda slingshot de mundo a mundo. Perder essa janela e não voltaria até o século 22.",
+    "new": "As Voyagers aproveitaram um alinhamento raro, que só ocorre a cada 176 anos, de Júpiter, Saturno, Urano e Netuno — o 'Grand Tour' —, permitindo que uma única sonda fosse de mundo em mundo por estilingue gravitacional. Quem perdesse essa janela só a veria de novo no século 22.",
+    "grade": "BROKEN",
+    "issue": "Leaves the English verb 'slingshot' untranslated and the last sentence is ungrammatical."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_illustration_alt_plan_a_mission",
+    "old": "O arco completo de uma missão em um frame — lançamento, órbita, elipse de transferência e chegada como uma única linha de jornada contínua.",
+    "new": "O arco completo de uma missão em um único quadro — lançamento, órbita, elipse de transferência e chegada como uma só linha contínua de viagem.",
+    "grade": "MINOR",
+    "issue": "'frame' left in English."
+  },
+  {
+    "rel": "messages",
+    "at": "galaxy_name_andromeda",
+    "old": "Galáxia Andromeda (M31)",
+    "new": "Galáxia de Andrômeda (M31)",
+    "grade": "MINOR",
+    "issue": "Missing accent and preposition in the Portuguese form."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_boosters_title",
+    "old": "Quantidade de aceleradores",
+    "new": "Quantidade de propulsores auxiliares",
+    "grade": "MINOR",
+    "issue": "'aceleradores' is not the usual term for rocket boosters."
+  },
+  {
+    "rel": "essays/seven-minutes.json",
+    "at": "body.19.md",
+    "old": "No decorrer da história das missões a Marte especificamente, o problema do pouso tem uma contagem de mortos. Mars 2, em 1971, tornou-se o primeiro objeto da Terra a tocar a superfície marciana — e bateu, matando a si mesmo no impacto, o sistema de descida tendo falhado antes da sequência do paraquedas estar completa. Mars Polar Lander, em dezembro de 1999, quase certamente desligou seus motores de descida prematuramente quando vibrações das pernas se desdobrando foram mal interpretadas como um sinal de toque, e caiu os últimos quarenta metros em velocidade total. Beagle 2, na Noite de Natal de 2003, conseguiu passar pela entrada — a sequência EDL parece ter funcionado — mas os painéis solares falharam em se desdobrar completamente no pouso e nunca conseguiu se comunicar, silencioso nas planícies marcianas. O módulo de pouso Schiaparelli da Agência Espacial Europeia, em outubro de 2016, teve sua unidade de medição inercial saturada durante a descida violenta do paraquedas — as leituras brevemente saíram do topo de sua escala — corrompendo a solução de navegação para que o computador a bordo acreditasse que já estava abaixo da superfície; cortou o paraquedas e disparou os retroquetes por apenas três segundos em vez de trinta, e atingiu o solo em aproximadamente 540 quilómetros por hora.",
+    "new": "Ao longo da história das missões a Marte, o problema do pouso deixou um rastro de mortos. A Mars 2, em 1971, foi o primeiro objeto da Terra a tocar a superfície marciana — e se espatifou, destruindo-se no impacto, porque o sistema de descida falhou antes de a sequência do paraquedas se completar. A Mars Polar Lander, em dezembro de 1999, quase certamente desligou os motores de descida cedo demais, quando as vibrações do desdobramento das pernas foram interpretadas por engano como sinal de toque, e caiu os últimos quarenta metros em velocidade total. A Beagle 2, no Dia de Natal de 2003, atravessou a entrada — a sequência EDL parece ter funcionado —, mas os painéis solares não se abriram por completo no pouso e ela nunca conseguiu se comunicar, muda nas planícies marcianas. O módulo de pouso Schiaparelli, da Agência Espacial Europeia, em outubro de 2016, teve a unidade de medição inercial saturada durante a violenta descida de paraquedas — as leituras ultrapassaram brevemente o limite da escala —, o que corrompeu a solução de navegação e fez o computador de bordo acreditar que já estava abaixo da superfície; ele soltou o paraquedas e acionou os retrofoguetes por apenas três segundos em vez de trinta, e atingiu o solo a cerca de 540 quilômetros por hora.",
+    "grade": "MINOR",
+    "issue": "European 'quilómetros', 'Noite de Natal' for Christmas Day, and awkward 'matando a si mesmo' phrasing."
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.11.md",
+    "old": "Propulsão nuclear-térmica — aquecendo hidrogênio em um reator e expelindo-o através de um bocal — aproximadamente dobra a velocidade de exaustão, alcançando impulsos específicos de cerca de 825 segundos nos melhores motores testados em solo do programa NERVA. Dobrar a velocidade de exaustão não reduz pela metade a proporção de massa necessária; extrai a raiz quadrada dela — um ganho muito maior. Em velocidades interestelares, propulsão nuclear-térmica ainda é categoricamente inadequada. A equação do foguete não se importa com a maneira como o propelente é aquecido. Se importa apenas com a rapidez com que sai. E nenhuma arquitetura de queima de propelente ainda concebida pode expelir matéria rápido o suficiente para alcançar uma fração significativa de c sem exigir uma carga de combustível que torna a missão impossível em sua face.",
+    "new": "A propulsão nuclear-térmica — aquecer hidrogênio em um reator e expeli-lo por um bocal — aumenta a velocidade de exaustão em cerca de duas vezes, alcançando impulsos específicos em torno de 825 segundos nos melhores motores testados em solo do programa NERVA. Dobrar a velocidade de exaustão não reduz pela metade a razão de massa necessária; extrai-se a raiz quadrada dela — um ganho muito maior. Ainda assim, em velocidades interestelares, a propulsão nuclear-térmica continua categoricamente inadequada. A equação do foguete não se importa com a maneira como o propelente é aquecido. Só importa a rapidez com que ele sai. E nenhuma arquitetura de propulsão por queima de propelente já concebida consegue expelir matéria rápido o bastante para alcançar uma fração significativa de c sem exigir uma carga de combustível que torna a missão inviável à primeira vista.",
+    "grade": "MINOR",
+    "issue": "Misplaced clitic ('Se importa'), calque 'em sua face', missing articles."
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.21.md",
+    "old": "O terceiro muro é o corpo humano, e é aquele que a arquitetura da missão não pode contornar. Marte não possui um campo magnético global — seu núcleo solidificou há muito tempo, encerrando o dínamo que uma vez gerou o escudo. A magnetosfera da Terra desvia a maior parte dos raios cósmicos galácticos e partículas energéticas solares; Marte não oferece equivalente. Um trânsito de seis meses pelo espaço interplanetário entrega uma dose medida de aproximadamente 300 milisieverts — bem mais de cem vezes um ano típico de radiação de fundo natural na Terra, absorvido em seis meses. Na superfície marciana, sem uma magnetosfera, a dose se acumula ainda mais pela radiação secundária. Uma viagem redonda de três anos foi estimada em 600 a 1.200 milisieverts total, dependendo da fase do ciclo solar e do blindagem — números medidos em voo por instrumentos a bordo do Curiosity.",
+    "new": "O terceiro muro é o corpo humano, e é aquele que a arquitetura da missão não consegue contornar. Marte não tem campo magnético global — seu núcleo se solidificou há muito tempo, pondo fim ao dínamo que antes gerava o escudo. A magnetosfera da Terra desvia a maior parte dos raios cósmicos galácticos e das partículas energéticas solares; Marte não oferece nada equivalente. Um trânsito de seis meses pelo espaço interplanetário entrega uma dose medida de aproximadamente 300 milisieverts — bem mais de cem vezes a radiação natural de fundo de um ano típico na Terra, absorvida em seis meses. Na superfície marciana, sem magnetosfera, a dose se acumula ainda mais pela radiação secundária. Uma viagem de ida e volta de três anos foi estimada em 600 a 1.200 milisieverts no total, dependendo da fase do ciclo solar e da blindagem — números medidos em voo por instrumentos a bordo da [Curiosity](/missions?id=curiosity).",
+    "grade": "MINOR",
+    "issue": "Agreement error 'do blindagem', calque 'viagem redonda', 'total' not agreeing."
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.26.md",
+    "old": "Mas a lacuna entre \"não proibido\" e \"alcançável em qualquer prazo próximo\" é enorme. A proposta mais lenta séria — uma nave estelar de fusão a 12% de c — exigiria tecnologia que não existe, a um custo que eclipsa qualquer programa espacial da história, para entregar um vaso tripulado a outra estrela em aproximadamente cinquenta anos. A proposta mais rápida séria — a vela leve acionada por laser do Breakthrough Starshot — entregaria um grama de instrumentos para um sobrevoo que dura horas, e retornaria dados por anos, a um custo que seus proponentes estimam em dezenas de bilhões de dólares, assumindo que o conjunto de laser possa ser construído em tudo. Entre esses extremos, não existe opção intermediária que seja tanto tecnologicamente viável quanto adequada para exploração significativa. A escala do problema simplesmente não tem uma solução moderada.",
+    "new": "Mas a distância entre \"não proibido\" e \"alcançável em qualquer prazo próximo\" é enorme. A proposta séria mais lenta — uma nave estelar de fusão a 12% de c — exigiria uma tecnologia que não existe, a um custo que ofusca qualquer programa espacial da história, para levar uma nave tripulada a outra estrela em cerca de cinquenta anos. A proposta séria mais rápida — a vela de luz impulsionada por laser do Breakthrough Starshot — levaria um grama de instrumentos a um sobrevoo que dura horas e devolveria dados por anos, a um custo que seus defensores estimam em dezenas de bilhões de dólares, supondo que o conjunto de lasers possa sequer ser construído. Entre esses extremos, não existe opção intermediária que seja ao mesmo tempo tecnologicamente viável e adequada para uma exploração significativa. A escala do problema simplesmente não admite solução moderada.",
+    "grade": "BROKEN",
+    "issue": "Garbled calques ('construído em tudo' for 'at all', 'vaso tripulado', 'vela leve', misplaced adjectives)."
+  },
+  {
+    "rel": "essays/the-body-in-the-dark.json",
+    "at": "body.14.md",
+    "old": "Tudo o que sabemos sobre fisiologia do voo espacial de longa duração foi medido — em pessoas reais, que viveram no espaço por durações reais, voltaram para casa e foram estudadas. O recorde de um único voo contínuo é mantido por Valeri Polyakov, um médico-cosmonauta russo que embarcou no [Mir](/programs/mir) em janeiro de 1994 e retornou à Terra em março de 1995, tendo passado 437 dias consecutivos em órbita — ainda não quebrado, três décadas depois. O objetivo de Polyakov era explicitamente médico: determinar se um ser humano poderia sobreviver, funcionalmente, uma duração de missão em Marte. Quando aterrisou, insistiu em caminhar para longe da cápsula Soyuz por sua própria conta. Sua recuperação óssea e muscular levou meses. Ele caminhou. Os programas [Salyut](/programs/salyut) e [Mir](/programs/mir) construíram um corpo de dados fisiológicos soviéticos e depois russos que permanece irreplacível — o [ISS](/programs/iss) o estendeu e o globalizou. Os 665 dias cumulativos de Peggy Whitson através de três missões forneceram aos pesquisadores um conjunto de dados longitudinais em um único indivíduo impossível de replicar de outra forma. O NASA Twin Study — a missão de 340 dias de Scott Kelly comparada com seu gêmeo idêntico Mark vinculado à Terra — encontrou mudanças mensuráveis na expressão gênica, dinâmica de telômeros, composição do microbioma intestinal e desempenho cognitivo, a maioria dos quais reverteu no retorno, mas não tudo. O programa Tiangong da China está agora adicionando ao recorde: tripulações em rotações de 90 e 180 dias desde 2021, uma população de taikonautas anteriormente ausente do conjunto de dados. Qualquer relato honesto do que a humanidade sabe sobre o corpo humano de longa duração no espaço tem que incluir o que a Rússia aprendeu no Mir, o que a parceria ISS de 15 nações mediu desde 2000, e o que a China está acumulando agora.",
+    "new": "Tudo o que sabemos sobre a fisiologia do voo espacial de longa duração foi medido — em pessoas reais, que viveram no espaço por períodos reais, voltaram para casa e foram estudadas. O recorde de um único voo contínuo pertence a Valeri Polyakov, um médico-cosmonauta russo que embarcou na [Mir](/programs/mir) em janeiro de 1994 e voltou à Terra em março de 1995, depois de 437 dias consecutivos em órbita — recorde ainda não batido, três décadas depois. O objetivo de Polyakov era explicitamente médico: determinar se um ser humano poderia sobreviver, de forma funcional, à duração de uma missão a Marte. Ao pousar, insistiu em se afastar da cápsula Soyuz por conta própria. Sua recuperação óssea e muscular levou meses. Ele caminhou. Os programas [Salyut](/programs/salyut) e [Mir](/programs/mir) construíram um acervo de dados fisiológicos soviéticos e, depois, russos que continua insubstituível — a [ISS](/programs/iss) o ampliou e o globalizou. Os 665 dias acumulados por Peggy Whitson em três missões deram aos pesquisadores um conjunto de dados longitudinais sobre um único indivíduo que seria impossível replicar de outra forma. O NASA Twin Study — a missão de 340 dias de Scott Kelly comparada à de seu irmão gêmeo idêntico, Mark, que ficou na Terra — encontrou alterações mensuráveis na expressão gênica, na dinâmica dos telômeros, na composição do microbioma intestinal e no desempenho cognitivo, a maioria delas revertida no retorno, mas não todas. O programa [Tiangong](/programs/tiangong) da China agora contribui para esse acervo: tripulações em rodízios de 90 e 180 dias desde 2021, uma população de taikonautas antes ausente dos dados. Qualquer relato honesto do que a humanidade sabe sobre o corpo humano em longa permanência no espaço tem de incluir o que a Rússia aprendeu na Mir, o que a parceria de 15 nações da ISS mede desde 2000 e o que a China está acumulando agora.",
+    "grade": "MINOR",
+    "issue": "Non-word 'irreplacível', 'o ISS' gender, 'mas não tudo', 'gêmeo vinculado à Terra' and other awkward calques."
+  },
+  {
+    "rel": "essays/navigation.json",
+    "at": "body.22.caption",
+    "old": "Para onde está o alto, quando não há alto: um rastreador de estrelas fotografa um pedaço de céu, compara o padrão com um catálogo a bordo, e sabe de imediato como a nave está orientada no referencial fixo J2000. Entre pontos fixos, os giroscópios carregam a contagem.",
+    "new": "Para onde fica o alto, quando não existe alto? Um rastreador de estrelas fotografa um pedaço do céu, compara o padrão com um catálogo de bordo e sabe de imediato como a nave está orientada no referencial fixo J2000. Entre uma determinação de posição e outra, os giroscópios mantêm a contagem.",
+    "grade": "MINOR",
+    "issue": "'Entre pontos fixos' mistranslates 'between fixes' (position fixes)."
+  },
+  {
+    "rel": "essays/the-body-in-the-dark.json",
+    "at": "body.22.md",
+    "old": "Melhor propulsão importa. As [novas tecnologias de motor](/essays/new-propulsion) em desenvolvimento — térmica nuclear, elétrica nuclear, velas solares, conceitos do futuro mais distante — cortariam o tempo de trânsito, e cortar o tempo de trânsito reduz a exposição acumulada a radiação e a degradação fisiológica acumulada. Um trânsito de 90 dias em vez de 270 não é três vezes mais fácil no corpo; a relação entre dose e efeito é mais complexa que linear, e alguns sistemas — o psicológico, o ósseo, o cardiovascular — são sensíveis à duração de formas que até mesmo uma exposição mais curta não totalmente salva. Mas mais curto é melhor. Motores mais rápidos são verdadeira medicina. Eles não, porém, mudam a natureza fundamental do problema. Um trânsito de 90 dias ainda cruza o espaço interplanetário sem magnetosfera, sem gravidade, e sem resgate. O corpo ainda é a carga. Ainda se degrada. Ainda retorna para casa diminuído de formas que levam meses ou anos para reverter, se revertam.",
+    "new": "Uma propulsão melhor importa. As [novas tecnologias de motor](/essays/new-propulsion) em desenvolvimento — térmica nuclear, elétrica nuclear, velas solares, os conceitos de futuro mais distante — reduziriam o tempo de trânsito, e reduzir o tempo de trânsito reduz a exposição acumulada à radiação e a degradação fisiológica acumulada. Um trânsito de 90 dias em vez de 270 não é três vezes mais fácil para o corpo; a relação entre dose e efeito é mais complexa do que linear, e alguns sistemas — o psicológico, o ósseo, o cardiovascular — são sensíveis à duração de maneiras que nem uma exposição mais curta consegue resolver por completo. Mas mais curto é melhor. Motores mais rápidos são medicina de verdade. Ainda assim, eles não mudam a natureza fundamental do problema. Um trânsito de 90 dias continua atravessando o espaço interplanetário sem magnetosfera, sem gravidade e sem resgate. O corpo continua sendo a carga. Continua se degradando. Continua voltando para casa debilitado, de maneiras que levam meses ou anos para reverter, isso se chegarem a reverter.",
+    "grade": "MINOR",
+    "issue": "Awkward constructions ('não totalmente salva', 'Eles não, porém, mudam', 'se revertam')."
+  },
+  {
+    "rel": "fleet/lander/surveyor-3.json",
+    "at": "best_known_for",
+    "old": "Apollo 12 visitou-a 2,5 anos depois.",
+    "new": "A Apollo 12 a visitou 2,5 anos depois",
+    "grade": "MINOR",
+    "issue": "European enclisis 'visitou-a' and a final period absent from the source."
+  },
+  {
+    "rel": "fleet/launch-site/xichang-lc-2.json",
+    "at": "description",
+    "old": "O LC-2 do Centro de Lançamento de Satélites de Xichang realizou a maioria dos lançamentos chineses para órbita geoestacionária, a constelação de navegação Beidou/Compass e o programa lunar Chang'e através das variantes Longa Marcha 3A, 3B e 3C. Situado na província montanhosa de Sichuan, o local combina a vantagem da baixa latitude para GTO com disponibilidade operacional o ano todo.",
+    "new": "O LC-2 do Centro de Lançamento de Satélites de Xichang realizou a maioria dos lançamentos chineses para órbita geoestacionária, a constelação de navegação Beidou/Compass e o programa lunar Chang'e por meio das variantes Long March 3A, 3B e 3C. Situado na província montanhosa de Sichuan, o local combina a vantagem da baixa latitude para o desempenho em GTO com disponibilidade operacional o ano todo.",
+    "grade": "BROKEN",
+    "issue": "Name rule: rocket name 'Long March' translated as 'Longa Marcha'."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/orion.json",
+    "at": "description",
+    "old": "O veículo tripulado do programa Artemis da NASA, construído em parceria com a ESA (o Módulo de Serviço Europeu é fornecido pela Airbus). Projetado para suportar até quatro astronautas em missões de múltiplas semanas em órbita lunar. Voou sem tripulação em Artemis I em 2022. Realizou sua primeira missão tripulada (Artemis II) em abril de 2026 com uma tripulação de quatro pessoas em uma trajetória de sobrevoo lunar.",
+    "new": "O veículo tripulado do programa Artemis da NASA, construído em parceria com a ESA (o European Service Module é fornecido pela Airbus). Projetado para levar até quatro astronautas em missões de várias semanas em órbita lunar. Voou sem tripulação na Artemis I, em 2022. Realizou sua primeira missão tripulada (Artemis II) em abril de 2026, com quatro pessoas a bordo, em uma trajetória de sobrevoo lunar.",
+    "grade": "BROKEN",
+    "issue": "Name rule: module name 'European Service Module' translated."
+  },
+  {
+    "rel": "fleet/orbiter/mangalyaan.json",
+    "at": "best_known_for",
+    "old": "Primeira missão marciana asiática; primeiro sucesso na tentativa",
+    "new": "Primeira missão asiática a Marte; sucesso logo na primeira tentativa",
+    "grade": "MINOR",
+    "issue": "'primeiro sucesso na tentativa' is awkward and changes the sense."
+  },
+  {
+    "rel": "fleet/rover/exomars-rosalind-franklin.json",
+    "at": "description",
+    "old": "O primeiro rover marciano da ESA, nomeado em homenagem à pioneira do DNA Rosalind Franklin. Projetado para pousar em Oxia Planum (uma antiga região marciana rica em argilas, escolhida pelo alto potencial de preservação de bioassinaturas) e usar uma broca subsuperficial de 2 metros — mais profunda do que qualquer missão marciana anterior — para coletar amostras em profundidades protegidas da radiação cósmica e UV que destrói orgânicos de superfície. A Analytical Laboratory Drawer abriga três instrumentos de detecção de vida: MOMA (Mars Organic Molecule Analyser), MicrOmega (espectroscopia de imageamento infravermelho) e o Raman Laser Spectrometer. Originalmente previsto para o lançamento de 2022 em um Proton russo; após a invasão russa da Ucrânia em 2022, a ESA suspendeu a cooperação. Atualmente agendado para 2028 em um veículo de lançamento fornecido pela NASA com uma plataforma de pouso reconstruída pela ESA / Airbus.",
+    "new": "O primeiro rover marciano da ESA, batizado em homenagem à pioneira do DNA Rosalind Franklin. Projetado para pousar em Oxia Planum (uma antiga região marciana rica em argilas, escolhida pelo alto potencial de preservação de bioassinaturas) e usar uma broca subsuperficial de 2 metros — mais profunda do que a de qualquer missão anterior a Marte — para coletar amostras em profundidades protegidas da radiação cósmica e ultravioleta que destrói compostos orgânicos na superfície. A Analytical Laboratory Drawer abriga três instrumentos de detecção de vida: o MOMA (Mars Organic Molecule Analyser, um cromatógrafo a gás + espectrômetro de massa de fonte dupla), o MicrOmega (espectroscopia de imageamento no infravermelho) e o Raman Laser Spectrometer. Originalmente previsto para lançamento em 2022 em um Proton russo, com uma plataforma de pouso de construção russa (Kazachok); após a invasão da Ucrânia pela Rússia em 2022, a ESA suspendeu a cooperação e o lançamento do Rosalind Franklin foi adiado. Atualmente previsto para 2028, em um veículo de lançamento fornecido pela NASA e com uma plataforma de pouso reconstruída pela ESA / Airbus.",
+    "grade": "BROKEN",
+    "issue": "Omits content: Kazachok platform, gas chromatograph/dual-source mass spectrometer detail, and 'launch was deferred'."
+  },
+  {
+    "rel": "fleet/orbiter/voyager-2.json",
+    "at": "tagline",
+    "old": "Apenas espaçonave para visitar os quatro planetas gigantes",
+    "new": "Única espaçonave a visitar os quatro planetas gigantes",
+    "grade": "MINOR",
+    "issue": "Missing article/preposition ('Apenas espaçonave para visitar')."
+  },
+  {
+    "rel": "fleet/orbiter/mro.json",
+    "at": "best_known_for",
+    "old": "Imagens de Marte de alta resolução de órbita",
+    "new": "Imagens de Marte de mais alta resolução já feitas a partir da órbita",
+    "grade": "MINOR",
+    "issue": "'de órbita' is a calque; wording unnatural."
+  },
+  {
+    "rel": "fleet/orbiter/lunar-prospector.json",
+    "at": "best_known_for",
+    "old": "Orbitador polar NASA Discovery — detecção de hidrogênio por espectrômetro de nêutrons em ambos os pólos em 1998; impacto intencional perto de Shackleton encerrou missão em 1999",
+    "new": "Orbitador polar do programa Discovery da NASA — detecção de hidrogênio por espectrômetro de nêutrons nos dois polos em 1998; o impacto proposital em Shackleton encerrou a missão em 1999",
+    "grade": "MINOR",
+    "issue": "Old spelling 'pólos', missing articles, 'perto de' added."
+  },
+  {
+    "rel": "fleet/rover/spirit.json",
+    "at": "best_known_for",
+    "old": "Marte Exploration Rover; 6 anos de operação",
+    "new": "Mars Exploration Rover; 6 anos de operação",
+    "grade": "BROKEN",
+    "issue": "Name rule: 'Mars Exploration Rover' translated partially as 'Marte Exploration Rover'."
+  },
+  {
+    "rel": "fleet/lander/mars6.json",
+    "at": "tagline",
+    "old": "Lander soviético de Marte 1973 — primeira telemetria de descida da atmosfera de Marte (224 s, em sua maioria corrompida)",
+    "new": "Módulo de pouso soviético de Marte, 1973 — primeira telemetria de descida na atmosfera de Marte (224 s, em sua maior parte corrompida)",
+    "grade": "MINOR",
+    "issue": "English 'Lander' left in running text."
+  },
+  {
+    "rel": "fleet/observatory/spitzer.json",
+    "at": "description",
+    "old": "Grande Observatório infravermelho da NASA, em serviço 2003-2020. Projetado para uma missão criogênica de cinco anos, mas operado por dezesseis, incluindo uma fase de \"missão quente\" após seu líquido-hélio refrigerante foi esgotado em 2009.",
+    "new": "Grande Observatório infravermelho da NASA, em serviço de 2003 a 2020. Projetado para uma missão criogênica de cinco anos, mas operou por dezesseis, incluindo uma fase de \"missão quente\" depois que o hélio líquido usado como refrigerante se esgotou, em 2009.",
+    "grade": "MINOR",
+    "issue": "Ungrammatical 'após seu líquido-hélio refrigerante foi esgotado'."
+  },
+  {
+    "rel": "missions/neptune/voyager-2.json",
+    "at": "first",
+    "old": "Única espaçonave para visitar Urano e Netuno; Grand Tour de quatro planetas gigantes",
+    "new": "Única espaçonave a visitar Urano e Netuno; Grand Tour dos quatro planetas gigantes",
+    "grade": "MINOR",
+    "issue": "'Única espaçonave para visitar' is a calque."
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "first",
+    "old": "Primeiro sobrevôo de Plutão e suas luas; imagens mais nítidas de um mundo do cinturão de Kuiper",
+    "new": "Primeiro sobrevoo de Plutão e suas luas; imagens mais nítidas de um mundo do cinturão de Kuiper",
+    "grade": "MINOR",
+    "issue": "Old spelling 'sobrevôo'."
+  },
+  {
+    "rel": "missions/venus/vega-1.json",
+    "at": "first",
+    "old": "Primeiro balão aerostato implantado na atmosfera de outro planeta (Vênus, 1985); primeira espaçonave a levar ciência para dois alvos distintos do sistema solar",
+    "new": "Primeiro balão aerostato lançado na atmosfera de outro planeta (Vênus, 1985); primeira espaçonave a realizar ciência em dois alvos distintos do sistema solar",
+    "grade": "MINOR",
+    "issue": "'implantado' and 'levar ciência' are calques."
+  },
+  {
+    "rel": "missions/mars/tianwen1.json",
+    "at": "events.1.label",
+    "old": "INSERÇÃO DA ÓRBITA DE MARTE",
+    "new": "INSERÇÃO EM ÓRBITA DE MARTE",
+    "grade": "MINOR",
+    "issue": "'INSERÇÃO DA ÓRBITA' wrong preposition and inconsistent with other labels."
+  },
+  {
+    "rel": "missions/mars/mmx.json",
+    "at": "events.2.label",
+    "old": "IMPLEMENTAÇÃO DO ROVER",
+    "new": "LANÇAMENTO DO ROVER",
+    "grade": "MINOR",
+    "issue": "'IMPLEMENTAÇÃO' is a false cognate for 'deploy'."
+  },
+  {
+    "rel": "missions/earth/soyuz-11.json",
+    "at": "first",
+    "old": "Primeiro tripulante de uma estação espacial (Salyut 1); todos os 3 morreram por descompressão na reentrada",
+    "new": "Primeira tripulação em uma estação espacial (Salyut 1); os 3 morreram por descompressão na reentrada",
+    "grade": "MINOR",
+    "issue": "'Primeiro tripulante' (singular) for 'First crew'."
+  },
+  {
+    "rel": "missions/neptune/voyager-2.json",
+    "at": "events.1.label",
+    "old": "APROXIMAÇÃO MAIS PRÓXIMA DE NETUNO",
+    "new": "MAIOR APROXIMAÇÃO DE NETUNO",
+    "grade": "MINOR",
+    "issue": "Redundant 'APROXIMAÇÃO MAIS PRÓXIMA'."
+  },
+  {
+    "rel": "missions/neptune/voyager-2.json",
+    "at": "description",
+    "old": "A gêmea que continuou quando os orçamentos apertaram, Voyager 2 levou o Grand Tour de Júpiter e Saturno até Urano e Netuno — ainda as únicas imagens de perto que temos dos gigantes de gelo. Seu encontro com Netuno em 1989 revelou a Grande Mancha Escura e os gêisers de Tritão. Hoje ambas as Voyagers navegam no espaço interestelar com um disco de ouro como cartão de visita da humanidade. Orrery lista Netuno como destino do catálogo; o caminho real dependeu de múltiplos assistências gravitacionais.",
+    "new": "A gêmea que seguiu em frente quando os orçamentos apertaram, a Voyager 2 levou o Grand Tour de Júpiter e Saturno até Urano e Netuno — e ainda hoje são as únicas imagens de perto que temos dos gigantes de gelo. Seu encontro com Netuno, em 1989, revelou a Grande Mancha Escura e os gêiseres de Tritão. Hoje as duas Voyagers navegam pelo espaço interestelar com um disco de ouro como cartão de visita da humanidade. A Orrery lista Netuno como destino do catálogo; o caminho real dependeu de várias assistências gravitacionais.",
+    "grade": "MINOR",
+    "issue": "Gender agreement error 'múltiplos assistências' and plural 'gêisers'."
+  },
+  {
+    "rel": "missions/mars/mariner9.json",
+    "at": "description",
+    "old": "Mariner 9 tornou possível cada orbitador que se seguiu. Após uma queimada MOI de 15 minutos colocá-la em órbita de Marte em 1971-11-14, o planeta abaixo era irreconhecível — uma tempestade de poeira global havia ocultado tudo, exceto os quatro topos dos vulcões de Tharsis. O JPL esperou. Até janeiro de 1972, a poeira assentou e Mariner 9 retornou 7.329 imagens cobrindo ~85% da superfície marciana, revelando o Monte Olimpo (o maior vulcão do sistema solar), Valles Marineris (o sistema de cânions que leva seu nome), canais fluviais secos sugerindo uma era líquida antiga, e os primeiros planos aproximados de Fobos e Deimos. A missão terminou em 1972-10-27 quando o gás de controle de atitude se esgotou; a espaçonave permanece em órbita, decaindo lentamente.",
+    "new": "A Mariner 9 tornou possíveis todos os orbitadores que vieram depois. Depois que uma queima de inserção em órbita de Marte (MOI) de 15 minutos a colocou em órbita em 1971-11-14, o planeta lá embaixo estava irreconhecível — uma tempestade global de poeira havia escondido tudo, exceto os cumes dos quatro vulcões de Tharsis. O JPL esperou. Ao longo de janeiro de 1972 a poeira assentou e a Mariner 9 enviou 7.329 imagens cobrindo ~85% da superfície marciana, revelando o Monte Olimpo (o maior vulcão do sistema solar), Valles Marineris (o sistema de cânions que leva seu nome), canais de rios secos que sugerem uma antiga era líquida e os primeiros closes de Fobos e Deimos. A missão terminou em 1972-10-27, quando o gás de controle de atitude acabou; a espaçonave continua em órbita, decaindo lentamente.",
+    "grade": "MINOR",
+    "issue": "'queimada' means wildfire in Brazilian Portuguese; should be 'queima'."
+  },
+  {
+    "rel": "missions/moon/chandrayaan3.json",
+    "at": "description",
+    "old": "Após a perda do pousador Vikram da Chandrayaan-2 em 2019, a terceira missão lunar da ISRO foi deliberadamente conservadora — focada no pousador em vez de carregar um orbitador. O Vikram tocou o solo em latitude 69,4° S, a aproximação mais próxima de um pólo lunar que qualquer espaçonave já alcançou. O rover Pragyan detectou enxofre na superfície lunar pela primeira vez e realizou medições térmicas in-situ. A Índia se tornou a quarta nação a pousar suavemente na Lua, pousando mais próximo de um pólo lunar do que qualquer espaçonave anterior — uma região onde a mineração futura de gelo de água pode se tornar possível.",
+    "new": "Após a perda do módulo de pouso Vikram, da Chandrayaan-2, em 2019, a terceira missão lunar da ISRO foi deliberadamente conservadora — concentrada no módulo de pouso, sem levar um orbitador. O Vikram pousou a 69,4° S de latitude, o ponto mais próximo de um polo lunar já alcançado por uma espaçonave. O rover Pragyan detectou enxofre na superfície lunar pela primeira vez e fez medições térmicas in situ. A Índia se tornou a quarta nação a pousar suavemente na Lua, mais perto de um polo lunar do que qualquer espaçonave antes dela — uma região onde a futura mineração de gelo de água pode se tornar possível.",
+    "grade": "MINOR",
+    "issue": "European 'pousador', old spelling 'pólo', 'in-situ' not adapted."
+  },
+  {
+    "rel": "missions/mars/mars-pathfinder.json",
+    "at": "events.3.note",
+    "old": "Lander salta 15 vezes pelo Ares Vallis antes de parar.",
+    "new": "O módulo de pouso quica 15 vezes em Ares Vallis antes de parar.",
+    "grade": "MINOR",
+    "issue": "English 'Lander' left, wrong article for Ares Vallis, unnatural 'salta'."
+  },
+  {
+    "rel": "missions/moon/apollo8.json",
+    "at": "events.6.note",
+    "old": "CM pousou no Oceano Atlântico Norte 1968-12-27. Recuperação pelo USS Yorktown.",
+    "new": "O CM amerissou no Pacífico Norte em 1968-12-27. Recuperação pelo USS Yorktown.",
+    "grade": "BROKEN",
+    "issue": "Wrong meaning: 'North Pacific' rendered as 'Oceano Atlântico Norte'."
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "events.0.note",
+    "old": "STS-30 / Atlantis de Kennedy LC-39B; IUS ejetado da baía do Ônibus Espacial.",
+    "new": "STS-30 / Atlantis a partir do Kennedy LC-39B; IUS liberado do compartimento de carga do Ônibus Espacial.",
+    "grade": "MINOR",
+    "issue": "'ejetado da baía' is a calque for 'deployed from Shuttle bay'."
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "events.2.note",
+    "old": "Chega a Bennu; mantém estação a ~19 km e depois se aproxima progressivamente até uma órbita recorde de ~1,4 km — a órbita de espaçonave mais próxima jamais alcançada ao redor de qualquer corpo celeste.",
+    "new": "Chega a Bennu; mantém posição a ~19 km e depois se aproxima progressivamente até uma órbita recorde de ~1,4 km — a órbita de espaçonave mais próxima já feita ao redor de qualquer corpo celeste.",
+    "grade": "MINOR",
+    "issue": "'mantém estação' is a calque of 'stationkeeps'."
+  },
+  {
+    "rel": "missions/earth/otv-5.json",
+    "at": "events.1.note",
+    "old": "Apogeu ~360 km, inclinação de 54,5°; operações com carga paga classificada.",
+    "new": "Apogeu de ~360 km, inclinação de 54,5°; operações com carga útil classificada.",
+    "grade": "MINOR",
+    "issue": "'carga paga' is European Portuguese (Brazil: carga útil)."
+  },
+  {
+    "rel": "missions/moon/beresheet.json",
+    "at": "events.4.note",
+    "old": "Queimada translunar final — Beresheet em trajetória lunar direta.",
+    "new": "Queima translunar final — Beresheet em trajetória lunar direta.",
+    "grade": "MINOR",
+    "issue": "'Queimada' means wildfire in Brazilian Portuguese."
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.1.note",
+    "old": "Queimada de injeção translunar do S-IVB; CSM + LM se comprometem com trajetória cislunar.",
+    "new": "Queima de injeção translunar pelo S-IVB; CSM + LM se comprometem com a trajetória cislunar.",
+    "grade": "MINOR",
+    "issue": "'Queimada' means wildfire in Brazilian Portuguese."
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "events.5.note",
+    "old": "A reentrada de Orion permanece no Oceano Pacífico.",
+    "new": "Reentrada da Orion e amerissagem no Oceano Pacífico.",
+    "grade": "BROKEN",
+    "issue": "Wrong meaning: says Orion's re-entry 'remains in the Pacific Ocean'."
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-04d455fe481f.title",
+    "old": "Gemini 4 — Ed White, o primeiro spacewalk dos EUA",
+    "new": "Gemini 4 — Ed White, a primeira caminhada espacial dos EUA",
+    "grade": "MINOR",
+    "issue": "English 'spacewalk' left in running text."
+  },
+  {
+    "rel": "earth-objects/gaia.json",
+    "at": "scale_fact",
+    "old": "Gaia senta ao lado de JWST em L2. O ponto de Lagrange é um imóvel valioso – gravitacionalmente estável, termicamente estável, permanentemente voltado para longe do Sol.",
+    "new": "A Gaia fica ao lado do JWST em L2. O ponto de Lagrange é um bem valioso — gravitacionalmente estável, termicamente estável, permanentemente voltado para longe do Sol.",
+    "grade": "MINOR",
+    "issue": "Calque 'senta ao lado de', 'imóvel valioso' and inconsistent dash."
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "firsts.3.label",
+    "old": "Galileo — primeiro orbitador de Júpiter (USA)",
+    "new": "Galileo — primeiro orbitador de Júpiter (EUA)",
+    "grade": "MINOR",
+    "issue": "'USA' not localised."
+  },
+  {
+    "rel": "orbit-regimes-mars/HMO.json",
+    "at": "story",
+    "old": "Órbitas altamente elípticas com periapses próximas a 1.000-2.500 km mas apoapses alcançando dezenas de milhares de km, principalmente históricas. A Mariner 9 chegou aqui em 1971 — a primeira sonda a orbitar outro planeta, batendo a Mars 2 por algumas semanas. A soviética Mars 3 e as sondas orbitais American Viking 1 seguiram, todas estacionadas em elipses longas que minimizavam o combustível de manutenção de posição durante a era Mariner de orçamentos de delta-v limitados. Fobos passa por esta faixa a 9.376 km — Viking e Mars Express utilizaram a geometria para estudar a lua de perto.",
+    "new": "Órbitas muito elípticas, com periapses perto de 1.000-2.500 km mas apoapses de dezenas de milhares de km, em sua maioria históricas. A Mariner 9 chegou aqui em 1971 — a primeira sonda a orbitar outro planeta, superando a Mars 2 por poucas semanas. A soviética Mars 3 e a Viking 1 americana vieram em seguida, todas estacionadas em elipses longas que minimizavam o combustível de manutenção de órbita na era Mariner, de orçamentos limitados de delta-v. Fobos cruza essa faixa a 9.376 km — a Viking e a Mars Express usaram essa geometria para estudar a lua de perto.",
+    "grade": "BROKEN",
+    "issue": "Leaves English 'American' in the sentence and garbles it ('sondas orbitais American Viking 1')."
+  },
+  {
+    "rel": "site-stories/viking1-lander.json",
+    "at": "chapters.0.subtitle",
+    "old": "Par lander + orbitador, alimentado por RTG, ~600 kg",
+    "new": "Par módulo de pouso + orbitador, alimentado por RTG, ~600 kg",
+    "grade": "MINOR",
+    "issue": "Mixes English 'lander' into Portuguese."
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.Audio tour scripts.title",
+    "old": "Roteiros de turnê de áudio",
+    "new": "Roteiros do tour de áudio",
+    "grade": "MINOR",
+    "issue": "'turnê' means a concert tour, not a guided tour."
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "fact",
+    "old": "Urano gira de lado – inclinação axial de 98°. Seu pólo norte aponta quase diretamente para o Sol durante metade de sua órbita de 84 anos.",
+    "new": "Urano gira de lado — inclinação axial de 98°. Seu polo norte aponta quase diretamente para o Sol durante metade de sua órbita de 84 anos.",
+    "grade": "MINOR",
+    "issue": "Old spelling 'pólo' and inconsistent dash."
+  },
+  {
+    "rel": "mars-sites/viking1-orbiter.json",
+    "at": "fact",
+    "old": "Retornou mais de 50.000 imagens da superfície e das luas de Marte ao longo de quatro anos. Mapeamos antecipadamente locais de pouso potenciais para ambas as sondas Viking. Encerrou as operações em agosto de 1980, quando seu gás de controle de atitude se esgotou.",
+    "new": "Enviou mais de 50.000 imagens da superfície e das luas de Marte ao longo de quatro anos. Mapeou antecipadamente possíveis locais de pouso para os dois módulos de pouso Viking. Encerrou as operações em agosto de 1980, quando seu gás de controle de atitude se esgotou.",
+    "grade": "MINOR",
+    "issue": "Switches to first person plural ('Mapeamos'); source is impersonal."
+  },
+  {
+    "rel": "moon-sites/luna9.json",
+    "at": "left",
+    "old": "Shell do Lander, câmeras, bateria",
+    "new": "Carcaça do módulo de pouso, câmeras, bateria",
+    "grade": "MINOR",
+    "issue": "English words 'Shell' and 'Lander' left."
+  },
+  {
+    "rel": "mars-sites/spirit.json",
+    "at": "fact",
+    "old": "Mars Exploration Rover A. Projetado para uma missão primária de 90 sóis; durou 2.208 sóis. Evidências descobertas de que a cratera Gusev já teve interação entre água vulcânica. Ficou preso em solo macio em \"Troy\" em 2009; a equipe manteve o Spirit funcionando como uma plataforma estacionária até o último contato em março de 2010.",
+    "new": "Mars Exploration Rover A. Projetado para uma missão primária de 90 sóis; durou 2.208 sóis. Descobriu evidências de que a cratera Gusev já abrigou interação entre atividade vulcânica e água. Atolou em solo macio em \"Troy\" em 2009; a equipe manteve o Spirit funcionando como plataforma estacionária até o último contato, em março de 2010.",
+    "grade": "BROKEN",
+    "issue": "Garbled sentence 'Evidências descobertas de que a cratera Gusev já teve interação entre água vulcânica'."
+  },
+  {
+    "rel": "small-bodies/halley.json",
+    "at": "science_sections.0.why",
+    "old": "A excentricidade 0.967 de Halley é a órbita de cometa periódico curto de manual — quase parabólica, com periélio 0.59 AU e afélio 35 AU.",
+    "new": "A excentricidade de 0,967 de Halley é a órbita de cometa de período curto típica dos livros-texto — quase parabólica, com periélio a 0,59 UA e afélio a 35 UA.",
+    "grade": "MINOR",
+    "issue": "Decimal points instead of commas and 'AU' instead of 'UA'."
+  },
+  {
+    "rel": "moon-sites/chandrayaan3.json",
+    "at": "site_name",
+    "old": "Ponto Shiv Shakti (região do pólo sul)",
+    "new": "Ponto Shiv Shakti (região polar sul)",
+    "grade": "MINOR",
+    "issue": "Old spelling 'pólo'."
+  },
+  {
+    "rel": "small-bodies/bennu.json",
+    "at": "science_sections.0.why",
+    "old": "Bennu é um asteroide próximo à Terra (semieixo maior de 1,13 AU) — suficientemente próximo para que OSIRIS-REx pudesse fazer um encontro, coletar amostras e retornar material à Terra em 7 anos.",
+    "new": "Bennu é um asteroide próximo da Terra (semieixo maior de 1,13 UA) — perto o bastante para que a OSIRIS-REx pudesse fazer o encontro, coletar amostras e trazer material à Terra em 7 anos.",
+    "grade": "MINOR",
+    "issue": "'AU' used instead of 'UA' (inconsistent with the other entries)."
+  },
+  {
+    "rel": "mars-sites/mangalyaan.json",
+    "at": "mission_type",
+    "old": "Orbitador · Terminado em 2022",
+    "new": "Orbitador · Encerrado em 2022",
+    "grade": "MINOR",
+    "issue": "'Terminado' is unnatural for a mission end."
+  },
+  {
+    "rel": "sun.json",
+    "at": "bio",
+    "old": "Uma estrela da sequência principal do tipo G com 4,6 bilhões de anos, na metade de sua vida de 10 bilhões de anos. O Sol gira de forma diferente - o seu equador demora 25 dias, os seus pólos 35. Em cerca de 5 mil milhões de anos, esgotará o seu núcleo de hidrogénio, expandir-se-á numa gigante vermelha e engolirá os planetas interiores. A influência gravitacional do Sol define a heliosfera em aproximadamente 120 AU.",
+    "new": "Uma estrela da sequência principal do tipo G com 4,6 bilhões de anos, na metade de sua vida de 10 bilhões de anos. O Sol gira de forma diferencial — seu equador leva 25 dias, seus polos 35. Em cerca de 5 bilhões de anos, ele esgotará o hidrogênio do núcleo, se expandirá até se tornar uma gigante vermelha e engolirá os planetas internos. A influência gravitacional do Sol define a heliosfera até aproximadamente 120 UA.",
+    "grade": "MINOR",
+    "issue": "Written in European Portuguese (mil milhões, hidrogénio, expandir-se-á, o seu) and uses 'AU'."
+  },
+  {
+    "rel": "science/mission-phases/entry-footprint.json",
+    "at": "body_paragraphs.0",
+    "old": "A pegada é o conjunto alcançável no espaço downrange–crossrange. O downrange é determinado principalmente por como o veículo gasta o lift vertical: lift totalmente para cima maximiza o alcance (a cápsula \"flutua\", desacelerando lentamente e viajando longe), lift totalmente para baixo o minimiza (uma chegada íngreme e rápida). O crossrange vem de inclinar o lift lateralmente, e sua extensão cresce com L/D. Para uma cápsula de baixo L/D a pegada é modesta; para um corpo sustentador ou um veículo alado ela é enorme.",
+    "new": "A pegada é o conjunto alcançável no espaço alcance longitudinal–alcance lateral. O alcance longitudinal é determinado sobretudo pela forma como o veículo gasta a sustentação vertical: sustentação totalmente para cima maximiza o alcance (a cápsula \"flutua\", desacelerando devagar e viajando longe), sustentação totalmente para baixo o minimiza (uma chegada íngreme e rápida). O alcance lateral vem de inclinar a sustentação para o lado, e sua extensão cresce com a razão L/D. Para uma cápsula de baixo L/D a pegada é modesta; para um corpo sustentador ou um veículo alado, é enorme.",
+    "grade": "MINOR",
+    "issue": "Technical terms left in English ('downrange', 'crossrange', 'lift')."
+  },
+  {
+    "rel": "science/propulsion/thrust-and-twr.json",
+    "at": "body_paragraphs.0",
+    "old": "Empuxo é força. Unidade: newton (ou quilonewton / meganewton para qualquer coisa que voa). Um Merlin 1D produz 845 kN ao nível do mar. Um único F-1 produzia 6770 kN. Boosters SLS produzem 16 000 kN cada. Empuxo não é Isp: empuxo diz com quanta *força* o motor empurra; Isp diz com quanta *eficiência*. Um motor de alto empuxo baixo Isp (booster sólido) e um de baixo empuxo alto Isp (motor iônico) podem ambos ser úteis — para tarefas diferentes em fases diferentes da missão. A equação é simples: empuxo = vazão mássica × velocidade de saída, mais um pequeno termo de pressão onde a pressão de saída difere do ambiente. Por isso motores de combustão em estágios com alta pressão de câmara produzem mais empuxo por kg de massa motor — empurram mais propelente por segundo pela mesma garganta a maior velocidade.",
+    "new": "Empuxo é força. A unidade é o newton (ou quilonewton / meganewton para qualquer coisa que voe). Um Merlin 1D produz 845 kN ao nível do mar. Um único F-1 produzia 6.770 kN. Cada propulsor do SLS produz 16.000 kN. Empuxo não é impulso específico: o empuxo diz com que *força* o motor empurra; o Isp diz com que *eficiência* ele faz isso. Um motor de alto empuxo e baixo Isp (um propulsor sólido) e um de baixo empuxo e alto Isp (um motor iônico) podem ser ambos úteis — para trabalhos diferentes em fases diferentes de uma missão. A equação do empuxo é simples: empuxo é igual à vazão mássica de propelente multiplicada pela velocidade de exaustão, mais um pequeno termo de pressão quando a pressão na saída da tubeira difere da ambiente. Por isso os motores de combustão em estágios, com alta pressão de câmara, produzem mais empuxo por quilograma de massa do motor — empurram mais propelente por segundo pela mesma garganta e em maior velocidade.",
+    "grade": "MINOR",
+    "issue": "Telegraphic wording ('massa motor', 'Isp diz com quanta força') and inconsistent number formats."
+  },
+  {
+    "rel": "universe/exoplanets/barnard-e.json",
+    "at": "fact",
+    "old": "O menor dos pequenos mundos da Estrela de Barnard — próximo ao limite de detectabilidade.",
+    "new": "O mais leve dos pequenos mundos da Estrela de Barnard — perto do limite de detectabilidade.",
+    "grade": "MINOR",
+    "issue": "'menor' means smallest; source says lightest."
+  },
+  {
+    "rel": "universe/named-stars/alioth.json",
+    "at": "cultural",
+    "old": "O nome deriva do árabe. Como a primeira estrela na alça da Grande Concha — ou na cauda da Ursa Maior — Alioth é um marco da navegação do hemisfério norte e uma das 57 estrelas usadas na determinação de posição celeste.",
+    "new": "O nome deriva do árabe. Como a primeira estrela do cabo do Grande Carro — ou da cauda da Ursa Maior —, Alioth é presença certa na navegação do hemisfério norte e uma das 57 estrelas usadas na determinação de posição celeste.",
+    "grade": "MINOR",
+    "issue": "'Grande Concha' is not the Brazilian name for the Big Dipper."
+  },
+  {
+    "rel": "universe/named-stars/luytens-star.json",
+    "at": "bio",
+    "old": "A Estrela de Luyten é uma anã vermelha a cerca de 12,4 anos-luz de distância em Canis Minor, não muito longe em nosso céu do brilhante Prócion. Ela abriga um sistema planetário que inclui uma super-Terra em sua zona habitável — um mundo tão próximo que foi escolhido como alvo para mensagens de rádio interestelares enviadas da Terra.",
+    "new": "A Estrela de Luyten é uma anã vermelha a cerca de 12,4 anos-luz de distância, no Cão Menor, não muito longe no nosso céu da brilhante Prócion. Ela abriga um sistema planetário que inclui uma super-Terra em sua zona habitável — um mundo tão próximo que foi escolhido como alvo de mensagens de rádio interestelares enviadas da Terra.",
+    "grade": "MINOR",
+    "issue": "Constellation 'Canis Minor' not given its Portuguese name while Procyon is."
+  },
+  {
+    "rel": "universe/named-stars/alnilam.json",
+    "at": "fact",
+    "old": "A pérola central do Cinturão de Orion — uma supergigante azul resplandecente vista através de vasta distância.",
+    "new": "A pérola central das Três Marias — uma supergigante azul resplandecente vista através de uma distância enorme.",
+    "grade": "MINOR",
+    "issue": "Constellation 'Orion' lacks the Portuguese accent 'Órion'."
+  },
+  {
+    "rel": "universe/named-stars/mintaka.json",
+    "at": "cultural",
+    "old": "O nome vem do árabe e significa 'o cinturão'. Como uma das três estrelas do Cinturão, ela compartilha do reconhecimento quase universal de Orion, e sua posição sobre o equador fez dela um marco natural do leste e do oeste.",
+    "new": "O nome é árabe e significa 'o cinturão'. Como uma das três estrelas do Cinturão, ela participa do reconhecimento quase universal de Órion, e sua posição sobre o equador fez dela um marco natural de leste e oeste.",
+    "grade": "MINOR",
+    "issue": "Constellation 'Orion' lacks the Portuguese accent 'Órion'."
+  }
+]

@@ -26,7 +26,7 @@
     {
       "met": 2.33,
       "label": "RUPTURE DU RÉSERVOIR D'OXYGÈNE #2",
-      "note": "La commande d'agitation cryo du SM initie un court-circuit incendie et rupture de réservoir. « Houston, nous avons eu un problème. » L'électricité et l'eau diminuent ; le Aquarius devient le canot de sauvetage.",
+      "note": "La commande d'agitation cryogénique du SM déclenche un court-circuit, un incendie et la rupture d'un réservoir. « Houston, nous avons eu un problème. » L'électricité et l'eau diminuent ; le LM Aquarius devient le canot de sauvetage.",
       "type": "warning"
     },
     {
@@ -38,7 +38,7 @@
     {
       "met": 3.13,
       "label": "SURVOL LUNAIRE",
-      "note": "Approche la plus proche à 254 km d'altitude au-dessus de Mare Cognitum — à 400 171 km, la distance la plus loin que les humains aient jamais voyagé de la Terre (record détenu 1970–2026, dépassé par Artemis II en avril 2026).",
+      "note": "Approche la plus proche à 254 km d'altitude au-dessus de Mare Cognitum — à 400 171 km, la plus grande distance parcourue par des humains depuis la Terre (record détenu de 1970 à 2026, dépassé par Artemis II en avril 2026).",
       "type": "info"
     },
     {

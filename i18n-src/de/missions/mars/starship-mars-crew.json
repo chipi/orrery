@@ -6,7 +6,7 @@
   "events": [
     {
       "met": 0,
-      "label": "START DES RAUMSCHIFFS",
+      "label": "STARSHIP-START",
       "note": "Das bemannte Starship hebt von Boca Chica oder Cape Canaveral ab.",
       "type": "nominal"
     },

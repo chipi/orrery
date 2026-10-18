@@ -8,7 +8,7 @@
     { "met": 0.01, "label": "QUEIMA DE FASEAMENTO", "note": "Primeira de sete elevações de perigeu para sair de uma órbita terrestre baixa e alcançar a aproximação lunar.", "type": "info" },
     { "met": 10, "label": "TCM 1", "note": "Correção de trajetória durante ascensão de múltiplas órbitas.", "type": "info" },
     { "met": 20, "label": "TCM 2", "note": "Segundo TCM. Apogeu aproximando-se da distância de captura lunar.", "type": "info" },
-    { "met": 41, "label": "APROXIMAÇÃO LUNAR", "note": "Queimada translunar final — Beresheet em trajetória lunar direta.", "type": "nominal" },
+    { "met": 41, "label": "APROXIMAÇÃO LUNAR", "note": "Queima translunar final — Beresheet em trajetória lunar direta.", "type": "nominal" },
     { "met": 48, "label": "INSERÇÃO EM ÓRBITA LUNAR", "note": "Captura em órbita lunar elíptica 2019-04-04.", "type": "nominal" },
     { "met": 48.01, "label": "ANOMALIA NA DESCIDA", "note": "Reinicialização do IMU durante descida com potência → desligamento do motor → colisão em Mare Serenitatis 2019-04-11.", "type": "warning" }
   ]

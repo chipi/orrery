@@ -14,7 +14,7 @@
     {
       "met": 0.117,
       "label": "TLI",
-      "note": "Trans-lunaire injectie-burn door S-IVB; CSM + LM toewijding aan cislunaarbaan.",
+      "note": "Trans-lunaire injectiemanoeuvre door de S-IVB; CSM + LM leggen zich vast op een cislunair traject.",
       "type": "nominal"
     },
     {
@@ -26,7 +26,7 @@
     {
       "met": 2.33,
       "label": "ZUURSTOFTANK #2 RUPTURE",
-      "note": "SM cryo-roeren-commando initieert kortsluiting-brand en tankbreuk. \"Houston, we've had a problem.\" Vermogen en water nemen af; LM Aquarius wordt de reddingsboot.",
+      "note": "Het cryo-roerommando van de SM veroorzaakt een kortsluiting, brand en tankbreuk. ‘Houston, we've had a problem.’ Vermogen en water nemen af; LM Aquarius wordt de reddingsboot.",
       "type": "warning"
     },
     {

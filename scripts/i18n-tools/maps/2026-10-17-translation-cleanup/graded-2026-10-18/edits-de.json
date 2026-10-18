@@ -1,0 +1,530 @@
+[
+  {
+    "rel": "messages",
+    "at": "explore_canvas_aria_2d",
+    "old": "2D-Ansicht von oben. Ziehen zum Verschieben, Scrollen oder Zoomen. Sonne und Planeten antippen für Details.",
+    "new": "2D-Draufsicht auf das Sonnensystem. Ziehen zum Verschieben, Scrollen oder Pinch-Geste zum Zoomen. Sonne und Planeten antippen für Details.",
+    "grade": "MINOR",
+    "issue": "Drops 'solar system' and the pinch gesture; 'Scrollen oder Zoomen' is garbled."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_lar_challenge",
+    "old": "Laden Sie die Rakete schwerer — erhöhen Sie die Nutzlastmasse in der Raketengleichung, bis dieses Urteil rot wird. Diese Masse ist die Nutzlastwand für diesen Stack.",
+    "new": "Belade die Rakete schwerer — erhöhe die Nutzlastmasse in der Raketengleichung, bis dieses Urteil rot wird. Diese Masse ist die Nutzlastwand für diesen Stack.",
+    "grade": "MINOR",
+    "issue": "Formal Sie register inconsistent with the du used across the app."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_fc_why",
+    "old": "So werden echte Missionen entworfen: ein Startfenster, das von den Planeten vorgegeben wird, eine Kette von Transferabschnitten und Swing-by-Manöver, um das Δv zu erkaufen, das die Chemie nicht liefern kann. Voyager 2 bleibt das einzige Raumfahrzeug, das alle vier Gasriesen besucht hat — auf einer Route, die es für einen 176-Jahre-Moment gab. Cassini schlug den entgegengesetzten Weg ein: vier Swing-by-Manöver (Venus zweimal, Erde, Jupiter), die es zuerst nach INNEN schickten, um Geschwindigkeit aufzubauen, bevor es zum Saturn hinausgeschleudert wurde.",
+    "new": "So werden echte Missionen entworfen: ein Startfenster, das von den Planeten vorgegeben wird, eine Kette von Transferabschnitten und Swing-by-Manöver, um das Δv zu erkaufen, das die Chemie nicht liefern kann. Voyager 2 bleibt das einzige Raumfahrzeug, das alle vier Riesenplaneten besucht hat — auf einer Route, die es nur in einem Moment alle 176 Jahre gab. Cassini schlug den entgegengesetzten Weg ein: vier Swing-by-Manöver (Venus zweimal, Erde, Jupiter), die es zuerst nach INNEN schickten, um Geschwindigkeit aufzubauen, bevor es zum Saturn hinausgeschleudert wurde.",
+    "grade": "MINOR",
+    "issue": "'four giant planets' rendered as Gasriesen (wrong for Uranus/Neptune); '176-Jahre-Moment' is awkward."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_illustration_alt_landing_computer",
+    "old": "Ein Lander, der über der Oberfläche auf gedrosseltem Triebwerk schwebend, seine Sinkgeschwindigkeitskurve transparent daneben bis auf null auslaufend.",
+    "new": "Ein Lander, der auf gedrosseltem Triebwerk über der Oberfläche schwebt; daneben, transparent angedeutet, seine Sinkgeschwindigkeitskurve, die auf null ausläuft.",
+    "grade": "MINOR",
+    "issue": "Ungrammatical, stacked participles that read machine-like."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_lss_hook",
+    "old": "Die Voyagers erwischten eine einmalige Konstellation von Jupiter, Saturn, Uranus und Neptun alle 176 Jahre — die ‚Grand Tour' — die es einer Sonde ermöglichte, von Welt zu Welt zu schleudern. Verpasst man dieses Fenster, kommt es erst im 22. Jahrhundert wieder vor.",
+    "new": "Die Voyager-Sonden erwischten eine Konstellation von Jupiter, Saturn, Uranus und Neptun, die es nur alle 176 Jahre gibt — die „Grand Tour“ —, und konnten so mit einer einzigen Sonde von Welt zu Welt schwingen. Verpasst man dieses Fenster, kommt es erst im 22. Jahrhundert wieder.",
+    "grade": "MINOR",
+    "issue": "'einmalige ... alle 176 Jahre' is contradictory, mismatched quote marks, 'schleudern' wrong sense."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_gtm_planning",
+    "old": "Planen Sie Ihren eigenen Transfer — der Missionsplaner",
+    "new": "Plane deinen eigenen Transfer — der Missionsplaner",
+    "grade": "MINOR",
+    "issue": "Formal Sie register inconsistent with du used elsewhere."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_sar_thrust",
+    "old": "Dieser ganze Stack muss die Startrampe verlassen, also muss der Schub das Gewicht überwinden: F = TWR·m₀·g. Die Schub-Gewichts-Verhältnis beim Abheben liegt bei etwa 1,2–1,5 — zu niedrig und die Gravitation frisst deinen Δv während du langsam aufsteigst, zu hoch und du zerstörst die Rakete durch Vibrationen.",
+    "new": "Dieser ganze Stack muss die Startrampe verlassen, also muss der Schub das Gewicht überwinden: F = TWR·m₀·g. Das Schub-Gewichts-Verhältnis beim Abheben liegt bei etwa 1,2–1,5 — zu niedrig, und die Gravitation frisst dein Δv, während du langsam aufsteigst; zu hoch, und du zerlegst die Rakete durch Vibrationen.",
+    "grade": "MINOR",
+    "issue": "Gender error 'Die Schub-Gewichts-Verhältnis', missing commas, 'deinen Δv'."
+  },
+  {
+    "rel": "messages",
+    "at": "science_layer_polar_caps_desc",
+    "old": "Saisonales CO₂-Eis über dauerhaftem Wassereis. Sie wachsen und schrumpfen, wenn jede Hemisphäre zur Sonne und von ihr weg kippt.",
+    "new": "Saisonales CO₂-Eis über dauerhaftem Wassereis. Die Kappen wachsen und schrumpfen, wenn jede Hemisphäre zur Sonne hin und von ihr weg kippt.",
+    "grade": "MINOR",
+    "issue": "Plural 'Sie' refers back to singular 'Eis' instead of the caps."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_illustration_alt_plan_a_mission",
+    "old": "Der vollständige Bogen einer Mission in einem Bild — Starts, Umlaufbahn, Transferellipse und Ankunft als eine einzige durchgehende Flugbahn.",
+    "new": "Der vollständige Bogen einer Mission in einem Bild — Start, Umlaufbahn, Transferellipse und Ankunft als eine einzige durchgehende Reiselinie.",
+    "grade": "MINOR",
+    "issue": "Plural 'Starts' wrong in a list of singular stages; 'Flugbahn' loses 'journey line'."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_engines_per_engine",
+    "old": "Schub pro Motor",
+    "new": "Schub pro Triebwerk",
+    "grade": "MINOR",
+    "issue": "'Motor' inconsistent with Triebwerk used elsewhere (note: id is UI-18 in the short segment)."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_ctx_stellar_neighborhood",
+    "old": "Stellar Neighborhood",
+    "new": "Sternumgebung",
+    "grade": "BROKEN",
+    "issue": "Left in English (note: id is UI-24 in the short segment)."
+  },
+  {
+    "rel": "essays/seven-minutes.json",
+    "at": "body.19.md",
+    "old": "Betrachtet man speziell die Geschichte der Marsmissionen, hat das Landeproblem eine Opferbilanz. Mars 2 wurde 1971 zum ersten Objekt von der Erde, das die Marsoberfläche berührte – und stürzte ab, zerschellte beim Aufprall, weil das Abstiegssystem versagt hatte, noch ehe die Fallschirmsequenz abgeschlossen war. Mars Polar Lander schaltete im Dezember 1999 seine Abstiegstriebwerke mit nahezu völliger Sicherheit zu früh ab, weil die Erschütterungen beim Ausklappen der Landebeine fälschlich als Signal für den Aufsetzer gedeutet wurden; die letzten vierzig Meter fiel er mit voller Geschwindigkeit. Beagle 2 überstand am ersten Weihnachtstag 2003 den Eintritt – die EDL-Sequenz scheint funktioniert zu haben –, doch die Solarpaneele entfalteten sich bei der Landung nicht vollständig, und der Lander konnte nie Kontakt aufnehmen; er blieb stumm auf den Ebenen des Mars. Beim Lander Schiaparelli der Europäischen Weltraumorganisation geriet im Oktober 2016 während des heftigen Fallschirmabstiegs die Inertialmesseinheit in die Sättigung – die Messwerte liefen kurzzeitig über das Ende ihrer Skala hinaus –, was die Navigationslösung verfälschte, sodass der Bordcomputer glaubte, bereits unter der Oberfläche zu sein. Er trennte den Fallschirm ab und zündete die Bremsraketen nur drei Sekunden lang statt dreißig, und der Lander schlug mit etwa 540 Kilometern pro Stunde auf dem Boden auf.",
+    "new": "Betrachtet man speziell die Geschichte der Marsmissionen, hat das Landeproblem eine Opferbilanz. Mars 2 wurde 1971 zum ersten Objekt von der Erde, das die Marsoberfläche berührte – und stürzte ab, zerschellte beim Aufprall, weil das Abstiegssystem versagt hatte, noch ehe die Fallschirmsequenz abgeschlossen war. Mars Polar Lander schaltete im Dezember 1999 seine Abstiegstriebwerke mit nahezu völliger Sicherheit zu früh ab, weil die Erschütterungen beim Ausklappen der Landebeine fälschlich als Signal für das Aufsetzen gedeutet wurden; die letzten vierzig Meter fiel er mit voller Geschwindigkeit. Beagle 2 überstand am ersten Weihnachtstag 2003 den Eintritt – die EDL-Sequenz scheint funktioniert zu haben –, doch die Solarpaneele entfalteten sich bei der Landung nicht vollständig, und der Lander konnte nie Kontakt aufnehmen; er blieb stumm auf den Ebenen des Mars. Beim Lander Schiaparelli der European Space Agency geriet im Oktober 2016 während des heftigen Fallschirmabstiegs die Inertialmesseinheit in die Sättigung – die Messwerte liefen kurzzeitig über das Ende ihrer Skala hinaus –, was die Navigationslösung verfälschte, sodass der Bordcomputer glaubte, bereits unter der Oberfläche zu sein. Er trennte den Fallschirm ab und zündete die Bremsraketen nur drei Sekunden lang statt dreißig, und der Lander schlug mit etwa 540 Kilometern pro Stunde auf dem Boden auf.",
+    "grade": "BROKEN",
+    "issue": "Agency name 'European Space Agency' translated (name rule); 'Signal für den Aufsetzer' is wrong wording."
+  },
+  {
+    "rel": "fleet/launcher/titan-ii-glv.json",
+    "at": "tagline",
+    "old": "Workhorse für Project Gemini",
+    "new": "Arbeitspferd für Project Gemini",
+    "grade": "MINOR",
+    "issue": "'Workhorse' left in English."
+  },
+  {
+    "rel": "fleet/station/skylab.json",
+    "at": "best_known_for",
+    "old": "Erste U.S. Raumstation",
+    "new": "Erste US-Raumstation",
+    "grade": "MINOR",
+    "issue": "Wrong compounding: 'U.S. Raumstation'."
+  },
+  {
+    "rel": "fleet/lander/mars-3.json",
+    "at": "description",
+    "old": "Die erste Landung auf dem Mars (Dezember 1971). Begann mit der Übertragung eines Oberflächenbildes, doch der Kontakt brach nach ~20 Sekunden ab und hinterließ nur einen strukturlosen grauen Rahmen. Der globale Staubsturm, der damals über den Planeten tobte, könnte zum frühen Übertragungsverlust beigetragen haben.",
+    "new": "Die erste sanfte Landung auf dem Mars (Dezember 1971). Begann mit der Übertragung dessen, was ein Oberflächenbild hätte werden sollen, doch der Kontakt brach nach ~20 Sekunden ab und hinterließ nur ein strukturloses graues Bild. Der globale Staubsturm, der damals über den Planeten tobte, könnte zum frühen Übertragungsverlust beigetragen haben.",
+    "grade": "MINOR",
+    "issue": "'soft landing' reduced to 'Landung'; 'frame' rendered as 'Rahmen'."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/orion.json",
+    "at": "description",
+    "old": "Das Besatzungsmodul für NASAs Artemis-Programm, entwickelt gemeinsam mit der ESA (das Europäische Service-Modul wird von Airbus bereitgestellt). Konzipiert zur Unterstützung von bis zu vier Astronauten auf mehtwöchigen Missionen zur Mondumlaufbahn. Flog unbesetzt auf Artemis I im Jahr 2022. Absolvierte seine erste bemannte Mission (Artemis II) im April 2026 mit einer vierköpfigen Besatzung auf einer Mondfluchtbahn.",
+    "new": "Das Besatzungsraumschiff für NASAs Artemis-Programm, gemeinsam mit der ESA gebaut (das European Service Module liefert Airbus). Konzipiert für bis zu vier Astronauten auf mehrwöchigen Missionen zur Mondumlaufbahn. Flog 2022 unbemannt auf Artemis I. Absolvierte im April 2026 seine erste bemannte Mission (Artemis II) mit vierköpfiger Besatzung auf einer Mondvorbeiflug-Bahn.",
+    "grade": "BROKEN",
+    "issue": "European Service Module translated (name rule), typo 'mehtwöchigen', 'Besatzungsmodul' wrong for crew vehicle."
+  },
+  {
+    "rel": "fleet/constellation/inmarsat.json",
+    "at": "description",
+    "old": "Geostationäre mobile Satellitenkommunikation — 14+ Satelliten in GEO für maritime, Luftfahrt- und abgelegene Gebiete betreffende Sprach- und Datendienste. Ursprünglich 1979 als International Maritime Satellite Organization gegründet, eine zwischenstaatliche Vertragsorganisation für Schiff-zu-Küste-Kommunikation (der Vorgänger von GMDSS). 1999 privatisiert. 2023 von Viasat übernommen, um mit Viasats Ka-Band-Flotte kombiniert zu werden.",
+    "new": "Geostationäre mobile Satellitenkommunikation — 14+ Satelliten in GEO, die maritime, Luftfahrt- und Fernbereichs-Sprach- und Datendienste bereitstellen. Ursprünglich 1979 als International Maritime Satellite Organization gegründet, eine zwischenstaatliche Vertragsorganisation für die Kommunikation zwischen Schiff und Küste (der Vorgänger von GMDSS). 1999 privatisiert. 2023 von Viasat übernommen, um sie mit Viasats Ka-Band-Flotte zusammenzuführen.",
+    "grade": "MINOR",
+    "issue": "Clumsy noun chain 'maritime, Luftfahrt- und abgelegene Gebiete betreffende ... Dienste'; 'kombiniert zu werden' awkward."
+  },
+  {
+    "rel": "fleet/orbiter/mariner-4.json",
+    "at": "tagline",
+    "old": "Erste erfolgreiche Marsflyby",
+    "new": "Erster erfolgreicher Mars-Vorbeiflug",
+    "grade": "MINOR",
+    "issue": "Wrong gender/compound 'Erste erfolgreiche Marsflyby'."
+  },
+  {
+    "rel": "fleet/lander/beresheet.json",
+    "at": "best_known_for",
+    "old": "Erste private Mondlandung im Versuch",
+    "new": "Erster privater Mondlandeversuch",
+    "grade": "MINOR",
+    "issue": "'Mondlandung im Versuch' is unnatural."
+  },
+  {
+    "rel": "fleet/rover/exomars-rosalind-franklin.json",
+    "at": "description",
+    "old": "Der erste Mars-Rover der ESA, benannt nach der DNA-Pionierin Rosalind Franklin. Konzipiert für eine Landung in Oxia Planum (einer alten, tonhaltigen Marsregion, ausgewählt wegen ihres hohen Potenzials zur Biosignaturen-Erhaltung) und für den Einsatz eines 2-Meter-Untergrundbohrers — tiefer als jede frühere Marsmission — um Proben aus Tiefen zu gewinnen, die vor kosmischer und UV-Strahlung geschützt sind, die Organik an der Oberfläche zerstört. Die Analytical Laboratory Drawer beherbergt drei Instrumente zur Lebensdetektion: MOMA (Mars Organic Molecule Analyser), MicrOmega (Infrarot-Bildgebungsspektroskopie) und den Raman Laser Spectrometer. Ursprünglich für den Start 2022 auf einer russischen Proton vorgesehen; nach dem russischen Einmarsch in der Ukraine 2022 setzte die ESA die Zusammenarbeit aus. Derzeit für 2028 auf einer von der NASA gestellten Trägerrakete mit einer von ESA / Airbus neu gebauten Landeplattform geplant.",
+    "new": "Der erste Mars-Rover der ESA, benannt nach der DNA-Pionierin Rosalind Franklin. Konzipiert für eine Landung in Oxia Planum (einer alten, tonhaltigen Marsregion, ausgewählt wegen ihres hohen Potenzials zur Erhaltung von Biosignaturen) und für den Einsatz eines 2-Meter-Untergrundbohrers — tiefer als jede frühere Marsmission —, um Proben aus Tiefen zu gewinnen, die vor der kosmischen und UV-Strahlung geschützt sind, welche organisches Material an der Oberfläche zerstört. Die Analytical Laboratory Drawer beherbergt drei Instrumente zum Lebensnachweis: MOMA (Mars Organic Molecule Analyser, ein Gaschromatograf plus Massenspektrometer mit zwei Ionenquellen), MicrOmega (Infrarot-Bildgebungsspektroskopie) und den Raman Laser Spectrometer. Ursprünglich für einen Start 2022 auf einer russischen Proton mit einer in Russland gebauten Landeplattform (Kazachok) vorgesehen; nach dem russischen Einmarsch in die Ukraine 2022 setzte die ESA die Zusammenarbeit aus, und der Start von Rosalind Franklin wurde verschoben. Derzeit für 2028 auf einer von der NASA gestellten Trägerrakete mit einer von ESA / Airbus neu gebauten Landeplattform geplant.",
+    "grade": "BROKEN",
+    "issue": "Omits content: gas chromatograph/dual-source detail, Russian-built Kazachok platform, and the deferral of the launch."
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-1.json",
+    "at": "description",
+    "old": "Das erste US-Raumfahrzeug im Mondorbit, vier Monate nach Luna 10. Gestartet am 1966-08-10 von Cape Canaveral auf einer Atlas-Agena D, trat Lunar Orbiter 1 am 1966-08-14 in eine elliptische Mondumlaufbahn ein. Seine primäre Mission war die Fotografie von potenziellen Apollo-Landestellen in sub-Meter-Auflösung — ein Dual-Lens-Kamerasystem (70 mm + 610 mm), das Film im Orbit entwickelte (Bimat-Verfahren) und ihn zur Funkübertragung zur Erde abtastete. Erfasste das erste Foto der Erde vom Mondorbit aus (1966-08-23 — mehr als zwei Jahre vor Apollo 8 berühmterer Earthrise) als Weitwinkelaufnahme während der 16. Umkreisung. Lieferte 207 hochauflösende + 207 mittelauflösende Bilder und kartografierte 4,1 Millionen km² der Mondoberfläche. Stürzte absichtlich am 1966-10-29 auf die mondabgewandte Seite ab, um das Funkspektrum für Lunar Orbiter 2 freizumachen.",
+    "new": "Das erste US-Raumfahrzeug im Mondorbit, vier Monate nach Luna 10. Gestartet am 1966-08-10 von Cape Canaveral auf einer Atlas-Agena D, trat Lunar Orbiter 1 am 1966-08-14 in eine elliptische Mondumlaufbahn ein. Seine Hauptaufgabe war die Fotografie möglicher Apollo-Landestellen mit Auflösungen unter einem Meter — ein Kamerasystem mit zwei Objektiven (70 mm + 610 mm), das den Film im Orbit entwickelte (Bimat-Verfahren) und zur Funkübertragung zur Erde abtastete. Nahm das erste Foto der Erde vom Mondorbit aus auf (1966-08-23 — mehr als zwei Jahre vor Apollo 8s berühmterem Earthrise) als Weitwinkelaufnahme während der 16. Umkreisung. Lieferte 207 hochauflösende + 207 mittelauflösende Bilder und kartografierte 4,1 Millionen km² der Mondoberfläche. Stürzte absichtlich am 1966-10-29 auf die Mondrückseite ab, um das Funkband für Lunar Orbiter 2 freizumachen.",
+    "grade": "MINOR",
+    "issue": "Genitive missing in 'vor Apollo 8 berühmterer Earthrise'; 'sub-Meter-Auflösung' and 'Dual-Lens' awkward."
+  },
+  {
+    "rel": "fleet/orbiter/voyager-2.json",
+    "at": "tagline",
+    "old": "Nur Raumschiff, um alle vier riesigen Planeten zu besuchen",
+    "new": "Einziges Raumfahrzeug, das alle vier Riesenplaneten besucht hat",
+    "grade": "MINOR",
+    "issue": "Telegraphic, machine-like grammar; 'riesigen Planeten' not the term for giant planets."
+  },
+  {
+    "rel": "fleet/orbiter/osiris-rex.json",
+    "at": "tagline",
+    "old": "Sample-returned Bennu (2023); jetzt en route to Apophis",
+    "new": "Bennu-Probenrückführung (2023); jetzt unterwegs zu Apophis",
+    "grade": "BROKEN",
+    "issue": "Untranslated English ('Sample-returned', 'en route to')."
+  },
+  {
+    "rel": "fleet/orbiter/magellan.json",
+    "at": "tagline",
+    "old": "Radar-mapped 98% der Venusoberfläche",
+    "new": "Hat 98 % der Venusoberfläche per Radar kartiert",
+    "grade": "BROKEN",
+    "issue": "'Radar-mapped' left in English; no German sentence."
+  },
+  {
+    "rel": "fleet/rover/spirit.json",
+    "at": "best_known_for",
+    "old": "Mars Exploration Rover; 6-jährige Operation",
+    "new": "Mars Exploration Rover; sechs Jahre im Betrieb",
+    "grade": "MINOR",
+    "issue": "'6-jährige Operation' is a calque."
+  },
+  {
+    "rel": "fleet/lander/mars6.json",
+    "at": "tagline",
+    "old": "Sowjetischer Mars-Lander von 1973 — erste Telemetrie aus dem Mars-Abstieg in der Atmosphäre (224 s, teilweise beschädigt)",
+    "new": "Sowjetischer Mars-Lander von 1973 — erste Telemetrie aus dem Abstieg durch die Marsatmosphäre (224 s, größtenteils beschädigt)",
+    "grade": "MINOR",
+    "issue": "'mostly corrupted' rendered as 'teilweise' (partly), changing the claim."
+  },
+  {
+    "rel": "fleet/observatory/spitzer.json",
+    "at": "best_known_for",
+    "old": "Infrared Great Observatory; 16 Jahre Daten",
+    "new": "Infrarot-Großobservatorium; 16 Jahre Daten",
+    "grade": "MINOR",
+    "issue": "'Infrared Great Observatory' left in English."
+  },
+  {
+    "rel": "missions/earth/liberty-bell-7.json",
+    "at": "description",
+    "old": "Gus Grissoms 15-Minuten-Suborbitallflug — zweiter Amerikaner im Weltall, erster Flug mit einer explosiven Notfallausstiegsluke. Nach dem Wassertreffer feuerte die Luke vorzeitig, die Kapsel lief voll Wasser, und Liberty Bell 7 versank in 4900 m Tiefe; Grissom entkam, aber sein Anzug nahm Wasser auf und er wäre während der Hubschrauberbergung fast ertrunken. Die Ursache der Lukenzündung blieb Jahrzehnte lang umstritten; Grissom beteuerte, dass er nicht den Schlagbolzen berührt habe. Am 1999-07-20 von einer Oceaneering/Discovery Channel-Expedition aus 4900 m Tiefe geborgen, restauriert und nun im Kansas Cosmosphere & Space Center in Hutchinson, KS ausgestellt. Das Buch von Tom Wolfe / der Film von 1983 The Right Stuff dramatisierte diesen Flug und die Kontroverse um die Luke.",
+    "new": "Gus Grissoms 15-Minuten-Suborbitalflug — zweiter Amerikaner im Weltall, erster Flug mit einer Sprengluke. Nach der Wasserung wurde die Luke vorzeitig gezündet, die Kapsel lief voll Wasser, und Liberty Bell 7 versank in 4900 m Tiefe; Grissom entkam, aber sein Anzug nahm Wasser auf und er wäre bei der Hubschrauberbergung fast ertrunken. Die Ursache der Lukenzündung blieb jahrzehntelang umstritten; Grissom beteuerte, den Zündbolzen nicht angestoßen zu haben. Am 1999-07-20 von einer Expedition von Oceaneering und Discovery Channel geborgen, restauriert und nun im Kansas Cosmosphere & Space Center in Hutchinson, KS ausgestellt. Das Buch von Tom Wolfe / der Film von 1983 The Right Stuff dramatisierte diesen Flug und die Kontroverse um die Luke.",
+    "grade": "MINOR",
+    "issue": "'Wassertreffer' for splashdown, 'Notfallausstiegsluke' for explosive hatch, 'Jahrzehnte lang', redundant depth repeat."
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "events.0.label",
+    "old": "START DES RAUMSCHIFFS",
+    "new": "STARSHIP-START",
+    "grade": "BROKEN",
+    "issue": "Vehicle name Starship translated to 'Raumschiff' (name rule)."
+  },
+  {
+    "rel": "missions/jupiter/pioneer-10.json",
+    "at": "description",
+    "old": "Pioneer 10 war der Wegbereiter — die erste Sonde durch den Asteroidengürtel (der sich als viel ungefährlicher erwies als befürchtet), die erste, die Jupiter aus der Nähe abbildete, und die erste, die Plutos Perihel-Entfernung überschritt (1983). Sie trägt die Pioneer-Plakette, entworfen von Carl Sagan, Frank Drake und Linda Salzman Sagan — die erste bewusste interstellare Botschaft der Menschheit. Letzter erfolgreicher Kontakt am 23.01.2003 aus ~82 AE; die Sonde driftet nun in Richtung Taurus, mit einer Annäherung an Aldebaran in etwa zwei Millionen Jahren.",
+    "new": "Pioneer 10 war der Wegbereiter — die erste Sonde durch den Asteroidengürtel (der sich als viel ungefährlicher erwies als befürchtet), die erste, die Jupiter aus der Nähe abbildete, und die erste, die Plutos Perihel-Entfernung überschritt (1983). Sie trägt die Pioneer-Plakette, entworfen von Carl Sagan, Frank Drake und Linda Salzman Sagan — die erste bewusste interstellare Botschaft der Menschheit. Letzter erfolgreicher Kontakt am 23.01.2003 aus ~82 AE; die Sonde driftet nun in Richtung Sternbild Stier, mit einer Annäherung an Aldebaran in etwa zwei Millionen Jahren.",
+    "grade": "MINOR",
+    "issue": "Constellation name left in Latin ('Taurus') instead of German 'Stier'."
+  },
+  {
+    "rel": "missions/saturn/cassini.json",
+    "at": "description",
+    "old": "Gemeinsame Mission von NASA, ESA und ASI. Nach siebenjähriger Reise mit Schwerkraftunterstützungen an Venus, Erde und Jupiter erreichte Cassini am 01.07.2004 den Saturn-Orbit und arbeitete dort 13 Jahre, vollendete 294 Umläufe und 162 enge Mondvorbeiflüge. Sie entdeckte die Südpol-Plumes von Enceladus (aktive Wassereis-Geysire), kartierte mit Radar Titans Methan-Seen und löste Saturns sechseckigen Polarsturm auf. Das Grand Finale (April–September 2017) flocht 22 Umläufe durch die Lücke zwischen Ringen und Wolkenschicht und endete mit einem kontrollierten atmosphärischen Eintritt, um jede Kontamination von Enceladus oder Titan mit irdischen Mikroben zu verhindern.",
+    "new": "Gemeinsame Mission von NASA, ESA und ASI. Nach siebenjähriger Reise mit Swing-by-Manövern an Venus, Erde und Jupiter erreichte Cassini am 01.07.2004 die Saturn-Umlaufbahn und arbeitete dort 13 Jahre, vollendete 294 Umläufe und 162 nahe Vorbeiflüge an Monden. Die Sonde entdeckte die Fontänen am Südpol von Enceladus (aktive Wassereis-Geysire), kartierte mit Radar die Methanseen des Titan und löste Saturns sechseckigen Polarsturm auf. Das Grand Finale (April–September 2017) führte 22 Umläufe durch die Lücke zwischen den Ringen und den Wolkenobergrenzen und endete mit einem kontrollierten Eintritt in die Atmosphäre, um jede Kontamination von Enceladus oder Titan mit irdischen Mikroben auszuschließen.",
+    "grade": "MINOR",
+    "issue": "'Schwerkraftunterstützungen', untranslated 'Plumes', 'Methan-Seen', gender shifts (Sie/Sonde)."
+  },
+  {
+    "rel": "missions/moon/smart-1.json",
+    "at": "description",
+    "old": "ESAs erste Mondmission und das erste europäische Raumschiff, das den Mond erreichte. SMART = Small Missions for Advanced Research in Technology — und die Schlüsseltechnologie war ein Hall-Effekt-Sonnenelektrischer-Ionentriebwerk (PPS-1350-G), damals das größte je geflogene Ionentriebwerk dieser Art. Gestartet am 2003-09-27 als gemeinsame Nutzlast auf einer Ariane 5 von Kourou, verwendete das 367-kg-Raumschiff seinen 1,2-kW-Xenon-Ionenantrieb über 13 Monate, um seine Erdumlaufbahn langsam zu erhöhen, schließlich von der Mondgravitation am 2004-11-15 eingefangen — eine 13-Monate-Spirale mit niedrigem Schub statt der tageelangen chemischen Transfers aller vorherigen Mondmissionen. Operierte 16 Monate in einer polaren Mondumlaufbahn und lieferte AMIE-Kamerabilder, die ersten Röntgenfluoreszenzelement-Karten des Mondes (D-CIXS) und Infrarot-Mineralspektroskopie (SIR). Absichtlich impaktiert bei Lacus Excellentiae (34,4° S, 46,2° W) am 2006-09-03 05:42 UTC — der Aufprallblitz wurde live vom Canada-France-Hawaii Telescope beobachtet.",
+    "new": "ESAs erste Mondmission und das erste europäische Raumfahrzeug, das den Mond erreichte. SMART = Small Missions for Advanced Research in Technology — und die Schlüsseltechnologie war ein solarelektrisches Hall-Effekt-Ionentriebwerk (PPS-1350-G), damals das größte je geflogene Triebwerk dieser Art. Gestartet am 2003-09-27 als Mitnutzlast auf einer Ariane 5 von Kourou, nutzte das 367 kg schwere Raumfahrzeug seinen 1,2-kW-Xenon-Ionenantrieb über 13 Monate, um seine Erdumlaufbahn langsam anzuheben, bis es am 2004-11-15 von der Mondgravitation eingefangen wurde — eine 13-monatige Spirale mit geringem Schub statt der tagelangen chemischen Transfers aller früheren Mondmissionen. Es arbeitete 16 Monate in einer polaren Mondumlaufbahn und lieferte Bilder der AMIE-Kamera, die ersten Röntgenfluoreszenz-Karten der Elementverteilung auf dem Mond (D-CIXS) und infrarote Mineralspektroskopie (SIR). Schlug absichtlich bei Lacus Excellentiae (34,4° S, 46,2° W) am 2006-09-03 um 05:42 UTC auf — der Einschlagsblitz wurde live am Canada-France-Hawaii Telescope beobachtet.",
+    "grade": "BROKEN",
+    "issue": "Garbled German: 'Hall-Effekt-Sonnenelektrischer-Ionentriebwerk', 'tageelangen', '13-Monate-Spirale', 'impaktiert', 'Röntgenfluoreszenzelement-Karten'."
+  },
+  {
+    "rel": "missions/moon/blue-moon-mk1.json",
+    "at": "events.4.label",
+    "old": "ANGETRIEBENER ABSTIEG",
+    "new": "ABSTIEG MIT TRIEBWERK",
+    "grade": "MINOR",
+    "issue": "'ANGETRIEBENER ABSTIEG' is a stiff calque."
+  },
+  {
+    "rel": "missions/mars/mars-pathfinder.json",
+    "at": "events.4.label",
+    "old": "SOJOURNER AUSGESETZT",
+    "new": "SOJOURNER ABGESETZT",
+    "grade": "MINOR",
+    "issue": "'AUSGESETZT' means exposed/abandoned, not deployed."
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "events.2.note",
+    "old": "Ankunft bei Bennu; Bahnstation bei ~19 km, dann schrittweise Verengung auf eine Rekord-Umlaufbahn von ~1,4 km — engster Raumfahrzeug-Orbit je um einen Himmelskörper.",
+    "new": "Ankunft bei Bennu; hält Position bei ~19 km und verengt dann schrittweise auf eine Rekord-Umlaufbahn von ~1,4 km — die engste Umlaufbahn eines Raumfahrzeugs um irgendeinen Himmelskörper.",
+    "grade": "MINOR",
+    "issue": "'Bahnstation' is not a term for stationkeeping (note: id is mission-6 in the event-notes segment)."
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.3.note",
+    "old": "SM-Kryo-Rührbefehls löst einen Kurzschluss-Brand und eine Tankruptur aus. »Houston, wir hatten ein Problem.« Strom und Wasser schwinden; LM Aquarius wird zum Rettungsboot.",
+    "new": "Der SM-Kryo-Rührbefehl löst einen Kurzschlussbrand und einen Tankbruch aus. »Houston, wir hatten ein Problem.« Strom und Wasser schwinden; die LM Aquarius wird zum Rettungsboot.",
+    "grade": "MINOR",
+    "issue": "Wrong case: 'SM-Kryo-Rührbefehls löst' (note: id is mission-16 in the event-notes segment)."
+  },
+  {
+    "rel": "missions/moon/artemis2.json",
+    "at": "events.5.note",
+    "old": "Orion-Wiedereintritt und Wasserspritzer im Pazifischen Ozean.",
+    "new": "Orion-Wiedereintritt und Wasserung im Pazifik.",
+    "grade": "BROKEN",
+    "issue": "'Wasserspritzer' means a water splash, not splashdown (note: id is mission-22 in the event-notes segment)."
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-090fa2256b19.caption",
+    "old": "Das zweite H3-Fahrzeug erreicht die Umlaufbahn von Tanegashima — 17. Feb. 2024.",
+    "new": "Die zweite H3 erreicht von Tanegashima aus die Umlaufbahn — 17. Feb. 2024.",
+    "grade": "MINOR",
+    "issue": "Reads as 'the orbit of Tanegashima'."
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-cruise-luna9_webp.where",
+    "old": "Fliegen · Cruise/Anflugphase",
+    "new": "Fliegen · Reiseflug/Anflug",
+    "grade": "MINOR",
+    "issue": "'Cruise' left in English."
+  },
+  {
+    "rel": "tiangong-modules/tianhe.json",
+    "at": "description",
+    "old": "Der nach vorn weisende Kern, der zuerst startete — Antrieb, Energie, Lebenserhaltung und der Andockknoten, an dem Wentian und Mengtian binnen achtzehn Monaten in das senkrechte T eingeschwenkt wurden.",
+    "new": "Im April 2021 als Rückgrat der Station gestartet — Antrieb, Energie, Lebenserhaltung und der Andockknoten, an dem Wentian und Mengtian in den folgenden achtzehn Monaten in das senkrechte T eingeschwenkt wurden.",
+    "grade": "BROKEN",
+    "issue": "Content does not match the source (invents 'nach vorn weisender Kern, der zuerst startete'; drops April 2021, 'spine' and 'propulsion, power' framing)."
+  },
+  {
+    "rel": "orbit-regimes-mars/HILL.json",
+    "at": "name",
+    "old": "Marsianische Hill Sphere",
+    "new": "Hill-Sphäre des Mars",
+    "grade": "MINOR",
+    "issue": "Mixed English/German 'Marsianische Hill Sphere'."
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-mars-curiosity_webp.what",
+    "old": "MSL-class RTG-Rover mit Mast + Arm.",
+    "new": "Rover der MSL-Klasse mit RTG, Mast und Arm.",
+    "grade": "MINOR",
+    "issue": "'MSL-class' left in English."
+  },
+  {
+    "rel": "rockets/ariane-6.json",
+    "at": "first",
+    "old": "Europe's successor nach Ariane 5, with restartable upper stage for direct injection",
+    "new": "Europas Nachfolger der Ariane 5, mit wiederzündbarer Oberstufe für direkte Einschüsse",
+    "grade": "BROKEN",
+    "issue": "Half the sentence left in English."
+  },
+  {
+    "rel": "orbit-regimes/LEO.json",
+    "at": "comparison",
+    "old": "Etwa 1/600 des Weges zum Mond. Die ISS umkreist in 408 km Höhe auf derselben Höhe wie die Entfernung von London nach Genf — seitwärts gelegt.",
+    "new": "Etwa 1/600 des Weges zum Mond. Die ISS umkreist die Erde in 408 km Höhe — so hoch, wie London von Genf entfernt ist, seitwärts gelegt.",
+    "grade": "MINOR",
+    "issue": "'umkreist ... auf derselben Höhe wie die Entfernung' is garbled."
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "bio",
+    "old": "Fast auf die Seite gekippt (97,77°). Jeder Pol erhält 42 Jahre lang ununterbrochenes Sonnenlicht und anschließend 42 Jahre Dunkelheit. Mit ziemlicher Sicherheit durch eine massive Kollision in der Antike verursacht.",
+    "new": "Fast auf die Seite gekippt (97,77°). Jeder Pol erhält 42 Jahre lang ununterbrochenes Sonnenlicht und anschließend 42 Jahre Dunkelheit. Höchstwahrscheinlich durch eine massive Kollision in der Frühzeit des Sonnensystems verursacht.",
+    "grade": "MINOR",
+    "issue": "'in der Antike' is wrong for 'ancient' (should be primordial); 'Mit ziemlicher Sicherheit' weakens 'almost certainly'."
+  },
+  {
+    "rel": "moon-sites/apollo12.json",
+    "at": "fact",
+    "old": "Die Präzisionslandung — Conrad setzte innerhalb von ~163 m der unbemannten Sonde Surveyor 3 (1967) auf. Sie bargen Teile davon für die Rückkehr zur Erde und zeigten, dass Raumfahrzeuge jahrelang auf dem Mond unbeschädigt von Strahlung oder Mikrometeoriten überstehen. Ein Machbarkeitsnachweis für zukünftige Rendezvous-Missionen.",
+    "new": "Die Präzisionslandung — Conrad setzte innerhalb von ~163 m der unbemannten Sonde Surveyor 3 (1967) auf. Sie bargen Teile davon für die Rückkehr zur Erde und zeigten, dass Raumfahrzeuge jahrelang auf dem Mond überstehen, ohne durch Strahlung oder Mikrometeoriten beschädigt zu werden. Ein Machbarkeitsnachweis für künftige Rendezvous-Missionen.",
+    "grade": "MINOR",
+    "issue": "Garbled 'unbeschädigt von Strahlung oder Mikrometeoriten überstehen'."
+  },
+  {
+    "rel": "mars-sites/tgo.json",
+    "at": "fact",
+    "old": "Die überlebende Hälfte der ExoMars-2016-Mission (Schiaparelli war der Lander). Charakterisiert atmosphärisches Methan, Wasserdampf und andere Spurengase mit einer Empfindlichkeit im Bereich von Teilen pro Billion. Fand kein Methan über 0,05 ppbv – weit unterhalb aller bisherigen Nachweise – und vertieft das Methan-Rätsel, anstatt es zu lösen. Die Oberflächenmessungen des Curiosity bleiben ungeklärt.",
+    "new": "Die überlebende Hälfte der ExoMars-2016-Mission (Schiaparelli war der Lander). Charakterisiert atmosphärisches Methan, Wasserdampf und andere Spurengase mit einer Empfindlichkeit im Bereich von Teilen pro Billion. Fand kein Methan über 0,05 ppbv – weit unterhalb aller bisherigen Nachweise – und vertieft das Methan-Rätsel, anstatt es zu lösen. Die Oberflächenmessungen von Curiosity bleiben ungeklärt.",
+    "grade": "MINOR",
+    "issue": "'des Curiosity' wrongly adds an article before a mission name."
+  },
+  {
+    "rel": "mars-sites/beagle2.json",
+    "at": "fact",
+    "old": "Astrobiolologie-Lander unter britischer Leitung an Bord der Mars Express der ESA. Landete am Weihnachtstag 2003, nahm aber niemals Kontakt auf. Der Lander wurde 2015 von NASAs MRO HiRISE-Kamera lokalisiert — er hatte die Oberfläche intakt erreicht, aber mindestens eines seiner vier Solarpanels entfaltete sich nicht, was seine Funkantenne blockierte. Ein 12-jähriges Rätsel gelöst durch Orbitalaufnahmen.",
+    "new": "Astrobiologie-Lander unter britischer Leitung an Bord der ESA-Sonde Mars Express. Landete am Weihnachtstag 2003, nahm aber nie Kontakt auf. Der Lander wurde 2015 von der HiRISE-Kamera des NASA-Orbiters MRO lokalisiert — er hatte die Oberfläche intakt erreicht, aber mindestens eines seiner vier Solarpaneele entfaltete sich nicht und blockierte die Funkantenne. Ein 12 Jahre altes Rätsel, gelöst durch Aufnahmen aus dem Orbit.",
+    "grade": "MINOR",
+    "issue": "Typo 'Astrobiolologie'; 'NASAs MRO HiRISE-Kamera' and 'Orbitalaufnahmen' clunky."
+  },
+  {
+    "rel": "mars-sites/spirit.json",
+    "at": "mission_type",
+    "old": "Uncrewed Rover · Mission Complete",
+    "new": "Unbemannter Rover · Mission abgeschlossen",
+    "grade": "BROKEN",
+    "issue": "Untranslated English."
+  },
+  {
+    "rel": "small-bodies/halley.json",
+    "at": "science_sections.0.why",
+    "old": "Halleys Exzentrizität von 0,967 ist die Lehrbuch-Umlaufbahn eines kurzperiodischen Kometen — annähernd parabolisch, mit Perihelium 0,59 AU und Aphelium 35 AU.",
+    "new": "Halleys Exzentrizität von 0,967 ist die Lehrbuch-Umlaufbahn eines kurzperiodischen Kometen — annähernd parabolisch, mit Perihel bei 0,59 AE und Aphel bei 35 AE.",
+    "grade": "MINOR",
+    "issue": "Wrong terms 'Perihelium/Aphelium' (Perihel/Aphel); 'AU' vs AE used elsewhere."
+  },
+  {
+    "rel": "mars-sites/mars6.json",
+    "at": "fact",
+    "old": "Erste Raumsonde, die während des Marsabstiegs atmosphärische Daten zurückgibt. Bei der Landung ging die Kommunikation verloren, aber die Sinktelemetrie – Druck, Temperatur und ein Teilprofil der atmosphärischen Zusammensetzung – speiste die technischen Modelle, auf die sich Viking drei Jahre später verlassen würde.",
+    "new": "Erstes Raumfahrzeug, das während des Marsabstiegs atmosphärische Daten übermittelte. Bei der Landung brach die Kommunikation ab, aber die Abstiegstelemetrie – Druck, Temperatur und ein Teilprofil der atmosphärischen Zusammensetzung – speiste die technischen Modelle, auf die sich Viking drei Jahre später stützen würde.",
+    "grade": "MINOR",
+    "issue": "'Sinktelemetrie' is not a term; 'Raumsonde ... zurückgibt' awkward."
+  },
+  {
+    "rel": "planets/uranus.json",
+    "at": "science_sections.3.why",
+    "old": "Kein Raumfahrzeug hat Uranus seit Voyager 2 (1986) besucht. Ein Uranus-Orbiter ist eine Top-Priorität der NASA Decadal-Survey für die 2030er Jahre.",
+    "new": "Kein Raumfahrzeug hat Uranus seit Voyager 2 (1986) besucht. Ein Uranus-Orbiter ist eine Top-Priorität der NASA-Decadal-Survey für die 2030er Jahre.",
+    "grade": "MINOR",
+    "issue": "Ungrammatical 'eine Top-Priorität der NASA Decadal-Survey'; no article/hyphen."
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "science_sections.3.why",
+    "old": "Jupiters riesige Hill-Sphäre (Radius von 50 Millionen km) ist es, die sein System aus 101 Monden stabil macht – der Gravitationsbrunnen reicht in Perihel fast bis zum Mars.",
+    "new": "Jupiters riesige Hill-Sphäre (Radius von 50 Millionen km) ist es, die sein System aus 101 Monden stabil hält – die Gravitationsmulde reicht im Perihel fast bis zum Mars.",
+    "grade": "MINOR",
+    "issue": "'in Perihel' missing article; clunky 'Gravitationsbrunnen'."
+  },
+  {
+    "rel": "small-bodies/bennu.json",
+    "at": "science_sections.0.why",
+    "old": "Bennu ist ein erdnahes Objekt (Große Halbachse 1,13 AU) — nah genug, dass OSIRIS-REx rendezvous konnte, Proben nahm und Material in 7 Jahren zur Erde zurückbrachte.",
+    "new": "Bennu ist ein erdnaher Asteroid (große Halbachse 1,13 AE) — nah genug, dass OSIRIS-REx ein Rendezvous durchführen, Proben nehmen und Material in 7 Jahren zur Erde zurückbringen konnte.",
+    "grade": "BROKEN",
+    "issue": "Garbled: 'rendezvous konnte' (untranslated verb), 'erdnahes Objekt' for asteroid, 'AU'."
+  },
+  {
+    "rel": "mars-sites/mangalyaan.json",
+    "at": "name",
+    "old": "Mangalyaan (Mars-Orbiter-Mission)",
+    "new": "Mangalyaan (Mars Orbiter Mission)",
+    "grade": "BROKEN",
+    "issue": "Mission name 'Mars Orbiter Mission' translated (name rule)."
+  },
+  {
+    "rel": "planets/menoetius.json",
+    "at": "fact",
+    "old": "104-km-Begleiter des Doppelsystems Patroclus-Menoetius im L5-Trojanerschwarm — nahezu gleichmäßiger Doppelpartner zu Patroclus, getrennt durch 680 km. Lucys Begegnung im März 2033 wird die erste Nahaufnahme eines Trojanerbinärsystems sein und beide Partner gleichzeitig kartografieren.",
+    "new": "104 km großer Begleiter des Doppelsystems Patroclus-Menoetius im L5-Trojanerschwarm — Partner von nahezu gleicher Masse wie Patroclus, 680 km entfernt. Lucys Begegnung im März 2033 wird die erste Nahaufnahme eines Trojaner-Doppelsystems sein und beide Partner gleichzeitig kartografieren.",
+    "grade": "MINOR",
+    "issue": "'nahezu gleichmäßiger Doppelpartner' is wrong: should be near-equal mass."
+  },
+  {
+    "rel": "science/life-in-space/eva-physiology.json",
+    "at": "body_paragraphs.1",
+    "old": "Die Gegenmaßnahme ist Voratlmung: Stunden lang reinen Sauerstoff bei allmählich sinkendem Druck atmen, bevor man die Schleuse verlässt, um Stickstoff aus dem Körpergewebe auszuwaschen. Das aktuelle ISS-Protokoll auf der US-Seite nutzt eine Voratlmung im Anzug plus das Campout-Protokoll (über Nacht bei 10,2 psi), insgesamt etwa 4 Stunden vor der Schleusendepressurisation. Russische Orlan-Anzüge laufen bei 5,7 psi, was die Voratlmung erheblich verkürzt – andere Abwägung.",
+    "new": "Die Gegenmaßnahme ist die Vor-Atmung: Stunden lang reinen Sauerstoff bei allmählich sinkendem Druck atmen, bevor man die Schleuse verlässt, um Stickstoff aus dem Körpergewebe auszuwaschen. Das aktuelle ISS-Protokoll auf der US-Seite nutzt eine Vor-Atmung im Anzug plus das Campout-Protokoll (über Nacht bei 10,2 psi), insgesamt etwa 4 Stunden, bevor die Schleuse den Druck ablässt. Russische Orlan-Anzüge laufen bei 5,7 psi, was die Vor-Atmung erheblich verkürzt – eine andere Abwägung.",
+    "grade": "MINOR",
+    "issue": "Typo 'Voratlmung' (twice), 'Schleusendepressurisation' clunky, missing comma."
+  },
+  {
+    "rel": "science/mission-phases/entry-footprint.json",
+    "at": "body_paragraphs.0",
+    "old": "Die Footprint ist die erreichbare Menge im Downrange-Crossrange-Raum. Downrange wird hauptsächlich dadurch bestimmt, wie das Fahrzeug seinen vertikalen Auftrieb einsetzt: vollständiger Auftrieb nach oben maximiert die Reichweite (die Kapsel „schwebt\", bremst langsam ab und legt eine große Strecke zurück), vollständiger Auftrieb nach unten minimiert sie (eine steile, schnelle Ankunft). Crossrange entsteht durch seitliches Kippen des Auftriebs, und sein Umfang wächst mit L/D. Bei einer Kapsel mit niedrigem L/D ist die Footprint bescheiden; bei einem Lifting Body oder einem Flugzeug mit Flügeln ist sie riesig.",
+    "new": "Der Footprint ist die erreichbare Menge im Downrange-Crossrange-Raum. Downrange wird hauptsächlich dadurch bestimmt, wie das Fahrzeug seinen vertikalen Auftrieb einsetzt: vollständiger Auftrieb nach oben maximiert die Reichweite (die Kapsel „schwebt“, bremst langsam ab und legt eine große Strecke zurück), vollständiger Auftrieb nach unten minimiert sie (eine steile, schnelle Ankunft). Crossrange entsteht durch seitliches Kippen des Auftriebs, und ihr Umfang wächst mit L/D. Bei einer Kapsel mit niedrigem L/D ist der Footprint bescheiden; bei einem Lifting Body oder einem geflügelten Fahrzeug ist er riesig.",
+    "grade": "MINOR",
+    "issue": "Wrong gender 'Die Footprint'; 'Flugzeug mit Flügeln' awkward."
+  },
+  {
+    "rel": "science/mission-phases/gravity-turn.json",
+    "at": "narrative_101.0",
+    "old": "Eine Rakete fliegt nicht direkt hoch zur Umlaufbahn. Sie hebt senkrecht ab, um das Startfeld zu räumen und die dickste Luft zu durchdringen, und neigt sich dann langsam zum Horizont. Wenn der Motor abschaltet, fliegt sie fast seitwärts — denn eine Umlaufbahn bedeutet, schnell genug seitwärts zu gehen, nicht hoch genug zu sein.",
+    "new": "Eine Rakete fliegt nicht geradewegs hinauf in die Umlaufbahn. Sie hebt senkrecht ab, um die Startrampe zu verlassen und die dichteste Luft zu durchstoßen, und neigt sich dann langsam zum Horizont. Wenn das Triebwerk abschaltet, fliegt sie fast seitwärts — denn bei einer Umlaufbahn kommt es darauf an, seitwärts schnell genug zu sein, nicht darauf, hoch genug hinaufzukommen.",
+    "grade": "MINOR",
+    "issue": "'Startfeld' wrong (launch pad), 'seitwärts zu gehen' / 'hoch genug zu sein' are unnatural."
+  },
+  {
+    "rel": "science/history/goddard-liquid-rocket-1926.json",
+    "at": "body_paragraphs.1",
+    "old": "Es gab früher Feststoff-Raketen (chinesische Feuerrohre seit dem 13. Jahrhundert, Congreve-Raketen in den Napoleonischen Kriegen), aber Flüssigtreibstoffe waren die Tür zum Weltraum: höherer spezifischer Impuls, drosselbarer Schub, neuzündbar.",
+    "new": "Es gab schon früher Feststoffraketen (chinesische Feuerpfeile seit dem 13. Jahrhundert, Congreve-Raketen in den Napoleonischen Kriegen), aber Flüssigtreibstoffe waren die Tür zur Raumfahrt: höherer spezifischer Impuls, drosselbarer Schub, wiederzündbar.",
+    "grade": "MINOR",
+    "issue": "'Feuerrohre' wrong for fire-arrows (Feuerpfeile); 'Feststoff-Raketen' hyphenation."
+  },
+  {
+    "rel": "science/propulsion/expander-cycle.json",
+    "at": "body_paragraphs.2",
+    "old": "Das Klassiker-Modell ist die RL10, die 1962 auf Centaur flog und noch immer in Produktion ist – eine der längsten Karrieren eines Triebwerks. Diese Schubgrenze gilt für den vollständig geschlossenen Zyklus; die Expander-Bleed-Variante durchbricht sie. Bleed zapft einen Teil des erhitzten Gases ab, um die Turbine anzutreiben, und bläst es dann ab, statt alles in die Kammer zu leiten – eine geringe Einbuße beim Isp für deutlich mehr Leistung. Japans LE-9 zeigt, wie weit das reicht: Mit 1.471 kN treibt dieses Expander-Bleed-Triebwerk die erste Stufe der H3 an, etwas, das ein geschlossener Expander nie könnte. Seine Schwester LE-5B und Europas Vinci auf Ariane 6 nutzen den gleichen Bleed-Ansatz für Oberstufen. Während Staged Combustion die rohe Leistung anstrebt, verfolgt der Expander-Zyklus Zuverlässigkeit und Neu­zündbarkeit für die präzise, ruhige Arbeit, eine Nutzlast genau dorthin zu bringen, wo sie hingehört.",
+    "new": "Der Klassiker ist die RL10, die 1962 auf Centaur erstmals flog und noch immer in Produktion ist – eine der längsten Karrieren eines Triebwerks. Diese Schubgrenze gilt für den vollständig geschlossenen Zyklus; die Expander-Bleed-Variante durchbricht sie. Bleed zapft einen Teil des erhitzten Gases ab, um die Turbine anzutreiben, und bläst es dann ab, statt alles in die Kammer zu leiten – eine geringe Einbuße beim Isp für deutlich mehr Leistung. Japans LE-9 zeigt, wie weit das reicht: Mit 1.471 kN treibt dieses Expander-Bleed-Triebwerk die erste Stufe der H3 an, etwas, das ein geschlossener Expander nie könnte. Seine Schwester LE-5B und Europas Vinci auf Ariane 6 nutzen den gleichen Bleed-Ansatz für Oberstufen. Während Staged Combustion die rohe Leistung anstrebt, verfolgt der Expander-Zyklus Zuverlässigkeit und Wiederzündbarkeit für die präzise, ruhige Arbeit, eine Nutzlast genau dorthin zu bringen, wo sie hingehört.",
+    "grade": "MINOR",
+    "issue": "'Das Klassiker-Modell' is clumsy; stray soft hyphen in 'Neu­zündbarkeit'."
+  },
+  {
+    "rel": "universe/exoplanets/toi-700-c.json",
+    "at": "bio",
+    "old": "TOI-700 c ist eine größere, wahrscheinlich gasreiche Welt zwischen den Gesteinsplaneten des Systems – zu heiß und aufgebläht für Bewohnbarkeit. Er liegt zwischen dem inneren Gesteinsplaneten b und den gemäßigten, erdgroßen Planeten d und e, die die Aufmerksamkeit der Welt auf dieses Rote-Zwerg-System lenkten.",
+    "new": "TOI-700 c ist eine größere, wahrscheinlich gasreiche Welt zwischen den Gesteinsplaneten des Systems – zu heiß und aufgebläht für Bewohnbarkeit. Sie liegt zwischen dem inneren Gesteinsplaneten b und den gemäßigten, erdgroßen Planeten d und e, die die Aufmerksamkeit der Welt auf dieses Rote-Zwerg-System lenkten.",
+    "grade": "MINOR",
+    "issue": "Gender mismatch: 'eine Welt' then 'Er liegt'."
+  },
+  {
+    "rel": "universe/exoplanets/trappist-1-d.json",
+    "at": "bio",
+    "old": "TRAPPIST-1 d gehört zu den kleineren der sieben Planeten und liegt knapp innerhalb der Zone, in der die Temperaturen flüssiges Wasser ermöglichen könnten. Wie alle seine Geschwister ist er vermutlich gebunden rotierend und wendet dem schwachroten Stern stets dieselbe Seite zu, während die andere in ewiger Nacht verharrt.",
+    "new": "TRAPPIST-1 d gehört zu den kleineren der sieben Planeten und liegt knapp innerhalb der Zone, in der die Temperaturen flüssiges Wasser ermöglichen könnten. Wie alle seine Geschwister ist er vermutlich gezeitengebunden und wendet dem schwach leuchtenden roten Stern stets dieselbe Seite zu, während die andere in ewiger Nacht verharrt.",
+    "grade": "MINOR",
+    "issue": "'gebunden rotierend' is not a term for tidally locked."
+  },
+  {
+    "rel": "universe/named-stars/diphda.json",
+    "at": "bio",
+    "old": "Diphda (Beta Ceti), auch Deneb Kaitos genannt, ist ein orangefarbener Riese in etwa 96 Lichtjahren Entfernung. Obwohl mit ‚Beta' bezeichnet, ist er der hellste Stern im Sternbild Walfisch, dem Sea Monster, und überstrahlt den Alpha-Stern der Konstellation, Menkar.",
+    "new": "Diphda (Beta Ceti), auch Deneb Kaitos genannt, ist ein orangefarbener Riese in etwa 96 Lichtjahren Entfernung. Obwohl mit ‚Beta‘ bezeichnet, ist er der hellste Stern im Sternbild Walfisch, dem Seeungeheuer, und überstrahlt den Alpha-Stern der Konstellation, Menkar.",
+    "grade": "MINOR",
+    "issue": "'Sea Monster' left in English."
+  },
+  {
+    "rel": "universe/named-stars/mintaka.json",
+    "at": "cultural",
+    "old": "Der Name stammt aus dem Arabischen und bedeutet ‚der Gürtel'. Als einer der drei Gürtelsterne nimmt er an der nahezu universellen Bekanntheit des Orion teil, und seine Lage auf dem Äquator machte ihn zu einem natürlichen Orientierungspunkt für Osten und Westen.",
+    "new": "Der Name stammt aus dem Arabischen und bedeutet ‚der Gürtel‘. Als einer der drei Gürtelsterne hat er Anteil an der fast überall verbreiteten Kenntnis des Orion, und seine Lage auf dem Himmelsäquator machte ihn zu einem natürlichen Orientierungspunkt für Osten und Westen.",
+    "grade": "MINOR",
+    "issue": "'nimmt an der ... Bekanntheit des Orion teil' is an awkward calque."
+  },
+  {
+    "rel": "universe/exoplanets/alf-ari-b.json",
+    "at": "fact",
+    "old": "Ein riesiger Planetenkandidat bei Hamal — dem Hamal-Stern, der einst die Frühlings-Tagundnachtgleiche markierte.",
+    "new": "Ein Riesenplanetenkandidat bei Hamal — dem Stern des Widders, der einst den Frühlingspunkt markierte.",
+    "grade": "MINOR",
+    "issue": "'dem Hamal-Stern' is redundant and drops 'Ram'."
+  }
+]

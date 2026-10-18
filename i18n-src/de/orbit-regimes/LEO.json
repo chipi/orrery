@@ -2,7 +2,7 @@
   "name": "Erdnaher Orbit",
   "short": "LEO",
   "story": "Die erdnächste Raumzone — 160 bis 2.000 km Höhe. Kurze Kommunikationsverzögerung (~7 ms einfach), atmosphärischer Widerstand zieht noch am unteren Rand, und die Strahlungsgürtel haben noch nicht eingesetzt. Die bemannte Raumfahrt ist aus denselben Gründen hier zu Hause: rettbar, erreichbar, und der menschliche Körper verträgt einen Pendelweg von ein paar hundert Kilometern. Jede Raumstation, die je geflogen ist, hat im LEO geparkt.",
-  "comparison": "Etwa 1/600 des Weges zum Mond. Die ISS umkreist in 408 km Höhe auf derselben Höhe wie die Entfernung von London nach Genf — seitwärts gelegt.",
+  "comparison": "Etwa 1/600 des Weges zum Mond. Die ISS umkreist die Erde in 408 km Höhe — so hoch, wie London von Genf entfernt ist, seitwärts gelegt.",
   "residents": [
     {
       "id": "iss",

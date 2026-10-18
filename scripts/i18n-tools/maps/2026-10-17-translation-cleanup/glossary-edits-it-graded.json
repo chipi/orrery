@@ -1,0 +1,14 @@
+[
+  {
+    "rel": "science/observation/magellanic-clouds.json",
+    "at": "diagram_caption",
+    "old": "LMC: distanza 49,97 kpc, ~10¹⁰ M☉, irregolare, visibile a occhio nudo nel cielo australe. SMC: 62,1 kpc, ~10⁹ M☉, irregolare. Entrambe su orbite di primo passaggio (Gaia DR3, Kallivayalil et al.), non legate stabilmente. Corrente Magellanica: coda di idrogeno che segue il loro recente passaggio ravvicinato attraverso le maree della Via Lattea. SN 1987A nella LMC: supernova più brillante dopo quella di Keplero del 1604; prima supernova visibile a occhio nudo dopo SN 1885A (Andromeda).",
+    "new": "LMC: distanza 49,97 kpc, ~10¹⁰ M☉, irregolare, visibile a occhio nudo nel cielo australe. SMC: 62,1 kpc, ~10⁹ M☉, irregolare. Entrambe su orbite di primo passaggio (Gaia DR3, Kallivayalil et al.), non legate stabilmente. Corrente Magellanica: coda di idrogeno che segue il loro recente passaggio ravvicinato attraverso le maree della Via Lattea. SN 1987a nella LMC: supernova più brillante dopo quella di Keplero del 1604; prima supernova visibile a occhio nudo dopo SN 1885A (Andromeda)."
+  },
+  {
+    "rel": "universe/named-stars/diphda.json",
+    "at": "bio",
+    "old": "Diphda (Beta Ceti), chiamata anche Deneb Kaitos, è una gigante arancione a circa 96 anni luce di distanza. Pur essendo designata 'Beta', è la stella più luminosa della Balena, il Mostro Marino, e supera in luminosità l'Alfa della costellazione, Menkar.",
+    "new": "Diphda (Beta Ceti), chiamata anche Deneb Kaitos, è una gigante arancione a circa 96 anni luce di distanza. Pur essendo designata 'Beta', è la stella più luminosa della Balena, il Mostro Marino, e supera in luminosità l'Alfa della costellazione, Menkab."
+  }
+]

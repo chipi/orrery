@@ -104,7 +104,7 @@
       "type": "figure",
       "image": "essays/navigation/reference-frame",
       "kind": "diagram",
-      "caption": "Welke kant is op, wanneer er geen op is: een star tracker fotografeert een stukje hemel, koppelt het patroon aan een boordcatalogus, en weet onmiddellijk hoe het vaartuig in het vaste J2000-raam is georiënteerd. Tussen fixes dragen de gyro's het tellen.",
+      "caption": "Welke kant is boven, als er geen boven is: een star tracker fotografeert een stukje hemel, vergelijkt het patroon met een boordcatalogus en weet meteen hoe het ruimtevaartuig is georiënteerd in het vaste J2000-referentiekader. Tussen twee bepalingen door houden de gyroscopen de telling bij.",
       "align": "wide"
     },
     {

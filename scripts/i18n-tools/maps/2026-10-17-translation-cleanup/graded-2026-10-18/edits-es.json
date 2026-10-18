@@ -1,0 +1,418 @@
+[
+  {
+    "rel": "messages",
+    "at": "audio_action_tour_driving",
+    "old": "El recorrido está dirigiendo — detenlo para navegar libremente.",
+    "new": "El recorrido está guiando la vista — detenlo para navegar libremente.",
+    "grade": "MINOR",
+    "issue": "'dirigiendo' is an unnatural rendering of the tour driving the camera."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_fc_verdict",
+    "old": "Entonces: ¿podrías volar esto solo con combustible? Llegar a Júpiter está de hecho al alcance químico: unos 6 km/s desde LEO, menos que los ~8,5 de una potente etapa superior. Pero una Gran Gira significa ESCAPAR del sistema solar con velocidad de sobra, y eso requiere ~8,7 km/s desde LEO, justo por encima de lo que entrega la mejor etapa química. La química te lleva a Júpiter y ahí se detiene; la cadena de asistencias gravitatorias aporta el resto, y las decenas de km/s de velocidad de gira encima. Por eso Voyager era viable, y por eso toda misión al espacio profundo desde entonces es un plan para tomar prestada velocidad de los planetas.",
+    "new": "Entonces: ¿podrías volarlo solo con combustible? Llegar a Júpiter está, de hecho, al alcance químico: unos 6 km/s desde LEO, menos que los ~8,5 de una etapa superior potente. Pero un Gran Recorrido implica ESCAPAR del sistema solar con velocidad de sobra, y eso exige ~8,7 km/s desde LEO, justo por encima de lo que entrega la mejor etapa química. La química te lleva hasta Júpiter y ahí se queda; la cadena de asistencias gravitatorias aporta el resto, y además las decenas de km/s de velocidad de recorrido. Por eso Voyager era viable, y por eso toda misión al espacio profundo desde entonces es un plan para tomar prestada velocidad de los planetas.",
+    "grade": "MINOR",
+    "issue": "'Gran Gira' and 'velocidad de gira' are inconsistent with 'Gran Recorrido' used elsewhere; 'potente etapa superior' is awkward."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_sysasc_guidance",
+    "old": "Observa pensar al ordenador de vuelo. Llegar a órbita es un problema de valores en la frontera con una respuesta exacta — llegar a la altitud objetivo, en horizontal, a velocidad circular — y el estado real del vehículo se desvía cada segundo, así que no puedes planificar toda la trayectoria de antemano. Por eso vuela en dos regímenes. En la atmósfera densa sigue una tabla de cabeceo PREPLANIFICADA (bucle abierto) que mantiene las cargas seguras durante el giro por gravedad. Por encima de ~55 km el ordenador TOMA EL MANDO: para esta etapa superior de bajo empuje eso es Powered Explicit Guidance, que vuelve a resolver un problema de frontera de dos puntos cada segundo para una ley de guiado sin γ = A + B·t — y su respuesta ELEVA el ascenso, ordenando al morro que apunte POR DEBAJO del horizonte para gastar altitud comprando velocidad. Ningún humano vuela así de ciego. Reduce el empuje de la etapa superior y observa cómo eleva con más fuerza.",
+    "new": "Observa cómo piensa el ordenador de vuelo. Llegar a órbita es un problema de valores en la frontera con una respuesta exacta — llegar a la altitud objetivo, en horizontal, a velocidad circular — y el estado real del vehículo se desvía cada segundo, así que no puedes planificar toda la trayectoria de antemano. Por eso vuela en dos regímenes. En la atmósfera densa sigue una tabla de cabeceo PREPLANIFICADA (bucle abierto) que mantiene las cargas seguras durante el giro por gravedad. Por encima de ~55 km el ordenador TOMA EL MANDO: para esta etapa superior de bajo empuje eso es Powered Explicit Guidance, que vuelve a resolver un problema de frontera de dos puntos cada segundo para una ley de guiado sen γ = A + B·t — y su respuesta ELEVA el ascenso, ordenando al morro que apunte POR DEBAJO del horizonte para gastar altitud comprando velocidad. Ningún humano vuela así de ciego. Reduce el empuje de la etapa superior y observa cómo eleva con más fuerza.",
+    "grade": "MINOR",
+    "issue": "'sin γ' reads as the Spanish word 'sin' (without); Spanish notation is 'sen γ'; 'Observa pensar al ordenador' is stilted."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_illustration_alt_landing_computer",
+    "old": "Un módulo de descenso suspendido sobre el motor regulado por encima de la superficie, su curva de velocidad de descenso fantasmada junto a él hasta cero.",
+    "new": "Un módulo de aterrizaje suspendido sobre la superficie con el motor regulado, y a su lado, en tono fantasma, la curva de velocidad de descenso que va decayendo hasta cero.",
+    "grade": "MINOR",
+    "issue": "'sobre el motor regulado por encima de la superficie' and 'fantasmada ... hasta cero' are garbled, machine-like wording."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_moonalt_glossary",
+    "old": "Cuán alto culmina la Luna: h_max = 90° − |φ − δ| — tu latitud φ contra la declinación lunar δ. La misma regla que obedece el Sol; es por qué la luna llena brilla alta en invierno.",
+    "new": "Qué altura alcanza la Luna al culminar: h_max = 90° − |φ − δ| — tu latitud φ frente a la declinación δ de la Luna. Es la misma regla que sigue el Sol; por eso la luna llena sube tanto en invierno.",
+    "grade": "MINOR",
+    "issue": "'es por qué' is ungrammatical and 'brilla alta' is unnatural; 'Cuán alto culmina' is stiff."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_lss_hook",
+    "old": "Las Voyager atraparon un alineamiento cada 176 años de Júpiter, Saturno, Urano y Neptuno — el 'Gran Recorrido' — permitiendo que una única sonda catapultara de mundo a mundo. Perder esa ventana y no volvería hasta el siglo XXII.",
+    "new": "Las Voyager aprovecharon una alineación de Júpiter, Saturno, Urano y Neptuno que ocurre una vez cada 176 años —el «Gran Recorrido»—, que permitía a una sola sonda catapultarse de mundo en mundo. De haber perdido esa ventana, no se habría repetido hasta el siglo XXII.",
+    "grade": "MINOR",
+    "issue": "Calqued syntax ('Perder esa ventana y no volvería') and awkward 'una única sonda catapultara'."
+  },
+  {
+    "rel": "messages",
+    "at": "science_layer_polar_caps_desc",
+    "old": "Escarcha de CO₂ estacional sobre hielo de agua perenne. Crecen y se contraen según cada hemisferio se inclina hacia y desde el Sol.",
+    "new": "Escarcha estacional de CO₂ sobre hielo de agua perenne. Crecen y se reducen a medida que cada hemisferio se inclina hacia el Sol o se aleja de él.",
+    "grade": "MINOR",
+    "issue": "'hacia y desde el Sol' is an English calque."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_sizing_dv",
+    "old": "Δv que debe dar este estadio",
+    "new": "Δv que debe aportar esta etapa",
+    "grade": "MINOR",
+    "issue": "'estadio' is inconsistent with 'etapa' used for stages elsewhere in the UI."
+  },
+  {
+    "rel": "messages",
+    "at": "fly_toggle_science_layers_title",
+    "old": "Activar/desactivar panel Science Layers",
+    "new": "Activar/desactivar panel de capas científicas",
+    "grade": "MINOR",
+    "issue": "'Science Layers' left untranslated in a UI label."
+  },
+  {
+    "rel": "essays/seven-minutes.json",
+    "at": "body.19.md",
+    "old": "A través de la historia de las misiones marcianas específicamente, el problema del aterrizaje tiene un registro de bajas. Mars 2, en 1971, se convirtió en el primer objeto de la Tierra en tocar la superficie marciana — y se estrelló, matándose a sí misma en el impacto, el sistema de descenso habiendo fallado antes de que la secuencia del paracaídas fuera completa. Mars Polar Lander, en diciembre de 1999, casi con certeza apagó sus motores de descenso prematuramente cuando las vibraciones del despliegue de las patas fueron malinterpretadas como una señal de contacto, y cayó los últimos cuarenta metros a máxima velocidad. Beagle 2, el Día de Navidad de 2003, logró pasar la entrada — la secuencia de EDL parece haber funcionado — pero los paneles solares no se desplegaron completamente en el aterrizaje y nunca pudo comunicarse, silenciosa en las llanuras marcianas. El módulo de aterrizaje Schiaparelli de la Agencia Espacial Europea, en octubre de 2016, tuvo su unidad de medición inercial saturarse durante el violento descenso del paracaídas — las lecturas brevemente se fueron fuera de su escala — corrompiendo la solución de navegación así que la computadora a bordo creyó que ya estaba debajo de la superficie; cortó el paracaídas y disparó los cohetes de retardo solo durante tres segundos en lugar de treinta, e impactó el suelo a aproximadamente 540 kilómetros por hora.",
+    "new": "Si nos ceñimos a la historia de las misiones a Marte, el problema del aterrizaje tiene un número de bajas. Mars 2, en 1971, fue el primer objeto de la Tierra en tocar la superficie marciana, y se estrelló: se destruyó en el impacto porque el sistema de descenso falló antes de completar la secuencia del paracaídas. Mars Polar Lander, en diciembre de 1999, casi con certeza apagó sus motores de descenso de forma prematura cuando las vibraciones del despliegue de las patas se interpretaron erróneamente como una señal de contacto con el suelo, y cayó los últimos cuarenta metros a toda velocidad. Beagle 2, el día de Navidad de 2003, superó la entrada —la secuencia de EDL parece haber funcionado—, pero los paneles solares no se desplegaron del todo al aterrizar y nunca pudo comunicarse; quedó en silencio en las llanuras marcianas. En el módulo Schiaparelli de la Agencia Espacial Europea, en octubre de 2016, la unidad de medición inercial se saturó durante el violento descenso con paracaídas —las lecturas se salieron brevemente del fondo de escala—, lo que corrompió la solución de navegación hasta el punto de que el ordenador de a bordo creyó estar ya por debajo de la superficie; soltó el paracaídas y encendió los retrocohetes solo durante tres segundos en lugar de treinta, y golpeó el suelo a unos 540 kilómetros por hora.",
+    "grade": "MINOR",
+    "issue": "Latin American 'computadora', calqued syntax ('tuvo su unidad ... saturarse', 'habiendo fallado') and stilted phrasing."
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.11.md",
+    "old": "La propulsión nuclear-térmica —calentar hidrógeno en un reactor y expulsarlo a través de una tobera— aproximadamente duplica la velocidad de escape, logrando impulsos específicos alrededor de 825 segundos en los mejores motores probados en tierra del programa NERVA. Duplicar la velocidad de escape no reduce a la mitad la razón de masa requerida; toma la raíz cuadrada de ella —una ganancia mucho mayor. A velocidades interestelares, la propulsión nuclear-térmica sigue siendo categóricamente inadecuada. La ecuación del cohete no le importa cómo se calienta el propelente. Solo le importa qué tan rápido se va. Y ninguna arquitectura que queme propelente jamás concebida puede expulsar materia lo suficientemente rápido para alcanzar una fracción significativa de c sin requerir una carga de combustible que haga la misión imposible de cara.",
+    "new": "La propulsión nuclear-térmica —calentar hidrógeno en un reactor y expulsarlo por una tobera— multiplica aproximadamente por dos la velocidad de escape, con impulsos específicos de en torno a 825 segundos en los mejores motores probados en tierra del programa NERVA. Duplicar la velocidad de escape no reduce a la mitad la razón de masas necesaria; la reduce a su raíz cuadrada, una ganancia mucho mayor. A velocidades interestelares, la propulsión nuclear-térmica sigue siendo categóricamente insuficiente. A la ecuación del cohete no le importa cómo se calienta el propelente; solo le importa a qué velocidad sale. Y ninguna arquitectura que queme propelente concebida hasta ahora puede expulsar materia lo bastante rápido para alcanzar una fracción significativa de c sin requerir una carga de combustible que hace la misión inviable a primera vista.",
+    "grade": "MINOR",
+    "issue": "Grammar error ('La ecuación ... no le importa'), 'imposible de cara' mistranslates 'on its face', Latin American phrasing."
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.21.md",
+    "old": "El tercer muro es el cuerpo humano, y es el que la arquitectura de la misión no puede esquivar mediante ingeniería. Marte no tiene campo magnético global —su núcleo hace tiempo se solidificó, terminando el dínamo que una vez generó el escudo. La magnetosfera terrestre desviala la mayor parte de los rayos cósmicos galácticos y partículas solares energéticas; Marte no ofrece equivalente. Un tránsito de seis meses a través del espacio interplanetario entrega una dosis medida de aproximadamente 300 milisieverts —bien más de cien veces un año típico de radiación de fondo natural en la Tierra, absorbida en seis meses. En la superficie marciana, sin magnetosfera, la dosis se acumula además de la radiación secundaria. Se ha estimado que un viaje redondo de tres años son 600 a 1.200 milisieverts totales, dependiendo de la fase del ciclo solar y del blindaje —números medidos en vuelo por instrumentos a bordo de [Curiosity](/missions?id=curiosity).",
+    "new": "El tercer muro es el cuerpo humano, y es el que la arquitectura de la misión no puede sortear con ingeniería. Marte no tiene campo magnético global: su núcleo se solidificó hace mucho tiempo y puso fin al dínamo que antaño generaba el escudo. La magnetosfera terrestre desvía la mayor parte de los rayos cósmicos galácticos y de las partículas solares energéticas; Marte no ofrece nada equivalente. Un tránsito de seis meses por el espacio interplanetario supone una dosis medida de aproximadamente 300 milisieverts, más de cien veces la de un año típico de radiación natural de fondo en la Tierra, absorbida en seis meses. En la superficie marciana, sin magnetosfera, la dosis se acumula aún más por la radiación secundaria. Se ha estimado que un viaje de ida y vuelta de tres años supone entre 600 y 1.200 milisieverts en total, según la fase del ciclo solar y el blindaje —cifras medidas en vuelo por instrumentos a bordo de [Curiosity](/missions?id=curiosity).",
+    "grade": "BROKEN",
+    "issue": "Typo 'desviala'; 'la dosis se acumula además de la radiación secundaria' changes the meaning; 'viaje redondo' and other calques."
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.26.md",
+    "old": "Pero la brecha entre «no prohibido» y «alcanzable en cualquier marco temporal cercano» es enorme. La propuesta seria más lenta —una nave estelar de fusión al 12% de c— requeriría tecnología que no existe, a un costo que empequeñece cualquier programa espacial en la historia, para entregar una nave tripulada a otra estrella en aproximadamente cincuenta años. La propuesta seria más rápida —la vela ligera impulsada por láser de Breakthrough Starshot— entregaría un gramo de instrumentos a un encuentro orbital que dura horas, y devolvería datos durante años, a un costo que sus proponentes estiman en decenas de miles de millones de dólares, suponiendo que la serie de láseres se pueda construir en absoluto. Entre estos extremos, no hay opción intermedia que sea tanto tecnológicamente factible como adecuada para una exploración significativa. La escala del problema simplemente no tiene solución moderada.",
+    "new": "Pero la brecha entre «no prohibido» y «alcanzable en un plazo cercano» es enorme. La propuesta seria más lenta —una nave estelar de fusión al 12 % de c— requeriría una tecnología que no existe, a un coste que empequeñece a cualquier programa espacial de la historia, para llevar una nave tripulada a otra estrella en unos cincuenta años. La propuesta seria más rápida —la vela ligera impulsada por láser de Breakthrough Starshot— llevaría un gramo de instrumentos a un sobrevuelo que dura horas, y devolvería datos durante años, a un coste que sus defensores estiman en decenas de miles de millones de dólares, suponiendo que se pueda construir la red de láseres. Entre estos extremos no hay una opción intermedia que sea a la vez tecnológicamente viable y adecuada para una exploración significativa. La escala del problema simplemente no admite una solución moderada.",
+    "grade": "MINOR",
+    "issue": "'encuentro orbital' wrongly renders 'flyby'; 'serie de láseres' for 'laser array'; Latin American 'costo'."
+  },
+  {
+    "rel": "essays/seven-minutes.json",
+    "at": "dek",
+    "old": "El crucero es fácil. Pasas meses haciendo casi nada — navegando sobre la física, ajustando una trayectoria, esperando. Llegar es donde mueren las misiones. El aterrizaje es lo más difícil del vuelo espacial, y nunca lo hemos resuelto de la misma manera dos veces.",
+    "new": "El crucero es fácil. Pasas meses sin hacer casi nada: avanzando por inercia gracias a la física, corrigiendo un poco la trayectoria, esperando. Llegar es donde mueren las misiones. El aterrizaje es lo más difícil del vuelo espacial, y nunca lo hemos resuelto dos veces de la misma manera.",
+    "grade": "MINOR",
+    "issue": "'navegando sobre la física' mistranslates 'coasting on physics'."
+  },
+  {
+    "rel": "essays/the-body-in-the-dark.json",
+    "at": "body.14.md",
+    "old": "Todo lo que sabemos sobre fisiología del vuelo espacial de larga duración fue medido — en personas reales, que vivieron en el espacio durante duraciones reales, regresaron a casa, y fueron estudiadas. El récord de un vuelo continuo único es tenido por Valeri Poliakov, un médico-cosmonauta ruso que abordó [Mir](/programs/mir) en enero de 1994 y regresó a la Tierra en marzo de 1995, habiendo pasado 437 días consecutivos en órbita — aún sin ser batido, tres décadas después. El objetivo de Poliakov fue explícitamente médico: determinar si un ser humano podría sobrevivir, funcionalmente, una duración de misión a Marte. Cuando aterrizó, insistió en alejarse de la cápsula Soyuz por su propio pie. Su recuperación ósea y muscular tomó meses. Caminó. Los programas [Salyut](/programs/salyut) y [Mir](/programs/mir) construyeron un cuerpo de datos fisiológicos soviético y luego ruso que permanece irreemplazable — la [EEI](/programs/iss) la extendió y la globalizó. Los 665 días acumulados de Peggy Whitson en tres misiones dieron a los investigadores un conjunto de datos longitudinal de un único individuo imposible de replicar de otro modo. El Estudio de Gemelos de NASA — la misión de 340 días de Scott Kelly comparada contra su gemelo idéntico terrestre Mark — encontró cambios medibles en la expresión génica, la dinámica de telómeros, la composición del microbioma intestinal, y el desempeño cognitivo, la mayoría de los cuales se revirtieron al regresar, pero no todos. El programa [Tiangong](/programs/tiangong) de China ahora está añadiendo al récord: tripulaciones en rotaciones de 90 y 180 días desde 2021, una población de taikonautas previamente ausente del conjunto de datos. Cualquier relato honesto de lo que la humanidad sabe sobre el cuerpo humano de larga duración en el espacio tiene que incluir lo que Rusia aprendió en Mir, lo que la asociación EEI de 15 naciones ha medido desde 2000, y lo que China está acumulando ahora.",
+    "new": "Todo lo que sabemos sobre la fisiología del vuelo espacial de larga duración se midió en personas reales, que vivieron en el espacio durante periodos reales, volvieron a casa y fueron estudiadas. El récord de un único vuelo continuo lo tiene Valeri Poliakov, médico y cosmonauta ruso que subió a [Mir](/programs/mir) en enero de 1994 y regresó a la Tierra en marzo de 1995, tras pasar 437 días consecutivos en órbita —una marca que sigue sin batirse tres décadas después—. El objetivo de Poliakov era explícitamente médico: determinar si un ser humano podía sobrevivir, de forma funcional, a la duración de una misión a Marte. Cuando aterrizó, insistió en alejarse caminando de la cápsula Soyuz por su propio pie. Su recuperación ósea y muscular llevó meses. Caminó. Los programas [Salyut](/programs/salyut) y [Mir](/programs/mir) crearon un acervo de datos fisiológicos soviético y luego ruso que sigue siendo insustituible; la [EEI](/programs/iss) lo amplió y lo globalizó. Los 665 días acumulados de Peggy Whitson en tres misiones dieron a los investigadores un conjunto de datos longitudinales sobre un único individuo imposible de replicar de otro modo. El Estudio de Gemelos de la NASA —la misión de 340 días de Scott Kelly comparada con su gemelo idéntico Mark, que se quedó en la Tierra— encontró cambios medibles en la expresión génica, la dinámica de los telómeros, la composición del microbioma intestinal y el rendimiento cognitivo; la mayoría se revirtieron al volver, pero no todos. El programa [Tiangong](/programs/tiangong) de China está sumando ahora datos al registro: tripulaciones en rotaciones de 90 y 180 días desde 2021, una población de taikonautas antes ausente del conjunto de datos. Cualquier relato honesto de lo que la humanidad sabe sobre el cuerpo humano en el espacio durante periodos largos tiene que incluir lo que Rusia aprendió en Mir, lo que la asociación de 15 naciones de la EEI ha medido desde 2000 y lo que China está acumulando ahora.",
+    "grade": "MINOR",
+    "issue": "Pervasive English calques ('es tenido por', 'durante duraciones reales', 'aún sin ser batido', 'la asociación EEI'), stiff and machine-like."
+  },
+  {
+    "rel": "essays/going-to-the-moon.json",
+    "at": "dek",
+    "old": "Fuimos a la Luna una sola vez, a un costo extraordinario, luego nos detuvimos durante media década y dejamos que la memoria institucional desapareciera. Ahora estamos reaprendiendo — y esta vez, la razón por la que vamos ha cambiado.",
+    "new": "Fuimos a la Luna una sola vez, a un coste extraordinario, y luego nos detuvimos durante medio siglo y dejamos morir la memoria institucional. Ahora la estamos reaprendiendo, y esta vez la razón por la que vamos ha cambiado.",
+    "grade": "BROKEN",
+    "issue": "'media década' is wrong for 'half a century' (medio siglo); changes the meaning."
+  },
+  {
+    "rel": "essays/the-body-in-the-dark.json",
+    "at": "body.22.md",
+    "old": "La propulsión mejor importa. Las [nuevas tecnologías de motor](/essays/new-propulsion) en desarrollo — térmica nuclear, eléctrica nuclear, velas solares, los conceptos más futuros — acortarían el tiempo de tránsito, y acortar el tiempo de tránsito reduce la exposición radiactiva acumulada y la degradación fisiológica acumulada. Un tránsito de 90 días en lugar de 270 no es tres veces más fácil para el cuerpo; la relación entre dosis y efecto es más compleja que lineal, y algunos sistemas — el psicológico, el óseo, el cardiovascular — son sensibles a la duración de formas que ni una exposición más corta rescata completamente. Pero más corto es mejor. Los motores más rápidos son medicina real. Sin embargo, no cambian la naturaleza fundamental del problema. Un tránsito de 90 días todavía cruza el espacio interplanetario sin magnetosfera, sin gravedad, y sin rescate. El cuerpo aún es la carga útil. Aún se degrada. Aún regresa a casa disminuido de formas que toman meses o años para revertirse, si es que se revierten.",
+    "new": "Mejores sistemas de propulsión importan. Las [nuevas tecnologías de motor](/essays/new-propulsion) en desarrollo —térmica nuclear, eléctrica nuclear, velas solares y los conceptos de futuro más lejano— reducirían el tiempo de tránsito, y reducir el tiempo de tránsito reduce la exposición acumulada a la radiación y la degradación fisiológica acumulada. Un tránsito de 90 días en lugar de 270 no es tres veces más llevadero para el cuerpo; la relación entre dosis y efecto es más compleja que una relación lineal, y algunos sistemas —el psicológico, el óseo, el cardiovascular— son sensibles a la duración de maneras que ni siquiera una exposición más corta resuelve del todo. Pero cuanto más corto, mejor. Los motores más rápidos son medicina de verdad. Sin embargo, no cambian la naturaleza fundamental del problema. Un tránsito de 90 días sigue cruzando el espacio interplanetario sin magnetosfera, sin gravedad y sin rescate. El cuerpo sigue siendo la carga útil. Sigue degradándose. Sigue volviendo a casa mermado, de maneras que tardan meses o años en revertirse, si es que llegan a revertirse.",
+    "grade": "MINOR",
+    "issue": "Opening 'La propulsión mejor importa' is garbled; several calques ('exposición radiactiva', 'toman meses para revertirse')."
+  },
+  {
+    "rel": "fleet/lander/mars-3.json",
+    "at": "tagline",
+    "old": "Primer alunizaje suave en Marte; ~20 s de transmisión superficial",
+    "new": "Primer aterrizaje suave en Marte; ~20 s de transmisión desde la superficie",
+    "grade": "MINOR",
+    "issue": "'alunizaje' refers to the Moon; Mars landing needs 'aterrizaje'."
+  },
+  {
+    "rel": "fleet/lander/beresheet.json",
+    "at": "description",
+    "old": "El primer intento privado de alunizaje, realizado por SpaceIL, una organización sin ánimo de lucro de Israel. Se estrelló en abril de 2019 cuando un fallo del giroscopio IMU provocó reinicios repetidos de la computadora, cada uno de los cuales apagaba el motor; para cuando se recuperó el control, la sonda estaba demasiado baja y rápida para sobrevivir. Demostró que alunizar en la Luna es mucho más difícil que llegar a ella.",
+    "new": "El primer intento privado de alunizaje, realizado por SpaceIL, una organización sin ánimo de lucro de Israel. Se estrelló en abril de 2019 cuando un fallo del giroscopio de la IMU provocó reinicios repetidos del ordenador, cada uno de los cuales apagaba el motor; para cuando se recuperó el control, la sonda estaba demasiado baja y rápida para sobrevivir. Demostró que alunizar es mucho más difícil que llegar a la Luna.",
+    "grade": "MINOR",
+    "issue": "Latin American 'computadora' (rest of the UI uses 'ordenador'); redundant 'alunizar en la Luna'."
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-1.json",
+    "at": "tagline",
+    "old": "Primer orbitador lunar estadounidense; mapeó sitios del Apollo y capturó la primera foto de la Tierra desde órbita lunar (1966).",
+    "new": "Primer orbitador lunar estadounidense (1966-08-14); cartografió posibles lugares de alunizaje del programa Apollo y tomó la primera foto de la Tierra desde la órbita lunar (1966).",
+    "grade": "BROKEN",
+    "issue": "The launch date (1966-08-14) is dropped; 'mapeó sitios del Apollo' is also awkward."
+  },
+  {
+    "rel": "fleet/orbiter/mro.json",
+    "at": "best_known_for",
+    "old": "Imagen marciana de mayor resolución desde la órbita",
+    "new": "Imágenes de Marte de mayor resolución desde la órbita",
+    "grade": "MINOR",
+    "issue": "Awkward singular 'Imagen marciana de mayor resolución'."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/challenger.json",
+    "at": "description",
+    "old": "Construido a partir de un artículo de prueba estructural (STA-099) convertido a vuelo cuando se consideró que actualizar Enterprise sería demasiado costoso. Realizó su primer vuelo en STS-6 (1983-04-04) llevando a cabo el primer EVA del Transbordador. Voló en un total de 10 misiones: STS-6, STS-7, STS-8, STS-41-B, STS-41-C, STS-41-G, STS-51-B, STS-51-F, STS-61-A, y el vuelo final STS-51-L. El 1986-01-28, STS-51-L se lanzó en condiciones frías sin precedentes (−1 °C) — los anillos tóricos del SRB derecho no sellaron adecuadamente, el gas caliente atravesó la estructura que sujetaba el SRB al tanque externo, y el orbitador se desintegró en Max-Q (T+73 s) a 14 km de altitud. Los siete miembros de la tripulación perecieron, incluida la maestra Christa McAuliffe. La Comisión Rogers paralizó el Transbordador durante 32 meses y redefinió la cultura de seguridad de la NASA.",
+    "new": "Construido a partir de un artículo de prueba estructural (STA-099) convertido para el vuelo después de que se considerara demasiado caro actualizar el Enterprise. Realizó su primer vuelo en la STS-6 (1983-04-04), en la que se hizo la primera EVA del transbordador. Voló en un total de 10 misiones: STS-6, STS-7, STS-8, STS-41-B, STS-41-C, STS-41-G, STS-51-B, STS-51-F, STS-61-A y el vuelo final, STS-51-L. El 1986-01-28, la STS-51-L despegó con un frío sin precedentes (−1 °C): los anillos tóricos del SRB derecho no sellaron, el gas caliente quemó el puntal que sujetaba el SRB al tanque externo y el orbitador se desintegró en Max-Q (T+73 s) a 14 km de altitud. Murieron los siete tripulantes, entre ellos la maestra Christa McAuliffe. La Comisión Rogers mantuvo en tierra al transbordador durante 32 meses y reescribió la cultura de seguridad de la NASA.",
+    "grade": "MINOR",
+    "issue": "Translation names Christa McAuliffe where the EN says Sally Ride (the EN source is factually wrong, Ride did not die; fix the EN); other wording is stiff."
+  },
+  {
+    "rel": "missions/mars/hope-probe.json",
+    "at": "description",
+    "old": "La Misión Emirates a Marte — Al Amal, «Hope»— se concibió en 2014 para conmemorar el 50 aniversario de la federación de los Emiratos Árabes Unidos en 2021. El equipo de MBRSC se asoció con la Universidad de Colorado, Arizona State y UC Berkeley para diseñar e integrar la nave espacial, pero la construyeron ellos mismos. La órbita científica (período de 55 horas, ~20 000 km × 43 000 km) cubre todas las longitudes y horas del día, capturando patrones meteorológicos que ningún otro orbitador de Marte puede resolver. La misión tuvo éxito en el primer intento, lo que convirtió a los Emiratos Árabes Unidos en la quinta agencia en Marte.",
+    "new": "La Emirates Mars Mission — Al Amal, «Hope» — se concibió en 2014 para conmemorar el 50.º aniversario de la federación de los Emiratos Árabes Unidos en 2021. El equipo del MBRSC se asoció con la Universidad de Colorado, Arizona State y UC Berkeley para diseñar e integrar la nave espacial, pero la construyó él mismo. La órbita científica (período de 55 horas, ~20 000 km × 43 000 km) cubre todas las longitudes y horas del día, y captura patrones meteorológicos que ningún otro orbitador de Marte puede resolver. La misión tuvo éxito en el primer intento, lo que convirtió a los Emiratos Árabes Unidos en la quinta agencia en llegar a Marte.",
+    "grade": "BROKEN",
+    "issue": "Mission name 'Emirates Mars Mission' translated ('Misión Emirates a Marte') against the name rule; stray punctuation spacing."
+  },
+  {
+    "rel": "missions/earth/friendship-7.json",
+    "at": "description",
+    "old": "El vuelo de tres órbitas de John Glenn — primer estadounidense en orbitar la Tierra, 10 meses después de Gagarin y 4 meses después de Titov. Órbita: 159 × 265 km, inclinación 32,5°. Un indicador de alerta del escudo térmico en el control de misión sugirió que el escudo podría estar suelto — el retropack se mantuvo unido durante la reentrada como respaldo, lo que provocó la famosa observación de Glenn sobre las 'fireflies' al ver fragmentos del retropack quemarse frente a la ventanilla. Amerizaje a 1287 km al sureste de Cabo Cañaveral, 4 h 55 min después del lanzamiento. Glenn regresó al espacio 36 años después en STS-95 (1998), a los 77 años. Friendship 7 está expuesta en el National Air and Space Museum, Washington DC.",
+    "new": "El vuelo de tres órbitas de John Glenn — primer estadounidense en orbitar la Tierra, 10 meses después de Gagarin y 4 meses después de Titov. Órbita: 159 × 265 km, inclinación 32,5°. Un indicador de alerta del escudo térmico en el control de misión sugirió que el escudo podría estar suelto — el retropack se mantuvo unido durante la reentrada como respaldo, lo que provocó la famosa observación de Glenn sobre las «luciérnagas» al ver fragmentos del retropack quemarse frente a la ventanilla. Amerizaje a 1287 km al sureste de Cabo Cañaveral, 4 h 55 min después del lanzamiento. Glenn regresó al espacio 36 años después en la STS-95 (1998), a los 77 años. Friendship 7 está expuesta en el National Air and Space Museum, Washington DC.",
+    "grade": "MINOR",
+    "issue": "'fireflies' left in English inside Spanish prose."
+  },
+  {
+    "rel": "missions/venus/vega-1.json",
+    "at": "first",
+    "old": "Primer aeróstato globo desplegado jamás en la atmósfera de otro planeta (Venus, 1985); primera nave espacial en llevar ciencia a dos objetivos distintos del sistema solar",
+    "new": "Primer globo aerostático desplegado jamás en la atmósfera de otro planeta (Venus, 1985); primera nave espacial en llevar instrumentos científicos a dos objetivos distintos del sistema solar",
+    "grade": "MINOR",
+    "issue": "'aeróstato globo' is awkward and 'llevar ciencia' is a calque."
+  },
+  {
+    "rel": "missions/mars/starship-mars-crew.json",
+    "at": "description",
+    "old": "La arquitectura tripulada a Marte a largo plazo de SpaceX descrita en las presentaciones del IAC de Elon Musk en 2016, 2017 y 2024. Una Starship despega de la Tierra completamente cargada en órbita baja terrestre mediante una flota de cisternas de repostaje, realiza la inyección transmarciana y aterriza una tripulación de aproximadamente 10 con carga y equipo de ISRU en la superficie marciana. El propelente para la pierna de retorno (metano + oxígeno líquido) se fabrica en Marte a partir del CO₂ atmosférico y hielo de agua del subsuelo mediante el proceso Sabatier, permitiendo que la misma Starship despegue de nuevo, realice la inyección transterrestre y devuelva a la tripulación. La duración del viaje de ida y vuelta depende de la ventana de lanzamiento y la estancia en superficie; la línea de tiempo ilustrativa mostrada aquí es ~2,5 años puerta a puerta (213 días de salida, ~500 días de estancia en superficie, retorno en la siguiente ventana favorable). La arquitectura es conceptual — la fecha y los parámetros están sujetos a revisiones sustanciales pendientes de la maduración de Starship y la validación de ISRU.",
+    "new": "La arquitectura de SpaceX para misiones tripuladas a Marte a largo plazo, tal como la expuso Elon Musk en sus presentaciones del IAC de 2016, 2017 y 2024. Una Starship despega de la Tierra y se carga por completo de propelente en órbita baja terrestre mediante una flota de vuelos cisterna de repostaje, realiza la inyección transmarciana y posa en la superficie marciana una tripulación de unas 10 personas con carga y equipo de ISRU. El propelente del viaje de vuelta (metano + oxígeno líquido) se fabrica en Marte a partir del CO₂ atmosférico y del hielo de agua del subsuelo mediante el proceso Sabatier, lo que permite que la misma Starship despegue de nuevo, realice la inyección transterrestre y devuelva a la tripulación. La duración del viaje de ida y vuelta depende de la ventana de lanzamiento y de la estancia en superficie; la cronología ilustrativa que se muestra aquí es de ~2,5 años puerta a puerta (213 días de ida, ~500 días de estancia en superficie y regreso en la siguiente ventana favorable). La arquitectura es conceptual: la fecha y los parámetros están sujetos a revisiones sustanciales a la espera de la maduración de Starship y la validación de ISRU.",
+    "grade": "MINOR",
+    "issue": "Calques ('pierna de retorno', '213 días de salida') and the refuelling-in-orbit sentence is ambiguous."
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "description",
+    "old": "La primera «misión J» —una Apollo de larga duración con fines científicos y el nuevo Vehículo Explorador Lunar. El LRV permitió a Scott e Irwin un rango de desplazamiento de 27,9 km (frente a los 3,5 km de la Apollo 14 limitada a la marcha a pie), abriendo el dramático yacimiento de Hadley-Apeninos al pie de una cordillera de 4,5 km y en el borde del sinuoso surco Hadley. Tres EVA con una duración total de 18 h 35 m, 77 kg de muestras recuperadas, incluyendo la famosa «Genesis Rock» (muestra 15415) —una anortosita de 4.100 millones de años que confirmó el origen de océano de magma de la corteza de las tierras altas lunares. La «caída del martillo y la pluma» televisada de Scott verificó en directo la ley de gravitación de Galileo. Worden en órbita lunar operó la bahía SIM llena de instrumentos de teledetección (cámaras de cartografía, espectrometristas de rayos gamma, rayos X y partículas alfa) y realizó el primer EVA en el espacio profundo en el camino de regreso (~EVA de ~39 minutos a ~317.000 km de la Tierra para recuperar los botes de película). La recuperación de la Apollo 15 estuvo marcada por el fallo de uno de los tres paracaídas en abrirse —el CM amerizó con dureza pero la tripulación estaba a salvo.",
+    "new": "La primera «misión J»: un Apollo científico de estancia prolongada con el nuevo Lunar Roving Vehicle. El LRV dio a Scott e Irwin un alcance de desplazamiento de 27,9 km (frente a los 3,5 km del Apollo 14, limitado a ir a pie), lo que abrió el espectacular emplazamiento de Hadley-Apeninos, al pie de una cordillera de 4,5 km y en el borde del sinuoso surco Hadley. Tres EVA con una duración total de 18 h 35 m y 77 kg de muestras recuperadas, entre ellas la famosa «Genesis Rock» (muestra 15415), una anortosita de 4100 millones de años que confirmó el origen de océano de magma de la corteza de las tierras altas lunares. La «caída del martillo y la pluma» televisada de Scott verificó en directo la ley de la gravitación de Galileo. Worden, en órbita lunar, operó una bahía SIM llena de instrumentos de teledetección (cámaras cartográficas y espectrómetros de rayos gamma, rayos X y partículas alfa) y realizó la primera EVA en el espacio profundo durante el viaje de regreso (una EVA de ~39 minutos a ~317 000 km de la Tierra para recuperar los botes de película). La recuperación del Apollo 15 se vio empañada por el fallo de uno de los tres paracaídas, que no se abrió: el CM amerizó con dureza, pero la tripulación estaba a salvo.",
+    "grade": "BROKEN",
+    "issue": "Vehicle name 'Lunar Roving Vehicle' translated; 'espectrometristas' (operators) for spectrometers, 'yacimiento' for site, and garbled '(~EVA de ~39 minutos'."
+  },
+  {
+    "rel": "missions/neptune/voyager-2.json",
+    "at": "first",
+    "old": "Única sonda en visitar Urano y Neptuno; Grand Tour de cuatro gigantes",
+    "new": "Única nave en visitar Urano y Neptuno; Gran Recorrido por los cuatro planetas gigantes",
+    "grade": "MINOR",
+    "issue": "'Grand Tour' left in English, inconsistent with 'Gran Recorrido' used in the UI."
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "events.0.note",
+    "old": "Atlas V 551 sale de la Tierra hacia una trayectoria con asistencia en Júpiter hacia Plutón.",
+    "new": "El Atlas V 551 abandona la Tierra en una trayectoria hacia Plutón con asistencia gravitatoria de Júpiter.",
+    "grade": "MINOR",
+    "issue": "Clumsy double 'hacia' and unclear gravity-assist phrasing."
+  },
+  {
+    "rel": "missions/venus/magellan.json",
+    "at": "events.5.note",
+    "old": "1994-10-13. Periapsis rebajado hacia la atmósfera — primer vehículo espacial planetario entrada planificada deliberadamente.",
+    "new": "1994-10-13. Periapsis rebajado hasta la atmósfera: primera entrada atmosférica planificada de una nave planetaria.",
+    "grade": "BROKEN",
+    "issue": "'primer vehículo espacial planetario entrada planificada deliberadamente' is garbled word order."
+  },
+  {
+    "rel": "missions/mars/curiosity.json",
+    "at": "events.1.note",
+    "old": "Inyección trans-Marte (∆v de 3,61 km/s) envía MSL hacia una trayectoria heliocéntrica hacia Marte.",
+    "new": "Inyección transmarciana (∆v de 3,61 km/s): envía a MSL a una trayectoria heliocéntrica rumbo a Marte.",
+    "grade": "MINOR",
+    "issue": "Repeated 'hacia' and inconsistent 'trans-Marte' spelling."
+  },
+  {
+    "rel": "videos.json",
+    "at": "vid-01dea29ff9ad.title",
+    "old": "Apollo 13 — «Houston, we've had a problem»",
+    "new": "Apollo 13 — «Houston, tenemos un problema»",
+    "grade": "MINOR",
+    "issue": "The quotation is left in English while the same line is translated elsewhere."
+  },
+  {
+    "rel": "original-work.json",
+    "at": "lab_illustrations./images/lab/goals/apollo-round-trip_webp.title",
+    "old": "Viaje de ida y vuelta a Apollo",
+    "new": "Viaje de ida y vuelta del Apollo",
+    "grade": "MINOR",
+    "issue": "'a Apollo' reads as 'to Apollo'; wrong preposition."
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-cruise-mars3_webp.what",
+    "old": "Autobús M-71 soviético con la cápsula de descenso y paneles solares.",
+    "new": "Plataforma soviética M-71 con la cápsula de descenso y alas solares.",
+    "grade": "MINOR",
+    "issue": "'Autobús' is a literal calque of spacecraft 'bus'."
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/craft-dawn_webp.what",
+    "old": "Autobús impulsado por iones con amplias alas solares: orbitador de Vesta y Ceres.",
+    "new": "Plataforma de propulsión iónica con amplias alas solares: orbitador de Vesta y Ceres.",
+    "grade": "MINOR",
+    "issue": "'Autobús impulsado por iones' is a literal calque of 'ion-drive bus'."
+  },
+  {
+    "rel": "original-work.json",
+    "at": "writing.World profiles.what",
+    "old": "Textos descriptivos para los 9 planetas y 22 cuerpos menores — cometas, asteroides y objetos del cinturón de Kuiper — mostrados en la efeméride.",
+    "new": "Textos descriptivos de los 9 planetas y 22 cuerpos menores —cometas, asteroides y objetos del cinturón de Kuiper— que se muestran en el orrery.",
+    "grade": "MINOR",
+    "issue": "'efeméride' (ephemeris/anniversary) is the wrong word for 'orrery'."
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "science_sections.3.why",
+    "old": "La órbita de Saturno es suave (excentricidad 0.054) pero su distancia media de 9.6 AU significa que el perihelio y afelio difieren en 100 millones de km — Cassini sincronizó su llegada para usar la velocidad de entrada.",
+    "new": "La órbita de Saturno es suave (excentricidad 0,054), pero su distancia media de 9,6 AU hace que el perihelio y el afelio difieran en 100 millones de km: Cassini sincronizó su llegada para aprovechar la velocidad de entrada.",
+    "grade": "MINOR",
+    "issue": "Decimal points used instead of Spanish decimal commas; 'afelio' lacks article."
+  },
+  {
+    "rel": "moon-sites/apollo12.json",
+    "at": "fact",
+    "old": "El aterrizaje de precisión — Conrad tocó tierra a ~163 m de la sonda Surveyor 3 no tripulada (1967). Recuperaron piezas de la misma para devolver a la Tierra, demostrando que las naves espaciales sobreviven años en la Luna sin daños por radiación o micrometeoritos. Una prueba de concepto para futuras misiones de rendezvous.",
+    "new": "El aterrizaje de precisión: Conrad tocó el suelo a unos 163 m de la sonda no tripulada Surveyor 3 (1967). Recuperaron piezas de ella para traerlas a la Tierra, lo que demostró que las naves espaciales sobreviven años en la Luna sin daños por radiación ni micrometeoritos. Una prueba de concepto para futuras misiones de encuentro orbital.",
+    "grade": "MINOR",
+    "issue": "'rendezvous' left untranslated; 'piezas de la misma' is stiff."
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "science_sections.0.why",
+    "old": "Júpiter posee 101 satélites confirmados —los cuatro galileanos (Ío, Europa, Ganímedes, Calisto) son mundos en sí mismos y trazan una resonancia orbital de 1:2:4.",
+    "new": "Júpiter posee 101 satélites confirmados; los cuatro galileanos (Ío, Europa, Ganímedes, Calisto) son mundos en sí mismos y trazan una resonancia orbital de 1:2:4.",
+    "grade": "MINOR",
+    "issue": "Parenthetical dash is never closed."
+  },
+  {
+    "rel": "moon-sites/change4.json",
+    "at": "mission_type",
+    "old": "Uncrewed Lander · Rover (Far Side)",
+    "new": "Módulo de aterrizaje no tripulado · Róver (cara oculta)",
+    "grade": "BROKEN",
+    "issue": "Left entirely in English."
+  },
+  {
+    "rel": "small-bodies/haumea.json",
+    "at": "science_sections.0.why",
+    "old": "La forma elongada de Haumea (su rotación de 3.9 horas la deforma en un elipsoide triaxial) es una pista de la violenta colisión que creó su familia de fragmentos helados.",
+    "new": "La forma alargada de Haumea (una rotación de 3,9 horas la deforma en un elipsoide triaxial) es una pista de la violenta colisión que creó su familia de fragmentos helados.",
+    "grade": "MINOR",
+    "issue": "Decimal point instead of comma ('3.9 horas'); 'elongada' is a calque."
+  },
+  {
+    "rel": "moon-sites/chandrayaan3.json",
+    "at": "mission_type",
+    "old": "Uncrewed Lander · Rover",
+    "new": "Módulo de aterrizaje no tripulado · Róver",
+    "grade": "BROKEN",
+    "issue": "Left entirely in English."
+  },
+  {
+    "rel": "mars-sites/mangalyaan.json",
+    "at": "name",
+    "old": "Mangalyaan (Misión Orbital de Marte)",
+    "new": "Mangalyaan (Mars Orbiter Mission)",
+    "grade": "BROKEN",
+    "issue": "Mission name 'Mars Orbiter Mission' translated, violating the name rule."
+  },
+  {
+    "rel": "small-bodies/donaldjohanson.json",
+    "at": "science_sections.0.why",
+    "old": "52246 Donaldjohanson es un asteroide del cinturón principal (nombrado después del descubridor del fósil Lucy) — NASA Lucy pasó cerca el 20 de abril de 2025 como su primer encuentro en el cinturón.",
+    "new": "52246 Donaldjohanson es un asteroide del cinturón principal (nombrado en honor al descubridor del fósil Lucy); la nave Lucy de NASA lo sobrevoló el 20 de abril de 2025 en su primer encuentro en el cinturón.",
+    "grade": "MINOR",
+    "issue": "'nombrado después del descubridor' and 'pasó cerca' are calques; Lucy should read as the spacecraft."
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "body_paragraphs.0",
+    "old": "El truco principal: sale de la Tierra, vuela más allá de la Luna (o Marte), y deja que la gravedad de ese cuerpo doble tu camino de vuelta hacia la Tierra. Si tienes la geometría correcta, reingresas la atmósfera terrestre en el rebote. La tripulación nunca tiene que disparar un motor para regresar a casa.",
+    "new": "El truco principal: sales de la Tierra, pasas junto a la Luna (o Marte) y dejas que la gravedad de ese cuerpo curve tu trayectoria de vuelta hacia la Tierra. Si la geometría es la correcta, reentras en la atmósfera terrestre en el rebote. La tripulación no tiene que encender ningún motor para volver a casa.",
+    "grade": "MINOR",
+    "issue": "'reingresas la atmósfera' is wrong (reentrar en), person/imperative mix, 'vuela más allá de' misses 'fly past'."
+  },
+  {
+    "rel": "science/life-in-space/eva-physiology.json",
+    "at": "body_paragraphs.1",
+    "old": "La contramedida es la pre-respiración: horas respirando oxígeno puro a presiones cada vez menores antes de la salida, eliminando el nitrógeno de los tejidos corporales. El protocolo actual de la EEI del lado estadounidense utiliza pre-respiración en el traje más el protocolo Campout (una noche a 10,2 psi) sumando aproximadamente 4 horas antes de que la esclusa de aire se despresurize. Los trajes rusos Orlan funcionan a 5,7 psi, lo que acorta sustancialmente la pre-respiración — un intercambio diferente.",
+    "new": "La contramedida es la pre-respiración: horas respirando oxígeno puro a presiones cada vez más bajas antes de la salida, para expulsar el nitrógeno de los tejidos corporales. El protocolo actual de la EEI en el segmento estadounidense usa una pre-respiración con el traje puesto más el protocolo Campout (una noche a 10,2 psi), que suma unas 4 horas antes de que se despresurice la esclusa. Los trajes rusos Orlan funcionan a 5,7 psi, lo que acorta mucho la pre-respiración: un compromiso distinto.",
+    "grade": "MINOR",
+    "issue": "Typo 'despresurize' (despresurice) and stiff calques."
+  },
+  {
+    "rel": "science/mission-phases/entry-footprint.json",
+    "at": "body_paragraphs.0",
+    "old": "La huella es el conjunto alcanzable en el espacio downrange–crossrange. El downrange está determinado principalmente por cómo el vehículo gasta el sustentamiento vertical: sustentamiento máximo hacia arriba maximiza el alcance (la cápsula \"flota\", desacelerando lentamente y viajando lejos), sustentamiento máximo hacia abajo lo minimiza (una llegada pronunciada y rápida). El crossrange proviene de inclinar el sustentamiento lateralmente, y su extensión crece con L/D. Para una cápsula de bajo L/D la huella es modesta; para un cuerpo sustentador o un vehículo alado es enorme.",
+    "new": "La huella es el conjunto alcanzable en el espacio de alcance longitudinal y transversal. El alcance longitudinal depende sobre todo de cómo gasta el vehículo la sustentación vertical: con sustentación máxima hacia arriba se maximiza el alcance (la cápsula «flota», desacelera despacio y viaja lejos), y con sustentación máxima hacia abajo se minimiza (una llegada pronunciada y rápida). El alcance transversal procede de inclinar lateralmente la sustentación, y su extensión crece con L/D. Para una cápsula de L/D bajo la huella es modesta; para un cuerpo sustentador o un vehículo alado es enorme.",
+    "grade": "MINOR",
+    "issue": "Untranslated 'downrange/crossrange' and non-standard 'sustentamiento' (sustentación)."
+  },
+  {
+    "rel": "science/porkchop/_intro.json",
+    "at": "paragraphs.0",
+    "old": "Los planificadores de misiones no calculan una única trayectoria a Marte — calculan millones, en una cuadrícula gigante, y pintan un mapa de calor. Las trayectorias económicas aparecen como lóbulos azules fríos. Las caras salen rojas. El resultado, curiosamente, parece un morcillo. La zona económica es la carne del morcillo; la cresta cara es el hueso.",
+    "new": "Los planificadores de misiones no calculan una única trayectoria a Marte: calculan millones, en una cuadrícula gigante, y pintan un mapa de calor. Las trayectorias baratas aparecen como lóbulos azules fríos. Las costosas se vuelven rojas. El resultado, curiosamente, parece una chuleta de cerdo. La zona barata es la carne de la chuleta; la cresta cara es el hueso.",
+    "grade": "MINOR",
+    "issue": "'morcillo' is the wrong cut for 'pork chop' (chuleta de cerdo); 'Las caras' is ambiguous (faces)."
+  },
+  {
+    "rel": "science/history/goddard-liquid-rocket-1926.json",
+    "at": "body_paragraphs.1",
+    "old": "Antes existían cohetes de combustible sólido (flechas de fuego chinas desde el siglo XIII en adelante, cohetes Congreve en las guerras napoleónicas), pero los combustibles líquidos fueron la puerta al vuelo espacial: mayor impulso específico, estrangulación controlable, reiniciable.",
+    "new": "Antes ya existían cohetes de combustible sólido (las flechas de fuego chinas desde el siglo XIII, los cohetes Congreve en las guerras napoleónicas), pero los combustibles líquidos fueron la puerta al vuelo espacial: mayor impulso específico, empuje regulable y capacidad de reencendido.",
+    "grade": "MINOR",
+    "issue": "'estrangulación controlable' mistranslates throttling; 'reiniciable' is awkward."
+  },
+  {
+    "rel": "science/propulsion/thrust-and-twr.json",
+    "at": "body_paragraphs.0",
+    "old": "El empuje es fuerza. Unidad: newton (o kilonewton / meganewton para cualquier cosa que vuele). Un Merlin 1D produce 845 kN a nivel del mar. Un solo F-1 producía 6770 kN. Los boosters SLS producen 16 000 kN cada uno. El empuje no es Isp: el empuje dice con cuánta *fuerza* empuja el motor; el Isp dice con cuánta *eficiencia*. Un motor de alto empuje bajo Isp (booster sólido) y uno de bajo empuje alto Isp (motor iónico) pueden ambos ser útiles — para distintas tareas en distintas fases de la misión. La ecuación es simple: empuje = flujo másico × velocidad de salida, más un pequeño término de presión donde la presión de salida difiere de la ambiente. Por eso los motores de combustión escalonada con alta presión cámara producen más empuje por kg de masa motor — empujan más propelente por segundo por la misma garganta a mayor velocidad.",
+    "new": "El empuje es una fuerza. Su unidad es el newton (o el kilonewton y el meganewton para todo lo que vuela). Un Merlin 1D produce 845 kN a nivel del mar. Un solo F-1 producía 6770 kN. Cada propulsor de combustible sólido del SLS produce 16 000 kN. El empuje no es el impulso específico: el empuje indica con cuánta *fuerza* empuja el motor; el Isp indica con cuánta *eficiencia* lo hace. Un motor de alto empuje y bajo Isp (un propulsor de combustible sólido) y uno de bajo empuje y alto Isp (un motor iónico) pueden ser útiles, para tareas distintas en fases distintas de una misión. La ecuación del empuje es sencilla: el empuje es igual al flujo másico de propelente multiplicado por la velocidad de escape, más un pequeño término de presión cuando la presión de salida de la tobera difiere de la ambiente. Por eso los motores de combustión escalonada con alta presión en la cámara producen más empuje por kilogramo de masa del motor: hacen pasar más propelente por la misma garganta cada segundo y a mayor velocidad.",
+    "grade": "BROKEN",
+    "issue": "Garbled, clipped text ('alta presión cámara', 'masa motor'), untranslated 'boosters', and 'El empuje no es Isp' drops the meaning."
+  },
+  {
+    "rel": "universe/named-stars/alnilam.json",
+    "at": "fact",
+    "old": "La perla central del Cinturón de Orion: una resplandeciente supergigante azul visible a través de una inmensa distancia.",
+    "new": "La perla central del Cinturón de Orión: una resplandeciente supergigante azul visible a través de una inmensa distancia.",
+    "grade": "MINOR",
+    "issue": "'Orion' should be 'Orión' in Spanish."
+  },
+  {
+    "rel": "universe/named-stars/mintaka.json",
+    "at": "cultural",
+    "old": "El nombre proviene del árabe y significa 'el cinturón'. Como una de las tres estrellas del Cinturón, comparte el reconocimiento casi universal de Orion, y su posición sobre el ecuador la convirtió en un marcador natural del este y el oeste.",
+    "new": "El nombre proviene del árabe y significa 'el cinturón'. Como una de las tres estrellas del Cinturón, comparte el reconocimiento casi universal de Orión, y su posición sobre el ecuador la convirtió en un marcador natural del este y el oeste.",
+    "grade": "MINOR",
+    "issue": "'Orion' should be 'Orión' in Spanish."
+  }
+]

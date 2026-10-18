@@ -2,7 +2,7 @@
   "name": "Starship Demo",
   "type": "UNCREWED MARTE DEMO · PIANIFICATA",
   "first": "Primo sistema di lancio completamente riutilizzabile per tentare l'atterraggio su Marte",
-  "description": "Una dimostrazione senza equipaggio dell'architettura della Starship Mars: lancio su Super Heavy, rifornimento in LEO da una variante di cisterna, quindi iniezione trans-marziana di un'astronave completamente rifornita e discesa motorizzata sulla superficie marziana. L'obiettivo dichiarato di SpaceX è la finestra di lancio 2026-2027; la realtà ingegneristica (l'astronave funziona ancora attraverso l'affidabilità del volo orbitale e il rifornimento in orbita non è stato dimostrato) rende più probabile il 2028 o successivo. Se avrà successo, invertirà l’economia del carico utile di Marte: da migliaia di kg a cento tonnellate per atterraggio.",
+  "description": "Una dimostrazione senza equipaggio dell'architettura Starship per Marte: lancio su Super Heavy, rifornimento in LEO da una variante cisterna, poi iniezione trans-marziana di una Starship completamente rifornita e discesa propulsa verso la superficie marziana. L'obiettivo dichiarato di SpaceX è la finestra di lancio 2026-2027; la realtà ingegneristica (Starship sta ancora lavorando sull'affidabilità del volo orbitale e il rifornimento in orbita non è stato dimostrato) rende più probabile il 2028 o oltre. Se avrà successo, ribalterà l'economia del carico utile verso Marte: da migliaia di kg a cento tonnellate per atterraggio.",
   "events": [
     {
       "met": 0,

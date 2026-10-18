@@ -1,0 +1,594 @@
+[
+  {
+    "rel": "messages",
+    "at": "audio_action_tour_driving",
+    "old": "De tour bestuurt — stop hem om vrij te navigeren.",
+    "new": "De tour neemt het roer over — stop hem om vrij te navigeren.",
+    "grade": "MINOR",
+    "issue": "'bestuurt' has no object and does not convey that the tour is controlling the camera."
+  },
+  {
+    "rel": "messages",
+    "at": "credits_intro_body_2",
+    "old": "Deze pagina is een complete materiaalverklaring voor alles wat we herdistribueren. Elke foto, illustratie, textuur en geciteerde of geparafraseerde redactionele passage in Orrery heeft hieronder zijn eigen vermelding — de oorspronkelijke uitgever, link naar de bron, licentie en de plaatsen in de app waar het verschijnt.",
+    "new": "Deze pagina is de volledige stuklijst van alles wat we herdistribueren. Elke foto, illustratie, textuur en geciteerde of geparafraseerde redactionele passage in Orrery heeft hieronder een eigen vermelding — de oorspronkelijke uitgever, de link naar de bron, de licentie en de plaatsen in de app waar het verschijnt.",
+    "grade": "MINOR",
+    "issue": "'materiaalverklaring' is not the term for a bill of materials (stuklijst); possessive 'zijn eigen vermelding' is stiff."
+  },
+  {
+    "rel": "messages",
+    "at": "fly_toggle_hud_title",
+    "old": "Schakel HUD-kolom (missie-identiteit, navigatie, vluchtparameters, systemen, live-status)",
+    "new": "HUD-kolom aan- of uitzetten (missie-identiteit, navigatie, vluchtparameters, systemen, live-status)",
+    "grade": "MINOR",
+    "issue": "'Schakel HUD-kolom' is an incomplete imperative; toggling on/off is not expressed."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_illustration_alt_landing_computer",
+    "old": "Een lander zwevend op een gereduceerde motor boven het oppervlak, zijn daalsnelheidscurve zwak naast zich uitstervend naar nul.",
+    "new": "Een lander die boven het oppervlak zweeft op een teruggeregelde motor, met zijn daalsnelheidscurve als schim ernaast die uitdooft naar nul.",
+    "grade": "MINOR",
+    "issue": "'gereduceerde motor' and 'zwak ... uitstervend' are unnatural renderings of throttled engine and ghosted curve."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_lss_hook",
+    "old": "De Voyagers betrappen een eens-per-176-jaar-opstelling van Jupiter, Saturnus, Uranus en Neptunus — de 'Grand Tour' — waarmee een enkele sonde van wereld tot wereld kon katapulteren. Mis dat venster en het zou niet tot de 22e eeuw terugkomen.",
+    "new": "De Voyagers profiteerden van een opstelling van Jupiter, Saturnus, Uranus en Neptunus die maar eens per 176 jaar voorkomt — de ‘Grand Tour’ — waarmee één enkele sonde van wereld naar wereld kon slingeren. Mis dat venster en het zou pas in de 22e eeuw terugkomen.",
+    "grade": "MINOR",
+    "issue": "'betrappen' (to catch someone out) is the wrong sense of 'caught'; 'tot de 22e eeuw' loses 'not until'."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_gtm_planning",
+    "old": "Plan uw eigen transfer — de missieconfiguratie",
+    "new": "Plan je eigen transfer — de missieconfigurator",
+    "grade": "MINOR",
+    "issue": "Formal 'uw' clashes with the informal 'je' used site-wide; 'missieconfiguratie' should be 'configurator'."
+  },
+  {
+    "rel": "messages",
+    "at": "mars_meta_description",
+    "old": "Elk artefact dat de mensheid op Mars heeft geplaatst — landers, rovers en actieve orbiters — op een navigeerbare 2D-kaart en 3D-globe met live missie-cross-links.",
+    "new": "Elk artefact dat de mensheid op Mars heeft geplaatst — landers, rovers en actieve orbiters — op een navigeerbare 3D-globe met de volledige missiegeschiedenis.",
+    "grade": "BROKEN",
+    "issue": "Translation describes a 2D map and live cross-links; the English says 3D globe with full mission history."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_sar_thrust",
+    "old": "Die hele stapel moet van het platform af, dus stuwkracht moet zwaar overwinnen: F = TWR·m₀·g. Stuwkracht-gewichtsverhouding bij lancering ligt rond 1,2–1,5 — te laag en zwaartekracht eet je Δv op terwijl je langzaam omhoog kruipt, te hoog en je schudt de raket uit elkaar.",
+    "new": "Die hele stapel moet van het platform af, dus de stuwkracht moet groter zijn dan het gewicht: F = TWR·m₀·g. De stuwkracht-gewichtsverhouding bij lancering ligt rond 1,2–1,5 — te laag en de zwaartekracht vreet je Δv op terwijl je langzaam omhoog kruipt, te hoog en je schudt de raket uit elkaar.",
+    "grade": "BROKEN",
+    "issue": "'stuwkracht moet zwaar overwinnen' garbles 'thrust must beat weight' (zwaar misread as heavy)."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_illustration_alt_plan_a_mission",
+    "old": "De volledige baan van een missie in één beeld — lancering, baan, transferellips en aankomst als één doorlopende reislijn.",
+    "new": "De volledige boog van een missie in één beeld — lancering, baan, transferellips en aankomst als één doorlopende reislijn.",
+    "grade": "MINOR",
+    "issue": "'volledige baan' is ambiguous (orbit) for 'full arc' and duplicates 'baan' in the list."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_sizing_title",
+    "old": "Raketvormgeving",
+    "new": "Raketdimensionering",
+    "grade": "MINOR",
+    "issue": "'Raketvormgeving' means rocket design, not rocket sizing."
+  },
+  {
+    "rel": "messages",
+    "at": "science_tab_scales_time",
+    "old": "SCHAAL & TIJD",
+    "new": "SCHALEN & TIJD",
+    "grade": "MINOR",
+    "issue": "'Scales' is plural (orders of magnitude); singular SCHAAL loses that."
+  },
+  {
+    "rel": "essays/seven-minutes.json",
+    "at": "body.19.md",
+    "old": "Over de geschiedenis van Marsmissies specifiek, het landingsprobleem heeft een lijkentelling. Mars 2, in 1971, werd het eerste object van de Aarde dat het Martiaanse oppervlak raakte — en crashte, doodde zichzelf op inslag, het afdalingssysteem was mislukt voordat de parachutesequentie volledig was. Mars Polar Lander, in december 1999, schakelde zijn afdalingsmotoren bijna zeker voortijdig uit toen trillingen van de benen die uitplooiden werden misinterpreteerd als een landings signaal, en het viel de laatste veertig meter op volle snelheid. Beagle 2, op Kerstmis 2003, maakte het door entry heen — de EDL-reeks lijkt correct te zijn geweest — maar de zonnepanelen konden bij landing niet volledig uitplooien en het kon nooit communiceren, stil op de Martiaanse vlakten. De lander Schiaparelli van het Europese Ruimtevaartagentschap, in oktober 2016, had zijn traagheidsmeetunit verzadigd tijdens de gewelddadige parachuteavdaling — de aflezingen liepen even boven hun schaal — corruptie van de navigatieoplossing zodat de ingebouwde computer dacht dat het al onder het oppervlak was; het sneed de parachute af en liet de tegenraketten slechts drie seconden in plaats van dertig afvuren, en raakte de grond op ruwweg 540 kilometer per uur.",
+    "new": "Juist in de geschiedenis van de Marsmissies heeft het landingsprobleem een dodental. Mars 2 werd in 1971 het eerste object van de Aarde dat het oppervlak van Mars raakte — en crashte, waarbij het bij de inslag verging, omdat het afdalingssysteem uitviel voordat de parachutesequentie voltooid was. Mars Polar Lander schakelde in december 1999 vrijwel zeker voortijdig zijn afdalingsmotoren uit, toen trillingen van de uitklappende landingspoten werden aangezien voor een landingssignaal, en viel de laatste veertig meter op volle snelheid omlaag. Beagle 2 kwam op eerste kerstdag 2003 door de entry heen — de EDL-reeks lijkt te hebben gewerkt — maar de zonnepanelen klapten bij de landing niet volledig uit en het toestel kon nooit communiceren; het bleef stil op de Marsvlakten. Bij de lander Schiaparelli van het European Space Agency raakte in oktober 2016 tijdens de heftige parachuteafdaling de traagheidsmeeteenheid verzadigd — de metingen liepen even buiten hun schaal — waardoor de navigatieoplossing verstoord raakte en de boordcomputer meende dat het toestel al onder het oppervlak zat; hij sneed de parachute los en liet de remraketten slechts drie seconden in plaats van dertig branden, en het toestel sloeg met ruwweg 540 kilometer per uur op de grond.",
+    "grade": "BROKEN",
+    "issue": "Garbled syntax ('Over de geschiedenis ... specifiek, het landingsprobleem heeft'), 'doodde zichzelf', 'landings signaal', 'corruptie van' fragment; also 'Europese Ruimtevaartagentschap' violates the agency-name rule."
+  },
+  {
+    "rel": "essays/the-body-in-the-dark.json",
+    "at": "body.7.caption",
+    "old": "Het moeilijkste probleem is het probleem dat je niet kunt zien. Voorbij het magnetische veld van de aarde is er geen schuilplaats tegen galactische kosmische stralen, en een zonnestorm kan in uren tijd een acute dosis afleveren. Blindage zwaar genoeg om ze te stoppen is veel te zwaar om te vliegen — dus op een lange reis absorbeert de bemanning eenvoudig het weer.",
+    "new": "Het moeilijkste probleem is het probleem dat je niet kunt zien. Voorbij het magnetische veld van de Aarde is er geen schuilplaats tegen galactische kosmische straling, en een zonnestorm kan in uren tijd een acute dosis afleveren. Afscherming die zwaar genoeg is om die straling te stoppen, is veel te zwaar om mee te vliegen — dus op een lange reis neemt de bemanning het ruimteweer simpelweg in zich op.",
+    "grade": "MINOR",
+    "issue": "'Blindage' is archaic for shielding and 'de aarde' is inconsistent with 'Aarde' elsewhere; 'kosmische stralen' loses 'galactic cosmic rays' idiom."
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.11.md",
+    "old": "Nucleair-thermische voorstuwing — waterstof verwarmen in een reactor en het door een mondstuk uitstoten — verdubbelt ongeveer de uitlaatsnelheid, bereikend specifieke impulsen rond de 825 seconden in de beste grondgetest motoren van het NERVA-programma. Het verdubbelen van de uitlaatsnelheid halveert de vereiste massaverhouding niet; het neemt de vierkantswortel ervan — een veel groter voordeel. Bij interstellaire snelheden is nucleair-thermische voorstuwing nog steeds categorisch ontoereikend. De raketvergelijking geeft niet om hoe de brandstof wordt verwarmd. Het geeft er alleen om hoe snel deze vertrekt. En geen brandstofverbrandende architectuur die tot nu toe is bedacht, kan materie snel genoeg uitstoten om een significant deel van c te bereiken zonder een brandstofbelasting te vereisen die de missie op haar gezicht onmogelijk maakt.",
+    "new": "Nucleair-thermische voortstuwing — waterstof verhitten in een reactor en door een mondstuk uitstoten — verdubbelt ongeveer de uitlaatsnelheid en haalt specifieke impulsen van rond de 825 seconden in de beste grondgetoetste motoren van het NERVA-programma. Een verdubbeling van de uitlaatsnelheid halveert de vereiste massaverhouding niet; daar wordt de vierkantswortel van genomen — een veel grotere winst. Bij interstellaire snelheden is nucleair-thermische voortstuwing nog steeds categorisch ontoereikend. De raketvergelijking geeft er niet om hoe het drijfgas wordt verhit. Ze geeft er alleen om hoe snel het vertrekt. En geen enkele tot nu toe bedachte architectuur die drijfgas verbrandt kan materie snel genoeg uitstoten om een betekenisvol deel van c te bereiken zonder een brandstoflading te vereisen die de missie op het eerste gezicht onmogelijk maakt.",
+    "grade": "BROKEN",
+    "issue": "Ungrammatical ('de beste grondgetest motoren', 'bereikend'), 'op haar gezicht onmogelijk' is a literal calque of 'on its face', awkward 'brandstofverbrandende architectuur'."
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.21.md",
+    "old": "De derde muur is het menselijk lichaam, en het is degene waarmee de missie-architectuur niet omheen kan engineeren. Mars heeft geen globaal magnetisch veld — zijn kern lang sinds gestold, waardoor de dynamo die eenmaal het schild genereerde, eindigde. Het magnetosfeer van Aarde leidt het merendeel van kosmische stralen en energetische zonne-deeltjes af; Mars biedt geen equivalent. Een zes-maanden-transitie door interplanetaire ruimte geeft een gemeten dosis van ruwweg 300 millisievert — ruim honderd keer een typisch jaar van natuurlijke achtergrondsstraling op Aarde, opgenomen in zes maanden. Op het Martiaanse oppervlak, zonder magnetosfeer, accumuleert dosis verder door secundaire straling. Een drie-jaar-rondtrip is geschat op 600 tot 1.200 millisievert totaal, afhankelijk van zonlekkerheid en afscherming — getallen gemeten in vlucht door instrumenten aan boord van [Curiosity](/missions?id=curiosity).",
+    "new": "De derde muur is het menselijk lichaam, en dat is de muur waar de missiearchitectuur niet omheen kan ontwerpen. Mars heeft geen globaal magnetisch veld — de kern is allang gestold, waarmee de dynamo die ooit het schild opwekte is verdwenen. De magnetosfeer van de Aarde buigt het grootste deel van de galactische kosmische straling en de energierijke zonnedeeltjes af; Mars biedt niets vergelijkbaars. Een overtocht van zes maanden door de interplanetaire ruimte levert een gemeten dosis van ruwweg 300 millisievert op — ruim honderd keer zoveel als een gemiddeld jaar natuurlijke achtergrondstraling op Aarde, in zes maanden opgenomen. Op het oppervlak van Mars, zonder magnetosfeer, loopt de dosis verder op door secundaire straling. Voor een retourreis van drie jaar is een totaal van 600 tot 1.200 millisievert geschat, afhankelijk van de fase van de zonnecyclus en de afscherming — getallen die tijdens de vlucht zijn gemeten door instrumenten aan boord van [Curiosity](/missions?id=curiosity).",
+    "grade": "BROKEN",
+    "issue": "'zonlekkerheid' is a nonsense word for solar-cycle phase; wrong article ('Het magnetosfeer'), 'galactische' dropped, 'Aarde's'/'-trip' compounds and clumsy syntax throughout."
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.26.md",
+    "old": "Maar de kloof tussen \"niet verboden\" en \"haalbaar in enig nabij tijdsbestek\" is enorm. De langzaamste serieuze voorstel — een fusiestarrenvaart met 12% van c — zou technologie vereisen die niet bestaat, tegen een kostprijs die elke ruimteprogramma in de geschiedenis overshaduwt, om een bemand schip in ongeveer vijftig jaar naar een ander ster af te leveren. Het snelste serieuze voorstel — Breakthrough Starshot's met laser voortgestuwd lichtzeil — zou gram aan instrumenten aan een voorbijvlucht afleveren die uren duurt, en jaren gegevens terugsturen, tegen een kostprijs die zijn voorstanders ramen op tientallen miljarden dollar, aangenomen dat de laserarray kan worden gebouwd. Tussen deze uitersten is er geen middelopie die zowel technologisch haalbaar als toereikend voor zinvolle verkenning is. De schaal van het probleem heeft eenvoudigweg geen gematigde oplossing.",
+    "new": "Maar de kloof tussen ‘niet verboden’ en ‘haalbaar binnen afzienbare tijd’ is enorm. Het langzaamste serieuze voorstel — een fusieschip met 12% van c — zou technologie vereisen die niet bestaat, tegen kosten die elk ruimteprogramma uit de geschiedenis in het niet doen vallen, om in ongeveer vijftig jaar een bemand ruimtevaartuig naar een andere ster te brengen. Het snelste serieuze voorstel — het met lasers aangedreven lichtzeil van Breakthrough Starshot — zou een gram aan instrumenten naar een voorbijvlucht brengen die uren duurt en jarenlang gegevens terugsturen, tegen kosten die de voorstanders op tientallen miljarden dollars schatten, aangenomen dat de laserarray ooit gebouwd kan worden. Tussen deze uitersten bestaat geen middenweg die zowel technisch haalbaar als toereikend is voor zinvolle verkenning. De schaal van het probleem kent simpelweg geen gematigde oplossing.",
+    "grade": "BROKEN",
+    "issue": "Repeated grammar errors ('De langzaamste serieuze voorstel', 'een ander ster', 'elke ruimteprogramma', 'zou gram aan instrumenten'), nonword 'middelopie', 'fusiestarrenvaart'."
+  },
+  {
+    "rel": "essays/the-body-in-the-dark.json",
+    "at": "body.14.md",
+    "old": "Alles wat we over langdurige ruimtevaartuigfysiologie weten, werd gemeten — op echte mensen, die in werkelijkheid in de ruimte leefden, voor echte durations thuis kwamen, en werden bestudeerd. Het record voor een enkele continue vlucht wordt gehouden door Valeri Poljakov, een Russische arts-kosmonaut die Mir in januari 1994 instapt en naar aarde terugkeerde in maart 1995, na 437 opeenvolgende dagen in een baan te hebben doorgebracht — nog steeds ongebroken, drie decennia later. Poljakovs doel was expliciet medisch: bepalen of een menselijk wezen, functioneel, een Mars-missiuduur kon overleven. Toen hij landde, eiste hij erop dat hij onder zijn eigen kracht bij de Soyuz-capsule wegging. Zijn bot- en spierachteruitgang duurde maanden. Hij liep. De Salyut en Mir programma's bouwden een Sovjet- en vervolgens Russische lichaam van fysiologische gegevens op die onvervangbaar blijft — het ISS breidde het uit en globaliseerde het. Peggy Whitson's cumulatieve 665 dagen over drie missies gaven onderzoekers een longitudinale dataset op een enkel individu onmogelijk anders te repliceren. De NASA Twin Study — Scott Kelly's 340-daagse missie vergeleken met zijn aardse identieke tweeling Mark — vond meetbare veranderingen in genexpressie, telomeeranamica, darmmicrobobocompositie, en cognitieve prestaties, waarvan de meeste op terugkomst werden omgekeerd, maar niet allemaal. China's Tiangong programma voegt nu aan het record toe: bemanning op 90- en 180-daagse rotaties sinds 2021, een taikonauts-populatie voorheen afwezig uit de dataset. Elk eerlijk rekenschap van wat de mensheid over het langdurige menselijk lichaam in de ruimte weet, moet omvatten wat Rusland op Mir leerde, wat het 15-natie ISS-partnerschap sinds 2000 heeft gemeten, en wat China nu accumuleert.",
+    "new": "Alles wat we weten over de fysiologie van langdurige ruimtevluchten is gemeten — aan echte mensen, die werkelijk lange tijd in de ruimte leefden, naar huis terugkeerden en werden onderzocht. Het record voor één ononderbroken vlucht is van Valeri Poljakov, een Russische arts-kosmonaut die in januari 1994 aan boord ging van [Mir](/programs/mir) en in maart 1995 naar de Aarde terugkeerde, na 437 opeenvolgende dagen in een baan — nog altijd ongebroken, drie decennia later. Poljakovs doel was uitdrukkelijk medisch: vaststellen of een mens een missie van de duur van een Marsreis functioneel kon overleven. Toen hij landde, stond hij erop op eigen kracht uit de Soyuz-capsule te lopen. Het herstel van zijn botten en spieren duurde maanden. Hij liep. De programma's [Salyut](/programs/salyut) en [Mir](/programs/mir) bouwden een Sovjet- en later Russisch corpus aan fysiologische gegevens op dat onvervangbaar blijft — het [ISS](/programs/iss) breidde het uit en maakte het mondiaal. De cumulatieve 665 dagen van Peggy Whitson over drie missies gaven onderzoekers een longitudinale dataset over één individu die anders niet te repliceren is. De NASA Twin Study — de missie van 340 dagen van Scott Kelly vergeleken met zijn aardse eeneiige tweelingbroer Mark — vond meetbare veranderingen in genexpressie, telomeerdynamiek, samenstelling van het darmmicrobioom en cognitieve prestaties, waarvan de meeste bij terugkomst teruggingen, maar niet alle. Het programma [Tiangong](/programs/tiangong) van China vult het record nu aan: bemanningen in rotaties van 90 en 180 dagen sinds 2021, een populatie taikonauten die voorheen ontbrak in de dataset. Een eerlijk overzicht van wat de mensheid weet over het menselijk lichaam tijdens langdurig verblijf in de ruimte moet omvatten wat Rusland op Mir leerde, wat het ISS-partnerschap van 15 landen sinds 2000 heeft gemeten en wat China nu verzamelt.",
+    "grade": "BROKEN",
+    "issue": "Untranslated 'durations', 'Mir instapt' (wrong tense/verb), nonwords 'Mars-missiuduur', 'telomeeranamica', 'darmmicrobobocompositie', 'Elk eerlijk rekenschap', many ungrammatical sentences."
+  },
+  {
+    "rel": "essays/navigation.json",
+    "at": "body.22.caption",
+    "old": "Welke kant is op, wanneer er geen op is: een star tracker fotografeert een stukje hemel, koppelt het patroon aan een boordcatalogus, en weet onmiddellijk hoe het vaartuig in het vaste J2000-raam is georiënteerd. Tussen fixes dragen de gyro's het tellen.",
+    "new": "Welke kant is boven, als er geen boven is: een star tracker fotografeert een stukje hemel, vergelijkt het patroon met een boordcatalogus en weet meteen hoe het ruimtevaartuig is georiënteerd in het vaste J2000-referentiekader. Tussen twee bepalingen door houden de gyroscopen de telling bij.",
+    "grade": "MINOR",
+    "issue": "'Welke kant is op' is unclear, 'raam' is a wrong term for reference frame, and 'dragen de gyro's het tellen' is a stiff literal."
+  },
+  {
+    "rel": "essays/the-body-in-the-dark.json",
+    "at": "body.22.md",
+    "old": "Betere voortaandrijving doet ertoe. De [nieuwe motortechnologieën](/essays/new-propulsion) die onder ontwikkeling zijn — nucleaire thermische, nucleaire elektrische, zonnezeil, de verdertoekomstige concepten — zouden de treinrijduur verkorten, en het inkorten van de treinrijduur vermindert cumulatieve stralingsbelasting en cumulatieve fysiologische verslechtering. Een transit van 90 dagen in plaats van 270 is niet drie keer gemakkelijker voor het lichaam; de relatie tussen dosis en effect is complexer dan lineair, en sommige systemen — de psychologische, de beenderen, de cardiovasculaire — zijn gevoelig voor duur op manieren waarop zelfs kortere blootstelling niet volledig redt. Maar korter is beter. Snellere motoren zijn echte geneeskunde. Ze veranderen echter niet de fundamentele aard van het probleem. Een 90-daagse transit kruist nog steeds interplanetaire ruimte zonder magnetosfeer, zonder zwaartekracht en zonder redding. Het lichaam is nog steeds de lading. Het verslechtert nog steeds. Het keert nog steeds naar huis terug verminderd op manieren die maanden of jaren nemen om om te keren, als zij omdraaien.",
+    "new": "Betere voortstuwing doet ertoe. De [nieuwe motortechnologieën](/essays/new-propulsion) die in ontwikkeling zijn — nucleair-thermisch, nucleair-elektrisch, zonnezeilen, de concepten uit de verdere toekomst — zouden de reistijd verkorten, en een kortere reistijd betekent minder cumulatieve stralingsbelasting en minder cumulatieve fysiologische achteruitgang. Een overtocht van 90 dagen in plaats van 270 is niet drie keer zo gemakkelijk voor het lichaam; de relatie tussen dosis en effect is complexer dan lineair, en sommige systemen — het psychologische, de botten, het cardiovasculaire — zijn zo gevoelig voor de duur dat zelfs een kortere blootstelling ze niet volledig redt. Maar korter is beter. Snellere motoren zijn echte geneeskunde. Ze veranderen echter niets aan de fundamentele aard van het probleem. Een overtocht van 90 dagen doorkruist nog steeds de interplanetaire ruimte zonder magnetosfeer, zonder zwaartekracht en zonder redding. Het lichaam is nog steeds de lading. Het gaat nog steeds achteruit. Het keert nog steeds thuis terug met schade waarvan het maanden of jaren duurt om te herstellen, als het al herstelt.",
+    "grade": "BROKEN",
+    "issue": "'treinrijduur' (train-ride duration) for transit time, 'omkeren/omdraaien' for reversing, and several ungrammatical sentences."
+  },
+  {
+    "rel": "fleet/launcher/starship.json",
+    "at": "best_known_for",
+    "old": "Volledig herbruikbare zware draagraket in ontwikkeling voor Artemis HLS + Mars",
+    "new": "Volledig herbruikbare superzware draagraket in ontwikkeling voor Artemis HLS + Mars",
+    "grade": "MINOR",
+    "issue": "'super-heavy' is rendered as plain 'zware', losing the class."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/orion.json",
+    "at": "description",
+    "old": "Het bemande voertuig voor NASA's Artemis-programma, gezamenlijk ontwikkeld met ESA (de Europese Service Module wordt geleverd door Airbus). Ontworpen om tot vier astronauten te ondersteunen op meerweekse missies naar maanbaan. Vloog onbemand op Artemis I in 2022. Vloog zijn eerste bemande missie (Artemis II) in april 2026 met een vierkoppige bemanning op een trajectorie voorbij de maan.",
+    "new": "Het bemande ruimtevaartuig voor NASA's Artemis-programma, gezamenlijk gebouwd met ESA (de European Service Module wordt geleverd door Airbus). Ontworpen voor maximaal vier astronauten op missies van meerdere weken naar een baan om de Maan. Vloog onbemand op Artemis I in 2022. Maakte zijn eerste bemande vlucht (Artemis II) in april 2026, met een bemanning van vier op een vliegroute langs de Maan.",
+    "grade": "MINOR",
+    "issue": "'naar maanbaan' lacks article, 'trajectorie voorbij de maan' is clumsy and 'maan' is lowercase against the site's 'Maan'; module name should stay English."
+  },
+  {
+    "rel": "fleet/observatory/hitomi.json",
+    "at": "tagline",
+    "old": "Uiteen gespind in de baan; verlies stimuleerde XRISM-ontwikkeling",
+    "new": "Draaide in een baan uiteen; het verlies gaf de aanzet tot de ontwikkeling van XRISM",
+    "grade": "MINOR",
+    "issue": "'Uiteen gespind' is an incorrect verb form and 'stimuleerde' misstates that the loss prompted XRISM."
+  },
+  {
+    "rel": "fleet/constellation/glonass.json",
+    "at": "tagline",
+    "old": "Rusland's GNSS — 24 satellieten, volledig hersteld in 2011",
+    "new": "Ruslands GNSS — 24 satellieten, in 2011 weer volledig dekkend",
+    "grade": "MINOR",
+    "issue": "Wrong possessive apostrophe ('Rusland's')."
+  },
+  {
+    "rel": "fleet/station/tiangong-1.json",
+    "at": "description",
+    "old": "Tiangong-1 is een ruimtestation gebouwd door CAST in China. Eerste Chinese ruimtestation; testmodule met één module. Gelanceerd in 2011, ontving twee bemande bezoeken (Shenzhou 9 in 2012 en Shenzhou 10 in 2013); contact verloren in maart 2016 en herbinnengekomen zonder controle op 2 april 2018.",
+    "new": "Tiangong-1 is een ruimtestation gebouwd door CAST in China. Het eerste Chinese ruimtestation; een testplatform met één module. Gelanceerd in 2011, ontving twee bemande bezoeken (Shenzhou 9 in 2012 en Shenzhou 10 in 2013); het contact ging in maart 2016 verloren en op 2 april 2018 kwam het ongecontroleerd de atmosfeer weer binnen.",
+    "grade": "BROKEN",
+    "issue": "'herbinnengekomen zonder controle' is a nonword construction; 'testmodule met één module' is redundant."
+  },
+  {
+    "rel": "fleet/rover/exomars-rosalind-franklin.json",
+    "at": "tagline",
+    "old": "ESA's Mars-rover 2028 — 2-m boor om biosignaturen te zoeken op Oxia Planum. Vertraagd door Roscosmos-uittreding 2022, nu NASA-lancering",
+    "new": "ESA's Marsrover van 2028 — boor van 2 m om naar biosignaturen te zoeken op Oxia Planum. Stilgezet door de terugtrekking van Roscosmos in 2022, nu omgezet naar een NASA-lancering",
+    "grade": "MINOR",
+    "issue": "'Mars-rover 2028' and 'Vertraagd' (paused) are loose; 'nu NASA-lancering' drops 'retargeted'."
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-1.json",
+    "at": "tagline",
+    "old": "Eerste Amerikaanse maanorbiter (1966-08-14); bracht Apollo-landingsplaatsen in kaart en maakte de eerste foto van de Aarde vanuit maanbaan.",
+    "new": "Eerste Amerikaanse maanorbiter (1966-08-14); bracht Apollo-landingsplaatsen in kaart en maakte de eerste foto van de Aarde vanuit een baan om de Maan (1966).",
+    "grade": "MINOR",
+    "issue": "The closing '(1966)' of the English is dropped; 'vanuit maanbaan' lacks article."
+  },
+  {
+    "rel": "fleet/orbiter/mro.json",
+    "at": "best_known_for",
+    "old": "Hoogste resolutie Mars beeldvorming vanuit een baan",
+    "new": "Beelden van Mars met de hoogste resolutie vanuit een baan",
+    "grade": "MINOR",
+    "issue": "Ungrammatical noun pile 'Hoogste resolutie Mars beeldvorming'."
+  },
+  {
+    "rel": "fleet/rover/spirit.json",
+    "at": "best_known_for",
+    "old": "Mars Exploration Rover; 6 jaar operatie",
+    "new": "Mars Exploration Rover; 6 jaar in bedrijf",
+    "grade": "MINOR",
+    "issue": "'6 jaar operatie' is a calque."
+  },
+  {
+    "rel": "fleet/observatory/spitzer.json",
+    "at": "description",
+    "old": "NASA's infrarode Groot Observatorium, in bedrijf van 2003 tot 2020. Ontworpen voor een vijfjarige cryogene missie, maar in bedrijf gesteld voor zestien jaar, inclusief een \\\"warme missie\\\"-fase nadat de vloeibare-heliumkoelmiddel in 2009 was opgebruikt.",
+    "new": "NASA's infrarode Great Observatory, in bedrijf van 2003 tot 2020. Ontworpen voor een cryogene missie van vijf jaar, maar zestien jaar in bedrijf, inclusief een ‘warme missie’-fase nadat de voorraad vloeibaar helium als koelmiddel in 2009 was opgebruikt.",
+    "grade": "BROKEN",
+    "issue": "Literal backslashes in the quotes, 'in bedrijf gesteld voor zestien jaar' (wrong meaning), 'de vloeibare-heliumkoelmiddel' grammatical error, 'Groot Observatorium' translates a programme name."
+  },
+  {
+    "rel": "fleet/crewed-spacecraft/challenger.json",
+    "at": "description",
+    "old": "Gebouwd uit een structureel testartikel (STA-099) omgebouwd naar vluchtconfig nadat Enterprise te duur was om te upgraden. Eerste vlucht STS-6 (1983-04-04) met de eerste Shuttle EVA. Vloog in totaal 10 missies: STS-6, STS-7, STS-8, STS-41-B, STS-41-C, STS-41-G, STS-51-B, STS-51-F, STS-61-A en laatste vlucht STS-51-L. Op 1986-01-28 lanceerde STS-51-L bij ongekend koud weer (−1 °C) — de O-ringen van de rechter SRB konden niet afdichten, heet gas brandde zich door de strut die de SRB aan de externe tank vastmaakte, en de orbiter viel uit elkaar bij Max-Q (T+73s) op 14 km hoogte. Alle zeven bemanningsleden kwamen om, onder wie lerares Christa McAuliffe. De Rogers Commission zette de Shuttle voor 32 maanden stil en herschreef NASA's veiligheidscultuur.",
+    "new": "Gebouwd uit een structureel testexemplaar (STA-099) dat voor vluchten werd omgebouwd nadat Enterprise te duur bleek om te upgraden. Eerste vlucht STS-6 (1983-04-04), met de eerste EVA van een Shuttle. Vloog in totaal 10 missies: STS-6, STS-7, STS-8, STS-41-B, STS-41-C, STS-41-G, STS-51-B, STS-51-F, STS-61-A en de laatste vlucht STS-51-L. Op 1986-01-28 lanceerde STS-51-L bij ongekende kou (−1 °C) — de O-ringen van de rechter SRB sloten niet af, heet gas brandde door de steun waarmee de SRB aan de externe tank vastzat, en de orbiter brak uiteen bij Max-Q (T+73s) op 14 km hoogte. Alle zeven bemanningsleden kwamen om, onder wie lerares Christa McAuliffe. De Rogers Commission zette de Shuttle 32 maanden aan de grond en schreef de veiligheidscultuur van NASA om.",
+    "grade": "BROKEN",
+    "issue": "The Dutch replaces 'Sally Ride' with 'Christa McAuliffe', differing from the English (the English is itself factually wrong, Ride was not on STS-51-L; fix the source then align); 'structureel testartikel' and 'vluchtconfig' are also clumsy."
+  },
+  {
+    "rel": "missions/jupiter/europa-clipper.json",
+    "at": "events.2.label",
+    "old": "AARDE-ZWAARTEKRACHTMANOEUVRE",
+    "new": "GRAVITY ASSIST BIJ AARDE",
+    "grade": "MINOR",
+    "issue": "Compound 'AARDE-ZWAARTEKRACHTMANOEUVRE' is unwieldy and inconsistent with 'gravity assist' used elsewhere."
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "description",
+    "old": "Psyche bereikt de blootgestelde nikkel-ijzerkern van een gedifferentieerde proto-planeet — een 226 km groot metaallichaam dat mogelijk de dichtstbijzijnde analoog is van Aarde's eigen kern die ergens bereikbaar is. Gelanceerd 2023-10-13 op een Falcon Heavy vanaf Kennedy LC-39A. Vier SPT-140 Hall-effect ionenthrusters spiraliseren de baan naar buiten; een Mars-zwaartekrachtassist in mei 2026 (4.609 km kleinste nadering) leverde de energie op die ionenstuwing alleen niet op tijd kon leveren. Aankomst gepland 2029-08, gevolgd door een 26 maanden durende vier-baanfase-afdaling (A → B → C → D) die zwaartekracht, magnetisme, topografie en samenstelling van de asteroïde in kaart brengt. Als de hypothese van de metaalkern klopt, zal Psyche uitzien als niets wat we eerder hebben bezocht — kaal metalen oppervlak, ijzersulfideafzettingen, geen chaos van puin-hoopjes zoals typische asteroïden.",
+    "new": "Psyche vliegt naar de blootliggende nikkel-ijzerkern van een gedifferentieerde protoplaneet — een metalen lichaam van 226 km dat mogelijk het beste bereikbare analoog is van de kern van onze eigen Aarde. Gelanceerd op 2023-10-13 op een Falcon Heavy vanaf Kennedy LC-39A. Vier SPT-140 Hall-effect-ionenmotoren laten het traject naar buiten spiralen; een Mars-gravity-assist in mei 2026 (dichtste nadering 4.609 km) leverde de energie die ionenstuwing alleen niet op tijd kon opbrengen. Aankomst gepland in 2029-08, gevolgd door een afdaling van 26 maanden in vier baanfasen (A → B → C → D) waarin de zwaartekracht, het magnetisme, de topografie en de samenstelling van de asteroïde in kaart worden gebracht. Als de hypothese van de metaalkern klopt, ziet Psyche er anders uit dan alles wat we eerder bezochten — kaal metalen oppervlak, ijzersulfideafzettingen, niets van de puinhoopchaos van gewone asteroïden.",
+    "grade": "MINOR",
+    "issue": "'Aarde's eigen kern' wrong possessive, 'spiraliseren', 'puin-hoopjes' and 'dichtstbijzijnde analoog ... ergens bereikbaar' are awkward."
+  },
+  {
+    "rel": "missions/venus/vega-1.json",
+    "at": "description",
+    "old": "Sovjet–ESA-vlaggenschip van de Halley-armada. Vega 1 lanceerde 1984-12-15 met een lander uit de Venera-lijn plus een eerste ESA/CNES-gebouwde heliumballon die 46,5 uur lang in Venus' wolkendek op 54 km hoogte ronddobberde, terwijl het via een wereldwijd radienetwerk van 20 stations wind- en temperatuurgegevens uitzond. Na het uitstoten van zijn afdalingsmodule gebruikte de bus Venus gravity assist om naar komeet 1P/Halley om te sturen en bereikte op 1986-03-06 een dichtste benadering van 8890 km — het eerste ontmoeting met een kometenkern en de positiebepaling die ESA's Giotto gebruikte om een week later zelf zijn veel dichter voorbijvlucht langs Halley uit te voeren.",
+    "new": "Sovjet–ESA-vlaggenschip van de Halley-armada. Vega 1 lanceerde op 1984-12-15 met een lander uit de Venera-lijn plus een nieuwe, door ESA/CNES gebouwde heliumballon die 46,5 uur lang in het wolkendek van Venus op 54 km hoogte dreef en via een wereldwijd radionetwerk van 20 stations wind- en temperatuurgegevens uitzond. Na het afwerpen van zijn afdalingsmodule gebruikte de bus een Venus-gravity-assist om naar komeet 1P/Halley te zwaaien en bereikte op 1986-03-06 een dichtste nadering van 8890 km — de eerste ontmoeting met een kometenkern, en de positiebepaling die Giotto van ESA gebruikte om een week later zijn eigen, veel nabijere voorbijvlucht langs Halley te navigeren.",
+    "grade": "MINOR",
+    "issue": "Typo 'radienetwerk', 'het eerste ontmoeting' wrong article, 'om naar komeet ... om te sturen' awkward."
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "dispatch",
+    "old": "Pioneer 11 was de tweede verkenner, en hij ging verder dan zijn tweelingbroer. Na zijn eigen passage langs Jupiter gebruikte hij de zwaartekracht van de planeet om het zonnestelsel over te steken en in 1979 Saturnus te bereiken — de eerste ruimtesonde ooit die dit deed — en vloog opzettelijk door het ringvlak heen om te testen of het gebied veilig was. Hij vond de opening die de Voyagers een jaar later zouden doorvliegen. Veel van wat de Grand Tour mogelijk maakte was dit: een kleine, goedkope sonde vooruit gestuurd om de risico's te nemen en de gevaren in kaart te brengen, zodat de vlaggemschipen erachter met vertrouwen konden vliegen in plaats van met angst.",
+    "new": "Pioneer 11 was de tweede verkenner, en hij ging verder dan zijn tweelingbroer. Na zijn eigen passage langs Jupiter gebruikte hij de zwaartekracht van de planeet om het zonnestelsel over te steken en in 1979 Saturnus te bereiken — de eerste ruimtesonde ooit die dit deed — en vloog opzettelijk door het ringvlak heen om te testen of het gebied veilig was. Hij vond de opening die de Voyagers een jaar later zouden doorvliegen. Veel van wat de Grand Tour mogelijk maakte was dit: een kleine, goedkope sonde vooruit gestuurd om de risico's te nemen en de gevaren in kaart te brengen, zodat de vlaggenschepen erachter met vertrouwen konden vliegen in plaats van met angst.",
+    "grade": "MINOR",
+    "issue": "Typo 'vlaggemschipen' (vlaggenschepen)."
+  },
+  {
+    "rel": "missions/moon/apollo8.json",
+    "at": "dispatch",
+    "old": "Apollo 8 was een gok die in haast werd gewaagd. Inlichtingen suggereerden dat de Soviets misschien als eerste een bemanning rond de maan zouden sturen, dus in de zomer van 1968 gooide NASA het vluchtplan overboord en stuurde drie mannen naar de maanbaan met slechts de derde lancering van een raket die nog nooit een bemanning had gedragen. Het had roekeloos moeten zijn. In plaats daarvan werd het het enige goede nieuws van het jaar — 1968 was een jaar van moordaanslagen, Vietnam, brandende steden — en op kerstavond hoorde een miljard mensen Genesis voorgelezen vanuit de maanbaan en zagen ze, op Bill Anders' foto, voor het eerst hun hele wereld opkomen boven een dode horizon. Apollo 11 wordt herinnerd om de maan. Apollo 8 is degene die ons de aarde toonde.",
+    "new": "Apollo 8 was een gok die in haast werd gewaagd. Inlichtingen suggereerden dat de Sovjets misschien als eerste een bemanning rond de maan zouden sturen, dus in de zomer van 1968 gooide NASA het vluchtplan overboord en stuurde drie mannen naar de maanbaan met slechts de derde lancering van een raket die nog nooit een bemanning had gedragen. Het had roekeloos moeten zijn. In plaats daarvan werd het het enige goede nieuws van het jaar — 1968 was een jaar van moordaanslagen, Vietnam, brandende steden — en op kerstavond hoorde een miljard mensen Genesis voorgelezen vanuit de maanbaan en zagen ze, op Bill Anders' foto, voor het eerst hun hele wereld opkomen boven een dode horizon. Apollo 11 wordt herinnerd om de maan. Apollo 8 is degene die ons de aarde toonde.",
+    "grade": "MINOR",
+    "issue": "'de Soviets' should be 'de Sovjets'."
+  },
+  {
+    "rel": "missions/psyche/psyche-mission.json",
+    "at": "first",
+    "old": "Eerste missie naar een metaalrijk M-klasse-asteroïde; eerste gebruik van Hall-effect ionenthrusters als primaire cruisevoortdrijving",
+    "new": "Eerste missie naar een metaalrijke asteroïde van klasse M; eerste gebruik van Hall-effect-ionenmotoren als primaire voortstuwing tijdens de cruisefase",
+    "grade": "MINOR",
+    "issue": "Adjective lacks inflection ('metaalrijk ... asteroïde') and 'cruisevoortdrijving' is clumsy."
+  },
+  {
+    "rel": "missions/pluto/new-horizons.json",
+    "at": "description",
+    "old": "Een negen-jarige sprint na de snelste lancering tot dan toe, New Horizons comprimeerde decennia van verwachting tot één julidag in 2015 — een wereld die van een gepixelde vlek veranderde in bergen van waterijs en stikstofgletsjers op Pluto's hartvormige Tombaugh Regio. Het ruimtevaartuig vloog later Arrokoth, en koppelde de missie aan het oer-zonnestelsel. Vluchtbogen in Orrery zijn directe-transfer-onderwijsmodellen, niet de daadwerkelijke Jupiter-zwaartekrachtassist.",
+    "new": "Een negenjarige sprint na de snelste lancering tot dan toe: New Horizons perste decennia van verwachting samen in één dag in juli 2015 — een wereld die van een gepixelde vlek veranderde in bergen van waterijs en stikstofgletsjers op het hartvormige Tombaugh Regio van Pluto. Het ruimtevaartuig vloog later langs Arrokoth en verbond de missie zo met het oerzonnestelsel. De vluchtbogen in Orrery zijn leermodellen met een directe transfer, niet de werkelijke Jupiter-gravity-assist.",
+    "grade": "MINOR",
+    "issue": "'negen-jarige' should be 'negenjarige'; 'vloog later Arrokoth' lacks 'langs'; stacked compounds 'directe-transfer-onderwijsmodellen'."
+  },
+  {
+    "rel": "missions/moon/apollo14.json",
+    "at": "description",
+    "old": "De derde bemande maanlanding en Alans Shepards tweede vlucht — waardoor hij zowel de eerste Amerikaan in de ruimte (Freedom 7, 1961) als de vijfde man op de maan werd, op zijn 47e het oudste maanwandelaar. Apollo 14 was de herstellingsmissie na Apollo 13's mislukte landing en nam Apollo 13's beoogde doelwit in Fra Mauro Highlands over. Shepard en Mitchell zetten ALSEP in, voerden twee EVA's uit met in totaal 9 h 23 m, en trokken de modulaire transportvrachtwagen (MET, een riksja-achtige kar — de LRV was nog één missie verwijderd) richting de Cone-krater, hoewel zij ongeveer 30 m voor de rand stopten vanwege navigatie-onzekerheid in het kratergebied. In de laatste minuten van EVA-2 improviseerde Shepard een zes-ijzer golfclub-kopf op een monsterinzamelingshandvat en sloeg twee golfballen „kilometers en kilometers en kilometers\" ver (één werd later uit afbeeldingen geanalyseerd op ongeveer 24 m en ongeveer 37 m). Stuart Roosa vervoerde boomzaden in Kitty Hawk die de „Moon Trees\" werden die over heel de VS werden geplant. 42 kg monsters teruggebracht.",
+    "new": "De derde bemande maanlanding en de tweede vlucht van Alan Shepard — waarmee hij zowel de eerste Amerikaan in de ruimte (Freedom 7, 1961) als de vijfde mens op de Maan werd, en op zijn 47e de oudste maanwandelaar. Apollo 14 was de herstelmissie na de afgebroken landing van Apollo 13 en nam het beoogde doel van Apollo 13 over, het Fra Mauro-hoogland. Shepard en Mitchell zetten ALSEP uit, voerden twee EVA's uit van samen 9 u 23 min, en trokken de modulaire uitrustingskar (MET, een karretje in riksja-stijl — de LRV was nog één missie verwijderd) richting de Cone-krater, al bleven ze ongeveer 30 m van de rand steken vanwege navigatie-onzekerheid in het kraterrijke terrein. In de laatste minuten van EVA-2 improviseerde Shepard een ijzer-6-golfclubkop op een handvat voor monsterverzameling en sloeg twee golfballen ‘miles and miles and miles’ ver (één werd later aan de hand van beelden geanalyseerd op ongeveer 24 m en ongeveer 37 m). Stuart Roosa nam in Kitty Hawk boomzaden mee die de ‘Moon Trees’ werden, verspreid over de VS geplant. 42 kg monsters teruggebracht.",
+    "grade": "BROKEN",
+    "issue": "'Alans Shepards', 'het oudste maanwandelaar', MET rendered as 'transportvrachtwagen' (it is a cart), German 'kopf' left in 'golfclub-kopf', garbled phrasing."
+  },
+  {
+    "rel": "missions/mars/mars-pathfinder.json",
+    "at": "events.1.note",
+    "old": "Eerste baan correctie.",
+    "new": "Eerste baancorrectie.",
+    "grade": "MINOR",
+    "issue": "'baan correctie' should be one word."
+  },
+  {
+    "rel": "missions/moon/apollo8.json",
+    "at": "events.1.note",
+    "old": "Trans-lunar injection burn — eerste bemande ontsnapping aan aardzwaartekracht. S-IVB ∆v ~3,05 km/s.",
+    "new": "Trans-lunaire injectiemanoeuvre — de eerste ontsnapping van een bemand ruimtevaartuig aan de aardzwaartekracht. S-IVB ∆v ~3,05 km/s.",
+    "grade": "MINOR",
+    "issue": "Event name left in English ('Trans-lunar injection burn')."
+  },
+  {
+    "rel": "missions/bennu/osiris-rex.json",
+    "at": "events.2.note",
+    "old": "Arriveert bij Bennu; houdt station op ~19 km en verstevigt zich progressief naar een record-~1,4 km baan — dichtstbijzijnde ruimtevaartuigbaan ooit rond welk hemellichaam dan ook.",
+    "new": "Arriveert bij Bennu; houdt positie op ~19 km en verkleint de baan geleidelijk tot een record van ~1,4 km — de kleinste baan die een ruimtevaartuig ooit rond een hemellichaam heeft gevlogen.",
+    "grade": "MINOR",
+    "issue": "'verstevigt zich' is wrong for 'tightens'; 'dichtstbijzijnde ruimtevaartuigbaan' is awkward."
+  },
+  {
+    "rel": "missions/moon/change1.json",
+    "at": "events.3.note",
+    "old": "Stereo-CCD + laseraltimeter brengen Chinas eerste volledige maanwijde topografische kaart voort met een resolutie van 120-200 m.",
+    "new": "Stereo-CCD + laserhoogtemeter leveren de eerste volledige topografische kaart van de Maan van China op, met een resolutie van 120-200 m.",
+    "grade": "MINOR",
+    "issue": "'Chinas' missing apostrophe/'China's'; 'maanwijde' is not a word."
+  },
+  {
+    "rel": "missions/earth/sputnik1.json",
+    "at": "events.3.note",
+    "old": "Verviel op 1958-01-04 na ~1440 omwentelingen; verbrandde boven de Atlantische Oceaan.",
+    "new": "Baan vervallen op 1958-01-04 na ~1440 omlopen; verbrandde boven de Atlantische Oceaan.",
+    "grade": "MINOR",
+    "issue": "'Verviel' is ambiguous (expired) for orbital decay."
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.3.note",
+    "old": "SM cryo-roeren-commando initieert kortsluiting-brand en tankbreuk. \"Houston, we've had a problem.\" Vermogen en water nemen af; LM Aquarius wordt de reddingsboot.",
+    "new": "Het cryo-roerommando van de SM veroorzaakt een kortsluiting, brand en tankbreuk. ‘Houston, we've had a problem.’ Vermogen en water nemen af; LM Aquarius wordt de reddingsboot.",
+    "grade": "MINOR",
+    "issue": "'cryo-roeren-commando' and 'kortsluiting-brand' are garbled compounds."
+  },
+  {
+    "rel": "missions/earth/apollo-1.json",
+    "at": "events.2.note",
+    "old": "Apollo-bemand programma 21 maanden stopgezet. Missie achteraf genoemd Apollo 1 ter nagedachtenis.",
+    "new": "Het bemande Apollo-programma 21 maanden stilgelegd. Missie postuum omgedoopt tot Apollo 1 uit eerbetoon.",
+    "grade": "MINOR",
+    "issue": "'Apollo-bemand programma' is awkward and 'achteraf genoemd' is weaker than 'renamed in posthumous honour'."
+  },
+  {
+    "rel": "missions/moon/apollo13.json",
+    "at": "events.1.note",
+    "old": "Trans-lunaire injectie-burn door S-IVB; CSM + LM toewijding aan cislunaarbaan.",
+    "new": "Trans-lunaire injectiemanoeuvre door de S-IVB; CSM + LM leggen zich vast op een cislunair traject.",
+    "grade": "BROKEN",
+    "issue": "'commit to' is mistranslated as 'toewijding' (devotion), making the sentence meaningless."
+  },
+  {
+    "rel": "missions/moon/luna21.json",
+    "at": "events.3.note",
+    "old": "Zachte landing in krater Le Monnier op 15 januari 1973. Lunokhod 2 rolde enkele uren later van de rampen af.",
+    "new": "Zachte landing in de krater Le Monnier op 15 januari 1973. Lunokhod 2 rolde enkele uren later van de landingshellingen af.",
+    "grade": "BROKEN",
+    "issue": "'ramps' translated as 'rampen' (disasters), wrong meaning."
+  },
+  {
+    "rel": "missions/earth/polaris-dawn.json",
+    "at": "events.1.note",
+    "old": "Baan verhoogd tot 1408 km apogeum — meest verheven bemande baan sinds Apollo 17.",
+    "new": "Baan verhoogd tot een apogeum van 1408 km — de hoogste bemande baan sinds Apollo 17.",
+    "grade": "MINOR",
+    "issue": "'meest verheven' means sublime, not highest."
+  },
+  {
+    "rel": "missions/earth/otv-1.json",
+    "at": "events.1.note",
+    "old": "Apogeum ~287 km; geclassificeerde lastoperaties.",
+    "new": "Apogeum ~287 km; operaties met geheime lading.",
+    "grade": "BROKEN",
+    "issue": "'geclassificeerde lastoperaties' wrong: 'lasten' means burdens, not payload; classified is 'geheim'."
+  },
+  {
+    "rel": "missions/earth/otv-7.json",
+    "at": "events.2.note",
+    "old": "Autonome baanlandingop Vandenberg Space Force Base 2025-03-07.",
+    "new": "Autonome landing op de landingsbaan van Vandenberg Space Force Base, 2025-03-07.",
+    "grade": "MINOR",
+    "issue": "Typo 'baanlandingop' and 'baan' reads as orbit rather than runway."
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-launcher-atlas-lv-3b_webp.where",
+    "old": "Vliegen · lancering/opgang",
+    "new": "Vliegen · lancering/opstijging",
+    "grade": "MINOR",
+    "issue": "'opgang' is inconsistent with 'opstijging' used for the identical English label elsewhere."
+  },
+  {
+    "rel": "earth-objects/smart-1.json",
+    "at": "scale_fact",
+    "old": "Polaire baan op ~470 km hoogte. Eerste operationele gebruik van ionenvoortstuwing voor een maanmissie — een sjabloon voor ESA's latere BepiColombo en Hera missies in de diepe ruimte.",
+    "new": "Polaire baan op ~470 km hoogte. Eerste operationele gebruik van ionenvoortstuwing voor een maanmissie — een voorbeeld voor de latere ESA-missies BepiColombo en Hera in de diepe ruimte.",
+    "grade": "MINOR",
+    "issue": "Missing hyphen in 'BepiColombo en Hera missies' and 'sjabloon' is stiff."
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-launcher-long-march-3b_webp.what",
+    "old": "Chinese GTO-werkpaard — een kern met vier vloeibare strapon-boosters (Chang'e maanmissies).",
+    "new": "Chinees GTO-werkpaard — een kern met vier vloeibare strap-on-boosters (maanmissies Chang'e).",
+    "grade": "MINOR",
+    "issue": "Wrong article/agreement ('Chinese ... werkpaard' should be 'Chinees') and curly apostrophe changed."
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "firsts.0.label",
+    "old": "Pioneer 10 — eerste Jupiter scheervlucht (USA)",
+    "new": "Pioneer 10 — eerste Jupiter-scheervlucht (USA)",
+    "grade": "MINOR",
+    "issue": "'Jupiter scheervlucht' should be a hyphenated compound."
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "links.4.l",
+    "old": "Neptune's interior model (Icarus 2021)",
+    "new": "Intern model van Neptunus (Icarus 2021)",
+    "grade": "MINOR",
+    "issue": "Link label left entirely in English."
+  },
+  {
+    "rel": "mars-sites/viking2-lander.json",
+    "at": "mission_type",
+    "old": "Uncrewed Lander · Mission Complete",
+    "new": "Onbemande lander · Missie voltooid",
+    "grade": "BROKEN",
+    "issue": "Entire label left untranslated English."
+  },
+  {
+    "rel": "planets/jupiter.json",
+    "at": "science_sections.3.why",
+    "old": "Jupiters uitgestrekte Hill-bol (straal van 50 miljoen km) is wat zijn systeem van 101 manen stabiel maakt — de zwaartekrachtputten reikt zich bijna tot Mars uit bij perihelium.",
+    "new": "De uitgestrekte Hill-bol van Jupiter (straal van 50 miljoen km) maakt zijn systeem van 101 manen stabiel — de zwaartekrachtput reikt bij perihelium bijna tot Mars.",
+    "grade": "MINOR",
+    "issue": "'de zwaartekrachtputten reikt zich' is ungrammatical and the causal sentence is reordered awkwardly."
+  },
+  {
+    "rel": "moon-sites/change4.json",
+    "at": "capability",
+    "old": "Demonstreerde communicatiearchitectuur met relaisatelliet voor operaties buiten directe zichtlijn — hetzelfde patroon dat elke Mars-achterkant- of polairmissie zal nodig hebben.",
+    "new": "Demonstreerde een communicatiearchitectuur met relaissatelliet voor operaties buiten directe zichtlijn — precies het patroon dat elke missie naar de verre zijde of de polen van Mars nodig zal hebben.",
+    "grade": "MINOR",
+    "issue": "Word order 'zal nodig hebben' and 'Mars-achterkant' unnatural."
+  },
+  {
+    "rel": "small-bodies/haumea.json",
+    "at": "science_sections.1.why",
+    "old": "Haumea maakt deel uit van een kleine botsings­familie in de Kuipergordel — hemellichamen met vergelijkbare banen en spectra die een oude ouderster delen.",
+    "new": "Haumea maakt deel uit van een kleine botsingsfamilie in de Kuipergordel — hemellichamen met vergelijkbare banen en spectra die een oeroud moederlichaam delen.",
+    "grade": "BROKEN",
+    "issue": "'ouderster' (parent star) is wrong for a parent body, and a soft hyphen is embedded in 'botsings­familie'."
+  },
+  {
+    "rel": "small-bodies/halley.json",
+    "at": "science_sections.0.why",
+    "old": "De excentriciteit van Halley van 0.967 is de standaard baan van een kortperiodieke komeet — bijna parabolisch, met perihelium 0.59 AU en aphelium 35 AU.",
+    "new": "De excentriciteit van Halley van 0,967 is de schoolvoorbeeldbaan van een kortperiodieke komeet — bijna parabolisch, met een perihelium van 0,59 AU en een afhelium van 35 AU.",
+    "grade": "MINOR",
+    "issue": "Decimal points instead of commas and 'standaard baan' for textbook orbit; inconsistent with 'afhelium'."
+  },
+  {
+    "rel": "moon-sites/chandrayaan3.json",
+    "at": "fact",
+    "old": "Eerste ruimtevaartuig dat dicht bij de maanpool landen — het meest betwiste territorium in de huidige ruimteverkenning, waar permanent schaduwrijke kraters waterijs bevatten. Pragyan voerde de eerste in-situ-detectie van zwavel dicht bij de maanpool uit met behulp van zijn LIBS-instrument. India werd de vierde natie die zachte landen op de Maan, en de eerste die de polen bereikt.",
+    "new": "Eerste ruimtevaartuig dat landde nabij de zuidpool van de Maan — het meest betwiste gebied in de huidige ruimteverkenning, waar permanent beschaduwde kraters waterijs herbergen. Pragyan deed met zijn LIBS-instrument de eerste in-situdetectie van zwavel nabij de zuidpool van de Maan. India werd de vierde natie die zacht op de Maan landde, en de eerste die de polen bereikte.",
+    "grade": "BROKEN",
+    "issue": "Ungrammatical verb forms ('dat ... landen', 'die zachte landen') make the sentences garbled."
+  },
+  {
+    "rel": "planets/pluto.json",
+    "at": "fact",
+    "old": "Het grootste bekende hemellichaam in de Kuipergordel en het eerste object voorbij Neptunus dat ooit is ontdekt (1930). In 2006 door de IAU geherkwalificeerd van planeet naar dwergplaneet.",
+    "new": "Het grootste bekende object in de Kuipergordel en het eerste object voorbij Neptunus dat ooit is ontdekt (1930). In 2006 door de IAU van planeet tot dwergplaneet heringedeeld.",
+    "grade": "MINOR",
+    "issue": "'geherkwalificeerd' is not the right verb for reclassified."
+  },
+  {
+    "rel": "programs/skylab.json",
+    "at": "lessons.0.md",
+    "old": "Skylab's eerste les is dat repareerbaarheid een capaciteit is die de moeite waard is om voor te ontwerpen. Het station overleefde een lanceringsfalen dat het had moeten vernietigen alleen omdat een bemanning kon worden gestuurd om het te repareren — en omdat, hoe geïmproviseerd de reparaties ook waren, er genoeg toegang en genoeg marge was om ze te proberen. De programma's die dit ter harte namen, van Hubble-onderhoud tot het ISS, behandelden hun hardware als iets dat onderhouden moest worden, niet slechts bediend tot het kapotging. Degenen die het vergaten betaalden voor ruimtevaartuigen die ze alleen maar konden zien falen.",
+    "new": "De eerste les van Skylab is dat repareerbaarheid een eigenschap is waar het de moeite waard is voor te ontwerpen. Het station overleefde een mislukte lancering die het had moeten vernietigen alleen doordat er een bemanning kon worden gestuurd om het te repareren — en doordat er, hoe geïmproviseerd de reparaties ook waren, genoeg toegang en marge was om ze te proberen. De programma's die dit ter harte namen, van het onderhoud van Hubble tot het ISS, behandelden hun hardware als iets dat onderhouden moet worden, niet slechts bediend tot het kapotging. Wie het vergat, betaalde voor ruimtevaartuigen die ze alleen nog konden zien falen.",
+    "grade": "MINOR",
+    "issue": "'Skylab's' wrong apostrophe, 'lanceringsfalen' and 'capaciteit' stilted, final sentence clumsy."
+  },
+  {
+    "rel": "programs/kuiper.json",
+    "at": "goals.2.md",
+    "old": "Een bepalend doel is lanceeronafhankelijkheid van SpaceX. Omdat Kuiper rechtstreeks concurreert met Starlink, zou ritten kopen op Falcon 9 betekenen dat het zijn rivaal financiert en daarvan afhankelijk wordt — dus spreidde Amazon bewust zijn enorme lanceringcontracten over meerdere aanbieders: United Launch Alliance's Atlas V en Vulcan, Arianespace's Ariane 6, en Blue Origin's New Glenn. Het is een van de grootste lanceeraankoopdeals in de geschiedenis, specifiek gestructureerd om de ene raket te vermijden die het makkelijkst te kopen zou zijn geweest.",
+    "new": "Een bepalend doel is onafhankelijkheid van SpaceX bij de lanceringen. Omdat Kuiper rechtstreeks met Starlink concurreert, zou het kopen van ritten op Falcon 9 betekenen dat Amazon zijn rivaal financiert en van hem afhankelijk wordt — dus spreidde Amazon zijn enorme lanceercontracten bewust over meerdere aanbieders: de Atlas V en Vulcan van United Launch Alliance, de Ariane 6 van Arianespace en de New Glenn van Blue Origin. Het is een van de grootste inkoopdeals voor lanceringen uit de geschiedenis, specifiek zo opgezet dat de ene raket die het gemakkelijkst te kopen was, wordt vermeden.",
+    "grade": "MINOR",
+    "issue": "Inconsistent coinages ('lanceringcontracten', 'lanceeraankoopdeals', 'lanceeronafhankelijkheid') and possessive 'United Launch Alliance's Atlas V'."
+  },
+  {
+    "rel": "science/life-in-space/crew-selection.json",
+    "at": "intro_sentence",
+    "old": "Elke ruimtevaartagentschap voert ongeveer dezelfde selectietrechter uit — fysiek, cognitief, psychologisch, operationeel — die ~10.000 kandidaten versmalt tot ~10 geselecteerden. Het knelpunt is bemanningsdynamiek onder stress.",
+    "new": "Elk ruimtevaartagentschap hanteert ongeveer dezelfde selectietrechter — fysiek, cognitief, psychologisch, operationeel — die ~10.000 kandidaten terugbrengt tot ~10 geselecteerden. Het knelpunt is de groepsdynamiek van de bemanning onder stress.",
+    "grade": "MINOR",
+    "issue": "Wrong article ('Elke ruimtevaartagentschap' - het-word needs 'Elk')."
+  },
+  {
+    "rel": "science/transfers/free-return.json",
+    "at": "body_paragraphs.0",
+    "old": "De hoofdtruuk: verlaat de Aarde, vlieg langs de Maan (of Mars), en laat de zwaartekracht van dat hemellichaam je pad terug naar de Aarde buigen. Als je de geometrie goed hebt, kom je bij de terugkeer in de aardatmosfeer terecht. De bemanning hoeft nooit een motor aan te zetten om naar huis te gaan.",
+    "new": "De belangrijkste truc: verlaat de Aarde, vlieg langs de Maan (of Mars) en laat de zwaartekracht van dat hemellichaam je baan terug naar de Aarde buigen. Als de geometrie klopt, kom je op de terugweg weer de aardatmosfeer binnen. De bemanning hoeft nooit een motor te ontsteken om naar huis te komen.",
+    "grade": "MINOR",
+    "issue": "'De hoofdtruuk' is unidiomatic (truc is 'de truc', 'headline trick' = key trick)."
+  },
+  {
+    "rel": "science/cosmology/large-scale-structure.json",
+    "at": "body_paragraphs.0",
+    "old": "De hiërarchie nestelt zich in elkaar. Sterren verzamelen zich in sterrenstelsels; sterrenstelsels vallen samen tot groepen (zoals onze Lokale Groep) en rijke clusters (zoals het Virgocluster, meer dan duizend sterrenstelsels gebonden in één zwaartekrachtveld). Groepen en clusters worden op hun beurt aangetrokken tot superclusteringh — losse, uitgestrekte concentraties van tientallen megaparsecs breed. Onze Lokale Groep ligt aan de rand van de Virgosupercluster, ongeveer 33 megaparsecs (ongeveer 110 miljoen lichtjaar) breed en gecentreerd op het Virgocluster.",
+    "new": "De hiërarchie is genest. Sterren verzamelen zich in sterrenstelsels; sterrenstelsels vallen samen tot groepen (zoals onze Lokale Groep) en rijke clusters (zoals de Virgocluster, met meer dan duizend sterrenstelsels gebonden in één zwaartekrachtput). Groepen en clusters worden zelf weer samengetrokken tot superclusters — losse, uitgestrekte concentraties van tientallen megaparsecs groot. Onze Lokale Groep ligt aan de rand van de Virgosupercluster, ~33 megaparsecs (ongeveer 110 miljoen lichtjaar) breed en gecentreerd op de Virgocluster.",
+    "grade": "MINOR",
+    "issue": "Garbled word 'superclusteringh', 'nestelt zich in elkaar' awkward."
+  },
+  {
+    "rel": "science/life-in-space/eva-physiology.json",
+    "at": "body_paragraphs.1",
+    "old": "De tegenmaategel is pre-breathe: uren zuiversuurstof ademen bij geleidelijk lagere drukken vóór het uitstappen, waardoor stikstof uit lichaamsweefsels wordt verwijderd. Het huidige US-protocol aan boord van het ISS gebruikt in-suit pre-breathe + het Campout-protocol (overnacht op 10,2 psi), totaal ongeveer 4 uur voordat de sluis wordt gedecomprimeerd. Russische Orlan-pakken werken op 5,7 psi, wat de pre-breathe aanzienlijk verkort — een ander afwegingsprincipe.",
+    "new": "De tegenmaatregel is pre-breathe: uren zuivere zuurstof ademen bij geleidelijk lagere druk vóór het naar buiten gaan, zodat stikstof uit het lichaamsweefsel wordt gespoeld. Het huidige protocol aan Amerikaanse zijde van het ISS gebruikt in-suit pre-breathe + het Campout-protocol (overnacht bij 10,2 psi), samen ongeveer 4 uur voordat de sluis wordt gedecomprimeerd. Russische Orlan-pakken werken op 5,7 psi, wat de pre-breathe aanzienlijk verkort — een andere afweging.",
+    "grade": "MINOR",
+    "issue": "Typo 'tegenmaategel'; 'overnacht' and 'een ander afwegingsprincipe' clumsy."
+  },
+  {
+    "rel": "science/mission-phases/entry-footprint.json",
+    "at": "body_paragraphs.0",
+    "old": "De voetafdruk is de bereikbare set in afstand–dwarsmoten-ruimte. Afstand wordt vooral bepaald door hoe het voertuig verticale lift besteedt: maximale lift omhoog maximaliseert bereik (de capsule 'zweeft', traag afnemend en ver reizend), maximale lift omlaag minimaliseert het (een steile, snelle aankomst). Dwarsmoten ontstaat door de lift zijwaarts in te hellen, en de omvang groeit met L/D. Voor een lage-L/D capsule is de voetafdruk bescheiden; voor een liftlichaam of vleugelvliegtuig enorm.",
+    "new": "De voetafdruk is de bereikbare verzameling in de ruimte van downrange en crossrange. De downrange wordt vooral bepaald door hoe het voertuig de verticale lift besteedt: volledige lift omhoog maximaliseert het bereik (de capsule ‘zweeft’, remt langzaam af en reist ver), volledige lift omlaag minimaliseert het (een steile, snelle aankomst). De crossrange ontstaat door de lift zijwaarts te kantelen, en de omvang ervan groeit met L/D. Voor een capsule met lage L/D is de voetafdruk bescheiden; voor een lifting body of een gevleugeld voertuig is hij enorm.",
+    "grade": "BROKEN",
+    "issue": "'dwarsmoten' is a nonword for crossrange, 'Afstand' for downrange is wrong, 'liftlichaam' and 'zweeft ... traag afnemend' garble the physics."
+  },
+  {
+    "rel": "science/mission-phases/gravity-turn.json",
+    "at": "narrative_101.0",
+    "old": "Een raket vliegt niet rechtstreeks naar een baan omhoog. Hij stijgt verticaal op om het lanceerplatform te verlaten en door de dikste atmosfeer heen te breken, en kantelt zich dan langzaam naar de horizon. Op het moment dat de motor uitvalt, vliegt hij bijna zijwaarts — omdat een baan gaat over snel zijwaarts gaan, niet hoog genoeg omhoog.",
+    "new": "Een raket vliegt niet rechtstreeks omhoog naar een baan. Hij stijgt verticaal op om het lanceerplatform vrij te komen en door de dikste lucht heen te breken, en kantelt dan langzaam naar de horizon. Op het moment dat de motor wordt uitgeschakeld, vliegt hij bijna zijwaarts — omdat een baan erom draait zijwaarts snel genoeg te gaan, niet hoog genoeg omhoog.",
+    "grade": "MINOR",
+    "issue": "'uitvalt' means the engine fails, not that it shuts off; 'kantelt zich' awkward."
+  },
+  {
+    "rel": "science/history/goddard-liquid-rocket-1926.json",
+    "at": "body_paragraphs.1",
+    "old": "Eerdere vast-brandstofraketten bestonden (Chinese vuurpijlen vanaf de 13de eeuw, Congreve-raketten in de napoleontische oorlogen), maar vloeibare brandstof was de deur naar ruimtevaarttechnologie: hogere specifieke impuls, regelbare stuwkracht, herhaalbaar.",
+    "new": "Eerdere raketten op vaste brandstof bestonden al (Chinese vuurpijlen vanaf de 13de eeuw, Congreve-raketten in de napoleontische oorlogen), maar vloeibare brandstoffen waren de deur naar de ruimtevaart: hogere specifieke impuls, regelbare stuwkracht, herstartbaar.",
+    "grade": "MINOR",
+    "issue": "'herhaalbaar' is wrong for restartable; 'ruimtevaarttechnologie' shifts 'spaceflight'."
+  },
+  {
+    "rel": "universe/named-stars/diphda.json",
+    "at": "bio",
+    "old": "Deneb Kaitos (Beta Ceti), ook wel Diphda genoemd, is een oranje reus op ongeveer 96 lichtjaar afstand. Hoewel aangeduid als 'Beta', is het de helderste ster in de Walvis, het Zeemonster, en overstraalt het de Alpha van het sterrenbeeld, Menkar.",
+    "new": "Diphda (Beta Ceti), ook Deneb Kaitos genoemd, is een oranje reus op ongeveer 96 lichtjaar afstand. Hoewel aangeduid als ‘Beta’, is het de helderste ster in de Walvis, het Zeemonster, en overtreft het de Alpha van het sterrenbeeld, Menkar.",
+    "grade": "BROKEN",
+    "issue": "The primary and alternate names are swapped (EN leads with Diphda, also called Deneb Kaitos)."
+  },
+  {
+    "rel": "universe/named-stars/sirius.json",
+    "at": "cultural",
+    "old": "De 'Hondenster' heeft duizenden jaren lang kalenders geleid: zijn heliacale opgang kondigde ooit de jaarlijkse overstroming van de Nijl in het oude Egypte aan, en hij verankert de 'Hondelagen' van de zomer in de Greco-Romeinse traditie.",
+    "new": "De ‘Hondenster’ heeft duizenden jaren lang kalenders geleid: zijn heliacale opgang kondigde ooit de jaarlijkse overstroming van de Nijl in het oude Egypte aan, en hij verankert de ‘Hondsdagen’ van de zomer in de Grieks-Romeinse traditie.",
+    "grade": "MINOR",
+    "issue": "'Hondelagen' is a misspelling of 'Hondsdagen'."
+  },
+  {
+    "rel": "universe/exoplanets/alf-ari-b.json",
+    "at": "fact",
+    "old": "Een kandidaat reuzenplaneet bij Hamal — de ster van de Ram die ooit het lente-equinox markeerde.",
+    "new": "Een kandidaat-reuzenplaneet bij Hamal — de ster van de Ram die ooit de lente-equinox markeerde.",
+    "grade": "MINOR",
+    "issue": "Wrong article ('het lente-equinox') and unhyphenated 'kandidaat reuzenplaneet'."
+  }
+]

@@ -1,9 +1,9 @@
 {
   "name": "Voyager 2",
   "type": "VOAR · VOAR",
-  "first": "Única espaçonave para visitar Urano e Netuno; Grand Tour de quatro planetas gigantes",
+  "first": "Única espaçonave a visitar Urano e Netuno; Grand Tour dos quatro planetas gigantes",
   "dispatch": "A Voyager 2 realizou o tour que talvez nunca mais seja realizado. Lançada dezesseis dias antes de sua gêmea em um arco mais lento e longo, é a única espaçonave a visitar Urano e Netuno — dois mundos que permanecem, décadas depois, conhecidos por nós quase inteiramente pelas poucas horas que ela passou passando velozmente por cada um deles. Ela encontrou um planeta tombado de lado, os ventos mais rápidos do sistema solar e uma lua congelada lançando gêiseres no espaço, e então ela também cruzou para o espaço interestelar, em 2018. Cada plano sério de retornar aos gigantes de gelo ainda se baseia no que esta única espaçonave viu em seu caminho de saída.",
-  "description": "A gêmea que continuou quando os orçamentos apertaram, Voyager 2 levou o Grand Tour de Júpiter e Saturno até Urano e Netuno — ainda as únicas imagens de perto que temos dos gigantes de gelo. Seu encontro com Netuno em 1989 revelou a Grande Mancha Escura e os gêisers de Tritão. Hoje ambas as Voyagers navegam no espaço interestelar com um disco de ouro como cartão de visita da humanidade. Orrery lista Netuno como destino do catálogo; o caminho real dependeu de múltiplos assistências gravitacionais.",
+  "description": "A gêmea que seguiu em frente quando os orçamentos apertaram, a Voyager 2 levou o Grand Tour de Júpiter e Saturno até Urano e Netuno — e ainda hoje são as únicas imagens de perto que temos dos gigantes de gelo. Seu encontro com Netuno, em 1989, revelou a Grande Mancha Escura e os gêiseres de Tritão. Hoje as duas Voyagers navegam pelo espaço interestelar com um disco de ouro como cartão de visita da humanidade. A Orrery lista Netuno como destino do catálogo; o caminho real dependeu de várias assistências gravitacionais.",
   "events": [
     {
       "met": 0,
@@ -13,7 +13,7 @@
     },
     {
       "met": 4388,
-      "label": "APROXIMAÇÃO MAIS PRÓXIMA DE NETUNO",
+      "label": "MAIOR APROXIMAÇÃO DE NETUNO",
       "note": "Sobrevôo de Netuno e da grande lua Tritão; último encontro planetário do Grand Tour.",
       "type": "nominal"
     }

@@ -1,0 +1,562 @@
+[
+  {
+    "rel": "messages",
+    "at": "chip_label_radiation_exposure",
+    "old": "방사선 노출 — GCR + SPE + 포획 벨트, 연간 mSv",
+    "new": "방사선 노출 — GCR + SPE + 포획 복사대, 연간 mSv",
+    "grade": "MINOR",
+    "issue": "'trapped belts' rendered as literal 포획 벨트 instead of the standard term for radiation belts."
+  },
+  {
+    "rel": "messages",
+    "at": "plan_explainer_how_to_desc",
+    "old": "자연 Hohmann 최소 (~250 일 TOF, 매 ~26 개월) 근처의 멋진 색의 지역을 클릭 - 가장 저렴한 출시 창입니다. 오른쪽 패널은 정확한 날짜와 Δv를 보여줍니다.",
+    "new": "자연 호만 최소점(약 250일 TOF, 약 26개월마다) 근처의 차가운 색 영역을 클릭하세요. 가장 저렴한 발사 시기입니다. 오른쪽 패널에 정확한 날짜와 Δv가 표시됩니다.",
+    "grade": "BROKEN",
+    "issue": "Machine-like: 'cool-colored region' became 멋진 색의 지역, 'launch window' became 출시 창, broken spacing and punctuation."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_fc_verdict",
+    "old": "그렇다면: 연료만으로 이걸 날 수 있을까요? 목성에 도달하는 것은 사실 화학적 사거리 내에 있습니다 — LEO에서 약 6 km/s로, 강력한 상단의 약 8.5보다 적습니다. 하지만 그랜드 투어는 여유 속도로 태양계를 탈출하는 것을 의미하며, 이는 LEO에서 약 8.7 km/s가 필요합니다 — 최고의 화학 단이 전달하는 것을 간신히 넘습니다. 화학은 목성까지 데려다주고 멈춥니다. 중력 도움 연쇄가 나머지와 더해지는 수십 km/s의 여정 속도를 공급합니다. 그래서 Voyager가 비행 가능했고, 그 이후 모든 심우주 임무가 행성에서 속도를 빌리는 계획인 것입니다.",
+    "new": "그렇다면 연료만으로 이 임무를 비행할 수 있을까요? 목성에 도달하는 것은 사실 화학 추진의 한계 안에 있습니다 — LEO에서 약 6 km/s로, 강력한 상단 단계의 약 8.5 km/s보다 적습니다. 하지만 그랜드 투어는 여유 속도를 남긴 채 태양계를 탈출하는 것을 뜻하며, 이는 LEO에서 약 8.7 km/s가 필요합니다 — 최고의 화학 단이 내는 속도를 간신히 넘습니다. 화학 추진은 목성까지 데려다주고 멈춥니다. 나머지는 중력 도움 연쇄가 채워 주고, 그 위에 수십 km/s의 순항 속도까지 얹어 줍니다. 그래서 Voyager가 비행할 수 있었고, 그 이후 모든 심우주 임무가 행성에서 속도를 빌리는 계획인 것입니다.",
+    "grade": "BROKEN",
+    "issue": "Garbled passage ('이걸 날 수', 사거리, the gravity-assist sentence lost its meaning) and unit missing after 8.5."
+  },
+  {
+    "rel": "messages",
+    "at": "credits_intro_body_1",
+    "old": "Orrery는 세계 우주 기관, 운영자 및 Wikimedia 커뮤니티가 자유롭게 사용할 수 있기 때문에 존재합니다. NASA, ESA, JAXA, ISRO, CNSA, Roscosmos, MBRSC, 캐나다 우주국, SpaceX, Blue Origin, Wikimedia Commons 기여자, 및 Wikipedia 편집자는 인간의 역사에 일치하지 않는 행성 탐험의 공공 아카이브를 공동으로 구축했다. 감사합니다.",
+    "new": "Orrery는 세계의 우주 기관, 운영 기관, 그리고 Wikimedia 커뮤니티가 자신들의 성과를 자유롭게 공개해 주기 때문에 존재합니다. NASA, ESA, JAXA, ISRO, CNSA, Roscosmos, MBRSC, Canadian Space Agency, SpaceX, Blue Origin, Wikimedia Commons 기여자, 그리고 Wikipedia 편집자들은 인류 역사에서 견줄 데 없는 행성 탐사 공공 아카이브를 함께 만들어 왔습니다. 감사합니다.",
+    "grade": "BROKEN",
+    "issue": "Mistranslates 'unmatched' as 일치하지 않는, drops the sense of making work available, wrong register (구축했다), and renders Canadian Space Agency in Korean instead of English."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_lar_challenge",
+    "old": "로켓을 더 무겁게 적재하세요 — 로켓 방정식의 적재 질량을 올려서 이 판정이 빨간색으로 바뀔 때까지. 그 질량이 이 구성의 페이로드 벽입니다.",
+    "new": "로켓에 더 무겁게 실어 보세요 — 이 판정이 빨간색으로 바뀔 때까지 로켓 방정식의 적재 질량을 올리세요. 그 질량이 이 구성의 페이로드 한계입니다.",
+    "grade": "MINOR",
+    "issue": "Awkward word order, the 'until' clause is stranded at the end of the sentence."
+  },
+  {
+    "rel": "messages",
+    "at": "library_intro_body_2",
+    "old": "/credits의 자료와 같은이 페이지는 클릭을 얻는 것에 대해 정직하게 유지해야합니다. 우리는 하나의 존재가 될 때 운영자 포털에 보내, 기본 언어 Wikipedia 임무가 비 영어 말하기 기관에 의해 흐린 때, 그리고 다른 사람의 성격을 다룰 때 영어 Wikipedia로 돌아갑니다.",
+    "new": "/credits의 자재 명세서처럼, 이 페이지도 클릭이 누구에게 돌아가는지를 정직하게 밝히기 위해 존재합니다. 운영 기관의 포털이 있으면 그곳으로, 영어권이 아닌 기관이 수행한 임무라면 해당 언어의 Wikipedia로 안내하고, 다른 곳에서 다루지 않는 대상은 영어 Wikipedia로 대체합니다.",
+    "grade": "BROKEN",
+    "issue": "Garbled, machine-like; meaning (who gets the click, operator portals, native-language Wikipedia fallback) is lost."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_sysasc_guidance",
+    "old": "비행 컴퓨터가 생각하는 것을 지켜보라. 궤도 진입은 정확한 해답이 있는 경계값 문제다 — 목표 고도에 도달해, 수평 자세로, 원궤도 속도로 도착하는 것 — 그리고 기체의 실제 상태는 매초 표류하므로 전체 경로를 미리 계획할 수 없다. 그래서 두 가지 방식으로 비행한다. 짙은 대기 속에서는 미리 계획된 피치 표(개루프)를 따르며 중력 선회 동안 하중을 안전하게 유지한다. 약 55 km 위에서는 컴퓨터가 인계받는다: 이 저추력 상단의 경우 그것은 Powered Explicit Guidance로, 매초 두-점 경계 문제를 다시 풀어 조종 법칙 sin γ = A + B·t를 산출한다 — 그리고 그 해답은 상승을 로프트시켜, 기수를 수평선 아래로 내려 고도를 소비하며 속도를 얻는다. 어떤 사람도 그렇게 눈먼 채로 비행할 수 없다. 상단 추력을 낮추면 더 강하게 로프트하는 것을 지켜보라.",
+    "new": "비행 컴퓨터가 생각하는 것을 지켜보라. 궤도 진입은 정확한 해답이 있는 경계값 문제다 — 목표 고도에, 수평으로, 원궤도 속도로 도착해야 한다 — 그런데 기체의 실제 상태는 매초 어긋나므로 전체 경로를 미리 계획할 수 없다. 그래서 두 가지 방식으로 비행한다. 짙은 대기 속에서는 미리 계획된 피치 표(개루프)를 따라 중력 선회 동안 하중을 안전하게 유지한다. 약 55 km 위에서는 컴퓨터가 넘겨받는다: 추력이 낮은 이 상단의 경우 그것은 Powered Explicit Guidance로, 매초 양끝 경계 문제를 다시 풀어 조종 법칙 sin γ = A + B·t를 구한다 — 그리고 그 해답은 상승 궤적을 높이 띄워(로프트) 기수를 수평선 아래로 숙이게 하고, 고도를 써서 속도를 사들인다. 어떤 사람도 그렇게 계기만 보고 날 수는 없다. 상단 추력을 낮추면 더 크게 띄우는 모습을 지켜보라.",
+    "grade": "MINOR",
+    "issue": "Unnatural transliteration 로프트시켜 and stiff phrasing ('눈먼 채로', '표류')."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_conn_fc_why",
+    "old": "이것이 실제 임무가 설계되는 방식입니다: 행성이 정하는 발사 창, 전이 구간의 연쇄, 그리고 화학이 낼 수 없는 Δv를 사는 중력 도움. Voyager 2는 여전히 네 거대 행성 모두를 방문한 유일한 우주선입니다 — 176년의 순간 동안만 존재했던 경로로. Cassini는 반대 전략을 취했습니다: 먼저 안쪽으로 보내 속도를 쌓은 뒤 토성으로 던져낸 네 번의 도움(금성 두 번, 지구, 목성)이었습니다.",
+    "new": "이것이 실제 임무가 설계되는 방식입니다: 행성이 정하는 발사 창, 전이 구간의 연쇄, 그리고 화학 추진이 낼 수 없는 Δv를 사 오는 중력 도움. Voyager 2는 여전히 네 거대 행성 모두를 방문한 유일한 우주선입니다 — 176년에 한 번뿐인 순간 동안만 존재했던 경로로. Cassini는 반대 전략을 취했습니다: 네 번의 중력 도움(금성 두 번, 지구, 목성)으로 먼저 안쪽으로 날아가 속도를 쌓은 뒤 토성으로 내던져졌습니다.",
+    "grade": "MINOR",
+    "issue": "Last sentence is garbled: the four assists are made the subject of 'sent it inward and flung it out'."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_illustration_alt_landing_computer",
+    "old": "스로틀링된 엔진으로 표면 위에 호버링 중인 착륙선, 내려오는 속도 곡선이 유령처럼 옆에 표시되어 영으로 수렴함.",
+    "new": "스로틀을 조절한 엔진으로 표면 위에 정지 비행하는 착륙선, 그 옆에 흐릿하게 겹쳐 그려진 하강 속도 곡선이 0으로 수렴함.",
+    "grade": "MINOR",
+    "issue": "'ghosted' rendered literally as 유령처럼; 호버링 and 스로틀링 are stiff."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_g10_frozen",
+    "old": "같은 부풀음은 타원 궤도의 근지점도 회전시킵니다 — 다만 63.4°의 임계 경사각으로 비행하면 그 이동이 상쇄되어 최저점과 최고점이 제자리에 머뭅니다. 이것이 Molniya 궤도의 비밀입니다: 원지점이 극북 상공에서 몇 시간씩 머무는 가파르고 늘어난 타원으로 (Kepler의 제2법칙 — 꼭대기에서 느릿느릿하죠), 정지궤도 위성이 지평선에 쓸모없이 걸려 있는 고위도를 덮습니다. 소련이, 이후 Sirius 라디오가 북극권에 도달한 방법이 바로 이것입니다.",
+    "new": "같은 적도 팽대부는 타원 궤도의 근지점도 돌려 놓습니다 — 임계 경사각 63.4°로 비행하면 그 이동이 상쇄되어 최저점과 최고점이 제자리에 머뭅니다. 이것이 Molniya 궤도의 비밀입니다: 원지점이 극북 상공에 몇 시간씩 머무는 가파르고 길쭉한 타원으로 (Kepler의 제2법칙 — 꼭대기에서 느릿느릿하죠), 정지궤도 위성이 지평선에 쓸모없이 걸려 있는 고위도를 덮습니다. 소련이, 훗날 Sirius 라디오가 북극권에 닿은 방법이 바로 이것입니다.",
+    "grade": "MINOR",
+    "issue": "'bulge' rendered with the non-standard noun 부풀음 instead of the equatorial bulge term."
+  },
+  {
+    "rel": "messages",
+    "at": "explore_layer_tip_planets",
+    "old": "8개의 주요 행성 궤도의 토글 가시성",
+    "new": "여덟 개 주요 행성 궤도의 표시 켜기/끄기",
+    "grade": "BROKEN",
+    "issue": "Machine-like word-for-word ('토글 가시성'); meaning of the toggle tooltip is unclear."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_illustration_alt_plan_a_mission",
+    "old": "미션의 전체 호(arc)를 한 프레임에 담은 것 — 발사, 궤도, 전이 타원, 도착이 하나의 연속된 경로선으로 표현됨.",
+    "new": "한 프레임에 담은 임무의 전체 흐름 — 발사, 궤도, 전이 타원, 도착이 하나의 연속된 경로선으로 이어짐.",
+    "grade": "MINOR",
+    "issue": "'arc' rendered as 호(arc), which is unnatural here."
+  },
+  {
+    "rel": "messages",
+    "at": "conics_shape_hyperbola",
+    "old": "하이퍼볼라",
+    "new": "쌍곡선",
+    "grade": "MINOR",
+    "issue": "Transliteration instead of the standard geometry term."
+  },
+  {
+    "rel": "messages",
+    "at": "reading_list_section_blogs",
+    "old": "블로그 & 장문",
+    "new": "블로그 & 긴 글",
+    "grade": "MINOR",
+    "issue": "'long-form' rendered as 장문, which reads as 'long sentence'."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_deorbit_title",
+    "old": "이탈 분사",
+    "new": "궤도 이탈 분사",
+    "grade": "MINOR",
+    "issue": "Ambiguous: 이탈 분사 does not say the orbit is what is left."
+  },
+  {
+    "rel": "messages",
+    "at": "galaxy_name_sagittarius_dwarf",
+    "old": "Sagittarius 왜소 타원체 은하",
+    "new": "궁수자리 왜소 타원 은하",
+    "grade": "BROKEN",
+    "issue": "Name rule: constellation name left in English; astronomical object should be native Korean."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_deorbit_entry",
+    "old": "진입 접점 고도",
+    "new": "진입 경계면 고도",
+    "grade": "MINOR",
+    "issue": "'Entry interface' rendered as 진입 접점, not the standard term."
+  },
+  {
+    "rel": "essays/seven-minutes.json",
+    "at": "body.19.md",
+    "old": "화성 미션의 역사를 통틀어 보면, 착륙 문제는 희생자 목록을 가지고 있다. 1971년의 Mars 2는 지구에서 화성 표면에 닿은 첫 번째 물체가 되었고 — 그리고 충돌했으며, 강하 시스템이 낙하산 수열이 완료되기 전에 실패했을 때 충격으로 자신을 파괴했다. 1999년 12월의 Mars Polar Lander는 다리 전개의 진동이 착지 신호로 잘못 읽혀 강하 엔진을 시기상조에 종료했을 가능성이 높으며, 최종 40미터를 전속력으로 떨어졌다. 2003년 크리스마스의 Beagle 2는 진입을 통과했고 — EDL 수열이 작동한 것으로 보인다 — 하지만 착륙할 때 태양 전지판이 완전히 전개되지 못했으며 통신할 수 없었고, 화성 평원에서 침묵했다. 유럽우주청의 Schiaparelli 착륙선은 2016년 10월 폭력적인 낙하산 강하 중에 관성 측정 장치가 포화되었다 — 판독값이 잠깐 척도의 상한을 벗어났다 — 항법 솔루션을 손상시켜 온보드 컴퓨터가 이미 표면 아래에 있다고 믿게 되었으며, 낙하산을 절단하고 역추진 로켓을 30초 대신 3초 동안만 발사했고, 약 540킬로미터 시속으로 지면에 충돌했다.",
+    "new": "화성 임무의 역사만 놓고 보면, 착륙 문제에는 희생이 따랐다. 1971년의 Mars 2는 지구에서 온 물체로는 처음으로 화성 표면에 닿았지만 — 충돌하여 스스로 파괴되었다. 낙하산 전개 순서가 끝나기 전에 강하 시스템이 고장 났기 때문이다. 1999년 12월의 Mars Polar Lander는 착륙 다리가 펼쳐질 때의 진동을 착지 신호로 잘못 읽어 강하 엔진을 너무 일찍 끈 것이 거의 확실하며, 마지막 40미터를 전속력으로 떨어졌다. 2003년 크리스마스의 Beagle 2는 진입에는 성공했고 — EDL 순서는 제대로 작동한 것으로 보인다 — 하지만 착륙 때 태양 전지판이 완전히 펼쳐지지 못해 끝내 교신하지 못한 채 화성 평원에서 침묵했다. European Space Agency의 Schiaparelli 착륙선은 2016년 10월, 격렬한 낙하산 강하 중에 관성 측정 장치가 포화되었다 — 판독값이 잠시 측정 범위의 상한을 넘어섰다 — 그 때문에 항법 해가 오염되어 탑재 컴퓨터는 이미 지표면 아래에 있다고 믿었고, 낙하산을 분리한 뒤 역추진 로켓을 30초가 아니라 단 3초만 분사하여 시속 약 540킬로미터로 지면에 충돌했다.",
+    "grade": "MINOR",
+    "issue": "Wrong terms and awkward phrasing (낙하산 수열, 시기상조에, 척도의 상한, 540킬로미터 시속) and ESA written in Korean."
+  },
+  {
+    "rel": "essays/the-body-in-the-dark.json",
+    "at": "body.7.caption",
+    "old": "가장 어려운 문제는 볼 수 없는 것이다. 지구의 자기장 너머에서 우주선으로부터의 차폐가 없고, 태양 폭풍은 수 시간 내에 급성 용량을 전달할 수 있다. 그것들을 멈출 만큼 무거운 차폐는 비행하기에는 너무 무겁다 — 그래서 긴 항해에서 승무원은 단순히 그 날씨를 흡수한다.",
+    "new": "가장 어려운 문제는 눈에 보이지 않는 것이다. 지구 자기장 너머에는 은하 우주 방사선을 막아 줄 피난처가 없고, 태양 폭풍은 몇 시간 안에 급성 피폭량을 안길 수 있다. 이를 막을 만큼 두꺼운 차폐는 비행하기에는 너무 무겁다 — 그래서 긴 항해에서 승무원은 그 우주 날씨를 고스란히 받아들인다.",
+    "grade": "MINOR",
+    "issue": "Ambiguous 우주선 (cosmic rays vs spacecraft), 급성 용량 is not idiomatic, mis-parsed shielding sentence."
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.11.md",
+    "old": "핵-열 추진 — 원자로에서 수소를 가열하고 노즐을 통해 배출 — 배기 속도를 대략 두 배로 하며, NERVA 프로그램의 최고 지상 테스트 엔진에서 약 825초의 특정 충동을 달성한다. 배기 속도를 두 배로 하는 것이 필요한 질량 비율을 반으로 줄이지는 않는다; 그것의 제곱근을 취한다 — 훨씬 더 큰 이득이다. 성간 속도에서 핵-열 추진은 여전히 범주적으로 부적절하다. 로켓 방정식은 추진제가 어떻게 가열되는지는 신경 쓰지 않는다. 그것은 얼마나 빨리 나가는지만 신경 쓴다. 그리고 지금까지 구상된 어떤 추진제 연소 구조도 c의 의미 있는 분수에 도달하지 않고 물질을 충분히 빠르게 배출할 수 없다. 그렇게 하면 미션을 불가능하게 만드는 연료 적재량이 필요하다.",
+    "new": "핵열 추진 — 원자로에서 수소를 가열해 노즐로 배출하는 방식 — 은 배기 속도를 대략 두 배로 높이며, NERVA 프로그램에서 지상 시험한 최고 엔진은 비추력 약 825초를 달성했다. 하지만 배기 속도를 두 배로 높인다고 필요한 질량비가 절반이 되는 것은 아니다. 질량비는 그 제곱근이 되며 — 이는 훨씬 큰 이득이다. 성간 속도에서는 핵열 추진도 여전히 근본적으로 부적절하다. 로켓 방정식은 추진제가 어떻게 가열되는지는 상관하지 않는다. 오직 얼마나 빨리 빠져나가는지만 따진다. 그리고 지금까지 구상된 어떤 추진제 연소 방식도, 임무 자체를 불가능하게 만드는 연료 적재량 없이는 c의 의미 있는 비율에 이를 만큼 빠르게 물질을 내보낼 수 없다.",
+    "grade": "BROKEN",
+    "issue": "Wrong term: specific impulse rendered as 특정 충동; 질량 비율/분수 stiff; final sentence garbled."
+  },
+  {
+    "rel": "essays/going-to-mars.json",
+    "at": "body.21.md",
+    "old": "세 번째 벽은 인체이며, 그것은 임무 아키텍처가 우회할 수 없는 것이다. 화성은 전지구적 자기장이 없다 — 그 핵은 오래전에 고화되어 한때 방패를 생성했던 다이너모를 끝냈다. 지구의 자기권은 은하 우주선 및 태양 에너지 입자의 대부분을 편향시킨다; 화성은 동등한 것을 제공하지 않는다. 6개월의 행성간 우주 통과는 대략 300밀리시버트의 측정된 선량을 제공한다 — 지구의 전형적인 자연 배경 방사능 1년의 100배 이상으로, 6개월에 흡수된다. 화성 표면에서 자기권 없이, 선량은 2차 방사능으로부터 더 누적된다. 3년 왕복은 태양 사이클 위상 및 차폐에 따라 총 600~1,200밀리시버트로 추정되었다 — [Curiosity](/missions?id=curiosity) 탑재 기기에 의해 비행 중 측정된 숫자들.",
+    "new": "세 번째 벽은 인체이며, 임무 구조로는 우회할 수 없는 벽이다. 화성에는 전 지구적 자기장이 없다 — 핵이 오래전에 굳어 한때 보호막을 만들던 다이너모가 멈췄다. 지구의 자기권은 은하 우주 방사선과 태양 고에너지 입자의 대부분을 막아 주지만, 화성에는 그에 상응하는 것이 없다. 행성 간 공간을 6개월 동안 이동하면 약 300밀리시버트의 선량이 측정되는데 — 이는 지구에서 평범한 한 해 동안 받는 자연 배경 방사선의 100배를 훌쩍 넘는 양을 6개월 만에 흡수하는 것이다. 자기권이 없는 화성 표면에서는 2차 방사선 때문에 선량이 더 쌓인다. 3년 왕복 비행은 태양 주기 위상과 차폐에 따라 총 600~1,200밀리시버트로 추정되어 왔으며 — 이 수치는 [Curiosity](/missions?id=curiosity)에 탑재된 기기들이 비행 중에 측정한 값이다.",
+    "grade": "MINOR",
+    "issue": "Terminology and phrasing flaws: 방사능 for radiation, 우주선 ambiguity, 전지구적, '다이너모를 끝냈다', 행성간 우주 통과."
+  },
+  {
+    "rel": "essays/interstellar-exploration.json",
+    "at": "body.26.md",
+    "old": "하지만 \"금지되지 않는다\"와 \"가까운 시간 내에 달성할 수 있다\" 사이의 간격은 거대하다. 가장 느린 진지한 제안 — 광속의 12%로 나아가는 핵융합 우주선 — 은 존재하지 않는 기술을 필요로 하며, 역사상 어떤 우주 프로그램도 초과하는 비용으로, 약 50년 내에 승무원이 탄 우주선을 다른 별로 전달할 것이다. 가장 빠른 진지한 제안 — Breakthrough Starshot의 레이저 구동 광속 항해선 — 은 몇 시간 동안 지속되는 근접 통과로 기기 그램을 전달하고, 수십억 달러의 비용으로 수년 동안 데이터를 반환할 것인데, 그 발의인들은 비용을 수백억 달러로 추정하고 있으며, 이는 레이저 배열을 구축할 수 있다고 가정할 때이다. 이 극단 사이에 기술적으로 가능하면서도 의미 있는 탐험에 충분한 중간 옵션은 없다. 문제의 규모는 단순히 중간 해결책을 갖지 않는다.",
+    "new": "하지만 '금지되지 않았다'와 '가까운 시일 안에 달성할 수 있다' 사이의 간극은 엄청나다. 가장 느린 진지한 제안 — 광속의 12%로 나아가는 핵융합 우주선 — 은 존재하지 않는 기술을 요구하고, 역사상 어떤 우주 프로그램도 비할 수 없는 비용이 들며, 그렇게 해서 약 50년 만에 승무원이 탄 우주선을 다른 별에 보낸다. 가장 빠른 진지한 제안 — Breakthrough Starshot의 레이저 구동 라이트세일 — 은 1그램의 기기를 몇 시간 동안 이어지는 근접 통과 비행에 보내고 수년에 걸쳐 데이터를 돌려받는 것인데, 제안자들이 추정하는 비용은 수백억 달러이며, 이는 레이저 배열을 아예 만들 수 있다는 가정 하에서다. 이 두 극단 사이에는 기술적으로 실현 가능하면서 의미 있는 탐사에 충분한 중간 선택지가 없다. 이 문제의 규모에는 절충된 해법이 아예 존재하지 않는다.",
+    "grade": "BROKEN",
+    "issue": "Cost sentence is wrong/contradictory (adds 수십억 달러 then 수백억 달러), lightsail rendered as 광속 항해선, 'a gram of instruments' garbled."
+  },
+  {
+    "rel": "essays/seven-minutes.json",
+    "at": "dek",
+    "old": "우주항해는 쉽다. 당신은 몇 개월을 거의 아무것도 하지 않으며 보낸다 — 물리학 위에서 계획로를 조정하고, 기다린다. 도착이 미션의 무덤이다. 착륙은 우주비행에서 가장 어려운 일이며, 우리는 결코 같은 방식으로 그것을 해결해본 적이 없다.",
+    "new": "순항은 쉽다. 몇 달 동안 거의 아무것도 하지 않고 — 물리 법칙에 몸을 맡긴 채 나아가며, 궤적을 살짝 조정하고, 기다린다. 임무가 죽는 것은 도착할 때다. 착륙은 우주비행에서 가장 어려운 일이며, 우리는 같은 방식으로 두 번 해결해 본 적이 없다.",
+    "grade": "BROKEN",
+    "issue": "Garbled: '계획로' is not a word, 'cruise' rendered as 우주항해, 'nudging a trajectory' lost."
+  },
+  {
+    "rel": "essays/the-body-in-the-dark.json",
+    "at": "body.14.md",
+    "old": "장기간 우주비행 생리학에 관해 우리가 알고 있는 모든 것은 실제 사람들이 우주에서 실제 기간을 보냈고, 귀환했으며, 연구를 받은 것으로부터 측정되었다. 단일 연속 비행의 기록은 러시아 의사-우주비행사 발레리 폴랴코프가 보유하고 있으며, 그는 1994년 1월 [Mir](/programs/mir)에 탑승하여 1995년 3월에 지구로 귀환했으며, 궤도상에서 437일 연속을 보냈다 — 3십 년이 지난 지금도 여전히 깨지지 않은 기록이다. 폴랴코프의 목표는 명시적으로 의학적이었다: 인간이 화성 미션 기간 동안 기능적으로 생존할 수 있는지 결정하는 것이었다. 그가 착륙했을 때, 그는 Soyuz 캡슐에서 자신의 힘으로 걸어나가기를 주장했다. 그의 뼈와 근육 회복에는 몇 개월이 걸렸다. 그는 걸었다. [살류트](/programs/salyut)와 [Mir](/programs/mir) 프로그램은 대체 불가능한 소련 및 러시아 생리학 데이터를 구축했다 — [ISS](/programs/iss)는 그것을 확장하고 국제화했다. 페기 휫슨의 세 번의 미션에 걸친 누적 665일은 연구자들에게 다른 방법으로 복제 불가능한 단일 개인에 대한 종단 데이터 세트를 제공했다. NASA Twin Study — 스콧 켈리의 340일 미션을 그의 지구 기반 일란성 쌍둥이 Mark와 비교 — 유전자 발현, 텔로미어 역학, 장내 미생물군집 구성 및 인지 성능에서 측정 가능한 변화를 발견했으며, 대부분은 귀환 시 역전되었지만 전부는 아니었다. 중국의 [Tiangong](/programs/tiangong) 프로그램은 이제 기록에 추가하고 있다: 2021년 이후 90일 및 180일 교대근무 승무원들은 이전에 데이터 세트에 없었던 타이코너트 인구를 제공한다. 인류가 우주의 장기간 인간 신체에 관해 알고 있는 것에 대한 어떤 정직한 설명이든 러시아가 Mir에서 배운 것, 15개국 ISS 파트너십이 2000년 이후 측정한 것, 그리고 중국이 지금 축적하고 있는 것을 포함해야 한다.",
+    "new": "장기 우주비행 생리학에 대해 우리가 아는 모든 것은 실제 사람들을 통해 측정되었다 — 실제 기간 동안 우주에서 살다가 귀환해 연구를 받은 사람들이다. 단일 연속 비행 기록은 러시아 의사 출신 우주비행사 발레리 폴랴코프가 보유하고 있다. 그는 1994년 1월 [Mir](/programs/mir)에 탑승해 1995년 3월 지구로 돌아왔고, 궤도에서 437일을 연속으로 보냈다 — 30년이 지난 지금도 깨지지 않았다. 폴랴코프의 목표는 분명히 의학적이었다. 인간이 화성 임무 기간을 기능적으로 견딜 수 있는지 알아내는 것이었다. 착륙했을 때 그는 Soyuz 캡슐에서 자기 힘으로 걸어 나오겠다고 고집했다. 뼈와 근육이 회복되는 데는 몇 달이 걸렸다. 그러나 그는 걸었다. [Salyut](/programs/salyut)와 [Mir](/programs/mir) 프로그램은 대체할 수 없는 소련, 이어 러시아의 생리학 데이터를 쌓았고 — [ISS](/programs/iss)는 이를 확장하고 국제화했다. 페기 휫슨이 세 차례 임무에 걸쳐 누적한 665일은, 달리 재현할 수 없는 한 개인에 대한 종단 데이터를 연구자들에게 제공했다. NASA 쌍둥이 연구 — 스콧 켈리의 340일 임무를 지구에 남은 일란성 쌍둥이 마크와 비교한 연구 — 는 유전자 발현, 텔로미어 동역학, 장내 미생물군 구성, 인지 수행 능력에서 측정 가능한 변화를 발견했으며, 대부분은 귀환 후 원래대로 돌아왔지만 전부는 아니었다. 중국의 [Tiangong](/programs/tiangong) 프로그램도 이제 기록을 더하고 있다. 2021년 이후 90일과 180일 주기로 교대하는 승무원들은 이전 데이터에 없던 중국 우주비행사 집단이다. 인류가 우주에서의 장기 인체에 대해 아는 바를 정직하게 설명하려면, 러시아가 Mir에서 배운 것, 15개국 ISS 파트너십이 2000년 이후 측정해 온 것, 그리고 중국이 지금 쌓고 있는 것을 모두 포함해야 한다.",
+    "grade": "BROKEN",
+    "issue": "Name rule: [살류트] link text in Korean (station name must stay Salyut); 3십 년, 타이코너트 인구, 지구 기반 쌍둥이 and other machine-like phrases."
+  },
+  {
+    "rel": "essays/navigation.json",
+    "at": "body.22.caption",
+    "old": "위가 없을 때 어느 방향이 위인가: 별 추적기는 하늘의 패치를 촬영하고, 패턴을 탑재 카탈로그와 매칭하며, 우주선이 고정 J2000 프레임에서 어느 방향으로 향하고 있는지 즉시 안다. 고정 사이에, 자이로가 계산을 수행한다.",
+    "new": "위쪽이 없을 때 어느 쪽이 위인가: 별 추적기는 하늘의 한 구역을 촬영해 그 패턴을 탑재 카탈로그와 대조하고, 우주선이 고정된 J2000 좌표계에서 어느 방향을 향하는지 즉시 알아낸다. 위치를 확정하는 사이사이에는 자이로가 방향 계산을 이어 간다.",
+    "grade": "MINOR",
+    "issue": "'patch of sky' as 패치 and 'fixes' as 고정 are wrong in context."
+  },
+  {
+    "rel": "essays/the-body-in-the-dark.json",
+    "at": "body.22.md",
+    "old": "더 나은 추진이 중요하다. 개발 중인 [새로운 엔진 기술](/essays/new-propulsion) — 핵 열 추진, 핵 전기 추진, 태양 돛, 더 먼 미래 개념 — 수송 시간을 단축할 것이며, 수송 시간을 단축하면 누적 방사선 노출과 누적 생리적 퇴행을 줄인다. 270일이 아닌 90일의 수송은 신체에 3배 쉽지 않다; 용량과 효과의 관계는 선형보다 더 복잡하며, 일부 시스템 — 심리적, 뼈, 심혈관 — 는 더 짧은 노출도 완전히 구제하지 못하는 방식으로 기간에 민감하다. 하지만 더 짧은 것이 낫다. 더 빠른 엔진은 실제 의약품이다. 그러나 그들은 문제의 근본적인 성질을 변경하지 않는다. 90일 수송은 여전히 자기권 없이, 중력 없이, 구출 없이 행성 간 우주를 횡단한다. 신체는 여전히 탑재량이다. 여전히 퇴행한다. 여전히 수개월 또는 수년이 걸리거나 그렇지 않으면 완전히 복구되지 않는 방식으로 감소된 상태로 귀환한다.",
+    "new": "더 나은 추진 기술은 중요하다. 개발 중인 [새로운 엔진 기술](/essays/new-propulsion) — 핵열 추진, 핵전기 추진, 태양 돛, 더 먼 미래의 개념들 — 은 이동 시간을 줄일 것이고, 이동 시간을 줄이면 누적 방사선 피폭과 누적 생리적 퇴화도 줄어든다. 270일 대신 90일을 이동한다고 해서 몸에 세 배 쉬운 것은 아니다. 선량과 영향의 관계는 선형보다 복잡하고, 심리, 뼈, 심혈관 같은 일부 계통은 더 짧은 노출로도 완전히 구제되지 않는 방식으로 기간에 민감하다. 그래도 짧은 편이 낫다. 더 빠른 엔진은 진짜 의학이다. 하지만 문제의 근본 성격을 바꾸지는 못한다. 90일의 이동도 자기권도, 중력도, 구조도 없는 행성 간 공간을 건너는 일이다. 몸은 여전히 탑재물이다. 여전히 퇴화한다. 그리고 여전히, 회복되기는 한다면 몇 달 혹은 몇 년이 걸릴 만큼 손상된 채 집으로 돌아온다.",
+    "grade": "BROKEN",
+    "issue": "Final sentence garbled (recovery 'if at all' turned nonsensical), list sentence ungrammatical, 수송 시간 for transit time."
+  },
+  {
+    "rel": "fleet/launcher/vulcan.json",
+    "at": "description",
+    "old": "Atlas V와 Delta IV의 후속 2단 발사체인 United Launch Alliance의 로켓. 1단에 쌍둥이 BE-4 메탄로스 엔진과 그 위의 Centaur V(RL10)로 구동된다. 2024-01-08의 첫 비행에서 Astrobotic Peregrine을 탑재했다. National Security Space Launch Phase 3 계약 인증을 예정하고 있으며 Sierra Space의 Dream Chaser 화물 우주비행기의 발사체로 계획되어 있다.",
+    "new": "Atlas V와 Delta IV의 후속인 United Launch Alliance의 2단 발사체. 1단에는 쌍발 BE-4 메탄·액체산소 엔진, 그 위에는 Centaur V(RL10)를 사용한다. 2024-01-08의 첫 비행에서 Astrobotic Peregrine을 실었다. National Security Space Launch Phase 3 계약 인증을 앞두고 있으며, Sierra Space의 Dream Chaser 화물 우주비행기를 쏘아 올릴 발사체로 계획되어 있다.",
+    "grade": "MINOR",
+    "issue": "'methalox' rendered as invented 메탄로스; awkward opening."
+  },
+  {
+    "rel": "fleet/launcher/mercury-redstone.json",
+    "at": "dispatch",
+    "old": "Mercury-Redstone은 무기에서 승객을 나르도록 개조된 발사체였다. 그 조상은 독일의 V-2였고, 직접적인 부모는 탄두를 전달하도록 설계된 육군 탄도미사일이었다 — 이제 수정되고 부드러워졌으며, 인간의 생명을 신뢰할 수 있을 정도로 안정적으로 만들어졌다. 단지 아공간궤도 호만 달성할 수 있었고, 궤도에 도달할 수 있는 힘은 결코 없었다. 하지만 그것이 바로 그 역할이었다: 신중한 첫 번째 단계, 사람이 로켓을 타고 올라갔다가 살아서 내려올 수 있다는 것을 미국이 증명하게 해준 기계였으며, 이는 실제로 궤도에 도달할 수 있는 더 크고 위험한 부스터에 생명을 걸기 전의 것이었다.",
+    "new": "Mercury-Redstone은 승객을 태우는 법을 배운 무기였다. 조상은 독일의 V-2였고 직계 부모는 탄두를 운반하려고 만든 육군 탄도미사일이었다 — 그것을 개조하고 순화해, 사람의 목숨을 맡겨도 될 만큼만 신뢰성을 끌어올린 것이다. 이 로켓은 준궤도 비행만 할 수 있었고 궤도에 오를 힘은 처음부터 없었다. 하지만 그것이 바로 임무였다. 신중한 첫걸음, 실제로 궤도에 닿을 수 있는 더 크고 위험한 부스터에 생명을 걸기 전에 사람이 로켓을 타고 올라갔다가 살아서 내려올 수 있음을 미국이 증명하게 해 준 기계였다.",
+    "grade": "MINOR",
+    "issue": "Opening sentence garbled, wrong term 아공간궤도 for suborbital."
+  },
+  {
+    "rel": "fleet/lander/slim.json",
+    "at": "description",
+    "old": "JAXA의 2024년 달 착륙선. 목표 지점으로부터 100 m 이내에 착륙했으며, 달 착륙선으로서는 전례 없는 정밀도를 기록했습니다. 다만 기체가 약 90도 각도로 코 부분을 향해 착륙했으며, 태양전지판이 태양으로부터 멀어진 방향을 향했습니다. 현재도 운용 중이며 방사성동위원소 난방 없이 4번의 달 야간(lunar nights)을 견뎌냈습니다 — 수동 가열 방식의 달 표면 임무 중 최장 기록입니다.",
+    "new": "JAXA의 2024년 달 착륙선. 목표 지점에서 100 m 이내에 착륙해 달 착륙선으로서는 전례 없는 정밀도를 보였지만, 기체가 약 90도 기울어 앞부분이 아래로 향한 채 착지했고 태양전지판은 태양 반대쪽을 향했다. 그럼에도 계속 작동했으며, 방사성동위원소 가열 장치 없이 달의 밤을 네 번 견뎠다 — 수동 가열 방식 달 표면 임무로는 기록이다.",
+    "grade": "MINOR",
+    "issue": "Awkward '코 부분을 향해 착륙', untranslated English parenthetical (lunar nights), and the record claim reads differently."
+  },
+  {
+    "rel": "fleet/constellation/iridium-next.json",
+    "at": "tagline",
+    "old": "극궤도 저궤도 통신 — 66개 운영 중인 위성 + 9개 예비, GMDSS 파트너, 글로벌 음성/데이터",
+    "new": "극궤도 저궤도 통신 — 운영 위성 66기 + 예비 9기, GMDSS 파트너, 글로벌 음성/데이터",
+    "grade": "MINOR",
+    "issue": "'66개 운영 중인 위성' is ungrammatical counting."
+  },
+  {
+    "rel": "fleet/constellation/goes-noaa.json",
+    "at": "best_known_for",
+    "old": "NOAA 정지궤도 기상 쌍둥이 — 아메리카 대륙 연속 커버리지",
+    "new": "NOAA 정지궤도 기상위성 2기 — 아메리카 대륙 연속 관측",
+    "grade": "MINOR",
+    "issue": "'쌍둥이' and 'Americas continuous coverage' are unnatural."
+  },
+  {
+    "rel": "fleet/rover/exomars-rosalind-franklin.json",
+    "at": "description",
+    "old": "ESA의 첫 화성 로버로, DNA 연구의 선구자 Rosalind Franklin의 이름을 따서 명명되었습니다. 옥시아 평원(생물 신호 보존 가능성이 높은 이유로 선정된 고대 점토층이 있는 화성 지역)에 착륙하도록 설계되었으며, 2미터의 지하 드릴을 사용하여 표면 유기물을 파괴하는 우주선 및 자외선 방사선으로부터 보호되는 깊이의 시료를 채취합니다. 이는 화성의 어떤 이전 미션보다도 더 깊습니다. 분석 실험실 서랍(Analytical Laboratory Drawer)은 세 가지 생명 탐지 기기를 보유하고 있습니다: MOMA(Mars Organic Molecule Analyser, 가스 크로마토그래프 + 듀얼 소스 질량 분석기), MicrOmega(적외선 영상 분광학), 그리고 라만 레이저 분광계(Raman Laser Spectrometer). 원래는 러시아 Proton 로켓과 러시아가 제작한 착륙선(Kazachok)으로 2022년 발사를 목표했으나, 2022년 러시아의 우크라이나 침공 이후 ESA는 협력을 중단했고 Rosalind Franklin의 발사가 연기되었습니다. 현재 NASA가 제공한 발사 운반체와 ESA / Airbus가 재구축한 착륙선으로 2028년 발사를 예정하고 있습니다.",
+    "new": "ESA의 첫 화성 로버로, DNA 연구의 선구자 Rosalind Franklin의 이름을 따서 명명되었습니다. 옥시아 평원(생물 신호 보존 가능성이 높아 선정된 고대 점토 지역)에 착륙하도록 설계되었으며, 2미터 깊이의 지하 드릴 — 이전의 어떤 화성 임무보다 깊다 — 로 표면 유기물을 파괴하는 우주 방사선과 자외선으로부터 보호되는 깊이의 시료를 채취합니다. 분석 실험실 서랍(Analytical Laboratory Drawer)에는 세 가지 생명 탐지 기기가 들어 있습니다: MOMA(Mars Organic Molecule Analyser, 가스 크로마토그래프 + 이중 이온원 질량분석기), MicrOmega(적외선 영상 분광기), 그리고 라만 레이저 분광기(Raman Laser Spectrometer). 원래는 러시아 Proton 로켓에 러시아가 제작한 착륙 플랫폼(Kazachok)을 실어 2022년에 발사할 계획이었으나, 2022년 러시아의 우크라이나 침공 이후 ESA가 협력을 중단하면서 Rosalind Franklin의 발사가 연기되었습니다. 현재 NASA가 제공하는 발사체와 ESA / Airbus가 다시 만든 착륙 플랫폼으로 2028년 발사를 예정하고 있습니다.",
+    "grade": "MINOR",
+    "issue": "우주선 ambiguity for cosmic rays, 발사 운반체, stiff structure."
+  },
+  {
+    "rel": "fleet/orbiter/luna10.json",
+    "at": "best_known_for",
+    "old": "달 궤도에 진입한 첫 번째 우주선(또는 지구 이외의 천체) — 1966-04-03에 달 궤도 진입, Apollo 8보다 3년 먼저",
+    "new": "달 궤도에 진입한 최초의 우주선이자 지구 이외 천체를 도는 최초의 궤도선 — 1966-04-03에 달 궤도 진입, Apollo 8보다 3년 먼저",
+    "grade": "MINOR",
+    "issue": "Parenthetical '(또는 지구 이외의 천체)' is ambiguous and misplaced."
+  },
+  {
+    "rel": "fleet/orbiter/mro.json",
+    "at": "description",
+    "old": "Mars Reconnaissance Orbiter는 미국에서 Lockheed Martin에 의해 구축 된 깊은 공간 궤도입니다. 궤도에서 가장 높은 해결책 화성 화상 진찰. 2005년부터 서비스.",
+    "new": "Mars Reconnaissance Orbiter는 미국에서 Lockheed Martin이 제작한 심우주 궤도선입니다. 궤도에서 촬영하는 화성 영상 중 해상도가 가장 높습니다. 2005년부터 운용 중입니다.",
+    "grade": "BROKEN",
+    "issue": "Garbled machine translation ('구축 된 깊은 공간 궤도', '해결책 화상 진찰', '서비스')."
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-5.json",
+    "at": "best_known_for",
+    "old": "미국 마지막 달 궤도선(1967-08-05). 뒷면을 60m/픽셀로 지도화 완성; Apollo 달 작전 전 1968-01-31 충돌",
+    "new": "미국의 마지막 달 궤도선(1967-08-05). 달 뒷면 지도를 60 m/픽셀로 완성했고, Apollo 달 작전에 앞서 1968-01-31에 충돌했다.",
+    "grade": "MINOR",
+    "issue": "Telegraphic and unnatural ('지도화 완성', '작전 전 충돌')."
+  },
+  {
+    "rel": "fleet/rover/spirit.json",
+    "at": "description",
+    "old": "Spirit (MER-A)는 미국 NASA JPL에 의해 지어진 행성 회귀입니다. Mars Exploration Rover; 6 년 가동. 2004 년 첫 비행 후 은퇴.",
+    "new": "Spirit (MER-A)는 미국 NASA JPL이 제작한 행성 탐사 로버입니다. Mars Exploration Rover 계획의 일부로 6년간 가동되었습니다. 2004년 첫 비행 후 은퇴했습니다.",
+    "grade": "BROKEN",
+    "issue": "Garbled machine translation ('지어진 행성 회귀', '6 년 가동', '은퇴')."
+  },
+  {
+    "rel": "fleet/lander/mars-polar-lander.json",
+    "at": "description",
+    "old": "Mars Polar Lander는 미국 Lockheed Martin에 의해 지어진 행성 착륙자입니다. 착륙에 잃어버린; 빨리 더 나은 cheaper 검토를 파괴. 1999 년 Flew하지만 실패; 셔틀 및 mir epoch의 구속 층을 알려줍니다.",
+    "new": "Mars Polar Lander는 미국의 Lockheed Martin이 제작한 행성 착륙선입니다. 착륙 중 소실되었으며, 'faster-better-cheaper' 방침에 대한 검토를 촉발했습니다. 1999년에 비행했으나 실패했으며, 셔틀 및 Mir 시대의 구원 서사 레이어에 반영됩니다.",
+    "grade": "BROKEN",
+    "issue": "Garbled machine translation with untranslated English words (cheaper, Flew, mir epoch)."
+  },
+  {
+    "rel": "fleet/launcher/saturn-ib.json",
+    "at": "best_known_for",
+    "old": "Apollo 7, Skylab 승무원, ASTP 운송",
+    "new": "Apollo 7, Skylab 승무원, ASTP를 발사함",
+    "grade": "MINOR",
+    "issue": "'Lifted' rendered as 운송 instead of launched."
+  },
+  {
+    "rel": "fleet/observatory/kepler.json",
+    "at": "description",
+    "old": "NASA의 외계행성 탐사 망원경(2009–2018). 하늘의 한 영역에 지속적으로 관측하여 외계행성을 통과 측광법으로 감지했습니다 — 행성이 별 앞을 지나갈 때 별빛의 짧은 밝기 감소. 2,700개 이상의 외계행성을 발견했으며 지구 크기의 행성이 흔하다는 것을 증명했습니다.",
+    "new": "NASA의 외계행성 사냥꾼(2009–2018). 하늘의 한 영역을 계속 응시하며 통과 측광법으로 외계행성을 탐지했습니다 — 행성이 별 앞을 지날 때 별빛이 잠시 어두워지는 현상입니다. 확인된 외계행성을 2,700개 넘게 발견했고 지구 크기의 세계가 흔하다는 것을 보여 주었습니다.",
+    "grade": "MINOR",
+    "issue": "Wrong particle ('영역에 ... 관측하여') and awkward '통과 측광법으로 감지'."
+  },
+  {
+    "rel": "missions/moon/luna16.json",
+    "at": "description",
+    "old": "Luna 16은 소비에트 연방의 최초의 성공적인 로봇 샘플 귀환 임무이자 어떤 종류의 최초의 무인 달 귀환이었습니다. Apollo 11이 1969년에 22 kg의 유인 샘플을 가지고 돌아온 후, Luna 16은 1년 뒤 풍요의 바다에서 101그램의 레골리스를 귀환시켰습니다 — Apollo의 탑재량의 일부였지만, 대체 아키텍처에 대한 중대한 개념 증명이었습니다. 이 임무는 Proton-K 부스터와 직진 귀환 프로파일을 사용했습니다: 표면으로의 하강, 드릴 코어 채취, 상승 단계 발사, 카자흐스탄으로의 탄도 귀환 캡슐. 이 기술은 Luna 20과 Luna 24에서 재사용되었으며, 수십 년 뒤 Chang'e 5와 Chang'e 6에 의해 재사용되었습니다.",
+    "new": "Luna 16은 소련 최초의 성공적인 로봇 시료 귀환 임무이자, 어떤 형태로든 최초의 무인 달 귀환이었습니다. 1969년 Apollo 11이 유인 시료 22 kg을 가져온 지 1년 뒤, Luna 16은 풍요의 바다에서 레골리스 101 g을 가져왔습니다 — Apollo 탑재량의 일부에 불과했지만, 대안 구조에 대한 심오한 개념 증명이었습니다. 임무는 Proton-K 부스터와 직접 귀환 방식을 사용했습니다: 표면으로 하강, 드릴 코어 채취, 상승단 발사, 카자흐스탄으로의 탄도 귀환 캡슐. 이 기술은 Luna 20과 Luna 24에 다시 쓰였고, 수십 년 뒤 Chang'e 5와 Chang'e 6에서도 쓰였습니다.",
+    "grade": "MINOR",
+    "issue": "Awkward first sentence ('어떤 종류의 최초의') and repeated 재사용; 직진 귀환 for direct return."
+  },
+  {
+    "rel": "missions/mars/opportunity.json",
+    "at": "description",
+    "old": "Opportunity(MER-B)는 우연의 행성 대박을 맞았다 — 에어백으로 감싼 착륙선이 메리디아니 평원을 26번 튀어가며 굴러 22m 깊이의 분화구(Eagle)에 우연히 도달했으며, 주변에는 로버가 이동하지 않고도 읽을 수 있는 노출된 기반암이 있었다. 초기 이미지들은 자로사이트와 \"블루베리\" 적철광 결석을 보여주었으며, 이는 당시 초기 화성의 액체 물이 존재했다는 가장 강력한 광물 증거였다. 14년 138일(5,111 화성일) 동안 Opportunity는 45.16km를 횡단했다 — 화성 로버 마라톤 기록 — Endurance, Victoria, Endeavour 분화구를 방문했다. 2018년 6월의 행성 규모 먼지 폭풍이 태양 전지판에 햇빛을 차단했고, 마지막 송신은 2018-06-10이었으며, NASA는 2019-02-13에 임무 종료를 선언했다.",
+    "new": "Opportunity(MER-B)는 행성 규모의 대박을 맞았다 — 에어백으로 감싼 착륙선이 메리디아니 평원을 26번 튕기며 굴러 지름 22 m의 분화구(이글) 안으로 순전히 운 좋게 들어갔고, 로버가 이동하지 않고도 읽을 수 있는 노출된 기반암이 주변을 둘러쌌다. 첫 영상에는 자로사이트와 '블루베리' 적철석 결핵이 보였는데, 이는 초기 화성에 액체 상태의 물이 고여 있었다는 당시까지 가장 강력한 광물 증거였다. 14년 138일(5,111솔) 동안 Opportunity는 45.16 km를 주행했다 — 화성 로버 마라톤 기록 — 그동안 인듀어런스, 빅토리아, 인데버 분화구를 방문했다. 2018년 6월 행성 전역의 먼지 폭풍이 태양 전지판으로 가는 햇빛을 가렸고, 마지막 교신은 2018-06-10이었으며, NASA는 2019-02-13에 임무 종료를 선언했다.",
+    "grade": "BROKEN",
+    "issue": "Factual mistranslation: 22-m crater became 22m 깊이 (depth); '우연의 행성 대박' garbled; named craters left in English instead of native Korean."
+  },
+  {
+    "rel": "missions/moon/lunar-prospector.json",
+    "at": "description",
+    "old": "NASA Discovery급 세 번째 임무이자 Apollo 이후 시대의 첫 NASA 주관 전용 달 궤도선. 1998년 1월 7일 케이프 커내버럴에서 Athena II 로켓으로 발사된 Lunar Prospector는 1998년 1월 11일 달의 100 km 원형 극궤도에 진입했다. 296 kg의 회전하는 우주선은 5개의 기기를 탑재했다: 지각 구성을 파악하는 감마선 분광계, 극점의 수소/물얼음 감지용 중성자 분광계, 라돈 가스 측정용 알파 입자 분광계(간접 화산 활동 감지), 지각 자기장용 자기계 및 전자 반사계, 그리고 도플러 중력 실험. Boynton 팀의 중성자 데이터 분석(Feldman et al., Science 281 + 284)은 달의 양 극점 위에서 뚜렷한 중성자 플럭스 감소를 발견했다 — 영구적으로 그림자에 가려진 극지역 분화구에 약 2 × 10⁹ 톤의 수소 함유 물질(아마도 물얼음)이 있다는 것과 일치한다. 임무는 1999년 7월 31일 Shackleton 분화구 근처에서 의도된 충돌로 끝났으며, 수소 풍부한 수증기 플럼을 방출하기를 기대했지만 관측되지 않았다. 이 수소 발견은 LCROSS와 Chandrayaan-1 / M3(2009)이 독립적인 확인을 제공할 때까지 유지되었다.",
+    "new": "NASA Discovery급 세 번째 임무이자 Apollo 이후 시대에 NASA가 관리한 최초의 전용 달 궤도선. 1998년 1월 7일 케이프 커내버럴에서 Athena II로 발사된 Lunar Prospector는 1998년 1월 11일 달의 100 km 원형 극궤도에 진입했다. 296 kg의 자전 우주선은 다섯 가지 기기를 실었다: 지각 전체 조성을 위한 감마선 분광계, 극지방의 수소/물얼음 탐지를 위한 중성자 분광계, 라돈 가스(간접적인 화산 활동 탐지)를 위한 알파 입자 분광계, 지각 자기를 위한 자기계 + 전자 반사계, 그리고 도플러 중력 실험. Boynton 팀의 중성자 자료 분석(Feldman et al., Science 281 + 284)은 달의 양극 모두에서 중성자 플럭스가 뚜렷하게 부족함을 발견했다 — 영구 음영 극지 크레이터에 수소가 풍부한 물질(아마도 물얼음) 약 2 × 10⁹ 톤이 있다는 것과 부합한다. 임무는 1999년 7월 31일 섀클턴 분화구 근처에 의도적으로 충돌하며 끝났는데, 탐지 가능한 수증기 기둥이 나오기를 기대했으나 관측되지 않았다. 이 수소 발견은 LCROSS와 Chandrayaan-1 / M3(2009)가 독립적으로 확인해 줄 때까지 유지되었다.",
+    "grade": "BROKEN",
+    "issue": "Name rule: Shackleton crater left in English; added content '수소 풍부한 수증기' (EN: detectable water-vapour plume)."
+  },
+  {
+    "rel": "missions/venus/vega-1.json",
+    "at": "description",
+    "old": "소련-ESA 할리 우주함대의 기함. Vega 1은 1984-12-15에 Venera 계열 착륙선과 ESA/CNES에서 제작한 최초의 헬륨 풍선을 탑재하고 발사되었으며, 이 풍선은 금성의 구름층에서 54 km 고도에서 46.5시간 동안 표류하면서 20개 지상국 전역 라디오망을 통해 바람과 온도 데이터를 전송했다. 강하 모듈을 투하한 후 본체는 금성 중력 보조를 이용해 혜성 1P/핼리 혜성으로 방향을 바꿔 1986-03-06에 8890 km의 최근접 거리에 도달했다. 이는 최초의 혜성핵 접근 관측이었으며, ESA의 Giotto가 일주일 후 자신의 훨씬 더 가까운 할리 플라이바이를 항법하는 데 사용한 위치 결정 데이터였다.",
+    "new": "핼리 탐사 함대의 소련-ESA 주력 탐사선. Vega 1은 1984-12-15에 Venera 계열 착륙선과 ESA/CNES가 제작한 최초의 헬륨 풍선을 싣고 발사되었다. 이 풍선은 금성 구름층 54 km 고도에서 46.5시간 동안 떠다니며 20개 지상국으로 이루어진 전 지구 라디오망을 통해 바람과 온도 데이터를 전송했다. 강하 모듈을 떼어낸 뒤 본체는 금성 중력 도움으로 방향을 바꿔 혜성 1P/핼리로 향했고, 1986-03-06에 8890 km까지 접근했다 — 최초의 혜성핵 조우이자, 일주일 뒤 ESA의 Giotto가 훨씬 더 가까운 핼리 근접 비행을 위해 항법에 사용한 위치 측정이었다.",
+    "grade": "MINOR",
+    "issue": "Inconsistent Halley spelling (할리 vs 핼리), redundant '1P/핼리 혜성', 'flagship of the armada' awkward."
+  },
+  {
+    "rel": "missions/mars/spirit.json",
+    "at": "description",
+    "old": "Spirit (MER-A)는 2004년 1월 4일 구세프 분화구의 바닥에서 28번 튕겨 나아가 첫 충돌 지점으로부터 250 m 떨어진 곳에 멈추었다. 90 솔의 주요 임무를 위해 설계되었으나 2,208 솔을 생존했다. Gusev 평원을 7.7 km 주행했고, 컬럼비아 힐스를 올랐으며, 고대 지속적인 물의 존재를 나타내는 적철광을 함유한 암석들을 발굴했다. 2009년 4월 \"트로이\"에서 바퀴가 황산염 껍질을 뚫고 Spirit은 부드러운 토양에 멈추었으며, 팀은 이를 고정 플랫폼으로 전환했다. 최종 신호 2010년 3월 22일; 임무는 2011년 5월 25일 종료로 선언되었다. 화성의 반대편에 3주 후 착륙한 Opportunity와 쌍을 이루었다.",
+    "new": "Spirit (MER-A)는 2004년 1월 4일 구세프 분화구 바닥에서 28번 튕긴 뒤 첫 충돌 지점에서 250 m 떨어진 곳에 멈췄다. 90솔의 주 임무를 목표로 설계되었으나 2,208솔을 버텼다. 구세프 평원을 7.7 km 주행하고 컬럼비아 힐스를 올랐으며, 오랜 기간 고대의 물이 존재했음을 알려 주는 적철석 함유 암석을 찾아냈다. 2009년 4월 바퀴 하나가 '트로이'의 황산염 지각을 뚫고 빠지면서 Spirit은 부드러운 토양에 갇혀 멈췄고, 팀은 이를 고정 관측 플랫폼으로 전환했다. 마지막 교신은 2010년 3월 22일, 임무 종료 선언은 2011년 5월 25일이었다. 3주 뒤 화성 반대편에 착륙한 Opportunity와 쌍둥이 탐사였다.",
+    "grade": "MINOR",
+    "issue": "Inconsistent Gusev spelling (구세프 / Gusev), awkward '고대 지속적인 물', '생존했다'."
+  },
+  {
+    "rel": "missions/moon/apollo15.json",
+    "at": "description",
+    "old": "첫 \"J-미션\" — 새로운 달 순회차량을 갖춘 장기 체류 과학 Apollo. LRV는 스콧과 어윈에게 27.9 km 주행 범위(도보 전용 Apollo 14의 3.5 km에 비해)를 제공했으며, 4.5 km 산맥 기슭과 사행하는 해들리 열구의 경계에 있는 극적인 Hadley-Apennine 지역을 열었다. 총 18 h 35 m에 달하는 3회 EVA, 반환된 샘플 77 kg(유명한 \"창세기 바위\"(샘플 15415) — 달의 고지 지각의 마그마 해양 기원을 확인하는 41억 년 된 정장암 포함). 스콧의 텔레시 \"망치-깃털 낙하\"는 Galileo의 중력 법칙을 생방송으로 검증했다. Worden은 달 궤도에서 원격 감지 기기(매핑 카메라, 감마선, X선, 알파입자 분광기)로 가득 찬 SIM-베이를 조작했고 귀로 깊은 우주에서 첫 EVA를 수행했다(지구로부터 약 317,000 km 떨어진 곳에서 약 39분 EVA로 필름 카니스터를 회수). Apollo 15의 회수는 3개 주 낙하산 중 하나가 완전히 펴지지 않아 손상되었다 — CM은 거칠게 착수했지만 승무원은 안전했다.",
+    "new": "첫 'J-미션' — 새로운 월면차(LRV)를 갖춘 장기 체류 과학 Apollo. LRV 덕에 스콧과 어윈은 27.9 km의 주행 범위(도보 전용이던 Apollo 14의 3.5 km와 대비)를 얻었고, 높이 4.5 km 산맥 기슭이자 구불구불한 해들리 열구 가장자리에 있는 극적인 해들리-아펜니노 지역이 열렸다. 세 차례 EVA는 총 18시간 35분이었고, 시료 77 kg을 가져왔다. 그중에는 유명한 '창세기 암석'(시료 15415)이 있었는데, 달 고지 지각이 마그마 바다에서 생겼음을 확인해 주는 41억 년 된 사장암이다. 스콧이 텔레비전으로 생중계한 '망치-깃털 낙하'는 갈릴레오의 낙하 법칙을 실시간으로 입증했다. 달 궤도의 워든은 원격 탐사 기기(매핑 카메라, 감마선, X선, 알파입자 분광계)가 가득한 SIM 베이를 운용했고, 귀환길에 최초의 심우주 EVA를 수행했다(지구에서 약 317,000 km 떨어진 곳에서 약 39분간 EVA로 필름 캐니스터 회수). Apollo 15의 귀환은 낙하산 3개 중 하나가 펴지지 않아 흠이 났다 — 사령선은 거칠게 착수했지만 승무원은 안전했다.",
+    "grade": "BROKEN",
+    "issue": "Garbled/typo '텔레시', 정장암 for anorthosite (wrong term), 'Hadley-Apennine' and 'Hadley Rille' inconsistently half-English, 귀로, 낙하산 3개 주, 손상되었다 (CM was not damaged, it was a hard splashdown)."
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "dispatch",
+    "old": "Apollo 11이 달에 도달할 수 있음을 증명했다면, Apollo 12는 달의 특정 지점에 도달할 수 있음을 증명했다. 발사 36초 후 번개가 로켓을 맞혔고 우주선의 기기들이 오프라인 상태가 되었는데, 스물네 살의 관제관 존 에런이 기억에서 불러낸 obscure fix — \"SCE to AUX\" —로 비행이 계속되었다. 그 다음 콘래드와 빈은 그들의 Lunar Module을 폭풍의 대양에, 2년 동안 그곳에 앉아있던 탐사선으로부터 수백 피트 떨어진 곳에 착륙시켰고, 그곳으로 걸어가 그 탐사선의 부품들을 집어서 집으로 가져왔다. 그 정밀도가 진정한 성과였다 — 달은 더 이상 목적지가 아니라 주소가 되었다.",
+    "new": "Apollo 11이 달에 도달할 수 있음을 증명했다면, Apollo 12는 달의 특정 지점에 도달할 수 있음을 증명했다. 발사 36초 후 번개가 로켓을 때려 우주선의 계기가 꺼졌는데, 스물네 살의 관제관 존 에런이 기억 속에서 잘 알려지지 않은 조치 — 'SCE to AUX' — 를 꺼내 들었고 비행은 계속되었다. 그다음 콘래드와 빈은 Lunar Module을 폭풍의 대양에, 2년 동안 그곳에 놓여 있던 탐사선에서 수백 피트 떨어진 곳에 내려놓고, 걸어가서 그 부품 일부를 집으로 가져왔다. 그 정밀도가 진짜 성과였다: 달은 더 이상 목적지가 아니라 주소가 되었다.",
+    "grade": "BROKEN",
+    "issue": "Untranslated English prose ('obscure fix') inside the Korean sentence."
+  },
+  {
+    "rel": "missions/moon/apollo14.json",
+    "at": "description",
+    "old": "세 번째 유인 달 착륙이자 앨런 셰퍼드의 두 번째 비행 — 그를 미국인 최초 우주인(Freedom 7, 1961)이자 달 위의 다섯 번째 사람으로 만들었으며, 47세의 나이로 가장 나이 많은 달 위 보행자가 되었다. Apollo 14는 Apollo 13의 중단된 착륙 이후의 회수 임무로, Apollo 13의 예정된 목표인 프라 마우로 고지를 인수받았다. 셰퍼드와 미첼은 ALSEP을 배포했으며, 총 9시간 23분의 두 번의 EVA를 완료했고, 모듈식 장비 운송 장치(MET, 인력거 스타일의 수레 — LRV는 아직 한 임무 앞에 있었음)를 콘 분화구 방향으로 끌어갔으나, 분화구 지형의 네비게이션 불확실성으로 인해 테두리에서 약 30m 미치지 못했다. EVA-2의 마지막 몇 분 동안 셰퍼드는 표본 수집용 손잡이에 6번 아이언 골프 클럽 헤드를 즉흥적으로 부착하고 골프공 두 개를 \"수 마일 수 마일 수 마일\" 거리로 쳤다(하나는 나중에 화상으로부터 약 24m과 약 37m 지점에서 분석되었다). 스튜어트 루사는 Kitty Hawk에 나무 씨앗을 가지고 다녔고, 이는 미국 전역에 심겨진 \"달 Trees\"가 되었다. 42kg의 시료가 반환되었다.",
+    "new": "세 번째 유인 달 착륙이자 앨런 셰퍼드의 두 번째 비행 — 이로써 그는 미국인 최초의 우주인(Freedom 7, 1961)이자 달 위의 다섯 번째 사람이 되었고, 47세로 달 위를 걸은 사람 중 최고령이었다. Apollo 14는 Apollo 13의 착륙 중단 이후의 만회 임무로, Apollo 13이 목표로 했던 프라 마우로 고지를 이어받았다. 셰퍼드와 미첼은 ALSEP을 설치했고, 총 9시간 23분의 EVA 두 번을 마쳤으며, 모듈식 장비 운반차(MET, 인력거 같은 수레 — 월면차 LRV는 아직 한 임무 뒤의 일이었다)를 콘 분화구 쪽으로 끌고 갔으나, 분화구투성이 지형에서 항법이 불확실해 가장자리에서 약 30 m 못 미쳐 멈췄다. EVA-2 마지막 몇 분 동안 셰퍼드는 시료 채취용 손잡이에 6번 아이언 골프채 헤드를 즉석으로 끼워 골프공 두 개를 '수 마일, 수 마일, 수 마일' 날려 보냈다(나중에 영상 분석으로 각각 약 24 m와 약 37 m로 추정되었다). 스튜어트 루사는 Kitty Hawk에 나무 씨앗을 싣고 갔고, 이 씨앗은 미국 전역에 심어진 '달 나무(Moon Trees)'가 되었다. 시료 42 kg이 반환되었다.",
+    "grade": "MINOR",
+    "issue": "'Moon Trees' half-translated as 달 Trees, 네비게이션 loanword, awkward '화상으로부터 약 24m과', '가장 나이 많은 달 위 보행자'."
+  },
+  {
+    "rel": "missions/moon/apollo16.json",
+    "at": "events.6.note",
+    "old": "EVA-2: 영의 텔레비전 중계 LRV 속도 시험(\"달 그랑프리\") — 최고 속도 ~17 km/h. Stone Mountain 오르기 지질학 탐사.",
+    "new": "EVA-2: 영의 텔레비전 중계 LRV 속도 시험('달 그랑프리') — 최고 속도 ~17 km/h. 스톤 마운틴 지질 탐사 주행.",
+    "grade": "BROKEN",
+    "issue": "Name rule: Stone Mountain (surface feature) left in English."
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.2.note",
+    "old": "달 궤도 진입. SPS ∆v ≈0.89 km/s.",
+    "new": "달 궤도 진입. SPS ∆v ~0.89 km/s.",
+    "grade": "MINOR",
+    "issue": "Inconsistent symbol: ≈ where the sibling note uses ~."
+  },
+  {
+    "rel": "missions/moon/apollo12.json",
+    "at": "events.0.note",
+    "old": "Saturn V (AS-507) 케네디 우주 센터 LC-39A에서 발사, 1969-11-14 16:22 UTC. 스택에 두 번의 번개 맞음 (T+36 s, T+52 s)으로 연료 전지가 오프라인 상태가 됨; \"SCE to AUX\" 지령으로 복구됨.",
+    "new": "Saturn V (AS-507)가 케네디 우주 센터 LC-39A에서 1969-11-14 16:22 UTC에 발사. 발사체에 두 차례 낙뢰(T+36 s, T+52 s)가 떨어져 연료 전지가 오프라인이 되었으나 'SCE to AUX' 지령으로 복구됨.",
+    "grade": "MINOR",
+    "issue": "Awkward '스택에 두 번의 번개 맞음'."
+  },
+  {
+    "rel": "missions/moon/luna24.json",
+    "at": "events.5.note",
+    "old": "캡슐이 1976-08-22에 소련 Surgut에 착륙, 170 g의 표토 반환.",
+    "new": "캡슐이 1976-08-22 소련 수르구트에 착륙, 170 g의 표토 회수.",
+    "grade": "BROKEN",
+    "issue": "Name rule: place name Surgut left in English; native form is 수르구트."
+  },
+  {
+    "rel": "missions/itokawa/hayabusa1.json",
+    "at": "events.4.note",
+    "old": "하이드라진 누출, 2개의 반응 바퀴 고장, 7주간 통신 두절.",
+    "new": "하이드라진 누출, 반작용 휠 2개 고장, 7주간 통신 두절.",
+    "grade": "MINOR",
+    "issue": "'반응 바퀴' is not the standard term for reaction wheels."
+  },
+  {
+    "rel": "original-work.json",
+    "at": "diagrams_science./diagrams/science/hertzsprung-russell_webp.title",
+    "old": "Hertzsprung Russell 도표",
+    "new": "헤르츠스프룽-러셀 도표",
+    "grade": "MINOR",
+    "issue": "Person names left in English instead of native Korean."
+  },
+  {
+    "rel": "original-work.json",
+    "at": "models3d./images/colophon/model-mars-curiosity_webp.what",
+    "old": "MSL급 RTG 로버(돛대 + 팔).",
+    "new": "MSL급 RTG 로버(마스트 + 로봇팔).",
+    "grade": "MINOR",
+    "issue": "'mast' rendered as 돛대 (ship's mast)."
+  },
+  {
+    "rel": "moon-sites/apollo11.json",
+    "at": "left",
+    "old": "하강 무대 · EASEP · 레이저 역반사 장치 · 국기 · 명판: '우리는 모든 인류를 위해 평화롭게 왔습니다'",
+    "new": "하강 단 · EASEP · 레이저 역반사경 · 국기 · 명판: '우리는 모든 인류를 위해 평화롭게 왔습니다'",
+    "grade": "MINOR",
+    "issue": "Inconsistent with sibling Apollo 16 entry (하강 단 vs 하강 무대); 국기/역반사 장치 wording."
+  },
+  {
+    "rel": "planets/dimorphos.json",
+    "at": "links.1.l",
+    "old": "DART final results (NASA)",
+    "new": "DART 최종 결과 (NASA)",
+    "grade": "MINOR",
+    "issue": "Link label left entirely in English (acceptable only if it is a fixed publication title)."
+  },
+  {
+    "rel": "planets/menoetius.json",
+    "at": "bio",
+    "old": "2001년 상호 엄폐 관측을 통해 별개의 천체로 확인됨. 메노이티오스(호메로스 전통에서 파트로클로스의 아버지)는 목성의 뒤쪽 60°에 위치한 L5 안정 궤도를 파트로클로스와 공유함. 거의 동등한 질량의 쌍성 기하학은 무게중심이 두 천체 밖에 위치하게 만들며, 이는 파트로클로스-메노이티오스를 트로판 소행성군에서 알려진 가장 큰 접근 쌍성계로 만듦.",
+    "new": "2001년 상호 식 현상 관측으로 별개의 천체로 확인됨. 메노이티오스(호메로스 전승에서 파트로클로스의 아버지)는 목성 뒤쪽 60° 지점의 L5 안정 궤도를 파트로클로스와 공유함. 질량이 거의 같은 쌍성 구조 때문에 무게중심이 두 천체 모두의 바깥에 놓이며, 이로써 파트로클로스-메노이티오스는 트로이 소행성군에서 알려진 가장 큰 근접 쌍성이 됨.",
+    "grade": "MINOR",
+    "issue": "Wrong terms: 트로판 소행성군 (Trojan = 트로이 소행성군), 접근 쌍성계; stray 상호 엄폐."
+  },
+  {
+    "rel": "mars-sites/beagle2.json",
+    "at": "mission_type",
+    "old": "Uncrewed Lander · Lost",
+    "new": "무인 착륙선 · 소실",
+    "grade": "BROKEN",
+    "issue": "UI label left untranslated English."
+  },
+  {
+    "rel": "planets/menoetius.json",
+    "at": "links.0.l",
+    "old": "Patroclus-Menoetius binary — Wikipedia",
+    "new": "파트로클로스-메노이티오스 쌍성 — Wikipedia",
+    "grade": "MINOR",
+    "issue": "Link label left in English (acceptable only if it is a fixed publication title)."
+  },
+  {
+    "rel": "sun.json",
+    "at": "links.1.l",
+    "old": "The Sun (NASA Solar System Exploration)",
+    "new": "태양 (NASA Solar System Exploration)",
+    "grade": "MINOR",
+    "issue": "Link label left in English (acceptable only if it is a fixed publication title)."
+  },
+  {
+    "rel": "science/cosmology/large-scale-structure.json",
+    "at": "body_paragraphs.0",
+    "old": "계층 구조는 중첩됩니다. 별들은 은하계로 모여지고, 은하계들은 은하단(우리의 국부은하군처럼)과 풍부한 은하단(천억 개 이상의 은하계가 하나의 중력 우물에 묶인 처녀자리 은하단처럼)으로 뭉쳐집니다. 은하단들은 그 자체로 초은하단으로 끌어당겨집니다. 초은하단은 느슨하고 광활하게 펼쳐진 농축으로 수십 메가파섹에 걸쳐 있습니다. 우리의 국부은하군은 처녀자리 초은하단의 외곽에 자리 잡고 있으며, 폭이 약 33 메가파섹(약 1억 1천만 광년)이고 처녀자리 은하단을 중심으로 합니다.",
+    "new": "위계는 겹겹이 쌓인다. 별은 은하로 모이고, 은하는 은하군(우리 국부은하군처럼)과 은하단(천 개가 넘는 은하가 하나의 중력 우물에 묶인 처녀자리 은하단처럼)으로 함께 떨어져 모인다. 은하군과 은하단은 다시 초은하단으로 끌려 들어간다 — 수십 메가파섹에 걸쳐 느슨하고 넓게 퍼진 집적이다. 우리 국부은하군은 처녀자리 초은하단의 외곽에 놓여 있으며, 이 초은하단은 폭이 약 33메가파섹(약 1억 1천만 광년)이고 처녀자리 은하단을 중심으로 한다.",
+    "grade": "BROKEN",
+    "issue": "Wrong numbers and terms: 'over a thousand galaxies' became 천억 개 이상; groups/clusters rendered as 은하단/은하단; galaxies as 은하계 (= the Milky Way)."
+  },
+  {
+    "rel": "science/life-in-space/eva-physiology.json",
+    "at": "body_paragraphs.1",
+    "old": "대응 수단은 사전호흡이다: 외출 전에 순산소를 서서히 낮은 기압에서 수시간 호흡하여 신체 조직에서 질소를 배출하는 것이다. 현재 미국 측 ISS 프로토콜은 우주복 내 사전호흡과 Campout 프로토콜(밤샘에 10.2 psi)을 사용하여 에어록 감압 전 총 약 4시간을 소비한다. 러시아의 Orlan 우주복은 5.7 psi에서 작동하여 사전호흡을 상당히 단축한다 — 다른 절충안이다.",
+    "new": "대응책은 사전 호흡이다: 선외 활동에 나서기 전, 점차 낮은 기압에서 몇 시간 동안 순수 산소를 호흡해 체내 조직의 질소를 씻어 낸다. 현재 미국 측 ISS 절차는 우주복 안에서의 사전 호흡과 Campout 절차(10.2 psi에서 하룻밤)를 합쳐, 에어록 감압 전까지 약 4시간이 걸린다. 러시아의 Orlan 우주복은 5.7 psi로 운용되어 사전 호흡이 크게 짧아진다 — 서로 다른 절충이다.",
+    "grade": "MINOR",
+    "issue": "'egress' rendered as 외출, '밤샘에 10.2 psi' awkward."
+  },
+  {
+    "rel": "science/mission-phases/entry-footprint.json",
+    "at": "body_paragraphs.0",
+    "old": "발자국은 다운레인지–크로스레인지 공간의 도달 가능한 집합입니다. 다운레인지는 주로 차량이 수직 양력을 어떻게 사용하는지에 의해 결정됩니다: 최대 양력은 범위를 최대화합니다(캡슐이 \"부양\"하여 천천히 감속하고 멀리 이동), 최소 양력은 범위를 최소화합니다(가파르고 빠른 도착). 크로스레인지는 양력을 옆으로 뱅킹하는 것에서 나오며, 그 정도는 L/D와 함께 증가합니다. L/D가 낮은 캡슐의 경우 발자국은 적당합니다; 양력 비행체나 날개가 있는 차량의 경우 발자국은 거대합니다.",
+    "new": "도달 영역(footprint)은 다운레인지–크로스레인지 공간에서 도달 가능한 집합입니다. 다운레인지는 주로 기체가 수직 양력을 어떻게 쓰는지로 정해집니다: 양력을 위로 완전히 향하면 사거리가 최대가 되고(캡슐이 '떠서' 천천히 감속하며 멀리 이동), 아래로 완전히 향하면 최소가 됩니다(가파르고 빠른 도착). 크로스레인지는 양력을 옆으로 기울여(뱅크) 얻으며, 그 폭은 L/D와 함께 커집니다. L/D가 낮은 캡슐은 도달 영역이 작고, 양력체나 날개 달린 기체는 매우 큽니다.",
+    "grade": "MINOR",
+    "issue": "Footprint/차량/양력 wording is off; 'full lift-up' misread as 최대 양력."
+  },
+  {
+    "rel": "science/history/goddard-liquid-rocket-1926.json",
+    "at": "body_paragraphs.1",
+    "old": "초기 고체연료 로켓은 존재했지만 (13세기부터의 중국 화약화살, Napoleonic 전쟁의 Congreve 로켓), 액체연료는 우주비행의 문이었다: 더 높은 비추력, 제어 가능한 조절, 재시작 가능성.",
+    "new": "초기 고체연료 로켓은 존재했지만 (13세기 이후의 중국 화전, 나폴레옹 전쟁 시기의 콩그리브 로켓), 액체연료가 우주비행으로 가는 문이었다: 더 높은 비추력, 제어 가능한 추력 조절, 재시작 가능성.",
+    "grade": "MINOR",
+    "issue": "Napoleonic and Congreve left in English; 중국 화약화살 unusual."
+  },
+  {
+    "rel": "science/propulsion/thrust-and-twr.json",
+    "at": "body_paragraphs.0",
+    "old": "추진력은 힘입니다. 단위는 뉴턴입니다(비행하는 모든 것의 경우 킬로뉴턴 또는 메가뉴턴). Merlin 1D는 해수면에서 845 kN을 생산합니다. 단일 F-1은 6,770 kN을 생산했습니다. SLS 부스터는 각각 16,000 kN을 생산합니다. 추진력은 비추진력이 아닙니다. 추진력은 엔진이 얼마나 *강하게* 밀어내는지 나타내고, Isp는 얼마나 *효율적으로* 밀어내는지를 나타냅니다. 고추진력 저Isp 엔진(솔리드 부스터)과 저추진력 고Isp 엔진(이온 드라이브)은 모두 유용할 수 있습니다. 미션의 다양한 부분에서 다양한 작업을 위해 말입니다. 추진력 방정식은 간단합니다. 추진력은 추진제 질량 흐름률에 배기 속도를 곱한 값에 노즐 출구 압력이 주변 압력과 다를 때의 작은 압력항을 더한 것과 같습니다. 이것이 높은 연소실 압력을 가진 단계 연소 엔진이 엔진 질량 당 더 많은 추진력을 생산하는 이유입니다. 같은 목(throat)을 통해 더 많은 추진제를 초당 더 높은 속도로 밀어냅니다.",
+    "new": "추력은 힘입니다. 단위는 뉴턴(날아다니는 것에는 킬로뉴턴이나 메가뉴턴)입니다. Merlin 1D는 해수면에서 845 kN을 냅니다. F-1 한 기는 6,770 kN을 냈습니다. SLS 부스터는 각각 16,000 kN을 냅니다. 추력은 비추력이 아닙니다. 추력은 엔진이 얼마나 *세게* 미는지를, Isp는 얼마나 *효율적으로* 미는지를 말해 줍니다. 추력이 큰 저Isp 엔진(고체 부스터)과 추력이 작은 고Isp 엔진(이온 추진기)은 모두 쓸모가 있습니다. 임무의 서로 다른 구간에서 서로 다른 일을 맡기 때문입니다. 추력 방정식은 간단합니다. 추력은 추진제 질량 유량에 배기 속도를 곱한 값에, 노즐 출구 압력이 대기압과 다를 때 생기는 작은 압력 항을 더한 것입니다. 그래서 연소실 압력이 높은 단계 연소 엔진은 엔진 질량 1킬로그램당 더 큰 추력을 냅니다 — 같은 목(throat)으로 더 많은 추진제를 더 빠른 속도로 초당 밀어내기 때문입니다.",
+    "grade": "BROKEN",
+    "issue": "Wrong core terms: thrust rendered as 추진력 and specific impulse as 비추진력 ('추진력은 비추진력이 아닙니다'), making the paragraph's central distinction wrong."
+  },
+  {
+    "rel": "universe/named-stars/diphda.json",
+    "at": "bio",
+    "old": "디프다 (Beta Ceti)는 Deneb Kaitos라고도 불리며, 약 96광년 거리에 있는 주황색 거성이다. '베타'라는 명칭에도 불구하고, 바다괴물 별자리 고래자리에서 가장 밝은 별로, 이 별자리의 알파별인 멘카르보다 더 밝다.",
+    "new": "디프다(Beta Ceti)는 데네브 카이토스라고도 불리며, 약 96광년 떨어진 주황색 거성이다. '베타'라는 이름이 붙어 있지만 바다 괴물 고래자리에서 가장 밝은 별로, 이 별자리의 알파별 멘카르보다 밝게 빛난다.",
+    "grade": "MINOR",
+    "issue": "Alternative star name Deneb Kaitos left in English."
+  },
+  {
+    "rel": "universe/named-stars/alnilam.json",
+    "at": "fact",
+    "old": "Orion의 허리띠 중앙의 진주 — 광활한 거리를 가로질러 보이는 타오르는 청색 초거성.",
+    "new": "오리온의 허리띠의 중앙 진주 — 광활한 거리를 가로질러 보이는 눈부신 청색 초거성.",
+    "grade": "BROKEN",
+    "issue": "Name rule: constellation Orion left in English."
+  },
+  {
+    "rel": "universe/named-stars/mintaka.json",
+    "at": "cultural",
+    "old": "이름은 아랍어로 '허리띠'를 의미한다. 허리띠를 이루는 세 별 중 하나로서, 거의 전 세계적으로 인식되는 Orion의 명성을 함께 나누며, 적도 위에 자리한 덕분에 동쪽과 서쪽을 가리키는 자연스러운 표지가 되었다.",
+    "new": "이름은 아랍어로 '허리띠'를 뜻한다. 허리띠를 이루는 세 별 중 하나로서, 거의 세계 어디서나 알아보는 오리온자리의 명성을 함께 나누며, 적도 위에 자리한 덕분에 동쪽과 서쪽을 가리키는 자연스러운 표지가 되었다.",
+    "grade": "BROKEN",
+    "issue": "Name rule: constellation Orion left in English."
+  },
+  {
+    "rel": "universe/exoplanets/hd-95735-c.json",
+    "at": "fact",
+    "old": "가까운 랄랑드 21185를 도는 두 번째로 차가운 세계.",
+    "new": "근처의 랄랑드 21185를 도는 또 하나의, 더 차가운 세계.",
+    "grade": "MINOR",
+    "issue": "'A second, cooler world' misread as 'the second coldest'."
+  },
+  {
+    "rel": "universe/named-stars/sirius.json",
+    "at": "cultural",
+    "old": "'개의 별'은 수천 년 동안 달력을 이끌어왔습니다. 고대 이집트에서 그 헬리악 상승은 나일강의 연례 범람을 알렸으며, 그레코-로만 전통에서 여름의 '개의 날'을 정의하고 있습니다.",
+    "new": "'개의 별'은 수천 년 동안 달력의 길잡이였다. 고대 이집트에서는 새벽 동쪽 하늘에 처음 나타나는 일(헬리아컬 라이징)이 해마다 나일강이 범람할 때를 알렸고, 그리스·로마 전통에서는 여름의 '개의 날'(삼복더위)의 기준이 된다.",
+    "grade": "MINOR",
+    "issue": "Untranslated-sounding transliterations 헬리악 상승, 개의 날 left unglossed; 그레코-로만."
+  }
+]

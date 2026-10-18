@@ -459,7 +459,7 @@
   },
   "lab_illustrations": {
     "/images/lab/goals/apollo-round-trip_webp": {
-      "title": "Viaje de ida y vuelta a Apollo"
+      "title": "Viaje de ida y vuelta del Apollo"
     },
     "/images/lab/goals/catch-the-iss_webp": {
       "title": "Atrapar la EEI"
@@ -999,7 +999,7 @@
     },
     "/images/colophon/craft-dawn_webp": {
       "title": "Dawn",
-      "what": "Autobús impulsado por iones con amplias alas solares: orbitador de Vesta y Ceres.",
+      "what": "Plataforma de propulsión iónica con amplias alas solares: orbitador de Vesta y Ceres.",
       "where": "Vuela + Explora"
     },
     "/images/colophon/craft-giotto_webp": {
@@ -1349,7 +1349,7 @@
     },
     "/images/colophon/model-cruise-mars3_webp": {
       "title": "Autobús de Mars 3",
-      "what": "Autobús M-71 soviético con la cápsula de descenso y paneles solares.",
+      "what": "Plataforma soviética M-71 con la cápsula de descenso y alas solares.",
       "where": "Vuelo · crucero/aproximación"
     },
     "/images/colophon/model-cruise-tianwen1_webp": {
@@ -1627,7 +1627,7 @@
     },
     "World profiles": {
       "title": "Perfiles de mundos",
-      "what": "Textos descriptivos para los 9 planetas y 22 cuerpos menores — cometas, asteroides y objetos del cinturón de Kuiper — mostrados en la efeméride.",
+      "what": "Textos descriptivos de los 9 planetas y 22 cuerpos menores —cometas, asteroides y objetos del cinturón de Kuiper— que se muestran en el orrery.",
       "where": "Explorar"
     },
     "Station module notes": {

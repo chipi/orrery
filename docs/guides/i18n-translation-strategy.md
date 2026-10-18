@@ -106,6 +106,9 @@ written the same way everywhere it appears.
 - Universal symbols stay as symbols (Δv, Isp, C₃, g, SI units) — style guide §1.
 - No native-speaker review step; the operator reads the Serbian personally.
 - No paid model run without a size + cost estimate and an explicit go.
+- Free route first (operator 2026-10-18): fixes are proposed as hand edits, the local
+  scripts, or in-session subagents. A paid API run is mentioned only when asked for,
+  or when no free route can do the job, with the reason.
 - Fix what a pass finds in the same pass; hand-edit rather than re-run a model.
 
 ### 3.5 Names go through the glossary, never straight into text (operator 2026-10-18)

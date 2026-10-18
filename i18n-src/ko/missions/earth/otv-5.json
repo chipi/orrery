@@ -1,8 +1,8 @@
 {
   "name": "X-37B OTV-5 (USA-277)",
   "type": "무인 우주비행기 · 비행 완료",
-  "first": "USA-277 — 궤도상 780일, KSC Shuttle Landing Facility",
-  "description": "다섯 번째 X-37B 비행, Atlas V 대신 Falcon 9으로 발사된 최초의 비행이자 Block 4 Falcon 9으로 발사된 유일한 X-37B 비행. 2017-09-07 14:00 UTC에 KSC LC-39A에서 발사(부스터는 하류 LZ-1에서 회수); 2019-10-27 07:51 UTC에 KSC SLF에 착륙. 궤도상 780일. X-37B가 처음으로 고경사 궤도(54.5°)에 진입 — 공개적으로 추적되는 통과 패턴을 확장.",
+  "first": "USA-277 — 궤도상 780일, KSC 셔틀 착륙시설",
+  "description": "다섯 번째 X-37B 비행, Atlas V 대신 Falcon 9로 발사한 첫 비행이자 Block 4 Falcon 9에 실린 유일한 X-37B 비행. 2017-09-07 14:00 UTC KSC LC-39A에서 발사(부스터는 발사 경로 아래쪽 LZ-1에서 회수); 2019-10-27 07:51 UTC KSC SLF에 착륙. 궤도상 780일. X-37B가 더 높은 경사각 궤도(54.5°)로 간 첫 비행 — 공개 추적되는 상공 통과 범위를 넓혔다.",
   "events": [
     {
       "met": 0,

@@ -50,7 +50,11 @@ fields have schema limits).
    (no "NASA-ин", "Voyager-а"): a common noun before it carries the ending (агентства
    NASA, аппарата Voyager 2; агенције NASA, летелице Voyager 2), or reword. Fix every
    such form you meet.
-7. One name per thing: if the batch writes the same thing two ways, use the glossary or
+7. **A person, place or star with no glossary entry: do not invent a form from memory.**
+   Leave the name as `cur` has it (or as the English writes it), and list it in your
+   reply under `NAMES:` with its English form, so the caller can look it up and add it to
+   the glossary first.
+8. One name per thing: if the batch writes the same thing two ways, use the glossary or
    the more common site form for both.
 
 The grader's findings for this locale are examples of the errors to look for:
@@ -62,4 +66,5 @@ rules above win).
 
 Write `<out>.json`: `[{ "rel", "at", "old", "new" }]` — only the strings you changed;
 `old` is `cur` copied exactly. Valid JSON, UTF-8. Then reply with three lines: strings
-reviewed, strings changed, and the three most common problems you fixed.
+reviewed, strings changed, and the three most common problems you fixed — plus a `NAMES:`
+line listing every person/place/star you met that has no glossary entry (English form).

@@ -2,7 +2,7 @@
   "name": "Artemis III",
   "type": "유인 착륙선 · 계획",
   "first": "Apollo 17(1972) 이후 최초 유인 달 착륙",
-  "description": "50년 넘게 처음으로 달에 유인 착륙합니다. 아키텍처: NASA의 SLS Block 1이 Orion을 4명의 승무원과 함께 달 주변의 근직선 헤일로 궤도(NRHO)로 발사합니다. NRHO에 미리 배치된 SpaceX Starship 유인 착륙 시스템(HLS)은 월간 전이 이전에 탱커에 의해 저지구 궤도에서 연료를 재공급받습니다. Orion 승무원이 HLS로 이동하며, 2명의 우주비행사가 달의 남극 지역으로 내려가 약 6.5일간의 표면 작업을 수행하는 동안 2명은 NRHO에 머물러 있습니다. 표면 작업 후 HLS가 NRHO로 돌아가 Orion으로 전이되어 지구로 복귀합니다. 달에 착륙하는 첫 여성과 첫 유색인종을 실현합니다.",
+  "description": "50여 년 만의 유인 달 착륙입니다. 구성: NASA의 SLS Block 1이 승무원 4명이 탄 Orion을 달 주위의 근직선 헤일로 궤도(NRHO)로 발사합니다. NRHO에는 SpaceX Starship Human Landing System(HLS)이 미리 배치되어 있으며, 이는 달 전이 궤도 진입 전에 저지구궤도에서 탱커로 추진제를 다시 채웁니다. Orion 승무원이 HLS로 옮겨 타고, 2명은 달 남극 지역으로 내려가 약 6.5일간 표면 활동을 하며 나머지 2명은 NRHO에 남습니다. 표면 활동이 끝나면 HLS가 NRHO로 돌아오고, 승무원은 Orion으로 옮겨 타 지구로 귀환합니다. 달에 발을 딛는 최초의 여성과 최초의 유색인종이 이 임무에서 나옵니다.",
   "events": [
     { "met": 0, "label": "SLS 발사", "note": "승무원 4명을 태운 Orion이 KSC LC-39B에서 이륙.", "type": "nominal" },
     { "met": 1, "label": "TLI", "note": "달 이행 주입.", "type": "nominal" },

@@ -1,7 +1,7 @@
 {
   "name": "Asteroïdengordel",
   "kind": "Hoofdgordel — rotsachtige populatie",
-  "location": "Tussen Mars en Jupiter · 2,2–3,2 AU van de Zon",
+  "location": "Tussen Mars en Jupiter · 2,2–3,2 AE van de Zon",
   "population_estimate": "1,1–1,9 miljoen objecten groter dan 1 km, honderden miljoenen groter dan 100 m",
   "total_mass_relative": "≈ 4 % van de Maan (≈ 3 % van Pluto)",
   "largest_members": [
@@ -33,7 +33,7 @@
     {
       "tab": "orbits",
       "section": "orbit-regimes",
-      "why": "De gordel beslaat de annulus 2.2–3.2 AU. Kirkwood-gaten — lege baanzones bij Jupiter middel-bewegingsresonanties — bepalen het patroon van de populatie."
+      "why": "De gordel beslaat de annulus 2.2–3.2 AE. Kirkwood-gaten — lege baanzones bij Jupiter middel-bewegingsresonanties — bepalen het patroon van de populatie."
     },
     {
       "tab": "orbits",

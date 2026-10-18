@@ -1,0 +1,14 @@
+[
+  {
+    "rel": "science/scales-time/j2000.json",
+    "at": "narrative_101.1",
+    "old": "¿Por qué mediodía y no medianoche? Porque el conteo del día juliano — el recuento continuo de días de los astrónomos desde el año 4713 a. C. — siempre ha cambiado de día al mediodía, no a medianoche, para que los observadores no tengan que lidiar con un cambio de fecha en plena jornada nocturna. J2000 corresponde exactamente al día juliano 2.451.545,0 — una referencia limpia y entera.",
+    "new": "¿Por qué mediodía y no medianoche? Porque el conteo del día juliano — el recuento continuo de días de los astrónomos desde el año 4713 a. C. — siempre ha cambiado de día al mediodía, no a medianoche, para que los observadores no tengan que lidiar con un cambio de fecha en plena jornada nocturna. J2000 corresponde exactamente al día juliano 2 451 545,0 — una referencia limpia y entera."
+  },
+  {
+    "rel": "science/scales-time/j2000.json",
+    "at": "body_paragraphs.1",
+    "old": "¿Por qué mediodía? Porque la fecha juliana (JD) — el conteo continuo de días de los astrónomos, que comienza al mediodía de Tiempo Universal del 1 de enero de 4713 a. C. (calendario juliano proléptico) — se incrementa al mediodía, no a medianoche. J2000 corresponde exactamente a JD 2.451.545,0, un punto de referencia limpio, sin días fraccionarios.",
+    "new": "¿Por qué mediodía? Porque la fecha juliana (JD) — el conteo continuo de días de los astrónomos, que comienza al mediodía de Tiempo Universal del 1 de enero de 4713 a. C. (calendario juliano proléptico) — se incrementa al mediodía, no a medianoche. J2000 corresponde exactamente a JD 2 451 545,0, un punto de referencia limpio, sin días fraccionarios."
+  }
+]

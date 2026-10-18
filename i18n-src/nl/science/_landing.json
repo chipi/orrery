@@ -66,9 +66,9 @@
       "heading": "6 — Afstanden en tijd, want niets hiervan is op aardse schaal.",
       "diagram": "au.svg",
       "diagram_alt": "De astronomische eenheid, gemarkeerd langs de baanstraal van de Aarde.",
-      "diagram_caption": "Eén AU = één Aarde-Zon-afstand. Mars is ~1,5 AU. Jupiter is ~5,2.",
+      "diagram_caption": "Eén AE = één Aarde-Zon-afstand. Mars is ~1,5 AE. Jupiter is ~5,2.",
       "paragraphs": [
-        "Drie eenheden duiken overal op. De [astronomische eenheid](scales-time/au) (AU) is de gemiddelde afstand tussen Aarde en Zon — 150 miljoen km. We meten het zonnestelsel in AU omdat kilometers snel onhandig worden. De [lichtminuut](scales-time/light-minute) vertelt je hoe lang een radiosignaal erover doet om een ruimtevaartuig te bereiken. Mars: 4 tot 24 minuten enkele reis. Je kunt een rover niet vanaf de Aarde met een joystick besturen. Alles wat belangrijk is, gebeurt autonoom.",
+        "Drie eenheden duiken overal op. De [astronomische eenheid](scales-time/au) (AE) is de gemiddelde afstand tussen Aarde en Zon — 150 miljoen km. We meten het zonnestelsel in AE omdat kilometers snel onhandig worden. De [lichtminuut](scales-time/light-minute) vertelt je hoe lang een radiosignaal erover doet om een ruimtevaartuig te bereiken. Mars: 4 tot 24 minuten enkele reis. Je kunt een rover niet vanaf de Aarde met een joystick besturen. Alles wat belangrijk is, gebeurt autonoom.",
         "De [J2000-epoche](scales-time/j2000) is de kalendernul die elke astrodynamicus gebruikt. [Siderische versus synodische perioden](scales-time/sidereal-synodic) verklaren waarom Marsvensters elke 26 maanden terugkomen in plaats van elke 23. Het [eclipticavlak](scales-time/ecliptic-plane) is de platte schijf waarin alle planeten (meestal) liggen. [Referentiekaders](scales-time/frames) zijn de coördinatensystemen waartussen missiecontrole schakelt: weergaven met de Aarde, de Zon of het hemellichaam zelf als middelpunt."
       ]
     },

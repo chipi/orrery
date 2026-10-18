@@ -1,0 +1,116 @@
+[
+  {
+    "rel": "belts/kuiper.json",
+    "at": "description",
+    "old": "Een uitgestrekte schijf van ijzige objecten — water-, methaan- en ammoniakijs met ingesloten gesteente — die rond de zon draait voorbij Neptunus. De Kuipergordel is het bronreservoir voor kortperiodieke kometen zoals Halley en Hartley 2: zwaartekrachtverstoringen van Neptunus slingeren af en toe leden naar binnen waar zonnestraling het ijs in staarten verandert. In tegenstelling tot de asteroïdengordel is de Kuipergordel niet dynamisch uitgeput — de massa is klein, niet omdat Jupiter het verspreidde, maar omdat er op die afstanden nooit volledig accretie heeft plaatsgevonden. Voorbij de klassieke Kuipergordel strekken de scattered disc en de Oortwolk het koude reservoir uit tot duizenden AU's.",
+    "new": "Een uitgestrekte schijf van ijzige objecten — water-, methaan- en ammoniakijs met ingesloten gesteente — die rond de zon draait voorbij Neptunus. De Kuipergordel is het bronreservoir voor kortperiodieke kometen zoals Halley en Hartley 2: zwaartekrachtverstoringen van Neptunus slingeren af en toe leden naar binnen waar zonnestraling het ijs in staarten verandert. In tegenstelling tot de asteroïdengordel is de Kuipergordel niet dynamisch uitgeput — de massa is klein, niet omdat Jupiter het verspreidde, maar omdat er op die afstanden nooit volledig accretie heeft plaatsgevonden. Voorbij de klassieke Kuipergordel strekken de scattered disc en de Oortwolk het koude reservoir uit tot duizenden AE's."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.5.diagram_caption",
+    "old": "Eén AU = één Aarde-Zon-afstand. Mars is ~1,5 AE. Jupiter is ~5,2.",
+    "new": "Eén AE = één Aarde-Zon-afstand. Mars is ~1,5 AE. Jupiter is ~5,2."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.5.paragraphs.0",
+    "old": "Drie eenheden duiken overal op. De [astronomische eenheid](scales-time/au) (AU) is de gemiddelde afstand tussen Aarde en Zon — 150 miljoen km. We meten het zonnestelsel in AU omdat kilometers snel onhandig worden. De [lichtminuut](scales-time/light-minute) vertelt je hoe lang een radiosignaal erover doet om een ruimtevaartuig te bereiken. Mars: 4 tot 24 minuten enkele reis. Je kunt een rover niet vanaf de Aarde met een joystick besturen. Alles wat belangrijk is, gebeurt autonoom.",
+    "new": "Drie eenheden duiken overal op. De [astronomische eenheid](scales-time/au) (AE) is de gemiddelde afstand tussen Aarde en Zon — 150 miljoen km. We meten het zonnestelsel in AE omdat kilometers snel onhandig worden. De [lichtminuut](scales-time/light-minute) vertelt je hoe lang een radiosignaal erover doet om een ruimtevaartuig te bereiken. Mars: 4 tot 24 minuten enkele reis. Je kunt een rover niet vanaf de Aarde met een joystick besturen. Alles wat belangrijk is, gebeurt autonoom."
+  },
+  {
+    "rel": "science/planets/kuiper-belt.json",
+    "at": "narrative_101.0",
+    "old": "Gerard Kuiper stelde het voor in een artikel uit 1951: als de planeetvormende schijf van het vroege zonnestelsel zich voorbij Neptunus uitstrekte, dan zou daar ergens nog een populatie ijzige restanten rond de Zon moeten draaien. Ze zouden geen planeten zijn geworden, omdat op die afstanden niets samenklonterde, maar de schijf zou er nog steeds moeten zijn, dynamisch intact. Vier decennia lang bleef de voorspelling onbevestigd, omdat de objecten klein, koud en tientallen AU ver weg zijn — vrijwel onmogelijk op te sporen met telescopen uit het midden van de 20e eeuw.",
+    "new": "Gerard Kuiper stelde het voor in een artikel uit 1951: als de planeetvormende schijf van het vroege zonnestelsel zich voorbij Neptunus uitstrekte, dan zou daar ergens nog een populatie ijzige restanten rond de Zon moeten draaien. Ze zouden geen planeten zijn geworden, omdat op die afstanden niets samenklonterde, maar de schijf zou er nog steeds moeten zijn, dynamisch intact. Vier decennia lang bleef de voorspelling onbevestigd, omdat de objecten klein, koud en tientallen AE ver weg zijn — vrijwel onmogelijk op te sporen met telescopen uit het midden van de 20e eeuw."
+  },
+  {
+    "rel": "science/planets/kuiper-belt.json",
+    "at": "body_paragraphs.0",
+    "old": "Structureel heeft de gordel drie populaties. De klassieke Kuipergordel op 42–48 AE bevat lichamen op vrijwel cirkelvormige banen met een kleine inclinatie — het dynamisch ongestoorde restant van de oorspronkelijke schijf; Albion en Quaoar horen hier thuis. De resonante populatie zit vast in een 2:3-resonantie van de gemiddelde beweging met Neptunus (Pluto is het archetype — voor elke twee Pluto-omlopen maakt Neptunus er drie); deze lichamen heten plutino's. Dan is er de verstrooide schijf, de excentrische buitenuitbreiding met grote inclinaties waar Eris en Sedna rondzwerven, met perihelia dicht bij Neptunus en aphelia honderden AU ver weg. Elke populatie is een fossiel van een ander hoofdstuk uit de gravitatiegeschiedenis van het vroege zonnestelsel.",
+    "new": "Structureel heeft de gordel drie populaties. De klassieke Kuipergordel op 42–48 AE bevat lichamen op vrijwel cirkelvormige banen met een kleine inclinatie — het dynamisch ongestoorde restant van de oorspronkelijke schijf; Albion en Quaoar horen hier thuis. De resonante populatie zit vast in een 2:3-resonantie van de gemiddelde beweging met Neptunus (Pluto is het archetype — voor elke twee Pluto-omlopen maakt Neptunus er drie); deze lichamen heten plutino's. Dan is er de verstrooide schijf, de excentrische buitenuitbreiding met grote inclinaties waar Eris en Sedna rondzwerven, met perihelia dicht bij Neptunus en aphelia honderden AE ver weg. Elke populatie is een fossiel van een ander hoofdstuk uit de gravitatiegeschiedenis van het vroege zonnestelsel."
+  },
+  {
+    "rel": "science/planets/kuiper-belt.json",
+    "at": "body_paragraphs.1",
+    "old": "De Kuipergordel is het bronreservoir van kortperiodieke kometen — lichamen als komeet Halley, Hartley 2 en 67P/Churyumov–Gerasimenko, waarvan de banen in minder dan 200 jaar terugkeren naar het binnenste zonnestelsel. Zwaartekrachtduwtjes van Neptunus slingeren af en toe leden naar binnen, waar zonnewarmte het oppervlakte-ijs laat sublimeren tot de zichtbare coma en staart. Langperiodieke kometen komen van veel verder weg (de Oortwolk, op duizenden AU), maar kortperiodieke kometen zijn verwanten van de Kuipergordel. De Europese missie Rosetta draaide van 2014 tot 2016 om 67P en detecteerde glycine + fosfor + zuurstof — de moleculaire bouwstenen van het leven — die van het oppervlak sublimeerden.",
+    "new": "De Kuipergordel is het bronreservoir van kortperiodieke kometen — lichamen als komeet Halley, Hartley 2 en 67P/Churyumov–Gerasimenko, waarvan de banen in minder dan 200 jaar terugkeren naar het binnenste zonnestelsel. Zwaartekrachtduwtjes van Neptunus slingeren af en toe leden naar binnen, waar zonnewarmte het oppervlakte-ijs laat sublimeren tot de zichtbare coma en staart. Langperiodieke kometen komen van veel verder weg (de Oortwolk, op duizenden AE), maar kortperiodieke kometen zijn verwanten van de Kuipergordel. De Europese missie Rosetta draaide van 2014 tot 2016 om 67P en detecteerde glycine + fosfor + zuurstof — de moleculaire bouwstenen van het leven — die van het oppervlak sublimeerden."
+  },
+  {
+    "rel": "science/scales-time/_intro.json",
+    "at": "paragraphs.0",
+    "old": "Het zonnestelsel is groter dan waarop je intuïtie is afgestemd. Mars staat 200 miljoen km van ons af. Saturnus 1,4 miljard. Pluto 6 miljard. Getallen in kilometers helpen dan niet meer. Daarom kozen astronomen een menselijker maatstaf — de afstand tussen Aarde en Zon, de astronomische eenheid (AU). Mars staat op 1,5 AE. Jupiter op 5. Pluto draait in een baan tussen 30 en 50.",
+    "new": "Het zonnestelsel is groter dan waarop je intuïtie is afgestemd. Mars staat 200 miljoen km van ons af. Saturnus 1,4 miljard. Pluto 6 miljard. Getallen in kilometers helpen dan niet meer. Daarom kozen astronomen een menselijker maatstaf — de afstand tussen Aarde en Zon, de astronomische eenheid (AE). Mars staat op 1,5 AE. Jupiter op 5. Pluto draait in een baan tussen 30 en 50."
+  },
+  {
+    "rel": "science/scales-time/_intro.json",
+    "at": "paragraphs.2",
+    "old": "Hier staan zes secties. AU en lichtminuut geven je de maatstaven. J2000 is het universele nulpunt van de kalender waar alle astronomen het over eens zijn. Siderisch versus synodisch verklaart waarom Marsvensters elke 26 maanden terugkeren en niet elke 23. Het eclipticavlak is de platte schijf waarin alle planeten (grotendeels) liggen. Referentiekaders is de boekhouding voor het wisselen tussen weergaven met de Zon, de Aarde of een hemellichaam als middelpunt — waar de missiecontrole voortdurend mee jongleert.",
+    "new": "Hier staan zes secties. AE en lichtminuut geven je de maatstaven. J2000 is het universele nulpunt van de kalender waar alle astronomen het over eens zijn. Siderisch versus synodisch verklaart waarom Marsvensters elke 26 maanden terugkeren en niet elke 23. Het eclipticavlak is de platte schijf waarin alle planeten (grotendeels) liggen. Referentiekaders is de boekhouding voor het wisselen tussen weergaven met de Zon, de Aarde of een hemellichaam als middelpunt — waar de missiecontrole voortdurend mee jongleert."
+  },
+  {
+    "rel": "science/scales-time/au.json",
+    "at": "title",
+    "old": "AU — astronomische eenheid",
+    "new": "AE — astronomische eenheid"
+  },
+  {
+    "rel": "science/scales-time/au.json",
+    "at": "narrative_101.0",
+    "old": "Zodra je afstanden in de ruimte gaat meten, worden kilometers snel onhanteerbaar. Mars staat op 200 miljoen km. Saturnus op 1,4 miljard km. Pluto op 6 miljard km. Je hersenen kunnen die getallen alleen nog als \"groot\" duiden. Daarom kozen astronomen een menselijker maatstaf: één afstand tussen Aarde en Zon. Dat is een astronomische eenheid, afgekort AU.",
+    "new": "Zodra je afstanden in de ruimte gaat meten, worden kilometers snel onhanteerbaar. Mars staat op 200 miljoen km. Saturnus op 1,4 miljard km. Pluto op 6 miljard km. Je hersenen kunnen die getallen alleen nog als \"groot\" duiden. Daarom kozen astronomen een menselijker maatstaf: één afstand tussen Aarde en Zon. Dat is een astronomische eenheid, afgekort AE."
+  },
+  {
+    "rel": "science/scales-time/au.json",
+    "at": "narrative_101.2",
+    "old": "AU komt overal in deze app voor. Het scherm /explore tekent baanstralen in AU. De assen van de porkchop-grafiek op /plan zijn geijkt in AU. De HUD op /fly rekent AU om naar kilometers en lichtminuten wanneer je die nodig hebt, maar de onderliggende maatstaf is altijd AU. Als je het eenmaal onder de knie hebt, voelt het zonnestelsel niet meer abstract aan — je kunt afstanden grofweg in kaart brengen door sprongen in AU te tellen.",
+    "new": "AE komt overal in deze app voor. Het scherm /explore tekent baanstralen in AE. De assen van de porkchop-grafiek op /plan zijn geijkt in AE. De HUD op /fly rekent AE om naar kilometers en lichtminuten wanneer je die nodig hebt, maar de onderliggende maatstaf is altijd AE. Als je het eenmaal onder de knie hebt, voelt het zonnestelsel niet meer abstract aan — je kunt afstanden grofweg in kaart brengen door sprongen in AE te tellen."
+  },
+  {
+    "rel": "science/scales-time/au.json",
+    "at": "body_paragraphs.0",
+    "old": "Tot 2012 werd de AU gedefinieerd door de baan van de Aarde. Doordat die baan onder invloed van verstoringen door andere planeten langzaam verandert, veranderde strikt genomen ook de AU mee. De IAU legde de AU in 2012 vast op een exact geheel aantal meters — 149.597.870.700 — en de definitie is sindsdien stabiel. De AU is niet langer 'de baan van de Aarde'; het is een metrische maatstaf die er toevallig ongeveer mee overeenkomt.",
+    "new": "Tot 2012 werd de AE gedefinieerd door de baan van de Aarde. Doordat die baan onder invloed van verstoringen door andere planeten langzaam verandert, veranderde strikt genomen ook de AE mee. De IAU legde de AE in 2012 vast op een exact geheel aantal meters — 149.597.870.700 — en de definitie is sindsdien stabiel. De AE is niet langer 'de baan van de Aarde'; het is een metrische maatstaf die er toevallig ongeveer mee overeenkomt."
+  },
+  {
+    "rel": "science/scales-time/au.json",
+    "at": "body_paragraphs.1",
+    "old": "Afstanden in het zonnestelsel in AU: Mercurius 0,39, Venus 0,72, Aarde 1,0, Mars 1,52, Jupiter 5,20, Saturnus 9,58, Uranus 19,22, Neptunus 30,05, Pluto 39,5 (gemiddelden — door de excentriciteit variëren ze). De Voyagers zijn ver voorbij 150 AE en vliegen nog steeds door. De Oortwolk reikt tot tienduizenden AU.",
+    "new": "Afstanden in het zonnestelsel in AE: Mercurius 0,39, Venus 0,72, Aarde 1,0, Mars 1,52, Jupiter 5,20, Saturnus 9,58, Uranus 19,22, Neptunus 30,05, Pluto 39,5 (gemiddelden — door de excentriciteit variëren ze). De Voyagers zijn ver voorbij 150 AE en vliegen nog steeds door. De Oortwolk reikt tot tienduizenden AE."
+  },
+  {
+    "rel": "science/scales-time/au.json",
+    "at": "body_paragraphs.2",
+    "old": "Waarom AU in plaats van meters? Omdat getallen in meters op de schaal van het zonnestelsel onhandig zijn. De 1,4 miljard km van Saturnus is onleesbaar. 9,58 AE is een getal dat je in je hoofd kunt houden. De panelen en de HUD van Orrery gebruiken overal AU voor posities in het zonnestelsel — omgerekend naar km, lichtminuten en andere eenheden alleen waar het publiek die omrekening nodig heeft.",
+    "new": "Waarom AE in plaats van meters? Omdat getallen in meters op de schaal van het zonnestelsel onhandig zijn. De 1,4 miljard km van Saturnus is onleesbaar. 9,58 AE is een getal dat je in je hoofd kunt houden. De panelen en de HUD van Orrery gebruiken overal AE voor posities in het zonnestelsel — omgerekend naar km, lichtminuten en andere eenheden alleen waar het publiek die omrekening nodig heeft."
+  },
+  {
+    "rel": "science/scales-time/au.json",
+    "at": "diagram_caption",
+    "old": "1 AE ≈ afstand Aarde-Zon. Grote halve assen van planeten in AU, op een logaritmische schaal om de buitenplaneten in beeld te krijgen.",
+    "new": "1 AE ≈ afstand Aarde-Zon. Grote halve assen van planeten in AE, op een logaritmische schaal om de buitenplaneten in beeld te krijgen."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_axis_distance_au",
+    "old": "Afstand (AU)",
+    "new": "Afstand (AE)"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_axis_orbit_radius",
+    "old": "Baanstraal (AU)",
+    "new": "Baanstraal (AE)"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_g7_max",
+    "old": "Waarom verschijnen Mercurius en Venus nooit om middernacht, altijd dicht bij zonsondergang of zonsopgang? Omdat ze BINNEN Earths baan rond de Zon cirkelen: een planeet op a AU kan slechts arcsin(a) graden van de Zon afwijken. Maar hun banen zijn ellipsen, dus het touw rekt en krimpt — Mercurius' grootste elongatie varieert van ~18° dicht bij perihelium tot ~28° bij aphelium, terwijl Venus rond 46° blijft hangen. Buitenplaneten hebben helemaal geen touw; ze zwerven helemaal tot oppositie. Binnen of buiten Earths baan — die ene lijn deelt de naked-eye planeten in twee.",
+    "new": "Waarom verschijnen Mercurius en Venus nooit om middernacht, altijd dicht bij zonsondergang of zonsopgang? Omdat ze BINNEN Earths baan rond de Zon cirkelen: een planeet op a AE kan slechts arcsin(a) graden van de Zon afwijken. Maar hun banen zijn ellipsen, dus het touw rekt en krimpt — Mercurius' grootste elongatie varieert van ~18° dicht bij perihelium tot ~28° bij aphelium, terwijl Venus rond 46° blijft hangen. Buitenplaneten hebben helemaal geen touw; ze zwerven helemaal tot oppositie. Binnen of buiten Earths baan — die ene lijn deelt de naked-eye planeten in twee."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_maxelong_glossary",
+    "old": "Een binnenplaneet kan slechts zover van de Zon af zingen: ε_max = arcsin(a(1+e)) — de arcsin van zijn APHELIUMAFSTAND in AU, het verste punt van zijn baan. Venus maximaliseert rond 47° (aphelium 0,73 AE), Mercurius rond 28° (aphelium 0,47 AE) — waarom beide altijd ochtend- of avondsterren zijn.",
+    "new": "Een binnenplaneet kan slechts zover van de Zon af zingen: ε_max = arcsin(a(1+e)) — de arcsin van zijn APHELIUMAFSTAND in AE, het verste punt van zijn baan. Venus maximaliseert rond 47° (aphelium 0,73 AE), Mercurius rond 28° (aphelium 0,47 AE) — waarom beide altijd ochtend- of avondsterren zijn."
+  }
+]

@@ -2,7 +2,7 @@
   "name": "Parker Solar Probe",
   "type": "ZONNEVERKENNER · ACTIEF",
   "first": "Dichtstbij de Zon gevlogen ruimtevaartuig ooit (6,1 M km, 9,86 R☉); eerste ruimtevaartuig dat de zonnekroon binnenging (2021-04-28); snelste door mensen gemaakt object (~191 km/s)",
-  "description": "Parker Solar Probe voerde de lancering met de hoogste energie uit die ooit voor een wetenschappelijke missie werd gebruikt — C3 van 154 km²/s², waarvoor een aangepaste Star 48BV solid derde trap bovenop een Delta IV Heavy nodig was om uit de aarde te ontsnappen in een naar-de-Zon-vallende baan. Zeven Venus-zwaartekrachtmanoeuvres over zes jaar verlaagden het perihelium geleidelijk van 0,16 AU (P1, 2018-11-05) naar 0,046 AU (P22, 2024-12-24 — 9,86 zonnestralen, 6,1 miljoen km van het oppervlak). Bij P8 op 2021-04-28 dook Parker onder het kritieke Alfvén-oppervlak — het eerste ruimtevaartuig ooit dat de zonnekroon betrad. Bij P22 bereikte het ~191 km/s, waardoor het het snelste door mensen gemaakte object aller tijden werd. Het 11,43 cm dikke koolstof-koolstofhitteschild hield 1.377 °C vol terwijl de ruimtevaartuigbus 1 meter erachter op kamertemperatuur bleef.",
+  "description": "Parker Solar Probe voerde de lancering met de hoogste energie uit die ooit voor een wetenschappelijke missie werd gebruikt — C3 van 154 km²/s², waarvoor een aangepaste Star 48BV solid derde trap bovenop een Delta IV Heavy nodig was om uit de aarde te ontsnappen in een naar-de-Zon-vallende baan. Zeven Venus-zwaartekrachtmanoeuvres over zes jaar verlaagden het perihelium geleidelijk van 0,16 AE (P1, 2018-11-05) naar 0,046 AE (P22, 2024-12-24 — 9,86 zonnestralen, 6,1 miljoen km van het oppervlak). Bij P8 op 2021-04-28 dook Parker onder het kritieke Alfvén-oppervlak — het eerste ruimtevaartuig ooit dat de zonnekroon betrad. Bij P22 bereikte het ~191 km/s, waardoor het het snelste door mensen gemaakte object aller tijden werd. Het 11,43 cm dikke koolstof-koolstofhitteschild hield 1.377 °C vol terwijl de ruimtevaartuigbus 1 meter erachter op kamertemperatuur bleef.",
   "events": [
     {
       "met": 0,
@@ -19,7 +19,7 @@
     {
       "met": 85,
       "label": "P1 — EERSTE PERIHELIUM",
-      "note": "2018-11-05, 0,16 AU. Dichtstbij de Zon ooit, Helios 2 verslagen.",
+      "note": "2018-11-05, 0,16 AE. Dichtstbij de Zon ooit, Helios 2 verslagen.",
       "type": "info"
     },
     {

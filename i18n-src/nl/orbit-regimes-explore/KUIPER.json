@@ -1,37 +1,37 @@
 {
   "name": "Kuiper Belt",
   "short": "KUIPER",
-  "story": "Een ring van ijzige lichamen voorbij Neptunus — 30 tot 50 AU. De bevroren tegenhanger van de planetoïdengordel: honderdduizenden lichamen waarvan alleen de grootste zijn waargenomen. Samengesteld uit methaan, ammoniak, waterijs en gesteente. Pluto was het eerste lid dat werd geïdentificeerd, in 1930, hoewel de gordel pas in de jaren negentig als een populatie werd erkend toen Jewitt en Luu het tweede lid vonden (1992 QB1). New Horizons gaf de mensheid zijn eerste blik van dichtbij op TWEE Kuiper-objecten — Pluto in 2015 en Arrokoth in 2019.",
+  "story": "Een ring van ijzige lichamen voorbij Neptunus — 30 tot 50 AE. De bevroren tegenhanger van de planetoïdengordel: honderdduizenden lichamen waarvan alleen de grootste zijn waargenomen. Samengesteld uit methaan, ammoniak, waterijs en gesteente. Pluto was het eerste lid dat werd geïdentificeerd, in 1930, hoewel de gordel pas in de jaren negentig als een populatie werd erkend toen Jewitt en Luu het tweede lid vonden (1992 QB1). New Horizons gaf de mensheid zijn eerste blik van dichtbij op TWEE Kuiper-objecten — Pluto in 2015 en Arrokoth in 2019.",
   "comparison": "Als de asteroïdengordel een dunne ring rond het binnenste zonnestelsel is, is de Kuipergordel 1.000× breder en bevat deze tientallen keren meer massa (~50×+). Zonlicht op Pluto is 1/1.600ste van zijn sterkte op Aarde.",
   "residents": [
     {
       "id": "pluto",
-      "label": "Pluto — 39,5 AU, grootste bekende",
+      "label": "Pluto — 39,5 AE, grootste bekende",
       "agency": "NATURAL"
     },
     {
       "id": "eris",
-      "label": "Eris — 96,4 AU (scattered disc)",
+      "label": "Eris — 96,4 AE (scattered disc)",
       "agency": "NATURAL"
     },
     {
       "id": "makemake",
-      "label": "Makemake — 45,8 AU",
+      "label": "Makemake — 45,8 AE",
       "agency": "NATURAL"
     },
     {
       "id": "haumea",
-      "label": "Haumea — 43,3 AU, snelle rotator",
+      "label": "Haumea — 43,3 AE, snelle rotator",
       "agency": "NATURAL"
     },
     {
       "id": "quaoar",
-      "label": "Quaoar — 43,4 AU, heeft ringen",
+      "label": "Quaoar — 43,4 AE, heeft ringen",
       "agency": "NATURAL"
     },
     {
       "id": "arrokoth",
-      "label": "Arrokoth — 44,6 AU, contactdubbel",
+      "label": "Arrokoth — 44,6 AE, contactdubbel",
       "agency": "NATURAL"
     }
   ],

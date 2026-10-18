@@ -78,3 +78,4 @@ place/feature lists above.
 - DONE: science titles with wrong meaning: lagrange-points es "Puntos extraños", it "Punti di ritardo", ja "ラグポイント" → Wikipedia forms; UI labels science_layer_hill_sphere/lagrange_points untranslated in ru/ja/zh/hi/ar/es/it → page titles.
 - DONE 2026-10-18: ja/zh-CN/ko/hi/ar scientist surnames (were Latin) (~250: Hill, Lagrange, Laplace, Oberth, Van Allen, Kessler, Oort, Kirkwood, Whipple, Shannon, Kohoutek, Hohmann, Tsiolkovsky, Roche) → bare glossary keys from Wikipedia + glossary-apply.
 - Left Latin in hi (no hi.wikipedia form): Hill, Oberth, Van Allen, Whipple, Kohoutek; ko Whipple. Hohmann in each locale is the untranslated lab_f_hohmann_title UI string (item 5).
+- DONE 2026-10-18: nl astronomical unit = AE everywhere (nl.wikipedia 'AE, internationaal au of ua'; 114 strings); es J2000 Julian day 2.451.545,0 -> 2 451 545,0 (the other 22 'N.NNN' hits are numeric met fields, not text).

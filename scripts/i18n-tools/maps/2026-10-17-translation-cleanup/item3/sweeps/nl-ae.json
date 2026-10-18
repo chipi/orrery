@@ -1,0 +1,572 @@
+[
+  {
+    "rel": "belts/asteroid.json",
+    "at": "location",
+    "old": "Tussen Mars en Jupiter · 2,2–3,2 AU van de Zon",
+    "new": "Tussen Mars en Jupiter · 2,2–3,2 AE van de Zon"
+  },
+  {
+    "rel": "belts/asteroid.json",
+    "at": "science_sections.1.why",
+    "old": "De gordel beslaat de annulus 2.2–3.2 AU. Kirkwood-gaten — lege baanzones bij Jupiter middel-bewegingsresonanties — bepalen het patroon van de populatie.",
+    "new": "De gordel beslaat de annulus 2.2–3.2 AE. Kirkwood-gaten — lege baanzones bij Jupiter middel-bewegingsresonanties — bepalen het patroon van de populatie."
+  },
+  {
+    "rel": "belts/kuiper.json",
+    "at": "location",
+    "old": "Voorbij Neptunus · 30–50 AU van de zon",
+    "new": "Voorbij Neptunus · 30–50 AE van de zon"
+  },
+  {
+    "rel": "belts/kuiper.json",
+    "at": "science_sections.0.why",
+    "old": "De Kuipergordel is het trans-Neptuniaanse overblijfsel van de protoplanetaire schijf — 30 tot 50 AU, gedomineerd door ijs. Pluto, Eris, Haumea, Makemake bevinden zich hier.",
+    "new": "De Kuipergordel is het trans-Neptuniaanse overblijfsel van de protoplanetaire schijf — 30 tot 50 AE, gedomineerd door ijs. Pluto, Eris, Haumea, Makemake bevinden zich hier."
+  },
+  {
+    "rel": "belts/kuiper.json",
+    "at": "science_sections.1.why",
+    "old": "De klassieke KBO's draaien tussen 42 en 48 AU in banen met lage excentriciteit en lage inclinatie — zij zijn sinds het vroege stelsel grotendeels ongestoord gebleven.",
+    "new": "De klassieke KBO's draaien tussen 42 en 48 AE in banen met lage excentriciteit en lage inclinatie — zij zijn sinds het vroege stelsel grotendeels ongestoord gebleven."
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "pale-blue-dot.distance",
+    "old": "~40,5 AU (6 miljard km)",
+    "new": "~40,5 AE (6 miljard km)"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "pluto-nh.distance",
+    "old": "~34 AU (5 miljard km)",
+    "new": "~34 AE (5 miljard km)"
+  },
+  {
+    "rel": "deep-sky.json",
+    "at": "sun-sdo.distance",
+    "old": "1 AU",
+    "new": "1 AE"
+  },
+  {
+    "rel": "fleet/orbiter/parker-solar-probe.json",
+    "at": "description",
+    "old": "NASA's missie naar de Zon. Gelanceerd 2018-08-12 op een Delta IV Heavy + Star 48BV stack met de hoogste C3 ooit bereikt voor een wetenschappelijke lading (154 km²/s²). Zeven Venus-zwaartekrachtassistenten over zes jaar brachten het perihelium naar binnen van 0,16 AU (P1) tot 0,046 AU (P22, 2024-12-24) — 9,86 zonnestralen, 6,1 miljoen km van het oppervlak van de Zon. Bij P8 (2021-04-28) dook Parker onder de kritische Alfvén-oppervlakte — het eerste ruimtevaartuig dat de corona van de Zon betrad. Topsnelheid bij perihelium: 192,22 km/s, het snelste object gemaakt door de mens ooit.",
+    "new": "NASA's missie naar de Zon. Gelanceerd 2018-08-12 op een Delta IV Heavy + Star 48BV stack met de hoogste C3 ooit bereikt voor een wetenschappelijke lading (154 km²/s²). Zeven Venus-zwaartekrachtassistenten over zes jaar brachten het perihelium naar binnen van 0,16 AE (P1) tot 0,046 AE (P22, 2024-12-24) — 9,86 zonnestralen, 6,1 miljoen km van het oppervlak van de Zon. Bij P8 (2021-04-28) dook Parker onder de kritische Alfvén-oppervlakte — het eerste ruimtevaartuig dat de corona van de Zon betrad. Topsnelheid bij perihelium: 192,22 km/s, het snelste object gemaakt door de mens ooit."
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-11.json",
+    "at": "description",
+    "old": "Spin-gestabiliseerde RTG-aangedreven sonde (~259 kg), zus van Pioneer 10 met dezelfde bus en Pioneer Plaque. Gelanceerd op 06-04-1973 met Atlas SLV-3D Centaur D-1A + Star-37E vanaf Cape Canaveral LC-36B. Jupiter-flyby op 03-12-1974 op 43 000 km — de dichtstbij van elke Pioneer-ontmoeting, leverde de eerste poolregio-beelden en de zwaartekrachtsondersteuning nodig voor Saturnus. Saturnus-ontmoeting op 01-09-1979 op 21 000 km van de wolkenkoppen — eerste gedetailleerde beelden van het ringensysteem. Heliosfeer-waarnemingen voortgezet tot het laatste contact op 24-11-1995. Nu ~93 AU van de Zon, op weg naar de Arend.",
+    "new": "Spin-gestabiliseerde RTG-aangedreven sonde (~259 kg), zus van Pioneer 10 met dezelfde bus en Pioneer Plaque. Gelanceerd op 06-04-1973 met Atlas SLV-3D Centaur D-1A + Star-37E vanaf Cape Canaveral LC-36B. Jupiter-flyby op 03-12-1974 op 43 000 km — de dichtstbij van elke Pioneer-ontmoeting, leverde de eerste poolregio-beelden en de zwaartekrachtsondersteuning nodig voor Saturnus. Saturnus-ontmoeting op 01-09-1979 op 21 000 km van de wolkenkoppen — eerste gedetailleerde beelden van het ringensysteem. Heliosfeer-waarnemingen voortgezet tot het laatste contact op 24-11-1995. Nu ~93 AE van de Zon, op weg naar de Arend."
+  },
+  {
+    "rel": "fleet/orbiter/solar-orbiter.json",
+    "at": "description",
+    "old": "ESA-geleide Solar Orbiter is het eerste ruimtevaartuig ontworpen om de poolgebieden van de zon in nauwkeurig detail te fotograferen — met herhaalde Venus-zwaartekrachtassisties gedurende een decennium om uit de ecliptica te klimmen richting ~33° heliografische inclinatie. Draagt tien instrumenten die remote sensing (PHI-magnetograaf, EUI extreme-UV-imager, SPICE-spectrometer, STIX röntgen-imager, METIS-coronagraaf, SoloHI-heliosferische imager) combineren met in-situ metingen (magnetometer, energetische deeltjes, zonnewindplasma, radio + plasmagolven). Gelanceerd 2020-02-10 vanaf Cape Canaveral op een NASA Atlas V 411. Eerste perihelium 2020-06-15 op 0,51 AU. Werkperihelium 0,28 AU (~62 R☉), binnen de periheliumafstand van Mercurius.",
+    "new": "ESA-geleide Solar Orbiter is het eerste ruimtevaartuig ontworpen om de poolgebieden van de zon in nauwkeurig detail te fotograferen — met herhaalde Venus-zwaartekrachtassisties gedurende een decennium om uit de ecliptica te klimmen richting ~33° heliografische inclinatie. Draagt tien instrumenten die remote sensing (PHI-magnetograaf, EUI extreme-UV-imager, SPICE-spectrometer, STIX röntgen-imager, METIS-coronagraaf, SoloHI-heliosferische imager) combineren met in-situ metingen (magnetometer, energetische deeltjes, zonnewindplasma, radio + plasmagolven). Gelanceerd 2020-02-10 vanaf Cape Canaveral op een NASA Atlas V 411. Eerste perihelium 2020-06-15 op 0,51 AE. Werkperihelium 0,28 AE (~62 R☉), binnen de periheliumafstand van Mercurius."
+  },
+  {
+    "rel": "fleet/orbiter/ulysses.json",
+    "at": "description",
+    "old": "Gezamenlijke ESA + NASA zon- / heliosfeer-missie, gebouwd door Dornier met Amerikaanse wetenschappelijke bijdrage. Gelanceerd op 06-10-1990 vanaf STS-41 Discovery + IUS + PAM-S op een hoog-energetisch direct traject naar Jupiter — de enige manier om een sonde uit het ecliptica-vlak te slingeren zonder prohibitieve delta-V. Jupiter-flyby op 08-02-1992 boog de sonde af in een 80°-hellingsbaan om de Zon (1,3 × 5,4 AU, periode 6,2 jaar) — de eerste en nog steeds enige sonde die over de zonnepolen vloog. Drie volledige poolbanen gaven ons de 3D-structuur van het heliosferische stroomvlak, de snellere polaire / langzamere equatoriale zonnewind en het enige meerjarendekkende record. Missie eindigde in 2009.",
+    "new": "Gezamenlijke ESA + NASA zon- / heliosfeer-missie, gebouwd door Dornier met Amerikaanse wetenschappelijke bijdrage. Gelanceerd op 06-10-1990 vanaf STS-41 Discovery + IUS + PAM-S op een hoog-energetisch direct traject naar Jupiter — de enige manier om een sonde uit het ecliptica-vlak te slingeren zonder prohibitieve delta-V. Jupiter-flyby op 08-02-1992 boog de sonde af in een 80°-hellingsbaan om de Zon (1,3 × 5,4 AE, periode 6,2 jaar) — de eerste en nog steeds enige sonde die over de zonnepolen vloog. Drie volledige poolbanen gaven ons de 3D-structuur van het heliosferische stroomvlak, de snellere polaire / langzamere equatoriale zonnewind en het enige meerjarendekkende record. Missie eindigde in 2009."
+  },
+  {
+    "rel": "missions/jupiter/pioneer-10.json",
+    "at": "description",
+    "old": "Pioneer 10 was de baanbreker — eerst om de asteroïdengordel over te steken (waarvan we later ontdekten dat deze veel minder gevaarlijk was dan voorspeld), eerst om Jupiter op korte afstand af te beelden, eerst om een heliocentrische afstand groter dan Pluto's perihelium te bereiken (1983). Het draagt de Pioneer-plaquette die is ontworpen door Carl Sagan, Frank Drake en Linda Salzman Sagan — de eerste bewuste interstellaire boodschap van de mensheid. Laatste succesvolle contact op 2003-01-23 vanaf ~82 AU; het ruimtevaartuig drijft nu richting het sterrenbeeld Stier, met een ontmoeting in de buurt van Aldebaran in ongeveer twee miljoen jaar.",
+    "new": "Pioneer 10 was de baanbreker — eerst om de asteroïdengordel over te steken (waarvan we later ontdekten dat deze veel minder gevaarlijk was dan voorspeld), eerst om Jupiter op korte afstand af te beelden, eerst om een heliocentrische afstand groter dan Pluto's perihelium te bereiken (1983). Het draagt de Pioneer-plaquette die is ontworpen door Carl Sagan, Frank Drake en Linda Salzman Sagan — de eerste bewuste interstellaire boodschap van de mensheid. Laatste succesvolle contact op 2003-01-23 vanaf ~82 AE; het ruimtevaartuig drijft nu richting het sterrenbeeld Stier, met een ontmoeting in de buurt van Aldebaran in ongeveer twee miljoen jaar."
+  },
+  {
+    "rel": "missions/saturn/pioneer-11.json",
+    "at": "description",
+    "old": "Tweelingbroer van Pioneer 10, een jaar later gelanceerd. Pioneer 11 gebruikte de zwaartekracht van Jupiter om zijn traject naar Saturnus af te buigen — het canonieke bewijs van zwaartekrachtassistentie-voortstuwing, de techniek die later de Voyager Grand Tour mogelijk maakte. Bij Saturnus ontdekte hij de F-ring en een kleine binnenmaan die later bleek uit het co-orbitale paar Janus/Epimetheus te bestaan. Draagt dezelfde Pioneer-plaat als zijn tweelingbroer. Signaal verloren op 1995-09-30 op een heliocentrische afstand van ~43 AU; de ruimtesonde koerst nu af op het sterrenbeeld Arend.",
+    "new": "Tweelingbroer van Pioneer 10, een jaar later gelanceerd. Pioneer 11 gebruikte de zwaartekracht van Jupiter om zijn traject naar Saturnus af te buigen — het canonieke bewijs van zwaartekrachtassistentie-voortstuwing, de techniek die later de Voyager Grand Tour mogelijk maakte. Bij Saturnus ontdekte hij de F-ring en een kleine binnenmaan die later bleek uit het co-orbitale paar Janus/Epimetheus te bestaan. Draagt dezelfde Pioneer-plaat als zijn tweelingbroer. Signaal verloren op 1995-09-30 op een heliocentrische afstand van ~43 AE; de ruimtesonde koerst nu af op het sterrenbeeld Arend."
+  },
+  {
+    "rel": "missions/saturn/voyager-1.json",
+    "at": "first",
+    "old": "Het verste door mensen gemaakte object — momenteel ongeveer 170 AU van de Zon in interstellaire ruimte",
+    "new": "Het verste door mensen gemaakte object — momenteel ongeveer 170 AE van de Zon in interstellaire ruimte"
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "description",
+    "old": "Parker Solar Probe voerde de lancering met de hoogste energie uit die ooit voor een wetenschappelijke missie werd gebruikt — C3 van 154 km²/s², waarvoor een aangepaste Star 48BV solid derde trap bovenop een Delta IV Heavy nodig was om uit de aarde te ontsnappen in een naar-de-Zon-vallende baan. Zeven Venus-zwaartekrachtmanoeuvres over zes jaar verlaagden het perihelium geleidelijk van 0,16 AU (P1, 2018-11-05) naar 0,046 AU (P22, 2024-12-24 — 9,86 zonnestralen, 6,1 miljoen km van het oppervlak). Bij P8 op 2021-04-28 dook Parker onder het kritieke Alfvén-oppervlak — het eerste ruimtevaartuig ooit dat de zonnekroon betrad. Bij P22 bereikte het ~191 km/s, waardoor het het snelste door mensen gemaakte object aller tijden werd. Het 11,43 cm dikke koolstof-koolstofhitteschild hield 1.377 °C vol terwijl de ruimtevaartuigbus 1 meter erachter op kamertemperatuur bleef.",
+    "new": "Parker Solar Probe voerde de lancering met de hoogste energie uit die ooit voor een wetenschappelijke missie werd gebruikt — C3 van 154 km²/s², waarvoor een aangepaste Star 48BV solid derde trap bovenop een Delta IV Heavy nodig was om uit de aarde te ontsnappen in een naar-de-Zon-vallende baan. Zeven Venus-zwaartekrachtmanoeuvres over zes jaar verlaagden het perihelium geleidelijk van 0,16 AE (P1, 2018-11-05) naar 0,046 AE (P22, 2024-12-24 — 9,86 zonnestralen, 6,1 miljoen km van het oppervlak). Bij P8 op 2021-04-28 dook Parker onder het kritieke Alfvén-oppervlak — het eerste ruimtevaartuig ooit dat de zonnekroon betrad. Bij P22 bereikte het ~191 km/s, waardoor het het snelste door mensen gemaakte object aller tijden werd. Het 11,43 cm dikke koolstof-koolstofhitteschild hield 1.377 °C vol terwijl de ruimtevaartuigbus 1 meter erachter op kamertemperatuur bleef."
+  },
+  {
+    "rel": "missions/sun/parker-solar-probe.json",
+    "at": "events.2.note",
+    "old": "2018-11-05, 0,16 AU. Dichtstbij de Zon ooit, Helios 2 verslagen.",
+    "new": "2018-11-05, 0,16 AE. Dichtstbij de Zon ooit, Helios 2 verslagen."
+  },
+  {
+    "rel": "missions/sun/solar-orbiter.json",
+    "at": "description",
+    "old": "Door ESA geleide missie met een NASA-lancering en bijdrage van één instrument. Waar Parker Solar Probe dichterbij komt dan wie dan ook ooit is geweest, gaat Solar Orbiter hoger — door middel van herhaalde Venus-zwaartekrachtassisties gedurende een decennium om uit de ecliptica te klimmen naar ~33° heliografische inclinatie. Vanaf dat uitkijkpunt fotografeert zijn instrumentenpakket (PHI, EUI, SPICE, STIX, METIS, SoloHI + vier in-situ pakketten) de magnetische velden van de poolgebieden van de zon, volgt zonnewindversnelling in real-time, en verbindt remote en in-situ metingen gelijktijdig. Eerste perihelium 2020-06-15 op 0,51 AU. Dichtste perihelium tot op heden 2022-10-12 op 0,29 AU (binnen het perihelium van Mercurius).",
+    "new": "Door ESA geleide missie met een NASA-lancering en bijdrage van één instrument. Waar Parker Solar Probe dichterbij komt dan wie dan ook ooit is geweest, gaat Solar Orbiter hoger — door middel van herhaalde Venus-zwaartekrachtassisties gedurende een decennium om uit de ecliptica te klimmen naar ~33° heliografische inclinatie. Vanaf dat uitkijkpunt fotografeert zijn instrumentenpakket (PHI, EUI, SPICE, STIX, METIS, SoloHI + vier in-situ pakketten) de magnetische velden van de poolgebieden van de zon, volgt zonnewindversnelling in real-time, en verbindt remote en in-situ metingen gelijktijdig. Eerste perihelium 2020-06-15 op 0,51 AE. Dichtste perihelium tot op heden 2022-10-12 op 0,29 AE (binnen het perihelium van Mercurius)."
+  },
+  {
+    "rel": "missions/sun/solar-orbiter.json",
+    "at": "events.2.note",
+    "old": "2020-06-15, 0,51 AU. Begin van eerste wetenschappelijk onderzoek.",
+    "new": "2020-06-15, 0,51 AE. Begin van eerste wetenschappelijk onderzoek."
+  },
+  {
+    "rel": "missions/sun/solar-orbiter.json",
+    "at": "events.4.note",
+    "old": "2022-10-12, 0,29 AU. Binnen het perihelium van Mercurius.",
+    "new": "2022-10-12, 0,29 AE. Binnen het perihelium van Mercurius."
+  },
+  {
+    "rel": "orbit-regimes-explore/BELT.json",
+    "at": "story",
+    "old": "Een ring van rotsachtige overblijfselen tussen Mars en Jupiter — 2,2 tot 3,2 AU. Honderdduizenden objecten gecatalogiseerd; geschatte totale massa minder dan 4% van de Maan. Niet het dichtbevolkte asteroïdeveld uit sciencefiction: de typische afstand tussen objecten is ongeveer 1 miljoen kilometer. De gordel is nooit samengegroeid tot een planeet omdat de zwaartekracht van Jupiter de banen bleef verstoren, waardoor botsingen niet konden samensmelten. Drie Kirkwood-kloven markeren resonanties met Jupiter waar asteroïden worden weggeveegd.",
+    "new": "Een ring van rotsachtige overblijfselen tussen Mars en Jupiter — 2,2 tot 3,2 AE. Honderdduizenden objecten gecatalogiseerd; geschatte totale massa minder dan 4% van de Maan. Niet het dichtbevolkte asteroïdeveld uit sciencefiction: de typische afstand tussen objecten is ongeveer 1 miljoen kilometer. De gordel is nooit samengegroeid tot een planeet omdat de zwaartekracht van Jupiter de banen bleef verstoren, waardoor botsingen niet konden samensmelten. Drie Kirkwood-kloven markeren resonanties met Jupiter waar asteroïden worden weggeveegd."
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "story",
+    "old": "Het buitenste planetaire domein — 5 tot 30 AU. Twee gasreuzen (Jupiter, Saturnus) met waterstof-helium enveloppen van duizenden kilometers dik boven kleine rotsachtige kernen; twee ijsreuzen (Uranus, Neptunus) met water/ammoniak/methaan mantels onder dunnere gaslagen. Samen bevatten ze 99% van alle planetaire massa in het zonnestelsel. Elk heeft zijn eigen maansysteem dat fungeert als een miniatuur-zonnestelsel op zich — Jupiter alleen al heeft 95 bekende manen, waaronder vier die groter zijn dan Pluto.",
+    "new": "Het buitenste planetaire domein — 5 tot 30 AE. Twee gasreuzen (Jupiter, Saturnus) met waterstof-helium enveloppen van duizenden kilometers dik boven kleine rotsachtige kernen; twee ijsreuzen (Uranus, Neptunus) met water/ammoniak/methaan mantels onder dunnere gaslagen. Samen bevatten ze 99% van alle planetaire massa in het zonnestelsel. Elk heeft zijn eigen maansysteem dat fungeert als een miniatuur-zonnestelsel op zich — Jupiter alleen al heeft 95 bekende manen, waaronder vier die groter zijn dan Pluto."
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "residents.0.label",
+    "old": "Jupiter — 5,20 AU",
+    "new": "Jupiter — 5,20 AE"
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "residents.1.label",
+    "old": "Saturnus — 9,58 AU, ringensysteem",
+    "new": "Saturnus — 9,58 AE, ringensysteem"
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "residents.2.label",
+    "old": "Uranus — 19,18 AU, gekanteld 97°",
+    "new": "Uranus — 19,18 AE, gekanteld 97°"
+  },
+  {
+    "rel": "orbit-regimes-explore/GIANTS.json",
+    "at": "residents.3.label",
+    "old": "Neptunus — 30,07 AU, snelste winden in het systeem",
+    "new": "Neptunus — 30,07 AE, snelste winden in het systeem"
+  },
+  {
+    "rel": "orbit-regimes-explore/HELIOPAUSE.json",
+    "at": "story",
+    "old": "De grens waar de zonnewind van de Zon de strijd verliest tegen het interstellaire medium — ruwweg op 120 AU afstand. Binnen bevindt zich de heliosfeer, een bel van geladen zonnedeeltjes die naar buiten stromen met honderden km/s. Daarbuiten: het koude, dichte gas en de kosmische straling van de Melkweg zelf. De Voyager-sondes zijn de enige artefacten die de mensheid ooit over deze grens heeft geplaatst — Voyager 1 stak over in 2012, Voyager 2 in 2018. Beide zenden nog steeds zwakjes gegevens uit vanuit de interstellaire ruimte.",
+    "new": "De grens waar de zonnewind van de Zon de strijd verliest tegen het interstellaire medium — ruwweg op 120 AE afstand. Binnen bevindt zich de heliosfeer, een bel van geladen zonnedeeltjes die naar buiten stromen met honderden km/s. Daarbuiten: het koude, dichte gas en de kosmische straling van de Melkweg zelf. De Voyager-sondes zijn de enige artefacten die de mensheid ooit over deze grens heeft geplaatst — Voyager 1 stak over in 2012, Voyager 2 in 2018. Beide zenden nog steeds zwakjes gegevens uit vanuit de interstellaire ruimte."
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "story",
+    "old": "Een ring van ijzige lichamen voorbij Neptunus — 30 tot 50 AU. De bevroren tegenhanger van de planetoïdengordel: honderdduizenden lichamen waarvan alleen de grootste zijn waargenomen. Samengesteld uit methaan, ammoniak, waterijs en gesteente. Pluto was het eerste lid dat werd geïdentificeerd, in 1930, hoewel de gordel pas in de jaren negentig als een populatie werd erkend toen Jewitt en Luu het tweede lid vonden (1992 QB1). New Horizons gaf de mensheid zijn eerste blik van dichtbij op TWEE Kuiper-objecten — Pluto in 2015 en Arrokoth in 2019.",
+    "new": "Een ring van ijzige lichamen voorbij Neptunus — 30 tot 50 AE. De bevroren tegenhanger van de planetoïdengordel: honderdduizenden lichamen waarvan alleen de grootste zijn waargenomen. Samengesteld uit methaan, ammoniak, waterijs en gesteente. Pluto was het eerste lid dat werd geïdentificeerd, in 1930, hoewel de gordel pas in de jaren negentig als een populatie werd erkend toen Jewitt en Luu het tweede lid vonden (1992 QB1). New Horizons gaf de mensheid zijn eerste blik van dichtbij op TWEE Kuiper-objecten — Pluto in 2015 en Arrokoth in 2019."
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "residents.0.label",
+    "old": "Pluto — 39,5 AU, grootste bekende",
+    "new": "Pluto — 39,5 AE, grootste bekende"
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "residents.1.label",
+    "old": "Eris — 96,4 AU (scattered disc)",
+    "new": "Eris — 96,4 AE (scattered disc)"
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "residents.2.label",
+    "old": "Makemake — 45,8 AU",
+    "new": "Makemake — 45,8 AE"
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "residents.3.label",
+    "old": "Haumea — 43,3 AU, snelle rotator",
+    "new": "Haumea — 43,3 AE, snelle rotator"
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "residents.4.label",
+    "old": "Quaoar — 43,4 AU, heeft ringen",
+    "new": "Quaoar — 43,4 AE, heeft ringen"
+  },
+  {
+    "rel": "orbit-regimes-explore/KUIPER.json",
+    "at": "residents.5.label",
+    "old": "Arrokoth — 44,6 AU, contactdubbel",
+    "new": "Arrokoth — 44,6 AE, contactdubbel"
+  },
+  {
+    "rel": "orbit-regimes-explore/OORT.json",
+    "at": "story",
+    "old": "Een hypothetische bolvormige schil van ijzige lichamen die het hele zonnestelsel omringt — zich uitstrekkend van ongeveer 2.000 tot 100.000 AU. Nooit direct waargenomen, alleen afgeleid: de langperiodieke kometen die we zien hebben banen die zo wijd zijn dat ze hiervandaan moeten komen. Geschatte populatie: biljoenen lichamen. De Oortwolk vertegenwoordigt de overblijfselen van de geboortewolk van het zonnestelsel, dynamisch stabiel gedurende miljarden jaren op deze afstand van de zon. Passerende sterren kunnen individuele objecten naar binnen verstoren, waardoor ze de kometen worden die we waarnemen.",
+    "new": "Een hypothetische bolvormige schil van ijzige lichamen die het hele zonnestelsel omringt — zich uitstrekkend van ongeveer 2.000 tot 100.000 AE. Nooit direct waargenomen, alleen afgeleid: de langperiodieke kometen die we zien hebben banen die zo wijd zijn dat ze hiervandaan moeten komen. Geschatte populatie: biljoenen lichamen. De Oortwolk vertegenwoordigt de overblijfselen van de geboortewolk van het zonnestelsel, dynamisch stabiel gedurende miljarden jaren op deze afstand van de zon. Passerende sterren kunnen individuele objecten naar binnen verstoren, waardoor ze de kometen worden die we waarnemen."
+  },
+  {
+    "rel": "orbit-regimes-explore/SCATTERED.json",
+    "at": "story",
+    "old": "Hemellichamen in sterk elliptische banen voorbij de Kuipergordel — 50 tot 1.000 AU. Ze werden waarschijnlijk lang geleden hierheen verstrooid door zwaartekrachtinteracties met Neptunus. Sedna is het prototype-Sednoid: 76 AU bij perihelium, 937 AU bij aphelium, een baan van 11.400 jaar. Hun banen liggen te ver om door Neptunus in hun huidige positie geplaatst te zijn, wat wijst op invloeden van passerende sterren, een hypothetische Planeet negen, of de verloren broers en zussen van de Zon uit haar geboortecluster. Geen enkel ruimtevaartuig heeft ze ooit bezocht.",
+    "new": "Hemellichamen in sterk elliptische banen voorbij de Kuipergordel — 50 tot 1.000 AE. Ze werden waarschijnlijk lang geleden hierheen verstrooid door zwaartekrachtinteracties met Neptunus. Sedna is het prototype-Sednoid: 76 AE bij perihelium, 937 AE bij aphelium, een baan van 11.400 jaar. Hun banen liggen te ver om door Neptunus in hun huidige positie geplaatst te zijn, wat wijst op invloeden van passerende sterren, een hypothetische Planeet negen, of de verloren broers en zussen van de Zon uit haar geboortecluster. Geen enkel ruimtevaartuig heeft ze ooit bezocht."
+  },
+  {
+    "rel": "orbit-regimes-explore/SCATTERED.json",
+    "at": "residents.0.label",
+    "old": "Sedna — 76-937 AU, baan van 11.400 jaar",
+    "new": "Sedna — 76-937 AE, baan van 11.400 jaar"
+  },
+  {
+    "rel": "orbit-regimes-explore/TERRESTRIAL.json",
+    "at": "story",
+    "old": "Het rotsachtige binnenste zonnestelsel — 0,4 tot 1,5 AU van de zon. Vier kleine werelden met metallische kernen, silicaatmantels en dunne of geen atmosferen. Ze zijn ontstaan binnen de vrieslijn, waar het te heet was voor vluchtige ijzen om te condenseren, dus alleen vuurvaste materialen (silicaten, ijzer, nikkel) bleven vast. Drie van de vier zijn doelwitten geweest van bemande verkenning (aarde, maan, Mars-waarts).",
+    "new": "Het rotsachtige binnenste zonnestelsel — 0,4 tot 1,5 AE van de zon. Vier kleine werelden met metallische kernen, silicaatmantels en dunne of geen atmosferen. Ze zijn ontstaan binnen de vrieslijn, waar het te heet was voor vluchtige ijzen om te condenseren, dus alleen vuurvaste materialen (silicaten, ijzer, nikkel) bleven vast. Drie van de vier zijn doelwitten geweest van bemande verkenning (aarde, maan, Mars-waarts)."
+  },
+  {
+    "rel": "orbit-regimes-explore/TERRESTRIAL.json",
+    "at": "residents.0.label",
+    "old": "Mercurius — 0,39 AU",
+    "new": "Mercurius — 0,39 AE"
+  },
+  {
+    "rel": "orbit-regimes-explore/TERRESTRIAL.json",
+    "at": "residents.1.label",
+    "old": "Venus — 0,72 AU",
+    "new": "Venus — 0,72 AE"
+  },
+  {
+    "rel": "orbit-regimes-explore/TERRESTRIAL.json",
+    "at": "residents.2.label",
+    "old": "Aarde — 1,00 AU",
+    "new": "Aarde — 1,00 AE"
+  },
+  {
+    "rel": "orbit-regimes-explore/TERRESTRIAL.json",
+    "at": "residents.3.label",
+    "old": "Mars — 1,52 AU",
+    "new": "Mars — 1,52 AE"
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "science_sections.0.why",
+    "old": "Op een gemiddelde afstand van 30,07 AU is Neptunus zo ver weg dat een eenrichtingssignaal 4 uur per kant reist. Voyager 2 had 12 jaar nodig om het te bereiken.",
+    "new": "Op een gemiddelde afstand van 30,07 AE is Neptunus zo ver weg dat een eenrichtingssignaal 4 uur per kant reist. Voyager 2 had 12 jaar nodig om het te bereiken."
+  },
+  {
+    "rel": "planets/neptune.json",
+    "at": "science_sections.2.why",
+    "old": "Neptunus' geringe excentriciteit van 0,0086 geeft een baan zo cirkelvormig dat de perihelium–aphelium-variatie onder de 200 miljoen km bedraagt op een halve lange as van 30 AU — een variatie van 1,4 %.",
+    "new": "Neptunus' geringe excentriciteit van 0,0086 geeft een baan zo cirkelvormig dat de perihelium–aphelium-variatie onder de 200 miljoen km bedraagt op een halve lange as van 30 AE — een variatie van 1,4 %."
+  },
+  {
+    "rel": "planets/saturn.json",
+    "at": "science_sections.3.why",
+    "old": "De baan van Saturnus is mild (excentriciteit 0,054) maar zijn gemiddelde afstand van 9,6 AU betekent dat perihelium en aphelium 100 miljoen km verschillen — Cassini timed zijn aankomst om gebruik te maken van de inkomende snelheid.",
+    "new": "De baan van Saturnus is mild (excentriciteit 0,054) maar zijn gemiddelde afstand van 9,6 AE betekent dat perihelium en aphelium 100 miljoen km verschillen — Cassini timed zijn aankomst om gebruik te maken van de inkomende snelheid."
+  },
+  {
+    "rel": "science/_landing.json",
+    "at": "chapters.5.diagram_caption",
+    "old": "Eén AU = één Aarde-Zon-afstand. Mars is ~1,5 AU. Jupiter is ~5,2.",
+    "new": "Eén AU = één Aarde-Zon-afstand. Mars is ~1,5 AE. Jupiter is ~5,2."
+  },
+  {
+    "rel": "science/orbits/escape-velocity.json",
+    "at": "body_paragraphs.1",
+    "old": "Het loont om deze waarden te kennen: ~11,2 km/s vanaf het aardoppervlak, ~2,4 km/s vanaf de Maan, ~5,0 km/s vanaf Mars, ~618 km/s vanaf het oppervlak van de Zon, en ~42,1 km/s om aan de Zon te ontsnappen vanaf de baan van de Aarde op 1 AU. De ontsnappingssnelheid neemt af met de hoogte (grotere r), dus vertrekken vanuit een hoge baan is goedkoper dan vanaf de grond — een reden waarom missies hun snelheid in etappes opbouwen.",
+    "new": "Het loont om deze waarden te kennen: ~11,2 km/s vanaf het aardoppervlak, ~2,4 km/s vanaf de Maan, ~5,0 km/s vanaf Mars, ~618 km/s vanaf het oppervlak van de Zon, en ~42,1 km/s om aan de Zon te ontsnappen vanaf de baan van de Aarde op 1 AE. De ontsnappingssnelheid neemt af met de hoogte (grotere r), dus vertrekken vanuit een hoge baan is goedkoper dan vanaf de grond — een reden waarom missies hun snelheid in etappes opbouwen."
+  },
+  {
+    "rel": "science/orbits/keplers-laws.json",
+    "at": "body_paragraphs.2",
+    "old": "Derde wet: `T² ∝ a³`. Het kwadraat van de omlooptijd is evenredig met de derde macht van de halve lange as. Als je de Aarde op T = 1 jaar en a = 1 AU zet, kun je de omlooptijd van elke planeet aflezen uit haar afstand — of haar afstand uit haar omlooptijd. Newton zou dit later afleiden uit de zwaartekracht; Kepler kwam er door puur patronen te herkennen in de gegevens van Brahe.",
+    "new": "Derde wet: `T² ∝ a³`. Het kwadraat van de omlooptijd is evenredig met de derde macht van de halve lange as. Als je de Aarde op T = 1 jaar en a = 1 AE zet, kun je de omlooptijd van elke planeet aflezen uit haar afstand — of haar afstand uit haar omlooptijd. Newton zou dit later afleiden uit de zwaartekracht; Kepler kwam er door puur patronen te herkennen in de gegevens van Brahe."
+  },
+  {
+    "rel": "science/orbits/semi-major-axis.json",
+    "at": "body_paragraphs.2",
+    "old": "In de `/explore`-panelen van Orrery zie je dit getal in astronomische eenheden. Aarde: a ≈ 1,0 AU. Mars: 1,52 AU. Jupiter: 5,2 AU. Vul ze in de omlooptijdformule in en je hebt de klok van de orrery gereproduceerd: 1 jaar, 687 dagen, 11,86 jaar.",
+    "new": "In de `/explore`-panelen van Orrery zie je dit getal in astronomische eenheden. Aarde: a ≈ 1,0 AE. Mars: 1,52 AE. Jupiter: 5,2 AE. Vul ze in de omlooptijdformule in en je hebt de klok van de orrery gereproduceerd: 1 jaar, 687 dagen, 11,86 jaar."
+  },
+  {
+    "rel": "science/planets/asteroid-belt.json",
+    "at": "narrative_101.0",
+    "old": "Toen de Wet van Bode aan het eind van de 18e eeuw een hemellichaam voorspelde op 2,8 AU tussen Mars en Jupiter, gingen astronomen op zoek. Op nieuwjaarsdag 1801 vond Giuseppe Piazzi bij het observatorium van Palermo iets. Hij noemde het Ceres naar de beschermgodin van Sicilië, en aanvankelijk classificeerde de Royal Society het als de ontbrekende planeet. Binnen vier jaar dook een tweede lichaam — Pallas — op in dezelfde buurt. Daarna Juno (1804) en Vesta (1807). Het besef kwam langzaam: dit was geen planeet, het was een zwerm.",
+    "new": "Toen de Wet van Bode aan het eind van de 18e eeuw een hemellichaam voorspelde op 2,8 AE tussen Mars en Jupiter, gingen astronomen op zoek. Op nieuwjaarsdag 1801 vond Giuseppe Piazzi bij het observatorium van Palermo iets. Hij noemde het Ceres naar de beschermgodin van Sicilië, en aanvankelijk classificeerde de Royal Society het als de ontbrekende planeet. Binnen vier jaar dook een tweede lichaam — Pallas — op in dezelfde buurt. Daarna Juno (1804) en Vesta (1807). Het besef kwam langzaam: dit was geen planeet, het was een zwerm."
+  },
+  {
+    "rel": "science/planets/asteroid-belt.json",
+    "at": "narrative_101.2",
+    "old": "Waarom hier nooit een planeet is ontstaan, is zelf het verhaal. Jupiter staat net buiten de gordel op 5,2 AU, en tijdens de vorming van het zonnestelsel roerde de zwaartekracht van Jupiter het materiaal in de binnenste gordel zo hevig om dat accretie het niet kon winnen van fragmentatie. Alles wat tot een planeet probeerde uit te groeien, werd sneller tot brokstukken geslagen dan het zich opnieuw kon samenvoegen. De planetoïdengordel is de onvoltooide planeet, bevroren in een eerder stadium van de evolutie van het zonnestelsel.",
+    "new": "Waarom hier nooit een planeet is ontstaan, is zelf het verhaal. Jupiter staat net buiten de gordel op 5,2 AE, en tijdens de vorming van het zonnestelsel roerde de zwaartekracht van Jupiter het materiaal in de binnenste gordel zo hevig om dat accretie het niet kon winnen van fragmentatie. Alles wat tot een planeet probeerde uit te groeien, werd sneller tot brokstukken geslagen dan het zich opnieuw kon samenvoegen. De planetoïdengordel is de onvoltooide planeet, bevroren in een eerder stadium van de evolutie van het zonnestelsel."
+  },
+  {
+    "rel": "science/planets/asteroid-belt.json",
+    "at": "body_paragraphs.0",
+    "old": "De gordel heeft een interne structuur. Spectroscopie verdeelt hem in drie grove zones: de binnenste gordel (2,1–2,5 AU), gedomineerd door stenige lichamen van het S-type; de middelste gordel (2,5–3,2 AU), waar koolstofhoudende C-types de overhand krijgen (Ceres + Hygiea bevinden zich hier); en de buitenste gordel, die overgaat in de Trojaanse asteroïden die de baan van Jupiter delen op de Lagrangepunten L4 en L5. Verschillende ouderpopulaties, verschillende vormingstemperaturen, verschillende geschiedenissen — bewaard in dezelfde gordel omdat de resonanties van Jupiter ze bijeendreven.",
+    "new": "De gordel heeft een interne structuur. Spectroscopie verdeelt hem in drie grove zones: de binnenste gordel (2,1–2,5 AE), gedomineerd door stenige lichamen van het S-type; de middelste gordel (2,5–3,2 AE), waar koolstofhoudende C-types de overhand krijgen (Ceres + Hygiea bevinden zich hier); en de buitenste gordel, die overgaat in de Trojaanse asteroïden die de baan van Jupiter delen op de Lagrangepunten L4 en L5. Verschillende ouderpopulaties, verschillende vormingstemperaturen, verschillende geschiedenissen — bewaard in dezelfde gordel omdat de resonanties van Jupiter ze bijeendreven."
+  },
+  {
+    "rel": "science/planets/asteroid-belt.json",
+    "at": "diagram_caption",
+    "old": "De planetoïdengordel in beeld, 2,2–3,2 AU tussen Mars en Jupiter. De grootste leden Ceres / Vesta / Pallas / Hygiea zijn benoemd. Pijlen vanaf Jupiter tonen hoe zijn zwaartekracht de binnenste gordel omroert — de reden dat hier nooit een planeet is aangegroeid.",
+    "new": "De planetoïdengordel in beeld, 2,2–3,2 AE tussen Mars en Jupiter. De grootste leden Ceres / Vesta / Pallas / Hygiea zijn benoemd. Pijlen vanaf Jupiter tonen hoe zijn zwaartekracht de binnenste gordel omroert — de reden dat hier nooit een planeet is aangegroeid."
+  },
+  {
+    "rel": "science/planets/kuiper-belt.json",
+    "at": "narrative_101.1",
+    "old": "In 1992 ontdekten David Jewitt en Jane Luu, waarnemend vanaf Mauna Kea met een toen nog nieuwe CCD-detector, 1992 QB1 (later Albion genoemd). Een ijzig lichaam van ~160 km in een stabiele cirkelvormige baan op 44 AU. Binnen een jaar hadden ze er een tweede. Binnen vijf jaar waren het er tientallen. Tegenwoordig bevatten catalogi meer dan 3.000 bevestigde Kuipergordelobjecten en voorspellen dynamische modellen meer dan 100.000 lichamen groter dan 100 km — en in de orde van een miljard objecten ter grootte van een komeet. De totale massa is klein (~2% van die van de Aarde), maar dat is nog altijd ~50× de planetoïdengordel.",
+    "new": "In 1992 ontdekten David Jewitt en Jane Luu, waarnemend vanaf Mauna Kea met een toen nog nieuwe CCD-detector, 1992 QB1 (later Albion genoemd). Een ijzig lichaam van ~160 km in een stabiele cirkelvormige baan op 44 AE. Binnen een jaar hadden ze er een tweede. Binnen vijf jaar waren het er tientallen. Tegenwoordig bevatten catalogi meer dan 3.000 bevestigde Kuipergordelobjecten en voorspellen dynamische modellen meer dan 100.000 lichamen groter dan 100 km — en in de orde van een miljard objecten ter grootte van een komeet. De totale massa is klein (~2% van die van de Aarde), maar dat is nog altijd ~50× de planetoïdengordel."
+  },
+  {
+    "rel": "science/planets/kuiper-belt.json",
+    "at": "body_paragraphs.0",
+    "old": "Structureel heeft de gordel drie populaties. De klassieke Kuipergordel op 42–48 AU bevat lichamen op vrijwel cirkelvormige banen met een kleine inclinatie — het dynamisch ongestoorde restant van de oorspronkelijke schijf; Albion en Quaoar horen hier thuis. De resonante populatie zit vast in een 2:3-resonantie van de gemiddelde beweging met Neptunus (Pluto is het archetype — voor elke twee Pluto-omlopen maakt Neptunus er drie); deze lichamen heten plutino's. Dan is er de verstrooide schijf, de excentrische buitenuitbreiding met grote inclinaties waar Eris en Sedna rondzwerven, met perihelia dicht bij Neptunus en aphelia honderden AU ver weg. Elke populatie is een fossiel van een ander hoofdstuk uit de gravitatiegeschiedenis van het vroege zonnestelsel.",
+    "new": "Structureel heeft de gordel drie populaties. De klassieke Kuipergordel op 42–48 AE bevat lichamen op vrijwel cirkelvormige banen met een kleine inclinatie — het dynamisch ongestoorde restant van de oorspronkelijke schijf; Albion en Quaoar horen hier thuis. De resonante populatie zit vast in een 2:3-resonantie van de gemiddelde beweging met Neptunus (Pluto is het archetype — voor elke twee Pluto-omlopen maakt Neptunus er drie); deze lichamen heten plutino's. Dan is er de verstrooide schijf, de excentrische buitenuitbreiding met grote inclinaties waar Eris en Sedna rondzwerven, met perihelia dicht bij Neptunus en aphelia honderden AU ver weg. Elke populatie is een fossiel van een ander hoofdstuk uit de gravitatiegeschiedenis van het vroege zonnestelsel."
+  },
+  {
+    "rel": "science/planets/kuiper-belt.json",
+    "at": "diagram_caption",
+    "old": "De drie populaties van de Kuipergordel. Klassieke KBO's op 42–48 AU in vrijwel cirkelvormige banen; resonante plutino's in 2:3 met Neptunus (Pluto + Charon op 39 AU); de verstrooide schijf, die zich excentrisch uitstrekt naar de binnenste Oortwolk (het aphelium van Eris ligt op 96 AU).",
+    "new": "De drie populaties van de Kuipergordel. Klassieke KBO's op 42–48 AE in vrijwel cirkelvormige banen; resonante plutino's in 2:3 met Neptunus (Pluto + Charon op 39 AE); de verstrooide schijf, die zich excentrisch uitstrekt naar de binnenste Oortwolk (het aphelium van Eris ligt op 96 AE)."
+  },
+  {
+    "rel": "science/propulsion/solar-sail.json",
+    "at": "body_paragraphs.0",
+    "old": "Licht draagt impuls. Wanneer een foton van een spiegel weerkaatst, geeft het tweemaal zijn impuls aan de spiegel — een druk die stralingsdruk heet. In het dagelijks leven is die kracht verwaarloosbaar, maar in de ruimte, waar geen luchtweerstand is, loopt zelfs een piepkleine continue kracht op tot een echte snelheidsverandering. Een perfect reflecterend zeil van 800 m² op 1 AU (de afstand van de Aarde tot de Zon) ondervindt ongeveer 5 millinewton — het gewicht van een kleine druif. Dat is minder dan welke ionenmotor ook levert, maar het vraagt geen drijfstof, geen energiesysteem buiten de basisvoorzieningen, en het stopt nooit zolang de Zon schijnt.",
+    "new": "Licht draagt impuls. Wanneer een foton van een spiegel weerkaatst, geeft het tweemaal zijn impuls aan de spiegel — een druk die stralingsdruk heet. In het dagelijks leven is die kracht verwaarloosbaar, maar in de ruimte, waar geen luchtweerstand is, loopt zelfs een piepkleine continue kracht op tot een echte snelheidsverandering. Een perfect reflecterend zeil van 800 m² op 1 AE (de afstand van de Aarde tot de Zon) ondervindt ongeveer 5 millinewton — het gewicht van een kleine druif. Dat is minder dan welke ionenmotor ook levert, maar het vraagt geen drijfstof, geen energiesysteem buiten de basisvoorzieningen, en het stopt nooit zolang de Zon schijnt."
+  },
+  {
+    "rel": "science/propulsion/solar-sail.json",
+    "at": "body_paragraphs.3",
+    "old": "De fundamentele beperking is afstand. De stralingsdruk neemt af met het omgekeerde kwadraat van de afstand tot de Zon: op de afstand van Jupiter (5,2 AU) is hij 27 keer zwakker dan bij de Aarde. Voor trajecten voorbij de asteroïdengordel moet een zeil erg groot of erg licht zijn — of een andere energiebron gebruiken. Het natuurlijke vervolgconcept is laservoortstuwing (soms laserzeil of de Breakthrough Starshot-aanpak genoemd), waarbij een lasersysteem op de grond of in de ruimte het zeil met veel hogere intensiteit beschijnt dan de Zon kan leveren, waardoor snelheden van interstellaire klasse mogelijk worden. Dat blijft speculatieve techniek; zonnezeilen zijn vandaag vliegende hardware. Zie ook: /science/propulsion/specific-impulse en /essays/new-propulsion voor waar deze ideeën toe leiden.",
+    "new": "De fundamentele beperking is afstand. De stralingsdruk neemt af met het omgekeerde kwadraat van de afstand tot de Zon: op de afstand van Jupiter (5,2 AE) is hij 27 keer zwakker dan bij de Aarde. Voor trajecten voorbij de asteroïdengordel moet een zeil erg groot of erg licht zijn — of een andere energiebron gebruiken. Het natuurlijke vervolgconcept is laservoortstuwing (soms laserzeil of de Breakthrough Starshot-aanpak genoemd), waarbij een lasersysteem op de grond of in de ruimte het zeil met veel hogere intensiteit beschijnt dan de Zon kan leveren, waardoor snelheden van interstellaire klasse mogelijk worden. Dat blijft speculatieve techniek; zonnezeilen zijn vandaag vliegende hardware. Zie ook: /science/propulsion/specific-impulse en /essays/new-propulsion voor waar deze ideeën toe leiden."
+  },
+  {
+    "rel": "science/scales-time/_intro.json",
+    "at": "paragraphs.0",
+    "old": "Het zonnestelsel is groter dan waarop je intuïtie is afgestemd. Mars staat 200 miljoen km van ons af. Saturnus 1,4 miljard. Pluto 6 miljard. Getallen in kilometers helpen dan niet meer. Daarom kozen astronomen een menselijker maatstaf — de afstand tussen Aarde en Zon, de astronomische eenheid (AU). Mars staat op 1,5 AU. Jupiter op 5. Pluto draait in een baan tussen 30 en 50.",
+    "new": "Het zonnestelsel is groter dan waarop je intuïtie is afgestemd. Mars staat 200 miljoen km van ons af. Saturnus 1,4 miljard. Pluto 6 miljard. Getallen in kilometers helpen dan niet meer. Daarom kozen astronomen een menselijker maatstaf — de afstand tussen Aarde en Zon, de astronomische eenheid (AU). Mars staat op 1,5 AE. Jupiter op 5. Pluto draait in een baan tussen 30 en 50."
+  },
+  {
+    "rel": "science/scales-time/au.json",
+    "at": "narrative_101.1",
+    "old": "De eenheid ligt vast op een bepaald geheel aantal meters — 149.597.870.700, vastgesteld in 2012 — maar het praktische idee is eenvoudiger. Mars staat op 1,5 AU van de Zon. Jupiter op 5 AU. Pluto draait in een baan tussen 30 en 50 AU. Voyager 1, het verste door mensen gemaakte object, is inmiddels voorbij 170 AU en vliegt nog steeds door. Getallen die je echt in je hoofd kunt houden.",
+    "new": "De eenheid ligt vast op een bepaald geheel aantal meters — 149.597.870.700, vastgesteld in 2012 — maar het praktische idee is eenvoudiger. Mars staat op 1,5 AE van de Zon. Jupiter op 5 AE. Pluto draait in een baan tussen 30 en 50 AE. Voyager 1, het verste door mensen gemaakte object, is inmiddels voorbij 170 AE en vliegt nog steeds door. Getallen die je echt in je hoofd kunt houden."
+  },
+  {
+    "rel": "science/scales-time/au.json",
+    "at": "body_paragraphs.1",
+    "old": "Afstanden in het zonnestelsel in AU: Mercurius 0,39, Venus 0,72, Aarde 1,0, Mars 1,52, Jupiter 5,20, Saturnus 9,58, Uranus 19,22, Neptunus 30,05, Pluto 39,5 (gemiddelden — door de excentriciteit variëren ze). De Voyagers zijn ver voorbij 150 AU en vliegen nog steeds door. De Oortwolk reikt tot tienduizenden AU.",
+    "new": "Afstanden in het zonnestelsel in AU: Mercurius 0,39, Venus 0,72, Aarde 1,0, Mars 1,52, Jupiter 5,20, Saturnus 9,58, Uranus 19,22, Neptunus 30,05, Pluto 39,5 (gemiddelden — door de excentriciteit variëren ze). De Voyagers zijn ver voorbij 150 AE en vliegen nog steeds door. De Oortwolk reikt tot tienduizenden AU."
+  },
+  {
+    "rel": "science/scales-time/au.json",
+    "at": "body_paragraphs.2",
+    "old": "Waarom AU in plaats van meters? Omdat getallen in meters op de schaal van het zonnestelsel onhandig zijn. De 1,4 miljard km van Saturnus is onleesbaar. 9,58 AU is een getal dat je in je hoofd kunt houden. De panelen en de HUD van Orrery gebruiken overal AU voor posities in het zonnestelsel — omgerekend naar km, lichtminuten en andere eenheden alleen waar het publiek die omrekening nodig heeft.",
+    "new": "Waarom AU in plaats van meters? Omdat getallen in meters op de schaal van het zonnestelsel onhandig zijn. De 1,4 miljard km van Saturnus is onleesbaar. 9,58 AE is een getal dat je in je hoofd kunt houden. De panelen en de HUD van Orrery gebruiken overal AU voor posities in het zonnestelsel — omgerekend naar km, lichtminuten en andere eenheden alleen waar het publiek die omrekening nodig heeft."
+  },
+  {
+    "rel": "science/scales-time/au.json",
+    "at": "diagram_caption",
+    "old": "1 AU ≈ afstand Aarde-Zon. Grote halve assen van planeten in AU, op een logaritmische schaal om de buitenplaneten in beeld te krijgen.",
+    "new": "1 AE ≈ afstand Aarde-Zon. Grote halve assen van planeten in AU, op een logaritmische schaal om de buitenplaneten in beeld te krijgen."
+  },
+  {
+    "rel": "science/scales-time/frames.json",
+    "at": "narrative_101.0",
+    "old": "Waar is de Maan? Het eerlijke antwoord is: \"dat hangt af van waar JIJ bent.\" Vanaf het aardoppervlak staat hij vannacht om 01:00 uur boven je hoofd. Vanaf de Zon is hij een klein stipje op 1 AU afstand, vlak bij de Aarde. Vanaf Mars is hij een onbeduidend spikkeltje. Geen van deze antwoorden is fout — ze zijn alleen gemeten vanuit een ander oorsprongspunt. Die keuze van het oorsprongspunt is wat \"referentiekader\" betekent.",
+    "new": "Waar is de Maan? Het eerlijke antwoord is: \"dat hangt af van waar JIJ bent.\" Vanaf het aardoppervlak staat hij vannacht om 01:00 uur boven je hoofd. Vanaf de Zon is hij een klein stipje op 1 AE afstand, vlak bij de Aarde. Vanaf Mars is hij een onbeduidend spikkeltje. Geen van deze antwoorden is fout — ze zijn alleen gemeten vanuit een ander oorsprongspunt. Die keuze van het oorsprongspunt is wat \"referentiekader\" betekent."
+  },
+  {
+    "rel": "science/scales-time/light-minute.json",
+    "at": "narrative_101.2",
+    "old": "Op de afstand van Voyager-1 (nu zo'n 170 AU) bedraagt de enkele reis van licht ongeveer 23,5 uur — eind 2026 bereikt die één volle lichtdag (24 uur). Stuur je vandaag een commando, dan weet je morgenmiddag of het gelukt is. Lichtjaren bestaan voor de volgende schaal — de afstand tot andere sterren. De dichtstbijzijnde, Proxima Centauri, staat op 4,2 lichtjaar. Met de snelheid van Voyager zou je er 70.000 jaar over doen. Het heelal is groot en traag.",
+    "new": "Op de afstand van Voyager-1 (nu zo'n 170 AE) bedraagt de enkele reis van licht ongeveer 23,5 uur — eind 2026 bereikt die één volle lichtdag (24 uur). Stuur je vandaag een commando, dan weet je morgenmiddag of het gelukt is. Lichtjaren bestaan voor de volgende schaal — de afstand tot andere sterren. De dichtstbijzijnde, Proxima Centauri, staat op 4,2 lichtjaar. Met de snelheid van Voyager zou je er 70.000 jaar over doen. Het heelal is groot en traag."
+  },
+  {
+    "rel": "science/scales-time/light-minute.json",
+    "at": "body_paragraphs.0",
+    "old": "Licht beweegt met ongeveer 300.000 km/s. Een lichtseconde is 300.000 km. Een lichtminuut is 18 miljoen km. Een lichtjaar is 9,46 biljoen km. Het zijn afstanden, geen tijden — verwarrend genoemd, maar handig: 1 AU ≈ 8,3 lichtminuten, dus \"Mars staat 4–22 lichtminuten ver, afhankelijk van de baan\" zegt je op elk moment hoe lang een commando heen en terug onderweg is.",
+    "new": "Licht beweegt met ongeveer 300.000 km/s. Een lichtseconde is 300.000 km. Een lichtminuut is 18 miljoen km. Een lichtjaar is 9,46 biljoen km. Het zijn afstanden, geen tijden — verwarrend genoemd, maar handig: 1 AE ≈ 8,3 lichtminuten, dus \"Mars staat 4–22 lichtminuten ver, afhankelijk van de baan\" zegt je op elk moment hoe lang een commando heen en terug onderweg is."
+  },
+  {
+    "rel": "small-bodies/arrokoth.json",
+    "at": "science_sections.1.why",
+    "old": "Arrokoth beweegt in een baan op 44,6 AU — klassieke Kuipergordel, voorbij Pluto, in een gebied waar hemellichamen sinds het vroege zonnestelsel grotendeels ongestoord zijn geweest.",
+    "new": "Arrokoth beweegt in een baan op 44,6 AE — klassieke Kuipergordel, voorbij Pluto, in een gebied waar hemellichamen sinds het vroege zonnestelsel grotendeels ongestoord zijn geweest."
+  },
+  {
+    "rel": "small-bodies/bennu.json",
+    "at": "science_sections.0.why",
+    "old": "Bennu is een Near-Earth asteroïde (halve lange as 1,13 AU) — dicht genoeg voor OSIRIS-REx om af te spreken, monster te nemen en materiaal in 7 jaar naar de aarde terug te brengen.",
+    "new": "Bennu is een Near-Earth asteroïde (halve lange as 1,13 AE) — dicht genoeg voor OSIRIS-REx om af te spreken, monster te nemen en materiaal in 7 jaar naar de aarde terug te brengen."
+  },
+  {
+    "rel": "small-bodies/ceres.json",
+    "at": "science_sections.1.why",
+    "old": "Ceres draait op 2,77 AU — goed binnen de asteroidengordel en wordt gebruikt als referentieafstand voor het canonieke \"midden van de gordel\".",
+    "new": "Ceres draait op 2,77 AE — goed binnen de asteroidengordel en wordt gebruikt als referentieafstand voor het canonieke \"midden van de gordel\"."
+  },
+  {
+    "rel": "small-bodies/didymos.json",
+    "at": "science_sections.0.why",
+    "old": "Didymos is een binaire asteroïde dicht bij de Aarde (halve lange as 1,64 AU). DART (NASA, 2022) trof zijn kleine begeleider Dimorphos om de fysica van asteröïde-afbuiging te testen.",
+    "new": "Didymos is een binaire asteroïde dicht bij de Aarde (halve lange as 1,64 AE). DART (NASA, 2022) trof zijn kleine begeleider Dimorphos om de fysica van asteröïde-afbuiging te testen."
+  },
+  {
+    "rel": "small-bodies/eris.json",
+    "at": "science_sections.1.why",
+    "old": "Eris schommelt van 38 AU bij perihelium tot 97 AU bij aphelium — een gemiddelde baan van ~68 AU (halve lange as). Het passeerde het aphelium rond 1977 en beweegt zich nu langzaam terug naar de Zon.",
+    "new": "Eris schommelt van 38 AE bij perihelium tot 97 AE bij aphelium — een gemiddelde baan van ~68 AE (halve lange as). Het passeerde het aphelium rond 1977 en beweegt zich nu langzaam terug naar de Zon."
+  },
+  {
+    "rel": "small-bodies/halley.json",
+    "at": "science_sections.0.why",
+    "old": "De excentriciteit van Halley van 0,967 is de schoolvoorbeeldbaan van een kortperiodieke komeet — bijna parabolisch, met een perihelium van 0,59 AU en een afhelium van 35 AU.",
+    "new": "De excentriciteit van Halley van 0,967 is de schoolvoorbeeldbaan van een kortperiodieke komeet — bijna parabolisch, met een perihelium van 0,59 AE en een afhelium van 35 AE."
+  },
+  {
+    "rel": "small-bodies/halley.json",
+    "at": "science_sections.1.why",
+    "old": "De enorme perihelium-aphelium-variatie van Halley (35 tot 0.59 AU) drijft de oppervlakte-ijzen om dicht bij perihelium hevig te sublimeren, waardoor de coma en staart ontstaan. Volgende perihelium: 2061.",
+    "new": "De enorme perihelium-aphelium-variatie van Halley (35 tot 0.59 AE) drijft de oppervlakte-ijzen om dicht bij perihelium hevig te sublimeren, waardoor de coma en staart ontstaan. Volgende perihelium: 2061."
+  },
+  {
+    "rel": "small-bodies/itokawa.json",
+    "at": "science_sections.0.why",
+    "old": "Itokawa is een near-Earth Apollo-asteroïde — halve grote as 1,32 AU. Hayabusa's rendezvous in 2005 + monsterterugkeer in 2010 was de eerste NEA-retourvlucht.",
+    "new": "Itokawa is een near-Earth Apollo-asteroïde — halve grote as 1,32 AE. Hayabusa's rendezvous in 2005 + monsterterugkeer in 2010 was de eerste NEA-retourvlucht."
+  },
+  {
+    "rel": "small-bodies/makemake.json",
+    "at": "science_sections.0.why",
+    "old": "De halve lange as van Makemake van 45,7 AU plaatst het in de klassieke Kuipergordel — ver genoeg dat methaan aan het oppervlak als het dominante ijs blijft bestaan.",
+    "new": "De halve lange as van Makemake van 45,7 AE plaatst het in de klassieke Kuipergordel — ver genoeg dat methaan aan het oppervlak als het dominante ijs blijft bestaan."
+  },
+  {
+    "rel": "small-bodies/vesta.json",
+    "at": "science_sections.1.why",
+    "old": "Vesta beweegt in een baan op 2.36 AU — binnenste gordel. De nabijheid ervan bepaalde Dawns keuze om Vesta eerst te bezoeken (2011), daarna naar Ceres te gaan (2015).",
+    "new": "Vesta beweegt in een baan op 2.36 AE — binnenste gordel. De nabijheid ervan bepaalde Dawns keuze om Vesta eerst te bezoeken (2011), daarna naar Ceres te gaan (2015)."
+  },
+  {
+    "rel": "trajectories/bepicolombo.json",
+    "at": "current_distance_label",
+    "old": "0,48 AU · onderweg naar Mercurius-baansinvoering 2026-12-05",
+    "new": "0,48 AE · onderweg naar Mercurius-baansinvoering 2026-12-05"
+  },
+  {
+    "rel": "trajectories/cassini.json",
+    "at": "current_distance_label",
+    "old": "9,5 AU · in Saturnus-baan 2004-2017 — afgevoerd in de atmosfeer van Saturnus 2017-09-15",
+    "new": "9,5 AE · in Saturnus-baan 2004-2017 — afgevoerd in de atmosfeer van Saturnus 2017-09-15"
+  },
+  {
+    "rel": "trajectories/dawn.json",
+    "at": "current_distance_label",
+    "old": "2,8 AU · in stabiele Ceres-baan sinds EOM 2018-10-31 (~20 jaar baanlevensduur)",
+    "new": "2,8 AE · in stabiele Ceres-baan sinds EOM 2018-10-31 (~20 jaar baanlevensduur)"
+  },
+  {
+    "rel": "trajectories/galileo.json",
+    "at": "current_distance_label",
+    "old": "5,4 AU · in Jupiter gestort 2003-09-21 (bescherming van Europa)",
+    "new": "5,4 AE · in Jupiter gestort 2003-09-21 (bescherming van Europa)"
+  },
+  {
+    "rel": "trajectories/giotto.json",
+    "at": "current_distance_label",
+    "old": "1,04 AU · in heliocentrische baan sinds de Grigg-Skjellerup-passage op 1992-07-10",
+    "new": "1,04 AE · in heliocentrische baan sinds de Grigg-Skjellerup-passage op 1992-07-10"
+  },
+  {
+    "rel": "trajectories/hayabusa2.json",
+    "at": "current_distance_label",
+    "old": "1,24 AU · onderweg naar (98943) 2001 CC21 voorbijvlucht juli 2026 (verlengde missie)",
+    "new": "1,24 AE · onderweg naar (98943) 2001 CC21 voorbijvlucht juli 2026 (verlengde missie)"
+  },
+  {
+    "rel": "trajectories/juice.json",
+    "at": "current_distance_label",
+    "old": "0,94 AU · onderweg naar Aarde #2 flyby 2026-09-29 (cruisefase 2 van 5)",
+    "new": "0,94 AE · onderweg naar Aarde #2 flyby 2026-09-29 (cruisefase 2 van 5)"
+  },
+  {
+    "rel": "trajectories/juno.json",
+    "at": "current_distance_label",
+    "old": "5,5 AU · in polaire Jupiterorbit sinds 2016-07-05 — uitgebreide missie tot 2025",
+    "new": "5,5 AE · in polaire Jupiterorbit sinds 2016-07-05 — uitgebreide missie tot 2025"
+  },
+  {
+    "rel": "trajectories/new-horizons.json",
+    "at": "current_distance_label",
+    "old": "66 AU · in uitgebreide missie — koers stellend naar de stagnatiezone van de heliospheer",
+    "new": "66 AE · in uitgebreide missie — koers stellend naar de stagnatiezone van de heliospheer"
+  },
+  {
+    "rel": "trajectories/pioneer-10.json",
+    "at": "current_distance_label",
+    "old": "135 AU · ~18,8 lichtuur van de Zon (laatste contact 23-01-2003)",
+    "new": "135 AE · ~18,8 lichtuur van de Zon (laatste contact 23-01-2003)"
+  },
+  {
+    "rel": "trajectories/pioneer-11.json",
+    "at": "current_distance_label",
+    "old": "89 AU · ~12,3 lichtuur van de zon (signaal verloren op 30 september 1995)",
+    "new": "89 AE · ~12,3 lichtuur van de zon (signaal verloren op 30 september 1995)"
+  },
+  {
+    "rel": "trajectories/rosetta.json",
+    "at": "current_distance_label",
+    "old": "4,1 AU · gecontroleerde afdaling naar oppervlak 67P op 2016-09-30 (einde missie)",
+    "new": "4,1 AE · gecontroleerde afdaling naar oppervlak 67P op 2016-09-30 (einde missie)"
+  },
+  {
+    "rel": "trajectories/ulysses.json",
+    "at": "current_distance_label",
+    "old": "5,2 AU · missie beëindigd 2009-06-30 (thrusterleidingen bevroren) — hardware in polaire heliocentrische baan",
+    "new": "5,2 AE · missie beëindigd 2009-06-30 (thrusterleidingen bevroren) — hardware in polaire heliocentrische baan"
+  },
+  {
+    "rel": "trajectories/vega-1.json",
+    "at": "current_distance_label",
+    "old": "0,98 AU · ruimtevaartuig in heliocentrische baan sinds Halley-voorbijvlucht 1986-03-06",
+    "new": "0,98 AE · ruimtevaartuig in heliocentrische baan sinds Halley-voorbijvlucht 1986-03-06"
+  },
+  {
+    "rel": "trajectories/vega-2.json",
+    "at": "current_distance_label",
+    "old": "0,95 AU · ruimtevaartuig in heliocentrische baan sinds Halley-voorbijvlucht 1986-03-09",
+    "new": "0,95 AE · ruimtevaartuig in heliocentrische baan sinds Halley-voorbijvlucht 1986-03-09"
+  },
+  {
+    "rel": "trajectories/venera-13.json",
+    "at": "current_distance_label",
+    "old": "0,74 AU · geland op Venus op 1982-03-01 (127 min oppervlakteblijf)",
+    "new": "0,74 AE · geland op Venus op 1982-03-01 (127 min oppervlakteblijf)"
+  },
+  {
+    "rel": "trajectories/voyager-2.json",
+    "at": "current_distance_label",
+    "old": "143 AU · ~19,8 lichtuur van de Zon",
+    "new": "143 AE · ~19,8 lichtuur van de Zon"
+  },
+  {
+    "rel": "messages",
+    "at": "lab_goal_lss_escape",
+    "old": "Om de Zon voorgoed te verlaten moet je de ontsnappingssnelheid bereiken. Op aardse afstand — 1 AU — is dat ongeveer 42 km/s. Sleep de afstand naar buiten en zie het dalen: ontsnapping is gemakkelijker hoe verder je al bent.",
+    "new": "Om de Zon voorgoed te verlaten moet je de ontsnappingssnelheid bereiken. Op aardse afstand — 1 AE — is dat ongeveer 42 km/s. Sleep de afstand naar buiten en zie het dalen: ontsnapping is gemakkelijker hoe verder je al bent."
+  },
+  {
+    "rel": "messages",
+    "at": "lab_f_maxelong_glossary",
+    "old": "Een binnenplaneet kan slechts zover van de Zon af zingen: ε_max = arcsin(a(1+e)) — de arcsin van zijn APHELIUMAFSTAND in AU, het verste punt van zijn baan. Venus maximaliseert rond 47° (aphelium 0,73 AU), Mercurius rond 28° (aphelium 0,47 AU) — waarom beide altijd ochtend- of avondsterren zijn.",
+    "new": "Een binnenplaneet kan slechts zover van de Zon af zingen: ε_max = arcsin(a(1+e)) — de arcsin van zijn APHELIUMAFSTAND in AU, het verste punt van zijn baan. Venus maximaliseert rond 47° (aphelium 0,73 AE), Mercurius rond 28° (aphelium 0,47 AE) — waarom beide altijd ochtend- of avondsterren zijn."
+  }
+]

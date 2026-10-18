@@ -1,0 +1,728 @@
+[
+ {
+  "rel": "fleet/orbiter/pioneer-11.json",
+  "at": "description",
+  "old": "Drehstabilisierte RTG-betriebene Sonde (~259 kg), Schwester von Pioneer 10 mit demselben Bus und der Pioneer Plaque. Gestartet am 06.04.1973 mit einer Atlas SLV-3D Centaur D-1A + Star-37E aus Cape Canaveral LC-36B. Jupiter-Vorbeiflug am 03.12.1974 in 43 000 km — die engste Pioneer-Begegnung, lieferte die ersten Polarregion-Bilder und das Schwungholmanöver für Saturn. Saturn-Begegnung am 01.09.1979 in 21 000 km von den Wolkenobergrenzen — erste Detailbilder des Ringsystems. Beobachtungen der Heliosphäre bis zum letzten Kontakt am 24.11.1995. Inzwischen ~93 AU von der Sonne, in Richtung Adler.",
+  "new": "Drehstabilisierte RTG-Sonde (~259 kg), Schwestersonde von Pioneer 10 mit gleichem Bus und der Pioneer Plaque, einer Botschaft an die Sterne. Start am 1973-04-06 mit Atlas SLV-3D Centaur D-1A + Star-37E von Cape Canaveral. Jupiter-Vorbeiflug am 1974-12-03 in 43 000 km — die engste Pioneer-Begegnung; erste Bilder der Polarregionen und der Swing-by zum Saturn. Saturn-Begegnung am 1979-09-01 in 21 000 km über den Wolkenobergrenzen — erste detaillierte Bilder des Ringsystems, Entdeckung eines neuen Rings (F-Ring) und eines neuen Mondes, Bestätigung des nahezu ausgerichteten Saturn-Magnetfelds. Beobachtungen auf dem Weg nach außen bis zum letzten Kontakt am 1995-11-24. Jetzt ~93 AU von der Sonne entfernt, Richtung Sternbild Adler."
+ },
+ {
+  "rel": "fleet/orbiter/pioneer-11.json",
+  "at": "best_known_for",
+  "old": "Erste Sonde, die Saturn erreichte — Vorbeiflug 01.09.1979, Geschwister von Pioneer 10",
+  "new": "Erste Sonde, die Saturn erreichte — Vorbeiflug 1979-09-01, Schwestersonde von Pioneer 10"
+ },
+ {
+  "rel": "fleet/orbiter/psyche-spacecraft.json",
+  "at": "tagline",
+  "old": "Erste Mission zu einem metallreichen M-Klasse-Asteroiden",
+  "new": "Erste Mission zu einem metallreichen Asteroiden der M-Klasse"
+ },
+ {
+  "rel": "fleet/orbiter/psyche-spacecraft.json",
+  "at": "description",
+  "old": "NASAs Mission zu einem ~230-km M-Typ-Asteroiden, der als der freiliegende Metallkern eines differenzierten Protoplaneten gilt. Gestartet am 2023-10-13 auf einer Falcon Heavy von Kennedy LC-39A; nutzt vier SPT-140 Hall-Effekt-Ionentriebwerke als primären Reiseantrieb und einen Marsgravitationsassist im Jahr 2026 auf dem Weg zu einem Rendezvous mit Psyche im Jahr 2029. Trägt ein Magnetometer, einen Multispektralbildgeber und ein Gamma- und Neutronenspektrometer.",
+  "new": "Die Mission der NASA zu einem ~230 km großen Asteroiden vom M-Typ, der vermutlich der freigelegte Metallkern eines differenzierten Protoplaneten ist. Gestartet am 2023-10-13 auf einer Falcon Heavy von Kennedy LC-39A; nutzt vier Hall-Effekt-Ionentriebwerke SPT-140 als primären Reiseantrieb und einen Mars-Swing-by im Jahr 2026 auf dem Weg zum Rendezvous mit Psyche 2029. Trägt ein Magnetometer, einen Multispektral-Imager sowie ein Gammastrahlen- und Neutronenspektrometer."
+ },
+ {
+  "rel": "fleet/orbiter/psyche-spacecraft.json",
+  "at": "best_known_for",
+  "old": "Erste Mission zu einem metallreichen M-Klasse-Asteroiden",
+  "new": "Erste Mission zu einem metallreichen Asteroiden der M-Klasse"
+ },
+ {
+  "rel": "fleet/orbiter/rosetta.json",
+  "at": "tagline",
+  "old": "Erster Raumschiff zum Orbit eines Kometen (67P)",
+  "new": "Erste Raumsonde, die einen Kometen umkreiste (67P)"
+ },
+ {
+  "rel": "fleet/orbiter/rosetta.json",
+  "at": "description",
+  "old": "Die Kometenmission der ESA. Gefangen bis zum Comet 67P/Churyumov–Gerasimenko im August 2014, entfaltete die Philae Lander (die in ein Crevasse fiel) und begleitete den Kometen durch seine 2015 Perihelion vor dem Absturz auf der Oberfläche selbst im September 2016.",
+  "new": "Die Kometenmission der ESA. Holte im August 2014 den Kometen 67P/Churyumov–Gerasimenko ein, setzte den Lander Philae ab (der aufprallte, hochsprang und in eine Spalte fiel) und begleitete den Kometen durch sein Perihel 2015, bevor sie im September 2016 selbst auf der Oberfläche aufschlug."
+ },
+ {
+  "rel": "fleet/orbiter/rosetta.json",
+  "at": "best_known_for",
+  "old": "Erster Raumschiff zum Orbit eines Kometen (67P)",
+  "new": "Erste Raumsonde, die einen Kometen umkreiste (67P)"
+ },
+ {
+  "rel": "fleet/orbiter/smart-1.json",
+  "at": "tagline",
+  "old": "Erste europäische Mondmission — solarelektrischer Ionenantrieb. In 13 Monaten zum Mond spiraliert; gezielter Einschlag 2006-09-03",
+  "new": "Erste europäische Mondmission — solarelektrischer Ionenantrieb. Spiralbahn zum Mond in 13 Monaten; gezielter Einschlag 2006-09-03"
+ },
+ {
+  "rel": "fleet/orbiter/smart-1.json",
+  "at": "description",
+  "old": "Die erste Mondmission der ESA und das erste europäische Raumfahrzeug am Mond. SMART = Small Missions for Advanced Research in Technology — und die entscheidende Technik war ein solarelektrischer Hall-Ionenantrieb (PPS-1350). Am 2003-09-27 als Nutzlast einer Ariane 5 von Kourou gestartet, nutzte die 367 kg schwere Sonde ihren 1,2-kW-Xenon-Ionenantrieb über 13 Monate, um ihre Erdumlaufbahn langsam anzuheben, bis sie 2004-11-15 von der Mondgravitation eingefangen wurde. 16 Monate Betrieb in einer polaren Mondumlaufbahn, lieferte AMIE-Kamerabilder, die ersten Röntgenfluoreszenz-Elementkarten des Mondes (D-CIXS) und Infrarot-Mineralspektroskopie (SIR). Am 2006-09-03 02:42 UTC gezielt in den Lacus Excellentiae geschlagen — der Einschlagsblitz wurde vom Canada-France-Hawaii-Teleskop beobachtet.",
+  "new": "Die erste Mondmission der ESA und das erste europäische Raumfahrzeug am Mond. SMART steht für Small Missions for Advanced Research in Technology — und die entscheidende Technik war ein solarelektrisches Hall-Effekt-Ionentriebwerk (PPS-1350, das damals größte seiner Art im Flug). Am 2003-09-27 als geteilte Nutzlast einer Ariane 5 von Kourou gestartet, hob die 367 kg schwere Sonde mit ihrem 1,2-kW-Xenon-Ionenantrieb in 13 Monaten langsam ihre Erdumlaufbahn an, bis sie am 2004-11-15 von der Mondgravitation eingefangen wurde. Sie arbeitete 16 Monate lang in einer polaren Mondumlaufbahn und lieferte hochauflösende Bilder der AMIE-Kamera, die ersten Röntgenfluoreszenz-Karten der Elementverteilung auf dem Mond (D-CIXS) und infrarotspektroskopische Mineralkartierungen (SIR). Am 2006-09-03 um 02:42 UTC schlug sie gezielt im Lacus Excellentiae (34,4° S, 46,2° W) ein — der Einschlagsblitz wurde mit dem Canada-France-Hawaii Telescope beobachtet."
+ },
+ {
+  "rel": "fleet/orbiter/smart-1.json",
+  "at": "best_known_for",
+  "old": "Erste europäische Mondmission — solarelektrischer Ionenantrieb. In 13 Monaten zum Mond spiraliert; gezielter Einschlag 2006-09-03",
+  "new": "Erste europäische Mondmission — solarelektrischer Ionenantrieb. Spiralbahn zum Mond in 13 Monaten; gezielter Einschlag 2006-09-03"
+ },
+ {
+  "rel": "fleet/orbiter/solar-orbiter.json",
+  "at": "description",
+  "old": "Die von ESA geleitete Raumsonde Solar Orbiter ist das erste Raumfahrzeug, das für detaillierte Aufnahmen der Polregionen der Sonne entwickelt wurde — durch wiederholte Venus-Schwerkraftmanöver über ein Jahrzehnt hinweg steigt sie aus der Ekliptik auf eine heliografische Inklination von ~33°. Sie trägt zehn Instrumente, die Fernerkundung (PHI-Magnetograph, EUI-Extreme-UV-Imager, SPICE-Spektrometer, STIX-Röntgen-Imager, METIS-Koronagraph, SoloHI-Heliosphären-Imager) mit In-situ-Messungen kombinieren (Magnetometer, energetische Teilchen, Sonnenwindplasma, Radio- + Plasmawellen). Gestartet am 10.02.2020 vom Cape Canaveral mit einer NASA Atlas V 411. Erstes Perihel am 15.06.2020 bei 0,51 AU. Arbeitsperihel 0,28 AU (~62 R☉), innerhalb der Perihelentfernung des Merkur.",
+  "new": "Die von der ESA geleitete Solar Orbiter ist das erste Raumfahrzeug, das die Polarregionen der Sonne im Detail abbilden soll — über ein Jahrzehnt hinweg steigt sie mit wiederholten Venus-Swing-by-Manövern aus der Ekliptik auf eine heliografische Neigung von ~33°. Sie trägt zehn Instrumente, die Fernerkundung (PHI-Magnetograph, EUI-Abbildungsgerät für extremes Ultraviolett, SPICE-Spektrometer, STIX-Röntgenabbildungsgerät, METIS-Koronograf, SoloHI-Heliosphärenkamera) mit In-situ-Messungen (Magnetometer, energiereiche Teilchen, Sonnenwindplasma, Radio- und Plasmawellen) verbinden. Gestartet am 2020-02-10 von Cape Canaveral auf einer Atlas V 411 der NASA. Erstes Perihel am 2020-06-15 bei 0,51 AU. Betriebs-Perihel 0,28 AU (~62 R☉), innerhalb der Perihelentfernung des Merkur."
+ },
+ {
+  "rel": "fleet/orbiter/tianwen-1.json",
+  "at": "description",
+  "old": "CNSAs erste Mars-Mission — ein Orbiter, der den Rover Zhurong im Mai 2021 zur Marsoberfläche brachte. Nach der Freisetzung von Zhurong setzte der Orbiter seine wissenschaftlichen Operationen fort, darunter hochauflösende Bildgebung und Oberflächenkartierung.",
+  "new": "Die erste Marsmission der CNSA — ein Orbiter, der den Rover Zhurong im Mai 2021 zur Marsoberfläche brachte. Nach dem Absetzen von Zhurong setzte der Orbiter seine wissenschaftlichen Arbeiten allein fort, darunter hochauflösende Bildgebung und Oberflächenkartierung."
+ },
+ {
+  "rel": "fleet/orbiter/ulysses.json",
+  "at": "tagline",
+  "old": "Erste Sonde, die die Sonnenpole von oberhalb und unterhalb der Ekliptik beobachtete — Jupiter-Schwung 1992",
+  "new": "Erste Sonde, die die Sonnenpole von oberhalb und unterhalb der Ekliptik beobachtete — Swing-by am Jupiter 1992"
+ },
+ {
+  "rel": "fleet/orbiter/ulysses.json",
+  "at": "description",
+  "old": "Gemeinsame ESA + NASA Sonnen- / Heliosphären-Mission, gebaut von Dornier mit US-wissenschaftlichen Beiträgen. Gestartet am 06.10.1990 von STS-41 Discovery + IUS + PAM-S auf einer hochenergetischen Direktbahn nach Jupiter — der einzige Weg, eine Sonde aus der Ekliptik zu werfen. Jupiter-Vorbeiflug am 08.02.1992 lenkte die Sonde in eine 80°-Inklination heliozentrische Bahn (1,3 × 5,4 AU, 6,2-Jahr-Periode) — die erste und immer noch einzige Sonde, die über die Sonnenpole flog. Drei vollständige Polarbahnen gaben uns die 3D-Struktur der heliosphärischen Stromschicht, den schnelleren polaren / langsameren äquatorialen Sonnenwind und den einzigen mehrjahrzehntigen Bericht. Mission endete 2009.",
+  "new": "Gemeinsame Sonnen- und Heliosphärenmission von ESA + NASA, gebaut von Dornier mit wissenschaftlichen Beiträgen aus den USA. Gestartet am 1990-10-06 von STS-41 Discovery auf einer energiereichen Direktbahn zum Jupiter — der einzige Weg, ein Raumfahrzeug ohne unerschwinglichen Δv-Aufwand aus der Ekliptikebene zu schleudern. Der Jupiter-Vorbeiflug am 1992-02-08 lenkte die Sonde auf eine heliozentrische Bahn mit 80° Neigung (1,3 × 5,4 AU, Umlaufzeit 6,2 Jahre) — das erste und bis heute einzige Raumfahrzeug, das über die Pole der Sonne flog. Drei vollständige Polarumläufe lieferten uns die 3D-Struktur der heliosphärischen Stromschicht, den schnelleren polaren und langsameren äquatorialen Sonnenwind und die einzige mehrjahrzehntelange Aufzeichnung des Verhaltens polarer koronaler Löcher über einen vollständigen Sonnenzyklus. Die Mission endete 2009."
+ },
+ {
+  "rel": "fleet/orbiter/vega-1.json",
+  "at": "tagline",
+  "old": "Sowjetische Venus- und Halley'scher Komet Doppelmission – Venera-Lander, erster interplanetarer Ballon, dann Halley-Vorbeiflug",
+  "new": "Sowjetische Doppelmission zu Venus und zum Halleyschen Kometen — Venera-Lander, erster interplanetarer Ballon, dann Vorbeiflug am Kometen"
+ },
+ {
+  "rel": "fleet/orbiter/vega-1.json",
+  "at": "description",
+  "old": "Erstes Raumfahrzeug der internationalen Halley-Armada. Gestartet am 15.12.1984 mit einer Proton-K / D-1 von Baikonur. Der 4920 kg Vorbeiflug-Bus trug ein ~1500 kg Abstiegsmodul, das für die Venus-Ankunft am 11.06.1985 trennte — der Lander landete bei 7,5°N, 177,8°E für 56 Minuten Oberflächenwissenschaft, während ein erstmaliger Helium-Ballon-Aerostat 46 Stunden lang in 54 km Höhe in der Wolkenschicht trieb. Der Vorbeiflug-Bus setzte seine 9-monatige Reise fort und begegnete Halley am 06.03.1986 in 8889 km — der erste Halley-Vorbeiflug der Armada, lieferte die Zieldaten für ESAs Giotto 8 Tage später.",
+  "new": "Erstes Raumfahrzeug der internationalen Armada zum Halleyschen Kometen. Gestartet am 1984-12-15 auf einer Proton-K / D-1. Der 4920 kg schwere Vorbeiflug-Bus trug ein ~1500 kg schweres Abstiegsmodul, das sich zur Venus-Ankunft am 1985-06-11 trennte — der Lander setzte bei 7,5° N, 177,8° O auf und lieferte 56 Minuten Oberflächenwissenschaft, während ein erster mit Helium gefüllter Ballon 46 Stunden lang in 54 km Höhe in der Wolkenschicht trieb und Windgeschwindigkeiten und atmosphärische Struktur verfolgte. Der Vorbeiflug-Bus flog 9 Monate weiter und begegnete dem Halleyschen Kometen (1P/Halley) am 1986-03-06 in 8889 km — die erste Begegnung der Armada mit ihm; sie lieferte die Zieldaten, die Giotto der ESA 8 Tage später für seine viel nähere Annäherung auf 596 km nutzte."
+ },
+ {
+  "rel": "fleet/orbiter/vega-1.json",
+  "at": "best_known_for",
+  "old": "Sowjetische Venus + Halley-Doppelmission — erster interplanetarer Ballon, erster Halley-Vorbeiflug",
+  "new": "Sowjetische Doppelmission zu Venus und Halleyschem Kometen — erster interplanetarer Ballon, erster Vorbeiflug am Kometen"
+ },
+ {
+  "rel": "fleet/orbiter/vega-2.json",
+  "at": "tagline",
+  "old": "Geschwister von Vega 1 — zweite sowjetische Venus + Halley-Doppelmission, Lander + Ballon dann Halley-Vorbeiflug 3 Tage nach Vega 1",
+  "new": "Schwestersonde von Vega 1 — zweite sowjetische Doppelmission zu Venus und Halleyschem Kometen, Lander + Ballon, dann Vorbeiflug"
+ },
+ {
+  "rel": "fleet/orbiter/vega-2.json",
+  "at": "description",
+  "old": "Identischer Zwilling von Vega 1, gestartet 1984-12-21 (6 Tage nach Vega 1). 4920 kg Vorbeiflug-Bus + ~1500 kg Abstiegsmodul mit zweiter Venera-ähnlicher Landesonde + Helium-Aerostat. Venusankunft 1985-06-15: Landesonde setzte bei 8,5°S, 164,5°O auf (Aphrodite Terra), lieferte 57 Minuten Oberflächenwissenschaft; Ballon trieb 46 Stunden lang in der Wolkendecke neben Vega 1. Der Vorbeiflug-Bus setzte seinen Weg fort und traf den Kometen 1P/Halley am 1986-03-09 in 8030 km Entfernung – die zweite Halley-Begegnung der Armada, 3 Tage nach Vega 1 und 5 Tage vor Giotto. Vega 1 + Vega 2 verfeinerten die Position des Halley-Atomkerns durch ihre Peilung auf 50 km für Giotto's viel nähere Annäherung.",
+  "new": "Identischer Zwilling von Vega 1, gestartet am 1984-12-21 (6 Tage nach Vega 1). Vorbeiflug-Bus von 4920 kg + Abstiegsmodul von ~1500 kg mit einem zweiten Lander im Venera-Stil + Helium-Aerostat. Venus-Ankunft am 1985-06-15: Der Lander setzte bei 8,5° S, 164,5° O auf (Aphrodite Terra) und lieferte 57 Minuten Oberflächenwissenschaft; der Ballon trieb 46 Stunden lang neben dem von Vega 1 in der Wolkenschicht. Der Vorbeiflug-Bus flog weiter und begegnete dem Halleyschen Kometen (1P/Halley) am 1986-03-09 in 8030 km Abstand — die zweite Begegnung der Armada, 3 Tage nach Vega 1 und 5 Tage vor Giotto. Die Verfolgung durch Vega 1 + Vega 2 verfeinerte die Position des Kometenkerns auf 50 km genau, für die viel nähere Annäherung von Giotto."
+ },
+ {
+  "rel": "fleet/orbiter/vega-2.json",
+  "at": "best_known_for",
+  "old": "Geschwister von Vega 1 — zweite sowjetische Venus + Halley-Doppelmission, Halley-Vorbeiflug 09.03.1986",
+  "new": "Schwestersonde von Vega 1 — zweite sowjetische Doppelmission zu Venus und Halleyschem Kometen, Vorbeiflug am Kometen 1986-03-09"
+ },
+ {
+  "rel": "fleet/orbiter/viking1-orbiter.json",
+  "at": "tagline",
+  "old": "Begleit-Orbiter des Viking-1-Landers — Relais + 50000 Bilder mit 150-300 m/Pixel, erste globale Marskarte. Aktiv 1976-1980",
+  "new": "Begleit-Orbiter des Viking-1-Landers — Relais + 50000 Oberflächenbilder mit 150–300 m/Pixel, die erste globale Marskarte. Aktiv 1976-1980"
+ },
+ {
+  "rel": "fleet/orbiter/viking1-orbiter.json",
+  "at": "description",
+  "old": "Der Orbiter-Anteil der Viking-1-Mission der NASA — der erste amerikanische Mars-Orbiter und einer von zwei nahezu identischen Viking-Orbitern, die zwischen 1976 und 1980 etwa 50.000 Oberflächenbilder mit einer Auflösung von 150–300 m/Pixel zurücklieferten. Gestartet 1975-08-20 von Cape Canaveral auf einer Titan IIIE-Centaur, trat Viking 1 am 1976-06-19 in die Mars-Umlaufbahn ein; der Orbiter verbrachte einen Monat damit, geeignete Landeplätze zu erforschen, bevor er am 1976-07-20 die Viking-1-Landekapsel zur ersten erfolgreichen amerikanischen Marslandung in Chryse Planitia freigab. Der Orbiter arbeitete dann noch knapp vier Jahre lang als Wissenschaftsplattform weiter und erstellte die erste globale topographische und thermische Karte des Mars, erkundete Phobos und Deimos und fungierte als UHF-Relais für die Landekapsel. Verbrauchte am 1980-08-07 sein Lagekontrollgas. Absichtlich in eine Parkumlaufbahn von 357 × 33.614 km angehoben, die bis etwa 2024 stabil bleiben soll (gemäß Wiedereintrittsprognose der Aerospace Corp um ~2025 abgebrannt).",
+  "new": "Der Orbiter-Anteil der Viking-1-Mission der NASA — der erste amerikanische Mars-Orbiter und einer von zwei nahezu identischen Viking-Orbitern, die zwischen 1976 und 1980 etwa 50.000 Oberflächenbilder mit einer Auflösung von 150–300 m/Pixel zurücklieferten. Gestartet 1975-08-20 von Cape Canaveral auf einer Titan IIIE-Centaur, trat Viking 1 am 1976-06-19 in die Mars-Umlaufbahn ein; der Orbiter verbrachte einen Monat damit, geeignete Landeplätze zu erforschen, bevor er am 1976-07-20 die Viking-1-Lander zur ersten erfolgreichen amerikanischen Marslandung in Chryse Planitia freigab. Der Orbiter arbeitete dann noch knapp vier Jahre lang als Wissenschaftsplattform weiter und erstellte die erste globale topographische und thermische Karte des Mars, erkundete Phobos und Deimos und fungierte als UHF-Relais für den Lander. Verbrauchte am 1980-08-07 sein Lagekontrollgas. Absichtlich in eine Parkumlaufbahn von 357 × 33.614 km angehoben, die bis etwa 2024 stabil bleiben sollte (laut Wiedereintrittsprognose der Aerospace Corp um ~2025 zerfallen)."
+ },
+ {
+  "rel": "fleet/orbiter/viking1-orbiter.json",
+  "at": "best_known_for",
+  "old": "Begleit-Orbiter des Viking-1-Landers — Relais + 50000 Bilder mit 150-300 m/Pixel, erste globale Marskarte. Aktiv 1976-1980",
+  "new": "Begleit-Orbiter des Viking-1-Landers — Relais + 50000 Oberflächenbilder mit 150–300 m/Pixel, die erste globale Marskarte. Aktiv 1976-1980"
+ },
+ {
+  "rel": "fleet/orbiter/voyager-1.json",
+  "at": "description",
+  "old": "Das am weitesten entfernte von Menschenhand geschaffene Objekt — über 25 Milliarden Kilometer von der Sonne entfernt und ständig wachsend. Überschritt am 25. August 2012 die Heliosphäre ins interstellare Weltall. Trägt die Golden Record mit sich. Sendet immer noch über sein 470-W-RTG.",
+  "new": "Das am weitesten entfernte von Menschenhand geschaffene Objekt — über 25 Milliarden Kilometer von der Sonne entfernt und ständig wachsend. Durchquerte am 25. August 2012 die Heliopause und gelangte in den interstellaren Raum. Trägt die Golden Record. Sendet noch immer mit seinem 470-W-RTG."
+ },
+ {
+  "rel": "fleet/orbiter/voyager-2.json",
+  "at": "description",
+  "old": "Das einzige Raumschiff, um alle vier riesigen Planeten zu besuchen — Jupiter (1979), Saturn (1981), Uranus (1986), Neptun (1989). Im November 2018 folgte der Zwilling Voyager 1 in interstellaren Raum. Tragt einen identischen Golden Record.",
+  "new": "Das einzige Raumfahrzeug, das alle vier Riesenplaneten besucht hat — Jupiter (1979), Saturn (1981), Uranus (1986), Neptun (1989). Folgte seinem Zwilling Voyager 1 im November 2018 in den interstellaren Raum. Trägt eine identische Golden Record."
+ },
+ {
+  "rel": "fleet/orbiter/voyager-2.json",
+  "at": "best_known_for",
+  "old": "Nur Raumschiff, um alle vier riesigen Planeten zu besuchen",
+  "new": "Einziges Raumfahrzeug, das alle vier Riesenplaneten besucht hat"
+ },
+ {
+  "rel": "fleet/rover/curiosity.json",
+  "at": "tagline",
+  "old": "Kernkraftwerke Mars Science Laboratory Rover",
+  "new": "Mit Kernenergie betriebener Rover Mars Science Laboratory"
+ },
+ {
+  "rel": "fleet/rover/curiosity.json",
+  "at": "description",
+  "old": "Das nuklear betriebene Mars Science Laboratory der NASA auf dem Mars seit August 2012. Entdeckte organische Moleküle, antike Flussbettumgebungen und Beweise, dass Mars’ Gale-Krater in der Vergangenheit bewohnbar war. Noch über ein Jahrzehnt später funktionsfähig.",
+  "new": "Der nuklear betriebene Rover Mars Science Laboratory der NASA, seit August 2012 auf dem Mars. Entdeckte organische Moleküle, Umgebungen antiker Flussbetten und Belege dafür, dass der Gale-Krater auf dem Mars in der Vergangenheit bewohnbar war. Mehr als ein Jahrzehnt später noch immer in Betrieb."
+ },
+ {
+  "rel": "fleet/rover/curiosity.json",
+  "at": "best_known_for",
+  "old": "Kernkraftwerke Mars Science Laboratory Rover",
+  "new": "Mit Kernenergie betriebener Rover Mars Science Laboratory"
+ },
+ {
+  "rel": "fleet/rover/exomars-rosalind-franklin.json",
+  "at": "description",
+  "old": "Der erste Mars-Rover der ESA, benannt nach der DNA-Pionierin Rosalind Franklin. Konzipiert für eine Landung in Oxia Planum (einer alten, tonhaltigen Marsregion, ausgewählt wegen ihres hohen Potenzials zur Erhaltung von Biosignaturen) und für den Einsatz eines 2-Meter-Untergrundbohrers — tiefer als jede frühere Marsmission —, um Proben aus Tiefen zu gewinnen, die vor der kosmischen und UV-Strahlung geschützt sind, welche organisches Material an der Oberfläche zerstört. Die Analytical Laboratory Drawer beherbergt drei Instrumente zum Lebensnachweis: MOMA (Mars Organic Molecule Analyser, ein Gaschromatograf plus Massenspektrometer mit zwei Ionenquellen), MicrOmega (Infrarot-Bildgebungsspektroskopie) und den Raman Laser Spectrometer. Ursprünglich für einen Start 2022 auf einer russischen Proton mit einer in Russland gebauten Landeplattform (Kazachok) vorgesehen; nach dem russischen Einmarsch in die Ukraine 2022 setzte die ESA die Zusammenarbeit aus, und der Start von Rosalind Franklin wurde verschoben. Derzeit für 2028 auf einer von der NASA gestellten Trägerrakete mit einer von ESA / Airbus neu gebauten Landeplattform geplant.",
+  "new": "Der erste Mars-Rover der ESA, benannt nach der DNA-Pionierin Rosalind Franklin. Konzipiert für eine Landung in Oxia Planum (einer alten, tonhaltigen Marsregion, ausgewählt wegen ihres hohen Potenzials zur Erhaltung von Biosignaturen) und für den Einsatz eines 2-Meter-Untergrundbohrers — tiefer als jede frühere Marsmission —, um Proben aus Tiefen zu gewinnen, die vor der kosmischen und UV-Strahlung geschützt sind, welche organisches Material an der Oberfläche zerstört. Die Analytical Laboratory Drawer beherbergt drei Instrumente zum Lebensnachweis: MOMA (Mars Organic Molecule Analyser, ein Gaschromatograf plus Massenspektrometer mit zwei Ionenquellen), MicrOmega (Infrarot-Bildgebungsspektroskopie) und das Raman Laser Spectrometer. Ursprünglich für einen Start 2022 auf einer russischen Proton mit einer in Russland gebauten Landeplattform (Kazachok) vorgesehen; nach dem russischen Einmarsch in die Ukraine 2022 setzte die ESA die Zusammenarbeit aus, und der Start von Rosalind Franklin wurde verschoben. Derzeit für 2028 auf einer von der NASA gestellten Trägerrakete mit einer von ESA / Airbus neu gebauten Landeplattform geplant."
+ },
+ {
+  "rel": "fleet/rover/lrv-apollo.json",
+  "at": "tagline",
+  "old": "Erstes bemanntes Rover; Apollo 15, 16, 17",
+  "new": "Erster bemannter Rover; Apollo 15, 16, 17"
+ },
+ {
+  "rel": "fleet/rover/lrv-apollo.json",
+  "at": "dispatch",
+  "old": "Der Lunar Rover war das erste Auto auf einem anderen Himmelskörper, und sein ganzer Daseinszweck war Reichweite. Zu Fuß kann ein Astronaut nicht weit vom Lander entfernt bleiben — geht man zu weit weg, kann man nicht zurückgehen, falls der Raumanzug zu versagen beginnt. Räder schrieben diese Rechnung um: Apollo 15 bis 17 legten Kilometer von zu Hause zurück, verwandelten einen einzelnen Landeplatz in ein richtiges Forschungsgebiet und ermöglichten Geologen, tatsächlich selbst zu wählen, wohin sie schauen. Der Bau war selbst ein Rätsel — das Gefährt musste flach in einen Keil auf der Seite des Lunar Module gefaltet werden, sich auf der Oberfläche entfalten und dann durch abrasiven Staub und Temperaturwechsel von Hunderten Grad auf Maschendrahtreifen und Batteriestrom fahren. Es fuhr nie schnell. Es fuhr weit, und das war der ganze Sinn.",
+  "new": "Der Lunar Rover war das erste Auto auf einem anderen Himmelskörper, und sein ganzer Daseinszweck war Reichweite. Zu Fuß kann ein Astronaut nicht weit vom Lander entfernt bleiben — geht man zu weit weg, kann man nicht zurückgehen, falls der Raumanzug zu versagen beginnt. Räder schrieben diese Rechnung um: Apollo 15 bis 17 entfernten sich kilometerweit von ihrem Landeplatz, verwandelten einen einzelnen Landeplatz in ein richtiges Forschungsgebiet und ermöglichten Geologen, tatsächlich selbst zu wählen, wohin sie schauen. Der Bau war selbst ein Rätsel — das Gefährt musste flach in einen Keil auf der Seite des Lunar Module gefaltet werden, sich auf der Oberfläche entfalten und dann durch abrasiven Staub und Temperaturwechsel von Hunderten Grad auf Rädern aus Drahtgeflecht und mit Batteriestrom fahren. Es fuhr nie schnell. Es fuhr weit, und das war der ganze Sinn."
+ },
+ {
+  "rel": "fleet/rover/lrv-apollo.json",
+  "at": "description",
+  "old": "Das Lunar Roving Vehicle — das erste bemannte Rover. Drei Apollo (15, 16, 17) nutzten es, um ihre Oberflächenerkundung zu erweitern und legten pro Mission bis zu 35,9 km zurück (Apollo 17 Rekord). Gebaut von Boeing und Delco; in die Abstiegsstufe des LM gefaltet.",
+  "new": "Das Lunar Roving Vehicle — der erste bemannte Rover. Drei Apollo-Missionen (15, 16, 17) nutzten ihn, um ihre Oberflächenerkundung auszudehnen, und legten damit bis zu 35,9 km pro Mission zurück (Rekord von Apollo 17). Gebaut von Boeing und Delco; zusammengefaltet in der Abstiegsstufe des LM."
+ },
+ {
+  "rel": "fleet/rover/lrv-apollo.json",
+  "at": "best_known_for",
+  "old": "Erstes bemanntes Rover; Apollo 15, 16, 17",
+  "new": "Erster bemannter Rover; Apollo 15, 16, 17"
+ },
+ {
+  "rel": "fleet/rover/lunokhod-1.json",
+  "at": "tagline",
+  "old": "Erstes Radfahrzeug, um eine andere Welt zu streifen",
+  "new": "Erstes Radfahrzeug, das eine andere Welt erkundete"
+ },
+ {
+  "rel": "fleet/rover/lunokhod-1.json",
+  "at": "description",
+  "old": "Das erste Räderfahrzeug, das eine andere Welt durchquerte. Betrieben zehn Monate lang im Mare Imbrium des Mondes zwischen November 1970 und September 1971, ferngesteuert via Funkverbindung durch ein fünfköpfiges Team auf der Krim. Eine druckfeste „Wanne\", nachts von einem Polonium-Heizer beheizt.",
+  "new": "Das erste Radfahrzeug, das eine andere Welt erkundete. Zehn Monate im Einsatz im Mare Imbrium auf dem Mond, zwischen November 1970 und September 1971, per Funk von einem fünfköpfigen Team auf der Krim gesteuert. Eine druckbeaufschlagte „Wanne“, die nachts von einer Polonium-Heizung warm gehalten wurde."
+ },
+ {
+  "rel": "fleet/rover/lunokhod-1.json",
+  "at": "best_known_for",
+  "old": "Erstes Radfahrzeug, um eine andere Welt zu streifen",
+  "new": "Erstes Radfahrzeug, das eine andere Welt erkundete"
+ },
+ {
+  "rel": "fleet/rover/lunokhod-2.json",
+  "at": "tagline",
+  "old": "Roamed 39 km auf dem Mond — Rekord bis 2014",
+  "new": "Legte 39 km auf dem Mond zurück — Rekord bis 2014"
+ },
+ {
+  "rel": "fleet/rover/lunokhod-2.json",
+  "at": "description",
+  "old": "Lunokhod 2 ist ein planetarischer Rover von NPO Lavochkin in der UdSSR gebaut. Roamed 39 km auf dem Mond — Rekord bis 2014. Nach dem ersten Flug im Jahr 1973 zurückgezogen.",
+  "new": "Lunokhod 2 ist ein Planetenrover, den NPO Lavochkin in der UdSSR gebaut hat. Legte 39 km auf dem Mond zurück — Rekord bis 2014. Nach dem ersten Flug 1973 außer Dienst gestellt."
+ },
+ {
+  "rel": "fleet/rover/lunokhod-2.json",
+  "at": "best_known_for",
+  "old": "Roamed 39 km auf dem Mond — Rekord bis 2014",
+  "new": "Legte 39 km auf dem Mond zurück — Rekord bis 2014"
+ },
+ {
+  "rel": "fleet/rover/opportunity.json",
+  "at": "description",
+  "old": "Opportunity (MER-B) ist ein Planetenrover, der von NASA JPL in den USA gebaut wurde. Zwilling von Spirit; operierte fast 15 Jahre lang auf dem Mars. Stellte den Fahrrekord außerhalb der Erde mit 45,16 km auf und entdeckte Hämatit-„Blaubeeren\", die auf ehemaliges Wasser hindeuten. Stillgelegt 2019.",
+  "new": "Opportunity (MER-B) ist ein Planetenrover, der von NASA JPL in den USA gebaut wurde. Zwilling von Spirit; operierte fast 15 Jahre lang auf dem Mars. Stellte den Fahrrekord außerhalb der Erde mit 45,16 km auf und entdeckte Hämatit-„Blaubeeren“, die auf ehemaliges Wasser hindeuten. Stillgelegt 2019."
+ },
+ {
+  "rel": "fleet/rover/opportunity.json",
+  "at": "best_known_for",
+  "old": "Zwilling von Spirit; ~15-jährige, 45 km Mars-Operation",
+  "new": "Zwilling von Spirit; ~15 Jahre auf dem Mars, 45 km"
+ },
+ {
+  "rel": "fleet/rover/perseverance.json",
+  "at": "tagline",
+  "old": "Trug Ingenuity; Mars-Probeneinlagerung",
+  "new": "Trug Ingenuity; Probenlagerung auf dem Mars"
+ },
+ {
+  "rel": "fleet/rover/perseverance.json",
+  "at": "description",
+  "old": "NASAs Rover zur Probenkonservierung auf dem Mars seit Februar 2021. Transportierte Ingenuity, den ersten Hubschrauber außerhalb der Erde; hat 33 von 43 Probenröhrchen für die eventuelle Rückführung zur Erde gesammelt. Sucht nach Biosignaturen im antiken Delta des Jezero-Kraters.",
+  "new": "Der Rover der NASA zur Probenlagerung, seit Februar 2021 auf dem Mars. Trug Ingenuity, den ersten Hubschrauber außerhalb der Erde; hat 33 von 43 Probenröhrchen für die spätere Rückführung zur Erde gefüllt. Sucht im antiken Delta des Jezero-Kraters nach Biosignaturen."
+ },
+ {
+  "rel": "fleet/rover/perseverance.json",
+  "at": "best_known_for",
+  "old": "Trug Ingenuity; Mars-Probeneinlagerung",
+  "new": "Trug Ingenuity; Probenlagerung auf dem Mars"
+ },
+ {
+  "rel": "fleet/rover/pragyan.json",
+  "at": "tagline",
+  "old": "Erster Mond Südpol-Rover; Chandrayaan-3",
+  "new": "Erster Rover am Südpol des Mondes; Chandrayaan-3"
+ },
+ {
+  "rel": "fleet/rover/pragyan.json",
+  "at": "description",
+  "old": "Pragyan ist ein Planeten-Rover von ISRO in Indien gebaut. Erster Mond Südpol-Rover; Chandrayaan-3. Nach dem ersten Flug im Jahr 2023 zurückgezogen.",
+  "new": "Pragyan ist ein Planetenrover der ISRO, gebaut in Indien. Erster Rover am Südpol des Mondes; Chandrayaan-3. Nach dem ersten Flug 2023 außer Dienst gestellt."
+ },
+ {
+  "rel": "fleet/rover/pragyan.json",
+  "at": "best_known_for",
+  "old": "Erster Mond Südpol-Rover; Chandrayaan-3",
+  "new": "Erster Rover am Südpol des Mondes; Chandrayaan-3"
+ },
+ {
+  "rel": "fleet/rover/sojourner.json",
+  "at": "tagline",
+  "old": "Erster Mars-Rover; Pathfinder Mission",
+  "new": "Erster Mars-Rover; Pathfinder-Mission"
+ },
+ {
+  "rel": "fleet/rover/sojourner.json",
+  "at": "description",
+  "old": "Sojourner ist ein planetarischer Rover, der von der NASA JPL in USA gebaut wurde. Erster Mars-Rover; Pathfinder-Mission. Nach dem ersten Flug im Jahr 1997 zurückgezogen.",
+  "new": "Sojourner ist ein Planetenrover, den die NASA JPL in den USA gebaut hat. Erster Mars-Rover; Pathfinder-Mission. Nach dem ersten Flug 1997 außer Dienst gestellt."
+ },
+ {
+  "rel": "fleet/rover/sojourner.json",
+  "at": "best_known_for",
+  "old": "Erster Mars-Rover; Pathfinder Mission",
+  "new": "Erster Mars-Rover; Pathfinder-Mission"
+ },
+ {
+  "rel": "fleet/rover/spirit.json",
+  "at": "tagline",
+  "old": "Mars Exploration Rover; 6-jährige Operation",
+  "new": "Mars Exploration Rover; sechs Jahre im Betrieb"
+ },
+ {
+  "rel": "fleet/rover/spirit.json",
+  "at": "description",
+  "old": "Spirit (MER-A) ist ein planetarischer Rover, der von der NASA JPL in USA gebaut wurde. Mars Exploration Rover; 6-jährige Operation. Nach dem ersten Flug im Jahr 2004 zurückgezogen.",
+  "new": "Spirit (MER-A) ist ein Planetenrover, den die NASA JPL in den USA gebaut hat. Mars Exploration Rover; sechs Jahre im Betrieb. Nach dem ersten Flug 2004 außer Dienst gestellt."
+ },
+ {
+  "rel": "fleet/rover/yutu-2.json",
+  "at": "description",
+  "old": "Chinas Chang'e-4-Rover, der erste Rover, der auf der Mondrückseite operiert. Landete im Januar 2019 im Von-Kármán-Krater und operierte über sechs Jahre lang, weit über seine dreimona­tige Auslegungslebensdauer hinaus; seit Anfang 2024 weitgehend ortsfest.",
+  "new": "Der Rover der chinesischen Mission Chang'e-4, der erste Rover, der auf der Mondrückseite arbeitet. Landete im Januar 2019 im Von-Kármán-Krater und war über sechs Jahre in Betrieb — weit über seine auf drei Monate ausgelegte Lebensdauer hinaus; seit Anfang 2024 weitgehend ortsfest."
+ },
+ {
+  "rel": "fleet/rover/yutu.json",
+  "at": "tagline",
+  "old": "Erste chinesische Mond-Rover; Chang'e-3",
+  "new": "Erster chinesischer Mond-Rover; Chang'e-3"
+ },
+ {
+  "rel": "fleet/rover/yutu.json",
+  "at": "description",
+  "old": "Yutu ist ein planetarischer Rover von CAST in China. Erster chinesischer Mond-Rover; Chang'e-3. Nach dem ersten Flug 2013 zurückgezogen.",
+  "new": "Yutu ist ein Planetenrover, den CAST in China gebaut hat. Erster chinesischer Mond-Rover; Chang'e-3. Nach dem ersten Flug 2013 außer Dienst gestellt."
+ },
+ {
+  "rel": "fleet/rover/yutu.json",
+  "at": "best_known_for",
+  "old": "Erste chinesische Mond-Rover; Chang'e-3",
+  "new": "Erster chinesischer Mond-Rover; Chang'e-3"
+ },
+ {
+  "rel": "fleet/rover/zhurong.json",
+  "at": "description",
+  "old": "Zhurong ist ein planetarischer Rover, der von CAST in China gebaut wurde. Erster chinesischer Mars-Rover; Tianwen-1. Nach dem ersten Flug in 2021.",
+  "new": "Zhurong ist ein Planetenrover, den CAST in China gebaut hat. Erster chinesischer Mars-Rover; Tianwen-1. Nach dem ersten Flug 2021 außer Dienst gestellt."
+ },
+ {
+  "rel": "fleet/space-suit/a7l.json",
+  "at": "dispatch",
+  "old": "Ein Druckanzug auf dem Mond ist wirklich ein Raumfahrzeug, das man trägt — das kleinste bemannte Fahrzeug, das Apollo baute, für eine Person bemessen. Der A7L musste alles leisten, was eine Kapsel leistet — Druck halten, Sauerstoff liefern, Wärme und ausgeatmetes Kohlendioxid ableiten, gegen Temperaturschwankungen von Hunderten von Grad zwischen Sonnenlicht und Schatten schützen — und dabei einer Person noch erlauben, zu knien, zu gehen und einen Stein aufzuheben. Diese beiden Anforderungen widersprechen einander, denn alles, was Druck hält, will steif werden wie ein Ballon. Die Lösung waren einundzwanzig Schichten, die um eine gummibeschichtete Blase gebaut wurden, wobei der Rucksack das Ganze für mehrere Stunden autark machte. Es war der erste Anzug mit Zulassung für Spaziergänge auf einer anderen Welt, und für seine Missionen war er das Einzige zwischen einem Menschen und dem Vakuum.",
+  "new": "Ein Druckanzug auf dem Mond ist wirklich ein Raumfahrzeug, das man trägt — das kleinste bemannte Fahrzeug, das Apollo baute, für eine Person bemessen. Der A7L musste alles leisten, was eine Kapsel leistet — Druck halten, Sauerstoff liefern, Wärme und ausgeatmetes Kohlendioxid ableiten, gegen Temperaturschwankungen von Hunderten von Grad zwischen Sonnenlicht und Schatten schützen — und dabei einer Person noch erlauben, zu knien, zu gehen und einen Stein aufzuheben. Diese beiden Anforderungen widersprechen einander, denn alles, was Druck hält, will steif werden wie ein Ballon. Die Lösung waren einundzwanzig Schichten, die um eine gummibeschichtete Blase gebaut wurden, wobei der Rucksack das Ganze für mehrere Stunden autark machte. Er war der erste Anzug, der für das Gehen auf einer anderen Welt zugelassen war, und auf seinen Missionen war er das Einzige, was einen Menschen vom Vakuum trennte."
+ },
+ {
+  "rel": "fleet/space-suit/a7l.json",
+  "at": "description",
+  "old": "Erster operativer Mondoberflächenanzug. Harter Oberkörper, Arme und Beine aus Weichstoff, integrierte Mondstiefel, PLSS-Rucksack mit Sublimator-Kühlung und LiOH-CO₂-Scrubber, OPS-Notfall-O₂-Zylinder über dem PLSS. Betriebsdruck 3,7 psi reiner O₂ – der niedrigste aller geflogenen Anzüge, um die Mobilität beim Gehen in 1/6 g zu maximieren. Flog auf Apollo 11 (der erste Moonwalk), Apollo 12 und Apollo 13–14. Getragen von Buzz Aldrin auf dem ikonischen Foto der Mondoberfläche mit goldenem Visier.",
+  "new": "Erster operativer Mondoberflächenanzug. Harter Oberkörper, Arme und Beine aus weichem Gewebe, integrierte Mondstiefel, PLSS-Rucksack mit Sublimator-Kühlung und LiOH-CO₂-Wäscher, OPS-Notfall-O₂-Flasche über dem PLSS. Betriebsdruck 3,7 psi reiner O₂ – der niedrigste aller geflogenen Anzüge, um die Mobilität beim Gehen in 1/6 g zu maximieren. Flog auf Apollo 11 (der erste Mondspaziergang), Apollo 12 und Apollo 13–14. Getragen von Buzz Aldrin auf dem ikonischen Foto der Mondoberfläche mit goldenem Visier."
+ },
+ {
+  "rel": "fleet/space-suit/a7l.json",
+  "at": "best_known_for",
+  "old": "Der an Apollo 11–14 getragene Anzug – der erste, der EVA auf einer anderen Welt unterstützt",
+  "new": "Der bei Apollo 11–14 getragene Anzug – der erste, der Außenbordeinsätze (EVA) auf einer anderen Welt ermöglichte"
+ },
+ {
+  "rel": "fleet/space-suit/a7lb.json",
+  "at": "dispatch",
+  "old": "Manchmal dreht sich eine ganze Ära der Erforschung um ein einziges Gelenk. Der A7LB war der A7L mit einer zusätzlichen flexiblen Windung in der Hüfte — eine scheinbar kleine Änderung, die es einem Astronauten ermöglichte, sich in der Mitte zu beugen und sich hinzusetzen. Das ist der Unterschied zwischen einem Spaziergang von ein paar Kilometern vom Lander und dem Fahren mit einem Rover über mehrere Dutzende; zwischen einem zweistündigen Mondspaziergang und einer dreitägigen Feldmission. Die letzten drei Apollo-Landungen — die Langzeit-Wissenschaftsmissionen mit dem Rover und schließlich ein ausgebildeter Geologe — waren nur möglich, weil der Anzug es Menschen endlich erlaubte, sich hinzusetzen, zu greifen und stundenlang am Stück zu arbeiten. Die Engineering-Schlagzeile ist ein Hüftgelenk; das Ergebnis war die produktivste Wissenschaft des gesamten Programms.",
+  "new": "Manchmal dreht sich eine ganze Ära der Erforschung um ein einziges Gelenk. Der A7LB war der A7L mit einer zusätzlichen flexiblen Windung in der Hüfte — eine scheinbar kleine Änderung, die es einem Astronauten ermöglichte, sich in der Mitte zu beugen und sich hinzusetzen. Das ist der Unterschied zwischen einem Marsch von ein paar Kilometern ab dem Lander und einer Fahrt im Rover über Dutzende davon; zwischen einem zweistündigen Mondspaziergang und einer dreitägigen Feldmission. Die letzten drei Apollo-Landungen — die Langzeit-Wissenschaftsmissionen mit dem Rover und schließlich mit einem ausgebildeten Geologen — waren nur möglich, weil der Anzug es Menschen endlich erlaubte, sich hinzusetzen, zu greifen und stundenlang am Stück zu arbeiten. Die technische Schlagzeile ist ein Hüftgelenk; das Ergebnis war die produktivste Wissenschaft des gesamten Programms."
+ },
+ {
+  "rel": "fleet/space-suit/a7lb.json",
+  "at": "description",
+  "old": "A7L-Derivat für die erweiterten J-Klasse-Mondmissionen. Die charakteristische Änderung war eine Hüftgelenk-Windung, die Astronauten erlaubte, sich nach vorne zu beugen und im Lunar Roving Vehicle zu sitzen — ohne diese wären die J-Mission-EVAs von Apollo 15, 16 und 17 nicht möglich gewesen. Gleiche PLSS, OPS und 3,7 psi Druck wie A7L; gleiches goldenes Visier. Auch auf Skylab 2, 3 und 4 (1973–1974) in einer modifizierten Konfiguration verwendet, mit letztem EVA am 3. Februar 1974.",
+  "new": "A7L-Derivat für die erweiterten J-Klasse-Mondmissionen. Die charakteristische Änderung war eine Hüftgelenk-Windung, die Astronauten erlaubte, sich nach vorne zu beugen und im Lunar Roving Vehicle zu sitzen — ohne diese wären die J-Mission-EVAs von Apollo 15, 16 und 17 nicht möglich gewesen. Dasselbe PLSS, dasselbe OPS und derselbe Druck von 3,7 psi wie beim A7L; dasselbe goldene Visier. Auch auf Skylab 2, 3 und 4 (1973–1974) in einer modifizierten Konfiguration verwendet, mit dem letzten EVA am 3. Februar 1974."
+ },
+ {
+  "rel": "fleet/space-suit/aces.json",
+  "at": "tagline",
+  "old": "Der orangefarbene Shuttle-Druckanzug, der nach Challenger getragen wurde, machte Hemdenleeve unannehmbar",
+  "new": "Der orangefarbene Shuttle-Druckanzug, getragen, seit Challenger Starts in Hemdsärmeln unannehmbar gemacht hatte"
+ },
+ {
+  "rel": "fleet/space-suit/aces.json",
+  "at": "description",
+  "old": "Volldruck-Einsatz-Anzug von David Clark Company entwickelt. Ersetzt den früheren Launch Entry Suit (LES) ab 1994. Detachable Handschuhe, Fallschirmgurt integriert, unverwechselbare international-orange Farbe für Wasserrückgewinnung Sichtbarkeit. Auf jedem Space Shuttle Aufstieg und Wiedereintritt durch STS-135 im Jahr 2011.",
+  "new": "Volldruck-Anzug für Start und Wiedereintritt, entwickelt von der David Clark Company. Löste ab 1994 den früheren Launch Entry Suit (LES) ab. Abnehmbare Handschuhe, integriertes Fallschirmgurtzeug, markantes Internationalorange für die Sichtbarkeit bei der Bergung aus dem Wasser. Getragen bei jedem Start und Wiedereintritt des Space Shuttle bis STS-135 im Jahr 2011."
+ },
+ {
+  "rel": "fleet/space-suit/aces.json",
+  "at": "best_known_for",
+  "old": "Der orangefarbene \"Pumpkin\"-Anzug getragen für jeden Space Shuttle Start und Wiedereintritt nach Challenger",
+  "new": "Der orangefarbene „Pumpkin“-Anzug, getragen bei jedem Space-Shuttle-Start und -Wiedereintritt nach Challenger"
+ },
+ {
+  "rel": "fleet/space-suit/axemu.json",
+  "at": "tagline",
+  "old": "Next-gen US EVA-Anzug, Qualifikation für Artemis III",
+  "new": "US-EVA-Anzug der nächsten Generation, Qualifikation für Artemis III"
+ },
+ {
+  "rel": "fleet/space-suit/axemu.json",
+  "at": "description",
+  "old": "Axiom Spaces vertraglich vereinigter Raumanzug für NASAs Artemis-Mondlandung. Erbe der EMU, jedoch mit Bewegungsgelenken vergleichbar mit Apollos A7LB, einem regenerierbaren Amin-CO₂-Scrubber, HD-Video im Helm und staubdichten Gelenken für die Mondoberfläche. Außenlage-Design von Prada. Derzeit in Qualifizierungstests für Artemis III in den späten 2020er Jahren.",
+  "new": "Der EVA-Anzug, den Axiom Space im Auftrag der NASA für die Rückkehr zum Mond mit Artemis entwickelt. Er stammt von der EMU ab, bietet aber Bewegungsgelenke, die mit denen des A7LB von Apollo vergleichbar sind, einen regenerierbaren Amin-CO₂-Wäscher, HD-Video im Helm und staubresistente Gelenke für den Einsatz auf der Mondoberfläche. Das Design der Außenlage stammt von Prada. Derzeit in Qualifizierungstests für Artemis III in den späten 2020er Jahren."
+ },
+ {
+  "rel": "fleet/space-suit/axemu.json",
+  "at": "best_known_for",
+  "old": "US EVA-Anzug der nächsten Generation für die Mondlandung Artemis III qualifiziert",
+  "new": "US-EVA-Anzug der nächsten Generation, der für die Mondlandung von Artemis III qualifiziert wird"
+ },
+ {
+  "rel": "fleet/space-suit/crew-dragon-iva.json",
+  "at": "description",
+  "old": "Von SpaceX entwickelter Druck-Raumanzug für Start und Landung. Einteiliges Design mit frontalem Einstieg, Touchscreen-fähige Handschuhe zur Bedienung von Crew Dragons Tablet-Konsole, individuell für jedes Besatzungsmitglied angefertigte 3D-gedruckte Helme. Getragen beim Aufstieg und Wiedereintritt mit Crew Dragon. Charakteristisch minimalistisches weiß-schwarzes Design.",
+  "new": "Von SpaceX entwickelter Druck-Raumanzug für Start und Landung. Einteiliges Design mit frontalem Einstieg, Touchscreen-fähige Handschuhe zur Bedienung der Tablet-Konsole in der Crew Dragon, individuell für jedes Besatzungsmitglied angefertigte 3D-gedruckte Helme. Getragen beim Aufstieg und Wiedereintritt mit Crew Dragon. Charakteristisch minimalistisches weiß-schwarzes Design."
+ },
+ {
+  "rel": "fleet/space-suit/crew-dragon-iva.json",
+  "at": "best_known_for",
+  "old": "Der weiße, schmal geschnittene IVA-Anzug, der bei jedem NASA ISS Crew Dragon-Flug seit Demo-2 getragen wird",
+  "new": "Der weiße, schmal geschnittene IVA-Anzug, der bei jedem Crew-Dragon-Flug der NASA zur ISS seit Demo-2 getragen wird"
+ },
+ {
+  "rel": "fleet/space-suit/emu.json",
+  "at": "tagline",
+  "old": "Der weiße US-Raumanzug für Außenbordeinsätze — jeder amerikanische EVA vom Space Shuttle bis zur ISS",
+  "new": "Der weiße US-Raumanzug für Außenbordeinsätze — bei jedem amerikanischen EVA vom Space Shuttle bis zur ISS im Einsatz"
+ },
+ {
+  "rel": "fleet/space-suit/emu.json",
+  "at": "description",
+  "old": "Extravehicular Mobility Unit — modularer EVA-Anzug mit hartem Oberkörper, weichen Stoff-Armen und -Beinen sowie einem Primary Life Support System-Rucksack. Arbeitet bei 4,3 psi reinem O₂. Erster EVA geflogen auf STS-6 (April 1983) und noch über 40 Jahre später auf der ISS im Einsatz. SAFER-Mini-Triebwerkspaket seit 1994 für Seilriss-Rettung hinzugefügt (1,4 kg N₂, ~3 m/s Δv).",
+  "new": "Extravehicular Mobility Unit — modularer EVA-Anzug mit hartem Oberkörper, Armen und Beinen aus weichem Gewebe und einem Rucksack mit dem Primary Life Support System. Betriebsdruck 4,3 psi reiner O₂. Erster EVA mit diesem Anzug bei STS-6 (April 1983), und mehr als 40 Jahre später noch immer auf der ISS im Einsatz. 1994 kam das SAFER-Mini-Triebwerkspaket für die Rettung bei Verlust der Sicherungsleine hinzu (1,4 kg N₂, ~3 m/s Δv)."
+ },
+ {
+  "rel": "fleet/space-suit/emu.json",
+  "at": "best_known_for",
+  "old": "Der weiße US-Raumanzug, der jeden amerikanischen EVA vom Space Shuttle bis zur ISS absolviert hat",
+  "new": "Der weiße US-Raumanzug, der bei jedem amerikanischen EVA vom Space Shuttle bis zur ISS getragen wurde"
+ },
+ {
+  "rel": "fleet/space-suit/feitian.json",
+  "at": "description",
+  "old": "Chinesischer EVA-Anzug mit Heckzugang und architektonischen Ähnlichkeiten zum sowjetischen Orlan-Design. Erstmals bei Shenzhou 7 im Jahr 2008 eingesetzt, als Zhai Zhigang der erste chinesische Taikonaut wurde, der einen Außenbordeinsatz durchführte. Derzeit im operativen Einsatz auf der Wentian-Schleuse der Tiangong-Raumstation. Der Name bedeutet „fliegender Himmel\" – eine Anspielung auf die himmlischen fliegenden Geister (feitian) aus der buddhistischen Höhlenkunst in Dunhuang, die auf dem Armabzeichen des Anzugs dargestellt sind.",
+  "new": "Chinesischer EVA-Anzug mit Heckzugang und architektonischen Ähnlichkeiten zum sowjetischen Orlan-Design. Erstmals bei Shenzhou 7 im Jahr 2008 eingesetzt, als Zhai Zhigang der erste chinesische Taikonaut wurde, der einen Außenbordeinsatz durchführte. Derzeit im operativen Einsatz an der Schleuse des Moduls Wentian der Raumstation Tiangong. Der Name bedeutet „fliegender Himmel“ – eine Anspielung auf die himmlischen fliegenden Geister (feitian) aus der buddhistischen Höhlenkunst in Dunhuang, die auf dem Armabzeichen des Anzugs dargestellt sind."
+ },
+ {
+  "rel": "fleet/space-suit/krechet-94.json",
+  "at": "description",
+  "old": "Sowjetischer Mondflächenanzug, entwickelt für das abgebrochene bemannte Mondprogramm N1/L3. Einteiliges Design mit Heckzugang und dem PLSS in die Heckklappe integriert — das Architekturmuster, das sich der Krechet teilt (beide gleichzeitig 1967–1969 entwickelt) und später von dem Feitian übernommen wurde. Die Krechet-Hardware überstand die Programmeinstellung und befindet sich in Museumssammlungen (insbesondere im Memorial Museum of Cosmonautics, Moskau). Der Name bedeutet „Gerfalke\" — der größte der Falkenarten.",
+  "new": "Sowjetischer Mondoberflächenanzug, entwickelt für das eingestellte bemannte Mondprogramm N1/L3. Einteiliges Design mit Heckzugang und dem PLSS in der hinteren Luke — das Architekturmuster, das er mit dem Orlan teilt (beide wurden gleichzeitig 1967–1969 entwickelt) und das später vom Feitian übernommen wurde. Die Krechet-Hardware überstand die Einstellung des Programms und befindet sich in Museumssammlungen (insbesondere im Memorial Museum of Cosmonautics in Moskau). Der Name bedeutet „Gerfalke“ — die größte Falkenart."
+ },
+ {
+  "rel": "fleet/space-suit/orlan-mks.json",
+  "at": "description",
+  "old": "Neueste Variante der Orlan-Familie — russischer Ausstiegsanzug mit Rückeneinstieg, der seit Salyut 6 im Jahr 1977 ununterbrochen im Einsatz ist. Der Kosmonaut steigt durch eine an den Rucksack angebaute Schleuse ein, die sich in einer Bewegung verriegelt und macht damit das Entlüften mit geringerem Druck erforderlich bei US-amerikanischen Anzügen überflüssig. Betriebsdruck 5,8 psi (400 hPa) reiner O₂. Im Einsatz im russischen Segment der ISS. Frühere Orlan-Varianten waren auf den Stationen Salyut und Mir in Betrieb.",
+  "new": "Neueste Variante der Orlan-Familie — russischer Ausstiegsanzug mit Rückeneinstieg, der seit Salyut 6 im Jahr 1977 ununterbrochen im Einsatz ist. Der Kosmonaut steigt durch eine am Rucksack montierte Luke ein, die sich in einer Bewegung verriegeln lässt; so entfällt die Vorabatmung vor dem Schleusengang, die bei den US-Anzügen mit niedrigerem Druck nötig ist. Betriebsdruck 5,8 psi (400 hPa) reiner O₂. Im Einsatz im russischen Segment der ISS. Frühere Orlan-Varianten waren auf den Stationen Salyut und Mir in Betrieb."
+ },
+ {
+  "rel": "fleet/space-suit/shenzhou-iva.json",
+  "at": "tagline",
+  "old": "Chinas Start-Einsatz-Anzug, getragen auf jedem Shenzhou Flug seit 2003",
+  "new": "Chinas Start- und Wiedereintrittsanzug, getragen bei jedem Shenzhou-Flug seit 2003"
+ },
+ {
+  "rel": "fleet/space-suit/shenzhou-iva.json",
+  "at": "description",
+  "old": "Chinesischer Start-Einsatz-Druckanzug aus der sowjetischen Familie Sokol. Verwendet auf Shenzhou 5 im Jahr 2003, als Yang Liwei Chinas erster taikonaut wurde, und auf jeder nachfolgenden Shenzhou Mission. Back-Entry Naht, fester Helm, umbilical-fed; die architektonische Ähnlichkeit zu Sokol reflektiert Chinas frühen Raum-Programm Technologietransfer aus Russland.",
+  "new": "Chinesischer Start- und Wiedereintritts-Druckanzug, abgeleitet von der sowjetischen Sokol-Familie. Eingesetzt bei Shenzhou 5 im Jahr 2003, als Yang Liwei Chinas erster Taikonaut wurde, und bei jeder folgenden Shenzhou-Mission. Naht für den Rückeneinstieg, fester Helm, Versorgung über Nabelschnur; die architektonische Ähnlichkeit zum Sokol spiegelt den frühen Technologietransfer aus Russland in Chinas Raumfahrtprogramm wider."
+ },
+ {
+  "rel": "fleet/space-suit/shenzhou-iva.json",
+  "at": "best_known_for",
+  "old": "Von jedem chinesischen Taikonaut auf jedem Shenzhou-Flug seit 2003 gewebt",
+  "new": "Von jedem chinesischen Taikonauten bei jedem Shenzhou-Flug seit 2003 getragen"
+ },
+ {
+  "rel": "fleet/space-suit/sokol-kv-2.json",
+  "at": "tagline",
+  "old": "Soyuz-Startanzug, seit Soyuz 11 1971 Druckverlust-Unglücken obligatorisch",
+  "new": "Soyuz-Start-/Wiedereintrittsanzug, Pflicht seit den Dekompressionstoden von Soyuz 11 (1971)"
+ },
+ {
+  "rel": "fleet/space-suit/sokol-kv-2.json",
+  "at": "description",
+  "old": "Weicher Druckanzug, der in der Soyuz-Landungskapsel bei jedem Start und Wiedereintritt seit Soyuz T-2 im Jahr 1980 getragen wird und den ursprünglichen Sokol-K ersetzt. Rückseitiger Verschlussnähte (geschnürt), Helm mit festem Design und klappbarem Visier, Nabelschnur für O₂ + Kommunikation + Kühlwasser. Nicht für Weltraumspaziergänge ausgelegt — er ist die Notfalllösung, die die Crew lange genug am Leben erhält, um zu landen, wenn der Kabinendruck ausfällt.",
+  "new": "Weicher Druckanzug, der seit Soyuz T-2 im Jahr 1980 bei jedem Start und Wiedereintritt in der Landekapsel der Soyuz getragen wird und den ursprünglichen Sokol-K ersetzte. Naht für den Rückeneinstieg (zugeschnürt), fester Helm mit hochklappbarem Visier, Nabelschnur für O₂ + Kommunikation + Kühlwasser. Nicht für Außenbordeinsätze ausgelegt — er ist die Notfalllösung, die die Besatzung lange genug am Leben hält, um zu landen, falls der Kabinendruck ausfällt."
+ },
+ {
+  "rel": "fleet/space-suit/sokol-kv-2.json",
+  "at": "best_known_for",
+  "old": "Der einzige auf Soyuz getragene Anzug — entwickelt nach den Dekompressionsunfällen von Soyuz 11 im Jahr 1971",
+  "new": "Der einzige in der Soyuz getragene Anzug — geschaffen nach den Dekompressionstoden von Soyuz 11 im Jahr 1971"
+ },
+ {
+  "rel": "fleet/space-suit/sokol-m.json",
+  "at": "tagline",
+  "old": "Russlands nächste Generation Soyuz/PTK Start-Entry-Anzug",
+  "new": "Russlands Start-/Wiedereintrittsanzug der Folgegeneration, Soyuz/PTK"
+ },
+ {
+  "rel": "fleet/space-suit/sokol-m.json",
+  "at": "description",
+  "old": "Ersetzung für Sokol KV-2 — beinhaltet Lehren, die über 50 Jahre von Soyuz Start-Entry-Operationen gelernt wurden. Versetzt für Russlands PTK / Orel Besatzung Raumschiff. Gleiche allgemeine Architektur (Back-entry, umbilical-fed) mit modernisierten Materialien und Ergonomie.",
+  "new": "Ersatz für den Sokol KV-2 — berücksichtigt die Erfahrungen aus 50 Jahren Soyuz-Starts und -Wiedereintritten. Vorgesehen für das bemannte Raumschiff PTK / Orel Russlands. Gleiche Grundarchitektur (Rückeneinstieg, Versorgung über Nabelschnur), mit modernisierten Materialien und verbesserter Ergonomie."
+ },
+ {
+  "rel": "fleet/space-suit/sokol-m.json",
+  "at": "best_known_for",
+  "old": "Russlands nächste Generation Soyuz/PTK Start-Entry-Anzug",
+  "new": "Russlands Start-/Wiedereintrittsanzug der Folgegeneration, Soyuz/PTK"
+ },
+ {
+  "rel": "fleet/space-suit/starliner-suit.json",
+  "at": "tagline",
+  "old": "Boeings blauer Starliner-Startanzug",
+  "new": "Blauer Starliner-Startanzug von Boeing"
+ },
+ {
+  "rel": "fleet/space-suit/starliner-suit.json",
+  "at": "description",
+  "old": "Leichter Druckanzug für Start und Wiedereintritt, entwickelt von David Clark Company für Boeings kommerzielles CST-100-Starliner-Raumfahrzeug. Touch-Screen-kompatible Handschuhe, integrierte Kommunikationsmütze, belüfteter Helm. Debütierte auf der Crew Flight Test-Mission (Juni 2024), geflogen von Butch Wilmore und Suni Williams, die im Februar 2025 über Crew-9 zurückkehrten, nachdem Starliner unbesetzt zurückkam.",
+  "new": "Leichter Druckanzug für Start und Wiedereintritt, gebaut von der David Clark Company für das kommerzielle Besatzungsraumschiff CST-100 Starliner von Boeing. Touchscreen-kompatible Handschuhe, integrierte Kommunikationskappe, belüfteter Helm. Debütierte beim Crew Flight Test (Juni 2024) mit Butch Wilmore und Suni Williams, die im Februar 2025 mit Crew-9 zurückkehrten, nachdem Starliner unbemannt zurückgekehrt war."
+ },
+ {
+  "rel": "fleet/space-suit/starliner-suit.json",
+  "at": "best_known_for",
+  "old": "Boeings blauer IVA-Anzug für die CST-100 Starliner, Debüt bei der Crew Flight Test 2024",
+  "new": "Blauer IVA-Anzug von Boeing für das Raumschiff CST-100 Starliner, Debüt beim Crew Flight Test 2024"
+ },
+ {
+  "rel": "fleet/station/iss.json",
+  "at": "dispatch",
+  "old": "Die Internationale Raumstation ist die größte Struktur, die die Menschheit je im Weltraum gebaut hat, und der Ort, an dem jeder Strang des Raumfahrtzeitalters zusammenläuft. Ihr russischer Kern stammt direkt von Salyut und Mir ab; ihr amerikanisches Segment von Skylab; sie wurde vom Space Shuttle zusammengebaut, wird von Soyuz mit Besatzung versorgt, von den Nachfolgern des Progress-Frachters beliefert und trägt Labore, die von Europa und Japan gebaut wurden — nahezu jedes frühere Programm ist als Erbe in ihr präsent. Zusammengebaut ab 1998 und durchgehend bemannt seit November 2000, ist sie die längste ununterbrochene menschliche Präsenz außerhalb der Erde in der Geschichte und der klarste Beweis für eine einzige Idee: dass die größten Dinge im Weltraum nicht dadurch entstehen, dass man ein Rennen gewinnt, sondern dadurch, dass ehemalige Rivalen sich Jahrzehnt für Jahrzehnt entscheiden, sie gemeinsam zu bauen.",
+  "new": "Die Internationale Raumstation ist die größte Struktur, die die Menschheit je im Weltraum gebaut hat, und der Ort, an dem jeder Strang des Raumfahrtzeitalters zusammenläuft. Ihr russischer Kern stammt direkt von Salyut und Mir ab; ihr amerikanisches Segment von Skylab; sie wurde vom Space Shuttle zusammengebaut, ihre Besatzungen fliegen mit der Soyuz, die Nachfahren des Progress-Frachters versorgen sie, und sie trägt Labore, die Europa und Japan gebaut haben — nahezu jedes frühere Programm ist als Erbe in ihr präsent. Zusammengebaut ab 1998 und durchgehend bemannt seit November 2000, ist sie die längste ununterbrochene menschliche Präsenz außerhalb der Erde in der Geschichte und der klarste Beweis für eine einzige Idee: dass die größten Dinge im Weltraum nicht dadurch entstehen, dass man ein Rennen gewinnt, sondern dadurch, dass ehemalige Rivalen sich Jahrzehnt für Jahrzehnt entscheiden, sie gemeinsam zu bauen."
+ },
+ {
+  "rel": "fleet/station/iss.json",
+  "at": "description",
+  "old": "Die Internationale Raumstation — der längste ständig bemannte Lebensraum der Menschheit seit November 2000. Zusammengebaut über 40 Starts von NASA, Roscosmos, ESA, JAXA und CSA. Derzeit für Deorbit um 2031 geplant.",
+  "new": "Die Internationale Raumstation — der am längsten durchgehend bemannte Lebensraum der Menschheit, besetzt seit November 2000. In mehr als 40 Starts von NASA, Roscosmos, ESA, JAXA und CSA zusammengebaut. Das Deorbit ist derzeit für etwa 2031 geplant."
+ },
+ {
+  "rel": "fleet/station/mir.json",
+  "at": "dispatch",
+  "old": "Mir war die erste modulare Raumstation — und die Brücke zwischen zwei Ären der Raumfahrt. Während jede Station vor ihr als Ganzes gestartet wurde, wurde Mir über ein Jahrzehnt hinweg in der Umlaufbahn zusammengesetzt, Modul um Modul, und wuchs zu einem ausgedehnten Komplex heran, der fünfzehn Jahre lang in der Luft blieb. Sie stellte den Ausdauerrekord auf, der bis heute Bestand hat (Waleri Poljakows 437 ununterbrochene Tage, ein Beweis dafür, dass eine Besatzung einen marsähnlich langen Flug überstehen könnte), überlebte die Sowjetunion, die sie gebaut hatte, um ein Jahrzehnt, und überstand 1997 einen Brand und eine Druckentlastungskollision, die ihre Besatzung von Hand abwehrte. In ihren letzten Jahren dockte amerikanische Space Shuttles an ihr an und US-Astronauten lebten an Bord — die Generalprobe, in Hardware und in Vertrauen, für die Internationale Raumstation, die fast alles erbte, das Mir erarbeitete.",
+  "new": "Mir war die erste modulare Raumstation — und die Brücke zwischen zwei Ären der Raumfahrt. Während jede Station vor ihr als Ganzes gestartet wurde, wurde Mir über ein Jahrzehnt hinweg in der Umlaufbahn zusammengesetzt, Modul um Modul, und wuchs zu einem ausgedehnten Komplex heran, der fünfzehn Jahre lang in der Luft blieb. Sie stellte den Ausdauerrekord auf, der bis heute Bestand hat (Waleri Poljakows 437 ununterbrochene Tage, ein Beweis dafür, dass eine Besatzung einen marsähnlich langen Flug überstehen könnte), überlebte die Sowjetunion, die sie gebaut hatte, um ein Jahrzehnt, und überstand 1997 einen Brand und eine Kollision mit Druckverlust, die ihre Besatzung von Hand abwehrte. In ihren letzten Jahren dockten amerikanische Space Shuttles an ihr an und US-Astronauten lebten an Bord — die Generalprobe, in Hardware und in Vertrauen, für die Internationale Raumstation, die fast alles erbte, das Mir erarbeitete."
+ },
+ {
+  "rel": "fleet/station/salyut-1.json",
+  "at": "tagline",
+  "old": "Welt erste Raumstation",
+  "new": "Erste Raumstation der Welt"
+ },
+ {
+  "rel": "fleet/station/salyut-1.json",
+  "at": "description",
+  "old": "Die weltweit erste Raumstation – 1971, besetzt für 23 Tage von der Soyuz 11 Crew (Dobrovolski, Wolkow, Pazajew), die alle bei der Rückkehr starben, als ihre Kapsel depressurisiert wurde. Salyut 1 wurde später in diesem Jahr deorbitiert.",
+  "new": "Die weltweit erste Raumstation — 1971 gestartet, 23 Tage lang von der Besatzung von Soyuz 11 (Dobrovolski, Wolkow, Pazajew) bewohnt, die bei der Rückkehr alle ums Leben kam, als ihre Kapsel den Druck verlor. Salyut 1 wurde später im selben Jahr deorbitiert."
+ },
+ {
+  "rel": "fleet/station/salyut-1.json",
+  "at": "best_known_for",
+  "old": "Welt erste Raumstation",
+  "new": "Erste Raumstation der Welt"
+ },
+ {
+  "rel": "fleet/station/salyut-2.json",
+  "at": "dispatch",
+  "old": "Salyut 2 war eigentlich gar kein Salyut — es war die erste Almaz, eine geheime Militäraufklärungsstation, die unter dem zivilen Namen geflogen wurde, um ihren Zweck zu verschleiern. Sie trug niemals eine Besatzung. Tage nach dem Erreichen der Umlaufbahn verlor sie den Druck und begann zu trudeln, ihre Systeme fielen aus, und sie trat wieder ein, ohne jemals bemannt zu sein. Ein raues, verborgenes Anfang für die militärische Hälfte des Programms und eine Erinnerung daran, wie unnachsichtig die frühen Jahre des Stationsbaus waren.",
+  "new": "Salyut 2 war eigentlich gar kein Salyut — es war die erste Almaz, eine geheime Militäraufklärungsstation, die unter dem zivilen Namen geflogen wurde, um ihren Zweck zu verschleiern. Sie trug niemals eine Besatzung. Tage nach dem Erreichen der Umlaufbahn verlor sie den Druck und begann zu trudeln, ihre Systeme fielen aus, und sie trat wieder ein, ohne je bemannt gewesen zu sein. Ein rauer, verborgener Anfang für die militärische Hälfte des Programms und eine Erinnerung daran, wie unnachsichtig die frühen Jahre des Stationsbaus waren."
+ },
+ {
+  "rel": "fleet/station/salyut-2.json",
+  "at": "description",
+  "old": "Die erste der drei sowjetischen Militär-Almaz-Raumstationen — öffentlich Salyut 2 genannt, um ihren wirklichen Zweck zu verschleiern (DoD-ähnliche Aufklärung mit einer 6,4-m-Brennweiten-Panoramakamera und einer Filmrückkehrkapsel). Gestartet am 1973-04-03 auf einer Proton-K von Baikonur aus erreichte Salyut 2 erfolgreich die Umlaufbahn, wurde aber etwa 10 Tage später von Trümmern der dritten Stufe der Proton getroffen — die drei Tage nach dem Start explodierte — wodurch beide Solarmodule abgerissen und die Hülle durchschlagen wurde. Der resultierende Stromausfall führte am 13. Tag (1973-04-14) zur Druckentlüftung und machte die Station unbrauchbar, bevor eine Besatzung geschickt werden konnte. Die geplante Besatzung (Pawel Popowitsch + Juri Artjuchin) flog stattdessen ein Jahr später auf Salyut 3. Salyut 2 trat am 1973-05-28 in die Atmosphäre ein — damals das kürzestlebige Stationsprogramm der Geschichte. Ihre Existenz als Militärstation wurde erst nach dem Zusammenbruch der Sowjetunion freigegeben.",
+  "new": "Die erste der drei sowjetischen Militär-Almaz-Raumstationen — öffentlich Salyut 2 genannt, um ihren wirklichen Zweck zu verschleiern (DoD-ähnliche Aufklärung mit einer 6,4-m-Brennweiten-Panoramakamera und einer Filmrückkehrkapsel). Gestartet am 1973-04-03 auf einer Proton-K von Baikonur aus erreichte Salyut 2 erfolgreich die Umlaufbahn, wurde aber etwa 10 Tage später von Trümmern der dritten Stufe der Proton getroffen — die drei Tage nach dem Start explodierte — wodurch beide Solarmodule abgerissen und die Hülle durchschlagen wurde. Der resultierende Stromausfall führte am 13. Tag (1973-04-14) zum Druckverlust und machte die Station unbrauchbar, bevor eine Besatzung geschickt werden konnte. Die geplante Besatzung (Pawel Popowitsch + Juri Artjuchin) flog stattdessen ein Jahr später auf Salyut 3. Salyut 2 trat am 1973-05-28 in die Atmosphäre ein — damals das kürzestlebige Stationsprogramm der Geschichte. Ihre Existenz als Militärstation wurde erst nach dem Zusammenbruch der Sowjetunion offengelegt."
+ },
+ {
+  "rel": "fleet/station/salyut-3.json",
+  "at": "tagline",
+  "old": "Zweite Almaz-Militärstation — Soyuz-14-Crew Jul 1974; Soyuz 15 fehlgeschlagenes automatisches Andocken; Test einer Bordkanone 1975-01-24",
+  "new": "Zweite Almaz-Militärstation — Soyuz-14-Crew Juli 1974; Soyuz 15: Andocken fehlgeschlagen; angeblich Bordkanone getestet 1975-01-24"
+ },
+ {
+  "rel": "fleet/station/salyut-3.json",
+  "at": "dispatch",
+  "old": "Salyut 3 war Almaz — eine bemannte militärische Aufklärungsstation, deren wahrhafter Zweck unter dem zivilen Namen verborgen lag. Ihre einzige Besatzung, Soyuz 14, verbrachte etwa zwei Wochen an Bord und bediente langfokussierte Kameras zur Fotografierung von Zielen darunter — in einer Ära, bevor automatisierte Spionagesatelliten menschliche Augen überflüssig machten. Am berühmtesten ist, dass Salyut 3 vor der Deorbitalisierung eine schnellfeuernd Kanone im Orbit zündete — die einzige bekannte Instanz einer von einem bemannten Raumschiff abgegebenen Waffe.",
+  "new": "Salyut 3 war Almaz — eine bemannte militärische Aufklärungsstation, deren wahrer Zweck unter dem zivilen Namen verborgen lag. Ihre einzige Besatzung, Soyuz 14, verbrachte etwa zwei Wochen an Bord und bediente Kameras mit langer Brennweite, um Ziele am Boden zu fotografieren — in einer Ära, bevor automatisierte Spionagesatelliten menschliche Augen überflüssig machten. Am berühmtesten ist, dass Salyut 3 vor ihrem Deorbit eine schnellfeuernde Kanone im Orbit zündete — der einzige bekannte Fall, dass von einem bemannten Raumfahrzeug aus eine Waffe abgefeuert wurde."
+ },
+ {
+  "rel": "fleet/station/salyut-3.json",
+  "at": "description",
+  "old": "Die zweite sowjetische Almaz-Militärstation — wiederum öffentlich Salyut 3 genannt, um ihre Überwachungsrolle zu verschleiern. Gestartet am 1974-06-25 auf einer Proton-K, beherbergte Salyut 3 eine kurze Besatzungsmission (Soyuz 14, Popowitsch + Artyukhin, 15 Tage, 1974-07-03 bis 1974-07-19), die die 6,4-m-Agat-Kamera der Station + Filmrückkehrkapsel betätigte. Ein zweiter Besatzungsversuch (Soyuz 15, Sarafanov + Demin, 1974-08-26) scheiterte beim automatischen Igla-Rendezvous und kehrte am selben Tag zurück. Kurz vor der Deorbitalisierung am 1975-01-24 zündete Salyut 3 angeblich ihre Bordkanone Nudelman (Quellen nennen entweder 23-mm oder 30-mm Kaliber) — die einzige bekannte Instanz einer Waffenfeuer im All (der Rückstoß wurde von den Lageregelungstriebwerken der Station absorbiert; das Geschoss zerfiel in der Atmosphäre). Wiedereinritt in die Atmosphäre am 1975-01-24.",
+  "new": "Die zweite sowjetische Almaz-Militärstation — wiederum öffentlich Salyut 3 genannt, um ihre Überwachungsrolle zu verschleiern. Gestartet am 1974-06-25 auf einer Proton-K, beherbergte Salyut 3 eine kurze Besatzungsmission (Soyuz 14, Popowitsch + Artjuchin, 15 Tage, 1974-07-03 bis 1974-07-19), die die 6,4-m-Kamera Agat der Station und die Filmrückkehrkapsel einsetzte. Ein zweiter Besatzungsversuch (Soyuz 15, Sarafanov + Demin, 1974-08-26) scheiterte beim automatischen Igla-Rendezvous und kehrte am selben Tag zurück. Kurz vor der Deorbitalisierung am 1975-01-24 zündete Salyut 3 angeblich ihre Bordkanone Nudelman (Quellen nennen entweder Kaliber 23 mm oder 30 mm) — der einzige bekannte Fall eines Waffenabschusses im All (der Rückstoß wurde von den Lageregelungstriebwerken der Station absorbiert; das Geschoss zerfiel in der Atmosphäre). Trat am 1975-01-24 wieder in die Atmosphäre ein."
+ },
+ {
+  "rel": "fleet/station/salyut-3.json",
+  "at": "best_known_for",
+  "old": "Zweite Almaz-Militärstation — Soyuz-14-Crew Jul 1974; Soyuz 15 fehlgeschlagenes Andocken; Test einer Bordkanone 1975-01-24",
+  "new": "Zweite Almaz-Militärstation — Soyuz-14-Crew Juli 1974; Soyuz 15: Andocken fehlgeschlagen; angeblich Bordkanone getestet 1975-01-24"
+ },
+ {
+  "rel": "fleet/station/salyut-4.json",
+  "at": "tagline",
+  "old": "Zivile DOS-4-Station – empfing Soyuz 17 (29 Tage) + Soyuz 18 (63 Tage, damaliger Rekord); deorbitiert 1977-02-03",
+  "new": "Zivile DOS-4-Station – empfing die Besatzungen von Soyuz 17 (29 Tage) + Soyuz 18 (63 Tage, damals längster Raumflug); deorbitiert 1977-02-03"
+ },
+ {
+  "rel": "fleet/station/salyut-4.json",
+  "at": "dispatch",
+  "old": "Salyut 4 war der Punkt, wo die Linie der zivilen Stationen endlich Fuß fasste. Eine DOS-Wissenschaftsstation arbeitete sie zuverlässig, wo frühere Stationen versagt hatten — zwei Besatzungen beherbergend, eine für 29 Tage und eine für 63 Tage, mit Sonnenteleskop und vollständigem Wissenschaftsprogramm. Nach dem tödlichen Start von Salyut 1 und den nachfolgenden Ausfällen im Orbit war Salyut 4 der stille Beweis, dass die Sowjetunion eine Station und ihre Besatzungen nun für Wochen zuverlässig und produktiv halten konnte.",
+  "new": "Salyut 4 war der Punkt, an dem die zivile Stationslinie endlich Tritt fasste. Als wissenschaftliche DOS-Station arbeitete sie zuverlässig, wo frühere Stationen versagt hatten: Sie beherbergte zwei Besatzungen, eine für 29 und eine für 63 Tage, und trug ein Sonnenteleskop sowie ein umfassendes Wissenschaftsprogramm. Nach dem tödlichen Auftakt von Salyut 1 und den Ausfällen im Orbit danach war Salyut 4 der stille Beweis, dass die Sowjetunion eine Station und ihre Besatzungen nun wochenlang gesund und produktiv halten konnte."
+ },
+ {
+  "rel": "fleet/station/salyut-4.json",
+  "at": "description",
+  "old": "Die vierte zivile Salyut (DOS-4), gebaut vom Koroljow-Büro und betrieben von der sowjetischen zivilen Raumfahrtorganisation, nicht von der militärischen Almaz-Linie. Gestartet 1974-12-26 auf einer Proton-K, trug Salyut 4 ein 25-cm-Sonnenteleskop OST-1, ein Röntgenteleskop und eine Reihe von Biowissenschafts-Experimenten. Beherbergte zwei Langzeitbesatzungen: Soyuz 17 (Gubarev + Grechko, 29 Tage, 1975-01-11 bis 1975-02-09) und Soyuz 18 (Klimuk + Sevastyanov, 63 Tage, 1975-05-24 bis 1975-07-26, damals der längste bemannte Raumflug der Geschichte). Ein dritter Versuch — Soyuz 18a (Lazarev + Makarov, 1975-04-05) — erlitt einen Boosterausfall mit 21 g während des Starts und brachte die Besatzung sicher zurück, nachdem sie die höchste Landebelastung überstand, die je von Menschen überlebt wurde. Salyut 4 beherbergte Soyuz 20, einen automatisierten dreimonatigen Besuch für Hunde und biologische Experimente, bevor es am 1977-02-03 nach 26 Monaten wiedereintrat.",
+  "new": "Die vierte zivile Salyut (DOS-4), gebaut vom Koroljow-Büro und betrieben vom zivilen sowjetischen Raumfahrtprogramm, nicht von der militärischen Almaz-Linie. Gestartet 1974-12-26 auf einer Proton-K, trug Salyut 4 ein 25-cm-Sonnenteleskop OST-1, ein Röntgenteleskop und eine Reihe von Biowissenschafts-Experimenten. Beherbergte zwei Langzeitbesatzungen: Soyuz 17 (Gubarev + Grechko, 29 Tage, 1975-01-11 bis 1975-02-09) und Soyuz 18 (Klimuk + Sevastyanov, 63 Tage, 1975-05-24 bis 1975-07-26, damals der längste bemannte Raumflug der Geschichte). Ein dritter Versuch — Soyuz 18a (Lazarev + Makarov, 1975-04-05) — erlitt beim Start einen Ausfall der Trägerrakete mit 21 g; die Besatzung kehrte sicher zurück, nach der höchsten Landebelastung, die je ein Mensch überlebt hat. Salyut 4 beherbergte Soyuz 20, einen automatisierten dreimonatigen Besuch mit Hunden und biologischen Experimenten, bevor sie am 1977-02-03 nach 26 Monaten wieder in die Atmosphäre eintrat."
+ },
+ {
+  "rel": "fleet/station/salyut-4.json",
+  "at": "best_known_for",
+  "old": "Zivile DOS-4-Station — beherbergte Soyuz 17-Besatzung (29 Tage) + Soyuz 18-Besatzung (63 Tage, damals längster Raumflug); deorbitiert 1977-02-03",
+  "new": "Zivile DOS-4-Station — beherbergte die Besatzungen von Soyuz 17 (29 Tage) + Soyuz 18 (63 Tage, damals längster Raumflug); deorbitiert 1977-02-03"
+ },
+ {
+  "rel": "fleet/station/salyut-5.json",
+  "at": "tagline",
+  "old": "Letzte Almaz-Militärstation — Soyuz 21 + Soyuz 24 Besatzungen; Soyuz 23 fehlgeschlagener Anflug; Wiedereintritt 1977-08-08",
+  "new": "Letzte Almaz-Militärstation — Besatzungen von Soyuz 21 + 24; Soyuz 23: Anflug fehlgeschlagen; Wiedereintritt 1977-08-08 nach 412 Tagen"
+ },
+ {
+  "rel": "fleet/station/salyut-5.json",
+  "at": "description",
+  "old": "Die dritte und letzte sowjetische Almaz-Militärstation. Gestartet 1976-06-22 auf einer Proton-K, Salyut 5 beherbergte zwei Besatzungen: Soyuz 21 (Wolynow + Zholobov, 49 Tage, 1976-07-06 bis 1976-08-24 — vorzeitig beendet durch ätzende Gerüche, die die Besatzung auf einen korrodierten Filmbehälter-Verschluss zurückführte) und Soyuz 24 (Gorbatko + Glazkov, 17 Tage, 1977-02-07 bis 1977-02-25 — erste Kosmonauten, die die Atmosphäre einer Station durch Entlüftung + Nachfüllung austauschten). Soyuz 23 (Zudov + Rozhdestvensky, 1976-10-14) konnte nicht andocken, nachdem das Igla-Rendezvous-System fehlgeschlagen war; die Besatzung überlebte eine Notlandung mit hohem Wasserstand im Tengiz-See, die einzige sowjetische Wasserlandung. Salyut 5 war die letzte durchgeführte Almaz-Mission — das Programm wurde nach dem Deorbit der Station am 1977-08-08 eingestellt.",
+  "new": "Die dritte und letzte sowjetische Almaz-Militärstation. Gestartet 1976-06-22 auf einer Proton-K, Salyut 5 beherbergte zwei Besatzungen: Soyuz 21 (Wolynow + Zholobov, 49 Tage, 1976-07-06 bis 1976-08-24 — vorzeitig beendet durch ätzende Gerüche, die die Besatzung auf eine korrodierte Dichtung der Filmrückkehrkapsel zurückführte) und Soyuz 24 (Gorbatko + Glazkov, 17 Tage, 1977-02-07 bis 1977-02-25 — erste Kosmonauten, die die Atmosphäre einer Station durch Entlüftung + Nachfüllung austauschten). Soyuz 23 (Zudov + Rozhdestvensky, 1976-10-14) konnte nicht andocken, nachdem das Igla-Rendezvous-System ausgefallen war; die Besatzung überlebte eine Wasserlandung bei hohem Wasserstand im Tengiz-See, die einzige sowjetische Wasserlandung. Salyut 5 war die letzte durchgeführte Almaz-Mission — das Programm wurde nach dem Deorbit der Station am 1977-08-08 eingestellt."
+ },
+ {
+  "rel": "fleet/station/salyut-5.json",
+  "at": "best_known_for",
+  "old": "Letzte Almaz-Militärstation — Soyuz 21 + Soyuz 24 Besatzungen; Soyuz 23 fehlgeschlagener Anflug; Wiedereintritt 1977-08-08",
+  "new": "Letzte Almaz-Militärstation — Besatzungen von Soyuz 21 + 24; Soyuz 23: Anflug fehlgeschlagen; Wiedereintritt 1977-08-08 nach 412 Tagen"
+ },
+ {
+  "rel": "fleet/station/salyut-6.json",
+  "at": "tagline",
+  "old": "Erster Dauer-Multiport-Sowjet-Station",
+  "new": "Erste sowjetische Mehrport-Langzeitstation"
+ },
+ {
+  "rel": "fleet/station/salyut-6.json",
+  "at": "description",
+  "old": "Der erste Multiport Salyut, der in der Lage ist, Progress-Resupply-Schiffe und rotierende Langstrecken-Crews zu empfangen. Kontinuierlich besetzt (mit Pausen) für fast fünf Jahre zwischen 1977 und 1982 — das Modell für jede nachgeschaltete modulare Station.",
+  "new": "Die erste Salyut mit mehreren Andockports, die Progress-Versorgungsschiffe und wechselnde Langzeitbesatzungen aufnehmen konnte. Zwischen 1977 und 1982 fast fünf Jahre lang (mit Unterbrechungen) durchgehend besetzt — das Vorbild für jede modulare Station danach."
+ },
+ {
+  "rel": "fleet/station/salyut-6.json",
+  "at": "best_known_for",
+  "old": "Erster Dauer-Multiport-Sowjet-Station",
+  "new": "Erste sowjetische Mehrport-Langzeitstation"
+ },
+ {
+  "rel": "fleet/station/salyut-7.json",
+  "at": "tagline",
+  "old": "Letzte Salyut; Brücke nach Mir",
+  "new": "Letzte Salyut; Brücke zu Mir"
+ },
+ {
+  "rel": "fleet/station/salyut-7.json",
+  "at": "description",
+  "old": "Das letzte Salyut, in Betrieb 1982–1991. Berühmt ist die Wiederbelebung durch Wladimir Dschanibekow und Wiktor Sawinych 1985, nachdem die Station Energie verloren hatte und tummelnd die Erde umkreiste – die erste Rettungsmission im Orbit. Unkontrolliert in die Atmosphäre eingetreten 1991 über Argentinien.",
+  "new": "Die letzte Salyut, in Betrieb 1982–1991. Berühmt für die Wiederbelebung durch Wladimir Dschanibekow und Wiktor Sawinych 1985, nachdem sie Strom verloren hatte und ins Taumeln geraten war — die erste Bergungsmission im Orbit. 1991 unkontrolliert über Argentinien wieder in die Atmosphäre eingetreten."
+ },
+ {
+  "rel": "fleet/station/salyut-7.json",
+  "at": "best_known_for",
+  "old": "Letzte Salyut; Brücke nach Mir",
+  "new": "Letzte Salyut; Brücke zu Mir"
+ },
+ {
+  "rel": "fleet/station/skylab.json",
+  "at": "tagline",
+  "old": "Erste U.S. Raumstation",
+  "new": "Erste US-Raumstation"
+ },
+ {
+  "rel": "fleet/station/skylab.json",
+  "at": "dispatch",
+  "old": "Skylab war Amerikas erste Raumstation und einer der großen Improvisationsakte der Geschichte — eine vollständige orbitale Werkstatt, die im leeren Wasserstofftank einer verbrauchten Saturn V-Oberstufe gebaut wurde. Anstatt eine Station von Grund auf neu zu entwerfen, wandelte die NASA die Hardware um, die von den gestrichenen Mondlandungen übrig geblieben war, in ein hausgroßes Labor mit Mannschaftsquartieren, einer Dusche und einem bemannten Sonnenobservatorium. Beim Start fast zerstört, als sich der Sonnenschutz ablöste, wurde sie durch die improvisierten Reparaturen der ersten Besatzung gerettet und bewies schließlich die Annahme, die jede spätere Station voraussetzte: dass Menschen monatelang im Orbit leben und arbeiten können und ihr Raumfahrzeug reparieren können, wenn es kaputtgeht.",
+  "new": "Skylab war Amerikas erste Raumstation und einer der großen Improvisationsakte der Geschichte — eine vollständige orbitale Werkstatt, die im leeren Wasserstofftank einer verbrauchten Saturn-V-Oberstufe gebaut wurde. Anstatt eine Station von Grund auf neu zu entwerfen, wandelte die NASA die Hardware um, die von den gestrichenen Mondlandungen übrig geblieben war, in ein hausgroßes Labor mit Mannschaftsquartieren, einer Dusche und einem bemannten Sonnenobservatorium. Beim Start fast zerstört, als sich der Sonnenschutz ablöste, wurde sie durch die improvisierten Reparaturen der ersten Besatzung gerettet und bewies schließlich die Annahme, die jede spätere Station voraussetzte: dass Menschen monatelang im Orbit leben und arbeiten können und ihr Raumfahrzeug reparieren können, wenn es kaputtgeht."
+ },
+ {
+  "rel": "fleet/station/skylab.json",
+  "at": "description",
+  "old": "Amerikas erste Raumstation, gebaut aus einer Saturn V S-IVB Oberstufe. Zwischen 1973 und 1974 lebten drei Besatzungen an Bord, die Sonnenbeobachtungen und Null-G-Experimente durchführten. Reentered unkontrolliert über Australien im Jahr 1979.",
+  "new": "Amerikas erste Raumstation, gebaut aus einer S-IVB-Oberstufe der Saturn V. Zwischen 1973 und 1974 lebten drei Besatzungen zu je drei Personen an Bord und führten Sonnenbeobachtungen und Experimente in Schwerelosigkeit durch. 1979 unkontrolliert über Australien wieder in die Atmosphäre eingetreten."
+ },
+ {
+  "rel": "fleet/station/tiangong-1.json",
+  "at": "tagline",
+  "old": "Erste chinesische Raumstation; Einzelmodul-Testbed",
+  "new": "Erste chinesische Raumstation; Testplattform mit einem Modul"
+ },
+ {
+  "rel": "fleet/station/tiangong-1.json",
+  "at": "description",
+  "old": "Tiangong-1 ist eine von CAST gebaute Raumstation in China. Erste chinesische Raumstation; Einzelmodul-Testbed. Gestartet 2011, empfing zwei bemannte Besuche (Shenzhou 9 im Jahr 2012 und Shenzhou 10 im Jahr 2013); Kontakt ging März 2016 verloren und trat unkontrolliert am 2. April 2018 wieder in die Atmosphäre ein.",
+  "new": "Tiangong-1 ist eine in China von CAST gebaute Raumstation. Erste chinesische Raumstation; Testplattform mit einem Modul. Gestartet 2011, empfing zwei bemannte Besuche (Shenzhou 9 im Jahr 2012 und Shenzhou 10 im Jahr 2013); der Kontakt riss im März 2016 ab, und sie trat am 2. April 2018 unkontrolliert wieder in die Atmosphäre ein."
+ },
+ {
+  "rel": "fleet/station/tiangong-1.json",
+  "at": "best_known_for",
+  "old": "Erste chinesische Raumstation; Einzelmodul-Testbed",
+  "new": "Erste chinesische Raumstation; Testplattform mit einem Modul"
+ }
+]

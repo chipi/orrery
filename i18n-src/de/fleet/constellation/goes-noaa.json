@@ -1,6 +1,6 @@
 {
   "name": "GOES (NOAA-Wetter)",
-  "tagline": "NOAA-Geostationäres-Satellitenpaar — kontinuierliche Abdeckung der Amerikas",
-  "description": "Geostationary Operational Environmental Satellite — NOAAs geostationäres Wettersatellitenpaar. GOES-19 (GOES-East bei 75,2° W) und GOES-18 (GOES-West bei 137,0° W) sind das operative Paar seit April 2025 und bieten kontinuierliche Abdeckung der Amerikas. GOES-16 wird als Backup gespeichert; GOES-17 wurde im Januar 2023 außer Betrieb genommen. Die GOES-R-Serie ist mit dem Advanced Baseline Imager ausgestattet, der Mesoskalen-Scans mit 30-Sekunden-Auflösung für Hurrikan-Kerne und Tracking schwerer Gewitter ermöglicht. Hergestellt von Lockheed Martin; Datenprodukte frei verfügbar.",
-  "best_known_for": "NOAA-Geostationäres-Satellitenpaar — kontinuierliche Abdeckung der Amerikas"
+  "tagline": "Geostationäres Wettersatellitenpaar der NOAA — durchgehende Abdeckung Nord- und Südamerikas",
+  "description": "Geostationary Operational Environmental Satellite — das geostationäre Wettersatellitenpaar der NOAA. GOES-19 (GOES-East bei 75,2° W) und GOES-18 (GOES-West bei 137,0° W) sind Stand April 2025 das aktive Paar und decken Nord- und Südamerika durchgehend ab. GOES-16 ist als Reserve eingelagert; GOES-17 wurde im Januar 2023 außer Dienst gestellt. Die GOES-R-Serie trägt den Advanced Baseline Imager, der mesoskalige Scans im 30-Sekunden-Takt für Hurrikankerne und die Verfolgung schwerer Unwetter liefert. Gebaut von Lockheed Martin; die Datenprodukte sind frei verfügbar.",
+  "best_known_for": "Geostationäres Wettersatellitenpaar der NOAA — durchgehende Abdeckung Nord- und Südamerikas"
 }

@@ -1,0 +1,1082 @@
+[
+  {
+    "rel": "fleet/launcher/long-march-5.json",
+    "at": "description",
+    "old": "Chinas erster Heavy-Lift-Start, in der Lage, 25 t zu LEO. Hebt die Tiangong Raumstation Module und Tianwen Mars Sonden; Long March 5B ist die Variante für Stationsmodule.",
+    "new": "Chinas erste Schwerlastrakete, die 25 t in den LEO bringt. Startet die Module der Raumstation Tiangong und die Marssonden Tianwen; Long March 5B ist die Variante für Stationsmodule."
+  },
+  {
+    "rel": "fleet/launcher/long-march-5.json",
+    "at": "best_known_for",
+    "old": "Heavy-Lift-Rückgrat des chinesischen Raumprogramms",
+    "new": "Schwerlast-Rückgrat des chinesischen Raumfahrtprogramms"
+  },
+  {
+    "rel": "fleet/launcher/long-march-7.json",
+    "at": "tagline",
+    "old": "Tianzhou Cargo Launcher nach Tiangong",
+    "new": "Trägerrakete für Tianzhou-Frachter nach Tiangong"
+  },
+  {
+    "rel": "fleet/launcher/long-march-7.json",
+    "at": "description",
+    "old": "Long March 7 ist ein orbitaler Launcher von CALT in China gebaut. Tianzhou Cargo Launcher nach Tiangong. Seit 2016 im Dienst.",
+    "new": "Long March 7 ist eine Orbitalrakete von CALT in China. Trägerrakete für die Tianzhou-Frachter zu Tiangong. Seit 2016 im Dienst."
+  },
+  {
+    "rel": "fleet/launcher/long-march-7.json",
+    "at": "best_known_for",
+    "old": "Tianzhou Cargo Launcher nach Tiangong",
+    "new": "Trägerrakete für Tianzhou-Frachter nach Tiangong"
+  },
+  {
+    "rel": "fleet/launcher/lvm3.json",
+    "at": "tagline",
+    "old": "Crew-bewerteter Starter für Gaganyaan",
+    "new": "Besatzungstaugliche Trägerrakete für Gaganyaan"
+  },
+  {
+    "rel": "fleet/launcher/lvm3.json",
+    "at": "description",
+    "old": "LVM3 (GSLV Mk III) ist ein orbitaler Launcher von ISRO in Indien. Crew-bewerteter Starter für Gaganyaan. In Betrieb seit 2014.",
+    "new": "LVM3 (GSLV Mk III) ist eine Orbitalrakete von ISRO in Indien. Besatzungstaugliche Trägerrakete für Gaganyaan. In Betrieb seit 2014."
+  },
+  {
+    "rel": "fleet/launcher/lvm3.json",
+    "at": "best_known_for",
+    "old": "Crew-bewerteter Starter für Gaganyaan",
+    "new": "Besatzungstaugliche Trägerrakete für Gaganyaan"
+  },
+  {
+    "rel": "fleet/launcher/mercury-redstone.json",
+    "at": "tagline",
+    "old": "Erster bemannter US-Träger — Variante der Redstone-IRBM der Armee. Startete Freedom 7 (1961-05-05) und Liberty Bell 7 (1961-07-21)",
+    "new": "Erste US-Trägerrakete für Menschen — Redstone-IRBM-Variante der Armee. Startete Freedom 7 (1961-05-05) und Liberty Bell 7 (1961-07-21)"
+  },
+  {
+    "rel": "fleet/launcher/mercury-redstone.json",
+    "at": "dispatch",
+    "old": "Die Mercury-Redstone war eine Waffe, der man einen Passagier anvertraute. Ihr Vorfahr war die deutsche V-2, ihr unmittelbarer Elternteil eine ballistische Armeerakete, gebaut um ein Sprengkopfziel zu treffen — nun modifiziert, entschärft und gerade zuverlässig genug gemacht, um sie einem menschlichen Leben anzuvertrauen. Sie konnte nur eine suborbitale Flugbahn erreichen; sie hatte nie die Kraft, eine Umlaufbahn zu erkennen. Doch das war genau ihre Aufgabe: der vorsichtige erste Schritt, die Maschine, die Amerika erlaubte zu beweisen, dass eine Person eine Rakete hinauf und wieder herunter lebend fahren konnte, bevor man ein Leben auf den größeren, riskanteren Booster wagte, der tatsächlich eine Umlaufbahn erreichen konnte.",
+    "new": "Die Mercury-Redstone war eine Waffe, die man lehrte, einen Passagier zu tragen. Ihr Vorfahr war die deutsche V-2, ihr unmittelbarer Elternteil eine ballistische Rakete der Armee, gebaut, um einen Sprengkopf ins Ziel zu bringen — nun umgebaut, entschärft und gerade zuverlässig genug gemacht, um ihr ein Menschenleben anzuvertrauen. Sie schaffte nur einen suborbitalen Bogen; für eine Umlaufbahn fehlte ihr die Kraft. Genau das war aber ihre Aufgabe: der vorsichtige erste Schritt, die Maschine, mit der Amerika beweisen konnte, dass ein Mensch auf einer Rakete hinauf- und lebend wieder herunterkommen kann, bevor man ein Leben auf den größeren, riskanteren Booster setzte, der tatsächlich die Umlaufbahn erreichte."
+  },
+  {
+    "rel": "fleet/launcher/mercury-redstone.json",
+    "at": "description",
+    "old": "Die Mercury-Redstone-Trägerrakete war ein bemannter Abkömmling der Redstone-Ballistische Rakete der U.S. Army, modifiziert im NASA Marshall Space Flight Center für die suborbitalen bemannten Mercury-Missionen. Einstufig, flüssiggekühlt (LOX + Alkohol), 25 Meter hoch mit Kapsel und Rettungsturm (~18 m Booster allein), mit einem Schub von ungefähr 347 kN (~35 Tonnen-Kraft). Der erste bemannte Flug war Mercury-Redstone 3 / Freedom 7 (1961-05-05, Alan Shepard) — der erste Amerikaner im Weltall, 23 Tage nach Gagarin. Mercury-Redstone 4 / Liberty Bell 7 folgte (1961-07-21, Gus Grissom). Nach der Lukenfehlfunction von Liberty Bell 7 verlegte NASA die orbitalen Mercury-Flüge auf die leistungsstärkere Atlas LV-3B. Letzter Flug 1961-07-21; insgesamt 6 Mercury-Redstone-Fahrzeuge gebaut, 2 bemannte Flüge geflogen.",
+    "new": "Die Trägerrakete Mercury-Redstone war eine für Menschen zugelassene Weiterentwicklung der ballistischen Redstone-Rakete der U.S. Army, am NASA Marshall Space Flight Center für die suborbitalen bemannten Mercury-Missionen modifiziert. Einstufig, mit Flüssigtreibstoff (LOX + Alkohol), mit Kapsel und Rettungsturm 25 Meter hoch (~18 m die Rakete allein) und einem Schub von ungefähr 347 kN (~35 Tonnen Kraft). Der erste bemannte Flug war Mercury-Redstone 3 / Freedom 7 (1961-05-05, Alan Shepard) — der erste Amerikaner im Weltall, 23 Tage nach Gagarin. Mercury-Redstone 4 / Liberty Bell 7 folgte (1961-07-21, Gus Grissom). Nach dem Fehler an der Luke von Liberty Bell 7 verlegte die NASA die orbitalen Mercury-Flüge auf die leistungsstärkere Atlas LV-3B. Letzter Flug 1961-07-21; insgesamt 6 Mercury-Redstone-Raketen gebaut, 2 bemannte Flüge durchgeführt."
+  },
+  {
+    "rel": "fleet/launcher/mercury-redstone.json",
+    "at": "best_known_for",
+    "old": "Erster bemannter US-Träger — Variante der Redstone-IRBM der Armee. Startete Freedom 7 (1961-05-05) und Liberty Bell 7 (1961-07-21)",
+    "new": "Erste für Menschen zugelassene US-Trägerrakete — Variante der Redstone-IRBM der Armee. Startete Freedom 7 (1961-05-05) und Liberty Bell 7 (1961-07-21)"
+  },
+  {
+    "rel": "fleet/launcher/n1.json",
+    "at": "dispatch",
+    "old": "Die N1 war Saturnrakete V der Sowjetunion — und der Grund, warum die Sowjets nie zum Mond gelangten. Mit einer Höhe von 105 Metern vereinigte ihre erste Stufe dreißig Triebwerke an ihrer Basis, nicht aus Wahl, sondern aus Notwendigkeit: Kein sowjetisches Triebwerk kam der Kraft des amerikanischen F-1 nahe, also band Koroljows Team dreißig kleinere Triebwerke zusammen und hoffte, dass sie in Harmonie zünden würden. Das taten sie nie. Ohne Teststand, der groß genug war, um die montierte Stufe am Boden zu zünden, war jeder Start der erste vollständige Test des Antriebssystems — und alle vier, zwischen 1969 und 1972, schlugen fehl. Der zweite Start (N1-5L, 3. Juli 1969) stürzte auf sein Startpad zurück und verursachte eine der größten nicht-nuklearen Explosionen, die je aufgezeichnet wurden. Ihre NK-33-Triebwerke, nach Programmabbruch versteckt, sollten sich als unter den besten je gebauten erweisen und flogen ein Vierteljahrhundert später auf amerikanischen Raketen — eine brillante Maschine, die von der einen Sache besiegt wurde, die ihr nie gestattet war: vor dem Flug getestet zu werden.",
+    "new": "Die N1 war die Saturn V der Sowjetunion — und der Grund, warum die Sowjets nie zum Mond gelangten. Die 105 Meter hohe Rakete vereinigte in ihrer ersten Stufe dreißig Triebwerke an der Basis, nicht aus Wahl, sondern aus Notwendigkeit: Kein sowjetisches Triebwerk kam der Leistung des amerikanischen F-1 auch nur nahe, also band Koroljows Team dreißig kleinere zusammen und hoffte, dass sie im Gleichklang zünden würden. Das taten sie nie. Ohne einen Teststand, der groß genug war, um die zusammengebaute Stufe am Boden zu zünden, war jeder Start der erste vollständige Test des Antriebssystems — und alle vier, zwischen 1969 und 1972, schlugen fehl. Der zweite Start (N1-5L, 3. Juli 1969) stürzte auf seine Startrampe zurück und verursachte eine der größten nichtnuklearen Explosionen, die je aufgezeichnet wurden. Ihre NK-33-Triebwerke, nach dem Ende des Programms versteckt, erwiesen sich als eines der besten, die je gebaut wurden, und flogen ein Vierteljahrhundert später auf amerikanischen Raketen — eine brillante Maschine, besiegt von der einen Sache, die ihr nie gestattet war: vor dem Flug getestet zu werden."
+  },
+  {
+    "rel": "fleet/launcher/n1.json",
+    "at": "description",
+    "old": "Die sowjetische Antwort auf Saturn V — eine 105 m Super-Heavy-Rakete mit dreißig NK-15-Triebwerken auf der ersten Stufe. Alle vier Starts zwischen 1969 und 1972 schlugen fehl; das Programm wurde abgebrochen, nachdem Apollo 17 jede Chance auf eine sowjetische bemannte Mondlandung zunichtemachte.",
+    "new": "Die sowjetische Antwort auf die Saturn V — eine 105 m hohe Superschwerlastrakete mit dreißig Triebwerken NK-15 in der ersten Stufe. Alle vier Starts zwischen 1969 und 1972 schlugen fehl; das Programm wurde eingestellt, nachdem Apollo 17 jede Chance auf eine sowjetische bemannte Mondlandung zunichtegemacht hatte."
+  },
+  {
+    "rel": "fleet/launcher/new-glenn.json",
+    "at": "tagline",
+    "old": "Blue Origins zweistufige wiederverwendbare schwere Orbitalrakete",
+    "new": "Zweistufige, wiederverwendbare Schwerlast-Orbitalrakete von Blue Origin"
+  },
+  {
+    "rel": "fleet/launcher/new-glenn.json",
+    "at": "description",
+    "old": "Zweistufige Schwerlastrakete mit sieben mit Methan betriebenen BE-4-Triebwerken in der ersten Stufe (dasselbe Triebwerk wie bei Vulcan) und zwei wasserstoffbetriebenen BE-3U-Triebwerken in der zweiten Stufe. Vorgesehen für die Rückgewinnung der Erststufe per Landung auf einem Bergungsschiff stromabwärts. Trägt ~45 t in den niedrigen Erdorbit und ist für NSSL Phase 3 und Project Kuiper-Einsätze zertifiziert. Der Jungfernflug NG-1 startete am 16.01.2025 von Cape Canaveral LC-36 und brachte das Blue Ring-Pfadfinder erfolgreich in den Orbit — der Erststufen-Landeversuch ging verloren, der Orbiteinschuss selbst war sauber.",
+    "new": "Zweistufige Schwerlastrakete mit sieben methanbetriebenen BE-4-Triebwerken in der ersten Stufe (dasselbe Triebwerk wie bei Vulcan) und zwei wasserstoffbetriebenen BE-3U-Triebwerken in der zweiten. Die erste Stufe soll durch eine Landung auf einem Schiff in Flugrichtung geborgen werden. Bringt ~45 t in den LEO und ist für NSSL Phase 3 und die Einsätze von Project Kuiper zertifiziert. Der Jungfernflug NG-1 startete am 2025-01-16 von Cape Canaveral LC-36 und brachte den Pfadfinder Blue Ring erfolgreich in die Umlaufbahn — der Landeversuch der ersten Stufe ging verloren, der Orbiteinschuss selbst war sauber."
+  },
+  {
+    "rel": "fleet/launcher/new-glenn.json",
+    "at": "best_known_for",
+    "old": "Blue Origins zweistufige wiederverwendbare Schwerlast-Orbitalrakete — BE-4-Erststufe + kryogene Oberstufe",
+    "new": "Zweistufige, wiederverwendbare Schwerlast-Orbitalrakete von Blue Origin — BE-4-Erststufe + kryogene Oberstufe"
+  },
+  {
+    "rel": "fleet/launcher/proton-k.json",
+    "at": "tagline",
+    "old": "Das sowjetisch-russische Schwerlastträgersystem 1967–2012 — Salyut, Mir, Venera, Vega, Luna-Rückführungsmissionen",
+    "new": "Das sowjetisch-russische Schwerlast-Arbeitspferd 1967–2012 — Salyut, Mir, Venera, Vega, Luna-Probenrückführung"
+  },
+  {
+    "rel": "fleet/launcher/proton-k.json",
+    "at": "description",
+    "old": "Dreistufiges hypergolisches (N2O4 / UDMH) Schwerlastträgersystem mit optionalen Blok-D / D-1 / D-2 Oberstufen mit hohem spezifischem Impuls. 311 Flüge zwischen dem 10. März 1967 und 30. März 2012 — beförderte jedes Salyut- und Mir-Modul sowie alle Module des russischen Segments der ISS, jede Venera- und Vega-Sonde zur Venus, jede Luna-Rückführungsmission sowie sowjetische Mars-2/-3/-5/-7. Die Blok-D Oberstufe war ursprünglich für die gestrichene N1-L3-Architektur für bemannte Mondlandungen entwickelt worden; ihre Wiederverwendung auf Proton-K hielt die sowjetische Planetenerkundungslinie mit hohem Energiebedarf bis in die 1980er Jahre am Leben. Wurde durch Proton-M ersetzt, die immer noch im Einsatz ist.",
+    "new": "Dreistufige hypergole (N2O4 / UDMH) Schwerlastrakete mit optionalen energiereichen Oberstufen Blok-D / D-1 / D-2. 311 Flüge zwischen dem 10. März 1967 und dem 30. März 2012 — beförderte jedes Salyut- und Mir-Modul sowie alle Module des russischen ISS-Segments, jede Venera- und Vega-Venussonde, jede Luna-Probenrückführung und die sowjetischen Sonden Mars-2/-3/-5/-7. Die Oberstufe Blok-D wurde ursprünglich für die gestrichene N1-L3-Architektur für bemannte Mondlandungen entwickelt; ihre Wiederverwendung auf der Proton-K hielt die energieaufwendigen sowjetischen Planetenmissionen bis in die 1980er Jahre am Leben. Wurde durch die Proton-M ersetzt, die immer noch im Einsatz ist."
+  },
+  {
+    "rel": "fleet/launcher/proton-k.json",
+    "at": "best_known_for",
+    "old": "Sowjetisch-russisches Schwerlastträgersystem 1967–2012 — Salyut, Mir, jede Venera- und Vega-Venus-Sonde, jede Luna-Rückführungsmission und jeder sowjetische Außenplaneteneinsatz",
+    "new": "Sowjetisch-russisches Schwerlast-Arbeitspferd 1967–2012 — Salyut, Mir, jede Venera- und Vega-Venussonde, jede Luna-Probenrückführung und jeder sowjetische Versuch, die äußeren Planeten zu erreichen"
+  },
+  {
+    "rel": "fleet/launcher/proton-m.json",
+    "at": "tagline",
+    "old": "Nachfolger von Proton-K; modernisierter schwerer Lift",
+    "new": "Nachfolger der Proton-K; modernisierte Schwerlastrakete"
+  },
+  {
+    "rel": "fleet/launcher/proton-m.json",
+    "at": "description",
+    "old": "Proton-M ist ein orbitaler Launcher von Khrunichev in Russland gebaut. Nachfolger von Proton-K; modernisierter schwerer Lift. Seit 2001 im Dienst.",
+    "new": "Proton-M ist eine Orbitalrakete von Khrunichev in Russland. Nachfolger der Proton-K; modernisierte Schwerlastrakete. Seit 2001 im Dienst."
+  },
+  {
+    "rel": "fleet/launcher/proton-m.json",
+    "at": "best_known_for",
+    "old": "Nachfolger von Proton-K; modernisierter schwerer Lift",
+    "new": "Nachfolger der Proton-K; modernisierte Schwerlastrakete"
+  },
+  {
+    "rel": "fleet/launcher/pslv-xl.json",
+    "at": "tagline",
+    "old": "ISROs schwere Booster-Variante des PSLV — Chandrayaan-1 + Mars Orbiter",
+    "new": "Schwere PSLV-Variante mit Feststoffboostern von ISRO — Chandrayaan-1 + Mars Orbiter"
+  },
+  {
+    "rel": "fleet/launcher/pslv-xl.json",
+    "at": "description",
+    "old": "Vier-Stufen-Polar-Satellite-Launch-Vehicle in seiner erweiterten (XL) Konfiguration: sechs PS0M-XL-Feststoff-Booster mit ~50 % mehr Treibstoff als der Standard-PSLV. Bringt ~3,8 t in LEO / ~1,8 t in SSO / ~1,4 t in GTO und hat Indiens bedeutendste interplanetare Missionen — Chandrayaan-1 (2008) und Mangalyaan / Mars Orbiter Mission (2013) — vom First Launch Pad von Sriharikota gestartet. Noch aktiv für Hyperspektral- und Radar-Erdbeobachtungseinsätze.",
+    "new": "Vierstufige Polar Satellite Launch Vehicle in der erweiterten Konfiguration (XL): sechs Feststoff-Zusatzbooster PS0M-XL mit ~50 % mehr Treibstoff als die Standard-PSLV. Bringt ~3,8 t in LEO / ~1,8 t in SSO / ~1,4 t in GTO und hat Indiens bedeutendste interplanetare Missionen — Chandrayaan-1 (2008) und Mangalyaan / Mars Orbiter Mission (2013) — vom First Launch Pad in Sriharikota gestartet. Noch aktiv für Hyperspektral- und Radar-Erdbeobachtung."
+  },
+  {
+    "rel": "fleet/launcher/pslv-xl.json",
+    "at": "best_known_for",
+    "old": "ISROs schwere Booster-Variante des PSLV — startete Chandrayaan-1 + Mars Orbiter Mission",
+    "new": "Schwere PSLV-Variante mit Feststoffboostern von ISRO — startete Chandrayaan-1 + Mars Orbiter Mission"
+  },
+  {
+    "rel": "fleet/launcher/r-7-vostok.json",
+    "at": "tagline",
+    "old": "Sputnik und Gagarin zu Orbit",
+    "new": "Sputnik und Gagarin in den Orbit"
+  },
+  {
+    "rel": "fleet/launcher/r-7-vostok.json",
+    "at": "description",
+    "old": "Der Starter, der Sputnik 1957 in Orbit und Juri Gagarin 1961 ins All brachte. Ein direkter Vorläufer jeder Soyuz-Rakete flog seitdem – die längste Produktionslinie im Raumflug, mit Tausenden von Flügen über sechs Jahrzehnte.",
+    "new": "Die Trägerrakete, die 1957 Sputnik in die Umlaufbahn und 1961 Juri Gagarin ins All brachte. Direkter Vorläufer jeder seither geflogenen Soyuz-Rakete — die längste Produktionslinie der Raumfahrt, mit Tausenden Flügen über sechs Jahrzehnte."
+  },
+  {
+    "rel": "fleet/launcher/r-7-vostok.json",
+    "at": "best_known_for",
+    "old": "Sputnik und Gagarin zu Orbit",
+    "new": "Sputnik und Gagarin in den Orbit"
+  },
+  {
+    "rel": "fleet/launcher/saturn-ib.json",
+    "at": "dispatch",
+    "old": "Nicht jede Apollo-Aufgabe benötigte die Mondrakete. Die Saturn IB war die pragmatische Option — eine bemannte Trägerrakete für die Arbeiten in der Erdumlaufbahn: Apollo 7 Überprüfung des umgestalteten Raumschiffs, die Versorgungsflüge zur Skylab und das Rendezvous im Orbit von Apollo-Soyuz. Ihre erste Stufe war berüchtigt eine Bündelung von Tanks, die den früheren Redstone- und Jupiter-Raketen entnommen waren, zusammengefasst — bewährte Bauteile mit neuer Aufgabe statt eines Designs von Grund auf. Sie ist die unscheinbarste Rakete des Programms und eine stille Lektion darin, nicht zu überentwickeln: Gleiche die Maschine der Aufgabe an.",
+    "new": "Nicht jede Apollo-Aufgabe brauchte die Mondrakete. Die Saturn IB war die pragmatische Wahl — eine für Besatzungen zugelassene Trägerrakete für Aufgaben, die in der Erdumlaufbahn blieben: der Test des überarbeiteten Raumschiffs bei Apollo 7, die Pendelflüge zu Skylab und der Händedruck im Orbit bei Apollo-Soyuz. Ihre erste Stufe war bekanntlich ein Bündel von Tanks, die von den früheren Redstone- und Jupiter-Raketen stammten und zusammengeschlossen wurden — bewährte Bauteile mit neuer Aufgabe statt einer Konstruktion auf dem Reißbrett. Sie ist die unscheinbarste Rakete des Programms und eine stille Lektion darin, nicht zu überdimensionieren: Passe die Maschine der Mission an."
+  },
+  {
+    "rel": "fleet/launcher/saturn-v.json",
+    "at": "dispatch",
+    "old": "Die Saturn V existierte, um ein hartes Stück Arithmetik zu lösen: eine Besatzung zum Mond zu bringen bedeutet, ungefähr 45 Tonnen auf eine Bahn aus Earths Gravitationsfeld zu werfen, und 1961 konnte nichts auf der Erde einen Bruchteil davon werfen. Also baute von Brauns Marshall-Team die größte Maschine, die je geflogen war — fünf F-1-Triebwerke an ihrer Basis, jedes das stärkste einkammerige Raketentriebwerk, das zu dieser Zeit jemals gezündet wurde, zusammen etwa 13 Tonnen Treibstoff pro Sekunde verbrennend. Alles an ihr war nach dem Ziel bemessen, nicht nach dem, was vernünftig aussah. Dass sie 13 Mal flog und nie einmal scheiterte, den Weltraum zu erreichen — das ist der Teil, der immer noch nicht ganz möglich erscheint.",
+    "new": "Die Saturn V entstand, um ein brutales Stück Arithmetik zu lösen: Eine Besatzung auf den Mond zu bringen bedeutet, rund 45 Tonnen auf eine Bahn aus dem Schwerefeld der Erde hinauszuschleudern, und 1961 konnte nichts auf der Erde auch nur einen Bruchteil davon schleudern. Also baute von Brauns Marshall-Team die größte Maschine, die je geflogen war — fünf F-1-Triebwerke an ihrer Basis, jedes das stärkste einkammerige Raketentriebwerk, das damals je gezündet wurde, zusammen verbrannten sie etwa dreizehn Tonnen Treibstoff pro Sekunde. Alles an ihr war nach dem Ziel bemessen, nicht nach dem, was vernünftig aussah. Dass sie dreizehnmal flog und nie den Weltraum verfehlte, ist der Teil, der bis heute kaum möglich scheint."
+  },
+  {
+    "rel": "fleet/launcher/saturn-v.json",
+    "at": "description",
+    "old": "Die 110,6 m große dreistufige Rakete, die 24 Menschen auf eine translunar-Flugbahn und 12 von ihnen auf die Mondoberfläche brachte. Dreizehn Starts zwischen 1967 und 1973, null Ausfälle beim Aufstieg. Die stärkste Rakete, die für über fünf Jahrzehnte die Umlaufbahn erreichte, bis Starships Super Heavy sie 2024 überflügelte.",
+    "new": "Die 110,6 m hohe dreistufige Rakete, die 24 Menschen auf eine translunare Bahn und 12 von ihnen auf die Mondoberfläche brachte. Dreizehn Starts zwischen 1967 und 1973, null Verluste beim Aufstieg. Über fünf Jahrzehnte die stärkste Rakete, die je die Umlaufbahn erreichte, bis die Super Heavy der Starship sie 2024 übertraf."
+  },
+  {
+    "rel": "fleet/launcher/sls-block-1.json",
+    "at": "tagline",
+    "old": "Schwerer Lift für Artemis Mondprogramm",
+    "new": "Schwerlastrakete für das Mondprogramm Artemis"
+  },
+  {
+    "rel": "fleet/launcher/sls-block-1.json",
+    "at": "description",
+    "old": "Der superschwere Nachfolger der NASA zum Space Shuttle-Stack, der seine RS-25-Motoren und das SRB-Erbe teilt. Carried Orion on Artemis I im Jahr 2022; plante, bemannte Mondmissionen durch Artemis IV zu starten.",
+    "new": "Superschwerer Nachfolger des Space-Shuttle-Stacks der NASA, der dessen RS-25-Triebwerke und das SRB-Erbe übernimmt. Brachte 2022 bei Artemis I die Orion ins All; vorgesehen, bemannte Mondmissionen bis Artemis IV zu starten."
+  },
+  {
+    "rel": "fleet/launcher/sls-block-1.json",
+    "at": "best_known_for",
+    "old": "Schwerer Lift für Artemis Mondprogramm",
+    "new": "Schwerlastrakete für das Mondprogramm Artemis"
+  },
+  {
+    "rel": "fleet/launcher/soyuz-2.json",
+    "at": "tagline",
+    "old": "Modernes Soyuz-Arbeitstier – trägt Soyuz MS-Besatzung + Progress MS-Fracht zur ISS",
+    "new": "Modernes Soyuz-Arbeitspferd — bringt Soyuz-MS-Besatzungen und Progress-MS-Fracht zur ISS"
+  },
+  {
+    "rel": "fleet/launcher/soyuz-2.json",
+    "at": "description",
+    "old": "Roscosmos' modernisierte Soyuz-Familie mit digitalen Flugsteuerungen, die die analogen Systeme der Soyuz-FG / Soyuz-U ersetzen. Varianten 2.1a (RD-107A/RD-108A erste Stufe + RD-0124 dritte Stufe), 2.1b (Hochleistungs-Oberstufe) und 2.1v (ohne Booster, einstufig mit RD-110). Befördert alle modernen russischen bemannten und Cargo-Flüge zur ISS sowie Glonass, Resurs-P und Lotos-S Nutzlasten.",
+    "new": "Modernisierte Soyuz-Familie von RKTs Progress mit digitaler Flugsteuerung, die die analogen Systeme der Soyuz-FG / Soyuz-U ersetzt. Varianten 2.1a (RD-107A/RD-108A erste Stufe + RD-0124 dritte Stufe), 2.1b (leistungsgesteigerte dritte Stufe) und 2.1v (ohne Booster, einzelne Stufe RD-110). Befördert alle modernen russischen bemannten und Frachtflüge zur ISS sowie Nutzlasten wie Glonass, Resurs-P und Lotos-S."
+  },
+  {
+    "rel": "fleet/launcher/soyuz-2.json",
+    "at": "best_known_for",
+    "old": "Moderne Soyuz-Arbeitspferd für ISS-Besatzung und Fracht",
+    "new": "Modernes Soyuz-Arbeitspferd für ISS-Besatzung und Fracht"
+  },
+  {
+    "rel": "fleet/launcher/soyuz-u.json",
+    "at": "description",
+    "old": "Soyuz-U ist ein Orbitalträger, der vom Progress Rocket Space Centre in der UdSSR gebaut wurde. Meistgeflogene Orbitalrakete der Geschichte — 786 Missionen von 1973 bis 2017.",
+    "new": "Soyuz-U ist eine Orbitalrakete, die vom Progress Rocket Space Centre in der UdSSR gebaut wurde. Meistgeflogene Orbitalrakete der Geschichte — 786 Missionen von 1973 bis 2017."
+  },
+  {
+    "rel": "fleet/launcher/soyuz.json",
+    "at": "tagline",
+    "old": "R-7-Ableger für das erste Soyuz-Raumschiff — flog Soyuz 1 (1967) und Soyuz 11 (1971)",
+    "new": "R-7-Ableger für die erste Soyuz-Generation — startete Soyuz 1 (1967) und Soyuz 11 (1971)"
+  },
+  {
+    "rel": "fleet/launcher/soyuz.json",
+    "at": "dispatch",
+    "old": "Die Trägerrakete, die die Soyuz-Ära einläutete, trug auch ihre beiden Tragödien. Die 11A511 war der nächste Schritt in Koroljows R-7-Linie — dieselbe Raketenfamilie, die Sputnik und Gagarin ins All brachte, nun aufgerüstet, um das schwerere und leistungsfähigere Soyuz-Raumschiff zu transportieren, das für die nächste halbe Jahrhundert zum Arbeitspferd der sowjetischen und russischen bemannten Raumfahrt werden sollte. Ihr erster bemannter Flug, Soyuz 1 im Jahr 1967, endete damit, dass sich die Fallschirme der Landekapsel verhedderten und Wladimir Komarow ums Leben kam. Vier Jahre später brachte Soyuz 11 seine Besatzung von der ersten Raumstation der Welt zurück — doch ein Ventil hatte sich bei der Trennung geöffnet, und alle drei Männer starben an Druckentlastung vor der Landung. Die Rakete selbst versagte nicht; die frühen Sicherheitsreserven des Raumschiffs jedoch schon. Die R-7-Linie, zu der sie gehörte, befördert noch heute Besatzungen ins All.",
+    "new": "Die Trägerrakete, die die Soyuz-Ära einläutete, trug auch ihre beiden Tragödien. Die 11A511 war der nächste Schritt in Koroljows R-7-Linie — dieselbe Raketenfamilie, die Sputnik und Gagarin ins All brachte, nun aufgerüstet, um das schwerere und leistungsfähigere Soyuz-Raumschiff zu tragen, das für das nächste halbe Jahrhundert zum Arbeitspferd der sowjetischen und russischen bemannten Raumfahrt werden sollte. Ihr erster bemannter Flug, Soyuz 1 im Jahr 1967, endete damit, dass sich die Fallschirme der Landekapsel verhedderten und Wladimir Komarow ums Leben kam. Vier Jahre später brachte Soyuz 11 seine Besatzung von der ersten Raumstation der Welt zurück — doch ein Ventil hatte sich bei der Trennung geöffnet, und alle drei Männer starben vor der Landung an Druckverlust. Die Rakete selbst versagte nicht; die frühen Sicherheitsreserven des Raumschiffs jedoch schon. Die R-7-Linie, zu der sie gehörte, befördert noch heute Besatzungen ins All."
+  },
+  {
+    "rel": "fleet/launcher/soyuz.json",
+    "at": "description",
+    "old": "Die Soyuz 11A511 war die R-7-Ableitung, die für den Start des ersten Soyuz 7K-OK-Raumschiffs der ersten Generation entwickelt wurde und der Vostok/Voskhod-Trägerraketen-Linie eine leistungsfähigere Oberstufe hinzufügte. Dreistufig flüssigtreibstoffbetrieben (LOX + Kerosin), ~50 Meter hoch, ~308 Tonnen Startmasse. Sie startete die frühesten Flüge des bemannten Soyuz-Programms, darunter seine beiden fatalen Missionen — Soyuz 1 (1967), verloren, als sich die Bergungsfallschirme verhedderten, und Soyuz 11 (1971), deren Besatzung während des Abstiegs an Druckentlastung starb. Die 11A511 wurde 1973 von der Soyuz-U abgelöst; dieselbe R-7-Linie befördert als Soyuz-2 noch heute Besatzungen.",
+    "new": "Die Soyuz 11A511 war die R-7-Weiterentwicklung, die das Raumschiff Soyuz 7K-OK der ersten Generation starten sollte; sie erweiterte die Trägerraketenlinie Vostok/Voskhod um eine leistungsfähigere Oberstufe. Dreistufig, mit Flüssigtreibstoff (LOX + Kerosin), ~50 Meter hoch, ~308 Tonnen Startmasse. Sie startete die frühesten Flüge des bemannten Soyuz-Programms, darunter dessen beide tödliche Missionen — Soyuz 1 (1967), verloren, als sich die Bergungsfallschirme verhedderten, und Soyuz 11 (1971), deren Besatzung beim Abstieg an Druckverlust starb. Die 11A511 wurde 1973 von der Soyuz-U abgelöst; dieselbe R-7-Linie befördert als Soyuz-2 noch heute Besatzungen."
+  },
+  {
+    "rel": "fleet/launcher/soyuz.json",
+    "at": "best_known_for",
+    "old": "R-7-Ableger für das erste Soyuz-Raumschiff — flog Soyuz 1 (1967) und Soyuz 11 (1971)",
+    "new": "R-7-Ableger für die erste Soyuz-Generation — startete Soyuz 1 (1967) und Soyuz 11 (1971)"
+  },
+  {
+    "rel": "fleet/launcher/space-shuttle-stack.json",
+    "at": "tagline",
+    "old": "Orbiter + ET + SRBs; 135 Missionen",
+    "new": "Orbiter + Außentank + Booster; 135 Missionen"
+  },
+  {
+    "rel": "fleet/launcher/space-shuttle-stack.json",
+    "at": "description",
+    "old": "Der wiederverwendbare Orbiter, Außentank und zwei feste Raketen Booster, die 135 Missionen zwischen 1981 und 2011 flogen. Bauen Sie die ISS, eingesetzt und gewartet Hubble, und demonstrieren Sie die Engineering-Ausflüge eines teilweise wiederverwendbaren Crew-Starters.",
+    "new": "Der wiederverwendbare Orbiter, der Außentank und zwei Feststoffbooster, die zwischen 1981 und 2011 135 Missionen flogen. Sie bauten die ISS, setzten Hubble aus und warteten es und zeigten die technischen Zielkonflikte einer teilweise wiederverwendbaren bemannten Trägerrakete."
+  },
+  {
+    "rel": "fleet/launcher/space-shuttle-stack.json",
+    "at": "best_known_for",
+    "old": "Orbiter + ET + SRBs; 135 Missionen",
+    "new": "Orbiter + Außentank + Booster; 135 Missionen"
+  },
+  {
+    "rel": "fleet/launcher/starship.json",
+    "at": "tagline",
+    "old": "Vollständig wiederverwendbares Trägerraketen-System für schwere Lasten",
+    "new": "Vollständig wiederverwendbare Superschwerlastrakete"
+  },
+  {
+    "rel": "fleet/launcher/starship.json",
+    "at": "description",
+    "old": "Zweistufiges Fahrzeug um die methanverbrennende Raptor-Engine — Super Heavy erste Stufe (33 Raptors) + Starship zweite Stufe (6 Raptors). Entworfen für vollständige und schnelle Wiederverwendung durch Tower-Catch-Bergung beider Stufen, mit Zielrichtung auf Mars-Transitzeiten + Artemis Human Landing System. Der erste integrierte Flugtest (IFT-1) hob am 2023-04-20 ab, verlor aber vor der Stufentrennung die Flugkontrolle; kontrollierte Bergung beider Stufen wurde ab IFT-4 im Juni 2024 demonstriert.",
+    "new": "Zweistufiges Fahrzeug um das methanverbrennende Raptor-Triebwerk — erste Stufe Super Heavy (33 Raptor) + zweite Stufe Starship (6 Raptor). Ausgelegt für vollständige und schnelle Wiederverwendung durch Bergung beider Stufen mittels Auffangen am Turm, mit Blick auf Marsflug-Zeitpläne + das Artemis Human Landing System. Der erste integrierte Flugtest (IFT-1) hob am 2023-04-20 von der Rampe ab, verlor aber vor der Stufentrennung die Kontrolle über das Fahrzeug; ab IFT-4 im Juni 2024 wurde die kontrollierte Bergung beider Stufen demonstriert."
+  },
+  {
+    "rel": "fleet/launcher/starship.json",
+    "at": "best_known_for",
+    "old": "Vollständig wiederverwendbares Trägerraketen-System für schwere Lasten in Entwicklung für Artemis HLS + Mars",
+    "new": "Vollständig wiederverwendbare Superschwerlastrakete in Entwicklung für Artemis HLS + Mars"
+  },
+  {
+    "rel": "fleet/launcher/titan-ii-glv.json",
+    "at": "dispatch",
+    "old": "Die Titan II, die Gemini startete, war wie die Raketen von Mercury eine umgebaute Waffe — Amerikas größte Interkontinentalrakete, für bemannte Flüge zugelassen. Ihr entscheidendes Merkmal war ihr Treibstoff: Während kryogene Treibstoffe kurz vor dem Start geladen werden müssen und einen Abbruch erzwingen können, verbrannte die Titan lagerfähige Flüssigkeiten, die es ihr ermöglichten, einsatzbereit zu stehen und nahezu pünktlich zu starten. Diese Zuverlässigkeit des Timings war wichtiger, als es klingt, denn Geminis gesamte Aufgabe war das Rendezvous, und das Einfangen eines anderen Raumfahrzeugs im Orbit hängt davon ab, zu einem exakten Moment zu starten. Als Arbeitstier des Programms flog sie alle zehn bemannten Gemini-Missionen, ohne eine Besatzung zu verlieren.",
+    "new": "Die Titan II, die Gemini startete, war wie die Raketen von Mercury eine umgebaute Waffe — Amerikas größte Interkontinentalrakete, für bemannte Flüge zugelassen. Ihr entscheidendes Merkmal war ihr Treibstoff: Während kryogene Treibstoffe kurz vor dem Start geladen werden müssen und einen Abbruch erzwingen können, verbrannte die Titan lagerfähige Flüssigkeiten, die es ihr ermöglichten, einsatzbereit zu stehen und nahezu pünktlich zu starten. Diese Pünktlichkeit war wichtiger, als es klingt, denn die gesamte Aufgabe von Gemini war das Rendezvous, und ein anderes Raumfahrzeug im Orbit zu erreichen hängt davon ab, zu einem exakten Moment zu starten. Als Arbeitspferd des Programms flog sie alle zehn bemannten Gemini-Missionen, ohne eine Besatzung zu verlieren."
+  },
+  {
+    "rel": "fleet/launcher/titan-ii-glv.json",
+    "at": "description",
+    "old": "Titan II GLV ist ein orbitaler Launcher von Martin Marietta in USA gebaut. Workhorse für Project Gemini. Nach dem ersten Flug 1964 zurückgezogen.",
+    "new": "Titan II GLV ist eine Orbitalrakete, gebaut von Martin Marietta in den USA. Arbeitspferd für Project Gemini. Nach dem ersten Flug 1964 ausgemustert."
+  },
+  {
+    "rel": "fleet/launcher/titan-ii-glv.json",
+    "at": "best_known_for",
+    "old": "Workhorse für Project Gemini",
+    "new": "Arbeitspferd für Project Gemini"
+  },
+  {
+    "rel": "fleet/launcher/voskhod-11a57.json",
+    "at": "dispatch",
+    "old": "Die Voskhod 11A57 war die R-7 noch eine Stufe weiter entwickelt. Die modifizierte Vostok-Kapsel war schwerer als das Original und benötigte daher mehr Schub, als die Vostok-K liefern konnte – was die R-7-Familie, endlos anpassungsfähig, prompt mit einer leistungsstärkeren Oberstufe bereitstellte. Es ist ein kleines Kapitel in einer sehr langen Geschichte: dieselbe Grundrakete, die Sputnik und Gagarin ins All brachte, erneut gestreckt, um die beiden Voskhod-Flüge zu befördern, und Jahrzehnte später immer noch gestreckt, um Soyuz-Besatzungen zu fliegen. Wenige Konstruktionen wurden gebeten, so viele verschiedene Aufgaben über so lange Zeit zu erfüllen.",
+    "new": "Die Voskhod 11A57 war die R-7, noch ein Stück stärker gemacht. Die modifizierte Vostok-Kapsel war schwerer als das Original und brauchte daher mehr Schub, als die Vostok-K liefern konnte – was die R-7-Familie, endlos anpassungsfähig, mit einer leistungsstärkeren Oberstufe prompt bereitstellte. Es ist ein kleines Kapitel in einer sehr langen Geschichte: dieselbe Grundrakete, die Sputnik und Gagarin ins All brachte, erneut gestreckt, um die beiden Voskhod-Flüge zu befördern, und Jahrzehnte später immer noch gestreckt, um Soyuz-Besatzungen zu fliegen. Nur wenige Konstruktionen mussten über so lange Zeit so viele verschiedene Aufgaben erfüllen."
+  },
+  {
+    "rel": "fleet/launcher/voskhod-11a57.json",
+    "at": "description",
+    "old": "Voskhod (GRAU-Index 11A57) war die nächste Entwicklung der R-7-Familie nach der Vostok-K, mit verstärkten Blok-I-Triebwerken der dritten Stufe für die schwerere Voskhod-Kapsel. Dreistufig, LOX + Kerosin, 44 Meter hoch, 298 Tonnen Startmasse. Startete beide bemannten Voskhod-Flüge (Voskhod 1 mit der ersten 3-köpfigen Besatzung 1964; Voskhod 2 mit Leonows erstem Ausstieg 1965). Nach Ende des Voskhod-Programms blieb die 11A57 noch in Betrieb für ~300 unbemannte militärische / zivile Satellitenstarts bis 1976, als sie durch die Soyuz-11A511-Linie abgelöst wurde.",
+    "new": "Voskhod (GRAU-Index 11A57) war die nächste Entwicklung der R-7-Familie nach der Vostok-K, mit verstärkten Blok-I-Triebwerken der dritten Stufe für die schwerere Voskhod-Kapsel. Dreistufig, LOX + Kerosin, 44 Meter hoch, 298 Tonnen Startmasse. Startete beide bemannten Voskhod-Flüge (Voskhod 1 mit der ersten dreiköpfigen Besatzung 1964; Voskhod 2 mit Leonows erstem Ausstieg 1965). Nach dem Ende des Voskhod-Programms blieb die 11A57 für ~300 unbemannte militärische / zivile Satellitenstarts bis 1976 im Dienst, als sie von der Soyuz-Linie 11A511 abgelöst wurde."
+  },
+  {
+    "rel": "fleet/launcher/vostok-k.json",
+    "at": "tagline",
+    "old": "Sowjetischer R-7-Ableger, der Gagarin ins All brachte — Vostok 1 (12.04.1961) und 5 weitere Vostok-Flüge bis 1963",
+    "new": "Sowjetischer R-7-Ableger, der Gagarin ins All brachte — Vostok 1 (1961-04-12) und 5 weitere Vostok-Flüge bis 1963"
+  },
+  {
+    "rel": "fleet/launcher/vostok-k.json",
+    "at": "dispatch",
+    "old": "Die Rakete, die Gagarin ins All brachte, war eine Waffe, die ihre Karriere wechselte. Die Vostok-K war eine für Menschen zugelassene Version von Koroljows R-7 — der weltweit ersten Interkontinentalrakete, gebaut, um einen Sprengkopf über den Planeten zu schleudern, nun aufgefordert, einen Menschen in die Umlaufbahn zu heben. Es war dieselbe Linie, die Sputnik getragen hatte, und es ist erstaunlicherweise dieselbe Linie, die heute noch fliegt: Die Soyuz-Rakete, die heute Besatzungen zur Raumstation befördert, ist ein direkter Nachfahre, was die R-7-Familie zur mit Abstand am häufigsten gestarteten Rakete der Geschichte macht. Nur wenige für den Krieg gebaute Maschinen hatten ein so langes oder so friedliches zweites Leben.",
+    "new": "Die Rakete, die Gagarin ins All brachte, war eine Waffe, die ihre Karriere wechselte. Die Vostok-K war eine für Menschen zugelassene Version von Koroljows R-7 — der weltweit ersten Interkontinentalrakete, gebaut, um einen Sprengkopf über den Planeten zu schleudern, nun gebeten, einen Menschen in die Umlaufbahn zu heben. Es war dieselbe Linie, die Sputnik getragen hatte, und es ist erstaunlicherweise dieselbe Linie, die heute noch fliegt: Die Soyuz-Rakete, die heute Besatzungen zur Raumstation befördert, ist ein direkter Nachfahre, was die R-7-Familie zur mit Abstand am häufigsten gestarteten Rakete der Geschichte macht. Nur wenige für den Krieg gebaute Maschinen hatten ein so langes oder so friedliches zweites Leben."
+  },
+  {
+    "rel": "fleet/launcher/vostok-k.json",
+    "at": "description",
+    "old": "Vostok-K (GRAU-Index 8K72K) war die für bemannte Flüge qualifizierte Ableitung von Koroljows R-7-ICBM, mit Blok-E-Oberstufe und besatzungstauglichen Parametern. Dreistufig flüssigtreibstoffbetrieben (LOX + Kerosin), 38 Meter hoch, 287 Tonnen Startmasse. Startete alle sechs bemannten Vostok-Flüge (1-6, 1961-1963) sowie eine Handvoll unbemannter Vorläufer. Die Zuverlässigkeit entwickelte sich von frühen R-7-Anlaufproblemen (3 von 6 Erststufen-Ausfällen vor Gagarin) zu einer makellosen Bilanz in der bemannten Serie. Die Designlinie der Vostok-K lebt heute in der Soyuz-2-Trägerrakete weiter.",
+    "new": "Vostok-K (GRAU-Index 8K72K) war die für bemannte Flüge zugelassene Weiterentwicklung von Koroljows Interkontinentalrakete R-7, mit Blok-E-Oberstufe und besatzungstauglichen Parametern. Dreistufig, mit Flüssigtreibstoff (LOX + Kerosin), 38 Meter hoch, 287 Tonnen Startmasse. Startete alle sechs bemannten Vostok-Flüge (1-6, 1961-1963) sowie eine Handvoll unbemannter Vorläufer. Die Zuverlässigkeit entwickelte sich von frühen R-7-Anlaufproblemen (3 von 6 Erststufen-Ausfällen vor Gagarin) zu einer makellosen Bilanz in der bemannten Serie. Die Konstruktionslinie der Vostok-K lebt heute in der Trägerrakete Soyuz-2 weiter (2026 die einzige russische Trägerrakete, die Besatzungen befördern kann)."
+  },
+  {
+    "rel": "fleet/launcher/vostok-k.json",
+    "at": "best_known_for",
+    "old": "Sowjetischer R-7-Ableger, der Gagarin ins All brachte — Vostok 1 (12.04.1961) und 5 weitere Vostok-Flüge bis 1963",
+    "new": "Sowjetischer R-7-Ableger, der Gagarin ins All brachte — Vostok 1 (1961-04-12) und 5 weitere Vostok-Flüge bis 1963"
+  },
+  {
+    "rel": "fleet/launcher/vulcan.json",
+    "at": "tagline",
+    "old": "Atlas V- und Delta-IV-Nachfolger; zertifiziert für NSSL Phase 3 und geplant für Dream Chaser",
+    "new": "Nachfolger von Atlas V und Delta IV; Zertifizierung für NSSL Phase 3, geplant für Dream Chaser"
+  },
+  {
+    "rel": "fleet/launcher/vulcan.json",
+    "at": "description",
+    "old": "Zweistufige Trägerrakete der United Launch Alliance, die Atlas V und Delta IV ablöst. Mit zwei BE-4-Methalox-Triebwerken in der ersten Stufe und Centaur V (RL10) darüber. Der Jungfernflug am 8. Januar 2024 beförderte Astrobotic Peregrine. Vorgesehen zur Zertifizierung für die National Security Space Launch Phase 3-Verträge und geplant als Trägerrakete für Sierra Space's Dream Chaser Frachtflugzeug im Orbit.",
+    "new": "Zweistufiger Nachfolger von Atlas V und Delta IV der United Launch Alliance. Angetrieben von zwei BE-4-Methalox-Triebwerken in der ersten Stufe und der Centaur V (RL10) darüber. Der Jungfernflug am 8. Januar 2024 beförderte Peregrine von Astrobotic. Soll für die Verträge der National Security Space Launch Phase 3 zertifiziert werden und ist als Trägerrakete für Dream Chaser, das Fracht-Raumflugzeug von Sierra Space, vorgesehen."
+  },
+  {
+    "rel": "fleet/launcher/vulcan.json",
+    "at": "best_known_for",
+    "old": "Atlas V und Delta IV Nachfolger",
+    "new": "Nachfolger von Atlas V und Delta IV"
+  },
+  {
+    "rel": "fleet/observatory/chandra.json",
+    "at": "tagline",
+    "old": "Sharpest Röntgenaufnahme im Raum",
+    "new": "Schärfste Röntgenaufnahmen im Weltraum"
+  },
+  {
+    "rel": "fleet/observatory/chandra.json",
+    "at": "description",
+    "old": "NASA's Flaggschiff Röntgenobservatorium, seit 1999 im Dienst. Auflösung ca. 25× besser als jedes vorherige Röntgenteleskop, die direkte Abbildung von Schwarz-Loch-Beschleunigungsscheiben, Supernova-Remnants, und die Heißgas-Gewinde Galaxien-Cluster.",
+    "new": "Das Flaggschiff-Röntgenobservatorium der NASA, seit 1999 im Dienst. Die Auflösung ist etwa 25× besser als bei jedem früheren Röntgenteleskop und erlaubt die direkte Abbildung von Akkretionsscheiben schwarzer Löcher, Supernova-Überresten und dem heißen Gas, das Galaxienhaufen durchzieht."
+  },
+  {
+    "rel": "fleet/observatory/chandra.json",
+    "at": "best_known_for",
+    "old": "Sharpest Röntgenaufnahme im Raum",
+    "new": "Schärfste Röntgenaufnahmen im Weltraum"
+  },
+  {
+    "rel": "fleet/observatory/compton-gro.json",
+    "at": "tagline",
+    "old": "Einer der vier großen Observatorien der NASA",
+    "new": "Eines der vier „Great Observatories“ der NASA"
+  },
+  {
+    "rel": "fleet/observatory/compton-gro.json",
+    "at": "description",
+    "old": "Eines von NASAs vier „Great Observatories\" neben Hubble, Chandra und Spitzer. In Umlaufbahn 1991–2000, kartographierte den Gammastrahlen-Himmel und entdeckte, dass Gammastrahlenausbrüche aus kosmologischen Entfernungen stammen, nicht von nahegelegenen Quellen.",
+    "new": "Eines der vier „Great Observatories“ der NASA neben Hubble, Chandra und Spitzer. Von 1991 bis 2000 in der Umlaufbahn, kartierte es den Gammastrahlenhimmel und entdeckte, dass Gammablitze aus kosmologischen Entfernungen stammen und nicht aus nahen Quellen."
+  },
+  {
+    "rel": "fleet/observatory/compton-gro.json",
+    "at": "best_known_for",
+    "old": "Einer der vier großen Observatorien der NASA",
+    "new": "Eines der vier „Great Observatories“ der NASA"
+  },
+  {
+    "rel": "fleet/observatory/gaia.json",
+    "at": "tagline",
+    "old": "Landkarte 1,8 Milliarden Sterne in 3D",
+    "new": "Hat 1,8 Milliarden Sterne in 3D kartiert"
+  },
+  {
+    "rel": "fleet/observatory/gaia.json",
+    "at": "description",
+    "old": "Der Star-Charting-Satellit der ESA, der die Position, die Helligkeit und die Bewegung von fast zwei Milliarden Sternen in der Milchstraße auf beispiellose Präzision abgebildet. Operiert 2013–2025; der resultierende Katalog wird die galaktische Astronomie seit Jahrzehnten unterstützen.",
+    "new": "Der Satellit der ESA zur Sternkartierung, der Position, Helligkeit und Bewegung von fast zwei Milliarden Sternen der Milchstraße mit beispielloser Präzision vermisst. Betrieb 2013–2025; der entstandene Katalog wird die galaktische Astronomie noch über Jahrzehnte tragen."
+  },
+  {
+    "rel": "fleet/observatory/gaia.json",
+    "at": "best_known_for",
+    "old": "Landkarte 1,8 Milliarden Sterne in 3D",
+    "new": "Hat 1,8 Milliarden Sterne in 3D kartiert"
+  },
+  {
+    "rel": "fleet/observatory/hitomi.json",
+    "at": "tagline",
+    "old": "In der Umlaufbahn auseinandergesprengt; der Verlust trieb die Entwicklung von XRISM voran",
+    "new": "In der Umlaufbahn auseinandergerissen; der Verlust trieb die Entwicklung von XRISM voran"
+  },
+  {
+    "rel": "fleet/observatory/hitomi.json",
+    "at": "description",
+    "old": "JAXAs Röntgenobservatorium, 37 Tage nach dem Start im Februar 2016 verloren. Eine Sättigung des Reaktionsrads löste eine Reihe von Lageregelungsfehlern aus, die das Raumschiff so schnell in Rotation versetzte, dass es auseinanderfiel. Die Lehren daraus trieben die Entwicklung von XRISM voran (gestartet 2023).",
+    "new": "Das Röntgenobservatorium der JAXA, 37 Tage nach dem Start im Februar 2016 verloren. Eine Sättigung des Reaktionsrads löste eine Reihe von Lageregelungsfehlern aus, die das Raumfahrzeug so schnell in Rotation versetzten, dass es auseinanderbrach. Die Lehren daraus trieben die Entwicklung von XRISM voran (gestartet 2023)."
+  },
+  {
+    "rel": "fleet/observatory/hitomi.json",
+    "at": "best_known_for",
+    "old": "In der Umlaufbahn auseinandergesprengt; der Verlust trieb die Entwicklung von XRISM voran",
+    "new": "In der Umlaufbahn auseinandergerissen; der Verlust trieb die Entwicklung von XRISM voran"
+  },
+  {
+    "rel": "fleet/observatory/hubble.json",
+    "at": "description",
+    "old": "Das Weltraumteleskop für sichtbares Licht und UV-Strahlung von NASA und ESA, das sich seit 1990 in einer niedrigen Erdumlaufbahn (LEO) befindet und bis 2009 fünfmal von Space Shuttle-Missionen gewartet wurde. Noch nach 35+ Jahren in Betrieb, mit großen Instrumenten, die von Astronauten bei Außenbordeinsätzen installiert wurden, und einem Fehler des Primärspiegels, der 1993 durch COSTAR korrigiert wurde (später durch Instrumente mit eingebauten Korrekturoptiken ersetzt).",
+    "new": "Das Weltraumteleskop für sichtbares Licht und UV-Strahlung von NASA und ESA, das sich seit 1990 in einer niedrigen Erdumlaufbahn (LEO) befindet und bis 2009 fünfmal von Space-Shuttle-Missionen gewartet wurde. Seit mehr als 35 Jahren in Betrieb, mit großen Instrumenten, die von Astronauten bei Außenbordeinsätzen installiert wurden, und einem Fehler des Primärspiegels, der 1993 durch COSTAR korrigiert wurde (später durch Instrumente mit eingebauten Korrekturoptiken ersetzt)."
+  },
+  {
+    "rel": "fleet/observatory/jwst.json",
+    "at": "tagline",
+    "old": "Größtes Infrarot-Raumteleskop; L2 Orbit",
+    "new": "Größtes Infrarot-Weltraumteleskop; L2-Orbit"
+  },
+  {
+    "rel": "fleet/observatory/jwst.json",
+    "at": "description",
+    "old": "Das größte Infrarot-Raum-Teleskop jemals gebaut. Seit Januar 2022 im Sonne-Erde L2 stationiert, mit einem 6,5 m segmentierten, goldbeschichteten Beryllium-Primärspiegel hinter einer Tennisplatz-Sonnenschutzscheibe. Sieht zurück zu den ersten Galaxien nach dem Big Bang.",
+    "new": "Das größte je gebaute Infrarot-Weltraumteleskop. Seit Januar 2022 am Lagrange-Punkt L2 des Systems Sonne–Erde stationiert, mit einem segmentierten, goldbeschichteten Beryllium-Primärspiegel von 6,5 m hinter einem tennisplatzgroßen Sonnenschutz. Sieht zurück bis zu den ersten Galaxien nach dem Urknall."
+  },
+  {
+    "rel": "fleet/observatory/jwst.json",
+    "at": "best_known_for",
+    "old": "Größtes Infrarot-Raumteleskop; L2 Orbit",
+    "new": "Größtes Infrarot-Weltraumteleskop; L2-Orbit"
+  },
+  {
+    "rel": "fleet/observatory/kepler.json",
+    "at": "tagline",
+    "old": "Entdeckte 2.700+ Exoplaneten",
+    "new": "Entdeckte über 2.700 Exoplaneten"
+  },
+  {
+    "rel": "fleet/observatory/kepler.json",
+    "at": "description",
+    "old": "NASAs Exoplanetenjäger (2009–2018). Blickte auf einen einzelnen Himmelsbereich und erkannte Exoplaneten mittels Transittransitphotometrie — dem kurzen Helligkeitsabfall des Sternlichts, wenn ein Planet vor seinem Stern vorbeizieht. Entdeckte mehr als 2.700 bestätigte Exoplaneten und demonstrierte, dass erdähnliche Welten häufig sind.",
+    "new": "Der Exoplanetenjäger der NASA (2009–2018). Blickte auf einen einzelnen Himmelsbereich und entdeckte Exoplaneten mittels Transitphotometrie — dem kurzen Helligkeitsabfall des Sternlichts, wenn ein Planet vor seinem Stern vorbeizieht. Entdeckte mehr als 2.700 bestätigte Exoplaneten und zeigte, dass erdgroße Welten häufig sind."
+  },
+  {
+    "rel": "fleet/observatory/kepler.json",
+    "at": "best_known_for",
+    "old": "Entdeckte 2.700+ Exoplaneten",
+    "new": "Entdeckte über 2.700 Exoplaneten"
+  },
+  {
+    "rel": "fleet/observatory/spektr-rg.json",
+    "at": "tagline",
+    "old": "Russisch-deutsche Röntgenstrahlende Sternwarte",
+    "new": "Russisch-deutsches Röntgenobservatorium (Himmelskarte)"
+  },
+  {
+    "rel": "fleet/observatory/spektr-rg.json",
+    "at": "description",
+    "old": "Spektr-RG ist ein von NPO Lawotschkin in Russland gebautes Weltraumobservatorium. Deutsch-russisches Röntgen-Himmelsvermessungsobservatorium. Seit 2019 in Betrieb; sein deutsches eROSITA-Teleskop schaltete im Februar 2022 in den Schutzbetrieb, während das russische ART-XC-Instrument die Beobachtungen fortsetzt.",
+    "new": "Spektr-RG ist ein von NPO Lavochkin in Russland gebautes Weltraumobservatorium. Russisch-deutsches Röntgenobservatorium zur Himmelskartierung. Seit 2019 in Betrieb; sein deutsches eROSITA-Teleskop ging im Februar 2022 in den Sicherheitsmodus, während das russische Instrument ART-XC weiter beobachtet."
+  },
+  {
+    "rel": "fleet/observatory/spektr-rg.json",
+    "at": "best_known_for",
+    "old": "Russisch-deutsche Röntgenstrahlende Sternwarte",
+    "new": "Russisch-deutsches Röntgenobservatorium (Himmelskarte)"
+  },
+  {
+    "rel": "fleet/observatory/spitzer.json",
+    "at": "tagline",
+    "old": "Infrared Great Observatory; 16 Jahre Daten",
+    "new": "Infrarot-„Great Observatory“; 16 Jahre Daten"
+  },
+  {
+    "rel": "fleet/observatory/spitzer.json",
+    "at": "description",
+    "old": "Die Infrarot-Großobservatoriums-Mission der NASA in Betrieb von 2003 bis 2020. Konzipiert für eine fünfjährige kryogene Mission, aber operiert für sechzehn Jahre, einschließlich einer „Warm-Mission\"-Phase nach der Erschöpfung des flüssigen Heliums als Kühlmittel im Jahr 2009.",
+    "new": "Das Infrarot-„Great Observatory“ der NASA, in Betrieb von 2003 bis 2020. Ausgelegt für eine fünfjährige kryogene Mission, arbeitete es sechzehn Jahre lang, darunter in einer „Warm-Mission“-Phase, nachdem 2009 sein flüssiges Helium als Kühlmittel aufgebraucht war."
+  },
+  {
+    "rel": "fleet/observatory/spitzer.json",
+    "at": "best_known_for",
+    "old": "Infrarot-Großobservatorium; 16 Jahre Daten",
+    "new": "Infrarot-„Great Observatory“; 16 Jahre Daten"
+  },
+  {
+    "rel": "fleet/observatory/tess.json",
+    "at": "description",
+    "old": "Das Transiting Exoplanet Survey Satellite, seit 2018 im Orbit. Durchmustert den Himmel in 26 Sektoren pro Jahr und sucht nach kurzperiodischen Exoplaneten um die hellsten und erdnächsten Sterne — die Ziele, die sich am besten für die Atmosphärencharakterisierung mit dem JWST eignen.",
+    "new": "Der Transiting Exoplanet Survey Satellite, seit 2018 im Orbit. Durchmustert in 26 Sektoren pro Jahr nahezu den gesamten Himmel und sucht nach kurzperiodischen Exoplaneten um die hellsten und erdnächsten Sterne — die Ziele, die sich am besten für eine anschließende Charakterisierung der Atmosphären mit dem JWST eignen."
+  },
+  {
+    "rel": "fleet/observatory/xmm-newton.json",
+    "at": "tagline",
+    "old": "ESA Flaggschiff Röntgenobservatorium",
+    "new": "Das Flaggschiff-Röntgenobservatorium der ESA"
+  },
+  {
+    "rel": "fleet/observatory/xmm-newton.json",
+    "at": "description",
+    "old": "XMM-Newton ist ein Weltraumobservatorium von Airbus Defence and Space in Multi (Europa). ESA Flaggschiff Röntgenobservatorium. Seit 1999 im Dienst.",
+    "new": "XMM-Newton ist ein Weltraumobservatorium von Airbus Defence and Space in Multi (Europa). Das Flaggschiff-Röntgenobservatorium der ESA. Seit 1999 im Dienst."
+  },
+  {
+    "rel": "fleet/observatory/xmm-newton.json",
+    "at": "best_known_for",
+    "old": "ESA Flaggschiff Röntgenobservatorium",
+    "new": "Das Flaggschiff-Röntgenobservatorium der ESA"
+  },
+  {
+    "rel": "fleet/orbiter/akatsuki.json",
+    "at": "tagline",
+    "old": "Japans erste Venusorbiter; 2015 nach einem fehlgeschlagenen Bahneinschuss 2010 erfolgreich aktiviert",
+    "new": "Japans erster Venus-Orbiter; nach dem fehlgeschlagenen Bahneinschuss 2010 gerettet, erforschte er die Dynamik der Wolkenobergrenze"
+  },
+  {
+    "rel": "fleet/orbiter/akatsuki.json",
+    "at": "description",
+    "old": "JAXAs Venus Climate Orbiter, Japans erstes Raumschiff, das Venus erfolgreich umrundet. Die ursprüngliche Bahneinführung 2010 schlug fehl, konnte aber bei einem zweiten Versuch fünf Jahre später (2015) mit weniger effizienten Triebwerken gerettet werden. Untersuchte die Windgeschwindigkeiten in der Wolkenschicht, Blitzentladungen und die atmosphärischen Dynamiken von Venus' superrotierender Atmosphäre. Die Mission endete im September 2025, nachdem der Kontakt verloren ging.",
+    "new": "Der Venus Climate Orbiter der JAXA, Japans erstes Raumfahrzeug, das die Venus erfolgreich umkreiste. Der Einschuss in die Umlaufbahn schlug 2010 zunächst fehl, gelang aber fünf Jahre später (2015) bei einem zweiten Versuch mit weniger effizienten Triebwerken. Untersuchte die Winde an der Wolkenobergrenze, Blitze und die Dynamik der superrotierenden Venusatmosphäre. Die Mission endete im September 2025, nachdem der Kontakt abgerissen war."
+  },
+  {
+    "rel": "fleet/orbiter/akatsuki.json",
+    "at": "best_known_for",
+    "old": "Japans erste Venusorbiter; untersuchte Wolkenspitzenwinde und Atmosphärendynamik nach Wiederherstellung nach dem fehlgeschlagenen Bahneinschuss 2010",
+    "new": "Japans erster Venus-Orbiter; untersuchte Winde an der Wolkenobergrenze und die Dynamik der Atmosphäre. Nach dem fehlgeschlagenen Bahneinschuss 2010 gerettet"
+  },
+  {
+    "rel": "fleet/orbiter/bepicolombo.json",
+    "at": "tagline",
+    "old": "Doppel-Orbiter der gemeinsamen ESA- + JAXA-Merkur-Mission — teilt sich bei Ankunft am Merkur 2026 in MPO + Mio auf",
+    "new": "Gemeinsame Merkur-Mission von ESA und JAXA mit zwei Orbitern — teilt sich bei der Ankunft 2026 in MPO + Mio"
+  },
+  {
+    "rel": "fleet/orbiter/bepicolombo.json",
+    "at": "description",
+    "old": "Gemeinsame ESA- und JAXA-Mission. Gestartet am 20.10.2018 mit einer Ariane 5 ECA. Das Mercury Transfer Module transportiert den Satellitenstapel auf einer siebenjährigen Vorbeiflugphase (1 Erdenswingby + 2 Venusswingbys + 6 Merkurswingbys) vor dem Merkurorbiteinschuss am 21.11.2026. Bei der Ankunft trennen sich die zwei Wissenschaftsorbitale auf: ESA's Mercury Planetary Orbiter (MPO) fliegt eine 480 × 1500 km Polavbahn mit 11 Instrumenten für Oberflächenkomposition, Topographie, Gravitation und Exosphäre; JAXA's Mio (Mercury Magnetospheric Orbiter) fliegt eine 590 × 11 640 km Polavbahn mit 5 Instrumenten für die Magnetosphäre und das Plasma. Zusammen sind sie die ersten europäischen und japanischen Raumfahrzeuge überhaupt in Merkumumlaufbahn.",
+    "new": "Gemeinsame Mission von ESA und JAXA. Gestartet am 2018-10-20 mit einer Ariane 5 ECA. Das Mercury Transfer Module trägt den Stapel auf einem siebenjährigen Flug mit Vorbeiflügen (1 Erd- + 2 Venus- + 6 Merkur-Swing-by-Manöver) bis zum Einschuss in die Merkurumlaufbahn am 2026-11-21. Bei der Ankunft trennen sich die beiden wissenschaftlichen Orbiter: Der Mercury Planetary Orbiter (MPO) der ESA fliegt auf einer polaren Bahn von 480 × 1500 km mit 11 Instrumenten für Oberflächenzusammensetzung, Topografie, Schwerefeld und Exosphäre; Mio (Mercury Magnetospheric Orbiter) der JAXA fliegt auf einer polaren Bahn von 590 × 11 640 km mit 5 Instrumenten für Magnetosphäre und Plasma. Zusammen sind sie die ersten europäischen und japanischen Raumfahrzeuge überhaupt in einer Merkurumlaufbahn."
+  },
+  {
+    "rel": "fleet/orbiter/bepicolombo.json",
+    "at": "best_known_for",
+    "old": "Gemeinsame ESA- + JAXA-Doppel-Orbiter-Merkur-Mission — MPO + Mio am Merkur, Ankunft 2026",
+    "new": "Gemeinsame Merkur-Mission von ESA und JAXA mit zwei Orbitern — MPO + Mio am Merkur, Ankunft 2026"
+  },
+  {
+    "rel": "fleet/orbiter/cassini.json",
+    "at": "description",
+    "old": "Der Saturn-Orbiter (2004–2017), der die ESA Huygens Lander zu Titan trug, ist immer noch die einzige Landung auf einem Mond eines äußeren Planeten. Entdeckte die aktiven Geysire Pflaumen von Enceladus und das globale Meer unter seiner eisigen Kruste. Endet in einem geplanten Sprung in Saturns Atmosphäre.",
+    "new": "Der Saturn-Orbiter (2004–2017), der den Lander Huygens der ESA zum Titan brachte — bis heute die einzige Landung auf dem Mond eines äußeren Planeten. Entdeckte die aktiven Geysir-Fontänen des Enceladus und den globalen Ozean unter seiner eisigen Kruste. Endete mit einem geplanten Absturz in die Atmosphäre des Saturn."
+  },
+  {
+    "rel": "fleet/orbiter/chandrayaan1.json",
+    "at": "tagline",
+    "old": "Indiens erste Mondmission. Entdeckte weit verbreitetes Oberflächenwasser auf dem Mond (M3 + MIP, 2009)",
+    "new": "Indiens erste Mondmission. Fand Oberflächenwasser auf dem Mond (M3 + MIP, 2009). Kontaktverlust 2009-08-29 nach nur 312 Tagen"
+  },
+  {
+    "rel": "fleet/orbiter/chandrayaan1.json",
+    "at": "best_known_for",
+    "old": "Indiens erste Mondmission. Entdeckte weit verbreitetes Oberflächenwasser auf dem Mond (M3 + MIP, 2009). Kontaktverlust 2009-08-29",
+    "new": "Indiens erste Mondmission. Entdeckte weit verbreitetes Oberflächenwasser auf dem Mond (M3 + MIP, 2009). Kontaktverlust 2009-08-29 nach nur 312 Tagen"
+  },
+  {
+    "rel": "fleet/orbiter/chandrayaan1.json",
+    "at": "description",
+    "old": "Indiens erste Mission jenseits der Erdumlaufbahn und erste zum Mond. Gestartet 2008-10-22 vom Satish Dhawan Space Centre auf einer PSLV-XL, erreichte Chandrayaan-1 am 2008-11-12 eine 100-km-Polarumlaufbahn um den Mond. An Bord waren 11 Instrumente aus 6 Ländern (Indien, USA, UK, Deutschland, Schweden, Bulgarien) — am folgenreichsten NASAs Moon Mineralogy Mapper (M3), der die Absorptionsbandensignatur von OH/H₂O über weiten Bereichen der Mondoberfläche, besonders in höheren Breitengraden, detektierte (Pieters et al., 2009, Science 326). Die 35-kg-schwere Moon Impact Probe (MIP) wurde am 2008-11-14 freigegeben und schlug in der Nähe des Randes des Shackleton-Kraters am Mondpol ein (Jawahar Sthal, ~89,5°S), womit sie das erste indische Artefakt auf dem Mond wurde und Wasserdampf in der Mondatmosphäre während des Abstiegs aufzeichnete. Der Kontakt zum Raumfahrzeug ging am 2009-08-29 nach ~10 Monaten / 3400 Umläufen verloren — halb der geplanten 2-jährigen Mission, doch der wissenschaftliche Ertrag war bereits bahnbrechend. Verbleibt in der Mondumlaufbahn, 2017 von NASAs Goldstone-Radar wiedergefunden.",
+    "new": "Indiens erste Mission jenseits der Erdumlaufbahn und erste zum Mond. Gestartet 2008-10-22 vom Satish Dhawan Space Centre auf einer PSLV-XL, erreichte Chandrayaan-1 am 2008-11-12 eine 100-km-Polarumlaufbahn um den Mond. An Bord waren 11 Instrumente aus 6 Ländern (Indien, USA, UK, Deutschland, Schweden, Bulgarien) — am folgenreichsten der Moon Mineralogy Mapper (M3) der NASA, der die Absorptionsbandensignatur von OH/H₂O über weiten Bereichen der Mondoberfläche, besonders in hohen Breiten, nachwies (Pieters et al., 2009, Science 326). Die 35 kg schwere Moon Impact Probe (MIP) wurde am 2008-11-14 ausgesetzt und schlug nahe dem Rand des Shackleton-Kraters am lunaren Südpol ein (Jawahar Sthal, ~89,5°S), womit sie das erste indische Artefakt auf dem Mond wurde und beim Abstieg Wasserdampf in der Mondatmosphäre aufzeichnete. Der Kontakt zum Raumfahrzeug ging am 2009-08-29 nach ~10 Monaten / 3400 Umläufen verloren — die Hälfte der geplanten zweijährigen Mission, doch der wissenschaftliche Ertrag war bereits bahnbrechend. Verbleibt in der Mondumlaufbahn, 2017 vom Goldstone-Radar der NASA wiedergefunden."
+  },
+  {
+    "rel": "fleet/orbiter/change-2.json",
+    "at": "best_known_for",
+    "old": "Zweiter chinesischer Mondorbiter; erste Raumfahrzeugsonde zum Asteroiden 4179 Toutatis (13. Dezember 2012, ~770 m nächste Annäherung)",
+    "new": "Zweiter chinesischer Mondorbiter; erster Vorbeiflug eines Raumfahrzeugs am Asteroiden 4179 Toutatis (13. Dezember 2012, ~770 m geringster Abstand)"
+  },
+  {
+    "rel": "fleet/orbiter/change1.json",
+    "at": "tagline",
+    "old": "Chinas erste Mondmission. Globale Topo-Karte 200 m; geplanter Mare-Fecunditatis-Einschlag 2009-03-01 — erstes chinesisches Objekt am Mond",
+    "new": "Chinas erste Mondmission. Globale 200-m-Karte; gezielter Einschlag im Mare Fecunditatis 2009-03-01 — erstes chinesisches Objekt auf dem Mond"
+  },
+  {
+    "rel": "fleet/orbiter/change1.json",
+    "at": "description",
+    "old": "Die erste Phase des Chinesischen Mondforschungsprogramms (CLEP) und die erste Mission der CNSA über die Erde hinaus. Gestartet am 2007-10-24 von Kosmodrom Xichang auf einer Long March 3A, Chang'e 1 (benannt nach der Mondgöttin der chinesischen Mythologie) erreichte am 2007-11-07 eine 200-km-Polarbahn mit zirkulärer Umlaufbahn um den Mond. Trug 8 Instrumente mit sich, darunter eine CCD-Stereokamera, einen Laseraltimeter, einen Imaging-Spektrometer, Gamma- und Röntgenspektrometer, einen Mikrowellenmessunggeber, einen Sonnenwinddetektor und einen Hochenergie-Teilchendetektor. Produzierte Chinas erste vollständige globale topografische Mondkarte mit einer Auflösung von 120–200 m und Elementenhäufigkarten von Th, K, U, O, Si, Mg, Al, Ca, Ti, Fe. Mission bewusst beendet am 2009-03-01 mit einem kontrollierten Aufschlag bei 1,50° S, 52,36° E in Mare Fecunditatis – Chinas erstes Objekt auf der Mondoberfläche, das den Weg für Chang'e 3 (2013 Oberflächenlandung) und Chang'e 5 (2020 Probenrückkehr) ebnet. Betrieb für 16 Monate – 4 Monate über die Nennleistung hinaus.",
+    "new": "Die erste Phase des Chinesischen Mondforschungsprogramms (CLEP) und die erste Mission der CNSA jenseits der Erde. Gestartet am 2007-10-24 vom Kosmodrom Xichang auf einer Long March 3A, erreichte Chang'e 1 (benannt nach der Mondgöttin der chinesischen Mythologie) am 2007-11-07 eine kreisförmige polare Mondumlaufbahn von 200 km. Trug 8 Instrumente, darunter eine CCD-Stereokamera, einen Laserhöhenmesser, ein bildgebendes Spektrometer, Gamma- und Röntgenspektrometer, ein Mikrowellenradiometer, einen Sonnenwinddetektor und einen Detektor für hochenergetische Teilchen. Erstellte Chinas erste vollständige globale topografische Mondkarte mit einer Auflösung von 120–200 m sowie Karten der Elementhäufigkeit von Th, K, U, O, Si, Mg, Al, Ca, Ti, Fe. Die Mission endete planmäßig am 2009-03-01 mit einem kontrollierten Aufschlag bei 1,50° S, 52,36° E im Mare Fecunditatis – Chinas erstes Objekt auf der Mondoberfläche, das den Weg für Chang'e 3 (2013, Landung auf der Oberfläche) und Chang'e 5 (2020, Probenrückführung) ebnete. Betrieb für 16 Monate – 4 Monate über die Nominaldauer hinaus."
+  },
+  {
+    "rel": "fleet/orbiter/change1.json",
+    "at": "best_known_for",
+    "old": "Chinas erste Mondmission. Globale Topo-Karte 200 m; geplanter Mare-Fecunditatis-Einschlag 2009-03-01 — erstes chinesisches Objekt am Mond",
+    "new": "Chinas erste Mondmission. Globale 200-m-Karte; gezielter Einschlag im Mare Fecunditatis 2009-03-01 — erstes chinesisches Objekt auf dem Mond"
+  },
+  {
+    "rel": "fleet/orbiter/clementine.json",
+    "at": "tagline",
+    "old": "BMDO + NASA Mondorbiter — erste multispektrale Mondkarte und Radar-Hinweis auf polares Wassereis",
+    "new": "Mondorbiter von BMDO und NASA — erste globale multispektrale Karte, erster bistatischer Radarhinweis auf Polareis"
+  },
+  {
+    "rel": "fleet/orbiter/clementine.json",
+    "at": "description",
+    "old": "Offiziell das Deep Space Program Science Experiment (DSPSE). Von der Ballistic Missile Defense Organization konzipiert, um leichte Sensoren unter Bedingungen des tiefen Weltraums zu erproben, mit NASA-Zusammenarbeit bei Mond- und Asteroidenforschung. Gestartet am 25.01.1994 auf einer Titan IIG, erreichte am 19.02.1994 eine polare Mondumlaufbahn für 71 Tage kartographischer Arbeit. Bildete jeden Quadratkilometer des Mondes mit einer Auflösung von 100–300 m über 11 Wellenlängen ab – die erste vollständige globale Mondkarte. Das Bistatic-Radar-Experiment mit Clementines Sender und DSN-Bodenantennen entdeckte verstärkte Echos am südpolaren Shackleton-Krater, die mit Wassereis konsistent sind und LCROSS um 15 Jahre vorausging. Ein fehlgeschlagenes Schubwerk-Zündungsmanöver brach das geplante Asteroidenvorbeiflug bei Geographos ab und beendete die Mission.",
+    "new": "Offiziell das Deep Space Program Science Experiment (DSPSE). Von der Ballistic Missile Defense Organization konzipiert, um leichte Sensoren unter Bedingungen des tiefen Weltraums zu erproben, mit Beteiligung der NASA an Mond- und Asteroidenforschung. Gestartet am 1994-01-25 auf einer Titan IIG, erreichte am 1994-02-19 eine polare Mondumlaufbahn für 71 Tage Kartierung. Bildete jeden Quadratkilometer des Mondes mit einer Auflösung von 100–300 m in 11 Wellenlängen ab – die erste vollständige globale Mondkarte. Das bistatische Radarexperiment mit dem Sender von Clementine und den DSN-Bodenantennen fand verstärkte Echos am Shackleton-Krater am Südpol, die mit Wassereis vereinbar sind – 15 Jahre vor LCROSS. Eine fehlgeschlagene Triebwerkszündung brach den geplanten Vorbeiflug am Asteroiden Geographos ab und beendete die Mission."
+  },
+  {
+    "rel": "fleet/orbiter/dart.json",
+    "at": "tagline",
+    "old": "Erster planetarischer Abwehrschlag (Dimorphos)",
+    "new": "Erster Einschlagkörper zur Planetenabwehr (Dimorphos)"
+  },
+  {
+    "rel": "fleet/orbiter/dart.json",
+    "at": "description",
+    "old": "Der erste planetarische Verteidigungsschlager. Deliberately kollidiert mit dem Asteroiden-Mondlet Dimorphos im September 2022, seine Umlaufzeit um seine Eltern Didymos um 33 Minuten — beweisen, dass kinetische Ablenkung ist eine lebensfähige Planeten-Schutztechnik.",
+    "new": "Der erste Einschlagkörper zur Planetenabwehr. Kollidierte im September 2022 gezielt mit dem Asteroidenmond Dimorphos und verkürzte dessen Umlaufzeit um den Mutterasteroiden Didymos um 33 Minuten — der Beweis, dass kinetische Ablenkung eine taugliche Methode zum Schutz des Planeten ist."
+  },
+  {
+    "rel": "fleet/orbiter/dart.json",
+    "at": "best_known_for",
+    "old": "Erster planetarischer Abwehrschlag (Dimorphos)",
+    "new": "Erster Einschlagkörper zur Planetenabwehr (Dimorphos)"
+  },
+  {
+    "rel": "fleet/orbiter/dawn.json",
+    "at": "tagline",
+    "old": "Einzige Sonde, die zwei extraterrestrische Welten umkreist hat — Vesta dann Ceres per Ionenantrieb",
+    "new": "Einzige Sonde, die zwei extraterrestrische Welten umkreist hat — Vesta, dann Ceres per Ionenantrieb"
+  },
+  {
+    "rel": "fleet/orbiter/dawn.json",
+    "at": "description",
+    "old": "NASA-Mission der Discovery-Klasse, angetrieben durch drei NSTAR-Xenon-Ionentriebwerke, die das erforderliche Delta-v von 11 km/s bereitstellten, um in eine Umlaufbahn um Vesta einzutreten, dieser zu entkommen, drei Jahre lang zu cruisen und in eine Umlaufbahn um Ceres einzutreten. Kartografierte beide Himmelskörper mit beispiellosen Details — Vestas südliches Rheasilvia-Becken, Ceres' helle Cerealia-Facula-Flecken, ammonierte Phyllosilikate und Kryovulkanismus am Ahuna Mons. Die Mission endete 2018, als das Hydrazin der Lageregelungssysteme aufgebraucht war; das Raumschiff befindet sich weiterhin in einer stabilen Umlaufbahn um Ceres.",
+    "new": "NASA-Mission der Discovery-Klasse, angetrieben durch drei Xenon-Ionentriebwerke vom Typ NSTAR, die das erforderliche Gesamt-Delta-v von 11 km/s lieferten, um in eine Umlaufbahn um Vesta einzutreten, sie wieder zu verlassen, drei Jahre lang zu fliegen und in eine Umlaufbahn um Ceres einzutreten. Kartierte beide Himmelskörper in beispiellosem Detail — das südliche Rheasilvia-Becken auf Vesta, die hellen Flecken Cerealia Facula auf Ceres, ammoniumhaltige Schichtsilikate und Kryovulkanismus am Ahuna Mons. Die Mission endete 2018, als das Hydrazin für die Lageregelung aufgebraucht war; das Raumfahrzeug befindet sich weiterhin in einer stabilen Umlaufbahn um Ceres."
+  },
+  {
+    "rel": "fleet/orbiter/dawn.json",
+    "at": "best_known_for",
+    "old": "Einzige Sonde im Orbit um zwei extraterrestrische Welten — Vesta + Ceres",
+    "new": "Einzige Sonde im Orbit um zwei Welten — Vesta (2011-2012), Ceres (2015-2018)"
+  },
+  {
+    "rel": "fleet/orbiter/europa-clipper.json",
+    "at": "tagline",
+    "old": "Erste Mission, die sich der Charakterisierung der Bewohnbarkeit Europas widmet",
+    "new": "Erste Mission, die sich der Charakterisierung der Bewohnbarkeit des Jupitermonds Europa widmet"
+  },
+  {
+    "rel": "fleet/orbiter/europa-clipper.json",
+    "at": "description",
+    "old": "NASAs Mission zur Untersuchung der Bewohnbarkeit des eisigen Mondes Europa – von dem angenommen wird, dass er einen globalen Ozean aus Flüssigwasser unter einer 15–25 km dicken Eishülle beherbergt, möglicherweise die zugänglichste potenziell bewohnbare Umgebung im Sonnensystem. Größtes Planetenmissionsraumschiff, das je gestartet wurde (~6000 kg). ~102 m² große Solaranlagen erzeugen in Jupiters Entfernung genug Strom, um neun Instrumente durch 49 nahe Vorbeiflüge an Europa zu treiben – entworfen, um den gesamten Mond abzubilden und gleichzeitig die Strahlenbelastung des Raumschiffs in Jupiters brutalen Strahlungsgürteln zu begrenzen.",
+    "new": "Die Mission der NASA zur Untersuchung der Bewohnbarkeit des eisigen Jupitermonds Europa – von dem angenommen wird, dass er unter einer 15–25 km dicken Eishülle einen globalen Ozean aus flüssigem Wasser beherbergt, möglicherweise die zugänglichste potenziell bewohnbare Umgebung im Sonnensystem. Das größte je gestartete Raumfahrzeug einer Planetenmission (~6000 kg). Solarzellenflächen von ~102 m² erzeugen in der Entfernung des Jupiter genug Strom, um neun Instrumente durch 49 nahe Vorbeiflüge an Europa zu betreiben – ausgelegt, um den gesamten Mond abzubilden und dabei die Strahlendosis des Raumfahrzeugs in den brutalen Strahlungsgürteln des Jupiter zu begrenzen."
+  },
+  {
+    "rel": "fleet/orbiter/europa-clipper.json",
+    "at": "best_known_for",
+    "old": "Erste Mission zur Erforschung der Bewohnbarkeit Europas",
+    "new": "Erste Mission zur Erforschung der Bewohnbarkeit des Jupitermonds Europa"
+  },
+  {
+    "rel": "fleet/orbiter/exomars-tgo.json",
+    "at": "description",
+    "old": "ESAs Trace Gas Orbiter, seit 2016 im Marsorbit. Spürt Methan und Wasserdampf in der Atmosphäre auf, die auf biologische oder geologische Prozesse hindeuten könnten, und leitet Daten für Marsoberflächen-Missionen über sein UHF-Relais weiter.",
+    "new": "Der Trace Gas Orbiter der ESA, seit 2016 im Marsorbit. Spürt Methan und Wasserdampf in der Atmosphäre auf, die auf biologische oder geologische Prozesse hindeuten könnten, und leitet Daten für Marsoberflächen-Missionen über sein UHF-Relais weiter."
+  },
+  {
+    "rel": "fleet/orbiter/galileo.json",
+    "at": "description",
+    "old": "Der erste Jupiter-Orbiter (1995–2003) und die einzige Mission, eine Sonde in Jupiters Atmosphäre zu fallen. Auch entdeckten Beweise für ein unterirdisches Meer auf Europa – so dass es eine der konsequentsten planetarischen Missionen jemals geflogen.",
+    "new": "Der erste Jupiter-Orbiter (1995–2003) und die einzige Mission, die eine Sonde in die Atmosphäre des Jupiter abgesetzt hat. Entdeckte außerdem Hinweise auf einen Ozean unter der Oberfläche des Mondes Europa – damit eine der folgenreichsten Planetenmissionen, die je geflogen sind."
+  },
+  {
+    "rel": "fleet/orbiter/giotto.json",
+    "at": "tagline",
+    "old": "Erste Nahaufnahmen eines Kometenkerns — flog 1986 in 596 km Entfernung mit 68 km/s an Halleys Komet vorbei",
+    "new": "Erste Nahaufnahmen eines Kometenkerns — flog 1986 in 596 km Entfernung mit 68 km/s am Halleyschen Kometen vorbei"
+  },
+  {
+    "rel": "fleet/orbiter/giotto.json",
+    "at": "description",
+    "old": "ESAs erste Deep-Space-Sonde. Drehstabilisierter trommelförmiger Bus, geschützt durch einen Whipple-Schild aus Kevlar und Aluminium, gebaut um die Halley Multicolour Camera plus 9 weitere Instrumente von 11 europäischen Ländern, NASA und Japan. Engste Annäherung an 1P/Halley am 14.03.1986 auf 596 km — ein 100-mg-Staubeinschlag 14 Sekunden vor der größten Annäherung verstellte die Drehachse und unterbrach den Kamerakontakt. 1990 reaktiviert und 1992 in 200 km Abstand am Kometen Grigg-Skjellerup vorbeigeführt.",
+    "new": "Die erste Tiefraumsonde der ESA. Drehstabilisierter Trommelkörper, geschützt durch einen Staubschutzschild nach dem Whipple-Prinzip, gebaut um die Halley Multicolour Camera plus 9 weitere Instrumente, beigesteuert von 11 europäischen Ländern, der NASA und Japan. Größte Annäherung an den Halleyschen Kometen am 1986-03-14 in 596 km — der Staubschutz überstand sie, doch ein Staubeinschlag von 100 mg 14 Sekunden zuvor verstellte die Drehachse und unterbrach den Kamerakontakt. 1990 reaktiviert für einen Vorbeiflug am Kometen Grigg-Skjellerup 1992 in 200 km Abstand — erstmals wandte sich ein Raumfahrzeug einem anderen Kometen zu."
+  },
+  {
+    "rel": "fleet/orbiter/giotto.json",
+    "at": "best_known_for",
+    "old": "Erste Nahaufnahmen eines Kometenkerns — 596 km an Halleys Komet vorbei, 14.03.1986",
+    "new": "Erste Nahaufnahmen eines Kometenkerns — 596 km am Halleyschen Kometen vorbei, 1986-03-14"
+  },
+  {
+    "rel": "fleet/orbiter/hayabusa-2.json",
+    "at": "description",
+    "old": "Hayabusa2 ist ein Raumsondenbetreiber für tiefe Weltraum gebaut von NEC in Japan. Die Sonde kehrte erfolgreich mit ~5,4 Gramm Proben vom Asteroiden 162173 Ryugu am 6. Dezember 2020 zurück. Nach der Probenabgabe setzte das Raumschiff seine erweiterte SHARP-Mission (Small Hazardous Asteroid Reconnaissance Probe) zu anderen Asteroiden fort. Es flog am 5. Juli 2026 an dem Asteroiden Torifune vorbei und soll 2031 zum Asteroiden 1998 KY26 rendezvieren.",
+    "new": "Hayabusa2 ist ein Tiefraum-Orbiter, gebaut von NEC in Japan. Brachte am 6. Dezember 2020 erfolgreich ~5,4 Gramm Proben vom Asteroiden 162173 Ryugu zur Erde zurück. Nach der Übergabe der Proben setzte das Raumfahrzeug seine erweiterte Mission SHARP (Small Hazardous Asteroid Reconnaissance Probe) zu weiteren Asteroiden fort. Es flog am 5. Juli 2026 am Asteroiden Torifune vorbei und soll 2031 mit dem Asteroiden 1998 KY26 zusammentreffen."
+  },
+  {
+    "rel": "fleet/orbiter/hayabusa.json",
+    "at": "description",
+    "old": "JAXAs bahnbrechende Asteroidenproben-Rückkehrmission. Gestartet am 09.05.2003 zum Asteroiden Itokawa mit vier μ10-Mikrowellenentladungs-Ionentriebwerken. Überlebte ein Hydrazinleck, den Ausfall von drei von vier Reaktionsrädern, einen Ionentriebwerk-Ausfall und sieben Wochen Kommunikationsverlust, bevor Ingenieure sie mit einem funktionierenden Triebwerk, zusammengesetzt aus den überlebenden Hälften zweier beschädigter Triebwerke, zurück zur Erde brachten. Probenkapsel am 13.06.2010 in Woomera, AUS, geborgen mit 1500 μg Itokawa-Material — die erste jemals zur Erde zurückgebrachte Asteroidenprobe.",
+    "new": "Die bahnbrechende Mission der JAXA zur Probenrückführung von einem Asteroiden. Gestartet am 2003-05-09 zum Asteroiden Itokawa mit vier Mikrowellenentladungs-Ionentriebwerken μ10. Überstand ein Hydrazinleck, den Ausfall von drei von vier Reaktionsrädern, den Ausfall eines Ionentriebwerks und sieben Wochen Kommunikationsverlust, bevor Ingenieure es mit einem funktionierenden Triebwerk, zusammengesetzt aus den intakten Hälften zweier beschädigter, zurück zur Erde brachten. Probenkapsel am 2010-06-13 in Woomera (AUS) geborgen, mit 1500 μg Itokawa-Material — die erste jemals zur Erde zurückgebrachte Asteroidenprobe."
+  },
+  {
+    "rel": "fleet/orbiter/hayabusa.json",
+    "at": "best_known_for",
+    "old": "Erste Asteroidenproben-Rückkehrmission",
+    "new": "Erste Asteroiden-Probenrückführung"
+  },
+  {
+    "rel": "fleet/orbiter/juice.json",
+    "at": "description",
+    "old": "Jupiter Icy Moons Explorer. Gestartet am 14.04.2023 mit einer Ariane 5 ECA+ aus Kourou auf einer 8,5-jährigen Reise über Erde-Venus-Erde-Erde-Schwungholmanöver zur Jupiter-Ankunft im Juli 2031. Im Jupitersystem führt JUICE ~35 Vorbeiflüge an Europa, Ganymed und Kallisto durch, bevor er 2034 in einen Ganymed-Orbit eintritt — das erste Raumfahrzeug überhaupt, das einen anderen Mond als den Erdmond umkreist. Zehn-Instrumente-Nutzlast inkl. Eis-durchdringendem Radar RIME.",
+    "new": "Jupiter Icy Moons Explorer. Gestartet am 2023-04-14 auf einer Ariane 5 ECA+, 8,5 Jahre Flug mit Swing-by-Manövern an Erde, Venus, Erde, Erde bis zur Ankunft am Jupiter im Juli 2031. Im Jupitersystem fliegt JUICE ~35-mal an Europa, Ganymed und Kallisto vorbei und tritt 2034 in die Ganymed-Umlaufbahn ein — das erste Raumfahrzeug, das einen anderen Mond als den der Erde umkreist. Zehn Instrumente, darunter eisdurchdringendes Radar (RIME), Spektrometer, Magnetometer und Laserhöhenmesser, optimiert, um die drei Eismonde als potenziell bewohnbare Ozeanwelten unter der Oberfläche zu charakterisieren."
+  },
+  {
+    "rel": "fleet/orbiter/juno.json",
+    "at": "tagline",
+    "old": "Polar Jupiter Orbiter; Magnetosphärenstudien",
+    "new": "Polarer Jupiter-Orbiter; Magnetosphärenforschung"
+  },
+  {
+    "rel": "fleet/orbiter/juno.json",
+    "at": "description",
+    "old": "NASA Polar-Jupiter-Orbiter, in Orbit seit 2016. Solarbetrieben (einer ersten in Jupiter’s Entfernung), Spinnen, um Stabilität zu halten, und Orbiting nahe genug Jupiters Cloud-Tops, um schwere Strahlenschäden mit jedem Pass zu riskieren.",
+    "new": "Der polare Jupiter-Orbiter der NASA, seit 2016 in der Umlaufbahn. Solarbetrieben (erstmals in Jupiters Entfernung), rotierend zur Stabilisierung und so nah über den Wolkenobergrenzen des Jupiter kreisend, dass jeder Durchgang das Risiko schwerer Strahlenschäden birgt."
+  },
+  {
+    "rel": "fleet/orbiter/juno.json",
+    "at": "best_known_for",
+    "old": "Polar Jupiter Orbiter; Magnetosphärenstudien",
+    "new": "Polarer Jupiter-Orbiter; Magnetosphärenforschung"
+  },
+  {
+    "rel": "fleet/orbiter/lro.json",
+    "at": "tagline",
+    "old": "NASAs aktiver Mondaufklärungsorbiter. LROCs 0,5-m/Pixel-Aufnahmen sind die Quelle jedes Apollo-, Luna- und Chang'e-Landeplatzfotos hier",
+    "new": "Aktiver Mondorbiter der NASA. LROC-Aufnahmen mit 0,5 m/Pixel liefern jedes Apollo-, Luna- und Chang'e-Landeplatzfoto hier"
+  },
+  {
+    "rel": "fleet/orbiter/lro.json",
+    "at": "description",
+    "old": "NASAs aktiver Flaggschiff-Mondorbiter — durchgehend in Betrieb seit dem 23.06.2009. Gestartet am 18.06.2009 mit LCROSS auf einer Atlas V von Cape Canaveral, hat LROs Nutzlast aus 7 Instrumenten jeden Aspekt des Mondes mit beispielloser Auflösung neu kartiert. Die Lunar Reconnaissance Orbiter Camera (LROC) NAC (Narrow-Angle Camera, 0,5 m/Pixel in 50 km Höhe) hat jeden Landeplatz von Apollo, Luna, Surveyor, Chang'e, Vikram, Beresheet und Hakuto fotografiert. LOLA (Laser Altimeter) lieferte die detaillierteste Topographie eines beliebigen Körpers im Sonnensystem. Diviner kartierte die Oberflächentemperatur mit 10-K-Präzision; LAMP detektierte weitverbreitetes Oberflächen-H₂O bis hinab zur Mondmorgendämmerung; LEND kartierte den Neutronenfluss bei <10 km Auflösung. Stand 2026 noch in erweiterter Mission betriebsbereit, ohne geplantes Lebensende.",
+    "new": "Der aktive Flaggschiff-Mondorbiter der NASA — durchgehend in Betrieb seit dem 2009-06-23. Gestartet am 2009-06-18 mit LCROSS auf einer Atlas V von Cape Canaveral, hat die Nutzlast von LRO aus 7 Instrumenten jeden Aspekt des Mondes mit beispielloser Auflösung neu kartiert. Die Lunar Reconnaissance Orbiter Camera (LROC) NAC (Narrow-Angle Camera, 0,5 m/Pixel aus 50 km Höhe) hat jeden Landeplatz von Apollo, Luna, Surveyor, Chang'e, Vikram, Beresheet und Hakuto abgebildet — jedes „Tier-2-LROC“-Bild in den /moon-Hotspots dieser App stammt von LROC NAC. LOLA (Laser Altimeter) lieferte die detaillierteste Topografie eines beliebigen Körpers im Sonnensystem. Diviner kartierte die Oberflächentemperatur mit 10 K Genauigkeit; LAMP wies weitverbreitetes Oberflächen-H₂O bis hinab zur Mondmorgendämmerung nach; LEND kartierte den Neutronenfluss mit <10 km Auflösung. Stand 2026 weiter in der erweiterten Mission, ohne geplantes Betriebsende — der Treibstoff reicht für den Betrieb bis ~2030+."
+  },
+  {
+    "rel": "fleet/orbiter/lro.json",
+    "at": "best_known_for",
+    "old": "NASAs aktiver Mondaufklärungsorbiter. LROCs 0,5-m/Pixel-Aufnahmen sind die Quelle jedes Apollo-, Luna- und Chang'e-Landeplatzfotos hier",
+    "new": "Aktiver Mondorbiter der NASA. LROC-Aufnahmen mit 0,5 m/Pixel liefern jedes Apollo-, Luna- und Chang'e-Landeplatzfoto hier"
+  },
+  {
+    "rel": "fleet/orbiter/lucy.json",
+    "at": "description",
+    "old": "NASAs zwölfjährige Multi-Flyby-Mission zu 6 Jupiter-Trojanischen Asteroiden-Systemen und 2 Hauptgürtel-Asteroiden (11 Begegnungen insgesamt, einschließlich Monde). Drei Erd-Gravitationsmanöver prägen eine einzige Trajektorie, die beide Trojanischen Wolken bei L4 und L5 besucht. Transportiert 1003 kg Hydrazin — mehr Treibstoff als Trockenmasse. Benannt nach dem 1974er Australopithecus afarensis-Fossil, wiederum benannt nach dem Beatles-Lied — die Implikation ist, dass die Trojaner Frühmaterial des Sonnensystems bewahren, so wie das Fossil die Frühmenschheitsgeschichte bewahrt.",
+    "new": "Die zwölfjährige Mission der NASA mit mehreren Vorbeiflügen an 6 Systemen von Jupiter-Trojanern und 2 Hauptgürtel-Asteroiden (11 Begegnungen insgesamt, einschließlich der Monde). Drei Swing-by-Manöver an der Erde formen eine einzige Bahn, die beide Trojaner-Wolken bei L4 und L5 besucht. Führt 1003 kg Hydrazin mit — mehr Treibstoff als Trockenmasse. Benannt nach dem Fossil des Australopithecus afarensis von 1974, das wiederum nach dem Beatles-Lied benannt wurde — was nahelegt, dass die Trojaner urzeitliches Material des Sonnensystems bewahren, so wie das Fossil die frühe Menschheitsgeschichte bewahrt."
+  },
+  {
+    "rel": "fleet/orbiter/luna10.json",
+    "at": "tagline",
+    "old": "Erste Raumsonde im Mondorbit – trat am 1966-04-03 in die Mondumlaufbahn ein, drei Jahre vor Apollo 8",
+    "new": "Erstes Raumfahrzeug, das einen anderen Körper als die Erde umkreiste — Mondorbit 1966-04-03, drei Jahre vor Apollo 8"
+  },
+  {
+    "rel": "fleet/orbiter/luna10.json",
+    "at": "description",
+    "old": "Erstes Raumschiff, das den Mond umkreist — und der erste künstliche Satellit eines anderen Himmelskörpers als der Erde. Am 1966-03-31 von Baikonur auf einer Molniya-Rakete gestartet, trat Luna 10 am 1966-04-03 in eine Mondumlaufbahn ein mit einer Umlaufbahn von 349 × 1015 km bei 71,9° Inklination, drei Jahre bevor Apollo 8 mit Menschen an Bord den Mond erreichte. Maß das Magnetfeld des Mondes (~3 nT, praktisch null), den Mikrometeoriten-Fluss, die Gammastrahlung, ionisierende Strahlung und das Sonnenplasma — die Gammastrahlung-Daten waren die erste zusammensetzungsbezogene Fernerkundung des Mondes und deuteten auf eine basaltähnliche Maria-Zusammensetzung hin. Spielte während des 23. Kongresses der Kommunistischen Partei der Sowjetunion (1966-04-04) berühmterweise die Hymne der „Internationale\" ab. Betrieb für 56 Tage / 460 Umläufe, bis seine NiCd-Batterien erschöpft waren. Verbleibt in der Mondumlaufbahn.",
+    "new": "Erstes Raumfahrzeug im Orbit um den Mond — und der erste künstliche Satellit eines anderen Himmelskörpers als der Erde. Am 1966-03-31 von Baikonur auf einer Molniya-Rakete gestartet, trat Luna 10 am 1966-04-03 in eine Mondumlaufbahn von 349 × 1015 km bei 71,9° Inklination ein, drei Jahre bevor Apollo 8 mit Menschen an Bord den Mond erreichte. Maß das Magnetfeld des Mondes (~3 nT, praktisch null), den Mikrometeoriten-Fluss, die Gammastrahlung, ionisierende Strahlung und das Sonnenplasma — die Gammastrahlungsdaten waren die erste Fernerkundung der Zusammensetzung des Mondes und deuteten auf eine basaltähnliche Zusammensetzung der Maria hin. Spielte bekanntlich während des 23. Kongresses der Kommunistischen Partei der Sowjetunion (1966-04-04) die Hymne „Internationale“ ab. Betrieb 56 Tage / 460 Umläufe lang, bis seine NiCd-Batterien erschöpft waren. Verbleibt in der Mondumlaufbahn."
+  },
+  {
+    "rel": "fleet/orbiter/luna10.json",
+    "at": "best_known_for",
+    "old": "Erste Raumsonde im Mondorbit – trat am 1966-04-03 in die Mondumlaufbahn ein, drei Jahre vor Apollo 8",
+    "new": "Erstes Raumfahrzeug, das einen anderen Körper als die Erde umkreiste — Mondorbit 1966-04-03, drei Jahre vor Apollo 8"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-1.json",
+    "at": "description",
+    "old": "Das erste US-Raumfahrzeug im Mondorbit, vier Monate nach Luna 10. Gestartet am 1966-08-10 von Cape Canaveral auf einer Atlas-Agena D, trat Lunar Orbiter 1 am 1966-08-14 in eine elliptische Mondumlaufbahn ein. Seine Hauptaufgabe war die Fotografie möglicher Apollo-Landestellen mit Auflösungen unter einem Meter — ein Kamerasystem mit zwei Objektiven (70 mm + 610 mm), das den Film im Orbit entwickelte (Bimat-Verfahren) und zur Funkübertragung zur Erde abtastete. Nahm das erste Foto der Erde vom Mondorbit aus auf (1966-08-23 — mehr als zwei Jahre vor Apollo 8s berühmterem Earthrise) als Weitwinkelaufnahme während der 16. Umkreisung. Lieferte 207 hochauflösende + 207 mittelauflösende Bilder und kartografierte 4,1 Millionen km² der Mondoberfläche. Stürzte absichtlich am 1966-10-29 auf die Mondrückseite ab, um das Funkband für Lunar Orbiter 2 freizumachen.",
+    "new": "Das erste US-Raumfahrzeug im Mondorbit, vier Monate nach Luna 10. Gestartet am 1966-08-10 von Cape Canaveral auf einer Atlas-Agena D, trat Lunar Orbiter 1 am 1966-08-14 in eine elliptische Mondumlaufbahn ein. Seine Hauptaufgabe war die Fotografie möglicher Apollo-Landestellen mit Auflösungen unter einem Meter — ein Kamerasystem mit zwei Objektiven (70 mm + 610 mm), das den Film im Orbit entwickelte (Bimat-Verfahren) und zur Funkübertragung zur Erde abtastete. Nahm das erste Foto der Erde vom Mondorbit aus auf (1966-08-23 — mehr als zwei Jahre vor dem berühmteren Erdaufgang von Apollo 8) als Weitwinkelaufnahme während der 16. Umkreisung. Lieferte 207 hochauflösende + 207 mittelauflösende Bilder und kartografierte 4,1 Millionen km² der Mondoberfläche. Stürzte absichtlich am 1966-10-29 auf die Mondrückseite ab, um das Funkband für Lunar Orbiter 2 freizumachen."
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-1.json",
+    "at": "best_known_for",
+    "old": "Erster US-Mondorbiter (1966-08-14). Kartografierte potenzielle Apollo-Landestellen; machte das erste Foto der Erde vom Mondorbit aus — mehr als zwei Jahre vor der berühmten Apollo 8 Earthrise",
+    "new": "Erster US-Mondorbiter (1966-08-14). Kartografierte potenzielle Apollo-Landestellen; machte das erste Foto der Erde vom Mondorbit aus — mehr als zwei Jahre vor dem berühmten Erdaufgang von Apollo 8"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-2.json",
+    "at": "tagline",
+    "old": "Zweiter US-Mondorbiter (1966-11-10). Machte das „Bild des Jahrhunderts\" — Schrägsicht des Copernicus-Kraters aus ~45 km Höhe",
+    "new": "Zweiter US-Mondorbiter (1966-11-10). Machte das „Bild des Jahrhunderts“ — Schrägsicht des Copernicus-Kraters aus ~45 km Höhe"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-2.json",
+    "at": "description",
+    "old": "Zweiter der fünf Lunar Orbiter-Raumsonde. Gestartet am 6. November 1966 von Cape Canaveral, trat am 10. November 1966 in eine Mondumlaufbahn ein. Kartographierte 13 Standorte in der äquatorialen Apollo-Zone. Am 24. November 1966 erfasste Frame 162 eine schräge Aufnahme des 93 km großen Copernicus-Kraters aus 45,8 km Höhe mit Blick nach Norden – eine noch nie zuvor gesehene Berglandschaft im Stil der Erde auf einer anderen Welt. Zeitungen nannten sie das „Foto des Jahrhunderts\". Die Veröffentlichung des Fotos wurde zu einem Wendepunkt beim öffentlichen Engagement in der Mondforschung. Kehrte über 33 Tage der Bildgebung insgesamt 422 Bilder zurück. Bewusst zum Absturz gebracht am 11. Oktober 1967 bei 4° S, 98° E (Mondrückseite), um Funkstörungen mit Lunar Orbiter 5 zu verhindern.",
+    "new": "Zweite der fünf Lunar-Orbiter-Sonden. Gestartet am 6. November 1966 von Cape Canaveral, trat am 10. November 1966 in eine Mondumlaufbahn ein. Kartografierte 13 Standorte in der äquatorialen Apollo-Zone. Am 24. November 1966 hielt Aufnahme 162 eine schräge Ansicht des 93 km großen Copernicus-Kraters aus 45,8 km Höhe mit Blick nach Norden fest – eine noch nie gesehene, erdähnliche Berglandschaft auf einer anderen Welt. Zeitungen nannten sie das „Bild des Jahrhunderts“. Die Veröffentlichung des Fotos wurde zu einem Wendepunkt für das öffentliche Interesse an der Mondforschung. Lieferte insgesamt 422 Aufnahmen in 33 Tagen Bildgebung. Bewusst zum Absturz gebracht am 11. Oktober 1967 bei 4° S, 98° O (Mondrückseite), um Funkstörungen bei Lunar Orbiter 5 zu verhindern."
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-2.json",
+    "at": "best_known_for",
+    "old": "Zweiter US-Mondorbiter (1966-11-10). Machte das „Bild des Jahrhunderts\" — Schrägsicht des Copernicus-Kraters aus ~45 km Höhe",
+    "new": "Zweiter US-Mondorbiter (1966-11-10). Machte das „Bild des Jahrhunderts“ — Schrägsicht des Copernicus-Kraters aus ~45 km Höhe"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-3.json",
+    "at": "description",
+    "old": "Dritte der fünf Lunar-Orbiter-Sonden. Gestartet am 1967-02-04 von Cape Canaveral, Mondorbit am 1967-02-08. Setzte die Apollo-Standortkartierung mit 477 Bildern über 30 Tage fort, darunter ein berühmtes Foto vom 1967-02-22, das den 3-Meter-Lander Surveyor 1 auf der Oberfläche des Oceanus Procellarum auflöste — das erste Foto einer Sonde, aufgenommen von einer anderen Sonde auf einer anderen Welt. Ein Mid-Mission-Ausfall des Filmtransportsystems der Kamera beendete die Bildgebungskampagne am 1967-03-04. Arbeitete weiter als Apollo-Tracking-Beacon für Navigationstests. Schlug am 1967-10-09 bei 14,6° N, 91,7° W absichtlich ein.",
+    "new": "Dritte der fünf Lunar-Orbiter-Sonden. Gestartet am 1967-02-04 von Cape Canaveral, Mondorbit am 1967-02-08. Setzte die Kartierung der Apollo-Standorte mit 477 Bildern über 30 Tage fort, darunter ein berühmtes Foto vom 1967-02-22, das den 3 Meter großen Lander Surveyor 1 auf der Oberfläche des Oceanus Procellarum auflöste — das erste Foto eines Raumfahrzeugs, aufgenommen von einem anderen auf einer anderen Welt. Ein Ausfall des Filmtransportsystems der Kamera mitten in der Mission beendete die Bildgebungskampagne am 1967-03-04. Arbeitete weiter als Peilsender für Apollo-Navigationstests. Schlug am 1967-10-09 bei 14,6° N, 91,7° W absichtlich ein."
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-4.json",
+    "at": "description",
+    "old": "Vierte der fünf Lunar Orbiter-Sonden und die erste mit einem hochinklinierten polaren Mondorbit. Gestartet am 1967-05-04 von Cape Canaveral, trat am 1967-05-08 in einen 6111 × 2706 km Polarorbit ein. Mission umgewidmet von der Apollo-Standortauswahl (die ersten drei Orbiter hatten diesen Job bereits erledigt) zur breiten wissenschaftlichen Kartierung. Lieferte 419 Bilder zurück, die 99 % der erdzugewandten Mondseite mit 60 m/Pixel Auflösung sowie die erste detaillierte Aufnahme bedeutender Regionen der Rückseite abdeckten. Diese Bilder blieben bis zur modernen LRO-Ära die höchstaufgelöste Abdeckung der erdzugewandten Mondseite in diesem Maßstab. Aufprall im Oktober 1967 bei 22-30° W auf der Rückseite nach Funkausfall.",
+    "new": "Vierte der fünf Lunar-Orbiter-Sonden und die erste mit einem hochinklinierten polaren Mondorbit. Gestartet am 1967-05-04 von Cape Canaveral, trat am 1967-05-08 in einen 6111 × 2706 km Polarorbit ein. Mission umgewidmet von der Apollo-Standortauswahl (die ersten drei Orbiter hatten diesen Job bereits erledigt) zur breiten wissenschaftlichen Kartierung. Lieferte 419 Bilder zurück, die 99 % der erdzugewandten Mondseite mit 60 m/Pixel Auflösung sowie die erste detaillierte Aufnahme bedeutender Regionen der Rückseite abdeckten. Diese Bilder blieben bis zur modernen LRO-Ära die höchstaufgelöste Abdeckung der erdzugewandten Mondseite in diesem Maßstab. Aufprall im Oktober 1967 bei 22-30° W auf der Rückseite nach Funkausfall."
+  },
+  {
+    "rel": "fleet/orbiter/lunar-orbiter-5.json",
+    "at": "description",
+    "old": "Fünfter und letzter Lunar-Orbiter-Raumflugkörper. Gestartet am 1967-08-01 von Cape Canaveral, erreichte polare Mondumlaufbahn am 1967-08-05. Lieferte 633 Bilder in 35 Tagen – schloss damit die nahezu vollständige Kartografierung beider Mondhalbkugeln in hoher Auflösung durch das Lunar-Orbiter-Programm ab. Fotografierte 36 Hochprioritäts-Wissenschaftsziele, die aus Lücken in der Abdeckung der früheren Orbiter und aus Anforderungen für Surveyor- und Apollo-Landestellen ausgewählt wurden. Nach der Missionsendeentscheidung im Januar 1968 gezielt zum Absturz gebracht am 1968-01-31 bei 2,79° S, 83,04° W, um den Mondumlaufraum vor Apollo freizumachen. Die fünf Orbiter fotografierten zusammen 99 % des Mondes mit einer Auflösung von 60 m/Pixel – bis LRO sein 0,5 m/Pixel-Programm LROC NAC 2009 begann, war dies die global höchstaufgelöste Mondkarte, die je angefertigt worden war.",
+    "new": "Fünfter und letzter Lunar-Orbiter-Raumflugkörper. Gestartet am 1967-08-01 von Cape Canaveral, erreichte polare Mondumlaufbahn am 1967-08-05. Lieferte 633 Bilder in 35 Tagen – schloss damit die nahezu vollständige Kartografierung beider Mondhalbkugeln in hoher Auflösung durch das Lunar-Orbiter-Programm ab. Fotografierte 36 wissenschaftliche Ziele hoher Priorität, die aus Lücken in der Abdeckung der früheren Orbiter und aus Anforderungen für Surveyor- und Apollo-Landestellen ausgewählt wurden. Nach der Entscheidung zum Missionsende im Januar 1968 gezielt zum Absturz gebracht am 1968-01-31 bei 2,79° S, 83,04° W, um den Mondorbit vor Apollo freizumachen. Die fünf Orbiter fotografierten zusammen 99 % des Mondes mit einer Auflösung von 60 m/Pixel – bis LRO 2009 sein Programm LROC NAC mit 0,5 m/Pixel begann, war dies die global höchstaufgelöste Mondkarte, die je angefertigt worden war."
+  },
+  {
+    "rel": "fleet/orbiter/lunar-prospector.json",
+    "at": "tagline",
+    "old": "NASA Discovery Polarumlaufbahn – Neutronenspektrometer fand Wasserstoff an Polen 1998; Shackleton-Absturz beendete Mission 1999",
+    "new": "NASA-Discovery-Polarorbiter — Neutronenspektrometer fand 1998 Wasserstoff an beiden Polen; Shackleton-Einschlag beendete 1999 die Mission"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-prospector.json",
+    "at": "best_known_for",
+    "old": "NASA-Polarorbiter — Neutronenspektrometer entdeckt Wasserstoff an beiden Polen 1998; geplanter Einschlag bei Shackleton beendete Mission 1999",
+    "new": "NASA-Discovery-Polarorbiter — Neutronenspektrometer fand 1998 Wasserstoff an beiden Polen; Shackleton-Einschlag beendete 1999 die Mission"
+  },
+  {
+    "rel": "fleet/orbiter/lunar-prospector.json",
+    "at": "description",
+    "old": "Die dritte NASA-Discovery-Klasse-Mission (und die erste wettbewerblich ausgewählte) und die erste dedizierte NASA-Wissenschaftsmission zum Mond seit Explorer 49 (1973). Gestartet 1998-01-07 auf einer Athena II von Cape Canaveral, trat Lunar Prospector eine 100-km-Kreisbahn über den Mond ein. Sein Neutronenspektrometer erkannte scharfe Neutronenfluss-Defizite über beiden Mondpolen (Feldman et al., 1998 / 1999) — konsistent mit ~2 × 10⁹ Tonnen wasserstoffreichem Material (höchstwahrscheinlich Wassereis) in dauerhaft schattigen Polkratern. Das Gravimeter, Magnetometer sowie Gamma-Strahlen- und Alpha-Teilchen-Spektrometer lieferten auch globale Karten der Krustenkomposition und des Restmagnetismus. Missionsende 1999-07-31: absichtlich in der Nähe des Shackleton-Kraters zum Absturz gebracht, um eine erkennbare Wasserdampffahne freizusetzen; es wurde keine beobachtet (das Lithium-7-Fluoreszenzbelegungsgerät, das es hätte erkennen können, war ein Schuss ins Dunkle). Die Wasserstofffindung blieb bestehen, bis LCROSS (2009) und Chandrayaan-1 / M3 (2009) unabhängige Bestätigung lieferten.",
+    "new": "Die dritte Mission der NASA-Klasse Discovery (und die erste im Wettbewerb ausgewählte) und die erste eigens dafür vorgesehene NASA-Wissenschaftsmission zum Mond seit Explorer 49 (1973). Gestartet 1998-01-07 auf einer Athena II von Cape Canaveral, ging Lunar Prospector in eine kreisförmige polare Umlaufbahn von 100 km. Sein Neutronenspektrometer erkannte scharfe Neutronenfluss-Defizite über beiden Mondpolen (Feldman et al., 1998 / 1999) — vereinbar mit ~2 × 10⁹ Tonnen wasserstoffreichem Material (höchstwahrscheinlich Wassereis) in dauerhaft beschatteten Polkratern. Das Gravimeter, das Magnetometer sowie Gammastrahlen- und Alphateilchen-Spektrometer lieferten außerdem globale Karten der Krustenzusammensetzung und des Restmagnetismus. Missionsende 1999-07-31: absichtlich in der Nähe des Shackleton-Kraters zum Absturz gebracht, in der Hoffnung, eine nachweisbare Wasserdampffahne freizusetzen; es wurde keine beobachtet (das Lithium-7-Fluoreszenzexperiment, das sie hätte nachweisen können, war ein Glücksspiel). Der Wasserstoffbefund blieb bestehen, bis LCROSS (2009) und Chandrayaan-1 / M3 (2009) eine unabhängige Bestätigung lieferten."
+  },
+  {
+    "rel": "fleet/orbiter/magellan.json",
+    "at": "description",
+    "old": "Magellan ist ein Tiefraum-Orbiter von Martin Marietta in den USA gebaut. 98% der Venusoberfläche wurden mit Radar-Karten versehen. Ruhestand nach dem ersten Flug 1989.",
+    "new": "Magellan ist ein Tiefraum-Orbiter, gebaut von Martin Marietta in den USA. Hat 98 % der Venusoberfläche per Radar kartiert. Nach dem ersten Flug 1989 ausgemustert."
+  },
+  {
+    "rel": "fleet/orbiter/magellan.json",
+    "at": "best_known_for",
+    "old": "Radar-mapped 98% der Venusoberfläche",
+    "new": "98 % der Venusoberfläche per Radar kartiert"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-4.json",
+    "at": "description",
+    "old": "Der erste erfolgreiche Marsflyby — Juli 1965. Die 22 körnigen Schwarz-Weiß-Fotos kehrten über ein Jahrhundert der Spekulation über Martian-Kanäle und das Leben zurück, indem sie eine kraterote, Mond-ähnliche Oberfläche zeigen.",
+    "new": "Der erste erfolgreiche Mars-Vorbeiflug — Juli 1965. Die 22 körnigen Schwarz-Weiß-Fotos, die zur Erde gesendet wurden, beendeten über ein Jahrhundert der Spekulation über Marskanäle und Leben, indem sie eine kraterübersäte, mondähnliche Oberfläche zeigten."
+  },
+  {
+    "rel": "fleet/orbiter/mariner-4.json",
+    "at": "best_known_for",
+    "old": "Erste erfolgreiche Marsflyby",
+    "new": "Erster erfolgreicher Mars-Vorbeiflug"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-9.json",
+    "at": "tagline",
+    "old": "Erstes Raumschiff, um einen anderen Planeten zu orbitieren",
+    "new": "Erstes Raumfahrzeug im Orbit um einen anderen Planeten"
+  },
+  {
+    "rel": "fleet/orbiter/mariner-9.json",
+    "at": "dispatch",
+    "old": "Mariner 9 war die erste Maschine, die an einem anderen Planeten anhielt, anstatt vorbeizufliegen. Während die früheren Mariners den Mars in wenigen Stunden erblickten, führte sie genug Treibstoff mit sich, um in eine Umlaufbahn abzubremsen und zu bleiben — und sie kam an, um den gesamten Planeten unter einem globalen Staubesturm begraben vorzufinden. Also wartete sie. Als sich der Staub gelegt hatte, kartierte sie den gesamten Mars, und die Vermessung enthüllte eine Welt, die die Vorbeiflüge vollkommen verpasst hatten: den größten Vulkan im Sonnensystem, einen Kontinent breiten Canyon und die trockenen Kanäle uralter Flüsse. Sie bewies, dass ein Orbiter, der geduldig genug ist, einen Planeten über Zeit hinweg zu beobachten, sieht, was kein Vorbeiflug jemals kann.",
+    "new": "Mariner 9 war die erste Maschine, die an einem anderen Planeten anhielt, anstatt vorbeizufliegen. Während die früheren Mariner-Sonden den Mars in wenigen Stunden erblickten, führte sie genug Treibstoff mit sich, um in eine Umlaufbahn abzubremsen und zu bleiben — und sie kam an, um den gesamten Planeten unter einem globalen Staubsturm begraben vorzufinden. Also wartete sie. Als sich der Staub gelegt hatte, kartierte sie den gesamten Mars, und die Vermessung enthüllte eine Welt, die die Vorbeiflüge vollkommen verpasst hatten: den größten Vulkan im Sonnensystem, einen kontinentbreiten Canyon und die trockenen Rinnen uralter Flüsse. Sie bewies, dass ein Orbiter, der geduldig genug ist, einen Planeten über längere Zeit zu beobachten, sieht, was kein Vorbeiflug jemals kann."
+  },
+  {
+    "rel": "fleet/orbiter/mariner-9.json",
+    "at": "description",
+    "old": "Das erste Raumschiff, um einen anderen Planeten zu orbitieren (Mars, November 1971). 100 % der Marsoberfläche – einschließlich des globalen Staubsturms, der alles für den ersten Monat und die erste Nahaufnahme von Olympus Mons versteckte.",
+    "new": "Das erste Raumfahrzeug im Orbit um einen anderen Planeten (Mars, November 1971). Kartierte 100 % der Marsoberfläche – einschließlich des globalen Staubsturms, der im ersten Monat alles verbarg, und der ersten Nahaufnahme des Olympus Mons."
+  },
+  {
+    "rel": "fleet/orbiter/mariner-9.json",
+    "at": "best_known_for",
+    "old": "Erstes Raumschiff, um einen anderen Planeten zu orbitieren",
+    "new": "Erstes Raumfahrzeug im Orbit um einen anderen Planeten"
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "tagline",
+    "old": "ESAs erster und einziger Marsorbitier; Europas erste Planetenmission",
+    "new": "Erster und einziger Marsorbiter der ESA; Europas erste Planetenmission"
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "description",
+    "old": "Mars Express ist ein Weltraumorbitier, der von EADS Astrium in Multi (Europa) gebaut wurde. ESAs erster und einziger Marsorbitier; Europas erste Planetenmission. Seit 2003 im Einsatz.",
+    "new": "Mars Express ist ein Tiefraum-Orbiter, gebaut von EADS Astrium in Multi (Europa). Erster und einziger Marsorbiter der ESA; Europas erste Planetenmission. Seit 2003 im Einsatz."
+  },
+  {
+    "rel": "fleet/orbiter/mars-express.json",
+    "at": "best_known_for",
+    "old": "ESAs erster und einziger Marsorbitier; Europas erste Planetenmission",
+    "new": "Erster und einziger Marsorbiter der ESA; Europas erste Planetenmission"
+  },
+  {
+    "rel": "fleet/orbiter/mars-odyssey.json",
+    "at": "tagline",
+    "old": "Langlebigster Mars-Asset überhaupt — im Orbit seit 24.10.2001. Gamma- + Neutronen-Wassereis-Karten; UHF-Relais für die Oberflächenflotte",
+    "new": "Langlebigste Mars-Sonde — im Orbit seit 2001-10-24. Gamma- + Neutronen-Wassereiskarten; UHF-Relais für die Oberflächenflotte"
+  },
+  {
+    "rel": "fleet/orbiter/mars-odyssey.json",
+    "at": "description",
+    "old": "Das langlebigste Raumschiff, das jemals am Mars operierte — erreichte die Marsumlaufbahn am 2001-10-24 und ist 2026 noch immer aktiv, wobei es die Lebensdauer aller anderen Marsmissionen übertrifft. Gestartet am 2001-04-07 auf einer Delta II von Cape Canaveral, benannt nach Arthur C. Clarkes „2001: A Space Odyssey\". Trug THEMIS (Thermal Emission Imaging System, 100-m Abbildung im sichtbaren Bereich / 100-m Wärmestrahlung-Abbildung, die die globale Oberflächenmineralogie kartierte) und die Gammastrahlen-Spektrometer-Suite GRS + HEND + NS — Boynton et al. (2002, Science 297) nutzten HEND-Neutronenspektroskopie, um globales oberflächennahes Wassereis zu kartieren, eine Entdeckung, die die Zielauswahl aller nachfolgenden Lander-Missionen prägte. Dient auch als primäres UHF-Relais für Marsoberflächen-Missionen (MERs, MSL, InSight, Perseverance) und als Backup für Mars Reconnaissance Orbiter. Reserven für erweiterte Missionen werden voraussichtlich bis 2026–2027 reichen.",
+    "new": "Das langlebigste Raumschiff, das jemals am Mars operierte — erreichte die Marsumlaufbahn am 2001-10-24 und ist 2026 noch immer aktiv, wobei es die Lebensdauer aller anderen Marsmissionen übertrifft. Gestartet am 2001-04-07 auf einer Delta II von Cape Canaveral, benannt nach Arthur C. Clarkes „2001: A Space Odyssey“. Trug THEMIS (Thermal Emission Imaging System, Aufnahmen mit 100 m im sichtbaren Licht / 100 m im Infrarot, die die globale Oberflächenmineralogie kartierten) und das Gammastrahlen-Spektrometerpaket GRS + HEND + NS — Boynton et al. (2002, Science 297) nutzten HEND-Neutronenspektroskopie, um globales oberflächennahes Wassereis zu kartieren, eine Entdeckung, die die Zielauswahl aller nachfolgenden Lander-Missionen prägte. Dient auch als primäres UHF-Relais für Marsoberflächen-Missionen (MERs, MSL, InSight, Perseverance) und als Reserve für den Mars Reconnaissance Orbiter. Die Treibstoffreserven für die erweiterte Mission werden voraussichtlich bis 2026–2027 reichen."
+  },
+  {
+    "rel": "fleet/orbiter/mars-odyssey.json",
+    "at": "best_known_for",
+    "old": "Langlebigster Mars-Asset überhaupt — im Orbit seit 24.10.2001. Gamma- + Neutronen-Wassereis-Karten; UHF-Relais für die Oberflächenflotte",
+    "new": "Langlebigste Mars-Sonde — im Orbit seit 2001-10-24. Gamma- + Neutronen-Wassereiskarten; UHF-Relais für die Oberflächenflotte"
+  },
+  {
+    "rel": "fleet/orbiter/mars2-orbiter.json",
+    "at": "description",
+    "old": "Die Orbiterkomponente der sowjetischen Mars-2-Mission. Gestartet am 1971-05-19 auf einer Proton-K von Baikonur, erreichte Mars 2 den Mars am 1971-11-27 – nur 13 Tage nachdem Mariner 9 der erste Marsorbiter wurde. Sein Lander versuchte am 1971-11-27 abzusteigen, aber sein Fallschirm öffnete sich nicht und der Lander stürzte ab (das erste künstliche Objekt auf dem Mars, aber ohne Telemetrie). Die Orbiterkomponente war viel erfolgreicher, lieferte etwa 60 Bildrahmen und umfangreiche Messungen der oberen Atmosphäre, des Magnetfeldes und der Oberflächentemperaturen während desselben globalen Staubsturms, der die frühe Bildaufnahme von Mariner 9 beeinträchtigte. Trug Infrarot- und Ultraviolettspektrometer, Photometer, einen Lyman-Alpha-Sensor, Magnetometer, Plasmaanalysator und Höhenstrahlungsdetektoren – die gleiche Instrumentenausstattung wie Mars 3 Orbiter. Missionsende am 1972-08-22 nach 362 Umläufen.",
+    "new": "Die Orbiterhälfte der sowjetischen Mars-2-Mission. Gestartet am 1971-05-19 auf einer Proton-K von Baikonur, erreichte Mars 2 den Mars am 1971-11-27 – nur 13 Tage nachdem Mariner 9 der erste Marsorbiter wurde. Sein Lander versuchte am 1971-11-27 abzusteigen, aber sein Fallschirm öffnete sich nicht und der Lander stürzte ab (das erste künstliche Objekt auf dem Mars, aber ohne Telemetrie). Die Orbiterhälfte war viel erfolgreicher, lieferte etwa 60 Einzelbilder und umfangreiche Messungen der oberen Atmosphäre, des Magnetfeldes und der Oberflächentemperaturen während desselben globalen Staubsturms, der die frühe Bildaufnahme von Mariner 9 beeinträchtigte. Trug Infrarot- und Ultraviolettspektrometer, Fotometer, einen Lyman-Alpha-Sensor, Magnetometer, Plasmaanalysator und Höhenstrahlungsdetektoren – die gleiche Instrumentenausstattung wie Mars 3 Orbiter. Missionsende am 1972-08-22 nach 362 Umläufen."
+  },
+  {
+    "rel": "fleet/orbiter/mars3-orbiter.json",
+    "at": "tagline",
+    "old": "Sowjetischer Begleitorbiter zu Mars 3 — umkreiste Mars von 1971-12-02 bis 1972-08; erste Messung der oberen Marsatmosphäre",
+    "new": "Sowjetischer Begleitorbiter zu Mars 3 — umkreiste den Mars von 1971-12-02 bis 1972-08; erste Temperaturmessungen der oberen Marsatmosphäre"
+  },
+  {
+    "rel": "fleet/orbiter/mars3-orbiter.json",
+    "at": "description",
+    "old": "Das Orbiter-Modul der sowjetischen Mars 3-Mission (ihr Lander führte am 1971-12-02 die erste sanfte Landung auf dem Mars durch, übertrug aber nur 14,5 Sekunden lang Signale, bevor ein globaler Staubsturm die Verbindung unterbrach). Der Orbiter war deutlich erfolgreicher — trat am 1971-12-02 in eine stark elliptische 1500 × 211400 km-Marsumlaufbahn ein und war damit das dritte Raumfahrzeug überhaupt im Mars-Orbit (nach Mariner 9 am 1971-11-14 und Mars 2 Orbiter am 1971-11-27). Ausgerüstet mit Infrarot- und Ultraviolett-Spektrometern, Photometern, einem Lyman-Alpha-Sensor, Magnetometer, Plasma-Analysator und Kosmische-Strahlung-Detektoren. Lieferte die ersten Messwerte des Temperaturprofils der oberen Atmosphäre, kartierte Oberflächentemperaturen (Maximum +13 °C, Minimum -93 °C) und bestätigte atmosphärisches Wasserdampf. Übermittelte etwa 60 Bilder; die Bildqualität war durch den globalen Staubsturm beeinträchtigt, der bereits bei der Ankunft des Orbiters im Gange war. Missionsende 1972-08-22.",
+    "new": "Die Orbiterhälfte der sowjetischen Mars-3-Mission (ihr Lander führte am 1971-12-02 die erste sanfte Landung auf dem Mars durch, übertrug aber nur 14,5 Sekunden lang Signale, bevor ein globaler Staubsturm die Verbindung unterbrach). Der Orbiter war deutlich erfolgreicher — trat am 1971-12-02 in eine stark elliptische Marsumlaufbahn von 1500 × 211400 km ein und war damit das dritte Raumfahrzeug überhaupt im Mars-Orbit (nach Mariner 9 am 1971-11-14 und Mars 2 Orbiter am 1971-11-27). Ausgerüstet mit Infrarot- und Ultraviolett-Spektrometern, Fotometern, einem Lyman-Alpha-Sensor, Magnetometer, Plasma-Analysator und Detektoren für kosmische Strahlung. Lieferte die ersten Messwerte des Temperaturprofils der oberen Atmosphäre, kartierte Oberflächentemperaturen (Maximum +13 °C, Minimum -93 °C) und bestätigte Wasserdampf in der Atmosphäre. Übermittelte etwa 60 Bilder; die Bildqualität war durch den globalen Staubsturm beeinträchtigt, der bereits bei der Ankunft des Orbiters im Gange war. Missionsende 1972-08-22."
+  },
+  {
+    "rel": "fleet/orbiter/mars3-orbiter.json",
+    "at": "best_known_for",
+    "old": "Sowjetischer Begleitorbiter zu Mars 3 — umkreiste Mars von 1971-12-02 bis 1972-08; erste Messung der oberen Marsatmosphäre",
+    "new": "Sowjetischer Begleitorbiter zu Mars 3 — umkreiste den Mars von 1971-12-02 bis 1972-08; erste Temperaturmessungen der oberen Marsatmosphäre"
+  },
+  {
+    "rel": "fleet/orbiter/maven.json",
+    "at": "description",
+    "old": "NASA-Atmosphärenorbiter am Mars — Mars Atmosphere and Volatile EvolutioN. Seit 2014 im Mars-Orbit, erforscht wie der Planet seine frühe dichte Atmosphäre durch Erosion des Sonnenwinds über Milliarden von Jahren verloren hat.",
+    "new": "Der Atmosphärenorbiter der NASA am Mars — Mars Atmosphere and Volatile EvolutioN. Seit 2014 im Marsorbit; erforscht, wie der Planet seine frühe dichte Atmosphäre im Lauf von Milliarden Jahren durch die Erosion des Sonnenwinds verlor."
+  },
+  {
+    "rel": "fleet/orbiter/maven.json",
+    "at": "best_known_for",
+    "old": "Erforschung des atmosphärischen Verlusts des Mars durch Sonnenwind; enthüllte, dass Mars seine Atmosphäre über Milliarden von Jahren verlor",
+    "new": "Erforschung des atmosphärischen Verlusts des Mars durch den Sonnenwind; zeigte, dass der Mars seine Atmosphäre über Milliarden von Jahren verlor"
+  },
+  {
+    "rel": "fleet/orbiter/messenger.json",
+    "at": "tagline",
+    "old": "Erster Merkur-Orbiter — 6 Planet-Schwungholmanöver über 6,6 Jahre vor Einschuss 2011",
+    "new": "Erster Merkur-Orbiter — 6 Swing-bys in 6,6 Jahren zum Energieabbau vor dem Einschuss 2011"
+  },
+  {
+    "rel": "fleet/orbiter/messenger.json",
+    "at": "description",
+    "old": "NASA-Discovery-Mission „MErcury Surface, Space ENvironment, GEochemistry, and Ranging\". Gestartet am 03.08.2004 mit einer Delta II 7925H-9.5. Die 6,6-jährige Reise nutzte 6 Schwungholmanöver (1 Erde, 2 Venus, 3 Merkur), um ~5 km/s heliocentrische Energie zu verlieren. Merkur-Orbit-Einschuss am 18.03.2011. Entdeckungen: Wassereis in dauerhaft beschatteten Polkratern, organikreiches dunkles Material an den Polen, gegen das Planetenzentrum versetztes Magnetfeld. Schlug am 30.04.2015 nach Erschöpfung des Treibstoffs auf Merkur auf.",
+    "new": "NASA-Mission der Discovery-Klasse „MErcury Surface, Space ENvironment, GEochemistry, and Ranging“. Start am 2004-08-03 auf einer Delta II 7925H-9.5. Auf dem 6,6-jährigen Flug senkten 6 Swing-bys (1 Erde, 2 Venus, 3 Merkur) die heliozentrische Energie um ~5 km/s — ein direkter Einschuss hätte unmögliches Delta-v verlangt. Einschuss in die Merkurumlaufbahn 2011-03-18; 4 Jahre Kartierung. Entdeckungen: Wassereis in Polkratern im Dauerschatten, organikreiches dunkles Material an den Polen, Exosphärenzusammensetzung, ein zum Planetenzentrum versetztes Magnetfeld, Gruben mit hohlem Boden. Schlug am 2015-04-30 nach Aufbrauchen des Treibstoffs auf Merkur ein (16-m-Krater nahe dem Nordpol)."
+  },
+  {
+    "rel": "fleet/orbiter/mro.json",
+    "at": "tagline",
+    "old": "Hochauflösende Mars-Bildgebung aus Orbit",
+    "new": "Höchstauflösende Marsbildgebung aus der Umlaufbahn"
+  },
+  {
+    "rel": "fleet/orbiter/mro.json",
+    "at": "description",
+    "old": "Mars Reconnaissance Orbiter ist ein Tiefraum-Orbiter von Lockheed Martin in USA gebaut. Hochauflösende Mars-Bildgebung aus Orbit. Seit 2005 im Dienst.",
+    "new": "Mars Reconnaissance Orbiter ist ein Tiefraum-Orbiter, gebaut von Lockheed Martin in den USA. Höchstauflösende Marsbildgebung aus der Umlaufbahn. Seit 2005 im Dienst."
+  },
+  {
+    "rel": "fleet/orbiter/mro.json",
+    "at": "best_known_for",
+    "old": "Hochauflösende Mars-Bildgebung aus Orbit",
+    "new": "Höchstauflösende Marsbildgebung aus der Umlaufbahn"
+  },
+  {
+    "rel": "fleet/orbiter/osiris-rex.json",
+    "at": "description",
+    "old": "Die Asteroiden-Probe-Return-Mission der NASA. Angesprochener Asteroid Bennu im Jahr 2018, erfasste eine Probe mit seinem TAGSAM Arm im Jahr 2020 und lieferte die Probenkapsel nach Utah im September 2023. Jetzt neu gestaltet OSIRIS-APEX, en route to asteroid Apophis für seine 2029 nahe Erde Flyby.",
+    "new": "Die Mission der NASA zur Probenrückführung von einem Asteroiden. Näherte sich 2018 dem Asteroiden Bennu, nahm 2020 mit ihrem Arm TAGSAM eine Probe auf und lieferte die Probenkapsel im September 2023 in Utah ab. Jetzt in OSIRIS-APEX umbenannt, auf dem Weg zum Asteroiden Apophis für dessen nahen Erdvorbeiflug 2029."
+  },
+  {
+    "rel": "fleet/orbiter/osiris-rex.json",
+    "at": "best_known_for",
+    "old": "Sample-returned Bennu (2023); jetzt en route to Apophis",
+    "new": "Probenrückführung von Bennu (2023); jetzt unterwegs zu Apophis"
+  },
+  {
+    "rel": "fleet/orbiter/parker-solar-probe.json",
+    "at": "tagline",
+    "old": "Raumfahrzeug in Sonnennähe-Rekord",
+    "new": "Der Sonne nächstes Raumfahrzeug"
+  },
+  {
+    "rel": "fleet/orbiter/parker-solar-probe.json",
+    "at": "description",
+    "old": "NASAs Missionen im Sonnennähe-Flug. Gestartet am 2018-08-12 auf einem Delta IV Heavy + Star 48BV-Stack mit dem höchsten je für eine wissenschaftliche Nutzlast erreichten C3 (154 km²/s²). Sieben Venusgravitationsassists über sechs Jahre führten den Perihelium von 0,16 AU (P1) zu 0,046 AU (P22, 2024-12-24) — 9,86 Sonnenradien, 6,1 Millionen km von der Sonnenoberfläche. Bei P8 (2021-04-28) tauchte Parker unter die kritische Alfvén-Oberfläche — das erste Raumfahrzeug, das in die Korona der Sonne eindrang. Höchstgeschwindigkeit beim Perihelium: 192,22 km/s, das schnellste von Menschen geschaffene Objekt aller Zeiten.",
+    "new": "Die Mission der NASA, die der Sonne extrem nahe kommt. Gestartet am 2018-08-12 auf einem Delta IV Heavy + Star 48BV-Stack mit dem höchsten je für eine wissenschaftliche Nutzlast erreichten C3 (154 km²/s²). Sieben Swing-by-Manöver an der Venus über sechs Jahre senkten das Perihel von 0,16 AU (P1) auf 0,046 AU (P22, 2024-12-24) — 9,86 Sonnenradien, 6,1 Millionen km von der Sonnenoberfläche. Bei P8 (2021-04-28) tauchte Parker unter die kritische Alfvén-Fläche — das erste Raumfahrzeug, das in die Korona der Sonne eindrang. Höchstgeschwindigkeit im Perihel: 192,22 km/s, das schnellste von Menschen gebaute Objekt aller Zeiten."
+  },
+  {
+    "rel": "fleet/orbiter/parker-solar-probe.json",
+    "at": "best_known_for",
+    "old": "Raumfahrzeug in Sonnennähe-Rekord (9,86 R☉)",
+    "new": "Der Sonne nächstes Raumfahrzeug (9,86 R☉)"
+  },
+  {
+    "rel": "fleet/orbiter/phobos-2.json",
+    "at": "description",
+    "old": "Die letzte sowjetische Planetenmission. Erreichte die Marsumlaufbahn im Januar 1989, verlor aber am 27. März 1989 den Kontakt zur Erde – unmittelbar vor der geplanten Begegnung mit dem Mond Phobos. Phobos 2 übermittelte 37 Bilder von Phobos, bevor der Kontakt abgerissen wurde. Der Verlust wurde auf einen Fehler an Bord des Computers zurückgeführt, der zum Verlust der Lageregelung und Stromversorgung führte, obwohl die genaue Abfolge der Ereignisse nie vollständig rekonstruiert wurde.",
+    "new": "Die letzte sowjetische Planetenmission. Erreichte die Marsumlaufbahn im Januar 1989, verlor aber am 27. März 1989 den Kontakt zur Erde – unmittelbar vor der geplanten Begegnung mit dem Mond Phobos. Phobos 2 übermittelte 37 Bilder von Phobos, bevor der Kontakt abgerissen wurde. Der Verlust wurde auf einen Ausfall des Bordcomputers zurückgeführt, der zum Verlust von Lageregelung und Stromversorgung führte, obwohl die genaue Abfolge nie vollständig rekonstruiert wurde."
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-10.json",
+    "at": "tagline",
+    "old": "Erstes Raumschiff, um den Asteroidengurt zu durchqueren",
+    "new": "Erstes Raumfahrzeug, das den Asteroidengürtel durchquerte"
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-10.json",
+    "at": "description",
+    "old": "Das erste Raumschiff, das den Asteroidengürtel durchquert, und das erste, das am Jupiter vorbeifliegt (Dezember 1973). Carried the Pioneer plaque — die geätzte gold-anodisierte Aluminiumzeichnung von menschlichen Figuren + Sonnensystem, das Carl Sagan und Frank Drake in drei Wochen entworfen.",
+    "new": "Das erste Raumfahrzeug, das den Asteroidengürtel durchquerte, und das erste, das am Jupiter vorbeiflog (Dezember 1973). Trug die Pioneer-Plakette — die eingeätzte, goldanodisierte Aluminiumzeichnung menschlicher Figuren + des Sonnensystems, die Carl Sagan und Frank Drake in drei Wochen entwarfen."
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-10.json",
+    "at": "best_known_for",
+    "old": "Erstes Raumschiff, um den Asteroidengurt zu durchqueren",
+    "new": "Erstes Raumfahrzeug, das den Asteroidengürtel durchquerte"
+  },
+  {
+    "rel": "fleet/orbiter/pioneer-11.json",
+    "at": "tagline",
+    "old": "Erste Sonde, die Saturn erreichte — Jupiter-Vorbeiflug 1974, Saturn 1979 via Schwungholmanöver, 22 Jahre vor Cassini",
+    "new": "Erstes Raumfahrzeug am Saturn — Jupiter-Vorbeiflug 1974, dann per Swing-by zum Saturn 1979"
+  }
+]

@@ -49,7 +49,7 @@ fields have schema limits: a `tagline` is at most 140 characters).
    title verbatim, but never output a string identical to the English (the checker refuses
    it) — a link label keeps its translated descriptive part around the verbatim title. If a
    label's only problem is that the title was translated, leave it alone.
-6. **A name kept in Latin script never takes a case ending**, with or without a hyphen
+6. **In Cyrillic text (ru, sr-Cyrl) a name kept in Latin script never takes a case ending**, with or without a hyphen
    (no "NASA-ин", "Voyager-а"): a common noun before it carries the ending (агентства
    NASA, аппарата Voyager 2; агенције NASA, летелице Voyager 2), or reword. Fix every
    such form you meet.

@@ -23,6 +23,7 @@ zh titles partly traditional (中途島, 哈欽森, 堅忍, 卡門線, 科羅廖
 - New: Dinkinesh, Selam, Queta, Geographos, 253 Mathilde, 2867 Steins, Le Monnier (hi), Endeavour crater, Taurus, Urals, Comet Kohoutek, Doppler; Karaganda (set to Latin pending a glossary form)
 
 ## English source issues reported by reviewers (to check against sources after item 3)
+- fleet boilerplate descriptions (Hakuto-R, Mars Polar Lander, Vikram, …): "informs the redemption-arc layer of the shuttle and Mir epoch" — meaningless in English; needs rewriting at the source.
 - fleet (ko batch 1): Starlink "~6,500–7,000" vs "over 10,800" in another field; LE-7A calls ALOS a "JAXA-ISRO radar satellite" (ALOS is JAXA).
 - fleet (ru batch 2): Mercury-Atlas 6–10 described as "six flights" (6–10 is five); Viking 1 entry says "first of which was STS-51-L"; Apollo 8, 9, 11–17 listed as lunar missions (Apollo 9 was Earth orbit).
 

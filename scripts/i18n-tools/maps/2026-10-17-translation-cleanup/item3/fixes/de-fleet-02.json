@@ -1,0 +1,968 @@
+[
+  {
+    "rel": "fleet/engine/rs-25.json",
+    "at": "description",
+    "old": "Das RS-25 war das Triebwerk, an dessen Verbesserung das Space Shuttle Main Engine-Programm ein Jahrzehnt lang arbeitete: ein Zweistufenbrennverfahren mit LOX und LH2, das regeln, neu zünden und für den nächsten Flug instand gesetzt werden konnte. Über 135 Space-Shuttle-Missionen ab April 1981 häuften sich damit ein nahezu makelloses Betriebsergebnis auf. Die Triebwerke wurden zurückgewonnen, überprüft und erneut eingesetzt – ein Anspruch, den kein früheres Raketentriebwerk auf diesem Leistungsniveau erreicht hatte. Nach dem Ausscheiden des Space Shuttle aus dem Dienst wurde der Bestand erneut qualifiziert und für NASAs Space Launch System umgenutzt, wo RS-25s nun die Kernstufe des SLS antreiben.",
+    "new": "Das RS-25 war das Triebwerk, an dessen Perfektionierung das Space-Shuttle-Main-Engine-Programm ein Jahrzehnt lang arbeitete: ein Triebwerk mit Stufenverbrennung auf LOX und LH2, das sich drosseln, neu zünden und für den nächsten Flug instand setzen ließ. In über 135 Shuttle-Missionen ab April 1981 sammelte es eine nahezu makellose Betriebsbilanz. Die Triebwerke wurden geborgen, überprüft und erneut geflogen – ein Anspruch, den zuvor kein Raketentriebwerk auf diesem Leistungsniveau erfüllt hatte. Nach dem Ende des Space-Shuttle-Programms wurde der Bestand erneut qualifiziert und für NASAs Space Launch System umgewidmet, wo RS-25-Triebwerke heute die Kernstufe des SLS antreiben."
+  },
+  {
+    "rel": "fleet/engine/rs-25.json",
+    "at": "best_known_for",
+    "old": "Wiederverwendbares Staged-Combustion-Triebwerk — 135 Space-Shuttle-Flüge, fliegt nun auf SLS",
+    "new": "Wiederverwendbares Triebwerk mit Stufenverbrennung — 135 Shuttle-Flüge, fliegt heute auf SLS"
+  },
+  {
+    "rel": "fleet/engine/vikas.json",
+    "at": "description",
+    "old": "Der Vikas geht direkt auf das französische Viking-Triebwerk zurück: ISRO lizenzierte das Design in den 1970er-Jahren und entwickelte es im Liquid Propulsion Systems Centre eigenständig weiter, passte es für die indische Fertigung an und steigerte die Leistung durch aufeinanderfolgende Versionen schrittweise. Der mit einem Gasgenerator-Kreisprozess auf Basis von Stickstofftetroxid und UDMH betriebene Vikas flog erstmals im September 1993 auf der PSLV und ist seitdem das Kernstück der Flüssigtriebstoff-Stufe der PSLV, GSLV und LVM3. Es ist das Triebwerk, das Chandrayaan-1 in die Mondumlaufbahn, Mangalyaan zum Mars und die Chandrayaan-3-Mission — die Vikram in der südpolaren Region des Mondes absetzte — antrieb.",
+    "new": "Das Vikas geht direkt auf das französische Viking-Triebwerk zurück: ISRO lizenzierte das Design in den 1970er-Jahren und entwickelte es im Liquid Propulsion Systems Centre eigenständig weiter, passte es an die indische Fertigung an und steigerte die Leistung durch aufeinanderfolgende Versionen schrittweise. Das mit einem Gasgenerator-Kreisprozess auf Stickstofftetroxid und UDMH betriebene Vikas flog erstmals im September 1993 auf der PSLV und ist seither die flüssige Kernstufe von PSLV, GSLV und LVM3. Es ist das Triebwerk, das Chandrayaan-1 in die Mondumlaufbahn, Mangalyaan zum Mars und die Mission Chandrayaan-3 antrieb, die Vikram in der südpolaren Region des Mondes absetzte."
+  },
+  {
+    "rel": "fleet/engine/viking.json",
+    "at": "tagline",
+    "old": "Das französische Triebwerk, das Indiens Workhorse wurde",
+    "new": "Das französische Triebwerk, das zu Indiens Arbeitspferd wurde"
+  },
+  {
+    "rel": "fleet/engine/viking.json",
+    "at": "description",
+    "old": "Das Viking-Triebwerk, von SEP in Frankreich für CNES und ESA entwickelt, trieb die erste bis vierte Generation der Ariane-Familie an – von Ariane 1 mit ihrem Erstflug am 24. Dezember 1979. Es verbrennt Stickstofftetroxid und UH25 – eine Stickstoff-Hydrazin-Mischung – in einem Gas-Generator-Kreislauf, eine hypergolische Treibstoffkombination, die Effizienz gegen Lagerfähigkeit bei Raumtemperatur und Zündungseinfachheit eintauscht. Der Wikings folgenreichster zweiter Akt kam, als ISRO das Design in den 1970er Jahren von Frankreich lizenzierte und es zum Vikas-Triebwerk entwickelte, das heute noch auf indischen Trägerraketen fliegt. Ein französisches Triebwerksdesign ermöglichte zwei Nationen den Zugang zum Weltall.",
+    "new": "Das Viking-Triebwerk, von SEP in Frankreich für CNES und ESA entwickelt, trieb die erste bis vierte Generation der Ariane-Familie an – von Ariane 1 mit ihrem Erstflug am 24. Dezember 1979. Es verbrennt Stickstofftetroxid und UH25 – eine Stickstoff-Hydrazin-Mischung – in einem Gasgenerator-Kreisprozess, eine hypergolische Treibstoffkombination, die Effizienz gegen Lagerfähigkeit bei Raumtemperatur und einfache Zündung eintauscht. Der folgenreichste zweite Akt des Viking kam, als ISRO das Design in den 1970er-Jahren von Frankreich lizenzierte und es zum Vikas-Triebwerk weiterentwickelte, das noch heute auf indischen Trägerraketen fliegt. Ein französisches Triebwerksdesign ermöglichte zwei Nationen den Zugang zum Weltraum."
+  },
+  {
+    "rel": "fleet/engine/vulcain-2.json",
+    "at": "description",
+    "old": "Vulcain 2 war das Triebwerk, das Europa entwickelte, um unabhängigen Zugang zur geostationären Umlaufbahn zu erreichen. Entwickelt von Snecma im Rahmen des Ariane-5-Programms der ESA, arbeitet es nach dem Gas-Generator-Prinzip mit LOX und LH2 und treibt die kryogene Hauptstufe vom Start bis zur Triebwerksabschaltung an, während die Feststoffbooster die schwere Last der ersten Minuten tragen. Sein Debüt im Dezember 2002 endete mit einem Fehler bei der Düsenkühlung, der das Fahrzeug zerstörte; nach der Umkonstruktion flog es ab 2005 erfolgreich und wurde das zuverlässige Herzstück der Ariane 5 bis zum letzten Flug der Rakete im Juli 2023, das Satelliten und interplanetare Sonden — einschließlich JWST — auf ihre Flugbahnen brachte.",
+    "new": "Vulcain 2 war das Triebwerk, das Europa entwickelte, um unabhängigen Zugang zur geostationären Umlaufbahn zu erreichen. Von Snecma im Rahmen des Ariane-5-Programms der ESA entwickelt, arbeitet es nach dem Gasgenerator-Prinzip mit LOX und LH2 und treibt die kryogene Hauptstufe vom Start bis zur Abschaltung des Haupttriebwerks an, während die Feststoffbooster die schwere Last der ersten Minuten tragen. Sein Debüt im Dezember 2002 scheiterte an einem Fehler der Düsenkühlung, der das Fahrzeug zerstörte; nach der Umkonstruktion flog es ab 2005 erfolgreich und wurde bis zum letzten Flug der Rakete im Juli 2023 zum zuverlässigen Herzstück der Ariane 5, das Satelliten und interplanetare Sonden — darunter JWST — auf ihre Flugbahnen brachte."
+  },
+  {
+    "rel": "fleet/engine/yf-100.json",
+    "at": "tagline",
+    "old": "Chinas Staged-Combustion-Kerosin-Sauerstoff-Triebwerk für die neue Generation",
+    "new": "Chinas Kerosin-Sauerstoff-Triebwerk mit Stufenverbrennung für die neue Generation"
+  },
+  {
+    "rel": "fleet/engine/yf-100.json",
+    "at": "description",
+    "old": "Der YF-100 ist das Triebwerk, das Chinas Startfähigkeit in die Leistungsklasse katapultierte, die Russland und die Vereinigten Staaten seit Jahrzehnten beherrschten. Entwickelt von AALPT in Xi'an, nutzt er sauerstoffangereicherte Stufenverbrennung bei LOX und RP-1 – den thermodynamischen Kreisprozess, der die meiste Energie aus Kerosinpropellern freisetzt – und flog erstmals am 20. September 2015. Zwei YF-100s treiben die Kernstufe von Long March 5, Chinas schwerstes operationelles Trägerflugzeug, an, und gruppierte Varianten fliegen auf Long March 6 und Long March 7. Der YF-100 bildet die Grundlage für Chinas Mondprogramm, seine Raumstationsversorgung und sein wachsendes kommerzielles Startpensum.",
+    "new": "Das YF-100 ist das Triebwerk, das Chinas Startfähigkeit in die Leistungsklasse katapultierte, die Russland und die Vereinigten Staaten seit Jahrzehnten beherrschten. Von AALPT in Xi'an entwickelt, nutzt es sauerstoffreiche Stufenverbrennung mit LOX und RP-1 – den thermodynamischen Kreisprozess, der die meiste Energie aus Kerosin-Treibstoffen freisetzt – und flog erstmals am 20. September 2015. Zwei YF-100 treiben die Kernstufe der Long March 5 an, Chinas schwerster einsatzbereiter Trägerrakete, und gebündelte Varianten fliegen auf Long March 6 und Long March 7. Das YF-100 bildet die Grundlage für Chinas Mondprogramm, die Versorgung seiner Raumstation und seine wachsende kommerzielle Startfrequenz."
+  },
+  {
+    "rel": "fleet/engine/yf-100.json",
+    "at": "best_known_for",
+    "old": "Chinas modernes Staged-Combustion-Kerosin-Sauerstoff-Triebwerk — Long March 5/6/7",
+    "new": "Chinas modernes Kerosin-Sauerstoff-Triebwerk mit Stufenverbrennung — Long March 5/6/7"
+  },
+  {
+    "rel": "fleet/engine/yf-77.json",
+    "at": "description",
+    "old": "Das YF-77 ist Chinas erstes großes kryogenes Triebwerk, das LOX und LH2 verbrennt und beendet damit eine mehrere Jahrzehnte andauernde Abhängigkeit von lagerbaren hypergolen Treibstoffen für Zentralstufen. Entwickelt von AALPT und mit einem Gas-Generator-Zyklus betrieben, treiben zwei YF-77s den Zentralkern der Long March 5 an und bieten den Effizienzschub, der Missionen zur Mondrückkehr und zum Weltraumstationsmodul ohne eine prohibitiv große Rakete ermöglichte. Es flog erstmals am 3. November 2016, und die frühen Flüge waren nicht ohne Schwierigkeiten — eine YF-77-Anomalie setzte die Long March 5 für fast drei Jahre außer Betrieb, bis Ingenieure die Ausfallursache identifizierten und behoben.",
+    "new": "Das YF-77 ist Chinas erstes großes kryogenes Triebwerk, das LOX und LH2 verbrennt, und beendet damit eine jahrzehntelange Abhängigkeit von lagerbaren hypergolen Treibstoffen für Kernstufen. Von AALPT entwickelt und mit einem Gasgenerator-Kreisprozess betrieben, treiben zwei YF-77 die Zentralstufe der Long March 5 an und liefern den Effizienzschub, der Missionen zur Mondrückführung und zu Raumstationsmodulen ohne eine unverhältnismäßig große Rakete möglich machte. Es flog erstmals am 3. November 2016, und die frühen Flüge verliefen nicht ohne Schwierigkeiten — eine YF-77-Anomalie legte die Long March 5 fast drei Jahre lahm, bis Ingenieure die Fehlerursache identifizierten und behoben."
+  },
+  {
+    "rel": "fleet/engine/yf-77.json",
+    "at": "best_known_for",
+    "old": "Chinas erstes großes Wasserstofftriebwerk — der Long March 5-Kern",
+    "new": "Chinas erstes großes Wasserstofftriebwerk — der Kern der Long March 5"
+  },
+  {
+    "rel": "fleet/lander/beagle2.json",
+    "at": "description",
+    "old": "Ein 33-kg-Marslander unter britischer Leitung, von ESAs Mars Express am 2003-12-19 ausgesetzt — sechs Tage vor der geplanten Landung am 2003-12-25 bei Isidis Planitia. Beagle 2 (benannt nach der HMS Beagle, die Darwin beförderte) trug eine Muschelschalen-Nutzlast: ein Massenspektrometer der Gas Analysis Package zur Analyse der Atmosphäre und subsurface volatiles, eine Stereokamera, ein Mikroskop, ein Mössbauer- und APX-Spektrometerpaar sowie einen Maulwurfbohrer. Bei der Trennung verstummte er und wurde 12 Jahre lang für abgestürzt gehalten — bis 2015-01, als hochauflösende HiRISE-Aufnahmen vom Mars Reconnaissance Orbiter Beagle 2 deutlich auf der Marsoberfläche zeigten (~5 km von seinem Ziel entfernt), mit einem von vier Solarpanelen (Blütenblättern), das sich nicht vollständig entfaltete und verhinderte, dass die Antenne das Gehäuse verließ und ausreichend Strom sammelte. Also: eine erfolgreiche Landung, eine gescheiterte Entfaltung und ein 12-jähriges Rätsel gelöst durch die gleiche Art von Bilder, die LRO für den Mond einsetzt.",
+    "new": "Ein 33 kg schwerer Marslander unter britischer Leitung, am 2003-12-19 von ESAs Mars Express ausgesetzt — sechs Tage vor der geplanten Landung am 2003-12-25 in der Isidis Planitia. Beagle 2 (benannt nach der HMS Beagle, die Darwin trug) hatte eine Muschelschalen-Nutzlast an Bord: ein Massenspektrometer des Gas Analysis Package für flüchtige Stoffe in Atmosphäre und Untergrund, eine Stereokamera, ein Mikroskop, ein Paar aus Mössbauer- und APX-Spektrometer sowie einen Maulwurfbohrer. Bei der Trennung verstummte er und galt 12 Jahre lang als abgestürzt — bis 2015-01 hochauflösende HiRISE-Aufnahmen des Mars Reconnaissance Orbiter Beagle 2 deutlich auf der Marsoberfläche zeigten (~5 km von seinem Ziel entfernt); eines von vier Solarpanelen (Blütenblättern) hatte sich nicht vollständig entfaltet, sodass die Antenne das Gehäuse nicht freibekam und nicht genug Strom gesammelt wurde. Also: eine erfolgreiche Landung, eine gescheiterte Entfaltung und ein 12 Jahre altes Rätsel, gelöst durch dieselbe Art von Aufnahmen, die LRO für den Mond einsetzt."
+  },
+  {
+    "rel": "fleet/lander/beagle2.json",
+    "at": "best_known_for",
+    "old": "UK/ESA-Marslander — gelandet 2003, verstummt für 12 Jahre, von HiRISE 2015 gefunden",
+    "new": "UK/ESA-Marslander — 2003 gelandet, 12 Jahre lang verstummt, 2015 von HiRISE gefunden"
+  },
+  {
+    "rel": "fleet/lander/beresheet.json",
+    "at": "tagline",
+    "old": "Erste private Mondlandung im Versuch",
+    "new": "Erster privater Mondlandeversuch"
+  },
+  {
+    "rel": "fleet/lander/beresheet.json",
+    "at": "description",
+    "old": "Der erste private Versuch einer Mondlandung durch SpaceIL, eine israelische gemeinnützige Organisation. Das Landegerät stürzte im April 2019 ab, nachdem ein Fehler des IMU-Gyroskops zu wiederholten Computerneustarts führte, von denen jeder den Motor abschaltete. Bis die Kontrolle wiederhergestellt war, befand sich das Landegerät zu tief und war zu schnell, um zu überleben. Dies zeigte, dass eine Mondlandung viel schwieriger ist als das Erreichen des Mondes.",
+    "new": "Der erste private Versuch einer Mondlandung, unternommen von der israelischen gemeinnützigen Organisation SpaceIL. Der Lander stürzte im April 2019 ab, nachdem der Ausfall eines IMU-Kreisels wiederholte Computerneustarts ausgelöst hatte, die jeweils das Triebwerk abschalteten; als die Kontrolle wiedererlangt war, war der Lander zu tief und zu schnell, um zu überleben. Der Versuch zeigte, dass eine Landung auf dem Mond viel schwieriger ist, als ihn zu erreichen."
+  },
+  {
+    "rel": "fleet/lander/blue-moon-mk1.json",
+    "at": "tagline",
+    "old": "Erste Generation des Mondlandefähre von Blue Origin — einstufiges Wasserstoff-/Sauerstoff-Fahrzeug, ≈3 t zur Oberfläche",
+    "new": "Blue Origins Fracht-Mondlandefähre der ersten Generation — einstufig, Wasserstoff/Sauerstoff, ~3 t zur Oberfläche"
+  },
+  {
+    "rel": "fleet/lander/blue-moon-mk1.json",
+    "at": "description",
+    "old": "Einstufige kryogene Landefähre mit dem LH₂ / LOX BE-7-Triebwerk. Die Mk1 ist der Frachtvariante-Vorläufer der deutlich größeren bemannten Mk2-Artemis-HLS-Variante; beide nutzen das BE-7-Antriebssystem und die wasserstoffbasierte Wiederverwendungsarchitektur. Der erste bemannte Mondflug mit Blue Moon Mk1 ist noch nicht gestartet; die erste Landung ist derzeit nicht vor 2026 geplant. Die Frachtversion Mk1 liefert bis zu ≈3000 kg zur Mondoberfläche; das bemannte Mk2-Derivat war Grundlage für Blue Origins HLS-Vertrag, der von der NASA 2023 als zweite Artemis-Ära-Mondenlandefähre neben SpaceX Starship HLS vergeben wurde.",
+    "new": "Einstufige kryogene Landefähre um das LH₂/LOX-Triebwerk BE-7. Die Mk1 ist der reine Fracht-Vorläufer der deutlich größeren bemannten Mk2-Variante für das Artemis-HLS; beide nutzen den BE-7-Antrieb und die wasserstoffbasierte Wiederverwendungsarchitektur. Der erste bemannte Mondflug mit Blue Moon Mk1 ist noch nicht gestartet; die erste Landung ist derzeit frühestens für 2026 geplant. Die Fracht-Mk1 setzt bis zu ~3000 kg auf der Mondoberfläche ab; das bemannte Mk2-Derivat war die Grundlage für den HLS-Vertrag, den die NASA 2023 an Blue Origin vergab, als zweite bemannte Mondlandefähre der Artemis-Ära neben SpaceX Starship HLS."
+  },
+  {
+    "rel": "fleet/lander/blue-moon-mk1.json",
+    "at": "best_known_for",
+    "old": "Blue Origins Frachttransporter zur Mondoberfläche — BE-7-Wasserstoffantrieb, ≈3 t zur Oberfläche, NASA CLPS",
+    "new": "Blue Origins Fracht-Mondlandefähre — BE-7-Wasserstoffantrieb, ~3 t zur Oberfläche, NASA CLPS"
+  },
+  {
+    "rel": "fleet/lander/change-3.json",
+    "at": "tagline",
+    "old": "Erste chinesische Mondlander",
+    "new": "Erster chinesischer Mondlander"
+  },
+  {
+    "rel": "fleet/lander/change-3.json",
+    "at": "description",
+    "old": "Chinas erster Mondlander (Dezember 2013), der den Yutu-Rover trägt. Mare Imbrium Touchdown – die erste sanfte Landung auf dem Mond seit Luna 24 im Jahr 1976.",
+    "new": "Chinas erster Mondlander (Dezember 2013) mit dem Rover Yutu. Aufsetzen im Mare Imbrium – die erste sanfte Landung auf dem Mond seit Luna 24 im Jahr 1976."
+  },
+  {
+    "rel": "fleet/lander/change-3.json",
+    "at": "best_known_for",
+    "old": "Erste chinesische Mondlander",
+    "new": "Erster chinesischer Mondlander"
+  },
+  {
+    "rel": "fleet/lander/change-4.json",
+    "at": "tagline",
+    "old": "Erste weiche Landung auf Mond fernseite",
+    "new": "Erste weiche Landung auf der Mondrückseite"
+  },
+  {
+    "rel": "fleet/lander/change-4.json",
+    "at": "description",
+    "old": "Die erste sanfte Landung auf der Mondfernseite (Januar 2019). Erforderte einen Relaissatelliten (Queqiao) auf Erde-Mond L2 zur Aufrechterhaltung der Kommunikation. Yutu-2 hat seit Jahren das Von Kármán Krater Gelände ausgeraubt.",
+    "new": "Die erste sanfte Landung auf der Mondrückseite (Januar 2019). Zur Aufrechterhaltung der Kommunikation war ein Relaissatellit (Queqiao) am Erde-Mond-Punkt L2 nötig. Yutu-2 durchstreift seither seit Jahren das Gelände im Von-Kármán-Krater."
+  },
+  {
+    "rel": "fleet/lander/change-4.json",
+    "at": "best_known_for",
+    "old": "Erste weiche Landung auf Mond fernseite",
+    "new": "Erste weiche Landung auf der Mondrückseite"
+  },
+  {
+    "rel": "fleet/lander/change-5.json",
+    "at": "description",
+    "old": "Die erste Mondprobenrückführung seit Luna 24 im Jahr 1976. Brachte 1,731 kg Basalt aus einer Region zurück, die 1,2 Milliarden Jahre jünger ist als die Apollo- und Luna-Proben — und erweitert damit die Chronologie der jüngeren Mondvulkanismus.",
+    "new": "Die erste Rückführung von Mondproben seit Luna 24 im Jahr 1976. Brachte 1,731 kg Basalt aus einer Region zurück, die 1,2 Milliarden Jahre jünger ist als die Apollo- und Luna-Proben — und verlängert damit die Zeitleiste des jüngeren Mondvulkanismus."
+  },
+  {
+    "rel": "fleet/lander/change6.json",
+    "at": "tagline",
+    "old": "Erste Probenrückführung von der Mondrückseite. Landung im Apollo-Becken 2024-06-01 (UTC); 1935 g nach Innere Mongolei 2024-06-25",
+    "new": "Erste Probenrückführung von der Mondrückseite. Landung im Apollo-Becken 2024-06-01 (UTC); 1935 g in die Innere Mongolei 2024-06-25"
+  },
+  {
+    "rel": "fleet/lander/change6.json",
+    "at": "best_known_for",
+    "old": "Erste Probenrückführung von der Mondrückseite. Landung im Apollo-Becken 2024-06-02; 1935 g nach Innere Mongolei 2024-06-25",
+    "new": "Erste Probenrückführung von der Mondrückseite. Landung im Apollo-Becken 2024-06-02; 1935 g in die Innere Mongolei 2024-06-25"
+  },
+  {
+    "rel": "fleet/lander/change6.json",
+    "at": "description",
+    "old": "Die erste Probenrückführungsmission von der Mondrückseite – ein Meilenstein 53 Jahre nach Apollo, den bislang keine andere Raumfahrtagentur versucht hat. Gestartet am 2024-05-03 auf einer Long March 5 von Wenchang, nutzte Chang'e 6 den Relaissat­elliten Queqiao-2 (seit März 2024 in einer Halo-Umlaufbahn um den Erde-Mond-L2), um über die Mondoberfläche hinweg mit der Erde zu kommunizieren. Das Landemodul setzte am 2024-06-01 (UTC, 2024-06-02 Pekinger Zeit) im Apollo-Becken innerhalb des Riesenkratersystems Südpol-Aitken (-153,99° W, -41,64° S) auf. Sein Bohrer und seine Schaufel entnahmen etwa 1935 g Mondregolith aus einer Region, die seit der beckenbildenden Kollision vor etwa 4,3 Milliarden Jahren weitgehend ungestört geblieben ist – Material des Mondmantels, das durch SPA ausgegraben wurde. Das Aufstiegsmodul hob am 2024-06-03 ab, dockte in der Mondumlaufbahn am Orbiter an, und die Rückkehrkapsel landete am 2024-06-25 14:07 Ortszeit in Siziwang Banner, Innere Mongolei. Frankreich, Italien, Schweden und Pakistan trugen Instrumente bei – die ersten internationalen wissenschaftlichen Nutzlasten auf einer chinesischen Probenrückführungsmission.",
+    "new": "Die erste Probenrückführungsmission von der Mondrückseite – ein Meilenstein 53 Jahre nach Apollo, den bislang keine andere Raumfahrtagentur versucht hat. Gestartet am 2024-05-03 auf einer Long March 5 von Wenchang, nutzte Chang'e 6 den Relaissatelliten Queqiao-2 (seit März 2024 in einer Halo-Umlaufbahn um den Erde-Mond-Punkt L2), um über den Mondrand hinweg mit der Erde zu kommunizieren. Der Lander setzte am 2024-06-01 (UTC, 2024-06-02 Pekinger Zeit) im Apollo-Becken innerhalb des riesigen Südpol-Aitken-Beckens auf (-153,99° W, -41,64° S). Sein Bohrer und seine Schaufel entnahmen etwa 1935 g Regolith aus einer Region, die seit dem beckenbildenden Einschlag vor etwa 4,3 Milliarden Jahren weitgehend ungestört geblieben ist – Material des Mondmantels, das durch den SPA-Einschlag ausgegraben wurde. Das Aufstiegsmodul hob am 2024-06-03 ab, traf in der Mondumlaufbahn mit dem Orbiter zusammen, und die Rückkehrkapsel landete am 2024-06-25 um 14:07 Ortszeit in Siziwang Banner, Innere Mongolei. Frankreich, Italien, Schweden und Pakistan trugen Instrumente bei – die ersten internationalen wissenschaftlichen Nutzlasten auf einer chinesischen Probenrückführungsmission."
+  },
+  {
+    "rel": "fleet/lander/hakuto-r.json",
+    "at": "tagline",
+    "old": "Erste private japanische Mondlander; M1 + M2 beide abgestürzt",
+    "new": "Erster privater japanischer Mondlander; M1 und M2 beide abgestürzt"
+  },
+  {
+    "rel": "fleet/lander/hakuto-r.json",
+    "at": "description",
+    "old": "Hakuto-R-Programm ist ein planetarischer Lander gebaut von ispace in Japan. Erste private japanische Mond Lander; M1 + M2 beide abgestürzt. Flew in 2023 aber gescheitert; informiert die Erlösung-Arc-Schicht der kommerziellen Epoche epoch.",
+    "new": "Das Hakuto-R-Programm ist ein planetarer Lander, gebaut von ispace in Japan. Erster privater japanischer Mondlander; M1 und M2 stürzten beide ab. Flog 2023, scheiterte aber; fließt in die Erlösungsbogen-Ebene der Epoche der kommerziellen Ära ein."
+  },
+  {
+    "rel": "fleet/lander/hakuto-r.json",
+    "at": "best_known_for",
+    "old": "Erste private japanische Mondlander; M1 + M2 beide abgestürzt",
+    "new": "Erster privater japanischer Mondlander; M1 und M2 beide abgestürzt"
+  },
+  {
+    "rel": "fleet/lander/im-1-odysseus.json",
+    "at": "description",
+    "old": "Die erste US-Mondlandung seit Apollo 17 im Jahr 1972. Landete seitwärts in der Nähe des südlichen Mondpols am 2024-02-22 (der primäre Laser-Entfernungsmesser war inaktiv gelassen worden — Sicherheitsschalter vor dem Start nicht aktiviert); operierte kurz vor Sonnenuntergang.",
+    "new": "Die erste US-Mondlandung seit Apollo 17 im Jahr 1972. Setzte am 2024-02-22 seitwärts in der Nähe des Mondsüdpols auf (der primäre Laser-Entfernungsmesser war inaktiv geblieben — Sicherheitsschalter vor dem Start nicht aktiviert); war kurz in Betrieb, bevor die Sonne unterging."
+  },
+  {
+    "rel": "fleet/lander/insight.json",
+    "at": "tagline",
+    "old": "Mars-Seismometer; 1300+ marsquakes detektiert",
+    "new": "Mars-Seismometer; 1300+ Marsbeben registriert"
+  },
+  {
+    "rel": "fleet/lander/insight.json",
+    "at": "description",
+    "old": "NASA 2018–2022 Mars seismometer mission. Entdeckt über 1.300 Marsquakes, kartiert die innere Struktur des Planeten zum ersten Mal, und bestätigte die Existenz eines großen schmelzflüssigen Kerns. Endet, als die Staubakkumulation auf seinen Solarpaneelen endlich ihre Macht verhungerte.",
+    "new": "NASAs Mars-Seismometer-Mission 2018–2022. Registrierte über 1.300 Marsbeben, kartierte erstmals die innere Struktur des Planeten und bestätigte die Existenz eines großen schmelzflüssigen Kerns. Endete, als sich so viel Staub auf den Solarpanelen ansammelte, dass die Energieversorgung versiegte."
+  },
+  {
+    "rel": "fleet/lander/insight.json",
+    "at": "best_known_for",
+    "old": "Mars-Seismometer; 1300+ marsquakes detektiert",
+    "new": "Mars-Seismometer; 1300+ Marsbeben registriert"
+  },
+  {
+    "rel": "fleet/lander/luna-16.json",
+    "at": "tagline",
+    "old": "Erste Roboter-Larn-Probe Rückkehr",
+    "new": "Erste robotische Mondprobenrückführung"
+  },
+  {
+    "rel": "fleet/lander/luna-16.json",
+    "at": "description",
+    "old": "Gebaut von NPO Lawotschkin, erzielte Luna 16 die erste vollautomatische Rückführung von Mondproben und brachte im September 1970 101 g Bodenprobe zur Erde zurück.",
+    "new": "Gebaut von NPO Lavochkin, erzielte Luna 16 die erste vollautomatische Rückführung von Mondproben und brachte im September 1970 101 g Bodenprobe zur Erde zurück."
+  },
+  {
+    "rel": "fleet/lander/luna-16.json",
+    "at": "best_known_for",
+    "old": "Erste Roboter-Larn-Probe Rückkehr",
+    "new": "Erste robotische Mondprobenrückführung"
+  },
+  {
+    "rel": "fleet/lander/luna-9.json",
+    "at": "description",
+    "old": "Die erste sanfte Landung auf einer anderen Welt. Berührt auf Oceanus Procellarum im Februar 1966, Rückkehr der ersten Fotos von der Mondoberfläche - ein Panorama der kratzigen Landschaft nur Zentimeter vom Auge des Landers.",
+    "new": "Die erste weiche Landung auf einer anderen Welt. Setzte im Februar 1966 im Oceanus Procellarum auf und lieferte die ersten Fotos von der Mondoberfläche – ein Panorama der kraterübersäten Landschaft nur wenige Zentimeter vor dem Auge des Landers."
+  },
+  {
+    "rel": "fleet/lander/luna24.json",
+    "at": "tagline",
+    "old": "Letzte erfolgreiche sowjetische Mondmission – 170 g Regolith von Mare Crisium zurück 1976-08-22; letzte Probenrückführung bis Chang'e 5",
+    "new": "Letzte erfolgreiche sowjetische Mondmission – 170 g Regolith aus Mare Crisium (1976-08-22); letzte Probenrückführung bis Chang'e 5"
+  },
+  {
+    "rel": "fleet/lander/luna24.json",
+    "at": "description",
+    "old": "Die letzte erfolgreiche sowjetische Mondmission und der letzte Mondrückkehrlander für Probenrückführung bis Chang'e 5 im Jahr 2020 — eine Lücke von 44 Jahren. Gestartet am 1976-08-09 von Baikonur auf einer Proton-K, landete Luna 24 am 1976-08-18 sanft in Mare Crisium (12,7° N, 62,2° E), bohrte mit seinem rotierend-schlagenden Bohrer bis in eine Tiefe von 2,25 m, barg einen 1,6 m langen Kernkern und hob die Aufstiegsstufe ab, die am 1976-08-22 170,1 g Mondregolith nach Westsibirien (~200 km südöstlich von Surgut) zurückbrachte. Sowjetische Wissenschaftler des Vernadsky Institute bestätigten 1978 in einer Veröffentlichung das Vorhandensein von Wasser (~0,1 % Masseprozent) in den Proben, die im Westen weitgehend ignoriert wurden, bis LCROSS und Chandrayaan-1 (2008-09) Mondwasser erneut bestätigten.",
+    "new": "Die letzte erfolgreiche sowjetische Mondmission und der letzte Mondlander mit Probenrückführung bis Chang'e 5 im Jahr 2020 — eine Lücke von 44 Jahren. Gestartet am 1976-08-09 von Baikonur auf einer Proton-K, landete Luna 24 am 1976-08-18 weich in Mare Crisium (12,7° N, 62,2° E), bohrte mit seinem rotierend-schlagenden Bohrer bis in 2,25 m Tiefe, gewann einen Bohrkern von 1,6 m Länge und startete mit der Aufstiegsstufe, die am 1976-08-22 170,1 g Mondregolith nach Westsibirien (~200 km südöstlich von Surgut) zurückbrachte. Sowjetische Wissenschaftler des Vernadsky Institute bestätigten 1978 in einer Veröffentlichung das Vorhandensein von Wasser (~0,1 Massenprozent) in den Proben; die Arbeit wurde im Westen weitgehend ignoriert, bis LCROSS und Chandrayaan-1 (2008-09) Mondwasser erneut bestätigten."
+  },
+  {
+    "rel": "fleet/lander/luna24.json",
+    "at": "best_known_for",
+    "old": "Letzte erfolgreiche sowjetische Mondmission — 170 g Regolith aus Mare Crisium 1976-08-22 geborgen; letzte Mondprobenrückführung bis Chang'e 5",
+    "new": "Letzte erfolgreiche sowjetische Mondmission — brachte am 1976-08-22 170 g Regolith aus Mare Crisium zurück; letzte Mondprobenrückführung bis Chang'e 5"
+  },
+  {
+    "rel": "fleet/lander/mars-2.json",
+    "at": "description",
+    "old": "Das erste von Menschen geschaffene Objekt, das die Marsoberfläche erreichte — durch hartes Aufprall. Das Abstiegsmodul zerschellte während des Staubsturms von 1971, der alle anderen Marssonden in der Umlaufbahn zu dieser Zeit verdeckte. Die Schwesterraumsonde Mars 3 führte zwei Tage später die erste sanfte Landung durch.",
+    "new": "Das erste von Menschen geschaffene Objekt, das die Marsoberfläche erreichte — durch einen harten Aufprall. Das Abstiegsmodul zerschellte während des Staubsturms von 1971, der alle anderen Marssonden in der Umlaufbahn zu dieser Zeit verdeckte. Die Schwestersonde Mars 3 gelang zwei Tage später die erste weiche Landung."
+  },
+  {
+    "rel": "fleet/lander/mars-3.json",
+    "at": "tagline",
+    "old": "Erste Landung auf dem Mars; ~20 s Oberflächenübertragung",
+    "new": "Erste weiche Landung auf dem Mars; ~20 s Übertragung von der Oberfläche"
+  },
+  {
+    "rel": "fleet/lander/mars-3.json",
+    "at": "best_known_for",
+    "old": "Erste Landung auf dem Mars; ~20 s Oberflächenübertragung",
+    "new": "Erste weiche Landung auf dem Mars; ~20 s Übertragung von der Oberfläche"
+  },
+  {
+    "rel": "fleet/lander/mars-polar-lander.json",
+    "at": "tagline",
+    "old": "Verloren auf der Landung; fuhr schneller-better-cheaper Bewertung",
+    "new": "Bei Landung verloren; löste „schneller, besser, billiger“-Überprüfung aus"
+  },
+  {
+    "rel": "fleet/lander/mars-polar-lander.json",
+    "at": "description",
+    "old": "Mars Polar Lander ist ein planetarischer Lander von Lockheed Martin in USA. Verloren auf der Landung; fuhr schneller-better-cheaper Überprüfung. Flog 1999, scheiterte aber; informiert die Erlösung-Arc Schicht der Shuttle- und Mir-Ära.",
+    "new": "Mars Polar Lander ist ein planetarer Lander, gebaut von Lockheed Martin in den USA. Bei der Landung verloren; löste die Überprüfung des Ansatzes „schneller, besser, billiger“ aus. Flog 1999, scheiterte aber; fließt in die Erlösungsbogen-Ebene der Epoche von Shuttle und Mir ein."
+  },
+  {
+    "rel": "fleet/lander/mars-polar-lander.json",
+    "at": "best_known_for",
+    "old": "Verloren auf der Landung; fuhr schneller-better-cheaper Bewertung",
+    "new": "Bei Landung verloren; löste „schneller, besser, billiger“-Überprüfung aus"
+  },
+  {
+    "rel": "fleet/lander/mars6.json",
+    "at": "description",
+    "old": "Teil der sowjetischen vier-Raumsonden-Welle zum Mars 1973 (Mars 4, 5, 6, 7) — und die einzige, die brauchbare Wissenschaft aus dem Abstieg durch die Mars-Atmosphäre zurückbrachte. Gestartet am 1973-08-05 von Baikonur auf einer Proton-K, angekommen am 1974-03-12. Das Abstiegsmodul trennte sich vom Vorbeiflug-Bus, trat über Margaritifer Terra (23,90° S, 19,42° W) in die Marsatmosphäre ein und übermittelte 224 Sekunden direkte atmosphärische Telemetrie — die ersten in-situ-Messungen von Mars' atmosphärischer Temperatur, Druck und Zusammensetzungsprofil. Wegen eines Konstruktionsfehlers im Datensystem des Massenspektrometers war jedoch eine große Menge der Daten beschädigt und nur teilweise wiederherstellbar. Das Signal ging kurz vor der Landung während des Bremsraketenfeuers verloren; ob der Lander abstürzte oder auf der Oberfläche überlebte, ist unbekannt. Der Vorbeiflug-Bus setzte seinen Kurs an Mars vorbei fort und fungierte als Relaisstation.",
+    "new": "Teil der sowjetischen Marswelle von 1973 mit vier Raumsonden (Mars 4, 5, 6, 7) — und die einzige, die aus einem Abstieg durch die Marsatmosphäre brauchbare Wissenschaft zurückbrachte. Gestartet am 1973-08-05 von Baikonur auf einer Proton-K, angekommen am 1974-03-12. Das Abstiegsmodul trennte sich vom Vorbeiflug-Bus, trat über Margaritifer Terra (23,90° S, 19,42° W) in die Marsatmosphäre ein und übermittelte 224 Sekunden direkte atmosphärische Telemetrie — die ersten In-situ-Messungen der Profile von Temperatur, Druck und Zusammensetzung der Marsatmosphäre. Wegen eines Konstruktionsfehlers im Datensystem des Massenspektrometers war jedoch ein großer Teil der Daten beschädigt und nur teilweise wiederherstellbar. Das Signal ging kurz vor der Landung während des Bremsraketenfeuers verloren; ob der Lander abstürzte oder auf der Oberfläche überlebte, ist unbekannt. Der Vorbeiflug-Bus setzte seinen Kurs an Mars vorbei fort und fungierte als Relaisstation."
+  },
+  {
+    "rel": "fleet/lander/mars6.json",
+    "at": "best_known_for",
+    "old": "Sowjetischer Mars-Lander von 1973 — erste Telemetrie aus dem Mars-Abstieg in der Atmosphäre (224 s, teilweise beschädigt)",
+    "new": "Sowjetischer Mars-Lander von 1973 — erste Telemetrie aus dem Abstieg durch die Marsatmosphäre (224 s, größtenteils beschädigt)"
+  },
+  {
+    "rel": "fleet/lander/phoenix.json",
+    "at": "tagline",
+    "old": "Bestätigtes Wassereis in Martian Boden",
+    "new": "Wassereis im Marsboden bestätigt"
+  },
+  {
+    "rel": "fleet/lander/phoenix.json",
+    "at": "description",
+    "old": "Phoenix ist ein planetarischer Lander, gebaut von Lockheed Martin in USA. Bestätigtes Wassereis in Martian Boden. Nach dem ersten Flug 2008 im Ruhestand.",
+    "new": "Phoenix ist ein planetarer Lander, gebaut von Lockheed Martin in den USA. Wassereis im Marsboden bestätigt. Nach dem ersten Flug 2008 ausgemustert."
+  },
+  {
+    "rel": "fleet/lander/phoenix.json",
+    "at": "best_known_for",
+    "old": "Bestätigtes Wassereis in Martian Boden",
+    "new": "Wassereis im Marsboden bestätigt"
+  },
+  {
+    "rel": "fleet/lander/schiaparelli.json",
+    "at": "description",
+    "old": "ESAs ExoMars-Demonstrator von 2016, der während der Landung abstürzte — die Trägheitsmesseinheit (IMU) saturierte beim Fallschirmabstieg, wodurch der Bordcomputer glaubte, sich unter Bodenniveau zu befinden; er löste den Fallschirm aus und zündete die Bremsraketen nur 3 Sekunden statt 30 lang, verstummte dann und prallte aus 3,7 km Höhe mit ~300 km/h auf. Die Erkenntnisse flossen direkt in das Design der Rosalind Franklin ein.",
+    "new": "ESAs ExoMars-Demonstrator von 2016, der bei der Landung abstürzte — die Trägheitsmesseinheit (IMU) geriet beim Fallschirmabstieg in die Sättigung, wodurch der Bordcomputer glaubte, sich unter Bodenniveau zu befinden; er warf den Fallschirm ab und zündete die Bremsraketen nur 3 Sekunden statt 30 lang, verstummte dann und prallte aus 3,7 km Höhe mit ~300 km/h auf. Die Erkenntnisse flossen direkt in das Design des Rosalind-Franklin-Landers ein."
+  },
+  {
+    "rel": "fleet/lander/slim.json",
+    "at": "description",
+    "old": "JAXA Mondlander von 2024. Landete innerhalb von 100 m vom Ziel — eine für einen Mondlander beispiellose Präzisionsgenauigkeit — landete aber auf seiner Nase unter etwa 90 Grad, mit Solarpanelen, die von der Sonne abgewandt waren. Wurde weiterhin betrieben und überstand vier Mondnächte ohne Radioisotop-Heizung — ein Rekord für passiv beheizte Mondflächenmissionen.",
+    "new": "Mondlander der JAXA von 2024. Setzte weniger als 100 m vom Ziel entfernt auf – eine für einen Mondlander beispiellose Landegenauigkeit –, landete aber auf der Nase, um etwa 90 Grad gekippt, sodass die Solarpanele von der Sonne abgewandt waren. War dennoch in Betrieb und überstand vier Mondnächte ohne Radioisotopen-Heizung – ein Rekord für passiv beheizte Missionen auf der Mondoberfläche."
+  },
+  {
+    "rel": "fleet/lander/surveyor-3.json",
+    "at": "tagline",
+    "old": "Apollo 12 besuchte es 2,5 Jahre später",
+    "new": "Apollo 12 besuchte den Lander 2,5 Jahre später"
+  },
+  {
+    "rel": "fleet/lander/surveyor-3.json",
+    "at": "description",
+    "old": "Surveyor 3 ist ein planetarischer Lander gebaut von Hughes Aircraft in USA. Apollo 12 besuchte es 2,5 Jahre später. Retired nach dem ersten Flug 1967.",
+    "new": "Surveyor 3 ist ein planetarer Lander, gebaut von Hughes Aircraft in den USA. Apollo 12 besuchte den Lander 2,5 Jahre später. Nach dem ersten Flug 1967 ausgemustert."
+  },
+  {
+    "rel": "fleet/lander/surveyor-3.json",
+    "at": "best_known_for",
+    "old": "Apollo 12 besuchte es 2,5 Jahre später",
+    "new": "Apollo 12 besuchte den Lander 2,5 Jahre später"
+  },
+  {
+    "rel": "fleet/lander/venera-13.json",
+    "at": "tagline",
+    "old": "Erste Farbaufnahmen der Venusoberfläche — überlebte 127 Minuten unter Bedingungen von 457 °C / 89-atm",
+    "new": "Erste Farbaufnahmen der Venusoberfläche — überlebte 127 Minuten bei 457 °C und 89 atm"
+  },
+  {
+    "rel": "fleet/lander/venera-13.json",
+    "at": "description",
+    "old": "Sowjetisches Venuslander-Paar (mit Venera 14). Gestartet 1981-10-30 auf einer Proton-K / D-1. Venusankunft 1982-03-01: Die 1645 kg schwere Titandescent-Kapsel trat mit 11,2 km/s in die Atmosphäre ein, entfaltete einen Fallschirm durch die obere Dunstschicht, dann wurde dieser in 47 km Höhe abgeworfen und die Kapsel fiel frei durch die untere Atmosphäre mit einer Scheibenbremse für die Bremslandung. Landung auf der Oberfläche bei 7,5°S, 303°E (vulkanische Flanke von Phoebe Regio). Erste Panorama-Farbaufnahmen der Venusoberfläche; erste Röntgenfluoreszenz-Bodenkompositionsanalyse (basaltisch, ähnlich wie terrestrischer Meeresboden); erste Akustikaufnahmen von einem anderen Planeten. Operativ 127 Minuten — weit über die 32-Minuten-Designlebensdauer hinaus — bevor elektronische Siliziumausfälle in der Umgebung von 457 °C / 89-Atmosphären CO₂ auftraten.",
+    "new": "Sowjetisches Venus-Landerpaar (mit Venera 14). Gestartet 1981-10-30 auf einer Proton-K / D-1. Ankunft an der Venus 1982-03-01: Die 1645 kg schwere Titan-Landekapsel trat mit 11,2 km/s in die Atmosphäre ein, entfaltete einen Fallschirm durch den oberen Dunst, warf ihn dann in 47 km Höhe ab und fiel mit einer Scheibenbremse für den Endabstieg frei durch die untere Atmosphäre. Aufsetzen auf der Oberfläche bei 7,5° S, 303° E (vulkanische Flanke von Phoebe Regio). Erste Panorama-Farbaufnahmen der Venusoberfläche; erste Röntgenfluoreszenz-Analyse der Bodenzusammensetzung (basaltisch, wie terrestrischer Ozeanboden); erste Tonaufnahmen von einem anderen Planeten. Arbeitete 127 Minuten — weit über die Auslegungsdauer von 32 Minuten hinaus — bis die Siliziumelektronik in der Umgebung von 457 °C und 89 Atmosphären CO₂ ausfiel."
+  },
+  {
+    "rel": "fleet/lander/venera-13.json",
+    "at": "best_known_for",
+    "old": "Erste Farbaufnahmen der Venusoberfläche — 127-Minuten-Überleben unter 457 °C / 89-atm-Bedingungen",
+    "new": "Erste Farbaufnahmen der Venusoberfläche — 127 Minuten Überleben bei 457 °C und 89 atm"
+  },
+  {
+    "rel": "fleet/lander/venera-7.json",
+    "at": "description",
+    "old": "Venera 7-class ist ein Planetenlander, der von NPO Lavochkin in der UdSSR gebaut wurde. Erste weiche Landung auf einem anderen Planeten und erste Datenübertragung von der Oberfläche eines anderen Planeten (Venus, 1970). Nach dem ersten Flug 1970 außer Betrieb genommen.",
+    "new": "Die Venera-7-Klasse ist ein Planetenlander, gebaut von NPO Lavochkin in der UdSSR. Erste weiche Landung auf einem anderen Planeten und erste Datenübertragung von der Oberfläche eines anderen Planeten (Venus, 1970). Nach dem ersten Flug 1970 außer Betrieb genommen."
+  },
+  {
+    "rel": "fleet/lander/viking-1.json",
+    "at": "tagline",
+    "old": "Erste erfolgreiche Marslander; Biologie-Experimente",
+    "new": "Erster erfolgreicher Marslander; Biologie-Experimente"
+  },
+  {
+    "rel": "fleet/lander/viking-1.json",
+    "at": "dispatch",
+    "old": "Viking 1 löste das Problem, das bisher nichts gelöst hatte: Wie man auf dem Mars landet und überlebt. Die sowjetischen Lander davor waren etwa zwanzig Sekunden nach dem Aufsetzen gestorben und hatten nur eine charakterlose graue Aufnahme zurückgesendet; Viking musste durch eine Atmosphäre hinabsteigen, die zu dünn war, um sich auf sie zu verlassen, und zu dicht, um sie zu ignorieren, und es tat dies mit einer erstmaligen Abfolge — eine Hitzeschutzschale für die Passage durch die Atmosphäre, einen Fallschirm für die Mitte des Abstiegs und drosselbare Raketentriebwerke, um seine drei Beine am Ende sanft aufzusetzen. Es war zwei Maschinen in einer: ein Orbiter zum Erkunden und Weiterleiten und ein Lander zur Bodenarbeit, und er trug das erste Labor mit sich, das je zu einem anderen Planeten gesendet wurde, um dessen Boden auf Leben zu testen. Jede Marslander-Mission seither hat eine Version des Abstiegs geflogen, den Viking bewies.",
+    "new": "Viking 1 löste das Problem, das bis dahin niemand gelöst hatte: wie man auf dem Mars landet und überlebt. Die sowjetischen Lander davor waren etwa zwanzig Sekunden nach dem Aufsetzen verstummt und hatten nur ein konturloses graues Bild zurückgesendet; Viking musste durch eine Atmosphäre hinabsteigen, die zu dünn war, um sich auf sie zu verlassen, und zu dicht, um sie zu ignorieren, und es tat dies mit einer Abfolge, die es so noch nie gegeben hatte — eine Aeroshell, um den Eintritt zu überstehen, einen Fallschirm für die Mitte des Falls und drosselbare Raketentriebwerke, um seine drei Beine am Ende sanft aufzusetzen. Es waren zwei Maschinen in einer: ein Orbiter zum Erkunden und Weiterleiten und ein Lander für die Arbeit am Boden, und es trug das erste Labor mit sich, das je zu einem anderen Planeten geschickt wurde, um dessen Boden auf Leben zu testen. Jede Marslandung seither hat eine Variante des Abstiegs geflogen, den Viking bewiesen hat."
+  },
+  {
+    "rel": "fleet/lander/viking-1.json",
+    "at": "description",
+    "old": "Die erste erfolgreiche Marslander-Mission, von Juli 1976 bis November 1982 auf der Oberfläche tätig. Führte vier Biologie-Experimente durch und lieferte hochauflösende Bilder der Ebenen von Chryse Planitia. Das Viking 1 / Viking 2-Paar setzte die Vorlage für jeden nachfolgenden Marslander.",
+    "new": "Die erste erfolgreiche Marslander-Mission, von Juli 1976 bis November 1982 auf der Oberfläche tätig. Führte vier Biologie-Experimente durch und lieferte hochauflösende Bilder der Ebene Chryse Planitia. Das Paar Viking 1 / Viking 2 setzte die Vorlage für jeden nachfolgenden Marslander."
+  },
+  {
+    "rel": "fleet/lander/viking-1.json",
+    "at": "best_known_for",
+    "old": "Erste erfolgreiche Marslander; Biologie-Experimente",
+    "new": "Erster erfolgreicher Marslander; Biologie-Experimente"
+  },
+  {
+    "rel": "fleet/lander/viking2-lander.json",
+    "at": "description",
+    "old": "Die Oberflächenhälfte von NASAs Viking 2-Mission und der zweite erfolgreiche US-Marslander, 47 Tage nach Viking 1. Gestartet am 09.09.1975 auf einer Titan IIIE-Centaur, landete am 03.09.1976 in der Utopia Planitia (47,97° N, 134,04° E) — weit nördlicher als Viking 1, in einer anderen Ebenenart, um die Wissenschaftsausbeute zu verbreitern. Betrieb das gleiche Instrumentenpaket wie Viking 1: ein Biologie-Paket (Pyrolytic Release / Labeled Release / Gas Exchange-Experimente zur Suche nach mikrobieller Stoffwechselaktivität — das berühmte mehrdeutige positive Labeled-Release-Ergebnis, das bis heute umstritten ist), GC-MS zur Analyse organischer Stoffe im Boden (keine gefunden), Faksimilekameras mit mehr als 1.400 Bildern, Röntgenfluoreszenz-Bodenchemie, Meteorologie und Seismometer (eines von zweien, die je auf dem Mars betrieben wurden — konnte Beben durch Kabinenlärm nicht registrieren). Betrieb bis zum 11.04.1980, als die Batterien ausfallen.",
+    "new": "Die Oberflächenhälfte von NASAs Mission Viking 2 und der zweite erfolgreiche US-Marslander, 47 Tage nach Viking 1. Gestartet am 1975-09-09 auf einer Titan IIIE-Centaur, landete er am 1976-09-03 in der Utopia Planitia (47,97° N, 134,04° E) — weit nördlicher als Viking 1, in einem anderen Ebenentyp, um die wissenschaftliche Ausbeute zu verbreitern. Führte dasselbe Instrumentenpaket wie Viking 1 mit: ein Biologie-Paket (Experimente Pyrolytic Release / Labeled Release / Gas Exchange zur Suche nach mikrobiellem Stoffwechsel — das berühmte mehrdeutige positive Labeled-Release-Ergebnis, das bis heute umstritten ist), GC-MS für organische Stoffe im Boden (keine gefunden), Faksimilekameras mit mehr als 1.400 Bildern, Röntgenfluoreszenz-Bodenchemie, Meteorologie und ein Seismometer (eines von zweien, die je auf dem Mars flogen — konnte Beben wegen des Lärms in der Kabine nicht registrieren). Arbeitete bis zum 1980-04-11, als die Batterien ausfielen."
+  },
+  {
+    "rel": "fleet/lander/viking2-lander.json",
+    "at": "best_known_for",
+    "old": "Zweiter Lander der USA auf der Marsoberfläche (Utopia Planitia 1976-09-03). Zwilling des Viking 1 lander; führte Biologie-, Bodenchemie- und Meteorologieexperimente bis 1980 durch",
+    "new": "Zweiter US-Marslander (Utopia Planitia 1976-09-03). Zwilling von Viking 1; Biologie-, Bodenchemie- und Meteorologie-Messungen bis 1980"
+  },
+  {
+    "rel": "fleet/lander/vikram-cy2.json",
+    "at": "tagline",
+    "old": "Chandrayaan-2 Lander; abgestürzt; Orbiter lebt auf",
+    "new": "Lander von Chandrayaan-2; abgestürzt; der Orbiter arbeitet weiter"
+  },
+  {
+    "rel": "fleet/lander/vikram-cy2.json",
+    "at": "description",
+    "old": "Vikram (Chandrayaan-2) ist ein planetarischer Lander gebaut von ISRO in Indien. Chandrayaan-2 Lander; abgestürzt; Orbiter lebt weiter. Flew in 2019, aber gescheitert; informiert die Erlösung-Arc-Schicht der kommerziellen Ära Epoche.",
+    "new": "Vikram (Chandrayaan-2) ist ein planetarer Lander, gebaut von ISRO in Indien. Lander von Chandrayaan-2; abgestürzt; der Orbiter arbeitet weiter. Flog 2019, scheiterte aber; fließt in die Erlösungsbogen-Ebene der Epoche der kommerziellen Ära ein."
+  },
+  {
+    "rel": "fleet/lander/vikram-cy2.json",
+    "at": "best_known_for",
+    "old": "Chandrayaan-2 Lander; abgestürzt; Orbiter lebt auf",
+    "new": "Lander von Chandrayaan-2; abgestürzt; der Orbiter arbeitet weiter"
+  },
+  {
+    "rel": "fleet/lander/vikram-cy3.json",
+    "at": "description",
+    "old": "Indiens erste erfolgreiche Mondsonde (August 2023), das erste Raumfahrzeug, das in der Nähe des Mondsüdpols landete. Zwei Jahre nachdem Vikram CY-2 in derselben Region abstürzte — der Erlösungsbogen, den Indien und ISRO brauchten.",
+    "new": "Indiens erster erfolgreicher Mondlander (August 2023), das erste Raumfahrzeug, das in der Nähe des Mondsüdpols landete. Zwei Jahre nachdem Vikram CY-2 in derselben Region abgestürzt war — der Erlösungsbogen, den Indien und ISRO brauchten."
+  },
+  {
+    "rel": "fleet/launch-site/baikonur-1-5.json",
+    "at": "description",
+    "old": "Der historisch bedeutsamste Orbitalstartplatz der Welt. R-7-ICBM-Testgelände ab 1957; unmittelbar am 4. Oktober 1957 für Sputnik 1 umgenutzt — der Beginn des Weltraumzeitalters. Juri Gagarin hob von hier am 12. April 1961 ab. Alle Vostok-Besatzungen, alle Voskhod-Missionen, der Großteil aller Soyuz-Manifeste bis MS-15 im September 2019. Fünfhundertvierzig Starts von einem Startplatz über zweiundneunsechzig Jahre. Bewahrt als Museumsdenkmal; der Sanierungsplan aus der Ära 2019 wurde aufgegeben, als der Standort 2025 an Kasachstan übertragen wurde.",
+    "new": "Der historisch bedeutsamste Orbitalstartplatz der Welt. Teststand für die R-7-ICBM ab 1957; sofort am 4. Oktober 1957 für Sputnik 1 umgenutzt — der Beginn des Weltraumzeitalters. Juri Gagarin hob von hier am 12. April 1961 ab. Alle Vostok-Besatzungen, alle Voskhod-Flüge, der Großteil aller Soyuz-Flüge bis MS-15 im September 2019. Fünfhundertvierzig Starts von einem Startplatz in zweiundsechzig Jahren. Als Museumsdenkmal erhalten; der Sanierungsplan von 2019 wurde aufgegeben, als der Standort 2025 an Kasachstan übertragen wurde."
+  },
+  {
+    "rel": "fleet/launch-site/baikonur-200.json",
+    "at": "description",
+    "old": "Baikonur Startplatz 200 beherbergt die Rampen PU-1 (LC200/39) und PU-2 (LC200/40) für die Schwerlastraketen Proton-K und Proton-M. Von hier aus hat Roscosmos fast alle Mir-Module, die ISS-Module Zarya und Zvezda, Geosynchrone Kommunikationssatelliten, die GLONASS-Navigationsflotte und Luna 25 (2023) gestartet. Site 200 bleibt neben Site 81 während der abschließenden Betriebsjahre der Proton aktiv.",
+    "new": "Baikonur Startplatz 200 beherbergt die Rampen PU-1 (LC200/39) und PU-2 (LC200/40) für die Schwerlastraketen Proton-K und Proton-M. Von hier aus hat Roscosmos fast alle Mir-Module, die ISS-Module Zarya und Zvezda, geostationäre Kommunikationssatelliten, die GLONASS-Navigationskonstellation und Luna 25 (2023) gestartet. Startplatz 200 bleibt neben Startplatz 81 in den letzten Betriebsjahren der Proton aktiv."
+  },
+  {
+    "rel": "fleet/launch-site/baikonur-31-6.json",
+    "at": "tagline",
+    "old": "Aktive Soyuz-Crewed-Rampe – alle Soyuz-Crewwechsel zur ISS seit 2020 sind von Site 31 gestartet",
+    "new": "Aktive Rampe für bemannte Soyuz-Flüge – alle Soyuz-Besatzungswechsel zur ISS seit 2020 sind vom Startplatz 31 gestartet"
+  },
+  {
+    "rel": "fleet/launch-site/baikonur-31-6.json",
+    "at": "description",
+    "old": "Die andere Hälfte des Soyuz-Betriebs in Baikonur. Ursprünglich eine R-7-ICBM-Rampe von 1961; 2014 für Soyuz-2.1a modernisiert. Als Site 1/5 2019 zur Überholung stillgelegt wurde, übernahm Site 31 das gesamte Soyuz-Crewprogramm – alle Soyuz MS-Crewwechsel zur ISS seit MS-16 im April 2020 sind von hier gestartet. Kontinuierliche Raumfahrt-Kadenz: ungefähr zwei Crews pro Jahr ohne Unterbrechung.",
+    "new": "Die andere Hälfte des Soyuz-Betriebs in Baikonur. Ursprünglich eine R-7-ICBM-Rampe von 1961; 2014 für Soyuz-2.1a modernisiert. Als Startplatz 1/5 2019 zur Überholung stillgelegt wurde, übernahm Startplatz 31 das gesamte Soyuz-Besatzungsprogramm – jeder Soyuz-MS-Besatzungswechsel zur ISS seit MS-16 im April 2020 ist von hier gestartet. Durchgehender bemannter Flugbetrieb: etwa zwei Besatzungen pro Jahr, ohne Unterbrechung."
+  },
+  {
+    "rel": "fleet/launch-site/baikonur-31-6.json",
+    "at": "best_known_for",
+    "old": "Aktive Soyuz-Crewed-Rampe – alle Soyuz-Crewwechsel zur ISS seit 2020 sind von Site 31 gestartet",
+    "new": "Aktive Rampe für bemannte Soyuz-Flüge – alle Soyuz-Besatzungswechsel zur ISS seit 2020 sind vom Startplatz 31 gestartet"
+  },
+  {
+    "rel": "fleet/launch-site/cape-canaveral-lc-36b.json",
+    "at": "tagline",
+    "old": "USAF Atlas-Centaur-Pad — Mariner 10, Pioneer 11 (1973), Pioneer Venus (1978); jetzt Blue Origin New Glenn (seit 2015 geleast, 2025 geflogen)",
+    "new": "USAF-Atlas-Centaur-Rampe — Mariner 10, Pioneer 11 (1973), Pioneer Venus (1978); jetzt Blue Origins New Glenn (seit 2015, 2025 geflogen)"
+  },
+  {
+    "rel": "fleet/launch-site/cape-canaveral-lc-36b.json",
+    "at": "description",
+    "old": "Cape Canaveral Launch Complex 36B war der zweite von zwei Atlas-Centaur-Pads am Cape Canaveral (neben LC-36A, das zuerst gebaut wurde). LC-36B flog erstmals 1965-08-11 mit Atlas-Centaur AC-6 und wurde zum Hauptpad für den hochenergetischen Atlas-Centaur-Stack — mit Flügen von Mariner 10 (1973-11-03, erstes Mercury-Flyby), Pioneer 11 (1973-04-06, erstes Saturn-Flyby), Pioneer Venus 1 + 2 (1978) und vielen kommerziellen Intelsat / Inmarsat / Hot Bird GEO-Kommunikationssatelliten durch die 1990er und frühen 2000er Jahre. Letzter Flug 2005-02-03 — Atlas IIIB AC-208 — der letzte Atlas IIIB-Start und letzter LC-36B-Flug unter USAF-Ägide. Der Komplex wurde 2015 an Blue Origin geleast und abgerissen + als Blue Origin New Glenn-Pad umgebaut (LC-36 vereinigt), mit dem ersten New Glenn-Flug 2025-01-16. Der ursprüngliche mobile Serviceturm von LC-36B wurde 2007-06-16 demoliert.",
+    "new": "Cape Canaveral Launch Complex 36B war die zweite von zwei Atlas-Centaur-Rampen am Cape Canaveral (neben LC-36A, die zuerst gebaut wurde). LC-36B flog erstmals 1965-08-11 mit Atlas-Centaur AC-6 und wurde zur Hauptrampe für die hochenergetische Atlas-Centaur-Kombination — mit Starts von Mariner 10 (1973-11-03, erster Merkur-Vorbeiflug), Pioneer 11 (1973-04-06, erster Saturn-Vorbeiflug), Pioneer Venus 1 + 2 (1978) und vielen kommerziellen geostationären Kommunikationssatelliten von Intelsat, Inmarsat und Hot Bird in den 1990er-Jahren und frühen 2000er-Jahren. Letzter Flug 2005-02-03 — Atlas IIIB AC-208 — der letzte Start einer Atlas IIIB und der letzte Flug von LC-36B unter der Ägide der USAF. Der Komplex wurde 2015 an Blue Origin verpachtet, abgerissen und als Rampe für Blue Origins New Glenn neu gebaut (LC-36 vereinheitlicht); der erste New-Glenn-Flug fand 2025-01-16 statt. Der ursprüngliche mobile Serviceturm von LC-36B wurde 2007-06-16 gesprengt."
+  },
+  {
+    "rel": "fleet/launch-site/cape-canaveral-slc-41.json",
+    "at": "tagline",
+    "old": "Atlas V Hauptstartplatz — flog alle Atlas-V-Missionen einschließlich Mars Perseverance + Lucy + Starliner CFT",
+    "new": "Hauptstartplatz der Atlas V — startete jede Atlas-V-Mission, darunter Mars Perseverance + Lucy + Starliner CFT"
+  },
+  {
+    "rel": "fleet/launch-site/cape-canaveral-slc-41.json",
+    "at": "description",
+    "old": "United Launch Alliance primäres Atlas V-Startgelände auf Cape Canaveral, ursprünglich in den 1960er Jahren für Titan III gebaut, 1999 vollständig abgerissen und als Atlas V-Startplatz wiederaufgebaut; erster Atlas V-Flug 2002-08-21. Jeder Atlas V-Flug startete von hier — Mars Reconnaissance Orbiter, Curiosity, Perseverance, Lucy, Juno, der Boeing Starliner Crew Flight Test und Dutzende von NSSL-Missionen zur Nationalen Sicherheit. Beherbergt auch Vulcan Centaur, die ab Januar 2024 von SLC-41 startet.",
+    "new": "Die primäre Atlas-V-Rampe der United Launch Alliance am Cape Canaveral, ursprünglich in den 1960er-Jahren für Titan III gebaut, 1999 vollständig abgerissen und als Atlas-V-Rampe neu errichtet; erster Atlas-V-Flug 2002-08-21. Jeder Atlas-V-Flug startete von hier — Mars Reconnaissance Orbiter, Curiosity, Perseverance, Lucy, Juno, der Boeing Starliner Crew Flight Test und Dutzende NSSL-Missionen für die nationale Sicherheit. Auch Vulcan Centaur startet seit Januar 2024 von SLC-41."
+  },
+  {
+    "rel": "fleet/launch-site/cape-canaveral-slc-41.json",
+    "at": "best_known_for",
+    "old": "Atlas V Hauptstartplatz",
+    "new": "Hauptstartplatz der Atlas V"
+  },
+  {
+    "rel": "fleet/launch-site/gagarins-start.json",
+    "at": "dispatch",
+    "old": "Launch Complex 1 am Baikonur ist, mit großem Abstand, das bedeutendste Stück Boden in der Geschichte der Raumfahrt. Von diesem einzelnen Startplatz aus startete die Sowjetunion 1957 Sputnik und eröffnete das Weltraumzeitalter; 1961 Gagarin und öffnete es für Menschen; und dann, für die nächsten sechzig Jahre, fast jeden bemannten Flug, den das Programm durchführte, bis hin zu den Soyuz-Besatzungen von 2019. Kosmonauten nannten ihn Gagarins Start. Es war ein funktionsfähiges Abschussgelände für R-7-Raketen, das in die Geschichte gedrängt wurde, und für sechs Jahrzehnte bedeutete der Satz „eine Besatzung startet heute\" fast immer, dass sie von hier aus starteten.",
+    "new": "Startkomplex 1 in Baikonur ist mit großem Abstand das bedeutendste Stück Boden in der Geschichte der Raumfahrt. Von dieser einen Rampe aus startete die Sowjetunion 1957 Sputnik und eröffnete damit das Weltraumzeitalter; 1961 Gagarin und öffnete es damit für Menschen; und danach, sechzig Jahre lang, fast jeden bemannten Flug des Programms, bis hin zu den Soyuz-Besatzungen von 2019. Die Kosmonauten nannten sie Gagarins Start. Sie war ein einsatzfähiger R-7-Raketenstand, der in die Geschichte gestellt wurde, und sechs Jahrzehnte lang bedeutete der Satz „Eine Besatzung startete heute“ fast immer, dass sie von hier gestartet war."
+  },
+  {
+    "rel": "fleet/launch-site/gagarins-start.json",
+    "at": "description",
+    "old": "Der Startplatz 1 des Kosmodroms Baikonur (Bezeichnung 5 in sowjetischen Dokumenten; nach Vostok 1 spöttisch „Gagarins Start\" genannt) war die ursprüngliche Abschussrampe für die R-7-ICBM und die meistgenutzte bemannte Startanlage der Geschichte. Erster Start 1957-05-15 (R-7-Test); Sputnik 1 (1957-10-04 – erster künstlicher Satellit); Vostok 1 (1961-04-12 – erster bemannter Raumflug); jede bemannte Soyuz von Soyuz 1 (1967) bis Soyuz MS-15 (2019) startete vom Startplatz 1. Nach 2019 wurde die Rampe zur Modernisierung stillgelegt, um Soyuz-2 zu unterstützen (die von Vostok abgeleitete Soyuz-FG wurde außer Dienst gestellt); nachfolgende ISS-Besatzungen (ab Soyuz MS-16 im April 2020) starteten stattdessen vom Startplatz 31 des Kosmodroms Baikonur. Der Startplatz 1 ist als historisches Denkmal erhalten. Besucht von jeder russischen Besatzung während der Vorflugzeremonien.",
+    "new": "Der Startplatz 1 des Kosmodroms Baikonur (Bezeichnung 5 in sowjetischen Dokumenten; nach Vostok 1 „Gagarins Start“ genannt) war die ursprüngliche Startrampe für die R-7-ICBM und der meistgenutzte Startplatz für bemannte Flüge der Geschichte. Erster Start 1957-05-15 (R-7-Test); Sputnik 1 (1957-10-04 – erster künstlicher Satellit); Vostok 1 (1961-04-12 – erster bemannter Raumflug); jede bemannte Soyuz von Soyuz 1 (1967) bis Soyuz MS-15 (2019) startete vom Startplatz 1. Nach 2019 wurde die Rampe zur Modernisierung für Soyuz-2 stillgelegt (die von Vostok abgeleitete Soyuz-FG wurde außer Dienst gestellt); nachfolgende ISS-Besatzungen (ab Soyuz MS-16 im April 2020) starteten stattdessen vom Startplatz 31 in Baikonur. Der Startplatz 1 ist als historisches Denkmal erhalten. Von jeder russischen Besatzung bei den Zeremonien vor dem Flug besucht."
+  },
+  {
+    "rel": "fleet/launch-site/jiuquan-slc-43.json",
+    "at": "description",
+    "old": "Der erste chinesische Raumfahrtplatz (1958), operationelle orbitale Missionen seit 1970 und ab 1999 die Heimat der Raumfahrt mit Menschen: jede Shenzhou-Besatzung (1 bis 19 Stand 2025) ist vom Pad 91 des SLC-43 auf Long March 2F-Raketen gestartet. Jiuquan liegt im Landesinneren in der Gobi-Wüste bei 40,96°N — zu weit nördlich für die äquatoriale Geometrie, die Wenchang nutzt. Tianzhou-Frachtmissionen zu Tiangong starten stattdessen vom Kosmodrom Wenchang.",
+    "new": "Der erste chinesische Startplatz für Raumflüge (1958), seit 1970 für orbitale Starts im Einsatz und ab 1999 die feste Heimat der bemannten Raumfahrt: Jede Shenzhou-Besatzung (1 bis 19 Stand 2025) ist von Rampe 91 des SLC-43 auf Raketen vom Typ Long March 2F gestartet. Jiuquan liegt im Landesinneren der Gobi-Wüste bei 40,96° N — zu weit nördlich für die äquatornahe Geometrie, die Wenchang bietet. Tianzhou-Frachtmissionen zu Tiangong starten stattdessen vom Kosmodrom Wenchang."
+  },
+  {
+    "rel": "fleet/launch-site/kourou-ela-3.json",
+    "at": "tagline",
+    "old": "Ariane 5's Heimatrampe — JWST + Galileo + ein Viertel der geostationären Handelssatelliten über ein Jahrzehnt",
+    "new": "Heimatrampe der Ariane 5 — JWST + Galileo + ein Viertel der geostationären kommerziellen Satelliten über ein Jahrzehnt"
+  },
+  {
+    "rel": "fleet/launch-site/kourou-ela-3.json",
+    "at": "description",
+    "old": "Europa wählte Französisch-Guayana in den 1960er Jahren, weil 5,2°N nur fünf Grad vom Äquator entfernt liegt — diese Geometrie fügt geostationären Starts etwa 460 m/s freie östliche Geschwindigkeit hinzu, und der Atlantik im Osten ist leer. ELA-3 beherbergte Ariane 5 vom Jungfernflug im Juni 1996 — der 37 Sekunden nach dem Start aufgrund eines Softwarefehlers fehlschlug — bis zur erfolgreichen letzten Mission im Juli 2023: James Webb, das Galileo-Navigationssystem, BepiColombo, Rosetta, Herschel + Planck, JUICE und die Masse des westlichen kommerziellen GEO-Verkehrs über zwei Jahrzehnte. ELA-4 daneben ist nun mit Ariane 6 aktiv.",
+    "new": "Europa wählte Französisch-Guayana in den 1960er-Jahren, weil 5,2° N nur gut fünf Grad vom Äquator entfernt liegt — diese Geometrie verleiht geostationären Starts etwa 460 m/s kostenlose Geschwindigkeit nach Osten, und der Atlantik im Osten ist leer. ELA-3 beherbergte die Ariane 5 vom Jungfernflug im Juni 1996 — der 37 Sekunden nach dem Start wegen eines Softwarefehlers scheiterte — bis zur erfolgreichen letzten Mission im Juli 2023: James Webb, das Navigationssystem Galileo, BepiColombo, Rosetta, Herschel + Planck, JUICE und der Großteil des westlichen kommerziellen GEO-Verkehrs über zwei Jahrzehnte. ELA-4 nebenan ist nun mit der Ariane 6 aktiv."
+  },
+  {
+    "rel": "fleet/launch-site/kourou-ela-3.json",
+    "at": "best_known_for",
+    "old": "Ariane 5's Heimatrampe — JWST + Galileo + ein Viertel der geostationären Handelssatelliten über ein Jahrzehnt",
+    "new": "Heimatrampe der Ariane 5 — JWST + Galileo + ein Viertel der geostationären kommerziellen Satelliten über ein Jahrzehnt"
+  },
+  {
+    "rel": "fleet/launch-site/kourou-ela-4.json",
+    "at": "tagline",
+    "old": "Ariane 6s Heimpad — Europas geostationärer Zugang nach Ariane 5",
+    "new": "Heimatrampe der Ariane 6 — Europas geostationärer Zugang nach der Ariane 5"
+  },
+  {
+    "rel": "fleet/launch-site/kourou-ela-4.json",
+    "at": "description",
+    "old": "Das Schwester-Pad von ELA-3 im Centre Spatial Guyanais. Bau begann 2015; Ariane 6 Jungfernflug VA262 startete am 9. Juli 2024 von hier. ELA-4 erbt den gleichen 5,2°N-Äquatorialvorteil, der Ariane 5 zum erfolgreichsten westlichen geostationären Träger seiner Zeit machte, mit einem für höhere Kadenz umgestalteten Bodensegment: horizontales Integrationsgebäude, verschiebbares mobiles Portal, vollständige Integration der neuen ESC-B-Oberstufe. Europas strategischer Autonomie-Träger für institutionelle Nutzlasten (Galileo-Upgrade, Copernicus, ESA-Wissenschaftsmissionen) plus kommerziellen GEO-Verkehr.",
+    "new": "Die Schwesterrampe von ELA-3 im Centre Spatial Guyanais. Der Bau begann 2015; der Jungfernflug der Ariane 6, VA262, startete am 9. Juli 2024 von hier. ELA-4 erbt denselben äquatornahen Vorteil bei 5,2° N, der die Ariane 5 zur erfolgreichsten westlichen geostationären Trägerrakete ihrer Zeit machte, mit einem für höhere Startfrequenz umgestalteten Bodensegment: horizontales Integrationsgebäude, verschiebbares mobiles Portal, vollständige Integration der neuen ESC-B-Oberstufe. Europas Trägerrakete für strategische Autonomie bei institutionellen Nutzlasten (Galileo-Erneuerung, Copernicus, ESA-Wissenschaftsmissionen) plus kommerziellen GEO-Verkehr."
+  },
+  {
+    "rel": "fleet/launch-site/kourou-ela-4.json",
+    "at": "best_known_for",
+    "old": "Ariane 6s Heimpad — Europas geostationärer Zugang nach Ariane 5",
+    "new": "Heimatrampe der Ariane 6 — Europas geostationärer Zugang nach der Ariane 5"
+  },
+  {
+    "rel": "fleet/launch-site/lc-14.json",
+    "at": "dispatch",
+    "old": "Wenn Complex 5 ist, wo Amerikaner zum ersten Mal den Weltraum berührten, dann ist Complex 14 der Ort, wo sie zum ersten Mal blieben. Dies war die Atlas-Rampe, und alle vier Orbitalflüge von Mercury starteten von hier — Glenn, Carpenter, Schirra, Cooper — die Flüge, die einen Amerikaner in eine Umlaufbahn brachten, nicht auf einen Bogen. Sie startete später die Gemini-Atlas-Zielfahrzeuge, die Besatzungen das Rendezvous beibrachten, sodass das gleiche Stück Land die ersten Umläufe und die Ankopplungsfertigkeiten verbindet, die Apollo brauchte. Während 5 die Startlinie hält, hält 14 den Moment, in dem die Vereinigten Staaten eine echte Orbitaln­ation wurden.",
+    "new": "Wenn Startkomplex 5 der Ort ist, an dem Amerikaner zum ersten Mal den Weltraum berührten, dann ist Startkomplex 14 der Ort, an dem sie zum ersten Mal blieben. Dies war die Atlas-Rampe, und alle vier Orbitalflüge von Mercury starteten von hier — Glenn, Carpenter, Schirra, Cooper — die Flüge, die einen Amerikaner in eine Umlaufbahn brachten statt auf eine Bogenbahn. Später startete von hier auch die Gemini-Atlas-Zielfahrzeuge, die Besatzungen das Rendezvous beibrachten, sodass dasselbe Stück Boden die ersten Umläufe mit den Kopplungsfähigkeiten verbindet, die Apollo brauchen würde. Während 5 die Startlinie hält, hält 14 den Moment, in dem die Vereinigten Staaten zu einer wirklich orbitalen Nation wurden."
+  },
+  {
+    "rel": "fleet/launch-site/lc-34.json",
+    "at": "tagline",
+    "old": "NASA-Rampe am Cape Canaveral (1961–68) — erste Saturn I; Apollo 1 Brandstelle 1967-01-27; Apollo 7 erste bemannte Mission 1968-10-11",
+    "new": "NASA-Rampe am Cape Canaveral (1961–68) — erste Saturn I; Ort des Apollo-1-Brandes 1967-01-27; Apollo 7, erster bemannter Start 1968-10-11"
+  },
+  {
+    "rel": "fleet/launch-site/lc-34.json",
+    "at": "dispatch",
+    "old": "Launch Complex 34 ist der Ort, an dem die Saturn-Ära begann — und wo sie fast endet hätte. Die erste Saturn-Rakete startete 1961 von dieser einzelnen Rampe, was bewies, dass von Brauns übergroße Träger tatsächlich fliegen konnten. Es ist auch der Ort, an dem am 27. Januar 1967 das Apollo 1 Feuer Gus Grissom, Ed White und Roger Chaffee während eines Bodentests tötete — der dunkelste Tag des Programms, auf der Rampe, bevor irgendetwas den Boden verlassen hatte. Und es ist der Ort, an dem Apollo einundzwanzig Monate später zurückkehrte: Apollo 7, der erste bemannte Flug, startete von LC-34 und bewies, dass das überarbeitete Raumschiff zuverlässig war. Eine kleine Rampe hielt den ganzen Bogen — den Anfang, die Katastrophe und die Erholung. Ein Denkmal steht dort jetzt.",
+    "new": "Startkomplex 34 ist der Ort, an dem die Saturn-Ära begann — und an dem sie beinahe endete. Die erste Saturn-Rakete startete 1961 von dieser einzelnen Rampe mit nur einem Turm und bewies, dass von Brauns übergroße Träger überhaupt fliegen konnten. Es ist auch der Ort, an dem am 27. Januar 1967 das Feuer von Apollo 1 Gus Grissom, Ed White und Roger Chaffee bei einem Bodentest tötete — der dunkelste Tag des Programms, auf der Rampe, bevor irgendetwas den Boden verlassen hatte. Und es ist der Ort, an den Apollo einundzwanzig Monate später zurückkehrte: Apollo 7, der erste bemannte Flug, startete von LC-34 und bewies, dass das überarbeitete Raumfahrzeug einwandfrei war. Eine kleine Rampe umfasste den ganzen Bogen — den Anfang, die Katastrophe und den Neuanfang. Heute steht dort ein Denkmal."
+  },
+  {
+    "rel": "fleet/launch-site/lc-34.json",
+    "at": "description",
+    "old": "Cape Canaveral Launch Complex 34 war von 1961-10-27 (erste Saturn I, SA-1) bis 1968-10-11 (Apollo 7, der erste bemannte Apollo-Flug) für NASA im Betrieb. Der Startplatz LC-34 mit seinem einzelnen stählernen Versorgungsturm führte vier unbemannte Saturn I Flüge durch (SA-1 bis SA-4, 1961–1963), wurde dann für Saturn IB umgebaut und absolvierte zwei unbemannte Saturn IB Flüge (AS-201 1966, AS-202 1966), bevor der Apollo 1 Test stattfand. Am 1967-01-27 während eines Plugs-Out-Tests von Apollo 1 — des geplanten ersten bemannten Block I CSM-Flugs — entstand ein Lauffeuer in der reinen O₂-Kabine, das Gus Grissom, Ed White und Roger Chaffee innerhalb von Sekunden tötete. Die Rampe wurde für Apollo 7 (1968-10-11) wiederhergestellt, die den ersten bemannten Apollo-Flug startete, und wurde dann 1968-11 stillgelegt. Der Betonring der Löschanlage des Pads und der Hauptflammengraben sind noch erhalten; eine Gedenkplakette vor Ort trägt die Inschrift „Sie gaben ihr Leben im Dienste ihres Landes in der fortwährenden Erforschung der letzten Grenze der Menschheit.\"",
+    "new": "Cape Canaveral Launch Complex 34 war von 1961-10-27 (erste Saturn I, SA-1) bis 1968-10-11 (Apollo 7, der erste bemannte Apollo-Flug) für die NASA im Einsatz. Der einzelne stählerne Versorgungsturm von LC-34 trug vier unbemannte Saturn-I-Flüge (SA-1 bis SA-4, 1961–1963), wurde dann für die Saturn IB umgebaut und startete zwei unbemannte Saturn-IB-Flüge (AS-201 1966, AS-202 1966), bevor der Test von Apollo 1 stattfand. Am 1967-01-27 tötete bei einem Plugs-Out-Test von Apollo 1 — dem geplanten ersten bemannten Flug eines Block-I-CSM — ein Blitzbrand in der Kabine mit reinem O₂ Gus Grissom, Ed White und Roger Chaffee innerhalb von Sekunden. Die Rampe wurde für Apollo 7 (1968-10-11) wiederaufgebaut, der den ersten bemannten Apollo-Flug startete, und 1968-11 stillgelegt. Der Betonflutring der Rampe und der Hauptflammengraben stehen noch; eine Gedenktafel vor Ort trägt die Inschrift „Sie gaben ihr Leben im Dienst ihres Landes bei der fortwährenden Erforschung der letzten Grenze der Menschheit.“"
+  },
+  {
+    "rel": "fleet/launch-site/lc-34.json",
+    "at": "best_known_for",
+    "old": "NASA-Rampe am Cape Canaveral (1961–68) — erste Saturn I; Apollo 1 Brandstelle 1967-01-27; Apollo 7 erste bemannte Mission 1968-10-11",
+    "new": "NASA-Rampe am Cape Canaveral (1961–68) — erste Saturn I; Ort des Apollo-1-Brandes 1967-01-27; Apollo 7, erster bemannter Start 1968-10-11"
+  },
+  {
+    "rel": "fleet/launch-site/lc-39a.json",
+    "at": "tagline",
+    "old": "Startete Apollo 8, 9, 11–17 (alle bemannten Mondmissionen zum Mond); heute fliegen Falcon 9, Falcon Heavy und Crew Dragon",
+    "new": "Startete Apollo 8, 9, 11–17 (alle bemannten Mondmissionen); heute starten dort Falcon 9, Falcon Heavy und Crew Dragon"
+  },
+  {
+    "rel": "fleet/launch-site/lc-39a.json",
+    "at": "dispatch",
+    "old": "Launch Complex 39A wurde nach einer Idee gebaut, die fast ebenso revolutionär war wie die Rakete selbst: Baue die Rakete nicht auf dem Startplatz. Stapel stattdessen die Saturn V im riesigen Vehicle Assembly Building, dann transportiere den kompletten ~3.000-Tonnen-Stack — aufrecht stehend — auf einem Crawler-Transporter zur Rampe, der sich im Schneckentempo vorwärts bewegt. Dieser „saubere Startplatz\"-Ansatz ermöglichte es einer einzigen Anlage, die größte je geflogene Rakete viel schneller nachzuladen als eine Montage vor Ort es hätte können. Das Design überlebte Apollo um ein Jahrhundert: derselbe Startplatz flog den Großteil der Space Shuttle Flotte und wird seit 2014 von SpaceX geleast und fliegt nun Falcon Heavy sowie Astronauten auf Crew Dragon. Gute Infrastruktur erweist sich als die eleganteste Art eines Mondschusses — baue sie einmal und sie zahlt sich ewig aus.",
+    "new": "Launch Complex 39A wurde um eine Idee herum gebaut, die fast so radikal war wie die Rakete, der sie diente: die Rakete nicht auf der Rampe bauen. Stattdessen wird die Saturn V im riesigen Vehicle Assembly Building gestapelt und der gesamte ~3.000 Tonnen schwere Stapel dann aufrecht stehend auf einem Crawler-Transporter im Schritttempo zur Rampe gefahren. Dieser Ansatz der „sauberen Rampe“ erlaubte es einem einzigen Standort, die größte je geflogene Rakete weit schneller startklar zu machen, als es eine Montage vor Ort je gekonnt hätte. Das Konzept überdauerte Apollo um ein halbes Jahrhundert: Dieselbe Rampe startete den Großteil der Space-Shuttle-Flotte und trägt, seit 2014 an SpaceX verpachtet, heute Falcon Heavy und Astronauten auf Crew Dragon. Gute Infrastruktur ist, wie sich zeigt, die leiseste Art von Mondprojekt — einmal gebaut, zahlt sie sich weiter aus."
+  },
+  {
+    "rel": "fleet/launch-site/lc-39a.json",
+    "at": "description",
+    "old": "Gebaut für Saturn V, beibehalten für Shuttle, 2014 an SpaceX vermietet. Von Pad A: Apollo 4 (die erste Saturn V), Apollo 11 (die erste Mondlandung), Apollo 13, Apollo 17 (die letzte Mondlandung), Skylab, zweiundachtzig Space Shuttle-Flüge einschließlich des ersten STS-1, und seit 2017 jeder Falcon Heavy und jeder Crew Dragon zur ISS. Derselbe Flammengraben, dieselbe Crawlerway, drei Epochen der bemannten US-Raumfahrt.",
+    "new": "Gebaut für die Saturn V, für das Shuttle weitergenutzt, 2014 an SpaceX verpachtet. Von Rampe A starteten: Apollo 4 (die erste Saturn V), Apollo 11 (die erste Mondlandung), Apollo 13, Apollo 17 (die letzte Mondlandung), Skylab, zweiundachtzig Space-Shuttle-Flüge einschließlich des ersten, STS-1, und seit 2017 jede Falcon Heavy und jede Crew Dragon zur ISS. Derselbe Flammengraben, derselbe Crawlerway, drei Epochen der bemannten US-Raumfahrt."
+  },
+  {
+    "rel": "fleet/launch-site/lc-39a.json",
+    "at": "best_known_for",
+    "old": "Startete Apollo 8, 9, 11–17 (alle bemannten Mondmissionen zum Mond); heute fliegen Falcon 9, Falcon Heavy und Crew Dragon",
+    "new": "Startete Apollo 8, 9, 11–17 (alle bemannten Mondmissionen); heute starten dort Falcon 9, Falcon Heavy und Crew Dragon"
+  },
+  {
+    "rel": "fleet/launch-site/lc-39b.json",
+    "at": "description",
+    "old": "Pad 39B trug Apollo 10 (die Mondmission als Generalprobe), Skylab 2/3/4-Besatzungsstarts und dreiundfünfzig Space Shuttle-Flüge — der erste war der verhängnisvolle STS-51-L Challenger im Januar 1986. Ende der 2000er Jahre als sauberer Startplatz umgebaut — kein fester Servicetower, mobile Launcher-Plattform pro Mission — um die nächste Generation von Fahrzeugen zu beherbergen. Artemis I hob im November 2022 von 39B ab; Artemis II und III werden folgen.",
+    "new": "Rampe 39B trug Apollo 10 (die Generalprobe für die Mondlandung), die Besatzungsstarts von Skylab 2/3/4 und dreiundfünfzig Space-Shuttle-Flüge — der erste davon war der verhängnisvolle Flug STS-51-L der Challenger im Januar 1986. Ende der 2000er-Jahre als saubere Rampe umgebaut — kein fester Serviceturm, pro Mission eine mobile Startplattform —, um die nächste Fahrzeuggeneration aufzunehmen. Artemis I hob im November 2022 von 39B ab; Artemis II und III werden folgen."
+  },
+  {
+    "rel": "fleet/launch-site/lc-5.json",
+    "at": "dispatch",
+    "old": "Launch Complex 5 ist eine bescheidene Betonrampe mit einem übergroßen Anspruch: Hier begann die bemannte amerikanische Raumfahrt physisch. Es war ein Teststand für Redstone-Raketen, bevor die NASA ihn anpasste, und von hier aus wurde Alan Shepard am 5. Mai 1961 der erste Amerikaner, der den Planeten verließ. Es startete nur die beiden suborbitalen Mercury-Flüge, bevor das Programm zu den leistungsstärkeren Atlas-Rampen weiter unten am Cape wechselte — eine kurze Karriere, aber es markiert die Startlinie. Der erste amerikanische Flug von allem, was folgte, führt zurück zu diesem Ort.",
+    "new": "Startkomplex 5 ist eine bescheidene Betonrampe mit einem überragenden Anspruch: Hier begann die bemannte amerikanische Raumfahrt ganz konkret. Sie war ein Teststand für Redstone-Raketen, bevor die NASA sie anpasste, und von hier aus wurde Alan Shepard am 5. Mai 1961 der erste Amerikaner, der den Planeten verließ. Sie startete nur die beiden suborbitalen Mercury-Sprünge, bevor das Programm zu den leistungsstärkeren Atlas-Rampen weiter unten am Cape wechselte — eine kurze Laufbahn, aber sie markiert die Startlinie. Der erste amerikanische Flug von allem, was folgte, führt zurück zu diesem Ort."
+  },
+  {
+    "rel": "fleet/launch-site/lc-5.json",
+    "at": "description",
+    "old": "Cape Canaveral Launch Complex 5 war Austragungsort von Redstone-IRBM-Tests (1956–1961), bevor es für das Mercury-Redstone-Programm der NASA umgebaut wurde. Freedom 7 (1961-05-05, Shepard, erster Amerikaner im Weltall) und Liberty Bell 7 (1961-07-21, Grissom) starteten beide von LC-5. Das Blockhaus der Abschussrampe – massiv verstärkt aus Beton mit dicker sprengstoffresistenter Verglasung – ist erhalten geblieben und gehört zum Museum der Cape Canaveral Air Force Station, wo es als Ausstellungsraum des Mercury-Programms genutzt wird. Das Blockhaus-Innere bewahrt die Instrumententafeln aus dieser Zeit, einschließlich der Konsolen, an denen die Startteams während der Kubakrise arbeiteten. Letzter Start 1961-07-21 – LC-5 wurde nach Liberty Bell 7 stillgelegt, als die NASA zu LC-14 für die Atlas-Mercury-Flüge wechselte.",
+    "new": "Cape Canaveral Launch Complex 5 war Schauplatz von Redstone-IRBM-Tests (1956–1961), bevor es für das Mercury-Redstone-Programm der NASA umgebaut wurde. Freedom 7 (1961-05-05, Shepard, erster Amerikaner im Weltall) und Liberty Bell 7 (1961-07-21, Grissom) starteten beide von LC-5. Der Bunker der Rampe – schwerer Stahlbeton mit dickem explosionsfestem Glas – ist unversehrt erhalten und Teil des Museums der Cape Canaveral Air Force Station, wo er als Ausstellungsraum zum Mercury-Programm dient. Das Innere des Bunkers bewahrt die Instrumententafeln aus dieser Zeit, einschließlich der Konsolen, an denen die Startteams während der Kubakrise arbeiteten. Letzter Start 1961-07-21 – LC-5 wurde nach Liberty Bell 7 stillgelegt, als die NASA für die Atlas-Mercury-Flüge zu LC-14 wechselte."
+  },
+  {
+    "rel": "fleet/launch-site/plesetsk-41-1.json",
+    "at": "tagline",
+    "old": "R-7-family pad (Vostok-2 / Soyuz-class) — 308 Starts, 1966-1981",
+    "new": "Rampe der R-7-Familie (Vostok-2 / Soyuz-Klasse) — 308 Starts, 1966–1981"
+  },
+  {
+    "rel": "fleet/launch-site/plesetsk-41-1.json",
+    "at": "description",
+    "old": "Das LC-41/1-Pad von Plessezk (auch Lesobaza oder SK-1 genannt) betrieb von 1966 bis 1981 R-7-abgeleitete Raketen und unterstützte eine umfangreiche Sammlung von militärischen Aufklärung-, Navigations- und Kommunikationssatelliten. Das Pad war Schauplatz des ersten Orbitalstarts von LC-41/1: Kosmos 112 am 17. März 1966 (Vostok-2-Träger). Während des etwa 15-jährigen Betriebs wurden ungefähr 308 erfolgreiche Orbitalstarts erreicht. Das LC-41/1-Pad befand sich bei NIIP-53 im hohen Norden Russlands und wurde nach Ende seiner Betriebszeit abgebaut.",
+    "new": "Die Rampe LC-41/1 von Plessezk (auch Lesobaza oder SK-1 genannt) betrieb von 1966 bis 1981 von der R-7 abgeleitete Raketen und unterstützte eine riesige Zahl militärischer Aufklärungs-, Navigations- und Kommunikationssatelliten. Hier fand der erste Orbitalstart von LC-41/1 statt: Kosmos 112 am 17. März 1966 (Vostok-2-Träger). In rund 15 Betriebsjahren wurden ungefähr 308 erfolgreiche Orbitalstarts erreicht. Die Rampe lag bei NIIP-53 im hohen Norden Russlands und wurde nach dem Ende ihrer Betriebszeit abgebaut."
+  },
+  {
+    "rel": "fleet/launch-site/plesetsk-41-1.json",
+    "at": "best_known_for",
+    "old": "R-7-family-Rampe (Vostok-2 / Soyuz-Klasse)",
+    "new": "Rampe der R-7-Familie (Vostok-2 / Soyuz-Klasse)"
+  },
+  {
+    "rel": "fleet/launch-site/plesetsk-43.json",
+    "at": "tagline",
+    "old": "Plessezk Arbeitspferd Soyuz-Startplatz auf 62,9°N — der Startplatz für den Orbitalflug mit dem höchsten Breitengrad der Welt",
+    "new": "Das Soyuz-Arbeitspferd von Plessezk auf 62,9° N — der aktive Orbitalstartkomplex mit dem höchsten Breitengrad der Welt"
+  },
+  {
+    "rel": "fleet/launch-site/plesetsk-43.json",
+    "at": "description",
+    "old": "Kosmodrom Plessezk liegt auf 62,9°N — der Startplatz für den Orbitalflug mit dem höchsten Breitengrad der Welt. Site 43 ist einer von mehreren Startplätzen in Plessezk und betreibt heute die Soyuz-2 für russische Polar- / Molniya- / GLONASS-Nutzlasten. Ursprünglich eine R-7-ICBM-Basis Ende der 1950er Jahre, 1966 für Weltraummissionen umfunktioniert, und Plessezk hielt mehrere Jahrzehnte lang den Rekord für die meisten Orbitalstarts von einem einzigen Ort auf der Erde. Der hohe Breitengrad begrenzt, wie viel die Erdrotation trägt (weniger als bei Baikonur oder Wenchang), aber er ist perfekt für hochinklinierte Missionen, die Baikonur nicht ohne Ausweichmanöver leicht erreichen kann.",
+    "new": "Das Kosmodrom Plessezk liegt auf 62,9° N — es ist der aktive Orbitalstartkomplex mit dem höchsten Breitengrad der Welt. Startplatz 43 ist eine von mehreren Rampen in Plessezk und betreibt heute die Soyuz-2 für russische polare / Molniya- / GLONASS-Nutzlasten. Ursprünglich eine R-7-ICBM-Basis Ende der 1950er-Jahre, wurde Plessezk 1966 für Weltraumstarts umgewidmet und hielt mehrere Jahrzehnte lang den Rekord für die meisten Orbitalstarts von einem einzelnen Standort der Erde. Der hohe Breitengrad begrenzt, wie viel die Erdrotation beiträgt (weniger als in Baikonur oder Wenchang), doch er ist ideal für Missionen mit hoher Bahnneigung, die Baikonur nur mit Dogleg-Manövern erreichen kann."
+  },
+  {
+    "rel": "fleet/launch-site/plesetsk-43.json",
+    "at": "best_known_for",
+    "old": "Der nördlichste Startplatz für den Orbitalflug der Welt — Russlands Polar- / Molniya-Militär- + GLONASS-Startplatz",
+    "new": "Nördlichster Orbitalstartplatz der Welt — Russlands Rampe für Polar-, Molniya- und Militärsatelliten sowie GLONASS"
+  },
+  {
+    "rel": "fleet/launch-site/sriharikota-slp.json",
+    "at": "description",
+    "old": "Sriharikota Island an Indiens Ostküste, 13,7°N — näher am Äquator als Cape Canaveral, mit dem Bay-of-Bengal-Korridor frei zur Abflugbahn. Das Second Launch Pad (SLP) verwaltet ISROs Schwerlastprogramm: PSLV-Manifeste, LVM3 (ehemals GSLV Mk III), Chandrayaan-1 (Oktober 2008, Mondumlaufbahn/Impakter), Chandrayaan-2 (Juli 2019, Landungsabsturz), Chandrayaan-3 (Juli 2023, erfolgreiche Mondlandung in Südpolnähe), und die geplanten bemannten Gaganyaan-Missionen. Das First Launch Pad nebenan bedient kleinere PSLV/SSLV-Manifeste und beherbergte den Mangalyaan-Marsstart (November 2013).",
+    "new": "Die Insel Sriharikota an Indiens Ostküste, 13,7° N — näher am Äquator als Cape Canaveral, mit freiem Korridor über den Golf von Bengalen in Startrichtung. Die Zweite Startrampe (SLP) bedient ISROs Schwerlastprogramm: PSLV-Manifeste, LVM3 (früher GSLV Mk III), Chandrayaan-1 (Oktober 2008, Mondorbiter/Impaktor), Chandrayaan-2 (Juli 2019, bei der Landung verloren), Chandrayaan-3 (Juli 2023, erfolgreiche weiche Landung in der Nähe des Südpols) und die geplanten bemannten Gaganyaan-Missionen. Die Erste Startrampe nebenan bedient kleinere PSLV-/SSLV-Manifeste und war Startplatz der Mangalyaan-Marsmission (November 2013)."
+  },
+  {
+    "rel": "fleet/launch-site/starbase-orbital-a.json",
+    "at": "tagline",
+    "old": "Erster Starship-Orbitalflugtest; konzipiert für den vollständig wiederverwendbaren Mars-Stapel",
+    "new": "Erster Starship-Orbitalflugtest; ausgelegt für das voll wiederverwendbare Gesamtsystem Richtung Mars"
+  },
+  {
+    "rel": "fleet/launch-site/starbase-orbital-a.json",
+    "at": "description",
+    "old": "SpaceX's Starship-Startplattform in Boca Chica, Texas — ab 2019 von Grund auf für das vollständig wiederverwendbare Starship + Super Heavy gebaut. Der erste integrierte Flugtest (IFT-1) hob am 20. April 2023 ab; das Fahrzeug ging etwa 4 Minuten nach dem Start verloren, nachdem Triebwerksausfälle zum Kontrollverlust führten, aber die Startplattform überstand. Nachfolgende IFTs in 2024-25 demonstrierten das Auffangen des Boosters durch die Mechazilla-Turmtragflächen, erfolgreiche Wasserspritzlandungen und zunehmende Nutzlastklassen-Fähigkeit. Das Wasserspülsystem an diesem Startplatz ist das größte, das je für einen Orbitalstart gebaut wurde — das Überdruckgebiet der 33 Raptor-Klasse-Triebwerke ist beispiellos.",
+    "new": "SpaceX' Starship-Rampe in Boca Chica, Texas — ab 2019 von Grund auf für das vollständig wiederverwendbare Starship + Super Heavy gebaut. Der erste integrierte Flugtest (IFT-1) hob am 20. April 2023 ab; das Fahrzeug ging etwa 4 Minuten nach dem Start verloren, nachdem Triebwerksausfälle zum Kontrollverlust geführt hatten, doch die Rampe überstand. Spätere IFTs bis 2024-25 zeigten das Auffangen des Boosters durch die Arme des Mechazilla-Turms, erfolgreiche Wasserungen im Meer und eine wachsende Nutzlastklasse. Die Wasserflutanlage dieser Rampe ist die größte, die je für einen Orbitalstart gebaut wurde — der Überdruckbereich von 33 Triebwerken der Raptor-Klasse ist mit nichts anderem Fliegenden vergleichbar."
+  },
+  {
+    "rel": "fleet/launch-site/starbase-orbital-a.json",
+    "at": "best_known_for",
+    "old": "Erster Starship-Orbitalflugtest; konzipiert für den vollständig wiederverwendbaren Mars-Stapel",
+    "new": "Erster Starship-Orbitalflugtest; ausgelegt für das voll wiederverwendbare Gesamtsystem Richtung Mars"
+  },
+  {
+    "rel": "fleet/launch-site/taiyuan-lc-9.json",
+    "at": "tagline",
+    "old": "Polarbahn-Arbeitstier Langer Marsch 2D/4B/4C — Yaogan, Gaofen, Wettersatelliten",
+    "new": "Arbeitspferd für polare Bahnen mit Long March 2D / 4B / 4C — Yaogan, Gaofen, Wettersatelliten"
+  },
+  {
+    "rel": "fleet/launch-site/taiyuan-lc-9.json",
+    "at": "description",
+    "old": "LC-9 (auch Pad 9) am Kosmodrom Taiyuan führt den Großteil der TYSC-Polar- und sonnensynchronen Starts mit Langer Marsch 2D, 4B, 4C und 6A durch. Typische Nutzlasten sind die Aufklärungsserie Yaogan, die Erdbeobachtungskonstellation Gaofen und die Wettersatelliten Fengyun. Seit 2008 aktiv.",
+    "new": "LC-9 (auch Pad 9) des Kosmodroms Taiyuan führt den Großteil der polaren und sonnensynchronen Starts des TYSC mit Long March 2D, 4B, 4C und 6A durch. Typische Nutzlasten sind die Aufklärungsserie Yaogan, die Erdbeobachtungskonstellation Gaofen und die Wettersatelliten Fengyun. Seit 2008 aktiv."
+  },
+  {
+    "rel": "fleet/launch-site/taiyuan-lc-9.json",
+    "at": "best_known_for",
+    "old": "Polarbahn-Arbeitstier Yaogan/Gaofen/Fengyun",
+    "new": "Polarbahn-Arbeitspferd: Yaogan, Gaofen, Fengyun"
+  },
+  {
+    "rel": "fleet/launch-site/tanegashima-yoshinobu.json",
+    "at": "tagline",
+    "old": "Japans Schwerlast-Gateway — H-IIA + H3, HTV/HTV-X-Fracht zur ISS",
+    "new": "Japans Tor für Schwerlaststarts — H-IIA + H3, HTV-/HTV-X-Fracht zur ISS"
+  },
+  {
+    "rel": "fleet/launch-site/tanegashima-yoshinobu.json",
+    "at": "description",
+    "old": "Auf Tanegashima, der südlichen japanischen Insel, die seit 1969 Heimat des Raumfahrtprogramms der JAXA ist. LP-1 beherbergte 1996 den Jungfernflug der H-II; die H-IIA ab 2001 (49 Erfolge in 50 Flügen; stillgelegt im Juni 2025 nach ihrer letzten Mission); die sieben HTV-Frachtflüge zur ISS zwischen 2009 und 2020; und ab 2023 die neue H3-Rakete. Die Geometrie von Tanegashima bei 30°N ist für geostationäre Starts geeignet — der südliche Pazifik liegt frei im Downrange — und die Ausfallzeiten der Fischereiflotte sind berüchtigt kurz, was Japan einige der straffesten Start-Fenster-Protokolle der Welt beschert.",
+    "new": "Tanegashima ist die südliche japanische Insel, die seit 1969 Heimat des Orbitalprogramms der JAXA ist. LP-1 beherbergte 1996 den Jungfernflug der H-II; die H-IIA ab 2001 (49 Erfolge in 50 Flügen; im Juni 2025 nach ihrer letzten Mission ausgemustert); die sieben HTV-Frachtflüge zur ISS zwischen 2009 und 2020; und ab 2023 die neue Rakete H3. Die Lage von Tanegashima bei 30° N ist für geostationäre Starts brauchbar — der Südpazifik in Startrichtung ist leer —, und die Sperrzeiten für die Fischereiflotte sind berüchtigt kurz, was Japan einige der engsten Startfenster-Protokolle der Welt beschert."
+  },
+  {
+    "rel": "fleet/launch-site/tanegashima-yoshinobu.json",
+    "at": "best_known_for",
+    "old": "Japans Schwerlast-Gateway — H-IIA + H3, HTV/HTV-X-Fracht zur ISS",
+    "new": "Japans Tor für Schwerlaststarts — H-IIA + H3, HTV-/HTV-X-Fracht zur ISS"
+  },
+  {
+    "rel": "fleet/launch-site/vandenberg-slc-4e.json",
+    "at": "tagline",
+    "old": "Polar / sonnensynchrones Tor — Falcon 9 zu Starlink + nationale Sicherheit + Erdbeobachtung",
+    "new": "Tor zu polaren und sonnensynchronen Bahnen — Falcon 9 für Starlink + nationale Sicherheit + Erdbeobachtung"
+  },
+  {
+    "rel": "fleet/launch-site/vandenberg-slc-4e.json",
+    "at": "description",
+    "old": "Das orbitale Westküsten-Tor der USA. 1963 für Atlas-Agena gebaut; Titan III/IV bis 2005; 2011 von SpaceX umgerüstet. Vandenbergs geografischer Vorteil ist der Korridor genau nach Süden über den Pazifik — so erreichen US-Nutzlasten Polar- und sonnensynchrone Orbits, ohne bewohntes Land zu überfliegen. Heute fliegt SLC-4E Falcon 9 zu Starlink-Polarschalen, NRO-Geheimnutzlasten, USSF- und kommerziellen Erdbeobachtungssatelliten. SLC-4W nebenan ist die Booster-Bergungszone.",
+    "new": "Das Tor der USA zur Umlaufbahn an der Westküste. 1963 für Atlas-Agena gebaut; Titan III/IV bis 2005; 2011 von SpaceX umgerüstet. Vandenbergs geografischer Vorteil ist der Korridor genau nach Süden über den Pazifik — so erreichen US-Nutzlasten polare und sonnensynchrone Umlaufbahnen, ohne bewohntes Land zu überfliegen. Heute startet von SLC-4E aus die Falcon 9 zu den polaren Starlink-Bahnschalen, mit geheimen NRO-Nutzlasten sowie USSF- und kommerziellen Erdbeobachtungssatelliten. SLC-4W nebenan ist die Zone für die Bergung der Booster."
+  },
+  {
+    "rel": "fleet/launch-site/vandenberg-slc-4e.json",
+    "at": "best_known_for",
+    "old": "Polar / sonnensynchrones Tor — Falcon 9 zu Starlink + nationale Sicherheit + Erdbeobachtung",
+    "new": "Tor zu polaren und sonnensynchronen Bahnen — Falcon 9 für Starlink + nationale Sicherheit + Erdbeobachtung"
+  },
+  {
+    "rel": "fleet/launch-site/wenchang-lc-101.json",
+    "at": "tagline",
+    "old": "Chinas Schwerlastpad — Long March 5 zu Tianhe, Chang'e 5/6, Tianwen-1 und das Mondreturnprogramm",
+    "new": "Chinas Schwerlastrampe — Long March 5 für Tianhe, Chang'e 5/6, Tianwen-1 und das Mondrückführungsprogramm"
+  },
+  {
+    "rel": "fleet/launch-site/wenchang-lc-101.json",
+    "at": "description",
+    "old": "Gebaut 2014, operativ seit 2016, auf der Insel Hainan bei 19,6°N — die südlichste CNSA-Startanlage. Die niedrige geographische Breite bietet etwa 460 m/s zusätzliche östliche Geschwindigkeit im Vergleich zu Jiuquan oder Xichang, wodurch die Long March 5B die erforderliche 25-Tonnen-LEO-Klasse erreichen kann, um das Tianhe-Kernmodul in einem einzigen Start in die Umlaufbahn zu bringen. Wenchang LC-101 ist der Long March 5 / 5B gewidmet; Jungfernflug am 3. November 2016. Es flog auch Chang'e 5 (Mondprobenrückkehr, 2020), Chang'e 6 (die Rückseiten-Probenrückkehr, 2024) und Tianwen-1 (Mars-Orbiter + Zhurong-Rover, 2020). Das Schwesterpad LC-201 nebenan übernimmt die Long March 7/8-Manifeste und absolvierte seinen Erststart im Juni 2016.",
+    "new": "Gebaut 2014, in Betrieb seit 2016, auf der Insel Hainan bei 19,6° N — der südlichste Startplatz der CNSA. Die niedrige geografische Breite bringt gegenüber Jiuquan oder Xichang etwa 460 m/s zusätzliche Geschwindigkeit nach Osten, wodurch die Long March 5B die für den Transport des Kernmoduls von Tianhe in einem einzigen Start nötige 25-Tonnen-Klasse im LEO erreichen kann. Wenchang LC-101 ist der Long March 5 / 5B gewidmet; Jungfernflug am 3. November 2016. Von hier starteten auch Chang'e 5 (Mondprobenrückführung, 2020), Chang'e 6 (die Probenrückführung von der Mondrückseite, 2024) und Tianwen-1 (Mars-Orbiter + Zhurong-Rover, 2020). Die Schwesterrampe LC-201 nebenan bedient die Long March 7/8 und absolvierte ihren ersten Start im Juni 2016."
+  },
+  {
+    "rel": "fleet/launch-site/wenchang-lc-101.json",
+    "at": "best_known_for",
+    "old": "Chinas Schwerlastpad — Long March 5 zu Tianhe, Chang'e 5/6, Tianwen-1 und das Mondreturnprogramm",
+    "new": "Chinas Schwerlastrampe — Long March 5 für Tianhe, Chang'e 5/6, Tianwen-1 und das Mondrückführungsprogramm"
+  },
+  {
+    "rel": "fleet/launch-site/xichang-lc-2.json",
+    "at": "description",
+    "old": "LC-2 am Kosmodrom Xichang hat den Großteil der chinesischen geostationären Kommerzstarts, die Beidou-Navigationskonstellation und das Chang'e-Mondprogramm mit den Varianten Langer Marsch 3A, 3B und 3C realisiert. In der gebirgigen Provinz Sichuan gelegen, verbindet die Anlage einen Niedrigbreiten-Vorteil für GTO-Leistung mit ganzjähriger Verfügbarkeit.",
+    "new": "LC-2 des Kosmodroms Xichang hat den Großteil der chinesischen kommerziellen geostationären Starts, die Navigationskonstellation Beidou/Compass und das Mondprogramm Chang'e mit den Varianten Long March 3A, 3B und 3C abgewickelt. In der gebirgigen Provinz Sichuan gelegen, verbindet der Standort den Vorteil niedriger Breite für die GTO-Leistung mit ganzjähriger Einsatzbereitschaft."
+  },
+  {
+    "rel": "fleet/launch-site/xichang-lc-3.json",
+    "at": "description",
+    "old": "Xichang LC-3 war Schauplatz des ersten Long March 3-Startversuchs am 29. Januar 1984 (DFH-2-01), der bei der Zündung der dritten Stufe teilweise fehlschlug. Der erste erfolgreiche Long March 3-Flug fand am 8. April 1984 statt (DFH-2-02) und brachte den Kommunikationssatelliten DFH-2 „Dong Fang Hong-2\" in eine geostationäre Transferbahn – Chinas erster GTO-Erfolg. Beide CZ-3-Flüge starteten von LC-3. In den 1990er Jahren unterstützte der Standort viele kommerzielle Kommunikationsstarts von Apstar, Asiasat und Sinosat. Heute ist er neben LC-2 weiterhin aktiv im Einsatz für Long March 3B-Missionen.",
+    "new": "Xichang LC-3 war Schauplatz des ersten Startversuchs einer Long March 3 am 29. Januar 1984 (DFH-2-01), der bei der Wiederzündung der dritten Stufe teilweise fehlschlug. Der erste erfolgreiche Flug einer Long March 3 fand am 8. April 1984 statt (DFH-2-02) und brachte den Kommunikationssatelliten DFH-2 „Dong Fang Hong-2“ in eine geostationäre Transferbahn – Chinas erster GTO-Erfolg. Beide CZ-3-Flüge starteten von LC-3. In den 1990er-Jahren unterstützte der Standort viele kommerzielle Kommunikationsstarts von Apstar, Asiasat und Sinosat. Heute ist er neben LC-2 weiterhin aktiv im Einsatz für Missionen der Long March 3B."
+  },
+  {
+    "rel": "fleet/launcher/antares.json",
+    "at": "tagline",
+    "old": "Arbeitstier für die Cygnus-ISS-Versorgung bis NG-19",
+    "new": "Arbeitspferd für die Cygnus-ISS-Versorgung bis NG-19"
+  },
+  {
+    "rel": "fleet/launcher/antares.json",
+    "at": "description",
+    "old": "Northrop Grummans Mittellast-Trägerrakete, ursprünglich mit der Aerojet AJ26 und später RD-181 als Erststufe und einer Castor-Feststoffoberstufe gebaut. Brachte Cygnus von 2013 bis NG-19 im Jahr 2023 zur ISS. Die Antares 330 (gemeinsam mit Firefly Aerospace entwickelt) ersetzt die russische Erststufe durch sieben Miranda-Triebwerke.",
+    "new": "Northrop Grummans Mittellast-Trägerrakete, ursprünglich um die Aerojet AJ26 und später die RD-181 als Triebwerke der ersten Stufe gebaut, mit einer Castor-Feststoffoberstufe. Brachte Cygnus von 2013 bis NG-19 im Jahr 2023 zur ISS. Die Nachfolgerin Antares 330 (gemeinsam mit Firefly Aerospace entwickelt) ersetzt die russische erste Stufe durch sieben Miranda-Triebwerke."
+  },
+  {
+    "rel": "fleet/launcher/ariane-1.json",
+    "at": "tagline",
+    "old": "Europas erste unabhängige Trägerrakete — eröffnete die kommerzielle Comsat-Ära für ESA und brachte Giotto zum Halleyschen Kometen",
+    "new": "Europas erste unabhängige Trägerrakete — öffnete der ESA den Satellitenmarkt, brachte Giotto zum Halleyschen Kometen"
+  },
+  {
+    "rel": "fleet/launcher/ariane-1.json",
+    "at": "description",
+    "old": "Dreistufige Rakete, gebaut von CNES im Auftrag der ESA nach dem gestrichenen Europa-Programm — hypergolische erste und zweite Stufen mit UH-25 / N2O4 plus dem kryogenen HM7-Oberstufentriebwerk (LH₂ / LOX). 11 Starts aus Kourou zwischen dem 24.12.1979 und dem 22.02.1986 trugen 27 europäische Telekom- und Wissenschaftssatelliten, darunter ECS-1, Marecs A/B, Spacenet, Telecom 1A/1B und die ESA-Sonde Giotto zum Halleyschen Kometen. Außer Dienst gestellt zugunsten der grösseren Ariane 2/3/4; die kryogene HM7-Oberstufentechnologie lief weiter über Ariane 4 und mündete in die ESC-A-Oberstufe der Ariane 5.",
+    "new": "Dreistufige Rakete, vom CNES im Auftrag der ESA nach dem gestrichenen Europa-Programm gebaut — hypergolische erste und zweite Stufe mit UH-25 / N2O4, darüber die kryogene dritte Stufe HM7 (LH₂ / LOX). 11 Starts aus Kourou zwischen dem 24.12.1979 und dem 22.02.1986 brachten 27 europäische Telekommunikations- und Wissenschaftssatelliten ins All, darunter ECS-1, Marecs A/B, Spacenet, Telecom 1A/1B und die ESA-Sonde Giotto zum Halleyschen Kometen. Zugunsten der größeren Ariane 2/3/4 ausgemustert; die kryogene Oberstufenlinie HM7 lebte in der Ariane 4 weiter und mündete in die ESC-A der Ariane 5."
+  },
+  {
+    "rel": "fleet/launcher/ariane-1.json",
+    "at": "best_known_for",
+    "old": "Europas erste unabhängige Trägerrakete — 11 Flüge 1979-1986, eröffnete kommerzielle Comsats und Giotto zum Halley",
+    "new": "Europas erste unabhängige Trägerrakete — 11 Flüge 1979–1986; kommerzielle Satelliten und Giotto zum Halleyschen Kometen"
+  },
+  {
+    "rel": "fleet/launcher/ariane-5.json",
+    "at": "tagline",
+    "old": "Rosetta, JWST, Galileo-Navigationssystem gestartet (ESA)",
+    "new": "Brachte Rosetta, JWST und die Satellitennavigation Galileo ins All (ESA)"
+  },
+  {
+    "rel": "fleet/launcher/ariane-5.json",
+    "at": "dispatch",
+    "old": "Ariane 5 war das Arbeitstier im schweren Liftbereich, das die europäische Raumfahrt auf ihren Höhepunkt führte — nach einem der berüchtigtsten Fehlschläge in diesem Bereich. Sein Jungfernflug 1996 zerstörte sich selbst 37 Sekunden nach dem Start, als die von Ariane 4 geerbte Führungssoftware bei der höheren Geschwindigkeit der neuen Rakete überflutete — eine Warnung aus der Softwareentwicklung, die heute weltweit gelehrt wird. Sie erholte sich, um zu einer der zuverlässigsten schweren Trägerraketen aller Zeiten zu werden und Rosetta, Galileo (Navigationskonstellation), BepiColombo, die ATV-Frachter zur ISS und schließlich das James Webb Space Telescope ins All zu bringen — positioniert mit solcher Präzision, dass das Observatorium Jahre seines Treibstoffs einspart.",
+    "new": "Ariane 5 war das schwere Arbeitspferd, das die europäische Raumfahrt auf ihren Höhepunkt führte — nach einem der berühmtesten Fehlschläge des Fachs. Ihr Jungfernflug 1996 zerstörte sich 37 Sekunden nach dem Start selbst, als die von Ariane 4 geerbte Lenkungssoftware bei der höheren Geschwindigkeit der neuen Rakete einen Überlauf erlitt — eine Warnung aus der Softwaretechnik, die heute weltweit gelehrt wird. Sie erholte sich und wurde zu einer der zuverlässigsten schweren Trägerraketen, die je gebaut wurden, und brachte Rosetta, Galileo (Navigationskonstellation), BepiColombo, die ATV-Frachter zur ISS und schließlich das James Webb Space Telescope ins All — so präzise platziert, dass das Observatorium Jahre an Treibstoff sparte."
+  },
+  {
+    "rel": "fleet/launcher/ariane-5.json",
+    "at": "description",
+    "old": "ESAs lang bewährte schwere Trägerrakete, 2023 nach 117 Starts in den Ruhestand versetzt. Brachte Rosetta zum Kometen 67P, JWST zum L2 und zwei Jahrzehnte lang dual-manifestierte geostationäre Nutzlasten für kommerzielle Kunden.",
+    "new": "ESAs langjähriges schweres Arbeitspferd, 2023 nach 117 Starts ausgemustert. Brachte Rosetta zum Kometen 67P, JWST zum Lagrange-Punkt L2 und zwei Jahrzehnte lang geostationäre kommerzielle Nutzlasten in Doppelbelegung."
+  },
+  {
+    "rel": "fleet/launcher/ariane-6.json",
+    "at": "description",
+    "old": "Ariane 6 ist ein orbitaler Launcher von ArianeGroup in Multi (Europa). Nachfolger von Ariane 5. Seit 2024 im Dienst.",
+    "new": "Ariane 6 ist eine Orbital-Trägerrakete, gebaut von ArianeGroup in Multi (Europa). Nachfolger von Ariane 5. Seit 2024 im Dienst."
+  },
+  {
+    "rel": "fleet/launcher/atlas-lv-3b.json",
+    "at": "dispatch",
+    "old": "War der Redstone der vorsichtige Schritt, war der Atlas der Satz. Er war Amerikas erste Interkontinentalrakete und erreichte Orbitalgeschwindigkeit durch unerschrockene, fast beängstigende Leichtheit: Seine Hülle war so dünn, dass die Rakete wie ein Ballon unter Druck stehen musste, um nicht in sich zusammenzubrechen. Diese für Menschen freizugeben — eine Person einer Rakete anzuvertrauen, die kollabiert würde, wenn man den Druck abließe — das war die schwierige Entscheidung, die Mercurys suborbitale Hälfte von seiner orbitalen trennte. Jeden amerikanischen Orbitalflug des Programms trug dieser dünne Stahlballon, und deshalb umkreisten Glenn, Carpenter, Schirra und Cooper die Erde, während Shepard und Grissom nur ihren Rand berührten.",
+    "new": "War der Redstone der vorsichtige Schritt, war der Atlas der Sprung. Er war Amerikas erste Interkontinentalrakete und erreichte Orbitalgeschwindigkeit durch tollkühne, fast beängstigende Leichtigkeit: Seine Hülle war so dünn, dass die Rakete wie ein Ballon unter Druck gehalten werden musste, um nicht in sich zusammenzufallen. Sie für den bemannten Flug zuzulassen — einer Person eine Rakete anzuvertrauen, die kollabieren würde, wenn man den Druck sinken ließe — war die schwere Entscheidung, die die suborbitale Hälfte von Mercury von der orbitalen trennte. Jeden amerikanischen Orbitalflug des Programms trug dieser dünne Stahlballon, und deshalb umkreisten Glenn, Carpenter, Schirra und Cooper die Erde, während Shepard und Grissom nur ihren Rand berührten."
+  },
+  {
+    "rel": "fleet/launcher/atlas-slv-3d.json",
+    "at": "best_known_for",
+    "old": "NASAs Arbeitspferd der äußeren Planeten in den 1970ern — die erste H₂-Oberstufe Centaur D-1A öffnete die Gasriesen",
+    "new": "NASAs Arbeitspferd der äußeren Planeten in den 1970ern — die erste H₂-Oberstufe Centaur D-1A erschloss die Gasriesen"
+  },
+  {
+    "rel": "fleet/launcher/atlas-v.json",
+    "at": "tagline",
+    "old": "Der entwickelte Atlas der United Launch Alliance",
+    "new": "Der weiterentwickelte Atlas der United Launch Alliance"
+  },
+  {
+    "rel": "fleet/launcher/atlas-v.json",
+    "at": "description",
+    "old": "Die zuverlässige Workhorse der United Launch Alliance mit über 100 erfolgreichen Starts seit 2002. Carried Curiosity, Perseverance, MAVEN, MRO, New Horizons und viele der konsequentsten US-Planetenmissionen des 21. Jahrhunderts.",
+    "new": "Das zuverlässige Arbeitspferd der United Launch Alliance mit über 100 erfolgreichen Starts seit 2002. Brachte Curiosity, Perseverance, MAVEN, MRO, New Horizons und viele der folgenreichsten US-Planetenmissionen des 21. Jahrhunderts ins All."
+  },
+  {
+    "rel": "fleet/launcher/atlas-v.json",
+    "at": "best_known_for",
+    "old": "Der entwickelte Atlas der United Launch Alliance",
+    "new": "Der weiterentwickelte Atlas der United Launch Alliance"
+  },
+  {
+    "rel": "fleet/launcher/delta-ii.json",
+    "at": "tagline",
+    "old": "NASAs Mittelklasse-Träger für Planetologie — 155 Flüge 1989-2018",
+    "new": "NASAs Arbeitspferd der Mittelklasse für die Planetenforschung — 155 Flüge 1989–2018"
+  },
+  {
+    "rel": "fleet/launcher/delta-ii.json",
+    "at": "description",
+    "old": "Zwei- oder dreistufige Delta-Variante mit einer RS-27A LOX/RP-1 Erststufe, bis zu neun GEM-Feststoffbooster und optional einer Star-48B Oberstufe für hochenergetische Fluchtbahnen. 155 Starts über 29 Jahre mit einer Erfolgsquote von 98,7 %; beförderte Dawn, Messenger, MRO, Phoenix, Kepler, Spitzer, GRAIL und die ursprüngliche GPS Block II Konstellation. Die „Delta II Heavy\" (7920H + Star-48B) war die Konfiguration, die genügend C3 für direkte Einfädelung in Ceres- und Merkur-Umlaufbahn lieferte. Außer Dienst gestellt, nachdem der Mittelklasse-Markt zu Atlas V und Falcon 9 wechselte.",
+    "new": "Zwei- oder dreistufige Delta-Variante mit einer RS-27A-Erststufe (LOX/RP-1), bis zu neun GEM-Feststoffboostern und optional einer Kickstufe Star-48B für hochenergetische Fluchtbahnen. 155 Starts über 29 Jahre mit einer Erfolgsquote von 98,7 %; beförderte Dawn, Messenger, MRO, Phoenix, Kepler, Spitzer, GRAIL und die ursprüngliche GPS-Block-II-Konstellation. Die „Delta II Heavy“ (7920H + Star-48B) war die Konfiguration, die genug C3 für das direkte Einschwenken in Umlaufbahnen um Ceres und Merkur lieferte. Ausgemustert, nachdem sich der Mittelklasse-Markt zu Atlas V und Falcon 9 verlagert hatte."
+  },
+  {
+    "rel": "fleet/launcher/delta-ii.json",
+    "at": "best_known_for",
+    "old": "NASAs Mittelklasse-Träger für Planetologie 1989-2018 — Dawn, Messenger, MRO, Phoenix, Kepler",
+    "new": "NASAs Arbeitspferd der Mittelklasse für die Planetenforschung 1989–2018 — Dawn, Messenger, MRO, Phoenix, Kepler"
+  },
+  {
+    "rel": "fleet/launcher/energia.json",
+    "at": "dispatch",
+    "old": "Energia war die Rakete, die die N1 rehabilitierte — die Superträgerrakete, die die Sowjetunion endlich richtig hinbekam. Während die N1 alle vier Starts explodierte, funktionierte Energia, hob 1987 die Polyus-Nutzlast und 1988 das Buran-Spaceplane. Entscheidend war: Energia war eine eigenständige Trägerrakete, kein Shuttle-System — weil Buran keine Triebwerke hatte, leistete Energia die gesamte Arbeit zum Erreichen der Umlaufbahn und hätte mit gleicher Leichtigkeit andere schwere Nutzlasten ohne Orbiter transportieren können. Sie war die leistungsstärkste Rakete, die die Sowjetunion je erfolgreich flog — und wurde wie Buran aus Mangel an etwas zu Startendem storniert.",
+    "new": "Energia war die Rakete, die die N1 rehabilitierte — die Superträgerrakete, die die Sowjetunion endlich richtig hinbekam. Während die N1 bei allen vier Startversuchen explodierte, funktionierte Energia und hob 1987 die Polyus-Nutzlast und 1988 den Orbiter Buran. Entscheidend war: Energia war eine eigenständige Trägerrakete, kein Shuttle-System — weil Buran keine Haupttriebwerke hatte, leistete Energia die gesamte Arbeit zum Erreichen der Umlaufbahn und hätte ebenso gut andere schwere Nutzlasten ganz ohne Orbiter befördern können. Sie war die leistungsstärkste Rakete, die die Sowjetunion je erfolgreich flog — und wurde wie Buran eingestellt, weil nichts mehr zu starten übrig war."
+  },
+  {
+    "rel": "fleet/launcher/energia.json",
+    "at": "description",
+    "old": "Die einzige sowjetische Superträgerrakete, die erfolgreich flog. Entwickelt, um das Buran-Orbiter oder eigenständige Nutzlasten bis 100 t zum LEO zu befördern. Zwei Flüge: Polyus-Nutzlasttest (1987) und Buran-Orbiter (1988), beide erfolgreich. Programm am Ende des Kalten Krieges eingestellt.",
+    "new": "Die einzige sowjetische Superträgerrakete, die erfolgreich flog. Ausgelegt, um den Orbiter Buran oder eigenständige Nutzlasten von bis zu 100 t in den LEO zu befördern. Zwei Flüge: Polyus-Nutzlasttest (1987) und Orbiter Buran (1988), beide erfolgreich. Programm am Ende des Kalten Krieges eingestellt."
+  },
+  {
+    "rel": "fleet/launcher/energia.json",
+    "at": "best_known_for",
+    "old": "Sowjetische Superheavy; flog zweimal (Polyus 1987, Buran 1988)",
+    "new": "Sowjetische Superträgerrakete; flog zweimal (Polyus 1987, Buran 1988)"
+  },
+  {
+    "rel": "fleet/launcher/falcon-9.json",
+    "at": "tagline",
+    "old": "Wiederverwendbare Booster Reform kommerziellen Start",
+    "new": "Wiederverwendbarer Booster formte den kommerziellen Raketenstart um"
+  },
+  {
+    "rel": "fleet/launcher/falcon-9.json",
+    "at": "description",
+    "old": "SpaceX Block 5 Booster, für zehn Flüge ohne Umbau konzipiert. Die erste Rakete der Orbitalklasse zu landen und sich selbst wieder zu beschaffen, den Markt für den kommerziellen Markt grundlegend umzugestalten und den Kosten-zu-Orbit um etwa eine Größenordnung zu fallen.",
+    "new": "Der Block-5-Booster von SpaceX, ausgelegt für zehn Flüge ohne Überholung. Die erste Rakete der Orbitalklasse, die landet und erneut fliegt, hat den Markt für kommerzielle Starts grundlegend umgestaltet und die Kosten für den Weg in die Umlaufbahn um etwa eine Größenordnung gesenkt."
+  },
+  {
+    "rel": "fleet/launcher/falcon-9.json",
+    "at": "best_known_for",
+    "old": "Wiederverwendbare Booster Reform kommerziellen Start",
+    "new": "Wiederverwendbarer Booster formte den kommerziellen Raketenstart um"
+  },
+  {
+    "rel": "fleet/launcher/falcon-heavy.json",
+    "at": "tagline",
+    "old": "Super-schwere Trägerrakete mit drei wiederverwendbaren Triebwerkskernen",
+    "new": "Superschwerer, wiederverwendbarer Booster mit drei Kernen"
+  },
+  {
+    "rel": "fleet/launcher/falcon-heavy.json",
+    "at": "description",
+    "old": "Drei erste Stufen des Falcon 9 miteinander verbunden, wobei die beiden seitlichen Booster zur Landung zurückkehren, während der Mittlerkern auf einem unbemannten Drohnenschiff landend. Gegenwärtig eine der leistungsstärksten operationellen Schwertransportraketen mit Nutzlastkapazität, die der Saturn V entspricht, aber mit Kosten pro kg deutlich darunter. (Seit Mitte 2026 hat Starship zunehmend operationelle Fähigkeiten demonstriert.)",
+    "new": "Drei Erststufen der Falcon 9 miteinander verbunden; die beiden seitlichen Booster kehren zur Landung zurück, während der Mittelkern in Startrichtung auf einem Drohnenschiff landet. Derzeit eine der leistungsstärksten einsatzfähigen Schwerlastraketen, mit einer Nutzlastkapazität, die mit der der Saturn V konkurriert, bei Kosten pro kg weit darunter. (Stand Mitte 2026 hat Starship zunehmend operationelle Fähigkeiten gezeigt.)"
+  },
+  {
+    "rel": "fleet/launcher/falcon-heavy.json",
+    "at": "best_known_for",
+    "old": "Super-schwere Trägerrakete mit drei wiederverwendbaren Triebwerkskernen",
+    "new": "Superschwerer, wiederverwendbarer Booster mit drei Kernen"
+  },
+  {
+    "rel": "fleet/launcher/h-iia.json",
+    "at": "description",
+    "old": "Japans H-IIA absolvierte zwischen 2001 und Juni 2025 50 erfolgreiche Missionen für JAXAs Flaggschiff-Missionen, darunter Hayabusa, Hayabusa2, Himawari und SLIM. Das zuverlässige Flüssigtreibstoff-Arbeitspferd wurde zu einem der zuverlässigsten Trägerraketen überhaupt.",
+    "new": "Japans H-IIA startete zwischen 2001 und Juni 2025 50 erfolgreiche Missionen, darunter JAXAs Flaggschiff-Missionen Hayabusa, Hayabusa2, Himawari und SLIM. Das verlässliche Flüssigtreibstoff-Arbeitspferd wurde zu einer der zuverlässigsten Trägerraketen, die je gebaut wurden."
+  },
+  {
+    "rel": "fleet/launcher/h3.json",
+    "at": "description",
+    "old": "H3 ist ein orbitaler Starter von Mitsubishi Heavy Industries in Japan. Ersetzt H-IIA / H-IIB zu geringeren Kosten. Seit 2024 im Dienst.",
+    "new": "H3 ist eine Orbital-Trägerrakete, gebaut von Mitsubishi Heavy Industries in Japan. Ersetzt H-IIA / H-IIB zu geringeren Kosten. Seit 2024 im Dienst."
+  },
+  {
+    "rel": "fleet/launcher/long-march-2f.json",
+    "at": "tagline",
+    "old": "Besatzung für alle Shenzhou-Flüge",
+    "new": "Bemannt zugelassen für alle Shenzhou-Flüge"
+  },
+  {
+    "rel": "fleet/launcher/long-march-2f.json",
+    "at": "description",
+    "old": "Long March 2F ist ein orbitaler Launcher von CALT in China gebaut. Bewaffnet für alle Shenzhou-Flüge. Seit 1999 im Dienst.",
+    "new": "Long March 2F ist eine Orbital-Trägerrakete, gebaut von CALT in China. Für bemannte Flüge zugelassen, für alle Shenzhou-Flüge. Seit 1999 im Dienst."
+  },
+  {
+    "rel": "fleet/launcher/long-march-2f.json",
+    "at": "best_known_for",
+    "old": "Besatzung für alle Shenzhou-Flüge",
+    "new": "Bemannt zugelassen für alle Shenzhou-Flüge"
+  },
+  {
+    "rel": "fleet/launcher/long-march-3b.json",
+    "at": "tagline",
+    "old": "Chinas GTO-Workhorse — Chang'e-Mondlander + die meisten chinesischen Comsats",
+    "new": "Chinas GTO-Arbeitspferd — Chang'e-Mondlander + die meisten chinesischen Kommunikationssatelliten"
+  },
+  {
+    "rel": "fleet/launcher/long-march-3b.json",
+    "at": "description",
+    "old": "Dreistufige Trägerrakete mit flüssigen Hypergolen (UDMH/N2O4 in den unteren Stufen, LH2/LOX in der dritten) und vier seitlich montierte Feststoffbooster. Bringt ~11 t zu LEO / ~5,1 t zu GTO vom Satellitenstartplatz Xichang. Der Erstflug (1996-02-15, Intelsat 708) endete katastrophal aufgrund eines Steuerschleifen-Fehlers und tötete Dorfbewohner in der Flugbahn; die überarbeitete Rakete hat seitdem über 100 erfolgreiche Missionen absolviert und ist die Standardträgerrakete für die Chang'e-Mondexploration.",
+    "new": "Dreistufige Trägerrakete mit flüssigen hypergolen Treibstoffen (UDMH/N2O4 in den unteren Stufen, LH2/LOX in der dritten) und vier seitlich montierten Zusatzboostern. Bringt ~11 t in den LEO / ~5,1 t in den GTO vom Kosmodrom Xichang aus. Der Erstflug (1996-02-15, Intelsat 708) endete katastrophal wegen eines Fehlers in der Lenkschleife und tötete Dorfbewohner entlang der Flugbahn; die überarbeitete Rakete hat seitdem weit über 100 erfolgreiche Missionen absolviert und ist die Standardträgerrakete für die Mondforschung von Chang'e."
+  },
+  {
+    "rel": "fleet/launcher/long-march-5.json",
+    "at": "tagline",
+    "old": "Heavy-Lift-Rückgrat des chinesischen Raumprogramms",
+    "new": "Das Schwerlast-Rückgrat des chinesischen Raumfahrtprogramms"
+  }
+]

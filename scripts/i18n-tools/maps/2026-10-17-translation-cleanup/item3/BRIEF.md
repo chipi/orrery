@@ -46,7 +46,11 @@ fields have schema limits).
    title verbatim, but never output a string identical to the English (the checker refuses
    it) — a link label keeps its translated descriptive part around the verbatim title. If a
    label's only problem is that the title was translated, leave it alone.
-6. One name per thing: if the batch writes the same thing two ways, use the glossary or
+6. **A name kept in Latin script never takes a case ending**, with or without a hyphen
+   (no "NASA-ин", "Voyager-а"): a common noun before it carries the ending (агентства
+   NASA, аппарата Voyager 2; агенције NASA, летелице Voyager 2), or reword. Fix every
+   such form you meet.
+7. One name per thing: if the batch writes the same thing two ways, use the glossary or
    the more common site form for both.
 
 The grader's findings for this locale are examples of the errors to look for:

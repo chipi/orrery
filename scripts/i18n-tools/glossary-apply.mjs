@@ -142,6 +142,8 @@ const GUARD = {
   Sun: { after: /^-synchronous/ },
   'Wolf-Lundmark-Melotte': { path: /messages:galaxy_name_wlm/, locs: /^ko$/ },
   Houston: { before: /Space Center\s?$/, after: /^,\s?we/ },
+  // the English search terms used on Commons, listed as typed
+  ISRO: { path: /sourcing\/gaps\.json:gaps\.2\.checked\.0$/ },
 };
 // first and middle names of the people in the glossary: a bare surname right after one
 // of them is part of a fuller name

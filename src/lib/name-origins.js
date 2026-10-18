@@ -181,6 +181,8 @@ export const ORIGIN_NAMES = {
     AsiaSat: '亚洲卫星',
     Asiasat: '亚洲卫星',
     Sinosat: '鑫诺卫星',
+    LandSpace: '蓝箭航天',
+    iSpace: '星际荣耀',
     Wenchang: '文昌',
     Xichang: '西昌',
     Taiyuan: '太原',

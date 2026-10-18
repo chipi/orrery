@@ -79,8 +79,11 @@ universities, schools and space agency write it:
 
 Exceptions only where an international standard really sticks out in that language's
 own sources (instrument acronyms like JWST; Latin IAU names where native sources use
-them). **Open as of 2026-10-17:** whether ISS counts as a station name (stays ISS) or
-a term (МКС).
+them). **ISS is a term, not a name** (operator 2026-10-18): "МКС is the Russian
+abbreviation of Международная космическая станция." Each language uses its own
+abbreviation or name for the International Space Station, as `native-terms.json`
+records it: ru МКС, sr-Cyrl МСС, es EEI, zh-CN 国际空间站, ar محطة الفضاء الدولية;
+ISS where the language's own sources write ISS (de, fr, it, nl, pt-BR, ja, ko, hi).
 
 ### 3.3 One thing, one name per language (2026-10-17)
 

@@ -1,0 +1,56 @@
+[
+ {
+  "rel": "fleet/lander/hakuto-r.json",
+  "at": "tagline",
+  "old": "民間初の日本の月着陸機、M1とM2はともに墜落",
+  "new": "日本初の民間月着陸の試み。ミッション1（2023年）とミッション2（2025年）はいずれも墜落"
+ },
+ {
+  "rel": "fleet/lander/hakuto-r.json",
+  "at": "best_known_for",
+  "old": "民間初の日本の月着陸機、M1とM2はともに墜落",
+  "new": "日本初の民間月着陸の試み。ミッション1（2023年）とミッション2（2025年）はいずれも墜落"
+ },
+ {
+  "rel": "fleet/lander/hakuto-r.json",
+  "at": "description",
+  "old": "Hakuto-Rプログラムは、日本のispaceが開発した惑星着陸機です。日本初の民間月着陸機で、M1とM2はいずれも墜落しました。2023年に飛行しましたが失敗に終わりました。",
+  "new": "Hakuto-Rは、日本のispaceによる月着陸機プログラムです。2022年12月に打ち上げられたミッション1の着陸機は日本初の民間月着陸の試みでしたが、2023年4月に墜落しました。ミッション2の着陸機Resilienceも2025年6月に墜落しました。"
+ },
+ {
+  "rel": "fleet/lander/vikram-cy2.json",
+  "at": "tagline",
+  "old": "Chandrayaan-2の着陸機；墜落；周回機は活動を継続",
+  "new": "インドのChandrayaan-2の着陸機。2019年に墜落したが、周回機は運用を続けた"
+ },
+ {
+  "rel": "fleet/lander/vikram-cy2.json",
+  "at": "best_known_for",
+  "old": "Chandrayaan-2の着陸機；墜落；周回機は活動を継続",
+  "new": "インドのChandrayaan-2の着陸機。2019年に墜落したが、周回機は運用を続けた"
+ },
+ {
+  "rel": "fleet/lander/vikram-cy2.json",
+  "at": "description",
+  "old": "Vikram (Chandrayaan-2)は、インドのISROが開発した惑星着陸機です。Chandrayaan-2の着陸機で、墜落しましたが、周回機は活動を続けています。2019年に飛行しましたが失敗に終わりました。",
+  "new": "Vikramは、ISROが開発したインドのChandrayaan-2ミッションの着陸機です。2019年9月の着陸の試みで墜落しましたが、Chandrayaan-2の周回機は月周回軌道で運用を続けました。"
+ },
+ {
+  "rel": "fleet/lander/mars-polar-lander.json",
+  "at": "tagline",
+  "old": "着陸時に喪失；「より速く、より良く、より安く」路線の見直しを促した",
+  "new": "1999年の着陸時に喪失。この失敗でNASAは「より速く、より良く、より安く」路線を見直した"
+ },
+ {
+  "rel": "fleet/lander/mars-polar-lander.json",
+  "at": "best_known_for",
+  "old": "着陸時に喪失；「より速く、より良く、より安く」路線の見直しを促した",
+  "new": "1999年の着陸時に喪失。この失敗でNASAは「より速く、より良く、より安く」路線を見直した"
+ },
+ {
+  "rel": "fleet/lander/mars-polar-lander.json",
+  "at": "description",
+  "old": "Mars Polar Lander はLockheed Martinによって米国で開発された惑星探査着陸機です。着陸時に喪失し、faster-better-cheaper（より速く、より良く、より安く）レビューをもたらしました。1999年に飛行しましたが失敗に終わりました。",
+  "new": "Mars Polar Landerは、Lockheed Martinが製造したNASAの着陸機です。1999年12月、火星の南極域への降下中に通信が途絶えました。数か月前のMars Climate Orbiterの喪失に続くこの失敗を受け、NASAは「より速く、より良く、より安く」路線を見直しました。"
+ }
+]

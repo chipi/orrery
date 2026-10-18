@@ -1,0 +1,56 @@
+[
+ {
+  "rel": "fleet/lander/hakuto-r.json",
+  "at": "tagline",
+  "old": "Premier atterrisseur lunaire japonais privé; M1 + M2 tous les deux écrasés",
+  "new": "Premières tentatives privées japonaises d'alunissage ; les missions 1 (2023) et 2 (2025) se sont écrasées"
+ },
+ {
+  "rel": "fleet/lander/hakuto-r.json",
+  "at": "best_known_for",
+  "old": "Premier atterrisseur lunaire japonais privé; M1 + M2 tous les deux écrasés",
+  "new": "Premières tentatives privées japonaises d'alunissage ; les missions 1 (2023) et 2 (2025) se sont écrasées"
+ },
+ {
+  "rel": "fleet/lander/hakuto-r.json",
+  "at": "description",
+  "old": "Le programme Hakuto-R est un atterrisseur planétaire construit par ispace au Japon. Premier atterrisseur lunaire japonais privé; M1 + M2 les deux s'est écrasé. A volé en 2023 mais a échoué.",
+  "new": "Hakuto-R est un programme d'atterrisseurs lunaires de l'entreprise japonaise ispace. L'atterrisseur de la mission 1, lancé en décembre 2022, était la première tentative privée japonaise d'alunissage et s'est écrasé en avril 2023. L'atterrisseur de la mission 2, Resilience, s'est écrasé en juin 2025."
+ },
+ {
+  "rel": "fleet/lander/vikram-cy2.json",
+  "at": "tagline",
+  "old": "Chandrayaan-2 atterrisseur; écrasé; orbiteur vit sur",
+  "new": "Atterrisseur de la mission indienne Chandrayaan-2 ; écrasé en 2019, mais l'orbiteur a continué de fonctionner"
+ },
+ {
+  "rel": "fleet/lander/vikram-cy2.json",
+  "at": "best_known_for",
+  "old": "Chandrayaan-2 atterrisseur; écrasé; orbiteur vit sur",
+  "new": "Atterrisseur de la mission indienne Chandrayaan-2 ; écrasé en 2019, mais l'orbiteur a continué de fonctionner"
+ },
+ {
+  "rel": "fleet/lander/vikram-cy2.json",
+  "at": "description",
+  "old": "Vikram (Chandrayaan-2) est un atterrissage planétaire construit par l'ISRO en Inde. Chandrayaan-2 atterrisseur; écrasé; orbiteur vit. A volé en 2019 mais a échoué.",
+  "new": "Vikram était l'atterrisseur de la mission indienne Chandrayaan-2, construit par l'ISRO. Il s'est écrasé lors de sa tentative d'atterrissage en septembre 2019, mais l'orbiteur de Chandrayaan-2 a continué de fonctionner en orbite lunaire."
+ },
+ {
+  "rel": "fleet/lander/mars-polar-lander.json",
+  "at": "tagline",
+  "old": "Perdu à l'atterrissage; a conduit plus rapide-meilleur examen",
+  "new": "Perdu à l'atterrissage en 1999 ; cet échec a conduit la NASA à revoir son approche « plus vite, mieux, moins cher »"
+ },
+ {
+  "rel": "fleet/lander/mars-polar-lander.json",
+  "at": "best_known_for",
+  "old": "Perdu à l'atterrissage; a conduit plus rapide-meilleur examen",
+  "new": "Perdu à l'atterrissage en 1999 ; cet échec a conduit la NASA à revoir son approche « plus vite, mieux, moins cher »"
+ },
+ {
+  "rel": "fleet/lander/mars-polar-lander.json",
+  "at": "description",
+  "old": "Mars Polar Lander est un atterrisseur planétaire construit par Lockheed Martin aux États-Unis. Perdu à l'atterrissage; a conduit plus rapide-meilleur examen. A volé en 1999 mais a échoué.",
+  "new": "Mars Polar Lander était un atterrisseur de la NASA construit par Lockheed Martin. Le contact a été perdu pendant sa descente vers la région polaire sud de Mars en décembre 1999. Survenu quelques mois après la perte de Mars Climate Orbiter, cet échec a conduit la NASA à revoir son approche « plus vite, mieux, moins cher »."
+ }
+]

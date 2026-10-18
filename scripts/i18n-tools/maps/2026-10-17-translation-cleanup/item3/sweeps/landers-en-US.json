@@ -1,0 +1,56 @@
+[
+ {
+  "rel": "fleet/lander/hakuto-r.json",
+  "at": "tagline",
+  "old": "First private Japanese lunar lander; M1 + M2 both crashed",
+  "new": "Japan's first private Moon landing attempts; Mission 1 (2023) and Mission 2 (2025) both crashed"
+ },
+ {
+  "rel": "fleet/lander/hakuto-r.json",
+  "at": "best_known_for",
+  "old": "First private Japanese lunar lander; M1 + M2 both crashed",
+  "new": "Japan's first private Moon landing attempts; Mission 1 (2023) and Mission 2 (2025) both crashed"
+ },
+ {
+  "rel": "fleet/lander/hakuto-r.json",
+  "at": "description",
+  "old": "Hakuto-R program is a planetary lander built by ispace in Japan. First private Japanese lunar lander; M1 + M2 both crashed. Flew in 2023 but failed.",
+  "new": "Hakuto-R is a lunar lander program of the Japanese company ispace. Its Mission 1 lander, launched in December 2022, was Japan's first private attempt at a Moon landing and crashed in April 2023. The Mission 2 lander, Resilience, crashed in June 2025."
+ },
+ {
+  "rel": "fleet/lander/vikram-cy2.json",
+  "at": "tagline",
+  "old": "Chandrayaan-2 lander; crashed; orbiter lives on",
+  "new": "Lander of India's Chandrayaan-2; it crashed in 2019, but the orbiter kept working"
+ },
+ {
+  "rel": "fleet/lander/vikram-cy2.json",
+  "at": "best_known_for",
+  "old": "Chandrayaan-2 lander; crashed; orbiter lives on",
+  "new": "Lander of India's Chandrayaan-2; it crashed in 2019, but the orbiter kept working"
+ },
+ {
+  "rel": "fleet/lander/vikram-cy2.json",
+  "at": "description",
+  "old": "Vikram (Chandrayaan-2) is a planetary lander built by ISRO in India. Chandrayaan-2 lander; crashed; orbiter lives on. Flew in 2019 but failed.",
+  "new": "Vikram was the lander of India's Chandrayaan-2 mission, built by ISRO. It crashed during its landing attempt in September 2019, but the Chandrayaan-2 orbiter kept working in lunar orbit."
+ },
+ {
+  "rel": "fleet/lander/mars-polar-lander.json",
+  "at": "tagline",
+  "old": "Lost on landing; drove faster-better-cheaper review",
+  "new": "Lost during landing in 1999; the failure led NASA to review its “faster, better, cheaper” approach"
+ },
+ {
+  "rel": "fleet/lander/mars-polar-lander.json",
+  "at": "best_known_for",
+  "old": "Lost on landing; drove faster-better-cheaper review",
+  "new": "Lost during landing in 1999; the failure led NASA to review its “faster, better, cheaper” approach"
+ },
+ {
+  "rel": "fleet/lander/mars-polar-lander.json",
+  "at": "description",
+  "old": "Mars Polar Lander is a planetary lander built by Lockheed Martin in USA. Lost on landing; drove faster-better-cheaper review. Flew in 1999 but failed.",
+  "new": "Mars Polar Lander was a NASA lander built by Lockheed Martin. Contact was lost during its descent to the Martian south polar region in December 1999. Coming months after the loss of Mars Climate Orbiter, the failure led NASA to review its “faster, better, cheaper” approach."
+ }
+]

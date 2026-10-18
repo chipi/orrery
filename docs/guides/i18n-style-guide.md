@@ -46,7 +46,11 @@ Numeric units (km, s, kg, N, K, etc.) are **never translated** — they are SI. 
 programs, agencies, companies, design bureaus: English in every language, **except the
 language of the name's origin**, which uses the original name (ru «Союз МС-24», «Мир»,
 «Протон-М»; zh-CN 神舟, 嫦娥五号; Iranian names in Arabic script in `ar`). Agencies keep
-their acronym (NASA stays NASA). Code: `ORIGIN_NAMES` in `src/lib/name-origins.js`.
+their international acronym (NASA stays NASA), except in the agency's own language, which
+uses the local name its own Wikipedia uses: hi इसरो, ru Роскосмос, zh-CN 国家航天局, ar
+مركز محمد بن راشد للفضاء; ja keeps JAXA (ja sources write JAXA). When unsure: इसरो (ISRO).
+Code: `ORIGIN_NAMES` in `src/lib/name-origins.js`; glossary class `agency` in
+`scripts/i18n-tools/native-terms.json`.
 
 **Science, geography, astronomy and people — native in every language,** written the
 way that country's universities, schools and space agency write them: planets and moons,
@@ -80,8 +84,8 @@ Rationale: missions are real-world objects with single canonical names. A user s
 | Blue Origin | Blue Moon MK1 (keep) |
 | Tito concept | Inspiration Mars (keep) |
 
-### Agency proper nouns (KEEP IN ORIGINAL acronym)
-NASA, ESA, JAXA, ISRO, CNSA, ROSCOSMOS, UAESA, AEB, KARI, CSA, UKSA, ASI, DLR, CNES, MBRSC. Do **not** expand or translate the acronyms.
+### Agency proper nouns (international acronym; local name in the agency's own language)
+NASA, ESA, JAXA, ISRO, CNSA, ROSCOSMOS, UAESA, AEB, KARI, CSA, UKSA, ASI, DLR, CNES, MBRSC. Do **not** expand or translate the acronyms — except in the agency's own language, which writes its local name (hi इसरो, ru Роскосмос, zh-CN 国家航天局, ar مركز محمد بن راشد للفضاء; see §2). Check that language's Wikipedia before adding another: ja.wikipedia writes JAXA, so ja keeps JAXA.
 
 ---
 

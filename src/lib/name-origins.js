@@ -168,6 +168,7 @@ export const ORIGIN_NAMES = {
     Feitian: '飞天',
     Xuntian: '巡天',
     Jiuquan: '酒泉',
+    CNSA: '国家航天局',
     Wenchang: '文昌',
     Xichang: '西昌',
     Taiyuan: '太原',
@@ -205,11 +206,12 @@ export const ORIGIN_NAMES = {
     'Shiv Shakti': 'शिव शक्ति',
     'Shiv Shakti Point': 'शिव शक्ति बिंदु',
     'Satish Dhawan Space Centre': 'सतीश धवन अंतरिक्ष केंद्र',
+    ISRO: 'इसरो',
     Sriharikota: 'श्रीहरिकोटा',
     Aditya: 'आदित्य',
     Vikas: 'विकास',
   },
-  ar: { Hope: 'الأمل', Rashid: 'راشد' },
+  ar: { Hope: 'الأمل', Rashid: 'راشد', MBRSC: 'مركز محمد بن راشد للفضاء' },
 };
 
 // Bases shared with names from elsewhere (NASA's Mars 2020, ESA's Vega rocket): only

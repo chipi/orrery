@@ -1,0 +1,14 @@
+[
+  {
+    "rel": "messages",
+    "at": "science_layer_hill_sphere_label",
+    "old": "Hill Sphere",
+    "new": "Hill गोला"
+  },
+  {
+    "rel": "messages",
+    "at": "science_layer_lagrange_points_label",
+    "old": "Lagrange Points",
+    "new": "Lagrange बिंदु"
+  }
+]

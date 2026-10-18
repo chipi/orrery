@@ -1,0 +1,20 @@
+[
+  {
+    "rel": "science/orbits/lagrange-points.json",
+    "at": "title",
+    "old": "Punti di ritardo",
+    "new": "Punti di Lagrange"
+  },
+  {
+    "rel": "messages",
+    "at": "science_layer_hill_sphere_label",
+    "old": "Hill Sphere",
+    "new": "Sfera di Hill"
+  },
+  {
+    "rel": "messages",
+    "at": "science_layer_lagrange_points_label",
+    "old": "Lagrange Points",
+    "new": "Punti di Lagrange"
+  }
+]

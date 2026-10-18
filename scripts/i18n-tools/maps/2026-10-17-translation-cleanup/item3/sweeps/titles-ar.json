@@ -1,0 +1,14 @@
+[
+  {
+    "rel": "messages",
+    "at": "science_layer_hill_sphere_label",
+    "old": "كرة Hill Sphere",
+    "new": "كرة Hill"
+  },
+  {
+    "rel": "messages",
+    "at": "science_layer_lagrange_points_label",
+    "old": "نقاط Lagrange Points",
+    "new": "نقاط Lagrange"
+  }
+]

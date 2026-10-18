@@ -2,7 +2,7 @@
   "name": "Mars Express",
   "type": "ORBITER · ACTIVE",
   "first": "欧洲首次行星际探测任务；运行时间最长的非NASA火星轨道器",
-  "description": "ESA首次前往除地球外行星的任务。该轨道器生成了最长的火星大气连续记录，绘制了水冰沉积、甲烷羽流及行星三维气象的分布图。它搭载的英国制造登陆器Beagle 2到达了火星表面，但太阳能电池板始终未能完全展开——在2004年被宣布丧失，后于2015年被NASA的Mars Reconnaissance Orbiter完整发现。该轨道器目前已运行进入第三个十年。",
+  "description": "ESA首次前往地球以外行星的任务。该轨道器取得了最长的火星大气连续观测记录，绘制了水冰沉积、甲烷羽流以及这颗行星三维天气的分布图。它搭载的英国制造的着陆器Beagle 2抵达了火星表面，但太阳能电池板始终没有完全展开——2004年被宣告失联，2015年被NASA的Mars Reconnaissance Orbiter发现其完好无损。该轨道器已进入运行的第三个十年。",
   "events": [
     { "met": 0, "label": "发射", "note": "Soyuz-FG / Fregat火箭从拜科努尔发射升空", "type": "nominal" },
     { "met": 7, "label": "TCM-1", "note": "首次中途修正", "type": "nominal" },

@@ -2,7 +2,7 @@
   "name": "Beresheet",
   "type": "PRIVATE LANDER · CRASHED",
   "first": "首个抵达月球的私人出资任务；以色列首次月球任务",
-  "description": "SpaceIL 的 Beresheet（希伯来文：'In the beginning'）于 2019 年 2 月作为 Falcon 9 火箭的共乘乘客发射升空。这个小型着陆器没有进行直接的月球转移注入，而是进行了数周的近地点提升变轨机动，从停泊轨道爬升到月球——这是为低预算任务开创的燃料节约型轨迹。在 2019 年 4 月 4 日成功进行月球轨道插入后，下降期间惯性测量装置的重置导致主发动机关闭。Beresheet 在风暴洋坠毁。SpaceIL 在数天内承诺实施后续任务（Beresheet 2）。",
+  "description": "SpaceIL的Beresheet（希伯来语意为“起初”）于2019年2月作为Falcon 9的拼车乘客发射。这台小型着陆器没有采用直接的地月转移注入，而是用数周时间做抬高近地点的相位点火，从停泊轨道一步步爬向月球——这是为低预算任务开创的省燃料轨道。2019年4月4日成功入月球轨道之后，下降过程中一次惯性测量单元重置导致主发动机关机。Beresheet坠毁在澄海。SpaceIL在几天之内就承诺研制后继者（Beresheet 2）。",
   "events": [
     { "met": 0, "label": "发射", "note": "Falcon 9 卡纳维拉尔角共乘火箭 2019-02-22", "type": "nominal" },
     { "met": 0.01, "label": "调相点火", "note": "七次近地点提升变轨中的第一次，从近地轨道爬升至月球接近轨道。", "type": "info" },

@@ -2,7 +2,7 @@
   "name": "Schiaparelli EDM",
   "type": "ENTRY/DESCENT/LANDING DEMONSTRATOR · CRASHED",
   "first": "ESA首次火星表面着陆尝试；旨在为ExoMars Rosalind Franklin演示EDL能力",
-  "description": "Schiaparelli是搭载在ExoMars Trace Gas Orbiter (TGO)上的进入-下降-着陆演示器。该航天器以意大利天文学家乔凡尼·斯基亚帕雷利的名字命名，旨在验证ESA计划为Rosalind Franklin漫游车扩展应用的EDL堆栈。Schiaparelli于2016年10月16日与TGO分离，三天后进入火星大气层。下降过程遭遇失败：饱和的惯性测量单元导致导航软件错误地认为该航天器已在高空着陆——降落伞提前抛弃，制动推进器在仅点火3秒后关闭。Schiaparelli以约150米/秒的速度撞击地表。TGO本身成功完成了轨道插入并继续运行。",
+  "description": "Schiaparelli是搭载在ExoMars Trace Gas Orbiter（TGO）上的进入-下降-着陆演示器。它以意大利天文学家乔凡尼·斯基亚帕雷利命名，目的是验证ESA打算为Rosalind Franklin火星车放大应用的整套EDL系统。Schiaparelli于2016年10月16日与TGO分离，三天后进入火星大气。下降过程崩溃了：饱和的惯性测量单元使导航软件误以为航天器已在高空着陆——降落伞被提前抛掉，制动推力器仅点火3秒就关闭。Schiaparelli以约150 m/s的速度撞上地面。TGO本身顺利完成入轨，并继续运行。",
   "events": [
     { "met": 0, "label": "发射", "note": "2016年3月14日由拜科努尔发射Proton-M运载火箭。TGO + Schiaparelli组合体。", "type": "nominal" },
     { "met": 0.01, "label": "TMI", "note": "Briz-M上面级进行火星转移注入。", "type": "nominal" },

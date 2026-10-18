@@ -1,8 +1,8 @@
 {
-  "name": "X-37B OTV-5号 (USA-277)",
+  "name": "X-37B OTV-5（USA-277）",
   "type": "无人航天飞机 · 已飞行",
-  "first": "USA-277 — 在轨780天，KSC Shuttle Landing Facility",
-  "description": "X-37B第五次飞行，首次以Falcon 9取代Atlas V发射 — 且为唯一一次使用Block 4型Falcon 9的X-37B飞行。2017-09-07 14:00 UTC从KSC LC-39A发射（助推器在下游LZ-1回收）；2019-10-27 07:51 UTC着陆于KSC SLF。在轨780天。X-37B首次进入更高倾角轨道（54.5°） — 扩展了公开可追踪的飞越路径。",
+  "first": "USA-277 — 在轨780天，KSC航天飞机着陆设施",
+  "description": "X-37B第五次飞行，首次由 Falcon 9 而非 Atlas V 发射——也是唯一一次使用 Block 4 型 Falcon 9 的 X-37B 飞行。2017-09-07 14:00 UTC 从 KSC LC-39A 发射（助推器在下游的 LZ-1 回收）；2019-10-27 07:51 UTC 在 KSC SLF 着陆。在轨780天。这是 X-37B 首次进入更高倾角轨道（54.5°）——扩大了可公开追踪的飞越范围。",
   "events": [
     {
       "met": 0,

@@ -2,7 +2,7 @@
   "name": "Chandrayaan-1",
   "type": "ORBITER · FLOWN",
   "first": "印度首次月球任务；确认月球上广泛存在水",
-  "description": "ISRO首个行星际航天器。该轨道器将月球撞击探测器送上月球表面——第一个印度物体抵达另一个天体——并搭载了来自6个国家的11个仪器。NASA的月球矿物绘图仪（M3）搭载在Chandrayaan-1上，这项仪器的发现改写了教科书：水分子广泛分布在月球表面，而不仅仅被锁存在极地阴影陨石坑中。该任务在2009年8月突然结束，当时ISRO失去了与航天器的通信。",
+  "description": "ISRO首个行星际航天器。该轨道器把Moon Impact Probe送上月球表面——印度在另一个天体上的第一件物体——并搭载了来自6个国家的11台仪器。搭载在Chandrayaan-1上的NASA Moon Mineralogy Mapper（M3）仪器做出了改写教科书的发现：水分子广泛分布于月球表面，而不仅仅是被封存在极区的永久阴影撞击坑里。任务在2009年8月突然终结，当时ISRO与航天器失去了联系。",
   "events": [
     { "met": 0, "label": "发射", "note": "PSLV-XL (C11) 从斯里赫里戈达发射。", "type": "nominal" },
     { "met": 17, "label": "MOI", "note": "月球轨道插入 2008-11-08", "type": "nominal" },

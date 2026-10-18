@@ -2,7 +2,7 @@
   "name": "Artemis II",
   "type": "CREWED FLYBY · FLOWN",
   "first": "自 Apollo 17（1972）以来首次载人飞行超越近地轨道——也是激发本项目灵感的任务",
-  "description": "Artemis 计划的首次载人飞行，也是激发Orrery诞生的火花。NASA的 SLS Block 1 运载火箭搭载 Orion 航天器，载着四名宇航员——里德·怀斯曼（CDR）、维克多·格洛弗（PLT）、克里斯蒂娜·科克（MS）和加拿大空间局的杰瑞米·汉森（MS）——进入混合自由返回轨道，在月球背面约 9,200 公里的高度飞掠后直接返回地球，无需进行月球轨道捕获减速。这是一次为期 10 天的任务，以太平洋溅落结束。该任务验证了 Orion 航天器的生命保障、导航和再入系统，为即将进行的 Artemis III 月面着陆任务做好了载人飞行准备。",
+  "description": "Artemis计划的首次载人飞行，也是后来成为Orrery的那点火花。NASA的SLS Block 1火箭发射了载有四名宇航员的Orion飞船——里德·怀斯曼（CDR）、维克多·格洛弗（PLT）、克里斯蒂娜·科克（MS）和CSA的杰瑞米·汉森（MS）——送入混合自由返回轨道，在约9,200 km高度绕过月球背面，无需任何月球入轨点火便将他们送回地球。任务为期10天，以太平洋溅落告终。它在Artemis III月面着陆之前，为载人飞行验证了Orion的生命保障、导航和再入系统。",
   "events": [
     { "met": 0, "label": "SLS 发射", "note": "Orion 从肯尼迪航天中心 LC-39B 发射台搭载四名宇航员升空。", "type": "nominal" },
     { "met": 0.13, "label": "TLI", "note": "ICPS 进行跨月注入变轨——Orion 分离进入月球邻近轨迹。", "type": "nominal" },

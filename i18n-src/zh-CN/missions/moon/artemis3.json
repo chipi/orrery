@@ -2,7 +2,7 @@
   "name": "Artemis III",
   "type": "CREWED LANDER · PLANNED",
   "first": "自 Apollo 17（1972）以来的首次载人月球着陆",
-  "description": "超过半个世纪以来的首次载人月球着陆。架构：NASA 的 SLS Block 1 火箭将搭载 4 名航天员的 Orion 飞船发射至月球周围的近直线晕轨道（NRHO）。SpaceX Starship 人员着陆系统（HLS）预先配置在 NRHO，在跨月球注入前由加油机在近地轨道进行补给。Orion 航天员转移至 HLS；2 名航天员下降至月球南极地区进行约 6.5 天的月面操作，同时 2 名航天员留在 NRHO。月面操作后，HLS 从 NRHO 发射升空，转移至 Orion 并返回地球。将在月球上着陆首位女性航天员和首位有色人种航天员。",
+  "description": "半个多世纪以来的首次载人月球着陆。架构：NASA的SLS Block 1火箭把载有4名乘员的Orion发射到绕月的近直线晕轨道（NRHO）。预先停放在NRHO的是SpaceX Starship Human Landing System（HLS），它在地月转移注入前已由加油型飞行器在近地轨道补加推进剂。Orion乘员转乘HLS；2名宇航员下降到月球南极地区，进行约6.5天的月面作业，另2名留在NRHO。月面作业结束后，HLS发射返回NRHO，与Orion对接转移，并踏上返回地球之路。将把首位女性和首位有色人种送上月球。",
   "events": [
     { "met": 0, "label": "SLS 发射", "note": "Orion 从 KSC LC-39B 发射，搭载 4 名航天员。", "type": "nominal" },
     { "met": 1, "label": "TLI", "note": "地月转移轨道射入。", "type": "nominal" },

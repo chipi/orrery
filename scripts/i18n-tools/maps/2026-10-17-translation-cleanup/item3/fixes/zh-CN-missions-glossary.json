@@ -1,0 +1,14 @@
+[
+ {
+  "rel": "missions/moon/apollo15.json",
+  "at": "events.9.note",
+  "old": "Worden执行有史以来首次地月空间舱外活动（约39分钟，距地球约317 000 km），回收SIM舱胶片筒。",
+  "new": "沃尔登执行有史以来首次地月空间舱外活动（约39分钟，距地球约317 000 km），回收SIM舱胶片筒。"
+ },
+ {
+  "rel": "programs/voskhod.json",
+  "at": "outcome.0.caption",
+  "old": "Voskhod 1的三人乘组——科马罗夫、费奥科迪斯托夫、Yegorov——首次多人航天飞行,穿着衬衫没有航天服也没有逃生系统。",
+  "new": "Voskhod 1的三人乘组——科马罗夫、费奥科迪斯托夫、叶戈罗夫——首次多人航天飞行,穿着衬衫没有航天服也没有逃生系统。"
+ }
+]

@@ -1,8 +1,8 @@
 {
   "name": "Luna 21 / Lunokhod 2",
   "type": "UNCREWED LANDER + ROVER · FLOWN",
-  "first": "第二个苏联月球车；超过40年来最长的地外行驶距离（约39公里）",
-  "description": "Luna 21 在1973年1月向Le Monnier陨石坑——位于Serenitatis海南缘——运送了Lunokhod 2，这是苏联第二个载人遥控月球车。该月球车由位于克里米亚的控制室中的5人团队驾驶，在四个月球日间行驶了约39公里——这一地外行驶距离纪录保持了40多年，直到NASA的Opportunity火星车在2014年超越它。Lunokhod 2在返回前传回了80,000张电视图像和86幅全景图，最后因太阳能电池阵列被灰尘污染而停止工作。",
+  "first": "苏联第二辆月球车；超过40年来最长的地外行驶距离（约39公里）",
+  "description": "Luna 21 于1973年1月将苏联第二辆有人遥控的月球车 Lunokhod 2 送到澄海南缘的勒莫尼耶环形山。这辆月球车由克里米亚控制室中的5人团队驾驶，在四个月球日内行驶了约39公里——这一地外行驶距离纪录保持了40多年，直到2014年 NASA 的 Opportunity 火星车在火星上将其超越。Lunokhod 2 传回了8万帧电视图像和86幅全景图，最终因太阳能电池阵被灰尘污染而停止工作。",
   "events": [
     { "met": 0, "label": "发射", "note": "Proton-K 从拜科努尔发射，1973-01-08。", "type": "nominal" },
     { "met": 0.005, "label": "TLI", "note": "Blok-D上面级的月球转移注入。", "type": "nominal" },

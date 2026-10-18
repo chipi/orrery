@@ -37,7 +37,7 @@ zh titles partly traditional (中途島, 哈欽森, 堅忍, 卡門線, 科羅廖
 - Gubarev, Grechko, Klimuk, Sevastyanov, Lazarev, Makarov, Rosalind Franklin, Copernicus (crater), Cerealia Facula, Jawahar Sthal, Goldstone, Marshall Space Flight Center, von Braun (bare), Darwin, Mössbauer, Rogers Commission, Captain Cook, 4179 Toutatis, Apophis
 
 ## From groups 14–15 (ko, sr-Cyrl fleet)
-- Russian cosmonauts with no sr/ko forms (priority, recur in every locale): Dobrovolski, Volkov, Patsayev, Pavel Popovich, Yury Artyukhin, Sarafanov, Demin, Gubarev, Grechko, Klimuk, Sevastyanov, Lazarev, Makarov, Volynov, Zholobov, Gorbatko, Glazkov, Zudov, Rozhdestvensky, Vladimir Dzhanibekov, Viktor Savinykh; Zhai Zhigang; Gordon Fullerton (sr); Frank Drake (sr: Френк Дрејк unverified)
+- CLOSED 2026-10-18 (operator: close item 3): sr-Cyrl cosmonauts are already Cyrillic via the glossary (Добровољски, Пацајев, Гречко, Џанибеков, …); ko / hi / ar / zh-CN keep them Latin (no source in names-cosmonauts-langlinks.json, no transcription standard used). Original note: Russian cosmonauts with no sr/ko forms (priority, recur in every locale): Dobrovolski, Volkov, Patsayev, Pavel Popovich, Yury Artyukhin, Sarafanov, Demin, Gubarev, Grechko, Klimuk, Sevastyanov, Lazarev, Makarov, Volynov, Zholobov, Gorbatko, Glazkov, Zudov, Rozhdestvensky, Vladimir Dzhanibekov, Viktor Savinykh; Zhai Zhigang; Gordon Fullerton (sr); Frank Drake (sr: Френк Дрејк unverified)
 - Places: Zhukovsky, Speyer, Sinsheim, Edwards AFB, Texas, Los Angeles, New York, Bahrain, Luxembourg, Udvar-Hazy, Beijing, Bay of Bengal
 - sr-Cyrl has no ORIGIN_NAMES block: Soviet/Russian built names stay Latin in sr (correct by rule — not Serbian origin)
 

@@ -1,5 +1,5 @@
 {
-  "intro": "Apollo 15 s'est posée près de la rainure Hadley, dans les Apennins lunaires le 30 juillet 1971 : première mission « de classe J », avec un séjour prolongé en surface, le Lunar Roving Vehicle (LRV) et un pilote formé à la science (David Scott). Scott et Irwin ont parcouru 28 km au total en trois sorties extravéhiculaires (EVA), découvert la Genesis Rock (anorthosite d'environ 4,1 Ga, croûte primaire) et, en direct à la télévision, lâché une plume et un marteau pour reproduire l'expérience de Galileo sur la gravité.",
+  "intro": "Apollo 15 s'est posée près de la rainure Hadley, dans les monts Apennins le 30 juillet 1971 : première mission « de classe J », avec un séjour prolongé en surface, le Lunar Roving Vehicle (LRV) et un pilote formé à la science (David Scott). Scott et Irwin ont parcouru 28 km au total en trois sorties extravéhiculaires (EVA), découvert la Genesis Rock (anorthosite d'environ 4,1 Ga, croûte primaire) et, en direct à la télévision, lâché une plume et un marteau pour reproduire l'expérience de Galileo sur la gravité.",
   "chapters": [
     {
       "id": "hardware",
@@ -19,7 +19,7 @@
       "images": [
         {
           "src": "/images/missions/apollo15/02.webp",
-          "caption": "Jim Irwin faisant le salut à côté du LRV, avec Mt Hadley Delta en arrière-plan — les premières images des Apennine Mountains prises depuis la surface."
+          "caption": "Jim Irwin faisant le salut à côté du LRV, avec le mont Hadley Delta en arrière-plan — les premières images des monts Apennins prises depuis la surface."
         },
         {
           "src": "/images/missions/apollo15/03.webp",
@@ -27,7 +27,7 @@
         },
         {
           "src": "/images/hotspots/moon/apollo15/tier3-pan.jpg",
-          "caption": "Panorama de Hadley Plain — l'étage de descente de Falcon + le LRV + Mt Hadley Delta à l'horizon."
+          "caption": "Panorama de la plaine de Hadley — l'étage de descente de Falcon + le LRV + le mont Hadley Delta à l'horizon."
         }
       ]
     },

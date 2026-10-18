@@ -1,5 +1,5 @@
 {
-  "intro": "Opportunity landete am 25. Januar 2004 in Meridiani Planum – ein Hole-in-one, das den auf Airbags aufspringenden Rover direkt in einen kleinen Krater (Eagle Crater) rollen ließ, dessen Wände die ersten hämatitreichen „Blueberries“ bargen, die je aus der Nähe auf dem Mars gesehen wurden. Ausgelegt für 90 Sols, legte Opportunity über 14 Jahre hinweg 45,16 km zurück, bis ein planetenweiter Staubsturm im Juni 2018 die Energieversorgung durch Solarzellen kappte. Letzte Übertragung: „Meine Batterie ist schwach, und es wird dunkel.“",
+  "intro": "Opportunity landete am 25. Januar 2004 in Meridiani Planum – ein Hole-in-one, das den auf Airbags aufspringenden Rover direkt in einen kleinen Krater (Eagle-Krater) rollen ließ, dessen Wände die ersten hämatitreichen „Blueberries“ bargen, die je aus der Nähe auf dem Mars gesehen wurden. Ausgelegt für 90 Sols, legte Opportunity über 14 Jahre hinweg 45,16 km zurück, bis ein planetenweiter Staubsturm im Juni 2018 die Energieversorgung durch Solarzellen kappte. Letzte Übertragung: „Meine Batterie ist schwach, und es wird dunkel.“",
   "chapters": [
     {
       "id": "hardware",
@@ -34,7 +34,7 @@
     {
       "id": "science",
       "title": "Wissenschaft",
-      "subtitle": "Vom Eagle Crater zum Endeavour – 14 Jahre voller Belege",
+      "subtitle": "Vom Eagle-Krater zum Endeavour – 14 Jahre voller Belege",
       "images": [
         {
           "src": "/images/fleet-galleries/opportunity/03.webp",

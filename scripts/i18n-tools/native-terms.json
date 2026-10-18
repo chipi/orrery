@@ -704,7 +704,11 @@
       "zh-CN": "葛里格-斯杰勒鲁普彗星",
       "es": "26P/Grigg–Skjellerup",
       "nl": "26P/Grigg–Skjellerup",
-      "_qid": "Q1537693"
+      "_qid": "Q1537693",
+      "ko": "26P/그리그-셸레루프 혜성",
+      "hi": "26P/ग्रिग-स्केलेरप धूमकेतु",
+      "ar": "المذنب 26P/غريغ-سكيليروب",
+      "sr-Cyrl": "комета 26P/Григ-Шелеруп"
     },
     "Quaoar": {
       "ru": "Квавар",
@@ -1053,6 +1057,52 @@
       "ja": "ディンキネシュ",
       "zh-CN": "丁基内什星",
       "_qid": "Q63240864"
+    },
+    "Grigg-Skjellerup": {
+      "ru": "комета Григга — Скьеллерупа",
+      "ja": "グリッグ・シェレルップ彗星",
+      "zh-CN": "葛里格-斯杰勒鲁普彗星",
+      "ko": "그리그-셸레루프 혜성",
+      "hi": "ग्रिग-स्केलेरप धूमकेतु",
+      "ar": "المذنب غريغ-سكيليروب",
+      "sr-Cyrl": "комета Григ-Шелеруп",
+      "_qid": "Q1537693"
+    },
+    "Lutetia": {
+      "ru": "Лютеция",
+      "ja": "ルテティア",
+      "zh-CN": "司琴星",
+      "ko": "루테티아",
+      "hi": "ल्यूटीशीया",
+      "ar": "لوتيتيا",
+      "sr-Cyrl": "Лутеција",
+      "fr": "Lutèce",
+      "es": "Lutecia",
+      "pt-BR": "Lutécia",
+      "_qid": "Q107556"
+    },
+    "Ida": {
+      "ru": "Ида",
+      "ja": "イダ",
+      "zh-CN": "艾女星",
+      "ko": "이다",
+      "hi": "इडा",
+      "ar": "إيدا",
+      "sr-Cyrl": "Ида",
+      "_qid": "Q149012"
+    },
+    "Dactyl": {
+      "ru": "Дактиль",
+      "ja": "ダクティル",
+      "zh-CN": "艾卫一",
+      "ko": "다크틸",
+      "hi": "डैक्टिल",
+      "ar": "داكتيل",
+      "sr-Cyrl": "Дактил",
+      "fr": "Dactyle",
+      "es": "Dáctilo",
+      "it": "Dattilo",
+      "_qid": "Q510728"
     }
   },
   "feature": {
@@ -2121,6 +2171,112 @@
       "it": "bacino Polo Sud-Aitken",
       "nl": "Zuidpool-Aitken-bekken",
       "pt-BR": "bacia do Polo Sul-Aitken"
+    },
+    "Tranquility Base": {
+      "ru": "База Спокойствия",
+      "ja": "静かの基地",
+      "zh-CN": "静海基地",
+      "ko": "고요의 기지",
+      "hi": "ट्रैंक्विलिटी बेस",
+      "ar": "قاعدة السكون",
+      "sr-Cyrl": "База Спокојство",
+      "fr": "base de la Tranquillité",
+      "es": "Base Tranquilidad",
+      "it": "Base della Tranquillità",
+      "pt-BR": "Base Tranquilidade"
+    },
+    "Terra Sirenum": {
+      "ru": "Земля Сирен",
+      "ja": "シレーン陸地",
+      "zh-CN": "萨瑞南高地",
+      "ko": "테라 시레눔",
+      "hi": "टेरा सिरेनम",
+      "ar": "تيرا سيرينوم",
+      "sr-Cyrl": "Земља Сирена",
+      "_qid": "Q3111751"
+    },
+    "Eagle Crater": {
+      "ru": "кратер Игл",
+      "ja": "イーグル・クレーター",
+      "zh-CN": "鹰撞击坑",
+      "ko": "이글 분화구",
+      "hi": "ईगल क्रेटर",
+      "ar": "فوهة إيغل",
+      "sr-Cyrl": "кратер Игл",
+      "de": "Eagle-Krater",
+      "fr": "cratère Eagle",
+      "es": "cráter Eagle",
+      "it": "cratere Eagle",
+      "nl": "Eagle-krater",
+      "pt-BR": "cratera Eagle",
+      "_qid": "Q2083022"
+    },
+    "Nili Fossae": {
+      "ru": "борозды Нили",
+      "ja": "ニリ谷",
+      "zh-CN": "尼利槽沟",
+      "ko": "닐리 포새",
+      "hi": "नीली फ़ॉसी",
+      "ar": "نيلي فوساي",
+      "sr-Cyrl": "Нилове бразде",
+      "_qid": "Q3117304"
+    },
+    "Cerberus Fossae": {
+      "ru": "борозды Цербера",
+      "ja": "ケルベルス地溝帯",
+      "zh-CN": "科柏洛斯槽沟",
+      "ko": "케르베루스 지구대",
+      "hi": "सर्बेरस फ़ॉसी",
+      "ar": "سيربيروس فوساي",
+      "sr-Cyrl": "Церберове бразде",
+      "_qid": "Q3773268"
+    },
+    "Mt Hadley Delta": {
+      "ru": "гора Хэдли-Дельта",
+      "ja": "ハドリー・デルタ山",
+      "zh-CN": "哈德利·德尔塔山",
+      "ko": "해들리 델타산",
+      "hi": "हैडली डेल्टा पर्वत",
+      "ar": "جبل هادلي دلتا",
+      "sr-Cyrl": "планина Хедли Делта",
+      "de": "Mons Hadley Delta",
+      "fr": "mont Hadley Delta",
+      "es": "Mons Hadley Delta",
+      "it": "Mons Hadley Delta",
+      "nl": "Mons Hadley Delta",
+      "pt-BR": "Mons Hadley Delta",
+      "_qid": "Q1472624"
+    },
+    "Hadley Plain": {
+      "ru": "равнина Хэдли",
+      "ja": "ハドリー平原",
+      "zh-CN": "哈德利平原",
+      "ko": "해들리 평원",
+      "hi": "हैडली मैदान",
+      "ar": "سهل هادلي",
+      "sr-Cyrl": "равница Хедли",
+      "de": "Hadley-Ebene",
+      "fr": "plaine de Hadley",
+      "es": "llanura de Hadley",
+      "it": "piana di Hadley",
+      "nl": "Hadley-vlakte",
+      "pt-BR": "planície de Hadley"
+    },
+    "Apennine Mountains": {
+      "ru": "Апеннины",
+      "ja": "アペニン山脈",
+      "zh-CN": "亚平宁山脉",
+      "ko": "아펜니노산맥",
+      "hi": "एपेनाइन पर्वत",
+      "ar": "جبال الأبينيني",
+      "sr-Cyrl": "Апенини",
+      "de": "Montes Apenninus",
+      "fr": "monts Apennins",
+      "es": "montes Apeninos",
+      "it": "monti Appennini",
+      "nl": "Montes Apenninus",
+      "pt-BR": "montes Apeninos",
+      "_qid": "Q499037"
     }
   },
   "place": {
@@ -2318,6 +2474,84 @@
       "it": "Yoshinobu",
       "nl": "Yoshinobu",
       "pt-BR": "Yoshinobu"
+    },
+    "Jodrell Bank": {
+      "ru": "Джодрелл-Бэнк",
+      "ja": "ジョドレルバンク",
+      "zh-CN": "卓瑞尔河岸",
+      "ko": "조드럴 뱅크",
+      "hi": "जोड्रेल बैंक",
+      "ar": "جودريل بنك",
+      "sr-Cyrl": "Џодрел Бенк",
+      "_qid": "Q1569783"
+    },
+    "Woomera": {
+      "ru": "Вумера",
+      "ja": "ウーメラ",
+      "zh-CN": "伍默拉",
+      "ko": "우메라",
+      "hi": "वूमेरा",
+      "ar": "ووميرا",
+      "sr-Cyrl": "Вумера"
+    },
+    "Houston": {
+      "ru": "Хьюстон",
+      "ja": "ヒューストン",
+      "zh-CN": "休斯顿",
+      "ko": "휴스턴",
+      "hi": "ह्यूस्टन",
+      "ar": "هيوستن",
+      "sr-Cyrl": "Хјустон",
+      "_qid": "Q16555"
+    },
+    "Inner Mongolia": {
+      "ru": "Внутренняя Монголия",
+      "ja": "内モンゴル",
+      "zh-CN": "内蒙古",
+      "ko": "내몽골",
+      "hi": "भीतरी मंगोलिया",
+      "ar": "منغوليا الداخلية",
+      "sr-Cyrl": "Унутрашња Монголија",
+      "de": "Innere Mongolei",
+      "fr": "Mongolie-Intérieure",
+      "es": "Mongolia Interior",
+      "it": "Mongolia Interna",
+      "nl": "Binnen-Mongolië",
+      "pt-BR": "Mongólia Interior",
+      "_qid": "Q41079"
+    },
+    "Hainan": {
+      "ru": "Хайнань",
+      "ja": "海南島",
+      "zh-CN": "海南",
+      "ko": "하이난",
+      "hi": "हाइनान",
+      "ar": "هاينان",
+      "sr-Cyrl": "Хајнан",
+      "_qid": "Q42200"
+    },
+    "Florida": {
+      "ru": "Флорида",
+      "ja": "フロリダ",
+      "zh-CN": "佛罗里达",
+      "ko": "플로리다",
+      "hi": "फ़्लोरिडा",
+      "ar": "فلوريدا",
+      "sr-Cyrl": "Флорида",
+      "fr": "Floride",
+      "pt-BR": "Flórida",
+      "_qid": "Q812"
+    },
+    "Manchester": {
+      "ru": "Манчестер",
+      "ja": "マンチェスター",
+      "zh-CN": "曼彻斯特",
+      "ko": "맨체스터",
+      "hi": "मैन्चेस्टर",
+      "ar": "مانشستر",
+      "sr-Cyrl": "Манчестер",
+      "es": "Mánchester",
+      "_qid": "Q18125"
     }
   },
   "station": {
@@ -2547,6 +2781,20 @@
       "it": "Cape Canaveral Air Force Station",
       "nl": "Cape Canaveral Air Force Station",
       "pt-BR": "Estação da Força Aérea de Cabo Canaveral"
+    },
+    "Satish Dhawan Space Centre": {
+      "ru": "Космический центр имени Сатиша Дхавана",
+      "ja": "サティシュ・ダワン宇宙センター",
+      "zh-CN": "萨迪什·达万航天中心",
+      "ko": "사티시 다완 우주 센터",
+      "hi": "सतीश धवन अंतरिक्ष केंद्र",
+      "ar": "مركز ستيش دون للفضاء",
+      "sr-Cyrl": "Свемирски центар „Сатиш Даван“",
+      "fr": "Centre spatial Satish-Dhawan",
+      "es": "Centro espacial Satish Dhawan",
+      "it": "Centro spaziale Satish Dhawan",
+      "pt-BR": "Centro Espacial Satish Dhawan",
+      "_qid": "Q640273"
     }
   },
   "person": {
@@ -2623,7 +2871,8 @@
       "ko": "해리슨 슈미트",
       "hi": "हैरिसन श्मिट",
       "ar": "هاريسون شميت",
-      "_qid": "Q108886"
+      "_qid": "Q108886",
+      "sr-Cyrl": "Харисон Шмит"
     },
     "Cliff Charlesworth": {
       "ja": "クリフ・チャールズワース",
@@ -3770,7 +4019,9 @@
       "hi": "स्टुअर्ट रूसा",
       "ar": "ستوارت روزا",
       "sr-Cyrl": "Стјуарт Руса",
-      "_qid": "Q375065"
+      "_qid": "Q375065",
+      "ja": "スチュアート・ルーサ",
+      "ko": "스튜어트 루사"
     },
     "David Jewitt": {
       "ru": "Дэвид Джуитт",
@@ -4556,7 +4807,8 @@
       "hi": "श्मिट",
       "ar": "شميت",
       "_qid": "Q108886",
-      "_bare": true
+      "_bare": true,
+      "sr-Cyrl": "Шмит"
     },
     "Irwin": {
       "ru": "Ирвин",
@@ -4874,7 +5126,119 @@
       "ar": "روزا",
       "sr-Cyrl": "Руса",
       "_qid": "Q375065",
-      "_bare": true
+      "_bare": true,
+      "ja": "ルーサ",
+      "ko": "루사"
+    },
+    "Dick Gordon": {
+      "ru": "Ричард Гордон",
+      "ja": "リチャード・ゴードン",
+      "zh-CN": "理查德·戈尔登",
+      "ko": "리처드 고든",
+      "hi": "रिचर्ड गॉर्डन",
+      "ar": "ريشارد جوردن",
+      "sr-Cyrl": "Ричард Гордон",
+      "_qid": "Q502963"
+    },
+    "Al Bean": {
+      "ru": "Алан Бин",
+      "ja": "アラン・ビーン",
+      "zh-CN": "艾伦·宾",
+      "ko": "앨런 빈",
+      "hi": "एलन बीन",
+      "ar": "ألان بين",
+      "sr-Cyrl": "Алан Бин",
+      "_qid": "Q310924"
+    },
+    "Ed Mitchell": {
+      "ru": "Эдгар Митчелл",
+      "ja": "エドガー・ミッチェル",
+      "zh-CN": "艾德加·米切尔",
+      "ko": "에드거 미첼",
+      "hi": "एडगर मिशेल",
+      "ar": "إدجار ميتشيل",
+      "sr-Cyrl": "Едгар Мичел",
+      "_qid": "Q295873"
+    },
+    "Jim Irwin": {
+      "ru": "Джеймс Ирвин",
+      "ja": "ジェームズ・アーウィン",
+      "zh-CN": "詹姆斯·艾尔文",
+      "ko": "제임스 어윈",
+      "hi": "जेम्स इरविन",
+      "ar": "جيمس إروين",
+      "sr-Cyrl": "Џејмс Ирвин",
+      "_qid": "Q297801"
+    },
+    "Ken Mattingly": {
+      "ru": "Кен Маттингли",
+      "ja": "ケン・マッティングリー",
+      "zh-CN": "肯·马丁利",
+      "ko": "켄 매팅리",
+      "hi": "केन मैटिंगली",
+      "ar": "كين ماتينجلي",
+      "sr-Cyrl": "Кен Матингли",
+      "_qid": "Q318513"
+    },
+    "Ron Evans": {
+      "ru": "Рон Эванс",
+      "ja": "ロン・エヴァンス",
+      "zh-CN": "罗恩·埃文斯",
+      "ko": "론 에번스",
+      "hi": "रॉन इवांस",
+      "ar": "رون إيفانز",
+      "sr-Cyrl": "Рон Еванс",
+      "_qid": "Q1696151"
+    },
+    "Adam Steltzner": {
+      "ru": "Адам Стелцнер",
+      "ja": "アダム・ステルツナー",
+      "zh-CN": "亚当·施特尔茨纳",
+      "ko": "애덤 스텔츠너",
+      "hi": "एडम स्टेल्ट्ज़नर",
+      "ar": "آدم ستيلتزنر",
+      "sr-Cyrl": "Адам Стелцнер",
+      "_qid": "Q4679842"
+    },
+    "Andrea Luck": {
+      "ru": "Андреа Лак",
+      "ja": "アンドレア・ラック",
+      "zh-CN": "安德烈娅·勒克",
+      "ko": "안드레아 럭",
+      "hi": "एंड्रिया लक",
+      "ar": "أندريا لاك",
+      "sr-Cyrl": "Андреа Лак",
+      "_female": true
+    },
+    "Chris Hadfield": {
+      "ru": "Крис Хэдфилд",
+      "ja": "クリス・ハドフィールド",
+      "zh-CN": "克里斯·哈德菲尔德",
+      "ko": "크리스 해드필드",
+      "hi": "क्रिस हैडफ़ील्ड",
+      "ar": "كريس هادفيلد",
+      "sr-Cyrl": "Крис Хедфилд",
+      "_qid": "Q1076962"
+    },
+    "David Bowie": {
+      "ru": "Дэвид Боуи",
+      "ja": "デヴィッド・ボウイ",
+      "zh-CN": "大卫·鲍伊",
+      "ko": "데이비드 보위",
+      "hi": "डेविड बोवी",
+      "ar": "ديفيد بوي",
+      "sr-Cyrl": "Дејвид Боуи",
+      "_qid": "Q5383"
+    },
+    "Vangelis": {
+      "ru": "Вангелис",
+      "ja": "ヴァンゲリス",
+      "zh-CN": "范吉利斯",
+      "ko": "반젤리스",
+      "hi": "वांगेलिस",
+      "ar": "فانجيليس",
+      "sr-Cyrl": "Вангелис",
+      "_qid": "Q153172"
     }
   },
   "star": {

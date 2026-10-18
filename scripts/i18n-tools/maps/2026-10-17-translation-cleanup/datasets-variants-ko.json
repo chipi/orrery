@@ -1,0 +1,20 @@
+[
+  {
+    "rel": "site-stories/apollo17.json",
+    "at": "chapters.0.images.0.caption",
+    "old": "Apollo 17 승무원 단체 사진 — 유진 서넌(사령관), 로널드 에번스(사령선 조종사), 해리슨 \"잭\" 슈미트(달착륙선 조종사, 과학자 우주비행사).",
+    "new": "Apollo 17 승무원 단체 사진 — 유진 서넌(사령관), 론 에번스(사령선 조종사), 해리슨 \"잭\" 슈미트(달착륙선 조종사, 과학자 우주비행사)."
+  },
+  {
+    "rel": "site-stories/chandrayaan3.json",
+    "at": "chapters.1.subtitle",
+    "old": "2023년 7월 14일 — 사티시 다완 우주센터에서 발사된 LVM3",
+    "new": "2023년 7월 14일 — 사티시 다완 우주 센터에서 발사된 LVM3"
+  },
+  {
+    "rel": "trajectories/galileo.json",
+    "at": "waypoints.10.label",
+    "old": "이다 + 닥틸",
+    "new": "이다 + 다크틸"
+  }
+]

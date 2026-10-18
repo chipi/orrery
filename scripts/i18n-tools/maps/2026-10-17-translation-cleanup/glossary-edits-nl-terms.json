@@ -1,0 +1,44 @@
+[
+  {
+    "rel": "fleet/lander/change6.json",
+    "at": "description",
+    "old": "De eerste steekproefterugbrengmissie van de maanverre zijde — een 53 jaar na Apollo mijlpaal die nog geen ander ruimtebedrijf heeft geprobeerd. Gelanceerd op 2024-05-03 op een Long March 5 vanuit Wenchang, Chang'e 6 gebruikte de Queqiao-2 relaisatelliet (sinds maart 2024 in een haloïdebaan rond het Aarde-Maan L2-punt) om met de aarde te communiceren over de maanrand heen. De lander is op 2024-06-01 (UTC, 2024-06-02 Beijing-tijd) neergestort in het Apollo-bekken binnen het gigantische Zuidpool-Aitken-inslagbekken (-153,99° W, -41,64° Z). De boor en schep ervan verzamelden ongeveer 1935 g regoliet uit een gebied dat sinds de beksenvormende impact ongeveer 4,3 miljard jaar geleden grotendeels ongestoord is gebleven — materiaal uit de maanmantel dat door SPA is uitgegraven. De opstijger steeg op 2024-06-03 op, rendez-vous met de orbiter in maanbaan, en de terugkeercapsule landde op 2024-06-25 14:07 lokale tijd in Siziwang Banner, Inner Mongolia. Frankrijk, Italië, Zweden en Pakistan leverden instrumenten — de eerste internationale wetenschappelijke nuttige ladingen op een Chinese steekproefterugbrengmissie.",
+    "new": "De eerste steekproefterugbrengmissie van de maanverre zijde — een 53 jaar na Apollo mijlpaal die nog geen ander ruimtebedrijf heeft geprobeerd. Gelanceerd op 2024-05-03 op een Long March 5 vanuit Wenchang, Chang'e 6 gebruikte de Queqiao-2 relaisatelliet (sinds maart 2024 in een haloïdebaan rond het Aarde-Maan L2-punt) om met de aarde te communiceren over de maanrand heen. De lander is op 2024-06-01 (UTC, 2024-06-02 Beijing-tijd) neergestort in het Apollo-bekken binnen het gigantische Zuidpool-Aitken-inslagbekken (-153,99° W, -41,64° Z). De boor en schep ervan verzamelden ongeveer 1935 g regoliet uit een gebied dat sinds de beksenvormende impact ongeveer 4,3 miljard jaar geleden grotendeels ongestoord is gebleven — materiaal uit de maanmantel dat door SPA is uitgegraven. De opstijger steeg op 2024-06-03 op, rendez-vous met de orbiter in maanbaan, en de terugkeercapsule landde op 2024-06-25 14:07 lokale tijd in Siziwang Banner, Binnen-Mongolië. Frankrijk, Italië, Zweden en Pakistan leverden instrumenten — de eerste internationale wetenschappelijke nuttige ladingen op een Chinese steekproefterugbrengmissie."
+  },
+  {
+    "rel": "hotspot-metadata/opportunity.json",
+    "at": "panorama_caption",
+    "old": "Het uitzicht van Opportunity vanuit Eagle Crater, de landingsplek na het stuiteren op airbags — de gelaagde ontsluiting Burns Cliff aan de overkant van de kraterwand werd het eerste grote wetenschappelijke doel van de rover.",
+    "new": "Het uitzicht van Opportunity vanuit Eagle-krater, de landingsplek na het stuiteren op airbags — de gelaagde ontsluiting Burns Cliff aan de overkant van de kraterwand werd het eerste grote wetenschappelijke doel van de rover."
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "intro",
+    "old": "Apollo 15 landde op 30 juli 1971 bij Hadley-rille / Apennine Mountains — de eerste \"J-class\"-missie, met een verlengd verblijf op het oppervlak, de Lunar Roving Vehicle (LRV) en een piloot met wetenschappelijke training (David Scott). Scott en Irwin legden tijdens drie EVA's in totaal 28 km af met de rover, vonden de Genesis Rock (~4,1 Ga anorthosiet, oerkorst) en lieten live op tv een veer en een hamer vallen om Galileo's zwaartekrachtproef na te doen.",
+    "new": "Apollo 15 landde op 30 juli 1971 bij Hadley-rille / Montes Apenninus — de eerste \"J-class\"-missie, met een verlengd verblijf op het oppervlak, de Lunar Roving Vehicle (LRV) en een piloot met wetenschappelijke training (David Scott). Scott en Irwin legden tijdens drie EVA's in totaal 28 km af met de rover, vonden de Genesis Rock (~4,1 Ga anorthosiet, oerkorst) en lieten live op tv een veer en een hamer vallen om Galileo's zwaartekrachtproef na te doen."
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Jim Irwin salueert naast de LRV, met Mt Hadley Delta op de achtergrond — de eerste beelden van de Apennine Mountains vanaf het oppervlak.",
+    "new": "Jim Irwin salueert naast de LRV, met Mons Hadley Delta op de achtergrond — de eerste beelden van de Montes Apenninus vanaf het oppervlak."
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.1.images.2.caption",
+    "old": "Panorama van Hadley Plain — de afdaaltrap van Falcon, de LRV en Mt Hadley Delta aan de horizon.",
+    "new": "Panorama van de Hadley-vlakte — de afdaaltrap van Falcon, de LRV en Mons Hadley Delta aan de horizon."
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "intro",
+    "old": "Opportunity landde op 25 januari 2004 in Meridiani Planum — een hole-in-one waarbij de op airbags stuiterende rover regelrecht in een kleine krater rolde (Eagle Crater), met wanden waarin de eerste hematietrijke 'blueberries' zaten die ooit van dichtbij op Mars zijn gezien. Opportunity was ontworpen voor 90 sols, maar reed in 14 jaar 45,16 km, tot een planeetwijde stofstorm in juni 2018 de zonnestroom afsneed. Laatste transmissie: \"My battery is low and it's getting dark.\"",
+    "new": "Opportunity landde op 25 januari 2004 in Meridiani Planum — een hole-in-one waarbij de op airbags stuiterende rover regelrecht in een kleine krater rolde (Eagle-krater), met wanden waarin de eerste hematietrijke 'blueberries' zaten die ooit van dichtbij op Mars zijn gezien. Opportunity was ontworpen voor 90 sols, maar reed in 14 jaar 45,16 km, tot een planeetwijde stofstorm in juni 2018 de zonnestroom afsneed. Laatste transmissie: \"My battery is low and it's getting dark.\""
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.2.subtitle",
+    "old": "Van Eagle Crater tot Endeavour — 14 jaar aan bewijsmateriaal",
+    "new": "Van Eagle-krater tot Endeavour — 14 jaar aan bewijsmateriaal"
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "rel": "belts/asteroid.json",
+    "at": "mission_visits.1",
+    "old": "Galileo — NASA, 1991 (sobrevuelo de Gaspra) + 1993 (descubrimiento de Ida + Dactyl)",
+    "new": "Galileo — NASA, 1991 (sobrevuelo de Gaspra) + 1993 (descubrimiento de Ida + Dáctilo)"
+  },
+  {
+    "rel": "hotspot-metadata/apollo11.json",
+    "at": "panorama_caption",
+    "old": "Tranquility Base, EVA-1. Buzz Aldrin fotografió el LM Eagle y la bandera de EE. UU. poco después del alunizaje. Las costuras visibles de la Hasselblad y los empalmes de color junto al LM forman parte del mosaico publicado.",
+    "new": "Base Tranquilidad, EVA-1. Buzz Aldrin fotografió el LM Eagle y la bandera de EE. UU. poco después del alunizaje. Las costuras visibles de la Hasselblad y los empalmes de color junto al LM forman parte del mosaico publicado."
+  },
+  {
+    "rel": "hotspot-metadata/opportunity.json",
+    "at": "panorama_caption",
+    "old": "La vista de Opportunity desde el interior de Eagle Crater, el lugar donde aterrizó rebotando sobre airbags: el afloramiento estratificado de Burns Cliff, visible en la pared opuesta, sería el primer gran objetivo científico del rover.",
+    "new": "La vista de Opportunity desde el interior del cráter Eagle, el lugar donde aterrizó rebotando sobre airbags: el afloramiento estratificado de Burns Cliff, visible en la pared opuesta, sería el primer gran objetivo científico del rover."
+  },
+  {
+    "rel": "hotspot-metadata/sriharikota-slp.json",
+    "at": "panorama_caption",
+    "old": "Satish Dhawan Space Centre, Sriharikota: el PSLV-C61 en traslado desde la Vehicle Integration Facility hacia la plataforma de lanzamiento.",
+    "new": "Centro espacial Satish Dhawan, Sriharikota: el PSLV-C61 en traslado desde la Vehicle Integration Facility hacia la plataforma de lanzamiento."
+  },
+  {
+    "rel": "science/history/apollo-11-1969.json",
+    "at": "intro_sentence",
+    "old": "Tres astronautas, un Saturno V y un viaje a la Luna con plazo fijado por JFK en 1961. Tranquility Base, ocho años después, conforme a lo previsto.",
+    "new": "Tres astronautas, un Saturno V y un viaje a la Luna con plazo fijado por JFK en 1961. Base Tranquilidad, ocho años después, conforme a lo previsto."
+  },
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.2.images.1.caption",
+    "old": "La huella de la bota de Aldrin en Tranquility Base, conservada intacta en el vacío durante más de medio siglo.",
+    "new": "La huella de la bota de Aldrin en la Base Tranquilidad, conservada intacta en el vacío durante más de medio siglo."
+  },
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.2.images.2.caption",
+    "old": "Panorámica de Tranquility Base: la etapa de descenso del módulo lunar Eagle, el paquete científico EASEP, la bandera de Estados Unidos y las huellas más famosas de la Luna.",
+    "new": "Panorámica de la Base Tranquilidad: la etapa de descenso del módulo lunar Eagle, el paquete científico EASEP, la bandera de Estados Unidos y las huellas más famosas de la Luna."
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Jim Irwin hace el saludo junto al LRV con Mt Hadley Delta al fondo: las primeras imágenes de los Apennine Mountains tomadas desde la superficie.",
+    "new": "Jim Irwin hace el saludo junto al LRV con Mons Hadley Delta al fondo: las primeras imágenes de los montes Apeninos tomadas desde la superficie."
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.1.images.2.caption",
+    "old": "Panorámica de Hadley Plain: la etapa de descenso del Falcon, el LRV y Mt Hadley Delta en el horizonte.",
+    "new": "Panorámica de la llanura de Hadley: la etapa de descenso del Falcon, el LRV y Mons Hadley Delta en el horizonte."
+  },
+  {
+    "rel": "site-stories/chandrayaan3.json",
+    "at": "chapters.1.subtitle",
+    "old": "14 de julio de 2023: LVM3 desde el Satish Dhawan Space Centre",
+    "new": "14 de julio de 2023: LVM3 desde el Centro espacial Satish Dhawan"
+  },
+  {
+    "rel": "site-stories/luna9.json",
+    "at": "chapters.2.images.0.caption",
+    "old": "Primeras imágenes de la superficie lunar: panorámicas toscas, de baja tasa de bits, que mostraban un regolito rocoso. El radiotelescopio de Jodrell Bank, en Manchester, interceptó la transmisión y la publicó antes que los soviéticos.",
+    "new": "Primeras imágenes de la superficie lunar: panorámicas toscas, de baja tasa de bits, que mostraban un regolito rocoso. El radiotelescopio de Jodrell Bank, en Mánchester, interceptó la transmisión y la publicó antes que los soviéticos."
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "intro",
+    "old": "Opportunity aterrizó en Meridiani Planum el 25 de enero de 2004: un hoyo en uno que hizo rodar al rover, aún rebotando sobre sus airbags, directamente hasta un pequeño cráter (Eagle Crater) cuyas paredes albergaban los primeros «arándanos» ricos en hematita vistos de cerca en Marte. Diseñado para durar 90 soles, Opportunity recorrió 45,16 km a lo largo de 14 años, hasta que una tormenta de polvo planetaria en junio de 2018 cortó su suministro de energía solar. Última transmisión: «Mi batería está baja y se está haciendo de noche».",
+    "new": "Opportunity aterrizó en Meridiani Planum el 25 de enero de 2004: un hoyo en uno que hizo rodar al rover, aún rebotando sobre sus airbags, directamente hasta un pequeño cráter (cráter Eagle) cuyas paredes albergaban los primeros «arándanos» ricos en hematita vistos de cerca en Marte. Diseñado para durar 90 soles, Opportunity recorrió 45,16 km a lo largo de 14 años, hasta que una tormenta de polvo planetaria en junio de 2018 cortó su suministro de energía solar. Última transmisión: «Mi batería está baja y se está haciendo de noche»."
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.2.subtitle",
+    "old": "De Eagle Crater a Endeavour: 14 años de pruebas",
+    "new": "De cráter Eagle a Endeavour: 14 años de pruebas"
+  },
+  {
+    "rel": "trajectories/galileo.json",
+    "at": "waypoints.10.label",
+    "old": "Ida + Dactyl",
+    "new": "Ida + Dáctilo"
+  },
+  {
+    "rel": "trajectories/rosetta.json",
+    "at": "waypoints.7.label",
+    "old": "Asteroide Lutetia",
+    "new": "Asteroide Lutecia"
+  }
+]

@@ -1,5 +1,5 @@
 {
-  "intro": "Apollo 15 landete am 30. Juli 1971 bei der Hadley Rille und den Apennine Mountains – die erste „J-Mission“ mit verlängertem Aufenthalt auf der Oberfläche, mit dem Lunar Roving Vehicle (LRV) und mit einem wissenschaftlich geschulten Piloten (David Scott). Scott und Irwin legten bei drei Außenbordeinsätzen (EVAs) insgesamt 28 km zurück, fanden den Genesis Rock (Anorthosit, ca. 4,1 Mrd. Jahre alt, Urkruste) und ließen live im Fernsehen eine Feder und einen Hammer fallen, um Galileos Fallversuch zur Schwerkraft zu demonstrieren.",
+  "intro": "Apollo 15 landete am 30. Juli 1971 bei der Hadley Rille und den Montes Apenninus – die erste „J-Mission“ mit verlängertem Aufenthalt auf der Oberfläche, mit dem Lunar Roving Vehicle (LRV) und mit einem wissenschaftlich geschulten Piloten (David Scott). Scott und Irwin legten bei drei Außenbordeinsätzen (EVAs) insgesamt 28 km zurück, fanden den Genesis Rock (Anorthosit, ca. 4,1 Mrd. Jahre alt, Urkruste) und ließen live im Fernsehen eine Feder und einen Hammer fallen, um Galileos Fallversuch zur Schwerkraft zu demonstrieren.",
   "chapters": [
     {
       "id": "hardware",
@@ -19,7 +19,7 @@
       "images": [
         {
           "src": "/images/missions/apollo15/02.webp",
-          "caption": "Jim Irwin salutiert neben dem LRV, hinter ihm Mt Hadley Delta – die ersten Bilder der Apennine Mountains von der Oberfläche aus."
+          "caption": "Jim Irwin salutiert neben dem LRV, hinter ihm Mons Hadley Delta – die ersten Bilder der Montes Apenninus von der Oberfläche aus."
         },
         {
           "src": "/images/missions/apollo15/03.webp",
@@ -27,7 +27,7 @@
         },
         {
           "src": "/images/hotspots/moon/apollo15/tier3-pan.jpg",
-          "caption": "Panorama der Hadley Plain – Falcon-Abstiegsstufe + LRV + Mt Hadley Delta am Horizont."
+          "caption": "Panorama der Hadley-Ebene – Falcon-Abstiegsstufe + LRV + Mons Hadley Delta am Horizont."
         }
       ]
     },

@@ -1,5 +1,5 @@
 {
-  "intro": "Opportunity aterrizó en Meridiani Planum el 25 de enero de 2004: un hoyo en uno que hizo rodar al rover, aún rebotando sobre sus airbags, directamente hasta un pequeño cráter (Eagle Crater) cuyas paredes albergaban los primeros «arándanos» ricos en hematita vistos de cerca en Marte. Diseñado para durar 90 soles, Opportunity recorrió 45,16 km a lo largo de 14 años, hasta que una tormenta de polvo planetaria en junio de 2018 cortó su suministro de energía solar. Última transmisión: «Mi batería está baja y se está haciendo de noche».",
+  "intro": "Opportunity aterrizó en Meridiani Planum el 25 de enero de 2004: un hoyo en uno que hizo rodar al rover, aún rebotando sobre sus airbags, directamente hasta un pequeño cráter (cráter Eagle) cuyas paredes albergaban los primeros «arándanos» ricos en hematita vistos de cerca en Marte. Diseñado para durar 90 soles, Opportunity recorrió 45,16 km a lo largo de 14 años, hasta que una tormenta de polvo planetaria en junio de 2018 cortó su suministro de energía solar. Última transmisión: «Mi batería está baja y se está haciendo de noche».",
   "chapters": [
     {
       "id": "hardware",
@@ -34,7 +34,7 @@
     {
       "id": "science",
       "title": "Ciencia",
-      "subtitle": "De Eagle Crater a Endeavour: 14 años de pruebas",
+      "subtitle": "De cráter Eagle a Endeavour: 14 años de pruebas",
       "images": [
         {
           "src": "/images/fleet-galleries/opportunity/03.webp",

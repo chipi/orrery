@@ -1,0 +1,56 @@
+{
+  "_note": "Review of the edits the datasets-native-terms keys add site-wide (glossary run after the merge minus the run before it; indices into that diff as generated). [i] = drop; [i, from, to] = correction on the new text. Drops: 'Space Center Houston' is a museum's proper name; 'Houston' inside the untranslated English quote stays with its quote.",
+  "ru": [
+    [8],
+    [0, "Иды + Дактиль", "Иды + Дактиля"],
+    [4, "изнутри кратер Игл", "изнутри кратера Игл"],
+    [7, "с Хьюстона", "с Хьюстоном"],
+    [9, "побережья Флорида", "побережья Флориды"]
+  ],
+  "ja": [[10], [12], [2, "彗星グリッグ・シェレルップ彗星", "グリッグ・シェレルップ彗星"]],
+  "zh-CN": [[2, "彗星葛里格-斯杰勒鲁普彗星", "葛里格-斯杰勒鲁普彗星"]],
+  "ko": [
+    [13],
+    [20],
+    [3, "혜성 그리그-셸레루프 혜성", "그리그-셸레루프 혜성"],
+    [10, "혜성 26P/그리그-셸레루프 혜성", "26P/그리그-셸레루프 혜성"],
+    [11, "혜성 26P/그리그-셸레루프 혜성", "26P/그리그-셸레루프 혜성"]
+  ],
+  "hi": [
+    [11],
+    [28],
+    [8, "धूमकेतु 26P/ग्रिग-स्केलेरप धूमकेतु", "26P/ग्रिग-स्केलेरप धूमकेतु"],
+    [9, "धूमकेतु 26P/ग्रिग-स्केलेरप धूमकेतु", "26P/ग्रिग-स्केलेरप धूमकेतु"]
+  ],
+  "ar": [[13], [22]],
+  "sr-Cyrl": [
+    [13],
+    [16],
+    [12, "о Хјустону", "о Хјустон"],
+    [18, "Harrison-а Шмита", "Харисона Шмита"]
+  ],
+  "de": [],
+  "fr": [
+    [1, "base de la Tranquillité, EVA-1", "Base de la Tranquillité, EVA-1"],
+    [2, "d'cratère Eagle", "du cratère Eagle"],
+    [4, "1961. base", "1961. Base"],
+    [5, "à base de la Tranquillité", "à la base de la Tranquillité"],
+    [6, "Panorama de base", "Panorama de la base"],
+    [7, "avec mont Hadley", "avec le mont Hadley"],
+    [8, "Panorama de plaine", "Panorama de la plaine"],
+    [8, "+ mont Hadley", "+ le mont Hadley"],
+    [11, "D'cratère Eagle", "Du cratère Eagle"]
+  ],
+  "es": [
+    [6, "Panorámica de Base", "Panorámica de la Base"],
+    [8, "Panorámica de llanura", "Panorámica de la llanura"]
+  ],
+  "it": [
+    [6, "a Base della", "alla Base della"],
+    [7, "Panorama di Base", "Panorama della Base"],
+    [8, "degli monti", "dei monti"],
+    [9, "Panorama di piana", "Panorama della piana"]
+  ],
+  "nl": [[4, "Panorama van Hadley-vlakte", "Panorama van de Hadley-vlakte"]],
+  "pt-BR": [[5, "das montes", "dos montes"]]
+}

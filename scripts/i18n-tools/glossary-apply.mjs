@@ -105,6 +105,8 @@ const GUARD = {
   Sextans: { path: /science\/observation/ },
   Phoebe: { after: /^\s?Regio/ },
   Peacock: { path: /universe\/named-stars\/peacock/ },
+  // the museum "Space Center Houston", and the city inside the English Apollo 13 quote
+  Houston: { before: /Space Center\s?$/, after: /^,\s?we/ },
 };
 // first and middle names of the people in the glossary: a bare surname right after one
 // of them is part of a fuller name

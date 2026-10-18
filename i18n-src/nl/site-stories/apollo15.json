@@ -1,5 +1,5 @@
 {
-  "intro": "Apollo 15 landde op 30 juli 1971 bij Hadley-rille / Apennine Mountains — de eerste \"J-class\"-missie, met een verlengd verblijf op het oppervlak, de Lunar Roving Vehicle (LRV) en een piloot met wetenschappelijke training (David Scott). Scott en Irwin legden tijdens drie EVA's in totaal 28 km af met de rover, vonden de Genesis Rock (~4,1 Ga anorthosiet, oerkorst) en lieten live op tv een veer en een hamer vallen om Galileo's zwaartekrachtproef na te doen.",
+  "intro": "Apollo 15 landde op 30 juli 1971 bij Hadley-rille / Montes Apenninus — de eerste \"J-class\"-missie, met een verlengd verblijf op het oppervlak, de Lunar Roving Vehicle (LRV) en een piloot met wetenschappelijke training (David Scott). Scott en Irwin legden tijdens drie EVA's in totaal 28 km af met de rover, vonden de Genesis Rock (~4,1 Ga anorthosiet, oerkorst) en lieten live op tv een veer en een hamer vallen om Galileo's zwaartekrachtproef na te doen.",
   "chapters": [
     {
       "id": "hardware",
@@ -19,7 +19,7 @@
       "images": [
         {
           "src": "/images/missions/apollo15/02.webp",
-          "caption": "Jim Irwin salueert naast de LRV, met Mt Hadley Delta op de achtergrond — de eerste beelden van de Apennine Mountains vanaf het oppervlak."
+          "caption": "Jim Irwin salueert naast de LRV, met Mons Hadley Delta op de achtergrond — de eerste beelden van de Montes Apenninus vanaf het oppervlak."
         },
         {
           "src": "/images/missions/apollo15/03.webp",
@@ -27,7 +27,7 @@
         },
         {
           "src": "/images/hotspots/moon/apollo15/tier3-pan.jpg",
-          "caption": "Panorama van Hadley Plain — de afdaaltrap van Falcon, de LRV en Mt Hadley Delta aan de horizon."
+          "caption": "Panorama van de Hadley-vlakte — de afdaaltrap van Falcon, de LRV en Mons Hadley Delta aan de horizon."
         }
       ]
     },

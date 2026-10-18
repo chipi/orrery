@@ -1,0 +1,68 @@
+[
+  {
+    "rel": "fleet/orbiter/chandrayaan1.json",
+    "at": "description",
+    "old": "Primeira missão da Índia além da órbita terrestre e sua primeira à Lua. Lançada em 2008-10-22 do Satish Dhawan Space Centre em um PSLV-XL, a Chandrayaan-1 entrou em órbita lunar polar de 100 km em 2008-11-12. Carregava 11 instrumentos de 6 países (Índia, EUA, Reino Unido, Alemanha, Suécia, Bulgária) — mais consequentemente o Mapeador de Mineralogia Lunar (M3) da NASA, que detectou a assinatura de banda de absorção de OH/H₂O em vastas extensões da superfície lunar, particularmente em altas latitudes (Pieters et al., 2009, Science 326). Sua Sonda de Impacto Lunar (MIP) de 35 kg foi liberada em 2008-11-14 e impactou próximo à borda da Cratera Shackleton no pólo sul lunar (Jawahar Sthal, ~89,5°S), tornando-se o primeiro artefato indiano na Lua e registrando vapor de água na atmosfera lunar durante a descida. O contato com a nave foi perdido em 2009-08-29 após ~10 meses / 3400 órbitas — metade de sua missão planejada de 2 anos, mas o retorno científico já era revolucionário. Permanece em órbita lunar, redetectada pelo radar Goldstone da NASA em 2017.",
+    "new": "Primeira missão da Índia além da órbita terrestre e sua primeira à Lua. Lançada em 2008-10-22 do Centro Espacial Satish Dhawan em um PSLV-XL, a Chandrayaan-1 entrou em órbita lunar polar de 100 km em 2008-11-12. Carregava 11 instrumentos de 6 países (Índia, EUA, Reino Unido, Alemanha, Suécia, Bulgária) — mais consequentemente o Mapeador de Mineralogia Lunar (M3) da NASA, que detectou a assinatura de banda de absorção de OH/H₂O em vastas extensões da superfície lunar, particularmente em altas latitudes (Pieters et al., 2009, Science 326). Sua Sonda de Impacto Lunar (MIP) de 35 kg foi liberada em 2008-11-14 e impactou próximo à borda da Cratera Shackleton no pólo sul lunar (Jawahar Sthal, ~89,5°S), tornando-se o primeiro artefato indiano na Lua e registrando vapor de água na atmosfera lunar durante a descida. O contato com a nave foi perdido em 2009-08-29 após ~10 meses / 3400 órbitas — metade de sua missão planejada de 2 anos, mas o retorno científico já era revolucionário. Permanece em órbita lunar, redetectada pelo radar Goldstone da NASA em 2017."
+  },
+  {
+    "rel": "hotspot-metadata/apollo11.json",
+    "at": "panorama_caption",
+    "old": "Tranquility Base, EVA-1. Buzz Aldrin fotografou o LM Eagle e a bandeira dos EUA logo após o pouso. As emendas visíveis da Hasselblad e as junções coloridas perto do LM fazem parte do mosaico publicado.",
+    "new": "Base Tranquilidade, EVA-1. Buzz Aldrin fotografou o LM Eagle e a bandeira dos EUA logo após o pouso. As emendas visíveis da Hasselblad e as junções coloridas perto do LM fazem parte do mosaico publicado."
+  },
+  {
+    "rel": "hotspot-metadata/opportunity.json",
+    "at": "panorama_caption",
+    "old": "A vista do Opportunity de dentro da Eagle Crater, o local do pouso com quiques sobre airbags — o afloramento em camadas de Burns Cliff, visível na parede oposta, viria a ser o primeiro grande alvo científico do rover.",
+    "new": "A vista do Opportunity de dentro da cratera Eagle, o local do pouso com quiques sobre airbags — o afloramento em camadas de Burns Cliff, visível na parede oposta, viria a ser o primeiro grande alvo científico do rover."
+  },
+  {
+    "rel": "hotspot-metadata/sriharikota-slp.json",
+    "at": "panorama_caption",
+    "old": "Satish Dhawan Space Centre, Sriharikota — o PSLV-C61 em transporte da Vehicle Integration Facility para a plataforma de lançamento.",
+    "new": "Centro Espacial Satish Dhawan, Sriharikota — o PSLV-C61 em transporte da Vehicle Integration Facility para a plataforma de lançamento."
+  },
+  {
+    "rel": "missions/earth/polaris-dawn.json",
+    "at": "events.3.note",
+    "old": "Resilience amerissou próximo à Florida 2024-09-15 07:36 UTC.",
+    "new": "Resilience amerissou próximo à Flórida 2024-09-15 07:36 UTC."
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Jim Irwin batendo continência ao lado do LRV, com Mt Hadley Delta ao fundo — as primeiras imagens das Apennine Mountains vistas da superfície.",
+    "new": "Jim Irwin batendo continência ao lado do LRV, com Mons Hadley Delta ao fundo — as primeiras imagens dos montes Apeninos vistas da superfície."
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.1.images.2.caption",
+    "old": "Panorama da Hadley Plain — estágio de descida do Falcon + LRV + Mt Hadley Delta no horizonte.",
+    "new": "Panorama da planície de Hadley — estágio de descida do Falcon + LRV + Mons Hadley Delta no horizonte."
+  },
+  {
+    "rel": "site-stories/chandrayaan3.json",
+    "at": "chapters.1.subtitle",
+    "old": "14 de julho de 2023 — LVM3 a partir do Satish Dhawan Space Centre",
+    "new": "14 de julho de 2023 — LVM3 a partir do Centro Espacial Satish Dhawan"
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "intro",
+    "old": "Opportunity pousou em Meridiani Planum em 25 de janeiro de 2004 — um buraco em uma tacada que fez o rover, ainda quicando sobre os airbags, rolar diretamente para dentro de uma pequena cratera (Eagle Crater), cujas paredes guardavam as primeiras \"blueberries\" ricas em hematita já vistas de perto em Marte. Projetado para durar 90 sols, Opportunity percorreu 45,16 km ao longo de 14 anos, até que uma tempestade de poeira de escala planetária, em junho de 2018, cortou sua energia solar. Última transmissão: \"Minha bateria está fraca e está ficando escuro.\"",
+    "new": "Opportunity pousou em Meridiani Planum em 25 de janeiro de 2004 — um buraco em uma tacada que fez o rover, ainda quicando sobre os airbags, rolar diretamente para dentro de uma pequena cratera (cratera Eagle), cujas paredes guardavam as primeiras \"blueberries\" ricas em hematita já vistas de perto em Marte. Projetado para durar 90 sols, Opportunity percorreu 45,16 km ao longo de 14 anos, até que uma tempestade de poeira de escala planetária, em junho de 2018, cortou sua energia solar. Última transmissão: \"Minha bateria está fraca e está ficando escuro.\""
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.2.subtitle",
+    "old": "De Eagle Crater a Endeavour — 14 anos de evidências",
+    "new": "De cratera Eagle a Endeavour — 14 anos de evidências"
+  },
+  {
+    "rel": "trajectories/rosetta.json",
+    "at": "waypoints.7.label",
+    "old": "Asteroide Lutetia",
+    "new": "Asteroide Lutécia"
+  }
+]

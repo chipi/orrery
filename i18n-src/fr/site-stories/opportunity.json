@@ -1,5 +1,5 @@
 {
-  "intro": "Opportunity s'est posé à Meridiani Planum le 25 janvier 2004 — un trou d'un coup, qui a fait rouler le rover, rebondissant sur ses airbags, directement dans un petit cratère (Eagle Crater) dont les parois recelaient les premières « myrtilles » riches en hématite jamais observées de près sur Mars. Conçu pour durer 90 sols, Opportunity a parcouru 45,16 km en 14 ans, jusqu'à ce qu'une tempête de poussière englobant toute la planète, en juin 2018, le prive d'énergie solaire. Dernière transmission : « Ma batterie est faible et la nuit tombe. »",
+  "intro": "Opportunity s'est posé à Meridiani Planum le 25 janvier 2004 — un trou d'un coup, qui a fait rouler le rover, rebondissant sur ses airbags, directement dans un petit cratère (cratère Eagle) dont les parois recelaient les premières « myrtilles » riches en hématite jamais observées de près sur Mars. Conçu pour durer 90 sols, Opportunity a parcouru 45,16 km en 14 ans, jusqu'à ce qu'une tempête de poussière englobant toute la planète, en juin 2018, le prive d'énergie solaire. Dernière transmission : « Ma batterie est faible et la nuit tombe. »",
   "chapters": [
     {
       "id": "hardware",
@@ -34,7 +34,7 @@
     {
       "id": "science",
       "title": "La science",
-      "subtitle": "D'Eagle Crater à Endeavour — 14 ans de preuves",
+      "subtitle": "Du cratère Eagle à Endeavour — 14 ans de preuves",
       "images": [
         {
           "src": "/images/fleet-galleries/opportunity/03.webp",

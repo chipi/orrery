@@ -1,5 +1,5 @@
 {
-  "intro": "Opportunity atterrò su Meridiani Planum il 25 gennaio 2004: una buca in uno, con il rover che, dopo i rimbalzi sugli airbag, rotolò dritto in un piccolo cratere (Eagle Crater) le cui pareti custodivano i primi \"mirtilli\" ricchi di ematite mai osservati da vicino su Marte. Progettato per durare 90 sol, Opportunity percorse 45,16 km in 14 anni, finché una tempesta di polvere su scala planetaria, nel giugno 2018, non gli tolse l'energia solare. Ultima trasmissione: \"La mia batteria è scarica e sta calando il buio.\"",
+  "intro": "Opportunity atterrò su Meridiani Planum il 25 gennaio 2004: una buca in uno, con il rover che, dopo i rimbalzi sugli airbag, rotolò dritto in un piccolo cratere (cratere Eagle) le cui pareti custodivano i primi \"mirtilli\" ricchi di ematite mai osservati da vicino su Marte. Progettato per durare 90 sol, Opportunity percorse 45,16 km in 14 anni, finché una tempesta di polvere su scala planetaria, nel giugno 2018, non gli tolse l'energia solare. Ultima trasmissione: \"La mia batteria è scarica e sta calando il buio.\"",
   "chapters": [
     {
       "id": "hardware",
@@ -34,7 +34,7 @@
     {
       "id": "science",
       "title": "Scienza",
-      "subtitle": "Da Eagle Crater a Endeavour: 14 anni di prove",
+      "subtitle": "Da cratere Eagle a Endeavour: 14 anni di prove",
       "images": [
         {
           "src": "/images/fleet-galleries/opportunity/03.webp",

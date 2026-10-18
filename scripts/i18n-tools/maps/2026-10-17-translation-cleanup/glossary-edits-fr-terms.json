@@ -1,0 +1,86 @@
+[
+  {
+    "rel": "belts/asteroid.json",
+    "at": "mission_visits.1",
+    "old": "Galileo — NASA, 1991 (survol de Gaspra) + 1993 (découverte d'Ida + Dactyl)",
+    "new": "Galileo — NASA, 1991 (survol de Gaspra) + 1993 (découverte d'Ida + Dactyle)"
+  },
+  {
+    "rel": "hotspot-metadata/apollo11.json",
+    "at": "panorama_caption",
+    "old": "Tranquility Base, EVA-1. Buzz Aldrin a photographié le LM Eagle et le drapeau américain peu après l'alunissage. Les coutures Hasselblad visibles et les raccords colorés autour du LM font partie de la mosaïque publiée.",
+    "new": "Base de la Tranquillité, EVA-1. Buzz Aldrin a photographié le LM Eagle et le drapeau américain peu après l'alunissage. Les coutures Hasselblad visibles et les raccords colorés autour du LM font partie de la mosaïque publiée."
+  },
+  {
+    "rel": "hotspot-metadata/opportunity.json",
+    "at": "panorama_caption",
+    "old": "La vue d'Opportunity depuis l'intérieur d'Eagle Crater, le site d'atterrissage après les rebonds sur airbags — l'affleurement stratifié de Burns Cliff, visible sur la paroi opposée, allait devenir la première grande cible scientifique du rover.",
+    "new": "La vue d'Opportunity depuis l'intérieur du cratère Eagle, le site d'atterrissage après les rebonds sur airbags — l'affleurement stratifié de Burns Cliff, visible sur la paroi opposée, allait devenir la première grande cible scientifique du rover."
+  },
+  {
+    "rel": "hotspot-metadata/sriharikota-slp.json",
+    "at": "panorama_caption",
+    "old": "Satish Dhawan Space Centre, Sriharikota — le PSLV-C61 en transfert de la Vehicle Integration Facility vers le pas de tir.",
+    "new": "Centre spatial Satish-Dhawan, Sriharikota — le PSLV-C61 en transfert de la Vehicle Integration Facility vers le pas de tir."
+  },
+  {
+    "rel": "science/history/apollo-11-1969.json",
+    "at": "intro_sentence",
+    "old": "Trois astronautes, une Saturn V et une date limite fixée par JFK en 1961. Tranquility Base, huit ans plus tard, dans les délais.",
+    "new": "Trois astronautes, une Saturn V et une date limite fixée par JFK en 1961. Base de la Tranquillité, huit ans plus tard, dans les délais."
+  },
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.2.images.1.caption",
+    "old": "L'empreinte de botte d'Aldrin à Tranquility Base — préservée intacte dans le vide depuis plus d'un demi-siècle.",
+    "new": "L'empreinte de botte d'Aldrin à la base de la Tranquillité — préservée intacte dans le vide depuis plus d'un demi-siècle."
+  },
+  {
+    "rel": "site-stories/apollo11.json",
+    "at": "chapters.2.images.2.caption",
+    "old": "Panorama de Tranquility Base — l'étage de descente du LM Eagle, le module scientifique EASEP, le drapeau américain et les empreintes les plus célèbres de la Lune.",
+    "new": "Panorama de la base de la Tranquillité — l'étage de descente du LM Eagle, le module scientifique EASEP, le drapeau américain et les empreintes les plus célèbres de la Lune."
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Jim Irwin faisant le salut à côté du LRV, avec Mt Hadley Delta en arrière-plan — les premières images des Apennine Mountains prises depuis la surface.",
+    "new": "Jim Irwin faisant le salut à côté du LRV, avec le mont Hadley Delta en arrière-plan — les premières images des monts Apennins prises depuis la surface."
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.1.images.2.caption",
+    "old": "Panorama de Hadley Plain — l'étage de descente de Falcon + le LRV + Mt Hadley Delta à l'horizon.",
+    "new": "Panorama de la plaine de Hadley — l'étage de descente de Falcon + le LRV + le mont Hadley Delta à l'horizon."
+  },
+  {
+    "rel": "site-stories/chandrayaan3.json",
+    "at": "chapters.1.subtitle",
+    "old": "14 juillet 2023 — LVM3 depuis le Satish Dhawan Space Centre",
+    "new": "14 juillet 2023 — LVM3 depuis le Centre spatial Satish-Dhawan"
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "intro",
+    "old": "Opportunity s'est posé à Meridiani Planum le 25 janvier 2004 — un trou d'un coup, qui a fait rouler le rover, rebondissant sur ses airbags, directement dans un petit cratère (Eagle Crater) dont les parois recelaient les premières « myrtilles » riches en hématite jamais observées de près sur Mars. Conçu pour durer 90 sols, Opportunity a parcouru 45,16 km en 14 ans, jusqu'à ce qu'une tempête de poussière englobant toute la planète, en juin 2018, le prive d'énergie solaire. Dernière transmission : « Ma batterie est faible et la nuit tombe. »",
+    "new": "Opportunity s'est posé à Meridiani Planum le 25 janvier 2004 — un trou d'un coup, qui a fait rouler le rover, rebondissant sur ses airbags, directement dans un petit cratère (cratère Eagle) dont les parois recelaient les premières « myrtilles » riches en hématite jamais observées de près sur Mars. Conçu pour durer 90 sols, Opportunity a parcouru 45,16 km en 14 ans, jusqu'à ce qu'une tempête de poussière englobant toute la planète, en juin 2018, le prive d'énergie solaire. Dernière transmission : « Ma batterie est faible et la nuit tombe. »"
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.2.subtitle",
+    "old": "D'Eagle Crater à Endeavour — 14 ans de preuves",
+    "new": "Du cratère Eagle à Endeavour — 14 ans de preuves"
+  },
+  {
+    "rel": "trajectories/galileo.json",
+    "at": "waypoints.10.label",
+    "old": "Ida + Dactyl",
+    "new": "Ida + Dactyle"
+  },
+  {
+    "rel": "trajectories/rosetta.json",
+    "at": "waypoints.7.label",
+    "old": "Astéroïde Lutetia",
+    "new": "Astéroïde Lutèce"
+  }
+]

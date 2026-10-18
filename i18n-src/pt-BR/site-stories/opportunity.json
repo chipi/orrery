@@ -1,5 +1,5 @@
 {
-  "intro": "Opportunity pousou em Meridiani Planum em 25 de janeiro de 2004 — um buraco em uma tacada que fez o rover, ainda quicando sobre os airbags, rolar diretamente para dentro de uma pequena cratera (Eagle Crater), cujas paredes guardavam as primeiras \"blueberries\" ricas em hematita já vistas de perto em Marte. Projetado para durar 90 sols, Opportunity percorreu 45,16 km ao longo de 14 anos, até que uma tempestade de poeira de escala planetária, em junho de 2018, cortou sua energia solar. Última transmissão: \"Minha bateria está fraca e está ficando escuro.\"",
+  "intro": "Opportunity pousou em Meridiani Planum em 25 de janeiro de 2004 — um buraco em uma tacada que fez o rover, ainda quicando sobre os airbags, rolar diretamente para dentro de uma pequena cratera (cratera Eagle), cujas paredes guardavam as primeiras \"blueberries\" ricas em hematita já vistas de perto em Marte. Projetado para durar 90 sols, Opportunity percorreu 45,16 km ao longo de 14 anos, até que uma tempestade de poeira de escala planetária, em junho de 2018, cortou sua energia solar. Última transmissão: \"Minha bateria está fraca e está ficando escuro.\"",
   "chapters": [
     {
       "id": "hardware",
@@ -34,7 +34,7 @@
     {
       "id": "science",
       "title": "Ciência",
-      "subtitle": "De Eagle Crater a Endeavour — 14 anos de evidências",
+      "subtitle": "De cratera Eagle a Endeavour — 14 anos de evidências",
       "images": [
         {
           "src": "/images/fleet-galleries/opportunity/03.webp",

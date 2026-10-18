@@ -1,0 +1,38 @@
+[
+  {
+    "rel": "hotspot-metadata/opportunity.json",
+    "at": "panorama_caption",
+    "old": "Der Blick von Opportunity aus dem Eagle Crater, dem Landeplatz nach dem Airbag-Aufprall — der geschichtete Aufschluss Burns Cliff an der gegenüberliegenden Kraterwand wurde das erste große Forschungsziel des Rovers.",
+    "new": "Der Blick von Opportunity aus dem Eagle-Krater, dem Landeplatz nach dem Airbag-Aufprall — der geschichtete Aufschluss Burns Cliff an der gegenüberliegenden Kraterwand wurde das erste große Forschungsziel des Rovers."
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "intro",
+    "old": "Apollo 15 landete am 30. Juli 1971 bei der Hadley Rille und den Apennine Mountains – die erste „J-Mission“ mit verlängertem Aufenthalt auf der Oberfläche, mit dem Lunar Roving Vehicle (LRV) und mit einem wissenschaftlich geschulten Piloten (David Scott). Scott und Irwin legten bei drei Außenbordeinsätzen (EVAs) insgesamt 28 km zurück, fanden den Genesis Rock (Anorthosit, ca. 4,1 Mrd. Jahre alt, Urkruste) und ließen live im Fernsehen eine Feder und einen Hammer fallen, um Galileos Fallversuch zur Schwerkraft zu demonstrieren.",
+    "new": "Apollo 15 landete am 30. Juli 1971 bei der Hadley Rille und den Montes Apenninus – die erste „J-Mission“ mit verlängertem Aufenthalt auf der Oberfläche, mit dem Lunar Roving Vehicle (LRV) und mit einem wissenschaftlich geschulten Piloten (David Scott). Scott und Irwin legten bei drei Außenbordeinsätzen (EVAs) insgesamt 28 km zurück, fanden den Genesis Rock (Anorthosit, ca. 4,1 Mrd. Jahre alt, Urkruste) und ließen live im Fernsehen eine Feder und einen Hammer fallen, um Galileos Fallversuch zur Schwerkraft zu demonstrieren."
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.1.images.0.caption",
+    "old": "Jim Irwin salutiert neben dem LRV, hinter ihm Mt Hadley Delta – die ersten Bilder der Apennine Mountains von der Oberfläche aus.",
+    "new": "Jim Irwin salutiert neben dem LRV, hinter ihm Mons Hadley Delta – die ersten Bilder der Montes Apenninus von der Oberfläche aus."
+  },
+  {
+    "rel": "site-stories/apollo15.json",
+    "at": "chapters.1.images.2.caption",
+    "old": "Panorama der Hadley Plain – Falcon-Abstiegsstufe + LRV + Mt Hadley Delta am Horizont.",
+    "new": "Panorama der Hadley-Ebene – Falcon-Abstiegsstufe + LRV + Mons Hadley Delta am Horizont."
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "intro",
+    "old": "Opportunity landete am 25. Januar 2004 in Meridiani Planum – ein Hole-in-one, das den auf Airbags aufspringenden Rover direkt in einen kleinen Krater (Eagle Crater) rollen ließ, dessen Wände die ersten hämatitreichen „Blueberries“ bargen, die je aus der Nähe auf dem Mars gesehen wurden. Ausgelegt für 90 Sols, legte Opportunity über 14 Jahre hinweg 45,16 km zurück, bis ein planetenweiter Staubsturm im Juni 2018 die Energieversorgung durch Solarzellen kappte. Letzte Übertragung: „Meine Batterie ist schwach, und es wird dunkel.“",
+    "new": "Opportunity landete am 25. Januar 2004 in Meridiani Planum – ein Hole-in-one, das den auf Airbags aufspringenden Rover direkt in einen kleinen Krater (Eagle-Krater) rollen ließ, dessen Wände die ersten hämatitreichen „Blueberries“ bargen, die je aus der Nähe auf dem Mars gesehen wurden. Ausgelegt für 90 Sols, legte Opportunity über 14 Jahre hinweg 45,16 km zurück, bis ein planetenweiter Staubsturm im Juni 2018 die Energieversorgung durch Solarzellen kappte. Letzte Übertragung: „Meine Batterie ist schwach, und es wird dunkel.“"
+  },
+  {
+    "rel": "site-stories/opportunity.json",
+    "at": "chapters.2.subtitle",
+    "old": "Vom Eagle Crater zum Endeavour – 14 Jahre voller Belege",
+    "new": "Vom Eagle-Krater zum Endeavour – 14 Jahre voller Belege"
+  }
+]

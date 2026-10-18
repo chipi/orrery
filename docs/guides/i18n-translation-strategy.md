@@ -108,6 +108,25 @@ written the same way everywhere it appears.
 - No paid model run without a size + cost estimate and an explicit go.
 - Fix what a pass finds in the same pass; hand-edit rather than re-run a model.
 
+### 3.5 Names go through the glossary, never straight into text (operator 2026-10-18)
+
+Hand-writing a native name into one string, without the glossary, creates drift: the
+next pass, the next locale and the next page do not know it. So:
+
+1. **Glossary first.** Every proper name (person, place, feature, body, star,
+   facility) that gets a native form goes into `scripts/i18n-tools/native-terms.json`
+   in all thirteen locales before any text uses it. Text is then written by
+   `glossary-apply.mjs` (read and corrected per locale), not typed into one file.
+2. **The site's existing form wins.** Before choosing a form, list how every locale
+   already writes the name everywhere (overlays and `messages/`). The entity page's
+   form is canonical (§3.3); with no page, the form most of the site already uses.
+   A new spelling is chosen only where the site has none.
+3. **Prove it after every pass.** For each name touched: no English key left in a
+   non-Latin locale's text, and no second spelling in any locale. A pass is not
+   done until that check is clean.
+4. **No extra spend for self-made problems.** Repairs to an agent's own drift are
+   done in session by hand or by the scripts, never with a new paid run.
+
 ## 4. How to decide a form you are not sure of
 
 **Search the term in the target language and read how native pages write it** —
@@ -230,5 +249,17 @@ Not done for the data sets: alt text (declined); vehicle and mission names stay 
 origin rule says, so Latin script remains in every locale; Serbian keeps Latin
 vehicle and agency names with hyphenated endings ("NASA-ин", "Hubble-а"), and the
 checker refused two Cyrillic forms ("Galileo-в тест", "Cygnus Loop-а"), which stay Latin;
-the new names were not added to `native-terms.json`, so a later glossary run will not know
-them; informal rover target names (Yogi, Home Plate, Burns Cliff) stay in English.
+informal rover target names (Yogi, Home Plate, Burns Cliff) stay in English.
+
+The names first written by hand in this pass were then moved into the glossary (§3.5):
+31 keys and 10 filled slots (`datasets-native-terms.json`), forms taken from the existing
+glossary, the site's own usage, then each language's Wikipedia. Running the glossary
+over every locale with them fixed the same names across the rest of the site (Woomera,
+Houston, Florida, Inner Mongolia, Satish Dhawan Space Centre, Tranquility Base, still
+English in mission and science pages and in one UI message), and a variant sweep put
+the older spellings on the glossary form (Stuart Roosa: ru Рооса, ja ロオサ, zh 罗莎;
+zh 休斯敦 → 休斯顿). Check after it: a glossary run gives zero edits for these keys in all
+thirteen locales, and the site-wide audit finds no second spelling. Houston stays
+English in "Space Center Houston" and inside the English Apollo 13 quote (a guard in
+`glossary-apply.mjs`). Found on the way and fixed: pt-BR named Gene Cernan as the
+Apollo 17 geologist.
